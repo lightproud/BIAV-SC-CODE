@@ -1,0 +1,138 @@
+{
+  "updated_at": "2026-03-24T12:00:00Z",
+  "summary": "今日社区热点：<span class='highlight'>2.0版本「永夜序章」</span>正式公告引爆全平台讨论；新角色<span class='highlight'>「赫尔墨斯」</span>立绘与技能曝光，玩家热议强度定位；官方宣布与<span class='highlight'>知名IP联动</span>企划；Reddit 社区发起角色强度排行投票；B站UP主深度解析新机制。",
+  "news": [
+    {
+      "title": "【官方公告】2.0版本「永夜序章」前瞻直播定档3月28日",
+      "summary": "官方确认2.0版本前瞻直播时间，届时将公布新章节剧情、新角色、新玩法等重磅内容。直播还将发放兑换码福利。",
+      "source": "official",
+      "time": "2026-03-24T10:00:00Z",
+      "url": "",
+      "engagement": 52800,
+      "is_hot": true,
+      "author": "忘却前夜官方",
+      "tags": ["版本更新", "前瞻直播", "2.0"]
+    },
+    {
+      "title": "New character Hermes leaked - skills and kit analysis",
+      "summary": "Datamined info on upcoming 5-star character Hermes reveals a unique time-manipulation mechanic. Community theorycrafters are already comparing to existing DPS units.",
+      "source": "reddit",
+      "time": "2026-03-24T08:30:00Z",
+      "url": "",
+      "engagement": 3420,
+      "is_hot": true,
+      "author": "u/MorimensLeaks",
+      "tags": ["新角色", "赫尔墨斯", "数据挖掘"]
+    },
+    {
+      "title": "赫尔墨斯完整技能翻译+机制深度解析｜忘却前夜",
+      "summary": "UP主详细翻译并解析了新角色赫尔墨斯的全部技能，包括天赋、星座效果，并与现有角色进行了对比分析。",
+      "source": "bilibili",
+      "time": "2026-03-24T09:15:00Z",
+      "url": "",
+      "engagement": 18500,
+      "is_hot": true,
+      "author": "忘夜攻略组",
+      "tags": ["攻略", "角色解析", "赫尔墨斯"]
+    },
+    {
+      "title": "Morimens x EVA collaboration officially announced!",
+      "summary": "Official Twitter account just revealed an Evangelion collaboration event coming in 2.0. Collab characters and themed events confirmed.",
+      "source": "twitter",
+      "time": "2026-03-24T06:00:00Z",
+      "url": "",
+      "engagement": 28700,
+      "is_hot": true,
+      "author": "@MorimensGlobal",
+      "tags": ["联动", "EVA", "官方"]
+    },
+    {
+      "title": "TapTap评分持续上涨，玩家：1.8版本剧情封神",
+      "summary": "忘却前夜在TapTap评分突破9.2，大量玩家给出五星好评，称赞1.8版本主线剧情的叙事深度和演出质量。",
+      "source": "taptap",
+      "time": "2026-03-24T07:00:00Z",
+      "url": "",
+      "engagement": 8900,
+      "is_hot": false,
+      "author": "",
+      "tags": ["评分", "剧情", "口碑"]
+    },
+    {
+      "title": "[讨论] 2.0深渊新环境怎么配队？提前规划讨论帖",
+      "summary": "NGA玩家根据已知信息讨论2.0新深渊环境下的阵容搭配，多位大佬给出了针对新机制的配队思路。",
+      "source": "nga",
+      "time": "2026-03-24T05:30:00Z",
+      "url": "",
+      "engagement": 4200,
+      "is_hot": false,
+      "author": "深渊常客",
+      "tags": ["深渊", "配队", "攻略"]
+    },
+    {
+      "title": "Global community Q&A session with devs - Key takeaways",
+      "summary": "Developers held a Q&A in the official Discord. Key points: QoL improvements coming in 2.0, no plans for PvP, and a new guild system is in development.",
+      "source": "discord",
+      "time": "2026-03-24T04:00:00Z",
+      "url": "",
+      "engagement": 6100,
+      "is_hot": false,
+      "author": "ModTeam",
+      "tags": ["开发者问答", "QoL", "公会系统"]
+    },
+    {
+      "title": "Morimens OST - 'Prelude to Oblivion' Full Orchestra Ver. | OFFICIAL MV",
+      "summary": "Official YouTube channel released the full orchestral version of the main theme. Production quality praised by music community.",
+      "source": "youtube",
+      "time": "2026-03-24T03:00:00Z",
+      "url": "",
+      "engagement": 42000,
+      "is_hot": true,
+      "author": "Morimens Official",
+      "tags": ["OST", "音乐", "官方MV"]
+    },
+    {
+      "title": "Current banner worth pulling? Athena analysis and recommendations",
+      "summary": "Detailed analysis of the current Athena banner. Consensus: strong support unit, but 2.0 characters may be higher priority for F2P players.",
+      "source": "reddit",
+      "time": "2026-03-24T02:00:00Z",
+      "url": "",
+      "engagement": 1870,
+      "is_hot": false,
+      "author": "u/MetaAnalyst",
+      "tags": ["抽卡建议", "雅典娜", "零氪攻略"]
+    },
+    {
+      "title": "忘却前夜同人创作大赛获奖作品公布",
+      "summary": "官方举办的首届同人创作大赛结果揭晓，涵盖插画、小说、Cosplay三个赛道，获奖作品质量极高。",
+      "source": "bilibili",
+      "time": "2026-03-24T01:00:00Z",
+      "url": "",
+      "engagement": 12300,
+      "is_hot": false,
+      "author": "忘却前夜Official",
+      "tags": ["同人", "社区活动", "创作大赛"]
+    },
+    {
+      "title": "忘却前夜全角色节奏榜更新 (1.8版本)",
+      "summary": "NGA社区更新了最新的角色强度排行榜，反映了1.8版本平衡调整后的角色定位变化。",
+      "source": "nga",
+      "time": "2026-03-23T22:00:00Z",
+      "url": "",
+      "engagement": 15600,
+      "is_hot": true,
+      "author": "忘夜评测组",
+      "tags": ["节奏榜", "角色评级", "1.8版本"]
+    },
+    {
+      "title": "PSA: Don't forget to claim your anniversary login rewards before reset",
+      "summary": "Reminder post gaining traction - the anniversary special login bonus expires soon. Several players reported almost missing the final reward.",
+      "source": "discord",
+      "time": "2026-03-23T20:00:00Z",
+      "url": "",
+      "engagement": 2300,
+      "is_hot": false,
+      "author": "HelperBot",
+      "tags": ["提醒", "周年活动", "奖励"]
+    }
+  ]
+}
