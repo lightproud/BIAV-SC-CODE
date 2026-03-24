@@ -1,138 +1,123 @@
 {
-  "updated_at": "2026-03-24T12:00:00Z",
-  "summary": "今日社区热点：<span class='highlight'>2.0版本「永夜序章」</span>正式公告引爆全平台讨论；新角色<span class='highlight'>「赫尔墨斯」</span>立绘与技能曝光，玩家热议强度定位；官方宣布与<span class='highlight'>知名IP联动</span>企划；Reddit 社区发起角色强度排行投票；B站UP主深度解析新机制。",
+  "updated_at": "2026-03-24T10:10:48.557979+00:00",
+  "summary": "今日热门话题：【忘却前夜】徐、地瓜、莫丝阵容演示/教学；那很能忍了；忘却前夜：角色梯度排行榜；[忘却前夜]脸红心跳的强度排行榜；【忘却前夜】融灾410(3.24)。",
   "news": [
     {
-      "title": "【官方公告】2.0版本「永夜序章」前瞻直播定档3月28日",
-      "summary": "官方确认2.0版本前瞻直播时间，届时将公布新章节剧情、新角色、新玩法等重磅内容。直播还将发放兑换码福利。",
-      "source": "official",
-      "time": "2026-03-24T10:00:00Z",
-      "url": "",
-      "engagement": 52800,
-      "is_hot": true,
-      "author": "忘却前夜官方",
-      "tags": ["版本更新", "前瞻直播", "2.0"]
-    },
-    {
-      "title": "New character Hermes leaked - skills and kit analysis",
-      "summary": "Datamined info on upcoming 5-star character Hermes reveals a unique time-manipulation mechanic. Community theorycrafters are already comparing to existing DPS units.",
-      "source": "reddit",
-      "time": "2026-03-24T08:30:00Z",
-      "url": "",
-      "engagement": 3420,
-      "is_hot": true,
-      "author": "u/MorimensLeaks",
-      "tags": ["新角色", "赫尔墨斯", "数据挖掘"]
-    },
-    {
-      "title": "赫尔墨斯完整技能翻译+机制深度解析｜忘却前夜",
-      "summary": "UP主详细翻译并解析了新角色赫尔墨斯的全部技能，包括天赋、星座效果，并与现有角色进行了对比分析。",
+      "title": "【忘却前夜】徐、地瓜、莫丝阵容演示/教学",
+      "summary": "",
       "source": "bilibili",
-      "time": "2026-03-24T09:15:00Z",
-      "url": "",
-      "engagement": 18500,
+      "time": "2026-03-23T13:55:38+00:00",
+      "url": "http://www.bilibili.com/video/av116278790458968",
+      "engagement": 1805,
       "is_hot": true,
-      "author": "忘夜攻略组",
-      "tags": ["攻略", "角色解析", "赫尔墨斯"]
+      "author": "金发女人丨型",
+      "tags": [
+        "单机游戏"
+      ]
     },
     {
-      "title": "Morimens x EVA collaboration officially announced!",
-      "summary": "Official Twitter account just revealed an Evangelion collaboration event coming in 2.0. Collab characters and themed events confirmed.",
-      "source": "twitter",
-      "time": "2026-03-24T06:00:00Z",
-      "url": "",
-      "engagement": 28700,
-      "is_hot": true,
-      "author": "@MorimensGlobal",
-      "tags": ["联动", "EVA", "官方"]
-    },
-    {
-      "title": "TapTap评分持续上涨，玩家：1.8版本剧情封神",
-      "summary": "忘却前夜在TapTap评分突破9.2，大量玩家给出五星好评，称赞1.8版本主线剧情的叙事深度和演出质量。",
-      "source": "taptap",
-      "time": "2026-03-24T07:00:00Z",
-      "url": "",
-      "engagement": 8900,
-      "is_hot": false,
-      "author": "",
-      "tags": ["评分", "剧情", "口碑"]
-    },
-    {
-      "title": "[讨论] 2.0深渊新环境怎么配队？提前规划讨论帖",
-      "summary": "NGA玩家根据已知信息讨论2.0新深渊环境下的阵容搭配，多位大佬给出了针对新机制的配队思路。",
-      "source": "nga",
-      "time": "2026-03-24T05:30:00Z",
-      "url": "",
-      "engagement": 4200,
-      "is_hot": false,
-      "author": "深渊常客",
-      "tags": ["深渊", "配队", "攻略"]
-    },
-    {
-      "title": "Global community Q&A session with devs - Key takeaways",
-      "summary": "Developers held a Q&A in the official Discord. Key points: QoL improvements coming in 2.0, no plans for PvP, and a new guild system is in development.",
-      "source": "discord",
-      "time": "2026-03-24T04:00:00Z",
-      "url": "",
-      "engagement": 6100,
-      "is_hot": false,
-      "author": "ModTeam",
-      "tags": ["开发者问答", "QoL", "公会系统"]
-    },
-    {
-      "title": "Morimens OST - 'Prelude to Oblivion' Full Orchestra Ver. | OFFICIAL MV",
-      "summary": "Official YouTube channel released the full orchestral version of the main theme. Production quality praised by music community.",
-      "source": "youtube",
-      "time": "2026-03-24T03:00:00Z",
-      "url": "",
-      "engagement": 42000,
-      "is_hot": true,
-      "author": "Morimens Official",
-      "tags": ["OST", "音乐", "官方MV"]
-    },
-    {
-      "title": "Current banner worth pulling? Athena analysis and recommendations",
-      "summary": "Detailed analysis of the current Athena banner. Consensus: strong support unit, but 2.0 characters may be higher priority for F2P players.",
-      "source": "reddit",
-      "time": "2026-03-24T02:00:00Z",
-      "url": "",
-      "engagement": 1870,
-      "is_hot": false,
-      "author": "u/MetaAnalyst",
-      "tags": ["抽卡建议", "雅典娜", "零氪攻略"]
-    },
-    {
-      "title": "忘却前夜同人创作大赛获奖作品公布",
-      "summary": "官方举办的首届同人创作大赛结果揭晓，涵盖插画、小说、Cosplay三个赛道，获奖作品质量极高。",
+      "title": "那很能忍了",
+      "summary": "不放全局了因为打的太唐了\n大忍耐莉莉来支持了，造物bug限时返厂，伟大的莉神取回了部分神力，不多但够用\n应该是bug吧，目前猜测bug是因为菲茵特开大提升死扛导致的",
       "source": "bilibili",
-      "time": "2026-03-24T01:00:00Z",
-      "url": "",
-      "engagement": 12300,
-      "is_hot": false,
-      "author": "忘却前夜Official",
-      "tags": ["同人", "社区活动", "创作大赛"]
-    },
-    {
-      "title": "忘却前夜全角色节奏榜更新 (1.8版本)",
-      "summary": "NGA社区更新了最新的角色强度排行榜，反映了1.8版本平衡调整后的角色定位变化。",
-      "source": "nga",
-      "time": "2026-03-23T22:00:00Z",
-      "url": "",
-      "engagement": 15600,
+      "time": "2026-03-23T14:23:33+00:00",
+      "url": "http://www.bilibili.com/video/av116278924740237",
+      "engagement": 302,
       "is_hot": true,
-      "author": "忘夜评测组",
-      "tags": ["节奏榜", "角色评级", "1.8版本"]
+      "author": "芒亡了",
+      "tags": [
+        "日常"
+      ]
     },
     {
-      "title": "PSA: Don't forget to claim your anniversary login rewards before reset",
-      "summary": "Reminder post gaining traction - the anniversary special login bonus expires soon. Several players reported almost missing the final reward.",
-      "source": "discord",
-      "time": "2026-03-23T20:00:00Z",
-      "url": "",
-      "engagement": 2300,
+      "title": "忘却前夜：角色梯度排行榜",
+      "summary": "萌新不要看",
+      "source": "bilibili",
+      "time": "2026-03-24T07:49:34+00:00",
+      "url": "http://www.bilibili.com/video/av116283001668933",
+      "engagement": 250,
+      "is_hot": true,
+      "author": "密斯卡托尼克的银猫",
+      "tags": [
+        "手机游戏"
+      ]
+    },
+    {
+      "title": "[忘却前夜]脸红心跳的强度排行榜",
+      "summary": "新手不要学喵，等有自己的理解再看",
+      "source": "bilibili",
+      "time": "2026-03-24T07:43:55+00:00",
+      "url": "http://www.bilibili.com/video/av116282984762930",
+      "engagement": 193,
+      "is_hot": true,
+      "author": "密斯卡托尼克的银猫",
+      "tags": [
+        "手机游戏"
+      ]
+    },
+    {
+      "title": "【忘却前夜】融灾410(3.24)",
+      "summary": "打难5就没必要发视频了",
+      "source": "bilibili",
+      "time": "2026-03-23T17:24:00+00:00",
+      "url": "http://www.bilibili.com/video/av116279629322845",
+      "engagement": 163,
+      "is_hot": true,
+      "author": "菲比又干了",
+      "tags": [
+        "手机游戏"
+      ]
+    },
+    {
+      "title": "【忘卻前夜】序章：入学日",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-03-23T12:35:05+00:00",
+      "url": "http://www.bilibili.com/video/av116278488536286",
+      "engagement": 162,
       "is_hot": false,
-      "author": "HelperBot",
-      "tags": ["提醒", "周年活动", "奖励"]
+      "author": "疼痛美学交响乐团指挥",
+      "tags": [
+        "预告·资讯"
+      ]
+    },
+    {
+      "title": "【忘却前夜】如何分辨相位对弈人机",
+      "summary": "-",
+      "source": "bilibili",
+      "time": "2026-03-23T13:54:40+00:00",
+      "url": "http://www.bilibili.com/video/av116278337478471",
+      "engagement": 136,
+      "is_hot": false,
+      "author": "鸣枫之秋",
+      "tags": [
+        "日常"
+      ]
+    },
+    {
+      "title": "【忘卻前夜】第一章：东区秘事（上篇）",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-03-23T15:33:06+00:00",
+      "url": "http://www.bilibili.com/video/av116279176335591",
+      "engagement": 48,
+      "is_hot": false,
+      "author": "疼痛美学交响乐团指挥",
+      "tags": [
+        "预告·资讯"
+      ]
+    },
+    {
+      "title": "［相位］点击就看旺达女王1v4",
+      "summary": "-",
+      "source": "bilibili",
+      "time": "2026-03-24T10:04:36+00:00",
+      "url": "http://www.bilibili.com/video/av116283572096899",
+      "engagement": 13,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ]
     }
   ]
 }
