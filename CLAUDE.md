@@ -27,6 +27,7 @@
 - 可用资产 → `assets/index.md`
 - Morimens 背景知识 → `memory/morimens-context.md`
 - AI 协作方法论 → `memory/methodology.md`
+- 交付物视觉规范 → `memory/style-guide.md`
 
 ## 目录结构
 
