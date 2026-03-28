@@ -21,15 +21,16 @@
 
 import json
 import os
-import time
 import logging
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import requests
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
 
-OUTPUT_PATH = Path(__file__).parent.parent / 'data' / 'news.json'
+OUTPUT_PATH = Path(__file__).parent.parent.parent.parent / 'assets' / 'data' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
 HOURS_LOOKBACK = 24
 
@@ -40,7 +41,6 @@ HOURS_LOOKBACK = 24
 
 def fetch_reddit(subreddits=None):
     """Fetch hot posts from Reddit using the public JSON API (no auth needed)."""
-    import requests
 
     subreddits = subreddits or ['Morimens', 'MorimensGame']
     items = []
@@ -77,7 +77,6 @@ def fetch_reddit(subreddits=None):
 
 def fetch_bilibili():
     """Fetch Bilibili search results for Morimens keywords."""
-    import requests
 
     items = []
     for keyword in ['忘却前夜', '忘卻前夜']:
@@ -127,7 +126,6 @@ def fetch_twitter():
     Fetch tweets using Twitter/X API v2.
     Requires TWITTER_BEARER_TOKEN environment variable.
     """
-    import requests
 
     bearer = os.environ.get('TWITTER_BEARER_TOKEN')
     if not bearer:
@@ -177,7 +175,6 @@ def fetch_nga():
     Fetch NGA forum posts for Morimens.
     NGA has rate limiting - be respectful.
     """
-    import requests
 
     items = []
     # NGA forum ID for 忘却前夜 - update this with the actual forum ID
@@ -224,7 +221,6 @@ def fetch_nga():
 
 def fetch_taptap():
     """Fetch TapTap community posts for Morimens."""
-    import requests
 
     app_id = os.environ.get('TAPTAP_APP_ID', '')
     if not app_id:
@@ -279,7 +275,6 @@ def generate_summary(news_items):
         return f"今日热门话题：{titles}。"
 
     # Use LLM for better summary
-    import requests
 
     titles_text = '\n'.join(f"- [{n['source']}] {n['title']}" for n in news_items[:20])
     prompt = f"""以下是忘却前夜(Morimens)游戏社区24小时内的热点话题列表，请用中文生成一段简洁的今日总结(100-150字)，
