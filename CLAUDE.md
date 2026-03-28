@@ -31,7 +31,7 @@
 ## 目录结构
 
 ```
-Claude/
+brain-in-a-vat/
 ├── CLAUDE.md                    # 总控文件（所有会话的第一份读物）
 ├── memory/                      # 结构化记忆
 │   ├── project-status.md        # 各子项目当前状态
