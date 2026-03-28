@@ -471,6 +471,16 @@ const SRC_LABELS = {
     appstore: 'App Store', google_play: 'Google Play', official: 'Official',
 };
 
+function esc(s) {
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+}
+
+function escAttr(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
 function fmt(n) {
     if (n >= 10000) return (n / 10000).toFixed(1) + 'w';
     if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
@@ -488,7 +498,7 @@ function timeAgo(iso) {
 }
 
 function srcBadge(source) {
-    return `<span class="badge src-${source}">${SRC_LABELS[source] || source}</span>`;
+    return `<span class="badge src-${escAttr(source)}">${esc(SRC_LABELS[source] || source)}</span>`;
 }
 
 // ─── Tab Renderers ───
@@ -498,7 +508,7 @@ function renderOverview() {
     return `
         <div class="panel">
             <h2><span class="panel-icon">📋</span> Daily Summary</h2>
-            <div class="summary-text">${(r.summary || 'No summary available.').replace(/\n/g, '<br>')}</div>
+            <div class="summary-text">${esc(r.summary || 'No summary available.').replace(/\n/g, '<br>')}</div>
         </div>
         <div class="panel">
             <h2><span class="panel-icon">🔥</span> Top 5 Highlights</h2>
@@ -508,9 +518,9 @@ function renderOverview() {
                     ${r.top_items.slice(0, 5).map(it => `
                         <tr>
                             <td class="rank-cell">${it.rank}</td>
-                            <td><a href="${it.url}" target="_blank" rel="noopener">${it.title.slice(0, 80)}</a></td>
+                            <td><a href="${escAttr(it.url)}" target="_blank" rel="noopener">${esc(it.title.slice(0, 80))}</a></td>
                             <td>${srcBadge(it.source)}</td>
-                            <td class="hide-mobile">${it.lang ? `<span class="lang-badge">${it.lang}</span>` : ''}</td>
+                            <td class="hide-mobile">${it.lang ? `<span class="lang-badge">${esc(it.lang)}</span>` : ''}</td>
                             <td class="eng-cell">${fmt(it.engagement)}</td>
                         </tr>
                     `).join('')}
@@ -532,7 +542,7 @@ function renderAnalyst() {
 
     const section = (icon, title, items, color) => {
         if (!items || !items.length) return '';
-        const lis = items.map(i => `<li style="${color ? 'color:'+color : ''}">${i}</li>`).join('');
+        const lis = items.map(i => `<li style="${color ? 'color:'+color : ''}">${esc(i)}</li>`).join('');
         return `<div style="margin-bottom:1rem"><strong>${icon} ${title}</strong><ul style="margin:0.3rem 0 0 1.2rem;color:var(--text2)">${lis}</ul></div>`;
     };
 
@@ -566,7 +576,7 @@ function renderTop() {
                         <tr>
                             <td class="rank-cell">${it.rank}</td>
                             <td>
-                                <a href="${it.url}" target="_blank" rel="noopener">${it.title.slice(0, 80)}</a>
+                                <a href="${escAttr(it.url)}" target="_blank" rel="noopener">${esc(it.title.slice(0, 80))}</a>
                                 ${it.rank <= 3 ? ' <span class="badge badge-hot">HOT</span>' : ''}
                             </td>
                             <td>${srcBadge(it.source)}</td>
@@ -592,7 +602,7 @@ function renderPlatforms() {
                             <span style="color:var(--text3);font-size:0.8rem">${data.count} items</span>
                         </div>
                         <div class="metric">Total Engagement: <strong>${fmt(data.total_engagement)}</strong></div>
-                        ${data.top_item ? `<div class="top-post">Top: ${data.top_item.title.slice(0, 60)}</div>` : ''}
+                        ${data.top_item ? `<div class="top-post">Top: ${esc(data.top_item.title.slice(0, 60))}</div>` : ''}
                     </div>
                 `).join('')}
             </div>
@@ -636,7 +646,7 @@ function renderTopics() {
         <div class="panel">
             <h2>${TOPIC_LABELS[key] || key}</h2>
             <ul style="list-style:none;padding:0;">
-                ${data.sample_titles.map(t => `<li style="padding:0.3rem 0;color:var(--text2);font-size:0.9rem;">• ${t}</li>`).join('')}
+                ${data.sample_titles.map(t => `<li style="padding:0.3rem 0;color:var(--text2);font-size:0.9rem;">• ${esc(t)}</li>`).join('')}
             </ul>
         </div>` : '').join('')}`;
 }
@@ -650,7 +660,7 @@ function renderAll() {
     return `
         <div class="search-bar">
             <input class="search-input" id="search-input" type="text" placeholder="Search items..."
-                   value="${searchQuery}" oninput="onSearch(this.value)">
+                   value="${escAttr(searchQuery)}" oninput="onSearch(this.value)">
         </div>
         <div class="panel">
             <h2><span class="panel-icon">📰</span> All Items <span style="color:var(--text3);font-size:0.85rem;font-weight:400">(${filtered.length})</span></h2>
@@ -660,19 +670,19 @@ function renderAll() {
                     <div class="news-card">
                         <div class="news-card-top">
                             <div class="news-card-title">
-                                ${it.url ? `<a href="${it.url}" target="_blank" rel="noopener">${it.title}</a>` : it.title}
+                                ${it.url ? `<a href="${escAttr(it.url)}" target="_blank" rel="noopener">${esc(it.title)}</a>` : esc(it.title)}
                             </div>
                             ${it.is_hot ? '<span class="badge badge-hot">HOT</span>' : ''}
                         </div>
-                        ${it.summary && it.summary !== '-' ? `<div class="news-card-body">${it.summary.slice(0, 150)}</div>` : ''}
+                        ${it.summary && it.summary !== '-' ? `<div class="news-card-body">${esc(it.summary.slice(0, 150))}</div>` : ''}
                         <div class="news-card-meta">
                             ${srcBadge(it.source)}
-                            ${it.lang ? `<span class="lang-badge">${it.lang}</span>` : ''}
+                            ${it.lang ? `<span class="lang-badge">${esc(it.lang)}</span>` : ''}
                             <span>${timeAgo(it.time)}</span>
                             ${it.engagement ? `<span>Eng: ${fmt(it.engagement)}</span>` : ''}
-                            ${it.author ? `<span>${it.author}</span>` : ''}
+                            ${it.author ? `<span>${esc(it.author)}</span>` : ''}
                         </div>
-                        ${it.tags && it.tags.length ? `<div class="news-card-tags">${it.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+                        ${it.tags && it.tags.length ? `<div class="news-card-tags">${it.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>` : ''}
                     </div>
                 `).join('')}
             </div>

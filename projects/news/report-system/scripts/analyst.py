@@ -12,6 +12,7 @@
 
 import json
 import os
+import re
 import logging
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -41,8 +42,12 @@ class Memory:
 
     def _load(self):
         if MEMORY_PATH.exists():
-            with open(MEMORY_PATH, "r", encoding="utf-8") as f:
-                return json.load(f)
+            try:
+                with open(MEMORY_PATH, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except (json.JSONDecodeError, ValueError) as e:
+                logger.warning(f"Memory file corrupted, resetting: {e}")
+                return self._default()
         return self._default()
 
     def _default(self):
@@ -62,8 +67,11 @@ class Memory:
     def save(self):
         self.data["last_updated"] = datetime.now(timezone.utc).isoformat()
         MEMORY_PATH.parent.mkdir(parents=True, exist_ok=True)
-        with open(MEMORY_PATH, "w", encoding="utf-8") as f:
+        # 写入临时文件后重命名，避免写入中断导致数据损坏
+        tmp_path = MEMORY_PATH.with_suffix(".tmp")
+        with open(tmp_path, "w", encoding="utf-8") as f:
             json.dump(self.data, f, ensure_ascii=False, indent=2)
+        tmp_path.replace(MEMORY_PATH)
         logger.info(f"Memory saved → {MEMORY_PATH}")
 
     def get_recent_trends(self, days=7):
@@ -100,7 +108,7 @@ class Memory:
         self.data["anomalies"] = self.data["anomalies"][-50:]
 
     def update_topic_tracker(self, topics_today):
-        """更新话题连续出现天数。"""
+        """更新话题连续出现天数，并清理超过30天未出现的话题。"""
         tracker = self.data.setdefault("topic_tracker", {})
         today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
@@ -122,6 +130,12 @@ class Memory:
                     "consecutive_days": 1,
                     "total_appearances": 1,
                 }
+
+        # 清理超过30天未出现的话题，防止无限增长
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%d")
+        stale = [t for t, info in tracker.items() if info.get("last_seen", "") < cutoff]
+        for t in stale:
+            del tracker[t]
 
     def increment_report_count(self):
         self.data["total_reports"] = self.data.get("total_reports", 0) + 1
@@ -329,8 +343,9 @@ def _build_user_prompt(items, pre_analysis, memory):
         else:
             anomaly_text = f"\n## ⚠ 互动量异常\n今日互动量 {anomaly['today']} 仅为近7天均值 {anomaly['avg']} 的 {anomaly['ratio']}x，出现明显下降。"
 
-    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    weekday = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"][datetime.now(timezone.utc).weekday()]
+    _utc8 = timezone(timedelta(hours=8))
+    today = datetime.now(_utc8).strftime("%Y-%m-%d")
+    weekday = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"][datetime.now(_utc8).weekday()]
 
     return f"""# 今日社区情报 ({today} {weekday})
 
@@ -351,7 +366,6 @@ def _build_user_prompt(items, pre_analysis, memory):
 
 def _parse_claude_response(raw_text, pre_analysis):
     """解析 Claude 返回的 JSON。"""
-    import re
 
     # 尝试提取 JSON
     json_match = re.search(r'\{[\s\S]*\}', raw_text)
