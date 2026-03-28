@@ -30,7 +30,7 @@ import requests
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
 
-OUTPUT_PATH = Path(__file__).parent.parent / 'data' / 'news.json'
+OUTPUT_PATH = Path(__file__).parent.parent.parent.parent / 'assets' / 'data' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
 HOURS_LOOKBACK = 24
 

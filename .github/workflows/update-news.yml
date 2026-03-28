@@ -20,7 +20,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install -r news/requirements.txt
+        run: pip install -r projects/news/requirements.txt
 
       - name: Run aggregator
         env:
@@ -28,11 +28,11 @@ jobs:
           NGA_FORUM_ID: ${{ secrets.NGA_FORUM_ID }}
           TAPTAP_APP_ID: ${{ secrets.TAPTAP_APP_ID }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-        run: python news/scripts/aggregator.py
+        run: python projects/news/scripts/aggregator.py
 
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add news/data/news.json
+          git add assets/data/news.json
           git diff --staged --quiet || (git commit -m "chore: update community news [skip ci]" && git push)
