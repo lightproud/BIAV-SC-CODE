@@ -13,12 +13,11 @@
 - **claude.ai 战略参谋**：分析、策划、基于仓库数据直接交付文档
 - **Code-主控制台**：项目规划、架构决策、协调子项目、代码审查
 - **Code-news**：社区热点聚合器 + 报告系统开发与维护
-- **Code-database**：官方数据库构建
-- **Code-wiki**：多语言 Wiki 站点开发与维护
+- **Code-wiki**：游戏数据集 + 多语言 Wiki 站点
 - **Code-game**：衍生游戏开发
 
 ## 当前优先级
-1. 官方数据库构建（database）— 积累数据基础
+1. Wiki 数据集与站点（wiki）— 积累数据基础 + 社区展示
 2. 新闻收集器完善（news）— 接入更多数据源
 3. 衍生游戏规划（game）— 确定方向
 
@@ -46,8 +45,7 @@ brain-in-a-vat/
 │   └── templates/               # 文档模板
 ├── projects/                    # 子项目工作区
 │   ├── news/                    # 社区新闻聚合 + 报告系统
-│   ├── database/                # 官方数据库
-│   ├── wiki/                    # 多语言 Wiki（VitePress）
+│   ├── wiki/                    # 游戏数据集 + 多语言 Wiki 站点
 │   └── game/                    # 衍生游戏
 └── deliverables/                # 已交付成品存档
 ```
