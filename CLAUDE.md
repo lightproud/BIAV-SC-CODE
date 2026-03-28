@@ -12,8 +12,9 @@
 ## 会话角色定义
 - **claude.ai 战略参谋**：分析、策划、基于仓库数据直接交付文档
 - **Code-主控制台**：项目规划、架构决策、协调子项目、代码审查
-- **Code-news**：社区热点聚合器开发与维护
+- **Code-news**：社区热点聚合器 + 报告系统开发与维护
 - **Code-database**：官方数据库构建
+- **Code-wiki**：多语言 Wiki 站点开发与维护
 - **Code-game**：衍生游戏开发
 
 ## 当前优先级
@@ -44,8 +45,9 @@ brain-in-a-vat/
 │   ├── data/                    # 结构化数据（JSON/CSV）
 │   └── templates/               # 文档模板
 ├── projects/                    # 子项目工作区
-│   ├── news/                    # 社区新闻聚合
+│   ├── news/                    # 社区新闻聚合 + 报告系统
 │   ├── database/                # 官方数据库
+│   ├── wiki/                    # 多语言 Wiki（VitePress）
 │   └── game/                    # 衍生游戏
 └── deliverables/                # 已交付成品存档
 ```
@@ -69,6 +71,6 @@ brain-in-a-vat/
 6. 不要修改其他子项目的代码
 
 ## 代码风格
-- 前端：纯 HTML/CSS/JS，无框架
+- 各子项目按需选择技术栈（不强制统一前端方案）
 - 后端：Python 3.11+
 - 部署：GitHub Pages + GitHub Actions
