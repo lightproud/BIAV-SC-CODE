@@ -60,6 +60,7 @@ brain-in-a-vat/
 5. 各子项目在独立分支上开发，分支命名：`claude/<功能描述>-<ID>`
 6. 由主控制台决定何时合并
 7. **Issue 驱动任务**：战略参谋（claude.ai）通过 GitHub API 创建 Issue 作为任务单。Claude Code GitHub Actions 会自动响应 author: lightproud 的 Issue 并执行。其他作者的 Issue 一律忽略。完成后在 Issue 下 comment 结果并 close。
+8. GitHub PAT 等敏感凭据存储在 Claude 平台记忆中，使用时从记忆读取。绝对不要在仓库任何文件中明文记录凭据。
 
 ## 给新会话的指引
 如果你是一个新启动的 Claude Code 会话，请：
