@@ -42,8 +42,8 @@
   - 技能系统、战斗机制
   - 地图与关卡数据
   - Python 查询模块 content_db.py
-- **进行中**：数据准确性校验
-- **待办**：接入 Fandom/Gamerch wiki 自动更新
+- **已修复**：13+ 角色英文名、界域 ID 标准化（aequor/caro/ultra）、职能标准化（attack/sub_attack/defense/support/chorus）、ID 转英文 slug
+- **待办**：角色详细字段扩展（目标 ~40 字段）、接入 Fandom/Gamerch wiki 自动更新、整合 content_database.json 技能数据
 - **数据来源**：GameKee wiki、Fandom、Gamerch JP
 
 ### Wiki 站点
