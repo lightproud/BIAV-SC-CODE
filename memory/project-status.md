@@ -32,9 +32,20 @@
 
 ## Database 官方数据库
 
-- **已完成**：16 个模块化 JSON 数据文件（角色、技能、装备、地图、战斗等）、Python 查询模块 content_db.py
-- **进行中**：数据验证与补充
-- **存储格式**：已确定为模块化 JSON（`projects/database/data/db/`）
+- **已完成**：
+  - 16 个 JSON 数据文件已入库（`projects/database/data/db/`）
+  - 56 个 SSR 唤醒体 + SR 角色数据
+  - 命轮与圣契装备体系
+  - 四大界域体系（Chaos、Aequor、Caro、Ultra）
+  - 版本线（含联动记录）
+  - 世界观设定（组织、关键角色、主线剧情）
+  - 技能系统、战斗机制
+  - 地图与关卡数据
+  - Python 查询模块 content_db.py
+- **进行中**：数据准确性校验
+- **待办**：接入 Fandom/Gamerch wiki 自动更新
+- **存储格式**：模块化 JSON
+- **数据来源**：GameKee wiki、Fandom、Gamerch JP
 
 ## Wiki 多语言 Wiki
 
