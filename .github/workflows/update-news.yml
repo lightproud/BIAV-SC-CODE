@@ -1,0 +1,38 @@
+name: Update Community News
+
+on:
+  schedule:
+    # Run every hour
+    - cron: '0 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r projects/news/requirements.txt
+
+      - name: Run aggregator
+        env:
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          NGA_FORUM_ID: ${{ secrets.NGA_FORUM_ID }}
+          TAPTAP_APP_ID: ${{ secrets.TAPTAP_APP_ID }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        run: python projects/news/scripts/aggregator.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/data/news.json
+          git diff --staged --quiet || (git commit -m "chore: update community news [skip ci]" && git push)
