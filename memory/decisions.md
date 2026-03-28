@@ -28,13 +28,13 @@
 
 ### 废弃分支清理
 - 已合并或被继承的分支应及时删除
-- 待清理：`claude/create-main-control-dialog-s0GuV`、`claude/initial-setup-2rzjz`
+- 已清理：`claude/create-main-control-dialog-s0GuV`、`claude/initial-setup-2rzjz`
+- 待清理（重构后）：`claude/community-news-aggregator-1TRtx`、`claude/new-session-7Plu3`、`claude/create-content-database-fhrVq`、`claude/morimens-wiki-site-12fyA`
 
 ### 当前活跃分支
 | 分支 | 子项目 | 说明 |
 |------|--------|------|
 | `claude/main-control-console-ObGQw` | 主控制台 | 项目规划与协调 |
-| `claude/community-news-aggregator-1TRtx` | news | 社区新闻聚合 |
-| `claude/create-content-database-fhrVq` | database | 官方数据库 |
-| `claude/morimens-wiki-site-12fyA` | wiki | Wiki 站点 |
-| `claude/new-session-7Plu3` | news(?) | 含 notifier 模块，待确认归属 |
+| `claude/database-restructure` | database | 重构后的官方数据库 |
+| `claude/news-restructure` | news | 重构后的新闻聚合 + 报告系统 |
+| `claude/wiki-restructure` | wiki | 重构后的 Wiki 站点 |

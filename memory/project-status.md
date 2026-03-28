@@ -6,14 +6,15 @@
 
 | 子项目 | 状态 | 负责会话 | 下一步 |
 |--------|------|---------|--------|
-| news（新闻聚合） | 运行中 | Code-news | 接入更多数据源 |
-| database（官方数据库） | 开发中 | Code-database | 确定数据结构 |
+| news（新闻聚合 + 报告系统） | 运行中 | Code-news | 配置 API 密钥，启用更多数据源 |
+| database（官方数据库） | 数据就绪 | Code-database | 完善查询接口，补充缺失数据 |
+| wiki（多语言 Wiki） | 内容就绪 | Code-wiki | 填充模板页面，部署到 GitHub Pages |
 | game（衍生游戏） | 规划中 | 待创建 | 确定游戏类型 |
 
-## News 聚合器
+## News 新闻聚合 + 报告系统
 
+### 实时聚合器
 - **已完成**：前端页面、B站抓取、GitHub Actions 自动化
-- **进行中**：无
 - **阻塞**：Twitter/NGA/TapTap 需配置密钥
 - **数据源状态**：
   - [x] Bilibili — 正常运行
@@ -24,11 +25,23 @@
   - [ ] Discord — 未实现
   - [ ] YouTube — 未实现
 
+### 报告系统（新增，来自 new-session-7Plu3）
+- **已完成**：29 平台采集器、AI 分析模块、报告生成、多渠道通知（Email/Discord/Telegram/Bark/Webhook）
+- **待验证**：整合到新目录结构后的 GitHub Actions 流水线
+- **待配置**：各平台 API 密钥
+
 ## Database 官方数据库
 
-- **已完成**：无
-- **进行中**：规划数据结构
-- **待决策**：存储格式（JSON / SQLite / YAML）
+- **已完成**：16 个模块化 JSON 数据文件（角色、技能、装备、地图、战斗等）、Python 查询模块 content_db.py
+- **进行中**：数据验证与补充
+- **存储格式**：已确定为模块化 JSON（`projects/database/data/db/`）
+
+## Wiki 多语言 Wiki
+
+- **已完成**：VitePress 站点框架、三语言结构（EN/JA/ZH）、约 190 页 Markdown
+- **进行中**：填充模板页面内容
+- **技术栈**：VitePress 1.6.3 + Vue 3.5.13
+- **待部署**：GitHub Pages
 
 ## Game 衍生游戏
 
