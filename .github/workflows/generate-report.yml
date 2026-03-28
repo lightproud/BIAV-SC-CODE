@@ -1,0 +1,87 @@
+name: Generate Global Report
+
+on:
+  schedule:
+    # 每天 UTC+8 00:00 (即 UTC 16:00) 运行一次
+    - cron: '0 16 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: projects/news/report-system
+
+jobs:
+  collect-and-report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Collect global data
+        env:
+          HOURS_LOOKBACK: '24'
+          # --- 中文平台 ---
+          NGA_FORUM_ID: ${{ secrets.NGA_FORUM_ID }}
+          TAPTAP_APP_ID: ${{ secrets.TAPTAP_APP_ID }}
+          QQ_GUILD_ID: ${{ secrets.QQ_GUILD_ID }}
+          QQ_BOT_TOKEN: ${{ secrets.QQ_BOT_TOKEN }}
+          BAHAMUT_BSN: ${{ secrets.BAHAMUT_BSN }}
+          # --- 全球平台 ---
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_IDS: ${{ secrets.DISCORD_CHANNEL_IDS }}
+          FACEBOOK_ACCESS_TOKEN: ${{ secrets.FACEBOOK_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_IDS: ${{ secrets.FACEBOOK_PAGE_IDS }}
+          TELEGRAM_CHANNELS: ${{ secrets.TELEGRAM_CHANNELS }}
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_ACCESS_TOKEN: ${{ secrets.TWITCH_ACCESS_TOKEN }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          # --- 韩国平台 ---
+          DC_GALLERY_ID: ${{ secrets.DC_GALLERY_ID }}
+          ARCA_CHANNEL: ${{ secrets.ARCA_CHANNEL }}
+          # --- 应用商店 ---
+          APPSTORE_APP_ID: ${{ secrets.APPSTORE_APP_ID }}
+          GOOGLE_PLAY_PACKAGE: ${{ secrets.GOOGLE_PLAY_PACKAGE }}
+        run: python scripts/collector.py
+
+      - name: Run analyst
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_API_URL: ${{ secrets.LLM_API_URL }}
+        run: python scripts/analyst.py
+
+      - name: Generate report
+        run: python scripts/reporter.py
+
+      - name: Send notifications
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+          NOTIFY_DISCORD_WEBHOOK: ${{ secrets.NOTIFY_DISCORD_WEBHOOK }}
+          NOTIFY_TELEGRAM_BOT_TOKEN: ${{ secrets.NOTIFY_TELEGRAM_BOT_TOKEN }}
+          NOTIFY_TELEGRAM_CHAT_ID: ${{ secrets.NOTIFY_TELEGRAM_CHAT_ID }}
+          NOTIFY_BARK_URL: ${{ secrets.NOTIFY_BARK_URL }}
+          NOTIFY_WEBHOOK_URL: ${{ secrets.NOTIFY_WEBHOOK_URL }}
+        run: python scripts/notifier.py
+
+      - name: Commit and push if changed
+        working-directory: .
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/news/report-system/data/
+          git diff --staged --quiet || (git commit -m "chore: daily report $(date -u +%Y-%m-%d) [skip ci]" && git push)

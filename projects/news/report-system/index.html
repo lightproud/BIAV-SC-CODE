@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>忘却前夜 Morimens - 全球情报报告系统</title>
+    <style>
+        :root {
+            --bg: #06061a;
+            --bg2: #0d0d2b;
+            --bg3: #151540;
+            --bg4: #1c1c55;
+            --text: #e4e4f8;
+            --text2: #9e9ec8;
+            --text3: #6565a0;
+            --purple: #8b5cf6;
+            --purple-dim: rgba(139, 92, 246, 0.15);
+            --blue: #3b82f6;
+            --pink: #ec4899;
+            --amber: #f59e0b;
+            --green: #10b981;
+            --red: #ef4444;
+            --cyan: #06b6d4;
+            --border: #252560;
+            --border2: #353580;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ─── Header ─── */
+        .header {
+            background: linear-gradient(135deg, #1a0533 0%, #0d1b3e 50%, #0a2540 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(139,92,246,0.08) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #c084fc, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .header .subtitle {
+            color: var(--text2);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+        .header-info {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--text3);
+            flex-wrap: wrap;
+        }
+        .header-info .pulse {
+            width: 8px; height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 2s infinite;
+            vertical-align: middle;
+            margin-right: 0.3rem;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* ─── Layout ─── */
+        .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
+
+        /* ─── Stats Grid ─── */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .stat-card {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.2rem;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+        .stat-card:hover { border-color: var(--purple); }
+        .stat-card .value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--purple), var(--blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .label {
+            font-size: 0.72rem;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 0.3rem;
+        }
+
+        /* ─── Tabs ─── */
+        .tabs {
+            display: flex;
+            gap: 0.4rem;
+            margin-bottom: 1.5rem;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding-bottom: 0.25rem;
+        }
+        .tabs::-webkit-scrollbar { display: none; }
+        .tab-btn {
+            padding: 0.45rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--text2);
+            font-size: 0.82rem;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        .tab-btn:hover { border-color: var(--purple); color: var(--text); }
+        .tab-btn.active { background: var(--purple); border-color: var(--purple); color: #fff; }
+
+        /* ─── Panel ─── */
+        .panel {
+            background: var(--bg2);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .panel h2 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .panel-icon { margin-right: 0.4rem; }
+
+        /* ─── Summary ─── */
+        .summary-text {
+            color: var(--text2);
+            font-size: 0.92rem;
+            line-height: 1.9;
+            white-space: pre-line;
+        }
+
+        /* ─── Table ─── */
+        .data-table { width: 100%; border-collapse: collapse; }
+        .data-table th {
+            text-align: left;
+            padding: 0.5rem 0.6rem;
+            font-size: 0.72rem;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 1px solid var(--border);
+        }
+        .data-table td {
+            padding: 0.6rem;
+            font-size: 0.88rem;
+            border-bottom: 1px solid rgba(37, 37, 96, 0.5);
+            vertical-align: middle;
+        }
+        .data-table tr:hover td { background: rgba(139, 92, 246, 0.03); }
+        .data-table a { color: var(--text); text-decoration: none; }
+        .data-table a:hover { color: var(--purple); }
+        .rank-cell { color: var(--amber); font-weight: 700; width: 2.5rem; }
+        .eng-cell { text-align: right; color: var(--purple); font-weight: 600; }
+        .time-cell { color: var(--text3); font-size: 0.8rem; white-space: nowrap; }
+
+        /* ─── Badges ─── */
+        .badge {
+            display: inline-block;
+            padding: 0.12rem 0.5rem;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .badge-hot { background: linear-gradient(135deg, var(--red), var(--pink)); color: #fff; }
+        /* 中文平台 */
+        .src-bilibili { background: rgba(0,174,236,0.12); color: #00aeec; }
+        .src-nga { background: rgba(245,158,11,0.12); color: #f59e0b; }
+        .src-taptap { background: rgba(16,185,129,0.12); color: #10b981; }
+        .src-weibo { background: rgba(230,36,41,0.12); color: #e62429; }
+        .src-xiaohongshu { background: rgba(255,45,85,0.12); color: #ff2d55; }
+        .src-douyin { background: rgba(0,0,0,0.12); color: #fe2c55; }
+        .src-tieba { background: rgba(78,110,242,0.12); color: #4e6ef2; }
+        /* 全球平台 */
+        .src-reddit { background: rgba(255,69,0,0.12); color: #ff6b35; }
+        .src-twitter { background: rgba(29,155,240,0.12); color: #1d9bf0; }
+        .src-youtube { background: rgba(255,0,0,0.12); color: #ff4444; }
+        .src-discord { background: rgba(88,101,242,0.12); color: #5865f2; }
+        .src-facebook { background: rgba(24,119,242,0.12); color: #1877f2; }
+        /* 韩国平台 */
+        .src-naver_cafe { background: rgba(3,199,90,0.12); color: #03c75a; }
+        .src-dcinside { background: rgba(0,47,167,0.12); color: #002fa7; }
+        .src-arca_live { background: rgba(64,169,255,0.12); color: #40a9ff; }
+        /* 日本 */
+        .src-fivech { background: rgba(255,152,0,0.12); color: #ff9800; }
+        .src-qq { background: rgba(18,183,245,0.12); color: #12b7f5; }
+        .src-zhihu { background: rgba(6,109,244,0.12); color: #066df4; }
+        .src-bahamut { background: rgba(0,106,180,0.12); color: #006ab4; }
+        /* 同人创作 */
+        .src-pixiv { background: rgba(0,150,250,0.12); color: #0096fa; }
+        .src-lofter { background: rgba(0,168,98,0.12); color: #00a862; }
+        /* 周边/交易 */
+        .src-xianyu { background: rgba(255,199,0,0.12); color: #ffc700; }
+        .src-taobao { background: rgba(255,80,0,0.12); color: #ff5000; }
+        /* 全球补充 */
+        .src-tiktok { background: rgba(0,0,0,0.12); color: #ee1d52; }
+        .src-telegram { background: rgba(0,136,204,0.12); color: #0088cc; }
+        .src-twitch { background: rgba(145,70,255,0.12); color: #9146ff; }
+        .src-instagram { background: rgba(225,48,108,0.12); color: #e1306c; }
+        /* 其他 */
+        .src-appstore { background: rgba(0,122,255,0.12); color: #007aff; }
+        .src-google_play { background: rgba(52,168,83,0.12); color: #34a853; }
+        .src-official { background: rgba(139,92,246,0.12); color: #8b5cf6; }
+
+        .lang-badge {
+            display: inline-block;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            font-weight: 500;
+            background: rgba(6,182,212,0.1);
+            color: var(--cyan);
+        }
+
+        /* ─── Platform Cards ─── */
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .platform-card {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+        .platform-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.6rem;
+        }
+        .platform-card .metric { font-size: 0.82rem; color: var(--text2); }
+        .platform-card .metric strong { color: var(--purple); }
+        .platform-card .top-post {
+            font-size: 0.8rem;
+            color: var(--text3);
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ─── Topic Tags ─── */
+        .topics-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+        .topic-chip {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.82rem;
+            color: var(--text2);
+        }
+        .topic-chip .count {
+            background: var(--purple);
+            color: #fff;
+            border-radius: 50%;
+            width: 1.4rem;
+            height: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            font-weight: 700;
+        }
+
+        /* ─── News Cards (full list) ─── */
+        .news-list { display: flex; flex-direction: column; gap: 0.75rem; }
+        .news-card {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            transition: all 0.2s;
+        }
+        .news-card:hover { border-color: var(--purple); transform: translateY(-1px); }
+        .news-card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.5rem; }
+        .news-card-title { font-size: 0.95rem; font-weight: 600; flex: 1; }
+        .news-card-title a { color: var(--text); text-decoration: none; }
+        .news-card-title a:hover { color: var(--purple); }
+        .news-card-body { color: var(--text2); font-size: 0.85rem; margin: 0.4rem 0; line-height: 1.6; }
+        .news-card-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 0.78rem;
+            color: var(--text3);
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .news-card-tags { display: flex; gap: 0.3rem; flex-wrap: wrap; margin-top: 0.5rem; }
+        .news-card-tags .tag {
+            font-size: 0.68rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            background: var(--purple-dim);
+            color: var(--purple);
+            border: 1px solid rgba(139,92,246,0.15);
+        }
+
+        /* ─── Search ─── */
+        .search-bar {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .search-input {
+            flex: 1;
+            padding: 0.6rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg3);
+            color: var(--text);
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-input::placeholder { color: var(--text3); }
+        .search-input:focus { border-color: var(--purple); }
+
+        /* ─── Loading ─── */
+        .loading { text-align: center; padding: 3rem; color: var(--text3); }
+        .spinner {
+            width: 40px; height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--purple);
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .empty { text-align: center; padding: 2rem; color: var(--text3); }
+
+        /* ─── Footer ─── */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text3);
+            font-size: 0.78rem;
+            border-top: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 640px) {
+            .header h1 { font-size: 1.3rem; }
+            .container { padding: 1rem; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-card .value { font-size: 1.4rem; }
+            .platforms-grid { grid-template-columns: 1fr; }
+            .data-table .hide-mobile { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <h1>忘却前夜 全球情报报告系统</h1>
+    <div class="subtitle">Morimens Global Community Intelligence Report</div>
+    <div class="header-info">
+        <span><span class="pulse"></span> <span id="hd-status">Loading...</span></span>
+        <span id="hd-report-id">--</span>
+        <span id="hd-period">--</span>
+    </div>
+</header>
+
+<div class="container">
+
+    <!-- Stats -->
+    <div class="stats-grid">
+        <div class="stat-card"><div class="value" id="st-total">--</div><div class="label">Total Items</div></div>
+        <div class="stat-card"><div class="value" id="st-engagement">--</div><div class="label">Total Engagement</div></div>
+        <div class="stat-card"><div class="value" id="st-sources">--</div><div class="label">Active Sources</div></div>
+        <div class="stat-card"><div class="value" id="st-hot">--</div><div class="label">Hot Items</div></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabs">
+        <button class="tab-btn active" data-tab="overview">Overview</button>
+        <button class="tab-btn" data-tab="analyst">Analyst</button>
+        <button class="tab-btn" data-tab="top">Top 10</button>
+        <button class="tab-btn" data-tab="platforms">Platforms</button>
+        <button class="tab-btn" data-tab="topics">Topics</button>
+        <button class="tab-btn" data-tab="all">All Items</button>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="tab-content">
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading report data...</p>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <p>忘却前夜 Morimens - 全球情报报告系统 v2.0</p>
+    <p style="margin-top:0.3rem;">Data: 29 platforms — CN: Bilibili · NGA · TapTap · Weibo · 小红书 · 抖音 · 贴吧 · QQ · 知乎 · 巴哈 | Fan: Pixiv · Lofter | Trade: 闲鱼 · 淘宝 | Global: Reddit · Twitter/X · YouTube · Discord · Facebook · TikTok · Telegram · Twitch · Instagram | KR: Naver · DC · Arca | JP: 5ch | Store: App Store · Google Play</p>
+    <p style="margin-top:0.3rem;"><a href="data/feed.xml" style="color:var(--purple);text-decoration:none;">RSS Feed</a></p>
+</footer>
+
+<script>
+const REPORT_URL = 'data/report.json';
+let reportData = null;
+let currentTab = 'overview';
+let searchQuery = '';
+
+const SRC_LABELS = {
+    // 中文
+    bilibili: 'Bilibili', nga: 'NGA', taptap: 'TapTap',
+    weibo: 'Weibo', xiaohongshu: 'Xiaohongshu', douyin: 'Douyin', tieba: 'Tieba',
+    qq: 'QQ频道', zhihu: '知乎', bahamut: '巴哈姆特',
+    // 同人创作
+    pixiv: 'Pixiv', lofter: 'Lofter',
+    // 周边/交易
+    xianyu: '闲鱼', taobao: '淘宝周边',
+    // 全球
+    reddit: 'Reddit', twitter: 'Twitter/X', youtube: 'YouTube',
+    discord: 'Discord', facebook: 'Facebook',
+    tiktok: 'TikTok', telegram: 'Telegram', twitch: 'Twitch', instagram: 'Instagram',
+    // 韩国
+    naver_cafe: 'Naver Cafe', dcinside: 'DCInside', arca_live: 'Arca.live',
+    // 日本
+    fivech: '5ch',
+    // 其他
+    appstore: 'App Store', google_play: 'Google Play', official: 'Official',
+};
+
+function fmt(n) {
+    if (n >= 10000) return (n / 10000).toFixed(1) + 'w';
+    if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
+    return String(n);
+}
+
+function timeAgo(iso) {
+    const d = new Date(iso);
+    const diff = Math.floor((Date.now() - d) / 60000);
+    if (diff < 1) return 'Just now';
+    if (diff < 60) return diff + 'm ago';
+    const h = Math.floor(diff / 60);
+    if (h < 24) return h + 'h ago';
+    return d.toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' });
+}
+
+function srcBadge(source) {
+    return `<span class="badge src-${source}">${SRC_LABELS[source] || source}</span>`;
+}
+
+// ─── Tab Renderers ───
+
+function renderOverview() {
+    const r = reportData;
+    return `
+        <div class="panel">
+            <h2><span class="panel-icon">📋</span> Daily Summary</h2>
+            <div class="summary-text">${(r.summary || 'No summary available.').replace(/\n/g, '<br>')}</div>
+        </div>
+        <div class="panel">
+            <h2><span class="panel-icon">🔥</span> Top 5 Highlights</h2>
+            <table class="data-table">
+                <thead><tr><th>#</th><th>Title</th><th>Source</th><th class="hide-mobile">Lang</th><th style="text-align:right">Eng.</th></tr></thead>
+                <tbody>
+                    ${r.top_items.slice(0, 5).map(it => `
+                        <tr>
+                            <td class="rank-cell">${it.rank}</td>
+                            <td><a href="${it.url}" target="_blank" rel="noopener">${it.title.slice(0, 80)}</a></td>
+                            <td>${srcBadge(it.source)}</td>
+                            <td class="hide-mobile">${it.lang ? `<span class="lang-badge">${it.lang}</span>` : ''}</td>
+                            <td class="eng-cell">${fmt(it.engagement)}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        </div>`;
+}
+
+function renderAnalyst() {
+    const a = reportData.analyst || {};
+    const hasSomething = a.key_events?.length || a.risk_alerts?.length || a.trend_notes?.length || a.insights?.length || a.tomorrow_watch?.length;
+
+    if (!hasSomething) {
+        return `<div class="panel" style="border-color:rgba(139,92,246,0.4);background:linear-gradient(135deg,rgba(139,92,246,0.05),rgba(59,130,246,0.05))">
+            <h2><span class="panel-icon">🤖</span> Private Analyst</h2>
+            <div style="color:var(--text3)">No analyst data yet. Configure LLM_API_KEY or run the analyst module.</div>
+        </div>`;
+    }
+
+    const section = (icon, title, items, color) => {
+        if (!items || !items.length) return '';
+        const lis = items.map(i => `<li style="${color ? 'color:'+color : ''}">${i}</li>`).join('');
+        return `<div style="margin-bottom:1rem"><strong>${icon} ${title}</strong><ul style="margin:0.3rem 0 0 1.2rem;color:var(--text2)">${lis}</ul></div>`;
+    };
+
+    const sentimentColors = { positive: 'var(--green)', negative: 'var(--red)', mixed: 'var(--amber)', neutral: 'var(--text3)' };
+    const sColor = sentimentColors[a.sentiment] || 'var(--text3)';
+
+    return `
+        <div class="panel" style="border-color:rgba(139,92,246,0.4);background:linear-gradient(135deg,rgba(139,92,246,0.05),rgba(59,130,246,0.05))">
+            <h2><span class="panel-icon">🤖</span> Private Analyst <span style="font-size:0.8rem;font-weight:400;color:var(--text3);margin-left:auto">Report #${a.report_number || '?'}</span></h2>
+            ${section('⚠️', 'Risk Alerts', a.risk_alerts, 'var(--red)')}
+            ${section('📌', 'Key Events', a.key_events)}
+            ${section('📈', 'Trend Notes', a.trend_notes)}
+            ${section('💡', 'Insights', a.insights)}
+            ${section('🔭', 'Tomorrow Watch', a.tomorrow_watch)}
+            <div style="display:flex;gap:1.5rem;margin-top:1rem;padding-top:0.8rem;border-top:1px solid var(--border);font-size:0.82rem;color:var(--text3);flex-wrap:wrap">
+                <span>Sentiment: <span style="color:${sColor};font-weight:600">${a.sentiment || 'unknown'}</span></span>
+                <span>Focus Rating: <span style="color:var(--purple);font-weight:600">${a.focus_rating || 0}/10</span></span>
+            </div>
+        </div>`;
+}
+
+function renderTop() {
+    const items = reportData.top_items;
+    return `
+        <div class="panel">
+            <h2><span class="panel-icon">🏆</span> Top 10 Items</h2>
+            <table class="data-table">
+                <thead><tr><th>#</th><th>Title</th><th>Source</th><th class="hide-mobile">Time</th><th style="text-align:right">Eng.</th></tr></thead>
+                <tbody>
+                    ${items.map(it => `
+                        <tr>
+                            <td class="rank-cell">${it.rank}</td>
+                            <td>
+                                <a href="${it.url}" target="_blank" rel="noopener">${it.title.slice(0, 80)}</a>
+                                ${it.rank <= 3 ? ' <span class="badge badge-hot">HOT</span>' : ''}
+                            </td>
+                            <td>${srcBadge(it.source)}</td>
+                            <td class="time-cell hide-mobile">${it.time ? timeAgo(it.time) : ''}</td>
+                            <td class="eng-cell">${fmt(it.engagement)}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        </div>`;
+}
+
+function renderPlatforms() {
+    const platforms = reportData.analysis.platforms;
+    return `
+        <div class="panel">
+            <h2><span class="panel-icon">📊</span> Platform Activity</h2>
+            <div class="platforms-grid">
+                ${Object.entries(platforms).map(([name, data]) => `
+                    <div class="platform-card">
+                        <div class="platform-card-header">
+                            ${srcBadge(name)}
+                            <span style="color:var(--text3);font-size:0.8rem">${data.count} items</span>
+                        </div>
+                        <div class="metric">Total Engagement: <strong>${fmt(data.total_engagement)}</strong></div>
+                        ${data.top_item ? `<div class="top-post">Top: ${data.top_item.title.slice(0, 60)}</div>` : ''}
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        <div class="panel">
+            <h2><span class="panel-icon">🌍</span> Regional Breakdown</h2>
+            <div class="platforms-grid">
+                ${Object.entries(reportData.analysis.regions).map(([region, data]) => `
+                    <div class="platform-card">
+                        <div class="platform-card-header">
+                            <span style="font-weight:600">${({cn:'🇨🇳 China',global:'🌍 Global',jp:'🇯🇵 Japan',kr:'🇰🇷 Korea',sea:'🌏 SEA'})[region] || region}</span>
+                            <span style="color:var(--text3);font-size:0.8rem">${data.count} items</span>
+                        </div>
+                        <div class="metric">Engagement: <strong>${fmt(data.total_engagement)}</strong></div>
+                        <div class="top-post">Sources: ${data.sources.join(', ')}</div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>`;
+}
+
+function renderTopics() {
+    const topics = reportData.analysis.topics;
+    const TOPIC_LABELS = {
+        version_update: '版本更新', character: '角色相关', strategy: '攻略打法',
+        fan_creation: '同人创作', discussion: '社区讨论', news: '官方新闻', other: '其他',
+    };
+    return `
+        <div class="panel">
+            <h2><span class="panel-icon">🏷️</span> Topic Distribution</h2>
+            <div class="topics-wrap">
+                ${Object.entries(topics).map(([key, data]) => `
+                    <div class="topic-chip">
+                        <span>${TOPIC_LABELS[key] || key}</span>
+                        <span class="count">${data.count}</span>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        ${Object.entries(topics).map(([key, data]) => data.sample_titles.length ? `
+        <div class="panel">
+            <h2>${TOPIC_LABELS[key] || key}</h2>
+            <ul style="list-style:none;padding:0;">
+                ${data.sample_titles.map(t => `<li style="padding:0.3rem 0;color:var(--text2);font-size:0.9rem;">• ${t}</li>`).join('')}
+            </ul>
+        </div>` : '').join('')}`;
+}
+
+function renderAll() {
+    const items = reportData.all_items || [];
+    const filtered = searchQuery
+        ? items.filter(it => (it.title + it.summary + it.author).toLowerCase().includes(searchQuery.toLowerCase()))
+        : items;
+
+    return `
+        <div class="search-bar">
+            <input class="search-input" id="search-input" type="text" placeholder="Search items..."
+                   value="${searchQuery}" oninput="onSearch(this.value)">
+        </div>
+        <div class="panel">
+            <h2><span class="panel-icon">📰</span> All Items <span style="color:var(--text3);font-size:0.85rem;font-weight:400">(${filtered.length})</span></h2>
+            <div class="news-list">
+                ${filtered.length === 0 ? '<div class="empty">No items match your search.</div>' :
+                  filtered.slice(0, 50).map(it => `
+                    <div class="news-card">
+                        <div class="news-card-top">
+                            <div class="news-card-title">
+                                ${it.url ? `<a href="${it.url}" target="_blank" rel="noopener">${it.title}</a>` : it.title}
+                            </div>
+                            ${it.is_hot ? '<span class="badge badge-hot">HOT</span>' : ''}
+                        </div>
+                        ${it.summary && it.summary !== '-' ? `<div class="news-card-body">${it.summary.slice(0, 150)}</div>` : ''}
+                        <div class="news-card-meta">
+                            ${srcBadge(it.source)}
+                            ${it.lang ? `<span class="lang-badge">${it.lang}</span>` : ''}
+                            <span>${timeAgo(it.time)}</span>
+                            ${it.engagement ? `<span>Eng: ${fmt(it.engagement)}</span>` : ''}
+                            ${it.author ? `<span>${it.author}</span>` : ''}
+                        </div>
+                        ${it.tags && it.tags.length ? `<div class="news-card-tags">${it.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>` : ''}
+                    </div>
+                `).join('')}
+            </div>
+        </div>`;
+}
+
+function onSearch(val) {
+    searchQuery = val;
+    renderTab('all');
+}
+
+// ─── Tab Switching ───
+
+function renderTab(tab) {
+    currentTab = tab;
+    const el = document.getElementById('tab-content');
+    if (!reportData) { el.innerHTML = '<div class="loading"><div class="spinner"></div><p>Loading...</p></div>'; return; }
+
+    const renderers = { overview: renderOverview, analyst: renderAnalyst, top: renderTop, platforms: renderPlatforms, topics: renderTopics, all: renderAll };
+    el.innerHTML = (renderers[tab] || renderOverview)();
+
+    document.querySelectorAll('.tab-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.tab === tab);
+    });
+}
+
+document.getElementById('tabs').addEventListener('click', e => {
+    if (e.target.classList.contains('tab-btn')) {
+        renderTab(e.target.dataset.tab);
+    }
+});
+
+// ─── Data Loading ───
+
+async function loadReport() {
+    try {
+        const res = await fetch(REPORT_URL + '?t=' + Date.now());
+        if (!res.ok) throw new Error('Fetch failed');
+        reportData = await res.json();
+
+        // Header
+        document.getElementById('hd-status').textContent =
+            'Updated: ' + new Date(reportData.generated_at).toLocaleString('zh-CN');
+        document.getElementById('hd-report-id').textContent = reportData.report_id;
+        document.getElementById('hd-period').textContent = `Period: ${reportData.period.hours}h`;
+
+        // Stats
+        const ov = reportData.overview;
+        document.getElementById('st-total').textContent = ov.total_items;
+        document.getElementById('st-engagement').textContent = fmt(ov.total_engagement);
+        document.getElementById('st-sources').textContent = ov.active_sources;
+        document.getElementById('st-hot').textContent = ov.hot_items_count;
+
+        renderTab(currentTab);
+    } catch (err) {
+        console.error('Failed to load report:', err);
+        document.getElementById('tab-content').innerHTML =
+            '<div class="empty"><p>Failed to load report data. Run collector.py and reporter.py first.</p></div>';
+        document.getElementById('hd-status').textContent = 'Error loading data';
+    }
+}
+
+loadReport();
+setInterval(loadReport, 5 * 60 * 1000);
+</script>
+</body>
+</html>
