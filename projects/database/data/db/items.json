@@ -1,0 +1,197 @@
+{
+  "description": "忘却前夜道具、素材与货币完整数据",
+
+  "currencies": {
+    "premium": [
+      {
+        "name": "源液",
+        "name_en": "Silver Prime",
+        "type": "付费货币",
+        "description": "真金白银购买的付费货币，用于购买抽卡、通行证、外观和礼盒。"
+      },
+      {
+        "name": "银芯",
+        "name_en": "Silver",
+        "type": "高级免费货币",
+        "description": "主要免费高级货币，用于银芯商店兑换流明之芯和无垢之芯。也可恢复墨诺芬（50银芯=120墨诺芬）。",
+        "obtain": ["每日任务", "主线评分", "主线成就", "手册(成就&成长记录)", "幻梦深潜", "活动奖励", "通行证", "兑换码"]
+      },
+      {
+        "name": "流明之芯",
+        "name_en": "Luminous Core",
+        "type": "限定抽卡货币",
+        "description": "限定池抽卡道具，用于限定角色和命轮卡池。",
+        "obtain": ["银芯兑换", "活动奖励", "通行证"]
+      },
+      {
+        "name": "无垢之芯",
+        "name_en": "Pure Core",
+        "type": "常驻抽卡货币",
+        "description": "常驻池抽卡道具，用于常驻角色和命轮卡池。",
+        "obtain": ["银芯兑换", "活动奖励", "角色首次升格奖励"]
+      }
+    ],
+    "exchange": [
+      {
+        "name": "蔷薇金券",
+        "name_en": "Rose Scrip",
+        "type": "通用货币",
+        "description": "主要通用货币。用于蔷薇金券商店、教化唤醒体、炼金、素材合成、命轮叠加、密契誊抄(7500/次)。",
+        "obtain": ["主线首次通关", "融蚀之墟", "外勤代理", "课程", "拆解命轮(蓝=1000,紫=4000)"]
+      },
+      {
+        "name": "沉淀币",
+        "name_en": "Sediment Currency",
+        "type": "兑换货币",
+        "description": "用于沉淀商店。可购买密契套装(猩红之拥)、追念羽笔(80沉淀=10笔/周)、原初灵核(25碎片=1核,3次/月)。",
+        "obtain": ["抽卡(唤醒)"]
+      },
+      {
+        "name": "调查徽章",
+        "name_en": "Investigation Badge",
+        "type": "兑换货币",
+        "description": "用于调查商店。可购买追念羽笔(800徽章=5笔/周)。",
+        "obtain": ["主线三星通关", "秘术统御", "灵魂潜行三星", "真实掌握(1000)", "个人成就(300/个)"]
+      },
+      {
+        "name": "无光币",
+        "name_en": "Lightless Currency",
+        "type": "兑换货币",
+        "description": "用于无光商店。可购买密契套装(远方的欢宴)、追念羽笔(800=5/周)。",
+        "obtain": ["无光秘境", "界域异效区"]
+      },
+      {
+        "name": "融蚀之珠",
+        "name_en": "D-Jewels / Erosion Pearls",
+        "type": "兑换货币",
+        "description": "用于深潜商店。可购买追念羽笔(800=5/周)、碎裂余梦(100/周)、群星余梦(25/周)。公式：(幻梦等级+2)×100。",
+        "obtain": ["幻梦深潜(三级=500,疯狂=900)", "外勤代理(每日结算)"]
+      },
+      {
+        "name": "相位币",
+        "name_en": "Phase Coin",
+        "type": "兑换货币",
+        "description": "用于相位商店。可购买密契套装(猩红之悸)、追念羽笔(800=5/周)。",
+        "obtain": ["相位对弈(PVP)"]
+      }
+    ],
+    "stamina": {
+      "name": "墨诺芬",
+      "name_en": "Menophine",
+      "description": "体力/行动力资源，进入幕间演习消耗。50银芯=120墨诺芬。",
+      "obtain": ["自然恢复", "银芯兑换", "道具/礼盒"]
+    }
+  },
+
+  "experience_materials": [
+    {"name": "灵知制剂 I", "name_en": "Gnosis Elixir I", "rarity": "绿/普通", "description": "低级经验素材。溢出返还最低级制剂，500以下四舍五入至500。"},
+    {"name": "灵知制剂 II", "name_en": "Gnosis Elixir II", "rarity": "蓝/稀有", "description": "中级经验素材。"},
+    {"name": "灵知制剂 III", "name_en": "Gnosis Elixir III", "rarity": "紫/史诗", "description": "高级经验素材。"},
+    {"name": "特批药剂", "name_en": "Special Approval Elixir", "rarity": "高级", "description": "高级经验素材。调查行动章节奖励(第1章=5个,第6章=35个)。"}
+  ],
+
+  "ascension_materials": {
+    "caskets": [
+      {"name": "初阶升格匣子", "name_en": "Basic Ascension Casket", "rarity": "绿", "description": "初级升格材料(10级首次突破)。各界域有专属变体。"},
+      {"name": "中阶升格匣子", "name_en": "Intermediate Ascension Casket", "rarity": "蓝", "description": "中级升格材料。"},
+      {"name": "高阶升格匣子", "name_en": "Advanced Ascension Casket", "rarity": "紫", "description": "高级升格材料。"}
+    ],
+    "domain_breakthrough": [
+      {"name": "幸运糖果", "name_en": "Lucky Candy", "description": "界域突破素材。回溯时转换为30个拟态凝晶。"},
+      {"name": "蜡像泥胚", "name_en": "Wax Figure Clay", "description": "界域突破素材。回溯时转换为30个拟态凝晶。"},
+      {"name": "漆黑锁扣", "name_en": "Pitch-Black Clasp", "description": "界域突破素材。回溯时转换为30个拟态凝晶。"},
+      {"name": "维度结晶", "name_en": "Dimension Crystal", "description": "界域突破素材。回溯时转换为30个拟态凝晶。"},
+      {"name": "虔诚圣心", "name_en": "Devout Sacred Heart", "description": "界域突破素材。回溯时转换为30个拟态凝晶。"},
+      {"name": "贤者之石", "name_en": "Philosopher's Stone", "description": "稀有/通用突破素材。"}
+    ],
+    "gnosis_advance": [
+      {"name": "原初灵核", "name_en": "Primordial Spirit Core", "description": "灵知深化素材(等级上限60→70)。每次深化需1核+界域升格素材+蔷薇金券。沉淀商店25碎片=1核(3次/月)。"},
+      {"name": "精粹原初灵核", "name_en": "Refined Primordial Spirit Core", "description": "高级灵知深化素材。"},
+      {"name": "灵核碎片", "name_en": "Spirit Core Shard", "description": "原初灵核碎片(25=1核)。神殿兑换(2000神殿币=10碎片)。"},
+      {"name": "精粹灵核碎片", "name_en": "Refined Spirit Core Shard", "description": "高级灵核碎片。"}
+    ]
+  },
+
+  "skill_materials": {
+    "supplies": [
+      {"name": "初阶技能补给", "name_en": "Basic Skill Supply", "rarity": "绿", "unlock": "账号25级", "description": "低级技能升级素材。"},
+      {"name": "中阶技能补给", "name_en": "Intermediate Skill Supply", "rarity": "蓝", "description": "中级技能升级素材。"},
+      {"name": "高阶技能补给", "name_en": "Advanced Skill Supply", "rarity": "紫", "description": "高级技能升级素材。"}
+    ],
+    "domain_residues": [
+      {"name": "混沌残渣", "name_en": "Chaotic Residue", "domain": "chaos", "source": "混沌融蚀之墟 / 混沌聚落"},
+      {"name": "深渊残渣", "name_en": "Abyssal Residue", "domain": "deep_sea", "source": "深海融蚀之墟 / 波纳佩遗迹"},
+      {"name": "血腥残渣", "name_en": "Bloody Residue", "domain": "flesh", "source": "血肉融蚀之墟 / 蠕虫巢穴"},
+      {"name": "宇宙残渣", "name_en": "Cosmic Residue", "domain": "hyperdimension", "source": "超维融蚀之墟 / 史瓦西之喉"}
+    ]
+  },
+
+  "edification_materials": [
+    {"name": "苍白笔记", "name_en": "Pale Note", "rarity": "绿", "description": "低级教化素材。3个=1苍白卷宗。"},
+    {"name": "苍白卷宗", "name_en": "Pale File", "rarity": "蓝", "description": "中级教化素材。3个=1苍白典籍。"},
+    {"name": "苍白典籍", "name_en": "Pale Tome", "rarity": "紫", "description": "高级教化素材。"},
+    {"name": "淬炼理智", "name_en": "Tempered Reason", "description": "淬炼系列教化素材。"},
+    {"name": "淬炼精神", "name_en": "Tempered Spirit", "description": "高级淬炼系列教化素材。"},
+    {"name": "记忆复现体", "name_en": "Memory Replica", "description": "记忆型特质教化素材。"},
+    {"name": "情感复现体", "name_en": "Emotion Replica", "description": "情感型特质教化素材。"},
+    {"name": "知觉复现体", "name_en": "Sentience Replica", "description": "知觉型特质教化素材。"}
+  ],
+
+  "universal_materials": [
+    {"name": "拟态凝晶", "name_en": "Mimetic Crystal", "description": "通用合成资源。30个=1高级技能素材。回溯时突破素材以30:1返还。来源：课程进阶、沉淀/深潜/蔷薇金券商店。"},
+    {"name": "追念羽笔", "name_en": "Memory Quill", "description": "通用升级素材(55级后解锁)。每周可从5个商店各购买5-10个(共25-50/周)。"},
+    {"name": "千面印章", "name_en": "Thousand-Face Seal", "description": "密契强化与誊抄素材。36个可将密契从+0强化至+12。每次誊抄需3个+7500蔷薇金券。"}
+  ],
+
+  "remnant_dreams": [
+    {"name": "碎裂余梦", "name_en": "Shattered Remnant Dream", "rarity": "普通", "description": "低级余梦素材。融蚀之珠商店100/周。"},
+    {"name": "群星余梦", "name_en": "Stellar Remnant Dream", "rarity": "稀有", "description": "高级余梦素材。融蚀之珠商店25/周。"}
+  ],
+
+  "enlightenment_materials": [
+    {"name": "启灵残片", "name_en": "Enlightenment Shard", "description": "启灵系统素材，解锁唤醒体被动技能。来源：重复抽卡。"},
+    {"name": "灵魂回溯之芯", "name_en": "Soul Recall Core", "description": "限定唤醒体启灵回溯时的返还货币。"},
+    {"name": "黑色贡物", "name_en": "Black Tribute", "description": "通用资源素材。来源：礼盒、活动、调查关卡。"}
+  ],
+
+  "compact_sets": {
+    "description": "密契(Compact)套装，类似装备系统的强化。不同套装从不同商店获取。",
+    "sets": [
+      {"name": "荒原狼套", "name_en": "Wasteland Wolf Set", "source": "蔷薇金券商店"},
+      {"name": "猩红之拥", "name_en": "Crimson Embrace", "source": "沉淀商店"},
+      {"name": "猩红之悸", "name_en": "Crimson Throb", "source": "调查商店/相位商店"},
+      {"name": "远方的欢宴", "name_en": "Distant Feast", "source": "无光商店"},
+      {"name": "诅咒兔", "name_en": "Cursed Rabbit", "source": "深潜商店"}
+    ]
+  },
+
+  "roguelike_relics": {
+    "description": "Roguelike副本中拾取的遗物，仅在当次探索中有效，非持久道具。",
+    "tiers": [
+      {"tier": "银色", "name_en": "Silver", "cost": "约50黑印记", "description": "较弱效果，可在商店购买。"},
+      {"tier": "金色", "name_en": "Gold", "cost": "约90黑印记", "description": "强力效果，可在商店购买。"},
+      {"tier": "诅咒", "name_en": "Cursed", "description": "强力效果但有负面。仅从精英敌人和特定事件获取，商店不售。"}
+    ]
+  },
+
+  "synthesis_system": {
+    "name": "炼金",
+    "name_en": "Alchemy",
+    "description": "素材合成系统：3个低级素材=1个高级素材；30个拟态凝晶=1个高级技能素材。"
+  },
+
+  "recall_system": {
+    "name": "等级回溯",
+    "name_en": "Level Recall",
+    "description": "重置唤醒体全部技能、等级和升格。所有消耗素材全额返还。突破材料以30个拟态凝晶/个返还。"
+  },
+
+  "battle_pass": {
+    "name": "纪行",
+    "name_en": "Voyage / Battle Pass",
+    "types": ["降临纪行", "异世纪行", "疗养纪行", "亡城纪行"],
+    "free_rewards": ["无垢之芯", "银芯", "蔷薇金券", "灵知制剂", "各类素材"],
+    "premium_rewards": ["流明之芯×20", "银芯×2980", "专属外观", "群星余梦×25", "碎裂余梦×100"],
+    "note": "免费奖励翻倍活动时可额外获得无垢之芯×80和银芯×4000。"
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "description": "忘却前夜抽卡系统、卡池历史、货币体系与氪金指南",
+
+  "gacha_system": {
+    "name": "唤醒系统",
+    "rates": {
+      "ssr_base_rate_v1": "1.02%",
+      "ssr_base_rate_v2": "3%",
+      "ssr_rate_note": "v2.0大改：SSR基础出率从1.02%提升至3%",
+      "sr_guarantee": "每5抽保底1个SR或更高",
+      "on_banner_rate": "33.33%",
+      "on_banner_note": "抽到SSR时，33.33%概率为UP角色/命轮"
+    },
+    "pity_system": {
+      "small_pity": 30,
+      "small_pity_note": "30抽必出SSR(v2.0后，原v1.x为80抽)",
+      "escalating_guarantee": {
+        "first_ssr": "33.33%为UP",
+        "second_ssr": "若第1次歪，第2次66.66%为UP",
+        "third_ssr": "若第2次仍歪，第3次100%为UP",
+        "note": "最初可歪3次，后优化为最多歪2次(已补偿受影响玩家)"
+      },
+      "big_pity": 120,
+      "big_pity_note": "120抽大保底(4个30抽周期内必获UP角色)",
+      "anti_duplicate": "连续两次获得相同UP物品后，下次UP必为另一个UP物品",
+      "cross_banner": "限定池与常驻池保底独立计算，各自维护计数器"
+    },
+    "pool_types": [
+      {
+        "name": "灵识黑潮",
+        "name_en": "The Unforgotten (Standard)",
+        "type": "常驻池",
+        "description": "常驻SSR角色池。无UP机制。每30抽保底SSR。5次唤醒保底SSR+命轮。",
+        "currency": "无垢之芯",
+        "note": "部分旧限定角色会逐步加入常驻(如图鲁、莉莉、索蕾尔)"
+      },
+      {
+        "name": "限定活动唤醒",
+        "name_en": "Obsidian Wings (Limited Debut)",
+        "type": "限定池",
+        "description": "新限定角色首发池。限定SSR不进入常驻。",
+        "currency": "流明之芯"
+      },
+      {
+        "name": "万华追忆",
+        "name_en": "Kaleido Recollections",
+        "type": "限定专属池",
+        "description": "纯限定角色池，不含任何常驻SSR。30抽内保底限定SSR角色或命轮。2次SSR命轮后保底。适合新玩家扩充限定角色库。",
+        "currency": "流明之芯"
+      },
+      {
+        "name": "复刻池",
+        "name_en": "Rerun Banner",
+        "type": "复刻池",
+        "description": "往期限定角色复刻。",
+        "currency": "流明之芯"
+      },
+      {
+        "name": "必得唤醒",
+        "name_en": "Guaranteed Awakening",
+        "type": "付费保底池",
+        "description": "源液×980唤醒1次(灵知引剂×1)，5次保底2个随机限定SSR角色+3个随机限定SSR命轮。分旧世篇/星辰篇、男/女子池。",
+        "currency": "源液×980/次"
+      },
+      {
+        "name": "自选唤醒",
+        "name_en": "Self-Select Awakening",
+        "type": "自选池",
+        "description": "活动限定池，可自选1个SSR角色+其专属命轮作为UP目标。",
+        "currency": "varies"
+      }
+    ],
+    "beginner_rewards": {
+      "description": "新手福利(综合多版本)",
+      "details": [
+        "开服赠送1500银芯(约7抽) + 普池15抽",
+        "累计登录7天额外送10抽活动池",
+        "达到35级时最高可获40抽普池 + 2000银芯(10抽)",
+        "累计登录3天、7天各送1次常驻自选SSR",
+        "累计抽卡50次送1次常驻自选SSR",
+        "7天后至少拥有3只以上SSR角色",
+        "每周轮换唤醒活动首5抽免费(活动期间最多20抽免费)"
+      ]
+    },
+    "gacha_tips": [
+      "普池先下角色池，只用送的无垢之芯",
+      "抽齐核心角色收手",
+      "其余无垢下武器池拿专武",
+      "银芯和流明之芯只冲限定池",
+      "限定池保底不跨池共享(限定与常驻独立)",
+      "F2P玩家优先确保24，其次墨菲"
+    ]
+  },
+
+  "banner_history": {
+    "description": "限定角色卡池时间线(按版本排序)",
+    "faded_legacy": {
+      "name": "旧世篇限定角色",
+      "banners": [
+        {"version": "v1.0", "character": "图鲁(Tulu)", "realm": "deep_sea", "wod": "神王的颂歌", "note": "后加入常驻(0.5%概率)"},
+        {"version": "v1.0", "character": "达芙黛尔(Daffodil)", "realm": "hyperdimension", "wod": "至为珍贵的藏品"},
+        {"version": "v1.0后半", "character": "索蕾尔(Sorel)", "realm": "flesh", "wod": "以蔷薇之名", "note": "后加入常驻"},
+        {"version": "v1.1前半", "character": "莉莉(Lily)", "realm": "chaos", "wod": "跨越疼痛", "note": "后加入常驻"},
+        {"version": "v1.1后半", "character": "墨菲(Murphy)", "realm": "deep_sea", "wod": "隐秘的诞生", "tier": "S"},
+        {"version": "v1.2", "character": "旺达(Wanda)", "realm": "hyperdimension", "wod": "女王的戒律"},
+        {"version": "v1.3", "character": "萨尔瓦多(Salvador)", "realm": "flesh", "wod": "神言石板"},
+        {"version": "v1.4", "character": "24", "realm": "chaos", "wod": "畸体回噬", "tier": "S"},
+        {"version": "v1.4", "character": "泰旖丝(Thais)", "realm": "flesh", "wod": "慈悲的哺育", "tier": "S"},
+        {"version": "v1.4-1.5", "character": "弥利亚姆(Miryam)", "realm": "deep_sea", "wod": "虔诚的伟力"},
+        {"version": "v1.5", "character": "奥尔拉(Horla)", "realm": "hyperdimension", "wod": "诗笺的句尾", "tier": "S"},
+        {"version": "v1.5", "character": "莱克(Ryker)", "realm": "chaos", "wod": "好运时间", "tier": "S"},
+        {"version": "v1.5-2.0", "character": "血链·希洛(Helot:Catena)", "realm": "flesh", "wod": "沉入殷红", "tier": "S"},
+        {"version": "v2.0", "character": "哈姆林(Hameln)", "realm": "chaos", "wod": "永恒安魂曲", "tier": "S"},
+        {"version": "v2.0", "character": "塔薇(Tawil)", "realm": "chaos", "tier": "S"}
+      ]
+    },
+    "astral_reign": {
+      "name": "星辰篇限定角色",
+      "banners": [
+        {"version": "v2.0+", "character": "熔毁·朵尔(Doll:Inferno)", "realm": "chaos", "note": "已有复刻"},
+        {"version": "v2.1", "character": "克莱门汀(Clementine)", "realm": "hyperdimension"},
+        {"version": "v2.1", "character": "克珀珊特(Corposant)", "realm": "deep_sea"},
+        {"version": "v2.2", "character": "凯蒂古拉(Kathigu-Ra)", "realm": "chaos"},
+        {"version": "v2.2.2", "character": "卡斯托尔(Castor)", "realm": "hyperdimension"},
+        {"version": "v2.3", "character": "杜勒赛因(Doresain)", "realm": "flesh"},
+        {"version": "v2.3", "character": "茉夏(Mouchette)", "realm": "flesh"},
+        {"version": "v2.3.2", "character": "皮克曼(Pickman)", "realm": "deep_sea"},
+        {"version": "v2.3.4", "character": "波吕克斯(Pollux)", "realm": "hyperdimension", "banner_name": "神圣赦免"},
+        {"version": "v2.4", "character": "诞妄·墨菲(Murphy:Fauxborn)", "realm": "deep_sea", "role": "chorus", "banner_name": "尊崇之诞"},
+        {"version": "v2.4", "character": "徐(Xu)", "realm": "flesh", "role": "chorus", "banner_name": "夜幕狂喜"}
+      ]
+    },
+    "standard_additions": {
+      "description": "限定→常驻转移记录",
+      "transfers": [
+        {"character": "图鲁(Tulu)", "date_added": "1月27日", "standard_rate": "0.5%"},
+        {"character": "莉莉(Lily)", "date_added": "2月10日"},
+        {"character": "索蕾尔(Sorel)", "date_added": "2月24日"}
+      ],
+      "note": "更多旧限定角色将逐步加入常驻池"
+    }
+  },
+
+  "currencies": [
+    {
+      "name": "源液",
+      "name_en": "Silver Prime",
+      "type": "付费货币",
+      "description": "真金白银购买的付费货币。标准档位：6/30/68/128/198/328/648元等价。",
+      "note": "可在官网或第三方平台充值"
+    },
+    {
+      "name": "银芯",
+      "name_en": "Silver Core",
+      "type": "基础高级货币",
+      "conversion": "约200银芯=1抽(推算自1500银芯≈7抽)",
+      "description": "主要免费高级货币，用于兑换流明之芯和无垢之芯。也可恢复墨诺芬(50银芯=120墨诺芬)。",
+      "obtain": ["每日任务", "主线评分(100/关)", "主线成就", "手册", "幻梦深潜", "活动奖励", "通行证", "兑换码", "地图探索拾取"]
+    },
+    {
+      "name": "无垢之芯",
+      "name_en": "Pure Core",
+      "type": "常驻抽卡货币",
+      "conversion": "1个=1抽",
+      "description": "常驻池/命轮池抽卡道具。获取途径多于流明之芯。",
+      "obtain": ["银芯兑换", "活动奖励", "角色首次升格", "纪行免费轨道(40个)", "章节首通"]
+    },
+    {
+      "name": "流明之芯",
+      "name_en": "Lumen Core",
+      "type": "限定抽卡货币",
+      "conversion": "1个=1抽",
+      "description": "限定池抽卡道具。获取途径少于无垢之芯，应优先兑换。",
+      "obtain": ["银芯兑换", "活动奖励", "通行证"],
+      "priority": "优先兑换"
+    },
+    {
+      "name": "拟晶",
+      "name_en": "Mimetic Crystal",
+      "type": "活动兑换货币",
+      "description": "活动/礼包中的兑换货币。"
+    },
+    {
+      "name": "沉淀币",
+      "name_en": "Sediment Currency",
+      "type": "抽卡副产物",
+      "description": "抽卡时副产品。",
+      "shop_priority": "应急灵知体 > 循环母版 > 流明之芯 > 无垢之芯 > 特批药剂 > 原型视界"
+    }
+  ],
+
+  "monetization": {
+    "monthly_card": {
+      "name": "月卡",
+      "name_en": "Monthly Card",
+      "price_rmb": "约30元",
+      "rewards": "3300银芯(分30天发放) + 每日3个「现实起点」(无月卡为1个/天)",
+      "value": "约16.5抽等价",
+      "note": "性价比最高的充值选项"
+    },
+    "battle_pass": {
+      "name": "纪行",
+      "name_en": "Battle Pass / Chronicle",
+      "free_track": {
+        "rewards": ["无垢之芯×40", "银芯×2000"]
+      },
+      "premium_track": {
+        "price": "源液×980",
+        "rewards": ["流明之芯×40", "银芯×2000", "专属外观/头像框"]
+      },
+      "special_event_bonus": "特殊活动纪行(降临/异世/疗养/亡城)期间免费轨道奖励翻倍：额外无垢之芯×80 + 银芯×4000"
+    },
+    "guaranteed_pack": {
+      "name": "必得唤醒礼包",
+      "price": "源液×980/次",
+      "mechanic": "5次保底2个随机限定SSR角色+3个随机限定SSR命轮",
+      "pools": "分旧世篇/星辰篇、男/女子池"
+    },
+    "spending_tips": [
+      "月卡性价比最高，微氪首选",
+      "纪行免费轨道不要漏领，特殊活动纪行奖励翻倍",
+      "源液优先购买纪行高级轨道(980源液)",
+      "限定池保底独立计算，合理规划抽卡节奏",
+      "活动货币不能留存，及时清空商店"
+    ]
+  },
+
+  "milestone_rewards": {
+    "half_anniversary": {
+      "description": "半周年福利(~v1.5-2.0)",
+      "details": [
+        "登录送5000银芯",
+        "赠送1个往期限定自选(优先24>墨菲>泰旖丝)",
+        "赠送SSR命轮「极夜与破晓」"
+      ]
+    },
+    "second_anniversary": {
+      "description": "二周年福利(v2.4)",
+      "details": [
+        "登录+剧情进度：最多流明之芯×200",
+        "使用钥令累计200次：自选1名星辰篇往期限定SSR"
+      ]
+    }
+  },
+
+  "reroll_guide": {
+    "description": "开荒/开局建议",
+    "priority_targets": [
+      {"rank": 1, "target": "24", "reason": "限定必抽，T0通用角色，适用于所有界域，不需专武即可发挥"},
+      {"rank": 2, "target": "墨菲(Murphy)", "reason": "深海SSR最佳投资，深海当前S级"},
+      {"rank": 3, "target": "泰旖丝(Thais)", "reason": "S级血肉核心单位"},
+      {"rank": 4, "target": "凯刻斯(Caecus)", "reason": "深海反击核心，常驻可获取"}
+    ],
+    "beginner_path": [
+      "1. 先抽完新手池",
+      "2. 用赠送的无垢之芯抽常驻角色池",
+      "3. 累计登录3天+7天领取2次常驻自选SSR",
+      "4. 50抽成就领取第3次常驻自选SSR",
+      "5. 银芯和流明之芯留给限定池(等24复刻或新限定)"
+    ],
+    "reroll_method": "客人账号→完成教程→抽卡→不满意则删除数据重来。LDPlayer多开推荐。",
+    "note": "游戏福利丰厚，一般认为不需要刻意reroll"
+  },
+
+  "redemption_codes": {
+    "note": "兑换码可能已过期",
+    "codes": ["HVGX-HLDX-QKKN", "QKBQ-SSDG-JZYU", "DC5000", "SILVERKEY", "CATSGIFT", "DC10000GIFT", "DC22000", "DC23000", "DC25000", "TYKEEPERS"]
+  }
+}

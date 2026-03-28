@@ -1,0 +1,264 @@
+{
+  "description": "忘却前夜地图、区域、副本与活动数据",
+
+  "map_system": {
+    "type": "六角格瓦片地图（非开放世界）",
+    "description": "玩家通过大厅菜单导航至不同功能区域。每个关卡采用预设的六角格瓦片地图（非随机生成），包含敌人遭遇、事件、隐藏银币、黑印记、交换点和方尖碑。",
+    "tile_types": ["敌人遭遇", "随机事件", "隐藏银币", "黑印记", "交换点", "方尖碑"]
+  },
+
+  "resource_dungeons": [
+    {
+      "name": "融蚀之墟",
+      "name_en": "Dissolution Ruins",
+      "type": "素材副本",
+      "reset": "每日",
+      "unlock": "通关调查行动1-2",
+      "subtypes": ["升格素材", "技能素材"],
+      "drops": ["升格匣子", "技能补给", "界域残渣", "教化素材", "蔷薇金券", "灵知制剂", "突破材料"],
+      "stamina_cost": true,
+      "description": "主要素材获取地点，消耗墨诺芬（体力）。"
+    },
+    {
+      "name": "禁忌篆录",
+      "name_en": "Forbidden Inscriptions",
+      "type": "素材副本",
+      "reset": "每日",
+      "description": "通关后解锁重复挑战。"
+    },
+    {
+      "name": "超验存在",
+      "name_en": "Transcendent Existence",
+      "type": "周Boss",
+      "reset": "每周一15:00",
+      "description": "奖励丰厚，建议每周必清。"
+    }
+  ],
+
+  "challenge_modes": [
+    {
+      "name": "融灾禁区",
+      "name_en": "Erosion Disaster Zone / Dissolution Zone",
+      "type": "高难挑战",
+      "reset": "每两周 周四15:00",
+      "unlock": "通关主线4-3(原5-4,v1.2降低)",
+      "description": "主要「黑色供物」获取来源，含稀有独占奖励。多队伍终局内容。",
+      "alert_levels": [
+        {"level": "I", "training_values": [50, 55, 60, 65, 70], "enemy_level": "50-58"},
+        {"level": "II", "training_values": [55, 60, 65, 70, 75], "enemy_level": "55-63"},
+        {"level": "III", "training_values": [60, 65, 70, 75, 80], "enemy_level": "60-68", "note": "受融灾黑潮影响"}
+      ],
+      "reward_thresholds": [50, 100, 150, 225, 300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350],
+      "reward_300_plus": "黑色贡物×2500 + 蔷薇金券×100,000(每档)",
+      "restrictions": "不可跨队伍重复使用同一唤醒体/命轮/钥令",
+      "black_tide_debuffs": {
+        "狂气衰竭": "降低狂气获取",
+        "银钥振荡": "干扰银钥能量",
+        "怒海狂澜": "深海界域特殊效果",
+        "猩红哺育": "血肉界域特殊效果",
+        "彼界终途": "超维界域特殊效果",
+        "来自遗忘": "混沌界域特殊效果"
+      },
+      "key_rewards": ["原初灵核", "灵核碎片", "黑色贡物"],
+      "tips": "III级300特训值奖励的黑色贡物从1500提高为2500。降低难度为了让更多玩家获取原初灵核与灵核碎片。"
+    },
+    {
+      "name": "幻梦深潜",
+      "name_en": "Phantasmal Dive / Dream Dive",
+      "type": "Roguelike排位",
+      "reset": "每周",
+      "drops": ["融蚀之珠(D-Jewels)", "银芯"],
+      "djewel_formula": "(幻梦等级+2)×100",
+      "description": "Roguelike爬塔模式，含段位系统。v1.5进行了重大翻新改造。",
+      "roguelite_mechanics": {
+        "map": "战争迷雾六角格地图，每日更换。节点类型：战斗/精英/Boss/商店/休息/随机事件/宝藏。",
+        "inscription_system": {
+          "name": "刻印",
+          "trigger": "击败普通敌人后获得(3选1)",
+          "priority": "妙手 > 灵感 > 算力 > 镜像伙伴 > 回想"
+        },
+        "artifact_system": {
+          "name": "造物",
+          "trigger": "击败精英敌人后获得(3选1：通常2负面+1正面)",
+          "tiers": ["银(弱,可购买)", "金(强,可购买)", "诅咒(强+副作用,精英/事件限定)"],
+          "priority": "算力造物 > 狂气 > 暴击率 > 抽牌 > 触腕上限"
+        },
+        "black_ink": {
+          "name": "黑印",
+          "description": "战斗掉落，在融痕(交换点)消费。银造物约50黑印，金造物约90黑印。",
+          "spend_priority": "造物 > 觉醒 > 普通刻印"
+        }
+      },
+      "ranking": {
+        "tiers": "段位制(如潜渊9)，最高幻梦传奇",
+        "scaling": "段位越高Boss血量和攻击力越高",
+        "settlement": "每周结算(原为每日)",
+        "shop_items": {
+          "追念羽笔": "800融蚀之珠=5/周",
+          "碎裂余梦": "100融蚀之珠/周",
+          "群星余梦": "25融蚀之珠/周"
+        }
+      }
+    },
+    {
+      "name": "相位对弈",
+      "name_en": "Phase Chess / Phase Confrontation",
+      "type": "PVP排位",
+      "reset": "每周",
+      "drops": ["演习徽章", "蔷薇金券"],
+      "unlock": "通关主线3-2",
+      "description": "卡牌PVP对战，仍在Beta测试中。角色练度不影响PVP——所有卡牌以相同强度解锁。",
+      "rules": {
+        "initial_hand": 5,
+        "mulligan": "可自由选择任意张数更换",
+        "draw_per_turn": 5,
+        "hand_limit": 10,
+        "initial_cost": 3,
+        "cost_growth": "每回合+1，上限10"
+      },
+      "pve_vs_pvp_differences": {
+        "hand_retention": "PVE回合末弃牌，PVP手牌保留至下回合",
+        "draw_count": "PVE抽4张，PVP抽5张",
+        "starting_ap": "PVE固定5点，PVP从3点起每回合+1至上限10",
+        "progression": "PVE角色练度有效，PVP所有卡牌等强度",
+        "dead_ally_cards": "PVE移除，PVP变为「泪滴」(0费，恢复10点能量)"
+      },
+      "death_duel": {
+        "name": "死斗",
+        "name_en": "Death Duel",
+        "trigger": "双方算力上限均达到10后自动施加",
+        "layer_1": "降低治疗和护盾效果",
+        "layer_2": "所有治疗和护盾变为1点——强制分出胜负",
+        "note": "当前环境偏慢节奏，通常在8+算力时进入死斗阶段"
+      },
+      "ranking": {
+        "tiers": ["新手段位", "资深I", "传说", "相位传奇(新增最高段)"],
+        "win_streak_bonus": "传说以外段位连胜额外获得1胜点",
+        "first_season_bonus": "首次达到「资深I」段位额外获得1000演习徽章",
+        "ai_opponents": "传说以外段位增加AI对手；新玩家前5场均为设计过的AI对手"
+      },
+      "rewards": {
+        "weekly_quest": "每周5场胜利获得500演习徽章",
+        "exchange": "3融蚀之珠可兑换1演习徽章(不参与PVP的替代方案)",
+        "season_emotes": ["詹金：吃面", "克莱门汀：困惑", "莉莉：撒娇"],
+        "shop": "密契套装猩红之悸、追念羽笔(800相位币=5/周)"
+      }
+    },
+    {
+      "name": "无光秘境",
+      "name_en": "Lightless Realm",
+      "type": "升星挑战",
+      "drops": ["无光币"],
+      "description": "解锁角色升星（2/3/4/5星）。也可通过通关主线2-5章解锁。"
+    },
+    {
+      "name": "界域异效区",
+      "name_en": "D-Effect Zone",
+      "type": "挑战副本",
+      "drops": ["无光币"],
+      "description": "额外的无光币获取途径。"
+    },
+    {
+      "name": "秘术统御",
+      "name_en": "Arcane Dominion",
+      "type": "挑战副本",
+      "drops": ["调查徽章"],
+      "description": "调查徽章获取途径。"
+    },
+    {
+      "name": "天外之下",
+      "name_en": "Under the Outer Sky",
+      "type": "新副本",
+      "description": "v2.0+新增副本玩法。"
+    },
+    {
+      "name": "万象门扉",
+      "name_en": "Door of All Things",
+      "type": "限时活动副本",
+      "description": "限时活动玩法，奖励包括命轮「真理之门」和专属头像。拥有塔薇/隐世的转轮/真理之门可提高攻略效率。"
+    }
+  ],
+
+  "daily_weekly_system": [
+    {
+      "name": "每日试训",
+      "name_en": "Daily Training",
+      "reset": "每日",
+      "rewards": "500经验/天",
+      "description": "由原每日+每周系统合并而成。可使用代理凭证快速完成（上限5次）。"
+    },
+    {
+      "name": "每周试炼",
+      "name_en": "Weekly Trial",
+      "reset": "每周",
+      "rewards": "银芯 100/150/250 + 融蚀之珠",
+      "description": "每周挑战任务。"
+    },
+    {
+      "name": "外勤代理",
+      "name_en": "Assignments / Outfield Agent",
+      "reset": "每日结算",
+      "drops": ["蔷薇金券", "融蚀之珠", "各类素材"],
+      "description": "自动派遣系统，根据难度每日结算奖励。研究：配方文典任务可获4000基础+每20等级差额外2000蔷薇金券。"
+    },
+    {
+      "name": "课程",
+      "name_en": "Curriculum",
+      "drops": ["蔷薇金券", "拟态凝晶", "千面印章"],
+      "description": "进阶课题获取拟态凝晶等核心素材。"
+    }
+  ],
+
+  "side_stories": {
+    "special_dispatch": {
+      "name": "特遣记录",
+      "name_en": "Special Dispatch Records",
+      "stories": [
+        {"title": "雨镇幽影", "title_en": "Phantom of the Rainy Town", "location": "雨镇"},
+        {"title": "蔷薇礼赞", "title_en": "Rose Hymn"},
+        {"title": "故事的魔法", "title_en": "Magic of Stories"},
+        {"title": "血的颜色", "title_en": "Color of Blood"},
+        {"title": "宁静的裂殖", "title_en": "Quiet Fission"},
+        {"title": "玫瑰的栖居", "title_en": "Rose's Abode"},
+        {"title": "狩猎愉快！", "title_en": "Happy Hunting!"},
+        {"title": "艾尔沃斯的归人", "title_en": "Elworth's Returnee", "location": "艾尔沃斯"},
+        {"title": "群星咏叹调", "title_en": "Stellar Aria"},
+        {"title": "开往祈岁节的列车", "title_en": "Train to the Prayer Festival"}
+      ]
+    },
+    "consciousness_dive": {
+      "name": "意识潜游",
+      "name_en": "Consciousness Dive",
+      "description": "角色个人故事",
+      "stories": [
+        "骑士的愿望", "血与沙", "如歌的雕琢", "扭曲核心", "苍白后裔",
+        "一步之遥", "诸事如常", "燃烧的群宴", "巨人的陨落", "加冕之日",
+        "最后的引航", "热情归尘", "不朽极昼", "畸世绘", "扇下夜谈"
+      ]
+    },
+    "dream_vision": {
+      "name": "异梦视界",
+      "name_en": "Dream Vision",
+      "stories": ["亵渎", "天边之外(上)", "天边之外(下)", "征厨房记", "再见永无乡", "再见，永无乡"]
+    },
+    "multidimensional": {
+      "name": "多维连接",
+      "name_en": "Multidimensional Connection",
+      "stories": ["逆转回合", "银与血的洗礼"]
+    }
+  },
+
+  "three_star_rewards": {
+    "description": "所有关卡均有三星评价奖励，每关50银芯，共计可获4750银芯。高难度通关自动解锁低难度三星。"
+  },
+
+  "special_events": [
+    {
+      "name": "二周年活动「以银钥之名」",
+      "name_en": "2nd Anniversary: By the Silver Key",
+      "period": "2025-12-01 ~ 2026-01-26",
+      "reward": "使用钥令累计200次后，可指定获取1名往期限定唤醒体",
+      "note": "重大福利活动，限定角色自选机会"
+    }
+  ]
+}

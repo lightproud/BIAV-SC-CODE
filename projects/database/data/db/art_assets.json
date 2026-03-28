@@ -1,0 +1,196 @@
+{
+  "description": "忘却前夜美术资产索引。包含可确认的直链图片URL和各wiki/官方来源的资产获取指引。",
+  "note": "由于大部分wiki网站对自动抓取返回403，多数角色立绘的直链URL需手动从浏览器获取。本文件记录已知直链和各来源CDN规律。",
+
+  "steam_assets": {
+    "app_id_cn": 3052450,
+    "app_id_jp": 4226130,
+    "cn_version": {
+      "header_920x430": "https://cdn.cloudflare.steamstatic.com/steam/apps/3052450/header.jpg",
+      "capsule_616x353": "https://cdn.cloudflare.steamstatic.com/steam/apps/3052450/capsule_616x353.jpg",
+      "capsule_231x87": "https://cdn.cloudflare.steamstatic.com/steam/apps/3052450/capsule_231x87.jpg",
+      "library_600x900": "https://cdn.cloudflare.steamstatic.com/steam/apps/3052450/library_600x900.jpg",
+      "library_hero_1920x620": "https://cdn.cloudflare.steamstatic.com/steam/apps/3052450/library_hero.jpg",
+      "page_background": "https://cdn.cloudflare.steamstatic.com/steam/apps/3052450/page_bg_generated_v6b.jpg"
+    },
+    "jp_version": {
+      "header_920x430": "https://cdn.cloudflare.steamstatic.com/steam/apps/4226130/header.jpg",
+      "capsule_616x353": "https://cdn.cloudflare.steamstatic.com/steam/apps/4226130/capsule_616x353.jpg",
+      "library_600x900": "https://cdn.cloudflare.steamstatic.com/steam/apps/4226130/library_600x900.jpg",
+      "library_hero": "https://cdn.cloudflare.steamstatic.com/steam/apps/4226130/library_hero.jpg",
+      "library_600x900_2x": "https://cdn.cloudflare.steamstatic.com/steam/apps/4226130/library_600x900_2x.jpg"
+    },
+    "screenshots_page": "https://steamcommunity.com/app/3052450/images/",
+    "steam_news": [
+      {"version": "v2.3.2", "url": "https://store.steampowered.com/news/app/3052450/view/509590727168100197"},
+      {"version": "v2.3.4", "url": "https://store.steampowered.com/news/app/3052450/view/650332107000774958"}
+    ],
+    "steamgriddb": {
+      "game_page": "https://www.steamgriddb.com/game/5456698",
+      "logos": "https://www.steamgriddb.com/game/5456698/logos",
+      "official_logo": "https://www.steamgriddb.com/logo/131776",
+      "note": "社区上传的grids/heroes/logos/icons合集"
+    }
+  },
+
+  "app_store_pages": {
+    "google_play_global": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en_US",
+    "google_play_jp": "https://play.google.com/store/apps/details?id=jp.co.altplus.boukyakuzenya",
+    "apple_appstore_sg": "https://apps.apple.com/sg/app/%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C-morimens/id6447354150",
+    "apple_appstore_hk": "https://apps.apple.com/hk/app/%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C-morimens/id6447354150",
+    "taptap_global": "https://www.taptap.io/app/33625494",
+    "taptap_tw": "https://www.taptap.io/app/33625492",
+    "taptap_cn": "https://www.taptap.cn/app/364992/topic",
+    "qoo_app": "https://m-apps.qoo-app.com/en-US/app/138538",
+    "note": "各应用商店页面含应用图标和游戏截图，可作为UI截图和宣传图来源"
+  },
+
+  "official_sources": {
+    "official_website": "https://morimens.qookkagames.com/",
+    "official_twitter": "https://x.com/MorimensOfcl",
+    "official_facebook": "https://www.facebook.com/MorimensOfficial/",
+    "official_discord": "https://discord.com/invite/VJhuUdHxmc",
+    "bilibili_official_art": "https://www.bilibili.com/opus/878705898830168130",
+    "bilibili_official_art_note": "官方立绘素材包，包含拉蒙娜、奥吉尔、朵尔、萝坦、奥瑞塔、凯刻斯、戈利亚、艾瑞卡、雷亚、宁菲亚、尤乌哈希、图鲁、珊等角色"
+  },
+
+  "wiki_sources": {
+    "bwiki": {
+      "url": "https://wiki.biligame.com/morimens/",
+      "character_list": "https://wiki.biligame.com/morimens/分类:角色",
+      "gallery": "https://wiki.biligame.com/morimens/画廊",
+      "cg_wallpapers": "https://wiki.biligame.com/morimens/CG壁纸",
+      "avatars": "https://wiki.biligame.com/morimens/头像",
+      "fan_art": "https://wiki.biligame.com/morimens/同人美术馆/绘画",
+      "image_cdn_pattern": "https://patchwiki.biligame.com/images/morimens/...",
+      "note": "最全的中文图鉴来源，有画廊、CG壁纸、头像等分类"
+    },
+    "huiji_wiki": {
+      "url": "https://morimens.huijiwiki.com/wiki/唤醒体",
+      "total_images": 9514,
+      "image_cdn_pattern": "huiji自有CDN",
+      "note": "记录有9514张图片"
+    },
+    "gamekee": {
+      "url": "https://www.gamekee.com/morimens/",
+      "character_list": "https://www.gamekee.com/morimens/606912.html",
+      "image_cdn_pattern": "https://img.gamekee.com/...",
+      "note": "角色攻略页含立绘，节奏榜有角色头像"
+    },
+    "fandom_en": {
+      "url": "https://forget-last-night-morimens.fandom.com/wiki/Category:Characters",
+      "image_cdn_pattern": "https://static.wikia.nocookie.net/forget-last-night-morimens/images/...",
+      "note": "英文Wiki，各角色页面有Gallery板块"
+    },
+    "fandom_alt": {
+      "url": "https://morimens.fandom.com/wiki/Category:Characters"
+    },
+    "fandom_sialia": {
+      "url": "https://morimens-sialiagames.fandom.com/wiki/Category:Characters",
+      "note": "第三个Fandom Wiki，有Images分类"
+    },
+    "gamerch_jp": {
+      "url": "https://gamerch.com/morimens/928540",
+      "note": "日文Wiki，有角色列表和图片"
+    },
+    "miraheze": {
+      "url": "https://morimenseveofoblivion.miraheze.org/wiki/Awakeners",
+      "note": "英文Wiki，有角色列表和图片"
+    },
+    "kaiden_gg": {
+      "url": "https://www.kaiden.gg/morimens/characters/",
+      "note": "英文攻略Wiki，角色页有头像和立绘，可按界域/稀有度筛选"
+    }
+  },
+
+  "community_art": {
+    "pixiv_morimens": "https://www.pixiv.net/en/tags/Morimens/illustrations",
+    "pixiv_cn": "https://www.pixiv.net/en/tags/忘却前夜",
+    "pixiv_note": "Morimens标签101+插画，忘却前夜标签96+",
+    "deviantart": "https://www.deviantart.com/tag/morimens",
+    "pinterest": "https://www.pinterest.com/search/pins/?q=morimens",
+    "steam_workshop_wallpapers": [
+      {
+        "character": "弥利亚姆(Miryam)",
+        "type": "animated_wallpaper",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3198909300"
+      },
+      {
+        "character": "拉蒙娜(Ramona)",
+        "type": "animated_wallpaper",
+        "url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3408518287"
+      }
+    ],
+    "official_wallpaper_posts": [
+      {
+        "character": "杜勒赛因(Doresain)",
+        "version": "v2.3",
+        "url": "https://x.com/MorimensOfcl/status/1947228361971146769",
+        "sizes": ["PC", "tablet", "mobile"]
+      },
+      {
+        "character": "凯蒂古拉(Kathigu-Ra)",
+        "version": "v2.3.1",
+        "url": "https://x.com/MorimensOfcl/status/1957387679055982795",
+        "sizes": ["PC", "tablet", "mobile"]
+      },
+      {
+        "character": "皮克曼(Pickman)",
+        "version": "v2.3.2",
+        "url": "https://x.com/MorimensOfcl/status/1964971001315533211",
+        "sizes": ["PC", "tablet", "mobile"]
+      },
+      {
+        "character": "茉夏(Mouchette)",
+        "version": "v2.4.1",
+        "url": "https://x.com/MorimensOfcl/status/2005886282409664612",
+        "sizes": ["PC", "tablet", "mobile"]
+      }
+    ]
+  },
+
+  "character_portraits": {
+    "status": "需要手动补充",
+    "instructions": "所有wiki网站对自动爬取返回403(host_not_allowed)，角色立绘直链必须手动从浏览器获取。推荐流程：1) 访问Fandom角色页(如forget-last-night-morimens.fandom.com/wiki/Ramona) 2) 各角色页有Portrait/Full Art/Splash/Skin标签页 3) 右键图片选择'复制图片地址' 4) 填入characters.json对应角色的portrait_url字段。或使用Python+requests/BeautifulSoup抓取Fandom MediaWiki API。",
+    "cdn_patterns": {
+      "bwiki": "https://patchwiki.biligame.com/images/morimens/{hash}/{hash2}/{timestamp}/{filename}",
+      "gamekee": "https://img.gamekee.com/wiki/{game_id}/{filename}",
+      "fandom": "https://static.wikia.nocookie.net/forget-last-night-morimens/images/{a}/{ab}/{filename}"
+    },
+    "confirmed_with_official_art": [
+      "凯蒂古拉(Kathigu-Ra)", "杜勒赛因(Doresain)", "皮克曼(Pickman)", "茉夏(Mouchette)",
+      "拉蒙娜(Ramona)", "莉莉(Lily)", "艾尔瓦(Elva)", "诺缔拉(Notira)", "奥吉尔(Ogier)",
+      "朵尔(Doll)", "萝坦(Lotan)", "弥利亚姆(Miryam)", "尤乌哈希(Uuhashi)", "雷娅(Rhea)",
+      "阿格里帕(Agrippa)", "菲茵特(Feint)", "艾继丝(Aigis)", "希洛(Helot)", "詹金(Jenkins)",
+      "汀克特(Tinct)", "卡茜亚(Cassia)", "法洛思(Faros)"
+    ],
+    "skin_system": {
+      "name": "幻衣",
+      "name_en": "Phantom Garment",
+      "description": "角色皮肤系统，包含替换立绘和战斗模型。"
+    },
+    "priority_characters": [
+      "艾尔瓦(Elva)", "朵尔(Doll)", "拉蒙娜(Ramona)", "萝坦(Lotan)", "奥吉尔(Ogier)",
+      "图鲁(Tulu)", "希莱斯特(Celeste)", "凯刻斯(Caecus)", "珊(Shan)",
+      "尤乌哈希(Uuhashi)", "雷亚(Rhea)", "艾继丝(Aigis)",
+      "莉兹(Liz)", "艾瑞卡(Erica)", "达芙黛尔(Daffodil)",
+      "24", "环行·拉蒙娜(Ramona:Timeworn)", "神王·图鲁(G-Tulu)",
+      "熔毁·朵尔(Doll:Inferno)", "血链·希洛(Helot:Catena)"
+    ]
+  },
+
+  "asset_categories": {
+    "character_portrait": "角色立绘/全身像",
+    "character_avatar": "角色头像/图标",
+    "card_art": "卡牌美术(打击/防御/指令卡面)",
+    "wheel_art": "命轮图标",
+    "covenant_icon": "密契套装图标",
+    "realm_icon": "界域图标(混沌/深海/血肉/超维)",
+    "ui_screenshot": "游戏UI截图",
+    "promotional": "宣传图/key visual",
+    "wallpaper": "官方壁纸",
+    "event_banner": "活动横幅/卡池横幅",
+    "cg": "剧情CG",
+    "logo": "游戏logo"
+  }
+}
