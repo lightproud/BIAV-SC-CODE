@@ -16,6 +16,8 @@
 | 2026-03-28 | 合并 database 和 wiki 为单一 wiki 子项目 | 数据集是 wiki 的后端，站点是 wiki 的前端，分开容易混淆 | wiki |
 | 2026-03-29 | 引入 Claude Code GitHub Actions | Issue 驱动自动化，减少人工中转 | 全局 |
 | 2026-03-29 | Issue 安全策略：只执行 author:lightproud | 防止外部 Issue 被自动执行 | 全局 |
+| 2026-03-29 | 三层工作架构：Chat(判断/分析/Issue) + Actions(自动执行) + 手动Code(复杂交互) | 职责清晰，各司其职 | 全局 |
+| 2026-03-29 | 交付物视觉规范固化到 memory/style-guide.md | 避免每次重复调整，所有会话统一规范 | 全局 |
 
 ## 分支管理策略
 
