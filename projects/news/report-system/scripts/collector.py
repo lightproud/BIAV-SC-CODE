@@ -20,6 +20,7 @@ import json
 import os
 import re
 import logging
+import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
@@ -37,6 +38,12 @@ OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
 HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
+
+def _refresh_cutoff():
+    """Refresh the global CUTOFF so long-running processes (scheduler) use current time."""
+    global CUTOFF
+    CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+
 # 多语言搜索关键词
 KEYWORDS = {
     "zh": ["忘却前夜", "忘卻前夜"],
@@ -53,7 +60,7 @@ DEFAULT_HEADERS = {"User-Agent": "MorimensReportBot/2.0"}
 # ─── 工具函数 ───────────────────────────────────────────────
 
 def _get(url, params=None, headers=None, timeout=15):
-    """带重试的 GET 请求。"""
+    """带重试的 GET 请求 (间隔 1s/2s)。"""
     h = {**DEFAULT_HEADERS, **(headers or {})}
     for attempt in range(3):
         try:
@@ -64,11 +71,11 @@ def _get(url, params=None, headers=None, timeout=15):
             if attempt == 2:
                 raise
             logger.debug(f"Retry {attempt + 1} for {url}: {e}")
-    return None
+            time.sleep(attempt + 1)
 
 
 def _post(url, json_data=None, headers=None, timeout=30):
-    """带重试的 POST 请求。"""
+    """带重试的 POST 请求 (间隔 1s/2s)。"""
     h = {**DEFAULT_HEADERS, **(headers or {})}
     for attempt in range(3):
         try:
@@ -79,7 +86,7 @@ def _post(url, json_data=None, headers=None, timeout=30):
             if attempt == 2:
                 raise
             logger.debug(f"Retry {attempt + 1} for {url}: {e}")
-    return None
+            time.sleep(attempt + 1)
 
 
 def _strip_html(text):
@@ -426,7 +433,6 @@ def fetch_weibo():
                 created_str = mblog.get("created_at", "")
                 # 微博时间格式复杂，简化处理
                 text = mblog.get("text", "")
-                import re
                 text_clean = re.sub(r"<[^>]+>", "", text)
 
                 items.append(_make_item(
@@ -1234,7 +1240,6 @@ def fetch_telegram():
                 # 实际部署建议用 Telegram Bot API 或 Telethon
                 html = data.text
                 # 提取消息块 (tgme_widget_message)
-                import re
                 messages = re.findall(
                     r'class="tgme_widget_message_text[^"]*"[^>]*>(.*?)</div>',
                     html, re.DOTALL
@@ -1444,6 +1449,8 @@ def deduplicate(items):
 def collect_all():
     """运行所有采集器，合并、去重、排序后输出。"""
     logger.info("=== 忘却前夜 全球信息收集开始 ===")
+
+    _refresh_cutoff()
 
     all_items = []
     fetchers = [

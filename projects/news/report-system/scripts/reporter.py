@@ -8,10 +8,11 @@
 输出: data/report.json, data/report.html, data/feed.xml
 """
 
+import html as _html
 import json
 import os
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
@@ -207,7 +208,7 @@ def generate_report(analysis=None):
         "generated_at": now.isoformat(),
         "period": {
             "hours": raw.get("hours_lookback", 24),
-            "from": (now - __import__("datetime").timedelta(hours=raw.get("hours_lookback", 24))).isoformat(),
+            "from": (now - timedelta(hours=raw.get("hours_lookback", 24))).isoformat(),
             "to": now.isoformat(),
         },
         "overview": {
@@ -268,14 +269,16 @@ def generate_report(analysis=None):
 
 def generate_html_report(report):
     """生成独立 HTML 报告页面。"""
+    e = _html.escape  # shorthand
+
     top_items_html = ""
     for it in report["top_items"]:
         hot_badge = '<span class="badge hot">HOT</span>' if it["rank"] <= 5 else ""
         top_items_html += f"""
         <tr>
             <td class="rank">#{it['rank']}</td>
-            <td><a href="{it['url']}" target="_blank">{it['title'][:80]}</a> {hot_badge}</td>
-            <td><span class="badge source-{it['source']}">{it['source']}</span></td>
+            <td><a href="{e(it['url'])}" target="_blank">{e(it['title'][:80])}</a> {hot_badge}</td>
+            <td><span class="badge source-{e(it['source'])}">{e(it['source'])}</span></td>
             <td class="num">{_format_number(it['engagement'])}</td>
         </tr>"""
 
@@ -285,18 +288,18 @@ def generate_html_report(report):
         platform_html += f"""
         <div class="platform-card">
             <div class="platform-name">
-                <span class="badge source-{name}">{name}</span>
+                <span class="badge source-{e(name)}">{e(name)}</span>
                 <span class="platform-count">{data['count']} items</span>
             </div>
             <div class="platform-engagement">Total engagement: {_format_number(data['total_engagement'])}</div>
-            <div class="platform-top">Top: {top.get('title', 'N/A')[:60]}</div>
+            <div class="platform-top">Top: {e(top.get('title', 'N/A')[:60])}</div>
         </div>"""
 
     topic_html = ""
     for cat, data in report["analysis"]["topics"].items():
         topic_html += f"""
         <div class="topic-item">
-            <span class="topic-label">{cat}</span>
+            <span class="topic-label">{e(cat)}</span>
             <span class="topic-count">{data['count']}</span>
         </div>"""
 
@@ -307,23 +310,23 @@ def generate_html_report(report):
         sections = []
 
         if analyst_data.get("risk_alerts"):
-            alerts = "".join(f"<li style='color:#ef4444'>{a}</li>" for a in analyst_data["risk_alerts"])
+            alerts = "".join(f"<li style='color:#ef4444'>{e(a)}</li>" for a in analyst_data["risk_alerts"])
             sections.append(f"<div style='margin-bottom:1rem'><strong style='color:#ef4444'>Risk Alerts</strong><ul style='margin:0.3rem 0 0 1.2rem'>{alerts}</ul></div>")
 
         if analyst_data.get("key_events"):
-            events = "".join(f"<li>{e}</li>" for e in analyst_data["key_events"])
+            events = "".join(f"<li>{e(ev)}</li>" for ev in analyst_data["key_events"])
             sections.append(f"<div style='margin-bottom:1rem'><strong>Key Events</strong><ul style='margin:0.3rem 0 0 1.2rem'>{events}</ul></div>")
 
         if analyst_data.get("trend_notes"):
-            trends = "".join(f"<li>{t}</li>" for t in analyst_data["trend_notes"])
+            trends = "".join(f"<li>{e(t)}</li>" for t in analyst_data["trend_notes"])
             sections.append(f"<div style='margin-bottom:1rem'><strong>Trend Notes</strong><ul style='margin:0.3rem 0 0 1.2rem'>{trends}</ul></div>")
 
         if analyst_data.get("insights"):
-            ins = "".join(f"<li>{i}</li>" for i in analyst_data["insights"])
+            ins = "".join(f"<li>{e(i)}</li>" for i in analyst_data["insights"])
             sections.append(f"<div style='margin-bottom:1rem'><strong>Insights</strong><ul style='margin:0.3rem 0 0 1.2rem'>{ins}</ul></div>")
 
         if analyst_data.get("tomorrow_watch"):
-            watch = "".join(f"<li>{w}</li>" for w in analyst_data["tomorrow_watch"])
+            watch = "".join(f"<li>{e(w)}</li>" for w in analyst_data["tomorrow_watch"])
             sections.append(f"<div style='margin-bottom:1rem'><strong>Tomorrow Watch</strong><ul style='margin:0.3rem 0 0 1.2rem'>{watch}</ul></div>")
 
         sentiment = analyst_data.get("sentiment", "unknown")
@@ -339,7 +342,7 @@ def generate_html_report(report):
     </div>"""
 
     overview = report["overview"]
-    summary_escaped = report["summary"].replace("\n", "<br>")
+    summary_escaped = _html.escape(report["summary"]).replace("\n", "<br>")
 
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -560,8 +563,8 @@ def generate_rss_feed(report):
     entries_xml = ""
 
     for it in report["top_items"][:20]:
-        title = it["title"].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-        url = it.get("url", "").replace("&", "&amp;")
+        title = _html.escape(it["title"])
+        url = _html.escape(it.get("url", ""))
         desc = f"[{it['source']}] Engagement: {it['engagement']}"
         pub_date = it.get("time", now.isoformat())
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-一键运行: 收集 → 私人分析 → 生成报告
+一键运行: 收集 → 私人分析 → 生成报告 → 通知推送
 Usage: python scripts/run_all.py
 """
 

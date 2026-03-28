@@ -434,7 +434,7 @@
     </footer>
 
     <script>
-        const DATA_URL = '../../assets/data/news.json';
+        const DATA_URL = 'data/news.json';
         const AUTO_REFRESH_MS = 5 * 60 * 1000; // 5 minutes
 
         let allNews = [];
@@ -470,11 +470,18 @@
             return String(n);
         }
 
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         function renderCard(item) {
-            const src = SOURCE_CONFIG[item.source] || { label: item.source, class: '' };
+            const src = SOURCE_CONFIG[item.source] || { label: escapeHtml(item.source), class: '' };
             const hotBadge = item.is_hot ? `<span class="hot-badge">🔥 热门</span>` : '';
-            const tags = (item.tags || []).map(t => `<span class="topic-tag">${t}</span>`).join('');
-            const link = item.url ? `<a href="${item.url}" target="_blank" rel="noopener">${item.title}</a>` : item.title;
+            const tags = (item.tags || []).map(t => `<span class="topic-tag">${escapeHtml(t)}</span>`).join('');
+            const safeTitle = escapeHtml(item.title);
+            const link = item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">${safeTitle}</a>` : safeTitle;
 
             return `
                 <article class="news-card" data-source="${item.source}">
@@ -482,12 +489,12 @@
                         <div class="news-card-title">${link}</div>
                         ${hotBadge}
                     </div>
-                    <div class="news-card-summary">${item.summary || ''}</div>
+                    <div class="news-card-summary">${escapeHtml(item.summary || '')}</div>
                     <div class="news-card-meta">
                         <span class="source-tag ${src.class}">${src.label}</span>
                         <span class="meta-item">🕐 ${formatTime(item.time)}</span>
                         ${item.engagement ? `<span class="meta-item">💬 ${formatNumber(item.engagement)}</span>` : ''}
-                        ${item.author ? `<span class="meta-item">👤 ${item.author}</span>` : ''}
+                        ${item.author ? `<span class="meta-item">👤 ${escapeHtml(item.author)}</span>` : ''}
                     </div>
                     ${tags ? `<div class="topic-tags">${tags}</div>` : ''}
                 </article>

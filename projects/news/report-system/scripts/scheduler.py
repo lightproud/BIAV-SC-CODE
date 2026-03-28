@@ -43,17 +43,21 @@ def next_run_time():
 
 
 def run_task():
-    """执行收集 + 报告生成。"""
+    """执行收集 → 分析 → 报告 → 通知 完整流程。"""
     from collector import collect_all
+    from analyst import analyze
     from reporter import generate_report
+    from notifier import notify
 
     logger.info("=== 开始执行定时任务 ===")
     try:
-        collect_all()
-        generate_report()
+        raw = collect_all()
+        analysis = analyze(raw.get("items", []))
+        report = generate_report(analysis=analysis)
+        notify(report)
         logger.info("=== 定时任务完成 ===")
-    except Exception as e:
-        logger.error(f"任务执行失败: {e}")
+    except Exception:
+        logger.exception("任务执行失败")
 
 
 def main():

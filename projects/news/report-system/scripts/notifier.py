@@ -16,6 +16,7 @@
 输入: data/report.json
 """
 
+import html as _html
 import json
 import os
 import logging
@@ -44,8 +45,12 @@ def load_report():
     if not REPORT_JSON_PATH.exists():
         logger.warning("report.json not found, nothing to notify")
         return None
-    with open(REPORT_JSON_PATH, "r", encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        with open(REPORT_JSON_PATH, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, ValueError) as e:
+        logger.warning("report.json corrupted: %s", e)
+        return None
 
 
 def build_summary(report):
@@ -93,10 +98,11 @@ def build_html_summary(report):
     report_id = report.get("report_id", "unknown")
     report_num = analyst.get("report_number", "?")
 
+    e = _html.escape
     top_items = report.get("top_items", [])[:5]
     top_html = "".join(
-        f'<li><strong>[{it["source"]}]</strong> '
-        f'<a href="{it.get("url", "#")}">{it["title"]}</a> '
+        f'<li><strong>[{e(it["source"])}]</strong> '
+        f'<a href="{e(it.get("url", "#"))}">{e(it["title"])}</a> '
         f'<span style="color:#888">({it["engagement"]})</span></li>'
         for it in top_items
     )
@@ -104,7 +110,7 @@ def build_html_summary(report):
     risk_alerts = analyst.get("risk_alerts", [])
     risk_html = ""
     if risk_alerts:
-        risk_items = "".join(f"<li>{a}</li>" for a in risk_alerts)
+        risk_items = "".join(f"<li>{e(a)}</li>" for a in risk_alerts)
         risk_html = f'<h3 style="color:#e74c3c">⚠️ 风险提醒</h3><ul>{risk_items}</ul>'
 
     return f"""<div style="font-family:sans-serif;max-width:600px;margin:0 auto">
@@ -188,7 +194,7 @@ def send_telegram(text):
     try:
         resp = requests.post(
             f"https://api.telegram.org/bot{bot_token}/sendMessage",
-            json={"chat_id": chat_id, "text": content, "parse_mode": "HTML"},
+            json={"chat_id": chat_id, "text": content},
             timeout=15,
         )
         if resp.ok:
