@@ -22,6 +22,25 @@
 - `requirements.txt` — Python 依赖（仅 requests）
 - `.env.example` — 环境变量配置模板
 
+## report-system 模块
+从 `claude/new-session-7Plu3` 分支整合的全球情报报告系统，位于 `report-system/` 子目录。
+
+功能：全球 29 个平台数据采集 → 私人 Claude 分析（带长期记忆）→ 报告生成（JSON/HTML/RSS）→ 多渠道推送通知。
+
+主要文件：
+- `report-system/scripts/collector.py` — 全球多平台数据采集器
+- `report-system/scripts/analyst.py` — 私人 Claude 分析师（带记忆系统）
+- `report-system/scripts/reporter.py` — 报告生成器（JSON + HTML + RSS）
+- `report-system/scripts/notifier.py` — 多渠道通知推送（Email/Discord/Telegram/Bark/Webhook）
+- `report-system/scripts/run_all.py` — 一键运行全流程
+- `report-system/scripts/scheduler.py` — 本地定时任务
+- `report-system/index.html` — 交互式仪表盘
+- `report-system/data/user_preferences.yaml` — 用户偏好配置
+- `report-system/requirements.txt` — Python 依赖
+- `report-system/.env.example` — 环境变量模板
+
+GitHub Actions 工作流 `.github/workflows/generate-report.yml` 每天 UTC+8 00:00 自动运行。
+
 ## 给 Code 会话的指令
 - 工作目录：`projects/news/`
 - 聚合输出写入：`assets/data/news.json`
