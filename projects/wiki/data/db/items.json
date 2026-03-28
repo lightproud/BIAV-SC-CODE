@@ -120,9 +120,9 @@
     ],
     "domain_residues": [
       {"name": "混沌残渣", "name_en": "Chaotic Residue", "domain": "chaos", "source": "混沌融蚀之墟 / 混沌聚落"},
-      {"name": "深渊残渣", "name_en": "Abyssal Residue", "domain": "deep_sea", "source": "深海融蚀之墟 / 波纳佩遗迹"},
-      {"name": "血腥残渣", "name_en": "Bloody Residue", "domain": "flesh", "source": "血肉融蚀之墟 / 蠕虫巢穴"},
-      {"name": "宇宙残渣", "name_en": "Cosmic Residue", "domain": "hyperdimension", "source": "超维融蚀之墟 / 史瓦西之喉"}
+      {"name": "深渊残渣", "name_en": "Abyssal Residue", "domain": "aequor", "source": "深海融蚀之墟 / 波纳佩遗迹"},
+      {"name": "血腥残渣", "name_en": "Bloody Residue", "domain": "caro", "source": "血肉融蚀之墟 / 蠕虫巢穴"},
+      {"name": "宇宙残渣", "name_en": "Cosmic Residue", "domain": "ultra", "source": "超维融蚀之墟 / 史瓦西之喉"}
     ]
   },
 

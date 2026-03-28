@@ -97,19 +97,19 @@
     "faded_legacy": {
       "name": "旧世篇限定角色",
       "banners": [
-        {"version": "v1.0", "character": "图鲁(Tulu)", "realm": "deep_sea", "wod": "神王的颂歌", "note": "后加入常驻(0.5%概率)"},
-        {"version": "v1.0", "character": "达芙黛尔(Daffodil)", "realm": "hyperdimension", "wod": "至为珍贵的藏品"},
-        {"version": "v1.0后半", "character": "索蕾尔(Sorel)", "realm": "flesh", "wod": "以蔷薇之名", "note": "后加入常驻"},
+        {"version": "v1.0", "character": "图鲁(Tulu)", "realm": "aequor", "wod": "神王的颂歌", "note": "后加入常驻(0.5%概率)"},
+        {"version": "v1.0", "character": "达芙黛尔(Daffodil)", "realm": "ultra", "wod": "至为珍贵的藏品"},
+        {"version": "v1.0后半", "character": "索蕾尔(Sorel)", "realm": "caro", "wod": "以蔷薇之名", "note": "后加入常驻"},
         {"version": "v1.1前半", "character": "莉莉(Lily)", "realm": "chaos", "wod": "跨越疼痛", "note": "后加入常驻"},
-        {"version": "v1.1后半", "character": "墨菲(Murphy)", "realm": "deep_sea", "wod": "隐秘的诞生", "tier": "S"},
-        {"version": "v1.2", "character": "旺达(Wanda)", "realm": "hyperdimension", "wod": "女王的戒律"},
-        {"version": "v1.3", "character": "萨尔瓦多(Salvador)", "realm": "flesh", "wod": "神言石板"},
+        {"version": "v1.1后半", "character": "墨菲(Murphy)", "realm": "aequor", "wod": "隐秘的诞生", "tier": "S"},
+        {"version": "v1.2", "character": "旺达(Wanda)", "realm": "ultra", "wod": "女王的戒律"},
+        {"version": "v1.3", "character": "萨尔瓦多(Salvador)", "realm": "caro", "wod": "神言石板"},
         {"version": "v1.4", "character": "24", "realm": "chaos", "wod": "畸体回噬", "tier": "S"},
-        {"version": "v1.4", "character": "泰旖丝(Thais)", "realm": "flesh", "wod": "慈悲的哺育", "tier": "S"},
-        {"version": "v1.4-1.5", "character": "弥利亚姆(Miryam)", "realm": "deep_sea", "wod": "虔诚的伟力"},
-        {"version": "v1.5", "character": "奥尔拉(Horla)", "realm": "hyperdimension", "wod": "诗笺的句尾", "tier": "S"},
+        {"version": "v1.4", "character": "泰旖丝(Thais)", "realm": "caro", "wod": "慈悲的哺育", "tier": "S"},
+        {"version": "v1.4-1.5", "character": "弥利亚姆(Miryam)", "realm": "aequor", "wod": "虔诚的伟力"},
+        {"version": "v1.5", "character": "奥尔拉(Horla)", "realm": "ultra", "wod": "诗笺的句尾", "tier": "S"},
         {"version": "v1.5", "character": "莱克(Ryker)", "realm": "chaos", "wod": "好运时间", "tier": "S"},
-        {"version": "v1.5-2.0", "character": "血链·希洛(Helot:Catena)", "realm": "flesh", "wod": "沉入殷红", "tier": "S"},
+        {"version": "v1.5-2.0", "character": "血链·希洛(Helot:Catena)", "realm": "caro", "wod": "沉入殷红", "tier": "S"},
         {"version": "v2.0", "character": "哈姆林(Hameln)", "realm": "chaos", "wod": "永恒安魂曲", "tier": "S"},
         {"version": "v2.0", "character": "塔薇(Tawil)", "realm": "chaos", "tier": "S"}
       ]
@@ -118,16 +118,16 @@
       "name": "星辰篇限定角色",
       "banners": [
         {"version": "v2.0+", "character": "熔毁·朵尔(Doll:Inferno)", "realm": "chaos", "note": "已有复刻"},
-        {"version": "v2.1", "character": "克莱门汀(Clementine)", "realm": "hyperdimension"},
-        {"version": "v2.1", "character": "克珀珊特(Corposant)", "realm": "deep_sea"},
+        {"version": "v2.1", "character": "克莱门汀(Clementine)", "realm": "ultra"},
+        {"version": "v2.1", "character": "克珀珊特(Corposant)", "realm": "aequor"},
         {"version": "v2.2", "character": "凯蒂古拉(Kathigu-Ra)", "realm": "chaos"},
-        {"version": "v2.2.2", "character": "卡斯托尔(Castor)", "realm": "hyperdimension"},
-        {"version": "v2.3", "character": "杜勒赛因(Doresain)", "realm": "flesh"},
-        {"version": "v2.3", "character": "茉夏(Mouchette)", "realm": "flesh"},
-        {"version": "v2.3.2", "character": "皮克曼(Pickman)", "realm": "deep_sea"},
-        {"version": "v2.3.4", "character": "波吕克斯(Pollux)", "realm": "hyperdimension", "banner_name": "神圣赦免"},
-        {"version": "v2.4", "character": "诞妄·墨菲(Murphy:Fauxborn)", "realm": "deep_sea", "role": "chorus", "banner_name": "尊崇之诞"},
-        {"version": "v2.4", "character": "徐(Xu)", "realm": "flesh", "role": "chorus", "banner_name": "夜幕狂喜"}
+        {"version": "v2.2.2", "character": "卡斯托尔(Castor)", "realm": "ultra"},
+        {"version": "v2.3", "character": "杜勒赛因(Doresain)", "realm": "caro"},
+        {"version": "v2.3", "character": "茉夏(Mouchette)", "realm": "caro"},
+        {"version": "v2.3.2", "character": "皮克曼(Pickman)", "realm": "aequor"},
+        {"version": "v2.3.4", "character": "波吕克斯(Pollux)", "realm": "ultra", "banner_name": "神圣赦免"},
+        {"version": "v2.4", "character": "诞妄·墨菲(Murphy:Fauxborn)", "realm": "aequor", "role": "chorus", "banner_name": "尊崇之诞"},
+        {"version": "v2.4", "character": "徐(Xu)", "realm": "caro", "role": "chorus", "banner_name": "夜幕狂喜"}
       ]
     },
     "standard_additions": {

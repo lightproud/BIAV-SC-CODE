@@ -4,6 +4,7 @@ export default defineConfig({
   title: '忘却前夜 Wiki',
   description: '忘却前夜 (Morimens) 全球游戏资料站 - Roguelite 卡牌构筑手游百科',
 
+  base: '/brain-in-a-vat/',
   ignoreDeadLinks: true,
 
   head: [
