@@ -1,0 +1,121 @@
+:root {
+  --vp-c-brand-1: #6d5dfc;
+  --vp-c-brand-2: #8b7ffd;
+  --vp-c-brand-3: #a49bfe;
+  --vp-c-brand-soft: rgba(109, 93, 252, 0.14);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #6d5dfc, #c084fc);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #6d5dfc50 50%, #c084fc50 50%);
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+.dark {
+  --vp-c-brand-1: #8b7ffd;
+  --vp-c-brand-2: #a49bfe;
+  --vp-c-brand-3: #bdb6fe;
+}
+
+/* Rarity colors */
+.rarity-ssr { color: #ff9d00; font-weight: bold; }
+.rarity-sr { color: #c084fc; font-weight: bold; }
+.rarity-r { color: #60a5fa; font-weight: bold; }
+
+/* Designated Realm colors */
+.realm-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.realm-chaos { background: #4c1d95; color: #e9d5ff; }
+.realm-aequor { background: #164e63; color: #cffafe; }
+.realm-caro { background: #7f1d1d; color: #fecaca; }
+.realm-ultra { background: #1e3a5f; color: #bfdbfe; }
+
+/* Card type badges */
+.card-type-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.card-command { background: #dbeafe; color: #1e40af; }
+.card-spirit { background: #fef3c7; color: #92400e; }
+.card-madness { background: #fce7f3; color: #9d174d; }
+
+/* Character/item card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.card {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.25s;
+}
+
+.card:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 2px 12px rgba(109, 93, 252, 0.1);
+}
+
+/* Stat table styling */
+.stat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stat-table th,
+.stat-table td {
+  padding: 8px 12px;
+  border: 1px solid var(--vp-c-divider);
+  text-align: left;
+}
+
+.stat-table th {
+  background: var(--vp-c-bg-soft);
+  font-weight: 600;
+}
+
+/* Madness gauge styling */
+.madness-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #7c3aed, #db2777);
+  border-radius: 4px;
+}
+
+/* Arithmetica cost indicator */
+.arithmetica-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 6px;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 3px;
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+/* Server version badges */
+.server-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-weight: 600;
+}
+
+.server-cn { background: #fee2e2; color: #991b1b; }
+.server-global { background: #d1fae5; color: #065f46; }
+.server-jp { background: #fef3c7; color: #92400e; }
+.server-tw { background: #ede9fe; color: #5b21b6; }
