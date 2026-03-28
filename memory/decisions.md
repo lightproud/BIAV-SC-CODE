@@ -32,7 +32,12 @@
 ### 废弃分支清理
 - 已合并或被继承的分支应及时删除
 - 已清理：`claude/create-main-control-dialog-s0GuV`、`claude/initial-setup-2rzjz`
-- 待清理（重构后）：`claude/community-news-aggregator-1TRtx`、`claude/new-session-7Plu3`、`claude/create-content-database-fhrVq`、`claude/morimens-wiki-site-12fyA`
+- 2026-03-28 已确认删除（内容已合入 main 或被后续分支继承）：
+  - `claude/community-news-aggregator-1TRtx`（新闻聚合器原始分支，内容已重构到 news 子项目）
+  - `claude/new-session-7Plu3`（报告系统分支，内容已集成，见 project-status.md）
+  - `claude/data-validation-supplement-3hLv4`（数据校验补充，内容已合入 wiki 数据集）
+  - `claude/merge-database-wiki`（database/wiki 合并过渡分支，任务已完成）
+  - `brain-in-a-vat/main-control-console-ObGQw`（错误前缀分支，由 `claude/main-control-console-ObGQw` 继承）
 
 ### 当前活跃分支
 | 分支 | 子项目 | 说明 |
