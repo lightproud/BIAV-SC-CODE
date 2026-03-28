@@ -69,6 +69,6 @@ brain-in-a-vat/
 6. 不要修改其他子项目的代码
 
 ## 代码风格
-- 前端：纯 HTML/CSS/JS，无框架
+- 各子项目按需选择技术栈（不强制统一前端方案）
 - 后端：Python 3.11+
 - 部署：GitHub Pages + GitHub Actions
