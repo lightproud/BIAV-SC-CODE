@@ -13,6 +13,7 @@
 | 2026-03-28 | 仓库定位为"共享外脑 + 中转站" | Code 生产，Chat 加工交付，仓库是中间层 | 全局 |
 | 2026-03-28 | 子项目保持单仓库，不拆分独立 repo | 所有会话需共享 memory/assets，分支隔离已够用，体量轻量无性能压力；仅当 game 资源膨胀时再考虑 submodule 拆分 | 全局 |
 | 2026-03-28 | 确立分支管理策略（见下方详细说明） | main 作为稳定基线，子项目分支从 main 拉取，功能稳定后由主控台 PR 合并回 main | 全局 |
+| 2026-03-28 | 合并 database 和 wiki 为单一 wiki 子项目 | 数据集是 wiki 的后端，站点是 wiki 的前端，分开容易混淆 | wiki |
 
 ## 分支管理策略
 
@@ -35,6 +36,5 @@
 | 分支 | 子项目 | 说明 |
 |------|--------|------|
 | `claude/main-control-console-ObGQw` | 主控制台 | 项目规划与协调 |
-| `claude/database-restructure` | database | 重构后的官方数据库 |
-| `claude/news-restructure` | news | 重构后的新闻聚合 + 报告系统 |
-| `claude/wiki-restructure` | wiki | 重构后的 Wiki 站点 |
+
+> 其他重构分支已合并到 main。新的子项目会话启动时从 main 拉新分支。

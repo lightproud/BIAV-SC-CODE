@@ -8,9 +8,9 @@
 |------|------|----------|------|
 | `data/news.json` | 社区热点聚合数据 | 每小时（Actions） | Code-news |
 
-## 数据库数据（projects/database/data/db/）
+## 数据库数据（projects/wiki/data/db/）
 
-数据库的 16 个模块化 JSON 文件存放在 `projects/database/data/db/`，不在 assets 目录下（避免重复拷贝）。
+数据库的 16 个模块化 JSON 文件存放在 `projects/wiki/data/db/`，不在 assets 目录下（避免重复拷贝）。
 
 | 文件 | 说明 | 来源 |
 |------|------|------|
@@ -31,7 +31,7 @@
 | `meta.json` | 元数据与 tier 信息 | Code-database |
 | `key_commands.json` | 指令钥匙系统 | Code-database |
 
-详细说明见 `projects/database/CONTEXT.md`。
+详细说明见 `projects/wiki/CONTEXT.md`。
 
 ## 图片
 

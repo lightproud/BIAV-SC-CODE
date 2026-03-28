@@ -7,8 +7,7 @@
 | 子项目 | 状态 | 负责会话 | 下一步 |
 |--------|------|---------|--------|
 | news（新闻聚合 + 报告系统） | 运行中 | Code-news | 配置 API 密钥，启用更多数据源 |
-| database（官方数据库） | 数据就绪 | Code-database | 完善查询接口，补充缺失数据 |
-| wiki（多语言 Wiki） | 内容就绪 | Code-wiki | 填充模板页面，部署到 GitHub Pages |
+| wiki（数据集 + Wiki 站点） | 数据就绪 | Code-wiki | 数据校验、填充 Wiki 页面、部署 |
 | game（衍生游戏） | 规划中 | 待创建 | 确定游戏类型 |
 
 ## News 新闻聚合 + 报告系统
@@ -30,10 +29,11 @@
 - **待验证**：整合到新目录结构后的 GitHub Actions 流水线
 - **待配置**：各平台 API 密钥
 
-## Database 官方数据库
+## Wiki 数据集 + 站点
 
+### 游戏数据集（原 database）
 - **已完成**：
-  - 16 个 JSON 数据文件已入库（`projects/database/data/db/`）
+  - 16 个 JSON 数据文件（`projects/wiki/data/db/`）
   - 56 个 SSR 唤醒体 + SR 角色数据
   - 命轮与圣契装备体系
   - 四大界域体系（Chaos、Aequor、Caro、Ultra）
@@ -44,11 +44,9 @@
   - Python 查询模块 content_db.py
 - **进行中**：数据准确性校验
 - **待办**：接入 Fandom/Gamerch wiki 自动更新
-- **存储格式**：模块化 JSON
 - **数据来源**：GameKee wiki、Fandom、Gamerch JP
 
-## Wiki 多语言 Wiki
-
+### Wiki 站点
 - **已完成**：VitePress 站点框架、三语言结构（EN/JA/ZH）、约 190 页 Markdown
 - **进行中**：填充模板页面内容
 - **技术栈**：VitePress 1.6.3 + Vue 3.5.13
