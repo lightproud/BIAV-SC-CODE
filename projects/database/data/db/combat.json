@@ -1,0 +1,680 @@
+{
+  "description": "忘却前夜战斗系统与游戏模式详解",
+
+  "combat_system": {
+    "type": "Roguelite卡牌构筑回合制（类杀戮尖塔）",
+    "perspective": "2D横版",
+    "overview": "战斗开始前可查看关卡推荐等级，选择适合角色备战。战斗时根据敌方意图和算力使用不同卡牌。",
+
+    "core_resources": [
+      {
+        "name": "算力",
+        "name_en": "Arithmetica / Algorithm Points / AP",
+        "description": "每回合基础5点AP（无加成时），使用卡牌消耗AP。不同卡牌消耗不同AP。"
+      },
+      {
+        "name": "狂气",
+        "name_en": "Aliemus / Fury / Madness",
+        "description": "角色通过打出指令牌（打击/防御卡）积累，技能等级越高获取越多。累积至100点后可释放「狂气爆发」（Exalt），消耗0 AP，威力极大。超限爆发（Overexalt）需要200点狂气（双倍），需8个角色副本解锁。"
+      },
+      {
+        "name": "银钥能量",
+        "name_en": "Keyflare / Silver Key Energy",
+        "description": "通过消耗AP执行特定行动积累。累积至1000点后可发动「钥令」（Posse）。钥令在编队时选择，是守密人独属能力。v2.0引入为核心守密人战斗能力。"
+      },
+      {
+        "name": "黑印",
+        "name_en": "Black Ink / Black Sigil",
+        "description": "战斗中掉落的资源，用于在融痕中获取觉醒和购买造物（遗物）。银色造物约50黑印，金色造物约90黑印，诅咒造物效果强但有副作用。"
+      },
+      {
+        "name": "护盾",
+        "name_en": "Shield",
+        "description": "替HP承受伤害。所有护盾在回合结束时清除。最优策略：生成等于敌方伤害量的护盾。"
+      }
+    ],
+
+    "turn_structure": {
+      "hand_limit": 10,
+      "draw_per_turn": 4,
+      "base_ap_per_turn": 5,
+      "discard_rule": "回合结束时未打出的手牌进入弃牌堆",
+      "reshuffle_rule": "抽牌堆耗尽时，弃牌堆洗入抽牌堆重新抽取"
+    },
+
+    "card_system": {
+      "per_character": {
+        "command_cards": 4,
+        "spirit_awakening_card": 1,
+        "description": "每个唤醒体有4张指令牌（基础技能）和1张灵之觉醒牌（特殊能力）。"
+      },
+      "card_types": [
+        {
+          "name": "打击牌",
+          "name_en": "Strike Cards",
+          "description": "直接伤害型卡牌。如Eleanor的「深海咆哮」可造成高额爆发伤害。"
+        },
+        {
+          "name": "防御牌",
+          "name_en": "Defense Cards",
+          "description": "生成护盾或减少受到伤害。如Ogier的「混沌守护」。"
+        },
+        {
+          "name": "辅助牌",
+          "name_en": "Support Cards",
+          "description": "施加状态效果（中毒、麻痹）、治疗HP、充能大招。如Celeste的「治愈波涛」。"
+        },
+        {
+          "name": "特殊牌",
+          "name_en": "Special Cards",
+          "description": "探索中获得的临时卡牌。如「虚空楔」可延迟敌方1回合行动。"
+        }
+      ],
+      "deck_size": "185+且持续扩展的牌库阵容"
+    },
+
+    "skill_types": [
+      {
+        "name": "指令卡牌",
+        "name_en": "Command Cards",
+        "description": "角色基础技能卡牌，消耗算力使用。包含打击、防御、辅助等类型。"
+      },
+      {
+        "name": "狂气爆发",
+        "name_en": "Fury Burst / Madness Burst",
+        "description": "角色大招。狂气满100点后触发，消耗0 AP，威力极大，是每个角色独有的强力技能。"
+      },
+      {
+        "name": "钥令",
+        "name_en": "Key Command / Key Order",
+        "description": "v2.0引入的守密人独属能力。消耗1000银钥能量发动，编队时选择携带。情感与记忆蜕变为独属于守密人的全新能力。"
+      },
+      {
+        "name": "超限爆发",
+        "name_en": "Transcendence Burst",
+        "description": "v1.5引入的新终极技能系统，部分角色可解锁。"
+      }
+    ],
+
+    "status_effects": {
+      "description": "战斗中可施加的正面增益（Buff）与负面减益（Debuff）状态效果。",
+
+      "buffs": [
+        {
+          "id": "strength",
+          "name": "力量",
+          "name_en": "Strength",
+          "icon_type": "sword_up",
+          "effect": "每层增加每次攻击的最终伤害1点。可持续叠加。",
+          "duration": "临时（1回合）或持续",
+          "stacking": "数值叠加，无上限",
+          "notes": "深海界域中，力量以0.5倍比例增加触腕伤害（原为1/3，后调整为1/2）。"
+        },
+        {
+          "id": "shield",
+          "name": "护盾",
+          "name_en": "Shield",
+          "icon_type": "shield",
+          "effect": "代替生命值承受伤害。",
+          "duration": "回合结束时自动移除所有护盾",
+          "stacking": "数值叠加",
+          "notes": "最优策略：让护盾量等于本回合敌方伤害总量。狂气爆发中护盾可带来伤害加成（特定角色）。"
+        },
+        {
+          "id": "counterattack",
+          "name": "反击",
+          "name_en": "Counterattack",
+          "icon_type": "counter",
+          "effect": "受到敌方攻击时，对攻击者造成等同于层数的伤害。每次敌方攻击触发一次。",
+          "duration": "临时（1回合）或持续",
+          "stacking": "数值叠加",
+          "notes": "反击属性不会自然消失（持续型），面对多段攻击敌人可造成高额反击伤害。混沌流派核心构筑要素之一。"
+        },
+        {
+          "id": "stealth",
+          "name": "潜行",
+          "name_en": "Stealth",
+          "icon_type": "stealth",
+          "effect": "使角色不被敌方优先攻击。获得潜行时解除自身的嘲讽。",
+          "duration": "持续至被移除",
+          "stacking": "非叠加，互斥嘲讽",
+          "notes": "获得潜行时会移除队友身上的潜行（同一时间只有一人可潜行）。所有队友阵亡时潜行自动解除。"
+        },
+        {
+          "id": "taunt",
+          "name": "嘲讽",
+          "name_en": "Taunt",
+          "icon_type": "taunt",
+          "effect": "使角色成为敌方优先攻击目标，改变敌方攻击次序。获得嘲讽时解除自身的潜行。",
+          "duration": "持续至被移除",
+          "stacking": "非叠加，互斥潜行",
+          "notes": "有嘲讽效果时会出现粉红护盾图标。"
+        },
+        {
+          "id": "alert",
+          "name": "警觉",
+          "name_en": "Alert",
+          "icon_type": "alert",
+          "effect": "增加护盾生成量。",
+          "duration": "临时或持续",
+          "stacking": "数值叠加",
+          "notes": "防御型角色常见增益。"
+        }
+      ],
+
+      "debuffs": [
+        {
+          "id": "vulnerability",
+          "name": "易伤",
+          "name_en": "Vulnerability",
+          "icon_type": "vuln",
+          "effect": "受到的伤害增加50%。",
+          "duration": "每回合减少1层持续时间",
+          "stacking": "额外层数增加持续时间",
+          "notes": "核心输出增幅debuff，常由辅助角色施加。"
+        },
+        {
+          "id": "weakness",
+          "name": "虚弱",
+          "name_en": "Weakness",
+          "icon_type": "weak",
+          "effect": "造成的伤害减少25%。",
+          "duration": "每回合减少1层持续时间",
+          "stacking": "额外层数增加持续时间",
+          "notes": "降低敌方伤害的关键减益效果。"
+        },
+        {
+          "id": "fragile",
+          "name": "脆弱",
+          "name_en": "Fragile",
+          "icon_type": "fragile",
+          "effect": "获得的护盾减少25%。",
+          "duration": "每回合减少1层持续时间",
+          "stacking": "额外层数增加持续时间",
+          "notes": "针对护盾构筑队的关键debuff。"
+        },
+        {
+          "id": "poison",
+          "name": "中毒",
+          "name_en": "Poison",
+          "icon_type": "poison",
+          "effect": "每回合造成等同于层数的伤害。",
+          "duration": "持续（不自动消失）",
+          "stacking": "数值叠加，无上限",
+          "notes": "中毒本身伤害有限，需要触发者角色（如24号、米莉安/Miryam、莉莉/Lily）配合才能发挥威力。被称为「几乎不可治愈」。"
+        },
+        {
+          "id": "bleed",
+          "name": "流血",
+          "name_en": "Bleed",
+          "icon_type": "bleed",
+          "effect": "造成等同于层数的伤害后消失。每恢复1点HP，流血层数减少2层。",
+          "duration": "1回合（结算后消失）",
+          "stacking": "数值叠加",
+          "notes": "一次性结算型DOT，与中毒的持续性不同。"
+        },
+        {
+          "id": "blind",
+          "name": "致盲",
+          "name_en": "Blind",
+          "icon_type": "blind",
+          "effect": "阻止暴击触发。",
+          "duration": "临时",
+          "stacking": "层数型",
+          "notes": "对依赖暴击的输出角色效果显著。"
+        },
+        {
+          "id": "petrification",
+          "name": "石化/昏厥",
+          "name_en": "Petrification / Faint",
+          "icon_type": "stun",
+          "effect": "完全眩晕敌人1回合，使其无法行动。",
+          "duration": "1回合",
+          "stacking": "非叠加",
+          "notes": "原名「石化」，后统一为「昏厥」。艾继丝（Aigis）的吞噬可施加此效果。"
+        },
+        {
+          "id": "sealed",
+          "name": "封印",
+          "name_en": "Sealed",
+          "icon_type": "sealed",
+          "effect": "阻止唤醒体使用狂气爆发（Exalt）。",
+          "duration": "持续至被移除",
+          "stacking": "非叠加",
+          "notes": "部分变体还可阻止使用卡牌。造物「行道之骸」每使用1次狂气爆发会临时封印所有唤醒体。"
+        },
+        {
+          "id": "sluggish",
+          "name": "迟钝",
+          "name_en": "Sluggish",
+          "icon_type": "slow",
+          "effect": "增加所有卡牌的算力消耗。",
+          "duration": "临时",
+          "stacking": "层数型",
+          "notes": "影响范围为所有卡牌，与停滞不同。"
+        },
+        {
+          "id": "stagnation",
+          "name": "停滞",
+          "name_en": "Stagnation",
+          "icon_type": "stagnate",
+          "effect": "增加特定单张卡牌的算力消耗。",
+          "duration": "附着于特定卡牌",
+          "stacking": "针对单卡",
+          "notes": "只影响被标记的特定卡牌，与迟钝（全部卡牌）不同。"
+        },
+        {
+          "id": "frozen",
+          "name": "冻结",
+          "name_en": "Frozen",
+          "icon_type": "frozen",
+          "effect": "被冻结的卡牌无法打出或丢弃，直到持有者使用狂气爆发（Exalt）。",
+          "duration": "持续至使用Exalt",
+          "stacking": "针对单卡",
+          "notes": "强制锁定手牌，减少可用手牌数量。"
+        },
+        {
+          "id": "sin_mark",
+          "name": "罪印",
+          "name_en": "Sin Mark",
+          "icon_type": "sin",
+          "effect": "施加时失去等同于层数的最大HP。触发时受到等同于层数的被动伤害。",
+          "duration": "永久",
+          "stacking": "数值叠加",
+          "notes": "极其危险的永久性debuff，同时降低最大HP并造成持续伤害。"
+        },
+        {
+          "id": "str_down",
+          "name": "力量降低",
+          "name_en": "STR Down",
+          "icon_type": "sword_down",
+          "effect": "每层降低每次攻击的基础伤害1点。",
+          "duration": "临时或持续",
+          "stacking": "数值叠加",
+          "notes": "力量的负面版本，可有效降低敌方输出。"
+        }
+      ],
+
+      "character_specific_effects": [
+        {
+          "id": "psychic_trauma",
+          "name": "精神创伤",
+          "name_en": "Psychic Trauma",
+          "character": "克莱门汀/Clementine",
+          "effect": "虚弱的变体版本，每层提供3%伤害强效。与虚弱可叠加。",
+          "duration": "1回合",
+          "notes": "与恐惧固着互斥（超限爆发除外）。"
+        },
+        {
+          "id": "phobic_fixation",
+          "name": "恐惧固着",
+          "name_en": "Phobic Fixation",
+          "character": "克莱门汀/Clementine",
+          "effect": "易伤的变体版本，每层提供3%伤害强效。与易伤可叠加。",
+          "duration": "1回合",
+          "notes": "与精神创伤互斥（超限爆发除外）。"
+        },
+        {
+          "id": "spellbound",
+          "name": "咒缚",
+          "name_en": "Spellbound",
+          "character": "许/Xu",
+          "effect": "增加对被咒缚敌人施加中毒的量，同时降低其伤害输出。",
+          "duration": "临时",
+          "notes": "毒队核心增幅效果。"
+        },
+        {
+          "id": "sacrifice",
+          "name": "牺牲",
+          "name_en": "Sacrifice",
+          "character": "墨菲/Murphy",
+          "effect": "承受伤害能力增强（坦克效果），但持续消耗自身HP（类似自我中毒）。",
+          "duration": "持续",
+          "notes": "需要治疗或驱散手段，否则会自杀。"
+        },
+        {
+          "id": "stumble",
+          "name": "蹒跚",
+          "name_en": "Stumble",
+          "source": "敌人「莎拉」",
+          "effect": "在手牌中置入负面状态卡牌「蹒跚」，占据手牌空间。",
+          "duration": "直到打出或丢弃",
+          "notes": "堵塞手牌的干扰型debuff。"
+        }
+      ],
+
+      "pvp_specific_effects": [
+        {
+          "id": "deathduel",
+          "name": "死斗",
+          "name_en": "Deathduel",
+          "effect": "降低治疗量和护盾量。2层死斗使所有治疗和护盾变为1点。",
+          "trigger": "双方费用增长到10点上限后自动施加",
+          "stacking": "每回合施加1层，最高2层",
+          "notes": "防止PVP对局拖延的机制。"
+        }
+      ]
+    },
+
+    "combat_attributes": {
+      "description": "密契系统中可获得的战斗属性词条，影响角色战斗表现。",
+      "attributes": [
+        {
+          "id": "crit_rate",
+          "name": "暴击率",
+          "name_en": "Critical Rate",
+          "description": "攻击触发暴击的概率。密契可提供暴击率加成。",
+          "priority": "输出手核心属性"
+        },
+        {
+          "id": "crit_damage",
+          "name": "暴击伤害",
+          "name_en": "Critical Damage",
+          "description": "暴击触发时的伤害倍率加成。",
+          "priority": "输出手核心属性"
+        },
+        {
+          "id": "potency",
+          "name": "伤害强效",
+          "name_en": "Potency / Damage Enhancement",
+          "description": "直接提升角色输出伤害的百分比加成。密契3号板子核心主属性。",
+          "priority": "通用输出属性",
+          "scaling_examples": [
+            "宁菲亚：每1%伤害强效→丧钟遥鸣/自我的葬仪基础中毒+2%",
+            "法洛思：每1%伤害强效→遗失的久远之城护盾+0.3%",
+            "旺达：每1%伤害强效→死梦之都反击+2%"
+          ]
+        },
+        {
+          "id": "aliemus_recharge",
+          "name": "狂气回充",
+          "name_en": "Aliemus Recharge",
+          "description": "提升狂气获取速度，加快Exalt释放频率。",
+          "priority": "输出手核心属性"
+        },
+        {
+          "id": "keyflare_recharge",
+          "name": "银钥充能",
+          "name_en": "Keyflare Recharge / Silver Key Recharge",
+          "description": "提升银钥能量获取速度，加快钥令释放频率。",
+          "priority": "辅助手核心属性"
+        },
+        {
+          "id": "realm_mastery",
+          "name": "界域精通",
+          "name_en": "Realm Mastery",
+          "description": "提升队伍界域天赋效果。队伍界域精通等于全体唤醒体界域精通之和。每1点均可提升效果，不存在稀释。",
+          "priority": "辅助手/全队属性",
+          "scaling_examples": [
+            "深海：界域精通影响触腕概率跟随攻击次数（精通:触手攻击=2:1）",
+            "卡茜亚：每1点界域精通→魔术嘉年华基础伤害+0.2%",
+            "希莱斯特：每1点界域精通→打出卡牌时0.5%几率触发触腕攻击",
+            "詹金：每1点界域精通→打击/布朗出动基础伤害+1%"
+          ]
+        },
+        {
+          "id": "death_resistance",
+          "name": "死亡抵抗",
+          "name_en": "Death Resistance",
+          "description": "HP归零时有概率存活（死亡回避）。混沌界域全员死亡抵抗提升200%。",
+          "priority": "生存属性"
+        },
+        {
+          "id": "black_ink",
+          "name": "黑印掉落",
+          "name_en": "Black Ink Drop / Black Sigil Drop",
+          "description": "增加战斗中黑印（Black Sigil）的掉落率。黑印用于在融痕中获取觉醒和购买造物。",
+          "priority": "辅助手属性",
+          "notes": "银色造物约50黑印，金色造物约90黑印。"
+        }
+      ],
+
+      "covenant_build_guide": {
+        "description": "密契（Covenant）板子主属性推荐配置",
+        "dps_build": "1/5号→狂气回充，2/4/6号→暴击率/暴击伤害，3号→伤害强效",
+        "support_build": "1/5号→银钥充能，2/4/6号→界域精通，3号→伤害强效",
+        "alternative": "扭曲双子黑：1/4/5号狂气回充，2/6号界域精通，3号伤害强效"
+      }
+    },
+
+    "realm_combat_mechanics": {
+      "description": "四大界域各自的独特战斗机制。纯界域编成（不混入混沌以外角色）时效果增强。",
+
+      "aequor": {
+        "name": "深海界域",
+        "name_en": "Aequor Realm",
+        "core_mechanic": "触腕（Tentacle）",
+        "description": "战斗开始时召唤1条触腕，回合结束时自动攻击前排敌人。敌人阵亡时永久增加触腕伤害。",
+        "pure_realm_bonus": "纯深海编成时触腕熟练度效果翻倍，初始触腕数量翻倍。",
+        "stances": [
+          {
+            "id": "surge",
+            "name": "潮涌",
+            "name_en": "Surging Tides / Surge",
+            "type": "均衡型态",
+            "effect": "提供力量加成和基于攻击力的触腕伤害加成。"
+          },
+          {
+            "id": "calm",
+            "name": "静海",
+            "name_en": "Tranquil Sea / Stagnant Sea",
+            "type": "防守型态",
+            "effect": "防御增强。神域中立即获得等于25%最大HP的护盾。"
+          },
+          {
+            "id": "rage",
+            "name": "怒涛",
+            "name_en": "Raging Waves / Rage",
+            "type": "进攻型态",
+            "effect": "大幅增加触腕攻击伤害，但回合结束减少1条触腕。适合快速收尾。"
+          }
+        ],
+        "stance_switch": "每回合可切换1次触腕形态",
+        "divine_realm": {
+          "name": "神域·深海",
+          "name_en": "Divine Realm: Aequor",
+          "trigger": "墨菲·拟生（Murphy: Fauxborn）在队伍中",
+          "effect": "触腕伤害改为队伍最大HP的5%。怒涛增加触腕伤害125%，且每次主动伤害命令1条触腕攻击，但回合结束减少1触腕且切换有3回合冷却。"
+        },
+        "meltdown_enhancement": "融灾黑潮强化：怒海狂澜"
+      },
+
+      "caro": {
+        "name": "血肉界域",
+        "name_en": "Caro Realm",
+        "core_mechanic": "胚胎（Embryo）与猩红熔炉（Crimson Furnace）",
+        "description": "每回合胚胎融合度增加30%，达到100%时手牌获得1张「胚胎」卡。胚胎卡可打出增加狂气，也可在狂气爆发时被消耗以增幅效果（吞噬/Devour）。",
+        "crimson_furnace": {
+          "name": "猩红熔炉",
+          "name_en": "Crimson Furnace",
+          "effect": "储存治疗量。每场战斗后累积5%最大HP回复入熔炉。未使用的胚胎也各累积5%。每回合可转化1次为队伍HP回复。",
+          "notes": "血肉角色常以HP为代价释放能力（Cast from Hit Points），猩红熔炉提供补偿回复。"
+        },
+        "pure_realm_bonus": "直接使用胚胎也能触发血肉界域精通效果（与吞噬共享每回合1次机会）。",
+        "meltdown_enhancement": "融灾黑潮强化：猩红哺育",
+        "advanced_mechanic": {
+          "name": "纯洁之嗣",
+          "name_en": "Scion of Purity",
+          "effect": "使用猩红熔炉后将1个胚胎转化为纯洁之嗣，冷却3回合。"
+        }
+      },
+
+      "ultra": {
+        "name": "超维界域",
+        "name_en": "Ultra Realm / Hyperdimension",
+        "core_mechanic": "超维空间（Hyperdimension Space）与跃迁（Transition/Leap）",
+        "description": "每回合打出的第1张技能卡会被临时复制进入超维空间。超维空间被填满后进入额外回合（超维回合），额外回合中享受跃迁效果加成。",
+        "transition": {
+          "name": "跃迁",
+          "name_en": "Transition / Leap",
+          "effect": "指令卡在超维回合中触发的额外强化效果，提供额外伤害或特殊效果。如：达芙黛尔的断颈一击跃迁伤害67.5%攻击力，目标为HP最高敌人。"
+        },
+        "pure_realm_bonus": "纯超维编成时，额外回合中的能力下降惩罚无效化，卡牌效果进一步提升。",
+        "inscription_fold_leap": {
+          "name": "刻印·折跃",
+          "name_en": "Inscription: Fold Leap",
+          "effect": "打出后该卡牌放入临时超维空间，下次超维回合开始时置入手中并移除临时超维空间。"
+        },
+        "meltdown_enhancement": "融灾黑潮强化：彼界终途（指令卡从超维空间取出时临时算力消耗-1）"
+      },
+
+      "chaos": {
+        "name": "混沌界域",
+        "name_en": "Chaos Realm",
+        "core_mechanic": "死亡抵抗与银钥能量增益",
+        "description": "混沌角色可与任意界域角色组队。队伍中有混沌角色时全员死亡回避率+100%。",
+        "pure_realm_bonus": "纯混沌编成时，回合结束获得250银钥能量（原50→100→250逐版本提升）。额外银钥能量上限。",
+        "flexibility": "混沌界域配队最灵活，可与其他界域混搭，主要靠力量+多段输出+钥令运营。",
+        "meltdown_enhancement": "融灾黑潮强化：来自遗忘",
+        "notes": "混沌界域死亡抵抗提升200%。每个地下城都会获得银色造物。"
+      }
+    },
+
+    "enemy_intent_system": {
+      "description": "敌方下回合行动会显示在其头顶上方，长按可查看详细效果。玩家需根据敌方意图规划出牌策略。"
+    },
+
+    "revival_system": {
+      "name": "应急灵知体",
+      "name_en": "Emergency Spirit Body",
+      "max_count": 5,
+      "description": "HP归零且无死亡抵抗时，消耗1个应急灵知体（最多储存5个）复活，恢复全HP/狂气/银钥能量。理论上每场战斗可全状态复活5次。"
+    },
+
+    "inscription_system": {
+      "name": "刻印",
+      "name_en": "Inscription",
+      "trigger": "击败普通敌人",
+      "description": "击败普通敌人后可对3张卡牌随机刻印，获得额外效果加成。"
+    },
+
+    "artifact_system": {
+      "name": "造物",
+      "name_en": "Artifacts",
+      "trigger": "击败精英敌人",
+      "description": "击败精英敌人后从3个造物中选择1个（2个负面+1个正面）。负面造物也有增益效果但伴随debuff。"
+    }
+  },
+
+  "game_modes": [
+    {
+      "id": "main_story",
+      "name": "主线章节",
+      "name_en": "Main Story",
+      "type": "PVE",
+      "description": "主线剧情关卡，忘却篇（序章至第五章）和星辰篇。含迷雾地图探索和Boss战。不消耗体力，掉落升格材料。",
+      "stamina_cost": false
+    },
+    {
+      "id": "meltdown",
+      "name": "融灾禁区",
+      "name_en": "Erosion Disaster Zone / Meltdown Zone",
+      "type": "PVE",
+      "unlock": "完成主线4-3（原为5-4，后降低）",
+      "description": "多队伍终局挑战内容。要求使用不重复的唤醒体、同名命轮与钥令，构筑不同队伍挑战五个关卡。",
+      "refresh": "每两周刷新奖励与关卡",
+      "difficulty": "高"
+    },
+    {
+      "id": "phase_chess",
+      "name": "相位对弈",
+      "name_en": "Phase Chess",
+      "type": "PVP",
+      "description": "PVP对战模式，玩家间卡牌策略对战。御四家（拉蒙娜、萝坦、朵尔、奥吉尔）和深潜三杰（奥瑞塔、艾瑞卡、艾继丝）是常见基础阵容。"
+    },
+    {
+      "id": "dream_dive",
+      "name": "幻梦深潜",
+      "name_en": "Dream Dive",
+      "type": "PVE",
+      "description": "Roguelite挑战模式，含段位排名系统。v1.5版本进行了翻新改造。拥有全造物组并进行了平衡调整。"
+    },
+    {
+      "id": "consciousness_dive",
+      "name": "意识潜游",
+      "name_en": "Consciousness Dive",
+      "type": "PVE",
+      "description": "包含「扇下夜谈」等特殊关卡的探索模式。"
+    },
+    {
+      "id": "roguelite_tower",
+      "name": "爬塔/地图探索",
+      "name_en": "Tower Climb / Map Exploration",
+      "type": "PVE",
+      "description": "Roguelite核心玩法：迷雾地图探索，含战斗节点、商店、休息点、随机事件、宝箱、精英战、Boss战。首次通关建议全探索隐藏物品，后续返回追求三星。"
+    },
+    {
+      "id": "lightless_realm",
+      "name": "无光秘境",
+      "name_en": "Lightless Realm",
+      "type": "PVE",
+      "description": "解锁角色升星（2/3/4/5星）的挑战副本，也可通过通关主线第2-5章解锁。",
+      "unlock": "通关对应主线章节"
+    },
+    {
+      "id": "daily_dungeons",
+      "name": "每日挑战副本",
+      "name_en": "Daily Challenge Dungeons",
+      "type": "PVE",
+      "description": "高等级解锁的每日副本，提供金币和材料。"
+    }
+  ],
+
+  "enemies": {
+    "types": [
+      {
+        "name": "普通敌人",
+        "name_en": "Normal Enemy",
+        "reward": "卡牌刻印（三选一）"
+      },
+      {
+        "name": "精英敌人",
+        "name_en": "Elite Enemy",
+        "reward": "造物（三选一：2负面+1正面）"
+      },
+      {
+        "name": "融蚀体",
+        "name_en": "Erosion Entity",
+        "subtypes": ["人型融蚀体", "协作型融蚀体"],
+        "description": "融蚀灾厄产生的变异敌人。"
+      },
+      {
+        "name": "Boss",
+        "description": "各章节和挑战模式中的强力敌人，拥有独特机制。"
+      }
+    ],
+    "known_bosses": [
+      {
+        "name": "詹金",
+        "name_en": "Jenkins",
+        "mechanic": "「致伤打击」— 高伤害；向玩家抽牌堆注入3张「伤口」卡牌，堵塞抽牌。"
+      },
+      {
+        "name": "裁缝 + 协作型融蚀体",
+        "name_en": "Tailor + Cooperative Erosion Body",
+        "mechanic": "护盾生成 + 多段攻击。"
+      },
+      {
+        "name": "无光秘境Boss",
+        "name_en": "Lightless Realm Boss",
+        "mechanic": "第12层首波每次攻击约1500伤害；由于缺乏狂气/大招，前几波可能比Boss本体更难。"
+      }
+    ],
+    "late_game_debuffs": [
+      {"name": "狂气衰竭", "name_en": "Madness Decay", "source": "融灾黑潮"},
+      {"name": "银钥振荡", "name_en": "Silver Key Oscillation", "source": "融灾黑潮"}
+    ]
+  },
+
+  "exploration": {
+    "description": "Roguelite迷雾地图探索，含战争迷雾，包含多种节点类型。",
+    "node_types": ["战斗", "商店", "休息", "随机事件", "宝箱", "精英战", "Boss战"],
+    "tips": "首次通关每张地图应全面探索隐藏物品；后续返回追求三星评价。"
+  },
+
+  "stamina_system": {
+    "name": "灵啡肽",
+    "name_en": "Spirit Caffeine",
+    "description": "体力/行动力系统，有可调上限。主线章节不消耗体力。"
+  }
+}

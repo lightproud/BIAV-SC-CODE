@@ -1,0 +1,123 @@
+{
+  "description": "忘却前夜角色培养与进阶系统",
+
+  "character_progression": [
+    {
+      "name": "等级提升",
+      "name_en": "Level Up",
+      "description": "消耗灵知制剂获取经验值，提升角色等级，增加体质、攻击与防御。",
+      "material": "灵知制剂",
+      "max_level_base": 10,
+      "max_level_enhanced": 70,
+      "notes": "v1.1下半版本引入「灵知深化」系统，等级上限提升至70级。"
+    },
+    {
+      "name": "升格",
+      "name_en": "Ascension / Promotion",
+      "description": "到达等级上限后进行升格，解锁新等级上限并提升关键属性。",
+      "first_unlock": "10级",
+      "notes": "首次升格在10级解锁。每次升格需要对应界域的升格材料。"
+    },
+    {
+      "name": "技能升级",
+      "name_en": "Skill Level Up",
+      "description": "提升角色技能等级，增强技能效果（伤害数值、护盾量、buff幅度等）。",
+      "unlock_level": 25,
+      "notes": "角色达到25级后解锁技能升级功能。消耗技能素材。"
+    },
+    {
+      "name": "觉醒",
+      "name_en": "Enlighten / Awakening",
+      "description": "角色核心强化系统，共3阶段。每阶段觉醒会解锁新的被动效果或增强现有技能。",
+      "stages": 3,
+      "material": "角色碎片/觉醒素材",
+      "notes": "3觉(满觉醒)后角色机制可能发生质变(如凯刻斯3觉后防御卡可造成反击暴击伤害)。"
+    },
+    {
+      "name": "命轮",
+      "name_en": "Wheel of Destiny",
+      "description": "装备系统，类似专属武器。提供属性加成和被动效果。+12后可装备第二个SSR命轮(超限因果)。",
+      "rarity_types": ["R", "SR", "SSR"],
+      "max_enhance": "+15",
+      "transcendent_causality": "+12后解锁双命轮槽位",
+      "notes": "R品质命轮已完全重做，拥有改变探索规则的效果。到达一定进程后可额外装备一个R或SR品质命轮。命轮以3叠(3个重复合并)评估性能。"
+    },
+    {
+      "name": "密契",
+      "name_en": "Covenant",
+      "description": "类似圣遗物/遗器系统，每套6件，提供3件套和6件套效果。",
+      "unlock_level": 35,
+      "set_pieces": 6,
+      "set_bonuses": ["3件套效果", "6件套效果"],
+      "copy_cost": "7500蔷薇金券/次(密契誊抄)",
+      "notes": "密契可以誊抄(保留词条重置副本)。推荐优先刷6件套效果匹配的套装。"
+    },
+    {
+      "name": "天赋",
+      "name_en": "Talent",
+      "description": "v1.5新增的被动能力树，所有现有角色免费获得。",
+      "types": [
+        {"name": "星辰天赋", "name_en": "Stellar Talent", "description": "通过星辰篇内容获取的天赋点数"},
+        {"name": "灵魂熔铸", "name_en": "Soulforge Aptitude", "description": "额外的被动强化"},
+        {"name": "狂念征兆", "name_en": "Madness Omen", "description": "狂气相关天赋强化"}
+      ]
+    },
+    {
+      "name": "超限爆发",
+      "name_en": "Overexalt / Transcend",
+      "description": "v1.5新增终极技能系统。消耗200点灵啡肽释放超限爆发，比普通狂气爆发更强力。",
+      "resource_cost": "200灵啡肽(Aliemus)",
+      "notes": "部分角色的超限后可触发特殊效果(如希莱斯特超限后使其他角色获得狂气)。"
+    }
+  ],
+
+  "materials": {
+    "experience": [
+      {
+        "name": "灵知制剂",
+        "name_en": "Gnosis Reagent",
+        "description": "用于提升角色等级的经验材料，分为不同等级。",
+        "obtain": "融蚀之墟日常副本"
+      }
+    ],
+    "ascension": [
+      {
+        "name": "升格材料",
+        "description": "用于突破角色等级上限的材料，按界域分类。",
+        "obtain": "融蚀之墟日常副本"
+      }
+    ],
+    "skill": [
+      {
+        "name": "技能素材",
+        "description": "用于提升角色技能等级的材料。",
+        "obtain": "融蚀之墟日常副本、禁忌篆录"
+      }
+    ],
+    "awakening": [
+      {
+        "name": "角色碎片",
+        "description": "用于角色觉醒的核心素材。",
+        "obtain": "日常副本收集密函线索→兑换委托密函→挑战指定关卡获取碎片"
+      }
+    ],
+    "daily_farming": {
+      "description": "通过日常副本收集密函线索，兑换对应角色的专属委托密函，随后挑战指定剧情关卡即可稳定获得角色碎片。",
+      "stamina": "墨诺芬(每日自动恢复，50银芯可购买120点)"
+    }
+  },
+
+  "progression_priority": {
+    "description": "培养优先级建议",
+    "order": [
+      "1. 主C等级拉满(70级) + 升格",
+      "2. 主C技能升级(优先指令卡和狂气爆发)",
+      "3. 核心辅助等级+技能(如雷娅、艾继丝)",
+      "4. 主C命轮强化(+12解锁超限因果)",
+      "5. 主C觉醒(优先3觉机制变化大的角色)",
+      "6. 密契套装刷取(35级解锁后)",
+      "7. 天赋点数分配",
+      "8. 副C和其他辅助培养"
+    ]
+  }
+}

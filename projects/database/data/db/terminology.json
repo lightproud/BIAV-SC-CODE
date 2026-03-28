@@ -1,0 +1,293 @@
+{
+  "description": "忘却前夜游戏术语表（中/英/拼音对照）",
+  "terms": {
+    "唤醒体": {
+      "pinyin": "huànxǐngtǐ",
+      "en": "Awakened One",
+      "category": "角色",
+      "description": "游戏中可操控角色的统称，游走在疯狂边缘的人形武器"
+    },
+    "守密人": {
+      "pinyin": "shǒumìrén",
+      "en": "Secret Keeper",
+      "category": "角色",
+      "description": "玩家扮演的角色身份"
+    },
+    "界域": {
+      "pinyin": "jièyù",
+      "en": "Realm / Domain",
+      "category": "系统",
+      "description": "角色所属阵营类型：混沌、深海、血肉、超维。类似DBG中职业的概念"
+    },
+    "界域天赋": {
+      "pinyin": "jièyù tiāncái",
+      "en": "Realm Talent",
+      "category": "系统",
+      "description": "运用相同界域的卡牌组合在一起时触发的职业效果"
+    },
+    "命轮": {
+      "pinyin": "mìnglún",
+      "en": "Constellation / Eidolon",
+      "category": "培养",
+      "description": "重复获取角色后可激活的额外能力，分R/SR/SSR品质"
+    },
+    "专造": {
+      "pinyin": "zhuānzào",
+      "en": "Signature Weapon",
+      "category": "装备",
+      "description": "角色专属武器装备"
+    },
+    "灵知制剂": {
+      "pinyin": "língzhī zhìjì",
+      "en": "Gnosis Reagent",
+      "category": "素材",
+      "description": "用于提升角色等级的经验材料"
+    },
+    "灵知深化": {
+      "pinyin": "língzhī shēnhuà",
+      "en": "Gnosis Enhancement",
+      "category": "系统",
+      "description": "v1.1下半版本引入的系统，唤醒体等级上限提升至70级"
+    },
+    "升格": {
+      "pinyin": "shēnggé",
+      "en": "Ascension / Promotion",
+      "category": "培养",
+      "description": "突破角色等级上限的系统，首次在10级解锁"
+    },
+    "融蚀": {
+      "pinyin": "róngsí",
+      "en": "Erosion",
+      "category": "世界观",
+      "description": "数百年前降临的灾厄，抹灭生命、理智、记忆中一切有意义之物"
+    },
+    "融灾": {
+      "pinyin": "róngzāi",
+      "en": "Meltdown",
+      "category": "玩法",
+      "description": "高难度战斗挑战模式（融灾禁区），完成主线5-4解锁，每两周刷新"
+    },
+    "相位": {
+      "pinyin": "xiāngwèi",
+      "en": "Phase",
+      "category": "玩法",
+      "description": "PVP对战模式（相位对弈）"
+    },
+    "幻梦深潜": {
+      "pinyin": "huànmèng shēnqián",
+      "en": "Dream Dive",
+      "category": "玩法",
+      "description": "特殊探索玩法模式"
+    },
+    "弥萨格大学": {
+      "pinyin": "mísàgé dàxué",
+      "en": "Miskatonic University",
+      "category": "世界观",
+      "description": "为数不多知晓融蚀真相的组织，玩家所属核心机构"
+    },
+    "助战": {
+      "pinyin": "zhùzhàn",
+      "en": "Support / Friend Unit",
+      "category": "社交",
+      "description": "借用其他玩家角色参与战斗"
+    },
+    "节奏榜": {
+      "pinyin": "jiézòu bǎng",
+      "en": "Tier List",
+      "category": "社区",
+      "description": "角色强度排行榜"
+    },
+    "算力": {
+      "pinyin": "suànlì",
+      "en": "Computing Power",
+      "category": "战斗",
+      "description": "使用卡牌时消耗的核心资源"
+    },
+    "狂气": {
+      "pinyin": "kuángqì",
+      "en": "Fury",
+      "category": "战斗",
+      "description": "角色通过出牌积累的能量，满后可释放狂气爆发"
+    },
+    "狂气爆发": {
+      "pinyin": "kuángqì bàofā",
+      "en": "Fury Burst",
+      "category": "战斗",
+      "description": "角色大招，狂气满后发动的强力技能"
+    },
+    "钥令": {
+      "pinyin": "yàolìng",
+      "en": "Key Command",
+      "category": "战斗",
+      "description": "守密人的独属能力，消耗银钥能量在战斗中发动"
+    },
+    "银钥能量": {
+      "pinyin": "yínyào néngliàng",
+      "en": "Silver Key Energy",
+      "category": "战斗",
+      "description": "守密人的专属能量，用于发动钥令技能"
+    },
+    "触腕": {
+      "pinyin": "chùwàn",
+      "en": "Tentacle",
+      "category": "战斗",
+      "description": "深海界域核心机制，回合结束时自动攻击前排敌人"
+    },
+    "胚": {
+      "pinyin": "pēi",
+      "en": "Embryo",
+      "category": "战斗",
+      "description": "血肉界域核心机制，胚融合达100%时获得「胚」卡片"
+    },
+    "超维空间": {
+      "pinyin": "chāowéi kōngjiān",
+      "en": "Hyperdimension Space",
+      "category": "战斗",
+      "description": "超维界域核心机制，蓄积卡牌副本后进入额外超维回合"
+    },
+    "银钥共鸣": {
+      "pinyin": "yínyào gòngmíng",
+      "en": "Silver Key Resonance",
+      "category": "战斗",
+      "description": "纯混沌编成时的特殊效果，每回合自动积攒250点银钥能量"
+    },
+    "银芯": {
+      "pinyin": "yínxīn",
+      "en": "Silver Core",
+      "category": "货币",
+      "description": "游戏基础货币"
+    },
+    "无垢之芯": {
+      "pinyin": "wúgòu zhī xīn",
+      "en": "Pure Core",
+      "category": "货币",
+      "description": "常驻池/武器池抽卡道具"
+    },
+    "流明之芯": {
+      "pinyin": "liúmíng zhī xīn",
+      "en": "Lumen Core",
+      "category": "货币",
+      "description": "限定池抽卡道具"
+    },
+    "灵识黑潮": {
+      "pinyin": "língshí hēicháo",
+      "en": "Standard Banner",
+      "category": "抽卡",
+      "description": "常驻唤醒池"
+    },
+    "造物": {
+      "pinyin": "zàowù",
+      "en": "Artifact / Relic",
+      "category": "战斗",
+      "description": "精英敌人击败后获得的特殊效果物品，分正面和负面"
+    },
+    "刻印": {
+      "pinyin": "kèyìn",
+      "en": "Engrave / Imprint",
+      "category": "战斗",
+      "description": "普通敌人击败后对卡牌附加额外效果"
+    },
+    "密契": {
+      "pinyin": "mìqì",
+      "en": "Bond / Covenant",
+      "category": "培养",
+      "description": "提供额外角色增强与搭配思路的系统"
+    },
+    "密函": {
+      "pinyin": "mìhán",
+      "en": "Secret Letter",
+      "category": "素材",
+      "description": "角色碎片获取途径，通过日常副本收集密函线索兑换"
+    },
+    "御四家": {
+      "pinyin": "yùsìjiā",
+      "en": "Royal Four",
+      "category": "社区",
+      "description": "四个核心混沌常驻角色（拉蒙娜、萝坦、朵尔、奥吉尔）的统称"
+    },
+    "深潜三杰": {
+      "pinyin": "shēnqián sānjié",
+      "en": "Deep Dive Trio",
+      "category": "社区",
+      "description": "奥瑞塔、艾瑞卡、艾继丝的统称"
+    },
+    "应急灵知体": {
+      "pinyin": "yìngjí língzhītǐ",
+      "en": "Emergency Spirit Body",
+      "category": "战斗",
+      "description": "HP归零时消耗1个复活，恢复全状态，每场战斗最多5个"
+    },
+    "灵之觉醒牌": {
+      "pinyin": "líng zhī juéxǐng pái",
+      "en": "Spirit Awakening Card",
+      "category": "战斗",
+      "description": "每个唤醒体的特殊能力卡牌，区别于4张基础指令牌"
+    },
+    "超限爆发": {
+      "pinyin": "chāoxiàn bàofā",
+      "en": "Transcendence Burst",
+      "category": "战斗",
+      "description": "v1.5引入的新终极技能系统，部分角色可解锁"
+    },
+    "超限因果": {
+      "pinyin": "chāoxiàn yīnguǒ",
+      "en": "Transcendence Causality",
+      "category": "战斗",
+      "description": "v1.5与超限爆发同时引入的新系统"
+    },
+    "天赋": {
+      "pinyin": "tiāncái",
+      "en": "Talents",
+      "category": "培养",
+      "description": "v1.5引入的额外被动能力树，现有角色可免费获得"
+    },
+    "灵啡肽": {
+      "pinyin": "língfēitài",
+      "en": "Spirit Caffeine",
+      "category": "系统",
+      "description": "体力/行动力系统，有可调上限。主线不消耗"
+    },
+    "金币": {
+      "pinyin": "jīnbì",
+      "en": "Gold Coins",
+      "category": "货币",
+      "description": "每日副本获得的通用货币"
+    },
+    "忘却篇": {
+      "pinyin": "wàngquè piān",
+      "en": "Oblivion Chapter",
+      "category": "剧情",
+      "description": "主线第一大篇章，序章至第五章"
+    },
+    "星辰篇": {
+      "pinyin": "xīngchén piān",
+      "en": "Stellar Chapter",
+      "category": "剧情",
+      "description": "主线第二大篇章，v2.0「星辰正位之刻」开启"
+    },
+    "吞噬": {
+      "pinyin": "tūnshì",
+      "en": "Devour",
+      "category": "战斗",
+      "description": "血肉界域核心：消耗「胚」卡配合狂气爆发触发超强力效果"
+    },
+    "委托密函": {
+      "pinyin": "wěituō mìhán",
+      "en": "Commission Secret Letter",
+      "category": "素材",
+      "description": "通过密函线索兑换的角色专属委托，挑战关卡获得角色碎片"
+    },
+    "无光秘境": {
+      "pinyin": "wúguāng mìjìng",
+      "en": "Lightless Realm",
+      "category": "玩法",
+      "description": "解锁角色升星的挑战副本，也可通过通关主线章节解锁"
+    },
+    "融灾黑潮": {
+      "pinyin": "róngzāi hēicháo",
+      "en": "Erosion Black Tide",
+      "category": "剧情",
+      "description": "后期章节特殊负面效果机制，施加「狂气衰竭」「银钥振荡」等debuff"
+    }
+  }
+}

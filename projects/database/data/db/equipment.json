@@ -1,0 +1,226 @@
+{
+  "description": "忘却前夜装备系统：命轮(Wheels of Destiny)与密契(Covenants)完整数据",
+
+  "system_overview": {
+    "note": "忘却前夜没有传统武器系统，装备分为命轮和密契两大类。",
+    "wheel_rules": "同一队伍中不可装备相同命轮。命轮+12后可额外装备第二个SSR命轮。命轮以3叠(3个重复合并)性能评估。",
+    "covenant_rules": "密契系统于账号35级解锁，每套6件，提供3件套和6件套效果。"
+  },
+
+  "wheels_of_destiny": {
+    "description": "命轮是通过抽卡获取的装备道具，类似专属武器，提供属性和被动效果。",
+    "ssr_limited_oblivion": [
+      {"name": "至为珍贵的藏品", "name_en": "Treasured Rarity", "character": "达芙黛尔(Daffodil)", "effect": "击杀后获得永久暴伤buff，最多叠5层。"},
+      {"name": "以蔷薇之名", "name_en": "By Rose Alone", "character": null, "recommended": ["萨尔瓦多", "泰旖丝", "血链·希洛", "索蕾尔"]},
+      {"name": "跨越疼痛", "name_en": "Grace Through Pain", "character": null, "recommended": ["莉莉", "24", "莱克", "哈姆林", "塔薇"]},
+      {"name": "隐秘的诞生", "name_en": "Shrouded Birth", "character": null, "effect": "与「神王的颂歌」「虔诚的伟力」同组。"},
+      {"name": "女王的戒律", "name_en": "Queen's Edict", "character": null, "recommended": ["达芙黛尔", "旺达", "奥尔拉"]},
+      {"name": "畸体回噬", "name_en": "Aberrant Devour", "character": null, "effect": "深海系命轮。"},
+      {"name": "慈悲的哺育", "name_en": "Merciful Nurturing", "character": null, "effect": "血肉系命轮。"},
+      {"name": "虔诚的伟力", "name_en": "Power of the Pious", "character": null},
+      {"name": "诗笺的句尾", "name_en": "The Last Verse", "character": null, "effect": "发动时机调整：由打击前改为打击后。"},
+      {"name": "沉入殷红", "name_en": "Drowning in Crimson", "character": null, "effect": "血肉系命轮。"},
+      {"name": "隐世的转轮", "name_en": "Wheel Unseen", "character": null, "effect": "从钥令触发和伤害次数中获得增益。"}
+    ],
+    "ssr_limited_stellar": [
+      {"name": "不可承受的自由", "name_en": "Unbearable Freedom", "character": null},
+      {"name": "安息之吻", "name_en": "Kiss of Repose", "character": null},
+      {"name": "写实主义悖谬", "name_en": "Paradoxical Realism", "character": "皮克曼(Pickman)", "main_stat": "狂气回充 7.2", "effect": "狂气和力量获取+6-12%；超限后提升最终伤害/护盾/治疗。"},
+      {"name": "扭曲的骑士诗", "name_en": "Twisted Knight Ballad", "character": null},
+      {"name": "坠入虚无的人偶", "name_en": "Manikin of Oblivion", "character": null},
+      {"name": "隐没的痛楚", "name_en": "Veiled Anguish", "character": null},
+      {"name": "圣火中的指引", "name_en": "Flamebound Navigator", "character": null},
+      {"name": "琥珀色的死亡", "name_en": "Amber-Tinted Death", "character": null},
+      {"name": "黑暗中的安眠", "name_en": "Uteri Somnia", "character": null},
+      {"name": "狂戮至世界尽头", "name_en": "Doomsday Rampage", "character": null},
+      {"name": "枉蹙眉", "name_en": "Vain Regrets", "character": null}
+    ],
+    "ssr_standard": [
+      {"name": "神王的颂歌", "name_en": "Hymn of the Sovereign", "character": "希莱斯特(Celeste)", "main_stat": "狂气回充 7.2", "effect": "队伍唯一：战斗开始时获得16狂气。其他唤醒体使用超限时获得3狂气。深海队：超限获得2-5%攻击力的触手伤害。"},
+      {"name": "于暴雨之中", "name_en": "In the Storm", "character": "图鲁(Thulhu)", "effect": "v1.4增强：打击时对全体敌人施加10%毒素(1次/回合)。"},
+      {"name": "珊瑚女之死", "name_en": "Death of the Coral Maiden", "character": "珊(Coral)", "effect": "深海专属命轮。"},
+      {"name": "溯洄时计", "name_en": "Retrograde Timepiece", "character": "拉蒙娜(Ramona)", "main_stat": "银钥充能 21.6", "effect": "使用佩戴者指令卡后，30-60%概率从弃牌堆返回手牌。"},
+      {"name": "好运时间", "name_en": "Hour of Fortune", "character": null, "recommended": ["深海系角色"]},
+      {"name": "永恒安魂曲", "name_en": "Eternal Requiem", "character": null, "effect": "暴伤无上限；适合8+回合长期战斗。"},
+      {"name": "神言石板", "name_en": "Tablet of Scriptures", "character": "萨尔瓦多(Salvador)", "recommended": ["萨尔瓦多", "索蕾尔", "泰旖丝", "血链·希洛"]},
+      {"name": "血肉狂宴", "name_en": "Caro Feast", "character": "尤乌哈希(Yuuhashi)", "main_stat": "暴击伤害", "effect": "提供暴伤；通过超限和吞噬获得力量。"},
+      {"name": "饕餮盛宴", "name_en": "Gluttonous Banquet", "character": "雷娅(Rhea)", "main_stat": "界域精通", "effect": "增加超限治疗；受伤时获得力量和护盾。"},
+      {"name": "冬夜忆", "name_en": "Poetic Bygone Days", "character": "艾继丝(Aegis)", "main_stat": "银钥充能", "effect": "防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。"},
+      {"name": "吞噬摇篮曲", "name_en": "Devouring Lullaby", "character": "菲茵特(Feint)", "effect": "触发死亡抵抗后，全队治疗和护盾增强2回合。"},
+      {"name": "宠爱", "name_en": "Favor", "character": null, "effect": "狂气获取相关。"},
+      {"name": "呢喃", "name_en": "Whisper", "character": null, "effect": "狂气获取相关。"},
+      {"name": "镜中人", "name_en": "Mirror Reflection", "character": null, "main_stat": "黑印掉落 10.8%", "effect": "队伍唯一：回合结束时获得3狂气。活动限定。"},
+      {"name": "极夜与破晓", "name_en": "Polar Night and Dawn", "character": null, "effect": "活动赠送SSR命轮。"},
+      {"name": "无声欢宴", "name_en": "Silent Banquet", "character": null},
+      {"name": "死亡的剖析", "name_en": "Anatomy of Death", "character": null},
+      {"name": "重生于湮土", "name_en": "Rebirth in Ashen Earth", "character": null, "effect": "纪念版SSR命轮。"}
+    ],
+    "sr_wheels": [
+      {"name": "切割与伤害", "name_en": "Cutting and Harm", "character": "图鲁(Thulhu)"},
+      {"name": "致挚友", "name_en": "To Dear Friend", "character": "图鲁(Thulhu)"},
+      {"name": "职责所在", "name_en": "Duty Calls", "character": "希莱斯特(Celeste)"},
+      {"name": "35mm的魔法", "name_en": "35mm Magic", "character": "珊(Coral)"},
+      {"name": "聚首时刻", "name_en": "Reunion Moment", "character": "拉蒙娜(Ramona)"},
+      {"name": "银鳕的决意", "name_en": "Silver Cod's Determination", "character": null, "effect": "「多维连接」活动限定SR命轮。"}
+    ],
+    "r_wheels": [
+      {"name": "惩戒", "name_en": "Punishment", "effect": "Boss前保留50黑印=+250%死亡抵抗。评价最高的R命轮。"},
+      {"name": "涌现", "name_en": "Emergence", "character": "希莱斯特(Celeste)"},
+      {"name": "狂乱", "name_en": "Frenzy", "character": "珊(Coral)"},
+      {"name": "谵妄", "name_en": "Delirium", "effect": "通过觉醒减少黑印。推荐R命轮。"},
+      {"name": "暴食", "name_en": "Gluttony", "effect": "搭配：放逐铭文+生命。"},
+      {"name": "放逐", "name_en": "Exile", "effect": "搭配：精通+卖症状卡。"},
+      {"name": "明悟", "name_en": "Enlightenment", "effect": "搭配：精通+银钥。"},
+      {"name": "专注精神", "name_en": "Focused Mind", "effect": "搭配：银钥+狂气。"},
+      {"name": "心之壁垒", "name_en": "Heart's Bastion", "effect": "适合高防角色如法洛思或珊。"}
+    ],
+    "notes": [
+      "v2.0后R命轮完全重做，拥有改变探索规则的效果。",
+      "到达一定进程后可为唤醒体额外装备一个R或SR命轮。",
+      "v1.4大量SSR命轮获得增强。"
+    ]
+  },
+
+  "covenants": {
+    "description": "密契是装备套装系统，6件一套，提供3件套和6件套效果。账号35级解锁。",
+    "main_stats": ["暴击率(Crit Rate)", "暴击伤害(Crit DMG)", "伤害强效(DMG Amplification)", "银钥充能(Keyflare Regen)", "狂气回充(Aliemus Regen)", "界域精通(Realm Mastery)", "死亡抵抗(Death Resist)", "黑印掉落(Black Ink Drop)"],
+    "sets": [
+      {
+        "name": "猩红之悸",
+        "name_en": "Scarlet Palpitation",
+        "obtain": "商店兑换/调查兑换/相位兑换",
+        "role": "输出(主C)",
+        "effect": "提供双暴(暴击率+暴击伤害)。所有主C通用套装，适用于24、萝坦、尤乌哈希等。"
+      },
+      {
+        "name": "猩红之拥",
+        "name_en": "Scarlet Embrace",
+        "obtain": "沉淀兑换",
+        "role": "辅助/副C",
+        "effect": "适合需要主动出牌的辅助角色。不出牌则效果浪费。"
+      },
+      {
+        "name": "扭曲双子·黑",
+        "name_en": "Twisted Twins Black",
+        "obtain": "关卡掉落",
+        "role": "输出/辅助",
+        "effect": "将佩戴者的打击卡复制一张加入牌组。适合萝坦、艾继丝。"
+      },
+      {
+        "name": "扭曲双子·白",
+        "name_en": "Twisted Twins White",
+        "obtain": "关卡掉落",
+        "role": "坦克/防御",
+        "effect": "将佩戴者的防御卡复制一张加入牌组。适合奥吉尔、诺帝拉。"
+      },
+      {
+        "name": "荒原狼",
+        "name_en": "Steppe Wolf",
+        "obtain": "蔷薇金券商店",
+        "role": "输出/毒伤",
+        "effect": "伤害强效+反击/毒素增益。适合莉兹、旺达。v1.4.4后6件套不再需要特定属性。"
+      },
+      {
+        "name": "机械降神",
+        "name_en": "Deus Ex Machina",
+        "obtain": "关卡掉落",
+        "role": "辅助",
+        "effect": "算力/AP相关效果。辅助角色专用。"
+      },
+      {
+        "name": "海归线",
+        "name_en": "Returnal Line",
+        "obtain": "关卡掉落",
+        "role": "深海输出",
+        "effect": "力量加成或额外触手攻击次数。深海系角色专用。"
+      },
+      {
+        "name": "埋骨地的絮语",
+        "name_en": "Burial Ground Whispers",
+        "obtain": "关卡掉落",
+        "role": "生存/工具",
+        "effect": "6件套：关卡开始+25%死亡抵抗；触发死亡抵抗后获得50狂气。"
+      },
+      {
+        "name": "诅咒兔",
+        "name_en": "Curse Rabbit",
+        "obtain": "深潜商店",
+        "role": "治疗",
+        "effect": "治疗+护盾增益。适合萨尔瓦多、朵尔、希莱斯特。v1.4.4后6件套不再需要特定属性。"
+      },
+      {
+        "name": "远方的欢宴",
+        "name_en": "Distant Feast",
+        "obtain": "无光商店",
+        "role": "坦克/防御",
+        "effect": "大量防御加成。诺帝拉觉醒后每张防御卡可提供200+护盾。v1.4.4后6件套不再需要特定属性。"
+      },
+      {
+        "name": "无垢",
+        "name_en": "Unstained Chronicle",
+        "obtain": null,
+        "role": "辅助",
+        "effect": "辅助型角色专用套装。"
+      },
+      {
+        "name": "有机形态",
+        "name_en": "Organic Form",
+        "obtain": null,
+        "role": "工具",
+        "effect": "6件套(队伍唯一)：探索开始时扣除最多100%死亡抵抗；每扣除1%，佩戴者狂气造成伤害+0.15%。"
+      },
+      {
+        "name": "二律背反",
+        "name_en": "Antinomy",
+        "obtain": null,
+        "role": "输出",
+        "effect": "6件套(队伍唯一)：狂气上限和超限狂气消耗+20；指令卡暴击率、暴伤、护盾、治疗+20%。"
+      },
+      {
+        "name": "入药之梦",
+        "name_en": "Dream of Medication",
+        "obtain": null,
+        "role": "辅助",
+        "effect": "6件套(队伍唯一)：战斗结束时黑印获取-8；战斗开始时将佩戴者非打击/非防御指令卡原始版本加入抽牌堆(每种最多1张)。"
+      },
+      {
+        "name": "36室之环",
+        "name_en": "Ring of 36 Chambers",
+        "obtain": null,
+        "role": "输出",
+        "effect": "6件套(队伍唯一)：银钥上限和银钥技能消耗+200；超限暴击率、暴伤、护盾、治疗+30%。"
+      },
+      {
+        "name": "进化异变",
+        "name_en": "Further Metamorphosis",
+        "obtain": null,
+        "role": null,
+        "effect": "英文攻略中提及的密契套装。"
+      },
+      {
+        "name": "启示录",
+        "name_en": "Apocalypse",
+        "obtain": null,
+        "role": "终局",
+        "effect": "终局内容使用的密契套装。"
+      }
+    ]
+  },
+
+  "character_signature_wheels": {
+    "description": "已确认的角色专属命轮对应关系",
+    "mappings": [
+      {"character": "图鲁", "character_en": "Thulhu", "wheel": "于暴雨之中", "wheel_en": "In the Storm"},
+      {"character": "希莱斯特", "character_en": "Celeste", "wheel": "神王的颂歌", "wheel_en": "Hymn of the Sovereign"},
+      {"character": "珊", "character_en": "Coral", "wheel": "珊瑚女之死", "wheel_en": "Death of the Coral Maiden"},
+      {"character": "拉蒙娜", "character_en": "Ramona", "wheel": "溯洄时计", "wheel_en": "Retrograde Timepiece"},
+      {"character": "尤乌哈希", "character_en": "Yuuhashi", "wheel": "血肉狂宴", "wheel_en": "Caro Feast"},
+      {"character": "雷娅", "character_en": "Rhea", "wheel": "饕餮盛宴", "wheel_en": "Gluttonous Banquet"},
+      {"character": "菲茵特", "character_en": "Feint", "wheel": "吞噬摇篮曲", "wheel_en": "Devouring Lullaby"},
+      {"character": "萨尔瓦多", "character_en": "Salvador", "wheel": "神言石板", "wheel_en": "Tablet of Scriptures"},
+      {"character": "艾继丝", "character_en": "Aegis", "wheel": "冬夜忆", "wheel_en": "Poetic Bygone Days"},
+      {"character": "达芙黛尔", "character_en": "Daffodil", "wheel": "至为珍贵的藏品", "wheel_en": "Treasured Rarity"},
+      {"character": "皮克曼", "character_en": "Pickman", "wheel": "写实主义悖谬", "wheel_en": "Paradoxical Realism"}
+    ]
+  }
+}

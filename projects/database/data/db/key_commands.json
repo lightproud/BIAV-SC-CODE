@@ -1,0 +1,284 @@
+{
+  "description": "忘却前夜钥令(Key Command/Posse)系统完整数据。守密人的独属战斗能力，通过银钥能量驱动。",
+
+  "mechanics": {
+    "resource": {
+      "name": "银钥能量",
+      "name_en": "Keyflare / Silver Key Energy",
+      "threshold": 1000,
+      "accumulation": "打出卡牌时获得银钥能量 = 唤醒体的银钥充能属性 × 卡牌算力消耗",
+      "chaos_realm_bonus": "纯混沌编成时每回合自动积攒250银钥能量，可每回合使用2次钥令"
+    },
+    "usage": {
+      "activation": "银钥能量达到1000时可释放已装备的钥令",
+      "per_turn_limit": 1,
+      "chaos_per_turn_limit": 2,
+      "equip_phase": "编队时为队伍选择钥令",
+      "meltdown_restriction": "融灾禁区中不可跨队伍重复使用同一钥令"
+    },
+    "silver_key_awakening": {
+      "name": "银钥觉醒",
+      "name_en": "Silver Key Awakening",
+      "version_added": "v2.0",
+      "description": "银钥能量满时，可额外选择「银钥觉醒」将指定唤醒体的灵知觉醒卡以「保留」状态置入手中。每回合可触发1次，与钥令独立冷却。"
+    },
+    "scaling": {
+      "archive_scar": "归档刻痕：每拥有1个钥令，造物强度提高1%，至多50%。星辰篇中同时提升钥令自身数值强度。",
+      "spirit_research_depth": "灵识研究深度：决定造物、刻印、钥令产生的固定中毒/反击/伤害/出血效果的强度。"
+    },
+    "obtain": "通过主线剧情、特遣纪录、意识潜游等内容解锁"
+  },
+
+  "posses": [
+    {
+      "id": "mouse_wisdom",
+      "name": "鼠辈智慧",
+      "name_en": "Mouse Wisdom",
+      "effect": "获得3点算力。",
+      "realm_affinity": "universal",
+      "source": "通关主线第二章2-15",
+      "release_version": "v1.0",
+      "category": "resource",
+      "recommended_for": ["通用/新手"]
+    },
+    {
+      "id": "little_wish",
+      "name": "小小心愿",
+      "name_en": "Little Wish",
+      "effect": "选择1名唤醒体，使其获得35点狂气。",
+      "realm_affinity": "universal",
+      "source": "主线剧情",
+      "release_version": "v1.0",
+      "category": "fury",
+      "recommended_for": ["狂气速充队"]
+    },
+    {
+      "id": "tavern_door",
+      "name": "酒馆之门",
+      "name_en": "The Tavern Door",
+      "effect": "将1张「莉雅的硬币」(获得2点算力并抽2张牌)置入弃牌堆。",
+      "realm_affinity": "universal",
+      "source": "通关多维联动「逆流…」",
+      "release_version": "v1.0",
+      "category": "draw",
+      "balance_history": "莉雅的硬币抽牌数从3降低为2",
+      "recommended_for": ["通用/新手"]
+    },
+    {
+      "id": "injection_guard",
+      "name": "注射防卫",
+      "name_en": "Injection Guard",
+      "effect": "（效果未确认，推测为防御/护盾相关）",
+      "realm_affinity": "universal",
+      "source": "主线剧情",
+      "release_version": "v1.0",
+      "category": "defense",
+      "data_confidence": "low"
+    },
+    {
+      "id": "eternal_obsession",
+      "name": "永世执念",
+      "name_en": "Eternal Obsession",
+      "effect": "获得25%临时暴击率和7点临时力量。首领战中若本回合未打出手牌，触发1次死亡抵抗；成功则获得138点护盾(仅1次)。",
+      "realm_affinity": "universal",
+      "source": "主线剧情",
+      "release_version": "v1.0",
+      "category": "power_burst",
+      "balance_history": [
+        "v1.1: 额外获得等同于25%永久力量的临时力量",
+        "v1.1.11: 获得的力量提高200%，不再直接获得临时力量，从永久力量获得的临时力量从25%提高为50%"
+      ],
+      "recommended_for": ["力量爆发队", "Boss战"]
+    },
+    {
+      "id": "unequal_exchange",
+      "name": "不平等交换",
+      "name_en": "Unequal Exchange",
+      "effect": "（正面效果未确认）",
+      "realm_affinity": "universal",
+      "source": "主线剧情",
+      "release_version": "v1.0",
+      "category": "utility",
+      "balance_history": "v1.1: 移除「下回合开始时少抽1张牌」的副作用",
+      "data_confidence": "low"
+    },
+    {
+      "id": "momentary_dream",
+      "name": "仲夏之梦",
+      "name_en": "A Momentary Dream",
+      "effect": "抽1张牌，如果抽到指令卡或灵知觉醒，将其算力消耗变为0，否则将这张牌弃掉并重复此条效果。本场战斗内界域精通永久提高25点。",
+      "realm_affinity": "universal",
+      "source": "主线剧情",
+      "release_version": "v1.0",
+      "category": "draw_utility",
+      "recommended_for": ["通用/新手"]
+    },
+    {
+      "id": "final_oath",
+      "name": "最后的誓言",
+      "name_en": "The Final Oath",
+      "effect": "获得23点临时力量，25%临时暴击率。在首领战中如果本回合尚未打出手牌，额外触发1次死亡抵抗；成功则获得1层屏障(仅1次)。",
+      "realm_affinity": "universal",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "power_burst",
+      "note": "数值以守密人等级60为准"
+    },
+    {
+      "id": "roar_of_blood_and_sand",
+      "name": "咆哮的血与沙",
+      "name_en": "Roar of Blood and Sand",
+      "effect": "失去10%当前生命，选择1名唤醒体使其获得25点狂气，获得12点力量。",
+      "realm_affinity": "carnis",
+      "realm_bonus": "血肉界域：额外使胚胎融合度+25",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "fury_power",
+      "recommended_for": ["血肉胚胎队", "狂气速充队"]
+    },
+    {
+      "id": "corrosive_embrace",
+      "name": "蚀骨的拥抱",
+      "name_en": "Corrosive Embrace",
+      "effect": "获得1点算力，下回合开始获得75点护盾。",
+      "realm_affinity": "aequor",
+      "realm_bonus": "深海界域：不获得护盾，改为生成1条触腕",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "resource_defense",
+      "recommended_for": ["深海触腕队"]
+    },
+    {
+      "id": "brief_eternity",
+      "name": "短暂的永恒",
+      "name_en": "Brief Eternity",
+      "effect": "选择1名唤醒体，将其2张「打击」与「防御」置入手中，附加消耗与虚无。",
+      "realm_affinity": "hyperdimension",
+      "realm_bonus": "超维界域：额外获得15点临时力量与4点临时戒备",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "card_generation",
+      "recommended_for": ["超维刷牌队"]
+    },
+    {
+      "id": "ashen_mist_visage",
+      "name": "灰雾面容",
+      "name_en": "Ashen Mist Visage",
+      "effect": "本场战斗内暴击率永久提高5%，将1张「灵感」置入手中。",
+      "realm_affinity": "hyperdimension",
+      "realm_bonus": "超维界域(超维回合中)：额外将1张灵感置入手中",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "crit_draw",
+      "recommended_for": ["超维刷牌队"]
+    },
+    {
+      "id": "lakeside_glance",
+      "name": "湖畔回眸",
+      "name_en": "Lakeside Glance",
+      "effect": "获得60点护盾，对所有敌人施加相当于25%我方护盾的中毒。",
+      "realm_affinity": "carnis",
+      "realm_bonus": "血肉界域：损失生命越多中毒量越高，至多50%护盾值",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "defense_poison",
+      "recommended_for": ["血肉胚胎队"]
+    },
+    {
+      "id": "retrospective_end",
+      "name": "回溯的终末",
+      "name_en": "Retrospective End",
+      "effect": "将上回合打出的最后1张非衍生指令卡的原始复制置入手中，算力消耗-1，附加消耗与虚无。",
+      "realm_affinity": "universal",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "card_replay"
+    },
+    {
+      "id": "victory_of_the_rose",
+      "name": "玫瑰的胜利",
+      "name_en": "Victory of the Rose",
+      "effect": "回复45点生命。生命低于25%时，获得与回复量相等的临时力量。",
+      "realm_affinity": "carnis",
+      "realm_bonus": "血肉界域：回复量+50%，不再直接回血，储存至猩红熔炉",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "healing_power",
+      "recommended_for": ["血肉胚胎队"]
+    },
+    {
+      "id": "immortal_funeral",
+      "name": "不朽的葬仪",
+      "name_en": "Immortal Funeral Rites",
+      "effect": "所有唤醒体获得12点狂气，下回合开始获得5%最大生命的献祭。",
+      "realm_affinity": "universal",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "fury_sacrifice",
+      "recommended_for": ["狂气速充队"]
+    },
+    {
+      "id": "auritas_treasure",
+      "name": "奥瑞塔的宝藏",
+      "name_en": "Aurita's Treasure",
+      "effect": "将抽牌堆中算力最低的3张置入手中。",
+      "realm_affinity": "aequor",
+      "realm_bonus": "深海界域：额外使触腕伤害提高4~8点",
+      "source": "扩展计划/剧情解锁",
+      "release_version": "v1.2+",
+      "category": "draw_tentacle",
+      "recommended_for": ["深海触腕队"]
+    },
+    {
+      "id": "yearend_fireworks",
+      "name": "岁末花火",
+      "name_en": "Year-End Fireworks",
+      "effect": "选择一名友方，使其临时强效+1并获得自身2张不同的技能，回合结束时弃掉所有手牌。",
+      "realm_affinity": "universal",
+      "source": "v1.1.11更新新增",
+      "release_version": "v1.1.11",
+      "category": "potency_skill"
+    },
+    {
+      "id": "manor_memories",
+      "name": "深宅往事",
+      "name_en": "Manor Memories",
+      "effect": "选择一名友方，对其他友方和全体敌方施加1层「痴醉」。（痴醉：指令卡、狂气爆发造成的伤害/治疗/护盾效果降低10%，无法驱散，上限2层。）",
+      "realm_affinity": "universal",
+      "source": "剧情解锁",
+      "release_version": "v1.1+",
+      "category": "debuff"
+    },
+    {
+      "id": "bleeding_sacred_heart",
+      "name": "泣血的圣心",
+      "name_en": "Bleeding Sacred Heart",
+      "effect": "抽1张算力消耗最高的「技能」，使其获得预备。",
+      "realm_affinity": "universal",
+      "source": "剧情/活动解锁",
+      "release_version": "v1.2+",
+      "category": "draw_crit",
+      "note": "波吕克斯特殊效果：获得5层「罪印」"
+    }
+  ],
+
+  "team_recommendations": [
+    {"team_type": "深海触腕队", "posses": ["auritas_treasure", "corrosive_embrace"], "reason": "触腕生成和触腕伤害加成"},
+    {"team_type": "血肉胚胎/融合队", "posses": ["roar_of_blood_and_sand", "lakeside_glance", "victory_of_the_rose"], "reason": "胚胎融合度、生命损失联动、猩红熔炉储存"},
+    {"team_type": "超维刷牌队", "posses": ["brief_eternity", "ashen_mist_visage"], "reason": "额外手牌生成、灵感卡助力超维回合"},
+    {"team_type": "力量爆发队", "posses": ["eternal_obsession", "final_oath"], "reason": "大幅力量增益与暴击率"},
+    {"team_type": "狂气速充队", "posses": ["immortal_funeral", "roar_of_blood_and_sand", "little_wish"], "reason": "快速充满狂气释放狂气爆发"},
+    {"team_type": "通用/新手", "posses": ["momentary_dream", "mouse_wisdom", "tavern_door"], "reason": "算力补充和抽牌，适用于所有队伍"}
+  ],
+
+  "boss_special_interactions": [
+    {"boss": "原初(Primordial)", "effect": "释放「尘封旧忆」或「未至遗忘的黎明」时，选中的钥令触发两次。"},
+    {"boss": "海魇(Sea Nightmare)", "effect": "添加「怒海狂澜」效果：每次唤醒体造成主动伤害时，命令1条触腕攻击，造成50%触腕伤害。"}
+  ],
+
+  "data_notes": {
+    "values_at_level": "数值以守密人等级60为准（除非另有说明）",
+    "total_posses": 20,
+    "incomplete_entries": ["injection_guard (效果未确认)", "unequal_exchange (正面效果未确认)"]
+  }
+}

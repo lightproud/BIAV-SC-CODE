@@ -1,0 +1,644 @@
+{
+  "description": "忘却前夜技能系统数据：卡牌类型、技能结构、天赋系统、超限系统，以及核心角色技能详情。",
+  "card_system": {
+    "name": "卡牌系统",
+    "name_en": "Card System",
+    "description": "每位唤醒体拥有基础4张指令牌+1张灵知觉醒牌(Rouse Card)。每回合随机从卡组抽取4张卡牌加入手中，玩家根据效果与算力消耗决定出牌顺序。",
+    "description_en": "Each Awakener has 4 Command Cards + 1 Rouse Card. Each turn, 4 cards are drawn randomly from the deck. Players must manage Arithmetica costs and play order strategically.",
+    "card_types": [
+      {
+        "id": "strike",
+        "name": "打击",
+        "name_en": "Strike",
+        "cost": 1,
+        "description": "攻击类卡牌，造成伤害并获得狂气。每个角色默认拥有1张打击卡。",
+        "description_en": "Offensive command card dealing damage and granting Aliemus. Every Awakener has one Strike card by default.",
+        "base_effect": "造成攻击力x10%伤害，获得5点狂气"
+      },
+      {
+        "id": "defense",
+        "name": "防御",
+        "name_en": "Defense",
+        "cost": 1,
+        "description": "防御类卡牌，获得护盾并获得狂气。护盾在回合结束时自动移除。每个角色默认拥有1张防御卡。",
+        "description_en": "Defensive command card granting shield and Aliemus. Shields are removed at end of turn. Every Awakener has one Defense card by default.",
+        "base_effect": "获得防御力x10%护盾，获得5点狂气"
+      },
+      {
+        "id": "command",
+        "name": "指令卡",
+        "name_en": "Command Card",
+        "description": "每位角色的专属技能卡牌。除打击和防御外，每个角色额外拥有2张独特指令卡，构成角色核心玩法。",
+        "description_en": "Unique skill cards specific to each Awakener. Besides Strike and Defense, each Awakener has 2 unique Command Cards forming their core gameplay.",
+        "note": "部分角色的专属指令卡可以同时计为打击或防御类型"
+      },
+      {
+        "id": "rouse",
+        "name": "灵知觉醒",
+        "name_en": "Rouse",
+        "description": "每个角色拥有1张灵知觉醒牌，默认不在初始牌组中。通过治疗空间选择'觉醒'或商店花费50黑印解锁。觉醒后获得被动效果。",
+        "description_en": "Each Awakener has 1 Rouse Card, not in deck by default. Unlocked via healing spaces (choosing 'Rouse an awakener') or at the store for 50 Black Sigils. Grants passive effects upon activation.",
+        "unlock_methods": [
+          "治疗空间选择觉醒",
+          "商店花费50黑印购买"
+        ]
+      },
+      {
+        "id": "symptom",
+        "name": "症状卡",
+        "name_en": "Symptom Card",
+        "description": "负面卡牌，会占据手牌空间。部分角色技能可以弃掉症状卡（如艾尔瓦的狂气爆发）。",
+        "description_en": "Negative cards that take up hand space. Some character skills can discard Symptom cards (e.g., Elva's Exalt)."
+      },
+      {
+        "id": "status",
+        "name": "状态卡",
+        "name_en": "Status Card",
+        "description": "附加状态效果的卡牌，可被部分角色技能弃掉。",
+        "description_en": "Cards with status effects, can be discarded by certain character abilities."
+      }
+    ],
+    "card_keywords": [
+      {
+        "name": "保留",
+        "name_en": "Retain",
+        "description": "回合结束时不弃掉，保留在手牌中"
+      },
+      {
+        "name": "消耗",
+        "name_en": "Exhaust",
+        "description": "使用后消耗，不进入弃牌堆"
+      },
+      {
+        "name": "回环",
+        "name_en": "Loop",
+        "description": "卡牌使用后触发的循环效果"
+      },
+      {
+        "name": "跃迁",
+        "name_en": "Leap/Transition",
+        "description": "触发条件性的额外效果"
+      },
+      {
+        "name": "穿刺",
+        "name_en": "Pierce",
+        "description": "无视护盾的伤害类型"
+      }
+    ]
+  },
+  "skill_system": {
+    "name": "技能系统",
+    "name_en": "Skill System",
+    "description": "角色技能由指令卡、灵知觉醒、狂气爆发(Exalt)、超限爆发(Overexalt)和启灵(Enlighten)组成。",
+    "structure": {
+      "command_cards": {
+        "name": "指令卡",
+        "name_en": "Command Cards",
+        "count": 4,
+        "composition": "打击x1 + 防御x1 + 专属指令卡x2",
+        "description": "每个角色固定4张指令卡：1张打击、1张防御、2张角色专属技能卡"
+      },
+      "rouse_card": {
+        "name": "灵知觉醒",
+        "name_en": "Rouse Card",
+        "count": 1,
+        "description": "需要在探索中解锁加入牌组，觉醒后获得角色被动效果"
+      },
+      "exalt": {
+        "name": "狂气爆发",
+        "name_en": "Exalt",
+        "description": "狂气满100时可释放的大招，不消耗算力，效果强力。每个角色拥有独特的狂气爆发技能。",
+        "description_en": "Ultimate ability triggered when Aliemus gauge is full (100). Costs no Arithmetica. Each Awakener has a unique Exalt.",
+        "trigger_condition": "狂气达到100"
+      },
+      "overexalt": {
+        "name": "超限爆发",
+        "name_en": "Overexalt",
+        "description": "人格深化等级达到4级解锁。解锁后角色可额外储存一倍狂气(上限200)。当储满200%狂气后使用狂气爆发，会耗尽所有狂气，在原先狂气爆发基础上额外触发角色独特的超限爆发效果。",
+        "description_en": "Unlocked at Persona Deepening level 4. Allows storing double Aliemus (max 200). When full 200% is consumed, triggers the base Exalt plus a unique Overexalt bonus effect.",
+        "unlock_condition": "人格深化等级4",
+        "aliemus_required": 200,
+        "mechanic_details": {
+          "partial_use": "狂气不足200时使用，扣除100狂气并保留剩余的一半",
+          "full_use": "狂气满200时使用，耗尽所有狂气，触发超限爆发额外效果"
+        }
+      },
+      "enlighten": {
+        "name": "启灵",
+        "name_en": "Enlighten",
+        "description": "获得重复角色时解锁的被动技能系统。不同角色获得的被动技能不同，通常有3个启灵阶段，每阶段显著增强角色能力。",
+        "description_en": "Passive skill system unlocked by obtaining duplicate copies of a character. Different characters gain different passives across typically 3 Enlighten stages.",
+        "stages": [
+          {
+            "level": 1,
+            "name": "启灵1 / 1st Enlighten",
+            "description": "通常提供核心技能增强或降费"
+          },
+          {
+            "level": 2,
+            "name": "启灵2 / 2nd Enlighten",
+            "description": "进一步强化技能效果"
+          },
+          {
+            "level": 3,
+            "name": "启灵3 / 3rd Enlighten",
+            "description": "最终强化，解锁角色完整潜力"
+          }
+        ]
+      }
+    }
+  },
+  "talent_system": {
+    "name": "天赋系统",
+    "name_en": "Talent System",
+    "subsystems": [
+      {
+        "name": "星辰天赋",
+        "name_en": "Stellar Talent",
+        "description": "角色养成系统之一，拥有独立等级体系（至少可达5级）。为角色提供额外属性和效果加成。",
+        "description_en": "A character progression system with its own leveling (at least up to level 5). Provides additional stats and effect bonuses.",
+        "max_level_known": 5
+      },
+      {
+        "name": "灵塑适性",
+        "name_en": "Soulforge Aptitude",
+        "description": "角色专属天赋效果，提供独特的被动增益。例如：希莱斯特的触腕伤害提高20%-50%；戈利亚的基础伤害提高20%-50%。",
+        "description_en": "Character-specific talent effect providing unique passive bonuses. E.g., Celeste gains 20%-50% tentacle damage; Goliath gains 20%-50% base damage.",
+        "examples": [
+          {
+            "character": "希莱斯特",
+            "effect": "触腕伤害提高20%~50%，每回合首张指令卡后额外触发4次远航号角"
+          },
+          {
+            "character": "戈利亚",
+            "effect": "基础伤害提高20%~50%，巨刃之威使最终伤害临时提高5~10%；队伍中其他利莫里亚唤醒体越多，力量加成越高(6/15/30%)"
+          },
+          {
+            "character": "塔薇",
+            "effect": "打出其他角色卡牌时，对应角色最终伤害、护盾和治疗提高15%~25%，不可叠加"
+          }
+        ]
+      },
+      {
+        "name": "疯狂预兆",
+        "name_en": "Madness Omen",
+        "description": "另一角色养成维度，已知活动中可自动提升至6级。",
+        "description_en": "Another character progression dimension, known to be auto-raised to level 6 in events.",
+        "max_level_known": 6
+      }
+    ]
+  },
+  "transcendent_causality": {
+    "name": "超限因果",
+    "name_en": "Transcendent Causality",
+    "description": "命轮的高阶系统。当一个SSR命轮达到+12额外叠位时，可突破限制让装备者同时装备两个SSR命轮，大幅提升角色装备上限。",
+    "description_en": "Advanced Wheel of Destiny system. When an SSR Wheel reaches +12 extra stacks, it breaks the limit allowing the wearer to equip two SSR Wheels simultaneously, greatly increasing equipment ceiling.",
+    "unlock_condition": "SSR命轮达到+12叠位",
+    "effect": "允许同时装备两个SSR命轮"
+  },
+  "resource_system": {
+    "arithmetica": {
+      "name": "算力",
+      "name_en": "Arithmetica",
+      "description": "每回合起始获得5点算力，出牌消耗算力。未使用的算力不会保留到下回合。",
+      "description_en": "Start each turn with 5 Arithmetica. Playing cards costs Arithmetica. Unused Arithmetica does not carry over.",
+      "base_per_turn": 5
+    },
+    "aliemus": {
+      "name": "狂气",
+      "name_en": "Aliemus",
+      "description": "通过打击卡、防御卡等获得狂气。狂气达到100时可触发狂气爆发（大招），消耗全部狂气释放强力技能，不消耗算力。",
+      "description_en": "Gained through Strike, Defense, and other cards. When Aliemus reaches 100, you can trigger Exalt (ultimate), consuming all Aliemus for a powerful skill that costs no Arithmetica.",
+      "max_base": 100,
+      "max_overexalt": 200
+    },
+    "keyflare": {
+      "name": "银钥能量/钥能",
+      "name_en": "Keyflare / S-Energy",
+      "description": "打出卡牌时获得钥能，数量=角色钥能充能x卡牌算力消耗。钥能达到1000时可释放钥令。",
+      "description_en": "Gained when playing cards. Amount = Awakener's Keyflare regen x card's Arithmetica cost. At 1000 Keyflare, you can release the Posse.",
+      "threshold": 1000
+    },
+    "posse": {
+      "name": "钥令",
+      "name_en": "Posse",
+      "description": "钥能达到1000时释放的守密人专属技能，为全队提供增益。",
+      "description_en": "Commander-specific ability released at 1000 Keyflare, providing team-wide buffs."
+    }
+  },
+  "character_skills": {
+    "tulu": {
+      "name": "图鲁",
+      "name_en": "Tulu",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "造成攻击力x10%伤害(4点)。图鲁获得5点狂气。"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "获得防御力x10%护盾(4点)。图鲁获得5点狂气。"
+          },
+          {
+            "name": "深渊号令",
+            "name_en": "Abyssal Command",
+            "cost": 4,
+            "effect": "对所有敌人造成攻击力x30%穿刺伤害(12点)。使所有触腕攻击1次，造成穿刺伤害。"
+          },
+          {
+            "name": "螺湮重临",
+            "name_en": "Spiral Annihilation Returns",
+            "cost": 3,
+            "effect": "驱散自身虚弱状态。临时触腕伤害+攻击力x20%(8点)。"
+          }
+        ],
+        "rouse": {
+          "name": "不朽威仪",
+          "name_en": "Immortal Majesty",
+          "cost": 3,
+          "effect": "图鲁获得25点狂气。灵知觉醒：图鲁每消耗1点算力，触腕伤害+1。"
+        },
+        "exalt": {
+          "name": "星辰正位之刻",
+          "name_en": "Hour of Stellar Alignment",
+          "effect": "获得1条触腕。临时触腕伤害+10。临时暴击率+25%。"
+        },
+        "enlighten": [
+          {
+            "level": 1,
+            "name": "暗夜呢喃",
+            "name_en": "Night Whisper",
+            "effect": "「深渊号令」使触腕攻击所有敌人。"
+          },
+          {
+            "level": 2,
+            "name": "复苏之触",
+            "name_en": "Touch of Revival",
+            "effect": "「打击」和「防御」使触腕伤害临时提高图鲁攻击力的3%(效果随等级提升)。"
+          }
+        ]
+      }
+    },
+    "xilaisite": {
+      "name": "希莱斯特",
+      "name_en": "Celeste",
+      "skills": {
+        "talent": {
+          "name": "灵塑适性",
+          "name_en": "Soulforge Aptitude",
+          "effect": "希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。"
+        }
+      }
+    },
+    "geliya": {
+      "name": "戈利亚",
+      "name_en": "Goliath",
+      "skills": {
+        "talent": {
+          "name": "灵塑适性",
+          "name_en": "Soulforge Aptitude",
+          "effect": "戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。"
+        }
+      }
+    },
+    "airuika": {
+      "name": "艾瑞卡",
+      "name_en": "Erica",
+      "skills": {
+        "exalt": {
+          "name": "电磁爆破",
+          "name_en": "Electromagnetic Blast",
+          "effect": "强力输出大招，附带额外效果。"
+        },
+        "command_cards_note": "「功能过载」(Functional Overload)可同时叠加大量护盾和伤害，但消耗全部算力。3启后更为强力。",
+        "role_in_team": "在超维队伍中负责提供爆发回合的易伤和力量加成"
+      }
+    },
+    "lizi": {
+      "name": "莉兹",
+      "name_en": "Liz",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "获得7点护盾。跃迁：下回合开始前，每受到1次攻击，将1张具有消耗的「绿炎」置入手牌。保留。"
+          },
+          {
+            "name": "绿炎",
+            "name_en": "Green Flame",
+            "cost": 0,
+            "effect": "对随机敌人造成6点穿刺伤害，施加50%伤害的中毒。回合结束时若在手牌或超维空间，升级为「腐化绿炎」。保留。",
+            "upgrades": [
+              {
+                "name": "腐化绿炎",
+                "effect": "对随机敌人造成6点穿刺伤害2次，施加50%伤害的中毒。回合结束升级为「死灭绿炎」。保留。"
+              },
+              {
+                "name": "死灭绿炎",
+                "effect": "最终形态绿炎，更高伤害和中毒。"
+              }
+            ]
+          }
+        ],
+        "rouse": {
+          "name": "灵知觉醒",
+          "effect": "莉兹获得25点狂气。灵知觉醒：莉兹每造成3次伤害，将1张具有消耗的「绿炎」置入手牌，每回合最多3次。"
+        },
+        "exalt": {
+          "name": "告死之舞",
+          "name_en": "Dance of Death",
+          "effect": "获得临时2点力量，弃掉手牌中所有莉兹的卡片并触发它们的效果（免费打出所有绿炎）。"
+        },
+        "enlighten": [
+          {
+            "level": 1,
+            "name": "启灵1",
+            "effect": "绿炎可额外升级一次，多增加一段伤害与中毒数值。必要启灵。"
+          }
+        ],
+        "gameplay_notes": "核心思路：叠绿炎→升级绿炎→狂气爆发一次性打出。注意：觉醒后容易满手绿炎无法抽牌，需要弃牌能力队友配合。升级后绿炎为多段伤害，遇反击特性敌人时狂气爆发可能被反伤致死。"
+      }
+    },
+    "aierwa": {
+      "name": "艾尔瓦",
+      "name_en": "Elva",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "临战体势",
+            "name_en": "Combat Stance",
+            "cost": 1,
+            "effect": "获得防御力x10%护盾(4点)。回合结束时若在手中，获得的护盾提高2点。保留。",
+            "note": "启灵1后算力消耗-1(变为0费)，打出后驱散所有唤醒体封印状态"
+          },
+          {
+            "name": "心眼利刃",
+            "name_en": "Mind's Edge",
+            "cost": 3,
+            "effect": "造成攻击力x30%伤害(11点)。每点护盾使伤害提高2点。",
+            "note": "启灵3后，本回合每打出1张防御卡，心眼利刃算力消耗-1"
+          }
+        ],
+        "rouse": {
+          "name": "灵知觉醒",
+          "effect": "艾尔瓦获得25点狂气。灵知觉醒：获得2点戒备。艾尔瓦造成的伤害随当前护盾提高，每点护盾提高1。"
+        },
+        "exalt": {
+          "name": "无止境的正义",
+          "name_en": "Endless Justice",
+          "effect": "获得19点护盾。弃掉手牌中所有状态卡和症状卡，并抽取等量+1的卡牌。"
+        },
+        "enlighten": [
+          {
+            "level": 1,
+            "name": "固守阵地",
+            "name_en": "Hold the Line",
+            "effect": "「临战体势」算力消耗-1，打出后驱散所有唤醒体封印状态。【必要启灵】"
+          },
+          {
+            "level": 2,
+            "name": "永战不怠",
+            "name_en": "Tireless Warrior",
+            "effect": "「无止境的正义」抽牌数量+1。"
+          },
+          {
+            "level": 3,
+            "name": "一切为了公正",
+            "name_en": "All for Justice",
+            "effect": "本回合每打出1张防御卡，「心眼利刃」算力消耗-1。【输出向必要启灵】"
+          }
+        ]
+      }
+    },
+    "youwuhaxi": {
+      "name": "尤乌哈希",
+      "name_en": "Uuhashi",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "标准防御卡"
+          },
+          {
+            "name": "尖啸吧，血！",
+            "name_en": "Scream, Blood!",
+            "cost": 0,
+            "effect": "失去20%当前生命值，造成15%体质(每级+1.5%)的群体伤害并获得6%体质(每级+0.6%)力量。升格4后每1%暴击伤害提高0.5%伤害和力量。",
+            "note": "启灵1后算力消耗-1(已为0费)，同时伤害和力量提高20%"
+          },
+          {
+            "name": "沸腾吧，血！",
+            "name_en": "Boil, Blood!",
+            "cost": 0,
+            "effect": "自残类技能，压血手段之一"
+          }
+        ],
+        "exalt": {
+          "name": "狂气爆发",
+          "name_en": "Exalt",
+          "effect": "造成150%体质(每级+15%)伤害，享受三倍力量增益。每次触发吞噬后，后续狂气爆发基础伤害提高1倍、力量增益提高1倍。",
+          "scaling": "第2次(吞噬后): 300%体质+4倍力量；第3次: 450%体质+5倍力量",
+          "note": "吞噬不会提高当次狂气爆发的伤害，仅影响后续释放"
+        },
+        "enlighten": [
+          {
+            "level": 1,
+            "name": "角斗士",
+            "effect": "「尖啸吧，血！」算力消耗-1，伤害和获得的力量提高20%。"
+          },
+          {
+            "level": 3,
+            "name": "爱之摇篮",
+            "effect": "[星之摇篮]吞噬时虚弱所有敌人2回合。血肉界域目前唯一的虚弱技能。"
+          }
+        ],
+        "build_notes": {
+          "stat_priority": "暴击率 > 暴击伤害 > 狂气充能 > 界域精通",
+          "key_stats": "伤害强效和基础伤害提升对狂气爆发不生效，优先暴击相关属性",
+          "covenant_set": "生机榨取套装(2件+6件体质+9，4件无条件增伤10%，吞噬时+20%胚胎融合)",
+          "covenant_substats": "4号位：狂气充能；5号位：暴击率；6号位：体质"
+        }
+      }
+    },
+    "leiya": {
+      "name": "雷亚",
+      "name_en": "Rhea",
+      "skills": {
+        "command_cards_note": "0费技能可提供70点胚胎融合(界域精通足够时)。死亡抵抗和苦痛与欢愉确保高盾量。",
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "回复30%体质(每级+3%)生命值，获得15%体质(每级+1.5%)力量。当前每损失1%生命值，回复量提高2%。触发吞噬时回复量翻倍。血量最低时触发吞噬可回复180%体质生命值。"
+        },
+        "role_in_team": "与尤乌哈希配合，提供胚胎融合和治疗支持"
+      }
+    },
+    "lamengna": {
+      "name": "拉蒙娜",
+      "name_en": "Ramona",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "标准防御卡"
+          },
+          {
+            "name": "突击论文",
+            "name_en": "Assault Thesis",
+            "cost": "varies",
+            "effect": "拉蒙娜专属指令卡"
+          },
+          {
+            "name": "女王之剑",
+            "name_en": "Queen's Sword",
+            "cost": "varies",
+            "effect": "拉蒙娜专属指令卡"
+          }
+        ],
+        "overexalt": {
+          "name": "超限爆发",
+          "effect": "对所有敌人造成易伤与虚弱1回合，本回合打出的下1张指令卡生效3次。"
+        },
+        "role_in_team": "弃牌找回、降费辅助，配合莉兹等主C使用"
+      }
+    },
+    "huanxing_lamengna": {
+      "name": "环行·拉蒙娜",
+      "name_en": "Ramona: Timeworn",
+      "skills": {
+        "command_cards_note": "负熵=3时，下一张指令卡触发特殊额外效果。",
+        "rouse": {
+          "name": "灵知觉醒",
+          "effect": "拉蒙娜·环行打出无回环效果的指令卡时，获得1层负熵和50点钥能，每回合最多3次。"
+        },
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "将上回合最后打出的3张固有指令卡的复制加入手牌，算力消耗-1。"
+        },
+        "overexalt": {
+          "name": "超限爆发",
+          "effect": "获得3层无视上限的负熵，使获得的复制卡算力消耗变为0。"
+        },
+        "role_in_team": "大招召回打击卡，配合希洛破链一击爆发。环娜的大招为复制，独立于牌库之外。仅3费降费。"
+      }
+    },
+    "duoer_inferno": {
+      "name": "朵尔",
+      "name_en": "Doll: Inferno",
+      "skills": {
+        "overexalt": {
+          "name": "超限爆发",
+          "effect": "接下来3回合内，每回合开始时回复20%体质的生命，并使所有唤醒体获得10点狂气。"
+        },
+        "special_mechanic": {
+          "name": "终章(Finale)",
+          "description": "Boss战中，每回合开始或释放狂气爆发后获得1层终章。终章最多10层，达到10层后获得[幻梦终焉]。需释放10次狂气爆发解锁完整攻击潜力。"
+        },
+        "role_in_team": "回血回盾回狂气，提供2回合虚弱增加队伍生存能力"
+      }
+    },
+    "dafudaier": {
+      "name": "达芙黛尔",
+      "name_en": "Daffodil",
+      "skills": {
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。"
+        },
+        "command_cards_note": "核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。",
+        "role_in_team": "超维主C，配合卡茜亚可实现现版本越级最强输出组合"
+      }
+    },
+    "24": {
+      "name": "「24」",
+      "name_en": "\"24\"",
+      "skills": {
+        "role_in_team": "与尤乌哈希、希洛、索蕾尔等搭配使用。在深海毒队中也可作为成员(24+弥利亚姆+拉蒙娜+珈伦)。"
+      }
+    },
+    "tawei": {
+      "name": "塔薇",
+      "name_en": "Tawil",
+      "skills": {
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "从当前界域所有角色卡牌中五选三(附带消耗效果)，自带回环效果和保留机制。"
+        },
+        "command_cards": [
+          {
+            "name": "纵贯时序之翼",
+            "name_en": "Wings Through Time",
+            "effect": "提供永久力量加成、狂气获取和力量窃取，附带12段伤害，配合回环更佳。双翼/四翼/六翼阶段可消耗钥能替代算力打出。"
+          },
+          {
+            "name": "通晓万物之理",
+            "name_en": "Knowledge of All Things",
+            "effect": "占卜下一轮抽牌内容，补充狂气。"
+          }
+        ],
+        "talent": {
+          "name": "灵塑适性",
+          "name_en": "Soulforge Aptitude",
+          "effect": "塔薇打出其他角色的卡牌时，对应角色的最终伤害、护盾和治疗提高15%~25%，不可叠加。"
+        },
+        "enlighten": [
+          {
+            "level": 2,
+            "name": "启灵2",
+            "effect": "狂气爆发获得的卡片能降费，解决随机大费卡问题，是重大启灵。"
+          },
+          {
+            "level": 3,
+            "name": "启灵3",
+            "effect": "强化主C能力，通过印过往回声避免残写机制崩盘，减少联络点使用。"
+          }
+        ],
+        "gameplay_notes": "辅助型塔薇达到2启即可满足大多数需求。主C路线需3启。高难度内容需超限机制。指令卡包含打击防御，五选三可能变为三选三。"
+      }
+    },
+    "jialun": {
+      "name": "珈伦",
+      "name_en": "Galen",
+      "skills": {
+        "overexalt": {
+          "name": "超限爆发",
+          "effect": "将「奇妙料理」洗入抽牌堆和弃牌堆各1张。"
+        }
+      }
+    }
+  }
+}

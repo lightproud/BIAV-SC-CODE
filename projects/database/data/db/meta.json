@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "game": "忘却前夜",
+  "game_en": "Morimens",
+  "game_alt": ["忘卻前夜", "Eve of Oblivion"],
+  "developer": "B.I.A.V. Studio",
+  "publisher": ["Dreamstar Network Limited (国际)", "AltPlus Inc. (日本)", "Qookka Games / 青鸟互娱"],
+  "genre": ["Roguelite", "卡牌构筑", "克苏鲁", "回合制RPG"],
+  "platforms": ["iOS", "Android", "PC (Steam)"],
+  "steam_app_id": 3052450,
+  "steam_app_id_jp": 4226130,
+  "launch_dates": {
+    "closed_beta": "2023-07-05 ~ 2023-08-03 (极夜测试)",
+    "open_beta": "2023-11-08 ~ 2023-11-28 (破晓测试)",
+    "global_launch": "2023-11-30 (繁体中文, iOS/Android)",
+    "steam_international": "2024-08-01 (简体中文支持)",
+    "japan_launch": "2025-08-19 (AltPlus Inc.)"
+  },
+  "realm_names_en": {
+    "chaos": "Chaos",
+    "deep_sea": "Aqueor",
+    "flesh": "Caro",
+    "hyperdimension": "Ultra"
+  },
+  "description": "忘却前夜是一款克苏鲁题材改编的Roguelite卡牌构筑游戏。玩家扮演守密人，链接游走在疯狂边缘的唤醒体，构筑专属策略牌组，探索迷雾地图、遭遇随机事件，调查这世界正在死去的真相。",
+  "description_en": "Morimens is a roguelite card-building game inspired by the Cthulhu mythos. Players craft versatile decks, explore misty maps, encounter random events, and uncover the truth of a dying world.",
+  "tagline": "如果一切终将被遗忘，你是否愿意作为世界存在过的证明，背负秘密，一路前行？",
+  "current_version": "2.4.0",
+  "updated_at": "2026-03-28",
+  "wiki_urls": {
+    "gamekee": "https://www.gamekee.com/morimens/",
+    "huiji": "https://morimens.huijiwiki.com/",
+    "wikiwiki_jp": "https://wikiwiki.jp/morimenswiki/"
+  },
+  "community_urls": {
+    "taptap": "https://www.taptap.cn/app/364992",
+    "steam": "https://store.steampowered.com/app/3052450",
+    "bilibili": "https://www.bilibili.com/",
+    "nga": "https://bbs.nga.cn/"
+  }
+}

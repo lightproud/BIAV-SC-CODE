@@ -1,0 +1,197 @@
+{
+  "description": "忘却前夜配队推荐与Meta数据。包含各界域最强阵容、混编队、新手队、终局和PVP阵容。",
+
+  "realm_tier": {
+    "note": "当前版本(v2.4)各界域整体强度排名",
+    "ranking": [
+      {"tier": "S", "realm": "deep_sea", "name": "深海/触手", "note": "增强后为当前最强界域"},
+      {"tier": "S", "realm": "flesh", "name": "血肉", "note": "神父+专武后与深海并列S级"},
+      {"tier": "A+", "realm": "chaos", "name": "混沌", "note": "24单人撑起整个界域，但缺乏完整阵容深度"},
+      {"tier": "A", "realm": "hyperdimension", "name": "超维", "note": "老牌强队，上限高但已被深海/血肉超越"}
+    ]
+  },
+
+  "teams_by_realm": {
+    "deep_sea": [
+      {
+        "name": "触手混伤队",
+        "name_en": "Tentacle Mixed-Damage Team",
+        "members": ["弥利亚姆(Miryam)", "奥瑞塔(Aurita)", "凯刻斯(Caecus)", "墨菲(Murphy)"],
+        "roles": ["主C", "副C", "坦克/治疗", "弹性位"],
+        "difficulty": "中等",
+        "notes": "经典深海首选阵容，攻防兼备。触手自动跟随机制操作简单。"
+      },
+      {
+        "name": "深海双C队",
+        "name_en": "Deep Sea Double-Carry",
+        "members": ["图鲁(Tulu)", "奥瑞塔(Aurita)", "希莱斯特(Celeste)", "珊(Shan)"],
+        "roles": ["主C", "副C", "治疗/复活", "护盾"],
+        "difficulty": "中等",
+        "notes": "刷本速度比混伤队更快。有墨菲可替换珊。"
+      },
+      {
+        "name": "凯刻斯反击队",
+        "name_en": "Caecus Counter Team",
+        "members": ["凯刻斯(Caecus)", "哈姆林(Hamelin)", "戈利亚(Goliath)", "拉蒙娜(Ramona)"],
+        "roles": ["反击核心", "增伤", "辅助", "辅助"],
+        "difficulty": "高（需高练度/觉醒）",
+        "notes": "顶配为「凯狗哈环」。凯刻斯3觉后防御卡可造成反击暴击伤害。墨菲/鲨鱼可替代缺少的角色。",
+        "substitutes": {"哈姆林": "墨菲", "戈利亚": "鲨鱼"}
+      },
+      {
+        "name": "鲨凯队",
+        "name_en": "Shark-Caecus Team",
+        "members": ["戈利亚(Goliath)", "凯刻斯(Caecus)", "希莱斯特(Celeste)", "珊(Shan)"],
+        "roles": ["输出", "反击/坦克", "治疗/复活", "护盾"],
+        "difficulty": "中等",
+        "notes": "全常驻角色组成，适合长期投资深海的新手。"
+      }
+    ],
+    "flesh": [
+      {
+        "name": "尤乌哈希血肉队",
+        "name_en": "Uuhashi Standard Flesh",
+        "members": ["尤乌哈希(Uuhashi)", "雷娅(Rheya)", "艾继丝(Aigis)", "菲茵特(Feint)"],
+        "roles": ["主C", "核心辅助", "胚胎管理", "防御"],
+        "difficulty": "中高（需理解胚胎机制）",
+        "notes": "雷娅+艾继丝是血肉队不可替代的「2」。优先觉醒顺序：艾继丝>雷娅>尤乌>菲茵特。每场战斗结束时保持一个辅助能量满+胚融合70-100%。",
+        "key_mechanic": "胚融合管理：界域精通34+可自然每回合+35胚融合值"
+      },
+      {
+        "name": "神父队",
+        "name_en": "Father (Salvador) Comp",
+        "members": ["萨尔瓦多(Salvador)", "雷娅(Rheya)", "艾继丝(Aigis)", "24/拉蒙娜"],
+        "roles": ["主C", "核心辅助(复制2费卡)", "胚胎辅助", "弹性DPS"],
+        "difficulty": "高",
+        "notes": "公认Top3最强阵容之一。神父+专武后将血肉推至S级。雷娅复制神父2费卡形成HP循环。密契推荐：诅咒兔(暴击率/暴伤)，辅助位优先界域精通。"
+      },
+      {
+        "name": "24血肉变体",
+        "name_en": "#24 Flesh Variant",
+        "members": ["24", "希洛/雷娅", "艾继丝(Aigis)", "萨尔瓦多(Salvador)"],
+        "roles": ["弹性DPS", "核心辅助", "胚胎管理", "副C"],
+        "difficulty": "高",
+        "notes": "24的血肉共鸣：算力消耗=胚融合+力量增益。"
+      }
+    ],
+    "hyperdimension": [
+      {
+        "name": "超维毒队（新手推荐）",
+        "name_en": "Ultra Poison Team (Beginner Recommended)",
+        "members": ["旺达(Wanda)", "诺缔拉(Nautilia, 1觉)", "艾瑞卡(Erica, 1觉)", "宁菲亚(Nymphaea)/温柯尔(Winkel)"],
+        "roles": ["毒伤DPS（唯一必须）", "蓄能辅助", "护盾（免费角色）", "毒叠加/工具"],
+        "difficulty": "低门槛高上限",
+        "notes": "最佳新手开荒队。只有旺达是必须的，其余可替换。宁菲亚+毒塔罗可无限拖延Boss。界域精通推荐100+。"
+      },
+      {
+        "name": "超维四小只",
+        "name_en": "Ultra Starter Team",
+        "members": ["莉兹(Liz, 1觉)", "艾瑞卡(Erica)", "奥吉尔(Augier)", "朵尔(Doll)"],
+        "roles": ["DPS", "护盾", "嘲讽/工具", "净化"],
+        "difficulty": "低",
+        "notes": "全免费/初始角色。叠毒生存即可。注意：当前版本莉兹毒队Meta已被深海/血肉超越，不建议盲目追莉兹。"
+      },
+      {
+        "name": "超维双C双盾",
+        "name_en": "Ultra Double-C Double-Shield",
+        "members": ["温柯尔(Winkel)", "艾瑞卡(Erica)", "莉兹(Liz)", "弹性位"],
+        "roles": ["DPS(飞蛾火叠绿炎)", "护盾", "DPS", "弹性"],
+        "difficulty": "中等",
+        "notes": "多段攻击敌人时优先温柯尔飞蛾火叠绿炎，再用艾瑞卡超限获取护盾。"
+      }
+    ],
+    "chaos": [
+      {
+        "name": "24混沌国家队",
+        "name_en": "#24 Chaos National Team",
+        "members": ["24", "拉蒙娜(Ramona)", "奥吉尔(Augier)", "莉莉(Lily)"],
+        "roles": ["核心DPS", "印卡/复制", "嘲讽/点名", "治疗"],
+        "difficulty": "低-中",
+        "notes": "纯混沌缺乏深度阵容，但24一人撑起。新手用初始四人-萝坦+24即可。"
+      },
+      {
+        "name": "24深海变体",
+        "name_en": "#24 Deep Sea Variant",
+        "members": ["24", "图鲁(Tulu)", "墨菲(Murphy)", "珊(Shan)"],
+        "roles": ["DPS(深海共鸣: +50-75%触手伤害+毒)", "触手叠加", "辅助DPS", "护盾"],
+        "difficulty": "中等",
+        "notes": "24的深海共鸣让她在深海队中也能发挥极强作用。"
+      }
+    ]
+  },
+
+  "mixed_realm_teams": {
+    "note": "v2.0后允许任意两种不同界域同时编队，混沌可与任意界域搭配。",
+    "key_synergies": [
+      {
+        "name": "24万能胶水",
+        "description": "24的共鸣能力会根据队伍界域自动适配：混沌暴击buff、深海触手加成、血肉胚胎联动、超维反击+洞察。可无缝加入任何阵容。"
+      },
+      {
+        "name": "神父+羊妈跨队",
+        "description": "萨尔瓦多的血池机制可与任何能维持HP循环的队伍配合。"
+      },
+      {
+        "name": "国家队SSR版",
+        "members": ["凯刻斯", "艾尔瓦", "墨菲", "潘狄娅"],
+        "description": "深海防御+跨界DPS混合。"
+      },
+      {
+        "name": "国家队SR版",
+        "members": ["凯刻斯", "艾尔瓦", "奥吉尔", "潘狄娅"],
+        "description": "上述的低配版本。"
+      }
+    ]
+  },
+
+  "beginner_priority": [
+    {"rank": 1, "team": "深海SR队", "members": ["凯刻斯", "法洛思", "奥瑞塔", "希莱斯特"], "reason": "仅需4张SR即可通关全主线。触手自动跟随操作简单。"},
+    {"rank": 2, "team": "超维毒队", "members": ["莉兹", "艾瑞卡", "奥吉尔", "朵尔"], "reason": "全免费/初始角色。叠毒生存即可。"},
+    {"rank": 3, "team": "混沌初始四人", "members": ["初始四小只"], "reason": "强度尚可，可建立游戏理解。"},
+    {"rank": 0, "note": "必抽角色", "character": "24", "reason": "限定必选。适用于所有界域，T0通用角色。"},
+    {"rank": 0, "note": "第二优先", "character": "墨菲(Murphy)", "reason": "深海投资的最佳SSR。"}
+  ],
+
+  "endgame_teams": {
+    "mode": "融灾禁区(Dissolution Zone)",
+    "note": "要求不重复唤醒体/命轮/钥令的多队伍终局挑战。主C练度要求高，需根据关卡词条更换C位。",
+    "recommended": [
+      {"realm": "chaos", "team": "24+初始(去萝坦)", "note": "24屠杀主线和融灾。有条件超限珈伦。"},
+      {"realm": "deep_sea", "team": "凯刻斯反击队(凯狗哈环)", "note": "顶配反击队，投入即产出。粉鱼性价比极高。"},
+      {"realm": "deep_sea", "team": "珊护盾队", "note": "需要诺缔拉才能运转。"},
+      {"realm": "flesh", "team": "尤乌+雷娅+艾继丝+菲茵特", "note": "标准血肉，根据Boss机制替换C位。"},
+      {"realm": "flesh", "team": "神父+雷娅+弹性", "note": "羊妈+神父公认Top3最强阵容。"}
+    ]
+  },
+
+  "pvp_teams": {
+    "mode": "相位对弈(Phase Chess)",
+    "note": "PVP仍在Beta阶段，平衡、奖励和匹配机制持续调整中。已添加AI对手。",
+    "teams": [
+      {
+        "name": "三边嘲讽点名队",
+        "name_en": "Triple-Taunt Targeting Team",
+        "members": ["朵尔(Doll)", "奥吉尔(Augier)", "拉蒙娜(Ramona)", "嘲讽弹性位"],
+        "difficulty": "新手友好",
+        "tips": ["朵尔净化留关键时刻", "奥吉尔点名留关键操作", "拉蒙娜按需印卡可保留", "不要前1-2回合就把嘲讽用完"]
+      },
+      {
+        "name": "潘狄娅狙击队",
+        "name_en": "Pandeia Snipe Comp",
+        "members": ["潘狄娅(Pandeia)", "弹性位x3"],
+        "difficulty": "高（需高卡牌知识）",
+        "tips": ["可无视嘲讽狙杀后排", "超限给全队11层反击", "2-3回合可击杀敌方朵尔", "操作难度高但爆发力超过奥吉尔点名"]
+      }
+    ]
+  },
+
+  "character_synergies": [
+    {"name": "触手叠加", "characters": ["图鲁", "奥瑞塔", "弥利亚姆"], "mechanic": "各自增加触手实例，自动跟随攻击乘法叠加。"},
+    {"name": "胚胎引擎", "characters": ["雷娅", "艾继丝"], "mechanic": "雷娅吞噬胚胎大量回血，艾继丝生产/管理胚胎。"},
+    {"name": "神父血池循环", "characters": ["萨尔瓦多", "雷娅"], "mechanic": "雷娅复制神父2费卡，HP吸收>血池饮用>高HP=高伤害循环。"},
+    {"name": "反击缩放", "characters": ["凯刻斯", "诺缔拉"], "mechanic": "凯刻斯3觉后防御卡造成反击暴击伤害，诺缔拉填充蓄能条。"},
+    {"name": "毒素锁定", "characters": ["宁菲亚", "毒塔罗"], "mechanic": "无限Boss拖延，每次普攻后叠毒。"},
+    {"name": "24万能适配", "characters": ["24", "任意界域"], "mechanic": "共鸣随队伍界域变化，始终提供对应增益。"},
+    {"name": "护盾打击", "characters": ["珊", "诺缔拉"], "mechanic": "珊的护盾型DPS需要诺缔拉的辅助支撑才能运转。"}
+  ]
+}
