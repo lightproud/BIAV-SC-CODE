@@ -218,9 +218,62 @@
 
   "collaborations": [
     {
+      "name": "雾境序列联动",
+      "name_en": "Mist Sequence Collaboration",
+      "partner": "雾境序列 (Mist Sequence)",
+      "description": "与实时战术RPG《雾境序列》联动，联动内容为永久常驻。茉夏(Mouchette)作为首个联动唤醒体加入游戏。",
+      "period": "2025-12-29 ~ 2026-01-26 (角色领取期间，联动内容永久常驻)",
+      "version": "v2.4.1",
+      "event_name": "Rendezvous in Mist（雾中邂逅）",
+      "event_description": "完成主线第一章即可免费领取SSR限定联动唤醒体茉夏(Mouchette)。联动前预热活动(2025-11-17 ~ 2026-01-26)可通过完成主线章节获得流明之芯×200。",
+      "featured_characters": [
+        {
+          "name": "茉夏",
+          "name_en": "Mouchette",
+          "rarity": "SSR",
+          "realm": "chaos",
+          "role": "输出型(Assault)",
+          "obtain": "免费领取（完成主线第一章）",
+          "note": "忘却前夜首个联动唤醒体，Strike卡牌机制，可适配多界域编队"
+        }
+      ],
+      "featured_wheels": [
+        {
+          "name": "末日狂澜",
+          "name_en": "Doomsday Rampage",
+          "rarity": "待确认",
+          "obtain": "联动唤醒活动"
+        }
+      ],
+      "gift_code": "MistSequence（银×500 + 无垢之芯×5，有效期至2026-04-27）",
+      "permanent": true
+    },
+    {
       "name": "沙耶之歌联动",
       "name_en": "Saya no Uta Collaboration",
-      "description": "与经典视觉小说《沙耶之歌》跨界联动，添加联动角色。"
+      "partner": "沙耶之歌 / 沙耶の唄 (Saya no Uta, Nitro+)",
+      "description": "与经典视觉小说《沙耶之歌》（虚渊玄作品）跨界联动。两部作品以「疯狂」与「爱」为共通主题。由日服发行商AltPlus宣布。",
+      "announced_date": "2026-03-12",
+      "period": "待公布",
+      "version": "待确认（预计v2.5或之后）",
+      "event_name": "待公布",
+      "event_description": "官方宣传语：「梦的碎片，随风飘散」(Fragments of dreams, carried by the wind)。具体活动玩法待公布。",
+      "featured_characters": "待公布",
+      "featured_wheels": "待公布",
+      "status": "已官宣，详情待公布",
+      "source": "日服官方X(@bokyakuzenya)、国际服官方X(@MorimensOfcl)"
+    },
+    {
+      "name": "战双帕弥什联动",
+      "name_en": "Punishing Gray Raven Collaboration",
+      "partner": "战双帕弥什 (Punishing: Gray Raven, Kuro Games)",
+      "description": "忘却前夜官方疑似意外泄露了与《战双帕弥什》的联动信息。",
+      "announced_date": "待确认（2025年9月泄露）",
+      "period": "待公布",
+      "featured_characters": "待公布",
+      "featured_wheels": "待公布",
+      "status": "疑似泄露，尚未正式官宣详情",
+      "note": "2025年9月忘却前夜官方账号意外泄露联动PV，社区已广泛讨论，但官方尚未正式公布完整详情"
     }
   ],
 
