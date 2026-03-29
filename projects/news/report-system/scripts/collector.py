@@ -34,6 +34,7 @@ logger = logging.getLogger("collector")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
+STATE_PATH = BASE_DIR / "data" / "state.json"
 
 HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
@@ -373,40 +374,195 @@ def fetch_nga():
     return items
 
 
-def fetch_taptap():
-    """从 TapTap 获取忘却前夜社区热帖。"""
-    app_id = os.environ.get("TAPTAP_APP_ID", "")
-    if not app_id:
-        logger.info("TapTap: TAPTAP_APP_ID not set, skipping")
-        return []
+def _parse_taptap_time(text: str) -> str:
+    """将TapTap时间文本转为ISO时间字符串。"""
+    now = datetime.now(timezone.utc)
+    text = (text or "").strip()
 
+    m = re.match(r"(\d+)\s*分钟前", text)
+    if m:
+        return (now - timedelta(minutes=int(m.group(1)))).isoformat()
+
+    m = re.match(r"(\d+)\s*小时前", text)
+    if m:
+        return (now - timedelta(hours=int(m.group(1)))).isoformat()
+
+    m = re.match(r"(\d+)\s*天前", text)
+    if m:
+        return (now - timedelta(days=int(m.group(1)))).isoformat()
+
+    m = re.match(r"(\d+)\s*周前", text)
+    if m:
+        return (now - timedelta(weeks=int(m.group(1)))).isoformat()
+
+    m = re.match(r"(\d+)\s*个月前", text)
+    if m:
+        return (now - timedelta(days=int(m.group(1)) * 30)).isoformat()
+
+    if "昨天" in text:
+        return (now - timedelta(days=1)).isoformat()
+
+    m = re.match(r"(\d{4})[/\-](\d{1,2})[/\-](\d{1,2})", text)
+    if m:
+        try:
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
+            return dt.isoformat()
+        except ValueError:
+            pass
+
+    return now.isoformat()
+
+
+def _taptap_regex_fallback(html: str) -> list:
+    """正则兜底：从HTML中粗略提取帖子信息。"""
+    posts = []
+    # 提取>text<之间长度合适的中文内容作为标题候选
+    candidates = re.findall(r">([^<\n\r]{5,80})<", html)
+    seen = set()
+    for candidate in candidates:
+        candidate = candidate.strip()
+        if not candidate or candidate in seen:
+            continue
+        # 过滤纯数字、纯符号、英文导航词等
+        if re.match(r"^[\d\s\W]+$", candidate):
+            continue
+        if not re.search(r"[\u4e00-\u9fff]", candidate):
+            continue
+        seen.add(candidate)
+        posts.append({
+            "title": candidate,
+            "author": "",
+            "time_text": "",
+            "likes": 0,
+            "comments": 0,
+            "category": "",
+        })
+        if len(posts) >= 20:
+            break
+    return posts
+
+
+def _load_taptap_state() -> dict:
+    """加载TapTap增量状态。"""
+    if STATE_PATH.exists():
+        try:
+            with open(STATE_PATH, "r", encoding="utf-8") as f:
+                state = json.load(f)
+            return state.get("taptap", {"last_seen_titles": []})
+        except Exception:
+            pass
+    return {"last_seen_titles": []}
+
+
+def _save_taptap_state(taptap_state: dict):
+    """保存TapTap增量状态。"""
+    state = {}
+    if STATE_PATH.exists():
+        try:
+            with open(STATE_PATH, "r", encoding="utf-8") as f:
+                state = json.load(f)
+        except Exception:
+            pass
+    state["taptap"] = taptap_state
+    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(STATE_PATH, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
+
+
+def fetch_taptap():
+    """从TapTap抓取忘却前夜社区帖子（Web页面 + LLM解析）。"""
     items = []
     try:
-        data = _get(
-            f"https://api.taptap.cn/app/v2/app/{app_id}/topic/list",
-            params={"type": "hot", "limit": 25},
-        ).json()
+        # Step 1: 抓取页面
+        resp = requests.get(
+            "https://www.taptap.cn/app/364992/topic",
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+                "Accept-Language": "zh-CN,zh;q=0.9",
+            },
+            timeout=20,
+        )
+        resp.raise_for_status()
+        html = resp.text
 
-        for topic in data.get("data", {}).get("list", []):
-            created = datetime.fromtimestamp(topic.get("created_time", 0), tz=timezone.utc)
-            if created < CUTOFF:
+        # Step 2: 清洗HTML
+        cleaned = html
+        for tag in ["script", "style", "nav", "header", "footer"]:
+            cleaned = re.sub(
+                rf"<{tag}[^>]*>.*?</{tag}>", "", cleaned,
+                flags=re.DOTALL | re.IGNORECASE,
+            )
+        cleaned = cleaned[:8000]
+
+        # Step 3: LLM解析（失败时降级为正则）
+        posts = []
+        try:
+            import anthropic
+            client = anthropic.Anthropic()
+            response = client.messages.create(
+                model="claude-haiku-4-5-20251001",
+                max_tokens=2000,
+                messages=[{
+                    "role": "user",
+                    "content": (
+                        "从以下TapTap论坛页面HTML中提取所有帖子。返回JSON数组，每条包含：\n"
+                        "- title: 帖子标题\n"
+                        "- author: 作者名\n"
+                        '- time_text: 时间文本（如"9小时前"、"6天前"、"2026/3/18"）\n'
+                        "- likes: 点赞数（整数，没有则0）\n"
+                        "- comments: 评论数（整数，没有则0）\n"
+                        '- category: 分类标签（如"综合"、"攻略"）\n\n'
+                        "仅返回JSON数组，不要任何其他文字。\n\n"
+                        f"当前时间: {datetime.now().strftime('%Y-%m-%d %H:%M')}\n\n"
+                        f"HTML内容:\n{cleaned}"
+                    ),
+                }],
+            )
+            raw_text = response.content[0].text.strip()
+            json_match = re.search(r"\[.*\]", raw_text, re.DOTALL)
+            if json_match:
+                posts = json.loads(json_match.group())
+            else:
+                posts = json.loads(raw_text)
+            logger.info(f"TapTap LLM解析成功，获得 {len(posts)} 条帖子")
+        except Exception as e:
+            logger.warning(f"TapTap LLM解析失败，降级为正则: {e}")
+            posts = _taptap_regex_fallback(html)
+
+        # Step 4 & 5: 增量去重 + 映射到 _make_item
+        taptap_state = _load_taptap_state()
+        seen_titles = set(taptap_state.get("last_seen_titles", []))
+        new_titles = []
+
+        for post in posts:
+            title = (post.get("title") or "").strip()
+            if not title or title in seen_titles:
                 continue
 
-            engagement = topic.get("comment_count", 0) + topic.get("like_count", 0)
+            new_titles.append(title)
+            time_str = _parse_taptap_time(post.get("time_text", ""))
+            likes = int(post.get("likes") or 0)
+            comments = int(post.get("comments") or 0)
+
             items.append(_make_item(
-                title=topic.get("title", ""),
-                summary=topic.get("summary", ""),
+                title=title,
+                summary=title,
                 source="taptap",
                 platform_region="cn",
-                time_str=created.isoformat(),
-                url=topic.get("share_url", ""),
-                engagement=engagement,
-                is_hot=topic.get("like_count", 0) > 100,
-                author=topic.get("user", {}).get("name", ""),
+                time_str=time_str,
+                url="",
+                engagement=likes + comments,
+                is_hot=likes > 50,
+                author=post.get("author", ""),
                 lang="zh",
             ))
 
-        logger.info(f"TapTap: {len(items)} topics collected")
+        # 更新state（保留最近200条标题）
+        all_titles = list(seen_titles) + new_titles
+        taptap_state["last_seen_titles"] = all_titles[-200:]
+        _save_taptap_state(taptap_state)
+
+        logger.info(f"TapTap: {len(items)} 条新帖子")
     except Exception as e:
         logger.warning(f"TapTap failed: {e}")
 
