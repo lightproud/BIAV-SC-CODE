@@ -1,0 +1,404 @@
+{
+  "description": "忘却前夜角色卡牌数据库。每位唤醒体拥有4张指令卡+1张灵知觉醒卡，以及狂气爆发和启灵技能。",
+  "description_en": "Morimens character card database. Each Awakener has 4 Command Cards + 1 Rouse Card, plus Exalt and Enlighten skills.",
+  "cards": [
+    {
+      "character_id": "alva",
+      "character_name": "艾尔瓦",
+      "character_name_en": "Alva",
+      "rarity": "SSR",
+      "realm": "chaos",
+      "command_cards": [
+        {
+          "name": "打击",
+          "name_en": "Strike",
+          "cost": 1,
+          "effect": "标准打击卡"
+        },
+        {
+          "name": "临战体势",
+          "name_en": "Combat Stance",
+          "cost": 1,
+          "effect": "获得防御力x10%护盾(4点)。回合结束时若在手中，获得的护盾提高2点。保留。",
+          "note": "启灵1后算力消耗-1(变为0费)，打出后驱散所有唤醒体封印状态"
+        },
+        {
+          "name": "心眼利刃",
+          "name_en": "Mind's Edge",
+          "cost": 3,
+          "effect": "造成攻击力x30%伤害(11点)。每点护盾使伤害提高2点。",
+          "note": "启灵3后，本回合每打出1张防御卡，心眼利刃算力消耗-1"
+        }
+      ],
+      "rouse": {
+        "name": "灵知觉醒",
+        "effect": "艾尔瓦获得25点狂气。灵知觉醒：获得2点戒备。艾尔瓦造成的伤害随当前护盾提高，每点护盾提高1。"
+      },
+      "exalt": {
+        "name": "无止境的正义",
+        "name_en": "Endless Justice",
+        "effect": "获得19点护盾。弃掉手牌中所有状态卡和症状卡，并抽取等量+1的卡牌。"
+      },
+      "enlighten": [
+        {
+          "level": 1,
+          "name": "固守阵地",
+          "name_en": "Hold the Line",
+          "effect": "「临战体势」算力消耗-1，打出后驱散所有唤醒体封印状态。【必要启灵】"
+        },
+        {
+          "level": 2,
+          "name": "永战不怠",
+          "name_en": "Tireless Warrior",
+          "effect": "「无止境的正义」抽牌数量+1。"
+        },
+        {
+          "level": 3,
+          "name": "一切为了公正",
+          "name_en": "All for Justice",
+          "effect": "本回合每打出1张防御卡，「心眼利刃」算力消耗-1。【输出向必要启灵】"
+        }
+      ]
+    },
+    {
+      "character_id": "ramona-timeworn",
+      "character_name": "环行·拉蒙娜",
+      "character_name_en": "Ramona: Timeworn",
+      "rarity": "SSR",
+      "realm": "chaos",
+      "rouse": {
+        "name": "灵知觉醒",
+        "effect": "拉蒙娜·环行打出无回环效果的指令卡时，获得1层负熵和50点钥能，每回合最多3次。"
+      },
+      "exalt": {
+        "name": "狂气爆发",
+        "effect": "将上回合最后打出的3张固有指令卡的复制加入手牌，算力消耗-1。"
+      },
+      "overexalt": {
+        "name": "超限爆发",
+        "effect": "获得3层无视上限的负熵，使获得的复制卡算力消耗变为0。"
+      }
+    },
+    {
+      "character_id": "ramona",
+      "character_name": "拉蒙娜",
+      "character_name_en": "Ramona",
+      "rarity": "SSR",
+      "realm": "chaos",
+      "command_cards": [
+        {
+          "name": "打击",
+          "name_en": "Strike",
+          "cost": 1,
+          "effect": "标准打击卡"
+        },
+        {
+          "name": "防御",
+          "name_en": "Defense",
+          "cost": 1,
+          "effect": "标准防御卡"
+        },
+        {
+          "name": "突击论文",
+          "name_en": "Assault Thesis",
+          "cost": "varies",
+          "effect": "拉蒙娜专属指令卡"
+        },
+        {
+          "name": "女王之剑",
+          "name_en": "Queen's Sword",
+          "cost": "varies",
+          "effect": "拉蒙娜专属指令卡"
+        }
+      ],
+      "overexalt": {
+        "name": "超限爆发",
+        "effect": "对所有敌人造成易伤与虚弱1回合，本回合打出的下1张指令卡生效3次。"
+      }
+    },
+    {
+      "character_id": "galen",
+      "character_name": "伽伦",
+      "character_name_en": "Galen",
+      "rarity": "SSR",
+      "realm": "chaos",
+      "overexalt": {
+        "name": "超限爆发",
+        "effect": "将「奇妙料理」洗入抽牌堆和弃牌堆各1张。"
+      }
+    },
+    {
+      "character_id": "tulu",
+      "character_name": "图鲁",
+      "character_name_en": "Tulu",
+      "rarity": "SSR",
+      "realm": "aequor",
+      "command_cards": [
+        {
+          "name": "打击",
+          "name_en": "Strike",
+          "cost": 1,
+          "effect": "造成攻击力x10%伤害(4点)。图鲁获得5点狂气。"
+        },
+        {
+          "name": "防御",
+          "name_en": "Defense",
+          "cost": 1,
+          "effect": "获得防御力x10%护盾(4点)。图鲁获得5点狂气。"
+        },
+        {
+          "name": "深渊号令",
+          "name_en": "Abyssal Command",
+          "cost": 4,
+          "effect": "对所有敌人造成攻击力x30%穿刺伤害(12点)。使所有触腕攻击1次，造成穿刺伤害。"
+        },
+        {
+          "name": "螺湮重临",
+          "name_en": "Spiral Annihilation Returns",
+          "cost": 3,
+          "effect": "驱散自身虚弱状态。临时触腕伤害+攻击力x20%(8点)。"
+        }
+      ],
+      "rouse": {
+        "name": "不朽威仪",
+        "name_en": "Immortal Majesty",
+        "cost": 3,
+        "effect": "图鲁获得25点狂气。灵知觉醒：图鲁每消耗1点算力，触腕伤害+1。"
+      },
+      "exalt": {
+        "name": "星辰正位之刻",
+        "name_en": "Hour of Stellar Alignment",
+        "effect": "获得1条触腕。临时触腕伤害+10。临时暴击率+25%。"
+      },
+      "enlighten": [
+        {
+          "level": 1,
+          "name": "暗夜呢喃",
+          "name_en": "Night Whisper",
+          "effect": "「深渊号令」使触腕攻击所有敌人。"
+        },
+        {
+          "level": 2,
+          "name": "复苏之触",
+          "name_en": "Touch of Revival",
+          "effect": "「打击」和「防御」使触腕伤害临时提高图鲁攻击力的3%(效果随等级提升)。"
+        }
+      ]
+    },
+    {
+      "character_id": "celeste",
+      "character_name": "希莱斯特",
+      "character_name_en": "Celeste",
+      "rarity": "SSR",
+      "realm": "aequor",
+      "talent": {
+        "name": "灵塑适性",
+        "name_en": "Soulforge Aptitude",
+        "effect": "希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。"
+      }
+    },
+    {
+      "character_id": "goliath",
+      "character_name": "戈利亚",
+      "character_name_en": "Goliath",
+      "rarity": "SSR",
+      "realm": "aequor",
+      "talent": {
+        "name": "灵塑适性",
+        "name_en": "Soulforge Aptitude",
+        "effect": "戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。"
+      }
+    },
+    {
+      "character_id": "uvhash",
+      "character_name": "尤乌哈希",
+      "character_name_en": "Uvhash",
+      "rarity": "SSR",
+      "realm": "caro",
+      "command_cards": [
+        {
+          "name": "打击",
+          "name_en": "Strike",
+          "cost": 1,
+          "effect": "标准打击卡"
+        },
+        {
+          "name": "防御",
+          "name_en": "Defense",
+          "cost": 1,
+          "effect": "标准防御卡"
+        },
+        {
+          "name": "尖啸吧，血！",
+          "name_en": "Scream, Blood!",
+          "cost": 0,
+          "effect": "失去20%当前生命值，造成15%体质(每级+1.5%)的群体伤害并获得6%体质(每级+0.6%)力量。升格4后每1%暴击伤害提高0.5%伤害和力量。",
+          "note": "启灵1后算力消耗-1(已为0费)，同时伤害和力量提高20%"
+        },
+        {
+          "name": "沸腾吧，血！",
+          "name_en": "Boil, Blood!",
+          "cost": 0,
+          "effect": "自残类技能，压血手段之一"
+        }
+      ],
+      "exalt": {
+        "name": "狂气爆发",
+        "name_en": "Exalt",
+        "effect": "造成150%体质(每级+15%)伤害，享受三倍力量增益。每次触发吞噬后，后续狂气爆发基础伤害提高1倍、力量增益提高1倍。",
+        "scaling": "第2次(吞噬后): 300%体质+4倍力量；第3次: 450%体质+5倍力量",
+        "note": "吞噬不会提高当次狂气爆发的伤害，仅影响后续释放"
+      },
+      "enlighten": [
+        {
+          "level": 1,
+          "name": "角斗士",
+          "effect": "「尖啸吧，血！」算力消耗-1，伤害和获得的力量提高20%。"
+        },
+        {
+          "level": 3,
+          "name": "爱之摇篮",
+          "effect": "[星之摇篮]吞噬时虚弱所有敌人2回合。血肉界域目前唯一的虚弱技能。"
+        }
+      ]
+    },
+    {
+      "character_id": "rhea",
+      "character_name": "雷娅",
+      "character_name_en": "Rhea",
+      "rarity": "SSR",
+      "realm": "caro",
+      "exalt": {
+        "name": "狂气爆发",
+        "effect": "回复30%体质(每级+3%)生命值，获得15%体质(每级+1.5%)力量。当前每损失1%生命值，回复量提高2%。触发吞噬时回复量翻倍。血量最低时触发吞噬可回复180%体质生命值。"
+      }
+    },
+    {
+      "character_id": "erica",
+      "character_name": "艾瑞卡",
+      "character_name_en": "Erica",
+      "rarity": "SSR",
+      "realm": "ultra",
+      "exalt": {
+        "name": "电磁爆破",
+        "name_en": "Electromagnetic Blast",
+        "effect": "强力输出大招，附带额外效果。"
+      }
+    },
+    {
+      "character_id": "liz",
+      "character_name": "莉兹",
+      "character_name_en": "Liz",
+      "rarity": "SSR",
+      "realm": "ultra",
+      "command_cards": [
+        {
+          "name": "打击",
+          "name_en": "Strike",
+          "cost": 1,
+          "effect": "标准打击卡"
+        },
+        {
+          "name": "防御",
+          "name_en": "Defense",
+          "cost": 1,
+          "effect": "获得7点护盾。跃迁：下回合开始前，每受到1次攻击，将1张具有消耗的「绿炎」置入手牌。保留。"
+        },
+        {
+          "name": "绿炎",
+          "name_en": "Green Flame",
+          "cost": 0,
+          "effect": "对随机敌人造成6点穿刺伤害，施加50%伤害的中毒。回合结束时若在手牌或超维空间，升级为「腐化绿炎」。保留。",
+          "upgrades": [
+            {
+              "name": "腐化绿炎",
+              "effect": "对随机敌人造成6点穿刺伤害2次，施加50%伤害的中毒。回合结束升级为「死灭绿炎」。保留。"
+            },
+            {
+              "name": "死灭绿炎",
+              "effect": "最终形态绿炎，更高伤害和中毒。"
+            }
+          ]
+        }
+      ],
+      "rouse": {
+        "name": "灵知觉醒",
+        "effect": "莉兹获得25点狂气。灵知觉醒：莉兹每造成3次伤害，将1张具有消耗的「绿炎」置入手牌，每回合最多3次。"
+      },
+      "exalt": {
+        "name": "告死之舞",
+        "name_en": "Dance of Death",
+        "effect": "获得临时2点力量，弃掉手牌中所有莉兹的卡片并触发它们的效果（免费打出所有绿炎）。"
+      },
+      "enlighten": [
+        {
+          "level": 1,
+          "name": "启灵1",
+          "effect": "绿炎可额外升级一次，多增加一段伤害与中毒数值。必要启灵。"
+        }
+      ]
+    },
+    {
+      "character_id": "daffodil",
+      "character_name": "达芙黛尔",
+      "character_name_en": "Daffodil",
+      "rarity": "SSR",
+      "realm": "ultra",
+      "exalt": {
+        "name": "狂气爆发",
+        "effect": "生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。"
+      }
+    },
+    {
+      "character_id": "tawil",
+      "character_name": "塔薇",
+      "character_name_en": "Tawil",
+      "rarity": "SSR",
+      "realm": "chaos",
+      "command_cards": [
+        {
+          "name": "纵贯时序之翼",
+          "name_en": "Wings Through Time",
+          "effect": "提供永久力量加成、狂气获取和力量窃取，附带12段伤害，配合回环更佳。双翼/四翼/六翼阶段可消耗钥能替代算力打出。"
+        },
+        {
+          "name": "通晓万物之理",
+          "name_en": "Knowledge of All Things",
+          "effect": "占卜下一轮抽牌内容，补充狂气。"
+        }
+      ],
+      "exalt": {
+        "name": "狂气爆发",
+        "effect": "从当前界域所有角色卡牌中五选三(附带消耗效果)，自带回环效果和保留机制。"
+      },
+      "enlighten": [
+        {
+          "level": 2,
+          "name": "启灵2",
+          "effect": "狂气爆发获得的卡片能降费，解决随机大费卡问题，是重大启灵。"
+        },
+        {
+          "level": 3,
+          "name": "启灵3",
+          "effect": "强化主C能力，通过印过往回声避免残写机制崩盘，减少联络点使用。"
+        }
+      ],
+      "talent": {
+        "name": "灵塑适性",
+        "name_en": "Soulforge Aptitude",
+        "effect": "塔薇打出其他角色的卡牌时，对应角色的最终伤害、护盾和治疗提高15%~25%，不可叠加。"
+      }
+    },
+    {
+      "character_id": "doll-inferno",
+      "character_name": "熔毁·朵尔",
+      "character_name_en": "Doll: Inferno",
+      "rarity": "SSR",
+      "realm": "chaos",
+      "overexalt": {
+        "name": "超限爆发",
+        "effect": "接下来3回合内，每回合开始时回复20%体质的生命，并使所有唤醒体获得10点狂气。"
+      }
+    }
+  ]
+}

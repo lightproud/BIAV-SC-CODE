@@ -1,0 +1,363 @@
+{
+  "description": "忘却前夜关卡数据（含掉落表与推荐等级）",
+  "stages": [
+    {
+      "id": "dissolution-ruins",
+      "name": "融蚀之墟",
+      "name_en": "Dissolution Ruins",
+      "type": "素材副本",
+      "category": "resource_dungeon",
+      "reset": "每日",
+      "unlock": "通关调查行动1-2",
+      "stamina_cost": true,
+      "known_drops": [
+        "升格匣子",
+        "技能补给",
+        "界域残渣",
+        "教化素材",
+        "蔷薇金券",
+        "灵知制剂",
+        "突破材料"
+      ],
+      "drop_table": [
+        {
+          "item": "M"
+        },
+        {
+          "item": "C"
+        },
+        {
+          "item": "G"
+        },
+        {
+          "item": "*"
+        }
+      ],
+      "recommended_level": null,
+      "enemy_level": null,
+      "_wiki_source": "https://forget-last-night-morimens.fandom.com/wiki/Goliath"
+    },
+    {
+      "id": "forbidden-inscriptions",
+      "name": "禁忌篆录",
+      "name_en": "Forbidden Inscriptions",
+      "type": "素材副本",
+      "category": "resource_dungeon",
+      "reset": "每日",
+      "unlock": "",
+      "stamina_cost": null,
+      "known_drops": [],
+      "drop_table": [],
+      "recommended_level": null,
+      "enemy_level": null
+    },
+    {
+      "id": "transcendent-existence",
+      "name": "超验存在",
+      "name_en": "Transcendent Existence",
+      "type": "周Boss",
+      "category": "resource_dungeon",
+      "reset": "每周一15:00",
+      "unlock": "",
+      "stamina_cost": null,
+      "known_drops": [],
+      "drop_table": [
+        {
+          "item": "M"
+        },
+        {
+          "item": "C"
+        },
+        {
+          "item": "G"
+        },
+        {
+          "item": "*"
+        }
+      ],
+      "recommended_level": null,
+      "enemy_level": null,
+      "_wiki_source": "https://forget-last-night-morimens.fandom.com/wiki/Goliath"
+    },
+    {
+      "id": "erosion-disaster-zone-dissolution-zone",
+      "name": "融灾禁区",
+      "name_en": "Erosion Disaster Zone / Dissolution Zone",
+      "type": "高难挑战",
+      "category": "challenge_mode",
+      "reset": "每两周 周四15:00",
+      "unlock": "通关主线4-3(原5-4,v1.2降低)",
+      "known_drops": [],
+      "drop_table": [
+        {
+          "item": "P"
+        }
+      ],
+      "recommended_level": null,
+      "enemy_level": null,
+      "alert_levels": [
+        {
+          "level": "I",
+          "training_values": [
+            50,
+            55,
+            60,
+            65,
+            70
+          ],
+          "enemy_level": "50-58"
+        },
+        {
+          "level": "II",
+          "training_values": [
+            55,
+            60,
+            65,
+            70,
+            75
+          ],
+          "enemy_level": "55-63"
+        },
+        {
+          "level": "III",
+          "training_values": [
+            60,
+            65,
+            70,
+            75,
+            80
+          ],
+          "enemy_level": "60-68",
+          "note": "受融灾黑潮影响"
+        }
+      ],
+      "_wiki_source": "https://forget-last-night-morimens.fandom.com/wiki/Forget%20last%20Night%3A%20Morimens%20Wiki"
+    },
+    {
+      "id": "phantasmal-dive-dream-dive",
+      "name": "幻梦深潜",
+      "name_en": "Phantasmal Dive / Dream Dive",
+      "type": "Roguelike排位",
+      "category": "challenge_mode",
+      "reset": "每周",
+      "unlock": "",
+      "known_drops": [
+        "融蚀之珠(D-Jewels)",
+        "银芯"
+      ],
+      "drop_table": [],
+      "recommended_level": null,
+      "enemy_level": null
+    },
+    {
+      "id": "phase-chess-phase-confrontation",
+      "name": "相位对弈",
+      "name_en": "Phase Chess / Phase Confrontation",
+      "type": "PVP排位",
+      "category": "challenge_mode",
+      "reset": "每周",
+      "unlock": "通关主线3-2",
+      "known_drops": [
+        "演习徽章",
+        "蔷薇金券"
+      ],
+      "drop_table": [],
+      "recommended_level": null,
+      "enemy_level": null
+    },
+    {
+      "id": "lightless-realm",
+      "name": "无光秘境",
+      "name_en": "Lightless Realm",
+      "type": "升星挑战",
+      "category": "challenge_mode",
+      "reset": "",
+      "unlock": "",
+      "known_drops": [
+        "无光币"
+      ],
+      "drop_table": [
+        {
+          "item": "T"
+        },
+        {
+          "item": "*"
+        }
+      ],
+      "recommended_level": null,
+      "enemy_level": null,
+      "_wiki_source": "https://forget-last-night-morimens.fandom.com/wiki/Unbearable%20Freedom"
+    },
+    {
+      "id": "d-effect-zone",
+      "name": "界域异效区",
+      "name_en": "D-Effect Zone",
+      "type": "挑战副本",
+      "category": "challenge_mode",
+      "reset": "",
+      "unlock": "",
+      "known_drops": [
+        "无光币"
+      ],
+      "drop_table": [
+        {
+          "item": "I"
+        },
+        {
+          "item": "E"
+        },
+        {
+          "item": "N"
+        },
+        {
+          "item": "C"
+        }
+      ],
+      "recommended_level": null,
+      "enemy_level": null,
+      "_wiki_source": "https://forget-last-night-morimens.fandom.com/wiki/Dissolution"
+    },
+    {
+      "id": "arcane-dominion",
+      "name": "秘术统御",
+      "name_en": "Arcane Dominion",
+      "type": "挑战副本",
+      "category": "challenge_mode",
+      "reset": "",
+      "unlock": "",
+      "known_drops": [
+        "调查徽章"
+      ],
+      "drop_table": [
+        {
+          "item": "M"
+        },
+        {
+          "item": "C"
+        },
+        {
+          "item": "G"
+        },
+        {
+          "item": "*"
+        }
+      ],
+      "recommended_level": null,
+      "enemy_level": null,
+      "_wiki_source": "https://forget-last-night-morimens.fandom.com/wiki/Goliath"
+    },
+    {
+      "id": "under-the-outer-sky",
+      "name": "天外之下",
+      "name_en": "Under the Outer Sky",
+      "type": "新副本",
+      "category": "challenge_mode",
+      "reset": "",
+      "unlock": "",
+      "known_drops": [],
+      "drop_table": [],
+      "recommended_level": null,
+      "enemy_level": null
+    },
+    {
+      "id": "door-of-all-things",
+      "name": "万象门扉",
+      "name_en": "Door of All Things",
+      "type": "限时活动副本",
+      "category": "challenge_mode",
+      "reset": "",
+      "unlock": "",
+      "known_drops": [],
+      "drop_table": [
+        {
+          "item": "H"
+        },
+        {
+          "item": "*"
+        },
+        {
+          "item": "L"
+        },
+        {
+          "item": "J"
+        },
+        {
+          "item": "h"
+        }
+      ],
+      "recommended_level": null,
+      "enemy_level": null,
+      "_wiki_source": "https://forget-last-night-morimens.fandom.com/wiki/Hameln"
+    },
+    {
+      "id": "daily-training",
+      "name": "每日试训",
+      "name_en": "Daily Training",
+      "type": "daily_weekly",
+      "category": "daily_weekly",
+      "reset": "每日",
+      "known_drops": [],
+      "drop_table": [
+        {
+          "item": "M"
+        },
+        {
+          "item": "C"
+        },
+        {
+          "item": "G"
+        },
+        {
+          "item": "*"
+        }
+      ],
+      "recommended_level": null,
+      "enemy_level": null,
+      "_wiki_source": "https://forget-last-night-morimens.fandom.com/wiki/Goliath"
+    },
+    {
+      "id": "weekly-trial",
+      "name": "每周试炼",
+      "name_en": "Weekly Trial",
+      "type": "daily_weekly",
+      "category": "daily_weekly",
+      "reset": "每周",
+      "known_drops": [],
+      "drop_table": [],
+      "recommended_level": null,
+      "enemy_level": null
+    },
+    {
+      "id": "assignments-outfield-agent",
+      "name": "外勤代理",
+      "name_en": "Assignments / Outfield Agent",
+      "type": "daily_weekly",
+      "category": "daily_weekly",
+      "reset": "每日结算",
+      "known_drops": [
+        "蔷薇金券",
+        "融蚀之珠",
+        "各类素材"
+      ],
+      "drop_table": [],
+      "recommended_level": null,
+      "enemy_level": null
+    },
+    {
+      "id": "curriculum",
+      "name": "课程",
+      "name_en": "Curriculum",
+      "type": "daily_weekly",
+      "category": "daily_weekly",
+      "reset": "",
+      "known_drops": [
+        "蔷薇金券",
+        "拟态凝晶",
+        "千面印章"
+      ],
+      "drop_table": [],
+      "recommended_level": null,
+      "enemy_level": null
+    }
+  ]
+}
