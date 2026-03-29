@@ -51,6 +51,20 @@
 - **Fix**：WIP 上限 3 个/子项目 + 失败自动打 blocked 标签 + 创建前查重
 - **Impact**：项目管理效率
 
+## 8. Issue 不是手动会话的传递通道
+
+- **Context**：为 Code-site 创建了详细的 Issue #58，期望新会话读取执行
+- **Problem**：手动开启的 Code 会话不会自动读 Issue。Issue 驱动只对 GitHub Actions 自动触发的 Claude Code 有效（claude.yml 响应 Issue 事件）。手动会话的入口是 CLAUDE.md → CONTEXT.md，不是 Issue 列表
+- **Fix**：任务要点必须写进对应子项目的 `CONTEXT.md`「当前任务」段落。Issue 用于记录和追踪，不是跨会话通信手段
+- **Impact**：跨会话协作效率
+
+## 9. 多会话并行导致部署流水线冲突
+
+- **Context**：Code-wiki 创建了 `deploy-wiki.yml`（wiki 部署到根路径），主控台创建了 `deploy-site.yml`（多站点子路径部署）
+- **Problem**：两个 workflow 同时监听 push to main，竞争同一个 GitHub Pages 部署目标，后完成的覆盖先完成的，结果不确定
+- **Fix**：删除 `deploy-wiki.yml`，部署流水线归 Code-site 统一管理。跨子项目的全局资源（部署、视觉规范）必须有明确归属
+- **Impact**：部署稳定性、架构决策传播
+
 ---
 
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。
