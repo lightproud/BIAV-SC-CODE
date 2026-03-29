@@ -1,6 +1,5 @@
 {
   "description": "忘却前夜全唤醒体（角色）数据库。角色分为SSR和SR两个稀有度，分属混沌/深海/血肉/超维四大界域。",
-  "tier_list_source": "GameKee Wiki（注意：wiki节奏榜可能已停更，与最新版本可能不符）",
   "role_types": {
     "attack": {
       "name": "输出",
@@ -41,7 +40,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "defense",
-      "tier": "T0",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -50,7 +48,60 @@
         "混沌核心"
       ],
       "description": "混沌界域防御型唤醒体，御四家之一。官方定位防御型，实际为攻防一体坦C——护盾越高伤害越高。银钥共鸣体系核心坦克，死亡抵抗机制使其极难倒下。社区公认混沌队基石。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "临战体势",
+            "name_en": "Combat Stance",
+            "cost": 1,
+            "effect": "获得防御力x10%护盾(4点)。回合结束时若在手中，获得的护盾提高2点。保留。",
+            "note": "启灵1后算力消耗-1(变为0费)，打出后驱散所有唤醒体封印状态"
+          },
+          {
+            "name": "心眼利刃",
+            "name_en": "Mind's Edge",
+            "cost": 3,
+            "effect": "造成攻击力x30%伤害(11点)。每点护盾使伤害提高2点。",
+            "note": "启灵3后，本回合每打出1张防御卡，心眼利刃算力消耗-1"
+          }
+        ],
+        "rouse": {
+          "name": "灵知觉醒",
+          "effect": "艾尔瓦获得25点狂气。灵知觉醒：获得2点戒备。艾尔瓦造成的伤害随当前护盾提高，每点护盾提高1。"
+        },
+        "exalt": {
+          "name": "无止境的正义",
+          "name_en": "Endless Justice",
+          "effect": "获得19点护盾。弃掉手牌中所有状态卡和症状卡，并抽取等量+1的卡牌。"
+        },
+        "enlighten": [
+          {
+            "level": 1,
+            "name": "固守阵地",
+            "name_en": "Hold the Line",
+            "effect": "「临战体势」算力消耗-1，打出后驱散所有唤醒体封印状态。【必要启灵】"
+          },
+          {
+            "level": 2,
+            "name": "永战不怠",
+            "name_en": "Tireless Warrior",
+            "effect": "「无止境的正义」抽牌数量+1。"
+          },
+          {
+            "level": 3,
+            "name": "一切为了公正",
+            "name_en": "All for Justice",
+            "effect": "本回合每打出1张防御卡，「心眼利刃」算力消耗-1。【输出向必要启灵】"
+          }
+        ]
+      }
     },
     {
       "id": "doll",
@@ -59,7 +110,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "attack",
-      "tier": "T0",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -76,7 +126,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "attack",
-      "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [
@@ -88,7 +137,23 @@
         "拉蒙娜变体"
       ],
       "description": "混沌界域T0限定输出角色，拉蒙娜的环行变体形态。围绕负熵（Negentropy）和卡牌操控的辅助输出角色，可召回大量打击卡配合队友爆发。社区简称「环拉」。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "command_cards_note": "负熵=3时，下一张指令卡触发特殊额外效果。",
+        "rouse": {
+          "name": "灵知觉醒",
+          "effect": "拉蒙娜·环行打出无回环效果的指令卡时，获得1层负熵和50点钥能，每回合最多3次。"
+        },
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "将上回合最后打出的3张固有指令卡的复制加入手牌，算力消耗-1。"
+        },
+        "overexalt": {
+          "name": "超限爆发",
+          "effect": "获得3层无视上限的负熵，使获得的复制卡算力消耗变为0。"
+        },
+        "role_in_team": "大招召回打击卡，配合希洛破链一击爆发。环娜的大招为复制，独立于牌库之外。仅3费降费。"
+      }
     },
     {
       "id": "ogier",
@@ -97,7 +162,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "support",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -114,7 +178,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "defense",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -132,7 +195,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "support",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -141,7 +203,40 @@
         "御四家"
       ],
       "description": "混沌界域T1辅助型唤醒体，御四家成员之一。可从弃牌堆找回指令卡并最多减4费，卡牌循环能力优秀。社区讨论度高，与SR版拉蒙娜为不同角色。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "标准防御卡"
+          },
+          {
+            "name": "突击论文",
+            "name_en": "Assault Thesis",
+            "cost": "varies",
+            "effect": "拉蒙娜专属指令卡"
+          },
+          {
+            "name": "女王之剑",
+            "name_en": "Queen's Sword",
+            "cost": "varies",
+            "effect": "拉蒙娜专属指令卡"
+          }
+        ],
+        "overexalt": {
+          "name": "超限爆发",
+          "effect": "对所有敌人造成易伤与虚弱1回合，本回合打出的下1张指令卡生效3次。"
+        },
+        "role_in_team": "弃牌找回、降费辅助，配合莉兹等主C使用"
+      }
     },
     {
       "id": "pandya",
@@ -150,7 +245,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "sub_attack",
-      "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -167,7 +261,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "attack",
-      "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [
@@ -186,7 +279,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "sub_attack",
-      "tier": "T3",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [
@@ -196,7 +288,13 @@
         "副输出"
       ],
       "description": "混沌界域T3副输出型唤醒体，社区也写作「珈伦」。超限后配合塔薇+拉蒙娜阵容可发挥出色表现。常用于凯刻斯反击队体系中。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "overexalt": {
+          "name": "超限爆发",
+          "effect": "将「奇妙料理」洗入抽牌堆和弃牌堆各1张。"
+        }
+      }
     },
     {
       "id": "nymphia",
@@ -205,7 +303,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "support",
-      "tier": "T3",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -222,7 +319,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "defense",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "活动唤醒「花不染尘」",
       "aliases": [],
@@ -240,7 +336,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "attack",
-      "tier": "T1",
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -258,7 +353,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "support",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [
@@ -281,7 +375,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "attack",
-      "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [
@@ -294,7 +387,60 @@
         "限定"
       ],
       "description": "深海界域T0级输出角色，深海队核心主C。角色原型为克苏鲁，正太外形，被称为「幼主」「沉睡之主」。通过触腕和穿刺伤害造成极高输出，深海体系的绝对核心。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "造成攻击力x10%伤害(4点)。图鲁获得5点狂气。"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "获得防御力x10%护盾(4点)。图鲁获得5点狂气。"
+          },
+          {
+            "name": "深渊号令",
+            "name_en": "Abyssal Command",
+            "cost": 4,
+            "effect": "对所有敌人造成攻击力x30%穿刺伤害(12点)。使所有触腕攻击1次，造成穿刺伤害。"
+          },
+          {
+            "name": "螺湮重临",
+            "name_en": "Spiral Annihilation Returns",
+            "cost": 3,
+            "effect": "驱散自身虚弱状态。临时触腕伤害+攻击力x20%(8点)。"
+          }
+        ],
+        "rouse": {
+          "name": "不朽威仪",
+          "name_en": "Immortal Majesty",
+          "cost": 3,
+          "effect": "图鲁获得25点狂气。灵知觉醒：图鲁每消耗1点算力，触腕伤害+1。"
+        },
+        "exalt": {
+          "name": "星辰正位之刻",
+          "name_en": "Hour of Stellar Alignment",
+          "effect": "获得1条触腕。临时触腕伤害+10。临时暴击率+25%。"
+        },
+        "enlighten": [
+          {
+            "level": 1,
+            "name": "暗夜呢喃",
+            "name_en": "Night Whisper",
+            "effect": "「深渊号令」使触腕攻击所有敌人。"
+          },
+          {
+            "level": 2,
+            "name": "复苏之触",
+            "name_en": "Touch of Revival",
+            "effect": "「打击」和「防御」使触腕伤害临时提高图鲁攻击力的3%(效果随等级提升)。"
+          }
+        ]
+      }
     },
     {
       "id": "divine-king-tulu",
@@ -303,7 +449,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "attack",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [
@@ -324,7 +469,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "support",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -332,7 +476,14 @@
         "辅助"
       ],
       "description": "深海界域T1辅助型唤醒体，适配性极强，同时在混沌队中也有T1表现。高贵的复活奶——0费卡可奶可加算力，高费卡和觉醒技可提供触手。深海队核心辅助。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "talent": {
+          "name": "灵塑适性",
+          "name_en": "Soulforge Aptitude",
+          "effect": "希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。"
+        }
+      }
     },
     {
       "id": "goliath",
@@ -341,7 +492,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "defense",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -349,7 +499,14 @@
         "防御"
       ],
       "description": "深海界域T1防御型唤醒体。为深海队提供稳定的前排防护和触手联动能力。拥有灵塑适性天赋，触腕伤害额外提升。常驻池可获取。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "talent": {
+          "name": "灵塑适性",
+          "name_en": "Soulforge Aptitude",
+          "effect": "戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。"
+        }
+      }
     },
     {
       "id": "shan",
@@ -358,7 +515,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "sub_attack",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -375,7 +531,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "attack",
-      "tier": "T2",
       "is_limited": false,
       "obtain": "免费获取(通关混沌界域裂隙I)",
       "aliases": [],
@@ -394,7 +549,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "sub_attack",
-      "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -411,7 +565,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "support",
-      "tier": "T3",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -428,16 +581,71 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "attack",
-      "tier": "T0",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
-      "aliases": [],
+      "aliases": [
+        "Yuhashi"
+      ],
       "tags": [
         "主C",
         "血肉核心"
       ],
       "description": "血肉界域T0输出型唤醒体，血肉队核心主C之一。通过自残降血触发吞噬机制，反复释放狂气爆发造成递增伤害。体质属性极高，越战越强的暴走型角色。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "标准防御卡"
+          },
+          {
+            "name": "尖啸吧，血！",
+            "name_en": "Scream, Blood!",
+            "cost": 0,
+            "effect": "失去20%当前生命值，造成15%体质(每级+1.5%)的群体伤害并获得6%体质(每级+0.6%)力量。升格4后每1%暴击伤害提高0.5%伤害和力量。",
+            "note": "启灵1后算力消耗-1(已为0费)，同时伤害和力量提高20%"
+          },
+          {
+            "name": "沸腾吧，血！",
+            "name_en": "Boil, Blood!",
+            "cost": 0,
+            "effect": "自残类技能，压血手段之一"
+          }
+        ],
+        "exalt": {
+          "name": "狂气爆发",
+          "name_en": "Exalt",
+          "effect": "造成150%体质(每级+15%)伤害，享受三倍力量增益。每次触发吞噬后，后续狂气爆发基础伤害提高1倍、力量增益提高1倍。",
+          "scaling": "第2次(吞噬后): 300%体质+4倍力量；第3次: 450%体质+5倍力量",
+          "note": "吞噬不会提高当次狂气爆发的伤害，仅影响后续释放"
+        },
+        "enlighten": [
+          {
+            "level": 1,
+            "name": "角斗士",
+            "effect": "「尖啸吧，血！」算力消耗-1，伤害和获得的力量提高20%。"
+          },
+          {
+            "level": 3,
+            "name": "爱之摇篮",
+            "effect": "[星之摇篮]吞噬时虚弱所有敌人2回合。血肉界域目前唯一的虚弱技能。"
+          }
+        ],
+        "build_notes": {
+          "stat_priority": "暴击率 > 暴击伤害 > 狂气充能 > 界域精通",
+          "key_stats": "伤害强效和基础伤害提升对狂气爆发不生效，优先暴击相关属性",
+          "covenant_set": "生机榨取套装(2件+6件体质+9，4件无条件增伤10%，吞噬时+20%胚胎融合)",
+          "covenant_substats": "4号位：狂气充能；5号位：暴击率；6号位：体质"
+        }
+      }
     },
     {
       "id": "rhea",
@@ -446,7 +654,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "support",
-      "tier": "T0",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -454,7 +661,15 @@
         "辅助"
       ],
       "description": "血肉界域T0辅助型唤醒体，血肉队核心辅助。兼具回血和上盾功能，核心玩法为「养胎流」——通过孕育胚胎积累增益后一次释放爆发。血肉队必备。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "command_cards_note": "0费技能可提供70点胚胎融合(界域精通足够时)。死亡抵抗和苦痛与欢愉确保高盾量。",
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "回复30%体质(每级+3%)生命值，获得15%体质(每级+1.5%)力量。当前每损失1%生命值，回复量提高2%。触发吞噬时回复量翻倍。血量最低时触发吞噬可回复180%体质生命值。"
+        },
+        "role_in_team": "与尤乌哈希配合，提供胚胎融合和治疗支持"
+      }
     },
     {
       "id": "sorel",
@@ -463,7 +678,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "attack",
-      "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [
@@ -483,7 +697,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "support",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [
@@ -503,7 +716,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "sub_attack",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -520,7 +732,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "sub_attack",
-      "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -537,7 +748,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "defense",
-      "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -554,7 +764,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "attack",
-      "tier": "T3",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -571,7 +780,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "defense",
-      "tier": "T0",
       "is_limited": false,
       "obtain": "免费获取(通关血肉沼泽裂隙I)",
       "aliases": [],
@@ -582,7 +790,16 @@
         "免费SSR"
       ],
       "description": "超维界域T0防御型唤醒体，超维队核心成员，深潜三杰之一。通关血肉沼泽裂隙I免费获取。提供力量加成和易伤效果，是超维队爆发回合的关键角色。新手必练。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "exalt": {
+          "name": "电磁爆破",
+          "name_en": "Electromagnetic Blast",
+          "effect": "强力输出大招，附带额外效果。"
+        },
+        "command_cards_note": "「功能过载」(Functional Overload)可同时叠加大量护盾和伤害，但消耗全部算力。3启后更为强力。",
+        "role_in_team": "在超维队伍中负责提供爆发回合的易伤和力量加成"
+      }
     },
     {
       "id": "liz",
@@ -591,7 +808,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "attack",
-      "tier": "T0",
       "is_limited": false,
       "obtain": "活动唤醒",
       "aliases": [
@@ -602,7 +818,56 @@
         "主C"
       ],
       "description": "超维界域T0输出型唤醒体，社区别称「青炎舞者」「青炎」。以毒伤+穿刺为核心的爆发型主C，超维队的主要输出选择。青色火焰为其标志性视觉元素。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "获得7点护盾。跃迁：下回合开始前，每受到1次攻击，将1张具有消耗的「绿炎」置入手牌。保留。"
+          },
+          {
+            "name": "绿炎",
+            "name_en": "Green Flame",
+            "cost": 0,
+            "effect": "对随机敌人造成6点穿刺伤害，施加50%伤害的中毒。回合结束时若在手牌或超维空间，升级为「腐化绿炎」。保留。",
+            "upgrades": [
+              {
+                "name": "腐化绿炎",
+                "effect": "对随机敌人造成6点穿刺伤害2次，施加50%伤害的中毒。回合结束升级为「死灭绿炎」。保留。"
+              },
+              {
+                "name": "死灭绿炎",
+                "effect": "最终形态绿炎，更高伤害和中毒。"
+              }
+            ]
+          }
+        ],
+        "rouse": {
+          "name": "灵知觉醒",
+          "effect": "莉兹获得25点狂气。灵知觉醒：莉兹每造成3次伤害，将1张具有消耗的「绿炎」置入手牌，每回合最多3次。"
+        },
+        "exalt": {
+          "name": "告死之舞",
+          "name_en": "Dance of Death",
+          "effect": "获得临时2点力量，弃掉手牌中所有莉兹的卡片并触发它们的效果（免费打出所有绿炎）。"
+        },
+        "enlighten": [
+          {
+            "level": 1,
+            "name": "启灵1",
+            "effect": "绿炎可额外升级一次，多增加一段伤害与中毒数值。必要启灵。"
+          }
+        ],
+        "gameplay_notes": "核心思路：叠绿炎→升级绿炎→狂气爆发一次性打出。注意：觉醒后容易满手绿炎无法抽牌，需要弃牌能力队友配合。升级后绿炎为多段伤害，遇反击特性敌人时狂气爆发可能被反伤致死。"
+      }
     },
     {
       "id": "daffodil",
@@ -611,7 +876,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "attack",
-      "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [
@@ -622,7 +886,15 @@
         "限定"
       ],
       "description": "超维界域T0限定输出角色，别称「水仙夫人」。v1.1版本进行过重做，拥有全游戏最多功能的狂气爆发之一。超维队的顶级限定主C选择。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。"
+        },
+        "command_cards_note": "核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。",
+        "role_in_team": "超维主C，配合卡茜亚可实现现版本越级最强输出组合"
+      }
     },
     {
       "id": "winkle",
@@ -631,7 +903,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "support",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -648,7 +919,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "sub_attack",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -665,7 +935,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "sub_attack",
-      "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -682,7 +951,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "support",
-      "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
@@ -699,7 +967,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "support",
-      "tier": null,
       "is_limited": false,
       "obtain": "活动唤醒",
       "aliases": [],
@@ -717,7 +984,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "support",
-      "tier": null,
       "is_limited": false,
       "obtain": "活动唤醒",
       "aliases": [],
@@ -735,7 +1001,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "support",
-      "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [],
@@ -752,7 +1017,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "defense",
-      "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [],
@@ -770,7 +1034,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "defense",
-      "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [
@@ -790,7 +1053,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "support",
-      "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [],
@@ -799,7 +1061,43 @@
         "可做主C"
       ],
       "description": "混沌界域辅助型唤醒体，第一个「唤醒体」，唤醒体技术的源头。守护黑池多年，弥萨格大学最高机密之一。核心技能「通晓万物之理」可从界域全角色卡池五选三，超限后升级为十选三。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "从当前界域所有角色卡牌中五选三(附带消耗效果)，自带回环效果和保留机制。"
+        },
+        "command_cards": [
+          {
+            "name": "纵贯时序之翼",
+            "name_en": "Wings Through Time",
+            "effect": "提供永久力量加成、狂气获取和力量窃取，附带12段伤害，配合回环更佳。双翼/四翼/六翼阶段可消耗钥能替代算力打出。"
+          },
+          {
+            "name": "通晓万物之理",
+            "name_en": "Knowledge of All Things",
+            "effect": "占卜下一轮抽牌内容，补充狂气。"
+          }
+        ],
+        "talent": {
+          "name": "灵塑适性",
+          "name_en": "Soulforge Aptitude",
+          "effect": "塔薇打出其他角色的卡牌时，对应角色的最终伤害、护盾和治疗提高15%~25%，不可叠加。"
+        },
+        "enlighten": [
+          {
+            "level": 2,
+            "name": "启灵2",
+            "effect": "狂气爆发获得的卡片能降费，解决随机大费卡问题，是重大启灵。"
+          },
+          {
+            "level": 3,
+            "name": "启灵3",
+            "effect": "强化主C能力，通过印过往回声避免残写机制崩盘，减少联络点使用。"
+          }
+        ],
+        "gameplay_notes": "辅助型塔薇达到2启即可满足大多数需求。主C路线需3启。高难度内容需超限机制。指令卡包含打击防御，五选三可能变为三选三。"
+      }
     },
     {
       "id": "wanda",
@@ -808,7 +1106,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "defense",
-      "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [
@@ -828,7 +1125,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "support",
-      "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [],
@@ -847,7 +1143,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "support",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [
@@ -860,7 +1155,18 @@
       ],
       "description": "星辰篇首个限定角色，混沌界域辅助型，朵尔的熔毁变体形态。v2.0上线，社区简称「熔朵」。战斗风格与原版朵尔截然不同，侧重火焰增益辅助。",
       "portrait_url": null,
-      "first_banner_version": "2.0"
+      "first_banner_version": "2.0",
+      "skills": {
+        "overexalt": {
+          "name": "超限爆发",
+          "effect": "接下来3回合内，每回合开始时回复20%体质的生命，并使所有唤醒体获得10点狂气。"
+        },
+        "special_mechanic": {
+          "name": "终章(Finale)",
+          "description": "Boss战中，每回合开始或释放狂气爆发后获得1层终章。终章最多10层，达到10层后获得[幻梦终焉]。需释放10次狂气爆发解锁完整攻击潜力。"
+        },
+        "role_in_team": "回血回盾回狂气，提供2回合虚弱增加队伍生存能力"
+      }
     },
     {
       "id": "24",
@@ -869,7 +1175,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "attack",
-      "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -880,7 +1185,10 @@
       ],
       "description": "混沌界域限定输出角色，v1.5推出，被社区认为是最强通用角色。以狂气爆发为主要输出手段，可在混沌队(拉蒙娜+朵尔+奥吉尔+24)或跨界域队伍中使用。泛用性极强。",
       "portrait_url": null,
-      "first_banner_version": "1.5"
+      "first_banner_version": "1.5",
+      "skills": {
+        "role_in_team": "与尤乌哈希、希洛、索蕾尔等搭配使用。在深海毒队中也可作为成员(24+弥利亚姆+拉蒙娜+珈伦)。"
+      }
     },
     {
       "id": "clementine",
@@ -889,7 +1197,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "support",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -908,7 +1215,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "defense",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -927,7 +1233,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "attack",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -946,7 +1251,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "chorus",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -967,7 +1271,6 @@
       "rarity": "SSR",
       "realm": "chaos",
       "role": "attack",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -988,7 +1291,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "chorus",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -1009,7 +1311,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "defense",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -1028,7 +1329,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "attack",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -1047,7 +1347,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "attack",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [
@@ -1069,7 +1368,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "chorus",
-      "tier": null,
       "is_limited": false,
       "obtain": "常驻唤醒",
       "aliases": [],
@@ -1088,7 +1386,6 @@
       "rarity": "SSR",
       "realm": "caro",
       "role": "attack",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -1107,7 +1404,6 @@
       "rarity": "SSR",
       "realm": "aequor",
       "role": "attack",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
@@ -1126,7 +1422,6 @@
       "rarity": "SSR",
       "realm": "ultra",
       "role": "attack",
-      "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒(v2.5预告)",
       "aliases": [],
