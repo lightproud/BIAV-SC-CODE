@@ -9,6 +9,9 @@ export default defineConfig({
   base: '/brain-in-a-vat/wiki/',
   ignoreDeadLinks: true,
 
+
+
+
   // --- SEO: Sitemap generation ---
   sitemap: {
     hostname: 'https://lightproud.github.io/brain-in-a-vat/wiki',

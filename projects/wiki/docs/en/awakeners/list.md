@@ -167,3 +167,5 @@ The four starter SR Awakeners are given for free during the Prologue tutorial. E
 - [Awakener Overview](./index.md)
 - [Team Building](./team-building.md)
 - [Tier List](../guides/tier-list.md)
+
+<CharacterGrid />

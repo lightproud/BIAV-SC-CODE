@@ -259,3 +259,5 @@ SR版の初始四小只（朵尔・拉蒙娜・萝坦・奥吉尔）は序章で
 - [覚醒体図鑑](./index.md)
 - [Tier表](../guides/tier-list.md)
 - [編成ガイド](./team-building.md)
+
+<CharacterGrid />

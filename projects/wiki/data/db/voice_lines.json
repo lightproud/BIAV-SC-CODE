@@ -1,0 +1,795 @@
+{
+  "description": "角色语音台词数据库。text_source: confirmed=已验证, placeholder=待补充",
+  "characters": [
+    {
+      "id": "tulu",
+      "name": "图鲁",
+      "name_en": "Tulu",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（图鲁·登录台词待补充）",
+          "text_en": "(Tulu login voice line pending)",
+          "text_ja": "（Tulu·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（图鲁·闲置台词待补充）",
+          "text_en": "(Tulu idle voice line pending)",
+          "text_ja": "（Tulu·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（图鲁·战斗开始台词待补充）",
+          "text_en": "(Tulu battle_start voice line pending)",
+          "text_ja": "（Tulu·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（图鲁·技能台词待补充）",
+          "text_en": "(Tulu skill voice line pending)",
+          "text_ja": "（Tulu·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（图鲁·觉醒台词待补充）",
+          "text_en": "(Tulu rouse voice line pending)",
+          "text_ja": "（Tulu·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（图鲁·胜利台词待补充）",
+          "text_en": "(Tulu victory voice line pending)",
+          "text_ja": "（Tulu·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（图鲁·阵亡台词待补充）",
+          "text_en": "(Tulu defeat voice line pending)",
+          "text_ja": "（Tulu·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（图鲁·好感度1台词待补充）",
+          "text_en": "(Tulu affection_1 voice line pending)",
+          "text_ja": "（Tulu·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（图鲁·好感度2台词待补充）",
+          "text_en": "(Tulu affection_2 voice line pending)",
+          "text_ja": "（Tulu·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "doll",
+      "name": "朵尔",
+      "name_en": "Doll",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（朵尔·登录台词待补充）",
+          "text_en": "(Doll login voice line pending)",
+          "text_ja": "（Doll·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（朵尔·闲置台词待补充）",
+          "text_en": "(Doll idle voice line pending)",
+          "text_ja": "（Doll·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（朵尔·战斗开始台词待补充）",
+          "text_en": "(Doll battle_start voice line pending)",
+          "text_ja": "（Doll·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（朵尔·技能台词待补充）",
+          "text_en": "(Doll skill voice line pending)",
+          "text_ja": "（Doll·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（朵尔·觉醒台词待补充）",
+          "text_en": "(Doll rouse voice line pending)",
+          "text_ja": "（Doll·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（朵尔·胜利台词待补充）",
+          "text_en": "(Doll victory voice line pending)",
+          "text_ja": "（Doll·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（朵尔·阵亡台词待补充）",
+          "text_en": "(Doll defeat voice line pending)",
+          "text_ja": "（Doll·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（朵尔·好感度1台词待补充）",
+          "text_en": "(Doll affection_1 voice line pending)",
+          "text_ja": "（Doll·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（朵尔·好感度2台词待补充）",
+          "text_en": "(Doll affection_2 voice line pending)",
+          "text_ja": "（Doll·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "ramona",
+      "name": "拉蒙娜",
+      "name_en": "Ramona",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（拉蒙娜·登录台词待补充）",
+          "text_en": "(Ramona login voice line pending)",
+          "text_ja": "（Ramona·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（拉蒙娜·闲置台词待补充）",
+          "text_en": "(Ramona idle voice line pending)",
+          "text_ja": "（Ramona·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（拉蒙娜·战斗开始台词待补充）",
+          "text_en": "(Ramona battle_start voice line pending)",
+          "text_ja": "（Ramona·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（拉蒙娜·技能台词待补充）",
+          "text_en": "(Ramona skill voice line pending)",
+          "text_ja": "（Ramona·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（拉蒙娜·觉醒台词待补充）",
+          "text_en": "(Ramona rouse voice line pending)",
+          "text_ja": "（Ramona·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（拉蒙娜·胜利台词待补充）",
+          "text_en": "(Ramona victory voice line pending)",
+          "text_ja": "（Ramona·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（拉蒙娜·阵亡台词待补充）",
+          "text_en": "(Ramona defeat voice line pending)",
+          "text_ja": "（Ramona·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（拉蒙娜·好感度1台词待补充）",
+          "text_en": "(Ramona affection_1 voice line pending)",
+          "text_ja": "（Ramona·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（拉蒙娜·好感度2台词待补充）",
+          "text_en": "(Ramona affection_2 voice line pending)",
+          "text_ja": "（Ramona·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "alva",
+      "name": "艾尔瓦",
+      "name_en": "Alva",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（艾尔瓦·登录台词待补充）",
+          "text_en": "(Alva login voice line pending)",
+          "text_ja": "（Alva·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（艾尔瓦·闲置台词待补充）",
+          "text_en": "(Alva idle voice line pending)",
+          "text_ja": "（Alva·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（艾尔瓦·战斗开始台词待补充）",
+          "text_en": "(Alva battle_start voice line pending)",
+          "text_ja": "（Alva·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（艾尔瓦·技能台词待补充）",
+          "text_en": "(Alva skill voice line pending)",
+          "text_ja": "（Alva·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（艾尔瓦·觉醒台词待补充）",
+          "text_en": "(Alva rouse voice line pending)",
+          "text_ja": "（Alva·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（艾尔瓦·胜利台词待补充）",
+          "text_en": "(Alva victory voice line pending)",
+          "text_ja": "（Alva·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（艾尔瓦·阵亡台词待补充）",
+          "text_en": "(Alva defeat voice line pending)",
+          "text_ja": "（Alva·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（艾尔瓦·好感度1台词待补充）",
+          "text_en": "(Alva affection_1 voice line pending)",
+          "text_ja": "（Alva·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（艾尔瓦·好感度2台词待补充）",
+          "text_en": "(Alva affection_2 voice line pending)",
+          "text_ja": "（Alva·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "lily",
+      "name": "莉莉",
+      "name_en": "Lily",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（莉莉·登录台词待补充）",
+          "text_en": "(Lily login voice line pending)",
+          "text_ja": "（Lily·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（莉莉·闲置台词待补充）",
+          "text_en": "(Lily idle voice line pending)",
+          "text_ja": "（Lily·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（莉莉·战斗开始台词待补充）",
+          "text_en": "(Lily battle_start voice line pending)",
+          "text_ja": "（Lily·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（莉莉·技能台词待补充）",
+          "text_en": "(Lily skill voice line pending)",
+          "text_ja": "（Lily·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（莉莉·觉醒台词待补充）",
+          "text_en": "(Lily rouse voice line pending)",
+          "text_ja": "（Lily·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（莉莉·胜利台词待补充）",
+          "text_en": "(Lily victory voice line pending)",
+          "text_ja": "（Lily·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（莉莉·阵亡台词待补充）",
+          "text_en": "(Lily defeat voice line pending)",
+          "text_ja": "（Lily·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（莉莉·好感度1台词待补充）",
+          "text_en": "(Lily affection_1 voice line pending)",
+          "text_ja": "（Lily·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（莉莉·好感度2台词待补充）",
+          "text_en": "(Lily affection_2 voice line pending)",
+          "text_ja": "（Lily·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "name": "24",
+      "name_en": "24",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（24·登录台词待补充）",
+          "text_en": "(24 login voice line pending)",
+          "text_ja": "（24·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（24·闲置台词待补充）",
+          "text_en": "(24 idle voice line pending)",
+          "text_ja": "（24·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（24·战斗开始台词待补充）",
+          "text_en": "(24 battle_start voice line pending)",
+          "text_ja": "（24·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（24·技能台词待补充）",
+          "text_en": "(24 skill voice line pending)",
+          "text_ja": "（24·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（24·觉醒台词待补充）",
+          "text_en": "(24 rouse voice line pending)",
+          "text_ja": "（24·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（24·胜利台词待补充）",
+          "text_en": "(24 victory voice line pending)",
+          "text_ja": "（24·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（24·阵亡台词待补充）",
+          "text_en": "(24 defeat voice line pending)",
+          "text_ja": "（24·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（24·好感度1台词待补充）",
+          "text_en": "(24 affection_1 voice line pending)",
+          "text_ja": "（24·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（24·好感度2台词待补充）",
+          "text_en": "(24 affection_2 voice line pending)",
+          "text_ja": "（24·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "miryam",
+      "name": "弥利亚姆",
+      "name_en": "Miryam",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（弥利亚姆·登录台词待补充）",
+          "text_en": "(Miryam login voice line pending)",
+          "text_ja": "（Miryam·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（弥利亚姆·闲置台词待补充）",
+          "text_en": "(Miryam idle voice line pending)",
+          "text_ja": "（Miryam·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（弥利亚姆·战斗开始台词待补充）",
+          "text_en": "(Miryam battle_start voice line pending)",
+          "text_ja": "（Miryam·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（弥利亚姆·技能台词待补充）",
+          "text_en": "(Miryam skill voice line pending)",
+          "text_ja": "（Miryam·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（弥利亚姆·觉醒台词待补充）",
+          "text_en": "(Miryam rouse voice line pending)",
+          "text_ja": "（Miryam·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（弥利亚姆·胜利台词待补充）",
+          "text_en": "(Miryam victory voice line pending)",
+          "text_ja": "（Miryam·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（弥利亚姆·阵亡台词待补充）",
+          "text_en": "(Miryam defeat voice line pending)",
+          "text_ja": "（Miryam·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（弥利亚姆·好感度1台词待补充）",
+          "text_en": "(Miryam affection_1 voice line pending)",
+          "text_ja": "（Miryam·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（弥利亚姆·好感度2台词待补充）",
+          "text_en": "(Miryam affection_2 voice line pending)",
+          "text_ja": "（Miryam·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "tawil",
+      "name": "塔薇",
+      "name_en": "Tawil",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（塔薇·登录台词待补充）",
+          "text_en": "(Tawil login voice line pending)",
+          "text_ja": "（Tawil·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（塔薇·闲置台词待补充）",
+          "text_en": "(Tawil idle voice line pending)",
+          "text_ja": "（Tawil·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（塔薇·战斗开始台词待补充）",
+          "text_en": "(Tawil battle_start voice line pending)",
+          "text_ja": "（Tawil·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（塔薇·技能台词待补充）",
+          "text_en": "(Tawil skill voice line pending)",
+          "text_ja": "（Tawil·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（塔薇·觉醒台词待补充）",
+          "text_en": "(Tawil rouse voice line pending)",
+          "text_ja": "（Tawil·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（塔薇·胜利台词待补充）",
+          "text_en": "(Tawil victory voice line pending)",
+          "text_ja": "（Tawil·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（塔薇·阵亡台词待补充）",
+          "text_en": "(Tawil defeat voice line pending)",
+          "text_ja": "（Tawil·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（塔薇·好感度1台词待补充）",
+          "text_en": "(Tawil affection_1 voice line pending)",
+          "text_ja": "（Tawil·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（塔薇·好感度2台词待补充）",
+          "text_en": "(Tawil affection_2 voice line pending)",
+          "text_ja": "（Tawil·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "celeste",
+      "name": "希莱斯特",
+      "name_en": "Celeste",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（希莱斯特·登录台词待补充）",
+          "text_en": "(Celeste login voice line pending)",
+          "text_ja": "（Celeste·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（希莱斯特·闲置台词待补充）",
+          "text_en": "(Celeste idle voice line pending)",
+          "text_ja": "（Celeste·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（希莱斯特·战斗开始台词待补充）",
+          "text_en": "(Celeste battle_start voice line pending)",
+          "text_ja": "（Celeste·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（希莱斯特·技能台词待补充）",
+          "text_en": "(Celeste skill voice line pending)",
+          "text_ja": "（Celeste·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（希莱斯特·觉醒台词待补充）",
+          "text_en": "(Celeste rouse voice line pending)",
+          "text_ja": "（Celeste·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（希莱斯特·胜利台词待补充）",
+          "text_en": "(Celeste victory voice line pending)",
+          "text_ja": "（Celeste·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（希莱斯特·阵亡台词待补充）",
+          "text_en": "(Celeste defeat voice line pending)",
+          "text_ja": "（Celeste·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（希莱斯特·好感度1台词待补充）",
+          "text_en": "(Celeste affection_1 voice line pending)",
+          "text_ja": "（Celeste·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（希莱斯特·好感度2台词待补充）",
+          "text_en": "(Celeste affection_2 voice line pending)",
+          "text_ja": "（Celeste·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    },
+    {
+      "id": "liz",
+      "name": "莉兹",
+      "name_en": "Liz",
+      "lines": [
+        {
+          "trigger": "login",
+          "trigger_zh": "登录",
+          "text_zh": "（莉兹·登录台词待补充）",
+          "text_en": "(Liz login voice line pending)",
+          "text_ja": "（Liz·登录ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "idle",
+          "trigger_zh": "闲置",
+          "text_zh": "（莉兹·闲置台词待补充）",
+          "text_en": "(Liz idle voice line pending)",
+          "text_ja": "（Liz·闲置ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "battle_start",
+          "trigger_zh": "战斗开始",
+          "text_zh": "（莉兹·战斗开始台词待补充）",
+          "text_en": "(Liz battle_start voice line pending)",
+          "text_ja": "（Liz·战斗开始ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "skill",
+          "trigger_zh": "技能",
+          "text_zh": "（莉兹·技能台词待补充）",
+          "text_en": "(Liz skill voice line pending)",
+          "text_ja": "（Liz·技能ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "rouse",
+          "trigger_zh": "觉醒",
+          "text_zh": "（莉兹·觉醒台词待补充）",
+          "text_en": "(Liz rouse voice line pending)",
+          "text_ja": "（Liz·觉醒ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "victory",
+          "trigger_zh": "胜利",
+          "text_zh": "（莉兹·胜利台词待补充）",
+          "text_en": "(Liz victory voice line pending)",
+          "text_ja": "（Liz·胜利ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "defeat",
+          "trigger_zh": "阵亡",
+          "text_zh": "（莉兹·阵亡台词待补充）",
+          "text_en": "(Liz defeat voice line pending)",
+          "text_ja": "（Liz·阵亡ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_1",
+          "trigger_zh": "好感度1",
+          "text_zh": "（莉兹·好感度1台词待补充）",
+          "text_en": "(Liz affection_1 voice line pending)",
+          "text_ja": "（Liz·好感度1ボイス準備中）",
+          "text_source": "placeholder"
+        },
+        {
+          "trigger": "affection_2",
+          "trigger_zh": "好感度2",
+          "text_zh": "（莉兹·好感度2台词待补充）",
+          "text_en": "(Liz affection_2 voice line pending)",
+          "text_ja": "（Liz·好感度2ボイス準備中）",
+          "text_source": "placeholder"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "description": "游戏术语多语言翻译表",
+  "realms": {
+    "chaos": {
+      "zh": "混沌",
+      "en": "Chaos",
+      "ja": "混沌"
+    },
+    "aequor": {
+      "zh": "深海",
+      "en": "Aequor",
+      "ja": "深海"
+    },
+    "caro": {
+      "zh": "血肉",
+      "en": "Caro",
+      "ja": "血肉"
+    },
+    "ultra": {
+      "zh": "超维",
+      "en": "Ultra",
+      "ja": "超維"
+    }
+  },
+  "roles": {
+    "attack": {
+      "zh": "输出",
+      "en": "Attack",
+      "ja": "アタック"
+    },
+    "sub_attack": {
+      "zh": "副输出",
+      "en": "Sub-Attack",
+      "ja": "サブアタック"
+    },
+    "defense": {
+      "zh": "防御",
+      "en": "Defense",
+      "ja": "ディフェンス"
+    },
+    "support": {
+      "zh": "辅助",
+      "en": "Support",
+      "ja": "サポート"
+    },
+    "healer": {
+      "zh": "治疗",
+      "en": "Healer",
+      "ja": "ヒーラー"
+    },
+    "chorus": {
+      "zh": "合唱",
+      "en": "Chorus",
+      "ja": "コーラス"
+    }
+  },
+  "rarities": {
+    "SSR": {
+      "zh": "SSR",
+      "en": "SSR",
+      "ja": "SSR"
+    },
+    "SR": {
+      "zh": "SR",
+      "en": "SR",
+      "ja": "SR"
+    },
+    "R": {
+      "zh": "R",
+      "en": "R",
+      "ja": "R"
+    }
+  },
+  "skill_types": {
+    "command_card": {
+      "zh": "指令卡",
+      "en": "Command Card",
+      "ja": "コマンドカード"
+    },
+    "rouse": {
+      "zh": "觉醒卡",
+      "en": "Rouse Card",
+      "ja": "覚醒カード"
+    },
+    "exalt": {
+      "zh": "狂气爆发",
+      "en": "Exalt",
+      "ja": "狂気爆発"
+    },
+    "overexalt": {
+      "zh": "超狂气爆发",
+      "en": "Over-Exalt",
+      "ja": "超狂気爆発"
+    },
+    "enlighten": {
+      "zh": "启灵",
+      "en": "Enlighten",
+      "ja": "啓霊"
+    },
+    "talent": {
+      "zh": "天赋",
+      "en": "Talent",
+      "ja": "天賦"
+    }
+  },
+  "equipment_types": {
+    "wheel": {
+      "zh": "命轮",
+      "en": "Wheel of Destiny",
+      "ja": "運命の輪"
+    },
+    "covenant": {
+      "zh": "密契",
+      "en": "Covenant",
+      "ja": "密契"
+    },
+    "key_order": {
+      "zh": "钥令",
+      "en": "Key Order",
+      "ja": "鍵令"
+    },
+    "engraving": {
+      "zh": "刻印",
+      "en": "Engraving",
+      "ja": "刻印"
+    }
+  },
+  "ui_strings": {
+    "level": {
+      "zh": "等级",
+      "en": "Level",
+      "ja": "レベル"
+    },
+    "hp": {
+      "zh": "体质",
+      "en": "HP",
+      "ja": "HP"
+    },
+    "atk": {
+      "zh": "攻击",
+      "en": "ATK",
+      "ja": "攻撃"
+    },
+    "def": {
+      "zh": "防御",
+      "en": "DEF",
+      "ja": "防御"
+    },
+    "crit_rate": {
+      "zh": "暴击率",
+      "en": "Crit Rate",
+      "ja": "クリティカル率"
+    },
+    "crit_dmg": {
+      "zh": "暴击伤害",
+      "en": "Crit DMG",
+      "ja": "クリティカルダメージ"
+    },
+    "stamina": {
+      "zh": "墨诺芬",
+      "en": "Menophine",
+      "ja": "メノフィン"
+    },
+    "madness": {
+      "zh": "狂气",
+      "en": "Madness",
+      "ja": "狂気"
+    },
+    "compute": {
+      "zh": "算力",
+      "en": "Compute",
+      "ja": "算力"
+    },
+    "tentacle": {
+      "zh": "触腕",
+      "en": "Tentacle",
+      "ja": "触腕"
+    },
+    "shield": {
+      "zh": "护盾",
+      "en": "Shield",
+      "ja": "シールド"
+    },
+    "pierce": {
+      "zh": "穿刺",
+      "en": "Pierce",
+      "ja": "貫通"
+    },
+    "awakener": {
+      "zh": "唤醒体",
+      "en": "Awakener",
+      "ja": "覚醒体"
+    },
+    "commander": {
+      "zh": "指挥官",
+      "en": "Commander",
+      "ja": "指揮官"
+    },
+    "investigation": {
+      "zh": "调查行动",
+      "en": "Investigation",
+      "ja": "調査行動"
+    },
+    "phase_chess": {
+      "zh": "相位对弈",
+      "en": "Phase Chess",
+      "ja": "相位対局"
+    },
+    "erosion": {
+      "zh": "侵蚀",
+      "en": "Erosion",
+      "ja": "侵蝕"
+    },
+    "banner": {
+      "zh": "唤醒",
+      "en": "Banner",
+      "ja": "覚醒"
+    },
+    "pity": {
+      "zh": "保底",
+      "en": "Pity",
+      "ja": "天井"
+    },
+    "realm_resonance": {
+      "zh": "界域共鸣",
+      "en": "Realm Resonance",
+      "ja": "界域共鳴"
+    }
+  }
+}
