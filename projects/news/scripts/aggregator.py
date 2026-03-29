@@ -166,7 +166,7 @@ def validate_all_news(items):
 
 def fetch_reddit(subreddits=None):
     """Fetch hot posts from Reddit using the public JSON API (no auth needed)."""
-    import requests
+    import subprocess as _sp
 
     subreddits = subreddits or ['Morimens', 'MorimensGame']
     items = []
@@ -203,7 +203,7 @@ def fetch_reddit(subreddits=None):
 
 def fetch_bilibili():
     """Fetch Bilibili search results for Morimens keywords."""
-    import requests
+    import subprocess as _sp
 
     items = []
     for keyword in ['忘却前夜', '忘卻前夜']:
@@ -253,7 +253,7 @@ def fetch_twitter():
     Fetch tweets using Twitter/X API v2.
     Requires TWITTER_BEARER_TOKEN environment variable.
     """
-    import requests
+    import subprocess as _sp
 
     bearer = os.environ.get('TWITTER_BEARER_TOKEN')
     if not bearer:
@@ -303,7 +303,7 @@ def fetch_nga():
     Fetch NGA forum posts for Morimens.
     NGA has rate limiting - be respectful.
     """
-    import requests
+    import subprocess as _sp
 
     items = []
     # NGA forum ID for 忘却前夜 - update this with the actual forum ID
@@ -350,7 +350,7 @@ def fetch_nga():
 
 def fetch_taptap():
     """Fetch TapTap community posts for Morimens."""
-    import requests
+    import subprocess as _sp
 
     app_id = os.environ.get('TAPTAP_APP_ID', '')
     if not app_id:
@@ -390,26 +390,23 @@ def fetch_taptap():
 
 def fetch_steam_reviews():
     """Fetch recent Steam reviews for Morimens (App ID: 3052450)."""
-    import requests
+    import subprocess as _sp
 
     app_id = 3052450
-    url = f'https://store.steampowered.com/appreviews/{app_id}'
-    params = {
-        'json': 1,
-        'filter': 'recent',
-        'num_per_page': 30,
-        'language': 'all',
-        'purchase_type': 'all',  # Required for F2P games
-    }
-    headers = {'User-Agent': 'MorimensAggregator/1.0'}
+    url = f'https://store.steampowered.com/appreviews/{app_id}?json=1&filter=recent&num_per_page=30&language=all&purchase_type=all'
 
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
     items = []
 
     try:
-        resp = requests.get(url, params=params, headers=headers, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
+        result = _sp.run(
+            ['curl', '-s', '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)', url],
+            capture_output=True, text=True, timeout=30,
+        )
+        if result.returncode != 0:
+            logger.warning(f'Steam curl failed: {result.stderr[:200]}')
+            return items
+        data = json.loads(result.stdout)
 
         reviews = data.get('reviews', [])
         for review in reviews:
@@ -476,7 +473,7 @@ def generate_summary(news_items):
         return f"今日热门话题：{titles}。"
 
     # Use LLM for better summary
-    import requests
+    import subprocess as _sp
 
     titles_text = '\n'.join(f"- [{n['source']}] {n['title']}" for n in news_items[:20])
     prompt = f"""以下是忘却前夜(Morimens)游戏社区24小时内的热点话题列表，请用中文生成一段简洁的今日总结(100-150字)，
