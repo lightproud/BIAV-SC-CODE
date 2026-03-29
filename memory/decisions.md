@@ -20,6 +20,9 @@
 | 2026-03-28 | 角色 ID 从拼音改为英文 slug | 方便国际化 URL 和跨语言引用 | wiki/data |
 | 2026-03-29 | 引入 Claude Code GitHub Actions | Issue 驱动自动化，减少人工中转 | 全局 |
 | 2026-03-29 | Issue 安全策略：只执行 author:lightproud | 防止外部 Issue 被自动执行 | 全局 |
+| 2026-03-29 | GitHub Pages 部署改用官方 Actions 方式 | deploy-pages@v4 官方推荐，无需额外分支，原子部署，权限更小。需 Settings→Pages→Source 设为 GitHub Actions | wiki |
+| 2026-03-29 | Wiki 中文设为 root locale + rewrites | 解决根路径 404。zh 内容通过 rewrites 映射到 `/`，en/ja 保持 `/en/`、`/ja/` | wiki |
+| 2026-03-29 | 单仓库多站点方案待定 | 每个 repo 只能有一个 Pages 站点。未来 news/game 需要站点时可选：子路径、独立 repo、或自定义域名。交由主控台决策 | 全局 |
 
 ## 分支管理策略
 
