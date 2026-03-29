@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>忘却前夜 Morimens - 全球社区热点聚合</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-primary: #0a0a1a;
-            --bg-secondary: #12122a;
-            --bg-card: #1a1a3e;
-            --bg-card-hover: #222255;
-            --text-primary: #e8e8f0;
-            --text-secondary: #a0a0c0;
-            --text-muted: #6868a0;
-            --accent-purple: #8b5cf6;
-            --accent-blue: #3b82f6;
-            --accent-pink: #ec4899;
-            --accent-amber: #f59e0b;
-            --accent-green: #10b981;
-            --accent-red: #ef4444;
-            --border-color: #2a2a5a;
-            --gradient-start: #667eea;
-            --gradient-end: #764ba2;
+            --bg-primary: #0a0b10;
+            --bg-secondary: #111219;
+            --bg-card: #1e1a10;
+            --bg-card-hover: #241f14;
+            --text-primary: #d4c9a8;
+            --text-secondary: #b5aa98;
+            --text-muted: #6b6040;
+            --accent-gold: #c5a356;
+            --accent-gold-bright: #e2c97e;
+            --accent-gold-dark: #8a7a48;
+            --accent-positive: #7aad5a;
+            --accent-negative: #c25a4a;
+            --accent-amber: #e2c97e;
+            --border-color: #2a2515;
         }
 
         * {
@@ -31,16 +32,18 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 500;
             background: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
-            line-height: 1.6;
+            line-height: 2.0;
         }
 
         /* Header */
         .header {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
             padding: 2rem 1.5rem;
             text-align: center;
             position: relative;
@@ -50,19 +53,17 @@
         .header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 30%, rgba(197,163,86,0.07) 0%, transparent 65%);
             pointer-events: none;
         }
 
         .header h1 {
+            font-family: 'Noto Serif SC', serif;
             font-size: 2rem;
             font-weight: 700;
+            color: var(--accent-gold-bright);
             margin-bottom: 0.5rem;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .header h1 span.game-title {
@@ -88,7 +89,7 @@
         .pulse-dot {
             width: 8px;
             height: 8px;
-            background: #4ade80;
+            background: #7aad5a;
             border-radius: 50%;
             display: inline-block;
             animation: pulse 2s infinite;
@@ -117,7 +118,7 @@
         .stat-value {
             font-size: 1.4rem;
             font-weight: 700;
-            color: var(--accent-purple);
+            color: var(--accent-gold);
         }
 
         .stat-label {
@@ -155,13 +156,13 @@
         }
 
         .filter-btn:hover {
-            border-color: var(--accent-purple);
+            border-color: var(--accent-gold);
             color: var(--text-primary);
         }
 
         .filter-btn.active {
-            background: var(--accent-purple);
-            border-color: var(--accent-purple);
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
             color: white;
         }
 
@@ -174,8 +175,8 @@
 
         /* Summary section */
         .daily-summary {
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            background: rgba(197, 163, 86, 0.05);
+            border: 1px solid rgba(197, 163, 86, 0.15);
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
@@ -218,7 +219,7 @@
 
         .news-card:hover {
             background: var(--bg-card-hover);
-            border-color: var(--accent-purple);
+            border-color: var(--accent-gold);
             transform: translateY(-1px);
         }
 
@@ -243,11 +244,11 @@
         }
 
         .news-card-title a:hover {
-            color: var(--accent-purple);
+            color: var(--accent-gold);
         }
 
         .hot-badge {
-            background: linear-gradient(135deg, var(--accent-red), var(--accent-pink));
+            background: linear-gradient(135deg, #c25a4a, #c5a356);
             color: white;
             font-size: 0.7rem;
             padding: 0.2rem 0.5rem;
@@ -290,7 +291,7 @@
         .source-nga { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
         .source-discord { background: rgba(88, 101, 242, 0.15); color: #5865f2; }
         .source-youtube { background: rgba(255, 0, 0, 0.15); color: #ff4444; }
-        .source-official { background: rgba(139, 92, 246, 0.15); color: #8b5cf6; }
+        .source-official { background: rgba(197, 163, 86, 0.15); color: #c5a356; }
 
         .meta-item {
             display: flex;
@@ -310,9 +311,9 @@
             font-size: 0.72rem;
             padding: 0.15rem 0.5rem;
             border-radius: 8px;
-            background: rgba(139, 92, 246, 0.1);
-            color: var(--accent-purple);
-            border: 1px solid rgba(139, 92, 246, 0.2);
+            background: rgba(197, 163, 86, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid rgba(197, 163, 86, 0.2);
         }
 
         /* Loading & empty states */
@@ -326,7 +327,7 @@
             width: 40px;
             height: 40px;
             border: 3px solid var(--border-color);
-            border-top-color: var(--accent-purple);
+            border-top-color: var(--accent-gold);
             border-radius: 50%;
             animation: spin 0.8s linear infinite;
             margin: 0 auto 1rem;
@@ -353,7 +354,7 @@
         }
 
         .footer a {
-            color: var(--accent-purple);
+            color: var(--accent-gold);
             text-decoration: none;
         }
 
@@ -410,7 +411,7 @@
 
     <main class="main-content">
         <section class="daily-summary" id="daily-summary">
-            <h2>📋 今日总结</h2>
+            <h2>今日总结</h2>
             <p id="summary-text">加载中...</p>
         </section>
 
@@ -478,7 +479,7 @@
 
         function renderCard(item) {
             const src = SOURCE_CONFIG[item.source] || { label: escapeHtml(item.source), class: '' };
-            const hotBadge = item.is_hot ? `<span class="hot-badge">🔥 热门</span>` : '';
+            const hotBadge = item.is_hot ? `<span class="hot-badge">HOT</span>` : '';
             const tags = (item.tags || []).map(t => `<span class="topic-tag">${escapeHtml(t)}</span>`).join('');
             const safeTitle = escapeHtml(item.title);
             const link = item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">${safeTitle}</a>` : safeTitle;
@@ -492,9 +493,9 @@
                     <div class="news-card-summary">${escapeHtml(item.summary || '')}</div>
                     <div class="news-card-meta">
                         <span class="source-tag ${src.class}">${src.label}</span>
-                        <span class="meta-item">🕐 ${formatTime(item.time)}</span>
-                        ${item.engagement ? `<span class="meta-item">💬 ${formatNumber(item.engagement)}</span>` : ''}
-                        ${item.author ? `<span class="meta-item">👤 ${escapeHtml(item.author)}</span>` : ''}
+                        <span class="meta-item">${formatTime(item.time)}</span>
+                        ${item.engagement ? `<span class="meta-item">${formatNumber(item.engagement)} 互动</span>` : ''}
+                        ${item.author ? `<span class="meta-item">${escapeHtml(item.author)}</span>` : ''}
                     </div>
                     ${tags ? `<div class="topic-tags">${tags}</div>` : ''}
                 </article>

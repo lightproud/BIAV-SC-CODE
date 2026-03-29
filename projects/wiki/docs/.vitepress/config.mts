@@ -46,7 +46,7 @@ export default defineConfig({
     ['meta', { name: 'author', content: 'Morimens Wiki Contributors' }],
     ['meta', { name: 'robots', content: 'index, follow' }],
     ['meta', { name: 'googlebot', content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' }],
-    ['meta', { name: 'theme-color', content: '#6d5dfc' }],
+    ['meta', { name: 'theme-color', content: '#c5a356' }],
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/brain-in-a-vat/wiki/logo.svg' }],
   ],
 
