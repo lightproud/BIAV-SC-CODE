@@ -35,27 +35,4 @@
 | 2026-03-29 | News 采集管线统一方案 | 先统一 JSON schema，再逐个接数据源，不建第三套系统 | news |
 | 2026-03-29 | 新增 Code-site 子项目 | 部署流水线和跨站前端是跨子项目关注点，需要独立会话负责。deploy-wiki.yml 与 deploy-site.yml 冲突事件验证了这一判断。主控台不再写业务代码 | 全局 |
 | 2026-03-29 | 删除 deploy-wiki.yml | 与 deploy-site.yml 功能重叠且架构冲突（wiki 部署到根路径 vs 子路径），统一由 deploy-site.yml 管理 | site |
-
-## 分支管理策略
-
-### 分支结构
-- **main**：稳定基线，所有子项目的共同起点
-- **claude/\<功能描述\>-\<ID\>**：子项目开发分支，由各会话独立维护
-
-### 工作流程
-1. 新会话启动时，从最新 main 创建分支
-2. 各子项目在自己的分支上独立开发
-3. 功能稳定后，由主控制台创建 PR 合并回 main
-4. 合并后，其他活跃分支应 rebase 到新 main 以获取共享文件更新
-
-### 废弃分支清理
-- 已合并或被继承的分支应及时删除
-- 已清理：`claude/create-main-control-dialog-s0GuV`、`claude/initial-setup-2rzjz`
-- 待清理（重构后）：`claude/community-news-aggregator-1TRtx`、`claude/new-session-7Plu3`、`claude/create-content-database-fhrVq`、`claude/morimens-wiki-site-12fyA`
-
-### 当前活跃分支
-| 分支 | 子项目 | 说明 |
-|------|--------|------|
-| `claude/main-control-console-ObGQw` | 主控制台 | 项目规划与协调 |
-
-> 其他重构分支已合并到 main。新的子项目会话启动时从 main 拉新分支。
+| 2026-03-29 | ~~分支工作流~~ **废弃，改为全部直接推 main** | 项目无人工程序员，全 AI 协作追求效率。AI 解决 git 冲突高效，分支+合并流程反而增加不必要的中转。冲突时 `git pull` 重试即可 | 全局 |
