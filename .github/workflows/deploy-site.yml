@@ -61,17 +61,30 @@ jobs:
 
       - name: Verify build output
         run: |
-          echo "=== Checking dist structure ==="
+          echo "=== dist root files ==="
+          ls -la dist/
+          echo ""
+          echo "=== dist/index.html first 3 lines ==="
+          head -3 dist/index.html
+          echo ""
+          echo "=== dist/wiki/ top-level ==="
+          ls dist/wiki/ | head -20
+          echo ""
+          echo "=== dist/news/ ==="
+          ls dist/news/
+          echo ""
+          echo "=== Checking required files ==="
           for f in dist/index.html dist/wiki/index.html dist/news/index.html; do
             if [ ! -f "$f" ]; then
               echo "MISSING: $f"
               exit 1
             fi
+            echo "OK: $f ($(wc -c < "$f") bytes)"
           done
           FILE_COUNT=$(find dist -type f | wc -l)
           echo "Total files: $FILE_COUNT"
           if [ "$FILE_COUNT" -lt 10 ]; then
-            echo "ERROR: dist has too few files, likely a broken build"
+            echo "ERROR: dist has too few files"
             exit 1
           fi
           echo "=== All checks passed ==="
@@ -104,11 +117,13 @@ jobs:
           SITE="https://lightproud.github.io/brain-in-a-vat"
           FAILED=0
           for path in "/" "/wiki/" "/news/"; do
-            # Retry up to 3 times with 15s interval for CDN propagation
             for attempt in 1 2 3; do
               STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${SITE}${path}")
               echo "Attempt $attempt: ${SITE}${path} → $STATUS"
               if [ "$STATUS" = "200" ]; then
+                # Also check content to make sure it's the right page
+                TITLE=$(curl -s "${SITE}${path}" | grep -o '<title>[^<]*</title>' | head -1)
+                echo "  Title: $TITLE"
                 break
               fi
               sleep 15
