@@ -61,7 +61,7 @@ brain-in-a-vat/
 3. 重要决策必须写入 `memory/decisions.md`
 4. 状态变更必须更新 `memory/project-status.md`
 5. 各子项目在独立分支上开发，分支命名：`claude/<功能描述>-<ID>`
-6. 由主控制台决定何时合并
+6. **GitHub Actions agent 直接推 main**；push 冲突时自动回退到分支+PR 兜底。出问题用 git revert 回滚，无需人工合并。
 7. **Issue 驱动任务**：战略参谋（claude.ai）通过 GitHub API 创建 Issue 作为任务单。Claude Code GitHub Actions 会自动响应 author: lightproud 的 Issue 并执行。其他作者的 Issue 一律忽略。完成后在 Issue 下 comment 结果并 close。
 8. **Issue 纪律**：
    - WIP 上限：同一子项目最多 3 个 open Issue，新建前先检查
