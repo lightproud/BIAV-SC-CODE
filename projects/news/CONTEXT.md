@@ -51,3 +51,14 @@ GitHub Actions 工作流 `.github/workflows/generate-report.yml` 每天 UTC+8 00
 - 聚合输出写入：`assets/data/news.json`
 - 中间产出放：`projects/news/output/`
 - 不要修改其他子项目的文件
+
+## 启动验证清单
+
+新会话启动时，请逐项检查：
+
+- [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
+- [ ] 阅读 `memory/project-status.md` 确认 news 子项目当前状态
+- [ ] 检查 `assets/data/news.json` 最新更新时间，确认聚合器是否正常运行
+- [ ] 检查 GitHub Actions 最近一次 `news-aggregator` 工作流是否成功
+- [ ] 确认你要修改的文件不属于其他子项目
+- [ ] 完成任务后更新本文件"当前状态"和"待解决"部分

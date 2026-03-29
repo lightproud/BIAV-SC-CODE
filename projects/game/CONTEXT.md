@@ -28,3 +28,15 @@
 - 工作目录：`projects/game/`
 - 游戏配置输出到：`assets/data/game-config.json`
 - 中间产出放：`projects/game/output/`
+
+## 启动验证清单
+
+新会话启动时，请逐项检查：
+
+- [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
+- [ ] 阅读 `memory/project-status.md` 确认 game 子项目当前状态
+- [ ] 阅读 `memory/morimens-context.md` 了解游戏背景知识（游戏设计的基础）
+- [ ] 检查 `assets/data/` 中可用的数据资产（characters.json 等）
+- [ ] 确认"待决策"清单中哪些已有结论，更新本文件
+- [ ] 确认你要修改的文件不属于其他子项目
+- [ ] 完成任务后更新本文件状态和 `memory/project-status.md`
