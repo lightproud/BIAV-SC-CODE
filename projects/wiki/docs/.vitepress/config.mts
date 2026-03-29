@@ -14,6 +14,11 @@ export default defineConfig({
   ],
 
   locales: {
+    root: {
+      label: '简体中文',
+      lang: 'zh-CN',
+      link: '/',
+    },
     zh: {
       label: '简体中文',
       lang: 'zh-CN',
