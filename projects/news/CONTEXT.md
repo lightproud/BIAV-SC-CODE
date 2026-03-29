@@ -41,6 +41,11 @@
 
 GitHub Actions 工作流 `.github/workflows/generate-report.yml` 每天 UTC+8 00:00 自动运行。
 
+## 验证清单
+- [ ] aggregator.py 运行后 news.json 条目数 > 0
+- [ ] 所有条目有 title、url、source、time 字段
+- [ ] 无重复条目
+
 ## 给 Code 会话的指令
 - 工作目录：`projects/news/`
 - 聚合输出写入：`assets/data/news.json`

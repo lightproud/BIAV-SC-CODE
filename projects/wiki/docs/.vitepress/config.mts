@@ -4,12 +4,8 @@ export default defineConfig({
   title: '忘却前夜 Wiki',
   description: '忘却前夜 (Morimens) 全球游戏资料站 - Roguelite 卡牌构筑手游百科',
 
-  base: '/brain-in-a-vat/',
+  base: '/brain-in-a-vat/wiki/',
   ignoreDeadLinks: true,
-
-  rewrites: {
-    'zh/:rest*': ':rest*',
-  },
 
   head: [
     ['meta', { name: 'keywords', content: '忘却前夜,忘卻前夜,Morimens,wiki,攻略,唤醒体,卡牌,命轮,密契,克苏鲁' }],
@@ -18,184 +14,185 @@ export default defineConfig({
   ],
 
   locales: {
-    root: {
+    zh: {
       label: '简体中文',
       lang: 'zh-CN',
+      link: '/zh/',
       themeConfig: {
         nav: [
-          { text: '首页', link: '/' },
+          { text: '首页', link: '/zh/' },
           {
             text: '图鉴',
             items: [
-              { text: '唤醒体', link: '/awakeners/' },
-              { text: '卡牌', link: '/cards/' },
-              { text: '界域', link: '/realms/' },
+              { text: '唤醒体', link: '/zh/awakeners/' },
+              { text: '卡牌', link: '/zh/cards/' },
+              { text: '界域', link: '/zh/realms/' },
             ]
           },
           {
             text: '装备',
             items: [
-              { text: '命轮', link: '/wheels/' },
-              { text: '密契', link: '/covenants/' },
-              { text: '钥令', link: '/key-orders/' },
-              { text: '刻印', link: '/engravings/' },
+              { text: '命轮', link: '/zh/wheels/' },
+              { text: '密契', link: '/zh/covenants/' },
+              { text: '钥令', link: '/zh/key-orders/' },
+              { text: '刻印', link: '/zh/engravings/' },
             ]
           },
           {
             text: '游玩',
             items: [
-              { text: '游戏模式', link: '/modes/' },
-              { text: '关卡', link: '/stages/' },
-              { text: '剧情', link: '/story/' },
+              { text: '游戏模式', link: '/zh/modes/' },
+              { text: '关卡', link: '/zh/stages/' },
+              { text: '剧情', link: '/zh/story/' },
             ]
           },
-          { text: '道具', link: '/items/' },
-          { text: '活动', link: '/events/' },
-          { text: '攻略', link: '/guides/' },
+          { text: '道具', link: '/zh/items/' },
+          { text: '活动', link: '/zh/events/' },
+          { text: '攻略', link: '/zh/guides/' },
         ],
         sidebar: {
-          '/awakeners/': [
+          '/zh/awakeners/': [
             {
               text: '唤醒体图鉴',
               items: [
-                { text: '唤醒体总览', link: '/awakeners/' },
-                { text: '唤醒体列表', link: '/awakeners/list' },
-                { text: '唤醒体培养', link: '/awakeners/leveling' },
-                { text: '启灵系统', link: '/awakeners/enlightenment' },
-                { text: '阵容搭配', link: '/awakeners/team-building' },
+                { text: '唤醒体总览', link: '/zh/awakeners/' },
+                { text: '唤醒体列表', link: '/zh/awakeners/list' },
+                { text: '唤醒体培养', link: '/zh/awakeners/leveling' },
+                { text: '启灵系统', link: '/zh/awakeners/enlightenment' },
+                { text: '阵容搭配', link: '/zh/awakeners/team-building' },
               ]
             }
           ],
-          '/cards/': [
+          '/zh/cards/': [
             {
               text: '卡牌系统',
               items: [
-                { text: '卡牌总览', link: '/cards/' },
-                { text: '卡牌列表', link: '/cards/list' },
-                { text: '卡牌升级', link: '/cards/upgrade' },
-                { text: '构筑指南', link: '/cards/deckbuilding' },
+                { text: '卡牌总览', link: '/zh/cards/' },
+                { text: '卡牌列表', link: '/zh/cards/list' },
+                { text: '卡牌升级', link: '/zh/cards/upgrade' },
+                { text: '构筑指南', link: '/zh/cards/deckbuilding' },
               ]
             }
           ],
-          '/realms/': [
+          '/zh/realms/': [
             {
               text: '界域系统',
               items: [
-                { text: '界域总览', link: '/realms/' },
-                { text: '混沌 Chaos', link: '/realms/chaos' },
-                { text: '深海 Aequor', link: '/realms/aequor' },
-                { text: '血肉 Caro', link: '/realms/caro' },
-                { text: '超维 Ultra', link: '/realms/ultra' },
+                { text: '界域总览', link: '/zh/realms/' },
+                { text: '混沌 Chaos', link: '/zh/realms/chaos' },
+                { text: '深海 Aequor', link: '/zh/realms/aequor' },
+                { text: '血肉 Caro', link: '/zh/realms/caro' },
+                { text: '超维 Ultra', link: '/zh/realms/ultra' },
               ]
             }
           ],
-          '/wheels/': [
+          '/zh/wheels/': [
             {
               text: '命轮',
               items: [
-                { text: '命轮总览', link: '/wheels/' },
-                { text: '命轮列表', link: '/wheels/list' },
+                { text: '命轮总览', link: '/zh/wheels/' },
+                { text: '命轮列表', link: '/zh/wheels/list' },
               ]
             }
           ],
-          '/covenants/': [
+          '/zh/covenants/': [
             {
               text: '密契',
               items: [
-                { text: '密契总览', link: '/covenants/' },
-                { text: '密契列表', link: '/covenants/list' },
+                { text: '密契总览', link: '/zh/covenants/' },
+                { text: '密契列表', link: '/zh/covenants/list' },
               ]
             }
           ],
-          '/key-orders/': [
+          '/zh/key-orders/': [
             {
               text: '钥令',
               items: [
-                { text: '钥令总览', link: '/key-orders/' },
-                { text: '钥令列表', link: '/key-orders/list' },
+                { text: '钥令总览', link: '/zh/key-orders/' },
+                { text: '钥令列表', link: '/zh/key-orders/list' },
               ]
             }
           ],
-          '/engravings/': [
+          '/zh/engravings/': [
             {
               text: '刻印',
               items: [
-                { text: '刻印总览', link: '/engravings/' },
-                { text: '刻印列表', link: '/engravings/list' },
+                { text: '刻印总览', link: '/zh/engravings/' },
+                { text: '刻印列表', link: '/zh/engravings/list' },
               ]
             }
           ],
-          '/modes/': [
+          '/zh/modes/': [
             {
               text: '游戏模式',
               items: [
-                { text: '模式总览', link: '/modes/' },
-                { text: '战斗系统', link: '/modes/combat' },
-                { text: '调查行动', link: '/modes/investigation' },
-                { text: '相位对弈', link: '/modes/phase-chess' },
-                { text: '意识潜游', link: '/modes/consciousness-dive' },
-                { text: '异梦视界', link: '/modes/dream-visions' },
-                { text: '繁衍狂热', link: '/modes/proliferation' },
-                { text: '召唤系统', link: '/modes/gacha' },
-                { text: '冶炼室', link: '/modes/smelting' },
-                { text: '派遣', link: '/modes/dispatch' },
+                { text: '模式总览', link: '/zh/modes/' },
+                { text: '战斗系统', link: '/zh/modes/combat' },
+                { text: '调查行动', link: '/zh/modes/investigation' },
+                { text: '相位对弈', link: '/zh/modes/phase-chess' },
+                { text: '意识潜游', link: '/zh/modes/consciousness-dive' },
+                { text: '异梦视界', link: '/zh/modes/dream-visions' },
+                { text: '繁衍狂热', link: '/zh/modes/proliferation' },
+                { text: '召唤系统', link: '/zh/modes/gacha' },
+                { text: '冶炼室', link: '/zh/modes/smelting' },
+                { text: '派遣', link: '/zh/modes/dispatch' },
               ]
             }
           ],
-          '/stages/': [
+          '/zh/stages/': [
             {
               text: '关卡攻略',
               items: [
-                { text: '关卡总览', link: '/stages/' },
-                { text: '主线关卡', link: '/stages/main' },
-                { text: '资源关卡', link: '/stages/resource' },
-                { text: '挑战关卡', link: '/stages/challenge' },
+                { text: '关卡总览', link: '/zh/stages/' },
+                { text: '主线关卡', link: '/zh/stages/main' },
+                { text: '资源关卡', link: '/zh/stages/resource' },
+                { text: '挑战关卡', link: '/zh/stages/challenge' },
               ]
             }
           ],
-          '/story/': [
+          '/zh/story/': [
             {
               text: '剧情与世界观',
               items: [
-                { text: '剧情总览', link: '/story/' },
-                { text: '主线剧情', link: '/story/main' },
-                { text: '角色故事', link: '/story/character-stories' },
-                { text: '世界观设定', link: '/story/worldbuilding' },
-                { text: '银芯通信', link: '/story/silver-core' },
+                { text: '剧情总览', link: '/zh/story/' },
+                { text: '主线剧情', link: '/zh/story/main' },
+                { text: '角色故事', link: '/zh/story/character-stories' },
+                { text: '世界观设定', link: '/zh/story/worldbuilding' },
+                { text: '银芯通信', link: '/zh/story/silver-core' },
               ]
             }
           ],
-          '/items/': [
+          '/zh/items/': [
             {
               text: '道具一览',
               items: [
-                { text: '道具总览', link: '/items/' },
-                { text: '材料', link: '/items/materials' },
-                { text: '造物', link: '/items/creations' },
-                { text: '物资与货币', link: '/items/currency' },
+                { text: '道具总览', link: '/zh/items/' },
+                { text: '材料', link: '/zh/items/materials' },
+                { text: '造物', link: '/zh/items/creations' },
+                { text: '物资与货币', link: '/zh/items/currency' },
               ]
             }
           ],
-          '/events/': [
+          '/zh/events/': [
             {
               text: '活动记录',
               items: [
-                { text: '活动总览', link: '/events/' },
-                { text: '当前活动', link: '/events/current' },
-                { text: '历史活动', link: '/events/history' },
-                { text: '联动活动', link: '/events/collab' },
+                { text: '活动总览', link: '/zh/events/' },
+                { text: '当前活动', link: '/zh/events/current' },
+                { text: '历史活动', link: '/zh/events/history' },
+                { text: '联动活动', link: '/zh/events/collab' },
               ]
             }
           ],
-          '/guides/': [
+          '/zh/guides/': [
             {
               text: '攻略指南',
               items: [
-                { text: '攻略总览', link: '/guides/' },
-                { text: '新手指南', link: '/guides/beginner' },
-                { text: '日常任务', link: '/guides/dailies' },
-                { text: '节奏榜', link: '/guides/tier-list' },
-                { text: '常见问题', link: '/guides/faq' },
+                { text: '攻略总览', link: '/zh/guides/' },
+                { text: '新手指南', link: '/zh/guides/beginner' },
+                { text: '日常任务', link: '/zh/guides/dailies' },
+                { text: '节奏榜', link: '/zh/guides/tier-list' },
+                { text: '常见问题', link: '/zh/guides/faq' },
               ]
             }
           ],
@@ -203,7 +200,7 @@ export default defineConfig({
         outline: { label: '本页目录' },
         docFooter: { prev: '上一篇', next: '下一篇' },
         lastUpdated: { text: '最后更新' },
-        editLink: { pattern: 'https://github.com/lightproud/claude/edit/main/docs/:path', text: '在 GitHub 上编辑此页' },
+        editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: '在 GitHub 上编辑此页' },
         search: { provider: 'local' },
       }
     },
@@ -306,7 +303,7 @@ export default defineConfig({
           '/en/events/': [{ text: 'Events', items: [{ text: 'Overview', link: '/en/events/' }, { text: 'Current', link: '/en/events/current' }, { text: 'History', link: '/en/events/history' }, { text: 'Collaborations', link: '/en/events/collab' }] }],
           '/en/guides/': [{ text: 'Guides', items: [{ text: 'Overview', link: '/en/guides/' }, { text: 'Beginner Guide', link: '/en/guides/beginner' }, { text: 'Daily Tasks', link: '/en/guides/dailies' }, { text: 'Tier List', link: '/en/guides/tier-list' }, { text: 'FAQ', link: '/en/guides/faq' }] }],
         },
-        editLink: { pattern: 'https://github.com/lightproud/claude/edit/main/docs/:path', text: 'Edit this page on GitHub' },
+        editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: 'Edit this page on GitHub' },
         search: { provider: 'local' },
       }
     },
@@ -364,7 +361,7 @@ export default defineConfig({
         outline: { label: '目次' },
         docFooter: { prev: '前へ', next: '次へ' },
         lastUpdated: { text: '最終更新' },
-        editLink: { pattern: 'https://github.com/lightproud/claude/edit/main/docs/:path', text: 'GitHub でこのページを編集' },
+        editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: 'GitHub でこのページを編集' },
         search: { provider: 'local' },
       }
     },
@@ -373,7 +370,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/lightproud/claude' },
+      { icon: 'github', link: 'https://github.com/lightproud/brain-in-a-vat' },
     ],
     search: {
       provider: 'local',

@@ -4,22 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>忘却前夜 Morimens - 全球社区热点聚合</title>
-    <meta name="description" content="实时聚合忘却前夜（Morimens）全球社区24小时内的热点话题，覆盖 Reddit、Twitter/X、B站、TapTap、NGA 等平台。">
-    <meta name="theme-color" content="#0a0a1a">
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="忘却前夜 Morimens - 全球社区热点聚合">
-    <meta property="og:description" content="实时聚合忘却前夜全球社区24小时热点话题，覆盖 Reddit、B站、Twitter 等平台。">
-    <meta property="og:site_name" content="Morimens Community News">
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="忘却前夜 Morimens - 社区热点聚合">
-    <meta name="twitter:description" content="实时聚合忘却前夜全球社区24小时热点话题。">
-    <!-- PWA -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="忘夜热点">
     <style>
         :root {
             --bg-primary: #0a0a1a;
@@ -36,19 +20,6 @@
             --accent-green: #10b981;
             --accent-red: #ef4444;
             --border-color: #2a2a5a;
-            --gradient-start: #667eea;
-            --gradient-end: #764ba2;
-        }
-
-        [data-theme="light"] {
-            --bg-primary: #f5f5fa;
-            --bg-secondary: #eeeef5;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f0f0ff;
-            --text-primary: #1a1a2e;
-            --text-secondary: #555580;
-            --text-muted: #8888aa;
-            --border-color: #d0d0e0;
             --gradient-start: #667eea;
             --gradient-end: #764ba2;
         }
@@ -123,16 +94,6 @@
             animation: pulse 2s infinite;
         }
 
-        .pulse-dot.stale {
-            background: #f59e0b;
-            animation: pulse 1.5s infinite;
-        }
-
-        .pulse-dot.offline {
-            background: #ef4444;
-            animation: none;
-        }
-
         @keyframes pulse {
             0%, 100% { opacity: 1; transform: scale(1); }
             50% { opacity: 0.5; transform: scale(0.8); }
@@ -164,35 +125,6 @@
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.05em;
-        }
-
-        /* Search bar */
-        .search-bar {
-            display: flex;
-            justify-content: center;
-            padding: 0.75rem 1.5rem 0;
-            background: var(--bg-secondary);
-        }
-
-        .search-input {
-            width: 100%;
-            max-width: 480px;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            font-size: 0.85rem;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .search-input::placeholder {
-            color: var(--text-muted);
-        }
-
-        .search-input:focus {
-            border-color: var(--accent-purple);
         }
 
         /* Filter tabs */
@@ -231,59 +163,6 @@
             background: var(--accent-purple);
             border-color: var(--accent-purple);
             color: white;
-        }
-
-        .filter-btn.hidden {
-            display: none;
-        }
-
-        .sort-bar {
-            display: flex;
-            justify-content: flex-end;
-            gap: 0.5rem;
-            padding: 0 1.5rem 0.5rem;
-            background: var(--bg-secondary);
-        }
-
-        .sort-btn {
-            padding: 0.25rem 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            background: transparent;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .sort-btn:hover {
-            color: var(--text-primary);
-            border-color: var(--accent-blue);
-        }
-
-        .sort-btn.active {
-            background: var(--accent-blue);
-            border-color: var(--accent-blue);
-            color: white;
-        }
-
-        .filter-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 1.2em;
-            height: 1.2em;
-            padding: 0 0.3em;
-            margin-left: 0.35em;
-            border-radius: 8px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            background: rgba(255, 255, 255, 0.15);
-            line-height: 1;
-        }
-
-        .filter-btn.active .filter-badge {
-            background: rgba(255, 255, 255, 0.25);
         }
 
         /* Main content */
@@ -478,67 +357,6 @@
             text-decoration: none;
         }
 
-        /* Theme toggle */
-        .theme-toggle {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: rgba(255, 255, 255, 0.15);
-            border: none;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background 0.2s;
-            z-index: 10;
-        }
-
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.25);
-        }
-
-        /* Share button */
-        .share-btn {
-            background: none;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            padding: 0.15rem 0.5rem;
-            cursor: pointer;
-            transition: all 0.2s;
-            white-space: nowrap;
-        }
-
-        .share-btn:hover {
-            color: var(--accent-purple);
-            border-color: var(--accent-purple);
-        }
-
-        /* Trend badges */
-        .trend-badge {
-            font-size: 0.68rem;
-            padding: 0.1rem 0.45rem;
-            border-radius: 8px;
-            font-weight: 600;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-
-        .trend-rising {
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-green);
-        }
-
-        .trend-new {
-            background: rgba(59, 130, 246, 0.15);
-            color: var(--accent-blue);
-        }
-
         /* Responsive */
         @media (max-width: 640px) {
             .header h1 { font-size: 1.5rem; }
@@ -551,7 +369,6 @@
 </head>
 <body>
     <header class="header">
-        <button class="theme-toggle" id="theme-toggle" title="切换主题">🌙</button>
         <h1>
             忘却前夜 社区热点聚合
             <span class="game-title">忘卻前夜 / Morimens - Global Community News</span>
@@ -579,10 +396,6 @@
         </div>
     </div>
 
-    <div class="search-bar">
-        <input type="text" class="search-input" id="search-input" placeholder="搜索标题或摘要..." />
-    </div>
-
     <div class="filter-bar" id="filter-bar">
         <button class="filter-btn active" data-filter="all">全部</button>
         <button class="filter-btn" data-filter="official">官方公告</button>
@@ -593,12 +406,6 @@
         <button class="filter-btn" data-filter="nga">NGA</button>
         <button class="filter-btn" data-filter="discord">Discord</button>
         <button class="filter-btn" data-filter="youtube">YouTube</button>
-    </div>
-
-    <div class="sort-bar" id="sort-bar">
-        <button class="sort-btn active" data-sort="hot">热度优先</button>
-        <button class="sort-btn" data-sort="time">最新优先</button>
-        <button class="sort-btn" data-sort="engagement">互动最多</button>
     </div>
 
     <main class="main-content">
@@ -621,24 +428,17 @@
 
     <footer class="footer">
         <p>忘却前夜 Morimens 社区热点聚合 &mdash; 数据每小时自动更新</p>
-        <div id="source-health" style="margin-top:0.5rem;"></div>
         <p style="margin-top:0.5rem;">
             数据来源：Reddit · Twitter/X · Bilibili · TapTap · NGA · Discord · YouTube
-            · <a href="data/feed.xml">RSS Feed</a>
         </p>
     </footer>
 
     <script>
         const DATA_URL = 'data/news.json';
         const AUTO_REFRESH_MS = 5 * 60 * 1000; // 5 minutes
-        const CACHE_KEY = 'morimens_news_cache';
-        const RENDER_BATCH = 20; // Lazy rendering batch size
 
         let allNews = [];
         let currentFilter = 'all';
-        let currentSort = 'hot';
-        let searchQuery = '';
-        let renderedCount = 0;
 
         // Source display config
         const SOURCE_CONFIG = {
@@ -676,28 +476,18 @@
             return div.innerHTML;
         }
 
-        function getTrendBadge(item) {
-            const ageMs = Date.now() - new Date(item.time).getTime();
-            const ageHrs = ageMs / 3600000;
-            if (ageHrs <= 2) return '<span class="trend-badge trend-new">NEW</span>';
-            if (item.engagement >= 200 && ageHrs <= 8) return '<span class="trend-badge trend-rising">📈 Rising</span>';
-            return '';
-        }
-
         function renderCard(item) {
             const src = SOURCE_CONFIG[item.source] || { label: escapeHtml(item.source), class: '' };
             const hotBadge = item.is_hot ? `<span class="hot-badge">🔥 热门</span>` : '';
-            const trendBadge = getTrendBadge(item);
             const tags = (item.tags || []).map(t => `<span class="topic-tag">${escapeHtml(t)}</span>`).join('');
             const safeTitle = escapeHtml(item.title);
             const link = item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">${safeTitle}</a>` : safeTitle;
-            const shareData = item.url ? `data-share-url="${escapeHtml(item.url)}" data-share-title="${safeTitle}"` : '';
 
             return `
                 <article class="news-card" data-source="${item.source}">
                     <div class="news-card-header">
                         <div class="news-card-title">${link}</div>
-                        ${trendBadge}${hotBadge}
+                        ${hotBadge}
                     </div>
                     <div class="news-card-summary">${escapeHtml(item.summary || '')}</div>
                     <div class="news-card-meta">
@@ -705,92 +495,28 @@
                         <span class="meta-item">🕐 ${formatTime(item.time)}</span>
                         ${item.engagement ? `<span class="meta-item">💬 ${formatNumber(item.engagement)}</span>` : ''}
                         ${item.author ? `<span class="meta-item">👤 ${escapeHtml(item.author)}</span>` : ''}
-                        ${shareData ? `<button class="share-btn" ${shareData} onclick="shareItem(this, event)">分享</button>` : ''}
                     </div>
                     ${tags ? `<div class="topic-tags">${tags}</div>` : ''}
                 </article>
             `;
         }
 
-        async function shareItem(btn, e) {
-            e.stopPropagation();
-            const url = btn.dataset.shareUrl;
-            const title = btn.dataset.shareTitle;
-            if (navigator.share) {
-                try { await navigator.share({ title, url }); } catch {}
-            } else {
-                await navigator.clipboard.writeText(url);
-                btn.textContent = '已复制';
-                setTimeout(() => { btn.textContent = '分享'; }, 1500);
-            }
-        }
-
-        function sortNews() {
-            allNews.sort((a, b) => {
-                if (currentSort === 'hot') {
-                    if (a.is_hot !== b.is_hot) return b.is_hot ? 1 : -1;
-                    return new Date(b.time) - new Date(a.time);
-                } else if (currentSort === 'time') {
-                    return new Date(b.time) - new Date(a.time);
-                } else {
-                    return (b.engagement || 0) - (a.engagement || 0);
-                }
-            });
-        }
-
-        function getFilteredNews() {
-            let filtered = currentFilter === 'all'
-                ? allNews
-                : allNews.filter(n => n.source === currentFilter);
-            if (searchQuery) {
-                const q = searchQuery.toLowerCase();
-                filtered = filtered.filter(n =>
-                    (n.title || '').toLowerCase().includes(q) ||
-                    (n.summary || '').toLowerCase().includes(q) ||
-                    (n.tags || []).some(t => t.toLowerCase().includes(q))
-                );
-            }
-            return filtered;
-        }
-
-        let _filteredCache = [];
-
         function renderNews() {
             const list = document.getElementById('news-list');
             const empty = document.getElementById('empty-state');
-            _filteredCache = getFilteredNews();
 
-            if (_filteredCache.length === 0) {
+            const filtered = currentFilter === 'all'
+                ? allNews
+                : allNews.filter(n => n.source === currentFilter);
+
+            if (filtered.length === 0) {
                 list.innerHTML = '';
                 empty.style.display = 'block';
-                renderedCount = 0;
             } else {
-                renderedCount = Math.min(RENDER_BATCH, _filteredCache.length);
-                list.innerHTML = _filteredCache.slice(0, renderedCount).map(renderCard).join('');
+                list.innerHTML = filtered.map(renderCard).join('');
                 empty.style.display = 'none';
             }
         }
-
-        function renderMoreCards() {
-            if (renderedCount >= _filteredCache.length) return;
-            const list = document.getElementById('news-list');
-            const next = Math.min(renderedCount + RENDER_BATCH, _filteredCache.length);
-            const fragment = _filteredCache.slice(renderedCount, next).map(renderCard).join('');
-            list.insertAdjacentHTML('beforeend', fragment);
-            renderedCount = next;
-        }
-
-        // Infinite scroll for lazy rendering
-        const _scrollObserver = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting) renderMoreCards();
-        }, { rootMargin: '200px' });
-
-        (function initScrollSentinel() {
-            const sentinel = document.createElement('div');
-            sentinel.id = 'scroll-sentinel';
-            document.querySelector('.main-content').appendChild(sentinel);
-            _scrollObserver.observe(sentinel);
-        })();
 
         function updateStats(data) {
             document.getElementById('stat-total').textContent = data.news.length;
@@ -800,171 +526,41 @@
             document.getElementById('stat-engagement').textContent = formatNumber(totalEngagement);
         }
 
-        function updateFilterBadges() {
-            const counts = { all: allNews.length };
-            allNews.forEach(n => {
-                counts[n.source] = (counts[n.source] || 0) + 1;
-            });
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                const filter = btn.dataset.filter;
-                const count = counts[filter] || 0;
-                // Update or create badge
-                let badge = btn.querySelector('.filter-badge');
-                if (filter === 'all') {
-                    if (!badge) { badge = document.createElement('span'); badge.className = 'filter-badge'; btn.appendChild(badge); }
-                    badge.textContent = counts.all;
-                    return;
-                }
-                if (count > 0) {
-                    btn.classList.remove('hidden');
-                    if (!badge) { badge = document.createElement('span'); badge.className = 'filter-badge'; btn.appendChild(badge); }
-                    badge.textContent = count;
-                } else {
-                    btn.classList.add('hidden');
-                    // If this hidden filter was active, switch to "all"
-                    if (btn.classList.contains('active')) {
-                        btn.classList.remove('active');
-                        document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
-                        currentFilter = 'all';
-                    }
-                }
-            });
-        }
-
-        function applyData(data) {
-            allNews = data.news;
-            sortNews();
-
-            const updatedAt = new Date(data.updated_at);
-            const ageMs = Date.now() - updatedAt.getTime();
-            const ageHrs = ageMs / 3600000;
-            const dot = document.querySelector('.pulse-dot');
-            const summarySection = document.getElementById('daily-summary');
-
-            document.getElementById('update-time').textContent =
-                `最后更新：${updatedAt.toLocaleString('zh-CN')}`;
-
-            dot.classList.remove('stale', 'offline');
-            if (ageHrs > 24) {
-                dot.classList.add('offline');
-                document.getElementById('update-time').textContent += ' (数据已过期)';
-                summarySection.style.display = 'none';
-            } else if (ageHrs > 2) {
-                dot.classList.add('stale');
-                document.getElementById('update-time').textContent += ` (${Math.floor(ageHrs)}小时前)`;
-                summarySection.style.display = '';
-            } else {
-                summarySection.style.display = '';
-            }
-
-            if (data.summary && ageHrs <= 24) {
-                document.getElementById('summary-text').innerHTML = data.summary;
-            }
-
-            updateStats(data);
-            updateFilterBadges();
-            renderNews();
-            renderSourceHealth(data.stats);
-            document.getElementById('loading').style.display = 'none';
-        }
-
         async function loadData() {
-            // Try localStorage cache first for instant display
-            try {
-                const cached = localStorage.getItem(CACHE_KEY);
-                if (cached) {
-                    const cachedData = JSON.parse(cached);
-                    applyData(cachedData);
-                }
-            } catch {}
-
             try {
                 const res = await fetch(DATA_URL + '?t=' + Date.now());
                 if (!res.ok) throw new Error('Fetch failed');
                 const data = await res.json();
 
-                // Cache in localStorage
-                try { localStorage.setItem(CACHE_KEY, JSON.stringify(data)); } catch {}
+                allNews = data.news.sort((a, b) => {
+                    if (a.is_hot !== b.is_hot) return b.is_hot ? 1 : -1;
+                    return new Date(b.time) - new Date(a.time);
+                });
 
-                applyData(data);
+                document.getElementById('update-time').textContent =
+                    `最后更新：${new Date(data.updated_at).toLocaleString('zh-CN')}`;
+
+                if (data.summary) {
+                    document.getElementById('summary-text').innerHTML = data.summary;
+                }
+
+                updateStats(data);
+                renderNews();
+                document.getElementById('loading').style.display = 'none';
             } catch (err) {
                 console.error('Failed to load news data:', err);
-                if (!allNews.length) {
-                    document.getElementById('loading').innerHTML =
-                        '<p>数据加载失败，请稍后刷新重试。</p>';
-                }
+                document.getElementById('loading').innerHTML =
+                    '<p>数据加载失败，请稍后刷新重试。</p>';
             }
         }
 
-        function renderSourceHealth(stats) {
-            if (!stats || !stats.sources) return;
-            const el = document.getElementById('source-health');
-            const indicators = Object.entries(stats.sources).map(([name, s]) => {
-                const icon = s.status === 'ok' ? '🟢' : s.status === 'empty' ? '🟡' : '🔴';
-                const label = (SOURCE_CONFIG[name] || {}).label || name;
-                return `${icon} ${label}(${s.count})`;
-            });
-            el.textContent = indicators.join('  ');
-        }
-
-        // Search input
-        document.getElementById('search-input').addEventListener('input', e => {
-            searchQuery = e.target.value.trim();
-            renderNews();
-        });
-
-        // Sort buttons
-        document.getElementById('sort-bar').addEventListener('click', e => {
-            if (!e.target.classList.contains('sort-btn')) return;
-            document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            currentSort = e.target.dataset.sort;
-            sortNews();
-            renderNews();
-        });
-
-        // Filter buttons - click
+        // Filter buttons
         document.getElementById('filter-bar').addEventListener('click', e => {
             if (!e.target.classList.contains('filter-btn')) return;
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
             currentFilter = e.target.dataset.filter;
             renderNews();
-        });
-
-        // Filter buttons - keyboard navigation (arrow keys)
-        document.getElementById('filter-bar').addEventListener('keydown', e => {
-            if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-            const btns = [...document.querySelectorAll('.filter-btn:not(.hidden)')];
-            const idx = btns.indexOf(document.activeElement);
-            if (idx < 0) return;
-            e.preventDefault();
-            const next = e.key === 'ArrowRight' ? (idx + 1) % btns.length : (idx - 1 + btns.length) % btns.length;
-            btns[next].focus();
-            btns[next].click();
-        });
-
-        // Theme toggle
-        (function initTheme() {
-            const saved = localStorage.getItem('morimens_theme');
-            if (saved === 'light') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                document.getElementById('theme-toggle').textContent = '☀️';
-            }
-        })();
-
-        document.getElementById('theme-toggle').addEventListener('click', () => {
-            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-            const btn = document.getElementById('theme-toggle');
-            if (isLight) {
-                document.documentElement.removeAttribute('data-theme');
-                localStorage.setItem('morimens_theme', 'dark');
-                btn.textContent = '🌙';
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('morimens_theme', 'light');
-                btn.textContent = '☀️';
-            }
         });
 
         // Initial load & auto-refresh
