@@ -43,6 +43,8 @@ jobs:
           [ -f site/404.html ] && cp site/404.html dist/404.html
           cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/
           cp projects/news/index.html dist/news/index.html
+          mkdir -p dist/news/data
+          [ -f assets/data/news.json ] && cp assets/data/news.json dist/news/data/news.json
           [ -d assets/styles ] && cp -r assets/styles/* dist/shared/
           touch dist/.nojekyll
 
