@@ -34,6 +34,7 @@ logger = logging.getLogger("collector")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
+STATE_PATH = BASE_DIR / "data" / "state.json"
 
 HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
@@ -1432,6 +1433,98 @@ def fetch_instagram():
     return items
 
 
+def _load_state():
+    """读取增量state，如不存在则返回默认值。"""
+    if STATE_PATH.exists():
+        try:
+            with open(STATE_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            logger.warning(f"state.json 读取失败，使用默认值: {e}")
+    return {"steam_reviews": {"last_timestamp": 0}}
+
+
+def _save_state(state):
+    """持久化state到磁盘。"""
+    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(STATE_PATH, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
+
+
+def fetch_steam_reviews():
+    """从 Steam 获取忘却前夜(appid=3052450)的近期评论，支持增量采集。"""
+    items = []
+    state = _load_state()
+    last_timestamp = state.get("steam_reviews", {}).get("last_timestamp", 0)
+    max_timestamp = last_timestamp
+    query_summary_meta = {}
+
+    try:
+        resp = _get(
+            "https://store.steampowered.com/appreviews/3052450",
+            params={
+                "json": "1",
+                "filter": "recent",
+                "num_per_page": "50",
+                "language": "all",
+                "purchase_type": "all",
+            },
+        )
+        data = resp.json()
+
+        query_summary_meta = data.get("query_summary", {})
+        reviews = data.get("reviews", [])
+
+        for review in reviews:
+            ts = review.get("timestamp_created", 0)
+            if ts <= last_timestamp:
+                continue
+
+            if ts > max_timestamp:
+                max_timestamp = ts
+
+            voted_up = review.get("voted_up", False)
+            votes_up = review.get("votes_up", 0)
+            comment_count = review.get("comment_count", 0)
+            review_text = review.get("review", "")
+            language = review.get("language", "")
+            steamid = review.get("author", {}).get("steamid", "")
+
+            created = datetime.fromtimestamp(ts, tz=timezone.utc)
+
+            items.append(_make_item(
+                title=review_text[:100],
+                summary=review_text[:300],
+                source="steam_review",
+                platform_region="global",
+                time_str=created.isoformat(),
+                url=f"https://store.steampowered.com/app/3052450#review_{review.get('recommendationid', '')}",
+                engagement=votes_up + comment_count,
+                is_hot=votes_up > 10,
+                author=steamid,
+                tags=["positive" if voted_up else "negative"],
+                lang=language,
+            ))
+
+        # 更新state（含query_summary元数据）
+        state["steam_reviews"] = {
+            "last_timestamp": max_timestamp if max_timestamp > last_timestamp else last_timestamp,
+            "query_summary": query_summary_meta,
+        }
+        _save_state(state)
+
+        logger.info(
+            f"Steam Reviews: {len(items)} new items "
+            f"(total_reviews={query_summary_meta.get('total_reviews', '?')}, "
+            f"score={query_summary_meta.get('review_score_desc', '?')})"
+        )
+
+    except Exception as e:
+        logger.warning(f"Steam Reviews failed: {e}")
+
+    return items
+
+
 # ─── 去重 & 输出 ──────────────────────────────────────────
 
 def deduplicate(items):
@@ -1490,6 +1583,8 @@ def collect_all():
         # 应用商店
         ("App Store", fetch_appstore_reviews),
         ("Google Play", fetch_google_play),
+        # Steam
+        ("Steam Reviews", fetch_steam_reviews),
     ]
 
     for name, fn in fetchers:
