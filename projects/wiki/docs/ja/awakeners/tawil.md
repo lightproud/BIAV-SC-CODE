@@ -6,7 +6,7 @@ portrait: /portraits/tawil.png
 # 塔薇 (Tawil)
 
 <div class="character-header">
-  <img :src="'/portraits/tawil.png'" alt="塔薇" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/tawil.png'" alt="塔薇" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

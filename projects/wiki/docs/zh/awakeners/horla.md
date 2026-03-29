@@ -6,7 +6,7 @@ portrait: /portraits/horla.png
 # 奥尔拉 (Horla)
 
 <div class="character-header">
-  <img :src="'/portraits/horla.png'" alt="奥尔拉" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/horla.png'" alt="奥尔拉" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

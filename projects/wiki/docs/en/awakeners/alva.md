@@ -6,7 +6,7 @@ portrait: /portraits/alva.png
 # Alva (艾尔瓦)
 
 <div class="character-header">
-  <img :src="'/portraits/alva.png'" alt="艾尔瓦" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/alva.png'" alt="艾尔瓦" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

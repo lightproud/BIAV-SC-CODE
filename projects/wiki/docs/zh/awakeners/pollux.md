@@ -6,7 +6,7 @@ portrait: /portraits/pollux.png
 # 波吕克斯 (Pollux)
 
 <div class="character-header">
-  <img :src="'/portraits/pollux.png'" alt="波吕克斯" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/pollux.png'" alt="波吕克斯" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

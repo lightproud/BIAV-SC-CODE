@@ -6,7 +6,7 @@ portrait: /portraits/miryam.png
 # Miryam (弥利亚姆)
 
 <div class="character-header">
-  <img :src="'/portraits/miryam.png'" alt="弥利亚姆" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/miryam.png'" alt="弥利亚姆" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

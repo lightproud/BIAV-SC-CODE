@@ -6,7 +6,7 @@ portrait: /portraits/leigh.png
 # Leigh (莱)
 
 <div class="character-header">
-  <img :src="'/portraits/leigh.png'" alt="莱" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

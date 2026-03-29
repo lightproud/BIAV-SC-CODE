@@ -6,7 +6,7 @@ portrait: /portraits/lily.png
 # Lily (莉莉)
 
 <div class="character-header">
-  <img :src="'/portraits/lily.png'" alt="莉莉" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/lily.png'" alt="莉莉" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

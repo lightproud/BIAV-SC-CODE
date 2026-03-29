@@ -6,7 +6,7 @@ portrait: /portraits/clementine.png
 # 克莱门汀 (Clementine)
 
 <div class="character-header">
-  <img :src="'/portraits/clementine.png'" alt="克莱门汀" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/clementine.png'" alt="克莱门汀" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

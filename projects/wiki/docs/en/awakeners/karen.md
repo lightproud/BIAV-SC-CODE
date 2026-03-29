@@ -6,7 +6,7 @@ portrait: /portraits/karen.png
 # Karen (莱克)
 
 <div class="character-header">
-  <img :src="'/portraits/karen.png'" alt="莱克" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/karen.png'" alt="莱克" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

@@ -6,7 +6,7 @@ portrait: /portraits/doll-inferno.png
 # 熔毁·朵尔 (Doll: Inferno)
 
 <div class="character-header">
-  <img :src="'/portraits/doll-inferno.png'" alt="熔毁·朵尔" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/doll-inferno.png'" alt="熔毁·朵尔" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

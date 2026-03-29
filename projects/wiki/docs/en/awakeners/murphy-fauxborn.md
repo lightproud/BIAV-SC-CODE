@@ -6,7 +6,7 @@ portrait: /portraits/murphy-fauxborn.png
 # Murphy: Fauxborn (诞妄·墨菲)
 
 <div class="character-header">
-  <img :src="'/portraits/murphy-fauxborn.png'" alt="诞妄·墨菲" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/murphy-fauxborn.png'" alt="诞妄·墨菲" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

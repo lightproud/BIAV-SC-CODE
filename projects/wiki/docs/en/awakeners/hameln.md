@@ -6,7 +6,7 @@ portrait: /portraits/hameln.png
 # Hameln (哈姆林)
 
 <div class="character-header">
-  <img :src="'/portraits/hameln.png'" alt="哈姆林" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/hameln.png'" alt="哈姆林" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

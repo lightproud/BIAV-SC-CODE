@@ -6,7 +6,7 @@ portrait: /portraits/liz.png
 # Liz (莉兹)
 
 <div class="character-header">
-  <img :src="'/portraits/liz.png'" alt="莉兹" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/liz.png'" alt="莉兹" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

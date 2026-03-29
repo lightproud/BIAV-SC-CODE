@@ -6,7 +6,7 @@ portrait: /portraits/pandya.png
 # 潘狄娅 (Pandya)
 
 <div class="character-header">
-  <img :src="'/portraits/pandya.png'" alt="潘狄娅" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/pandya.png'" alt="潘狄娅" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

@@ -6,7 +6,7 @@ portrait: /portraits/pickman.png
 # 皮克曼 (Pickman)
 
 <div class="character-header">
-  <img :src="'/portraits/pickman.png'" alt="皮克曼" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/pickman.png'" alt="皮克曼" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

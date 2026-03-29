@@ -6,7 +6,7 @@ portrait: /portraits/celeste.png
 # 希莱斯特 (Celeste)
 
 <div class="character-header">
-  <img :src="'/portraits/celeste.png'" alt="希莱斯特" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/celeste.png'" alt="希莱斯特" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

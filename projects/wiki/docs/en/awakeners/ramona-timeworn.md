@@ -6,7 +6,7 @@ portrait: /portraits/ramona-timeworn.png
 # Ramona: Timeworn (环行·拉蒙娜)
 
 <div class="character-header">
-  <img :src="'/portraits/ramona-timeworn.png'" alt="环行·拉蒙娜" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/ramona-timeworn.png'" alt="环行·拉蒙娜" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

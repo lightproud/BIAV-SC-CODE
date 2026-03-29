@@ -6,7 +6,7 @@ portrait: /portraits/shilo.png
 # 希洛 (Shilo)
 
 <div class="character-header">
-  <img :src="'/portraits/shilo.png'" alt="希洛" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/shilo.png'" alt="希洛" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

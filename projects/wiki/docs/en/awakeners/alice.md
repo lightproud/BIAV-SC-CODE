@@ -6,7 +6,7 @@ portrait: /portraits/alice.png
 # Alice (爱丽丝)
 
 <div class="character-header">
-  <img :src="'/portraits/alice.png'" alt="爱丽丝" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/alice.png'" alt="爱丽丝" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

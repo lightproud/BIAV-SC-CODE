@@ -6,7 +6,7 @@ portrait: /portraits/jenkins.png
 # 詹金 (Jenkins)
 
 <div class="character-header">
-  <img :src="'/portraits/jenkins.png'" alt="詹金" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/jenkins.png'" alt="詹金" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|
