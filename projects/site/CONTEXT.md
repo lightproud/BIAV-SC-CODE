@@ -30,7 +30,8 @@ dist/                          # 最终部署产物
 - 根路径 `/` → 主站导航页
 - `/wiki/` → VitePress Wiki 站点
 - `/news/` → 社区情报页面
-- 部署目标：GitHub Pages（通过 `deploy-pages@v4`）
+- 部署目标：GitHub Pages（通过 `peaceiris/actions-gh-pages@v4` 推送 gh-pages 分支）
+- Pages Source 设置：Deploy from a branch → gh-pages / root
 
 ## 与其他子项目的协作约定
 - Wiki/News 子项目修改各自页面内容，但不修改部署流水线
@@ -47,12 +48,14 @@ dist/                          # 最终部署产物
 
 > 对应 Issue #58。这是 Code-site 的第一批任务。
 
-### 1. 验证部署流水线可用性
-- 检查 `deploy-site.yml` 语法是否正确
-- 确认 VitePress base 路径 `/brain-in-a-vat/wiki/` 与部署架构一致（查看 `projects/wiki/docs/.vitepress/config.mts`）
-- 检查 `projects/wiki/package.json` 和 `package-lock.json` 是否存在（npm ci 需要）
-- 确认 `projects/news/index.html` 存在
-- 如发现问题，修复后提交
+### 1. ~~验证部署流水线可用性~~（已完成 2026-03-29）
+- ✅ VitePress base 路径 `/brain-in-a-vat/wiki/` 与部署架构一致
+- ✅ `package.json` / `package-lock.json` 存在，`npm ci` + `npm run build` 通过
+- ✅ `projects/news/index.html` 存在
+- ✅ 修复了 YAML frontmatter 冒号转义、portrait 路径 import 错误、npm script 名错误
+- ✅ 添加了 wiki 根目录 `index.md`（按浏览器语言自动跳转）
+- ✅ 添加了构建产物验证步骤
+- ✅ 部署方式从 `deploy-pages@v4` 改为 `peaceiris/actions-gh-pages@v4`（推送 gh-pages 分支）
 
 ### 2. 优化主站导航页
 - 审查 `site/index.html` 当前代码质量和视觉效果
