@@ -1,0 +1,55 @@
+name: Steam Reviews 自动抓取
+
+on:
+  schedule:
+    # UTC 17:00 = 北京时间 01:00
+    - cron: "0 17 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "运行模式"
+        required: true
+        default: "incremental"
+        type: choice
+        options:
+          - incremental
+          - full
+
+jobs:
+  fetch-reviews:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run steam_reviews.py
+        run: |
+          MODE="${{ github.event.inputs.mode || 'incremental' }}"
+          echo "运行模式: $MODE"
+          python projects/news/scripts/steam_reviews.py --mode "$MODE"
+
+      - name: Commit and push results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/news/output/steam-reviews-full.json \
+                  projects/news/output/steam-reviews-daily.json \
+                  projects/news/output/steam-reviews-summary.json || true
+          if git diff --cached --quiet; then
+            echo "无新数据，跳过提交"
+          else
+            TOTAL=$(python -c "import json; d=json.load(open('projects/news/output/steam-reviews-summary.json')); print(d['total'])")
+            git commit -m "data(news): 更新 Steam 评论数据 [${TOTAL} 条]"
+            git push origin main
+          fi
