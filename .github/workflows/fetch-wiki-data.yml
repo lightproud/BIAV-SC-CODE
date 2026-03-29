@@ -3,6 +3,11 @@ name: Fetch Wiki Data
 on:
   schedule:
     - cron: '0 4 * * 1'  # 每周一 UTC 04:00
+  push:
+    branches: [main]
+    paths:
+      - 'projects/wiki/scripts/fetch_*.py'
+      - '.github/workflows/fetch-wiki-data.yml'
   workflow_dispatch:
     inputs:
       tasks:
