@@ -25,6 +25,7 @@
 ## 快速导航
 - 项目状态 → `memory/project-status.md`
 - 决策记录 → `memory/decisions.md`
+- 待讨论事项 → `memory/pending-discussions.md`
 - 可用资产 → `assets/index.md`
 - Morimens 背景知识 → `memory/morimens-context.md`
 - AI 协作方法论 → `memory/methodology.md`
