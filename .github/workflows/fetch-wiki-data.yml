@@ -1,0 +1,60 @@
+name: Fetch Wiki Data
+
+on:
+  schedule:
+    - cron: '0 4 * * 1'  # 每周一 UTC 04:00
+  workflow_dispatch:
+    inputs:
+      tasks:
+        description: '要执行的任务（逗号分隔：portraits,lore,all）'
+        required: false
+        default: 'all'
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: projects/wiki
+
+jobs:
+  fetch-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch portrait URLs
+        if: >-
+          github.event_name == 'schedule' ||
+          contains(github.event.inputs.tasks, 'portraits') ||
+          contains(github.event.inputs.tasks, 'all')
+        run: python3 scripts/fetch_portraits.py
+        continue-on-error: true
+
+      - name: Fetch lore data
+        if: >-
+          github.event_name == 'schedule' ||
+          contains(github.event.inputs.tasks, 'lore') ||
+          contains(github.event.inputs.tasks, 'all')
+        run: python3 scripts/fetch_lore.py
+        continue-on-error: true
+
+      - name: Check for changes
+        id: changes
+        run: |
+          cd $GITHUB_WORKSPACE
+          git add projects/wiki/data/ assets/images/portraits/
+          git diff --cached --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          cd $GITHUB_WORKSPACE
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(wiki): auto-update wiki data [skip ci]"
+          git push
