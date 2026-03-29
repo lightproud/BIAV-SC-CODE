@@ -1,0 +1,70 @@
+{
+  "note": "示例数据，展示fetch_bilibili()的三类输出结构。实际运行时由Bilibili API填充。",
+  "generated_at": "2026-03-29T02:41:00+00:00",
+  "sources_covered": [
+    "bilibili (视频搜索, search_type=video)",
+    "bilibili (文章搜索, search_type=article)",
+    "bilibili_dynamic (官方账号动态, 需设置BILIBILI_MORIMENS_UID)"
+  ],
+  "example_items": [
+    {
+      "title": "忘却前夜新版本攻略——深渊层配队推荐",
+      "summary": "本期视频介绍忘却前夜最新版本深渊层配队思路，包含各角色适配性分析和实战演示。",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-03-28T18:00:00+00:00",
+      "url": "https://www.bilibili.com/video/BVxxxxxxxxx",
+      "engagement": 12500,
+      "is_hot": true,
+      "author": "某攻略UP主",
+      "tags": ["游戏攻略"],
+      "content_type": "video",
+      "media_url": "https://i0.hdslb.com/bfs/archive/xxxxxxxxx.jpg"
+    },
+    {
+      "title": "【忘却前夜】新角色评测——综合评分与适用场景",
+      "summary": "本文对忘却前夜最新上线角色进行综合评测，从面板、技能机制、适用场景三个维度给出详细分析。",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-03-27T10:30:00+00:00",
+      "url": "https://www.bilibili.com/read/cv12345678",
+      "engagement": 3200,
+      "is_hot": false,
+      "author": "某专栏作者",
+      "tags": [],
+      "content_type": "article",
+      "media_url": ""
+    },
+    {
+      "title": "【官方】忘却前夜新版本PV正式发布！",
+      "summary": "【官方】忘却前夜新版本PV正式发布！全新角色、剧情与游戏内容抢先看。点击查看完整视频→",
+      "source": "bilibili_dynamic",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-03-26T12:00:00+00:00",
+      "url": "https://www.bilibili.com/opus/xxxxxxxxxxxxxxxxx",
+      "engagement": 8800,
+      "is_hot": true,
+      "author": "忘却前夜_官方",
+      "tags": [],
+      "content_type": "video",
+      "media_url": ""
+    }
+  ],
+  "state_structure": {
+    "bilibili_search": {
+      "last_timestamp": 0,
+      "description": "上次视频/文章搜索采集到的最新发布时间戳（Unix秒）"
+    },
+    "bilibili_dynamic": {
+      "last_timestamp": 0,
+      "description": "上次官方动态采集到的最新发布时间戳（Unix秒）"
+    },
+    "bilibili_official_uid": {
+      "value": 0,
+      "description": "忘却前夜B站官方账号UID，首次从搜索结果中自动发现后缓存"
+    }
+  }
+}
