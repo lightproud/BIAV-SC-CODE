@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       tasks:
-        description: '要执行的任务（逗号分隔：portraits,skills,cards,stats,stages,lore,all）'
+        description: '要执行的任务（逗号分隔：portraits,skills,cards,stats,stages,wheels,lore,all）'
         required: false
         default: 'all'
 
@@ -71,6 +71,14 @@ jobs:
           contains(github.event.inputs.tasks, 'stages') ||
           contains(github.event.inputs.tasks, 'all')
         run: python3 scripts/fetch_stages.py
+        continue-on-error: true
+
+      - name: Fetch wheels
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
+          contains(github.event.inputs.tasks, 'wheels') ||
+          contains(github.event.inputs.tasks, 'all')
+        run: python3 scripts/fetch_wheels.py
         continue-on-error: true
 
       - name: Fetch lore

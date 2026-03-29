@@ -1,4 +1,6 @@
 import { defineConfig } from 'vitepress'
+import { generateSeoHead } from './theme/seo'
+import { generateOgImages } from './theme/og-images'
 
 export default defineConfig({
   title: '忘却前夜 Wiki',
@@ -7,10 +9,41 @@ export default defineConfig({
   base: '/brain-in-a-vat/wiki/',
   ignoreDeadLinks: true,
 
+  // --- SEO: Sitemap generation ---
+  sitemap: {
+    hostname: 'https://lightproud.github.io/brain-in-a-vat/wiki',
+    transformItems: (items) => {
+      return items.map((item) => {
+        // Boost priority for key pages
+        if (item.url.match(/^(zh|en|ja)\/$/) || item.url === '') {
+          item.priority = 1.0
+          item.changefreq = 'daily'
+        } else if (item.url.includes('/awakeners/') || item.url.includes('/guides/')) {
+          item.priority = 0.8
+          item.changefreq = 'weekly'
+        } else {
+          item.priority = 0.6
+          item.changefreq = 'weekly'
+        }
+        return item
+      })
+    },
+  },
+
+  // --- SEO: Inject structured data & meta tags per page ---
+  transformHead: generateSeoHead,
+
+  // --- SEO: Generate OG images after build ---
+  buildEnd: generateOgImages,
+
   head: [
-    ['meta', { name: 'keywords', content: '忘却前夜,忘卻前夜,Morimens,wiki,攻略,唤醒体,卡牌,命轮,密契,克苏鲁' }],
-    ['meta', { name: 'og:title', content: '忘却前夜 Wiki | Morimens Wiki' }],
-    ['meta', { name: 'og:description', content: '忘却前夜 Roguelite 卡牌构筑手游 全球游戏资料百科' }],
+    // Base meta tags (page-specific ones added via transformHead)
+    ['meta', { name: 'keywords', content: '忘却前夜,忘卻前夜,Morimens,wiki,攻略,唤醒体,卡牌,命轮,密契,克苏鲁,roguelite,card game,cthulhu' }],
+    ['meta', { name: 'author', content: 'Morimens Wiki Contributors' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'googlebot', content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' }],
+    ['meta', { name: 'theme-color', content: '#6d5dfc' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/brain-in-a-vat/wiki/logo.svg' }],
   ],
 
   locales: {
@@ -49,6 +82,7 @@ export default defineConfig({
           { text: '道具', link: '/zh/items/' },
           { text: '活动', link: '/zh/events/' },
           { text: '攻略', link: '/zh/guides/' },
+          { text: '更新记录', link: '/zh/changelog' },
         ],
         sidebar: {
           '/zh/awakeners/': [
@@ -239,6 +273,7 @@ export default defineConfig({
           { text: 'Items', link: '/en/items/' },
           { text: 'Events', link: '/en/events/' },
           { text: 'Guides', link: '/en/guides/' },
+          { text: 'Changelog', link: '/en/changelog' },
         ],
         sidebar: {
           '/en/awakeners/': [
