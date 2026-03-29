@@ -13,6 +13,7 @@ htmlcov/
 .idea/
 .vscode/
 .DS_Store
+.claude/
 
 # report-system runtime data (auto-generated, do not commit)
 projects/news/report-system/data/collected_raw.json
