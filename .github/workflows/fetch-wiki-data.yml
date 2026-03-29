@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       tasks:
-        description: '要执行的任务（逗号分隔：portraits,lore,all）'
+        description: '要执行的任务（逗号分隔：portraits,skills,cards,stats,stages,lore,all）'
         required: false
         default: 'all'
 
@@ -25,6 +25,7 @@ defaults:
 jobs:
   fetch-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -32,17 +33,49 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Fetch portrait URLs
+      - name: Fetch portraits
         if: >-
-          github.event_name == 'schedule' ||
+          github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'portraits') ||
           contains(github.event.inputs.tasks, 'all')
         run: python3 scripts/fetch_portraits.py
         continue-on-error: true
 
-      - name: Fetch lore data
+      - name: Fetch skills
         if: >-
-          github.event_name == 'schedule' ||
+          github.event_name != 'workflow_dispatch' ||
+          contains(github.event.inputs.tasks, 'skills') ||
+          contains(github.event.inputs.tasks, 'all')
+        run: python3 scripts/fetch_skills.py
+        continue-on-error: true
+
+      - name: Fetch cards
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
+          contains(github.event.inputs.tasks, 'cards') ||
+          contains(github.event.inputs.tasks, 'all')
+        run: python3 scripts/fetch_cards.py
+        continue-on-error: true
+
+      - name: Fetch stats
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
+          contains(github.event.inputs.tasks, 'stats') ||
+          contains(github.event.inputs.tasks, 'all')
+        run: python3 scripts/fetch_stats.py
+        continue-on-error: true
+
+      - name: Fetch stages
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
+          contains(github.event.inputs.tasks, 'stages') ||
+          contains(github.event.inputs.tasks, 'all')
+        run: python3 scripts/fetch_stages.py
+        continue-on-error: true
+
+      - name: Fetch lore
+        if: >-
+          github.event_name != 'workflow_dispatch' ||
           contains(github.event.inputs.tasks, 'lore') ||
           contains(github.event.inputs.tasks, 'all')
         run: python3 scripts/fetch_lore.py
