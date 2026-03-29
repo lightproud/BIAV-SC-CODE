@@ -47,6 +47,10 @@ When pulling on a character banner, obtaining both the Awakener and their Wheel 
 
 See [Covenants](../covenants/index.md) for the universal equipment system.
 
+## Browse Wheels
+
+<WheelList />
+
 ## See Also
 
 - [Wheels List](./list.md)
