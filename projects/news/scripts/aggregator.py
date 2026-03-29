@@ -443,6 +443,7 @@ def fetch_steam_reviews():
                     'voted_up': voted_up,
                     'playtime_forever': author_info.get('playtime_forever', 0),
                     'votes_up': votes_up,
+                    'timestamp_created': ts,
                 },
             })
 

@@ -86,6 +86,25 @@ def extract_item(raw: dict) -> dict:
     }
 
 
+def extract_steam_item(raw: dict) -> dict:
+    """从 steam_review 原始 item 提取 steam-latest.json 所需字段。"""
+    meta = raw.get('metadata', {})
+    timestamp_created = meta.get('timestamp_created', 0)
+    if not timestamp_created and raw.get('time'):
+        try:
+            dt = datetime.fromisoformat(raw['time'].replace('Z', '+00:00'))
+            timestamp_created = int(dt.timestamp())
+        except (ValueError, TypeError):
+            pass
+    return {
+        'language': raw.get('language', ''),
+        'voted_up': meta.get('voted_up', False),
+        'review': raw.get('summary', '')[:200],
+        'timestamp_created': timestamp_created,
+        'playtime_forever': meta.get('playtime_forever', 0),
+    }
+
+
 def write_source_file(source: str, items: list[dict], collected_at: str) -> None:
     path = OUTPUT_DIR / f'{source}-latest.json'
     payload = {
@@ -114,7 +133,8 @@ def main() -> None:
     by_source: dict[str, list[dict]] = {}
     for raw in raw_items:
         src = normalize_source(raw.get('source', 'unknown'))
-        by_source.setdefault(src, []).append(extract_item(raw))
+        item = extract_steam_item(raw) if src == 'steam' else extract_item(raw)
+        by_source.setdefault(src, []).append(item)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f'Writing to {OUTPUT_DIR}/')
