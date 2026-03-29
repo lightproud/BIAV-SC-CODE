@@ -23,6 +23,26 @@ portrait: /portraits/miryam.png
 
 ## Skills
 
+### Command Cards
+
+| Card | Cost | Effect |
+|------|------|------|
+| Supreme Life Sacrifice | — | v1.4调整为穿透伤害。深海必备辅助技能，可为深海队提供触腕相关增益。 (v1.4版本升级调整：技能改为穿刺伤害类型) |
+
+
+### Rouse (Awakening)
+
+**灵知觉醒**
+
+v1.4增强：灵之觉醒与天赋同步提升。
+
+
+### Exalt
+
+Data pending
+
+### Enlighten
+
 Data pending
 
 ## Recommended Equipment

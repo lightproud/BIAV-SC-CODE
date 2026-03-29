@@ -23,6 +23,24 @@ portrait: /portraits/aigis.png
 
 ## Skills
 
+### Command Cards
+
+| Card | Cost | Effect |
+|------|------|------|
+| Strike | 1 | 标准打击卡 |
+| Defense | 1 | 标准防御卡 |
+
+
+### Rouse (Awakening)
+
+Data pending
+
+### Exalt
+
+Data pending
+
+### Enlighten
+
 Data pending
 
 ## Recommended Equipment

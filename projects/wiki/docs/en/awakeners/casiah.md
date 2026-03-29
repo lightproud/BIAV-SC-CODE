@@ -23,6 +23,23 @@ portrait: /portraits/casiah.png
 
 ## Skills
 
+### Command Cards
+
+| Card | Cost | Effect |
+|------|------|------|
+| Telekinesis | — | 从超维空间拉出目标卡牌打出一次，配合达芙黛尔「断颈一击」实现二次打击。 |
+
+
+### Rouse (Awakening)
+
+Data pending
+
+### Exalt
+
+Data pending
+
+### Enlighten
+
 Data pending
 
 ## Recommended Equipment
