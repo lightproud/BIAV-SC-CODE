@@ -1,12 +1,12 @@
 ---
-title: Ramona: Timeworn | Morimens Wiki
-description: Full profile of Ramona: Timeworn (环行·拉蒙娜), a Chaos Attack in Morimens
+title: "Ramona: Timeworn | Morimens Wiki"
+description: "Full profile of Ramona: Timeworn (环行·拉蒙娜), a Chaos Attack in Morimens"
 portrait: /portraits/ramona-timeworn.png
 ---
 # Ramona: Timeworn (环行·拉蒙娜)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/ramona-timeworn.png" alt="环行·拉蒙娜" class="portrait" />
+  <img :src="'/portraits/ramona-timeworn.png'" alt="环行·拉蒙娜" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

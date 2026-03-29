@@ -6,7 +6,7 @@ portrait: /portraits/salvador.png
 # Salvador (萨尔瓦多)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/salvador.png" alt="萨尔瓦多" class="portrait" />
+  <img :src="'/portraits/salvador.png'" alt="萨尔瓦多" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

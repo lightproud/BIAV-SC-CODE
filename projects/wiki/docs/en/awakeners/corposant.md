@@ -6,7 +6,7 @@ portrait: /portraits/corposant.png
 # Corposant (克珀珊特)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/corposant.png" alt="克珀珊特" class="portrait" />
+  <img :src="'/portraits/corposant.png'" alt="克珀珊特" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

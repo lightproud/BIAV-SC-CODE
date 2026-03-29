@@ -6,7 +6,7 @@ portrait: /portraits/faros.png
 # Faros (法洛思)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/faros.png" alt="法洛思" class="portrait" />
+  <img :src="'/portraits/faros.png'" alt="法洛思" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

@@ -6,7 +6,7 @@ portrait: /portraits/kathigu-ra.png
 # 凯蒂古拉 (Kathigu-Ra)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/kathigu-ra.png" alt="凯蒂古拉" class="portrait" />
+  <img :src="'/portraits/kathigu-ra.png'" alt="凯蒂古拉" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

@@ -6,7 +6,7 @@ portrait: /portraits/mouchette.png
 # 茉夏 (Mouchette)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/mouchette.png" alt="茉夏" class="portrait" />
+  <img :src="'/portraits/mouchette.png'" alt="茉夏" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

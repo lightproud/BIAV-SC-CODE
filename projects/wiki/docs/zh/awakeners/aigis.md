@@ -6,7 +6,7 @@ portrait: /portraits/aigis.png
 # 艾继丝 (Aigis)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/aigis.png" alt="艾继丝" class="portrait" />
+  <img :src="'/portraits/aigis.png'" alt="艾继丝" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

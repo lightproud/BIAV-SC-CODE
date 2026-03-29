@@ -6,7 +6,7 @@ portrait: /portraits/casiah.png
 # 卡茜亚 (Casiah)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/casiah.png" alt="卡茜亚" class="portrait" />
+  <img :src="'/portraits/casiah.png'" alt="卡茜亚" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

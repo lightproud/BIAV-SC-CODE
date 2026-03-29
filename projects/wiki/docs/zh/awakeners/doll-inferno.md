@@ -1,12 +1,12 @@
 ---
 title: 熔毁·朵尔 | 忘却前夜 Wiki
-description: 熔毁·朵尔（Doll: Inferno）混沌属性辅助角色详细资料
+description: "熔毁·朵尔（Doll: Inferno）混沌属性辅助角色详细资料"
 portrait: /portraits/doll-inferno.png
 ---
 # 熔毁·朵尔 (Doll: Inferno)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/doll-inferno.png" alt="熔毁·朵尔" class="portrait" />
+  <img :src="'/portraits/doll-inferno.png'" alt="熔毁·朵尔" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

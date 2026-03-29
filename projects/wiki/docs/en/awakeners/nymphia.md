@@ -6,7 +6,7 @@ portrait: /portraits/nymphia.png
 # Nymphia (宁菲亚)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/nymphia.png" alt="宁菲亚" class="portrait" />
+  <img :src="'/portraits/nymphia.png'" alt="宁菲亚" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

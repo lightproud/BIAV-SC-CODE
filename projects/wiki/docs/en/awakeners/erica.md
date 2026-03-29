@@ -6,7 +6,7 @@ portrait: /portraits/erica.png
 # Erica (艾瑞卡)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/erica.png" alt="艾瑞卡" class="portrait" />
+  <img :src="'/portraits/erica.png'" alt="艾瑞卡" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

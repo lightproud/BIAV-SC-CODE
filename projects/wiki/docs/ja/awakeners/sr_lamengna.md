@@ -6,7 +6,7 @@ portrait: /portraits/sr_lamengna.png
 # 拉蒙娜 (Ramona)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/sr_lamengna.png" alt="拉蒙娜" class="portrait" />
+  <img :src="'/portraits/sr_lamengna.png'" alt="拉蒙娜" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

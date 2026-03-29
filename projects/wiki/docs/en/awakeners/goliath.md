@@ -6,7 +6,7 @@ portrait: /portraits/goliath.png
 # Goliath (戈利亚)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/goliath.png" alt="戈利亚" class="portrait" />
+  <img :src="'/portraits/goliath.png'" alt="戈利亚" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

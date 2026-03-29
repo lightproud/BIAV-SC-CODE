@@ -6,7 +6,7 @@ portrait: /portraits/castor.png
 # Castor (卡斯托尔)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/castor.png" alt="卡斯托尔" class="portrait" />
+  <img :src="'/portraits/castor.png'" alt="卡斯托尔" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

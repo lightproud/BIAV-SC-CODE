@@ -6,7 +6,7 @@ portrait: /portraits/helot.png
 # 血链·希洛 (Helot)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/helot.png" alt="血链·希洛" class="portrait" />
+  <img :src="'/portraits/helot.png'" alt="血链·希洛" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

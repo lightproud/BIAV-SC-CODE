@@ -6,7 +6,7 @@ portrait: /portraits/danmo.png
 # 淡墨 (Danmo)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/danmo.png" alt="淡墨" class="portrait" />
+  <img :src="'/portraits/danmo.png'" alt="淡墨" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

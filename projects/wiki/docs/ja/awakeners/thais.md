@@ -6,7 +6,7 @@ portrait: /portraits/thais.png
 # 泰旖丝 (Thais)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/thais.png" alt="泰旖丝" class="portrait" />
+  <img :src="'/portraits/thais.png'" alt="泰旖丝" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

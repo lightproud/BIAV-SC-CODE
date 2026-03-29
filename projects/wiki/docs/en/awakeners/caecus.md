@@ -6,7 +6,7 @@ portrait: /portraits/caecus.png
 # Caecus (凯刻斯)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/caecus.png" alt="凯刻斯" class="portrait" />
+  <img :src="'/portraits/caecus.png'" alt="凯刻斯" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

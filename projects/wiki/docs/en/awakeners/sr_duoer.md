@@ -6,7 +6,7 @@ portrait: /portraits/sr_duoer.png
 # Doll (朵尔)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/sr_duoer.png" alt="朵尔" class="portrait" />
+  <img :src="'/portraits/sr_duoer.png'" alt="朵尔" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

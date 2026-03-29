@@ -6,7 +6,7 @@ portrait: /portraits/sorel.png
 # Sorel (索蕾尔)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/sorel.png" alt="索蕾尔" class="portrait" />
+  <img :src="'/portraits/sorel.png'" alt="索蕾尔" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

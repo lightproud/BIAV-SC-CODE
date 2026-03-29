@@ -6,7 +6,7 @@ portrait: /portraits/shan.png
 # 珊 (Shan)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/shan.png" alt="珊" class="portrait" />
+  <img :src="'/portraits/shan.png'" alt="珊" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

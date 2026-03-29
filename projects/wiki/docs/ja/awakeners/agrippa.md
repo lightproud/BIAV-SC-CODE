@@ -6,7 +6,7 @@ portrait: /portraits/agrippa.png
 # 阿格里帕 (Agrippa)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/agrippa.png" alt="阿格里帕" class="portrait" />
+  <img :src="'/portraits/agrippa.png'" alt="阿格里帕" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

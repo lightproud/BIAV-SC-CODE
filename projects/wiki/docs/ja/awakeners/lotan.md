@@ -6,7 +6,7 @@ portrait: /portraits/lotan.png
 # 萝坦 (Lotan)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/lotan.png" alt="萝坦" class="portrait" />
+  <img :src="'/portraits/lotan.png'" alt="萝坦" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

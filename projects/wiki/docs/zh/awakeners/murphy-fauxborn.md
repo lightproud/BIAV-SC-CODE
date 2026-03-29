@@ -1,12 +1,12 @@
 ---
 title: 诞妄·墨菲 | 忘却前夜 Wiki
-description: 诞妄·墨菲（Murphy: Fauxborn）深海属性合唱角色详细资料
+description: "诞妄·墨菲（Murphy: Fauxborn）深海属性合唱角色详细资料"
 portrait: /portraits/murphy-fauxborn.png
 ---
 # 诞妄·墨菲 (Murphy: Fauxborn)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/murphy-fauxborn.png" alt="诞妄·墨菲" class="portrait" />
+  <img :src="'/portraits/murphy-fauxborn.png'" alt="诞妄·墨菲" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

@@ -6,7 +6,7 @@ portrait: /portraits/aurita.png
 # 奥瑞塔 (Aurita)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/aurita.png" alt="奥瑞塔" class="portrait" />
+  <img :src="'/portraits/aurita.png'" alt="奥瑞塔" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

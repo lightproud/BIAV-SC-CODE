@@ -6,7 +6,7 @@ portrait: /portraits/murphy.png
 # 墨菲 (Murphy)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/murphy.png" alt="墨菲" class="portrait" />
+  <img :src="'/portraits/murphy.png'" alt="墨菲" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

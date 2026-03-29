@@ -1,12 +1,12 @@
 ---
-title: Murphy: Fauxborn | Morimens Wiki
-description: Full profile of Murphy: Fauxborn (诞妄·墨菲), a Aequor Chorus in Morimens
+title: "Murphy: Fauxborn | Morimens Wiki"
+description: "Full profile of Murphy: Fauxborn (诞妄·墨菲), a Aequor Chorus in Morimens"
 portrait: /portraits/murphy-fauxborn.png
 ---
 # Murphy: Fauxborn (诞妄·墨菲)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/murphy-fauxborn.png" alt="诞妄·墨菲" class="portrait" />
+  <img :src="'/portraits/murphy-fauxborn.png'" alt="诞妄·墨菲" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

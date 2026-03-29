@@ -6,7 +6,7 @@ portrait: /portraits/xu.png
 # 徐 (Xu)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/xu.png" alt="徐" class="portrait" />
+  <img :src="'/portraits/xu.png'" alt="徐" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

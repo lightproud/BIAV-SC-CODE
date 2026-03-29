@@ -1,12 +1,12 @@
 ---
 title: 环行·拉蒙娜 | 忘却前夜 Wiki
-description: 环行·拉蒙娜（Ramona: Timeworn）混沌属性攻撃型キャラクター詳細
+description: "环行·拉蒙娜（Ramona: Timeworn）混沌属性攻撃型キャラクター詳細"
 portrait: /portraits/ramona-timeworn.png
 ---
 # 环行·拉蒙娜 (Ramona: Timeworn)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/ramona-timeworn.png" alt="环行·拉蒙娜" class="portrait" />
+  <img :src="'/portraits/ramona-timeworn.png'" alt="环行·拉蒙娜" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

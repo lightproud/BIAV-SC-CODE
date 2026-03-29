@@ -6,7 +6,7 @@ portrait: /portraits/tincture.png
 # Tincture (汀克特)
 
 <div class="character-header">
-  <img src="/brain-in-a-vat/wiki/portraits/tincture.png" alt="汀克特" class="portrait" />
+  <img :src="'/portraits/tincture.png'" alt="汀克特" class="portrait" />
 
   | Attribute | Value |
   |------|-----|
