@@ -9,5 +9,5 @@
 | *待补充* | - | - |
 
 ::: tip
-造物可在 [冶炼室](/zh/modes/smelting) 中制作。
+造物可在 [冶炼室](/modes/smelting) 中制作。
 :::
