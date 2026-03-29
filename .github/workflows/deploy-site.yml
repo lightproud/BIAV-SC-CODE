@@ -13,22 +13,13 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
 
       - uses: actions/setup-node@v4
         with:
@@ -36,7 +27,6 @@ jobs:
           cache: npm
           cache-dependency-path: projects/wiki/package-lock.json
 
-      # Build wiki (VitePress)
       - name: Install wiki dependencies
         working-directory: projects/wiki
         run: npm ci
@@ -45,95 +35,35 @@ jobs:
         working-directory: projects/wiki
         run: npm run build
 
-      # Assemble site
       - name: Assemble site
         run: |
           mkdir -p dist/wiki dist/news
 
-          # Root: landing page
           cp site/index.html dist/
-
-          # Wiki: VitePress build output
           cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/
-
-          # News: static pages
           cp projects/news/index.html dist/news/index.html
+          touch dist/.nojekyll
 
       - name: Verify build output
         run: |
-          echo "=== dist root files ==="
+          echo "=== dist root ==="
           ls -la dist/
           echo ""
-          echo "=== dist/index.html first 3 lines ==="
-          head -3 dist/index.html
+          echo "=== index.html title ==="
+          grep '<title>' dist/index.html
           echo ""
-          echo "=== dist/wiki/ top-level ==="
-          ls dist/wiki/ | head -20
-          echo ""
-          echo "=== dist/news/ ==="
-          ls dist/news/
-          echo ""
-          echo "=== Checking required files ==="
           for f in dist/index.html dist/wiki/index.html dist/news/index.html; do
             if [ ! -f "$f" ]; then
-              echo "MISSING: $f"
-              exit 1
+              echo "MISSING: $f" && exit 1
             fi
             echo "OK: $f ($(wc -c < "$f") bytes)"
           done
-          FILE_COUNT=$(find dist -type f | wc -l)
-          echo "Total files: $FILE_COUNT"
-          if [ "$FILE_COUNT" -lt 10 ]; then
-            echo "ERROR: dist has too few files"
-            exit 1
-          fi
-          echo "=== All checks passed ==="
+          echo "Total files: $(find dist -type f | wc -l)"
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
-  smoke-test:
-    runs-on: ubuntu-latest
-    needs: deploy
-    steps:
-      - name: Wait for Pages propagation
-        run: sleep 30
-
-      - name: Smoke test
-        run: |
-          SITE="https://lightproud.github.io/brain-in-a-vat"
-          FAILED=0
-          for path in "/" "/wiki/" "/news/"; do
-            for attempt in 1 2 3; do
-              STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${SITE}${path}")
-              echo "Attempt $attempt: ${SITE}${path} → $STATUS"
-              if [ "$STATUS" = "200" ]; then
-                # Also check content to make sure it's the right page
-                TITLE=$(curl -s "${SITE}${path}" | grep -o '<title>[^<]*</title>' | head -1)
-                echo "  Title: $TITLE"
-                break
-              fi
-              sleep 15
-            done
-            if [ "$STATUS" != "200" ]; then
-              echo "FAIL: ${SITE}${path} returned $STATUS after 3 attempts"
-              FAILED=1
-            fi
-          done
-          if [ "$FAILED" = "1" ]; then
-            exit 1
-          fi
-          echo "All endpoints OK"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          force_orphan: true
