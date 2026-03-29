@@ -1446,11 +1446,27 @@ def deduplicate(items):
     return unique
 
 
+def _refresh_discord_channels():
+    """启动时检查 Discord 频道列表缓存，过期则自动重新拉取。"""
+    try:
+        import sys
+        # discord_discovery.py 位于 projects/news/scripts/
+        # collector.py → scripts/ → report-system/ → news/ → /scripts/
+        discovery_dir = Path(__file__).resolve().parent.parent.parent / "scripts"
+        if str(discovery_dir) not in sys.path:
+            sys.path.insert(0, str(discovery_dir))
+        from discord_discovery import discover
+        discover()
+    except Exception as e:
+        logger.warning(f"Discord 频道发现失败（不影响采集）: {e}")
+
+
 def collect_all():
     """运行所有采集器，合并、去重、排序后输出。"""
     logger.info("=== 忘却前夜 全球信息收集开始 ===")
 
     _refresh_cutoff()
+    _refresh_discord_channels()
 
     all_items = []
     fetchers = [
