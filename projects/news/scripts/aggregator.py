@@ -478,6 +478,11 @@ def run():
     # Generate summary
     summary = generate_summary(unique_news)
 
+    # Empty data protection: don't overwrite existing data with empty results
+    if len(unique_news) == 0:
+        logger.warning('No news items collected! Skipping write to avoid overwriting existing data.')
+        raise SystemExit(1)
+
     # Write output
     output = {
         'updated_at': datetime.now(timezone.utc).isoformat(),

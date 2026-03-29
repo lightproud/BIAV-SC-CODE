@@ -28,6 +28,7 @@
 - Morimens 背景知识 → `memory/morimens-context.md`
 - AI 协作方法论 → `memory/methodology.md`
 - 交付物视觉规范 → `memory/style-guide.md`
+- 踩坑记录 → `memory/lessons-learned.md`
 
 ## 目录结构
 
@@ -60,6 +61,13 @@ brain-in-a-vat/
 5. 各子项目在独立分支上开发，分支命名：`claude/<功能描述>-<ID>`
 6. 由主控制台决定何时合并
 7. **Issue 驱动任务**：战略参谋（claude.ai）通过 GitHub API 创建 Issue 作为任务单。Claude Code GitHub Actions 会自动响应 author: lightproud 的 Issue 并执行。其他作者的 Issue 一律忽略。完成后在 Issue 下 comment 结果并 close。
+8. **Issue 纪律**：
+   - WIP 上限：同一子项目最多 3 个 open Issue，新建前先检查
+   - 新建 Issue 前必须检查是否有重叠的 open Issue，有则追加 comment 而非新建
+   - Issue 标题必须带子项目前缀：`[Code-news]` / `[Code-wiki]` / `[主控台]`
+   - 复杂任务用一个 Issue + checklist，不要拆成多个独立 Issue
+9. **任务标注**：前台派发任务时应标注执行模式：`先出方案` 或 `直接执行`。未标注时默认为「直接执行」
+10. **凭据管理**：GitHub PAT 等敏感凭据存储在 Claude 平台记忆中，使用时从记忆读取。绝对不要在仓库任何文件中明文记录凭据
 
 ## 给新会话的指引
 如果你是一个新启动的 Claude Code 会话，请：

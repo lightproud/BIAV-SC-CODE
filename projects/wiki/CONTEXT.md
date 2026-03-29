@@ -46,6 +46,12 @@ python scripts/content_db.py
 - [ ] 填充 Wiki 模板页面
 - [ ] 部署到 GitHub Pages
 
+## 验证清单
+- [ ] data/db/*.json 全部 JSON 格式有效
+- [ ] characters.json 角色数量 > 50
+- [ ] VitePress 能本地启动无报错
+- [ ] 三语目录结构一致（zh/en/ja 页面数量相近）
+
 ## 给 Code 会话的指令
 - 工作目录：`projects/wiki/`
 - 数据文件在：`projects/wiki/data/db/`
