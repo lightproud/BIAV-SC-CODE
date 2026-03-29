@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Supplementary sitemap for Morimens Wiki.
+
+  VitePress auto-generates a primary sitemap.xml via the `sitemap` config.
+  This file lists additional resources that the auto-generator may miss,
+  such as the OG image directory, external language entry points, and
+  any manually curated priority overrides.
+
+  Reference this in robots.txt or submit directly to search consoles.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Language root pages with hreflang cross-references -->
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lightproud.github.io/brain-in-a-vat/wiki/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://lightproud.github.io/brain-in-a-vat/wiki/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lightproud.github.io/brain-in-a-vat/wiki/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://lightproud.github.io/brain-in-a-vat/wiki/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/ja/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://lightproud.github.io/brain-in-a-vat/wiki/zh/"/>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja-JP" href="https://lightproud.github.io/brain-in-a-vat/wiki/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightproud.github.io/brain-in-a-vat/wiki/en/"/>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- High-priority content sections (zh) -->
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/awakeners/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/awakeners/list</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/cards/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/guides/tier-list</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/guides/beginner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/zh/guides/faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- High-priority content sections (en) -->
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/awakeners/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/awakeners/list</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/guides/tier-list</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/en/guides/beginner</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- High-priority content sections (ja) -->
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/ja/awakeners/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lightproud.github.io/brain-in-a-vat/wiki/ja/awakeners/list</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>
