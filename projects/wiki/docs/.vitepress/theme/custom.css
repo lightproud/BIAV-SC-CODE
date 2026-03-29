@@ -14,6 +14,27 @@
   --vp-c-brand-1: #e2c97e;
   --vp-c-brand-2: #c5a356;
   --vp-c-brand-3: #8a7a48;
+
+  /* Style-guide: 深黑背景 #0a0b10 */
+  --vp-c-bg: #0a0b10;
+  --vp-c-bg-alt: #111219;
+  --vp-c-bg-elv: #1e1a10;
+  --vp-c-bg-soft: #1e1a10;
+
+  --vp-c-text-1: #d4c9a8;
+  --vp-c-text-2: #b5aa98;
+  --vp-c-text-3: #6b6040;
+
+  --vp-c-divider: #2a2515;
+  --vp-c-gutter: #111219;
+
+  --vp-c-default-1: #d4c9a8;
+  --vp-c-default-2: #2a2515;
+  --vp-c-default-3: #1e1a10;
+  --vp-c-default-soft: rgba(30, 26, 16, 0.5);
+
+  --vp-nav-bg-color: #0a0b10;
+  --vp-sidebar-bg-color: #0a0b10;
 }
 
 /* Rarity colors — game-intrinsic, keep distinct */
