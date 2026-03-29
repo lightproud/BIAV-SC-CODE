@@ -57,5 +57,64 @@
         "time_ms": 4034
       }
     }
+  },
+  {
+    "timestamp": "2026-03-29T11:55:39.478772+00:00",
+    "duration_ms": 4822,
+    "total_fetched": 0,
+    "total_validated": 0,
+    "total_deduped": 5,
+    "sources": {
+      "bilibili_articles": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 2117
+      },
+      "twitter": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 0
+      },
+      "bilibili": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 2255
+      },
+      "taptap": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 0
+      },
+      "youtube": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 182
+      },
+      "discord": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 0
+      },
+      "official": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 0
+      },
+      "bilibili_dynamic": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 3023
+      },
+      "reddit": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 3904
+      },
+      "nga": {
+        "status": "empty",
+        "count": 0,
+        "time_ms": 2701
+      }
+    }
   }
 ]
