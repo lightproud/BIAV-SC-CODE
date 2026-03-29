@@ -4,6 +4,7 @@ export default defineConfig({
   title: '忘却前夜 Wiki',
   description: '忘却前夜 (Morimens) 全球游戏资料站 - Roguelite 卡牌构筑手游百科',
 
+  base: '/brain-in-a-vat/wiki/',
   ignoreDeadLinks: true,
 
   head: [
@@ -199,7 +200,7 @@ export default defineConfig({
         outline: { label: '本页目录' },
         docFooter: { prev: '上一篇', next: '下一篇' },
         lastUpdated: { text: '最后更新' },
-        editLink: { pattern: 'https://github.com/lightproud/claude/edit/main/docs/:path', text: '在 GitHub 上编辑此页' },
+        editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: '在 GitHub 上编辑此页' },
         search: { provider: 'local' },
       }
     },
@@ -302,7 +303,7 @@ export default defineConfig({
           '/en/events/': [{ text: 'Events', items: [{ text: 'Overview', link: '/en/events/' }, { text: 'Current', link: '/en/events/current' }, { text: 'History', link: '/en/events/history' }, { text: 'Collaborations', link: '/en/events/collab' }] }],
           '/en/guides/': [{ text: 'Guides', items: [{ text: 'Overview', link: '/en/guides/' }, { text: 'Beginner Guide', link: '/en/guides/beginner' }, { text: 'Daily Tasks', link: '/en/guides/dailies' }, { text: 'Tier List', link: '/en/guides/tier-list' }, { text: 'FAQ', link: '/en/guides/faq' }] }],
         },
-        editLink: { pattern: 'https://github.com/lightproud/claude/edit/main/docs/:path', text: 'Edit this page on GitHub' },
+        editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: 'Edit this page on GitHub' },
         search: { provider: 'local' },
       }
     },
@@ -360,7 +361,7 @@ export default defineConfig({
         outline: { label: '目次' },
         docFooter: { prev: '前へ', next: '次へ' },
         lastUpdated: { text: '最終更新' },
-        editLink: { pattern: 'https://github.com/lightproud/claude/edit/main/docs/:path', text: 'GitHub でこのページを編集' },
+        editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: 'GitHub でこのページを編集' },
         search: { provider: 'local' },
       }
     },
@@ -369,7 +370,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/lightproud/claude' },
+      { icon: 'github', link: 'https://github.com/lightproud/brain-in-a-vat' },
     ],
     search: {
       provider: 'local',

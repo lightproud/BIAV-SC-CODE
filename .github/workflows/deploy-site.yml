@@ -1,0 +1,72 @@
+name: Deploy Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'site/**'
+      - 'projects/wiki/docs/**'
+      - 'projects/wiki/package.json'
+      - 'projects/news/index.html'
+      - '.github/workflows/deploy-site.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: projects/wiki/package-lock.json
+
+      # Build wiki (VitePress)
+      - name: Install wiki dependencies
+        working-directory: projects/wiki
+        run: npm ci
+
+      - name: Build wiki
+        working-directory: projects/wiki
+        run: npm run docs:build
+
+      # Assemble site
+      - name: Assemble site
+        run: |
+          mkdir -p dist/wiki dist/news
+
+          # Root: landing page
+          cp site/index.html dist/
+
+          # Wiki: VitePress build output
+          cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/
+
+          # News: static pages
+          cp projects/news/index.html dist/news/index.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
