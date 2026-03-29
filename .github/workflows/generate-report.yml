@@ -26,15 +26,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Cache Playwright browsers
-        uses: actions/cache@v4
-        with:
-          path: ~/.cache/ms-playwright
-          key: playwright-chromium-${{ runner.os }}
-
-      - name: Install Playwright Chromium
-        run: playwright install chromium --with-deps
-
       - name: Collect global data
         env:
           HOURS_LOOKBACK: '24'
