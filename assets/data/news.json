@@ -1,5 +1,104 @@
 {
-  "updated_at": "2026-03-29T08:55:45.030624+00:00",
-  "summary": "今日热门话题：。",
-  "news": []
+  "updated_at": "2026-03-28T11:03:18.729592+00:00",
+  "summary": "今日热门话题：【忘却前夜】一些主流配队攻略（持续更新中）；【忘却前夜】3.17-3.30融灾3-5双鸟蛛+1-5毒队半；［相位］三小只，但是乱拳打死老师傅？；[忘却前夜]:四小只融灾5-5深海淑女，17回合的成长竞赛；忘却前夜 有无大佬讲一下为什么我海归线和海之梦两个获得力量只有7。",
+  "news": [
+    {
+      "title": "【忘却前夜】一些主流配队攻略（持续更新中）",
+      "summary": "叠甲都在视频内，分享一些常用配队，想起来就会更新。",
+      "source": "bilibili",
+      "time": "2026-03-27T12:09:28+00:00",
+      "url": "https://www.bilibili.com/video/av116301020334846",
+      "engagement": 2037,
+      "is_hot": true,
+      "author": "半醒的鱼yyy",
+      "tags": [
+        "攻略",
+        "配队"
+      ]
+    },
+    {
+      "title": "【忘却前夜】3.17-3.30融灾3-5双鸟蛛+1-5毒队半逃课个人低配打法（400）",
+      "summary": "融灾低配打法分享，包含双鸟蛛和毒队半逃课思路，适合练度较低的玩家参考。",
+      "source": "bilibili",
+      "time": "2026-03-27T14:52:19+00:00",
+      "url": "https://www.bilibili.com/video/av116301691424392",
+      "engagement": 766,
+      "is_hot": true,
+      "author": "青灯不弈",
+      "tags": [
+        "攻略",
+        "融灾",
+        "低配"
+      ]
+    },
+    {
+      "title": "［相位］三小只，但是乱拳打死老师傅？",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-03-28T03:35:57+00:00",
+      "url": "https://www.bilibili.com/video/av116304694479983",
+      "engagement": 467,
+      "is_hot": true,
+      "author": "莱星Ligh",
+      "tags": [
+        "相位",
+        "实战"
+      ]
+    },
+    {
+      "title": "[忘却前夜]:四小只融灾5-5深海淑女，17回合的成长竞赛，你也来试试看吧",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-03-28T03:25:35+00:00",
+      "url": "https://www.bilibili.com/video/av116304627373683",
+      "engagement": 192,
+      "is_hot": true,
+      "author": "龢利喵",
+      "tags": [
+        "融灾",
+        "实战"
+      ]
+    },
+    {
+      "title": "忘却前夜 有无大佬讲一下为什么我海归线和海之梦两个获得力量只有7，似乎有一个没生效",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-03-28T06:02:51+00:00",
+      "url": "https://www.bilibili.com/video/av116305281681410",
+      "engagement": 174,
+      "is_hot": true,
+      "author": "油彻麦茶",
+      "tags": [
+        "问答",
+        "机制讨论"
+      ]
+    },
+    {
+      "title": "第四届塔薇杯-第七日录播",
+      "summary": "第七日直播录像",
+      "source": "bilibili",
+      "time": "2026-03-28T08:48:11+00:00",
+      "url": "https://www.bilibili.com/video/av116305919220373",
+      "engagement": 22,
+      "is_hot": false,
+      "author": "God7777",
+      "tags": [
+        "社区赛事",
+        "塔薇杯"
+      ]
+    },
+    {
+      "title": "忘却前夜 2026.03.24-18:52",
+      "summary": "游戏录屏记录",
+      "source": "bilibili",
+      "time": "2026-03-28T09:12:42+00:00",
+      "url": "https://www.bilibili.com/video/av116305986325671",
+      "engagement": 3,
+      "is_hot": false,
+      "author": "aTfFh",
+      "tags": [
+        "游戏录屏"
+      ]
+    }
+  ]
 }

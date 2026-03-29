@@ -1,0 +1,18 @@
+{
+  "name": "忘却前夜 社区热点聚合",
+  "short_name": "忘夜热点",
+  "description": "实时聚合忘却前夜（Morimens）全球社区24小时内的热点话题",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#0a0a1a",
+  "categories": ["games", "news"],
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
