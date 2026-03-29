@@ -34,6 +34,11 @@ logger = logging.getLogger("collector")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
+STATE_PATH = BASE_DIR / "data" / "state.json"
+
+# 忘却前夜B站官方账号UID（通过搜索API发现后hardcode）
+# 若设为0则从搜索结果中尝试自动发现
+BILIBILI_MORIMENS_UID = 0
 
 HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
@@ -117,6 +122,26 @@ def _make_item(
     }
 
 
+# ─── 增量状态管理 ──────────────────────────────────────────
+
+def _load_state():
+    """加载增量状态文件。"""
+    if STATE_PATH.exists():
+        try:
+            with open(STATE_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            return {}
+    return {}
+
+
+def _save_state(state):
+    """保存增量状态文件。"""
+    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(STATE_PATH, "w", encoding="utf-8") as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
+
+
 # ─── 数据源采集器 ──────────────────────────────────────────
 
 def fetch_reddit(subreddits=None):
@@ -166,10 +191,27 @@ def fetch_reddit(subreddits=None):
 
 
 def fetch_bilibili():
-    """从 Bilibili 搜索忘却前夜相关视频。"""
-    items = []
-    headers = {"Referer": "https://www.bilibili.com"}
+    """从 Bilibili 搜索忘却前夜相关视频、文章，并采集官方账号动态。"""
+    state = _load_state()
+    bilibili_search_state = state.setdefault("bilibili_search", {"last_timestamp": 0})
+    bilibili_dynamic_state = state.setdefault("bilibili_dynamic", {"last_timestamp": 0})
 
+    items = []
+    headers = {
+        "Referer": "https://www.bilibili.com",
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/120.0.0.0 Safari/537.36"
+        ),
+    }
+
+    last_ts = bilibili_search_state.get("last_timestamp", 0)
+    new_last_ts = last_ts
+    # 使用已发现的UID或全局常量
+    discovered_uid = state.get("bilibili_official_uid", BILIBILI_MORIMENS_UID)
+
+    # ── Part 1: 视频搜索 ────────────────────────────────────
     for keyword in KEYWORDS["zh"]:
         try:
             data = _get(
@@ -178,13 +220,23 @@ def fetch_bilibili():
                 headers=headers,
             ).json()
 
+            video_count = 0
             for v in (data.get("data", {}).get("result") or [])[:25]:
                 pubdate = v.get("pubdate", 0)
-                if not pubdate:
+                if not pubdate or pubdate <= last_ts:
                     continue
                 created = datetime.fromtimestamp(pubdate, tz=timezone.utc)
                 if created < CUTOFF:
                     continue
+
+                new_last_ts = max(new_last_ts, pubdate)
+
+                # 尝试从高播放量视频的UP主中发现官方账号UID
+                if not discovered_uid:
+                    mid = v.get("mid")
+                    if mid and v.get("play", 0) > 50000:
+                        discovered_uid = mid
+                        logger.info(f"Bilibili: 自动发现高播放量UP主 UID={mid} ({v.get('author', '')})")
 
                 play = v.get("play", 0)
                 items.append(_make_item(
@@ -202,11 +254,138 @@ def fetch_bilibili():
                     content_type="video",
                     media_url=v.get("pic", ""),
                 ))
+                video_count += 1
 
-            logger.info(f'Bilibili "{keyword}": {len(items)} items')
+            logger.info(f'Bilibili视频 "{keyword}": 新增 {video_count} items')
         except Exception as e:
-            logger.warning(f'Bilibili "{keyword}" failed: {e}')
+            logger.warning(f'Bilibili视频搜索 "{keyword}" 失败: {e}')
 
+    # ── Part 3: 文章/专栏搜索 ───────────────────────────────
+    for keyword in KEYWORDS["zh"]:
+        try:
+            data = _get(
+                "https://api.bilibili.com/x/web-interface/search/type",
+                params={"search_type": "article", "keyword": keyword, "order": "pubdate", "page": 1},
+                headers=headers,
+            ).json()
+
+            article_count = 0
+            for a in (data.get("data", {}).get("result") or [])[:25]:
+                pub_time = a.get("pub_time", 0)
+                if not pub_time or pub_time <= last_ts:
+                    continue
+                created = datetime.fromtimestamp(pub_time, tz=timezone.utc)
+                if created < CUTOFF:
+                    continue
+
+                new_last_ts = max(new_last_ts, pub_time)
+
+                view = a.get("view", 0)
+                like = a.get("like", 0)
+                reply = a.get("reply", 0)
+                cv_id = a.get("id", "")
+                url = f"https://www.bilibili.com/read/cv{cv_id}" if cv_id else ""
+                img_urls = a.get("image_urls", [])
+
+                items.append(_make_item(
+                    title=a.get("title", ""),
+                    summary=_strip_html(a.get("desc", "")),
+                    source="bilibili",
+                    platform_region="cn",
+                    time_str=created.isoformat(),
+                    url=url,
+                    engagement=view + like + reply,
+                    is_hot=view > 5000,
+                    author=a.get("author_name", ""),
+                    lang="zh",
+                    content_type="article",
+                    media_url=img_urls[0] if img_urls else "",
+                ))
+                article_count += 1
+
+            logger.info(f'Bilibili文章 "{keyword}": 新增 {article_count} items')
+        except Exception as e:
+            logger.warning(f'Bilibili文章搜索 "{keyword}" 失败: {e}')
+
+    bilibili_search_state["last_timestamp"] = new_last_ts
+
+    # ── Part 2: 官方账号动态采集 ────────────────────────────
+    uid = discovered_uid
+    if uid:
+        try:
+            data = _get(
+                "https://api.bilibili.com/x/polymer/web-dynamic/v1/feed/space",
+                params={"host_mid": uid},
+                headers=headers,
+            ).json()
+
+            last_dyn_ts = bilibili_dynamic_state.get("last_timestamp", 0)
+            new_dyn_ts = last_dyn_ts
+            dyn_count = 0
+
+            for dyn in (data.get("data", {}).get("items") or [])[:30]:
+                modules = dyn.get("modules", {})
+
+                mod_author = modules.get("module_author", {})
+                pub_ts = mod_author.get("pub_ts", 0)
+                if not pub_ts or pub_ts <= last_dyn_ts:
+                    continue
+                created = datetime.fromtimestamp(pub_ts, tz=timezone.utc)
+                if created < CUTOFF:
+                    continue
+
+                new_dyn_ts = max(new_dyn_ts, pub_ts)
+
+                # 动态文字
+                mod_dynamic = modules.get("module_dynamic", {})
+                desc = mod_dynamic.get("desc") or {}
+                text = desc.get("text", "") if isinstance(desc, dict) else ""
+
+                # 内容类型
+                dyn_type = dyn.get("type", "").upper()
+                if "VIDEO" in dyn_type:
+                    content_type = "video"
+                elif "ARTICLE" in dyn_type or "WORD" in dyn_type:
+                    content_type = "article"
+                else:
+                    content_type = "image"
+
+                # 互动数据
+                mod_stat = modules.get("module_stat", {})
+                like = mod_stat.get("like", {}).get("count", 0)
+                forward = mod_stat.get("forward", {}).get("count", 0)
+                comment = mod_stat.get("comment", {}).get("count", 0)
+
+                dyn_id = dyn.get("id_str", "")
+                url = f"https://www.bilibili.com/opus/{dyn_id}" if dyn_id else ""
+
+                items.append(_make_item(
+                    title=text[:100],
+                    summary=text[:300],
+                    source="bilibili_dynamic",
+                    platform_region="cn",
+                    time_str=created.isoformat(),
+                    url=url,
+                    engagement=like + forward + comment,
+                    is_hot=like > 1000,
+                    author=mod_author.get("name", ""),
+                    lang="zh",
+                    content_type=content_type,
+                ))
+                dyn_count += 1
+
+            bilibili_dynamic_state["last_timestamp"] = new_dyn_ts
+            logger.info(f"Bilibili官方动态 UID={uid}: 新增 {dyn_count} items")
+        except Exception as e:
+            logger.warning(f"Bilibili官方动态采集失败 (UID={uid}): {e}")
+    else:
+        logger.info("Bilibili官方动态: BILIBILI_MORIMENS_UID未设置，跳过")
+
+    # 缓存自动发现的UID
+    if discovered_uid and not state.get("bilibili_official_uid"):
+        state["bilibili_official_uid"] = discovered_uid
+
+    _save_state(state)
     return items
 
 
