@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "realms.schema.json",
+  "title": "Morimens Realms",
+  "description": "Realm (界域) definitions for Morimens",
+  "type": "object",
+  "required": ["description", "team_rule", "realms"],
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "team_rule": {
+      "type": "string"
+    },
+    "realms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/realm"
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "realm_talent": {
+      "type": "object",
+      "required": ["name", "description"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "co_resonance_entry": {
+      "type": "object",
+      "required": ["partner", "name", "effect"],
+      "properties": {
+        "partner": { "type": "string" },
+        "name": { "type": "string" },
+        "effect": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "realm": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "name_en",
+        "color",
+        "icon",
+        "difficulty",
+        "team_rule_v1",
+        "team_rule_v2",
+        "realm_talent",
+        "pure_resonance",
+        "co_resonance",
+        "core_mechanic",
+        "starter_tip"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z_]+$"
+        },
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "color": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "icon": { "type": "string" },
+        "difficulty": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "team_rule_v1": { "type": "string" },
+        "team_rule_v2": { "type": "string" },
+        "realm_talent": { "$ref": "#/$defs/realm_talent" },
+        "pure_resonance": { "$ref": "#/$defs/realm_talent" },
+        "co_resonance": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/co_resonance_entry" }
+        },
+        "core_mechanic": { "type": "string" },
+        "starter_tip": { "type": "string" },
+        "legacy_id": {
+          "type": "string",
+          "description": "Old realm ID for backward compatibility"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

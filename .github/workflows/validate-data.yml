@@ -1,0 +1,26 @@
+name: Validate Wiki Data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'projects/wiki/data/**'
+      - 'projects/wiki/scripts/validate_data.py'
+      - '.github/workflows/validate-data.yml'
+  pull_request:
+    paths:
+      - 'projects/wiki/data/**'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install jsonschema
+      - name: Validate data
+        run: python projects/wiki/scripts/validate_data.py

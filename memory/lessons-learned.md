@@ -1,5 +1,7 @@
 # 踩坑记录
 
+> 最后更新：2026-03-29 by Code-主控台
+>
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
 ## 1. sed 批量替换破坏 HTML 结构

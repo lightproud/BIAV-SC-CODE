@@ -1,0 +1,233 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "characters.schema.json",
+  "title": "Morimens Characters",
+  "description": "Character (唤醒体) database for Morimens",
+  "type": "object",
+  "required": ["description", "role_types", "characters"],
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "role_types": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/role_type"
+      },
+      "minProperties": 1
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/character"
+      },
+      "minItems": 1
+    },
+    "sr_characters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/sr_character"
+      },
+      "description": "SR rarity characters with simplified data"
+    },
+    "notable_groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/notable_group"
+      },
+      "description": "Named groups of characters"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sr_character": {
+      "type": "object",
+      "required": ["id", "name", "name_en", "rarity", "realm", "role", "obtain", "description"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "rarity": { "type": "string", "const": "SR" },
+        "realm": { "type": "string" },
+        "role": { "type": "string" },
+        "obtain": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "notable_group": {
+      "type": "object",
+      "required": ["name", "members", "description"],
+      "properties": {
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "members": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "role_type": {
+      "type": "object",
+      "required": ["name", "name_en", "description"],
+      "properties": {
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "command_card_upgrade": {
+      "type": "object",
+      "required": ["name", "effect"],
+      "properties": {
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "effect": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "command_card": {
+      "type": "object",
+      "required": ["name", "effect"],
+      "properties": {
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "cost": { "oneOf": [{ "type": "integer", "minimum": 0 }, { "type": "string" }] },
+        "effect": { "type": "string" },
+        "note": { "type": "string" },
+        "upgrades": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/command_card_upgrade" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "skill_entry": {
+      "type": "object",
+      "required": ["name", "effect"],
+      "properties": {
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "effect": { "type": "string" },
+        "cost": { "type": "integer" },
+        "note": { "type": "string" },
+        "scaling": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "enlighten_entry": {
+      "type": "object",
+      "required": ["level", "name", "effect"],
+      "properties": {
+        "level": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "effect": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "skills": {
+      "type": "object",
+      "properties": {
+        "command_cards": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/command_card" }
+        },
+        "command_cards_note": { "type": "string" },
+        "rouse": { "$ref": "#/$defs/skill_entry" },
+        "exalt": { "$ref": "#/$defs/skill_entry" },
+        "overexalt": { "$ref": "#/$defs/skill_entry" },
+        "enlighten": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/enlighten_entry" }
+        },
+        "role_in_team": { "type": "string" },
+        "special_mechanic": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "required": ["name", "description"],
+              "properties": {
+                "name": { "type": "string" },
+                "name_en": { "type": "string" },
+                "description": { "type": "string" }
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
+        "build_notes": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "additionalProperties": { "type": "string" }
+            }
+          ]
+        },
+        "gameplay_notes": { "type": "string" },
+        "talent": { "$ref": "#/$defs/skill_entry" }
+      },
+      "additionalProperties": false
+    },
+    "character": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "name_en",
+        "rarity",
+        "realm",
+        "role",
+        "is_limited",
+        "obtain",
+        "aliases",
+        "tags",
+        "description",
+        "portrait_url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "rarity": {
+          "type": "string",
+          "enum": ["SSR", "SR"]
+        },
+        "realm": {
+          "type": "string",
+          "description": "Must match a realm id in realms.json"
+        },
+        "role": {
+          "type": "string",
+          "description": "Must match a key in role_types"
+        },
+        "is_limited": { "type": "boolean" },
+        "obtain": { "type": "string" },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "description": { "type": "string" },
+        "portrait_url": { "type": ["string", "null"] },
+        "first_banner_version": {
+          "type": "string",
+          "description": "Game version when this character first appeared in gacha"
+        },
+        "skills": { "$ref": "#/$defs/skills" }
+      },
+      "additionalProperties": false
+    }
+  }
+}

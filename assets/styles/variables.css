@@ -1,0 +1,45 @@
+/*
+ * Morimens / 忘却前夜 — 统一设计变量
+ * 来源：memory/style-guide.md v2.0
+ *
+ * 所有子站点引用此文件以确保视觉一致性。
+ * 修改此文件前请同步更新 memory/style-guide.md。
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap');
+
+:root {
+  /* === 基础色 (Base Colors) === */
+  --color-bg: #0a0b10;
+  --color-gold: #c5a356;
+  --color-gold-bright: #e2c97e;
+  --color-gold-dark: #8a7a48;
+  --color-text: #d4c9a8;
+  --color-text-secondary: #6b6040;
+  --color-text-tertiary: #5a5540;
+  --color-card-bg: #1e1a10;
+  --color-border: #2a2515;
+  --color-deco: #3a3520;
+  --color-highlight-bg: rgba(197,163,86,0.06);
+  --color-stripe-bg: rgba(197,163,86,0.04);
+
+  /* === 功能色 (Functional Colors) === */
+  --color-positive: #7aad5a;
+  --color-negative: #c25a4a;
+  --color-insight: #5a8aad;
+  --color-negative-bg: rgba(194,90,74,0.06);
+  --color-positive-bg: rgba(74,122,58,0.06);
+  --color-insight-bg: rgba(90,138,173,0.08);
+
+  /* === 界域色 (Realm Colors) === */
+  --color-realm-chaos: #c5a356;
+  --color-realm-aequor: #3498db;
+  --color-realm-caro: #e74c3c;
+  --color-realm-ultra: #9b59b6;
+
+  /* === 排版 (Typography) === */
+  --font-title: 'Noto Serif SC', serif;
+  --font-body: 'Noto Sans SC', sans-serif;
+  --line-height-body: 2;
+  --line-height-table: 1.7;
+}

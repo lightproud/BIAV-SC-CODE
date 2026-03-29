@@ -89,6 +89,28 @@ jobs:
         run: python3 scripts/fetch_lore.py
         continue-on-error: true
 
+      - name: Guard against corrupted data
+        run: |
+          cd $GITHUB_WORKSPACE
+          echo "=== Checking core JSON files for corruption ==="
+          for f in characters.json skills.json equipment.json realms.json combat.json; do
+            filepath="projects/wiki/data/db/$f"
+            if [ ! -f "$filepath" ]; then
+              echo "SKIP: $filepath not found"
+              continue
+            fi
+            size=$(wc -c < "$filepath")
+            if [ "$size" -lt 100 ]; then
+              echo "REVERT: $filepath appears corrupted ($size bytes), restoring from HEAD"
+              git checkout HEAD -- "$filepath"
+            elif ! python3 -m json.tool "$filepath" > /dev/null 2>&1; then
+              echo "REVERT: $filepath is invalid JSON, restoring from HEAD"
+              git checkout HEAD -- "$filepath"
+            else
+              echo "OK: $filepath ($size bytes)"
+            fi
+          done
+
       - name: Check for changes
         id: changes
         run: |

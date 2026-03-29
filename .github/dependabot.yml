@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/projects/wiki"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "pip"
+    directory: "/projects/news"
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

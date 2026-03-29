@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - 页面不存在 | 缸中之脑</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0a0b10;
+      color: #d4c9a8;
+      font-family: 'Noto Sans SC', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      line-height: 2;
+    }
+
+    main {
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .error-code {
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 700;
+      font-size: 8rem;
+      line-height: 1;
+      color: #e2c97e;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+      opacity: 0.85;
+    }
+
+    h1 {
+      font-family: 'Noto Serif SC', serif;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #e2c97e;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .message {
+      font-size: 1rem;
+      color: #d4c9a8;
+      margin-bottom: 3rem;
+      opacity: 0.8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 4rem;
+    }
+
+    .nav-links a {
+      display: block;
+      padding: 0.75rem 2rem;
+      background: #1e1a10;
+      border: 1px solid #2a2515;
+      border-radius: 6px;
+      color: #d4c9a8;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 400;
+      transition: border-color 0.25s, color 0.25s, background 0.25s;
+      min-width: 120px;
+    }
+
+    .nav-links a:hover {
+      border-color: #c5a356;
+      color: #e2c97e;
+      background: rgba(197, 163, 86, 0.06);
+    }
+
+    .nav-links .label-zh {
+      display: block;
+      font-size: 0.95rem;
+    }
+
+    .nav-links .label-en {
+      display: block;
+      font-size: 0.75rem;
+      color: #6b6040;
+      margin-top: 0.15rem;
+    }
+
+    footer {
+      margin-top: auto;
+      padding-top: 2rem;
+      font-size: 0.8rem;
+      color: #5a5540;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 480px) {
+      .error-code {
+        font-size: 5rem;
+      }
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links a {
+        width: 100%;
+        max-width: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="error-code">404</div>
+    <h1>页面不存在 / Page Not Found</h1>
+    <p class="message">你要找的页面可能已被移动或不存在。</p>
+    <nav class="nav-links">
+      <a href="/brain-in-a-vat/">
+        <span class="label-zh">首页</span>
+        <span class="label-en">Home</span>
+      </a>
+      <a href="/brain-in-a-vat/wiki/zh/">
+        <span class="label-zh">Wiki</span>
+        <span class="label-en">Wiki</span>
+      </a>
+      <a href="/brain-in-a-vat/news/">
+        <span class="label-zh">新闻</span>
+        <span class="label-en">News</span>
+      </a>
+    </nav>
+  </main>
+  <footer>缸中之脑 Brain in a Vat</footer>
+</body>
+</html>
