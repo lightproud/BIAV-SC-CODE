@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'site/**'
+      - 'projects/site/**'
       - 'projects/wiki/docs/**'
       - 'projects/wiki/package.json'
       - 'projects/news/index.html'

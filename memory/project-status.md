@@ -6,6 +6,7 @@
 
 | 子项目 | 状态 | 负责会话 | 下一步 |
 |--------|------|---------|--------|
+| site（主站 + 部署 + 视觉） | 初始化 | Code-site | 接管 site/index.html 和 deploy-site.yml，优化主站体验 |
 | news（新闻聚合 + 报告系统） | 运行中 | Code-news | 配置 API 密钥，启用更多数据源 |
 | wiki（数据集 + Wiki 站点） | 已部署 | Code-wiki | 数据持续补全、角色详细数据抓取 |
 | game（衍生游戏） | 规划中 | 待创建 | 确定游戏类型 |
@@ -53,7 +54,7 @@
 - **部署状态**：已上线 ✓ https://lightproud.github.io/brain-in-a-vat/
 - **根路径方案**：中文为 root locale + rewrites（`docs/zh/` → `/`），en/ja 保持 `/en/`、`/ja/`
 - **待办**：角色详细数据（技能/卡牌/天赋/立绘）抓取、content_database.json 整合
-- **待决策（主控台）**：单仓库多站点方案（子路径 vs 独立 repo vs 自定义域名）
+- **已决策**：主站导航页 + 子路径多站点方案（根路径=主站，/wiki/=VitePress，/news/=情报页），由 Code-site 维护部署流水线
 
 ## Game 衍生游戏
 
