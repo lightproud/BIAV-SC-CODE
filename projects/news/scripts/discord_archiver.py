@@ -47,7 +47,7 @@ DISCORD_DATA_DIR = _REPO_ROOT / 'assets' / 'data' / 'discord'
 STATE_PATH = DISCORD_DATA_DIR / 'state.json'
 
 # Rate limit: stay well under 50 req/s
-REQUEST_DELAY = 0.5  # seconds between requests
+REQUEST_DELAY = 1.2  # seconds between requests (conservative)
 MAX_RUNTIME_SECONDS = 45 * 60  # 45 min hard limit (GitHub Actions safe margin)
 MAX_MESSAGES_PER_CHANNEL = 5000  # per run, prevents first-run from running forever
 
@@ -68,7 +68,7 @@ def request_with_retry(method, url, max_retries=3, backoff_base=2, **kwargs):
             resp = requests.request(method, url, **kwargs)
             # Handle Discord rate limits
             if resp.status_code == 429:
-                retry_after = resp.json().get('retry_after', 5)
+                retry_after = max(resp.json().get('retry_after', 5), 2.0)
                 logger.warning(f'Rate limited, waiting {retry_after}s...')
                 time.sleep(retry_after)
                 continue
