@@ -16,6 +16,12 @@
 ### 实时聚合器
 - **已完成**：前端页面、B站抓取、GitHub Actions 自动化
 - **阻塞**：Twitter/NGA/TapTap 需配置密钥
+- **数据落盘位置**：
+  - `assets/data/news.json` — 所有数据源合并的原始输出（由 aggregator.py 写入）
+  - `projects/news/output/` — **Chat 会话统一读取入口**，按数据源分割的 JSON 文件
+    - `bilibili-latest.json`、`steam-latest.json`、`taptap-latest.json` 等
+    - `all-latest.json` — 所有源合并（适合日报/分析场景）
+    - 每次 workflow 运行后自动更新（由 split_output.py 生成）
 - **数据源状态**：
   - [x] Bilibili — 正常运行
   - [x] Reddit — 代码就绪

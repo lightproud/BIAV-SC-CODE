@@ -30,6 +30,7 @@
 - AI 协作方法论 → `memory/methodology.md`
 - 交付物视觉规范 → `memory/style-guide.md`
 - 踩坑记录 → `memory/lessons-learned.md`
+- 社区采集数据 → `projects/news/output/`（Chat 会话读取社区情报的统一入口）
 
 ## 目录结构
 
