@@ -52,6 +52,7 @@ OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 SOURCE_ALIASES: dict[str, str] = {
     'bilibili_articles': 'bilibili',
     'bilibili_dynamic': 'bilibili',
+    'steam_review': 'steam',
 }
 
 KNOWN_SOURCES = [

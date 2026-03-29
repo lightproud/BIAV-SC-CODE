@@ -34,7 +34,7 @@ logger = logging.getLogger(__name__)
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_PATH = REPO_ROOT / 'assets' / 'data' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
-HOURS_LOOKBACK = 24
+HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
 
 # Valid source identifiers
 VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review'}
@@ -403,7 +403,6 @@ def fetch_steam_reviews():
     }
     headers = {'User-Agent': 'MorimensAggregator/1.0'}
 
-    target_languages = {'english', 'schinese', 'koreana', 'russian', 'japanese'}
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
     items = []
 
@@ -420,8 +419,6 @@ def fetch_steam_reviews():
                 continue
 
             language = review.get('language', 'unknown')
-            if language not in target_languages:
-                continue
 
             voted_up = review.get('voted_up', False)
             sentiment = '正面' if voted_up else '负面'
