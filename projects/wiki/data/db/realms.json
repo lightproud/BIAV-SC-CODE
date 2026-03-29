@@ -42,7 +42,7 @@
     {
       "id": "aequor",
       "name": "深海",
-      "name_en": "Deep Sea",
+      "name_en": "Aequor",
       "color": "#3498db",
       "icon": "🌊",
       "difficulty": 3,
@@ -64,7 +64,7 @@
     {
       "id": "caro",
       "name": "血肉",
-      "name_en": "Flesh",
+      "name_en": "Caro",
       "color": "#e74c3c",
       "icon": "🩸",
       "difficulty": 5,
@@ -86,7 +86,7 @@
     {
       "id": "ultra",
       "name": "超维",
-      "name_en": "Hyperdimension",
+      "name_en": "Ultra",
       "color": "#f1c40f",
       "icon": "⚡",
       "difficulty": 4,
