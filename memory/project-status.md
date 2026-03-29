@@ -50,7 +50,7 @@
 - **已完成**：VitePress 站点框架、三语言结构（EN/JA/ZH）、约 190 页 Markdown、50 页内容填充（ZH/EN/JA）、GitHub Actions 自动部署工作流
 - **技术栈**：VitePress 1.6.3 + Vue 3.5.13
 - **部署**：GitHub Pages（官方 Actions 方式，需 Settings→Pages→Source 设为 GitHub Actions）
-- **部署状态**：workflow 已就绪，等主控台确认 Pages Source 设置后生效
+- **部署状态**：已上线 ✓ https://lightproud.github.io/brain-in-a-vat/
 - **根路径方案**：中文为 root locale + rewrites（`docs/zh/` → `/`），en/ja 保持 `/en/`、`/ja/`
 - **待办**：角色详细数据（技能/卡牌/天赋/立绘）抓取、content_database.json 整合
 - **待决策（主控台）**：单仓库多站点方案（子路径 vs 独立 repo vs 自定义域名）
