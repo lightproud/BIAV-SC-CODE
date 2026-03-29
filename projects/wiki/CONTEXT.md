@@ -51,3 +51,15 @@ python scripts/content_db.py
 - 数据文件在：`projects/wiki/data/db/`
 - 新数据文件添加后更新本文件和 `assets/index.md`
 - 角色/系统信息同步更新 `memory/morimens-context.md`
+
+## 启动验证清单
+
+新会话启动时，请逐项检查：
+
+- [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
+- [ ] 阅读 `memory/project-status.md` 确认 wiki 子项目当前状态
+- [ ] 检查 `projects/wiki/data/db/` 目录确认数据文件完整性
+- [ ] 确认 GitHub Pages 部署状态（最新 Actions 是否成功）
+- [ ] 检查 `memory/morimens-context.md` 了解游戏背景知识
+- [ ] 确认你要修改的文件不属于其他子项目
+- [ ] 完成任务后更新本文件"下一步"部分和 `memory/project-status.md`
