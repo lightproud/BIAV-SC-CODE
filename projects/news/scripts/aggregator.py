@@ -475,6 +475,23 @@ def run():
         if item.get('engagement', 0) >= HOT_MIN_ENGAGEMENT:
             item['is_hot'] = True
 
+    # Empty data protection: if no items fetched, preserve existing data
+    if not unique_news:
+        logger.warning('All sources returned empty results. Preserving existing news.json to avoid blank frontend.')
+        if OUTPUT_PATH.exists():
+            logger.info(f'Existing news.json kept intact ({OUTPUT_PATH.stat().st_size} bytes).')
+        else:
+            logger.warning('No existing news.json found and no new data — writing empty placeholder.')
+            output = {
+                'updated_at': datetime.now(timezone.utc).isoformat(),
+                'summary': '暂无最新动态。',
+                'news': [],
+            }
+            OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+            with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
+                json.dump(output, f, ensure_ascii=False, indent=2)
+        return
+
     # Generate summary
     summary = generate_summary(unique_news)
 
