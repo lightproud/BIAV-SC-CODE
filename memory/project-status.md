@@ -34,27 +34,60 @@
 
 ### 游戏数据集（原 database）
 - **已完成**：
-  - 16 个 JSON 数据文件（`projects/wiki/data/db/`）
-  - 56 个 SSR 唤醒体 + SR 角色数据
-  - 命轮与圣契装备体系
+  - 18 个 JSON 数据文件（`projects/wiki/data/db/`）
+  - 63 个唤醒体数据（59 SSR + 4 SR）
+  - 15 个角色有完整技能数据（指令卡/觉醒/启灵/天赋）
+  - 47/59 角色立绘已下载到 `assets/images/portraits/`
+  - 命轮与密契装备体系
   - 四大界域体系（Chaos、Aequor、Caro、Ultra）
-  - 版本线（含联动记录）
-  - 世界观设定（组织、关键角色、主线剧情）
-  - 技能系统、战斗机制
-  - 地图与关卡数据
-  - Python 查询模块 content_db.py
-- **已修复**：13+ 角色英文名、界域 ID 标准化（aequor/caro/ultra）、职能标准化（attack/sub_attack/defense/support/chorus）、ID 转英文 slug
-- **待办**：角色详细字段扩展（目标 ~40 字段）、接入 Fandom/Gamerch wiki 自动更新、整合 content_database.json 技能数据
-- **数据来源**：GameKee wiki、Fandom、Gamerch JP
+  - 版本线 v1.0→v2.5（含 3 个联动记录）
+  - 世界观设定（8 组织、12 关键角色、主线剧情详细摘要）
+  - 卡牌数据库 cards.json
+  - 关卡掉落表 stages.json
+  - 多语言术语翻译 translations.json（zh/en/ja）
+  - 角色语音框架 voice_lines.json（10 角色，待补充实际台词）
+  - content_database.json 技能数据已整合到 characters.json
+- **已删除**：tier 评级字段（非项目关注点）
+- **自动化抓取**：7 个脚本 + GitHub Actions workflow
+  - `fetch_portraits.py` — Fandom 立绘下载（47/59 成功）
+  - `fetch_skills.py` — 角色技能抓取
+  - `fetch_cards.py` — 卡牌详情抓取
+  - `fetch_stats.py` — 角色数值抓取
+  - `fetch_stages.py` — 关卡掉落抓取
+  - `fetch_wheels.py` — 命轮效果抓取
+  - `fetch_lore.py` — 剧情详情抓取
+  - `fetch_voice_lines.py` — 语音台词抓取
+  - `fetch_steam_assets.py` — Steam 公开资产下载
+  - `extract_game_data.py` — Unity 客户端数据解包工具
+  - `generate_pages.py` — 从 JSON 自动生成角色详情页
+  - `generate_rss.py` — RSS/Atom 订阅源生成
+  - `check_version.py` — 游戏版本更新检测
+  - `fetch-wiki-data.yml` — 每周一自动运行全部抓取
+  - `check-version.yml` — 每周一检测版本更新
+- **数据来源**：Fandom API、Steam Store API、GameKee、Bilibili wiki
 
 ### Wiki 站点
-- **已完成**：VitePress 站点框架、三语言结构（EN/JA/ZH）、约 190 页 Markdown、50 页内容填充（ZH/EN/JA）、GitHub Actions 自动部署工作流
-- **技术栈**：VitePress 1.6.3 + Vue 3.5.13
-- **部署**：GitHub Pages（官方 Actions 方式，需 Settings→Pages→Source 设为 GitHub Actions）
-- **部署状态**：已上线 ✓ https://lightproud.github.io/brain-in-a-vat/
-- **根路径方案**：中文为 root locale + rewrites（`docs/zh/` → `/`），en/ja 保持 `/en/`、`/ja/`
-- **待办**：角色详细数据（技能/卡牌/天赋/立绘）抓取、content_database.json 整合
-- **已决策**：主站导航页 + 子路径多站点方案（根路径=主站，/wiki/=VitePress，/news/=情报页），由 Code-site 维护部署流水线
+- **已完成**：
+  - VitePress 站点框架、三语言结构（ZH/EN/JA）
+  - 189 个角色详情页（63 角色 × 3 语言，自动生成）
+  - 约 250+ 页 Markdown 内容
+  - 10 个 Vue 交互组件：
+    - CharacterGrid（角色筛选/排序）
+    - CharacterCompare（角色对比）
+    - WheelList（命轮筛选列表）
+    - GachaSimulator（抽卡模拟器）
+    - TeamBuilder（队伍搭配器）
+    - DamageCalculator（伤害计算器）
+    - FarmingPlanner（素材规划器）
+    - StaminaTracker（体力追踪器）
+    - UpdateTimeline（版本时间线）
+    - ChangelogFeed（最近变更）
+    - VoiceLines（语音台词展示）
+  - SEO 优化：Schema.org JSON-LD、OG 社交分享图、sitemap、robots.txt
+  - RSS/Atom 订阅源
+  - 贡献指南 contributing.md
+- **技术栈**：VitePress 1.6.4 + Vue 3.5.13
+- **部署**：由 Code-site 统一管理（deploy-site.yml），wiki 位于 /wiki/ 子路径
 
 ## Game 衍生游戏
 
