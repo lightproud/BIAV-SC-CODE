@@ -16,6 +16,10 @@
 | <span class="rarity-sr">SR</span> | 高级命轮 |
 | <span class="rarity-r">R</span> | 基础命轮 |
 
+## 命轮一览
+
+<WheelList />
+
 ## 快速导航
 
 - [命轮列表](./list) - 所有命轮数据

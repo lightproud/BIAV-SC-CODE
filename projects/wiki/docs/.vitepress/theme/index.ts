@@ -12,6 +12,7 @@ import ChangelogFeed from './components/ChangelogFeed.vue'
 import FarmingPlanner from './components/FarmingPlanner.vue'
 import DamageCalculator from './components/DamageCalculator.vue'
 import StaminaTracker from './components/StaminaTracker.vue'
+import VoiceLines from './components/VoiceLines.vue'
 
 const theme: Theme = {
   extends: DefaultTheme,
@@ -26,6 +27,7 @@ const theme: Theme = {
     app.component('FarmingPlanner', FarmingPlanner)
     app.component('DamageCalculator', DamageCalculator)
     app.component('StaminaTracker', StaminaTracker)
+    app.component('VoiceLines', VoiceLines)
   },
 }
 

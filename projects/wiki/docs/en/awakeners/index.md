@@ -54,6 +54,12 @@ Each Awakener comes with a personal card set:
 
 During combat, Awakeners also have access to **Madness Burst**, triggered for free when Madness Points reach 100.
 
+## Browse Awakeners
+
+Use the filter below to find Awakeners by realm, role, or rarity.
+
+<CharacterGrid />
+
 ## Related Pages
 
 - [Awakener List](./list.md)
