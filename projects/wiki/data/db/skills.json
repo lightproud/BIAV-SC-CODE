@@ -639,6 +639,446 @@
           "effect": "将「奇妙料理」洗入抽牌堆和弃牌堆各1张。"
         }
       }
+    },
+    "duoer": {
+      "name": "朵尔",
+      "name_en": "Doll",
+      "skills": {
+        "special_mechanic": {
+          "name": "终章(Finale)",
+          "description": "探索中通过特定条件叠加终章层数(最多10层)。达到10层后获得[幻梦终焉]状态，角色形态转换为「终章形态」：放弃治疗能力，转化为以自伤增强毒伤的高输出模式。"
+        },
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "普通形态：回复生命并施加毒素。终章形态：失去生命，造成大量毒伤。每叠加一层终章，终章形态的伤害递增。"
+        },
+        "role_in_team": "混沌界域输出型唤醒体，T0评级。终章机制需要时间累积，前期辅助治疗，后期转换为高输出模式。",
+        "_data_source": "角色描述推导，具体数值待从公开wiki补充"
+      }
+    },
+    "aojier": {
+      "name": "奥吉尔",
+      "name_en": "Ogier",
+      "skills": {
+        "role_in_team": "混沌界域T1辅助型唤醒体，御四家成员。提供队伍增益和敌方减益效果，是混沌队稳定的后排辅助。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "luotan": {
+      "name": "萝坦",
+      "name_en": "Lotan",
+      "skills": {
+        "role_in_team": "混沌界域T1防御型唤醒体，御四家成员。银钥共鸣体系防御核心，死亡抵抗机制出色。侧重团队护盾和反伤。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "pandiya": {
+      "name": "潘狄娅",
+      "name_en": "Pandya",
+      "skills": {
+        "role_in_team": "混沌界域T2副输出型唤醒体。配合混沌主C进行副输出。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "nuodila": {
+      "name": "诺缔拉",
+      "name_en": "Nodera",
+      "skills": {
+        "role_in_team": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "ningfeiya": {
+      "name": "宁菲亚",
+      "name_en": "Nymphia",
+      "skills": {
+        "role_in_team": "混沌界域T3辅助型唤醒体。提供基础增益效果。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "lili": {
+      "name": "莉莉",
+      "name_en": "Lily",
+      "skills": {
+        "signature_wheel": "跨越疼痛(Grace Through Pain)",
+        "role_in_team": "混沌界域防御型唤醒体。防御能力出色，为混沌队提供稳定护盾。v1.1版本推出，后加入常驻池。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "danmo": {
+      "name": "淡墨",
+      "name_en": "Danmo",
+      "skills": {
+        "role_in_team": "混沌界域限定输出角色，满配后伤害极高，以银钥爆发为核心。一轮爆发可秒杀大多数Boss，常作为助战首选。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "miliyamu": {
+      "name": "弥利亚姆",
+      "name_en": "Miryam",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "至高生命献祭",
+            "name_en": "Supreme Life Sacrifice",
+            "effect": "v1.4调整为穿透伤害。深海必备辅助技能，可为深海队提供触腕相关增益。",
+            "note": "v1.4版本升级调整：技能改为穿刺伤害类型"
+          }
+        ],
+        "rouse": {
+          "name": "灵知觉醒",
+          "effect": "v1.4增强：灵之觉醒与天赋同步提升。"
+        },
+        "role_in_team": "深海界域限定辅助，强力触手辅助。深海队必备辅助位，v1.4版本大幅增强。",
+        "_data_source": "角色描述和v1.4更新记录，具体数值待从公开wiki补充"
+      }
+    },
+    "shenwang_tulu": {
+      "name": "神王·图鲁",
+      "name_en": "Divine King Tulu",
+      "skills": {
+        "role_in_team": "图鲁的神王变体形态，深海界域顶级限定主C。深海队的顶级主C选择，触腕体系进化版。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "shan": {
+      "name": "珊",
+      "name_en": "Shan",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "获得防御力x10%护盾。打出佩戴者指令卡后，获得防御力x6%护盾；每条触腕额外获得防御力x1.5%护盾，每回合最多触发1次(来自命轮效果描述推导)。"
+          }
+        ],
+        "signature_wheel_effect": "珊瑚女之死(Death of the Coral Maiden)：打出佩戴者卡牌后，获得防御力6%护盾，每条触腕额外+防御力1.5%，每回合1次。",
+        "role_in_team": "深海界域T1副输出型唤醒体。深海触手体系中的副C，配合图鲁进行触腕联动输出。",
+        "_data_source": "命轮效果描述推导，具体卡牌效果待从公开wiki补充"
+      }
+    },
+    "aolueita": {
+      "name": "奥瑞塔",
+      "name_en": "Aurita",
+      "skills": {
+        "role_in_team": "深海界域免费SSR(通关混沌裂隙I获取)，「深潜三杰」成员。爆发+循环卡牌打法，「深海万能锤」，新手友好。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "kaikesi": {
+      "name": "凯刻斯",
+      "name_en": "Caecus",
+      "skills": {
+        "role_in_team": "深海界域T2副输出型唤醒体。反击队体系核心成员，可配合反击机制使用。凯刻斯反击队：凯刻斯+萨尔瓦多+旺达+哈姆林。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "falosi": {
+      "name": "法洛思",
+      "name_en": "Faros",
+      "skills": {
+        "role_in_team": "深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。高防御角色，适合搭配心之壁垒命轮。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "suoleier": {
+      "name": "索蕾尔",
+      "name_en": "Sorel",
+      "skills": {
+        "role_in_team": "血肉界域T0限定输出角色，「红女王」。穿着红色玫瑰裙的沙龙主人，附带回血技能，攻守兼备。签名命轮：以蔷薇之名(By Rose Alone)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "taiyisi": {
+      "name": "泰旖丝",
+      "name_en": "Thais",
+      "skills": {
+        "role_in_team": "血肉界域SSR限定辅助角色，社区昵称「羊妈」。为血肉队提供增益和恢复，顶级血肉辅助。签名命轮：慈悲的哺育(Merciful Nurturing)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "ailisi": {
+      "name": "爱丽丝",
+      "name_en": "Alice",
+      "skills": {
+        "role_in_team": "血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "feinite": {
+      "name": "菲茵特",
+      "name_en": "Faint",
+      "skills": {
+        "signature_wheel_effect": "吞噬摇篮曲(Devouring Lullaby)：触发死亡抵抗后，全队治疗和护盾增强2回合。",
+        "role_in_team": "血肉界域T2副输出型唤醒体。血肉体系灵活副C，签名命轮触发死亡抵抗后为队伍提供治疗和护盾增益。",
+        "_data_source": "命轮效果描述，具体技能数据待从公开wiki补充"
+      }
+    },
+    "agelijipa": {
+      "name": "阿格里帕",
+      "name_en": "Agrippa",
+      "skills": {
+        "role_in_team": "血肉界域T2防御型唤醒体。为血肉队提供前排防护。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "xiluo": {
+      "name": "希洛",
+      "name_en": "Shilo",
+      "skills": {
+        "role_in_team": "血肉界域T3输出型唤醒体。血肉队初期主C选择，有限定变体「血链·希洛」。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "wenke'er": {
+      "name": "温柯尔",
+      "name_en": "Winkle",
+      "skills": {
+        "role_in_team": "超维界域T1辅助型唤醒体。为超维队提供稳定辅助增益。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "kaxiya": {
+      "name": "卡茜亚",
+      "name_en": "Casiah",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "隔空取物",
+            "name_en": "Telekinesis",
+            "effect": "从超维空间拉出目标卡牌打出一次，配合达芙黛尔「断颈一击」实现二次打击。"
+          }
+        ],
+        "role_in_team": "超维界域T1副输出型唤醒体。与达芙黛尔组合：用「隔空取物」从超维空间再打一次「断颈一击」，实现现版本越级最强输出组合。",
+        "_data_source": "从达芙黛尔技能描述推导，具体数值待从公开wiki补充"
+      }
+    },
+    "zhanjin": {
+      "name": "詹金",
+      "name_en": "Jenkins",
+      "skills": {
+        "role_in_team": "超维界域T1副输出型唤醒体。超维体系灵活副C，为主C提供额外输出补充。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "tingkete": {
+      "name": "汀克特",
+      "name_en": "Tincture",
+      "skills": {
+        "role_in_team": "超维界域T2辅助型唤醒体。提供基础辅助效果，过渡辅助位选择。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "ao'erla": {
+      "name": "奥尔拉",
+      "name_en": "Horla",
+      "skills": {
+        "role_in_team": "超维界域v1.5新增辅助型唤醒体。超维开荒队核心辅助，大幅提升超维队整体强度。推荐配队：莉兹+奥尔拉+艾瑞卡+环娜。签名命轮：诗笺的句尾(The Last Verse)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "laike": {
+      "name": "莱克",
+      "name_en": "Karen",
+      "skills": {
+        "role_in_team": "混沌界域v1.5新增，官方定位辅助但输出能力突出，专属命轮「好运时间」极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "hamlin": {
+      "name": "哈姆林",
+      "name_en": "Hameln",
+      "skills": {
+        "role_in_team": "混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。签名命轮：永恒安魂曲(Eternal Requiem)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "mofei": {
+      "name": "墨菲",
+      "name_en": "Murphy",
+      "skills": {
+        "special_mechanic": {
+          "name": "献祭(Sacrifice)",
+          "description": "墨菲的专属被动机制。通过献祭自身生命为队伍提供防护，技能组强势补强深海界域弱点。"
+        },
+        "role_in_team": "深海界域防御型唤醒体，深海玩家必抽。拥有专属「献祭」被动机制，大幅提升深海队生存能力。签名命轮：隐秘的诞生(Shrouded Birth)。",
+        "_data_source": "角色描述推导，具体技能数据待从公开wiki补充"
+      }
+    },
+    "saerwado": {
+      "name": "萨尔瓦多",
+      "name_en": "Salvador",
+      "skills": {
+        "role_in_team": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，靠反伤和护盾进行输出。签名命轮：神言石板(Tablet of Scriptures)。推荐配队：萨尔瓦多+旺达+凯刻斯+哈姆林。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "wangda": {
+      "name": "旺达",
+      "name_en": "Wanda",
+      "skills": {
+        "role_in_team": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，与萨尔瓦多组成盾反队双核。签名命轮：女王的戒律(Queen's Edict)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "aijisi": {
+      "name": "艾继丝",
+      "name_en": "Aigis",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "标准防御卡"
+          }
+        ],
+        "key_abilities": [
+          {
+            "name": "群体易伤",
+            "effect": "对所有敌人施加易伤状态，提高队伍输出"
+          },
+          {
+            "name": "AOE输出",
+            "effect": "对所有敌人造成范围伤害"
+          },
+          {
+            "name": "石化",
+            "effect": "对敌人施加石化状态"
+          }
+        ],
+        "signature_wheel": "冬夜忆(Poetic Bygone Days)：防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。",
+        "role_in_team": "血肉界域辅助型唤醒体，深潜三杰成员，通关第一章免费获取。攻击面板突出，提供群体易伤、AOE输出和石化效果。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。",
+        "_data_source": "角色描述和命轮效果推导，具体数值待从公开wiki补充"
+      }
+    },
+    "kelaimentng": {
+      "name": "克莱门汀",
+      "name_en": "Clementine",
+      "skills": {
+        "role_in_team": "超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "keposante": {
+      "name": "克珀珊特",
+      "name_en": "Corposant",
+      "skills": {
+        "role_in_team": "深海界域限定防御型角色，v2.1推出。名字含义为「圣艾尔摩之火」。拥有独特护盾和减伤机制。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "kaidigula": {
+      "name": "凯蒂古拉",
+      "name_en": "Kathigu-Ra",
+      "skills": {
+        "role_in_team": "混沌界域限定输出角色，v2.2推出。星辰篇混沌主C选择，名字来源于克苏鲁神话体系。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "danwang_mofei": {
+      "name": "诞妄·墨菲",
+      "name_en": "Murphy: Fauxborn",
+      "skills": {
+        "role_in_team": "深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为合唱型角色与深海主C产生联携效果。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "moxia": {
+      "name": "茉夏",
+      "name_en": "Mouchette",
+      "skills": {
+        "role_in_team": "混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "xu": {
+      "name": "徐",
+      "name_en": "Xu",
+      "skills": {
+        "role_in_team": "血肉界域限定合唱型角色，v2.4二周年版本推出，卡池「夜幕狂喜」。作为合唱型角色与血肉主C产生特殊联携效果。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "kastuo'er": {
+      "name": "卡斯托尔",
+      "name_en": "Castor",
+      "skills": {
+        "lore_connection": "与波吕克斯(Pollux)构成双子角色组合，名字来源于双子座α星。",
+        "role_in_team": "超维界域限定防御角色，v2.2.2推出。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "bolukesi": {
+      "name": "波吕克斯",
+      "name_en": "Pollux",
+      "skills": {
+        "lore_connection": "与卡斯托尔(Castor)构成双子角色组合，名字来源于双子座β星。",
+        "role_in_team": "超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。超维队新一代主C选择。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "xuelian_xiluo": {
+      "name": "血链·希洛",
+      "name_en": "Helot",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "破链一击",
+            "name_en": "Chain Break Strike",
+            "effect": "血链·希洛的核心爆发技能，造成极高单次爆发伤害。配合环行·拉蒙娜的大招召回打击卡，实现「血希」队核心爆发。"
+          }
+        ],
+        "role_in_team": "血肉界域限定输出角色，希洛的血链变体形态。「血希」队伍核心，破链一击爆发伤害极高。推荐配队：血链·希洛+环行·拉蒙娜+辅助。",
+        "_data_source": "从技能描述和队伍攻略推导，具体数值待从公开wiki补充"
+      }
+    },
+    "lai": {
+      "name": "莱",
+      "name_en": "Leigh",
+      "skills": {
+        "character_trait": "嗜血患者(Blood Thirst Patient)，卡文迪什家族成员",
+        "role_in_team": "血肉界域常驻合唱型唤醒体。作为合唱型角色与血肉主C产生联携效果，是常驻池中可获取的合唱位选择。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "duleisaiyin": {
+      "name": "杜勒赛因",
+      "name_en": "Doresain",
+      "skills": {
+        "role_in_team": "血肉界域限定输出型唤醒体，星辰篇推出。名字来源于克苏鲁神话中的食尸鬼之王。拥有独特吞噬增伤机制，血肉队新一代输出选择。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
+    },
+    "pikeman": {
+      "name": "皮克曼",
+      "name_en": "Pickman",
+      "skills": {
+        "signature_wheel": "写实主义悖谬(Paradoxical Realism)：狂气回充7.2；狂气和力量获取+6~12%；超限后提升最终伤害/护盾/治疗。",
+        "role_in_team": "深海界域限定输出型唤醒体，v2.3.2推出。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。",
+        "_data_source": "命轮数据已知，具体卡牌技能数据待从公开wiki补充"
+      }
+    },
+    "aralakeni": {
+      "name": "阿拉克涅",
+      "name_en": "Arachne",
+      "skills": {
+        "role_in_team": "超维界域限定唤醒体，v2.5版本预告角色。名字来源于希腊神话中的织女阿拉克涅。超维队未来主力角色之一。",
+        "_data_source": "v2.5预告角色，具体技能数据待从公开wiki补充"
+      }
     }
   }
 }
