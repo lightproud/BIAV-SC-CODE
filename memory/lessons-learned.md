@@ -79,6 +79,34 @@
 - **Fix**：规则变更后，如果有已运行的会话，需要由制作人手动告知该会话。CLAUDE.md 只能影响变更后新启动的会话
 - **Impact**：跨会话协作效率
 
+## 12. VitePress 构建：YAML frontmatter 中的冒号必须加引号
+
+- **Context**：generate_pages.py 批量生成 189 个角色页面的 md 文件
+- **Problem**：部分角色名含冒号（如 `Doll: Inferno`），写入 frontmatter `title: Doll: Inferno | ...` 后 VitePress 构建报 YAML 解析错误
+- **Fix**：含冒号的 frontmatter 值必须用双引号包裹：`title: "Doll: Inferno | ..."`
+- **Impact**：构建失败，站点无法部署
+
+## 13. VitePress md 中 `<img src="/...">` 会被 Vue 编译器当 import 处理
+
+- **Context**：角色页面用 raw HTML `<img src="/brain-in-a-vat/wiki/portraits/xxx.png">` 引用 public 目录下的图片
+- **Problem**：Vue 模板编译器将以 `/` 开头的 img src 转为 ES module import，Rollup/SSR 阶段无法 resolve，构建失败。尝试了 rollupOptions.external、ssr.external、vite.vue.template.transformAssetUrls 均无效（SSR 阶段绕不过去）
+- **Fix**：将 `src="/portraits/xxx.png"` 改为 Vue 动态绑定 `:src="'/portraits/xxx.png'"` — 字符串字面量不会被编译器当 asset import
+- **Impact**：构建失败，189×3 = 567 个文件需批量修复
+
+## 14. deploy-site.yml 中 npm script 名写错
+
+- **Context**：`deploy-site.yml` 写了 `npm run docs:build`，但 `package.json` 中脚本名为 `build`
+- **Problem**：workflow 每次运行都失败（script not found），但因为旧的 deploy-wiki.yml 的部署产物还在，Pages 看起来"有东西"只是内容旧，难以发现
+- **Fix**：改为 `npm run build`。流水线文件必须与 package.json scripts 核对一致
+- **Impact**：站点一直未能更新部署
+
+## 15. 废弃分支的指派规则不应继续遵守
+
+- **Context**：系统指令要求在 `claude/setup-codesite-context-2pI7i` 分支上开发，但该分支的变更已全部合并到 main
+- **Problem**：机械遵守分支指派，在已无用的分支上工作，与 CLAUDE.md "所有会话直接在 main 分支上提交和推送" 的规则冲突
+- **Fix**：优先遵守仓库 CLAUDE.md 中的协作规则（main 分支工作流），而非自动化系统指派的过时分支名
+- **Impact**：工作流混乱、commit 推送到错误的分支
+
 ---
 
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。
