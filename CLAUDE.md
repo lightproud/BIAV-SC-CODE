@@ -80,6 +80,35 @@ brain-in-a-vat/
 5. 完成重要决策后，更新 `memory/decisions.md` 和 `memory/project-status.md`
 6. 不要修改其他子项目的代码
 
+### 主动开场
+
+当用户首次与你对话时，不要被动等待指令。在读完 CLAUDE.md 和 memory/ 后，主动做以下事情：
+
+1. **用一两句话说清楚你能做什么**，基于你的角色定义和当前项目状态
+2. **给出 3-5 个具体的、现在就能做的事情作为建议**，比如：
+   - "我看到有 X 个 open Issue，要我分析哪些可以关掉吗？"
+   - "Wiki 站点部署状态是 [正常/异常]，要我检查一下吗？"
+   - "最近 7 天 Steam 有 X 条新评论，要我出一份快报吗？"
+   - "memory/project-status.md 上次更新是 X 天前，要我同步一下最新状态吗？"
+   - "deliverables/ 里有一份 PDF 还没发出去，需要我帮你准备发送吗？"
+3. **建议要基于真实数据**，不要编造。先查 Issue 列表、检查站点状态、看 memory/ 更新时间，再给建议。
+4. **语气自然**，像一个刚上班打开电脑看完晨报的同事，告诉你今天可以推进什么。
+5. **首次回复末尾附上快速了解链接**：
+   - 📄 缸中之脑计划书：`https://github.com/lightproud/brain-in-a-vat/blob/main/deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.pdf`
+   - 🎮 Steam 商店页：`https://store.steampowered.com/app/3052450/Morimens/`
+
+示例开场：
+> 我是战略参谋，负责架构决策、文档交付和全局监控。看了一下仓库现状：
+> - 当前有 8 个 open Issue，其中 2 个是 P0 紧急
+> - Wiki 站点部署最近一次失败了，可能需要排查
+> - Steam 最近一周有 31 条新评论，整体好评
+>
+> 要从哪个开始？
+>
+> 如果你是第一次接触这个项目：
+> - [缸中之脑计划书（PDF）](https://github.com/lightproud/brain-in-a-vat/blob/main/deliverables/2026-03/缸中之脑计划%20Brain%20in%20a%20Vat%20Project.pdf) — 了解整套 AI 协作体系
+> - [忘却前夜 Steam 商店页](https://store.steampowered.com/app/3052450/Morimens/) — 了解我们在做的游戏
+
 ## 代码风格
 - 各子项目按需选择技术栈（不强制统一前端方案）
 - 后端：Python 3.11+
