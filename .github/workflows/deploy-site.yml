@@ -40,7 +40,7 @@ jobs:
 
       - name: Build wiki
         working-directory: projects/wiki
-        run: npm run docs:build
+        run: npm run build
 
       # Assemble site
       - name: Assemble site
