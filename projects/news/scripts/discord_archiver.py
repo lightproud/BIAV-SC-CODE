@@ -483,6 +483,26 @@ class DiscordArchiver:
 
     # ---- Daily stats output ----
 
+    def _save_channel_index(self, channels):
+        """Save a channel ID -> name index for external tools (e.g. claude.ai)."""
+        index = {}
+        for ch in channels:
+            ch_id = ch.get('id', '') if isinstance(ch, dict) else ch
+            ch_name = ch.get('name', '') if isinstance(ch, dict) else ''
+            ch_type = ch.get('type', 0) if isinstance(ch, dict) else 0
+            type_label = {0: 'text', 5: 'announcement', 15: 'forum'}.get(ch_type, 'other')
+            index[str(ch_id)] = {
+                'name': ch_name,
+                'type': type_label,
+                'parent_id': ch.get('parent_id', '') if isinstance(ch, dict) else '',
+            }
+
+        index_path = DISCORD_DATA_DIR / 'channel_index.json'
+        index_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(index_path, 'w', encoding='utf-8') as f:
+            json.dump(index, f, ensure_ascii=False, indent=2)
+        logger.info(f'Channel index saved: {len(index)} channels')
+
     def _save_daily_stats(self):
         """Write aggregated daily stats to JSON files."""
         stats_dir = DISCORD_DATA_DIR / 'activity_daily'
@@ -572,10 +592,13 @@ class DiscordArchiver:
                 count = self.fetch_channel_messages(ch_id, ch_name)
                 total_messages += count
 
-        # 4. Save daily stats
+        # 4. Save channel index (ID -> name mapping for external access)
+        self._save_channel_index(text_channels)
+
+        # 5. Save daily stats
         self._save_daily_stats()
 
-        # 5. Save state
+        # 6. Save state
         self._save_state()
 
         elapsed = int(time.time() - run_start)
