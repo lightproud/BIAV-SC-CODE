@@ -20,6 +20,7 @@ jobs:
         id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          direct_push: "true"
         continue-on-error: true
       - name: Close issue on success
         if: steps.claude.outcome == 'success'
