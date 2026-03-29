@@ -16,6 +16,7 @@
 输出: data/collected_raw.json
 """
 
+import asyncio
 import json
 import os
 import re
@@ -374,43 +375,31 @@ def fetch_nga():
 
 
 def fetch_taptap():
-    """从 TapTap 获取忘却前夜社区热帖。"""
-    app_id = os.environ.get("TAPTAP_APP_ID", "")
-    if not app_id:
-        logger.info("TapTap: TAPTAP_APP_ID not set, skipping")
-        return []
+    """从 TapTap 获取忘却前夜社区帖子和评价（Playwright 无头浏览器方案）。
 
-    items = []
+    TapTap 已废弃 webapiv2 端点，改用 taptap_collector 模块通过 headless Chromium
+    渲染页面后拦截 API 响应或提取 DOM 来获取数据。
+    source 字段：帖子为 "taptap_post"，评价为 "taptap_review"。
+    """
     try:
-        data = _get(
-            f"https://api.taptap.cn/app/v2/app/{app_id}/topic/list",
-            params={"type": "hot", "limit": 25},
-        ).json()
+        import taptap_collector as _tc
+    except ImportError:
+        try:
+            import sys
+            sys.path.insert(0, str(Path(__file__).resolve().parent))
+            import taptap_collector as _tc
+        except ImportError:
+            logger.warning("TapTap: taptap_collector not available (playwright not installed?), skipping")
+            return []
 
-        for topic in data.get("data", {}).get("list", []):
-            created = datetime.fromtimestamp(topic.get("created_time", 0), tz=timezone.utc)
-            if created < CUTOFF:
-                continue
-
-            engagement = topic.get("comment_count", 0) + topic.get("like_count", 0)
-            items.append(_make_item(
-                title=topic.get("title", ""),
-                summary=topic.get("summary", ""),
-                source="taptap",
-                platform_region="cn",
-                time_str=created.isoformat(),
-                url=topic.get("share_url", ""),
-                engagement=engagement,
-                is_hot=topic.get("like_count", 0) > 100,
-                author=topic.get("user", {}).get("name", ""),
-                lang="zh",
-            ))
-
-        logger.info(f"TapTap: {len(items)} topics collected")
+    try:
+        topic_items, review_items = asyncio.run(_tc.collect(cutoff=CUTOFF))
+        items = topic_items + review_items
+        logger.info(f"TapTap: {len(topic_items)} posts + {len(review_items)} reviews")
+        return items
     except Exception as e:
         logger.warning(f"TapTap failed: {e}")
-
-    return items
+        return []
 
 
 # ─── 新增数据源 ──────────────────────────────────────────
