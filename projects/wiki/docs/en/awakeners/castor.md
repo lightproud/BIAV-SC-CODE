@@ -23,6 +23,20 @@ portrait: /portraits/castor.png
 
 ## Skills
 
+### Command Cards
+
+Data pending
+
+### Rouse (Awakening)
+
+Data pending
+
+### Exalt
+
+Data pending
+
+### Enlighten
+
 Data pending
 
 ## Recommended Equipment
