@@ -7,7 +7,7 @@
 | 子项目 | 状态 | 负责会话 | 下一步 |
 |--------|------|---------|--------|
 | news（新闻聚合 + 报告系统） | 运行中 | Code-news | 配置 API 密钥，启用更多数据源 |
-| wiki（数据集 + Wiki 站点） | 数据就绪 | Code-wiki | 数据校验、填充 Wiki 页面、部署 |
+| wiki（数据集 + Wiki 站点） | 已部署 | Code-wiki | 数据持续补全、角色详细数据抓取 |
 | game（衍生游戏） | 规划中 | 待创建 | 确定游戏类型 |
 
 ## News 新闻聚合 + 报告系统
@@ -42,15 +42,15 @@
   - 技能系统、战斗机制
   - 地图与关卡数据
   - Python 查询模块 content_db.py
-- **进行中**：数据准确性校验
-- **待办**：接入 Fandom/Gamerch wiki 自动更新
+- **已修复**：13+ 角色英文名、界域 ID 标准化（aequor/caro/ultra）、职能标准化（attack/sub_attack/defense/support/chorus）、ID 转英文 slug
+- **待办**：角色详细字段扩展（目标 ~40 字段）、接入 Fandom/Gamerch wiki 自动更新、整合 content_database.json 技能数据
 - **数据来源**：GameKee wiki、Fandom、Gamerch JP
 
 ### Wiki 站点
-- **已完成**：VitePress 站点框架、三语言结构（EN/JA/ZH）、约 190 页 Markdown
-- **进行中**：填充模板页面内容
+- **已完成**：VitePress 站点框架、三语言结构（EN/JA/ZH）、约 190 页 Markdown、50 页内容填充（ZH/EN/JA）、GitHub Actions 自动部署工作流
 - **技术栈**：VitePress 1.6.3 + Vue 3.5.13
-- **待部署**：GitHub Pages
+- **部署**：GitHub Pages（push to main 自动触发）
+- **待办**：角色详细数据（技能/卡牌/天赋/立绘）抓取、content_database.json 整合
 
 ## Game 衍生游戏
 

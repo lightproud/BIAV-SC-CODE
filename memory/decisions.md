@@ -14,6 +14,10 @@
 | 2026-03-28 | 子项目保持单仓库，不拆分独立 repo | 所有会话需共享 memory/assets，分支隔离已够用，体量轻量无性能压力；仅当 game 资源膨胀时再考虑 submodule 拆分 | 全局 |
 | 2026-03-28 | 确立分支管理策略（见下方详细说明） | main 作为稳定基线，子项目分支从 main 拉取，功能稳定后由主控台 PR 合并回 main | 全局 |
 | 2026-03-28 | 合并 database 和 wiki 为单一 wiki 子项目 | 数据集是 wiki 的后端，站点是 wiki 的前端，分开容易混淆 | wiki |
+| 2026-03-28 | Wiki 部署 GitHub Pages + Actions 自动化 | 社区可直接访问，push to main 自动部署，无需手动操作 | wiki |
+| 2026-03-28 | 界域 ID 标准化（aequor/caro/ultra） | 与游戏官方英文术语对齐，原 deep_sea/flesh/hyperdimension 保留为 legacy_id | wiki/data |
+| 2026-03-28 | 角色职能标准化（attack/sub_attack/defense/support/chorus） | 统一数据规范，原 dps/sub_dps/tank 已全量替换 | wiki/data |
+| 2026-03-28 | 角色 ID 从拼音改为英文 slug | 方便国际化 URL 和跨语言引用 | wiki/data |
 | 2026-03-29 | 引入 Claude Code GitHub Actions | Issue 驱动自动化，减少人工中转 | 全局 |
 | 2026-03-29 | Issue 安全策略：只执行 author:lightproud | 防止外部 Issue 被自动执行 | 全局 |
 
@@ -38,5 +42,6 @@
 | 分支 | 子项目 | 说明 |
 |------|--------|------|
 | `claude/main-control-console-ObGQw` | 主控制台 | 项目规划与协调 |
+| `claude/wiki-deploy-github-pages-6buag` | wiki | 数据修复 + 50 页内容填充 + GitHub Pages 部署（PR #20 待合并） |
 
 > 其他重构分支已合并到 main。新的子项目会话启动时从 main 拉新分支。

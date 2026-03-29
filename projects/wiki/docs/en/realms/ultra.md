@@ -4,9 +4,17 @@
 
 ## Core Identity
 
-Ultra is a speed-focused realm that rewards playing as many cards as possible per turn. When conditions are met, Ultra effects grant additional actions or full extra turns, allowing you to take far more actions than your opponent.
+Ultra is a speed-focused realm that rewards playing as many cards as possible per turn. When conditions are met, Ultra effects grant additional actions or full extra turns, allowing you to take far more actions than your opponent. Currently ranked as an **A-tier realm** -- a veteran strong team with a high ceiling but surpassed by Aequor and Caro.
 
 ## Key Mechanics
+
+### Realm Talent: Hyperdimension Space
+
+After activating the Ultra realm talent, a "Hyperdimension Space" appears above the team. Each turn, copies of the first command cards played are stored in this space. When the storage reaches its limit, the team enters an **extra Ultra turn** where all stored cards become hand cards.
+
+### Pure Ultra Resonance
+
+In a pure Ultra composition, the Proficiency stat effect is **doubled**, and the ability reduction penalty during extra turns is **completely nullified**.
 
 ### Extra Turns from Card Play
 
@@ -30,23 +38,30 @@ Ultra decks prioritize low Arithmetica cost cards to maximize the number of card
 The ideal Ultra turn plays 3-4 low-cost cards, triggers an extra turn, then plays 3-4 more. Card draw effects that keep your hand full are extremely valuable.
 :::
 
-### Snowball Potential
+## Ultra Awakeners
 
-Ultra teams start relatively slow but accelerate rapidly:
-
-- **Turn 1-2** -- Setup; play cards and build toward first extra turn.
-- **Turn 3+** -- Begin chaining extra turns. Each extra turn deals damage and sets up the next chain.
-- **Late Battle** -- Ultra teams can take 2-3 actions for every 1 enemy action.
-
-::: warning
-If your chain breaks (due to running out of cards or Arithmetica), Ultra teams lose their momentum and can struggle to recover. Always maintain card draw sources.
-:::
+| Awakener | Role | Tier | Availability |
+|----------|------|------|-------------|
+| Arachne | Attack | — | Limited (v2.5) |
+| Casiah | Sub-Attack | T1 | Standard |
+| Castor | Defense | — | Limited |
+| Clementine | Support | — | Limited |
+| Daffodil | Attack | T0 | Limited |
+| Erica | Defense | T0 | Free (Caro Rift I) |
+| Horla | Support | — | Standard |
+| Jenkins | Sub-Attack | T1 | Standard |
+| Liz | Attack | T0 | Standard |
+| Pollux | Attack | — | Limited |
+| Tincture | Support | T2 | Standard |
+| Wanda | Defense | — | Standard |
+| Winkle | Support | T1 | Standard |
 
 ## Team Building with Ultra
 
-- **Chain Starters** -- Awakeners with 0-1 cost Command Cards that trigger extra turn effects.
-- **Card Draw** -- Awakeners or cards that refill your hand to sustain chains.
-- **Arithmetica Recovery** -- Effects that refund or generate Arithmetica to keep playing cards.
+- **Ultra Poison Team (Beginner Recommended)** -- Wanda + Nodera (1-awaken) + Erica (1-awaken) + Nymphia/Winkle: Best beginner team. Only Wanda is mandatory. Nymphia + Poison Tarot can indefinitely stall bosses. Realm Mastery 100+ recommended.
+- **Ultra Starter Team** -- Liz + Erica + Ogier + Doll: All free/starter characters. Stack poison and survive. Note: Liz poison meta has been surpassed by Aequor/Caro in current version.
+- **Ultra Double-C Double-Shield** -- Winkle + Erica + Liz + flex: When multi-hitting enemies, prioritize Winkle's moth fire to stack green flame, then use Erica's Overload for shields.
+- **Horla Core Team** -- Liz + Horla + Erica + Ramona: Horla is the core Ultra support for progression teams.
 
 ## Strengths and Weaknesses
 
@@ -54,7 +69,12 @@ If your chain breaks (due to running out of cards or Arithmetica), Ultra teams l
 |-----------|------------|
 | Highest action economy in the game | Weak when chain is disrupted |
 | Snowball victories; overwhelming momentum | Requires specific low-cost card pool |
-| Multiple turns means more Madness and Silver Key generation | Individual card damage is low |
+| Multiple turns means more Aliemus and Silver Key generation | Individual card damage is low |
+| Good for sustained fights | Has been surpassed by Aequor/Caro in current meta |
+
+::: warning
+If your chain breaks (due to running out of cards or Arithmetica), Ultra teams lose their momentum and can struggle to recover. Always maintain card draw sources.
+:::
 
 ## See Also
 

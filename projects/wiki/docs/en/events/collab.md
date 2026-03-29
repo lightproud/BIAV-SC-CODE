@@ -11,9 +11,10 @@ Morimens has collaborated with **Saya no Uta** (Saya's Song), a visual novel by 
 | Aspect | Detail |
 |--------|--------|
 | Collaborating IP | Saya no Uta (Nitroplus) |
+| Author | Gen Urobuchi |
 | Thematic Connection | Lovecraftian horror, body horror, perception of reality |
-| Exclusive Content | *To be added* |
-| Availability | *To be added* |
+| Exclusive Content | Collaboration characters and event story added to the game |
+| Type | Limited-time collaboration event |
 
 ::: tip
 Collaboration events are typically limited-time and do not rerun. If a collaboration interests you, prioritize participating during its active period.
@@ -21,7 +22,7 @@ Collaboration events are typically limited-time and do not rerun. If a collabora
 
 ## Future Collaborations
 
-*To be added -- future collaboration announcements will be documented here.*
+No additional collaborations have been announced at this time. Future collaboration announcements will be documented here.
 
 ## See Also
 

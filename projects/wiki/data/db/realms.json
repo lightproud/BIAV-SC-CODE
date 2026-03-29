@@ -40,7 +40,7 @@
       "starter_tip": "最明显的就是死亡抵抗，知道这一点之后就敢放心卖死抗，混沌算是入门了。新手开荒推荐使用初始四小只（混沌角色）。"
     },
     {
-      "id": "deep_sea",
+      "id": "aequor",
       "name": "深海",
       "name_en": "Deep Sea",
       "color": "#3498db",
@@ -58,10 +58,11 @@
       },
       "co_resonance": [],
       "core_mechanic": "围绕触腕堆叠与触腕伤害进行构筑，触手的暴击率和暴击伤害为4只出战角色均分。力量:触手伤害=2:1，界域精通:狂气爆发后触手追加攻击次数=2:1。",
-      "starter_tip": "深海最明显的特点是回合结束自动追击，知道这一点之后就可以补刀收割，深海算是入门了。深海是开荒最舒服的队伍。"
+      "starter_tip": "深海最明显的特点是回合结束自动追击，知道这一点之后就可以补刀收割，深海算是入门了。深海是开荒最舒服的队伍。",
+      "legacy_id": "deep_sea"
     },
     {
-      "id": "flesh",
+      "id": "caro",
       "name": "血肉",
       "name_en": "Flesh",
       "color": "#e74c3c",
@@ -79,10 +80,11 @@
       },
       "co_resonance": [],
       "core_mechanic": "手中持有「胚」卡时，可与血肉角色的狂气爆发技能配合发动「吞噬」效果，消耗「胚」来触发超强力效果。胚胎可以加速全队狂气回转和加强大招输出。",
-      "starter_tip": "血肉的上手难度最高，开荒时很难把控血量与胚胎的优势。"
+      "starter_tip": "血肉的上手难度最高，开荒时很难把控血量与胚胎的优势。",
+      "legacy_id": "flesh"
     },
     {
-      "id": "hyperdimension",
+      "id": "ultra",
       "name": "超维",
       "name_en": "Hyperdimension",
       "color": "#f1c40f",
@@ -100,7 +102,8 @@
       },
       "co_resonance": [],
       "core_mechanic": "超维的机制能给队伍带来一个额外回合，能有效带来输出空间和缓冲时间。",
-      "starter_tip": "超维强度不错但有一定上手难度。"
+      "starter_tip": "超维强度不错但有一定上手难度。",
+      "legacy_id": "hyperdimension"
     }
   ]
 }

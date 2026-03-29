@@ -4,15 +4,15 @@
   "realm_tier": {
     "note": "当前版本(v2.4)各界域整体强度排名",
     "ranking": [
-      {"tier": "S", "realm": "deep_sea", "name": "深海/触手", "note": "增强后为当前最强界域"},
-      {"tier": "S", "realm": "flesh", "name": "血肉", "note": "神父+专武后与深海并列S级"},
+      {"tier": "S", "realm": "aequor", "name": "深海/触手", "note": "增强后为当前最强界域"},
+      {"tier": "S", "realm": "caro", "name": "血肉", "note": "神父+专武后与深海并列S级"},
       {"tier": "A+", "realm": "chaos", "name": "混沌", "note": "24单人撑起整个界域，但缺乏完整阵容深度"},
-      {"tier": "A", "realm": "hyperdimension", "name": "超维", "note": "老牌强队，上限高但已被深海/血肉超越"}
+      {"tier": "A", "realm": "ultra", "name": "超维", "note": "老牌强队，上限高但已被深海/血肉超越"}
     ]
   },
 
   "teams_by_realm": {
-    "deep_sea": [
+    "aequor": [
       {
         "name": "触手混伤队",
         "name_en": "Tentacle Mixed-Damage Team",
@@ -47,7 +47,7 @@
         "notes": "全常驻角色组成，适合长期投资深海的新手。"
       }
     ],
-    "flesh": [
+    "caro": [
       {
         "name": "尤乌哈希血肉队",
         "name_en": "Uuhashi Standard Flesh",
@@ -74,7 +74,7 @@
         "notes": "24的血肉共鸣：算力消耗=胚融合+力量增益。"
       }
     ],
-    "hyperdimension": [
+    "ultra": [
       {
         "name": "超维毒队（新手推荐）",
         "name_en": "Ultra Poison Team (Beginner Recommended)",
@@ -157,10 +157,10 @@
     "note": "要求不重复唤醒体/命轮/钥令的多队伍终局挑战。主C练度要求高，需根据关卡词条更换C位。",
     "recommended": [
       {"realm": "chaos", "team": "24+初始(去萝坦)", "note": "24屠杀主线和融灾。有条件超限珈伦。"},
-      {"realm": "deep_sea", "team": "凯刻斯反击队(凯狗哈环)", "note": "顶配反击队，投入即产出。粉鱼性价比极高。"},
-      {"realm": "deep_sea", "team": "珊护盾队", "note": "需要诺缔拉才能运转。"},
-      {"realm": "flesh", "team": "尤乌+雷娅+艾继丝+菲茵特", "note": "标准血肉，根据Boss机制替换C位。"},
-      {"realm": "flesh", "team": "神父+雷娅+弹性", "note": "羊妈+神父公认Top3最强阵容。"}
+      {"realm": "aequor", "team": "凯刻斯反击队(凯狗哈环)", "note": "顶配反击队，投入即产出。粉鱼性价比极高。"},
+      {"realm": "aequor", "team": "珊护盾队", "note": "需要诺缔拉才能运转。"},
+      {"realm": "caro", "team": "尤乌+雷娅+艾继丝+菲茵特", "note": "标准血肉，根据Boss机制替换C位。"},
+      {"realm": "caro", "team": "神父+雷娅+弹性", "note": "羊妈+神父公认Top3最强阵容。"}
     ]
   },
 

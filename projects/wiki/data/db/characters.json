@@ -2,62 +2,98 @@
   "description": "忘却前夜全唤醒体（角色）数据库。角色分为SSR和SR两个稀有度，分属混沌/深海/血肉/超维四大界域。",
   "tier_list_source": "GameKee Wiki（注意：wiki节奏榜可能已停更，与最新版本可能不符）",
   "role_types": {
-    "dps": {"name": "输出", "name_en": "Damage Dealer", "description": "主要输出角色，负责造成伤害。"},
-    "support": {"name": "辅助", "name_en": "Support", "description": "提供增益、减益等辅助效果。"},
-    "defense": {"name": "防御", "name_en": "Defense", "description": "承受伤害、保护队友。"},
-    "healer": {"name": "治疗", "name_en": "Healer", "description": "恢复队友生命值。"},
-    "chorus": {"name": "合唱", "name_en": "Chorus", "description": "v2.4新增角色类型，合唱型角色。与主C配合产生特殊联携效果。"}
+    "attack": {
+      "name": "输出",
+      "name_en": "Attack",
+      "description": "主要输出角色，负责造成伤害。"
+    },
+    "sub_attack": {
+      "name": "副输出",
+      "name_en": "Sub-Attack",
+      "description": "副输出角色，配合主C输出。"
+    },
+    "support": {
+      "name": "辅助",
+      "name_en": "Support",
+      "description": "提供增益、减益等辅助效果。"
+    },
+    "defense": {
+      "name": "防御",
+      "name_en": "Defense",
+      "description": "承受伤害、保护队友。"
+    },
+    "healer": {
+      "name": "治疗",
+      "name_en": "Healer",
+      "description": "恢复队友生命值。"
+    },
+    "chorus": {
+      "name": "合唱",
+      "name_en": "Chorus",
+      "description": "v2.4新增角色类型，合唱型角色。与主C配合产生特殊联携效果。"
+    }
   },
   "characters": [
     {
-      "id": "aierwa",
+      "id": "alva",
       "name": "艾尔瓦",
-      "name_en": "Elva",
+      "name_en": "Alva",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "dps",
+      "role": "defense",
       "tier": "T0",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["主C", "混沌核心"],
-      "description": "混沌属性T0级输出角色。",
+      "tags": [
+        "主C",
+        "混沌核心"
+      ],
+      "description": "混沌界域防御型唤醒体，御四家之一。官方定位防御型，实际为攻防一体坦C——护盾越高伤害越高。银钥共鸣体系核心坦克，死亡抵抗机制使其极难倒下。社区公认混沌队基石。",
       "portrait_url": null
     },
     {
-      "id": "duoer",
+      "id": "doll",
       "name": "朵尔",
-      "name_en": "Dor",
+      "name_en": "Doll",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "dps",
+      "role": "attack",
       "tier": "T0",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["主C"],
-      "description": "混沌属性T0级输出角色。",
+      "tags": [
+        "主C"
+      ],
+      "description": "混沌界域T0输出型唤醒体，御四家之一。拥有「终章形态」变身机制：使用终章后全技能改变效果，牺牲治疗换取自伤增强毒伤，化身玻璃大炮。与SR版朵尔为不同角色。",
       "portrait_url": null
     },
     {
-      "id": "huanxing_lamengna",
+      "id": "ramona-timeworn",
       "name": "环行·拉蒙娜",
-      "name_en": "Cyclical Ramona",
+      "name_en": "Ramona: Timeworn",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "dps",
+      "role": "attack",
       "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
-      "aliases": ["环拉"],
-      "tags": ["主C", "限定", "拉蒙娜变体"],
-      "description": "混沌属性T0级限定输出角色，拉蒙娜的变体形态。",
+      "aliases": [
+        "环拉"
+      ],
+      "tags": [
+        "主C",
+        "限定",
+        "拉蒙娜变体"
+      ],
+      "description": "混沌界域T0限定输出角色，拉蒙娜的环行变体形态。围绕负熵（Negentropy）和卡牌操控的辅助输出角色，可召回大量打击卡配合队友爆发。社区简称「环拉」。",
       "portrait_url": null
     },
     {
-      "id": "aojier",
+      "id": "ogier",
       "name": "奥吉尔",
-      "name_en": "Augier",
+      "name_en": "Ogier",
       "rarity": "SSR",
       "realm": "chaos",
       "role": "support",
@@ -65,27 +101,32 @@
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["辅助"],
-      "description": "混沌属性T1级辅助角色，御四家成员之一。",
+      "tags": [
+        "辅助"
+      ],
+      "description": "混沌界域T1辅助型唤醒体，御四家成员之一。提供队伍增益和敌方减益，是混沌队稳定的后排辅助。与SR版奥吉尔为不同角色，SR版提供嘲讽/点名能力。",
       "portrait_url": null
     },
     {
-      "id": "luotan",
+      "id": "lotan",
       "name": "萝坦",
-      "name_en": "Rotan",
+      "name_en": "Lotan",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "tank",
+      "role": "defense",
       "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["防御", "御四家"],
-      "description": "混沌属性T1级防御角色，御四家成员之一。",
+      "tags": [
+        "防御",
+        "御四家"
+      ],
+      "description": "混沌界域T1防御型唤醒体，御四家成员之一。银钥共鸣体系防御核心，死亡抵抗机制出色。与SR版萝坦为不同角色，SSR版侧重团队护盾和反伤。",
       "portrait_url": null
     },
     {
-      "id": "lamengna",
+      "id": "ramona",
       "name": "拉蒙娜",
       "name_en": "Ramona",
       "rarity": "SSR",
@@ -95,57 +136,70 @@
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["辅助", "御四家"],
-      "description": "混沌属性T1级辅助角色，御四家成员之一，社区讨论度高。",
+      "tags": [
+        "辅助",
+        "御四家"
+      ],
+      "description": "混沌界域T1辅助型唤醒体，御四家成员之一。可从弃牌堆找回指令卡并最多减4费，卡牌循环能力优秀。社区讨论度高，与SR版拉蒙娜为不同角色。",
       "portrait_url": null
     },
     {
-      "id": "pandiya",
+      "id": "pandya",
       "name": "潘狄娅",
       "name_en": "Pandya",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "sub_dps",
+      "role": "sub_attack",
       "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["副输出"],
-      "description": "混沌属性T2级角色。",
+      "tags": [
+        "副输出"
+      ],
+      "description": "混沌界域T2副输出型唤醒体。擅长配合混沌主C进行副输出，在混沌队阵容中作为灵活的副C填充位使用。",
       "portrait_url": null
     },
     {
-      "id": "nuodila",
+      "id": "nodera",
       "name": "诺缔拉",
       "name_en": "Nodera",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "dps",
+      "role": "attack",
       "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
-      "aliases": ["鹦鹉螺"],
-      "tags": ["输出"],
-      "description": "混沌属性T2级角色，别称鹦鹉螺。",
+      "aliases": [
+        "鹦鹉螺"
+      ],
+      "tags": [
+        "输出"
+      ],
+      "description": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。角色设计灵感来自鹦鹉螺，战斗风格以循环打击为主。常驻池可获取的混沌输出角色。",
       "portrait_url": null
     },
     {
-      "id": "jialun",
+      "id": "galen",
       "name": "伽伦",
       "name_en": "Galen",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "sub_dps",
+      "role": "sub_attack",
       "tier": "T3",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
-      "aliases": ["珈伦"],
-      "tags": ["副输出"],
-      "description": "混沌属性T3级角色。",
+      "aliases": [
+        "珈伦"
+      ],
+      "tags": [
+        "副输出"
+      ],
+      "description": "混沌界域T3副输出型唤醒体，社区也写作「珈伦」。超限后配合塔薇+拉蒙娜阵容可发挥出色表现。常用于凯刻斯反击队体系中。",
       "portrait_url": null
     },
     {
-      "id": "ningfeiya",
+      "id": "nymphia",
       "name": "宁菲亚",
       "name_en": "Nymphia",
       "rarity": "SSR",
@@ -155,23 +209,28 @@
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["辅助"],
-      "description": "混沌属性T3级辅助角色。",
+      "tags": [
+        "辅助"
+      ],
+      "description": "混沌界域T3辅助型唤醒体。提供队伍增益效果，在混沌辅助位中属于入门级选择。常驻池可获取。",
       "portrait_url": null
     },
     {
-      "id": "lili",
+      "id": "lily",
       "name": "莉莉",
       "name_en": "Lily",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "tank",
+      "role": "defense",
       "tier": "T1",
       "is_limited": false,
       "obtain": "活动唤醒「花不染尘」",
       "aliases": [],
-      "tags": ["防御", "v1.1新角色"],
-      "description": "混沌界域防御型唤醒体，v1.1下半版本通过「花不染尘」活动推出。",
+      "tags": [
+        "防御",
+        "v1.1新角色"
+      ],
+      "description": "混沌界域防御型唤醒体，v1.1下半版本通过「花不染尘」活动推出。主线重要角色，与守密人关系密切。防御能力出色，为混沌队提供稳定护盾。",
       "portrait_url": null
     },
     {
@@ -180,89 +239,116 @@
       "name_en": "Danmo",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "dps",
+      "role": "attack",
       "tier": "T1",
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["主C", "限定"],
-      "description": "混沌属性限定输出角色，满配后伤害极高，常作为助战首选。",
+      "tags": [
+        "主C",
+        "限定"
+      ],
+      "description": "混沌界域限定输出角色，满配后伤害极高，常作为助战首选。银钥爆发流代表角色，一轮爆发可秒杀大多数Boss。",
       "portrait_url": null
     },
     {
-      "id": "miliyamu",
+      "id": "miryam",
       "name": "弥利亚姆",
       "name_en": "Miryam",
       "rarity": "SSR",
-      "realm": "deep_sea",
+      "realm": "aequor",
       "role": "support",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
-      "aliases": ["米粒", "Mili", "Miriam"],
-      "tags": ["限定", "v1.4加强", "深海辅助"],
-      "description": "深海界域限定辅助型唤醒体，强力触手辅助。v1.4版本获得增强：技能「至高生命献祭」调整为穿透伤害，灵之觉醒与天赋增强。",
+      "aliases": [
+        "米粒",
+        "Mili",
+        "Miriam"
+      ],
+      "tags": [
+        "限定",
+        "v1.4加强",
+        "深海辅助"
+      ],
+      "description": "深海界域限定辅助型唤醒体，强力触手辅助。社区昵称「米粒」。v1.4版本获得增强：技能「至高生命献祭」调整为穿透伤害，灵之觉醒与天赋增强。深海队必备辅助。",
       "portrait_url": null
     },
-
     {
       "id": "tulu",
       "name": "图鲁",
       "name_en": "Tulu",
       "rarity": "SSR",
-      "realm": "deep_sea",
-      "role": "dps",
+      "realm": "aequor",
+      "role": "attack",
       "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
-      "aliases": ["幼主", "沉睡之主"],
-      "tags": ["主C", "深海核心", "限定"],
-      "description": "深海界域T0级输出角色，深海长眠的永恒国度君王。角色原型为克苏鲁，正太外形。",
+      "aliases": [
+        "幼主",
+        "沉睡之主"
+      ],
+      "tags": [
+        "主C",
+        "深海核心",
+        "限定"
+      ],
+      "description": "深海界域T0级输出角色，深海队核心主C。角色原型为克苏鲁，正太外形，被称为「幼主」「沉睡之主」。通过触腕和穿刺伤害造成极高输出，深海体系的绝对核心。",
       "portrait_url": null
     },
     {
-      "id": "shenwang_tulu",
+      "id": "divine-king-tulu",
       "name": "神王·图鲁",
       "name_en": "Divine King Tulu",
       "rarity": "SSR",
-      "realm": "deep_sea",
-      "role": "dps",
+      "realm": "aequor",
+      "role": "attack",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
-      "aliases": ["神王"],
-      "tags": ["主C", "限定", "图鲁变体"],
-      "description": "图鲁的变体形态，深海界域限定角色。",
+      "aliases": [
+        "神王"
+      ],
+      "tags": [
+        "主C",
+        "限定",
+        "图鲁变体"
+      ],
+      "description": "图鲁的神王变体形态，深海界域限定角色。社区简称「神王」。作为图鲁的进化形态，战斗能力进一步提升，深海队的顶级主C选择。",
       "portrait_url": null
     },
     {
-      "id": "xilaisite",
+      "id": "celeste",
       "name": "希莱斯特",
       "name_en": "Celeste",
       "rarity": "SSR",
-      "realm": "deep_sea",
+      "realm": "aequor",
       "role": "support",
       "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["辅助"],
-      "description": "深海属性T1级辅助角色，适配性强。",
+      "tags": [
+        "辅助"
+      ],
+      "description": "深海界域T1辅助型唤醒体，适配性极强，同时在混沌队中也有T1表现。高贵的复活奶——0费卡可奶可加算力，高费卡和觉醒技可提供触手。深海队核心辅助。",
       "portrait_url": null
     },
     {
-      "id": "geliya",
+      "id": "goliath",
       "name": "戈利亚",
       "name_en": "Goliath",
       "rarity": "SSR",
-      "realm": "deep_sea",
-      "role": "tank",
+      "realm": "aequor",
+      "role": "defense",
       "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["防御"],
-      "description": "深海属性T1级防御角色。",
+      "tags": [
+        "防御"
+      ],
+      "description": "深海界域T1防御型唤醒体。为深海队提供稳定的前排防护和触手联动能力。拥有灵塑适性天赋，触腕伤害额外提升。常驻池可获取。",
       "portrait_url": null
     },
     {
@@ -270,308 +356,364 @@
       "name": "珊",
       "name_en": "Shan",
       "rarity": "SSR",
-      "realm": "deep_sea",
-      "role": "sub_dps",
+      "realm": "aequor",
+      "role": "sub_attack",
       "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["副输出"],
-      "description": "深海属性T1级副输出角色。",
+      "tags": [
+        "副输出"
+      ],
+      "description": "深海界域T1副输出型唤醒体。深海触手体系中的副C位置，配合图鲁等主C进行触腕联动输出。常驻池可获取。",
       "portrait_url": null
     },
     {
-      "id": "aoruita",
+      "id": "aurita",
       "name": "奥瑞塔",
       "name_en": "Aurita",
       "rarity": "SSR",
-      "realm": "deep_sea",
-      "role": "dps",
+      "realm": "aequor",
+      "role": "attack",
       "tier": "T2",
       "is_limited": false,
       "obtain": "免费获取(通关混沌界域裂隙I)",
       "aliases": [],
-      "tags": ["输出", "深潜三杰", "免费SSR"],
-      "description": "深海界域输出型唤醒体，深潜三杰成员之一。通关混沌界域裂隙I免费获取。爆发+循环卡牌，深海万能锤。",
+      "tags": [
+        "输出",
+        "深潜三杰",
+        "免费SSR"
+      ],
+      "description": "深海界域输出型唤醒体，深潜三杰成员之一。通关混沌界域裂隙I免费获取。爆发+循环卡牌打法，被称为「深海万能锤」，新手友好的免费SSR。",
       "portrait_url": null
     },
     {
-      "id": "kaikesi",
+      "id": "caecus",
       "name": "凯刻斯",
-      "name_en": "Ceyx",
+      "name_en": "Caecus",
       "rarity": "SSR",
-      "realm": "deep_sea",
-      "role": "sub_dps",
+      "realm": "aequor",
+      "role": "sub_attack",
       "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["副输出"],
-      "description": "深海属性T2级角色。",
+      "tags": [
+        "副输出"
+      ],
+      "description": "深海界域T2副输出型唤醒体。深海体系中的灵活副C，可配合反击队体系使用。常驻池可获取。",
       "portrait_url": null
     },
     {
-      "id": "faluosi",
+      "id": "faros",
       "name": "法洛思",
-      "name_en": "Pharos",
+      "name_en": "Faros",
       "rarity": "SSR",
-      "realm": "deep_sea",
+      "realm": "aequor",
       "role": "support",
       "tier": "T3",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["辅助"],
-      "description": "深海属性T3级角色。",
+      "tags": [
+        "辅助"
+      ],
+      "description": "深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。常驻池可获取。",
       "portrait_url": null
     },
-
     {
-      "id": "youwuhaxi",
+      "id": "uvhash",
       "name": "尤乌哈希",
-      "name_en": "Yuhashi",
+      "name_en": "Uvhash",
       "rarity": "SSR",
-      "realm": "flesh",
-      "role": "dps",
+      "realm": "caro",
+      "role": "attack",
       "tier": "T0",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["主C", "血肉核心"],
-      "description": "血肉属性T0级输出角色。",
+      "tags": [
+        "主C",
+        "血肉核心"
+      ],
+      "description": "血肉界域T0输出型唤醒体，血肉队核心主C之一。通过自残降血触发吞噬机制，反复释放狂气爆发造成递增伤害。体质属性极高，越战越强的暴走型角色。",
       "portrait_url": null
     },
     {
-      "id": "leiya",
+      "id": "rhea",
       "name": "雷娅",
       "name_en": "Rhea",
       "rarity": "SSR",
-      "realm": "flesh",
+      "realm": "caro",
       "role": "support",
       "tier": "T0",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["辅助"],
-      "description": "血肉属性T0级辅助角色。",
+      "tags": [
+        "辅助"
+      ],
+      "description": "血肉界域T0辅助型唤醒体，血肉队核心辅助。兼具回血和上盾功能，核心玩法为「养胎流」——通过孕育胚胎积累增益后一次释放爆发。血肉队必备。",
       "portrait_url": null
     },
     {
-      "id": "suoleier",
+      "id": "sorel",
       "name": "索蕾尔",
-      "name_en": "Soleil",
+      "name_en": "Sorel",
       "rarity": "SSR",
-      "realm": "flesh",
-      "role": "dps",
+      "realm": "caro",
+      "role": "attack",
       "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
-      "aliases": ["红女王"],
-      "tags": ["主C", "限定"],
-      "description": "血肉界域T0级限定角色，被誉为红女王，穿着红色玫瑰裙，沙龙主人。",
+      "aliases": [
+        "红女王"
+      ],
+      "tags": [
+        "主C",
+        "限定"
+      ],
+      "description": "血肉界域T0限定输出角色，被誉为「红女王」。穿着红色玫瑰裙的沙龙主人，血肉主C之一。附带回血技能，攻守兼备的限定角色。",
       "portrait_url": null
     },
     {
-      "id": "taiyisi",
+      "id": "thais",
       "name": "泰旖丝",
-      "name_en": "Thysia",
+      "name_en": "Thais",
       "rarity": "SSR",
-      "realm": "flesh",
+      "realm": "caro",
       "role": "support",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
-      "aliases": ["羊妈"],
-      "tags": ["辅助", "限定"],
-      "description": "血肉界域SSR限定角色，被称为羊妈。",
+      "aliases": [
+        "羊妈"
+      ],
+      "tags": [
+        "辅助",
+        "限定"
+      ],
+      "description": "血肉界域SSR限定辅助角色，社区昵称「羊妈」。提供队伍增益和回复，是血肉队的顶级辅助选择之一。限定池获取。",
       "portrait_url": null
     },
     {
-      "id": "ailisi",
+      "id": "alice",
       "name": "爱丽丝",
       "name_en": "Alice",
       "rarity": "SSR",
-      "realm": "flesh",
-      "role": "sub_dps",
+      "realm": "caro",
+      "role": "sub_attack",
       "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["副输出"],
-      "description": "血肉属性T1级角色。",
+      "tags": [
+        "副输出"
+      ],
+      "description": "血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。常驻池可获取。",
       "portrait_url": null
     },
     {
-      "id": "feiyinte",
+      "id": "faint",
       "name": "菲茵特",
-      "name_en": "Feint",
+      "name_en": "Faint",
       "rarity": "SSR",
-      "realm": "flesh",
-      "role": "sub_dps",
+      "realm": "caro",
+      "role": "sub_attack",
       "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["副输出"],
-      "description": "血肉属性T2级副输出角色。",
+      "tags": [
+        "副输出"
+      ],
+      "description": "血肉界域T2副输出型唤醒体。血肉体系中的灵活副C位置，可配合尤乌哈希等主C使用。常驻池可获取。",
       "portrait_url": null
     },
     {
-      "id": "agelipa",
+      "id": "agrippa",
       "name": "阿格里帕",
       "name_en": "Agrippa",
       "rarity": "SSR",
-      "realm": "flesh",
-      "role": "tank",
+      "realm": "caro",
+      "role": "defense",
       "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["防御"],
-      "description": "血肉属性T2级防御角色。",
+      "tags": [
+        "防御"
+      ],
+      "description": "血肉界域T2防御型唤醒体。为血肉队提供前排防护，适合血肉队的防御需求。常驻池可获取。",
       "portrait_url": null
     },
     {
-      "id": "xiluo",
+      "id": "shilo",
       "name": "希洛",
       "name_en": "Shilo",
       "rarity": "SSR",
-      "realm": "flesh",
-      "role": "dps",
+      "realm": "caro",
+      "role": "attack",
       "tier": "T3",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["输出"],
-      "description": "血肉属性T3级输出角色。",
+      "tags": [
+        "输出"
+      ],
+      "description": "血肉界域T3输出型唤醒体。血肉队初期主C选择，后续被血链·希洛等限定角色超越。常驻池可获取，有变体「血链·希洛」。",
       "portrait_url": null
     },
-
     {
-      "id": "airuika",
+      "id": "erica",
       "name": "艾瑞卡",
       "name_en": "Erica",
       "rarity": "SSR",
-      "realm": "hyperdimension",
+      "realm": "ultra",
       "role": "defense",
       "tier": "T0",
       "is_limited": false,
       "obtain": "免费获取(通关血肉沼泽裂隙I)",
       "aliases": [],
-      "tags": ["防御", "超维核心", "深潜三杰", "免费SSR"],
-      "description": "超维属性T0级输出角色，超维队核心主C，深潜三杰成员之一。",
+      "tags": [
+        "防御",
+        "超维核心",
+        "深潜三杰",
+        "免费SSR"
+      ],
+      "description": "超维界域T0防御型唤醒体，超维队核心成员，深潜三杰之一。通关血肉沼泽裂隙I免费获取。提供力量加成和易伤效果，是超维队爆发回合的关键角色。新手必练。",
       "portrait_url": null
     },
     {
-      "id": "lizi",
+      "id": "liz",
       "name": "莉兹",
       "name_en": "Liz",
       "rarity": "SSR",
-      "realm": "hyperdimension",
-      "role": "dps",
+      "realm": "ultra",
+      "role": "attack",
       "tier": "T0",
       "is_limited": false,
       "obtain": "活动唤醒",
-      "aliases": ["青炎舞者", "青炎"],
-      "tags": ["主C"],
-      "description": "超维属性T0级输出角色，别称青炎舞者。",
+      "aliases": [
+        "青炎舞者",
+        "青炎"
+      ],
+      "tags": [
+        "主C"
+      ],
+      "description": "超维界域T0输出型唤醒体，社区别称「青炎舞者」「青炎」。以毒伤+穿刺为核心的爆发型主C，超维队的主要输出选择。青色火焰为其标志性视觉元素。",
       "portrait_url": null
     },
     {
-      "id": "dafudaier",
+      "id": "daffodil",
       "name": "达芙黛尔",
-      "name_en": "Daphne",
+      "name_en": "Daffodil",
       "rarity": "SSR",
-      "realm": "hyperdimension",
-      "role": "dps",
+      "realm": "ultra",
+      "role": "attack",
       "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
-      "aliases": ["水仙夫人"],
-      "tags": ["主C", "限定"],
-      "description": "超维属性T0级限定输出角色，别称水仙夫人。v1.1版本进行过重做。",
+      "aliases": [
+        "水仙夫人"
+      ],
+      "tags": [
+        "主C",
+        "限定"
+      ],
+      "description": "超维界域T0限定输出角色，别称「水仙夫人」。v1.1版本进行过重做，拥有全游戏最多功能的狂气爆发之一。超维队的顶级限定主C选择。",
       "portrait_url": null
     },
     {
-      "id": "wenkoer",
+      "id": "winkle",
       "name": "温柯尔",
-      "name_en": "Winkel",
+      "name_en": "Winkle",
       "rarity": "SSR",
-      "realm": "hyperdimension",
+      "realm": "ultra",
       "role": "support",
       "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["辅助"],
-      "description": "超维属性T1级辅助角色。",
+      "tags": [
+        "辅助"
+      ],
+      "description": "超维界域T1辅助型唤醒体。为超维队提供稳定的辅助增益，是超维队的常驻辅助选择。常驻池可获取。",
       "portrait_url": null
     },
     {
-      "id": "kaxiya",
+      "id": "casiah",
       "name": "卡茜亚",
-      "name_en": "Cassia",
+      "name_en": "Casiah",
       "rarity": "SSR",
-      "realm": "hyperdimension",
-      "role": "sub_dps",
+      "realm": "ultra",
+      "role": "sub_attack",
       "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["副输出"],
-      "description": "超维属性T1级角色。",
+      "tags": [
+        "副输出"
+      ],
+      "description": "超维界域T1副输出型唤醒体。在超维队中担任副C角色，配合利兹或达芙黛尔进行输出。常驻池可获取。",
       "portrait_url": null
     },
     {
-      "id": "zhankin",
+      "id": "jenkins",
       "name": "詹金",
       "name_en": "Jenkins",
       "rarity": "SSR",
-      "realm": "hyperdimension",
-      "role": "sub_dps",
+      "realm": "ultra",
+      "role": "sub_attack",
       "tier": "T1",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["副输出"],
-      "description": "超维属性T1级角色。",
+      "tags": [
+        "副输出"
+      ],
+      "description": "超维界域T1副输出型唤醒体。超维体系中的灵活副C，可为主C提供额外的输出补充。常驻池可获取。",
       "portrait_url": null
     },
     {
-      "id": "tingkete",
+      "id": "tincture",
       "name": "汀克特",
       "name_en": "Tincture",
       "rarity": "SSR",
-      "realm": "hyperdimension",
+      "realm": "ultra",
       "role": "support",
       "tier": "T2",
       "is_limited": false,
       "obtain": "常驻/活动唤醒",
       "aliases": [],
-      "tags": ["辅助"],
-      "description": "超维属性T2级角色。",
+      "tags": [
+        "辅助"
+      ],
+      "description": "超维界域T2辅助型唤醒体。提供基础辅助效果，在超维队中作为过渡辅助位使用。常驻池可获取。",
       "portrait_url": null
     },
-
     {
-      "id": "aoerla",
+      "id": "horla",
       "name": "奥尔拉",
-      "name_en": "Aurla",
+      "name_en": "Horla",
       "rarity": "SSR",
-      "realm": "hyperdimension",
+      "realm": "ultra",
       "role": "support",
       "tier": null,
       "is_limited": false,
       "obtain": "活动唤醒",
       "aliases": [],
-      "tags": ["v1.5新角色", "超维辅助"],
-      "description": "超维界域辅助型唤醒体。v1.5版本推出，超维开荒队核心辅助，推荐配队：利兹+奥尔拉+艾瑞卡+环娜。",
+      "tags": [
+        "v1.5新角色",
+        "超维辅助"
+      ],
+      "description": "超维界域辅助型唤醒体，v1.5版本推出。超维开荒队核心辅助，大幅提升超维队的整体强度。推荐配队：利兹+奥尔拉+艾瑞卡+环娜。",
       "portrait_url": null
     },
     {
-      "id": "laike",
+      "id": "karen",
       "name": "莱克",
-      "name_en": "Lake",
+      "name_en": "Karen",
       "rarity": "SSR",
       "realm": "chaos",
       "role": "support",
@@ -579,12 +721,15 @@
       "is_limited": false,
       "obtain": "活动唤醒",
       "aliases": [],
-      "tags": ["v1.5新角色", "混沌辅助"],
-      "description": "混沌界域辅助型唤醒体。官方定位辅助但输出能力突出。专属命轮极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。",
+      "tags": [
+        "v1.5新角色",
+        "混沌辅助"
+      ],
+      "description": "混沌界域辅助型唤醒体，v1.5推出。官方定位辅助但输出能力突出，专属命轮极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。",
       "portrait_url": null
     },
     {
-      "id": "hamulin",
+      "id": "hameln",
       "name": "哈姆林",
       "name_en": "Hameln",
       "rarity": "SSR",
@@ -594,42 +739,52 @@
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [],
-      "tags": ["混沌辅助"],
-      "description": "混沌界域辅助型唤醒体。自选池中与塔薇、莉莉、莱克、24同列于混沌界域。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。",
+      "tags": [
+        "混沌辅助"
+      ],
+      "description": "混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。自选池中与塔薇、莉莉、莱克、24同列于混沌界域。",
       "portrait_url": null
     },
     {
-      "id": "mofei",
+      "id": "murphy",
       "name": "墨菲",
       "name_en": "Murphy",
       "rarity": "SSR",
-      "realm": "deep_sea",
+      "realm": "aequor",
       "role": "defense",
       "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [],
-      "tags": ["深海防御", "深海必抽"],
-      "description": "深海界域防御型唤醒体。技能组强势补强深海界域弱点，拥有专属「献祭」被动机制。深海玩家必抽角色。",
+      "tags": [
+        "深海防御",
+        "深海必抽"
+      ],
+      "description": "深海界域防御型唤醒体。技能组强势补强深海界域弱点，拥有专属「献祭」被动机制。深海玩家必抽角色，大幅提升深海队生存能力。",
       "portrait_url": null
     },
     {
-      "id": "saerwaduo",
+      "id": "salvador",
       "name": "萨尔瓦多",
       "name_en": "Salvador",
       "rarity": "SSR",
-      "realm": "flesh",
+      "realm": "caro",
       "role": "defense",
       "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
-      "aliases": ["神父"],
-      "tags": ["血肉防御", "盾反队"],
-      "description": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心。专属命轮「神言石板」。",
+      "aliases": [
+        "神父"
+      ],
+      "tags": [
+        "血肉防御",
+        "盾反队"
+      ],
+      "description": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，专属命轮「神言石板」。以盾反打法为特色，靠反伤和护盾进行输出。",
       "portrait_url": null
     },
     {
-      "id": "tawei",
+      "id": "tawil",
       "name": "塔薇",
       "name_en": "Tawil",
       "rarity": "SSR",
@@ -639,42 +794,54 @@
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [],
-      "tags": ["混沌辅助", "可做主C"],
-      "description": "混沌界域辅助型唤醒体，但常作为主C使用。核心技能「通晓万物之理」可从界域全角色卡池五选三。超限爆发后伤害+35%且升级为十选三。推荐配队：塔薇+拉蒙娜(超限)+珈伦(超限)+莱克。",
+      "tags": [
+        "混沌辅助",
+        "可做主C"
+      ],
+      "description": "混沌界域辅助型唤醒体，第一个「唤醒体」，唤醒体技术的源头。守护黑池多年，弥萨格大学最高机密之一。核心技能「通晓万物之理」可从界域全角色卡池五选三，超限后升级为十选三。",
       "portrait_url": null
     },
     {
-      "id": "wangda",
+      "id": "wanda",
       "name": "旺达",
       "name_en": "Wanda",
       "rarity": "SSR",
-      "realm": "hyperdimension",
+      "realm": "ultra",
       "role": "defense",
       "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
-      "aliases": ["SM"],
-      "tags": ["超维防御", "盾反队"],
-      "description": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，生存拉满。",
+      "aliases": [
+        "SM"
+      ],
+      "tags": [
+        "超维防御",
+        "盾反队"
+      ],
+      "description": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，生存能力拉满。与萨尔瓦多组成盾反队双核。",
       "portrait_url": null
     },
     {
-      "id": "aijisi",
+      "id": "aigis",
       "name": "艾继丝",
-      "name_en": "Aegis",
+      "name_en": "Aigis",
       "rarity": "SSR",
-      "realm": "flesh",
+      "realm": "caro",
       "role": "support",
       "tier": null,
       "is_limited": false,
       "obtain": "唤醒",
       "aliases": [],
-      "tags": ["深潜三杰", "血肉辅助", "免费SSR"],
-      "description": "血肉界域辅助型唤醒体，深潜三杰成员之一。通关第一章免费获取。提供群体易伤、AOE输出和一次石化效果。攻击面板突出。常规血肉配队：艾继丝+雷亚+拉蒙娜+血肉C。",
+      "tags": [
+        "深潜三杰",
+        "血肉辅助",
+        "免费SSR"
+      ],
+      "description": "血肉界域辅助型唤醒体，深潜三杰成员之一。通关第一章免费获取。提供群体易伤、AOE输出和石化效果，攻击面板突出。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。",
       "portrait_url": null
     },
     {
-      "id": "ronghuei_duoer",
+      "id": "doll-inferno",
       "name": "熔毁·朵尔",
       "name_en": "Doll: Inferno",
       "rarity": "SSR",
@@ -683,9 +850,15 @@
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
-      "aliases": ["熔朵"],
-      "tags": ["限定", "v2.0首个限定", "朵尔变体"],
-      "description": "星辰篇首个限定角色，混沌界域辅助型，朵尔的变体形态。v2.0上线。",
+      "aliases": [
+        "熔朵"
+      ],
+      "tags": [
+        "限定",
+        "v2.0首个限定",
+        "朵尔变体"
+      ],
+      "description": "星辰篇首个限定角色，混沌界域辅助型，朵尔的熔毁变体形态。v2.0上线，社区简称「熔朵」。战斗风格与原版朵尔截然不同，侧重火焰增益辅助。",
       "portrait_url": null,
       "first_banner_version": "2.0"
     },
@@ -695,93 +868,116 @@
       "name_en": "24",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "dps",
+      "role": "attack",
       "tier": "T0",
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["主C", "限定", "最强通用角色"],
-      "description": "混沌界域限定输出角色，被社区认为是最强通用角色。v1.5推出。",
+      "tags": [
+        "主C",
+        "限定",
+        "最强通用角色"
+      ],
+      "description": "混沌界域限定输出角色，v1.5推出，被社区认为是最强通用角色。以狂气爆发为主要输出手段，可在混沌队(拉蒙娜+朵尔+奥吉尔+24)或跨界域队伍中使用。泛用性极强。",
       "portrait_url": null,
       "first_banner_version": "1.5"
     },
     {
-      "id": "kelaimengting",
+      "id": "clementine",
       "name": "克莱门汀",
       "name_en": "Clementine",
       "rarity": "SSR",
-      "realm": "hyperdimension",
+      "realm": "ultra",
       "role": "support",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "v2.1新角色"],
-      "description": "超维界域限定角色，v2.1推出。",
+      "tags": [
+        "限定",
+        "v2.1新角色"
+      ],
+      "description": "超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。星辰篇时期推出的限定辅助。",
       "portrait_url": null,
       "first_banner_version": "2.1"
     },
     {
-      "id": "keposante",
+      "id": "corposant",
       "name": "克珀珊特",
       "name_en": "Corposant",
       "rarity": "SSR",
-      "realm": "deep_sea",
+      "realm": "aequor",
       "role": "defense",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "v2.1新角色"],
-      "description": "深海界域限定角色，v2.1~2.2推出。",
+      "tags": [
+        "限定",
+        "v2.1新角色"
+      ],
+      "description": "深海界域限定防御型角色，v2.1~2.2推出。为深海队提供新的防御选择，拥有独特的护盾和减伤机制。名字含义为「圣艾尔摩之火」。",
       "portrait_url": null,
       "first_banner_version": "2.1"
     },
     {
-      "id": "kaidigula",
+      "id": "kathigu-ra",
       "name": "凯蒂古拉",
       "name_en": "Kathigu-Ra",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "dps",
+      "role": "attack",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "v2.2新角色"],
-      "description": "混沌界域限定角色，v2.2推出。",
+      "tags": [
+        "限定",
+        "v2.2新角色"
+      ],
+      "description": "混沌界域限定输出角色，v2.2推出。星辰篇新增的混沌主C选择，拥有独特的战斗机制。名字来源于克苏鲁神话体系。",
       "portrait_url": null,
       "first_banner_version": "2.2"
     },
     {
-      "id": "danwang_mofei",
+      "id": "murphy-fauxborn",
       "name": "诞妄·墨菲",
       "name_en": "Murphy: Fauxborn",
       "rarity": "SSR",
-      "realm": "deep_sea",
+      "realm": "aequor",
       "role": "chorus",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "v2.4新角色", "墨菲变体", "合唱"],
-      "description": "深海界域限定合唱型角色，墨菲变体。v2.4二周年推出。卡池「尊崇之诞」。",
+      "tags": [
+        "限定",
+        "v2.4新角色",
+        "墨菲变体",
+        "合唱"
+      ],
+      "description": "深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为v2.4新增合唱型角色，与深海主C产生联携效果。",
       "portrait_url": null,
       "first_banner_version": "2.4"
     },
     {
-      "id": "moxia",
+      "id": "mouchette",
       "name": "茉夏",
       "name_en": "Mouchette",
       "rarity": "SSR",
       "realm": "chaos",
-      "role": "dps",
+      "role": "attack",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "v2.3新角色", "星辰篇", "打击型"],
-      "description": "混沌界域限定输出角色，星辰篇v2.3推出。打击型DPS。",
+      "tags": [
+        "限定",
+        "v2.3新角色",
+        "星辰篇",
+        "打击型"
+      ],
+      "description": "混沌界域限定输出角色，星辰篇v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语，含义为「小苍蝇」。",
       "portrait_url": null,
       "first_banner_version": "2.3"
     },
@@ -790,127 +986,159 @@
       "name": "徐",
       "name_en": "Xu",
       "rarity": "SSR",
-      "realm": "flesh",
+      "realm": "caro",
       "role": "chorus",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "v2.4新角色", "合唱", "二周年"],
-      "description": "血肉界域限定合唱型角色。v2.4二周年版本推出。卡池「夜幕狂喜」。",
+      "tags": [
+        "限定",
+        "v2.4新角色",
+        "合唱",
+        "二周年"
+      ],
+      "description": "血肉界域限定合唱型角色，v2.4二周年版本推出，卡池「夜幕狂喜」。作为合唱型角色与血肉主C产生特殊联携效果，二周年重磅新角色。",
       "portrait_url": null,
       "first_banner_version": "2.4"
     },
     {
-      "id": "kasitoer",
+      "id": "castor",
       "name": "卡斯托尔",
       "name_en": "Castor",
       "rarity": "SSR",
-      "realm": "hyperdimension",
+      "realm": "ultra",
       "role": "defense",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "v2.2新角色"],
-      "description": "超维界域限定角色，v2.2.2推出。",
+      "tags": [
+        "限定",
+        "v2.2新角色"
+      ],
+      "description": "超维界域限定防御角色，v2.2.2推出。名字来源于双子座α星。与波吕克斯（Pollux，双子座β星）构成双子角色组合。",
       "portrait_url": null,
       "first_banner_version": "2.2.2"
     },
     {
-      "id": "bolukesi",
+      "id": "pollux",
       "name": "波吕克斯",
       "name_en": "Pollux",
       "rarity": "SSR",
-      "realm": "hyperdimension",
-      "role": "dps",
+      "realm": "ultra",
+      "role": "attack",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "v2.3新角色"],
-      "description": "超维界域限定输出角色。v2.3.4推出。卡池「神圣赦免」(Oct 20 - Nov 17, 2025)。",
+      "tags": [
+        "限定",
+        "v2.3新角色"
+      ],
+      "description": "超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。名字来源于双子座β星，与卡斯托尔构成双子角色组合。超维队新一代主C选择。",
       "portrait_url": null,
       "first_banner_version": "2.3.4"
     },
     {
-      "id": "xuelian_xiluo",
+      "id": "helot",
       "name": "血链·希洛",
-      "name_en": "Helot: Catena",
+      "name_en": "Helot",
       "rarity": "SSR",
-      "realm": "flesh",
-      "role": "dps",
+      "realm": "caro",
+      "role": "attack",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
-      "aliases": ["血链希洛"],
-      "tags": ["限定", "v1.6新角色", "希洛变体"],
-      "description": "血肉界域限定角色，希洛变体。v1.6推出。",
+      "aliases": [
+        "血链希洛"
+      ],
+      "tags": [
+        "限定",
+        "v1.6新角色",
+        "希洛变体"
+      ],
+      "description": "血肉界域限定输出角色，希洛的血链变体形态。v1.6推出。当前版本「血希」队伍核心，破链一击爆发伤害极高，是血肉队的顶级主C选择。",
       "portrait_url": null,
       "first_banner_version": "1.6"
     },
     {
-      "id": "lei",
+      "id": "leigh",
       "name": "莱",
       "name_en": "Leigh",
       "rarity": "SSR",
-      "realm": "flesh",
+      "realm": "caro",
       "role": "chorus",
       "tier": null,
       "is_limited": false,
       "obtain": "常驻唤醒",
       "aliases": [],
-      "tags": ["常驻", "血肉合唱", "嗜血患者"],
-      "description": "血肉界域常驻合唱型唤醒体。卡文迪什家族的「嗜血患者」。",
+      "tags": [
+        "常驻",
+        "血肉合唱",
+        "嗜血患者"
+      ],
+      "description": "血肉界域常驻合唱型唤醒体，卡文迪什家族的「嗜血患者」。作为合唱型角色与血肉主C产生联携效果，常驻池中即可获取的合唱位选择。",
       "portrait_url": null
     },
     {
-      "id": "dulesaiyin",
+      "id": "doresain",
       "name": "杜勒赛因",
       "name_en": "Doresain",
       "rarity": "SSR",
-      "realm": "flesh",
-      "role": "dps",
+      "realm": "caro",
+      "role": "attack",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "星辰篇", "血肉输出"],
-      "description": "血肉界域限定输出型唤醒体，星辰篇推出。",
+      "tags": [
+        "限定",
+        "星辰篇",
+        "血肉输出"
+      ],
+      "description": "血肉界域限定输出型唤醒体，星辰篇推出。名字来源于克苏鲁神话中的食尸鬼之王。血肉队新一代输出选择，拥有独特的吞噬增伤机制。",
       "portrait_url": null
     },
     {
-      "id": "pikeman",
+      "id": "pickman",
       "name": "皮克曼",
       "name_en": "Pickman",
       "rarity": "SSR",
-      "realm": "deep_sea",
-      "role": "dps",
+      "realm": "aequor",
+      "role": "attack",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒",
       "aliases": [],
-      "tags": ["限定", "星辰篇", "深海输出"],
-      "description": "深海界域限定输出型唤醒体，星辰篇推出。专属命轮「写实主义悖谬」。",
+      "tags": [
+        "限定",
+        "星辰篇",
+        "深海输出"
+      ],
+      "description": "深海界域限定输出型唤醒体，星辰篇推出。专属命轮「写实主义悖谬」。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。",
       "portrait_url": null
     },
     {
-      "id": "alakeinie",
+      "id": "arachne",
       "name": "阿拉克涅",
       "name_en": "Arachne",
       "rarity": "SSR",
-      "realm": "hyperdimension",
-      "role": "dps",
+      "realm": "ultra",
+      "role": "attack",
       "tier": null,
       "is_limited": true,
       "obtain": "限定活动唤醒(v2.5预告)",
       "aliases": [],
-      "tags": ["限定", "v2.5预告", "超维"],
-      "description": "超维界域限定唤醒体，v2.5版本预告角色。",
+      "tags": [
+        "限定",
+        "v2.5预告",
+        "超维"
+      ],
+      "description": "超维界域限定唤醒体，v2.5版本预告角色。名字来源于希腊神话中的织女阿拉克涅。超维队的未来主力角色之一。",
       "portrait_url": null
     }
   ],
-
   "sr_characters": [
     {
       "id": "sr_duoer",
@@ -953,22 +1181,35 @@
       "description": "初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域防御型，提供嘲讽/点名能力。SSR同名角色奥吉尔为独立角色。"
     }
   ],
-
   "notable_groups": [
     {
       "name": "御四家",
       "name_en": "Royal Four",
-      "members": ["拉蒙娜", "萝坦", "朵尔", "奥吉尔"],
+      "members": [
+        "拉蒙娜",
+        "萝坦",
+        "朵尔",
+        "奥吉尔"
+      ],
       "description": "四个核心混沌常驻角色，PvP相位对弈中的基础阵容。"
     },
     {
       "name": "深潜三杰",
-      "members": ["奥瑞塔", "艾瑞卡", "艾继丝"],
+      "members": [
+        "奥瑞塔",
+        "艾瑞卡",
+        "艾继丝"
+      ],
       "description": "三位在幻梦深潜中表现突出的角色。"
     },
     {
       "name": "初始四小只",
-      "members": ["朵尔(SR)", "拉蒙娜(SR)", "萝坦(SR)", "奥吉尔(SR)"],
+      "members": [
+        "朵尔(SR)",
+        "拉蒙娜(SR)",
+        "萝坦(SR)",
+        "奥吉尔(SR)"
+      ],
       "description": "开局序章赠送的4个SR混沌界域唤醒体。朵尔(净化)、拉蒙娜(印卡)、萝坦(输出)、奥吉尔(嘲讽/防御)。新手开荒推荐使用。各角色均有同名SSR版本。"
     }
   ]
