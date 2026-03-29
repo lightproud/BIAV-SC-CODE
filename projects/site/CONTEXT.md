@@ -80,6 +80,65 @@ dist/                          # 最终部署产物
 - 部署架构（根路径=主站，/wiki/=VitePress，/news/=情报页）已确定，不要改变
 - 流水线的实现细节（构建步骤、缓存策略等）可以自由优化
 
+## 部署排障手册
+
+> 404 的根因几乎总是以下几点之一。修改前先逐项检查。
+
+### 前置条件
+- GitHub Pages Source 必须设为 **Deploy from a branch → gh-pages / root**（不是 GitHub Actions）
+- 仓库名 `brain-in-a-vat` 决定了所有路径的前缀是 `/brain-in-a-vat/`
+
+### 路径对齐关系（这是最容易出错的地方）
+
+```
+最终 URL                                     对应 dist/ 下的文件          来源
+─────────────────────────────────────────    ──────────────────────      ──────────────
+lightproud.github.io/brain-in-a-vat/         dist/index.html             site/index.html
+lightproud.github.io/brain-in-a-vat/wiki/    dist/wiki/index.html        VitePress 构建产物
+lightproud.github.io/brain-in-a-vat/news/    dist/news/index.html        projects/news/index.html
+```
+
+### VitePress base 路径
+- `config.mts` 中 `base: '/brain-in-a-vat/wiki/'`
+- 这意味着 VitePress 构建产物内的所有资源引用（CSS/JS/图片）都带 `/brain-in-a-vat/wiki/` 前缀
+- 构建产物必须放在 `dist/wiki/` 下，这样 URL 路径才能对齐
+- **绝对不要**把 VitePress 产物放在 `dist/` 根目录——会导致所有静态资源 404
+
+### VitePress 首页
+- `rewrites: { 'zh/:rest*': ':rest*' }` 把 `docs/zh/index.md` 映射到 `/`
+- VitePress 根路径必须有内容，否则 `/wiki/` 返回 404
+- 验证：构建后 `dist/wiki/index.html` 必须存在且有内容
+
+### deploy-site.yml 核心步骤
+```yaml
+# 1. 构建 wiki
+working-directory: projects/wiki
+run: npm run build    # 不是 docs:build，检查 package.json scripts
+
+# 2. 组装 dist/
+mkdir -p dist/wiki dist/news
+cp site/index.html dist/                                    # 主站
+cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/       # wiki 构建产物
+cp projects/news/index.html dist/news/index.html            # news
+touch dist/.nojekyll                                        # 防止 Jekyll 处理
+
+# 3. 验证（必须在部署前检查）
+test -f dist/index.html       || exit 1
+test -f dist/wiki/index.html  || exit 1
+test -f dist/news/index.html  || exit 1
+```
+
+### 常见 404 原因速查
+
+| 症状 | 原因 | 修复 |
+|------|------|------|
+| 全站 404 | Pages Source 设置错误 | Settings → Pages → branch: gh-pages / root |
+| 主站 OK，wiki 404 | VitePress 构建失败或产物路径错 | 检查 `npm run build` 输出、`dist/wiki/` 是否有文件 |
+| wiki 首页 404，子页面 OK | 缺少根 index.md 或 rewrites 失效 | 确认 `docs/zh/index.md` 存在且 rewrites 配置正确 |
+| wiki 页面白屏（HTML OK 但无样式） | base 路径不匹配 | 确认 `config.mts` base 是 `/brain-in-a-vat/wiki/` |
+| news 404 | `projects/news/index.html` 不存在 | 检查文件是否存在 |
+| CSS/JS 资源 404 | VitePress 产物放错位置 | 必须放在 `dist/wiki/` 下 |
+
 ## 给 Code 会话的指令
 1. 阅读 `/CLAUDE.md` 了解项目全局
 2. 阅读 `memory/style-guide.md` 了解视觉规范
