@@ -1,15 +1,20 @@
 {
   "description": "忘却前夜游戏术语表（中/英/拼音对照）",
+  "_meta": {
+    "calibration_date": "2026-03-29",
+    "calibration_source": "Steam游戏内英文文本（已确认条目，来源：Issue #44）、项目内英文Wiki文档 projects/wiki/docs/en/（次级来源）",
+    "calibration_note": "标注 en_status: unconfirmed 的条目未能从官方来源确认，保留原有翻译供参考"
+  },
   "terms": {
     "唤醒体": {
       "pinyin": "huànxǐngtǐ",
-      "en": "Awakened One",
+      "en": "Awakener",
       "category": "角色",
       "description": "游戏中可操控角色的统称，游走在疯狂边缘的人形武器"
     },
     "守密人": {
       "pinyin": "shǒumìrén",
-      "en": "Secret Keeper",
+      "en": "Keeper",
       "category": "角色",
       "description": "玩家扮演的角色身份"
     },
@@ -27,25 +32,26 @@
     },
     "命轮": {
       "pinyin": "mìnglún",
-      "en": "Constellation / Eidolon",
+      "en": "Wheel of Destiny",
       "category": "培养",
       "description": "重复获取角色后可激活的额外能力，分R/SR/SSR品质"
     },
     "专造": {
       "pinyin": "zhuānzào",
-      "en": "Signature Weapon",
+      "en": "Enlighten",
       "category": "装备",
       "description": "角色专属武器装备"
     },
     "灵知制剂": {
       "pinyin": "língzhī zhìjì",
-      "en": "Gnosis Reagent",
+      "en": "Gnosis Primer",
       "category": "素材",
       "description": "用于提升角色等级的经验材料"
     },
     "灵知深化": {
       "pinyin": "língzhī shēnhuà",
       "en": "Gnosis Enhancement",
+      "en_status": "unconfirmed",
       "category": "系统",
       "description": "v1.1下半版本引入的系统，唤醒体等级上限提升至70级"
     },
@@ -57,31 +63,31 @@
     },
     "融蚀": {
       "pinyin": "róngsí",
-      "en": "Erosion",
+      "en": "Dissolution",
       "category": "世界观",
       "description": "数百年前降临的灾厄，抹灭生命、理智、记忆中一切有意义之物"
     },
     "融灾": {
       "pinyin": "róngzāi",
-      "en": "Meltdown",
+      "en": "Dissolution",
       "category": "玩法",
       "description": "高难度战斗挑战模式（融灾禁区），完成主线5-4解锁，每两周刷新"
     },
     "相位": {
       "pinyin": "xiāngwèi",
-      "en": "Phase",
+      "en": "Traphase",
       "category": "玩法",
       "description": "PVP对战模式（相位对弈）"
     },
     "幻梦深潜": {
       "pinyin": "huànmèng shēnqián",
-      "en": "Dream Dive",
+      "en": "Psyche Deepdive",
       "category": "玩法",
       "description": "特殊探索玩法模式"
     },
     "弥萨格大学": {
       "pinyin": "mísàgé dàxué",
-      "en": "Miskatonic University",
+      "en": "Mythag University",
       "category": "世界观",
       "description": "为数不多知晓融蚀真相的组织，玩家所属核心机构"
     },
@@ -99,25 +105,25 @@
     },
     "算力": {
       "pinyin": "suànlì",
-      "en": "Computing Power",
+      "en": "Computation",
       "category": "战斗",
       "description": "使用卡牌时消耗的核心资源"
     },
     "狂气": {
       "pinyin": "kuángqì",
-      "en": "Fury",
+      "en": "Madness",
       "category": "战斗",
       "description": "角色通过出牌积累的能量，满后可释放狂气爆发"
     },
     "狂气爆发": {
       "pinyin": "kuángqì bàofā",
-      "en": "Fury Burst",
+      "en": "Madness Burst",
       "category": "战斗",
       "description": "角色大招，狂气满后发动的强力技能"
     },
     "钥令": {
       "pinyin": "yàolìng",
-      "en": "Key Command",
+      "en": "Key Order",
       "category": "战斗",
       "description": "守密人的独属能力，消耗银钥能量在战斗中发动"
     },
@@ -153,7 +159,7 @@
     },
     "银芯": {
       "pinyin": "yínxīn",
-      "en": "Silver Core",
+      "en": "Silver",
       "category": "货币",
       "description": "游戏基础货币"
     },
@@ -165,7 +171,7 @@
     },
     "流明之芯": {
       "pinyin": "liúmíng zhī xīn",
-      "en": "Lumen Core",
+      "en": "Luminous Core",
       "category": "货币",
       "description": "限定池抽卡道具"
     },
@@ -178,18 +184,19 @@
     "造物": {
       "pinyin": "zàowù",
       "en": "Artifact / Relic",
+      "en_status": "unconfirmed",
       "category": "战斗",
       "description": "精英敌人击败后获得的特殊效果物品，分正面和负面"
     },
     "刻印": {
       "pinyin": "kèyìn",
-      "en": "Engrave / Imprint",
+      "en": "Engravings",
       "category": "战斗",
       "description": "普通敌人击败后对卡牌附加额外效果"
     },
     "密契": {
       "pinyin": "mìqì",
-      "en": "Bond / Covenant",
+      "en": "Sacred Covenant",
       "category": "培养",
       "description": "提供额外角色增强与搭配思路的系统"
     },
@@ -225,7 +232,7 @@
     },
     "超限爆发": {
       "pinyin": "chāoxiàn bàofā",
-      "en": "Transcendence Burst",
+      "en": "Reproduction Frenzy",
       "category": "战斗",
       "description": "v1.5引入的新终极技能系统，部分角色可解锁"
     },
@@ -243,7 +250,7 @@
     },
     "灵啡肽": {
       "pinyin": "língfēitài",
-      "en": "Spirit Caffeine",
+      "en": "Menophine",
       "category": "系统",
       "description": "体力/行动力系统，有可调上限。主线不消耗"
     },
