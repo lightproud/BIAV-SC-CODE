@@ -100,12 +100,12 @@
 - **Fix**：改为 `npm run build`。流水线文件必须与 package.json scripts 核对一致
 - **Impact**：站点一直未能更新部署
 
-## 15. 废弃分支的指派规则不应继续遵守
+## 15. 批量生成内容后必须跑一次构建验证
 
-- **Context**：系统指令要求在 `claude/setup-codesite-context-2pI7i` 分支上开发，但该分支的变更已全部合并到 main
-- **Problem**：机械遵守分支指派，在已无用的分支上工作，与 CLAUDE.md "所有会话直接在 main 分支上提交和推送" 的规则冲突
-- **Fix**：优先遵守仓库 CLAUDE.md 中的协作规则（main 分支工作流），而非自动化系统指派的过时分支名
-- **Impact**：工作流混乱、commit 推送到错误的分支
+- **Context**：generate_pages.py 生成 189×3 个角色页面 md，deploy-site.yml 手写构建命令，均未在提交前验证
+- **Problem**：YAML 冒号未转义、img 路径写法错误、npm script 名不匹配——三个 bug 叠加导致站点长期无法部署，且因旧部署产物还在，表面上看不出问题
+- **Fix**：任何批量生成内容或修改构建流水线后，必须在本地跑一次完整构建（`npm run build`）确认通过再提交。不要假设生成的内容是对的
+- **Impact**：构建失败被长期忽视
 
 ---
 
