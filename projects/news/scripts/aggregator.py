@@ -90,7 +90,7 @@ def validate_news_item(item):
 
     # Check required fields
     for field in REQUIRED_FIELDS:
-        if field not in item or not item[field]:
+        if field not in item or item[field] is None or (isinstance(item[field], str) and not item[field]):
             logger.warning(f'Validation: missing required field "{field}" in item: {item.get("title", "unknown")[:50]}')
             return False, None
 
