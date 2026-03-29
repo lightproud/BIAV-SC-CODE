@@ -11,7 +11,6 @@
     "opening_quote": "欢迎来到弥萨格大学，守密人。但没有什么好恭喜的——你将无人知晓，无人嘉奖，无人铭记。",
     "tagline": "你并非什么救世主——只是一个走在疯狂边缘的人，一步步走向真相。"
   },
-
   "organizations": [
     {
       "id": "miskatonic",
@@ -77,7 +76,6 @@
       "role": "敌方"
     }
   ],
-
   "key_roles": {
     "player": {
       "title": "守密人",
@@ -90,7 +88,6 @@
       "description": "游走在疯狂边缘的人形武器，与灾厄同源的力量载体。每位唤醒体都有独特的性格、背景故事和个人剧情任务。"
     }
   },
-
   "main_story": {
     "total_text_length": "约80万字",
     "format": "单元剧形式",
@@ -104,23 +101,73 @@
             "chapter": "序",
             "title": "序章",
             "title_en": "Prologue",
-            "description": "游戏开篇，守密人的旅途起始"
+            "description": "守密人初抵伦蒂尼恩，在弥萨格大学开启旅途。与初始四小只（朵尔、拉蒙娜、萝坦、奥吉尔）建立连结，初步了解融蚀灾厄的存在与唤醒体的本质。"
           },
           {
             "chapter": "1",
             "title": "东区秘事",
             "title_en": "East District Secrets",
             "sub_chapters": [
-              {"id": "1-1", "title": "漆黑之梦", "title_en": "Dream of Darkness"},
-              {"id": "1-2", "title": "人不可貌相", "title_en": "Don't Judge By Appearance"},
-              {"id": "1-3", "title": "地下的幽灵", "title_en": "Underground Phantom"},
-              {"id": "1-4", "title": "小小侦探", "title_en": "Little Detective"},
-              {"id": "1-5", "title": "病", "title_en": "Illness"},
-              {"id": "1-6", "title": "非礼勿言", "title_en": "Speak No Evil"},
-              {"id": "1-7", "title": "谁杀死了知更鸟", "title_en": "Who Killed the Robin?"},
-              {"id": "1-8", "title": "内在的危险", "title_en": "Inner Danger"},
-              {"id": "1-9", "title": "我们的秘密", "title_en": "Our Secret"},
-              {"id": "1-10", "title": "甜蜜的艺术", "title_en": "The Sweet Art"}
+              {
+                "id": "1-1",
+                "title": "漆黑之梦",
+                "title_en": "Dream of Darkness",
+                "description": "守密人首次踏入东区，在漆黑的梦境中感受到不祥的预兆。"
+              },
+              {
+                "id": "1-2",
+                "title": "人不可貌相",
+                "title_en": "Don't Judge By Appearance",
+                "description": "在东区遇到形形色色的人物，表象之下隐藏着不可告人的秘密。"
+              },
+              {
+                "id": "1-3",
+                "title": "地下的幽灵",
+                "title_en": "Underground Phantom",
+                "description": "追踪线索深入东区地下，发现废弃通道中潜伏着诡异的存在。"
+              },
+              {
+                "id": "1-4",
+                "title": "小小侦探",
+                "title_en": "Little Detective",
+                "description": "化身侦探抽丝剥茧，调查工坊管理者与可疑医生之间的关联。"
+              },
+              {
+                "id": "1-5",
+                "title": "病",
+                "title_en": "Illness",
+                "description": "一种不明病症在东区蔓延，背后似乎有人为操纵的痕迹。"
+              },
+              {
+                "id": "1-6",
+                "title": "非礼勿言",
+                "title_en": "Speak No Evil",
+                "description": "越来越多的人选择沉默，某种力量在压制真相的传播。"
+              },
+              {
+                "id": "1-7",
+                "title": "谁杀死了知更鸟",
+                "title_en": "Who Killed the Robin?",
+                "description": "案件核心浮出水面——一桩精心设计的谋杀案，受害者如同被猎杀的知更鸟。"
+              },
+              {
+                "id": "1-8",
+                "title": "内在的危险",
+                "title_en": "Inner Danger",
+                "description": "危险不仅来自外部敌人，守密人自身内心的阴影也在逐渐显现。"
+              },
+              {
+                "id": "1-9",
+                "title": "我们的秘密",
+                "title_en": "Our Secret",
+                "description": "揭开事件真相：一个被邪教控制的少女，为保护身边的人承受着巨大痛苦。"
+              },
+              {
+                "id": "1-10",
+                "title": "甜蜜的艺术",
+                "title_en": "The Sweet Art",
+                "description": "东区秘事落幕。看似甜蜜的结局背后，是少女以生命换来的安宁。守密人带着沉重的心情离开。"
+              }
             ],
             "summary": "调查层层深入：先是工坊管理者，再到可疑医生，接着到疑似邪教组织。最终真相核心是一个被控制的可怜小女孩，她为保护家人和同伴选择了结束自己。"
           },
@@ -128,32 +175,32 @@
             "chapter": "2",
             "title": "蜕变",
             "title_en": "Metamorphosis",
-            "description": "主线剧情第二章"
+            "description": "融蚀蜕变主题展开。守密人与唤醒体的羁绊逐渐加深，开始理解唤醒体并非单纯的武器，而是有血有肉的存在。融蚀的影响范围扩大，守密人亲眼目睹蜕变的残酷。"
           },
           {
             "chapter": "3",
             "title": "第三章",
-            "description": "主线剧情第三章"
+            "description": "多方势力角力渐趋白热化。雕塑家协会、持光者教会等组织纷纷浮出水面，弥萨格大学的真实动机也开始令人生疑。守密人在各方博弈中艰难寻找真相。"
           },
           {
             "chapter": "4",
             "title": "第四章",
-            "description": "重大转折点。角色将救出的少女莉莉带到疗养院，却发现更大的危机和秘密潜伏其中。玩家选择影响后续剧情走向。"
+            "description": "重大转折点。守密人将救出的少女莉莉带到疗养院，却发现更大的危机潜伏其中。疗养院隐藏的黑暗秘密被揭开，玩家面临影响后续剧情走向的重大选择。"
           },
           {
             "chapter": "5",
             "title": "第五章",
-            "description": "主线剧情第五章。曾一度关闭后重新开放并补偿奖励。"
+            "description": "多线剧情汇聚收束。前几章埋下的伏笔逐一揭晓，各阵营的计划开始碰撞。曾一度关闭后重新开放并补偿玩家奖励，说明剧情经过官方重新打磨。"
           },
           {
             "chapter": "6",
             "title": "第六章",
-            "description": "主线剧情第六章"
+            "description": "各阵营摊牌，守密人开始质疑「保护真相」的代价。融蚀的本质进一步揭露，弥萨格大学与融蚀之间的隐秘关联浮出水面。"
           },
           {
             "chapter": "7",
             "title": "第七章",
-            "description": "包含7-18「火种(Kindling)」等关卡，Boss章节。"
+            "description": "忘却篇终章。包含7-18「火种(Kindling)」等Boss关卡。火种决战中，守密人面临遗忘与铭记的终极考验——是选择遗忘痛苦获得安宁，还是铭记一切背负前行。"
           }
         ]
       },
@@ -166,33 +213,33 @@
             "chapter": "序",
             "title": "星辰篇序章",
             "title_en": "Stellar Prologue",
-            "description": "星辰篇开篇"
+            "description": "星辰篇开篇。忘却篇的故事告一段落后，新的星辰呼唤守密人踏上未知旅途。世界格局发生巨变，新的威胁和盟友同时出现。"
           },
           {
             "chapter": "1",
             "title": "星辰篇第一章",
             "stages": "1-1至1-14",
-            "description": "星辰正位之刻第一章"
+            "description": "星辰正位之刻。共14个关卡(1-1至1-14)。唤醒体们在星辰之力的影响下发生变化，守密人需要重新理解这些伙伴的本质与力量来源。"
           },
           {
             "chapter": "2",
             "title": "蜕变",
             "title_en": "Metamorphosis",
             "stages": "2-1至2-18",
-            "description": "星辰篇第二章"
+            "description": "星辰篇「蜕变」章。共18个关卡(2-1至2-18)。与忘却篇同名章节遥相呼应，但蜕变的含义更加深远——星之力量带来的不仅是外在变化，更是内在觉醒。"
           },
           {
             "chapter": "3",
             "title": "星辰篇第三章",
             "stages": "3-1至3-11",
-            "description": "星辰篇第三章"
+            "description": "星辰篇第三章。共11个关卡(3-1至3-11)。预言中隐藏的真相逐渐揭开，星辰的指引背后似乎隐藏着更宏大的计划。"
           },
           {
             "chapter": "4",
             "title": "乐园",
             "title_en": "Paradise",
             "stages": "4-0至4-16",
-            "description": "星辰篇第四章，难度跃升最大的章节。",
+            "description": "星辰篇「乐园」。共16个关卡(4-0至4-16)，难度跃升最大的章节。「为何黑日遮蔽了天空？」——黑日意象贯穿全章，终极Boss战难度极高。",
             "tagline": "为何黑日遮蔽了天空？"
           }
         ]
@@ -206,23 +253,86 @@
       }
     }
   },
-
   "key_locations": [
-    {"name": "伦蒂尼恩", "name_en": "Londinium", "type": "主要城市", "description": "维多利亚风格的主要城市，游戏核心舞台，拥有多个区域。"},
-    {"name": "东区", "name_en": "East District / East Londinium", "type": "城市区域", "description": "伦蒂尼恩的贫困区域，忘却篇第一章「东区秘事」舞台。"},
-    {"name": "弥萨格大学", "name_en": "Mythag University / Miskatonic University", "type": "机构", "description": "位于狮子王国，玩家主基地/中心。"},
-    {"name": "狮子王国", "name_en": "Kingdom of Leo", "type": "国家", "description": "弥萨格大学主校区所在地。"},
-    {"name": "雨镇", "name_en": "Rainy Town", "type": "城镇", "description": "支线故事「雨镇幽影」的舞台。"},
-    {"name": "艾尔沃斯", "name_en": "Elworth", "type": "异界地点", "description": "能自行重排的活体地点，会'呼唤'莉莉和Helot。"},
-    {"name": "弥萨格黑潭", "name_en": "Black Pool of Mythag", "type": "异界地点", "description": "由萝坦(Lotan)守护，与塔薇(Tawil)的觉醒有关。"},
-    {"name": "深渊海域", "name_en": "Aequor", "type": "异界海洋", "description": "与深海界域相关的海洋领域。"},
-    {"name": "雷姆利亚", "name_en": "Lemuria", "type": "失落王国", "description": "沉没的古代王国，航海者势力试图恢复。"},
-    {"name": "雷姆瓦什沙漠", "name_en": "Lemwash Desert", "type": "地区", "description": "亚兰人(Aramites)的家园，隐藏在剧烈风暴之中。"},
-    {"name": "疗养院", "name_en": "Sanatorium", "type": "地点", "description": "第四章舞台，隐藏黑暗秘密。"},
-    {"name": "冶炼室", "name_en": "Smelting Room", "type": "功能设施", "description": "装备/道具交换设施。"},
-    {"name": "无光秘境", "name_en": "Lightless Realm", "type": "副本", "description": "解锁角色升星的挑战副本。"}
+    {
+      "name": "伦蒂尼恩",
+      "name_en": "Londinium",
+      "type": "主要城市",
+      "description": "维多利亚风格的主要城市，游戏核心舞台，拥有多个区域。"
+    },
+    {
+      "name": "东区",
+      "name_en": "East District / East Londinium",
+      "type": "城市区域",
+      "description": "伦蒂尼恩的贫困区域，忘却篇第一章「东区秘事」舞台。"
+    },
+    {
+      "name": "弥萨格大学",
+      "name_en": "Mythag University / Miskatonic University",
+      "type": "机构",
+      "description": "位于狮子王国，玩家主基地/中心。"
+    },
+    {
+      "name": "狮子王国",
+      "name_en": "Kingdom of Leo",
+      "type": "国家",
+      "description": "弥萨格大学主校区所在地。"
+    },
+    {
+      "name": "雨镇",
+      "name_en": "Rainy Town",
+      "type": "城镇",
+      "description": "支线故事「雨镇幽影」的舞台。"
+    },
+    {
+      "name": "艾尔沃斯",
+      "name_en": "Elworth",
+      "type": "异界地点",
+      "description": "能自行重排的活体地点，会'呼唤'莉莉和Helot。"
+    },
+    {
+      "name": "弥萨格黑潭",
+      "name_en": "Black Pool of Mythag",
+      "type": "异界地点",
+      "description": "由萝坦(Lotan)守护，与塔薇(Tawil)的觉醒有关。"
+    },
+    {
+      "name": "深渊海域",
+      "name_en": "Aequor",
+      "type": "异界海洋",
+      "description": "与深海界域相关的海洋领域。"
+    },
+    {
+      "name": "雷姆利亚",
+      "name_en": "Lemuria",
+      "type": "失落王国",
+      "description": "沉没的古代王国，航海者势力试图恢复。"
+    },
+    {
+      "name": "雷姆瓦什沙漠",
+      "name_en": "Lemwash Desert",
+      "type": "地区",
+      "description": "亚兰人(Aramites)的家园，隐藏在剧烈风暴之中。"
+    },
+    {
+      "name": "疗养院",
+      "name_en": "Sanatorium",
+      "type": "地点",
+      "description": "第四章舞台，隐藏黑暗秘密。"
+    },
+    {
+      "name": "冶炼室",
+      "name_en": "Smelting Room",
+      "type": "功能设施",
+      "description": "装备/道具交换设施。"
+    },
+    {
+      "name": "无光秘境",
+      "name_en": "Lightless Realm",
+      "type": "副本",
+      "description": "解锁角色升星的挑战副本。"
+    }
   ],
-
   "collaborations": [
     {
       "name": "沙耶之歌联动",
@@ -231,16 +341,112 @@
       "description": "与经典视觉小说《沙耶之歌》的跨界联动活动，添加了联动角色。"
     }
   ],
-
   "character_mythology_references": [
-    {"character": "图鲁(Tulu)", "archetype": "克苏鲁(Cthulhu)", "note": "深海界域SSR，「幼主/沉睡之主」称号，原型为克苏鲁"},
-    {"character": "雷娅(Rhea)", "archetype": "黑山羊(Shub-Niggurath)", "note": "血肉界域SSR，「羊妈」昵称，原型为丰饶之神莎布-尼古拉斯"},
-    {"character": "尤乌哈希(Uuhashi)", "archetype": "约格-索托斯(Yog-Sothoth)", "note": "血肉界域SSR，名称音译接近"},
-    {"character": "萝坦(Lotan)", "archetype": "利维坦(Leviathan)/海怪罗坦", "note": "初始SR/SSR，守护弥萨格黑潭"},
-    {"character": "艾尔瓦(Elva)", "archetype": "奈亚拉托提普(Nyarlathotep)相关", "note": "混沌T0，可能参考外神使者形象"},
-    {"character": "24", "archetype": "未知/原创", "note": "限定T0，编号为名，身份神秘"}
+    {
+      "character": "图鲁(Tulu)",
+      "archetype": "克苏鲁(Cthulhu)",
+      "note": "深海界域SSR，「幼主/沉睡之主」称号，原型为克苏鲁"
+    },
+    {
+      "character": "雷娅(Rhea)",
+      "archetype": "黑山羊(Shub-Niggurath)",
+      "note": "血肉界域SSR，「羊妈」昵称，原型为丰饶之神莎布-尼古拉斯"
+    },
+    {
+      "character": "尤乌哈希(Uuhashi)",
+      "archetype": "约格-索托斯(Yog-Sothoth)",
+      "note": "血肉界域SSR，名称音译接近"
+    },
+    {
+      "character": "萝坦(Lotan)",
+      "archetype": "利维坦(Leviathan)/海怪罗坦",
+      "note": "初始SR/SSR，守护弥萨格黑潭"
+    },
+    {
+      "character": "艾尔瓦(Elva)",
+      "archetype": "奈亚拉托提普(Nyarlathotep)相关",
+      "note": "混沌T0，可能参考外神使者形象"
+    },
+    {
+      "character": "24",
+      "archetype": "未知/原创",
+      "note": "限定T0，编号为名，身份神秘"
+    }
   ],
-
   "mythology_inspiration": "克苏鲁神话 (Cthulhu Mythos) — 洛夫克拉夫特作品",
-  "art_style": "2D横版，迷雾英伦维多利亚风，二次元风格"
+  "art_style": "2D横版，迷雾英伦维多利亚风，二次元风格",
+  "key_characters": [
+    {
+      "name": "莉莉",
+      "name_en": "Lily",
+      "affiliation": "弥萨格大学（守密人同伴）",
+      "description": "主线核心角色之一。与守密人关系密切的少女，忘却篇第四章被送往疗养院。混沌界域防御型唤醒体，v1.1通过「花不染尘」活动推出。"
+    },
+    {
+      "name": "艾尔瓦",
+      "name_en": "Alva",
+      "affiliation": "弥萨格大学",
+      "description": "御四家成员之一，混沌界域核心。攻防一体坦C，护盾越高伤害越高。在主线中担任重要战斗角色。"
+    },
+    {
+      "name": "萝坦",
+      "name_en": "Lotan",
+      "affiliation": "弥萨格大学（黑潭守护者）",
+      "description": "御四家成员之一，守护弥萨格黑潭。名字来源于海怪罗坦/利维坦，与塔薇的觉醒密切相关。"
+    },
+    {
+      "name": "拉蒙娜",
+      "name_en": "Ramona",
+      "affiliation": "弥萨格大学",
+      "description": "御四家成员之一，混沌界域辅助。卡牌操控专家，可从弃牌堆回收指令卡。社区讨论度极高的人气角色。"
+    },
+    {
+      "name": "奥吉尔",
+      "name_en": "Ogier",
+      "affiliation": "弥萨格大学",
+      "description": "御四家成员之一，混沌界域辅助。与拉蒙娜、萝坦、朵尔并称「御四家」，是混沌阵容的基础架构。"
+    },
+    {
+      "name": "塔薇",
+      "name_en": "Tawil",
+      "affiliation": "弥萨格大学（最高机密）",
+      "description": "第一个「唤醒体」，唤醒体技术的源头。守护黑池多年，弥萨格大学最高机密之一。核心技能可从全界域角色卡池中选取卡牌使用。"
+    },
+    {
+      "name": "图鲁",
+      "name_en": "Tulu",
+      "affiliation": "深海/深渊",
+      "description": "深海界域核心角色，原型为克苏鲁。被称为「幼主」「沉睡之主」，深海长眠的永恒国度君王。正太外形，通过触腕和穿刺伤害战斗。"
+    },
+    {
+      "name": "雷娅",
+      "name_en": "Rhea",
+      "affiliation": "血肉界域",
+      "description": "血肉界域核心辅助，原型为黑山羊莎布-尼古拉斯。兼具回血和上盾功能，「养胎流」玩法的核心角色。"
+    },
+    {
+      "name": "24",
+      "name_en": "24",
+      "affiliation": "身份神秘",
+      "description": "以编号为名的神秘角色，被社区认为是最强通用角色。v1.5推出的限定角色，可跨界域使用。身份和过去笼罩在谜团之中。"
+    },
+    {
+      "name": "萨尔瓦多",
+      "name_en": "Salvador",
+      "affiliation": "持光者教会（推测）",
+      "description": "社区昵称「神父」。血肉界域防御型，盾反队核心。专属命轮「神言石板」，以盾反打法为特色。"
+    },
+    {
+      "name": "艾瑞卡",
+      "name_en": "Erica",
+      "affiliation": "弥萨格大学",
+      "description": "超维界域核心成员，深潜三杰之一。免费获取的SSR角色，为超维队提供力量加成和易伤效果，新手必练。"
+    },
+    {
+      "name": "弥利亚姆",
+      "name_en": "Miryam",
+      "affiliation": "深海界域",
+      "description": "深海界域限定辅助，社区昵称「米粒」。强力触手辅助，v1.4版本获得大幅增强。深海队必备角色。"
+    }
+  ]
 }
