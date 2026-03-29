@@ -1,8 +1,7 @@
 {
-  "bilibili_search": {
-    "last_timestamp": 0
-  },
-  "bilibili_dynamic": {
-    "last_timestamp": 0
+  "taptap": {
+    "last_post_id": "",
+    "last_review_id": "",
+    "last_run": ""
   }
 }
