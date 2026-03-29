@@ -37,7 +37,7 @@ SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
 HOURS_LOOKBACK = 24
 
 # Valid source identifiers
-VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official'}
+VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review'}
 
 # Required fields for each news item
 REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
@@ -127,6 +127,12 @@ def validate_news_item(item):
         'author': strip_html_tags(str(item.get('author', '')).strip()),
         'tags': [strip_html_tags(str(t).strip()) for t in item.get('tags', []) if t and str(t).strip()],
     }
+
+    # Preserve source-specific extra fields
+    if 'language' in item:
+        cleaned['language'] = str(item['language'])
+    if 'metadata' in item and isinstance(item['metadata'], dict):
+        cleaned['metadata'] = item['metadata']
 
     # Title must not be empty after sanitization
     if not cleaned['title']:
@@ -382,6 +388,80 @@ def fetch_taptap():
     return items
 
 
+def fetch_steam_reviews():
+    """Fetch recent Steam reviews for Morimens (App ID: 3052450)."""
+    import requests
+
+    app_id = 3052450
+    url = f'https://store.steampowered.com/appreviews/{app_id}'
+    params = {
+        'json': 1,
+        'filter': 'recent',
+        'num_per_page': 30,
+        'language': 'all',
+        'purchase_type': 'all',  # Required for F2P games
+    }
+    headers = {'User-Agent': 'MorimensAggregator/1.0'}
+
+    target_languages = {'english', 'schinese', 'koreana', 'russian', 'japanese'}
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    items = []
+
+    try:
+        resp = requests.get(url, params=params, headers=headers, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+
+        reviews = data.get('reviews', [])
+        for review in reviews:
+            ts = review.get('timestamp_created', 0)
+            created = datetime.fromtimestamp(ts, tz=timezone.utc)
+            if created < cutoff:
+                continue
+
+            language = review.get('language', 'unknown')
+            if language not in target_languages:
+                continue
+
+            voted_up = review.get('voted_up', False)
+            sentiment = '正面' if voted_up else '负面'
+            review_text = review.get('review', '')
+            summary_text = review_text[:50].strip()
+            title = f'[{sentiment}] {summary_text}...' if len(review_text) > 50 else f'[{sentiment}] {summary_text}'
+
+            author_info = review.get('author', {})
+            steamid = author_info.get('steamid', '')
+            review_url = f'https://steamcommunity.com/profiles/{steamid}/recommended/{app_id}'
+            votes_up = review.get('votes_up', 0)
+
+            items.append({
+                'title': title,
+                'summary': review_text[:200],
+                'source': 'steam_review',
+                'time': created.isoformat(),
+                'url': review_url,
+                'engagement': votes_up,
+                'is_hot': votes_up > 10,
+                'author': steamid,
+                'tags': [language],
+                'language': language,
+                'metadata': {
+                    'voted_up': voted_up,
+                    'playtime_forever': author_info.get('playtime_forever', 0),
+                    'votes_up': votes_up,
+                },
+            })
+
+        if len(items) == 0:
+            logger.warning('Steam Reviews: 0 reviews found in last 24h (data source not blocked)')
+        else:
+            logger.info(f'Steam Reviews: fetched {len(items)} reviews in last {HOURS_LOOKBACK}h')
+    except Exception as e:
+        logger.warning(f'Steam Reviews failed: {e}')
+
+    return items
+
+
 def generate_summary(news_items):
     """
     Generate a daily summary. Uses OpenAI-compatible API if available,
@@ -444,6 +524,7 @@ def run():
         ('Twitter', fetch_twitter),
         ('NGA', fetch_nga),
         ('TapTap', fetch_taptap),
+        ('SteamReviews', fetch_steam_reviews),
     ]
 
     for name, fetcher in fetchers:
