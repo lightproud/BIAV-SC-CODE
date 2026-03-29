@@ -28,8 +28,8 @@
   - [ ] Twitter/X — 需 TWITTER_BEARER_TOKEN
   - [ ] NGA — 需 NGA_FORUM_ID
   - [ ] TapTap — 需 TAPTAP_APP_ID
-  - [ ] Discord — 未实现
-  - [ ] YouTube — 未实现
+  - [x] Discord — 已实现（Bot 已配置，全量归档 + 聚合器双通道）
+  - [x] YouTube — 代码就绪，需配置 API 密钥
 
 ### 报告系统（新增，来自 new-session-7Plu3）
 - **已完成**：29 平台采集器、AI 分析模块、报告生成、多渠道通知（Email/Discord/Telegram/Bark/Webhook）

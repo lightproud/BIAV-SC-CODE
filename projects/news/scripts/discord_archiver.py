@@ -48,6 +48,8 @@ STATE_PATH = DISCORD_DATA_DIR / 'state.json'
 
 # Rate limit: stay well under 50 req/s
 REQUEST_DELAY = 0.5  # seconds between requests
+MAX_RUNTIME_SECONDS = 45 * 60  # 45 min hard limit (GitHub Actions safe margin)
+MAX_MESSAGES_PER_CHANNEL = 5000  # per run, prevents first-run from running forever
 
 
 # ============================================================
@@ -111,6 +113,8 @@ class DiscordArchiver:
             'Content-Type': 'application/json',
         }
         self.state = self._load_state()
+        self._start_time = time.time()
+        self._pending_threads = []  # defer thread fetching
         self.daily_stats = defaultdict(lambda: {
             'messages': 0,
             'reactions_total': 0,
@@ -315,12 +319,20 @@ class DiscordArchiver:
                 'channel': channel_name,
             })
 
+    def _is_time_up(self):
+        """Check if we've exceeded the runtime limit."""
+        return (time.time() - self._start_time) > MAX_RUNTIME_SECONDS
+
     def fetch_channel_messages(self, channel_id, channel_name=''):
-        """Fetch all new messages from a channel since last archived message."""
+        """Fetch new messages from a channel since last archived message."""
         last_id = self.state.get('channels', {}).get(str(channel_id), {}).get('last_message_id', '0')
         total = 0
 
-        while True:
+        while total < MAX_MESSAGES_PER_CHANNEL:
+            if self._is_time_up():
+                logger.warning(f'Runtime limit reached during channel {channel_name}, saving progress...')
+                break
+
             params = {'limit': 100}
             if last_id != '0':
                 params['after'] = last_id
@@ -349,9 +361,9 @@ class DiscordArchiver:
                 self._append_to_daily_file(channel_id, date_str, slim)
                 self._update_daily_stats(slim, channel_name)
 
-                # Track threads to fetch
+                # Queue threads for later instead of fetching inline
                 if slim['has_thread'] and slim['thread_id']:
-                    self._fetch_thread(slim['thread_id'])
+                    self._pending_threads.append(slim['thread_id'])
 
                 total += 1
 
@@ -368,7 +380,10 @@ class DiscordArchiver:
             if len(messages) < 100:
                 break
 
-        logger.info(f'Channel {channel_name}({channel_id}): archived {total} new messages')
+        if total >= MAX_MESSAGES_PER_CHANNEL:
+            logger.info(f'Channel {channel_name}({channel_id}): hit {MAX_MESSAGES_PER_CHANNEL} cap, will continue next run')
+        else:
+            logger.info(f'Channel {channel_name}({channel_id}): archived {total} new messages')
         return total
 
     # ---- Thread archival ----
@@ -580,6 +595,10 @@ class DiscordArchiver:
 
         total_messages = 0
         for ch in text_channels:
+            if self._is_time_up():
+                logger.warning('Runtime limit reached, stopping channel iteration')
+                break
+
             ch_id = ch['id']
             ch_name = ch.get('name', '')
             ch_type = ch.get('type', 0)
@@ -592,13 +611,22 @@ class DiscordArchiver:
                 count = self.fetch_channel_messages(ch_id, ch_name)
                 total_messages += count
 
-        # 4. Save channel index (ID -> name mapping for external access)
+        # 4. Process deferred threads (if time allows)
+        if self._pending_threads and not self._is_time_up():
+            logger.info(f'Fetching {len(self._pending_threads)} deferred threads...')
+            for thread_id in self._pending_threads:
+                if self._is_time_up():
+                    logger.warning(f'Runtime limit reached, {len(self._pending_threads)} threads remaining for next run')
+                    break
+                self._fetch_thread(thread_id)
+
+        # 5. Save channel index (ID -> name mapping for external access)
         self._save_channel_index(text_channels)
 
-        # 5. Save daily stats
+        # 6. Save daily stats
         self._save_daily_stats()
 
-        # 6. Save state
+        # 7. Save state (always save, even on timeout, to preserve progress)
         self._save_state()
 
         elapsed = int(time.time() - run_start)
