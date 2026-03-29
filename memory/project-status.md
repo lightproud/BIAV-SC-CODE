@@ -99,3 +99,13 @@
 
 - **已完成**：无
 - **待决策**：游戏类型、技术选型、美术方向
+
+## 基础设施状态
+
+| 组件 | 状态 | 备注 |
+|------|------|------|
+| GitHub PAT (Issues) | 已配置 | Fine-grained, brain-in-a-vat only |
+| Claude GitHub App | 已安装 | 权限已更新 |
+| .github/workflows/claude.yml | 已部署 | 含 id-token:write |
+| ANTHROPIC_API_KEY Secret | 已配置 | 余额为零，待充值 |
+| Actions 自动化 | 触发链通，执行失败 | 原因：API 无余额。充值后即可激活 |
