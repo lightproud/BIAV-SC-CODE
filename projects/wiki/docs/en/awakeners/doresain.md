@@ -6,7 +6,7 @@ portrait: /portraits/doresain.png
 # Doresain (杜勒赛因)
 
 <div class="character-header">
-  <img :src="'/portraits/doresain.png'" alt="杜勒赛因" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/doresain.png'" alt="杜勒赛因" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

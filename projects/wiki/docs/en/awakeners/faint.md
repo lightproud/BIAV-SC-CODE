@@ -6,7 +6,7 @@ portrait: /portraits/faint.png
 # Faint (菲茵特)
 
 <div class="character-header">
-  <img :src="'/portraits/faint.png'" alt="菲茵特" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/faint.png'" alt="菲茵特" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

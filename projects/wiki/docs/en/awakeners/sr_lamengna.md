@@ -6,7 +6,7 @@ portrait: /portraits/sr_lamengna.png
 # Ramona (拉蒙娜)
 
 <div class="character-header">
-  <img :src="'/portraits/sr_lamengna.png'" alt="拉蒙娜" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/sr_lamengna.png'" alt="拉蒙娜" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

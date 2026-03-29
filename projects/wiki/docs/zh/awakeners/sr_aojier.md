@@ -6,7 +6,7 @@ portrait: /portraits/sr_aojier.png
 # 奥吉尔 (Ogier)
 
 <div class="character-header">
-  <img :src="'/portraits/sr_aojier.png'" alt="奥吉尔" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/sr_aojier.png'" alt="奥吉尔" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

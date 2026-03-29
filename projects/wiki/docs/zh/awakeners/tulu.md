@@ -6,7 +6,7 @@ portrait: /portraits/tulu.png
 # 图鲁 (Tulu)
 
 <div class="character-header">
-  <img :src="'/portraits/tulu.png'" alt="图鲁" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/tulu.png'" alt="图鲁" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

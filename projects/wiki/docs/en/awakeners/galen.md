@@ -6,7 +6,7 @@ portrait: /portraits/galen.png
 # Galen (伽伦)
 
 <div class="character-header">
-  <img :src="'/portraits/galen.png'" alt="伽伦" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/galen.png'" alt="伽伦" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

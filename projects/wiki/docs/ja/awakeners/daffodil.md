@@ -6,7 +6,7 @@ portrait: /portraits/daffodil.png
 # 达芙黛尔 (Daffodil)
 
 <div class="character-header">
-  <img :src="'/portraits/daffodil.png'" alt="达芙黛尔" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/daffodil.png'" alt="达芙黛尔" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|

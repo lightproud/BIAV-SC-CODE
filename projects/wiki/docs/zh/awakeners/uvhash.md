@@ -6,7 +6,7 @@ portrait: /portraits/uvhash.png
 # 尤乌哈希 (Uvhash)
 
 <div class="character-header">
-  <img :src="'/portraits/uvhash.png'" alt="尤乌哈希" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/uvhash.png'" alt="尤乌哈希" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

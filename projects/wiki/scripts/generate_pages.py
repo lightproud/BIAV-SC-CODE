@@ -397,10 +397,18 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
     )
     title_name = name_en if lang == "en" else name
 
+    # Quote YAML values that contain colons to avoid parse errors
+    title_val = f"{title_name} | {L['title_suffix']}"
+    if ':' in title_val:
+        title_val = f'"{title_val}"'
+    desc_val = desc_text
+    if ':' in desc_val:
+        desc_val = f'"{desc_val}"'
+
     fm = [
         "---",
-        f"title: {title_name} | {L['title_suffix']}",
-        f"description: {desc_text}",
+        f"title: {title_val}",
+        f"description: {desc_val}",
         f"portrait: /portraits/{cid}.png",
         "---",
     ]
@@ -412,7 +420,7 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
         f"# {header_name}",
         "",
         '<div class="character-header">',
-        f'  <img src="/brain-in-a-vat/wiki/portraits/{cid}.png" alt="{name}" class="portrait" />',
+        f'  <img :src="\'/brain-in-a-vat/wiki/portraits/{cid}.png\'" alt="{name}" class="portrait" />',
         "",
         f"  | {L['attr']} | {L['value']} |",
         "  |------|-----|",

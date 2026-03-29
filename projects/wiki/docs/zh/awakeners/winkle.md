@@ -6,7 +6,7 @@ portrait: /portraits/winkle.png
 # 温柯尔 (Winkle)
 
 <div class="character-header">
-  <img :src="'/portraits/winkle.png'" alt="温柯尔" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/winkle.png'" alt="温柯尔" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

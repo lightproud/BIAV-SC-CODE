@@ -6,7 +6,7 @@ portrait: /portraits/divine-king-tulu.png
 # 神王·图鲁 (Divine King Tulu)
 
 <div class="character-header">
-  <img :src="'/portraits/divine-king-tulu.png'" alt="神王·图鲁" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/divine-king-tulu.png'" alt="神王·图鲁" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

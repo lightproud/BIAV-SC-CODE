@@ -6,7 +6,7 @@ portrait: /portraits/nodera.png
 # 诺缔拉 (Nodera)
 
 <div class="character-header">
-  <img :src="'/portraits/nodera.png'" alt="诺缔拉" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/nodera.png'" alt="诺缔拉" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

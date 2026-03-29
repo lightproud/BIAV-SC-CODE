@@ -6,7 +6,7 @@ portrait: /portraits/arachne.png
 # 阿拉克涅 (Arachne)
 
 <div class="character-header">
-  <img :src="'/portraits/arachne.png'" alt="阿拉克涅" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/arachne.png'" alt="阿拉克涅" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

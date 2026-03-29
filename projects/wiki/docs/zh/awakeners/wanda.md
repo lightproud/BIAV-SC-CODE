@@ -6,7 +6,7 @@ portrait: /portraits/wanda.png
 # 旺达 (Wanda)
 
 <div class="character-header">
-  <img :src="'/portraits/wanda.png'" alt="旺达" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/wanda.png'" alt="旺达" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|

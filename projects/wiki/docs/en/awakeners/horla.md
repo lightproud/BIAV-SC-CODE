@@ -6,7 +6,7 @@ portrait: /portraits/horla.png
 # Horla (奥尔拉)
 
 <div class="character-header">
-  <img :src="'/portraits/horla.png'" alt="奥尔拉" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/horla.png'" alt="奥尔拉" class="portrait" />
 
   | Attribute | Value |
   |------|-----|

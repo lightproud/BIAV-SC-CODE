@@ -6,7 +6,7 @@ portrait: /portraits/rhea.png
 # 雷娅 (Rhea)
 
 <div class="character-header">
-  <img :src="'/portraits/rhea.png'" alt="雷娅" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/rhea.png'" alt="雷娅" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|
