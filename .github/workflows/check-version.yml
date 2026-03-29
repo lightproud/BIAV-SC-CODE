@@ -1,0 +1,89 @@
+name: Check Morimens Version Updates
+
+on:
+  schedule:
+    # Run every Monday at 06:00 UTC
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run version check
+        id: check
+        run: python projects/wiki/scripts/check_version.py
+
+      - name: Generate RSS feeds
+        run: python projects/wiki/scripts/generate_rss.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --quiet || echo "has_changes=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit version data updates
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add projects/wiki/data/db/versions.json
+          git add projects/wiki/docs/public/feed.xml
+          git add projects/wiki/docs/public/atom.xml
+          git add projects/wiki/output/version_check_result.json
+          git diff --cached --quiet || git commit -m "chore(wiki): auto-update version data and RSS feeds"
+          git push
+
+      - name: Create issue for new version
+        if: steps.check.outputs.new_version == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const version = '${{ steps.check.outputs.version }}';
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[Code-wiki] New game version detected: v${version}`,
+              body: [
+                `## New Version Detected`,
+                ``,
+                `The automated version checker has detected a new game version: **v${version}**`,
+                ``,
+                `### Action Items`,
+                `- [ ] Verify the version number is correct`,
+                `- [ ] Fill in the version title and highlights in \`versions.json\``,
+                `- [ ] Update \`meta.json\` current_version if applicable`,
+                `- [ ] Add detailed changelog content`,
+                `- [ ] Update related wiki pages (characters, systems, etc.)`,
+                ``,
+                `### Auto-generated Data`,
+                `A stub entry has been added to \`projects/wiki/data/db/versions.json\`.`,
+                `Please review and expand with actual update details.`,
+                ``,
+                `---`,
+                `*This issue was created automatically by the version check workflow.*`,
+              ].join('\n'),
+              labels: ['wiki', 'auto-detected'],
+            });
+
+      - name: Upload check result artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: version-check-result
+          path: projects/wiki/output/version_check_result.json
+          retention-days: 30

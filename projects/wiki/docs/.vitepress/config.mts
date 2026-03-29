@@ -1,20 +1,53 @@
 import { defineConfig } from 'vitepress'
+import { generateSeoHead } from './theme/seo'
+import { generateOgImages } from './theme/og-images'
 
 export default defineConfig({
   title: '忘却前夜 Wiki',
   description: '忘却前夜 (Morimens) 全球游戏资料站 - Roguelite 卡牌构筑手游百科',
 
-  base: '/brain-in-a-vat/',
+  base: '/brain-in-a-vat/wiki/',
   ignoreDeadLinks: true,
 
   rewrites: {
     'zh/:rest*': ':rest*',
   },
 
+  // --- SEO: Sitemap generation ---
+  sitemap: {
+    hostname: 'https://lightproud.github.io/brain-in-a-vat/wiki',
+    transformItems: (items) => {
+      return items.map((item) => {
+        // Boost priority for key pages
+        if (item.url.match(/^(zh|en|ja)\/$/) || item.url === '') {
+          item.priority = 1.0
+          item.changefreq = 'daily'
+        } else if (item.url.includes('/awakeners/') || item.url.includes('/guides/')) {
+          item.priority = 0.8
+          item.changefreq = 'weekly'
+        } else {
+          item.priority = 0.6
+          item.changefreq = 'weekly'
+        }
+        return item
+      })
+    },
+  },
+
+  // --- SEO: Inject structured data & meta tags per page ---
+  transformHead: generateSeoHead,
+
+  // --- SEO: Generate OG images after build ---
+  buildEnd: generateOgImages,
+
   head: [
-    ['meta', { name: 'keywords', content: '忘却前夜,忘卻前夜,Morimens,wiki,攻略,唤醒体,卡牌,命轮,密契,克苏鲁' }],
-    ['meta', { name: 'og:title', content: '忘却前夜 Wiki | Morimens Wiki' }],
-    ['meta', { name: 'og:description', content: '忘却前夜 Roguelite 卡牌构筑手游 全球游戏资料百科' }],
+    // Base meta tags (page-specific ones added via transformHead)
+    ['meta', { name: 'keywords', content: '忘却前夜,忘卻前夜,Morimens,wiki,攻略,唤醒体,卡牌,命轮,密契,克苏鲁,roguelite,card game,cthulhu' }],
+    ['meta', { name: 'author', content: 'Morimens Wiki Contributors' }],
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'googlebot', content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' }],
+    ['meta', { name: 'theme-color', content: '#6d5dfc' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/brain-in-a-vat/wiki/logo.svg' }],
   ],
 
   locales: {
@@ -52,6 +85,7 @@ export default defineConfig({
           { text: '道具', link: '/items/' },
           { text: '活动', link: '/events/' },
           { text: '攻略', link: '/guides/' },
+          { text: '更新记录', link: '/changelog' },
         ],
         sidebar: {
           '/awakeners/': [
@@ -203,7 +237,7 @@ export default defineConfig({
         outline: { label: '本页目录' },
         docFooter: { prev: '上一篇', next: '下一篇' },
         lastUpdated: { text: '最后更新' },
-        editLink: { pattern: 'https://github.com/lightproud/claude/edit/main/docs/:path', text: '在 GitHub 上编辑此页' },
+        editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: '在 GitHub 上编辑此页' },
         search: { provider: 'local' },
       }
     },
@@ -242,6 +276,7 @@ export default defineConfig({
           { text: 'Items', link: '/en/items/' },
           { text: 'Events', link: '/en/events/' },
           { text: 'Guides', link: '/en/guides/' },
+          { text: 'Changelog', link: '/en/changelog' },
         ],
         sidebar: {
           '/en/awakeners/': [
@@ -306,7 +341,7 @@ export default defineConfig({
           '/en/events/': [{ text: 'Events', items: [{ text: 'Overview', link: '/en/events/' }, { text: 'Current', link: '/en/events/current' }, { text: 'History', link: '/en/events/history' }, { text: 'Collaborations', link: '/en/events/collab' }] }],
           '/en/guides/': [{ text: 'Guides', items: [{ text: 'Overview', link: '/en/guides/' }, { text: 'Beginner Guide', link: '/en/guides/beginner' }, { text: 'Daily Tasks', link: '/en/guides/dailies' }, { text: 'Tier List', link: '/en/guides/tier-list' }, { text: 'FAQ', link: '/en/guides/faq' }] }],
         },
-        editLink: { pattern: 'https://github.com/lightproud/claude/edit/main/docs/:path', text: 'Edit this page on GitHub' },
+        editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: 'Edit this page on GitHub' },
         search: { provider: 'local' },
       }
     },
@@ -364,7 +399,7 @@ export default defineConfig({
         outline: { label: '目次' },
         docFooter: { prev: '前へ', next: '次へ' },
         lastUpdated: { text: '最終更新' },
-        editLink: { pattern: 'https://github.com/lightproud/claude/edit/main/docs/:path', text: 'GitHub でこのページを編集' },
+        editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: 'GitHub でこのページを編集' },
         search: { provider: 'local' },
       }
     },
@@ -373,7 +408,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/lightproud/claude' },
+      { icon: 'github', link: 'https://github.com/lightproud/brain-in-a-vat' },
     ],
     search: {
       provider: 'local',

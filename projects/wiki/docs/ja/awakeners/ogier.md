@@ -1,0 +1,33 @@
+---
+title: 奥吉尔 | 忘却前夜 Wiki
+description: 奥吉尔（Ogier）混沌属性支援型キャラクター詳細
+portrait: /portraits/ogier.png
+---
+# 奥吉尔 (Ogier)
+
+<div class="character-header">
+  <img :src="'/portraits/ogier.png'" alt="奥吉尔" class="portrait" />
+
+  | 属性 | 値 |
+  |------|-----|
+  | レアリティ | SSR |
+  | 界域 | 混沌 |
+  | 役割 | 支援型 |
+  | 限定 | いいえ |
+  | 入手方法 | 常驻/活动唤醒 |
+</div>
+
+## 紹介
+
+混沌界域T1辅助型唤醒体，御四家成员之一。提供队伍增益和敌方减益，是混沌队稳定的后排辅助。与SR版奥吉尔为不同角色，SR版提供嘲讽/点名能力。
+
+## スキル
+
+データ準備中
+
+## 推奨装備
+
+データ準備中
+
+
+<CharacterCompare />

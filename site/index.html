@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>缸中之脑 Brain in a Vat</title>
+<meta name="description" content="忘却前夜 (Morimens) 社区项目 — Wiki 资料站 · 社区情报 · 衍生游戏">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: #0a0b10;
+  color: #d4c9a8;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 500;
+  line-height: 2.0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(197,163,86,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-title {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  color: #e2c97e;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+.hero-subtitle {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: #6b6040;
+  letter-spacing: 0.15em;
+  margin-bottom: 2.5rem;
+}
+.hero-desc {
+  max-width: 600px;
+  font-size: 1rem;
+  color: #b5aa98;
+  margin-bottom: 3rem;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  width: 100%;
+  padding: 0 1rem;
+}
+.card {
+  background: #1e1a10;
+  border: 1px solid #2a2515;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover {
+  border-color: #c5a356;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(197,163,86,0.1);
+}
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.card-title {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #e2c97e;
+  margin-bottom: 0.5rem;
+}
+.card-desc {
+  font-size: 0.9rem;
+  color: #8a7a48;
+  line-height: 1.8;
+}
+.card-status {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.status-live { background: rgba(86,197,120,0.15); color: #56c578; }
+.status-dev { background: rgba(197,163,86,0.15); color: #c5a356; }
+.status-plan { background: rgba(150,150,150,0.1); color: #6b6040; }
+
+/* About section */
+.about {
+  max-width: 700px;
+  margin: 6rem auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+.about h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #e2c97e;
+  margin-bottom: 1.5rem;
+}
+.about p {
+  font-size: 0.95rem;
+  color: #8a7a48;
+  margin-bottom: 1rem;
+}
+.about a {
+  color: #c5a356;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(197,163,86,0.3);
+  transition: border-color 0.2s;
+}
+.about a:hover { border-color: #c5a356; }
+
+/* Methodology badge */
+.method {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  padding: 2rem;
+  background: rgba(197,163,86,0.04);
+  border: 1px solid #2a2515;
+  border-radius: 12px;
+  text-align: center;
+}
+.method h3 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 1.1rem;
+  color: #c5a356;
+  margin-bottom: 0.5rem;
+}
+.method p {
+  font-size: 0.85rem;
+  color: #6b6040;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-top: 1px solid #2a2515;
+  color: #5a5540;
+  font-size: 0.8rem;
+}
+footer a { color: #8a7a48; text-decoration: none; }
+footer a:hover { color: #c5a356; }
+
+/* Divider */
+.divider {
+  width: 60px;
+  height: 2px;
+  background: #c5a356;
+  margin: 0 auto 2rem;
+  border-radius: 1px;
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1 class="hero-title">缸中之脑</h1>
+  <p class="hero-subtitle">BRAIN IN A VAT</p>
+  <p class="hero-desc">
+    忘却前夜（Morimens）社区项目。收集游戏情报与数据，构建多语言 Wiki，
+    最终制作一款衍生同人游戏。同时验证并开源「AI 多会话协作开发」方法论。
+  </p>
+
+  <div class="cards">
+    <a class="card" href="./wiki/" id="card-wiki">
+      <span class="card-icon">📖</span>
+      <div class="card-title">Wiki 资料站</div>
+      <div class="card-desc">
+        忘却前夜全球游戏百科。50+ 唤醒体、四大界域、装备系统、剧情世界观。中·英·日三语。
+      </div>
+      <span class="card-status status-dev">建设中</span>
+    </a>
+
+    <a class="card" href="./news/" id="card-news">
+      <span class="card-icon">📡</span>
+      <div class="card-title">社区情报</div>
+      <div class="card-desc">
+        多平台社区热点聚合。自动采集 Steam、Bilibili 等数据源，生成每日社区情报报告。
+      </div>
+      <span class="card-status status-dev">建设中</span>
+    </a>
+
+    <a class="card" href="#about" id="card-game">
+      <span class="card-icon">🎮</span>
+      <div class="card-title">衍生游戏</div>
+      <div class="card-desc">
+        基于 Wiki 数据集和社区资产，开发一款忘却前夜衍生同人游戏。
+      </div>
+      <span class="card-status status-plan">规划中</span>
+    </a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="divider"></div>
+  <h2>关于项目</h2>
+  <p>
+    「缸中之脑」由制作人 Light 发起，是忘却前夜官方授权的社区项目。
+    游戏设计内容、系统内容、资产内容归属脑缸组及其合作伙伴所有，本项目引用公开可查阅信息。
+  </p>
+  <p>
+    项目采用「双集群 + 人类调度器」架构：Chat 集群负责分析策划，Code 集群负责开发执行，
+    GitHub 仓库作为「共享外脑」连接所有 AI 会话。
+  </p>
+  <p>
+    <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank">GitHub 仓库</a>
+  </p>
+</section>
+
+<div class="method">
+  <h3>AI 多会话协作开发</h3>
+  <p>本项目同时验证一套可复现的 AI 协作方法论。<br>多个 AI 会话按专岗分工，仓库作为中间层传递记忆，人类担任唯一调度器。</p>
+</div>
+
+<footer>
+  <p>忘却前夜 (Morimens) 非官方社区项目 · 游戏内容版权归 B.I.A.V. Studio 所有</p>
+  <p style="margin-top: 0.5rem;">
+    <a href="https://github.com/lightproud/brain-in-a-vat">Source</a>
+  </p>
+</footer>
+
+</body>
+</html>

@@ -21,6 +21,9 @@
 - `assets/data/game-config.json` — 游戏配置（本项目产出）
 - `assets/images/` — 图片素材
 
+## 验证清单
+- [ ] 设计文档已写入且制作人已确认方向
+
 ## 给 Code 会话的指令
 - 工作目录：`projects/game/`
 - 游戏配置输出到：`assets/data/game-config.json`

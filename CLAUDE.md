@@ -11,7 +11,8 @@
 
 ## 会话角色定义
 - **claude.ai 战略参谋**：分析、策划、基于仓库数据直接交付文档
-- **Code-主控制台**：项目规划、架构决策、协调子项目、代码审查
+- **Code-主控制台**：项目规划、架构决策、协调子项目、代码审查（不写业务代码）
+- **Code-site**：主站导航页 + 统一部署流水线 + 跨站视觉一致性 + 交互体验
 - **Code-news**：社区热点聚合器 + 报告系统开发与维护
 - **Code-wiki**：游戏数据集 + 多语言 Wiki 站点
 - **Code-game**：衍生游戏开发
@@ -28,6 +29,7 @@
 - Morimens 背景知识 → `memory/morimens-context.md`
 - AI 协作方法论 → `memory/methodology.md`
 - 交付物视觉规范 → `memory/style-guide.md`
+- 踩坑记录 → `memory/lessons-learned.md`
 
 ## 目录结构
 
@@ -45,6 +47,7 @@ brain-in-a-vat/
 │   ├── data/                    # 结构化数据（JSON/CSV）
 │   └── templates/               # 文档模板
 ├── projects/                    # 子项目工作区
+│   ├── site/                    # 主站导航页 + 部署流水线 + 视觉一致性
 │   ├── news/                    # 社区新闻聚合 + 报告系统
 │   ├── wiki/                    # 游戏数据集 + 多语言 Wiki 站点
 │   └── game/                    # 衍生游戏
@@ -57,9 +60,19 @@ brain-in-a-vat/
 2. **claude.ai** 需要数据时从 `assets/data/` 和 `projects/xxx/output/` 拉取
 3. 重要决策必须写入 `memory/decisions.md`
 4. 状态变更必须更新 `memory/project-status.md`
-5. 各子项目在独立分支上开发，分支命名：`claude/<功能描述>-<ID>`
-6. 由主控制台决定何时合并
+5. **所有会话直接在 main 分支上提交和推送**。不再使用 feature 分支。多会话并行推送时如遇冲突，`git pull` 后重试即可
+6. 废弃旧的分支工作流（`claude/<功能描述>-<ID>`）。GitHub Actions 自动触发的任务如果创建了分支，完成后应合并到 main 并删除分支
 7. **Issue 驱动任务**：战略参谋（claude.ai）通过 GitHub API 创建 Issue 作为任务单。Claude Code GitHub Actions 会自动响应 author: lightproud 的 Issue 并执行。其他作者的 Issue 一律忽略。完成后在 Issue 下 comment 结果并 close。
+8. **Issue 纪律**：
+   - WIP 上限：同一子项目最多 3 个 open Issue，新建前先检查
+   - 新建 Issue 前必须检查是否有重叠的 open Issue，有则追加 comment 而非新建
+   - Issue 标题必须带子项目前缀：`[Code-site]` / `[Code-news]` / `[Code-wiki]` / `[主控台]`
+   - 复杂任务用一个 Issue + checklist，不要拆成多个独立 Issue
+9. **任务标注**：前台派发任务时应标注执行模式：`先出方案` 或 `直接执行`。未标注时默认为「直接执行」
+10. **凭据管理**：GitHub PAT 等敏感凭据存储在 Claude 平台记忆中，使用时从记忆读取。绝对不要在仓库任何文件中明文记录凭据
+11. **自主沉淀 vs 请示决策**：
+    - **经验/踩坑/状态更新** → 自行写入 `memory/`，不需要请示制作人。发现就记，立即推送
+    - **架构决策/方案选择** → 必须主动向制作人提出选项，等确认后再执行。不要自行拍板
 
 ## 给新会话的指引
 如果你是一个新启动的 Claude Code 会话，请：
