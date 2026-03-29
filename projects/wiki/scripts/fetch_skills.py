@@ -20,7 +20,7 @@ import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
-from typing import Optional
+from typing import Dict, List, Optional
 
 SCRIPT_DIR = Path(__file__).parent
 CHARACTERS_JSON = SCRIPT_DIR.parent / "data" / "db" / "characters.json"
@@ -145,7 +145,7 @@ def extract_section(wikitext: str, heading_pattern: str) -> str:
     Returns text from after the heading to the next heading of equal or higher level.
     """
     # Match == Heading == style (level 2-4)
-    pattern = rf"(={2,4})\s*{heading_pattern}\s*\1"
+    pattern = rf"(={{2,4}})\s*{heading_pattern}\s*\1"
     m = re.search(pattern, wikitext, re.IGNORECASE)
     if not m:
         return ""
@@ -199,7 +199,7 @@ SECTION_PATTERNS = {
 }
 
 
-def find_section(wikitext: str, patterns: list[str]) -> str:
+def find_section(wikitext: str, patterns: List[str]) -> str:
     """Try multiple heading patterns and return the first matching section."""
     for pat in patterns:
         body = extract_section(wikitext, pat)
@@ -210,7 +210,7 @@ def find_section(wikitext: str, patterns: list[str]) -> str:
 
 # ── Card / skill item parsing ───────────────────────────────────────────────
 
-def parse_card_items(text: str) -> list[dict]:
+def parse_card_items(text: str) -> List[dict]:
     """
     Parse a section of wikitext into a list of card dicts.
     Looks for bold names, cost numbers, and effect descriptions.
@@ -238,12 +238,33 @@ def parse_card_items(text: str) -> list[dict]:
             card["cost"] = int(cost_str)
         cards.append(card)
 
-    # Strategy 2: if nothing found, try table rows
+    # Strategy 2: if nothing found, try table rows (|| delimited or newline | delimited)
+    if not cards:
+        # Try || style first: | Name || Cost || Effect
+        row_pattern = re.compile(
+            r"(?:^|\n)\s*\|\s*(?:''')?([^|'\n]{2,40})(?:''')?\s*"  # name cell
+            r"\|\|\s*(\d+)?\s*"                                      # cost cell
+            r"\|\|\s*(.+?)(?=\n|$)",                                  # effect cell
+        )
+        for m in row_pattern.finditer(text):
+            name = strip_wikimarkup(m.group(1)).strip()
+            cost_str = m.group(2)
+            effect = strip_wikimarkup(m.group(3)).strip()
+            if not name or len(name) > 60 or not effect:
+                continue
+            if name.lower() in ("name", "名称", "card", "cost", "effect", "效果"):
+                continue
+            card: dict = {"name": name, "effect": effect}
+            if cost_str:
+                card["cost"] = int(cost_str)
+            cards.append(card)
+
+    # Strategy 2b: newline-delimited table rows (each cell on its own line)
     if not cards:
         row_pattern = re.compile(
-            r"\|\s*(?:''')?([^|'\n]{2,40})(?:''')?\s*"   # name cell
-            r"\|\s*(\d+)?\s*"                              # cost cell (optional)
-            r"\|\s*(.+?)(?=\n\||\n\!|\|\}|$)",             # effect cell
+            r"(?:^|\n)\s*\|\s*(?:''')?([^|'\n]{2,40})(?:''')?\s*\n"  # name cell
+            r"\s*\|\s*(\d+)?\s*\n"                                     # cost cell
+            r"\s*\|\s*(.+?)(?=\n\s*\|\-|\n\s*\|\}|$)",                # effect cell
             re.DOTALL,
         )
         for m in row_pattern.finditer(text):
@@ -252,7 +273,6 @@ def parse_card_items(text: str) -> list[dict]:
             effect = strip_wikimarkup(m.group(3)).strip()
             if not name or len(name) > 60 or not effect:
                 continue
-            # Skip table headers
             if name.lower() in ("name", "名称", "card", "cost", "effect", "效果"):
                 continue
             card: dict = {"name": name, "effect": effect}
@@ -320,7 +340,7 @@ def parse_single_skill(text: str) -> Optional[dict]:
     return result if result else None
 
 
-def parse_enlighten_items(text: str) -> list[dict]:
+def parse_enlighten_items(text: str) -> List[dict]:
     """
     Parse enlighten/passive entries which have levels.
     Looks for patterns like: Level 1 / 启灵1 / Enlighten 1 — Name — Effect
