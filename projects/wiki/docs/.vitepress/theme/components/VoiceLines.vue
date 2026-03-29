@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
+import { withBase } from 'vitepress'
 
 const props = defineProps<{ characterId?: string }>()
 
@@ -37,7 +38,7 @@ const triggers = [
 
 onMounted(async () => {
   try {
-    const res = await fetch(import.meta.env.BASE_URL + 'data/db/voice_lines.json')
+    const res = await fetch(withBase('/data/db/voice_lines.json'))
     const data = await res.json()
     voiceData.value = data.characters || []
     if (props.characterId) {
