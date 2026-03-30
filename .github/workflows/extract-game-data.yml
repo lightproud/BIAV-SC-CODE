@@ -1,0 +1,124 @@
+name: Extract Game Data from Client
+
+on:
+  schedule:
+    # Run weekly on Monday at 03:00 UTC to catch game updates
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      download_url:
+        description: 'Direct download URL for PC client (optional, auto-detects if empty)'
+        required: false
+      extract_textures:
+        description: 'Extract portrait textures'
+        required: false
+        default: 'true'
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install UnityPy Pillow
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq p7zip-full innoextract
+
+      - name: Download game client
+        run: |
+          EXTRA_ARGS=""
+          if [ -n "${{ github.event.inputs.download_url }}" ]; then
+            EXTRA_ARGS="--url '${{ github.event.inputs.download_url }}'"
+          fi
+
+          python3 projects/wiki/scripts/download_game_client.py \
+            --output ~/game_data \
+            $EXTRA_ARGS
+
+      - name: Show game data structure
+        run: |
+          echo "=== Game data directory ==="
+          ls -la ~/game_data/
+          echo ""
+          echo "=== Directory tree (depth 3) ==="
+          find ~/game_data -maxdepth 3 -type d | head -30
+          echo ""
+          echo "=== Total size ==="
+          du -sh ~/game_data
+
+      - name: Run extraction
+        run: |
+          EXTRA_ARGS=""
+          if [ "${{ github.event.inputs.extract_textures }}" = "false" ]; then
+            EXTRA_ARGS="--no-textures"
+          fi
+
+          python3 projects/wiki/scripts/extract_client_data.py \
+            ~/game_data \
+            --output projects/wiki/output/client_extract \
+            --map-schema \
+            $EXTRA_ARGS
+
+      - name: Show results
+        run: |
+          echo "=== Extraction stats ==="
+          cat projects/wiki/output/client_extract/extraction_stats.json
+          echo ""
+
+          if [ -f projects/wiki/output/client_extract/schema_mapping_report.json ]; then
+            echo "=== Schema mapping ==="
+            cat projects/wiki/output/client_extract/schema_mapping_report.json
+          fi
+
+          echo ""
+          echo "=== Extracted JSON files ==="
+          find projects/wiki/output/client_extract/text -name "*.json" -exec ls -lh {} \; 2>/dev/null | head -30
+
+      - name: Upload full extraction as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-data-extract-${{ github.run_id }}
+          path: projects/wiki/output/client_extract/
+          retention-days: 30
+
+      - name: Commit extracted data
+        run: |
+          TEXT_DIR="projects/wiki/output/client_extract/text"
+          if [ ! -d "$TEXT_DIR" ] || [ -z "$(ls -A $TEXT_DIR 2>/dev/null)" ]; then
+            echo "No text assets extracted, skipping commit"
+            exit 0
+          fi
+
+          JSON_COUNT=$(find "$TEXT_DIR" -name "*.json" | wc -l)
+          TOTAL_COUNT=$(find "$TEXT_DIR" -type f | wc -l)
+          echo "Files to commit: $TOTAL_COUNT ($JSON_COUNT JSON)"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add projects/wiki/output/client_extract/text/
+          git add projects/wiki/output/client_extract/extraction_stats.json
+          git add projects/wiki/output/client_extract/schema_mapping_report.json 2>/dev/null || true
+
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+
+          git commit -m "feat(wiki): auto-extract game config data from client
+
+          Extracted $JSON_COUNT JSON + $((TOTAL_COUNT - JSON_COUNT)) other config files.
+          Source: Official PC client (auto-downloaded)
+          [skip ci]"
+
+          git pull origin main --rebase
+          git push origin main
