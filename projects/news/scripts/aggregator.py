@@ -41,7 +41,10 @@ HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
 # Format: mid (int) -> display name (str). Add more as confirmed.
 BILIBILI_MORIMENS_CREATORS = {
     545164270: '金发女人丨型',
-    # 萨摩_不耶、莱星Ligh、9_9墨玖、God7777 等 — 待确认 mid 后补充
+    3546572535448498: '萨摩_不耶',
+    478711700: '莱星Ligh',
+    1321878039: '9_9墨玖',
+    32726726: 'God7777',
 }
 
 # Valid source identifiers
@@ -323,7 +326,7 @@ def fetch_twitter():
         return []
 
     items = []
-    query = '(忘却前夜 OR 忘卻前夜 OR Morimens) -is:retweet'
+    query = '(忘却前夜 OR 忘卻前夜 OR Morimens OR モリメンス) -is:retweet'
     url = 'https://api.twitter.com/2/tweets/search/recent'
     params = {
         'query': query,
@@ -519,6 +522,102 @@ def fetch_steam_reviews():
     return items
 
 
+def fetch_steam_news():
+    """Fetch official Steam news/announcements for Morimens (App ID: 3052450)."""
+    app_id = 3052450
+    url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=20&maxlength=500'
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    items = []
+
+    try:
+        resp = requests.get(url, timeout=15)
+        resp.raise_for_status()
+        news_items = resp.json().get('appnews', {}).get('newsitems', [])
+
+        for n in news_items:
+            ts = n.get('date', 0)
+            created = datetime.fromtimestamp(ts, tz=timezone.utc) if ts else None
+            if not created or created < cutoff:
+                continue
+
+            feed_type = n.get('feed_type', 0)
+            feed_label = {0: '公告', 1: '新闻'}.get(feed_type, '资讯')
+
+            items.append({
+                'title': f'[Steam{feed_label}] {strip_html_tags(n.get("title", ""))}',
+                'summary': strip_html_tags(n.get('contents', ''))[:200],
+                'source': 'official',
+                'time': created.isoformat(),
+                'url': n.get('url', ''),
+                'engagement': 0,
+                'is_hot': True,  # Official announcements are always marked hot
+                'author': n.get('author', 'Steam'),
+                'tags': [n.get('feedlabel', '')],
+            })
+
+        logger.info(f'Steam News: fetched {len(items)} announcements')
+    except Exception as e:
+        logger.warning(f'Steam News failed: {e}')
+
+    return items
+
+
+def fetch_fandom_wiki():
+    """Fetch recent changes from Morimens Fandom wiki."""
+    url = 'https://morimens.fandom.com/api.php'
+    params = {
+        'action': 'query',
+        'list': 'recentchanges',
+        'rcnamespace': '0',  # Main namespace only
+        'rclimit': '20',
+        'rcprop': 'title|timestamp|user|comment|sizes',
+        'rctype': 'edit|new',
+        'format': 'json',
+    }
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    items = []
+
+    try:
+        resp = requests.get(url, params=params, timeout=15,
+                            headers={'User-Agent': 'MorimensNewsBot/1.0'})
+        resp.raise_for_status()
+        changes = resp.json().get('query', {}).get('recentchanges', [])
+
+        for rc in changes:
+            ts_str = rc.get('timestamp', '')
+            try:
+                created = datetime.fromisoformat(ts_str.replace('Z', '+00:00'))
+            except (ValueError, TypeError):
+                continue
+            if created < cutoff:
+                continue
+
+            page_title = rc.get('title', '')
+            user = rc.get('user', '')
+            comment = rc.get('comment', '')
+            size_diff = rc.get('newlen', 0) - rc.get('oldlen', 0)
+            rc_type = rc.get('type', 'edit')
+            action = '新建' if rc_type == 'new' else '编辑'
+
+            items.append({
+                'title': f'[Fandom Wiki {action}] {page_title}',
+                'summary': f'{user}: {comment}' if comment else f'{user} {action}了页面',
+                'source': 'official',
+                'time': created.isoformat(),
+                'url': f'https://morimens.fandom.com/wiki/{page_title.replace(" ", "_")}',
+                'engagement': abs(size_diff),
+                'is_hot': abs(size_diff) > 1000 or rc_type == 'new',
+                'author': user,
+                'tags': ['wiki', 'fandom'],
+            })
+
+        logger.info(f'Fandom Wiki: fetched {len(items)} recent changes')
+    except Exception as e:
+        logger.warning(f'Fandom Wiki failed: {e}')
+
+    return items
+
+
 def generate_summary(news_items):
     """
     Generate a daily summary. Uses OpenAI-compatible API if available,
@@ -582,6 +681,8 @@ def run():
         ('NGA', fetch_nga),
         ('TapTap', fetch_taptap),
         ('SteamReviews', fetch_steam_reviews),
+        ('SteamNews', fetch_steam_news),
+        ('FandomWiki', fetch_fandom_wiki),
     ]
 
     for name, fetcher in fetchers:
