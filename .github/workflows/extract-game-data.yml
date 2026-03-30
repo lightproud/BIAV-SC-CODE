@@ -1,0 +1,181 @@
+name: Extract Game Data from Client
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Release tag containing game data (e.g. game-data-v2.5)'
+        required: true
+      extract_textures:
+        description: 'Extract portrait textures'
+        required: false
+        default: 'true'
+        type: boolean
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install UnityPy Pillow
+
+      - name: Determine release tag
+        id: tag
+        run: |
+          if [ "${{ github.event_name }}" = "release" ]; then
+            TAG="${{ github.event.release.tag_name }}"
+          else
+            TAG="${{ github.event.inputs.release_tag }}"
+          fi
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "Using release tag: $TAG"
+
+      - name: Download game data from Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          echo "Downloading assets from release: $TAG"
+
+          mkdir -p ~/game_data_download
+          cd ~/game_data_download
+
+          # List release assets
+          gh release view "$TAG" --json assets --jq '.assets[].name'
+
+          # Download all assets
+          gh release download "$TAG" --dir .
+
+          echo "=== Downloaded files ==="
+          ls -lh
+
+      - name: Extract archive
+        run: |
+          mkdir -p ~/game_data
+          cd ~/game_data_download
+
+          # Extract based on file type
+          for f in *; do
+            echo "Extracting: $f"
+            case "$f" in
+              *.tar.gz|*.tgz)  tar xzf "$f" -C ~/game_data ;;
+              *.tar.zst)       tar --zstd -xf "$f" -C ~/game_data ;;
+              *.zip)           unzip -q -o "$f" -d ~/game_data ;;
+              *.7z)            7z x "$f" -o"$HOME/game_data" -y ;;
+              *)               echo "  Unknown format, skipping" ;;
+            esac
+          done
+
+          echo "=== Extracted structure ==="
+          find ~/game_data -maxdepth 3 -type d | head -30
+          echo ""
+          du -sh ~/game_data
+
+      - name: Locate game data directory
+        id: locate
+        run: |
+          # Look for *_Data directory (e.g. Morimens_Data/)
+          DATA_DIR=$(find ~/game_data -type d -name "*_Data" | head -1)
+
+          # Fallback: look for StreamingAssets
+          if [ -z "$DATA_DIR" ]; then
+            SA=$(find ~/game_data -type d -name "StreamingAssets" | head -1)
+            if [ -n "$SA" ]; then
+              DATA_DIR=$(dirname "$SA")
+            fi
+          fi
+
+          # Fallback: look for .assets files
+          if [ -z "$DATA_DIR" ]; then
+            ASSET=$(find ~/game_data -name "*.assets" -o -name "*.unity3d" | head -1)
+            if [ -n "$ASSET" ]; then
+              DATA_DIR=$(dirname "$ASSET")
+            fi
+          fi
+
+          if [ -z "$DATA_DIR" ]; then
+            echo "ERROR: Could not locate game data directory"
+            echo "Directory contents:"
+            find ~/game_data -maxdepth 4 -type f | head -50
+            exit 1
+          fi
+
+          echo "data_dir=$DATA_DIR" >> "$GITHUB_OUTPUT"
+          echo "Found game data: $DATA_DIR"
+          ls -la "$DATA_DIR"
+
+      - name: Run extraction
+        run: |
+          EXTRA_ARGS=""
+          if [ "${{ github.event.inputs.extract_textures }}" = "false" ]; then
+            EXTRA_ARGS="--no-textures"
+          fi
+
+          python3 projects/wiki/scripts/extract_client_data.py \
+            "${{ steps.locate.outputs.data_dir }}" \
+            --output projects/wiki/output/client_extract \
+            --map-schema \
+            $EXTRA_ARGS
+
+      - name: Show results
+        run: |
+          echo "=== Extraction stats ==="
+          cat projects/wiki/output/client_extract/extraction_stats.json
+          echo ""
+
+          if [ -f projects/wiki/output/client_extract/schema_mapping_report.json ]; then
+            echo "=== Schema mapping ==="
+            cat projects/wiki/output/client_extract/schema_mapping_report.json
+          fi
+
+          echo ""
+          echo "=== Extracted JSON files ==="
+          find projects/wiki/output/client_extract/text -name "*.json" -exec ls -lh {} \; 2>/dev/null | head -30
+
+      - name: Upload full extraction as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-data-extract-${{ steps.tag.outputs.tag }}
+          path: projects/wiki/output/client_extract/
+          retention-days: 30
+
+      - name: Commit extracted data
+        run: |
+          TEXT_DIR="projects/wiki/output/client_extract/text"
+          if [ ! -d "$TEXT_DIR" ] || [ -z "$(ls -A $TEXT_DIR 2>/dev/null)" ]; then
+            echo "No text assets extracted, skipping commit"
+            exit 0
+          fi
+
+          JSON_COUNT=$(find "$TEXT_DIR" -name "*.json" | wc -l)
+          TOTAL_COUNT=$(find "$TEXT_DIR" -type f | wc -l)
+          echo "Files to commit: $TOTAL_COUNT ($JSON_COUNT JSON)"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add projects/wiki/output/client_extract/text/
+          git add projects/wiki/output/client_extract/extraction_stats.json
+          git add projects/wiki/output/client_extract/schema_mapping_report.json 2>/dev/null || true
+
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+
+          TAG="${{ steps.tag.outputs.tag }}"
+          git commit -m "feat(wiki): extract game config data from client ($TAG)
+
+          Extracted $JSON_COUNT JSON + $((TOTAL_COUNT - JSON_COUNT)) other config files.
+          Source: GitHub Release $TAG
+          [skip ci]"
+
+          git pull origin main --rebase
+          git push origin main
