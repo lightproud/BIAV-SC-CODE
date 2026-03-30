@@ -1,10 +1,16 @@
 {
   "date": "2026-02-18",
-  "messages": 11,
-  "unique_authors": 2,
-  "reactions_total": 16,
+  "messages": 1498,
+  "unique_authors": 49,
+  "reactions_total": 201,
   "attachments": 0,
   "channel_activity": {
+    "1473329092735668245": 4,
+    "1445556242381672559": 2,
+    "1473787301178904847": 1,
+    "1441326394817908736": 1,
+    "🔸綜合討論": 1475,
+    "🔸阵容构建": 4,
     "1473239520706170967": 2,
     "1473178110831759402": 6,
     "1473060193242845216": 1,
@@ -12,23 +18,68 @@
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
-    "5": 8,
-    "6": 1,
-    "16": 1,
-    "12": 1
+    "4": 54,
+    "9": 6,
+    "14": 12,
+    "11": 48,
+    "21": 1,
+    "7": 294,
+    "1": 2,
+    "2": 156,
+    "3": 180,
+    "5": 89,
+    "6": 23,
+    "8": 45,
+    "10": 59,
+    "12": 41,
+    "13": 41,
+    "15": 96,
+    "16": 229,
+    "17": 61,
+    "18": 35,
+    "19": 3,
+    "20": 1,
+    "23": 22
   },
   "message_types": {
-    "0": 6,
-    "4": 2,
-    "19": 1
+    "19": 335,
+    "0": 1152
   },
   "top_reacted_messages": [
+    {
+      "id": "1473639095166308484",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1473787301178904847",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 12,
+      "channel": ""
+    },
     {
       "id": "1473656671732498556",
       "content": "",
       "author": "zier.0",
       "reactions": 8,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1473592419361755167",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473771889280290928",
+      "content": "",
+      "author": "partycatss.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1473720853660303524",
@@ -38,18 +89,102 @@
       "channel": "🔸欢乐梗图"
     },
     {
-      "id": "1473556859465105428",
+      "id": "1473624353806749933",
       "content": "",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": ""
+      "author": "be_queitplease",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1473557492096045176",
+      "id": "1473662440825946235",
       "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473668372511195227",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473596447961120780",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473596928112459907",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473722368349438133",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473724128887308414",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473542941871181855",
+      "content": "",
+      "author": "evowi",
+      "reactions": 3,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1473512996117680229",
+      "content": "",
+      "author": "asarikotone",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473536470764486854",
+      "content": "",
+      "author": "lululu9858",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473554586269913281",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473584788865814665",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473584899322806283",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473593565044146238",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

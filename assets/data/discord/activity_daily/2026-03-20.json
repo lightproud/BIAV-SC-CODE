@@ -1,10 +1,26 @@
 {
   "date": "2026-03-20",
-  "messages": 154,
+  "messages": 304,
   "unique_authors": 32,
-  "reactions_total": 47,
+  "reactions_total": 111,
   "attachments": 0,
   "channel_activity": {
+    "1484693469699248139": 1,
+    "1484481613445468272": 2,
+    "1484400599561801799": 4,
+    "1484197027435905116": 1,
+    "1484048299894902926": 1,
+    "1483319878071877792": 1,
+    "1465417385170309318": 1,
+    "1450337762829144255": 2,
+    "1431233782605807666": 1,
+    "1350058928020656178": 1,
+    "1484144971341762641": 2,
+    "1484503817683865610": 23,
+    "1484491337695760396": 98,
+    "1482261084101541969": 1,
+    "1484457112628363284": 8,
+    "1484451981773901947": 3,
     "1482090443851432056": 1,
     "1482043230072864960": 1,
     "1482002768637071370": 4,
@@ -28,39 +44,75 @@
     "1484212697015914496": 7
   },
   "hourly_activity": {
-    "3": 7,
-    "5": 3,
+    "23": 3,
+    "9": 13,
+    "3": 9,
+    "4": 6,
+    "14": 4,
+    "20": 3,
+    "22": 2,
+    "0": 8,
+    "15": 2,
+    "8": 16,
+    "5": 4,
+    "10": 121,
+    "11": 80,
+    "17": 1,
+    "7": 5,
     "2": 9,
-    "9": 11,
     "6": 1,
-    "8": 13,
-    "10": 56,
     "12": 7,
     "13": 5,
-    "7": 3,
-    "11": 17,
-    "0": 6,
-    "4": 4,
-    "20": 2,
     "1": 3,
-    "14": 1,
-    "15": 1,
-    "22": 1,
-    "23": 2,
     "21": 1,
     "16": 1
   },
   "message_types": {
-    "0": 32,
-    "4": 2,
-    "19": 4
+    "0": 128,
+    "19": 21,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1484693469699248139",
+      "content": "",
+      "author": "gwenisleirah",
+      "reactions": 16,
+      "channel": ""
+    },
+    {
+      "id": "1484400599561801799",
+      "content": "",
+      "author": "floriography",
+      "reactions": 15,
+      "channel": ""
+    },
     {
       "id": "1484467090726584522",
       "content": "",
       "author": "morimensstaff02",
       "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1484681422508916806",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1484347039591432192",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1484481613445468272",
+      "content": "",
+      "author": "al_leyway",
+      "reactions": 7,
       "channel": ""
     },
     {
@@ -75,6 +127,13 @@
       "content": "",
       "author": "morimensstaff02",
       "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1484481645821296761",
+      "content": "",
+      "author": "al_leyway",
+      "reactions": 4,
       "channel": ""
     },
     {
@@ -127,58 +186,30 @@
       "channel": ""
     },
     {
-      "id": "1484482792904724480",
+      "id": "1484401234311118970",
       "content": "",
-      "author": "_venush",
+      "author": "zzio_",
       "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1484497276293353593",
+      "id": "1484646556337569875",
       "content": "",
-      "author": "harowolf",
+      "author": "floriography",
       "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1484535350352281681",
+      "id": "1484558795001692381",
       "content": "",
-      "author": "jollysquire",
+      "author": "glitzy_x",
       "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1484372382776037498",
+      "id": "1484347381221818488",
       "content": "",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸课间休息闲聊"
-    },
-    {
-      "id": "1484426088347340870",
-      "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1484506596427038850",
-      "content": "",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1484354114597945534",
-      "content": "",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1484541473578811402",
-      "content": "",
-      "author": "wild_pansy",
+      "author": "hallowednebulae",
       "reactions": 1,
       "channel": ""
     }

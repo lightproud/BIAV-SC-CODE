@@ -1,10 +1,27 @@
 {
   "date": "2026-03-23",
-  "messages": 136,
+  "messages": 280,
   "unique_authors": 45,
-  "reactions_total": 49,
+  "reactions_total": 234,
   "attachments": 0,
   "channel_activity": {
+    "1485613870176276531": 8,
+    "1485551802974998739": 1,
+    "1485366013934436512": 5,
+    "1485201668470739068": 6,
+    "1450337762829144255": 6,
+    "1485688845633585223": 1,
+    "1350058928020656178": 3,
+    "1485575438674825226": 38,
+    "1484804984855068702": 1,
+    "1484144971341762641": 1,
+    "1482997212354187324": 46,
+    "1441326394817908736": 1,
+    "1485672193634467960": 9,
+    "1484503817683865610": 1,
+    "1484491337695760396": 1,
+    "1485477316644831444": 15,
+    "1484457112628363284": 1,
     "1468895834199298215": 1,
     "1450001353064714320": 6,
     "1485628489939030187": 2,
@@ -30,33 +47,51 @@
     "1484212697015914496": 1
   },
   "hourly_activity": {
-    "6": 10,
-    "0": 2,
-    "1": 8,
-    "4": 7,
+    "12": 8,
+    "14": 20,
+    "21": 8,
+    "23": 3,
+    "8": 18,
+    "7": 7,
+    "11": 7,
+    "20": 2,
+    "2": 6,
+    "10": 10,
+    "9": 30,
+    "19": 24,
+    "17": 11,
+    "0": 3,
+    "15": 23,
+    "4": 15,
+    "6": 26,
+    "16": 18,
+    "1": 9,
+    "3": 8,
+    "5": 5,
     "13": 5,
-    "10": 3,
-    "2": 5,
-    "12": 5,
-    "15": 13,
-    "17": 6,
     "18": 13,
-    "19": 14,
-    "21": 6,
-    "22": 1,
-    "16": 1,
-    "8": 11,
-    "3": 5,
-    "5": 4,
-    "7": 3,
-    "14": 13,
-    "11": 1
+    "22": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 6
+    "0": 115,
+    "19": 24,
+    "4": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1485613870176276531",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 70,
+      "channel": ""
+    },
+    {
+      "id": "1485575438674825226",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 17,
+      "channel": ""
+    },
     {
       "id": "1485654793983758447",
       "content": "",
@@ -72,6 +107,62 @@
       "channel": "🔸频道建议┊server-suggestions"
     },
     {
+      "id": "1485594295808561263",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1485716228684386315",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1485731809911242884",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1485688845633585223",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1485551802974998739",
+      "content": "",
+      "author": "peanutgod_ofsaturn",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1485555333211357265",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1485665647303196754",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1485750706991403038",
+      "content": "",
+      "author": "clair3682",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
       "id": "1485530758516052049",
       "content": "",
       "author": "gacha_ping",
@@ -79,94 +170,52 @@
       "channel": ""
     },
     {
+      "id": "1485738901061501111",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1485576118324166656",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1485653701644255315",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485579708291879003",
+      "content": "",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485594041432408124",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485672772423127051",
+      "content": "",
+      "author": "arandomflamev2",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
       "id": "1485453086309744640",
       "content": "",
       "author": "polkarain",
       "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1485579402971582495",
-      "content": "",
-      "author": "morimensstaff02",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1485494830141276380",
-      "content": "",
-      "author": "snorlax01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1485628489939030187",
-      "content": "",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1485610484093947924",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸课间休息闲聊"
-    },
-    {
-      "id": "1485656742816649267",
-      "content": "",
-      "author": "wei1901",
-      "reactions": 1,
-      "channel": "🔸deutscher-chatraum"
-    },
-    {
-      "id": "1485659930798063748",
-      "content": "",
-      "author": "_whiteman",
-      "reactions": 1,
-      "channel": "🔸deutscher-chatraum"
-    },
-    {
-      "id": "1485699236715823246",
-      "content": "",
-      "author": "echo604072132",
-      "reactions": 1,
-      "channel": "🔸deutscher-chatraum"
-    },
-    {
-      "id": "1485752298335502466",
-      "content": "",
-      "author": "_whiteman",
-      "reactions": 1,
-      "channel": "🔸deutscher-chatraum"
-    },
-    {
-      "id": "1485501181332553760",
-      "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1485502892248141974",
-      "content": "",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1485653709383012405",
-      "content": "",
-      "author": "shaw_51",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1485456007407865926",
-      "content": "",
-      "author": "kepler0519",
-      "reactions": 1,
       "channel": ""
     }
   ]

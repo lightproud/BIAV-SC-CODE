@@ -1,19 +1,47 @@
 {
   "date": "2025-09-24",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 3,
+  "messages": 7,
+  "unique_authors": 6,
+  "reactions_total": 28,
   "attachments": 0,
   "channel_activity": {
+    "1420092491125755985": 6,
     "1296113810549112874": 1
   },
   "hourly_activity": {
+    "3": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "10": 2,
     "12": 1
   },
   "message_types": {
-    "0": 1
+    "19": 1,
+    "0": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1420300715510726666",
+      "content": "",
+      "author": "shadow_blings_31584",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
+      "id": "1420253777444732938",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1420363403628642314",
+      "content": "",
+      "author": "meatloversus",
+      "reactions": 4,
+      "channel": ""
+    },
     {
       "id": "1420392901493395560",
       "content": "",

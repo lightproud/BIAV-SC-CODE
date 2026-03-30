@@ -1,10 +1,16 @@
 {
   "date": "2026-02-27",
-  "messages": 37,
-  "unique_authors": 10,
-  "reactions_total": 586,
+  "messages": 534,
+  "unique_authors": 40,
+  "reactions_total": 715,
   "attachments": 0,
   "channel_activity": {
+    "1476779494521045002": 1,
+    "1465417385170309318": 1,
+    "1450337762829144255": 3,
+    "1350058928020656178": 2,
+    "🔸綜合討論": 461,
+    "🔸阵容构建": 29,
     "1476995177863450685": 2,
     "1476239209596457141": 2,
     "1473178110831759402": 11,
@@ -16,25 +22,32 @@
     "1475232782169932038": 2
   },
   "hourly_activity": {
+    "3": 6,
+    "22": 3,
+    "6": 18,
+    "8": 10,
+    "16": 10,
+    "0": 7,
+    "1": 8,
+    "2": 13,
+    "4": 6,
+    "5": 5,
+    "7": 20,
+    "9": 38,
+    "10": 69,
+    "11": 27,
+    "12": 42,
+    "13": 45,
+    "14": 102,
+    "15": 91,
+    "18": 2,
+    "23": 10,
     "17": 1,
-    "22": 1,
-    "15": 2,
-    "3": 1,
-    "6": 12,
-    "7": 1,
-    "0": 4,
-    "9": 6,
-    "10": 1,
-    "5": 1,
-    "4": 1,
-    "2": 2,
-    "16": 1,
-    "19": 1,
-    "23": 2
+    "19": 1
   },
   "message_types": {
-    "0": 21,
-    "19": 3
+    "0": 421,
+    "19": 76
   },
   "top_reacted_messages": [
     {
@@ -43,6 +56,13 @@
       "author": "morimensstaff01",
       "reactions": 537,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1476779494521045002",
+      "content": "",
+      "author": "raumbobulus",
+      "reactions": 46,
+      "channel": ""
     },
     {
       "id": "1476803872218415114",
@@ -73,11 +93,53 @@
       "channel": "🔸频道建议┊server-suggestions"
     },
     {
+      "id": "1476770168536301759",
+      "content": "",
+      "author": "xingxiu_0209",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1476842150837747877",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1476882095950532628",
       "content": "",
       "author": "yeriko703",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1477068623779598426",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1476826864705081446",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1476923008181342270",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1476938650599034961",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1477022502390857738",
@@ -87,25 +149,46 @@
       "channel": "🔸频道建议┊server-suggestions"
     },
     {
-      "id": "1476961859096543304",
+      "id": "1476731545460150413",
       "content": "",
-      "author": "passap",
-      "reactions": 1,
-      "channel": ""
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1476819315255935087",
+      "id": "1476819650477162556",
       "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1477085131016503336",
+      "id": "1476848928468238509",
       "content": "",
-      "author": "vgvfvffcc",
-      "reactions": 1,
-      "channel": ""
+      "author": "be_queitplease",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1476916309064159233",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1476922377886502912",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1476926767011860621",
+      "content": "",
+      "author": "angbak",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

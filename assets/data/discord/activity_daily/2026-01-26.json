@@ -1,23 +1,47 @@
 {
   "date": "2026-01-26",
-  "messages": 5,
+  "messages": 11,
   "unique_authors": 3,
-  "reactions_total": 6,
+  "reactions_total": 54,
   "attachments": 0,
   "channel_activity": {
+    "1465417385170309318": 4,
+    "1350060160739184690": 2,
     "1417419008898109492": 1,
     "1429401798439080028": 1,
     "1403373754175721657": 3
   },
   "hourly_activity": {
-    "7": 1,
+    "18": 4,
+    "7": 3,
     "8": 1,
     "14": 3
   },
   "message_types": {
-    "19": 1
+    "0": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1465417385170309318",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 33,
+      "channel": ""
+    },
+    {
+      "id": "1465418153596293328",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1465417594852081818",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 4,
+      "channel": ""
+    },
     {
       "id": "1465267084622696468",
       "content": "",

@@ -1,10 +1,18 @@
 {
   "date": "2026-02-23",
-  "messages": 15,
-  "unique_authors": 8,
-  "reactions_total": 151,
+  "messages": 1341,
+  "unique_authors": 56,
+  "reactions_total": 418,
   "attachments": 0,
   "channel_activity": {
+    "1475381257889120348": 2,
+    "1464228375316136072": 2,
+    "1450337762829144255": 1,
+    "1475263387553501427": 18,
+    "1350058928020656178": 5,
+    "1441326394817908736": 1,
+    "🔸綜合討論": 1222,
+    "🔸阵容构建": 75,
     "1471903688032522388": 1,
     "1457468446353653792": 1,
     "1456019117805932636": 1,
@@ -17,20 +25,32 @@
     "1403373754175721657": 1
   },
   "hourly_activity": {
-    "5": 2,
-    "4": 1,
-    "3": 2,
-    "16": 1,
-    "13": 1,
-    "1": 1,
-    "9": 1,
-    "10": 1,
-    "11": 4,
-    "12": 1
+    "6": 11,
+    "16": 18,
+    "2": 99,
+    "9": 133,
+    "11": 41,
+    "12": 24,
+    "13": 52,
+    "0": 2,
+    "8": 71,
+    "1": 40,
+    "3": 49,
+    "4": 57,
+    "5": 97,
+    "7": 90,
+    "10": 126,
+    "14": 285,
+    "15": 7,
+    "17": 1,
+    "18": 31,
+    "19": 3,
+    "22": 18,
+    "23": 86
   },
   "message_types": {
-    "0": 2,
-    "19": 1
+    "0": 1041,
+    "19": 285
   },
   "top_reacted_messages": [
     {
@@ -41,6 +61,13 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1475381257889120348",
+      "content": "",
+      "author": "moon.orchd",
+      "reactions": 32,
+      "channel": ""
+    },
+    {
       "id": "1475309003729932408",
       "content": "",
       "author": "asakuraenko",
@@ -48,53 +75,123 @@
       "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
     },
     {
-      "id": "1475339838277550301",
+      "id": "1475311774646669508",
       "content": "",
-      "author": "amstelredam",
-      "reactions": 2,
+      "author": "fishhazardthewizard",
+      "reactions": 9,
       "channel": ""
     },
     {
-      "id": "1475478335684345895",
+      "id": "1475438311907524639",
       "content": "",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "author": "navirecorbeau",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1475367824443572307",
+      "id": "1475387067008680082",
       "content": "",
-      "author": "no.tea.",
-      "reactions": 2,
+      "author": "dittoqwq",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475523521588363274",
+      "content": "",
+      "author": "mimiruku",
+      "reactions": 6,
       "channel": ""
     },
     {
-      "id": "1475344683625353458",
+      "id": "1475425076076609643",
       "content": "",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": ""
+      "author": "sweet_25367",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1475443311060979774",
+      "id": "1475475837154230343",
       "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
+      "author": "partycatss.",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1475459346698731540",
+      "id": "1475522959618867293",
       "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1475474182388187189",
+      "id": "1475401334055243776",
       "content": "",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": ""
+      "author": "navirecorbeau",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475413076676186227",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475428143031652523",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475428760227680368",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475437269618786486",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475441550598082674",
+      "content": "",
+      "author": "yolo_mode",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475444984542138460",
+      "content": "",
+      "author": "polkarain",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475451076873556081",
+      "content": "",
+      "author": "polkarain",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475363665778839714",
+      "content": "",
+      "author": "xingxiu_0209",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475414862124552228",
+      "content": "",
+      "author": "carme.0588",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     }
   ]
 }

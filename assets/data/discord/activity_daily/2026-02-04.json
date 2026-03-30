@@ -1,34 +1,70 @@
 {
   "date": "2026-02-04",
-  "messages": 16,
-  "unique_authors": 9,
-  "reactions_total": 41,
+  "messages": 7398,
+  "unique_authors": 157,
+  "reactions_total": 1153,
   "attachments": 0,
   "channel_activity": {
+    "🔸綜合討論": 968,
+    "🔸阵容构建": 90,
+    "🔸morimens-game-chat": 6324,
     "1467225902029996154": 4,
     "🔸欢乐梗图": 3,
     "🔸游戏问题": 1,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 8
   },
   "hourly_activity": {
-    "22": 4,
-    "8": 3,
-    "9": 2,
-    "13": 2,
-    "6": 3,
-    "4": 1,
-    "18": 1
+    "0": 59,
+    "1": 73,
+    "2": 248,
+    "3": 202,
+    "4": 256,
+    "5": 209,
+    "6": 161,
+    "7": 174,
+    "8": 218,
+    "9": 218,
+    "10": 528,
+    "11": 324,
+    "12": 448,
+    "13": 519,
+    "14": 719,
+    "15": 675,
+    "16": 315,
+    "17": 610,
+    "19": 351,
+    "22": 113,
+    "23": 165,
+    "18": 461,
+    "20": 122,
+    "21": 230
   },
   "message_types": {
-    "0": 4
+    "0": 5437,
+    "19": 1942,
+    "20": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1468655367826178119",
+      "content": "",
+      "author": "lavache.",
+      "reactions": 71,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1468597441195409428",
       "content": "",
       "author": "inkouah",
       "reactions": 18,
       "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468462047602675799",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1468520163434434571",
@@ -38,39 +74,116 @@
       "channel": "🔸欢乐梗图"
     },
     {
-      "id": "1468467776875270155",
+      "id": "1468544901200351253",
       "content": "",
-      "author": "shun5984",
+      "author": "lurenjiao",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468533749238071348",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468561018740543499",
+      "content": "",
+      "author": "chinkeeyong",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468657775604142313",
+      "content": "",
+      "author": "lavache.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468459235997122796",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468499481946226813",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468533663195992271",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468562535408996556",
+      "content": "",
+      "author": "vaish6421",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468547332541779988",
+      "content": "",
+      "author": "yy42974466",
       "reactions": 5,
-      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1468522655119577214",
+      "id": "1468559754036252723",
       "content": "",
-      "author": "2300011747",
-      "reactions": 3,
-      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1468668783236481238",
+      "id": "1468575208209387593",
       "content": "",
-      "author": "applepatapon",
-      "reactions": 3,
-      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1468543353606901872",
+      "id": "1468589672597819474",
       "content": "",
-      "author": "_hannah0508",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
+      "author": "akalanden",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1468599907609743553",
+      "id": "1468623212698009782",
       "content": "",
-      "author": "_hannah0508",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
+      "author": "yy42974466",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468400942583123968",
+      "content": "",
+      "author": "kuroji0531",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468555633598005409",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468599660376494263",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

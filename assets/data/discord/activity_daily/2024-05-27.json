@@ -1,0 +1,25 @@
+{
+  "date": "2024-05-27",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "4": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1244512319631790123",
+      "content": "",
+      "author": "l_yi233",
+      "reactions": 3,
+      "channel": ""
+    }
+  ]
+}

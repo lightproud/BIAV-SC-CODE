@@ -1,17 +1,168 @@
 {
   "date": "2025-09-23",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
+  "messages": 73,
+  "unique_authors": 17,
+  "reactions_total": 87,
   "attachments": 0,
   "channel_activity": {
+    "1420092491125755985": 71,
+    "1350060160739184690": 1,
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "17": 35,
+    "18": 28,
+    "19": 2,
+    "20": 1,
+    "21": 4,
+    "22": 1,
+    "23": 1,
     "8": 1
   },
   "message_types": {
-    "0": 1
+    "0": 50,
+    "19": 22
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1420101292088360961",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 25,
+      "channel": ""
+    },
+    {
+      "id": "1420170397252452533",
+      "content": "",
+      "author": "angy_24_s",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1420102182707138671",
+      "content": "",
+      "author": "taoi002",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1420109560361914438",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1420102643967332362",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1420106543906553856",
+      "content": "",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1420103520601903275",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1420104223818776586",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1420105793457491999",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1420108230058573906",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1420108365014499389",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1420108624646111343",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1420103030275182602",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1420103356902408224",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1420104361459191901",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1420105075845759066",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1420105452964020244",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1420106170059718696",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1420106437782274128",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1420106701729828864",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
 }

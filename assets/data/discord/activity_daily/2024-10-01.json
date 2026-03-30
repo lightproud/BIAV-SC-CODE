@@ -1,19 +1,20 @@
 {
   "date": "2024-10-01",
-  "messages": 2,
+  "messages": 3,
   "unique_authors": 2,
-  "reactions_total": 2,
+  "reactions_total": 3,
   "attachments": 0,
   "channel_activity": {
+    "1181147096234065920": 1,
     "1193859503096070234": 2
   },
   "hourly_activity": {
+    "9": 1,
     "6": 1,
     "7": 1
   },
   "message_types": {
-    "0": 1,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -21,6 +22,13 @@
       "content": "",
       "author": "yang_42",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1290604818112577537",
+      "content": "",
+      "author": "lingcheng.0",
+      "reactions": 1,
       "channel": ""
     }
   ]

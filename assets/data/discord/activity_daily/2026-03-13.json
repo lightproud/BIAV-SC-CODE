@@ -1,10 +1,16 @@
 {
   "date": "2026-03-13",
-  "messages": 267,
+  "messages": 371,
   "unique_authors": 30,
-  "reactions_total": 152,
+  "reactions_total": 209,
   "attachments": 0,
   "channel_activity": {
+    "1479378880467959889": 1,
+    "1477439262126379138": 1,
+    "1450337762829144255": 3,
+    "1481894447762378813": 92,
+    "1455453095592071269": 2,
+    "1481690260067844178": 5,
     "1482090443851432056": 1,
     "1482043230072864960": 1,
     "1482002768637071370": 1,
@@ -41,30 +47,31 @@
     "1403373754175721657": 4
   },
   "hourly_activity": {
+    "6": 5,
+    "14": 7,
+    "0": 3,
+    "19": 2,
+    "7": 25,
+    "8": 89,
+    "9": 41,
+    "10": 33,
+    "11": 82,
+    "13": 7,
+    "16": 2,
+    "23": 1,
     "18": 4,
     "15": 6,
-    "13": 3,
-    "10": 10,
-    "11": 73,
     "12": 3,
-    "7": 17,
-    "6": 3,
-    "9": 22,
     "3": 8,
     "2": 10,
     "4": 4,
-    "0": 2,
     "1": 3,
     "17": 3,
-    "8": 58,
-    "16": 1,
-    "5": 33,
-    "14": 4
+    "5": 33
   },
   "message_types": {
-    "0": 97,
-    "19": 25,
-    "4": 12
+    "19": 22,
+    "0": 82
   },
   "top_reacted_messages": [
     {
@@ -82,10 +89,31 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1481817069782831174",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1481981979187478558",
+      "content": "",
+      "author": "skyfallterminus",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
       "id": "1481958417085235343",
       "content": "",
       "author": "qingming6054",
       "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1481926906457624597",
+      "content": "",
+      "author": "undeterredhomo",
+      "reactions": 6,
       "channel": ""
     },
     {
@@ -103,10 +131,38 @@
       "channel": ""
     },
     {
+      "id": "1482096877293015263",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
       "id": "1481980514188394498",
       "content": "",
       "author": "_venush",
       "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1481932568394858588",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1481936022303412326",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1481953515210407957",
+      "content": "",
+      "author": "skyfallterminus",
+      "reactions": 3,
       "channel": ""
     },
     {
@@ -138,73 +194,24 @@
       "channel": ""
     },
     {
-      "id": "1481978114790920345",
+      "id": "1481930028487933953",
       "content": "",
-      "author": "qingming6054",
+      "author": "teenotfight",
       "reactions": 2,
       "channel": ""
     },
     {
-      "id": "1481911767016931480",
+      "id": "1481958505031401572",
       "content": "",
-      "author": "sonatadocantora",
+      "author": "crowlov1",
       "reactions": 2,
       "channel": ""
     },
     {
-      "id": "1481942206825631744",
+      "id": "1481959090799247503",
       "content": "",
-      "author": "morimensstaff01",
+      "author": "vxvendetta97",
       "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1481853655450914890",
-      "content": "",
-      "author": "chinkeeyong",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1481851395580628993",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1481930863443841145",
-      "content": "",
-      "author": "ahong0727",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1481975441928753321",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1481979856332787755",
-      "content": "",
-      "author": "qingming6054",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481958939250790410",
-      "content": "",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481853610856943758",
-      "content": "",
-      "author": "chinkeeyong",
-      "reactions": 1,
       "channel": ""
     }
   ]

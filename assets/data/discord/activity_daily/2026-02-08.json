@@ -1,10 +1,16 @@
 {
   "date": "2026-02-08",
-  "messages": 39,
-  "unique_authors": 5,
-  "reactions_total": 16,
+  "messages": 7179,
+  "unique_authors": 155,
+  "reactions_total": 920,
   "attachments": 0,
   "channel_activity": {
+    "1465417385170309318": 1,
+    "1445641235288031362": 3,
+    "1443848396585828363": 1,
+    "🔸綜合討論": 1307,
+    "🔸阵容构建": 27,
+    "🔸morimens-game-chat": 5801,
     "1467225902029996154": 3,
     "1450001353064714320": 19,
     "🔸欢乐梗图": 2,
@@ -13,25 +19,147 @@
     "1462840887553032335": 1
   },
   "hourly_activity": {
-    "0": 1,
-    "5": 2,
-    "10": 19,
-    "9": 2,
-    "11": 13,
-    "19": 1,
-    "12": 1
+    "17": 166,
+    "18": 164,
+    "6": 197,
+    "0": 402,
+    "1": 140,
+    "2": 342,
+    "3": 216,
+    "4": 408,
+    "5": 471,
+    "7": 235,
+    "8": 181,
+    "9": 257,
+    "10": 221,
+    "11": 207,
+    "12": 285,
+    "13": 348,
+    "14": 242,
+    "15": 536,
+    "16": 276,
+    "19": 364,
+    "20": 287,
+    "23": 443,
+    "21": 353,
+    "22": 438
   },
   "message_types": {
-    "0": 20,
-    "19": 2
+    "0": 5023,
+    "19": 2117
   },
   "top_reacted_messages": [
+    {
+      "id": "1470046492122415308",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 30,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469894833689858201",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 23,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470112248038035559",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1469888820102041694",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1469901531544293418",
+      "content": "",
+      "author": "sooneruzuki",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470086129691922474",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469993470746955958",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470138827774492977",
+      "content": "",
+      "author": "axe_proficient",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1469848305075884198",
+      "content": "",
+      "author": "moyashi0672",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470113537660555429",
+      "content": "",
+      "author": "lynexists",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1469995705576722543",
       "content": "",
       "author": "corposant_1003",
       "reactions": 6,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1469891751522209924",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470071807288803439",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470082160558997730",
+      "content": "",
+      "author": "sooneruzuki",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470095345022271683",
+      "content": "",
+      "author": "necronomikkon",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470206220618174508",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1470132158973870100",
@@ -41,39 +169,25 @@
       "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
     },
     {
-      "id": "1469995781510533253",
+      "id": "1469918565439242342",
       "content": "",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
+      "author": "souri.10244",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1470021758189834433",
+      "id": "1469992564869562501",
       "content": "",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "🔸游戏问题"
+      "author": "ass191044",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1470022248281669633",
+      "id": "1470073327967015230",
       "content": "",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "🔸游戏问题"
-    },
-    {
-      "id": "1470022776478765264",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 1,
-      "channel": "🔸游戏问题"
-    },
-    {
-      "id": "1470039692883005572",
-      "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }

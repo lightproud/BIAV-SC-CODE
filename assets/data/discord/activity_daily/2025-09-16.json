@@ -1,17 +1,20 @@
 {
   "date": "2025-09-16",
-  "messages": 2,
+  "messages": 5,
   "unique_authors": 1,
-  "reactions_total": 82,
+  "reactions_total": 84,
   "attachments": 0,
   "channel_activity": {
+    "1408838316153114716": 1,
+    "1399369127008796723": 2,
     "1417419008898109492": 2
   },
   "hourly_activity": {
+    "14": 3,
     "7": 2
   },
   "message_types": {
-    "0": 2
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -26,6 +29,13 @@
       "content": "",
       "author": "morimens_15",
       "reactions": 38,
+      "channel": ""
+    },
+    {
+      "id": "1417520371112087593",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 2,
       "channel": ""
     }
   ]

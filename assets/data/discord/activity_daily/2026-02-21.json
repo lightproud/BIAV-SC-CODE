@@ -1,10 +1,15 @@
 {
   "date": "2026-02-21",
-  "messages": 15,
-  "unique_authors": 6,
-  "reactions_total": 42,
+  "messages": 1696,
+  "unique_authors": 47,
+  "reactions_total": 232,
   "attachments": 0,
   "channel_activity": {
+    "1470748188888797306": 1,
+    "1473329092735668245": 1,
+    "1450337762829144255": 1,
+    "🔸綜合討論": 1624,
+    "🔸阵容构建": 54,
     "1467225902029996154": 1,
     "1471356257708408843": 1,
     "🔸频道建议┊server-suggestions": 2,
@@ -12,18 +17,33 @@
     "1241345906826153984": 10
   },
   "hourly_activity": {
-    "2": 1,
-    "1": 1,
-    "9": 1,
-    "10": 1,
-    "12": 1,
-    "14": 1,
-    "16": 2,
-    "17": 2,
-    "18": 5
+    "2": 18,
+    "11": 93,
+    "14": 117,
+    "0": 24,
+    "1": 25,
+    "3": 6,
+    "4": 27,
+    "5": 25,
+    "6": 2,
+    "7": 1,
+    "8": 47,
+    "9": 6,
+    "10": 106,
+    "12": 208,
+    "13": 151,
+    "15": 319,
+    "16": 105,
+    "17": 29,
+    "18": 102,
+    "19": 204,
+    "20": 77,
+    "21": 2,
+    "23": 2
   },
   "message_types": {
-    "0": 2
+    "0": 1239,
+    "19": 442
   },
   "top_reacted_messages": [
     {
@@ -34,11 +54,53 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1474583447677829251",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474614082786033730",
+      "content": "",
+      "author": "busy_chipmunk_73748_41947",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474695027589644501",
+      "content": "",
+      "author": "quackdayo",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474793907127587032",
+      "content": "",
+      "author": "yy42974466",
+      "reactions": 7,
+      "channel": "🔸阵容构建"
+    },
+    {
       "id": "1474771878391451820",
       "content": "",
       "author": "carrot_chicken",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1474599157191807180",
+      "content": "",
+      "author": "carme.0588",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474741598373019829",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1474809097718202612",
@@ -48,6 +110,27 @@
       "channel": ""
     },
     {
+      "id": "1474651161608065095",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474740578909683785",
+      "content": "",
+      "author": "yy42974466",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474776669137928223",
+      "content": "",
+      "author": "watercomet",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1474576791439147140",
       "content": "",
       "author": "iwthahe",
@@ -55,18 +138,53 @@
       "channel": ""
     },
     {
-      "id": "1474813452047487148",
+      "id": "1474633829409886279",
       "content": "",
-      "author": "carrot_chicken",
-      "reactions": 2,
-      "channel": ""
+      "author": "quackdayo",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1474841416072040494",
+      "id": "1474723648148606987",
       "content": "",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474738490473447485",
+      "content": "",
+      "author": "lululu9858",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474743631465414828",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474766699340238950",
+      "content": "",
+      "author": "vgvfvffcc",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474841028836987012",
+      "content": "",
+      "author": "huangyu0876",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474573198602534982",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

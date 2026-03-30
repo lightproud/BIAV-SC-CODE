@@ -1,10 +1,23 @@
 {
   "date": "2026-03-21",
-  "messages": 57,
-  "unique_authors": 27,
-  "reactions_total": 24,
+  "messages": 171,
+  "unique_authors": 33,
+  "reactions_total": 162,
   "attachments": 0,
   "channel_activity": {
+    "1485020903673958440": 13,
+    "1484936409675464905": 8,
+    "1484197027435905116": 4,
+    "1482627182831599688": 1,
+    "1465417385170309318": 2,
+    "1450337762829144255": 4,
+    "1477730088299663431": 2,
+    "1415230955387621397": 1,
+    "1350058928020656178": 2,
+    "1484804984855068702": 53,
+    "1484840332146512012": 19,
+    "1484503817683865610": 4,
+    "1482261084101541969": 1,
     "1482002768637071370": 2,
     "1468895834199298215": 1,
     "1456123871383130243": 1,
@@ -22,28 +35,83 @@
     "1403373754175721657": 2
   },
   "hourly_activity": {
-    "8": 4,
+    "21": 16,
+    "22": 4,
+    "15": 15,
+    "16": 17,
+    "23": 2,
+    "1": 1,
+    "9": 24,
+    "2": 2,
+    "6": 25,
+    "11": 5,
+    "7": 19,
+    "8": 5,
+    "10": 6,
+    "12": 1,
+    "18": 1,
+    "5": 6,
+    "3": 1,
     "0": 2,
-    "2": 1,
-    "5": 4,
-    "6": 3,
-    "7": 2,
     "13": 2,
     "14": 14,
-    "16": 5,
-    "21": 2,
-    "9": 2,
-    "10": 4,
-    "11": 1,
     "17": 2,
-    "20": 1,
-    "15": 8
+    "20": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 4
+    "0": 95,
+    "19": 19
   },
   "top_reacted_messages": [
+    {
+      "id": "1484936409675464905",
+      "content": "",
+      "author": "shio2311",
+      "reactions": 31,
+      "channel": ""
+    },
+    {
+      "id": "1485020903673958440",
+      "content": "",
+      "author": "julip326",
+      "reactions": 27,
+      "channel": ""
+    },
+    {
+      "id": "1484804984855068702",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1484810237855797369",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1485041122752331787",
+      "content": "",
+      "author": "julip326",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1484801216046436522",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1484814390120419338",
+      "content": "",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": ""
+    },
     {
       "id": "1484920849621586151",
       "content": "",
@@ -56,6 +124,13 @@
       "content": "",
       "author": "be_queitplease",
       "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1485023633733844992",
+      "content": "",
+      "author": "julip326",
+      "reactions": 4,
       "channel": ""
     },
     {
@@ -87,10 +162,45 @@
       "channel": ""
     },
     {
-      "id": "1484864500359495820",
+      "id": "1485022989035507772",
       "content": "",
-      "author": "wild_pansy",
-      "reactions": 1,
+      "author": "._.aahh",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1484941577359982705",
+      "content": "",
+      "author": "peanutgod_ofsaturn",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1484942906338050279",
+      "content": "",
+      "author": "peanutgod_ofsaturn",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1484843488842485883",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485049566050127883",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1484862907895255181",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 2,
       "channel": ""
     }
   ]

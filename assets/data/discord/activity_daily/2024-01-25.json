@@ -1,0 +1,41 @@
+{
+  "date": "2024-01-25",
+  "messages": 14,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 0,
+  "channel_activity": {
+    "1181147096234065920": 14
+  },
+  "hourly_activity": {
+    "11": 8,
+    "12": 6
+  },
+  "message_types": {
+    "0": 11,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1200049127124369468",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1200045824953024623",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1200049328178344037",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

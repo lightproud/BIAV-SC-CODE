@@ -1,25 +1,26 @@
 {
   "date": "2026-01-11",
-  "messages": 70,
+  "messages": 84,
   "unique_authors": 6,
-  "reactions_total": 10,
+  "reactions_total": 11,
   "attachments": 0,
   "channel_activity": {
+    "1445556242381672559": 14,
     "🔸忘却前夜┊morimens-tv": 1,
     "1458491651239710851": 2,
     "1448648649486635128": 66,
     "1429401798439080028": 1
   },
   "hourly_activity": {
-    "1": 1,
+    "1": 15,
     "15": 1,
     "16": 1,
     "11": 66,
     "17": 1
   },
   "message_types": {
-    "0": 67,
-    "19": 3
+    "19": 2,
+    "0": 12
   },
   "top_reacted_messages": [
     {
@@ -42,6 +43,13 @@
       "author": "nechromicon",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1459716491204231269",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 1,
+      "channel": ""
     }
   ]
 }

@@ -1,0 +1,28 @@
+{
+  "date": "2025-07-19",
+  "messages": 5,
+  "unique_authors": 5,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "1390375103707218041": 5
+  },
+  "hourly_activity": {
+    "4": 2,
+    "5": 1,
+    "7": 2
+  },
+  "message_types": {
+    "0": 3,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1395995828107219104",
+      "content": "",
+      "author": "kong760",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

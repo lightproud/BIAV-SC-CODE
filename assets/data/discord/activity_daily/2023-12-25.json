@@ -1,17 +1,28 @@
 {
   "date": "2023-12-25",
-  "messages": 1,
+  "messages": 4,
   "unique_authors": 1,
-  "reactions_total": 0,
+  "reactions_total": 1,
   "attachments": 0,
   "channel_activity": {
+    "1184707725851111444": 3,
     "達芙黛爾應援活動": 1
   },
   "hourly_activity": {
+    "4": 1,
+    "12": 2,
     "15": 1
   },
   "message_types": {
-    "0": 1
+    "0": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1188695770304610334",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
 }

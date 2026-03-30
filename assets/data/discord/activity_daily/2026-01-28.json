@@ -1,10 +1,14 @@
 {
   "date": "2026-01-28",
-  "messages": 42,
+  "messages": 52,
   "unique_authors": 13,
-  "reactions_total": 24,
+  "reactions_total": 35,
   "attachments": 0,
   "channel_activity": {
+    "1464565649803186217": 2,
+    "1464228375316136072": 5,
+    "1465688753648701524": 2,
+    "1441326394817908736": 1,
     "🔸欢乐梗图": 2,
     "🔸忘却前夜┊morimens-tv": 2,
     "🔸游戏问题": 18,
@@ -13,6 +17,11 @@
     "1403373754175721657": 1
   },
   "hourly_activity": {
+    "2": 2,
+    "3": 5,
+    "6": 4,
+    "22": 1,
+    "12": 2,
     "16": 2,
     "11": 2,
     "13": 2,
@@ -23,13 +32,12 @@
     "17": 1,
     "18": 2,
     "19": 1,
-    "21": 2,
-    "6": 3,
-    "12": 1
+    "21": 2
   },
   "message_types": {
-    "0": 35,
-    "19": 7
+    "0": 8,
+    "19": 1,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -38,6 +46,13 @@
       "author": "souri.10244",
       "reactions": 10,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1465911369714110661",
+      "content": "",
+      "author": "mimiruku",
+      "reactions": 8,
+      "channel": ""
     },
     {
       "id": "1466069056980254750",
@@ -59,6 +74,27 @@
       "author": "closetom",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1465912058619891802",
+      "content": "",
+      "author": "sunstopshining",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465953202573676637",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1466204095596462161",
+      "content": "",
+      "author": "kcockcidsinep",
+      "reactions": 1,
+      "channel": ""
     },
     {
       "id": "1466026091666866281",

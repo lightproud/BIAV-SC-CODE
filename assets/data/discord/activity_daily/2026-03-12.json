@@ -1,10 +1,16 @@
 {
   "date": "2026-03-12",
-  "messages": 111,
+  "messages": 132,
   "unique_authors": 18,
-  "reactions_total": 56,
+  "reactions_total": 95,
   "attachments": 0,
   "channel_activity": {
+    "1479378880467959889": 1,
+    "1450337762829144255": 2,
+    "1477730088299663431": 1,
+    "1479428860591210528": 4,
+    "1455453095592071269": 10,
+    "1481690260067844178": 3,
     "1481679674882003124": 3,
     "1481656078340067449": 4,
     "1481542628645408850": 5,
@@ -38,27 +44,30 @@
     "1403373754175721657": 12
   },
   "hourly_activity": {
+    "6": 15,
+    "7": 24,
+    "8": 5,
+    "9": 8,
+    "10": 2,
+    "11": 1,
+    "12": 2,
+    "16": 3,
     "15": 4,
     "14": 2,
     "18": 9,
     "20": 2,
-    "6": 14,
-    "8": 2,
     "2": 27,
     "1": 8,
     "5": 3,
-    "9": 5,
     "22": 3,
     "23": 4,
     "21": 2,
-    "7": 18,
     "3": 4,
     "19": 4
   },
   "message_types": {
-    "0": 57,
-    "19": 14,
-    "4": 17
+    "0": 19,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -66,6 +75,20 @@
       "content": "",
       "author": "morimensstaff01",
       "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1481548666886951053",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 15,
+      "channel": ""
+    },
+    {
+      "id": "1481578078974246963",
+      "content": "",
+      "author": "lingyujiling",
+      "reactions": 13,
       "channel": ""
     },
     {
@@ -87,6 +110,34 @@
       "content": "",
       "author": "morimensstaff01",
       "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1481601729303806023",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1481551250033086552",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481596121972478053",
+      "content": "",
+      "author": "david.chen.123",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481625001500217394",
+      "content": "",
+      "author": "taoi002",
+      "reactions": 2,
       "channel": ""
     },
     {
@@ -118,6 +169,20 @@
       "channel": ""
     },
     {
+      "id": "1481536314229915671",
+      "content": "",
+      "author": "moon.orchd",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481570151299153920",
+      "content": "",
+      "author": "r3tr0maniac_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
       "id": "1481481474359169087",
       "content": "",
       "author": "arr5721",
@@ -142,48 +207,6 @@
       "id": "1481784219389919457",
       "content": "",
       "author": "nanami_carocontrolmeta",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481486382919712899",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481767819719872513",
-      "content": "",
-      "author": "_jhael",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481551982312296468",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481492633804079226",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481725923920318646",
-      "content": "",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481729383608619061",
-      "content": "",
-      "author": "wild_pansy",
       "reactions": 1,
       "channel": ""
     }

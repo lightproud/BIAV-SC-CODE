@@ -1,10 +1,26 @@
 {
   "date": "2026-03-24",
-  "messages": 105,
+  "messages": 179,
   "unique_authors": 37,
-  "reactions_total": 58,
+  "reactions_total": 163,
   "attachments": 0,
   "channel_activity": {
+    "1486149498869911683": 1,
+    "1486081805823119573": 1,
+    "1485613870176276531": 2,
+    "1485366013934436512": 5,
+    "1485201668470739068": 9,
+    "1483901221344379060": 28,
+    "1477730088299663431": 3,
+    "1443848396585828363": 2,
+    "1379534998704488528": 3,
+    "1485575438674825226": 3,
+    "1482997212354187324": 4,
+    "1485672193634467960": 1,
+    "1484491337695760396": 1,
+    "1485960018887970967": 2,
+    "1485477316644831444": 6,
+    "1356210800091467928": 3,
     "1479040225685798932": 1,
     "1468895834199298215": 1,
     "1467225902029996154": 1,
@@ -26,32 +42,48 @@
     "1485654793983758447": 8
   },
   "hourly_activity": {
-    "3": 2,
-    "7": 7,
-    "19": 2,
+    "23": 1,
+    "19": 5,
+    "2": 11,
+    "8": 4,
+    "14": 16,
+    "17": 12,
+    "18": 4,
+    "3": 4,
+    "4": 4,
+    "5": 7,
+    "13": 33,
+    "10": 3,
+    "11": 3,
+    "9": 11,
+    "7": 11,
+    "16": 10,
+    "22": 4,
     "1": 15,
-    "9": 7,
     "15": 12,
-    "5": 6,
-    "11": 1,
-    "4": 2,
     "12": 3,
-    "13": 8,
-    "14": 12,
-    "16": 8,
     "0": 4,
-    "17": 5,
-    "2": 4,
-    "10": 2,
-    "6": 2,
-    "22": 1,
-    "8": 2
+    "6": 2
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "0": 48,
+    "19": 26
   },
   "top_reacted_messages": [
+    {
+      "id": "1486081805823119573",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 55,
+      "channel": ""
+    },
+    {
+      "id": "1486149498869911683",
+      "content": "",
+      "author": "gwenisleirah",
+      "reactions": 25,
+      "channel": ""
+    },
     {
       "id": "1485879825217486918",
       "content": "",
@@ -67,11 +99,25 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1485940997463478394",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
       "id": "1485868472788324471",
       "content": "",
       "author": "shostakovich524",
       "reactions": 6,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1486079811964113018",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 5,
+      "channel": ""
     },
     {
       "id": "1486022929274896405",
@@ -95,10 +141,38 @@
       "channel": ""
     },
     {
+      "id": "1485832565943435475",
+      "content": "",
+      "author": "skyfallterminus",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
       "id": "1485875626937417788",
       "content": "",
       "author": "that_one_chippy",
       "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1486014116018520187",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485875874258620527",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485856183800823808",
+      "content": "",
+      "author": "digitalstar.exe",
+      "reactions": 2,
       "channel": ""
     },
     {
@@ -109,51 +183,30 @@
       "channel": "🔸课间休息闲聊"
     },
     {
-      "id": "1485820387609678035",
+      "id": "1485920116419072142",
       "content": "",
-      "author": "undeterredhomo",
+      "author": "sexysneakystoat1625",
       "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1485866274683621458",
+      "id": "1485828325682315526",
       "content": "",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸deutscher-chatraum"
-    },
-    {
-      "id": "1485897081934581882",
-      "content": "",
-      "author": "nahida._90",
+      "author": "that_one_chippy",
       "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1486060622339903610",
+      "id": "1485924131076837457",
       "content": "",
-      "author": "no.tea.",
+      "author": "bouquetofdaiseies",
       "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1486135856187310130",
+      "id": "1486054570663870665",
       "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1485925741374734337",
-      "content": "",
-      "author": "sleepypillow",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1485811232865783828",
-      "content": "",
-      "author": "sayo.0320",
+      "author": "0.0._.0_0.",
       "reactions": 1,
       "channel": ""
     }

@@ -1,17 +1,22 @@
 {
   "date": "2025-12-20",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 5,
+  "messages": 9,
+  "unique_authors": 5,
+  "reactions_total": 8,
   "attachments": 0,
   "channel_activity": {
+    "1445556242381672559": 7,
+    "1443848396585828363": 1,
     "1451860479097049199": 1
   },
   "hourly_activity": {
+    "0": 7,
+    "14": 1,
     "8": 1
   },
   "message_types": {
-    "0": 1
+    "0": 6,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -19,6 +24,20 @@
       "content": "",
       "author": "vxvendetta97",
       "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1451738208919359578",
+      "content": "",
+      "author": "velvetrene._cake",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1451740290292646081",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 1,
       "channel": ""
     }
   ]

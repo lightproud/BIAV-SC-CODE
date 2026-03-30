@@ -1,10 +1,22 @@
 {
   "date": "2026-03-17",
-  "messages": 128,
+  "messages": 202,
   "unique_authors": 34,
-  "reactions_total": 100,
+  "reactions_total": 271,
   "attachments": 0,
   "channel_activity": {
+    "1483484484971135068": 8,
+    "1483389014332407839": 5,
+    "1483319878071877792": 4,
+    "1482627182831599688": 1,
+    "1480243474811850874": 2,
+    "1464228375316136072": 2,
+    "1450337762829144255": 2,
+    "1445556242381672559": 10,
+    "1477730088299663431": 8,
+    "1483359118742917201": 21,
+    "1482623756470980709": 5,
+    "1481690260067844178": 6,
     "1481958939250790410": 1,
     "1479040225685798932": 1,
     "1468895834199298215": 1,
@@ -29,36 +41,61 @@
     "1482676949188087849": 3
   },
   "hourly_activity": {
-    "10": 6,
-    "5": 9,
-    "8": 3,
+    "15": 31,
+    "16": 9,
+    "8": 5,
+    "9": 22,
+    "10": 9,
+    "4": 2,
+    "19": 8,
+    "14": 17,
+    "5": 11,
+    "17": 3,
+    "20": 1,
+    "6": 17,
+    "7": 18,
+    "11": 10,
     "0": 1,
     "1": 5,
     "2": 2,
-    "6": 16,
-    "9": 7,
     "13": 8,
-    "14": 13,
-    "15": 22,
-    "17": 2,
     "21": 17,
     "23": 1,
-    "11": 2,
     "18": 3,
-    "7": 6,
-    "3": 2,
-    "16": 1,
-    "19": 2
+    "3": 2
   },
   "message_types": {
-    "0": 5
+    "0": 52,
+    "19": 21,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1483319878071877792",
+      "content": "",
+      "author": "_abcdefg",
+      "reactions": 36,
+      "channel": ""
+    },
     {
       "id": "1483461060185817318",
       "content": "",
       "author": "zekiei",
       "reactions": 33,
+      "channel": ""
+    },
+    {
+      "id": "1483484484971135068",
+      "content": "",
+      "author": "yae9573",
+      "reactions": 30,
+      "channel": ""
+    },
+    {
+      "id": "1483389014332407839",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 20,
       "channel": ""
     },
     {
@@ -76,10 +113,59 @@
       "channel": ""
     },
     {
+      "id": "1483470111112298578",
+      "content": "",
+      "author": "mimiruku",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1483332954225774612",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
       "id": "1483383443827200001",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1483490443219173458",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1483359118742917201",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1483359491771859004",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1483374107893698684",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1483430156730241207",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 3,
       "channel": ""
     },
     {
@@ -104,94 +190,24 @@
       "channel": ""
     },
     {
-      "id": "1483353806225018921",
+      "id": "1483389302502326365",
       "content": "",
-      "author": "vxvendetta97",
+      "author": "sexysneakystoat1625",
       "reactions": 2,
       "channel": ""
     },
     {
-      "id": "1483335228998287391",
+      "id": "1483320634061885524",
       "content": "",
-      "author": "l8989c",
-      "reactions": 1,
+      "author": "mimiruku",
+      "reactions": 2,
       "channel": ""
     },
     {
-      "id": "1483485725373501603",
+      "id": "1483397379062370394",
       "content": "",
-      "author": "katal",
-      "reactions": 1,
-      "channel": "🔸chaîne-française"
-    },
-    {
-      "id": "1483574810205491221",
-      "content": "",
-      "author": ".kleinod.",
-      "reactions": 1,
-      "channel": "🔸chaîne-française"
-    },
-    {
-      "id": "1483577171892240385",
-      "content": "",
-      "author": "sexysneakystoat1625",
-      "reactions": 1,
-      "channel": "🔸chaîne-française"
-    },
-    {
-      "id": "1483488934963974237",
-      "content": "",
-      "author": "oct3000",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483484538767282411",
-      "content": "",
-      "author": "xu6_",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483378827223629875",
-      "content": "",
-      "author": "tw9580",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483373636046950403",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483348000133873714",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483278669584666648",
-      "content": "",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483342042703859813",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483365027120676924",
-      "content": "",
-      "author": "aaabbbababaab.",
-      "reactions": 1,
+      "author": "theosiris4462",
+      "reactions": 2,
       "channel": ""
     }
   ]

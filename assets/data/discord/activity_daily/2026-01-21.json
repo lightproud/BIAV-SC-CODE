@@ -1,10 +1,12 @@
 {
   "date": "2026-01-21",
-  "messages": 41,
+  "messages": 48,
   "unique_authors": 8,
-  "reactions_total": 47,
+  "reactions_total": 60,
   "attachments": 0,
   "channel_activity": {
+    "1463402306606465080": 2,
+    "1455822126568308957": 5,
     "1450001353064714320": 20,
     "1234769700735418368": 7,
     "1463456408249831446": 11,
@@ -12,13 +14,15 @@
     "1241345906826153984": 1
   },
   "hourly_activity": {
+    "5": 1,
+    "6": 4,
+    "8": 5,
     "1": 4,
     "10": 11,
     "14": 4,
     "16": 3,
     "23": 5,
     "7": 1,
-    "8": 3,
     "9": 4,
     "11": 2,
     "12": 1,
@@ -26,8 +30,7 @@
     "17": 1
   },
   "message_types": {
-    "19": 5,
-    "0": 22
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -35,6 +38,13 @@
       "content": "",
       "author": "ass191044",
       "reactions": 18,
+      "channel": ""
+    },
+    {
+      "id": "1463402306606465080",
+      "content": "",
+      "author": "h3ll0hu",
+      "reactions": 11,
       "channel": ""
     },
     {
@@ -56,6 +66,20 @@
       "content": "",
       "author": "ernest_heart",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1463414384670806069",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1463423531948703799",
+      "content": "",
+      "author": "known8642",
+      "reactions": 1,
       "channel": ""
     },
     {

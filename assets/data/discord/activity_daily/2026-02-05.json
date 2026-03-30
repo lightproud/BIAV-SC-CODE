@@ -1,27 +1,51 @@
 {
   "date": "2026-02-05",
-  "messages": 32,
-  "unique_authors": 12,
-  "reactions_total": 29,
+  "messages": 9650,
+  "unique_authors": 178,
+  "reactions_total": 1462,
   "attachments": 0,
   "channel_activity": {
+    "1442292634575175710": 1,
+    "🔸綜合討論": 1920,
+    "🔸阵容构建": 69,
+    "🔸morimens-game-chat": 7628,
     "🔸频道建议┊server-suggestions": 2,
     "🔸忘却前夜┊morimens-tv": 2,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 26,
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "22": 2,
-    "3": 1,
-    "18": 2,
-    "4": 1,
-    "15": 21,
-    "21": 3,
-    "9": 2
+    "8": 762,
+    "0": 223,
+    "1": 258,
+    "2": 311,
+    "3": 261,
+    "4": 109,
+    "5": 173,
+    "6": 444,
+    "7": 731,
+    "9": 870,
+    "10": 533,
+    "11": 531,
+    "12": 698,
+    "13": 580,
+    "14": 546,
+    "15": 534,
+    "16": 312,
+    "17": 164,
+    "18": 298,
+    "19": 187,
+    "20": 379,
+    "21": 269,
+    "22": 131,
+    "23": 346
   },
   "message_types": {
-    "0": 24,
-    "19": 8
+    "4": 1,
+    "0": 6681,
+    "19": 2933,
+    "20": 1,
+    "46": 2
   },
   "top_reacted_messages": [
     {
@@ -32,32 +56,137 @@
       "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
     },
     {
-      "id": "1469031156866486508",
+      "id": "1469087235377991927",
       "content": "",
-      "author": "yaoshidoppa",
-      "reactions": 5,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "author": "detectivedango",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1468806631545507920",
+      "id": "1468930970265845957",
       "content": "",
-      "author": "lonely_tree",
-      "reactions": 4,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "author": "wangyuan4880",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1469102535502463008",
+      "id": "1468831731799822539",
       "content": "",
-      "author": "shrek22004bdrip",
-      "reactions": 2,
-      "channel": "🔸频道建议┊server-suggestions"
+      "author": "aurora3981",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1468903502314209443",
+      "id": "1468989205647589501",
       "content": "",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": ""
+      "author": "frosthief",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468769229900611664",
+      "content": "",
+      "author": "frosthief",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468961313198968987",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469062970511458405",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468889958461735113",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468941054345744394",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468961551762329826",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469115940259106928",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468782118673842268",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468782128753021094",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468868623006433291",
+      "content": "",
+      "author": "galagalaguo",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1469104045825462333",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468879408130424915",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468933931696001167",
+      "content": "",
+      "author": "2ndselna",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468935750564319313",
+      "content": "",
+      "author": "undeterredhomo",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468985225408413722",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

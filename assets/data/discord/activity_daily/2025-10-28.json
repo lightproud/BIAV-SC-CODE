@@ -1,17 +1,27 @@
 {
   "date": "2025-10-28",
-  "messages": 4,
-  "unique_authors": 1,
-  "reactions_total": 140,
+  "messages": 67,
+  "unique_authors": 25,
+  "reactions_total": 172,
   "attachments": 0,
   "channel_activity": {
+    "1432654338982940783": 63,
     "🐱light’s-nest": 4
   },
   "hourly_activity": {
+    "9": 48,
+    "11": 2,
+    "12": 1,
+    "13": 1,
+    "14": 2,
+    "15": 5,
+    "16": 4,
     "10": 4
   },
   "message_types": {
-    "0": 4
+    "0": 51,
+    "6": 1,
+    "19": 11
   },
   "top_reacted_messages": [
     {
@@ -27,6 +37,69 @@
       "author": "game.producer.light",
       "reactions": 27,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1432668243579109429",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1432670163748130867",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1432667319708028991",
+      "content": "",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1432667926405841019",
+      "content": "",
+      "author": "axe_proficient",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1432698598981763204",
+      "content": "",
+      "author": "itissoloong",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1432769128829292728",
+      "content": "",
+      "author": "cs001092",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1432668947584647178",
+      "content": "",
+      "author": "wesu.",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1432669362254381117",
+      "content": "",
+      "author": "thunderbrother",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1432717980629864662",
+      "content": "",
+      "author": "2300011747",
+      "reactions": 1,
+      "channel": ""
     }
   ]
 }

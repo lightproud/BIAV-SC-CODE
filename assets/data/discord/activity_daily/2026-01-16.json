@@ -1,10 +1,11 @@
 {
   "date": "2026-01-16",
-  "messages": 8,
+  "messages": 9,
   "unique_authors": 4,
-  "reactions_total": 4,
+  "reactions_total": 5,
   "attachments": 0,
   "channel_activity": {
+    "1455822126568308957": 1,
     "1193859503096070234": 1,
     "1305430084420898868": 1,
     "🔸忘却前夜┊morimens-tv": 1,
@@ -12,6 +13,7 @@
     "1241345906826153984": 4
   },
   "hourly_activity": {
+    "21": 1,
     "16": 1,
     "12": 1,
     "11": 1,
@@ -20,10 +22,16 @@
     "18": 1
   },
   "message_types": {
-    "19": 1,
     "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1461833368801906698",
+      "content": "",
+      "author": "not_blueberry",
+      "reactions": 1,
+      "channel": ""
+    },
     {
       "id": "1461756242836852767",
       "content": "",

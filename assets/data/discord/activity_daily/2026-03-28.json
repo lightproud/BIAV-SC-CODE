@@ -1,10 +1,22 @@
 {
   "date": "2026-03-28",
-  "messages": 327,
+  "messages": 470,
   "unique_authors": 80,
-  "reactions_total": 100,
+  "reactions_total": 214,
   "attachments": 0,
   "channel_activity": {
+    "1487519396921479289": 2,
+    "1487485175796465907": 2,
+    "1487389233852452874": 6,
+    "1487273969148100698": 2,
+    "1487196532066484409": 9,
+    "1487111853652840448": 15,
+    "1486728811956670475": 2,
+    "1485613870176276531": 1,
+    "1450337762829144255": 9,
+    "1486251108971319386": 1,
+    "1482997212354187324": 11,
+    "1487263182165774537": 83,
     "1480558608365125632": 1,
     "1468895834199298215": 1,
     "🔸晒卡分享": 11,
@@ -35,40 +47,70 @@
     "1484212697015914496": 1
   },
   "hourly_activity": {
-    "19": 14,
-    "8": 8,
-    "9": 12,
+    "18": 81,
+    "21": 18,
+    "16": 32,
+    "9": 13,
+    "10": 42,
+    "14": 24,
+    "2": 12,
+    "15": 36,
+    "12": 8,
+    "20": 5,
+    "4": 4,
+    "0": 1,
+    "8": 16,
+    "23": 10,
+    "3": 17,
+    "1": 6,
+    "19": 20,
     "11": 16,
     "17": 13,
-    "18": 64,
     "7": 28,
-    "12": 5,
-    "1": 5,
     "6": 16,
-    "3": 12,
-    "4": 2,
     "5": 16,
-    "15": 16,
-    "10": 21,
-    "21": 14,
     "13": 5,
-    "14": 8,
-    "22": 31,
-    "23": 8,
-    "16": 10,
-    "20": 2,
-    "2": 1
+    "22": 31
   },
   "message_types": {
-    "19": 1,
-    "0": 1
+    "0": 117,
+    "19": 25,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1487519396921479289",
+      "content": "",
+      "author": "piereenee",
+      "reactions": 33,
+      "channel": ""
+    },
+    {
+      "id": "1487485175796465907",
+      "content": "",
+      "author": "maackiacartis",
+      "reactions": 19,
+      "channel": ""
+    },
+    {
+      "id": "1487389233852452874",
+      "content": "",
+      "author": "peanutgod_ofsaturn",
+      "reactions": 18,
+      "channel": ""
+    },
     {
       "id": "1487366344226766912",
       "content": "",
       "author": "vxvendetta97",
       "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1487273969148100698",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 12,
       "channel": ""
     },
     {
@@ -83,6 +125,13 @@
       "content": "",
       "author": "artigosaurus",
       "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1487271696023945489",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 10,
       "channel": ""
     },
     {
@@ -114,6 +163,13 @@
       "channel": ""
     },
     {
+      "id": "1487526355691114659",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
       "id": "1487597657621794901",
       "content": "",
       "author": "climbkaly",
@@ -121,11 +177,25 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1487307676898693293",
+      "content": "",
+      "author": "cooked_chicken99",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
       "id": "1487380996545319052",
       "content": "",
       "author": "xingxiu_0209",
       "reactions": 3,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1487277029597384856",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 2,
+      "channel": ""
     },
     {
       "id": "1487353494070628383",
@@ -147,62 +217,6 @@
       "author": "crowlov1",
       "reactions": 2,
       "channel": "🔸频道建议┊server-suggestions"
-    },
-    {
-      "id": "1487356490007183491",
-      "content": "",
-      "author": "david.chen.123",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1487356843759239228",
-      "content": "",
-      "author": "shostakovich524",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1487488162606350347",
-      "content": "",
-      "author": "zzz1pp3rr",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1487384043250258021",
-      "content": "",
-      "author": "be_queitplease",
-      "reactions": 1,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1487347944788332636",
-      "content": "",
-      "author": "be_queitplease",
-      "reactions": 1,
-      "channel": "🔸相位对弈"
-    },
-    {
-      "id": "1487411432239661136",
-      "content": "",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "🔸相位对弈"
-    },
-    {
-      "id": "1487481006452769033",
-      "content": "",
-      "author": "gacha_ping",
-      "reactions": 1,
-      "channel": "🔸한국어-채팅방"
-    },
-    {
-      "id": "1487470021700751600",
-      "content": "",
-      "author": "trex0007",
-      "reactions": 1,
-      "channel": "🔸chaîne-française"
     }
   ]
 }

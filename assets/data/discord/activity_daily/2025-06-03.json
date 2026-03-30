@@ -1,19 +1,28 @@
 {
   "date": "2025-06-03",
-  "messages": 1,
+  "messages": 2,
   "unique_authors": 1,
-  "reactions_total": 2,
+  "reactions_total": 39,
   "attachments": 0,
   "channel_activity": {
+    "1379534998704488528": 1,
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "18": 1,
     "21": 1
   },
   "message_types": {
     "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1379534998704488528",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 37,
+      "channel": ""
+    },
     {
       "id": "1379574576555495597",
       "content": "",

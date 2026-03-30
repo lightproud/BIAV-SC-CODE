@@ -1,17 +1,20 @@
 {
   "date": "2025-12-11",
-  "messages": 9,
+  "messages": 11,
   "unique_authors": 3,
-  "reactions_total": 24,
+  "reactions_total": 26,
   "attachments": 0,
   "channel_activity": {
+    "1399369127008796723": 1,
+    "1441326394817908736": 1,
     "1305430084420898868": 2,
     "🔸欢乐梗图": 6,
     "1296113810549112874": 1
   },
   "hourly_activity": {
+    "11": 2,
+    "3": 1,
     "1": 2,
-    "11": 1,
     "12": 5,
     "16": 1
   },
@@ -32,6 +35,13 @@
       "author": "ass191044",
       "reactions": 11,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1448634191221620736",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 2,
+      "channel": ""
     }
   ]
 }

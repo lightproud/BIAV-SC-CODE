@@ -1,24 +1,32 @@
 {
   "date": "2025-10-29",
-  "messages": 6,
-  "unique_authors": 3,
-  "reactions_total": 152,
+  "messages": 27,
+  "unique_authors": 13,
+  "reactions_total": 203,
   "attachments": 0,
   "channel_activity": {
+    "1432654338982940783": 19,
+    "1356210707867107391": 2,
     "1234769700735418368": 3,
     "🐱light’s-nest": 1,
     "1423337172655935600": 2
   },
   "hourly_activity": {
+    "3": 1,
+    "6": 7,
+    "15": 10,
+    "18": 1,
+    "22": 1,
+    "10": 2,
     "1": 1,
-    "6": 1,
     "11": 1,
     "5": 1,
     "4": 1,
     "14": 1
   },
   "message_types": {
-    "0": 3
+    "0": 18,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -29,10 +37,59 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1432980691099844641",
+      "content": "",
+      "author": "taoi002",
+      "reactions": 24,
+      "channel": ""
+    },
+    {
+      "id": "1432985463244853248",
+      "content": "",
+      "author": "glacy_9918",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
       "id": "1432978380944314478",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 15,
+      "channel": ""
+    },
+    {
+      "id": "1433110475792715907",
+      "content": "",
+      "author": "jidu1418",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1433045973151649802",
+      "content": "",
+      "author": "code03089",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1433158861597966336",
+      "content": "",
+      "author": "asleeplessman",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1432974094944702506",
+      "content": "",
+      "author": "taoi002",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1433116629784330361",
+      "content": "",
+      "author": "koukou0213",
+      "reactions": 1,
       "channel": ""
     },
     {

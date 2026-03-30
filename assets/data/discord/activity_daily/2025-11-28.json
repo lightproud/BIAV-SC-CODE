@@ -1,17 +1,25 @@
 {
   "date": "2025-11-28",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 136,
+  "messages": 13,
+  "unique_authors": 7,
+  "reactions_total": 178,
   "attachments": 0,
   "channel_activity": {
+    "1443848396585828363": 2,
+    "1441326394817908736": 10,
     "🐱light’s-nest": 1
   },
   "hourly_activity": {
+    "6": 2,
+    "11": 1,
+    "13": 1,
+    "15": 3,
+    "21": 1,
+    "22": 4,
     "2": 1
   },
   "message_types": {
-    "0": 1
+    "0": 12
   },
   "top_reacted_messages": [
     {
@@ -20,6 +28,20 @@
       "author": "game.producer.light",
       "reactions": 136,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1443848396585828363",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1443848465158504528",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 16,
+      "channel": ""
     }
   ]
 }

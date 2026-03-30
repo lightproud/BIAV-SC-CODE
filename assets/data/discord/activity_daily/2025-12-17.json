@@ -1,21 +1,76 @@
 {
   "date": "2025-12-17",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 1,
+  "messages": 20,
+  "unique_authors": 5,
+  "reactions_total": 13,
   "attachments": 0,
   "channel_activity": {
+    "1445556242381672559": 17,
+    "1350060160739184690": 1,
     "1234769700735418368": 1,
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
-    "14": 1,
-    "10": 1
+    "4": 11,
+    "8": 2,
+    "10": 2,
+    "15": 4,
+    "14": 1
   },
   "message_types": {
-    "0": 1
+    "0": 12,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1450874125932560435",
+      "content": "",
+      "author": "exhibitionism",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1450789912893722744",
+      "content": "",
+      "author": "exhibitionism",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1450711200735297607",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1450711533452791808",
+      "content": "",
+      "author": "sunstopshining",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1450711729926439020",
+      "content": "",
+      "author": "sunstopshining",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1450870896280600779",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1450871420631515321",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 1,
+      "channel": ""
+    },
     {
       "id": "1450796930480472075",
       "content": "",

@@ -1,10 +1,12 @@
 {
   "date": "2026-01-04",
-  "messages": 17,
+  "messages": 24,
   "unique_authors": 4,
-  "reactions_total": 34,
+  "reactions_total": 38,
   "attachments": 0,
   "channel_activity": {
+    "1451677796085661888": 3,
+    "1457202535138857132": 4,
     "1457468446353653792": 1,
     "1456239100989542555": 1,
     "1456019117805932636": 4,
@@ -14,19 +16,19 @@
     "1241345906826153984": 4
   },
   "hourly_activity": {
+    "10": 8,
+    "13": 1,
+    "2": 2,
+    "3": 2,
+    "18": 3,
     "20": 1,
-    "3": 1,
     "9": 3,
-    "18": 1,
-    "10": 6,
-    "2": 1,
     "8": 3,
     "14": 1
   },
   "message_types": {
-    "0": 6,
-    "4": 3,
-    "19": 3
+    "0": 5,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -41,6 +43,13 @@
       "content": "",
       "author": "morimensstaff01",
       "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1457440638651072686",
+      "content": "",
+      "author": "genosus",
+      "reactions": 4,
       "channel": ""
     },
     {

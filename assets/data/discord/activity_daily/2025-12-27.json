@@ -1,23 +1,36 @@
 {
   "date": "2025-12-27",
-  "messages": 11,
+  "messages": 35,
   "unique_authors": 5,
-  "reactions_total": 12,
+  "reactions_total": 29,
   "attachments": 0,
   "channel_activity": {
+    "1454438358351609857": 24,
     "🔸欢乐梗图": 1,
     "🔸忘却前夜┊morimens-tv": 2,
     "1296113810549112874": 8
   },
   "hourly_activity": {
-    "16": 1,
+    "11": 1,
+    "12": 1,
+    "13": 3,
+    "15": 16,
+    "16": 4,
     "22": 2,
     "10": 8
   },
   "message_types": {
-    "0": 11
+    "0": 13,
+    "19": 11
   },
   "top_reacted_messages": [
+    {
+      "id": "1454438358351609857",
+      "content": "",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 16,
+      "channel": ""
+    },
     {
       "id": "1454513599098650769",
       "content": "",
@@ -37,6 +50,13 @@
       "content": "",
       "author": "yingmai_",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1454466729714389033",
+      "content": "",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 1,
       "channel": ""
     },
     {

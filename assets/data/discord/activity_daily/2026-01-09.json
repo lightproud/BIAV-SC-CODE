@@ -1,29 +1,37 @@
 {
   "date": "2026-01-09",
-  "messages": 17,
+  "messages": 19,
   "unique_authors": 6,
-  "reactions_total": 25,
+  "reactions_total": 39,
   "attachments": 0,
   "channel_activity": {
+    "1459114773768568882": 2,
     "1305430084420898868": 11,
     "1234769700735418368": 5,
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
+    "9": 2,
+    "13": 1,
     "3": 3,
     "5": 2,
     "8": 3,
-    "9": 1,
     "11": 1,
     "14": 1,
     "7": 5,
     "21": 1
   },
   "message_types": {
-    "19": 6,
-    "0": 10
+    "0": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1459114773768568882",
+      "content": "",
+      "author": "zay_chees3",
+      "reactions": 11,
+      "channel": ""
+    },
     {
       "id": "1459060821211615254",
       "content": "",
@@ -50,6 +58,13 @@
       "content": "",
       "author": "dittoqwq",
       "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1459172858688438423",
+      "content": "",
+      "author": "zay_chees3",
+      "reactions": 3,
       "channel": ""
     },
     {

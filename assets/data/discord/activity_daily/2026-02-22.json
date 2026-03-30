@@ -1,10 +1,16 @@
 {
   "date": "2026-02-22",
-  "messages": 18,
-  "unique_authors": 7,
-  "reactions_total": 32,
+  "messages": 1425,
+  "unique_authors": 39,
+  "reactions_total": 241,
   "attachments": 0,
   "channel_activity": {
+    "1450337762829144255": 2,
+    "1475263387553501427": 1,
+    "1458187614879486146": 2,
+    "1350058928020656178": 8,
+    "🔸綜合討論": 1381,
+    "🔸阵容构建": 13,
     "1475060782139052122": 7,
     "1471903688032522388": 3,
     "🔸频道建议┊server-suggestions": 2,
@@ -13,26 +19,63 @@
     "1241345906826153984": 4
   },
   "hourly_activity": {
-    "9": 2,
-    "10": 5,
-    "1": 3,
-    "15": 1,
-    "16": 1,
-    "3": 1,
-    "20": 1,
-    "0": 1,
-    "11": 3
+    "1": 52,
+    "22": 7,
+    "5": 30,
+    "17": 49,
+    "19": 1,
+    "21": 36,
+    "0": 2,
+    "2": 60,
+    "3": 22,
+    "4": 20,
+    "6": 9,
+    "7": 97,
+    "8": 110,
+    "9": 186,
+    "10": 228,
+    "11": 61,
+    "12": 11,
+    "13": 6,
+    "14": 111,
+    "15": 134,
+    "16": 84,
+    "18": 9,
+    "20": 99,
+    "23": 1
   },
   "message_types": {
-    "0": 10
+    "0": 1072,
+    "19": 335
   },
   "top_reacted_messages": [
+    {
+      "id": "1475263387553501427",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 35,
+      "channel": ""
+    },
     {
       "id": "1475159481930485811",
       "content": "",
       "author": "syruponstrawberrycake",
       "reactions": 8,
       "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1474963464383496284",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475262070047113257",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1475060782139052122",
@@ -56,6 +99,76 @@
       "channel": ""
     },
     {
+      "id": "1475022776430760068",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475086275248787600",
+      "content": "",
+      "author": "partycatss.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475105457147216053",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474934478945259723",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1474954170971979889",
+      "content": "",
+      "author": "xyakoto",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474997037140410428",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475038648889249854",
+      "content": "",
+      "author": "lululu9858",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475159554613579907",
+      "content": "",
+      "author": "lululu9858",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475159850911666369",
+      "content": "",
+      "author": "kevin.yienwenst",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475226464457851071",
+      "content": "",
+      "author": "eddy10051115",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1474965873491185697",
       "content": "",
       "author": "yaoshidoppa",
@@ -70,11 +183,11 @@
       "channel": ""
     },
     {
-      "id": "1474947092865745038",
+      "id": "1474960565255409766",
       "content": "",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": ""
+      "author": "luckyinitial",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }

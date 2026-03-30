@@ -1,21 +1,23 @@
 {
   "date": "2025-11-20",
-  "messages": 6,
+  "messages": 7,
   "unique_authors": 4,
   "reactions_total": 275,
   "attachments": 0,
   "channel_activity": {
+    "1356210800091467928": 1,
     "🔸欢乐梗图": 3,
     "🔸服务器公告┊server-announcement": 2,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "12": 1,
     "1": 3,
     "0": 2,
     "8": 1
   },
   "message_types": {
-    "0": 6
+    "0": 1
   },
   "top_reacted_messages": [
     {

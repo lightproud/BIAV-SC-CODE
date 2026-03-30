@@ -1,10 +1,12 @@
 {
   "date": "2026-01-06",
-  "messages": 11,
+  "messages": 13,
   "unique_authors": 4,
-  "reactions_total": 19,
+  "reactions_total": 31,
   "attachments": 0,
   "channel_activity": {
+    "1458187614879486146": 1,
+    "1455822126568308957": 1,
     "1458059497187573862": 2,
     "1456123871383130243": 1,
     "1193859503096070234": 2,
@@ -12,6 +14,8 @@
     "1296113810549112874": 4
   },
   "hourly_activity": {
+    "19": 1,
+    "17": 1,
     "11": 5,
     "12": 1,
     "1": 1,
@@ -20,10 +24,16 @@
     "13": 1
   },
   "message_types": {
-    "0": 2,
-    "19": 3
+    "0": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1458187614879486146",
+      "content": "",
+      "author": "yeriko703",
+      "reactions": 11,
+      "channel": ""
+    },
     {
       "id": "1458061883071266974",
       "content": "",
@@ -57,6 +67,13 @@
       "content": "",
       "author": "void_1546.",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1458156341641220199",
+      "content": "",
+      "author": "valsk_x",
+      "reactions": 1,
       "channel": ""
     },
     {

@@ -1,10 +1,19 @@
 {
   "date": "2026-03-26",
-  "messages": 150,
-  "unique_authors": 32,
-  "reactions_total": 45,
+  "messages": 238,
+  "unique_authors": 37,
+  "reactions_total": 254,
   "attachments": 0,
   "channel_activity": {
+    "1486728811956670475": 3,
+    "1486707533002571979": 1,
+    "1486663322332827738": 1,
+    "1485613870176276531": 5,
+    "1467514039717597328": 1,
+    "1486642972224393216": 37,
+    "1483359118742917201": 4,
+    "1482997212354187324": 4,
+    "1485477316644831444": 32,
     "1468895834199298215": 1,
     "🔸相位对弈": 37,
     "🔸交友频道": 69,
@@ -22,34 +31,97 @@
     "1482702865041588315": 4
   },
   "hourly_activity": {
+    "14": 3,
+    "21": 1,
+    "12": 6,
+    "9": 23,
+    "16": 32,
+    "17": 11,
+    "22": 2,
+    "23": 2,
+    "11": 6,
+    "8": 16,
+    "10": 4,
+    "19": 4,
+    "3": 10,
+    "0": 10,
+    "4": 12,
+    "5": 16,
     "7": 9,
-    "16": 30,
-    "17": 10,
-    "4": 1,
-    "5": 2,
     "6": 25,
-    "8": 8,
     "15": 35,
-    "0": 2,
     "2": 7,
-    "9": 2,
-    "19": 2,
-    "23": 1,
-    "11": 3,
     "18": 1,
-    "3": 8,
-    "12": 1,
     "13": 3
   },
   "message_types": {
-    "0": 1
+    "0": 71,
+    "4": 1,
+    "19": 15,
+    "6": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1486642972224393216",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 62,
+      "channel": ""
+    },
+    {
+      "id": "1486763294839799908",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 35,
+      "channel": ""
+    },
+    {
+      "id": "1486707533002571979",
+      "content": "",
+      "author": "gaje0ng",
+      "reactions": 25,
+      "channel": ""
+    },
+    {
+      "id": "1486728811956670475",
+      "content": "",
+      "author": "cooked_chicken99",
+      "reactions": 21,
+      "channel": ""
+    },
+    {
+      "id": "1486694177298321498",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
+      "id": "1486663322332827738",
+      "content": "",
+      "author": "floriography",
+      "reactions": 15,
+      "channel": ""
+    },
+    {
+      "id": "1486662090470064219",
+      "content": "",
+      "author": "_venush",
+      "reactions": 14,
+      "channel": ""
+    },
     {
       "id": "1486757176612622566",
       "content": "",
       "author": "ice_storys",
       "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1486662270388932669",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 8,
       "channel": ""
     },
     {
@@ -60,11 +132,25 @@
       "channel": ""
     },
     {
+      "id": "1486869313863286805",
+      "content": "",
+      "author": "_cwz_",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
       "id": "1486747121691525150",
       "content": "",
       "author": "cpu7954",
       "reactions": 3,
       "channel": "🔸交友频道"
+    },
+    {
+      "id": "1486836091439808643",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 2,
+      "channel": ""
     },
     {
       "id": "1486774837405024368",
@@ -109,79 +195,9 @@
       "channel": ""
     },
     {
-      "id": "1486783441168240793",
+      "id": "1486847525360107530",
       "content": "",
-      "author": "_haru555_",
-      "reactions": 1,
-      "channel": "🔸相位对弈"
-    },
-    {
-      "id": "1486784791171956758",
-      "content": "",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "🔸相位对弈"
-    },
-    {
-      "id": "1486622105440354331",
-      "content": "",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "🔸交友频道"
-    },
-    {
-      "id": "1486751571814387884",
-      "content": "",
-      "author": "cpu7954",
-      "reactions": 1,
-      "channel": "🔸交友频道"
-    },
-    {
-      "id": "1486752074652848339",
-      "content": "",
-      "author": "trevorsuyu",
-      "reactions": 1,
-      "channel": "🔸交友频道"
-    },
-    {
-      "id": "1486753103637123213",
-      "content": "",
-      "author": "cpu7954",
-      "reactions": 1,
-      "channel": "🔸交友频道"
-    },
-    {
-      "id": "1486753550146207835",
-      "content": "",
-      "author": "trevorsuyu",
-      "reactions": 1,
-      "channel": "🔸交友频道"
-    },
-    {
-      "id": "1486553025362395159",
-      "content": "",
-      "author": "hon_ey0",
-      "reactions": 1,
-      "channel": "🔸日本語チャンネル"
-    },
-    {
-      "id": "1486620700314697778",
-      "content": "",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1486699892905873408",
-      "content": "",
-      "author": "shaw_51",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1486715499072192603",
-      "content": "",
-      "author": "shostakovich524",
+      "author": "insigible",
       "reactions": 1,
       "channel": ""
     }

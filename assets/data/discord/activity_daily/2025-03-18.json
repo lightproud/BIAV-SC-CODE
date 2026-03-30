@@ -1,21 +1,60 @@
 {
   "date": "2025-03-18",
-  "messages": 10,
+  "messages": 34,
   "unique_authors": 6,
-  "reactions_total": 0,
+  "reactions_total": 5,
   "attachments": 0,
   "channel_activity": {
+    "1350060973083590666": 2,
+    "1350060160739184690": 20,
+    "1350059696945500171": 2,
     "1351517079299162142": 9,
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "6": 3,
+    "0": 1,
+    "7": 17,
+    "8": 1,
+    "13": 2,
     "11": 4,
     "12": 4,
     "21": 1,
     "3": 1
   },
   "message_types": {
-    "0": 9
+    "4": 2,
+    "0": 17,
+    "19": 5
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1351467257103908905",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1351456543098404894",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1351456794941198347",
+      "content": "",
+      "author": "6____6",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1351457593268109404",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
 }

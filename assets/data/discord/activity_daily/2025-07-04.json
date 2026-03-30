@@ -1,24 +1,80 @@
 {
   "date": "2025-07-04",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 12,
+  "messages": 16,
+  "unique_authors": 8,
+  "reactions_total": 46,
   "attachments": 0,
   "channel_activity": {
+    "1390375103707218041": 15,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "0": 8,
+    "1": 4,
+    "2": 1,
+    "11": 1,
+    "13": 1,
     "14": 1
   },
   "message_types": {
-    "0": 1
+    "0": 13,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1390490801125064714",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 13,
+      "channel": ""
+    },
     {
       "id": "1390700945939234816",
       "content": "",
       "author": "navirecorbeau",
       "reactions": 12,
+      "channel": ""
+    },
+    {
+      "id": "1390490471280935054",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1390490997120569404",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1390510222434635817",
+      "content": "",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1390510478765199491",
+      "content": "",
+      "author": "mac2492",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1390510564471607336",
+      "content": "",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1390516236877692969",
+      "content": "",
+      "author": "jormiejormungandr",
+      "reactions": 1,
       "channel": ""
     }
   ]

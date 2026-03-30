@@ -1,17 +1,19 @@
 {
   "date": "2025-11-23",
-  "messages": 2,
+  "messages": 9,
   "unique_authors": 1,
-  "reactions_total": 438,
+  "reactions_total": 449,
   "attachments": 0,
   "channel_activity": {
+    "1442292634575175710": 7,
     "🔸新生守则┊rules": 2
   },
   "hourly_activity": {
+    "23": 7,
     "20": 2
   },
   "message_types": {
-    "0": 2
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -27,6 +29,20 @@
       "author": "iamVilla",
       "reactions": 21,
       "channel": "🔸新生守则┊rules"
+    },
+    {
+      "id": "1442292634575175710",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1442293091657846955",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": ""
     }
   ]
 }

@@ -1,10 +1,27 @@
 {
   "date": "2026-03-22",
-  "messages": 45,
+  "messages": 99,
   "unique_authors": 28,
-  "reactions_total": 84,
+  "reactions_total": 218,
   "attachments": 0,
   "channel_activity": {
+    "1485366013934436512": 5,
+    "1485319851697242262": 1,
+    "1485271899348008970": 7,
+    "1485263124826423376": 1,
+    "1485201668470739068": 5,
+    "1485020903673958440": 2,
+    "1484936409675464905": 7,
+    "1484197027435905116": 1,
+    "1471164034622427448": 1,
+    "1450337762829144255": 1,
+    "1483901221344379060": 2,
+    "1477730088299663431": 2,
+    "1484804984855068702": 1,
+    "1482997212354187324": 5,
+    "1485200160173588480": 4,
+    "1484503817683865610": 6,
+    "1484457112628363284": 3,
     "1468895834199298215": 1,
     "1467225902029996154": 2,
     "1450001353064714320": 3,
@@ -24,35 +41,68 @@
     "1483461060185817318": 2
   },
   "hourly_activity": {
+    "19": 5,
+    "20": 8,
+    "22": 1,
+    "23": 5,
+    "16": 4,
+    "13": 4,
+    "14": 8,
+    "9": 7,
+    "11": 8,
+    "2": 9,
+    "1": 3,
+    "3": 6,
+    "12": 2,
+    "0": 1,
+    "5": 3,
+    "8": 3,
+    "15": 4,
     "10": 2,
     "17": 4,
-    "20": 4,
-    "23": 3,
-    "11": 4,
-    "19": 4,
-    "2": 1,
     "6": 1,
     "7": 2,
-    "1": 1,
-    "8": 1,
-    "13": 1,
-    "15": 1,
-    "16": 2,
     "4": 6,
-    "18": 3,
-    "9": 3,
-    "5": 2
+    "18": 3
   },
   "message_types": {
-    "0": 5,
-    "19": 2
+    "0": 45,
+    "19": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1485366013934436512",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 34,
+      "channel": ""
+    },
+    {
+      "id": "1485201668470739068",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 33,
+      "channel": ""
+    },
+    {
+      "id": "1485313912894390303",
+      "content": "",
+      "author": "gaedol.",
+      "reactions": 17,
+      "channel": ""
+    },
     {
       "id": "1485202178816872468",
       "content": "",
       "author": "that_one_chippy",
       "reactions": 15,
+      "channel": ""
+    },
+    {
+      "id": "1485263124826423376",
+      "content": "",
+      "author": "celrxn",
+      "reactions": 13,
       "channel": ""
     },
     {
@@ -63,10 +113,31 @@
       "channel": ""
     },
     {
+      "id": "1485271899348008970",
+      "content": "",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1485202191043137647",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
       "id": "1485134529478922401",
       "content": "",
       "author": "foxcatfurry",
       "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1485108617215606894",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 6,
       "channel": ""
     },
     {
@@ -126,52 +197,17 @@
       "channel": ""
     },
     {
-      "id": "1485357205887778848",
+      "id": "1485319851697242262",
       "content": "",
       "author": ".kleinod.",
       "reactions": 2,
-      "channel": "🔸chaîne-française"
-    },
-    {
-      "id": "1485361749224980551",
-      "content": "",
-      "author": ".kleinod.",
-      "reactions": 1,
-      "channel": "🔸chaîne-française"
-    },
-    {
-      "id": "1485370597180575874",
-      "content": "",
-      "author": ".kleinod.",
-      "reactions": 1,
-      "channel": "🔸chaîne-française"
-    },
-    {
-      "id": "1485308739635642469",
-      "content": "",
-      "author": "nanananananauw",
-      "reactions": 1,
-      "channel": "🔸邀请码互助┊swap-invitation-codes"
-    },
-    {
-      "id": "1485316879638597672",
-      "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1485322545602494555",
+      "id": "1485109942573600870",
       "content": "",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1485135424988123246",
-      "content": "",
-      "author": "n0thing6214",
-      "reactions": 1,
+      "author": "shio2311",
+      "reactions": 2,
       "channel": ""
     }
   ]

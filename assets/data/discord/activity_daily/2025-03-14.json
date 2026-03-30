@@ -1,0 +1,88 @@
+{
+  "date": "2025-03-14",
+  "messages": 12,
+  "unique_authors": 6,
+  "reactions_total": 42,
+  "attachments": 0,
+  "channel_activity": {
+    "1350060973083590666": 1,
+    "1350060160739184690": 8,
+    "1350059696945500171": 1,
+    "1350058287688712253": 2
+  },
+  "hourly_activity": {
+    "11": 2,
+    "10": 4,
+    "12": 1,
+    "13": 3,
+    "19": 2
+  },
+  "message_types": {
+    "0": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1350058287688712253",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 19,
+      "channel": ""
+    },
+    {
+      "id": "1350060973083590666",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1350060160739184690",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1350059696945500171",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1350058596288692334",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1350102008106975322",
+      "content": "",
+      "author": "xeno_for_world",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1350103224882823188",
+      "content": "",
+      "author": "shadowwave",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1350190693787762710",
+      "content": "",
+      "author": "karsh_1",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1350101119266721882",
+      "content": "",
+      "author": "liawein",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,10 +1,23 @@
 {
   "date": "2026-03-07",
-  "messages": 114,
-  "unique_authors": 17,
-  "reactions_total": 998,
+  "messages": 191,
+  "unique_authors": 37,
+  "reactions_total": 1177,
   "attachments": 0,
   "channel_activity": {
+    "1181147096234065920": 1,
+    "1479736301807997100": 2,
+    "1478662167031971860": 2,
+    "1477439262126379138": 2,
+    "1450337762829144255": 5,
+    "1445556242381672559": 2,
+    "1458187614879486146": 1,
+    "1451677796085661888": 1,
+    "1357184174485671966": 2,
+    "1350058928020656178": 10,
+    "1479737727556653106": 9,
+    "1479428860591210528": 39,
+    "1479855628506632304": 1,
     "1479908568319660142": 1,
     "1479859913420312606": 1,
     "1479847255555965089": 29,
@@ -22,29 +35,34 @@
     "1440735573206761734": 9
   },
   "hourly_activity": {
-    "18": 21,
-    "15": 2,
-    "14": 4,
-    "19": 5,
+    "7": 16,
+    "8": 8,
+    "6": 13,
+    "11": 3,
+    "9": 3,
+    "10": 1,
+    "14": 8,
+    "19": 6,
+    "20": 3,
+    "21": 3,
+    "17": 2,
+    "18": 24,
+    "13": 4,
+    "2": 2,
+    "5": 28,
+    "16": 6,
+    "1": 6,
+    "3": 5,
+    "4": 21,
+    "12": 11,
+    "15": 8,
     "23": 7,
-    "1": 2,
-    "0": 3,
-    "3": 4,
-    "4": 7,
-    "5": 19,
-    "6": 12,
-    "11": 2,
-    "12": 9,
-    "13": 1,
-    "8": 6,
-    "7": 6,
-    "16": 1,
-    "21": 2,
-    "2": 1
+    "0": 3
   },
   "message_types": {
-    "0": 65,
-    "19": 17
+    "0": 57,
+    "19": 17,
+    "6": 3
   },
   "top_reacted_messages": [
     {
@@ -55,10 +73,59 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1479737727556653106",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 32,
+      "channel": ""
+    },
+    {
+      "id": "1479736301807997100",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 25,
+      "channel": ""
+    },
+    {
       "id": "1479979789329633340",
       "content": "",
       "author": "tw9580",
       "reactions": 20,
+      "channel": ""
+    },
+    {
+      "id": "1479759949495009401",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 16,
+      "channel": ""
+    },
+    {
+      "id": "1479858984289697834",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 15,
+      "channel": ""
+    },
+    {
+      "id": "1479896511981682889",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1479756540314521600",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1479694591186833609",
+      "content": "",
+      "author": "the._.nox",
+      "reactions": 10,
       "channel": ""
     },
     {
@@ -69,10 +136,31 @@
       "channel": ""
     },
     {
+      "id": "1479694198717546606",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
       "id": "1479721670246797434",
       "content": "",
       "author": "_neyko_",
       "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1479896669809279016",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1479694461213736960",
+      "content": "",
+      "author": "the._.nox",
+      "reactions": 6,
       "channel": ""
     },
     {
@@ -90,101 +178,31 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1479658975241830596",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1479855628506632304",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1479782706597597194",
+      "content": "",
+      "author": "golden_pumpking",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
       "id": "1479859913420312606",
       "content": "",
       "author": "climbkaly",
       "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1479853776478408845",
-      "content": "",
-      "author": "_neyko_",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1479759015042089031",
-      "content": "",
-      "author": "that_one_chippy",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1479908568319660142",
-      "content": "",
-      "author": "jyeusu",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1479955865758073044",
-      "content": "",
-      "author": "antshpo",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1479711909799264268",
-      "content": "",
-      "author": "_neyko_",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1479856759249174681",
-      "content": "",
-      "author": "_neyko_",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1479735987033866392",
-      "content": "",
-      "author": "closetom",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1479829342166192219",
-      "content": "",
-      "author": "ka_0414",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1479986339599614095",
-      "content": "",
-      "author": "antshpo",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1479739374710296679",
-      "content": "",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1479746037236371648",
-      "content": "",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1479747845782376448",
-      "content": "",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1479758624451465216",
-      "content": "",
-      "author": "that_one_chippy",
-      "reactions": 1,
       "channel": ""
     }
   ]

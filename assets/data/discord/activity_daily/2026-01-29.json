@@ -1,10 +1,15 @@
 {
   "date": "2026-01-29",
-  "messages": 73,
+  "messages": 85,
   "unique_authors": 16,
-  "reactions_total": 26,
+  "reactions_total": 111,
   "attachments": 0,
   "channel_activity": {
+    "1466476838095290620": 1,
+    "1466475080245842064": 5,
+    "1466474773830959144": 2,
+    "1464228375316136072": 3,
+    "1441326394817908736": 1,
     "1234769700735418368": 1,
     "🔸欢乐梗图": 2,
     "🔸忘却前夜┊morimens-tv": 1,
@@ -14,8 +19,13 @@
     "1440735573206761734": 30
   },
   "hourly_activity": {
+    "16": 5,
+    "19": 2,
+    "23": 2,
+    "13": 5,
+    "15": 1,
+    "8": 25,
     "10": 9,
-    "8": 24,
     "17": 4,
     "7": 3,
     "9": 9,
@@ -23,18 +33,46 @@
     "12": 12,
     "18": 2,
     "2": 1,
-    "6": 3,
-    "13": 4
+    "6": 3
   },
   "message_types": {
-    "0": 1
+    "0": 11,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1466474773830959144",
+      "content": "",
+      "author": "glitzy_x",
+      "reactions": 29,
+      "channel": ""
+    },
+    {
+      "id": "1466476838095290620",
+      "content": "",
+      "author": "belong1047",
+      "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1466475080245842064",
+      "content": "",
+      "author": "glitzy_x",
+      "reactions": 24,
+      "channel": ""
+    },
     {
       "id": "1466490836006080696",
       "content": "",
       "author": "ass191044",
       "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1466463265478410333",
+      "content": "",
+      "author": "mimiruku",
+      "reactions": 5,
       "channel": ""
     },
     {
@@ -71,6 +109,13 @@
       "author": "quackdayo",
       "reactions": 2,
       "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1466575403953946666",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": ""
     },
     {
       "id": "1466349422991642818",

@@ -1,0 +1,26 @@
+{
+  "date": "2025-09-28",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "1420092491125755985": 5
+  },
+  "hourly_activity": {
+    "13": 5
+  },
+  "message_types": {
+    "19": 1,
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1421852615611777104",
+      "content": "",
+      "author": "arctic59",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

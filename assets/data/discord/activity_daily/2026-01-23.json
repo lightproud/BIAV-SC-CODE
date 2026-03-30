@@ -1,10 +1,12 @@
 {
   "date": "2026-01-23",
-  "messages": 10,
+  "messages": 32,
   "unique_authors": 6,
-  "reactions_total": 24,
+  "reactions_total": 100,
   "attachments": 0,
   "channel_activity": {
+    "1464228375316136072": 5,
+    "1455822126568308957": 17,
     "1450001353064714320": 1,
     "1417419008898109492": 1,
     "1234769700735418368": 1,
@@ -14,17 +16,29 @@
     "1463188507659993200": 2
   },
   "hourly_activity": {
+    "12": 5,
+    "13": 4,
+    "14": 1,
+    "0": 2,
+    "2": 3,
+    "6": 10,
+    "9": 4,
     "3": 1,
     "7": 1,
-    "12": 3,
-    "16": 1,
-    "13": 2,
-    "2": 2
+    "16": 1
   },
   "message_types": {
-    "0": 3
+    "0": 16,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1464228375316136072",
+      "content": "",
+      "author": "mimiruku",
+      "reactions": 68,
+      "channel": ""
+    },
     {
       "id": "1464158531304554698",
       "content": "",
@@ -40,10 +54,31 @@
       "channel": ""
     },
     {
+      "id": "1464247290134003753",
+      "content": "",
+      "author": "mimiruku",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
       "id": "1464295057665429606",
       "content": "",
       "author": "yq0227",
       "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1464263824353001525",
+      "content": "",
+      "author": "sleepypillow",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1464247154087559178",
+      "content": "",
+      "author": "mimiruku",
+      "reactions": 1,
       "channel": ""
     },
     {

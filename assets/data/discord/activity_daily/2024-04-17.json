@@ -1,19 +1,20 @@
 {
   "date": "2024-04-17",
-  "messages": 2,
+  "messages": 3,
   "unique_authors": 2,
   "reactions_total": 37,
   "attachments": 0,
   "channel_activity": {
+    "1181147096234065920": 1,
     "1181998821291606097": 2
   },
   "hourly_activity": {
+    "9": 1,
     "15": 1,
     "16": 1
   },
   "message_types": {
-    "0": 1,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

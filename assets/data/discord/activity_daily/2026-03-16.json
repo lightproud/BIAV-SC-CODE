@@ -1,10 +1,14 @@
 {
   "date": "2026-03-16",
-  "messages": 163,
+  "messages": 170,
   "unique_authors": 32,
-  "reactions_total": 55,
+  "reactions_total": 77,
   "attachments": 0,
   "channel_activity": {
+    "1483247689922646077": 1,
+    "1482707568991408373": 1,
+    "1482627182831599688": 3,
+    "1350058928020656178": 2,
     "1482485254018302144": 2,
     "1482002768637071370": 2,
     "1481958417085235343": 2,
@@ -34,10 +38,12 @@
     "1482582420862664916": 2
   },
   "hourly_activity": {
-    "2": 9,
-    "3": 23,
+    "23": 1,
+    "5": 16,
+    "2": 11,
+    "3": 24,
+    "12": 5,
     "9": 20,
-    "5": 15,
     "7": 8,
     "8": 5,
     "4": 15,
@@ -47,17 +53,23 @@
     "15": 9,
     "17": 1,
     "11": 1,
-    "12": 3,
     "1": 2,
     "0": 1,
     "18": 3,
     "21": 2
   },
   "message_types": {
-    "0": 11,
-    "4": 1
+    "0": 5,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1483247689922646077",
+      "content": "",
+      "author": "gwenisleirah",
+      "reactions": 19,
+      "channel": ""
+    },
     {
       "id": "1483026471688867890",
       "content": "",
@@ -108,6 +120,13 @@
       "channel": ""
     },
     {
+      "id": "1482941260938350626",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
       "id": "1482968353759957183",
       "content": "",
       "author": "hon_ey0",
@@ -150,6 +169,13 @@
       "channel": ""
     },
     {
+      "id": "1483085936345485324",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
       "id": "1482976226229354598",
       "content": "",
       "author": "water_heart",
@@ -176,27 +202,6 @@
       "author": "nurra",
       "reactions": 1,
       "channel": "🔸chaîne-française"
-    },
-    {
-      "id": "1482955550495998062",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1482946141657239694",
-      "content": "",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483119812665147554",
-      "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

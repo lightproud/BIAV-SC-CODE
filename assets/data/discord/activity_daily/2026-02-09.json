@@ -1,28 +1,99 @@
 {
   "date": "2026-02-09",
-  "messages": 10,
-  "unique_authors": 7,
-  "reactions_total": 10,
+  "messages": 10528,
+  "unique_authors": 250,
+  "reactions_total": 1465,
   "attachments": 0,
   "channel_activity": {
+    "🔸綜合討論": 2528,
+    "🔸阵容构建": 92,
+    "🔸morimens-game-chat": 7898,
     "🔸忘却前夜┊morimens-tv": 2,
     "🔸游戏问题": 6,
     "1403373754175721657": 2
   },
   "hourly_activity": {
-    "3": 1,
-    "21": 1,
-    "4": 1,
-    "8": 2,
-    "9": 2,
-    "10": 1,
-    "18": 2
+    "0": 343,
+    "1": 310,
+    "2": 553,
+    "3": 592,
+    "4": 494,
+    "5": 773,
+    "6": 602,
+    "7": 661,
+    "8": 491,
+    "9": 451,
+    "10": 333,
+    "11": 377,
+    "12": 437,
+    "13": 521,
+    "14": 510,
+    "15": 963,
+    "16": 367,
+    "17": 245,
+    "18": 255,
+    "19": 380,
+    "20": 244,
+    "22": 330,
+    "23": 159,
+    "21": 137
   },
   "message_types": {
-    "0": 9,
-    "19": 1
+    "0": 8012,
+    "19": 2504,
+    "23": 1,
+    "46": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1470441621375029419",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470436974186725397",
+      "content": "",
+      "author": "mengluo",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470415356475478191",
+      "content": "",
+      "author": "mengluo",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470340766219112651",
+      "content": "",
+      "author": "akatora_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470441339874447490",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470441678165901547",
+      "content": "",
+      "author": "mengluo",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470442220782878906",
+      "content": "",
+      "author": "angbak",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1470253239118069811",
       "content": "",
@@ -31,18 +102,88 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
-      "id": "1470527797083640053",
+      "id": "1470335288302637150",
       "content": "",
-      "author": "lonely_tree",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1470480555207294987",
+      "id": "1470407065422794804",
       "content": "",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": ""
+      "author": "rain_scarlet",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470245783038329017",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470507624167510225",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470228565713883229",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470250755314286612",
+      "content": "",
+      "author": "axe_proficient",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470253691729608776",
+      "content": "",
+      "author": "dog_0630",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470257507799929078",
+      "content": "",
+      "author": "axe_proficient",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470261207050223872",
+      "content": "",
+      "author": "kalpiko.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470298141671686239",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470330333797810187",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1470338061241024720",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
     }
   ]
 }

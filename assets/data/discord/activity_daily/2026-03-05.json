@@ -1,10 +1,23 @@
 {
   "date": "2026-03-05",
-  "messages": 88,
-  "unique_authors": 24,
-  "reactions_total": 87,
+  "messages": 142,
+  "unique_authors": 31,
+  "reactions_total": 156,
   "attachments": 0,
   "channel_activity": {
+    "1479090067745149018": 2,
+    "1478623865986093219": 1,
+    "1477439262126379138": 1,
+    "1476779494521045002": 1,
+    "1450337762829144255": 4,
+    "1475263387553501427": 2,
+    "1357184174485671966": 1,
+    "1350060973083590666": 4,
+    "1350058928020656178": 1,
+    "1479105767289393264": 10,
+    "1478648573959606292": 22,
+    "1478270401644859463": 2,
+    "1479164143641821356": 3,
     "1479210453295955988": 5,
     "1479193150328279120": 1,
     "1479182409974022346": 1,
@@ -26,32 +39,43 @@
     "1462840887553032335": 1
   },
   "hourly_activity": {
+    "12": 16,
+    "8": 4,
+    "21": 8,
+    "23": 2,
+    "1": 25,
+    "2": 9,
+    "4": 4,
+    "13": 10,
+    "19": 2,
+    "22": 3,
+    "3": 2,
+    "5": 10,
+    "9": 14,
+    "10": 9,
+    "15": 1,
+    "16": 2,
+    "17": 2,
+    "18": 2,
     "20": 5,
-    "19": 1,
-    "18": 1,
-    "16": 1,
-    "13": 5,
     "14": 2,
-    "9": 13,
-    "8": 3,
-    "5": 6,
-    "4": 2,
     "6": 2,
-    "3": 1,
     "0": 7,
-    "7": 1,
-    "12": 2,
-    "2": 8,
-    "10": 6,
-    "22": 1,
-    "1": 21
+    "7": 1
   },
   "message_types": {
-    "0": 46,
+    "0": 45,
     "19": 8,
-    "4": 3
+    "6": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1479090067745149018",
+      "content": "",
+      "author": "rolypoly_rose",
+      "reactions": 21,
+      "channel": ""
+    },
     {
       "id": "1479041964916736002",
       "content": "",
@@ -74,6 +98,13 @@
       "channel": ""
     },
     {
+      "id": "1479113214120689665",
+      "content": "",
+      "author": "akkom730",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
       "id": "1479063465879666901",
       "content": "",
       "author": "morimens_15",
@@ -88,10 +119,24 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1479107977654042725",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
       "id": "1479182409974022346",
       "content": "",
       "author": "thpdom",
       "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1479095142571839539",
+      "content": "",
+      "author": "polkarain",
+      "reactions": 5,
       "channel": ""
     },
     {
@@ -116,6 +161,41 @@
       "channel": ""
     },
     {
+      "id": "1478934594915930296",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1479091186533666827",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1479033580008116224",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1478949522162978907",
+      "content": "",
+      "author": "fjantsa",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1479050289687560293",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
       "id": "1479150923568648213",
       "content": "",
       "author": "aaaa_00098",
@@ -123,73 +203,10 @@
       "channel": ""
     },
     {
-      "id": "1479049630200107069",
+      "id": "1478935009795772611",
       "content": "",
-      "author": "vxvendetta97",
+      "author": "fishhazardthewizard",
       "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1479054673934815242",
-      "content": "",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1479050528079220881",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1479210482970791947",
-      "content": "",
-      "author": "yeriko703",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1479220266755428513",
-      "content": "",
-      "author": "iwthahe",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1479048022481440839",
-      "content": "",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1479003989352775750",
-      "content": "",
-      "author": "david.chen.123",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1478995669061730306",
-      "content": "",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1479047674635485204",
-      "content": "",
-      "author": "sexysneakystoat1625",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1478917505169887305",
-      "content": "",
-      "author": "skyfallterminus",
-      "reactions": 1,
       "channel": ""
     }
   ]

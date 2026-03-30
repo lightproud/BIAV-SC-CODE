@@ -1,10 +1,21 @@
 {
   "date": "2026-03-02",
-  "messages": 126,
-  "unique_authors": 13,
-  "reactions_total": 37,
+  "messages": 234,
+  "unique_authors": 42,
+  "reactions_total": 326,
   "attachments": 0,
   "channel_activity": {
+    "1181147096234065920": 1,
+    "1470748188888797306": 1,
+    "1478034582472360067": 7,
+    "1477953796373090355": 5,
+    "1475381257889120348": 2,
+    "1471164034622427448": 1,
+    "1450337762829144255": 5,
+    "1477730088299663431": 1,
+    "1350058928020656178": 2,
+    "1477936435343527947": 82,
+    "1441326394817908736": 1,
     "1477962371518431343": 93,
     "1477934817109610507": 3,
     "1477928829459628113": 1,
@@ -19,27 +30,159 @@
     "1477717724615544870": 12
   },
   "hourly_activity": {
-    "15": 54,
-    "16": 33,
-    "17": 2,
+    "9": 6,
+    "13": 29,
+    "14": 10,
+    "15": 69,
+    "17": 5,
+    "10": 14,
+    "22": 3,
+    "5": 2,
+    "6": 3,
+    "23": 2,
+    "11": 16,
+    "12": 2,
+    "18": 1,
+    "20": 8,
+    "16": 34,
     "19": 3,
-    "20": 2,
     "21": 3,
-    "22": 1,
     "7": 17,
-    "6": 1,
-    "9": 1,
-    "14": 1,
     "3": 5,
-    "12": 1,
     "0": 1,
     "8": 1
   },
   "message_types": {
-    "0": 82,
-    "19": 17
+    "0": 80,
+    "19": 28
   },
   "top_reacted_messages": [
+    {
+      "id": "1477953796373090355",
+      "content": "",
+      "author": "jinlay_fox",
+      "reactions": 46,
+      "channel": ""
+    },
+    {
+      "id": "1478034582472360067",
+      "content": "",
+      "author": "moon.orchd",
+      "reactions": 27,
+      "channel": ""
+    },
+    {
+      "id": "1477981632395743356",
+      "content": "",
+      "author": "tatloch",
+      "reactions": 20,
+      "channel": ""
+    },
+    {
+      "id": "1478015643306692658",
+      "content": "",
+      "author": "oling0622",
+      "reactions": 20,
+      "channel": ""
+    },
+    {
+      "id": "1478044473710608578",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
+      "id": "1478040568809394206",
+      "content": "",
+      "author": "thunderbrother",
+      "reactions": 15,
+      "channel": ""
+    },
+    {
+      "id": "1477983506834657432",
+      "content": "",
+      "author": "aileenatsuki",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1477904794726174812",
+      "content": "",
+      "author": "moon.orchd",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1478046612944322592",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1478046685908172951",
+      "content": "",
+      "author": "si05214",
+      "reactions": 12,
+      "channel": ""
+    },
+    {
+      "id": "1478131411520323696",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1477980074727964714",
+      "content": "",
+      "author": "jinlay_fox",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1477983696349827092",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1477988568118071348",
+      "content": "",
+      "author": "kinshin8252",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1477978755514237011",
+      "content": "",
+      "author": "polkarain",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1477983464795013283",
+      "content": "",
+      "author": "_venush",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1477985447408828467",
+      "content": "",
+      "author": "aileenatsuki",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1478050865360146644",
+      "content": "",
+      "author": "megidola.",
+      "reactions": 6,
+      "channel": ""
+    },
     {
       "id": "1478083854094045376",
       "content": "",
@@ -48,116 +191,11 @@
       "channel": ""
     },
     {
-      "id": "1478069531921350676",
+      "id": "1478025519550431365",
       "content": "",
-      "author": "arkaether",
+      "author": "fairlysadpanda",
       "reactions": 5,
       "channel": ""
-    },
-    {
-      "id": "1477928829459628113",
-      "content": "",
-      "author": "iwthahe",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1478157074528473200",
-      "content": "",
-      "author": "vxvendetta97",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1478032267031871640",
-      "content": "",
-      "author": "closetom",
-      "reactions": 3,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1478058566228250777",
-      "content": "",
-      "author": "getheangel",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1478132216361123882",
-      "content": "",
-      "author": "exo_2360",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1477934817109610507",
-      "content": "",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1478012557598920774",
-      "content": "",
-      "author": "menoctus",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1478057778781360188",
-      "content": "",
-      "author": "zekiei",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1478059052079648920",
-      "content": "",
-      "author": "getheangel",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1478059128831213578",
-      "content": "",
-      "author": "skyfallterminus",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1478059465134706914",
-      "content": "",
-      "author": "skyfallterminus",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1478061201257664696",
-      "content": "",
-      "author": "skyfallterminus",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1478057183815008487",
-      "content": "",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1477875567729840243",
-      "content": "",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "🔸游戏问题"
-    },
-    {
-      "id": "1478074039862821146",
-      "content": "",
-      "author": "mightythor",
-      "reactions": 1,
-      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
     }
   ]
 }

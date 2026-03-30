@@ -1,20 +1,22 @@
 {
   "date": "2025-09-27",
-  "messages": 24,
+  "messages": 26,
   "unique_authors": 3,
   "reactions_total": 26,
   "attachments": 0,
   "channel_activity": {
+    "1420092491125755985": 2,
     "1421408684776357929": 24
   },
   "hourly_activity": {
+    "12": 2,
     "8": 21,
     "9": 1,
     "11": 2
   },
   "message_types": {
-    "0": 22,
-    "19": 2
+    "0": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {

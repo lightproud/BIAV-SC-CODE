@@ -1,10 +1,20 @@
 {
   "date": "2026-03-27",
-  "messages": 267,
+  "messages": 316,
   "unique_authors": 54,
-  "reactions_total": 43,
+  "reactions_total": 170,
   "attachments": 0,
   "channel_activity": {
+    "1487196532066484409": 6,
+    "1487152754722865344": 1,
+    "1487111853652840448": 4,
+    "1486959459405398157": 7,
+    "1486728811956670475": 1,
+    "1485613870176276531": 6,
+    "1450337762829144255": 2,
+    "1486642972224393216": 1,
+    "1482997212354187324": 6,
+    "1485672193634467960": 15,
     "1468895834199298215": 2,
     "1467225902029996154": 1,
     "1458371914018979971": 1,
@@ -26,41 +36,91 @@
     "1486936365110136832": 5
   },
   "hourly_activity": {
+    "21": 6,
+    "22": 1,
+    "18": 21,
+    "15": 3,
+    "16": 36,
+    "5": 5,
+    "8": 4,
+    "12": 16,
+    "1": 7,
+    "0": 11,
+    "23": 7,
+    "17": 63,
+    "20": 4,
+    "9": 20,
+    "10": 9,
+    "11": 23,
+    "13": 27,
     "7": 3,
-    "9": 19,
     "4": 10,
-    "16": 34,
-    "17": 61,
-    "0": 7,
-    "1": 5,
-    "11": 15,
-    "12": 14,
-    "13": 26,
-    "18": 17,
     "2": 1,
-    "8": 1,
-    "10": 5,
     "19": 31,
-    "20": 3,
-    "23": 4,
     "3": 2,
-    "5": 1,
     "6": 5,
-    "14": 1,
-    "15": 1,
-    "21": 1
+    "14": 1
   },
   "message_types": {
-    "0": 6,
-    "19": 1
+    "0": 32,
+    "19": 17
   },
   "top_reacted_messages": [
+    {
+      "id": "1487111853652840448",
+      "content": "",
+      "author": "glitzy_x",
+      "reactions": 43,
+      "channel": ""
+    },
+    {
+      "id": "1486959459405398157",
+      "content": "",
+      "author": "floralynn",
+      "reactions": 28,
+      "channel": ""
+    },
+    {
+      "id": "1487196532066484409",
+      "content": "",
+      "author": "bandoh36",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1487152754722865344",
+      "content": "",
+      "author": "deldry8",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1487123993059131393",
+      "content": "",
+      "author": "glitzy_x",
+      "reactions": 8,
+      "channel": ""
+    },
     {
       "id": "1487015363484061806",
       "content": "",
       "author": "ahong0727",
       "reactions": 6,
       "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1487231986874716310",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1487232058383273994",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
+      "channel": ""
     },
     {
       "id": "1487138885992579235",
@@ -70,11 +130,32 @@
       "channel": "🔸剧情交流"
     },
     {
+      "id": "1487067345225777214",
+      "content": "",
+      "author": "floralynn",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
       "id": "1487138866786730254",
       "content": "",
       "author": "ass191044",
       "reactions": 3,
       "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487012916191563786",
+      "content": "",
+      "author": "angy_24_s",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1487226469552750652",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 2,
+      "channel": ""
     },
     {
       "id": "1487023567974567947",
@@ -112,88 +193,18 @@
       "channel": ""
     },
     {
-      "id": "1487132831661555833",
+      "id": "1487011591336755200",
       "content": "",
-      "author": "foxcatfurry",
+      "author": "angbak",
       "reactions": 1,
-      "channel": "🔸剧情交流"
+      "channel": ""
     },
     {
-      "id": "1487133108146016277",
+      "id": "1487065452176867329",
       "content": "",
-      "author": "foxcatfurry",
+      "author": "glitzy_x",
       "reactions": 1,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1487133844984299735",
-      "content": "",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1487136436305264730",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1487137207042183238",
-      "content": "",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1487137929850785812",
-      "content": "",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1487138219597496533",
-      "content": "",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1487138535382454425",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1487139669878509668",
-      "content": "",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1486887037838688297",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸课间休息闲聊"
-    },
-    {
-      "id": "1487158313132101763",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸课间休息闲聊"
-    },
-    {
-      "id": "1486907726733902004",
-      "content": "",
-      "author": "trevorsuyu",
-      "reactions": 1,
-      "channel": "🔸交友频道"
+      "channel": ""
     }
   ]
 }

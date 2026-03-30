@@ -1,22 +1,24 @@
 {
   "date": "2025-12-29",
-  "messages": 7,
+  "messages": 8,
   "unique_authors": 4,
   "reactions_total": 24,
   "attachments": 0,
   "channel_activity": {
+    "1350060160739184690": 1,
     "1455326448683454465": 3,
     "1455229843368317101": 1,
     "🔸忘却前夜┊morimens-tv": 2,
     "1445334381404094475": 1
   },
   "hourly_activity": {
+    "11": 1,
     "22": 4,
     "16": 1,
     "8": 2
   },
   "message_types": {
-    "0": 4
+    "0": 1
   },
   "top_reacted_messages": [
     {

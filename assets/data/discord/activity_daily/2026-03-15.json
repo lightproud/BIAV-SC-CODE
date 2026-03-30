@@ -1,10 +1,18 @@
 {
   "date": "2026-03-15",
-  "messages": 81,
+  "messages": 116,
   "unique_authors": 30,
-  "reactions_total": 231,
+  "reactions_total": 307,
   "attachments": 0,
   "channel_activity": {
+    "1482707568991408373": 7,
+    "1482627182831599688": 7,
+    "1350059696945500171": 1,
+    "1350058928020656178": 1,
+    "1481894447762378813": 3,
+    "1482623756470980709": 1,
+    "1482827354869989697": 9,
+    "1482653493465448448": 6,
     "1473178110831759402": 7,
     "1468895834199298215": 1,
     "1234769700735418368": 1,
@@ -26,25 +34,30 @@
     "1482582420862664916": 2
   },
   "hourly_activity": {
+    "11": 14,
+    "12": 6,
+    "13": 13,
+    "16": 3,
+    "20": 9,
+    "6": 6,
+    "7": 1,
+    "10": 7,
+    "21": 1,
+    "0": 1,
+    "19": 1,
+    "8": 17,
     "2": 8,
-    "12": 4,
-    "10": 5,
     "14": 15,
     "15": 1,
-    "8": 11,
     "22": 2,
-    "6": 1,
-    "11": 9,
-    "13": 12,
-    "16": 2,
     "17": 1,
     "9": 6,
     "5": 2,
     "3": 2
   },
   "message_types": {
-    "0": 7,
-    "19": 2
+    "0": 30,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -55,10 +68,24 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1482707568991408373",
+      "content": "",
+      "author": "peanutgod_ofsaturn",
+      "reactions": 41,
+      "channel": ""
+    },
+    {
       "id": "1482702865041588315",
       "content": "",
       "author": "sonatadocantora",
       "reactions": 33,
+      "channel": ""
+    },
+    {
+      "id": "1482627182831599688",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 24,
       "channel": ""
     },
     {
@@ -87,6 +114,13 @@
       "content": "",
       "author": "nactra",
       "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1482531945647837345",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 8,
       "channel": ""
     },
     {
@@ -153,37 +187,16 @@
       "channel": ""
     },
     {
-      "id": "1482753088145068223",
+      "id": "1482708492375560234",
       "content": "",
-      "author": "lingcheng.0",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1482663756407504896",
-      "content": "",
-      "author": "dittoqwq",
+      "author": "peanutgod_ofsaturn",
       "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1482754805460898026",
+      "id": "1482850059866472529",
       "content": "",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1482703110144262257",
-      "content": "",
-      "author": "sonatadocantora",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1482730115577413818",
-      "content": "",
-      "author": "vxvendetta97",
+      "author": "chao8034",
       "reactions": 1,
       "channel": ""
     }

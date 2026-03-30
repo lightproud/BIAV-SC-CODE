@@ -1,30 +1,54 @@
 {
   "date": "2026-01-14",
-  "messages": 9,
+  "messages": 16,
   "unique_authors": 6,
-  "reactions_total": 5,
+  "reactions_total": 33,
   "attachments": 0,
   "channel_activity": {
+    "1445556242381672559": 7,
     "1457468446353653792": 1,
     "1234769700735418368": 8
   },
   "hourly_activity": {
+    "3": 3,
+    "4": 2,
+    "7": 1,
+    "20": 2,
     "2": 6,
-    "3": 1,
     "8": 1,
     "9": 1
   },
   "message_types": {
-    "4": 1,
-    "19": 1,
-    "0": 7
+    "0": 6,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1460844658048499818",
+      "content": "",
+      "author": "zzio_",
+      "reactions": 26,
+      "channel": ""
+    },
     {
       "id": "1460828182226669662",
       "content": "",
       "author": "ice_storys",
       "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1460893531014172813",
+      "content": "",
+      "author": "exhibitionism",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1461100541538078763",
+      "content": "",
+      "author": "velvetrene._cake",
+      "reactions": 1,
       "channel": ""
     }
   ]

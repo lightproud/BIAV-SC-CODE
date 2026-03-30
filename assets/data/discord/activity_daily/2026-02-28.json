@@ -1,10 +1,17 @@
 {
   "date": "2026-02-28",
-  "messages": 31,
-  "unique_authors": 9,
-  "reactions_total": 32,
+  "messages": 673,
+  "unique_authors": 37,
+  "reactions_total": 152,
   "attachments": 0,
   "channel_activity": {
+    "1477439262126379138": 2,
+    "1466474773830959144": 2,
+    "1450337762829144255": 1,
+    "1475263387553501427": 1,
+    "1350058928020656178": 1,
+    "1477259481023778901": 12,
+    "🔸綜合討論": 623,
     "1477167202884124722": 5,
     "1476995177863450685": 3,
     "1476657695724670987": 3,
@@ -18,29 +25,42 @@
     "1462840887553032335": 5
   },
   "hourly_activity": {
-    "4": 1,
-    "7": 5,
-    "10": 6,
-    "2": 1,
-    "3": 2,
-    "13": 2,
-    "9": 1,
+    "22": 1,
+    "23": 1,
+    "6": 14,
+    "0": 3,
+    "13": 12,
+    "11": 30,
+    "19": 4,
+    "1": 10,
+    "2": 33,
+    "3": 17,
+    "4": 12,
+    "7": 49,
+    "8": 5,
+    "9": 8,
+    "10": 71,
+    "14": 11,
+    "15": 132,
+    "16": 128,
+    "17": 128,
+    "18": 1,
     "21": 2,
-    "20": 1,
-    "6": 2,
-    "19": 1,
-    "8": 1,
-    "14": 1,
-    "17": 1,
-    "15": 1,
-    "16": 3
+    "20": 1
   },
   "message_types": {
-    "0": 13,
-    "4": 3,
-    "19": 2
+    "0": 516,
+    "4": 1,
+    "19": 125
   },
   "top_reacted_messages": [
+    {
+      "id": "1477439262126379138",
+      "content": "",
+      "author": "golden_pumpking",
+      "reactions": 23,
+      "channel": ""
+    },
     {
       "id": "1477189160266891326",
       "content": "",
@@ -56,67 +76,123 @@
       "channel": ""
     },
     {
-      "id": "1477256581656739913",
+      "id": "1477214369392623681",
       "content": "",
-      "author": "skyfallterminus",
+      "author": "ahong0727",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1477263619820617831",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1477192499108778066",
+      "content": "",
+      "author": "glitzy_x",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1477107454272737331",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1477097693162635480",
+      "content": "",
+      "author": "angbak",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1477126658430341402",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1477146879660916797",
+      "content": "",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1477195311679148112",
+      "content": "",
+      "author": "thebluestlime",
       "reactions": 2,
       "channel": ""
     },
     {
-      "id": "1477388826123964597",
+      "id": "1477135253117079635",
       "content": "",
-      "author": "nechromicon",
+      "author": "water_heart",
       "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1477252727313793147",
+      "id": "1477135264211013692",
       "content": "",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": ""
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1477149292346216468",
+      "id": "1477196124333805679",
       "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1477398282417340436",
+      "id": "1477204628914438320",
       "content": "",
-      "author": "megidola.",
-      "reactions": 1,
-      "channel": ""
+      "author": "cs001092",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1477148668758065233",
+      "id": "1477205953547075686",
       "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
+      "author": "universe.dark",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1477334409257549917",
+      "id": "1477206031913324544",
       "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1477335359326257272",
+      "id": "1477206321152528470",
       "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
+      "author": "cs001092",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1477336347386712187",
+      "id": "1477206387921518664",
       "content": "",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1477246774304571412",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }
