@@ -1,107 +1,56 @@
 {
-  "collected_at": "2026-03-29T23:03:58.753009+00:00",
+  "collected_at": "2026-03-30T05:16:39.819226+00:00",
   "source": "all",
-  "item_count": 10,
+  "item_count": 7,
   "items": [
     {
-      "source": "steam",
-      "time": "2026-03-29T20:19:52+00:00",
-      "lang": "",
-      "title": "[正面] Its good game very good art style, but i think the...",
-      "summary": "Its good game very good art style, but i think the gameplay for one stage for beginner or first try takes long time. And yeah i prefer to buy a game like Slay the Spire - inspired gameplay and not to",
-      "url": "https://steamcommunity.com/profiles/76561199367768613/recommended/3052450",
-      "author": "76561199367768613",
-      "engagement": 0
+      "language": "russian",
+      "voted_up": true,
+      "review": "привет от детей Лемурии",
+      "timestamp_created": 1774824497,
+      "playtime_forever": 2326
     },
     {
-      "source": "steam",
-      "time": "2026-03-29T19:27:22+00:00",
-      "lang": "",
-      "title": "[正面] Дали избить детей в первой же миссии",
-      "summary": "Дали избить детей в первой же миссии",
-      "url": "https://steamcommunity.com/profiles/76561199445146721/recommended/3052450",
-      "author": "76561199445146721",
-      "engagement": 0
+      "language": "english",
+      "voted_up": true,
+      "review": "Its good game very good art style, but i think the gameplay for one stage for beginner or first try takes long time. And yeah i prefer to buy a game like Slay the Spire - inspired gameplay and not to",
+      "timestamp_created": 1774815592,
+      "playtime_forever": 133
     },
     {
-      "source": "steam",
-      "time": "2026-03-29T15:07:25+00:00",
-      "lang": "",
-      "title": "[正面] 血肉代替思考胚胎连接大脑 都给我玩血肉队体验血线蹦迪的感觉",
-      "summary": "血肉代替思考胚胎连接大脑 都给我玩血肉队体验血线蹦迪的感觉",
-      "url": "https://steamcommunity.com/profiles/76561198402639292/recommended/3052450",
-      "author": "76561198402639292",
-      "engagement": 0
+      "language": "russian",
+      "voted_up": true,
+      "review": "Дали избить детей в первой же миссии",
+      "timestamp_created": 1774812442,
+      "playtime_forever": 329
     },
     {
-      "source": "steam",
-      "time": "2026-03-29T10:50:46+00:00",
-      "lang": "",
-      "title": "[负面] кривое поделие, которое не даёт уйти дальше бескон...",
-      "summary": "кривое поделие, которое не даёт уйти дальше бесконечной загрузки обновлений",
-      "url": "https://steamcommunity.com/profiles/76561198097611497/recommended/3052450",
-      "author": "76561198097611497",
-      "engagement": 0
+      "language": "schinese",
+      "voted_up": true,
+      "review": "血肉代替思考胚胎连接大脑 都给我玩血肉队体验血线蹦迪的感觉",
+      "timestamp_created": 1774796845,
+      "playtime_forever": 473
     },
     {
-      "source": "steam",
-      "time": "2026-03-29T09:45:06+00:00",
-      "lang": "",
-      "title": "[正面] Really really good gameplay, pretty good art with...",
-      "summary": "Really really good gameplay, pretty good art with some unique designs. Wish all the content was human translated and that the game explained its basic mechanics better.",
-      "url": "https://steamcommunity.com/profiles/76561199863107036/recommended/3052450",
-      "author": "76561199863107036",
-      "engagement": 0
+      "language": "russian",
+      "voted_up": false,
+      "review": "кривое поделие, которое не даёт уйти дальше бесконечной загрузки обновлений",
+      "timestamp_created": 1774781446,
+      "playtime_forever": 12
     },
     {
-      "source": "steam",
-      "time": "2026-03-29T09:39:05+00:00",
-      "lang": "",
-      "title": "[正面] 很休闲的游戏",
-      "summary": "很休闲的游戏",
-      "url": "https://steamcommunity.com/profiles/76561199391777181/recommended/3052450",
-      "author": "76561199391777181",
-      "engagement": 0
+      "language": "english",
+      "voted_up": true,
+      "review": "Really really good gameplay, pretty good art with some unique designs. Wish all the content was human translated and that the game explained its basic mechanics better.",
+      "timestamp_created": 1774777506,
+      "playtime_forever": 69417
     },
     {
-      "source": "steam",
-      "time": "2026-03-29T03:51:13+00:00",
-      "lang": "",
-      "title": "[正面] Лучше иметь 37 возможных отцов или играть в геншин...",
-      "summary": "Лучше иметь 37 возможных отцов или играть в геншин, что в принципе тождественно, чем вкатываться в это.В игре регулярно обновляется донатный магазин, но контента нет за 2 года с релиза игры от слова с",
-      "url": "https://steamcommunity.com/profiles/76561199801738548/recommended/3052450",
-      "author": "76561199801738548",
-      "engagement": 0
-    },
-    {
-      "source": "steam",
-      "time": "2026-03-29T02:48:25+00:00",
-      "lang": "",
-      "title": "[正面] Genuinely the best implementation of PvP in a Gach...",
-      "summary": "Genuinely the best implementation of PvP in a Gacha Game I've ever seen, I really love the PvP in this game. The PvE and story is also wonderfully challenging, and character building is fun and though",
-      "url": "https://steamcommunity.com/profiles/76561198440043423/recommended/3052450",
-      "author": "76561198440043423",
-      "engagement": 0
-    },
-    {
-      "source": "steam",
-      "time": "2026-03-29T00:44:43+00:00",
-      "lang": "",
-      "title": "[正面] Criminally underrated, mogu.",
-      "summary": "Criminally underrated, mogu.",
-      "url": "https://steamcommunity.com/profiles/76561198816367873/recommended/3052450",
-      "author": "76561198816367873",
-      "engagement": 0
-    },
-    {
-      "source": "steam",
-      "time": "2026-03-28T23:20:32+00:00",
-      "lang": "",
-      "title": "[正面] It's cute, and more fun than Slay the spire 2",
-      "summary": "It's cute, and more fun than Slay the spire 2",
-      "url": "https://steamcommunity.com/profiles/76561198417763649/recommended/3052450",
-      "author": "76561198417763649",
-      "engagement": 0
+      "language": "schinese",
+      "voted_up": true,
+      "review": "很休闲的游戏",
+      "timestamp_created": 1774777145,
+      "playtime_forever": 2313
     }
   ]
 }
