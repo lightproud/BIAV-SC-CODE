@@ -24,6 +24,7 @@ import os
 import re
 import time
 import logging
+import requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
