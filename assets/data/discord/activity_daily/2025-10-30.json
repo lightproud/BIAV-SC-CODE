@@ -1,0 +1,49 @@
+{
+  "date": "2025-10-30",
+  "messages": 14,
+  "unique_authors": 6,
+  "reactions_total": 1064,
+  "attachments": 1,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1,
+    "🔸礼包码┊gift-codes": 1,
+    "🐱light’s-nest": 2,
+    "1432654338982940783": 10
+  },
+  "hourly_activity": {
+    "15": 1,
+    "13": 1,
+    "17": 2,
+    "10": 3,
+    "16": 2,
+    "18": 2,
+    "19": 3
+  },
+  "message_types": {
+    "0": 12,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1433441135216562196",
+      "content": "🎁DC 29000守密人达成礼 / DC29000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【",
+      "author": "morimensstaff02",
+      "reactions": 605,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1433472586955755550",
+      "content": "Hi everyone. A few things that I wanted to bring up:\n\n大家好。有几件事我想提一下：\n\n1. To ensu",
+      "author": "cometovilla",
+      "reactions": 319,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1433514801220292701",
+      "content": "我想我们都知道画师的名字，大家万圣节快乐！🎃",
+      "author": "game.producer.light",
+      "reactions": 140,
+      "channel": "🐱light’s-nest"
+    }
+  ]
+}

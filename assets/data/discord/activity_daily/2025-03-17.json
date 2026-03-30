@@ -1,0 +1,33 @@
+{
+  "date": "2025-03-17",
+  "messages": 14,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 2,
+  "channel_activity": {
+    "1271491376881598494": 9,
+    "1350060160739184690": 4,
+    "1350059696945500171": 1
+  },
+  "hourly_activity": {
+    "14": 1,
+    "16": 1,
+    "17": 7,
+    "8": 2,
+    "20": 2,
+    "23": 1
+  },
+  "message_types": {
+    "19": 4,
+    "0": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1351106222329172049",
+      "content": "<@967217658577698857>Gracias por los comentarios recibidos~🫶",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

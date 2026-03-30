@@ -1,0 +1,51 @@
+{
+  "date": "2025-11-27",
+  "messages": 10,
+  "unique_authors": 9,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "1241345906826153984": 3,
+    "1442647324575928441": 1,
+    "1234769700735418368": 1,
+    "1441326394817908736": 5
+  },
+  "hourly_activity": {
+    "15": 1,
+    "16": 2,
+    "8": 1,
+    "5": 1,
+    "1": 1,
+    "6": 1,
+    "9": 1,
+    "22": 1,
+    "23": 1
+  },
+  "message_types": {
+    "0": 8,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1443479682501836840",
+      "content": "想要这个<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1443623828143083531",
+      "content": "自從關注這樓之後這麼多年缺失的營養直接給我補上來了",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1443643254552920304",
+      "content": "好爽的我高舉父母大旗🤩🤩",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

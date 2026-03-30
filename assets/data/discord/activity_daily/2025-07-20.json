@@ -1,0 +1,36 @@
+{
+  "date": "2025-07-20",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 6,
+  "attachments": 1,
+  "channel_activity": {
+    "1181998821291606097": 2,
+    "1390375103707218041": 5
+  },
+  "hourly_activity": {
+    "15": 2,
+    "11": 4,
+    "18": 1
+  },
+  "message_types": {
+    "0": 4,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1396448851765760011",
+      "content": "等旺达进普池之刻就是漂白旺达出之时",
+      "author": "muliupan",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1396519831590666261",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

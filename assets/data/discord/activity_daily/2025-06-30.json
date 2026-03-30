@@ -1,0 +1,38 @@
+{
+  "date": "2025-06-30",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 19,
+  "attachments": 3,
+  "channel_activity": {
+    "1181998821291606097": 3,
+    "1305430084420898868": 3,
+    "1357184174485671966": 1
+  },
+  "hourly_activity": {
+    "2": 1,
+    "13": 2,
+    "3": 3,
+    "22": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1389086236987359274",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": ""
+    },
+    {
+      "id": "1389237499196346469",
+      "content": "打算把杜師傅的一起做了<:pray:1356053116260454534>",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

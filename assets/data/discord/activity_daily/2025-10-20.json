@@ -1,0 +1,63 @@
+{
+  "date": "2025-10-20",
+  "messages": 10,
+  "unique_authors": 7,
+  "reactions_total": 840,
+  "attachments": 1,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 2,
+    "1429401798439080028": 3,
+    "1296113810549112874": 2,
+    "1417419008898109492": 1,
+    "1399369127008796723": 1,
+    "1350060973083590666": 1
+  },
+  "hourly_activity": {
+    "2": 1,
+    "12": 2,
+    "1": 3,
+    "13": 2,
+    "11": 1,
+    "15": 1
+  },
+  "message_types": {
+    "0": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1429813625681481729",
+      "content": "🎁DC 28000守密人达成礼 / DC28000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【",
+      "author": "morimensstaff02",
+      "reactions": 442,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1429658348667535370",
+      "content": "🎁 社区互动兑换码┊Community Activity Interactive Redemption Code：https://discord.com/cha",
+      "author": "morimensstaff01",
+      "reactions": 380,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1429827459007647807",
+      "content": "一秒看懂天外之边·上()",
+      "author": "yingmai_",
+      "reactions": 12,
+      "channel": ""
+    },
+    {
+      "id": "1429803525264900118",
+      "content": "October contributions list is here!\nWe sincerely thank the below <@&130158980413",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1429645884387491840",
+      "content": "什麼時候能抽",
+      "author": "ice_storys",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

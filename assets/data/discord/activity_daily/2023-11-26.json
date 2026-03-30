@@ -1,0 +1,25 @@
+{
+  "date": "2023-11-26",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "discord社群建議": 1
+  },
+  "hourly_activity": {
+    "5": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1178204585140158525",
+      "content": "不客氣~腦袋給我",
+      "author": "alpha0909_",
+      "reactions": 2,
+      "channel": "discord社群建議"
+    }
+  ]
+}

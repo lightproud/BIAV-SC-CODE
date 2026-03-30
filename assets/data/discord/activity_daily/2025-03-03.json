@@ -1,0 +1,60 @@
+{
+  "date": "2025-03-03",
+  "messages": 7,
+  "unique_authors": 7,
+  "reactions_total": 24,
+  "attachments": 6,
+  "channel_activity": {
+    "1271491376881598494": 5,
+    "1181998821291606097": 1,
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "8": 2,
+    "10": 2,
+    "16": 1,
+    "14": 1,
+    "1": 1
+  },
+  "message_types": {
+    "19": 4,
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1346040374505898004",
+      "content": "+12了",
+      "author": "_cwz_",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1346074488374169685",
+      "content": "满配朵尔，还有一套90的入药之梦，会换着用。",
+      "author": "13020059251_89639",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1346154252707303434",
+      "content": "更新一下\nUID：100002656\n~~反正沒人借，但是我還是要更新一下~~\n分界線\n三月十七日\n明天能升十級靈塑適性",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1346127244313100308",
+      "content": "除非他不是人",
+      "author": "guguahaizixiangbiyexiangfeng1815",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1346029721552687157",
+      "content": "更新下我的24",
+      "author": "be_queitplease",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

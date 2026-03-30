@@ -1,0 +1,82 @@
+{
+  "date": "2025-12-10",
+  "messages": 17,
+  "unique_authors": 11,
+  "reactions_total": 39,
+  "attachments": 17,
+  "channel_activity": {
+    "1305430084420898868": 3,
+    "1234769700735418368": 5,
+    "1181147096234065920": 2,
+    "1357184174485671966": 1,
+    "1443848396585828363": 1,
+    "1441326394817908736": 5
+  },
+  "hourly_activity": {
+    "9": 8,
+    "8": 1,
+    "18": 1,
+    "13": 1,
+    "6": 1,
+    "4": 1,
+    "7": 1,
+    "17": 1,
+    "19": 1,
+    "23": 1
+  },
+  "message_types": {
+    "0": 12,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1448378138500534344",
+      "content": "Caecus on his fourth crying emote <:Pity:1400771620989308998> <:alone:1356053021",
+      "author": "etheus",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1448243975277252669",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1448239818801807410",
+      "content": "No problem, I will release it after the event starts next Monday💗",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1448242380628295732",
+      "content": "<@419315346424725514> <@1298268532017991702>",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1448203672788926605",
+      "content": "still waiting for Light <:takenotes:1357186646294138890>",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1448240504180310077",
+      "content": "好耶<:cute1:1356053053568192717>",
+      "author": "sweet_25367",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1448213388214796371",
+      "content": "活动已经结束啦~中奖名单稍晚就会公布🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

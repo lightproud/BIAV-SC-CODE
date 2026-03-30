@@ -1,0 +1,25 @@
+{
+  "date": "2025-04-17",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 1199,
+  "attachments": 3,
+  "channel_activity": {
+    "🔸新生守则┊rules": 1
+  },
+  "hourly_activity": {
+    "11": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1362387347756552262",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1199,
+      "channel": "🔸新生守则┊rules"
+    }
+  ]
+}

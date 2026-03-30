@@ -1,0 +1,62 @@
+{
+  "date": "2025-12-08",
+  "messages": 30,
+  "unique_authors": 13,
+  "reactions_total": 14,
+  "attachments": 6,
+  "channel_activity": {
+    "1421408684776357929": 8,
+    "1446091938456539279": 1,
+    "1442647324575928441": 2,
+    "1447283719843872808": 14,
+    "1441326394817908736": 5
+  },
+  "hourly_activity": {
+    "6": 8,
+    "12": 1,
+    "3": 3,
+    "1": 1,
+    "4": 5,
+    "9": 1,
+    "13": 4,
+    "15": 3,
+    "16": 1,
+    "14": 2,
+    "20": 1
+  },
+  "message_types": {
+    "0": 20,
+    "19": 9,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1447467932258013235",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1447469246576853013",
+      "content": "這期我是選擇給蜘蛛帶上旋轉旋轉\n可以掛機疊一點點毒\n還有出空間時的觸毒也可以補一點傷害",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1447427658962178129",
+      "content": "I will inquire about it",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1447445528995696752",
+      "content": "She has elements of it yeah",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2025-11-23",
+  "messages": 9,
+  "unique_authors": 2,
+  "reactions_total": 450,
+  "attachments": 6,
+  "channel_activity": {
+    "🔸新生守则┊rules": 2,
+    "1442292634575175710": 7
+  },
+  "hourly_activity": {
+    "20": 2,
+    "23": 7
+  },
+  "message_types": {
+    "0": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1442250555585069130",
+      "content": "",
+      "author": "iamVilla",
+      "reactions": 418,
+      "channel": "🔸新生守则┊rules"
+    },
+    {
+      "id": "1442249411693379624",
+      "content": "",
+      "author": "iamVilla",
+      "reactions": 21,
+      "channel": "🔸新生守则┊rules"
+    },
+    {
+      "id": "1442292634575175710",
+      "content": "This is a guide from Mythag University that give a general idea on what to focus",
+      "author": "vxvendetta97",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1442293091657846955",
+      "content": "> **D-Jewels Exchange (Monthly)**\n> \n> **High Priority:**\n> **Dreamshard** - Bas",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

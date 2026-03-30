@@ -1,0 +1,34 @@
+{
+  "date": "2025-06-03",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 39,
+  "attachments": 5,
+  "channel_activity": {
+    "1271491376881598494": 1,
+    "1379534998704488528": 1
+  },
+  "hourly_activity": {
+    "21": 1,
+    "18": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1379534998704488528",
+      "content": "Genesis 24 announcement.\nUID: 100815557",
+      "author": "sexysneakystoat1625",
+      "reactions": 37,
+      "channel": ""
+    },
+    {
+      "id": "1379574576555495597",
+      "content": "100049920 黑鳥 92%強效 零塑 預兆後面會補滿",
+      "author": "taayoui",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

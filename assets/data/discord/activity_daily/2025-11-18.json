@@ -1,0 +1,27 @@
+{
+  "date": "2025-11-18",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 102,
+  "attachments": 2,
+  "channel_activity": {
+    "🐱light’s-nest": 2,
+    "1431233782605807666": 1
+  },
+  "hourly_activity": {
+    "6": 2,
+    "13": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440232498662473728",
+      "content": "收到了来自“精神健康与钓鱼中心”投喂的凯刻斯自制周边！与大家分享！",
+      "author": "game.producer.light",
+      "reactions": 102,
+      "channel": "🐱light’s-nest"
+    }
+  ]
+}

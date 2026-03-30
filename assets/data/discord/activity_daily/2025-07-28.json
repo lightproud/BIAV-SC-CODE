@@ -1,0 +1,25 @@
+{
+  "date": "2025-07-28",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 34,
+  "attachments": 1,
+  "channel_activity": {
+    "1399369127008796723": 1
+  },
+  "hourly_activity": {
+    "12": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1399369127008796723",
+      "content": "Table of Contents:\n1. Disclaimer and Thanks\n2. Kadath (Arc 1) Timeline, aka the ",
+      "author": "nikolazuli",
+      "reactions": 34,
+      "channel": ""
+    }
+  ]
+}

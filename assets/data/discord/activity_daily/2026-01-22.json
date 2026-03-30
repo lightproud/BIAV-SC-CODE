@@ -1,0 +1,55 @@
+{
+  "date": "2026-01-22",
+  "messages": 23,
+  "unique_authors": 15,
+  "reactions_total": 6,
+  "attachments": 4,
+  "channel_activity": {
+    "🔸欢乐梗图": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1448648649486635128": 5,
+    "1456123871383130243": 1,
+    "1450001353064714320": 8,
+    "1234769700735418368": 3,
+    "1463402306606465080": 1,
+    "1455822126568308957": 3
+  },
+  "hourly_activity": {
+    "7": 1,
+    "1": 2,
+    "4": 5,
+    "8": 1,
+    "0": 5,
+    "11": 4,
+    "21": 2,
+    "3": 1,
+    "23": 2
+  },
+  "message_types": {
+    "0": 21,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1463741514692821105",
+      "content": "some very rushed coloring and shading <:Jointhefun1:1400771646293282918>",
+      "author": "h3ll0hu",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1463698053335748699",
+      "content": "Also yes I am a whale",
+      "author": "legendaryredz",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1463704818043588804",
+      "content": "https://youtu.be/lYjOv9UP7KM?si=sIuksHt57nTQXogD viendo como sera la nueva perso",
+      "author": "yaoshidoppa",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

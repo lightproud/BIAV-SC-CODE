@@ -1,0 +1,42 @@
+{
+  "date": "2025-09-16",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 84,
+  "attachments": 2,
+  "channel_activity": {
+    "1417419008898109492": 2,
+    "1408838316153114716": 1,
+    "1399369127008796723": 2
+  },
+  "hourly_activity": {
+    "7": 2,
+    "14": 3
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1417419008898109492",
+      "content": "We sincerely thank the below Keepers for their contributions in helping us trans",
+      "author": "morimens_15",
+      "reactions": 44,
+      "channel": ""
+    },
+    {
+      "id": "1417419088518713377",
+      "content": "**Indonesian (ID)**\n**Adelle, Rosemary, and Yunita**\n  - Translated key terms\n\n*",
+      "author": "morimens_15",
+      "reactions": 38,
+      "channel": ""
+    },
+    {
+      "id": "1417520371112087593",
+      "content": "added a bit of info about Mythag's awakening ritual. the rest of the info from t",
+      "author": "nikolazuli",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

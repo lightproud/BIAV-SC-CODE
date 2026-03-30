@@ -1,0 +1,27 @@
+{
+  "date": "2023-10-29",
+  "messages": 15,
+  "unique_authors": 4,
+  "reactions_total": 7,
+  "attachments": 3,
+  "channel_activity": {
+    "discord社群建議": 15
+  },
+  "hourly_activity": {
+    "11": 11,
+    "13": 4
+  },
+  "message_types": {
+    "0": 11,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1168185985260077137",
+      "content": "抱歉！！戈雅來遲了！我已經將這名成員進行踢出處罰了！也感謝各位守密人的監督～\n如果後續還有類似的情況也麻煩跟戈雅說噢～",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "discord社群建議"
+    }
+  ]
+}

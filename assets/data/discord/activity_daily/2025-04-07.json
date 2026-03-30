@@ -1,0 +1,26 @@
+{
+  "date": "2025-04-07",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 14,
+  "attachments": 2,
+  "channel_activity": {
+    "1271491376881598494": 3
+  },
+  "hourly_activity": {
+    "3": 1,
+    "4": 2
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1358646504482541688",
+      "content": "",
+      "author": "timee_ky",
+      "reactions": 14,
+      "channel": ""
+    }
+  ]
+}

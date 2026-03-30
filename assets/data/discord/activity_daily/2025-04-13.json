@@ -1,0 +1,27 @@
+{
+  "date": "2025-04-13",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 8,
+  "attachments": 1,
+  "channel_activity": {
+    "1271491376881598494": 1,
+    "1357184174485671966": 1
+  },
+  "hourly_activity": {
+    "18": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1361045434080038984",
+      "content": "100377735……",
+      "author": "287405tjy_28066",
+      "reactions": 8,
+      "channel": ""
+    }
+  ]
+}

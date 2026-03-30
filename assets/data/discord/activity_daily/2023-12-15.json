@@ -1,0 +1,174 @@
+{
+  "date": "2023-12-15",
+  "messages": 42,
+  "unique_authors": 41,
+  "reactions_total": 42,
+  "attachments": 0,
+  "channel_activity": {
+    "1184707725851111444": 42
+  },
+  "hourly_activity": {
+    "0": 2,
+    "2": 4,
+    "3": 1,
+    "4": 2,
+    "5": 4,
+    "6": 3,
+    "7": 3,
+    "8": 2,
+    "9": 4,
+    "10": 2,
+    "11": 3,
+    "12": 3,
+    "14": 3,
+    "15": 2,
+    "17": 1,
+    "20": 1,
+    "21": 2
+  },
+  "message_types": {
+    "0": 42
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1185013497541693471",
+      "content": "100026238",
+      "author": "weilai233",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185020454826672199",
+      "content": "100056377",
+      "author": "rokuen.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185040497643880478",
+      "content": "100196732",
+      "author": "1739396162",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185041364350677045",
+      "content": "100146928",
+      "author": "2337726473",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185048777543921764",
+      "content": "100028588",
+      "author": "sophiajustsophia",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185050658135617556",
+      "content": "100005863",
+      "author": "e4nanai",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185059079484354610",
+      "content": "100002375",
+      "author": "xuan4185",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185075834076282933",
+      "content": "100080638",
+      "author": "tinawater.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185080343456403546",
+      "content": "100008457",
+      "author": "initialnote",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185086649290465330",
+      "content": "100043468",
+      "author": "7_dy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185088483325382716",
+      "content": "100081851",
+      "author": "1518427343",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185088930241052753",
+      "content": "100001764",
+      "author": "hana555112121",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185092030368600194",
+      "content": "100011381",
+      "author": "cs001092",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185101134461943889",
+      "content": "100035396",
+      "author": "anachico",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185103876173606963",
+      "content": "100213095",
+      "author": "anachico",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185107477574979634",
+      "content": "100089136",
+      "author": "guxu123",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185120724067823677",
+      "content": "100043182",
+      "author": "changsheng3645",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185127496404971620",
+      "content": "100017818",
+      "author": "xuyu_666",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185128405344194570",
+      "content": "100108869",
+      "author": "fake_view",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1185131292464001094",
+      "content": "100061108",
+      "author": "1099169130",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "date": "2024-09-13",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 28,
+  "attachments": 2,
+  "channel_activity": {
+    "1181998821291606097": 3
+  },
+  "hourly_activity": {
+    "4": 1,
+    "10": 1,
+    "14": 1
+  },
+  "message_types": {
+    "0": 2,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1284012673092157470",
+      "content": "再翻點老圖<:bow:1243504932460433498>",
+      "author": "navirecorbeau",
+      "reactions": 19,
+      "channel": ""
+    },
+    {
+      "id": "1284162371715203102",
+      "content": "看著像是能把我的尊嚴踩碎的樣子\n愛了愛了",
+      "author": "hananichiya",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1284094655033511957",
+      "content": "天啊是威廉學長🥹🥹🥹",
+      "author": "kkklavier",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

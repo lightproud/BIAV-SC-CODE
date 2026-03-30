@@ -1,0 +1,44 @@
+{
+  "date": "2025-12-20",
+  "messages": 9,
+  "unique_authors": 6,
+  "reactions_total": 8,
+  "attachments": 2,
+  "channel_activity": {
+    "1451860479097049199": 1,
+    "1445556242381672559": 7,
+    "1443848396585828363": 1
+  },
+  "hourly_activity": {
+    "8": 1,
+    "0": 7,
+    "14": 1
+  },
+  "message_types": {
+    "0": 7,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1451860479097049199",
+      "content": "In the First page, when you open the game, you have to wait for it to load, then",
+      "author": "vxvendetta97",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1451738208919359578",
+      "content": "<:thinking1:1356068128936820929>",
+      "author": "velvetrene._cake",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1451740290292646081",
+      "content": "glad to keep you alive <:Sendflowers:1400771545370067118>",
+      "author": "zzio_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

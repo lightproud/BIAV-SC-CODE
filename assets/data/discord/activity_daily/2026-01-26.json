@@ -1,0 +1,61 @@
+{
+  "date": "2026-01-26",
+  "messages": 11,
+  "unique_authors": 6,
+  "reactions_total": 54,
+  "attachments": 11,
+  "channel_activity": {
+    "1429401798439080028": 1,
+    "1403373754175721657": 3,
+    "1417419008898109492": 1,
+    "1465417385170309318": 4,
+    "1350060160739184690": 2
+  },
+  "hourly_activity": {
+    "8": 1,
+    "14": 3,
+    "7": 3,
+    "18": 4
+  },
+  "message_types": {
+    "0": 10,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1465417385170309318",
+      "content": "My (mostly) Tulu fanarts never before posted on this server.",
+      "author": "happyskull",
+      "reactions": 33,
+      "channel": ""
+    },
+    {
+      "id": "1465418153596293328",
+      "content": "And the finished product ~~why is he grown up~~ <:T_stare:1400771751650136145>",
+      "author": "happyskull",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1465267084622696468",
+      "content": "摸了一點就要出門了🌿",
+      "author": "ass191044",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1465417594852081818",
+      "content": "Nap time with kiddos <:T_sleep2:1356085993626665200>",
+      "author": "happyskull",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1465346222943506453",
+      "content": "改版後完成率突然加的莫名其妙<:cry3:1356082134447558748> \n雖然啥也沒幹但看上去變強了<:wish:13560847024688991",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

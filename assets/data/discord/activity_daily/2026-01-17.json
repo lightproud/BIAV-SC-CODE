@@ -1,0 +1,27 @@
+{
+  "date": "2026-01-17",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 1,
+  "attachments": 2,
+  "channel_activity": {
+    "1448648649486635128": 2,
+    "1193859503096070234": 1
+  },
+  "hourly_activity": {
+    "8": 2,
+    "12": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1462054643944394843",
+      "content": "莱克应该是野兽，然后德克斯特是夜魔",
+      "author": "sleepy_amber",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

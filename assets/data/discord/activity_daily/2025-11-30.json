@@ -1,0 +1,43 @@
+{
+  "date": "2025-11-30",
+  "messages": 10,
+  "unique_authors": 9,
+  "reactions_total": 149,
+  "attachments": 2,
+  "channel_activity": {
+    "🐱light’s-nest": 1,
+    "1423337172655935600": 3,
+    "1241345906826153984": 1,
+    "1441326394817908736": 5
+  },
+  "hourly_activity": {
+    "4": 1,
+    "0": 1,
+    "5": 1,
+    "6": 1,
+    "23": 2,
+    "14": 2,
+    "20": 1,
+    "22": 1
+  },
+  "message_types": {
+    "0": 8,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1444542608708735137",
+      "content": "Pourquoi je vis pourquoi je meurs, \n为何而生  为何而逝，\nPourquoi je ris pourquoi je pleu",
+      "author": "game.producer.light",
+      "reactions": 128,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1444835805167091833",
+      "content": "你說一個角色不能同時是正常人、憂鬱症，和瘋狗是什麼意思（",
+      "author": "carrot_chicken",
+      "reactions": 21,
+      "channel": ""
+    }
+  ]
+}

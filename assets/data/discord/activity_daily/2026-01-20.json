@@ -1,0 +1,62 @@
+{
+  "date": "2026-01-20",
+  "messages": 13,
+  "unique_authors": 10,
+  "reactions_total": 609,
+  "attachments": 2,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1448648649486635128": 3,
+    "1241345906826153984": 3,
+    "1463188507659993200": 1,
+    "1450001353064714320": 2,
+    "1234769700735418368": 2
+  },
+  "hourly_activity": {
+    "11": 1,
+    "4": 1,
+    "5": 2,
+    "14": 1,
+    "2": 2,
+    "6": 1,
+    "15": 1,
+    "21": 2,
+    "1": 1,
+    "10": 1
+  },
+  "message_types": {
+    "0": 12,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1463140559978893510",
+      "content": "🎁DC 35000守密人达成礼 / DC35000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【",
+      "author": "morimensstaff01",
+      "reactions": 605,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1463021574159601759",
+      "content": "Fun little video that partially showcases the boss fights for D-Tide this week b",
+      "author": "frosthief",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1463046112813383818",
+      "content": "可愛小波",
+      "author": "quackdayo",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1463119325694136487",
+      "content": "<:Helot_slack_off:1459092159465521184>",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

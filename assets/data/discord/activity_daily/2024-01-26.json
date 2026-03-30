@@ -1,0 +1,27 @@
+{
+  "date": "2024-01-26",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "1197183401388683386": 2
+  },
+  "hourly_activity": {
+    "5": 1,
+    "14": 1
+  },
+  "message_types": {
+    "0": 1,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1200441121801773086",
+      "content": "好運！沒All Pass就要被朵爾留校查看了！",
+      "author": "banano.2",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

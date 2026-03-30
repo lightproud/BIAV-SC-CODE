@@ -1,0 +1,44 @@
+{
+  "date": "2025-11-17",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 59,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1,
+    "1439514625703149659": 2,
+    "1399369127008796723": 1
+  },
+  "hourly_activity": {
+    "3": 1,
+    "9": 2,
+    "14": 1
+  },
+  "message_types": {
+    "0": 3,
+    "6": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1439822703321419816",
+      "content": "📢 AutoMod Update: Improving Communication\n\nHello everyone! We have noticed recen",
+      "author": "morimens_15",
+      "reactions": 41,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1439916138602692658",
+      "content": "11/17封禁名單（部分）丨 11/17Ban List (Partial)\n100474981\n100773904\n100508134\n100726595\n1",
+      "author": "morimensstaff02",
+      "reactions": 16,
+      "channel": ""
+    },
+    {
+      "id": "1439989311746347028",
+      "content": "17/11 update (happy anniversary!)\nOfficial timeline means major updates. Most of",
+      "author": "nikolazuli",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

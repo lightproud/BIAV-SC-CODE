@@ -1,0 +1,47 @@
+{
+  "date": "2025-11-28",
+  "messages": 13,
+  "unique_authors": 8,
+  "reactions_total": 178,
+  "attachments": 2,
+  "channel_activity": {
+    "🐱light’s-nest": 1,
+    "1443848396585828363": 2,
+    "1441326394817908736": 10
+  },
+  "hourly_activity": {
+    "2": 1,
+    "6": 2,
+    "11": 1,
+    "13": 1,
+    "15": 3,
+    "21": 1,
+    "22": 4
+  },
+  "message_types": {
+    "0": 13
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1443784728628166687",
+      "content": "It seems like rrkk00q really likes Ryker! rrkk00q 似乎非常喜欢莱克！",
+      "author": "game.producer.light",
+      "reactions": 136,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1443848396585828363",
+      "content": "***SPOILERS FOR CHAPTER 8 AND 9, as well as minor spoilers for Arc 2 Chapter 1**",
+      "author": "nikolazuli",
+      "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1443848465158504528",
+      "content": "## Why should you care? ##\nAs mentioned, the GDoll incident is extremely importa",
+      "author": "nikolazuli",
+      "reactions": 16,
+      "channel": ""
+    }
+  ]
+}

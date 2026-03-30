@@ -1,0 +1,41 @@
+{
+  "date": "2025-09-17",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 10,
+  "attachments": 6,
+  "channel_activity": {
+    "1296113810549112874": 4,
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "7": 4,
+    "16": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1417772173770358785",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1417772740278095943",
+      "content": "神秘垂耳兔",
+      "author": "yingmai_",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1417773023225843822",
+      "content": "醒图滤镜真好用吧",
+      "author": "yingmai_",
+      "reactions": 3,
+      "channel": ""
+    }
+  ]
+}

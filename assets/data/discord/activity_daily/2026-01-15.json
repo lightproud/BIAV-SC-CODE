@@ -1,0 +1,43 @@
+{
+  "date": "2026-01-15",
+  "messages": 4,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 1,
+  "channel_activity": {
+    "1448648649486635128": 2,
+    "1445556242381672559": 2
+  },
+  "hourly_activity": {
+    "14": 1,
+    "19": 1,
+    "0": 2
+  },
+  "message_types": {
+    "0": 2,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1461369555342463102",
+      "content": "依旧是进度！！（就这样一边型都没打好一边就匆匆开始填色游戏了<:Pollux_gift:1459081694148558943>",
+      "author": "yq0227",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1461448023870537977",
+      "content": "嬷嬷发力了",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1461151409436233982",
+      "content": "it has its use and they do allat in snooker fr fr",
+      "author": "zzio_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

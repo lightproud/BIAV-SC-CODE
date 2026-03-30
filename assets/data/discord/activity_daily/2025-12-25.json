@@ -1,0 +1,78 @@
+{
+  "date": "2025-12-25",
+  "messages": 33,
+  "unique_authors": 8,
+  "reactions_total": 598,
+  "attachments": 4,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1241345906826153984": 24,
+    "1452951234712571996": 4,
+    "1426215442783142041": 3
+  },
+  "hourly_activity": {
+    "10": 1,
+    "13": 1,
+    "7": 5,
+    "8": 18,
+    "9": 4,
+    "1": 2,
+    "6": 2
+  },
+  "message_types": {
+    "0": 27,
+    "19": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1453695310957117534",
+      "content": "🎄 圣诞活动兑换码┊Christmas activity redemption code：⁠https://discord.com/channels/11317",
+      "author": "morimensstaff01",
+      "reactions": 575,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1453651076002615380",
+      "content": "今年的年度回顧 大家聖誕快樂",
+      "author": "carrot_chicken",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1453677596150599763",
+      "content": "well, the whole \"going mad with denial, finishing your ancient summoning ritual ",
+      "author": "arkaether",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1453668166868795433",
+      "content": "但不管COC還是DND我都是拉我oc 下去玩就是了",
+      "author": "carrot_chicken",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1453670203954167851",
+      "content": "今年還有畫開團圖呢（過獎ㄌ其實另外三個人都比我會畫😅\n可惜最後大家很忙所以這團也不了了之了😅",
+      "author": "carrot_chicken",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1453745822603808912",
+      "content": "https://youtu.be/MA0kDqlepqE - Patch Overview",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1453634798462439511",
+      "content": "Already uploaded, waiting for platform release🥰",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

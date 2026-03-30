@@ -1,0 +1,82 @@
+{
+  "date": "2025-11-19",
+  "messages": 10,
+  "unique_authors": 4,
+  "reactions_total": 216,
+  "attachments": 4,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1,
+    "🐱light’s-nest": 4,
+    "1234769700735418368": 5
+  },
+  "hourly_activity": {
+    "5": 1,
+    "14": 1,
+    "15": 2,
+    "16": 1,
+    "8": 2,
+    "9": 3
+  },
+  "message_types": {
+    "0": 7,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440705189475647518",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 92,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440733058411008062",
+      "content": "While our work may seem like a Lovecraftian tribute, what we’ve always sought to",
+      "author": "game.producer.light",
+      "reactions": 63,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440732097131053158",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 17,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440626783048437790",
+      "content": "<@139343733714845697> <:bow:1356053037159944473>",
+      "author": "morimensstaff01",
+      "reactions": 15,
+      "channel": ""
+    },
+    {
+      "id": "1440571234432847893",
+      "content": "Hey everyone! 👋\n\nA few points we wanted to bring up:  \n\n1️⃣ New roles were intro",
+      "author": "cometovilla",
+      "reactions": 14,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1440735248391475240",
+      "content": "我们虽然看起来所做的是一个Lovecraft致敬的作品，实际上我们要表达的始终是与宇宙虚无主义完全对立的课题———我们的游戏体验、我们的故事美术与音乐、我们的研",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440626902720315484",
+      "content": "No problem, I'll look for it<:bow:1356053037159944473>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1440641787881455676",
+      "content": "This helps a lot <:pray:1356053116260454534>",
+      "author": "satachan",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

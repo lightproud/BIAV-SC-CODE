@@ -1,0 +1,30 @@
+{
+  "date": "2026-01-18",
+  "messages": 5,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1455822126568308957": 3,
+    "1357184174485671966": 1
+  },
+  "hourly_activity": {
+    "3": 1,
+    "14": 3,
+    "11": 1
+  },
+  "message_types": {
+    "0": 3,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1462285708709462097",
+      "content": "A *short* style Awakener overview for Hameln 🎼\nhttps://youtube.com/shorts/gFORQO",
+      "author": "nechromicon",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

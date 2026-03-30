@@ -1,0 +1,81 @@
+{
+  "date": "2025-07-04",
+  "messages": 16,
+  "unique_authors": 9,
+  "reactions_total": 46,
+  "attachments": 1,
+  "channel_activity": {
+    "1181998821291606097": 1,
+    "1390375103707218041": 15
+  },
+  "hourly_activity": {
+    "14": 1,
+    "0": 8,
+    "1": 4,
+    "2": 1,
+    "11": 1,
+    "13": 1
+  },
+  "message_types": {
+    "0": 14,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1390490801125064714",
+      "content": "We’ll be adding human translation of previous story chapters every update starti",
+      "author": "morimens_15",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1390700945939234816",
+      "content": "~~點擊即看杜師傅耍大牌~~",
+      "author": "navirecorbeau",
+      "reactions": 12,
+      "channel": ""
+    },
+    {
+      "id": "1390490471280935054",
+      "content": "Jumping on to say Doresain’s patch will come with fully human proofread main sto",
+      "author": "morimens_15",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1390490997120569404",
+      "content": "I believe it’s 7/21",
+      "author": "morimens_15",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1390510222434635817",
+      "content": "wait, is it true?\nI don’t see this in the announcement? 🥹",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1390510478765199491",
+      "content": "Yup, Light mentioned it in the English channel.\nhttps://discord.com/channels/113",
+      "author": "mac2492",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1390510564471607336",
+      "content": "yay",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1390516236877692969",
+      "content": "suitable va for the best chef? i'll wait 🛐",
+      "author": "jormiejormungandr",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

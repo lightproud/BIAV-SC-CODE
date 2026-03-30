@@ -1,0 +1,36 @@
+{
+  "date": "2024-10-11",
+  "messages": 5,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "1181998821291606097": 1,
+    "1193859503096070234": 4
+  },
+  "hourly_activity": {
+    "7": 1,
+    "3": 1,
+    "15": 3
+  },
+  "message_types": {
+    "19": 3,
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1294206832021344259",
+      "content": "學長現在已經變英雄碎片了QQ",
+      "author": "ice_storys",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1294327469926518845",
+      "content": "哈姆林感覺還是薩里耶利",
+      "author": "magushermes",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

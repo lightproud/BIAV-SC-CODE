@@ -1,0 +1,55 @@
+{
+  "date": "2026-01-05",
+  "messages": 9,
+  "unique_authors": 5,
+  "reactions_total": 7,
+  "attachments": 3,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1421408684776357929": 4,
+    "1455874176534712330": 2,
+    "1305430084420898868": 2
+  },
+  "hourly_activity": {
+    "13": 1,
+    "7": 4,
+    "5": 1,
+    "9": 1,
+    "2": 1,
+    "4": 1
+  },
+  "message_types": {
+    "0": 7,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1457639569116889142",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1457598635054203003",
+      "content": "这样喔，我还以为是官图来着  \n辛苦戈雅啦<:A_pinch:1432980538536493057>",
+      "author": "sweet_25367",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1457730488155377815",
+      "content": "https://youtu.be/Vf70PK3EvWY?si=ozgi5Uk0XXJTMVZm - Clearing with AURITA AURITA",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1457670168644685866",
+      "content": "No problem, I'll prioritize handling bug reports. General game suggestions are t",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

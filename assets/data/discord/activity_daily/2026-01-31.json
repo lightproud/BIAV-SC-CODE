@@ -1,0 +1,45 @@
+{
+  "date": "2026-01-31",
+  "messages": 6,
+  "unique_authors": 6,
+  "reactions_total": 13,
+  "attachments": 4,
+  "channel_activity": {
+    "1467308113660215326": 1,
+    "1467225902029996154": 2,
+    "1464228375316136072": 2,
+    "1458187614879486146": 1
+  },
+  "hourly_activity": {
+    "23": 1,
+    "18": 3,
+    "6": 2
+  },
+  "message_types": {
+    "0": 4,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1467225902029996154",
+      "content": "This is about the description of the devour effect on leigh and if it works as i",
+      "author": "arandomflamev2",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1467308113660215326",
+      "content": "I would really appreciate if we could get things like character and wheel portra",
+      "author": "jollysquire",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1467231768238358528",
+      "content": "Most likely, the math when devouring an embryo works not as \"base_str * 2\", but ",
+      "author": "heransu",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

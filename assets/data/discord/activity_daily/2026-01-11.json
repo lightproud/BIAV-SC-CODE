@@ -1,0 +1,55 @@
+{
+  "date": "2026-01-11",
+  "messages": 84,
+  "unique_authors": 9,
+  "reactions_total": 11,
+  "attachments": 3,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1458491651239710851": 2,
+    "1448648649486635128": 66,
+    "1429401798439080028": 1,
+    "1445556242381672559": 14
+  },
+  "hourly_activity": {
+    "1": 15,
+    "15": 1,
+    "16": 1,
+    "11": 66,
+    "17": 1
+  },
+  "message_types": {
+    "0": 79,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1459937265051766784",
+      "content": "謝謝！\n原先想找只有手的圖層卻發現找不到，匯出一個比較潦草的版本當發福利（？）",
+      "author": "xu6_",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1459966575531790675",
+      "content": "丟ㄍ調一調配色的古老者跟臨時搓出來不是古老者的喚醒體草稿🤩",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1459714660654649490",
+      "content": "A 2 minute overview of Nymphaea. She's one of the few Awakeners that can hit thr",
+      "author": "nechromicon",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1459716491204231269",
+      "content": "You may proceed, Ramona kisser 3000.",
+      "author": "zzio_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "date": "2025-12-22",
+  "messages": 12,
+  "unique_authors": 10,
+  "reactions_total": 109,
+  "attachments": 3,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1,
+    "1452158639874904217": 1,
+    "1296113810549112874": 1,
+    "1241345906826153984": 6,
+    "1446091938456539279": 2,
+    "1305430084420898868": 1
+  },
+  "hourly_activity": {
+    "21": 1,
+    "16": 1,
+    "5": 1,
+    "11": 5,
+    "12": 1,
+    "8": 3
+  },
+  "message_types": {
+    "0": 9,
+    "19": 2,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1452778800243937411",
+      "content": "<@&1440133908661534790> \n\nHey Everyone,  \n\nAs some of you are already aware, we ",
+      "author": "cometovilla",
+      "reactions": 91,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1452526201997361182",
+      "content": "命運的兩面\n大小姐生日快樂！",
+      "author": "yingmai_",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1452620568519245900",
+      "content": "一張圖拖一個月還沒畫完有點累了(",
+      "author": "yolo_mode",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1452623947937091624",
+      "content": "~~畫圖畫累了就去寫文，等寫文寫累了再回來畫圖~~",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1452624280184553554",
+      "content": "~~這不是沒區別嗎~~",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1452584866494283909",
+      "content": "Thank you for the suggestion, I will convey it🌹",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1452625522914885745",
+      "content": "老師好好休息",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

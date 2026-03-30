@@ -1,0 +1,35 @@
+{
+  "date": "2023-10-30",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 13,
+  "attachments": 2,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 1,
+    "discord社群建議": 3
+  },
+  "hourly_activity": {
+    "13": 1,
+    "6": 3
+  },
+  "message_types": {
+    "0": 3,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1168546352318386277",
+      "content": "◆喚醒體手冊◆拉蒙娜\n在這條孤獨、勇敢又艱難的探索之路上，拉蒙娜一直有種捨生忘死的冷靜，又意外地對守密人抱有以命相託的信任。\n只要你想要，只要我可以。\n對吧！搭",
+      "author": "morimensstaff02",
+      "reactions": 11,
+      "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1168433331021557822",
+      "content": "收到收到，我處理一下，感謝舉報啦~",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "discord社群建議"
+    }
+  ]
+}

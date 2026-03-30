@@ -1,0 +1,29 @@
+{
+  "date": "2025-10-13",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 12,
+  "attachments": 3,
+  "channel_activity": {
+    "1421408684776357929": 2,
+    "1181998821291606097": 1,
+    "1415230955387621397": 1
+  },
+  "hourly_activity": {
+    "15": 2,
+    "16": 1,
+    "12": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1427329029467537570",
+      "content": "摸點莫名其妙的東西<:clap:1356053042671255683>",
+      "author": "navirecorbeau",
+      "reactions": 12,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2025-04-01",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 195,
+  "attachments": 4,
+  "channel_activity": {
+    "🔸翻译器教程┊translator-tutorial": 3,
+    "1271491376881598494": 1
+  },
+  "hourly_activity": {
+    "8": 3,
+    "10": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1356540792138764348",
+      "content": "2️⃣ **如何把自己的文案翻譯成其他國家的語言？**\n\n► 在*文本框輸入“/translate”*，在選項內選擇最上方的*“/translate   [te",
+      "author": "morimensstaff01",
+      "reactions": 183,
+      "channel": "🔸翻译器教程┊translator-tutorial"
+    },
+    {
+      "id": "1356570777830428766",
+      "content": "100003566",
+      "author": "blue_yogurt_chan",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1356539643155189790",
+      "content": "🔥 **【翻譯器】教程┊【Translator】Tutorial** 🔥 \n\n各位守密人，為了方便大家的日常交流，我們在頻道引入了【翻譯器】功能！\n\n► 大家可",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "🔸翻译器教程┊translator-tutorial"
+    },
+    {
+      "id": "1356540062585589810",
+      "content": "1️⃣  **如何翻譯別人發出的文字內容？**\n\n**► PC端：**滑鼠選取你需要翻譯的文本，然後點擊滑鼠右鍵，點擊【應用程式】→【Translate Tex",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "🔸翻译器教程┊translator-tutorial"
+    }
+  ]
+}

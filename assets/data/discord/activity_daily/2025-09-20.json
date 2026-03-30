@@ -1,0 +1,37 @@
+{
+  "date": "2025-09-20",
+  "messages": 11,
+  "unique_authors": 4,
+  "reactions_total": 10,
+  "attachments": 2,
+  "channel_activity": {
+    "1296113810549112874": 8,
+    "1305430084420898868": 3
+  },
+  "hourly_activity": {
+    "14": 6,
+    "15": 1,
+    "16": 1,
+    "10": 3
+  },
+  "message_types": {
+    "0": 10,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1418964590590693428",
+      "content": "不是我喜欢的结局直接重开",
+      "author": "yingmai_",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1418968063994499206",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 5,
+      "channel": ""
+    }
+  ]
+}

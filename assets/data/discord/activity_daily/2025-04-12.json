@@ -1,0 +1,41 @@
+{
+  "date": "2025-04-12",
+  "messages": 9,
+  "unique_authors": 2,
+  "reactions_total": 587,
+  "attachments": 6,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 1,
+    "1296113810549112874": 8
+  },
+  "hourly_activity": {
+    "7": 1,
+    "6": 8
+  },
+  "message_types": {
+    "0": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1360512904339918959",
+      "content": "💖 **【開服500天紀念】**\n親愛的守密人：\n\n今天，我們迎來了開服500天紀念日。 500個日夜守望，是您每一次登入時與融蝕對峙的勇氣，讓這段本應黯淡無光",
+      "author": "morimensstaff01",
+      "reactions": 580,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1360501065346191553",
+      "content": "不是，是我机关算尽一手策划绞尽脑汁强求来的",
+      "author": "yingmai_",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1360499978837164114",
+      "content": "守密人，晚上是吹陆风",
+      "author": "yingmai_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

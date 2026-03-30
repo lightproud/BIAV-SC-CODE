@@ -1,0 +1,33 @@
+{
+  "date": "2025-12-09",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 474,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 1,
+    "🔸礼包码┊gift-codes": 1
+  },
+  "hourly_activity": {
+    "2": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1447783945444917279",
+      "content": "🎁DC 32000守密人达成礼 / DC32000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码在【",
+      "author": "morimensstaff01",
+      "reactions": 473,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1447782184537686149",
+      "content": "https://cdn.discordapp.com/attachments/898126527558975488/901431904035815444/FB_",
+      "author": "lovefortruelovegod",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    }
+  ]
+}

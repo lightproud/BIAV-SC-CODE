@@ -1,0 +1,34 @@
+{
+  "date": "2024-11-30",
+  "messages": 3,
+  "unique_authors": 1,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "1193859503096070234": 3
+  },
+  "hourly_activity": {
+    "18": 2,
+    "19": 1
+  },
+  "message_types": {
+    "19": 2,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1312493162719215707",
+      "content": "野獸\n最沒有理智的那個分身",
+      "author": "kong760",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1312493586369220700",
+      "content": "紅夫人是\n紅衣女皇這個分身\n象徵權欲",
+      "author": "kong760",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

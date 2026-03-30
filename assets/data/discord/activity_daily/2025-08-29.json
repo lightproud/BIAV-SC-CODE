@@ -1,0 +1,25 @@
+{
+  "date": "2025-08-29",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 4,
+  "attachments": 0,
+  "channel_activity": {
+    "1356210707867107391": 1
+  },
+  "hourly_activity": {
+    "12": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1410970287947780207",
+      "content": "<@1131790839291596841> 戈雅 我是新人求幫助我需要100流明",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": ""
+    }
+  ]
+}

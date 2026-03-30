@@ -1,0 +1,34 @@
+{
+  "date": "2025-09-07",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "1296113810549112874": 2
+  },
+  "hourly_activity": {
+    "13": 1,
+    "14": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1414258276744564828",
+      "content": "温师傅生日快乐！",
+      "author": "yingmai_",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1414237527136534598",
+      "content": "我還以為比的是中指",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

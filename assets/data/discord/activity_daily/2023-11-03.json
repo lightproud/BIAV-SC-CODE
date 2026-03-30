@@ -1,0 +1,33 @@
+{
+  "date": "2023-11-03",
+  "messages": 9,
+  "unique_authors": 4,
+  "reactions_total": 2,
+  "attachments": 2,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 4,
+    "繪圖": 2,
+    "discord社群建議": 3
+  },
+  "hourly_activity": {
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "13": 4,
+    "5": 1,
+    "6": 1
+  },
+  "message_types": {
+    "0": 7,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1169997852831924264",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "官方佈告（已停止使用）"
+    }
+  ]
+}

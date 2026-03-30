@@ -1,0 +1,27 @@
+{
+  "date": "2025-11-25",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "1271491376881598494": 4,
+    "1234769700735418368": 1
+  },
+  "hourly_activity": {
+    "15": 4,
+    "9": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1442804057667534898",
+      "content": "<@1131790839291596841>  goya-san, May I request a full body picture of the the m",
+      "author": "satachan",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

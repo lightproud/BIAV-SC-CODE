@@ -1,0 +1,27 @@
+{
+  "date": "2025-08-25",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 0,
+  "channel_activity": {
+    "1305430084420898868": 2,
+    "1181147096234065920": 2
+  },
+  "hourly_activity": {
+    "12": 2,
+    "16": 2
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1409519640333258944",
+      "content": "<:pray:1356053116260454534>",
+      "author": "yuluomea",
+      "reactions": 4,
+      "channel": ""
+    }
+  ]
+}

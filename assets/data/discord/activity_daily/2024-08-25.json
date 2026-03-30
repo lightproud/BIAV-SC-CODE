@@ -1,0 +1,31 @@
+{
+  "date": "2024-08-25",
+  "messages": 5,
+  "unique_authors": 4,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "1193859503096070234": 4,
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "15": 1,
+    "16": 1,
+    "21": 1,
+    "22": 1,
+    "17": 1
+  },
+  "message_types": {
+    "19": 3,
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1277294164567920791",
+      "content": "感觉神父可能是neta那个法师，因为有剧情说神父第一次死了以后石板也找不到了",
+      "author": "hawkbeck",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

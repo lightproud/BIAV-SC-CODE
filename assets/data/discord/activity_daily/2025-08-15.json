@@ -1,0 +1,27 @@
+{
+  "date": "2025-08-15",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 18,
+  "attachments": 1,
+  "channel_activity": {
+    "1181998821291606097": 1,
+    "1399369127008796723": 1
+  },
+  "hourly_activity": {
+    "17": 1,
+    "14": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1405968761043030088",
+      "content": "有一隻蛾子哈皮兒波斯day<:Emoji_AEW_M_02:1400771550097051669>",
+      "author": "navirecorbeau",
+      "reactions": 18,
+      "channel": ""
+    }
+  ]
+}

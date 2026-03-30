@@ -1,0 +1,57 @@
+{
+  "date": "2025-07-07",
+  "messages": 20,
+  "unique_authors": 9,
+  "reactions_total": 712,
+  "attachments": 5,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 1,
+    "1296113810549112874": 4,
+    "1390375103707218041": 15
+  },
+  "hourly_activity": {
+    "11": 1,
+    "14": 4,
+    "0": 1,
+    "5": 4,
+    "6": 1,
+    "9": 1,
+    "10": 6,
+    "16": 1,
+    "19": 1
+  },
+  "message_types": {
+    "0": 15,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1391748782806270014",
+      "content": "🎁DC 21000守密人達成禮 / DC21000 Keepers Achievement Gift\n\n《忘卻前夜Morimens》DC全球頻道達到21000人",
+      "author": "morimensstaff02",
+      "reactions": 709,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1391794013568368653",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1391794429798383627",
+      "content": "萌萌金毛女就在这里",
+      "author": "yingmai_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1391722800758132816",
+      "content": "~~别去，全是男同（）~~",
+      "author": "flarinsidia",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

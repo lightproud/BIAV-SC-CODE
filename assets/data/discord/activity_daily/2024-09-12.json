@@ -1,0 +1,33 @@
+{
+  "date": "2024-09-12",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 24,
+  "attachments": 1,
+  "channel_activity": {
+    "1181998821291606097": 3
+  },
+  "hourly_activity": {
+    "0": 1,
+    "13": 2
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1283786548344782859",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 23,
+      "channel": ""
+    },
+    {
+      "id": "1283585863720243232",
+      "content": "伟大啊<:heart:1239910691218001961> <:heart:1239910691218001961> <:heart:12399106912",
+      "author": "shenlai2004",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

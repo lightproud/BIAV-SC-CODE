@@ -1,0 +1,33 @@
+{
+  "date": "2025-05-11",
+  "messages": 3,
+  "unique_authors": 1,
+  "reactions_total": 10,
+  "attachments": 5,
+  "channel_activity": {
+    "1296113810549112874": 3
+  },
+  "hourly_activity": {
+    "9": 2,
+    "14": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1371059967376887838",
+      "content": "忘记发了呃呃呃，我将造谣喫茶店小女仆",
+      "author": "yingmai_",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1371134016933203979",
+      "content": "掏出一个西维，主包乱调压感调不回去了画得很绝望",
+      "author": "yingmai_",
+      "reactions": 5,
+      "channel": ""
+    }
+  ]
+}

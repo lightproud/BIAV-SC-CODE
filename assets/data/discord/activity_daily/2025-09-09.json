@@ -1,0 +1,36 @@
+{
+  "date": "2025-09-09",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 19,
+  "attachments": 2,
+  "channel_activity": {
+    "1305430084420898868": 1,
+    "1234769700735418368": 1,
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "8": 2,
+    "13": 1
+  },
+  "message_types": {
+    "0": 1,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1414891042590822500",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": ""
+    },
+    {
+      "id": "1414887207101272145",
+      "content": "嗨 戈雅去问问",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

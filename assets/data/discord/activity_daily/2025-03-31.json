@@ -1,0 +1,30 @@
+{
+  "date": "2025-03-31",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 40,
+  "attachments": 2,
+  "channel_activity": {
+    "1271491376881598494": 1,
+    "1356210707867107391": 1,
+    "1356210800091467928": 2
+  },
+  "hourly_activity": {
+    "10": 3,
+    "19": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 2,
+    "20": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1356210800091467928",
+      "content": "✨ New players can post here for help~\n✨ Veteran players can also post strategy p",
+      "author": "morimensstaff01",
+      "reactions": 40,
+      "channel": ""
+    }
+  ]
+}

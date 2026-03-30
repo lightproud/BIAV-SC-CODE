@@ -1,0 +1,25 @@
+{
+  "date": "2025-04-11",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 2,
+  "attachments": 1,
+  "channel_activity": {
+    "1271491376881598494": 1
+  },
+  "hourly_activity": {
+    "12": 1
+  },
+  "message_types": {
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1360236800026611923",
+      "content": "更新下\n86等+密契換了50爆傷二律背反",
+      "author": "xu6_",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

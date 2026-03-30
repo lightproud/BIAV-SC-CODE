@@ -1,0 +1,51 @@
+{
+  "date": "2025-10-19",
+  "messages": 24,
+  "unique_authors": 5,
+  "reactions_total": 6,
+  "attachments": 0,
+  "channel_activity": {
+    "1423337172655935600": 1,
+    "1429401798439080028": 23
+  },
+  "hourly_activity": {
+    "19": 1,
+    "9": 1,
+    "11": 4,
+    "12": 18
+  },
+  "message_types": {
+    "0": 18,
+    "19": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1429426480017838234",
+      "content": "報告剛剛繼續找資料後發現用錯符號🌿我之後會再調整（陰暗爬行",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1429442319634923641",
+      "content": "腦子被滿滿的兔子福瑞佔據",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1429445640106283080",
+      "content": "喔，古老者？",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1429446695045038191",
+      "content": "還有~~四處挖洞衣不蔽體~~奇怪五角衣物設計🌿",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

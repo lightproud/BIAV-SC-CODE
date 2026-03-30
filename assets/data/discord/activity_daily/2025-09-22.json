@@ -1,0 +1,45 @@
+{
+  "date": "2025-09-22",
+  "messages": 5,
+  "unique_authors": 5,
+  "reactions_total": 16,
+  "attachments": 1,
+  "channel_activity": {
+    "1181998821291606097": 3,
+    "1357184174485671966": 1,
+    "1399369127008796723": 1
+  },
+  "hourly_activity": {
+    "1": 1,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "14": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1419491603608768595",
+      "content": "~~單發是因爲畫的時候笑得有點缺德~~",
+      "author": "navirecorbeau",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1419579963195261029",
+      "content": "~~（左顧右盼）（緊張流汗）（舔）~~",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1419597934210584737",
+      "content": "我吃",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "date": "2025-06-25",
+  "messages": 8,
+  "unique_authors": 5,
+  "reactions_total": 3,
+  "attachments": 4,
+  "channel_activity": {
+    "1296113810549112874": 4,
+    "1305430084420898868": 3,
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "14": 3,
+    "15": 2,
+    "8": 3
+  },
+  "message_types": {
+    "0": 6,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1387354786877280308",
+      "content": "催催游戏内请柬头像更新啦，谢谢戈雅！<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1387446703711453225",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

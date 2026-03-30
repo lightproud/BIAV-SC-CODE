@@ -1,0 +1,25 @@
+{
+  "date": "2024-10-07",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "21": 1
+  },
+  "message_types": {
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1292957005090263061",
+      "content": "啊啊啊<:heart:1239910691218001961>",
+      "author": "kirboexists",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

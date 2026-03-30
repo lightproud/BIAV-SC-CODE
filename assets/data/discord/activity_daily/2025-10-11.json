@@ -1,0 +1,37 @@
+{
+  "date": "2025-10-11",
+  "messages": 4,
+  "unique_authors": 4,
+  "reactions_total": 9,
+  "attachments": 2,
+  "channel_activity": {
+    "1296113810549112874": 1,
+    "1234769700735418368": 2,
+    "1399369127008796723": 1
+  },
+  "hourly_activity": {
+    "12": 1,
+    "9": 1,
+    "10": 2
+  },
+  "message_types": {
+    "0": 3,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1426523620842147994",
+      "content": "No problem! I'll look for it next Monday<:camera:1356053040251146460>",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1426552475221233744",
+      "content": "星辰篇怎么不算一种去往异星吧(",
+      "author": "yingmai_",
+      "reactions": 4,
+      "channel": ""
+    }
+  ]
+}

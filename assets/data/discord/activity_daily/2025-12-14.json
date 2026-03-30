@@ -1,0 +1,34 @@
+{
+  "date": "2025-12-14",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 79,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1,
+    "🔸忘却前夜┊morimens-tv": 1
+  },
+  "hourly_activity": {
+    "7": 1,
+    "22": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1449662003088986194",
+      "content": "<@&1440133908661534790> \n\nHey Everyone,\n\nA friendly reminder that the **Origin o",
+      "author": "cometovilla",
+      "reactions": 76,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1449891949040373801",
+      "content": "A 60-ish second overview of the Interlude Lightless Realm.\nhttps://youtube.com/s",
+      "author": "nechromicon",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2025-08-03",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 22,
+  "attachments": 1,
+  "channel_activity": {
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "18": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1401627710593302648",
+      "content": "<:Emoji_LMN_M_07:1400771656510734356> <:Emoji_LMN_M_07:1400771656510734356>",
+      "author": "navirecorbeau",
+      "reactions": 22,
+      "channel": ""
+    }
+  ]
+}

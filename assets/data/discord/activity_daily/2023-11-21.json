@@ -1,0 +1,35 @@
+{
+  "date": "2023-11-21",
+  "messages": 7,
+  "unique_authors": 3,
+  "reactions_total": 131,
+  "attachments": 2,
+  "channel_activity": {
+    "活動訊息": 3,
+    "官方佈告（已停止使用）": 2,
+    "discord社群建議": 2
+  },
+  "hourly_activity": {
+    "11": 5,
+    "10": 2
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1176490346323132426",
+      "content": "守密人大家好~\n\n在《忘卻前夜》上線前對彌薩格大學的關注以及支持\n讓我們十分感動和感激！\n此外許多守密人還給予了我們許多社群建設的寶貴建議，\n這讓我們十分榮幸和",
+      "author": "alpha0909_",
+      "reactions": 130,
+      "channel": "活動訊息"
+    },
+    {
+      "id": "1176468080835170334",
+      "content": "好噠~這就來處理",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "discord社群建議"
+    }
+  ]
+}

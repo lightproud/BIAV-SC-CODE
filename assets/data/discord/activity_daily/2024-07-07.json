@@ -1,0 +1,33 @@
+{
+  "date": "2024-07-07",
+  "messages": 3,
+  "unique_authors": 1,
+  "reactions_total": 21,
+  "attachments": 2,
+  "channel_activity": {
+    "1259494029251575898": 3
+  },
+  "hourly_activity": {
+    "12": 2,
+    "13": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1259494029251575898",
+      "content": "0v0",
+      "author": "muliupan",
+      "reactions": 18,
+      "channel": ""
+    },
+    {
+      "id": "1259494109849325651",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": ""
+    }
+  ]
+}

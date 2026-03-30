@@ -1,0 +1,37 @@
+{
+  "date": "2025-09-27",
+  "messages": 26,
+  "unique_authors": 5,
+  "reactions_total": 26,
+  "attachments": 17,
+  "channel_activity": {
+    "1421408684776357929": 24,
+    "1420092491125755985": 2
+  },
+  "hourly_activity": {
+    "8": 21,
+    "9": 1,
+    "11": 2,
+    "12": 2
+  },
+  "message_types": {
+    "0": 23,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1421408684776357929",
+      "content": "UID：100607245",
+      "author": "water_heart",
+      "reactions": 23,
+      "channel": ""
+    },
+    {
+      "id": "1421452403105861743",
+      "content": "補發杜勒考官的戰績",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": ""
+    }
+  ]
+}

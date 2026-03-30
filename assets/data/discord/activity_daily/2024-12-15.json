@@ -1,0 +1,33 @@
+{
+  "date": "2024-12-15",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 3,
+  "attachments": 3,
+  "channel_activity": {
+    "🔸【超越維度的祝福】認領專區": 3
+  },
+  "hourly_activity": {
+    "6": 2,
+    "8": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1317737865144172564",
+      "content": "<:hello:1236949723949174865>",
+      "author": "tokoshiekou",
+      "reactions": 2,
+      "channel": "🔸【超越維度的祝福】認領專區"
+    },
+    {
+      "id": "1317765087108399115",
+      "content": "真好，收到真開心",
+      "author": "toweldewulf",
+      "reactions": 1,
+      "channel": "🔸【超越維度的祝福】認領專區"
+    }
+  ]
+}

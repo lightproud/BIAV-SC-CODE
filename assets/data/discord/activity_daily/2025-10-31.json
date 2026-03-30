@@ -1,0 +1,86 @@
+{
+  "date": "2025-10-31",
+  "messages": 13,
+  "unique_authors": 7,
+  "reactions_total": 110,
+  "attachments": 17,
+  "channel_activity": {
+    "1423337172655935600": 2,
+    "1296113810549112874": 1,
+    "1181998821291606097": 2,
+    "1305430084420898868": 4,
+    "1234769700735418368": 1,
+    "1432654338982940783": 3
+  },
+  "hourly_activity": {
+    "15": 1,
+    "16": 1,
+    "6": 1,
+    "2": 1,
+    "4": 3,
+    "7": 5,
+    "0": 1
+  },
+  "message_types": {
+    "19": 4,
+    "0": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1433681563501072466",
+      "content": "<:A_pinch:1432980538536493057> <:A_pinch:1432980538536493057>",
+      "author": "navirecorbeau",
+      "reactions": 21,
+      "channel": ""
+    },
+    {
+      "id": "1433716970557276225",
+      "content": "<@1415897012502659182>",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": ""
+    },
+    {
+      "id": "1433644152532369458",
+      "content": "今年也祝你誕生日快樂<:Cheerup:1400771555939844149>",
+      "author": "navirecorbeau",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
+      "id": "1433715343817441372",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1433698759799476305",
+      "content": "之前的点图",
+      "author": "yingmai_",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1433716686388727828",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1433674861313789952",
+      "content": "this translation is better I feel\n✦ Log in once: Receive 50 Luminous Cores. ✦ Cl",
+      "author": "moistwater",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1433716805343510610",
+      "content": "<@1115523266484895815>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

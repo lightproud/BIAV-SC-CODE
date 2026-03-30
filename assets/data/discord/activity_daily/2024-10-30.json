@@ -1,0 +1,25 @@
+{
+  "date": "2024-10-30",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 16,
+  "attachments": 1,
+  "channel_activity": {
+    "1181998821291606097": 2
+  },
+  "hourly_activity": {
+    "16": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1301227414931771424",
+      "content": "萬聖節快樂🎃🎃",
+      "author": "navirecorbeau",
+      "reactions": 16,
+      "channel": ""
+    }
+  ]
+}

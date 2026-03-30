@@ -1,0 +1,27 @@
+{
+  "date": "2025-10-02",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 40,
+  "attachments": 7,
+  "channel_activity": {
+    "1423337172655935600": 3
+  },
+  "hourly_activity": {
+    "15": 1,
+    "16": 1,
+    "17": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1423337172655935600",
+      "content": "图1 命轮一图解析&推荐（截止至皮克曼版本）\n图2 钥令/支线解锁推荐\n图3 密契一键推荐，选取各角色最常见的2种密契选择（部分角色可能有更多选择但受篇幅未放出",
+      "author": "scholar_2",
+      "reactions": 40,
+      "channel": ""
+    }
+  ]
+}

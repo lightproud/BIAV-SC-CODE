@@ -1,0 +1,33 @@
+{
+  "date": "2024-02-24",
+  "messages": 100,
+  "unique_authors": 7,
+  "reactions_total": 43,
+  "attachments": 0,
+  "channel_activity": {
+    "元宵節活動": 100
+  },
+  "hourly_activity": {
+    "9": 100
+  },
+  "message_types": {
+    "0": 94,
+    "19": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1210886160386097182",
+      "content": "大家元宵節快樂！",
+      "author": "alpha0909__",
+      "reactions": 42,
+      "channel": "元宵節活動"
+    },
+    {
+      "id": "1210884651632304149",
+      "content": "你們慢慢爭",
+      "author": "luoin2435",
+      "reactions": 1,
+      "channel": "元宵節活動"
+    }
+  ]
+}

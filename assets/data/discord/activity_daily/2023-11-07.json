@@ -1,0 +1,25 @@
+{
+  "date": "2023-11-07",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 22,
+  "attachments": 2,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 2
+  },
+  "hourly_activity": {
+    "12": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1171426008147165295",
+      "content": "尤烏哈希立繪在此～",
+      "author": "morimensstaff02",
+      "reactions": 22,
+      "channel": "官方佈告（已停止使用）"
+    }
+  ]
+}

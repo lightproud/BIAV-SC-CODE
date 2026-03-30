@@ -1,0 +1,43 @@
+{
+  "date": "2023-11-02",
+  "messages": 11,
+  "unique_authors": 6,
+  "reactions_total": 13,
+  "attachments": 5,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 2,
+    "discord社群建議": 9
+  },
+  "hourly_activity": {
+    "2": 1,
+    "11": 1,
+    "8": 9
+  },
+  "message_types": {
+    "0": 8,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1169461946374955018",
+      "content": "遲來的拉蒙娜立繪~",
+      "author": "alpha0909_",
+      "reactions": 10,
+      "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1169547977703047221",
+      "content": "收到收到！！感謝反饋！！馬上處理",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "discord社群建議"
+    },
+    {
+      "id": "1169548413415718962",
+      "content": "收到！我們已經處理完畢~感謝守密人的反饋！",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "discord社群建議"
+    }
+  ]
+}

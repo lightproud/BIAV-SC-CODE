@@ -1,0 +1,36 @@
+{
+  "date": "2023-10-31",
+  "messages": 4,
+  "unique_authors": 4,
+  "reactions_total": 27,
+  "attachments": 3,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 2,
+    "discord社群建議": 2
+  },
+  "hourly_activity": {
+    "10": 1,
+    "13": 1,
+    "2": 2
+  },
+  "message_types": {
+    "0": 3,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1168897863049293824",
+      "content": "米爾悄咪咪地把朵爾的立繪放這裡了噢~",
+      "author": "alpha0909_",
+      "reactions": 26,
+      "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1168731590071951421",
+      "content": "其實我覺得配隊區可以改成Forum我覺得各種層面上更好區分隊伍 也更易於解釋打法",
+      "author": "falst_over_",
+      "reactions": 1,
+      "channel": "discord社群建議"
+    }
+  ]
+}

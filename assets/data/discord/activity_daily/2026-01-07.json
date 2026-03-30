@@ -1,0 +1,58 @@
+{
+  "date": "2026-01-07",
+  "messages": 14,
+  "unique_authors": 8,
+  "reactions_total": 47,
+  "attachments": 4,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1458491651239710851": 5,
+    "1458489416182927514": 3,
+    "1458371914018979971": 1,
+    "1458059497187573862": 1,
+    "1305430084420898868": 1,
+    "1455822126568308957": 2
+  },
+  "hourly_activity": {
+    "11": 3,
+    "16": 4,
+    "17": 3,
+    "15": 1,
+    "8": 2,
+    "21": 1
+  },
+  "message_types": {
+    "0": 13,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1458491651239710851",
+      "content": "朋友的合本插花<:S_OK:1400771749506715668> \n去年11月畫的，畫的時候難得手感靈感全死畫得要死要活<:dead:13560826275",
+      "author": "xu6_",
+      "reactions": 37,
+      "channel": ""
+    },
+    {
+      "id": "1458489416182927514",
+      "content": "Currently you cant preview the song without third party sources outside the game",
+      "author": "binis7705",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1458371914018979971",
+      "content": "關於追隨者可以選取為關注或互相關注來看\n但是關注不行，這樣導致要刪未關注的人還要慢慢的找\n所以希望新增跟追隨者一樣的功能",
+      "author": "universe.dark",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1458421187435565106",
+      "content": "https://youtu.be/mKr8YkXwclM?si=JxszqiiS7i8uczYJ - One year account overview.",
+      "author": "flares117",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

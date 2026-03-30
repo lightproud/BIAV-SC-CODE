@@ -1,0 +1,51 @@
+{
+  "date": "2025-11-10",
+  "messages": 9,
+  "unique_authors": 3,
+  "reactions_total": 278,
+  "attachments": 5,
+  "channel_activity": {
+    "🐱light’s-nest": 3,
+    "1421408684776357929": 4,
+    "1432654338982940783": 2
+  },
+  "hourly_activity": {
+    "6": 3,
+    "2": 4,
+    "10": 2
+  },
+  "message_types": {
+    "0": 8,
+    "6": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1437334461061533788",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 167,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1437334432959696936",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 64,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1437334510181023897",
+      "content": "<:processing:1357185814567718963> <:processing:1357185814567718963> <:processing",
+      "author": "game.producer.light",
+      "reactions": 45,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1437394147471392889",
+      "content": "Русская версия постера🥰 \n—— сделана российской организацией 【Morimens Ru Info Ch",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

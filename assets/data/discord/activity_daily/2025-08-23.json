@@ -1,0 +1,52 @@
+{
+  "date": "2025-08-23",
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 30,
+  "attachments": 2,
+  "channel_activity": {
+    "1181998821291606097": 2,
+    "1408838316153114716": 3,
+    "1399369127008796723": 1
+  },
+  "hourly_activity": {
+    "17": 2,
+    "15": 2,
+    "18": 1,
+    "14": 1
+  },
+  "message_types": {
+    "0": 5,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1408838316153114716",
+      "content": "alternate title: **so you want to make an Awakener OC, now what?**\n\nNiko is back",
+      "author": "nikolazuli",
+      "reactions": 21,
+      "channel": ""
+    },
+    {
+      "id": "1408859678494163215",
+      "content": "薅一下日推的模板🫳",
+      "author": "navirecorbeau",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1408862949170348153",
+      "content": "佬\n輸光...",
+      "author": "ahong0727",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1408878226847170561",
+      "content": "You sort've touched on it in the Genesis section, but for OC purposes it might b",
+      "author": "insigible",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

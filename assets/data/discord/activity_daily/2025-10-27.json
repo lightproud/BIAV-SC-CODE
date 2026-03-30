@@ -1,0 +1,41 @@
+{
+  "date": "2025-10-27",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 161,
+  "attachments": 6,
+  "channel_activity": {
+    "🐱light’s-nest": 3,
+    "1421408684776357929": 2
+  },
+  "hourly_activity": {
+    "4": 3,
+    "2": 2
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1432224307651674244",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 105,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1432224617908539512",
+      "content": "A commission request from the official QQ channel “百合子”! Do we have a chance to ",
+      "author": "game.producer.light",
+      "reactions": 51,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1432188305662804130",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": ""
+    }
+  ]
+}

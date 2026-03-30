@@ -1,0 +1,59 @@
+{
+  "date": "2025-10-14",
+  "messages": 11,
+  "unique_authors": 5,
+  "reactions_total": 19,
+  "attachments": 17,
+  "channel_activity": {
+    "1421408684776357929": 1,
+    "1305430084420898868": 7,
+    "1234769700735418368": 3
+  },
+  "hourly_activity": {
+    "12": 1,
+    "8": 4,
+    "10": 4,
+    "7": 2
+  },
+  "message_types": {
+    "19": 2,
+    "0": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1427568689888104539",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1427564642372288554",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1427569242722533470",
+      "content": "<@1301813973703852035>  <@1346803506316841021>  <@1156423870379741244>",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1427602591134646293",
+      "content": "但我已经有了",
+      "author": "carme.0588",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1427566839914823771",
+      "content": "They are so **cute** <:wish:1356084702468899117>  Thanks!",
+      "author": "zekiei",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

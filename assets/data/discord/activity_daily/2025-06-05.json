@@ -1,0 +1,42 @@
+{
+  "date": "2025-06-05",
+  "messages": 6,
+  "unique_authors": 1,
+  "reactions_total": 13,
+  "attachments": 0,
+  "channel_activity": {
+    "1380130588907933781": 1,
+    "1380127964162687037": 2,
+    "1380128642381643806": 2,
+    "1380131496278495333": 1
+  },
+  "hourly_activity": {
+    "10": 6
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1380129600041910372",
+      "content": "💗 Thank you all for your wonderful creations:\nhttps://discord.com/channels/11317",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1380130588907933781",
+      "content": "戈雅會在這個帖子裏及時同步最新的官方徵集活動：\n🐦 **【V2.3.2：征集中】10000银芯奖励！**\nhttps://discord.com/channel",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1380127964162687037",
+      "content": "戈雅會在這個帖子裏及時同步最新的官方徵集活動：\n🐦 **【V2.3.2：征集中】10000银芯奖励！**\nhttps://discord.com/channel",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

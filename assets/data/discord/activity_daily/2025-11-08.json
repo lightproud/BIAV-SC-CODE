@@ -1,0 +1,38 @@
+{
+  "date": "2025-11-08",
+  "messages": 10,
+  "unique_authors": 4,
+  "reactions_total": 539,
+  "attachments": 2,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1,
+    "🔸游戏常见问题解答┊game-faq": 7,
+    "1436577994880847902": 1,
+    "1431233782605807666": 1
+  },
+  "hourly_activity": {
+    "4": 2,
+    "17": 1,
+    "18": 6,
+    "3": 1
+  },
+  "message_types": {
+    "0": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1436572178001825904",
+      "content": "Greetings Keepers,\n\nWe are actively looking for talented **Content Creators** fo",
+      "author": "cometovilla",
+      "reactions": 527,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1436577994880847902",
+      "content": "She is my Sona, name's Noah.\nN's simp \nI'll draw her actual art someday.",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 12,
+      "channel": ""
+    }
+  ]
+}

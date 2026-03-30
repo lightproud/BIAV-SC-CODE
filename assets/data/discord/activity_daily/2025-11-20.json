@@ -1,0 +1,66 @@
+{
+  "date": "2025-11-20",
+  "messages": 7,
+  "unique_authors": 5,
+  "reactions_total": 275,
+  "attachments": 3,
+  "channel_activity": {
+    "🔸欢乐梗图": 3,
+    "🔸服务器公告┊server-announcement": 2,
+    "1181998821291606097": 1,
+    "1356210800091467928": 1
+  },
+  "hourly_activity": {
+    "1": 3,
+    "0": 2,
+    "8": 1,
+    "12": 1
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440858569976057967",
+      "content": "大家好， \n\n我们想就近期大家对服务器管理方面的投诉做出回应。我们听到了大家的反馈，并向大家保证，管理工作将会得到改进。正如我们之前提到的，我们正在积极推进服务",
+      "author": "cometovilla",
+      "reactions": 256,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1440987968134189207",
+      "content": "摸個魚出門散步了差點忘了某人生日<:A_pinch:1432980538536493057>",
+      "author": "navirecorbeau",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1440878817282359358",
+      "content": "是這張🌿覺得這張很滿意所以拿來當頭像ㄌ🌿🌿",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1440878510133612624",
+      "content": "<@769245092351180871> 薯泥！我有認對嗎",
+      "author": "tsubaki9884",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1440879040398491761",
+      "content": "救命好好笑",
+      "author": "tsubaki9884",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1440858438791069707",
+      "content": "Hello everyone,\n\nWe wish to address recent complaints about moderating on the se",
+      "author": "cometovilla",
+      "reactions": 1,
+      "channel": "🔸服务器公告┊server-announcement"
+    }
+  ]
+}

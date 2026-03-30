@@ -1,0 +1,53 @@
+{
+  "date": "2025-09-24",
+  "messages": 7,
+  "unique_authors": 7,
+  "reactions_total": 28,
+  "attachments": 1,
+  "channel_activity": {
+    "1296113810549112874": 1,
+    "1420092491125755985": 6
+  },
+  "hourly_activity": {
+    "12": 1,
+    "3": 1,
+    "5": 1,
+    "6": 1,
+    "7": 1,
+    "10": 2
+  },
+  "message_types": {
+    "0": 6,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1420300715510726666",
+      "content": "<@633215996508766229> 感觉你游大方向向上出了很大问题，日服和皮肤的计划已经严重影响到角色立绘水平、机制设计以及版本的更迭速度了。所以适当减",
+      "author": "shadow_blings_31584",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
+      "id": "1420253777444732938",
+      "content": "GIVE ME MORE FURRY AWAKER OR GRYKER  <:point:1356053112292511815> <:point:135605",
+      "author": "aegisx",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1420363403628642314",
+      "content": "開発チームの皆さん、素晴らしいゲームをありがとうございます。本当に特別な作品です。特にアートチームの皆さんに感謝します。このスタイルは信じられないほど素晴らしく",
+      "author": "meatloversus",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1420392901493395560",
+      "content": "发一下之前做的meme\n时摆cp向自避，理理我嘛！",
+      "author": "yingmai_",
+      "reactions": 3,
+      "channel": ""
+    }
+  ]
+}

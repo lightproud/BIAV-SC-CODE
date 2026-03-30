@@ -1,0 +1,63 @@
+{
+  "date": "2025-12-24",
+  "messages": 9,
+  "unique_authors": 5,
+  "reactions_total": 246,
+  "attachments": 6,
+  "channel_activity": {
+    "🐱light’s-nest": 3,
+    "1451125609068757074": 2,
+    "1442647324575928441": 2,
+    "1305430084420898868": 1,
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "15": 3,
+    "16": 1,
+    "7": 1,
+    "17": 1,
+    "8": 2,
+    "1": 1
+  },
+  "message_types": {
+    "0": 8,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1453417577639444510",
+      "content": "Things have been pretty hectic for us lately, and everyone’s been running around",
+      "author": "game.producer.light",
+      "reactions": 183,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1453416161315262718",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 54,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1453416133515284622",
+      "content": "最近这段时间事务比较多，大家都忙得团团转，但也正因为如此，我们对未来的方向有了更多清晰的规划，会为大家尽全力把这些愿景一一点亮。\n转眼之间，看到了 rrkk00",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1453432988271382771",
+      "content": "聖誕節快樂💖\n可惡，要是這篇晚點出就好了(",
+      "author": "shostakovich524",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1453303919202533478",
+      "content": "Sorry, due to some reasons, we currently do not have more energy to maintain ext",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

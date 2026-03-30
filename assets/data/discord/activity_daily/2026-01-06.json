@@ -1,0 +1,88 @@
+{
+  "date": "2026-01-06",
+  "messages": 13,
+  "unique_authors": 10,
+  "reactions_total": 31,
+  "attachments": 3,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 2,
+    "1296113810549112874": 4,
+    "1458059497187573862": 2,
+    "1456123871383130243": 1,
+    "1193859503096070234": 2,
+    "1458187614879486146": 1,
+    "1455822126568308957": 1
+  },
+  "hourly_activity": {
+    "0": 1,
+    "13": 1,
+    "11": 5,
+    "12": 1,
+    "1": 1,
+    "8": 2,
+    "19": 1,
+    "17": 1
+  },
+  "message_types": {
+    "0": 9,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1458187614879486146",
+      "content": "https://docs.google.com/spreadsheets/d/1sDqOc_JVw_qnMDNf0_GOeNKxxv9xMZ0CToQAOmUQ",
+      "author": "yeriko703",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1458061883071266974",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1458059497187573862",
+      "content": "I was really disappointed to get a character (Mouchette) from a Sepirot Capture ",
+      "author": "nikol_marshava",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1457890712837296431",
+      "content": "https://youtu.be/S5vQmk98urQ : hablando de las habilidades de Faros, equipos + c",
+      "author": "yaoshidoppa",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1458096923482521804",
+      "content": "Languages[TH/EN]\n\nI will be running this week's dtide as well as try to complete",
+      "author": "satachan",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1458063600743874634",
+      "content": "# 守娜99",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1458061634487455926",
+      "content": "谢谢老大🥺💕💕",
+      "author": "yingmai_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1458156341641220199",
+      "content": "This ?",
+      "author": "valsk_x",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

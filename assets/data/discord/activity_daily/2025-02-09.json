@@ -1,0 +1,41 @@
+{
+  "date": "2025-02-09",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 23,
+  "attachments": 1,
+  "channel_activity": {
+    "1181998821291606097": 3
+  },
+  "hourly_activity": {
+    "12": 1,
+    "13": 1,
+    "14": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1338119624872427612",
+      "content": "~~這個沒素質的人又開始了~~",
+      "author": "navirecorbeau",
+      "reactions": 16,
+      "channel": ""
+    },
+    {
+      "id": "1338160978256461897",
+      "content": "可以考慮畫個哈姆林拿小提琴去火拼",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1338145840396763166",
+      "content": "好会画！我偷我偷",
+      "author": "two_of_us",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

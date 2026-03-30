@@ -1,0 +1,47 @@
+{
+  "date": "2025-12-11",
+  "messages": 11,
+  "unique_authors": 6,
+  "reactions_total": 26,
+  "attachments": 6,
+  "channel_activity": {
+    "🔸欢乐梗图": 6,
+    "1296113810549112874": 1,
+    "1305430084420898868": 2,
+    "1399369127008796723": 1,
+    "1441326394817908736": 1
+  },
+  "hourly_activity": {
+    "11": 2,
+    "12": 5,
+    "16": 1,
+    "1": 2,
+    "3": 1
+  },
+  "message_types": {
+    "0": 11
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1448714773934899392",
+      "content": "娜娜生日快乐！",
+      "author": "yingmai_",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1448634139082231913",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 11,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1448634191221620736",
+      "content": "11/12 update:\n- Added Beyond The Skies Part 2 to the timeline\n- Added Celestial ",
+      "author": "nikolazuli",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

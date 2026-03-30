@@ -1,0 +1,55 @@
+{
+  "date": "2025-11-24",
+  "messages": 10,
+  "unique_authors": 5,
+  "reactions_total": 19,
+  "attachments": 4,
+  "channel_activity": {
+    "1442647324575928441": 1,
+    "1305430084420898868": 1,
+    "1442583751602470962": 1,
+    "1442292634575175710": 7
+  },
+  "hourly_activity": {
+    "22": 1,
+    "14": 1,
+    "18": 1,
+    "0": 3,
+    "6": 2,
+    "7": 2
+  },
+  "message_types": {
+    "0": 4,
+    "19": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1442583751602470962",
+      "content": "I really love her design, she's so cool!",
+      "author": "echidna7311",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1442647324575928441",
+      "content": "Hey, trying to make a community tool for new players to reference, so that they ",
+      "author": "neckchin",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1442526606089523221",
+      "content": "需要美丽诞墨和邮票头<:please:1356053110375714817>",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1442418437161881660",
+      "content": "Better. <:goodjob:1400771550097051669>",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

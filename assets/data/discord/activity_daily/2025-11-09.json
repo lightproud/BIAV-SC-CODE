@@ -1,0 +1,25 @@
+{
+  "date": "2025-11-09",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 255,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1
+  },
+  "hourly_activity": {
+    "22": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1437211905155399781",
+      "content": "Hey Keepers!\n\nJust a quick update: The server's level/EXP system is now live on ",
+      "author": "cometovilla",
+      "reactions": 255,
+      "channel": "🔸服务器公告┊server-announcement"
+    }
+  ]
+}

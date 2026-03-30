@@ -1,0 +1,26 @@
+{
+  "date": "2025-03-16",
+  "messages": 3,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 3,
+  "channel_activity": {
+    "1350059696945500171": 3
+  },
+  "hourly_activity": {
+    "1": 2,
+    "18": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1350900747826364506",
+      "content": "Error de traducción en el nombre de la tienda en el menú principal",
+      "author": "avgjimmy001",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

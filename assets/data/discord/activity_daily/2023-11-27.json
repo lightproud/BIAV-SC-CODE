@@ -1,0 +1,36 @@
+{
+  "date": "2023-11-27",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 180,
+  "attachments": 2,
+  "channel_activity": {
+    "活動訊息": 2,
+    "官方佈告（已停止使用）": 2
+  },
+  "hourly_activity": {
+    "11": 2,
+    "10": 1,
+    "12": 1
+  },
+  "message_types": {
+    "0": 3,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1178664297874862132",
+      "content": "今天為大家整理了公測的福利懶人包！！大家快來查看~@everyone",
+      "author": "alpha0909_",
+      "reactions": 128,
+      "channel": "活動訊息"
+    },
+    {
+      "id": "1178664750566080612",
+      "content": "SSR限定福利【奧瑞塔】29號00:00就要截止了！大家趕快喔~",
+      "author": "alpha0909_",
+      "reactions": 52,
+      "channel": "活動訊息"
+    }
+  ]
+}

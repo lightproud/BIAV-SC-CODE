@@ -1,0 +1,88 @@
+{
+  "date": "2025-03-14",
+  "messages": 12,
+  "unique_authors": 6,
+  "reactions_total": 42,
+  "attachments": 1,
+  "channel_activity": {
+    "1350060973083590666": 1,
+    "1350060160739184690": 8,
+    "1350059696945500171": 1,
+    "1350058287688712253": 2
+  },
+  "hourly_activity": {
+    "11": 2,
+    "10": 4,
+    "12": 1,
+    "13": 3,
+    "19": 2
+  },
+  "message_types": {
+    "0": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1350058287688712253",
+      "content": "Hello,  Keeper!\nThere are currently 11 languages in the game for the  Keeper to ",
+      "author": "morimensstaff01",
+      "reactions": 19,
+      "channel": ""
+    },
+    {
+      "id": "1350060973083590666",
+      "content": "Thân gửi các game thủ Việt Nam, vui lòng để lại góp ý về bản dịch tiếng Việt tro",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1350060160739184690",
+      "content": "Пожалуйста, игроки, использующие русский язык, оставляйте свои мысли о переводе ",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1350059696945500171",
+      "content": "Por favor, los jugadores que usan español, dejen sus opiniones sobre la traducci",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1350058596288692334",
+      "content": "【遊戲文本多語言本地化意見收集&未來優化計劃】\n\n守密人，你好！\n目前遊戲內總共有11種語言供守密人選擇，但受限於團隊規模和資源，我們只好使用AI翻譯。\n🌹 針",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1350102008106975322",
+      "content": "Дженкинс в сюжете называют \"он\", хотя должно быть \"она\"",
+      "author": "xeno_for_world",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1350103224882823188",
+      "content": "🇷🇺 \nСделать возможность редактировать перевод, и рекомендовать его другим. Прямо",
+      "author": "shadowwave",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1350190693787762710",
+      "content": "",
+      "author": "karsh_1",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1350101119266721882",
+      "content": "дайте нейросетке больше времени подумать над переводом, перевод станет более точ",
+      "author": "liawein",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

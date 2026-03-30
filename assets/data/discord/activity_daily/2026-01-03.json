@@ -1,0 +1,20 @@
+{
+  "date": "2026-01-03",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 0,
+  "attachments": 3,
+  "channel_activity": {
+    "1234769700735418368": 2,
+    "1455453095592071269": 1
+  },
+  "hourly_activity": {
+    "13": 1,
+    "18": 1,
+    "11": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": []
+}

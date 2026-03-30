@@ -1,0 +1,35 @@
+{
+  "date": "2024-06-11",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "1193859503096070234": 2,
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "8": 2,
+    "12": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1250007371175170150",
+      "content": "达芙黛尔的剧情估计也有结合这个 和她的便利店都有共通之处",
+      "author": "halloween8520",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1250008513581813820",
+      "content": "回来一看我这个有头没尾的贴子居然有三十多薯条<:stoppage:1236938521365839872>",
+      "author": "yang_42",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

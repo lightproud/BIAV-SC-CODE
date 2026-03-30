@@ -1,0 +1,63 @@
+{
+  "date": "2025-12-26",
+  "messages": 14,
+  "unique_authors": 8,
+  "reactions_total": 13,
+  "attachments": 1,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 4,
+    "1451125609068757074": 1,
+    "1403373754175721657": 9
+  },
+  "hourly_activity": {
+    "5": 1,
+    "8": 2,
+    "10": 1,
+    "2": 1,
+    "9": 2,
+    "14": 3,
+    "15": 1,
+    "17": 3
+  },
+  "message_types": {
+    "0": 12,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1454030783298801760",
+      "content": "https://youtu.be/LCGd_lWCTJc?si=fyrdr9o2q1jIXESe",
+      "author": "zier.0",
+      "reactions": 8,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454052875457138810",
+      "content": "Сори, не удержался с мемом 😄😄\nhttps://www.youtube.com/shorts/ClMw6gbCfTQ",
+      "author": "closetom",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1453987956019957862",
+      "content": "I forgot to share my 60ish second overview of the Caro realm mechanics; Embryo F",
+      "author": "nechromicon",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454023159459352650",
+      "content": "Запись с новостями\nНемного высказался про Рераны и Колесо судьбы Таис 🍒\nhttps://",
+      "author": "closetom",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1453932314144018563",
+      "content": "好甜\n我融化了",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

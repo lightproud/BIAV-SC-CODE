@@ -1,0 +1,72 @@
+{
+  "date": "2023-12-02",
+  "messages": 42,
+  "unique_authors": 23,
+  "reactions_total": 393,
+  "attachments": 10,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 1,
+    "禮包兌換碼": 3,
+    "discord社群建議": 8,
+    "校貓問答（已停止使用）": 24,
+    "影片": 4,
+    "攻略投遞專區（已停止使用）": 2
+  },
+  "hourly_activity": {
+    "15": 3,
+    "13": 6,
+    "1": 3,
+    "3": 1,
+    "6": 1,
+    "7": 4,
+    "9": 5,
+    "4": 2,
+    "5": 4,
+    "8": 3,
+    "10": 2,
+    "14": 2,
+    "19": 3,
+    "18": 3
+  },
+  "message_types": {
+    "0": 28,
+    "19": 14
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1180498183936286740",
+      "content": "morimensteahagd",
+      "author": "alpha0909__",
+      "reactions": 380,
+      "channel": "禮包兌換碼"
+    },
+    {
+      "id": "1180323119873921024",
+      "content": "因为手机玩家拇指会刚好掩盖那个箭头，导致玩家没有发现到可以往下拉，证据就是你会发现很多人问背包在哪里",
+      "author": "zaoqishentihaozhanshui",
+      "reactions": 10,
+      "channel": "discord社群建議"
+    },
+    {
+      "id": "1180411270210535464",
+      "content": "OK 感謝~",
+      "author": "yechuan",
+      "reactions": 1,
+      "channel": "校貓問答（已停止使用）"
+    },
+    {
+      "id": "1180508327575306370",
+      "content": "我嘗試看看，謝謝~",
+      "author": "jy013",
+      "reactions": 1,
+      "channel": "校貓問答（已停止使用）"
+    },
+    {
+      "id": "1180597305909461042",
+      "content": "那個叫bug",
+      "author": "devis0212",
+      "reactions": 1,
+      "channel": "校貓問答（已停止使用）"
+    }
+  ]
+}

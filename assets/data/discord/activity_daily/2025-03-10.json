@@ -1,0 +1,66 @@
+{
+  "date": "2025-03-10",
+  "messages": 14,
+  "unique_authors": 6,
+  "reactions_total": 45,
+  "attachments": 4,
+  "channel_activity": {
+    "1271491376881598494": 2,
+    "1348458617203986532": 12
+  },
+  "hourly_activity": {
+    "3": 2,
+    "0": 3,
+    "1": 6,
+    "2": 1,
+    "13": 2
+  },
+  "message_types": {
+    "0": 12,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1348458617203986532",
+      "content": "发一下发一下",
+      "author": "xuanxue007",
+      "reactions": 31,
+      "channel": ""
+    },
+    {
+      "id": "1348496701031317504",
+      "content": "100139977 抽滿了 繼續退遊",
+      "author": "lingcheng.0",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1348473077717270588",
+      "content": "哈斯塔初设就是牧羊人之神",
+      "author": "xuanxue007",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1348458814718083092",
+      "content": "命轮是找官方同款画师画的(",
+      "author": "xuanxue007",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1348472960767496222",
+      "content": "应该算是哈斯塔吧",
+      "author": "xuanxue007",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1348475337587294208",
+      "content": "不过其实原型就只是章鱼🐙而已(",
+      "author": "xuanxue007",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "date": "2025-09-03",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 1,
+  "channel_activity": {
+    "1296113810549112874": 4,
+    "1181147096234065920": 3
+  },
+  "hourly_activity": {
+    "7": 1,
+    "8": 3,
+    "5": 3
+  },
+  "message_types": {
+    "19": 2,
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1412704290312814713",
+      "content": "我先吃",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1412711351519936605",
+      "content": "啃啃牢斯",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1412716145122742323",
+      "content": "再看一次還是好想吃<:drool:1356053063139463248> <:satisfy:1400771690321154110>",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2026-01-02",
+  "messages": 5,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "1305430084420898868": 2,
+    "1399369127008796723": 1,
+    "1441326394817908736": 2
+  },
+  "hourly_activity": {
+    "15": 2,
+    "4": 1,
+    "13": 1,
+    "17": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1456497674336473188",
+      "content": "2/1 update: happy new year!\n- Updated Kathigu-ra's codename\n- Added Mouchette's ",
+      "author": "nikolazuli",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

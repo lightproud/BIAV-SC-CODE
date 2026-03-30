@@ -1,0 +1,26 @@
+{
+  "date": "2023-11-20",
+  "messages": 4,
+  "unique_authors": 1,
+  "reactions_total": 182,
+  "attachments": 0,
+  "channel_activity": {
+    "活動訊息": 3,
+    "官方佈告（已停止使用）": 1
+  },
+  "hourly_activity": {
+    "11": 4
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1176128829748682792",
+      "content": "大家可以快來看看呀~",
+      "author": "alpha0909_",
+      "reactions": 182,
+      "channel": "活動訊息"
+    }
+  ]
+}

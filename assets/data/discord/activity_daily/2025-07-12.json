@@ -1,0 +1,41 @@
+{
+  "date": "2025-07-12",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 18,
+  "attachments": 2,
+  "channel_activity": {
+    "1181998821291606097": 2,
+    "1181147096234065920": 1
+  },
+  "hourly_activity": {
+    "14": 2,
+    "5": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1393599382666084412",
+      "content": "摸完了一起發<:gogogo:1356053074560422118>",
+      "author": "navirecorbeau",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1393599150871937199",
+      "content": "為什麼直播都在畫meme",
+      "author": "navirecorbeau",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1393457629707108392",
+      "content": "求喚醒體克萊門汀和人類克萊門汀的立繪",
+      "author": "undecember_news",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

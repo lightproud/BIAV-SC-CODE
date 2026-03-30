@@ -1,0 +1,34 @@
+{
+  "date": "2025-08-16",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 1230,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 1,
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "15": 1,
+    "21": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1406291926268903454",
+      "content": "🎁**致敬《杀戮尖塔》**\n\n请允许我们真诚地向您推荐《杀戮尖塔》这款给了我们重要启发的游戏，并向它致敬！守密人可复制下方兑换码在【设置】→【账户】→【兑换码】",
+      "author": "morimensstaff02",
+      "reactions": 1229,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1406382397628481576",
+      "content": "是美美的醫生😭",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

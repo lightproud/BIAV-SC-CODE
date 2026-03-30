@@ -1,0 +1,49 @@
+{
+  "date": "2025-09-25",
+  "messages": 12,
+  "unique_authors": 9,
+  "reactions_total": 10,
+  "attachments": 0,
+  "channel_activity": {
+    "1420092491125755985": 10,
+    "1357184174485671966": 1,
+    "1350060160739184690": 1
+  },
+  "hourly_activity": {
+    "5": 1,
+    "8": 1,
+    "14": 1,
+    "15": 3,
+    "16": 3,
+    "17": 1,
+    "11": 1,
+    "13": 1
+  },
+  "message_types": {
+    "0": 8,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1420645988468658199",
+      "content": "Now that the thread is chill, I'd like to say: Having been more or less in your ",
+      "author": "wolfierce",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1420778127357120543",
+      "content": "Story mode should have a mellow difficulty like in reverse 1999 honestly. I don'",
+      "author": "ceoreparque",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1420793267385143459",
+      "content": "More options for people who aren't ebin hardcore gamers would be nice is all.",
+      "author": "ceoreparque",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

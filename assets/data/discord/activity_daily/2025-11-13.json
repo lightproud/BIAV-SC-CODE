@@ -1,0 +1,27 @@
+{
+  "date": "2025-11-13",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 8,
+  "attachments": 1,
+  "channel_activity": {
+    "1181147096234065920": 4,
+    "1356210707867107391": 1
+  },
+  "hourly_activity": {
+    "11": 4,
+    "15": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1438484737697251341",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 8,
+      "channel": ""
+    }
+  ]
+}

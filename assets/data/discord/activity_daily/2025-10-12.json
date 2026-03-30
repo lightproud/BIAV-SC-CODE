@@ -1,0 +1,42 @@
+{
+  "date": "2025-10-12",
+  "messages": 7,
+  "unique_authors": 2,
+  "reactions_total": 1960,
+  "attachments": 2,
+  "channel_activity": {
+    "🐱light’s-nest": 6,
+    "1357184174485671966": 1
+  },
+  "hourly_activity": {
+    "7": 4,
+    "8": 2,
+    "20": 1
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1426845040528982067",
+      "content": "@everyone \n向大家致歉：由于我对 DC 使用文化不够熟悉，之前的通知可能造成了不必要的打扰。与此同时，也有守密人希望我继续发布这些分享。为兼顾两方需求",
+      "author": "game.producer.light",
+      "reactions": 995,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1426840945168486460",
+      "content": "最近逛 X 发现这位帐号为 rrkk00q 的守密人的创作非常打动我，所以与大家分享。",
+      "author": "game.producer.light",
+      "reactions": 522,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1426852513901969448",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 443,
+      "channel": "🐱light’s-nest"
+    }
+  ]
+}

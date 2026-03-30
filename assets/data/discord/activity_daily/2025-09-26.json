@@ -1,0 +1,28 @@
+{
+  "date": "2025-09-26",
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "1420092491125755985": 6
+  },
+  "hourly_activity": {
+    "0": 3,
+    "2": 1,
+    "5": 2
+  },
+  "message_types": {
+    "19": 2,
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1421005005049172009",
+      "content": "if story mode is for baby then those babies will go complain even more about har",
+      "author": "skyfallterminus",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

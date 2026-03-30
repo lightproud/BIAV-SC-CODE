@@ -1,0 +1,70 @@
+{
+  "date": "2023-12-04",
+  "messages": 63,
+  "unique_authors": 20,
+  "reactions_total": 472,
+  "attachments": 10,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 1,
+    "遊戲問題及bug回報": 53,
+    "discord社群建議": 3,
+    "影片": 2,
+    "1180087958930464819": 2,
+    "1180846008918343722": 1,
+    "1181145632572973136": 1
+  },
+  "hourly_activity": {
+    "7": 7,
+    "0": 3,
+    "2": 15,
+    "3": 11,
+    "4": 2,
+    "5": 9,
+    "6": 10,
+    "8": 3,
+    "9": 2,
+    "14": 1
+  },
+  "message_types": {
+    "0": 32,
+    "19": 30,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1181130841838059581",
+      "content": "滋滋滋，廣播站收到了一些訊息\n今晚19:00，有一場守密人的直播活動。\nYTB連結：https://youtube.com/live/VQpDdh_PdLY?f",
+      "author": "morimensstaff02",
+      "reactions": 278,
+      "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1181133297317838869",
+      "content": "👍",
+      "author": "fu4k6uwu",
+      "reactions": 74,
+      "channel": "遊戲問題及bug回報"
+    },
+    {
+      "id": "1181078043033337906",
+      "content": "感謝",
+      "author": "bot_1487",
+      "reactions": 69,
+      "channel": "遊戲問題及bug回報"
+    },
+    {
+      "id": "1181244891246899221",
+      "content": "「有問必答」頻道使用說明",
+      "author": "game.producer.light",
+      "reactions": 48,
+      "channel": ""
+    },
+    {
+      "id": "1181145632572973136",
+      "content": "守密人可在此頻道發佈彌薩格相關的影片內容~歡迎各位守密人進行交流討論",
+      "author": "alpha0909__",
+      "reactions": 3,
+      "channel": ""
+    }
+  ]
+}

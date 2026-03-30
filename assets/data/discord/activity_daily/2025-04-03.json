@@ -1,0 +1,42 @@
+{
+  "date": "2025-04-03",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 417,
+  "attachments": 1,
+  "channel_activity": {
+    "🔸新生守则┊rules": 1,
+    "🔸礼包码┊gift-codes": 1,
+    "1357184174485671966": 1
+  },
+  "hourly_activity": {
+    "10": 2,
+    "2": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1357297989554540634",
+      "content": "Keeper, welcome to 《Morimens》. Please read the school rules, after which you wil",
+      "author": "morimensstaff01",
+      "reactions": 228,
+      "channel": "🔸新生守则┊rules"
+    },
+    {
+      "id": "1357306897908236439",
+      "content": "🎁 **【搬運】長期有效的禮包兌換碼**\n\n1️⃣ 禮包碼：SILVERKEY\n       禮包內容：無垢之芯×10\n\n2️⃣ 禮包碼：CATSGIFT\n  ",
+      "author": "morimensstaff01",
+      "reactions": 166,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1357184174485671966",
+      "content": "https://docs.google.com/spreadsheets/d/1cC7FOebdy_J2hONmVT1QUSk6SxIRTuVoI4XADVlq",
+      "author": "flares117",
+      "reactions": 23,
+      "channel": ""
+    }
+  ]
+}

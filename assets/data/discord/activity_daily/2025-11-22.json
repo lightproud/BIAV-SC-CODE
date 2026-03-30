@@ -1,0 +1,41 @@
+{
+  "date": "2025-11-22",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 241,
+  "attachments": 2,
+  "channel_activity": {
+    "🐱light’s-nest": 3,
+    "1441904635123208233": 1
+  },
+  "hourly_activity": {
+    "7": 3,
+    "21": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1441697358722236478",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 161,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1441904635123208233",
+      "content": "Hi i suck at using discord i hope i am doing this right 😭\nUid: 101212940",
+      "author": "shirox0_.",
+      "reactions": 56,
+      "channel": ""
+    },
+    {
+      "id": "1441699005733277717",
+      "content": "It's hard to express how deeply her work has moved us. Her gentle colors have br",
+      "author": "game.producer.light",
+      "reactions": 24,
+      "channel": "🐱light’s-nest"
+    }
+  ]
+}

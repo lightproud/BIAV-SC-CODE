@@ -1,0 +1,79 @@
+{
+  "date": "2025-12-31",
+  "messages": 17,
+  "unique_authors": 10,
+  "reactions_total": 322,
+  "attachments": 5,
+  "channel_activity": {
+    "🐱light’s-nest": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1456019117805932636": 1,
+    "1455882869410103458": 3,
+    "1455874176534712330": 8,
+    "1455822126568308957": 3
+  },
+  "hourly_activity": {
+    "16": 1,
+    "5": 1,
+    "20": 1,
+    "11": 5,
+    "12": 5,
+    "10": 1,
+    "7": 3
+  },
+  "message_types": {
+    "0": 16,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1455958820076650697",
+      "content": "Happy New Year to all Keepers from the entire B.I.A.V. Studio team！\nB.I.A.V. Stu",
+      "author": "game.producer.light",
+      "reactions": 231,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1455874176534712330",
+      "content": "At the moment, Aurita has a bit of a problem to use her whole gimmick, to play a",
+      "author": "vxvendetta97",
+      "reactions": 46,
+      "channel": ""
+    },
+    {
+      "id": "1455822126568308957",
+      "content": "Hello again, this is rain from Morimen discord. The last post i made was on the ",
+      "author": "rain_scarlet",
+      "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1455882869410103458",
+      "content": "So, the Arc2 Counter changes were put in place primarily to stop the op combo of",
+      "author": "vxvendetta97",
+      "reactions": 12,
+      "channel": ""
+    },
+    {
+      "id": "1455822775427006476",
+      "content": "How to play:\n\n1. Get the rouse card for mouch ASAP\n\n2. Sell Helot 4 cost ASAP(se",
+      "author": "rain_scarlet",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1455793431027781632",
+      "content": "Обзор Мушетт <:pray:1356053116260454534> \nhttps://www.youtube.com/watch?v=XZGwWY",
+      "author": "closetom",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1455883010292322445",
+      "content": "This is such a small change that it does have a bigger possibility to be integra",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}
