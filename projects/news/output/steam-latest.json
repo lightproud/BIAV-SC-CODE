@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-03-30T06:19:00.616138+00:00",
+  "collected_at": "2026-03-30T10:48:50.519807+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 5,
   "items": [
     {
       "language": "russian",
@@ -29,7 +29,7 @@
       "voted_up": true,
       "review": "血肉代替思考胚胎连接大脑 都给我玩血肉队体验血线蹦迪的感觉",
       "timestamp_created": 1774796845,
-      "playtime_forever": 473
+      "playtime_forever": 533
     },
     {
       "language": "russian",
@@ -37,20 +37,6 @@
       "review": "кривое поделие, которое не даёт уйти дальше бесконечной загрузки обновлений",
       "timestamp_created": 1774781446,
       "playtime_forever": 12
-    },
-    {
-      "language": "english",
-      "voted_up": true,
-      "review": "Really really good gameplay, pretty good art with some unique designs. Wish all the content was human translated and that the game explained its basic mechanics better.",
-      "timestamp_created": 1774777506,
-      "playtime_forever": 69417
-    },
-    {
-      "language": "schinese",
-      "voted_up": true,
-      "review": "很休闲的游戏",
-      "timestamp_created": 1774777145,
-      "playtime_forever": 2313
     }
   ]
 }
