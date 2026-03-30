@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-03-29 by Code-主控台
+> 最后更新：2026-03-30 by Code-wiki
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -122,6 +122,27 @@
 - **Problem**：帖子归档后，60天以上的老帖若有新回复，无法追加到已归档文件，回复数据丢失
 - **Fix**：已知限制，接受。60天以上仍活跃的帖子极少，月报由 Claude 全文分析不依赖精确日期
 - **Impact**：极少量长寿帖的尾部回复缺失，不影响整体分析质量
+
+## 18. VitePress cleanUrls: true 与 GitHub Pages 不兼容
+
+- **Context**：VitePress 配置了 `cleanUrls: true`，生成无扩展名链接（如 `/awakeners/tulu`）
+- **Problem**：GitHub Pages 是纯静态托管，不支持服务端 URL 重写。访问 `/awakeners/tulu` 返回 404，因为实际文件是 `tulu.html`。首页和索引页正常（因为有 `index.html` 兜底），但所有详情页全部 404
+- **Fix**：改为 `cleanUrls: false`，链接自动带 `.html` 后缀。只有支持 URL 重写的服务器（Nginx、Vercel、Netlify）才能用 cleanUrls
+- **Impact**：角色详情页、攻略页等 189×3 个页面全部 404，用户可见
+
+## 19. VitePress locale rewrites 改变构建产物目录结构
+
+- **Context**：配置 `rewrites: { 'zh/:rest*': ':rest*' }` 将中文设为 root locale
+- **Problem**：构建后 `/zh/` 目录不再存在——中文内容直接输出到根目录。但部署验证脚本和 smoke test 仍检查 `/wiki/zh/` 目录是否存在，导致误报 WARNING
+- **Fix**：所有引用 locale 路径的地方（workflow 验证、smoke test URL、文档链接）必须与 rewrites 规则保持一致。root locale 的内容在根目录，不在 `/zh/` 子目录
+- **Impact**：部署验证误判、用户访问错误 URL
+
+## 20. 多会话并行修改同一文件时，后合并者需处理数据格式冲突
+
+- **Context**：Code-wiki 在 characters.json 中用结构化格式（command_cards/rouse/exalt）存储技能；另一个会话向 skills.json 写入了 59 个角色的技能数据，但其中 48 个仍是旧格式（只有描述性文本，无结构化卡牌数据）
+- **Problem**：合并时两份数据格式不一致——11 个有结构化卡牌数据，48 个只有定性描述。简单覆盖会丢失已有的结构化数据，但不合并又浪费了另一个会话的工作
+- **Fix**：合并脚本需按字段级别判断：如果目标已有结构化数据（command_cards 非空），跳过；否则用源数据（即使是旧格式）填充。同时在 CONTEXT.md 中明确标注数据格式规范，避免不同会话产出不兼容的格式
+- **Impact**：数据质量、跨会话协作效率
 
 ---
 
