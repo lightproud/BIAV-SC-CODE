@@ -1,0 +1,44 @@
+{
+  "date": "2025-11-16",
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 26,
+  "attachments": 0,
+  "channel_activity": {
+    "1439514625703149659": 3,
+    "1234769700735418368": 2,
+    "1296113810549112874": 1
+  },
+  "hourly_activity": {
+    "7": 3,
+    "11": 1,
+    "22": 1,
+    "8": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1439514948165308500",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 16,
+      "channel": ""
+    },
+    {
+      "id": "1439537981194240073",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1439520312244048044",
+      "content": "",
+      "author": "fantomwalker",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "date": "2026-02-15",
+  "messages": 50,
+  "unique_authors": 13,
+  "reactions_total": 90,
+  "attachments": 0,
+  "channel_activity": {
+    "1472608584381759610": 3,
+    "1472375569919381729": 3,
+    "1467225902029996154": 1,
+    "1450001353064714320": 2,
+    "1471356257708408843": 1,
+    "🔸欢乐梗图": 8,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
+    "1421408684776357929": 1,
+    "1472620151634661499": 10,
+    "1462840887553032335": 1,
+    "1440735573206761734": 1,
+    "1403373754175721657": 17
+  },
+  "hourly_activity": {
+    "15": 7,
+    "7": 1,
+    "9": 2,
+    "0": 1,
+    "14": 12,
+    "18": 12,
+    "11": 2,
+    "13": 6,
+    "4": 1,
+    "23": 1,
+    "6": 1,
+    "16": 3,
+    "5": 1
+  },
+  "message_types": {
+    "0": 8,
+    "4": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1472620151634661499",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 38,
+      "channel": ""
+    },
+    {
+      "id": "1472608584381759610",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1472620457340567593",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1472561268308312095",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1472392346652901507",
+      "content": "",
+      "author": "arandomflamev2",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1472620612085350490",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1472556480413827227",
+      "content": "",
+      "author": "n_cognito",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1472667118741753866",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1472658866687967242",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1472442748907819019",
+      "content": "",
+      "author": "nechromicon",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1472635819964633385",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1472654132635504917",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472606311068864716",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472597263078658205",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472597746958733392",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472664404062372106",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472665728644546660",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

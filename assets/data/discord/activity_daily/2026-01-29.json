@@ -1,0 +1,97 @@
+{
+  "date": "2026-01-29",
+  "messages": 73,
+  "unique_authors": 16,
+  "reactions_total": 26,
+  "attachments": 0,
+  "channel_activity": {
+    "1234769700735418368": 1,
+    "🔸欢乐梗图": 2,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸游戏问题": 37,
+    "1463456408249831446": 1,
+    "1462840887553032335": 1,
+    "1440735573206761734": 30
+  },
+  "hourly_activity": {
+    "10": 9,
+    "8": 24,
+    "17": 4,
+    "7": 3,
+    "9": 9,
+    "11": 2,
+    "12": 12,
+    "18": 2,
+    "2": 1,
+    "6": 3,
+    "13": 4
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1466490836006080696",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1466484310566633758",
+      "content": "",
+      "author": "zyocuh",
+      "reactions": 5,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1466312980433076276",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1466384842605461504",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 2,
+      "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1466393220073390170",
+      "content": "",
+      "author": "universe.dark",
+      "reactions": 2,
+      "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1466401380024713228",
+      "content": "",
+      "author": "quackdayo",
+      "reactions": 2,
+      "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1466349422991642818",
+      "content": "",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1466255164439662713",
+      "content": "",
+      "author": "xi0539_24384",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1466413791817236560",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

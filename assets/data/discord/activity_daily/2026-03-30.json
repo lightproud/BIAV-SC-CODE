@@ -1,0 +1,198 @@
+{
+  "date": "2026-03-30",
+  "messages": 1196,
+  "unique_authors": 137,
+  "reactions_total": 109,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸綜合討論": 117,
+    "🔸morimens-game-chat": 253,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 24,
+    "🔸phòng-chat-tiếng-việt": 127,
+    "🔸ruang-obrolan-indonesia": 46,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "1468895834199298215": 4,
+    "1446091938456539279": 1,
+    "🔸阵容构建": 8,
+    "🔸晒卡分享": 5,
+    "🔸한국어-채팅방": 24,
+    "🔸canal-español": 61,
+    "🔸canal-português": 14,
+    "🔸ห้องสนทนาภาษาไทย": 57,
+    "🔸traphase": 8,
+    "🔸lore-chat": 71,
+    "🔸team-building": 100,
+    "🔸general-chat": 100,
+    "🔸game-question": 100,
+    "🔸机器人命令┊bot-commands": 29,
+    "🔸erica-playground": 17,
+    "1421408684776357929": 10,
+    "1488034886081319055": 1,
+    "1487986256057995470": 1,
+    "1487974727736754317": 1,
+    "1487437533401841898": 4,
+    "1486936365110136832": 3
+  },
+  "hourly_activity": {
+    "11": 366,
+    "12": 56,
+    "6": 62,
+    "7": 37,
+    "10": 132,
+    "8": 57,
+    "9": 254,
+    "1": 55,
+    "3": 42,
+    "0": 26,
+    "2": 37,
+    "4": 53,
+    "5": 19
+  },
+  "message_types": {
+    "0": 142,
+    "19": 71
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1488014540875501628",
+      "content": "",
+      "author": "oiia_0216",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1488139474507530340",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488130193750233088",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1488146654015262793",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488143952787013733",
+      "content": "",
+      "author": "tnimreppep",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488132483525382274",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488146014694277343",
+      "content": "",
+      "author": "blecnes.",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488115814816288918",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488128876860145724",
+      "content": "",
+      "author": "arthasiv",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488129783970791605",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488140593774198805",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488110486728998943",
+      "content": "",
+      "author": "txt101225.",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1488139312187969556",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1487974887003000833",
+      "content": "",
+      "author": "sayokolefay",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1488067709219377323",
+      "content": "",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1488110510376488970",
+      "content": "",
+      "author": "snorlax01",
+      "reactions": 2,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1488110781823451156",
+      "content": "",
+      "author": "snorlax01",
+      "reactions": 2,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1488113420539662377",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 2,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1488114047068143709",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 2,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1488114647054815326",
+      "content": "",
+      "author": "erophrix",
+      "reactions": 2,
+      "channel": "🔸team-building"
+    }
+  ]
+}

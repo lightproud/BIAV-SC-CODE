@@ -40,7 +40,7 @@ DISCORD_DATA_DIR = _REPO_ROOT / 'assets' / 'data' / 'discord'
 STATE_PATH = DISCORD_DATA_DIR / 'state.json'
 
 REQUEST_DELAY = 1.2           # seconds between API calls (conservative, well under 50 req/s)
-MAX_RUNTIME_SECONDS = 5 * 60 * 60   # 5-hour hard limit (GitHub Actions safe margin)
+MAX_RUNTIME_SECONDS = 5 * 60         # 5-minute quick test (通过后改回 45*60)
 MAX_MESSAGES_PER_CHANNEL = 5000     # incremental cap per channel per run
 
 
@@ -110,9 +110,9 @@ class DiscordArchiver:
 
     def __init__(self):
         self.token = os.environ.get('DISCORD_BOT_TOKEN', '')
-        self.guild_id = os.environ.get('DISCORD_GUILD_ID', '')
-        if not self.token or not self.guild_id:
-            raise RuntimeError('DISCORD_BOT_TOKEN and DISCORD_GUILD_ID required')
+        self.guild_id = os.environ.get('DISCORD_GUILD_ID') or '1131791637933199470'
+        if not self.token:
+            raise RuntimeError('DISCORD_BOT_TOKEN is required')
 
         self.headers = {
             'Authorization': f'Bot {self.token}',

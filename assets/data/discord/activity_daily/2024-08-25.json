@@ -1,0 +1,29 @@
+{
+  "date": "2024-08-25",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "1193859503096070234": 4
+  },
+  "hourly_activity": {
+    "15": 1,
+    "16": 1,
+    "21": 1,
+    "22": 1
+  },
+  "message_types": {
+    "19": 3,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1277294164567920791",
+      "content": "",
+      "author": "hawkbeck",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

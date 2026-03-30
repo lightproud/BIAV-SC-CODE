@@ -1,0 +1,51 @@
+{
+  "date": "2025-10-19",
+  "messages": 24,
+  "unique_authors": 5,
+  "reactions_total": 6,
+  "attachments": 0,
+  "channel_activity": {
+    "1423337172655935600": 1,
+    "1429401798439080028": 23
+  },
+  "hourly_activity": {
+    "19": 1,
+    "9": 1,
+    "11": 4,
+    "12": 18
+  },
+  "message_types": {
+    "0": 18,
+    "19": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1429426480017838234",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1429442319634923641",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1429445640106283080",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1429446695045038191",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

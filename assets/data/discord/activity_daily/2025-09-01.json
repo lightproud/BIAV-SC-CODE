@@ -1,0 +1,26 @@
+{
+  "date": "2025-09-01",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 792,
+  "attachments": 0,
+  "channel_activity": {
+    "1305430084420898868": 1,
+    "🔸礼包码┊gift-codes": 1
+  },
+  "hourly_activity": {
+    "10": 2
+  },
+  "message_types": {
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1412015431887224914",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 792,
+      "channel": "🔸礼包码┊gift-codes"
+    }
+  ]
+}

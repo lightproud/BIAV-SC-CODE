@@ -1,0 +1,82 @@
+{
+  "date": "2026-02-10",
+  "messages": 23,
+  "unique_authors": 12,
+  "reactions_total": 9,
+  "attachments": 0,
+  "channel_activity": {
+    "1446091938456539279": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸游戏问题": 8,
+    "1462840887553032335": 1,
+    "1448648649486635128": 1,
+    "1241345906826153984": 7,
+    "1403373754175721657": 4
+  },
+  "hourly_activity": {
+    "13": 5,
+    "18": 1,
+    "0": 2,
+    "1": 1,
+    "15": 4,
+    "16": 2,
+    "19": 1,
+    "6": 1,
+    "12": 2,
+    "17": 4
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1470847610322420039",
+      "content": "",
+      "author": "closetom",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1470813113933758464",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1470760699612627067",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1470761682564546734",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1470779216466280529",
+      "content": "",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1470827413196898356",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1470828118230040721",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

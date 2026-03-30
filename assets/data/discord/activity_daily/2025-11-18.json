@@ -1,0 +1,25 @@
+{
+  "date": "2025-11-18",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 102,
+  "attachments": 0,
+  "channel_activity": {
+    "🐱light’s-nest": 2
+  },
+  "hourly_activity": {
+    "6": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440232498662473728",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 102,
+      "channel": "🐱light’s-nest"
+    }
+  ]
+}

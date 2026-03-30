@@ -1,0 +1,48 @@
+{
+  "date": "2026-01-30",
+  "messages": 18,
+  "unique_authors": 6,
+  "reactions_total": 9,
+  "attachments": 0,
+  "channel_activity": {
+    "1466793227372724398": 3,
+    "🔸游戏问题": 2,
+    "1463456408249831446": 3,
+    "1462840887553032335": 1,
+    "1440735573206761734": 5,
+    "1241345906826153984": 4
+  },
+  "hourly_activity": {
+    "13": 3,
+    "6": 4,
+    "4": 1,
+    "7": 1,
+    "8": 9
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1466705806975176837",
+      "content": "",
+      "author": "carrot_chicken",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1466676093888102608",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1466675594505883758",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

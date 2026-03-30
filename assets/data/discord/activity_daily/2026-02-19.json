@@ -1,0 +1,107 @@
+{
+  "date": "2026-02-19",
+  "messages": 37,
+  "unique_authors": 14,
+  "reactions_total": 926,
+  "attachments": 0,
+  "channel_activity": {
+    "1473976132058746901": 6,
+    "🔸欢乐梗图": 8,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸频道建议┊server-suggestions": 15,
+    "🐱light’s-nest": 2,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "1462840887553032335": 1,
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "9": 6,
+    "12": 1,
+    "13": 3,
+    "17": 2,
+    "8": 4,
+    "18": 14,
+    "19": 1,
+    "14": 2,
+    "0": 1,
+    "1": 1,
+    "23": 1,
+    "15": 1
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1474045849934893107",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 490,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1474031067223822428",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 315,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1474030807155867678",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 61,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1474045882524504266",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 41,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1473840099979563101",
+      "content": "",
+      "author": "hezlock",
+      "reactions": 10,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1473976132058746901",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1474107592627458344",
+      "content": "",
+      "author": "._.aahh",
+      "reactions": 3,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1474099981810925671",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1473849510512820488",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 1,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1474061266682253536",
+      "content": "",
+      "author": "kirboexists",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

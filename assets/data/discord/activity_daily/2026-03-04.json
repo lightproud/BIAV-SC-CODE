@@ -1,0 +1,195 @@
+{
+  "date": "2026-03-04",
+  "messages": 64,
+  "unique_authors": 14,
+  "reactions_total": 546,
+  "attachments": 0,
+  "channel_activity": {
+    "1478791297656422671": 5,
+    "1478787631495250041": 1,
+    "1478386943799857172": 2,
+    "1477167202884124722": 1,
+    "1476239209596457141": 3,
+    "1475923875392131273": 2,
+    "1473976132058746901": 2,
+    "1473060193242845216": 2,
+    "1472831885519618201": 2,
+    "1472375569919381729": 2,
+    "1471903688032522388": 3,
+    "1471675733301788856": 2,
+    "1471097648554442878": 1,
+    "1471083811935617105": 1,
+    "1468895834199298215": 14,
+    "1467308113660215326": 1,
+    "1466793227372724398": 2,
+    "1456019117805932636": 3,
+    "1455882869410103458": 2,
+    "1455874176534712330": 1,
+    "1471356257708408843": 3,
+    "🔸服务器公告┊server-announcement": 3,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸游戏问题": 2,
+    "1478779212377751775": 1,
+    "1477717724615544870": 1,
+    "1241345906826153984": 1
+  },
+  "hourly_activity": {
+    "16": 3,
+    "17": 3,
+    "18": 2,
+    "2": 5,
+    "8": 6,
+    "15": 2,
+    "6": 13,
+    "7": 7,
+    "5": 2,
+    "0": 3,
+    "11": 6,
+    "14": 4,
+    "19": 2,
+    "10": 4,
+    "9": 1,
+    "1": 1
+  },
+  "message_types": {
+    "0": 33,
+    "4": 14,
+    "19": 7,
+    "20": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1478634567639240795",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 440,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1478633294261260409",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 56,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1478811164635955251",
+      "content": "",
+      "author": "reya.li",
+      "reactions": 14,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1478779212377751775",
+      "content": "",
+      "author": "oct3000",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1478715900357120102",
+      "content": "",
+      "author": "skyfallterminus",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1478723681248219207",
+      "content": "",
+      "author": "sexysneakystoat1625",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1478791297656422671",
+      "content": "",
+      "author": "passerbycat",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1478641628360085555",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1478720929667219636",
+      "content": "",
+      "author": "skyfallterminus",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1478722843171754096",
+      "content": "",
+      "author": "yeriko703",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1478758508189974654",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1478692479342481408",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1478809705919811799",
+      "content": "",
+      "author": "cs001092",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478665759403147294",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478661375747162153",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478755234879897741",
+      "content": "",
+      "author": "mright4747",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478695703894294670",
+      "content": "",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478638684239560928",
+      "content": "",
+      "author": "iTranslator",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478573629389279242",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "🔸游戏问题"
+    }
+  ]
+}

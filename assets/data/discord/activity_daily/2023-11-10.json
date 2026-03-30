@@ -1,0 +1,28 @@
+{
+  "date": "2023-11-10",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 425,
+  "attachments": 0,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 3,
+    "禮包兌換碼": 1
+  },
+  "hourly_activity": {
+    "6": 1,
+    "7": 1,
+    "12": 2
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1172511390435647669",
+      "content": "",
+      "author": "alpha0909_",
+      "reactions": 425,
+      "channel": "禮包兌換碼"
+    }
+  ]
+}

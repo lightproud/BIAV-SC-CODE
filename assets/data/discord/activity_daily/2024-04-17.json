@@ -1,0 +1,34 @@
+{
+  "date": "2024-04-17",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 37,
+  "attachments": 0,
+  "channel_activity": {
+    "1181998821291606097": 2
+  },
+  "hourly_activity": {
+    "15": 1,
+    "16": 1
+  },
+  "message_types": {
+    "0": 1,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1230173470088892548",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 36,
+      "channel": ""
+    },
+    {
+      "id": "1230188878707556414",
+      "content": "",
+      "author": "ceci487",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

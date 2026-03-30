@@ -1,0 +1,48 @@
+{
+  "date": "2023-12-22",
+  "messages": 17,
+  "unique_authors": 12,
+  "reactions_total": 45,
+  "attachments": 0,
+  "channel_activity": {
+    "達芙黛爾應援活動": 17
+  },
+  "hourly_activity": {
+    "0": 3,
+    "2": 2,
+    "3": 1,
+    "6": 1,
+    "9": 2,
+    "11": 5,
+    "12": 1,
+    "13": 1,
+    "23": 1
+  },
+  "message_types": {
+    "0": 14,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1187898099604140062",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 28,
+      "channel": "達芙黛爾應援活動"
+    },
+    {
+      "id": "1187721850101436466",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 16,
+      "channel": "達芙黛爾應援活動"
+    },
+    {
+      "id": "1187734885939560518",
+      "content": "",
+      "author": "white_zir",
+      "reactions": 1,
+      "channel": "達芙黛爾應援活動"
+    }
+  ]
+}

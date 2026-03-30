@@ -1,0 +1,111 @@
+{
+  "date": "2026-02-02",
+  "messages": 60,
+  "unique_authors": 15,
+  "reactions_total": 767,
+  "attachments": 0,
+  "channel_activity": {
+    "1467225902029996154": 5,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 20,
+    "1421408684776357929": 6,
+    "1467801756359589971": 25,
+    "1462840887553032335": 2
+  },
+  "hourly_activity": {
+    "8": 8,
+    "9": 8,
+    "18": 2,
+    "21": 17,
+    "22": 1,
+    "23": 2,
+    "4": 6,
+    "10": 8,
+    "11": 4,
+    "14": 2,
+    "15": 2
+  },
+  "message_types": {
+    "0": 3,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1467951696121692272",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 579,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1467952587868471357",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 142,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1468023306375528520",
+      "content": "",
+      "author": "armyofthalia",
+      "reactions": 21,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1467801756359589971",
+      "content": "",
+      "author": "souri.10244",
+      "reactions": 18,
+      "channel": ""
+    },
+    {
+      "id": "1468006481784995971",
+      "content": "",
+      "author": "dzetadelta",
+      "reactions": 1,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468021347715387606",
+      "content": "",
+      "author": "zzz1pp3rr",
+      "reactions": 1,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1467731865929519215",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1467804370681991179",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1467811017512845529",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1467833823848038617",
+      "content": "",
+      "author": "souri.10244",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1467896792028025027",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

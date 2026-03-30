@@ -1,0 +1,199 @@
+{
+  "date": "2026-03-27",
+  "messages": 267,
+  "unique_authors": 54,
+  "reactions_total": 43,
+  "attachments": 0,
+  "channel_activity": {
+    "1468895834199298215": 2,
+    "1467225902029996154": 1,
+    "1458371914018979971": 1,
+    "1450001353064714320": 1,
+    "1486993726738796646": 2,
+    "🔸剧情交流": 93,
+    "🔸相位对弈": 48,
+    "🔸课间休息闲聊": 5,
+    "🔸交友频道": 6,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 16,
+    "🔸русский-канал": 49,
+    "🔸邀请码互助┊swap-invitation-codes": 12,
+    "🔸机器人命令┊bot-commands": 2,
+    "1487087062581514392": 2,
+    "1487022864304570439": 5,
+    "1486968631970500769": 11,
+    "1486948650750971914": 5,
+    "1486936365110136832": 5
+  },
+  "hourly_activity": {
+    "7": 3,
+    "9": 19,
+    "4": 10,
+    "16": 34,
+    "17": 61,
+    "0": 7,
+    "1": 5,
+    "11": 15,
+    "12": 14,
+    "13": 26,
+    "18": 17,
+    "2": 1,
+    "8": 1,
+    "10": 5,
+    "19": 31,
+    "20": 3,
+    "23": 4,
+    "3": 2,
+    "5": 1,
+    "6": 5,
+    "14": 1,
+    "15": 1,
+    "21": 1
+  },
+  "message_types": {
+    "0": 6,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1487015363484061806",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 6,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1487138885992579235",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487138866786730254",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487023567974567947",
+      "content": "",
+      "author": "arandomflamev2",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1486993840509288568",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1487167315018645524",
+      "content": "",
+      "author": "ban8228",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1487087062581514392",
+      "content": "",
+      "author": "rascal_harmonize",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1487072610759217153",
+      "content": "",
+      "author": "ka_0414",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1487132831661555833",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487133108146016277",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487133844984299735",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487136436305264730",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487137207042183238",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487137929850785812",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487138219597496533",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487138535382454425",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487139669878509668",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1486887037838688297",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
+      "id": "1487158313132101763",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
+      "id": "1486907726733902004",
+      "content": "",
+      "author": "trevorsuyu",
+      "reactions": 1,
+      "channel": "🔸交友频道"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2025-09-24",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "1296113810549112874": 1
+  },
+  "hourly_activity": {
+    "12": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1420392901493395560",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 3,
+      "channel": ""
+    }
+  ]
+}

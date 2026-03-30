@@ -1,0 +1,209 @@
+{
+  "date": "2026-03-29",
+  "messages": 552,
+  "unique_authors": 99,
+  "reactions_total": 171,
+  "attachments": 0,
+  "channel_activity": {
+    "1468895834199298215": 1,
+    "1456239100989542555": 9,
+    "🔸阵容构建": 92,
+    "🔸剧情交流": 7,
+    "🔸晒卡分享": 2,
+    "🔸欢乐梗图": 6,
+    "🔸交友频道": 21,
+    "🔸deutscher-chatraum": 5,
+    "🔸русский-канал": 15,
+    "🔸canal-español": 39,
+    "🔸canal-português": 86,
+    "🔸ruang-obrolan-indonesia": 54,
+    "🔸ห้องสนทนาภาษาไทย": 43,
+    "🔸traphase": 38,
+    "🔸lore-chat": 29,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🐱light’s-nest": 2,
+    "🔸机器人命令┊bot-commands": 29,
+    "🔸erica-playground": 31,
+    "1428784257534529586": 2,
+    "1403373754175721657": 5,
+    "1487892571677134898": 1,
+    "1487861511497060384": 3,
+    "1487819314634690560": 1,
+    "1487707118621556846": 1,
+    "1487706656958713937": 1,
+    "1487333848076259349": 11
+  },
+  "hourly_activity": {
+    "18": 24,
+    "11": 35,
+    "12": 22,
+    "13": 20,
+    "15": 90,
+    "16": 20,
+    "17": 12,
+    "6": 8,
+    "22": 46,
+    "7": 41,
+    "8": 26,
+    "10": 18,
+    "21": 6,
+    "19": 26,
+    "20": 25,
+    "23": 21,
+    "1": 16,
+    "4": 10,
+    "9": 35,
+    "5": 21,
+    "14": 6,
+    "3": 6,
+    "0": 8,
+    "2": 10
+  },
+  "message_types": {
+    "0": 8,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1487649400292511935",
+      "content": "",
+      "author": "lightproud",
+      "reactions": 104,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1487753887275548773",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 6,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1487723750735741063",
+      "content": "",
+      "author": "harowolf",
+      "reactions": 5,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1487855933391634483",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 4,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487934101926183073",
+      "content": "",
+      "author": "salami_87",
+      "reactions": 4,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1487819314634690560",
+      "content": "",
+      "author": "gacha_ping",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1487715443354374214",
+      "content": "",
+      "author": "trevorsuyu",
+      "reactions": 3,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1487715398127452233",
+      "content": "",
+      "author": "trevorsuyu",
+      "reactions": 2,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1487834614616559626",
+      "content": "",
+      "author": "deltaeros_85591",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1487741076986007562",
+      "content": "",
+      "author": "2ndselna",
+      "reactions": 2,
+      "channel": "🔸ห้องสนทนาภาษาไทย"
+    },
+    {
+      "id": "1487780954998046902",
+      "content": "",
+      "author": "lefanurena_",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1487707118621556846",
+      "content": "",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1487694713900368002",
+      "content": "",
+      "author": "ponponnyaru",
+      "reactions": 1,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1487754182500028527",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1487715657326792804",
+      "content": "",
+      "author": "trevorsuyu",
+      "reactions": 1,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1487719871507726467",
+      "content": "",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1487725313084358656",
+      "content": "",
+      "author": "hon_ey0",
+      "reactions": 1,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1487726267146174464",
+      "content": "",
+      "author": "harowolf",
+      "reactions": 1,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1487729573062774804",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1487732666840121466",
+      "content": "",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "🔸交友频道"
+    }
+  ]
+}

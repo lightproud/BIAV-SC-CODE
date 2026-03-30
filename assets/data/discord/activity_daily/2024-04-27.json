@@ -1,0 +1,25 @@
+{
+  "date": "2024-04-27",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "22": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1233914763122184243",
+      "content": "",
+      "author": "kirboexists",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

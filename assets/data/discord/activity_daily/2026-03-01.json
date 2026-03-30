@@ -1,0 +1,72 @@
+{
+  "date": "2026-03-01",
+  "messages": 15,
+  "unique_authors": 7,
+  "reactions_total": 18,
+  "attachments": 0,
+  "channel_activity": {
+    "1471083811935617105": 2,
+    "1468895834199298215": 3,
+    "1450001353064714320": 1,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 4,
+    "1477717724615544870": 1,
+    "1477254942199910431": 1,
+    "1475232782169932038": 1
+  },
+  "hourly_activity": {
+    "2": 2,
+    "1": 1,
+    "8": 1,
+    "9": 1,
+    "11": 1,
+    "10": 3,
+    "5": 1,
+    "20": 2,
+    "17": 1,
+    "6": 1,
+    "15": 1
+  },
+  "message_types": {
+    "0": 4,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1477591648111165531",
+      "content": "",
+      "author": "yeriko703",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1477625170326720532",
+      "content": "",
+      "author": "exo_2360",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1477540228649582624",
+      "content": "",
+      "author": "closetom",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1477717724615544870",
+      "content": "",
+      "author": "vgvfvffcc",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1477616441405472798",
+      "content": "",
+      "author": "iwthahe",
+      "reactions": 1,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    }
+  ]
+}

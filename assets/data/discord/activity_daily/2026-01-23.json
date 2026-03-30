@@ -1,0 +1,57 @@
+{
+  "date": "2026-01-23",
+  "messages": 10,
+  "unique_authors": 6,
+  "reactions_total": 24,
+  "attachments": 0,
+  "channel_activity": {
+    "1450001353064714320": 1,
+    "1417419008898109492": 1,
+    "1234769700735418368": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1448648649486635128": 1,
+    "1296113810549112874": 3,
+    "1463188507659993200": 2
+  },
+  "hourly_activity": {
+    "3": 1,
+    "7": 1,
+    "12": 3,
+    "16": 1,
+    "13": 2,
+    "2": 2
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1464158531304554698",
+      "content": "",
+      "author": "morimens314",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1464242985112834232",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1464295057665429606",
+      "content": "",
+      "author": "yq0227",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1464239293001367724",
+      "content": "",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

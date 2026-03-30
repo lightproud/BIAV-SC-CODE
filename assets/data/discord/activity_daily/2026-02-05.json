@@ -1,0 +1,63 @@
+{
+  "date": "2026-02-05",
+  "messages": 32,
+  "unique_authors": 12,
+  "reactions_total": 29,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 26,
+    "1296113810549112874": 2
+  },
+  "hourly_activity": {
+    "22": 2,
+    "3": 1,
+    "18": 2,
+    "4": 1,
+    "15": 21,
+    "21": 3,
+    "9": 2
+  },
+  "message_types": {
+    "0": 24,
+    "19": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1468830237541404777",
+      "content": "",
+      "author": "sanna7424",
+      "reactions": 17,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1469031156866486508",
+      "content": "",
+      "author": "yaoshidoppa",
+      "reactions": 5,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1468806631545507920",
+      "content": "",
+      "author": "lonely_tree",
+      "reactions": 4,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1469102535502463008",
+      "content": "",
+      "author": "shrek22004bdrip",
+      "reactions": 2,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1468903502314209443",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

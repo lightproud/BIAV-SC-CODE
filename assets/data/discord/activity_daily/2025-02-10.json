@@ -1,0 +1,42 @@
+{
+  "date": "2025-02-10",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 38,
+  "attachments": 0,
+  "channel_activity": {
+    "1271491376881598494": 2,
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "5": 1,
+    "14": 1,
+    "13": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1338503048854769759",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 18,
+      "channel": ""
+    },
+    {
+      "id": "1338383147712118795",
+      "content": "",
+      "author": "versailles",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1338515862877110312",
+      "content": "",
+      "author": "zhoubishan",
+      "reactions": 7,
+      "channel": ""
+    }
+  ]
+}

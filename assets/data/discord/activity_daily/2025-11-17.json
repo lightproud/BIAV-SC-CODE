@@ -1,0 +1,35 @@
+{
+  "date": "2025-11-17",
+  "messages": 3,
+  "unique_authors": 1,
+  "reactions_total": 57,
+  "attachments": 0,
+  "channel_activity": {
+    "1439514625703149659": 2,
+    "🔸服务器公告┊server-announcement": 1
+  },
+  "hourly_activity": {
+    "9": 2,
+    "3": 1
+  },
+  "message_types": {
+    "0": 1,
+    "6": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1439822703321419816",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 41,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1439916138602692658",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 16,
+      "channel": ""
+    }
+  ]
+}

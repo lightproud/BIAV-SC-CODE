@@ -1,0 +1,25 @@
+{
+  "date": "2023-11-14",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 1
+  },
+  "hourly_activity": {
+    "11": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1173951383565774920",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 3,
+      "channel": "官方佈告（已停止使用）"
+    }
+  ]
+}

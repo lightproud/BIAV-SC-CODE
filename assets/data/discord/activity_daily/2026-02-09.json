@@ -1,0 +1,48 @@
+{
+  "date": "2026-02-09",
+  "messages": 10,
+  "unique_authors": 7,
+  "reactions_total": 10,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 6,
+    "1403373754175721657": 2
+  },
+  "hourly_activity": {
+    "3": 1,
+    "21": 1,
+    "4": 1,
+    "8": 2,
+    "9": 2,
+    "10": 1,
+    "18": 2
+  },
+  "message_types": {
+    "0": 9,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1470253239118069811",
+      "content": "",
+      "author": "reya.li",
+      "reactions": 7,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1470527797083640053",
+      "content": "",
+      "author": "lonely_tree",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1470480555207294987",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "date": "2026-01-27",
+  "messages": 45,
+  "unique_authors": 4,
+  "reactions_total": 10,
+  "attachments": 0,
+  "channel_activity": {
+    "1234769700735418368": 16,
+    "1440735573206761734": 29
+  },
+  "hourly_activity": {
+    "10": 1,
+    "11": 14,
+    "17": 1,
+    "6": 6,
+    "7": 23
+  },
+  "message_types": {
+    "0": 11,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1465664292958375957",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1465760361390276803",
+      "content": "",
+      "author": "yaoshidoppa",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1465598046913040611",
+      "content": "",
+      "author": "tsubaki9884",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1465664990785699840",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465665024424018024",
+      "content": "",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465602690859008162",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465605043951763640",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

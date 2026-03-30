@@ -1,0 +1,41 @@
+{
+  "date": "2025-09-03",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "1296113810549112874": 4
+  },
+  "hourly_activity": {
+    "7": 1,
+    "8": 3
+  },
+  "message_types": {
+    "19": 2,
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1412704290312814713",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1412711351519936605",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1412716145122742323",
+      "content": "",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

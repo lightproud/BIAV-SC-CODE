@@ -1,0 +1,163 @@
+{
+  "date": "2026-03-02",
+  "messages": 126,
+  "unique_authors": 13,
+  "reactions_total": 37,
+  "attachments": 0,
+  "channel_activity": {
+    "1477962371518431343": 93,
+    "1477934817109610507": 3,
+    "1477928829459628113": 1,
+    "1477909584155775018": 1,
+    "1468895834199298215": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸游戏问题": 3,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "1478012557598920774": 1,
+    "1423337172655935600": 1,
+    "1421408684776357929": 7,
+    "1477717724615544870": 12
+  },
+  "hourly_activity": {
+    "15": 54,
+    "16": 33,
+    "17": 2,
+    "19": 3,
+    "20": 2,
+    "21": 3,
+    "22": 1,
+    "7": 17,
+    "6": 1,
+    "9": 1,
+    "14": 1,
+    "3": 5,
+    "12": 1,
+    "0": 1,
+    "8": 1
+  },
+  "message_types": {
+    "0": 82,
+    "19": 17
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1478083854094045376",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1478069531921350676",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1477928829459628113",
+      "content": "",
+      "author": "iwthahe",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1478157074528473200",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1478032267031871640",
+      "content": "",
+      "author": "closetom",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1478058566228250777",
+      "content": "",
+      "author": "getheangel",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1478132216361123882",
+      "content": "",
+      "author": "exo_2360",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1477934817109610507",
+      "content": "",
+      "author": "amstelredam",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1478012557598920774",
+      "content": "",
+      "author": "menoctus",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1478057778781360188",
+      "content": "",
+      "author": "zekiei",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478059052079648920",
+      "content": "",
+      "author": "getheangel",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478059128831213578",
+      "content": "",
+      "author": "skyfallterminus",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478059465134706914",
+      "content": "",
+      "author": "skyfallterminus",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478061201257664696",
+      "content": "",
+      "author": "skyfallterminus",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478057183815008487",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1477875567729840243",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1478074039862821146",
+      "content": "",
+      "author": "mightythor",
+      "reactions": 1,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "date": "2025-11-10",
+  "messages": 7,
+  "unique_authors": 2,
+  "reactions_total": 276,
+  "attachments": 0,
+  "channel_activity": {
+    "🐱light’s-nest": 3,
+    "1421408684776357929": 4
+  },
+  "hourly_activity": {
+    "6": 3,
+    "2": 4
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1437334461061533788",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 167,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1437334432959696936",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 64,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1437334510181023897",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 45,
+      "channel": "🐱light’s-nest"
+    }
+  ]
+}

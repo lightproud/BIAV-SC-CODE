@@ -1,0 +1,63 @@
+{
+  "date": "2025-12-31",
+  "messages": 14,
+  "unique_authors": 8,
+  "reactions_total": 291,
+  "attachments": 0,
+  "channel_activity": {
+    "1456019117805932636": 1,
+    "1455882869410103458": 3,
+    "1455874176534712330": 8,
+    "🐱light’s-nest": 1,
+    "🔸忘却前夜┊morimens-tv": 1
+  },
+  "hourly_activity": {
+    "20": 1,
+    "11": 5,
+    "12": 5,
+    "10": 1,
+    "16": 1,
+    "5": 1
+  },
+  "message_types": {
+    "0": 11,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1455958820076650697",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 231,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1455874176534712330",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 46,
+      "channel": ""
+    },
+    {
+      "id": "1455882869410103458",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 12,
+      "channel": ""
+    },
+    {
+      "id": "1455883010292322445",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1455793431027781632",
+      "content": "",
+      "author": "closetom",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

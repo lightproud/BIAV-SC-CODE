@@ -1,0 +1,198 @@
+{
+  "date": "2026-03-06",
+  "messages": 129,
+  "unique_authors": 23,
+  "reactions_total": 170,
+  "attachments": 0,
+  "channel_activity": {
+    "1479533422186598420": 2,
+    "1479486014266544158": 2,
+    "1479475299237494888": 36,
+    "1479402787124154449": 1,
+    "1479353419792650301": 3,
+    "1479340936373993483": 9,
+    "1479210453295955988": 22,
+    "1479193150328279120": 3,
+    "1479182409974022346": 2,
+    "1479150923568648213": 3,
+    "1479041964916736002": 12,
+    "1479040225685798932": 7,
+    "1478984182725349407": 2,
+    "1478791297656422671": 2,
+    "1478787631495250041": 14,
+    "1468895834199298215": 3,
+    "🔸欢乐梗图": 1,
+    "🔸频道建议┊server-suggestions": 3,
+    "1479573516058755336": 1,
+    "1463456408249831446": 1
+  },
+  "hourly_activity": {
+    "17": 6,
+    "23": 4,
+    "14": 8,
+    "13": 8,
+    "15": 8,
+    "16": 11,
+    "18": 5,
+    "19": 2,
+    "8": 8,
+    "5": 6,
+    "7": 10,
+    "4": 3,
+    "6": 24,
+    "9": 1,
+    "10": 9,
+    "11": 3,
+    "12": 5,
+    "1": 6,
+    "3": 1,
+    "20": 1
+  },
+  "message_types": {
+    "0": 93,
+    "19": 22,
+    "4": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1479475299237494888",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 21,
+      "channel": ""
+    },
+    {
+      "id": "1479518829171310644",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
+      "id": "1479538622335160412",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 16,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1479464927910428763",
+      "content": "",
+      "author": "thpdom",
+      "reactions": 13,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1479477131678453781",
+      "content": "",
+      "author": "_venush",
+      "reactions": 12,
+      "channel": ""
+    },
+    {
+      "id": "1479517920026431514",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1479573516058755336",
+      "content": "",
+      "author": "antshpo",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1479486014266544158",
+      "content": "",
+      "author": "bohday",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1479553938469421057",
+      "content": "",
+      "author": "_neyko_",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1479568152793841744",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1479620277229846540",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1479499035193638952",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1479395758225756259",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1479426054765678783",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1479518061789839451",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1479353419792650301",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1479346794432561308",
+      "content": "",
+      "author": "amstelredam",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1479379020356522044",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1479463851627118786",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1479383290648592425",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

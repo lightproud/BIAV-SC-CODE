@@ -1,0 +1,173 @@
+{
+  "date": "2026-03-23",
+  "messages": 136,
+  "unique_authors": 45,
+  "reactions_total": 49,
+  "attachments": 0,
+  "channel_activity": {
+    "1468895834199298215": 1,
+    "1450001353064714320": 6,
+    "1485628489939030187": 2,
+    "1485579402971582495": 2,
+    "1484467018118987888": 7,
+    "🔸课间休息闲聊": 3,
+    "🔸deutscher-chatraum": 43,
+    "🔸chaîne-française": 1,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🔸游戏问题": 9,
+    "1472620151634661499": 5,
+    "1462840887553032335": 2,
+    "1428784257534529586": 10,
+    "1348458617203986532": 1,
+    "1485667855805710527": 1,
+    "1485654793983758447": 6,
+    "1485645122677899426": 10,
+    "1485530758516052049": 1,
+    "1485508365194104922": 5,
+    "1485456007407865926": 5,
+    "1485344233635315814": 2,
+    "1484212697015914496": 1
+  },
+  "hourly_activity": {
+    "6": 10,
+    "0": 2,
+    "1": 8,
+    "4": 7,
+    "13": 5,
+    "10": 3,
+    "2": 5,
+    "12": 5,
+    "15": 13,
+    "17": 6,
+    "18": 13,
+    "19": 14,
+    "21": 6,
+    "22": 1,
+    "16": 1,
+    "8": 11,
+    "3": 5,
+    "5": 4,
+    "7": 3,
+    "14": 13,
+    "11": 1
+  },
+  "message_types": {
+    "0": 12,
+    "19": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1485654793983758447",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
+      "id": "1485612210960203786",
+      "content": "",
+      "author": "._.aahh",
+      "reactions": 12,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1485530758516052049",
+      "content": "",
+      "author": "gacha_ping",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1485453086309744640",
+      "content": "",
+      "author": "polkarain",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485579402971582495",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485494830141276380",
+      "content": "",
+      "author": "snorlax01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1485628489939030187",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1485610484093947924",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
+      "id": "1485656742816649267",
+      "content": "",
+      "author": "wei1901",
+      "reactions": 1,
+      "channel": "🔸deutscher-chatraum"
+    },
+    {
+      "id": "1485659930798063748",
+      "content": "",
+      "author": "_whiteman",
+      "reactions": 1,
+      "channel": "🔸deutscher-chatraum"
+    },
+    {
+      "id": "1485699236715823246",
+      "content": "",
+      "author": "echo604072132",
+      "reactions": 1,
+      "channel": "🔸deutscher-chatraum"
+    },
+    {
+      "id": "1485752298335502466",
+      "content": "",
+      "author": "_whiteman",
+      "reactions": 1,
+      "channel": "🔸deutscher-chatraum"
+    },
+    {
+      "id": "1485501181332553760",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1485502892248141974",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1485653709383012405",
+      "content": "",
+      "author": "shaw_51",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1485456007407865926",
+      "content": "",
+      "author": "kepler0519",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

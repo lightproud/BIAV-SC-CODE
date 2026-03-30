@@ -1,0 +1,65 @@
+{
+  "date": "2026-02-24",
+  "messages": 26,
+  "unique_authors": 5,
+  "reactions_total": 11,
+  "attachments": 0,
+  "channel_activity": {
+    "1475923875392131273": 2,
+    "1475060782139052122": 3,
+    "1473976132058746901": 1,
+    "1473060193242845216": 1,
+    "1472831885519618201": 3,
+    "1471903688032522388": 12,
+    "🔸欢乐梗图": 1,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸忘却前夜┊morimens-tv": 1
+  },
+  "hourly_activity": {
+    "18": 2,
+    "4": 2,
+    "5": 1,
+    "6": 1,
+    "8": 12,
+    "9": 4,
+    "3": 1,
+    "17": 1,
+    "1": 1,
+    "22": 1
+  },
+  "message_types": {
+    "0": 13,
+    "4": 5,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1475923875392131273",
+      "content": "",
+      "author": "iwthahe",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1475713147339014318",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1475977452151902303",
+      "content": "",
+      "author": "frosthief",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1475783917708509224",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

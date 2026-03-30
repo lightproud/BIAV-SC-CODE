@@ -1,0 +1,50 @@
+{
+  "date": "2026-01-13",
+  "messages": 8,
+  "unique_authors": 4,
+  "reactions_total": 16,
+  "attachments": 0,
+  "channel_activity": {
+    "1455874176534712330": 1,
+    "1305430084420898868": 1,
+    "1234769700735418368": 2,
+    "🔸欢乐梗图": 2,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1241345906826153984": 1
+  },
+  "hourly_activity": {
+    "2": 1,
+    "11": 2,
+    "10": 2,
+    "18": 1,
+    "21": 1,
+    "5": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1460465033359397025",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1460752631747317893",
+      "content": "",
+      "author": "yaoshidoppa",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1460513254450139342",
+      "content": "",
+      "author": "yolo_mode",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

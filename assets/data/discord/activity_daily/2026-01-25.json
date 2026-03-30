@@ -1,0 +1,81 @@
+{
+  "date": "2026-01-25",
+  "messages": 11,
+  "unique_authors": 9,
+  "reactions_total": 43,
+  "attachments": 0,
+  "channel_activity": {
+    "1456123871383130243": 1,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "1464913090511503430": 1,
+    "1463456408249831446": 3,
+    "1462840887553032335": 1,
+    "1296113810549112874": 3
+  },
+  "hourly_activity": {
+    "7": 1,
+    "3": 1,
+    "21": 1,
+    "9": 1,
+    "8": 1,
+    "12": 1,
+    "23": 1,
+    "15": 1,
+    "13": 2,
+    "14": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1464913090511503430",
+      "content": "",
+      "author": "calmdreab",
+      "reactions": 16,
+      "channel": ""
+    },
+    {
+      "id": "1464898407461159080",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1464972828372893709",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1465097328192131206",
+      "content": "",
+      "author": "reya.li",
+      "reactions": 6,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1464822433407176829",
+      "content": "",
+      "author": "nechromicon",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1464957540336140443",
+      "content": "",
+      "author": "ahh_1234567890",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465119660948193403",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

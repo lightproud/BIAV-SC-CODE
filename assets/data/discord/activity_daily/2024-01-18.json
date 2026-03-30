@@ -1,0 +1,103 @@
+{
+  "date": "2024-01-18",
+  "messages": 100,
+  "unique_authors": 20,
+  "reactions_total": 108,
+  "attachments": 0,
+  "channel_activity": {
+    "彌薩格大學茶話會": 100
+  },
+  "hourly_activity": {
+    "12": 100
+  },
+  "message_types": {
+    "0": 88,
+    "19": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1197512991726391297",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 20,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197513103320043640",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 17,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197513169837490256",
+      "content": "",
+      "author": "jackpot_7",
+      "reactions": 17,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197513935474131044",
+      "content": "",
+      "author": "vivivispray",
+      "reactions": 13,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197513540010004490",
+      "content": "",
+      "author": "dyyqcwj",
+      "reactions": 11,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197512864618000465",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 10,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197514325460520990",
+      "content": "",
+      "author": "hananichiya",
+      "reactions": 6,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197513315304345620",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 5,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197513761599279196",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 4,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197512695725965312",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 2,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197512765607260160",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "彌薩格大學茶話會"
+    },
+    {
+      "id": "1197513244122824775",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "彌薩格大學茶話會"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "date": "2026-01-31",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 13,
+  "attachments": 0,
+  "channel_activity": {
+    "1467308113660215326": 1,
+    "1467225902029996154": 2
+  },
+  "hourly_activity": {
+    "23": 1,
+    "18": 2
+  },
+  "message_types": {
+    "0": 2,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1467225902029996154",
+      "content": "",
+      "author": "arandomflamev2",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1467308113660215326",
+      "content": "",
+      "author": "jollysquire",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1467231768238358528",
+      "content": "",
+      "author": "heransu",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

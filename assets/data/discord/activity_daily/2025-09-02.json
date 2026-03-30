@@ -1,0 +1,34 @@
+{
+  "date": "2025-09-02",
+  "messages": 4,
+  "unique_authors": 1,
+  "reactions_total": 26,
+  "attachments": 0,
+  "channel_activity": {
+    "1305430084420898868": 1,
+    "1296113810549112874": 3
+  },
+  "hourly_activity": {
+    "9": 1,
+    "17": 3
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1412373316924211260",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
+      "id": "1412484624160133222",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 9,
+      "channel": ""
+    }
+  ]
+}

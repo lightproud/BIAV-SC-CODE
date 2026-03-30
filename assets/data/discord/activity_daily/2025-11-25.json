@@ -1,0 +1,27 @@
+{
+  "date": "2025-11-25",
+  "messages": 5,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "1234769700735418368": 1,
+    "1271491376881598494": 4
+  },
+  "hourly_activity": {
+    "9": 1,
+    "15": 4
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1442804057667534898",
+      "content": "",
+      "author": "satachan",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "date": "2025-12-25",
+  "messages": 30,
+  "unique_authors": 5,
+  "reactions_total": 591,
+  "attachments": 0,
+  "channel_activity": {
+    "1452951234712571996": 4,
+    "🔸礼包码┊gift-codes": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1241345906826153984": 24
+  },
+  "hourly_activity": {
+    "1": 2,
+    "6": 2,
+    "10": 1,
+    "13": 1,
+    "7": 5,
+    "8": 17,
+    "9": 2
+  },
+  "message_types": {
+    "0": 2,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1453695310957117534",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 575,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1453651076002615380",
+      "content": "",
+      "author": "carrot_chicken",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1453668166868795433",
+      "content": "",
+      "author": "carrot_chicken",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1453670203954167851",
+      "content": "",
+      "author": "carrot_chicken",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1453634798462439511",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1453745822603808912",
+      "content": "",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

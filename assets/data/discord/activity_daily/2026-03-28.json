@@ -1,0 +1,208 @@
+{
+  "date": "2026-03-28",
+  "messages": 327,
+  "unique_authors": 80,
+  "reactions_total": 100,
+  "attachments": 0,
+  "channel_activity": {
+    "1480558608365125632": 1,
+    "1468895834199298215": 1,
+    "🔸晒卡分享": 11,
+    "🔸相位对弈": 15,
+    "🔸课间休息闲聊": 4,
+    "🔸한국어-채팅방": 14,
+    "🔸deutscher-chatraum": 5,
+    "🔸chaîne-française": 5,
+    "🔸русский-канал": 16,
+    "🔸ruang-obrolan-indonesia": 5,
+    "🔸traphase": 54,
+    "🔸频道建议┊server-suggestions": 6,
+    "🔸邀请码互助┊swap-invitation-codes": 5,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "🔸机器人命令┊bot-commands": 40,
+    "🔸erica-playground": 52,
+    "1487420216257417276": 1,
+    "1487469049716805753": 1,
+    "1462840887553032335": 2,
+    "1403373754175721657": 3,
+    "1487511891634032841": 3,
+    "1487508365814005972": 5,
+    "1487437533401841898": 3,
+    "1487366344226766912": 1,
+    "1487356490007183491": 2,
+    "1487333848076259349": 68,
+    "1484212697015914496": 1
+  },
+  "hourly_activity": {
+    "19": 14,
+    "8": 8,
+    "9": 12,
+    "11": 16,
+    "17": 13,
+    "18": 64,
+    "7": 28,
+    "12": 5,
+    "1": 5,
+    "6": 16,
+    "3": 12,
+    "4": 2,
+    "5": 16,
+    "15": 16,
+    "10": 21,
+    "21": 14,
+    "13": 5,
+    "14": 8,
+    "22": 31,
+    "23": 8,
+    "16": 10,
+    "20": 2,
+    "2": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1487366344226766912",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1487497599190827089",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 12,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1487469049716805753",
+      "content": "",
+      "author": "artigosaurus",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1487416739250835538",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1487498941447798819",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1487446981302288476",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 6,
+      "channel": "🔸chaîne-française"
+    },
+    {
+      "id": "1487333848076259349",
+      "content": "",
+      "author": "xagarath",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1487597657621794901",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 4,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1487380996545319052",
+      "content": "",
+      "author": "xingxiu_0209",
+      "reactions": 3,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1487353494070628383",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 2,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1487290793910730947",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 2,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1487290926219923526",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 2,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1487356490007183491",
+      "content": "",
+      "author": "david.chen.123",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1487356843759239228",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1487488162606350347",
+      "content": "",
+      "author": "zzz1pp3rr",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1487384043250258021",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 1,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1487347944788332636",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 1,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1487411432239661136",
+      "content": "",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1487481006452769033",
+      "content": "",
+      "author": "gacha_ping",
+      "reactions": 1,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1487470021700751600",
+      "content": "",
+      "author": "trex0007",
+      "reactions": 1,
+      "channel": "🔸chaîne-française"
+    }
+  ]
+}

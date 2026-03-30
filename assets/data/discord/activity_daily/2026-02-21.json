@@ -1,0 +1,72 @@
+{
+  "date": "2026-02-21",
+  "messages": 15,
+  "unique_authors": 6,
+  "reactions_total": 42,
+  "attachments": 0,
+  "channel_activity": {
+    "1467225902029996154": 1,
+    "1471356257708408843": 1,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1241345906826153984": 10
+  },
+  "hourly_activity": {
+    "2": 1,
+    "1": 1,
+    "9": 1,
+    "10": 1,
+    "12": 1,
+    "14": 1,
+    "16": 2,
+    "17": 2,
+    "18": 5
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1474748352066359410",
+      "content": "",
+      "author": "reya.li",
+      "reactions": 23,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1474771878391451820",
+      "content": "",
+      "author": "carrot_chicken",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1474809097718202612",
+      "content": "",
+      "author": "carrot_chicken",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1474576791439147140",
+      "content": "",
+      "author": "iwthahe",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1474813452047487148",
+      "content": "",
+      "author": "carrot_chicken",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1474841416072040494",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

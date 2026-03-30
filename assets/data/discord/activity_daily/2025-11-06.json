@@ -1,0 +1,25 @@
+{
+  "date": "2025-11-06",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 856,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1
+  },
+  "hourly_activity": {
+    "0": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1435783846925828136",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 856,
+      "channel": "🔸服务器公告┊server-announcement"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "date": "2026-02-06",
+  "messages": 13,
+  "unique_authors": 8,
+  "reactions_total": 22,
+  "attachments": 0,
+  "channel_activity": {
+    "1467225902029996154": 2,
+    "1234769700735418368": 1,
+    "🔸欢乐梗图": 1,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1448648649486635128": 2,
+    "1181998821291606097": 3
+  },
+  "hourly_activity": {
+    "3": 2,
+    "4": 2,
+    "19": 1,
+    "11": 2,
+    "12": 1,
+    "15": 2,
+    "7": 2,
+    "8": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1469351918047465513",
+      "content": "",
+      "author": "yq0227",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1469176490590474552",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 5,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1469292059272675534",
+      "content": "",
+      "author": "closetom",
+      "reactions": 4,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1469421738252173472",
+      "content": "",
+      "author": "necronomikkon",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1469302313045983406",
+      "content": "",
+      "author": "shrek22004bdrip",
+      "reactions": 1,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1469352145752031263",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1469235117296844813",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1469247975548129462",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

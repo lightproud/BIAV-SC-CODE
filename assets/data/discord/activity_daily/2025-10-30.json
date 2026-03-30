@@ -1,0 +1,43 @@
+{
+  "date": "2025-10-30",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 1064,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1,
+    "🔸礼包码┊gift-codes": 1,
+    "🐱light’s-nest": 2
+  },
+  "hourly_activity": {
+    "15": 1,
+    "13": 1,
+    "17": 2
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1433441135216562196",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 605,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1433472586955755550",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 319,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1433514801220292701",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 140,
+      "channel": "🐱light’s-nest"
+    }
+  ]
+}

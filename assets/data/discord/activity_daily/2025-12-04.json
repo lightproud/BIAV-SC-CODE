@@ -1,0 +1,35 @@
+{
+  "date": "2025-12-04",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 15,
+  "attachments": 0,
+  "channel_activity": {
+    "1446091938456539279": 4,
+    "1417419008898109492": 1
+  },
+  "hourly_activity": {
+    "10": 4,
+    "7": 1
+  },
+  "message_types": {
+    "0": 3,
+    "4": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1446039194710573106",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1446091938456539279",
+      "content": "",
+      "author": "thigh_god.",
+      "reactions": 7,
+      "channel": ""
+    }
+  ]
+}

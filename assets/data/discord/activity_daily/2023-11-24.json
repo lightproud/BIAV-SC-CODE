@@ -1,0 +1,52 @@
+{
+  "date": "2023-11-24",
+  "messages": 11,
+  "unique_authors": 3,
+  "reactions_total": 134,
+  "attachments": 0,
+  "channel_activity": {
+    "活動訊息": 2,
+    "官方佈告（已停止使用）": 2,
+    "discord社群建議": 7
+  },
+  "hourly_activity": {
+    "11": 3,
+    "13": 1,
+    "8": 6,
+    "12": 1
+  },
+  "message_types": {
+    "0": 8,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1177574488943112202",
+      "content": "",
+      "author": "alpha0909_",
+      "reactions": 123,
+      "channel": "活動訊息"
+    },
+    {
+      "id": "1177583287439474720",
+      "content": "",
+      "author": "lirpa_04",
+      "reactions": 5,
+      "channel": "discord社群建議"
+    },
+    {
+      "id": "1177598582099038340",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 4,
+      "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1177534032251203645",
+      "content": "",
+      "author": "alpha0909_",
+      "reactions": 2,
+      "channel": "discord社群建議"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "date": "2026-01-06",
+  "messages": 11,
+  "unique_authors": 4,
+  "reactions_total": 19,
+  "attachments": 0,
+  "channel_activity": {
+    "1458059497187573862": 2,
+    "1456123871383130243": 1,
+    "1193859503096070234": 2,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "1296113810549112874": 4
+  },
+  "hourly_activity": {
+    "11": 5,
+    "12": 1,
+    "1": 1,
+    "8": 2,
+    "0": 1,
+    "13": 1
+  },
+  "message_types": {
+    "0": 2,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1458061883071266974",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1458059497187573862",
+      "content": "",
+      "author": "nikol_marshava",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1457890712837296431",
+      "content": "",
+      "author": "yaoshidoppa",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1458096923482521804",
+      "content": "",
+      "author": "satachan",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1458063600743874634",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1458061634487455926",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

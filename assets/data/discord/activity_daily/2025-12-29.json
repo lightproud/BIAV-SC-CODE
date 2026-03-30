@@ -1,0 +1,65 @@
+{
+  "date": "2025-12-29",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 24,
+  "attachments": 0,
+  "channel_activity": {
+    "1455326448683454465": 3,
+    "1455229843368317101": 1,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "1445334381404094475": 1
+  },
+  "hourly_activity": {
+    "22": 4,
+    "16": 1,
+    "8": 2
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1455229843368317101",
+      "content": "",
+      "author": "2300011747",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1455120559103934515",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1455328392626049267",
+      "content": "",
+      "author": "raumbobulus",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1455323473315627049",
+      "content": "",
+      "author": "yaoshidoppa",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1455326448683454465",
+      "content": "",
+      "author": "zekiei",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1455114269459746826",
+      "content": "",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

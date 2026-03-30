@@ -1,0 +1,25 @@
+{
+  "date": "2025-07-04",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 12,
+  "attachments": 0,
+  "channel_activity": {
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "14": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1390700945939234816",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 12,
+      "channel": ""
+    }
+  ]
+}

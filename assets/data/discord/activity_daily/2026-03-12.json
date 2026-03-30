@@ -1,0 +1,191 @@
+{
+  "date": "2026-03-12",
+  "messages": 111,
+  "unique_authors": 18,
+  "reactions_total": 56,
+  "attachments": 0,
+  "channel_activity": {
+    "1481679674882003124": 3,
+    "1481656078340067449": 4,
+    "1481542628645408850": 5,
+    "1481417778190880913": 4,
+    "1481403794272161903": 3,
+    "1481319632450228344": 9,
+    "1481301904435712060": 4,
+    "1481278716981149807": 1,
+    "1481244497584062545": 3,
+    "1481228956958195762": 7,
+    "1481227735027154974": 2,
+    "1481105700984721439": 3,
+    "1480932416100110557": 1,
+    "1480905167988719677": 1,
+    "1480855209755414560": 2,
+    "1480852688286515242": 3,
+    "1480844865909821561": 9,
+    "1480698140419166392": 7,
+    "1480644874326900737": 2,
+    "1480509345467728045": 2,
+    "1480505857824522371": 1,
+    "1480484107304828968": 2,
+    "1480418105694883900": 1,
+    "1468895834199298215": 2,
+    "1471356257708408843": 3,
+    "1305430084420898868": 4,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1480774039533387816": 1,
+    "1480444697997479977": 7,
+    "1448648649486635128": 2,
+    "1403373754175721657": 12
+  },
+  "hourly_activity": {
+    "15": 4,
+    "14": 2,
+    "18": 9,
+    "20": 2,
+    "6": 14,
+    "8": 2,
+    "2": 27,
+    "1": 8,
+    "5": 3,
+    "9": 5,
+    "22": 3,
+    "23": 4,
+    "21": 2,
+    "7": 18,
+    "3": 4,
+    "19": 4
+  },
+  "message_types": {
+    "0": 57,
+    "19": 14,
+    "4": 17
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1481493258965221527",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1481552025681662055",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1481484466894536795",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1481528536664768562",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1481538288157458464",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481480889165676544",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481773405794598964",
+      "content": "",
+      "author": "lonely_tree",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1481588294809817211",
+      "content": "",
+      "author": "yq0227",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481481474359169087",
+      "content": "",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481782547640746123",
+      "content": "",
+      "author": "nanami_carocontrolmeta",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481783816380223580",
+      "content": "",
+      "author": "nanami_carocontrolmeta",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481784219389919457",
+      "content": "",
+      "author": "nanami_carocontrolmeta",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481486382919712899",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481767819719872513",
+      "content": "",
+      "author": "_jhael",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481551982312296468",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481492633804079226",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481725923920318646",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481729383608619061",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

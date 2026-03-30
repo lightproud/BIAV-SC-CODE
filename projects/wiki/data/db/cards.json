@@ -61,6 +61,17 @@
       ]
     },
     {
+      "character_id": "doll",
+      "character_name": "朵尔",
+      "character_name_en": "Doll",
+      "rarity": "SSR",
+      "realm": "chaos",
+      "exalt": {
+        "name": "狂气爆发",
+        "effect": "普通形态：回复生命并施加毒素。终章形态：失去生命，造成大量毒伤。每叠加一层终章，终章形态的伤害递增。"
+      }
+    },
+    {
       "character_id": "ramona-timeworn",
       "character_name": "环行·拉蒙娜",
       "character_name_en": "Ramona: Timeworn",
@@ -125,6 +136,25 @@
       "overexalt": {
         "name": "超限爆发",
         "effect": "将「奇妙料理」洗入抽牌堆和弃牌堆各1张。"
+      }
+    },
+    {
+      "character_id": "miryam",
+      "character_name": "弥利亚姆",
+      "character_name_en": "Miryam",
+      "rarity": "SSR",
+      "realm": "aequor",
+      "command_cards": [
+        {
+          "name": "至高生命献祭",
+          "name_en": "Supreme Life Sacrifice",
+          "effect": "v1.4调整为穿透伤害。深海必备辅助技能，可为深海队提供触腕相关增益。",
+          "note": "v1.4版本升级调整：技能改为穿刺伤害类型"
+        }
+      ],
+      "rouse": {
+        "name": "灵知觉醒",
+        "effect": "v1.4增强：灵之觉醒与天赋同步提升。"
       }
     },
     {
@@ -208,6 +238,27 @@
         "name_en": "Soulforge Aptitude",
         "effect": "戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。"
       }
+    },
+    {
+      "character_id": "shan",
+      "character_name": "珊",
+      "character_name_en": "Shan",
+      "rarity": "SSR",
+      "realm": "aequor",
+      "command_cards": [
+        {
+          "name": "打击",
+          "name_en": "Strike",
+          "cost": 1,
+          "effect": "标准打击卡"
+        },
+        {
+          "name": "防御",
+          "name_en": "Defense",
+          "cost": 1,
+          "effect": "获得防御力x10%护盾。打出佩戴者指令卡后，获得防御力x6%护盾；每条触腕额外获得防御力x1.5%护盾，每回合最多触发1次(来自命轮效果描述推导)。"
+        }
+      ]
     },
     {
       "character_id": "uvhash",
@@ -350,6 +401,20 @@
       }
     },
     {
+      "character_id": "casiah",
+      "character_name": "卡茜亚",
+      "character_name_en": "Casiah",
+      "rarity": "SSR",
+      "realm": "ultra",
+      "command_cards": [
+        {
+          "name": "隔空取物",
+          "name_en": "Telekinesis",
+          "effect": "从超维空间拉出目标卡牌打出一次，配合达芙黛尔「断颈一击」实现二次打击。"
+        }
+      ]
+    },
+    {
       "character_id": "tawil",
       "character_name": "塔薇",
       "character_name_en": "Tawil",
@@ -390,6 +455,27 @@
       }
     },
     {
+      "character_id": "aigis",
+      "character_name": "艾继丝",
+      "character_name_en": "Aigis",
+      "rarity": "SSR",
+      "realm": "caro",
+      "command_cards": [
+        {
+          "name": "打击",
+          "name_en": "Strike",
+          "cost": 1,
+          "effect": "标准打击卡"
+        },
+        {
+          "name": "防御",
+          "name_en": "Defense",
+          "cost": 1,
+          "effect": "标准防御卡"
+        }
+      ]
+    },
+    {
       "character_id": "doll-inferno",
       "character_name": "熔毁·朵尔",
       "character_name_en": "Doll: Inferno",
@@ -399,6 +485,20 @@
         "name": "超限爆发",
         "effect": "接下来3回合内，每回合开始时回复20%体质的生命，并使所有唤醒体获得10点狂气。"
       }
+    },
+    {
+      "character_id": "helot",
+      "character_name": "血链·希洛",
+      "character_name_en": "Helot",
+      "rarity": "SSR",
+      "realm": "caro",
+      "command_cards": [
+        {
+          "name": "破链一击",
+          "name_en": "Chain Break Strike",
+          "effect": "血链·希洛的核心爆发技能，造成极高单次爆发伤害。配合环行·拉蒙娜的大招召回打击卡，实现「血希」队核心爆发。"
+        }
+      ]
     }
   ]
 }
