@@ -25,9 +25,9 @@ portrait: /portraits/pickman.png
 
 | Card | Cost | Effect |
 |------|------|------|
-| *Command Cards* | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | **Exalt**: Exalt | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| *Command Cards* | — | Data pending |
 | *Enlighten* | — | Data pending |
 
 

@@ -25,9 +25,9 @@ portrait: /portraits/helot.png
 
 | Card | Cost | Effect |
 |------|------|------|
-| Chain Break Strike | — | 血链·希洛的核心爆发技能，造成极高单次爆发伤害。配合环行·拉蒙娜的大招召回打击卡，实现「血希」队核心爆发。 |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | **Exalt**: Exalt | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| Chain Break Strike | — | 血链·希洛的核心爆发技能，造成极高单次爆发伤害。配合环行·拉蒙娜的大招召回打击卡，实现「血希」队核心爆发。 |
 | *Enlighten* | — | Data pending |
 
 

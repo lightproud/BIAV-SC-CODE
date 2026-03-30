@@ -25,9 +25,9 @@ portrait: /portraits/celeste.png
 
 | Card | Cost | Effect |
 |------|------|------|
-| *Command Cards* | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | **Exalt**: Exalt | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| *Command Cards* | — | Data pending |
 | **Talent**: Soulforge Aptitude | — | 希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。 |
 | *Enlighten* | — | Data pending |
 

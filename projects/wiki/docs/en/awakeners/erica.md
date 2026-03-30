@@ -25,9 +25,9 @@ portrait: /portraits/erica.png
 
 | Card | Cost | Effect |
 |------|------|------|
-| *Command Cards* | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | **Exalt**: Electromagnetic Blast | — | 强力输出大招，附带额外效果。 |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| *Command Cards* | — | Data pending |
 | *Enlighten* | — | Data pending |
 
 ::: tip

@@ -25,10 +25,10 @@ portrait: /portraits/aigis.png
 
 | Card | Cost | Effect |
 |------|------|------|
+| **Exalt**: Exalt | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | Strike | 1 | 标准打击卡 |
 | Defense | 1 | 标准防御卡 |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| **Exalt**: Exalt | — | Data pending |
 | *Enlighten* | — | Data pending |
 
 

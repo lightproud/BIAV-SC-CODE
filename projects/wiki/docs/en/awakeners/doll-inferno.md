@@ -25,10 +25,10 @@ portrait: /portraits/doll-inferno.png
 
 | Card | Cost | Effect |
 |------|------|------|
-| *Command Cards* | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | **Exalt**: Exalt | — | Data pending |
 | **Over-Exalt**: 超限爆发 | — | 接下来3回合内，每回合开始时回复20%体质的生命，并使所有唤醒体获得10点狂气。 |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| *Command Cards* | — | Data pending |
 | *Enlighten* | — | Data pending |
 
 

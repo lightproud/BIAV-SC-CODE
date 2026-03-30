@@ -25,9 +25,9 @@ portrait: /portraits/daffodil.png
 
 | Card | Cost | Effect |
 |------|------|------|
-| *Command Cards* | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | **Exalt**: 狂气爆发 | — | 生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。 |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| *Command Cards* | — | Data pending |
 | *Enlighten* | — | Data pending |
 
 ::: tip

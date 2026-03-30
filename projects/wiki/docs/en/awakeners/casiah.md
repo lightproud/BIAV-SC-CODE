@@ -25,9 +25,9 @@ portrait: /portraits/casiah.png
 
 | Card | Cost | Effect |
 |------|------|------|
-| Telekinesis | — | 从超维空间拉出目标卡牌打出一次，配合达芙黛尔「断颈一击」实现二次打击。 |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | **Exalt**: Exalt | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| Telekinesis | — | 从超维空间拉出目标卡牌打出一次，配合达芙黛尔「断颈一击」实现二次打击。 |
 | *Enlighten* | — | Data pending |
 
 

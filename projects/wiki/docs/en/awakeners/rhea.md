@@ -25,9 +25,9 @@ portrait: /portraits/rhea.png
 
 | Card | Cost | Effect |
 |------|------|------|
-| *Command Cards* | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
 | **Exalt**: 狂气爆发 | — | 回复30%体质(每级+3%)生命值，获得15%体质(每级+1.5%)力量。当前每损失1%生命值，回复量提高2%。触发吞噬时回复量翻倍。血量最低时触发吞噬可回复180%体质生命值。 |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| *Command Cards* | — | Data pending |
 | *Enlighten* | — | Data pending |
 
 ::: tip

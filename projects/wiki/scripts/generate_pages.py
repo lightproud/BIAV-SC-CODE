@@ -236,10 +236,37 @@ def render_skills_table(skills: dict, lang: str) -> str:
         "|------|------|------|",
     ]
 
-    # ── Command Cards ──
+    # ── 1. Exalt (狂气爆发) ──
+    exalt = skills.get("exalt")
+    exalt_name = _name(exalt) if exalt else L["exalt"]
+    exalt_effect = _esc(exalt.get("effect", pending)) if exalt else pending
+    lines.append(f"| **{L['exalt']}**: {_esc(exalt_name)} | — | {exalt_effect} |")
+
+    # ── Over-Exalt (optional) ──
+    oe = skills.get("overexalt")
+    if oe:
+        oe_name = _name(oe)
+        oe_effect = _esc(oe.get("effect", pending))
+        lines.append(f"| **{L['overexalt']}**: {_esc(oe_name)} | — | {oe_effect} |")
+
+    # ── 2. Rouse (觉醒卡) ──
+    rouse = skills.get("rouse")
+    rouse_name = _name(rouse) if rouse else L["rouse"]
+    rouse_effect = _esc(rouse.get("effect", pending)) if rouse else pending
+    lines.append(f"| **{L['rouse']}**: {_esc(rouse_name)} | — | {rouse_effect} |")
+
+    # ── 3-4. Skill cards (non-strike, non-defense) then 5-6. Strike/Defense ──
     cards = skills.get("command_cards")
     if cards:
+        basic = []   # 打击/防御
+        skill = []   # 技能卡
         for card in cards:
+            name_lower = (card.get("name", "") + card.get("name_en", "")).lower()
+            if any(kw in name_lower for kw in ("打击", "防御", "strike", "defense", "defend", "guard")):
+                basic.append(card)
+            else:
+                skill.append(card)
+        for card in skill + basic:
             name = _name(card)
             cost = _esc(card.get("cost", "—"))
             effect = _esc(card.get("effect", ""))
@@ -254,25 +281,6 @@ def render_skills_table(skills: dict, lang: str) -> str:
                 lines.append(f"| ↳ {uname} | — | {ueffect} |")
     else:
         lines.append(f"| *{L['command_cards']}* | — | {pending} |")
-
-    # ── Rouse ──
-    rouse = skills.get("rouse")
-    rouse_name = _name(rouse) if rouse else L["rouse"]
-    rouse_effect = _esc(rouse.get("effect", pending)) if rouse else pending
-    lines.append(f"| **{L['rouse']}**: {_esc(rouse_name)} | — | {rouse_effect} |")
-
-    # ── Exalt ──
-    exalt = skills.get("exalt")
-    exalt_name = _name(exalt) if exalt else L["exalt"]
-    exalt_effect = _esc(exalt.get("effect", pending)) if exalt else pending
-    lines.append(f"| **{L['exalt']}**: {_esc(exalt_name)} | — | {exalt_effect} |")
-
-    # ── Over-Exalt (optional) ──
-    oe = skills.get("overexalt")
-    if oe:
-        oe_name = _name(oe)
-        oe_effect = _esc(oe.get("effect", pending))
-        lines.append(f"| **{L['overexalt']}**: {_esc(oe_name)} | — | {oe_effect} |")
 
     # ── Talent (optional) ──
     talent = skills.get("talent")
