@@ -1,17 +1,27 @@
 {
   "date": "2026-01-17",
-  "messages": 2,
+  "messages": 3,
   "unique_authors": 2,
-  "reactions_total": 0,
+  "reactions_total": 1,
   "attachments": 0,
   "channel_activity": {
+    "1193859503096070234": 1,
     "1448648649486635128": 2
   },
   "hourly_activity": {
+    "12": 1,
     "8": 2
   },
   "message_types": {
-    "0": 2
+    "0": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1462054643944394843",
+      "content": "",
+      "author": "sleepy_amber",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
 }

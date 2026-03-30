@@ -1,0 +1,25 @@
+{
+  "date": "2025-09-10",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 19,
+  "attachments": 0,
+  "channel_activity": {
+    "1305430084420898868": 1
+  },
+  "hourly_activity": {
+    "3": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1415175515177750612",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 19,
+      "channel": ""
+    }
+  ]
+}

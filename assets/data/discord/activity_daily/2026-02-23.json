@@ -1,10 +1,13 @@
 {
   "date": "2026-02-23",
-  "messages": 12,
+  "messages": 15,
   "unique_authors": 8,
-  "reactions_total": 148,
+  "reactions_total": 151,
   "attachments": 0,
   "channel_activity": {
+    "1471903688032522388": 1,
+    "1457468446353653792": 1,
+    "1456019117805932636": 1,
     "🐱light’s-nest": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
@@ -14,19 +17,20 @@
     "1403373754175721657": 1
   },
   "hourly_activity": {
+    "5": 2,
+    "4": 1,
+    "3": 2,
     "16": 1,
     "13": 1,
     "1": 1,
-    "3": 1,
-    "5": 1,
     "9": 1,
     "10": 1,
     "11": 4,
     "12": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 2
+    "0": 2,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -44,6 +48,13 @@
       "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
     },
     {
+      "id": "1475339838277550301",
+      "content": "",
+      "author": "amstelredam",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
       "id": "1475478335684345895",
       "content": "",
       "author": "noeyebunny.nobunsu",
@@ -55,6 +66,13 @@
       "content": "",
       "author": "no.tea.",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1475344683625353458",
+      "content": "",
+      "author": "amstelredam",
+      "reactions": 1,
       "channel": ""
     },
     {

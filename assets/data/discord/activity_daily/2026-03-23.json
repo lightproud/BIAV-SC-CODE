@@ -1,10 +1,15 @@
 {
   "date": "2026-03-23",
-  "messages": 118,
+  "messages": 136,
   "unique_authors": 45,
-  "reactions_total": 43,
+  "reactions_total": 49,
   "attachments": 0,
   "channel_activity": {
+    "1468895834199298215": 1,
+    "1450001353064714320": 6,
+    "1485628489939030187": 2,
+    "1485579402971582495": 2,
+    "1484467018118987888": 7,
     "🔸课间休息闲聊": 3,
     "🔸deutscher-chatraum": 43,
     "🔸chaîne-française": 1,
@@ -25,6 +30,13 @@
     "1484212697015914496": 1
   },
   "hourly_activity": {
+    "6": 10,
+    "0": 2,
+    "1": 8,
+    "4": 7,
+    "13": 5,
+    "10": 3,
+    "2": 5,
     "12": 5,
     "15": 13,
     "17": 6,
@@ -34,22 +46,15 @@
     "22": 1,
     "16": 1,
     "8": 11,
-    "1": 3,
-    "2": 3,
     "3": 5,
     "5": 4,
-    "10": 1,
-    "13": 3,
-    "6": 9,
     "7": 3,
     "14": 13,
-    "4": 3,
     "11": 1
   },
   "message_types": {
-    "0": 94,
-    "19": 23,
-    "4": 1
+    "0": 12,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -71,6 +76,34 @@
       "content": "",
       "author": "gacha_ping",
       "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1485453086309744640",
+      "content": "",
+      "author": "polkarain",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485579402971582495",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1485494830141276380",
+      "content": "",
+      "author": "snorlax01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1485628489939030187",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 1,
       "channel": ""
     },
     {

@@ -1,17 +1,59 @@
 {
   "date": "2025-10-14",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
+  "messages": 11,
+  "unique_authors": 4,
+  "reactions_total": 19,
   "attachments": 0,
   "channel_activity": {
+    "1305430084420898868": 7,
+    "1234769700735418368": 3,
     "1421408684776357929": 1
   },
   "hourly_activity": {
+    "8": 4,
+    "10": 4,
+    "7": 2,
     "12": 1
   },
   "message_types": {
+    "0": 9,
     "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1427568689888104539",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1427564642372288554",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1427569242722533470",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1427602591134646293",
+      "content": "",
+      "author": "carme.0588",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1427566839914823771",
+      "content": "",
+      "author": "zekiei",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
 }

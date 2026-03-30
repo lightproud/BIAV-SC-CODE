@@ -1,10 +1,16 @@
 {
   "date": "2026-03-20",
-  "messages": 116,
+  "messages": 154,
   "unique_authors": 32,
-  "reactions_total": 15,
+  "reactions_total": 47,
   "attachments": 0,
   "channel_activity": {
+    "1482090443851432056": 1,
+    "1482043230072864960": 1,
+    "1482002768637071370": 4,
+    "1468895834199298215": 2,
+    "1450001353064714320": 2,
+    "1484467018118987888": 28,
     "🔸课间休息闲聊": 5,
     "🔸日本語チャンネル": 8,
     "🔸chaîne-française": 1,
@@ -22,32 +28,55 @@
     "1484212697015914496": 7
   },
   "hourly_activity": {
-    "2": 7,
+    "3": 7,
+    "5": 3,
+    "2": 9,
+    "9": 11,
+    "6": 1,
+    "8": 13,
+    "10": 56,
+    "12": 7,
+    "13": 5,
     "7": 3,
     "11": 17,
     "0": 6,
     "4": 4,
-    "9": 4,
     "20": 2,
     "1": 3,
-    "5": 2,
-    "8": 1,
-    "10": 51,
     "14": 1,
     "15": 1,
     "22": 1,
     "23": 2,
     "21": 1,
-    "12": 1,
-    "3": 4,
-    "13": 4,
     "16": 1
   },
   "message_types": {
-    "0": 105,
-    "19": 11
+    "0": 32,
+    "4": 2,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1484467090726584522",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1484467018118987888",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1484467226336559198",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 7,
+      "channel": ""
+    },
     {
       "id": "1484500847911239871",
       "content": "",
@@ -63,6 +92,27 @@
       "channel": ""
     },
     {
+      "id": "1484472107516694681",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1484474454448017461",
+      "content": "",
+      "author": "wangyuan4880",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1484536564825460827",
+      "content": "",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
       "id": "1484490742905700423",
       "content": "",
       "author": "laguna051",
@@ -74,6 +124,27 @@
       "content": "",
       "author": "_cwz_",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1484482792904724480",
+      "content": "",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1484497276293353593",
+      "content": "",
+      "author": "harowolf",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1484535350352281681",
+      "content": "",
+      "author": "jollysquire",
+      "reactions": 1,
       "channel": ""
     },
     {

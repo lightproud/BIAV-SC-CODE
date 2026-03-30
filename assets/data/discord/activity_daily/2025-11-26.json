@@ -1,17 +1,18 @@
 {
   "date": "2025-11-26",
-  "messages": 2,
+  "messages": 3,
   "unique_authors": 2,
-  "reactions_total": 4,
+  "reactions_total": 5,
   "attachments": 0,
   "channel_activity": {
+    "1234769700735418368": 1,
     "1429401798439080028": 2
   },
   "hourly_activity": {
+    "16": 1,
     "12": 2
   },
   "message_types": {
-    "0": 1,
     "19": 1
   },
   "top_reacted_messages": [
@@ -20,6 +21,13 @@
       "content": "",
       "author": "ass191044",
       "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1443270430910841094",
+      "content": "",
+      "author": "sinh_40042",
+      "reactions": 1,
       "channel": ""
     },
     {

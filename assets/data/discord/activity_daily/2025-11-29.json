@@ -1,19 +1,21 @@
 {
   "date": "2025-11-29",
-  "messages": 2,
+  "messages": 3,
   "unique_authors": 2,
   "reactions_total": 723,
   "attachments": 0,
   "channel_activity": {
+    "1305430084420898868": 1,
     "🔸礼包码┊gift-codes": 1,
     "1296113810549112874": 1
   },
   "hourly_activity": {
+    "16": 1,
     "14": 1,
     "12": 1
   },
   "message_types": {
-    "0": 2
+    "0": 1
   },
   "top_reacted_messages": [
     {

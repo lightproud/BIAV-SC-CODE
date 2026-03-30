@@ -1,10 +1,15 @@
 {
   "date": "2026-02-15",
-  "messages": 40,
+  "messages": 50,
   "unique_authors": 13,
-  "reactions_total": 73,
+  "reactions_total": 90,
   "attachments": 0,
   "channel_activity": {
+    "1472608584381759610": 3,
+    "1472375569919381729": 3,
+    "1467225902029996154": 1,
+    "1450001353064714320": 2,
+    "1471356257708408843": 1,
     "🔸欢乐梗图": 8,
     "🔸忘却前夜┊morimens-tv": 1,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
@@ -15,20 +20,23 @@
     "1403373754175721657": 17
   },
   "hourly_activity": {
-    "11": 1,
+    "15": 7,
+    "7": 1,
+    "9": 2,
+    "0": 1,
+    "14": 12,
+    "18": 12,
+    "11": 2,
     "13": 6,
-    "14": 11,
     "4": 1,
     "23": 1,
     "6": 1,
-    "15": 4,
     "16": 3,
-    "18": 11,
     "5": 1
   },
   "message_types": {
-    "0": 36,
-    "19": 4
+    "0": 8,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -36,6 +44,13 @@
       "content": "",
       "author": "no.tea.",
       "reactions": 38,
+      "channel": ""
+    },
+    {
+      "id": "1472608584381759610",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 8,
       "channel": ""
     },
     {
@@ -53,10 +68,24 @@
       "channel": "🔸欢乐梗图"
     },
     {
+      "id": "1472392346652901507",
+      "content": "",
+      "author": "arandomflamev2",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
       "id": "1472620612085350490",
       "content": "",
       "author": "no.tea.",
       "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1472556480413827227",
+      "content": "",
+      "author": "n_cognito",
+      "reactions": 4,
       "channel": ""
     },
     {

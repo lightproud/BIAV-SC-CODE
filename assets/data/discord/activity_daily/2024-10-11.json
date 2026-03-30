@@ -1,17 +1,21 @@
 {
   "date": "2024-10-11",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 2,
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 3,
   "attachments": 0,
   "channel_activity": {
+    "1193859503096070234": 4,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "3": 1,
+    "15": 3,
     "7": 1
   },
   "message_types": {
-    "19": 1
+    "0": 2,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -19,6 +23,13 @@
       "content": "",
       "author": "ice_storys",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1294327469926518845",
+      "content": "",
+      "author": "magushermes",
+      "reactions": 1,
       "channel": ""
     }
   ]

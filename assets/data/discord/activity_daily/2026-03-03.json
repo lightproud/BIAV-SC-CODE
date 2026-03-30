@@ -1,25 +1,49 @@
 {
   "date": "2026-03-03",
-  "messages": 5,
-  "unique_authors": 3,
-  "reactions_total": 19,
+  "messages": 27,
+  "unique_authors": 9,
+  "reactions_total": 41,
   "attachments": 0,
   "channel_activity": {
+    "1478386943799857172": 1,
+    "1477962371518431343": 7,
+    "1477934817109610507": 5,
+    "1477928829459628113": 2,
+    "1477909584155775018": 3,
+    "1477167202884124722": 2,
+    "1468895834199298215": 2,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 3,
     "1477717724615544870": 1,
     "1462840887553032335": 1
   },
   "hourly_activity": {
-    "14": 2,
+    "13": 1,
+    "0": 1,
+    "2": 2,
+    "3": 1,
+    "4": 1,
+    "6": 10,
+    "14": 3,
+    "8": 1,
+    "12": 1,
+    "11": 2,
+    "23": 2,
     "15": 1,
-    "23": 1,
     "5": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 4
+    "0": 10,
+    "19": 7,
+    "4": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1478280114922979409",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 13,
+      "channel": ""
+    },
     {
       "id": "1478406339263856823",
       "content": "",
@@ -33,6 +57,34 @@
       "author": "mightythor",
       "reactions": 7,
       "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1478386943799857172",
+      "content": "",
+      "author": "ican",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1478361743049756776",
+      "content": "",
+      "author": "amstelredam",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1478224699291861164",
+      "content": "",
+      "author": "kalpiko.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478278353701175297",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
     },
     {
       "id": "1478269425366073416",

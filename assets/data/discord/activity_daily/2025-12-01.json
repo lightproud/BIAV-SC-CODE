@@ -1,19 +1,28 @@
 {
   "date": "2025-12-01",
-  "messages": 1,
+  "messages": 2,
   "unique_authors": 1,
-  "reactions_total": 2,
+  "reactions_total": 4,
   "attachments": 0,
   "channel_activity": {
+    "1444886130540548231": 1,
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "3": 1,
     "6": 1
   },
   "message_types": {
     "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1444886130540548231",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": ""
+    },
     {
       "id": "1444934292265373736",
       "content": "",

@@ -1,21 +1,23 @@
 {
   "date": "2025-10-22",
-  "messages": 14,
+  "messages": 18,
   "unique_authors": 5,
-  "reactions_total": 485,
+  "reactions_total": 499,
   "attachments": 0,
   "channel_activity": {
+    "1180846008918343722": 1,
+    "1234769700735418368": 3,
     "🔸礼包码┊gift-codes": 1,
     "1429401798439080028": 13
   },
   "hourly_activity": {
-    "8": 1,
+    "8": 2,
+    "11": 3,
     "9": 2,
     "10": 11
   },
   "message_types": {
-    "0": 12,
-    "19": 2
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -24,6 +26,20 @@
       "author": "morimensstaff02",
       "reactions": 471,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1430472081715368057",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1430515590451302471",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": ""
     },
     {
       "id": "1430504174373703691",

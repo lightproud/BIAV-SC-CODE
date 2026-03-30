@@ -1,19 +1,22 @@
 {
   "date": "2025-10-26",
-  "messages": 6,
-  "unique_authors": 1,
+  "messages": 8,
+  "unique_authors": 2,
   "reactions_total": 303,
   "attachments": 0,
   "channel_activity": {
+    "1305430084420898868": 2,
     "🐱light’s-nest": 6
   },
   "hourly_activity": {
+    "4": 1,
+    "16": 1,
     "7": 3,
     "11": 1,
     "12": 2
   },
   "message_types": {
-    "0": 6
+    "0": 2
   },
   "top_reacted_messages": [
     {

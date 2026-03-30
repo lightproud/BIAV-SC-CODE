@@ -1,10 +1,33 @@
 {
   "date": "2026-03-13",
-  "messages": 133,
-  "unique_authors": 19,
-  "reactions_total": 103,
+  "messages": 267,
+  "unique_authors": 30,
+  "reactions_total": 152,
   "attachments": 0,
   "channel_activity": {
+    "1482090443851432056": 1,
+    "1482043230072864960": 1,
+    "1482002768637071370": 1,
+    "1481968778647437453": 71,
+    "1481958939250790410": 4,
+    "1481958417085235343": 1,
+    "1481913386118807676": 1,
+    "1481908605748777163": 8,
+    "1481853610856943758": 2,
+    "1481848729416765471": 4,
+    "1481812292822765712": 6,
+    "1481679674882003124": 4,
+    "1481656078340067449": 5,
+    "1480698140419166392": 1,
+    "1480588178598658169": 2,
+    "1480582691475689644": 1,
+    "1480508385500725430": 1,
+    "1480504835152547851": 4,
+    "1480431268947693792": 1,
+    "1479353419792650301": 4,
+    "1468895834199298215": 1,
+    "1481947163159429201": 9,
+    "1471356257708408843": 1,
     "🔸课间休息闲聊": 11,
     "🔸服务器公告┊server-announcement": 2,
     "1462840887553032335": 2,
@@ -18,23 +41,30 @@
     "1403373754175721657": 4
   },
   "hourly_activity": {
-    "7": 7,
+    "18": 4,
+    "15": 6,
+    "13": 3,
+    "10": 10,
+    "11": 73,
+    "12": 3,
+    "7": 17,
+    "6": 3,
+    "9": 22,
+    "3": 8,
+    "2": 10,
+    "4": 4,
+    "0": 2,
+    "1": 3,
+    "17": 3,
     "8": 58,
     "16": 1,
-    "10": 4,
-    "4": 3,
-    "17": 2,
-    "11": 1,
     "5": 33,
-    "9": 14,
-    "12": 1,
-    "13": 1,
-    "14": 4,
-    "15": 4
+    "14": 4
   },
   "message_types": {
-    "0": 109,
-    "19": 24
+    "0": 97,
+    "19": 25,
+    "4": 12
   },
   "top_reacted_messages": [
     {
@@ -52,10 +82,94 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1481958417085235343",
+      "content": "",
+      "author": "qingming6054",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1481968778647437453",
+      "content": "",
+      "author": "chillercroc",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
       "id": "1481888270009892946",
       "content": "",
       "author": "yingmai_",
       "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1481980514188394498",
+      "content": "",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1481979623909621810",
+      "content": "",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1481980090756632618",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1481908605748777163",
+      "content": "",
+      "author": "salami_87",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1481900641013076083",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1481978114790920345",
+      "content": "",
+      "author": "qingming6054",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481911767016931480",
+      "content": "",
+      "author": "sonatadocantora",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481942206825631744",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481853655450914890",
+      "content": "",
+      "author": "chinkeeyong",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481851395580628993",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
       "channel": ""
     },
     {
@@ -73,107 +187,23 @@
       "channel": ""
     },
     {
-      "id": "1481917861495705672",
+      "id": "1481979856332787755",
       "content": "",
-      "author": "lingcheng.0",
-      "reactions": 1,
-      "channel": "🔸课间休息闲聊"
-    },
-    {
-      "id": "1481872094127067307",
-      "content": "",
-      "author": "150_ripe",
+      "author": "qingming6054",
       "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1481930281572241428",
+      "id": "1481958939250790410",
       "content": "",
-      "author": "ahong0727",
+      "author": "amstelredam",
       "reactions": 1,
       "channel": ""
     },
     {
-      "id": "1481960787307266130",
+      "id": "1481853610856943758",
       "content": "",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481892514138030233",
-      "content": "",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481926490554761297",
-      "content": "",
-      "author": "koe_ghost",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1482006291001118915",
-      "content": "",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1482022701177503948",
-      "content": "",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481886346963320934",
-      "content": "",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481886529751355494",
-      "content": "",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481932912755740812",
-      "content": "",
-      "author": "jester_romut",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481932986730680361",
-      "content": "",
-      "author": "jester_romut",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481933046184808548",
-      "content": "",
-      "author": "jester_romut",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481942602554146947",
-      "content": "",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1481949965331988581",
-      "content": "",
-      "author": "wild_pansy",
+      "author": "chinkeeyong",
       "reactions": 1,
       "channel": ""
     }

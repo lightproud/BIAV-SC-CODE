@@ -1,15 +1,18 @@
 {
   "date": "2025-10-31",
-  "messages": 5,
+  "messages": 10,
   "unique_authors": 4,
-  "reactions_total": 51,
+  "reactions_total": 97,
   "attachments": 0,
   "channel_activity": {
+    "1305430084420898868": 4,
+    "1234769700735418368": 1,
     "1423337172655935600": 2,
     "1296113810549112874": 1,
     "1181998821291606097": 2
   },
   "hourly_activity": {
+    "7": 5,
     "15": 1,
     "16": 1,
     "6": 1,
@@ -17,8 +20,8 @@
     "4": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 3
+    "0": 3,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -29,6 +32,13 @@
       "channel": ""
     },
     {
+      "id": "1433716970557276225",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": ""
+    },
+    {
       "id": "1433644152532369458",
       "content": "",
       "author": "navirecorbeau",
@@ -36,10 +46,31 @@
       "channel": ""
     },
     {
+      "id": "1433715343817441372",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1433716686388727828",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
       "id": "1433698759799476305",
       "content": "",
       "author": "yingmai_",
       "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1433716805343510610",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
       "channel": ""
     }
   ]

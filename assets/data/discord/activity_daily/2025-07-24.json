@@ -1,17 +1,22 @@
 {
   "date": "2025-07-24",
-  "messages": 3,
-  "unique_authors": 1,
-  "reactions_total": 1048,
+  "messages": 8,
+  "unique_authors": 4,
+  "reactions_total": 1070,
   "attachments": 0,
   "channel_activity": {
+    "1305430084420898868": 5,
     "🔸礼包码┊gift-codes": 3
   },
   "hourly_activity": {
+    "3": 1,
+    "4": 3,
+    "15": 1,
     "13": 3
   },
   "message_types": {
-    "0": 3
+    "0": 4,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -34,6 +39,27 @@
       "author": "morimensstaff02",
       "reactions": 147,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1397781673440972891",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 20,
+      "channel": ""
+    },
+    {
+      "id": "1397798887783137280",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1397958828888166461",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": ""
     }
   ]
 }

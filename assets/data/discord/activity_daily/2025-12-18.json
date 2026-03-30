@@ -1,26 +1,44 @@
 {
   "date": "2025-12-18",
-  "messages": 23,
+  "messages": 36,
   "unique_authors": 7,
-  "reactions_total": 27,
+  "reactions_total": 57,
   "attachments": 0,
   "channel_activity": {
+    "1446091938456539279": 4,
+    "1305430084420898868": 6,
+    "1234769700735418368": 3,
     "🔸忘却前夜┊morimens-tv": 1,
     "1421408684776357929": 2,
     "1451125609068757074": 20
   },
   "hourly_activity": {
+    "8": 14,
+    "9": 12,
+    "13": 2,
+    "3": 4,
+    "14": 1,
     "2": 1,
-    "16": 2,
-    "8": 12,
-    "9": 7,
-    "13": 1
+    "16": 2
   },
   "message_types": {
-    "0": 21,
-    "19": 2
+    "0": 13
   },
   "top_reacted_messages": [
+    {
+      "id": "1451046516423921776",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": ""
+    },
+    {
+      "id": "1451047931615379611",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": ""
+    },
     {
       "id": "1451125609068757074",
       "content": "",
@@ -47,6 +65,13 @@
       "content": "",
       "author": "shostakovich524",
       "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1451047229291888854",
+      "content": "",
+      "author": "tnimreppep",
+      "reactions": 2,
       "channel": ""
     },
     {

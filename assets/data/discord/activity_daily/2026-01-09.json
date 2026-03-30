@@ -1,25 +1,84 @@
 {
   "date": "2026-01-09",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 5,
+  "messages": 17,
+  "unique_authors": 6,
+  "reactions_total": 25,
   "attachments": 0,
   "channel_activity": {
+    "1305430084420898868": 11,
+    "1234769700735418368": 5,
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
+    "3": 3,
+    "5": 2,
+    "8": 3,
+    "9": 1,
+    "11": 1,
+    "14": 1,
+    "7": 5,
     "21": 1
   },
   "message_types": {
-    "0": 1
+    "19": 6,
+    "0": 10
   },
   "top_reacted_messages": [
+    {
+      "id": "1459060821211615254",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1459092503428071587",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    },
     {
       "id": "1459305534241898558",
       "content": "",
       "author": "frosthief",
       "reactions": 5,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1459097553445584939",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1459033612828807261",
+      "content": "",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1459024248457793724",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1459081047487680717",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1459084306004574301",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 1,
+      "channel": ""
     }
   ]
 }

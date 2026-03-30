@@ -1,10 +1,14 @@
 {
   "date": "2026-03-17",
-  "messages": 123,
+  "messages": 128,
   "unique_authors": 34,
-  "reactions_total": 88,
+  "reactions_total": 100,
   "attachments": 0,
   "channel_activity": {
+    "1481958939250790410": 1,
+    "1479040225685798932": 1,
+    "1468895834199298215": 1,
+    "1305430084420898868": 2,
     "🔸课间休息闲聊": 15,
     "🔸chaîne-française": 50,
     "🔸频道建议┊server-suggestions": 6,
@@ -25,10 +29,12 @@
     "1482676949188087849": 3
   },
   "hourly_activity": {
+    "10": 6,
+    "5": 9,
+    "8": 3,
     "0": 1,
     "1": 5,
     "2": 2,
-    "5": 7,
     "6": 16,
     "9": 7,
     "13": 8,
@@ -38,18 +44,14 @@
     "21": 17,
     "23": 1,
     "11": 2,
-    "8": 1,
     "18": 3,
-    "10": 5,
     "7": 6,
     "3": 2,
     "16": 1,
     "19": 2
   },
   "message_types": {
-    "0": 88,
-    "19": 30,
-    "4": 5
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -71,6 +73,13 @@
       "content": "",
       "author": "yq0227",
       "reactions": 15,
+      "channel": ""
+    },
+    {
+      "id": "1483383443827200001",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 11,
       "channel": ""
     },
     {
@@ -99,6 +108,13 @@
       "content": "",
       "author": "vxvendetta97",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1483335228998287391",
+      "content": "",
+      "author": "l8989c",
+      "reactions": 1,
       "channel": ""
     },
     {

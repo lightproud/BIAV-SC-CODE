@@ -1,16 +1,19 @@
 {
   "date": "2025-12-22",
-  "messages": 9,
+  "messages": 12,
   "unique_authors": 8,
-  "reactions_total": 107,
+  "reactions_total": 109,
   "attachments": 0,
   "channel_activity": {
+    "1446091938456539279": 2,
+    "1305430084420898868": 1,
     "🔸服务器公告┊server-announcement": 1,
     "1452158639874904217": 1,
     "1296113810549112874": 1,
     "1241345906826153984": 6
   },
   "hourly_activity": {
+    "8": 3,
     "21": 1,
     "16": 1,
     "5": 1,
@@ -18,8 +21,8 @@
     "12": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 2
+    "0": 2,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -41,6 +44,13 @@
       "content": "",
       "author": "yolo_mode",
       "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1452584866494283909",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
       "channel": ""
     },
     {

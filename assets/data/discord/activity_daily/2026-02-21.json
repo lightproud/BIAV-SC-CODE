@@ -1,15 +1,19 @@
 {
   "date": "2026-02-21",
-  "messages": 13,
+  "messages": 15,
   "unique_authors": 6,
-  "reactions_total": 38,
+  "reactions_total": 42,
   "attachments": 0,
   "channel_activity": {
+    "1467225902029996154": 1,
+    "1471356257708408843": 1,
     "🔸频道建议┊server-suggestions": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "1241345906826153984": 10
   },
   "hourly_activity": {
+    "2": 1,
+    "1": 1,
     "9": 1,
     "10": 1,
     "12": 1,
@@ -19,7 +23,7 @@
     "18": 5
   },
   "message_types": {
-    "0": 13
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -41,6 +45,13 @@
       "content": "",
       "author": "carrot_chicken",
       "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1474576791439147140",
+      "content": "",
+      "author": "iwthahe",
+      "reactions": 4,
       "channel": ""
     },
     {

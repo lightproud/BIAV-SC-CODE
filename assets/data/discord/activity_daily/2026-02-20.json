@@ -1,10 +1,11 @@
 {
   "date": "2026-02-20",
-  "messages": 17,
+  "messages": 18,
   "unique_authors": 8,
   "reactions_total": 34,
   "attachments": 0,
   "channel_activity": {
+    "1467225902029996154": 1,
     "🔸欢乐梗图": 2,
     "🔸频道建议┊server-suggestions": 3,
     "1462840887553032335": 8,
@@ -12,6 +13,7 @@
     "1181998821291606097": 3
   },
   "hourly_activity": {
+    "23": 1,
     "9": 2,
     "21": 1,
     "22": 2,
@@ -22,8 +24,7 @@
     "12": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 2
+    "0": 1
   },
   "top_reacted_messages": [
     {

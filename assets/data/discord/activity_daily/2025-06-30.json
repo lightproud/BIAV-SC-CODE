@@ -1,21 +1,29 @@
 {
   "date": "2025-06-30",
-  "messages": 3,
-  "unique_authors": 1,
-  "reactions_total": 1,
+  "messages": 6,
+  "unique_authors": 2,
+  "reactions_total": 19,
   "attachments": 0,
   "channel_activity": {
+    "1305430084420898868": 3,
     "1181998821291606097": 3
   },
   "hourly_activity": {
+    "3": 3,
     "2": 1,
     "13": 2
   },
   "message_types": {
-    "19": 1,
-    "0": 2
+    "0": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1389086236987359274",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": ""
+    },
     {
       "id": "1389237499196346469",
       "content": "",

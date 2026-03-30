@@ -1,0 +1,33 @@
+{
+  "date": "2024-06-11",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 5,
+  "attachments": 0,
+  "channel_activity": {
+    "1193859503096070234": 2
+  },
+  "hourly_activity": {
+    "8": 2
+  },
+  "message_types": {
+    "19": 1,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1250007371175170150",
+      "content": "",
+      "author": "halloween8520",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1250008513581813820",
+      "content": "",
+      "author": "yang_42",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

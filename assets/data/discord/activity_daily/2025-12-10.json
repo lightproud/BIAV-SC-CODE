@@ -1,0 +1,50 @@
+{
+  "date": "2025-12-10",
+  "messages": 8,
+  "unique_authors": 4,
+  "reactions_total": 32,
+  "attachments": 0,
+  "channel_activity": {
+    "1305430084420898868": 3,
+    "1234769700735418368": 5
+  },
+  "hourly_activity": {
+    "9": 6,
+    "8": 1,
+    "18": 1
+  },
+  "message_types": {
+    "0": 6,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1448378138500534344",
+      "content": "",
+      "author": "etheus",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1448243975277252669",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1448239818801807410",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1448242380628295732",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": ""
+    }
+  ]
+}

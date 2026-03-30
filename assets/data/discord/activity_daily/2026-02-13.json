@@ -1,10 +1,14 @@
 {
   "date": "2026-02-13",
-  "messages": 13,
+  "messages": 22,
   "unique_authors": 8,
-  "reactions_total": 16,
+  "reactions_total": 22,
   "attachments": 0,
   "channel_activity": {
+    "1471903688032522388": 2,
+    "1471675733301788856": 4,
+    "1456123871383130243": 2,
+    "1471356257708408843": 1,
     "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 2,
     "🔸游戏问题": 1,
@@ -13,16 +17,19 @@
     "1403373754175721657": 2
   },
   "hourly_activity": {
-    "15": 4,
-    "1": 2,
+    "16": 4,
+    "1": 4,
+    "3": 2,
+    "15": 5,
+    "17": 1,
+    "0": 1,
     "4": 1,
-    "16": 2,
     "18": 3,
     "14": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 2
+    "0": 8,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -33,10 +40,38 @@
       "channel": ""
     },
     {
+      "id": "1471707429874962556",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1471657149586214984",
+      "content": "",
+      "author": "iTranslator",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
       "id": "1471878571713630250",
       "content": "",
       "author": "wild_pansy",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1471903688032522388",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1471926577993486489",
+      "content": "",
+      "author": "odinn30",
+      "reactions": 1,
       "channel": ""
     },
     {

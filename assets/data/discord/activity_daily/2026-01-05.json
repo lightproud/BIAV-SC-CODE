@@ -1,19 +1,26 @@
 {
   "date": "2026-01-05",
-  "messages": 5,
-  "unique_authors": 2,
-  "reactions_total": 4,
+  "messages": 9,
+  "unique_authors": 3,
+  "reactions_total": 7,
   "attachments": 0,
   "channel_activity": {
+    "1455874176534712330": 2,
+    "1305430084420898868": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "1421408684776357929": 4
   },
   "hourly_activity": {
+    "5": 1,
+    "9": 1,
+    "2": 1,
+    "4": 1,
     "13": 1,
     "7": 4
   },
   "message_types": {
-    "0": 5
+    "0": 2,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -21,6 +28,20 @@
       "content": "",
       "author": "water_heart",
       "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1457598635054203003",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1457670168644685866",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
       "channel": ""
     },
     {

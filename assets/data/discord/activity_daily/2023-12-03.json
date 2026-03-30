@@ -1,10 +1,11 @@
 {
   "date": "2023-12-03",
-  "messages": 93,
+  "messages": 94,
   "unique_authors": 30,
-  "reactions_total": 25,
+  "reactions_total": 235,
   "attachments": 0,
   "channel_activity": {
+    "1180846008918343722": 1,
     "官方佈告（已停止使用）": 2,
     "遊戲問題及bug回報": 47,
     "discord社群建議": 1,
@@ -13,10 +14,10 @@
     "攻略投遞專區（已停止使用）": 5
   },
   "hourly_activity": {
+    "12": 13,
     "9": 1,
     "18": 1,
     "11": 15,
-    "12": 12,
     "14": 10,
     "15": 9,
     "16": 8,
@@ -35,10 +36,16 @@
     "3": 1
   },
   "message_types": {
-    "0": 53,
-    "19": 40
+    "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1180846008918343722",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 210,
+      "channel": ""
+    },
     {
       "id": "1180848099678224424",
       "content": "",

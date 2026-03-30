@@ -1,10 +1,12 @@
 {
   "date": "2026-02-17",
-  "messages": 43,
+  "messages": 49,
   "unique_authors": 15,
-  "reactions_total": 46,
+  "reactions_total": 67,
   "attachments": 0,
   "channel_activity": {
+    "1473239520706170967": 4,
+    "1473178110831759402": 2,
     "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 24,
     "🔸忘却前夜┊morimens-tv": 2,
@@ -14,8 +16,11 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "8": 1,
+    "15": 1,
+    "17": 3,
+    "4": 5,
     "13": 6,
-    "4": 3,
     "11": 6,
     "12": 13,
     "20": 1,
@@ -23,13 +28,11 @@
     "23": 1,
     "7": 1,
     "9": 5,
-    "17": 1,
     "18": 2,
     "14": 1
   },
   "message_types": {
-    "0": 27,
-    "19": 16
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -40,10 +43,24 @@
       "channel": "🔸欢乐梗图"
     },
     {
+      "id": "1473239520706170967",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
       "id": "1473292764094398597",
       "content": "",
       "author": "navirecorbeau",
       "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1473178110831759402",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
       "channel": ""
     },
     {
@@ -66,6 +83,13 @@
       "author": "satachan",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1473364674484633781",
+      "content": "",
+      "author": "shaw_51",
+      "reactions": 1,
+      "channel": ""
     },
     {
       "id": "1473247718368477306",

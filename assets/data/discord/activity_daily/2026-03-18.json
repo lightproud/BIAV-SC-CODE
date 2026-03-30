@@ -1,10 +1,26 @@
 {
   "date": "2026-03-18",
-  "messages": 109,
+  "messages": 143,
   "unique_authors": 24,
-  "reactions_total": 40,
+  "reactions_total": 56,
   "attachments": 0,
   "channel_activity": {
+    "1482485254018302144": 1,
+    "1482002768637071370": 1,
+    "1481958939250790410": 3,
+    "1481244497584062545": 3,
+    "1480855209755414560": 2,
+    "1480852688286515242": 2,
+    "1479486014266544158": 4,
+    "1468895834199298215": 2,
+    "1458059497187573862": 2,
+    "1456123871383130243": 2,
+    "1455674884712829139": 2,
+    "1455326448683454465": 2,
+    "1455229843368317101": 2,
+    "1451860479097049199": 3,
+    "1450001353064714320": 1,
+    "1483775368598126702": 2,
     "🔸晒卡分享": 60,
     "🔸课间休息闲聊": 3,
     "🔸频道建议┊server-suggestions": 1,
@@ -23,25 +39,34 @@
     "1482983909699616811": 2
   },
   "hourly_activity": {
+    "9": 14,
+    "8": 24,
+    "15": 3,
+    "17": 4,
+    "13": 8,
+    "10": 6,
+    "11": 1,
     "6": 27,
     "7": 46,
-    "13": 7,
     "1": 2,
     "5": 1,
     "23": 1,
-    "17": 1,
-    "8": 11,
-    "9": 5,
-    "15": 2,
     "16": 4,
     "12": 2
   },
   "message_types": {
-    "19": 24,
-    "0": 81,
-    "4": 4
+    "0": 22,
+    "4": 10,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1483784233049915413",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 6,
+      "channel": ""
+    },
     {
       "id": "1483887185181806772",
       "content": "",
@@ -78,11 +103,60 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1483745130556162089",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1483745497674944604",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1483775368598126702",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
       "id": "1483969980079935539",
       "content": "",
       "author": "halcyon0732",
       "reactions": 2,
       "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1483742695095537744",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1483774712633888890",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1483754166349332593",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1483775640409735189",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": ""
     },
     {
       "id": "1483719814613565554",
@@ -125,62 +199,6 @@
       "author": "akkom730",
       "reactions": 1,
       "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1483723457672773672",
-      "content": "",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1483723733779873843",
-      "content": "",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1483732835721547878",
-      "content": "",
-      "author": "be_queitplease",
-      "reactions": 1,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1483730963480449074",
-      "content": "",
-      "author": "xiaosama666",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483744528002322433",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483734817354027141",
-      "content": "",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483706885332013087",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1483746309826416724",
-      "content": "",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

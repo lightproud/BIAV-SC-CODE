@@ -1,28 +1,34 @@
 {
   "date": "2026-02-14",
-  "messages": 17,
+  "messages": 21,
   "unique_authors": 6,
-  "reactions_total": 11,
+  "reactions_total": 12,
   "attachments": 0,
   "channel_activity": {
+    "1472375569919381729": 1,
+    "1472135642602274836": 1,
+    "1471903688032522388": 1,
+    "1471356257708408843": 1,
     "🔸欢乐梗图": 1,
     "1462840887553032335": 4,
     "1440735573206761734": 7,
     "1403373754175721657": 5
   },
   "hourly_activity": {
+    "23": 1,
+    "7": 1,
+    "2": 1,
+    "17": 4,
     "0": 1,
     "1": 1,
     "11": 3,
     "14": 4,
     "15": 2,
     "16": 1,
-    "17": 3,
     "20": 2
   },
   "message_types": {
-    "0": 16,
-    "19": 1
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -51,6 +57,13 @@
       "content": "",
       "author": "wild_pansy",
       "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1472375569919381729",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 1,
       "channel": ""
     },
     {

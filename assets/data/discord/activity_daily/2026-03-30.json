@@ -1,26 +1,29 @@
 {
   "date": "2026-03-30",
-  "messages": 983,
+  "messages": 1196,
   "unique_authors": 137,
-  "reactions_total": 89,
+  "reactions_total": 109,
   "attachments": 0,
   "channel_activity": {
-    "🔸綜合討論": 100,
+    "🔸綜合討論": 117,
+    "🔸morimens-game-chat": 253,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 24,
+    "🔸phòng-chat-tiếng-việt": 127,
+    "🔸ruang-obrolan-indonesia": 46,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "1468895834199298215": 4,
+    "1446091938456539279": 1,
     "🔸阵容构建": 8,
-    "🔸morimens-game-chat": 100,
     "🔸晒卡分享": 5,
     "🔸한국어-채팅방": 24,
-    "🔸русский-канал": 20,
-    "🔸phòng-chat-tiếng-việt": 100,
     "🔸canal-español": 61,
     "🔸canal-português": 14,
-    "🔸ruang-obrolan-indonesia": 41,
     "🔸ห้องสนทนาภาษาไทย": 57,
     "🔸traphase": 8,
     "🔸lore-chat": 71,
     "🔸team-building": 100,
     "🔸general-chat": 100,
-    "🔸邀请码互助┊swap-invitation-codes": 8,
     "🔸game-question": 100,
     "🔸机器人命令┊bot-commands": 29,
     "🔸erica-playground": 17,
@@ -32,23 +35,23 @@
     "1486936365110136832": 3
   },
   "hourly_activity": {
+    "11": 366,
+    "12": 56,
+    "6": 62,
+    "7": 37,
+    "10": 132,
     "8": 57,
     "9": 254,
-    "10": 129,
-    "11": 214,
     "1": 55,
     "3": 42,
     "0": 26,
     "2": 37,
     "4": 53,
-    "5": 19,
-    "6": 61,
-    "7": 36
+    "5": 19
   },
   "message_types": {
-    "0": 703,
-    "19": 265,
-    "20": 15
+    "0": 142,
+    "19": 71
   },
   "top_reacted_messages": [
     {
@@ -73,11 +76,32 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1488146654015262793",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488143952787013733",
+      "content": "",
+      "author": "tnimreppep",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1488132483525382274",
       "content": "",
       "author": "sweet_25367",
       "reactions": 3,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488146014694277343",
+      "content": "",
+      "author": "blecnes.",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1488115814816288918",
@@ -169,27 +193,6 @@
       "author": "erophrix",
       "reactions": 2,
       "channel": "🔸team-building"
-    },
-    {
-      "id": "1488116359425429504",
-      "content": "",
-      "author": "lighteveningdawn",
-      "reactions": 2,
-      "channel": "🔸team-building"
-    },
-    {
-      "id": "1488100464619683911",
-      "content": "",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488123204978475009",
-      "content": "",
-      "author": "forg30215",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,21 +1,39 @@
 {
   "date": "2026-02-07",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 1,
+  "messages": 10,
+  "unique_authors": 5,
+  "reactions_total": 6,
   "attachments": 0,
   "channel_activity": {
+    "1450001353064714320": 8,
     "1462840887553032335": 1,
     "1448648649486635128": 1
   },
   "hourly_activity": {
-    "16": 1,
+    "15": 1,
+    "16": 6,
+    "17": 2,
     "1": 1
   },
   "message_types": {
-    "0": 2
+    "0": 6,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1469733907573506261",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1469747203558866984",
+      "content": "",
+      "author": "melwyn7591",
+      "reactions": 1,
+      "channel": ""
+    },
     {
       "id": "1469510222849511495",
       "content": "",
