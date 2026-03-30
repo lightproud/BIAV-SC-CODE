@@ -37,6 +37,9 @@ jobs:
       - name: Split output by platform
         run: python projects/news/scripts/split_output.py
 
+      - name: Generate daily report
+        run: python projects/news/scripts/generate_daily.py
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"

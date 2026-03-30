@@ -37,6 +37,16 @@ OUTPUT_PATH = REPO_ROOT / 'assets' / 'data' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
 HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
 
+# Bilibili creator MIDs known to produce Morimens content
+# Format: mid (int) -> display name (str). Add more as confirmed.
+BILIBILI_MORIMENS_CREATORS = {
+    545164270: '金发女人丨型',
+    3546572535448498: '萨摩_不耶',
+    478711700: '莱星Ligh',
+    1321878039: '9_9墨玖',
+    32726726: 'God7777',
+}
+
 # Valid source identifiers
 VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review'}
 
@@ -202,11 +212,62 @@ def fetch_reddit(subreddits=None):
     return items
 
 
-def fetch_bilibili():
-    """Fetch Bilibili search results for Morimens keywords."""
-    import subprocess as _sp
-
+def _fetch_bilibili_space():
+    """Fetch videos from known Morimens creators via space API (primary path)."""
     items = []
+    headers = {
+        'User-Agent': 'Mozilla/5.0',
+        'Referer': 'https://www.bilibili.com',
+    }
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+
+    for mid, creator_name in BILIBILI_MORIMENS_CREATORS.items():
+        url = 'https://api.bilibili.com/x/space/arc/search'
+        params = {
+            'mid': mid,
+            'pn': 1,
+            'ps': 20,
+            'order': 'pubdate',
+        }
+        try:
+            resp = requests.get(url, params=params, headers=headers, timeout=15)
+            resp.raise_for_status()
+            vlist = resp.json().get('data', {}).get('list', {}).get('vlist', []) or []
+            count = 0
+            for v in vlist:
+                pubdate = v.get('created', 0)
+                created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
+                if not created or created < cutoff:
+                    continue
+                bvid = v.get('bvid', '')
+                items.append({
+                    'title': strip_html_tags(v.get('title', '')),
+                    'summary': v.get('description', '')[:200],
+                    'source': 'bilibili',
+                    'time': created.isoformat(),
+                    'url': f'https://www.bilibili.com/video/{bvid}' if bvid else '',
+                    'engagement': v.get('play', 0) + v.get('comment', 0),
+                    'is_hot': v.get('play', 0) > 10000,
+                    'author': v.get('author', creator_name),
+                    'tags': [v.get('typeid', '')] if v.get('typeid') else [],
+                })
+                count += 1
+            logger.info(f'Bilibili space {creator_name}({mid}): {count} videos in {HOURS_LOOKBACK}h')
+        except Exception as e:
+            logger.warning(f'Bilibili space {creator_name}({mid}) failed: {e}')
+
+    return items
+
+
+def _fetch_bilibili_search():
+    """Fetch Bilibili search results for Morimens keywords (fallback path)."""
+    items = []
+    headers = {
+        'User-Agent': 'Mozilla/5.0',
+        'Referer': 'https://www.bilibili.com',
+    }
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+
     for keyword in ['忘却前夜', '忘卻前夜']:
         url = 'https://api.bilibili.com/x/web-interface/search/type'
         params = {
@@ -216,10 +277,6 @@ def fetch_bilibili():
             'duration': 0,
             'page': 1,
         }
-        headers = {
-            'User-Agent': 'Mozilla/5.0',
-            'Referer': 'https://www.bilibili.com',
-        }
         try:
             resp = requests.get(url, params=params, headers=headers, timeout=15)
             resp.raise_for_status()
@@ -227,25 +284,32 @@ def fetch_bilibili():
             for v in results[:20]:
                 pubdate = v.get('pubdate', 0)
                 created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
-                if created and datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                if not created or created < cutoff:
                     continue
-                # Strip HTML tags from title
-                title = strip_html_tags(v.get('title', ''))
                 items.append({
-                    'title': title,
+                    'title': strip_html_tags(v.get('title', '')),
                     'summary': v.get('description', '')[:200],
                     'source': 'bilibili',
-                    'time': created.isoformat() if created else datetime.now(timezone.utc).isoformat(),
+                    'time': created.isoformat(),
                     'url': v.get('arcurl', ''),
                     'engagement': v.get('play', 0) + v.get('danmaku', 0),
                     'is_hot': v.get('play', 0) > 10000,
                     'author': v.get('author', ''),
                     'tags': [v.get('typename', '')] if v.get('typename') else [],
                 })
-            logger.info(f'Bilibili "{keyword}": fetched {len(results)} videos')
+            logger.info(f'Bilibili search "{keyword}": fetched {len(results)} videos')
         except Exception as e:
-            logger.warning(f'Bilibili "{keyword}" failed: {e}')
+            logger.warning(f'Bilibili search "{keyword}" failed: {e}')
 
+    return items
+
+
+def fetch_bilibili():
+    """Fetch Bilibili videos: space API (primary) with search API as fallback."""
+    items = _fetch_bilibili_space()
+    if not items:
+        logger.info('Bilibili: space API returned 0 items, falling back to search API')
+        items = _fetch_bilibili_search()
     return items
 
 
@@ -262,7 +326,7 @@ def fetch_twitter():
         return []
 
     items = []
-    query = '(忘却前夜 OR 忘卻前夜 OR Morimens) -is:retweet'
+    query = '(忘却前夜 OR 忘卻前夜 OR Morimens OR モリメンス) -is:retweet'
     url = 'https://api.twitter.com/2/tweets/search/recent'
     params = {
         'query': query,
@@ -458,6 +522,102 @@ def fetch_steam_reviews():
     return items
 
 
+def fetch_steam_news():
+    """Fetch official Steam news/announcements for Morimens (App ID: 3052450)."""
+    app_id = 3052450
+    url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=20&maxlength=500'
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    items = []
+
+    try:
+        resp = requests.get(url, timeout=15)
+        resp.raise_for_status()
+        news_items = resp.json().get('appnews', {}).get('newsitems', [])
+
+        for n in news_items:
+            ts = n.get('date', 0)
+            created = datetime.fromtimestamp(ts, tz=timezone.utc) if ts else None
+            if not created or created < cutoff:
+                continue
+
+            feed_type = n.get('feed_type', 0)
+            feed_label = {0: '公告', 1: '新闻'}.get(feed_type, '资讯')
+
+            items.append({
+                'title': f'[Steam{feed_label}] {strip_html_tags(n.get("title", ""))}',
+                'summary': strip_html_tags(n.get('contents', ''))[:200],
+                'source': 'official',
+                'time': created.isoformat(),
+                'url': n.get('url', ''),
+                'engagement': 0,
+                'is_hot': True,  # Official announcements are always marked hot
+                'author': n.get('author', 'Steam'),
+                'tags': [n.get('feedlabel', '')],
+            })
+
+        logger.info(f'Steam News: fetched {len(items)} announcements')
+    except Exception as e:
+        logger.warning(f'Steam News failed: {e}')
+
+    return items
+
+
+def fetch_fandom_wiki():
+    """Fetch recent changes from Morimens Fandom wiki."""
+    url = 'https://morimens.fandom.com/api.php'
+    params = {
+        'action': 'query',
+        'list': 'recentchanges',
+        'rcnamespace': '0',  # Main namespace only
+        'rclimit': '20',
+        'rcprop': 'title|timestamp|user|comment|sizes',
+        'rctype': 'edit|new',
+        'format': 'json',
+    }
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    items = []
+
+    try:
+        resp = requests.get(url, params=params, timeout=15,
+                            headers={'User-Agent': 'MorimensNewsBot/1.0'})
+        resp.raise_for_status()
+        changes = resp.json().get('query', {}).get('recentchanges', [])
+
+        for rc in changes:
+            ts_str = rc.get('timestamp', '')
+            try:
+                created = datetime.fromisoformat(ts_str.replace('Z', '+00:00'))
+            except (ValueError, TypeError):
+                continue
+            if created < cutoff:
+                continue
+
+            page_title = rc.get('title', '')
+            user = rc.get('user', '')
+            comment = rc.get('comment', '')
+            size_diff = rc.get('newlen', 0) - rc.get('oldlen', 0)
+            rc_type = rc.get('type', 'edit')
+            action = '新建' if rc_type == 'new' else '编辑'
+
+            items.append({
+                'title': f'[Fandom Wiki {action}] {page_title}',
+                'summary': f'{user}: {comment}' if comment else f'{user} {action}了页面',
+                'source': 'official',
+                'time': created.isoformat(),
+                'url': f'https://morimens.fandom.com/wiki/{page_title.replace(" ", "_")}',
+                'engagement': abs(size_diff),
+                'is_hot': abs(size_diff) > 1000 or rc_type == 'new',
+                'author': user,
+                'tags': ['wiki', 'fandom'],
+            })
+
+        logger.info(f'Fandom Wiki: fetched {len(items)} recent changes')
+    except Exception as e:
+        logger.warning(f'Fandom Wiki failed: {e}')
+
+    return items
+
+
 def generate_summary(news_items):
     """
     Generate a daily summary. Uses OpenAI-compatible API if available,
@@ -521,6 +681,8 @@ def run():
         ('NGA', fetch_nga),
         ('TapTap', fetch_taptap),
         ('SteamReviews', fetch_steam_reviews),
+        ('SteamNews', fetch_steam_news),
+        ('FandomWiki', fetch_fandom_wiki),
     ]
 
     for name, fetcher in fetchers:

@@ -23,18 +23,64 @@ jobs:
           direct_push: "true"
         continue-on-error: true
       - name: Merge branch to main
+        id: merge
         if: steps.claude.outcome == 'success'
         run: |
           BRANCH=$(git branch --show-current)
-          if [ "$BRANCH" != "main" ] && [ -n "$BRANCH" ]; then
-            git fetch origin main
-            git checkout main
-            git merge "$BRANCH" --no-edit
-            git push origin main
-            echo "Merged $BRANCH into main"
-          else
+          if [ "$BRANCH" = "main" ] || [ -z "$BRANCH" ]; then
             echo "Already on main, skip merge"
+            echo "merged=false" >> "$GITHUB_OUTPUT"
+            echo "branch=" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
+
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+          git fetch origin main
+
+          # Check if fast-forward is possible (no conflicts)
+          if git merge-base --is-ancestor origin/main HEAD; then
+            echo "Branch is ahead of main, fast-forward possible"
+          elif git merge-base --is-ancestor HEAD origin/main; then
+            echo "Branch is behind main, nothing to merge"
+            echo "merged=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          else
+            # Diverged — try merge, abort on conflict
+            git checkout main
+            if ! git merge "$BRANCH" --no-edit; then
+              git merge --abort
+              echo "merge_error=Merge conflict between $BRANCH and main" >> "$GITHUB_OUTPUT"
+              echo "merged=false" >> "$GITHUB_OUTPUT"
+              exit 1
+            fi
+            git push origin main
+            git push origin --delete "$BRANCH" || true
+            echo "merged=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # Fast-forward path
+          git checkout main
+          git merge "$BRANCH" --no-edit
+          git push origin main
+          git push origin --delete "$BRANCH" || true
+          echo "merged=true" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+      - name: Comment merge failure
+        if: steps.merge.outcome == 'failure'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const issue_number = context.issue?.number;
+            if (!issue_number) return;
+            const branch = '${{ steps.merge.outputs.branch }}';
+            const error = '${{ steps.merge.outputs.merge_error }}' || 'Unknown error';
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              body: `⚠️ 代码已推到分支 \`${branch}\`，但自动合并 main 失败：${error}\n\n请手动合并或在此 Issue 下评论触发重试。[Actions 日志](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})`
+            });
       - name: Close issue on success
         if: steps.claude.outcome == 'success'
         uses: actions/github-script@v8
