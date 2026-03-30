@@ -265,6 +265,7 @@ class DiscordArchiver:
                 'filename': a.get('filename', ''),
                 'content_type': a.get('content_type', ''),
                 'size': a.get('size', 0),
+                'url': a.get('url', ''),
             }
             for a in msg.get('attachments', [])
         ]
