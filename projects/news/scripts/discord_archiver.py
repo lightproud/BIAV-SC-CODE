@@ -485,28 +485,162 @@ class DiscordArchiver:
                 return False
         return True
 
-    # ── Forum channels (incremental only, skip historical) ───────────────────
+    # ── Forum channels ───────────────────────────────────────────────────────
 
-    def fetch_forum_active_threads(self, channel_id, channel_name: str = '') -> int:
+    def _fetch_archived_threads(self, forum_channel_id, channel_name: str = '') -> list:
         """
-        Fetch only currently active threads from a forum channel.
-        Historical thread backfill is deferred (per design decision).
+        Fetch all archived public threads for a forum channel, handling pagination.
+        Discord paginates via archive_timestamp of the last result.
+        Returns a flat list of thread objects.
         """
+        threads = []
+        before = None
+        page = 0
+        while True:
+            params: dict = {'limit': 100}
+            if before:
+                params['before'] = before
+            try:
+                data = self._api(
+                    f'/channels/{forum_channel_id}/threads/archived/public', **params
+                )
+            except Exception as e:
+                logger.warning(
+                    f'Forum {channel_name}({forum_channel_id}) archived page {page} failed: {e}'
+                )
+                break
+            batch = data.get('threads', [])
+            threads.extend(batch)
+            page += 1
+            if not data.get('has_more', False) or not batch:
+                break
+            # Pagination cursor: archive_timestamp of the last thread in the batch
+            last_meta = batch[-1].get('thread_metadata', {})
+            before = last_meta.get('archive_timestamp', '')
+            if not before:
+                break
+            time.sleep(REQUEST_DELAY)
+        logger.info(
+            f'Forum {channel_name}({forum_channel_id}): {len(threads)} archived threads found'
+        )
+        return threads
+
+    def _fetch_forum_thread(
+        self,
+        thread_id,
+        forum_channel_id,
+        thread_meta: dict,
+        api_last_message_id: str = '',
+    ) -> int:
+        """
+        Fetch new messages from a forum thread incrementally.
+        Messages are stored in the *forum channel's* directory (not the thread's own dir),
+        and each message is annotated with thread metadata (title, forum_channel_id).
+        Returns count of newly archived messages.
+        """
+        ch_key = f'thread:{thread_id}'
+        stored_last_id = self._ch_state(ch_key).get('last_message_id', '0')
+
+        # Skip if the thread's last_message_id hasn't changed since our last fetch
+        if api_last_message_id and api_last_message_id != '0' and stored_last_id >= api_last_message_id:
+            return 0
+
+        last_id = stored_last_id
         total = 0
+
+        while True:
+            if self._is_time_up():
+                break
+            params: dict = {'limit': 100}
+            if last_id != '0':
+                params['after'] = last_id
+            try:
+                messages = self._api(f'/channels/{thread_id}/messages', **params)
+            except Exception as e:
+                logger.warning(f'Forum thread {thread_id} fetch failed: {e}')
+                break
+            if not isinstance(messages, list) or not messages:
+                break
+            messages.sort(key=lambda m: m['id'])
+            for msg in messages:
+                slim = self._slim_message(msg)
+                # Annotate with thread metadata so consumers know which post this belongs to
+                slim.update(thread_meta)
+                try:
+                    ts = datetime.fromisoformat(slim['timestamp'].replace('Z', '+00:00'))
+                    date_str = ts.strftime('%Y-%m-%d')
+                except (ValueError, TypeError):
+                    date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+                # Store under the forum channel directory, not the individual thread directory
+                self._write_msg(forum_channel_id, date_str, slim)
+                self._update_daily_stats(slim, thread_meta.get('thread_title', ''))
+                total += 1
+            last_id = messages[-1]['id']
+            self._ch_state(ch_key)['last_message_id'] = last_id
+            time.sleep(REQUEST_DELAY)
+            if len(messages) < 100:
+                break
+
+        return total
+
+    def fetch_forum_threads(self, channel_id, channel_name: str = '') -> int:
+        """
+        Fetch messages from a forum channel by iterating over all threads:
+          - Active threads  (via guild-level active-threads endpoint)
+          - Archived threads (via /channels/{id}/threads/archived/public)
+        Each thread is fetched incrementally; messages are stored in the forum
+        channel's own directory with thread metadata attached.
+        Returns total message count across all threads.
+        """
+        # 1. Active threads (guild-wide endpoint, filtered to this forum)
+        active_threads: list = []
         try:
             data = self._api(f'/guilds/{self.guild_id}/threads/active')
-            threads = [
+            active_threads = [
                 t for t in data.get('threads', [])
                 if str(t.get('parent_id', '')) == str(channel_id)
             ]
-            for thread in threads:
-                if self._is_time_up():
-                    break
-                total += self._fetch_thread_incremental(thread['id'])
         except Exception as e:
             logger.warning(f'Forum {channel_name}({channel_id}) active threads failed: {e}')
 
-        logger.info(f'Forum {channel_name}({channel_id}): {total} messages from active threads')
+        # 2. Archived threads
+        archived_threads: list = []
+        try:
+            archived_threads = self._fetch_archived_threads(channel_id, channel_name)
+        except Exception as e:
+            logger.warning(f'Forum {channel_name}({channel_id}) archived threads error: {e}')
+
+        all_threads = active_threads + archived_threads
+        seen_ids: set = set()
+        total = 0
+
+        for thread in all_threads:
+            if self._is_time_up():
+                logger.warning(f'Runtime limit: forum {channel_name}({channel_id}) incomplete')
+                break
+            t_id = str(thread.get('id', ''))
+            if not t_id or t_id in seen_ids:
+                continue
+            seen_ids.add(t_id)
+
+            thread_meta = {
+                'thread_id': t_id,
+                'thread_title': thread.get('name', ''),
+                'forum_channel_id': str(channel_id),
+            }
+            applied_tags = thread.get('applied_tags', [])
+            if applied_tags:
+                thread_meta['thread_tags'] = applied_tags  # type: ignore[assignment]
+
+            api_last_msg_id = str(thread.get('last_message_id') or '0')
+            count = self._fetch_forum_thread(t_id, channel_id, thread_meta, api_last_msg_id)
+            total += count
+            if count > 0:
+                self._save_state()  # persist per-thread for 断点续传
+
+        logger.info(
+            f'Forum {channel_name}({channel_id}): {total} messages from {len(seen_ids)} threads'
+        )
         return total
 
     def _fetch_thread_incremental(self, thread_id) -> int:
@@ -772,11 +906,11 @@ class DiscordArchiver:
             total_incremental += count
             self._save_state()  # per-channel save for 断点续传
 
-        # Forum channels: incremental only (no historical backfill per design decision)
+        # Forum channels: active + archived threads, incremental (no historical backfill)
         for ch in forum_channels:
             if self._is_time_up():
                 break
-            self.fetch_forum_active_threads(ch['id'], ch.get('name', ''))
+            self.fetch_forum_threads(ch['id'], ch.get('name', ''))
 
         # ── Track 2: Historical backfill ──
         self._init_historical_month()
