@@ -1,25 +1,61 @@
 {
   "date": "2025-03-04",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 6,
-  "attachments": 2,
+  "messages": 7,
+  "unique_authors": 3,
+  "reactions_total": 51,
+  "attachments": 6,
   "channel_activity": {
+    "第1章「N的寄语」无提示事件·星辰篇": 1,
+    "关卡地图「融灾禁区」总览29期·星辰篇": 1,
+    "女守X鯊（OOC警告）": 2,
+    "👨": 2,
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "6": 2,
+    "17": 2,
+    "18": 2,
     "5": 1
   },
   "message_types": {
-    "0": 1
+    "0": 5,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1346553456437104741",
+      "content": "塗鴉🙌",
+      "author": "gazhua123",
+      "reactions": 24,
+      "channel": "👨"
+    },
+    {
+      "id": "1346536789170589768",
+      "content": "以鯊魚的繁殖狂熱改寫。\n疊甲\n本文僅代表本人個人對於鯊的喜愛，文中有OOC的部分請見諒，低質文請別舉報。\n\n正文：\n\n夜深人靜，守密人正躺在床上沉睡，房間裡只有",
+      "author": "void_1546.",
+      "reactions": 11,
+      "channel": "女守X鯊（OOC警告）"
+    },
+    {
+      "id": "1346375434702684200",
+      "content": "> 大家好，这里是难忘今宵攻略组，本次为大家带来的是星辰篇·第1章【重临雾都】的无提示事件。\n本事件出现在关卡1-12，战斗波次1-2之间。\n\n||三个选项的文",
+      "author": "menoctus",
+      "reactions": 6,
+      "channel": "第1章「N的寄语」无提示事件·星辰篇"
+    },
     {
       "id": "1346350172728459398",
       "content": "100036805\n各位我推真的不是溫柯爾",
       "author": "ena04564",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1346376038187274290",
+      "content": "> 大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第2期（第29期）「融灾禁区」地图，以及时灵摆和对应效果与怪物首领。\n请注意V2.1.0.2 停服维护",
+      "author": "menoctus",
+      "reactions": 4,
+      "channel": "关卡地图「融灾禁区」总览29期·星辰篇"
     }
   ]
 }

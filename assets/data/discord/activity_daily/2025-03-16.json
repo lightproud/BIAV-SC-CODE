@@ -1,20 +1,65 @@
 {
   "date": "2025-03-16",
-  "messages": 3,
-  "unique_authors": 1,
-  "reactions_total": 1,
-  "attachments": 3,
+  "messages": 16,
+  "unique_authors": 9,
+  "reactions_total": 41,
+  "attachments": 7,
   "channel_activity": {
+    "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略": 3,
+    "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 3,
+    "弥萨格周报·星辰篇第二期": 1,
+    "雷娅同人随笔": 1,
+    "印了戈利亞的流沙票根": 5,
     "1350059696945500171": 3
   },
   "hourly_activity": {
+    "6": 4,
+    "12": 3,
+    "13": 1,
+    "14": 2,
+    "10": 3,
     "1": 2,
     "18": 1
   },
   "message_types": {
-    "0": 3
+    "0": 13
   },
   "top_reacted_messages": [
+    {
+      "id": "1350771976368820234",
+      "content": "覺得氛圍會蠻適合的就拿自己的圖去印了一下🫱",
+      "author": "yolo_mode",
+      "reactions": 24,
+      "channel": "印了戈利亞的流沙票根"
+    },
+    {
+      "id": "1350713684984336384",
+      "content": "下载至手机观看原图清晰度更佳。",
+      "author": "llhwwc_89248",
+      "reactions": 13,
+      "channel": "弥萨格周报·星辰篇第二期"
+    },
+    {
+      "id": "1350778318999261254",
+      "content": "超好看！！！",
+      "author": "2041880926",
+      "reactions": 1,
+      "channel": "印了戈利亞的流沙票根"
+    },
+    {
+      "id": "1350803478699708527",
+      "content": "鯊魚的肌肌好色",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "印了戈利亞的流沙票根"
+    },
+    {
+      "id": "1350843743820845096",
+      "content": "總有一天得到他",
+      "author": "unmasked0406",
+      "reactions": 1,
+      "channel": "印了戈利亞的流沙票根"
+    },
     {
       "id": "1350900747826364506",
       "content": "Error de traducción en el nombre de la tienda en el menú principal",

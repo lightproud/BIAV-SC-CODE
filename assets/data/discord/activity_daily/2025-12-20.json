@@ -1,22 +1,32 @@
 {
   "date": "2025-12-20",
-  "messages": 9,
+  "messages": 16,
   "unique_authors": 6,
-  "reactions_total": 8,
-  "attachments": 2,
+  "reactions_total": 15,
+  "attachments": 10,
   "channel_activity": {
+    "蓋個圖樓": 1,
+    "银霜节日历（圣诞节贺文）": 3,
+    "我也丟一下之前畫的 圖樓": 1,
+    "✉️OC生贺｜守密人，您收到了两封邮件♛": 1,
+    "圖魯睡覺": 1,
     "1451860479097049199": 1,
     "1445556242381672559": 7,
     "1443848396585828363": 1
   },
   "hourly_activity": {
+    "11": 1,
+    "23": 3,
+    "9": 1,
+    "16": 1,
+    "10": 1,
     "8": 1,
     "0": 7,
     "14": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 2
+    "19": 1,
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -27,11 +37,32 @@
       "channel": ""
     },
     {
+      "id": "1451968479438831699",
+      "content": "注：另有一枚包裹將於午休時間稍後送到！\n    \n⫘⫘⫘ˎˊ˗ ·˖✶ ☽ ☼ ☾ ✶˖· ˗ˏˋ⫘⫘⫘\n    \n守密人：\n\n還記得嗎，我曾問你，卡達斯覆滅之",
+      "author": "flim_of_life_burst",
+      "reactions": 4,
+      "channel": "✉️OC生贺｜守密人，您收到了两封邮件♛"
+    },
+    {
+      "id": "1451869276855336961",
+      "content": "醫生醫生我喜歡你",
+      "author": "tanchen0811",
+      "reactions": 2,
+      "channel": "我也丟一下之前畫的 圖樓"
+    },
+    {
       "id": "1451738208919359578",
       "content": "<:thinking1:1356068128936820929>",
       "author": "velvetrene._cake",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1451900065810747543",
+      "content": "支不支持收米都会超凡所有人的🙄💅",
+      "author": "sadisticgirl.",
+      "reactions": 1,
+      "channel": "蓋個圖樓"
     },
     {
       "id": "1451740290292646081",

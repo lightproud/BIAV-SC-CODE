@@ -1,22 +1,32 @@
 {
   "date": "2025-03-31",
-  "messages": 4,
-  "unique_authors": 3,
-  "reactions_total": 40,
-  "attachments": 2,
+  "messages": 21,
+  "unique_authors": 7,
+  "reactions_total": 73,
+  "attachments": 12,
   "channel_activity": {
+    "Database": 5,
+    "【MMD】蜘蛛糸モノポリー「朵尔」": 1,
+    "朵爾樓 更新：朵爾生日快樂 ᗜ ˬ ᗜ": 1,
+    "奧瑞塔二創": 1,
+    "原創喚醒體 “愛哭鬼和小女孩”": 9,
     "1271491376881598494": 1,
     "1356210707867107391": 1,
     "1356210800091467928": 2
   },
   "hourly_activity": {
+    "12": 3,
+    "13": 1,
+    "14": 2,
+    "20": 1,
+    "7": 9,
+    "8": 1,
     "10": 3,
     "19": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 2,
-    "20": 1
+    "0": 14,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -25,6 +35,41 @@
       "author": "morimensstaff01",
       "reactions": 40,
       "channel": ""
+    },
+    {
+      "id": "1356239554415169697",
+      "content": "对富兰克林来说，求知是否也系蛛丝呢？\n\nvideo：https://b23.tv/O06Zqr8",
+      "author": "silverstream_s",
+      "reactions": 13,
+      "channel": "【MMD】蜘蛛糸モノポリー「朵尔」"
+    },
+    {
+      "id": "1356274393554096188",
+      "content": "UID：100349269\n雖然很多大佬，但畫都畫了就放一下吧(⁠ㆁ⁠ω⁠ㆁ⁠)\n奧瑞塔好可愛！！！",
+      "author": "ainei_00",
+      "reactions": 12,
+      "channel": "奧瑞塔二創"
+    },
+    {
+      "id": "1356240269359579267",
+      "content": "I made database for Awaker, Info about New Dismesion Relics in Star Stage, and W",
+      "author": "tete_ttnhana",
+      "reactions": 5,
+      "channel": "Database"
+    },
+    {
+      "id": "1356171052102975529",
+      "content": "（愛哭鬼原型：阿爾瓦撒）\n\n60級屬性 血肉\n體質111\n攻擊136\n防禦114\n\n打擊：1費\n造成（攻擊力20%）27傷害，獲得10點狂氣，獲得（攻擊力2.5",
+      "author": "ice_storys",
+      "reactions": 2,
+      "channel": "原創喚醒體 “愛哭鬼和小女孩”"
+    },
+    {
+      "id": "1356360435321929798",
+      "content": "I messaged you the list of all the relics",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "Database"
     }
   ]
 }

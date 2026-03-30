@@ -1,17 +1,36 @@
 {
   "date": "2024-05-10",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 20,
+  "unique_authors": 7,
+  "reactions_total": 1,
+  "attachments": 1,
   "channel_activity": {
+    "死抗序列": 1,
+    "[玩家自辦SpeedRun] 多重療愈活動關 Any% 比賽結束！": 12,
+    "原創喚醒體投稿：「戀人」關雎": 4,
+    "囤点自己的弱智画": 1,
+    "摸鱼耶": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "2": 3,
+    "3": 12,
+    "16": 2,
+    "8": 1,
+    "7": 1,
     "10": 1
   },
   "message_types": {
-    "0": 1
+    "0": 18,
+    "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1238325375176671303",
+      "content": "還他媽選三張",
+      "author": "xuan4185",
+      "reactions": 1,
+      "channel": "[玩家自辦SpeedRun] 多重療愈活動關 Any% 比賽結束！"
+    }
+  ]
 }

@@ -1,0 +1,48 @@
+{
+  "date": "2025-08-26",
+  "messages": 11,
+  "unique_authors": 7,
+  "reactions_total": 66,
+  "attachments": 2,
+  "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 3,
+    "尤烏哈希你是一隻大狗": 7,
+    "託乎瓦波之夢": 1
+  },
+  "hourly_activity": {
+    "3": 2,
+    "4": 1,
+    "22": 2,
+    "2": 2,
+    "5": 1,
+    "6": 1,
+    "15": 2
+  },
+  "message_types": {
+    "0": 8,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1410022905596612799",
+      "content": "世間不過是您的一縷夢境。睡吧，無目之瞳。\n群星將伴您入眠，願您永不甦醒。\n\nuid:100047306",
+      "author": "yolo_mode",
+      "reactions": 35,
+      "channel": "託乎瓦波之夢"
+    },
+    {
+      "id": "1409727188567068683",
+      "content": "我賭他爬守密人床一定不脫鞋的（\n\nuid: 100047306",
+      "author": "yolo_mode",
+      "reactions": 30,
+      "channel": "尤烏哈希你是一隻大狗"
+    },
+    {
+      "id": "1409735075075067984",
+      "content": "我們有美味蟹堡尤烏也該有守密人點心（X",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "尤烏哈希你是一隻大狗"
+    }
+  ]
+}

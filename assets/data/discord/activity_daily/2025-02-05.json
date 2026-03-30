@@ -1,0 +1,29 @@
+{
+  "date": "2025-02-05",
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 16,
+  "attachments": 1,
+  "channel_activity": {
+    "新春-尤烏哈希 Uvhash【為喚醒體換新裝】": 3,
+    "图鲁": 2
+  },
+  "hourly_activity": {
+    "17": 3,
+    "2": 1,
+    "22": 1
+  },
+  "message_types": {
+    "0": 3,
+    "4": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1336750874134970439",
+      "content": "UID：100849616\n有點晚了但是祝各位新一年開開心心，新年快樂 ❗️\n A bit late but happy new year anyway ❗️\n",
+      "author": "panth3936",
+      "reactions": 16,
+      "channel": "新春-尤烏哈希 Uvhash【為喚醒體換新裝】"
+    }
+  ]
+}

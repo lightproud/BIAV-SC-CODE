@@ -1,17 +1,26 @@
 {
   "date": "2024-11-01",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 18,
-  "attachments": 1,
+  "messages": 11,
+  "unique_authors": 6,
+  "reactions_total": 46,
+  "attachments": 4,
   "channel_activity": {
+    "死亡已經迫近，消亡已經開始": 7,
+    "嘿嘿": 1,
+    "《忘卻前夜》限定喚醒體「24」復刻宣傳PV": 1,
+    "表情包": 1,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "4": 3,
+    "13": 5,
+    "10": 1,
+    "8": 1,
     "11": 1
   },
   "message_types": {
-    "0": 1
+    "0": 9,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -20,6 +29,27 @@
       "author": "navirecorbeau",
       "reactions": 18,
       "channel": ""
+    },
+    {
+      "id": "1301904716854329384",
+      "content": "懶得細化了就這樣吧 <:scared:1239910882943832065>",
+      "author": "muggypeasant",
+      "reactions": 13,
+      "channel": "嘿嘿"
+    },
+    {
+      "id": "1301904935910244362",
+      "content": "幫你開提名：萊克（但相方是n<:laugh:1243502404394160208> )\n可按讚投票",
+      "author": "kong760",
+      "reactions": 9,
+      "channel": "死亡已經迫近，消亡已經開始"
+    },
+    {
+      "id": "1301848335057027133",
+      "content": "活動時間：10月21日 09:00 - 11月4日 09:00(GMT+8)\n\n從不惹麻煩的梅森又惹麻煩了。\n等等，讓我們先確認一下，惹麻煩的是哪一個「梅森」？",
+      "author": "menoctus",
+      "reactions": 6,
+      "channel": "《忘卻前夜》限定喚醒體「24」復刻宣傳PV"
     }
   ]
 }

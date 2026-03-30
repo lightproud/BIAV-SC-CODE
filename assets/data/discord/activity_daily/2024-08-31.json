@@ -1,0 +1,37 @@
+{
+  "date": "2024-08-31",
+  "messages": 16,
+  "unique_authors": 5,
+  "reactions_total": 6,
+  "attachments": 0,
+  "channel_activity": {
+    "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）": 15,
+    "相位基本型推介／PVP typical team suggestion": 1
+  },
+  "hourly_activity": {
+    "4": 2,
+    "5": 3,
+    "10": 6,
+    "12": 5
+  },
+  "message_types": {
+    "0": 14,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1279392255031119914",
+      "content": "我同意素材關不能太難\n但事實上最重要的道具主要產出在災區\n而災區對新手極度不友好\n主線的等級道具還是後來補的\n原本沒降低的難度也不是完全打不過或是極度凹\n就算無",
+      "author": "hananichiya",
+      "reactions": 4,
+      "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
+    },
+    {
+      "id": "1279390649782898708",
+      "content": "原本的災區就是要搞這個\n結果嘿\n綁等級上限道具",
+      "author": "hananichiya",
+      "reactions": 2,
+      "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
+    }
+  ]
+}

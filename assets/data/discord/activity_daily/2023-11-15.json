@@ -1,17 +1,21 @@
 {
   "date": "2023-11-15",
-  "messages": 1,
+  "messages": 4,
   "unique_authors": 1,
   "reactions_total": 0,
   "attachments": 1,
   "channel_activity": {
+    "關於「融蝕」的小知識~": 1,
+    "「刻印」介紹": 2,
     "官方佈告（已停止使用）": 1
   },
   "hourly_activity": {
-    "12": 1
+    "12": 2,
+    "2": 2
   },
   "message_types": {
-    "0": 1
+    "0": 2,
+    "4": 1
   },
   "top_reacted_messages": []
 }

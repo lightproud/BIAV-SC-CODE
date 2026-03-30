@@ -1,10 +1,15 @@
 {
   "date": "2026-02-17",
-  "messages": 1407,
+  "messages": 1427,
   "unique_authors": 70,
-  "reactions_total": 308,
-  "attachments": 76,
+  "reactions_total": 373,
+  "attachments": 82,
   "channel_activity": {
+    "皮克曼生日快乐": 4,
+    "[利莫里亞]第一大將軍‼️淩晨私會🔞神秘魚人": 5,
+    "新年快乐！|| 杜勒赛因x西维斯特": 7,
+    "新年快樂": 3,
+    "Happy new year！": 1,
     "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 24,
     "🔸忘却前夜┊morimens-tv": 2,
@@ -23,35 +28,42 @@
     "🔸阵容构建": 22
   },
   "hourly_activity": {
+    "0": 15,
+    "15": 50,
+    "16": 5,
+    "20": 3,
+    "9": 151,
+    "11": 258,
+    "12": 145,
+    "2": 94,
+    "8": 36,
+    "1": 73,
     "13": 49,
     "4": 44,
-    "11": 256,
-    "12": 143,
-    "20": 2,
     "22": 4,
     "23": 4,
     "7": 21,
-    "9": 148,
     "17": 13,
     "18": 23,
     "14": 170,
-    "8": 35,
-    "15": 48,
     "3": 10,
     "5": 144,
     "19": 2,
-    "0": 10,
-    "1": 72,
-    "2": 93,
     "6": 91,
-    "10": 22,
-    "16": 3
+    "10": 22
   },
   "message_types": {
-    "0": 1078,
-    "19": 329
+    "0": 17,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1473345269792772157",
+      "content": "報社記者在現場只找到髒骸城狗仔的相機和這張相紙，關於狗仔的下落我們仍舊未知。\n\n\n繪師：等於幾",
+      "author": "calmdreab",
+      "reactions": 27,
+      "channel": "[利莫里亞]第一大將軍‼️淩晨私會🔞神秘魚人"
+    },
     {
       "id": "1473329092735668245",
       "content": "Getting back into the groove of doodling quick full body sprites, and what bette",
@@ -74,11 +86,25 @@
       "channel": ""
     },
     {
+      "id": "1473107244714295409",
+      "content": "小皮小皮你超可爱。",
+      "author": "dittoqwq",
+      "reactions": 11,
+      "channel": "皮克曼生日快乐"
+    },
+    {
       "id": "1473292764094398597",
       "content": "趕上了小皮生日快樂<:24_smile:1459073862544130131> ||~~皮克曼給我的融災禁區尾王全替換成融蝕瘋馬~~||",
       "author": "navirecorbeau",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1473249126081761292",
+      "content": "值此特殊时刻，愿好运与繁荣常伴大家左右~ 也希望你能收到很多红包！！\n\n我画了杜勒赛因，为西维斯特准备了小礼物，献给这个日子🧧  两人之间的幸运信物！我今年的愿",
+      "author": "that_one_chippy",
+      "reactions": 9,
+      "channel": "新年快乐！|| 杜勒赛因x西维斯特"
     },
     {
       "id": "1473213355949953077",
@@ -109,6 +135,13 @@
       "channel": ""
     },
     {
+      "id": "1473110923907698751",
+      "content": "利莫里亞的所有人都應該把王冠摘下來",
+      "author": "myth1538",
+      "reactions": 6,
+      "channel": "新年快樂"
+    },
+    {
       "id": "1473178110831759402",
       "content": "左圖是現在重鎖的數值\n右圖是以前重鎖的數值",
       "author": "water_heart",
@@ -121,6 +154,13 @@
       "author": "corposant_1003",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473249192595165325",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 5,
+      "channel": "新年快乐！|| 杜勒赛因x西维斯特"
     },
     {
       "id": "1473215796246478848",
@@ -155,41 +195,6 @@
       "content": "玩我",
       "author": "ahong0727",
       "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473387986036068605",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473391934478352465",
-      "content": "但獻祭無視轉階段還是太猛了",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473140027172192408",
-      "content": "~~1啟我就能拿原型啦www~~",
-      "author": "xingxiu_0209",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473140694884552757",
-      "content": "我入坑第一池就抽米粒啊",
-      "author": "yy42974466",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473184433908748419",
-      "content": "顺便發一下總分：",
-      "author": "corposant_1003",
-      "reactions": 3,
       "channel": "🔸綜合討論"
     }
   ]

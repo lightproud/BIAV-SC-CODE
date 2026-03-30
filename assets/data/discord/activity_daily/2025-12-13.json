@@ -1,28 +1,120 @@
 {
   "date": "2025-12-13",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 2,
-  "attachments": 0,
+  "messages": 32,
+  "unique_authors": 7,
+  "reactions_total": 52,
+  "attachments": 9,
   "channel_activity": {
+    "蓋個圖樓": 4,
+    "我也丟一下之前畫的 圖樓": 2,
+    "一點仿官": 15,
+    "女守X鯊（OOC警告）": 5,
+    "想不到的第二張水仙視姦": 3,
+    "應該是圖樓": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1442647324575928441": 1
   },
   "hourly_activity": {
+    "7": 3,
+    "8": 2,
+    "10": 1,
+    "14": 1,
+    "18": 12,
+    "19": 3,
+    "17": 4,
+    "22": 1,
+    "15": 3,
     "20": 1,
     "12": 1
   },
   "message_types": {
-    "0": 1,
+    "0": 29,
     "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1449307938954153985",
+      "content": "在西打塗鴉牆的拉蒙娜（有點醜）",
+      "author": "souri.10244",
+      "reactions": 13,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1449428653212438659",
+      "content": "我也沒想到會有第二張\n涼拌唄\n\nUID:100336921",
+      "author": "foxcatfurry",
+      "reactions": 10,
+      "channel": "想不到的第二張水仙視姦"
+    },
+    {
+      "id": "1449467312821502013",
+      "content": "還有剛剛畫的女守咪Q版線稿",
+      "author": "souri.10244",
+      "reactions": 6,
+      "channel": "一點仿官"
+    },
+    {
+      "id": "1449467061393948723",
+      "content": "因為這次周年劇情又跑去打大眼睛了嘛 \n所以想做一個仿官的守咪打大眼睛的圖，包含守咪人自己的Q版和她的技能組（這邊選的女守咪），會持續更新到做完，和勞斯討論也會新",
+      "author": "souri.10244",
+      "reactions": 5,
+      "channel": "一點仿官"
+    },
+    {
+      "id": "1449307237058347049",
+      "content": "就這麼默默的把東西搬過來然後給你們看低創鉛筆畫",
+      "author": "diapason0421",
+      "reactions": 4,
+      "channel": "應該是圖樓"
+    },
+    {
+      "id": "1449469203613749440",
+      "content": "終末,目視之餘：從牌庫中選取最多10張指令卡，加入手牌並使其算力消耗降低至0並且打出後獲得250點銀鑰充能；無視算力調和。\n\n晰夢,終有尾聲：從所有鑰令中選取一",
+      "author": "void_1546.",
+      "reactions": 3,
+      "channel": "一點仿官"
+    },
+    {
+      "id": "1449405114971455639",
+      "content": "完成\n但我感覺我頭髮的畫法在跟我其他地方的畫法杯頭",
+      "author": "tanchen0811",
+      "reactions": 2,
+      "channel": "我也丟一下之前畫的 圖樓"
+    },
+    {
+      "id": "1449472268001480815",
+      "content": "晚點我肝個設定",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "一點仿官"
+    },
+    {
+      "id": "1449456210620321822",
+      "content": "太好看了我要上訴",
+      "author": "souri.10244",
+      "reactions": 2,
+      "channel": "女守X鯊（OOC警告）"
+    },
+    {
+      "id": "1449429395726008381",
+      "content": "推特太太畫娜娜生賀然後我在畫這東西覺得草",
+      "author": "foxcatfurry",
+      "reactions": 2,
+      "channel": "想不到的第二張水仙視姦"
+    },
     {
       "id": "1449494185433370664",
       "content": "https://www.youtube.com/shorts/tqlti9aYY7A",
       "author": "lonely_tree",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1449478874273550467",
+      "content": "終末,目視之餘：獲得10點算力，算力上限提高2點；無視算力調和、算力滿盈。\n\n「它」的餘光瞥向你\n你的腦內浮現出不可名狀、不可議論之物\n你痛苦的跪倒\n當他目光轉",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "一點仿官"
     }
   ]
 }

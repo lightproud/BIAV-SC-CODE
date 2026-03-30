@@ -1,29 +1,41 @@
 {
   "date": "2025-12-26",
-  "messages": 14,
+  "messages": 21,
   "unique_authors": 8,
-  "reactions_total": 13,
-  "attachments": 1,
+  "reactions_total": 41,
+  "attachments": 4,
   "channel_activity": {
+    "蓋個圖樓": 1,
+    "嗨又是我我又畫了哈姆林": 5,
+    "银霜节日历（圣诞节贺文）": 1,
     "🔸忘却前夜┊morimens-tv": 4,
     "1451125609068757074": 1,
     "1403373754175721657": 9
   },
   "hourly_activity": {
+    "19": 1,
+    "1": 4,
+    "2": 2,
+    "14": 4,
     "5": 1,
     "8": 2,
     "10": 1,
-    "2": 1,
     "9": 2,
-    "14": 3,
     "15": 1,
     "17": 3
   },
   "message_types": {
-    "0": 12,
-    "19": 2
+    "0": 6,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1453922172207890596",
+      "content": "簡略很多因為這傢伙太難畫☝️",
+      "author": "Deleted User",
+      "reactions": 12,
+      "channel": "嗨又是我我又畫了哈姆林"
+    },
     {
       "id": "1454030783298801760",
       "content": "https://youtu.be/LCGd_lWCTJc?si=fyrdr9o2q1jIXESe",
@@ -32,11 +44,39 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1454195843065450680",
+      "content": "教授.......教授.......",
+      "author": "souri.10244",
+      "reactions": 7,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1453922495181754602",
+      "content": "私設守密人 不知道有沒有人雷\n所以放個防雷墻",
+      "author": "Deleted User",
+      "reactions": 6,
+      "channel": "嗨又是我我又畫了哈姆林"
+    },
+    {
+      "id": "1454116461592445020",
+      "content": "感谢各位到现在还在关注《银霜节日历》系列作品。对于我而言，这次的写作毫无疑问是一次勇敢的尝试。\n\n提前祝各位元旦快乐！\n\nQ：为什么开始写文章？\nA：暑假无聊翻",
+      "author": "150_ripe",
+      "reactions": 2,
+      "channel": "银霜节日历（圣诞节贺文）"
+    },
+    {
       "id": "1454052875457138810",
       "content": "Сори, не удержался с мемом 😄😄\nhttps://www.youtube.com/shorts/ClMw6gbCfTQ",
       "author": "closetom",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1453923496009797754",
+      "content": "畫風好萌！",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "嗨又是我我又畫了哈姆林"
     },
     {
       "id": "1453987956019957862",

@@ -1,19 +1,37 @@
 {
   "date": "2024-10-26",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 2,
-  "attachments": 0,
+  "messages": 17,
+  "unique_authors": 5,
+  "reactions_total": 15,
+  "attachments": 6,
   "channel_activity": {
+    "忘卻困難版大挑戰！": 7,
+    "苦海……": 2,
+    "在卿卿我我上創了個尤烏哈希": 3,
+    "玫瑰": 3,
     "1181998821291606097": 2
   },
   "hourly_activity": {
+    "14": 7,
+    "0": 1,
+    "8": 2,
+    "13": 2,
+    "17": 1,
+    "10": 1,
+    "15": 1,
     "9": 2
   },
   "message_types": {
-    "19": 2
+    "0": 15
   },
   "top_reacted_messages": [
+    {
+      "id": "1299654824161447956",
+      "content": "优雅，带着刺",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 13,
+      "channel": "玫瑰"
+    },
     {
       "id": "1299669884799684681",
       "content": "什么情况，现在我才过到第四章🥺",

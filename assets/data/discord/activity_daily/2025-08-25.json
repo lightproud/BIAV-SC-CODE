@@ -1,19 +1,27 @@
 {
   "date": "2025-08-25",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 4,
+  "messages": 12,
+  "unique_authors": 8,
+  "reactions_total": 5,
   "attachments": 0,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 7,
+    "[于丽埃特x女守密人][伪繁衍狂热]卵壳": 1,
     "1305430084420898868": 2,
     "1181147096234065920": 2
   },
   "hourly_activity": {
+    "1": 1,
+    "15": 2,
+    "17": 2,
+    "19": 1,
+    "22": 1,
+    "6": 1,
     "12": 2,
     "16": 2
   },
   "message_types": {
-    "0": 4
+    "0": 8
   },
   "top_reacted_messages": [
     {
@@ -22,6 +30,13 @@
       "author": "yuluomea",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1409420564447236167",
+      "content": "太好赤了（嚼嚼嚼）這真是（嚼嚼嚼）國宴級別的飯了（嚼嚼嚼）",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
     }
   ]
 }

@@ -1,31 +1,31 @@
 {
   "date": "2026-03-30",
-  "messages": 1471,
+  "messages": 3821,
   "unique_authors": 180,
-  "reactions_total": 105,
-  "attachments": 115,
+  "reactions_total": 314,
+  "attachments": 201,
   "channel_activity": {
-    "🔸綜合討論": 100,
-    "🔸阵容构建": 29,
-    "🔸morimens-game-chat": 100,
+    "🔸綜合討論": 123,
+    "🔸阵容构建": 33,
+    "🔸morimens-game-chat": 1039,
+    "🔸phòng-chat-tiếng-việt": 1391,
+    "🔸canal-español": 96,
+    "🔸canal-português": 94,
+    "🔸ห้องสนทนาภาษาไทย": 91,
+    "🔸traphase": 101,
+    "🔸team-building": 102,
+    "🔸general-chat": 120,
+    "🔸game-question": 135,
+    "🔸机器人命令┊bot-commands": 39,
+    "🔸erica-playground": 18,
     "🔸晒卡分享": 5,
     "🔸相位对弈": 6,
     "🔸한국어-채팅방": 58,
     "🔸deutscher-chatraum": 2,
     "🔸русский-канал": 100,
-    "🔸phòng-chat-tiếng-việt": 100,
-    "🔸canal-español": 85,
-    "🔸canal-português": 74,
     "🔸ruang-obrolan-indonesia": 100,
-    "🔸ห้องสนทนาภาษาไทย": 90,
-    "🔸traphase": 100,
     "🔸lore-chat": 71,
-    "🔸team-building": 100,
-    "🔸general-chat": 100,
     "🔸邀请码互助┊swap-invitation-codes": 19,
-    "🔸game-question": 100,
-    "🔸机器人命令┊bot-commands": 37,
-    "🔸erica-playground": 17,
     "1421408684776357929": 10,
     "1488204690226282697": 1,
     "1488150923212750938": 4,
@@ -45,13 +45,16 @@
     "1482261084101541969": 1
   },
   "hourly_activity": {
+    "17": 819,
+    "18": 1057,
+    "19": 544,
+    "20": 4,
     "14": 260,
     "15": 200,
     "16": 304,
     "1": 32,
     "9": 49,
     "11": 50,
-    "17": 74,
     "3": 25,
     "10": 50,
     "0": 22,
@@ -65,9 +68,9 @@
     "5": 13
   },
   "message_types": {
-    "0": 1110,
-    "19": 346,
-    "20": 15
+    "19": 666,
+    "0": 1683,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -76,6 +79,41 @@
       "author": "oiia_0216",
       "reactions": 9,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1488224394936320171",
+      "content": "Tôi gọi ông sao ông ko nghe máy",
+      "author": "thuanlatao38",
+      "reactions": 8,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1488231357950857236",
+      "content": "<:GDoll_Inferno_serenity:1468257540809822302>",
+      "author": "frosthief",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488256747188523279",
+      "content": "oh neat",
+      "author": "fishhazardthewizard",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488239237232066780",
+      "content": "lè nhè cả buổi",
+      "author": "reu8090",
+      "reactions": 6,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1488242296003756152",
+      "content": "Cada día más cerca del reinicio mensual <:Daffodil_observe:1459080326063198259>",
+      "author": "duxadidus",
+      "reactions": 5,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1488130193750233088",
@@ -90,6 +128,55 @@
       "author": "dyssayah",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1488234636952997988",
+      "content": "You mean on her period",
+      "author": "crowlov1",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488224896113836207",
+      "content": "he said afterwards, i'm glad her house got burnt",
+      "author": "l8989c",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488256011818242150",
+      "content": "The worst part of my account is that I have never, ever, pulled this thing on it",
+      "author": "good.th",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488256903313227856",
+      "content": "1105 now",
+      "author": "fishhazardthewizard",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488257824369672383",
+      "content": "Feels like my account does this now.\n\nMost of my limiteds the past few months, m",
+      "author": "climbkaly",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488236346589057045",
+      "content": "tag đc đó, nhưng bay 2 mạng :))",
+      "author": "reu8090",
+      "reactions": 3,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1488236681256636497",
+      "content": "Bên đó thấy ko tự nhiên như bên này",
+      "author": "iamminhphuc",
+      "reactions": 3,
+      "channel": "🔸phòng-chat-tiếng-việt"
     },
     {
       "id": "1488110486728998943",
@@ -120,95 +207,11 @@
       "channel": ""
     },
     {
-      "id": "1487974887003000833",
-      "content": "<@276521152245923840>  Audie murphy estaria orgulloso de este soldado americano.",
-      "author": "sayokolefay",
+      "id": "1488223614863015956",
+      "content": "probably ellie, since she works for the government",
+      "author": "khykken",
       "reactions": 2,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1488065102383943720",
-      "content": "Es la fantasía de dominación sexual de <@276521152245923840>",
-      "author": "duxadidus",
-      "reactions": 2,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1488215091060019200",
-      "content": "that was beginner's luck ครับ",
-      "author": "ice3564",
-      "reactions": 2,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1488067709219377323",
-      "content": "Cthulhu is a private eye, and when his partner Dagon ends up dead in the river, ",
-      "author": "_venush",
-      "reactions": 2,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1488083389817819367",
-      "content": "no i mean like. cthulhu tracks down a cult who worships a god named thomas",
-      "author": "insigible",
-      "reactions": 2,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1488114047068143709",
-      "content": "i will prob pull on her rerun",
-      "author": "princess.goth",
-      "reactions": 2,
-      "channel": "🔸team-building"
-    },
-    {
-      "id": "1488114647054815326",
-      "content": "plus when equipped land of nonexistence, she can get 40% more shield from defens",
-      "author": "erophrix",
-      "reactions": 2,
-      "channel": "🔸team-building"
-    },
-    {
-      "id": "1488116359425429504",
-      "content": "Oh, right, I almost forgot you can switch between three",
-      "author": "lighteveningdawn",
-      "reactions": 2,
-      "channel": "🔸team-building"
-    },
-    {
-      "id": "1488156710802690098",
-      "content": "is specifically when you go to edit an already present plan, because, at the mom",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1488070030192283731",
-      "content": "Everyday I wake up in hopes of more SnU collaboration news. To only be disappoin",
-      "author": "dendybluff",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1488207550636888124",
-      "content": "喔喔 就是你之前說的那個",
-      "author": "quackdayo",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488214657457066235",
-      "content": "Slay the spire peak",
-      "author": "._.aahh",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1487992126976299160",
-      "content": "玩毒莉莉可以搬出來",
-      "author": "hon_ey0",
-      "reactions": 1,
-      "channel": "🔸阵容构建"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

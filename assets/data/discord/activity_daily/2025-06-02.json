@@ -1,0 +1,36 @@
+{
+  "date": "2025-06-02",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 22,
+  "attachments": 2,
+  "channel_activity": {
+    "卡斯托尔...": 1,
+    "黑皮大学生": 3
+  },
+  "hourly_activity": {
+    "2": 1,
+    "7": 1,
+    "8": 1,
+    "11": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1378996897745735690",
+      "content": "",
+      "author": "timee_ky",
+      "reactions": 12,
+      "channel": "黑皮大学生"
+    },
+    {
+      "id": "1378926888466124872",
+      "content": "大家好这里是提米，6.2日更新了卡斯托尔，抽取后简单测评一下。先说结论，目前初体验感觉唤醒体中规中矩，不会直观有极强力限定的感受，命轮效果十分不错，+2牌上限以",
+      "author": "timee_ky",
+      "reactions": 10,
+      "channel": "卡斯托尔..."
+    }
+  ]
+}

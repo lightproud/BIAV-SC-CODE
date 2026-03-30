@@ -1,0 +1,25 @@
+{
+  "date": "2025-02-08",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "［繪畫］當你補習時，畫出的畫令你覺得你到底要會考了嗎": 2
+  },
+  "hourly_activity": {
+    "7": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1337690793279754270",
+      "content": "我媽表示（完全不像\n（應該以後拿來丟圖片",
+      "author": "huangziqiao_45693",
+      "reactions": 5,
+      "channel": "［繪畫］當你補習時，畫出的畫令你覺得你到底要會考了嗎"
+    }
+  ]
+}

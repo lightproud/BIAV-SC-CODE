@@ -1,0 +1,32 @@
+{
+  "date": "2025-08-27",
+  "messages": 5,
+  "unique_authors": 5,
+  "reactions_total": 13,
+  "attachments": 1,
+  "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 2,
+    "託乎瓦波之夢": 2,
+    "因為要求要四界域，所以...": 1
+  },
+  "hourly_activity": {
+    "6": 1,
+    "10": 1,
+    "4": 1,
+    "9": 1,
+    "5": 1
+  },
+  "message_types": {
+    "0": 4,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1410133953637126277",
+      "content": "四色希洛",
+      "author": "ice_storys",
+      "reactions": 13,
+      "channel": "因為要求要四界域，所以..."
+    }
+  ]
+}

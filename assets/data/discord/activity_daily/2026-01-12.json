@@ -1,10 +1,16 @@
 {
   "date": "2026-01-12",
-  "messages": 13,
-  "unique_authors": 8,
-  "reactions_total": 29,
-  "attachments": 5,
+  "messages": 165,
+  "unique_authors": 9,
+  "reactions_total": 94,
+  "attachments": 10,
   "channel_activity": {
+    "相位對弈—刷牌隊": 2,
+    "圖樓": 1,
+    "Awakener Kit Speculation: Francis": 3,
+    "血肉防禦型喚醒體—卡洛斯": 77,
+    "喚醒體設計 烏爾托斯": 52,
+    "杜老爺": 17,
     "🔸忘却前夜┊morimens-tv": 1,
     "1296113810549112874": 2,
     "1455874176534712330": 4,
@@ -13,18 +19,32 @@
     "1455822126568308957": 2
   },
   "hourly_activity": {
-    "3": 1,
+    "0": 1,
+    "10": 93,
+    "13": 1,
+    "4": 8,
+    "7": 8,
+    "9": 41,
+    "1": 3,
+    "2": 1,
+    "3": 2,
+    "5": 1,
     "8": 1,
-    "9": 2,
-    "10": 4,
     "14": 3,
     "15": 2
   },
   "message_types": {
-    "0": 12,
-    "19": 1
+    "0": 137,
+    "19": 15
   },
   "top_reacted_messages": [
+    {
+      "id": "1460080322766176266",
+      "content": "如題所示，是拿著刀叉的杜老爺",
+      "author": "ice_storys",
+      "reactions": 18,
+      "channel": "杜老爺"
+    },
     {
       "id": "1460274949796401291",
       "content": "",
@@ -33,11 +53,53 @@
       "channel": ""
     },
     {
+      "id": "1460167506713903134",
+      "content": "（p得有點丑）",
+      "author": "ice_storys",
+      "reactions": 8,
+      "channel": "杜老爺"
+    },
+    {
+      "id": "1460169263678750752",
+      "content": "實際上說的是這個杜蕾斯（都怪選字亂選",
+      "author": "ass191044",
+      "reactions": 7,
+      "channel": "杜老爺"
+    },
+    {
+      "id": "1460257427013505076",
+      "content": "淺畫個汀克特大招",
+      "author": "myth1538",
+      "reactions": 6,
+      "channel": "圖樓"
+    },
+    {
+      "id": "1460143333350572125",
+      "content": "||之前杜勒出來的時候我跟朋友都戲稱~~杜蕾絲~~||",
+      "author": "ass191044",
+      "reactions": 5,
+      "channel": "杜老爺"
+    },
+    {
       "id": "1460193650414977205",
       "content": "暂时跑路一周，多花校猫一点银芯跟要他命一样！负债中<:cry3:1356082134447558748> <:cry3:1356082134447558748>",
       "author": "yingmai_",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1460167223166369958",
+      "content": "UID：100872328\n界域：血肉\n防禦型\n\n————————————————\n卡洛斯（Carlos）\n\n————————————————\n狀態\n\n等級：6",
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": "血肉防禦型喚醒體—卡洛斯"
+    },
+    {
+      "id": "1460203981610418341",
+      "content": "烏爾托斯 混沌 輔助型\n屬性\n體質 140 攻擊 90 防禦 150\n人格深化：界域精通 24 (72)\n銀鑰回充等級 22.2 (36.6)\n\n天賦\n烏爾托斯",
+      "author": "0.0._.0_0.",
+      "reactions": 4,
+      "channel": "喚醒體設計 烏爾托斯"
     },
     {
       "id": "1460198317022515270",
@@ -54,6 +116,13 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1460213520703688735",
+      "content": "我的死扛，没有你我要怎么活",
+      "author": "rain_scarlet",
+      "reactions": 2,
+      "channel": "喚醒體設計 烏爾托斯"
+    },
+    {
       "id": "1460290521938399366",
       "content": "",
       "author": "rain_scarlet",
@@ -68,18 +137,46 @@
       "channel": ""
     },
     {
-      "id": "1460220541817589825",
-      "content": "A week is passed, when possible, I would like if the suggestions and feedbacks c",
-      "author": "vxvendetta97",
+      "id": "1460223487368101888",
+      "content": "初見\n刷贏了",
+      "author": "akkom730",
       "reactions": 1,
-      "channel": ""
+      "channel": "相位對弈—刷牌隊"
     },
     {
-      "id": "1460285545224732715",
-      "content": "It really is just too good 🥴😭",
-      "author": "exhibitionism",
+      "id": "1460221512362496247",
+      "content": "完爆神父的2费",
+      "author": "rain_scarlet",
       "reactions": 1,
-      "channel": ""
+      "channel": "血肉防禦型喚醒體—卡洛斯"
+    },
+    {
+      "id": "1460223158912159908",
+      "content": "砍半了",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "血肉防禦型喚醒體—卡洛斯"
+    },
+    {
+      "id": "1460223638409056399",
+      "content": "敌人每回合2000点伤害都不够看（）",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "血肉防禦型喚醒體—卡洛斯"
+    },
+    {
+      "id": "1460207711898702049",
+      "content": "感觉灵塑和狂气爆发都好弱（",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "喚醒體設計 烏爾托斯"
+    },
+    {
+      "id": "1460209641714745375",
+      "content": "和鸟兄比盾",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "喚醒體設計 烏爾托斯"
     }
   ]
 }

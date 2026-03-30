@@ -1,0 +1,36 @@
+{
+  "date": "2025-06-18",
+  "messages": 52,
+  "unique_authors": 5,
+  "reactions_total": 11,
+  "attachments": 11,
+  "channel_activity": {
+    "银河行星的日服大冒险": 51,
+    "杜勒赛因技能组diy": 1
+  },
+  "hourly_activity": {
+    "12": 13,
+    "16": 38,
+    "18": 1
+  },
+  "message_types": {
+    "0": 44,
+    "19": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1384873620005982229",
+      "content": "身高体重单位是cm/kg\n刻印每回合只生效一次\n镜像：复制两张带消耗的手牌进入牌库\n易伤虚弱改成可叠层\n虚弱：第一层10%，后续每层5%，最高叠至25%，每回合",
+      "author": "muliupan",
+      "reactions": 8,
+      "channel": "银河行星的日服大冒险"
+    },
+    {
+      "id": "1384931324489367693",
+      "content": "吞噬：下一次狂气爆发伤害次数+1",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "银河行星的日服大冒险"
+    }
+  ]
+}

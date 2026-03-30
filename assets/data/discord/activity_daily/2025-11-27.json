@@ -1,37 +1,74 @@
 {
   "date": "2025-11-27",
-  "messages": 10,
+  "messages": 17,
   "unique_authors": 9,
-  "reactions_total": 4,
-  "attachments": 1,
+  "reactions_total": 43,
+  "attachments": 4,
   "channel_activity": {
+    "⟨提燈雙子 - 破曉⟩": 6,
+    "蓋個圖樓": 1,
     "1241345906826153984": 3,
     "1442647324575928441": 1,
     "1234769700735418368": 1,
     "1441326394817908736": 5
   },
   "hourly_activity": {
+    "8": 7,
+    "9": 2,
     "15": 1,
     "16": 2,
-    "8": 1,
     "5": 1,
     "1": 1,
     "6": 1,
-    "9": 1,
     "22": 1,
     "23": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 6,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1443516178520608780",
+      "content": "如題上一期的主題下一期才完成again🤩🥀",
+      "author": "ass191044",
+      "reactions": 27,
+      "channel": "⟨提燈雙子 - 破曉⟩"
+    },
+    {
+      "id": "1443515775964024894",
+      "content": "拉蒙娜表示請好好讀書不要暈喚醒體的船",
+      "author": "souri.10244",
+      "reactions": 7,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1443524062922936331",
+      "content": "",
+      "author": "tsubaki9884",
+      "reactions": 3,
+      "channel": "⟨提燈雙子 - 破曉⟩"
+    },
     {
       "id": "1443479682501836840",
       "content": "想要这个<:pray:1356053116260454534>",
       "author": "sweet_25367",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1443518512290201712",
+      "content": "-# <:Cheerup:1400771555939844149> <:pray:1356053116260454534> <:thumbsup:1356086",
+      "author": "waterrr0212",
+      "reactions": 1,
+      "channel": "⟨提燈雙子 - 破曉⟩"
+    },
+    {
+      "id": "1443527447873323159",
+      "content": "<:Cheerup:1400771555939844149>",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "⟨提燈雙子 - 破曉⟩"
     },
     {
       "id": "1443623828143083531",

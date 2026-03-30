@@ -1,19 +1,43 @@
 {
   "date": "2025-08-29",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 4,
-  "attachments": 0,
+  "messages": 10,
+  "unique_authors": 6,
+  "reactions_total": 27,
+  "attachments": 1,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 3,
+    "相位對弈—認識隊伍": 1,
+    "墨菲的下午茶時間": 4,
+    "莉兹✨": 1,
     "1356210707867107391": 1
   },
   "hourly_activity": {
+    "6": 1,
+    "10": 1,
+    "13": 1,
+    "3": 1,
+    "11": 4,
+    "15": 1,
     "12": 1
   },
   "message_types": {
-    "0": 1
+    "0": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1411004132730605569",
+      "content": "改次再上色🙈✨",
+      "author": "xcecilex.",
+      "reactions": 18,
+      "channel": "莉兹✨"
+    },
+    {
+      "id": "1410946105599983667",
+      "content": "扣扣扣——\n\n“請進，門沒鎖。”\n守密人推門而入，印入眼簾的是明亮寬敞的房間和落地窗邊擺著的圓桌。\n前些時候墨菲隨意向守密人所提出的邀約，而今日，正是她所謂的時",
+      "author": "void_1546.",
+      "reactions": 5,
+      "channel": "墨菲的下午茶時間"
+    },
     {
       "id": "1410970287947780207",
       "content": "<@1131790839291596841> 戈雅 我是新人求幫助我需要100流明",

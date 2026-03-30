@@ -1,0 +1,54 @@
+{
+  "date": "2024-12-07",
+  "messages": 18,
+  "unique_authors": 6,
+  "reactions_total": 21,
+  "attachments": 7,
+  "channel_activity": {
+    "原初之影 第二關 恐懼之眼 攻略": 12,
+    "原初之影__第三關陣容推薦": 1,
+    "哈姆林": 2,
+    "自創界域燒壞我腦袋的cpu了": 2,
+    "【谷宣】亚克力摇摇乐，详情见图": 1
+  },
+  "hourly_activity": {
+    "8": 8,
+    "14": 8,
+    "13": 1,
+    "15": 1
+  },
+  "message_types": {
+    "0": 17,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1314958571498242108",
+      "content": "這邊也放一下<:wish:1236951537788649492> <:rose1:1234798154000633949> <:rose1:123479815",
+      "author": "waterrr0212",
+      "reactions": 11,
+      "channel": "哈姆林"
+    },
+    {
+      "id": "1314871208499478610",
+      "content": "",
+      "author": "fyxiaochen",
+      "reactions": 7,
+      "channel": "【谷宣】亚克力摇摇乐，详情见图"
+    },
+    {
+      "id": "1314964810416390192",
+      "content": "看到投胎總會想到血肉把胚胎甩到對面臉上",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "自創界域燒壞我腦袋的cpu了"
+    },
+    {
+      "id": "1314971579565736049",
+      "content": "絕美新糧",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "哈姆林"
+    }
+  ]
+}

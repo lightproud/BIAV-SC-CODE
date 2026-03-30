@@ -1,0 +1,40 @@
+{
+  "date": "2024-10-20",
+  "messages": 6,
+  "unique_authors": 5,
+  "reactions_total": 21,
+  "attachments": 5,
+  "channel_activity": {
+    "经讨论后的血链希洛的造物适配顺位排序": 2,
+    "【敌方意图收录】雪山消融之时活动新增单位一览": 1,
+    "鼠抗糕手！": 1,
+    "仔細想想 你遊背景何嘗不是一種末世哨向paro": 2
+  },
+  "hourly_activity": {
+    "11": 1,
+    "20": 1,
+    "16": 1,
+    "13": 1,
+    "8": 2
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1297554173184970843",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 15,
+      "channel": "鼠抗糕手！"
+    },
+    {
+      "id": "1297602176734203974",
+      "content": "雪山天气真不错啊疯狂的冻结冻结冻结<:wish:1236951537788649492> \n\n本期收录截止至2024年10月21日，且为了方便理解对部分细节进行",
+      "author": "anachico",
+      "reactions": 6,
+      "channel": "【敌方意图收录】雪山消融之时活动新增单位一览"
+    }
+  ]
+}

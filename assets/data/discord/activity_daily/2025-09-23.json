@@ -1,35 +1,54 @@
 {
   "date": "2025-09-23",
-  "messages": 73,
+  "messages": 104,
   "unique_authors": 18,
-  "reactions_total": 87,
-  "attachments": 0,
+  "reactions_total": 138,
+  "attachments": 9,
   "channel_activity": {
+    "無借角融災全4 400攻略血肉指環": 27,
+    "邀請碼互助/Invitation code help each other": 1,
+    "小皮小皮": 2,
+    "【3D渲染动画】奥尔拉": 1,
     "1305430084420898868": 1,
     "1420092491125755985": 71,
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "18": 31,
+    "19": 9,
+    "20": 4,
+    "21": 15,
+    "22": 4,
+    "17": 36,
+    "12": 1,
+    "14": 2,
     "8": 1,
-    "17": 35,
-    "18": 28,
-    "19": 2,
-    "20": 1,
-    "21": 4,
-    "22": 1,
     "23": 1
   },
   "message_types": {
-    "0": 51,
-    "19": 22
+    "0": 31
   },
   "top_reacted_messages": [
+    {
+      "id": "1420030717747794055",
+      "content": "画都画了就在这边发一下...第一次用discord第一次投征集不知道tag什么的对不对\nuid：100652322",
+      "author": "chapelete5234",
+      "reactions": 32,
+      "channel": "小皮小皮"
+    },
     {
       "id": "1420101292088360961",
       "content": "We’ve tried some of these and they can be fun, but we can’t afford them at the m",
       "author": "game.producer.light",
       "reactions": 25,
       "channel": ""
+    },
+    {
+      "id": "1420115027649630290",
+      "content": "想打375 或是新手為了融災向練角的都可以先看看 提前練和規抽角色\n出10隊很吃練度和卡池深度\n如果找幾波可以打5級會比較輕鬆\n我有壓練度可以按需要補上命輪或是",
+      "author": "0.0._.0_0.",
+      "reactions": 18,
+      "channel": "無借角融災全4 400攻略血肉指環"
     },
     {
       "id": "1420170397252452533",
@@ -109,6 +128,13 @@
       "channel": ""
     },
     {
+      "id": "1420056416189681664",
+      "content": "（四處觀察）（陰暗爬行）（偷舔一口胸部）",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "小皮小皮"
+    },
+    {
       "id": "1420103030275182602",
       "content": "我们确实目前采用了钥令跟某个角色更相关的能力设计思路，因为通用而强大钥令工具已经非常多，暂时不适合更多。",
       "author": "game.producer.light",
@@ -139,27 +165,6 @@
     {
       "id": "1420105452964020244",
       "content": "塔薇：請輸入文本",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1420106170059718696",
-      "content": "杜勒的机制其实很夸张",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1420106437782274128",
-      "content": "混沌二次钥令在选择完所有钥令之后能否重置？  \n或者说首领战开始重置二次钥令池  \n其他界域在银钥充足情况下都能开出来二次钥令，反而是以银钥为核心的纯混沌在开完",
-      "author": "sweet_25367",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1420106701729828864",
-      "content": "~~混沌現在唯一的特別的點是第二次鑰令雙發~~",
       "author": "ena04564",
       "reactions": 1,
       "channel": ""

@@ -1,17 +1,29 @@
 {
   "date": "2024-08-26",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 12,
+  "attachments": 1,
   "channel_activity": {
+    "抽卡引發的悲劇": 1,
+    "珊": 1,
     "1193859503096070234": 1
   },
   "hourly_activity": {
+    "7": 1,
+    "16": 1,
     "6": 1
   },
   "message_types": {
-    "19": 1
+    "0": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1277532766606458930",
+      "content": "",
+      "author": "jester_romut",
+      "reactions": 12,
+      "channel": "抽卡引發的悲劇"
+    }
+  ]
 }

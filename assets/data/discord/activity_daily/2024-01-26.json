@@ -1,19 +1,31 @@
 {
   "date": "2024-01-26",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 2,
-  "attachments": 0,
+  "messages": 22,
+  "unique_authors": 10,
+  "reactions_total": 3,
+  "attachments": 3,
   "channel_activity": {
+    "人已经退了，攻略删了，号销了，可以别骂我了吗？": 2,
+    "幻梦深潜地图全解": 5,
+    "记录点有意思的深海搭配（阵容/遗物/刻印等）": 12,
+    "自娱自乐的梗图": 1,
     "1197183401388683386": 2
   },
   "hourly_activity": {
-    "5": 1,
+    "0": 1,
+    "13": 1,
+    "4": 1,
+    "5": 3,
+    "8": 1,
+    "10": 1,
+    "2": 9,
+    "6": 3,
+    "12": 1,
     "14": 1
   },
   "message_types": {
-    "0": 1,
-    "19": 1
+    "0": 15,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -22,6 +34,13 @@
       "author": "banano.2",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1200321175151198218",
+      "content": "基本是必選造物了 搭個深淵通信直接起飛\n深海就是詛咒造物往死裡買👍",
+      "author": "magiciand",
+      "reactions": 1,
+      "channel": "记录点有意思的深海搭配（阵容/遗物/刻印等）"
     }
   ]
 }

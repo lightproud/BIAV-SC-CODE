@@ -1,17 +1,99 @@
 {
   "date": "2025-09-05",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 41,
+  "unique_authors": 9,
+  "reactions_total": 62,
+  "attachments": 17,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 1,
+    "相位對弈—認識隊伍": 1,
+    "我也要開圖樓": 11,
+    "那一天，我重生了，在現pa看到了夢想的夏日": 4,
+    "[克莱门汀x女守密人]二重决断": 22,
+    "小QQ系列-四小強+混沌界域上半": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "17": 4,
+    "18": 1,
+    "6": 5,
+    "13": 1,
+    "16": 8,
+    "0": 8,
+    "1": 4,
+    "3": 3,
+    "7": 4,
+    "8": 1,
+    "11": 1,
     "4": 1
   },
   "message_types": {
-    "0": 1
+    "0": 34,
+    "19": 6
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1413415419712245851",
+      "content": "",
+      "author": "undecember_news",
+      "reactions": 20,
+      "channel": "我也要開圖樓"
+    },
+    {
+      "id": "1413561514660724817",
+      "content": "沒有只是前陣子剛好也在畫現pa的夏天\n因為是練習性質所以完成度就這樣了 看開心就好（吃一口哥妹我很開心",
+      "author": "carrot_chicken",
+      "reactions": 16,
+      "channel": "那一天，我重生了，在現pa看到了夢想的夏日"
+    },
+    {
+      "id": "1413417240229056552",
+      "content": "如題 假如沒出甚麼意外大概會把全角色慢慢畫完 這次時間有點趕就只先到了渾沌常駐\nuid：100419924",
+      "author": "undecember_news",
+      "reactions": 16,
+      "channel": "小QQ系列-四小強+混沌界域上半"
+    },
+    {
+      "id": "1413313840178925768",
+      "content": "如题，搓一把医生\n\n———观前须知———\n\n>依旧是星辰篇||神国降临||if线\n>包含对角色和星辰篇第二章剧情的极端个人理解\n>包含对心理咨询关系和心理理论的",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "[克莱门汀x女守密人]二重决断"
+    },
+    {
+      "id": "1413431081545240636",
+      "content": "~~順道一提 好想體驗產卵舌吻~~",
+      "author": "undecember_news",
+      "reactions": 2,
+      "channel": "[克莱门汀x女守密人]二重决断"
+    },
+    {
+      "id": "1413434532497068032",
+      "content": "啊啊啊超感谢喜欢（比心比心）（第一次在你游收到评论qwq幸福感拉满）（被夸到迷迷糊糊了就是说）\n~~产卵舌吻什么的是饺子醋不可缺少的一部分（点头）换谁不想试试呢",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "[克莱门汀x女守密人]二重决断"
+    },
+    {
+      "id": "1413332544220430418",
+      "content": "勞斯這簡直是滿漢全席😭 😭 😭 \n沒了你我們這些廚該怎麼辦😭 😭 😭",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "[克莱门汀x女守密人]二重决断"
+    },
+    {
+      "id": "1413363968847642715",
+      "content": "我吃吃吃…大吃特吃",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "[克莱门汀x女守密人]二重决断"
+    },
+    {
+      "id": "1413488493698482186",
+      "content": "想到我還沒寫好的拉郎文我就覺得我很慚愧",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "[克莱门汀x女守密人]二重决断"
+    }
+  ]
 }

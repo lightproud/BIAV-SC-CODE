@@ -1,22 +1,25 @@
 {
   "date": "2025-11-17",
-  "messages": 4,
+  "messages": 6,
   "unique_authors": 3,
   "reactions_total": 59,
-  "attachments": 0,
+  "attachments": 2,
   "channel_activity": {
+    "給異格也P了一版仿官海報（）": 1,
+    "試閱：▼▼▼▼之犬": 1,
     "🔸服务器公告┊server-announcement": 1,
     "1439514625703149659": 2,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "19": 1,
+    "18": 1,
     "3": 1,
     "9": 2,
     "14": 1
   },
   "message_types": {
-    "0": 3,
-    "6": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {

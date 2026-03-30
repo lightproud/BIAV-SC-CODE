@@ -1,19 +1,26 @@
 {
   "date": "2025-09-02",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 26,
+  "messages": 11,
+  "unique_authors": 7,
+  "reactions_total": 27,
   "attachments": 3,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 6,
+    "克萊門汀的特殊治療方法": 1,
     "1296113810549112874": 3,
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "1": 2,
+    "12": 2,
+    "15": 1,
+    "22": 1,
+    "7": 1,
     "17": 3,
     "9": 1
   },
   "message_types": {
-    "0": 4
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -29,6 +36,13 @@
       "author": "yingmai_",
       "reactions": 9,
       "channel": ""
+    },
+    {
+      "id": "1412458834949308527",
+      "content": "2LNIOH7DQ5",
+      "author": "buddymiracle",
+      "reactions": 1,
+      "channel": "邀請碼互助/Invitation code help each other"
     }
   ]
 }

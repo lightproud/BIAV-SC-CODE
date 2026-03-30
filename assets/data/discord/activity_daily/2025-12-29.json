@@ -1,10 +1,11 @@
 {
   "date": "2025-12-29",
-  "messages": 8,
+  "messages": 10,
   "unique_authors": 8,
   "reactions_total": 24,
   "attachments": 2,
   "channel_activity": {
+    "克莱门汀": 2,
     "🔸忘却前夜┊morimens-tv": 2,
     "1445334381404094475": 1,
     "1455326448683454465": 3,
@@ -12,13 +13,13 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "11": 3,
     "8": 2,
     "22": 4,
-    "16": 1,
-    "11": 1
+    "16": 1
   },
   "message_types": {
-    "0": 8
+    "19": 2
   },
   "top_reacted_messages": [
     {

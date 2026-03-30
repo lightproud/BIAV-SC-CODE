@@ -1,0 +1,57 @@
+{
+  "date": "2023-12-08",
+  "messages": 19,
+  "unique_authors": 9,
+  "reactions_total": 46,
+  "attachments": 11,
+  "channel_activity": {
+    "深海圖魯新手心得參考": 10,
+    "血肉盾擊反擊by寒衫": 2,
+    "希洛~~": 3,
+    "萊克寶貝什麼時候出？": 4
+  },
+  "hourly_activity": {
+    "9": 1,
+    "10": 2,
+    "11": 7,
+    "13": 2,
+    "16": 1,
+    "17": 1,
+    "19": 1,
+    "18": 4
+  },
+  "message_types": {
+    "0": 17,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1182725861154246837",
+      "content": "摸魚摸了張希洛\n只是塗鴉所以不是很精緻",
+      "author": "bailiiii_0413",
+      "reactions": 32,
+      "channel": "希洛~~"
+    },
+    {
+      "id": "1182750247328436325",
+      "content": "手臂的比例爆掉了🤣",
+      "author": "0.0._.0_0.",
+      "reactions": 10,
+      "channel": "萊克寶貝什麼時候出？"
+    },
+    {
+      "id": "1182750345647104060",
+      "content": "加上下半身怕爆",
+      "author": "0.0._.0_0.",
+      "reactions": 3,
+      "channel": "萊克寶貝什麼時候出？"
+    },
+    {
+      "id": "1182647086127255653",
+      "content": "可以加上拉蒙娜",
+      "author": "meow51103",
+      "reactions": 1,
+      "channel": "深海圖魯新手心得參考"
+    }
+  ]
+}

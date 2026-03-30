@@ -1,10 +1,25 @@
 {
   "date": "2023-12-04",
-  "messages": 63,
+  "messages": 122,
   "unique_authors": 20,
-  "reactions_total": 472,
-  "attachments": 10,
+  "reactions_total": 524,
+  "attachments": 68,
   "channel_activity": {
+    "命輪+造物合集": 1,
+    "「攻略發表」頻道使用說明": 1,
+    "深海攻略by牛逼/唐有为": 1,
+    "論商店中金券兌換的經驗&素材是否值得購買以及要不要花金券刷新": 4,
+    "第4章全地圖": 14,
+    "第3章全地圖": 9,
+    "第2章全地圖": 14,
+    "第1章全地圖": 8,
+    "混沌一條龍by弥萨格小卖部老板": 1,
+    "pvp指南by fate": 1,
+    "超維寶典：入門到入土by蝶咏玉泉": 1,
+    "艾瑞卡攻略": 1,
+    "血肉編隊攻略，以希洛/尤烏為主輸出": 1,
+    "超維編隊攻略——莉茲+汀克特+溫柯爾+寧菲亞（毒攻隊）": 1,
+    "深海編隊攻略": 1,
     "官方佈告（已停止使用）": 1,
     "遊戲問題及bug回報": 53,
     "discord社群建議": 3,
@@ -14,6 +29,12 @@
     "1181145632572973136": 1
   },
   "hourly_activity": {
+    "11": 8,
+    "8": 4,
+    "12": 32,
+    "16": 2,
+    "17": 3,
+    "13": 13,
     "7": 7,
     "0": 3,
     "2": 15,
@@ -21,14 +42,11 @@
     "4": 2,
     "5": 9,
     "6": 10,
-    "8": 3,
     "9": 2,
     "14": 1
   },
   "message_types": {
-    "0": 32,
-    "19": 30,
-    "4": 1
+    "0": 59
   },
   "top_reacted_messages": [
     {
@@ -60,11 +78,109 @@
       "channel": ""
     },
     {
+      "id": "1181192084057768007",
+      "content": "幫大家整理了開服後已有的命輪+造物合集，所有數值已進行調整，大家可以放心參考~\n今後整理的相關攻略文都會存放在谷歌表單：https://docs.google.",
+      "author": "wutaa1",
+      "reactions": 10,
+      "channel": "命輪+造物合集"
+    },
+    {
+      "id": "1181147956078981122",
+      "content": "各位守密人，可在此頻道選擇指定標籤發佈自己的攻略內容，十分感謝守密人的投稿！",
+      "author": "alpha0909__",
+      "reactions": 9,
+      "channel": "「攻略發表」頻道使用說明"
+    },
+    {
+      "id": "1181207897166856242",
+      "content": "",
+      "author": "lubi_17667",
+      "reactions": 7,
+      "channel": "深海攻略by牛逼/唐有为"
+    },
+    {
+      "id": "1181268603425792092",
+      "content": "以下的內容是以筆者自身經驗撰寫，如果覺得與自己的看法有出入或是錯誤都可以提出\n主要圍繞在35級前，以四種不同界域的喚醒體都達到40級且技能提升到lv2為目標的規",
+      "author": "nalath",
+      "reactions": 7,
+      "channel": "論商店中金券兌換的經驗&素材是否值得購買以及要不要花金券刷新"
+    },
+    {
+      "id": "1181218662833733652",
+      "content": "來源：[taptap：苦等回合的傑哥](https://www.taptap.cn/moment/479430058772007919)\n\n苦等回合的傑哥：\n如",
+      "author": "lirpa_04",
+      "reactions": 5,
+      "channel": "第4章全地圖"
+    },
+    {
+      "id": "1181202538373070878",
+      "content": "",
+      "author": "lubi_17667",
+      "reactions": 3,
+      "channel": "超維寶典：入門到入土by蝶咏玉泉"
+    },
+    {
       "id": "1181145632572973136",
       "content": "守密人可在此頻道發佈彌薩格相關的影片內容~歡迎各位守密人進行交流討論",
       "author": "alpha0909__",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1181211370470002708",
+      "content": "來源：[TapTap：苦等回合的傑哥](https://www.taptap.cn/moment/479428991736873899)\n\n苦等回合的傑哥：\n如",
+      "author": "lirpa_04",
+      "reactions": 2,
+      "channel": "第1章全地圖"
+    },
+    {
+      "id": "1181191265304465528",
+      "content": "今後整理的相關攻略文都會存放在谷歌表單：https://docs.google.com/spreadsheets/d/1ahF_ULcWsj8Up9hT6qNz",
+      "author": "wutaa1",
+      "reactions": 2,
+      "channel": "血肉編隊攻略，以希洛/尤烏為主輸出"
+    },
+    {
+      "id": "1181190479937798184",
+      "content": "今後整理的相關攻略文都會存放在谷歌表單：https://docs.google.com/spreadsheets/d/1ahF_ULcWsj8Up9hT6qNz",
+      "author": "wutaa1",
+      "reactions": 2,
+      "channel": "超維編隊攻略——莉茲+汀克特+溫柯爾+寧菲亞（毒攻隊）"
+    },
+    {
+      "id": "1181280239549169694",
+      "content": "4-15是真累",
+      "author": "melon1016",
+      "reactions": 1,
+      "channel": "第4章全地圖"
+    },
+    {
+      "id": "1181217686840152144",
+      "content": "來源：[taptap：苦等回合的傑哥](https://www.taptap.cn/moment/479429745419749054)\n\n苦等回合的傑哥：\n图",
+      "author": "lirpa_04",
+      "reactions": 1,
+      "channel": "第3章全地圖"
+    },
+    {
+      "id": "1181212713146392626",
+      "content": "來源：[taptap：苦等回合的傑哥](https://www.taptap.cn/moment/479429433376115872)\n\n苦等回合的傑哥：\n如",
+      "author": "lirpa_04",
+      "reactions": 1,
+      "channel": "第2章全地圖"
+    },
+    {
+      "id": "1181192502104035458",
+      "content": "打無光送的艾瑞卡大家有拿到嘛？艾瑞卡搭配三小強很好用！！想要感受體驗下超維玩法但還沒開始抽超維的可以根據這個攻略體驗下（這個搭配三小強，難度上會比其他超維搭配低",
+      "author": "wutaa1",
+      "reactions": 1,
+      "channel": "艾瑞卡攻略"
+    },
+    {
+      "id": "1181190096695853116",
+      "content": "今後整理的相關攻略文都會存放在谷歌表單：https://docs.google.com/spreadsheets/d/1ahF_ULcWsj8Up9hT6qNz",
+      "author": "wutaa1",
+      "reactions": 1,
+      "channel": "深海編隊攻略"
     }
   ]
 }

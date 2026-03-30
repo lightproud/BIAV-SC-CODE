@@ -1,10 +1,14 @@
 {
   "date": "2026-01-11",
-  "messages": 84,
+  "messages": 103,
   "unique_authors": 9,
-  "reactions_total": 11,
-  "attachments": 3,
+  "reactions_total": 26,
+  "attachments": 10,
   "channel_activity": {
+    "相位對弈—刷牌隊": 2,
+    "此乃造谣24的笔记本内容（嗯）": 1,
+    "Awakener Kit Speculation: Francis": 13,
+    "重开个存档楼）": 3,
     "🔸忘却前夜┊morimens-tv": 1,
     "1458491651239710851": 2,
     "1448648649486635128": 66,
@@ -12,17 +16,31 @@
     "1445556242381672559": 14
   },
   "hourly_activity": {
-    "1": 15,
-    "15": 1,
+    "18": 2,
+    "22": 1,
+    "1": 18,
+    "7": 1,
+    "9": 2,
+    "10": 2,
+    "13": 1,
+    "14": 3,
+    "15": 2,
+    "21": 3,
     "16": 1,
     "11": 66,
     "17": 1
   },
   "message_types": {
-    "0": 79,
-    "19": 5
+    "0": 19
   },
   "top_reacted_messages": [
+    {
+      "id": "1459717069464539330",
+      "content": "Francis\n\nRealm: Ultra\nType: Assault\nBirthday: ####\nGender: Female\nNous index: 37",
+      "author": "rain_scarlet",
+      "reactions": 11,
+      "channel": "Awakener Kit Speculation: Francis"
+    },
     {
       "id": "1459937265051766784",
       "content": "謝謝！\n原先想找只有手的圖層卻發現找不到，匯出一個比較潦草的版本當發福利（？）",
@@ -38,11 +56,32 @@
       "channel": ""
     },
     {
+      "id": "1459895605701771326",
+      "content": "<:A_pinch:1432980538536493057> AoE poison carry. Am I dreaming?",
+      "author": "yeriko703",
+      "reactions": 2,
+      "channel": "Awakener Kit Speculation: Francis"
+    },
+    {
       "id": "1459714660654649490",
       "content": "A 2 minute overview of Nymphaea. She's one of the few Awakeners that can hit thr",
       "author": "nechromicon",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1459858974659838205",
+      "content": "那是我的問題了\n沒看懂意思",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "Awakener Kit Speculation: Francis"
+    },
+    {
+      "id": "1459928797364355143",
+      "content": "<:ramona_tuff_:1441426630420467753>  funni poison",
+      "author": "mistakendoge",
+      "reactions": 1,
+      "channel": "Awakener Kit Speculation: Francis"
     },
     {
       "id": "1459716491204231269",

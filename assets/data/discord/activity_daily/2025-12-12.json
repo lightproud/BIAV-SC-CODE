@@ -1,18 +1,55 @@
 {
   "date": "2025-12-12",
-  "messages": 4,
-  "unique_authors": 4,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 13,
+  "unique_authors": 5,
+  "reactions_total": 27,
+  "attachments": 2,
   "channel_activity": {
+    "蓋個圖樓": 5,
+    "給異格也P了一版仿官海報（）": 3,
+    "铲不完了先用草稿顶一下，总之好娜娜生日快乐": 1,
     "1241345906826153984": 4
   },
   "hourly_activity": {
-    "17": 4
+    "12": 3,
+    "14": 1,
+    "21": 1,
+    "16": 1,
+    "17": 6,
+    "15": 1
   },
   "message_types": {
-    "0": 3,
-    "19": 1
+    "0": 5,
+    "19": 4
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1449060538746146919",
+      "content": "最近忙别的事情来不及赶生贺了<:takenotes:1357186646294138890> 后面会在帖子里补上色版，守密小人有莉奥和西维的差分之后上色两版会一",
+      "author": "_neyko_",
+      "reactions": 22,
+      "channel": "铲不完了先用草稿顶一下，总之好娜娜生日快乐"
+    },
+    {
+      "id": "1449093660858912889",
+      "content": "Thanks! \n~~this is part of the final pic~~",
+      "author": "flim_of_life_burst",
+      "reactions": 3,
+      "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1449014863937671179",
+      "content": "畫了鯊凱但是不是不能丟這裡啊",
+      "author": "souri.10244",
+      "reactions": 1,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1449093985057505341",
+      "content": "The whole pic will be released on 21st XD",
+      "author": "flim_of_life_burst",
+      "reactions": 1,
+      "channel": "給異格也P了一版仿官海報（）"
+    }
+  ]
 }

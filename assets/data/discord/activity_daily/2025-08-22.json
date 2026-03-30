@@ -1,0 +1,45 @@
+{
+  "date": "2025-08-22",
+  "messages": 20,
+  "unique_authors": 17,
+  "reactions_total": 10,
+  "attachments": 2,
+  "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 13,
+    "相位對弈—凱蒂古拉OTK隊": 5,
+    "彌撒格最般配的男同性戀2.0": 2
+  },
+  "hourly_activity": {
+    "0": 1,
+    "2": 1,
+    "4": 2,
+    "6": 1,
+    "9": 2,
+    "12": 2,
+    "13": 1,
+    "16": 1,
+    "17": 1,
+    "23": 1,
+    "5": 5,
+    "14": 2
+  },
+  "message_types": {
+    "0": 20
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1408458276898734161",
+      "content": "私人約稿禁一切\n我們鯊凱真是天操地射的一對啊",
+      "author": "calmdreab",
+      "reactions": 9,
+      "channel": "彌撒格最般配的男同性戀2.0"
+    },
+    {
+      "id": "1408316758611464312",
+      "content": "医生不如直接上普娜",
+      "author": "ioshift_24740",
+      "reactions": 1,
+      "channel": "相位對弈—凱蒂古拉OTK隊"
+    }
+  ]
+}

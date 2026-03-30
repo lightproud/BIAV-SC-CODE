@@ -1,10 +1,11 @@
 {
   "date": "2026-03-07",
-  "messages": 191,
+  "messages": 193,
   "unique_authors": 57,
-  "reactions_total": 1178,
+  "reactions_total": 1181,
   "attachments": 58,
   "channel_activity": {
+    "Morimens忘却前夜唤醒体设计约克尔（完整版）": 2,
     "🔸礼包码┊gift-codes": 1,
     "🔸忘却前夜┊morimens-tv": 2,
     "1479979789329633340": 3,
@@ -35,10 +36,10 @@
     "1479855628506632304": 1
   },
   "hourly_activity": {
+    "23": 9,
     "5": 28,
     "7": 16,
     "16": 6,
-    "23": 7,
     "21": 3,
     "8": 8,
     "2": 2,
@@ -60,9 +61,7 @@
     "17": 2
   },
   "message_types": {
-    "0": 145,
-    "19": 43,
-    "6": 3
+    "0": 2
   },
   "top_reacted_messages": [
     {

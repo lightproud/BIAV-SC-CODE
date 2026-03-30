@@ -1,10 +1,11 @@
 {
   "date": "2026-02-01",
-  "messages": 7051,
+  "messages": 7052,
   "unique_authors": 151,
   "reactions_total": 1027,
   "attachments": 314,
   "channel_activity": {
+    "此乃造谣24的笔记本内容（嗯）": 1,
     "🔸忘却前夜┊morimens-tv": 3,
     "1462840887553032335": 2,
     "1467308113660215326": 3,
@@ -16,7 +17,7 @@
     "🔸morimens-game-chat": 5874
   },
   "hourly_activity": {
-    "1": 291,
+    "1": 292,
     "8": 284,
     "18": 190,
     "15": 268,
@@ -42,9 +43,7 @@
     "21": 29
   },
   "message_types": {
-    "0": 4958,
-    "19": 2092,
-    "4": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

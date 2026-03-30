@@ -1,0 +1,50 @@
+{
+  "date": "2024-12-11",
+  "messages": 9,
+  "unique_authors": 4,
+  "reactions_total": 82,
+  "attachments": 6,
+  "channel_activity": {
+    "約稿展示 請大家吃飯": 2,
+    "這太美麗了😭": 7
+  },
+  "hourly_activity": {
+    "7": 3,
+    "10": 2,
+    "6": 4
+  },
+  "message_types": {
+    "0": 7,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1316294655977062420",
+      "content": "自印了鐳射票感覺大成功⋯",
+      "author": "flim_of_life_burst",
+      "reactions": 38,
+      "channel": "這太美麗了😭"
+    },
+    {
+      "id": "1316304778833428571",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 33,
+      "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1316358144363855944",
+      "content": "",
+      "author": "flim_of_life_burst",
+      "reactions": 10,
+      "channel": "這太美麗了😭"
+    },
+    {
+      "id": "1316299839876763648",
+      "content": "超好看耶",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "這太美麗了😭"
+    }
+  ]
+}

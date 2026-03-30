@@ -1,0 +1,37 @@
+{
+  "date": "2025-01-05",
+  "messages": 10,
+  "unique_authors": 4,
+  "reactions_total": 16,
+  "attachments": 3,
+  "channel_activity": {
+    "墨菲水手服？！": 3,
+    "帮我想想画什么": 7
+  },
+  "hourly_activity": {
+    "7": 1,
+    "11": 1,
+    "12": 1,
+    "16": 3,
+    "17": 4
+  },
+  "message_types": {
+    "0": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1325359247495790622",
+      "content": "还没细化！所以有点乱\n不过墨菲小姐特别适合粉紫色。。\n之后可能会画水母or莉莉\n\n\n\n😭",
+      "author": "birthdayavka",
+      "reactions": 12,
+      "channel": "墨菲水手服？！"
+    },
+    {
+      "id": "1325510589849796658",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 4,
+      "channel": "帮我想想画什么"
+    }
+  ]
+}

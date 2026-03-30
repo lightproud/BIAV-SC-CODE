@@ -1,10 +1,11 @@
 {
   "date": "2026-02-22",
-  "messages": 1425,
+  "messages": 1429,
   "unique_authors": 47,
-  "reactions_total": 241,
-  "attachments": 94,
+  "reactions_total": 253,
+  "attachments": 95,
   "channel_activity": {
+    "猫咪节快乐！|| 杜勒赛因x西维斯特": 4,
     "🔸频道建议┊server-suggestions": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "1475232782169932038": 1,
@@ -19,14 +20,14 @@
     "🔸阵容构建": 13
   },
   "hourly_activity": {
+    "9": 187,
+    "10": 229,
+    "11": 63,
     "15": 134,
     "16": 84,
     "3": 22,
     "20": 99,
     "0": 2,
-    "11": 61,
-    "9": 186,
-    "10": 228,
     "1": 52,
     "22": 7,
     "5": 30,
@@ -45,8 +46,7 @@
     "23": 1
   },
   "message_types": {
-    "0": 1088,
-    "19": 337
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -55,6 +55,13 @@
       "author": "vxvendetta97",
       "reactions": 35,
       "channel": ""
+    },
+    {
+      "id": "1475060100967432254",
+      "content": "今天刷屏时才突然意识到，原来今天真是猫咪日啊…… 我事先并不知情，也无法提前准备。<:flop1:1356083604236800030><:flop1:135",
+      "author": "that_one_chippy",
+      "reactions": 10,
+      "channel": "猫咪节快乐！|| 杜勒赛因x西维斯特"
     },
     {
       "id": "1475159481930485811",
@@ -180,13 +187,6 @@
       "content": "我都玩茉夏了怎麼可能是 M",
       "author": "eddy10051115",
       "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474960565255409766",
-      "content": "酷",
-      "author": "luckyinitial",
-      "reactions": 2,
       "channel": "🔸綜合討論"
     }
   ]

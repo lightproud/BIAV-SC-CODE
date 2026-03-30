@@ -1,10 +1,12 @@
 {
   "date": "2026-01-21",
-  "messages": 48,
+  "messages": 50,
   "unique_authors": 18,
-  "reactions_total": 60,
+  "reactions_total": 63,
   "attachments": 8,
   "channel_activity": {
+    "Awakener Kit Speculation: Francis": 1,
+    "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的": 1,
     "1463456408249831446": 11,
     "1448648649486635128": 2,
     "1241345906826153984": 1,
@@ -14,6 +16,8 @@
     "1455822126568308957": 5
   },
   "hourly_activity": {
+    "19": 1,
+    "5": 2,
     "8": 5,
     "9": 4,
     "10": 11,
@@ -26,12 +30,11 @@
     "23": 5,
     "7": 1,
     "11": 2,
-    "5": 1,
     "6": 4
   },
   "message_types": {
-    "0": 42,
-    "19": 6
+    "0": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -63,11 +66,25 @@
       "channel": ""
     },
     {
+      "id": "1463403108380971008",
+      "content": "正在努力把他畫得更狗💪💪",
+      "author": "yolo_mode",
+      "reactions": 2,
+      "channel": "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的"
+    },
+    {
       "id": "1463593276685811804",
       "content": "",
       "author": "ernest_heart",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1463615008985317448",
+      "content": "Xu kit revealed <:Helot_slack_off:1459092159465521184> That's francis but suppor",
+      "author": "yeriko703",
+      "reactions": 1,
+      "channel": "Awakener Kit Speculation: Francis"
     },
     {
       "id": "1463462435527852134",
@@ -157,20 +174,6 @@
       "id": "1463463208869167135",
       "content": "哭了",
       "author": "akkom730",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463414384670806069",
-      "content": "she supa pretty!!",
-      "author": "that_one_chippy",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463423531948703799",
-      "content": "I don't have thais",
-      "author": "known8642",
       "reactions": 1,
       "channel": ""
     }

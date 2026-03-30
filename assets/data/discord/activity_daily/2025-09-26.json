@@ -1,22 +1,67 @@
 {
   "date": "2025-09-26",
-  "messages": 6,
-  "unique_authors": 4,
-  "reactions_total": 1,
-  "attachments": 0,
+  "messages": 16,
+  "unique_authors": 9,
+  "reactions_total": 10,
+  "attachments": 4,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 4,
+    "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）": 5,
+    "创作欲大爆发，给每个界域手搓了一个新人": 1,
     "1420092491125755985": 6
   },
   "hourly_activity": {
+    "1": 1,
+    "9": 1,
+    "15": 1,
+    "16": 1,
+    "5": 4,
+    "6": 1,
+    "7": 2,
+    "20": 1,
     "0": 3,
-    "2": 1,
-    "5": 2
+    "2": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 4
+    "0": 9,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1421042485152583722",
+      "content": "下一話：萊克的嘴筒x守咪人的||四角褲||",
+      "author": "nazhigezihk",
+      "reactions": 4,
+      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+    },
+    {
+      "id": "1421227939684421782",
+      "content": "好久没做DIY了，兴致上来一口气搓了四个，但是数值这方面没怎么把握，重在机制嘛。。（嗯）",
+      "author": "dyyqcwj",
+      "reactions": 2,
+      "channel": "创作欲大爆发，给每个界域手搓了一个新人"
+    },
+    {
+      "id": "1421012907667230720",
+      "content": "原来在跟皮皮虾打架吗，我还以为是皮卡丘呢",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+    },
+    {
+      "id": "1421028387102916678",
+      "content": "對啊跟皮皮蝦展開了~~紳士間的對♂️決♂️~~",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+    },
+    {
+      "id": "1421032476649980006",
+      "content": "此事在杜勒和皮克曼的車文來了中亦有記載",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+    },
     {
       "id": "1421005005049172009",
       "content": "if story mode is for baby then those babies will go complain even more about har",

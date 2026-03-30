@@ -1,19 +1,24 @@
 {
   "date": "2025-09-07",
-  "messages": 2,
-  "unique_authors": 2,
+  "messages": 6,
+  "unique_authors": 4,
   "reactions_total": 4,
   "attachments": 1,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 3,
+    "我也要開圖樓": 1,
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "1": 1,
+    "11": 1,
+    "21": 1,
+    "12": 1,
     "13": 1,
     "14": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 1
+    "0": 4
   },
   "top_reacted_messages": [
     {

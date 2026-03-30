@@ -1,17 +1,20 @@
 {
   "date": "2025-11-29",
-  "messages": 11,
+  "messages": 14,
   "unique_authors": 11,
-  "reactions_total": 723,
-  "attachments": 2,
+  "reactions_total": 753,
+  "attachments": 4,
   "channel_activity": {
+    "全SSR命輪解析與強度評比": 1,
+    "【Thalassophobia 深海恐懼症】": 2,
     "🔸礼包码┊gift-codes": 1,
     "1296113810549112874": 1,
     "1305430084420898868": 1,
     "1441326394817908736": 8
   },
   "hourly_activity": {
-    "14": 2,
+    "5": 1,
+    "14": 4,
     "12": 1,
     "16": 1,
     "0": 1,
@@ -21,7 +24,7 @@
     "19": 1
   },
   "message_types": {
-    "0": 11
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -32,11 +35,25 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1444338871256223874",
+      "content": "半深海帶有很多東西。大王魷魚、抹香鯨、巨型管水母⋯⋯\n也許還有隻散發著白光的鯊魚。\nUID:100047306",
+      "author": "carrot_chicken",
+      "reactions": 24,
+      "channel": "【Thalassophobia 深海恐懼症】"
+    },
+    {
       "id": "1444302639457239234",
       "content": "俩人星辰篇belike:",
       "author": "yingmai_",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1444339230355624107",
+      "content": "被你虐待的狗一言不發地盤算著怎麼咬死你（",
+      "author": "carrot_chicken",
+      "reactions": 6,
+      "channel": "【Thalassophobia 深海恐懼症】"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2026-02-07",
-  "messages": 9942,
+  "messages": 9970,
   "unique_authors": 155,
-  "reactions_total": 1451,
-  "attachments": 371,
+  "reactions_total": 1484,
+  "attachments": 373,
   "channel_activity": {
+    "新年假期~ || 杜勒赛因x西维斯特": 26,
+    "绘画//戈利亚相关楼": 2,
     "1462840887553032335": 1,
     "1448648649486635128": 1,
     "1450001353064714320": 8,
@@ -13,11 +15,15 @@
     "🔸morimens-game-chat": 5971
   },
   "hourly_activity": {
+    "10": 166,
+    "11": 342,
+    "12": 395,
+    "21": 542,
+    "22": 499,
     "16": 683,
     "1": 297,
     "15": 691,
     "17": 667,
-    "10": 164,
     "0": 254,
     "2": 280,
     "3": 419,
@@ -27,23 +33,25 @@
     "7": 469,
     "8": 546,
     "9": 281,
-    "11": 326,
-    "12": 387,
     "13": 438,
     "14": 458,
     "18": 425,
     "19": 344,
     "23": 442,
-    "20": 267,
-    "21": 541,
-    "22": 498
+    "20": 267
   },
   "message_types": {
-    "0": 7162,
-    "19": 2779,
-    "20": 1
+    "0": 24,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1469809548926648411",
+      "content": "喜欢戈利亚真的好萌好萌\n后面一段时间都会画的",
+      "author": "jijia5738",
+      "reactions": 20,
+      "channel": "绘画//戈利亚相关楼"
+    },
     {
       "id": "1469607200485019804",
       "content": "中文群：前無古人爆料\n英文群：有人要玩拼字遊戲嗎",
@@ -57,6 +65,13 @@
       "author": "2ndselna",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469637329290530897",
+      "content": "(我是在发布之后才发现错误的……请原谅我。<:flop1:1356083604236800030> )\n\n我发现杜勒赛因在与西维斯特相处期间始终保护着他，这举动",
+      "author": "that_one_chippy",
+      "reactions": 9,
+      "channel": "新年假期~ || 杜勒赛因x西维斯特"
     },
     {
       "id": "1469827987183505574",
@@ -169,20 +184,6 @@
       "author": "corposant_1003",
       "reactions": 6,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1469745031010058372",
-      "content": "突然想到阿遙和盤子的cp名叫遙控盤",
-      "author": "ahong0727",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1469528983363256581",
-      "content": "the firts pages say not to trust advice from the english chat but i got this fro",
-      "author": "senorvespa",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

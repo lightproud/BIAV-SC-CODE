@@ -1,14 +1,18 @@
 {
   "date": "2025-11-06",
-  "messages": 2,
+  "messages": 4,
   "unique_authors": 2,
-  "reactions_total": 856,
+  "reactions_total": 857,
   "attachments": 1,
   "channel_activity": {
+    "相位對弈環境攻略": 1,
+    "组队推荐": 1,
     "🔸服务器公告┊server-announcement": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "23": 1,
+    "6": 1,
     "0": 1,
     "14": 1
   },
@@ -22,6 +26,13 @@
       "author": "cometovilla",
       "reactions": 856,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1435885031599116398",
+      "content": "抽个羊妈呗，血肉就能随便玩了",
+      "author": "tululike",
+      "reactions": 1,
+      "channel": "组队推荐"
     }
   ]
 }

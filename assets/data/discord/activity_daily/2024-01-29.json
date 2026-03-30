@@ -1,0 +1,39 @@
+{
+  "date": "2024-01-29",
+  "messages": 11,
+  "unique_authors": 7,
+  "reactions_total": 2,
+  "attachments": 1,
+  "channel_activity": {
+    "幻梦深潜地图全解": 6,
+    "混沌界域各角色及陣容分享": 5
+  },
+  "hourly_activity": {
+    "1": 2,
+    "3": 1,
+    "5": 4,
+    "4": 1,
+    "7": 2,
+    "12": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1201399847496974470",
+      "content": "乖乖用四小強😡",
+      "author": "xuan4185",
+      "reactions": 1,
+      "channel": "幻梦深潜地图全解"
+    },
+    {
+      "id": "1201399923782979614",
+      "content": "不要破壞我們偽裝的混沌強度😡",
+      "author": "xuan4185",
+      "reactions": 1,
+      "channel": "幻梦深潜地图全解"
+    }
+  ]
+}

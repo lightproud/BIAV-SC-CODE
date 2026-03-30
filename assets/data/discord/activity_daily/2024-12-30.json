@@ -1,0 +1,27 @@
+{
+  "date": "2024-12-30",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 10,
+  "attachments": 3,
+  "channel_activity": {
+    "【梗图】堆点我P过的梗图": 1,
+    "利莫里亞元首宣言": 1
+  },
+  "hourly_activity": {
+    "6": 1,
+    "11": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1323253126761025637",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 10,
+      "channel": "利莫里亞元首宣言"
+    }
+  ]
+}

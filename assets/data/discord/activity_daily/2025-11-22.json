@@ -1,19 +1,33 @@
 {
   "date": "2025-11-22",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 241,
-  "attachments": 2,
+  "messages": 25,
+  "unique_authors": 11,
+  "reactions_total": 259,
+  "attachments": 4,
   "channel_activity": {
+    "一點塔薇玩家的小小心得": 5,
+    "誕妄．墨菲機制與搭配探討": 2,
+    "N的究極羞辱": 7,
+    "杜勒X皮的正史（肥腸確定": 7,
     "🐱light’s-nest": 3,
     "1441904635123208233": 1
   },
   "hourly_activity": {
+    "1": 1,
+    "2": 1,
+    "5": 3,
+    "8": 6,
+    "15": 3,
+    "16": 3,
+    "17": 2,
+    "3": 1,
+    "6": 1,
     "7": 3,
     "21": 1
   },
   "message_types": {
-    "0": 4
+    "19": 2,
+    "0": 19
   },
   "top_reacted_messages": [
     {
@@ -36,6 +50,48 @@
       "author": "game.producer.light",
       "reactions": 24,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1441844361032630413",
+      "content": "",
+      "author": "axe_proficient",
+      "reactions": 5,
+      "channel": "N的究極羞辱"
+    },
+    {
+      "id": "1441810703236206602",
+      "content": "在遙遠的彌撒格學院內，一處任何探測儀器也找不到的地下室內，就是N的所在之處。\n\n“守密人，你這是要做什麼！”\n\n此刻的N像是隻燒鵝一樣，被繩子捆綁在半空中。\n\n",
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": "N的究極羞辱"
+    },
+    {
+      "id": "1441826104192012451",
+      "content": "||~~改成暴雷~~||",
+      "author": "ass191044",
+      "reactions": 4,
+      "channel": "N的究極羞辱"
+    },
+    {
+      "id": "1441712335852015708",
+      "content": "創死神🤩",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "杜勒X皮的正史（肥腸確定"
+    },
+    {
+      "id": "1441806115519070238",
+      "content": "~~顯然是誕墨~~",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "誕妄．墨菲機制與搭配探討"
+    },
+    {
+      "id": "1441811392553554105",
+      "content": "這到底是什麼……不管了先赤🛐",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "N的究極羞辱"
     }
   ]
 }

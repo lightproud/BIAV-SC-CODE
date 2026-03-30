@@ -1,0 +1,42 @@
+{
+  "date": "2024-01-20",
+  "messages": 19,
+  "unique_authors": 8,
+  "reactions_total": 3,
+  "attachments": 12,
+  "channel_activity": {
+    "幻梦深潜地图全解": 2,
+    "深海阵容的使用心得": 13,
+    "丽兹角色攻略集-《飞蛾之死》": 2,
+    "[diy界域——异术]包含六位唤醒体、配套命轮及命轮故事、造物及刻印": 2
+  },
+  "hourly_activity": {
+    "8": 1,
+    "21": 1,
+    "9": 2,
+    "11": 8,
+    "17": 3,
+    "18": 2,
+    "14": 2
+  },
+  "message_types": {
+    "0": 18,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1198187612062634164",
+      "content": "今天好像有点问题，毕竟半夜做的。单向门的方向反了，事件给的2白银不知道为什么写成2黄金了。",
+      "author": "metam0n",
+      "reactions": 2,
+      "channel": "幻梦深潜地图全解"
+    },
+    {
+      "id": "1198312889623265340",
+      "content": "hhhh好那我多挂一下珊",
+      "author": "timee_ky",
+      "reactions": 1,
+      "channel": "深海阵容的使用心得"
+    }
+  ]
+}

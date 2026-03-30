@@ -1,22 +1,48 @@
 {
   "date": "2025-11-12",
-  "messages": 3,
+  "messages": 14,
   "unique_authors": 3,
-  "reactions_total": 1,
-  "attachments": 0,
+  "reactions_total": 8,
+  "attachments": 3,
   "channel_activity": {
+    "仔细看 这是一个尤乌": 1,
+    "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》": 10,
     "🔸欢乐梗图": 3
   },
   "hourly_activity": {
+    "20": 1,
+    "0": 1,
+    "2": 9,
     "7": 1,
     "8": 1,
     "11": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 1
+    "0": 8,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1438260199516278967",
+      "content": "众所周知 尤乌十分的帅气",
+      "author": "ahh_1234567890",
+      "reactions": 5,
+      "channel": "仔细看 这是一个尤乌"
+    },
+    {
+      "id": "1437985641974599792",
+      "content": "大佬大佬",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》"
+    },
+    {
+      "id": "1437987287844524032",
+      "content": "哎呀謝謝<:pray:1356053116260454534> <:pray:1356053116260454534> <:pray:1356053116260",
+      "author": "flim_of_life_burst",
+      "reactions": 1,
+      "channel": "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》"
+    },
     {
       "id": "1438090605489164360",
       "content": "戈雅一定是不小心抓錯了怎麼抓住了我的心<:Sendflowers:1400771545370067118>",

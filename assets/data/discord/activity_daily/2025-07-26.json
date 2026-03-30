@@ -1,0 +1,41 @@
+{
+  "date": "2025-07-26",
+  "messages": 31,
+  "unique_authors": 4,
+  "reactions_total": 8,
+  "attachments": 4,
+  "channel_activity": {
+    "Slay the Spire Morimens Mod Text Provided Post": 24,
+    "仿一点官方q版（失败版": 7
+  },
+  "hourly_activity": {
+    "4": 1,
+    "7": 4,
+    "8": 7,
+    "9": 5,
+    "13": 6,
+    "23": 2,
+    "5": 3,
+    "10": 3
+  },
+  "message_types": {
+    "19": 7,
+    "0": 24
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1398539766307360788",
+      "content": "说实话，我是觉得游戏里的q版头像很好看的，于是决定抄一下画风，但到了下身我就开始我行我素了。因为我不管了。\n\n问了一下眼睛要两边火还是一边火，不过我有选择困难症",
+      "author": "dittoqwq",
+      "reactions": 7,
+      "channel": "仿一点官方q版（失败版"
+    },
+    {
+      "id": "1398560994820751410",
+      "content": "用这个",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "Slay the Spire Morimens Mod Text Provided Post"
+    }
+  ]
+}

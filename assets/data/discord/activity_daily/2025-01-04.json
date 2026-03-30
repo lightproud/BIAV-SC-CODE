@@ -1,0 +1,48 @@
+{
+  "date": "2025-01-04",
+  "messages": 14,
+  "unique_authors": 2,
+  "reactions_total": 11,
+  "attachments": 6,
+  "channel_activity": {
+    "帮我想想画什么": 14
+  },
+  "hourly_activity": {
+    "13": 1,
+    "17": 4,
+    "18": 9
+  },
+  "message_types": {
+    "0": 14
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1325096537654693959",
+      "content": "想画点好图，但是根本不知道摆什么动作什么构图",
+      "author": "luminous0623.",
+      "reactions": 5,
+      "channel": "帮我想想画什么"
+    },
+    {
+      "id": "1325172049500700733",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 3,
+      "channel": "帮我想想画什么"
+    },
+    {
+      "id": "1325166176845959218",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 2,
+      "channel": "帮我想想画什么"
+    },
+    {
+      "id": "1325169601621000344",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 1,
+      "channel": "帮我想想画什么"
+    }
+  ]
+}

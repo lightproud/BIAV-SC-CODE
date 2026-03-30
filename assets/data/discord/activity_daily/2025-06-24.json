@@ -1,0 +1,25 @@
+{
+  "date": "2025-06-24",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 7,
+  "attachments": 1,
+  "channel_activity": {
+    "展示品？": 1
+  },
+  "hourly_activity": {
+    "5": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1386939666623893595",
+      "content": "珊-二創\nUID:100349269",
+      "author": "ainei_00",
+      "reactions": 7,
+      "channel": "展示品？"
+    }
+  ]
+}

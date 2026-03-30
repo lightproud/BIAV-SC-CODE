@@ -1,0 +1,54 @@
+{
+  "date": "2025-08-31",
+  "messages": 12,
+  "unique_authors": 7,
+  "reactions_total": 10,
+  "attachments": 4,
+  "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 4,
+    "全4級400融災攻略": 3,
+    "一點拉郎": 5
+  },
+  "hourly_activity": {
+    "1": 1,
+    "12": 1,
+    "22": 2,
+    "6": 1,
+    "13": 2,
+    "7": 5
+  },
+  "message_types": {
+    "0": 10,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1411610550500331570",
+      "content": "內有戈利亞X尤烏哈希拉郎， 只是一時興起的小短篇(T_T)一點貼貼⋯⋯\nUID:100047306\n\n—————————\n\n海水嚐起來是苦的。\n悲傷、痛苦，還有",
+      "author": "yolo_mode",
+      "reactions": 5,
+      "channel": "一點拉郎"
+    },
+    {
+      "id": "1411603511782670419",
+      "content": "偷偷放一個逃課隊伍",
+      "author": "0.0._.0_0.",
+      "reactions": 2,
+      "channel": "全4級400融災攻略"
+    },
+    {
+      "id": "1411614659420749926",
+      "content": "我是預設這倆傢伙坐在床上<:hehe:1357185439089295390>",
+      "author": "yolo_mode",
+      "reactions": 2,
+      "channel": "一點拉郎"
+    },
+    {
+      "id": "1411613685331394570",
+      "content": "低頭恐怕不夠，鯊魚要半蹲才能把頭靠上去",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "一點拉郎"
+    }
+  ]
+}

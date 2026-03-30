@@ -1,10 +1,14 @@
 {
   "date": "2026-02-16",
-  "messages": 2139,
+  "messages": 2157,
   "unique_authors": 67,
-  "reactions_total": 673,
-  "attachments": 234,
+  "reactions_total": 710,
+  "attachments": 238,
   "channel_activity": {
+    "先祝大家新年快樂": 3,
+    "河畔（新年故事）": 13,
+    "Happy new year！": 1,
+    "給你遊拉磨😋": 1,
     "🔸欢乐梗图": 3,
     "🔸频道建议┊server-suggestions": 2,
     "🐱light’s-nest": 1,
@@ -23,11 +27,15 @@
     "🔸阵容构建": 134
   },
   "hourly_activity": {
+    "16": 291,
+    "21": 8,
+    "12": 132,
+    "23": 9,
+    "7": 77,
     "0": 6,
     "1": 156,
     "6": 37,
     "9": 138,
-    "16": 289,
     "13": 17,
     "17": 46,
     "4": 134,
@@ -36,21 +44,16 @@
     "10": 213,
     "20": 6,
     "22": 8,
-    "7": 76,
     "14": 85,
     "15": 262,
-    "12": 119,
     "2": 100,
     "3": 36,
     "8": 29,
     "18": 4,
-    "19": 38,
-    "21": 7,
-    "23": 8
+    "19": 38
   },
   "message_types": {
-    "0": 1558,
-    "19": 581
+    "0": 18
   },
   "top_reacted_messages": [
     {
@@ -59,6 +62,20 @@
       "author": "game.producer.light",
       "reactions": 154,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1472990612054737020",
+      "content": "圖文不符\n今天初一新年\n那麼剛好是我推哈姆林的第520天\n所以速摸了一個比心的哈姆林<:Hameln_love:1468257934348783749> \n\n祝",
+      "author": "ix_eternity",
+      "reactions": 17,
+      "channel": "先祝大家新年快樂"
+    },
+    {
+      "id": "1473094546219864219",
+      "content": "",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 12,
+      "channel": "Happy new year！"
     },
     {
       "id": "1473002625325727796",
@@ -124,6 +141,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1472932637361438862",
+      "content": "终于是写完了，各位就当是忘却篇三、四章的外传去看吧。\n\n如果想看得更明白一些，可以去把我之前的作品《[苍翠草甸往事](https://discord.com/c",
+      "author": "150_ripe",
+      "reactions": 5,
+      "channel": "河畔（新年故事）"
+    },
+    {
       "id": "1472857668367417384",
       "content": "写文的果然牢完<:takenotes:1357186646294138890>",
       "author": "150_ripe",
@@ -169,27 +193,6 @@
       "id": "1472785921580466266",
       "content": "不過我個人覺得應該+12（",
       "author": "corposant_1003",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472788619122049276",
-      "content": "# 報告一下我的徐+10了",
-      "author": "sayo.0320",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472795215168405507",
-      "content": "經典環節了",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472814947078504478",
-      "content": "終於...",
-      "author": "quackdayo",
       "reactions": 4,
       "channel": "🔸綜合討論"
     }

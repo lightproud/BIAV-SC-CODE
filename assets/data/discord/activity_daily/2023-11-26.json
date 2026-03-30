@@ -1,17 +1,25 @@
 {
   "date": "2023-11-26",
-  "messages": 1,
-  "unique_authors": 1,
+  "messages": 8,
+  "unique_authors": 4,
   "reactions_total": 2,
-  "attachments": 0,
+  "attachments": 1,
   "channel_activity": {
+    "看看你會截屏到哪個喚醒體！": 2,
+    "「血肉界域」介紹": 3,
+    "雕砌藝術家「珊」": 2,
     "discord社群建議": 1
   },
   "hourly_activity": {
-    "5": 1
+    "11": 1,
+    "16": 1,
+    "6": 1,
+    "14": 2,
+    "5": 3
   },
   "message_types": {
-    "0": 1
+    "0": 5,
+    "19": 2
   },
   "top_reacted_messages": [
     {

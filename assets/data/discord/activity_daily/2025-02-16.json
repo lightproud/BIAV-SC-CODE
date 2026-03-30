@@ -1,0 +1,36 @@
+{
+  "date": "2025-02-16",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 8,
+  "attachments": 0,
+  "channel_activity": {
+    "2.0 BOSS難度排行榜": 2,
+    "拿下索瓦爾格商用權了慶祝一下XD": 2
+  },
+  "hourly_activity": {
+    "11": 2,
+    "16": 1,
+    "17": 1
+  },
+  "message_types": {
+    "19": 2,
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1340650213886398526",
+      "content": "為校貓他們創一個難度",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "2.0 BOSS難度排行榜"
+    },
+    {
+      "id": "1340742117148065994",
+      "content": "Omg thank you!",
+      "author": "flim_of_life_burst",
+      "reactions": 1,
+      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
+    }
+  ]
+}

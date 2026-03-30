@@ -1,19 +1,37 @@
 {
   "date": "2025-02-17",
-  "messages": 4,
+  "messages": 6,
   "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 2,
+  "reactions_total": 6,
+  "attachments": 4,
   "channel_activity": {
+    "关卡地图「融灾禁区」总览28期·星辰篇": 1,
+    "獵顱魔女": 1,
     "1271491376881598494": 4
   },
   "hourly_activity": {
+    "15": 1,
+    "4": 1,
     "17": 1,
     "23": 3
   },
   "message_types": {
-    "0": 3,
-    "19": 1
+    "0": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1341068079764996116",
+      "content": "大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第1期（第28期）「融灾禁区」地图，以及时灵摆和对应效果与怪物首领。\n\n请注意https://discor",
+      "author": "menoctus",
+      "reactions": 5,
+      "channel": "关卡地图「融灾禁区」总览28期·星辰篇"
+    },
+    {
+      "id": "1340900472118186045",
+      "content": "卡米",
+      "author": "cjsyds9784",
+      "reactions": 1,
+      "channel": "獵顱魔女"
+    }
+  ]
 }

@@ -1,17 +1,30 @@
 {
   "date": "2024-10-21",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 2,
+  "attachments": 1,
   "channel_activity": {
+    "死抗序列": 1,
+    "像素命輪": 1,
+    "嘿嘿": 1,
+    "鼠抗糕手！": 1,
     "1193859503096070234": 1
   },
   "hourly_activity": {
-    "10": 1
+    "14": 1,
+    "10": 4
   },
   "message_types": {
-    "19": 1
+    "0": 4
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1297876436761317376",
+      "content": "冷冷的，我好爱❤️",
+      "author": "su_su_su0216",
+      "reactions": 2,
+      "channel": "嘿嘿"
+    }
+  ]
 }

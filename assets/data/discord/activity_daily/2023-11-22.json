@@ -1,25 +1,25 @@
 {
   "date": "2023-11-22",
-  "messages": 9,
+  "messages": 11,
   "unique_authors": 6,
   "reactions_total": 105,
   "attachments": 4,
   "channel_activity": {
+    "來一起跟「尤烏哈希」演小劇場吧~": 2,
     "活動訊息": 2,
     "官方佈告（已停止使用）": 1,
     "繪圖": 2,
     "discord社群建議": 4
   },
   "hourly_activity": {
+    "8": 5,
+    "13": 2,
     "6": 1,
-    "13": 1,
     "11": 1,
-    "3": 2,
-    "8": 4
+    "3": 2
   },
   "message_types": {
-    "0": 7,
-    "19": 2
+    "0": 2
   },
   "top_reacted_messages": [
     {

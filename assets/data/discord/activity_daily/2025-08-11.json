@@ -1,0 +1,27 @@
+{
+  "date": "2025-08-11",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "血肉喚醒體：菲尼克斯": 4
+  },
+  "hourly_activity": {
+    "0": 2,
+    "1": 2
+  },
+  "message_types": {
+    "0": 3,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1404264503830642718",
+      "content": "界域：血肉\n攻擊型\n\n————————————————\n菲尼克斯（Phoenix）\n\n————————————————\n狀態\n\n等級：60\n\n體質158\n攻擊1",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "血肉喚醒體：菲尼克斯"
+    }
+  ]
+}

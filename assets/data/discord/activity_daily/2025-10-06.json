@@ -1,17 +1,29 @@
 {
   "date": "2025-10-06",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 22,
-  "attachments": 1,
+  "messages": 16,
+  "unique_authors": 9,
+  "reactions_total": 52,
+  "attachments": 8,
   "channel_activity": {
+    "✦关卡地图「融灾禁区」总览44期·星辰篇✦": 1,
+    "《忘却前夜》与《克苏鲁神话》的关系": 7,
+    "诞妄·墨菲+自制超维血肉唤醒体技能组diy": 5,
+    "V2.3.2 UGC创作": 1,
+    "预警？": 1,
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "10": 1
+    "11": 4,
+    "2": 1,
+    "10": 4,
+    "14": 3,
+    "15": 2,
+    "16": 1,
+    "12": 1
   },
   "message_types": {
-    "0": 1
+    "0": 12,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -20,6 +32,34 @@
       "author": "navirecorbeau",
       "reactions": 22,
       "channel": ""
+    },
+    {
+      "id": "1424787795779784715",
+      "content": "uid: 100001547",
+      "author": "silverstream_s",
+      "reactions": 10,
+      "channel": "V2.3.2 UGC创作"
+    },
+    {
+      "id": "1424729725594763396",
+      "content": "【祭月小报15h/凯刻斯单人】\n20:00\n上一棒：@砚折酒\n下一棒：@乌鸦的羽毛是什么颜色的\n\n“戟吻一口沙 孑然半身鳞甲”\n画师：卢克蕾西亚",
+      "author": "calmdreab",
+      "reactions": 10,
+      "channel": "预警？"
+    },
+    {
+      "id": "1424717158658736139",
+      "content": "大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第17期（第44期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首领\n",
+      "author": "silverstream_s",
+      "reactions": 5,
+      "channel": "✦关卡地图「融灾禁区」总览44期·星辰篇✦"
+    },
+    {
+      "id": "1424771871517446355",
+      "content": "来点强度党讨论<:ptincess:1356053126247092476> <:ptincess:1356053126247092476> <:ptinces",
+      "author": "scholar_2",
+      "reactions": 5,
+      "channel": "诞妄·墨菲+自制超维血肉唤醒体技能组diy"
     }
   ]
 }

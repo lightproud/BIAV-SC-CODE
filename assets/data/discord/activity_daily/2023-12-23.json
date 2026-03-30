@@ -1,18 +1,47 @@
 {
   "date": "2023-12-23",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 8,
+  "unique_authors": 5,
+  "reactions_total": 14,
+  "attachments": 1,
   "channel_activity": {
+    "密契系统介绍及简析（守密人35级解锁）": 1,
+    "「二次投稿」单核尤乌哈希队伍全方位解析by帅到爆了": 1,
+    "血與海": 4,
     "達芙黛爾應援活動": 2
   },
   "hourly_activity": {
+    "2": 1,
+    "15": 1,
+    "7": 3,
+    "17": 1,
     "12": 1,
     "14": 1
   },
   "message_types": {
-    "0": 2
+    "0": 6
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1188019720830582804",
+      "content": "有私設！可能有ooc！不喜請注意！\n尤烏哈希中心向，後篇會混雜戈利亞相關但我還沒寫完！\n主要是這兩個人我覺得他們真的太相像了，然後我早就想撕戈利亞的傷疤看他內心",
+      "author": "yolo_mode",
+      "reactions": 12,
+      "channel": "血與海"
+    },
+    {
+      "id": "1188025061664370739",
+      "content": "這個島看起來好好吃（x",
+      "author": "dfdiabolik",
+      "reactions": 1,
+      "channel": "血與海"
+    },
+    {
+      "id": "1188177047042928790",
+      "content": "卡，好吃的飯飯增加了……🙏",
+      "author": "rafanetold_",
+      "reactions": 1,
+      "channel": "血與海"
+    }
+  ]
 }

@@ -1,17 +1,22 @@
 {
   "date": "2025-01-25",
-  "messages": 1,
-  "unique_authors": 1,
+  "messages": 4,
+  "unique_authors": 3,
   "reactions_total": 5,
   "attachments": 0,
   "channel_activity": {
+    "where i post stuff": 1,
+    "大型？同人创作DIY界域🤓👆": 2,
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "5": 1
+    "17": 1,
+    "5": 2,
+    "8": 1
   },
   "message_types": {
-    "19": 1
+    "4": 2,
+    "0": 1
   },
   "top_reacted_messages": [
     {

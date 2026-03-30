@@ -1,23 +1,29 @@
 {
   "date": "2023-11-24",
-  "messages": 11,
-  "unique_authors": 3,
+  "messages": 33,
+  "unique_authors": 7,
   "reactions_total": 134,
   "attachments": 4,
   "channel_activity": {
+    "來一起跟「尤烏哈希」演小劇場吧~": 9,
+    "關於「融蝕」的小知識~": 13,
     "活動訊息": 2,
     "官方佈告（已停止使用）": 2,
     "discord社群建議": 7
   },
   "hourly_activity": {
+    "4": 5,
+    "5": 5,
+    "6": 1,
+    "7": 4,
+    "8": 13,
     "11": 3,
     "13": 1,
-    "8": 6,
     "12": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 3
+    "0": 16,
+    "19": 6
   },
   "top_reacted_messages": [
     {

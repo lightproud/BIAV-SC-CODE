@@ -1,0 +1,37 @@
+{
+  "date": "2023-12-28",
+  "messages": 4,
+  "unique_authors": 4,
+  "reactions_total": 24,
+  "attachments": 2,
+  "channel_activity": {
+    "達芙黛爾使用心得": 2,
+    "基于40级左右的礼包性价比分析": 1,
+    "尤烏": 1
+  },
+  "hourly_activity": {
+    "8": 1,
+    "10": 1,
+    "1": 1,
+    "6": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1189819347192008745",
+      "content": "幫投稿，UID：100002956",
+      "author": "wutaa1",
+      "reactions": 22,
+      "channel": "尤烏"
+    },
+    {
+      "id": "1189736106720235581",
+      "content": "想氪金买礼包但是不知道那个礼包性价比高，自己拉了个excel计算了一下基本确定是课题＋体力礼包性价比算是最好的，月卡的抽数见仁见智（需要攒太久了），有什么问题麻",
+      "author": "modulelike",
+      "reactions": 2,
+      "channel": "基于40级左右的礼包性价比分析"
+    }
+  ]
+}

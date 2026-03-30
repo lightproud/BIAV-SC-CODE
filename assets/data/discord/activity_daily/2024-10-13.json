@@ -1,0 +1,26 @@
+{
+  "date": "2024-10-13",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 2,
+  "attachments": 2,
+  "channel_activity": {
+    "（已封存）【蚰蜒的vrm影像馆】": 4
+  },
+  "hourly_activity": {
+    "14": 3,
+    "17": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1295030921413660712",
+      "content": "",
+      "author": "nancyjofla",
+      "reactions": 2,
+      "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    }
+  ]
+}

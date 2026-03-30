@@ -1,0 +1,34 @@
+{
+  "date": "2024-11-09",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 15,
+  "attachments": 2,
+  "channel_activity": {
+    "死抗序列": 1,
+    "凯刻斯生贺预告": 1
+  },
+  "hourly_activity": {
+    "5": 1,
+    "16": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1304837975741562890",
+      "content": "帮可令怕老师代发，请期待11号的小鱼生贺！",
+      "author": "phantom_ye",
+      "reactions": 9,
+      "channel": "凯刻斯生贺预告"
+    },
+    {
+      "id": "1304679769463324682",
+      "content": "~~沒到1%純因為打太久退掉~~",
+      "author": "kong760",
+      "reactions": 6,
+      "channel": "死抗序列"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2025-05-27",
+  "messages": 3,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 1,
+  "channel_activity": {
+    "弥萨格校友号码本4.0": 3
+  },
+  "hourly_activity": {
+    "4": 3
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1376776886256140420",
+      "content": "100445763",
+      "author": "universe.dark",
+      "reactions": 1,
+      "channel": "弥萨格校友号码本4.0"
+    }
+  ]
+}

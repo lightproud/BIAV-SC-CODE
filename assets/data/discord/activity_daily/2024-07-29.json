@@ -1,17 +1,45 @@
 {
   "date": "2024-07-29",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 31,
+  "unique_authors": 14,
+  "reactions_total": 17,
+  "attachments": 10,
   "channel_activity": {
+    "忘卻陣容V1.5.1陣容Tier榜(幻夢向)": 6,
+    "新版本放弃回合分的深海盾击思路分享": 3,
+    "弥萨格校友号码本(已废弃)": 4,
+    "盾擊之超維（奧爾拉篇）：": 1,
+    "奧爾拉粗略解析(幻夢向)": 8,
+    "咖啡店休憩小記(拉蒙娜x守密人)": 1,
+    "忘卻前夜聯機版": 2,
+    "臨摹鯊魚": 5,
     "1193859503096070234": 1
   },
   "hourly_activity": {
+    "15": 4,
+    "16": 5,
+    "17": 1,
+    "6": 3,
+    "9": 1,
+    "12": 1,
+    "20": 2,
+    "13": 1,
+    "11": 8,
+    "0": 3,
+    "1": 1,
     "2": 1
   },
   "message_types": {
-    "0": 1
+    "0": 26,
+    "19": 4
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1267516015718170644",
+      "content": "",
+      "author": "jester_romut",
+      "reactions": 17,
+      "channel": "忘卻前夜聯機版"
+    }
+  ]
 }

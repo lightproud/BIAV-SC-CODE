@@ -1,19 +1,79 @@
 {
   "date": "2024-10-07",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 2,
-  "attachments": 0,
+  "messages": 16,
+  "unique_authors": 13,
+  "reactions_total": 65,
+  "attachments": 8,
   "channel_activity": {
+    "SP希洛个人使用心得。": 1,
+    "第4章「於無聲處」關卡地圖總覽": 2,
+    "Posse List": 1,
+    "80级+12血链希洛助战+攻略心得": 7,
+    "Aomi 的忘郤前夜 Morimens作品角": 1,
+    "DIY唤醒体，锋刃•艾尔瓦": 1,
+    "偷偷趕個末班車": 2,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "23": 1,
+    "12": 2,
+    "11": 1,
+    "1": 2,
+    "2": 3,
+    "5": 1,
+    "7": 1,
+    "10": 1,
+    "14": 1,
+    "15": 1,
+    "17": 1,
     "21": 1
   },
   "message_types": {
-    "19": 1
+    "0": 15
   },
   "top_reacted_messages": [
+    {
+      "id": "1292658829531680778",
+      "content": "第一时间抽了+12血链希洛并拉到了80级，技能尽可能点高。\n欢迎各位大佬加好友，助战测评！\n后续体验心得会放在评论区，欢迎讨论\nUID：100109619",
+      "author": "mtyl.eth",
+      "reactions": 29,
+      "channel": "80级+12血链希洛助战+攻略心得"
+    },
+    {
+      "id": "1292999282323882036",
+      "content": "https://www.bilibili.com/video/BV19y11YzEFE/?vd_source=8f31dbab4fa0df2c670f4b445",
+      "author": "randomplayer852",
+      "reactions": 11,
+      "channel": "SP希洛个人使用心得。"
+    },
+    {
+      "id": "1292877081864306810",
+      "content": "uid100001547",
+      "author": "silverstream_s",
+      "reactions": 11,
+      "channel": "偷偷趕個末班車"
+    },
+    {
+      "id": "1292750898778345552",
+      "content": "【忘却前夜】血链希洛（SP希洛）攻略心得+抽卡建议\nhttps://www.bilibili.com/video/BV1rh11YEEa6/?vd_source",
+      "author": "mtyl.eth",
+      "reactions": 5,
+      "channel": "80级+12血链希洛助战+攻略心得"
+    },
+    {
+      "id": "1292849770284453920",
+      "content": "与原本的艾尔瓦相比，锋刃•艾尔瓦更加注重，输出而舍弃了一部分防御。数值依旧是乱写的，没有精细的算。可能很超模，但毕竟数值已经膨胀了，我写的玩，超模怎么了<:cu",
+      "author": "busy_chipmunk_73748_41947",
+      "reactions": 4,
+      "channel": "DIY唤醒体，锋刃•艾尔瓦"
+    },
+    {
+      "id": "1292825439282139146",
+      "content": "大家好，這裡是難忘今宵攻略組，本期帶給大家的是第4章的關卡地圖。\n\n值得注意的是，每一關的調查成就。尤其是【節能主義】通關時症狀卡不多於 X 張。有些地圖的幻象",
+      "author": "menoctus",
+      "reactions": 3,
+      "channel": "第4章「於無聲處」關卡地圖總覽"
+    },
     {
       "id": "1292957005090263061",
       "content": "啊啊啊<:heart:1239910691218001961>",

@@ -1,17 +1,40 @@
 {
   "date": "2025-08-21",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 22,
+  "unique_authors": 3,
+  "reactions_total": 5,
+  "attachments": 2,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 1,
+    "米粒寧妃混搭": 2,
+    "希爾拉": 16,
     "1181147096234065920": 3
   },
   "hourly_activity": {
-    "8": 3
+    "22": 1,
+    "15": 1,
+    "17": 1,
+    "7": 8,
+    "8": 11
   },
   "message_types": {
-    "0": 3
+    "0": 15,
+    "19": 4
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1408109677530845328",
+      "content": "我對不起米粒廚和寧妃廚但哈哈哈哈哈哈哈哈哈",
+      "author": "ice_storys",
+      "reactions": 4,
+      "channel": "米粒寧妃混搭"
+    },
+    {
+      "id": "1407998733622181979",
+      "content": "希洛那一撮毛和小玫瑰的連接處還剛好在陰影",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "希爾拉"
+    }
+  ]
 }

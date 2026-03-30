@@ -1,0 +1,28 @@
+{
+  "date": "2025-04-25",
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 8,
+  "attachments": 3,
+  "channel_activity": {
+    "Ultra Greed": 1,
+    "跟我朋友零元購了一個稿，成效甚好": 4
+  },
+  "hourly_activity": {
+    "11": 1,
+    "10": 4
+  },
+  "message_types": {
+    "0": 4,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1365281232451014727",
+      "content": "Can't believe ultra realm players want more shield when they already have winkle",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "Ultra Greed"
+    }
+  ]
+}

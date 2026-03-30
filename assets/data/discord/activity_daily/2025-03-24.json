@@ -1,17 +1,48 @@
 {
   "date": "2025-03-24",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 8,
+  "messages": 7,
+  "unique_authors": 5,
+  "reactions_total": 23,
+  "attachments": 12,
   "channel_activity": {
+    "四小強星辰篇通關記錄分享": 1,
+    "手咪人的噩梦": 2,
+    "key–per fanart🗝": 1,
+    "同人活動毀損灰霧之都": 1,
+    "where i post stuff": 1,
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "1": 1,
+    "15": 3,
+    "13": 1,
+    "5": 1,
     "20": 1
   },
   "message_types": {
-    "0": 1
+    "0": 6
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1353715974565658635",
+      "content": "uid: 100825904",
+      "author": "tete_ttnhana",
+      "reactions": 11,
+      "channel": "同人活動毀損灰霧之都"
+    },
+    {
+      "id": "1353748121644961824",
+      "content": "i love her wavy side hair very much <:wish:1236951537788649492>",
+      "author": "milkshake010325",
+      "reactions": 7,
+      "channel": "key–per fanart🗝"
+    },
+    {
+      "id": "1353750091990700154",
+      "content": "磨磨蹭蹭画了好多天因为不会画你朵的超模身材修修改改最终草图是满足了一下癖好（喂\n感觉此疯子的气质实在是很香\n再也不画大图辣累得要命\nuid:100022124",
+      "author": "cjsyds9784",
+      "reactions": 5,
+      "channel": "手咪人的噩梦"
+    }
+  ]
 }

@@ -1,23 +1,30 @@
 {
   "date": "2025-03-27",
-  "messages": 9,
-  "unique_authors": 3,
-  "reactions_total": 370,
-  "attachments": 5,
+  "messages": 14,
+  "unique_authors": 4,
+  "reactions_total": 400,
+  "attachments": 6,
   "channel_activity": {
+    "是雷婭": 1,
+    "不会再有了": 1,
+    "《巨人的新娘》戈利亞X妳": 1,
+    "印了戈利亞的流沙票根": 2,
     "🔸服务器公告┊server-announcement": 5,
     "1181998821291606097": 1,
     "1350060160739184690": 1,
     "1350058287688712253": 2
   },
   "hourly_activity": {
-    "9": 2,
-    "10": 4,
+    "15": 1,
+    "10": 5,
+    "18": 1,
+    "6": 1,
+    "9": 3,
     "11": 3
   },
   "message_types": {
-    "0": 8,
-    "19": 1
+    "0": 2,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -42,6 +49,13 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1354842851418312876",
+      "content": "布料褶皺是我一生的敵人\nuid: 100868357",
+      "author": "gazhua123",
+      "reactions": 29,
+      "channel": "是雷婭"
+    },
+    {
       "id": "1354756061604745226",
       "content": "**【伺服器煥新說明/Server Update Notes】**\n————————————\n\n你好，守密人🌹\n為提升各位守密人的頻道使用體驗，我們將在3月28",
       "author": "morimensstaff01",
@@ -54,6 +68,13 @@
       "author": "morimensstaff01",
       "reactions": 5,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1354761931331862550",
+      "content": "太感謝了@用手機的時候真的很痛苦",
+      "author": "huangziqiao_45693",
+      "reactions": 1,
+      "channel": "不会再有了"
     },
     {
       "id": "1354757520249323581",

@@ -1,0 +1,41 @@
+{
+  "date": "2025-08-12",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 28,
+  "attachments": 2,
+  "channel_activity": {
+    "《37個鑰令全解析｜融災實用Top10推薦》": 1,
+    "一个大头的画": 2
+  },
+  "hourly_activity": {
+    "11": 1,
+    "15": 2
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1404853107367743578",
+      "content": "虽然我们杜勒没画完，但是先丢到这里<:Emoji_24_P_11:1400771541423226971> \nuid：100082465",
+      "author": "arki1i_",
+      "reactions": 19,
+      "channel": "一个大头的画"
+    },
+    {
+      "id": "1404790536858107904",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=926&tnum=1",
+      "author": "taoi002",
+      "reactions": 6,
+      "channel": "《37個鑰令全解析｜融災實用Top10推薦》"
+    },
+    {
+      "id": "1404854238584111134",
+      "content": "",
+      "author": "arki1i_",
+      "reactions": 3,
+      "channel": "一个大头的画"
+    }
+  ]
+}

@@ -1,17 +1,21 @@
 {
   "date": "2025-11-09",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 255,
-  "attachments": 0,
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 269,
+  "attachments": 1,
   "channel_activity": {
+    "「我還記得你原本應該是什麼樣子」": 1,
+    "❤️": 3,
     "🔸服务器公告┊server-announcement": 1
   },
   "hourly_activity": {
+    "15": 1,
+    "23": 3,
     "22": 1
   },
   "message_types": {
-    "0": 1
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -20,6 +24,13 @@
       "author": "cometovilla",
       "reactions": 255,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1437219319988621442",
+      "content": "❤️",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 14,
+      "channel": "❤️"
     }
   ]
 }

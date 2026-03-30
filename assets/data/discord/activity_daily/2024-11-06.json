@@ -1,0 +1,41 @@
+{
+  "date": "2024-11-06",
+  "messages": 10,
+  "unique_authors": 4,
+  "reactions_total": 25,
+  "attachments": 3,
+  "channel_activity": {
+    "原創造物：通用、四界域與原創界域": 1,
+    "《忘卻前夜》限定喚醒體「彌利亞姆」復刻宣導PV": 1,
+    "打印机施工完成": 4,
+    "提笔着墨": 1,
+    "做了一個共鳴，整點活幹？": 3
+  },
+  "hourly_activity": {
+    "15": 4,
+    "12": 1,
+    "7": 1,
+    "8": 4
+  },
+  "message_types": {
+    "0": 7,
+    "19": 1,
+    "4": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1303644179607457883",
+      "content": "落笔生情",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 18,
+      "channel": "提笔着墨"
+    },
+    {
+      "id": "1303702401945174070",
+      "content": "活動時間：11月4日 09:00 - 11月18日 09:00\n\n深海的倒影上，王的夢境消散，神的國也已腐朽。\n她從舊日的幻夢中走來，走入未來崩塌的廢墟。\n她詢",
+      "author": "menoctus",
+      "reactions": 7,
+      "channel": "《忘卻前夜》限定喚醒體「彌利亞姆」復刻宣導PV"
+    }
+  ]
+}

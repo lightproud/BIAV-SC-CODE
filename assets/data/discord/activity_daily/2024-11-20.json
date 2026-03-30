@@ -1,0 +1,40 @@
+{
+  "date": "2024-11-20",
+  "messages": 8,
+  "unique_authors": 5,
+  "reactions_total": 50,
+  "attachments": 2,
+  "channel_activity": {
+    "塔薇...": 2,
+    "打不過本源朵爾，只好來畫畫": 1,
+    "群山的呼唤": 2,
+    "早安…": 3
+  },
+  "hourly_activity": {
+    "4": 2,
+    "0": 1,
+    "11": 1,
+    "15": 1,
+    "3": 1,
+    "8": 2
+  },
+  "message_types": {
+    "0": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1308757353528819783",
+      "content": "游戏都要没了大概是等不到下一期同人活动了就直接在这发了吧（悲",
+      "author": "no.tea.",
+      "reactions": 29,
+      "channel": "群山的呼唤"
+    },
+    {
+      "id": "1308630252750372914",
+      "content": "",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 21,
+      "channel": "早安…"
+    }
+  ]
+}

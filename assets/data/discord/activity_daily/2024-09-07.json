@@ -1,0 +1,55 @@
+{
+  "date": "2024-09-07",
+  "messages": 13,
+  "unique_authors": 7,
+  "reactions_total": 57,
+  "attachments": 7,
+  "channel_activity": {
+    "3界域1t颠五": 5,
+    "（已封存）【蚰蜒的vrm影像馆】": 2,
+    "莱克吧唧": 2,
+    "温柯尔": 1,
+    "以防你不知道今天是外星天才少女温柯尔的生日": 3
+  },
+  "hourly_activity": {
+    "1": 5,
+    "15": 3,
+    "9": 1,
+    "10": 1,
+    "5": 2,
+    "7": 1
+  },
+  "message_types": {
+    "0": 13
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1281914037470236783",
+      "content": "自印的，感觉好看，遂发之",
+      "author": "you_zuo",
+      "reactions": 21,
+      "channel": "莱克吧唧"
+    },
+    {
+      "id": "1281917045285457992",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 18,
+      "channel": "温柯尔"
+    },
+    {
+      "id": "1281843805758427189",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 13,
+      "channel": "以防你不知道今天是外星天才少女温柯尔的生日"
+    },
+    {
+      "id": "1281998272013271082",
+      "content": "“因为感觉水土不服所以擅自从弥大离校回家了，结果今天门口有唤醒体来堵门，校友们怎么办啊，在线等，有点急。”",
+      "author": "nancyjofla",
+      "reactions": 5,
+      "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    }
+  ]
+}

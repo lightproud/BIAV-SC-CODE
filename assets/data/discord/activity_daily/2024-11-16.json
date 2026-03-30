@@ -1,0 +1,31 @@
+{
+  "date": "2024-11-16",
+  "messages": 10,
+  "unique_authors": 3,
+  "reactions_total": 3,
+  "attachments": 1,
+  "channel_activity": {
+    "（已封存）【蚰蜒的vrm影像馆】": 1,
+    "超絕羅傑斯和喬治畫像": 3,
+    "喬治（R18，有碼": 6
+  },
+  "hourly_activity": {
+    "12": 1,
+    "5": 3,
+    "1": 4,
+    "4": 2
+  },
+  "message_types": {
+    "0": 8,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1307324726619672606",
+      "content": "是的朋友金鱼展还在追我\n（又付了一次门票钱）",
+      "author": "nancyjofla",
+      "reactions": 3,
+      "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    }
+  ]
+}

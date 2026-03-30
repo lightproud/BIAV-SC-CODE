@@ -1,10 +1,11 @@
 {
   "date": "2026-02-03",
-  "messages": 7787,
+  "messages": 7788,
   "unique_authors": 164,
   "reactions_total": 1197,
-  "attachments": 347,
+  "attachments": 348,
   "channel_activity": {
+    "圖樓": 1,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 9,
     "1467801756359589971": 2,
     "1462840887553032335": 3,
@@ -14,12 +15,12 @@
     "🔸morimens-game-chat": 5877
   },
   "hourly_activity": {
+    "12": 436,
     "1": 360,
     "2": 202,
     "5": 601,
     "9": 334,
     "11": 386,
-    "12": 435,
     "4": 616,
     "16": 173,
     "0": 394,
@@ -40,9 +41,7 @@
     "23": 118
   },
   "message_types": {
-    "0": 5731,
-    "19": 2055,
-    "20": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

@@ -1,25 +1,89 @@
 {
   "date": "2024-10-30",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 16,
-  "attachments": 1,
+  "messages": 40,
+  "unique_authors": 14,
+  "reactions_total": 99,
+  "attachments": 10,
   "channel_activity": {
+    "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
+    "血链·希洛的抽取建议": 3,
+    "忘卻困難版大挑戰！": 3,
+    "死亡已經迫近，消亡已經開始": 21,
+    "更一波宝宝们的傻大头": 2,
+    "那閃爍於夜空之物是窮盡一生也無法觸及的夢": 2,
+    "混沌界域-傷害型喚醒體：卡利歐佩": 3,
+    "放個六月畫的舊圖": 3,
     "1181998821291606097": 2
   },
   "hourly_activity": {
-    "16": 2
+    "7": 2,
+    "2": 2,
+    "19": 1,
+    "15": 9,
+    "4": 2,
+    "6": 1,
+    "8": 1,
+    "9": 9,
+    "11": 1,
+    "12": 5,
+    "13": 1,
+    "16": 4,
+    "1": 1,
+    "10": 1
   },
   "message_types": {
-    "0": 2
+    "0": 28,
+    "19": 10
   },
   "top_reacted_messages": [
+    {
+      "id": "1300998828371218432",
+      "content": "「現在這個機會，不適合我們敘舊，但是……」\n「你之前說，不會因為我的背叛而怨恨我，是真的嗎？」\n「……」\n「千真萬確。」",
+      "author": "saku0974",
+      "reactions": 30,
+      "channel": "放個六月畫的舊圖"
+    },
+    {
+      "id": "1301200404968640624",
+      "content": "想加入官方表情。",
+      "author": "game.producer.light",
+      "reactions": 17,
+      "channel": "更一波宝宝们的傻大头"
+    },
     {
       "id": "1301227414931771424",
       "content": "萬聖節快樂🎃🎃",
       "author": "navirecorbeau",
       "reactions": 16,
       "channel": ""
+    },
+    {
+      "id": "1301199243352080496",
+      "content": "？？？？？",
+      "author": "game.producer.light",
+      "reactions": 14,
+      "channel": "死亡已經迫近，消亡已經開始"
+    },
+    {
+      "id": "1301263939862134907",
+      "content": "果爷被猫踹走了<:flop:1236937860922343466>",
+      "author": "ioshift_24740",
+      "reactions": 9,
+      "channel": "血链·希洛的抽取建议"
+    },
+    {
+      "id": "1301123317822128189",
+      "content": "~~學長可以嗎~~",
+      "author": "ice_storys",
+      "reactions": 8,
+      "channel": "死亡已經迫近，消亡已經開始"
+    },
+    {
+      "id": "1301151027516670032",
+      "content": "~~拉蒙娜他爸可以嗎~~",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "死亡已經迫近，消亡已經開始"
     }
   ]
 }

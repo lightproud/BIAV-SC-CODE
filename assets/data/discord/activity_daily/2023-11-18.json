@@ -1,17 +1,29 @@
 {
   "date": "2023-11-18",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 1,
+  "messages": 6,
+  "unique_authors": 2,
+  "reactions_total": 6,
+  "attachments": 2,
   "channel_activity": {
+    "雕砌藝術家「珊」": 4,
     "官方佈告（已停止使用）": 2
   },
   "hourly_activity": {
-    "10": 2
+    "10": 3,
+    "12": 1,
+    "13": 2
   },
   "message_types": {
-    "0": 2
+    "0": 2,
+    "19": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1175389912598593627",
+      "content": "珊是來自西岱的雕砌者，其自甦醒後便保持著雕刻行為。\n那些以詭譎的曲面和線條而文明的藝術風格難以被歸類到任何流派。\n守密人漫不經心的一句話可能就解開了困擾其數月的",
+      "author": "alpha0909_",
+      "reactions": 6,
+      "channel": "雕砌藝術家「珊」"
+    }
+  ]
 }

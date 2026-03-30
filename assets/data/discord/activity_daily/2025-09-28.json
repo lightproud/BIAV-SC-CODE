@@ -1,20 +1,30 @@
 {
   "date": "2025-09-28",
-  "messages": 5,
+  "messages": 7,
   "unique_authors": 2,
-  "reactions_total": 1,
+  "reactions_total": 2,
   "attachments": 0,
   "channel_activity": {
+    "無借角融災全4 400攻略血肉指環": 1,
+    "角鬥士": 1,
     "1420092491125755985": 5
   },
   "hourly_activity": {
+    "23": 1,
+    "7": 1,
     "13": 5
   },
   "message_types": {
-    "19": 1,
-    "0": 4
+    "0": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1422005277036642314",
+      "content": "",
+      "author": "breezeg9527",
+      "reactions": 1,
+      "channel": "無借角融災全4 400攻略血肉指環"
+    },
     {
       "id": "1421852615611777104",
       "content": "Normal mode with DR and revives is the most easy the game can get, if you're rea",

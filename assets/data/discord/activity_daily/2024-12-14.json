@@ -1,17 +1,51 @@
 {
   "date": "2024-12-14",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 1,
+  "messages": 6,
+  "unique_authors": 3,
+  "reactions_total": 36,
+  "attachments": 5,
   "channel_activity": {
+    "我們偉大的音樂家（哈姆林樓？）": 2,
+    "纪念一下": 3,
     "🔸【超越維度的祝福】認領專區": 1
   },
   "hourly_activity": {
+    "13": 2,
+    "11": 1,
+    "15": 2,
     "1": 1
   },
   "message_types": {
-    "0": 1
+    "0": 5
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1317450505181466705",
+      "content": "难打但死的快的大娃\n   聪慧过人，选了凝晶为爆物，存活时间最长，熬死了七娃的二娃。\n   自带15屏障极其耐打但被不断分裂的软剑干掉的三娃\n  白给的四娃\n ",
+      "author": "muliupan",
+      "reactions": 16,
+      "channel": "纪念一下"
+    },
+    {
+      "id": "1317490196517883956",
+      "content": "塗鴉",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "我們偉大的音樂家（哈姆林樓？）"
+    },
+    {
+      "id": "1317490334795563078",
+      "content": "滿啟了很開心",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "我們偉大的音樂家（哈姆林樓？）"
+    },
+    {
+      "id": "1317508944461037629",
+      "content": "小金刚长太大了，p不进去",
+      "author": "muliupan",
+      "reactions": 4,
+      "channel": "纪念一下"
+    }
+  ]
 }

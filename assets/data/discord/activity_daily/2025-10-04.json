@@ -1,17 +1,36 @@
 {
   "date": "2025-10-04",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 2,
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 3,
+  "attachments": 3,
   "channel_activity": {
+    "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）": 1,
+    "请大家多多捧场喵": 1,
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "1": 1,
+    "17": 1,
     "14": 2
   },
   "message_types": {
     "0": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1424089764981903360",
+      "content": "【《狂气Break》-哔哩哔哩】 https://b23.tv/HCvpQ8K",
+      "author": "ruhebaoyangsiwa_97871",
+      "reactions": 2,
+      "channel": "请大家多多捧场喵"
+    },
+    {
+      "id": "1423840231895076874",
+      "content": "<:Cheerup:1400771555939844149>",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+    }
+  ]
 }

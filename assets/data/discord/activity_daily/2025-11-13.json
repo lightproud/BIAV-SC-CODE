@@ -1,27 +1,45 @@
 {
   "date": "2025-11-13",
-  "messages": 5,
+  "messages": 7,
   "unique_authors": 2,
-  "reactions_total": 8,
-  "attachments": 1,
+  "reactions_total": 24,
+  "attachments": 3,
   "channel_activity": {
+    "誕妄．墨菲機制與搭配探討": 1,
+    "觀鳥雙子個人劇情有感": 1,
     "1181147096234065920": 4,
     "1356210707867107391": 1
   },
   "hourly_activity": {
+    "20": 1,
+    "9": 1,
     "11": 4,
     "15": 1
   },
   "message_types": {
-    "0": 5
+    "0": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1438621511081791538",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1107&tnum=1",
+      "author": "ernest_heart",
+      "reactions": 12,
+      "channel": "誕妄．墨菲機制與搭配探討"
+    },
     {
       "id": "1438484737697251341",
       "content": "",
       "author": "sweet_25367",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1438463304010825759",
+      "content": "",
+      "author": "flim_of_life_burst",
+      "reactions": 4,
+      "channel": "觀鳥雙子個人劇情有感"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2026-02-06",
-  "messages": 7551,
+  "messages": 7568,
   "unique_authors": 159,
-  "reactions_total": 1218,
-  "attachments": 226,
+  "reactions_total": 1227,
+  "attachments": 227,
   "channel_activity": {
+    "アイロニーナ || 杜勒赛因x西维斯特": 17,
     "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 3,
     "🔸忘却前夜┊morimens-tv": 1,
@@ -17,13 +18,14 @@
     "🔸morimens-game-chat": 6433
   },
   "hourly_activity": {
+    "8": 251,
+    "9": 289,
     "4": 92,
     "3": 378,
     "11": 342,
     "12": 642,
     "15": 381,
     "7": 273,
-    "8": 239,
     "19": 247,
     "21": 503,
     "0": 553,
@@ -31,7 +33,6 @@
     "2": 273,
     "5": 218,
     "6": 84,
-    "9": 284,
     "10": 612,
     "13": 218,
     "14": 479,
@@ -43,9 +44,8 @@
     "20": 449
   },
   "message_types": {
-    "0": 5170,
-    "19": 2380,
-    "20": 1
+    "0": 11,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -75,6 +75,13 @@
       "author": "arisuu0604",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469253894331961435",
+      "content": "我真的很喜欢这首歌！于是，我决定将国王与他的守护者描绘成歌曲本身的一部分~ 这首歌中使用的色彩让我联想到二者之间的对比。然而，它们似乎依然相得益彰。<:MC_J",
+      "author": "that_one_chippy",
+      "reactions": 6,
+      "channel": "アイロニーナ || 杜勒赛因x西维斯特"
     },
     {
       "id": "1469351918047465513",
@@ -180,13 +187,6 @@
       "author": "legendaryredz",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469292059272675534",
-      "content": "Обзор обновления <:pray:1356053116260454534> \nhttps://www.youtube.com/watch?v=mZ",
-      "author": "closetom",
-      "reactions": 4,
-      "channel": "🔸忘却前夜┊morimens-tv"
     }
   ]
 }

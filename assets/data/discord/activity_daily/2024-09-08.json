@@ -1,0 +1,47 @@
+{
+  "date": "2024-09-08",
+  "messages": 12,
+  "unique_authors": 6,
+  "reactions_total": 16,
+  "attachments": 9,
+  "channel_activity": {
+    "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）": 4,
+    "（已封存）【蚰蜒的vrm影像馆】": 4,
+    "莱克吧唧": 1,
+    "温柯尔": 1,
+    "莉兹": 2
+  },
+  "hourly_activity": {
+    "6": 1,
+    "10": 7,
+    "16": 1,
+    "13": 3
+  },
+  "message_types": {
+    "0": 10,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1282326900357857290",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 9,
+      "channel": "莉兹"
+    },
+    {
+      "id": "1282281467677900871",
+      "content": "难得有双休一时兴起把目前为止（还算能看）的vrm模型拉出来整理了一下\n⚠️部分有人形体私设⚠️\n＊根据模型完成时间先后排序＊",
+      "author": "nancyjofla",
+      "reactions": 6,
+      "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1282286980725608468",
+      "content": "滿滿垃圾碎片",
+      "author": "0ahoy",
+      "reactions": 1,
+      "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
+    }
+  ]
+}

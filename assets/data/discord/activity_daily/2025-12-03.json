@@ -1,21 +1,34 @@
 {
   "date": "2025-12-03",
-  "messages": 3,
-  "unique_authors": 3,
-  "reactions_total": 5,
-  "attachments": 0,
+  "messages": 36,
+  "unique_authors": 8,
+  "reactions_total": 17,
+  "attachments": 4,
   "channel_activity": {
+    "大眼球D3(第三波": 3,
+    "一點塔薇玩家的小小心得": 19,
+    "蓋個圖樓": 9,
+    "写一些惊恐的。": 2,
     "1445393603261104170": 1,
     "1445641235288031362": 1,
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "11": 1,
-    "5": 1,
+    "14": 3,
+    "4": 2,
+    "6": 6,
+    "7": 9,
+    "8": 4,
+    "2": 1,
+    "5": 4,
+    "11": 4,
+    "16": 1,
+    "19": 1,
     "10": 1
   },
   "message_types": {
-    "0": 3
+    "0": 26,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -24,6 +37,62 @@
       "author": "jollysquire",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1445602234929778809",
+      "content": "即將刷新出三名醫生廚出現☝️ 🤓",
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1445732005961797652",
+      "content": "推特轉推了",
+      "author": "undecember_news",
+      "reactions": 2,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1445778658684833935",
+      "content": "本節考點：\n破屏障、控狂氣量\n是的，麻煩的破(爛)屏障來了\n\n處理方法：\n毒、反、穿刺傷害、溫2費、多刀戰術\n\n又是塔薇 + 3廢物局\n好啦有其他解法\n提供一下",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "大眼球D3(第三波"
+    },
+    {
+      "id": "1445683681011437600",
+      "content": "有在考慮課淵海紀行那裡還有個萬能啟靈大不了先給小玫瑰<:410082304598343682:1139503282742636574>",
+      "author": "hon_ey0",
+      "reactions": 1,
+      "channel": "一點塔薇玩家的小小心得"
+    },
+    {
+      "id": "1445698123556196486",
+      "content": "收到了再次感謝指導<:agree:1400771815076528258> <:happy:1356053849894420683>",
+      "author": "hon_ey0",
+      "reactions": 1,
+      "channel": "一點塔薇玩家的小小心得"
+    },
+    {
+      "id": "1445647586101821540",
+      "content": "很好笑",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1445656095468163082",
+      "content": "等我印了實體再丟過來\n我要去設計了<:agree:1400771815076528258>",
+      "author": "souri.10244",
+      "reactions": 1,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1445856994211926106",
+      "content": "巧了我也生不出来。💀",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "写一些惊恐的。"
     }
   ]
 }

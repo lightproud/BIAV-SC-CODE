@@ -1,17 +1,23 @@
 {
   "date": "2025-07-28",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 34,
-  "attachments": 1,
+  "messages": 10,
+  "unique_authors": 4,
+  "reactions_total": 57,
+  "attachments": 4,
   "channel_activity": {
+    "鼠耳摩斯和莱生🕵🏻‍♂️🐀嗯嗯": 3,
+    "其实只是在想下一餐该吃什么": 2,
+    "不允許深海界域到現在還沒有一張濕衣服圖": 4,
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "12": 1
+    "12": 4,
+    "6": 4,
+    "2": 2
   },
   "message_types": {
-    "0": 1
+    "0": 7,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -20,6 +26,20 @@
       "author": "nikolazuli",
       "reactions": 34,
       "channel": ""
+    },
+    {
+      "id": "1399367539171131442",
+      "content": "cb向<:idk:1356084138280489080> <:smh:1356053161999335514>",
+      "author": "kpkp784755247",
+      "reactions": 18,
+      "channel": "鼠耳摩斯和莱生🕵🏻‍♂️🐀嗯嗯"
+    },
+    {
+      "id": "1399284478148608040",
+      "content": "听完广播剧我又死了啊啊啊，好爽。杜勒赛因还是那么帅，不过皮克曼吃东西的声音太搞笑了吧（褒义  \n\n是融合了一下我的xp，高马尾+眼镜\n\n还有就是他头上的刀叉，其",
+      "author": "dittoqwq",
+      "reactions": 5,
+      "channel": "其实只是在想下一餐该吃什么"
     }
   ]
 }

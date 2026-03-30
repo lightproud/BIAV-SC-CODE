@@ -1,17 +1,59 @@
 {
   "date": "2024-08-28",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 41,
+  "unique_authors": 13,
+  "reactions_total": 32,
+  "attachments": 5,
   "channel_activity": {
+    "血肉隊神父抽取建議和評價": 11,
+    "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）": 18,
+    "相位基本型推介／PVP typical team suggestion": 8,
+    "自創喚醒體相關：时至今日，你還在徒勞地嘗試麽？": 3,
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "12": 1
-  },
-  "message_types": {
+    "3": 3,
+    "7": 9,
+    "8": 4,
+    "9": 2,
+    "12": 3,
+    "15": 8,
+    "20": 3,
+    "21": 8,
     "0": 1
   },
-  "top_reacted_messages": []
+  "message_types": {
+    "0": 35,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1278460133185425502",
+      "content": "PvE打到悶歡迎來PVP一起玩。以下是一些隊型推薦，歡迎你們再自己從中改出來花樣來，當然若只是領獎勵，這些也應該夠用了。\nWelcome to PVP. The",
+      "author": "ariate",
+      "reactions": 16,
+      "channel": "相位基本型推介／PVP typical team suggestion"
+    },
+    {
+      "id": "1278332748519444532",
+      "content": "這類玩法我也在退坑邊緣了 只是課多了有點捨不得而已",
+      "author": "sod212",
+      "reactions": 13,
+      "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
+    },
+    {
+      "id": "1278266136806293525",
+      "content": "忘卻很可惜啊 以為發現了一個好作品\n\n開了個好頭 但後續被策畫各種逆天的操作 遊戲內容的虎頭蛇尾 系統的匱乏 細節的混亂  定位方向的不明確 優化一坨 等問題把",
+      "author": "whimsical_starfish_19845",
+      "reactions": 2,
+      "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
+    },
+    {
+      "id": "1278252992600215552",
+      "content": "媽呀老大我愛你❤️❤️❤️",
+      "author": "rhaen_0625",
+      "reactions": 1,
+      "channel": "自創喚醒體相關：时至今日，你還在徒勞地嘗試麽？"
+    }
+  ]
 }

@@ -1,22 +1,32 @@
 {
   "date": "2025-12-16",
-  "messages": 5,
-  "unique_authors": 4,
-  "reactions_total": 630,
-  "attachments": 0,
+  "messages": 21,
+  "unique_authors": 5,
+  "reactions_total": 666,
+  "attachments": 5,
   "channel_activity": {
+    "蓋個圖樓": 10,
+    "我也丟一下之前畫的 圖樓": 3,
+    "一點仿官": 3,
     "🔸礼包码┊gift-codes": 1,
     "🔸忘却前夜┊morimens-tv": 4
   },
   "hourly_activity": {
-    "8": 1,
+    "5": 1,
+    "6": 2,
+    "8": 3,
+    "14": 2,
+    "16": 5,
+    "17": 2,
+    "12": 2,
+    "23": 1,
     "0": 1,
     "3": 1,
-    "9": 1,
-    "12": 1
+    "9": 1
   },
   "message_types": {
-    "0": 5
+    "0": 15,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -25,6 +35,34 @@
       "author": "morimensstaff01",
       "reactions": 618,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1450536606179131562",
+      "content": "守咪人如果也有繁衍狂熱都不敢想會有多刺激",
+      "author": "souri.10244",
+      "reactions": 13,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1450545374312796210",
+      "content": "~~支持守咪草翻所有人~~",
+      "author": "ena04564",
+      "reactions": 8,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1450519839260147910",
+      "content": "一般建議守咪人打不過對面的時候就打這張",
+      "author": "souri.10244",
+      "reactions": 8,
+      "channel": "一點仿官"
+    },
+    {
+      "id": "1450366314534277151",
+      "content": "家產",
+      "author": "souri.10244",
+      "reactions": 7,
+      "channel": "蓋個圖樓"
     },
     {
       "id": "1450334576143503360",

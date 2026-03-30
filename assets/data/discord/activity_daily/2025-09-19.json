@@ -1,27 +1,110 @@
 {
   "date": "2025-09-19",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 2,
-  "attachments": 2,
+  "messages": 68,
+  "unique_authors": 7,
+  "reactions_total": 40,
+  "attachments": 6,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 1,
+    "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）": 8,
+    "杜勒和皮克曼的车文来了": 51,
+    "啊欸嗯": 5,
+    "【收米人&OC向】【繁衍狂热向】梦境之外": 1,
     "1296113810549112874": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "10": 1,
-    "7": 1
+    "14": 1,
+    "17": 6,
+    "18": 6,
+    "23": 1,
+    "6": 37,
+    "7": 14,
+    "8": 1,
+    "5": 1,
+    "10": 1
   },
   "message_types": {
-    "0": 2
+    "0": 58,
+    "19": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1418486868886159381",
+      "content": "先警告，ooc警告。因为我觉得皮克曼没什么性知识，纯属造谣\n是发短信的那段剧情，不知道的就大概讲一下：皮克曼带着珊去偷杜勒赛因的食材。\n我写成搞笑文的感觉\n前戏",
+      "author": "dittoqwq",
+      "reactions": 10,
+      "channel": "杜勒和皮克曼的车文来了"
+    },
+    {
+      "id": "1418666249201778758",
+      "content": "綁鳥哥\n原本沒打算發這張不過世事難料\n耨個銀芯\nUID:\n100336921\n雖然我覺得沒啥但姑且打個碼好了",
+      "author": "foxcatfurry",
+      "reactions": 10,
+      "channel": "啊欸嗯"
+    },
+    {
+      "id": "1418651577291509911",
+      "content": "👉前言\n\n        我覺得皮克曼的短訊劇情以嚴謹的角度來看，無法立刻得出他跟杜勒賽因會打砲的可能結果；但是我想造謠他們打砲(認真)，於是他們打砲了（虫合。",
+      "author": "ass191044",
+      "reactions": 7,
+      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+    },
+    {
+      "id": "1418509000802172969",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 4,
+      "channel": "杜勒和皮克曼的车文来了"
+    },
+    {
+      "id": "1418667126323023923",
+      "content": "斯哈斯哈斯哈～\n能夠在兩天內分別看見皮杜和杜皮真是～\n人-生-無-憾啊～",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+    },
     {
       "id": "1418552019437748304",
       "content": "发一下约稿——",
       "author": "yingmai_",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1418611474183749792",
+      "content": "S56VE3T08I",
+      "author": "txt101225.",
+      "reactions": 1,
+      "channel": "邀請碼互助/Invitation code help each other"
+    },
+    {
+      "id": "1418748096518557868",
+      "content": "😋 好吃",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+    },
+    {
+      "id": "1418493161558245407",
+      "content": "||等我文寫完||",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "杜勒和皮克曼的车文来了"
+    },
+    {
+      "id": "1418667384117657734",
+      "content": "豪赤",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "啊欸嗯"
+    },
+    {
+      "id": "1418472594595905678",
+      "content": "別人都發兩篇文了，剩我一個一字未動",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "【收米人&OC向】【繁衍狂热向】梦境之外"
     }
   ]
 }

@@ -1,25 +1,77 @@
 {
   "date": "2024-08-18",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 5,
-  "attachments": 2,
+  "messages": 33,
+  "unique_authors": 8,
+  "reactions_total": 38,
+  "attachments": 12,
   "channel_activity": {
+    "特遣紀錄「狩獵愉快！」關卡地圖總覽": 1,
+    "蒐集不吃靈芝通關h7-12的隊伍": 1,
+    "【自制vrm mmd】《故事的魔法》拍摄花絮放送中！": 5,
+    "珈倫": 4,
+    "溺血": 21,
     "1193859503096070234": 1
   },
   "hourly_activity": {
-    "8": 1
+    "12": 23,
+    "0": 1,
+    "14": 4,
+    "7": 2,
+    "8": 2,
+    "15": 1
   },
   "message_types": {
-    "0": 1
+    "0": 32
   },
   "top_reacted_messages": [
+    {
+      "id": "1274625052393865226",
+      "content": "混沌女僕來惹～ (￣▽￣)／",
+      "author": "Deleted User",
+      "reactions": 10,
+      "channel": "珈倫"
+    },
+    {
+      "id": "1274704913233870868",
+      "content": "小说灵感源于《荒原狼》，在此致敬黑塞，也向愿意阅读我这篇流水账的读者致敬\n尤乌哈希x雷娅，cp向，少量西维x拉蒙娜，风格稍偏严肃\n\n溺血\n\n\n​我们将自己埋葬\n",
+      "author": "zhunzibushisunzi_21715_43590",
+      "reactions": 9,
+      "channel": "溺血"
+    },
+    {
+      "id": "1274704411180142612",
+      "content": "是参加”汉娜独家密报“0818忘却前夜全员向24h活动的作品，超话中有更多神仙产粮！\n借物表见视频末尾",
+      "author": "nancyjofla",
+      "reactions": 7,
+      "channel": "【自制vrm mmd】《故事的魔法》拍摄花絮放送中！"
+    },
+    {
+      "id": "1274704235669225583",
+      "content": "> 大家好，這裡是難忘今宵攻略組，這次為大家帶來的是萊克支線地圖。\n\n最近紫地板退環境了，沒有時間為紫地板默哀，下一個接替登場的是紅地板！\n\n注意：\n紅地板「血",
+      "author": "menoctus",
+      "reactions": 5,
+      "channel": "特遣紀錄「狩獵愉快！」關卡地圖總覽"
+    },
     {
       "id": "1274648750920302662",
       "content": "小补一下N的原型:奈亚拉托提普,本体和分身的特点和名字基本上和游戏内一样",
       "author": "yang_42",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1274644796576628766",
+      "content": "很可愛，多了些俏皮，少了些腹黑的版本，確實不錯",
+      "author": "hailananxie7110",
+      "reactions": 1,
+      "channel": "珈倫"
+    },
+    {
+      "id": "1274737504821444729",
+      "content": "q人不錯，多畫點保你能在同人區占一席之地，",
+      "author": "jester_romut",
+      "reactions": 1,
+      "channel": "珈倫"
     }
   ]
 }

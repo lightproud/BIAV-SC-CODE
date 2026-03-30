@@ -1,17 +1,41 @@
 {
   "date": "2025-05-29",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 19,
+  "unique_authors": 4,
+  "reactions_total": 6,
+  "attachments": 3,
   "channel_activity": {
+    "弥萨格校友号码本4.0": 2,
+    "攻略合集": 15,
+    "萌新抽卡向": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "11": 2,
+    "1": 2,
+    "7": 4,
+    "8": 9,
+    "10": 1,
     "17": 1
   },
   "message_types": {
-    "19": 1
+    "0": 11,
+    "19": 7
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1377598900973735937",
+      "content": "玩了一年半的牢玩家来了，就给萌新写一点1.5周年的抽卡向吧（毕竟不是大佬写不了什么www）\n❀「未被忘却的」——推荐抽取\n（性价比很高，想氪金的萌新可以抽，推荐",
+      "author": "kepler0519",
+      "reactions": 5,
+      "channel": "萌新抽卡向"
+    },
+    {
+      "id": "1377613420399951955",
+      "content": "",
+      "author": "guiyibeibingyangzaowu",
+      "reactions": 1,
+      "channel": "弥萨格校友号码本4.0"
+    }
+  ]
 }

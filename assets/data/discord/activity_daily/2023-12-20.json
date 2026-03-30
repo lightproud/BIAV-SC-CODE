@@ -1,0 +1,38 @@
+{
+  "date": "2023-12-20",
+  "messages": 6,
+  "unique_authors": 5,
+  "reactions_total": 21,
+  "attachments": 1,
+  "channel_activity": {
+    "幻夢深潛地圖總覽by井上銀溪": 1,
+    "深海攻略by牛逼/唐有为": 1,
+    "既然沒人粉戈利亞只能我自己上了⋯": 4
+  },
+  "hourly_activity": {
+    "18": 1,
+    "8": 1,
+    "5": 2,
+    "6": 1,
+    "7": 1
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1186896377331068928",
+      "content": "起航的時候，戈利亞回望船隻在海面上拖曳出的軌跡。\n非利士人的血，原住民的血，敵人的血，海鳥的血⋯⋯\n它們匯到一處，就像暗紅的墨湧入無邊無際的藍。",
+      "author": "yolo_mode",
+      "reactions": 17,
+      "channel": "既然沒人粉戈利亞只能我自己上了⋯"
+    },
+    {
+      "id": "1186916602357231687",
+      "content": "因為戈利亞太難畫了……（X）",
+      "author": "sannia",
+      "reactions": 4,
+      "channel": "既然沒人粉戈利亞只能我自己上了⋯"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "date": "2025-01-12",
+  "messages": 9,
+  "unique_authors": 4,
+  "reactions_total": 13,
+  "attachments": 0,
+  "channel_activity": {
+    "好餓哦，雜食來吃飯了": 9
+  },
+  "hourly_activity": {
+    "2": 4,
+    "3": 3,
+    "7": 1,
+    "13": 1
+  },
+  "message_types": {
+    "0": 5,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1327843768191291525",
+      "content": "校工和校貓",
+      "author": "foxcatfurry",
+      "reactions": 7,
+      "channel": "好餓哦，雜食來吃飯了"
+    },
+    {
+      "id": "1327840659939528807",
+      "content": "兩大質體代行者這種設定這麼好嗑不嗑都對不起雜食這麼名字了，還記得繁衍狂熱裡塔薇說什麼嗎？沒錯，就是「她會後悔散播這樣的慾念的」\n怎麼個後悔法\n怎麼個後\n怎麼\n你",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "好餓哦，雜食來吃飯了"
+    },
+    {
+      "id": "1327833712670281728",
+      "content": "算一半\n還是水仙",
+      "author": "foxcatfurry",
+      "reactions": 1,
+      "channel": "好餓哦，雜食來吃飯了"
+    }
+  ]
+}

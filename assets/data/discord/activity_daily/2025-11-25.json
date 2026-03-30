@@ -1,21 +1,123 @@
 {
   "date": "2025-11-25",
-  "messages": 5,
-  "unique_authors": 2,
-  "reactions_total": 1,
-  "attachments": 0,
+  "messages": 42,
+  "unique_authors": 13,
+  "reactions_total": 105,
+  "attachments": 20,
   "channel_activity": {
+    "誕墨水船隊": 11,
+    "2.4 角色命轮榜单": 5,
+    "✦关卡地图「融灾禁区」总览48期·星辰篇✦": 1,
+    "蓋個圖樓": 8,
+    "搞了點手作": 9,
+    "You should sacrifice yourself now": 2,
+    "FINAL VENT": 1,
     "1271491376881598494": 4,
     "1234769700735418368": 1
   },
   "hourly_activity": {
-    "15": 4,
-    "9": 1
+    "2": 1,
+    "3": 5,
+    "5": 3,
+    "8": 3,
+    "19": 1,
+    "20": 4,
+    "15": 7,
+    "18": 8,
+    "7": 3,
+    "9": 5,
+    "17": 1,
+    "10": 1
   },
   "message_types": {
-    "0": 5
+    "0": 31,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1442939307156312164",
+      "content": "這裡也丟丟圖 希望大家不嫌棄",
+      "author": "souri.10244",
+      "reactions": 34,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1442939413624782949",
+      "content": "丟",
+      "author": "souri.10244",
+      "reactions": 12,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1442785865578578033",
+      "content": "湊了個戈利亞印象手鍊",
+      "author": "yolo_mode",
+      "reactions": 11,
+      "channel": "搞了點手作"
+    },
+    {
+      "id": "1442939478208675945",
+      "content": "還丟",
+      "author": "souri.10244",
+      "reactions": 9,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1442939589168988256",
+      "content": "熱騰騰的朵爾教授feat.遊戲內建的背景圖我愛官方",
+      "author": "souri.10244",
+      "reactions": 9,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1442939626267611176",
+      "content": "想舔",
+      "author": "souri.10244",
+      "reactions": 8,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1442961773060690112",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 6,
+      "channel": "2.4 角色命轮榜单"
+    },
+    {
+      "id": "1442900403061788702",
+      "content": "我不知道 我覺得很好笑\n平均降生儀式",
+      "author": "oct3000",
+      "reactions": 6,
+      "channel": "You should sacrifice yourself now"
+    },
+    {
+      "id": "1442831784537489489",
+      "content": "uid:100863485",
+      "author": "syaoran0397",
+      "reactions": 6,
+      "channel": "FINAL VENT"
+    },
+    {
+      "id": "1442747428943167579",
+      "content": "死因：獻祭疊太多",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "誕墨水船隊"
+    },
+    {
+      "id": "1442897058640953438",
+      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第21期（第48期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
+      "author": "menoctus",
+      "reactions": 1,
+      "channel": "✦关卡地图「融灾禁区」总览48期·星辰篇✦"
+    },
+    {
+      "id": "1442929650786631890",
+      "content": "長這樣的！因為幾乎跟羅盤一樣大感覺裝上去會蠻搶重心的所以就沒裝了",
+      "author": "carrot_chicken",
+      "reactions": 1,
+      "channel": "搞了點手作"
+    },
     {
       "id": "1442804057667534898",
       "content": "<@1131790839291596841>  goya-san, May I request a full body picture of the the m",

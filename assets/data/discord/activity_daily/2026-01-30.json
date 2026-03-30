@@ -1,10 +1,12 @@
 {
   "date": "2026-01-30",
-  "messages": 24,
+  "messages": 79,
   "unique_authors": 11,
-  "reactions_total": 22,
-  "attachments": 5,
+  "reactions_total": 65,
+  "attachments": 8,
   "channel_activity": {
+    "徐": 5,
+    "预告片 || 杜勒赛因x西维斯特": 50,
     "🔸游戏问题": 2,
     "1463456408249831446": 3,
     "1462840887553032335": 1,
@@ -15,21 +17,37 @@
     "1464228375316136072": 4
   },
   "hourly_activity": {
-    "6": 4,
+    "15": 4,
+    "17": 1,
+    "23": 1,
+    "6": 31,
+    "7": 24,
     "4": 1,
-    "7": 1,
     "8": 9,
     "13": 3,
     "19": 1,
     "20": 3,
-    "15": 1,
     "16": 1
   },
   "message_types": {
-    "0": 21,
-    "19": 3
+    "0": 44,
+    "19": 11
   },
   "top_reacted_messages": [
+    {
+      "id": "1466818074979074128",
+      "content": "我妈就这样权威\n画完头发已经神志不清了，理论上徐x何家小姐含有很多捏造",
+      "author": "cjsyds9784",
+      "reactions": 16,
+      "channel": "徐"
+    },
+    {
+      "id": "1466676432515235972",
+      "content": "我真的很喜欢杜勒赛因逗弄西维斯特的样子。真是个超可爱的瞬间！我期待在未来看到这种互动！\n我活着就是为了看他把西维斯特弄得手忙脚乱。所以，我得为那个瞬间制作一段小",
+      "author": "that_one_chippy",
+      "reactions": 12,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
     {
       "id": "1466823251404521594",
       "content": "keychain concept- continue mouchette’s otherworld adventures by taking her where",
@@ -52,25 +70,109 @@
       "channel": ""
     },
     {
-      "id": "1466675594505883758",
-      "content": "他们太可爱啦！！！<:A_pinch:1432980538536493057>",
+      "id": "1466680779466866721",
+      "content": "Hopefully we get more stories on doresain ❤️",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466681803963109408",
+      "content": "<:Pandia_love:1459078512303411261>",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466684781159907388",
+      "content": "不～垃圾機翻<:takenotes:1357186646294138890>",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466686170338558139",
+      "content": "<:Dore_proud:1459076042722639905>",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466686497720762438",
+      "content": "May I know your uid? I wish to add you in the game",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466688155557040240",
+      "content": "+24doresain",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466688528850358334",
+      "content": "<:pray:1356053116260454534>",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466689685899182090",
+      "content": "doresain is the best",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466691285258604718",
+      "content": "I hope we see him... maybe on Valentine if possible <:shy_kot2:14188159105626317",
       "author": "that_one_chippy",
       "reactions": 1,
-      "channel": ""
+      "channel": "预告片 || 杜勒赛因x西维斯特"
     },
     {
-      "id": "1466888454104158341",
-      "content": "that's so valid. may he help you cope with uni exams",
-      "author": "hallowednebulae",
+      "id": "1466691746170667180",
+      "content": "<:MF_peek:1459071652468883619>",
+      "author": "void_1546.",
       "reactions": 1,
-      "channel": ""
+      "channel": "预告片 || 杜勒赛因x西维斯特"
     },
     {
-      "id": "1466833529584484469",
-      "content": "Very cute indeed",
-      "author": "sleepypillow",
+      "id": "1466691803389497446",
+      "content": "看得出你去找名字了",
+      "author": "dittoqwq",
       "reactions": 1,
-      "channel": ""
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466693021570695259",
+      "content": "Your Tulu is very strong!",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466695934497787975",
+      "content": "\\\\加油/\nThank you for making the world peaceful🛐",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466698951460655279",
+      "content": "I'll draw more of the king and his keeper!",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1466699514395234325",
+      "content": "Please do 🛐 can't wait for more <:takenotes:1357186646294138890>",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "预告片 || 杜勒赛因x西维斯特"
     }
   ]
 }

@@ -1,0 +1,36 @@
+{
+  "date": "2024-11-05",
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 25,
+  "attachments": 3,
+  "channel_activity": {
+    "原創造物：通用、四界域與原創界域": 3,
+    "打印机施工完成": 1,
+    "画一半被可爱到了，遂": 2
+  },
+  "hourly_activity": {
+    "3": 2,
+    "12": 2,
+    "7": 2
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1303337270329217055",
+      "content": "对不起复工手生了…以后会补画，顺便发一下进度表",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 17,
+      "channel": "打印机施工完成"
+    },
+    {
+      "id": "1303256503175876648",
+      "content": "对不起，因为太久没画，一开始的草稿变得很陌生…所以决定成为打印机",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 8,
+      "channel": "画一半被可爱到了，遂"
+    }
+  ]
+}

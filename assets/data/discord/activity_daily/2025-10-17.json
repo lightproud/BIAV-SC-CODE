@@ -1,0 +1,33 @@
+{
+  "date": "2025-10-17",
+  "messages": 8,
+  "unique_authors": 3,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "相位對弈環境攻略": 8
+  },
+  "hourly_activity": {
+    "15": 8
+  },
+  "message_types": {
+    "0": 6,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1428766107464106075",
+      "content": "短暫的永恆是觸發痲痹、毒",
+      "author": "akkom730",
+      "reactions": 2,
+      "channel": "相位對弈環境攻略"
+    },
+    {
+      "id": "1428762507530735757",
+      "content": "改id了認不出",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "相位對弈環境攻略"
+    }
+  ]
+}

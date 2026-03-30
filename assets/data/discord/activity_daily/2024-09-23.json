@@ -1,17 +1,58 @@
 {
   "date": "2024-09-23",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 20,
+  "unique_authors": 6,
+  "reactions_total": 11,
+  "attachments": 2,
   "channel_activity": {
+    "哈姆林攻略": 1,
+    "趕時間的深潛打法": 8,
+    "我們會在海洋深處腐爛": 8,
+    "自制SP角色千面●达芙黛尔，屹世●法洛思": 2,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "16": 1,
+    "13": 7,
+    "14": 1,
+    "7": 1,
+    "11": 3,
+    "12": 4,
+    "0": 2,
     "9": 1
   },
   "message_types": {
-    "0": 1
+    "0": 12,
+    "19": 7
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1287680423014436875",
+      "content": "鬼使神差的拿去設桌布結果陰錯陽差的超適合",
+      "author": "yolo_mode",
+      "reactions": 6,
+      "channel": "我們會在海洋深處腐爛"
+    },
+    {
+      "id": "1287764595225657485",
+      "content": "UID：100041951\n\n提出一個很...歡樂(？！)的深潛打法：\n目前深潛可以只提升對方的攻擊，而不提升血量，也就是說，只要輸出夠高，道中一律可以一回合解",
+      "author": "hailananxie7110",
+      "reactions": 3,
+      "channel": "趕時間的深潛打法"
+    },
+    {
+      "id": "1287753506773663764",
+      "content": "他倆的關係我是覺得其中一邊死了就沒戲了，就是要像電影「控制」那樣，兩個都還活著但恨對方恨得要死卻永遠逃不掉",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "我們會在海洋深處腐爛"
+    },
+    {
+      "id": "1287753719772872715",
+      "content": "這張我特別想畫的就是他們的姿勢像躺在聖母懷裡的信徒一樣，但戈利亞卻一臉巴不得把對方撕爛的樣子（",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "我們會在海洋深處腐爛"
+    }
+  ]
 }

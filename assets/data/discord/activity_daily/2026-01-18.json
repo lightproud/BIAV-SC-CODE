@@ -1,24 +1,64 @@
 {
   "date": "2026-01-18",
-  "messages": 5,
-  "unique_authors": 4,
-  "reactions_total": 1,
-  "attachments": 0,
+  "messages": 22,
+  "unique_authors": 9,
+  "reactions_total": 58,
+  "attachments": 5,
   "channel_activity": {
+    "圖樓": 1,
+    "徐，她真好看": 9,
+    "重逢": 5,
+    "重开个存档楼）": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "1455822126568308957": 3,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "2": 1,
+    "5": 8,
+    "6": 2,
+    "7": 1,
+    "10": 2,
+    "12": 1,
+    "9": 2,
     "3": 1,
     "14": 3,
     "11": 1
   },
   "message_types": {
-    "0": 3,
+    "0": 14,
+    "4": 1,
     "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1462316941048938568",
+      "content": "",
+      "author": "solisimperium.",
+      "reactions": 33,
+      "channel": "徐，她真好看"
+    },
+    {
+      "id": "1462325619529617438",
+      "content": "UID：100368860\n守拉守，手拉手<:Ramona_love:1459077541829546007>",
+      "author": "solisimperium.",
+      "reactions": 21,
+      "channel": "重逢"
+    },
+    {
+      "id": "1462318690887274673",
+      "content": "<@614083839131648021> 其实昨天画的，我今天开通dc<:H_love:1459071245730447484>",
+      "author": "solisimperium.",
+      "reactions": 2,
+      "channel": "徐，她真好看"
+    },
+    {
+      "id": "1462378175991513148",
+      "content": "",
+      "author": "yuuuuuuu__0103",
+      "reactions": 1,
+      "channel": "重开个存档楼）"
+    },
     {
       "id": "1462285708709462097",
       "content": "A *short* style Awakener overview for Hameln 🎼\nhttps://youtube.com/shorts/gFORQO",

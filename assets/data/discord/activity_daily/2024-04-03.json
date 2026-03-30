@@ -1,0 +1,58 @@
+{
+  "date": "2024-04-03",
+  "messages": 15,
+  "unique_authors": 11,
+  "reactions_total": 25,
+  "attachments": 5,
+  "channel_activity": {
+    "調查等級與最大生命係數紀錄": 6,
+    "喚醒體Tag試標記": 2,
+    "關於即將來到的活動，商店中可獲取的資源所需體力": 2,
+    "做了個抽卡梗圖": 1,
+    "有種就打鴨⊙ω⊙": 4
+  },
+  "hourly_activity": {
+    "0": 4,
+    "14": 2,
+    "15": 3,
+    "17": 1,
+    "23": 1,
+    "13": 2,
+    "16": 1,
+    "11": 1
+  },
+  "message_types": {
+    "0": 12,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1224877146816643195",
+      "content": "",
+      "author": "kexk3h6vjyokppszpgctabxtmygfnc6y",
+      "reactions": 19,
+      "channel": "有種就打鴨⊙ω⊙"
+    },
+    {
+      "id": "1225118916271931542",
+      "content": "這裡！",
+      "author": "yolo_mode",
+      "reactions": 4,
+      "channel": "做了個抽卡梗圖"
+    },
+    {
+      "id": "1224877409254506647",
+      "content": "哇，大大又更新了",
+      "author": "su_su_su0216",
+      "reactions": 1,
+      "channel": "有種就打鴨⊙ω⊙"
+    },
+    {
+      "id": "1225049133375557732",
+      "content": "好可爱好可爱好可爱好可爱",
+      "author": "lindongxieyang",
+      "reactions": 1,
+      "channel": "有種就打鴨⊙ω⊙"
+    }
+  ]
+}

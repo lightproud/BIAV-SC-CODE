@@ -1,17 +1,30 @@
 {
   "date": "2025-04-10",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
+  "messages": 7,
+  "unique_authors": 3,
+  "reactions_total": 1,
   "attachments": 0,
   "channel_activity": {
+    "克莱门汀...": 5,
+    "不会再有了": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "12": 5,
+    "10": 1,
     "9": 1
   },
   "message_types": {
-    "0": 1
+    "19": 1,
+    "0": 5
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1359864555332960297",
+      "content": "但你說的對醫生如果出在黑夫人時期其實很優秀",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "克莱门汀..."
+    }
+  ]
 }

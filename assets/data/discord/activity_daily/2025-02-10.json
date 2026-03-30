@@ -1,20 +1,28 @@
 {
   "date": "2025-02-10",
-  "messages": 3,
-  "unique_authors": 3,
-  "reactions_total": 38,
-  "attachments": 3,
+  "messages": 11,
+  "unique_authors": 4,
+  "reactions_total": 39,
+  "attachments": 5,
   "channel_activity": {
+    "忘却前夜相位对弈(PVP)攻略": 6,
+    "拿圖去印了明信片和膠片✌": 2,
     "1271491376881598494": 2,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "0": 1,
+    "8": 1,
+    "11": 1,
+    "14": 2,
+    "15": 2,
+    "1": 2,
     "5": 1,
-    "14": 1,
     "13": 1
   },
   "message_types": {
-    "0": 3
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -37,6 +45,13 @@
       "author": "zhoubishan",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1338529174213627934",
+      "content": "多练吧，没别的什么好办法。",
+      "author": "tianfang5580",
+      "reactions": 1,
+      "channel": "忘却前夜相位对弈(PVP)攻略"
     }
   ]
 }

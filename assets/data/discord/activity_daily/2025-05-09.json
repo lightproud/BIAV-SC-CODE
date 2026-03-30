@@ -1,0 +1,32 @@
+{
+  "date": "2025-05-09",
+  "messages": 42,
+  "unique_authors": 4,
+  "reactions_total": 6,
+  "attachments": 65,
+  "channel_activity": {
+    "新版本御四家0成本开荒教学": 1,
+    "簡單分享 領航員ー克珀珊特 及 命輪聖火中的指引 在相位對弈(PVP)中的作用、隊伍": 39,
+    "【MMD】神っぽいな「克莱门汀」": 2
+  },
+  "hourly_activity": {
+    "20": 20,
+    "19": 2,
+    "21": 18,
+    "7": 1,
+    "11": 1
+  },
+  "message_types": {
+    "0": 40,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1370489285458923520",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 6,
+      "channel": "簡單分享 領航員ー克珀珊特 及 命輪聖火中的指引 在相位對弈(PVP)中的作用、隊伍"
+    }
+  ]
+}

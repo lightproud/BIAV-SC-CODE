@@ -1,0 +1,41 @@
+{
+  "date": "2024-12-01",
+  "messages": 27,
+  "unique_authors": 6,
+  "reactions_total": 21,
+  "attachments": 23,
+  "channel_activity": {
+    "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 5,
+    "死抗序列": 1,
+    "佑千井之城的神啊，冷眼注视着坍塌——克苏鲁原著向剧情考据及个人解读": 20,
+    "【梗图】堆点我P过的梗图": 1
+  },
+  "hourly_activity": {
+    "3": 2,
+    "5": 1,
+    "11": 1,
+    "13": 1,
+    "9": 21,
+    "8": 1
+  },
+  "message_types": {
+    "19": 5,
+    "0": 22
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1312706986852483072",
+      "content": "20秒速通9-4剧情",
+      "author": "yingmai_",
+      "reactions": 19,
+      "channel": "【梗图】堆点我P过的梗图"
+    },
+    {
+      "id": "1312653010589192193",
+      "content": "~~米粒毒队的基本要求是米粒要有+12~~",
+      "author": "be_queitplease",
+      "reactions": 2,
+      "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
+    }
+  ]
+}

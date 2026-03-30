@@ -1,23 +1,26 @@
 {
   "date": "2026-01-31",
-  "messages": 6,
+  "messages": 8,
   "unique_authors": 6,
   "reactions_total": 13,
   "attachments": 4,
   "channel_activity": {
+    "此乃造谣24的笔记本内容（嗯）": 1,
+    "徐": 1,
     "1467308113660215326": 1,
     "1467225902029996154": 2,
     "1464228375316136072": 2,
     "1458187614879486146": 1
   },
   "hourly_activity": {
+    "19": 1,
+    "1": 1,
     "23": 1,
     "18": 3,
     "6": 2
   },
   "message_types": {
-    "0": 4,
-    "19": 2
+    "0": 2
   },
   "top_reacted_messages": [
     {

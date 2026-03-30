@@ -1,22 +1,23 @@
 {
   "date": "2025-09-27",
-  "messages": 26,
+  "messages": 27,
   "unique_authors": 5,
-  "reactions_total": 26,
-  "attachments": 17,
+  "reactions_total": 27,
+  "attachments": 18,
   "channel_activity": {
+    "小皮小皮": 1,
     "1421408684776357929": 24,
     "1420092491125755985": 2
   },
   "hourly_activity": {
+    "14": 1,
     "8": 21,
     "9": 1,
     "11": 2,
     "12": 2
   },
   "message_types": {
-    "0": 23,
-    "19": 3
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -32,6 +33,13 @@
       "author": "water_heart",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1421511153502130339",
+      "content": "<:cry3:1356082134447558748>",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "小皮小皮"
     }
   ]
 }

@@ -1,17 +1,98 @@
 {
   "date": "2024-04-06",
-  "messages": 4,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 2,
+  "messages": 47,
+  "unique_authors": 18,
+  "reactions_total": 33,
+  "attachments": 15,
   "channel_activity": {
+    "血肉隊神父抽取建議和評價": 2,
+    "血肉節奏榜": 25,
+    "容灾350无希莉3-3神父": 11,
+    "深潛60 神父主C試試看": 1,
+    "血肉和超維的禁區350😃": 3,
+    "有種就打鴨⊙ω⊙": 1,
     "1193859503096070234": 4
   },
   "hourly_activity": {
-    "8": 4
+    "19": 2,
+    "4": 19,
+    "7": 2,
+    "8": 5,
+    "10": 4,
+    "15": 1,
+    "3": 9,
+    "12": 2,
+    "17": 1,
+    "1": 1,
+    "9": 1
   },
   "message_types": {
-    "0": 4
+    "19": 8,
+    "0": 35
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1226030959875330118",
+      "content": "你寄拔沒有洞難道你的尿是從超維空間出來的嗎",
+      "author": "hananichiya",
+      "reactions": 9,
+      "channel": "血肉節奏榜"
+    },
+    {
+      "id": "1226004256499302401",
+      "content": "这里是摸鱼深海玩家，因为跳过了莉莉池子所以发个无希莉的容灾配对，当然有莉莉的玩家可以直接希莉来打3-3或者3-5压力会更轻",
+      "author": "timee_ky",
+      "reactions": 9,
+      "channel": "容灾350无希莉3-3神父"
+    },
+    {
+      "id": "1225978581885259876",
+      "content": "1. 用剩下的邊角料打，超維機制吃香\n\n2. 旺達是神\n\n血肉根據主C分成三隊\n\n3.希洛+莉莉\n這組最強配神父+奶媽\n\n4.環拉+阿紅\n配蜘蛛和雷亞快速生胚胎",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 5,
+      "channel": "血肉和超維的禁區350😃"
+    },
+    {
+      "id": "1226030591997251656",
+      "content": "尤烏的洞比其他人都多一個",
+      "author": "hananichiya",
+      "reactions": 3,
+      "channel": "血肉節奏榜"
+    },
+    {
+      "id": "1226112012149330051",
+      "content": "😭 没抽莉莉的人有难了👈指我",
+      "author": "gigi9028",
+      "reactions": 2,
+      "channel": "血肉節奏榜"
+    },
+    {
+      "id": "1226220048310603978",
+      "content": "有的，只是手残借了角色后没注意借的角色是再演化，不过第二关有旺达后基本不用考虑太多细节hhh",
+      "author": "timee_ky",
+      "reactions": 2,
+      "channel": "容灾350无希莉3-3神父"
+    },
+    {
+      "id": "1226033236128301057",
+      "content": "太變態了 告辭",
+      "author": "ruko9999",
+      "reactions": 1,
+      "channel": "血肉節奏榜"
+    },
+    {
+      "id": "1226081965275615252",
+      "content": "被八奈玩法吓晕",
+      "author": "yuzhe1",
+      "reactions": 1,
+      "channel": "血肉節奏榜"
+    },
+    {
+      "id": "1226021554182164500",
+      "content": "超可愛的😭😭",
+      "author": "dllll_24",
+      "reactions": 1,
+      "channel": "有種就打鴨⊙ω⊙"
+    }
+  ]
 }

@@ -1,0 +1,37 @@
+{
+  "date": "2025-01-01",
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 15,
+  "attachments": 3,
+  "channel_activity": {
+    "【梗图】堆点我P过的梗图": 1,
+    "小音樂家鑰匙扣": 5
+  },
+  "hourly_activity": {
+    "18": 1,
+    "8": 2,
+    "9": 1,
+    "14": 2
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1323934936004165663",
+      "content": "把自己之前畫的小圖搞成了鑰匙扣……在官方釋出周邊前先把小哈帶回家了 快樂<:shy:1239911338332127272> <:shy:12399113383",
+      "author": "Deleted User",
+      "reactions": 14,
+      "channel": "小音樂家鑰匙扣"
+    },
+    {
+      "id": "1323943898191626312",
+      "content": "好可愛",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "小音樂家鑰匙扣"
+    }
+  ]
+}

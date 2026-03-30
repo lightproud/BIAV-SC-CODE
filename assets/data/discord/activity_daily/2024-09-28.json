@@ -1,0 +1,45 @@
+{
+  "date": "2024-09-28",
+  "messages": 5,
+  "unique_authors": 5,
+  "reactions_total": 51,
+  "attachments": 3,
+  "channel_activity": {
+    "血肉盾击至高皇队": 1,
+    "常服墨菲，雷娅，uw": 2,
+    "我們會在海洋深處腐爛": 1,
+    "珊瑚女": 1
+  },
+  "hourly_activity": {
+    "11": 1,
+    "3": 1,
+    "10": 1,
+    "14": 2
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1289596173212061760",
+      "content": "之前和親友玩問卷畫了珊～\n uid：100048695",
+      "author": "ventus1017_30730",
+      "reactions": 40,
+      "channel": "珊瑚女"
+    },
+    {
+      "id": "1289551940832989237",
+      "content": "先讲一下优缺点\n优点：生存能力很强。\n道中能力较强（前提是要做狂气，并在较有高压的情况下才能表现出来，这天的深潜我打了满难度，在用跳关下道中可以不爆死抗）\n短线",
+      "author": "busy_chipmunk_73748_41947",
+      "reactions": 10,
+      "channel": "血肉盾击至高皇队"
+    },
+    {
+      "id": "1289590404336979988",
+      "content": "爽啊。。。爽啊啊",
+      "author": "helodoma",
+      "reactions": 1,
+      "channel": "我們會在海洋深處腐爛"
+    }
+  ]
+}

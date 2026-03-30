@@ -1,0 +1,25 @@
+{
+  "date": "2025-01-03",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 19,
+  "attachments": 1,
+  "channel_activity": {
+    "一个迟到的年终总结": 1
+  },
+  "hourly_activity": {
+    "14": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1324740769696845915",
+      "content": "我回来了，之前在其他平台遇到了不太好的事，但我并没退圈，抱歉咕了那么久",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 19,
+      "channel": "一个迟到的年终总结"
+    }
+  ]
+}

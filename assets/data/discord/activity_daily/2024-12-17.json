@@ -1,19 +1,40 @@
 {
   "date": "2024-12-17",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 1,
+  "messages": 7,
+  "unique_authors": 5,
+  "reactions_total": 3,
   "attachments": 1,
   "channel_activity": {
+    "萊克同人轉載": 1,
+    "這太美麗了😭": 2,
+    "一點亂摸立繪👉👈👉👈": 3,
     "🔸【超越維度的祝福】認領專區": 1
   },
   "hourly_activity": {
-    "14": 1
+    "14": 2,
+    "18": 1,
+    "23": 1,
+    "9": 1,
+    "15": 2
   },
   "message_types": {
-    "0": 1
+    "0": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1318582651489357906",
+      "content": "https://vxtwitter.com/VoidpathyArts/status/1860210057205678196?t=P-BC8P8TZOyvONk",
+      "author": "nazhigezihk",
+      "reactions": 1,
+      "channel": "萊克同人轉載"
+    },
+    {
+      "id": "1318720828828946452",
+      "content": "庫洛魔法使的感覺🤣\n真心好看，感覺拿棒子敲一下就能召喚于麗出來",
+      "author": "ekko9950",
+      "reactions": 1,
+      "channel": "這太美麗了😭"
+    },
     {
       "id": "1318585444371529739",
       "content": "召喚牌佬<:play:1238448692441251910>",

@@ -1,0 +1,112 @@
+{
+  "date": "2024-10-31",
+  "messages": 19,
+  "unique_authors": 7,
+  "reactions_total": 62,
+  "attachments": 40,
+  "channel_activity": {
+    "死亡已經迫近，消亡已經開始": 1,
+    "表情包": 2,
+    "旧图": 4,
+    "是点菜表情包": 2,
+    "【环娜】De ja vu?": 3,
+    "【忘卻前夜MMD】酔いどれ知らず「珊」": 1,
+    "那閃爍於夜空之物是窮盡一生也無法觸及的夢": 2,
+    "做的周边": 1,
+    "尤和戈相关的带点打击组": 2,
+    "蹦蹦": 1
+  },
+  "hourly_activity": {
+    "1": 9,
+    "16": 3,
+    "3": 1,
+    "4": 1,
+    "10": 1,
+    "14": 1,
+    "9": 1,
+    "8": 2
+  },
+  "message_types": {
+    "0": 17,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1301395896159834153",
+      "content": "完全现学现卖的剪辑，剪半天一个点都没卡上气死我了",
+      "author": "yingmai_",
+      "reactions": 11,
+      "channel": "【环娜】De ja vu?"
+    },
+    {
+      "id": "1301357190266880010",
+      "content": "不管如何，还是更新重要，是以前画的",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 9,
+      "channel": "旧图"
+    },
+    {
+      "id": "1301386360120414381",
+      "content": "感谢点菜，和素材提供，可以外传",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 9,
+      "channel": "是点菜表情包"
+    },
+    {
+      "id": "1301478113636646953",
+      "content": "謝謝my friend打賞的MMD😎✊，https://www.bilibili.com/video/BV1gSSLYbE8z 都去看好嗎😎😎😎🤏😭🤧🤧🕶️👆😎",
+      "author": "navirecorbeau",
+      "reactions": 8,
+      "channel": "【忘卻前夜MMD】酔いどれ知らず「珊」"
+    },
+    {
+      "id": "1301359496639156256",
+      "content": "",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 7,
+      "channel": "尤和戈相关的带点打击组"
+    },
+    {
+      "id": "1301359940945838161",
+      "content": "跳啊跳",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 7,
+      "channel": "蹦蹦"
+    },
+    {
+      "id": "1301363446603972700",
+      "content": "也塞塞",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 4,
+      "channel": "做的周边"
+    },
+    {
+      "id": "1301359038885269515",
+      "content": "很多，可以随意使用",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 3,
+      "channel": "表情包"
+    },
+    {
+      "id": "1301364625975283763",
+      "content": "好吃",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 2,
+      "channel": "死亡已經迫近，消亡已經開始"
+    },
+    {
+      "id": "1301362627414462496",
+      "content": "摸鱼也",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 1,
+      "channel": "旧图"
+    },
+    {
+      "id": "1301457668715708467",
+      "content": "超好笑我推特也沒什麼東西可以看 就只是放圖而已",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "那閃爍於夜空之物是窮盡一生也無法觸及的夢"
+    }
+  ]
+}

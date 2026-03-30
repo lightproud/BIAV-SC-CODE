@@ -1,23 +1,31 @@
 {
   "date": "2025-12-21",
-  "messages": 5,
-  "unique_authors": 4,
-  "reactions_total": 18,
-  "attachments": 6,
+  "messages": 12,
+  "unique_authors": 5,
+  "reactions_total": 32,
+  "attachments": 11,
   "channel_activity": {
+    "✦第4章「乐园」关卡流程地图总览·星辰篇✦": 1,
+    "第4章「乐园」无提示事件·星辰篇": 1,
+    "蓋個圖樓": 2,
+    "银霜节日历（圣诞节贺文）": 2,
+    "🎗️OC生贺｜命运之丝": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1452158639874904217": 2,
     "1446091938456539279": 1,
     "1447283719843872808": 1
   },
   "hourly_activity": {
-    "12": 1,
+    "10": 2,
+    "12": 2,
+    "16": 3,
+    "13": 1,
     "4": 2,
     "14": 1,
     "23": 1
   },
   "message_types": {
-    "0": 5
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -28,11 +36,32 @@
       "channel": ""
     },
     {
+      "id": "1452280193245778112",
+      "content": "朵爾<:agree:1400771815076528258>",
+      "author": "souri.10244",
+      "reactions": 6,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1452288627349520505",
+      "content": "不论身处哪个世界，你的梦想似乎始终如一——既然如此，你为何鄙夷着另一个“自己”？\n\n……\n\n“守、守密人，那两个紫色的怪家伙因为抢着寄邮件发起来了！巡视组已经把",
+      "author": "flim_of_life_burst",
+      "reactions": 6,
+      "channel": "🎗️OC生贺｜命运之丝"
+    },
+    {
       "id": "1452274393068601498",
       "content": "Birthday and christmas edit featuring ramona time-worn and keeper!!! Not actuall",
       "author": "j.i9star.",
       "reactions": 5,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1452330790070390956",
+      "content": "即使教授會當掉我的期末還是犯了錯<:pray:1356053116260454534>",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "蓋個圖樓"
     }
   ]
 }

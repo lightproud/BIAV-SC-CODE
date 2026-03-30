@@ -1,0 +1,42 @@
+{
+  "date": "2023-12-27",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 126,
+  "attachments": 3,
+  "channel_activity": {
+    "密契副词条转录讲解（守密人55级解锁）": 1,
+    "🌰": 1,
+    "很雜的堆": 1
+  },
+  "hourly_activity": {
+    "12": 2,
+    "16": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1189551185133314169",
+      "content": "幫投，UID：100000225",
+      "author": "wutaa1",
+      "reactions": 81,
+      "channel": "🌰"
+    },
+    {
+      "id": "1189547131091034233",
+      "content": "附件的文稿是基于前面的基本讲解修改的，只需要看转录部分的读者直接跳过其他即可。",
+      "author": "metam0n",
+      "reactions": 23,
+      "channel": "密契副词条转录讲解（守密人55级解锁）"
+    },
+    {
+      "id": "1189610443233308785",
+      "content": "> 預警\n\n```頻道內內容都是私設守密人（♀）相關，有自設名用的不是官方名字，雷者自避感恩各位🙏```\n委託圖、自產圖文都有，委託圖會額外標上繪師名\n※※由於",
+      "author": "sannia",
+      "reactions": 22,
+      "channel": "很雜的堆"
+    }
+  ]
+}

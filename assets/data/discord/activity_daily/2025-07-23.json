@@ -1,17 +1,38 @@
 {
   "date": "2025-07-23",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 9,
+  "unique_authors": 4,
+  "reactions_total": 17,
+  "attachments": 16,
   "channel_activity": {
+    "发一下做的海报和小说封面————": 2,
+    "（蔚蓝档案x忘却前夜同人）Sensei瞬息弥萨格（第二幕 已完结）": 5,
+    "画一个杜勒": 1,
     "1390375103707218041": 1
   },
   "hourly_activity": {
+    "4": 1,
+    "5": 1,
+    "6": 6,
     "17": 1
   },
   "message_types": {
-    "4": 1
+    "0": 8
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1397436459652350074",
+      "content": "拼接报纸风的小玫瑰和波普风的福袋都是这两天做的 小说封面就是老早之前的存货啦",
+      "author": "queyangheimao.",
+      "reactions": 13,
+      "channel": "发一下做的海报和小说封面————"
+    },
+    {
+      "id": "1397464397353582592",
+      "content": "自己画爽了，我觉得自己画的很色，然后我也想拿奖。谢谢。 uid：100425926 \n求夸夸。\n（虽然但是应该是这样发布的吧）",
+      "author": "dittoqwq",
+      "reactions": 4,
+      "channel": "画一个杜勒"
+    }
+  ]
 }

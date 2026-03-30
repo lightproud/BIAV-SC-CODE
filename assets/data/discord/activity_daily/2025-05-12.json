@@ -1,17 +1,40 @@
 {
   "date": "2025-05-12",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 4,
+  "attachments": 1,
   "channel_activity": {
+    "深海界域维度影像一览": 2,
+    "「我享受疼痛，女巫大人。」": 3,
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "2": 2,
+    "1": 1,
+    "7": 1,
+    "14": 1,
     "19": 1
   },
   "message_types": {
+    "0": 3,
+    "4": 1,
     "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1371307078173589545",
+      "content": "",
+      "author": "timee_ky",
+      "reactions": 3,
+      "channel": "深海界域维度影像一览"
+    },
+    {
+      "id": "1371395031121920122",
+      "content": "吃吃吃吃吃~~朵尔别当米戈了我来当~~吃吃吃",
+      "author": "flarinsidia",
+      "reactions": 1,
+      "channel": "「我享受疼痛，女巫大人。」"
+    }
+  ]
 }

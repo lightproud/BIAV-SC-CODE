@@ -1,23 +1,32 @@
 {
   "date": "2025-11-08",
-  "messages": 10,
-  "unique_authors": 4,
-  "reactions_total": 539,
-  "attachments": 2,
+  "messages": 21,
+  "unique_authors": 7,
+  "reactions_total": 554,
+  "attachments": 3,
   "channel_activity": {
+    "无塔薇血希本期425镇楼＋锐评下半预告": 9,
+    "融灾攻略": 1,
+    "1111凯刻斯生贺预告": 1,
     "🔸服务器公告┊server-announcement": 1,
     "🔸游戏常见问题解答┊game-faq": 7,
     "1436577994880847902": 1,
     "1431233782605807666": 1
   },
   "hourly_activity": {
-    "4": 2,
+    "0": 3,
+    "1": 3,
+    "6": 1,
+    "7": 1,
+    "8": 2,
+    "4": 3,
     "17": 1,
     "18": 6,
     "3": 1
   },
   "message_types": {
-    "0": 10
+    "0": 9,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -33,6 +42,27 @@
       "author": "noeyebunny.nobunsu",
       "reactions": 12,
       "channel": ""
+    },
+    {
+      "id": "1436572911652831324",
+      "content": "",
+      "author": "calmdreab",
+      "reactions": 8,
+      "channel": "1111凯刻斯生贺预告"
+    },
+    {
+      "id": "1436523670800695447",
+      "content": "手机里有一款周年庆没福利的游戏",
+      "author": "human10062",
+      "reactions": 5,
+      "channel": "无塔薇血希本期425镇楼＋锐评下半预告"
+    },
+    {
+      "id": "1436521584432250931",
+      "content": "說真的其他的(比如自動戰鬥）我都不在意，這些都是額外功能，但一個回溯是不是有點少呢？還有週年命輪呢？而且大家不覺得除了200抽和星辰角色池外就沒有什麼特別的活動",
+      "author": "corposant_1003",
+      "reactions": 2,
+      "channel": "无塔薇血希本期425镇楼＋锐评下半预告"
     }
   ]
 }

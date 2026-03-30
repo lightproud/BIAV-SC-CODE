@@ -1,25 +1,57 @@
 {
   "date": "2024-04-01",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 21,
-  "attachments": 1,
+  "messages": 9,
+  "unique_authors": 6,
+  "reactions_total": 82,
+  "attachments": 9,
   "channel_activity": {
+    "喚醒體培養成本/素材表": 1,
+    "這不是攻略，只是想募集大家疊毒的層數": 2,
+    "做了個抽卡梗圖": 2,
+    "斜阳牌表情包": 1,
+    "有種就打鴨⊙ω⊙": 2,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "5": 1,
+    "8": 2,
+    "18": 3,
+    "12": 1,
+    "23": 1,
     "14": 1
   },
   "message_types": {
-    "0": 1
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1224333422340603924",
+      "content": "一些看到公告即兴摸鱼的表情包，精度不高但是快（\n准备攒在一个帖子更新",
+      "author": "lindongxieyang",
+      "reactions": 32,
+      "channel": "斜阳牌表情包"
+    },
     {
       "id": "1224357661550575656",
       "content": "插播魔術師，愚人節快樂！",
       "author": "navirecorbeau",
       "reactions": 21,
       "channel": ""
+    },
+    {
+      "id": "1224425749595815967",
+      "content": "給4/4號的我自己用⋯大家想要也能拿去用⋯",
+      "author": "yolo_mode",
+      "reactions": 15,
+      "channel": "做了個抽卡梗圖"
+    },
+    {
+      "id": "1224235221239726111",
+      "content": "※SR喚醒體的需求較低，約為SSR的2/3\n※以下數據只針對SSR喚醒體進行紀錄\n\n一般概念上的培養滿\n技能全6升級至60等\n總計需要：\n8賢者之石、\n45技能",
+      "author": "vegoutdino",
+      "reactions": 14,
+      "channel": "喚醒體培養成本/素材表"
     }
   ]
 }

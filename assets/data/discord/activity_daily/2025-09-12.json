@@ -1,0 +1,39 @@
+{
+  "date": "2025-09-12",
+  "messages": 10,
+  "unique_authors": 4,
+  "reactions_total": 14,
+  "attachments": 0,
+  "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 1,
+    "【收米人&OC向】【繁衍狂热向】晴空之下": 7,
+    "我喜歡卡斯托爾": 2
+  },
+  "hourly_activity": {
+    "13": 2,
+    "3": 5,
+    "6": 1,
+    "7": 1,
+    "14": 1
+  },
+  "message_types": {
+    "0": 9,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1415904814088458352",
+      "content": "写在前面——\n**点个薯条谢谢哇~**\n||**~~啊啊啊啊啊想参加想参加想参加啊啊啊啊啊一万银芯啊啊啊啊啊银芯宝宝等我等我等我我来带你回家啊啊啊啊啊（战吼起手",
+      "author": "akalanden",
+      "reactions": 13,
+      "channel": "【收米人&OC向】【繁衍狂热向】晴空之下"
+    },
+    {
+      "id": "1416046388734722129",
+      "content": "吃吃吃吃吃大吃特吃",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "我喜歡卡斯托爾"
+    }
+  ]
+}

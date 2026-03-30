@@ -1,23 +1,31 @@
 {
   "date": "2025-09-22",
-  "messages": 5,
-  "unique_authors": 5,
-  "reactions_total": 16,
-  "attachments": 1,
+  "messages": 48,
+  "unique_authors": 6,
+  "reactions_total": 30,
+  "attachments": 7,
   "channel_activity": {
+    "【3D渲染动画】奥尔拉": 27,
+    "杜勒和皮克曼的车文来了": 16,
     "1181998821291606097": 3,
     "1357184174485671966": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "3": 3,
+    "4": 24,
+    "5": 1,
+    "7": 2,
+    "11": 5,
+    "12": 9,
     "1": 1,
-    "7": 1,
     "8": 1,
     "9": 1,
     "14": 1
   },
   "message_types": {
-    "0": 5
+    "0": 33,
+    "19": 10
   },
   "top_reacted_messages": [
     {
@@ -26,6 +34,41 @@
       "author": "navirecorbeau",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1419525884464992418",
+      "content": "也算是一个小练习，试试看用blender来做出油画效果。但结果好像很一般.....<:takenotes:1357186646294138890>\n另外本来还想",
+      "author": "xyakoto",
+      "reactions": 9,
+      "channel": "【3D渲染动画】奥尔拉"
+    },
+    {
+      "id": "1419665944355016868",
+      "content": "~~乾脆給他兩叫王姨（藝）吧~~",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "杜勒和皮克曼的车文来了"
+    },
+    {
+      "id": "1419526249612836921",
+      "content": "大佬好強",
+      "author": "0.0._.0_0.",
+      "reactions": 1,
+      "channel": "【3D渲染动画】奥尔拉"
+    },
+    {
+      "id": "1419547052773343303",
+      "content": "你說過你會",
+      "author": "sayo.0320",
+      "reactions": 1,
+      "channel": "【3D渲染动画】奥尔拉"
+    },
+    {
+      "id": "1419554131894472774",
+      "content": "創建文檔.jpg",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "杜勒和皮克曼的车文来了"
     },
     {
       "id": "1419579963195261029",

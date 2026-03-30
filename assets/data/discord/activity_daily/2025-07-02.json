@@ -1,16 +1,20 @@
 {
   "date": "2025-07-02",
-  "messages": 1,
-  "unique_authors": 1,
+  "messages": 4,
+  "unique_authors": 2,
   "reactions_total": 4,
   "attachments": 1,
   "channel_activity": {
+    "混沌中毒隊🧪通關H2-12記錄與分享": 3,
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "2": 1,
+    "7": 2,
     "11": 1
   },
   "message_types": {
+    "19": 2,
     "0": 1
   },
   "top_reacted_messages": [

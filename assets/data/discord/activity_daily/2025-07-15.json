@@ -1,17 +1,20 @@
 {
   "date": "2025-07-15",
-  "messages": 1,
-  "unique_authors": 1,
+  "messages": 3,
+  "unique_authors": 2,
   "reactions_total": 14,
   "attachments": 1,
   "channel_activity": {
+    "利莫里亞沙丁魚罐頭": 2,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "5": 1,
+    "10": 1,
     "15": 1
   },
   "message_types": {
-    "0": 1
+    "19": 2
   },
   "top_reacted_messages": [
     {

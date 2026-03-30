@@ -1,0 +1,37 @@
+{
+  "date": "2024-12-09",
+  "messages": 7,
+  "unique_authors": 6,
+  "reactions_total": 3,
+  "attachments": 3,
+  "channel_activity": {
+    "原初之影 第二關 恐懼之眼 攻略": 2,
+    "原初之影 第六關 瘋狂之視 分享": 5
+  },
+  "hourly_activity": {
+    "13": 2,
+    "5": 1,
+    "8": 1,
+    "10": 2,
+    "11": 1
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1315626371372027926",
+      "content": "誠意推薦深海毒🌹 \n二十幾場平均5-6回合結束\n回合出牌數平均7-10張\nhttps://youtu.be/bCREKhsj2qo",
+      "author": "ichikaguya._52033",
+      "reactions": 2,
+      "channel": "原初之影 第六關 瘋狂之視 分享"
+    },
+    {
+      "id": "1315636868146266162",
+      "content": "第九章主線打到9-3",
+      "author": "plk214",
+      "reactions": 1,
+      "channel": "原初之影 第六關 瘋狂之視 分享"
+    }
+  ]
+}

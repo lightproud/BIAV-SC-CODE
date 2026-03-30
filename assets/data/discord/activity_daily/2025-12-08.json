@@ -1,10 +1,12 @@
 {
   "date": "2025-12-08",
-  "messages": 30,
+  "messages": 41,
   "unique_authors": 13,
-  "reactions_total": 14,
-  "attachments": 6,
+  "reactions_total": 34,
+  "attachments": 12,
   "channel_activity": {
+    "我也丟一下之前畫的 圖樓": 1,
+    "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅": 10,
     "1421408684776357929": 8,
     "1446091938456539279": 1,
     "1442647324575928441": 2,
@@ -12,12 +14,14 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
+    "10": 6,
+    "8": 1,
+    "9": 5,
     "6": 8,
     "12": 1,
     "3": 3,
     "1": 1,
     "4": 5,
-    "9": 1,
     "13": 4,
     "15": 3,
     "16": 1,
@@ -25,11 +29,17 @@
     "20": 1
   },
   "message_types": {
-    "0": 20,
-    "19": 9,
-    "4": 1
+    "19": 2,
+    "0": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1447508499411238983",
+      "content": "「早在第一次見面時我就該剪掉你的舌頭。」",
+      "author": "carrot_chicken",
+      "reactions": 14,
+      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
+    },
     {
       "id": "1447467932258013235",
       "content": "",
@@ -45,11 +55,39 @@
       "channel": ""
     },
     {
+      "id": "1447535503506280458",
+      "content": "<:agree:1400771815076528258> \n我正在把手繪電繪化",
+      "author": "tanchen0811",
+      "reactions": 3,
+      "channel": "我也丟一下之前畫的 圖樓"
+    },
+    {
       "id": "1447427658962178129",
       "content": "I will inquire about it",
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1447522113069121598",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
+    },
+    {
+      "id": "1447524074686251080",
+      "content": "🥢",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
+    },
+    {
+      "id": "1447529110808297542",
+      "content": "自娛自樂真的不知道該哭還是該笑了",
+      "author": "carrot_chicken",
+      "reactions": 1,
+      "channel": "彌x戈 女鬼和落水狗出沒會雷的不要看🙅🙅"
     },
     {
       "id": "1447445528995696752",

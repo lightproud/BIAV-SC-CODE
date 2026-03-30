@@ -1,19 +1,31 @@
 {
   "date": "2025-12-14",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 79,
-  "attachments": 0,
+  "messages": 68,
+  "unique_authors": 6,
+  "reactions_total": 92,
+  "attachments": 2,
   "channel_activity": {
+    "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）": 60,
+    "一點仿官": 2,
+    "女守X鯊（OOC警告）": 4,
     "🔸服务器公告┊server-announcement": 1,
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
+    "0": 42,
+    "1": 1,
+    "11": 1,
+    "12": 12,
+    "17": 1,
+    "23": 3,
+    "9": 2,
+    "2": 4,
     "7": 1,
     "22": 1
   },
   "message_types": {
-    "0": 2
+    "19": 20,
+    "0": 46
   },
   "top_reacted_messages": [
     {
@@ -24,11 +36,46 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1449691818525589605",
+      "content": "~~其實有做男守咪~~",
+      "author": "souri.10244",
+      "reactions": 7,
+      "channel": "一點仿官"
+    },
+    {
+      "id": "1449691506234626189",
+      "content": "我的想法是能透過界域天賦和三大質體獲得牌所以設計的命輪\n但還沒想好要怎麼設計\n\n滿級\n命輪\n願銀鑰指引前路\n死亡抵抗\n                     ",
+      "author": "fpaper_27108",
+      "reactions": 3,
+      "channel": "一點仿官"
+    },
+    {
       "id": "1449891949040373801",
       "content": "A 60-ish second overview of the Interlude Lightless Realm.\nhttps://youtube.com/s",
       "author": "nechromicon",
       "reactions": 3,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1449557384451199120",
+      "content": "塔数值比深海那些辅助高多了",
+      "author": "ququ12358",
+      "reactions": 1,
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
+    },
+    {
+      "id": "1449559580198699038",
+      "content": "看来还是太多啦，直接落地boss吧入药",
+      "author": "ququ12358",
+      "reactions": 1,
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
+    },
+    {
+      "id": "1449565125127307356",
+      "content": "不是 你們為啥在這裡聊😂 話題沒有問題但與本樓沒有半毛錢關係",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
     }
   ]
 }

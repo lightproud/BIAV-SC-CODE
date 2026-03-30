@@ -1,10 +1,14 @@
 {
   "date": "2025-12-25",
-  "messages": 33,
+  "messages": 55,
   "unique_authors": 8,
-  "reactions_total": 598,
-  "attachments": 4,
+  "reactions_total": 631,
+  "attachments": 7,
   "channel_activity": {
+    "【同人绘画】忘却前夜×P5R，怎会做这样的梦？": 2,
+    "银霜节日历（圣诞节贺文）": 1,
+    "給異格也P了一版仿官海報（）": 4,
+    "選擇你的喚醒體！": 15,
     "🔸礼包码┊gift-codes": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1241345906826153984": 24,
@@ -12,17 +16,21 @@
     "1426215442783142041": 3
   },
   "hourly_activity": {
+    "22": 2,
+    "3": 1,
+    "14": 4,
+    "6": 5,
+    "7": 16,
+    "13": 2,
     "10": 1,
-    "13": 1,
-    "7": 5,
     "8": 18,
     "9": 4,
-    "1": 2,
-    "6": 2
+    "1": 2
   },
   "message_types": {
-    "0": 27,
-    "19": 6
+    "0": 18,
+    "4": 1,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -31,6 +39,20 @@
       "author": "morimensstaff01",
       "reactions": 575,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1453641289953185905",
+      "content": "原本沒打算的但靈機一動覺得排版裡除了漁元素以外，混點角色選擇頁面的成分進去也不錯⋯⋯\nUID: 100047306",
+      "author": "carrot_chicken",
+      "reactions": 20,
+      "channel": "選擇你的喚醒體！"
+    },
+    {
+      "id": "1453878951230439628",
+      "content": "但愿能画的出来…",
+      "author": "zerathree",
+      "reactions": 11,
+      "channel": "【同人绘画】忘却前夜×P5R，怎会做这样的梦？"
     },
     {
       "id": "1453651076002615380",
@@ -59,6 +81,20 @@
       "author": "carrot_chicken",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1453645298131009702",
+      "content": "勞斯辛苦了<:pray:1356053116260454534>",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "選擇你的喚醒體！"
+    },
+    {
+      "id": "1453651544322084897",
+      "content": "我進來的那一刻就已經吃飽了",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "選擇你的喚醒體！"
     },
     {
       "id": "1453745822603808912",

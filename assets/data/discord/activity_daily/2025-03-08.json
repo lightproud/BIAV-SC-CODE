@@ -1,0 +1,26 @@
+{
+  "date": "2025-03-08",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "新手第三天自己研发的毒队。": 2
+  },
+  "hourly_activity": {
+    "10": 1,
+    "18": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1347876604671430671",
+      "content": "说实话，我感觉我现在配的这个队伍其实挺好的。有什么建议可以提供吗？<:wish:1236951537788649492>",
+      "author": "syq0155",
+      "reactions": 5,
+      "channel": "新手第三天自己研发的毒队。"
+    }
+  ]
+}

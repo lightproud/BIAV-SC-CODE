@@ -1,19 +1,28 @@
 {
   "date": "2025-10-02",
-  "messages": 3,
-  "unique_authors": 3,
-  "reactions_total": 40,
-  "attachments": 7,
+  "messages": 41,
+  "unique_authors": 6,
+  "reactions_total": 56,
+  "attachments": 18,
   "channel_activity": {
+    "無借角融災全4 400攻略血肉指環": 19,
+    "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）": 2,
+    "开个摸鱼楼✨": 17,
     "1423337172655935600": 3
   },
   "hourly_activity": {
-    "15": 1,
+    "0": 3,
+    "1": 13,
+    "2": 4,
+    "3": 1,
+    "14": 5,
+    "15": 13,
     "16": 1,
     "17": 1
   },
   "message_types": {
-    "0": 3
+    "0": 36,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -22,6 +31,76 @@
       "author": "scholar_2",
       "reactions": 40,
       "channel": ""
+    },
+    {
+      "id": "1423326462328700939",
+      "content": "<:alone:1356053021318189307>",
+      "author": "xcecilex.",
+      "reactions": 3,
+      "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423319181549506560",
+      "content": "<@883992032530563082>  圖魯寶寶來了！！！<:cute1:1356053053568192717>",
+      "author": "xcecilex.",
+      "reactions": 2,
+      "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423322939243106354",
+      "content": "",
+      "author": "xcecilex.",
+      "reactions": 2,
+      "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423327327378735136",
+      "content": "🎉 🎉 在這裏預早祝船長生日快樂 🎉 🎉",
+      "author": "corposant_1003",
+      "reactions": 2,
+      "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423330497064341534",
+      "content": "今天最后的了，下次继续<:pray:1356053116260454534>",
+      "author": "xcecilex.",
+      "reactions": 2,
+      "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423102684478574612",
+      "content": "<:pray:1400771650064089112> 是大佬我没救了，我还没动笔呢",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+    },
+    {
+      "id": "1423146746539933819",
+      "content": "<:please:1356053110375714817>",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+    },
+    {
+      "id": "1423323340055117835",
+      "content": "勞斯\n愛你❤️",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423326009289211904",
+      "content": "😋",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423326802109010111",
+      "content": "謝謝謝謝！！！<:hello:1356053084790460437>",
+      "author": "xcecilex.",
+      "reactions": 1,
+      "channel": "开个摸鱼楼✨"
     }
   ]
 }

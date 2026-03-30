@@ -1,17 +1,27 @@
 {
   "date": "2025-07-10",
-  "messages": 1,
+  "messages": 2,
   "unique_authors": 1,
-  "reactions_total": 0,
+  "reactions_total": 1,
   "attachments": 0,
   "channel_activity": {
+    "《他們的女兒》": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "2": 1,
     "9": 1
   },
   "message_types": {
     "0": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1392688555238752400",
+      "content": "喔喔超好看，謝謝老師",
+      "author": "xuyu7162",
+      "reactions": 1,
+      "channel": "《他們的女兒》"
+    }
+  ]
 }

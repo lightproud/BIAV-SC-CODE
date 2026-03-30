@@ -1,0 +1,59 @@
+{
+  "date": "2024-12-25",
+  "messages": 5,
+  "unique_authors": 4,
+  "reactions_total": 43,
+  "attachments": 3,
+  "channel_activity": {
+    "生日快樂，索瓦爾格/Happy Birthday to Solvarg Vol. 2": 1,
+    "修改了去年畫的珊": 1,
+    "凱刻斯聖誕快樂": 2,
+    "請大家吃生日蛋糕/Happy Birthday to Solvarg vol.3": 1
+  },
+  "hourly_activity": {
+    "3": 1,
+    "11": 1,
+    "15": 2,
+    "5": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1321440928795459597",
+      "content": "去年畫珊的時候遊戲還不能看角色全圖（",
+      "author": "blue_yogurt_chan",
+      "reactions": 30,
+      "channel": "修改了去年畫的珊"
+    },
+    {
+      "id": "1321496320003014786",
+      "content": "突然心血來潮臨摹一下",
+      "author": "_cwz_",
+      "reactions": 10,
+      "channel": "凱刻斯聖誕快樂"
+    },
+    {
+      "id": "1321312231589154898",
+      "content": "太棒了<:wish:1236951537788649492>",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "生日快樂，索瓦爾格/Happy Birthday to Solvarg Vol. 2"
+    },
+    {
+      "id": "1321500868494757918",
+      "content": "原本想畫sp朵爾但發現我不會",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "凱刻斯聖誕快樂"
+    },
+    {
+      "id": "1321342651722764339",
+      "content": "乞口（我逐渐理解一切）",
+      "author": "fmoomool",
+      "reactions": 1,
+      "channel": "請大家吃生日蛋糕/Happy Birthday to Solvarg vol.3"
+    }
+  ]
+}

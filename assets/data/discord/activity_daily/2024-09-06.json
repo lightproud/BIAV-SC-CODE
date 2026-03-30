@@ -1,0 +1,70 @@
+{
+  "date": "2024-09-06",
+  "messages": 45,
+  "unique_authors": 6,
+  "reactions_total": 22,
+  "attachments": 12,
+  "channel_activity": {
+    "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）": 2,
+    "3界域1t颠五": 37,
+    "莱克攻略(共3期)": 3,
+    "更一波宝宝们的傻大头": 1,
+    "（已封存）【蚰蜒的vrm影像馆】": 2
+  },
+  "hourly_activity": {
+    "12": 6,
+    "1": 33,
+    "11": 3,
+    "13": 1,
+    "14": 2
+  },
+  "message_types": {
+    "0": 41,
+    "4": 1,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1281594553845153852",
+      "content": "感觉现在天天上线和上班差不多，也就是氪多了跑不掉罢了",
+      "author": "0sgtq0",
+      "reactions": 7,
+      "channel": "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）"
+    },
+    {
+      "id": "1281577292681842771",
+      "content": "【【忘却前夜】莱克攻略 第三期（上） 玩莱克就是玩造物（纯文字版）-哔哩哔哩】 https://b23.tv/cQB56x3",
+      "author": "tranquil_monkey_73179",
+      "reactions": 6,
+      "channel": "莱克攻略(共3期)"
+    },
+    {
+      "id": "1281629585880121424",
+      "content": "打开电脑后手不自主地就又开始修瓦姐的摸了……",
+      "author": "nancyjofla",
+      "reactions": 5,
+      "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1281418614133489796",
+      "content": "打了超维，混沌，深海3界域1t，靠摆和呓语无限刷算力和力量",
+      "author": "sadanshishen",
+      "reactions": 2,
+      "channel": "3界域1t颠五"
+    },
+    {
+      "id": "1281432895298207755",
+      "content": "感觉还是差点意思",
+      "author": "sadanshishen",
+      "reactions": 1,
+      "channel": "3界域1t颠五"
+    },
+    {
+      "id": "1281577350424825957",
+      "content": "下半要鸽了哈哈哈哈 没精力写太多",
+      "author": "tranquil_monkey_73179",
+      "reactions": 1,
+      "channel": "莱克攻略(共3期)"
+    }
+  ]
+}

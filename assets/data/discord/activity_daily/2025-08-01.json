@@ -1,18 +1,55 @@
 {
   "date": "2025-08-01",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 3,
+  "messages": 41,
+  "unique_authors": 5,
+  "reactions_total": 4,
+  "attachments": 17,
   "channel_activity": {
+    "神國圖魯教 星辰篇": 34,
+    "是复古报纸！": 3,
+    "杜勒赛因x你 R18": 2,
     "1350060160739184690": 2
   },
   "hourly_activity": {
+    "3": 7,
+    "4": 26,
+    "5": 1,
+    "17": 5,
     "9": 1,
     "10": 1
   },
   "message_types": {
-    "0": 2
+    "19": 9,
+    "0": 30
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1400685122319155263",
+      "content": "還可以啦",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "神國圖魯教 星辰篇"
+    },
+    {
+      "id": "1400693990822777035",
+      "content": "去深海常駐撈看看有沒有圖魯跟墨菲",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "神國圖魯教 星辰篇"
+    },
+    {
+      "id": "1400697262698664039",
+      "content": "四張",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "神國圖魯教 星辰篇"
+    },
+    {
+      "id": "1400697511945048146",
+      "content": "手牌+2，回鑰能300每回合開鑰令不是夢，最重要的全體回狂讓他可以抵消鑰令的負面buff",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "神國圖魯教 星辰篇"
+    }
+  ]
 }

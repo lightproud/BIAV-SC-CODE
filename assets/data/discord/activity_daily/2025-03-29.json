@@ -1,0 +1,45 @@
+{
+  "date": "2025-03-29",
+  "messages": 6,
+  "unique_authors": 5,
+  "reactions_total": 104,
+  "attachments": 2,
+  "channel_activity": {
+    "Flares' NA Cash Shop Guide": 1,
+    "【同人活動毀損灰霧之都】マーフィーを描いてみた": 2,
+    "*千面幻象*达芙黛尔单人向": 3
+  },
+  "hourly_activity": {
+    "3": 1,
+    "19": 1,
+    "20": 1,
+    "7": 1,
+    "17": 2
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1355449740824805386",
+      "content": "新图来不及画完了，点点老图\nuid：100454254",
+      "author": "jueduishigemeng",
+      "reactions": 62,
+      "channel": "*千面幻象*达芙黛尔单人向"
+    },
+    {
+      "id": "1355632068578644172",
+      "content": "いつもよりかわいいスタイルで描きました<:pray:1236950042460295178> （uid:100819763）",
+      "author": "applepieeater123",
+      "reactions": 33,
+      "channel": "【同人活動毀損灰霧之都】マーフィーを描いてみた"
+    },
+    {
+      "id": "1355390498180829307",
+      "content": "It's part of a big Beginner guide project, I'm still working on the awakers and ",
+      "author": "flares117",
+      "reactions": 9,
+      "channel": "Flares' NA Cash Shop Guide"
+    }
+  ]
+}

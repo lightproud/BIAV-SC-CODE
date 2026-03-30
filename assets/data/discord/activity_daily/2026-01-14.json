@@ -1,27 +1,33 @@
 {
   "date": "2026-01-14",
-  "messages": 16,
+  "messages": 32,
   "unique_authors": 10,
-  "reactions_total": 33,
-  "attachments": 2,
+  "reactions_total": 49,
+  "attachments": 7,
   "channel_activity": {
+    "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)": 12,
+    "whormentine + tournament": 4,
     "1457468446353653792": 1,
     "1234769700735418368": 8,
     "1445556242381672559": 7
   },
   "hourly_activity": {
+    "6": 1,
+    "7": 2,
+    "8": 4,
+    "9": 2,
+    "10": 1,
+    "11": 4,
+    "15": 1,
+    "23": 4,
     "2": 6,
     "3": 3,
-    "8": 1,
-    "9": 1,
     "4": 2,
-    "7": 1,
     "20": 2
   },
   "message_types": {
-    "4": 1,
-    "19": 2,
-    "0": 13
+    "0": 14,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -32,11 +38,46 @@
       "channel": ""
     },
     {
+      "id": "1460882071185788978",
+      "content": "<:blush_dawg:1417724173790351391>",
+      "author": "that_one_chippy",
+      "reactions": 11,
+      "channel": "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)"
+    },
+    {
       "id": "1460828182226669662",
       "content": "",
       "author": "ice_storys",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1461138198435598583",
+      "content": "I created a tournament for your favorite character in Mori—choose by your own cr",
+      "author": "meatloversus",
+      "reactions": 2,
+      "channel": "whormentine + tournament"
+    },
+    {
+      "id": "1460903126281228379",
+      "content": "杜勒赛因好帅！西维斯特也是个人！",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)"
+    },
+    {
+      "id": "1460918791285506172",
+      "content": "神秘吃飯男",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)"
+    },
+    {
+      "id": "1460934047957127242",
+      "content": "真是个英俊的男人！<:Dore_proud:1459076042722639905>",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)"
     },
     {
       "id": "1460893531014172813",

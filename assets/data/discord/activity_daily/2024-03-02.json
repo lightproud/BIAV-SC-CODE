@@ -1,17 +1,49 @@
 {
   "date": "2024-03-02",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 6,
+  "unique_authors": 5,
+  "reactions_total": 36,
+  "attachments": 10,
   "channel_activity": {
+    "第3期【融災禁區】關卡地圖總覽": 1,
+    "diy界域天音（代传）": 1,
+    "【头像区】弥大各位的简约小头像": 1,
+    "24": 1,
+    "【墨菲】同人大头&上海百联ZX大屏": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "21": 1,
+    "4": 1,
+    "12": 1,
+    "20": 1,
+    "10": 1,
     "9": 1
   },
   "message_types": {
-    "0": 1
+    "0": 5
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1213589918530408568",
+      "content": "UID 100102822 \n☆(ﾉ◕ヮ◕)ﾉ*",
+      "author": "0catharsis01838",
+      "reactions": 26,
+      "channel": "24"
+    },
+    {
+      "id": "1213599879675252898",
+      "content": "第3期「融灾禁区」地图。\n◆完成主线 5-4 即可参与，每两周刷新奖励与关卡，每个关卡只需要完成普通模式或困难模式其中之一。\n◆使用不重复的唤醒体、命轮与钥令，",
+      "author": "silverstream_s",
+      "reactions": 6,
+      "channel": "第3期【融災禁區】關卡地圖總覽"
+    },
+    {
+      "id": "1213343629230473268",
+      "content": "帮diy小组群友代传的界域diy，id是100002656",
+      "author": "dyyqcwj",
+      "reactions": 4,
+      "channel": "diy界域天音（代传）"
+    }
+  ]
 }

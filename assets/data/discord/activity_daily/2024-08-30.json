@@ -1,0 +1,34 @@
+{
+  "date": "2024-08-30",
+  "messages": 10,
+  "unique_authors": 6,
+  "reactions_total": 6,
+  "attachments": 0,
+  "channel_activity": {
+    "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）": 4,
+    "相位基本型推介／PVP typical team suggestion": 2,
+    "莱克攻略(共3期)": 3,
+    "幻夢深淺15000分挑戰成功，借了80級薩爾瓦多，拖3個40級險過": 1
+  },
+  "hourly_activity": {
+    "1": 2,
+    "19": 4,
+    "3": 1,
+    "9": 1,
+    "10": 1,
+    "11": 1
+  },
+  "message_types": {
+    "19": 2,
+    "0": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1279018575335657503",
+      "content": "稿子早写好了但是顾及得太多<:rose1:1234798154000633949> 莱克主要在老玩家手里才玩得出彩，但是老玩家又有自己的构筑思路……搞到最后好像",
+      "author": "tranquil_monkey_73179",
+      "reactions": 6,
+      "channel": "莱克攻略(共3期)"
+    }
+  ]
+}

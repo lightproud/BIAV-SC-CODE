@@ -1,0 +1,33 @@
+{
+  "date": "2024-09-29",
+  "messages": 16,
+  "unique_authors": 7,
+  "reactions_total": 5,
+  "attachments": 1,
+  "channel_activity": {
+    "血肉盾击至高皇队": 9,
+    "全游戏首次无限定SSR角色/命轮融灾375达成！": 4,
+    "我們會在海洋深處腐爛": 1,
+    "珊瑚女": 2
+  },
+  "hourly_activity": {
+    "3": 1,
+    "5": 7,
+    "7": 2,
+    "9": 2,
+    "17": 4
+  },
+  "message_types": {
+    "0": 10,
+    "19": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1289817548316999691",
+      "content": "",
+      "author": "dyyqcwj",
+      "reactions": 5,
+      "channel": "全游戏首次无限定SSR角色/命轮融灾375达成！"
+    }
+  ]
+}

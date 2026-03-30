@@ -1,0 +1,40 @@
+{
+  "date": "2024-01-02",
+  "messages": 8,
+  "unique_authors": 6,
+  "reactions_total": 52,
+  "attachments": 1,
+  "channel_activity": {
+    "在bilibili發佈過的攻略自搬運": 1,
+    "画了liz": 2,
+    "自製界域与喚醒體——以太篇": 3,
+    "自製界域和喚醒體——夢境篇": 2
+  },
+  "hourly_activity": {
+    "23": 1,
+    "5": 1,
+    "18": 1,
+    "2": 2,
+    "8": 2,
+    "9": 1
+  },
+  "message_types": {
+    "0": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1191612509388537867",
+      "content": "喜欢~希望越来越好~\nuid:100199379",
+      "author": "buyaocongjiangsuanxiexie",
+      "reactions": 51,
+      "channel": "画了liz"
+    },
+    {
+      "id": "1191655466045030462",
+      "content": "UID100000703",
+      "author": "dyyqcwj",
+      "reactions": 1,
+      "channel": "自製界域与喚醒體——以太篇"
+    }
+  ]
+}

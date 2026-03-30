@@ -1,17 +1,65 @@
 {
   "date": "2025-05-13",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 19,
+  "unique_authors": 7,
+  "reactions_total": 27,
+  "attachments": 6,
   "channel_activity": {
+    "✦关卡地图「融灾禁区」总览34期·星辰篇✦": 1,
+    "關卡地圖「幻夢深潛」總覽Ⅱ（重製版）": 1,
+    "黑潮": 13,
+    "「我享受疼痛，女巫大人。」": 3,
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "7": 1
+    "3": 4,
+    "4": 4,
+    "5": 3,
+    "7": 3,
+    "12": 1,
+    "14": 1,
+    "15": 2,
+    "16": 1
   },
   "message_types": {
-    "19": 1
+    "0": 10,
+    "19": 8
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1371701239187771515",
+      "content": "偷給他半邊臉畫成沒有魚鱗和魚鰭耳朵了",
+      "author": "yolo_mode",
+      "reactions": 19,
+      "channel": "黑潮"
+    },
+    {
+      "id": "1371882899422580779",
+      "content": "用來練習的⋯⋯大概細化一下就不另外放了⋯⋯\n還算滿意⋯⋯",
+      "author": "yolo_mode",
+      "reactions": 3,
+      "channel": "黑潮"
+    },
+    {
+      "id": "1371687739199852564",
+      "content": "> 大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第7期（第34期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：新增造物\n图二：地图\n",
+      "author": "menoctus",
+      "reactions": 2,
+      "channel": "✦关卡地图「融灾禁区」总览34期·星辰篇✦"
+    },
+    {
+      "id": "1371874527319167129",
+      "content": "~~可是鯊魚吃鱉的樣子好瑟歐~~",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "「我享受疼痛，女巫大人。」"
+    },
+    {
+      "id": "1371756186218532904",
+      "content": "白髮藍眼男絕美⋯⋯",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "黑潮"
+    }
+  ]
 }

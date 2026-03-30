@@ -1,17 +1,56 @@
 {
   "date": "2025-06-09",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 29,
+  "unique_authors": 4,
+  "reactions_total": 5,
+  "attachments": 1,
   "channel_activity": {
+    "利莫里亞沙丁魚罐頭": 7,
+    "我要吃現pa 我現在就要吃現pa 👊": 20,
+    "小水母生贺": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "2": 7,
+    "4": 5,
+    "18": 1,
+    "1": 1,
+    "5": 3,
+    "6": 11,
     "19": 1
   },
   "message_types": {
-    "0": 1
+    "19": 8,
+    "0": 20
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1381505841659645993",
+      "content": "奧提斯\n奧提斯•奈傑爾•霍華德\nOutis 是奧德修斯用來欺騙獨眼巨人的假名\nNigel 有黑黝黝的意思\n霍華德致敬一下洛老",
+      "author": "yolo_mode",
+      "reactions": 2,
+      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+    },
+    {
+      "id": "1381459651866005515",
+      "content": "鯊魚的工具人體質要利用到極致，順便賣個魚也是可以的吧（彌利：殺",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "利莫里亞沙丁魚罐頭"
+    },
+    {
+      "id": "1381459712855244871",
+      "content": "有點不習慣（無臉男突然有了臉還是這樣的斯文敗類）但！老師—好香的飯阿阿阿阿阿阿阿阿",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+    },
+    {
+      "id": "1381484421089071275",
+      "content": "謝謝勞斯的飯飯，我愛你",
+      "author": "yun_lai_yi_meng_32",
+      "reactions": 1,
+      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+    }
+  ]
 }

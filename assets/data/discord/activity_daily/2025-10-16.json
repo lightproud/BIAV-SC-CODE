@@ -1,17 +1,27 @@
 {
   "date": "2025-10-16",
-  "messages": 1,
+  "messages": 2,
   "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 1,
+  "reactions_total": 20,
+  "attachments": 2,
   "channel_activity": {
+    "Please please please please": 1,
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "14": 1,
     "0": 1
   },
   "message_types": {
     "0": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1428385734267502845",
+      "content": "<:pray:1356053116260454534>",
+      "author": "aurora3981",
+      "reactions": 20,
+      "channel": "Please please please please"
+    }
+  ]
 }

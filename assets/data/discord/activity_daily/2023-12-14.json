@@ -1,18 +1,23 @@
 {
   "date": "2023-12-14",
-  "messages": 39,
+  "messages": 43,
   "unique_authors": 37,
-  "reactions_total": 38,
-  "attachments": 0,
+  "reactions_total": 53,
+  "attachments": 1,
   "channel_activity": {
+    "超維毒隊攻略by蝶咏玉泉": 1,
+    "宣一下个人在哔哩哔哩做的深海界域攻略视频呢～": 1,
+    "那些新手期我踩過的坑": 2,
     "1184707725851111444": 39
   },
   "hourly_activity": {
+    "15": 5,
+    "9": 1,
+    "2": 2,
     "11": 10,
     "12": 5,
     "13": 5,
     "14": 4,
-    "15": 4,
     "16": 4,
     "17": 2,
     "18": 2,
@@ -21,9 +26,24 @@
     "23": 1
   },
   "message_types": {
-    "0": 39
+    "0": 2,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1184791992950067201",
+      "content": "【不爱吃鱼因为有刺的个人空间-哔哩哔哩】 https://b23.tv/TBYO9xL\n\n攻略是忘却前夜小班教学，是纯深海界域方面的内容，讲解了个人对深海界域天",
+      "author": "niubi.plusv587",
+      "reactions": 13,
+      "channel": "宣一下个人在哔哩哔哩做的深海界域攻略视频呢～"
+    },
+    {
+      "id": "1184684752901521459",
+      "content": "👌 更正",
+      "author": "meow51103",
+      "reactions": 2,
+      "channel": "那些新手期我踩過的坑"
+    },
     {
       "id": "1184814467645702165",
       "content": "100006857",
@@ -147,20 +167,6 @@
       "id": "1184848450345500763",
       "content": "100064264",
       "author": "l70nekol",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1184852429469126696",
-      "content": "100002979",
-      "author": "0sgtq0",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1184862305800962068",
-      "content": "100037750",
-      "author": "0nd2",
       "reactions": 1,
       "channel": ""
     }

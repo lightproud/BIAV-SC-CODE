@@ -1,17 +1,20 @@
 {
   "date": "2025-03-28",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 713,
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 715,
   "attachments": 0,
   "channel_activity": {
+    "是雷婭": 3,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "2": 1,
+    "10": 2,
     "9": 1
   },
   "message_types": {
-    "0": 1
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -20,6 +23,20 @@
       "author": "morimensstaff01",
       "reactions": 713,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1355011407208255631",
+      "content": "天惹🤩画得这么牛 😍 😍 😍",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "是雷婭"
+    },
+    {
+      "id": "1355130108150808678",
+      "content": "嬤嬤",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "是雷婭"
     }
   ]
 }

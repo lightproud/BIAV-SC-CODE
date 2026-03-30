@@ -1,18 +1,43 @@
 {
   "date": "2025-08-07",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 0,
+  "messages": 13,
+  "unique_authors": 7,
+  "reactions_total": 3,
   "attachments": 0,
   "channel_activity": {
+    "针对新融灾375-425的角色榜单": 3,
+    "偽造之物": 7,
+    "我幻想的杜勒賽因加強": 1,
     "1390375103707218041": 2
   },
   "hourly_activity": {
+    "4": 1,
+    "5": 2,
+    "0": 1,
+    "2": 2,
+    "6": 3,
+    "10": 1,
+    "11": 1,
     "15": 2
   },
   "message_types": {
-    "19": 1,
-    "0": 1
+    "0": 9,
+    "19": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1402972046467661855",
+      "content": "天賦：殘骸上限提高到10，可選擇不食用殘骸或一次食用更多殘骸獲得多次加成。\n\n狂氣爆發：新增造成的傷害必定暴擊。\n吞噬：本次狂氣爆發的暴擊率+15%改為獲得一個",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "我幻想的杜勒賽因加強"
+    },
+    {
+      "id": "1402848404748370143",
+      "content": "寶寶，你是一個香香軟軟QQㄋㄟㄋㄟ可愛到噗咩的草莓巧克力蛋糕",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "偽造之物"
+    }
+  ]
 }

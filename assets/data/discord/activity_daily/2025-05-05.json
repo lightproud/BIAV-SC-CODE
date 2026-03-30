@@ -1,27 +1,56 @@
 {
   "date": "2025-05-05",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 12,
-  "attachments": 1,
+  "messages": 15,
+  "unique_authors": 8,
+  "reactions_total": 47,
+  "attachments": 13,
   "channel_activity": {
+    "Tentacle Crit Build Theory Crafting": 7,
+    "【MMD】神っぽいな「克莱门汀」": 1,
+    "5771新春活动招人+预热": 1,
+    "血肉唤醒体DIY": 4,
     "1271491376881598494": 2
   },
   "hourly_activity": {
-    "2": 1,
-    "4": 1
+    "12": 6,
+    "23": 2,
+    "14": 1,
+    "0": 2,
+    "4": 2,
+    "10": 1,
+    "2": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 1
+    "0": 13
   },
   "top_reacted_messages": [
+    {
+      "id": "1368963004749713478",
+      "content": "„ Gott ist tot “\n\nvideo：https://www.bilibili.com/video/BV1VBVKzZE68/\n\n-本家-\n_ピノキオ",
+      "author": "silverstream_s",
+      "reactions": 29,
+      "channel": "【MMD】神っぽいな「克莱门汀」"
+    },
     {
       "id": "1368806335298408500",
       "content": "100183070，更新了一下配置",
       "author": "randomplayer852",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1368923751898546197",
+      "content": "# Why not stack strength and tentacle damage via full aqua team?\nI find tentacle",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "Tentacle Crit Build Theory Crafting"
+    },
+    {
+      "id": "1369094762321285180",
+      "content": "jenkin Rouse ?\nmore crit damage, and you stack it for free with her cards if you",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "Tentacle Crit Build Theory Crafting"
     },
     {
       "id": "1368781120711295158",

@@ -1,0 +1,51 @@
+{
+  "date": "2024-10-24",
+  "messages": 12,
+  "unique_authors": 8,
+  "reactions_total": 27,
+  "attachments": 2,
+  "channel_activity": {
+    "血链·希洛的抽取建议": 1,
+    "忘卻困難版大挑戰！": 4,
+    "记录一下SP希洛开荒情况": 1,
+    "混沌唤醒体·塔薇": 2,
+    "苦海……": 2,
+    "像素命輪": 1,
+    "嘿嘿": 1
+  },
+  "hourly_activity": {
+    "13": 1,
+    "12": 5,
+    "0": 2,
+    "2": 1,
+    "7": 1,
+    "19": 1,
+    "5": 1
+  },
+  "message_types": {
+    "0": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1298830411115401269",
+      "content": "美丽的花……美丽的毒。",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 24,
+      "channel": "苦海……"
+    },
+    {
+      "id": "1298885791736401920",
+      "content": "大佬<:wish:1236951537788649492>",
+      "author": "ice_storys",
+      "reactions": 2,
+      "channel": "嘿嘿"
+    },
+    {
+      "id": "1298998065067331615",
+      "content": "發現血希帶索雷爾命輪造成的傷害會吃到那個出血的buff",
+      "author": "aaaa_00098",
+      "reactions": 1,
+      "channel": "血链·希洛的抽取建议"
+    }
+  ]
+}

@@ -1,19 +1,100 @@
 {
   "date": "2025-09-04",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 26,
+  "unique_authors": 8,
+  "reactions_total": 36,
+  "attachments": 3,
   "channel_activity": {
+    "第一届牢暮杯pve大型深潜赛": 1,
+    "我喜歡卡斯托爾": 20,
+    "皮克曼技能组": 2,
+    "2025/12/14駁二ff忘卻前夜cos團徵集": 1,
     "1305430084420898868": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "16": 4,
+    "15": 17,
+    "17": 1,
+    "12": 1,
+    "5": 1,
     "2": 1,
     "8": 1
   },
   "message_types": {
-    "0": 2
+    "0": 18,
+    "19": 6
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1413179361191792710",
+      "content": "卡斯托爾 x 莉奧諾拉 一點點🔞但都蓋住了\n還沒畫完但先偷發😔",
+      "author": "muggypeasant",
+      "reactions": 18,
+      "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1413193995453993051",
+      "content": "第一届牢暮杯pve大型深潜赛：\n（因为没有赛事专区所以发在这了喵）\n通关忘却篇主线h8-10，要求:\n1，只能使用忘却界域队伍（禁用血海，血超，海超）\n2，通过",
+      "author": "zdttjqxwxmzs",
+      "reactions": 4,
+      "channel": "第一届牢暮杯pve大型深潜赛"
+    },
+    {
+      "id": "1413183717865816258",
+      "content": "謝謝 😭😭 卡斯托爾好可愛誰懂",
+      "author": "muggypeasant",
+      "reactions": 4,
+      "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1413141513772339261",
+      "content": "血肉唤醒体：皮克曼（60级）\n体质130\n攻击142\n防御122\n————\n被动天赋：贪婪之噬\n战斗开始时，皮克曼每有1点狂气回充等级，我方最大生命值+0.5%",
+      "author": "zdttjqxwxmzs",
+      "reactions": 4,
+      "channel": "皮克曼技能组"
+    },
+    {
+      "id": "1413182684800352316",
+      "content": "咦原來會封的嗎\n因為之前好像有在這個服看到瑟圖 不太確定現在怎麼規定ㄉ\n\n但我還沒畫完要等一下 🫠",
+      "author": "muggypeasant",
+      "reactions": 1,
+      "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1413183172362899576",
+      "content": "敏感部分不能露",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1413183380974997504",
+      "content": "萌！",
+      "author": "sweet_25367",
+      "reactions": 1,
+      "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1413184780463374446",
+      "content": "這樣應該可以吧我不會被封吧 有點緊張",
+      "author": "muggypeasant",
+      "reactions": 1,
+      "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1413184843432595537",
+      "content": "勞斯你是我們忘卻的珍寶😭 😭 😭 \n有您是鳥人廚的福氣",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1413188705396592721",
+      "content": "不是不是\n只是進度比較快而已",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "我喜歡卡斯托爾"
+    }
+  ]
 }

@@ -1,17 +1,92 @@
 {
   "date": "2024-11-02",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 25,
+  "unique_authors": 6,
+  "reactions_total": 41,
+  "attachments": 8,
   "channel_activity": {
+    "【梗图】堆点我P过的梗图": 1,
+    "八維癮犯了，給你遊角色判型": 15,
+    "自創喚醒體相關：牢于😭互動一下": 3,
+    "复工通知": 3,
+    "畫個希洛~": 2,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "9": 1,
+    "16": 18,
+    "5": 3,
+    "3": 2,
     "2": 1
   },
   "message_types": {
-    "0": 1
+    "0": 14,
+    "19": 9,
+    "4": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1302302199195500614",
+      "content": "牢索：我媽被駭死了？！\n*實際上是養母。\n*表情很安詳是因為畫手顏藝苦手。",
+      "author": "flim_of_life_burst",
+      "reactions": 13,
+      "channel": "自創喚醒體相關：牢于😭互動一下"
+    },
+    {
+      "id": "1302106460196704347",
+      "content": "我只會手繪而已（-▽-）如果覺得結構看起來怪，那就是我沒學過畫畫的鍋，盡力了",
+      "author": "ice_storys",
+      "reactions": 10,
+      "channel": "畫個希洛~"
+    },
+    {
+      "id": "1302137573241524275",
+      "content": "无偿活动和答应过的两不误！\n不在表的角色请评论给图，也会画的！(｡･ω･｡)",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 7,
+      "channel": "复工通知"
+    },
+    {
+      "id": "1302198048830787695",
+      "content": "我 校猫 打钱！(                笑点解析:刚P完跳了个骗氪小礼包",
+      "author": "yingmai_",
+      "reactions": 3,
+      "channel": "【梗图】堆点我P过的梗图"
+    },
+    {
+      "id": "1302303856318746685",
+      "content": "第一篇草稿不知道為什麼全沒了，害我重打......總之就是給可玩角色判個mbti，會給角色取外號，然後有疑問想討論都行，非專業，當娛樂就好，不知道字母的會打x，",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "八維癮犯了，給你遊角色判型"
+    },
+    {
+      "id": "1302304772510191696",
+      "content": "她的Te是服務於Ni（向所有人復仇的未來）",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "八維癮犯了，給你遊角色判型"
+    },
+    {
+      "id": "1302305042589679647",
+      "content": "原本要用魚翅羹的，但章魚燒跟鯊魚煙有壓ㄚ一的韻",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "八維癮犯了，給你遊角色判型"
+    },
+    {
+      "id": "1302308728929915024",
+      "content": "不用！這個我還是有一點點了解啦（雖然只有一點點）",
+      "author": "flim_of_life_burst",
+      "reactions": 1,
+      "channel": "八維癮犯了，給你遊角色判型"
+    },
+    {
+      "id": "1302309702612418643",
+      "content": "但同為Te 2位，希洛依然很重視客觀結果，所以選擇了跟赫柏特合作，因為赫伯特的確提供幫助",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "八維癮犯了，給你遊角色判型"
+    }
+  ]
 }

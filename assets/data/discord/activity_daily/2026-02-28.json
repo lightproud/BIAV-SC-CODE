@@ -1,10 +1,11 @@
 {
   "date": "2026-02-28",
-  "messages": 670,
+  "messages": 671,
   "unique_authors": 49,
-  "reactions_total": 152,
-  "attachments": 77,
+  "reactions_total": 159,
+  "attachments": 82,
   "channel_activity": {
+    "宣一下npc自制品拼谷": 1,
     "🔸欢乐梗图": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "1423337172655935600": 1,
@@ -24,10 +25,10 @@
     "🔸綜合討論": 623
   },
   "hourly_activity": {
+    "10": 72,
     "6": 14,
     "19": 4,
     "8": 5,
-    "10": 71,
     "14": 11,
     "17": 128,
     "3": 17,
@@ -48,9 +49,7 @@
     "18": 1
   },
   "message_types": {
-    "0": 541,
-    "4": 3,
-    "19": 126
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -73,6 +72,13 @@
       "author": "that_one_chippy",
       "reactions": 9,
       "channel": ""
+    },
+    {
+      "id": "1477245567309578240",
+      "content": "5771npc粉丝有福了，npc制品来了，目前有下图这些npc制品供大家选购，其他npc也可以来群内蹲蹲后续的\n今晚8点开明信片手速排，想要拼谷的朋友们抓紧来了",
+      "author": "tianfang5580",
+      "reactions": 7,
+      "channel": "宣一下npc自制品拼谷"
     },
     {
       "id": "1477214369392623681",
@@ -183,13 +189,6 @@
       "id": "1477206031913324544",
       "content": "好的\n佬",
       "author": "foxcatfurry",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1477206321152528470",
-      "content": "和暂时的亿万金卷富豪<:nocomment:1356053106038673610>",
-      "author": "cs001092",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

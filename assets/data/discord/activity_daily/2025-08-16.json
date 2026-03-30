@@ -1,19 +1,25 @@
 {
   "date": "2025-08-16",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 1230,
-  "attachments": 0,
+  "messages": 8,
+  "unique_authors": 5,
+  "reactions_total": 1249,
+  "attachments": 3,
   "channel_activity": {
+    "混沌唤醒体DIY": 4,
+    "Wplace像素繪": 2,
     "🔸礼包码┊gift-codes": 1,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "10": 2,
+    "11": 1,
+    "13": 2,
+    "9": 1,
     "15": 1,
     "21": 1
   },
   "message_types": {
-    "0": 2
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -22,6 +28,20 @@
       "author": "morimensstaff02",
       "reactions": 1229,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1406215257092784239",
+      "content": "像素小人的模板是OMORI的，~~我畫不出超大像素圖~~\n然後戈利亞下方那兩排，取自本群大神對遊戲文字的考究。",
+      "author": "zombie0424",
+      "reactions": 16,
+      "channel": "Wplace像素繪"
+    },
+    {
+      "id": "1406222086808141834",
+      "content": "继上次超维和血肉的尝试之后，这次试图写一个混沌界域的\n感谢上次的指正让我对数值的设计有了一点概念，希望这次写的不是错误的🙈\nuid：100832341",
+      "author": "y_win7",
+      "reactions": 3,
+      "channel": "混沌唤醒体DIY"
     },
     {
       "id": "1406382397628481576",

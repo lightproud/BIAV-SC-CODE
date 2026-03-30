@@ -1,17 +1,43 @@
 {
   "date": "2024-02-16",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 88,
+  "unique_authors": 9,
+  "reactions_total": 9,
+  "attachments": 8,
   "channel_activity": {
+    "這不是攻略，只是想募集大家疊毒的層數": 11,
+    "2.1版本后的深海思路与探索": 1,
+    "节奏榜（融灾禁区）": 74,
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "8": 2
+    "5": 1,
+    "8": 4,
+    "9": 5,
+    "11": 32,
+    "12": 3,
+    "16": 1,
+    "10": 40,
+    "21": 2
   },
   "message_types": {
-    "0": 2
+    "0": 80,
+    "19": 6
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1207922095036694558",
+      "content": "我只是想看看最高能疊幾層，這裡先丟個29000拋磚引玉一下",
+      "author": "xuan4185",
+      "reactions": 6,
+      "channel": "這不是攻略，只是想募集大家疊毒的層數"
+    },
+    {
+      "id": "1208015257079910421",
+      "content": "3.8W？还有人来试试么",
+      "author": "dyyqcwj",
+      "reactions": 3,
+      "channel": "這不是攻略，只是想募集大家疊毒的層數"
+    }
+  ]
 }

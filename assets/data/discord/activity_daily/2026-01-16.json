@@ -1,10 +1,13 @@
 {
   "date": "2026-01-16",
-  "messages": 9,
+  "messages": 24,
   "unique_authors": 7,
-  "reactions_total": 5,
-  "attachments": 2,
+  "reactions_total": 12,
+  "attachments": 10,
   "channel_activity": {
+    "諸君，我喜歡抽牌": 11,
+    "圖樓": 3,
+    "写了": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1448648649486635128": 1,
     "1241345906826153984": 4,
@@ -13,19 +16,28 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
+    "18": 8,
+    "19": 4,
+    "15": 3,
+    "12": 2,
     "11": 1,
     "1": 1,
     "7": 3,
-    "18": 1,
     "16": 1,
-    "12": 1,
     "21": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 2
+    "0": 14,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1461791627864445140",
+      "content": "這是一個純娛樂向，不講求幻夢高分速刷，純個人體驗靠手氣挑戰死裡逃生的娛樂組隊！\n第一次寫這種分享文可能很多細節不太清楚，甚至不知道這能不能算攻略請多多包涵。如過",
+      "author": "carrot_chicken",
+      "reactions": 7,
+      "channel": "諸君，我喜歡抽牌"
+    },
     {
       "id": "1461690950081581107",
       "content": "https://youtube.com/shorts/A3-0E32mvGU?si=zOYCdsugKf9Xwxel",

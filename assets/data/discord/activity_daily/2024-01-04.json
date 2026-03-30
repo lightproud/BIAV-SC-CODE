@@ -1,0 +1,35 @@
+{
+  "date": "2024-01-04",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 24,
+  "attachments": 9,
+  "channel_activity": {
+    "希洛的命轮密契选择（数据计算贴）": 1,
+    "密契副词条转录讲解（守密人55级解锁）": 1,
+    "自娱自乐的梗图": 2
+  },
+  "hourly_activity": {
+    "7": 3,
+    "6": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1192371856414605413",
+      "content": "想到什么再配，可能有黑话。\n\n顺便参加一下活动好了，UID：100000188",
+      "author": "metam0n",
+      "reactions": 15,
+      "channel": "自娱自乐的梗图"
+    },
+    {
+      "id": "1192362160383336499",
+      "content": "先上计算公式：\n总伤害==(基础值*(手牌其余打击数*打击加成*POWER(1.1,觉醒回合数))*伤害强效*遗忘之手乘区*其他乘区+(力量*手牌打击数))*大",
+      "author": "scholar_2",
+      "reactions": 9,
+      "channel": "希洛的命轮密契选择（数据计算贴）"
+    }
+  ]
+}

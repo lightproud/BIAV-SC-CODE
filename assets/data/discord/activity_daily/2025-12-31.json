@@ -1,10 +1,12 @@
 {
   "date": "2025-12-31",
-  "messages": 17,
+  "messages": 19,
   "unique_authors": 10,
-  "reactions_total": 322,
-  "attachments": 5,
+  "reactions_total": 344,
+  "attachments": 7,
   "channel_activity": {
+    "用笨圖開啟新的一年吧大家新年快樂": 1,
+    "now spell.": 1,
     "🐱light’s-nest": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1456019117805932636": 1,
@@ -13,6 +15,8 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
+    "18": 1,
+    "21": 1,
     "16": 1,
     "5": 1,
     "20": 1,
@@ -22,8 +26,7 @@
     "7": 3
   },
   "message_types": {
-    "0": 16,
-    "19": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -48,11 +51,25 @@
       "channel": ""
     },
     {
+      "id": "1455986384379580496",
+      "content": "1/1我們注定難忘今宵",
+      "author": "carrot_chicken",
+      "reactions": 13,
+      "channel": "用笨圖開啟新的一年吧大家新年快樂"
+    },
+    {
       "id": "1455882869410103458",
       "content": "So, the Arc2 Counter changes were put in place primarily to stop the op combo of",
       "author": "vxvendetta97",
       "reactions": 12,
       "channel": ""
+    },
+    {
+      "id": "1456030749877866692",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 9,
+      "channel": "now spell."
     },
     {
       "id": "1455822775427006476",

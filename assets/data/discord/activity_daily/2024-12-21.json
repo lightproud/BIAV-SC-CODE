@@ -1,0 +1,73 @@
+{
+  "date": "2024-12-21",
+  "messages": 18,
+  "unique_authors": 5,
+  "reactions_total": 46,
+  "attachments": 10,
+  "channel_activity": {
+    "生日快樂，索瓦爾格/Happy Birthday to Solvarg Vol. 2": 6,
+    "請大家吃生日蛋糕/Happy Birthday to Solvarg vol.3": 1,
+    "Aomi 的忘郤前夜 Morimens作品角": 2,
+    "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1": 8,
+    "墨菲生日快樂": 1
+  },
+  "hourly_activity": {
+    "13": 3,
+    "14": 5,
+    "12": 2,
+    "0": 1,
+    "3": 1,
+    "4": 4,
+    "17": 1,
+    "16": 1
+  },
+  "message_types": {
+    "0": 14,
+    "4": 2,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1320018455256367114",
+      "content": "▼▼▼▼：生日快樂。你似乎不高興？\n    \n索瓦爾格：你知道這種程度的進食對我來說毫無意義。\n    \n▼▼▼▼：但你喜歡人類的食物——尤其是柔軟而甜蜜的蛋糕",
+      "author": "flim_of_life_burst",
+      "reactions": 17,
+      "channel": "生日快樂，索瓦爾格/Happy Birthday to Solvarg Vol. 2"
+    },
+    {
+      "id": "1320034109422305320",
+      "content": "",
+      "author": "flim_of_life_burst",
+      "reactions": 17,
+      "channel": "請大家吃生日蛋糕/Happy Birthday to Solvarg vol.3"
+    },
+    {
+      "id": "1320060227801845760",
+      "content": "但是不會寫文 但總之把委託的圖丟上來意思意思一下",
+      "author": "lingcheng.0",
+      "reactions": 7,
+      "channel": "墨菲生日快樂"
+    },
+    {
+      "id": "1320029630325063680",
+      "content": "~~四個字的是誰呢好難猜啊.jpg~~",
+      "author": "flim_of_life_burst",
+      "reactions": 2,
+      "channel": "生日快樂，索瓦爾格/Happy Birthday to Solvarg Vol. 2"
+    },
+    {
+      "id": "1319885620952305774",
+      "content": "索瓦爾格生日快樂🥳",
+      "author": "ice_storys",
+      "reactions": 2,
+      "channel": "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1"
+    },
+    {
+      "id": "1320003800819433524",
+      "content": "太美了。",
+      "author": "aomi_crinklies04",
+      "reactions": 1,
+      "channel": "Aomi 的忘郤前夜 Morimens作品角"
+    }
+  ]
+}

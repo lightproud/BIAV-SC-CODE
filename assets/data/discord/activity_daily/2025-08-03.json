@@ -1,19 +1,34 @@
 {
   "date": "2025-08-03",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 22,
-  "attachments": 1,
+  "messages": 17,
+  "unique_authors": 4,
+  "reactions_total": 50,
+  "attachments": 3,
   "channel_activity": {
+    "约的稿 拿来参加一下同人大赛": 5,
+    "杜勒赛因x你 18+": 10,
+    "（蔚蓝档案x忘却前夜同人）Sensei瞬息弥萨格（第二幕 已完结）": 1,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "12": 4,
+    "13": 6,
+    "10": 5,
+    "5": 1,
     "18": 1
   },
   "message_types": {
-    "0": 1
+    "0": 15,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1401535466838167592",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 28,
+      "channel": "约的稿 拿来参加一下同人大赛"
+    },
     {
       "id": "1401627710593302648",
       "content": "<:Emoji_LMN_M_07:1400771656510734356> <:Emoji_LMN_M_07:1400771656510734356>",

@@ -1,17 +1,40 @@
 {
   "date": "2025-04-16",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 12,
+  "unique_authors": 3,
+  "reactions_total": 13,
+  "attachments": 5,
   "channel_activity": {
+    "计算一下克莱门汀这次活动里，材料的刷取价值": 1,
+    "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）": 7,
+    "不会再有了": 3,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "17": 1,
+    "0": 7,
+    "10": 1,
+    "14": 2,
     "11": 1
   },
   "message_types": {
-    "19": 1
+    "0": 8,
+    "4": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1362121746722848869",
+      "content": "最近没什么人算这个东西，所以自己私下算了一下。\n(4/17日修正了金卷的数字，计算的时候多算了一个0，结论的材料掉落倍数下调为2.0)\n\n首先贴结论:\n在克莱门",
+      "author": "randomplayer852",
+      "reactions": 11,
+      "channel": "计算一下克莱门汀这次活动里，材料的刷取价值"
+    },
+    {
+      "id": "1361861136160391279",
+      "content": "第一幕 东区秘事篇 完",
+      "author": "libery9150",
+      "reactions": 2,
+      "channel": "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）"
+    }
+  ]
 }

@@ -1,0 +1,62 @@
+{
+  "date": "2024-12-24",
+  "messages": 12,
+  "unique_authors": 4,
+  "reactions_total": 11,
+  "attachments": 3,
+  "channel_activity": {
+    "生日快樂，索瓦爾格/Happy Birthday to Solvarg Vol. 2": 2,
+    "羊妈摔倒": 1,
+    "自創界域燒壞我腦袋的cpu了": 6,
+    "請大家吃生日蛋糕/Happy Birthday to Solvarg vol.3": 1,
+    "Aomi 的忘郤前夜 Morimens作品角": 2
+  },
+  "hourly_activity": {
+    "15": 3,
+    "19": 1,
+    "4": 4,
+    "5": 2,
+    "3": 2
+  },
+  "message_types": {
+    "0": 9,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1321203522187825162",
+      "content": "",
+      "author": "luminous0623.",
+      "reactions": 6,
+      "channel": "羊妈摔倒"
+    },
+    {
+      "id": "1320977141801943061",
+      "content": "很有你遊風格",
+      "author": "ice_storys",
+      "reactions": 2,
+      "channel": "自創界域燒壞我腦袋的cpu了"
+    },
+    {
+      "id": "1321134617885147207",
+      "content": "老師太有實力了",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "生日快樂，索瓦爾格/Happy Birthday to Solvarg Vol. 2"
+    },
+    {
+      "id": "1321134692816126013",
+      "content": "吃",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "請大家吃生日蛋糕/Happy Birthday to Solvarg vol.3"
+    },
+    {
+      "id": "1320954952885211166",
+      "content": "啊，终于......游戏还活着！感谢开发人员让这种可能性成为现实！是时候在这个论坛上提供更多的粉丝内容了！！",
+      "author": "aomi_crinklies04",
+      "reactions": 1,
+      "channel": "Aomi 的忘郤前夜 Morimens作品角"
+    }
+  ]
+}

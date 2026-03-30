@@ -1,0 +1,43 @@
+{
+  "date": "2024-12-10",
+  "messages": 5,
+  "unique_authors": 5,
+  "reactions_total": 33,
+  "attachments": 3,
+  "channel_activity": {
+    "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
+    "我們偉大的音樂家（哈姆林樓？）": 1,
+    "Ryker": 3
+  },
+  "hourly_activity": {
+    "3": 1,
+    "15": 1,
+    "2": 3
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1315861298369527909",
+      "content": "Doodle a while ago",
+      "author": "myceliumycete",
+      "reactions": 18,
+      "channel": "Ryker"
+    },
+    {
+      "id": "1316062025977303060",
+      "content": "額外",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "我們偉大的音樂家（哈姆林樓？）"
+    },
+    {
+      "id": "1315887002612400228",
+      "content": "第二十三期融災禁區\n\n感覺回到了深潛27000時代，但是終末黑潮比較噁心，所以實際上略難於當時",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
+    }
+  ]
+}

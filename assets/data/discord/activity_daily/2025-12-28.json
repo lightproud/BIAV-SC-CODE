@@ -1,27 +1,58 @@
 {
   "date": "2025-12-28",
-  "messages": 16,
-  "unique_authors": 8,
-  "reactions_total": 45,
-  "attachments": 1,
+  "messages": 34,
+  "unique_authors": 14,
+  "reactions_total": 135,
+  "attachments": 10,
   "channel_activity": {
+    "章魚章魚我們喜歡你社入社福利": 1,
+    "此乃造谣24的笔记本内容（嗯）": 4,
+    "克莱门汀": 5,
+    "墨菲": 3,
+    "Happy New Year from GMurphy and Tulu!❄️": 2,
+    "嗨又是我我又畫了哈姆林": 2,
+    "some GMurphy doodles": 1,
     "🔸忘却前夜┊morimens-tv": 5,
     "1445334381404094475": 11
   },
   "hourly_activity": {
+    "15": 10,
+    "14": 4,
+    "16": 3,
+    "11": 1,
+    "13": 11,
     "6": 1,
     "9": 1,
     "18": 1,
     "21": 1,
-    "22": 1,
-    "13": 10,
-    "14": 1
+    "22": 1
   },
   "message_types": {
-    "0": 13,
-    "19": 3
+    "0": 17,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1454842417571172392",
+      "content": "（哭泣脸）（）<:dead:1356082627509092372>",
+      "author": "root_51811",
+      "reactions": 25,
+      "channel": "克莱门汀"
+    },
+    {
+      "id": "1454842178516943020",
+      "content": "<:processing:1357185814567718963> <:processing:1357185814567718963> <:processing",
+      "author": "root_51811",
+      "reactions": 20,
+      "channel": "此乃造谣24的笔记本内容（嗯）"
+    },
+    {
+      "id": "1454859975292747856",
+      "content": "「為這肌肉戰慄吧……它為了斬下你的頭顱而時刻準備著。」\n\n※繪師：Izen",
+      "author": "ernest_heart",
+      "reactions": 19,
+      "channel": "章魚章魚我們喜歡你社入社福利"
+    },
     {
       "id": "1454907112466546860",
       "content": "https://youtu.be/txI9d9P1nxE\nI'm very excited for Mouchette's upcoming release a",
@@ -35,6 +66,20 @@
       "author": "zier.0",
       "reactions": 12,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454862635815141551",
+      "content": "還有拉蒙娜與萊克",
+      "author": "ftyannn",
+      "reactions": 11,
+      "channel": "墨菲"
+    },
+    {
+      "id": "1454858209348026368",
+      "content": "uid: 101119523",
+      "author": "anna3248",
+      "reactions": 9,
+      "channel": "Happy New Year from GMurphy and Tulu!❄️"
     },
     {
       "id": "1454958754310389953",
@@ -51,11 +96,39 @@
       "channel": ""
     },
     {
+      "id": "1454834076388163594",
+      "content": "101165253",
+      "author": "chiedgaf",
+      "reactions": 3,
+      "channel": "some GMurphy doodles"
+    },
+    {
       "id": "1454773531526303744",
       "content": "https://youtu.be/C-sJKZMhykI?si=B8FNsewBvNZvNlFs",
       "author": "oatstemp",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454850962606002370",
+      "content": "謝謝勞斯😭",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "克莱门汀"
+    },
+    {
+      "id": "1454857238421176484",
+      "content": "香香的飯😭 😭 😭",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "克莱门汀"
+    },
+    {
+      "id": "1454800149082804378",
+      "content": "好看好看",
+      "author": "lingcheng.0",
+      "reactions": 1,
+      "channel": "嗨又是我我又畫了哈姆林"
     },
     {
       "id": "1454717576637583443",

@@ -1,0 +1,25 @@
+{
+  "date": "2024-12-26",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 10,
+  "attachments": 1,
+  "channel_activity": {
+    "with cute hats": 1
+  },
+  "hourly_activity": {
+    "0": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1321636152629002323",
+      "content": "🐑  \nhttps://x.com/_seripu_/status/1872071941483638830 🤍",
+      "author": "seripu",
+      "reactions": 10,
+      "channel": "with cute hats"
+    }
+  ]
+}

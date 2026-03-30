@@ -1,10 +1,14 @@
 {
   "date": "2025-12-22",
-  "messages": 12,
+  "messages": 19,
   "unique_authors": 10,
-  "reactions_total": 109,
-  "attachments": 3,
+  "reactions_total": 118,
+  "attachments": 10,
   "channel_activity": {
+    "全SSR命輪解析與強度評比": 1,
+    "V2.4 全SSR命輪解析與強度評比": 1,
+    "星辰篇盾击焚决": 3,
+    "银霜节日历（圣诞节贺文）": 2,
     "🔸服务器公告┊server-announcement": 1,
     "1452158639874904217": 1,
     "1296113810549112874": 1,
@@ -13,17 +17,18 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "15": 1,
+    "9": 1,
+    "2": 3,
+    "16": 3,
     "21": 1,
-    "16": 1,
     "5": 1,
     "11": 5,
     "12": 1,
     "8": 3
   },
   "message_types": {
-    "0": 9,
-    "19": 2,
-    "4": 1
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -39,6 +44,20 @@
       "author": "yingmai_",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1452493152782127316",
+      "content": "1.分析增强\n\n觉醒增强数值由1到2\n对于打击伤害翻倍，对于心眼伤害提高33%。提高幅度很高，但数值太低了导致现在还是差数值。\n临战从过一回合翻倍变为+1次，更",
+      "author": "busy_chipmunk_73748_41947",
+      "reactions": 5,
+      "channel": "星辰篇盾击焚决"
+    },
+    {
+      "id": "1452591559026671727",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1185&tnum=1",
+      "author": "taoi002",
+      "reactions": 4,
+      "channel": "V2.4 全SSR命輪解析與強度評比"
     },
     {
       "id": "1452620568519245900",

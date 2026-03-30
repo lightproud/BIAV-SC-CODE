@@ -1,20 +1,48 @@
 {
   "date": "2025-04-29",
-  "messages": 14,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 9,
+  "messages": 17,
+  "unique_authors": 3,
+  "reactions_total": 47,
+  "attachments": 10,
   "channel_activity": {
+    "自製角色（目前有深海一名、超維一名）": 1,
+    "《金絲籠外》汀克特": 1,
+    "從克蘇魯神話視角解讀《忘卻前夜》：角色與設定的神話源流分析": 1,
     "1271491376881598494": 1,
     "1350059696945500171": 13
   },
   "hourly_activity": {
+    "15": 1,
+    "18": 1,
+    "10": 1,
     "23": 1,
     "22": 13
   },
   "message_types": {
     "19": 1,
-    "0": 13
+    "0": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1366849164851282093",
+      "content": "UID：100003566",
+      "author": "blue_yogurt_chan",
+      "reactions": 41,
+      "channel": "《金絲籠外》汀克特"
+    },
+    {
+      "id": "1366723303829536899",
+      "content": "想了解《忘卻前夜》背後的克蘇魯神話設定嗎？這位巴哈大神的考據太猛了，推爆🔥\nhttps://forum.gamer.com.tw/C.php?bsn=78829",
+      "author": "taoi002",
+      "reactions": 5,
+      "channel": "從克蘇魯神話視角解讀《忘卻前夜》：角色與設定的神話源流分析"
+    },
+    {
+      "id": "1366793600679018647",
+      "content": "不好！與卡茜亞撞設定了，忽然想起了她的劇情，但他是個大明星的設定還是可以保留，但其他的我得重新調整了",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "自製角色（目前有深海一名、超維一名）"
+    }
+  ]
 }

@@ -1,22 +1,80 @@
 {
   "date": "2025-07-19",
-  "messages": 5,
-  "unique_authors": 5,
-  "reactions_total": 1,
-  "attachments": 1,
+  "messages": 26,
+  "unique_authors": 10,
+  "reactions_total": 117,
+  "attachments": 23,
   "channel_activity": {
+    "蔷薇的旋转圆舞曲": 1,
+    "灵芝骑士变身表情包": 1,
+    "Lore Accurate Doresain": 4,
+    "开祷！": 4,
+    "男同女同啃嘴图": 7,
+    "Practice calligraphy with Doresain's lines": 4,
     "1390375103707218041": 5
   },
   "hourly_activity": {
-    "4": 2,
-    "5": 1,
-    "7": 2
+    "6": 2,
+    "12": 5,
+    "5": 5,
+    "7": 3,
+    "17": 6,
+    "11": 3,
+    "4": 2
   },
   "message_types": {
-    "0": 3,
-    "19": 2
+    "0": 21
   },
   "top_reacted_messages": [
+    {
+      "id": "1396013744277950524",
+      "content": "Thanks to the devs team, i can finally make this meme. <:happy:13560538498944206",
+      "author": "moyashi0672",
+      "reactions": 31,
+      "channel": "Lore Accurate Doresain"
+    },
+    {
+      "id": "1396008945297916017",
+      "content": "索蕾尔X莉兹\n有黑白和彩色两个版本\n私人约稿\n憋到现在终于可以发了\nUID：100028052",
+      "author": "ll123520",
+      "reactions": 29,
+      "channel": "蔷薇的旋转圆舞曲"
+    },
+    {
+      "id": "1396091366521438382",
+      "content": "I haven't practiced enough...",
+      "author": "calmdreab",
+      "reactions": 20,
+      "channel": "Practice calligraphy with Doresain's lines"
+    },
+    {
+      "id": "1396037366715777074",
+      "content": "（p1是威廉和他的友人，但是没有官方形象故自己搓了一个）",
+      "author": "gualu_.",
+      "reactions": 16,
+      "channel": "男同女同啃嘴图"
+    },
+    {
+      "id": "1396002426636472423",
+      "content": "画点祈祷姿势的…画几张算几张吧…",
+      "author": "zerathree",
+      "reactions": 12,
+      "channel": "开祷！"
+    },
+    {
+      "id": "1396002554214613166",
+      "content": "",
+      "author": "zerathree",
+      "reactions": 5,
+      "channel": "开祷！"
+    },
+    {
+      "id": "1396114061602586654",
+      "content": "Kamen Rider Gnosis",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": "灵芝骑士变身表情包"
+    },
     {
       "id": "1395995828107219104",
       "content": "好啦 我會😡",

@@ -1,0 +1,44 @@
+{
+  "date": "2025-07-29",
+  "messages": 20,
+  "unique_authors": 8,
+  "reactions_total": 31,
+  "attachments": 3,
+  "channel_activity": {
+    "阿空高速推活時刻": 11,
+    "血希同人": 5,
+    "【忘卻前夜乙女向同人】在某個宇宙中…   圖魯x妳": 4
+  },
+  "hourly_activity": {
+    "2": 7,
+    "3": 9,
+    "14": 4
+  },
+  "message_types": {
+    "0": 19,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1399577369311842437",
+      "content": "如題\n@game.producer.light 你們團隊可收件的地址拿來🫴🫴 直接寄去好了\n\n之後皮克曼入池也想畫一幅給新人聲優君鼓勵一下孩子，但可能要麻煩腦缸",
+      "author": "kong760",
+      "reactions": 28,
+      "channel": "阿空高速推活時刻"
+    },
+    {
+      "id": "1399591525880561794",
+      "content": "艾爾沃斯那白骨般的山脊在風中嶙峋，風雪漫天，如同撕裂天地的白色幕布，將世界吞沒於一片迷濛。\n\n一位少女，獨自走在荒野的長路上，靛藍色的斗篷早已被寒風扯成破碎的羽",
+      "author": "ice_storys",
+      "reactions": 2,
+      "channel": "血希同人"
+    },
+    {
+      "id": "1399584402387763332",
+      "content": "转交可能比较困难，不过我们会转达的！",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "阿空高速推活時刻"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "date": "2025-03-20",
+  "messages": 9,
+  "unique_authors": 4,
+  "reactions_total": 16,
+  "attachments": 1,
+  "channel_activity": {
+    "新版本御四家0成本开荒教学": 1,
+    "血链丶希洛星辰篇配队攻略": 3,
+    "不会再有了": 5
+  },
+  "hourly_activity": {
+    "16": 1,
+    "12": 2,
+    "13": 1,
+    "2": 2,
+    "3": 3
+  },
+  "message_types": {
+    "0": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1352263133464629290",
+      "content": "各位守密人好，我是维C斯特。本篇攻略为大家带来的是在星辰篇背景下以血链·希洛为核心C位的配队推荐，以及详细的局内战斗思路和一些需要注意的细节。\n或许大家看到这个",
+      "author": "nowimfaceless",
+      "reactions": 13,
+      "channel": "血链丶希洛星辰篇配队攻略"
+    },
+    {
+      "id": "1352115352359665805",
+      "content": "但是看你寫的卻沒有這感覺哈哈",
+      "author": "happylife321",
+      "reactions": 3,
+      "channel": "不会再有了"
+    }
+  ]
+}

@@ -1,17 +1,25 @@
 {
   "date": "2025-06-20",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 762,
-  "attachments": 0,
+  "messages": 9,
+  "unique_authors": 3,
+  "reactions_total": 764,
+  "attachments": 2,
   "channel_activity": {
+    "银河行星的日服大冒险": 4,
+    "好久没做DIY了，发一个杜勒塞因": 4,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "2": 1,
+    "9": 2,
+    "14": 2,
+    "5": 1,
+    "7": 2,
     "8": 1
   },
   "message_types": {
-    "0": 1
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -20,6 +28,13 @@
       "author": "morimensstaff01",
       "reactions": 762,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1385497823491002378",
+      "content": "按厨师等方面在写，算是利用血肉界域精通释出的一个角色向补强，同时无胎吞噬和多重吞噬也能弥补其他血肉角色的弱点，力量方面虽然可能数值给的不少，但是想到有克莱门汀这",
+      "author": "dyyqcwj",
+      "reactions": 2,
+      "channel": "好久没做DIY了，发一个杜勒塞因"
     }
   ]
 }

@@ -1,24 +1,35 @@
 {
   "date": "2025-06-25",
-  "messages": 8,
+  "messages": 13,
   "unique_authors": 5,
-  "reactions_total": 3,
-  "attachments": 4,
+  "reactions_total": 18,
+  "attachments": 5,
   "channel_activity": {
+    "杜勒赛因技能组diy": 1,
+    "圣母怜子……": 4,
     "1296113810549112874": 4,
     "1305430084420898868": 3,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "15": 3,
+    "9": 2,
+    "12": 2,
     "14": 3,
-    "15": 2,
     "8": 3
   },
   "message_types": {
-    "0": 6,
-    "19": 2
+    "19": 1,
+    "0": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1387357502345183262",
+      "content": "总算在结束前画完了！请永远支持我们泰旖丝女士好吗！\nuid：100377370",
+      "author": "dhskdbsksbd",
+      "reactions": 15,
+      "channel": "圣母怜子……"
+    },
     {
       "id": "1387354786877280308",
       "content": "催催游戏内请柬头像更新啦，谢谢戈雅！<:pray:1356053116260454534>",

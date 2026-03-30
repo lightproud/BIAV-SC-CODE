@@ -1,0 +1,38 @@
+{
+  "date": "2024-10-27",
+  "messages": 8,
+  "unique_authors": 5,
+  "reactions_total": 26,
+  "attachments": 3,
+  "channel_activity": {
+    "请假条：非常抱歉，本人今天去隔壁Fate清理点菜和给亲友的无偿，所以今天停更一下！贴一个萨尔瓦多QQ人在这里，明天就回来继续，感谢！": 5,
+    "更一波宝宝们的傻大头": 1,
+    "万圣节莱克": 2
+  },
+  "hourly_activity": {
+    "3": 3,
+    "10": 2,
+    "11": 1,
+    "14": 2
+  },
+  "message_types": {
+    "0": 7,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1300102595175776266",
+      "content": "万圣节快乐✧٩(ˊωˋ*)و✧",
+      "author": "you_zuo",
+      "reactions": 15,
+      "channel": "万圣节莱克"
+    },
+    {
+      "id": "1299941192137441341",
+      "content": "",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 11,
+      "channel": "请假条：非常抱歉，本人今天去隔壁Fate清理点菜和给亲友的无偿，所以今天停更一下！贴一个萨尔瓦多QQ人在这里，明天就回来继续，感谢！"
+    }
+  ]
+}

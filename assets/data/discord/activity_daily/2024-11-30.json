@@ -1,27 +1,68 @@
 {
   "date": "2024-11-30",
-  "messages": 3,
-  "unique_authors": 1,
-  "reactions_total": 3,
-  "attachments": 0,
+  "messages": 14,
+  "unique_authors": 7,
+  "reactions_total": 193,
+  "attachments": 7,
   "channel_activity": {
+    "（已封存）【蚰蜒的vrm影像馆】": 5,
+    "手书【结局未完待续】by 守密人付草": 6,
     "1193859503096070234": 3
   },
   "hourly_activity": {
+    "4": 2,
+    "7": 1,
+    "10": 2,
+    "0": 5,
+    "1": 1,
     "18": 2,
     "19": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 1
+    "0": 11
   },
   "top_reacted_messages": [
+    {
+      "id": "1312217011845070939",
+      "content": "完整视频请跳转【【忘却前夜手书】结局未完待续-哔哩哔哩】 https://b23.tv/dvqE05C",
+      "author": "game.producer.light",
+      "reactions": 182,
+      "channel": "手书【结局未完待续】by 守密人付草"
+    },
+    {
+      "id": "1312218978977841233",
+      "content": "Amazing! Bless the artist",
+      "author": "satachan",
+      "reactions": 3,
+      "channel": "手书【结局未完待续】by 守密人付草"
+    },
+    {
+      "id": "1312362609051439124",
+      "content": "继续速报",
+      "author": "nancyjofla",
+      "reactions": 2,
+      "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1312219991550201938",
+      "content": "absolute cinema",
+      "author": "nerdmui",
+      "reactions": 2,
+      "channel": "手书【结局未完待续】by 守密人付草"
+    },
     {
       "id": "1312493162719215707",
       "content": "野獸\n最沒有理智的那個分身",
       "author": "kong760",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1312312862005530655",
+      "content": "从与Q版粉鱼一起秋游的一线现场发回速报",
+      "author": "nancyjofla",
+      "reactions": 1,
+      "channel": "（已封存）【蚰蜒的vrm影像馆】"
     },
     {
       "id": "1312493586369220700",

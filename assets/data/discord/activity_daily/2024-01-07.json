@@ -1,0 +1,75 @@
+{
+  "date": "2024-01-07",
+  "messages": 12,
+  "unique_authors": 5,
+  "reactions_total": 48,
+  "attachments": 12,
+  "channel_activity": {
+    "密契副词条转录讲解（守密人55级解锁）": 1,
+    "一圖流角色養成指南 | 1.0-雨鎮詭影": 5,
+    "莉茲傷害測算": 1,
+    "自娱自乐的梗图": 5
+  },
+  "hourly_activity": {
+    "3": 2,
+    "16": 2,
+    "20": 6,
+    "21": 2
+  },
+  "message_types": {
+    "0": 10,
+    "4": 1,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1193590503057408111",
+      "content": "**1.0快結束了**！這邊把與一些同好們一起製作的養成指南搬運到這邊！**關於1.1改動並不適用於此**，新版本將會使用新貼文(因為DC實在不好編輯圖片) \n",
+      "author": "banano.2",
+      "reactions": 29,
+      "channel": "一圖流角色養成指南 | 1.0-雨鎮詭影"
+    },
+    {
+      "id": "1193662855640264704",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 6,
+      "channel": "自娱自乐的梗图"
+    },
+    {
+      "id": "1193655925173657620",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 4,
+      "channel": "自娱自乐的梗图"
+    },
+    {
+      "id": "1193657911302439083",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 3,
+      "channel": "自娱自乐的梗图"
+    },
+    {
+      "id": "1193661513383293049",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 3,
+      "channel": "自娱自乐的梗图"
+    },
+    {
+      "id": "1193659081827831879",
+      "content": "感謝大佬分享製作，非常好",
+      "author": "hoyuai",
+      "reactions": 2,
+      "channel": "一圖流角色養成指南 | 1.0-雨鎮詭影"
+    },
+    {
+      "id": "1193658991943897168",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 1,
+      "channel": "自娱自乐的梗图"
+    }
+  ]
+}

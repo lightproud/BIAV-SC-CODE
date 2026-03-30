@@ -1,0 +1,36 @@
+{
+  "date": "2024-03-24",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 24,
+  "attachments": 5,
+  "channel_activity": {
+    "調查等級與最大生命係數紀錄": 2,
+    "這不是攻略，只是想募集大家疊毒的層數": 1,
+    "深海国家队之外的流派——鲨鱼水母": 1
+  },
+  "hourly_activity": {
+    "5": 2,
+    "2": 1,
+    "7": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1221358970061590548",
+      "content": "阵容构成：\n\n[拉蒙娜]：\n1、道中检索觉醒（4张3费觉醒）2、后期检索螺湮逆流/同伴的力量。\n3、拉蒙娜有一个隐藏权限：她的牌（附带的刻印）是免费打出的，配合",
+      "author": "llhwwc_89248",
+      "reactions": 18,
+      "channel": "深海国家队之外的流派——鲨鱼水母"
+    },
+    {
+      "id": "1221280752893694032",
+      "content": "",
+      "author": "krolyt.",
+      "reactions": 6,
+      "channel": "這不是攻略，只是想募集大家疊毒的層數"
+    }
+  ]
+}

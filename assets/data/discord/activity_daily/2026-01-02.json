@@ -1,24 +1,49 @@
 {
   "date": "2026-01-02",
-  "messages": 5,
-  "unique_authors": 4,
-  "reactions_total": 1,
+  "messages": 21,
+  "unique_authors": 9,
+  "reactions_total": 5,
   "attachments": 0,
   "channel_activity": {
+    "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)": 9,
+    "克莱门汀": 2,
+    "蓋個圖樓": 4,
+    "用笨圖開啟新的一年吧大家新年快樂": 1,
     "1305430084420898868": 2,
     "1399369127008796723": 1,
     "1441326394817908736": 2
   },
   "hourly_activity": {
-    "15": 2,
-    "4": 1,
-    "13": 1,
-    "17": 1
+    "0": 3,
+    "11": 2,
+    "12": 3,
+    "13": 2,
+    "17": 3,
+    "2": 2,
+    "4": 2,
+    "6": 1,
+    "8": 1,
+    "15": 2
   },
   "message_types": {
-    "0": 5
+    "19": 3,
+    "0": 13
   },
   "top_reacted_messages": [
+    {
+      "id": "1456528514177040527",
+      "content": "~~娜娜的盛世美顏500，您可以復刻娜娜盛世美顏的手藝500~~",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1456635780419027058",
+      "content": "It seems I'm not the only one who thinks their ASMR is very good",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
     {
       "id": "1456497674336473188",
       "content": "2/1 update: happy new year!\n- Updated Kathigu-ra's codename\n- Added Mouchette's ",

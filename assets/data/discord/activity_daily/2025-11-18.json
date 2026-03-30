@@ -1,19 +1,21 @@
 {
   "date": "2025-11-18",
-  "messages": 3,
+  "messages": 5,
   "unique_authors": 2,
-  "reactions_total": 102,
-  "attachments": 2,
+  "reactions_total": 149,
+  "attachments": 4,
   "channel_activity": {
+    "畫了這賽季的相位對弈貼圖☝️": 2,
     "🐱light’s-nest": 2,
     "1431233782605807666": 1
   },
   "hourly_activity": {
+    "10": 2,
     "6": 2,
     "13": 1
   },
   "message_types": {
-    "0": 3
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -22,6 +24,20 @@
       "author": "game.producer.light",
       "reactions": 102,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440292212028997803",
+      "content": "不知道配文寫什麼總之畫了薩爾瓦多的貼圖 <:point:1356053112292511815>",
+      "author": "xu6_",
+      "reactions": 39,
+      "channel": "畫了這賽季的相位對弈貼圖☝️"
+    },
+    {
+      "id": "1440292419164831810",
+      "content": "還有跟自家守密人的互動（～兩邊都沒什麼表情的很和平開心～）",
+      "author": "xu6_",
+      "reactions": 8,
+      "channel": "畫了這賽季的相位對弈貼圖☝️"
     }
   ]
 }

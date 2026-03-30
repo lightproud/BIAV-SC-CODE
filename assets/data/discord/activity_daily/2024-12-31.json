@@ -1,25 +1,63 @@
 {
   "date": "2024-12-31",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 12,
-  "attachments": 1,
+  "messages": 27,
+  "unique_authors": 11,
+  "reactions_total": 44,
+  "attachments": 26,
   "channel_activity": {
+    "約稿展示 請大家吃飯": 2,
+    "回坑了，發點庫存": 22,
+    "发一点弥萨格宝宝的傻大头": 1,
+    "利莫里亞元首宣言": 1,
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "12": 1
+    "5": 1,
+    "6": 16,
+    "7": 2,
+    "11": 4,
+    "12": 3,
+    "4": 1
   },
   "message_types": {
-    "0": 1
+    "0": 23,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1323535525193191536",
+      "content": "前段時間很畫的，真的蠻久了",
+      "author": "dllll_24",
+      "reactions": 24,
+      "channel": "回坑了，發點庫存"
+    },
     {
       "id": "1323623270536450059",
       "content": "詭異的笑點",
       "author": "navirecorbeau",
       "reactions": 12,
       "channel": ""
+    },
+    {
+      "id": "1323529371524268065",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 6,
+      "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1323536899176009762",
+      "content": "🥹",
+      "author": "qiamo0664",
+      "reactions": 1,
+      "channel": "回坑了，發點庫存"
+    },
+    {
+      "id": "1323537399950737419",
+      "content": "超好笑",
+      "author": "qiamo0664",
+      "reactions": 1,
+      "channel": "回坑了，發點庫存"
     }
   ]
 }

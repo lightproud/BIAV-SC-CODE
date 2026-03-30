@@ -1,0 +1,44 @@
+{
+  "date": "2025-01-02",
+  "messages": 5,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "自創界域燒壞我腦袋的cpu了": 3,
+    "小音樂家鑰匙扣": 2
+  },
+  "hourly_activity": {
+    "2": 1,
+    "20": 2,
+    "8": 1,
+    "16": 1
+  },
+  "message_types": {
+    "0": 4,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1324468284568895681",
+      "content": "我也一直在改進我的自製界域，雖然停止了，劇情也沒什麼推進…不過我近期正在製作他們的相位對弈，哈哈🥹",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "自創界域燒壞我腦袋的cpu了"
+    },
+    {
+      "id": "1324468687641641031",
+      "content": "~~致力於各種數值怪和弱智設計，哈哈~~\n哦不我不想編界域混編🥹",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "自創界域燒壞我腦袋的cpu了"
+    },
+    {
+      "id": "1324411440823533610",
+      "content": "非常的可愛⋯！<:emoji_12:1146429134826917969>",
+      "author": "dllll_24",
+      "reactions": 1,
+      "channel": "小音樂家鑰匙扣"
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 {
   "date": "2025-10-29",
-  "messages": 27,
+  "messages": 28,
   "unique_authors": 18,
   "reactions_total": 203,
   "attachments": 6,
   "channel_activity": {
+    "2.3.4相位对弈": 1,
     "🐱light’s-nest": 1,
     "1423337172655935600": 2,
     "1234769700735418368": 3,
@@ -12,9 +13,9 @@
     "1356210707867107391": 2
   },
   "hourly_activity": {
+    "14": 2,
     "5": 1,
     "4": 1,
-    "14": 1,
     "1": 1,
     "6": 7,
     "11": 1,
@@ -25,8 +26,7 @@
     "10": 2
   },
   "message_types": {
-    "0": 24,
-    "19": 3
+    "0": 1
   },
   "top_reacted_messages": [
     {

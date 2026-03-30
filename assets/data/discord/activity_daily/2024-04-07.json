@@ -1,18 +1,152 @@
 {
   "date": "2024-04-07",
-  "messages": 3,
-  "unique_authors": 3,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 192,
+  "unique_authors": 28,
+  "reactions_total": 91,
+  "attachments": 13,
   "channel_activity": {
+    "忘却前夜1.3版本简易入坑指南ver1.1": 1,
+    "血肉節奏榜": 30,
+    "💌「旺達」體驗交流分享活動💌": 7,
+    "全是限定没有参考价值的融灾350": 1,
+    "超維節奏榜": 36,
+    "新融灾禁区5-3蜘蛛队打法": 2,
+    "深海節奏榜2.0": 81,
+    "深海節奏榜": 24,
+    "你們有注意到神父有蛇尾巴嗎": 6,
+    "有種就打鴨⊙ω⊙": 1,
     "1181147096234065920": 3
   },
   "hourly_activity": {
-    "14": 2,
-    "16": 1
+    "16": 6,
+    "12": 5,
+    "13": 30,
+    "7": 4,
+    "8": 5,
+    "15": 9,
+    "9": 38,
+    "10": 28,
+    "18": 4,
+    "11": 43,
+    "14": 18,
+    "5": 2
   },
   "message_types": {
-    "0": 3
+    "0": 155,
+    "19": 34
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1226403223783477259",
+      "content": "神父真的太辣了我有罪⋯😭😭\n\n投稿第三期開啦！\n補一下UID:100047306",
+      "author": "yolo_mode",
+      "reactions": 37,
+      "channel": "你們有注意到神父有蛇尾巴嗎"
+    },
+    {
+      "id": "1226570846361882706",
+      "content": "純個人經驗，不喜勿噴。\n簡體警告",
+      "author": "linuk0460",
+      "reactions": 29,
+      "channel": "忘却前夜1.3版本简易入坑指南ver1.1"
+    },
+    {
+      "id": "1226440113433743401",
+      "content": "親愛的守密人，這幾天跟進處理，米爾可能沉浸在100抽手抖的反思中給耽誤了，實在抱歉🫂 🫂",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "💌「旺達」體驗交流分享活動💌"
+    },
+    {
+      "id": "1226489207514599536",
+      "content": "節奏榜就是來帶節奏的",
+      "author": "xuan4185",
+      "reactions": 4,
+      "channel": "深海節奏榜2.0"
+    },
+    {
+      "id": "1226439486184099893",
+      "content": "最轻松的反而是5-3，神父的生存能力太可怕了。\n写一下大致思路吧：\n1-3：打的我最痛苦的一关，开局四小怪直接死抗刷刷掉，剩下的队伍里实在没啥练度了，生存类角色",
+      "author": "chros0110",
+      "reactions": 3,
+      "channel": "全是限定没有参考价值的融灾350"
+    },
+    {
+      "id": "1226542921860382771",
+      "content": "這種節奏榜到底是誰發明的啊🫠新人看到抽到墊底直接棄坑了",
+      "author": "juzi6912",
+      "reactions": 3,
+      "channel": "深海節奏榜2.0"
+    },
+    {
+      "id": "1226443276761169940",
+      "content": "這動作讓我想到那個帶來黎明的男人",
+      "author": "ruko9999",
+      "reactions": 2,
+      "channel": "你們有注意到神父有蛇尾巴嗎"
+    },
+    {
+      "id": "1226517883497222245",
+      "content": "非常歡迎發表意見😃",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 1,
+      "channel": "血肉節奏榜"
+    },
+    {
+      "id": "1226461160669315092",
+      "content": "😀😀😀",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 1,
+      "channel": "超維節奏榜"
+    },
+    {
+      "id": "1226463885041864754",
+      "content": "不會玩就C",
+      "author": "luoin2435",
+      "reactions": 1,
+      "channel": "超維節奏榜"
+    },
+    {
+      "id": "1226485521841127465",
+      "content": "還有那句80級才是完全體🥹",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 1,
+      "channel": "深海節奏榜2.0"
+    },
+    {
+      "id": "1226490108795027536",
+      "content": "我是覺得泛用性還是很高，適配所有需要頻繁開大的<:HigoDumb:895020666271694858>",
+      "author": "otto.3754",
+      "reactions": 1,
+      "channel": "深海節奏榜2.0"
+    },
+    {
+      "id": "1226403902878912574",
+      "content": "他真的有尾巴啦！😭😭😭",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "你們有注意到神父有蛇尾巴嗎"
+    },
+    {
+      "id": "1226475384112156793",
+      "content": "原本沒有現在有了\n更喜歡了😭",
+      "author": "unmasked0406",
+      "reactions": 1,
+      "channel": "你們有注意到神父有蛇尾巴嗎"
+    },
+    {
+      "id": "1226570161612656731",
+      "content": "卧槽 他好辣 我好爱",
+      "author": "chros0110",
+      "reactions": 1,
+      "channel": "你們有注意到神父有蛇尾巴嗎"
+    },
+    {
+      "id": "1226438758014910537",
+      "content": "可爱，薯了",
+      "author": "sphinxneko",
+      "reactions": 1,
+      "channel": "有種就打鴨⊙ω⊙"
+    }
+  ]
 }

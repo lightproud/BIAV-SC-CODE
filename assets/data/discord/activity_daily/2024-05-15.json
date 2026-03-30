@@ -1,17 +1,65 @@
 {
   "date": "2024-05-15",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 84,
+  "unique_authors": 19,
+  "reactions_total": 24,
+  "attachments": 5,
   "channel_activity": {
+    "重返絕叫哀號的原質之海（新版達芙，從入門到入土）": 11,
+    "羊媽雲攻略": 45,
+    "高攻刺客二人組--紅花單C隊伍": 13,
+    "💌「24」體驗交流分享活動💌": 8,
+    "24阵容攻略——请说出24最强的界域并说明为什么是超维": 1,
+    "24攻略": 1,
+    "等級突破道具對技能數值的影響門檻": 1,
+    "fanart i think?": 2,
+    "fanart hehe": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "2": 47,
+    "5": 6,
+    "3": 3,
+    "14": 2,
+    "12": 13,
+    "16": 4,
+    "8": 5,
+    "22": 2,
+    "20": 1,
     "10": 1
   },
   "message_types": {
-    "0": 1
+    "19": 16,
+    "0": 67
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1240275130261831773",
+      "content": "Idk i just want to draw Ogier",
+      "author": ".mintylemon",
+      "reactions": 20,
+      "channel": "fanart i think?"
+    },
+    {
+      "id": "1240276835192012850",
+      "content": "沒有熱血跟智慧，\n很普通的一集阿紅解說，\n沒有臭腳的深潛我是一天也打不下去了。\nhttps://youtu.be/J9FOF16BeFA?si=BJ_iIF1k",
+      "author": "hananichiya",
+      "reactions": 2,
+      "channel": "高攻刺客二人組--紅花單C隊伍"
+    },
+    {
+      "id": "1240345890271789076",
+      "content": "wooooow！🥹",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "fanart i think?"
+    },
+    {
+      "id": "1240274478756270141",
+      "content": "Idk i just want to draw Ogier",
+      "author": ".mintylemon",
+      "reactions": 1,
+      "channel": "fanart hehe"
+    }
+  ]
 }

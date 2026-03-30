@@ -1,17 +1,30 @@
 {
   "date": "2025-03-22",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 4,
   "attachments": 2,
   "channel_activity": {
+    "不会再有了": 1,
+    "印了戈利亞的流沙票根": 2,
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "8": 1,
+    "13": 2,
     "1": 1
   },
   "message_types": {
-    "0": 1
+    "4": 1,
+    "0": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1352928007446069268",
+      "content": "自制界域「天音」（持续更新中）",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "不会再有了"
+    }
+  ]
 }

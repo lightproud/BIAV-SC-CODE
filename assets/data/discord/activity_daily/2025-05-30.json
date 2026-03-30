@@ -1,23 +1,27 @@
 {
   "date": "2025-05-30",
-  "messages": 7,
+  "messages": 19,
   "unique_authors": 4,
-  "reactions_total": 885,
-  "attachments": 5,
+  "reactions_total": 886,
+  "attachments": 8,
   "channel_activity": {
+    "弥萨格经济学课：分解无用命轮换等级碎片": 12,
     "🔸礼包码┊gift-codes": 2,
     "1271491376881598494": 2,
     "1296113810549112874": 2,
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "14": 1,
-    "15": 1,
+    "12": 6,
+    "13": 2,
+    "14": 4,
+    "15": 2,
     "16": 4,
     "10": 1
   },
   "message_types": {
-    "0": 7
+    "0": 11,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -54,6 +58,13 @@
       "author": "yingmai_",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1377991915475304508",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "弥萨格经济学课：分解无用命轮换等级碎片"
     }
   ]
 }

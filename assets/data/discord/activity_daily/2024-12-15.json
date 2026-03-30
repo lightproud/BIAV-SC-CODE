@@ -1,20 +1,40 @@
 {
   "date": "2024-12-15",
-  "messages": 3,
+  "messages": 10,
   "unique_authors": 3,
-  "reactions_total": 3,
-  "attachments": 3,
+  "reactions_total": 23,
+  "attachments": 6,
   "channel_activity": {
+    "一點亂摸立繪👉👈👉👈": 4,
+    "《希洛》": 2,
+    "希洛padoru": 1,
     "🔸【超越維度的祝福】認領專區": 3
   },
   "hourly_activity": {
+    "14": 4,
+    "15": 2,
+    "2": 1,
     "6": 2,
     "8": 1
   },
   "message_types": {
-    "0": 3
+    "0": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1317686471855046678",
+      "content": "聖誕~",
+      "author": "ice_storys",
+      "reactions": 11,
+      "channel": "希洛padoru"
+    },
+    {
+      "id": "1317854860837654528",
+      "content": "大家好💥\n由於此遊太美麗悄悄畫了點仿官立繪🤌🤌\n角色是繪型守咪人（守咪人 跟我流教眾的一些代",
+      "author": "miuchin",
+      "reactions": 9,
+      "channel": "一點亂摸立繪👉👈👉👈"
+    },
     {
       "id": "1317737865144172564",
       "content": "<:hello:1236949723949174865>",

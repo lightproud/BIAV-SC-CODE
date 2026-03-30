@@ -1,0 +1,42 @@
+{
+  "date": "2024-11-29",
+  "messages": 10,
+  "unique_authors": 7,
+  "reactions_total": 6,
+  "attachments": 7,
+  "channel_activity": {
+    "本期融灾全常驻375": 1,
+    "約稿展示 請大家吃飯": 4,
+    "Aomi 的忘郤前夜 Morimens作品角": 3,
+    "原創喚醒體投稿：負日．阿比夏（含相位對弈模式）": 2
+  },
+  "hourly_activity": {
+    "4": 1,
+    "5": 1,
+    "7": 2,
+    "11": 1,
+    "14": 2,
+    "15": 1,
+    "22": 2
+  },
+  "message_types": {
+    "0": 9,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1312065582455328869",
+      "content": "好久不见 <:__:1239909731125035058>",
+      "author": "aomi_crinklies04",
+      "reactions": 4,
+      "channel": "Aomi 的忘郤前夜 Morimens作品角"
+    },
+    {
+      "id": "1312177026173767812",
+      "content": "這只是一個拙劣的模仿而已。\n「這只是一個拙劣的模仿而已。」\n\n當他為了追隨首領的腳步，最終成為了另一個首領時，卻忘了他的首領曾說過：「只有愚蠢之人，才會將性命託",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "原創喚醒體投稿：負日．阿比夏（含相位對弈模式）"
+    }
+  ]
+}

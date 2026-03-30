@@ -1,20 +1,32 @@
 {
   "date": "2024-09-13",
-  "messages": 3,
-  "unique_authors": 3,
-  "reactions_total": 28,
-  "attachments": 2,
+  "messages": 17,
+  "unique_authors": 8,
+  "reactions_total": 57,
+  "attachments": 7,
   "channel_activity": {
+    "哈姆林..": 3,
+    "萊克同人轉載": 5,
+    "（已封存）【蚰蜒的vrm影像馆】": 1,
+    "莱克": 3,
+    "忘却喵（？）夜": 1,
+    "该当心我的另外一千个面目": 1,
     "1181998821291606097": 3
   },
   "hourly_activity": {
+    "10": 3,
+    "11": 1,
+    "16": 3,
+    "17": 4,
+    "18": 1,
+    "1": 2,
+    "2": 1,
     "4": 1,
-    "10": 1,
     "14": 1
   },
   "message_types": {
-    "0": 2,
-    "19": 1
+    "0": 11,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -25,11 +37,32 @@
       "channel": ""
     },
     {
+      "id": "1284186874423803925",
+      "content": "https://vxtwitter.com/Voidpathy/status/1833944261030469927?t=WkcbCEHjyUT6g7dvVy7",
+      "author": "nazhigezihk",
+      "reactions": 18,
+      "channel": "萊克同人轉載"
+    },
+    {
+      "id": "1283955517844361280",
+      "content": "少女……不对，小猫祈祷中",
+      "author": "olivia_1101011",
+      "reactions": 8,
+      "channel": "忘却喵（？）夜"
+    },
+    {
       "id": "1284162371715203102",
       "content": "看著像是能把我的尊嚴踩碎的樣子\n愛了愛了",
       "author": "hananichiya",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1284098442788077589",
+      "content": "",
+      "author": "timee_ky",
+      "reactions": 3,
+      "channel": "哈姆林.."
     },
     {
       "id": "1284094655033511957",

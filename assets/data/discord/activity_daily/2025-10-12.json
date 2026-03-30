@@ -1,20 +1,22 @@
 {
   "date": "2025-10-12",
-  "messages": 7,
+  "messages": 10,
   "unique_authors": 2,
-  "reactions_total": 1960,
-  "attachments": 2,
+  "reactions_total": 1979,
+  "attachments": 3,
   "channel_activity": {
+    "荼靡": 3,
     "🐱light’s-nest": 6,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "4": 3,
     "7": 4,
     "8": 2,
     "20": 1
   },
   "message_types": {
-    "0": 7
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -37,6 +39,13 @@
       "author": "game.producer.light",
       "reactions": 443,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1426784828740730920",
+      "content": "約稿分享，因為之後會拿來做同人本的封面所以不會投征集，但是太美麗了忍不住分享一下，請勿使用",
+      "author": "knifep_",
+      "reactions": 19,
+      "channel": "荼靡"
     }
   ]
 }

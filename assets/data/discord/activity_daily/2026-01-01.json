@@ -1,16 +1,27 @@
 {
   "date": "2026-01-01",
-  "messages": 6,
-  "unique_authors": 5,
-  "reactions_total": 25,
-  "attachments": 1,
+  "messages": 66,
+  "unique_authors": 8,
+  "reactions_total": 58,
+  "attachments": 3,
   "channel_activity": {
+    "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)": 56,
+    "蓋個圖樓": 3,
+    "用笨圖開啟新的一年吧大家新年快樂": 1,
     "🔸忘却前夜┊morimens-tv": 2,
     "1456239100989542555": 2,
     "1456123871383130243": 1,
     "1455822126568308957": 1
   },
   "hourly_activity": {
+    "12": 10,
+    "13": 4,
+    "15": 6,
+    "16": 4,
+    "17": 31,
+    "21": 1,
+    "18": 3,
+    "8": 1,
     "14": 1,
     "20": 1,
     "10": 1,
@@ -19,7 +30,8 @@
     "5": 1
   },
   "message_types": {
-    "0": 6
+    "0": 57,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -30,11 +42,88 @@
       "channel": ""
     },
     {
+      "id": "1456348978701533432",
+      "content": "畫了簽繪版娜娜<:Cheerup:1400771555939844149>",
+      "author": "souri.10244",
+      "reactions": 16,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1456257856339709983",
+      "content": "Rey-Khan\n\nRealm: Caro\nType: Warden\nBirthday: 17th Nov\nGender: Female\nNous index:",
+      "author": "rain_scarlet",
+      "reactions": 5,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
+    {
       "id": "1456239100989542555",
       "content": "Hello guys.\n\nI've been having this issue on both of my Android devices where aft",
       "author": "kitsu_hsk",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1456260766301687961",
+      "content": "Cool character kit but the ai art makes me want to puke",
+      "author": "nightjar0928",
+      "reactions": 3,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
+    {
+      "id": "1456281269607600371",
+      "content": "还没写<:please:1356053110375714817>",
+      "author": "rain_scarlet",
+      "reactions": 2,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
+    {
+      "id": "1456258062603255981",
+      "content": "Stats: \nCon: 150\nAtk: 120\nDef: 138\nNo Psyche Surge: 【33.6% Death Resistance】 【10",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
+    {
+      "id": "1456258496906399844",
+      "content": "this is evil",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
+    {
+      "id": "1456305901312147466",
+      "content": "omg her exalt deals even less dmg than doorstain",
+      "author": "skyfallterminus",
+      "reactions": 1,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
+    {
+      "id": "1456331317460467937",
+      "content": "毕竟不是主c）",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
+    {
+      "id": "1456333554119213159",
+      "content": "哦你是说命轮效果和属性",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
+    {
+      "id": "1456334585347707045",
+      "content": "沒那麼爛（",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
+    },
+    {
+      "id": "1456393549078859857",
+      "content": "Now it looks like a real character release",
+      "author": "legendaryredz",
+      "reactions": 1,
+      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
     },
     {
       "id": "1456291303041138709",

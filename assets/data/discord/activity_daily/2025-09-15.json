@@ -1,17 +1,36 @@
 {
   "date": "2025-09-15",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 13,
+  "attachments": 1,
   "channel_activity": {
+    "未曾寄出的书信#1": 2,
+    "【忘却前夜|群像】「仁慈的父我已坠入，看不见罪的国度」|《以父之名》": 1,
     "1181147096234065920": 2
   },
   "hourly_activity": {
+    "18": 2,
+    "14": 1,
     "2": 2
   },
   "message_types": {
-    "19": 2
+    "0": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1417214585244614727",
+      "content": "我亲爱的友人，黛博拉：\n\n我亲爱的友人，在我生日那天，我再一次想起你。弥利亚姆再一次想起黛博拉。\n\n当我挑选着给墨菲的甜品的时候，不知为何，我想起了你。你也很爱",
+      "author": "knifep_",
+      "reactions": 8,
+      "channel": "未曾寄出的书信#1"
+    },
+    {
+      "id": "1417156378056982669",
+      "content": "#V2.3同人征集# UID：100407587\n油管：https://www.youtube.com/watch?v=m4n1nXhOPjQ\nB站：https",
+      "author": "shanghuamochou8139",
+      "reactions": 5,
+      "channel": "【忘却前夜|群像】「仁慈的父我已坠入，看不见罪的国度」|《以父之名》"
+    }
+  ]
 }

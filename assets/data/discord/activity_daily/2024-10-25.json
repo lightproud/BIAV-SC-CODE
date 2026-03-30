@@ -1,0 +1,54 @@
+{
+  "date": "2024-10-25",
+  "messages": 21,
+  "unique_authors": 5,
+  "reactions_total": 12,
+  "attachments": 6,
+  "channel_activity": {
+    "自從玩了血希後，我的智商都下降了不少": 2,
+    "忘卻困難版大挑戰！": 15,
+    "苦海……": 2,
+    "Aomi 的忘郤前夜 Morimens作品角": 2
+  },
+  "hourly_activity": {
+    "13": 16,
+    "11": 2,
+    "12": 1,
+    "3": 1,
+    "4": 1
+  },
+  "message_types": {
+    "0": 20,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1299364810021933187",
+      "content": "就是想說，血希是玩你遊玩到目前下來幾個機制沒有跟殘廢一樣的腳色，嗜血鏈球搭個你哈的回環樂音，我就能恰準血量只有1的時候瞬間起死回生，吞胚胎還能給抽卡給減費，蠕動",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "自從玩了血希後，我的智商都下降了不少"
+    },
+    {
+      "id": "1299221546421850124",
+      "content": "",
+      "author": "aomi_crinklies04",
+      "reactions": 5,
+      "channel": "Aomi 的忘郤前夜 Morimens作品角"
+    },
+    {
+      "id": "1299364438025175092",
+      "content": "",
+      "author": "four_leaves_clover",
+      "reactions": 1,
+      "channel": "忘卻困難版大挑戰！"
+    },
+    {
+      "id": "1299206064859779074",
+      "content": "汀克特 <:shy:1239911338332127272>",
+      "author": "aomi_crinklies04",
+      "reactions": 1,
+      "channel": "Aomi 的忘郤前夜 Morimens作品角"
+    }
+  ]
+}

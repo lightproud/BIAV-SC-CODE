@@ -1,0 +1,90 @@
+{
+  "date": "2025-01-10",
+  "messages": 29,
+  "unique_authors": 7,
+  "reactions_total": 21,
+  "attachments": 5,
+  "channel_activity": {
+    "自設喚醒體：維度狩獵者": 2,
+    "扔几张没扔的画": 1,
+    "本源喚醒體：異度·索瓦爾格": 11,
+    "好餓哦，雜食來吃飯了": 8,
+    "自創界域燒壞我腦袋的cpu了": 4,
+    "恭喜索索喜提本源": 2,
+    "画了穿弥大校服的雷娅": 1
+  },
+  "hourly_activity": {
+    "13": 1,
+    "14": 1,
+    "11": 1,
+    "1": 4,
+    "3": 4,
+    "8": 1,
+    "16": 14,
+    "17": 1,
+    "18": 1,
+    "4": 1
+  },
+  "message_types": {
+    "0": 22,
+    "19": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1327235605876183041",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 9,
+      "channel": "扔几张没扔的画"
+    },
+    {
+      "id": "1327308176512516139",
+      "content": "有關係或拉郎都可以，隨便打忘卻裡兩個角色，看看我能不能找出嗑點",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "好餓哦，雜食來吃飯了"
+    },
+    {
+      "id": "1327337343602135111",
+      "content": "是這樣的\n頭上一圈懸浮的冠冕，其實有暗中對應生日的賀圖和文案XD",
+      "author": "flim_of_life_burst",
+      "reactions": 2,
+      "channel": "本源喚醒體：異度·索瓦爾格"
+    },
+    {
+      "id": "1327313102886142076",
+      "content": "嗑了",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "好餓哦，雜食來吃飯了"
+    },
+    {
+      "id": "1327116638734123191",
+      "content": "Yes this is the genesis form of Solvarg actually",
+      "author": "flim_of_life_burst",
+      "reactions": 1,
+      "channel": "本源喚醒體：異度·索瓦爾格"
+    },
+    {
+      "id": "1327310926054948984",
+      "content": "<:cry:1239910167668326480>",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "好餓哦，雜食來吃飯了"
+    },
+    {
+      "id": "1327088814191284306",
+      "content": "索：也妹人和我有一樣的血型，這是要怎麼輸",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "恭喜索索喜提本源"
+    },
+    {
+      "id": "1327129030670946316",
+      "content": "ohno第一句少了点字幕whats ur type有你喜欢什么类型的意思XD",
+      "author": "flim_of_life_burst",
+      "reactions": 1,
+      "channel": "恭喜索索喜提本源"
+    }
+  ]
+}

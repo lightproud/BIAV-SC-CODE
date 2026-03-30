@@ -1,10 +1,12 @@
 {
   "date": "2025-10-22",
-  "messages": 19,
+  "messages": 55,
   "unique_authors": 6,
-  "reactions_total": 499,
-  "attachments": 5,
+  "reactions_total": 525,
+  "attachments": 13,
   "channel_activity": {
+    "虽然很少但总之依旧是一点守莱&守N": 11,
+    "我想画点莱克的梗图": 25,
     "🔸礼包码┊gift-codes": 1,
     "1429401798439080028": 13,
     "1180846008918343722": 1,
@@ -12,14 +14,15 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
-    "8": 3,
-    "9": 2,
-    "10": 11,
-    "11": 3
+    "10": 18,
+    "11": 4,
+    "13": 7,
+    "8": 4,
+    "9": 22
   },
   "message_types": {
-    "0": 17,
-    "19": 2
+    "0": 16,
+    "19": 20
   },
   "top_reacted_messages": [
     {
@@ -28,6 +31,13 @@
       "author": "morimensstaff02",
       "reactions": 471,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1430496096823676938",
+      "content": "p3p4是吊带袜天使改图\n\n虽然很难以置信但总之我搞莱克一整年了但是依旧没找到任何一个同好蛤蛤🙄",
+      "author": "sadisticgirl.",
+      "reactions": 21,
+      "channel": "虽然很少但总之依旧是一点守莱&守N"
     },
     {
       "id": "1430472081715368057",
@@ -58,11 +68,39 @@
       "channel": ""
     },
     {
+      "id": "1430553177857458256",
+      "content": "你的确是拉我入坑的罪恶之源<:point:1356053112292511815>",
+      "author": "ka_0414",
+      "reactions": 2,
+      "channel": "虽然很少但总之依旧是一点守莱&守N"
+    },
+    {
       "id": "1430494429797421106",
       "content": "暫定配色(⁠´⁠ ⁠.⁠ ⁠.̫⁠ ⁠.⁠ ⁠`⁠)\n像植物的設定誤導了我以為古老者顏色是綠色的~~結果桶子跟翅膀都是灰色🌿~~\n不管塞綠色啦🤡💥",
       "author": "ass191044",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1430512144759259187",
+      "content": "宝宝私你了🥺",
+      "author": "sadisticgirl.",
+      "reactions": 1,
+      "channel": "虽然很少但总之依旧是一点守莱&守N"
+    },
+    {
+      "id": "1430491045627695104",
+      "content": "嗯而我会造谣N以前化身是福瑞的样子（你）",
+      "author": "sadisticgirl.",
+      "reactions": 1,
+      "channel": "我想画点莱克的梗图"
+    },
+    {
+      "id": "1430553322057896196",
+      "content": "感覺不太可行(",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "我想画点莱克的梗图"
     },
     {
       "id": "1430498329430720592",

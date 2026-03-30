@@ -1,10 +1,11 @@
 {
   "date": "2026-02-12",
-  "messages": 786,
+  "messages": 787,
   "unique_authors": 72,
-  "reactions_total": 317,
-  "attachments": 104,
+  "reactions_total": 342,
+  "attachments": 106,
   "channel_activity": {
+    "转载 频道的波吕克斯": 1,
     "🔸欢乐梗图": 2,
     "🔸频道建议┊server-suggestions": 4,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 4,
@@ -17,6 +18,7 @@
     "🔸阵容构建": 76
   },
   "hourly_activity": {
+    "15": 35,
     "8": 79,
     "14": 69,
     "18": 3,
@@ -28,7 +30,6 @@
     "17": 11,
     "4": 31,
     "9": 107,
-    "15": 34,
     "11": 30,
     "12": 54,
     "13": 22,
@@ -42,10 +43,16 @@
     "19": 1
   },
   "message_types": {
-    "0": 650,
-    "19": 136
+    "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1471531485113614366",
+      "content": "十分貌美之……",
+      "author": "yuuuuuuu__0103",
+      "reactions": 25,
+      "channel": "转载 频道的波吕克斯"
+    },
     {
       "id": "1471356257708408843",
       "content": "Dear Keepers,\n\nWe were blown away by how many of you stepped up to help with the",
@@ -175,13 +182,6 @@
     {
       "id": "1471419229285781576",
       "content": "們莉莉有機會暴打對面嗎",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471427067915534376",
-      "content": "困難解完了",
       "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"

@@ -1,17 +1,26 @@
 {
   "date": "2025-03-26",
-  "messages": 1,
-  "unique_authors": 1,
+  "messages": 5,
+  "unique_authors": 4,
   "reactions_total": 0,
-  "attachments": 0,
+  "attachments": 1,
   "channel_activity": {
+    "四小強星辰篇通關記錄分享": 1,
+    "扔一点最近的": 1,
+    "不会再有了": 1,
+    "《巨人的新娘》戈利亞X妳": 1,
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "6": 1,
+    "11": 1,
+    "14": 1,
+    "19": 1,
     "9": 1
   },
   "message_types": {
-    "19": 1
+    "19": 1,
+    "0": 3
   },
   "top_reacted_messages": []
 }

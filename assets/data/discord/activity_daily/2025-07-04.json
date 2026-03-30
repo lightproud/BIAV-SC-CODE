@@ -1,26 +1,36 @@
 {
   "date": "2025-07-04",
-  "messages": 16,
+  "messages": 29,
   "unique_authors": 9,
-  "reactions_total": 46,
-  "attachments": 1,
+  "reactions_total": 78,
+  "attachments": 3,
   "channel_activity": {
+    "命轮二创画像：《人》": 2,
+    "《雙人舞》": 11,
     "1181998821291606097": 1,
     "1390375103707218041": 15
   },
   "hourly_activity": {
-    "14": 1,
+    "14": 3,
+    "13": 9,
+    "15": 3,
     "0": 8,
     "1": 4,
     "2": 1,
-    "11": 1,
-    "13": 1
+    "11": 1
   },
   "message_types": {
-    "0": 14,
+    "0": 11,
     "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1390705330786271332",
+      "content": "题目虽为人，但离人很远，离神很近了",
+      "author": "tianfang5580",
+      "reactions": 23,
+      "channel": "命轮二创画像：《人》"
+    },
     {
       "id": "1390490801125064714",
       "content": "We’ll be adding human translation of previous story chapters every update starti",
@@ -43,11 +53,25 @@
       "channel": ""
     },
     {
+      "id": "1390682956200415316",
+      "content": "彌利亞姆X戈利亞，情節捏造有，自我理解擴寫有\n時間線是緊接彌利個人劇情獻祭了第一個聖女之後，沒有打炮沒有談情說愛只有癲婆和男狗打架！\n\n樓主的眼睛不太好所以有錯",
+      "author": "yolo_mode",
+      "reactions": 6,
+      "channel": "《雙人舞》"
+    },
+    {
       "id": "1390490997120569404",
       "content": "I believe it’s 7/21",
       "author": "morimens_15",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1390685051179761726",
+      "content": "—————\n\n放個已經很久了的惡役雙人組（沒有要完稿的意思（草",
+      "author": "yolo_mode",
+      "reactions": 3,
+      "channel": "《雙人舞》"
     },
     {
       "id": "1390510222434635817",

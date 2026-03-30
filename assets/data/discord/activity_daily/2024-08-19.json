@@ -1,0 +1,38 @@
+{
+  "date": "2024-08-19",
+  "messages": 8,
+  "unique_authors": 5,
+  "reactions_total": 8,
+  "attachments": 4,
+  "channel_activity": {
+    "莱克攻略": 5,
+    "關卡地圖「融災禁區」總覽ⅩⅤ": 1,
+    "珈倫": 1,
+    "溺血": 1
+  },
+  "hourly_activity": {
+    "13": 2,
+    "23": 4,
+    "14": 1,
+    "2": 1
+  },
+  "message_types": {
+    "0": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1275098503340884009",
+      "content": "> 大家好，這裡是難忘今宵攻略組，本期為大家帶來的是第15期「融災禁區」地圖。\n\n圖一：地圖\n圖二：時靈擺\n圖三：第4波時靈擺效果預覽\n◆每兩週刷新獎勵與關卡，",
+      "author": "menoctus",
+      "reactions": 7,
+      "channel": "關卡地圖「融災禁區」總覽ⅩⅤ"
+    },
+    {
+      "id": "1275234541803667468",
+      "content": "要想辦法拿鏡像和酒",
+      "author": "yi000607",
+      "reactions": 1,
+      "channel": "莱克攻略"
+    }
+  ]
+}

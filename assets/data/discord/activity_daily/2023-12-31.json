@@ -1,0 +1,29 @@
+{
+  "date": "2023-12-31",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "莉茲傷害測算": 3,
+    "御四家混沌無光8攻略": 1
+  },
+  "hourly_activity": {
+    "11": 1,
+    "13": 2,
+    "8": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1190984112014626846",
+      "content": "不幸的告訴你旋轉毒暴提升大概只贏暴發後三回合  後面甚至第二次爆發時累計傷害都輸了",
+      "author": "eceniht",
+      "reactions": 1,
+      "channel": "莉茲傷害測算"
+    }
+  ]
+}

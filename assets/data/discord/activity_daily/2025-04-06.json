@@ -1,17 +1,90 @@
 {
   "date": "2025-04-06",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 26,
+  "unique_authors": 10,
+  "reactions_total": 64,
+  "attachments": 9,
   "channel_activity": {
+    "魚": 1,
+    "《把你的名字刻在幻影號上》—諾締拉": 4,
+    "【二创向剧情解析】未完成的夜晚": 3,
+    "「   」的故事（上）": 2,
+    "黛博拉粉絲喚醒者套裝 Deborah fan Awakener kit": 8,
+    "唤醒体DIY，命运•哈姆林": 6,
+    "原創喚醒體投稿：覆淵．凱刻斯": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "7": 2,
+    "3": 2,
+    "21": 2,
+    "15": 6,
+    "6": 1,
+    "10": 1,
+    "14": 11,
     "5": 1
   },
   "message_types": {
-    "0": 1
+    "0": 23,
+    "4": 1,
+    "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1358288735816519752",
+      "content": "我想要頭像框TT\nUID：100003566",
+      "author": "blue_yogurt_chan",
+      "reactions": 29,
+      "channel": "《把你的名字刻在幻影號上》—諾締拉"
+    },
+    {
+      "id": "1358449803842814154",
+      "content": "首先，我很抱歉，這是Deepseek翻譯的內容。原文的英文版本附在下方。\n\n我非常喜歡黛博拉（Deborah）在米利安（Miryam）故事中的角色，並試圖根據她",
+      "author": "reya.li",
+      "reactions": 12,
+      "channel": "黛博拉粉絲喚醒者套裝 Deborah fan Awakener kit"
+    },
+    {
+      "id": "1358462045682401411",
+      "content": "压ddl来投个活动（\n\n>是对星辰篇第一章主线的强烈主观向理解，可以当作一定程度上的剧情解析但请务必自由心证\n>偏意识流/谜语人，务必在观看完主线第一章后再阅读",
+      "author": "flarinsidia",
+      "reactions": 8,
+      "channel": "【二创向剧情解析】未完成的夜晚"
+    },
+    {
+      "id": "1358448281713250545",
+      "content": "",
+      "author": "busy_chipmunk_73748_41947",
+      "reactions": 6,
+      "channel": "唤醒体DIY，命运•哈姆林"
+    },
+    {
+      "id": "1358465639932628992",
+      "content": "i love her unique symptom and her playing around with sacrifices, this has a str",
+      "author": "itsmemiki",
+      "reactions": 3,
+      "channel": "黛博拉粉絲喚醒者套裝 Deborah fan Awakener kit"
+    },
+    {
+      "id": "1358471277169475586",
+      "content": "thank you so much miki! <:love:1356053099931897977> i'm happy that you find it a",
+      "author": "reya.li",
+      "reactions": 3,
+      "channel": "黛博拉粉絲喚醒者套裝 Deborah fan Awakener kit"
+    },
+    {
+      "id": "1358454118024351854",
+      "content": "<:pray:1356053116260454534>",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "黛博拉粉絲喚醒者套裝 Deborah fan Awakener kit"
+    },
+    {
+      "id": "1358381030138052731",
+      "content": "我覺得你筆下的希萊活起來了，她不是虛無縹緲的庇佑者，她是鮮活的人，有自己的想法",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "「   」的故事（上）"
+    }
+  ]
 }

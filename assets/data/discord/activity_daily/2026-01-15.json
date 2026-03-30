@@ -1,21 +1,22 @@
 {
   "date": "2026-01-15",
-  "messages": 4,
+  "messages": 5,
   "unique_authors": 4,
   "reactions_total": 3,
   "attachments": 1,
   "channel_activity": {
+    "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)": 1,
     "1448648649486635128": 2,
     "1445556242381672559": 2
   },
   "hourly_activity": {
+    "1": 1,
     "14": 1,
     "19": 1,
     "0": 2
   },
   "message_types": {
-    "0": 2,
-    "19": 2
+    "0": 1
   },
   "top_reacted_messages": [
     {

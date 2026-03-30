@@ -1,14 +1,18 @@
 {
   "date": "2023-11-29",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 32,
+  "messages": 6,
+  "unique_authors": 3,
+  "reactions_total": 34,
   "attachments": 2,
   "channel_activity": {
+    "來一起跟「尤烏哈希」演小劇場吧~": 3,
     "活動訊息": 1,
     "官方佈告（已停止使用）": 2
   },
   "hourly_activity": {
+    "4": 1,
+    "6": 1,
+    "7": 1,
     "11": 1,
     "2": 1,
     "12": 1
@@ -23,6 +27,13 @@
       "author": "alpha0909__",
       "reactions": 32,
       "channel": "活動訊息"
+    },
+    {
+      "id": "1179324532906020864",
+      "content": "白毛、紅瞳（並沒有），目前公開的唯一大猛男，還是傲嬌，受歡迎是自然的啦（？）",
+      "author": "silverstream_s",
+      "reactions": 2,
+      "channel": "來一起跟「尤烏哈希」演小劇場吧~"
     }
   ]
 }

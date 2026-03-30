@@ -1,18 +1,22 @@
 {
   "date": "2025-07-06",
-  "messages": 3,
+  "messages": 5,
   "unique_authors": 2,
   "reactions_total": 0,
   "attachments": 0,
   "channel_activity": {
+    "给莱克宝宝的生贺🥺🥺💕": 1,
+    "《雙人舞》": 1,
     "1390375103707218041": 3
   },
   "hourly_activity": {
+    "11": 1,
+    "4": 1,
     "8": 2,
     "12": 1
   },
   "message_types": {
-    "0": 3
+    "19": 2
   },
   "top_reacted_messages": []
 }

@@ -1,0 +1,47 @@
+{
+  "date": "2024-03-30",
+  "messages": 11,
+  "unique_authors": 5,
+  "reactions_total": 56,
+  "attachments": 12,
+  "channel_activity": {
+    "這不是攻略，只是想募集大家疊毒的層數": 1,
+    "融灾350攻略超维版": 8,
+    "墨菲": 1,
+    "有種就打鴨⊙ω⊙": 1
+  },
+  "hourly_activity": {
+    "16": 1,
+    "6": 1,
+    "7": 7,
+    "11": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 8,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1223593336154099763",
+      "content": "",
+      "author": "pululu0220_73289",
+      "reactions": 33,
+      "channel": "墨菲"
+    },
+    {
+      "id": "1223564714571989023",
+      "content": "",
+      "author": "kexk3h6vjyokppszpgctabxtmygfnc6y",
+      "reactions": 15,
+      "channel": "有種就打鴨⊙ω⊙"
+    },
+    {
+      "id": "1223513100494311455",
+      "content": "头一次过350，这次灵摆都挺强的，1-3，2-3无压力过，3-3福袋过道中，上易伤，检索，拐暴击，行骸超维回合对轴，跃迁心眼利刃砍砍砍，4-3核心我们的家沉重画",
+      "author": "squire5771",
+      "reactions": 8,
+      "channel": "融灾350攻略超维版"
+    }
+  ]
+}

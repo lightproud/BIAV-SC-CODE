@@ -1,0 +1,30 @@
+{
+  "date": "2024-10-19",
+  "messages": 6,
+  "unique_authors": 5,
+  "reactions_total": 5,
+  "attachments": 0,
+  "channel_activity": {
+    "第19期融灾禁区（241014-241028）攻略、配队思路、打法建议": 1,
+    "以下開放留言講缺點": 5
+  },
+  "hourly_activity": {
+    "16": 1,
+    "5": 1,
+    "8": 2,
+    "10": 2
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1297239943457800253",
+      "content": "https://www.bilibili.com/video/BV1mPCfY4Eme/?vd_source=3d48e3192fa4ec65a5856f793",
+      "author": "mtyl.eth",
+      "reactions": 5,
+      "channel": "第19期融灾禁区（241014-241028）攻略、配队思路、打法建议"
+    }
+  ]
+}

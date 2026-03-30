@@ -1,21 +1,30 @@
 {
   "date": "2023-11-27",
-  "messages": 4,
-  "unique_authors": 2,
+  "messages": 11,
+  "unique_authors": 6,
   "reactions_total": 180,
   "attachments": 2,
   "channel_activity": {
+    "看看你會截屏到哪個喚醒體！": 5,
+    "來一起跟「尤烏哈希」演小劇場吧~": 2,
     "活動訊息": 2,
     "官方佈告（已停止使用）": 2
   },
   "hourly_activity": {
+    "2": 1,
+    "7": 1,
+    "14": 1,
+    "15": 1,
+    "23": 1,
+    "9": 1,
+    "13": 1,
     "11": 2,
     "10": 1,
     "12": 1
   },
   "message_types": {
-    "0": 3,
-    "19": 1
+    "19": 2,
+    "0": 5
   },
   "top_reacted_messages": [
     {

@@ -1,0 +1,48 @@
+{
+  "date": "2024-11-22",
+  "messages": 54,
+  "unique_authors": 9,
+  "reactions_total": 20,
+  "attachments": 5,
+  "channel_activity": {
+    "（已封存）【蚰蜒的vrm影像馆】": 1,
+    "往日余影": 4,
+    "歡愉脊髓劍": 2,
+    "蜡像先生和羅杰斯のLove": 47
+  },
+  "hourly_activity": {
+    "16": 1,
+    "6": 1,
+    "10": 1,
+    "13": 2,
+    "7": 2,
+    "14": 47
+  },
+  "message_types": {
+    "0": 42,
+    "19": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1309520730576261170",
+      "content": "首先說，第一次寫，爛就算了\n\n||地下室的空气沉闷而粘稠，罗杰斯坐在那张柔软却束缚着他的椅子上，目光落在蜡像先生的脸上。 这个男人明明绑架了他，但他却并不害怕这",
+      "author": "moyan0454",
+      "reactions": 9,
+      "channel": "蜡像先生和羅杰斯のLove"
+    },
+    {
+      "id": "1309413404251000842",
+      "content": "因為實在是P太爛了，覺得很歡愉，所以乾脆丟上來",
+      "author": "ice_storys",
+      "reactions": 7,
+      "channel": "歡愉脊髓劍"
+    },
+    {
+      "id": "1309555975623020677",
+      "content": "难得双休，捏朵眷顾",
+      "author": "nancyjofla",
+      "reactions": 4,
+      "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    }
+  ]
+}

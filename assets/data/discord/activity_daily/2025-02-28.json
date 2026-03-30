@@ -1,0 +1,27 @@
+{
+  "date": "2025-02-28",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "繁衍狂熱，但是鯊貓": 1,
+    "I Made a fan caption in Korean": 1
+  },
+  "hourly_activity": {
+    "13": 1,
+    "18": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1345104849179508837",
+      "content": "Did it seem naturally? Lol.",
+      "author": "legion_schindler",
+      "reactions": 4,
+      "channel": "I Made a fan caption in Korean"
+    }
+  ]
+}

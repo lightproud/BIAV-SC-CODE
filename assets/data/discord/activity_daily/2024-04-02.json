@@ -1,25 +1,65 @@
 {
   "date": "2024-04-02",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 4,
-  "attachments": 0,
+  "messages": 61,
+  "unique_authors": 12,
+  "reactions_total": 21,
+  "attachments": 2,
   "channel_activity": {
+    "等級突破道具對技能數值的影響門檻": 1,
+    "喚醒體Tag試標記": 53,
+    "關於即將來到的活動，商店中可獲取的資源所需體力": 4,
+    "做了個抽卡梗圖": 1,
+    "有種就打鴨⊙ω⊙": 1,
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "7": 1
+    "15": 1,
+    "5": 46,
+    "6": 7,
+    "12": 1,
+    "13": 3,
+    "7": 2,
+    "1": 1
   },
   "message_types": {
-    "0": 1
+    "0": 54,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1224587447376285747",
+      "content": "疊甲：\n●Tag的多寡與喚醒體強度沒有直接相關\n●想盡可能的減少Tag，會把類似功能放一起\n●一些專武提供的Tag暫時不跟喚醒體放在一起\n\n正文：\n嘗試用我的理",
+      "author": "vegoutdino",
+      "reactions": 8,
+      "channel": "喚醒體Tag試標記"
+    },
+    {
+      "id": "1224696328383103077",
+      "content": "簡單列了一下\n格雷：特殊10份+普通90份\n大約翰：特殊10份+普通86份\n史密斯：特殊10份+普通86份\n若是歐皇可以在花費(10+10+10)/5\\*600",
+      "author": "xuan4185",
+      "reactions": 7,
+      "channel": "關於即將來到的活動，商店中可獲取的資源所需體力"
+    },
     {
       "id": "1224623808061902879",
       "content": "奶奶你追更的弥大法考更新了",
       "author": "lindongxieyang",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1224597815779528727",
+      "content": "賣了謝謝",
+      "author": "ruko9999",
+      "reactions": 1,
+      "channel": "喚醒體Tag試標記"
+    },
+    {
+      "id": "1224525455931998248",
+      "content": "沒有催更的意思，超棒的創作。謝謝。",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "有種就打鴨⊙ω⊙"
     }
   ]
 }

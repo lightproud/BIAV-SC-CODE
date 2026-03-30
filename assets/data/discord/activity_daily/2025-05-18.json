@@ -1,14 +1,17 @@
 {
   "date": "2025-05-18",
-  "messages": 7,
+  "messages": 11,
   "unique_authors": 5,
-  "reactions_total": 0,
-  "attachments": 0,
+  "reactions_total": 21,
+  "attachments": 1,
   "channel_activity": {
+    "醫生": 4,
     "1271491376881598494": 5,
     "1181147096234065920": 2
   },
   "hourly_activity": {
+    "8": 2,
+    "9": 2,
     "0": 1,
     "1": 1,
     "4": 1,
@@ -17,8 +20,15 @@
     "14": 1
   },
   "message_types": {
-    "0": 3,
-    "19": 4
+    "0": 4
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1373579340603981845",
+      "content": "我愛醫生",
+      "author": "undecember_news",
+      "reactions": 21,
+      "channel": "醫生"
+    }
+  ]
 }

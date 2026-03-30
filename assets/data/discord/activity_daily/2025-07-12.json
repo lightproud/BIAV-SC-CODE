@@ -1,21 +1,35 @@
 {
   "date": "2025-07-12",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 18,
-  "attachments": 2,
+  "messages": 13,
+  "unique_authors": 4,
+  "reactions_total": 38,
+  "attachments": 3,
   "channel_activity": {
+    "这里也发一下，虽然只是摸鱼": 1,
+    "Slay the Spire Morimens Mod Text Provided Post": 9,
     "1181998821291606097": 2,
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "14": 2,
-    "5": 1
+    "15": 1,
+    "5": 2,
+    "7": 3,
+    "8": 1,
+    "16": 4,
+    "14": 2
   },
   "message_types": {
-    "0": 3
+    "0": 6,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1393621526863155241",
+      "content": "<:nocomment:1356053106038673610>",
+      "author": "ruhebaoyangsiwa_97871",
+      "reactions": 19,
+      "channel": "这里也发一下，虽然只是摸鱼"
+    },
     {
       "id": "1393599382666084412",
       "content": "摸完了一起發<:gogogo:1356053074560422118>",
@@ -29,6 +43,13 @@
       "author": "navirecorbeau",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1393626111879024692",
+      "content": "蘿坦的請求\n\n你走在一條陰暗的小路中，忽然你感覺你的手被拉住，你轉過身一看，是羅坦，她表明她手癢難耐渴望與你切磋——\n\n\n選擇\n\n【切磋】經歷一場戰鬥（將「鯨躍",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "Slay the Spire Morimens Mod Text Provided Post"
     },
     {
       "id": "1393457629707108392",

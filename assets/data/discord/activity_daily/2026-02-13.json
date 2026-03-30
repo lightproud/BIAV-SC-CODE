@@ -1,10 +1,11 @@
 {
   "date": "2026-02-13",
-  "messages": 622,
+  "messages": 627,
   "unique_authors": 53,
-  "reactions_total": 221,
-  "attachments": 94,
+  "reactions_total": 236,
+  "attachments": 95,
   "channel_activity": {
+    "❤️": 5,
     "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 2,
     "🔸游戏问题": 1,
@@ -21,6 +22,7 @@
     "🔸阵容构建": 7
   },
   "hourly_activity": {
+    "8": 44,
     "15": 22,
     "1": 20,
     "4": 67,
@@ -35,7 +37,6 @@
     "5": 44,
     "6": 20,
     "7": 13,
-    "8": 39,
     "9": 49,
     "11": 34,
     "12": 36,
@@ -44,11 +45,16 @@
     "23": 2
   },
   "message_types": {
-    "0": 511,
-    "19": 110,
-    "4": 1
+    "0": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1471780869734924413",
+      "content": "",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 15,
+      "channel": "❤️"
+    },
     {
       "id": "1471892607800967271",
       "content": "扔下（os：老福特的审核连这种都过不了<:angry2:1356053025034338505>",
@@ -179,13 +185,6 @@
       "id": "1471812616174174352",
       "content": "",
       "author": "xyakoto",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471873305500717096",
-      "content": "靠事件覺醒完全部 還能花5000銀鑰按覺醒 只有銀鑰覺醒造物的效果",
-      "author": "_buqi",
       "reactions": 4,
       "channel": "🔸綜合討論"
     }

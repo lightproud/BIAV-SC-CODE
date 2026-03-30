@@ -1,20 +1,27 @@
 {
   "date": "2024-03-21",
-  "messages": 4,
-  "unique_authors": 3,
-  "reactions_total": 37,
-  "attachments": 1,
+  "messages": 13,
+  "unique_authors": 4,
+  "reactions_total": 41,
+  "attachments": 2,
   "channel_activity": {
+    "主祭已死，鯊王當立｜鯊凱隊介紹（更新v1.41）": 4,
+    "調查等級與最大生命係數紀錄": 2,
+    "猴子也能看得懂的深潜满分教程": 1,
+    "血肉毒与深海毒攻略": 1,
+    "关于深海界域的杂谈": 1,
     "1181998821291606097": 4
   },
   "hourly_activity": {
+    "8": 4,
+    "12": 3,
+    "9": 3,
     "10": 2,
-    "12": 1,
     "13": 1
   },
   "message_types": {
-    "0": 3,
-    "19": 1
+    "19": 3,
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -23,6 +30,13 @@
       "author": "navirecorbeau",
       "reactions": 35,
       "channel": ""
+    },
+    {
+      "id": "1220350175524945930",
+      "content": "升级真的好慢 半个月了快",
+      "author": "0sgtq0",
+      "reactions": 4,
+      "channel": "調查等級與最大生命係數紀錄"
     },
     {
       "id": "1220353924150853632",

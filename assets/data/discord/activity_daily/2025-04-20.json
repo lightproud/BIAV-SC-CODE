@@ -1,0 +1,36 @@
+{
+  "date": "2025-04-20",
+  "messages": 4,
+  "unique_authors": 2,
+  "reactions_total": 15,
+  "attachments": 2,
+  "channel_activity": {
+    "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑": 1,
+    "跟我朋友零元購了一個稿，成效甚好": 3
+  },
+  "hourly_activity": {
+    "23": 1,
+    "17": 2,
+    "18": 1
+  },
+  "message_types": {
+    "0": 3,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1363562359234232370",
+      "content": "可以直接取用，嘻嘻",
+      "author": "ena04564",
+      "reactions": 14,
+      "channel": "跟我朋友零元購了一個稿，成效甚好"
+    },
+    {
+      "id": "1363587332040556574",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "跟我朋友零元購了一個稿，成效甚好"
+    }
+  ]
+}

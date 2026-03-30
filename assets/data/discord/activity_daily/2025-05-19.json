@@ -1,0 +1,26 @@
+{
+  "date": "2025-05-19",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 10,
+  "attachments": 5,
+  "channel_activity": {
+    "融灾": 1,
+    "關卡地圖「幻夢深潛」總覽Ⅰ（重置版）": 1
+  },
+  "hourly_activity": {
+    "9": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1373959860227674172",
+      "content": "350中低配",
+      "author": "moxiangsenluo.",
+      "reactions": 10,
+      "channel": "融灾"
+    }
+  ]
+}

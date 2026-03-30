@@ -1,24 +1,40 @@
 {
   "date": "2025-09-20",
-  "messages": 11,
-  "unique_authors": 4,
-  "reactions_total": 10,
-  "attachments": 2,
+  "messages": 17,
+  "unique_authors": 5,
+  "reactions_total": 37,
+  "attachments": 4,
   "channel_activity": {
+    "詹金": 4,
+    "我們偉大的音樂家（哈姆林樓？）": 2,
     "1296113810549112874": 8,
     "1305430084420898868": 3
   },
   "hourly_activity": {
+    "10": 7,
+    "5": 2,
     "14": 6,
     "15": 1,
-    "16": 1,
-    "10": 3
+    "16": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1418904737213841408",
+      "content": "",
+      "author": "ftyannn",
+      "reactions": 22,
+      "channel": "詹金"
+    },
+    {
+      "id": "1418838897483579492",
+      "content": "不好意思我活過來了，為了證明我活著我放一下給我放置很久的哈姆林",
+      "author": "Deleted User",
+      "reactions": 5,
+      "channel": "我們偉大的音樂家（哈姆林樓？）"
+    },
     {
       "id": "1418964590590693428",
       "content": "不是我喜欢的结局直接重开",

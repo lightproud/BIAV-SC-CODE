@@ -1,0 +1,56 @@
+{
+  "date": "2024-11-17",
+  "messages": 22,
+  "unique_authors": 10,
+  "reactions_total": 43,
+  "attachments": 3,
+  "channel_activity": {
+    "⚠你被地獄犬盯上了⚠": 12,
+    "学长小伙立正了": 5,
+    "跑不掉 不跑了（原地躺下": 3,
+    "超絕羅傑斯和喬治畫像": 2
+  },
+  "hourly_activity": {
+    "14": 6,
+    "15": 7,
+    "12": 2,
+    "13": 4,
+    "7": 1,
+    "0": 1,
+    "1": 1
+  },
+  "message_types": {
+    "0": 20,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1307615524670148629",
+      "content": "愛看大男打架（愛看\n戈利亞我恨你 你害我被遊戲綁架😭",
+      "author": "yolo_mode",
+      "reactions": 21,
+      "channel": "跑不掉 不跑了（原地躺下"
+    },
+    {
+      "id": "1307678415708487691",
+      "content": "叠甲:音频来源dy，本视频纯属娱乐，无任何不良导向与侮辱角色意向，学长厨子补药打我口牙！",
+      "author": "yingmai_",
+      "reactions": 14,
+      "channel": "学长小伙立正了"
+    },
+    {
+      "id": "1307718986976198747",
+      "content": "是自創角色相關XD",
+      "author": "flim_of_life_burst",
+      "reactions": 6,
+      "channel": "⚠你被地獄犬盯上了⚠"
+    },
+    {
+      "id": "1307724860624998432",
+      "content": "灵魂被净化的",
+      "author": "qiamo0664",
+      "reactions": 2,
+      "channel": "⚠你被地獄犬盯上了⚠"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2025-06-11",
+  "messages": 10,
+  "unique_authors": 4,
+  "reactions_total": 11,
+  "attachments": 0,
+  "channel_activity": {
+    "利莫里亞沙丁魚罐頭": 1,
+    "[二创伪联动][忘却前夜 x Sunless Sea]白如磷火/Pale as Corporsant": 7,
+    "試著用suno生成了角色歌": 2
+  },
+  "hourly_activity": {
+    "19": 8,
+    "5": 1,
+    "7": 1
+  },
+  "message_types": {
+    "19": 2,
+    "0": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1382444494351241396",
+      "content": "日常来薅一波银芯顺便整个活（\n\n——观前须知——\n\n>克珀珊特中心向，基于截至船长实装版本的官方剧情所做的二创展开，人物设定会与半周年以及之后的剧情存在较大冲突",
+      "author": "flarinsidia",
+      "reactions": 9,
+      "channel": "[二创伪联动][忘却前夜 x Sunless Sea]白如磷火/Pale as Corporsant"
+    },
+    {
+      "id": "1382446403422519316",
+      "content": "老人臭",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "利莫里亞沙丁魚罐頭"
+    },
+    {
+      "id": "1382262877980856350",
+      "content": "真的很酷⋯⋯我玩的很開心⋯⋯\n謝謝 不會寫曲只能寫詞了",
+      "author": "unmasked0406",
+      "reactions": 1,
+      "channel": "試著用suno生成了角色歌"
+    }
+  ]
+}

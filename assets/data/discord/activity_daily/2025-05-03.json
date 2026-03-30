@@ -1,17 +1,66 @@
 {
   "date": "2025-05-03",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 23,
+  "unique_authors": 13,
+  "reactions_total": 30,
+  "attachments": 8,
   "channel_activity": {
+    "神國圖魯教 星辰篇": 6,
+    "好久没画依然是没细化完的一张，先发发了": 7,
+    "以葛籣，角色技能與命輪介紹": 6,
+    "5771新春活动招人+预热": 3,
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "8": 1
+    "11": 1,
+    "14": 12,
+    "15": 2,
+    "16": 1,
+    "6": 1,
+    "7": 1,
+    "9": 1,
+    "8": 2,
+    "13": 2
   },
   "message_types": {
-    "0": 1
+    "0": 18,
+    "19": 4
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1368233406454038659",
+      "content": "什么时候加强我雷\nuid：100082465",
+      "author": "arki1i_",
+      "reactions": 17,
+      "channel": "好久没画依然是没细化完的一张，先发发了"
+    },
+    {
+      "id": "1368115331662614588",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=786&tnum=1",
+      "author": "taoi002",
+      "reactions": 5,
+      "channel": "以葛籣，角色技能與命輪介紹"
+    },
+    {
+      "id": "1368147399603654676",
+      "content": "忘却前夜新春同人活动开启！\n \n各位守密人，忘却前夜新春同人盛宴火热来袭！\n \n在这里，你可以尽情挥洒创意，将脑海中对《忘却前夜》的奇思妙想转化为精彩作品。无论",
+      "author": "tianfang5580",
+      "reactions": 5,
+      "channel": "5771新春活动招人+预热"
+    },
+    {
+      "id": "1368153793555861586",
+      "content": "我覺得非利士人我好像都可以",
+      "author": "fengliyaowo",
+      "reactions": 2,
+      "channel": "以葛籣，角色技能與命輪介紹"
+    },
+    {
+      "id": "1368233748507787326",
+      "content": "好吧<:cry2:1356068126894194758> <:cry2:1356068126894194758>",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "神國圖魯教 星辰篇"
+    }
+  ]
 }

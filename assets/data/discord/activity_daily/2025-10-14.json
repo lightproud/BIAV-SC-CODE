@@ -1,23 +1,23 @@
 {
   "date": "2025-10-14",
-  "messages": 11,
+  "messages": 12,
   "unique_authors": 5,
-  "reactions_total": 19,
-  "attachments": 17,
+  "reactions_total": 22,
+  "attachments": 19,
   "channel_activity": {
+    "✦关卡地图「融灾禁区」总览45期·星辰篇✦": 1,
     "1421408684776357929": 1,
     "1305430084420898868": 7,
     "1234769700735418368": 3
   },
   "hourly_activity": {
+    "8": 5,
     "12": 1,
-    "8": 4,
     "10": 4,
     "7": 2
   },
   "message_types": {
-    "19": 2,
-    "0": 9
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -33,6 +33,13 @@
       "author": "morimensstaff01",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1427577321593901086",
+      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第18期（第45期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\nP.S.图片较长，在线预览无",
+      "author": "menoctus",
+      "reactions": 3,
+      "channel": "✦关卡地图「融灾禁区」总览45期·星辰篇✦"
     },
     {
       "id": "1427569242722533470",

@@ -1,0 +1,36 @@
+{
+  "date": "2025-08-14",
+  "messages": 11,
+  "unique_authors": 4,
+  "reactions_total": 22,
+  "attachments": 2,
+  "channel_activity": {
+    "彌撒格最般配的男同性戀": 1,
+    "Slay the Spire Morimens Mod Text Provided Post": 10
+  },
+  "hourly_activity": {
+    "12": 1,
+    "4": 9,
+    "11": 1
+  },
+  "message_types": {
+    "0": 9,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1405532264233697280",
+      "content": "私人約稿禁一切",
+      "author": "calmdreab",
+      "reactions": 21,
+      "channel": "彌撒格最般配的男同性戀"
+    },
+    {
+      "id": "1405415370667462716",
+      "content": "我感觉起码两个月后lcya才能做到这个",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "Slay the Spire Morimens Mod Text Provided Post"
+    }
+  ]
+}

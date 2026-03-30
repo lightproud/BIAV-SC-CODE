@@ -1,17 +1,75 @@
 {
   "date": "2025-11-04",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 40,
+  "unique_authors": 9,
+  "reactions_total": 19,
+  "attachments": 13,
   "channel_activity": {
+    "融灾攻略": 1,
+    "组队推荐": 3,
+    "这次新的up池最值得抽的是哪一位？": 27,
+    "虽然很少但总之依旧是一点守莱&守N": 1,
+    "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上": 7,
     "🔸欢乐梗图": 1
   },
   "hourly_activity": {
-    "10": 1
+    "13": 2,
+    "12": 20,
+    "14": 1,
+    "0": 1,
+    "2": 1,
+    "8": 2,
+    "9": 1,
+    "10": 4,
+    "19": 1,
+    "15": 7
   },
   "message_types": {
-    "0": 1
+    "0": 34,
+    "19": 5
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1435285774877720677",
+      "content": "做了一個非洲P\nthink chaos, think !\nthis is how to compensate the players ~~發100普抽~~",
+      "author": "oct3000",
+      "reactions": 8,
+      "channel": "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上"
+    },
+    {
+      "id": "1435286942345461843",
+      "content": "吖哈哈哈哈懂了\n說真的卡厄思現在是深陷卡厄思之中 看看那個理應是克蘇魯結局的icon 翻遍遊戲找不到那一幕 這算是失落的記憶碎片 還沒救援到的幹員 還是創傷單元",
+      "author": "amstelredam",
+      "reactions": 3,
+      "channel": "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上"
+    },
+    {
+      "id": "1435287445058093098",
+      "content": "卡厄思太摳了 而且發100普抽只能保底一次五星還不能定向 別說MM普池了忘卻普池都比他貼心三倍有餘 按照卡厄思出貨率，要參考忘卻的經驗那可得發300抽",
+      "author": "amstelredam",
+      "reactions": 3,
+      "channel": "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上"
+    },
+    {
+      "id": "1435207288477716622",
+      "content": "但我會建議你不要抽復刻，等周年抽數再談",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "这次新的up池最值得抽的是哪一位？"
+    },
+    {
+      "id": "1435286234170789991",
+      "content": "哪裏有一百普抽 我怎麼兩款遊戲都沒領到。",
+      "author": "amstelredam",
+      "reactions": 2,
+      "channel": "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上"
+    },
+    {
+      "id": "1435061895563575347",
+      "content": "好像要超限哎",
+      "author": "saltyfish_alpha",
+      "reactions": 1,
+      "channel": "这次新的up池最值得抽的是哪一位？"
+    }
+  ]
 }

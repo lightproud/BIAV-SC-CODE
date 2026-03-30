@@ -1,25 +1,63 @@
 {
   "date": "2025-02-14",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 9,
-  "attachments": 1,
+  "messages": 12,
+  "unique_authors": 5,
+  "reactions_total": 32,
+  "attachments": 2,
   "channel_activity": {
+    "近半個月收集的PVP隊伍統整與簡介": 1,
+    "听说，今天拉蒙娜送我花花欸！（速写练习）": 4,
+    "拿下索瓦爾格商用權了慶祝一下XD": 6,
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "9": 1
+    "6": 1,
+    "9": 5,
+    "1": 1,
+    "2": 1,
+    "13": 3,
+    "17": 1
   },
   "message_types": {
-    "19": 1
+    "0": 8,
+    "4": 1,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1339889861078810694",
+      "content": "",
+      "author": "zerathree",
+      "reactions": 16,
+      "channel": "听说，今天拉蒙娜送我花花欸！（速写练习）"
+    },
     {
       "id": "1339897863009992705",
       "content": "100607245",
       "author": "water_heart",
       "reactions": 9,
       "channel": ""
+    },
+    {
+      "id": "1339846109345874000",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=701&tnum=1",
+      "author": "ekko9950",
+      "reactions": 5,
+      "channel": "近半個月收集的PVP隊伍統整與簡介"
+    },
+    {
+      "id": "1339890121721249872",
+      "content": "虽然除了不像拉蒙娜，也没有什么拉蒙娜的要素，但是…很像拉蒙娜欸！",
+      "author": "zerathree",
+      "reactions": 1,
+      "channel": "听说，今天拉蒙娜送我花花欸！（速写练习）"
+    },
+    {
+      "id": "1339954145997750352",
+      "content": "還沒想好用來幹什麼總之以後再說！",
+      "author": "flim_of_life_burst",
+      "reactions": 1,
+      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
     }
   ]
 }

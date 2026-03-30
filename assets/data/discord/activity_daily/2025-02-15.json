@@ -1,19 +1,58 @@
 {
   "date": "2025-02-15",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 1,
+  "messages": 11,
+  "unique_authors": 7,
+  "reactions_total": 32,
+  "attachments": 7,
   "channel_activity": {
+    "忘却前夜相位对弈(PVP)攻略": 1,
+    "听说，今天拉蒙娜送我花花欸！（速写练习）": 2,
+    "拿下索瓦爾格商用權了慶祝一下XD": 2,
+    "詹金": 1,
+    "謝謝忘卻前夜的情人節禮物": 1,
+    "【手拉手】对不起亲爱的不该死在你的梦里": 1,
     "1271491376881598494": 3
   },
   "hourly_activity": {
-    "8": 1,
+    "3": 1,
+    "9": 4,
+    "8": 2,
+    "14": 1,
+    "13": 1,
     "11": 2
   },
   "message_types": {
-    "0": 2,
-    "19": 1
+    "0": 6,
+    "19": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1340330242446983178",
+      "content": "",
+      "author": "ftyannn",
+      "reactions": 15,
+      "channel": "詹金"
+    },
+    {
+      "id": "1340253646293565450",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 13,
+      "channel": "【手拉手】对不起亲爱的不该死在你的梦里"
+    },
+    {
+      "id": "1340243806263443527",
+      "content": "被送了周邊禮盒回饋我得意了",
+      "author": "flim_of_life_burst",
+      "reactions": 2,
+      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
+    },
+    {
+      "id": "1340256095150674012",
+      "content": "喔喔喔喔是索瓦爾格的繁衍狂熱我們有救了",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
+    }
+  ]
 }

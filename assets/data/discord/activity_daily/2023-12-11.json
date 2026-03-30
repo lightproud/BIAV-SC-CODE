@@ -1,0 +1,47 @@
+{
+  "date": "2023-12-11",
+  "messages": 7,
+  "unique_authors": 5,
+  "reactions_total": 16,
+  "attachments": 2,
+  "channel_activity": {
+    "宁菲亚": 3,
+    "艾繼絲是好孩子": 4
+  },
+  "hourly_activity": {
+    "10": 1,
+    "12": 1,
+    "13": 1,
+    "2": 1,
+    "4": 1,
+    "5": 1,
+    "15": 1
+  },
+  "message_types": {
+    "0": 5,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1183594930363437117",
+      "content": "其實一直沒搞懂她的領口 就隨便畫了",
+      "author": "k114514k",
+      "reactions": 11,
+      "channel": "艾繼絲是好孩子"
+    },
+    {
+      "id": "1183711029708980224",
+      "content": "觉得她很美就画了 💖（呵呵",
+      "author": "xcecilex.",
+      "reactions": 4,
+      "channel": "宁菲亚"
+    },
+    {
+      "id": "1183622228173148211",
+      "content": "好好看！",
+      "author": "alpha0909__",
+      "reactions": 1,
+      "channel": "艾繼絲是好孩子"
+    }
+  ]
+}

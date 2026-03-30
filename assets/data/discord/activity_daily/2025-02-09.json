@@ -1,19 +1,26 @@
 {
   "date": "2025-02-09",
-  "messages": 3,
-  "unique_authors": 3,
-  "reactions_total": 23,
-  "attachments": 1,
+  "messages": 17,
+  "unique_authors": 5,
+  "reactions_total": 41,
+  "attachments": 7,
   "channel_activity": {
+    "忘却前夜相位对弈(PVP)攻略": 1,
+    "約稿展示 請大家吃飯": 2,
+    "拿圖去印了明信片和膠片✌": 11,
     "1181998821291606097": 3
   },
   "hourly_activity": {
+    "9": 1,
+    "4": 6,
+    "3": 7,
     "12": 1,
     "13": 1,
     "14": 1
   },
   "message_types": {
-    "0": 3
+    "0": 11,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -24,11 +31,46 @@
       "channel": ""
     },
     {
+      "id": "1338082847839227926",
+      "content": "原稿件发布在b站，可以直接点击链接去看。\n零基础选手(之前从来没打过pvp)看这个【忘却前夜相位对弈(PVP)罗坦打击队攻略-哔哩哔哩】 https://b23",
+      "author": "tianfang5580",
+      "reactions": 9,
+      "channel": "忘却前夜相位对弈(PVP)攻略"
+    },
+    {
+      "id": "1338000251742584852",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 6,
+      "channel": "約稿展示 請大家吃飯"
+    },
+    {
       "id": "1338160978256461897",
       "content": "可以考慮畫個哈姆林拿小提琴去火拼",
       "author": "ena04564",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1337989801659601006",
+      "content": "沒有耶，我這次沒擺",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "拿圖去印了明信片和膠片✌"
+    },
+    {
+      "id": "1338007587832074320",
+      "content": "不是",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "拿圖去印了明信片和膠片✌"
+    },
+    {
+      "id": "1338007716165058661",
+      "content": "問就是即使不是我推的東西也是直接花錢支持的好嗎",
+      "author": "yusi4172",
+      "reactions": 1,
+      "channel": "拿圖去印了明信片和膠片✌"
     },
     {
       "id": "1338145840396763166",

@@ -1,0 +1,25 @@
+{
+  "date": "2025-07-16",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 10,
+  "attachments": 1,
+  "channel_activity": {
+    "栗子": 1
+  },
+  "hourly_activity": {
+    "8": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1394953318522163350",
+      "content": "迟来的剧情的摸",
+      "author": "cjsyds9784",
+      "reactions": 10,
+      "channel": "栗子"
+    }
+  ]
+}

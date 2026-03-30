@@ -1,19 +1,29 @@
 {
   "date": "2025-11-23",
-  "messages": 9,
-  "unique_authors": 2,
-  "reactions_total": 450,
-  "attachments": 6,
+  "messages": 26,
+  "unique_authors": 7,
+  "reactions_total": 469,
+  "attachments": 10,
   "channel_activity": {
+    "一點塔薇玩家的小小心得": 6,
+    "誕妄．墨菲機制與搭配探討": 7,
+    "我也要開圖樓": 3,
+    "相位对弈之后": 1,
     "🔸新生守则┊rules": 2,
     "1442292634575175710": 7
   },
   "hourly_activity": {
-    "20": 2,
-    "23": 7
+    "9": 1,
+    "12": 6,
+    "13": 1,
+    "11": 5,
+    "15": 3,
+    "23": 8,
+    "20": 2
   },
   "message_types": {
-    "0": 9
+    "0": 13,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -29,6 +39,20 @@
       "author": "iamVilla",
       "reactions": 21,
       "channel": "🔸新生守则┊rules"
+    },
+    {
+      "id": "1442299505499177122",
+      "content": "当弥利亚姆发现戈利亚真的少用了八成力气之后，她心底蔓延出来的是被轻视的怒火和对方擅作主张的不愉。所以当战斗一结束，戈利亚的手腕就立刻被弥利亚姆抓住，主祭瘦弱的手",
+      "author": "knifep_",
+      "reactions": 10,
+      "channel": "相位对弈之后"
+    },
+    {
+      "id": "1442169631879073822",
+      "content": "",
+      "author": "undecember_news",
+      "reactions": 9,
+      "channel": "我也要開圖樓"
     },
     {
       "id": "1442292634575175710",

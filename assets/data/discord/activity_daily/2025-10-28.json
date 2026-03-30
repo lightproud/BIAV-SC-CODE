@@ -1,27 +1,28 @@
 {
   "date": "2025-10-28",
-  "messages": 67,
+  "messages": 70,
   "unique_authors": 25,
-  "reactions_total": 172,
-  "attachments": 11,
+  "reactions_total": 187,
+  "attachments": 14,
   "channel_activity": {
+    "✦关卡地图「融灾禁区」总览46期·星辰篇✦": 1,
+    "現pa現pa": 2,
     "🐱light’s-nest": 4,
     "1432654338982940783": 63
   },
   "hourly_activity": {
+    "14": 3,
+    "2": 2,
     "10": 4,
     "9": 48,
     "11": 2,
     "12": 1,
     "13": 1,
-    "14": 2,
     "15": 5,
     "16": 4
   },
   "message_types": {
-    "0": 55,
-    "6": 1,
-    "19": 11
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -37,6 +38,13 @@
       "author": "game.producer.light",
       "reactions": 27,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1432554702004027524",
+      "content": "我支持戈利亞不管到哪個世界線只要站在彌利旁邊就會過敏（X",
+      "author": "carrot_chicken",
+      "reactions": 14,
+      "channel": "現pa現pa"
     },
     {
       "id": "1432668243579109429",
@@ -86,6 +94,13 @@
       "author": "wesu.",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1432731303870070835",
+      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第19期（第46期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
+      "author": "menoctus",
+      "reactions": 1,
+      "channel": "✦关卡地图「融灾禁区」总览46期·星辰篇✦"
     },
     {
       "id": "1432669362254381117",

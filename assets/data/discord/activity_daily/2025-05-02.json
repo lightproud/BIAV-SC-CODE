@@ -1,27 +1,55 @@
 {
   "date": "2025-05-02",
-  "messages": 3,
-  "unique_authors": 3,
-  "reactions_total": 10,
-  "attachments": 1,
+  "messages": 11,
+  "unique_authors": 4,
+  "reactions_total": 26,
+  "attachments": 2,
   "channel_activity": {
+    "自製角色（目前有深海一名、超維一名）": 5,
+    "Clementine is watching you": 1,
+    "一點點鯊守私設文...吧? （清水.jpg）": 2,
     "1181998821291606097": 3
   },
   "hourly_activity": {
-    "4": 2,
+    "16": 1,
+    "17": 4,
+    "4": 4,
+    "11": 1,
     "5": 1
   },
   "message_types": {
-    "0": 2,
-    "19": 1
+    "19": 1,
+    "0": 6,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1367719008354173008",
+      "content": "uid：100414863",
+      "author": "rustclock",
+      "reactions": 12,
+      "channel": "Clementine is watching you"
+    },
     {
       "id": "1367713913378181140",
       "content": "~~我會發點舊圖顯得我有東西發~~",
       "author": "navirecorbeau",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1367826365818077234",
+      "content": "清水?!不及格<:point:1356053112292511815>",
+      "author": "huangziqiao_45693",
+      "reactions": 3,
+      "channel": "一點點鯊守私設文...吧? （清水.jpg）"
+    },
+    {
+      "id": "1367910807924641954",
+      "content": "————————————————\n基礎資訊\n\n名字：亞弗戈蒙\n英文名：Avergomon\n生日：9月16日\n性別：男\n身高：5 ' 1.2 \"\n體重：123lb",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "自製角色（目前有深海一名、超維一名）"
     },
     {
       "id": "1367720131647639674",

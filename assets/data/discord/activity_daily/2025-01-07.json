@@ -1,0 +1,41 @@
+{
+  "date": "2025-01-07",
+  "messages": 6,
+  "unique_authors": 3,
+  "reactions_total": 27,
+  "attachments": 3,
+  "channel_activity": {
+    "關卡地圖「融災禁區」總覽25期": 2,
+    "宝宝们": 4
+  },
+  "hourly_activity": {
+    "11": 1,
+    "12": 5
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1326163394583330838",
+      "content": "",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 17,
+      "channel": "宝宝们"
+    },
+    {
+      "id": "1326149867701272667",
+      "content": "> 大家好，這裡是難忘今宵攻略組，本期為大家帶來的是第25期「融災禁區」地圖，及怪獸首領與時靈擺。\n\n◆每兩週刷新獎勵與關卡，每個關卡只需要完成警報之一即可，請",
+      "author": "menoctus",
+      "reactions": 9,
+      "channel": "關卡地圖「融災禁區」總覽25期"
+    },
+    {
+      "id": "1326168776395460681",
+      "content": "膜拜大佬",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "關卡地圖「融災禁區」總覽25期"
+    }
+  ]
+}

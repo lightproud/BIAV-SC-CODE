@@ -1,0 +1,37 @@
+{
+  "date": "2025-02-01",
+  "messages": 4,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 3,
+  "channel_activity": {
+    "【PVE攻略】艾继丝石化使用指南、技巧大全": 1,
+    "【梗图】堆点我P过的梗图": 1,
+    "Miryam": 2
+  },
+  "hourly_activity": {
+    "14": 1,
+    "13": 1,
+    "2": 1,
+    "6": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1335248106601713664",
+      "content": "这很权威了",
+      "author": "yingmai_",
+      "reactions": 2,
+      "channel": "【梗图】堆点我P过的梗图"
+    },
+    {
+      "id": "1335075727137308692",
+      "content": "Omg its sooo pretty",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "Miryam"
+    }
+  ]
+}

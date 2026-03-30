@@ -1,10 +1,14 @@
 {
   "date": "2025-12-18",
-  "messages": 39,
+  "messages": 75,
   "unique_authors": 15,
-  "reactions_total": 61,
-  "attachments": 12,
+  "reactions_total": 96,
+  "attachments": 22,
   "channel_activity": {
+    "全SSR命輪解析與強度評比": 1,
+    "堆樓-忘卻cos相關（真人注意）": 1,
+    "拉蒙娜生日快樂（遲到版）": 21,
+    "異端品鑑結尾（皮杜向有黃車描述": 13,
     "🔸忘却前夜┊morimens-tv": 1,
     "1421408684776357929": 2,
     "1451125609068757074": 20,
@@ -14,19 +18,22 @@
     "1451073706427285677": 3
   },
   "hourly_activity": {
-    "2": 1,
-    "16": 2,
+    "11": 4,
+    "16": 3,
+    "9": 24,
+    "10": 6,
+    "0": 7,
+    "2": 3,
+    "4": 5,
     "8": 14,
-    "9": 12,
     "13": 2,
     "3": 4,
     "14": 1,
-    "4": 1,
     "12": 2
   },
   "message_types": {
-    "0": 37,
-    "19": 2
+    "0": 27,
+    "19": 9
   },
   "top_reacted_messages": [
     {
@@ -44,11 +51,25 @@
       "channel": ""
     },
     {
+      "id": "1451144531151028235",
+      "content": "寫了拉蒙娜生日的同人文......拉蒙娜生日快樂，我來晚了<:takenotes:1357186646294138890> \nOOC注意、是女守密人、CB向、有",
+      "author": "souri.10244",
+      "reactions": 8,
+      "channel": "拉蒙娜生日快樂（遲到版）"
+    },
+    {
       "id": "1451125609068757074",
       "content": "想試試看能不能實現守密人的夢想，於是選擇了沒有融蝕的世界還有和平年代的現代。剛好最近遭逢巨變而且還被甩了，我想要寫下一點我沒實現的美好。請原諒我可能會有的ooc",
       "author": "shostakovich524",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1451247067270746182",
+      "content": "神父的組圖！",
+      "author": "kong760",
+      "reactions": 7,
+      "channel": "堆樓-忘卻cos相關（真人注意）"
     },
     {
       "id": "1451200809613398038",
@@ -58,11 +79,25 @@
       "channel": ""
     },
     {
+      "id": "1451068641528512644",
+      "content": "🤩 夸你呢",
+      "author": "dittoqwq",
+      "reactions": 5,
+      "channel": "異端品鑑結尾（皮杜向有黃車描述"
+    },
+    {
       "id": "1451073706427285677",
       "content": "https://drive.google.com/file/d/1NuvnH02LsS6KLJWSBM6neecTqg0peNvn/view?usp=drive",
       "author": "masian131",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1451146142858350635",
+      "content": "前面甜甜後面刀你個猝不及防 哈哈！（邪惡的笑聲）",
+      "author": "souri.10244",
+      "reactions": 3,
+      "channel": "拉蒙娜生日快樂（遲到版）"
     },
     {
       "id": "1451252832345915454",
@@ -77,6 +112,27 @@
       "author": "shostakovich524",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1451144686625493033",
+      "content": "～～～～～～～\n附上今天畫的拉蒙娜\n娜娜我永遠喜歡你<:takenotes:1357186646294138890>",
+      "author": "souri.10244",
+      "reactions": 2,
+      "channel": "拉蒙娜生日快樂（遲到版）"
+    },
+    {
+      "id": "1451170670527647768",
+      "content": "他們看不懂",
+      "author": "souri.10244",
+      "reactions": 2,
+      "channel": "拉蒙娜生日快樂（遲到版）"
+    },
+    {
+      "id": "1451032402897141902",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 2,
+      "channel": "異端品鑑結尾（皮杜向有黃車描述"
     },
     {
       "id": "1451128618066514123",
@@ -100,25 +156,25 @@
       "channel": ""
     },
     {
-      "id": "1451032867227435019",
-      "content": "https://youtu.be/5qU0mK0LCYs Caro overview",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1451144689163173931",
-      "content": "我幼小純潔的心靈得到了治癒<:takenotes:1357186646294138890>",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1451145810283855943",
-      "content": "是飯飯 飯飯",
+      "id": "1451145124624072744",
+      "content": "<:Cheerup:1400771555939844149>",
       "author": "souri.10244",
       "reactions": 1,
-      "channel": ""
+      "channel": "拉蒙娜生日快樂（遲到版）"
+    },
+    {
+      "id": "1451160753720791081",
+      "content": "（薯泥受到爆擊-999死抗失敗陣亡於道中再起不能",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": "拉蒙娜生日快樂（遲到版）"
+    },
+    {
+      "id": "1451170315576152097",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": "拉蒙娜生日快樂（遲到版）"
     }
   ]
 }

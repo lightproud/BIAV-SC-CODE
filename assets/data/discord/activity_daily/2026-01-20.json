@@ -1,10 +1,14 @@
 {
   "date": "2026-01-20",
-  "messages": 13,
+  "messages": 37,
   "unique_authors": 10,
-  "reactions_total": 609,
-  "attachments": 2,
+  "reactions_total": 658,
+  "attachments": 6,
   "channel_activity": {
+    "圖樓": 1,
+    "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的": 11,
+    "味觉测试 || 杜勒赛因x西维斯特": 10,
+    "徐，她真好看": 2,
     "🔸礼包码┊gift-codes": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1448648649486635128": 3,
@@ -14,20 +18,25 @@
     "1234769700735418368": 2
   },
   "hourly_activity": {
+    "13": 6,
+    "12": 3,
+    "14": 3,
+    "22": 1,
+    "9": 1,
+    "10": 10,
+    "7": 2,
     "11": 1,
     "4": 1,
     "5": 2,
-    "14": 1,
     "2": 2,
     "6": 1,
     "15": 1,
     "21": 2,
-    "1": 1,
-    "10": 1
+    "1": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 1
+    "0": 21,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -38,11 +47,67 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1463152563145674808",
+      "content": "需要彎腰下來看人的身高差還是太權威了",
+      "author": "yolo_mode",
+      "reactions": 25,
+      "channel": "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的"
+    },
+    {
+      "id": "1463110412307271700",
+      "content": "他的愿望实现了？<:rizz1:1356085398379692165><:Dore_proud:1459076042722639905>",
+      "author": "that_one_chippy",
+      "reactions": 15,
+      "channel": "味觉测试 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1463160646194696322",
+      "content": "鯊魚原來是長髮麼",
+      "author": "ahong0727",
+      "reactions": 2,
+      "channel": "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的"
+    },
+    {
+      "id": "1463163407539896350",
+      "content": "細好事（喜",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的"
+    },
+    {
+      "id": "1463122022199726143",
+      "content": "Thank you🛐\n~~(對不起，已經是畢生所學了)~~",
+      "author": "shostakovich524",
+      "reactions": 2,
+      "channel": "味觉测试 || 杜勒赛因x西维斯特"
+    },
+    {
       "id": "1463021574159601759",
       "content": "Fun little video that partially showcases the boss fights for D-Tide this week b",
       "author": "frosthief",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1463113545058357320",
+      "content": "<:Dore_proud:1459076042722639905>",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "味觉测试 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1463114429213446156",
+      "content": "A match made in heaven",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "味觉测试 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1463120312022597706",
+      "content": "<:Dore_proud:1459076042722639905> 十分美味（喜",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": "味觉测试 || 杜勒赛因x西维斯特"
     },
     {
       "id": "1463046112813383818",

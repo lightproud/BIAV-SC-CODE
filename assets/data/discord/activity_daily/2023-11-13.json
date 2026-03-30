@@ -1,17 +1,19 @@
 {
   "date": "2023-11-13",
-  "messages": 1,
+  "messages": 3,
   "unique_authors": 1,
-  "reactions_total": 2,
-  "attachments": 1,
+  "reactions_total": 3,
+  "attachments": 3,
   "channel_activity": {
+    "「雷婭」的小愛好": 2,
     "官方佈告（已停止使用）": 1
   },
   "hourly_activity": {
+    "13": 2,
     "12": 1
   },
   "message_types": {
-    "0": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -20,6 +22,13 @@
       "author": "morimensstaff02",
       "reactions": 2,
       "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1173611664445292615",
+      "content": "為大家帶來了一小段雷婭的CV喔~",
+      "author": "alpha0909_",
+      "reactions": 1,
+      "channel": "「雷婭」的小愛好"
     }
   ]
 }

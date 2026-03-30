@@ -1,24 +1,25 @@
 {
   "date": "2025-03-14",
-  "messages": 12,
+  "messages": 13,
   "unique_authors": 6,
   "reactions_total": 42,
   "attachments": 1,
   "channel_activity": {
+    "存档 顺便参加一下活动": 1,
     "1350060973083590666": 1,
     "1350060160739184690": 8,
     "1350059696945500171": 1,
     "1350058287688712253": 2
   },
   "hourly_activity": {
-    "11": 2,
+    "11": 3,
     "10": 4,
     "12": 1,
     "13": 3,
     "19": 2
   },
   "message_types": {
-    "0": 12
+    "0": 1
   },
   "top_reacted_messages": [
     {

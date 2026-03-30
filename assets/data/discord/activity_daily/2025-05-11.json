@@ -1,20 +1,36 @@
 {
   "date": "2025-05-11",
-  "messages": 3,
-  "unique_authors": 1,
-  "reactions_total": 10,
-  "attachments": 5,
+  "messages": 16,
+  "unique_authors": 7,
+  "reactions_total": 31,
+  "attachments": 12,
   "channel_activity": {
+    "關卡地圖「幻夢深潛」總覽Ⅱ（重製版）": 1,
+    "🪸": 2,
+    "「我享受疼痛，女巫大人。」": 7,
+    "【梗图】堆点我P过的梗图": 2,
+    "女仆日当然是……": 1,
     "1296113810549112874": 3
   },
   "hourly_activity": {
-    "9": 2,
+    "18": 1,
+    "9": 6,
+    "16": 7,
+    "7": 1,
     "14": 1
   },
   "message_types": {
-    "0": 3
+    "19": 3,
+    "0": 10
   },
   "top_reacted_messages": [
+    {
+      "id": "1371156244055719987",
+      "content": "5202年還在被落水狗魚男綁架",
+      "author": "yolo_mode",
+      "reactions": 20,
+      "channel": "「我享受疼痛，女巫大人。」"
+    },
     {
       "id": "1371059967376887838",
       "content": "忘记发了呃呃呃，我将造谣喫茶店小女仆",
@@ -28,6 +44,13 @@
       "author": "yingmai_",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1371160696687034597",
+      "content": "謝謝還有人在捧場大男的飯TT",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "「我享受疼痛，女巫大人。」"
     }
   ]
 }

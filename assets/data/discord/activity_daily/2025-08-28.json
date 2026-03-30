@@ -1,0 +1,48 @@
+{
+  "date": "2025-08-28",
+  "messages": 22,
+  "unique_authors": 8,
+  "reactions_total": 43,
+  "attachments": 2,
+  "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 2,
+    "相位對弈—認識隊伍": 1,
+    "我也要開圖樓": 5,
+    "克萊門汀的特殊治療方法": 12,
+    "2.3表情包": 2
+  },
+  "hourly_activity": {
+    "5": 1,
+    "14": 2,
+    "21": 1,
+    "12": 5,
+    "17": 11,
+    "11": 2
+  },
+  "message_types": {
+    "0": 22
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1410597309796061305",
+      "content": "如題，開圖樓感覺很好玩",
+      "author": "undecember_news",
+      "reactions": 35,
+      "channel": "我也要開圖樓"
+    },
+    {
+      "id": "1410635542651211826",
+      "content": "“放輕鬆，覺得癢是正常的。”\n\n克萊門汀捏起一根鵝毛，輕輕掃過守密人的耳尖，微微的搔癢感沿著肩膀傳來，守密人不自覺地輕輕顫抖。\n\n“這確定是朵兒教授讓你幫我做心",
+      "author": "void_1546.",
+      "reactions": 7,
+      "channel": "克萊門汀的特殊治療方法"
+    },
+    {
+      "id": "1410585269614280756",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "2.3表情包"
+    }
+  ]
+}

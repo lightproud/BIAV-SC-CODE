@@ -1,19 +1,24 @@
 {
   "date": "2025-04-01",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 195,
-  "attachments": 4,
+  "messages": 7,
+  "unique_authors": 3,
+  "reactions_total": 208,
+  "attachments": 8,
   "channel_activity": {
+    "关卡地图「融灾禁区」总览31期·星辰篇": 1,
+    "不会再有了": 1,
+    "环行莉奥诺拉和守密人拉蒙娜": 1,
     "🔸翻译器教程┊translator-tutorial": 3,
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "8": 3,
-    "10": 1
+    "5": 1,
+    "10": 2,
+    "13": 1,
+    "8": 3
   },
   "message_types": {
-    "0": 4
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -24,11 +29,25 @@
       "channel": "🔸翻译器教程┊translator-tutorial"
     },
     {
+      "id": "1356618655382896811",
+      "content": "真的很想吃这个请溅射 uid100439362",
+      "author": "yingmai_",
+      "reactions": 8,
+      "channel": "环行莉奥诺拉和守密人拉蒙娜"
+    },
+    {
       "id": "1356570777830428766",
       "content": "100003566",
       "author": "blue_yogurt_chan",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1356495072631197776",
+      "content": "大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第4期（第31期）「融灾禁区」地图，以及时灵摆和对应效果与怪物首领。\n\n请注意V2.1.0.2 停服维护公",
+      "author": "menoctus",
+      "reactions": 4,
+      "channel": "关卡地图「融灾禁区」总览31期·星辰篇"
     },
     {
       "id": "1356539643155189790",
@@ -43,6 +62,13 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "🔸翻译器教程┊translator-tutorial"
+    },
+    {
+      "id": "1356580642493567016",
+      "content": "偷偷摸摸的伸出手(大力的戳一下)",
+      "author": "huangziqiao_45693",
+      "reactions": 1,
+      "channel": "不会再有了"
     }
   ]
 }

@@ -1,19 +1,25 @@
 {
   "date": "2025-08-08",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 1040,
-  "attachments": 0,
+  "messages": 10,
+  "unique_authors": 7,
+  "reactions_total": 1093,
+  "attachments": 10,
   "channel_activity": {
+    "杜勒賽因的詳細解析！": 1,
+    "克萊門汀滑鼠游標": 5,
+    "我幻想的杜勒賽因加強": 2,
     "🔸礼包码┊gift-codes": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "11": 4,
+    "17": 3,
+    "10": 1,
     "9": 1,
     "13": 1
   },
   "message_types": {
-    "0": 2
+    "0": 8
   },
   "top_reacted_messages": [
     {
@@ -22,6 +28,34 @@
       "author": "morimensstaff01",
       "reactions": 1040,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1403339115771990026",
+      "content": "我也不知道要說甚麼，但感覺在這邊不說點甚麼有點怪怪的，想到能說甚麼再編輯。\n\n總之，我做了整套一共15張的克萊門汀鼠標，用了的話講一下我會很高興的！\n\n我愛醫生",
+      "author": "undecember_news",
+      "reactions": 48,
+      "channel": "克萊門汀滑鼠游標"
+    },
+    {
+      "id": "1403345970439131166",
+      "content": "https://www.youtube.com/watch?v=K4ibslN8Mus&feature=youtu.be",
+      "author": "kourinn0707_82175",
+      "reactions": 3,
+      "channel": "杜勒賽因的詳細解析！"
+    },
+    {
+      "id": "1403340338273325146",
+      "content": "<@1131790839291596841> 大人 這個醫生的能上2.3同人征集的tag嗎",
+      "author": "undecember_news",
+      "reactions": 1,
+      "channel": "克萊門汀滑鼠游標"
+    },
+    {
+      "id": "1403335969637269515",
+      "content": "現在杜勒賽因還不如旺達",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "我幻想的杜勒賽因加強"
     }
   ]
 }

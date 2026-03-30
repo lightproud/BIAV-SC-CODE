@@ -1,17 +1,25 @@
 {
   "date": "2025-04-27",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 573,
-  "attachments": 0,
+  "messages": 12,
+  "unique_authors": 4,
+  "reactions_total": 577,
+  "attachments": 3,
   "channel_activity": {
+    "血链希洛忘却篇星辰篇造物抓取二图流攻略": 5,
+    "自製角色（目前有深海一名、超維一名）": 3,
+    "一點點鯊守私設文...吧? （清水.jpg）": 2,
+    "Ultra Greed": 1,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "2": 5,
+    "18": 3,
+    "13": 2,
+    "5": 1,
     "12": 1
   },
   "message_types": {
-    "0": 1
+    "0": 11
   },
   "top_reacted_messages": [
     {
@@ -20,6 +28,13 @@
       "author": "morimensstaff02",
       "reactions": 573,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1366120365457277068",
+      "content": "界域：深海\n輔助型\n\n————————————————\n克薩諾斯（Kthanid）\n\n————————————————\n狀態\n\n等級：60\n\n體質92\n攻擊11",
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": "自製角色（目前有深海一名、超維一名）"
     }
   ]
 }

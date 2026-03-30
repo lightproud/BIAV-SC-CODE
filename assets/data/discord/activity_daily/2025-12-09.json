@@ -1,18 +1,25 @@
 {
   "date": "2025-12-09",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 474,
-  "attachments": 0,
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 491,
+  "attachments": 4,
   "channel_activity": {
+    "✦关卡地图「融灾禁区」总览49期·星辰篇✦": 1,
+    "蓋個圖樓": 1,
+    "給異格也P了一版仿官海報（）": 2,
     "🔸欢乐梗图": 1,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "14": 1,
+    "9": 1,
+    "17": 1,
+    "19": 1,
     "2": 2
   },
   "message_types": {
-    "0": 2
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -21,6 +28,27 @@
       "author": "morimensstaff01",
       "reactions": 473,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1447880793232773151",
+      "content": "畫了性轉if拉蒙娜\n搭檔.......搭檔.......",
+      "author": "souri.10244",
+      "reactions": 14,
+      "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1447953385214050445",
+      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第22期（第49期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
+      "author": "menoctus",
+      "reactions": 2,
+      "channel": "✦关卡地图「融灾禁区」总览49期·星辰篇✦"
+    },
+    {
+      "id": "1448031321891799071",
+      "content": "期待",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "給異格也P了一版仿官海報（）"
     },
     {
       "id": "1447782184537686149",

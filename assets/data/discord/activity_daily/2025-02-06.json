@@ -1,25 +1,47 @@
 {
   "date": "2025-02-06",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 6,
-  "attachments": 1,
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 14,
+  "attachments": 2,
   "channel_activity": {
+    "約稿展示 請大家吃飯": 2,
+    "【詢問】一些代表物": 1,
+    "图鲁": 3,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "15": 2,
+    "5": 1,
+    "4": 1,
+    "8": 2,
     "13": 1
   },
   "message_types": {
-    "0": 1
+    "0": 4,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1337079280232042680",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 7,
+      "channel": "約稿展示 請大家吃飯"
+    },
     {
       "id": "1337056604159475723",
       "content": "摸一下",
       "author": "navirecorbeau",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1336922513506308119",
+      "content": "~~沒有商用應該灰色~~",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "图鲁"
     }
   ]
 }

@@ -1,17 +1,45 @@
 {
   "date": "2025-07-21",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 8,
+  "attachments": 5,
   "channel_activity": {
+    "◆第3章「餍飨」关卡流程总览·星辰篇": 1,
+    "弥萨格造物学 经典问答题解析": 3,
+    "关卡地图「融灾禁区」总览39期·星辰篇": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "14": 3,
+    "16": 1,
+    "13": 1,
     "12": 1
   },
   "message_types": {
-    "0": 1
+    "0": 5
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1396865673807921214",
+      "content": "答案：两次牌效果相同，都是1算1抽，碟片实际上触发了四次。\n   \n   当防御牌被视为打击后，打击属性优先级更高，因此局内效果是先+2算丢1牌，再扣1算抽2牌",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": "弥萨格造物学 经典问答题解析"
+    },
+    {
+      "id": "1396846464864616609",
+      "content": "大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第12期（第39期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首领\n",
+      "author": "menoctus",
+      "reactions": 3,
+      "channel": "关卡地图「融灾禁区」总览39期·星辰篇"
+    },
+    {
+      "id": "1396868993591017586",
+      "content": "大家好，这里是难忘今宵攻略组，本期给大家带来的是（星辰篇）第3章的流程图。\n按主线分为上、中、下3部分。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要",
+      "author": "silverstream_s",
+      "reactions": 2,
+      "channel": "◆第3章「餍飨」关卡流程总览·星辰篇"
+    }
+  ]
 }

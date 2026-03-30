@@ -1,19 +1,29 @@
 {
   "date": "2025-08-15",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 18,
-  "attachments": 1,
+  "messages": 30,
+  "unique_authors": 9,
+  "reactions_total": 22,
+  "attachments": 15,
   "channel_activity": {
+    "神國圖魯教 星辰篇": 19,
+    "做個組隊專樓(請大佬支援攻略": 8,
+    "研發圖魯玩法(防禦篇)": 1,
     "1181998821291606097": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "3": 12,
+    "8": 7,
+    "4": 4,
+    "5": 1,
+    "6": 2,
+    "7": 2,
     "17": 1,
     "14": 1
   },
   "message_types": {
-    "0": 2
+    "0": 24,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -22,6 +32,20 @@
       "author": "navirecorbeau",
       "reactions": 18,
       "channel": ""
+    },
+    {
+      "id": "1405769917814276127",
+      "content": "大家好，有鑑於組隊專有名詞太多(什麼深海24、血海之類的)，本人在此蓋一樓專門用來提供快速查詢的大樓。\n望各位大佬能提供簡單的組隊圖片配上組隊名稱，使之後的查閱",
+      "author": "dongpormeat",
+      "reactions": 2,
+      "channel": "做個組隊專樓(請大佬支援攻略"
+    },
+    {
+      "id": "1405797329558179932",
+      "content": "圖魯:\n·命輪:堅韌意志+不存在之地\n·密契:遠方的歡宴\n策略:\n帶上裝備後圖魯即使70級也可以打出58盾的防禦卡而配備3張(大大提高抽到防禦卡的機率)\n這個策",
+      "author": "corposant_1003",
+      "reactions": 2,
+      "channel": "研發圖魯玩法(防禦篇)"
     }
   ]
 }

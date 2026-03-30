@@ -1,25 +1,62 @@
 {
   "date": "2025-03-12",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 7,
-  "attachments": 0,
+  "messages": 12,
+  "unique_authors": 6,
+  "reactions_total": 76,
+  "attachments": 7,
   "channel_activity": {
+    "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略": 5,
+    "主线章节通讯彩蛋合集": 2,
+    "存档 顺便参加一下活动": 2,
+    "墨菲豬，羊喵和拉蒙拿豬": 1,
+    "孕育": 1,
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "7": 1,
+    "8": 5,
+    "6": 4,
+    "9": 1,
     "1": 1
   },
   "message_types": {
-    "19": 1
+    "0": 11
   },
   "top_reacted_messages": [
+    {
+      "id": "1349265761587171349",
+      "content": "「On se souviendra de vos actes, mais tout ce que je peux faire, c'est jouer un c",
+      "author": "dhskdbsksbd",
+      "reactions": 49,
+      "channel": "存档 顺便参加一下活动"
+    },
+    {
+      "id": "1349266396147744778",
+      "content": "收录的是过完对应关卡后立刻出现的通讯，延时发送的通讯仅收录了第四章莉莉。因为有5银芯和一点主线相关剧情，。应该算重要。\n【】中文字为通讯记录里的标题内容，已触发",
+      "author": "muliupan",
+      "reactions": 9,
+      "channel": "主线章节通讯彩蛋合集"
+    },
     {
       "id": "1349188340573802578",
       "content": "更新一下\n角色Lv86 瘋狂預兆Lv12 靈適塑性Lv10",
       "author": "_cwz_",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1349305920437489725",
+      "content": "願銀鑰指引前路。\n\nuid: \n100007347",
+      "author": "ogrelam926",
+      "reactions": 6,
+      "channel": "墨菲豬，羊喵和拉蒙拿豬"
+    },
+    {
+      "id": "1349292600376688691",
+      "content": "———结束———\n欢迎提问，谢谢大家的阅读<:proud2:1236950158500040764>",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略"
     }
   ]
 }

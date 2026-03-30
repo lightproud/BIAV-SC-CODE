@@ -1,0 +1,36 @@
+{
+  "date": "2025-08-13",
+  "messages": 10,
+  "unique_authors": 5,
+  "reactions_total": 16,
+  "attachments": 1,
+  "channel_activity": {
+    "Slay the Spire Morimens Mod Text Provided Post": 3,
+    "已出貨阿狗很愛吃": 7
+  },
+  "hourly_activity": {
+    "7": 1,
+    "10": 2,
+    "14": 7
+  },
+  "message_types": {
+    "0": 8,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1405192285959880805",
+      "content": "今天阿狗獻祭融災400買的委託",
+      "author": "undecember_news",
+      "reactions": 14,
+      "channel": "已出貨阿狗很愛吃"
+    },
+    {
+      "id": "1405193078146334720",
+      "content": "||姊夫是假■的代稱||",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "已出貨阿狗很愛吃"
+    }
+  ]
+}

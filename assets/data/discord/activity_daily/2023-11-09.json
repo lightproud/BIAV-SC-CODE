@@ -1,18 +1,21 @@
 {
   "date": "2023-11-09",
-  "messages": 4,
+  "messages": 6,
   "unique_authors": 1,
   "reactions_total": 3,
-  "attachments": 3,
+  "attachments": 5,
   "channel_activity": {
+    "「艾瑞卡」有什麼行為習慣呢？": 1,
+    "「超維界域」介紹": 1,
     "官方佈告（已停止使用）": 4
   },
   "hourly_activity": {
+    "14": 2,
     "11": 2,
     "13": 2
   },
   "message_types": {
-    "0": 4
+    "0": 2
   },
   "top_reacted_messages": [
     {

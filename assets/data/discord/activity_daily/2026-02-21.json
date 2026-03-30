@@ -1,10 +1,11 @@
 {
   "date": "2026-02-21",
-  "messages": 1696,
+  "messages": 1698,
   "unique_authors": 52,
-  "reactions_total": 232,
-  "attachments": 99,
+  "reactions_total": 234,
+  "attachments": 100,
   "channel_activity": {
+    "塗鴉": 2,
     "🔸频道建议┊server-suggestions": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "1241345906826153984": 10,
@@ -17,10 +18,10 @@
     "🔸阵容构建": 54
   },
   "hourly_activity": {
+    "14": 119,
     "9": 6,
     "10": 106,
     "12": 208,
-    "14": 117,
     "16": 105,
     "17": 29,
     "18": 102,
@@ -42,8 +43,7 @@
     "23": 2
   },
   "message_types": {
-    "0": 1254,
-    "19": 442
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -180,11 +180,11 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1474813452047487148",
-      "content": "就舔吧我也在舔給你讓個位子",
-      "author": "carrot_chicken",
+      "id": "1474782391120953505",
+      "content": "",
+      "author": "xiaosama666",
       "reactions": 2,
-      "channel": ""
+      "channel": "塗鴉"
     }
   ]
 }

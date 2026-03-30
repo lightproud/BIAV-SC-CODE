@@ -1,0 +1,43 @@
+{
+  "date": "2024-12-29",
+  "messages": 5,
+  "unique_authors": 4,
+  "reactions_total": 13,
+  "attachments": 2,
+  "channel_activity": {
+    "12/29更新新版，教新手如何用剩餘的角色組出融災隊伍": 1,
+    "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
+    "約稿展示 請大家吃飯": 3
+  },
+  "hourly_activity": {
+    "14": 2,
+    "22": 1,
+    "12": 2
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1322907292487909459",
+      "content": "",
+      "author": "xuanxue007",
+      "reactions": 9,
+      "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1322941162327117967",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=596&tnum=2",
+      "author": "ekko9950",
+      "reactions": 3,
+      "channel": "12/29更新新版，教新手如何用剩餘的角色組出融災隊伍"
+    },
+    {
+      "id": "1323055301884117013",
+      "content": "第二十四期融災禁區\n\n頹到現在才開始打，體感比上次還要簡單一點，就是還不熟打SP朵爾的罩門而已，除此之外也沒有啥難的",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
+    }
+  ]
+}

@@ -1,21 +1,43 @@
 {
   "date": "2025-09-17",
-  "messages": 5,
-  "unique_authors": 2,
-  "reactions_total": 10,
-  "attachments": 6,
+  "messages": 13,
+  "unique_authors": 5,
+  "reactions_total": 23,
+  "attachments": 7,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 2,
+    "阿拉克涅，技能與命輪介紹": 5,
+    "杜勒杜勒我们喜欢你😭": 1,
     "1296113810549112874": 4,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "10": 1,
+    "23": 1,
+    "1": 1,
+    "2": 4,
+    "6": 1,
     "7": 4,
     "16": 1
   },
   "message_types": {
-    "0": 5
+    "0": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1417761650869538896",
+      "content": "挺满意的一张，应该吧。至少我用了不同风格来作画。只要不细看就很好看啦（有点废话\n\n幸好我一直没发出来（我应该没发这张吧），这次有10000，不得不发了。\n\n发量",
+      "author": "dittoqwq",
+      "reactions": 9,
+      "channel": "杜勒杜勒我们喜欢你😭"
+    },
+    {
+      "id": "1417690715818950706",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=997&tnum=1",
+      "author": "taoi002",
+      "reactions": 4,
+      "channel": "阿拉克涅，技能與命輪介紹"
+    },
     {
       "id": "1417772173770358785",
       "content": "",

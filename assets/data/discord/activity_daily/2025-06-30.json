@@ -1,23 +1,27 @@
 {
   "date": "2025-06-30",
-  "messages": 7,
+  "messages": 10,
   "unique_authors": 4,
-  "reactions_total": 19,
+  "reactions_total": 24,
   "attachments": 3,
   "channel_activity": {
+    "卡斯托爾使用手冊！": 1,
+    "the intellectual body's vacation": 1,
+    "邂逅于门扉": 1,
     "1181998821291606097": 3,
     "1305430084420898868": 3,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "12": 1,
+    "11": 2,
     "2": 1,
     "13": 2,
     "3": 3,
     "22": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 6
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -26,6 +30,13 @@
       "author": "morimensstaff01",
       "reactions": 18,
       "channel": ""
+    },
+    {
+      "id": "1389219858729926798",
+      "content": "https://www.youtube.com/watch?v=MkceLsEcgqA&t=309s",
+      "author": "kourinn0707_82175",
+      "reactions": 5,
+      "channel": "卡斯托爾使用手冊！"
     },
     {
       "id": "1389237499196346469",

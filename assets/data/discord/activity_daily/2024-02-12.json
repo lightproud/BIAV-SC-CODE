@@ -1,0 +1,30 @@
+{
+  "date": "2024-02-12",
+  "messages": 4,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "融灾已满分，作业已出": 2,
+    "困难融灾5新解法（凯刻斯主C）": 2
+  },
+  "hourly_activity": {
+    "17": 1,
+    "19": 1,
+    "10": 1,
+    "13": 1
+  },
+  "message_types": {
+    "19": 2,
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1206689419243823204",
+      "content": "噴就噴 反正進王關前要有錢",
+      "author": "devis0212",
+      "reactions": 1,
+      "channel": "融灾已满分，作业已出"
+    }
+  ]
+}

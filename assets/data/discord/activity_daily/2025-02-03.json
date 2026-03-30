@@ -1,0 +1,44 @@
+{
+  "date": "2025-02-03",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 11,
+  "attachments": 3,
+  "channel_activity": {
+    "2.0 BOSS難度排行榜": 5,
+    "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
+    "關卡地圖「融災禁區」總覽27期": 1
+  },
+  "hourly_activity": {
+    "17": 1,
+    "18": 4,
+    "22": 1,
+    "13": 1
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1335970373887332352",
+      "content": "> 大家好，這裡是難忘今宵攻略組，本期為大家帶來的是第22期「融災禁區」地圖，以及時靈擺和對應效果與怪物首領。\n\n請注意，重複選擇造物並不能獲得第2個。\n◆每兩",
+      "author": "menoctus",
+      "reactions": 5,
+      "channel": "關卡地圖「融災禁區」總覽27期"
+    },
+    {
+      "id": "1336094363645907016",
+      "content": "第二十七期融災禁區\n\n汪汪，其實感覺比以前的IV還要簡單",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
+    },
+    {
+      "id": "1336043589473538143",
+      "content": "降力對潘影響蠻大的",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "2.0 BOSS難度排行榜"
+    }
+  ]
+}

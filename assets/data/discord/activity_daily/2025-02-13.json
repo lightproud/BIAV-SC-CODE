@@ -1,17 +1,104 @@
 {
   "date": "2025-02-13",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 21,
+  "unique_authors": 9,
+  "reactions_total": 99,
+  "attachments": 8,
   "channel_activity": {
+    "死抗序列": 3,
+    "拿下索瓦爾格商用權了慶祝一下XD": 4,
+    "獵顱魔女": 5,
+    "謝謝忘卻前夜的情人節禮物": 4,
+    "【母女组】are you big": 4,
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "12": 1
+    "10": 3,
+    "16": 2,
+    "18": 3,
+    "19": 1,
+    "12": 4,
+    "13": 1,
+    "17": 3,
+    "6": 1,
+    "7": 1,
+    "8": 1,
+    "9": 1
   },
   "message_types": {
-    "0": 1
+    "0": 18,
+    "19": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1339644714239922236",
+      "content": "讓我大半夜破防的跟什麼一樣",
+      "author": "lanl4n",
+      "reactions": 27,
+      "channel": "謝謝忘卻前夜的情人節禮物"
+    },
+    {
+      "id": "1339570703417999430",
+      "content": "夫人 <:cash:1236950389413380149> \n畫完很久才想起要發遂進行一個發",
+      "author": "xu6_",
+      "reactions": 26,
+      "channel": "獵顱魔女"
+    },
+    {
+      "id": "1339631016465268807",
+      "content": "「惟有那分别善恶树上的果实，你不可吃。」\n||其實是情人節賀圖||",
+      "author": "flim_of_life_burst",
+      "reactions": 20,
+      "channel": "拿下索瓦爾格商用權了慶祝一下XD"
+    },
+    {
+      "id": "1339485235460706376",
+      "content": "尸体暖暖的很安心",
+      "author": "yingmai_",
+      "reactions": 15,
+      "channel": "【母女组】are you big"
+    },
+    {
+      "id": "1339570863632158761",
+      "content": "黑底",
+      "author": "xu6_",
+      "reactions": 5,
+      "channel": "獵顱魔女"
+    },
+    {
+      "id": "1339534595330150532",
+      "content": "不不不不，歌不是我唱的<:cry:1239910167668326480> 音频来自BV161BkYdEsh嗯嗯",
+      "author": "yingmai_",
+      "reactions": 2,
+      "channel": "【母女组】are you big"
+    },
+    {
+      "id": "1339543734387343441",
+      "content": "",
+      "author": "aaaa_00098",
+      "reactions": 1,
+      "channel": "死抗序列"
+    },
+    {
+      "id": "1339581130491297792",
+      "content": "佬",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "獵顱魔女"
+    },
+    {
+      "id": "1339586344934182965",
+      "content": "佬",
+      "author": "two_of_us",
+      "reactions": 1,
+      "channel": "獵顱魔女"
+    },
+    {
+      "id": "1339659015998799902",
+      "content": "佬",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "獵顱魔女"
+    }
+  ]
 }

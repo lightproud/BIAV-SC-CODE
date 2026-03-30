@@ -1,10 +1,14 @@
 {
   "date": "2025-12-10",
-  "messages": 17,
+  "messages": 29,
   "unique_authors": 11,
-  "reactions_total": 39,
-  "attachments": 17,
+  "reactions_total": 87,
+  "attachments": 23,
   "channel_activity": {
+    "我也要開圖樓": 1,
+    "蓋個圖樓": 4,
+    "給異格也P了一版仿官海報（）": 1,
+    "图鲁": 6,
     "1305430084420898868": 3,
     "1234769700735418368": 5,
     "1181147096234065920": 2,
@@ -13,22 +17,32 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
+    "16": 1,
+    "17": 4,
+    "18": 2,
+    "1": 1,
+    "14": 6,
     "9": 8,
     "8": 1,
-    "18": 1,
     "13": 1,
     "6": 1,
     "4": 1,
     "7": 1,
-    "17": 1,
     "19": 1,
     "23": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 5
+    "0": 10,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1448379905283850241",
+      "content": "性轉一下",
+      "author": "souri.10244",
+      "reactions": 18,
+      "channel": "蓋個圖樓"
+    },
     {
       "id": "1448378138500534344",
       "content": "Caecus on his fourth crying emote <:Pity:1400771620989308998> <:alone:1356053021",
@@ -37,11 +51,32 @@
       "channel": ""
     },
     {
+      "id": "1448361934545227797",
+      "content": "",
+      "author": "souri.10244",
+      "reactions": 12,
+      "channel": "蓋個圖樓"
+    },
+    {
       "id": "1448243975277252669",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 9,
       "channel": ""
+    },
+    {
+      "id": "1448313946544279693",
+      "content": "上班的摸鱼，太忙了不知道这周有没有双休<:dead:1356082627509092372>",
+      "author": "lunakknd",
+      "reactions": 8,
+      "channel": "图鲁"
+    },
+    {
+      "id": "1448353577943695514",
+      "content": "第一幀的線稿在摸魚了七七四十九天以後終於生出來了",
+      "author": "undecember_news",
+      "reactions": 5,
+      "channel": "我也要開圖樓"
     },
     {
       "id": "1448239818801807410",
@@ -63,6 +98,34 @@
       "author": "_venush",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1448317372103659601",
+      "content": "我已经忙的没空打游戏了，什么都没时间干。画画也没时间，工作变成全部了！",
+      "author": "lunakknd",
+      "reactions": 2,
+      "channel": "图鲁"
+    },
+    {
+      "id": "1448118885080367217",
+      "content": "期待期待",
+      "author": "kyoyapity",
+      "reactions": 1,
+      "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1448317161239216245",
+      "content": "勞斯上班辛苦了",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "图鲁"
+    },
+    {
+      "id": "1448317254877053102",
+      "content": "😭",
+      "author": "lunakknd",
+      "reactions": 1,
+      "channel": "图鲁"
     },
     {
       "id": "1448240504180310077",

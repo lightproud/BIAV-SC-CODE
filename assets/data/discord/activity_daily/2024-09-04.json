@@ -1,17 +1,31 @@
 {
   "date": "2024-09-04",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 23,
-  "attachments": 1,
+  "messages": 17,
+  "unique_authors": 8,
+  "reactions_total": 36,
+  "attachments": 7,
   "channel_activity": {
+    "需求練度 但無限角 無極夜 無借角 融災350": 2,
+    "莱克攻略(共3期)": 6,
+    "更一波宝宝们的傻大头": 2,
+    "尤烏檔": 2,
+    "OC制作：符": 2,
+    "魚": 2,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "11": 1,
+    "13": 3,
+    "10": 4,
+    "16": 1,
+    "15": 5,
+    "3": 1,
+    "8": 1,
     "6": 1
   },
   "message_types": {
-    "0": 1
+    "19": 4,
+    "0": 12
   },
   "top_reacted_messages": [
     {
@@ -20,6 +34,34 @@
       "author": "navirecorbeau",
       "reactions": 23,
       "channel": ""
+    },
+    {
+      "id": "1280732350237380628",
+      "content": "最近沒什麼新劇情實在沒動力玩遊戲(;´д｀)\n決定來寫寫同人滿足自己順便許願尤烏早日被加入主線劇情\n寫到一半手癢，先來畫個角色圖過過乾癮🙈\n\n#尤烏向 #尤守 ",
+      "author": "kkklavier",
+      "reactions": 8,
+      "channel": "尤烏檔"
+    },
+    {
+      "id": "1280832874014310462",
+      "content": "那我还出不出攻略了（摔）",
+      "author": "tranquil_monkey_73179",
+      "reactions": 3,
+      "channel": "莱克攻略(共3期)"
+    },
+    {
+      "id": "1280884032175079485",
+      "content": "因為沒抽到她<:flop:1236937860922343466>",
+      "author": "0.0._.0_0.",
+      "reactions": 1,
+      "channel": "需求練度 但無限角 無極夜 無借角 融災350"
+    },
+    {
+      "id": "1280876457748467783",
+      "content": "出！ 引頸以待了",
+      "author": "soitdzz",
+      "reactions": 1,
+      "channel": "莱克攻略(共3期)"
     }
   ]
 }

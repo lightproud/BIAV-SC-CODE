@@ -1,23 +1,31 @@
 {
   "date": "2025-08-23",
-  "messages": 6,
-  "unique_authors": 4,
+  "messages": 17,
+  "unique_authors": 11,
   "reactions_total": 30,
   "attachments": 2,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 11,
     "1181998821291606097": 2,
     "1408838316153114716": 3,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "0": 1,
+    "1": 1,
+    "6": 1,
+    "7": 1,
+    "9": 2,
+    "11": 1,
+    "16": 1,
+    "18": 3,
+    "19": 1,
     "17": 2,
     "15": 2,
-    "18": 1,
     "14": 1
   },
   "message_types": {
-    "0": 5,
-    "4": 1
+    "0": 11
   },
   "top_reacted_messages": [
     {

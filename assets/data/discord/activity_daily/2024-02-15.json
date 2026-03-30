@@ -1,0 +1,35 @@
+{
+  "date": "2024-02-15",
+  "messages": 9,
+  "unique_authors": 4,
+  "reactions_total": 9,
+  "attachments": 5,
+  "channel_activity": {
+    "融灾第二期作业已出": 9
+  },
+  "hourly_activity": {
+    "10": 5,
+    "11": 3,
+    "12": 1
+  },
+  "message_types": {
+    "0": 7,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1207639640140414996",
+      "content": "融灾5：非常难，道中压力巨大（但有造物缓冲），BOSS是阴间24\n\n阵容栗艾朵奥，核心是钥令的注射守护。\n\n本关要点有三个：\n\n1.分配好资源死抗抗24大招，奥",
+      "author": "llhwwc_89248",
+      "reactions": 6,
+      "channel": "融灾第二期作业已出"
+    },
+    {
+      "id": "1207642979678953564",
+      "content": "",
+      "author": "llhwwc_89248",
+      "reactions": 3,
+      "channel": "融灾第二期作业已出"
+    }
+  ]
+}

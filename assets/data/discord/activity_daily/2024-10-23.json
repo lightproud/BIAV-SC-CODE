@@ -1,0 +1,47 @@
+{
+  "date": "2024-10-23",
+  "messages": 11,
+  "unique_authors": 4,
+  "reactions_total": 27,
+  "attachments": 9,
+  "channel_activity": {
+    "忘卻困難版大挑戰！": 5,
+    "各位好～我是鲨": 4,
+    "嘿嘿": 1,
+    "以下開放留言講缺點": 1
+  },
+  "hourly_activity": {
+    "12": 2,
+    "15": 6,
+    "5": 1,
+    "7": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 10,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1298524241767174165",
+      "content": "新人入住，感谢群友教学，终于会上这里了",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 25,
+      "channel": "各位好～我是鲨"
+    },
+    {
+      "id": "1298666092952027268",
+      "content": "可爱<:wish:1236951537788649492>",
+      "author": "kedca",
+      "reactions": 1,
+      "channel": "嘿嘿"
+    },
+    {
+      "id": "1298666542141149237",
+      "content": "尤乌看完兴奋的开了个超限大招（）",
+      "author": "kedca",
+      "reactions": 1,
+      "channel": "以下開放留言講缺點"
+    }
+  ]
+}

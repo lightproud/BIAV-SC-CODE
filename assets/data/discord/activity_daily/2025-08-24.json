@@ -1,17 +1,75 @@
 {
   "date": "2025-08-24",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
+  "messages": 22,
+  "unique_authors": 14,
+  "reactions_total": 16,
   "attachments": 0,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 8,
+    "相位對弈—認識隊伍": 2,
+    "萊克同人轉載": 2,
+    "死亡已經迫近，消亡已經開始": 1,
+    "[于丽埃特x女守密人][伪繁衍狂热]卵壳": 8,
     "1408838316153114716": 1
   },
   "hourly_activity": {
-    "3": 1
+    "3": 3,
+    "6": 1,
+    "10": 2,
+    "14": 1,
+    "16": 4,
+    "15": 1,
+    "8": 1,
+    "9": 1,
+    "11": 1,
+    "0": 6,
+    "1": 1
   },
   "message_types": {
-    "0": 1
+    "0": 21
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1408969158619566200",
+      "content": "如题，其实是你游的七夕份怪味小零食\n\n———观前须知———\n>星辰篇神国降临if线\n>有原创世界观和对你游设定的个人理解混入\n>有虚构史学家环节\n>女守中心视角",
+      "author": "flarinsidia",
+      "reactions": 8,
+      "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
+    },
+    {
+      "id": "1409203648193630278",
+      "content": "感謝黃金熊、瑪爾、吶吶～是納西妲噢～協助提供資料與來源\n\n認識陣容\n\n本期為截止至2025年8月24號前已知的常見陣容介紹\n\n\n常見陣容（排名不分先後）\n\n麻痹",
+      "author": "void_1546.",
+      "reactions": 3,
+      "channel": "相位對弈—認識隊伍"
+    },
+    {
+      "id": "1409099471962378353",
+      "content": "https://vxtwitter.com/H135M7/status/1957363939815375027?t=i6ZXJPpRmpmr-7XdODhI2Q",
+      "author": "nazhigezihk",
+      "reactions": 2,
+      "channel": "萊克同人轉載"
+    },
+    {
+      "id": "1409104931797078068",
+      "content": "好色",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "萊克同人轉載"
+    },
+    {
+      "id": "1408983659150573688",
+      "content": "好美丽的饭……\n好赤（嚼嚼嚼）",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
+    },
+    {
+      "id": "1409011587590918318",
+      "content": "老蘇（嚼嚼嚼）這麼好赤的飯（嚼嚼嚼）怎麼現在才上（嚼嚼嚼）",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
+    }
+  ]
 }

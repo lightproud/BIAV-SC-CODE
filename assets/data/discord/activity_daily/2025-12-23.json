@@ -1,16 +1,22 @@
 {
   "date": "2025-12-23",
-  "messages": 37,
+  "messages": 43,
   "unique_authors": 9,
-  "reactions_total": 58,
-  "attachments": 38,
+  "reactions_total": 60,
+  "attachments": 40,
   "channel_activity": {
+    "重开个存档楼）": 3,
+    "银霜节日历（圣诞节贺文）": 2,
+    "給異格也P了一版仿官海報（）": 1,
     "🔸忘却前夜┊morimens-tv": 3,
     "1452951234712571996": 20,
     "1445556242381672559": 12,
     "1443848396585828363": 2
   },
   "hourly_activity": {
+    "17": 3,
+    "16": 2,
+    "6": 1,
     "0": 1,
     "2": 1,
     "9": 22,
@@ -19,7 +25,8 @@
     "20": 1
   },
   "message_types": {
-    "0": 37
+    "0": 5,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -77,6 +84,20 @@
       "author": "animeholic09",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1453083276754554880",
+      "content": "",
+      "author": "yuuuuuuu__0103",
+      "reactions": 1,
+      "channel": "重开个存档楼）"
+    },
+    {
+      "id": "1453083677323169802",
+      "content": "这个波疑似画得太大眼萌妹了，反省之……回头有空重画好了。\n以及波好难画啊＞＜",
+      "author": "yuuuuuuu__0103",
+      "reactions": 1,
+      "channel": "重开个存档楼）"
     }
   ]
 }

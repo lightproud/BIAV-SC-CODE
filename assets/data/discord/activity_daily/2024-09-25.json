@@ -1,21 +1,40 @@
 {
   "date": "2024-09-25",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 2,
-  "attachments": 0,
+  "messages": 23,
+  "unique_authors": 8,
+  "reactions_total": 6,
+  "attachments": 6,
   "channel_activity": {
+    "全游戏首次无限定SSR角色/命轮融灾375达成！": 3,
+    "超维哈姆林主c思路": 10,
+    "趕時間的深潛打法": 2,
+    "第8章「終末交響曲」關卡地圖總覽": 1,
+    "存一些之前画过的同人": 3,
+    "【自創喚醒體相關】鑰令·野性的頓悟": 1,
     "1181147096234065920": 3
   },
   "hourly_activity": {
-    "16": 1,
-    "17": 2
+    "0": 2,
+    "17": 4,
+    "3": 3,
+    "23": 6,
+    "14": 1,
+    "16": 2,
+    "5": 1,
+    "10": 4
   },
   "message_types": {
-    "0": 1,
-    "19": 2
+    "0": 17,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1288454765306708003",
+      "content": "",
+      "author": "guanzhuangzhangyuruantang",
+      "reactions": 4,
+      "channel": "存一些之前画过的同人"
+    },
     {
       "id": "1288546004370456739",
       "content": "猜你想看https://discord.com/channels/1131791637933199470/1175389912598593627",

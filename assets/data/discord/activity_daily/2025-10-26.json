@@ -1,22 +1,26 @@
 {
   "date": "2025-10-26",
-  "messages": 8,
+  "messages": 11,
   "unique_authors": 3,
-  "reactions_total": 303,
-  "attachments": 2,
+  "reactions_total": 331,
+  "attachments": 4,
   "channel_activity": {
+    "我們偉大的音樂家（哈姆林樓？）": 1,
+    "波呂克斯你是一只小鳥貓🥰": 2,
     "🐱light’s-nest": 6,
     "1305430084420898868": 2
   },
   "hourly_activity": {
-    "7": 3,
+    "7": 4,
+    "3": 1,
+    "5": 1,
     "11": 1,
     "12": 2,
     "4": 1,
     "16": 1
   },
   "message_types": {
-    "0": 8
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -32,6 +36,20 @@
       "author": "game.producer.light",
       "reactions": 136,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1431847788651483287",
+      "content": "#V2.4  同人征集#哎這個tag我真不知道咋打了\n 小鳥貓😨摸摸聖心🥰🥰小鳥貓😨摸摸聖心🥰🥰小鳥貓😨摸摸聖心🥰🥰小鳥貓😨摸摸聖心🥰🥰\nUid：1004941",
+      "author": "aeom7.",
+      "reactions": 20,
+      "channel": "波呂克斯你是一只小鳥貓🥰"
+    },
+    {
+      "id": "1431904062625808425",
+      "content": "未完🫶🏻畫手手和線條好快樂\n最近重看了哈姆林的每一幕劇情👀\n魔鬼教師真的好卡哇<:H_immerse:1426122347643146250>",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "我們偉大的音樂家（哈姆林樓？）"
     }
   ]
 }

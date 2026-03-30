@@ -1,17 +1,23 @@
 {
   "date": "2025-11-01",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 210,
-  "attachments": 1,
+  "messages": 12,
+  "unique_authors": 5,
+  "reactions_total": 259,
+  "attachments": 9,
   "channel_activity": {
+    "相位對弈環境攻略": 2,
+    "树上滴鸟儿成双对": 2,
+    "开个帖子堆一下摸鱼，大概率是两只鸟相关": 6,
     "🐱light’s-nest": 2
   },
   "hourly_activity": {
-    "12": 2
+    "9": 1,
+    "15": 1,
+    "12": 4,
+    "18": 6
   },
   "message_types": {
-    "0": 2
+    "0": 10
   },
   "top_reacted_messages": [
     {
@@ -20,6 +26,27 @@
       "author": "game.producer.light",
       "reactions": 210,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1434158496072601803",
+      "content": "【双生羽翼】\n\"双生子的命运注定一生纠缠，无法分割。\"\n\"我们终将重逢。\"\n\"从今往后，不会再有任何事能将我们分开，哪怕是死亡。\"\n    \n是约的鸟骨弟哥\nU",
+      "author": "calmdreab",
+      "reactions": 28,
+      "channel": "树上滴鸟儿成双对"
+    },
+    {
+      "id": "1434252065982513345",
+      "content": "其实我也很想画阿利斯泰尔但是问题在于我死活都画不出他所以只能约稿。\nuid：100000391",
+      "author": "yuuuuuuu__0103",
+      "reactions": 16,
+      "channel": "开个帖子堆一下摸鱼，大概率是两只鸟相关"
+    },
+    {
+      "id": "1434252459039002665",
+      "content": "",
+      "author": "yuuuuuuu__0103",
+      "reactions": 5,
+      "channel": "开个帖子堆一下摸鱼，大概率是两只鸟相关"
     }
   ]
 }

@@ -1,29 +1,82 @@
 {
   "date": "2024-10-11",
-  "messages": 5,
-  "unique_authors": 4,
-  "reactions_total": 3,
-  "attachments": 0,
+  "messages": 21,
+  "unique_authors": 11,
+  "reactions_total": 43,
+  "attachments": 3,
   "channel_activity": {
+    "经讨论后的血链希洛的造物适配顺位排序": 1,
+    "血链·希洛的抽取建议": 6,
+    "Aomi 的忘郤前夜 Morimens作品角": 1,
+    "嘿嘿": 2,
+    "莱克": 2,
+    "忘却·提灯圣经·第六卷·界域书（自编）": 1,
+    "忘却·提灯圣经·第三卷·苦难纪": 1,
+    "存稿": 1,
+    "忘却·提灯圣经·第五卷·争斗书": 1,
     "1181998821291606097": 1,
     "1193859503096070234": 4
   },
   "hourly_activity": {
-    "7": 1,
-    "3": 1,
-    "15": 3
+    "10": 1,
+    "1": 1,
+    "3": 3,
+    "14": 3,
+    "15": 4,
+    "12": 1,
+    "16": 2,
+    "6": 1,
+    "9": 1,
+    "4": 2,
+    "2": 1,
+    "7": 1
   },
   "message_types": {
-    "19": 3,
-    "0": 2
+    "0": 10,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1294333168769564736",
+      "content": "怎麼畫都不像！！！！啊啊啊啊啊啊！！！！！！好氣 不畫了",
+      "author": "muggypeasant",
+      "reactions": 30,
+      "channel": "嘿嘿"
+    },
+    {
+      "id": "1294135975710294047",
+      "content": "摸魚q像，有水印所以不能自印只能當頭貼或貼圖用",
+      "author": "kong760",
+      "reactions": 7,
+      "channel": "存稿"
+    },
     {
       "id": "1294206832021344259",
       "content": "學長現在已經變英雄碎片了QQ",
       "author": "ice_storys",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1294310481548410882",
+      "content": "假设你是80级+12巨人和3叠专武，那么以大招(初始值和4费差不多)为例。\n3叠专武到+12的提升，就是多了14.4％强效。\n也就是多了425✖️1.6✖️14",
+      "author": "tranquil_monkey_73179",
+      "reactions": 1,
+      "channel": "血链·希洛的抽取建议"
+    },
+    {
+      "id": "1294310548560678975",
+      "content": "看看",
+      "author": "tranquil_monkey_73179",
+      "reactions": 1,
+      "channel": "血链·希洛的抽取建议"
+    },
+    {
+      "id": "1294280345411256475",
+      "content": "在笔记本电脑上画奥吉尔（这很难）",
+      "author": "aomi_crinklies04",
+      "reactions": 1,
+      "channel": "Aomi 的忘郤前夜 Morimens作品角"
     },
     {
       "id": "1294327469926518845",

@@ -1,20 +1,27 @@
 {
   "date": "2023-11-21",
-  "messages": 7,
-  "unique_authors": 3,
-  "reactions_total": 131,
+  "messages": 15,
+  "unique_authors": 7,
+  "reactions_total": 134,
   "attachments": 2,
   "channel_activity": {
+    "來一起跟「尤烏哈希」演小劇場吧~": 3,
+    "「刻印」介紹": 3,
+    "喚醒體關鍵詞連線遊戲~": 2,
     "活動訊息": 3,
     "官方佈告（已停止使用）": 2,
     "discord社群建議": 2
   },
   "hourly_activity": {
+    "12": 6,
+    "2": 1,
+    "7": 1,
     "11": 5,
     "10": 2
   },
   "message_types": {
-    "0": 7
+    "0": 6,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -23,6 +30,20 @@
       "author": "alpha0909_",
       "reactions": 130,
       "channel": "活動訊息"
+    },
+    {
+      "id": "1176496374188085329",
+      "content": "暫時的~每個關卡內生效",
+      "author": "alpha0909_",
+      "reactions": 2,
+      "channel": "「刻印」介紹"
+    },
+    {
+      "id": "1176496024773218364",
+      "content": "看起來是暫時的",
+      "author": "zi_yue",
+      "reactions": 1,
+      "channel": "「刻印」介紹"
     },
     {
       "id": "1176468080835170334",

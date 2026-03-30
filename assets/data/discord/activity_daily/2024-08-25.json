@@ -1,25 +1,37 @@
 {
   "date": "2024-08-25",
-  "messages": 5,
+  "messages": 9,
   "unique_authors": 4,
-  "reactions_total": 2,
-  "attachments": 0,
+  "reactions_total": 34,
+  "attachments": 1,
   "channel_activity": {
+    "莱克": 2,
+    "小小莱克": 1,
+    "自創喚醒體相關：暗殺失敗的懲罰": 1,
     "1193859503096070234": 4,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "12": 1,
+    "16": 3,
+    "1": 1,
     "15": 1,
-    "16": 1,
     "21": 1,
     "22": 1,
     "17": 1
   },
   "message_types": {
-    "19": 3,
-    "0": 2
+    "0": 3,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1277236718571094068",
+      "content": "",
+      "author": "you_zuo",
+      "reactions": 32,
+      "channel": "莱克"
+    },
     {
       "id": "1277294164567920791",
       "content": "感觉神父可能是neta那个法师，因为有剧情说神父第一次死了以后石板也找不到了",

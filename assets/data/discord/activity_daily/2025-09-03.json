@@ -1,23 +1,51 @@
 {
   "date": "2025-09-03",
-  "messages": 7,
-  "unique_authors": 4,
-  "reactions_total": 3,
+  "messages": 18,
+  "unique_authors": 10,
+  "reactions_total": 24,
   "attachments": 1,
   "channel_activity": {
+    "邀請碼互助/Invitation code help each other": 2,
+    "2025/12/14駁二ff忘卻前夜cos團徵集": 9,
     "1296113810549112874": 4,
     "1181147096234065920": 3
   },
   "hourly_activity": {
+    "4": 1,
+    "10": 1,
+    "8": 4,
+    "9": 4,
+    "11": 1,
+    "12": 1,
+    "13": 2,
     "7": 1,
-    "8": 3,
     "5": 3
   },
   "message_types": {
-    "19": 2,
-    "0": 5
+    "0": 11
   },
   "top_reacted_messages": [
+    {
+      "id": "1412721480873021471",
+      "content": "如題所示！開了一條報名串，歡迎留言卡角色，卡角色者再麻煩留言fb/ig的cos帳讓我知道你是誰，以及會更新人員表在本串\n服裝規定：無硬性服裝規定，可自搭私服私設",
+      "author": "kong760",
+      "reactions": 19,
+      "channel": "2025/12/14駁二ff忘卻前夜cos團徵集"
+    },
+    {
+      "id": "1412741725604282490",
+      "content": "J6ASY94L1G",
+      "author": "nanni4568",
+      "reactions": 1,
+      "channel": "邀請碼互助/Invitation code help each other"
+    },
+    {
+      "id": "1412723825618976858",
+      "content": "@everyone <:Cheerup:1400771555939844149>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "2025/12/14駁二ff忘卻前夜cos團徵集"
+    },
     {
       "id": "1412704290312814713",
       "content": "我先吃",

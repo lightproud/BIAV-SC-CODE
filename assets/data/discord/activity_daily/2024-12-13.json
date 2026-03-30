@@ -1,13 +1,21 @@
 {
   "date": "2024-12-13",
-  "messages": 9,
+  "messages": 19,
   "unique_authors": 8,
-  "reactions_total": 2,
-  "attachments": 6,
+  "reactions_total": 23,
+  "attachments": 7,
   "channel_activity": {
+    "塔薇...": 3,
+    "自創界域燒壞我腦袋的cpu了": 1,
+    "《希洛》": 6,
     "🔸【超越維度的祝福】認領專區": 9
   },
   "hourly_activity": {
+    "16": 3,
+    "12": 1,
+    "10": 2,
+    "20": 2,
+    "23": 2,
     "5": 1,
     "7": 1,
     "9": 1,
@@ -16,10 +24,38 @@
     "14": 2
   },
   "message_types": {
-    "0": 7,
-    "19": 2
+    "0": 9,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1317161428288798760",
+      "content": "",
+      "author": "timee_ky",
+      "reactions": 13,
+      "channel": "塔薇..."
+    },
+    {
+      "id": "1317071266439495731",
+      "content": "https://telegra.ph/%E5%B8%8C%E6%B4%9B-12-13-2\n\n文章在裡面\n因為DC只能2000字\n但是這東西有3742字（",
+      "author": "ice_storys",
+      "reactions": 6,
+      "channel": "《希洛》"
+    },
+    {
+      "id": "1317101597972758661",
+      "content": "輪迴界域\n\n每個偶數回合開始時，在尚未打出卡片或使用狂氣爆發前，可以選擇一個喚醒體進行『輪迴』（需按左上角主動觸發）\n該喚醒體的狂氣爆發與卡片將被封印，直到下個",
+      "author": "ekko9950",
+      "reactions": 1,
+      "channel": "自創界域燒壞我腦袋的cpu了"
+    },
+    {
+      "id": "1317271614156574790",
+      "content": "🥹",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "《希洛》"
+    },
     {
       "id": "1317120407832236033",
       "content": "这是哪位宝宝呀！相信我你不比任何人差，坚持下去一定可以上岸的！！！！！",

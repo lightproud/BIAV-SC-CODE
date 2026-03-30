@@ -1,17 +1,70 @@
 {
   "date": "2024-03-10",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 25,
+  "unique_authors": 9,
+  "reactions_total": 20,
+  "attachments": 20,
   "channel_activity": {
+    "新手前期養成推主線攻略--莉茲隊(下)": 2,
+    "主祭已死，鯊王當立｜鯊凱隊介紹（更新v1.41）": 15,
+    "幻梦深浅地图全解 第4版 死扛黑印分时代": 1,
+    "阿格里帕實戰心得分享。輕鬆主宰幻夢深潛滿分": 5,
+    "💌「墨菲」體驗交流分享活動💌": 1,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "5": 1,
+    "7": 1,
+    "0": 1,
+    "4": 1,
+    "8": 2,
+    "10": 1,
+    "12": 1,
+    "13": 7,
+    "14": 2,
+    "17": 6,
+    "23": 1,
     "11": 1
   },
   "message_types": {
-    "19": 1
+    "0": 21,
+    "19": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1216430569181941920",
+      "content": "",
+      "author": "wodebaobaoxiaodangaovi",
+      "reactions": 12,
+      "channel": "阿格里帕實戰心得分享。輕鬆主宰幻夢深潛滿分"
+    },
+    {
+      "id": "1216306007660298260",
+      "content": "🛐感到欣慰",
+      "author": "ruko9999",
+      "reactions": 3,
+      "channel": "主祭已死，鯊王當立｜鯊凱隊介紹（更新v1.41）"
+    },
+    {
+      "id": "1216326458344210493",
+      "content": "晚點錄錄看，希望不用凹🥹",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "主祭已死，鯊王當立｜鯊凱隊介紹（更新v1.41）"
+    },
+    {
+      "id": "1216365056703598623",
+      "content": "來了<:NekoBday:1200338373555011615> \n用的是一般命輪，不是死抗刷分套\n剛吃完早餐（！？）有點昏沉，請不要介意那些廢動~~初見的時",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "主祭已死，鯊王當立｜鯊凱隊介紹（更新v1.41）"
+    },
+    {
+      "id": "1216239287755083866",
+      "content": "有点强。。大受震撼",
+      "author": "xianle_25809",
+      "reactions": 1,
+      "channel": "主祭已死，鯊王當立｜鯊凱隊介紹（更新v1.41）"
+    }
+  ]
 }

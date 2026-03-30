@@ -1,0 +1,36 @@
+{
+  "date": "2024-12-08",
+  "messages": 8,
+  "unique_authors": 4,
+  "reactions_total": 2,
+  "attachments": 1,
+  "channel_activity": {
+    "原初之影 第二關 恐懼之眼 攻略": 1,
+    "自創界域燒壞我腦袋的cpu了": 7
+  },
+  "hourly_activity": {
+    "19": 1,
+    "2": 1,
+    "6": 6
+  },
+  "message_types": {
+    "0": 6,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1315203138524807250",
+      "content": "這樣是不是16回合才可以把四隻角色輪迴完啊",
+      "author": "ekko9950",
+      "reactions": 1,
+      "channel": "自創界域燒壞我腦袋的cpu了"
+    },
+    {
+      "id": "1315204588210618449",
+      "content": "晚點再寫，先出門買東西",
+      "author": "ekko9950",
+      "reactions": 1,
+      "channel": "自創界域燒壞我腦袋的cpu了"
+    }
+  ]
+}

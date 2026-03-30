@@ -1,17 +1,111 @@
 {
   "date": "2024-08-12",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 69,
+  "unique_authors": 14,
+  "reactions_total": 92,
+  "attachments": 12,
   "channel_activity": {
+    "莱克主c组队思路浅析": 35,
+    "莱克（仿P5画风）": 4,
+    "小小莱克": 2,
+    "喜報！牢貓一天不讓我滿意我就畫一天鬼圖": 11,
+    "DIY唤醒体，盛放•索蕾尔": 1,
+    "成图堆放": 2,
+    "囤点自己的弱智画": 1,
+    "艾尔瓦vrm模型 ver2展示图": 1,
+    "船長！": 1,
+    "艾瑞卡艾瑞卡我們喜歡妳": 4,
+    "然後圖魯這邊也發一下": 4,
+    "♿有艾瑞卡的進來免費赤一斤♿": 2,
     "1193859503096070234": 1
   },
   "hourly_activity": {
-    "6": 1
+    "10": 24,
+    "11": 14,
+    "0": 1,
+    "4": 2,
+    "5": 1,
+    "12": 1,
+    "13": 8,
+    "14": 3,
+    "15": 2,
+    "8": 1,
+    "6": 12
   },
   "message_types": {
-    "0": 1
+    "0": 63,
+    "19": 5
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1272529494967586979",
+      "content": "",
+      "author": "jester_romut",
+      "reactions": 26,
+      "channel": "喜報！牢貓一天不讓我滿意我就畫一天鬼圖"
+    },
+    {
+      "id": "1272553426395598879",
+      "content": "",
+      "author": "jester_romut",
+      "reactions": 12,
+      "channel": "喜報！牢貓一天不讓我滿意我就畫一天鬼圖"
+    },
+    {
+      "id": "1272555724559355945",
+      "content": "不解氣，來個混合雙打喵",
+      "author": "jester_romut",
+      "reactions": 12,
+      "channel": "喜報！牢貓一天不讓我滿意我就畫一天鬼圖"
+    },
+    {
+      "id": "1272506940806922282",
+      "content": "已试验了所有界域的配队",
+      "author": "sadanshishen",
+      "reactions": 11,
+      "channel": "莱克主c组队思路浅析"
+    },
+    {
+      "id": "1272443799179628565",
+      "content": "來建設一下艾瑞卡",
+      "author": "echusvulcan",
+      "reactions": 10,
+      "channel": "艾瑞卡艾瑞卡我們喜歡妳"
+    },
+    {
+      "id": "1272444353482326100",
+      "content": "是給朋友畫的圖魯草圖！非常草不要噴我TT",
+      "author": "echusvulcan",
+      "reactions": 8,
+      "channel": "然後圖魯這邊也發一下"
+    },
+    {
+      "id": "1272562813088305235",
+      "content": "丝毫感受不到老师的创作瓶颈<:stoppage:1236938521365839872>",
+      "author": "sylvestre.01",
+      "reactions": 6,
+      "channel": "喜報！牢貓一天不讓我滿意我就畫一天鬼圖"
+    },
+    {
+      "id": "1272544856606113854",
+      "content": "我们深海有自己的晚安大小姐（顺便捏造了米粒和鲨鱼的西装（？",
+      "author": "cjsyds9784",
+      "reactions": 5,
+      "channel": "成图堆放"
+    },
+    {
+      "id": "1272562726970855495",
+      "content": "新剧情suki",
+      "author": "cjsyds9784",
+      "reactions": 1,
+      "channel": "囤点自己的弱智画"
+    },
+    {
+      "id": "1272448724723044455",
+      "content": "神蹟⋯",
+      "author": "echusvulcan",
+      "reactions": 1,
+      "channel": "船長！"
+    }
+  ]
 }

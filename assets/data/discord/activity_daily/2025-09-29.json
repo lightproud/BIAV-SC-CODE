@@ -1,0 +1,25 @@
+{
+  "date": "2025-09-29",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 22,
+  "attachments": 1,
+  "channel_activity": {
+    "血香腸大狗狗": 1
+  },
+  "hourly_activity": {
+    "11": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1422178516425769120",
+      "content": "好喜歡狗狗<:power:1400771817659957258> <:power:1400771817659957258> <:power:140077181",
+      "author": "sanyi2914",
+      "reactions": 22,
+      "channel": "血香腸大狗狗"
+    }
+  ]
+}

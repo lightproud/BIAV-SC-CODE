@@ -1,25 +1,92 @@
 {
   "date": "2024-01-09",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 12,
-  "attachments": 0,
+  "messages": 19,
+  "unique_authors": 4,
+  "reactions_total": 83,
+  "attachments": 7,
   "channel_activity": {
+    "幻梦深潜地图全解": 5,
+    "幻夢深淺地圖總覽2by井上銀溪": 2,
+    "【守密人中心同人文】論守密人的資訊安全素養（第二人稱）": 8,
+    "自娱自乐的梗图": 3,
     "1193859503096070234": 1
   },
   "hourly_activity": {
+    "1": 5,
+    "22": 1,
+    "14": 2,
+    "15": 8,
+    "2": 2,
     "13": 1
   },
   "message_types": {
-    "0": 1
+    "0": 16,
+    "6": 1,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1194084074671849573",
+      "content": "本帖内会按照日期更新当前的幻梦深潜地图，考虑到查看的问题，会用纯八位数字的文本来标记日期，比如今天就是20240109，后续楼层多了可以用<搜索>功能进行跳转。",
+      "author": "metam0n",
+      "reactions": 33,
+      "channel": "幻梦深潜地图全解"
+    },
+    {
+      "id": "1194302229683900506",
+      "content": "關於大學生守密人與朵爾教授的小故事🍟",
+      "author": "momoshiocha",
+      "reactions": 13,
+      "channel": "【守密人中心同人文】論守密人的資訊安全素養（第二人稱）"
+    },
     {
       "id": "1194272288552538183",
       "content": "不知道有沒有插樓，感謝樓主整理這些<:__:973231598327693392> 超愛看這種原型圖鑑的！",
       "author": "banano.2",
       "reactions": 12,
       "channel": ""
+    },
+    {
+      "id": "1194096915726483586",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 7,
+      "channel": "自娱自乐的梗图"
+    },
+    {
+      "id": "1194087723653414982",
+      "content": "20240109地图，漏了一个联络点，已修改",
+      "author": "metam0n",
+      "reactions": 6,
+      "channel": "幻梦深潜地图全解"
+    },
+    {
+      "id": "1194092757346684949",
+      "content": "战斗括号里的数字代表怪物的数量，加号表示可以召唤或者增多。\n不过这张图我没写完，中途忘记了。下次一定。",
+      "author": "metam0n",
+      "reactions": 5,
+      "channel": "幻梦深潜地图全解"
+    },
+    {
+      "id": "1194105334634131527",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 4,
+      "channel": "自娱自乐的梗图"
+    },
+    {
+      "id": "1194409095864791241",
+      "content": "20240110地图",
+      "author": "metam0n",
+      "reactions": 2,
+      "channel": "幻梦深潜地图全解"
+    },
+    {
+      "id": "1194103227109609553",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 1,
+      "channel": "自娱自乐的梗图"
     }
   ]
 }

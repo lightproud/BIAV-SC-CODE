@@ -1,17 +1,27 @@
 {
   "date": "2025-05-26",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 182,
-  "attachments": 0,
+  "messages": 20,
+  "unique_authors": 8,
+  "reactions_total": 208,
+  "attachments": 6,
   "channel_activity": {
+    "弥萨格校友号码本4.0": 18,
+    "✦关卡地图「融灾禁区」总览35期·星辰篇✦": 1,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "10": 1
+    "5": 1,
+    "6": 4,
+    "7": 1,
+    "9": 2,
+    "10": 5,
+    "11": 3,
+    "12": 1,
+    "18": 3
   },
   "message_types": {
-    "0": 1
+    "0": 16,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -20,6 +30,48 @@
       "author": "morimensstaff01",
       "reactions": 182,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1376438691370897550",
+      "content": "有配置的大佬可以点链接填写一下助战和id，感谢你们。为了方便排版和方便萌新复制黏贴，我直接用文档表格来做号码本了。\np1是号码本，p2p3p4里面放了一些简易版",
+      "author": "lurenjiao",
+      "reactions": 12,
+      "channel": "弥萨格校友号码本4.0"
+    },
+    {
+      "id": "1376543645217460267",
+      "content": "100005756\n80级 +4 24 +12巨刃和3启藏品 68%四月 疯狂预兆10级 灵塑10级",
+      "author": "be_queitplease",
+      "reactions": 4,
+      "channel": "弥萨格校友号码本4.0"
+    },
+    {
+      "id": "1376635610260832286",
+      "content": "",
+      "author": "shaw_51",
+      "reactions": 4,
+      "channel": "弥萨格校友号码本4.0"
+    },
+    {
+      "id": "1376513582472368249",
+      "content": "> 大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第8期（第35期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n新增造物\n\nP.S.图片较长，",
+      "author": "menoctus",
+      "reactions": 4,
+      "channel": "✦关卡地图「融灾禁区」总览35期·星辰篇✦"
+    },
+    {
+      "id": "1376439794346758154",
+      "content": "考虑可能有人不方便登录qq不好填写的，也可以把配置写在这里，然后我帮你们填进去",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "弥萨格校友号码本4.0"
+    },
+    {
+      "id": "1376519313854300272",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 1,
+      "channel": "弥萨格校友号码本4.0"
     }
   ]
 }

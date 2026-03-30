@@ -1,10 +1,11 @@
 {
   "date": "2026-02-26",
-  "messages": 531,
+  "messages": 533,
   "unique_authors": 51,
-  "reactions_total": 311,
+  "reactions_total": 313,
   "attachments": 40,
   "channel_activity": {
+    "蛋塔隊馴服玩家影像流露": 2,
     "🔸欢乐梗图": 2,
     "🐱light’s-nest": 1,
     "1475232782169932038": 3,
@@ -23,6 +24,7 @@
     "🔸綜合討論": 498
   },
   "hourly_activity": {
+    "18": 2,
     "10": 62,
     "6": 8,
     "11": 118,
@@ -47,9 +49,7 @@
     "23": 3
   },
   "message_types": {
-    "0": 429,
-    "4": 2,
-    "19": 100
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -158,6 +158,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1476647226779369492",
+      "content": "完全忘了這篇攻略，3個月前的影片真的笑死\n蛋塔沒啥好講的，簡單來講就是\n塔薇攢牌–開怒濤–誕墨開大上<:IMG_20251113_181453:14482402",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "蛋塔隊馴服玩家影像流露"
+    },
+    {
       "id": "1476458211178713241",
       "content": "We sincerely apologize for the inconvenience caused. The overwhelming popularity",
       "author": "morimensstaff01",
@@ -182,13 +189,6 @@
       "id": "1476513258331705384",
       "content": "我終於要變成相位純玩家了嗎",
       "author": "xingxiu_0209",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476542924878516235",
-      "content": "我的82级蜘蛛每次吞噬足足10点警戒呢（",
-      "author": "polkarain",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

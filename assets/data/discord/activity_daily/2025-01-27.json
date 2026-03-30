@@ -1,0 +1,53 @@
+{
+  "date": "2025-01-27",
+  "messages": 13,
+  "unique_authors": 5,
+  "reactions_total": 8,
+  "attachments": 1,
+  "channel_activity": {
+    "2.0 BOSS難度排行榜": 11,
+    "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
+    "［為喚醒體換新裝］图鲁 灯会主题新年皮 含服设和简单二分立绘思路": 1
+  },
+  "hourly_activity": {
+    "10": 5,
+    "13": 5,
+    "17": 1,
+    "20": 1,
+    "1": 1
+  },
+  "message_types": {
+    "0": 10,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1333385897504280576",
+      "content": "我要抱怨：艾瑞卡分明是Insane",
+      "author": "akkom730",
+      "reactions": 3,
+      "channel": "2.0 BOSS難度排行榜"
+    },
+    {
+      "id": "1333386391895150654",
+      "content": "給我調回去啊，害我以為是簡單的王就上難三被暴打",
+      "author": "akkom730",
+      "reactions": 2,
+      "channel": "2.0 BOSS難度排行榜"
+    },
+    {
+      "id": "1333484531298078853",
+      "content": "可以用旺達隊解，旺達還在扛",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "2.0 BOSS難度排行榜"
+    },
+    {
+      "id": "1333424233711140995",
+      "content": "結論我菜",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "2.0 BOSS難度排行榜"
+    }
+  ]
+}

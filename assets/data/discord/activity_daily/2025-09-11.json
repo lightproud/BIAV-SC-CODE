@@ -1,17 +1,27 @@
 {
   "date": "2025-09-11",
-  "messages": 1,
+  "messages": 2,
   "unique_authors": 1,
-  "reactions_total": 0,
+  "reactions_total": 2,
   "attachments": 0,
   "channel_activity": {
+    "我喜歡卡斯托爾": 1,
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "17": 1,
     "6": 1
   },
   "message_types": {
     "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1415751396288102552",
+      "content": "私👀",
+      "author": "_cwz_",
+      "reactions": 2,
+      "channel": "我喜歡卡斯托爾"
+    }
+  ]
 }

@@ -1,26 +1,57 @@
 {
   "date": "2025-02-04",
-  "messages": 5,
+  "messages": 15,
   "unique_authors": 3,
-  "reactions_total": 15,
-  "attachments": 2,
+  "reactions_total": 43,
+  "attachments": 5,
   "channel_activity": {
+    "2.0 BOSS難度排行榜": 4,
+    "新春-羊妈 [為喚醒體換新裝]": 5,
+    "泰旖丝~": 1,
     "1271491376881598494": 5
   },
   "hourly_activity": {
+    "0": 4,
+    "5": 1,
+    "6": 2,
+    "8": 2,
+    "16": 1,
     "14": 4,
     "22": 1
   },
   "message_types": {
-    "0": 5
+    "0": 8,
+    "4": 1,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1336201637651415126",
+      "content": "UID：100417990\n最近事情挺多，就没怎么细化，大家新年快乐（虽然已经过年很久了）",
+      "author": "no.tea.",
+      "reactions": 20,
+      "channel": "新春-羊妈 [為喚醒體換新裝]"
+    },
     {
       "id": "1336338543424966686",
       "content": "",
       "author": "0.0._.0_0.",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1336137792794918973",
+      "content": "潘感觉是难在第一回合,几百点伤害你不太可能降到没威胁的程度,除非你能直接秒掉一阶段,但是她这血量在各种角色boss里也是中上的水平",
+      "author": "yang015148",
+      "reactions": 4,
+      "channel": "2.0 BOSS難度排行榜"
+    },
+    {
+      "id": "1336365653241888779",
+      "content": "就画画✨",
+      "author": "xcecilex.",
+      "reactions": 4,
+      "channel": "泰旖丝~"
     },
     {
       "id": "1336340454131896380",

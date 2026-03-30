@@ -1,17 +1,59 @@
 {
   "date": "2024-07-31",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 40,
+  "unique_authors": 8,
+  "reactions_total": 6,
+  "attachments": 5,
   "channel_activity": {
+    "「奧爾拉」體驗交流分享活動": 1,
+    "相位对弈S3阵容推荐——神父点杀队": 1,
+    "容災推薦/梯度榜投票": 1,
+    "深海超限浅谈": 3,
+    "超限版本下，純血肉隊伍的理論組成猜想": 29,
+    "自創界域投稿：謬妄Absurdity": 1,
+    "圖個米粒": 2,
+    "希萊斯特": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "1": 7,
+    "11": 2,
+    "15": 2,
+    "3": 1,
+    "0": 1,
+    "6": 4,
+    "10": 3,
+    "14": 11,
+    "16": 7,
+    "18": 1,
     "12": 1
   },
   "message_types": {
-    "0": 1
+    "0": 31,
+    "46": 1,
+    "19": 7
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1268234448089124864",
+      "content": "UID: 100355999\n\n獻給深海奶媽，然後上色好難o.o",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "希萊斯特"
+    },
+    {
+      "id": "1268014191642673192",
+      "content": "感觉2+0的情况完全合适，个人很喜欢用喜，屯算力十分好用，还可以配合欢宴（依据算力回血）和电池（有剩余算力冲狂）效果十分拔群。怒可以爆发回合使用，哀可以肉眼可见",
+      "author": "timee_ky",
+      "reactions": 1,
+      "channel": "「奧爾拉」體驗交流分享活動"
+    },
+    {
+      "id": "1268269398775562291",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "自創界域投稿：謬妄Absurdity"
+    }
+  ]
 }

@@ -1,10 +1,14 @@
 {
   "date": "2026-01-22",
-  "messages": 23,
+  "messages": 31,
   "unique_authors": 15,
-  "reactions_total": 6,
-  "attachments": 4,
+  "reactions_total": 60,
+  "attachments": 10,
   "channel_activity": {
+    "人畜無害的小狗一枚呀": 2,
+    "Nymphaea": 2,
+    "【自用】卡斯托尔×波吕克斯 稿件堆积": 3,
+    "Awakener Kit Speculation: Francis": 1,
     "🔸欢乐梗图": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1448648649486635128": 5,
@@ -15,21 +19,44 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
+    "5": 1,
+    "10": 2,
+    "9": 1,
+    "0": 9,
     "7": 1,
     "1": 2,
     "4": 5,
     "8": 1,
-    "0": 5,
     "11": 4,
     "21": 2,
     "3": 1,
     "23": 2
   },
   "message_types": {
-    "0": 21,
-    "19": 2
+    "0": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1463825366945759349",
+      "content": "UID 100102822",
+      "author": "0catharsis01838",
+      "reactions": 25,
+      "channel": "Nymphaea"
+    },
+    {
+      "id": "1463766035239800914",
+      "content": "~~敢隨便亂摸就會被咬掉手~~",
+      "author": "carrot_chicken",
+      "reactions": 15,
+      "channel": "人畜無害的小狗一枚呀"
+    },
+    {
+      "id": "1463691794293456997",
+      "content": "CP前后有意义\n把约过的稿堆这\n不授权任何，请不要使用\n非原作服设皆为个人私设",
+      "author": "vistason",
+      "reactions": 13,
+      "channel": "【自用】卡斯托尔×波吕克斯 稿件堆积"
+    },
     {
       "id": "1463741514692821105",
       "content": "some very rushed coloring and shading <:Jointhefun1:1400771646293282918>",
@@ -43,6 +70,13 @@
       "author": "legendaryredz",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1463846582297427999",
+      "content": "她真是太迷人了！<:takenotes:1357186646294138890>",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": "Nymphaea"
     },
     {
       "id": "1463704818043588804",

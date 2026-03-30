@@ -1,20 +1,31 @@
 {
   "date": "2025-12-06",
-  "messages": 3,
+  "messages": 5,
   "unique_authors": 2,
-  "reactions_total": 8,
-  "attachments": 1,
+  "reactions_total": 17,
+  "attachments": 5,
   "channel_activity": {
+    "纯血神国...": 1,
+    "重开个存档楼）": 1,
     "1241345906826153984": 3
   },
   "hourly_activity": {
+    "3": 1,
+    "15": 1,
     "12": 2,
     "17": 1
   },
   "message_types": {
-    "0": 3
+    "0": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1446891464775700561",
+      "content": "我之前存档的那个楼咋找不到了（茫然）\n继续存，画风摸索中",
+      "author": "yuuuuuuu__0103",
+      "reactions": 9,
+      "channel": "重开个存档楼）"
+    },
     {
       "id": "1446842329376882799",
       "content": "有去上課感覺畫黑色塊的技巧有提升 開心",

@@ -1,17 +1,23 @@
 {
   "date": "2025-11-14",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 953,
-  "attachments": 0,
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 972,
+  "attachments": 2,
   "channel_activity": {
+    "給異格也P了一版仿官海報（）": 1,
+    "希萊斯特同人文-海之聖女（下）": 1,
+    "堆一下忘却相关的图": 1,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "20": 1,
+    "4": 1,
+    "3": 1,
     "6": 1
   },
   "message_types": {
-    "0": 1
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -20,6 +26,27 @@
       "author": "morimensstaff01",
       "reactions": 953,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1438734530700640447",
+      "content": "好想吃饭（抓）饭来，饭从四面八方来",
+      "author": "ikki142_79811",
+      "reactions": 15,
+      "channel": "堆一下忘却相关的图"
+    },
+    {
+      "id": "1438993825828831462",
+      "content": "",
+      "author": "flim_of_life_burst",
+      "reactions": 3,
+      "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1438751064722505892",
+      "content": "突然想起來這篇 我還是覺得你寫的很好",
+      "author": "lingcheng.0",
+      "reactions": 1,
+      "channel": "希萊斯特同人文-海之聖女（下）"
     }
   ]
 }

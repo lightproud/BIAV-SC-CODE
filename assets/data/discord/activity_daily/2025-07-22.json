@@ -1,17 +1,43 @@
 {
   "date": "2025-07-22",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 28,
+  "unique_authors": 4,
+  "reactions_total": 18,
+  "attachments": 25,
   "channel_activity": {
+    "深海隊攻略之—水船隊": 1,
+    "弥萨格造物学 经典问答题解析": 2,
+    "（蔚蓝档案x忘却前夜同人）Sensei瞬息弥萨格（第二幕 已完结）": 23,
+    "玩個杜勒拼豆": 1,
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "10": 1
+    "20": 1,
+    "5": 7,
+    "19": 1,
+    "8": 7,
+    "10": 6,
+    "17": 5,
+    "7": 1
   },
   "message_types": {
-    "0": 1
+    "0": 26,
+    "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1397118646140141691",
+      "content": "第一次玩拼豆，拼了2個杜勒",
+      "author": "linsinmiza",
+      "reactions": 11,
+      "channel": "玩個杜勒拼豆"
+    },
+    {
+      "id": "1397321347809677385",
+      "content": "三更半夜睡不著，突發奇想做攻略。\n\n你好，我是淸淸梓燃，本篇為深海配隊中的水船隊攻略。\n若有任何問題可在下方留言（帳號UID100872328）（助戰圖魯）\n\n",
+      "author": "void_1546.",
+      "reactions": 7,
+      "channel": "深海隊攻略之—水船隊"
+    }
+  ]
 }

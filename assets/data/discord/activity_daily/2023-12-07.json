@@ -1,17 +1,49 @@
 {
   "date": "2023-12-07",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 21,
+  "unique_authors": 5,
+  "reactions_total": 21,
+  "attachments": 14,
   "channel_activity": {
+    "深海圖魯新手心得參考": 17,
+    "萌新純血肉隊第三章滿星心得": 2,
+    "界域简介以及无光实战教程": 1,
     "1180087958930464819": 1
   },
   "hourly_activity": {
+    "11": 1,
+    "12": 12,
+    "13": 3,
+    "20": 1,
+    "14": 2,
+    "1": 1,
     "8": 1
   },
   "message_types": {
-    "0": 1
+    "0": 19,
+    "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1182283330125840414",
+      "content": "安安 我是喵嗚\n我是完全的新手\n類似遊戲沒玩過\n當初衝著畫風來玩的忘卻\n忘卻越到後面 操作手法 控牌會越重要\n目前主線打到4-3 \n分享一下新手的注意事項\n和目",
+      "author": "meow51103",
+      "reactions": 8,
+      "channel": "深海圖魯新手心得參考"
+    },
+    {
+      "id": "1182335334940430436",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=110",
+      "author": "hananichiya",
+      "reactions": 7,
+      "channel": "萌新純血肉隊第三章滿星心得"
+    },
+    {
+      "id": "1182132856122777710",
+      "content": "长期混迹主聊天区，发现大家的水平确实两极分化明显。\n因为应该还有沉默的大多数，所以也没有办法确定应该细致详尽到什么地步会比较合适。\n这里给出四色界域的视频教程四",
+      "author": "metam0n",
+      "reactions": 6,
+      "channel": "界域简介以及无光实战教程"
+    }
+  ]
 }
