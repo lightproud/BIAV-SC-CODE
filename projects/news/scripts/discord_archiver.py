@@ -40,7 +40,7 @@ DISCORD_DATA_DIR = _REPO_ROOT / 'assets' / 'data' / 'discord'
 STATE_PATH = DISCORD_DATA_DIR / 'state.json'
 
 REQUEST_DELAY = 1.2           # seconds between API calls (conservative, well under 50 req/s)
-MAX_RUNTIME_SECONDS = 5 * 60         # 5-minute quick test (通过后改回 45*60)
+MAX_RUNTIME_SECONDS = 45 * 60         # 45-minute limit (GitHub Actions safe margin)
 MAX_MESSAGES_PER_CHANNEL = 5000     # incremental cap per channel per run
 
 
