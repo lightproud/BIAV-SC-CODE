@@ -140,3 +140,15 @@
 .server-global { background: rgba(122, 173, 90, 0.15); color: #7aad5a; }
 .server-jp { background: rgba(226, 201, 126, 0.15); color: #e2c97e; }
 .server-tw { background: rgba(155, 89, 182, 0.15); color: #bb8fce; }
+
+/* Giscus comment section */
+.giscus,
+.giscus-frame {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .giscus-wrapper {
+    margin-top: 32px;
+  }
+}
