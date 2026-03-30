@@ -1,0 +1,42 @@
+{
+  "date": "2026-01-12",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 12,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1296113810549112874": 2
+  },
+  "hourly_activity": {
+    "3": 1,
+    "8": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1460193650414977205",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1460198317022515270",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1460120642904002674",
+      "content": "",
+      "author": "syruponstrawberrycake",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

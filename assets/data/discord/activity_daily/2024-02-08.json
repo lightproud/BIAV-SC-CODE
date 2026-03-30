@@ -1,0 +1,69 @@
+{
+  "date": "2024-02-08",
+  "messages": 100,
+  "unique_authors": 25,
+  "reactions_total": 33,
+  "attachments": 0,
+  "channel_activity": {
+    "春節活動": 100
+  },
+  "hourly_activity": {
+    "11": 29,
+    "12": 71
+  },
+  "message_types": {
+    "0": 81,
+    "19": 19
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1205120588947918848",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 18,
+      "channel": "春節活動"
+    },
+    {
+      "id": "1205122184154976317",
+      "content": "",
+      "author": "bashibashibash",
+      "reactions": 6,
+      "channel": "春節活動"
+    },
+    {
+      "id": "1205121236494188604",
+      "content": "",
+      "author": "momoshiocha",
+      "reactions": 4,
+      "channel": "春節活動"
+    },
+    {
+      "id": "1205120818552504381",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 2,
+      "channel": "春節活動"
+    },
+    {
+      "id": "1205120611765194752",
+      "content": "",
+      "author": "luoin2435",
+      "reactions": 1,
+      "channel": "春節活動"
+    },
+    {
+      "id": "1205120708141654056",
+      "content": "",
+      "author": "vegoutdino",
+      "reactions": 1,
+      "channel": "春節活動"
+    },
+    {
+      "id": "1205120907706761307",
+      "content": "",
+      "author": "metam0n",
+      "reactions": 1,
+      "channel": "春節活動"
+    }
+  ]
+}

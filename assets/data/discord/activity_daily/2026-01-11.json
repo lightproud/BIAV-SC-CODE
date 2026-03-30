@@ -1,0 +1,47 @@
+{
+  "date": "2026-01-11",
+  "messages": 70,
+  "unique_authors": 6,
+  "reactions_total": 10,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1458491651239710851": 2,
+    "1448648649486635128": 66,
+    "1429401798439080028": 1
+  },
+  "hourly_activity": {
+    "1": 1,
+    "15": 1,
+    "16": 1,
+    "11": 66,
+    "17": 1
+  },
+  "message_types": {
+    "0": 67,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1459937265051766784",
+      "content": "",
+      "author": "xu6_",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1459966575531790675",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1459714660654649490",
+      "content": "",
+      "author": "nechromicon",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

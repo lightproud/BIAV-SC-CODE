@@ -1,0 +1,40 @@
+{
+  "date": "2024-03-08",
+  "messages": 100,
+  "unique_authors": 18,
+  "reactions_total": 6,
+  "attachments": 0,
+  "channel_activity": {
+    "百日慶典": 100
+  },
+  "hourly_activity": {
+    "9": 100
+  },
+  "message_types": {
+    "0": 79,
+    "19": 21
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1215594909130825788",
+      "content": "",
+      "author": "enosred",
+      "reactions": 4,
+      "channel": "百日慶典"
+    },
+    {
+      "id": "1215592799299182592",
+      "content": "",
+      "author": "luoin2435",
+      "reactions": 1,
+      "channel": "百日慶典"
+    },
+    {
+      "id": "1215592951141371977",
+      "content": "",
+      "author": "luoin2435",
+      "reactions": 1,
+      "channel": "百日慶典"
+    }
+  ]
+}

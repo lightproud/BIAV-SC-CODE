@@ -1,0 +1,30 @@
+{
+  "date": "2026-02-24",
+  "messages": 4,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 1,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸忘却前夜┊morimens-tv": 1
+  },
+  "hourly_activity": {
+    "17": 1,
+    "1": 1,
+    "9": 1,
+    "22": 1
+  },
+  "message_types": {
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1475977452151902303",
+      "content": "",
+      "author": "frosthief",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

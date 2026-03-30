@@ -1,0 +1,52 @@
+{
+  "date": "2026-03-06",
+  "messages": 6,
+  "unique_authors": 5,
+  "reactions_total": 41,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 1,
+    "🔸频道建议┊server-suggestions": 3,
+    "1479573516058755336": 1,
+    "1463456408249831446": 1
+  },
+  "hourly_activity": {
+    "13": 3,
+    "17": 1,
+    "20": 1,
+    "5": 1
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1479538622335160412",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 16,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1479464927910428763",
+      "content": "",
+      "author": "thpdom",
+      "reactions": 13,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1479573516058755336",
+      "content": "",
+      "author": "antshpo",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1479463851627118786",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "🔸欢乐梗图"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "date": "2025-11-19",
+  "messages": 5,
+  "unique_authors": 2,
+  "reactions_total": 199,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1,
+    "🐱light’s-nest": 4
+  },
+  "hourly_activity": {
+    "5": 1,
+    "14": 1,
+    "15": 2,
+    "16": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440705189475647518",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 92,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440733058411008062",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 63,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440732097131053158",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 17,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440571234432847893",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 14,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1440735248391475240",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 13,
+      "channel": "🐱light’s-nest"
+    }
+  ]
+}

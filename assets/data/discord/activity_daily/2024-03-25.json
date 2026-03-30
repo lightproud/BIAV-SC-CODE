@@ -1,0 +1,25 @@
+{
+  "date": "2024-03-25",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 0,
+  "channel_activity": {
+    "1181998821291606097": 3
+  },
+  "hourly_activity": {
+    "6": 3
+  },
+  "message_types": {
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1221707395227451403",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 4,
+      "channel": ""
+    }
+  ]
+}

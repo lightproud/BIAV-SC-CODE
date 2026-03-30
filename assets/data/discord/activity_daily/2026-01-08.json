@@ -1,0 +1,25 @@
+{
+  "date": "2026-01-08",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "1458491651239710851": 1
+  },
+  "hourly_activity": {
+    "3": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1458664035259121847",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

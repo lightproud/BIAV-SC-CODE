@@ -1,0 +1,181 @@
+{
+  "date": "2026-03-13",
+  "messages": 133,
+  "unique_authors": 19,
+  "reactions_total": 103,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸课间休息闲聊": 11,
+    "🔸服务器公告┊server-announcement": 2,
+    "1462840887553032335": 2,
+    "1458491651239710851": 2,
+    "1429401798439080028": 36,
+    "1384533675789783141": 48,
+    "1296113810549112874": 5,
+    "1259494029251575898": 6,
+    "1245036608894271591": 8,
+    "1197183401388683386": 9,
+    "1403373754175721657": 4
+  },
+  "hourly_activity": {
+    "7": 7,
+    "8": 58,
+    "16": 1,
+    "10": 4,
+    "4": 3,
+    "17": 2,
+    "11": 1,
+    "5": 33,
+    "9": 14,
+    "12": 1,
+    "13": 1,
+    "14": 4,
+    "15": 4
+  },
+  "message_types": {
+    "0": 109,
+    "19": 24
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1481959493456887940",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 66,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1481959251176980666",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 12,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1481888270009892946",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1481930863443841145",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481975441928753321",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481917861495705672",
+      "content": "",
+      "author": "lingcheng.0",
+      "reactions": 1,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
+      "id": "1481872094127067307",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481930281572241428",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481960787307266130",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481892514138030233",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481926490554761297",
+      "content": "",
+      "author": "koe_ghost",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1482006291001118915",
+      "content": "",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1482022701177503948",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481886346963320934",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481886529751355494",
+      "content": "",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481932912755740812",
+      "content": "",
+      "author": "jester_romut",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481932986730680361",
+      "content": "",
+      "author": "jester_romut",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481933046184808548",
+      "content": "",
+      "author": "jester_romut",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481942602554146947",
+      "content": "",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481949965331988581",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

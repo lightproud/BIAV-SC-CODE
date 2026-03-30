@@ -1,0 +1,92 @@
+{
+  "date": "2026-03-21",
+  "messages": 52,
+  "unique_authors": 27,
+  "reactions_total": 24,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸晒卡分享": 3,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 9,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
+    "1421408684776357929": 4,
+    "1482628066084782123": 1,
+    "1428784257534529586": 18,
+    "1181998821291606097": 1,
+    "1403373754175721657": 2
+  },
+  "hourly_activity": {
+    "5": 4,
+    "6": 3,
+    "8": 1,
+    "7": 2,
+    "13": 2,
+    "14": 14,
+    "16": 5,
+    "21": 2,
+    "9": 2,
+    "10": 4,
+    "11": 1,
+    "17": 2,
+    "20": 1,
+    "0": 1,
+    "15": 8
+  },
+  "message_types": {
+    "0": 46,
+    "19": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1484920849621586151",
+      "content": "",
+      "author": "undecember_news",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1484936883787272353",
+      "content": "",
+      "author": "be_queitplease",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1484916986122342400",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1484787251920633996",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 3,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1485023939317989416",
+      "content": "",
+      "author": "._.aahh",
+      "reactions": 3,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1484843358361751632",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1484864500359495820",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

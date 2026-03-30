@@ -1,0 +1,99 @@
+{
+  "date": "2025-12-02",
+  "messages": 23,
+  "unique_authors": 11,
+  "reactions_total": 100,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 2,
+    "1271491376881598494": 1,
+    "1445393603261104170": 1,
+    "1445334381404094475": 16,
+    "1241345906826153984": 3
+  },
+  "hourly_activity": {
+    "12": 4,
+    "8": 3,
+    "9": 1,
+    "10": 1,
+    "14": 9,
+    "15": 2,
+    "7": 3
+  },
+  "message_types": {
+    "19": 1,
+    "0": 22
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1445393603261104170",
+      "content": "",
+      "author": "calmdreab",
+      "reactions": 34,
+      "channel": ""
+    },
+    {
+      "id": "1445334381404094475",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 28,
+      "channel": ""
+    },
+    {
+      "id": "1445321631026384998",
+      "content": "",
+      "author": "carrot_chicken",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1445428856642342942",
+      "content": "",
+      "author": "tsubaki9884",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1445429741179113662",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1445427476552618188",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1445394961255370836",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1445422810942935132",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1445335104808292535",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1445424610853126345",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "date": "2025-12-21",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 18,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1452158639874904217": 2
+  },
+  "hourly_activity": {
+    "12": 1,
+    "4": 2
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1452158639874904217",
+      "content": "",
+      "author": "flim_of_life_burst",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1452274393068601498",
+      "content": "",
+      "author": "j.i9star.",
+      "reactions": 5,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

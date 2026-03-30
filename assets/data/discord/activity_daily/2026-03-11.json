@@ -1,0 +1,64 @@
+{
+  "date": "2026-03-11",
+  "messages": 8,
+  "unique_authors": 8,
+  "reactions_total": 33,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1480774039533387816": 1,
+    "1480855686123622472": 1,
+    "1479979789329633340": 1,
+    "1462840887553032335": 2
+  },
+  "hourly_activity": {
+    "14": 2,
+    "16": 1,
+    "2": 1,
+    "23": 1,
+    "12": 1,
+    "4": 2
+  },
+  "message_types": {
+    "0": 7,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1481292631467233392",
+      "content": "",
+      "author": "thpdom",
+      "reactions": 14,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1481301128409776179",
+      "content": "",
+      "author": "fjantsa",
+      "reactions": 13,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1481331783583928462",
+      "content": "",
+      "author": "parovayabulochka",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1481146303886004264",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481434799590871234",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

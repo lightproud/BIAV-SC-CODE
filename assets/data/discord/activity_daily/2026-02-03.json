@@ -1,0 +1,69 @@
+{
+  "date": "2026-02-03",
+  "messages": 14,
+  "unique_authors": 12,
+  "reactions_total": 22,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 9,
+    "1467801756359589971": 2,
+    "1462840887553032335": 3
+  },
+  "hourly_activity": {
+    "1": 3,
+    "2": 3,
+    "5": 1,
+    "9": 1,
+    "11": 1,
+    "12": 1,
+    "4": 1,
+    "16": 3
+  },
+  "message_types": {
+    "0": 14
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1468054332883603468",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 13,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468226994566332457",
+      "content": "",
+      "author": "rdkanami",
+      "reactions": 3,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468071635817861131",
+      "content": "",
+      "author": "lingcheng.0",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1468094735884484630",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1468052281315295305",
+      "content": "",
+      "author": "hyksosdion",
+      "reactions": 1,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468282493471031348",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

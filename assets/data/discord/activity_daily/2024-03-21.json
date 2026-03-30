@@ -1,0 +1,42 @@
+{
+  "date": "2024-03-21",
+  "messages": 4,
+  "unique_authors": 3,
+  "reactions_total": 37,
+  "attachments": 0,
+  "channel_activity": {
+    "1181998821291606097": 4
+  },
+  "hourly_activity": {
+    "10": 2,
+    "12": 1,
+    "13": 1
+  },
+  "message_types": {
+    "0": 3,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1220319275013640213",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 35,
+      "channel": ""
+    },
+    {
+      "id": "1220353924150853632",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1220368069315137617",
+      "content": "",
+      "author": "lindongxieyang",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

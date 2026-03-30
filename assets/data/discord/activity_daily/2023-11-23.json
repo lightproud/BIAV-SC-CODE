@@ -1,0 +1,37 @@
+{
+  "date": "2023-11-23",
+  "messages": 10,
+  "unique_authors": 6,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "活動訊息": 1,
+    "官方佈告（已停止使用）": 1,
+    "discord社群建議": 8
+  },
+  "hourly_activity": {
+    "3": 2,
+    "11": 2,
+    "12": 6
+  },
+  "message_types": {
+    "0": 7,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1177213312157622314",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "discord社群建議"
+    },
+    {
+      "id": "1177226972972204072",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "discord社群建議"
+    }
+  ]
+}

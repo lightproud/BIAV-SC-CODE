@@ -1,0 +1,56 @@
+{
+  "date": "2026-03-12",
+  "messages": 23,
+  "unique_authors": 5,
+  "reactions_total": 6,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1480774039533387816": 1,
+    "1480444697997479977": 7,
+    "1448648649486635128": 2,
+    "1403373754175721657": 12
+  },
+  "hourly_activity": {
+    "21": 1,
+    "7": 1,
+    "1": 7,
+    "9": 2,
+    "18": 8,
+    "19": 4
+  },
+  "message_types": {
+    "0": 22,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1481773405794598964",
+      "content": "",
+      "author": "lonely_tree",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1481588294809817211",
+      "content": "",
+      "author": "yq0227",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1481725923920318646",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1481729383608619061",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

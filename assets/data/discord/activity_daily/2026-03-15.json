@@ -1,0 +1,188 @@
+{
+  "date": "2026-03-15",
+  "messages": 72,
+  "unique_authors": 30,
+  "reactions_total": 229,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 3,
+    "🔸课间休息闲聊": 17,
+    "🔸日本語チャンネル": 3,
+    "🐱light’s-nest": 1,
+    "1482628066084782123": 3,
+    "1479979789329633340": 1,
+    "1384533675789783141": 4,
+    "1403373754175721657": 2,
+    "1482743333041344623": 1,
+    "1482727556003139635": 2,
+    "1482702865041588315": 17,
+    "1482676949188087849": 1,
+    "1482676813304955092": 1,
+    "1482651954588029130": 12,
+    "1482614157957267566": 2,
+    "1482582420862664916": 2
+  },
+  "hourly_activity": {
+    "14": 15,
+    "15": 1,
+    "10": 4,
+    "12": 3,
+    "8": 11,
+    "22": 2,
+    "2": 1,
+    "6": 1,
+    "11": 9,
+    "13": 12,
+    "16": 2,
+    "17": 1,
+    "9": 6,
+    "5": 2,
+    "3": 2
+  },
+  "message_types": {
+    "19": 11,
+    "0": 61
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1482573621103820930",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 120,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1482702865041588315",
+      "content": "",
+      "author": "sonatadocantora",
+      "reactions": 33,
+      "channel": ""
+    },
+    {
+      "id": "1482727556003139635",
+      "content": "",
+      "author": "jollysquire",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1482651954588029130",
+      "content": "",
+      "author": "skyfallterminus",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1482628066084782123",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1482743333041344623",
+      "content": "",
+      "author": "nactra",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1482614157957267566",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1482676949188087849",
+      "content": "",
+      "author": "aaabbbababaab.",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1482677487631863818",
+      "content": "",
+      "author": "snorlax01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1482582420862664916",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1482704499821776907",
+      "content": "",
+      "author": "tw9580",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1482729685455605780",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1482736108541579365",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1482736871904907439",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1482753088145068223",
+      "content": "",
+      "author": "lingcheng.0",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1482663756407504896",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1482754805460898026",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1482703110144262257",
+      "content": "",
+      "author": "sonatadocantora",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1482730115577413818",
+      "content": "",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1482784352906772692",
+      "content": "",
+      "author": "sonatadocantora",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

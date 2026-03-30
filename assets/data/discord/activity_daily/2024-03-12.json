@@ -1,0 +1,33 @@
+{
+  "date": "2024-03-12",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "1181998821291606097": 2
+  },
+  "hourly_activity": {
+    "0": 1,
+    "15": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1216907810961494056",
+      "content": "",
+      "author": "lindongxieyang",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1217129988785180793",
+      "content": "",
+      "author": "roast_fish",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

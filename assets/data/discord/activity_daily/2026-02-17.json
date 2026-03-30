@@ -1,0 +1,106 @@
+{
+  "date": "2026-02-17",
+  "messages": 43,
+  "unique_authors": 15,
+  "reactions_total": 46,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 1,
+    "🔸频道建议┊server-suggestions": 24,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "1472620151634661499": 12,
+    "1448648649486635128": 2,
+    "1440735573206761734": 1,
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "13": 6,
+    "4": 3,
+    "11": 6,
+    "12": 13,
+    "20": 1,
+    "22": 3,
+    "23": 1,
+    "7": 1,
+    "9": 5,
+    "17": 1,
+    "18": 2,
+    "14": 1
+  },
+  "message_types": {
+    "0": 27,
+    "19": 16
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1473309037851443200",
+      "content": "",
+      "author": "r1n.ouo",
+      "reactions": 18,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1473292764094398597",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1473215796246478848",
+      "content": "",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 5,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1473378095481487576",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1473308799581556920",
+      "content": "",
+      "author": "satachan",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1473247718368477306",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1473248879918186581",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1473291515802550405",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1473177485645578262",
+      "content": "",
+      "author": "tsubaki9884",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1473331910888521830",
+      "content": "",
+      "author": "yq0227",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-03-01",
+  "messages": 9,
+  "unique_authors": 7,
+  "reactions_total": 6,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 4,
+    "1477717724615544870": 1,
+    "1477254942199910431": 1,
+    "1475232782169932038": 1
+  },
+  "hourly_activity": {
+    "10": 3,
+    "5": 1,
+    "20": 2,
+    "17": 1,
+    "6": 1,
+    "15": 1
+  },
+  "message_types": {
+    "19": 3,
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1477540228649582624",
+      "content": "",
+      "author": "closetom",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1477717724615544870",
+      "content": "",
+      "author": "vgvfvffcc",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1477616441405472798",
+      "content": "",
+      "author": "iwthahe",
+      "reactions": 1,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    }
+  ]
+}

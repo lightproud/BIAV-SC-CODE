@@ -1,0 +1,152 @@
+{
+  "date": "2026-03-09",
+  "messages": 46,
+  "unique_authors": 21,
+  "reactions_total": 63,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 4,
+    "1480486963759808602": 4,
+    "1480444697997479977": 16,
+    "1480518503852150784": 1,
+    "1480303338426994812": 1,
+    "1480053170746036265": 9,
+    "1479979789329633340": 3,
+    "1429401798439080028": 7,
+    "1296113810549112874": 1
+  },
+  "hourly_activity": {
+    "5": 7,
+    "10": 2,
+    "16": 1,
+    "8": 13,
+    "9": 1,
+    "15": 2,
+    "6": 8,
+    "7": 5,
+    "0": 1,
+    "12": 2,
+    "20": 1,
+    "23": 2,
+    "14": 1
+  },
+  "message_types": {
+    "0": 40,
+    "4": 1,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1480518503852150784",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 16,
+      "channel": ""
+    },
+    {
+      "id": "1480486963759808602",
+      "content": "",
+      "author": "timee_ky",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1480444697997479977",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 6,
+      "channel": ""
+    },
+    {
+      "id": "1480430061038338139",
+      "content": "",
+      "author": "frosthief",
+      "reactions": 5,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1480483655162794045",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1480448049913397300",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1480434364146913320",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1480519079960776705",
+      "content": "",
+      "author": "lonely_tree",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1480599445380006131",
+      "content": "",
+      "author": "closetom",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1480485498622316655",
+      "content": "",
+      "author": "yolo_mode",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1480484336418685038",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1480485744081371189",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1480433785861308446",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1480659482127106289",
+      "content": "",
+      "author": "tw9580",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1480707345511088155",
+      "content": "",
+      "author": "antshpo",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1480483811740356761",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

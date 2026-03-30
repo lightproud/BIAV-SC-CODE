@@ -1,0 +1,35 @@
+{
+  "date": "2025-12-11",
+  "messages": 7,
+  "unique_authors": 3,
+  "reactions_total": 24,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 6,
+    "1296113810549112874": 1
+  },
+  "hourly_activity": {
+    "11": 1,
+    "12": 5,
+    "16": 1
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1448714773934899392",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1448634139082231913",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 11,
+      "channel": "🔸欢乐梗图"
+    }
+  ]
+}

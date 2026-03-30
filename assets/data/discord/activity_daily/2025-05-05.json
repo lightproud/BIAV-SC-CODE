@@ -1,0 +1,34 @@
+{
+  "date": "2025-05-05",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 12,
+  "attachments": 0,
+  "channel_activity": {
+    "1271491376881598494": 2
+  },
+  "hourly_activity": {
+    "2": 1,
+    "4": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1368806335298408500",
+      "content": "",
+      "author": "randomplayer852",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1368781120711295158",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

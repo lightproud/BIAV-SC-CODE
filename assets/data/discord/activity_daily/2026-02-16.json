@@ -1,0 +1,94 @@
+{
+  "date": "2026-02-16",
+  "messages": 29,
+  "unique_authors": 15,
+  "reactions_total": 178,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 3,
+    "🔸频道建议┊server-suggestions": 2,
+    "🐱light’s-nest": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
+    "1421408684776357929": 2,
+    "1472620151634661499": 1,
+    "1462840887553032335": 4,
+    "1241345906826153984": 2,
+    "1403373754175721657": 12
+  },
+  "hourly_activity": {
+    "0": 2,
+    "1": 1,
+    "6": 1,
+    "9": 1,
+    "16": 3,
+    "13": 1,
+    "17": 13,
+    "4": 2,
+    "11": 2,
+    "5": 2,
+    "10": 1
+  },
+  "message_types": {
+    "0": 25,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1472946812703735930",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 154,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1473002625325727796",
+      "content": "",
+      "author": "passap",
+      "reactions": 10,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1472998250633105428",
+      "content": "",
+      "author": "._.aahh",
+      "reactions": 8,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1473006263142187233",
+      "content": "",
+      "author": "oatstemp",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1472815883326980229",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472911872440406037",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472986337601917183",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1473001646471516202",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "date": "2026-01-27",
+  "messages": 29,
+  "unique_authors": 3,
+  "reactions_total": 4,
+  "attachments": 0,
+  "channel_activity": {
+    "1440735573206761734": 29
+  },
+  "hourly_activity": {
+    "6": 6,
+    "7": 23
+  },
+  "message_types": {
+    "0": 26,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1465598046913040611",
+      "content": "",
+      "author": "tsubaki9884",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1465602690859008162",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465605043951763640",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

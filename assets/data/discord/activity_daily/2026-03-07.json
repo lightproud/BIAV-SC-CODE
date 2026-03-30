@@ -1,0 +1,140 @@
+{
+  "date": "2026-03-07",
+  "messages": 32,
+  "unique_authors": 13,
+  "reactions_total": 968,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 1,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "1479979789329633340": 3,
+    "1479955865758073044": 2,
+    "1479736833272451216": 9,
+    "1479573516058755336": 6,
+    "1440735573206761734": 9
+  },
+  "hourly_activity": {
+    "5": 5,
+    "7": 6,
+    "16": 1,
+    "23": 3,
+    "21": 2,
+    "8": 4,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "12": 2,
+    "6": 6
+  },
+  "message_types": {
+    "0": 23,
+    "19": 9
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1479707446330134570",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 915,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1479979789329633340",
+      "content": "",
+      "author": "tw9580",
+      "reactions": 20,
+      "channel": ""
+    },
+    {
+      "id": "1479736833272451216",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1479880262971035789",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 6,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1479759015042089031",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1479955865758073044",
+      "content": "",
+      "author": "antshpo",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1479735987033866392",
+      "content": "",
+      "author": "closetom",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1479986339599614095",
+      "content": "",
+      "author": "antshpo",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1479739374710296679",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1479746037236371648",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1479747845782376448",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1479758624451465216",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1479758728902479993",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1479681166452723733",
+      "content": "",
+      "author": "antshpo",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1479819367750303785",
+      "content": "",
+      "author": "antshpo",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

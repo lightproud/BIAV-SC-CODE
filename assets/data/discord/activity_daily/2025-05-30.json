@@ -1,0 +1,59 @@
+{
+  "date": "2025-05-30",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 885,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 2,
+    "1271491376881598494": 2,
+    "1296113810549112874": 2,
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "14": 1,
+    "15": 1,
+    "16": 4,
+    "10": 1
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1378020136270692503",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 442,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1378028262478971021",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 421,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1377961145029103739",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1378052982813360259",
+      "content": "",
+      "author": "lingcheng.0",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1378041783073771530",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 4,
+      "channel": ""
+    }
+  ]
+}

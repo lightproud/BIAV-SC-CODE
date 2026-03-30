@@ -1,0 +1,25 @@
+{
+  "date": "2025-09-30",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 9,
+  "attachments": 0,
+  "channel_activity": {
+    "1421408684776357929": 1
+  },
+  "hourly_activity": {
+    "5": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1422457762830483516",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 9,
+      "channel": ""
+    }
+  ]
+}

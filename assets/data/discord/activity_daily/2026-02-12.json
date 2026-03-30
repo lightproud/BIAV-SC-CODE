@@ -1,0 +1,65 @@
+{
+  "date": "2026-02-12",
+  "messages": 14,
+  "unique_authors": 11,
+  "reactions_total": 8,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 2,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 4,
+    "1462840887553032335": 4
+  },
+  "hourly_activity": {
+    "8": 1,
+    "14": 5,
+    "18": 1,
+    "20": 2,
+    "23": 1,
+    "2": 1,
+    "5": 1,
+    "6": 1,
+    "17": 1
+  },
+  "message_types": {
+    "0": 10,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1471376100872421572",
+      "content": "",
+      "author": "snorlax01",
+      "reactions": 4,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1471609958549164115",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1471516793846894788",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1471516802679963894",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1471519784368738411",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

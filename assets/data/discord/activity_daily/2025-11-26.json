@@ -1,0 +1,33 @@
+{
+  "date": "2025-11-26",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 4,
+  "attachments": 0,
+  "channel_activity": {
+    "1429401798439080028": 2
+  },
+  "hourly_activity": {
+    "12": 2
+  },
+  "message_types": {
+    "0": 1,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1443220151821402214",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1443221439787438122",
+      "content": "",
+      "author": "tsubaki9884",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

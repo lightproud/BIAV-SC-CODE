@@ -1,0 +1,79 @@
+{
+  "date": "2026-02-28",
+  "messages": 13,
+  "unique_authors": 7,
+  "reactions_total": 27,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 2,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1423337172655935600": 1,
+    "1477254942199910431": 4,
+    "1462840887553032335": 5
+  },
+  "hourly_activity": {
+    "6": 2,
+    "19": 1,
+    "8": 1,
+    "10": 2,
+    "14": 1,
+    "17": 1,
+    "3": 1,
+    "15": 1,
+    "16": 3
+  },
+  "message_types": {
+    "0": 13
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1477189160266891326",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 12,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1477254942199910431",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1477388826123964597",
+      "content": "",
+      "author": "nechromicon",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1477148668758065233",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1477334409257549917",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1477335359326257272",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1477336347386712187",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "date": "2026-01-04",
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 5,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1241345906826153984": 4
+  },
+  "hourly_activity": {
+    "2": 1,
+    "8": 3,
+    "14": 1
+  },
+  "message_types": {
+    "0": 4,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1457284698186453033",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1457203031480205333",
+      "content": "",
+      "author": "nechromicon",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

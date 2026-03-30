@@ -1,0 +1,75 @@
+{
+  "date": "2026-02-04",
+  "messages": 12,
+  "unique_authors": 9,
+  "reactions_total": 41,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 3,
+    "🔸游戏问题": 1,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 8
+  },
+  "hourly_activity": {
+    "8": 3,
+    "9": 2,
+    "13": 2,
+    "6": 3,
+    "4": 1,
+    "18": 1
+  },
+  "message_types": {
+    "0": 9,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1468597441195409428",
+      "content": "",
+      "author": "inkouah",
+      "reactions": 18,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468520163434434571",
+      "content": "",
+      "author": "souri.10244",
+      "reactions": 10,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1468467776875270155",
+      "content": "",
+      "author": "shun5984",
+      "reactions": 5,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468522655119577214",
+      "content": "",
+      "author": "2300011747",
+      "reactions": 3,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468668783236481238",
+      "content": "",
+      "author": "applepatapon",
+      "reactions": 3,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468543353606901872",
+      "content": "",
+      "author": "_hannah0508",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1468599907609743553",
+      "content": "",
+      "author": "_hannah0508",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    }
+  ]
+}

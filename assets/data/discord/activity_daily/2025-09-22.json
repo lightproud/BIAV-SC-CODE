@@ -1,0 +1,41 @@
+{
+  "date": "2025-09-22",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 16,
+  "attachments": 0,
+  "channel_activity": {
+    "1181998821291606097": 3
+  },
+  "hourly_activity": {
+    "1": 1,
+    "7": 1,
+    "8": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1419491603608768595",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 14,
+      "channel": ""
+    },
+    {
+      "id": "1419579963195261029",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1419597934210584737",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

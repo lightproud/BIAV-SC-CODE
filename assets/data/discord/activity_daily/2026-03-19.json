@@ -1,0 +1,107 @@
+{
+  "date": "2026-03-19",
+  "messages": 68,
+  "unique_authors": 18,
+  "reactions_total": 23,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸晒卡分享": 14,
+    "🔸课间休息闲聊": 15,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸邀请码互助┊swap-invitation-codes": 3,
+    "1384533675789783141": 14,
+    "1181998821291606097": 2,
+    "1484222166051586078": 3,
+    "1484212697015914496": 2,
+    "1483753515825365062": 13
+  },
+  "hourly_activity": {
+    "14": 7,
+    "15": 4,
+    "18": 11,
+    "8": 7,
+    "10": 4,
+    "11": 2,
+    "13": 3,
+    "17": 6,
+    "0": 2,
+    "20": 1,
+    "4": 2,
+    "6": 5,
+    "16": 5,
+    "2": 3,
+    "5": 3,
+    "7": 2,
+    "9": 1
+  },
+  "message_types": {
+    "0": 58,
+    "19": 9,
+    "4": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1484018563500216455",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1484204592848699563",
+      "content": "",
+      "author": "hon_ey0",
+      "reactions": 4,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1484259675435438271",
+      "content": "",
+      "author": "hon_ey0",
+      "reactions": 4,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1484204806108352623",
+      "content": "",
+      "author": "hon_ey0",
+      "reactions": 3,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1484108306820890704",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
+      "id": "1484144640121770136",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
+      "id": "1484019185699782866",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1484222233680412713",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1484070834334208160",
+      "content": "",
+      "author": "ka_0414",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

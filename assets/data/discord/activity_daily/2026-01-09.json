@@ -1,0 +1,25 @@
+{
+  "date": "2026-01-09",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 5,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1
+  },
+  "hourly_activity": {
+    "21": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1459305534241898558",
+      "content": "",
+      "author": "frosthief",
+      "reactions": 5,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

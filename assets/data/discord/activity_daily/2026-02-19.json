@@ -1,0 +1,90 @@
+{
+  "date": "2026-02-19",
+  "messages": 31,
+  "unique_authors": 14,
+  "reactions_total": 922,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 8,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸频道建议┊server-suggestions": 15,
+    "🐱light’s-nest": 2,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "1462840887553032335": 1,
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "8": 4,
+    "9": 4,
+    "13": 2,
+    "18": 14,
+    "19": 1,
+    "14": 2,
+    "0": 1,
+    "1": 1,
+    "23": 1,
+    "15": 1
+  },
+  "message_types": {
+    "0": 26,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1474045849934893107",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 490,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1474031067223822428",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 315,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1474030807155867678",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 61,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1474045882524504266",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 41,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1473840099979563101",
+      "content": "",
+      "author": "hezlock",
+      "reactions": 10,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1474107592627458344",
+      "content": "",
+      "author": "._.aahh",
+      "reactions": 3,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1473849510512820488",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 1,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1474061266682253536",
+      "content": "",
+      "author": "kirboexists",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

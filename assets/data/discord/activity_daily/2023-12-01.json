@@ -1,0 +1,115 @@
+{
+  "date": "2023-12-01",
+  "messages": 73,
+  "unique_authors": 24,
+  "reactions_total": 510,
+  "attachments": 0,
+  "channel_activity": {
+    "活動訊息": 3,
+    "官方佈告（已停止使用）": 3,
+    "禮包兌換碼": 4,
+    "繪圖": 3,
+    "discord社群建議": 2,
+    "校貓問答（已停止使用）": 40,
+    "攻略投遞專區（已停止使用）": 14,
+    "1180087958930464819": 4
+  },
+  "hourly_activity": {
+    "6": 6,
+    "10": 6,
+    "13": 2,
+    "14": 1,
+    "3": 14,
+    "2": 1,
+    "5": 4,
+    "4": 8,
+    "7": 1,
+    "11": 22,
+    "12": 6,
+    "16": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 56,
+    "19": 17
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1179982308770594856",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 199,
+      "channel": "禮包兌換碼"
+    },
+    {
+      "id": "1179982358565376020",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 111,
+      "channel": "禮包兌換碼"
+    },
+    {
+      "id": "1180142383099285524",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 89,
+      "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1180016897706704926",
+      "content": "",
+      "author": "k114514k",
+      "reactions": 48,
+      "channel": "繪圖"
+    },
+    {
+      "id": "1180037542494605362",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 31,
+      "channel": "活動訊息"
+    },
+    {
+      "id": "1179982277028093952",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 11,
+      "channel": "禮包兌換碼"
+    },
+    {
+      "id": "1180087958930464819",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1180092973879406602",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 4,
+      "channel": "活動訊息"
+    },
+    {
+      "id": "1179982378521874522",
+      "content": "",
+      "author": "alpha0909__",
+      "reactions": 3,
+      "channel": "discord社群建議"
+    },
+    {
+      "id": "1180036244319776818",
+      "content": "",
+      "author": "wutaa1",
+      "reactions": 3,
+      "channel": "攻略投遞專區（已停止使用）"
+    },
+    {
+      "id": "1180012313823158363",
+      "content": "",
+      "author": "_shamaii",
+      "reactions": 2,
+      "channel": "攻略投遞專區（已停止使用）"
+    }
+  ]
+}

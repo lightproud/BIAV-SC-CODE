@@ -1,0 +1,52 @@
+{
+  "date": "2023-12-04",
+  "messages": 61,
+  "unique_authors": 19,
+  "reactions_total": 421,
+  "attachments": 0,
+  "channel_activity": {
+    "官方佈告（已停止使用）": 1,
+    "遊戲問題及bug回報": 53,
+    "discord社群建議": 3,
+    "影片": 2,
+    "1180087958930464819": 2
+  },
+  "hourly_activity": {
+    "7": 7,
+    "0": 3,
+    "2": 15,
+    "3": 11,
+    "4": 2,
+    "5": 9,
+    "6": 10,
+    "8": 2,
+    "9": 2
+  },
+  "message_types": {
+    "0": 31,
+    "19": 30
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1181130841838059581",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 278,
+      "channel": "官方佈告（已停止使用）"
+    },
+    {
+      "id": "1181133297317838869",
+      "content": "",
+      "author": "fu4k6uwu",
+      "reactions": 74,
+      "channel": "遊戲問題及bug回報"
+    },
+    {
+      "id": "1181078043033337906",
+      "content": "",
+      "author": "bot_1487",
+      "reactions": 69,
+      "channel": "遊戲問題及bug回報"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-02-01",
+  "messages": 5,
+  "unique_authors": 5,
+  "reactions_total": 22,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 3,
+    "1462840887553032335": 2
+  },
+  "hourly_activity": {
+    "1": 1,
+    "8": 1,
+    "18": 1,
+    "15": 2
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1467540918167932991",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 11,
+      "channel": ""
+    },
+    {
+      "id": "1467443967762366484",
+      "content": "",
+      "author": "j.i9star.",
+      "reactions": 5,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1467337056790253771",
+      "content": "",
+      "author": "nechromicon",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1467585744359919810",
+      "content": "",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

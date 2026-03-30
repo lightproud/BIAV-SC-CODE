@@ -1,0 +1,27 @@
+{
+  "date": "2025-10-02",
+  "messages": 3,
+  "unique_authors": 3,
+  "reactions_total": 40,
+  "attachments": 0,
+  "channel_activity": {
+    "1423337172655935600": 3
+  },
+  "hourly_activity": {
+    "15": 1,
+    "16": 1,
+    "17": 1
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1423337172655935600",
+      "content": "",
+      "author": "scholar_2",
+      "reactions": 40,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "date": "2026-01-28",
+  "messages": 42,
+  "unique_authors": 13,
+  "reactions_total": 24,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 2,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸游戏问题": 18,
+    "1462840887553032335": 1,
+    "1440735573206761734": 18,
+    "1403373754175721657": 1
+  },
+  "hourly_activity": {
+    "16": 2,
+    "11": 2,
+    "13": 2,
+    "8": 17,
+    "9": 2,
+    "10": 2,
+    "15": 5,
+    "17": 1,
+    "18": 2,
+    "19": 1,
+    "21": 2,
+    "6": 3,
+    "12": 1
+  },
+  "message_types": {
+    "0": 35,
+    "19": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1466112412074901504",
+      "content": "",
+      "author": "souri.10244",
+      "reactions": 10,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1466069056980254750",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1466042833948381296",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1466028334436847692",
+      "content": "",
+      "author": "closetom",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1466026091666866281",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1465953887604441214",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465988625027039400",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465989150866931803",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465989182450040895",
+      "content": "",
+      "author": "tsubaki9884",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1465989780457263104",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

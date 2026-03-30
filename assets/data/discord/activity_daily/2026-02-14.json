@@ -1,0 +1,78 @@
+{
+  "date": "2026-02-14",
+  "messages": 17,
+  "unique_authors": 6,
+  "reactions_total": 11,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 1,
+    "1462840887553032335": 4,
+    "1440735573206761734": 7,
+    "1403373754175721657": 5
+  },
+  "hourly_activity": {
+    "0": 1,
+    "1": 1,
+    "11": 3,
+    "14": 4,
+    "15": 2,
+    "16": 1,
+    "17": 3,
+    "20": 2
+  },
+  "message_types": {
+    "0": 16,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1472032971153211606",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1472281417151938631",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1472281732953931828",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1472321603747713207",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1472195266974318623",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472195422003920956",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472195664774561905",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

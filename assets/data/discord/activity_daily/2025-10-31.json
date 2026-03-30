@@ -1,0 +1,46 @@
+{
+  "date": "2025-10-31",
+  "messages": 5,
+  "unique_authors": 4,
+  "reactions_total": 51,
+  "attachments": 0,
+  "channel_activity": {
+    "1423337172655935600": 2,
+    "1296113810549112874": 1,
+    "1181998821291606097": 2
+  },
+  "hourly_activity": {
+    "15": 1,
+    "16": 1,
+    "6": 1,
+    "2": 1,
+    "4": 1
+  },
+  "message_types": {
+    "19": 2,
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1433681563501072466",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 21,
+      "channel": ""
+    },
+    {
+      "id": "1433644152532369458",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 17,
+      "channel": ""
+    },
+    {
+      "id": "1433698759799476305",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 13,
+      "channel": ""
+    }
+  ]
+}

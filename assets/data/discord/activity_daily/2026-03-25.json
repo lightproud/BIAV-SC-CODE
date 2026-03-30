@@ -1,0 +1,206 @@
+{
+  "date": "2026-03-25",
+  "messages": 159,
+  "unique_authors": 46,
+  "reactions_total": 79,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸晒卡分享": 2,
+    "🔸课间休息闲聊": 8,
+    "🔸交友频道": 4,
+    "🔸日本語チャンネル": 37,
+    "🔸한국어-채팅방": 19,
+    "🔸deutscher-chatraum": 17,
+    "🔸chaîne-française": 4,
+    "🔸邀请码互助┊swap-invitation-codes": 8,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1486411433087602802": 5,
+    "1445334381404094475": 4,
+    "1384533675789783141": 4,
+    "1486316491904126986": 1,
+    "1486315550400577606": 1,
+    "1485809841552228363": 7,
+    "1485667855805710527": 6,
+    "1485654793983758447": 8,
+    "1485530758516052049": 1,
+    "1485456007407865926": 1,
+    "1485344233635315814": 4,
+    "1484582458115756262": 3,
+    "1484348005346840678": 2,
+    "1484222166051586078": 1,
+    "1484212697015914496": 5,
+    "1483826411364945970": 2,
+    "1483753515825365062": 3,
+    "1483101438719557662": 1
+  },
+  "hourly_activity": {
+    "4": 6,
+    "8": 22,
+    "10": 9,
+    "12": 7,
+    "13": 5,
+    "3": 4,
+    "14": 10,
+    "16": 2,
+    "17": 7,
+    "19": 13,
+    "20": 20,
+    "23": 3,
+    "2": 4,
+    "6": 2,
+    "9": 6,
+    "22": 3,
+    "15": 2,
+    "18": 6,
+    "0": 2,
+    "7": 25,
+    "5": 1
+  },
+  "message_types": {
+    "0": 129,
+    "19": 20,
+    "4": 10
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1486411433087602802",
+      "content": "",
+      "author": "shadiaodiaodeyu_89215",
+      "reactions": 30,
+      "channel": ""
+    },
+    {
+      "id": "1486220819204931685",
+      "content": "",
+      "author": "vjgnes",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1486435810378252406",
+      "content": "",
+      "author": "kyoubaachan",
+      "reactions": 6,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1486352025418469497",
+      "content": "",
+      "author": "nnf02",
+      "reactions": 5,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1486204728307089540",
+      "content": "",
+      "author": "sk2525",
+      "reactions": 4,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1486300893719560285",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1486265461132886101",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1486278006241759382",
+      "content": "",
+      "author": "thpdom",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1486278326141063270",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1486263775228072076",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1486367324855472228",
+      "content": "",
+      "author": "laguna051",
+      "reactions": 1,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1486410208996626603",
+      "content": "",
+      "author": "hon_ey0",
+      "reactions": 1,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1486219694036881449",
+      "content": "",
+      "author": "banadil",
+      "reactions": 1,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1486306299175243816",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1486309966460747797",
+      "content": "",
+      "author": "waterrr0212",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1486315928298717317",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1486272066792591400",
+      "content": "",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1486277377188167791",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1486274134521544704",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1486278080539656193",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

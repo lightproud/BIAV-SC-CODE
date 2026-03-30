@@ -1,0 +1,133 @@
+{
+  "date": "2026-02-15",
+  "messages": 40,
+  "unique_authors": 13,
+  "reactions_total": 73,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 8,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
+    "1421408684776357929": 1,
+    "1472620151634661499": 10,
+    "1462840887553032335": 1,
+    "1440735573206761734": 1,
+    "1403373754175721657": 17
+  },
+  "hourly_activity": {
+    "11": 1,
+    "13": 6,
+    "14": 11,
+    "4": 1,
+    "23": 1,
+    "6": 1,
+    "15": 4,
+    "16": 3,
+    "18": 11,
+    "5": 1
+  },
+  "message_types": {
+    "0": 36,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1472620151634661499",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 38,
+      "channel": ""
+    },
+    {
+      "id": "1472620457340567593",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1472561268308312095",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1472620612085350490",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1472667118741753866",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1472658866687967242",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1472442748907819019",
+      "content": "",
+      "author": "nechromicon",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1472635819964633385",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1472654132635504917",
+      "content": "",
+      "author": "no.tea.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472606311068864716",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472597263078658205",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472597746958733392",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472664404062372106",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1472665728644546660",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

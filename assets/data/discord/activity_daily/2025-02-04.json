@@ -1,0 +1,40 @@
+{
+  "date": "2025-02-04",
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 15,
+  "attachments": 0,
+  "channel_activity": {
+    "1271491376881598494": 5
+  },
+  "hourly_activity": {
+    "14": 4,
+    "22": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1336338543424966686",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1336340454131896380",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": ""
+    },
+    {
+      "id": "1336460900315562046",
+      "content": "",
+      "author": "rutsah_avhril",
+      "reactions": 4,
+      "channel": ""
+    }
+  ]
+}

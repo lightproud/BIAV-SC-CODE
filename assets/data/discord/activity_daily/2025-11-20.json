@@ -1,0 +1,64 @@
+{
+  "date": "2025-11-20",
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 275,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 3,
+    "🔸服务器公告┊server-announcement": 2,
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "1": 3,
+    "0": 2,
+    "8": 1
+  },
+  "message_types": {
+    "0": 6
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1440858569976057967",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 256,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1440987968134189207",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 13,
+      "channel": ""
+    },
+    {
+      "id": "1440878817282359358",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1440878510133612624",
+      "content": "",
+      "author": "tsubaki9884",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1440879040398491761",
+      "content": "",
+      "author": "tsubaki9884",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1440858438791069707",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 1,
+      "channel": "🔸服务器公告┊server-announcement"
+    }
+  ]
+}

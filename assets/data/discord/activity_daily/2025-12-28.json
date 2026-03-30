@@ -1,0 +1,75 @@
+{
+  "date": "2025-12-28",
+  "messages": 16,
+  "unique_authors": 8,
+  "reactions_total": 45,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 5,
+    "1445334381404094475": 11
+  },
+  "hourly_activity": {
+    "6": 1,
+    "9": 1,
+    "18": 1,
+    "21": 1,
+    "22": 1,
+    "13": 10,
+    "14": 1
+  },
+  "message_types": {
+    "0": 13,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1454907112466546860",
+      "content": "",
+      "author": "reya.li",
+      "reactions": 19,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454955322547376234",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 12,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454958754310389953",
+      "content": "",
+      "author": "nechromicon",
+      "reactions": 5,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454825513334870129",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1454773531526303744",
+      "content": "",
+      "author": "oatstemp",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454717576637583443",
+      "content": "",
+      "author": "closetom",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454826695100993639",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

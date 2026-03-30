@@ -1,0 +1,34 @@
+{
+  "date": "2025-11-27",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "1241345906826153984": 3
+  },
+  "hourly_activity": {
+    "15": 1,
+    "16": 2
+  },
+  "message_types": {
+    "0": 1,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1443623828143083531",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1443643254552920304",
+      "content": "",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

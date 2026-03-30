@@ -1,0 +1,33 @@
+{
+  "date": "2025-04-03",
+  "messages": 2,
+  "unique_authors": 1,
+  "reactions_total": 394,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸新生守则┊rules": 1,
+    "🔸礼包码┊gift-codes": 1
+  },
+  "hourly_activity": {
+    "10": 2
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1357297989554540634",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 228,
+      "channel": "🔸新生守则┊rules"
+    },
+    {
+      "id": "1357306897908236439",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 166,
+      "channel": "🔸礼包码┊gift-codes"
+    }
+  ]
+}

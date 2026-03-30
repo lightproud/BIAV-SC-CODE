@@ -1,0 +1,63 @@
+{
+  "date": "2025-03-27",
+  "messages": 6,
+  "unique_authors": 2,
+  "reactions_total": 370,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 5,
+    "1181998821291606097": 1
+  },
+  "hourly_activity": {
+    "9": 2,
+    "10": 4
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1354757147828682872",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 191,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1354756858820169859",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 114,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1354756718495797399",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 42,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1354756061604745226",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 17,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1354757031076298886",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1354757520249323581",
+      "content": "",
+      "author": "kirboexists",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

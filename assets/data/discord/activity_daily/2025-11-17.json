@@ -1,0 +1,25 @@
+{
+  "date": "2025-11-17",
+  "messages": 1,
+  "unique_authors": 1,
+  "reactions_total": 41,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1
+  },
+  "hourly_activity": {
+    "3": 1
+  },
+  "message_types": {
+    "0": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1439822703321419816",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 41,
+      "channel": "🔸服务器公告┊server-announcement"
+    }
+  ]
+}

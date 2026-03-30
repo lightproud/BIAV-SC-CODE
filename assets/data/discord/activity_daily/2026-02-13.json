@@ -1,0 +1,71 @@
+{
+  "date": "2026-02-13",
+  "messages": 13,
+  "unique_authors": 8,
+  "reactions_total": 16,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 1,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸游戏问题": 1,
+    "1462840887553032335": 2,
+    "1448648649486635128": 5,
+    "1403373754175721657": 2
+  },
+  "hourly_activity": {
+    "15": 4,
+    "1": 2,
+    "4": 1,
+    "16": 2,
+    "18": 3,
+    "14": 1
+  },
+  "message_types": {
+    "0": 11,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1471892607800967271",
+      "content": "",
+      "author": "yq0227",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1471878571713630250",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1471897977802195220",
+      "content": "",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1471910917703733502",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1471940319741350122",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1471934959987068948",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "date": "2026-02-20",
+  "messages": 17,
+  "unique_authors": 8,
+  "reactions_total": 34,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 2,
+    "🔸频道建议┊server-suggestions": 3,
+    "1462840887553032335": 8,
+    "1296113810549112874": 1,
+    "1181998821291606097": 3
+  },
+  "hourly_activity": {
+    "9": 2,
+    "21": 1,
+    "22": 2,
+    "2": 4,
+    "5": 3,
+    "14": 1,
+    "15": 3,
+    "12": 1
+  },
+  "message_types": {
+    "0": 15,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1474343023948075100",
+      "content": "",
+      "author": "r1n.ouo",
+      "reactions": 16,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1474389809324884125",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 7,
+      "channel": ""
+    },
+    {
+      "id": "1474421593055826011",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1474270358394634402",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1474270385988964504",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1474270419648516116",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1474411718690996345",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1474423746965274625",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1474424157268742347",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "date": "2026-02-08",
+  "messages": 17,
+  "unique_authors": 5,
+  "reactions_total": 16,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 2,
+    "🔸游戏问题": 13,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
+    "1462840887553032335": 1
+  },
+  "hourly_activity": {
+    "9": 2,
+    "11": 13,
+    "19": 1,
+    "12": 1
+  },
+  "message_types": {
+    "0": 17
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1469995705576722543",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1470132158973870100",
+      "content": "",
+      "author": "sephallia",
+      "reactions": 5,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1469995781510533253",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1470021758189834433",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1470022248281669633",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1470022776478765264",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 1,
+      "channel": "🔸游戏问题"
+    },
+    {
+      "id": "1470039692883005572",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

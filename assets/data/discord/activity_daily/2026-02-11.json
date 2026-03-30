@@ -1,0 +1,84 @@
+{
+  "date": "2026-02-11",
+  "messages": 14,
+  "unique_authors": 12,
+  "reactions_total": 1892,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 2,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 6,
+    "1462840887553032335": 1,
+    "1448648649486635128": 1,
+    "1403373754175721657": 2
+  },
+  "hourly_activity": {
+    "9": 2,
+    "15": 1,
+    "16": 1,
+    "0": 1,
+    "10": 1,
+    "14": 1,
+    "19": 1,
+    "20": 1,
+    "23": 1,
+    "2": 1,
+    "5": 2,
+    "4": 1
+  },
+  "message_types": {
+    "0": 11,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1471072048049815636",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 1018,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1471072113506127958",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 832,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1470938452244697260",
+      "content": "",
+      "author": "redo50",
+      "reactions": 22,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1471188808044249280",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 12,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1471232935796674603",
+      "content": "",
+      "author": "yeriko703",
+      "reactions": 5,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1471171523837427856",
+      "content": "",
+      "author": "closetom",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1470976639751032983",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

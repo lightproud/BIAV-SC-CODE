@@ -1,0 +1,27 @@
+{
+  "date": "2023-10-29",
+  "messages": 15,
+  "unique_authors": 4,
+  "reactions_total": 7,
+  "attachments": 0,
+  "channel_activity": {
+    "discord社群建議": 15
+  },
+  "hourly_activity": {
+    "11": 11,
+    "13": 4
+  },
+  "message_types": {
+    "0": 11,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1168185985260077137",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "discord社群建議"
+    }
+  ]
+}

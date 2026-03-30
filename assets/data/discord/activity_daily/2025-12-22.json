@@ -1,0 +1,68 @@
+{
+  "date": "2025-12-22",
+  "messages": 9,
+  "unique_authors": 8,
+  "reactions_total": 107,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸服务器公告┊server-announcement": 1,
+    "1452158639874904217": 1,
+    "1296113810549112874": 1,
+    "1241345906826153984": 6
+  },
+  "hourly_activity": {
+    "21": 1,
+    "16": 1,
+    "5": 1,
+    "11": 5,
+    "12": 1
+  },
+  "message_types": {
+    "0": 7,
+    "19": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1452778800243937411",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 91,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1452526201997361182",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 8,
+      "channel": ""
+    },
+    {
+      "id": "1452620568519245900",
+      "content": "",
+      "author": "yolo_mode",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1452623947937091624",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1452624280184553554",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1452625522914885745",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "date": "2026-01-21",
+  "messages": 14,
+  "unique_authors": 8,
+  "reactions_total": 38,
+  "attachments": 0,
+  "channel_activity": {
+    "1463456408249831446": 11,
+    "1448648649486635128": 2,
+    "1241345906826153984": 1
+  },
+  "hourly_activity": {
+    "8": 1,
+    "9": 2,
+    "10": 7,
+    "12": 1,
+    "15": 2,
+    "17": 1
+  },
+  "message_types": {
+    "0": 13,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1463456408249831446",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 18,
+      "channel": ""
+    },
+    {
+      "id": "1463483838847127627",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 10,
+      "channel": ""
+    },
+    {
+      "id": "1463593276685811804",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": ""
+    },
+    {
+      "id": "1463462435527852134",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1463470569940062386",
+      "content": "",
+      "author": "waterrr0212",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1463475465401401447",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1463476668726509642",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1463484560133066836",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1463484984319803412",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1463486302031974532",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1463503559944437943",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "date": "2024-01-17",
+  "messages": 3,
+  "unique_authors": 2,
+  "reactions_total": 32,
+  "attachments": 0,
+  "channel_activity": {
+    "1197183401388683386": 3
+  },
+  "hourly_activity": {
+    "14": 3
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1197183401388683386",
+      "content": "",
+      "author": "banano.2",
+      "reactions": 26,
+      "channel": ""
+    },
+    {
+      "id": "1197184355274068059",
+      "content": "",
+      "author": "banano.2",
+      "reactions": 6,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "date": "2026-02-27",
+  "messages": 13,
+  "unique_authors": 10,
+  "reactions_total": 569,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 5,
+    "🔸礼包码┊gift-codes": 1,
+    "🔸频道建议┊server-suggestions": 5,
+    "1475232782169932038": 2
+  },
+  "hourly_activity": {
+    "0": 1,
+    "4": 1,
+    "6": 3,
+    "2": 2,
+    "9": 2,
+    "16": 1,
+    "19": 1,
+    "23": 2
+  },
+  "message_types": {
+    "0": 8,
+    "19": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1476770009085640784",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 537,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1476803872218415114",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 15,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1476741665883684966",
+      "content": "",
+      "author": "corposant_1003",
+      "reactions": 7,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1476766795850580108",
+      "content": "",
+      "author": "you_morio",
+      "reactions": 6,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1477022502390857738",
+      "content": "",
+      "author": "cometovilla",
+      "reactions": 3,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1477085131016503336",
+      "content": "",
+      "author": "vgvfvffcc",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2025-05-08",
+  "messages": 6,
+  "unique_authors": 2,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "1271491376881598494": 6
+  },
+  "hourly_activity": {
+    "4": 1,
+    "5": 3,
+    "6": 2
+  },
+  "message_types": {
+    "0": 3,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1369912455492276294",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": ""
+    }
+  ]
+}

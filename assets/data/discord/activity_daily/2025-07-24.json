@@ -1,0 +1,39 @@
+{
+  "date": "2025-07-24",
+  "messages": 3,
+  "unique_authors": 1,
+  "reactions_total": 1048,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸礼包码┊gift-codes": 3
+  },
+  "hourly_activity": {
+    "13": 3
+  },
+  "message_types": {
+    "0": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1397929143236165833",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 670,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1397929519934996511",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 231,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1397929378230308947",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 147,
+      "channel": "🔸礼包码┊gift-codes"
+    }
+  ]
+}

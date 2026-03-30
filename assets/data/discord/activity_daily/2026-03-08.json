@@ -1,0 +1,96 @@
+{
+  "date": "2026-03-08",
+  "messages": 18,
+  "unique_authors": 13,
+  "reactions_total": 40,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 4,
+    "1480303338426994812": 5,
+    "1480053170746036265": 5,
+    "1479979789329633340": 3
+  },
+  "hourly_activity": {
+    "16": 1,
+    "20": 3,
+    "21": 2,
+    "22": 2,
+    "23": 3,
+    "4": 1,
+    "15": 2,
+    "17": 1,
+    "3": 1,
+    "5": 1,
+    "9": 1
+  },
+  "message_types": {
+    "0": 15,
+    "19": 3
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1480303338426994812",
+      "content": "",
+      "author": "xiaosama666",
+      "reactions": 23,
+      "channel": ""
+    },
+    {
+      "id": "1480315169107345709",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 8,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1480053170746036265",
+      "content": "",
+      "author": "antshpo",
+      "reactions": 3,
+      "channel": ""
+    },
+    {
+      "id": "1480239857115856916",
+      "content": "",
+      "author": "yaoshidoppa",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1480221257449603223",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1480224660363939982",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1480038366350282845",
+      "content": "",
+      "author": "oct3000",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1480082185242415261",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1480130535576834088",
+      "content": "",
+      "author": "tw9580",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

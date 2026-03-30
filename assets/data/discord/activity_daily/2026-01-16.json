@@ -1,0 +1,45 @@
+{
+  "date": "2026-01-16",
+  "messages": 6,
+  "unique_authors": 4,
+  "reactions_total": 3,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1448648649486635128": 1,
+    "1241345906826153984": 4
+  },
+  "hourly_activity": {
+    "11": 1,
+    "1": 1,
+    "7": 3,
+    "18": 1
+  },
+  "message_types": {
+    "0": 5,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1461690950081581107",
+      "content": "",
+      "author": "animeholic09",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1461535368565358664",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1461626777444155637",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

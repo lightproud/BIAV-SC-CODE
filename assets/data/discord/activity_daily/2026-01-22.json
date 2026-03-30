@@ -1,0 +1,30 @@
+{
+  "date": "2026-01-22",
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 1,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 1,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "1448648649486635128": 5
+  },
+  "hourly_activity": {
+    "7": 1,
+    "1": 1,
+    "4": 5
+  },
+  "message_types": {
+    "0": 6,
+    "19": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1463704818043588804",
+      "content": "",
+      "author": "yaoshidoppa",
+      "reactions": 1,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

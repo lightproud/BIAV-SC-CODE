@@ -1,0 +1,81 @@
+{
+  "date": "2026-03-05",
+  "messages": 31,
+  "unique_authors": 7,
+  "reactions_total": 27,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 2,
+    "1478923108122365967": 28,
+    "1462840887553032335": 1
+  },
+  "hourly_activity": {
+    "0": 1,
+    "22": 1,
+    "1": 21,
+    "2": 7,
+    "4": 1
+  },
+  "message_types": {
+    "0": 27,
+    "19": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1479243298102055132",
+      "content": "",
+      "author": "frosthief",
+      "reactions": 10,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1478910365260583003",
+      "content": "",
+      "author": "syruponstrawberrycake",
+      "reactions": 7,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1478923108122365967",
+      "content": "",
+      "author": "_itsapplee_",
+      "reactions": 5,
+      "channel": ""
+    },
+    {
+      "id": "1478936711106007243",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478938024908689440",
+      "content": "",
+      "author": "antshpo",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478938782253322372",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478939056376385698",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1478979868073918604",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

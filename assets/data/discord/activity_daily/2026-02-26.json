@@ -1,0 +1,51 @@
+{
+  "date": "2026-02-26",
+  "messages": 7,
+  "unique_authors": 5,
+  "reactions_total": 192,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸欢乐梗图": 2,
+    "🐱light’s-nest": 1,
+    "1475232782169932038": 3,
+    "1463456408249831446": 1
+  },
+  "hourly_activity": {
+    "10": 5,
+    "6": 1,
+    "11": 1
+  },
+  "message_types": {
+    "0": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1476465190152310988",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 175,
+      "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1476544681964994561",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1476522139027767337",
+      "content": "",
+      "author": "ix_eternity",
+      "reactions": 7,
+      "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1476522733830672434",
+      "content": "",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "🔸欢乐梗图"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "date": "2026-01-24",
+  "messages": 5,
+  "unique_authors": 5,
+  "reactions_total": 19,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸忘却前夜┊morimens-tv": 3,
+    "1462840887553032335": 1,
+    "1448648649486635128": 1
+  },
+  "hourly_activity": {
+    "3": 1,
+    "8": 1,
+    "23": 1,
+    "14": 1,
+    "12": 1
+  },
+  "message_types": {
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1464597936649408791",
+      "content": "",
+      "author": "yq0227",
+      "reactions": 9,
+      "channel": ""
+    },
+    {
+      "id": "1464766668075958449",
+      "content": "",
+      "author": "yaoshidoppa",
+      "reactions": 6,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1464454833934303303",
+      "content": "",
+      "author": "syruponstrawberrycake",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1464542383365554267",
+      "content": "",
+      "author": "closetom",
+      "reactions": 2,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    }
+  ]
+}

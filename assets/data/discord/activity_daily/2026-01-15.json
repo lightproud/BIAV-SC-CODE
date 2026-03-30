@@ -1,0 +1,33 @@
+{
+  "date": "2026-01-15",
+  "messages": 2,
+  "unique_authors": 2,
+  "reactions_total": 2,
+  "attachments": 0,
+  "channel_activity": {
+    "1448648649486635128": 2
+  },
+  "hourly_activity": {
+    "14": 1,
+    "19": 1
+  },
+  "message_types": {
+    "0": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1461369555342463102",
+      "content": "",
+      "author": "yq0227",
+      "reactions": 1,
+      "channel": ""
+    },
+    {
+      "id": "1461448023870537977",
+      "content": "",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}

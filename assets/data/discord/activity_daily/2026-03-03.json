@@ -1,0 +1,45 @@
+{
+  "date": "2026-03-03",
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 19,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 3,
+    "1477717724615544870": 1,
+    "1462840887553032335": 1
+  },
+  "hourly_activity": {
+    "14": 2,
+    "15": 1,
+    "23": 1,
+    "5": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 4
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1478406339263856823",
+      "content": "",
+      "author": "mightythor",
+      "reactions": 11,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1478406857667383397",
+      "content": "",
+      "author": "mightythor",
+      "reactions": 7,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1478269425366073416",
+      "content": "",
+      "author": "150_ripe",
+      "reactions": 1,
+      "channel": ""
+    }
+  ]
+}
