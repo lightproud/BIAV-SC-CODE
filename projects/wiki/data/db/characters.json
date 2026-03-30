@@ -117,7 +117,19 @@
         "主C"
       ],
       "description": "混沌界域T0输出型唤醒体，御四家之一。拥有「终章形态」变身机制：使用终章后全技能改变效果，牺牲治疗换取自伤增强毒伤，化身玻璃大炮。与SR版朵尔为不同角色。",
-      "portrait_url": "assets/images/portraits/doll.png"
+      "portrait_url": "assets/images/portraits/doll.png",
+      "skills": {
+        "special_mechanic": {
+          "name": "终章(Finale)",
+          "description": "探索中通过特定条件叠加终章层数(最多10层)。达到10层后获得[幻梦终焉]状态，角色形态转换为「终章形态」：放弃治疗能力，转化为以自伤增强毒伤的高输出模式。"
+        },
+        "exalt": {
+          "name": "狂气爆发",
+          "effect": "普通形态：回复生命并施加毒素。终章形态：失去生命，造成大量毒伤。每叠加一层终章，终章形态的伤害递增。"
+        },
+        "role_in_team": "混沌界域输出型唤醒体，T0评级。终章机制需要时间累积，前期辅助治疗，后期转换为高输出模式。",
+        "_data_source": "角色描述推导，具体数值待从公开wiki补充"
+      }
     },
     {
       "id": "ramona-timeworn",
@@ -169,7 +181,11 @@
         "辅助"
       ],
       "description": "混沌界域T1辅助型唤醒体，御四家成员之一。提供队伍增益和敌方减益，是混沌队稳定的后排辅助。与SR版奥吉尔为不同角色，SR版提供嘲讽/点名能力。",
-      "portrait_url": "assets/images/portraits/ogier.png"
+      "portrait_url": "assets/images/portraits/ogier.png",
+      "skills": {
+        "role_in_team": "混沌界域T1辅助型唤醒体，御四家成员。提供队伍增益和敌方减益效果，是混沌队稳定的后排辅助。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "lotan",
@@ -186,7 +202,11 @@
         "御四家"
       ],
       "description": "混沌界域T1防御型唤醒体，御四家成员之一。银钥共鸣体系防御核心，死亡抵抗机制出色。与SR版萝坦为不同角色，SSR版侧重团队护盾和反伤。",
-      "portrait_url": "assets/images/portraits/lotan.png"
+      "portrait_url": "assets/images/portraits/lotan.png",
+      "skills": {
+        "role_in_team": "混沌界域T1防御型唤醒体，御四家成员。银钥共鸣体系防御核心，死亡抵抗机制出色。侧重团队护盾和反伤。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "ramona",
@@ -252,7 +272,11 @@
         "副输出"
       ],
       "description": "混沌界域T2副输出型唤醒体。擅长配合混沌主C进行副输出，在混沌队阵容中作为灵活的副C填充位使用。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "role_in_team": "混沌界域T2副输出型唤醒体。配合混沌主C进行副输出。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "nodera",
@@ -270,7 +294,11 @@
         "输出"
       ],
       "description": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。角色设计灵感来自鹦鹉螺，战斗风格以循环打击为主。常驻池可获取的混沌输出角色。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "role_in_team": "混沌界域T2输出型唤醒体，社区别称「鹦鹉螺」。以循环打击为核心战斗风格。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "galen",
@@ -310,7 +338,11 @@
         "辅助"
       ],
       "description": "混沌界域T3辅助型唤醒体。提供队伍增益效果，在混沌辅助位中属于入门级选择。常驻池可获取。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "role_in_team": "混沌界域T3辅助型唤醒体。提供基础增益效果。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "lily",
@@ -327,7 +359,12 @@
         "v1.1新角色"
       ],
       "description": "混沌界域防御型唤醒体，v1.1下半版本通过「花不染尘」活动推出。主线重要角色，与守密人关系密切。防御能力出色，为混沌队提供稳定护盾。",
-      "portrait_url": "assets/images/portraits/lily.png"
+      "portrait_url": "assets/images/portraits/lily.png",
+      "skills": {
+        "signature_wheel": "跨越疼痛(Grace Through Pain)",
+        "role_in_team": "混沌界域防御型唤醒体。防御能力出色，为混沌队提供稳定护盾。v1.1版本推出，后加入常驻池。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "danmo",
@@ -344,7 +381,11 @@
         "限定"
       ],
       "description": "混沌界域限定输出角色，满配后伤害极高，常作为助战首选。银钥爆发流代表角色，一轮爆发可秒杀大多数Boss。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "role_in_team": "混沌界域限定输出角色，满配后伤害极高，以银钥爆发为核心。一轮爆发可秒杀大多数Boss，常作为助战首选。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "miryam",
@@ -366,7 +407,23 @@
         "深海辅助"
       ],
       "description": "深海界域限定辅助型唤醒体，强力触手辅助。社区昵称「米粒」。v1.4版本获得增强：技能「至高生命献祭」调整为穿透伤害，灵之觉醒与天赋增强。深海队必备辅助。",
-      "portrait_url": "assets/images/portraits/miryam.png"
+      "portrait_url": "assets/images/portraits/miryam.png",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "至高生命献祭",
+            "name_en": "Supreme Life Sacrifice",
+            "effect": "v1.4调整为穿透伤害。深海必备辅助技能，可为深海队提供触腕相关增益。",
+            "note": "v1.4版本升级调整：技能改为穿刺伤害类型"
+          }
+        ],
+        "rouse": {
+          "name": "灵知觉醒",
+          "effect": "v1.4增强：灵之觉醒与天赋同步提升。"
+        },
+        "role_in_team": "深海界域限定辅助，强力触手辅助。深海队必备辅助位，v1.4版本大幅增强。",
+        "_data_source": "角色描述和v1.4更新记录，具体数值待从公开wiki补充"
+      }
     },
     {
       "id": "tulu",
@@ -460,7 +517,11 @@
         "图鲁变体"
       ],
       "description": "图鲁的神王变体形态，深海界域限定角色。社区简称「神王」。作为图鲁的进化形态，战斗能力进一步提升，深海队的顶级主C选择。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "role_in_team": "图鲁的神王变体形态，深海界域顶级限定主C。深海队的顶级主C选择，触腕体系进化版。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "celeste",
@@ -522,7 +583,26 @@
         "副输出"
       ],
       "description": "深海界域T1副输出型唤醒体。深海触手体系中的副C位置，配合图鲁等主C进行触腕联动输出。常驻池可获取。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "获得防御力x10%护盾。打出佩戴者指令卡后，获得防御力x6%护盾；每条触腕额外获得防御力x1.5%护盾，每回合最多触发1次(来自命轮效果描述推导)。"
+          }
+        ],
+        "signature_wheel_effect": "珊瑚女之死(Death of the Coral Maiden)：打出佩戴者卡牌后，获得防御力6%护盾，每条触腕额外+防御力1.5%，每回合1次。",
+        "role_in_team": "深海界域T1副输出型唤醒体。深海触手体系中的副C，配合图鲁进行触腕联动输出。",
+        "_data_source": "命轮效果描述推导，具体卡牌效果待从公开wiki补充"
+      }
     },
     {
       "id": "aurita",
@@ -540,7 +620,11 @@
         "免费SSR"
       ],
       "description": "深海界域输出型唤醒体，深潜三杰成员之一。通关混沌界域裂隙I免费获取。爆发+循环卡牌打法，被称为「深海万能锤」，新手友好的免费SSR。",
-      "portrait_url": "assets/images/portraits/aurita.png"
+      "portrait_url": "assets/images/portraits/aurita.png",
+      "skills": {
+        "role_in_team": "深海界域免费SSR(通关混沌裂隙I获取)，「深潜三杰」成员。爆发+循环卡牌打法，「深海万能锤」，新手友好。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "caecus",
@@ -556,7 +640,11 @@
         "副输出"
       ],
       "description": "深海界域T2副输出型唤醒体。深海体系中的灵活副C，可配合反击队体系使用。常驻池可获取。",
-      "portrait_url": "assets/images/portraits/caecus.png"
+      "portrait_url": "assets/images/portraits/caecus.png",
+      "skills": {
+        "role_in_team": "深海界域T2副输出型唤醒体。反击队体系核心成员，可配合反击机制使用。凯刻斯反击队：凯刻斯+萨尔瓦多+旺达+哈姆林。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "faros",
@@ -572,7 +660,11 @@
         "辅助"
       ],
       "description": "深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。常驻池可获取。",
-      "portrait_url": "assets/images/portraits/faros.png"
+      "portrait_url": "assets/images/portraits/faros.png",
+      "skills": {
+        "role_in_team": "深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。高防御角色，适合搭配心之壁垒命轮。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "uvhash",
@@ -688,7 +780,11 @@
         "限定"
       ],
       "description": "血肉界域T0限定输出角色，被誉为「红女王」。穿着红色玫瑰裙的沙龙主人，血肉主C之一。附带回血技能，攻守兼备的限定角色。",
-      "portrait_url": "assets/images/portraits/sorel.png"
+      "portrait_url": "assets/images/portraits/sorel.png",
+      "skills": {
+        "role_in_team": "血肉界域T0限定输出角色，「红女王」。穿着红色玫瑰裙的沙龙主人，附带回血技能，攻守兼备。签名命轮：以蔷薇之名(By Rose Alone)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "thais",
@@ -707,7 +803,11 @@
         "限定"
       ],
       "description": "血肉界域SSR限定辅助角色，社区昵称「羊妈」。提供队伍增益和回复，是血肉队的顶级辅助选择之一。限定池获取。",
-      "portrait_url": "assets/images/portraits/thais.png"
+      "portrait_url": "assets/images/portraits/thais.png",
+      "skills": {
+        "role_in_team": "血肉界域SSR限定辅助角色，社区昵称「羊妈」。为血肉队提供增益和恢复，顶级血肉辅助。签名命轮：慈悲的哺育(Merciful Nurturing)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "alice",
@@ -723,7 +823,11 @@
         "副输出"
       ],
       "description": "血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。常驻池可获取。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "role_in_team": "血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "faint",
@@ -739,7 +843,12 @@
         "副输出"
       ],
       "description": "血肉界域T2副输出型唤醒体。血肉体系中的灵活副C位置，可配合尤乌哈希等主C使用。常驻池可获取。",
-      "portrait_url": "assets/images/portraits/faint.png"
+      "portrait_url": "assets/images/portraits/faint.png",
+      "skills": {
+        "signature_wheel_effect": "吞噬摇篮曲(Devouring Lullaby)：触发死亡抵抗后，全队治疗和护盾增强2回合。",
+        "role_in_team": "血肉界域T2副输出型唤醒体。血肉体系灵活副C，签名命轮触发死亡抵抗后为队伍提供治疗和护盾增益。",
+        "_data_source": "命轮效果描述，具体技能数据待从公开wiki补充"
+      }
     },
     {
       "id": "agrippa",
@@ -755,7 +864,11 @@
         "防御"
       ],
       "description": "血肉界域T2防御型唤醒体。为血肉队提供前排防护，适合血肉队的防御需求。常驻池可获取。",
-      "portrait_url": "assets/images/portraits/agrippa.png"
+      "portrait_url": "assets/images/portraits/agrippa.png",
+      "skills": {
+        "role_in_team": "血肉界域T2防御型唤醒体。为血肉队提供前排防护。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "shilo",
@@ -771,7 +884,11 @@
         "输出"
       ],
       "description": "血肉界域T3输出型唤醒体。血肉队初期主C选择，后续被血链·希洛等限定角色超越。常驻池可获取，有变体「血链·希洛」。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "role_in_team": "血肉界域T3输出型唤醒体。血肉队初期主C选择，有限定变体「血链·希洛」。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "erica",
@@ -910,7 +1027,11 @@
         "辅助"
       ],
       "description": "超维界域T1辅助型唤醒体。为超维队提供稳定的辅助增益，是超维队的常驻辅助选择。常驻池可获取。",
-      "portrait_url": "assets/images/portraits/winkle.png"
+      "portrait_url": "assets/images/portraits/winkle.png",
+      "skills": {
+        "role_in_team": "超维界域T1辅助型唤醒体。为超维队提供稳定辅助增益。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "casiah",
@@ -926,7 +1047,18 @@
         "副输出"
       ],
       "description": "超维界域T1副输出型唤醒体。在超维队中担任副C角色，配合利兹或达芙黛尔进行输出。常驻池可获取。",
-      "portrait_url": "assets/images/portraits/casiah.png"
+      "portrait_url": "assets/images/portraits/casiah.png",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "隔空取物",
+            "name_en": "Telekinesis",
+            "effect": "从超维空间拉出目标卡牌打出一次，配合达芙黛尔「断颈一击」实现二次打击。"
+          }
+        ],
+        "role_in_team": "超维界域T1副输出型唤醒体。与达芙黛尔组合：用「隔空取物」从超维空间再打一次「断颈一击」，实现现版本越级最强输出组合。",
+        "_data_source": "从达芙黛尔技能描述推导，具体数值待从公开wiki补充"
+      }
     },
     {
       "id": "jenkins",
@@ -942,7 +1074,11 @@
         "副输出"
       ],
       "description": "超维界域T1副输出型唤醒体。超维体系中的灵活副C，可为主C提供额外的输出补充。常驻池可获取。",
-      "portrait_url": "assets/images/portraits/jenkins.png"
+      "portrait_url": "assets/images/portraits/jenkins.png",
+      "skills": {
+        "role_in_team": "超维界域T1副输出型唤醒体。超维体系灵活副C，为主C提供额外输出补充。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "tincture",
@@ -958,7 +1094,11 @@
         "辅助"
       ],
       "description": "超维界域T2辅助型唤醒体。提供基础辅助效果，在超维队中作为过渡辅助位使用。常驻池可获取。",
-      "portrait_url": null
+      "portrait_url": null,
+      "skills": {
+        "role_in_team": "超维界域T2辅助型唤醒体。提供基础辅助效果，过渡辅助位选择。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "horla",
@@ -975,7 +1115,11 @@
         "超维辅助"
       ],
       "description": "超维界域辅助型唤醒体，v1.5版本推出。超维开荒队核心辅助，大幅提升超维队的整体强度。推荐配队：利兹+奥尔拉+艾瑞卡+环娜。",
-      "portrait_url": "assets/images/portraits/horla.png"
+      "portrait_url": "assets/images/portraits/horla.png",
+      "skills": {
+        "role_in_team": "超维界域v1.5新增辅助型唤醒体。超维开荒队核心辅助，大幅提升超维队整体强度。推荐配队：莉兹+奥尔拉+艾瑞卡+环娜。签名命轮：诗笺的句尾(The Last Verse)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "karen",
@@ -992,7 +1136,11 @@
         "混沌辅助"
       ],
       "description": "混沌界域辅助型唤醒体，v1.5推出。官方定位辅助但输出能力突出，专属命轮极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。",
-      "portrait_url": "assets/images/portraits/karen.png"
+      "portrait_url": "assets/images/portraits/karen.png",
+      "skills": {
+        "role_in_team": "混沌界域v1.5新增，官方定位辅助但输出能力突出，专属命轮「好运时间」极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "hameln",
@@ -1008,7 +1156,11 @@
         "混沌辅助"
       ],
       "description": "混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。自选池中与塔薇、莉莉、莱克、24同列于混沌界域。",
-      "portrait_url": "assets/images/portraits/hameln.png"
+      "portrait_url": "assets/images/portraits/hameln.png",
+      "skills": {
+        "role_in_team": "混沌界域辅助型唤醒体。爆发伤害和银钥充能能力强力，常用于凯刻斯反击队。签名命轮：永恒安魂曲(Eternal Requiem)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "murphy",
@@ -1025,7 +1177,15 @@
         "深海必抽"
       ],
       "description": "深海界域防御型唤醒体。技能组强势补强深海界域弱点，拥有专属「献祭」被动机制。深海玩家必抽角色，大幅提升深海队生存能力。",
-      "portrait_url": "assets/images/portraits/murphy.png"
+      "portrait_url": "assets/images/portraits/murphy.png",
+      "skills": {
+        "special_mechanic": {
+          "name": "献祭(Sacrifice)",
+          "description": "墨菲的专属被动机制。通过献祭自身生命为队伍提供防护，技能组强势补强深海界域弱点。"
+        },
+        "role_in_team": "深海界域防御型唤醒体，深海玩家必抽。拥有专属「献祭」被动机制，大幅提升深海队生存能力。签名命轮：隐秘的诞生(Shrouded Birth)。",
+        "_data_source": "角色描述推导，具体技能数据待从公开wiki补充"
+      }
     },
     {
       "id": "salvador",
@@ -1044,7 +1204,11 @@
         "盾反队"
       ],
       "description": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，专属命轮「神言石板」。以盾反打法为特色，靠反伤和护盾进行输出。",
-      "portrait_url": "assets/images/portraits/salvador.png"
+      "portrait_url": "assets/images/portraits/salvador.png",
+      "skills": {
+        "role_in_team": "血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，靠反伤和护盾进行输出。签名命轮：神言石板(Tablet of Scriptures)。推荐配队：萨尔瓦多+旺达+凯刻斯+哈姆林。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "tawil",
@@ -1116,7 +1280,11 @@
         "盾反队"
       ],
       "description": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，生存能力拉满。与萨尔瓦多组成盾反队双核。",
-      "portrait_url": "assets/images/portraits/wanda.png"
+      "portrait_url": "assets/images/portraits/wanda.png",
+      "skills": {
+        "role_in_team": "超维界域防御型唤醒体，社区昵称「SM」。盾反队成员，靠反伤和砸盾输出，与萨尔瓦多组成盾反队双核。签名命轮：女王的戒律(Queen's Edict)。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "aigis",
@@ -1134,7 +1302,40 @@
         "免费SSR"
       ],
       "description": "血肉界域辅助型唤醒体，深潜三杰成员之一。通关第一章免费获取。提供群体易伤、AOE输出和石化效果，攻击面板突出。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。",
-      "portrait_url": "assets/images/portraits/aigis.png"
+      "portrait_url": "assets/images/portraits/aigis.png",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "打击",
+            "name_en": "Strike",
+            "cost": 1,
+            "effect": "标准打击卡"
+          },
+          {
+            "name": "防御",
+            "name_en": "Defense",
+            "cost": 1,
+            "effect": "标准防御卡"
+          }
+        ],
+        "key_abilities": [
+          {
+            "name": "群体易伤",
+            "effect": "对所有敌人施加易伤状态，提高队伍输出"
+          },
+          {
+            "name": "AOE输出",
+            "effect": "对所有敌人造成范围伤害"
+          },
+          {
+            "name": "石化",
+            "effect": "对敌人施加石化状态"
+          }
+        ],
+        "signature_wheel": "冬夜忆(Poetic Bygone Days)：防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。",
+        "role_in_team": "血肉界域辅助型唤醒体，深潜三杰成员，通关第一章免费获取。攻击面板突出，提供群体易伤、AOE输出和石化效果。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。",
+        "_data_source": "角色描述和命轮效果推导，具体数值待从公开wiki补充"
+      }
     },
     {
       "id": "doll-inferno",
@@ -1206,7 +1407,11 @@
       ],
       "description": "超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。星辰篇时期推出的限定辅助。",
       "portrait_url": "assets/images/portraits/clementine.png",
-      "first_banner_version": "2.1"
+      "first_banner_version": "2.1",
+      "skills": {
+        "role_in_team": "超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "corposant",
@@ -1224,7 +1429,11 @@
       ],
       "description": "深海界域限定防御型角色，v2.1~2.2推出。为深海队提供新的防御选择，拥有独特的护盾和减伤机制。名字含义为「圣艾尔摩之火」。",
       "portrait_url": "assets/images/portraits/corposant.png",
-      "first_banner_version": "2.1"
+      "first_banner_version": "2.1",
+      "skills": {
+        "role_in_team": "深海界域限定防御型角色，v2.1推出。名字含义为「圣艾尔摩之火」。拥有独特护盾和减伤机制。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "kathigu-ra",
@@ -1242,7 +1451,11 @@
       ],
       "description": "混沌界域限定输出角色，v2.2推出。星辰篇新增的混沌主C选择，拥有独特的战斗机制。名字来源于克苏鲁神话体系。",
       "portrait_url": "assets/images/portraits/kathigu-ra.png",
-      "first_banner_version": "2.2"
+      "first_banner_version": "2.2",
+      "skills": {
+        "role_in_team": "混沌界域限定输出角色，v2.2推出。星辰篇混沌主C选择，名字来源于克苏鲁神话体系。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "murphy-fauxborn",
@@ -1262,7 +1475,11 @@
       ],
       "description": "深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为v2.4新增合唱型角色，与深海主C产生联携效果。",
       "portrait_url": "assets/images/portraits/murphy-fauxborn.png",
-      "first_banner_version": "2.4"
+      "first_banner_version": "2.4",
+      "skills": {
+        "role_in_team": "深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为合唱型角色与深海主C产生联携效果。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "mouchette",
@@ -1282,7 +1499,11 @@
       ],
       "description": "混沌界域限定输出角色，星辰篇v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语，含义为「小苍蝇」。",
       "portrait_url": "assets/images/portraits/mouchette.png",
-      "first_banner_version": "2.3"
+      "first_banner_version": "2.3",
+      "skills": {
+        "role_in_team": "混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "xu",
@@ -1302,7 +1523,11 @@
       ],
       "description": "血肉界域限定合唱型角色，v2.4二周年版本推出，卡池「夜幕狂喜」。作为合唱型角色与血肉主C产生特殊联携效果，二周年重磅新角色。",
       "portrait_url": "assets/images/portraits/xu.png",
-      "first_banner_version": "2.4"
+      "first_banner_version": "2.4",
+      "skills": {
+        "role_in_team": "血肉界域限定合唱型角色，v2.4二周年版本推出，卡池「夜幕狂喜」。作为合唱型角色与血肉主C产生特殊联携效果。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "castor",
@@ -1320,7 +1545,12 @@
       ],
       "description": "超维界域限定防御角色，v2.2.2推出。名字来源于双子座α星。与波吕克斯（Pollux，双子座β星）构成双子角色组合。",
       "portrait_url": "assets/images/portraits/castor.png",
-      "first_banner_version": "2.2.2"
+      "first_banner_version": "2.2.2",
+      "skills": {
+        "lore_connection": "与波吕克斯(Pollux)构成双子角色组合，名字来源于双子座α星。",
+        "role_in_team": "超维界域限定防御角色，v2.2.2推出。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "pollux",
@@ -1338,7 +1568,12 @@
       ],
       "description": "超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。名字来源于双子座β星，与卡斯托尔构成双子角色组合。超维队新一代主C选择。",
       "portrait_url": "assets/images/portraits/pollux.png",
-      "first_banner_version": "2.3.4"
+      "first_banner_version": "2.3.4",
+      "skills": {
+        "lore_connection": "与卡斯托尔(Castor)构成双子角色组合，名字来源于双子座β星。",
+        "role_in_team": "超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。超维队新一代主C选择。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "helot",
@@ -1359,7 +1594,18 @@
       ],
       "description": "血肉界域限定输出角色，希洛的血链变体形态。v1.6推出。当前版本「血希」队伍核心，破链一击爆发伤害极高，是血肉队的顶级主C选择。",
       "portrait_url": "assets/images/portraits/helot.png",
-      "first_banner_version": "1.6"
+      "first_banner_version": "1.6",
+      "skills": {
+        "command_cards": [
+          {
+            "name": "破链一击",
+            "name_en": "Chain Break Strike",
+            "effect": "血链·希洛的核心爆发技能，造成极高单次爆发伤害。配合环行·拉蒙娜的大招召回打击卡，实现「血希」队核心爆发。"
+          }
+        ],
+        "role_in_team": "血肉界域限定输出角色，希洛的血链变体形态。「血希」队伍核心，破链一击爆发伤害极高。推荐配队：血链·希洛+环行·拉蒙娜+辅助。",
+        "_data_source": "从技能描述和队伍攻略推导，具体数值待从公开wiki补充"
+      }
     },
     {
       "id": "leigh",
@@ -1377,7 +1623,12 @@
         "嗜血患者"
       ],
       "description": "血肉界域常驻合唱型唤醒体，卡文迪什家族的「嗜血患者」。作为合唱型角色与血肉主C产生联携效果，常驻池中即可获取的合唱位选择。",
-      "portrait_url": "assets/images/portraits/leigh.png"
+      "portrait_url": "assets/images/portraits/leigh.png",
+      "skills": {
+        "character_trait": "嗜血患者(Blood Thirst Patient)，卡文迪什家族成员",
+        "role_in_team": "血肉界域常驻合唱型唤醒体。作为合唱型角色与血肉主C产生联携效果，是常驻池中可获取的合唱位选择。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "doresain",
@@ -1395,7 +1646,11 @@
         "血肉输出"
       ],
       "description": "血肉界域限定输出型唤醒体，星辰篇推出。名字来源于克苏鲁神话中的食尸鬼之王。血肉队新一代输出选择，拥有独特的吞噬增伤机制。",
-      "portrait_url": "assets/images/portraits/doresain.png"
+      "portrait_url": "assets/images/portraits/doresain.png",
+      "skills": {
+        "role_in_team": "血肉界域限定输出型唤醒体，星辰篇推出。名字来源于克苏鲁神话中的食尸鬼之王。拥有独特吞噬增伤机制，血肉队新一代输出选择。",
+        "_data_source": "待从公开wiki补充具体技能数据"
+      }
     },
     {
       "id": "pickman",
@@ -1413,7 +1668,12 @@
         "深海输出"
       ],
       "description": "深海界域限定输出型唤醒体，星辰篇推出。专属命轮「写实主义悖谬」。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。",
-      "portrait_url": "assets/images/portraits/pickman.png"
+      "portrait_url": "assets/images/portraits/pickman.png",
+      "skills": {
+        "signature_wheel": "写实主义悖谬(Paradoxical Realism)：狂气回充7.2；狂气和力量获取+6~12%；超限后提升最终伤害/护盾/治疗。",
+        "role_in_team": "深海界域限定输出型唤醒体，v2.3.2推出。名字来源于洛夫克拉夫特短篇《皮克曼的模特》。深海队新一代输出选择。",
+        "_data_source": "命轮数据已知，具体卡牌技能数据待从公开wiki补充"
+      }
     },
     {
       "id": "arachne",
@@ -1431,7 +1691,11 @@
         "超维"
       ],
       "description": "超维界域限定唤醒体，v2.5版本预告角色。名字来源于希腊神话中的织女阿拉克涅。超维队的未来主力角色之一。",
-      "portrait_url": "assets/images/portraits/arachne.png"
+      "portrait_url": "assets/images/portraits/arachne.png",
+      "skills": {
+        "role_in_team": "超维界域限定唤醒体，v2.5版本预告角色。名字来源于希腊神话中的织女阿拉克涅。超维队未来主力角色之一。",
+        "_data_source": "v2.5预告角色，具体技能数据待从公开wiki补充"
+      }
     }
   ],
   "sr_characters": [

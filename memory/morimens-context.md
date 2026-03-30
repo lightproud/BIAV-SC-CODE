@@ -114,7 +114,7 @@ Murphy: Fauxborn、Xu
 | Twitter/X | 搜索 Morimens | 中 |
 | NGA | 待配置版块 ID | 待确认 |
 | TapTap | 待配置 APP ID | 待确认 |
-| Discord | 待确认 | 待确认 |
+| Discord | 已配置 Bot，Guild ID 已接入 | 高（全量归档中） |
 
 ---
 

@@ -19,9 +19,9 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 20
           cache: npm
@@ -76,7 +76,13 @@ jobs:
           done
           echo ""
           echo "=== Checking wiki locale directories ==="
-          for locale in zh en; do
+          # zh is the root locale via VitePress rewrites (zh/:rest* → :rest*)
+          if [ -f "dist/wiki/index.html" ]; then
+            echo "OK: dist/wiki/ (zh root) exists ($(find dist/wiki -maxdepth 1 -name '*.html' | wc -l) html files at root)"
+          else
+            echo "WARNING: dist/wiki/index.html missing"
+          fi
+          for locale in en ja; do
             if [ -d "dist/wiki/$locale" ]; then
               echo "OK: dist/wiki/$locale/ exists ($(find dist/wiki/$locale -type f | wc -l) files)"
             else
@@ -98,7 +104,8 @@ jobs:
           echo "Waiting 30s for GitHub Pages to propagate..."
           sleep 30
           BASE="https://lightproud.github.io/brain-in-a-vat"
-          for url in "$BASE/" "$BASE/wiki/zh/" "$BASE/news/"; do
+          # zh content is at /wiki/ root (via VitePress rewrites), not /wiki/zh/
+          for url in "$BASE/" "$BASE/wiki/" "$BASE/wiki/en/" "$BASE/news/"; do
             status=$(curl -s -o /dev/null -w "%{http_code}" "$url" || echo "000")
             if [ "$status" = "200" ]; then
               echo "OK: $url → $status"

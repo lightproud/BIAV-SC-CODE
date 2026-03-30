@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-03-29
+> 最后更新：2026-03-30 by Code-wiki
 
 ## 子项目状态
 
@@ -28,8 +28,8 @@
   - [ ] Twitter/X — 需 TWITTER_BEARER_TOKEN
   - [ ] NGA — 需 NGA_FORUM_ID
   - [ ] TapTap — 需 TAPTAP_APP_ID
-  - [ ] Discord — 未实现
-  - [ ] YouTube — 未实现
+  - [x] Discord — 已实现（Bot 已配置，全量归档 + 聚合器双通道）
+  - [x] YouTube — 代码就绪，需配置 API 密钥
 
 ### 报告系统（新增，来自 new-session-7Plu3）
 - **已完成**：29 平台采集器、AI 分析模块、报告生成、多渠道通知（Email/Discord/Telegram/Bark/Webhook）
@@ -42,7 +42,7 @@
 - **已完成**：
   - 18 个 JSON 数据文件（`projects/wiki/data/db/`）
   - 63 个唤醒体数据（59 SSR + 4 SR）
-  - 15 个角色有完整技能数据（指令卡/觉醒/启灵/天赋）
+  - 59/59 角色有技能数据（11 个有完整结构化卡牌数据，48 个有描述性数据待结构化）
   - 47/59 角色立绘已下载到 `assets/images/portraits/`
   - 命轮与密契装备体系
   - 四大界域体系（Chaos、Aequor、Caro、Ultra）
@@ -77,23 +77,29 @@
   - VitePress 站点框架、三语言结构（ZH/EN/JA）
   - 189 个角色详情页（63 角色 × 3 语言，自动生成）
   - 约 250+ 页 Markdown 内容
-  - 10 个 Vue 交互组件：
-    - CharacterGrid（角色筛选/排序）
+  - 11 个 Vue 交互组件（全部已注册到 theme）：
+    - CharacterGrid（角色筛选/排序）— 已嵌入唤醒体索引页
     - CharacterCompare（角色对比）
-    - WheelList（命轮筛选列表）
+    - WheelList（命轮筛选列表）— 已嵌入命轮索引页
     - GachaSimulator（抽卡模拟器）
     - TeamBuilder（队伍搭配器）
     - DamageCalculator（伤害计算器）
     - FarmingPlanner（素材规划器）
     - StaminaTracker（体力追踪器）
-    - UpdateTimeline（版本时间线）
-    - ChangelogFeed（最近变更）
+    - UpdateTimeline（版本时间线）— 已嵌入更新记录页
+    - ChangelogFeed（最近变更）— 已嵌入更新记录页
     - VoiceLines（语音台词展示）
   - SEO 优化：Schema.org JSON-LD、OG 社交分享图、sitemap、robots.txt
   - RSS/Atom 订阅源
   - 贡献指南 contributing.md
 - **技术栈**：VitePress 1.6.4 + Vue 3.5.13
 - **部署**：由 Code-site 统一管理（deploy-site.yml），wiki 位于 /wiki/ 子路径
+- **已修复问题**（2026-03-30）：
+  - `cleanUrls: false` — GitHub Pages 不支持无扩展名 URL 重写
+  - 立绘路径用 `:src` 动态绑定避免 Vite import 错误
+  - YAML frontmatter 含冒号自动引号转义
+  - VoiceLines 组件已注册到 theme
+  - deploy-site.yml smoke test 适配 zh root locale 路径
 
 ## Game 衍生游戏
 
