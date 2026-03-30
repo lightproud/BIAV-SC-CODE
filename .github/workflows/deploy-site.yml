@@ -9,6 +9,7 @@ on:
       - 'projects/wiki/docs/**'
       - 'projects/wiki/package.json'
       - 'projects/news/index.html'
+      - 'deliverables/**'
       - '.github/workflows/deploy-site.yml'
   workflow_dispatch:
 
@@ -46,6 +47,9 @@ jobs:
           mkdir -p dist/news/data
           [ -f assets/data/news.json ] && cp assets/data/news.json dist/news/data/news.json
           [ -d assets/styles ] && cp -r assets/styles/* dist/shared/
+          mkdir -p dist/docs
+          [ -f "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" ] && cp "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" dist/docs/brain-in-a-vat-project.html
+          [ -f "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.pdf" ] && cp "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.pdf" dist/docs/brain-in-a-vat-project.pdf
           touch dist/.nojekyll
 
       - name: Verify build output

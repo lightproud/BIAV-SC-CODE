@@ -294,6 +294,77 @@ body {
   line-height: 1.9;
 }
 
+/* ── Docs section ── */
+.docs {
+  max-width: 680px;
+  margin: 0 auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 520px) {
+  .docs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doc-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: #1e1a10;
+  border: 1px solid #2a2515;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+}
+
+.doc-link:hover {
+  border-color: rgba(197,163,86,0.5);
+  background: #241f14;
+  transform: translateY(-2px);
+}
+
+.doc-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(197,163,86,0.08);
+  border-radius: 6px;
+  color: #c5a356;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+}
+
+.doc-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-title {
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #e2c97e;
+  margin-bottom: 0.2rem;
+}
+
+.doc-desc {
+  font-size: 0.75rem;
+  color: #6b6040;
+}
+
 /* ── Footer ── */
 footer {
   text-align: center;
@@ -375,6 +446,39 @@ footer a:hover { color: #c5a356; }
 <div class="method">
   <h3>AI 多会话协作开发</h3>
   <p>本项目同时验证一套可复现的 AI 协作方法论。多个 AI 会话按专岗分工，仓库作为中间层传递记忆，人类担任唯一调度器。</p>
+</div>
+
+<section class="about" id="notes">
+  <p class="section-deco">◇ ◇ ◇</p>
+  <h2>制作人笔记</h2>
+  <div class="about-rule"></div>
+  <p>制作人 Light 的项目复盘与方法论沉淀。</p>
+</section>
+
+<div class="docs">
+  <div class="docs-grid">
+    <a class="doc-link" href="./docs/brain-in-a-vat-project.html">
+      <div class="doc-icon">I</div>
+      <div class="doc-info">
+        <div class="doc-title">缸中之脑计划</div>
+        <div class="doc-desc">36 页双语计划书 · v1.0</div>
+      </div>
+    </a>
+    <a class="doc-link" href="./docs/brain-in-a-vat-project.pdf" target="_blank">
+      <div class="doc-icon">PDF</div>
+      <div class="doc-info">
+        <div class="doc-title">缸中之脑计划</div>
+        <div class="doc-desc">PDF 版下载</div>
+      </div>
+    </a>
+    <a class="doc-link" href="./docs/ai-levels.html" style="opacity:0.4; pointer-events:none;">
+      <div class="doc-icon">II</div>
+      <div class="doc-info">
+        <div class="doc-title">AI 使用的六个阶段</div>
+        <div class="doc-desc">L0-L5 分级框架 + 伦理边界 · 即将上线</div>
+      </div>
+    </a>
+  </div>
 </div>
 
 <footer>
