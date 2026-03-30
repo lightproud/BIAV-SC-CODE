@@ -1,10 +1,23 @@
 {
   "date": "2026-02-27",
-  "messages": 534,
+  "messages": 604,
   "unique_authors": 52,
-  "reactions_total": 715,
-  "attachments": 46,
+  "reactions_total": 746,
+  "attachments": 50,
   "channel_activity": {
+    "✅「Answered」Choose if OE or not.": 10,
+    "✅「Answered」Possibility of using traphase emotes as profile pictures": 1,
+    "✅「Answered」Winkle’s leap effect is broken on D-Tide Wave 2 Alert 2": 7,
+    "✅「已回答」圖魯的部分故事文本消失": 3,
+    "✅「Answered」Expiramental Play Testing": 27,
+    "💭「處理中」Bug列車": 1,
+    "💭「Processing」IOS App stops all background sound/music": 4,
+    "✅「Resolved」Sorry, it was my mistake.": 2,
+    "✅「Resolved」Faros Boss Strange Stuff": 4,
+    "✅「Resolved」Resonance Reset": 5,
+    "💭「Processing」The Boss intentions for Acr1 4-3 are a mess": 2,
+    "✅「Answered」Anniversary was Great, the Raid was not": 2,
+    "💭「Processing」If you stun the Chapter 8 boss during its phase transition, it skips": 2,
     "🔸欢乐梗图": 5,
     "🔸礼包码┊gift-codes": 1,
     "🔸频道建议┊server-suggestions": 5,
@@ -22,32 +35,33 @@
     "🔸阵容构建": 29
   },
   "hourly_activity": {
-    "0": 7,
+    "8": 22,
+    "9": 45,
+    "18": 3,
+    "16": 12,
+    "0": 10,
+    "2": 18,
+    "5": 7,
+    "6": 19,
+    "17": 4,
+    "3": 20,
+    "12": 51,
+    "13": 47,
+    "10": 70,
+    "7": 28,
     "4": 6,
-    "6": 18,
-    "2": 13,
-    "9": 38,
-    "16": 10,
     "19": 1,
     "23": 10,
-    "17": 1,
     "22": 3,
     "15": 91,
-    "3": 6,
-    "7": 20,
-    "10": 69,
-    "5": 5,
-    "8": 10,
     "1": 8,
     "11": 27,
-    "12": 42,
-    "13": 45,
-    "14": 102,
-    "18": 2
+    "14": 102
   },
   "message_types": {
-    "0": 450,
-    "19": 84
+    "0": 38,
+    "19": 23,
+    "4": 9
   },
   "top_reacted_messages": [
     {
@@ -72,6 +86,13 @@
       "channel": "🔸欢乐梗图"
     },
     {
+      "id": "1476983272947978391",
+      "content": "Like the title suggests - there's a lot of cute/funny emotes in there, but I rar",
+      "author": "zzz1pp3rr",
+      "reactions": 11,
+      "channel": "✅「Answered」Possibility of using traphase emotes as profile pictures"
+    },
+    {
       "id": "1476995177863450685",
       "content": "(Sorry for Using Google Translate)\n\nHello, I'm a newbie who recently started pla",
       "author": "you_morio",
@@ -93,6 +114,13 @@
       "channel": "🔸频道建议┊server-suggestions"
     },
     {
+      "id": "1476768054640902233",
+      "content": "The idea is excellent, and we certainly understand that it would be very useful ",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "✅「Answered」Expiramental Play Testing"
+    },
+    {
       "id": "1476882095950532628",
       "content": "Doresain +12 buff. Trust",
       "author": "yeriko703",
@@ -112,6 +140,13 @@
       "author": "be_queitplease",
       "reactions": 5,
       "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1476781092248752158",
+      "content": "Because it is indeed useful, it is still under consideration, but I don't want t",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✅「Answered」Expiramental Play Testing"
     },
     {
       "id": "1477022502390857738",
@@ -166,27 +201,6 @@
       "id": "1476848928468238509",
       "content": "大炮打蚊子伤害是真的很好看吧<:Helot_slack_off:1459092159465521184>",
       "author": "be_queitplease",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476916309064159233",
-      "content": "吐了",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476922377886502912",
-      "content": "把某張很像靈感的牌當靈感丟出去的故事",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476926767011860621",
-      "content": "只用了 茉夏的卡",
-      "author": "angbak",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

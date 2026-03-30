@@ -1,10 +1,14 @@
 {
   "date": "2024-05-18",
-  "messages": 95,
+  "messages": 132,
   "unique_authors": 30,
-  "reactions_total": 145,
-  "attachments": 17,
+  "reactions_total": 232,
+  "attachments": 42,
   "channel_activity": {
+    "重发 更新了": 7,
+    "全新喚醒體【妖刀姬 呪刃】喚醒體&命輪介紹": 10,
+    "【斜阳的月球表面】": 19,
+    "兄弟……": 1,
     "[一图流]唤醒体/命轮加强效果汇总": 3,
     "【萌新向】创号第一天超低配阵容就能轻松过活动最高难度60级关卡": 17,
     "弥萨格校友号码本(已废弃)": 1,
@@ -25,27 +29,27 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "16": 21,
+    "1": 5,
+    "2": 9,
+    "3": 9,
+    "13": 6,
+    "14": 21,
+    "15": 31,
     "0": 2,
-    "2": 2,
     "11": 6,
-    "15": 28,
-    "16": 14,
     "17": 2,
     "18": 2,
-    "13": 4,
     "8": 2,
-    "14": 6,
-    "3": 8,
     "6": 5,
     "7": 5,
     "5": 4,
     "4": 1,
-    "1": 3,
     "12": 1
   },
   "message_types": {
-    "0": 73,
-    "19": 21
+    "0": 34,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -84,11 +88,53 @@
       "channel": "我重生了，重生到剛開始相位對亦時"
     },
     {
+      "id": "1241379935923474432",
+      "content": "",
+      "author": "saku0974",
+      "reactions": 11,
+      "channel": "兄弟……"
+    },
+    {
       "id": "1241250079269191700",
       "content": "第一个是害怕到哭的艾继丝。。之后会再发更多。。\nUID： 100104195",
       "author": "bashibashibash",
       "reactions": 10,
       "channel": "有点急。。。先发一个再继续更新"
+    },
+    {
+      "id": "1241384845612154941",
+      "content": "如题，看看我给忘却挖了多少插图坑（本贴不包含摸鱼类，后续会给摸鱼专门开贴",
+      "author": "lindongxieyang",
+      "reactions": 9,
+      "channel": "【斜阳的月球表面】"
+    },
+    {
+      "id": "1241423045881495603",
+      "content": "现在有艾继丝的害怕到哭和24的瞪\n呜我要希望赶得及去画其他 官方可以考虑一下延长日期吗。。\nUID：100104195",
+      "author": "bashibashibash",
+      "reactions": 6,
+      "channel": "重发 更新了"
+    },
+    {
+      "id": "1241395539170426930",
+      "content": "无法消解的执念",
+      "author": "lindongxieyang",
+      "reactions": 6,
+      "channel": "【斜阳的月球表面】"
+    },
+    {
+      "id": "1241403494955483137",
+      "content": "存活千年",
+      "author": "lindongxieyang",
+      "reactions": 6,
+      "channel": "【斜阳的月球表面】"
+    },
+    {
+      "id": "1241404272231317627",
+      "content": "星之芽",
+      "author": "lindongxieyang",
+      "reactions": 6,
+      "channel": "【斜阳的月球表面】"
     },
     {
       "id": "1241214032875229264",
@@ -105,39 +151,46 @@
       "channel": "回溯使用最大化參考"
     },
     {
-      "id": "1241263515503820872",
-      "content": "今日才發的兌換碼 “老燈爆點回溯”  內容物就是回溯道具",
-      "author": "_buqi",
-      "reactions": 2,
-      "channel": "回溯使用最大化參考"
+      "id": "1241393054418473090",
+      "content": "“母亲”",
+      "author": "lindongxieyang",
+      "reactions": 5,
+      "channel": "【斜阳的月球表面】"
     },
     {
-      "id": "1241183968272056441",
-      "content": "放错图了",
-      "author": "yang_42",
-      "reactions": 1,
-      "channel": "[一图流]唤醒体/命轮加强效果汇总"
+      "id": "1241395538151079978",
+      "content": "无比期待的一位",
+      "author": "lindongxieyang",
+      "reactions": 5,
+      "channel": "【斜阳的月球表面】"
     },
     {
-      "id": "1241434848501960804",
-      "content": "过了 感谢大佬",
-      "author": "artorias361433",
-      "reactions": 1,
-      "channel": "【萌新向】创号第一天超低配阵容就能轻松过活动最高难度60级关卡"
+      "id": "1241406465542066310",
+      "content": "乐子神",
+      "author": "lindongxieyang",
+      "reactions": 4,
+      "channel": "【斜阳的月球表面】"
     },
     {
-      "id": "1241387599549956236",
-      "content": "莉莉我是二启用了一个月然后换到三启的，这里说一下三启确实是巨大提升，各种意义上的，如果没三启但是厨力加持实在想选这个角色也可以玩，只不过基本得绑定雷娅+脐带来强",
-      "author": "iceyss_",
-      "reactions": 1,
-      "channel": "半周年限定自选攻略"
+      "id": "1241408283420524626",
+      "content": "是最早出现的两个小朋友",
+      "author": "lindongxieyang",
+      "reactions": 4,
+      "channel": "【斜阳的月球表面】"
     },
     {
-      "id": "1241419012366139442",
-      "content": "這個戒備叠到後面如果是帶菲神的話一張萌生估計能有兩百多快三百",
-      "author": "scholar_2",
-      "reactions": 1,
-      "channel": "血肉隊泰旖絲抽取建議和評價"
+      "id": "1241408796346028142",
+      "content": "抱着的是艾继丝命轮的旧案",
+      "author": "lindongxieyang",
+      "reactions": 4,
+      "channel": "【斜阳的月球表面】"
+    },
+    {
+      "id": "1241426988539973684",
+      "content": "",
+      "author": "bashibashibash",
+      "reactions": 3,
+      "channel": "重发 更新了"
     }
   ]
 }

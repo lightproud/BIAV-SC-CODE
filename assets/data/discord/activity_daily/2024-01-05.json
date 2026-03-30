@@ -1,19 +1,25 @@
 {
   "date": "2024-01-05",
-  "messages": 3,
+  "messages": 12,
   "unique_authors": 2,
-  "reactions_total": 14,
-  "attachments": 1,
+  "reactions_total": 34,
+  "attachments": 7,
   "channel_activity": {
+    "【吟诵者】奥吉尔": 2,
+    "【莉莉中心同人文】桃莉羊會夢見自己的母親嗎？": 1,
+    "tulutulutul······": 2,
+    "“嗨，守密人，请看这里w”": 2,
+    "补图1": 2,
     "【弥萨格】拉蒙娜": 2,
     "自娱自乐的梗图": 1
   },
   "hourly_activity": {
-    "18": 2,
-    "9": 1
+    "18": 10,
+    "9": 2
   },
   "message_types": {
-    "0": 3
+    "0": 8,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -22,6 +28,34 @@
       "author": "lindongxieyang",
       "reactions": 14,
       "channel": "【弥萨格】拉蒙娜"
+    },
+    {
+      "id": "1192892505386131596",
+      "content": "之前画的图鲁拟章鱼，都不是人了多几条触手也很正常吧（）",
+      "author": "lindongxieyang",
+      "reactions": 7,
+      "channel": "tulutulutul······"
+    },
+    {
+      "id": "1192892725704536074",
+      "content": "一个基于原造型的私设奥吉尔，也是很久之前画的，本私设名为【吟诵者】",
+      "author": "lindongxieyang",
+      "reactions": 6,
+      "channel": "【吟诵者】奥吉尔"
+    },
+    {
+      "id": "1192892273646645269",
+      "content": "更早之前画的一对守密人，和之前的汉娜是一套图（本套还有拉蒙娜与威廉未完成）",
+      "author": "lindongxieyang",
+      "reactions": 6,
+      "channel": "补图1"
+    },
+    {
+      "id": "1192891857181618266",
+      "content": "uid：100026264",
+      "author": "lindongxieyang",
+      "reactions": 1,
+      "channel": "“嗨，守密人，请看这里w”"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2024-10-09",
-  "messages": 47,
+  "messages": 49,
   "unique_authors": 17,
-  "reactions_total": 99,
-  "attachments": 30,
+  "reactions_total": 104,
+  "attachments": 31,
   "channel_activity": {
+    "千面幻象詛咒": 2,
     "记录一下SP希洛开荒情况": 7,
     "SP希洛个人使用心得。": 7,
     "第3章無提示事件總覽by井上銀溪": 1,
@@ -24,6 +25,7 @@
     "希洛": 1
   },
   "hourly_activity": {
+    "23": 2,
     "1": 1,
     "2": 1,
     "9": 8,
@@ -41,8 +43,7 @@
     "7": 1
   },
   "message_types": {
-    "0": 35,
-    "19": 12
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -93,6 +94,13 @@
       "author": "aomi_crinklies04",
       "reactions": 6,
       "channel": "Aomi 的忘郤前夜 Morimens作品角"
+    },
+    {
+      "id": "1293722755539144747",
+      "content": "根本沒有力量-50％阿欺騙我的感情",
+      "author": "ahuahuahua",
+      "reactions": 5,
+      "channel": "千面幻象詛咒"
     },
     {
       "id": "1293558169213075508",

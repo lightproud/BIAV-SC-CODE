@@ -1,10 +1,27 @@
 {
   "date": "2025-09-16",
-  "messages": 21,
-  "unique_authors": 10,
-  "reactions_total": 123,
-  "attachments": 9,
+  "messages": 83,
+  "unique_authors": 18,
+  "reactions_total": 133,
+  "attachments": 17,
   "channel_activity": {
+    "✅「Answered」About new Ryker buff": 3,
+    "✅「已回答」遺骨逼我刪牌": 1,
+    "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 4,
+    "✅「已回答」關於克珀珊特覺醒卡的調整建議": 4,
+    "✅「已回答」PvP奖励呢？": 4,
+    "✅「已回答」打了血海36000結果沒有排名": 2,
+    "✅「已回答」出bug了": 2,
+    "✅「Answered」Traphase rank placement not registered": 2,
+    "✅「Answered」Tawil's Four Wing bug": 2,
+    "✅「Answered」Missing background from summer event still": 2,
+    "✅「Answered」Tawil wing 4 doesn't work on tawil": 3,
+    "融災數值過高": 6,
+    "✅「Answered」Phantasmal Dive rewards are bugged": 17,
+    "✅「Answered」Summer event background locked": 2,
+    "✅「已回答」没发深潜材料": 4,
+    "💭「Processing」A bug where all the characters in my game are floating heads.": 2,
+    "✅「已回答」UID100562628打完深潜18000后没有头衔": 2,
     "邀請碼互助/Invitation code help each other": 2,
     "✦关卡地图「融灾禁区」总览43期·星辰篇✦": 1,
     "杜勒X皮克曼": 7,
@@ -16,18 +33,28 @@
     "1399369127008796723": 2
   },
   "hourly_activity": {
-    "16": 1,
-    "17": 1,
-    "15": 2,
-    "9": 1,
-    "10": 5,
-    "11": 5,
-    "1": 1,
+    "2": 3,
+    "3": 21,
+    "1": 2,
+    "8": 1,
+    "12": 2,
+    "13": 5,
+    "6": 5,
+    "0": 1,
+    "9": 4,
+    "10": 8,
+    "11": 6,
+    "15": 4,
+    "16": 12,
+    "17": 3,
+    "20": 1,
     "7": 2,
     "14": 3
   },
   "message_types": {
-    "0": 16
+    "0": 42,
+    "4": 11,
+    "19": 9
   },
   "top_reacted_messages": [
     {
@@ -57,6 +84,13 @@
       "author": "void_1546.",
       "reactions": 7,
       "channel": "杜勒X皮克曼"
+    },
+    {
+      "id": "1417352887519940703",
+      "content": "Thank you for your feedback. We are urgently fixing these issues and apologize f",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive"
     },
     {
       "id": "1417468135363313706",
@@ -94,6 +128,20 @@
       "channel": "杜勒X皮克曼"
     },
     {
+      "id": "1417348632264572938",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 2,
+      "channel": "✅「Answered」About new Ryker buff"
+    },
+    {
+      "id": "1417507756314984450",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "✅「Answered」Summer event background locked"
+    },
+    {
       "id": "1417527800037904518",
       "content": "大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第16期（第43期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\nP.S.图片较长，在线预览无法显",
       "author": "menoctus",
@@ -113,6 +161,20 @@
       "author": "nikolazuli",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1417485003184672861",
+      "content": "不少人認為克珀珊特的覺醒卡優先度較低，我認為可以有以下改進的空間（建議不太好，大家可只看看）：\n首先覺醒卡的領航作用不大，我認為拿到的领航可以加強為高級領航不帶",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "✅「已回答」關於克珀珊特覺醒卡的調整建議"
+    },
+    {
+      "id": "1417487811254423693",
+      "content": "So I beat Phantasmal Dive 7 yesterday as per usual, which should give me my dail",
+      "author": "yannic2112",
+      "reactions": 1,
+      "channel": "✅「Answered」Phantasmal Dive rewards are bugged"
     }
   ]
 }

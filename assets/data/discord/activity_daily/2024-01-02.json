@@ -1,25 +1,34 @@
 {
   "date": "2024-01-02",
-  "messages": 8,
+  "messages": 22,
   "unique_authors": 6,
-  "reactions_total": 52,
-  "attachments": 1,
+  "reactions_total": 71,
+  "attachments": 2,
   "channel_activity": {
+    "跨區靈感許願池.gif": 6,
+    "感覺畫的特別差勁對不起娜娜": 2,
+    "紅祭禮": 1,
+    "“嗨，守密人，请看这里w”": 1,
+    "人，真的要戒賭，下次不賭了": 2,
+    "忘却前夜治好了我的艾滋病 也治好了我的恋丑癖": 2,
     "在bilibili發佈過的攻略自搬運": 1,
     "画了liz": 2,
     "自製界域与喚醒體——以太篇": 3,
     "自製界域和喚醒體——夢境篇": 2
   },
   "hourly_activity": {
+    "3": 3,
+    "5": 3,
+    "6": 3,
+    "2": 5,
+    "18": 2,
+    "9": 3,
     "23": 1,
-    "5": 1,
-    "18": 1,
-    "2": 2,
-    "8": 2,
-    "9": 1
+    "8": 2
   },
   "message_types": {
-    "0": 8
+    "0": 12,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -28,6 +37,41 @@
       "author": "buyaocongjiangsuanxiexie",
       "reactions": 51,
       "channel": "画了liz"
+    },
+    {
+      "id": "1191570274219458600",
+      "content": "帮投稿UID：100000225",
+      "author": "wutaa1",
+      "reactions": 13,
+      "channel": "感覺畫的特別差勁對不起娜娜"
+    },
+    {
+      "id": "1191628460364414976",
+      "content": "好颯啊❤️…超愛❤️",
+      "author": "07_li",
+      "reactions": 3,
+      "channel": "感覺畫的特別差勁對不起娜娜"
+    },
+    {
+      "id": "1191609686714228816",
+      "content": "投稿項目：綜合作品\nUID：100012372",
+      "author": "sofakiwi_0228",
+      "reactions": 1,
+      "channel": "跨區靈感許願池.gif"
+    },
+    {
+      "id": "1191624173794103427",
+      "content": "能的話就每張吧\n太多的話就前5張算一組\n大腦旋轉算一組\n跨年3張算一組\n就這三份 謝謝",
+      "author": "sofakiwi_0228",
+      "reactions": 1,
+      "channel": "跨區靈感許願池.gif"
+    },
+    {
+      "id": "1191817988127608917",
+      "content": "好好的饭…",
+      "author": "yoki611",
+      "reactions": 1,
+      "channel": "紅祭禮"
     },
     {
       "id": "1191655466045030462",

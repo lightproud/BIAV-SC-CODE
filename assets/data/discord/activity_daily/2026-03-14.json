@@ -1,10 +1,11 @@
 {
   "date": "2026-03-14",
-  "messages": 93,
+  "messages": 107,
   "unique_authors": 34,
-  "reactions_total": 320,
-  "attachments": 16,
+  "reactions_total": 343,
+  "attachments": 17,
   "channel_activity": {
+    "Petition to remove upcoming traphase event": 14,
     "🔸课间休息闲聊": 3,
     "🔸日本語チャンネル": 16,
     "🐱light’s-nest": 1,
@@ -27,10 +28,11 @@
     "1482261084101541969": 4
   },
   "hourly_activity": {
+    "16": 5,
+    "17": 8,
+    "22": 6,
     "12": 18,
     "15": 6,
-    "16": 3,
-    "17": 2,
     "18": 3,
     "21": 7,
     "9": 6,
@@ -48,8 +50,8 @@
     "6": 1
   },
   "message_types": {
-    "0": 79,
-    "19": 14
+    "0": 10,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -65,6 +67,13 @@
       "author": "zzio_",
       "reactions": 22,
       "channel": ""
+    },
+    {
+      "id": "1482421188365127690",
+      "content": "For the love of god,  almost no one in the community likes, or even plays this g",
+      "author": "zzz1pp3rr",
+      "reactions": 21,
+      "channel": "Petition to remove upcoming traphase event"
     },
     {
       "id": "1482468157171171520",
@@ -151,6 +160,20 @@
       "channel": ""
     },
     {
+      "id": "1482432087117009058",
+      "content": "+1 in traphase hater",
+      "author": "yeriko703",
+      "reactions": 1,
+      "channel": "Petition to remove upcoming traphase event"
+    },
+    {
+      "id": "1482432142033031230",
+      "content": "This gamemode sucks",
+      "author": "yeriko703",
+      "reactions": 1,
+      "channel": "Petition to remove upcoming traphase event"
+    },
+    {
       "id": "1482448249444106260",
       "content": "明日、起きたら試してみます。\n今日は教えてもらった事と過去ログ見て色々勉強して、ストーリー攻略頑張ります！\n\n四章の話、個人的にすごく好きだったんで五章がどうな",
       "author": "takayamatakechi",
@@ -168,27 +191,6 @@
       "id": "1482184257647411381",
       "content": "听说直接拿下，看有没有机会20分<:doresain_proud:1468257815238938645>",
       "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1482186115178954842",
-      "content": "啥也不标最好，画太丑了",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1482489236346245230",
-      "content": "this is gorgeous",
-      "author": "null.pointer_exception",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1482179117108691036",
-      "content": "perfect rendering as always 💯",
-      "author": "sunstopshining",
       "reactions": 1,
       "channel": ""
     }

@@ -1,16 +1,21 @@
 {
   "date": "2024-04-20",
-  "messages": 13,
+  "messages": 20,
   "unique_authors": 6,
-  "reactions_total": 18,
-  "attachments": 4,
+  "reactions_total": 74,
+  "attachments": 8,
   "channel_activity": {
+    "迷你鯊魚🦈": 6,
+    "画两个萌宝宝！": 1,
     "重返絕叫哀號的原質之海（新版達芙，從入門到入土）": 10,
     "【敌方意图收录】1.3上半新增单位一览": 1,
     "六期融災350攻略": 1,
     "弥萨格大学扫盲班": 1
   },
   "hourly_activity": {
+    "7": 5,
+    "10": 1,
+    "15": 1,
     "6": 1,
     "8": 1,
     "23": 8,
@@ -19,15 +24,43 @@
     "4": 1
   },
   "message_types": {
-    "0": 13
+    "0": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1231142962218401793",
+      "content": "他看起來會把我的手指咬爛\n\n—————-\n這張不知道能不能投表情二創耶\nUID:100047306",
+      "author": "yolo_mode",
+      "reactions": 31,
+      "channel": "迷你鯊魚🦈"
+    },
+    {
+      "id": "1231267635732156529",
+      "content": "uid：100353537\n啊啊啊啊试着投一下，是艾继丝宝宝和莉莉宝宝！！（动作有参考（我承认我有编的成分（你）",
+      "author": "ember086988",
+      "reactions": 14,
+      "channel": "画两个萌宝宝！"
+    },
     {
       "id": "1231294775781490829",
       "content": "久违的意图收录，结果之前的章节整理完全没动了（抱头）\n~~稍微改了一下展现样式，仍然挺直男审美的但是只要大家看得懂就好啦~~\n\n本期收录截止至2024年4月21",
       "author": "anachico",
       "reactions": 14,
       "channel": "【敌方意图收录】1.3上半新增单位一览"
+    },
+    {
+      "id": "1231143131668283413",
+      "content": "還有動態模糊版的⋯",
+      "author": "yolo_mode",
+      "reactions": 8,
+      "channel": "迷你鯊魚🦈"
+    },
+    {
+      "id": "1231145954183221258",
+      "content": "喔然後因為我真的很喜歡戈利亞⋯所以給他排了個氛圍歌單⋯不介意的話可以來聽聽看⋯😭😭\n\nhttps://youtube.com/playlist?list=PLN",
+      "author": "yolo_mode",
+      "reactions": 3,
+      "channel": "迷你鯊魚🦈"
     },
     {
       "id": "1231131333644914699",

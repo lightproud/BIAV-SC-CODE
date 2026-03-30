@@ -1,10 +1,12 @@
 {
   "date": "2024-04-17",
-  "messages": 33,
+  "messages": 37,
   "unique_authors": 10,
-  "reactions_total": 59,
-  "attachments": 6,
+  "reactions_total": 68,
+  "attachments": 8,
   "channel_activity": {
+    "貓meme版序章": 3,
+    "詹金 老鼠": 1,
     "重返絕叫哀號的原質之海（新版達芙，從入門到入土）": 1,
     "六期融災350攻略": 1,
     "靈魂的牧人活動關 SpeedRun Any%": 25,
@@ -14,20 +16,20 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "11": 2,
+    "12": 2,
+    "14": 4,
     "7": 1,
     "16": 8,
-    "14": 3,
     "15": 5,
     "17": 5,
     "21": 3,
     "22": 3,
     "23": 2,
-    "9": 2,
-    "12": 1
+    "9": 2
   },
   "message_types": {
-    "4": 1,
-    "0": 29
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -43,6 +45,13 @@
       "author": "jemina6___1236",
       "reactions": 21,
       "channel": "摸鱼耶"
+    },
+    {
+      "id": "1230121104060973096",
+      "content": "刚玩不久，昨晚打完第二章心都碎了，连夜爆肝，詹金呜呜呜呜呜\nuid：100422791",
+      "author": "7seven_4236",
+      "reactions": 9,
+      "channel": "詹金 老鼠"
     },
     {
       "id": "1230137557761921125",

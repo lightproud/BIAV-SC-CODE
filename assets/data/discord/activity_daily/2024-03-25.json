@@ -1,10 +1,12 @@
 {
   "date": "2024-03-25",
-  "messages": 9,
+  "messages": 18,
   "unique_authors": 5,
-  "reactions_total": 19,
-  "attachments": 7,
+  "reactions_total": 56,
+  "attachments": 10,
   "channel_activity": {
+    "【繪畫】不定期更新": 2,
+    "紧急摸鱼": 7,
     "銀鑰充能與狂氣回充衰減紀錄": 1,
     "調查等級與最大生命係數紀錄": 1,
     "融灾禁区2-3特殊解": 1,
@@ -12,23 +14,39 @@
     "1181998821291606097": 3
   },
   "hourly_activity": {
-    "17": 1,
+    "13": 2,
+    "16": 5,
+    "17": 3,
     "0": 1,
     "9": 1,
     "11": 3,
     "6": 3
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "0": 6,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1221857308762701874",
+      "content": "",
+      "author": "j.h.metz",
+      "reactions": 33,
+      "channel": "紧急摸鱼"
+    },
     {
       "id": "1221787291966636043",
       "content": "我是個剛加入前夜的新手\n以前玩遊戲特別的喜歡玩冷門角色/陣容\n也常常搞一堆奇奇怪怪的創新點子\n\n今天就給各位帶來我突發奇想的隊伍\n「三盾環拉」\n\n隊伍的運作模式",
       "author": "Deleted User",
       "reactions": 11,
       "channel": "50等0啟機器人 深潛15000 V.S.雷婭"
+    },
+    {
+      "id": "1221810328845811753",
+      "content": "之前摸筆刷時畫的莉奧諾拉",
+      "author": "haruarashi01",
+      "reactions": 4,
+      "channel": "【繪畫】不定期更新"
     },
     {
       "id": "1221749800794587167",

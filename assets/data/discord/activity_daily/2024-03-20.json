@@ -1,22 +1,36 @@
 {
   "date": "2024-03-20",
-  "messages": 6,
+  "messages": 10,
   "unique_authors": 4,
-  "reactions_total": 7,
-  "attachments": 0,
+  "reactions_total": 25,
+  "attachments": 1,
   "channel_activity": {
+    "【繪畫】不定期更新": 2,
+    "畫一下鯊的戰損": 1,
+    "【弥利亚姆】-福音(Gospel)": 1,
     "幻梦深浅地图全解 第4版 死扛黑印分时代": 1,
     "💌「旺達」體驗交流分享活動💌": 5
   },
   "hourly_activity": {
-    "9": 1,
+    "8": 1,
+    "9": 2,
+    "10": 1,
+    "5": 1,
     "3": 4,
     "6": 1
   },
   "message_types": {
-    "0": 6
+    "0": 3,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1219922019676852254",
+      "content": "不定期更新自己改的圖/畫的畫。\n首先是我們圖魯哥（圖魯哥→章魚哥）",
+      "author": "haruarashi01",
+      "reactions": 18,
+      "channel": "【繪畫】不定期更新"
+    },
     {
       "id": "1219943678949330974",
       "content": "大型傳送門～～\n凱克斯 https://discord.com/channels/1131791637933199470/1215331353248272514",

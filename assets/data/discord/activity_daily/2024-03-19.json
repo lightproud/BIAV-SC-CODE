@@ -1,25 +1,37 @@
 {
   "date": "2024-03-19",
-  "messages": 12,
+  "messages": 15,
   "unique_authors": 5,
-  "reactions_total": 0,
+  "reactions_total": 1,
   "attachments": 2,
   "channel_activity": {
+    "【弥利亚姆】-福音(Gospel)": 2,
+    "我永远喜欢蒙眼呜呜呜呜": 1,
     "忘卻前夜計算機v1.0": 3,
     "幻梦深浅地图全解 第4版 死扛黑印分时代": 6,
     "阿格里帕實戰心得分享。輕鬆主宰幻夢深潛滿分": 1,
     "1193859503096070234": 2
   },
   "hourly_activity": {
+    "9": 2,
+    "11": 1,
+    "1": 1,
     "2": 1,
-    "9": 1,
     "10": 1,
     "13": 6,
     "17": 2,
     "15": 1
   },
   "message_types": {
-    "0": 10
+    "19": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1219464897830588567",
+      "content": "呜呜呜呜呜呜呜好的🥹🥹🥹",
+      "author": "frimaire_ansel",
+      "reactions": 1,
+      "channel": "我永远喜欢蒙眼呜呜呜呜"
+    }
+  ]
 }

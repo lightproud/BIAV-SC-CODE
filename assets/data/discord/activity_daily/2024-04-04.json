@@ -1,10 +1,13 @@
 {
   "date": "2024-04-04",
-  "messages": 99,
+  "messages": 109,
   "unique_authors": 24,
-  "reactions_total": 96,
-  "attachments": 16,
+  "reactions_total": 134,
+  "attachments": 20,
   "channel_activity": {
+    "紧急摸鱼": 7,
+    "米尔伟大，无需多言，曲线救游": 2,
+    "Q版": 1,
     "超維 達芙黛爾 高練度ID分享": 2,
     "血肉隊神父抽取建議和評價": 23,
     "等級突破道具對技能數值的影響門檻": 1,
@@ -18,25 +21,26 @@
     "有種就打鴨⊙ω⊙": 8
   },
   "hourly_activity": {
+    "5": 2,
+    "8": 12,
+    "14": 2,
+    "18": 2,
+    "22": 3,
+    "0": 1,
     "10": 22,
     "6": 2,
-    "8": 9,
     "11": 8,
     "7": 1,
-    "14": 1,
     "17": 10,
     "15": 33,
     "16": 6,
-    "22": 1,
     "23": 1,
     "9": 3,
-    "5": 1,
     "12": 1
   },
   "message_types": {
-    "0": 79,
-    "4": 2,
-    "19": 18
+    "19": 1,
+    "0": 9
   },
   "top_reacted_messages": [
     {
@@ -54,11 +58,32 @@
       "channel": "有種就打鴨⊙ω⊙"
     },
     {
+      "id": "1225445244838088734",
+      "content": "是没有珊的时候一手带我的老婆🥺",
+      "author": "j.h.metz",
+      "reactions": 12,
+      "channel": "紧急摸鱼"
+    },
+    {
+      "id": "1225245124024336518",
+      "content": "老头立绘有高清图就好了，最近热衷于杂志封面",
+      "author": "luguang12345",
+      "reactions": 12,
+      "channel": "米尔伟大，无需多言，曲线救游"
+    },
+    {
       "id": "1225382062052216922",
       "content": "原图来自猫发的表情包，之前猫问神父出了做不做这个，最后我还是做了hhhh",
       "author": "lindongxieyang",
       "reactions": 9,
       "channel": "斜阳牌表情包"
+    },
+    {
+      "id": "1225578149778161795",
+      "content": "",
+      "author": "j.h.metz",
+      "reactions": 8,
+      "channel": "紧急摸鱼"
     },
     {
       "id": "1225386956662509679",
@@ -73,6 +98,13 @@
       "author": "lindongxieyang",
       "reactions": 7,
       "channel": "【同人谷棉娃】【汀克特】"
+    },
+    {
+      "id": "1225506038304870460",
+      "content": "",
+      "author": "j.h.metz",
+      "reactions": 6,
+      "channel": "紧急摸鱼"
     },
     {
       "id": "1225459935576330271",
@@ -148,20 +180,6 @@
       "id": "1225396336833331241",
       "content": "小心舌頭被反擊喔⊙ω⊙",
       "author": "kexk3h6vjyokppszpgctabxtmygfnc6y",
-      "reactions": 1,
-      "channel": "有種就打鴨⊙ω⊙"
-    },
-    {
-      "id": "1225418671942533200",
-      "content": "🥺🥺🥺打是亲骂是爱，老婆反击我是我合理获得的幸福！！",
-      "author": "zhouvanc",
-      "reactions": 1,
-      "channel": "有種就打鴨⊙ω⊙"
-    },
-    {
-      "id": "1225471055938850947",
-      "content": "好可爱好可爱🥹🥹",
-      "author": "morningnews",
       "reactions": 1,
       "channel": "有種就打鴨⊙ω⊙"
     }

@@ -1,10 +1,25 @@
 {
   "date": "2026-02-14",
-  "messages": 848,
+  "messages": 924,
   "unique_authors": 63,
-  "reactions_total": 233,
-  "attachments": 129,
+  "reactions_total": 284,
+  "attachments": 141,
   "channel_activity": {
+    "✅「Answered」Memory leaks": 11,
+    "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 7,
+    "✅「Answered」Battle progress reset": 7,
+    "✅「Resolved」So this age thing (it’s been fixed!)": 3,
+    "💭「Processing」Another bug with Gobble Up posse and Special Chapter cards": 2,
+    "✅「已回答」我的帳號已經跟APPLE ID連結，但是用手機會變成全新帳號": 2,
+    "✅「已回答」会出原画集吗？或者其他例如立牌和玩偶的周边？": 1,
+    "✅「已解决」遊戲沒聲音了": 1,
+    "✅「Answered」Salvador Bug with Train and Ultra Turn": 1,
+    "✅「Answered」Train game mode improvement feedback": 3,
+    "Who Ryker's Designer pls come talk ?": 1,
+    "✅「Resolved」Bug Screen freezes after clearing cosmic residue": 16,
+    "✅「Resolved」Bug after Bossfight": 4,
+    "✅「Resolved」Chapter 3: bug": 9,
+    "✅「已解决」媽媽，auto不讓我離開這裡": 8,
     "給你遊拉磨😋": 5,
     "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取": 1,
     "請吃音樂家": 2,
@@ -23,40 +38,56 @@
     "🔸阵容构建": 26
   },
   "hourly_activity": {
+    "18": 8,
+    "19": 15,
+    "8": 73,
+    "9": 32,
+    "7": 110,
+    "13": 42,
+    "11": 83,
+    "16": 20,
+    "17": 25,
+    "1": 12,
+    "6": 51,
+    "3": 92,
+    "4": 95,
+    "5": 48,
     "15": 17,
-    "16": 16,
-    "13": 41,
-    "5": 41,
     "10": 22,
     "0": 1,
-    "1": 11,
-    "11": 80,
     "14": 48,
-    "17": 24,
     "20": 3,
     "23": 2,
-    "7": 104,
     "2": 47,
-    "3": 85,
-    "9": 27,
-    "4": 79,
-    "6": 46,
-    "8": 64,
     "12": 77,
-    "18": 7,
-    "19": 5,
     "22": 1
   },
   "message_types": {
-    "0": 8
+    "0": 58,
+    "19": 8,
+    "4": 10
   },
   "top_reacted_messages": [
+    {
+      "id": "1472154527938642051",
+      "content": "癫狂列车中，boss的一条血量如图，大概是30000K左右。\n而玩家血量，点满共鸣，大概在4000-7000左右. \n根据星辰篇规则，叠毒的最大上限此时大概在4",
+      "author": "xyakoto",
+      "reactions": 22,
+      "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
+    },
     {
       "id": "1472248622199472241",
       "content": "：媽媽！媽媽！你看有木雕！\n：神國指出來了沒有！？\n：😭💔",
       "author": "rdkanami",
       "reactions": 14,
       "channel": "給你遊拉磨😋"
+    },
+    {
+      "id": "1472291889951805512",
+      "content": "When you play the game everything is fine but the longer you stay in the game, t",
+      "author": "moyashi0672",
+      "reactions": 12,
+      "channel": "✅「Answered」Memory leaks"
     },
     {
       "id": "1472101859756867825",
@@ -92,6 +123,13 @@
       "author": "xingxiu_0209",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1472157612010377301",
+      "content": "I guess make sense turn off poison/counter cap in train to make teams that use i",
+      "author": "yeriko703",
+      "reactions": 5,
+      "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
     },
     {
       "id": "1472219299723608090",
@@ -157,37 +195,16 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1472086163480121589",
+      "content": "Just add Goya as an awakener",
+      "author": "crowlov1",
+      "reactions": 3,
+      "channel": "✅「Resolved」Bug Screen freezes after clearing cosmic residue"
+    },
+    {
       "id": "1472045337123225610",
       "content": "https://media.discordapp.net/attachments/628628021057814539/942759672824348712/3",
       "author": "xingxiu_0209",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472062865069576223",
-      "content": "到底是什麼隊伍要求道中4覺\n然後拖到凝視還打不死人啊（",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472086298884833405",
-      "content": "我也渴望天真了",
-      "author": "0.0._.0_0.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472092530509086750",
-      "content": "繼續打",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472095801789517998",
-      "content": "~~什么血海莉兹~~",
-      "author": "sweet_25367",
       "reactions": 3,
       "channel": "🔸綜合討論"
     }

@@ -1,10 +1,28 @@
 {
   "date": "2025-12-27",
-  "messages": 41,
-  "unique_authors": 8,
-  "reactions_total": 33,
-  "attachments": 15,
+  "messages": 91,
+  "unique_authors": 22,
+  "reactions_total": 65,
+  "attachments": 24,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 1,
+    "✅「已回答」取消SSR命輪自動分解": 3,
+    "💭「Processing」The Spacebar/Enter key on Steam PC version not working": 1,
+    "💭「Processing」Intro movie not changing on PC when it changes on mobile.": 1,
+    "✅「已回答」可否增設命輪和密契的計數器": 1,
+    "💭「Processing」Incorrect card description": 20,
+    "✅「Answered」Display crit rate (and maybe final dmg if crit) per card?": 1,
+    "💭「Processing」Troubleshoot poor performance and fps": 1,
+    "✅「已回答」希望長按卡片顯示數值計算公式": 1,
+    "✅「已回答」是否有拉高知识赠礼上限的计划?": 1,
+    "✅「Resolved」Can't connect to the server.": 1,
+    "✅「Answered」Gmurphy's base tentacle DMG doesn't get updated after increasing your max HP": 3,
+    "💭「Processing」Clarification Requested Regarding": 2,
+    "✅「Answered」Music not playing on some fights on Arc 2": 1,
+    "✅「已回答」bug": 1,
+    "💭「Processing」Replay Issue": 5,
+    "💭「Processing」Taboo Knowledge Level not being properly shown": 1,
+    "Christmas Code": 5,
     "重开个存档楼）": 1,
     "嗨又是我我又畫了哈姆林": 2,
     "银霜节日历（圣诞节贺文）": 1,
@@ -15,20 +33,31 @@
     "1454438358351609857": 24
   },
   "hourly_activity": {
-    "20": 1,
-    "11": 4,
-    "12": 2,
-    "14": 1,
-    "16": 4,
+    "12": 3,
+    "4": 4,
+    "5": 1,
+    "6": 1,
+    "9": 2,
+    "10": 11,
+    "11": 13,
+    "16": 6,
+    "17": 4,
+    "18": 2,
+    "19": 7,
+    "1": 1,
+    "2": 1,
+    "7": 1,
+    "20": 2,
+    "8": 2,
+    "14": 6,
+    "0": 3,
     "22": 2,
-    "10": 8,
     "13": 3,
     "15": 16
   },
   "message_types": {
-    "0": 4,
-    "19": 1,
-    "4": 1
+    "0": 40,
+    "19": 10
   },
   "top_reacted_messages": [
     {
@@ -39,11 +68,46 @@
       "channel": ""
     },
     {
+      "id": "1454559788213076051",
+      "content": "During exploration, Gmurphy's tentacle DMG stays the same after I used the Glutt",
+      "author": "egoist_2314",
+      "reactions": 12,
+      "channel": "✅「Answered」Gmurphy's base tentacle DMG doesn't get updated after increasing your max HP"
+    },
+    {
       "id": "1454513599098650769",
       "content": "",
       "author": "nnf02",
       "reactions": 5,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1454405574446944359",
+      "content": "下禮拜一戈雅要遞交一本字典厚度的玩家建議清單了",
+      "author": "elkmilu",
+      "reactions": 4,
+      "channel": "✅「已回答」可否增設命輪和密契的計數器"
+    },
+    {
+      "id": "1454424754533564416",
+      "content": "Ramona's Assault Thesis card has the wrong description. Seems to be Doll's mecha",
+      "author": "reccyls",
+      "reactions": 4,
+      "channel": "💭「Processing」Incorrect card description"
+    },
+    {
+      "id": "1454420017327112205",
+      "content": "延續這一串 https://discord.com/channels/1131791637933199470/1454108976307503225\n\n由於現在",
+      "author": "amstelredam",
+      "reactions": 4,
+      "channel": "✅「已回答」希望長按卡片顯示數值計算公式"
+    },
+    {
+      "id": "1454368891512950856",
+      "content": "希望可以给出更高的知识赠礼的上限, 现在的氪金点非常容易超过这个上限",
+      "author": "grayifies",
+      "reactions": 4,
+      "channel": "✅「已回答」是否有拉高知识赠礼上限的计划?"
     },
     {
       "id": "1454414985298972753",
@@ -65,6 +129,34 @@
       "author": "yingmai_",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1454334767011987456",
+      "content": "到底要不要改回原本那樣",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "✅「已回答」取消SSR命輪自動分解"
+    },
+    {
+      "id": "1454563873318502500",
+      "content": "In line of this, can we know what is the exact scaling of the Normal Tentacles t",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "✅「Answered」Gmurphy's base tentacle DMG doesn't get updated after increasing your max HP"
+    },
+    {
+      "id": "1454484656907878574",
+      "content": "this is the code but it happens to all the replays i watched recently",
+      "author": "hycel0553",
+      "reactions": 1,
+      "channel": "💭「Processing」Replay Issue"
+    },
+    {
+      "id": "1454412336558375047",
+      "content": "DEVWWTDQWKPA also seems to have expired 4 days ago as shown in the codes list, b",
+      "author": "snorlax01",
+      "reactions": 1,
+      "channel": "Christmas Code"
     },
     {
       "id": "1454434025988030535",

@@ -1,10 +1,23 @@
 {
   "date": "2026-02-25",
-  "messages": 751,
+  "messages": 801,
   "unique_authors": 57,
-  "reactions_total": 136,
-  "attachments": 63,
+  "reactions_total": 151,
+  "attachments": 66,
   "channel_activity": {
+    "✅「Answered」Memory leaks": 3,
+    "✅「Resolved」Sorry, it was my mistake.": 5,
+    "✅「已回答」意见反馈": 1,
+    "✅「Answered」misspelling in one of the tutorials": 3,
+    "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 5,
+    "✅「Answered」Add level 100 for HSR": 4,
+    "💭「處理中」我有兩種刻印效果了": 3,
+    "✅「Answered」Battle progress reset": 2,
+    "✅「Resolved」So this age thing (it’s been fixed!)": 1,
+    "💭「Processing」Another bug with Gobble Up posse and Special Chapter cards": 2,
+    "✅「已回答」我的帳號已經跟APPLE ID連結，但是用手機會變成全新帳號": 2,
+    "✅「已回答」極夜微光可否改回在手中時增加使用次數，而非張數": 8,
+    "💭「處理中」為什麼我有四張蠟像共鳴降費過的旺達四費？？": 11,
     "🔸欢乐梗图": 2,
     "1423337172655935600": 3,
     "1476239209596457141": 4,
@@ -21,36 +34,35 @@
     "🔸阵容构建": 4
   },
   "hourly_activity": {
-    "7": 30,
+    "3": 57,
+    "6": 40,
+    "9": 36,
+    "14": 50,
+    "15": 13,
+    "13": 67,
+    "5": 127,
+    "8": 63,
+    "7": 31,
+    "2": 18,
+    "4": 20,
     "10": 32,
     "22": 8,
     "23": 3,
-    "15": 12,
     "20": 3,
-    "2": 13,
-    "6": 28,
     "16": 7,
     "17": 50,
     "21": 3,
     "18": 34,
     "1": 23,
-    "8": 62,
-    "9": 35,
-    "13": 65,
     "19": 2,
     "0": 8,
-    "3": 45,
-    "4": 17,
-    "5": 120,
     "11": 3,
-    "12": 103,
-    "14": 45
+    "12": 103
   },
   "message_types": {
-    "0": 542,
-    "19": 205,
-    "4": 3,
-    "6": 1
+    "0": 21,
+    "4": 10,
+    "19": 19
   },
   "top_reacted_messages": [
     {
@@ -82,6 +94,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1476102564524200091",
+      "content": "I understand what you mean. Since the event has been running for a while, aside ",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
+    },
+    {
       "id": "1476123637546352670",
       "content": "我承認我很怪\n\n\n但我沒有阿宏那麼怪<:Pollux_gift:1459081694148558943>",
       "author": "xingxiu_0209",
@@ -94,6 +113,13 @@
       "author": "sfn28409633",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1476217499161722902",
+      "content": "evil 💔",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "✅「Answered」Add level 100 for HSR"
     },
     {
       "id": "1476054923048128633",
@@ -122,6 +148,13 @@
       "author": "partycatss.",
       "reactions": 3,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1476100055562846290",
+      "content": "I'm too late! Let me see...<:Helot_slack_off:1459092159465521184>",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
     },
     {
       "id": "1476321520421961920",
@@ -169,27 +202,6 @@
       "id": "1476089642049867806",
       "content": "可以給我萌新幾個嗎",
       "author": "universe.dark",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476096750933508227",
-      "content": "慢慢養",
-      "author": "forg30215",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476131627057942662",
-      "content": "<:pray:1356053116260454534>",
-      "author": "0.0._.0_0.",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476158066851581973",
-      "content": "~~24最有用的一集~~",
-      "author": "quackdayo",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

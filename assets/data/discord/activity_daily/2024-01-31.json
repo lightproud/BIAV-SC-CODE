@@ -1,17 +1,23 @@
 {
   "date": "2024-01-31",
-  "messages": 1,
-  "unique_authors": 1,
+  "messages": 5,
+  "unique_authors": 4,
   "reactions_total": 3,
   "attachments": 1,
   "channel_activity": {
+    "🌟莉兹1月31日生日🎂电子横幅进行中~": 3,
+    "同人短打堆放地": 1,
     "幻梦深潜地图全解": 1
   },
   "hourly_activity": {
-    "1": 1
+    "1": 2,
+    "11": 1,
+    "21": 1,
+    "16": 1
   },
   "message_types": {
-    "0": 1
+    "0": 3,
+    "4": 1
   },
   "top_reacted_messages": [
     {

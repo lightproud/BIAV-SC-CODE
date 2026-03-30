@@ -1,33 +1,78 @@
 {
   "date": "2025-08-31",
-  "messages": 12,
-  "unique_authors": 7,
-  "reactions_total": 10,
-  "attachments": 4,
+  "messages": 37,
+  "unique_authors": 11,
+  "reactions_total": 29,
+  "attachments": 17,
   "channel_activity": {
+    "💭「Processing」Petrify dispel": 1,
+    "POSSES future and changes": 4,
+    "✅「Answered」Clementine's wheel description is broken": 5,
+    "✅「Answered」Heart of Silver's unclear effect": 1,
+    "✅「已回答」日服BUG可以在這底回報嗎": 1,
+    "✅「Answered」PARADOX mistranslation \\bug": 3,
+    "Testing stage": 2,
+    "✅「已回答」課題的獎勵數量顯示錯誤": 3,
+    "✅「已回答」今天开票的时候开到已有的头像。": 3,
+    "✅「Answered」Interacting with an ultra space with the goal to consult the card,  leads to a softlock": 2,
     "邀請碼互助/Invitation code help each other": 4,
     "全4級400融災攻略": 3,
     "一點拉郎": 5
   },
   "hourly_activity": {
+    "8": 1,
+    "10": 2,
+    "12": 8,
+    "13": 3,
+    "14": 1,
+    "6": 3,
+    "7": 9,
+    "20": 1,
+    "21": 1,
+    "9": 3,
+    "2": 2,
     "1": 1,
-    "12": 1,
-    "22": 2,
-    "6": 1,
-    "13": 2,
-    "7": 5
+    "22": 2
   },
   "message_types": {
-    "0": 10,
-    "19": 2
+    "0": 22,
+    "4": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1411659585072398388",
+      "content": "At the moment this is not a suggestion, but I wanted to have an idea on what the",
+      "author": "vxvendetta",
+      "reactions": 8,
+      "channel": "POSSES future and changes"
+    },
     {
       "id": "1411610550500331570",
       "content": "內有戈利亞X尤烏哈希拉郎， 只是一時興起的小短篇(T_T)一點貼貼⋯⋯\nUID:100047306\n\n—————————\n\n海水嚐起來是苦的。\n悲傷、痛苦，還有",
       "author": "yolo_mode",
       "reactions": 5,
       "channel": "一點拉郎"
+    },
+    {
+      "id": "1411606617580896266",
+      "content": "Yes, that is a bug! I have confirmed via the original Chinese text that the corr",
+      "author": "arkaether",
+      "reactions": 3,
+      "channel": "✅「Answered」PARADOX mistranslation \\bug"
+    },
+    {
+      "id": "1411604721357295628",
+      "content": "實際上獎勵是300筆，購買這邊只顯示150，我只注意到這個 官方可以再檢查其他獎勵看看",
+      "author": "insomnia07763",
+      "reactions": 3,
+      "channel": "✅「已回答」課題的獎勵數量顯示錯誤"
+    },
+    {
+      "id": "1411624909335040072",
+      "content": "Some units intentions can break or bug the Aigis Petrify status, like Myriam att",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "💭「Processing」Petrify dispel"
     },
     {
       "id": "1411603511782670419",
@@ -42,6 +87,27 @@
       "author": "yolo_mode",
       "reactions": 2,
       "channel": "一點拉郎"
+    },
+    {
+      "id": "1411705781446770780",
+      "content": "Yeah, the fact that they have an additional effect with the unit means that the ",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "POSSES future and changes"
+    },
+    {
+      "id": "1411811415936991313",
+      "content": "I suggest adding a testing stage where you can test your units. For example if I",
+      "author": "yannic2112",
+      "reactions": 1,
+      "channel": "Testing stage"
+    },
+    {
+      "id": "1411539087046742069",
+      "content": "We will check this . Thanks for your feedback！",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "✅「Answered」Interacting with an ultra space with the goal to consult the card,  leads to a softlock"
     },
     {
       "id": "1411613685331394570",

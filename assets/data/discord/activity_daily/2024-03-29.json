@@ -1,10 +1,11 @@
 {
   "date": "2024-03-29",
-  "messages": 72,
+  "messages": 75,
   "unique_authors": 16,
-  "reactions_total": 90,
-  "attachments": 40,
+  "reactions_total": 103,
+  "attachments": 41,
   "channel_activity": {
+    "塗鴉": 3,
     "這不是攻略，只是想募集大家疊毒的層數": 2,
     "💌「旺達」體驗交流分享活動💌": 3,
     "限時活動「湖中之城」關卡地圖總覽": 5,
@@ -17,6 +18,8 @@
     "有種就打鴨⊙ω⊙": 7
   },
   "hourly_activity": {
+    "13": 2,
+    "14": 2,
     "9": 7,
     "10": 5,
     "1": 5,
@@ -24,7 +27,6 @@
     "17": 1,
     "18": 3,
     "19": 2,
-    "14": 1,
     "6": 21,
     "7": 6,
     "8": 3,
@@ -34,9 +36,7 @@
     "3": 2
   },
   "message_types": {
-    "0": 61,
-    "19": 9,
-    "4": 2
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -52,6 +52,13 @@
       "author": "kexk3h6vjyokppszpgctabxtmygfnc6y",
       "reactions": 17,
       "channel": "有種就打鴨⊙ω⊙"
+    },
+    {
+      "id": "1223260320395432062",
+      "content": "看著房東的貼圖突然很有想法 所以塗了(\n好想摸尾巴......",
+      "author": "lemoncandy25",
+      "reactions": 12,
+      "channel": "塗鴉"
     },
     {
       "id": "1223157362685378622",
@@ -87,6 +94,13 @@
       "author": "silverstream_s",
       "reactions": 4,
       "channel": "第5期「融灾禁區」地圖"
+    },
+    {
+      "id": "1223260508426211429",
+      "content": "魚屁屁可愛捏",
+      "author": "xuan4185",
+      "reactions": 1,
+      "channel": "塗鴉"
     },
     {
       "id": "1223358813554479255",

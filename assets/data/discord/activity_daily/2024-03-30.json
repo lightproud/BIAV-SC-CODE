@@ -1,16 +1,23 @@
 {
   "date": "2024-03-30",
-  "messages": 11,
+  "messages": 22,
   "unique_authors": 5,
-  "reactions_total": 56,
-  "attachments": 12,
+  "reactions_total": 99,
+  "attachments": 15,
   "channel_activity": {
+    "紧急摸鱼": 1,
+    "「N」qq人（会可爱死人，请慎入！！）": 9,
+    "塗鴉": 1,
     "這不是攻略，只是想募集大家疊毒的層數": 1,
     "融灾350攻略超维版": 8,
     "墨菲": 1,
     "有種就打鴨⊙ω⊙": 1
   },
   "hourly_activity": {
+    "14": 1,
+    "13": 8,
+    "17": 1,
+    "2": 1,
     "16": 1,
     "6": 1,
     "7": 7,
@@ -18,8 +25,8 @@
     "9": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 3
+    "0": 10,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -30,6 +37,13 @@
       "channel": "墨菲"
     },
     {
+      "id": "1223624585157673065",
+      "content": "我肯定是全服第一个画N的鹰。。。\n这不是免费头像啊哈只是画完当作分享 这是我自己私用（）不能画性感男人所以只能投靠qq人。。",
+      "author": "bashibashibash",
+      "reactions": 27,
+      "channel": "「N」qq人（会可爱死人，请慎入！！）"
+    },
+    {
       "id": "1223564714571989023",
       "content": "",
       "author": "kexk3h6vjyokppszpgctabxtmygfnc6y",
@@ -37,11 +51,25 @@
       "channel": "有種就打鴨⊙ω⊙"
     },
     {
+      "id": "1223642700813959178",
+      "content": "女孩子贴贴!!",
+      "author": "j.h.metz",
+      "reactions": 14,
+      "channel": "紧急摸鱼"
+    },
+    {
       "id": "1223513100494311455",
       "content": "头一次过350，这次灵摆都挺强的，1-3，2-3无压力过，3-3福袋过道中，上易伤，检索，拐暴击，行骸超维回合对轴，跃迁心眼利刃砍砍砍，4-3核心我们的家沉重画",
       "author": "squire5771",
       "reactions": 8,
       "channel": "融灾350攻略超维版"
+    },
+    {
+      "id": "1223624708013166683",
+      "content": "好小一只 真想把他关起来吼吼吼吼。。。。",
+      "author": "bashibashibash",
+      "reactions": 2,
+      "channel": "「N」qq人（会可爱死人，请慎入！！）"
     }
   ]
 }

@@ -1,10 +1,35 @@
 {
   "date": "2026-02-24",
-  "messages": 1462,
+  "messages": 1519,
   "unique_authors": 57,
-  "reactions_total": 178,
-  "attachments": 77,
+  "reactions_total": 190,
+  "attachments": 85,
   "channel_activity": {
+    "💭「處理中」回放不能看": 3,
+    "💭「處理中」Bug列車": 2,
+    "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 2,
+    "💭「處理中」我有兩種刻印效果了": 4,
+    "✅「已回答」極夜微光可否改回在手中時增加使用次數，而非張數": 1,
+    "💭「處理中」為什麼我有四張蠟像共鳴降費過的旺達四費？？": 5,
+    "✅「Answered」Custom difficulty in HSR": 4,
+    "💭「處理中」可是戈雅，我回不去了": 1,
+    "✅「Answered」Give us more ways to use emotes in this game": 2,
+    "💭「Processing」0-cost Lightning Retribution triggers Karen’s “Well-fed” effect": 3,
+    "💭「Processing」New Posse Bug": 2,
+    "✅「Answered」Card disappear": 3,
+    "✅「Answered」Creator accounts": 1,
+    "💭「处理中」智识之理+溯洄时计的奇妙反应": 1,
+    "💭「處理中」特效是出問題了還是本來就長這樣？": 1,
+    "✅「Answered」Possible change to the Gaze intention": 1,
+    "✅「已回答」今天打肉鸽咋没算出牌数做不了每日": 2,
+    "✅「Answered」problems with donations": 2,
+    "✅「已回答」徐的奪魄被錯誤識別為負面狀態": 2,
+    "✅「Answered」Magnolia's Lure WoD should have been available for the entire duration of Xu's banner": 2,
+    "✅「已回答」灵核和密契材料太少了": 2,
+    "✅「Answered」Free Ramona and G.Ramona from story locked chapters": 6,
+    "游戏下载": 1,
+    "✅「Answered」About the Event section in Archive": 3,
+    "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 1,
     "萊克同人轉載": 2,
     "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 2,
@@ -24,32 +49,34 @@
     "🔸阵容构建": 31
   },
   "hourly_activity": {
+    "9": 85,
+    "16": 39,
+    "11": 331,
+    "1": 6,
+    "17": 33,
+    "23": 8,
+    "8": 216,
+    "6": 26,
+    "5": 22,
+    "4": 18,
+    "3": 20,
+    "2": 10,
     "13": 39,
     "14": 13,
-    "17": 26,
-    "1": 5,
-    "9": 76,
     "22": 14,
     "18": 7,
-    "4": 16,
-    "5": 15,
-    "6": 18,
-    "8": 213,
-    "3": 9,
     "0": 53,
-    "2": 8,
     "7": 222,
     "10": 73,
-    "11": 328,
     "12": 51,
     "15": 229,
-    "16": 37,
     "19": 3,
-    "20": 1,
-    "23": 6
+    "20": 1
   },
   "message_types": {
-    "0": 2
+    "0": 32,
+    "4": 18,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -107,6 +134,13 @@
       "author": "water_heart",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1475790171504115723",
+      "content": "I cannot answer these questions right now, but I will share everyone's suggestio",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✅「Answered」Custom difficulty in HSR"
     },
     {
       "id": "1475977452151902303",
@@ -182,13 +216,6 @@
       "id": "1475717788898426913",
       "content": "",
       "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475751219027906695",
-      "content": "我在圖書館看書看到全校老師在找我",
-      "author": "eddy10051115",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

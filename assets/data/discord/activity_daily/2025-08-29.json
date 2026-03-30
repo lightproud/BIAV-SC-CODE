@@ -1,10 +1,28 @@
 {
   "date": "2025-08-29",
-  "messages": 10,
-  "unique_authors": 6,
-  "reactions_total": 27,
-  "attachments": 1,
+  "messages": 52,
+  "unique_authors": 8,
+  "reactions_total": 46,
+  "attachments": 10,
   "channel_activity": {
+    "💭「处理中」關於莉莉超限是否應該受到天賦影響的提問": 1,
+    "💭「Processing」A bug where all the characters in my game are floating heads.": 2,
+    "✅「Answered」[IOS] Chapter 7 allows to proceed without choosing a card from Nourishing Mother": 2,
+    "💭「Processing」Estado de Fiamma en el Despertar de Kathigu-Ra tras el uso de su propia llave (Posse)": 6,
+    "✅「已回答」復刻活動": 2,
+    "✅「Answered」Kath Fiamma FX not showing": 1,
+    "✅「Answered」Add „seen all“ button for Archive": 2,
+    "✅「Answered」[PVP] Ramona's \"Echoed Simulation\" does not copy cards as expected": 1,
+    "✅「已回答」能不要顯示新物資的提示嗎?": 2,
+    "✅「已回答」關於繁衍狂熱的劇情": 3,
+    "✅ 「已回答」建議奧爾拉、哈姆林的PV要補上英文版": 1,
+    "✅ 「已回答」同調上限與獎勵": 2,
+    "✅ 「已回答」克珀珊特天赋加強": 2,
+    "✅「已回答」关于游戏后续内容的一点疑问": 5,
+    "✅「已回答」幻夢深潛體驗優化建議": 2,
+    "✅「Answered」Make „Records“ show details for current banner by default": 5,
+    "💭「Processing」Hameln's Soulforge Aptitude in Talent page seems broken.": 1,
+    "💭「Processing」Unable to access game + lost account": 2,
     "邀請碼互助/Invitation code help each other": 3,
     "相位對弈—認識隊伍": 1,
     "墨菲的下午茶時間": 4,
@@ -12,16 +30,23 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
+    "15": 3,
+    "9": 11,
+    "10": 5,
+    "13": 4,
+    "14": 3,
+    "20": 1,
+    "18": 12,
+    "17": 6,
     "6": 1,
-    "10": 1,
-    "13": 1,
     "3": 1,
     "11": 4,
-    "15": 1,
     "12": 1
   },
   "message_types": {
-    "0": 9
+    "0": 26,
+    "4": 15,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -32,6 +57,13 @@
       "channel": "莉兹✨"
     },
     {
+      "id": "1411006455364194534",
+      "content": "簡單來說\n莉莉天賦表示獲得的忍耐量提升\n莉莉超限表示獲得等同最大生命值的忍耐\n那麼莉莉超限獲得的忍耐是否會受到天賦的影響而變高呢\n目前是不會受到天賦影響\n但還是",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "💭「处理中」關於莉莉超限是否應該受到天賦影響的提問"
+    },
+    {
       "id": "1410946105599983667",
       "content": "扣扣扣——\n\n“請進，門沒鎖。”\n守密人推門而入，印入眼簾的是明亮寬敞的房間和落地窗邊擺著的圓桌。\n前些時候墨菲隨意向守密人所提出的邀約，而今日，正是她所謂的時",
       "author": "void_1546.",
@@ -39,11 +71,74 @@
       "channel": "墨菲的下午茶時間"
     },
     {
+      "id": "1411048082451337278",
+      "content": "我们会在之后幻梦深潜的调整中完全移除购买造物数量这些因素，只看通关的难度和消耗的总回合数。当然同时也会大幅度降低排名奖励的差异。",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "✅「已回答」幻夢深潛體驗優化建議"
+    },
+    {
       "id": "1410970287947780207",
       "content": "<@1131790839291596841> 戈雅 我是新人求幫助我需要100流明",
       "author": "shchng.",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1411057941330788373",
+      "content": "感谢反馈！",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "✅「已回答」能不要顯示新物資的提示嗎?"
+    },
+    {
+      "id": "1410932315684737034",
+      "content": "3.0后说不定会有机会啦（）\n至于现在<:Emoji_TYS_O_08:1400771784982397049>",
+      "author": "be_queitplease",
+      "reactions": 2,
+      "channel": "✅「已回答」关于游戏后续内容的一点疑问"
+    },
+    {
+      "id": "1410932514570240100",
+      "content": "Hi, can you record a video for us?🙏 \nHola, PUEDES GRABARNOS un video?",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Estado de Fiamma en el Despertar de Kathigu-Ra tras el uso de su propia llave (Posse)"
+    },
+    {
+      "id": "1411052942408286330",
+      "content": "非常理解。我们会考虑一下在配音前将过短内容进行扩写。\n\n至于故事设定顺序，在万千宇宙中，总有某个守密人抽到戈利亚拿去打戈利亚这种事。此类特异情况都视为更早些时间",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "✅「已回答」關於繁衍狂熱的劇情"
+    },
+    {
+      "id": "1411057390480261170",
+      "content": "至于专属CG……可以的话我们也非常想要，但对于脑缸组当前的开发事务来说有更优先的工作，例如新的主线、新的角色。",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "✅「已回答」關於繁衍狂熱的劇情"
+    },
+    {
+      "id": "1411049446040535171",
+      "content": "感谢反馈，我们会持续关注唤醒体的可用性。然而我们暂时没有调整克珀珊特的计划。",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "✅ 「已回答」克珀珊特天赋加強"
+    },
+    {
+      "id": "1410932197439045632",
+      "content": "应该很难 全新的界域代表要设计至少4,5个新界域的常驻角色，常驻命轮\n然后还要考虑到界域共生的机制什么的",
+      "author": "be_queitplease",
+      "reactions": 1,
+      "channel": "✅「已回答」关于游戏后续内容的一点疑问"
+    },
+    {
+      "id": "1411047380698009682",
+      "content": "当然考虑过！那些开始就埋下的卫星我总是想要有机会实现的。不过配套设施和设计内容堆积成山实在是太多了。未来我们可能会以特殊界域的方式实现。",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "✅「已回答」关于游戏后续内容的一点疑问"
     }
   ]
 }

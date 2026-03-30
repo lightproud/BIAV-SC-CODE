@@ -1,10 +1,17 @@
 {
   "date": "2026-01-28",
-  "messages": 54,
+  "messages": 84,
   "unique_authors": 19,
-  "reactions_total": 35,
-  "attachments": 8,
+  "reactions_total": 54,
+  "attachments": 16,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 1,
+    "💭「Processing」Astral Reign 1-8 story is broken": 5,
+    "✅「已回答」你是電你是光你是唯一的神話": 7,
+    "[建议] 关于优化“超次元”界域机制의建议": 11,
+    "卡牌介紹缺失bug": 2,
+    "没人冲+12最终法则吗": 1,
+    "新命輪故事用字問題": 3,
     "圖樓": 1,
     "不是if線就是死後幻覺才有可能": 1,
     "🔸欢乐梗图": 2,
@@ -19,27 +26,28 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
+    "5": 3,
+    "21": 4,
+    "22": 4,
+    "10": 19,
+    "11": 3,
+    "3": 8,
+    "17": 2,
     "14": 1,
     "12": 3,
     "16": 2,
-    "11": 2,
     "13": 2,
     "8": 17,
     "9": 2,
-    "10": 2,
     "15": 5,
-    "17": 1,
     "18": 2,
     "19": 1,
-    "21": 2,
     "6": 4,
-    "2": 2,
-    "3": 5,
-    "22": 1
+    "2": 2
   },
   "message_types": {
-    "0": 1,
-    "19": 1
+    "0": 26,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -55,6 +63,34 @@
       "author": "mimiruku",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1466016714972991488",
+      "content": "打牌打到一半怎麼有人自體發光",
+      "author": "ying_papa",
+      "reactions": 6,
+      "channel": "✅「已回答」你是電你是光你是唯一的神話"
+    },
+    {
+      "id": "1466188545634078821",
+      "content": "I hired this GDoll to stare at you",
+      "author": "bagels5899",
+      "reactions": 4,
+      "channel": "💭「Processing」Astral Reign 1-8 story is broken"
+    },
+    {
+      "id": "1466017356982779995",
+      "content": "https://tenor.com/view/out-disappear-bye-vanished-gif-4932063",
+      "author": "ying_papa",
+      "reactions": 4,
+      "channel": "✅「已回答」你是電你是光你是唯一的神話"
+    },
+    {
+      "id": "1466188228091445404",
+      "content": "After Doll: Inferno's first line of dialogue, the text scrolls as if there were ",
+      "author": "wolfmaw",
+      "reactions": 3,
+      "channel": "💭「Processing」Astral Reign 1-8 story is broken"
     },
     {
       "id": "1466069056980254750",
@@ -76,6 +112,20 @@
       "author": "closetom",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1466016116978487296",
+      "content": "主题：关于提升“超維”界域魅力及改进机制的建议\n开发者您好：\n我是一名喜爱《莫里门斯》的玩家。虽然我很想尝试并培养“超維”界域的觉醒体，但说实话，由于目前该界域",
+      "author": "flynn50784",
+      "reactions": 1,
+      "channel": "[建议] 关于优化“超次元”界域机制의建议"
+    },
+    {
+      "id": "1466016645062594560",
+      "content": "簡單翻譯：超次元—>超維",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "[建议] 关于优化“超次元”界域机制의建议"
     },
     {
       "id": "1466026091666866281",

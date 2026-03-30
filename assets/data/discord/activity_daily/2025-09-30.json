@@ -1,17 +1,36 @@
 {
   "date": "2025-09-30",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 9,
-  "attachments": 1,
+  "messages": 19,
+  "unique_authors": 13,
+  "reactions_total": 12,
+  "attachments": 7,
   "channel_activity": {
+    "💭「处理中」凱蒂古拉相位傷害疑問": 2,
+    "✅「Answered」Mobile login via Steam failed - \"the game is not available in your region\"": 1,
+    "💭「Processing」FB link problem": 3,
+    "💭「Processing」I CAN'T PURCHASE FROM THE RECHARGE SHOP": 1,
+    "💭「Processing」I cant update the game": 1,
+    "💭「Processing」i can't enter the game via steam": 4,
+    "✅「已回答」需要修复dc22000订阅没有礼包码的bug": 1,
+    "pvp匹配不到人": 1,
+    "星辰篇规则还会继续优化吗？": 1,
+    "[Bug] Jenkin‘ Mice Assembly uses leap effect too often": 3,
     "1421408684776357929": 1
   },
   "hourly_activity": {
-    "5": 1
+    "8": 4,
+    "12": 3,
+    "7": 1,
+    "2": 2,
+    "5": 3,
+    "9": 2,
+    "4": 1,
+    "3": 1,
+    "10": 2
   },
   "message_types": {
-    "0": 1
+    "0": 16,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -20,6 +39,27 @@
       "author": "water_heart",
       "reactions": 9,
       "channel": ""
+    },
+    {
+      "id": "1422495175917305877",
+      "content": "I tried to update the game but it get stuck on 95% and this error code appear. I",
+      "author": "shenn_o_o",
+      "reactions": 1,
+      "channel": "💭「Processing」I cant update the game"
+    },
+    {
+      "id": "1422456742196936704",
+      "content": "Sadge, if it doesn't work you can try to use the official launcher from the mori",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "💭「Processing」i can't enter the game via steam"
+    },
+    {
+      "id": "1422457330372579363",
+      "content": "oh ty for the reminder, i forgot about that!",
+      "author": "gouphee",
+      "reactions": 1,
+      "channel": "💭「Processing」i can't enter the game via steam"
     }
   ]
 }

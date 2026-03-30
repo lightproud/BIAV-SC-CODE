@@ -1,16 +1,18 @@
 {
   "date": "2023-12-07",
-  "messages": 21,
+  "messages": 23,
   "unique_authors": 5,
-  "reactions_total": 21,
-  "attachments": 14,
+  "reactions_total": 30,
+  "attachments": 15,
   "channel_activity": {
+    "图鲁宝包": 2,
     "深海圖魯新手心得參考": 17,
     "萌新純血肉隊第三章滿星心得": 2,
     "界域简介以及无光实战教程": 1,
     "1180087958930464819": 1
   },
   "hourly_activity": {
+    "15": 2,
     "11": 1,
     "12": 12,
     "13": 3,
@@ -20,10 +22,17 @@
     "8": 1
   },
   "message_types": {
-    "0": 19,
-    "19": 1
+    "0": 1,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1182348287987175424",
+      "content": "",
+      "author": "nanz302",
+      "reactions": 9,
+      "channel": "图鲁宝包"
+    },
     {
       "id": "1182283330125840414",
       "content": "安安 我是喵嗚\n我是完全的新手\n類似遊戲沒玩過\n當初衝著畫風來玩的忘卻\n忘卻越到後面 操作手法 控牌會越重要\n目前主線打到4-3 \n分享一下新手的注意事項\n和目",

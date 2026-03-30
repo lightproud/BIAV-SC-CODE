@@ -1,10 +1,11 @@
 {
   "date": "2024-03-05",
-  "messages": 18,
+  "messages": 26,
   "unique_authors": 11,
   "reactions_total": 39,
-  "attachments": 16,
+  "attachments": 17,
   "channel_activity": {
+    "罗坦-q版头像": 8,
     "【新手向/授人以渔】深海国家队（触手队）喂饭级攻略": 4,
     "血肉隊伍(血夫人隊+希洛隊)使用說明": 1,
     "关于深海界域的杂谈": 9,
@@ -13,6 +14,8 @@
     "迟来的融灾作业": 1
   },
   "hourly_activity": {
+    "17": 5,
+    "23": 3,
     "8": 3,
     "10": 1,
     "12": 1,
@@ -26,8 +29,8 @@
     "18": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 6
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
     {

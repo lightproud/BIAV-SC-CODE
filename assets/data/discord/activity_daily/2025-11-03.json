@@ -1,26 +1,53 @@
 {
   "date": "2025-11-03",
-  "messages": 34,
-  "unique_authors": 8,
-  "reactions_total": 27,
-  "attachments": 4,
+  "messages": 73,
+  "unique_authors": 13,
+  "reactions_total": 39,
+  "attachments": 18,
   "channel_activity": {
+    "✅「Resolved」Pull animation breaks after 100 single pulls": 1,
+    "✅「已回答」广播剧缸中之梦进不去": 2,
+    "✅「已回答」相位對弈屏蔽位置": 2,
+    "✅「已回答」大廳背景音樂": 2,
+    "✅「已回答」第七章共鳴字體重疊": 2,
+    "✅「已回答」PC端可以切号吗": 1,
+    "✅「Ответ дан」Смена начального экрана заставки. (STEAM)": 1,
+    "✅「Answered」Text format error": 1,
+    "💭「Processing」Infinite loading": 2,
+    "Aisha Boss Fight": 1,
+    "✅「Answered」MAKE BOSSES LESS HARD TO NEW PLAYERS": 8,
+    "💭「处理中」血希的链球进入超维空间会被还原并且错误显示": 1,
+    "✅「Resolved」Error code (7009001)": 4,
+    "✅「已回答」希萊斯特及圖魯卡面文字誤植": 3,
+    "✅「Answered」About new Ryker buff": 1,
+    "✅「已回答」触腕集结是否该得到加强": 6,
+    "怎麼更高的數值覆蓋不了低數值啊（惱": 1,
     "这次新的up池最值得抽的是哪一位？": 16,
     "「我還記得你原本應該是什麼樣子」": 15,
     "开个帖子堆一下摸鱼，大概率是两只鸟相关": 2,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "9": 1,
+    "10": 21,
+    "14": 1,
+    "15": 1,
+    "18": 2,
+    "20": 1,
+    "19": 7,
+    "12": 1,
+    "17": 4,
+    "0": 2,
+    "7": 1,
     "1": 15,
-    "17": 3,
     "4": 14,
     "5": 1,
     "2": 1
   },
   "message_types": {
-    "0": 24,
-    "19": 8,
-    "4": 1
+    "0": 25,
+    "4": 9,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -31,11 +58,67 @@
       "channel": "「我還記得你原本應該是什麼樣子」"
     },
     {
+      "id": "1434857066668757102",
+      "content": "我喜歡戈雅的效率",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "✅「已回答」触腕集结是否该得到加强"
+    },
+    {
+      "id": "1434843124953251890",
+      "content": "Not a big deal per say, but there's no pulling animation after doing my 100th si",
+      "author": "wolfierce",
+      "reactions": 2,
+      "channel": "✅「Resolved」Pull animation breaks after 100 single pulls"
+    },
+    {
+      "id": "1434856958023962625",
+      "content": "嗨守密人，我们对此有新的设计计划，未来会在公告中与大家说明🙏",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」触腕集结是否该得到加强"
+    },
+    {
       "id": "1434763695136968765",
       "content": "對他使出深海拳吧戈利亞（X",
       "author": "carrot_chicken",
       "reactions": 2,
       "channel": "「我還記得你原本應該是什麼樣子」"
+    },
+    {
+      "id": "1435003546616467527",
+      "content": "A general sentiment i heard from a lot of players is that this boss is very anno",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "Aisha Boss Fight"
+    },
+    {
+      "id": "1434957422593835121",
+      "content": "I already fixed it",
+      "author": "memento_mori_01",
+      "reactions": 1,
+      "channel": "✅「Resolved」Error code (7009001)"
+    },
+    {
+      "id": "1434853633752825988",
+      "content": "感谢反馈，我们查验一下🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」希萊斯特及圖魯卡面文字誤植"
+    },
+    {
+      "id": "1434706604946755584",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 1,
+      "channel": "✅「Answered」About new Ryker buff"
+    },
+    {
+      "id": "1434857188891033702",
+      "content": "這個群可以沒有校貓但不能沒有戈雅",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "✅「已回答」触腕集结是否该得到加强"
     },
     {
       "id": "1434720591356891156",

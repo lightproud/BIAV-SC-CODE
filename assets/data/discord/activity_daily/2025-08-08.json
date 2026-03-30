@@ -1,10 +1,16 @@
 {
   "date": "2025-08-08",
-  "messages": 10,
+  "messages": 22,
   "unique_authors": 7,
-  "reactions_total": 1093,
-  "attachments": 10,
+  "reactions_total": 1103,
+  "attachments": 18,
   "channel_activity": {
+    "✅「已回答」伺服器會不會有標籤？": 1,
+    "✅「已回答」杜勒需要加強": 6,
+    "✅「已回答」什么时候加回英文名": 1,
+    "✅「已回答」調和回血沒辦法移除出血": 2,
+    "✅「已回答」没跳隐藏成就": 1,
+    "💭「处理中」文本bug": 1,
     "杜勒賽因的詳細解析！": 1,
     "克萊門汀滑鼠游標": 5,
     "我幻想的杜勒賽因加強": 2,
@@ -12,14 +18,17 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "9": 3,
+    "13": 7,
+    "12": 2,
+    "10": 2,
+    "14": 1,
     "11": 4,
-    "17": 3,
-    "10": 1,
-    "9": 1,
-    "13": 1
+    "17": 3
   },
   "message_types": {
-    "0": 8
+    "0": 11,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -37,11 +46,39 @@
       "channel": "克萊門汀滑鼠游標"
     },
     {
+      "id": "1403368137625440376",
+      "content": "不然你高难精英只能靠钥匙获得残骸太难绷了",
+      "author": "carme.0588",
+      "reactions": 4,
+      "channel": "✅「已回答」杜勒需要加強"
+    },
+    {
+      "id": "1403301852459569213",
+      "content": "很想要一個可以頂着到處跑到處騙人入坑(×)傳教(✓)的標籤\n\n但是感覺又好像不太可能，因為標籤好像只能有一個又不能選語言，而且好像也不是什麼伺服器都會有標籤(不",
+      "author": "shostakovich524",
+      "reactions": 3,
+      "channel": "✅「已回答」伺服器會不會有標籤？"
+    },
+    {
       "id": "1403345970439131166",
       "content": "https://www.youtube.com/watch?v=K4ibslN8Mus&feature=youtu.be",
       "author": "kourinn0707_82175",
       "reactions": 3,
       "channel": "杜勒賽因的詳細解析！"
+    },
+    {
+      "id": "1403366494393339996",
+      "content": "……",
+      "author": "magushermes",
+      "reactions": 2,
+      "channel": "✅「已回答」杜勒需要加強"
+    },
+    {
+      "id": "1403304210468175974",
+      "content": "",
+      "author": "menoctus",
+      "reactions": 1,
+      "channel": "💭「处理中」文本bug"
     },
     {
       "id": "1403340338273325146",

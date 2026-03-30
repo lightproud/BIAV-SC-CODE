@@ -1,10 +1,12 @@
 {
   "date": "2024-04-12",
-  "messages": 162,
+  "messages": 167,
   "unique_authors": 16,
-  "reactions_total": 63,
-  "attachments": 29,
+  "reactions_total": 94,
+  "attachments": 39,
   "channel_activity": {
+    "［現pa］強風但沒有大背頭（戈守）": 3,
+    "【nomad建模】粉鱼布偶一只，请签收！": 2,
     "重返絕叫哀號的原質之海（新版達芙，從入門到入土）": 20,
     "血肉隊神父抽取建議和評價": 1,
     "血肉節奏榜": 10,
@@ -18,7 +20,10 @@
     "Forget Last Night: Morimens fanfic": 1
   },
   "hourly_activity": {
-    "11": 20,
+    "6": 7,
+    "11": 21,
+    "7": 102,
+    "14": 1,
     "12": 10,
     "19": 1,
     "13": 2,
@@ -28,13 +33,11 @@
     "10": 5,
     "17": 1,
     "18": 2,
-    "7": 101,
-    "6": 5,
     "2": 1
   },
   "message_types": {
-    "0": 149,
-    "19": 13
+    "0": 3,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -45,11 +48,25 @@
       "channel": "Forget Last Night: Morimens fanfic"
     },
     {
+      "id": "1228225883840581714",
+      "content": "畫角色穿現代衣服真的太好玩了\nUID:100047306",
+      "author": "yolo_mode",
+      "reactions": 23,
+      "channel": "［現pa］強風但沒有大背頭（戈守）"
+    },
+    {
       "id": "1228313496303964191",
       "content": "-------------------------------------------------------\n## 【結語】\n\n我並不是一名很厲害的玩家，也不",
       "author": ".weiyu",
       "reactions": 10,
       "channel": "重返絕叫哀號的原質之海（新版達芙，從入門到入土）"
+    },
+    {
+      "id": "1228252454232002653",
+      "content": "软fufu粉鱼布娃娃，但缝线完全没有真实参考意义x\n加上轻度的像素化渲染感觉很像什么rpg游戏里的行动小人\nuid 100000183",
+      "author": "nancyjofla",
+      "reactions": 8,
+      "channel": "【nomad建模】粉鱼布偶一只，请签收！"
     },
     {
       "id": "1228397723389263882",

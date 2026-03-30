@@ -1,20 +1,45 @@
 {
   "date": "2025-11-05",
-  "messages": 15,
-  "unique_authors": 3,
-  "reactions_total": 12,
-  "attachments": 1,
+  "messages": 67,
+  "unique_authors": 11,
+  "reactions_total": 21,
+  "attachments": 5,
   "channel_activity": {
+    "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 3,
+    "✅「Answered」Quality of Life for Covenant Transcription": 1,
+    "✅「Answered」8-10 N and potential other N stages Bugs": 1,
+    "✅「Answered」Would it be possible to show transcription quality in the covenant dismantle UI?": 2,
+    "✅「Answered」Make Doresain overflow damage on others when killing": 2,
+    "✅「已回答」塔薇試玩開第二鑰令選門扉的答案選完一次後會卡住": 2,
+    "✅「Answered」Keeping only the background on homescreen / no awakener": 5,
+    "✅「Answered」Gnosis fragments": 20,
+    "✅「Answered」Celeste's rouse has a confusing description": 1,
+    "✅「已回答」第七章共鳴字體重疊": 3,
+    "💭「Processing」Cant start the in-game download?": 2,
+    "✅「已回答」PC端可以切号吗": 2,
+    "✅「Ответ дан」Смена начального экрана заставки. (STEAM)": 2,
+    "✅「已回答」能不能提高一下每个月兑换高级灵核的数量": 4,
+    "✅「Answered」Suggestions from Korean Keepers": 2,
     "🔸欢乐梗图": 14,
     "1296113810549112874": 1
   },
   "hourly_activity": {
-    "13": 2,
-    "14": 13
+    "4": 24,
+    "8": 4,
+    "0": 2,
+    "3": 5,
+    "15": 1,
+    "18": 1,
+    "14": 15,
+    "13": 4,
+    "7": 1,
+    "6": 6,
+    "2": 4
   },
   "message_types": {
-    "0": 9,
-    "19": 6
+    "0": 34,
+    "4": 13,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -23,6 +48,48 @@
       "author": "yingmai_",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1435540986410303538",
+      "content": "Sorry, there is indeed an issue here. The correct one should be:\n\n\"17th+ copies:",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✅「Answered」Gnosis fragments"
+    },
+    {
+      "id": "1435539947976261684",
+      "content": "Thank you for your suggestion. I will convey it to the designer🙏",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「Answered」Flaws and Weaknesses in Pollux's skill design"
+    },
+    {
+      "id": "1435470285720785006",
+      "content": "Hi, we will add this feature in the future\n﻿\nIn fact, the current background of ",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Keeping only the background on homescreen / no awakener"
+    },
+    {
+      "id": "1435482058242789437",
+      "content": "I didnt even think about it up until wolfierce had mentioned it",
+      "author": "dragonshiny7",
+      "reactions": 1,
+      "channel": "✅「Answered」Gnosis fragments"
+    },
+    {
+      "id": "1435482210886094948",
+      "content": "If only I could explain things better<:takenotes:1357186646294138890>",
+      "author": "dragonshiny7",
+      "reactions": 1,
+      "channel": "✅「Answered」Gnosis fragments"
+    },
+    {
+      "id": "1435521121062748172",
+      "content": "好",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 1,
+      "channel": "✅「已回答」第七章共鳴字體重疊"
     },
     {
       "id": "1435626990618284072",

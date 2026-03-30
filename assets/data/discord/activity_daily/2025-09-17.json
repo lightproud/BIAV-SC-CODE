@@ -1,10 +1,20 @@
 {
   "date": "2025-09-17",
-  "messages": 13,
-  "unique_authors": 5,
-  "reactions_total": 23,
-  "attachments": 7,
+  "messages": 42,
+  "unique_authors": 12,
+  "reactions_total": 33,
+  "attachments": 11,
   "channel_activity": {
+    "✅「Answered」About new Ryker buff": 4,
+    "✅「Answered」Issue with Thai UI vowel positioning.": 3,
+    "✅「已回答」請問官網充值是否可以避免平台扣30%的抽成?": 1,
+    "✅「已回答」關於克珀珊特覺醒卡的調整建議": 2,
+    "✅「Answered」Is there a possibility of Helot: Catena banner rerun?": 2,
+    "✅「Answered」Thais Traphase blighten on enemy halves guidance mark healing to allies": 1,
+    "✅「已回答」缠绕机制能改下吗？": 5,
+    "✅「已回答」不好意思，我的幻夢深潛已經三天沒有領到獎勵了，這正常嗎?": 6,
+    "✅「Answered」Phantasmal Dive rewards are bugged": 3,
+    "✅「Answered」Summer event background locked": 2,
     "邀請碼互助/Invitation code help each other": 2,
     "阿拉克涅，技能與命輪介紹": 5,
     "杜勒杜勒我们喜欢你😭": 1,
@@ -12,16 +22,27 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "10": 1,
+    "3": 9,
+    "4": 2,
+    "6": 2,
+    "8": 2,
+    "18": 1,
+    "10": 2,
+    "11": 1,
+    "21": 1,
+    "17": 5,
+    "13": 5,
+    "14": 1,
     "23": 1,
     "1": 1,
     "2": 4,
-    "6": 1,
     "7": 4,
     "16": 1
   },
   "message_types": {
-    "0": 8
+    "0": 21,
+    "4": 5,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -58,6 +79,55 @@
       "author": "yingmai_",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1417766646642249819",
+      "content": "Almost everywhere, not just in the example image, of the Thai UI, the vowels are",
+      "author": "darkerkuro",
+      "reactions": 2,
+      "channel": "✅「Answered」Issue with Thai UI vowel positioning."
+    },
+    {
+      "id": "1417924145836196013",
+      "content": "总的来说会回调为更经典的体验 近期的新角色基本也会重做",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "✅「已回答」缠绕机制能改下吗？"
+    },
+    {
+      "id": "1417925830817874010",
+      "content": "泪🔪回来吧，哪怕直能分解一次<:pray:1400771650064089112>",
+      "author": "cs001092",
+      "reactions": 2,
+      "channel": "✅「已回答」缠绕机制能改下吗？"
+    },
+    {
+      "id": "1417736066307330168",
+      "content": "pls check DM if can",
+      "author": "aegisx",
+      "reactions": 1,
+      "channel": "✅「Answered」About new Ryker buff"
+    },
+    {
+      "id": "1417794451157286996",
+      "content": "Thank you for your feedback. We will verify it🙏 🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Issue with Thai UI vowel positioning."
+    },
+    {
+      "id": "1417933802008870963",
+      "content": "問題一\n官網充值是否能避免平台（如 App Store、Google Play、Steam 等）扣取約 30% 的抽成？\n目前玩家大多使用遊戲內購買方式進行充值",
+      "author": "taoi002",
+      "reactions": 1,
+      "channel": "✅「已回答」請問官網充值是否可以避免平台扣30%的抽成?"
+    },
+    {
+      "id": "1417923220203634708",
+      "content": "最近满街蜘蛛缠绕队\n\n10组对战中蜘蛛出现率贼高<:flop2:1356053072924774421> \n包括命轮\n\n缠绕2回已经严重影响其他组合的正常发挥<",
+      "author": "cs001092",
+      "reactions": 1,
+      "channel": "✅「已回答」缠绕机制能改下吗？"
     }
   ]
 }

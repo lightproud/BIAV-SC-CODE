@@ -1,10 +1,93 @@
 {
   "date": "2025-11-17",
-  "messages": 6,
-  "unique_authors": 3,
-  "reactions_total": 59,
-  "attachments": 2,
+  "messages": 303,
+  "unique_authors": 87,
+  "reactions_total": 206,
+  "attachments": 99,
   "channel_activity": {
+    "Arc 1 story content nerf": 23,
+    "✅「Resolved」Pull animation breaks after 100 single pulls": 1,
+    "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled": 18,
+    "💭「Processing」PLEASE remove the auto-scroll.": 2,
+    "✅「已解决」角色名不统一": 1,
+    "💭「处理中」下調難度後無法達成成就": 2,
+    "💭「Processing」Having game crash recently": 2,
+    "💭「Processing」Constant stuttering and performance issue in latest update.": 11,
+    "✅「Answered」Helot catena defense card not activating bleed damage": 2,
+    "✅「Answered」Replay Button Bug": 4,
+    "✅「Answered」Doresain card args not resolving": 1,
+    "✅「已回答」今天bug黏著我不放": 5,
+    "✅「Answered」Support selection screen is unusable": 2,
+    "💭「处理中」bug和临时文本": 1,
+    "✅「Resolved」I can't edify GDoll despite completing the chapter 1 prerequisite. She is lvl 10.": 8,
+    "💭「处理中」Bug Report：超維鑰令不齊全": 2,
+    "✅「已回答」助戰Bug": 4,
+    "💭「处理中」助战bug": 1,
+    "💭「处理中」无法回溯命轮": 2,
+    "💭「Processing」Seems Ryker's relics are bugged?": 1,
+    "💭「Processing」After unfavorite awakener the awakener is stuck at the top": 3,
+    "💭「Processing」Cutscenes and ult animations consistently stutter/have low FPS.": 1,
+    "💭「Processing」Cutscenes and video not loading": 1,
+    "💭「Processing」English doesn't work": 1,
+    "💭「处理中」幻梦队伍成就结算有bug": 2,
+    "💭「Processing」Automatic SSR WoD dismantle": 2,
+    "💭「处理中」血超變成海超": 4,
+    "💭「Processing」Some Mission Achievements break due to nerfs": 1,
+    "💭「Processing」The game gets stuck while auto-playing.": 1,
+    "💭「处理中」助戰無法借用&被複選": 3,
+    "✅「Answered」Description bug with Tawil's exalt card.": 1,
+    "error": 1,
+    "💭「Processing」D-tide Leaderboard Translation": 3,
+    "💭「Processing」Some minor translation bug on Kathigura`s chapter": 1,
+    "✅「已回答」解锁典藏馆要再打一遍主线？？？": 10,
+    "💭「Processing」Pierce bug": 2,
+    "💭「处理中」莱克造物bug": 8,
+    "💭「处理中」點讚卡卡的": 1,
+    "✅「Answered」I made an error with the Origin of Time item": 1,
+    "💭「Processing」Myriam 2 cost bug": 1,
+    "New store update feels predatory and it sucks": 1,
+    "👻 Dive - Click to your rank.": 1,
+    "✅「Answered」Is it possible to have some official  art of events and such for content creation?": 4,
+    "Story text scrolls too fast": 1,
+    "✅「已回答」大月卡奖励没有补发": 15,
+    "💭「处理中」背景音訊出問題": 3,
+    "💭「处理中」這是複製到哪去了": 1,
+    "💭「Processing」Lightning Retribution is not displaying properly": 2,
+    "💭「处理中」0.5算": 4,
+    "✅「Answered」G-Helot defense bleed not triggering": 9,
+    "💭「Processing」Bug Soulforge Aptitude Karen": 2,
+    "✅「Answered」Doresain text card issue": 11,
+    "✅「Answered」Quick Inserting Wheel Automatically Adds Timeloop Copies": 8,
+    "✅「已回答」回溯不了命轮": 4,
+    "✅「Answered」GHelot bleed proc 0 damage after patch": 3,
+    "✅「已回答」幻夢深潛助戰bug": 3,
+    "✅「Answered」Covenant descriptions are swapped in the store": 3,
+    "💭「处理中」点进阶没反应": 4,
+    "✅「已解决」APK無法安裝": 7,
+    "✅「Answered」Name change": 1,
+    "💭「Processing」Alva rouse incorrectly displays and doesnt activate new effect": 2,
+    "✅「Answered」Friendlist is broken in phantasm dive, cannot select friend.": 3,
+    "It's about time to redesign the D-tide ui": 1,
+    "💭「处理中」对话没了": 2,
+    "💭「处理中」生涯等级": 3,
+    "💭「处理中」深潛同分不同排名": 4,
+    "💭「Processing」The game became Chinese when they wanted to me to download big update.": 6,
+    "✅「已回答」仙网": 2,
+    "✅「Answered」Can I get some help? 😭": 2,
+    "✅「已回答」血希的觸發出血無法正常生效": 4,
+    "💭「处理中」典藏館音樂bug": 1,
+    "💭「Processing」bug in the description Caren ult": 1,
+    "✅「已回答」回溯問題": 5,
+    "💭「Processing」Can’t enter the game": 9,
+    "✅「Resolved」Possible [Bug]": 5,
+    "💭「Processing」Traphase wrong description": 2,
+    "💭「Processing」Bug: Communicator Stories Emotes and Messages glitch out": 3,
+    "💭「Processing」Salvador Rouse Card": 2,
+    "💭「处理中」無法正常回朔命輪": 4,
+    "💭「处理中」幕間演習三星獎勵bug": 2,
+    "Hard Mode becomes too easy. Suggestion: can you make it hard again?": 1,
+    "💭「处理中」按讚延遲": 3,
+    "Hard mode quest revision": 2,
     "給異格也P了一版仿官海報（）": 1,
     "試閱：▼▼▼▼之犬": 1,
     "🔸服务器公告┊server-announcement": 1,
@@ -12,14 +95,33 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "19": 1,
-    "18": 1,
-    "3": 1,
-    "9": 2,
-    "14": 1
+    "14": 12,
+    "15": 8,
+    "17": 11,
+    "18": 10,
+    "20": 11,
+    "21": 4,
+    "22": 10,
+    "16": 4,
+    "23": 3,
+    "8": 57,
+    "9": 54,
+    "10": 6,
+    "4": 17,
+    "5": 21,
+    "7": 48,
+    "11": 3,
+    "13": 5,
+    "12": 6,
+    "19": 4,
+    "2": 1,
+    "6": 7,
+    "3": 1
   },
   "message_types": {
-    "0": 2
+    "0": 220,
+    "19": 31,
+    "4": 46
   },
   "top_reacted_messages": [
     {
@@ -30,6 +132,20 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1439988606117740655",
+      "content": "I feel like most stages in arc 1 normal mode got hit a bit too hard with the new",
+      "author": "arandomflamev2",
+      "reactions": 32,
+      "channel": "Arc 1 story content nerf"
+    },
+    {
+      "id": "1440128900490330182",
+      "content": "I requested this once previously, so I will be copy and pasting some of the prev",
+      "author": "crimsondream24",
+      "reactions": 16,
+      "channel": "💭「Processing」PLEASE remove the auto-scroll."
+    },
+    {
       "id": "1439916138602692658",
       "content": "11/17封禁名單（部分）丨 11/17Ban List (Partial)\n100474981\n100773904\n100508134\n100726595\n1",
       "author": "morimensstaff02",
@@ -37,11 +153,116 @@
       "channel": ""
     },
     {
-      "id": "1439989311746347028",
-      "content": "17/11 update (happy anniversary!)\nOfficial timeline means major updates. Most of",
-      "author": "nikolazuli",
+      "id": "1440033316383227965",
+      "content": "這張地圖只有一場精英戰，而且精英最高就是4500血，無法達成成就要求<:A_pinch:1432980538536493057>",
+      "author": "tsubaki9884",
+      "reactions": 8,
+      "channel": "💭「处理中」下調難度後無法達成成就"
+    },
+    {
+      "id": "1439985625188012042",
+      "content": "Specifically in Hard 6-6 I noticed this, but after checking some other stages ha",
+      "author": "coco_cocoa",
+      "reactions": 7,
+      "channel": "💭「Processing」Some Mission Achievements break due to nerfs"
+    },
+    {
+      "id": "1439841400026959922",
+      "content": "0 damage each use during phantasmal dive",
+      "author": "foxblood13",
+      "reactions": 7,
+      "channel": "✅「Answered」G-Helot defense bleed not triggering"
+    },
+    {
+      "id": "1439998549361426454",
+      "content": "An addition that the hard mode for arc 1 also felt like it got nerfed as well. \n",
+      "author": "cecilc",
+      "reactions": 6,
+      "channel": "Arc 1 story content nerf"
+    },
+    {
+      "id": "1439890785708277850",
+      "content": "你好守密人，目前是这样设计的",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "✅「已回答」解锁典藏馆要再打一遍主线？？？"
+    },
+    {
+      "id": "1439976998960365639",
+      "content": "Story dialogue scrolls too fast that a large paragraph gets cut into two, with t",
+      "author": "thigh_god.",
+      "reactions": 4,
+      "channel": "Story text scrolls too fast"
+    },
+    {
+      "id": "1439845246161916035",
+      "content": "For some reason this update makes it so Quick Inserting for Wheel of Destiny aut",
+      "author": ".dredge.",
+      "reactions": 4,
+      "channel": "✅「Answered」Quick Inserting Wheel Automatically Adds Timeloop Copies"
+    },
+    {
+      "id": "1439870429471838279",
+      "content": "I remember before the nerf, playing HM 6-9 I barely survived normal encounter. N",
+      "author": "aileenatsuki",
+      "reactions": 4,
+      "channel": "Hard Mode becomes too easy. Suggestion: can you make it hard again?"
+    },
+    {
+      "id": "1440051781936746749",
+      "content": "Basically completely removing the damage walls/fortitude from the final ch8 boss",
+      "author": "thpdom",
+      "reactions": 3,
+      "channel": "Arc 1 story content nerf"
+    },
+    {
+      "id": "1440002405784621136",
+      "content": "心理老师简体中文名不统一。“茜尔维ya”在典藏馆中写作“娅”，而在忘却篇1-1剧情、艾继丝：故事•二中写作“亚”，不确定是否还有别处。希望能统一。\n\n还有，同人",
+      "author": "150_ripe",
+      "reactions": 3,
+      "channel": "✅「已解决」角色名不统一"
+    },
+    {
+      "id": "1439976580725084230",
+      "content": "",
+      "author": "lumato",
+      "reactions": 3,
+      "channel": "💭「Processing」After unfavorite awakener the awakener is stuck at the top"
+    },
+    {
+      "id": "1439847483407863889",
+      "content": "如題，在哪邊按讚時都會卡住一下",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "💭「处理中」按讚延遲"
+    },
+    {
+      "id": "1440003284348960798",
+      "content": "I'm guessing they want to introduce the madness difficulty in story, which by lo",
+      "author": "wolfierce",
       "reactions": 2,
-      "channel": ""
+      "channel": "Arc 1 story content nerf"
+    },
+    {
+      "id": "1440080564060295330",
+      "content": "i feel like this should instead be a new story difficulty below normal",
+      "author": "lumato",
+      "reactions": 2,
+      "channel": "Arc 1 story content nerf"
+    },
+    {
+      "id": "1440017050318798981",
+      "content": "While owning an SSR ‘Wheel’ at +12, obtaining an additional duplicate SSR ‘Wheel",
+      "author": "zura_0000",
+      "reactions": 2,
+      "channel": "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled"
+    },
+    {
+      "id": "1439910521305436250",
+      "content": "漂亮溫柔又善解人意戈雅對不起我眼殘看錯了拜託原諒我😭",
+      "author": "2041880926",
+      "reactions": 2,
+      "channel": "✅「已回答」今天bug黏著我不放"
     }
   ]
 }

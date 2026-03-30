@@ -1,17 +1,20 @@
 {
   "date": "2025-07-08",
-  "messages": 1,
+  "messages": 4,
   "unique_authors": 1,
   "reactions_total": 0,
   "attachments": 0,
   "channel_activity": {
+    "✅「Answered」Incorrect dmg apply with counter": 3,
     "1390375103707218041": 1
   },
   "hourly_activity": {
+    "5": 3,
     "16": 1
   },
   "message_types": {
-    "0": 1
+    "0": 1,
+    "4": 2
   },
   "top_reacted_messages": []
 }

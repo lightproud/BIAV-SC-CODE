@@ -1,24 +1,41 @@
 {
   "date": "2025-02-01",
-  "messages": 4,
+  "messages": 9,
   "unique_authors": 4,
-  "reactions_total": 3,
-  "attachments": 3,
+  "reactions_total": 12,
+  "attachments": 5,
   "channel_activity": {
+    "mockup ui for realm selection and silver key posse": 5,
     "【PVE攻略】艾继丝石化使用指南、技巧大全": 1,
     "【梗图】堆点我P过的梗图": 1,
     "Miryam": 2
   },
   "hourly_activity": {
+    "4": 5,
     "14": 1,
     "13": 1,
     "2": 1,
     "6": 1
   },
   "message_types": {
-    "0": 4
+    "0": 4,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1335099163217629285",
+      "content": "i make some mockup that maybe can be used in game to help on user interface",
+      "author": "maegu",
+      "reactions": 5,
+      "channel": "mockup ui for realm selection and silver key posse"
+    },
+    {
+      "id": "1335100481038585896",
+      "content": "additionally, it also have list of every posse and if you dont own it yet, the i",
+      "author": "maegu",
+      "reactions": 4,
+      "channel": "mockup ui for realm selection and silver key posse"
+    },
     {
       "id": "1335248106601713664",
       "content": "这很权威了",

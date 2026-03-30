@@ -1,10 +1,18 @@
 {
   "date": "2026-02-06",
-  "messages": 7568,
+  "messages": 7609,
   "unique_authors": 159,
-  "reactions_total": 1227,
-  "attachments": 227,
+  "reactions_total": 1230,
+  "attachments": 229,
   "channel_activity": {
+    "游戏下载": 1,
+    "💭「Processing」game client crashed...somewhat": 2,
+    "Please help. I'm not at fault. I love this game.": 28,
+    "Salvador's Special Ops dialogue lag. ''Our failing": 2,
+    "💭「Processing」Astral Reign 1-8 story is broken": 4,
+    "9-3 20000 deal, does it work?": 1,
+    "謂之「尸解」而登仙": 2,
+    "Enemy still only attacking once after Wanda 10 stack exalt": 1,
     "アイロニーナ || 杜勒赛因x西维斯特": 17,
     "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 3,
@@ -18,23 +26,23 @@
     "🔸morimens-game-chat": 6433
   },
   "hourly_activity": {
+    "2": 274,
+    "7": 282,
+    "9": 294,
+    "10": 620,
+    "11": 350,
+    "15": 382,
+    "13": 222,
+    "12": 644,
+    "5": 220,
+    "3": 379,
     "8": 251,
-    "9": 289,
     "4": 92,
-    "3": 378,
-    "11": 342,
-    "12": 642,
-    "15": 381,
-    "7": 273,
     "19": 247,
     "21": 503,
     "0": 553,
     "1": 243,
-    "2": 273,
-    "5": 218,
     "6": 84,
-    "10": 612,
-    "13": 218,
     "14": 479,
     "16": 173,
     "17": 124,
@@ -44,8 +52,9 @@
     "20": 449
   },
   "message_types": {
-    "0": 11,
-    "19": 6
+    "0": 32,
+    "19": 8,
+    "20": 1
   },
   "top_reacted_messages": [
     {

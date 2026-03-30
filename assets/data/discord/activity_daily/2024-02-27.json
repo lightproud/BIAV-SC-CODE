@@ -1,10 +1,13 @@
 {
   "date": "2024-02-27",
-  "messages": 29,
+  "messages": 38,
   "unique_authors": 11,
-  "reactions_total": 40,
-  "attachments": 20,
+  "reactions_total": 52,
+  "attachments": 22,
   "channel_activity": {
+    "【艾诺cp向】I'm coming home.": 1,
+    "【艾繼絲中心同人文】向死而生": 6,
+    "莉兹同人文——殊途同归之焰": 2,
     "【錢不能萬能的，但是沒錢是萬萬不能的】 淺談黑印掉落配置": 12,
     "深海界域介紹": 4,
     "💌「墨菲」體驗交流分享活動💌": 2,
@@ -14,6 +17,10 @@
     "无敌深海触手反击队攻略": 2
   },
   "hourly_activity": {
+    "23": 1,
+    "14": 6,
+    "10": 1,
+    "11": 1,
     "12": 11,
     "16": 6,
     "5": 3,
@@ -25,9 +32,7 @@
     "15": 1
   },
   "message_types": {
-    "0": 24,
-    "4": 2,
-    "19": 3
+    "0": 9
   },
   "top_reacted_messages": [
     {
@@ -45,6 +50,13 @@
       "channel": "深海界域介紹"
     },
     {
+      "id": "1212037521899266128",
+      "content": "埋藏在艾繼絲心中的小小心願。",
+      "author": "momoshiocha",
+      "reactions": 6,
+      "channel": "【艾繼絲中心同人文】向死而生"
+    },
+    {
       "id": "1211886634765914213",
       "content": "目的是帮助刚刚来到弥萨格大学的守密人快速熟悉弥大生活，遂准备了这个系列，今天放的是战斗面板图解～",
       "author": "niubi.plusv587",
@@ -57,6 +69,13 @@
       "author": "ed2800",
       "reactions": 5,
       "channel": "💌「墨菲」體驗交流分享活動💌"
+    },
+    {
+      "id": "1212186945048809573",
+      "content": "⚠️VRM模型，双方服饰及身体结构与原设有一定出入⚠️\n原本算是个静态动作k帧练习，k完后觉得太合适了所以单独拿出来。\n\nID 100000183",
+      "author": "nancyjofla",
+      "reactions": 4,
+      "channel": "【艾诺cp向】I'm coming home."
     },
     {
       "id": "1212014844086325269",
@@ -85,6 +104,20 @@
       "author": "muma4049",
       "reactions": 2,
       "channel": "无敌深海触手反击队攻略"
+    },
+    {
+      "id": "1212039413966573628",
+      "content": "🥺💞",
+      "author": "bashibashibash",
+      "reactions": 1,
+      "channel": "【艾繼絲中心同人文】向死而生"
+    },
+    {
+      "id": "1212045895965609984",
+      "content": "茶茶<:1161172786031a79997f77b2e8778d1c:1070475640299593810>",
+      "author": "under_brightly_light",
+      "reactions": 1,
+      "channel": "【艾繼絲中心同人文】向死而生"
     }
   ]
 }

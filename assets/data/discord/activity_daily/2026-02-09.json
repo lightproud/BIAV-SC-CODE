@@ -1,10 +1,28 @@
 {
   "date": "2026-02-09",
-  "messages": 10528,
+  "messages": 10602,
   "unique_authors": 252,
-  "reactions_total": 1465,
-  "attachments": 830,
+  "reactions_total": 1532,
+  "attachments": 867,
   "channel_activity": {
+    "✅「Answered」Salvador Bug in Train Event": 34,
+    "✅「Answered」Crimson Brooch STR not added in HSR": 5,
+    "✅「Resolved」Bug after fighting Ch4 boss in the train mode and killing it when it enters Ultra turn": 1,
+    "✅「Answered」Train hard mode rewards": 1,
+    "✅「Resolved」Getting Less Than Listed Counter From Wave 1 Relic": 1,
+    "After Using Arc 2 Chapter 3's Doresain Goblet Card, It Got Mixed Into Pickman's Relic selection?": 2,
+    "✅「已解决」活動文本": 3,
+    "✅「已解决」當你們一邊閒聊,一邊離開此地時——": 4,
+    "✅「Resolved」HSR Dog Bug": 6,
+    "✅「已回答」错字": 1,
+    "Goliath bleed damage description": 4,
+    "✅「已回答」求助！这是什么bug！": 2,
+    "✅「Answered」New train event": 4,
+    "Please help. I'm not at fault. I love this game.": 1,
+    "Request for Account Unban - ErioTo / Morimens Server": 1,
+    "You have Mother Tree Ceremony debuff for the whole run after fighting Thais in HSR mode": 2,
+    "Chrono Pendulum Charge infinite str down": 1,
+    "Mother Tree debuff lasts after boss fight": 1,
     "🔸忘却前夜┊morimens-tv": 2,
     "🔸游戏问题": 6,
     "1403373754175721657": 2,
@@ -13,38 +31,51 @@
     "🔸morimens-game-chat": 7898
   },
   "hourly_activity": {
-    "3": 592,
-    "21": 137,
-    "4": 494,
-    "8": 491,
-    "9": 451,
-    "10": 333,
+    "9": 474,
+    "10": 348,
+    "12": 445,
+    "14": 512,
+    "8": 502,
+    "11": 378,
+    "17": 246,
+    "21": 138,
+    "4": 499,
+    "3": 595,
+    "7": 663,
+    "5": 775,
     "18": 255,
     "0": 343,
     "1": 310,
     "2": 553,
-    "5": 773,
     "6": 602,
-    "7": 661,
-    "11": 377,
-    "12": 437,
     "13": 521,
-    "14": 510,
     "15": 963,
     "16": 367,
-    "17": 245,
     "19": 380,
     "20": 244,
     "22": 330,
     "23": 159
   },
   "message_types": {
-    "0": 8021,
-    "19": 2505,
-    "23": 1,
-    "46": 1
+    "0": 64,
+    "4": 6,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1470477044516257836",
+      "content": "The rewards for beating the hard mode missions of the new Train game mode are li",
+      "author": "vxvendetta97",
+      "reactions": 22,
+      "channel": "✅「Answered」Train hard mode rewards"
+    },
+    {
+      "id": "1470279767390687514",
+      "content": "I was playing the new roguelike mode when I used the Doresain goblet card, follo",
+      "author": "fuckupa2",
+      "reactions": 18,
+      "channel": "After Using Arc 2 Chapter 3's Doresain Goblet Card, It Got Mixed Into Pickman's Relic selection?"
+    },
     {
       "id": "1470441621375029419",
       "content": "谁会赢？\n世界无上意志的目光\n所视之处皆为融蚀灾难\n每一种目光都代表着一种苦难，限制着你的意志和发挥\nVS\n三个拿着碎酒瓶的小孩",
@@ -100,6 +131,13 @@
       "author": "angbak",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470363364097261590",
+      "content": "戈雅也要：當你們一邊閒聊,一邊離開此地時——（這邊速去反饋一下哦<:24_smile:1459073862544130131> ）",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "✅「已解决」活動文本"
     },
     {
       "id": "1470335288302637150",
@@ -161,27 +199,6 @@
       "id": "1470261207050223872",
       "content": "980女池出了地瓜和醫生",
       "author": "kalpiko.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470298141671686239",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470330333797810187",
-      "content": "我還以為底層代碼刪不掉",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470338061241024720",
-      "content": "<:dead:1356082627509092372>",
-      "author": "sweet_25367",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

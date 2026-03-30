@@ -1,10 +1,11 @@
 {
   "date": "2024-02-08",
-  "messages": 139,
+  "messages": 141,
   "unique_authors": 25,
   "reactions_total": 45,
-  "attachments": 6,
+  "attachments": 8,
   "channel_activity": {
+    "帮微博超话主持发下千元奖金的活动～": 2,
     "2.1版本后的深海思路与探索": 4,
     "💌「莉莉」體驗交流分享活動💌": 4,
     "困难融灾5新解法（凯刻斯主C）": 9,
@@ -15,6 +16,7 @@
     "春節活動": 100
   },
   "hourly_activity": {
+    "14": 2,
     "0": 4,
     "3": 3,
     "19": 1,
@@ -27,8 +29,7 @@
     "12": 71
   },
   "message_types": {
-    "0": 29,
-    "19": 10
+    "0": 2
   },
   "top_reacted_messages": [
     {

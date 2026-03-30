@@ -1,27 +1,71 @@
 {
   "date": "2025-09-11",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 2,
-  "attachments": 0,
+  "messages": 20,
+  "unique_authors": 8,
+  "reactions_total": 7,
+  "attachments": 4,
   "channel_activity": {
+    "主線癲狂難度": 3,
+    "💭「Processing」Steam game login bricked when hitting exit": 2,
+    "💭「Processing」[IOS][Visual bug] Result screen isn’t fullscreen after the endlos of chapter 8": 2,
+    "💭「处理中」追憶迴旋曲的特效問題": 1,
+    "✅「Answered」Emergency Gnosis automaticaly used without asking.": 3,
+    "✅「Answered」Can't get into game playing on steam, this keeps popping up and I can't click anything": 5,
+    "✅「Answered」Pickman WoD text bug": 2,
     "我喜歡卡斯托爾": 1,
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "13": 1,
+    "14": 2,
+    "2": 4,
+    "18": 2,
+    "5": 2,
+    "3": 5,
+    "7": 2,
     "17": 1,
     "6": 1
   },
   "message_types": {
-    "19": 1
+    "0": 9,
+    "19": 5,
+    "4": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1415569147659685958",
+      "content": "該畫面顯示了守密人的算力足夠打出追憶迴旋曲但追憶迴旋曲依舊維持紅框特效",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "💭「处理中」追憶迴旋曲的特效問題"
+    },
     {
       "id": "1415751396288102552",
       "content": "私👀",
       "author": "_cwz_",
       "reactions": 2,
       "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1415698629187993680",
+      "content": "這次活動偷偷沒有了癲狂喔",
+      "author": "0.0._.0_0.",
+      "reactions": 1,
+      "channel": "主線癲狂難度"
+    },
+    {
+      "id": "1415604522998300672",
+      "content": "this worked, thanks, I kept uninstalling and reinstalling, restarting my pc even",
+      "author": "kame.ria",
+      "reactions": 1,
+      "channel": "✅「Answered」Can't get into game playing on steam, this keeps popping up and I can't click anything"
+    },
+    {
+      "id": "1415606595433533491",
+      "content": "It seems that the folder is a common problem, the team can probably investigate ",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "✅「Answered」Can't get into game playing on steam, this keeps popping up and I can't click anything"
     }
   ]
 }

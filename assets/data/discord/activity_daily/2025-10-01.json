@@ -1,22 +1,32 @@
 {
   "date": "2025-10-01",
-  "messages": 9,
-  "unique_authors": 3,
-  "reactions_total": 13,
-  "attachments": 3,
+  "messages": 19,
+  "unique_authors": 6,
+  "reactions_total": 17,
+  "attachments": 7,
   "channel_activity": {
+    "✅「Answered」Silver Background  Bug": 1,
+    "✅「Answered」Mobile login via Steam failed - \"the game is not available in your region\"": 1,
+    "💭「处理中」超越之目回環與真實亦是幻想互動問題": 4,
+    "💭「处理中」來自某被無視的不知名大佬": 2,
+    "Happy Hunting event has no spoiler/progression warning?": 2,
     "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）": 2,
     "开个摸鱼楼✨": 6,
     "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）": 1
   },
   "hourly_activity": {
+    "17": 2,
+    "16": 1,
+    "11": 3,
+    "12": 2,
+    "4": 2,
     "19": 3,
     "15": 5,
     "22": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 7
+    "0": 9,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -34,11 +44,32 @@
       "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
     },
     {
+      "id": "1422918875216875691",
+      "content": "1.萊克帶藏品吃不到黑印的加成\n2.影片中獲得胚胎量有誤\n狂想獲得創意1 +30%\n發現獲得創意1 +30%\n卡牌本身+30%\n結果應該為87%+90%=177",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": "💭「处理中」來自某被無視的不知名大佬"
+    },
+    {
       "id": "1422970061479739463",
       "content": "",
       "author": "xcecilex.",
       "reactions": 2,
       "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1422903275124162631",
+      "content": "用真實亦是幻想打出零費帶回環的超越之目時，檢索出來的牌費用似乎沒有正確的變為0費？  我圖片中檢索古老的愛撫出來是兩費，這個是正常的互動嗎？",
+      "author": "shaw_51",
+      "reactions": 1,
+      "channel": "💭「处理中」超越之目回環與真實亦是幻想互動問題"
+    },
+    {
+      "id": "1422925281450000394",
+      "content": "我彷彿還能看到阿狗在說話",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "💭「处理中」來自某被無視的不知名大佬"
     },
     {
       "id": "1423074287593455737",

@@ -1,10 +1,21 @@
 {
   "date": "2025-09-25",
-  "messages": 39,
+  "messages": 69,
   "unique_authors": 9,
-  "reactions_total": 25,
-  "attachments": 3,
+  "reactions_total": 32,
+  "attachments": 6,
   "channel_activity": {
+    "✅「已回答」遺骨逼我刪牌": 2,
+    "💭「Processing」i can't enter the game via steam": 5,
+    "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 2,
+    "💭「Processing」Battle pass wheels warning in the store": 1,
+    "✅「已回答」彌薩格愛寧協會聲明：謝絕一切標題黨行為": 4,
+    "✅「Answered」Is it possible to retrieve a lost guest account?": 3,
+    "✅「Answered」8-4 Ham bug": 4,
+    "✅「已回答」融灾能不能别调这么难": 2,
+    "✅「Answered」Will there be any new systems or new in-game creations introduced in the future?": 3,
+    "✅「Answered」Clementine Symbiosis unclear": 2,
+    "💭「处理中」畫家 x 攤牌時刻bug": 2,
     "無借角融災全4 400攻略血肉指環": 5,
     "邀請碼互助/Invitation code help each other": 2,
     "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）": 20,
@@ -13,12 +24,17 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "6": 9,
+    "17": 8,
+    "19": 4,
+    "2": 7,
+    "20": 1,
+    "3": 7,
     "1": 3,
     "4": 2,
     "14": 2,
     "15": 4,
     "16": 16,
-    "17": 6,
     "18": 1,
     "23": 1,
     "5": 1,
@@ -27,8 +43,9 @@
     "13": 1
   },
   "message_types": {
-    "0": 26,
-    "19": 1
+    "0": 16,
+    "19": 4,
+    "4": 10
   },
   "top_reacted_messages": [
     {
@@ -46,6 +63,13 @@
       "channel": ""
     },
     {
+      "id": "1420658276848238622",
+      "content": "嗨守密人，这里确实是bug。应当使宁菲亚造成的所有中毒（包含「夜潮汹涌」）提高，计划于下个版本修复🌹",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」彌薩格愛寧協會聲明：謝絕一切標題黨行為"
+    },
+    {
       "id": "1420813110704607302",
       "content": "葬骸城的晚宴就這樣因皮皮蝦唐突的畫上句點，不過往好處想自己起碼有吃到絕讚海鮮大全，而且不用擔心自己會不會最後被杜勒賽因拿去烤架烤。\n\n但是現在守咪人有個非常大的",
       "author": "ass191044",
@@ -58,6 +82,41 @@
       "author": "ceoreparque",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1420655069854040085",
+      "content": "<@&1166257943742787615> <@633215996508766229>",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "✅「已回答」遺骨逼我刪牌"
+    },
+    {
+      "id": "1420850716645396643",
+      "content": "have you tried reinstalling? or using the fix feature?\nSome have been able to en",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "💭「Processing」i can't enter the game via steam"
+    },
+    {
+      "id": "1420865566205415455",
+      "content": "When you don't have the bp wheels unlocked, in the store you can't really read t",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "💭「Processing」Battle pass wheels warning in the store"
+    },
+    {
+      "id": "1420658617962463263",
+      "content": "Thank you very much!",
+      "author": "eeeeeeeeseks",
+      "reactions": 1,
+      "channel": "✅「Answered」Is it possible to retrieve a lost guest account?"
+    },
+    {
+      "id": "1420658070471839744",
+      "content": "Hi, this is indeed a bug. We will fix it in the next version🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」8-4 Ham bug"
     },
     {
       "id": "1420781010936795417",

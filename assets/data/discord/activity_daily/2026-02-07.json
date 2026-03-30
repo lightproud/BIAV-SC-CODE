@@ -1,10 +1,14 @@
 {
   "date": "2026-02-07",
-  "messages": 9970,
+  "messages": 9983,
   "unique_authors": 155,
-  "reactions_total": 1484,
-  "attachments": 373,
+  "reactions_total": 1487,
+  "attachments": 376,
   "channel_activity": {
+    "💭「Processing」game client crashed...somewhat": 3,
+    "Please help. I'm not at fault. I love this game.": 5,
+    "Request for Account Unban - ErioTo / Morimens Server": 2,
+    "Any API ideas ?": 3,
     "新年假期~ || 杜勒赛因x西维斯特": 26,
     "绘画//戈利亚相关楼": 2,
     "1462840887553032335": 1,
@@ -15,19 +19,19 @@
     "🔸morimens-game-chat": 5971
   },
   "hourly_activity": {
+    "3": 421,
+    "4": 500,
+    "22": 500,
+    "0": 259,
+    "2": 283,
+    "12": 396,
     "10": 166,
     "11": 342,
-    "12": 395,
     "21": 542,
-    "22": 499,
     "16": 683,
     "1": 297,
     "15": 691,
     "17": 667,
-    "0": 254,
-    "2": 280,
-    "3": 419,
-    "4": 499,
     "5": 338,
     "6": 228,
     "7": 469,
@@ -41,8 +45,8 @@
     "20": 267
   },
   "message_types": {
-    "0": 24,
-    "19": 4
+    "0": 12,
+    "19": 1
   },
   "top_reacted_messages": [
     {

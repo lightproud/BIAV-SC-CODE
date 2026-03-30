@@ -1,25 +1,28 @@
 {
   "date": "2024-03-06",
-  "messages": 9,
+  "messages": 11,
   "unique_authors": 6,
-  "reactions_total": 19,
-  "attachments": 3,
+  "reactions_total": 21,
+  "attachments": 4,
   "channel_activity": {
+    "罗坦-q版头像": 1,
+    "墨菲檔案「語音/故事」": 1,
     "[迷途游志] 以萝坦鲸吞为例讲解伤害计算公示": 1,
     "统计下认为深海密契需要洗双暴的玩家有多少": 5,
     "【敵方意圖收錄】第六章後半新增怪物一覽": 1,
     "戈利亞幻夢深潛地圖無提示事件": 2
   },
   "hourly_activity": {
+    "12": 1,
+    "18": 3,
     "6": 1,
     "1": 2,
     "2": 2,
     "3": 1,
-    "16": 1,
-    "18": 2
+    "16": 1
   },
   "message_types": {
-    "0": 9
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -28,6 +31,13 @@
       "author": "anachico",
       "reactions": 15,
       "channel": "【敵方意圖收錄】第六章後半新增怪物一覽"
+    },
+    {
+      "id": "1215008261904797747",
+      "content": "新增了9條墨菲語音，已加入進視頻。压制有点糊，推荐点击网址观看。【忘却前夜|档案】墨菲Murphy【VA.白瀬真弓】 https://b23.tv/sXj2Ks",
+      "author": "silverstream_s",
+      "reactions": 2,
+      "channel": "墨菲檔案「語音/故事」"
     },
     {
       "id": "1214746052750610522",

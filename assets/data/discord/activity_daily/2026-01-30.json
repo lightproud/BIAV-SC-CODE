@@ -1,10 +1,20 @@
 {
   "date": "2026-01-30",
-  "messages": 79,
-  "unique_authors": 11,
-  "reactions_total": 65,
-  "attachments": 8,
+  "messages": 157,
+  "unique_authors": 20,
+  "reactions_total": 99,
+  "attachments": 11,
   "channel_activity": {
+    "我們神母怎麼沒辦法講下去": 1,
+    "Text bugs during story": 1,
+    "Character designs": 1,
+    "✅「已回答」取消SSR命輪自動分解": 1,
+    "Regarding the possible +12 Paywall": 52,
+    "蘿坦的最終法則與製作組預期目標相悖": 2,
+    "Suggestion: a new covenant filter": 6,
+    "Xu posse doesn't match what event news said": 7,
+    "Xu's Event last \"The Dreamless One\" Red text bug": 1,
+    "[建议] 关于优化“超次元”界域机制의建议": 6,
     "徐": 5,
     "预告片 || 杜勒赛因x西维斯特": 50,
     "🔸游戏问题": 2,
@@ -17,21 +27,29 @@
     "1464228375316136072": 4
   },
   "hourly_activity": {
-    "15": 4,
+    "2": 4,
+    "15": 5,
+    "19": 3,
+    "1": 15,
+    "3": 4,
+    "4": 17,
+    "5": 12,
+    "6": 41,
+    "11": 1,
+    "12": 5,
+    "18": 5,
+    "16": 3,
+    "0": 1,
     "17": 1,
     "23": 1,
-    "6": 31,
     "7": 24,
-    "4": 1,
     "8": 9,
     "13": 3,
-    "19": 1,
-    "20": 3,
-    "16": 1
+    "20": 3
   },
   "message_types": {
-    "0": 44,
-    "19": 11
+    "0": 47,
+    "19": 31
   },
   "top_reacted_messages": [
     {
@@ -56,6 +74,13 @@
       "channel": ""
     },
     {
+      "id": "1466775059363401944",
+      "content": "https://discord.com/channels/1131791637933199470/1466007306566242399\n\n參考上述連結Q1A1",
+      "author": "heikwok",
+      "reactions": 6,
+      "channel": "蘿坦的最終法則與製作組預期目標相悖"
+    },
+    {
       "id": "1466705806975176837",
       "content": "食屍鬼boss死抗一次就給牌上一個遲緩還是有點太刺激了😅\n遲緩4⋯⋯還都給我加同一張牌真是謝了⋯⋯",
       "author": "carrot_chicken",
@@ -63,11 +88,81 @@
       "channel": ""
     },
     {
+      "id": "1466684226308145202",
+      "content": "-# and his exalt crit still fail to kill a mob",
+      "author": "skyfallterminus",
+      "reactions": 5,
+      "channel": "Regarding the possible +12 Paywall"
+    },
+    {
+      "id": "1466824072770879568",
+      "content": "Was just breezing through story and got to a message where it's forced to scroll",
+      "author": "dragonsoul333",
+      "reactions": 4,
+      "channel": "Text bugs during story"
+    },
+    {
+      "id": "1466767801980027147",
+      "content": "give a chance to let light continue on his promise that it isnt a necessity, but",
+      "author": "undeterredhomo",
+      "reactions": 4,
+      "channel": "Regarding the possible +12 Paywall"
+    },
+    {
+      "id": "1466862953633419399",
+      "content": "Covenant visualization became pretty great thanks to this update, but i feel lik",
+      "author": "detectivedango",
+      "reactions": 4,
+      "channel": "Suggestion: a new covenant filter"
+    },
+    {
+      "id": "1466603426363478098",
+      "content": "<#1355085076500578363>\nSaid +1 arithmetica, in game it is 1 draw.",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "Xu posse doesn't match what event news said"
+    },
+    {
+      "id": "1466836321451511839",
+      "content": "No because then it might risk being good without Xu <:point:1356053112292511815>",
+      "author": "cornonthemacabre_",
+      "reactions": 3,
+      "channel": "Xu posse doesn't match what event news said"
+    },
+    {
+      "id": "1466614301241638994",
+      "content": "i dont mind AA bc i think that just a bonus for ppl whale or all in to their fav",
+      "author": "aegisx",
+      "reactions": 2,
+      "channel": "Regarding the possible +12 Paywall"
+    },
+    {
       "id": "1466676093888102608",
       "content": "打二米五的章魚賣章魚燒（？",
       "author": "ass191044",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1466622255369949329",
+      "content": "<:Meow:1400771520757891123>",
+      "author": "yeriko703",
+      "reactions": 1,
+      "channel": "Character designs"
+    },
+    {
+      "id": "1466884818741755906",
+      "content": "現在可以考慮了嘛",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "✅「已回答」取消SSR命輪自動分解"
+    },
+    {
+      "id": "1466872043256680487",
+      "content": "I had ... once\nthen I took an arrow in the knee",
+      "author": "sexysneakystoat1625",
+      "reactions": 1,
+      "channel": "Suggestion: a new covenant filter"
     },
     {
       "id": "1466680779466866721",
@@ -94,83 +189,6 @@
       "id": "1466686170338558139",
       "content": "<:Dore_proud:1459076042722639905>",
       "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466686497720762438",
-      "content": "May I know your uid? I wish to add you in the game",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466688155557040240",
-      "content": "+24doresain",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466688528850358334",
-      "content": "<:pray:1356053116260454534>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466689685899182090",
-      "content": "doresain is the best",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466691285258604718",
-      "content": "I hope we see him... maybe on Valentine if possible <:shy_kot2:14188159105626317",
-      "author": "that_one_chippy",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466691746170667180",
-      "content": "<:MF_peek:1459071652468883619>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466691803389497446",
-      "content": "看得出你去找名字了",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466693021570695259",
-      "content": "Your Tulu is very strong!",
-      "author": "that_one_chippy",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466695934497787975",
-      "content": "\\\\加油/\nThank you for making the world peaceful🛐",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466698951460655279",
-      "content": "I'll draw more of the king and his keeper!",
-      "author": "that_one_chippy",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466699514395234325",
-      "content": "Please do 🛐 can't wait for more <:takenotes:1357186646294138890>",
-      "author": "shostakovich524",
       "reactions": 1,
       "channel": "预告片 || 杜勒赛因x西维斯特"
     }

@@ -1,31 +1,85 @@
 {
   "date": "2025-11-21",
-  "messages": 48,
-  "unique_authors": 10,
-  "reactions_total": 45,
-  "attachments": 7,
+  "messages": 199,
+  "unique_authors": 28,
+  "reactions_total": 57,
+  "attachments": 35,
   "channel_activity": {
+    "能不能新增一个撤回上一张出牌的功能？": 3,
+    "💭「Processing」Taboo Knowledge Level not being properly shown": 1,
+    "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 1,
+    "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers": 3,
+    "💭「Processing」Can't reset WoD": 1,
+    "💭「Processing」Traphase bug": 1,
+    "✅「Resolved」Recharge Issues": 13,
+    "💭「Processing」Tentacle and Corrosion Bug": 1,
+    "💭「Processing」Boss's Ancient Embers dont drop in chapter 2 (stage 2-14) normal mode": 1,
+    "💭「处理中」水母(奧瑞塔)的天賦只在探索的第一次戰鬥觸發": 2,
+    "💭「处理中」更新完卡在这了": 2,
+    "✅「已解决」助战显示bug": 4,
+    "💭「Processing」Awakeners and enemies with barrier sometimes glow bright": 1,
+    "Account migration": 1,
+    "Plans on merch outside of TaoBao?": 3,
+    "💭「Processing」Visual Bug": 3,
+    "✅「已回答」混沌初始造物": 5,
+    "✅「Answered」Hp values for Hard Mode": 11,
+    "💭「Processing」Edify Bug. xD": 14,
+    "Can't Dolphin/Whale": 1,
+    "💭「Processing」The New Time Reversal feature crushes the game.": 1,
+    "✅「已回答」星辰篇旅行陽傘回的血不會清除流血": 3,
+    "✅「Answered」Corrosion Damage is not correctly included in 'Deal XX damage in one turn' calculation": 5,
+    "✅「已回答」普特尼晨報計數器卡住": 3,
+    "✅「已回答」普林尼晨报bug": 4,
+    "✅「Answered」Alva Rouse Description": 3,
+    "💭「Processing」saved mails not showing properly": 1,
+    "💭「处理中」回溯bug": 1,
+    "💭「Processing」Unreliable message scrolling in inbox": 2,
+    "💭「处理中」隱匿獲得層數錯誤": 1,
+    "💭「Processing」Karen in-game bug": 1,
+    "💭「Processing」Game's download is stuck": 1,
+    "💭「Processing」Card vanishing from my hand": 1,
+    "💭「Processing」Visual Bug on Tulu's Ult + overall performance": 1,
+    "💭「Processing」Ruleset for Prismatic Lens not updated": 1,
+    "💭「Processing」Replay feature displaying incorrect card play order": 1,
+    "💭「处理中」Bug Report: 戰鬥統計顯示錯誤": 6,
+    "💭「处理中」圖魯狂氣爆發異常": 2,
+    "💭「处理中」星辰篇觉醒触发毒效果未生效": 1,
+    "💭「处理中」舊日餘燼觸發bug": 2,
+    "💭「处理中」關卡回調之後效果沒有變回來": 1,
+    "✅「已回答」由于之前的快速投入的问题，我的循环母版被叠位至商店兑换命轮当中，是否能回溯，退还母版": 2,
+    "✅「Answered」Karen Bug": 2,
+    "💭「Processing」Omniscient Verity and Withered Pupil Relic": 6,
+    "✅「Resolved」some characters being removed and saying that they are no longer obtained": 27,
     "一點塔薇玩家的小小心得": 3,
     "給異格也P了一版仿官海報（）": 1,
     "杜勒X皮的正史（肥腸確定": 41,
     "綜上所述所以我畫了水仙視姦（？）": 3
   },
   "hourly_activity": {
-    "15": 13,
+    "13": 7,
+    "15": 16,
+    "9": 30,
+    "23": 5,
+    "7": 4,
+    "11": 12,
+    "14": 11,
+    "18": 3,
+    "4": 16,
+    "10": 34,
+    "8": 10,
+    "2": 3,
+    "3": 14,
+    "5": 22,
+    "6": 1,
     "21": 2,
-    "14": 1,
     "0": 1,
-    "2": 2,
-    "3": 7,
-    "4": 12,
-    "9": 1,
     "16": 5,
-    "18": 1,
     "20": 3
   },
   "message_types": {
-    "0": 38,
-    "19": 10
+    "19": 28,
+    "0": 84,
+    "4": 39
   },
   "top_reacted_messages": [
     {
@@ -64,11 +118,88 @@
       "channel": "綜上所述所以我畫了水仙視姦（？）"
     },
     {
+      "id": "1441413086878629939",
+      "content": "Me and a few friends are quite hyped about the badges. However, none of us are a",
+      "author": "lucchi018",
+      "reactions": 2,
+      "channel": "Plans on merch outside of TaoBao?"
+    },
+    {
       "id": "1441285643077685379",
       "content": "||杜勒誕下觸手怪後乳房增長，產奶餵奶給觸手怪，觸手怪在短短幾小時後就成年了，然後繼續和杜勒⋯⋯救命，我是不是人類||",
       "author": "void_1546.",
       "reactions": 2,
       "channel": "杜勒X皮的正史（肥腸確定"
+    },
+    {
+      "id": "1441493759488557066",
+      "content": "水母(奧瑞塔)的天賦只在探索的第一次戰鬥觸發",
+      "author": "rainbowteemo",
+      "reactions": 1,
+      "channel": "💭「处理中」水母(奧瑞塔)的天賦只在探索的第一次戰鬥觸發"
+    },
+    {
+      "id": "1441572705567510580",
+      "content": "make money by sell merch to en people <:Ichithumbsup:590020195519823873>",
+      "author": "lumato",
+      "reactions": 1,
+      "channel": "Plans on merch outside of TaoBao?"
+    },
+    {
+      "id": "1441374031575257211",
+      "content": "Hi, today I inquired about the progress and QA is still investigating the cause🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Visual Bug"
+    },
+    {
+      "id": "1441499476023054376",
+      "content": "No worries, thank you!!",
+      "author": "kalaidoskope",
+      "reactions": 1,
+      "channel": "💭「Processing」Visual Bug"
+    },
+    {
+      "id": "1441397401582571591",
+      "content": "Okay, I will relay it to the designer😊",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Hp values for Hard Mode"
+    },
+    {
+      "id": "1441369403861237912",
+      "content": "Yes. It was just happened today.",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "💭「Processing」Edify Bug. xD"
+    },
+    {
+      "id": "1441397320683098143",
+      "content": "Thank youuu",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "💭「Processing」Edify Bug. xD"
+    },
+    {
+      "id": "1441384901608865862",
+      "content": "I can't spend a little of my blood and sweat money on this anni to give Morimens",
+      "author": "sexysneakystoat1625",
+      "reactions": 1,
+      "channel": "Can't Dolphin/Whale"
+    },
+    {
+      "id": "1441334737301147648",
+      "content": "Went from 8574 Health to 6393, but only 687 Damage is told to be taken. The \"Ony",
+      "author": "genericid.",
+      "reactions": 1,
+      "channel": "✅「Answered」Corrosion Damage is not correctly included in 'Deal XX damage in one turn' calculation"
+    },
+    {
+      "id": "1441342030436634705",
+      "content": "like sent her all the way back",
+      "author": "crowlov1",
+      "reactions": 1,
+      "channel": "✅「Resolved」some characters being removed and saying that they are no longer obtained"
     },
     {
       "id": "1441279767843438632",
@@ -88,34 +219,6 @@
       "id": "1441452711332806716",
       "content": "這麼想吃大份嗎",
       "author": "void_1546.",
-      "reactions": 1,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441453583336869889",
-      "content": "救命我不會寫肉文～",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441457477584556214",
-      "content": "||~~原來是阿宏手把手帶你寫的嗎（開始造謠~~||",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441460595399462984",
-      "content": "還沒被創飛<:Cheerup:1400771555939844149>",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441521193965584436",
-      "content": "其實是我在後面操他在前面寫",
-      "author": "ahong0727",
       "reactions": 1,
       "channel": "杜勒X皮的正史（肥腸確定"
     }

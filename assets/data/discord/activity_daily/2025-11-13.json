@@ -1,25 +1,56 @@
 {
   "date": "2025-11-13",
-  "messages": 7,
-  "unique_authors": 2,
-  "reactions_total": 24,
-  "attachments": 3,
+  "messages": 52,
+  "unique_authors": 13,
+  "reactions_total": 58,
+  "attachments": 6,
   "channel_activity": {
+    "✅「Answered」2nd anniversary suggestion": 1,
+    "✅「已回答」还能见到星辰篇的地图吗": 5,
+    "💭「Processing」My game died": 14,
+    "💭「Processing」cancer battlepass": 1,
+    "✅「已回答」需要更多5771壁纸": 1,
+    "✅「已回答」24日服的新皮肤，这边上吗？": 1,
+    "The ability to freely reduce your MAX HP modifier": 10,
+    "Increase both the RM and Damage amp scaling for regular Aeqour.": 4,
+    "💭「Processing」Material synthesis and conversion": 2,
+    "💭「Processing」Final Dmg/Def/Aliemus Total  Suggestion": 2,
+    "💭「Processing」Trade Reality Verge for something else": 2,
+    "✅「Answered」Suggestion: Update the Morimens Steam Page's Screenshots/Trailers": 2,
     "誕妄．墨菲機制與搭配探討": 1,
     "觀鳥雙子個人劇情有感": 1,
     "1181147096234065920": 4,
     "1356210707867107391": 1
   },
   "hourly_activity": {
+    "2": 5,
+    "3": 6,
+    "4": 1,
+    "8": 2,
+    "12": 1,
+    "18": 1,
+    "19": 13,
+    "11": 5,
+    "9": 6,
+    "17": 4,
+    "21": 5,
+    "23": 1,
     "20": 1,
-    "9": 1,
-    "11": 4,
     "15": 1
   },
   "message_types": {
-    "0": 2
+    "0": 37,
+    "4": 5,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1438576695664840836",
+      "content": "I'm having trouble relating with the newer players due to my massive hp bar from",
+      "author": "aurora3981",
+      "reactions": 13,
+      "channel": "The ability to freely reduce your MAX HP modifier"
+    },
     {
       "id": "1438621511081791538",
       "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=1107&tnum=1",
@@ -35,11 +66,67 @@
       "channel": ""
     },
     {
+      "id": "1438511360127275280",
+      "content": "不然變成尖塔的選路線也好\n没選擇固定流程我是覺得簡化得過了頭而且也想不到好處",
+      "author": "partycatss.",
+      "reactions": 6,
+      "channel": "✅「已回答」还能见到星辰篇的地图吗"
+    },
+    {
+      "id": "1438359796876316714",
+      "content": "There are some questions that will have answers soon, and Goya cannot disclose m",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "✅「Answered」2nd anniversary suggestion"
+    },
+    {
       "id": "1438463304010825759",
       "content": "",
       "author": "flim_of_life_burst",
       "reactions": 4,
       "channel": "觀鳥雙子個人劇情有感"
+    },
+    {
+      "id": "1438464293149347921",
+      "content": "24新皮这边什么时候上？☝️",
+      "author": "phenomena_298",
+      "reactions": 3,
+      "channel": "✅「已回答」24日服的新皮肤，这边上吗？"
+    },
+    {
+      "id": "1438365886561124382",
+      "content": "I will convey this suggestion to the production team🌹",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "💭「Processing」Final Dmg/Def/Aliemus Total  Suggestion"
+    },
+    {
+      "id": "1438366890102755339",
+      "content": "感谢建议，戈雅去问问",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」还能见到星辰篇的地图吗"
+    },
+    {
+      "id": "1438613929700884674",
+      "content": "sometime some files are left behind",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "💭「Processing」My game died"
+    },
+    {
+      "id": "1438641396130254950",
+      "content": "this is a good idea, though honestly changing the keeper level max hp formula to",
+      "author": "reya.li",
+      "reactions": 1,
+      "channel": "The ability to freely reduce your MAX HP modifier"
+    },
+    {
+      "id": "1438359068820635669",
+      "content": "Thank you for the reminder. We are already planning the images for Steam and may",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Suggestion: Update the Morimens Steam Page's Screenshots/Trailers"
     }
   ]
 }

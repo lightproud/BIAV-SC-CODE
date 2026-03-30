@@ -1,10 +1,15 @@
 {
   "date": "2026-01-25",
-  "messages": 31,
+  "messages": 108,
   "unique_authors": 16,
-  "reactions_total": 67,
-  "attachments": 11,
+  "reactions_total": 105,
+  "attachments": 16,
   "channel_activity": {
+    "能别搞最终法则吗！": 2,
+    "希望可以增加角色重复获取人格深化的上限": 56,
+    "臨時強效無法影響到黏液彙集的bug": 1,
+    "Origin of Time": 3,
+    "银钥匙在说话": 15,
     "✦关卡地图「融灾禁区」总览52期·星辰篇✦": 1,
     "不是if線就是死後幻覺才有可能": 2,
     "🔸忘却前夜┊morimens-tv": 2,
@@ -18,24 +23,29 @@
     "1455822126568308957": 7
   },
   "hourly_activity": {
+    "7": 9,
+    "6": 1,
+    "8": 6,
+    "9": 27,
+    "13": 5,
+    "14": 7,
+    "15": 15,
+    "17": 1,
+    "18": 18,
+    "19": 3,
     "11": 5,
     "1": 3,
     "5": 1,
     "3": 1,
     "21": 1,
-    "9": 1,
-    "8": 1,
     "12": 2,
     "23": 1,
-    "15": 7,
-    "13": 4,
-    "14": 1,
-    "7": 1,
     "10": 1,
     "16": 1
   },
   "message_types": {
-    "0": 3
+    "19": 26,
+    "0": 51
   },
   "top_reacted_messages": [
     {
@@ -53,6 +63,13 @@
       "channel": ""
     },
     {
+      "id": "1464990230884126780",
+      "content": "cos24大約等於0.905",
+      "author": "akkom730",
+      "reactions": 10,
+      "channel": "希望可以增加角色重复获取人格深化的上限"
+    },
+    {
       "id": "1464898407461159080",
       "content": "<:U_power:1400771817659957258>",
       "author": "ass191044",
@@ -65,6 +82,13 @@
       "author": "yingmai_",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1465065148325826570",
+      "content": "After devs add more \"Limited awakener\" in standard banner you have less chance c",
+      "author": "yeriko703",
+      "reactions": 6,
+      "channel": "Origin of Time"
     },
     {
       "id": "1465097328192131206",
@@ -95,32 +119,74 @@
       "channel": ""
     },
     {
-      "id": "1464822433407176829",
-      "content": "A 2-minute break of the Aequor Realm mechanics!  Understanding these base mechan",
-      "author": "nechromicon",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "id": "1464900168725041274",
+      "content": "The cat's reputation is truly at his all time low <:fail:1356083552923422770>",
+      "author": "satachan",
+      "reactions": 2,
+      "channel": "希望可以增加角色重复获取人格深化的上限"
     },
     {
-      "id": "1464957540336140443",
-      "content": "劳斯，皮鞋秒吃😍 🔥",
-      "author": "ahh_1234567890",
-      "reactions": 1,
-      "channel": ""
+      "id": "1465046317448302808",
+      "content": "~~我们守密人是被吃了吗(~~",
+      "author": "ka_0414",
+      "reactions": 2,
+      "channel": "银钥匙在说话"
     },
     {
-      "id": "1465119660948193403",
-      "content": "Oh no. They are hot.",
-      "author": "crowlov1",
-      "reactions": 1,
-      "channel": ""
+      "id": "1465047018081882395",
+      "content": "不总是出现，和珈伦的料理一样摸不着头脑(<:Helot_slack_off:1459092159465521184>",
+      "author": "ka_0414",
+      "reactions": 2,
+      "channel": "银钥匙在说话"
     },
     {
-      "id": "1464950652731002986",
-      "content": "uh idk keeper oc....",
-      "author": "sirend3r",
+      "id": "1465049856727974051",
+      "content": "像是地面上一个坑害人摔倒，于是从其他地面上挖了一些土填进去<:Helot_slack_off:1459092159465521184>",
+      "author": "ka_0414",
+      "reactions": 2,
+      "channel": "银钥匙在说话"
+    },
+    {
+      "id": "1465050156243095727",
+      "content": "坑填好了，至于怎么填的还有新增的坑怎么出现的先别管(",
+      "author": "ka_0414",
+      "reactions": 2,
+      "channel": "银钥匙在说话"
+    },
+    {
+      "id": "1465050559555047424",
+      "content": "草，怎么还在处理中，两个月了喂",
+      "author": "ka_0414",
+      "reactions": 2,
+      "channel": "银钥匙在说话"
+    },
+    {
+      "id": "1464888738864693441",
+      "content": "我是覺得沒差啦~~反正大家都在坐牢~~",
+      "author": "aaaa_00098",
       "reactions": 1,
-      "channel": ""
+      "channel": "能别搞最终法则吗！"
+    },
+    {
+      "id": "1464882942063939604",
+      "content": "我说让你滚",
+      "author": "satachan",
+      "reactions": 1,
+      "channel": "希望可以增加角色重复获取人格深化的上限"
+    },
+    {
+      "id": "1464900304700178442",
+      "content": "Ture",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "希望可以增加角色重复获取人格深化的上限"
+    },
+    {
+      "id": "1464912453669228659",
+      "content": "用這些無用的帖子佔用有問必答",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "希望可以增加角色重复获取人格深化的上限"
     }
   ]
 }

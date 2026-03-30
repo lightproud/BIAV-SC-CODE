@@ -1,10 +1,12 @@
 {
   "date": "2026-02-21",
-  "messages": 1698,
+  "messages": 1714,
   "unique_authors": 52,
-  "reactions_total": 234,
-  "attachments": 100,
+  "reactions_total": 237,
+  "attachments": 106,
   "channel_activity": {
+    "✅「已回答」今天打肉鸽咋没算出牌数做不了每日": 4,
+    "Please allow us to reutrn Doresain to the Black Pool": 12,
     "塗鴉": 2,
     "🔸频道建议┊server-suggestions": 2,
     "🔸忘却前夜┊morimens-tv": 1,
@@ -18,15 +20,16 @@
     "🔸阵容构建": 54
   },
   "hourly_activity": {
+    "1": 26,
+    "10": 107,
+    "12": 210,
+    "2": 19,
+    "15": 320,
+    "17": 34,
+    "18": 107,
     "14": 119,
     "9": 6,
-    "10": 106,
-    "12": 208,
     "16": 105,
-    "17": 29,
-    "18": 102,
-    "2": 18,
-    "1": 25,
     "11": 93,
     "0": 24,
     "3": 6,
@@ -36,14 +39,14 @@
     "7": 1,
     "8": 47,
     "13": 151,
-    "15": 319,
     "19": 204,
     "20": 77,
     "21": 2,
     "23": 2
   },
   "message_types": {
-    "0": 2
+    "0": 6,
+    "19": 10
   },
   "top_reacted_messages": [
     {

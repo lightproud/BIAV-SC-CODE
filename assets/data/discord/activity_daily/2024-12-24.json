@@ -1,10 +1,11 @@
 {
   "date": "2024-12-24",
-  "messages": 12,
+  "messages": 13,
   "unique_authors": 4,
   "reactions_total": 11,
   "attachments": 3,
   "channel_activity": {
+    "彌薩格校貓 你到底想干嘛？": 1,
     "生日快樂，索瓦爾格/Happy Birthday to Solvarg Vol. 2": 2,
     "羊妈摔倒": 1,
     "自創界域燒壞我腦袋的cpu了": 6,
@@ -12,6 +13,7 @@
     "Aomi 的忘郤前夜 Morimens作品角": 2
   },
   "hourly_activity": {
+    "8": 1,
     "15": 3,
     "19": 1,
     "4": 4,
@@ -19,8 +21,7 @@
     "3": 2
   },
   "message_types": {
-    "0": 9,
-    "19": 3
+    "0": 1
   },
   "top_reacted_messages": [
     {

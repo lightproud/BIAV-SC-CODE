@@ -1,10 +1,11 @@
 {
   "date": "2024-03-14",
-  "messages": 60,
+  "messages": 61,
   "unique_authors": 19,
   "reactions_total": 101,
   "attachments": 24,
   "channel_activity": {
+    "倫蒂尼恩第一神偷(自封)": 1,
     "93转录密契分享": 1,
     "幻梦深浅地图全解 第4版 死扛黑印分时代": 1,
     "💌「旺達」體驗交流分享活動💌": 11,
@@ -17,6 +18,7 @@
     "墨菲": 1
   },
   "hourly_activity": {
+    "2": 1,
     "18": 1,
     "15": 3,
     "3": 1,
@@ -34,8 +36,7 @@
     "16": 1
   },
   "message_types": {
-    "0": 57,
-    "19": 3
+    "0": 1
   },
   "top_reacted_messages": [
     {

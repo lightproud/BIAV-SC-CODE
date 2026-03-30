@@ -1,10 +1,19 @@
 {
   "date": "2025-10-31",
-  "messages": 20,
+  "messages": 50,
   "unique_authors": 7,
-  "reactions_total": 110,
-  "attachments": 17,
+  "reactions_total": 114,
+  "attachments": 21,
   "channel_activity": {
+    "✅「已回答」广播剧缸中之梦进不去": 1,
+    "💭「Processing」Quality of Life Features": 5,
+    "✅「Answered」8-10 N and potential other N stages Bugs": 2,
+    "✅「Resolved」Error code (7009001)": 1,
+    "✅「Answered」About new Ryker buff": 2,
+    "✅「已回答」触腕集结是否该得到加强": 2,
+    "✅「Answered」Tentacle Overflow Mechanic clarification": 4,
+    "✅「Answered」Show traphase rank on keepers archive": 5,
+    "✅「Answered」Give us a way to view emote description": 8,
     "相位對弈環境攻略": 7,
     "1423337172655935600": 2,
     "1296113810549112874": 1,
@@ -14,20 +23,24 @@
     "1432654338982940783": 3
   },
   "hourly_activity": {
+    "15": 2,
+    "6": 12,
+    "12": 4,
+    "2": 3,
+    "18": 1,
+    "3": 12,
+    "1": 1,
     "5": 1,
-    "6": 2,
     "11": 4,
-    "12": 1,
-    "15": 1,
     "16": 1,
-    "2": 1,
     "4": 3,
     "7": 5,
     "0": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 5
+    "0": 18,
+    "4": 9,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -78,6 +91,27 @@
       "author": "moistwater",
       "reactions": 13,
       "channel": ""
+    },
+    {
+      "id": "1433701757988634656",
+      "content": "Hi, we have this plan and are currently preparing it🥰",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「Answered」Show traphase rank on keepers archive"
+    },
+    {
+      "id": "1433627464999108752",
+      "content": "Would it be possible to add Traphase rank/score under investigation progress?",
+      "author": "jearbear",
+      "reactions": 1,
+      "channel": "✅「Answered」Show traphase rank on keepers archive"
+    },
+    {
+      "id": "1433702050792869978",
+      "content": "Hi, we have this plan and are currently preparing it\nIt is expected to be launch",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Give us a way to view emote description"
     },
     {
       "id": "1433716805343510610",

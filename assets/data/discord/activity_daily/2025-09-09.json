@@ -1,10 +1,25 @@
 {
   "date": "2025-09-09",
-  "messages": 9,
-  "unique_authors": 4,
-  "reactions_total": 58,
-  "attachments": 4,
+  "messages": 74,
+  "unique_authors": 19,
+  "reactions_total": 63,
+  "attachments": 14,
   "channel_activity": {
+    "✅「Answered」Dialogue Scroll Was a Mistake": 12,
+    "✅「已回答」遺骨逼我刪牌": 2,
+    "✅「已回答」皮克曼2費拿完造物之後不能不消耗狂想": 2,
+    "✅「已回答」皮克曼sr命輪共創": 2,
+    "✅「Answered」Add background from summer event to archive": 1,
+    "✅「已回答」相位对弈bug": 7,
+    "✅「Answered」Weekly trials menu disappears after playing a match/ being in queue for a few seconds": 2,
+    "✅「已回答」关于偷取力量导致的一系列bug": 5,
+    "💭「Processing」Character select bug": 1,
+    "Sorel buff better?": 5,
+    "💭「处理中」相位bug": 1,
+    "新人对这个游戏的一点看法与建议": 17,
+    "✅「已回答」皮克曼【绘影摹形】说明": 3,
+    "💭「Processing」Pickman's Soulforge Aptitude": 2,
+    "✅「Answered」New Ryker Enhencemant . 500 sigil ??": 3,
     "忘却前夜队伍构筑思路讲解·上": 3,
     "邀請碼互助/Invitation code help each other": 2,
     "提灯长明": 1,
@@ -13,15 +28,31 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "3": 7,
+    "7": 2,
+    "8": 6,
+    "15": 1,
+    "18": 4,
+    "19": 5,
+    "23": 3,
+    "2": 13,
+    "11": 2,
+    "9": 1,
+    "1": 4,
+    "4": 9,
+    "6": 7,
+    "22": 1,
+    "16": 1,
+    "0": 2,
     "20": 3,
     "5": 1,
-    "18": 1,
     "10": 1,
-    "8": 2,
     "13": 1
   },
   "message_types": {
-    "0": 6
+    "0": 43,
+    "4": 10,
+    "19": 12
   },
   "top_reacted_messages": [
     {
@@ -53,11 +84,32 @@
       "channel": "忘却前夜队伍构筑思路讲解·上"
     },
     {
+      "id": "1414928345019318302",
+      "content": "Idk if it not being there is a bug or intended.",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "✅「Answered」Add background from summer event to archive"
+    },
+    {
       "id": "1415074963710546094",
       "content": "第四节 · 乘区组合\n\n伤害乘区公式的推导过程其实很好理解。然而想要在忘却前夜几十个唤醒体中，精准挑出4个角色使其叠乘计算后得到最优输出，并不是一键容易的事。\n",
       "author": "llhwwc_89248",
       "reactions": 2,
       "channel": "忘却前夜队伍构筑思路讲解·上"
+    },
+    {
+      "id": "1414912552931950643",
+      "content": "<:pray:1356053116260454534>",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "✅「已回答」相位对弈bug"
+    },
+    {
+      "id": "1414829690375376917",
+      "content": "然后指望0启完全体太不现实了，这个游戏全图鉴甚至不需要氪金也不需要日日全勤，机制在启灵里面也就是最好的情况了，像融朵机制在超限里面才是最糟糕的",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "新人对这个游戏的一点看法与建议"
     },
     {
       "id": "1414887207101272145",

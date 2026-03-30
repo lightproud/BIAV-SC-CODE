@@ -1,10 +1,42 @@
 {
   "date": "2025-10-20",
-  "messages": 22,
-  "unique_authors": 7,
-  "reactions_total": 885,
-  "attachments": 11,
+  "messages": 158,
+  "unique_authors": 32,
+  "reactions_total": 936,
+  "attachments": 40,
   "channel_activity": {
+    "✅「已回答」可不可以給暗潮蟲鳴也補上現在預購的畫風頭像": 3,
+    "💭「处理中」血希的链球进入超维空间会被还原并且错误显示": 2,
+    "✅「已回答」不好意思好像用不了這個兌換碼": 1,
+    "✅「Answered」Pollux Talent different ?": 4,
+    "💭「处理中」忘卻篇第六章共鳴卡純白之帆 & 第八章共鳴歡愉之理": 40,
+    "✅「已回答」新角升格文字消失": 1,
+    "💭「Processing」Update exception: failed to retrieve patch file": 1,
+    "✅「已回答」鸟人的黑羽在10和10+算力调和以后会被加费用，而且会算入算力调和": 3,
+    "💭「Processing」0 shield ahh": 1,
+    "✅「已回答」關於二創徵集的參與獎": 5,
+    "✅「已回答」塔薇的通晓有时候玩法复制牌库顶的圣心": 6,
+    "✅「已回答」通晓无法复制圣心": 1,
+    "💭「处理中」BUG反馈": 1,
+    "✅「Answered」Purchase cores from awaken menu?": 4,
+    "Pollux and Game Feedback": 2,
+    "这次卡斯托尔的复刻会占用原本的复刻周期吗？": 5,
+    "誕妄墨菲立繪": 2,
+    "所以我說那個皮膚的狂熱呢": 1,
+    "Skin Gacha": 2,
+    "相位：对面有反击，打对面和对面一起死了然后判负。不是先伤害后反击吗？如果同时为什么不算平局？": 3,
+    "✅「已解决」鸟弟2费没有把圣心抽出来": 10,
+    "✅「已回答」鼠鼠相位bug": 5,
+    "✅「已回答」衍生指令卡「聖心」錯誤的增加了黃金造物「在夕光裡」的次數": 12,
+    "✅「已回答」皮克曼2費拿完造物之後不能不消耗狂想": 2,
+    "✅「已回答」汀克特【安魂曲】bug": 4,
+    "✅「已回答」改改珊的覺醒卡": 5,
+    "✅「已回答」皮克曼sr命輪共創": 2,
+    "✅「Answered」Pale Descendent WoD bug": 4,
+    "Strange question regarding Murphy voiceline": 1,
+    "✅「已回答」希洛相位对弈bug": 1,
+    "✅「Answered」Event currency bug": 1,
+    "Can we not have maintenances starting an hour before weekly reset?": 1,
     "2.3.4相位对弈": 5,
     "御四家H8-10全成就 10t 2死抗": 1,
     "我想画点莱克的梗图": 5,
@@ -17,22 +49,30 @@
     "1350060973083590666": 1
   },
   "hourly_activity": {
-    "18": 5,
+    "6": 16,
+    "7": 29,
+    "11": 9,
+    "15": 6,
+    "3": 10,
+    "12": 7,
+    "13": 25,
+    "14": 17,
+    "8": 7,
+    "17": 1,
+    "18": 8,
+    "9": 4,
+    "4": 4,
+    "5": 4,
+    "2": 5,
+    "0": 1,
     "21": 1,
-    "6": 1,
-    "8": 2,
     "10": 1,
-    "14": 1,
-    "12": 3,
-    "2": 1,
-    "1": 3,
-    "13": 2,
-    "11": 1,
-    "15": 1
+    "1": 3
   },
   "message_types": {
-    "0": 11,
-    "19": 1
+    "0": 90,
+    "4": 20,
+    "19": 26
   },
   "top_reacted_messages": [
     {
@@ -48,6 +88,13 @@
       "author": "morimensstaff01",
       "reactions": 380,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1429894425160581270",
+      "content": "Hi BIAV,\n\nSome of the older players and I were talking about the new design choi",
+      "author": "climbkaly",
+      "reactions": 26,
+      "channel": "Pollux and Game Feedback"
     },
     {
       "id": "1429714053739053159",
@@ -71,6 +118,20 @@
       "channel": ""
     },
     {
+      "id": "1429624332807573615",
+      "content": "That is all, thanks!",
+      "author": "meioh",
+      "reactions": 6,
+      "channel": "Can we not have maintenances starting an hour before weekly reset?"
+    },
+    {
+      "id": "1429826165815906504",
+      "content": "",
+      "author": "thpdom",
+      "reactions": 5,
+      "channel": "💭「Processing」0 shield ahh"
+    },
+    {
       "id": "1429946834134106154",
       "content": "<@1223503015852380160> 我似乎跟上你了<:Wait:1400771580757409844>",
       "author": "wild_pansy",
@@ -85,11 +146,32 @@
       "channel": ""
     },
     {
+      "id": "1429835294047207578",
+      "content": "（對我來說）一個是泡發的屍體，一個是屍體",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 3,
+      "channel": "誕妄墨菲立繪"
+    },
+    {
       "id": "1429745155006664845",
       "content": "~~把一个人变成一只毛茸茸的狼兽人怎么想都是一个很可疑的兽控对吧，N先生~~",
       "author": "ka_0414",
       "reactions": 3,
       "channel": "我想画点莱克的梗图"
+    },
+    {
+      "id": "1429847992713744415",
+      "content": "我来预测一下吧，SP墨菲出场让你自带深海戒指",
+      "author": "2300011747",
+      "reactions": 2,
+      "channel": "💭「处理中」忘卻篇第六章共鳴卡純白之帆 & 第八章共鳴歡愉之理"
+    },
+    {
+      "id": "1429729780407861290",
+      "content": "嗨守密人，这个情况较为极端，暂时不进行处理：\n若修改为允许守密人不选择发现的造物，可能会出现失误漏选的情况，且图中同时拿完8个造物属于极少见的边界情况，判断之后",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」皮克曼2費拿完造物之後不能不消耗狂想"
     },
     {
       "id": "1429784045486604339",
@@ -104,6 +186,34 @@
       "author": "ice_storys",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1429731193146052760",
+      "content": "感谢建议，戈雅已反馈",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」可不可以給暗潮蟲鳴也補上現在預購的畫風頭像"
+    },
+    {
+      "id": "1429678721631256657",
+      "content": "<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Pollux Talent different ?"
+    },
+    {
+      "id": "1429819060258082846",
+      "content": "也可能我不太會玩🤪已放棄追分",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "💭「处理中」忘卻篇第六章共鳴卡純白之帆 & 第八章共鳴歡愉之理"
+    },
+    {
+      "id": "1429829245739208836",
+      "content": "然而那需要一個血希啊！宿舍沒有血希喵\n菲神隊的隊員打擊隊部分已經集滿了 看我何時有興致練\n防禦隊差一位鳥人\n\n我用菲茵特打有一個比較基礎的理由 就是我主線除了星",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "💭「处理中」忘卻篇第六章共鳴卡純白之帆 & 第八章共鳴歡愉之理"
     }
   ]
 }

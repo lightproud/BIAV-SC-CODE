@@ -1,10 +1,15 @@
 {
   "date": "2025-09-19",
-  "messages": 68,
+  "messages": 82,
   "unique_authors": 7,
-  "reactions_total": 40,
-  "attachments": 6,
+  "reactions_total": 45,
+  "attachments": 7,
   "channel_activity": {
+    "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 6,
+    "✅「Answered」Will there be any new systems or new in-game creations introduced in the future?": 2,
+    "✅「Answered」We need steamOS compatibility": 3,
+    "✅「Answered」Issue with Thai UI vowel positioning.": 1,
+    "✅「已回答」請問官網充值是否可以避免平台扣30%的抽成?": 2,
     "邀請碼互助/Invitation code help each other": 1,
     "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）": 8,
     "杜勒和皮克曼的车文来了": 51,
@@ -14,19 +19,24 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "2": 4,
+    "6": 38,
+    "11": 3,
+    "18": 7,
+    "17": 8,
+    "3": 2,
+    "19": 1,
     "14": 1,
-    "17": 6,
-    "18": 6,
     "23": 1,
-    "6": 37,
     "7": 14,
     "8": 1,
     "5": 1,
     "10": 1
   },
   "message_types": {
-    "0": 58,
-    "19": 8
+    "0": 8,
+    "19": 4,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -58,6 +68,20 @@
       "channel": "杜勒和皮克曼的车文来了"
     },
     {
+      "id": "1418488308689932380",
+      "content": "Hi, all compensation will be completed before 9:40 pm UTC+8 tonight（<t:175828920",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive"
+    },
+    {
+      "id": "1418422113110331463",
+      "content": "感谢守密人的建议❤️ 官网充值确实能更好地支持制作组，但出于各方面的考虑，目前还没有进一步优惠引导的计划🫂",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」請問官網充值是否可以避免平台扣30%的抽成?"
+    },
+    {
       "id": "1418667126323023923",
       "content": "斯哈斯哈斯哈～\n能夠在兩天內分別看見皮杜和杜皮真是～\n人-生-無-憾啊～",
       "author": "void_1546.",
@@ -70,6 +94,13 @@
       "author": "yingmai_",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1418433040908025856",
+      "content": "Thank you for your suggestion. Although we currently have no plans for handheld ",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」We need steamOS compatibility"
     },
     {
       "id": "1418611474183749792",

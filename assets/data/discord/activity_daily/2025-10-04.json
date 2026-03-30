@@ -1,29 +1,73 @@
 {
   "date": "2025-10-04",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 3,
-  "attachments": 3,
+  "messages": 20,
+  "unique_authors": 11,
+  "reactions_total": 12,
+  "attachments": 7,
   "channel_activity": {
+    "💭「Processing」English translation not translation to english. (Pc version)": 1,
+    "✅「Answered」Add a payment processor for EN": 1,
+    "💭「Processing」Faros missing info": 1,
+    "💭「Processing」Pickman - Chromaphage \"inspiration\"": 1,
+    "✅「已回答」关于银钥觉醒和快捷键": 5,
+    "主線癲狂難度": 4,
+    "这次的周年福利还会送限定角色吗": 3,
     "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）": 1,
     "请大家多多捧场喵": 1,
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "0": 1,
+    "23": 1,
+    "16": 1,
+    "14": 4,
+    "3": 5,
+    "15": 2,
+    "22": 2,
+    "2": 1,
+    "4": 1,
     "1": 1,
-    "17": 1,
-    "14": 2
+    "17": 1
   },
   "message_types": {
-    "0": 2
+    "0": 12,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1423863742562832496",
+      "content": "送你一隻圖魯",
+      "author": "insomnia07763",
+      "reactions": 5,
+      "channel": "这次的周年福利还会送限定角色吗"
+    },
+    {
+      "id": "1424063459838132254",
+      "content": "https://discord.com/channels/1131791637933199470/1323653598718197760/13236629529",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": "主線癲狂難度"
+    },
     {
       "id": "1424089764981903360",
       "content": "【《狂气Break》-哔哩哔哩】 https://b23.tv/HCvpQ8K",
       "author": "ruhebaoyangsiwa_97871",
       "reactions": 2,
       "channel": "请大家多多捧场喵"
+    },
+    {
+      "id": "1423880918870917141",
+      "content": "如视频，虽然鼠标点击没有问题，但是银钥觉醒如果不选择具体角色就直接按下空格会吞掉银钥并且没有觉醒",
+      "author": "jidu1418",
+      "reactions": 1,
+      "channel": "✅「已回答」关于银钥觉醒和快捷键"
+    },
+    {
+      "id": "1424036156651208776",
+      "content": "",
+      "author": "fantuan9711",
+      "reactions": 1,
+      "channel": "这次的周年福利还会送限定角色吗"
     },
     {
       "id": "1423840231895076874",

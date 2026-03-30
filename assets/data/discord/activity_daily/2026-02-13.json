@@ -1,10 +1,35 @@
 {
   "date": "2026-02-13",
-  "messages": 627,
+  "messages": 708,
   "unique_authors": 53,
-  "reactions_total": 236,
-  "attachments": 95,
+  "reactions_total": 259,
+  "attachments": 96,
   "channel_activity": {
+    "💭「處理中」Bug列車": 3,
+    "💭「Processing」IOS App stops all background sound/music": 3,
+    "✅「已回答」能否回放戰鬥紀錄": 2,
+    "✅「已回答」会出原画集吗？或者其他例如立牌和玩偶的周边？": 3,
+    "✅「Answered」Salvador Bug with Train and Ultra Turn": 14,
+    "✅「Answered」Train game mode improvement feedback": 5,
+    "Who Ryker's Designer pls come talk ?": 1,
+    "列車結算頁面隊伍被換頭了": 1,
+    "配队": 2,
+    "✅「Answered」Salvador Bug in Train Event": 2,
+    "✅「已回答」充值问题": 4,
+    "✅「Answered」Crimson Brooch STR not added in HSR": 1,
+    "✅「Resolved」Bug after fighting Ch4 boss in the train mode and killing it when it enters Ultra turn": 2,
+    "✅「已回答」不行了能不能改改你的肉鸽": 2,
+    "✅「已回答」「释放指令」没有对应的按键": 1,
+    "✅「已解决」顯示bug": 2,
+    "💭「處理中」鏈條不見了": 3,
+    "✅「Answered」Addition to the Keeper profile": 1,
+    "✅「已回答」這次的爬塔體驗": 3,
+    "💭「處理中」莫名出现的奥瑞塔卡牌，还有不愿与Boss殉情的小怪": 17,
+    "✅「已解决」鸟弟天赋BUG": 2,
+    "✅「已解决」想問一下鳥兄弟天賦設定": 2,
+    "✅「Resolved」[BUG] Electromagnetic Blast Text": 1,
+    "✅「Answered」I'd like to request a refund": 2,
+    "💭「處理中」偏方骰子應該要能吃到物象研究深度": 2,
     "❤️": 5,
     "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 2,
@@ -22,30 +47,32 @@
     "🔸阵容构建": 7
   },
   "hourly_activity": {
-    "8": 44,
+    "9": 57,
+    "12": 39,
+    "6": 31,
+    "8": 52,
+    "17": 14,
+    "3": 28,
+    "10": 86,
+    "2": 89,
+    "4": 68,
+    "7": 37,
+    "14": 20,
+    "23": 3,
+    "11": 35,
+    "1": 21,
+    "5": 45,
     "15": 22,
-    "1": 20,
-    "4": 67,
     "16": 21,
     "18": 5,
-    "14": 19,
-    "3": 19,
-    "17": 13,
     "0": 30,
-    "10": 77,
-    "2": 87,
-    "5": 44,
-    "6": 20,
-    "7": 13,
-    "9": 49,
-    "11": 34,
-    "12": 36,
     "13": 4,
-    "21": 1,
-    "23": 2
+    "21": 1
   },
   "message_types": {
-    "0": 5
+    "4": 24,
+    "0": 40,
+    "19": 17
   },
   "top_reacted_messages": [
     {
@@ -119,6 +146,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1471715181292818685",
+      "content": "We have seen your suggestion<:Pandia_love:1459078512303411261> . We may make som",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "✅「Answered」Train game mode improvement feedback"
+    },
+    {
       "id": "1471724030288728136",
       "content": "",
       "author": "water_heart",
@@ -138,6 +172,13 @@
       "author": "xyakoto",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1472013644727455745",
+      "content": "這個 怎麼會這樣呢 右邊數據是正確的 下面造物也是正確的 但隊伍名單跟裝備清單錯誤了\n不然你說這四個人怎麼可能帶羊媽的維度影像嘛><",
+      "author": "amstelredam",
+      "reactions": 4,
+      "channel": "列車結算頁面隊伍被換頭了"
     },
     {
       "id": "1471696471618228337",
@@ -170,20 +211,6 @@
     {
       "id": "1471788130712686622",
       "content": "怒打17回合，双子这些技能我一个都就没见过hhhh",
-      "author": "xyakoto",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471797470995677209",
-      "content": "<:zoomeyes:826106329973522503>",
-      "author": "xyakoto",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471812616174174352",
-      "content": "",
       "author": "xyakoto",
       "reactions": 4,
       "channel": "🔸綜合討論"

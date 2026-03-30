@@ -1,10 +1,15 @@
 {
   "date": "2025-09-24",
-  "messages": 21,
-  "unique_authors": 7,
-  "reactions_total": 73,
-  "attachments": 6,
+  "messages": 32,
+  "unique_authors": 9,
+  "reactions_total": 74,
+  "attachments": 10,
   "channel_activity": {
+    "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 1,
+    "✅「已回答」彌薩格愛寧協會聲明：謝絕一切標題黨行為": 3,
+    "✅「Answered」8-4 Ham bug": 1,
+    "💭「处理中」畫家 x 攤牌時刻bug": 5,
+    "忘却前夜第一届-叠火大赛（补档）": 1,
     "無借角融災全4 400攻略血肉指環": 5,
     "邀請碼互助/Invitation code help each other": 4,
     "请支持我们绿玛瑙和恋爱奶酪": 2,
@@ -14,6 +19,12 @@
     "1420092491125755985": 6
   },
   "hourly_activity": {
+    "17": 4,
+    "13": 3,
+    "8": 1,
+    "2": 2,
+    "5": 2,
+    "11": 2,
     "1": 2,
     "7": 4,
     "10": 3,
@@ -22,13 +33,12 @@
     "23": 1,
     "12": 2,
     "14": 1,
-    "17": 2,
     "3": 1,
-    "5": 1,
     "6": 1
   },
   "message_types": {
-    "0": 14
+    "19": 1,
+    "0": 10
   },
   "top_reacted_messages": [
     {
@@ -72,6 +82,13 @@
       "author": "yingmai_",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1420232243095277728",
+      "content": "意外收穫應該要是0費",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "💭「处理中」畫家 x 攤牌時刻bug"
     }
   ]
 }

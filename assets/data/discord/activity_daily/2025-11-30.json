@@ -1,10 +1,26 @@
 {
   "date": "2025-11-30",
-  "messages": 36,
-  "unique_authors": 9,
-  "reactions_total": 244,
-  "attachments": 20,
+  "messages": 114,
+  "unique_authors": 34,
+  "reactions_total": 276,
+  "attachments": 35,
   "channel_activity": {
+    "💭「Processing」Morimens freeze when I log in": 2,
+    "💭「Processing」PLEASE remove the auto-scroll.": 4,
+    "✅「Answered」How to get a \"Formless One's Invitation\" ticket?": 1,
+    "💭「处理中」卡在战斗结束": 6,
+    "✅「Answered」Account binding from an apple account": 1,
+    "✅「Answered」Lightless realm expansion": 2,
+    "✅「已回答」無法觀看PVP回放": 2,
+    "✅「Answered」Jenkins shows up 2 times in friends list filter": 1,
+    "✅「Answered」Doll's E2 Equivalent Exchange doesn't heal for every card discarded": 4,
+    "💭「Processing」(probably) wrong Jenkins sprites?": 3,
+    "每日試訓的「打出50張牌」": 7,
+    "Raids suck": 5,
+    "打柱子活动能不能离开": 13,
+    "Let us recall premium enlightenments with a small catch": 1,
+    "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！": 22,
+    "✅「Answered」Unable to read full message in Saved Mails": 4,
     "纯血神国...": 5,
     "一點塔薇玩家的小小心得": 1,
     "最近的一个攻略合集": 1,
@@ -18,22 +34,31 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
+    "11": 3,
+    "12": 1,
+    "6": 31,
+    "9": 6,
+    "17": 2,
+    "3": 2,
+    "5": 6,
+    "8": 4,
+    "23": 3,
+    "13": 5,
+    "0": 6,
+    "10": 4,
+    "20": 4,
+    "4": 3,
+    "7": 7,
+    "2": 5,
     "1": 2,
-    "2": 3,
-    "5": 2,
-    "4": 2,
-    "8": 1,
-    "20": 2,
     "15": 4,
     "14": 15,
-    "0": 1,
-    "6": 1,
-    "23": 2,
     "22": 1
   },
   "message_types": {
-    "0": 23,
-    "19": 3
+    "0": 56,
+    "4": 1,
+    "19": 21
   },
   "top_reacted_messages": [
     {
@@ -86,6 +111,20 @@
       "channel": "纯血神国..."
     },
     {
+      "id": "1444479726969163906",
+      "content": "版主本身發了一串表達了對於其他人的看法皆為理解不足\n這種完全否定他人看法的言論已經不是討論範疇了",
+      "author": "wild_pansy",
+      "reactions": 7,
+      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
+    },
+    {
+      "id": "1444577971439534160",
+      "content": "我打的",
+      "author": "sweet_25367",
+      "reactions": 7,
+      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
+    },
+    {
       "id": "1444516872010731602",
       "content": "静海盾可达",
       "author": "timee_ky",
@@ -100,6 +139,34 @@
       "channel": "图鲁"
     },
     {
+      "id": "1444619519262720144",
+      "content": "活动关两关打下来常常是40多张牌，尬住",
+      "author": "shunia3055",
+      "reactions": 3,
+      "channel": "每日試訓的「打出50張牌」"
+    },
+    {
+      "id": "1444478951715115079",
+      "content": "是主線劇情關裡手持重生卡永遠打不死的詹金啊（",
+      "author": "amstelredam",
+      "reactions": 2,
+      "channel": "✅「Answered」Jenkins shows up 2 times in friends list filter"
+    },
+    {
+      "id": "1444565712822603807",
+      "content": "🤷‍♀️ i mean sure it is a perfect event for an unmarried 30 year old man living i",
+      "author": "frowningquokka",
+      "reactions": 2,
+      "channel": "Raids suck"
+    },
+    {
+      "id": "1444517546144567467",
+      "content": "Scroll wheel does not full capture all text.",
+      "author": "darlingkafka",
+      "reactions": 2,
+      "channel": "✅「Answered」Unable to read full message in Saved Mails"
+    },
+    {
       "id": "1444712558136266895",
       "content": "補充：相位對弈語音\n\n**開場**      輕率的遊戲……姑且陪你們玩玩吧。\n**思考**      要怎樣撕碎他們？\n**催促**      太慢了。實在是",
       "author": "flim_of_life_burst",
@@ -107,74 +174,32 @@
       "channel": "自製喚醒體：異度·索瓦爾格"
     },
     {
-      "id": "1444520447000580127",
-      "content": "佬能分點圖魯嗎\n菜菜\n需要+12圖魯<:A_pinch:1432980538536493057>",
-      "author": "void_1546.",
+      "id": "1444620517620322494",
+      "content": "I believe Jenkins have 2 sprites, one human and one as Awakener, with Rat 🐭 ears",
+      "author": "doomsser",
       "reactions": 1,
-      "channel": "纯血神国..."
+      "channel": "💭「Processing」(probably) wrong Jenkins sprites?"
     },
     {
-      "id": "1444564131696083108",
-      "content": "是因为高配的塔薇会带专武和哈姆林的专武双ssr命轮，命轮效果就有很高的暴击率，我这种低配就没那么高，超限不提供暴击率",
-      "author": "cqzheng_16468",
+      "id": "1444684846730575895",
+      "content": "Don't do them is certainly an option, but there are ways they could make it bett",
+      "author": "vxvendetta97",
       "reactions": 1,
-      "channel": "一點塔薇玩家的小小心得"
+      "channel": "Raids suck"
     },
     {
-      "id": "1444695293953314951",
-      "content": "◈\n**技能列表**\n**狂氣爆發**\n侵吞晝夜\n靈知覺醒\n狂宴宣言\n**技能1**\n褻瀆之目\n**技能2**\n焚蝕之噬\n打擊\n防禦\n\n**啓靈**\n無盡的逐獵",
-      "author": "flim_of_life_burst",
+      "id": "1444575372682461204",
+      "content": "其实一周年的时候就看到你游了，但是被steam差评劝退（现在该我去打差评了）",
+      "author": "luozijie_45939",
       "reactions": 1,
-      "channel": "自製喚醒體：異度·索瓦爾格"
+      "channel": "打柱子活动能不能离开"
     },
     {
-      "id": "1444697866512764948",
-      "content": "◈\n**故事**\n**故事·一**\n我們生活的宇宙，實質是曲線維度中連續的物理現實；而在這之外，則存在著斷裂的角狀時空：時間的折點、意識的斷層與眾多不可名狀的存",
-      "author": "flim_of_life_burst",
+      "id": "1444593095189463134",
+      "content": "这游戏是抖m玩的",
+      "author": "danwangmofei",
       "reactions": 1,
-      "channel": "自製喚醒體：異度·索瓦爾格"
-    },
-    {
-      "id": "1444698250325135490",
-      "content": "**故事·二**\n「索瓦爾格」對於彌薩格大學缺乏興趣。他鮮少停留，總是突然自校外的迷霧中現身、又很快兀自離開。巡視小組曾擔心他會再度與雕塑家協會乃至提燈教會產生",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "自製喚醒體：異度·索瓦爾格"
-    },
-    {
-      "id": "1444698556106801182",
-      "content": "◈\n**命輪**\n**失色日輪**\n**暴擊傷害 21.6%**\n在時間與空間都模糊混淆的盡頭仍存在一個不為人知的文明。\n穿越它淺灰色的海岸與無窮無盡的血紅汪洋",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "自製喚醒體：異度·索瓦爾格"
-    },
-    {
-      "id": "1444698944037851146",
-      "content": "◈\n**典藏館**\n**喚醒體角色分類**\n**混種**\n「偉大之狼」使得提燈教會的虔誠信眾之一誕下的混血子嗣。\n童年時期曾作為於麗埃特的養子被撫養長大。多年以",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "自製喚醒體：異度·索瓦爾格"
-    },
-    {
-      "id": "1444700141251461121",
-      "content": "創作思路：\n索瓦爾格的普通形態致力於圍繞「渴望成為人類」展開，更像是在仰望「人類」。於是在本源型態，他的非人特質被強調，作為原型是廷達羅斯獵犬這一種族的神子，他",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "自製喚醒體：異度·索瓦爾格"
-    },
-    {
-      "id": "1444702025488007178",
-      "content": "卡密灑馬🛐(滑跪",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "自製喚醒體：異度·索瓦爾格"
-    },
-    {
-      "id": "1444703373478723604",
-      "content": "（剛剛在調整排版）謝謝ww！",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "自製喚醒體：異度·索瓦爾格"
+      "channel": "打柱子活动能不能离开"
     }
   ]
 }

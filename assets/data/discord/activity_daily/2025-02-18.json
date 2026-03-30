@@ -1,28 +1,92 @@
 {
   "date": "2025-02-18",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 12,
-  "attachments": 2,
+  "messages": 75,
+  "unique_authors": 6,
+  "reactions_total": 60,
+  "attachments": 5,
   "channel_activity": {
+    "彌薩格校貓 你到底想干嘛？ 2.0": 72,
     "【自行防雷】新主線劇情_純屬幻覺": 2,
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "2": 1,
+    "4": 9,
+    "5": 30,
+    "6": 23,
+    "7": 1,
+    "8": 8,
     "12": 1,
     "13": 1,
     "3": 1
   },
   "message_types": {
-    "0": 2
+    "0": 51,
+    "19": 21
   },
   "top_reacted_messages": [
+    {
+      "id": "1341284121111957524",
+      "content": "氪金氪到怪身上了",
+      "author": "lurenjiao",
+      "reactions": 12,
+      "channel": "彌薩格校貓 你到底想干嘛？ 2.0"
+    },
+    {
+      "id": "1341284541742059531",
+      "content": "不氪金不给玩？氪金越多怪越强？",
+      "author": "lurenjiao",
+      "reactions": 12,
+      "channel": "彌薩格校貓 你到底想干嘛？ 2.0"
+    },
     {
       "id": "1341386018670120980",
       "content": "自己吃也給有需要的人吃吃降血壓藥",
       "author": "eateatcookie",
       "reactions": 11,
       "channel": "【自行防雷】新主線劇情_純屬幻覺"
+    },
+    {
+      "id": "1341286215290322945",
+      "content": "我真的很难相信这是有下载这个游戏的人能设计出来的数目",
+      "author": "lurenjiao",
+      "reactions": 9,
+      "channel": "彌薩格校貓 你到底想干嘛？ 2.0"
+    },
+    {
+      "id": "1341265202049716244",
+      "content": "又是冷处理了",
+      "author": "lurenjiao",
+      "reactions": 5,
+      "channel": "彌薩格校貓 你到底想干嘛？ 2.0"
+    },
+    {
+      "id": "1341271438081916928",
+      "content": "说话太文明被冷暴力，言辞激烈的话马上就把我踢了，那能说啥呢？",
+      "author": "lurenjiao",
+      "reactions": 5,
+      "channel": "彌薩格校貓 你到底想干嘛？ 2.0"
+    },
+    {
+      "id": "1341270856822816880",
+      "content": "比起怪加强和环境限制，其实最令我生气的是他无底洞的养成",
+      "author": "lurenjiao",
+      "reactions": 2,
+      "channel": "彌薩格校貓 你到底想干嘛？ 2.0"
+    },
+    {
+      "id": "1341290813296214017",
+      "content": "只能說線上人數還是太多了",
+      "author": "ttim",
+      "reactions": 2,
+      "channel": "彌薩格校貓 你到底想干嘛？ 2.0"
+    },
+    {
+      "id": "1341285644621713458",
+      "content": "你去翻翻这个帖子的1.0，他下场回应了，你看看他做到了吗",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "彌薩格校貓 你到底想干嘛？ 2.0"
     },
     {
       "id": "1341398609488248872",

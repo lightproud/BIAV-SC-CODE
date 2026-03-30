@@ -1,23 +1,135 @@
 {
   "date": "2025-09-28",
-  "messages": 7,
-  "unique_authors": 2,
-  "reactions_total": 2,
-  "attachments": 0,
+  "messages": 80,
+  "unique_authors": 15,
+  "reactions_total": 26,
+  "attachments": 6,
   "channel_activity": {
+    "Timeless Banner Question": 6,
+    "星辰篇规则还会继续优化吗？": 2,
+    "✅「已解决」不同界域的24": 31,
+    "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 1,
+    "動畫能跳過嗎？": 5,
+    "✅「已回答」不清楚是bug，还是废案，还是有意为之": 12,
+    "✅「Answered」Add the ability to copy and paste teams": 2,
+    "✅「Answered」Can you let us choose the start screen (log in animation)?": 2,
+    "✅「Answered」Add ability to see all card levels": 2,
+    "✅「已回答」能不能给复刻活动也加入星辰篇材料": 2,
+    "✅「Answered」Good day devs [problems with Apple Pay on iOS]": 8,
     "無借角融災全4 400攻略血肉指環": 1,
     "角鬥士": 1,
     "1420092491125755985": 5
   },
   "hourly_activity": {
-    "23": 1,
-    "7": 1,
-    "13": 5
+    "5": 1,
+    "6": 9,
+    "7": 6,
+    "11": 32,
+    "12": 2,
+    "13": 9,
+    "17": 1,
+    "3": 7,
+    "4": 6,
+    "2": 6,
+    "23": 1
   },
   "message_types": {
-    "0": 2
+    "0": 44,
+    "19": 21,
+    "4": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1421825092941385931",
+      "content": "从星辰篇上线开始星辰篇的规则包括唤醒体的星辰篇天赋都有一定的调整，确实极大地改善了星辰篇的游戏体验。但是现在星辰篇的游戏性上来说还是有缺陷，比如作为一个出牌游戏",
+      "author": "2300011747",
+      "reactions": 4,
+      "channel": "星辰篇规则还会继续优化吗？"
+    },
+    {
+      "id": "1421744650552606800",
+      "content": "Hi~Thank you for your suggestion. This feature is already in preparation<:cute1:",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "✅「Answered」Add the ability to copy and paste teams"
+    },
+    {
+      "id": "1421832464392781856",
+      "content": "策畫策畫怎樣都好 拜託把算力調和砍了 <:dead:1356082627509092372>",
+      "author": "qqinfinity",
+      "reactions": 3,
+      "channel": "星辰篇规则还会继续优化吗？"
+    },
+    {
+      "id": "1421820323250307072",
+      "content": "的确如此(",
+      "author": "ka_0414",
+      "reactions": 2,
+      "channel": "✅「已解决」不同界域的24"
+    },
+    {
+      "id": "1421825524828733552",
+      "content": "還有你繼續裝",
+      "author": "sayo.0320",
+      "reactions": 2,
+      "channel": "✅「已解决」不同界域的24"
+    },
+    {
+      "id": "1421694058081947841",
+      "content": "感谢反馈，戈雅去核对一下<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+    },
+    {
+      "id": "1421825407841341460",
+      "content": "?",
+      "author": "sayo.0320",
+      "reactions": 1,
+      "channel": "✅「已解决」不同界域的24"
+    },
+    {
+      "id": "1421698102884307055",
+      "content": "先來跪拜兩位大佬",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+    },
+    {
+      "id": "1421712270890897448",
+      "content": "來認領一下親友<:pray:1356053116260454534> \n我也很好奇，蹲一下後續<:wish:1356084702468899117>",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+    },
+    {
+      "id": "1421714013506764850",
+      "content": "嗨守密人，确实是因为她当时还未成为唤醒体的特殊设计<:pray:1356053116260454534> \n\n<@614083839131648021> <@8",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+    },
+    {
+      "id": "1421756739086319697",
+      "content": "~~廉價的渾沌界域~~",
+      "author": "insomnia07763",
+      "reactions": 1,
+      "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+    },
+    {
+      "id": "1421744095961026684",
+      "content": "Hi~Thank you for your suggestion. This feature is already in preparation<:Cheeru",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Add ability to see all card levels"
+    },
+    {
+      "id": "1421689539327688724",
+      "content": "Recharge is currently not supported in the Philippines. Please be patient and we",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Good day devs [problems with Apple Pay on iOS]"
+    },
     {
       "id": "1422005277036642314",
       "content": "",

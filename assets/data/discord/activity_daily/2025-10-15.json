@@ -1,25 +1,63 @@
 {
   "date": "2025-10-15",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 4,
-  "attachments": 0,
+  "messages": 20,
+  "unique_authors": 6,
+  "reactions_total": 17,
+  "attachments": 1,
   "channel_activity": {
+    "✅「Answered」Question about fanart & merch": 3,
+    "✅「Answered」Ogier bugged?": 2,
+    "💭「处理中」是否有考慮以後出新角色都做個技能展示PV": 13,
+    "💭「Processing」the game is just, not loading.": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "19": 3,
+    "8": 1,
+    "9": 2,
+    "14": 13,
     "13": 1
   },
   "message_types": {
-    "0": 1
+    "0": 13,
+    "4": 1,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1428021212742811668",
+      "content": "Have you ever considered making a skill showcase video for every new character?\n",
+      "author": "taoi002",
+      "reactions": 7,
+      "channel": "💭「处理中」是否有考慮以後出新角色都做個技能展示PV"
+    },
     {
       "id": "1428006502354124810",
       "content": "15/10 update:\n- Various updates and changes to several character's prototypes, t",
       "author": "nikolazuli",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1428021623142748312",
+      "content": "以前有从旺达到羊妈有，现在被砍了",
+      "author": "navirecorbeau",
+      "reactions": 3,
+      "channel": "💭「处理中」是否有考慮以後出新角色都做個技能展示PV"
+    },
+    {
+      "id": "1428026597771841566",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 2,
+      "channel": "💭「处理中」是否有考慮以後出新角色都做個技能展示PV"
+    },
+    {
+      "id": "1428021719003824270",
+      "content": "看來校貓又有新籍口拖了(x",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "💭「处理中」是否有考慮以後出新角色都做個技能展示PV"
     }
   ]
 }

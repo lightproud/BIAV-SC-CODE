@@ -1,22 +1,46 @@
 {
   "date": "2025-08-20",
-  "messages": 6,
-  "unique_authors": 2,
-  "reactions_total": 43,
-  "attachments": 6,
+  "messages": 42,
+  "unique_authors": 7,
+  "reactions_total": 48,
+  "attachments": 9,
   "channel_activity": {
+    "✅「已回答」最近的簡體中文變多了": 1,
+    "✅「Answered」Posse visual glitch": 1,
+    "✅「Answered」Search tutorials": 1,
+    "✅「Answered」Gnosis fragments drop from awakenings": 5,
+    "✅「Answered」Incorrect dmg apply with counter": 1,
+    "✅「Answered」Shown Skill lvl in lineup not updated after upgrades": 1,
+    "💭「Processing」Can't switch back to my old account": 2,
+    "✅「Answered」Hameln Soulforge Str increase increases after every stage": 3,
+    "✅「Answered」I think the Aliemus gain on Dimensional Image: Lily is a bug": 2,
+    "✅「Answered」Infinite Ult Lily": 2,
+    "💭「Processing」Kath messages doesn't display properly": 5,
+    "💭「Processing」\"Retain\" property missing on Kathigu-Ra's rouse card.": 2,
+    "💭「处理中」活动已结束？": 2,
+    "💭「处理中」BUG 有關邀請碼": 2,
+    "✅「Answered」Question about fan work submission event": 6,
     "神國圖魯教 星辰篇": 1,
     "希爾拉": 2,
     "1305430084420898868": 3
   },
   "hourly_activity": {
+    "6": 6,
+    "20": 3,
+    "2": 2,
+    "7": 12,
+    "14": 2,
+    "1": 1,
+    "4": 6,
+    "3": 6,
     "15": 1,
     "17": 2,
-    "7": 2,
     "8": 1
   },
   "message_types": {
-    "0": 3
+    "0": 25,
+    "4": 9,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -46,6 +70,41 @@
       "author": "sweet_25367",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1407616913538023529",
+      "content": "守密人请放心，游戏内繁体语言的翻译体验我们也非常重视，此前收到一些繁体翻译的反馈，我们也第一时间积极地进行了处理，未来我们会想办法优化繁体的翻译工具<:pray",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」最近的簡體中文變多了"
+    },
+    {
+      "id": "1407618443024269463",
+      "content": "Thank you for your help<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Posse visual glitch"
+    },
+    {
+      "id": "1407620788206698547",
+      "content": "100804972",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "💭「Processing」Kath messages doesn't display properly"
+    },
+    {
+      "id": "1407562051731062854",
+      "content": "Sorry, the list of winners for V2.3.0 has not been announced yet. Goya will stri",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Question about fan work submission event"
+    },
+    {
+      "id": "1407563449139069010",
+      "content": "Thank you very much, Goya <:pray:1356053116260454534>",
+      "author": "ayla1425",
+      "reactions": 1,
+      "channel": "✅「Answered」Question about fan work submission event"
     }
   ]
 }

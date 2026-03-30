@@ -1,22 +1,62 @@
 {
   "date": "2025-08-18",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 701,
-  "attachments": 3,
+  "messages": 80,
+  "unique_authors": 21,
+  "reactions_total": 738,
+  "attachments": 29,
   "channel_activity": {
+    "✅「Answered」Normal battle is treat as boss battle in H9-11": 3,
+    "✅「已回答」怪物实验习作1贴图错误": 3,
+    "✅「已回答」典藏馆cg": 4,
+    "✅「Answered」Instagram + more OSTs on Spotify": 4,
+    "✅「Answered」Potential changes for Kathi": 1,
+    "✅「已回答」相位對弈角色無法使用": 4,
+    "✅「Answered」Posse visual glitch": 2,
+    "✅「Answered」Hameln Soulforge Str increase increases after every stage": 1,
+    "✅「Answered」I think the Aliemus gain on Dimensional Image: Lily is a bug": 1,
+    "✅「Answered」Infinite Ult Lily": 1,
+    "✅「已回答」新": 4,
+    "✅「Answered」Text auto-scrolling down on PC version after update": 3,
+    "✅「Answered」Tarphase Bug": 3,
+    "💭「Processing」Ramona normal form remains black after transformation.": 2,
+    "✅「Answered」Kathigu-Ra's wheel's description on the banner page is incorrect!": 4,
+    "✅「Answered」Kathigu-Ra - Soulforge Aptitude : broken preview": 5,
+    "✅「Answered」NEW bug": 2,
+    "✅「已回答」相位对弈有角色但用不了": 2,
+    "✅「已回答」文案錯誤": 1,
+    "✅「Answered」Clementine scaling is wrong": 4,
+    "💭「Processing」Tawil, Inconsistent 1 Arithemetica discount application on Omniscient Verity (Skill 1)": 2,
+    "✅「Answered」I cant enter the game": 6,
+    "✅「已回答」調和回血沒辦法移除出血": 3,
+    "✅「Answered」Help": 9,
+    "✅「Answered」Can't log in": 2,
     "相位對弈—凱蒂古拉OTK隊": 1,
     "萊克": 1,
     "🔸礼包码┊gift-codes": 1,
     "1350058287688712253": 1
   },
   "hourly_activity": {
-    "10": 2,
-    "2": 1,
-    "6": 1
+    "6": 24,
+    "4": 1,
+    "9": 3,
+    "10": 9,
+    "19": 1,
+    "2": 15,
+    "3": 4,
+    "15": 3,
+    "22": 1,
+    "18": 1,
+    "7": 6,
+    "16": 2,
+    "8": 3,
+    "12": 2,
+    "13": 3,
+    "5": 2
   },
   "message_types": {
-    "0": 2
+    "0": 51,
+    "4": 17,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -25,6 +65,111 @@
       "author": "morimensstaff01",
       "reactions": 700,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1407085166781792386",
+      "content": "Kathigu-ra is a pretty nice unit and it can be very strong, but the difference f",
+      "author": "vxvendetta",
+      "reactions": 11,
+      "channel": "✅「Answered」Potential changes for Kathi"
+    },
+    {
+      "id": "1407028141045583944",
+      "content": "I am on story chapter 4, and after the update rolled out, any text that has more",
+      "author": "yunayukivrc",
+      "reactions": 6,
+      "channel": "✅「Answered」Text auto-scrolling down on PC version after update"
+    },
+    {
+      "id": "1406842817770291200",
+      "content": "It says the wheel generates large amounts of Crit Rate, when in reality it only ",
+      "author": "sophiechoice",
+      "reactions": 4,
+      "channel": "✅「Answered」Kathigu-Ra's wheel's description on the banner page is incorrect!"
+    },
+    {
+      "id": "1406869654139306014",
+      "content": "Hello Keeper! I have confirmed this is a text display code issue. It does not im",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": "✅「Answered」Clementine scaling is wrong"
+    },
+    {
+      "id": "1406925768843333673",
+      "content": "典藏馆的cg放到主页面能不能支持缩放呀。。多好看的图，为什么一刚到宿舍就自动变成那样，还不能改。。",
+      "author": "nekoiiii.",
+      "reactions": 2,
+      "channel": "✅「已回答」典藏馆cg"
+    },
+    {
+      "id": "1406934394874105947",
+      "content": "I'm sorry if this is the wrong channel or inappropriate to suggest but I didn't ",
+      "author": "snowvleopard",
+      "reactions": 1,
+      "channel": "✅「Answered」Instagram + more OSTs on Spotify"
+    },
+    {
+      "id": "1406945415340888155",
+      "content": "Thank you for your suggestion. Currently, there is no manpower available to buil",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Instagram + more OSTs on Spotify"
+    },
+    {
+      "id": "1406954965423095909",
+      "content": "Thank you🥹 , your concern and affirmation have warmed our hearts<:love:135605309",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Instagram + more OSTs on Spotify"
+    },
+    {
+      "id": "1406909156186656841",
+      "content": "感谢反馈，已经修复了，会尽快放出🩷",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」新"
+    },
+    {
+      "id": "1406913792775946240",
+      "content": "Stat bonus & Keyflare bonus on rouse are highlighted but do not show next level'",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "✅「Answered」Kathigu-Ra - Soulforge Aptitude : broken preview"
+    },
+    {
+      "id": "1406949933621186560",
+      "content": "🙏 🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Kathigu-Ra - Soulforge Aptitude : broken preview"
+    },
+    {
+      "id": "1406989333117927485",
+      "content": "https://discord.com/channels/1131791637933199470/1406905720368140381",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "✅「Answered」NEW bug"
+    },
+    {
+      "id": "1407000927096930396",
+      "content": "命輪介紹與卡面說明不符。",
+      "author": "ko_anngetsu",
+      "reactions": 1,
+      "channel": "✅「已回答」文案錯誤"
+    },
+    {
+      "id": "1406906562605350974",
+      "content": "🙏 🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Tawil, Inconsistent 1 Arithemetica discount application on Omniscient Verity (Skill 1)"
+    },
+    {
+      "id": "1406829278783344823",
+      "content": "😘 <:Emoji_AJE_M_04:1400771555939844149>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Can't log in"
     },
     {
       "id": "1406942734169800858",

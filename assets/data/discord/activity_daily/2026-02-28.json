@@ -1,10 +1,17 @@
 {
   "date": "2026-02-28",
-  "messages": 671,
+  "messages": 689,
   "unique_authors": 49,
-  "reactions_total": 159,
+  "reactions_total": 160,
   "attachments": 82,
   "channel_activity": {
+    "💭「處理中」奇怪的隊伍遇到奇怪的bug：女王的戒律超量狂氣": 3,
+    "✅「Answered」Memory leaks": 3,
+    "✅「Answered」Choose if OE or not.": 2,
+    "💭「處理中」回放不能看": 3,
+    "✅「Answered」Possibility of using traphase emotes as profile pictures": 2,
+    "✅「Answered」Winkle’s leap effect is broken on D-Tide Wave 2 Alert 2": 2,
+    "✅「已回答」圖魯的部分故事文本消失": 3,
     "宣一下npc自制品拼谷": 1,
     "🔸欢乐梗图": 2,
     "🔸忘却前夜┊morimens-tv": 1,
@@ -25,31 +32,33 @@
     "🔸綜合討論": 623
   },
   "hourly_activity": {
+    "7": 51,
+    "13": 12,
+    "8": 16,
+    "11": 31,
+    "3": 18,
     "10": 72,
     "6": 14,
     "19": 4,
-    "8": 5,
     "14": 11,
     "17": 128,
-    "3": 17,
     "15": 132,
     "16": 128,
     "4": 12,
-    "7": 47,
     "2": 33,
     "9": 8,
-    "13": 11,
     "21": 2,
     "20": 1,
     "22": 1,
     "23": 1,
     "0": 3,
-    "11": 30,
     "1": 10,
     "18": 1
   },
   "message_types": {
-    "0": 1
+    "0": 6,
+    "4": 8,
+    "19": 4
   },
   "top_reacted_messages": [
     {

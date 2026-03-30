@@ -1,15 +1,28 @@
 {
   "date": "2023-12-20",
-  "messages": 6,
-  "unique_authors": 5,
-  "reactions_total": 21,
-  "attachments": 1,
+  "messages": 32,
+  "unique_authors": 10,
+  "reactions_total": 69,
+  "attachments": 3,
   "channel_activity": {
+    "前排出售章魚小丸子": 3,
+    "寧菲亞 & ♂🔑": 12,
+    "隊伍摸魚！": 10,
+    "蓋樓塞二創囉⁽⁽ଘ( ˊᵕˋ )ଓ⁾⁾": 1,
     "幻夢深潛地圖總覽by井上銀溪": 1,
     "深海攻略by牛逼/唐有为": 1,
     "既然沒人粉戈利亞只能我自己上了⋯": 4
   },
   "hourly_activity": {
+    "15": 2,
+    "16": 1,
+    "17": 1,
+    "9": 17,
+    "10": 1,
+    "11": 1,
+    "12": 1,
+    "13": 1,
+    "0": 1,
     "18": 1,
     "8": 1,
     "5": 2,
@@ -17,9 +30,24 @@
     "7": 1
   },
   "message_types": {
-    "0": 6
+    "0": 17,
+    "19": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1187053481249480716",
+      "content": "這是什麼，章魚小丸子，來一……（被瞪）（縮回去）",
+      "author": "olivia_1101011",
+      "reactions": 21,
+      "channel": "前排出售章魚小丸子"
+    },
+    {
+      "id": "1186958654797262869",
+      "content": "是之前兩個寶的點圖！！",
+      "author": "ganxiyu06",
+      "reactions": 19,
+      "channel": "寧菲亞 & ♂🔑"
+    },
     {
       "id": "1186896377331068928",
       "content": "起航的時候，戈利亞回望船隻在海面上拖曳出的軌跡。\n非利士人的血，原住民的血，敵人的血，海鳥的血⋯⋯\n它們匯到一處，就像暗紅的墨湧入無邊無際的藍。",
@@ -33,6 +61,48 @@
       "author": "sannia",
       "reactions": 4,
       "channel": "既然沒人粉戈利亞只能我自己上了⋯"
+    },
+    {
+      "id": "1186959112072859698",
+      "content": "媽媽我愛你🥹🥹寧菲亞太美啦",
+      "author": "yonaka177",
+      "reactions": 3,
+      "channel": "寧菲亞 & ♂🔑"
+    },
+    {
+      "id": "1187002488256204820",
+      "content": "誒嘿謝謝喜歡，可以的",
+      "author": "ganxiyu06",
+      "reactions": 1,
+      "channel": "寧菲亞 & ♂🔑"
+    },
+    {
+      "id": "1187027508005187624",
+      "content": "太可愛啦！感謝你的創作😘",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "寧菲亞 & ♂🔑"
+    },
+    {
+      "id": "1187047249994330193",
+      "content": "謝謝老師！守密人好可愛💕",
+      "author": "drinkornot",
+      "reactions": 1,
+      "channel": "寧菲亞 & ♂🔑"
+    },
+    {
+      "id": "1186959774244405308",
+      "content": "特別特別可愛⋯⋯🥺❤️",
+      "author": "yonaka177",
+      "reactions": 1,
+      "channel": "隊伍摸魚！"
+    },
+    {
+      "id": "1186960488060424253",
+      "content": "真的畫風超可愛，可以接單了",
+      "author": "xill42",
+      "reactions": 1,
+      "channel": "隊伍摸魚！"
     }
   ]
 }

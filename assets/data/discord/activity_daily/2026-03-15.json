@@ -1,10 +1,11 @@
 {
   "date": "2026-03-15",
-  "messages": 116,
+  "messages": 118,
   "unique_authors": 48,
-  "reactions_total": 307,
+  "reactions_total": 308,
   "attachments": 26,
   "channel_activity": {
+    "Petition to remove upcoming traphase event": 2,
     "🔸欢乐梗图": 3,
     "🔸课间休息闲聊": 17,
     "🔸日本語チャンネル": 3,
@@ -34,6 +35,8 @@
     "1482653493465448448": 6
   },
   "hourly_activity": {
+    "5": 3,
+    "7": 2,
     "14": 15,
     "15": 1,
     "10": 7,
@@ -47,17 +50,15 @@
     "16": 3,
     "17": 1,
     "9": 6,
-    "5": 2,
     "3": 2,
     "20": 9,
-    "7": 1,
     "21": 1,
     "0": 1,
     "19": 1
   },
   "message_types": {
-    "19": 18,
-    "0": 98
+    "0": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -187,18 +188,18 @@
       "channel": ""
     },
     {
+      "id": "1482642446579138660",
+      "content": "Ugh train was an absolute SLOG to do for the rewards",
+      "author": "zyocuh",
+      "reactions": 1,
+      "channel": "Petition to remove upcoming traphase event"
+    },
+    {
       "id": "1482753088145068223",
       "content": "欸 其實這我沒注意到\n我只是固定在誕墨開大前才轉紅觸 不然好幾次轉了之後才發現沒開彌利大",
       "author": "lingcheng.0",
       "reactions": 1,
       "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1482663756407504896",
-      "content": "hot",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

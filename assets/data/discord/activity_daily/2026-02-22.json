@@ -1,10 +1,14 @@
 {
   "date": "2026-02-22",
-  "messages": 1429,
+  "messages": 1437,
   "unique_authors": 47,
-  "reactions_total": 253,
-  "attachments": 95,
+  "reactions_total": 255,
+  "attachments": 96,
   "channel_activity": {
+    "✅「已回答」徐的奪魄被錯誤識別為負面狀態": 1,
+    "✅「Answered」Magnolia's Lure WoD should have been available for the entire duration of Xu's banner": 2,
+    "Please allow us to reutrn Doresain to the Black Pool": 4,
+    "✅「已回答」能否回放戰鬥紀錄": 1,
     "猫咪节快乐！|| 杜勒赛因x西维斯特": 4,
     "🔸频道建议┊server-suggestions": 2,
     "🔸忘却前夜┊morimens-tv": 1,
@@ -20,6 +24,11 @@
     "🔸阵容构建": 13
   },
   "hourly_activity": {
+    "1": 53,
+    "21": 37,
+    "23": 2,
+    "7": 100,
+    "22": 9,
     "9": 187,
     "10": 229,
     "11": 63,
@@ -28,25 +37,21 @@
     "3": 22,
     "20": 99,
     "0": 2,
-    "1": 52,
-    "22": 7,
     "5": 30,
     "17": 49,
     "19": 1,
-    "21": 36,
     "2": 60,
     "4": 20,
     "6": 9,
-    "7": 97,
     "8": 110,
     "12": 11,
     "13": 6,
     "14": 111,
-    "18": 9,
-    "23": 1
+    "18": 9
   },
   "message_types": {
-    "0": 4
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
     {

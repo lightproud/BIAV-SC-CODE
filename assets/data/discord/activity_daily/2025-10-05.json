@@ -1,10 +1,17 @@
 {
   "date": "2025-10-05",
-  "messages": 26,
+  "messages": 65,
   "unique_authors": 12,
-  "reactions_total": 62,
-  "attachments": 8,
+  "reactions_total": 68,
+  "attachments": 18,
   "channel_activity": {
+    "💭「Processing」English translation not translation to english. (Pc version)": 2,
+    "✅「Answered」Please consider making the archive permanent when purchased": 9,
+    "✅「Answered」Add a payment processor for EN": 8,
+    "💭「处理中」考不考虑把星辰篇主线的成就奖励加回来": 3,
+    "✅「已回答」鑰令 群山的覺悟": 1,
+    "主線癲狂難度": 14,
+    "The \"Steal\" keyword isn't used during gameplay": 2,
     "無借角融災全4 400攻略血肉指環": 3,
     "蹈海野貓的深海邪教｜藍血界域只有一個下水道（v2.3.3.0）": 1,
     "你應當征服青空，直至墜落海洋": 10,
@@ -16,19 +23,25 @@
     "超维界域唤醒体DIY": 1
   },
   "hourly_activity": {
+    "8": 4,
+    "4": 1,
+    "13": 9,
+    "16": 1,
+    "18": 3,
+    "20": 4,
+    "1": 1,
+    "2": 8,
+    "7": 15,
+    "12": 7,
     "10": 4,
-    "20": 2,
     "11": 4,
-    "12": 5,
-    "13": 6,
     "17": 1,
     "21": 1,
-    "19": 2,
-    "2": 1
+    "19": 2
   },
   "message_types": {
-    "0": 22,
-    "19": 4
+    "19": 9,
+    "0": 30
   },
   "top_reacted_messages": [
     {
@@ -67,11 +80,32 @@
       "channel": "《忘却前夜》与《克苏鲁神话》的关系"
     },
     {
+      "id": "1424312592830169118",
+      "content": "打主線突然遇到的，所以沒有事先錄影\n鑰令三選一看到群山的覺悟，本想抽個雷霆出來電的\n結果抽出兩張領航<:processing:13571858145677189",
+      "author": "insomnia07763",
+      "reactions": 3,
+      "channel": "✅「已回答」鑰令 群山的覺悟"
+    },
+    {
+      "id": "1424316597513879563",
+      "content": "~~快進到玩家討伐XX隊伍XX界域解不了成就要求改條件~~",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": "💭「处理中」考不考虑把星辰篇主线的成就奖励加回来"
+    },
+    {
       "id": "1424374324655034368",
       "content": "<:Sendflowers:1400771545370067118>",
       "author": "tsubaki9884",
       "reactions": 2,
       "channel": "你應當征服青空，直至墜落海洋"
+    },
+    {
+      "id": "1424313768569081898",
+      "content": "Also other languages like french still work, only english doesnt work.",
+      "author": "black_stock",
+      "reactions": 1,
+      "channel": "💭「Processing」English translation not translation to english. (Pc version)"
     },
     {
       "id": "1424373299776847915",

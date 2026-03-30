@@ -1,19 +1,76 @@
 {
   "date": "2024-01-06",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 19,
+  "unique_authors": 4,
+  "reactions_total": 48,
+  "attachments": 7,
   "channel_activity": {
+    "【同人作】艾继丝的日记簿": 2,
+    "Morimens平行宇宙論": 11,
+    "深海領主的一天": 2,
+    "【莉莉中心同人文】桃莉羊會夢見自己的母親嗎？": 2,
     "【弥萨格】拉蒙娜": 2
   },
   "hourly_activity": {
-    "0": 1,
-    "5": 1
+    "3": 1,
+    "5": 4,
+    "15": 11,
+    "17": 2,
+    "0": 1
   },
   "message_types": {
-    "0": 1,
+    "0": 16,
     "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1193218276898127872",
+      "content": "腦洞故事分享集\n包含 大量OOC成分\n通往各色世界的時光機 歡迎搭乘\n\n###此區為自娛自樂產物，不參與同人作品徵集活動###",
+      "author": "sofakiwi_0228",
+      "reactions": 19,
+      "channel": "Morimens平行宇宙論"
+    },
+    {
+      "id": "1193040716855775262",
+      "content": "艾继丝的日记簿\nUID：100000727\n（观前设定1、艾继丝前面日记还在学写字所以错别字和语病为个人设计；2、艾继丝设定为唤醒体还未回忆起记忆时期）",
+      "author": "niubi.plusv587",
+      "reactions": 10,
+      "channel": "【同人作】艾继丝的日记簿"
+    },
+    {
+      "id": "1193218780013269115",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 5,
+      "channel": "Morimens平行宇宙論"
+    },
+    {
+      "id": "1193219104111345734",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 4,
+      "channel": "Morimens平行宇宙論"
+    },
+    {
+      "id": "1193240120963371128",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 4,
+      "channel": "深海領主的一天"
+    },
+    {
+      "id": "1193218555798356089",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 3,
+      "channel": "Morimens平行宇宙論"
+    },
+    {
+      "id": "1193218989506171070",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 3,
+      "channel": "Morimens平行宇宙論"
+    }
+  ]
 }

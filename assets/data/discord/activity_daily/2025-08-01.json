@@ -1,17 +1,18 @@
 {
   "date": "2025-08-01",
-  "messages": 41,
+  "messages": 42,
   "unique_authors": 5,
   "reactions_total": 4,
   "attachments": 17,
   "channel_activity": {
+    "Remove recommended account level from game": 1,
     "神國圖魯教 星辰篇": 34,
     "是复古报纸！": 3,
     "杜勒赛因x你 R18": 2,
     "1350060160739184690": 2
   },
   "hourly_activity": {
-    "3": 7,
+    "3": 8,
     "4": 26,
     "5": 1,
     "17": 5,
@@ -19,8 +20,7 @@
     "10": 1
   },
   "message_types": {
-    "19": 9,
-    "0": 30
+    "0": 1
   },
   "top_reacted_messages": [
     {

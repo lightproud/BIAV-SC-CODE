@@ -1,25 +1,37 @@
 {
   "date": "2025-11-15",
-  "messages": 10,
-  "unique_authors": 4,
-  "reactions_total": 281,
-  "attachments": 1,
+  "messages": 31,
+  "unique_authors": 14,
+  "reactions_total": 305,
+  "attachments": 10,
   "channel_activity": {
+    "💭「处理中」背景音訊出問題": 3,
+    "✅「已回答」仙网": 11,
+    "💭「Processing」bug in the description Caren ult": 3,
+    "总结一下问题": 2,
+    "Bonus EXP Interaction between new Premium Pass Triple EXP and Silver Prime Bonus EXP": 1,
+    "Goliath's interaction with the Keeper in Arc 2 Chapter 3 is inconsistent with the main story": 1,
     "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取": 1,
     "墨菲水手服？！": 2,
     "🔸服务器公告┊server-announcement": 1,
     "1423337172655935600": 6
   },
   "hourly_activity": {
-    "6": 1,
+    "5": 1,
+    "6": 3,
+    "4": 8,
+    "8": 6,
+    "13": 2,
+    "14": 1,
+    "15": 2,
     "7": 1,
     "9": 1,
     "12": 1,
-    "0": 5,
-    "4": 1
+    "0": 5
   },
   "message_types": {
-    "0": 3
+    "0": 20,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -28,6 +40,41 @@
       "author": "cometovilla",
       "reactions": 281,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1439105622309343356",
+      "content": "为什么服务器上会有这些角色名称？我不明白“术士”、“幽灵”、“诅咒”和“凡人”与《忘卻前夜》有什么关系？这个服务器现在变成了修仙网文吗？凡人和术士和洛夫克拉夫特",
+      "author": "tksn.",
+      "reactions": 8,
+      "channel": "✅「已回答」仙网"
+    },
+    {
+      "id": "1439108402646224896",
+      "content": "這很正常啊，畢竟校貓都開啟搞起歧視了（Sp墨）現在所有角色都爭相入籍神國",
+      "author": "corposant_1003",
+      "reactions": 6,
+      "channel": "✅「已回答」仙网"
+    },
+    {
+      "id": "1439253486599671838",
+      "content": "There is a bug in the English localization with a description of Caren's ult. My",
+      "author": "shyva2",
+      "reactions": 6,
+      "channel": "💭「Processing」bug in the description Caren ult"
+    },
+    {
+      "id": "1439107943151697920",
+      "content": "don’t disrespect <@523084324724146193> the egirl aigis dogger like that",
+      "author": "frowningquokka",
+      "reactions": 2,
+      "channel": "✅「已回答」仙网"
+    },
+    {
+      "id": "1439246707098386543",
+      "content": "In the main story, we first meet Goliath in the new world when the Seafarers try",
+      "author": "theborkerr",
+      "reactions": 2,
+      "channel": "Goliath's interaction with the Keeper in Arc 2 Chapter 3 is inconsistent with the main story"
     }
   ]
 }

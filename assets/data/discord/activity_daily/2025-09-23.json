@@ -1,10 +1,19 @@
 {
   "date": "2025-09-23",
-  "messages": 104,
+  "messages": 143,
   "unique_authors": 18,
-  "reactions_total": 138,
-  "attachments": 9,
+  "reactions_total": 144,
+  "attachments": 14,
   "channel_activity": {
+    "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 1,
+    "✅「Answered」Is it possible to retrieve a lost guest account?": 7,
+    "✅「Answered」8-4 Ham bug": 1,
+    "✅「已回答」融灾能不能别调这么难": 1,
+    "✅「Answered」Clementine Symbiosis unclear": 2,
+    "✅「已回答」PC端双开": 8,
+    "✅「Answered」About Realm Inbalance, any plans to even out the number of limited units in each realms?": 6,
+    "✅「Answered」Clementine Keyflare Exalt": 9,
+    "✅「Answered」[Bug] Loss of Chips of Victory": 4,
     "無借角融災全4 400攻略血肉指環": 27,
     "邀請碼互助/Invitation code help each other": 1,
     "小皮小皮": 2,
@@ -14,6 +23,15 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "2": 2,
+    "3": 17,
+    "16": 1,
+    "9": 1,
+    "5": 3,
+    "7": 4,
+    "11": 2,
+    "4": 7,
+    "8": 3,
     "18": 31,
     "19": 9,
     "20": 4,
@@ -22,11 +40,12 @@
     "17": 36,
     "12": 1,
     "14": 2,
-    "8": 1,
     "23": 1
   },
   "message_types": {
-    "0": 31
+    "19": 7,
+    "0": 24,
+    "4": 8
   },
   "top_reacted_messages": [
     {
@@ -128,46 +147,46 @@
       "channel": ""
     },
     {
-      "id": "1420056416189681664",
-      "content": "（四處觀察）（陰暗爬行）（偷舔一口胸部）",
-      "author": "void_1546.",
+      "id": "1419878556896465016",
+      "content": "Thank you very much. We will take a look now🌹",
+      "author": "morimensstaff01",
       "reactions": 1,
-      "channel": "小皮小皮"
+      "channel": "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive"
     },
     {
-      "id": "1420103030275182602",
-      "content": "我们确实目前采用了钥令跟某个角色更相关的能力设计思路，因为通用而强大钥令工具已经非常多，暂时不适合更多。",
-      "author": "game.producer.light",
+      "id": "1419892001616429078",
+      "content": "Thank you very much",
+      "author": "eeeeeeeeseks",
       "reactions": 1,
-      "channel": ""
+      "channel": "✅「Answered」Is it possible to retrieve a lost guest account?"
     },
     {
-      "id": "1420103356902408224",
-      "content": "对于玩法体验我们始终在想办法。之前日本版本确实占据了许多玩法设计师的时间，今后我们会有更多机会来审视已有问题。",
-      "author": "game.producer.light",
+      "id": "1419973708440801350",
+      "content": "死抗噁心+1，為了這個重打很多次浪費時間還崩心態真的傻眼",
+      "author": "xu6_",
       "reactions": 1,
-      "channel": ""
+      "channel": "✅「已回答」融灾能不能别调这么难"
     },
     {
-      "id": "1420104361459191901",
-      "content": "老角色在星辰篇的補強可以希望可以快點更新",
-      "author": "ena04564",
+      "id": "1419921020889862174",
+      "content": "I get the VA situation is rough, but <:dead:1356082627509092372> \n\nWe will reall",
+      "author": "zekiei",
       "reactions": 1,
-      "channel": ""
+      "channel": "✅「Answered」About Realm Inbalance, any plans to even out the number of limited units in each realms?"
     },
     {
-      "id": "1420105075845759066",
-      "content": "我甚至覺得就算拿新角色去比，畫家拿去當主C，單論機制設計方面都贏杜勒很多了\n傷害型以外的角色機制總看到不少超模機制<:idk:13560841382804890",
-      "author": "heikwok",
+      "id": "1419890834530373695",
+      "content": "",
+      "author": "akalanden",
       "reactions": 1,
-      "channel": ""
+      "channel": "✅「Answered」Clementine Keyflare Exalt"
     },
     {
-      "id": "1420105452964020244",
-      "content": "塔薇：請輸入文本",
-      "author": "ena04564",
+      "id": "1419910249196028026",
+      "content": "We will adjust the panel description of skill growth effects to align with the a",
+      "author": "morimensstaff01",
       "reactions": 1,
-      "channel": ""
+      "channel": "✅「Answered」Clementine Keyflare Exalt"
     }
   ]
 }

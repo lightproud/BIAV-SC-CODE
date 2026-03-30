@@ -1,24 +1,25 @@
 {
   "date": "2025-02-11",
-  "messages": 14,
+  "messages": 15,
   "unique_authors": 3,
   "reactions_total": 29,
   "attachments": 5,
   "channel_activity": {
+    "💭「处理中」steam端进不去": 1,
     "忘却前夜相位对弈(PVP)攻略": 5,
     "单独开一个放24": 2,
     "1271491376881598494": 7
   },
   "hourly_activity": {
+    "9": 2,
     "0": 1,
     "2": 1,
     "6": 2,
-    "9": 1,
     "15": 2,
     "11": 7
   },
   "message_types": {
-    "0": 7
+    "19": 1
   },
   "top_reacted_messages": [
     {

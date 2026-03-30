@@ -1,19 +1,33 @@
 {
   "date": "2025-08-12",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 28,
-  "attachments": 2,
+  "messages": 23,
+  "unique_authors": 6,
+  "reactions_total": 29,
+  "attachments": 3,
   "channel_activity": {
+    "✅「Answered」Can't log in": 9,
+    "mockup ui for realm selection and silver key posse": 1,
+    "Make realm mechanics readable": 1,
+    "✅「已回答」疊不了盾": 8,
+    "New dot status and synergy with DoT's": 1,
     "《37個鑰令全解析｜融災實用Top10推薦》": 1,
     "一个大头的画": 2
   },
   "hourly_activity": {
-    "11": 1,
+    "1": 5,
+    "10": 2,
+    "13": 3,
+    "11": 3,
+    "4": 5,
+    "6": 1,
+    "8": 1,
+    "7": 1,
     "15": 2
   },
   "message_types": {
-    "0": 3
+    "19": 5,
+    "0": 14,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -36,6 +50,13 @@
       "author": "arki1i_",
       "reactions": 3,
       "channel": "一个大头的画"
+    },
+    {
+      "id": "1404749425976279081",
+      "content": "沒事\n已解答了",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "✅「已回答」疊不了盾"
     }
   ]
 }

@@ -1,27 +1,34 @@
 {
   "date": "2023-12-08",
-  "messages": 19,
+  "messages": 26,
   "unique_authors": 9,
-  "reactions_total": 46,
-  "attachments": 11,
+  "reactions_total": 69,
+  "attachments": 12,
   "channel_activity": {
+    "潘狄婭": 4,
+    "又是突然冒出的想法": 2,
+    "艾瑞卡": 1,
     "深海圖魯新手心得參考": 10,
     "血肉盾擊反擊by寒衫": 2,
     "希洛~~": 3,
     "萊克寶貝什麼時候出？": 4
   },
   "hourly_activity": {
+    "12": 2,
+    "13": 4,
+    "15": 1,
+    "16": 2,
+    "3": 1,
     "9": 1,
     "10": 2,
     "11": 7,
-    "13": 2,
-    "16": 1,
     "17": 1,
     "19": 1,
     "18": 4
   },
   "message_types": {
-    "0": 17,
+    "0": 4,
+    "4": 1,
     "19": 2
   },
   "top_reacted_messages": [
@@ -31,6 +38,13 @@
       "author": "bailiiii_0413",
       "reactions": 32,
       "channel": "希洛~~"
+    },
+    {
+      "id": "1182665862356926474",
+      "content": "摸魚摸了我的寶貝好愛她呃呃呃\n想我畫什麼其他角色可以和我說（也會是Q版的）",
+      "author": "bashibashibash",
+      "reactions": 21,
+      "channel": "潘狄婭"
     },
     {
       "id": "1182750247328436325",
@@ -45,6 +59,20 @@
       "author": "0.0._.0_0.",
       "reactions": 3,
       "channel": "萊克寶貝什麼時候出？"
+    },
+    {
+      "id": "1182671778972192878",
+      "content": "好可愛嗚嗚",
+      "author": "xill42",
+      "reactions": 1,
+      "channel": "潘狄婭"
+    },
+    {
+      "id": "1182722285627506871",
+      "content": "謝謝喜歡💞",
+      "author": "muyren",
+      "reactions": 1,
+      "channel": "又是突然冒出的想法"
     },
     {
       "id": "1182647086127255653",

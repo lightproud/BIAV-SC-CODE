@@ -1,10 +1,29 @@
 {
   "date": "2025-11-23",
-  "messages": 26,
-  "unique_authors": 7,
-  "reactions_total": 469,
-  "attachments": 10,
+  "messages": 154,
+  "unique_authors": 25,
+  "reactions_total": 507,
+  "attachments": 29,
   "channel_activity": {
+    "✅「已回答」繁中PC端黑屏": 1,
+    "💭「Processing」Time Rewind Bug": 1,
+    "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled": 1,
+    "✅「已回答」侵蝕造成的傷害不會被算進最終傷害": 2,
+    "💭「Processing」Several serious display and performance issues in replay mode": 2,
+    "💭「Processing」Boss's Ancient Embers dont drop in chapter 2 (stage 2-14) normal mode": 1,
+    "✅「Resolved」Fouetté WoD (Liz) and Poof! skill (Casiah) not working": 2,
+    "✅「Resolved」Organic form covenant not working properly in arc 2": 5,
+    "💭「Processing」\"Til the Snow Melts\" does not display Crit. Rate increase": 1,
+    "💭「处理中」有繁中版潤校職缺或者志願者計畫嗎？": 1,
+    "💭「Processing」Wrong effect description on Putney Morning Post": 4,
+    "💭「Processing」Pollux Traphase Text bug": 1,
+    "💭「处理中」更新完卡在这了": 1,
+    "✅「Answered」This game needs more marketing": 76,
+    "💭「Processing」Faros (Traphase) Exalt causes game to freeze": 1,
+    "救一下這個簡轉繁吧": 13,
+    "主線劇情的建議前置活動劇情": 10,
+    "Add a side story guide.": 1,
+    "能不能把自動戰鬥的按鈕隱藏起來": 4,
     "一點塔薇玩家的小小心得": 6,
     "誕妄．墨菲機制與搭配探討": 7,
     "我也要開圖樓": 3,
@@ -13,17 +32,34 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
+    "5": 4,
+    "4": 3,
+    "17": 3,
+    "12": 15,
+    "21": 2,
+    "11": 13,
+    "6": 4,
+    "7": 3,
+    "1": 3,
+    "8": 2,
+    "22": 47,
+    "15": 7,
+    "10": 2,
+    "13": 8,
+    "14": 9,
+    "16": 3,
+    "18": 6,
+    "19": 1,
+    "0": 2,
+    "2": 6,
     "9": 1,
-    "12": 6,
-    "13": 1,
-    "11": 5,
-    "15": 3,
     "23": 8,
     "20": 2
   },
   "message_types": {
-    "0": 13,
-    "19": 4
+    "0": 83,
+    "4": 1,
+    "19": 44
   },
   "top_reacted_messages": [
     {
@@ -62,11 +98,109 @@
       "channel": ""
     },
     {
+      "id": "1442122175615336528",
+      "content": "爸爸媽媽我求你了，找個看得懂繁體的人校稿吧，我真的不行了，你自己看看幹和乾是不是一個意思好不好，幹衣服什麼的聽起來真的很怪👊🏻😭",
+      "author": "shostakovich524",
+      "reactions": 8,
+      "channel": "救一下這個簡轉繁吧"
+    },
+    {
+      "id": "1442003479634907289",
+      "content": "",
+      "author": "hina_kanzaki",
+      "reactions": 4,
+      "channel": "💭「Processing」Time Rewind Bug"
+    },
+    {
+      "id": "1442008521163149343",
+      "content": "Currently there's a disclaimer when unlocking a side story, which chapter the pl",
+      "author": "thigh_god.",
+      "reactions": 4,
+      "channel": "Add a side story guide."
+    },
+    {
+      "id": "1441979284381110292",
+      "content": "能給個隱藏自動戰鬥的選項嗎（\n那玩意放在鑰令上真的很容易不小心按到\n要是打高端局打到一半不小心按到就悲劇了",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "能不能把自動戰鬥的按鈕隱藏起來"
+    },
+    {
+      "id": "1441942882058637312",
+      "content": "是本來活動劇情在開啟前就會提示建議先讀過主線第幾章的劇情之後能有較好的閱讀體驗，並且這些提示在最近版本裡變得更細緻，我個人覺得不是強制先讀過而是明示先讀過哪些讀",
+      "author": "amstelredam",
+      "reactions": 3,
+      "channel": "主線劇情的建議前置活動劇情"
+    },
+    {
+      "id": "1442177315596533761",
+      "content": "我也有同样的问题，所以根据游戏公告做了如上表格，希望在有官方说法之前可以帮到你们",
+      "author": "qingming6054",
+      "reactions": 3,
+      "channel": "主線劇情的建議前置活動劇情"
+    },
+    {
+      "id": "1442029824410521752",
+      "content": "First video here\n\nhttps://youtu.be/K-W_Q9Qe-_A\n\nOnce i enter ultra turn, the bac",
+      "author": "satachan",
+      "reactions": 2,
+      "channel": "💭「Processing」Several serious display and performance issues in replay mode"
+    },
+    {
+      "id": "1442197094625448007",
+      "content": "if you want, you can do it, but your life comes first, playing and participating",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": "✅「Answered」This game needs more marketing"
+    },
+    {
+      "id": "1441969507450228769",
+      "content": "是这样的，主线第九章一群人喊着友情啊羁绊啊就冲上去了，但这些人都是谁啊<:dead:1356082627509092372>",
+      "author": "hhhh098962",
+      "reactions": 2,
+      "channel": "主線劇情的建議前置活動劇情"
+    },
+    {
       "id": "1442293091657846955",
       "content": "> **D-Jewels Exchange (Monthly)**\n> \n> **High Priority:**\n> **Dreamshard** - Bas",
       "author": "vxvendetta97",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1442036268190924820",
+      "content": "you might getting tripped up by the Arc 2 ruleset - all aliemus% values are halv",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "✅「Resolved」Organic form covenant not working properly in arc 2"
+    },
+    {
+      "id": "1442065847576166551",
+      "content": "I think i get Arithmetica when gain counter",
+      "author": "kingofnooblol",
+      "reactions": 1,
+      "channel": "💭「Processing」Wrong effect description on Putney Morning Post"
+    },
+    {
+      "id": "1442127561936076880",
+      "content": "Ya let's js hope they do smthn for marketing 2nd Anni or else it's a waste",
+      "author": "thigh_god.",
+      "reactions": 1,
+      "channel": "✅「Answered」This game needs more marketing"
+    },
+    {
+      "id": "1442200966618153053",
+      "content": "This game gotta rise",
+      "author": "andro3168",
+      "reactions": 1,
+      "channel": "✅「Answered」This game needs more marketing"
+    },
+    {
+      "id": "1442230427187281941",
+      "content": "https://youtu.be/gxtp1IrBZ68?si=UZP19RXmCLbM5N2y\n\nAlso this video creator mentio",
+      "author": "crowlov1",
+      "reactions": 1,
+      "channel": "✅「Answered」This game needs more marketing"
     }
   ]
 }

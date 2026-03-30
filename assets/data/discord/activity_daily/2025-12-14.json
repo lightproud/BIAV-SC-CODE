@@ -1,10 +1,15 @@
 {
   "date": "2025-12-14",
-  "messages": 68,
-  "unique_authors": 6,
-  "reactions_total": 92,
-  "attachments": 2,
+  "messages": 131,
+  "unique_authors": 7,
+  "reactions_total": 104,
+  "attachments": 6,
   "channel_activity": {
+    "求助，我是被版本淘汰了？": 56,
+    "💭「处理中」是否考慮為喚醒體設置啟靈開關和天賦開關？": 1,
+    "✅「已回答」凱刻斯靈塑內容": 1,
+    "💭「Processing」Possible Myriam 2 cost bug": 1,
+    "✅「Answered」W3A5 (Doll) Battle doesn't end even when the boss is dead": 4,
     "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）": 60,
     "一點仿官": 2,
     "女守X鯊（OOC警告）": 4,
@@ -12,6 +17,10 @@
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
+    "15": 8,
+    "16": 48,
+    "13": 3,
+    "20": 4,
     "0": 42,
     "1": 1,
     "11": 1,
@@ -24,8 +33,8 @@
     "22": 1
   },
   "message_types": {
-    "19": 20,
-    "0": 46
+    "0": 60,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -43,6 +52,20 @@
       "channel": "一點仿官"
     },
     {
+      "id": "1449797547966070988",
+      "content": "",
+      "author": "hello_oldmemory",
+      "reactions": 5,
+      "channel": "求助，我是被版本淘汰了？"
+    },
+    {
+      "id": "1449751537512353863",
+      "content": "雖然是在別的遊戲看到的拿來提可能有一點失禮⋯⋯就是像是雷索納斯把潛能（類似忘卻的天賦）點開之後能暫時關閉、異象回聲把我角色疊數點開之後也能暫時關閉\n\n儘管不見得",
+      "author": "amstelredam",
+      "reactions": 4,
+      "channel": "💭「处理中」是否考慮為喚醒體設置啟靈開關和天賦開關？"
+    },
+    {
       "id": "1449691506234626189",
       "content": "我的想法是能透過界域天賦和三大質體獲得牌所以設計的命輪\n但還沒想好要怎麼設計\n\n滿級\n命輪\n願銀鑰指引前路\n死亡抵抗\n                     ",
       "author": "fpaper_27108",
@@ -55,6 +78,20 @@
       "author": "nechromicon",
       "reactions": 3,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1449756090328940637",
+      "content": "目前靈塑10級，已經發動過狂氣爆發了，沒看到「反擊效果額外造成50%傷害」有生效",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "✅「已回答」凱刻斯靈塑內容"
+    },
+    {
+      "id": "1449759761695379610",
+      "content": "As in the video, Myriam 2 cost should apply poison equal to the damage dealt, an",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "💭「Processing」Possible Myriam 2 cost bug"
     },
     {
       "id": "1449557384451199120",

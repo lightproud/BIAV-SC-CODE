@@ -1,30 +1,47 @@
 {
   "date": "2025-06-19",
-  "messages": 23,
+  "messages": 25,
   "unique_authors": 3,
-  "reactions_total": 3,
+  "reactions_total": 7,
   "attachments": 16,
   "channel_activity": {
+    "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers": 2,
     "银河行星的日服大冒险": 2,
     "相位對弈命輪介紹（R級篇）": 17,
     "[二创伪联动][忘却前夜 x Sunless Sea]白如磷火/Pale as Corporsant": 4
   },
   "hourly_activity": {
+    "0": 1,
+    "3": 1,
     "9": 1,
     "10": 1,
     "14": 17,
     "1": 4
   },
   "message_types": {
-    "0": 23
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1385095190263369828",
+      "content": "Thank you🙏 , currently we do not have similar rules. I will write one as soon as",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers"
+    },
     {
       "id": "1385266046738632775",
       "content": "發現pvp裡的命輪沒有人仔細的介紹，所以就來介紹所有的命輪\n分為多篇，本篇為R級命輪篇\n純個人主觀看點，歡迎補充\n\n以下正文",
       "author": "void_1546.",
       "reactions": 2,
       "channel": "相位對弈命輪介紹（R級篇）"
+    },
+    {
+      "id": "1385060817044770856",
+      "content": "I think they are asking about doujin work/secondary creation (二次創作) rules, for e",
+      "author": "sherrinford",
+      "reactions": 1,
+      "channel": "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers"
     },
     {
       "id": "1385068667141755000",

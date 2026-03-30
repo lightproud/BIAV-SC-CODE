@@ -1,10 +1,21 @@
 {
   "date": "2026-02-18",
-  "messages": 1503,
+  "messages": 1533,
   "unique_authors": 51,
-  "reactions_total": 205,
-  "attachments": 91,
+  "reactions_total": 236,
+  "attachments": 95,
   "channel_activity": {
+    "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 2,
+    "✅「Answered」Custom difficulty in HSR": 2,
+    "💭「處理中」可是戈雅，我回不去了": 4,
+    "💭「Processing」0-cost Lightning Retribution triggers Karen’s “Well-fed” effect": 3,
+    "💭「Processing」New Posse Bug": 1,
+    "游戏下载": 2,
+    "✅「已回答」会出原画集吗？或者其他例如立牌和玩偶的周边？": 4,
+    "💭「處理中」圖魯故事bug": 4,
+    "✅「Answered」About music volume reduction during actions": 3,
+    "✅「已解决」遊戲沒聲音了": 1,
+    "[bug] \"Recall\" option is blocked in Ch1 Arc2": 4,
     "皮克曼生日快乐": 1,
     "[利莫里亞]第一大將軍‼️淩晨私會🔞神秘魚人": 2,
     "河畔（新年故事）": 2,
@@ -21,32 +32,35 @@
     "🔸阵容构建": 4
   },
   "hourly_activity": {
+    "19": 5,
+    "22": 1,
+    "7": 297,
+    "6": 40,
+    "8": 47,
+    "3": 181,
+    "5": 92,
+    "14": 13,
     "15": 97,
     "4": 55,
     "16": 230,
     "0": 2,
     "12": 41,
-    "5": 89,
-    "6": 23,
     "9": 6,
-    "14": 12,
     "11": 48,
     "21": 1,
-    "7": 294,
     "1": 2,
     "2": 156,
-    "3": 180,
-    "8": 45,
     "10": 59,
     "13": 41,
     "17": 61,
     "18": 35,
-    "19": 3,
     "20": 1,
     "23": 22
   },
   "message_types": {
-    "0": 5
+    "0": 18,
+    "19": 6,
+    "4": 6
   },
   "top_reacted_messages": [
     {
@@ -55,6 +69,13 @@
       "author": "zzio_",
       "reactions": 26,
       "channel": ""
+    },
+    {
+      "id": "1473565502595924009",
+      "content": "還沒有呢、只是路過看看大家<:Hameln_love:1468257934348783749>",
+      "author": "morimensstaff01",
+      "reactions": 20,
+      "channel": "💭「處理中」可是戈雅，我回不去了"
     },
     {
       "id": "1473787301178904847",
@@ -120,6 +141,20 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1473568517667291146",
+      "content": "比如艾继丝的娃娃<:question1:1356085150869622965>",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✅「已回答」会出原画集吗？或者其他例如立牌和玩偶的周边？"
+    },
+    {
+      "id": "1473564262147559455",
+      "content": "圖魯這下真的禿嚕了<:Tulu_sleep2:1468259861598044402>",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "💭「處理中」圖魯故事bug"
+    },
+    {
       "id": "1473596447961120780",
       "content": "",
       "author": "water_heart",
@@ -165,27 +200,6 @@
       "id": "1473512996117680229",
       "content": "那就叫海鲜队吧",
       "author": "asarikotone",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473536470764486854",
-      "content": "認真沒聽出我的意思嗎<:guanwe1mao6:1062689111556759552>",
-      "author": "lululu9858",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473554586269913281",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473584788865814665",
-      "content": "#  發現了入藥廚",
-      "author": "0.0._.0_0.",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

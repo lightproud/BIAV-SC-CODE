@@ -1,10 +1,19 @@
 {
   "date": "2026-01-07",
-  "messages": 14,
-  "unique_authors": 8,
-  "reactions_total": 47,
-  "attachments": 4,
+  "messages": 38,
+  "unique_authors": 10,
+  "reactions_total": 69,
+  "attachments": 7,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 1,
+    "✅「Answered」\"Foreign Stamp Album\" effect does not match description": 1,
+    "Realm's effect/Synergy/Ideas": 13,
+    "(feedback) The Inbox is awesome.": 1,
+    "In-Sheath Supply pack possibility of stacking": 2,
+    "💭「Processing」100% crash rate Lemurian team": 3,
+    "💭「Processing」Mouchette posse not shown under Chaos posses": 1,
+    "💭「处理中」錄像又開始偶爾出點小bug了": 1,
+    "我有个剧情上的疑惑(第八章)": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1458491651239710851": 5,
     "1458489416182927514": 3,
@@ -14,6 +23,13 @@
     "1455822126568308957": 2
   },
   "hourly_activity": {
+    "1": 3,
+    "7": 4,
+    "6": 1,
+    "9": 3,
+    "10": 9,
+    "3": 3,
+    "2": 1,
     "11": 3,
     "16": 4,
     "17": 3,
@@ -22,8 +38,9 @@
     "21": 1
   },
   "message_types": {
-    "0": 13,
-    "19": 1
+    "19": 5,
+    "0": 16,
+    "4": 3
   },
   "top_reacted_messages": [
     {
@@ -32,6 +49,13 @@
       "author": "xu6_",
       "reactions": 37,
       "channel": ""
+    },
+    {
+      "id": "1458340548845895781",
+      "content": "The Gmurphy Divine Aequor realm changing idea is a very nice touch to the game. ",
+      "author": "sexysneakystoat1625",
+      "reactions": 11,
+      "channel": "Realm's effect/Synergy/Ideas"
     },
     {
       "id": "1458489416182927514",
@@ -48,11 +72,46 @@
       "channel": ""
     },
     {
+      "id": "1458398266214449308",
+      "content": "Synergy boost with specific wheel just limits creativity. One build will be far ",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "Realm's effect/Synergy/Ideas"
+    },
+    {
+      "id": "1458400308588974164",
+      "content": "> do nerf only when really needed. Imo, nerf is bad, buff is better. You only ha",
+      "author": "elenakrittik",
+      "reactions": 3,
+      "channel": "Realm's effect/Synergy/Ideas"
+    },
+    {
+      "id": "1458355051646160997",
+      "content": "Sounds overly complicated and puts further load on the players. Gacha players sh",
+      "author": "angy_24_s",
+      "reactions": 2,
+      "channel": "Realm's effect/Synergy/Ideas"
+    },
+    {
+      "id": "1458368566993748019",
+      "content": "Currently the In-Sheath supply daily item expire in 24 hours, making it impossib",
+      "author": "patrueree",
+      "reactions": 2,
+      "channel": "In-Sheath Supply pack possibility of stacking"
+    },
+    {
       "id": "1458421187435565106",
       "content": "https://youtu.be/mKr8YkXwclM?si=JxszqiiS7i8uczYJ - One year account overview.",
       "author": "flares117",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1458405139869204545",
+      "content": "i do like listening to design talk tho so probably picked up a thing or two from",
+      "author": "elenakrittik",
+      "reactions": 1,
+      "channel": "Realm's effect/Synergy/Ideas"
     }
   ]
 }

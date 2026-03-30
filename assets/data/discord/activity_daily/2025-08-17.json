@@ -1,21 +1,29 @@
 {
   "date": "2025-08-17",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 11,
-  "attachments": 2,
+  "messages": 11,
+  "unique_authors": 4,
+  "reactions_total": 14,
+  "attachments": 4,
   "channel_activity": {
+    "✅「Answered」Normal battle is treat as boss battle in H9-11": 3,
+    "💭「Processing」Tawil, Inconsistent 1 Arithemetica discount application on Omniscient Verity (Skill 1)": 1,
+    "✅「Answered」Help": 4,
     "萊克": 1,
     "血肉喚醒體：菲尼克斯": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "13": 3,
+    "17": 2,
+    "14": 1,
+    "20": 2,
     "15": 1,
     "12": 1,
     "10": 1
   },
   "message_types": {
-    "0": 2
+    "0": 7,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -24,6 +32,20 @@
       "author": "c_1130",
       "reactions": 11,
       "channel": "萊克"
+    },
+    {
+      "id": "1406635469818826762",
+      "content": "When entering the fight on the bottom left conner behind the mist, the battle is",
+      "author": "melwyn7591",
+      "reactions": 2,
+      "channel": "✅「Answered」Normal battle is treat as boss battle in H9-11"
+    },
+    {
+      "id": "1406697694902358280",
+      "content": "<@1131790839291596841>",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "✅「Answered」Help"
     }
   ]
 }

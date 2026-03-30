@@ -1,10 +1,43 @@
 {
   "date": "2025-12-24",
-  "messages": 10,
-  "unique_authors": 5,
-  "reactions_total": 246,
-  "attachments": 6,
+  "messages": 98,
+  "unique_authors": 16,
+  "reactions_total": 271,
+  "attachments": 18,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 1,
+    "💭「Processing」The Spacebar/Enter key on Steam PC version not working": 14,
+    "Tentacle Gathering for Enemies": 1,
+    "✅「已回答」可否增設命輪和密契的計數器": 1,
+    "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details": 8,
+    "✅「Answered」Covenant Plan - Let us use the same pieces in multiple plans": 1,
+    "💭「Processing」Clarification Requested Regarding": 2,
+    "💭「处理中」蘿坦桀驁之刃或靈知覺醒bug": 4,
+    "💭「处理中」血希生日郵件措辭": 1,
+    "✅「已回答」請問有沒有怪物和人物模型圖鑑?": 1,
+    "💭「处理中」遊戲找不到程式&無法進入": 1,
+    "✅「Answered」Another Bug? in Doll Boss": 2,
+    "✅「Answered」Battlepass Timer bug": 3,
+    "💭「Processing」Morimens freeze when I log in": 2,
+    "✅「已回答」建議角色＋12需要有特效比較吸引人抽＋12（比起命輪）": 3,
+    "✅「Answered」Purchasing Silver Prime": 5,
+    "✅「已回答」什麼樣的造物會被收藏？": 8,
+    "✅「Answered」Ham Exalt Text is wrongly string-interpolated": 2,
+    "✅「已回答」活动道具每关能调成一样的吗": 2,
+    "✅「已回答」造物收藏問題": 2,
+    "✅「已回答」+12喚醒體需要特殊獎勵": 2,
+    "✅「已回答」圖魯的卡卡面描述依然有贅句": 2,
+    "✅「Answered」H7-9 Storm Wall has no hidden Silver?": 3,
+    "💭「处理中」「獲得 0 點觸腕傷害」？": 1,
+    "✅「Answered」Missing Caro Tag?": 2,
+    "💭「Processing」Misleading WoD description/translation, or at least so I think.": 1,
+    "✅「Answered」Very small nitpick": 2,
+    "✅「已回答」礼包头像和表情会不会加入自选里面": 3,
+    "✅「Answered」Tutorial is broken :(": 1,
+    "💭「Processing」WoD effect different?": 1,
+    "✅「Answered」Question about the name": 2,
+    "💭「处理中」莱克的繁衍狂热字打错了": 1,
+    "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎": 3,
     "银霜节日历（圣诞节贺文）": 1,
     "🐱light’s-nest": 3,
     "1451125609068757074": 2,
@@ -13,15 +46,27 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "14": 1,
+    "6": 5,
+    "7": 36,
+    "8": 25,
+    "9": 6,
+    "13": 1,
+    "2": 1,
+    "10": 6,
+    "17": 2,
+    "19": 4,
+    "22": 1,
+    "12": 1,
+    "3": 3,
     "16": 2,
     "15": 3,
-    "7": 1,
-    "17": 1,
-    "8": 2,
     "1": 1
   },
   "message_types": {
-    "0": 1
+    "0": 46,
+    "4": 25,
+    "19": 17
   },
   "top_reacted_messages": [
     {
@@ -39,6 +84,13 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1453224617110933525",
+      "content": "只是因為用的隊伍不是什麼很容易翻車的東西才沒出大事",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎"
+    },
+    {
       "id": "1453416133515284622",
       "content": "最近这段时间事务比较多，大家都忙得团团转，但也正因为如此，我们对未来的方向有了更多清晰的规划，会为大家尽全力把这些愿景一一点亮。\n转眼之间，看到了 rrkk00",
       "author": "game.producer.light",
@@ -53,11 +105,109 @@
       "channel": ""
     },
     {
-      "id": "1453303919202533478",
-      "content": "Sorry, due to some reasons, we currently do not have more energy to maintain ext",
+      "id": "1453466223869165691",
+      "content": "關於蘿坦桀驁之刃覺醒與未覺醒之間的bug，我比較習慣起手覺醒所以沒怎麼注意到，但據說這個bug已經存在很長時間\n\n長痛不如短痛，蘿坦目前強度屬於偏低的那一批角色",
+      "author": "heikwok",
+      "reactions": 3,
+      "channel": "💭「处理中」蘿坦桀驁之刃或靈知覺醒bug"
+    },
+    {
+      "id": "1453329788050866196",
+      "content": "Kk, tnx, mostly to be fair to the community and limit animosity",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
+    },
+    {
+      "id": "1453297215023087689",
+      "content": "这个正常是要收录的，不收录是bug",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」什麼樣的造物會被收藏？"
+    },
+    {
+      "id": "1453299660197330975",
+      "content": "已经安排添加了，感谢守密人的反馈，会尽快更新<:proud:1400771683664658433>",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」什麼樣的造物會被收藏？"
+    },
+    {
+      "id": "1453296670187196416",
+      "content": "Hi, this issue has been fixed and will be updated as soon as possible",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「Answered」Ham Exalt Text is wrongly string-interpolated"
+    },
+    {
+      "id": "1453303063975825511",
+      "content": "<@113374123798859776> \nWe are in communication! Hope this helps you, too.",
+      "author": "enumaellis",
+      "reactions": 1,
+      "channel": "💭「Processing」The Spacebar/Enter key on Steam PC version not working"
+    },
+    {
+      "id": "1453307976323694704",
+      "content": "Oh crap, i completely forgot about GPU drivers. Thank you very much!",
+      "author": "fallen.archangel",
+      "reactions": 1,
+      "channel": "💭「Processing」Morimens freeze when I log in"
+    },
+    {
+      "id": "1453304309168210055",
+      "content": "感謝官方的用心！我未來必努力抽滿＋12",
+      "author": "soft_whisper",
+      "reactions": 1,
+      "channel": "✅「已回答」建議角色＋12需要有特效比較吸引人抽＋12（比起命輪）"
+    },
+    {
+      "id": "1453298981064020050",
+      "content": "又是愛戈雅的一天(雖然天天都是",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "✅「已回答」什麼樣的造物會被收藏？"
+    },
+    {
+      "id": "1453295415800627392",
+      "content": "感谢建议，我们已采纳，具体的奖励内容还在计划中，后续将在公告中与大家同步🌹",
       "author": "morimensstaff01",
       "reactions": 1,
-      "channel": ""
+      "channel": "✅「已回答」+12喚醒體需要特殊獎勵"
+    },
+    {
+      "id": "1453294093357682690",
+      "content": "哈喽，应当简化描述，后续更新优化",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」圖魯的卡卡面描述依然有贅句"
+    },
+    {
+      "id": "1453293731175207003",
+      "content": "Hi, this is not a bug. H7-9 doesn't have any silver",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」H7-9 Storm Wall has no hidden Silver?"
+    },
+    {
+      "id": "1453293964504596613",
+      "content": "这里确实是bug，具体原因还在查验",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「处理中」「獲得 0 點觸腕傷害」？"
+    },
+    {
+      "id": "1453285630715887666",
+      "content": "Hi, this issue is already being fixed and will be released as soon as possible🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Very small nitpick"
+    },
+    {
+      "id": "1453280735338303559",
+      "content": "Hi, I have already raised this issue before. Please rest assured that this featu",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Question about the name"
     }
   ]
 }

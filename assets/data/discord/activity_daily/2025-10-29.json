@@ -1,10 +1,19 @@
 {
   "date": "2025-10-29",
-  "messages": 28,
+  "messages": 48,
   "unique_authors": 18,
-  "reactions_total": 203,
-  "attachments": 6,
+  "reactions_total": 212,
+  "attachments": 10,
   "channel_activity": {
+    "✅「Answered」About new Ryker buff": 1,
+    "✅「已回答」触腕集结是否该得到加强": 9,
+    "✅「Answered」Give us a way to view emote description": 1,
+    "话说你们这个联动，角色up的排期怎么办？联动角色是直接当新角色排吗？": 1,
+    "Download media from the archive": 1,
+    "精進一下簡介": 2,
+    "✅「已回答」请问一下怎么找客服": 2,
+    "✅「已回答」相位对弈字打错了": 1,
+    "✅「Answered」Can't Log In": 2,
     "2.3.4相位对弈": 1,
     "🐱light’s-nest": 1,
     "1423337172655935600": 2,
@@ -13,20 +22,25 @@
     "1356210707867107391": 2
   },
   "hourly_activity": {
-    "14": 2,
-    "5": 1,
+    "5": 2,
+    "10": 5,
+    "11": 3,
+    "12": 5,
+    "19": 1,
+    "16": 1,
+    "18": 2,
+    "14": 3,
+    "3": 6,
     "4": 1,
     "1": 1,
     "6": 7,
-    "11": 1,
-    "3": 1,
     "15": 10,
-    "18": 1,
-    "22": 1,
-    "10": 2
+    "22": 1
   },
   "message_types": {
-    "0": 1
+    "0": 17,
+    "19": 1,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -58,6 +72,13 @@
       "channel": ""
     },
     {
+      "id": "1433044552624771253",
+      "content": "由于触腕集结的机制是回合后造成伤害，面对多血条boss切金身时(打掉血条切换的状态：免疫伤害)无法有效输出，完美被克制，且无法与一些指令卡大招联动,。\n\n深海界",
+      "author": "muqingfeng513",
+      "reactions": 4,
+      "channel": "✅「已回答」触腕集结是否该得到加强"
+    },
+    {
       "id": "1433110475792715907",
       "content": "二周年发一个限定回溯好吗",
       "author": "jidu1418",
@@ -72,11 +93,39 @@
       "channel": ""
     },
     {
+      "id": "1433181462408200304",
+      "content": "I would like to view the description of the emotes I have but can't.",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "✅「Answered」Give us a way to view emote description"
+    },
+    {
       "id": "1433158861597966336",
       "content": "Reading the english vs chinese responses is kinda hilarious",
       "author": "asleeplessman",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1433135848425127946",
+      "content": "联动角色和新老角色up的排期会不会有冲突？",
+      "author": "rong486",
+      "reactions": 1,
+      "channel": "话说你们这个联动，角色up的排期怎么办？联动角色是直接当新角色排吗？"
+    },
+    {
+      "id": "1433155749399367722",
+      "content": "A lot of amazing art in this game, would be really nice to be able to download t",
+      "author": "atomless",
+      "reactions": 1,
+      "channel": "Download media from the archive"
+    },
+    {
+      "id": "1432930892086513684",
+      "content": "It may be caused by network fluctuations. Generally, this prompt indicates unsta",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Can't Log In"
     },
     {
       "id": "1433107120852570284",

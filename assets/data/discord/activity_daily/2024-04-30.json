@@ -1,10 +1,12 @@
 {
   "date": "2024-04-30",
-  "messages": 54,
+  "messages": 66,
   "unique_authors": 18,
-  "reactions_total": 122,
-  "attachments": 21,
+  "reactions_total": 132,
+  "attachments": 32,
   "channel_activity": {
+    "Murphy": 1,
+    "真正的懒鬼就是如此朴实无华": 11,
     "高攻刺客二人组——红花24双C队伍": 9,
     "💌「24」體驗交流分享活動💌": 7,
     "24攻略": 5,
@@ -16,6 +18,8 @@
     "希萊斯特同人文-海之聖女（上）": 1
   },
   "hourly_activity": {
+    "18": 1,
+    "8": 15,
     "13": 1,
     "14": 6,
     "15": 5,
@@ -28,12 +32,10 @@
     "2": 2,
     "4": 2,
     "11": 1,
-    "12": 17,
-    "8": 4
+    "12": 17
   },
   "message_types": {
-    "0": 45,
-    "19": 9
+    "0": 12
   },
   "top_reacted_messages": [
     {
@@ -79,11 +81,25 @@
       "channel": "[PVP]全角色技巧解析（盾卫篇-上）"
     },
     {
+      "id": "1234941998255837276",
+      "content": "Uid: 100223389",
+      "author": "mitaraiii",
+      "reactions": 7,
+      "channel": "Murphy"
+    },
+    {
       "id": "1234847339827560468",
       "content": "首先简体警告\n我个人打的顺序是35124，所以就按这个顺序讲讲队伍选择和一些要点好了",
       "author": "ar.za",
       "reactions": 4,
       "channel": "本期融灾满分参考"
+    },
+    {
+      "id": "1234778750294687787",
+      "content": "总之你不开源我怎么自研？\nUID：100000188",
+      "author": "metam0n",
+      "reactions": 3,
+      "channel": "真正的懒鬼就是如此朴实无华"
     },
     {
       "id": "1234705229187125311",

@@ -1,17 +1,25 @@
 {
   "date": "2025-10-30",
-  "messages": 14,
+  "messages": 20,
   "unique_authors": 6,
-  "reactions_total": 1064,
-  "attachments": 1,
+  "reactions_total": 1067,
+  "attachments": 6,
   "channel_activity": {
+    "✅「Answered」8-10 N and potential other N stages Bugs": 1,
+    "✅「Answered」About new Ryker buff": 1,
+    "✅「Answered」Tentacle Overflow Mechanic clarification": 1,
+    "话说你们这个联动，角色up的排期怎么办？联动角色是直接当新角色排吗？": 3,
     "🔸服务器公告┊server-announcement": 1,
     "🔸礼包码┊gift-codes": 1,
     "🐱light’s-nest": 2,
     "1432654338982940783": 10
   },
   "hourly_activity": {
-    "15": 1,
+    "22": 1,
+    "15": 2,
+    "21": 1,
+    "12": 2,
+    "14": 1,
     "13": 1,
     "17": 2,
     "10": 3,
@@ -20,8 +28,7 @@
     "19": 3
   },
   "message_types": {
-    "0": 12,
-    "19": 2
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -44,6 +51,13 @@
       "author": "game.producer.light",
       "reactions": 140,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1433473399312613569",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 3,
+      "channel": "✅「Answered」About new Ryker buff"
     }
   ]
 }

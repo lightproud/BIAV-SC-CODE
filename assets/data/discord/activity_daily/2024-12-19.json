@@ -1,23 +1,27 @@
 {
   "date": "2024-12-19",
-  "messages": 8,
-  "unique_authors": 4,
-  "reactions_total": 14,
-  "attachments": 1,
+  "messages": 32,
+  "unique_authors": 7,
+  "reactions_total": 31,
+  "attachments": 3,
   "channel_activity": {
+    "彌薩格校貓 你到底想干嘛？": 24,
     "約稿了墨菲的等身抱枕": 1,
     "发一点弥萨格宝宝的傻大头": 1,
     "這太美麗了😭": 6
   },
   "hourly_activity": {
+    "4": 1,
+    "5": 5,
+    "6": 18,
     "17": 1,
     "14": 1,
     "8": 4,
     "10": 2
   },
   "message_types": {
-    "0": 6,
-    "19": 2
+    "0": 19,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -26,6 +30,41 @@
       "author": "flim_of_life_burst",
       "reactions": 12,
       "channel": "這太美麗了😭"
+    },
+    {
+      "id": "1319157428818018376",
+      "content": "~~1999水平真的不是貶義嗎~~",
+      "author": "_cwz_",
+      "reactions": 10,
+      "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1319183185804001371",
+      "content": "1999真的不好玩",
+      "author": "tongshenzuigao",
+      "reactions": 4,
+      "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1319183869563637841",
+      "content": "~~然後劇情黑深殘，標榜平行世界的艾繼絲，多結局，失敗就變成原型的火山石花大蛞蝓~~",
+      "author": "07_li",
+      "reactions": 1,
+      "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1319185758631759953",
+      "content": "各種壞結局就是配上一張暗示其悲慘下場的可愛陰森插圖和文案（",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1319185828760649758",
+      "content": "我在想的是這個",
+      "author": "07_li",
+      "reactions": 1,
+      "channel": "彌薩格校貓 你到底想干嘛？"
     },
     {
       "id": "1319218529731612743",

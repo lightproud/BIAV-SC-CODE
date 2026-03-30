@@ -1,10 +1,15 @@
 {
   "date": "2025-08-28",
-  "messages": 22,
+  "messages": 28,
   "unique_authors": 8,
-  "reactions_total": 43,
-  "attachments": 2,
+  "reactions_total": 44,
+  "attachments": 5,
   "channel_activity": {
+    "✅「Answered」Question: Policy on fan-made/unofficial items": 2,
+    "💭「Processing」Estado de Fiamma en el Despertar de Kathigu-Ra tras el uso de su propia llave (Posse)": 1,
+    "✅「已回答」復刻活動": 1,
+    "✅「Answered」Suggestion: Please allow us to toggle Enlightens!": 1,
+    "💭「Processing」Unable to access game + lost account": 1,
     "邀請碼互助/Invitation code help each other": 2,
     "相位對弈—認識隊伍": 1,
     "我也要開圖樓": 5,
@@ -12,6 +17,11 @@
     "2.3表情包": 2
   },
   "hourly_activity": {
+    "20": 1,
+    "22": 1,
+    "2": 1,
+    "18": 2,
+    "3": 1,
     "5": 1,
     "14": 2,
     "21": 1,
@@ -20,7 +30,8 @@
     "11": 2
   },
   "message_types": {
-    "0": 22
+    "0": 5,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -36,6 +47,13 @@
       "author": "void_1546.",
       "reactions": 7,
       "channel": "克萊門汀的特殊治療方法"
+    },
+    {
+      "id": "1410446177337475072",
+      "content": "Esto es un bug que me ha estado apareciendo mínimo una vez por partida el día de",
+      "author": "duxadidus",
+      "reactions": 1,
+      "channel": "💭「Processing」Estado de Fiamma en el Despertar de Kathigu-Ra tras el uso de su propia llave (Posse)"
     },
     {
       "id": "1410585269614280756",

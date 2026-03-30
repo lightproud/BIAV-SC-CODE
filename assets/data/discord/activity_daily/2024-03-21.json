@@ -1,10 +1,12 @@
 {
   "date": "2024-03-21",
-  "messages": 13,
+  "messages": 16,
   "unique_authors": 4,
-  "reactions_total": 41,
-  "attachments": 2,
+  "reactions_total": 60,
+  "attachments": 3,
   "channel_activity": {
+    "我为旺達做了粉丝PV": 1,
+    "畫一下鯊的戰損": 2,
     "主祭已死，鯊王當立｜鯊凱隊介紹（更新v1.41）": 4,
     "調查等級與最大生命係數紀錄": 2,
     "猴子也能看得懂的深潜满分教程": 1,
@@ -13,15 +15,15 @@
     "1181998821291606097": 4
   },
   "hourly_activity": {
+    "10": 3,
+    "2": 2,
     "8": 4,
     "12": 3,
     "9": 3,
-    "10": 2,
     "13": 1
   },
   "message_types": {
-    "19": 3,
-    "0": 6
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -30,6 +32,13 @@
       "author": "navirecorbeau",
       "reactions": 35,
       "channel": ""
+    },
+    {
+      "id": "1220323262769397831",
+      "content": "耶皮。 我喜欢做这些。",
+      "author": "starriex",
+      "reactions": 19,
+      "channel": "我为旺達做了粉丝PV"
     },
     {
       "id": "1220350175524945930",

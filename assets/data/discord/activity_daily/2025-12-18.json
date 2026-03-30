@@ -1,10 +1,28 @@
 {
   "date": "2025-12-18",
-  "messages": 75,
-  "unique_authors": 15,
-  "reactions_total": 96,
-  "attachments": 22,
+  "messages": 170,
+  "unique_authors": 27,
+  "reactions_total": 131,
+  "attachments": 41,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 13,
+    "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details": 31,
+    "💭「Processing」Would be nice for autoplay to remain turned on after finishing a stage.": 5,
+    "✅「已回答」话说你猫什么时候再出一个忘却篇玩法出来（忘却星辰可切换也行）": 4,
+    "💭「处理中」遊戲找不到程式&無法進入": 2,
+    "✅「Answered」Another Bug? in Doll Boss": 1,
+    "✅「Answered」Purchasing Silver Prime": 1,
+    "✅「已回答」圖魯的卡卡面描述依然有贅句": 1,
+    "💭「处理中」「獲得 0 點觸腕傷害」？": 2,
+    "✅「Answered」Jenkin Sprite Error": 1,
+    "💭「Processing」Cant login in though google accounts": 1,
+    "✅「Answered」Recharge issue": 3,
+    "✅「Answered」Full List of Wrong Text for Awakeners": 6,
+    "✅「已回答」繁中PC端黑屏": 1,
+    "The reading experience is not so good": 5,
+    "Arc 2 events are kind of boring in comparison to arc 1's events": 13,
+    "✅「Answered」Can't login via google play": 4,
+    "💭「Processing」D tide starting relic not being recorded in archives": 1,
     "全SSR命輪解析與強度評比": 1,
     "堆樓-忘卻cos相關（真人注意）": 1,
     "拉蒙娜生日快樂（遲到版）": 21,
@@ -18,22 +36,34 @@
     "1451073706427285677": 3
   },
   "hourly_activity": {
-    "11": 4,
-    "16": 3,
-    "9": 24,
-    "10": 6,
+    "13": 13,
+    "14": 5,
+    "17": 5,
+    "4": 15,
+    "5": 10,
+    "6": 11,
+    "7": 10,
+    "20": 1,
+    "9": 25,
+    "11": 9,
+    "15": 1,
+    "16": 4,
+    "23": 1,
+    "8": 15,
+    "10": 9,
+    "22": 8,
+    "19": 1,
+    "18": 1,
+    "21": 10,
     "0": 7,
     "2": 3,
-    "4": 5,
-    "8": 14,
-    "13": 2,
     "3": 4,
-    "14": 1,
     "12": 2
   },
   "message_types": {
-    "0": 27,
-    "19": 9
+    "19": 15,
+    "0": 75,
+    "4": 5
   },
   "top_reacted_messages": [
     {
@@ -42,6 +72,13 @@
       "author": "morimensstaff01",
       "reactions": 18,
       "channel": ""
+    },
+    {
+      "id": "1451069244455391465",
+      "content": "Per the details on the Awakening page, the base probability for obtaining SSR it",
+      "author": "arkaether",
+      "reactions": 11,
+      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
     },
     {
       "id": "1451047931615379611",
@@ -79,6 +116,13 @@
       "channel": ""
     },
     {
+      "id": "1451270646070906880",
+      "content": "Ok, i tried to push this issue to Light, we will see what he respond",
+      "author": "vxvendetta97",
+      "reactions": 5,
+      "channel": "Who Ryker's Designer pls come talk ?"
+    },
+    {
       "id": "1451068641528512644",
       "content": "🤩 夸你呢",
       "author": "dittoqwq",
@@ -86,11 +130,32 @@
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
     },
     {
+      "id": "1451152833654296677",
+      "content": "The text advances too slow on its own, and slightly too fast when it's at 2x\nI a",
+      "author": "chocolateburgerkingfootlettuce",
+      "reactions": 4,
+      "channel": "The reading experience is not so good"
+    },
+    {
       "id": "1451073706427285677",
       "content": "https://drive.google.com/file/d/1NuvnH02LsS6KLJWSBM6neecTqg0peNvn/view?usp=drive",
       "author": "masian131",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1451108635932491898",
+      "content": "except i now in trouble cause i did not attended the class meeting",
+      "author": "_creaz",
+      "reactions": 3,
+      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
+    },
+    {
+      "id": "1451116502408233034",
+      "content": "||In the 8-3 story section she should still have the awakener\\mouse sprite, but ",
+      "author": "vxvendetta97",
+      "reactions": 3,
+      "channel": "✅「Answered」Jenkin Sprite Error"
     },
     {
       "id": "1451146142858350635",
@@ -114,66 +179,31 @@
       "channel": ""
     },
     {
+      "id": "1451206011489878049",
+      "content": "the other dps can kill instanly the mob if the mob hp is around bellow 5k but mo",
+      "author": "wolfyy1",
+      "reactions": 2,
+      "channel": "Who Ryker's Designer pls come talk ?"
+    },
+    {
+      "id": "1451121125059854377",
+      "content": "but... why is that even an inconvenience?",
+      "author": "rain_scarlet",
+      "reactions": 2,
+      "channel": "💭「Processing」Would be nice for autoplay to remain turned on after finishing a stage."
+    },
+    {
+      "id": "1451342068315066439",
+      "content": "This is a Full list of all the errors or missing\\strange text in the Awakeners S",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": "✅「Answered」Full List of Wrong Text for Awakeners"
+    },
+    {
       "id": "1451144686625493033",
       "content": "～～～～～～～\n附上今天畫的拉蒙娜\n娜娜我永遠喜歡你<:takenotes:1357186646294138890>",
       "author": "souri.10244",
       "reactions": 2,
-      "channel": "拉蒙娜生日快樂（遲到版）"
-    },
-    {
-      "id": "1451170670527647768",
-      "content": "他們看不懂",
-      "author": "souri.10244",
-      "reactions": 2,
-      "channel": "拉蒙娜生日快樂（遲到版）"
-    },
-    {
-      "id": "1451032402897141902",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 2,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1451128618066514123",
-      "content": "太好了，是没有融蚀的和平世界<:Cheerup:1400771555939844149> \n守密人和拉蒙娜一定要有个好结束<:please:1356053110",
-      "author": "ka_0414",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1451137419951865918",
-      "content": "太好了\n是勞斯\n我們有救了",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1451047229291888854",
-      "content": "thanks9",
-      "author": "tnimreppep",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1451145124624072744",
-      "content": "<:Cheerup:1400771555939844149>",
-      "author": "souri.10244",
-      "reactions": 1,
-      "channel": "拉蒙娜生日快樂（遲到版）"
-    },
-    {
-      "id": "1451160753720791081",
-      "content": "（薯泥受到爆擊-999死抗失敗陣亡於道中再起不能",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "拉蒙娜生日快樂（遲到版）"
-    },
-    {
-      "id": "1451170315576152097",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 1,
       "channel": "拉蒙娜生日快樂（遲到版）"
     }
   ]

@@ -1,10 +1,17 @@
 {
   "date": "2026-02-12",
-  "messages": 787,
+  "messages": 830,
   "unique_authors": 72,
-  "reactions_total": 342,
-  "attachments": 106,
+  "reactions_total": 393,
+  "attachments": 110,
   "channel_activity": {
+    "💭「處理中」Bug列車": 6,
+    "✅「Answered」Salvador Bug with Train and Ultra Turn": 1,
+    "✅「Answered」Train game mode improvement feedback": 18,
+    "💭「處理中」鏈條不見了": 3,
+    "✅「Answered」Addition to the Keeper profile": 10,
+    "✅「Answered」I'd like to request a refund": 2,
+    "✅「Answered」Contest": 3,
     "转载 频道的波吕克斯": 1,
     "🔸欢乐梗图": 2,
     "🔸频道建议┊server-suggestions": 4,
@@ -18,34 +25,43 @@
     "🔸阵容构建": 76
   },
   "hourly_activity": {
-    "15": 35,
-    "8": 79,
+    "8": 86,
+    "10": 78,
+    "1": 14,
+    "2": 48,
+    "3": 81,
+    "4": 32,
+    "5": 30,
+    "23": 30,
+    "15": 39,
+    "6": 55,
+    "13": 24,
+    "16": 10,
+    "17": 13,
+    "9": 108,
+    "18": 4,
     "14": 69,
-    "18": 3,
     "20": 3,
-    "23": 27,
-    "2": 42,
-    "5": 29,
-    "6": 53,
-    "17": 11,
-    "4": 31,
-    "9": 107,
     "11": 30,
     "12": 54,
-    "13": 22,
     "22": 1,
     "0": 13,
-    "1": 13,
-    "3": 76,
     "7": 7,
-    "10": 72,
-    "16": 9,
     "19": 1
   },
   "message_types": {
-    "0": 1
+    "0": 33,
+    "19": 9,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1471324648179372072",
+      "content": "The new game mode has a good core, but I think the community agree that it still",
+      "author": "rain_scarlet",
+      "reactions": 28,
+      "channel": "✅「Answered」Train game mode improvement feedback"
+    },
     {
       "id": "1471531485113614366",
       "content": "十分貌美之……",
@@ -152,6 +168,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1471386994771759104",
+      "content": "Can we be able to see our high score on the train mode on our keeper profiles?\nI",
+      "author": "spooky_penguin_",
+      "reactions": 5,
+      "channel": "✅「Answered」Addition to the Keeper profile"
+    },
+    {
       "id": "1471392667219792060",
       "content": "sorry, A FUCKING HUNDRED???????????",
       "author": "lordbabel",
@@ -169,20 +192,6 @@
       "id": "1471400256032735425",
       "content": "",
       "author": "navirecorbeau",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471403977156595856",
-      "content": "200银",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471419229285781576",
-      "content": "們莉莉有機會暴打對面嗎",
-      "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

@@ -1,24 +1,30 @@
 {
   "date": "2025-09-20",
-  "messages": 17,
+  "messages": 24,
   "unique_authors": 5,
-  "reactions_total": 37,
-  "attachments": 4,
+  "reactions_total": 42,
+  "attachments": 7,
   "channel_activity": {
+    "✅「已回答」角色立绘/缩略图画质优化": 1,
+    "💭「Processing」Dreams of medicine not working on card drawn by Horla’s event wheel": 1,
+    "✅「Answered」We need steamOS compatibility": 5,
     "詹金": 4,
     "我們偉大的音樂家（哈姆林樓？）": 2,
     "1296113810549112874": 8,
     "1305430084420898868": 3
   },
   "hourly_activity": {
-    "10": 7,
+    "6": 1,
+    "23": 2,
+    "8": 2,
+    "10": 9,
     "5": 2,
     "14": 6,
     "15": 1,
     "16": 1
   },
   "message_types": {
-    "0": 6
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -48,6 +54,20 @@
       "author": "yingmai_",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1418853848847749181",
+      "content": "如题，部分角色立绘和幻衣放大后分辨率较差，后续是否会引入优化或是独立资源包？\n目前的重灾区是杜勒塞因幻衣勿忘我\n卡斯托尔和环行拉蒙娜这类立绘本身精度高/拥有动态",
+      "author": "rutsah_avhril",
+      "reactions": 4,
+      "channel": "✅「已回答」角色立绘/缩略图画质优化"
+    },
+    {
+      "id": "1418872460924813343",
+      "content": "the issue isn't that it's just Steam client, but SteamOS is based on a another O",
+      "author": "wolfierce",
+      "reactions": 1,
+      "channel": "✅「Answered」We need steamOS compatibility"
     }
   ]
 }

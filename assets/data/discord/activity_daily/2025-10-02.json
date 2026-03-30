@@ -1,28 +1,47 @@
 {
   "date": "2025-10-02",
-  "messages": 41,
-  "unique_authors": 6,
-  "reactions_total": 56,
-  "attachments": 18,
+  "messages": 73,
+  "unique_authors": 7,
+  "reactions_total": 62,
+  "attachments": 34,
   "channel_activity": {
+    "✅「已回答」寧妃，夜潮，BUG": 3,
+    "✅「Answered」No Gnosis Fragments from Awakening Events": 1,
+    "✅「Answered」Silver Background  Bug": 4,
+    "✅「Answered」UK Mobile login issues": 4,
+    "✅「Answered」Mobile login via Steam failed - \"the game is not available in your region\"": 5,
+    "💭「Processing」FB link problem": 3,
+    "💭「Processing」I CAN'T PURCHASE FROM THE RECHARGE SHOP": 3,
+    "💭「Processing」I cant update the game": 2,
+    "💭「Processing」i can't enter the game via steam": 1,
+    "✅「已回答」需要修复dc22000订阅没有礼包码的bug": 2,
+    "💭「处理中」超越之目回環與真實亦是幻想互動問題": 2,
+    "💭「处理中」來自某被無視的不知名大佬": 2,
     "無借角融災全4 400攻略血肉指環": 19,
     "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）": 2,
     "开个摸鱼楼✨": 17,
     "1423337172655935600": 3
   },
   "hourly_activity": {
+    "12": 1,
+    "15": 36,
+    "23": 1,
+    "1": 14,
+    "5": 2,
+    "10": 1,
+    "11": 2,
+    "18": 1,
     "0": 3,
-    "1": 13,
     "2": 4,
     "3": 1,
     "14": 5,
-    "15": 13,
     "16": 1,
     "17": 1
   },
   "message_types": {
-    "0": 36,
-    "19": 2
+    "0": 21,
+    "4": 10,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -31,6 +50,13 @@
       "author": "scholar_2",
       "reactions": 40,
       "channel": ""
+    },
+    {
+      "id": "1423287753302343700",
+      "content": "簡單來說\n隊伍強效：43.2% （向上取整44%）\n寧妃攜帶鎖鏈 （基礎傷害提高40%）\n夜潮基傷：90\n夜潮成長：15\n90（基傷）×144%（強效）×140",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "✅「已回答」寧妃，夜潮，BUG"
     },
     {
       "id": "1423326462328700939",
@@ -66,6 +92,20 @@
       "author": "xcecilex.",
       "reactions": 2,
       "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423180892016480388",
+      "content": "probably not a bug? i kinda like this, it highlights the silver more. with the d",
+      "author": "morified53",
+      "reactions": 1,
+      "channel": "✅「Answered」Silver Background  Bug"
+    },
+    {
+      "id": "1423330087629094982",
+      "content": "我们查验一下🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「处理中」來自某被無視的不知名大佬"
     },
     {
       "id": "1423102684478574612",

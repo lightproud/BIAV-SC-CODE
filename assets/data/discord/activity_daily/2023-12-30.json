@@ -1,22 +1,69 @@
 {
   "date": "2023-12-30",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 1,
-  "attachments": 1,
+  "messages": 29,
+  "unique_authors": 7,
+  "reactions_total": 54,
+  "attachments": 8,
   "channel_activity": {
+    "笑话合集": 4,
+    "跨區靈感許願池.gif": 11,
+    "紅祭禮": 5,
+    "“嗨，守密人，请看这里w”": 2,
+    "人，真的要戒賭，下次不賭了": 3,
     "御四家混沌無光8攻略【BOSS機制】": 1,
     "御四家混沌無光8攻略": 3
   },
   "hourly_activity": {
-    "3": 3,
+    "2": 2,
+    "17": 4,
+    "8": 4,
+    "9": 7,
+    "15": 4,
+    "16": 1,
+    "1": 2,
+    "3": 4,
     "4": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 3
+    "0": 24,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1190569415561986119",
+      "content": "——「我見過凱旋式上漫天飛舞的金箔，也見過火焰中熊熊燃燒的黃金宮殿。」\n\n\n順便投稿個\nUID：100047306",
+      "author": "yolo_mode",
+      "reactions": 21,
+      "channel": "紅祭禮"
+    },
+    {
+      "id": "1190468847673823283",
+      "content": "月初画的，正好社区这边还没发过发一下",
+      "author": "lindongxieyang",
+      "reactions": 10,
+      "channel": "“嗨，守密人，请看这里w”"
+    },
+    {
+      "id": "1190475891055263764",
+      "content": "同人笑话也是同人。突然想到可以开个笑话楼，于是就开了。我自己是写不出几个笑话的。还是仰仗大家集思广益。",
+      "author": "walker747",
+      "reactions": 8,
+      "channel": "笑话合集"
+    },
+    {
+      "id": "1190587352381403146",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 7,
+      "channel": "跨區靈感許願池.gif"
+    },
+    {
+      "id": "1190681268153757696",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 7,
+      "channel": "跨區靈感許願池.gif"
+    },
     {
       "id": "1190492518257807482",
       "content": "恭喜——",

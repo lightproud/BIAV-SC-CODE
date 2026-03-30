@@ -1,17 +1,34 @@
 {
   "date": "2025-10-07",
-  "messages": 4,
-  "unique_authors": 1,
-  "reactions_total": 6,
-  "attachments": 0,
+  "messages": 16,
+  "unique_authors": 10,
+  "reactions_total": 14,
+  "attachments": 2,
   "channel_activity": {
+    "✅「已回答」手冊介面": 1,
+    "✅「Answered」Rotating menu background": 1,
+    "💭「处理中」考不考虑把星辰篇主线的成就奖励加回来": 1,
+    "💭「Processing」I won’t play again until this is implemented traphase being super unstable": 1,
+    "✅「Answered」Mobile login via Steam failed - \"the game is not available in your region\"": 2,
+    "💭「Processing」FB link problem": 1,
+    "✅「已解决」进了普池的限定角色的活动以后还会复刻吗？": 2,
+    "命轮开学日什么时候可以获取": 3,
     "【收米人&OC向】【繁衍狂热向】岁月为笔相思": 4
   },
   "hourly_activity": {
+    "15": 4,
+    "7": 1,
+    "16": 1,
+    "3": 2,
+    "10": 1,
+    "18": 1,
+    "5": 1,
+    "6": 1,
     "9": 4
   },
   "message_types": {
-    "0": 4
+    "0": 8,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -20,6 +37,20 @@
       "author": "akalanden",
       "reactions": 6,
       "channel": "【收米人&OC向】【繁衍狂热向】岁月为笔相思"
+    },
+    {
+      "id": "1425017492534988862",
+      "content": "Maybe some people already asked for it, but it would be very nice to be able to ",
+      "author": "zekiei",
+      "reactions": 5,
+      "channel": "✅「Answered」Rotating menu background"
+    },
+    {
+      "id": "1425143191274782750",
+      "content": "",
+      "author": "sweet_25367",
+      "reactions": 3,
+      "channel": "✅「已解决」进了普池的限定角色的活动以后还会复刻吗？"
     }
   ]
 }

@@ -1,10 +1,22 @@
 {
   "date": "2025-09-22",
-  "messages": 48,
-  "unique_authors": 6,
-  "reactions_total": 30,
-  "attachments": 7,
+  "messages": 98,
+  "unique_authors": 14,
+  "reactions_total": 47,
+  "attachments": 16,
   "channel_activity": {
+    "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 2,
+    "✅「Answered」Is it possible to retrieve a lost guest account?": 10,
+    "✅「已回答」融灾能不能别调这么难": 2,
+    "✅「Answered」Will there be any new systems or new in-game creations introduced in the future?": 2,
+    "✅「Answered」Clementine Symbiosis unclear": 11,
+    "✅「Answered」About Realm Inbalance, any plans to even out the number of limited units in each realms?": 9,
+    "✅「Answered」Clementine Keyflare Exalt": 1,
+    "✅「Answered」[Bug] Loss of Chips of Victory": 3,
+    "✅「已回答」角色立绘/缩略图画质优化": 2,
+    "✅「Answered」Launch the game via Steam and getting the \"Network busy\"": 4,
+    "💭「Processing」Dreams of medicine not working on card drawn by Horla’s event wheel": 2,
+    "✅「已回答」环娜皮肤是不是快出了": 2,
     "【3D渲染动画】奥尔拉": 27,
     "杜勒和皮克曼的车文来了": 16,
     "1181998821291606097": 3,
@@ -12,20 +24,30 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "3": 3,
+    "3": 9,
+    "9": 5,
+    "0": 1,
+    "6": 2,
+    "7": 13,
+    "13": 7,
+    "14": 2,
+    "18": 1,
+    "19": 2,
+    "21": 8,
+    "12": 12,
+    "20": 1,
+    "10": 1,
+    "15": 1,
+    "1": 2,
     "4": 24,
     "5": 1,
-    "7": 2,
     "11": 5,
-    "12": 9,
-    "1": 1,
-    "8": 1,
-    "9": 1,
-    "14": 1
+    "8": 1
   },
   "message_types": {
-    "0": 33,
-    "19": 10
+    "19": 10,
+    "0": 35,
+    "4": 5
   },
   "top_reacted_messages": [
     {
@@ -43,11 +65,60 @@
       "channel": "【3D渲染动画】奥尔拉"
     },
     {
+      "id": "1419684565114425535",
+      "content": "打融灾打的我痛苦面具出来了，之后的融灾能不能控制一下难度，至少350别太难吧<:cry1:1356053046374961212>",
+      "author": "2300011747",
+      "reactions": 6,
+      "channel": "✅「已回答」融灾能不能别调这么难"
+    },
+    {
+      "id": "1419628433260019722",
+      "content": "During the \"Detective Handbook\" event rerun, after doing \"Uninvited Guest\" level",
+      "author": "reynard_fuchs",
+      "reactions": 4,
+      "channel": "✅「Answered」[Bug] Loss of Chips of Victory"
+    },
+    {
+      "id": "1419619936032002048",
+      "content": "It feels like Aequor especially is suffering from the lack of Limiteds.\n\nHere's ",
+      "author": "zekiei",
+      "reactions": 3,
+      "channel": "✅「Answered」About Realm Inbalance, any plans to even out the number of limited units in each realms?"
+    },
+    {
       "id": "1419665944355016868",
       "content": "~~乾脆給他兩叫王姨（藝）吧~~",
       "author": "ena04564",
       "reactions": 2,
       "channel": "杜勒和皮克曼的车文来了"
+    },
+    {
+      "id": "1419698660672929812",
+      "content": "我覺得主要是那個死扛很噁心",
+      "author": "glacy_9918",
+      "reactions": 1,
+      "channel": "✅「已回答」融灾能不能别调这么难"
+    },
+    {
+      "id": "1419586754976940043",
+      "content": "感谢建议，此前也收到类似的反馈，已针对性地解决了。我们也在思考更好的办法以期能避免类似问题的发生🙏 \n守密人提到的这些立绘和皮肤我们会先安排优化🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」角色立绘/缩略图画质优化"
+    },
+    {
+      "id": "1419580898478653491",
+      "content": "Around October, we will perform an upgrade and repair on the problematic file pa",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Launch the game via Steam and getting the \"Network busy\""
+    },
+    {
+      "id": "1419520558894153768",
+      "content": "<:pray:1356053116260454534> 近期会有消息~",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」环娜皮肤是不是快出了"
     },
     {
       "id": "1419526249612836921",

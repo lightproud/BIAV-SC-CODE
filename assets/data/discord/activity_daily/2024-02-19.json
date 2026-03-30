@@ -1,10 +1,14 @@
 {
   "date": "2024-02-19",
-  "messages": 35,
+  "messages": 39,
   "unique_authors": 16,
-  "reactions_total": 64,
-  "attachments": 7,
+  "reactions_total": 68,
+  "attachments": 8,
   "channel_activity": {
+    "圖魯": 1,
+    "【vroid模型】雨水·墨菲": 1,
+    "点击👀即看🤩脓胞👾转🥏转🥏乐😋": 1,
+    "打活動化身成Guile的艾爾瓦": 1,
     "銀鑰充能與狂氣回充衰減紀錄": 13,
     "深海觸手爆傷爆率公式(通靈)": 1,
     "主副屬性": 3,
@@ -15,19 +19,18 @@
     "莉莉-q版头像": 2
   },
   "hourly_activity": {
+    "6": 5,
+    "11": 3,
     "8": 3,
     "9": 21,
     "12": 1,
-    "6": 2,
-    "11": 2,
     "4": 2,
     "16": 2,
     "3": 1,
     "2": 1
   },
   "message_types": {
-    "0": 28,
-    "19": 7
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -57,6 +60,20 @@
       "author": "vegoutdino",
       "reactions": 7,
       "channel": "深海觸手爆傷爆率公式(通靈)"
+    },
+    {
+      "id": "1209101375187980318",
+      "content": "⚠️服装未完全还原官方设定⚠️\n\n过年过昏头了以至于完全没看日历，今早起床发现今天就是雨水（手忙脚乱.jpg）\n墨菲的王冠太难捏了根本捏不出来救命……什么时候才",
+      "author": "nancyjofla",
+      "reactions": 3,
+      "channel": "【vroid模型】雨水·墨菲"
+    },
+    {
+      "id": "1209027016461131776",
+      "content": "好圖🤣",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "打活動化身成Guile的艾爾瓦"
     },
     {
       "id": "1209049501948444672",

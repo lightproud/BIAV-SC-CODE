@@ -1,10 +1,37 @@
 {
   "date": "2025-11-28",
-  "messages": 75,
-  "unique_authors": 8,
-  "reactions_total": 200,
-  "attachments": 3,
+  "messages": 162,
+  "unique_authors": 22,
+  "reactions_total": 223,
+  "attachments": 17,
   "channel_activity": {
+    "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎": 1,
+    "✅「已回答」繁中PC端黑屏": 2,
+    "✅「Answered」Bonus Damage and Fortress": 1,
+    "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled": 1,
+    "✅「已回答」融朵的虚无终结在战斗中打出是有语音的，但是档案中没有": 2,
+    "💭「处理中」星辰篇第4章boss階段音頻中斷": 6,
+    "✅「Answered」Please move the auto battle option to somewhere more deliberate": 1,
+    "✅「Answered」Discovering Dissociated Awakener Command cards with Lifelike Rendition": 1,
+    "✅「Answered」Missing Intention Name": 1,
+    "💭「Processing」Over 100 Fortress bug": 2,
+    "💭「处理中」相位对奕的排名机制是出了啥问题啊？": 4,
+    "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！": 23,
+    "💭「Processing」Enemy death resistance not working as intended": 6,
+    "IOS App permissions": 1,
+    "✅「Answered」rose script icon not showing up": 4,
+    "帳號找回的ID是UID嗎？": 2,
+    "💭「Processing」Card Selection Bug with a bigger hand space": 2,
+    "💭「Processing」Log issues in the Tawil sequence in the prologue.": 4,
+    "✅「Answered」G murphy Exalt description swapped in her trial mode": 5,
+    "✅「已解决」关卡完成度显示问题": 4,
+    "💭「Processing」Dtide extra clear records": 1,
+    "💭「Processing」Corposant Pilots trigger Queen's Edict Aliemus increase repeatedly": 1,
+    "✅「Answered」Tinct Defense text bug": 3,
+    "Bleed sometimes not being removed upon heal": 1,
+    "💭「处理中」結算頁面錯誤": 1,
+    "✅「Answered」Bug | enemy immediately dying (sacrifice killed past immunity)": 3,
+    "✅「Resolved」Store Frozen": 4,
     "我也要開圖樓": 5,
     "写一些惊恐的。": 57,
     "🐱light’s-nest": 1,
@@ -12,20 +39,32 @@
     "1441326394817908736": 10
   },
   "hourly_activity": {
-    "11": 6,
+    "3": 23,
+    "10": 13,
+    "12": 1,
+    "15": 4,
+    "21": 2,
+    "11": 8,
+    "7": 5,
+    "17": 9,
+    "22": 8,
+    "23": 4,
+    "18": 2,
+    "0": 3,
+    "16": 7,
+    "19": 2,
+    "4": 3,
+    "9": 8,
     "5": 39,
     "6": 11,
-    "7": 1,
     "8": 8,
     "2": 1,
-    "13": 1,
-    "15": 3,
-    "21": 1,
-    "22": 4
+    "13": 1
   },
   "message_types": {
-    "0": 54,
-    "19": 8
+    "4": 20,
+    "0": 52,
+    "19": 15
   },
   "top_reacted_messages": [
     {
@@ -50,6 +89,20 @@
       "channel": ""
     },
     {
+      "id": "1444098121100558470",
+      "content": "On the chapter 9-4 eye, if he has more than 100 fortress and you use the Tawil s",
+      "author": "vxvendetta97",
+      "reactions": 5,
+      "channel": "💭「Processing」Over 100 Fortress bug"
+    },
+    {
+      "id": "1443908229712183310",
+      "content": "🥰",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "✅「Resolved」Store Frozen"
+    },
+    {
       "id": "1443839619572564029",
       "content": "慎入。\n\n主角是一位十恶不赦的反派。\n\n然后被杜勒抓了。\n\n含施暴，虐待，身体部位缺失，人身攻击言论。（被打，不过没有太多描写）\n\n不介意心理承受压力低的人观看",
       "author": "dittoqwq",
@@ -62,6 +115,20 @@
       "author": "undecember_news",
       "reactions": 3,
       "channel": "我也要開圖樓"
+    },
+    {
+      "id": "1444100420623401021",
+      "content": "originally i would be pretty content if it forced me to think about swapping my ",
+      "author": "lumato",
+      "reactions": 2,
+      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
+    },
+    {
+      "id": "1444102070058877130",
+      "content": "in fact, if you watch the replay for many of the no death resist no gnosis teams",
+      "author": "lumato",
+      "reactions": 2,
+      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
     },
     {
       "id": "1443842642655055872",
@@ -92,46 +159,53 @@
       "channel": "写一些惊恐的。"
     },
     {
-      "id": "1443927879992737895",
-      "content": "好機會😋👆🏻",
-      "author": "ahong0727",
+      "id": "1443862100995866676",
+      "content": "星辰4-15的王關。另外開鑰令守密人的立繪偶然會時近時遠，通常去到下一關卡就會恢復正常。",
+      "author": "nazhigezihk",
       "reactions": 1,
-      "channel": "我也要開圖樓"
+      "channel": "💭「处理中」星辰篇第4章boss階段音頻中斷"
     },
     {
-      "id": "1443840541455417354",
-      "content": "没有了<:takenotes:1357186646294138890>",
-      "author": "dittoqwq",
+      "id": "1443921027058106490",
+      "content": "<@1131790839291596841> 100683124\nSamsung s25",
+      "author": "nazhigezihk",
       "reactions": 1,
-      "channel": "写一些惊恐的。"
+      "channel": "💭「处理中」星辰篇第4章boss階段音頻中斷"
     },
     {
-      "id": "1443841146513002598",
-      "content": "畢竟觸手從喉嚨、鼻孔進入腸道，然後⋯⋯鑽出，從耳朵⋯⋯再從鼻子出來⋯⋯⋯從腦內⋯⋯⋯眼球凸出",
-      "author": "void_1546.",
+      "id": "1444102505343484004",
+      "content": "reminds me of the bug on the eyeballs back when we used gelot on it, and attacki",
+      "author": "lumato",
       "reactions": 1,
-      "channel": "写一些惊恐的。"
+      "channel": "💭「Processing」Over 100 Fortress bug"
     },
     {
-      "id": "1443842018299347007",
-      "content": "那本书挺好看的<:pray:1356053116260454534>",
-      "author": "dittoqwq",
+      "id": "1443827745229377586",
+      "content": "100749157",
+      "author": "satachan",
       "reactions": 1,
-      "channel": "写一些惊恐的。"
+      "channel": "💭「Processing」Enemy death resistance not working as intended"
     },
     {
-      "id": "1443866492507783319",
-      "content": "我喜欢这种😋",
-      "author": "dittoqwq",
+      "id": "1443870766167887883",
+      "content": "It has been reported by multiple people in general",
+      "author": "vxvendetta97",
       "reactions": 1,
-      "channel": "写一些惊恐的。"
+      "channel": "💭「Processing」Enemy death resistance not working as intended"
     },
     {
-      "id": "1443884201949528075",
-      "content": "更喜歡老師了🛐(？",
-      "author": "shostakovich524",
+      "id": "1444102490613350451",
+      "content": "Thank you! And for everything you’ve done for everyone <:bow:1356053037159944473",
+      "author": "fishhazardthewizard",
       "reactions": 1,
-      "channel": "写一些惊恐的。"
+      "channel": "✅「Answered」rose script icon not showing up"
+    },
+    {
+      "id": "1443901624472043614",
+      "content": "Thank you for your feedback. We will verify it🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」G murphy Exalt description swapped in her trial mode"
     }
   ]
 }

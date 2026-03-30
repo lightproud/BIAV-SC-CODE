@@ -1,10 +1,15 @@
 {
   "date": "2026-01-19",
-  "messages": 25,
+  "messages": 31,
   "unique_authors": 10,
-  "reactions_total": 37,
-  "attachments": 12,
+  "reactions_total": 52,
+  "attachments": 14,
   "channel_activity": {
+    "💭「处理中」透明人在打透明怪": 1,
+    "需要官方高清海报": 1,
+    "💭「处理中」觸腕標示不會改變": 1,
+    "✅「Answered」refund request": 1,
+    "Thank you for everything": 2,
     "圖樓": 1,
     "徐，她真好看": 1,
     "🔸忘却前夜┊morimens-tv": 1,
@@ -15,6 +20,12 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
+    "2": 1,
+    "13": 2,
+    "12": 3,
+    "17": 1,
+    "19": 1,
+    "22": 1,
     "14": 1,
     "6": 1,
     "15": 1,
@@ -25,14 +36,19 @@
     "8": 1,
     "10": 2,
     "11": 2,
-    "12": 2,
-    "13": 1,
     "18": 3
   },
   "message_types": {
-    "0": 2
+    "0": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1462888593465938054",
+      "content": "@everyone Thank you so much for this heartfelt surprise! Every message from you ",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "Thank you for everything"
+    },
     {
       "id": "1462840887553032335",
       "content": "以后没时间写长文了<:takenotes:1357186646294138890> \n不定期更新弥萨格小故事、抽象随笔、小节日贺文。\n\n丢个羽笔在这里每日膜拜🛐",
@@ -60,6 +76,13 @@
       "author": "carrot_chicken",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1462631371557306593",
+      "content": "終於來了一個真的不可名狀",
+      "author": "amstelredam",
+      "reactions": 4,
+      "channel": "💭「处理中」透明人在打透明怪"
     },
     {
       "id": "1462655246139392052",

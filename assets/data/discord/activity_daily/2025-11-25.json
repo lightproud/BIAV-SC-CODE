@@ -1,10 +1,69 @@
 {
   "date": "2025-11-25",
-  "messages": 42,
-  "unique_authors": 13,
-  "reactions_total": 105,
-  "attachments": 20,
+  "messages": 148,
+  "unique_authors": 29,
+  "reactions_total": 128,
+  "attachments": 31,
   "channel_activity": {
+    "✅「已回答」繁中PC端黑屏": 1,
+    "💭「Processing」Time Rewind Bug": 1,
+    "✅「已回答」我抽獎時怎麼卡BUG了": 5,
+    "✅「Resolved」bug | gmurphy story not unlocking properly": 3,
+    "✅「Answered」Please move the auto battle option to somewhere more deliberate": 1,
+    "✅「Answered」Banners order": 1,
+    "✅「Answered」Event archive bug and mistranslation of aequor": 3,
+    "💭「Processing」Enemy death resistance not working as intended": 1,
+    "IOS App permissions": 1,
+    "✅「Answered」G murphy Exalt description swapped in her trial mode": 1,
+    "💭「Processing」Dtide extra clear records": 1,
+    "💭「处理中」逆轉回合的劇情結束會黑屏": 2,
+    "💭「Processing」Rites of Divine Birth Event exchange rewards displaying no item icon": 4,
+    "💭「Processing」Gmurphy Event Red Dot Notification": 2,
+    "我沒有要瑟瑟": 1,
+    "✅「已解决」角色名不统一": 1,
+    "✅「已回答」侵蝕造成的傷害不會被算進最終傷害": 4,
+    "💭「Processing」Aqua tentacles not translated and weird screen glitches.": 2,
+    "💭「Processing」Several serious display and performance issues in replay mode": 1,
+    "💭「Processing」Traphase bug": 1,
+    "✅「Resolved」Recharge Issues": 2,
+    "i just want to show you this": 5,
+    "💭「Processing」Traphase draft mode bug": 1,
+    "💭「Processing」Tentacle and Corrosion Bug": 1,
+    "💭「Processing」Boss's Ancient Embers dont drop in chapter 2 (stage 2-14) normal mode": 1,
+    "✅「Resolved」Fouetté WoD (Liz) and Poof! skill (Casiah) not working": 1,
+    "💭「处理中」水母(奧瑞塔)的天賦只在探索的第一次戰鬥觸發": 1,
+    "✅「Resolved」Organic form covenant not working properly in arc 2": 1,
+    "💭「Processing」Wave 3 Boss Instakill Bug?": 1,
+    "💭「Processing」\"Til the Snow Melts\" does not display Crit. Rate increase": 1,
+    "💭「处理中」怪物描述": 1,
+    "💭「处理中」本期融灾第五关BOSS数值错误": 1,
+    "💭「处理中」星辰篇造物出bug辣": 1,
+    "💭「Processing」Stellar Brew Does Nothing in Arc2": 3,
+    "✅「Answered」GMurphy Exalt Text Bug": 3,
+    "✅「Answered」Visual bug.. text is not translated": 3,
+    "💭「处理中」有繁中版潤校職缺或者志願者計畫嗎？": 1,
+    "✅「Resolved」Cant enter game in Steam Client": 3,
+    "💭「Processing」Bug on D-Tide permanent event Preemptive Training requirements": 1,
+    "💭「Processing」Wrong effect description on Putney Morning Post": 1,
+    "💭「Processing」Pollux Traphase Text bug": 1,
+    "✅「已解决」Bug Report: 融災第二關": 3,
+    "💭「Processing」Murphy: Fauxborn's Abyss Hymn card description": 1,
+    "✅「已回答」回放BUG": 3,
+    "✅「已回答」剧情背景是不是有问题": 3,
+    "✅「已回答」之前提到的“小更新”还会有有吗？": 2,
+    "💭「处理中」更新完卡在这了": 1,
+    "✅「Answered」This game needs more marketing": 2,
+    "✅「已解决」助战显示bug": 1,
+    "💭「Processing」Faros (Traphase) Exalt causes game to freeze": 1,
+    "💭「Processing」Game stuck whenever I get into event pages": 1,
+    "💭「Processing」Timer on weekly quest is bugged (at least for me)": 1,
+    "💭「处理中」快速喚醒有 bug，會抽到其他獎池［攸關源液，儲值的大家請小心！］": 1,
+    "💭「处理中」希洛大招一直這麼過曝的嗎": 1,
+    "想问一下官方有制作自己的pc客户端的计划么": 4,
+    "Suggestion for collection convenience": 1,
+    "✅「Resolved」Store Frozen": 1,
+    "Auto convert Wheels option gone": 4,
+    "Add an Archive section for Story cutscenes": 4,
     "誕墨水船隊": 11,
     "2.4 角色命轮榜单": 5,
     "✦关卡地图「融灾禁区」总览48期·星辰篇✦": 1,
@@ -16,22 +75,33 @@
     "1234769700735418368": 1
   },
   "hourly_activity": {
-    "2": 1,
-    "3": 5,
-    "5": 3,
-    "8": 3,
-    "19": 1,
-    "20": 4,
-    "15": 7,
-    "18": 8,
-    "7": 3,
-    "9": 5,
-    "17": 1,
-    "10": 1
+    "10": 2,
+    "3": 15,
+    "4": 15,
+    "6": 10,
+    "7": 24,
+    "18": 9,
+    "21": 1,
+    "9": 12,
+    "15": 8,
+    "12": 2,
+    "14": 2,
+    "23": 4,
+    "17": 2,
+    "20": 5,
+    "16": 1,
+    "5": 6,
+    "8": 17,
+    "1": 2,
+    "0": 2,
+    "2": 4,
+    "11": 4,
+    "19": 1
   },
   "message_types": {
-    "0": 31,
-    "19": 6
+    "0": 53,
+    "4": 48,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -54,6 +124,13 @@
       "author": "yolo_mode",
       "reactions": 11,
       "channel": "搞了點手作"
+    },
+    {
+      "id": "1442738985846706247",
+      "content": "This is the Korean Steam game ranking.\n\nI don’t know how the ranking system dete",
+      "author": "baegjeongjang1568",
+      "reactions": 10,
+      "channel": "i just want to show you this"
     },
     {
       "id": "1442939478208675945",
@@ -98,32 +175,74 @@
       "channel": "FINAL VENT"
     },
     {
+      "id": "1442988418178089031",
+      "content": "Currently the boss of chapter 3, if killed by passive damage will die immediatel",
+      "author": "satachan",
+      "reactions": 3,
+      "channel": "💭「Processing」Enemy death resistance not working as intended"
+    },
+    {
+      "id": "1442916774306775120",
+      "content": "我只是想知道珊啥時能像其他叫一樣動起來\n\n目前能動的只有彩匡(?)角\n像是血希、融朵、誕墨、環拉\n\n# 我想看到珊立繪動起來的模樣啊啊啊啊啊\n附一段血希動起來的",
+      "author": "akkom730",
+      "reactions": 2,
+      "channel": "我沒有要瑟瑟"
+    },
+    {
+      "id": "1442731720095825921",
+      "content": "Thank you for your suggestion. There are some things we also want to do, but we ",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「Answered」This game needs more marketing"
+    },
+    {
+      "id": "1442783921942302761",
+      "content": "The issue has been fixed. Thank you for your feedback",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Event archive bug and mistranslation of aequor"
+    },
+    {
+      "id": "1442806481593434144",
+      "content": "Found this bug during the stream. \nIt said that she did 5 damage 400 times. \n\nht",
+      "author": "satachan",
+      "reactions": 1,
+      "channel": "✅「Answered」G murphy Exalt description swapped in her trial mode"
+    },
+    {
+      "id": "1443026856994406591",
+      "content": "item icons missing in exchange",
+      "author": "darlingkafka",
+      "reactions": 1,
+      "channel": "💭「Processing」Rites of Divine Birth Event exchange rewards displaying no item icon"
+    },
+    {
+      "id": "1442804209866244128",
+      "content": "The translation issue with Aqua tents has been fixed, and I have conveyed other ",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Aqua tentacles not translated and weird screen glitches."
+    },
+    {
+      "id": "1442734110635196457",
+      "content": "好像昨天修好了，感謝",
+      "author": "glacy_9918",
+      "reactions": 1,
+      "channel": "✅「已解决」Bug Report: 融災第二關"
+    },
+    {
+      "id": "1442700045928370236",
+      "content": "https://morimens.sialiagames.com.tw/",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": "想问一下官方有制作自己的pc客户端的计划么"
+    },
+    {
       "id": "1442747428943167579",
       "content": "死因：獻祭疊太多",
       "author": "void_1546.",
       "reactions": 1,
       "channel": "誕墨水船隊"
-    },
-    {
-      "id": "1442897058640953438",
-      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第21期（第48期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
-      "author": "menoctus",
-      "reactions": 1,
-      "channel": "✦关卡地图「融灾禁区」总览48期·星辰篇✦"
-    },
-    {
-      "id": "1442929650786631890",
-      "content": "長這樣的！因為幾乎跟羅盤一樣大感覺裝上去會蠻搶重心的所以就沒裝了",
-      "author": "carrot_chicken",
-      "reactions": 1,
-      "channel": "搞了點手作"
-    },
-    {
-      "id": "1442804057667534898",
-      "content": "<@1131790839291596841>  goya-san, May I request a full body picture of the the m",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

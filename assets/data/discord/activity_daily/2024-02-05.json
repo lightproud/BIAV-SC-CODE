@@ -1,10 +1,13 @@
 {
   "date": "2024-02-05",
-  "messages": 92,
+  "messages": 95,
   "unique_authors": 20,
-  "reactions_total": 59,
-  "attachments": 14,
+  "reactions_total": 70,
+  "attachments": 17,
   "channel_activity": {
+    "[拉蒙娜升變]": 1,
+    "索蕾尔（红夫人）": 1,
+    "红夫人，索蕾尔": 1,
     "2.1版本后的深海思路与探索": 7,
     "💌「莉莉」體驗交流分享活動💌": 1,
     "幻梦深潜地图全解": 3,
@@ -15,6 +18,7 @@
     "【暖雪】墨菲": 1
   },
   "hourly_activity": {
+    "14": 3,
     "1": 5,
     "3": 4,
     "4": 1,
@@ -35,8 +39,7 @@
     "0": 22
   },
   "message_types": {
-    "19": 20,
-    "0": 72
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -61,11 +64,25 @@
       "channel": "💌「莉莉」體驗交流分享活動💌"
     },
     {
+      "id": "1204071592091721768",
+      "content": "就画画🌹✨",
+      "author": "xcecilex.",
+      "reactions": 7,
+      "channel": "索蕾尔（红夫人）"
+    },
+    {
       "id": "1203946828555358219",
       "content": "什麼是炖鸡啊",
       "author": "pokai2228",
       "reactions": 5,
       "channel": "深潛混沌榜多次1萬分盾擊大佬的分享"
+    },
+    {
+      "id": "1204072757982265394",
+      "content": "<#1174185304027045969> \n 我能等到你的召喚嗎？\n\n環行.拉蒙娜超型!!!!\n\n畫畫新人 請多指教",
+      "author": "minnie_reddevil",
+      "reactions": 4,
+      "channel": "[拉蒙娜升變]"
     },
     {
       "id": "1204086177154736180",

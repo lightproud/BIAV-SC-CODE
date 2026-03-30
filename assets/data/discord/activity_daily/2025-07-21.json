@@ -1,25 +1,35 @@
 {
   "date": "2025-07-21",
-  "messages": 6,
+  "messages": 22,
   "unique_authors": 4,
-  "reactions_total": 8,
-  "attachments": 5,
+  "reactions_total": 11,
+  "attachments": 20,
   "channel_activity": {
+    "✅「Answered」Some leftover awkward translations!": 16,
     "◆第3章「餍飨」关卡流程总览·星辰篇": 1,
     "弥萨格造物学 经典问答题解析": 3,
     "关卡地图「融灾禁区」总览39期·星辰篇": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "8": 3,
+    "9": 3,
+    "12": 7,
+    "13": 5,
     "14": 3,
-    "16": 1,
-    "13": 1,
-    "12": 1
+    "16": 1
   },
   "message_types": {
-    "0": 5
+    "0": 16
   },
   "top_reacted_messages": [
+    {
+      "id": "1396771126415462471",
+      "content": "\"Stun slows your thoughts.\" doesn't sound right. I'd go with something along the",
+      "author": "sophiechoice",
+      "reactions": 3,
+      "channel": "✅「Answered」Some leftover awkward translations!"
+    },
     {
       "id": "1396865673807921214",
       "content": "答案：两次牌效果相同，都是1算1抽，碟片实际上触发了四次。\n   \n   当防御牌被视为打击后，打击属性优先级更高，因此局内效果是先+2算丢1牌，再扣1算抽2牌",

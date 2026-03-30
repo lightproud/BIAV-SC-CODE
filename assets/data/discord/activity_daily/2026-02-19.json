@@ -1,10 +1,18 @@
 {
   "date": "2026-02-19",
-  "messages": 1666,
+  "messages": 1716,
   "unique_authors": 62,
-  "reactions_total": 1167,
-  "attachments": 74,
+  "reactions_total": 1228,
+  "attachments": 80,
   "channel_activity": {
+    "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 3,
+    "✅「Answered」Card disappear": 4,
+    "✅「Answered」Creator accounts": 7,
+    "💭「处理中」智识之理+溯洄时计的奇妙反应": 3,
+    "💭「處理中」特效是出問題了還是本來就長這樣？": 7,
+    "✅「Answered」Possible change to the Gaze intention": 4,
+    "Please allow us to reutrn Doresain to the Black Pool": 20,
+    "Missing top up bonus": 2,
     "🔸欢乐梗图": 8,
     "🔸服务器公告┊server-announcement": 2,
     "🔸频道建议┊server-suggestions": 15,
@@ -20,34 +28,34 @@
     "🔸阵容构建": 61
   },
   "hourly_activity": {
-    "8": 15,
-    "9": 35,
-    "13": 272,
+    "7": 12,
+    "2": 27,
+    "20": 9,
+    "6": 34,
+    "8": 16,
+    "17": 25,
+    "19": 7,
+    "23": 89,
+    "9": 38,
+    "13": 275,
+    "14": 278,
+    "15": 388,
+    "10": 57,
+    "16": 87,
+    "1": 22,
     "18": 40,
-    "19": 6,
-    "14": 277,
     "0": 8,
-    "1": 21,
-    "23": 86,
-    "15": 384,
     "12": 188,
-    "17": 18,
     "22": 7,
-    "16": 71,
-    "2": 26,
     "3": 16,
     "4": 47,
     "5": 17,
-    "6": 33,
-    "7": 6,
-    "10": 56,
     "11": 7,
-    "20": 8,
     "21": 22
   },
   "message_types": {
-    "0": 1251,
-    "19": 415
+    "0": 34,
+    "19": 16
   },
   "top_reacted_messages": [
     {
@@ -86,6 +94,13 @@
       "channel": ""
     },
     {
+      "id": "1474030309048717322",
+      "content": "He's too useless, a dps revolved entirely around killing enemies yet he can't ev",
+      "author": "skyfallterminus",
+      "reactions": 12,
+      "channel": "Please allow us to reutrn Doresain to the Black Pool"
+    },
+    {
       "id": "1473840099979563101",
       "content": "Actually +1. Exact same experience. And i didn't finish Arc 2 Chapter 4 too. Bec",
       "author": "hezlock",
@@ -105,6 +120,27 @@
       "author": "water_heart",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1473922950775177340",
+      "content": "Is it possible to get creator accounts with the following:\n\n1. Unlimited silver\n",
+      "author": "angbak",
+      "reactions": 7,
+      "channel": "✅「Answered」Creator accounts"
+    },
+    {
+      "id": "1473955692133089404",
+      "content": "Honestly, even just giving this options without all the unlimited stuff would be",
+      "author": "vxvendetta97",
+      "reactions": 6,
+      "channel": "✅「Answered」Creator accounts"
+    },
+    {
+      "id": "1473982519350132839",
+      "content": "The Gaze intention, that will be performed by each mob, in astral reign, after t",
+      "author": "vxvendetta97",
+      "reactions": 6,
+      "channel": "✅「Answered」Possible change to the Gaze intention"
     },
     {
       "id": "1473997239331590254",
@@ -135,6 +171,20 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1474077851773964440",
+      "content": "I often use Doresain as a cannon to shoot mosquitoes, which is a little heart at",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "Please allow us to reutrn Doresain to the Black Pool"
+    },
+    {
+      "id": "1474080693020655838",
+      "content": "<:Helot_slack_off:1459092159465521184>",
+      "author": "yeriko703",
+      "reactions": 4,
+      "channel": "Please allow us to reutrn Doresain to the Black Pool"
+    },
+    {
       "id": "1474028084477952225",
       "content": "他們說36的TV才是正常配置",
       "author": "sfn28409633",
@@ -146,48 +196,6 @@
       "content": "他也不懂",
       "author": "dittoqwq",
       "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474058172758229194",
-      "content": "列车奖励暂无调整计划。新角色3月上旬。这次周期调整是计划内没有补偿，未来+14天的情况可能还是会时不时发生。老角色加强暂无更多明确方案，但我们惦记着！",
-      "author": "game.producer.light",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474176675867791522",
-      "content": "我不行了這個好可愛",
-      "author": "ahong0727",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474107592627458344",
-      "content": "",
-      "author": "._.aahh",
-      "reactions": 3,
-      "channel": "🔸频道建议┊server-suggestions"
-    },
-    {
-      "id": "1473976132058746901",
-      "content": "欢愉刻印生成的乌托邦帷幕会错误的顶替我所携带的钥令，导致第一钥令被跳过，变成了第二钥令的3选1",
-      "author": "be_queitplease",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1473877196811665459",
-      "content": "",
-      "author": "yy42974466",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473895744846037217",
-      "content": "不是 我是說dc人數",
-      "author": "lululu9858",
-      "reactions": 3,
       "channel": "🔸綜合討論"
     }
   ]

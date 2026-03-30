@@ -1,10 +1,21 @@
 {
   "date": "2026-01-20",
-  "messages": 37,
+  "messages": 67,
   "unique_authors": 10,
-  "reactions_total": 658,
-  "attachments": 6,
+  "reactions_total": 674,
+  "attachments": 9,
   "channel_activity": {
+    "✅「已回答」错字": 2,
+    "Goliath bleed damage description": 2,
+    "Cannot log in on PC client": 1,
+    "💭「处理中」透明人在打透明怪": 6,
+    "需要官方高清海报": 1,
+    "Keychain": 1,
+    "💭「处理中」觸腕標示不會改變": 3,
+    "💭「Processing」Arc 1 3-12 Elite bug": 6,
+    "✅「已回答」我想要一个设计上的解释": 4,
+    "✅「Answered」Google sign-in issues": 2,
+    "✅「Answered」refund request": 2,
     "圖樓": 1,
     "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的": 11,
     "味觉测试 || 杜勒赛因x西维斯特": 10,
@@ -18,13 +29,14 @@
     "1234769700735418368": 2
   },
   "hourly_activity": {
+    "7": 16,
+    "14": 5,
+    "8": 12,
+    "9": 2,
+    "10": 11,
     "13": 6,
     "12": 3,
-    "14": 3,
     "22": 1,
-    "9": 1,
-    "10": 10,
-    "7": 2,
     "11": 1,
     "4": 1,
     "5": 2,
@@ -35,8 +47,9 @@
     "1": 1
   },
   "message_types": {
-    "0": 21,
-    "19": 3
+    "19": 7,
+    "4": 7,
+    "0": 16
   },
   "top_reacted_messages": [
     {
@@ -59,6 +72,27 @@
       "author": "that_one_chippy",
       "reactions": 15,
       "channel": "味觉测试 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1463115967151210526",
+      "content": "Is it possible to buy a silver key's Keychain? I and my friends want it so much.",
+      "author": "zcaruterx",
+      "reactions": 7,
+      "channel": "Keychain"
+    },
+    {
+      "id": "1463084982225600554",
+      "content": "兑换码会有，技能饼还要画一画~",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "💭「处理中」透明人在打透明怪"
+    },
+    {
+      "id": "1463075061664583726",
+      "content": "戈雅去反馈问问。",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "💭「处理中」透明人在打透明怪"
     },
     {
       "id": "1463160646194696322",
@@ -87,6 +121,34 @@
       "author": "frosthief",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1463074375376044259",
+      "content": "不確定，這有可能是bug，我決定問問校工。",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」我想要一个设计上的解释"
+    },
+    {
+      "id": "1463079489561956374",
+      "content": "是正常的雾气氛围渲染哦，下雨天的「小巧思」。",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」我想要一个设计上的解释"
+    },
+    {
+      "id": "1463079688279822480",
+      "content": "辛苦戈雅了<:Cheerup:1400771555939844149>",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "✅「已回答」我想要一个设计上的解释"
+    },
+    {
+      "id": "1463074802196680798",
+      "content": "Hello Keeper, you can try to request a refund through the Steam platform.\nIf you",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」refund request"
     },
     {
       "id": "1463113545058357320",

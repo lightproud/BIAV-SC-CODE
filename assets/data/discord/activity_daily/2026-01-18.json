@@ -1,10 +1,21 @@
 {
   "date": "2026-01-18",
-  "messages": 22,
-  "unique_authors": 9,
-  "reactions_total": 58,
-  "attachments": 5,
+  "messages": 43,
+  "unique_authors": 14,
+  "reactions_total": 74,
+  "attachments": 20,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 1,
+    "💭「处理中」典藏馆事件的解锁到底是什么机制？": 1,
+    "💭「处理中」透明人在打透明怪": 8,
+    "✅「已回答」我想要一个设计上的解释": 2,
+    "✅「Answered」refund request": 1,
+    "PC client - add spacebar as shortcut for posse release": 1,
+    "Intention changes and Petrify": 1,
+    "Pollux wod doesnt give alight stacks to other awakers?": 1,
+    "融灾王关血量伤害“bug”": 3,
+    "reality verge/psyche deep dive typo": 1,
+    "Lily wheel crit rate not adding up": 1,
     "圖樓": 1,
     "徐，她真好看": 9,
     "重逢": 5,
@@ -14,21 +25,26 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "2": 1,
+    "3": 2,
+    "4": 2,
+    "7": 7,
+    "9": 4,
+    "14": 4,
+    "10": 3,
+    "13": 1,
+    "22": 1,
+    "19": 1,
+    "17": 1,
+    "1": 2,
+    "2": 2,
+    "15": 1,
     "5": 8,
     "6": 2,
-    "7": 1,
-    "10": 2,
     "12": 1,
-    "9": 2,
-    "3": 1,
-    "14": 3,
     "11": 1
   },
   "message_types": {
-    "0": 14,
-    "4": 1,
-    "19": 2
+    "0": 21
   },
   "top_reacted_messages": [
     {
@@ -46,11 +62,53 @@
       "channel": "重逢"
     },
     {
+      "id": "1462342765105905826",
+      "content": "在實現典藏館滿收集的路上，我們古老的忘卻篇裡(普通2-14)，我在收集的半途上就發現大家突然只剩下影子了，不僅是我方的喚醒體，還有敵方的怪物也只剩下影子了，甚至",
+      "author": "shostakovich524",
+      "reactions": 6,
+      "channel": "💭「处理中」透明人在打透明怪"
+    },
+    {
+      "id": "1462448767876726895",
+      "content": "認知濾鏡被關了<:A_pinch:1432980538536493057>",
+      "author": "mezen4181",
+      "reactions": 4,
+      "channel": "💭「处理中」透明人在打透明怪"
+    },
+    {
+      "id": "1462377421767446569",
+      "content": "很抱歉再次占用公共资源来问我这没什么意义的问题(\n\n第九章最后一个关卡，也就是9—13中出现了字体由白渐变成黄的设计，起初我并未在意(因为我沉浸在剧情的氛围中)",
+      "author": "ka_0414",
+      "reactions": 2,
+      "channel": "✅「已回答」我想要一个设计上的解释"
+    },
+    {
+      "id": "1462298018148520029",
+      "content": "很抱歉我们发现上次更新中意外上调了本期融灾禁区的挑战难度，我们正在准备一项服务器热更新进行修复。给大家带来的不便再次抱歉。 \n\nWe’re sorry—we a",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "融灾王关血量伤害“bug”"
+    },
+    {
       "id": "1462318690887274673",
       "content": "<@614083839131648021> 其实昨天画的，我今天开通dc<:H_love:1459071245730447484>",
       "author": "solisimperium.",
       "reactions": 2,
       "channel": "徐，她真好看"
+    },
+    {
+      "id": "1462294592387944774",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 1,
+      "channel": "Who Ryker's Designer pls come talk ?"
+    },
+    {
+      "id": "1462569070900547787",
+      "content": "This part here, can we have the spacebar option for release? Just like how you c",
+      "author": "yinyang3d",
+      "reactions": 1,
+      "channel": "PC client - add spacebar as shortcut for posse release"
     },
     {
       "id": "1462378175991513148",

@@ -1,10 +1,24 @@
 {
   "date": "2026-01-05",
-  "messages": 10,
-  "unique_authors": 5,
-  "reactions_total": 20,
-  "attachments": 4,
+  "messages": 38,
+  "unique_authors": 8,
+  "reactions_total": 23,
+  "attachments": 16,
   "channel_activity": {
+    "✅「Resolved」Faros Boss Strange Stuff": 2,
+    "Who Ryker's Designer pls come talk ?": 1,
+    "💭「处理中」典藏馆事件的解锁到底是什么机制？": 2,
+    "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 4,
+    "💭「处理中」典藏馆大量造物事件无法解锁": 3,
+    "💭「Processing」Game getting stuck in chinese bug": 3,
+    "💭「Processing」100% crash rate Lemurian team": 1,
+    "✅「Answered」Mouchette Boss Strange stuffs": 1,
+    "💭「Processing」A certain team make the game crash": 5,
+    "Please, can a Search option for Dtide clears be implemented?": 1,
+    "Sanga Exalt Interaction with w3": 1,
+    "星辰篇莉茲狂氣爆發棄掉打擊無法觸發異種喉舌？": 1,
+    "✅「已回答」新开的活动关卡，皮克曼死了他的小怪还活着": 2,
+    "💭「Processing」Kathi's Hyperflare gone": 1,
     "【OC】不高興彌薩格：異度·索瓦爾格·記仇": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1421408684776357929": 4,
@@ -12,16 +26,26 @@
     "1305430084420898868": 2
   },
   "hourly_activity": {
+    "21": 2,
+    "4": 2,
+    "14": 8,
+    "16": 1,
+    "9": 7,
+    "10": 2,
+    "20": 1,
+    "15": 1,
+    "17": 4,
+    "22": 1,
+    "13": 2,
     "6": 1,
-    "13": 1,
     "7": 4,
     "5": 1,
-    "9": 1,
-    "2": 1,
-    "4": 1
+    "2": 1
   },
   "message_types": {
-    "0": 1
+    "0": 21,
+    "19": 4,
+    "4": 3
   },
   "top_reacted_messages": [
     {
@@ -44,6 +68,27 @@
       "author": "sweet_25367",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1457748785148072139",
+      "content": "<@1131790839291596841>",
+      "author": "shunia3055",
+      "reactions": 1,
+      "channel": "💭「处理中」典藏馆事件的解锁到底是什么机制？"
+    },
+    {
+      "id": "1457750145436487842",
+      "content": "把主线支线所有本全部重打了一遍，造物和事件各有大量无法解锁。过往活动全部毕业，但相关造物现在都没有自动解锁。",
+      "author": "shunia3055",
+      "reactions": 1,
+      "channel": "💭「处理中」典藏馆大量造物事件无法解锁"
+    },
+    {
+      "id": "1457867129973117039",
+      "content": "With the introduction of Replays, now it would be even better to be able to sear",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "Please, can a Search option for Dtide clears be implemented?"
     },
     {
       "id": "1457730488155377815",

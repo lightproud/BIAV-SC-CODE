@@ -1,21 +1,23 @@
 {
   "date": "2025-06-02",
-  "messages": 4,
+  "messages": 6,
   "unique_authors": 3,
   "reactions_total": 22,
-  "attachments": 2,
+  "attachments": 3,
   "channel_activity": {
+    "💭「Processing」Cannot login \"You have reached the maximum number of character creations\"": 2,
     "卡斯托尔...": 1,
     "黑皮大学生": 3
   },
   "hourly_activity": {
+    "17": 2,
     "2": 1,
     "7": 1,
     "8": 1,
     "11": 1
   },
   "message_types": {
-    "0": 4
+    "0": 2
   },
   "top_reacted_messages": [
     {

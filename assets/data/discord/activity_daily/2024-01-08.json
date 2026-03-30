@@ -1,27 +1,31 @@
 {
   "date": "2024-01-08",
-  "messages": 24,
+  "messages": 30,
   "unique_authors": 8,
-  "reactions_total": 106,
-  "attachments": 13,
+  "reactions_total": 119,
+  "attachments": 16,
   "channel_activity": {
+    "Morimens平行宇宙論": 5,
+    "《忘卻前夜》聲優檔案 - CHAOS": 1,
     "一圖流角色養成指南 | 1.0-雨鎮詭影": 10,
     "莉茲傷害測算": 3,
     "1193859503096070234": 11
   },
   "hourly_activity": {
+    "0": 1,
+    "6": 2,
+    "12": 3,
+    "14": 1,
     "1": 1,
     "3": 1,
     "4": 3,
-    "6": 1,
     "7": 3,
     "8": 2,
     "10": 11,
     "11": 2
   },
   "message_types": {
-    "0": 8,
-    "19": 5
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -32,6 +36,20 @@
       "channel": ""
     },
     {
+      "id": "1193917870833422387",
+      "content": "UID：100001547",
+      "author": "silverstream_s",
+      "reactions": 6,
+      "channel": "《忘卻前夜》聲優檔案 - CHAOS"
+    },
+    {
+      "id": "1193891637030572154",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 4,
+      "channel": "Morimens平行宇宙論"
+    },
+    {
       "id": "1193877161615040533",
       "content": "一一一一一一一一一一一一一一\n\n\n\n\n\n\n\n莉兹,原型:图尔兹查\n依据:\"绿炎\"就是莉兹的技能名和衣服设计",
       "author": "yang_42",
@@ -39,11 +57,25 @@
       "channel": ""
     },
     {
+      "id": "1193709560179986564",
+      "content": "有沒有機會畫清代宮廷組www，總感覺第五章守密人、戈利亞、墨菲、彌利亞姆可以寫點宮廷劇www",
+      "author": "07_li",
+      "reactions": 2,
+      "channel": "Morimens平行宇宙論"
+    },
+    {
       "id": "1193865088935936025",
       "content": "而法洛思大概就是昆扬人,不是很确定,不过共同点是他们都很崇拜图鲁",
       "author": "yang_42",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1193807806046941194",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 1,
+      "channel": "Morimens平行宇宙論"
     },
     {
       "id": "1193861047795339274",

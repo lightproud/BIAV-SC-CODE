@@ -1,14 +1,17 @@
 {
   "date": "2024-01-29",
-  "messages": 11,
+  "messages": 15,
   "unique_authors": 7,
-  "reactions_total": 2,
-  "attachments": 1,
+  "reactions_total": 19,
+  "attachments": 2,
   "channel_activity": {
+    "🌟莉兹1月31日生日🎂电子横幅进行中~": 4,
     "幻梦深潜地图全解": 6,
     "混沌界域各角色及陣容分享": 5
   },
   "hourly_activity": {
+    "9": 3,
+    "11": 1,
     "1": 2,
     "3": 1,
     "5": 4,
@@ -17,10 +20,17 @@
     "12": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 10
+    "0": 3,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1201458392422694962",
+      "content": "帮友投，她一直登不上DC，嗯...\n\n莉兹1月31日生日电子横幅进行中，上海的守密人路过百联欢迎随手打卡~\n时间：1月26日 15:00~ 2月2日 15:00",
+      "author": "koki_kat16",
+      "reactions": 17,
+      "channel": "🌟莉兹1月31日生日🎂电子横幅进行中~"
+    },
     {
       "id": "1201399847496974470",
       "content": "乖乖用四小強😡",

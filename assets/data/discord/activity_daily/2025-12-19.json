@@ -1,10 +1,21 @@
 {
   "date": "2025-12-19",
-  "messages": 22,
-  "unique_authors": 9,
-  "reactions_total": 81,
-  "attachments": 12,
+  "messages": 79,
+  "unique_authors": 20,
+  "reactions_total": 94,
+  "attachments": 22,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 28,
+    "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details": 1,
+    "💭「Processing」Clarification Requested Regarding": 1,
+    "✅「Answered」H7-9 Storm Wall has no hidden Silver?": 2,
+    "✅「Answered」Missing Caro Tag?": 6,
+    "💭「Processing」Error 502 - Failed to connect": 3,
+    "✅「Answered」Jenkin Sprite Error": 1,
+    "✅「Answered」Lex Genis Wrong Description": 2,
+    "💭「Processing」Unable to login (error 502, -1011)": 1,
+    "The reading experience is not so good": 4,
+    "Arc 2 events are kind of boring in comparison to arc 1's events": 8,
     "蓋個圖樓": 1,
     "银霜节日历（圣诞节贺文）": 2,
     "我也丟一下之前畫的 圖樓": 3,
@@ -18,21 +29,32 @@
     "1451677796085661888": 1
   },
   "hourly_activity": {
+    "0": 12,
+    "1": 2,
+    "4": 5,
+    "5": 2,
+    "6": 2,
+    "8": 4,
+    "9": 3,
+    "15": 3,
+    "2": 4,
+    "7": 2,
+    "12": 11,
+    "13": 6,
+    "22": 4,
+    "23": 2,
+    "11": 2,
+    "14": 3,
+    "16": 7,
     "18": 1,
-    "16": 6,
-    "5": 1,
-    "12": 5,
-    "2": 1,
-    "7": 1,
-    "11": 1,
     "19": 2,
-    "15": 1,
-    "0": 1,
     "21": 1,
     "20": 1
   },
   "message_types": {
-    "0": 16
+    "19": 12,
+    "0": 44,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -64,6 +86,13 @@
       "channel": "圖魯睡覺"
     },
     {
+      "id": "1451703544494166046",
+      "content": "Ever since the Thais event update, I have struggled logging into the game. Both ",
+      "author": "wesu.",
+      "reactions": 7,
+      "channel": "💭「Processing」Error 502 - Failed to connect"
+    },
+    {
       "id": "1451606295504486602",
       "content": "（作者碎碎念：祝各位圣诞节快乐！）\n12月20日～12月25日每天都有一篇小故事，12月26日我将会发一些创作感想，大概是以Q&A的形式，各位与作者（灵感匮乏中",
       "author": "150_ripe",
@@ -78,6 +107,13 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1451482161839345780",
+      "content": "May I ask what the intention is behind refusing to process a refund despite havi",
+      "author": ".prayanne",
+      "reactions": 3,
+      "channel": "💭「Processing」Clarification Requested Regarding"
+    },
+    {
       "id": "1451370454160904273",
       "content": "with <@1312198151536509081> 's bass lines",
       "author": "masian131",
@@ -85,11 +121,25 @@
       "channel": ""
     },
     {
+      "id": "1451379617092075592",
+      "content": "||in my bed||",
+      "author": "aegisx",
+      "reactions": 2,
+      "channel": "Who Ryker's Designer pls come talk ?"
+    },
+    {
       "id": "1451399357042659419",
       "content": "预告（）",
       "author": "flim_of_life_burst",
       "reactions": 2,
       "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1451704886075855069",
+      "content": "It does not have fleeting.",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "✅「Answered」Lex Genis Wrong Description"
     },
     {
       "id": "1451482243049721907",

@@ -1,10 +1,23 @@
 {
   "date": "2026-01-04",
-  "messages": 28,
+  "messages": 56,
   "unique_authors": 11,
-  "reactions_total": 42,
+  "reactions_total": 48,
   "attachments": 27,
   "channel_activity": {
+    "💭「处理中」典藏馆事件的解锁到底是什么机制？": 3,
+    "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 3,
+    "💭「Processing」100% crash rate Lemurian team": 2,
+    "✅「已回答」新开的活动关卡，皮克曼死了他的小怪还活着": 1,
+    "💭「Processing」Kathi's Hyperflare gone": 6,
+    "✅「已回答」可否增設命輪和密契的計數器": 2,
+    "✅「Resolved」Pursiut no esta funcionando de manera correcta": 1,
+    "💭「处理中」造物「蟲群意識」不一定會驅散出血狀態": 1,
+    "✅「已解决」萊克維度影像每回合第一次擲骰骰不到6": 1,
+    "💭「Processing」Blessor passive interaction": 1,
+    "✅「Answered」Endless Download on Steam": 3,
+    "派遣bug": 1,
+    "✅「已回答」茉夏劇情文本中的「未知而不詳」？": 3,
     "克莱门汀": 1,
     "蓋個圖樓": 1,
     "我造謠了": 2,
@@ -19,21 +32,25 @@
     "1457202535138857132": 4
   },
   "hourly_activity": {
-    "4": 2,
+    "3": 13,
+    "16": 1,
+    "8": 8,
+    "9": 11,
+    "11": 1,
+    "4": 3,
+    "18": 4,
     "17": 1,
     "5": 1,
     "2": 2,
-    "8": 3,
     "14": 1,
     "20": 1,
-    "3": 2,
-    "9": 3,
-    "18": 3,
     "10": 8,
     "13": 1
   },
   "message_types": {
-    "0": 4
+    "0": 10,
+    "4": 13,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -77,6 +94,48 @@
       "author": "souri.10244",
       "reactions": 3,
       "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1457406215972720815",
+      "content": "100274470",
+      "author": "huanire",
+      "reactions": 1,
+      "channel": "💭「处理中」典藏馆事件的解锁到底是什么机制？"
+    },
+    {
+      "id": "1457328286387540172",
+      "content": "gpu: amd 6700xt\ncpu: amd r5 7500f\nram: 64gb ddr5\n\nit first occur when i try to c",
+      "author": "patrueree",
+      "reactions": 1,
+      "channel": "💭「Processing」100% crash rate Lemurian team"
+    },
+    {
+      "id": "1457299143419629742",
+      "content": "during the battle it was visually just in my deck",
+      "author": "quirk6009",
+      "reactions": 1,
+      "channel": "💭「Processing」Kathi's Hyperflare gone"
+    },
+    {
+      "id": "1457440254771331318",
+      "content": "謝謝戈雅～～\n逛了一圈想起旺達啟三也有跟萊克天賦類似的百分比換算",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "✅「已回答」可否增設命輪和密契的計數器"
+    },
+    {
+      "id": "1457294182166167658",
+      "content": "<@374160183116562432>Hi, after checking the issue, we found that it was caused b",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Endless Download on Steam"
+    },
+    {
+      "id": "1457218182912938015",
+      "content": "哈喽，感谢反馈，这里确实是写错了，后续会修改更新❤️",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」茉夏劇情文本中的「未知而不詳」？"
     },
     {
       "id": "1457250059002445887",

@@ -1,19 +1,22 @@
 {
   "date": "2025-04-25",
-  "messages": 5,
-  "unique_authors": 3,
-  "reactions_total": 8,
-  "attachments": 3,
+  "messages": 14,
+  "unique_authors": 5,
+  "reactions_total": 12,
+  "attachments": 4,
   "channel_activity": {
+    "✅「已回答」Bug—技能敘述—增傷": 9,
     "Ultra Greed": 1,
     "跟我朋友零元購了一個稿，成效甚好": 4
   },
   "hourly_activity": {
+    "16": 7,
+    "21": 2,
     "11": 1,
     "10": 4
   },
   "message_types": {
-    "0": 4,
+    "0": 8,
     "19": 1
   },
   "top_reacted_messages": [
@@ -23,6 +26,13 @@
       "author": "aurora3981",
       "reactions": 8,
       "channel": "Ultra Greed"
+    },
+    {
+      "id": "1365359971121889411",
+      "content": "棄牌生效改為詞綴 “餘波”，想起卡牌的不嚴謹敘述，以下是整理出的增傷敘述\n建議統一改成 “ 造成(？\\*力量+100)傷害 ” / “ 造成(？%\\*觸腕傷害+",
+      "author": "elkmilu",
+      "reactions": 4,
+      "channel": "✅「已回答」Bug—技能敘述—增傷"
     }
   ]
 }

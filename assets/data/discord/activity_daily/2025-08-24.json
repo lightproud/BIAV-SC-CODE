@@ -1,10 +1,16 @@
 {
   "date": "2025-08-24",
-  "messages": 22,
+  "messages": 42,
   "unique_authors": 14,
-  "reactions_total": 16,
-  "attachments": 0,
+  "reactions_total": 25,
+  "attachments": 10,
   "channel_activity": {
+    "✅「已回答」試訓顯示bug": 5,
+    "✅「Answered」Suggestion: Please allow us to toggle Enlightens!": 1,
+    "✅「已回答」關於繁衍狂熱的劇情": 1,
+    "✅「已回答」希望加入日服同款同名命輪自動疊位": 1,
+    "✅「Answered」DC5000 redeem code not working anymore": 1,
+    "💭「Processing」Missing updated text and errors": 11,
     "邀請碼互助/Invitation code help each other": 8,
     "相位對弈—認識隊伍": 2,
     "萊克同人轉載": 2,
@@ -13,11 +19,18 @@
     "1408838316153114716": 1
   },
   "hourly_activity": {
-    "3": 3,
-    "6": 1,
+    "12": 4,
+    "13": 1,
+    "16": 6,
+    "4": 2,
+    "5": 1,
+    "18": 1,
+    "3": 4,
+    "6": 2,
+    "17": 2,
+    "21": 5,
     "10": 2,
     "14": 1,
-    "16": 4,
     "15": 1,
     "8": 1,
     "9": 1,
@@ -26,7 +39,8 @@
     "1": 1
   },
   "message_types": {
-    "0": 21
+    "0": 16,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -37,6 +51,20 @@
       "channel": "[于丽埃特x女守密人][伪繁衍狂热]卵壳"
     },
     {
+      "id": "1409039733090156605",
+      "content": "聽說之後會開始陸續加入語音，想問問某些角色的劇情內容會不會有所變化，有些角色的劇情真的太短了有點難過<:takenotes:135718664629413889",
+      "author": "lanl4n",
+      "reactions": 3,
+      "channel": "✅「已回答」關於繁衍狂熱的劇情"
+    },
+    {
+      "id": "1409038135068983316",
+      "content": "如題，能提升很多人中期命輪多了，要疊位卻找不到東西在哪裡的狀況",
+      "author": "oct3000",
+      "reactions": 3,
+      "channel": "✅「已回答」希望加入日服同款同名命輪自動疊位"
+    },
+    {
       "id": "1409203648193630278",
       "content": "感謝黃金熊、瑪爾、吶吶～是納西妲噢～協助提供資料與來源\n\n認識陣容\n\n本期為截止至2025年8月24號前已知的常見陣容介紹\n\n\n常見陣容（排名不分先後）\n\n麻痹",
       "author": "void_1546.",
@@ -44,11 +72,25 @@
       "channel": "相位對弈—認識隊伍"
     },
     {
+      "id": "1409293515610914937",
+      "content": "but yeah probably just post things in the thread, I've been going through that t",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "💭「Processing」Missing updated text and errors"
+    },
+    {
       "id": "1409099471962378353",
       "content": "https://vxtwitter.com/H135M7/status/1957363939815375027?t=i6ZXJPpRmpmr-7XdODhI2Q",
       "author": "nazhigezihk",
       "reactions": 2,
       "channel": "萊克同人轉載"
+    },
+    {
+      "id": "1409233238118895739",
+      "content": "I tested this ingame and Lasting Loathe is indeed treated as a strike, so I'll a",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "💭「Processing」Missing updated text and errors"
     },
     {
       "id": "1409104931797078068",

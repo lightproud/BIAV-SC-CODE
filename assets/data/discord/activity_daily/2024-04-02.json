@@ -1,10 +1,11 @@
 {
   "date": "2024-04-02",
-  "messages": 61,
+  "messages": 62,
   "unique_authors": 12,
-  "reactions_total": 21,
-  "attachments": 2,
+  "reactions_total": 25,
+  "attachments": 3,
   "channel_activity": {
+    "紧急摸鱼": 1,
     "等級突破道具對技能數值的影響門檻": 1,
     "喚醒體Tag試標記": 53,
     "關於即將來到的活動，商店中可獲取的資源所需體力": 4,
@@ -13,6 +14,7 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "14": 1,
     "15": 1,
     "5": 46,
     "6": 7,
@@ -22,8 +24,7 @@
     "1": 1
   },
   "message_types": {
-    "0": 54,
-    "19": 6
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -39,6 +40,13 @@
       "author": "xuan4185",
       "reactions": 7,
       "channel": "關於即將來到的活動，商店中可獲取的資源所需體力"
+    },
+    {
+      "id": "1224721547131093049",
+      "content": "摸点表情包!!",
+      "author": "j.h.metz",
+      "reactions": 4,
+      "channel": "紧急摸鱼"
     },
     {
       "id": "1224623808061902879",

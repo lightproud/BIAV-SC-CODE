@@ -1,10 +1,17 @@
 {
   "date": "2026-02-23",
-  "messages": 1349,
+  "messages": 1389,
   "unique_authors": 63,
-  "reactions_total": 420,
-  "attachments": 84,
+  "reactions_total": 433,
+  "attachments": 86,
   "channel_activity": {
+    "✅「Answered」Magnolia's Lure WoD should have been available for the entire duration of Xu's banner": 4,
+    "✅「已回答」灵核和密契材料太少了": 1,
+    "✅「Answered」Free Ramona and G.Ramona from story locked chapters": 22,
+    "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 1,
+    "Please make Chaos 24 more accessible I beseech you.": 8,
+    "💭「Processing」game client crashed...somewhat": 2,
+    "Age requirement suddenly failed": 2,
     "先祝大家新年快樂": 5,
     "猫咪节快乐！|| 杜勒赛因x西维斯特": 3,
     "🐱light’s-nest": 1,
@@ -27,6 +34,11 @@
     "🔸阵容构建": 75
   },
   "hourly_activity": {
+    "0": 7,
+    "9": 157,
+    "4": 58,
+    "20": 8,
+    "19": 5,
     "10": 131,
     "3": 51,
     "6": 12,
@@ -34,25 +46,22 @@
     "13": 52,
     "1": 40,
     "5": 97,
-    "9": 133,
     "11": 41,
     "12": 24,
-    "4": 57,
     "2": 99,
-    "0": 2,
     "8": 71,
     "7": 90,
     "14": 285,
     "15": 7,
     "17": 1,
     "18": 31,
-    "19": 3,
     "22": 18,
     "23": 86
   },
   "message_types": {
-    "0": 6,
-    "19": 2
+    "19": 10,
+    "0": 29,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -182,16 +191,16 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1475281749201256479",
+      "content": "每次up新的角色或者复刻老角色的时候，能不能出一些灵核/金笔/印章之类的活动或者礼包？刚刚玩了没多久，什么材料都不够。就算抽了角色，也完全拉不起来，实在没有什么",
+      "author": "david.chen.123",
+      "reactions": 3,
+      "channel": "✅「已回答」灵核和密契材料太少了"
+    },
+    {
       "id": "1475363665778839714",
       "content": "",
       "author": "xingxiu_0209",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475414862124552228",
-      "content": "这是让你+12的意思",
-      "author": "carme.0588",
       "reactions": 3,
       "channel": "🔸綜合討論"
     }

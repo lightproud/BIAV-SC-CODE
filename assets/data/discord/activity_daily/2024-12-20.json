@@ -1,17 +1,23 @@
 {
   "date": "2024-12-20",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 11,
+  "messages": 7,
+  "unique_authors": 4,
+  "reactions_total": 12,
   "attachments": 1,
   "channel_activity": {
+    "彌薩格校貓 你到底想干嘛？": 6,
     "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1": 1
   },
   "hourly_activity": {
+    "9": 1,
+    "11": 1,
+    "14": 2,
+    "16": 2,
     "22": 1
   },
   "message_types": {
-    "0": 1
+    "19": 3,
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -20,6 +26,13 @@
       "author": "flim_of_life_burst",
       "reactions": 11,
       "channel": "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1"
+    },
+    {
+      "id": "1319709702539448400",
+      "content": "雖然整體有病 ~~但我還是想要杯子~~",
+      "author": "falst_over_",
+      "reactions": 1,
+      "channel": "彌薩格校貓 你到底想干嘛？"
     }
   ]
 }

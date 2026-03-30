@@ -1,10 +1,17 @@
 {
   "date": "2024-03-16",
-  "messages": 59,
+  "messages": 68,
   "unique_authors": 17,
-  "reactions_total": 112,
-  "attachments": 27,
+  "reactions_total": 177,
+  "attachments": 38,
   "channel_activity": {
+    "弥利亚姆": 1,
+    "我永远喜欢蒙眼呜呜呜呜": 2,
+    "奧爾拉": 1,
+    "紅夫人": 1,
+    "莉兹同人文——殊途同归之焰": 1,
+    "放一颗会旋转的赛博银芯在这里": 1,
+    "莉莉 风扇制造pv": 2,
     "【意識潛遊】旺达「燃烧的群宴」地圖": 1,
     "忘卻前夜計算機v1.0": 2,
     "幻梦深浅地图全解 第4版 死扛黑印分时代": 2,
@@ -18,12 +25,15 @@
     "【DIY界域】伪码": 3
   },
   "hourly_activity": {
+    "9": 4,
+    "15": 8,
+    "14": 3,
+    "13": 2,
     "18": 1,
     "20": 1,
     "21": 1,
     "5": 1,
     "7": 2,
-    "14": 2,
     "10": 2,
     "11": 1,
     "12": 2,
@@ -33,14 +43,10 @@
     "1": 2,
     "2": 31,
     "3": 2,
-    "13": 1,
-    "6": 1,
-    "9": 1,
-    "15": 4
+    "6": 1
   },
   "message_types": {
-    "0": 53,
-    "19": 6
+    "0": 9
   },
   "top_reacted_messages": [
     {
@@ -56,6 +62,34 @@
       "author": "arki1i_",
       "reactions": 25,
       "channel": "大鲸鱼来咯"
+    },
+    {
+      "id": "1218588209324363857",
+      "content": "代發desu\n uid100001547",
+      "author": "navirecorbeau",
+      "reactions": 17,
+      "channel": "奧爾拉"
+    },
+    {
+      "id": "1218552039701876807",
+      "content": "请各位抽池子抽到口袋空空的守密人自取ww",
+      "author": "nancyjofla",
+      "reactions": 16,
+      "channel": "放一颗会旋转的赛博银芯在这里"
+    },
+    {
+      "id": "1218575565422854154",
+      "content": "画不完了画不完了要来不及了，先发个半成品吧有缘细化🥹🥹",
+      "author": "frimaire_ansel",
+      "reactions": 13,
+      "channel": "我永远喜欢蒙眼呜呜呜呜"
+    },
+    {
+      "id": "1218587120327987320",
+      "content": "UID:100264367\n\n無限吞噬好爽🙈",
+      "author": "homan.otdna",
+      "reactions": 12,
+      "channel": "紅夫人"
     },
     {
       "id": "1218704682092990564",
@@ -77,6 +111,13 @@
       "author": "anachico",
       "reactions": 7,
       "channel": "【DIY界域】伪码"
+    },
+    {
+      "id": "1218565008754081884",
+      "content": "来不及精修了，文笔不好大家请见谅",
+      "author": "dyyqcwj",
+      "reactions": 6,
+      "channel": "莉兹同人文——殊途同归之焰"
     },
     {
       "id": "1218629255496335461",
@@ -105,6 +146,13 @@
       "author": "sam511011",
       "reactions": 2,
       "channel": "美的奴隸"
+    },
+    {
+      "id": "1218493490502172672",
+      "content": "SNAKE WOMAN SAVE US",
+      "author": ".zaika_v_kedah",
+      "reactions": 1,
+      "channel": "弥利亚姆"
     },
     {
       "id": "1218464388370141234",

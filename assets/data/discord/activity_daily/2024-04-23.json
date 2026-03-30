@@ -1,10 +1,11 @@
 {
   "date": "2024-04-23",
-  "messages": 40,
+  "messages": 41,
   "unique_authors": 9,
   "reactions_total": 4,
   "attachments": 5,
   "channel_activity": {
+    "莉拔山兮氣蓋世": 1,
     "重返絕叫哀號的原質之海（新版達芙，從入門到入土）": 5,
     "主祭已死，鯊王當立｜鯊凱隊介紹（更新v1.41）": 5,
     "阿格里帕（蜘蛛）食用指南": 28,
@@ -12,6 +13,7 @@
     "蘿坦": 1
   },
   "hourly_activity": {
+    "3": 1,
     "0": 4,
     "1": 1,
     "2": 1,
@@ -23,8 +25,7 @@
     "17": 1
   },
   "message_types": {
-    "0": 35,
-    "19": 5
+    "19": 1
   },
   "top_reacted_messages": [
     {

@@ -1,17 +1,23 @@
 {
   "date": "2024-12-23",
-  "messages": 1,
-  "unique_authors": 1,
+  "messages": 9,
+  "unique_authors": 7,
   "reactions_total": 4,
   "attachments": 2,
   "channel_activity": {
+    "彌薩格校貓 你到底想干嘛？": 8,
     "關卡地圖「融災禁區」總覽24期": 1
   },
   "hourly_activity": {
+    "1": 1,
+    "2": 3,
+    "4": 3,
+    "19": 1,
     "22": 1
   },
   "message_types": {
-    "0": 1
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
     {

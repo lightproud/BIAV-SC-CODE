@@ -1,19 +1,21 @@
 {
   "date": "2025-01-14",
-  "messages": 6,
+  "messages": 7,
   "unique_authors": 3,
   "reactions_total": 26,
   "attachments": 3,
   "channel_activity": {
+    "彌薩格校貓 你到底想干嘛？": 1,
     "【攻略】只花15分钟 低配阵容也能拿满幻梦深潜3w分一次性奖励（大量银芯、羽笔、代币）": 6
   },
   "hourly_activity": {
+    "7": 1,
     "13": 2,
     "16": 1,
     "18": 3
   },
   "message_types": {
-    "0": 6
+    "0": 1
   },
   "top_reacted_messages": [
     {

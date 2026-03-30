@@ -1,10 +1,11 @@
 {
   "date": "2024-02-17",
-  "messages": 48,
+  "messages": 51,
   "unique_authors": 17,
-  "reactions_total": 56,
+  "reactions_total": 58,
   "attachments": 9,
   "channel_activity": {
+    "珊 - q版头像": 3,
     "這不是攻略，只是想募集大家疊毒的層數": 1,
     "2.1版本后的深海思路与探索": 1,
     "困難融災第二期滿分（另附索雷爾命輪的新想法）": 3,
@@ -15,6 +16,9 @@
     "莉莉-q版头像": 16
   },
   "hourly_activity": {
+    "1": 1,
+    "16": 2,
+    "18": 2,
     "8": 12,
     "2": 2,
     "0": 1,
@@ -25,13 +29,10 @@
     "12": 2,
     "15": 2,
     "7": 2,
-    "9": 4,
-    "16": 1,
-    "18": 1
+    "9": 4
   },
   "message_types": {
-    "0": 33,
-    "19": 15
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -54,6 +55,20 @@
       "author": "scholar_2",
       "reactions": 10,
       "channel": "困難融災第二期滿分（另附索雷爾命輪的新想法）"
+    },
+    {
+      "id": "1208445088116506644",
+      "content": "蹲！",
+      "author": "lindongxieyang",
+      "reactions": 1,
+      "channel": "珊 - q版头像"
+    },
+    {
+      "id": "1208482488582934580",
+      "content": "好可爱，求个原图🥹",
+      "author": "tassolsaran",
+      "reactions": 1,
+      "channel": "珊 - q版头像"
     },
     {
       "id": "1208321440609206272",

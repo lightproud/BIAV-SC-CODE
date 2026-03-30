@@ -1,10 +1,15 @@
 {
   "date": "2025-08-09",
-  "messages": 47,
-  "unique_authors": 7,
-  "reactions_total": 28,
-  "attachments": 5,
+  "messages": 60,
+  "unique_authors": 8,
+  "reactions_total": 30,
+  "attachments": 12,
   "channel_activity": {
+    "120 fps mode": 3,
+    "✅「Answered」Can't log in": 1,
+    "✅「已回答」没跳隐藏成就": 2,
+    "Aberrant Devour WoD status": 1,
+    "我有一计": 6,
     "神國圖魯教 星辰篇": 33,
     "克萊門汀滑鼠游標": 3,
     "来帮宣一下拉蒙娜的gk白膜": 3,
@@ -12,16 +17,19 @@
     "忘記誰點的小混帳了": 7
   },
   "hourly_activity": {
+    "21": 3,
+    "23": 2,
+    "11": 2,
+    "14": 8,
     "12": 35,
     "1": 1,
     "13": 1,
-    "14": 2,
     "15": 1,
     "9": 7
   },
   "message_types": {
-    "19": 14,
-    "0": 33
+    "0": 12,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -37,6 +45,13 @@
       "author": "yxy124",
       "reactions": 12,
       "channel": "来帮宣一下拉蒙娜的gk白膜"
+    },
+    {
+      "id": "1403884388986654911",
+      "content": "This wheel switches between Scholar and Jester statuses after using Exalt. It wo",
+      "author": "onoyasumi",
+      "reactions": 2,
+      "channel": "Aberrant Devour WoD status"
     },
     {
       "id": "1403723931818528778",

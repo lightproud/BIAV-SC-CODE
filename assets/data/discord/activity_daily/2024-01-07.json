@@ -1,25 +1,25 @@
 {
   "date": "2024-01-07",
-  "messages": 12,
+  "messages": 14,
   "unique_authors": 5,
-  "reactions_total": 48,
-  "attachments": 12,
+  "reactions_total": 62,
+  "attachments": 14,
   "channel_activity": {
+    "Morimens平行宇宙論": 1,
+    "“她將成為自己的勇士。”": 1,
     "密契副词条转录讲解（守密人55级解锁）": 1,
     "一圖流角色養成指南 | 1.0-雨鎮詭影": 5,
     "莉茲傷害測算": 1,
     "自娱自乐的梗图": 5
   },
   "hourly_activity": {
+    "16": 3,
+    "21": 3,
     "3": 2,
-    "16": 2,
-    "20": 6,
-    "21": 2
+    "20": 6
   },
   "message_types": {
-    "0": 10,
-    "4": 1,
-    "19": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -28,6 +28,20 @@
       "author": "banano.2",
       "reactions": 29,
       "channel": "一圖流角色養成指南 | 1.0-雨鎮詭影"
+    },
+    {
+      "id": "1193670457065492582",
+      "content": "非常喜歡寧菲亞命輪的描述...🥹\nUID：100294582",
+      "author": "morningnews",
+      "reactions": 8,
+      "channel": "“她將成為自己的勇士。”"
+    },
+    {
+      "id": "1193594553635192974",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 6,
+      "channel": "Morimens平行宇宙論"
     },
     {
       "id": "1193662855640264704",

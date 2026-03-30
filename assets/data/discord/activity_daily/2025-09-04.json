@@ -1,10 +1,18 @@
 {
   "date": "2025-09-04",
-  "messages": 26,
+  "messages": 47,
   "unique_authors": 8,
-  "reactions_total": 36,
-  "attachments": 3,
+  "reactions_total": 45,
+  "attachments": 11,
   "channel_activity": {
+    "💭「Processing」Equipo híbrido de 3": 1,
+    "✅「已回答」提问": 1,
+    "✅「Answered」Purchase": 4,
+    "💭「Processing」Painkillers relic missing text?": 2,
+    "✅已解決｜融災禁區助戰命輪無法使用bug": 7,
+    "💭「Processing」Scion of Purity wording": 2,
+    "✅「Answered」Covenants visually misleading in lineups": 3,
+    "Change visual effect of Trickster's Hat": 1,
     "第一届牢暮杯pve大型深潜赛": 1,
     "我喜歡卡斯托爾": 20,
     "皮克曼技能组": 2,
@@ -13,17 +21,24 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "16": 4,
+    "20": 1,
+    "12": 2,
+    "0": 2,
+    "6": 2,
+    "16": 6,
+    "13": 7,
+    "9": 4,
+    "8": 2,
+    "7": 1,
     "15": 17,
     "17": 1,
-    "12": 1,
     "5": 1,
-    "2": 1,
-    "8": 1
+    "2": 1
   },
   "message_types": {
-    "0": 18,
-    "19": 6
+    "0": 14,
+    "19": 1,
+    "4": 6
   },
   "top_reacted_messages": [
     {
@@ -32,6 +47,13 @@
       "author": "muggypeasant",
       "reactions": 18,
       "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1413090248103301191",
+      "content": "Hi, this issue has been fixed and we will update it in the next version~",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "✅「Answered」Covenants visually misleading in lineups"
     },
     {
       "id": "1413193995453993051",
@@ -53,6 +75,27 @@
       "author": "zdttjqxwxmzs",
       "reactions": 4,
       "channel": "皮克曼技能组"
+    },
+    {
+      "id": "1413253561306976266",
+      "content": "",
+      "author": "shadow_20954",
+      "reactions": 3,
+      "channel": "💭「Processing」Equipo híbrido de 3"
+    },
+    {
+      "id": "1413140947780370532",
+      "content": "我现在正在举办一系列pve比赛，想问一下官方能不能提供一些奖品什么的？比如之前pvp比赛的头像框👀",
+      "author": "zdttjqxwxmzs",
+      "reactions": 1,
+      "channel": "✅「已回答」提问"
+    },
+    {
+      "id": "1413098118869942404",
+      "content": "Thank you for the feedback. I will go and confirm<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Scion of Purity wording"
     },
     {
       "id": "1413182684800352316",

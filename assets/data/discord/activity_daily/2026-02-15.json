@@ -1,10 +1,19 @@
 {
   "date": "2026-02-15",
-  "messages": 971,
+  "messages": 1004,
   "unique_authors": 63,
-  "reactions_total": 405,
-  "attachments": 114,
+  "reactions_total": 429,
+  "attachments": 120,
   "channel_activity": {
+    "✅「Resolved」Sorry, it was my mistake.": 5,
+    "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 1,
+    "✅「Answered」Add level 100 for HSR": 9,
+    "✅「Answered」Custom difficulty in HSR": 3,
+    "💭「處理中」可是戈雅，我回不去了": 3,
+    "✅「已回答」会出原画集吗？或者其他例如立牌和玩偶的周边？": 2,
+    "✅「已解决」遊戲沒聲音了": 2,
+    "✅「Answered」Salvador Bug with Train and Ultra Turn": 7,
+    "✅「Answered」Train game mode improvement feedback": 1,
     "給你遊拉磨😋": 3,
     "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取": 2,
     "🔸欢乐梗图": 8,
@@ -26,31 +35,32 @@
     "🔸阵容构建": 193
   },
   "hourly_activity": {
+    "5": 7,
+    "8": 20,
+    "9": 82,
+    "19": 10,
+    "4": 25,
+    "10": 15,
+    "15": 236,
+    "13": 17,
+    "23": 14,
+    "11": 135,
     "3": 34,
-    "4": 18,
     "1": 43,
-    "11": 134,
-    "13": 15,
     "14": 116,
-    "23": 7,
     "6": 91,
-    "15": 232,
     "16": 26,
     "18": 16,
-    "5": 6,
     "7": 41,
-    "9": 79,
     "0": 1,
     "2": 20,
     "12": 38,
     "17": 13,
-    "10": 11,
-    "8": 17,
-    "19": 9,
     "22": 4
   },
   "message_types": {
-    "0": 5
+    "0": 29,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -73,6 +83,13 @@
       "author": "game.producer.light",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1472536311599595551",
+      "content": "Custom difficulty like in pdive but when you choose what you want or don't want\n",
+      "author": "yeriko703",
+      "reactions": 8,
+      "channel": "✅「Answered」Custom difficulty in HSR"
     },
     {
       "id": "1472608584381759610",
@@ -131,6 +148,13 @@
       "channel": ""
     },
     {
+      "id": "1472455555854372958",
+      "content": "Traphase and P dive both have lv100 as cap. I think it's only fair HSR also has ",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "✅「Answered」Add level 100 for HSR"
+    },
+    {
       "id": "1472620612085350490",
       "content": "",
       "author": "no.tea.",
@@ -176,20 +200,6 @@
       "id": "1472541602164506715",
       "content": "如果这个问卷是校猫发的……？😅🤓",
       "author": "akalanden",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472610902707798242",
-      "content": "<@559617185861992452>",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472614256452042887",
-      "content": "最近都忘了宣傳圖魯教了",
-      "author": "_hannah0508",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

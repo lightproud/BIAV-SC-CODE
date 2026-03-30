@@ -1,28 +1,47 @@
 {
   "date": "2025-09-03",
-  "messages": 18,
-  "unique_authors": 10,
-  "reactions_total": 24,
-  "attachments": 1,
+  "messages": 60,
+  "unique_authors": 13,
+  "reactions_total": 39,
+  "attachments": 5,
   "channel_activity": {
+    "忘却前夜第一届-叠火大赛（补档）": 2,
+    "✅「Answered」Purchase": 3,
+    "💭「Processing」Scion of Purity wording": 1,
+    "✅「Answered」Covenants visually misleading in lineups": 5,
+    "Change visual effect of Trickster's Hat": 2,
+    "Lessen Burden - Daily Dive": 2,
+    "✅「Answered」Change Arcane Dominion to a more generic approach": 5,
+    "✅「已回答」蘿坦超限描述問題": 5,
+    "✅「已解决」想問立繪方面的問題": 10,
+    "✅「Answered」Posse sort/update the posse Ui": 7,
     "邀請碼互助/Invitation code help each other": 2,
     "2025/12/14駁二ff忘卻前夜cos團徵集": 9,
     "1296113810549112874": 4,
     "1181147096234065920": 3
   },
   "hourly_activity": {
-    "4": 1,
-    "10": 1,
+    "12": 5,
+    "1": 1,
+    "9": 13,
+    "17": 1,
+    "10": 5,
+    "11": 6,
+    "16": 3,
+    "15": 1,
+    "13": 3,
+    "6": 5,
+    "0": 3,
+    "3": 2,
+    "4": 2,
+    "7": 3,
     "8": 4,
-    "9": 4,
-    "11": 1,
-    "12": 1,
-    "13": 2,
-    "7": 1,
     "5": 3
   },
   "message_types": {
-    "0": 11
+    "0": 28,
+    "4": 8,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -31,6 +50,76 @@
       "author": "kong760",
       "reactions": 19,
       "channel": "2025/12/14駁二ff忘卻前夜cos團徵集"
+    },
+    {
+      "id": "1412737241012375624",
+      "content": "So, in the lineups, when you have a team with a character that has a covenant, a",
+      "author": "wolfierce",
+      "reactions": 3,
+      "channel": "✅「Answered」Covenants visually misleading in lineups"
+    },
+    {
+      "id": "1412817837487292488",
+      "content": "To easily drop the burden of daily dive, could you please remove the relic bonus",
+      "author": "climbkaly",
+      "reactions": 2,
+      "channel": "Lessen Burden - Daily Dive"
+    },
+    {
+      "id": "1412592891431354409",
+      "content": "是有守密人出現的CG\n但具體是什麼就不說了（防爆雷",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "✅「已解决」想問立繪方面的問題"
+    },
+    {
+      "id": "1412735378267312138",
+      "content": "Σ(°Д°;我還有一些問題沒被解答捏",
+      "author": "shostakovich524",
+      "reactions": 2,
+      "channel": "✅「已解决」想問立繪方面的問題"
+    },
+    {
+      "id": "1412726076286959677",
+      "content": "Thank you for the suggestion, but currently we have no plans to change this mode",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Change Arcane Dominion to a more generic approach"
+    },
+    {
+      "id": "1412687951523090535",
+      "content": "😯 感谢反馈，我们核对一下",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」蘿坦超限描述問題"
+    },
+    {
+      "id": "1412753669643829268",
+      "content": "嗨~\n「混沌之兽」状态的描述有误，不应当有「打击伤害提升」的描述。\n不过萝坦的超限爆发文本效果是对的，因此我们会修复错误的状态描述<:pray:13560531",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」蘿坦超限描述問題"
+    },
+    {
+      "id": "1412764556484153446",
+      "content": "謝謝戈雅<:love:1356053099931897977>",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": "✅「已回答」蘿坦超限描述問題"
+    },
+    {
+      "id": "1412593289055571989",
+      "content": "活動、深潛、相位、融災這些盡量打打\n給的資源多",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "✅「已解决」想問立繪方面的問題"
+    },
+    {
+      "id": "1412753340906995732",
+      "content": "更多的立绘动作设计、守密人的新衣服立绘等是否有更多计划，戈雅会去问问看<:please:1356053110375714817>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已解决」想問立繪方面的問題"
     },
     {
       "id": "1412741725604282490",

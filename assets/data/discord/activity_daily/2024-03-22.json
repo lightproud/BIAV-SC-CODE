@@ -1,23 +1,40 @@
 {
   "date": "2024-03-22",
-  "messages": 5,
-  "unique_authors": 3,
-  "reactions_total": 8,
-  "attachments": 2,
+  "messages": 14,
+  "unique_authors": 7,
+  "reactions_total": 19,
+  "attachments": 4,
   "channel_activity": {
+    "罗坦-q版头像": 4,
+    "《女王的戒律》自制nomad模型": 2,
+    "珊": 1,
+    "我为旺達做了粉丝PV": 2,
     "調查等級與最大生命係數紀錄": 2,
     "新手向貨幣使用及前期資源運用": 1,
     "💌「旺達」體驗交流分享活動💌": 2
   },
   "hourly_activity": {
+    "7": 3,
+    "11": 2,
+    "8": 1,
+    "10": 1,
+    "2": 1,
+    "5": 1,
     "0": 3,
     "12": 2
   },
   "message_types": {
-    "19": 1,
-    "0": 4
+    "19": 3,
+    "0": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1220641540053925919",
+      "content": "終於畫完了  ~~結果沒趕上活動XD~~",
+      "author": "yon08",
+      "reactions": 11,
+      "channel": "珊"
+    },
     {
       "id": "1220710191192866816",
       "content": "帮mob大佬代po一下\n\n簡單介紹旺達\n\n首先，旺達需要3啟啟靈與三啟疊位的命輪才能有較好的體驗，若沒有則只建議收藏，且旺達的上限與體驗不及當前深海與血肉，也要",

@@ -1,10 +1,20 @@
 {
   "date": "2026-02-01",
-  "messages": 7052,
+  "messages": 7070,
   "unique_authors": 151,
-  "reactions_total": 1027,
-  "attachments": 314,
+  "reactions_total": 1063,
+  "attachments": 323,
   "channel_activity": {
+    "💭「Processing」The Boss intentions for Acr1 4-3 are a mess": 3,
+    "💭「Processing」Astral Reign 1-8 story is broken": 1,
+    "9-3 20000 deal, does it work?": 3,
+    "Poison have problem and some words about DoT team in game": 1,
+    "我們神母怎麼沒辦法講下去": 1,
+    "回歸任務無法正常結算": 2,
+    "New bug possibly!": 1,
+    "Text bugs during story": 4,
+    "Can we have a 100m hp battle dummy?": 1,
+    "Confirmation button for silver prime roll": 1,
     "此乃造谣24的笔记本内容（嗯）": 1,
     "🔸忘却前夜┊morimens-tv": 3,
     "1462840887553032335": 2,
@@ -17,23 +27,23 @@
     "🔸morimens-game-chat": 5874
   },
   "hourly_activity": {
+    "18": 193,
+    "10": 419,
+    "14": 618,
+    "15": 270,
+    "9": 358,
+    "3": 400,
+    "6": 147,
+    "2": 375,
     "1": 292,
     "8": 284,
-    "18": 190,
-    "15": 268,
     "13": 404,
-    "14": 615,
     "22": 155,
     "12": 530,
     "0": 181,
-    "2": 373,
-    "3": 399,
     "4": 562,
     "5": 309,
-    "6": 146,
     "7": 161,
-    "9": 353,
-    "10": 418,
     "11": 229,
     "16": 511,
     "17": 312,
@@ -43,9 +53,24 @@
     "21": 29
   },
   "message_types": {
-    "0": 1
+    "0": 17,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1467348362725687432",
+      "content": "For team testing purposes and theory crafting, as well as a place where people c",
+      "author": "satachan",
+      "reactions": 20,
+      "channel": "Can we have a 100m hp battle dummy?"
+    },
+    {
+      "id": "1467346920371650738",
+      "content": "Please add a confirmation button for accidental clicks on the 60 silver prime si",
+      "author": "angbak",
+      "reactions": 12,
+      "channel": "Confirmation button for silver prime roll"
+    },
     {
       "id": "1467540918167932991",
       "content": "两个周末怒打三款RPG，大脑被剧情塞满，严重过载，直接宕机，今日晚修呆了一节<:takenotes:1357186646294138890> 好在赶完了要交的作",
@@ -169,20 +194,6 @@
       "id": "1467464169392439378",
       "content": "the next aequor should be a siren so she can can support corpo both in game mech",
       "author": "princess.goth",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1467490254947745793",
-      "content": "Why does kath not feel solo carry to me like so many people say",
-      "author": "monchi3524",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1467495057434083504",
-      "content": "Kath likes me more",
-      "author": "necronomikkon",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

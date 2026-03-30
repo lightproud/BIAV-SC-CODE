@@ -1,10 +1,20 @@
 {
   "date": "2025-09-05",
-  "messages": 41,
-  "unique_authors": 9,
-  "reactions_total": 62,
-  "attachments": 17,
+  "messages": 76,
+  "unique_authors": 13,
+  "reactions_total": 87,
+  "attachments": 24,
   "channel_activity": {
+    "💭「Processing」Equipo híbrido de 3": 3,
+    "✅「已回答」预览角色的时候加个显示该角色满级满破数据的选项": 1,
+    "✅「Answered」New Ryker Enhencemant . 500 sigil ??": 4,
+    "✅「已回答」bug反馈": 5,
+    "✅「已回答」二律背反的效果加成是否有正確生效": 4,
+    "Questions about Pickman's 2 cost": 1,
+    "✅「已回答」提问": 4,
+    "✅「Answered」Clementine WoD number error": 4,
+    "✅「Answered」Purchase": 7,
+    "💭「Processing」Painkillers relic missing text?": 2,
     "邀請碼互助/Invitation code help each other": 1,
     "相位對弈—認識隊伍": 1,
     "我也要開圖樓": 11,
@@ -14,22 +24,31 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "17": 4,
-    "18": 1,
-    "6": 5,
+    "2": 3,
+    "6": 7,
+    "18": 2,
+    "11": 5,
+    "15": 2,
+    "16": 12,
+    "17": 5,
+    "19": 2,
+    "20": 1,
+    "23": 1,
+    "12": 1,
+    "9": 2,
+    "10": 1,
+    "4": 9,
+    "3": 5,
     "13": 1,
-    "16": 8,
     "0": 8,
     "1": 4,
-    "3": 3,
     "7": 4,
-    "8": 1,
-    "11": 1,
-    "4": 1
+    "8": 1
   },
   "message_types": {
-    "0": 34,
-    "19": 6
+    "0": 23,
+    "4": 4,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -54,6 +73,27 @@
       "channel": "小QQ系列-四小強+混沌界域上半"
     },
     {
+      "id": "1413489949373759631",
+      "content": "Hello , did dev already try Ryker and test it with normal Ryker ? It's impossibl",
+      "author": "aegisx",
+      "reactions": 10,
+      "channel": "✅「Answered」New Ryker Enhencemant . 500 sigil ??"
+    },
+    {
+      "id": "1413548256629096449",
+      "content": "You need 100% sigil to gain 100 each battle.",
+      "author": "ahuahuahua",
+      "reactions": 6,
+      "channel": "✅「Answered」New Ryker Enhencemant . 500 sigil ??"
+    },
+    {
+      "id": "1413502996939280407",
+      "content": "would the obtained relics take up a relic slot, and will they show up even if i ",
+      "author": "gisstar",
+      "reactions": 5,
+      "channel": "Questions about Pickman's 2 cost"
+    },
+    {
       "id": "1413313840178925768",
       "content": "如题，搓一把医生\n\n———观前须知———\n\n>依旧是星辰篇||神国降临||if线\n>包含对角色和星辰篇第二章剧情的极端个人理解\n>包含对心理咨询关系和心理理论的",
       "author": "flarinsidia",
@@ -73,6 +113,34 @@
       "author": "flarinsidia",
       "reactions": 2,
       "channel": "[克莱门汀x女守密人]二重决断"
+    },
+    {
+      "id": "1413588707247788152",
+      "content": "在预览卡池里面的角色的时候添加一个按钮来显示这个角色满级满破的数据。\n在唤醒体里面也可以加个按钮，有这个角色就显示他她现在的数据（没有的话就显示 1 级），按一",
+      "author": "elpedrito4933",
+      "reactions": 1,
+      "channel": "✅「已回答」预览角色的时候加个显示该角色满级满破数据的选项"
+    },
+    {
+      "id": "1413451471693025280",
+      "content": "为什么不回我的私信，我也在问类似的问题",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "✅「已回答」提问"
+    },
+    {
+      "id": "1413462568764178514",
+      "content": "https://discord.com/channels/1131791637933199470/1411687349498155140 already rep",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "✅「Answered」Clementine WoD number error"
+    },
+    {
+      "id": "1413343772183367781",
+      "content": "It's so sad but tks u for supporting me <:pray:1356053116260454534>",
+      "author": "winter110306",
+      "reactions": 1,
+      "channel": "✅「Answered」Purchase"
     },
     {
       "id": "1413332544220430418",

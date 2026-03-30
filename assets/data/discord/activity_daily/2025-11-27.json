@@ -1,10 +1,19 @@
 {
   "date": "2025-11-27",
-  "messages": 17,
-  "unique_authors": 9,
-  "reactions_total": 43,
-  "attachments": 4,
+  "messages": 50,
+  "unique_authors": 14,
+  "reactions_total": 53,
+  "attachments": 12,
   "channel_activity": {
+    "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎": 2,
+    "✅「已回答」繁中PC端黑屏": 7,
+    "✅「已回答」我抽獎時怎麼卡BUG了": 5,
+    "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！": 5,
+    "✅「Answered」rose script icon not showing up": 1,
+    "💭「处理中」結算頁面錯誤": 2,
+    "✅「Answered」Bug | enemy immediately dying (sacrifice killed past immunity)": 1,
+    "剧情文案": 9,
+    "新玩法": 1,
     "⟨提燈雙子 - 破曉⟩": 6,
     "蓋個圖樓": 1,
     "1241345906826153984": 3,
@@ -13,18 +22,27 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "8": 7,
+    "13": 2,
+    "6": 10,
+    "7": 2,
+    "8": 10,
+    "10": 2,
+    "2": 2,
+    "3": 4,
+    "15": 4,
+    "23": 3,
+    "0": 1,
+    "14": 1,
+    "4": 1,
+    "5": 2,
     "9": 2,
-    "15": 1,
     "16": 2,
-    "5": 1,
     "1": 1,
-    "6": 1,
-    "22": 1,
-    "23": 1
+    "22": 1
   },
   "message_types": {
-    "0": 6,
+    "0": 23,
+    "19": 9,
     "4": 1
   },
   "top_reacted_messages": [
@@ -50,11 +68,67 @@
       "channel": "⟨提燈雙子 - 破曉⟩"
     },
     {
+      "id": "1443422980561436814",
+      "content": "希望可以盡快處理好\n我現在不知道我還要不要繼續儲值\n怕影響後續",
+      "author": "meow51103",
+      "reactions": 2,
+      "channel": "✅「已回答」我抽獎時怎麼卡BUG了"
+    },
+    {
+      "id": "1443625367637196932",
+      "content": "说句实话现在有点感觉小破游越来越厉害，但是却越来越远离老玩家和设计组的初心的感觉",
+      "author": "2300011747",
+      "reactions": 2,
+      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
+    },
+    {
       "id": "1443479682501836840",
       "content": "想要这个<:pray:1356053116260454534>",
       "author": "sweet_25367",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1443593038898397257",
+      "content": "一直會誤觸到那個自動戰鬥，可不可以跟大招和鑰令一樣，做一個可以自己決定要不要開的確認介面。",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎"
+    },
+    {
+      "id": "1443551731794579507",
+      "content": "101181074",
+      "author": "o5214658",
+      "reactions": 1,
+      "channel": "✅「已回答」繁中PC端黑屏"
+    },
+    {
+      "id": "1443501982974476398",
+      "content": "hi there! apparently the rose script icon doesn't show up for me in multiple men",
+      "author": "fishhazardthewizard",
+      "reactions": 1,
+      "channel": "✅「Answered」rose script icon not showing up"
+    },
+    {
+      "id": "1443462611831230486",
+      "content": "兄弟，我看完之後感想跟你一樣🫠 \n甚至我覺得一起對抗樂園帷幕那裡都轉的挺硬的\n最後跟朋友聊天只能給一個瑕不掩瑜+瑜不掩瑕的評價",
+      "author": "soleil_sun",
+      "reactions": 1,
+      "channel": "剧情文案"
+    },
+    {
+      "id": "1443483168983351438",
+      "content": "你直接写两人一起进去然后掉到下一章开始双排都比这合理",
+      "author": "carme.0588",
+      "reactions": 1,
+      "channel": "剧情文案"
+    },
+    {
+      "id": "1443487636277952563",
+      "content": "守密人自己一個人走小黑路就不覺得哪裡怪怪的嗎",
+      "author": "soleil_sun",
+      "reactions": 1,
+      "channel": "剧情文案"
     },
     {
       "id": "1443518512290201712",

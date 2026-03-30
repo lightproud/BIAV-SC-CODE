@@ -1,10 +1,18 @@
 {
   "date": "2026-02-26",
-  "messages": 533,
+  "messages": 558,
   "unique_authors": 51,
-  "reactions_total": 313,
-  "attachments": 40,
+  "reactions_total": 339,
+  "attachments": 48,
   "channel_activity": {
+    "💭「處理中」奇怪的隊伍遇到奇怪的bug：女王的戒律超量狂氣": 3,
+    "✅「Answered」Winkle’s leap effect is broken on D-Tide Wave 2 Alert 2": 4,
+    "✅「Answered」Expiramental Play Testing": 4,
+    "✅「Resolved」Sorry, it was my mistake.": 1,
+    "💭「Processing」If you stun the Chapter 8 boss during its phase transition, it skips": 1,
+    "✅「已回答」意见反馈": 3,
+    "✅「Answered」misspelling in one of the tutorials": 5,
+    "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 4,
     "蛋塔隊馴服玩家影像流露": 2,
     "🔸欢乐梗图": 2,
     "🐱light’s-nest": 1,
@@ -24,21 +32,22 @@
     "🔸綜合討論": 498
   },
   "hourly_activity": {
+    "19": 3,
+    "20": 9,
+    "2": 11,
+    "3": 2,
+    "5": 2,
+    "11": 119,
+    "8": 30,
+    "10": 63,
+    "6": 10,
+    "7": 12,
+    "1": 5,
     "18": 2,
-    "10": 62,
-    "6": 8,
-    "11": 118,
-    "8": 28,
-    "20": 5,
     "9": 13,
-    "2": 5,
     "15": 43,
-    "7": 9,
     "0": 2,
     "22": 1,
-    "5": 1,
-    "1": 4,
-    "3": 1,
     "4": 10,
     "12": 94,
     "13": 16,
@@ -49,7 +58,9 @@
     "23": 3
   },
   "message_types": {
-    "0": 2
+    "0": 18,
+    "19": 3,
+    "4": 4
   },
   "top_reacted_messages": [
     {
@@ -65,6 +76,13 @@
       "author": "h3ll0hu",
       "reactions": 17,
       "channel": ""
+    },
+    {
+      "id": "1476398717383741440",
+      "content": "Allows Users to\n\n- Decrease / Increase the Edify Levels of their Awakeners\n- Dec",
+      "author": "snorlax01",
+      "reactions": 13,
+      "channel": "✅「Answered」Expiramental Play Testing"
     },
     {
       "id": "1476606653670363158",
@@ -102,6 +120,13 @@
       "channel": ""
     },
     {
+      "id": "1476405898305077259",
+      "content": "I feel like increase is kinda questionable from a business standpoint, but decre",
+      "author": "cornonthemacabre_",
+      "reactions": 4,
+      "channel": "✅「Answered」Expiramental Play Testing"
+    },
+    {
       "id": "1476432275486015600",
       "content": "3啟血希暴打癲狂列車",
       "author": "water_heart",
@@ -114,6 +139,13 @@
       "author": "l8989c",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1476545510650282014",
+      "content": "If you stun the boss after triggering its first phase transition and then kill i",
+      "author": "clockworktomato0441",
+      "reactions": 3,
+      "channel": "💭「Processing」If you stun the Chapter 8 boss during its phase transition, it skips"
     },
     {
       "id": "1476378535793791140",
@@ -170,27 +202,6 @@
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": ""
-    },
-    {
-      "id": "1476436279184064554",
-      "content": "那很哭了\n-#  該挑戰支援卡C了",
-      "author": "0.0._.0_0.",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476511906197016772",
-      "content": "毒隊遇到海德拉真的跟過年遇到大塞車沒兩樣🤩",
-      "author": "ass191044",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476513258331705384",
-      "content": "我終於要變成相位純玩家了嗎",
-      "author": "xingxiu_0209",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
     }
   ]
 }

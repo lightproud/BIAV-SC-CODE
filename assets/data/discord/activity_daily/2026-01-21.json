@@ -1,10 +1,14 @@
 {
   "date": "2026-01-21",
-  "messages": 50,
+  "messages": 55,
   "unique_authors": 18,
-  "reactions_total": 63,
-  "attachments": 8,
+  "reactions_total": 67,
+  "attachments": 13,
   "channel_activity": {
+    "💭「处理中」透明人在打透明怪": 2,
+    "Bug? When choosing team": 1,
+    "需要官方高清海报": 1,
+    "Global store to sell merch": 1,
     "Awakener Kit Speculation: Francis": 1,
     "狗把到處搞得髒兮兮還真心認為自己做得挺不錯的": 1,
     "1463456408249831446": 11,
@@ -16,24 +20,24 @@
     "1455822126568308957": 5
   },
   "hourly_activity": {
+    "14": 6,
+    "12": 3,
+    "7": 2,
     "19": 1,
     "5": 2,
     "8": 5,
     "9": 4,
     "10": 11,
-    "12": 1,
     "15": 2,
     "17": 1,
     "1": 4,
-    "14": 4,
     "16": 3,
     "23": 5,
-    "7": 1,
     "11": 2,
     "6": 4
   },
   "message_types": {
-    "0": 1,
+    "0": 4,
     "19": 1
   },
   "top_reacted_messages": [
@@ -57,6 +61,13 @@
       "author": "ass191044",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1463434461315338290",
+      "content": "I know Morimens have a small team and it is difficult at this time, but I hope a",
+      "author": "chiwazuki",
+      "reactions": 4,
+      "channel": "Global store to sell merch"
     },
     {
       "id": "1463497315653517522",
@@ -167,13 +178,6 @@
       "id": "1463576795474301124",
       "content": "It's fine\nI found a way",
       "author": "legendaryredz",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463463208869167135",
-      "content": "哭了",
-      "author": "akkom730",
       "reactions": 1,
       "channel": ""
     }

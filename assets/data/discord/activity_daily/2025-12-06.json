@@ -1,24 +1,51 @@
 {
   "date": "2025-12-06",
-  "messages": 5,
-  "unique_authors": 2,
-  "reactions_total": 17,
-  "attachments": 5,
+  "messages": 44,
+  "unique_authors": 16,
+  "reactions_total": 42,
+  "attachments": 17,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 1,
+    "✅「已回答」繁中PC端黑屏": 1,
+    "关于【献祭】的bug修复": 4,
+    "💭「Processing」Raid stuck after clearing fight seemingly only on certain parties?": 1,
+    "✅「Answered」Dtide W3 Bug": 3,
+    "✅「Answered」Stacks Missing in Battle": 9,
+    "Can't hear some voices without BGM in radio drama": 1,
+    "💭「处理中」克珀珊特技能卡狂氣顯示問題": 2,
+    "✅「已回答」給特定戰鬥加上跳過劇情的功能": 8,
+    "💭「处理中」2-2【三條規則】前後文衝突、其他文案繁體化有誤（錯字）": 8,
+    "Will official character design reference sheets of Awakeners and Characters be created?": 1,
     "纯血神国...": 1,
     "重开个存档楼）": 1,
     "1241345906826153984": 3
   },
   "hourly_activity": {
-    "3": 1,
-    "15": 1,
-    "12": 2,
-    "17": 1
+    "4": 10,
+    "6": 2,
+    "13": 1,
+    "15": 3,
+    "0": 2,
+    "3": 4,
+    "20": 1,
+    "23": 8,
+    "12": 3,
+    "17": 9,
+    "10": 1
   },
   "message_types": {
-    "0": 2
+    "0": 31,
+    "19": 4,
+    "4": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1446719432050343987",
+      "content": "對\n說的就是H4-10\n劇情\n很煩\n看一次還好\n重複打就很痛苦了\n我的跳過鍵在哪裡\n打母樹的時候那個跳過劇情不是做的很好嗎\n怎麼後面都沒有了",
+      "author": "water_heart",
+      "reactions": 10,
+      "channel": "✅「已回答」給特定戰鬥加上跳過劇情的功能"
+    },
     {
       "id": "1446891464775700561",
       "content": "我之前存档的那个楼咋找不到了（茫然）\n继续存，画风摸索中",
@@ -32,6 +59,41 @@
       "author": "carrot_chicken",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1446720201797406802",
+      "content": "這劇情怎麼連回放都能入侵",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "✅「已回答」給特定戰鬥加上跳過劇情的功能"
+    },
+    {
+      "id": "1446806809074602066",
+      "content": "The existing official art is nice but I find it kind of hard to reference when t",
+      "author": "serialexperimentsmid",
+      "reactions": 5,
+      "channel": "Will official character design reference sheets of Awakeners and Characters be created?"
+    },
+    {
+      "id": "1446916344590241863",
+      "content": "達芙戴爾路過後，拉蒙娜提醒詹金的對話前後文有衝突\n最近在重看劇情，希望我不會太頻繁出現在這裡 <:Clown:1400771541423226971>\n\n喔，還",
+      "author": "soleil_sun",
+      "reactions": 2,
+      "channel": "💭「处理中」2-2【三條規則】前後文衝突、其他文案繁體化有誤（錯字）"
+    },
+    {
+      "id": "1446757133562413179",
+      "content": "我打開目標資料夾裡面只有一個檔案，所以我把整個資料夾壓縮傳給你們。",
+      "author": "o5214658",
+      "reactions": 1,
+      "channel": "✅「已回答」繁中PC端黑屏"
+    },
+    {
+      "id": "1446962464330743961",
+      "content": "I used to be able to click on my team and see how many stacks of metaphor I have",
+      "author": "climbkaly",
+      "reactions": 1,
+      "channel": "✅「Answered」Stacks Missing in Battle"
     },
     {
       "id": "1446910496849662105",

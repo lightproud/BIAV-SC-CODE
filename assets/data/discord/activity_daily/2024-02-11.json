@@ -1,10 +1,11 @@
 {
   "date": "2024-02-11",
-  "messages": 28,
+  "messages": 29,
   "unique_authors": 11,
-  "reactions_total": 21,
-  "attachments": 16,
+  "reactions_total": 26,
+  "attachments": 17,
   "channel_activity": {
+    "紅夫人": 1,
     "幻梦深潜地图全解": 13,
     "融灾已满分，作业已出": 5,
     "忘却前夜新人博主攻略制作小贴示|关于我踩过的坑": 5,
@@ -12,6 +13,7 @@
     "混沌-绝活哥合集": 4
   },
   "hourly_activity": {
+    "13": 1,
     "2": 7,
     "3": 4,
     "4": 3,
@@ -22,9 +24,7 @@
     "8": 1
   },
   "message_types": {
-    "0": 22,
-    "19": 5,
-    "4": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -40,6 +40,13 @@
       "author": "tt1036",
       "reactions": 7,
       "channel": "各界域高練度喚醒體玩家ＩＤ分享"
+    },
+    {
+      "id": "1206225532610416700",
+      "content": "",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "紅夫人"
     },
     {
       "id": "1206059557491580979",

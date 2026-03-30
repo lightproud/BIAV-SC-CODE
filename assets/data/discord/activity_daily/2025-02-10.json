@@ -1,16 +1,18 @@
 {
   "date": "2025-02-10",
-  "messages": 11,
+  "messages": 12,
   "unique_authors": 4,
   "reactions_total": 39,
   "attachments": 5,
   "channel_activity": {
+    "mockup ui for realm selection and silver key posse": 1,
     "忘却前夜相位对弈(PVP)攻略": 6,
     "拿圖去印了明信片和膠片✌": 2,
     "1271491376881598494": 2,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "9": 1,
     "0": 1,
     "8": 1,
     "11": 1,
@@ -21,8 +23,7 @@
     "13": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

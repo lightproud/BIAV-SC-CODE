@@ -1,28 +1,57 @@
 {
   "date": "2026-01-10",
-  "messages": 76,
-  "unique_authors": 7,
-  "reactions_total": 8,
-  "attachments": 8,
+  "messages": 94,
+  "unique_authors": 11,
+  "reactions_total": 26,
+  "attachments": 15,
   "channel_activity": {
+    "Possibilty of rebalancing Wanda?": 6,
+    "建議讓戰鬥統計也能顯示助戰的具體數值": 2,
+    "✅「Resolved」\"Tiny Wish\" Posse interface bug": 3,
+    "💭「Processing」Traphase potential bug": 1,
+    "✅「已回答」向威廉「報導」": 1,
+    "💭「Processing」Saved mail display issue": 1,
+    "💭「处理中」典藏馆大量造物事件无法解锁": 1,
+    "💭「处理中」TV队卡的要死": 3,
     "唤醒体设计：列维": 68,
     "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)": 3,
     "（自制）概念PV——鲲鹏的虚冢": 3,
     "1305430084420898868": 2
   },
   "hourly_activity": {
+    "14": 1,
+    "15": 2,
+    "16": 4,
+    "18": 3,
+    "5": 3,
+    "23": 1,
+    "4": 2,
+    "9": 4,
     "10": 3,
     "11": 69,
     "13": 1,
-    "9": 1,
-    "4": 1,
     "7": 1
   },
   "message_types": {
-    "0": 54,
-    "19": 20
+    "0": 15,
+    "19": 2,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1459555990478524569",
+      "content": "While I know that asking for rebalance isn't really a viable thing to do because",
+      "author": "satachan",
+      "reactions": 11,
+      "channel": "Possibilty of rebalancing Wanda?"
+    },
+    {
+      "id": "1459413073269100574",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "建議讓戰鬥統計也能顯示助戰的具體數值"
+    },
     {
       "id": "1459488942544916542",
       "content": "（可结合自制概念PV食用）\n\n超维·列维\n辅助型    体质：90  攻击力：180  防御力：180\n人格深化：界域精通，狂气回充      天赋：时空旅者\n",
@@ -36,6 +65,20 @@
       "author": "ahong0727",
       "reactions": 3,
       "channel": "唤醒体设计：列维"
+    },
+    {
+      "id": "1459585317429575864",
+      "content": "true that, here’s hoping they give Wanda literally anything, maybe after the thi",
+      "author": "bagels5899",
+      "reactions": 2,
+      "channel": "Possibilty of rebalancing Wanda?"
+    },
+    {
+      "id": "1459582253603750173",
+      "content": "My goal is only to just leave a ping for the devs to know that wanda enjoyers st",
+      "author": "satachan",
+      "reactions": 1,
+      "channel": "Possibilty of rebalancing Wanda?"
     },
     {
       "id": "1459512180553551882",

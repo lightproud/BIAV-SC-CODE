@@ -1,26 +1,70 @@
 {
   "date": "2025-08-30",
-  "messages": 56,
-  "unique_authors": 8,
-  "reactions_total": 36,
-  "attachments": 15,
+  "messages": 154,
+  "unique_authors": 18,
+  "reactions_total": 90,
+  "attachments": 19,
   "channel_activity": {
+    "✅「Answered」Question: Policy on fan-made/unofficial items": 4,
+    "💭「处理中」關於莉莉超限是否應該受到天賦影響的提問": 2,
+    "✅「已回答」伺服器會不會有標籤？": 1,
+    "✅「Answered」[PVP] Erica‘s sprite animation does look way worse than all the others": 4,
+    "✅「Answered」Interacting with an ultra space with the goal to consult the card,  leads to a softlock": 3,
+    "✅「Answered」Story autoscroll": 3,
+    "✅「Answered」Fun Skin suggestions?": 3,
+    "✅「Answered」Triple Reruns in the Future": 8,
+    "✅「已回答」普希洛有可能加強嗎？": 2,
+    "✅「已回答」杜勒需要加強": 7,
+    "✅「已回答」怪物实验习作1贴图错误": 2,
+    "✅「已回答」莉兹个人剧情结束后无通讯器幕间": 5,
+    "✅「已回答」典藏馆cg": 2,
+    "✅「Answered」Instagram + more OSTs on Spotify": 1,
+    "✅「Answered」Separation of GLB and JP": 3,
+    "✅「已回答」什么时候加回英文名": 3,
+    "✅「Answered」Concerns about dev resources with the Japanese release.": 2,
+    "✅「Answered」When will the game be accessible on Vietnam's Google Play Store?": 2,
+    "✅「已回答」最近的簡體中文變多了": 1,
+    "✅「Answered」Chinese message notifications": 2,
+    "✅「已回答」關於尤烏哈希的專造": 5,
+    "✅「Answered」About Myriam/Thais/Wanda": 2,
+    "✅「Answered」Crossover Suggestion": 2,
+    "✅「已回答」相位嘲諷機制": 7,
+    "✅「Answered」Suggestion: Please allow us to toggle Enlightens!": 7,
+    "✅「Answered」Potential changes for Kathi": 3,
+    "✅「已回答」血肉狂宴命輪故事": 1,
+    "✅「Answered」Kath Fiamma FX not showing": 2,
+    "✅「Answered」Add „seen all“ button for Archive": 2,
+    "✅「Answered」[PVP] Ramona's \"Echoed Simulation\" does not copy cards as expected": 2,
+    "✅「已回答」相位對弈角色無法使用": 2,
+    "✅「已回答」拉蒙娜的语音和以前不一样了": 2,
+    "✅「已回答」能不要顯示新物資的提示嗎?": 1,
     "邀請碼互助/Invitation code help each other": 2,
     "全4級400融災攻略": 54
   },
   "hourly_activity": {
-    "6": 6,
-    "10": 11,
-    "7": 13,
-    "8": 5,
-    "9": 15,
+    "3": 1,
+    "4": 10,
+    "5": 12,
+    "12": 3,
+    "11": 4,
+    "23": 3,
+    "19": 1,
+    "20": 2,
+    "6": 12,
+    "15": 2,
+    "14": 7,
+    "7": 23,
+    "9": 35,
+    "10": 25,
+    "8": 8,
     "16": 1,
     "17": 4,
     "18": 1
   },
   "message_types": {
-    "0": 50,
-    "19": 6
+    "0": 57,
+    "19": 8,
+    "4": 33
   },
   "top_reacted_messages": [
     {
@@ -31,11 +75,95 @@
       "channel": "全4級400融災攻略"
     },
     {
+      "id": "1411360566026698884",
+      "content": "@everyone \n\nI’m truly grateful for everyone’s passionate discussion—and even for",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "✅「Answered」Triple Reruns in the Future"
+    },
+    {
+      "id": "1411365114686476371",
+      "content": "After a character joins the standard pool, we also plan to add their SR Wheels o",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "✅「Answered」Triple Reruns in the Future"
+    },
+    {
+      "id": "1411360921544036363",
+      "content": "Please always remember: for some people, making games is a way to make money. Fo",
+      "author": "game.producer.light",
+      "reactions": 5,
+      "channel": "✅「Answered」Triple Reruns in the Future"
+    },
+    {
+      "id": "1411363124518453320",
+      "content": "<:wish:1356084702468899117> thanks for the response\n\nwill there be anything done",
+      "author": "zier.0",
+      "reactions": 4,
+      "channel": "✅「Answered」Triple Reruns in the Future"
+    },
+    {
+      "id": "1411224678831226933",
+      "content": "@everyone",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "✅「Answered」Suggestion: Please allow us to toggle Enlightens!"
+    },
+    {
       "id": "1411399292882522132",
       "content": "我队伍堆了149强效这样",
       "author": "sweet_25367",
       "reactions": 4,
       "channel": "全4級400融災攻略"
+    },
+    {
+      "id": "1411278944833110146",
+      "content": "我們會在未來做出調整。",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "✅「已回答」關於尤烏哈希的專造"
+    },
+    {
+      "id": "1411205849271238776",
+      "content": "Thank you so much for your enthusiasm! We have an open attitude toward fan-made ",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "✅「Answered」Question: Policy on fan-made/unofficial items"
+    },
+    {
+      "id": "1411208523915722782",
+      "content": "Thank you for the answer!!",
+      "author": "fishhazardthewizard",
+      "reactions": 2,
+      "channel": "✅「Answered」Question: Policy on fan-made/unofficial items"
+    },
+    {
+      "id": "1411429312237932645",
+      "content": "The new autoscroll during story is very annoying. I often have to check the log ",
+      "author": "rakshaa9232",
+      "reactions": 2,
+      "channel": "✅「Answered」Story autoscroll"
+    },
+    {
+      "id": "1411297501662674985",
+      "content": "謝謝反饋！我們後續會補充。",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "✅「已回答」莉兹个人剧情结束后无通讯器幕间"
+    },
+    {
+      "id": "1411287769363513355",
+      "content": "I’ve previously shared that the team will expand appropriately, which will impro",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "✅「Answered」Concerns about dev resources with the Japanese release."
+    },
+    {
+      "id": "1411278773269168202",
+      "content": "Thank you for the feedback—we haven’t forgotten. Going forward, we will add elig",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "✅「Answered」About Myriam/Thais/Wanda"
     },
     {
       "id": "1411423075857072149",
@@ -45,32 +173,39 @@
       "channel": "全4級400融災攻略"
     },
     {
-      "id": "1411244686668075060",
-      "content": "第一波是珊盾擊\n這隊平均練度高就可以了\n珊需要+4 全隊要點靈塑5級\n\n珊一定要帶 36室之環 堅韌意志\n第二件可以帶任意一件有死亡抵抗屬性的\n最優解會是 跨越",
-      "author": "0.0._.0_0.",
+      "id": "1411239607227519026",
+      "content": "Great idea! We also have lots of ideas for skins. However, this would consume a ",
+      "author": "game.producer.light",
       "reactions": 1,
-      "channel": "全4級400融災攻略"
+      "channel": "✅「Answered」Fun Skin suggestions?"
     },
     {
-      "id": "1411290822741065861",
-      "content": "寶~你不是都自己打完了嗎",
-      "author": "0.0._.0_0.",
+      "id": "1411291027846725653",
+      "content": "I just answered this question in another thread, and I’d like to add a bit more ",
+      "author": "game.producer.light",
       "reactions": 1,
-      "channel": "全4級400融災攻略"
+      "channel": "✅「Answered」Separation of GLB and JP"
     },
     {
-      "id": "1411292062799626240",
-      "content": "可是你都在虐深潛唉",
-      "author": "0.0._.0_0.",
+      "id": "1411288337276211310",
+      "content": "考慮到我們已經是一款全球化的遊戲，這一條內容有時候對於其他語言的玩家過於迷惑。我們不會再加入這一項內容，如果想要關心可以直接切換英文語言進行查閱。",
+      "author": "game.producer.light",
       "reactions": 1,
-      "channel": "全4級400融災攻略"
+      "channel": "✅「已回答」什么时候加回英文名"
     },
     {
-      "id": "1411398646468968559",
-      "content": "克莱超限没有打更疼的，有差的是人格深化的强效和银冲属性，以及多一管狂气会更舒服一点",
-      "author": "sweet_25367",
+      "id": "1411267653322014813",
+      "content": "谢谢你的建议。我们会考虑这个问题。",
+      "author": "game.producer.light",
       "reactions": 1,
-      "channel": "全4級400融災攻略"
+      "channel": "✅「已回答」相位嘲諷機制"
+    },
+    {
+      "id": "1411225160769343573",
+      "content": "Thanks a lot for the consideration, we appreciate it",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "✅「Answered」Suggestion: Please allow us to toggle Enlightens!"
     }
   ]
 }

@@ -1,10 +1,36 @@
 {
   "date": "2025-11-26",
-  "messages": 41,
-  "unique_authors": 11,
-  "reactions_total": 23,
-  "attachments": 6,
+  "messages": 108,
+  "unique_authors": 21,
+  "reactions_total": 40,
+  "attachments": 21,
   "channel_activity": {
+    "✅「已回答」繁中PC端黑屏": 1,
+    "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 13,
+    "✅「Answered」Bonus Damage and Fortress": 1,
+    "✅「已回答」我抽獎時怎麼卡BUG了": 3,
+    "✅「Resolved」bug | gmurphy story not unlocking properly": 2,
+    "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled": 1,
+    "💭「处理中」星辰篇第4章boss階段音頻中斷": 2,
+    "IOS App permissions": 1,
+    "💭「Processing」Log issues in the Tawil sequence in the prologue.": 1,
+    "✅「已解决」关卡完成度显示问题": 1,
+    "💭「Processing」Corposant Pilots trigger Queen's Edict Aliemus increase repeatedly": 5,
+    "✅「Answered」Tinct Defense text bug": 1,
+    "Bleed sometimes not being removed upon heal": 2,
+    "💭「处理中」結算頁面錯誤": 4,
+    "剧情文案": 3,
+    "Lemurians and Goliath": 1,
+    "✅「已回答」在夕光裡沒有觸發": 4,
+    "💭「处理中」逆轉回合的劇情結束會黑屏": 1,
+    "💭「Processing」Rites of Divine Birth Event exchange rewards displaying no item icon": 1,
+    "💭「Processing」Invisible enemy": 4,
+    "💭「Processing」Gmurphy Event Red Dot Notification": 1,
+    "💭「处理中」星辰篇第四章記憶歸檔畫面異常": 6,
+    "💭「Processing」Jenkin in Chaos Filter": 2,
+    "💭「Processing」Sound setting not working as intended": 1,
+    "開銀鑰的時候也顯示守密人的台詞": 2,
+    "✅「Resolved」Store Frozen": 3,
     "纯血神国...": 2,
     "誕墨水船隊": 2,
     "2.4 角色命轮榜单": 13,
@@ -15,23 +41,31 @@
     "1441326394817908736": 8
   },
   "hourly_activity": {
+    "2": 3,
+    "9": 9,
+    "10": 23,
+    "21": 2,
+    "0": 2,
+    "23": 3,
+    "11": 10,
+    "12": 3,
+    "22": 1,
+    "5": 3,
+    "7": 6,
+    "13": 3,
+    "15": 3,
+    "16": 19,
+    "3": 3,
+    "8": 4,
+    "1": 2,
     "17": 3,
-    "16": 14,
     "14": 3,
-    "10": 3,
-    "11": 5,
-    "13": 1,
-    "4": 3,
-    "5": 2,
-    "12": 2,
-    "3": 1,
-    "7": 1,
-    "9": 1,
-    "15": 2
+    "4": 3
   },
   "message_types": {
-    "0": 21,
-    "19": 9
+    "0": 52,
+    "19": 8,
+    "4": 7
   },
   "top_reacted_messages": [
     {
@@ -42,6 +76,27 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1443203388400472074",
+      "content": "说真的，你们这最后一关剧情是不是有点难绷，我知道是为了说守密人下一章没离开这个世界，但是守密人追着学长来的然后墨菲说可以送守密人走了然后问都没问学长，甚至守密人",
+      "author": "carme.0588",
+      "reactions": 4,
+      "channel": "剧情文案"
+    },
+    {
+      "id": "1443349984631329053",
+      "content": "It seems that some forms of bonus to damage, like Corposant Soulforge, is on the",
+      "author": "vxvendetta97",
+      "reactions": 3,
+      "channel": "✅「Answered」Bonus Damage and Fortress"
+    },
+    {
+      "id": "1443084388261691442",
+      "content": "銀鑰是吃了但卡沒給<:takenotes:1357186646294138890> \n我們解決了滿銀鑰沒法獲得銀鑰的問題<:Clown:140077154142",
+      "author": "wild_pansy",
+      "reactions": 3,
+      "channel": "✅「已回答」在夕光裡沒有觸發"
+    },
+    {
       "id": "1443220151821402214",
       "content": "我還在畫其他東西這邊依然放置ing，只是突然看到了~~會扭的海星~~覺得不能只有我看到👁️👁️\nhttps://youtu.be/azbLaVCS4Ls?si=",
       "author": "ass191044",
@@ -49,11 +104,53 @@
       "channel": ""
     },
     {
+      "id": "1443228796378419251",
+      "content": "Post update, bleed seems to have inconsistent behavior when healing (maybe speci",
+      "author": "exaegrum",
+      "reactions": 2,
+      "channel": "Bleed sometimes not being removed upon heal"
+    },
+    {
       "id": "1443294425542562035",
       "content": "补一个H4-10不爆灵芝通关，纯神海目前还是缺少削减献祭的方式，带上墨菲会使得这一短板被补足，血量差不多低了一千但是生存好的多了。\n目前看来纯神海更适合10回合",
       "author": "timee_ky",
       "reactions": 2,
       "channel": "纯血神国..."
+    },
+    {
+      "id": "1443380143874769000",
+      "content": "<:Cheerup:1400771555939844149> this got fixed with the story unlock requirements",
+      "author": "fishhazardthewizard",
+      "reactions": 1,
+      "channel": "✅「Resolved」bug | gmurphy story not unlocking properly"
+    },
+    {
+      "id": "1443203520554602496",
+      "content": "下次又遇到学长了\n学长：woc你直接抛弃我走了",
+      "author": "carme.0588",
+      "reactions": 1,
+      "channel": "剧情文案"
+    },
+    {
+      "id": "1443188193787772938",
+      "content": "这里是bug，问题已知正在安排修复，会尽快放出",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」在夕光裡沒有觸發"
+    },
+    {
+      "id": "1443165786603651205",
+      "content": "如題",
+      "author": "cameliia._.",
+      "reactions": 1,
+      "channel": "💭「处理中」星辰篇第四章記憶歸檔畫面異常"
+    },
+    {
+      "id": "1443047779164356728",
+      "content": "O口O原來如此，感謝🛐",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "開銀鑰的時候也顯示守密人的台詞"
     },
     {
       "id": "1443273122462699675",

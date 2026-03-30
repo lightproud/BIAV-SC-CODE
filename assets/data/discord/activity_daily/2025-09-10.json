@@ -1,21 +1,48 @@
 {
   "date": "2025-09-10",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 45,
-  "attachments": 1,
+  "messages": 63,
+  "unique_authors": 13,
+  "reactions_total": 52,
+  "attachments": 8,
   "channel_activity": {
+    "✅「Answered」Dialogue Scroll Was a Mistake": 5,
+    "💭「Processing」Steam game login bricked when hitting exit": 20,
+    "✅「Answered」Merch Question": 2,
+    "✅「Answered」Emergency Gnosis automaticaly used without asking.": 2,
+    "✅「Answered」Add background from summer event to archive": 2,
+    "✅「Answered」Can't get into game playing on steam, this keeps popping up and I can't click anything": 1,
+    "✅「Answered」Pickman WoD text bug": 2,
+    "✅「Answered」Bug report!!!!": 1,
+    "✅「已回答」相位对弈bug": 4,
+    "✅「Answered」Weekly trials menu disappears after playing a match/ being in queue for a few seconds": 2,
+    "✅「Answered」Normal battle is treat as boss battle in H9-11": 2,
+    "💭「处理中」皮克曼意識潛游-高級動物 劇情文本bug": 4,
+    "✅「已回答」关于偷取力量导致的一系列bug": 2,
+    "✅「Answered」Potential changes and opinions for Dtide": 2,
+    "✅「已回答」预览角色的时候加个显示该角色满级满破数据的选项": 2,
+    "✅「Answered」Coste incorrecto": 5,
+    "💭「Processing」Character select bug": 2,
     "邀請碼互助/Invitation code help each other": 1,
     "1305430084420898868": 1,
     "1415230955387621397": 1
   },
   "hourly_activity": {
-    "15": 1,
-    "3": 1,
-    "7": 1
+    "6": 12,
+    "7": 6,
+    "12": 11,
+    "13": 2,
+    "15": 5,
+    "16": 5,
+    "21": 1,
+    "8": 1,
+    "9": 14,
+    "14": 4,
+    "3": 2
   },
   "message_types": {
-    "0": 1
+    "0": 41,
+    "19": 8,
+    "4": 11
   },
   "top_reacted_messages": [
     {
@@ -31,6 +58,48 @@
       "author": "morimensstaff01",
       "reactions": 19,
       "channel": ""
+    },
+    {
+      "id": "1415241889841549343",
+      "content": "感谢建议，目前我们计划采纳其中一部分。具体落地大家可以参考后续的公告🙏",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」预览角色的时候加个显示该角色满级满破数据的选项"
+    },
+    {
+      "id": "1415313363319259247",
+      "content": "So, on steam version of the game, at the startup screen with intro video and bef",
+      "author": "wolfierce",
+      "reactions": 1,
+      "channel": "💭「Processing」Steam game login bricked when hitting exit"
+    },
+    {
+      "id": "1415342413396054016",
+      "content": "Thank for the hard work",
+      "author": "arkismph",
+      "reactions": 1,
+      "channel": "✅「Answered」Bug report!!!!"
+    },
+    {
+      "id": "1415178364238561300",
+      "content": "Mientras realizaba la Inmersión diaria la carta coste 4 de pickman por alguna ra",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "✅「Answered」Coste incorrecto"
+    },
+    {
+      "id": "1415224627390844970",
+      "content": "🙏 🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Coste incorrecto"
+    },
+    {
+      "id": "1415227683192967189",
+      "content": "Hola, hemos identificado la causa de este problema y lo Repararemos lo antes pos",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Coste incorrecto"
     }
   ]
 }

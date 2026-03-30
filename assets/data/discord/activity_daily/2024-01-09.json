@@ -1,10 +1,20 @@
 {
   "date": "2024-01-09",
-  "messages": 19,
-  "unique_authors": 4,
-  "reactions_total": 83,
-  "attachments": 7,
+  "messages": 49,
+  "unique_authors": 9,
+  "reactions_total": 147,
+  "attachments": 15,
   "channel_activity": {
+    "試著畫了戈利亞和尤烏哈希的正裝！": 3,
+    "阿格里帕": 3,
+    "Morimens平行宇宙論": 2,
+    "𝓢𝓱𝓪𝓷": 6,
+    "感覺畫的特別差勁對不起娜娜": 4,
+    "【MMD】7Rings「奥尔拉Horla」": 1,
+    "吞噬摇篮曲": 1,
+    "《忘卻前夜》聲優檔案 - AEQUOR": 3,
+    "紅祭禮": 4,
+    "忘卻前夜堆": 3,
     "幻梦深潜地图全解": 5,
     "幻夢深淺地圖總覽2by井上銀溪": 2,
     "【守密人中心同人文】論守密人的資訊安全素養（第二人稱）": 8,
@@ -12,17 +22,20 @@
     "1193859503096070234": 1
   },
   "hourly_activity": {
+    "4": 3,
+    "12": 20,
+    "15": 10,
+    "21": 1,
+    "17": 1,
+    "14": 4,
+    "13": 2,
     "1": 5,
     "22": 1,
-    "14": 2,
-    "15": 8,
-    "2": 2,
-    "13": 1
+    "2": 2
   },
   "message_types": {
-    "0": 16,
-    "6": 1,
-    "19": 1
+    "0": 27,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -31,6 +44,27 @@
       "author": "metam0n",
       "reactions": 33,
       "channel": "幻梦深潜地图全解"
+    },
+    {
+      "id": "1194136323917873172",
+      "content": "其實就是拿原本的服裝去延伸成正裝的感覺⋯太喜歡看這兩個男人穿得漂漂亮亮了😭😭\n\n壓線投稿個\nUID：100047306",
+      "author": "yolo_mode",
+      "reactions": 15,
+      "channel": "試著畫了戈利亞和尤烏哈希的正裝！"
+    },
+    {
+      "id": "1194258951391432784",
+      "content": "最喜歡聽珊說𝓟𝓮𝓻𝓯𝓮𝓬𝓽了\n補個UID : 100174516",
+      "author": "banano.2",
+      "reactions": 14,
+      "channel": "𝓢𝓱𝓪𝓷"
+    },
+    {
+      "id": "1194325540564373604",
+      "content": "🥺可爱的菲因特宝宝\nuid：100299686",
+      "author": "kraken428",
+      "reactions": 14,
+      "channel": "吞噬摇篮曲"
     },
     {
       "id": "1194302229683900506",
@@ -54,6 +88,27 @@
       "channel": "自娱自乐的梗图"
     },
     {
+      "id": "1194136656073207909",
+      "content": "我還給尤烏綁了馬尾⋯嘻嘻⋯",
+      "author": "yolo_mode",
+      "reactions": 6,
+      "channel": "試著畫了戈利亞和尤烏哈希的正裝！"
+    },
+    {
+      "id": "1194252772191764511",
+      "content": "放假了于是想画画，但是板子的充电线没带回家，新买的线还在快递路上，所以只能全程用鼠标绘制整幅作品。\n由于鼠标绘画的限制不得不舍弃了很多东西。\nsad.",
+      "author": "nesoteric",
+      "reactions": 6,
+      "channel": "阿格里帕"
+    },
+    {
+      "id": "1194390622241574942",
+      "content": "-Model-\n井上银溪 \n\n-Motion-\nTaitohimea\n\n-Camera-\nTaitohimea\n\n-振付-\nKyle Hanagami\n\n-St",
+      "author": "silverstream_s",
+      "reactions": 6,
+      "channel": "【MMD】7Rings「奥尔拉Horla」"
+    },
+    {
       "id": "1194087723653414982",
       "content": "20240109地图，漏了一个联络点，已修改",
       "author": "metam0n",
@@ -73,6 +128,13 @@
       "author": "metam0n",
       "reactions": 4,
       "channel": "自娱自乐的梗图"
+    },
+    {
+      "id": "1194296638328541244",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 3,
+      "channel": "Morimens平行宇宙論"
     },
     {
       "id": "1194409095864791241",

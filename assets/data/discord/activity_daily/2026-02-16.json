@@ -1,10 +1,14 @@
 {
   "date": "2026-02-16",
-  "messages": 2157,
+  "messages": 2171,
   "unique_authors": 67,
-  "reactions_total": 710,
-  "attachments": 238,
+  "reactions_total": 726,
+  "attachments": 246,
   "channel_activity": {
+    "✅「Resolved」Sorry, it was my mistake.": 2,
+    "✅「Answered」Give us more ways to use emotes in this game": 3,
+    "💭「處理中」圖魯故事bug": 3,
+    "✅「Answered」Salvador Bug with Train and Ultra Turn": 6,
     "先祝大家新年快樂": 3,
     "河畔（新年故事）": 13,
     "Happy new year！": 1,
@@ -27,33 +31,34 @@
     "🔸阵容构建": 134
   },
   "hourly_activity": {
-    "16": 291,
+    "1": 158,
+    "18": 6,
+    "19": 39,
+    "7": 78,
+    "9": 140,
+    "6": 38,
+    "11": 180,
+    "15": 264,
+    "16": 293,
     "21": 8,
     "12": 132,
     "23": 9,
-    "7": 77,
     "0": 6,
-    "1": 156,
-    "6": 37,
-    "9": 138,
     "13": 17,
     "17": 46,
     "4": 134,
-    "11": 179,
     "5": 146,
     "10": 213,
     "20": 6,
     "22": 8,
     "14": 85,
-    "15": 262,
     "2": 100,
     "3": 36,
-    "8": 29,
-    "18": 4,
-    "19": 38
+    "8": 29
   },
   "message_types": {
-    "0": 18
+    "19": 5,
+    "0": 9
   },
   "top_reacted_messages": [
     {
@@ -76,6 +81,13 @@
       "author": "shadiaodiaodeyu_89215",
       "reactions": 12,
       "channel": "Happy new year！"
+    },
+    {
+      "id": "1473025129322774812",
+      "content": "The emotes are incredibly cute and only being able to use them in traphase (bad ",
+      "author": "spooky_penguin_",
+      "reactions": 11,
+      "channel": "✅「Answered」Give us more ways to use emotes in this game"
     },
     {
       "id": "1473002625325727796",
@@ -187,13 +199,6 @@
       "content": "",
       "author": "sayo.0320",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472785921580466266",
-      "content": "不過我個人覺得應該+12（",
-      "author": "corposant_1003",
-      "reactions": 4,
       "channel": "🔸綜合討論"
     }
   ]

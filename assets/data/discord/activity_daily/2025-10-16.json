@@ -1,19 +1,37 @@
 {
   "date": "2025-10-16",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 20,
-  "attachments": 2,
+  "messages": 34,
+  "unique_authors": 13,
+  "reactions_total": 36,
+  "attachments": 12,
   "channel_activity": {
+    "✅「Answered」Question about fanart & merch": 4,
+    "✅「已回答」改改珊的覺醒卡": 14,
+    "Is it possible to get 3 or more SSRs/Awakers in a 5 pull?": 1,
+    "好奇還有沒有別的狀態": 3,
+    "✅「已回答」什麼時候把這東西調回來": 1,
+    "Agrippa background with open eyes": 2,
+    "✅「已回答」能否把模擬器的帳戶轉到steam版本上？": 5,
+    "💭「处理中」是否有考慮以後出新角色都做個技能展示PV": 2,
     "Please please please please": 1,
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "14": 1,
-    "0": 1
+    "3": 7,
+    "17": 2,
+    "11": 4,
+    "13": 2,
+    "14": 9,
+    "12": 1,
+    "18": 1,
+    "23": 4,
+    "0": 2,
+    "8": 2
   },
   "message_types": {
-    "0": 1
+    "0": 20,
+    "19": 7,
+    "4": 5
   },
   "top_reacted_messages": [
     {
@@ -22,6 +40,62 @@
       "author": "aurora3981",
       "reactions": 20,
       "channel": "Please please please please"
+    },
+    {
+      "id": "1428434564711321693",
+      "content": "醜得要命",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "✅「已回答」什麼時候把這東西調回來"
+    },
+    {
+      "id": "1428225585758601236",
+      "content": "<@173143524324147200> <@1171539234176389241> Yes, but currently the English vers",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✅「Answered」Question about fanart & merch"
+    },
+    {
+      "id": "1428518661299376158",
+      "content": "I AGREE WITH THIS GUY 👆",
+      "author": "bongosjam",
+      "reactions": 2,
+      "channel": "Agrippa background with open eyes"
+    },
+    {
+      "id": "1428225681380216852",
+      "content": "thank you!",
+      "author": "theborkerr",
+      "reactions": 1,
+      "channel": "✅「Answered」Question about fanart & merch"
+    },
+    {
+      "id": "1428427587587276820",
+      "content": "Thank you so much! <:Cheerup:1400771555939844149>",
+      "author": "bumcchi",
+      "reactions": 1,
+      "channel": "✅「Answered」Question about fanart & merch"
+    },
+    {
+      "id": "1428337891691597864",
+      "content": "經我的觀察，大部份玩家在玩珊這隻角色都會以她為盾擊隊的主C，而盾擊亦是珊的主流玩法，相信當初設計珊這隻角色是也是以盾擊主C為特色。但不合理的是珊的覺醒卡卻用於增",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "✅「已回答」改改珊的覺醒卡"
+    },
+    {
+      "id": "1428517958874959973",
+      "content": "The Agrippa art of the phonograph is amazing, especially her eyes, can we have t",
+      "author": "sanna7424",
+      "reactions": 1,
+      "channel": "Agrippa background with open eyes"
+    },
+    {
+      "id": "1428176663467786292",
+      "content": "已使用手機綁定\n依然無效\n申請了人工客服",
+      "author": "dongdong71",
+      "reactions": 1,
+      "channel": "✅「已回答」能否把模擬器的帳戶轉到steam版本上？"
     }
   ]
 }

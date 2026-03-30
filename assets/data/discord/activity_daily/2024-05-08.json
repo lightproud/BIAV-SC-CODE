@@ -1,10 +1,14 @@
 {
   "date": "2024-05-08",
-  "messages": 18,
+  "messages": 28,
   "unique_authors": 9,
-  "reactions_total": 47,
-  "attachments": 15,
+  "reactions_total": 67,
+  "attachments": 24,
   "channel_activity": {
+    "【同人对战表情二创】": 6,
+    "奥吉尔": 1,
+    "《簡單旅遊》嘗試點不一樣的東西": 1,
+    "💙❤💜": 2,
     "混沌24入門手冊": 1,
     "守密人战斗指导手册v0.8": 1,
     "混毒毒王陣容思路分享": 2,
@@ -15,6 +19,11 @@
     "[相位对弈]硬核攻略——节奏感杂谈": 2
   },
   "hourly_activity": {
+    "7": 6,
+    "0": 1,
+    "9": 1,
+    "2": 1,
+    "3": 1,
     "23": 1,
     "17": 1,
     "6": 1,
@@ -26,8 +35,7 @@
     "14": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 3
+    "0": 10
   },
   "top_reacted_messages": [
     {
@@ -36,6 +44,13 @@
       "author": "devis0212",
       "reactions": 21,
       "channel": "混毒毒王陣容思路分享"
+    },
+    {
+      "id": "1237597224582778900",
+      "content": "",
+      "author": "jemina6___1236",
+      "reactions": 19,
+      "channel": "💙❤💜"
     },
     {
       "id": "1237862865717952532",
@@ -71,6 +86,13 @@
       "author": "silverstream_s",
       "reactions": 2,
       "channel": "特遣記錄「寧靜的裂殖」關卡地圖總覽"
+    },
+    {
+      "id": "1237665802014949376",
+      "content": "",
+      "author": "koki_kat16",
+      "reactions": 1,
+      "channel": "【同人对战表情二创】"
     }
   ]
 }

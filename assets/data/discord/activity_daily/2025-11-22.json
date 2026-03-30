@@ -1,10 +1,25 @@
 {
   "date": "2025-11-22",
-  "messages": 25,
-  "unique_authors": 11,
-  "reactions_total": 259,
-  "attachments": 4,
+  "messages": 66,
+  "unique_authors": 21,
+  "reactions_total": 296,
+  "attachments": 8,
   "channel_activity": {
+    "能不能新增一个撤回上一张出牌的功能？": 1,
+    "開銀鑰的時候也顯示守密人的台詞": 6,
+    "💭「Processing」Boss's Ancient Embers dont drop in chapter 2 (stage 2-14) normal mode": 1,
+    "✅「Resolved」Fouetté WoD (Liz) and Poof! skill (Casiah) not working": 5,
+    "💭「处理中」有繁中版潤校職缺或者志願者計畫嗎？": 1,
+    "✅「Resolved」Cant enter game in Steam Client": 1,
+    "💭「Processing」Bug on D-Tide permanent event Preemptive Training requirements": 1,
+    "✅「已回答」之前提到的“小更新”还会有有吗？": 6,
+    "✅「Answered」This game needs more marketing": 1,
+    "💭「Processing」Game stuck whenever I get into event pages": 1,
+    "Phantasmal Dive + Nerf": 6,
+    "💭「Processing」Awakeners and enemies with barrier sometimes glow bright": 1,
+    "Game crash when try to stream on discord.": 2,
+    "[Minor Typo] \"stanation\" is a misspelled version of \"stagnation\" in the ENG game": 7,
+    "Account migration": 1,
     "一點塔薇玩家的小小心得": 5,
     "誕妄．墨菲機制與搭配探討": 2,
     "N的究極羞辱": 7,
@@ -13,21 +28,30 @@
     "1441904635123208233": 1
   },
   "hourly_activity": {
+    "9": 2,
+    "10": 4,
+    "12": 3,
+    "18": 6,
+    "20": 3,
+    "17": 3,
+    "19": 1,
+    "8": 8,
+    "13": 3,
+    "6": 2,
+    "7": 5,
+    "23": 1,
+    "15": 7,
+    "0": 1,
+    "2": 8,
     "1": 1,
-    "2": 1,
     "5": 3,
-    "8": 6,
-    "15": 3,
     "16": 3,
-    "17": 2,
     "3": 1,
-    "6": 1,
-    "7": 3,
     "21": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 19
+    "19": 7,
+    "0": 34
   },
   "top_reacted_messages": [
     {
@@ -52,6 +76,27 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1441938754334887976",
+      "content": "I'm so shocked that this game has been under my radar, I usually check out socia",
+      "author": "andro3168",
+      "reactions": 17,
+      "channel": "✅「Answered」This game needs more marketing"
+    },
+    {
+      "id": "1441712474763296920",
+      "content": "對於遍地都是的簡轉繁錯字已經看到無奈了，從非常影響沉浸體驗到「反正忘卻前夜沒錢不計較了」，從看到就出戲到看到已麻木，請問這個校稿志工的位置該去哪裡、怎麼應徵呢？",
+      "author": "amstelredam",
+      "reactions": 6,
+      "channel": "💭「处理中」有繁中版潤校職缺或者志願者計畫嗎？"
+    },
+    {
+      "id": "1441738656057397300",
+      "content": "就跟其他角色開大一樣 招式就是要把台詞喊出來 這樣比較帥",
+      "author": "lingcheng.0",
+      "reactions": 5,
+      "channel": "開銀鑰的時候也顯示守密人的台詞"
+    },
+    {
       "id": "1441844361032630413",
       "content": "",
       "author": "axe_proficient",
@@ -73,11 +118,53 @@
       "channel": "N的究極羞辱"
     },
     {
+      "id": "1441857962942533693",
+      "content": "繁衍狂熱配音也配收咪人就好了😭但是可惜也沒多少喚醒體有語音<:A_pinch:1432980538536493057>",
+      "author": "shostakovich524",
+      "reactions": 3,
+      "channel": "開銀鑰的時候也顯示守密人的台詞"
+    },
+    {
       "id": "1441712335852015708",
       "content": "創死神🤩",
       "author": "ahong0727",
       "reactions": 3,
       "channel": "杜勒X皮的正史（肥腸確定"
+    },
+    {
+      "id": "1441857618674188388",
+      "content": "沒錯！對！這麼好聽怎麼能不多講點話！🥺",
+      "author": "amstelredam",
+      "reactions": 2,
+      "channel": "開銀鑰的時候也顯示守密人的台詞"
+    },
+    {
+      "id": "1441857517931200627",
+      "content": "要是有更多收米人語音就好了(泣",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "開銀鑰的時候也顯示守密人的台詞"
+    },
+    {
+      "id": "1441776575514279936",
+      "content": "__**Phantasmal Dive**__\n\nI think that this -20pts penalty per round played shoul",
+      "author": "stelladiosa",
+      "reactions": 1,
+      "channel": "Phantasmal Dive + Nerf"
+    },
+    {
+      "id": "1441813627517669543",
+      "content": "There is really no balancing cheat, no theoretical perfection that will enable n",
+      "author": "thpdom",
+      "reactions": 1,
+      "channel": "Phantasmal Dive + Nerf"
+    },
+    {
+      "id": "1441611700838076526",
+      "content": "unfortunately, i have never seen them able to do this",
+      "author": "monchi3524",
+      "reactions": 1,
+      "channel": "Account migration"
     },
     {
       "id": "1441806115519070238",

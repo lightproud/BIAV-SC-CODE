@@ -1,10 +1,26 @@
 {
   "date": "2025-12-11",
-  "messages": 28,
-  "unique_authors": 6,
-  "reactions_total": 49,
-  "attachments": 10,
+  "messages": 80,
+  "unique_authors": 18,
+  "reactions_total": 57,
+  "attachments": 19,
   "channel_activity": {
+    "✅「Answered」Battlepass Timer bug": 1,
+    "💭「Processing」Morimens freeze when I log in": 2,
+    "✅「已回答」繁中PC端黑屏": 10,
+    "关于【献祭】的bug修复": 1,
+    "✅「已解决」融災重置隊伍後，重新進入無法按命輪(刷同調率突然發現)": 1,
+    "✅「已回答」拉蒙娜專屬鑰令": 7,
+    "✅「Answered」Saved Mail Text Bug": 1,
+    "💭「Processing」Kath Posse Extra Fiamma bug": 4,
+    "✅「已回答」关于蔷薇金卷的获取": 7,
+    "✅「Answered」About emote usage: Profile decoration and PvE emotes": 4,
+    "✅「Answered」Origin of Time Expiration Time": 2,
+    "✅「Resolved」Name Changes for the bot Titles": 2,
+    "💭「Processing」Origin of Time error": 2,
+    "💭「Processing」Card bug": 5,
+    "💭「Processing」Origin of Time bug": 2,
+    "💭「Processing」Chapter 9 Resonance Color": 1,
     "蓋個圖樓": 11,
     "我也丟一下之前畫的 圖樓": 5,
     "踏莎行（拉蒙娜生日贺词）": 1,
@@ -15,21 +31,28 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "8": 4,
-    "9": 8,
-    "10": 2,
-    "13": 2,
+    "3": 7,
+    "13": 8,
+    "18": 4,
+    "8": 5,
+    "11": 9,
+    "12": 8,
+    "15": 1,
+    "9": 9,
+    "10": 11,
+    "7": 4,
+    "14": 3,
+    "17": 1,
+    "2": 5,
+    "6": 1,
     "22": 1,
-    "11": 2,
-    "12": 5,
     "16": 1,
-    "1": 2,
-    "3": 1
+    "1": 2
   },
   "message_types": {
-    "0": 14,
-    "19": 2,
-    "4": 1
+    "0": 38,
+    "19": 11,
+    "4": 3
   },
   "top_reacted_messages": [
     {
@@ -54,6 +77,13 @@
       "channel": "🔸欢乐梗图"
     },
     {
+      "id": "1448658655724699792",
+      "content": "unc why would you report this 💔",
+      "author": "avalon_roland",
+      "reactions": 5,
+      "channel": "💭「Processing」Kath Posse Extra Fiamma bug"
+    },
+    {
       "id": "1448619750836928552",
       "content": "~~希洛不是從溶蝕裡蹦出來的嗎~~",
       "author": "void_1546.",
@@ -68,11 +98,25 @@
       "channel": "踏莎行（拉蒙娜生日贺词）"
     },
     {
+      "id": "1448628993040584735",
+      "content": "專屬鑰令怎麼沒本人CG😡 \n至少拿序章那張凑合一下吧，現在這光點是什麼意思\n看板娘欸，給點尊重",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "✅「已回答」拉蒙娜專屬鑰令"
+    },
+    {
       "id": "1448634191221620736",
       "content": "11/12 update:\n- Added Beyond The Skies Part 2 to the timeline\n- Added Celestial ",
       "author": "nikolazuli",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1448505122593443900",
+      "content": "Thank you for your suggestion<:Cheerup:1400771555939844149>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Resolved」Name Changes for the bot Titles"
     },
     {
       "id": "1448595936002707528",

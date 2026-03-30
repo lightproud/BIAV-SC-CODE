@@ -1,10 +1,12 @@
 {
   "date": "2024-04-21",
-  "messages": 22,
+  "messages": 27,
   "unique_authors": 11,
-  "reactions_total": 54,
+  "reactions_total": 55,
   "attachments": 12,
   "channel_activity": {
+    "☆哀嚎搖鈴☆(๑´ㅂ`๑)": 1,
+    "迷你鯊魚🦈": 4,
     "重返絕叫哀號的原質之海（新版達芙，從入門到入土）": 3,
     "【敌方意图收录】1.3上半新增单位一览": 2,
     "超维环娜配队攻略": 4,
@@ -14,7 +16,10 @@
     "囤点自己的弱智画": 2
   },
   "hourly_activity": {
-    "6": 3,
+    "0": 1,
+    "5": 2,
+    "6": 4,
+    "20": 1,
     "9": 2,
     "17": 3,
     "16": 2,
@@ -26,8 +31,8 @@
     "10": 1
   },
   "message_types": {
-    "0": 21,
-    "19": 1
+    "0": 1,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -64,6 +69,13 @@
       "author": "henry.0701",
       "reactions": 2,
       "channel": "💌「薩爾瓦多」體驗交流分享活動💌"
+    },
+    {
+      "id": "1231698644550418596",
+      "content": "這首也很適合鯊鯊<:1nekouwu:1207140996912119808> \nhttps://youtu.be/Pdj6qoW6VVM?si=dhVKXWm",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "迷你鯊魚🦈"
     }
   ]
 }

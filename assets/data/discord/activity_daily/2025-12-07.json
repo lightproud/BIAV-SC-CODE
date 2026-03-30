@@ -1,10 +1,18 @@
 {
   "date": "2025-12-07",
-  "messages": 21,
-  "unique_authors": 7,
-  "reactions_total": 83,
-  "attachments": 8,
+  "messages": 39,
+  "unique_authors": 9,
+  "reactions_total": 88,
+  "attachments": 11,
   "channel_activity": {
+    "✅「已回答」繁中PC端黑屏": 2,
+    "关于【献祭】的bug修复": 4,
+    "✅「Answered」Stacks Missing in Battle": 3,
+    "✅「Answered」Error When Purchasing Silver Prime – Error Code 7004104": 1,
+    "💭「处理中」2-2【三條規則】前後文衝突、其他文案繁體化有誤（錯字）": 1,
+    "✅「已回答」沒有收到寧菲亞的生日信件": 1,
+    "💭「Processing」Bug/poor design with 'stacked' hand": 2,
+    "✅「Resolved」Dimensional Images should be viewable easily ingame": 4,
     "重开个存档楼）": 1,
     "蓋個圖樓": 1,
     "我也丟一下之前畫的 圖樓": 2,
@@ -16,19 +24,25 @@
     "1447283719843872808": 5
   },
   "hourly_activity": {
+    "16": 2,
+    "11": 1,
+    "12": 3,
+    "0": 3,
+    "15": 4,
+    "23": 3,
+    "2": 1,
+    "6": 2,
+    "22": 4,
     "14": 7,
     "18": 3,
-    "15": 3,
     "9": 2,
     "4": 1,
-    "6": 1,
     "3": 1,
-    "17": 2,
-    "23": 1
+    "17": 2
   },
   "message_types": {
-    "0": 9,
-    "19": 3
+    "0": 16,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -53,11 +67,25 @@
       "channel": "菲茵特"
     },
     {
+      "id": "1447052063036018771",
+      "content": "I encounter this issue all the time in regular games and traphase, today's boss ",
+      "author": "vigrace6",
+      "reactions": 4,
+      "channel": "💭「Processing」Bug/poor design with 'stacked' hand"
+    },
+    {
       "id": "1447234089236168835",
       "content": "蛐蛐空间所有人都在发圣诞帽于是摸了……不过不是还有十多天才到圣诞吗（挠头）",
       "author": "yuuuuuuu__0103",
       "reactions": 3,
       "channel": "重开个存档楼）"
+    },
+    {
+      "id": "1447265641848639611",
+      "content": "",
+      "author": "ququ12358",
+      "reactions": 1,
+      "channel": "✅「已回答」繁中PC端黑屏"
     },
     {
       "id": "1447242270167535849",

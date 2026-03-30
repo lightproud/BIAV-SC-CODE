@@ -1,31 +1,31 @@
 {
   "date": "2026-03-30",
-  "messages": 3821,
+  "messages": 4926,
   "unique_authors": 180,
-  "reactions_total": 314,
-  "attachments": 201,
+  "reactions_total": 393,
+  "attachments": 239,
   "channel_activity": {
+    "🔸morimens-game-chat": 1781,
+    "🔸한국어-채팅방": 60,
+    "🔸русский-канал": 104,
+    "🔸phòng-chat-tiếng-việt": 1597,
+    "🔸canal-español": 162,
+    "🔸canal-português": 104,
+    "🔸ruang-obrolan-indonesia": 102,
+    "🔸traphase": 105,
+    "🔸lore-chat": 74,
+    "🔸team-building": 115,
+    "🔸general-chat": 121,
+    "🔸邀请码互助┊swap-invitation-codes": 21,
+    "🔸game-question": 182,
+    "🔸erica-playground": 21,
     "🔸綜合討論": 123,
     "🔸阵容构建": 33,
-    "🔸morimens-game-chat": 1039,
-    "🔸phòng-chat-tiếng-việt": 1391,
-    "🔸canal-español": 96,
-    "🔸canal-português": 94,
     "🔸ห้องสนทนาภาษาไทย": 91,
-    "🔸traphase": 101,
-    "🔸team-building": 102,
-    "🔸general-chat": 120,
-    "🔸game-question": 135,
     "🔸机器人命令┊bot-commands": 39,
-    "🔸erica-playground": 18,
     "🔸晒卡分享": 5,
     "🔸相位对弈": 6,
-    "🔸한국어-채팅방": 58,
     "🔸deutscher-chatraum": 2,
-    "🔸русский-канал": 100,
-    "🔸ruang-obrolan-indonesia": 100,
-    "🔸lore-chat": 71,
-    "🔸邀请码互助┊swap-invitation-codes": 19,
     "1421408684776357929": 10,
     "1488204690226282697": 1,
     "1488150923212750938": 4,
@@ -45,10 +45,12 @@
     "1482261084101541969": 1
   },
   "hourly_activity": {
+    "20": 709,
+    "21": 393,
+    "22": 7,
     "17": 819,
     "18": 1057,
     "19": 544,
-    "20": 4,
     "14": 260,
     "15": 200,
     "16": 304,
@@ -68,9 +70,8 @@
     "5": 13
   },
   "message_types": {
-    "19": 666,
-    "0": 1683,
-    "23": 1
+    "19": 198,
+    "0": 907
   },
   "top_reacted_messages": [
     {
@@ -137,6 +138,34 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1488267016447201431",
+      "content": "just like u saved the pvp event 😄",
+      "author": "monchi3524",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488280252995338291",
+      "content": "",
+      "author": "samael220521",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1488281982721855641",
+      "content": "",
+      "author": "samael220521",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1488288342977024154",
+      "content": "",
+      "author": "salami_87",
+      "reactions": 3,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1488224896113836207",
       "content": "he said afterwards, i'm glad her house got burnt",
       "author": "l8989c",
@@ -184,34 +213,6 @@
       "author": "txt101225.",
       "reactions": 3,
       "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1488204615358087198",
-      "content": "With how many people are asking for X or Y at this rate OP will just have to mak",
-      "author": "megidola.",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1488209886398386236",
-      "content": "i passed out like 54 times but here's william (i spent like an hour trying to dr",
-      "author": "glitzy_x",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1488091284177551360",
-      "content": "HE IS BLOOMING",
-      "author": "cooked_chicken99",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1488223614863015956",
-      "content": "probably ellie, since she works for the government",
-      "author": "khykken",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,23 @@
 {
   "date": "2025-12-31",
-  "messages": 19,
-  "unique_authors": 10,
-  "reactions_total": 344,
-  "attachments": 7,
+  "messages": 71,
+  "unique_authors": 11,
+  "reactions_total": 350,
+  "attachments": 21,
   "channel_activity": {
+    "💭「Processing」100% crash rate Lemurian team": 1,
+    "✅「已回答」可否增設命輪和密契的計數器": 1,
+    "✅「Resolved」Pursiut no esta funcionando de manera correcta": 5,
+    "💭「处理中」造物「蟲群意識」不一定會驅散出血狀態": 5,
+    "✅「已解决」萊克維度影像每回合第一次擲骰骰不到6": 7,
+    "💭「Processing」Blessor passive interaction": 3,
+    "釐清「盲從」的爆擊率及保留效果，以及關於「保留」、「強行打出」詞條的提議": 2,
+    "✅「已回答」症狀卡「多疑」效果疑不完全": 17,
+    "✅「Answered」Pursuit does not count towards Mouchette's wheel": 3,
+    "✅「Answered」Can't click specific WoDs in Lineup": 3,
+    "✅「已解决」主頁角色不見了": 1,
+    "Daily Menophin Pack from Moonphase Vigil": 1,
+    "無法選中理智明燈": 3,
     "用笨圖開啟新的一年吧大家新年快樂": 1,
     "now spell.": 1,
     "🐱light’s-nest": 1,
@@ -15,18 +28,30 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "18": 1,
-    "21": 1,
+    "12": 12,
+    "18": 2,
+    "8": 1,
+    "9": 9,
+    "13": 3,
+    "14": 3,
+    "15": 4,
+    "23": 4,
+    "21": 4,
+    "3": 3,
+    "4": 6,
+    "10": 2,
+    "11": 8,
+    "2": 2,
+    "19": 1,
+    "20": 2,
     "16": 1,
     "5": 1,
-    "20": 1,
-    "11": 5,
-    "12": 5,
-    "10": 1,
     "7": 3
   },
   "message_types": {
-    "0": 2
+    "0": 28,
+    "19": 17,
+    "4": 7
   },
   "top_reacted_messages": [
     {
@@ -77,6 +102,48 @@
       "author": "rain_scarlet",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1455850886763905211",
+      "content": "Solo se considera un Strike para beneficiarse de los buffs de Strike",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "✅「Resolved」Pursiut no esta funcionando de manera correcta"
+    },
+    {
+      "id": "1455851527020347566",
+      "content": "Oh , que mal que no active ese tipo de efectos , gracias por aclarar .",
+      "author": "salami_87",
+      "reactions": 1,
+      "channel": "✅「Resolved」Pursiut no esta funcionando de manera correcta"
+    },
+    {
+      "id": "1455905287251951760",
+      "content": "如題\n我發現我在玩小水母的時侯嘎嘎亂丟\n發現有些時候明明擊殺但出血卻沒有淨化反而繼續累積\n附上可愛的小水母影片",
+      "author": "passerbycat",
+      "reactions": 1,
+      "channel": "💭「处理中」造物「蟲群意識」不一定會驅散出血狀態"
+    },
+    {
+      "id": "1456070941435236457",
+      "content": "His passive say that he will spawn a minion in the back every time you deplete 1",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "💭「Processing」Blessor passive interaction"
+    },
+    {
+      "id": "1455779409448402984",
+      "content": "Thank you for your feedback. After inspection, it was found that there were some",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Can't click specific WoDs in Lineup"
+    },
+    {
+      "id": "1456020143413919975",
+      "content": "那個問題已經回報過了，他是這麼說的：\n感謝您的回饋。經過檢查，發現部分輪子的點擊區域存在一些問題。我們已安排進行修復，並會在完成後盡快更新。\nhttps://d",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "無法選中理智明燈"
     },
     {
       "id": "1455793431027781632",

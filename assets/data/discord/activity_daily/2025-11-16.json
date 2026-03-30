@@ -1,10 +1,16 @@
 {
   "date": "2025-11-16",
-  "messages": 33,
-  "unique_authors": 6,
-  "reactions_total": 67,
-  "attachments": 15,
+  "messages": 63,
+  "unique_authors": 9,
+  "reactions_total": 74,
+  "attachments": 19,
   "channel_activity": {
+    "✅「Answered」Is it possible to have some official  art of events and such for content creation?": 1,
+    "💭「处理中」這是複製到哪去了": 2,
+    "✅「Answered」Can I get some help? 😭": 2,
+    "💭「处理中」典藏館音樂bug": 3,
+    "希洛在相位的伤害是不是有点高了？": 9,
+    "星辰篇未來鑰令受到刻痕加強": 13,
     "給異格也P了一版仿官海報（）": 5,
     "苍翠草甸往事（原创故事）": 18,
     "試閱：▼▼▼▼之犬": 1,
@@ -16,21 +22,26 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
-    "16": 1,
-    "18": 3,
+    "22": 3,
+    "12": 2,
+    "15": 1,
+    "16": 2,
+    "18": 6,
+    "3": 1,
+    "7": 9,
+    "8": 3,
+    "5": 2,
+    "6": 11,
     "21": 1,
     "9": 16,
     "10": 2,
-    "22": 2,
     "14": 1,
     "11": 2,
-    "8": 1,
-    "7": 3,
     "13": 1
   },
   "message_types": {
-    "0": 25,
-    "19": 1
+    "0": 26,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -69,11 +80,32 @@
       "channel": "試閱：▼▼▼▼之犬"
     },
     {
+      "id": "1439751478792421416",
+      "content": "As title stated, from what I have seen, we don't really have a Morimens Media ki",
+      "author": "satachan",
+      "reactions": 5,
+      "channel": "✅「Answered」Is it possible to have some official  art of events and such for content creation?"
+    },
+    {
       "id": "1439549969735487508",
       "content": "我比较喜欢关注剧情中的细节和小角色，因此以艾尔莎（在“特遣记录：狩猎愉快！”中一闪而过的角色）为主角写了一篇故事。同时我注意到了融蚀鼠王、融蚀疯马、融蚀野犬这三",
       "author": "150_ripe",
       "reactions": 4,
       "channel": "苍翠草甸往事（原创故事）"
+    },
+    {
+      "id": "1439594726318800956",
+      "content": "試著打出去了，一點效果都沒有",
+      "author": "vivian35._.",
+      "reactions": 1,
+      "channel": "💭「处理中」這是複製到哪去了"
+    },
+    {
+      "id": "1439495059652481034",
+      "content": "的話一聲槍響會如何受到加成",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "星辰篇未來鑰令受到刻痕加強"
     },
     {
       "id": "1439520312244048044",

@@ -1,19 +1,75 @@
 {
   "date": "2025-11-02",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 26,
+  "unique_authors": 14,
+  "reactions_total": 25,
+  "attachments": 5,
   "channel_activity": {
+    "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 1,
+    "✅「Answered」Would it be possible to show transcription quality in the covenant dismantle UI?": 2,
+    "✅「Answered」Would it be possible to have the OST tracks in the jukebox play on the home screen": 5,
+    "✅「已回答」大廳背景音樂": 2,
+    "✅「已回答」第七章共鳴字體重疊": 1,
+    "💭「Processing」Cant start the in-game download?": 1,
+    "✅「已回答」能不能提高一下每个月兑换高级灵核的数量": 5,
+    "💭「Processing」Infinite loading": 2,
+    "✅「Answered」About new Ryker buff": 1,
+    "✅「已解决」pc操作问题": 4,
     "1181147096234065920": 1,
     "1432654338982940783": 1
   },
   "hourly_activity": {
-    "4": 1,
+    "7": 1,
+    "18": 3,
+    "19": 1,
+    "13": 5,
+    "2": 2,
+    "10": 1,
+    "4": 3,
+    "15": 3,
+    "21": 2,
+    "5": 4,
     "17": 1
   },
   "message_types": {
-    "0": 2
+    "0": 21,
+    "19": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1434534520106778667",
+      "content": "I really love the game so far, and also really love the music in the game. Since",
+      "author": "dahoon0684",
+      "reactions": 21,
+      "channel": "✅「Answered」Would it be possible to have the OST tracks in the jukebox play on the home screen"
+    },
+    {
+      "id": "1434539436624056472",
+      "content": "I just passed this suggestion to Light today, hope they will be able to do it in",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "✅「Answered」Would it be possible to have the OST tracks in the jukebox play on the home screen"
+    },
+    {
+      "id": "1434540061403385927",
+      "content": "I mean, i didn't do anything special, thank to you for bringing up the suggestio",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "✅「Answered」Would it be possible to have the OST tracks in the jukebox play on the home screen"
+    },
+    {
+      "id": "1434566811981975753",
+      "content": "所以这一段时间保持宽容吧（看在送200抽的份上我会给校猫好脸色一段时间的）",
+      "author": "2300011747",
+      "reactions": 1,
+      "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
+    },
+    {
+      "id": "1434412314773426337",
+      "content": "感觉是我鼠标的问题",
+      "author": "luozijie_45939",
+      "reactions": 1,
+      "channel": "✅「已解决」pc操作问题"
+    }
+  ]
 }

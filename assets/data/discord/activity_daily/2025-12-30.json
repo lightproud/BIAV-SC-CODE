@@ -1,10 +1,30 @@
 {
   "date": "2025-12-30",
-  "messages": 15,
-  "unique_authors": 9,
-  "reactions_total": 693,
-  "attachments": 12,
+  "messages": 103,
+  "unique_authors": 23,
+  "reactions_total": 721,
+  "attachments": 24,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 2,
+    "💭「Processing」Intro movie not changing on PC when it changes on mobile.": 5,
+    "✅「已回答」可否增設命輪和密契的計數器": 1,
+    "✅「已回答」症狀卡「多疑」效果疑不完全": 13,
+    "✅「Answered」Pursuit does not count towards Mouchette's wheel": 20,
+    "✅「Answered」Can't click specific WoDs in Lineup": 4,
+    "✅「已解决」主頁角色不見了": 3,
+    "茉夏的追擊動畫劈空氣": 1,
+    "Steam Achievements Mayhaps?": 1,
+    "浮動的黑印掉落比例": 1,
+    "✅「Answered」Display crit rate (and maybe final dmg if crit) per card?": 3,
+    "1 Support as lineup is a bit tight": 1,
+    "✅「已回答」豹豹貓貓請問我音樂呢": 12,
+    "Add Tags to Awakeners and Cards": 2,
+    "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details": 4,
+    "✅「Answered」Covenant Plan - Let us use the same pieces in multiple plans": 2,
+    "💭「Processing」Link new Radio Dramas in Event tag when they are released": 1,
+    "✅「Answered」emoji": 2,
+    "Is there any chance that N could be added to the game? N有可能实装吗？": 8,
+    "相位对弈中命轮「催眠灵摆」效果失效": 2,
     "🔸礼包码┊gift-codes": 1,
     "🔸忘却前夜┊morimens-tv": 1,
     "1455674884712829139": 2,
@@ -14,21 +34,31 @@
     "1455453095592071269": 4
   },
   "hourly_activity": {
-    "9": 1,
+    "5": 1,
+    "17": 3,
+    "7": 17,
+    "8": 6,
+    "3": 3,
+    "11": 3,
+    "12": 12,
+    "18": 3,
+    "19": 1,
+    "4": 28,
+    "10": 1,
+    "13": 4,
+    "21": 3,
+    "14": 1,
+    "6": 11,
+    "9": 3,
     "22": 1,
-    "21": 2,
     "0": 1,
-    "4": 2,
-    "7": 1,
-    "16": 1,
-    "17": 1,
-    "18": 1,
-    "6": 4
+    "16": 1
   },
   "message_types": {
-    "0": 13,
-    "4": 1,
-    "19": 1
+    "0": 64,
+    "19": 17,
+    "4": 6,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -53,6 +83,20 @@
       "channel": ""
     },
     {
+      "id": "1455469398411444447",
+      "content": "Hi, thank you all for your supervision🙏 \nThe information that everyone hopes to ",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
+    },
+    {
+      "id": "1455497859540582460",
+      "content": "To separate the concerns of card naming and card effects, and to better understa",
+      "author": "null.pointer_exception",
+      "reactions": 6,
+      "channel": "Add Tags to Awakeners and Cards"
+    },
+    {
       "id": "1455689712667856948",
       "content": "A simple guide and showcase video so new players can get a grasp of Mouchette's ",
       "author": "frosthief",
@@ -60,11 +104,88 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1455399500750262312",
+      "content": "<#1180845276823564288> \n问问N可能实装吗？三权柱就N没有实装了，而且这个人设感觉也挺有意思的，想看N的繁衍剧情，不知道他这个性格会干啥。",
+      "author": "0399_ryomina",
+      "reactions": 3,
+      "channel": "Is there any chance that N could be added to the game? N有可能实装吗？"
+    },
+    {
+      "id": "1455429577710112941",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 2,
+      "channel": "Who Ryker's Designer pls come talk ?"
+    },
+    {
+      "id": "1455463157278576754",
+      "content": "Thank you for the suggestion. The project team will adopt it. However, this feat",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「Answered」Display crit rate (and maybe final dmg if crit) per card?"
+    },
+    {
       "id": "1455674884712829139",
       "content": "At the moment, the effect of the wheel is just not present in Pure chaos.\nCould ",
       "author": "vxvendetta97",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1455540122991722578",
+      "content": "那就改成「抽到此卡的回合，若出牌數少於等於三」",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "✅「已回答」症狀卡「多疑」效果疑不完全"
+    },
+    {
+      "id": "1455635547971391560",
+      "content": "多疑的效果實際上為\n抽到後，給予一層狀態 症狀：多疑”若本回合打出卡牌少於等於3張,下回合額外獲得2點算力。”\n實際並不是卡牌計算並給予後續效果\n是狀態計算並給",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": "✅「已回答」症狀卡「多疑」效果疑不完全"
+    },
+    {
+      "id": "1455423046687916032",
+      "content": "<:A_pinch:1432980538536493057>",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "✅「Answered」Pursuit does not count towards Mouchette's wheel"
+    },
+    {
+      "id": "1455501859719610449",
+      "content": "There is a problem that a specific WoD is not selected normally on the WoD equip",
+      "author": "shrike784",
+      "reactions": 1,
+      "channel": "✅「Answered」Can't click specific WoDs in Lineup"
+    },
+    {
+      "id": "1455556198261723238",
+      "content": "場景CG才有劇情CG沒法顯示",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "✅「已解决」主頁角色不見了"
+    },
+    {
+      "id": "1455575693487243316",
+      "content": "thanks for following up, yup appreciate this could take some time, but glad it'l",
+      "author": "lavache.",
+      "reactions": 1,
+      "channel": "✅「Answered」Display crit rate (and maybe final dmg if crit) per card?"
+    },
+    {
+      "id": "1455534729452585033",
+      "content": "我反而是覺得沒BGM之後很枯燥乏味🤣我都在戰鬥爽，沒BGM就沒有那種急切感或者危機感了，就會打得沒那麼爽(",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "✅「已回答」豹豹貓貓請問我音樂呢"
+    },
+    {
+      "id": "1455471637041381553",
+      "content": "Thanks for the consideration",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
     },
     {
       "id": "1455464855460122654",

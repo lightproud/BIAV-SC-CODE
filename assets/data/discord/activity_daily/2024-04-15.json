@@ -1,10 +1,11 @@
 {
   "date": "2024-04-15",
-  "messages": 97,
+  "messages": 100,
   "unique_authors": 11,
-  "reactions_total": 52,
-  "attachments": 11,
+  "reactions_total": 84,
+  "attachments": 12,
   "channel_activity": {
+    "雨天": 3,
     "死抗序列": 2,
     "血肉隊神父抽取建議和評價": 2,
     "[法兰]账号养成分享": 2,
@@ -13,6 +14,8 @@
     "原創喚醒體投稿：「戀人」關雎": 81
   },
   "hourly_activity": {
+    "12": 1,
+    "23": 2,
     "13": 5,
     "2": 4,
     "1": 78,
@@ -23,10 +26,16 @@
     "8": 3
   },
   "message_types": {
-    "0": 82,
-    "19": 15
+    "0": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1229408909454737408",
+      "content": "***「下雨的時候，我會在沙灘上走來走去......\n有幾年了吧，就看看遠方，不幹別的。」***\nUID:100333221",
+      "author": "lemoncandy25",
+      "reactions": 32,
+      "channel": "雨天"
+    },
     {
       "id": "1229420187262910485",
       "content": "然後我本人",

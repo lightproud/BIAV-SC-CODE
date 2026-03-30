@@ -1,24 +1,40 @@
 {
   "date": "2025-10-13",
-  "messages": 6,
-  "unique_authors": 3,
-  "reactions_total": 12,
-  "attachments": 3,
+  "messages": 24,
+  "unique_authors": 6,
+  "reactions_total": 16,
+  "attachments": 9,
   "channel_activity": {
+    "✅「Answered」How many cards does \"Mutated Heart\" draw without Resonances?": 2,
+    "✅「Answered」Chapter 6 boss bug": 2,
+    "✅「已回答」對弈 強效對凱刻斯的回血沒效果": 1,
+    "✅「已回答」寧妃，夜潮，BUG": 2,
+    "💭「Processing」English translation not translation to english. (Pc version)": 1,
+    "✅「Answered」No Gnosis Fragments from Awakening Events": 2,
+    "✅「Answered」Silver Background  Bug": 2,
+    "✅「Answered」friend cannot bind invitation": 1,
+    "✅「Answered」UK Mobile login issues": 2,
+    "✅「已解决」steam端忘却前夜打开一直黑屏": 1,
+    "鼠群出击叠次大赛": 2,
     "《忘却前夜》与《克苏鲁神话》的关系": 2,
     "1421408684776357929": 2,
     "1181998821291606097": 1,
     "1415230955387621397": 1
   },
   "hourly_activity": {
+    "3": 13,
+    "18": 1,
+    "21": 1,
+    "13": 1,
+    "1": 3,
     "2": 1,
-    "3": 1,
     "15": 2,
     "16": 1,
     "12": 1
   },
   "message_types": {
-    "19": 2
+    "0": 12,
+    "4": 6
   },
   "top_reacted_messages": [
     {
@@ -27,6 +43,27 @@
       "author": "navirecorbeau",
       "reactions": 12,
       "channel": ""
+    },
+    {
+      "id": "1427138715620343930",
+      "content": "Hi, this issue has been fixed~We will release it in the game as soon as possible",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「Answered」Silver Background  Bug"
+    },
+    {
+      "id": "1427142866039210005",
+      "content": "嗨守密人，「夜潮汹涌」享受双倍「症状卡加成」，是因为牌库中同时存在多张「夜潮汹涌」，此时打出 1 张症状卡，能够触发了多次加成。我们会在后续版本中修复该问题🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」寧妃，夜潮，BUG"
+    },
+    {
+      "id": "1427108354794193098",
+      "content": "",
+      "author": "elv_juan.carlos",
+      "reactions": 1,
+      "channel": "鼠群出击叠次大赛"
     }
   ]
 }

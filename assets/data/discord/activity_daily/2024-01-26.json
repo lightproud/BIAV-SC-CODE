@@ -1,10 +1,11 @@
 {
   "date": "2024-01-26",
-  "messages": 22,
+  "messages": 24,
   "unique_authors": 10,
-  "reactions_total": 3,
+  "reactions_total": 4,
   "attachments": 3,
   "channel_activity": {
+    "又是罗坦": 2,
     "人已经退了，攻略删了，号销了，可以别骂我了吗？": 2,
     "幻梦深潜地图全解": 5,
     "记录点有意思的深海搭配（阵容/遗物/刻印等）": 12,
@@ -12,20 +13,20 @@
     "1197183401388683386": 2
   },
   "hourly_activity": {
+    "2": 10,
+    "5": 4,
     "0": 1,
     "13": 1,
     "4": 1,
-    "5": 3,
     "8": 1,
     "10": 1,
-    "2": 9,
     "6": 3,
     "12": 1,
     "14": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 5
+    "0": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -34,6 +35,13 @@
       "author": "banano.2",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1200272237979258920",
+      "content": "哇！😍",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "又是罗坦"
     },
     {
       "id": "1200321175151198218",

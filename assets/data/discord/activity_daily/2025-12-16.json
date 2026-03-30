@@ -1,10 +1,31 @@
 {
   "date": "2025-12-16",
-  "messages": 21,
-  "unique_authors": 5,
-  "reactions_total": 666,
-  "attachments": 5,
+  "messages": 77,
+  "unique_authors": 21,
+  "reactions_total": 680,
+  "attachments": 24,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 4,
+    "✅「Answered」Battlepass Timer bug": 1,
+    "✅「Answered」Purchasing Silver Prime": 1,
+    "✅「Answered」Ham Exalt Text is wrongly string-interpolated": 2,
+    "✅「已回答」活动道具每关能调成一样的吗": 1,
+    "✅「已回答」造物收藏問題": 6,
+    "✅「已回答」文字特效及描述不統一": 1,
+    "✅「已回答」关于手册奖励": 2,
+    "Accidentally spent silver prime on Menophin": 2,
+    "💭「Processing」It looks like I received the mail twice": 1,
+    "✅「已回答」无形者的礼券里的头像和表情什么时候上新？": 3,
+    "✅「Answered」Unable to set nickname in Korean": 4,
+    "💭「Processing」Recurring Notification from event": 6,
+    "✅「已回答」没有收到维护补偿的50银芯": 3,
+    "💭「处理中」眼睛好痛": 2,
+    "💭「Processing」Can't receive qookka SMS verification code in UK and possibly US": 3,
+    "💭「处理中」皮克曼吞噬开大后再开拉蒙娜大招并打出非拉蒙娜大招抓出来的牌会使拉蒙娜抓出来的零费卡恢复算力消耗": 2,
+    "✅「Answered」Curiculum(Battle Pass) Premium rewards suggestion": 6,
+    "✅「已回答」这些呆呆的头像有没有高清大头版": 3,
+    "求助，我是被版本淘汰了？": 1,
+    "Spelling error in Silver Frost Archives": 2,
     "蓋個圖樓": 10,
     "我也丟一下之前畫的 圖樓": 3,
     "一點仿官": 3,
@@ -12,21 +33,29 @@
     "🔸忘却前夜┊morimens-tv": 4
   },
   "hourly_activity": {
-    "5": 1,
-    "6": 2,
-    "8": 3,
-    "14": 2,
-    "16": 5,
+    "8": 7,
+    "12": 4,
+    "13": 1,
+    "0": 2,
+    "22": 1,
+    "2": 8,
+    "3": 27,
+    "16": 6,
+    "5": 3,
+    "10": 1,
+    "11": 1,
+    "6": 3,
+    "14": 3,
+    "4": 1,
+    "1": 3,
+    "23": 3,
     "17": 2,
-    "12": 2,
-    "23": 1,
-    "0": 1,
-    "3": 1,
     "9": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 1
+    "0": 34,
+    "4": 16,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -65,6 +94,20 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1450623504616657089",
+      "content": "Will Silver Prime purchases be at one point converted to the national price valu",
+      "author": "snorlax01",
+      "reactions": 4,
+      "channel": "✅「Answered」Purchasing Silver Prime"
+    },
+    {
+      "id": "1450373557912731690",
+      "content": "Hi,\n\nI accidentally spent silver prime for normal prime by 1. You can see I have",
+      "author": "enumaellis",
+      "reactions": 4,
+      "channel": "Accidentally spent silver prime on Menophin"
+    },
+    {
       "id": "1450334576143503360",
       "content": "https://youtube.com/shorts/_CgT5wrKEjg?si=aLT8q5wTqDaeyqkV",
       "author": "animeholic09",
@@ -84,6 +127,41 @@
       "author": "yaoshidoppa",
       "reactions": 3,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1450436403488882728",
+      "content": "感覺既然是圖鑑 更希望收錄這種稀有小東西了",
+      "author": "amstelredam",
+      "reactions": 2,
+      "channel": "✅「已回答」造物收藏問題"
+    },
+    {
+      "id": "1450531995116634163",
+      "content": "按之前淡墨的活动看还是体力打最后一天的关收益最高，但是这次最后一关是印章，新人更缺经验药想刷第一关又会亏很多活动收益，能不能改一下，让人缺什么就刷什么？",
+      "author": "y.u.i1069",
+      "reactions": 1,
+      "channel": "✅「已回答」活动道具每关能调成一样的吗"
+    },
+    {
+      "id": "1450327993233965138",
+      "content": "What notification? Does the notification you mentioned refer to the red dot on t",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Recurring Notification from event"
+    },
+    {
+      "id": "1450312920574726324",
+      "content": "是閃光努比亞，快抓住它",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "💭「处理中」眼睛好痛"
+    },
+    {
+      "id": "1450327384875335771",
+      "content": "<@475022373448581135> Please send me your old and new phone numbers via private ",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Can't receive qookka SMS verification code in UK and possibly US"
     },
     {
       "id": "1450414452041318502",

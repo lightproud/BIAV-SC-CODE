@@ -1,18 +1,20 @@
 {
   "date": "2025-05-19",
-  "messages": 2,
+  "messages": 3,
   "unique_authors": 2,
-  "reactions_total": 10,
-  "attachments": 5,
+  "reactions_total": 13,
+  "attachments": 6,
   "channel_activity": {
+    "Sorel buff better?": 1,
     "融灾": 1,
     "關卡地圖「幻夢深潛」總覽Ⅰ（重置版）": 1
   },
   "hourly_activity": {
+    "21": 1,
     "9": 2
   },
   "message_types": {
-    "0": 2
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -21,6 +23,13 @@
       "author": "moxiangsenluo.",
       "reactions": 10,
       "channel": "融灾"
+    },
+    {
+      "id": "1374130540130861067",
+      "content": "Hi devs, this was a lot of set up and it just feels like maybe it could be bette",
+      "author": "climbkaly",
+      "reactions": 3,
+      "channel": "Sorel buff better?"
     }
   ]
 }

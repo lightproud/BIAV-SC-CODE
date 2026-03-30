@@ -1,10 +1,12 @@
 {
   "date": "2024-01-01",
-  "messages": 13,
+  "messages": 19,
   "unique_authors": 7,
-  "reactions_total": 36,
-  "attachments": 27,
+  "reactions_total": 43,
+  "attachments": 29,
   "channel_activity": {
+    "笑话合集": 1,
+    "跨區靈感許願池.gif": 5,
     "在bilibili發佈過的攻略自搬運": 2,
     "密契副词条转录讲解（守密人55级解锁）": 1,
     "莉茲傷害測算": 1,
@@ -13,17 +15,17 @@
     "自製界域和喚醒體——夢境篇": 4
   },
   "hourly_activity": {
+    "6": 1,
+    "4": 4,
+    "8": 3,
     "10": 2,
-    "4": 1,
     "12": 1,
-    "8": 1,
     "9": 2,
     "13": 2,
     "14": 4
   },
   "message_types": {
-    "0": 12,
-    "19": 1
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -46,6 +48,20 @@
       "author": "dyyqcwj",
       "reactions": 10,
       "channel": "自製界域与喚醒體——以太篇"
+    },
+    {
+      "id": "1191295714970574898",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 4,
+      "channel": "跨區靈感許願池.gif"
+    },
+    {
+      "id": "1191231738907729931",
+      "content": "",
+      "author": "sofakiwi_0228",
+      "reactions": 3,
+      "channel": "跨區靈感許願池.gif"
     }
   ]
 }

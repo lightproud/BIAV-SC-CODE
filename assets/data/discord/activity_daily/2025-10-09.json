@@ -1,17 +1,83 @@
 {
   "date": "2025-10-09",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
+  "messages": 49,
+  "unique_authors": 9,
+  "reactions_total": 5,
   "attachments": 0,
   "channel_activity": {
+    "✅「Answered」Name change": 4,
+    "✅「Answered」How many cards does \"Mutated Heart\" draw without Resonances?": 2,
+    "💭「Processing」English translation not translation to english. (Pc version)": 2,
+    "✅「Answered」No Gnosis Fragments from Awakening Events": 3,
+    "✅「已解决」steam端忘却前夜打开一直黑屏": 2,
+    "✅「已回答」手冊介面": 2,
+    "✅「已回答」今天上线还是没发现有发延期补偿": 2,
+    "✅「已回答」我没有收到延期补偿": 5,
+    "Traphase Casiah revive early game and aliemus late game feel so bad to get": 1,
+    "✅「已回答」鑰令 群山的覺悟": 4,
+    "下个角色是超维吧，能不能别出超距那种破坏界域设计的东西了": 2,
+    "💭「Processing」Faros missing info": 2,
+    "💭「Processing」Pickman - Chromaphage \"inspiration\"": 1,
+    "💭「处理中」凱蒂古拉相位傷害疑問": 2,
+    "✅「已回答」关于银钥觉醒和快捷键": 4,
+    "✅「Answered」Mobile login via Steam failed - \"the game is not available in your region\"": 2,
+    "💭「Processing」FB link problem": 1,
+    "✅「Answered」question about fan content": 3,
+    "✅「已解决」进了普池的限定角色的活动以后还会复刻吗？": 1,
+    "💭「处理中」环娜皮肤大招远景小人没变": 3,
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "19": 1
+    "2": 19,
+    "18": 1,
+    "6": 4,
+    "3": 15,
+    "21": 1,
+    "5": 4,
+    "15": 2,
+    "16": 1,
+    "19": 2
   },
   "message_types": {
-    "0": 1
+    "0": 28,
+    "4": 16,
+    "19": 4
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1425911067711770654",
+      "content": "101049058",
+      "author": "dusha_69",
+      "reactions": 1,
+      "channel": "✅「Answered」Name change"
+    },
+    {
+      "id": "1425732971981443170",
+      "content": "Thank you for the feedback. I will inquire about it🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」How many cards does \"Mutated Heart\" draw without Resonances?"
+    },
+    {
+      "id": "1425675222207565946",
+      "content": "感谢反馈，这个问题戈雅已经反馈了~还在确认中<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」手冊介面"
+    },
+    {
+      "id": "1425686321241919488",
+      "content": "Hi, we have found the cause and it was due to incorrect identification and posit",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Mobile login via Steam failed - \"the game is not available in your region\""
+    },
+    {
+      "id": "1425674903150923838",
+      "content": "thanks a lot",
+      "author": "zerami",
+      "reactions": 1,
+      "channel": "✅「Answered」question about fan content"
+    }
+  ]
 }

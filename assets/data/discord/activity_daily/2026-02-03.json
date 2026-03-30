@@ -1,10 +1,17 @@
 {
   "date": "2026-02-03",
-  "messages": 7788,
+  "messages": 7798,
   "unique_authors": 164,
-  "reactions_total": 1197,
-  "attachments": 348,
+  "reactions_total": 1211,
+  "attachments": 349,
   "channel_activity": {
+    "💭「處理中」回放不能看": 1,
+    "Who Ryker's Designer pls come talk ?": 1,
+    "謂之「尸解」而登仙": 1,
+    "Enemy still only attacking once after Wanda 10 stack exalt": 1,
+    "Possibilty of rebalancing Wanda?": 3,
+    "Effects with turn counts from wods are hard to keep track of": 1,
+    "做不到的事能不能不要轻易承诺": 2,
     "圖樓": 1,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 9,
     "1467801756359589971": 2,
@@ -15,33 +22,34 @@
     "🔸morimens-game-chat": 5877
   },
   "hourly_activity": {
-    "12": 436,
+    "12": 437,
+    "4": 617,
+    "13": 498,
+    "19": 215,
+    "20": 21,
+    "6": 265,
     "1": 360,
     "2": 202,
     "5": 601,
     "9": 334,
     "11": 386,
-    "4": 616,
     "16": 173,
     "0": 394,
     "3": 438,
-    "6": 263,
     "7": 322,
     "8": 349,
     "10": 306,
-    "13": 497,
     "14": 375,
     "15": 561,
     "17": 300,
     "18": 419,
-    "19": 211,
-    "20": 20,
     "21": 32,
     "22": 75,
     "23": 118
   },
   "message_types": {
-    "0": 1
+    "0": 8,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -106,6 +114,13 @@
       "author": "corposant_1003",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468324605570715691",
+      "content": "In the current iteration of the game, a lot of effects from wods have cooldowns,",
+      "author": "satachan",
+      "reactions": 8,
+      "channel": "Effects with turn counts from wods are hard to keep track of"
     },
     {
       "id": "1468196635199672441",
@@ -174,13 +189,6 @@
       "id": "1468045742798147687",
       "content": "yo +12 finally",
       "author": "sooneruzuki",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1468087143812305122",
-      "content": "🍿",
-      "author": "arisuu0604",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

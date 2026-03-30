@@ -1,10 +1,31 @@
 {
   "date": "2026-01-26",
-  "messages": 16,
-  "unique_authors": 6,
-  "reactions_total": 59,
-  "attachments": 13,
+  "messages": 102,
+  "unique_authors": 37,
+  "reactions_total": 166,
+  "attachments": 52,
   "channel_activity": {
+    "✅「Answered」Choose if OE or not.": 1,
+    "✅「Resolved」Resonance Reset": 1,
+    "徐设计的什么逼玩意？恶心玩家": 8,
+    "💭「处理中」典藏馆事件的解锁到底是什么机制？": 1,
+    "✅「已回答」关于核心课题以外的头像...": 2,
+    "卡牌介紹缺失bug": 1,
+    "Uvhash boss is bugged in phantasmal dive": 1,
+    "特遣紀錄 bug": 1,
+    "Regarding Absolute axiom (+12) on limited characters": 8,
+    "There are multiple sections that haven’t been translated.": 5,
+    "双持两个+12命轮的使用优化建议": 1,
+    "希望可以增加角色重复获取人格深化的上限": 13,
+    "Leigh boss shield bug in Phantasmal Dive?": 1,
+    "希望統整一點": 8,
+    "卡面顯示錯誤": 4,
+    "新角活動劇情文本等等未翻譯（成外文）問題": 2,
+    "我們克總被融蝕了嗎": 2,
+    "臨時強效無法影響到黏液彙集的bug": 7,
+    "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look": 2,
+    "Support Awakeners have their Omen and Soulforge at 0?": 5,
+    "新命輪故事用字問題": 12,
     "【忘却前夜】徐-攻略：亲民角色，0启可用的毒队次辅/通用挂件": 1,
     "圖樓": 2,
     "不是if線就是死後幻覺才有可能": 2,
@@ -15,17 +36,28 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
-    "14": 4,
-    "9": 1,
-    "11": 1,
-    "12": 2,
-    "8": 1,
-    "7": 3,
-    "18": 4
+    "20": 1,
+    "13": 15,
+    "5": 4,
+    "7": 10,
+    "17": 3,
+    "10": 5,
+    "16": 7,
+    "4": 13,
+    "14": 8,
+    "3": 7,
+    "15": 5,
+    "2": 1,
+    "18": 5,
+    "11": 3,
+    "12": 9,
+    "9": 3,
+    "6": 2,
+    "8": 1
   },
   "message_types": {
-    "0": 3,
-    "19": 2
+    "0": 78,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -36,11 +68,67 @@
       "channel": ""
     },
     {
+      "id": "1465183141223338137",
+      "content": "<@633215996508766229> <@1131790839291596841>\n\nAs there is still no communication",
+      "author": "satachan",
+      "reactions": 25,
+      "channel": "Regarding Absolute axiom (+12) on limited characters"
+    },
+    {
+      "id": "1465213374060040336",
+      "content": "明目张胆的拆分机制是吧？把本来是被动的挪到启灵里；启灵里本该有的每回合施加痴醉丢到专造里？那现在你徐的被动也消失了。\n看看类似的克莱门汀的启灵和被动呢？",
+      "author": "15828894371",
+      "reactions": 14,
+      "channel": "徐设计的什么逼玩意？恶心玩家"
+    },
+    {
+      "id": "1465189313082949850",
+      "content": "I 100% agree with everything that was said here. I spent a good amount of money ",
+      "author": "crescendo09",
+      "reactions": 14,
+      "channel": "Regarding Absolute axiom (+12) on limited characters"
+    },
+    {
+      "id": "1465442292075855902",
+      "content": "Redz's take about OE would be interesting.\nThe moment you have your over exalt b",
+      "author": "sexysneakystoat1625",
+      "reactions": 12,
+      "channel": "✅「Answered」Choose if OE or not."
+    },
+    {
       "id": "1465418153596293328",
       "content": "And the finished product ~~why is he grown up~~ <:T_stare:1400771751650136145>",
       "author": "happyskull",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1465334184342978621",
+      "content": "The Resonance description say that it will be resetted at turn end or after the ",
+      "author": "vxvendetta97",
+      "reactions": 10,
+      "channel": "✅「Resolved」Resonance Reset"
+    },
+    {
+      "id": "1465184886229958852",
+      "content": "While as a fellow developer, I know that a patch canmot be taken out in the matt",
+      "author": "satachan",
+      "reactions": 5,
+      "channel": "Regarding Absolute axiom (+12) on limited characters"
+    },
+    {
+      "id": "1465183921091121294",
+      "content": "To both tease a highly controversial mechanic and release it despite literally t",
+      "author": "bagels5899",
+      "reactions": 4,
+      "channel": "Regarding Absolute axiom (+12) on limited characters"
+    },
+    {
+      "id": "1465177429797765161",
+      "content": "In TH Ver include other language ver., there are multiple sections that haven’t ",
+      "author": "darkerkuro",
+      "reactions": 4,
+      "channel": "There are multiple sections that haven’t been translated."
     },
     {
       "id": "1465267084622696468",
@@ -57,11 +145,46 @@
       "channel": ""
     },
     {
+      "id": "1465211077900898482",
+      "content": "如題，卡牌描述缺失",
+      "author": "myth1538",
+      "reactions": 3,
+      "channel": "我們克總被融蝕了嗎"
+    },
+    {
       "id": "1465347841374289921",
       "content": "建议大多数老玩家抽0启，新人如果抽数紧可以先观望不抽；\n毒队爱好者/重氪玩家可抽3启及以上\n\n详见：https://www.bilibili.com/video",
       "author": "mtyl.eth",
       "reactions": 3,
       "channel": "【忘却前夜】徐-攻略：亲民角色，0启可用的毒队次辅/通用挂件"
+    },
+    {
+      "id": "1465243527142182985",
+      "content": "放心，以后角色包这样的",
+      "author": "carme.0588",
+      "reactions": 2,
+      "channel": "徐设计的什么逼玩意？恶心玩家"
+    },
+    {
+      "id": "1465335804959391954",
+      "content": "似乎所有常駐角色開到超限 這個位置還是叫人格深化\n\n限定有開到超限就是超限爆發名\n\n反正最後一定都是最終法則的名",
+      "author": "_buqi",
+      "reactions": 2,
+      "channel": "希望統整一點"
+    },
+    {
+      "id": "1465342800739434638",
+      "content": "刚好+4就是超限的名字，只要超过了就没了",
+      "author": "bailuoxiao",
+      "reactions": 2,
+      "channel": "希望統整一點"
+    },
+    {
+      "id": "1465196436286214156",
+      "content": "They were too busy making AA to quality check this build version",
+      "author": "satachan",
+      "reactions": 2,
+      "channel": "Support Awakeners have their Omen and Soulforge at 0?"
     },
     {
       "id": "1465317228219076723",

@@ -1,10 +1,19 @@
 {
   "date": "2025-12-13",
-  "messages": 32,
-  "unique_authors": 7,
-  "reactions_total": 52,
-  "attachments": 9,
+  "messages": 85,
+  "unique_authors": 14,
+  "reactions_total": 70,
+  "attachments": 17,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 2,
+    "💭「处理中」拉蒙娜鑰令和夏活鑰令是否可以加入鑰令分類頁籤？": 1,
+    "关于【献祭】的bug修复": 1,
+    "✅「Answered」Curiculum(Battle Pass) Premium rewards suggestion": 7,
+    "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge": 30,
+    "💭「处理中」希望道中的商店等地方可以更直观看出未曾获取过的造物": 3,
+    "💭「Processing」Side story visual bugs": 4,
+    "💭「Processing」Raid stuck after clearing fight seemingly only on certain parties?": 2,
+    "Auto-Dismantle": 3,
     "蓋個圖樓": 4,
     "我也丟一下之前畫的 圖樓": 2,
     "一點仿官": 15,
@@ -15,21 +24,29 @@
     "1442647324575928441": 1
   },
   "hourly_activity": {
+    "3": 1,
+    "5": 11,
+    "8": 15,
+    "4": 1,
+    "1": 2,
+    "9": 9,
+    "13": 3,
+    "10": 10,
+    "22": 4,
+    "6": 1,
     "7": 3,
-    "8": 2,
-    "10": 1,
     "14": 1,
     "18": 12,
     "19": 3,
     "17": 4,
-    "22": 1,
     "15": 3,
     "20": 1,
     "12": 1
   },
   "message_types": {
-    "0": 29,
-    "19": 1
+    "0": 39,
+    "19": 13,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -45,6 +62,13 @@
       "author": "foxcatfurry",
       "reactions": 10,
       "channel": "想不到的第二張水仙視姦"
+    },
+    {
+      "id": "1449269886336503868",
+      "content": "现在看不出来哪个开了图鉴哪个没开<:A_pinch:1432980538536493057>",
+      "author": "huanire",
+      "reactions": 7,
+      "channel": "💭「处理中」希望道中的商店等地方可以更直观看出未曾获取过的造物"
     },
     {
       "id": "1449467312821502013",
@@ -68,11 +92,32 @@
       "channel": "應該是圖樓"
     },
     {
+      "id": "1449318572320100464",
+      "content": "Yes and exactly what i concern, i'd say nearly half of them should be and can be",
+      "author": "qingming6054",
+      "reactions": 3,
+      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
+    },
+    {
+      "id": "1449523982675218537",
+      "content": "非常超級無敵之需要",
+      "author": "amstelredam",
+      "reactions": 3,
+      "channel": "💭「处理中」希望道中的商店等地方可以更直观看出未曾获取过的造物"
+    },
+    {
       "id": "1449469203613749440",
       "content": "終末,目視之餘：從牌庫中選取最多10張指令卡，加入手牌並使其算力消耗降低至0並且打出後獲得250點銀鑰充能；無視算力調和。\n\n晰夢,終有尾聲：從所有鑰令中選取一",
       "author": "void_1546.",
       "reactions": 3,
       "channel": "一點仿官"
+    },
+    {
+      "id": "1449389676958847017",
+      "content": "P.s Goya, don't worry, i already talked to Light about this ^\nBut we could still",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
     },
     {
       "id": "1449405114971455639",
@@ -108,6 +153,27 @@
       "author": "lonely_tree",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1449318057452372040",
+      "content": "如題，目前夏活鑰令仲夏留念和美夢一剎，以及現活動拉蒙娜鑰令重逢心願，都是沒有加入彌撒格&四界域分類的，在選鑰令時必須在全部鑰令的第一頁拉到最下面，並且也不是堆在",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "💭「处理中」拉蒙娜鑰令和夏活鑰令是否可以加入鑰令分類頁籤？"
+    },
+    {
+      "id": "1449317635186491594",
+      "content": "I think i misunderstood u before, sorry for that. So u meant it should be treate",
+      "author": "qingming6054",
+      "reactions": 1,
+      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
+    },
+    {
+      "id": "1449320110224572519",
+      "content": "Please <@1131790839291596841>, share this problem with the team, if needed we ca",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
     },
     {
       "id": "1449478874273550467",

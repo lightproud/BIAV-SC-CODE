@@ -1,10 +1,17 @@
 {
   "date": "2026-01-13",
-  "messages": 8,
+  "messages": 22,
   "unique_authors": 6,
-  "reactions_total": 16,
-  "attachments": 1,
+  "reactions_total": 19,
+  "attachments": 4,
   "channel_activity": {
+    "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 1,
+    "✅「已回答」相位bug": 1,
+    "✅「Resolved」Account bugged and unable to load into the game after login": 8,
+    "✅「Resolved」\"Tiny Wish\" Posse interface bug": 1,
+    "💭「Processing」Potential Ramona Exalt bug": 1,
+    "💭「Processing」Frequent Crash all of a sudden": 1,
+    "✅「Answered」\"Foreign Stamp Album\" effect does not match description": 1,
     "🔸欢乐梗图": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "1241345906826153984": 1,
@@ -13,16 +20,22 @@
     "1234769700735418368": 2
   },
   "hourly_activity": {
+    "13": 1,
+    "12": 1,
+    "2": 4,
+    "4": 2,
+    "7": 1,
+    "9": 5,
+    "10": 3,
     "11": 2,
     "18": 1,
     "21": 1,
-    "5": 1,
-    "2": 1,
-    "10": 2
+    "5": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "19": 1,
+    "0": 8,
+    "4": 5
   },
   "top_reacted_messages": [
     {
@@ -45,6 +58,27 @@
       "author": "yolo_mode",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1460626241458667551",
+      "content": "重逢和开学日位置颠倒，仍未解决",
+      "author": "shunia3055",
+      "reactions": 1,
+      "channel": "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”"
+    },
+    {
+      "id": "1460542168866357288",
+      "content": "<@132868013996244992>Hello, programmers need to log in to your account to confir",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Resolved」Account bugged and unable to load into the game after login"
+    },
+    {
+      "id": "1460576367908487340",
+      "content": "Everything is working now, thank you.",
+      "author": "yrasea",
+      "reactions": 1,
+      "channel": "✅「Resolved」Account bugged and unable to load into the game after login"
     }
   ]
 }

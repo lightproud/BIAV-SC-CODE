@@ -1,10 +1,13 @@
 {
   "date": "2026-01-08",
-  "messages": 19,
+  "messages": 27,
   "unique_authors": 7,
-  "reactions_total": 4,
+  "reactions_total": 5,
   "attachments": 4,
   "channel_activity": {
+    "💭「Processing」Frequent Crash all of a sudden": 1,
+    "✅「Answered」之前杜勒和诞墨之间排期额外多隔了一个人，这是因为产能不足吗？如果是，后续的角色排期都是这样吗": 2,
+    "💭「处理中」bug反馈": 5,
     "克莱门汀": 3,
     "1458491651239710851": 1,
     "1458059497187573862": 1,
@@ -12,16 +15,21 @@
     "1305430084420898868": 9
   },
   "hourly_activity": {
+    "12": 1,
+    "4": 3,
+    "11": 4,
+    "2": 1,
+    "8": 1,
+    "10": 4,
     "15": 3,
     "3": 1,
-    "11": 3,
-    "10": 3,
     "0": 3,
     "16": 1,
     "17": 5
   },
   "message_types": {
-    "0": 3
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -30,6 +38,13 @@
       "author": "duxadidus",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1458773913113727099",
+      "content": "100687939<:agree:1400771815076528258>",
+      "author": "cqzheng_16468",
+      "reactions": 1,
+      "channel": "💭「处理中」bug反馈"
     },
     {
       "id": "1458664035259121847",

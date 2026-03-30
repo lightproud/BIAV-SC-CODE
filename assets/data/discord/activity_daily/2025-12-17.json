@@ -1,10 +1,22 @@
 {
   "date": "2025-12-17",
-  "messages": 57,
-  "unique_authors": 7,
-  "reactions_total": 55,
-  "attachments": 9,
+  "messages": 88,
+  "unique_authors": 13,
+  "reactions_total": 71,
+  "attachments": 14,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 4,
+    "💭「Processing」Would be nice for autoplay to remain turned on after finishing a stage.": 1,
+    "✅「Answered」Another Bug? in Doll Boss": 4,
+    "✅「已回答」+12喚醒體需要特殊獎勵": 3,
+    "✅「已回答」繁中PC端黑屏": 1,
+    "✅「Answered」Can't login via google play": 1,
+    "💭「Processing」D tide starting relic not being recorded in archives": 1,
+    "✅「已回答」文字特效及描述不統一": 3,
+    "✅「已解决」關於高級紀行1280變成980": 4,
+    "关于【献祭】的bug修复": 1,
+    "请联动《新月同行》": 7,
+    "✅「已回答」关于手册奖励": 1,
     "蓋個圖樓": 1,
     "異端品鑑結尾（皮杜向有黃車描述": 34,
     "從克蘇魯神話看誕妄墨菲，神母與石榴的寓意": 2,
@@ -14,23 +26,37 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "0": 1,
-    "16": 21,
-    "17": 4,
-    "22": 9,
+    "16": 23,
+    "17": 6,
+    "13": 2,
+    "20": 3,
+    "23": 1,
+    "6": 3,
+    "7": 1,
+    "10": 3,
+    "22": 10,
+    "3": 3,
+    "2": 12,
+    "0": 2,
     "12": 1,
-    "13": 1,
-    "10": 2,
     "14": 1,
     "4": 11,
     "8": 2,
     "15": 4
   },
   "message_types": {
-    "0": 36,
-    "19": 1
+    "0": 24,
+    "19": 2,
+    "4": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1450731229849849960",
+      "content": "如題，+12一個喚醒體不容易\n\n是否能給擁有+12的守密人一些獎勵呢\n可以是頭像、頭像框、或背景這樣的\n\n如果成本太高，能否起碼加段文本\n就像技能+6那樣解鎖的",
+      "author": "halaleung",
+      "reactions": 12,
+      "channel": "✅「已回答」+12喚醒體需要特殊獎勵"
+    },
     {
       "id": "1450884699756036106",
       "content": "⚠️警告：ooc、我流守咪人與原創喚醒體出沒、可能有邏輯破爛情形~~我不管我愛造謠~~🤩\n\n不吃皮杜或是逆攻受的朋友請斟酌觀看🫵💋\n\n本篇前情請搜索🫴異端狂熱創",
@@ -88,11 +114,32 @@
       "channel": ""
     },
     {
+      "id": "1450843048732004362",
+      "content": "Autoplay turning off after every stage is annoying and its strange that keeping ",
+      "author": "iwthahe",
+      "reactions": 2,
+      "channel": "💭「Processing」Would be nice for autoplay to remain turned on after finishing a stage."
+    },
+    {
       "id": "1450892978921934918",
       "content": "我只能爬",
       "author": "void_1546.",
       "reactions": 2,
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
+    },
+    {
+      "id": "1450695916238409769",
+      "content": "感谢反馈，后续会优化上述内容使之统一🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」文字特效及描述不統一"
+    },
+    {
+      "id": "1450672481227505745",
+      "content": "我昨天早上9點買的高級紀行他標價還是1280，但是我還是買了，因為信件說24小時內會補還差額，可是到現在還沒收到差額的300",
+      "author": "kikyp21",
+      "reactions": 1,
+      "channel": "✅「已解决」關於高級紀行1280變成980"
     },
     {
       "id": "1450648126225649838",
@@ -142,34 +189,6 @@
       "author": "dittoqwq",
       "reactions": 1,
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1450796930480472075",
-      "content": "https://youtu.be/e_CLNKteWBI?si=aA2ld6t-kaEbIrO4 - Blue Realm Overview - One a d",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1450711200735297607",
-      "content": "maybe one day ill do it ... if i remember how to model stuff in blender, its bee",
-      "author": "zzio_",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1450711533452791808",
-      "content": "Lolol that's why i stan u king/queen/monarch <:dishes:1356083313063759922>",
-      "author": "sunstopshining",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1450711729926439020",
-      "content": "@ biav need to hear this too <:thinking1:1356068128936820929>",
-      "author": "sunstopshining",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

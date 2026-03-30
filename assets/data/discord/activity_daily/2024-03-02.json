@@ -1,10 +1,14 @@
 {
   "date": "2024-03-02",
-  "messages": 6,
-  "unique_authors": 5,
-  "reactions_total": 36,
-  "attachments": 10,
+  "messages": 33,
+  "unique_authors": 6,
+  "reactions_total": 78,
+  "attachments": 16,
   "channel_activity": {
+    "罗坦-q版头像": 13,
+    "任務出發前照道理來說要開個會吧": 11,
+    "diy角色代传": 2,
+    "【歡樂惡搞梗圖集中】": 1,
     "第3期【融災禁區】關卡地圖總覽": 1,
     "diy界域天音（代传）": 1,
     "【头像区】弥大各位的简约小头像": 1,
@@ -13,17 +17,28 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "18": 12,
+    "19": 1,
+    "10": 11,
+    "12": 2,
+    "11": 3,
     "21": 1,
     "4": 1,
-    "12": 1,
     "20": 1,
-    "10": 1,
     "9": 1
   },
   "message_types": {
-    "0": 5
+    "0": 18,
+    "19": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1213427942126915634",
+      "content": "超喜歡父女組⋯戈利亞就算在劇情裡沒人想理你我還是喜歡你⋯😭\n-------\n想了想還是投一下同人徵稿好了，有幸賺個參加獎也好\nUID：100047306",
+      "author": "yolo_mode",
+      "reactions": 33,
+      "channel": "任務出發前照道理來說要開個會吧"
+    },
     {
       "id": "1213589918530408568",
       "content": "UID 100102822 \n☆(ﾉ◕ヮ◕)ﾉ*",
@@ -44,6 +59,41 @@
       "author": "dyyqcwj",
       "reactions": 4,
       "channel": "diy界域天音（代传）"
+    },
+    {
+      "id": "1213440914736021524",
+      "content": "",
+      "author": "momoshiocha",
+      "reactions": 3,
+      "channel": "【歡樂惡搞梗圖集中】"
+    },
+    {
+      "id": "1213559674620612648",
+      "content": "我墨菲呢 我墨菲呢 我墨菲呢",
+      "author": "llhwwc_89248",
+      "reactions": 2,
+      "channel": "罗坦-q版头像"
+    },
+    {
+      "id": "1213447185790799932",
+      "content": "同样的代传两个自制角色只是没档案，uid：100197209",
+      "author": "dyyqcwj",
+      "reactions": 2,
+      "channel": "diy角色代传"
+    },
+    {
+      "id": "1213432830328053771",
+      "content": "上色太難了我會死😇",
+      "author": "yolo_mode",
+      "reactions": 1,
+      "channel": "任務出發前照道理來說要開個會吧"
+    },
+    {
+      "id": "1213446955557068840",
+      "content": "diy小组另一个人的自制角色，ID是100197209，有完整档案",
+      "author": "dyyqcwj",
+      "reactions": 1,
+      "channel": "diy角色代传"
     }
   ]
 }

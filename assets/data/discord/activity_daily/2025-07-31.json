@@ -1,21 +1,23 @@
 {
   "date": "2025-07-31",
-  "messages": 3,
-  "unique_authors": 2,
-  "reactions_total": 12,
-  "attachments": 1,
+  "messages": 8,
+  "unique_authors": 3,
+  "reactions_total": 13,
+  "attachments": 2,
   "channel_activity": {
+    "Remove recommended account level from game": 5,
     "神國圖魯教 星辰篇": 1,
     "是复古报纸！": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "18": 5,
     "16": 1,
     "4": 1,
     "12": 1
   },
   "message_types": {
-    "0": 2
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -24,6 +26,13 @@
       "author": "queyangheimao.",
       "reactions": 12,
       "channel": "是复古报纸！"
+    },
+    {
+      "id": "1400544779913138206",
+      "content": "This warning message has no meaning. You will see it throughout your whole journ",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "Remove recommended account level from game"
     }
   ]
 }

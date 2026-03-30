@@ -1,10 +1,11 @@
 {
   "date": "2025-07-07",
-  "messages": 33,
+  "messages": 37,
   "unique_authors": 9,
   "reactions_total": 732,
-  "attachments": 18,
+  "attachments": 19,
   "channel_activity": {
+    "✅「Answered」Incorrect dmg apply with counter": 4,
     "关卡地图「融灾禁区」总览38期·星辰篇": 1,
     "詹金": 1,
     "《他們的女兒》": 8,
@@ -15,6 +16,9 @@
     "1390375103707218041": 15
   },
   "hourly_activity": {
+    "3": 2,
+    "7": 1,
+    "8": 1,
     "5": 8,
     "14": 5,
     "4": 4,
@@ -27,8 +31,7 @@
     "16": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 2
+    "0": 4
   },
   "top_reacted_messages": [
     {

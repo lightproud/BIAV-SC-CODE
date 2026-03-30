@@ -1,10 +1,37 @@
 {
   "date": "2025-11-24",
-  "messages": 27,
-  "unique_authors": 9,
-  "reactions_total": 53,
-  "attachments": 13,
+  "messages": 103,
+  "unique_authors": 35,
+  "reactions_total": 70,
+  "attachments": 42,
   "channel_activity": {
+    "💭「Processing」Time Rewind Bug": 1,
+    "✅「已回答」我抽獎時怎麼卡BUG了": 3,
+    "✅「Resolved」bug | gmurphy story not unlocking properly": 4,
+    "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled": 5,
+    "✅「Answered」Banners order": 1,
+    "✅「Answered」Event archive bug and mistranslation of aequor": 1,
+    "💭「Processing」Aqua tentacles not translated and weird screen glitches.": 1,
+    "💭「Processing」Traphase draft mode bug": 4,
+    "💭「Processing」Wave 3 Boss Instakill Bug?": 4,
+    "💭「处理中」怪物描述": 1,
+    "💭「处理中」本期融灾第五关BOSS数值错误": 2,
+    "💭「处理中」星辰篇造物出bug辣": 1,
+    "💭「Processing」Stellar Brew Does Nothing in Arc2": 1,
+    "✅「Answered」GMurphy Exalt Text Bug": 1,
+    "✅「Answered」Visual bug.. text is not translated": 1,
+    "✅「已解决」Bug Report: 融災第二關": 1,
+    "💭「Processing」Murphy: Fauxborn's Abyss Hymn card description": 1,
+    "✅「已回答」剧情背景是不是有问题": 2,
+    "✅「Answered」This game needs more marketing": 9,
+    "💭「Processing」Timer on weekly quest is bugged (at least for me)": 1,
+    "💭「处理中」快速喚醒有 bug，會抽到其他獎池［攸關源液，儲值的大家請小心！］": 2,
+    "💭「处理中」希洛大招一直這麼過曝的嗎": 6,
+    "沉淀兑换新增仅可选择忘却篇限定唤醒体/命轮的叠位材料": 3,
+    "在抽卡界面增加流明之芯不足时自动购买流明的选项": 1,
+    "能不能出个关闭命轮自动叠位的功能": 2,
+    "Corposant's OE doesn't work": 13,
+    "please ignore, i made a mistake 🙇": 4,
     "纯血神国...": 4,
     "誕墨水船隊": 2,
     "誕塔隊初體驗": 5,
@@ -18,22 +45,33 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
-    "4": 3,
-    "5": 2,
-    "12": 2,
-    "23": 1,
-    "7": 6,
-    "11": 1,
+    "23": 2,
+    "2": 4,
+    "3": 3,
+    "4": 20,
+    "5": 3,
+    "6": 9,
+    "12": 7,
+    "15": 2,
+    "7": 10,
+    "22": 2,
+    "8": 1,
+    "10": 5,
+    "16": 1,
+    "17": 4,
+    "18": 3,
+    "19": 2,
+    "11": 2,
+    "13": 2,
+    "14": 15,
     "1": 1,
-    "6": 3,
     "0": 4,
-    "9": 1,
-    "22": 1,
-    "14": 1,
-    "18": 1
+    "9": 1
   },
   "message_types": {
-    "0": 17
+    "0": 61,
+    "19": 13,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -72,11 +110,60 @@
       "channel": ""
     },
     {
+      "id": "1442553773149917254",
+      "content": "Not yet! They're sponsoring me for a video, and then in December I'll also have ",
+      "author": "stix5500",
+      "reactions": 5,
+      "channel": "✅「Answered」This game needs more marketing"
+    },
+    {
+      "id": "1442502944984662159",
+      "content": "rt，与现有万能叠并行，每月可各兑换一个。价格相比万能叠适当降低，变相降井。利好叠过气老卡。",
+      "author": "shunia3055",
+      "reactions": 4,
+      "channel": "沉淀兑换新增仅可选择忘却篇限定唤醒体/命轮的叠位材料"
+    },
+    {
       "id": "1442488046858539038",
       "content": "UID：100872328\n\n在誕墨出了後，水船的成長和生存問題完全解決，誕墨給水船帶來了重要的抽牌和算力，以及高額的觸腕傷害成長和觸腕數量，在有超限的情況下還",
       "author": "void_1546.",
       "reactions": 4,
       "channel": "誕墨水船隊"
+    },
+    {
+      "id": "1442484106519773235",
+      "content": "如題，在抽五次新出的誕妄墨菲後，出現快速喚醒的選項，打勾再抽五次，結果卻出現「與群星相會」的攻擊角色抽取結果，980源液直接噴出去🥲而且抽中的還是索蕾爾，殺人誅",
+      "author": "sam511011",
+      "reactions": 2,
+      "channel": "💭「处理中」快速喚醒有 bug，會抽到其他獎池［攸關源液，儲值的大家請小心！］"
+    },
+    {
+      "id": "1442468399409266758",
+      "content": "超绝反光发型",
+      "author": "carme.0588",
+      "reactions": 2,
+      "channel": "💭「处理中」希洛大招一直這麼過曝的嗎"
+    },
+    {
+      "id": "1442495615383634092",
+      "content": "和快速唤醒一样以勾选形式显示即可。流明不足时每五抽都要点击一次确定，拖累快速唤醒的体验，令人烦躁。",
+      "author": "shunia3055",
+      "reactions": 2,
+      "channel": "在抽卡界面增加流明之芯不足时自动购买流明的选项"
+    },
+    {
+      "id": "1442386642672291911",
+      "content": "Clearly she doesn't love you enough 😔",
+      "author": "crowlov1",
+      "reactions": 1,
+      "channel": "✅「Resolved」bug | gmurphy story not unlocking properly"
+    },
+    {
+      "id": "1442378885529341963",
+      "content": "Investigation-D-Effect Zone: Wave 3: Alert IV Battle Replay\nKeeper: Frost（100956",
+      "author": "frosthief",
+      "reactions": 1,
+      "channel": "💭「Processing」Wave 3 Boss Instakill Bug?"
     },
     {
       "id": "1442410482978787329",

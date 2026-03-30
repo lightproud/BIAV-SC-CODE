@@ -1,19 +1,34 @@
 {
   "date": "2025-10-27",
-  "messages": 5,
-  "unique_authors": 2,
-  "reactions_total": 161,
-  "attachments": 6,
+  "messages": 26,
+  "unique_authors": 7,
+  "reactions_total": 167,
+  "attachments": 8,
   "channel_activity": {
+    "✅「Answered」About new Ryker buff": 1,
+    "✅「已回答」相位对弈字打错了": 2,
+    "✅「已回答」圖標顯示錯誤": 1,
+    "✅「Answered」\"Sacred Bleeding Heart\" shows the wrong image": 1,
+    "✅「Resolved」My game doesn't load...": 9,
+    "Is there a limit?": 4,
+    "💭「Processing」Loading menu music plays at full volume before it finishes loading in the intro video": 1,
+    "💭「Processing」Suggestion - Traphase": 1,
+    "✅「已解决」淺問一下正不正常（第八章的劇情&對話重複）": 1,
     "🐱light’s-nest": 3,
     "1421408684776357929": 2
   },
   "hourly_activity": {
-    "4": 3,
+    "4": 4,
+    "7": 7,
+    "11": 2,
+    "13": 7,
+    "16": 4,
     "2": 2
   },
   "message_types": {
-    "0": 5
+    "0": 12,
+    "4": 6,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -36,6 +51,34 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1432368234438590607",
+      "content": "np, happy it worked <:proud:1400771683664658433>",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "✅「Resolved」My game doesn't load..."
+    },
+    {
+      "id": "1432411175039012978",
+      "content": "I'm unsure if there's a hard turn cap, but I believe Flares mentioned at some po",
+      "author": "arkaether",
+      "reactions": 2,
+      "channel": "Is there a limit?"
+    },
+    {
+      "id": "1432355266241888256",
+      "content": "have you tried to remove the morimen folder after unistalling?",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "✅「Resolved」My game doesn't load..."
+    },
+    {
+      "id": "1432361217652953268",
+      "content": "Alright, will definitely give it a try!",
+      "author": "iro_iro_",
+      "reactions": 1,
+      "channel": "✅「Resolved」My game doesn't load..."
     }
   ]
 }

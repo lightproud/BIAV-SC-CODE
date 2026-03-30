@@ -1,10 +1,24 @@
 {
   "date": "2025-10-22",
-  "messages": 55,
-  "unique_authors": 6,
-  "reactions_total": 525,
-  "attachments": 13,
+  "messages": 101,
+  "unique_authors": 20,
+  "reactions_total": 535,
+  "attachments": 20,
   "channel_activity": {
+    "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 3,
+    "✅「Answered」I launch the game through the Steam client, but I can't pay through Steam.": 4,
+    "✅「Answered」Salvador Exalt Temp Crit displaying code": 1,
+    "✅「已回答」不好意思好像用不了這個兌換碼": 7,
+    "不知道這波會被卡厄思搶走多少玩家? 忘卻2周年加油好嗎?": 5,
+    "💭「处理中」忘卻篇第六章共鳴卡純白之帆 & 第八章共鳴歡愉之理": 12,
+    "💭「处理中」群星的庇佑能弃到不含算力的钥令/打击是正常的吗？": 3,
+    "💭「处理中」阿格里帕的靈知覺醒無法顯示戒備加成之錯誤": 1,
+    "✅「已回答」新角升格文字消失": 1,
+    "💭「Processing」Caecus end of turn healing lowers bleed stacks but not bleed damage": 1,
+    "💭「处理中」文案錯字": 1,
+    "💭「Processing」Kathigu-ra bug in cards": 1,
+    "💭「处理中」黑印加成": 4,
+    "💭「处理中」0%": 2,
     "虽然很少但总之依旧是一点守莱&守N": 11,
     "我想画点莱克的梗图": 25,
     "🔸礼包码┊gift-codes": 1,
@@ -14,15 +28,25 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
-    "10": 18,
+    "0": 2,
+    "7": 4,
+    "5": 1,
+    "8": 7,
+    "10": 30,
+    "14": 4,
+    "17": 4,
+    "23": 1,
+    "9": 23,
+    "15": 2,
+    "16": 10,
+    "3": 2,
     "11": 4,
-    "13": 7,
-    "8": 4,
-    "9": 22
+    "13": 7
   },
   "message_types": {
-    "0": 16,
-    "19": 20
+    "0": 30,
+    "4": 8,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -68,6 +92,20 @@
       "channel": ""
     },
     {
+      "id": "1430350466876706876",
+      "content": "he deserves so much better, especially if he was meant to be anni unit",
+      "author": "phantasidreamin",
+      "reactions": 2,
+      "channel": "✅「Answered」Flaws and Weaknesses in Pollux's skill design"
+    },
+    {
+      "id": "1430463760903966731",
+      "content": "I can attach a video if needed",
+      "author": "prizrak9083",
+      "reactions": 2,
+      "channel": "✅「Answered」I launch the game through the Steam client, but I can't pay through Steam."
+    },
+    {
       "id": "1430553177857458256",
       "content": "你的确是拉我入坑的罪恶之源<:point:1356053112292511815>",
       "author": "ka_0414",
@@ -80,6 +118,48 @@
       "author": "ass191044",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1430465030767251466",
+      "content": "请加强波吕克斯<:agree:1400771815076528258> ，打血量稍微高一点的怪就牢的要命",
+      "author": "nekoiiii.",
+      "reactions": 1,
+      "channel": "✅「Answered」Flaws and Weaknesses in Pollux's skill design"
+    },
+    {
+      "id": "1430472821204713602",
+      "content": "",
+      "author": "prizrak9083",
+      "reactions": 1,
+      "channel": "✅「Answered」I launch the game through the Steam client, but I can't pay through Steam."
+    },
+    {
+      "id": "1430556466695114834",
+      "content": "還是你試試看直接打？",
+      "author": "glacy_9918",
+      "reactions": 1,
+      "channel": "✅「已回答」不好意思好像用不了這個兌換碼"
+    },
+    {
+      "id": "1430494761789165588",
+      "content": "Kinda worried how many will jump ship to Chaos Zero Nightmare this time 😅 Hope M",
+      "author": "taoi002",
+      "reactions": 1,
+      "channel": "不知道這波會被卡厄思搶走多少玩家? 忘卻2周年加油好嗎?"
+    },
+    {
+      "id": "1430604330704044103",
+      "content": "直到下回合開始，反擊**和**觸腕反擊額外觸發一次\n我會理解成那個50%的是叫做觸腕反擊的東西，而藍字反擊則是一次100%反擊\n如果寫成「和」的話讀起來意思會比",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "💭「处理中」忘卻篇第六章共鳴卡純白之帆 & 第八章共鳴歡愉之理"
+    },
+    {
+      "id": "1430502277038477312",
+      "content": "💭「Processing」Kathigu-ra bug in cards",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Kathigu-ra bug in cards"
     },
     {
       "id": "1430512144759259187",
@@ -105,34 +185,6 @@
     {
       "id": "1430498329430720592",
       "content": "樹藤般的腳腳被修掉了👀",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1430499007846940804",
-      "content": "腳腳沒了（悲",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1430503875843981323",
-      "content": "旋轉海星我見過",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1430504219865251851",
-      "content": "~~抱歉我是開玩笑的~~",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1430505652941492284",
-      "content": "自己設計或是忠於海星(?)感覺都可以",
       "author": "tsubaki9884",
       "reactions": 1,
       "channel": ""

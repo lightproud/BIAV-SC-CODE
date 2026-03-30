@@ -1,36 +1,92 @@
 {
   "date": "2025-08-07",
-  "messages": 13,
-  "unique_authors": 7,
-  "reactions_total": 3,
-  "attachments": 0,
+  "messages": 77,
+  "unique_authors": 11,
+  "reactions_total": 23,
+  "attachments": 1,
   "channel_activity": {
+    "120 fps mode": 4,
+    "✅「已回答」杜勒需要加強": 60,
     "针对新融灾375-425的角色榜单": 3,
     "偽造之物": 7,
     "我幻想的杜勒賽因加強": 1,
     "1390375103707218041": 2
   },
   "hourly_activity": {
+    "9": 5,
+    "10": 3,
+    "11": 5,
+    "8": 2,
+    "12": 7,
+    "13": 11,
+    "14": 33,
     "4": 1,
     "5": 2,
     "0": 1,
     "2": 2,
     "6": 3,
-    "10": 1,
-    "11": 1,
     "15": 2
   },
   "message_types": {
-    "0": 9,
-    "19": 2
+    "0": 46,
+    "19": 18
   },
   "top_reacted_messages": [
+    {
+      "id": "1402937488414081064",
+      "content": "同為星辰篇的角色 其他都能帶隊\n杜勒卻要吃一堆頂級輔助 本體強度不夠\n\n首先是暴擊率的部分 杜勒爆擊率不是溢出就是不夠\n狂氣吞噬給的爆擊率只限定狂氣 對於技能卡",
+      "author": "0.0._.0_0.",
+      "reactions": 10,
+      "channel": "✅「已回答」杜勒需要加強"
+    },
+    {
+      "id": "1402998507383689289",
+      "content": "是圖魯廚\n快跑",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "✅「已回答」杜勒需要加強"
+    },
+    {
+      "id": "1403003161446453269",
+      "content": "需要深海再叫我",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "✅「已回答」杜勒需要加強"
+    },
     {
       "id": "1402972046467661855",
       "content": "天賦：殘骸上限提高到10，可選擇不食用殘骸或一次食用更多殘骸獲得多次加成。\n\n狂氣爆發：新增造成的傷害必定暴擊。\n吞噬：本次狂氣爆發的暴擊率+15%改為獲得一個",
       "author": "ahuahuahua",
       "reactions": 2,
       "channel": "我幻想的杜勒賽因加強"
+    },
+    {
+      "id": "1402954293098709023",
+      "content": "are there plans to add 120 fps mode to steam or any other platform?",
+      "author": "clavinmclavin",
+      "reactions": 1,
+      "channel": "120 fps mode"
+    },
+    {
+      "id": "1403001528834326549",
+      "content": "不是 是我看我姊用圖魯 所以我也用 我是有抽蠻多角色的",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 1,
+      "channel": "✅「已回答」杜勒需要加強"
+    },
+    {
+      "id": "1403003114444951655",
+      "content": "聽起來很色",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "✅「已回答」杜勒需要加強"
+    },
+    {
+      "id": "1403020119906586666",
+      "content": "尤其杜勒對面滿血丟狂氣真的超不爽的",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "✅「已回答」杜勒需要加強"
     },
     {
       "id": "1402848404748370143",

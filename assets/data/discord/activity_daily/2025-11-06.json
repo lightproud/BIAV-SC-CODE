@@ -1,23 +1,39 @@
 {
   "date": "2025-11-06",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 857,
-  "attachments": 1,
+  "messages": 23,
+  "unique_authors": 8,
+  "reactions_total": 871,
+  "attachments": 4,
   "channel_activity": {
+    "✅「已回答」關於生涯成就": 1,
+    "✅「Answered」Make Doresain overflow damage on others when killing": 2,
+    "✅「Answered」Card Art for Awakener Skills/Rouse": 10,
+    "💭「处理中」3启珈伦": 1,
+    "✅「已回答」塔薇試玩開第二鑰令選門扉的答案選完一次後會卡住": 4,
+    "是不是bug": 1,
     "相位對弈環境攻略": 1,
     "组队推荐": 1,
     "🔸服务器公告┊server-announcement": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "12": 1,
+    "2": 6,
+    "3": 1,
+    "5": 1,
+    "17": 7,
+    "21": 1,
+    "18": 1,
+    "13": 1,
     "23": 1,
     "6": 1,
     "0": 1,
     "14": 1
   },
   "message_types": {
-    "0": 2
+    "0": 13,
+    "4": 3,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -26,6 +42,20 @@
       "author": "cometovilla",
       "reactions": 856,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1435840861488283735",
+      "content": "Unsure if this was ever discussed/asked before, and I know this is something too",
+      "author": "thebluestlime",
+      "reactions": 10,
+      "channel": "✅「Answered」Card Art for Awakener Skills/Rouse"
+    },
+    {
+      "id": "1435962810390806590",
+      "content": "雖然也許是華而不實的小東西，不過生涯成就的項目裡有一系列中毒成就，希望同為共通被動傷害的反擊也可以有一些成就可以拿🥺以及出血跟觸傷也想要🥺真的好想要可愛小玩意兒",
+      "author": "amstelredam",
+      "reactions": 4,
+      "channel": "✅「已回答」關於生涯成就"
     },
     {
       "id": "1435885031599116398",

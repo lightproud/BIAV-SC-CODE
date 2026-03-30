@@ -1,21 +1,23 @@
 {
   "date": "2025-08-06",
-  "messages": 13,
+  "messages": 15,
   "unique_authors": 4,
   "reactions_total": 24,
   "attachments": 5,
   "channel_activity": {
+    "救救狗吧融災求助": 2,
     "分享一下这期425融灾的配队，顺便简评一下各个角色的使用感受。": 10,
     "偽造之物": 3
   },
   "hourly_activity": {
+    "3": 1,
+    "7": 1,
     "11": 10,
     "22": 3
   },
   "message_types": {
-    "0": 9,
-    "19": 3,
-    "4": 1
+    "0": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {

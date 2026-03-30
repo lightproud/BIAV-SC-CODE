@@ -1,23 +1,24 @@
 {
   "date": "2025-01-13",
-  "messages": 4,
+  "messages": 5,
   "unique_authors": 4,
-  "reactions_total": 31,
+  "reactions_total": 34,
   "attachments": 4,
   "channel_activity": {
+    "登入畫面怎麼變成新細明體了": 1,
     "🍸【忘卻前夜】主題雞尾酒——來自「塞納河底晴雨表」": 1,
     "~~謹致改版前無法72000的各位~~": 2,
     "帮我想想画什么": 1
   },
   "hourly_activity": {
+    "3": 1,
     "12": 1,
     "1": 1,
     "2": 1,
     "6": 1
   },
   "message_types": {
-    "0": 3,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -26,6 +27,13 @@
       "author": "morimensstaff01",
       "reactions": 31,
       "channel": "🍸【忘卻前夜】主題雞尾酒——來自「塞納河底晴雨表」"
+    },
+    {
+      "id": "1328203461560504321",
+      "content": "這是BUG嗎？可以改回來嗎？~~有被醜到~~",
+      "author": "ice_storys",
+      "reactions": 3,
+      "channel": "登入畫面怎麼變成新細明體了"
     }
   ]
 }

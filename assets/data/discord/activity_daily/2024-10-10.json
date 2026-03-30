@@ -1,10 +1,11 @@
 {
   "date": "2024-10-10",
-  "messages": 32,
+  "messages": 33,
   "unique_authors": 13,
   "reactions_total": 20,
   "attachments": 0,
   "channel_activity": {
+    "千面幻象詛咒": 1,
     "血链·希洛的抽取建议": 10,
     "哈姆林介紹影片": 3,
     "逃课过375，需要配置": 3,
@@ -20,6 +21,7 @@
     "同人自創忘卻模式": 1
   },
   "hourly_activity": {
+    "1": 1,
     "8": 1,
     "9": 4,
     "15": 4,
@@ -32,8 +34,7 @@
     "4": 2
   },
   "message_types": {
-    "0": 8,
-    "19": 24
+    "0": 1
   },
   "top_reacted_messages": [
     {

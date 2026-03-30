@@ -1,20 +1,39 @@
 {
   "date": "2026-01-03",
-  "messages": 3,
-  "unique_authors": 3,
-  "reactions_total": 0,
-  "attachments": 3,
+  "messages": 13,
+  "unique_authors": 6,
+  "reactions_total": 1,
+  "attachments": 11,
   "channel_activity": {
+    "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 1,
+    "💭「处理中」典藏馆事件的解锁到底是什么机制？": 3,
+    "💭「Processing」Kathi's Hyperflare gone": 1,
+    "✅「已回答」茉夏劇情文本中的「未知而不詳」？": 2,
+    "💭「处理中」拉蒙娜鑰令和夏活鑰令是否可以加入鑰令分類頁籤？": 1,
+    "💭「Processing」Incorrect card description": 2,
     "1234769700735418368": 2,
     "1455453095592071269": 1
   },
   "hourly_activity": {
+    "4": 3,
+    "19": 1,
+    "16": 1,
+    "21": 3,
+    "20": 2,
     "13": 1,
     "18": 1,
     "11": 1
   },
   "message_types": {
-    "0": 3
+    "0": 10
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1456868051034050581",
+      "content": "又有一個錯字，在彌利亞姆的異夢視界第一章",
+      "author": "ey1164",
+      "reactions": 1,
+      "channel": "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」"
+    }
+  ]
 }

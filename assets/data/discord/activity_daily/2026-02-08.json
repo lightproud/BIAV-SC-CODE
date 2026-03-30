@@ -1,10 +1,14 @@
 {
   "date": "2026-02-08",
-  "messages": 7188,
+  "messages": 7210,
   "unique_authors": 160,
-  "reactions_total": 920,
-  "attachments": 341,
+  "reactions_total": 933,
+  "attachments": 348,
   "channel_activity": {
+    "💭「Processing」game client crashed...somewhat": 1,
+    "Who Ryker's Designer pls come talk ?": 1,
+    "Please nerf P-Dive": 18,
+    "wrong value for Tulu's soulforge": 2,
     "新年假期~ || 杜勒赛因x西维斯特": 5,
     "绘画//戈利亚相关楼": 4,
     "🔸欢乐梗图": 2,
@@ -21,21 +25,22 @@
     "🔸morimens-game-chat": 5801
   },
   "hourly_activity": {
+    "22": 439,
+    "5": 473,
+    "2": 351,
+    "3": 219,
+    "4": 415,
+    "10": 224,
     "8": 184,
     "9": 259,
     "1": 141,
-    "2": 344,
-    "3": 217,
     "11": 207,
     "19": 364,
     "12": 285,
     "0": 402,
-    "5": 471,
-    "10": 221,
     "17": 166,
     "18": 164,
     "6": 197,
-    "4": 408,
     "7": 235,
     "13": 348,
     "14": 242,
@@ -43,11 +48,11 @@
     "16": 276,
     "20": 287,
     "23": 443,
-    "21": 353,
-    "22": 438
+    "21": 353
   },
   "message_types": {
-    "0": 9
+    "0": 21,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -63,6 +68,13 @@
       "author": "corposant_1003",
       "reactions": 23,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469922999045062923",
+      "content": "I agree, recommended level makes no sense just like how that your team is under ",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "Please nerf P-Dive"
     },
     {
       "id": "1470112248038035559",
@@ -180,13 +192,6 @@
       "id": "1469992564869562501",
       "content": "",
       "author": "ass191044",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470073327967015230",
-      "content": "打算睡圖魯\n犒勞自己<:Tulu_stare:1468258231078879325>",
-      "author": "void_1546.",
       "reactions": 4,
       "channel": "🔸綜合討論"
     }

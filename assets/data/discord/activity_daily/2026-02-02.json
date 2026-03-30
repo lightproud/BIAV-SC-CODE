@@ -1,10 +1,17 @@
 {
   "date": "2026-02-02",
-  "messages": 7805,
+  "messages": 7822,
   "unique_authors": 175,
-  "reactions_total": 1870,
-  "attachments": 391,
+  "reactions_total": 1901,
+  "attachments": 401,
   "channel_activity": {
+    "✅「Answered」Anniversary was Great, the Raid was not": 3,
+    "Salvador's Special Ops dialogue lag. ''Our failing": 6,
+    "Enemy still only attacking once after Wanda 10 stack exalt": 1,
+    "✅「已回答」你是電你是光你是唯一的神話": 1,
+    "做不到的事能不能不要轻易承诺": 2,
+    "加載守密人檔案時候有明顯卡頓": 1,
+    "融災顯示bug": 3,
     "🔸服务器公告┊server-announcement": 2,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 20,
     "1421408684776357929": 6,
@@ -19,7 +26,13 @@
     "🔸morimens-game-chat": 7013
   },
   "hourly_activity": {
-    "18": 352,
+    "19": 272,
+    "17": 508,
+    "18": 357,
+    "11": 212,
+    "3": 461,
+    "14": 506,
+    "7": 288,
     "21": 329,
     "22": 227,
     "23": 232,
@@ -27,27 +40,20 @@
     "8": 388,
     "9": 306,
     "10": 239,
-    "11": 211,
-    "14": 505,
     "15": 591,
     "12": 263,
-    "19": 269,
-    "7": 285,
     "2": 200,
-    "3": 460,
     "5": 358,
     "0": 170,
     "1": 306,
     "6": 355,
     "13": 478,
     "16": 389,
-    "17": 505,
     "20": 194
   },
   "message_types": {
-    "0": 5642,
-    "19": 2162,
-    "20": 1
+    "0": 14,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -100,6 +106,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1467728841685471480",
+      "content": "<@1131790839291596841> \n很像我在跟發光的大便打牌",
+      "author": "ying_papa",
+      "reactions": 9,
+      "channel": "✅「已回答」你是電你是光你是唯一的神話"
+    },
+    {
       "id": "1467861494833217566",
       "content": "SHINING ☆ TORNADO!!!!!!!",
       "author": "mimiruku",
@@ -121,6 +134,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1467963678224683058",
+      "content": "I made this post just to be sure, because the Pool in https://discord.com/channe",
+      "author": "vxvendetta97",
+      "reactions": 8,
+      "channel": "✅「Answered」Anniversary was Great, the Raid was not"
+    },
+    {
       "id": "1467857686476623943",
       "content": "忘记发了<:T_sleep2:1356085993626665200>   \n收工<:pray:1356053116260454534>   \n修完bug艾尔瓦",
       "author": "sweet_25367",
@@ -140,6 +160,13 @@
       "author": "lavache.",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1467848755364761776",
+      "content": "",
+      "author": "cornonthemacabre_",
+      "reactions": 7,
+      "channel": "Enemy still only attacking once after Wanda 10 stack exalt"
     },
     {
       "id": "1467806979719172097",
@@ -167,27 +194,6 @@
       "content": "大家再見",
       "author": "ahuahuahua",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1467949507995238527",
-      "content": "I just assumed that was mouchettes name in chinese",
-      "author": "beenax.",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1467703243114283070",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1467813365308067850",
-      "content": "",
-      "author": "ahong0727",
-      "reactions": 5,
       "channel": "🔸綜合討論"
     }
   ]

@@ -1,10 +1,17 @@
 {
   "date": "2026-02-20",
-  "messages": 1696,
+  "messages": 1723,
   "unique_authors": 58,
-  "reactions_total": 210,
-  "attachments": 90,
+  "reactions_total": 235,
+  "attachments": 93,
   "channel_activity": {
+    "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 4,
+    "✅「Answered」Creator accounts": 3,
+    "✅「Answered」problems with donations": 2,
+    "游戏下载": 1,
+    "Please allow us to reutrn Doresain to the Black Pool": 14,
+    "Missing top up bonus": 1,
+    "“This account is banned from logging in”": 2,
     "✦关卡地图「融灾禁区」总览54期·星辰篇✦": 1,
     "塗鴉": 4,
     "皮克曼生日快乐": 9,
@@ -21,34 +28,34 @@
     "🔸阵容构建": 41
   },
   "hourly_activity": {
+    "4": 210,
+    "8": 32,
+    "18": 23,
+    "19": 11,
+    "21": 2,
+    "13": 106,
+    "17": 130,
+    "7": 20,
+    "9": 54,
+    "14": 30,
+    "15": 86,
+    "16": 299,
+    "2": 72,
+    "6": 59,
     "1": 21,
-    "19": 10,
-    "6": 58,
-    "7": 17,
-    "8": 30,
-    "9": 51,
     "10": 8,
     "3": 83,
-    "21": 1,
     "22": 3,
-    "2": 71,
     "5": 81,
-    "14": 27,
-    "15": 82,
     "12": 280,
     "23": 2,
     "0": 6,
-    "4": 208,
     "11": 103,
-    "13": 103,
-    "16": 298,
-    "17": 129,
-    "18": 22,
     "20": 2
   },
   "message_types": {
-    "0": 16,
-    "19": 2
+    "0": 19,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -64,6 +71,13 @@
       "author": "r1n.ouo",
       "reactions": 16,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1474415047433257163",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 14,
+      "channel": "Please allow us to reutrn Doresain to the Black Pool"
     },
     {
       "id": "1474389809324884125",
@@ -99,6 +113,13 @@
       "author": "eddy10051115",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474264340172374171",
+      "content": "I spent like a whole afternoon for a run.",
+      "author": "xyakoto",
+      "reactions": 4,
+      "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
     },
     {
       "id": "1474449595839807588",
@@ -143,6 +164,20 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1474395842583728290",
+      "content": "Probably could try to contact the Customer service, from the home screen icon fo",
+      "author": "vxvendetta97",
+      "reactions": 2,
+      "channel": "✅「Answered」problems with donations"
+    },
+    {
+      "id": "1474399549375250507",
+      "content": "*whisper*\n“I love you Doresain”\nThrow him into the Black Pool because of my brok",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "Please allow us to reutrn Doresain to the Black Pool"
+    },
+    {
       "id": "1474221466697470160",
       "content": "本期为大家带来的是星辰篇第27期（第54期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n◆本期融灾时间：2026年2月16日9:00 - 3月2日9:",
       "author": "menoctus",
@@ -162,34 +197,6 @@
       "author": "amstelredam",
       "reactions": 2,
       "channel": ""
-    },
-    {
-      "id": "1474244985976127595",
-      "content": "這遊戲結束了 往後原型換完米粒全灌墨菲身上",
-      "author": "xingxiu_0209",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474267027429523530",
-      "content": "",
-      "author": "corposant_1003",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474268706031800433",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474333393096540356",
-      "content": "終於80等了",
-      "author": "quackdayo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
     }
   ]
 }

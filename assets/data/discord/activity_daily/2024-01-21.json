@@ -1,10 +1,11 @@
 {
   "date": "2024-01-21",
-  "messages": 15,
+  "messages": 16,
   "unique_authors": 10,
-  "reactions_total": 48,
-  "attachments": 9,
+  "reactions_total": 62,
+  "attachments": 10,
   "channel_activity": {
+    "汀克特": 1,
     "【PVE攻略】艾继丝石化使用指南、技巧大全": 4,
     "幻梦深潜地图全解": 2,
     "万分索蕾尔思路分享及角色配队全方位解析": 1,
@@ -13,6 +14,7 @@
     "[diy界域——异术]包含六位唤醒体、配套命轮及命轮故事、造物及刻印": 4
   },
   "hourly_activity": {
+    "14": 1,
     "8": 3,
     "9": 1,
     "13": 2,
@@ -25,8 +27,7 @@
     "12": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 3
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -42,6 +43,13 @@
       "author": "scholar_2",
       "reactions": 19,
       "channel": "万分索蕾尔思路分享及角色配队全方位解析"
+    },
+    {
+      "id": "1198628325011247114",
+      "content": "眷恋故土的流浪者、永恒歌唱的寻觅者",
+      "author": "straysheep1130",
+      "reactions": 14,
+      "channel": "汀克特"
     },
     {
       "id": "1198777773553111111",

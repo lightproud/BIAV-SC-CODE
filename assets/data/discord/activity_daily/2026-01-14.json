@@ -1,10 +1,22 @@
 {
   "date": "2026-01-14",
-  "messages": 32,
+  "messages": 68,
   "unique_authors": 10,
-  "reactions_total": 49,
-  "attachments": 7,
+  "reactions_total": 52,
+  "attachments": 16,
   "channel_activity": {
+    "Who Ryker's Designer pls come talk ?": 1,
+    "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 1,
+    "💭「Processing」Can't see the new intro scene on Steam": 1,
+    "疑似文本错误": 2,
+    "💭「Processing」The Spacebar/Enter key on Steam PC version not working": 1,
+    "達芙戴爾活動卡「禁忌的交易」無法獲得死亡抵抗": 5,
+    "疑問：珠玉之卵治療效果是固定數值還是變動數值？": 5,
+    "Celeste/Murphy Assist card in H9-11 does not dispel Seal status": 1,
+    "✅「已回答」相位bug": 3,
+    "登入畫面怎麼變成新細明體了": 14,
+    "💭「处理中」人類「登入」極地": 1,
+    "✅「Resolved」Account bugged and unable to load into the game after login": 1,
     "KING'S VANITY || 杜勒赛因x西维斯特 (颜色鲜艳！)": 12,
     "whormentine + tournament": 4,
     "1457468446353653792": 1,
@@ -12,22 +24,24 @@
     "1445556242381672559": 7
   },
   "hourly_activity": {
-    "6": 1,
-    "7": 2,
-    "8": 4,
+    "5": 5,
+    "2": 26,
+    "23": 5,
+    "20": 4,
+    "10": 2,
+    "7": 5,
+    "8": 5,
+    "6": 4,
     "9": 2,
-    "10": 1,
     "11": 4,
     "15": 1,
-    "23": 4,
-    "2": 6,
     "3": 3,
-    "4": 2,
-    "20": 2
+    "4": 2
   },
   "message_types": {
-    "0": 14,
-    "19": 2
+    "0": 28,
+    "19": 4,
+    "4": 4
   },
   "top_reacted_messages": [
     {
@@ -57,6 +71,27 @@
       "author": "meatloversus",
       "reactions": 2,
       "channel": "whormentine + tournament"
+    },
+    {
+      "id": "1460862401992986828",
+      "content": "如題，打出後死亡抵抗未依數字增加。若是因為戰鬥中已經經歷死亡抵抗導致獲得比例減少，卡面上也未額外說明\n檔案錯了請見二樓",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "達芙戴爾活動卡「禁忌的交易」無法獲得死亡抵抗"
+    },
+    {
+      "id": "1460863652482514944",
+      "content": "珠玉之卵卡面上的「回復生命」是黑字，實際效果卻會因「搖籃」加持而提升，從卡面的 5 點變為實際上是 7 點。其實我很希望珠玉之卵也可以受到各種治療加成，這樣一問",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "疑問：珠玉之卵治療效果是固定數值還是變動數值？"
+    },
+    {
+      "id": "1460828768297025578",
+      "content": "嗨，这个问题已经修复啦，会在下个版本放出🥰",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」相位bug"
     },
     {
       "id": "1460903126281228379",

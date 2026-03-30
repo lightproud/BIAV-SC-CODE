@@ -1,10 +1,16 @@
 {
   "date": "2025-08-15",
-  "messages": 30,
+  "messages": 46,
   "unique_authors": 9,
-  "reactions_total": 22,
-  "attachments": 15,
+  "reactions_total": 27,
+  "attachments": 18,
   "channel_activity": {
+    "✅「Answered」Triple Reruns in the Future": 2,
+    "✅「Answered」Clementine scaling is wrong": 4,
+    "✅「Answered」I cant enter the game": 2,
+    "✅「已回答」調和回血沒辦法移除出血": 1,
+    "✅「Answered」Can't log in": 6,
+    "💭「В процессе」Пропал звук в игре, версия steam": 1,
     "神國圖魯教 星辰篇": 19,
     "做個組隊專樓(請大佬支援攻略": 8,
     "研發圖魯玩法(防禦篇)": 1,
@@ -12,18 +18,21 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "7": 3,
+    "8": 9,
+    "18": 4,
+    "17": 4,
+    "9": 5,
+    "2": 1,
     "3": 12,
-    "8": 7,
     "4": 4,
     "5": 1,
     "6": 2,
-    "7": 2,
-    "17": 1,
     "14": 1
   },
   "message_types": {
-    "0": 24,
-    "19": 4
+    "0": 14,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -32,6 +41,13 @@
       "author": "navirecorbeau",
       "reactions": 18,
       "channel": ""
+    },
+    {
+      "id": "1405829703486672906",
+      "content": "<@885713804917346355>Hi, we fixed it and see if the phone can log in to the game",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✅「Answered」Can't log in"
     },
     {
       "id": "1405769917814276127",
@@ -46,6 +62,20 @@
       "author": "corposant_1003",
       "reactions": 2,
       "channel": "研發圖魯玩法(防禦篇)"
+    },
+    {
+      "id": "1405968960381386923",
+      "content": "Been trying to get it but it wont let me been trying the spamming click method b",
+      "author": "apssin",
+      "reactions": 1,
+      "channel": "✅「Answered」I cant enter the game"
+    },
+    {
+      "id": "1405746154406416569",
+      "content": "Не знаю, что произошло, но теперь звук появился и все работает стабильно. Спасиб",
+      "author": "closetom",
+      "reactions": 1,
+      "channel": "💭「В процессе」Пропал звук в игре, версия steam"
     }
   ]
 }

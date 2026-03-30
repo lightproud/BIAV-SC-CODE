@@ -1,10 +1,22 @@
 {
   "date": "2026-01-31",
-  "messages": 8,
-  "unique_authors": 6,
-  "reactions_total": 13,
-  "attachments": 4,
+  "messages": 27,
+  "unique_authors": 14,
+  "reactions_total": 25,
+  "attachments": 7,
   "channel_activity": {
+    "Poison have problem and some words about DoT team in game": 1,
+    "我們神母怎麼沒辦法講下去": 2,
+    "Text bugs during story": 1,
+    "千面幻象詛咒": 1,
+    "Read all in Archive": 2,
+    "Options to turn off Enlihtens": 1,
+    "Character designs": 1,
+    "the stage of 1-6 is bugged you can no longer read the story in mobile": 1,
+    "✅「已回答」取消SSR命輪自動分解": 3,
+    "Regarding the possible +12 Paywall": 4,
+    "蘿坦的最終法則與製作組預期目標相悖": 1,
+    "💭「Processing」Purple Line": 1,
     "此乃造谣24的笔记本内容（嗯）": 1,
     "徐": 1,
     "1467308113660215326": 1,
@@ -13,6 +25,17 @@
     "1458187614879486146": 1
   },
   "hourly_activity": {
+    "16": 4,
+    "4": 1,
+    "11": 2,
+    "22": 1,
+    "17": 2,
+    "14": 1,
+    "3": 2,
+    "7": 1,
+    "2": 1,
+    "9": 3,
+    "0": 1,
     "19": 1,
     "1": 1,
     "23": 1,
@@ -20,7 +43,8 @@
     "6": 2
   },
   "message_types": {
-    "0": 2
+    "0": 16,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -31,11 +55,46 @@
       "channel": ""
     },
     {
+      "id": "1466989878968582274",
+      "content": "The reason i feel that way is in relation to both the dev's track record and wha",
+      "author": "satachan",
+      "reactions": 5,
+      "channel": "Regarding the possible +12 Paywall"
+    },
+    {
       "id": "1467308113660215326",
       "content": "I would really appreciate if we could get things like character and wheel portra",
       "author": "jollysquire",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1467287388173762662",
+      "content": "having the same issue in the \"next Monday, Sir\" stage of the Happy Hunting Speci",
+      "author": "strikeing",
+      "reactions": 3,
+      "channel": "Text bugs during story"
+    },
+    {
+      "id": "1467117108256313531",
+      "content": "<@1131790839291596841>",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "✅「已回答」取消SSR命輪自動分解"
+    },
+    {
+      "id": "1467007561130709064",
+      "content": "對，我還沒打完\n最近才想說要繼續推主線的（",
+      "author": "myth1538",
+      "reactions": 1,
+      "channel": "我們神母怎麼沒辦法講下去"
+    },
+    {
+      "id": "1467066793024815237",
+      "content": "~~有沒有大佬幫我@~~",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "✅「已回答」取消SSR命輪自動分解"
     },
     {
       "id": "1467231768238358528",

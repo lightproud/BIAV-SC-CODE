@@ -1,23 +1,42 @@
 {
   "date": "2025-10-14",
-  "messages": 12,
-  "unique_authors": 5,
-  "reactions_total": 22,
-  "attachments": 19,
+  "messages": 54,
+  "unique_authors": 12,
+  "reactions_total": 31,
+  "attachments": 24,
   "channel_activity": {
+    "✅「Answered」Question about fanart & merch": 1,
+    "✅「Answered」Ogier bugged?": 14,
+    "✅「已回答」有沒有考慮每月重置一下三個商店裏的抽數": 4,
+    "✅「已回答」能否把模擬器的帳戶轉到steam版本上？": 4,
+    "💭「Processing」the game is just, not loading.": 10,
+    "✅「已回答」勒姆瓦西，终末交响曲和终章的音乐什么时候出？": 3,
+    "✅「Answered」Chapter 6 boss bug": 4,
+    "✅「已回答」每个大版本一到两次的两个空窗期，你们打算怎么处理？": 1,
+    "✅「已解决」现实起点和代理凭证溢出消耗掉了会给东西吗？": 1,
     "✦关卡地图「融灾禁区」总览45期·星辰篇✦": 1,
     "1421408684776357929": 1,
     "1305430084420898868": 7,
     "1234769700735418368": 3
   },
   "hourly_activity": {
-    "8": 5,
+    "16": 1,
+    "8": 9,
+    "13": 1,
+    "15": 9,
+    "3": 12,
+    "5": 7,
+    "6": 4,
+    "1": 1,
+    "2": 1,
+    "7": 4,
     "12": 1,
-    "10": 4,
-    "7": 2
+    "10": 4
   },
   "message_types": {
-    "0": 1
+    "0": 32,
+    "19": 4,
+    "4": 6
   },
   "top_reacted_messages": [
     {
@@ -35,11 +54,53 @@
       "channel": ""
     },
     {
+      "id": "1427503880261865543",
+      "content": "rt",
+      "author": "navirecorbeau",
+      "reactions": 3,
+      "channel": "✅「已回答」有沒有考慮每月重置一下三個商店裏的抽數"
+    },
+    {
       "id": "1427577321593901086",
       "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第18期（第45期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\nP.S.图片较长，在线预览无",
       "author": "menoctus",
       "reactions": 3,
       "channel": "✦关卡地图「融灾禁区」总览45期·星辰篇✦"
+    },
+    {
+      "id": "1427548872602812466",
+      "content": "Hi, this issue will be fixed soon and is expected to be released in the next ver",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「Answered」Chapter 6 boss bug"
+    },
+    {
+      "id": "1427578233032937576",
+      "content": "During my run in wave 5 dtide, i noticed that ogier's  unstable barrier works di",
+      "author": "melwyn7591",
+      "reactions": 1,
+      "channel": "✅「Answered」Ogier bugged?"
+    },
+    {
+      "id": "1427656810671640698",
+      "content": "There's that kind of interaction everywhere on every effect in the game that I s",
+      "author": "eternalis_era",
+      "reactions": 1,
+      "channel": "✅「Answered」Ogier bugged?"
+    },
+    {
+      "id": "1427528895284117504",
+      "content": "Can try to reinstall the game, if it still game problems, you can try to remove ",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "💭「Processing」the game is just, not loading."
+    },
+    {
+      "id": "1427560694450094121",
+      "content": "守密人放心，游戏内的音乐会陆续上线典藏馆~\n\n一般我们会先把音乐在各个音乐平台发布，发布完毕后在每个大版本把它们依次收录进典藏馆😊",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」勒姆瓦西，终末交响曲和终章的音乐什么时候出？"
     },
     {
       "id": "1427569242722533470",

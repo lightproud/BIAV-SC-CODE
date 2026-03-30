@@ -1,21 +1,33 @@
 {
   "date": "2025-08-13",
-  "messages": 10,
-  "unique_authors": 5,
-  "reactions_total": 16,
-  "attachments": 1,
+  "messages": 21,
+  "unique_authors": 6,
+  "reactions_total": 18,
+  "attachments": 8,
   "channel_activity": {
+    "✅「已回答」伺服器會不會有標籤？": 2,
+    "✅「Answered」Can't log in": 3,
+    "✅「已回答」智識之理和歡愉之理英文名稱相同？": 2,
+    "✅「已回答」登不进哦〒_〒": 3,
+    "💭「处理中」steam端进不去": 1,
     "Slay the Spire Morimens Mod Text Provided Post": 3,
     "已出貨阿狗很愛吃": 7
   },
   "hourly_activity": {
+    "23": 2,
+    "2": 1,
+    "4": 2,
+    "12": 2,
+    "15": 1,
+    "17": 2,
+    "8": 1,
     "7": 1,
     "10": 2,
     "14": 7
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 10,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -31,6 +43,20 @@
       "author": "ahuahuahua",
       "reactions": 2,
       "channel": "已出貨阿狗很愛吃"
+    },
+    {
+      "id": "1405338884560125982",
+      "content": "伺服器標籤 – Discord https://share.google/TOfV7l7I5RHH4Pi0d",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "✅「已回答」伺服器會不會有標籤？"
+    },
+    {
+      "id": "1405171467607609446",
+      "content": "順便一提在事件中智識之理是叫Lex Nous",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "✅「已回答」智識之理和歡愉之理英文名稱相同？"
     }
   ]
 }
