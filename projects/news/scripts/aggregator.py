@@ -37,6 +37,13 @@ OUTPUT_PATH = REPO_ROOT / 'assets' / 'data' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
 HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
 
+# Bilibili creator MIDs known to produce Morimens content
+# Format: mid (int) -> display name (str). Add more as confirmed.
+BILIBILI_MORIMENS_CREATORS = {
+    545164270: '金发女人丨型',
+    # 萨摩_不耶、莱星Ligh、9_9墨玖、God7777 等 — 待确认 mid 后补充
+}
+
 # Valid source identifiers
 VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review'}
 
@@ -202,11 +209,62 @@ def fetch_reddit(subreddits=None):
     return items
 
 
-def fetch_bilibili():
-    """Fetch Bilibili search results for Morimens keywords."""
-    import subprocess as _sp
-
+def _fetch_bilibili_space():
+    """Fetch videos from known Morimens creators via space API (primary path)."""
     items = []
+    headers = {
+        'User-Agent': 'Mozilla/5.0',
+        'Referer': 'https://www.bilibili.com',
+    }
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+
+    for mid, creator_name in BILIBILI_MORIMENS_CREATORS.items():
+        url = 'https://api.bilibili.com/x/space/arc/search'
+        params = {
+            'mid': mid,
+            'pn': 1,
+            'ps': 20,
+            'order': 'pubdate',
+        }
+        try:
+            resp = requests.get(url, params=params, headers=headers, timeout=15)
+            resp.raise_for_status()
+            vlist = resp.json().get('data', {}).get('list', {}).get('vlist', []) or []
+            count = 0
+            for v in vlist:
+                pubdate = v.get('created', 0)
+                created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
+                if not created or created < cutoff:
+                    continue
+                bvid = v.get('bvid', '')
+                items.append({
+                    'title': strip_html_tags(v.get('title', '')),
+                    'summary': v.get('description', '')[:200],
+                    'source': 'bilibili',
+                    'time': created.isoformat(),
+                    'url': f'https://www.bilibili.com/video/{bvid}' if bvid else '',
+                    'engagement': v.get('play', 0) + v.get('comment', 0),
+                    'is_hot': v.get('play', 0) > 10000,
+                    'author': v.get('author', creator_name),
+                    'tags': [v.get('typeid', '')] if v.get('typeid') else [],
+                })
+                count += 1
+            logger.info(f'Bilibili space {creator_name}({mid}): {count} videos in {HOURS_LOOKBACK}h')
+        except Exception as e:
+            logger.warning(f'Bilibili space {creator_name}({mid}) failed: {e}')
+
+    return items
+
+
+def _fetch_bilibili_search():
+    """Fetch Bilibili search results for Morimens keywords (fallback path)."""
+    items = []
+    headers = {
+        'User-Agent': 'Mozilla/5.0',
+        'Referer': 'https://www.bilibili.com',
+    }
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+
     for keyword in ['忘却前夜', '忘卻前夜']:
         url = 'https://api.bilibili.com/x/web-interface/search/type'
         params = {
@@ -216,10 +274,6 @@ def fetch_bilibili():
             'duration': 0,
             'page': 1,
         }
-        headers = {
-            'User-Agent': 'Mozilla/5.0',
-            'Referer': 'https://www.bilibili.com',
-        }
         try:
             resp = requests.get(url, params=params, headers=headers, timeout=15)
             resp.raise_for_status()
@@ -227,25 +281,32 @@ def fetch_bilibili():
             for v in results[:20]:
                 pubdate = v.get('pubdate', 0)
                 created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
-                if created and datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                if not created or created < cutoff:
                     continue
-                # Strip HTML tags from title
-                title = strip_html_tags(v.get('title', ''))
                 items.append({
-                    'title': title,
+                    'title': strip_html_tags(v.get('title', '')),
                     'summary': v.get('description', '')[:200],
                     'source': 'bilibili',
-                    'time': created.isoformat() if created else datetime.now(timezone.utc).isoformat(),
+                    'time': created.isoformat(),
                     'url': v.get('arcurl', ''),
                     'engagement': v.get('play', 0) + v.get('danmaku', 0),
                     'is_hot': v.get('play', 0) > 10000,
                     'author': v.get('author', ''),
                     'tags': [v.get('typename', '')] if v.get('typename') else [],
                 })
-            logger.info(f'Bilibili "{keyword}": fetched {len(results)} videos')
+            logger.info(f'Bilibili search "{keyword}": fetched {len(results)} videos')
         except Exception as e:
-            logger.warning(f'Bilibili "{keyword}" failed: {e}')
+            logger.warning(f'Bilibili search "{keyword}" failed: {e}')
 
+    return items
+
+
+def fetch_bilibili():
+    """Fetch Bilibili videos: space API (primary) with search API as fallback."""
+    items = _fetch_bilibili_space()
+    if not items:
+        logger.info('Bilibili: space API returned 0 items, falling back to search API')
+        items = _fetch_bilibili_search()
     return items
 
 
