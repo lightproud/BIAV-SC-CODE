@@ -1,14 +1,12 @@
 name: Extract Game Data from Client
 
 on:
-  schedule:
-    # Run weekly on Monday at 03:00 UTC to catch game updates
-    - cron: '0 3 * * 1'
   workflow_dispatch:
     inputs:
-      download_url:
-        description: 'Direct download URL for PC client (optional, auto-detects if empty)'
+      steam_app_id:
+        description: 'Steam App ID (default: 3052450 CN version)'
         required: false
+        default: '3052450'
       extract_textures:
         description: 'Extract portrait textures'
         required: false
@@ -19,10 +17,71 @@ permissions:
   contents: write
 
 jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      cache-key: ${{ steps.cache-key.outputs.key }}
+    steps:
+      - name: Generate cache key
+        id: cache-key
+        run: |
+          # Use date as part of cache key so we re-download periodically
+          echo "key=morimens-client-${{ github.event.inputs.steam_app_id || '3052450' }}-$(date +%Y%m%d)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache game client
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: ~/steam_depot
+          key: ${{ steps.cache-key.outputs.key }}
+
+      - name: Install DepotDownloader
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          # Install .NET runtime
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq dotnet-runtime-8.0 || {
+            # Fallback: install from Microsoft
+            wget -q https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+            chmod +x dotnet-install.sh
+            ./dotnet-install.sh --channel 8.0 --runtime dotnet
+            export PATH="$HOME/.dotnet:$PATH"
+          }
+
+          # Download DepotDownloader
+          LATEST=$(curl -s https://api.github.com/repos/SteamRE/DepotDownloader/releases/latest | grep -oP '"tag_name":\s*"\K[^"]+')
+          VERSION="${LATEST#DepotDownloader_}"
+          echo "DepotDownloader version: $LATEST"
+          curl -sL "https://github.com/SteamRE/DepotDownloader/releases/download/${LATEST}/DepotDownloader-linux-x64.zip" -o dd.zip
+          mkdir -p ~/depotdownloader
+          unzip -q dd.zip -d ~/depotdownloader
+          chmod +x ~/depotdownloader/DepotDownloader
+
+      - name: Download Morimens via Steam (anonymous)
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          APP_ID="${{ github.event.inputs.steam_app_id || '3052450' }}"
+          echo "Downloading Steam App $APP_ID (anonymous, F2P)..."
+          ~/depotdownloader/DepotDownloader \
+            -app "$APP_ID" \
+            -os windows \
+            -dir ~/steam_depot \
+            -max-downloads 8
+          echo "Download complete."
+          du -sh ~/steam_depot
+
+      - name: Upload depot as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: steam-depot
+          path: ~/steam_depot
+          retention-days: 3
+
   extract:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
-
+    needs: download
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
 
@@ -30,35 +89,35 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          pip install UnityPy Pillow
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq p7zip-full innoextract
+      - name: Install Python dependencies
+        run: pip install UnityPy Pillow
 
-      - name: Download game client
+      - name: Download depot artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: steam-depot
+          path: ~/steam_depot
+
+      - name: Locate game data directory
+        id: locate
         run: |
-          EXTRA_ARGS=""
-          if [ -n "${{ github.event.inputs.download_url }}" ]; then
-            EXTRA_ARGS="--url '${{ github.event.inputs.download_url }}'"
+          echo "=== Looking for *_Data directory ==="
+          DATA_DIR=$(find ~/steam_depot -maxdepth 3 -type d -name "*_Data" | head -1)
+          if [ -z "$DATA_DIR" ]; then
+            echo "No *_Data dir found, trying StreamingAssets..."
+            DATA_DIR=$(find ~/steam_depot -maxdepth 4 -type d -name "StreamingAssets" | head -1)
+            DATA_DIR="${DATA_DIR%/StreamingAssets}"
           fi
+          if [ -z "$DATA_DIR" ]; then
+            echo "ERROR: Cannot locate game data directory"
+            echo "Top-level structure:"
+            find ~/steam_depot -maxdepth 3 -type d
+            exit 1
+          fi
+          echo "Found: $DATA_DIR"
+          echo "data_dir=$DATA_DIR" >> "$GITHUB_OUTPUT"
 
-          python3 projects/wiki/scripts/download_game_client.py \
-            --output ~/game_data \
-            $EXTRA_ARGS
-
-      - name: Show game data structure
-        run: |
-          echo "=== Game data directory ==="
-          ls -la ~/game_data/
-          echo ""
-          echo "=== Directory tree (depth 3) ==="
-          find ~/game_data -maxdepth 3 -type d | head -30
-          echo ""
-          echo "=== Total size ==="
-          du -sh ~/game_data
-
-      - name: Run extraction
+      - name: Extract game data
         run: |
           EXTRA_ARGS=""
           if [ "${{ github.event.inputs.extract_textures }}" = "false" ]; then
@@ -66,34 +125,31 @@ jobs:
           fi
 
           python3 projects/wiki/scripts/extract_client_data.py \
-            ~/game_data \
+            "${{ steps.locate.outputs.data_dir }}" \
             --output projects/wiki/output/client_extract \
             --map-schema \
             $EXTRA_ARGS
 
-      - name: Show results
+      - name: Show extraction results
         run: |
           echo "=== Extraction stats ==="
-          cat projects/wiki/output/client_extract/extraction_stats.json
+          cat projects/wiki/output/client_extract/extraction_stats.json 2>/dev/null || echo "No stats"
           echo ""
-
-          if [ -f projects/wiki/output/client_extract/schema_mapping_report.json ]; then
-            echo "=== Schema mapping ==="
-            cat projects/wiki/output/client_extract/schema_mapping_report.json
-          fi
-
+          echo "=== Extracted files ==="
+          find projects/wiki/output/client_extract -type f | head -50
           echo ""
-          echo "=== Extracted JSON files ==="
-          find projects/wiki/output/client_extract/text -name "*.json" -exec ls -lh {} \; 2>/dev/null | head -30
+          echo "=== Total extracted ==="
+          find projects/wiki/output/client_extract -type f | wc -l
+          echo "files"
 
-      - name: Upload full extraction as artifact
+      - name: Upload extraction results
         uses: actions/upload-artifact@v4
         with:
           name: game-data-extract-${{ github.run_id }}
           path: projects/wiki/output/client_extract/
           retention-days: 30
 
-      - name: Commit extracted data
+      - name: Commit extracted data to repo
         run: |
           TEXT_DIR="projects/wiki/output/client_extract/text"
           if [ ! -d "$TEXT_DIR" ] || [ -z "$(ls -A $TEXT_DIR 2>/dev/null)" ]; then
@@ -103,21 +159,25 @@ jobs:
 
           JSON_COUNT=$(find "$TEXT_DIR" -name "*.json" | wc -l)
           TOTAL_COUNT=$(find "$TEXT_DIR" -type f | wc -l)
-          echo "Files to commit: $TOTAL_COUNT ($JSON_COUNT JSON)"
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           git add projects/wiki/output/client_extract/text/
-          git add projects/wiki/output/client_extract/extraction_stats.json
+          git add projects/wiki/output/client_extract/extraction_stats.json 2>/dev/null || true
           git add projects/wiki/output/client_extract/schema_mapping_report.json 2>/dev/null || true
+
+          # Also add portraits if extracted
+          if [ -d "projects/wiki/output/client_extract/textures" ]; then
+            git add projects/wiki/output/client_extract/textures/
+          fi
 
           git diff --cached --quiet && echo "No changes to commit" && exit 0
 
-          git commit -m "feat(wiki): auto-extract game config data from client
+          git commit -m "feat(wiki): auto-extract game data from Steam client
 
           Extracted $JSON_COUNT JSON + $((TOTAL_COUNT - JSON_COUNT)) other config files.
-          Source: Official PC client (auto-downloaded)
+          Source: Steam App ${{ github.event.inputs.steam_app_id || '3052450' }} via DepotDownloader (anonymous)
           [skip ci]"
 
           git pull origin main --rebase

@@ -20,6 +20,8 @@ import json
 import os
 import re
 import sys
+from concurrent.futures import ProcessPoolExecutor, as_completed
+from multiprocessing import cpu_count
 from pathlib import Path
 from typing import Any
 
@@ -209,16 +211,14 @@ def extract_textures(env, output_dir: Path, stats: dict, name_filter: str = None
                 stats["errors"].append(f"Texture2D {getattr(data, 'm_Name', '?')}: {e}")
 
 
-def scan_and_extract(
+def _extract_single_file(
+    asset_file: Path,
     game_data_dir: Path,
     output_dir: Path,
-    extract_tex: bool = False,
-    tex_filter: str = None,
+    extract_tex: bool,
+    tex_filter: str | None,
 ) -> dict:
-    """Main extraction: scan all asset files and extract data."""
-    asset_files = find_asset_files(game_data_dir)
-    print(f"Found {len(asset_files)} asset files to scan")
-
+    """Extract a single asset file. Designed to run in a subprocess."""
     stats = {
         "asset_files_scanned": 0,
         "asset_files_failed": 0,
@@ -229,31 +229,88 @@ def scan_and_extract(
         "binary_skipped": 0,
         "errors": [],
     }
-
-    for i, asset_file in enumerate(asset_files):
-        rel = asset_file.relative_to(game_data_dir) if asset_file.is_relative_to(game_data_dir) else asset_file.name
-        print(f"  [{i+1}/{len(asset_files)}] {rel} ", end="", flush=True)
-
-        try:
-            env = UnityPy.load(str(asset_file))
-            obj_count = len(env.objects)
-            print(f"({obj_count} objects)", end="")
-
-            extract_text_assets(env, output_dir, stats)
-            extract_monobehaviours(env, output_dir, stats)
-
-            if extract_tex:
-                extract_textures(env, output_dir, stats, tex_filter)
-
-            stats["asset_files_scanned"] += 1
-            print(f" ✓")
-
-        except Exception as e:
-            stats["asset_files_failed"] += 1
-            stats["errors"].append(f"File {rel}: {e}")
-            print(f" ✗ ({e})")
-
+    rel = asset_file.relative_to(game_data_dir) if asset_file.is_relative_to(game_data_dir) else asset_file.name
+    try:
+        env = UnityPy.load(str(asset_file))
+        extract_text_assets(env, output_dir, stats)
+        extract_monobehaviours(env, output_dir, stats)
+        if extract_tex:
+            extract_textures(env, output_dir, stats, tex_filter)
+        stats["asset_files_scanned"] = 1
+    except Exception as e:
+        stats["asset_files_failed"] = 1
+        stats["errors"].append(f"File {rel}: {e}")
+    stats["_rel"] = str(rel)
     return stats
+
+
+def scan_and_extract(
+    game_data_dir: Path,
+    output_dir: Path,
+    extract_tex: bool = False,
+    tex_filter: str = None,
+    workers: int = 0,
+) -> dict:
+    """Main extraction: scan all asset files and extract data.
+
+    Args:
+        workers: number of parallel workers. 0 = auto (cpu_count), 1 = sequential.
+    """
+    asset_files = find_asset_files(game_data_dir)
+    print(f"Found {len(asset_files)} asset files to scan")
+
+    total_stats = {
+        "asset_files_scanned": 0,
+        "asset_files_failed": 0,
+        "text_assets": 0,
+        "json_files": 0,
+        "mono_assets": 0,
+        "textures": 0,
+        "binary_skipped": 0,
+        "errors": [],
+    }
+
+    if workers == 0:
+        workers = min(cpu_count() or 4, 8, len(asset_files) or 1)
+
+    if workers > 1 and len(asset_files) > 1:
+        print(f"Using {workers} parallel workers")
+        with ProcessPoolExecutor(max_workers=workers) as pool:
+            futures = {
+                pool.submit(
+                    _extract_single_file,
+                    af, game_data_dir, output_dir, extract_tex, tex_filter,
+                ): af
+                for af in asset_files
+            }
+            done_count = 0
+            for future in as_completed(futures):
+                done_count += 1
+                result = future.result()
+                rel = result.pop("_rel", "?")
+                status = "✓" if result["asset_files_scanned"] else "✗"
+                print(f"  [{done_count}/{len(asset_files)}] {rel} {status}")
+                for key in total_stats:
+                    if key == "errors":
+                        total_stats["errors"].extend(result["errors"])
+                    else:
+                        total_stats[key] += result[key]
+    else:
+        # Sequential fallback
+        for i, asset_file in enumerate(asset_files):
+            result = _extract_single_file(
+                asset_file, game_data_dir, output_dir, extract_tex, tex_filter,
+            )
+            rel = result.pop("_rel", "?")
+            status = "✓" if result["asset_files_scanned"] else "✗"
+            print(f"  [{i+1}/{len(asset_files)}] {rel} {status}")
+            for key in total_stats:
+                if key == "errors":
+                    total_stats["errors"].extend(result["errors"])
+                else:
+                    total_stats[key] += result[key]
+
+    return total_stats
 
 
 def map_to_wiki_schema(output_dir: Path) -> dict:
@@ -351,6 +408,12 @@ def main():
         action="store_true",
         help="After extraction, map JSON files to wiki database schema",
     )
+    parser.add_argument(
+        "--workers", "-j",
+        type=int,
+        default=0,
+        help="Parallel workers (0=auto, 1=sequential)",
+    )
 
     args = parser.parse_args()
 
@@ -373,6 +436,7 @@ def main():
         output_dir,
         extract_tex=not args.no_textures,
         tex_filter=args.tex_filter if not args.no_textures else None,
+        workers=args.workers,
     )
 
     # Save stats
