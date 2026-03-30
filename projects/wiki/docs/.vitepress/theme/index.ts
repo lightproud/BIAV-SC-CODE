@@ -1,5 +1,6 @@
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
+import { h } from 'vue'
 import './custom.css'
 
 import CharacterGrid from './components/CharacterGrid.vue'
@@ -13,9 +14,15 @@ import FarmingPlanner from './components/FarmingPlanner.vue'
 import DamageCalculator from './components/DamageCalculator.vue'
 import StaminaTracker from './components/StaminaTracker.vue'
 import VoiceLines from './components/VoiceLines.vue'
+import GiscusComments from './components/GiscusComments.vue'
 
 const theme: Theme = {
   extends: DefaultTheme,
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'doc-after': () => h(GiscusComments),
+    })
+  },
   enhanceApp({ app }) {
     app.component('CharacterGrid', CharacterGrid)
     app.component('CharacterCompare', CharacterCompare)
