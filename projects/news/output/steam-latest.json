@@ -1,8 +1,22 @@
 {
-  "collected_at": "2026-03-30T14:53:56.202897+00:00",
+  "collected_at": "2026-03-30T18:06:07.505587+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
+    {
+      "language": "english",
+      "voted_up": true,
+      "review": "With over 600 hours and maybe even more alongside mobile (yes this game is crossplatform)\nDo me a favor and press download while reading.\n\nIts a REAL diamond in the rough in the gacha space.\n\nA Lovecr",
+      "timestamp_created": 1774869192,
+      "playtime_forever": 37203
+    },
+    {
+      "language": "english",
+      "voted_up": false,
+      "review": "Once again I'm trying out new stuff and wondering why it got that positive reviews ~.~\nYes, it has unique aesthetics but..that's it?\n\n- another gacha that starts fully voiced and you think 'Oh cool, t",
+      "timestamp_created": 1774869884,
+      "playtime_forever": 204
+    },
     {
       "language": "english",
       "voted_up": true,
@@ -29,14 +43,7 @@
       "voted_up": true,
       "review": "Дали избить детей в первой же миссии",
       "timestamp_created": 1774812442,
-      "playtime_forever": 581
-    },
-    {
-      "language": "schinese",
-      "voted_up": true,
-      "review": "血肉代替思考胚胎连接大脑 都给我玩血肉队体验血线蹦迪的感觉",
-      "timestamp_created": 1774796845,
-      "playtime_forever": 920
+      "playtime_forever": 760
     }
   ]
 }
