@@ -420,6 +420,6 @@ export default defineConfig({
   },
 
   lastUpdated: true,
-  cleanUrls: true,
+  cleanUrls: false,
   appearance: 'dark',
 })
