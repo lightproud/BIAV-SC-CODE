@@ -2,8 +2,8 @@ name: Discord Archive
 
 on:
   schedule:
-    # Run every 6 hours (Discord data is large, don't run too often)
-    - cron: '0 */6 * * *'
+    # Run every 3 hours
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 permissions:
