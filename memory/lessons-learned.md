@@ -123,6 +123,14 @@
 - **Fix**：已知限制，接受。60天以上仍活跃的帖子极少，月报由 Claude 全文分析不依赖精确日期
 - **Impact**：极少量长寿帖的尾部回复缺失，不影响整体分析质量
 
+## 18. 公开信息不要放 secrets，直接硬编码
+
+- **Context**：NGA 版块 ID、TapTap APP ID、Discord Guild ID 等公开标识符被设计为 GitHub Secrets
+- **Problem**：增加配置负担，用户需要手动去 GitHub Settings 添加，且每次新会话都要提醒用户配置。这些 ID 是公开信息，任何人都能查到
+- **Fix**：公开信息直接硬编码在代码中。只有真正的敏感凭据（Bot Token、API Key、Bearer Token）才放 secrets
+- **Impact**：减少用户操作，新数据源即写即用
+- **原则**：公开 ID → 硬编码；私密凭据 → secrets。不要过度设计
+
 ## 18. VitePress cleanUrls: true 与 GitHub Pages 不兼容
 
 - **Context**：VitePress 配置了 `cleanUrls: true`，生成无扩展名链接（如 `/awakeners/tulu`）
