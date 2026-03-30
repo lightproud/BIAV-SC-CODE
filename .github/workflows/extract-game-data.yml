@@ -1,0 +1,154 @@
+name: Extract Game Data from Steam Client
+
+on:
+  workflow_dispatch:
+    inputs:
+      app_id:
+        description: 'Steam App ID (3052450=CN, 4226130=JP)'
+        required: true
+        default: '3052450'
+      extract_textures:
+        description: 'Extract portrait textures'
+        required: false
+        default: 'true'
+        type: boolean
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install UnityPy Pillow
+          # SteamCMD
+          sudo apt-get update
+          sudo apt-get install -y lib32gcc-s1
+
+      - name: Install SteamCMD
+        run: |
+          mkdir -p ~/steamcmd
+          cd ~/steamcmd
+          curl -sqL "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz" | tar zxvf -
+
+      - name: Download game via SteamCMD
+        env:
+          STEAM_USER: ${{ secrets.STEAM_USER }}
+          STEAM_PASS: ${{ secrets.STEAM_PASS }}
+        run: |
+          APP_ID="${{ github.event.inputs.app_id }}"
+          echo "Downloading App ID: $APP_ID"
+
+          # For F2P games, try anonymous first
+          ~/steamcmd/steamcmd.sh \
+            +@sSteamCmdForcePlatformType windows \
+            +force_install_dir ~/game \
+            +login anonymous \
+            +app_update "$APP_ID" validate \
+            +quit || {
+            echo "Anonymous login failed, trying with credentials..."
+            if [ -z "$STEAM_USER" ]; then
+              echo "ERROR: STEAM_USER secret not set. Add Steam credentials to repo secrets."
+              exit 1
+            fi
+            ~/steamcmd/steamcmd.sh \
+              +@sSteamCmdForcePlatformType windows \
+              +force_install_dir ~/game \
+              +login "$STEAM_USER" "$STEAM_PASS" \
+              +app_update "$APP_ID" validate \
+              +quit
+          }
+
+          echo "=== Download complete ==="
+          du -sh ~/game/
+          ls -la ~/game/
+
+      - name: Locate game data
+        id: locate
+        run: |
+          # Find Morimens_Data directory
+          DATA_DIR=$(find ~/game -type d -name "*_Data" | head -1)
+          if [ -z "$DATA_DIR" ]; then
+            echo "ERROR: Could not find *_Data directory"
+            find ~/game -maxdepth 3 -type d | head -30
+            exit 1
+          fi
+          echo "data_dir=$DATA_DIR" >> "$GITHUB_OUTPUT"
+          echo "Found game data: $DATA_DIR"
+          echo "Contents:"
+          ls -la "$DATA_DIR"
+          echo ""
+          echo "StreamingAssets:"
+          ls -la "$DATA_DIR/StreamingAssets/" 2>/dev/null || echo "(none)"
+          echo ""
+          echo "Total size:"
+          du -sh "$DATA_DIR"
+
+      - name: Extract game data
+        run: |
+          EXTRACT_TEX=""
+          if [ "${{ github.event.inputs.extract_textures }}" = "false" ]; then
+            EXTRACT_TEX="--no-textures"
+          fi
+
+          python3 projects/wiki/scripts/extract_client_data.py \
+            "${{ steps.locate.outputs.data_dir }}" \
+            --output projects/wiki/output/client_extract \
+            --map-schema \
+            $EXTRACT_TEX
+
+      - name: Show extraction results
+        run: |
+          echo "=== Extracted files ==="
+          find projects/wiki/output/client_extract -type f | head -50
+          echo ""
+          echo "=== Stats ==="
+          cat projects/wiki/output/client_extract/extraction_stats.json
+          echo ""
+          if [ -f projects/wiki/output/client_extract/schema_mapping_report.json ]; then
+            echo "=== Schema mapping ==="
+            cat projects/wiki/output/client_extract/schema_mapping_report.json
+          fi
+
+      - name: Upload extraction artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: game-data-extract-${{ github.event.inputs.app_id }}
+          path: projects/wiki/output/client_extract/
+          retention-days: 30
+
+      - name: Commit JSON data to repo
+        run: |
+          # Only commit text/ directory (JSON config tables), not textures
+          TEXT_DIR="projects/wiki/output/client_extract/text"
+          if [ ! -d "$TEXT_DIR" ] || [ -z "$(ls -A $TEXT_DIR)" ]; then
+            echo "No text assets extracted, skipping commit"
+            exit 0
+          fi
+
+          # Count files
+          JSON_COUNT=$(find "$TEXT_DIR" -name "*.json" | wc -l)
+          echo "JSON files to commit: $JSON_COUNT"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/wiki/output/client_extract/text/
+          git add projects/wiki/output/client_extract/extraction_stats.json
+          git add projects/wiki/output/client_extract/schema_mapping_report.json 2>/dev/null || true
+
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+
+          git commit -m "feat(wiki): auto-extract game data from Steam client (App ${{ github.event.inputs.app_id }})
+
+          Extracted $JSON_COUNT JSON config files via UnityPy.
+          [skip ci]"
+
+          git pull origin main --rebase
+          git push origin main
