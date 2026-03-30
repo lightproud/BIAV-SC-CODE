@@ -25,7 +25,6 @@ jobs:
       - name: Run Discord archiver
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          DISCORD_GUILD_ID: ${{ secrets.DISCORD_GUILD_ID }}
         run: python projects/news/scripts/discord_archiver.py
 
       - name: Commit and push if changed

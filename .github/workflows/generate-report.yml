@@ -30,8 +30,6 @@ jobs:
         env:
           HOURS_LOOKBACK: '24'
           # --- 中文平台 ---
-          NGA_FORUM_ID: ${{ secrets.NGA_FORUM_ID }}
-          TAPTAP_APP_ID: ${{ secrets.TAPTAP_APP_ID }}
           QQ_GUILD_ID: ${{ secrets.QQ_GUILD_ID }}
           QQ_BOT_TOKEN: ${{ secrets.QQ_BOT_TOKEN }}
           BAHAMUT_BSN: ${{ secrets.BAHAMUT_BSN }}

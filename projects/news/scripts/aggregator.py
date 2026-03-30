@@ -372,10 +372,7 @@ def fetch_nga():
 
     items = []
     # NGA forum ID for 忘却前夜 - update this with the actual forum ID
-    nga_fid = os.environ.get('NGA_FORUM_ID', '-447601')
-    if not nga_fid:
-        logger.info('NGA: NGA_FORUM_ID not set, skipping')
-        return []
+    nga_fid = os.environ.get('NGA_FORUM_ID') or '-447601'
 
     url = f'https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1'
     headers = {
@@ -417,10 +414,7 @@ def fetch_taptap():
     """Fetch TapTap community posts for Morimens."""
     import subprocess as _sp
 
-    app_id = os.environ.get('TAPTAP_APP_ID', '364992')
-    if not app_id:
-        logger.info('TapTap: TAPTAP_APP_ID not set, skipping')
-        return []
+    app_id = os.environ.get('TAPTAP_APP_ID') or '364992'
 
     items = []
     url = f'https://api.taptap.cn/app/v2/app/{app_id}/topic/list'

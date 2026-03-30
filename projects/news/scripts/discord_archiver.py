@@ -110,9 +110,9 @@ class DiscordArchiver:
 
     def __init__(self):
         self.token = os.environ.get('DISCORD_BOT_TOKEN', '')
-        self.guild_id = os.environ.get('DISCORD_GUILD_ID', '1131791637933199470')
-        if not self.token or not self.guild_id:
-            raise RuntimeError('DISCORD_BOT_TOKEN and DISCORD_GUILD_ID required')
+        self.guild_id = os.environ.get('DISCORD_GUILD_ID') or '1131791637933199470'
+        if not self.token:
+            raise RuntimeError('DISCORD_BOT_TOKEN is required')
 
         self.headers = {
             'Authorization': f'Bot {self.token}',
