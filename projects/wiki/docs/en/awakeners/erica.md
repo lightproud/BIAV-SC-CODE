@@ -23,24 +23,17 @@ portrait: /portraits/erica.png
 
 ## Skills
 
-### Command Cards
+| Card | Cost | Effect |
+|------|------|------|
+| *Command Cards* | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: Electromagnetic Blast | — | 强力输出大招，附带额外效果。 |
+| *Enlighten* | — | Data pending |
 
+::: tip
 「功能过载」(Functional Overload)可同时叠加大量护盾和伤害，但消耗全部算力。3启后更为强力。
+:::
 
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-**Electromagnetic Blast**
-
-强力输出大招，附带额外效果。
-
-
-### Enlighten
-
-Data pending
 
 ## Recommended Equipment
 

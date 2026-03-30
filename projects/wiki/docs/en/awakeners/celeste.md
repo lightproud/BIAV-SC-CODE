@@ -23,27 +23,14 @@ portrait: /portraits/celeste.png
 
 ## Skills
 
-### Command Cards
+| Card | Cost | Effect |
+|------|------|------|
+| *Command Cards* | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: Exalt | — | Data pending |
+| **Talent**: Soulforge Aptitude | — | 希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。 |
+| *Enlighten* | — | Data pending |
 
-Data pending
-
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-Data pending
-
-### Enlighten
-
-Data pending
-
-### Talent
-
-**Soulforge Aptitude**
-
-希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。
 
 
 ## Recommended Equipment

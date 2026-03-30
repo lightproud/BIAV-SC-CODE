@@ -23,25 +23,15 @@ portrait: /portraits/shan.png
 
 ## Skills
 
-### Command Cards
-
 | Card | Cost | Effect |
 |------|------|------|
 | Strike | 1 | 标准打击卡 |
 | Defense | 1 | 获得防御力x10%护盾。打出佩戴者指令卡后，获得防御力x6%护盾；每条触腕额外获得防御力x1.5%护盾，每回合最多触发1次(来自命轮效果描述推导)。 |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: Exalt | — | Data pending |
+| *Enlighten* | — | Data pending |
 
 
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-Data pending
-
-### Enlighten
-
-Data pending
 
 ## Recommended Equipment
 

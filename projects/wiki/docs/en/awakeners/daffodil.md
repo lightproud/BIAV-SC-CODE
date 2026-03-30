@@ -23,24 +23,17 @@ portrait: /portraits/daffodil.png
 
 ## Skills
 
-### Command Cards
+| Card | Cost | Effect |
+|------|------|------|
+| *Command Cards* | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: 狂气爆发 | — | 生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。 |
+| *Enlighten* | — | Data pending |
 
+::: tip
 核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。
+:::
 
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-**狂气爆发**
-
-生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。
-
-
-### Enlighten
-
-Data pending
 
 ## Recommended Equipment
 

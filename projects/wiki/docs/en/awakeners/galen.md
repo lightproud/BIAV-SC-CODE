@@ -23,28 +23,15 @@ portrait: /portraits/galen.png
 
 ## Skills
 
-### Command Cards
-
-Data pending
-
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-Data pending
-
-### Over-Exalt
-
-**超限爆发**
-
-将「奇妙料理」洗入抽牌堆和弃牌堆各1张。
+| Card | Cost | Effect |
+|------|------|------|
+| *Command Cards* | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: Exalt | — | Data pending |
+| **Over-Exalt**: 超限爆发 | — | 将「奇妙料理」洗入抽牌堆和弃牌堆各1张。 |
+| *Enlighten* | — | Data pending |
 
 
-### Enlighten
-
-Data pending
 
 ## Recommended Equipment
 

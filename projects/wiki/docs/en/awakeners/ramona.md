@@ -23,34 +23,18 @@ portrait: /portraits/ramona.png
 
 ## Skills
 
-### Command Cards
-
 | Card | Cost | Effect |
 |------|------|------|
 | Strike | 1 | 标准打击卡 |
 | Defense | 1 | 标准防御卡 |
 | Assault Thesis | varies | 拉蒙娜专属指令卡 |
 | Queen's Sword | varies | 拉蒙娜专属指令卡 |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: Exalt | — | Data pending |
+| **Over-Exalt**: 超限爆发 | — | 对所有敌人造成易伤与虚弱1回合，本回合打出的下1张指令卡生效3次。 |
+| *Enlighten* | — | Data pending |
 
 
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-Data pending
-
-### Over-Exalt
-
-**超限爆发**
-
-对所有敌人造成易伤与虚弱1回合，本回合打出的下1张指令卡生效3次。
-
-
-### Enlighten
-
-Data pending
 
 ## Recommended Equipment
 

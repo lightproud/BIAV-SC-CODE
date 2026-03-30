@@ -220,114 +220,87 @@ def _esc(text: Any) -> str:
     return str(text).replace("|", "\\|")
 
 
-def render_command_cards(skills: dict, lang: str) -> str:
+def render_skills_table(skills: dict, lang: str) -> str:
+    """Render all skills (command cards, rouse, exalt, overexalt, enlighten,
+    talent) in a single unified table."""
     L = LABELS[lang]
-    cards = skills.get("command_cards")
-    if not cards:
-        note = skills.get("command_cards_note", "")
-        if note:
-            return f"### {L['command_cards']}\n\n{note}\n"
-        return f"### {L['command_cards']}\n\n{L['pending']}\n"
+    pending = L["pending"]
+
+    def _name(obj: dict | None) -> str:
+        if not obj:
+            return ""
+        return obj.get("name_en", obj.get("name", "")) if lang == "en" else obj.get("name", "")
 
     lines = [
-        f"### {L['command_cards']}",
-        "",
         f"| {L['card_name']} | {L['cost']} | {L['effect']} |",
         "|------|------|------|",
     ]
-    for card in cards:
-        name = card.get("name_en", card.get("name", "")) if lang == "en" else card.get("name", "")
-        cost = _esc(card.get("cost", "—"))
-        effect = _esc(card.get("effect", ""))
-        note = card.get("note", "")
-        cell = effect
-        if note:
-            cell += f" ({_esc(note)})"
-        lines.append(f"| {_esc(name)} | {cost} | {cell} |")
 
-        # Handle upgrades
-        for upg in card.get("upgrades", []):
-            uname = _esc(upg.get("name", ""))
-            ueffect = _esc(upg.get("effect", ""))
-            lines.append(f"| ↳ {uname} | — | {ueffect} |")
+    # ── Command Cards ──
+    cards = skills.get("command_cards")
+    if cards:
+        for card in cards:
+            name = _name(card)
+            cost = _esc(card.get("cost", "—"))
+            effect = _esc(card.get("effect", ""))
+            note = card.get("note", "")
+            cell = effect
+            if note:
+                cell += f" ({_esc(note)})"
+            lines.append(f"| {_esc(name)} | {cost} | {cell} |")
+            for upg in card.get("upgrades", []):
+                uname = _esc(upg.get("name", ""))
+                ueffect = _esc(upg.get("effect", ""))
+                lines.append(f"| ↳ {uname} | — | {ueffect} |")
+    else:
+        lines.append(f"| *{L['command_cards']}* | — | {pending} |")
 
+    # ── Rouse ──
+    rouse = skills.get("rouse")
+    rouse_name = _name(rouse) if rouse else L["rouse"]
+    rouse_effect = _esc(rouse.get("effect", pending)) if rouse else pending
+    lines.append(f"| **{L['rouse']}**: {_esc(rouse_name)} | — | {rouse_effect} |")
+
+    # ── Exalt ──
+    exalt = skills.get("exalt")
+    exalt_name = _name(exalt) if exalt else L["exalt"]
+    exalt_effect = _esc(exalt.get("effect", pending)) if exalt else pending
+    lines.append(f"| **{L['exalt']}**: {_esc(exalt_name)} | — | {exalt_effect} |")
+
+    # ── Over-Exalt (optional) ──
+    oe = skills.get("overexalt")
+    if oe:
+        oe_name = _name(oe)
+        oe_effect = _esc(oe.get("effect", pending))
+        lines.append(f"| **{L['overexalt']}**: {_esc(oe_name)} | — | {oe_effect} |")
+
+    # ── Talent (optional) ──
+    talent = skills.get("talent")
+    if talent:
+        t_name = _name(talent)
+        t_effect = _esc(talent.get("effect", pending))
+        lines.append(f"| **{L['talent']}**: {_esc(t_name)} | — | {t_effect} |")
+
+    # ── Enlighten ──
+    enlighten = skills.get("enlighten")
+    if enlighten:
+        for e in enlighten:
+            level = e.get("level", "?")
+            ename = _name(e)
+            eeffect = _esc(e.get("effect", ""))
+            lines.append(f"| **{L['enlighten']} {level}**: {_esc(ename)} | — | {eeffect} |")
+    else:
+        lines.append(f"| *{L['enlighten']}* | — | {pending} |")
+
+    lines.append("")
+
+    # Command cards note
     note = skills.get("command_cards_note", "")
     if note:
-        lines.extend(["", f"::: tip\n{note}\n:::"])
+        lines.extend([f"::: tip\n{note}\n:::"])
     lines.append("")
+
     return "\n".join(lines) + "\n"
-
-
-def render_rouse(skills: dict, lang: str) -> str:
-    L = LABELS[lang]
-    rouse = skills.get("rouse")
-    if not rouse:
-        return f"### {L['rouse']}\n\n{L['pending']}\n"
-
-    name = rouse.get("name_en", rouse.get("name", "")) if lang == "en" else rouse.get("name", "")
-    effect = rouse.get("effect", L["pending"])
-    lines = [f"### {L['rouse']}", "", f"**{name}**", "", effect, ""]
-    return "\n".join(lines) + "\n"
-
-
-def render_exalt(skills: dict, lang: str) -> str:
-    L = LABELS[lang]
-    exalt = skills.get("exalt")
-    if not exalt:
-        return f"### {L['exalt']}\n\n{L['pending']}\n"
-
-    name = exalt.get("name_en", exalt.get("name", "")) if lang == "en" else exalt.get("name", "")
-    effect = exalt.get("effect", L["pending"])
-    lines = [f"### {L['exalt']}", "", f"**{name}**", "", effect]
-    scaling = exalt.get("scaling", "")
-    if scaling:
-        lines.extend(["", f"*{scaling}*"])
-    note = exalt.get("note", "")
-    if note:
-        lines.extend(["", f"::: tip\n{note}\n:::"])
-    lines.append("")
-    return "\n".join(lines) + "\n"
-
-
-def render_overexalt(skills: dict, lang: str) -> str:
-    L = LABELS[lang]
-    oe = skills.get("overexalt")
-    if not oe:
-        return ""
-    name = oe.get("name_en", oe.get("name", "")) if lang == "en" else oe.get("name", "")
-    effect = oe.get("effect", L["pending"])
-    return f"### {L['overexalt']}\n\n**{name}**\n\n{effect}\n\n"
-
-
-def render_enlighten(skills: dict, lang: str) -> str:
-    L = LABELS[lang]
-    enlighten = skills.get("enlighten")
-    if not enlighten:
-        return f"### {L['enlighten']}\n\n{L['pending']}\n"
-
-    lines = [
-        f"### {L['enlighten']}",
-        "",
-        f"| {L['level']} | {L['card_name']} | {L['effect']} |",
-        "|------|------|------|",
-    ]
-    for e in enlighten:
-        level = e.get("level", "?")
-        name = e.get("name_en", e.get("name", "")) if lang == "en" else e.get("name", "")
-        effect = _esc(e.get("effect", ""))
-        lines.append(f"| {level} | {_esc(name)} | {effect} |")
-    lines.append("")
-    return "\n".join(lines) + "\n"
-
-
-def render_talent(skills: dict, lang: str) -> str:
-    L = LABELS[lang]
-    talent = skills.get("talent")
-    if not talent:
-        return ""
-    name = talent.get("name_en", talent.get("name", "")) if lang == "en" else talent.get("name", "")
-    effect = talent.get("effect", L["pending"])
-    return f"### {L['talent']}\n\n**{name}**\n\n{effect}\n\n"
 
 
 def render_equipment(char: dict, wheel_index: dict[str, list[dict]], lang: str) -> str:
@@ -440,16 +413,7 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
     skills = char.get("skills")
     if skills:
         body.extend([f"## {L['skills']}", ""])
-        body.append(render_command_cards(skills, lang))
-        body.append(render_rouse(skills, lang))
-        body.append(render_exalt(skills, lang))
-        oe = render_overexalt(skills, lang)
-        if oe:
-            body.append(oe)
-        body.append(render_enlighten(skills, lang))
-        talent = render_talent(skills, lang)
-        if talent:
-            body.append(talent)
+        body.append(render_skills_table(skills, lang))
     else:
         body.extend([f"## {L['skills']}", "", L["pending"], ""])
 

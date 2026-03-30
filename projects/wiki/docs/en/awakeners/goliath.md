@@ -23,27 +23,14 @@ portrait: /portraits/goliath.png
 
 ## Skills
 
-### Command Cards
+| Card | Cost | Effect |
+|------|------|------|
+| *Command Cards* | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: Exalt | — | Data pending |
+| **Talent**: Soulforge Aptitude | — | 戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。 |
+| *Enlighten* | — | Data pending |
 
-Data pending
-
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-Data pending
-
-### Enlighten
-
-Data pending
-
-### Talent
-
-**Soulforge Aptitude**
-
-戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。
 
 
 ## Recommended Equipment

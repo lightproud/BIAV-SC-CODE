@@ -23,24 +23,14 @@ portrait: /portraits/helot.png
 
 ## Skills
 
-### Command Cards
-
 | Card | Cost | Effect |
 |------|------|------|
 | Chain Break Strike | — | 血链·希洛的核心爆发技能，造成极高单次爆发伤害。配合环行·拉蒙娜的大招召回打击卡，实现「血希」队核心爆发。 |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: Exalt | — | Data pending |
+| *Enlighten* | — | Data pending |
 
 
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-Data pending
-
-### Enlighten
-
-Data pending
 
 ## Recommended Equipment
 

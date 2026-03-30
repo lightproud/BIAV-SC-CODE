@@ -23,34 +23,18 @@ portrait: /portraits/ramona-timeworn.png
 
 ## Skills
 
-### Command Cards
+| Card | Cost | Effect |
+|------|------|------|
+| *Command Cards* | — | Data pending |
+| **Rouse (Awakening)**: 灵知觉醒 | — | 拉蒙娜·环行打出无回环效果的指令卡时，获得1层负熵和50点钥能，每回合最多3次。 |
+| **Exalt**: 狂气爆发 | — | 将上回合最后打出的3张固有指令卡的复制加入手牌，算力消耗-1。 |
+| **Over-Exalt**: 超限爆发 | — | 获得3层无视上限的负熵，使获得的复制卡算力消耗变为0。 |
+| *Enlighten* | — | Data pending |
 
+::: tip
 负熵=3时，下一张指令卡触发特殊额外效果。
+:::
 
-### Rouse (Awakening)
-
-**灵知觉醒**
-
-拉蒙娜·环行打出无回环效果的指令卡时，获得1层负熵和50点钥能，每回合最多3次。
-
-
-### Exalt
-
-**狂气爆发**
-
-将上回合最后打出的3张固有指令卡的复制加入手牌，算力消耗-1。
-
-
-### Over-Exalt
-
-**超限爆发**
-
-获得3层无视上限的负熵，使获得的复制卡算力消耗变为0。
-
-
-### Enlighten
-
-Data pending
 
 ## Recommended Equipment
 

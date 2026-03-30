@@ -23,21 +23,14 @@ portrait: /portraits/karen.png
 
 ## Skills
 
-### Command Cards
+| Card | Cost | Effect |
+|------|------|------|
+| *Command Cards* | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: Exalt | — | Data pending |
+| *Enlighten* | — | Data pending |
 
-Data pending
 
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-Data pending
-
-### Enlighten
-
-Data pending
 
 ## Recommended Equipment
 

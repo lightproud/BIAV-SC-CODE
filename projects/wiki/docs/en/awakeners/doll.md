@@ -23,24 +23,14 @@ portrait: /portraits/doll.png
 
 ## Skills
 
-### Command Cards
-
-Data pending
-
-### Rouse (Awakening)
-
-Data pending
-
-### Exalt
-
-**狂气爆发**
-
-普通形态：回复生命并施加毒素。终章形态：失去生命，造成大量毒伤。每叠加一层终章，终章形态的伤害递增。
+| Card | Cost | Effect |
+|------|------|------|
+| *Command Cards* | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| **Exalt**: 狂气爆发 | — | 普通形态：回复生命并施加毒素。终章形态：失去生命，造成大量毒伤。每叠加一层终章，终章形态的伤害递增。 |
+| *Enlighten* | — | Data pending |
 
 
-### Enlighten
-
-Data pending
 
 ## Recommended Equipment
 
