@@ -1,6 +1,9 @@
 name: Extract Game Data from Client
 
 on:
+  push:
+    paths:
+      - '.github/triggers/extract-game-data'
   workflow_dispatch:
     inputs:
       steam_app_id:
