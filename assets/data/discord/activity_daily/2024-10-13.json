@@ -1,20 +1,36 @@
 {
   "date": "2024-10-13",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 2,
-  "attachments": 2,
+  "messages": 12,
+  "unique_authors": 5,
+  "reactions_total": 16,
+  "attachments": 3,
   "channel_activity": {
+    "能不能下修守密人等級限制或主線boss血量": 2,
+    "建议统一莱克的造物顺序": 3,
+    "4-12的boss会保留哈姆林的回环乐音": 1,
+    "相位对弈嘲讽特效未正常显示": 2,
     "（已封存）【蚰蜒的vrm影像馆】": 4
   },
   "hourly_activity": {
+    "4": 2,
+    "8": 1,
+    "11": 3,
+    "10": 2,
     "14": 3,
     "17": 1
   },
   "message_types": {
-    "0": 4
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1294878081902837812",
+      "content": "身為劇情黨過主線得很痛苦....等級不到角色技能也不能升銘刻也不能升，看個故事還要等隔天靈知補上才能繼續推主線，其它遊戲都沒這樣卡你劇情進展，而且守密人獲得經驗",
+      "author": "kong760",
+      "reactions": 14,
+      "channel": "能不能下修守密人等級限制或主線boss血量"
+    },
     {
       "id": "1295030921413660712",
       "content": "",

@@ -1,10 +1,12 @@
 {
   "date": "2025-09-04",
-  "messages": 47,
+  "messages": 60,
   "unique_authors": 8,
-  "reactions_total": 45,
-  "attachments": 11,
+  "reactions_total": 46,
+  "attachments": 14,
   "channel_activity": {
+    "Exceso del límite de Llave": 6,
+    "Blade of the Titan behaves inconsistently in Faded Legacy (arc 1) compared to Astral Reign (arc 2)": 7,
     "💭「Processing」Equipo híbrido de 3": 1,
     "✅「已回答」提问": 1,
     "✅「Answered」Purchase": 4,
@@ -21,7 +23,9 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "20": 1,
+    "20": 7,
+    "1": 4,
+    "4": 3,
     "12": 2,
     "0": 2,
     "6": 2,
@@ -36,9 +40,8 @@
     "2": 1
   },
   "message_types": {
-    "0": 14,
-    "19": 1,
-    "4": 6
+    "0": 10,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -82,6 +85,13 @@
       "author": "shadow_20954",
       "reactions": 3,
       "channel": "💭「Processing」Equipo híbrido de 3"
+    },
+    {
+      "id": "1413267040898256968",
+      "content": "Muchas gracias por la aclaración",
+      "author": "duxadidus",
+      "reactions": 1,
+      "channel": "Exceso del límite de Llave"
     },
     {
       "id": "1413140947780370532",

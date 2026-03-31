@@ -1,17 +1,20 @@
 {
   "date": "2025-05-22",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 661,
-  "attachments": 0,
+  "messages": 5,
+  "unique_authors": 3,
+  "reactions_total": 675,
+  "attachments": 1,
   "channel_activity": {
+    "Dynamic Battle Sprite | 动态战斗立绘": 4,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "12": 1
+    "12": 2,
+    "13": 1,
+    "16": 2
   },
   "message_types": {
-    "0": 1
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -20,6 +23,27 @@
       "author": "morimensstaff02",
       "reactions": 661,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1375083783119831101",
+      "content": "Are there any plans to implement dynamic battle sprites in the future? It is und",
+      "author": "zier.0",
+      "reactions": 9,
+      "channel": "Dynamic Battle Sprite | 动态战斗立绘"
+    },
+    {
+      "id": "1375147793081176184",
+      "content": "你是說被深海蟲子寄生後身體會■■■■嗎？",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "Dynamic Battle Sprite | 动态战斗立绘"
+    },
+    {
+      "id": "1375095915177578569",
+      "content": "支持\n哪怕只有敵方加入動態變化也有很棒的效果\n章節boss也有好幾招不同招式，多加點怪物的變化，克系氛圍就來了",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "Dynamic Battle Sprite | 动态战斗立绘"
     }
   ]
 }

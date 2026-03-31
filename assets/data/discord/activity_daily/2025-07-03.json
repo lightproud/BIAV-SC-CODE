@@ -1,16 +1,23 @@
 {
   "date": "2025-07-03",
-  "messages": 58,
+  "messages": 67,
   "unique_authors": 28,
-  "reactions_total": 83,
-  "attachments": 0,
+  "reactions_total": 85,
+  "attachments": 1,
   "channel_activity": {
+    "关于氪金相关的问题。": 1,
+    "💭「Processing」Connection issues": 1,
+    "💭「Processing」Follow button says 'Following' before user is followed": 3,
+    "✅「已回答」?": 4,
     "攻略合集": 1,
     "Slay the Spire Morimens Mod Text Provided Post": 5,
     "忘卻野史": 4,
     "1390375103707218041": 48
   },
   "hourly_activity": {
+    "8": 1,
+    "2": 5,
+    "1": 3,
     "7": 1,
     "16": 1,
     "18": 23,
@@ -20,8 +27,9 @@
     "23": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 6,
+    "19": 1,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -100,6 +108,20 @@
       "author": "beenax.",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1390158144650350674",
+      "content": "Thank you keeper! We will look into this issue!",
+      "author": "morimens_15",
+      "reactions": 1,
+      "channel": "💭「Processing」Follow button says 'Following' before user is followed"
+    },
+    {
+      "id": "1390147677970497618",
+      "content": "正常了",
+      "author": "aaaa_00098",
+      "reactions": 1,
+      "channel": "✅「已回答」?"
     },
     {
       "id": "1390379450054737931",

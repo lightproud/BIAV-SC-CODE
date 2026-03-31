@@ -1,26 +1,45 @@
 {
   "date": "2025-04-09",
-  "messages": 17,
-  "unique_authors": 4,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 34,
+  "unique_authors": 7,
+  "reactions_total": 1,
+  "attachments": 2,
   "channel_activity": {
+    "✅「Answered」Audio stops when leaving game window": 1,
+    "关于三种代币兑换灵核碎片的问题": 7,
+    "✅「已回答」可能是bug": 2,
+    "✅「已回答」這算bug嗎": 3,
+    "✅「已回答」對弈催眠靈擺bug": 2,
+    "✅「已回答」星辰篇2-6的敵人跑到畫面外了": 2,
     "克莱门汀...": 2,
     "【二创向剧情解析】未完成的夜晚": 2,
     "1357184174485671966": 13
   },
   "hourly_activity": {
-    "8": 1,
+    "9": 7,
+    "10": 2,
+    "11": 3,
+    "15": 1,
+    "20": 2,
+    "8": 5,
     "12": 1,
-    "10": 1,
-    "11": 1,
     "3": 2,
     "6": 1,
     "21": 6,
     "22": 4
   },
   "message_types": {
-    "0": 4
+    "19": 6,
+    "0": 8,
+    "4": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1359451638267379815",
+      "content": "好噠~感謝答復，校工目前已經找到原因啦，會修復這個問題🥰",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」星辰篇2-6的敵人跑到畫面外了"
+    }
+  ]
 }

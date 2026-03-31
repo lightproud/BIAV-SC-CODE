@@ -1,19 +1,156 @@
 {
   "date": "2025-02-22",
-  "messages": 3,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 41,
+  "unique_authors": 12,
+  "reactions_total": 47,
+  "attachments": 7,
   "channel_activity": {
+    "✅「已回答」知無不言還是沒有正確聯動反擊造物": 1,
+    "活動打出兩張虛無是正常的嗎？": 14,
+    "Page moved": 6,
+    "15回合是個爛限制": 6,
+    "About Voice Actor": 11,
     "彌薩格校貓 你到底想干嘛？ 2.0": 2,
     "不会再有了": 1
   },
   "hourly_activity": {
-    "15": 2,
+    "17": 1,
+    "2": 1,
+    "3": 2,
+    "7": 6,
+    "8": 9,
+    "11": 3,
+    "13": 1,
+    "14": 2,
+    "15": 4,
+    "23": 1,
+    "9": 5,
+    "16": 5,
     "5": 1
   },
   "message_types": {
-    "19": 2
+    "0": 26,
+    "19": 12
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1342847278779465728",
+      "content": "好歹把星辰篇的15回合刪掉，本來你搞一大堆限制拖長了玩家就需要花更多回合出出牌跟狂氣迴轉，好不容易一點一滴凹到對面要死了15回合限制一到功虧一簣，我是來玩遊戲放",
+      "author": "ena04564",
+      "reactions": 14,
+      "channel": "15回合是個爛限制"
+    },
+    {
+      "id": "1342759675212333141",
+      "content": "It means you need to pay more for continuing.",
+      "author": "tofu0834",
+      "reactions": 8,
+      "channel": "Page moved"
+    },
+    {
+      "id": "1342763543774232648",
+      "content": "做研究会给一张，貌似是做三个研究",
+      "author": "sense25.",
+      "reactions": 4,
+      "channel": "活動打出兩張虛無是正常的嗎？"
+    },
+    {
+      "id": "1342890506241314846",
+      "content": "> ﻿🟪﻿ \nWinkle：七緒 凜（Rin Nanao，English translation \"Rin Nanase\" is incorrect❌﻿）\nWa",
+      "author": "menta_y_menta",
+      "reactions": 3,
+      "channel": "About Voice Actor"
+    },
+    {
+      "id": "1342908420571009096",
+      "content": "",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "✅「已回答」知無不言還是沒有正確聯動反擊造物"
+    },
+    {
+      "id": "1342686059057643561",
+      "content": "你这个不是bug啦，一个是活动造物一个是融朵自己的",
+      "author": "qaym.",
+      "reactions": 2,
+      "channel": "活動打出兩張虛無是正常的嗎？"
+    },
+    {
+      "id": "1342764813952221224",
+      "content": "不過今天尤烏好難湊，一下就被旺達刮死了<:flop:1236937860922343466>",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "活動打出兩張虛無是正常的嗎？"
+    },
+    {
+      "id": "1342769764497494176",
+      "content": "~~那就是有利于玩家的bug不要声张~~😡",
+      "author": "sense25.",
+      "reactions": 2,
+      "channel": "活動打出兩張虛無是正常的嗎？"
+    },
+    {
+      "id": "1342765065258008626",
+      "content": "Unfortunately I already paid a few minutes ago lol",
+      "author": "legion_schindler",
+      "reactions": 2,
+      "channel": "Page moved"
+    },
+    {
+      "id": "1342768462875070486",
+      "content": "因为融朵叠10层也给一个，如果是做那个爆发研究的话，可以做到同时给两的",
+      "author": "sense25.",
+      "reactions": 1,
+      "channel": "活動打出兩張虛無是正常的嗎？"
+    },
+    {
+      "id": "1342758718843916350",
+      "content": "My page suddenly move to store during battle",
+      "author": "legion_schindler",
+      "reactions": 1,
+      "channel": "Page moved"
+    },
+    {
+      "id": "1342825127502413825",
+      "content": "<@&1166257943742787615> 這個應該不是你們的手段吧🤣",
+      "author": "07_li",
+      "reactions": 1,
+      "channel": "Page moved"
+    },
+    {
+      "id": "1342776198903627797",
+      "content": "Is Anyone can let me know every characters' voice actor?",
+      "author": "legion_schindler",
+      "reactions": 1,
+      "channel": "About Voice Actor"
+    },
+    {
+      "id": "1342890141186003027",
+      "content": "> ﻿🎭﻿ \nRamona：山本 亜衣（Ai Yamamoto）\nOgier：音羽 里奏（Rina Otowa，English translation \"Kan",
+      "author": "menta_y_menta",
+      "reactions": 1,
+      "channel": "About Voice Actor"
+    },
+    {
+      "id": "1342890247083790378",
+      "content": "> 🌊 \nCaecus：星乃 圭吾（Keigo Hoshino）\nMurphy：白瀬 まゆ（Mayu Shitase，English translation \"",
+      "author": "menta_y_menta",
+      "reactions": 1,
+      "channel": "About Voice Actor"
+    },
+    {
+      "id": "1342890337613512714",
+      "content": "> ﻿🩸﻿ \nHelot：國実 久留子（Kuruko Kunimi）\nLeigh：小坂 ほのか（Honoka  Kosaka）\n﻿﻿ Uvhash：森田 絵音（",
+      "author": "menta_y_menta",
+      "reactions": 1,
+      "channel": "About Voice Actor"
+    },
+    {
+      "id": "1342902020255911986",
+      "content": "Thx U🥰🥰🥰🥰",
+      "author": "legion_schindler",
+      "reactions": 1,
+      "channel": "About Voice Actor"
+    }
+  ]
 }

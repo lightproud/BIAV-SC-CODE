@@ -1,0 +1,44 @@
+{
+  "date": "2026-03-31",
+  "messages": 57,
+  "unique_authors": 13,
+  "reactions_total": 4,
+  "attachments": 8,
+  "channel_activity": {
+    "🔸morimens-game-chat": 16,
+    "🔸canal-español": 6,
+    "🔸canal-português": 6,
+    "🔸team-building": 6,
+    "🔸game-question": 23
+  },
+  "hourly_activity": {
+    "0": 57
+  },
+  "message_types": {
+    "0": 45,
+    "19": 12
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1488327283776290967",
+      "content": "",
+      "author": "pucciarity",
+      "reactions": 2,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1488327601364926594",
+      "content": "how all the educators in my area look at me after I spend scholarship and award ",
+      "author": "duskisnotdust",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488328135031132211",
+      "content": "<@345402009903693824>",
+      "author": "papricaapimentada",
+      "reactions": 1,
+      "channel": "🔸canal-português"
+    }
+  ]
+}

@@ -1,30 +1,30 @@
 {
   "date": "2026-03-30",
-  "messages": 4926,
+  "messages": 5819,
   "unique_authors": 180,
-  "reactions_total": 393,
-  "attachments": 239,
+  "reactions_total": 473,
+  "attachments": 302,
   "channel_activity": {
-    "🔸morimens-game-chat": 1781,
-    "🔸한국어-채팅방": 60,
-    "🔸русский-канал": 104,
-    "🔸phòng-chat-tiếng-việt": 1597,
-    "🔸canal-español": 162,
-    "🔸canal-português": 104,
+    "🔸morimens-game-chat": 2431,
+    "🔸相位对弈": 8,
+    "🔸한국어-채팅방": 62,
+    "🔸русский-канал": 106,
+    "🔸phòng-chat-tiếng-việt": 1601,
+    "🔸canal-español": 246,
+    "🔸canal-português": 123,
+    "🔸lore-chat": 77,
+    "🔸team-building": 143,
+    "🔸general-chat": 139,
+    "🔸邀请码互助┊swap-invitation-codes": 23,
+    "🔸game-question": 257,
+    "🔸机器人命令┊bot-commands": 43,
     "🔸ruang-obrolan-indonesia": 102,
     "🔸traphase": 105,
-    "🔸lore-chat": 74,
-    "🔸team-building": 115,
-    "🔸general-chat": 121,
-    "🔸邀请码互助┊swap-invitation-codes": 21,
-    "🔸game-question": 182,
     "🔸erica-playground": 21,
     "🔸綜合討論": 123,
     "🔸阵容构建": 33,
     "🔸ห้องสนทนาภาษาไทย": 91,
-    "🔸机器人命令┊bot-commands": 39,
     "🔸晒卡分享": 5,
-    "🔸相位对弈": 6,
     "🔸deutscher-chatraum": 2,
     "1421408684776357929": 10,
     "1488204690226282697": 1,
@@ -45,9 +45,10 @@
     "1482261084101541969": 1
   },
   "hourly_activity": {
+    "22": 354,
+    "23": 546,
     "20": 709,
     "21": 393,
-    "22": 7,
     "17": 819,
     "18": 1057,
     "19": 544,
@@ -70,8 +71,9 @@
     "5": 13
   },
   "message_types": {
-    "19": 198,
-    "0": 907
+    "0": 640,
+    "19": 252,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -131,10 +133,38 @@
       "channel": ""
     },
     {
+      "id": "1488317843643826277",
+      "content": "LEAKED BAGELS DMS",
+      "author": "spooky_penguin_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1488234636952997988",
       "content": "You mean on her period",
       "author": "crowlov1",
       "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488311587495219291",
+      "content": "damn guess i’ve got a main locked in",
+      "author": "shapeshiftwithme",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488316237443235952",
+      "content": "",
+      "author": "shapeshiftwithme",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488320189018931421",
+      "content": "nothing wrong with poison w3",
+      "author": "l8989c",
+      "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -185,34 +215,6 @@
       "author": "fishhazardthewizard",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488257824369672383",
-      "content": "Feels like my account does this now.\n\nMost of my limiteds the past few months, m",
-      "author": "climbkaly",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488236346589057045",
-      "content": "tag đc đó, nhưng bay 2 mạng :))",
-      "author": "reu8090",
-      "reactions": 3,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1488236681256636497",
-      "content": "Bên đó thấy ko tự nhiên như bên này",
-      "author": "iamminhphuc",
-      "reactions": 3,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1488110486728998943",
-      "content": "拼尽全力终于战胜，感觉我好菜啊\n有什么适合打列车的队伍吗",
-      "author": "txt101225.",
-      "reactions": 3,
-      "channel": "🔸阵容构建"
     }
   ]
 }

@@ -1,19 +1,54 @@
 {
   "date": "2025-06-10",
-  "messages": 5,
-  "unique_authors": 1,
-  "reactions_total": 1,
+  "messages": 18,
+  "unique_authors": 7,
+  "reactions_total": 5,
   "attachments": 0,
   "channel_activity": {
+    "💭「Processing」Pc ver. Stuck on update resource screen and then error 35": 3,
+    "卡茜亞狂氣爆發永久降力Bug": 1,
+    "✅「已回答」廣播劇的飛鳥尚未墜落之時字幕很明顯快了": 2,
+    "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\"": 1,
+    "✅「已回答」鸟人活动bug": 1,
+    "✅「Answered」Losing 1st posse": 2,
+    "✅「已回答」畸變+鎖鏈=2畸變?": 3,
     "試著用suno生成了角色歌": 5
   },
   "hourly_activity": {
+    "2": 7,
+    "3": 3,
+    "15": 1,
+    "10": 1,
+    "4": 1,
     "9": 5
   },
   "message_types": {
-    "0": 5
+    "0": 6,
+    "4": 2,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1381835599090290811",
+      "content": "我好歹還是有看動畫練出來的基本聽力",
+      "author": "huangyu0876",
+      "reactions": 2,
+      "channel": "✅「已回答」廣播劇的飛鳥尚未墜落之時字幕很明顯快了"
+    },
+    {
+      "id": "1381833971200954469",
+      "content": "then I tried I have no UID. It was 1st attempt to play this game. I created acco",
+      "author": "guffy10",
+      "reactions": 1,
+      "channel": "💭「Processing」Pc ver. Stuck on update resource screen and then error 35"
+    },
+    {
+      "id": "1381824166373888092",
+      "content": "但是對面就二鳥一貓",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "✅「已回答」畸變+鎖鏈=2畸變?"
+    },
     {
       "id": "1381922743871868978",
       "content": "又菜又愛玩的結果就是ai創作\n不過有在歌詞上下了一點功夫⋯不嫌棄的話請來聽聽看\n有尤烏哈希和戈利亞的",

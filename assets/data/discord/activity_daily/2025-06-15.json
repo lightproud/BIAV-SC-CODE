@@ -1,25 +1,64 @@
 {
   "date": "2025-06-15",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 4,
-  "attachments": 1,
+  "messages": 28,
+  "unique_authors": 13,
+  "reactions_total": 12,
+  "attachments": 6,
   "channel_activity": {
+    "✅「Answered」In-game texts do not match the language selected in the settings.": 1,
+    "應該要加強某些角色吧": 10,
+    "一些弱势角色的加强建议": 1,
+    "✅「Answered」View Glimpse Beyond Sanctum Story": 1,
+    "💭「處理中」克莱门汀超限爆发获得的力量是不是不太对？": 2,
+    "✅「已回答」遲......遲緩？": 11,
     "杜勒赛因技能组diy": 2
   },
   "hourly_activity": {
-    "6": 2
+    "14": 1,
+    "2": 2,
+    "6": 5,
+    "10": 1,
+    "11": 1,
+    "13": 6,
+    "15": 2,
+    "16": 1,
+    "1": 1,
+    "18": 1,
+    "19": 1,
+    "12": 6
   },
   "message_types": {
-    "0": 2
+    "0": 20,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1383626556328382564",
+      "content": "Many of us didn't get to view the full story of the event due to bugs or boss dy",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "✅「Answered」View Glimpse Beyond Sanctum Story"
+    },
     {
       "id": "1383697672090947625",
       "content": "1.由🐦的故事细节（料理大师）的灵感——制作不同的吞噬效果\n2.在编写过程中增加了血肉精通效果的强化（星辰篇血肉精通有些落后了）\n3.参考了船长和🐦技能组（同一",
       "author": "scholar_2",
       "reactions": 4,
       "channel": "杜勒赛因技能组diy"
+    },
+    {
+      "id": "1383700462959726643",
+      "content": "六日放假（",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "應該要加強某些角色吧"
+    },
+    {
+      "id": "1383881672361246781",
+      "content": "如图",
+      "author": "sweet_25367",
+      "reactions": 1,
+      "channel": "💭「處理中」克莱门汀超限爆发获得的力量是不是不太对？"
     }
   ]
 }

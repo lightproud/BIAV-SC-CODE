@@ -1,23 +1,27 @@
 {
   "date": "2024-01-30",
-  "messages": 19,
+  "messages": 25,
   "unique_authors": 4,
   "reactions_total": 28,
-  "attachments": 7,
+  "attachments": 10,
   "channel_activity": {
+    "✅「已回答」能不能設個冶煉室的入口": 6,
     "幻梦深潜地图全解": 1,
     "在2/1號以前都有用的混轉四攻略": 17,
     "自娱自乐的梗图": 1
   },
   "hourly_activity": {
+    "11": 5,
+    "14": 1,
     "1": 1,
     "2": 6,
     "3": 11,
     "12": 1
   },
   "message_types": {
-    "0": 16,
-    "19": 3
+    "0": 4,
+    "4": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {

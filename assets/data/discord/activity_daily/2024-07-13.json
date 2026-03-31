@@ -1,10 +1,13 @@
 {
   "date": "2024-07-13",
-  "messages": 16,
-  "unique_authors": 5,
-  "reactions_total": 23,
+  "messages": 100,
+  "unique_authors": 8,
+  "reactions_total": 29,
   "attachments": 10,
   "channel_activity": {
+    "沒有喚醒體技能搶先看了嗎": 2,
+    "pvp建議平衡麻痺隊的機制✓": 79,
+    "相位": 3,
     "蒐集不吃靈芝通關h7-12的隊伍": 11,
     "相位对弈S3阵容推荐——神父点杀队": 2,
     "命定24詳細指南，手把手帶你克服癲5恐懼症": 1,
@@ -12,16 +15,18 @@
     "《忘卻前夜》限定喚醒體「莉莉」復刻宣傳PV": 1
   },
   "hourly_activity": {
+    "6": 6,
+    "22": 1,
+    "14": 24,
+    "15": 59,
+    "16": 3,
+    "3": 3,
     "10": 2,
-    "11": 2,
-    "14": 2,
-    "15": 5,
-    "6": 3,
-    "3": 2
+    "11": 2
   },
   "message_types": {
-    "0": 12,
-    "19": 4
+    "0": 81,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -44,6 +49,34 @@
       "author": "menoctus",
       "reactions": 6,
       "channel": "《忘卻前夜》限定喚醒體「莉莉」復刻宣傳PV"
+    },
+    {
+      "id": "1261817568013062234",
+      "content": "產能堪憂（X",
+      "author": "gum1206",
+      "reactions": 2,
+      "channel": "沒有喚醒體技能搶先看了嗎"
+    },
+    {
+      "id": "1261700284187672576",
+      "content": "10.5077531164488%",
+      "author": "falst_over_",
+      "reactions": 2,
+      "channel": "pvp建議平衡麻痺隊的機制✓"
+    },
+    {
+      "id": "1261700641814876160",
+      "content": "不是，是說第一組可能",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "pvp建議平衡麻痺隊的機制✓"
+    },
+    {
+      "id": "1261569823586910208",
+      "content": "只是沒有具體說在哪個時候",
+      "author": "falst_over_",
+      "reactions": 1,
+      "channel": "相位"
     }
   ]
 }

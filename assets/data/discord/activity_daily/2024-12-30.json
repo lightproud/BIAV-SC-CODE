@@ -1,19 +1,46 @@
 {
   "date": "2024-12-30",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 10,
-  "attachments": 3,
+  "messages": 49,
+  "unique_authors": 22,
+  "reactions_total": 41,
+  "attachments": 8,
   "channel_activity": {
+    "图鲁怎么还没进池": 11,
+    "sp朵文案错了快改，顺便forme50银芯谢谢": 11,
+    "活動頭像": 2,
+    "遊戲卡頓": 3,
+    "更新后主线关卡进度显示错误": 1,
+    "图鲁sr bug": 2,
+    "關於本次活動送的頭像問題": 11,
+    "打完主綫但章節顯示錯誤": 3,
+    "刷新bug": 1,
+    "沒別的意思 就是覺得深海國家打不動了": 1,
+    "新活动呢？": 1,
     "【梗图】堆点我P过的梗图": 1,
     "利莫里亞元首宣言": 1
   },
   "hourly_activity": {
-    "6": 1,
+    "3": 2,
+    "5": 4,
+    "7": 9,
+    "13": 1,
+    "14": 4,
+    "16": 6,
+    "19": 1,
+    "4": 6,
+    "6": 5,
+    "17": 2,
+    "10": 1,
+    "9": 2,
+    "8": 3,
+    "2": 1,
+    "1": 1,
     "11": 1
   },
   "message_types": {
-    "0": 2
+    "0": 41,
+    "19": 5,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -22,6 +49,62 @@
       "author": "ernest_heart",
       "reactions": 10,
       "channel": "利莫里亞元首宣言"
+    },
+    {
+      "id": "1323141482391273532",
+      "content": "有沒有可能這甚至不是正式內容",
+      "author": "ena04564",
+      "reactions": 7,
+      "channel": "sp朵文案错了快改，顺便forme50银芯谢谢"
+    },
+    {
+      "id": "1323143138528989364",
+      "content": "正不正式怎么了，我只要50银芯",
+      "author": "niubi.plusv587",
+      "reactions": 6,
+      "channel": "sp朵文案错了快改，顺便forme50银芯谢谢"
+    },
+    {
+      "id": "1323221531513458739",
+      "content": "深海界域编入装备青石王座的混沌唤醒体时，不朽支配卡打出后不能获得1点算力",
+      "author": "zhaoxing233",
+      "reactions": 5,
+      "channel": "图鲁sr bug"
+    },
+    {
+      "id": "1323325442228486255",
+      "content": "墨菲活動給鯊魚頭像就沒事\n為什麼圖魯活動就把核心課題的圖魯拿出來送\n凱刻斯推要會通靈先課金是不是\n圖魯推要通靈課金拿的頭像之後會被拿出來送是不是",
+      "author": "mmm.08.yu",
+      "reactions": 4,
+      "channel": "活動頭像"
+    },
+    {
+      "id": "1323321716310544424",
+      "content": "总不能1年11月也是一年吧",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": "图鲁怎么还没进池"
+    },
+    {
+      "id": "1323124370595385447",
+      "content": "“很少有人主要要求”→主动要求",
+      "author": "niubi.plusv587",
+      "reactions": 3,
+      "channel": "sp朵文案错了快改，顺便forme50银芯谢谢"
+    },
+    {
+      "id": "1323239889986256907",
+      "content": "如图\n普通主线打到9-13了，但首页显示进度在9-1",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "更新后主线关卡进度显示错误"
+    },
+    {
+      "id": "1323207583049187439",
+      "content": "通靈課金",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": "關於本次活動送的頭像問題"
     }
   ]
 }

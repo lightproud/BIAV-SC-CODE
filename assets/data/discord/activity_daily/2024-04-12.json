@@ -1,10 +1,11 @@
 {
   "date": "2024-04-12",
-  "messages": 167,
+  "messages": 168,
   "unique_authors": 16,
   "reactions_total": 94,
   "attachments": 39,
   "channel_activity": {
+    "離開前的感謝": 1,
     "［現pa］強風但沒有大背頭（戈守）": 3,
     "【nomad建模】粉鱼布偶一只，请签收！": 2,
     "重返絕叫哀號的原質之海（新版達芙，從入門到入土）": 20,
@@ -20,6 +21,7 @@
     "Forget Last Night: Morimens fanfic": 1
   },
   "hourly_activity": {
+    "2": 2,
     "6": 7,
     "11": 21,
     "7": 102,
@@ -32,12 +34,10 @@
     "9": 11,
     "10": 5,
     "17": 1,
-    "18": 2,
-    "2": 1
+    "18": 2
   },
   "message_types": {
-    "0": 3,
-    "19": 2
+    "19": 1
   },
   "top_reacted_messages": [
     {

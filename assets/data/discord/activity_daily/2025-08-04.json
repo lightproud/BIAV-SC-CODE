@@ -1,27 +1,123 @@
 {
   "date": "2025-08-04",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 3,
-  "attachments": 2,
+  "messages": 48,
+  "unique_authors": 10,
+  "reactions_total": 27,
+  "attachments": 10,
   "channel_activity": {
+    "✅「Answered」Survey links bug": 5,
+    "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
+    "✅「已回答」朵爾等價顯示問題又出現了": 7,
+    "✅「已回答」血希的狂氣爆發的描述問題": 7,
+    "💭「Processing」Helot: Catena - inconsistent interactions with ultra space - Crimson Shackles": 2,
+    "✅「Answered」Ban by mistake refund": 3,
+    "✅「Answered」Fit remaining time in default view": 2,
+    "✅「已回答」调查数据bug：最高力量": 2,
+    "✅「Answered」Survey link not working in mail.": 4,
+    "✅「Answered」Tawil card \" Master of all thing\" bug": 2,
+    "✅「已回答」Bug report": 5,
+    "💭「Processing」Fin of Sorrow Wheel is Bugged- Effect is doubled currently": 2,
+    "💭「处理中」狂气特殊词汇错误": 2,
+    "💭「Processing」Bug if parasite enemy attempts to infect you while having death resistance": 1,
+    "✅「已回答」调查数据有误": 1,
     "关卡地图「融灾禁区」总览40期·星辰篇": 1,
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "8": 1,
+    "22": 2,
+    "23": 3,
+    "3": 9,
+    "6": 14,
+    "7": 9,
+    "8": 2,
+    "0": 1,
+    "2": 4,
+    "1": 1,
+    "4": 2,
     "13": 1
   },
   "message_types": {
-    "0": 1
+    "0": 23,
+    "19": 10,
+    "4": 13
   },
   "top_reacted_messages": [
+    {
+      "id": "1401738451786928199",
+      "content": "Hi, I received a mail to complete a survey! I would love to complete the survey.",
+      "author": "mutsukabezaka",
+      "reactions": 10,
+      "channel": "✅「Answered」Survey link not working in mail."
+    },
+    {
+      "id": "1401811253487210597",
+      "content": "🙏 Thank you for your feedback. We have identified the cause and will fix it as s",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "✅「已回答」Bug report"
+    },
+    {
+      "id": "1401832631846440981",
+      "content": "已经回报了<:pray:1356053116260454534> <:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✅「已回答」血希的狂氣爆發的描述問題"
+    },
     {
       "id": "1401848648140066847",
       "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第13期（第40期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
       "author": "menoctus",
       "reactions": 3,
       "channel": "关卡地图「融灾禁区」总览40期·星辰篇"
+    },
+    {
+      "id": "1401813463755657227",
+      "content": "嗨守密人，界面的技能描述与战斗中不一致——这个情况是预期内的设计🌹 \n描述丢失：唤醒体界面的技能描述与战斗中不一致属于预期设计。为了方便玩家计算，战斗中已将治疗",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」朵爾等價顯示問題又出現了"
+    },
+    {
+      "id": "1401832557779095573",
+      "content": "已经回报了<:pray:1356053116260454534> <:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」朵爾等價顯示問題又出現了"
+    },
+    {
+      "id": "1401851528326811668",
+      "content": "好的謝謝戈雅辛苦了<:love:1356053099931897977>",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": "✅「已回答」朵爾等價顯示問題又出現了"
+    },
+    {
+      "id": "1401719214406111324",
+      "content": "血希的狂氣爆發中有一段描述是「破除目標護盾,造成374點傷害並**使其下回合無法獲得護盾。**」\n但是從3啟的效果描述和實際表現中我們可以發現該效果其實為「消除",
+      "author": "water_heart",
+      "reactions": 1,
+      "channel": "✅「已回答」血希的狂氣爆發的描述問題"
+    },
+    {
+      "id": "1401830751263002695",
+      "content": "Thank you for providing such a detailed explanation of the issue. We will invest",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Helot: Catena - inconsistent interactions with ultra space - Crimson Shackles"
+    },
+    {
+      "id": "1401813517509722162",
+      "content": "I replied to you privately.",
+      "author": "xraven90",
+      "reactions": 1,
+      "channel": "✅「Answered」Ban by mistake refund"
+    },
+    {
+      "id": "1401814830297518121",
+      "content": "嗨 这个问题已经修复了，后续会放出❤️",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」调查数据bug：最高力量"
     }
   ]
 }

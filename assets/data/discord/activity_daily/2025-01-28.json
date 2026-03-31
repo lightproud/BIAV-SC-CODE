@@ -1,30 +1,73 @@
 {
   "date": "2025-01-28",
-  "messages": 5,
-  "unique_authors": 3,
-  "reactions_total": 10,
-  "attachments": 2,
+  "messages": 25,
+  "unique_authors": 11,
+  "reactions_total": 61,
+  "attachments": 6,
   "channel_activity": {
+    "English Page pls !!": 1,
+    "loadout for dispatch team with npc inside": 2,
+    "感觉这个命轮不会脱下来是负优化": 5,
+    "好想要烏撒貓貓律當宿舍背景🐾": 3,
+    "澳門充值渠道": 2,
+    "脑缸能不能给我们表演一下背刺黄牛": 1,
+    "請問第九章最終boss怎麼過?": 1,
+    "活动材料分布": 5,
     "💭「处理中」steam端进不去": 3,
     "aomi's morimens fan content corner (english ver.) 🎨": 2
   },
   "hourly_activity": {
+    "13": 5,
+    "12": 3,
+    "3": 1,
+    "8": 2,
+    "10": 3,
+    "14": 1,
+    "11": 2,
+    "2": 1,
+    "1": 5,
     "5": 1,
-    "11": 1,
-    "12": 1,
-    "13": 1,
     "15": 1
   },
   "message_types": {
-    "0": 3
+    "0": 18,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1333795436259049614",
+      "content": "最喜歡小黑咪了！\n請問校貓會不會考慮這次活動後實裝這兩張當背景呢🥺🥺🥺",
+      "author": "ichikaguya._52033",
+      "reactions": 24,
+      "channel": "好想要烏撒貓貓律當宿舍背景🐾"
+    },
+    {
+      "id": "1333633554512351262",
+      "content": "每个角色需要的命轮不同，实际体验就是要先把前面的命轮扒下来重新换，更麻烦了。打猫活动这种要频繁换临时配队的尤为突出\n\n以前是在角色养成界面配命轮的。我有个想法，",
+      "author": "muliupan",
+      "reactions": 14,
+      "channel": "感觉这个命轮不会脱下来是负优化"
+    },
+    {
+      "id": "1333796940491784244",
+      "content": "",
+      "author": "ichikaguya._52033",
+      "reactions": 11,
+      "channel": "好想要烏撒貓貓律當宿舍背景🐾"
+    },
     {
       "id": "1333784565243707392",
       "content": "had to make another one bcuz the first one is in mandarin (the truth is i actual",
       "author": "aomi_crinklies04",
       "reactions": 9,
       "channel": "aomi's morimens fan content corner (english ver.) 🎨"
+    },
+    {
+      "id": "1333749176508481620",
+      "content": "然後輔助和輸出換位子又會綁在一起換",
+      "author": "xiangan3069",
+      "reactions": 2,
+      "channel": "感觉这个命轮不会脱下来是负优化"
     },
     {
       "id": "1333814058586996858",

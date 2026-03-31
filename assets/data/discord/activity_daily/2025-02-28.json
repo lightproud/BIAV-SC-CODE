@@ -1,27 +1,99 @@
 {
   "date": "2025-02-28",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 4,
-  "attachments": 1,
+  "messages": 66,
+  "unique_authors": 12,
+  "reactions_total": 39,
+  "attachments": 4,
   "channel_activity": {
+    "什么时候才能出双方同时选卡牌的活动？": 1,
+    "關於星辰篇劇情走格子探索地圖要素": 5,
+    "忘却前夜第一届交易大赛!": 56,
+    "✅「已回答」看不到详情了啊喂": 1,
+    "✅「已回答」24的狂躁人格立绘没了？？？": 1,
     "繁衍狂熱，但是鯊貓": 1,
     "I Made a fan caption in Korean": 1
   },
   "hourly_activity": {
-    "13": 1,
+    "5": 2,
+    "7": 11,
+    "8": 1,
+    "16": 1,
+    "3": 10,
+    "6": 15,
+    "10": 4,
+    "11": 1,
+    "13": 17,
+    "15": 2,
+    "4": 1,
     "18": 1
   },
   "message_types": {
-    "0": 2
+    "0": 57,
+    "19": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1344869608540340324",
+      "content": "你知道的，我一直都是我们达芙黛尔的狗，来比拼一下星辰篇15回合能达到的最高交易卡吧",
+      "author": "molove0286",
+      "reactions": 9,
+      "channel": "忘却前夜第一届交易大赛!"
+    },
+    {
+      "id": "1345059789977288776",
+      "content": "😾 ☝️ 哈哈，想不到吧，全部改回星辰",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "忘却前夜第一届交易大赛!"
+    },
+    {
+      "id": "1344914150958305332",
+      "content": "# 我用新角色办比赛",
+      "author": "molove0286",
+      "reactions": 6,
+      "channel": "忘却前夜第一届交易大赛!"
+    },
+    {
+      "id": "1344976223838797857",
+      "content": "比賽今天才剛開\n馬上被校貓針對",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "忘却前夜第一届交易大赛!"
+    },
     {
       "id": "1345104849179508837",
       "content": "Did it seem naturally? Lol.",
       "author": "legion_schindler",
       "reactions": 4,
       "channel": "I Made a fan caption in Korean"
+    },
+    {
+      "id": "1344951128152084490",
+      "content": "波次等於沒了肉鴿要素，就跟星辰篇的造物一樣，毫無變化，單純加數值，沒有策略成分\n建議改成簡化版的走格子，把主線搞得跟流水活動一樣無聊，也是真有你的",
+      "author": "taoi002",
+      "reactions": 3,
+      "channel": "關於星辰篇劇情走格子探索地圖要素"
+    },
+    {
+      "id": "1344898173994401823",
+      "content": "什么时候才能出双方同时选卡牌的活动，有时候真是对面天克我，大概类似于七圣召唤的热斗模式？<:flop:1236937860922343466>",
+      "author": "3416518066",
+      "reactions": 2,
+      "channel": "什么时候才能出双方同时选卡牌的活动？"
+    },
+    {
+      "id": "1345068573277814838",
+      "content": "波次别的都能适应但是没法回头买造物个人觉得体验感很差劲，有的时候就喜欢先规划着王关前再一起买造物",
+      "author": "nowimfaceless",
+      "reactions": 2,
+      "channel": "關於星辰篇劇情走格子探索地圖要素"
+    },
+    {
+      "id": "1345019163491700769",
+      "content": "新人也是忘卻孝子\n甘拜下風",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "忘却前夜第一届交易大赛!"
     }
   ]
 }

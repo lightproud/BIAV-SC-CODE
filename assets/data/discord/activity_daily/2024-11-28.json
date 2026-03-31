@@ -1,17 +1,28 @@
 {
   "date": "2024-11-28",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 9,
-  "attachments": 5,
+  "messages": 20,
+  "unique_authors": 9,
+  "reactions_total": 23,
+  "attachments": 6,
   "channel_activity": {
+    "30号到底还有没有周年庆活": 7,
+    "校貓考不考慮把自己放進池子裡": 12,
     "本期融灾全常驻375": 1
   },
   "hourly_activity": {
+    "2": 1,
+    "5": 2,
+    "6": 2,
+    "7": 1,
+    "8": 1,
+    "10": 1,
+    "11": 10,
+    "16": 1,
     "9": 1
   },
   "message_types": {
-    "0": 1
+    "19": 3,
+    "0": 16
   },
   "top_reacted_messages": [
     {
@@ -20,6 +31,27 @@
       "author": "dyyqcwj",
       "reactions": 9,
       "channel": "本期融灾全常驻375"
+    },
+    {
+      "id": "1311647756850430014",
+      "content": "如標題所示，眾所周知現在一個角色想要進池子，是需要已經有立繪的才有可能，綜上所述，我覺得可以把校貓放進去池子裡，畢竟他不只有立繪還有人設，立繪上打個混沌角丟進池",
+      "author": "ice_storys",
+      "reactions": 8,
+      "channel": "校貓考不考慮把自己放進池子裡"
+    },
+    {
+      "id": "1311650635531161620",
+      "content": "",
+      "author": "ice_storys",
+      "reactions": 4,
+      "channel": "校貓考不考慮把自己放進池子裡"
+    },
+    {
+      "id": "1311588268864831539",
+      "content": "恭喜，問就是關服<:wish:1236951537788649492>",
+      "author": "glacy_9918",
+      "reactions": 2,
+      "channel": "30号到底还有没有周年庆活"
     }
   ]
 }

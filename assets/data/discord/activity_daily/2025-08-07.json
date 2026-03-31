@@ -1,10 +1,14 @@
 {
   "date": "2025-08-07",
-  "messages": 77,
+  "messages": 84,
   "unique_authors": 11,
-  "reactions_total": 23,
-  "attachments": 1,
+  "reactions_total": 28,
+  "attachments": 3,
   "channel_activity": {
+    "💭「处理中」三角血量": 3,
+    "New chapters inbetween arc 1 chapter 7-8": 1,
+    "✅「Answered」Rus translate": 2,
+    "💭「处理中」相位对弈唤醒体技能显示错误": 1,
     "120 fps mode": 4,
     "✅「已回答」杜勒需要加強": 60,
     "针对新融灾375-425的角色榜单": 3,
@@ -13,23 +17,26 @@
     "1390375103707218041": 2
   },
   "hourly_activity": {
+    "4": 2,
+    "6": 4,
+    "12": 8,
+    "7": 1,
+    "3": 2,
+    "2": 3,
     "9": 5,
     "10": 3,
     "11": 5,
     "8": 2,
-    "12": 7,
     "13": 11,
     "14": 33,
-    "4": 1,
     "5": 2,
     "0": 1,
-    "2": 2,
-    "6": 3,
     "15": 2
   },
   "message_types": {
-    "0": 46,
-    "19": 18
+    "0": 5,
+    "4": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -47,6 +54,13 @@
       "channel": "✅「已回答」杜勒需要加強"
     },
     {
+      "id": "1402851343026356234",
+      "content": "Thank you for your feedback. We will fix the issues mentioned above as soon as p",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✅「Answered」Rus translate"
+    },
+    {
       "id": "1403003161446453269",
       "content": "需要深海再叫我",
       "author": "shchng.",
@@ -59,6 +73,20 @@
       "author": "ahuahuahua",
       "reactions": 2,
       "channel": "我幻想的杜勒賽因加強"
+    },
+    {
+      "id": "1402864861238792284",
+      "content": "显示问题",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": "💭「处理中」三角血量"
+    },
+    {
+      "id": "1402997722172100669",
+      "content": "感谢反馈，我们查验看看<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「处理中」三角血量"
     },
     {
       "id": "1402954293098709023",

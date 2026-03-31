@@ -1,14 +1,25 @@
 {
   "date": "2025-06-21",
-  "messages": 8,
-  "unique_authors": 4,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 19,
+  "unique_authors": 5,
+  "reactions_total": 5,
+  "attachments": 6,
   "channel_activity": {
+    "✅「Answered」Aliemus display bug": 3,
+    "💭「Processing」Chapter 2-7 missing files or pointers.": 1,
+    "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血": 3,
+    "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 4,
     "银河行星的日服大冒险": 6,
     "好久没做DIY了，发一个杜勒塞因": 2
   },
   "hourly_activity": {
+    "2": 1,
+    "5": 1,
+    "21": 1,
+    "20": 1,
+    "9": 2,
+    "10": 1,
+    "6": 4,
     "15": 1,
     "16": 2,
     "17": 1,
@@ -16,8 +27,30 @@
     "1": 2
   },
   "message_types": {
-    "0": 6,
-    "19": 2
+    "0": 10,
+    "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1385809719884775475",
+      "content": "My Doll:Inferno has 8 base aliemus regen but on the teambuild stat checking scre",
+      "author": "lumato",
+      "reactions": 2,
+      "channel": "✅「Answered」Aliemus display bug"
+    },
+    {
+      "id": "1386080739526967367",
+      "content": "",
+      "author": "thefallen6666",
+      "reactions": 2,
+      "channel": "💭「Processing」Chapter 2-7 missing files or pointers."
+    },
+    {
+      "id": "1385865469092958238",
+      "content": "查作業",
+      "author": "water_heart",
+      "reactions": 1,
+      "channel": "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》"
+    }
+  ]
 }

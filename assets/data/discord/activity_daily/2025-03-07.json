@@ -1,17 +1,53 @@
 {
   "date": "2025-03-07",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 12,
+  "unique_authors": 7,
+  "reactions_total": 4,
+  "attachments": 3,
   "channel_activity": {
+    "✅「Answered」I can't check favorite List.": 5,
+    "✅「已回答」账号找不到了": 1,
+    "以前的表情+头像获取方式不能再多点么？": 2,
+    "✅「Answered」Ryker relic bug": 2,
+    "萊克選造物有BUG": 1,
     "女守X鯊（OOC警告）": 1
   },
   "hourly_activity": {
+    "2": 5,
+    "10": 1,
+    "15": 1,
+    "13": 1,
+    "16": 1,
+    "6": 1,
+    "7": 1,
     "9": 1
   },
   "message_types": {
-    "0": 1
+    "0": 9,
+    "4": 1,
+    "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1347566379431100486",
+      "content": "只有前面两个大段位才有这个票，为啥不能普及一下……",
+      "author": "luhongran",
+      "reactions": 2,
+      "channel": "以前的表情+头像获取方式不能再多点么？"
+    },
+    {
+      "id": "1347395130914508841",
+      "content": "",
+      "author": "legion_schindler",
+      "reactions": 1,
+      "channel": "✅「Answered」I can't check favorite List."
+    },
+    {
+      "id": "1347399780149497867",
+      "content": "Question received~🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」I can't check favorite List."
+    }
+  ]
 }

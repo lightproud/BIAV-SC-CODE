@@ -1,17 +1,38 @@
 {
   "date": "2025-02-11",
-  "messages": 15,
-  "unique_authors": 3,
-  "reactions_total": 29,
-  "attachments": 5,
+  "messages": 55,
+  "unique_authors": 17,
+  "reactions_total": 32,
+  "attachments": 12,
   "channel_activity": {
+    "✅「Answered」Sound didnt play when game at background": 2,
+    "💭「Processing」Stuck in \"Checking for resource updates\"": 12,
+    "✅「已回答」邮箱已无法使用": 1,
+    "✅「已回答」莱克为什么没有了呀": 4,
+    "圖層錯誤（？）": 3,
+    "背景没了": 2,
+    "戈利亞狂氣爆發背景顏色錯誤": 5,
+    "相位 sp朵 bug": 11,
     "💭「处理中」steam端进不去": 1,
     "忘却前夜相位对弈(PVP)攻略": 5,
     "单独开一个放24": 2,
     "1271491376881598494": 7
   },
   "hourly_activity": {
-    "9": 2,
+    "16": 3,
+    "7": 3,
+    "9": 14,
+    "10": 2,
+    "14": 4,
+    "17": 2,
+    "21": 1,
+    "22": 2,
+    "23": 1,
+    "8": 3,
+    "5": 2,
+    "13": 2,
+    "3": 2,
+    "4": 1,
     "0": 1,
     "2": 1,
     "6": 2,
@@ -19,7 +40,8 @@
     "11": 7
   },
   "message_types": {
-    "19": 1
+    "0": 34,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -28,6 +50,20 @@
       "author": "xuanxue007",
       "reactions": 28,
       "channel": "单独开一个放24"
+    },
+    {
+      "id": "1338860491023319050",
+      "content": "朋友上游戏发现她的背景没了，代她提问",
+      "author": "jidu1418",
+      "reactions": 2,
+      "channel": "背景没了"
+    },
+    {
+      "id": "1338792424532606996",
+      "content": "莱克的特遣咋没有了，今天特意想来看看故事来着",
+      "author": "nekoiiii.",
+      "reactions": 1,
+      "channel": "✅「已回答」莱克为什么没有了呀"
     },
     {
       "id": "1338896047963115643",

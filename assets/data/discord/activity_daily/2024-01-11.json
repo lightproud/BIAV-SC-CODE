@@ -1,10 +1,11 @@
 {
   "date": "2024-01-11",
-  "messages": 32,
+  "messages": 33,
   "unique_authors": 10,
   "reactions_total": 22,
   "attachments": 6,
   "channel_activity": {
+    "對於目前公關與營運方面的想法與建議。": 1,
     "戈利亞爸爸": 1,
     "Morimens平行宇宙論": 7,
     "1.10": 4,
@@ -18,6 +19,7 @@
     "【守密人中心同人文】論守密人的資訊安全素養（第二人稱）": 5
   },
   "hourly_activity": {
+    "4": 2,
     "11": 1,
     "14": 6,
     "15": 1,
@@ -30,11 +32,10 @@
     "16": 6,
     "23": 1,
     "22": 3,
-    "0": 2,
-    "4": 1
+    "0": 2
   },
   "message_types": {
-    "0": 13
+    "0": 1
   },
   "top_reacted_messages": [
     {

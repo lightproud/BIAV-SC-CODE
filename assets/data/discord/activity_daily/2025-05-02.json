@@ -1,26 +1,31 @@
 {
   "date": "2025-05-02",
-  "messages": 11,
-  "unique_authors": 4,
-  "reactions_total": 26,
+  "messages": 20,
+  "unique_authors": 6,
+  "reactions_total": 38,
   "attachments": 2,
   "channel_activity": {
+    "✅「已回答」蟲族羊媽狂氣減費bug": 1,
+    "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 7,
+    "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event": 1,
     "自製角色（目前有深海一名、超維一名）": 5,
     "Clementine is watching you": 1,
     "一點點鯊守私設文...吧? （清水.jpg）": 2,
     "1181998821291606097": 3
   },
   "hourly_activity": {
+    "6": 1,
+    "2": 2,
+    "10": 5,
+    "5": 2,
     "16": 1,
     "17": 4,
     "4": 4,
-    "11": 1,
-    "5": 1
+    "11": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 6,
-    "4": 1
+    "19": 2,
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -38,11 +43,32 @@
       "channel": ""
     },
     {
+      "id": "1367732991480299641",
+      "content": "I deem it more important to do something rather than the result it might cause, ",
+      "author": "nowimfaceless",
+      "reactions": 7,
+      "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
+    },
+    {
+      "id": "1367805666911064094",
+      "content": "想想當年我看到鯊魚圖就決定入坑的那股純粹",
+      "author": "fengliyaowo",
+      "reactions": 3,
+      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+    },
+    {
       "id": "1367826365818077234",
       "content": "清水?!不及格<:point:1356053112292511815>",
       "author": "huangziqiao_45693",
       "reactions": 3,
       "channel": "一點點鯊守私設文...吧? （清水.jpg）"
+    },
+    {
+      "id": "1367803864652320769",
+      "content": "<:fail:1356083552923422770>",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
     },
     {
       "id": "1367910807924641954",

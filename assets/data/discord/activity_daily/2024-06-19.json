@@ -1,10 +1,11 @@
 {
   "date": "2024-06-19",
-  "messages": 121,
+  "messages": 122,
   "unique_authors": 26,
-  "reactions_total": 54,
+  "reactions_total": 58,
   "attachments": 19,
   "channel_activity": {
+    "提个小建议": 1,
     "【敌方意图收录】第7章下篇新增单位一览": 6,
     "蒐集不吃靈芝通關h7-12的隊伍": 1,
     "「彌利亞姆」體驗交流分享活動": 22,
@@ -18,7 +19,7 @@
     "「窒息」珊同人": 2
   },
   "hourly_activity": {
-    "3": 1,
+    "3": 2,
     "5": 4,
     "6": 1,
     "7": 1,
@@ -40,8 +41,7 @@
     "10": 5
   },
   "message_types": {
-    "0": 97,
-    "19": 24
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -78,6 +78,13 @@
       "author": "gehuoku_86898",
       "reactions": 6,
       "channel": "「彌利亞姆」體驗交流分享活動"
+    },
+    {
+      "id": "1252822483481137244",
+      "content": "能不能可以更换主角性别，感觉女主头像开大比较好看，想换性别，这个应该比较好优化的吧",
+      "author": "guangzhijie_49941",
+      "reactions": 4,
+      "channel": "提个小建议"
     },
     {
       "id": "1253125820059353219",

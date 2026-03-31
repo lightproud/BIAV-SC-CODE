@@ -1,21 +1,62 @@
 {
   "date": "2025-06-26",
-  "messages": 4,
-  "unique_authors": 1,
-  "reactions_total": 1,
-  "attachments": 0,
+  "messages": 19,
+  "unique_authors": 8,
+  "reactions_total": 20,
+  "attachments": 5,
   "channel_activity": {
+    "艾继丝艾瑞卡小水母的试用关是不是忘做了": 2,
+    "✅「Answered」Limited Awakener Rates in Realm Study are Unclear/Incorrect": 6,
+    "✅「已回答」艾瑞卡对守密人的称呼是【主角】": 3,
+    "💭「處理中」我命輪呢我密契呢怎麼全沒了": 4,
     "血肉喚醒體：薩托古亞": 2,
     "超維喚醒體：戈登": 2
   },
   "hourly_activity": {
+    "13": 1,
+    "16": 1,
+    "21": 4,
+    "22": 2,
+    "14": 1,
+    "15": 2,
+    "2": 3,
+    "8": 1,
     "18": 2,
     "17": 2
   },
   "message_types": {
-    "0": 4
+    "0": 14,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1387792150661431486",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 14,
+      "channel": "艾继丝艾瑞卡小水母的试用关是不是忘做了"
+    },
+    {
+      "id": "1387912740114534570",
+      "content": "Here are a few possible solutions that the community has bounced around:\n\n**1)**",
+      "author": "mac2492",
+      "reactions": 3,
+      "channel": "✅「Answered」Limited Awakener Rates in Realm Study are Unclear/Incorrect"
+    },
+    {
+      "id": "1387912463055458365",
+      "content": "First off, there is a typo in the description for the Realm Study rules which st",
+      "author": "mac2492",
+      "reactions": 1,
+      "channel": "✅「Answered」Limited Awakener Rates in Realm Study are Unclear/Incorrect"
+    },
+    {
+      "id": "1387916818806735099",
+      "content": "u must be right or something, i did more than 1k pulls on realm of study and did",
+      "author": "venustoglasskin",
+      "reactions": 1,
+      "channel": "✅「Answered」Limited Awakener Rates in Realm Study are Unclear/Incorrect"
+    },
     {
       "id": "1387866304865894410",
       "content": "界域：血肉\n防禦型\n\n————————————————\n薩托古亞（Tsathoggua）\n\n————————————————\n狀態\n\n等級：60\n\n體質162\n",

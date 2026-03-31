@@ -1,21 +1,31 @@
 {
   "date": "2024-12-10",
-  "messages": 5,
-  "unique_authors": 5,
-  "reactions_total": 33,
+  "messages": 13,
+  "unique_authors": 7,
+  "reactions_total": 34,
   "attachments": 3,
   "channel_activity": {
+    "遊戲大廳能否可以自行更改遊戲的BGM?": 1,
+    "原初之影 瘋狂之視 釋放鑰令不會抽牌": 3,
+    "請問限定角活動的sr命輪會復刻或是投入商店嗎？": 2,
+    "如果活下來，可以出按照調查排行一鍵穿戴命輪或密契的功能嗎？": 1,
+    "有人知道蘿坦是對應克蘇魯的哪一隻嗎": 1,
     "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
     "我們偉大的音樂家（哈姆林樓？）": 1,
     "Ryker": 3
   },
   "hourly_activity": {
-    "3": 1,
+    "0": 1,
+    "3": 4,
+    "10": 1,
+    "16": 1,
+    "7": 1,
+    "1": 1,
     "15": 1,
     "2": 3
   },
   "message_types": {
-    "0": 5
+    "0": 8
   },
   "top_reacted_messages": [
     {
@@ -38,6 +48,13 @@
       "author": "ernest_heart",
       "reactions": 4,
       "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
+    },
+    {
+      "id": "1315879820248485910",
+      "content": "一回合内，手牌最多从弃牌堆回到抽卡堆一次",
+      "author": "be_queitplease",
+      "reactions": 1,
+      "channel": "原初之影 瘋狂之視 釋放鑰令不會抽牌"
     }
   ]
 }

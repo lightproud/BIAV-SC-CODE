@@ -1,10 +1,16 @@
 {
   "date": "2025-07-07",
-  "messages": 37,
+  "messages": 62,
   "unique_authors": 9,
-  "reactions_total": 732,
-  "attachments": 19,
+  "reactions_total": 734,
+  "attachments": 22,
   "channel_activity": {
+    "关于氪金相关的问题。": 1,
+    "✅「Answered」I just started, How do I fix this": 4,
+    "✅「Answered」Relic missing description texts": 5,
+    "💭「Processing」2-7, Bugged Dialogue": 10,
+    "✅「Answered」Agrippa's Skin Resolution": 3,
+    "💭「Processing」Dont know if this is a bug but here it is": 2,
     "✅「Answered」Incorrect dmg apply with counter": 4,
     "关卡地图「融灾禁区」总览38期·星辰篇": 1,
     "詹金": 1,
@@ -16,12 +22,13 @@
     "1390375103707218041": 15
   },
   "hourly_activity": {
-    "3": 2,
+    "14": 6,
+    "3": 15,
+    "8": 3,
+    "2": 8,
+    "4": 5,
     "7": 1,
-    "8": 1,
     "5": 8,
-    "14": 5,
-    "4": 4,
     "19": 3,
     "6": 3,
     "11": 1,
@@ -31,7 +38,9 @@
     "16": 1
   },
   "message_types": {
-    "0": 4
+    "0": 18,
+    "4": 6,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -68,6 +77,20 @@
       "author": "tianfang5580",
       "reactions": 2,
       "channel": "2026忘却前夜新春会节目预告:道理剧场之误入弥大"
+    },
+    {
+      "id": "1391617484104269924",
+      "content": "Thank you very much, it has been very helpful to us❤️",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」2-7, Bugged Dialogue"
+    },
+    {
+      "id": "1391621768338214935",
+      "content": "okay! Thank you",
+      "author": "queenmushrooms",
+      "reactions": 1,
+      "channel": "💭「Processing」2-7, Bugged Dialogue"
     },
     {
       "id": "1391794013568368653",

@@ -1,17 +1,53 @@
 {
   "date": "2024-11-08",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 1,
+  "messages": 21,
+  "unique_authors": 11,
+  "reactions_total": 6,
+  "attachments": 6,
   "channel_activity": {
+    "御四家除朵尔和两个希洛档案中部分语音缺失": 8,
+    "第八章羊媽召喚的艾繼絲機制": 4,
+    "為什麼希洛這麼好看": 8,
     "自創喚醒體相關：您的仙女座之唇，将是我们幽会的契机。": 1
   },
   "hourly_activity": {
+    "9": 1,
+    "10": 1,
+    "13": 1,
+    "14": 5,
+    "18": 3,
+    "20": 1,
+    "1": 1,
+    "4": 2,
+    "16": 5,
     "8": 1
   },
   "message_types": {
-    "0": 1
+    "0": 16,
+    "19": 3,
+    "4": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1304517233581756459",
+      "content": "一直都是如此，這應該就是機制了",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "第八章羊媽召喚的艾繼絲機制"
+    },
+    {
+      "id": "1304550640755675157",
+      "content": "就是用来恶心你的",
+      "author": "ioshift_24740",
+      "reactions": 1,
+      "channel": "第八章羊媽召喚的艾繼絲機制"
+    },
+    {
+      "id": "1304487471064682576",
+      "content": "比其他動不動殺人或狂信徒正常多了",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "為什麼希洛這麼好看"
+    }
+  ]
 }

@@ -1,26 +1,34 @@
 {
   "date": "2024-11-22",
-  "messages": 54,
-  "unique_authors": 9,
-  "reactions_total": 20,
-  "attachments": 5,
+  "messages": 70,
+  "unique_authors": 10,
+  "reactions_total": 30,
+  "attachments": 8,
   "channel_activity": {
+    "請願本源朵爾進典藏館以及實裝上線": 5,
+    "為何0費吃不到上行音": 7,
+    "Quick select current Posse when using G-Ramona Exalt": 1,
+    "戰鬥失敗的退出有問題": 3,
     "（已封存）【蚰蜒的vrm影像馆】": 1,
     "往日余影": 4,
     "歡愉脊髓劍": 2,
     "蜡像先生和羅杰斯のLove": 47
   },
   "hourly_activity": {
+    "7": 6,
+    "10": 2,
+    "13": 5,
+    "17": 1,
+    "8": 3,
+    "12": 1,
+    "0": 2,
+    "3": 1,
     "16": 1,
     "6": 1,
-    "10": 1,
-    "13": 2,
-    "7": 2,
     "14": 47
   },
   "message_types": {
-    "0": 42,
-    "19": 12
+    "0": 16
   },
   "top_reacted_messages": [
     {
@@ -29,6 +37,13 @@
       "author": "moyan0454",
       "reactions": 9,
       "channel": "蜡像先生和羅杰斯のLove"
+    },
+    {
+      "id": "1309421181337604146",
+      "content": "我是覺得啦都有本源朵爾了\n那什麼時候要出本源小騎士\n我是小騎士的狗🥵🥵",
+      "author": "shchng.",
+      "reactions": 7,
+      "channel": "請願本源朵爾進典藏館以及實裝上線"
     },
     {
       "id": "1309413404251000842",
@@ -43,6 +58,27 @@
       "author": "nancyjofla",
       "reactions": 4,
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1309426959335297064",
+      "content": "這兩張鏈球有分別嗎？",
+      "author": "sagi_ip",
+      "reactions": 1,
+      "channel": "為何0費吃不到上行音"
+    },
+    {
+      "id": "1309503809516605461",
+      "content": "Thanks for your feedback！",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "Quick select current Posse when using G-Ramona Exalt"
+    },
+    {
+      "id": "1309354300925018154",
+      "content": "好了可以了\n可能是活動關卡程式問題",
+      "author": "kong760",
+      "reactions": 1,
+      "channel": "戰鬥失敗的退出有問題"
     }
   ]
 }

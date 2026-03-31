@@ -1,29 +1,37 @@
 {
   "date": "2025-06-08",
-  "messages": 58,
-  "unique_authors": 5,
-  "reactions_total": 42,
-  "attachments": 6,
+  "messages": 68,
+  "unique_authors": 8,
+  "reactions_total": 43,
+  "attachments": 10,
   "channel_activity": {
+    "✅「已回答」魔女寬簷帽": 1,
+    "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\"": 1,
+    "✅「Answered」Losing 1st posse": 3,
+    "💭「Processing」Untranslated Castor skill in TH ver.": 2,
+    "✅「已回答」鑰令效果哪個才是正確的": 1,
+    "✅「已回答」弥萨格在逃女守头像": 2,
     "利莫里亞沙丁魚罐頭": 8,
     "我要吃現pa 我現在就要吃現pa 👊": 49,
     "小水母生贺": 1
   },
   "hourly_activity": {
+    "6": 10,
+    "5": 3,
+    "2": 2,
+    "13": 2,
+    "7": 4,
+    "1": 3,
     "11": 3,
     "15": 21,
     "16": 17,
     "17": 1,
     "23": 1,
-    "1": 1,
-    "5": 1,
-    "6": 9,
-    "7": 3,
     "22": 1
   },
   "message_types": {
-    "0": 49,
-    "19": 9
+    "0": 9,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -46,6 +54,13 @@
       "author": "yolo_mode",
       "reactions": 3,
       "channel": "利莫里亞沙丁魚罐頭"
+    },
+    {
+      "id": "1381259230702600333",
+      "content": "",
+      "author": "darkerkuro",
+      "reactions": 1,
+      "channel": "💭「Processing」Untranslated Castor skill in TH ver."
     },
     {
       "id": "1381161042561732660",

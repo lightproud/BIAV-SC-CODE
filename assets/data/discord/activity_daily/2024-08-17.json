@@ -1,17 +1,69 @@
 {
   "date": "2024-08-17",
-  "messages": 6,
-  "unique_authors": 1,
-  "reactions_total": 0,
+  "messages": 41,
+  "unique_authors": 11,
+  "reactions_total": 12,
   "attachments": 1,
   "channel_activity": {
+    "✅「已回答」斷關續連能不能續在當前回合數": 4,
+    "不是，新劇情我們艾瑞卡怎麽成n的狗了": 2,
+    "我爱校猫": 1,
+    "一段話": 27,
+    "猫门语录一": 1,
     "莱克主c组队思路浅析": 6
   },
   "hourly_activity": {
+    "16": 4,
+    "17": 1,
+    "0": 2,
+    "9": 2,
+    "10": 5,
+    "11": 15,
+    "12": 3,
+    "13": 1,
+    "14": 1,
+    "7": 1,
     "1": 6
   },
   "message_types": {
-    "0": 6
+    "0": 32,
+    "19": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1274306020209983552",
+      "content": "要是不知道劇情該怎麼寫，就去知名網站上找TRPG模組改編一下。\n整那種有的沒的設定和感情戲，到時候又引起夢男夢女不滿（汗）。\n我是因為克蘇魯元素，你們的特色畫風",
+      "author": "helodoma",
+      "reactions": 3,
+      "channel": "一段話"
+    },
+    {
+      "id": "1274326380468899881",
+      "content": "但你遊我感覺有立繪的角色（不含喚醒體）可能也沒超過30個",
+      "author": "falst_over_",
+      "reactions": 3,
+      "channel": "一段話"
+    },
+    {
+      "id": "1274335748887281689",
+      "content": "~~陽光開朗不是整個彌薩格大學被融蝕爆破死一大堆人的那種陽光開朗嗎~~",
+      "author": "falst_over_",
+      "reactions": 3,
+      "channel": "一段話"
+    },
+    {
+      "id": "1274413733594009620",
+      "content": "我今天一斷就是回到回合0。。。。。",
+      "author": "ariate",
+      "reactions": 2,
+      "channel": "✅「已回答」斷關續連能不能續在當前回合數"
+    },
+    {
+      "id": "1274326682358255739",
+      "content": "~~大家都死人不刀怎麼抽出來~~",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "一段話"
+    }
+  ]
 }

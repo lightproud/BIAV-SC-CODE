@@ -1,10 +1,11 @@
 {
   "date": "2024-06-13",
-  "messages": 56,
+  "messages": 57,
   "unique_authors": 20,
-  "reactions_total": 61,
+  "reactions_total": 66,
   "attachments": 23,
   "channel_activity": {
+    "離開前的感謝": 1,
     "死抗序列": 3,
     "分享新手該怎麼抽，無課/微課如何培養帳號": 2,
     "代传攻略，高难尤乌攻略": 10,
@@ -21,7 +22,7 @@
     "造物:喵喵時間": 1
   },
   "hourly_activity": {
-    "2": 5,
+    "2": 6,
     "7": 4,
     "8": 8,
     "12": 5,
@@ -40,9 +41,7 @@
     "19": 3
   },
   "message_types": {
-    "0": 48,
-    "19": 7,
-    "4": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -65,6 +64,13 @@
       "author": "menoctus",
       "reactions": 8,
       "channel": "《泛融蚀现象研究》期末考试"
+    },
+    {
+      "id": "1250631557191041100",
+      "content": "故地重遊，或許我們明年二月還有緣分🪦",
+      "author": "xuan4185",
+      "reactions": 5,
+      "channel": "離開前的感謝"
     },
     {
       "id": "1250736319496454145",

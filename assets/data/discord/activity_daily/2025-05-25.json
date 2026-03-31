@@ -1,0 +1,44 @@
+{
+  "date": "2025-05-25",
+  "messages": 24,
+  "unique_authors": 7,
+  "reactions_total": 3,
+  "attachments": 2,
+  "channel_activity": {
+    "✅「Answered」Game not starting": 1,
+    "喜歡綠色正太的每回合寸止嗎": 18,
+    "How do I change the window size?": 5
+  },
+  "hourly_activity": {
+    "21": 1,
+    "6": 1,
+    "7": 5,
+    "8": 4,
+    "9": 1,
+    "11": 1,
+    "12": 1,
+    "13": 5,
+    "3": 1,
+    "23": 4
+  },
+  "message_types": {
+    "0": 16,
+    "19": 8
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1376176243732644015",
+      "content": "我就知道是aaa打勾，AAA游戏理解比较高",
+      "author": "287405tjy_28066",
+      "reactions": 2,
+      "channel": "喜歡綠色正太的每回合寸止嗎"
+    },
+    {
+      "id": "1376157897616265306",
+      "content": "~~這隻不是弱化版了嗎，之前改過一次了~~",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "喜歡綠色正太的每回合寸止嗎"
+    }
+  ]
+}

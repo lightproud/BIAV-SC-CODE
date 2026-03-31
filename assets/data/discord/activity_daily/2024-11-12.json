@@ -1,10 +1,15 @@
 {
   "date": "2024-11-12",
-  "messages": 29,
+  "messages": 43,
   "unique_authors": 10,
-  "reactions_total": 49,
-  "attachments": 8,
+  "reactions_total": 55,
+  "attachments": 9,
   "channel_activity": {
+    "请问周年庆有什么活动爆料么？": 1,
+    "好友功能建議": 1,
+    "請願加強希洛": 6,
+    "覺得羅坦需要加強": 5,
+    "Horla card text wrong": 1,
     "關卡地圖「融災禁區」總覽21期": 1,
     "死亡已經迫近，消亡已經開始": 18,
     "【梗图】堆点我P过的梗图": 1,
@@ -14,19 +19,24 @@
     "自制命輪：覲見吾母/Behold the Mother": 4
   },
   "hourly_activity": {
+    "3": 2,
+    "6": 1,
+    "8": 2,
+    "9": 5,
+    "11": 3,
+    "12": 2,
+    "5": 1,
     "2": 1,
     "17": 13,
     "18": 5,
     "13": 1,
-    "12": 1,
     "15": 3,
-    "9": 1,
     "0": 2,
     "1": 2
   },
   "message_types": {
-    "0": 26,
-    "19": 3
+    "0": 12,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -58,6 +68,13 @@
       "channel": "二創喚醒體-威廉學長(鑰令販賣機）"
     },
     {
+      "id": "1305782215392624641",
+      "content": "希望可以有更快速刪除太久沒上線互相關注好友的功能 \n因為互關上限1000 很快就會滿了 再加上點擊一次取消關注後還要重新刷新一次頁面才能把之前點的刷掉 多了好多",
+      "author": "pray_unbeliever",
+      "reactions": 5,
+      "channel": "好友功能建議"
+    },
+    {
       "id": "1305963929389760615",
       "content": "",
       "author": "ekko9950",
@@ -84,6 +101,13 @@
       "author": "nancyjofla",
       "reactions": 2,
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1305814911422566411",
+      "content": "每日請願加強希洛（1/1）",
+      "author": "ice_storys",
+      "reactions": 1,
+      "channel": "請願加強希洛"
     }
   ]
 }

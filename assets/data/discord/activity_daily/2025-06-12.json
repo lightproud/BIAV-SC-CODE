@@ -1,25 +1,33 @@
 {
   "date": "2025-06-12",
-  "messages": 10,
-  "unique_authors": 7,
-  "reactions_total": 45,
-  "attachments": 13,
+  "messages": 76,
+  "unique_authors": 8,
+  "reactions_total": 51,
+  "attachments": 14,
   "channel_activity": {
+    "應該要加強某些角色吧": 61,
+    "✅「已回答」新手教程卡指引": 4,
+    "考虑出个练习模式嘛": 1,
     "✦关卡地图「融灾禁区」总览36期·星辰篇✦": 1,
     "【坦朵】头像两枚": 1,
     "我们5771正在进军小说界": 8
   },
   "hourly_activity": {
+    "12": 58,
+    "13": 4,
+    "16": 1,
+    "2": 2,
+    "7": 2,
+    "3": 1,
     "8": 3,
     "17": 1,
     "5": 3,
-    "6": 1,
-    "12": 1,
-    "13": 1
+    "6": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 49,
+    "19": 15,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -42,6 +50,48 @@
       "author": "silverstream_s",
       "reactions": 7,
       "channel": "✦关卡地图「融灾禁区」总览36期·星辰篇✦"
+    },
+    {
+      "id": "1382696420032905359",
+      "content": "我們說了他也是擺著你放心",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "應該要加強某些角色吧"
+    },
+    {
+      "id": "1382701620797902870",
+      "content": "||那個手造物如果能常駐寧也算半活了||",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "應該要加強某些角色吧"
+    },
+    {
+      "id": "1382702101066678303",
+      "content": "好歹還在星辰篇內，艾爾瓦在哪都失蹤",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "應該要加強某些角色吧"
+    },
+    {
+      "id": "1382702837288407174",
+      "content": "當防禦他也不太能活啊，基本上就是當輔助，天賦要他輸出，角色定位是防禦，效果是輔助：",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "應該要加強某些角色吧"
+    },
+    {
+      "id": "1382764303966273558",
+      "content": "~~蘿~~",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": "應該要加強某些角色吧"
+    },
+    {
+      "id": "1382555038651646015",
+      "content": "戈雅會去溝通一下這個建議🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "考虑出个练习模式嘛"
     },
     {
       "id": "1382638571470589977",

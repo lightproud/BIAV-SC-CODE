@@ -1,10 +1,16 @@
 {
   "date": "2024-11-02",
-  "messages": 25,
-  "unique_authors": 6,
-  "reactions_total": 41,
-  "attachments": 8,
+  "messages": 57,
+  "unique_authors": 14,
+  "reactions_total": 53,
+  "attachments": 13,
   "channel_activity": {
+    "求高清圖": 9,
+    "伤转盾吃2次强效算bug吗？": 14,
+    "suggestion regarding breeding frenzy event": 1,
+    "ios手机怎么能玩上？人在加拿大": 1,
+    "離開前的感謝": 6,
+    "有没有考虑过出皮肤": 1,
     "【梗图】堆点我P过的梗图": 1,
     "八維癮犯了，給你遊角色判型": 15,
     "自創喚醒體相關：牢于😭互動一下": 3,
@@ -13,16 +19,22 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "9": 1,
-    "16": 18,
+    "10": 5,
+    "11": 17,
+    "13": 2,
+    "21": 1,
+    "19": 1,
+    "9": 2,
+    "14": 2,
+    "16": 20,
+    "7": 1,
     "5": 3,
     "3": 2,
     "2": 1
   },
   "message_types": {
-    "0": 14,
-    "19": 9,
-    "4": 1
+    "0": 31,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -47,6 +59,13 @@
       "channel": "复工通知"
     },
     {
+      "id": "1302220514181517393",
+      "content": "我記得限定都有除了某位沉睡之主<:sleep:1238448786540462130>",
+      "author": "wild_pansy",
+      "reactions": 5,
+      "channel": "求高清圖"
+    },
+    {
       "id": "1302198048830787695",
       "content": "我 校猫 打钱！(                笑点解析:刚P完跳了个骗氪小礼包",
       "author": "yingmai_",
@@ -61,11 +80,46 @@
       "channel": "八維癮犯了，給你遊角色判型"
     },
     {
+      "id": "1302225641336344657",
+      "content": "小红书有高清",
+      "author": "qiamo0664",
+      "reactions": 2,
+      "channel": "求高清圖"
+    },
+    {
+      "id": "1302381247917588640",
+      "content": "Great work on the game! I especially love the characters and their personality, ",
+      "author": "starfish3302",
+      "reactions": 2,
+      "channel": "suggestion regarding breeding frenzy event"
+    },
+    {
       "id": "1302304772510191696",
       "content": "她的Te是服務於Ni（向所有人復仇的未來）",
       "author": "ena04564",
       "reactions": 2,
       "channel": "八維癮犯了，給你遊角色判型"
+    },
+    {
+      "id": "1302218609623568404",
+      "content": "想請問有幾張喜歡的活動圖\n能不能要高清版🥺🥺🙏🏻\n1. 獻給春天的花束\n2.莉莉抽選的含背景圖\n3.墨菲的活動圖",
+      "author": "kkklavier",
+      "reactions": 1,
+      "channel": "求高清圖"
+    },
+    {
+      "id": "1302240346473889896",
+      "content": "可以整个去水印",
+      "author": "qiamo0664",
+      "reactions": 1,
+      "channel": "求高清圖"
+    },
+    {
+      "id": "1302286031474786336",
+      "content": "買小碑送大碑 不用念大碑咒",
+      "author": "kong760",
+      "reactions": 1,
+      "channel": "離開前的感謝"
     },
     {
       "id": "1302305042589679647",

@@ -1,17 +1,64 @@
 {
   "date": "2025-05-20",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 23,
+  "unique_authors": 10,
+  "reactions_total": 10,
+  "attachments": 5,
   "channel_activity": {
+    "Add Off Topic Channel": 1,
+    "✅「已回答」520信件缺失": 2,
+    "💭「Processing」Something confusing happened": 6,
+    "💭「Processing」Bug con los colores": 2,
+    "💭「Processing」Gelot chain and Ultra bar UI bug": 2,
+    "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 2,
+    "一些便利性方面的建议": 5,
+    "牌庫/深海怒濤機制 建議": 1,
     "拿下索瓦爾格商用權了慶祝一下XD": 2
   },
   "hourly_activity": {
-    "17": 2
+    "12": 3,
+    "10": 2,
+    "7": 1,
+    "13": 3,
+    "17": 4,
+    "15": 1,
+    "16": 1,
+    "8": 2,
+    "1": 1,
+    "2": 5
   },
   "message_types": {
-    "0": 2
+    "0": 13,
+    "19": 8
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1374359348595130448",
+      "content": "I would like an Off Topic channel to filter <#1170692781216378960> so that it is",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "Add Off Topic Channel"
+    },
+    {
+      "id": "1374439250468274264",
+      "content": "Holi es mi primera vez y no se cómo hacerlo, para empezar amo el juego y quiero ",
+      "author": "vicho225_uvu",
+      "reactions": 3,
+      "channel": "💭「Processing」Bug con los colores"
+    },
+    {
+      "id": "1374414025739468800",
+      "content": "When gelot uses base chain (0/3), it gets slotted into the ultra bar as chain (1",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "💭「Processing」Gelot chain and Ultra bar UI bug"
+    },
+    {
+      "id": "1374205528229675129",
+      "content": "1.牌庫抽乾了 \n 建議提醒一下\n\n\n\n\n2.怒濤主動傷害會有觸腕拍擊，導致藏品、萊克收不到頭。\n\n建議怒濤下的主動傷害 觸腕擊殺也規在傷害者身上<:pray:",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "牌庫/深海怒濤機制 建議"
+    }
+  ]
 }

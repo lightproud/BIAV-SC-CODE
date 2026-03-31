@@ -1,10 +1,20 @@
 {
   "date": "2025-02-13",
-  "messages": 21,
-  "unique_authors": 9,
-  "reactions_total": 99,
-  "attachments": 8,
+  "messages": 115,
+  "unique_authors": 26,
+  "reactions_total": 122,
+  "attachments": 12,
   "channel_activity": {
+    "能还我抽了+4朵的几百抽吗": 56,
+    "I can't get into the game": 2,
+    "哺育是不是失效了？": 3,
+    "关于莱克的特遣纪录": 2,
+    "相位對弈之後會不會新增裝備密契的功能？": 1,
+    "💭「Processing」Stuck in \"Checking for resource updates\"": 12,
+    "Locked out of game (steam version)": 1,
+    "吐槽2.1.0.X": 12,
+    "大过年过来吐槽": 1,
+    "貓咪 幻夢的初衷": 4,
     "死抗序列": 3,
     "拿下索瓦爾格商用權了慶祝一下XD": 4,
     "獵顱魔女": 5,
@@ -13,21 +23,27 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "10": 3,
-    "16": 2,
-    "18": 3,
-    "19": 1,
-    "12": 4,
-    "13": 1,
-    "17": 3,
-    "6": 1,
-    "7": 1,
-    "8": 1,
-    "9": 1
+    "9": 46,
+    "15": 3,
+    "16": 15,
+    "23": 2,
+    "3": 1,
+    "8": 3,
+    "18": 4,
+    "19": 2,
+    "6": 3,
+    "10": 5,
+    "11": 2,
+    "12": 6,
+    "13": 4,
+    "7": 12,
+    "2": 1,
+    "4": 3,
+    "17": 3
   },
   "message_types": {
-    "0": 18,
-    "19": 2
+    "0": 79,
+    "19": 15
   },
   "top_reacted_messages": [
     {
@@ -59,6 +75,13 @@
       "channel": "【母女组】are you big"
     },
     {
+      "id": "1339502453854437461",
+      "content": "【褪色遗骨】\n感覺沒啥問題，出了再說。\n【灰烬遗迹】\n感覺沒啥問題，出了再說。\n【战斗奖励】\n刻印沒了有點痛苦，沒了暴食命輪的加成神父先哭(後面還要再哭一次。\n",
+      "author": "pray_unbeliever",
+      "reactions": 6,
+      "channel": "吐槽2.1.0.X"
+    },
+    {
       "id": "1339570863632158761",
       "content": "黑底",
       "author": "xu6_",
@@ -66,11 +89,88 @@
       "channel": "獵顱魔女"
     },
     {
+      "id": "1339424813155881042",
+      "content": "我還是覺得這就是杯弓蛇影，深潛與相位應該只是添頭的獲取途徑，活動跟主線可能才是真正的渠道",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "貓咪 幻夢的初衷"
+    },
+    {
+      "id": "1339529968010395759",
+      "content": "真庆幸入坑了忘却前夜，这个游戏几乎陪伴了我整个青春。挺感谢的，要是没有它的话，我可能就过上好日子了。 ​",
+      "author": "two_of_us",
+      "reactions": 2,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339531792822177895",
+      "content": "反转了🤓 jm在下大棋\n把角色和新主线搞烂，那你们就得乖乖去他的白月光PVP，通通白嫖个0+0就够辣\n最为玩家着想的一集🥰",
+      "author": "nidie0256_61327",
+      "reactions": 2,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339491022186610688",
+      "content": "天天喷🐱的多了。但你这种疑似有唐式的我还是第一次见。",
+      "author": "mate0321",
+      "reactions": 2,
+      "channel": "大过年过来吐槽"
+    },
+    {
       "id": "1339534595330150532",
       "content": "不不不不，歌不是我唱的<:cry:1239910167668326480> 音频来自BV161BkYdEsh嗯嗯",
       "author": "yingmai_",
       "reactions": 2,
       "channel": "【母女组】are you big"
+    },
+    {
+      "id": "1339528632242012201",
+      "content": "你現實生活討厭的人",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339529829841637378",
+      "content": "进来一看唐猫发言吓得分分钟跑路",
+      "author": "two_of_us",
+      "reactions": 1,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339530111019520010",
+      "content": "玩这游戏增加掉san耐性<:Coffee:1240919421791375380>",
+      "author": "cs001092",
+      "reactions": 1,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339634571049832469",
+      "content": "这人怎么能这么做游戏呢…真的这操作真的太逆天了",
+      "author": "bolkon0218",
+      "reactions": 1,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339687448158011433",
+      "content": "有回復說下禮拜更新修\nhttps://discord.com/channels/1131791637933199470/1338792424532606996\n",
+      "author": "elkmilu",
+      "reactions": 1,
+      "channel": "关于莱克的特遣纪录"
+    },
+    {
+      "id": "1339641842194448517",
+      "content": "同題",
+      "author": "ekko9950",
+      "reactions": 1,
+      "channel": "相位對弈之後會不會新增裝備密契的功能？"
+    },
+    {
+      "id": "1339637632476647435",
+      "content": "<@1131790839291596841> <@546511962977337344> thanks 2 you for helping me. Someho",
+      "author": "harmonce_mel",
+      "reactions": 1,
+      "channel": "💭「Processing」Stuck in \"Checking for resource updates\""
     },
     {
       "id": "1339543734387343441",
@@ -83,20 +183,6 @@
       "id": "1339581130491297792",
       "content": "佬",
       "author": "_cwz_",
-      "reactions": 1,
-      "channel": "獵顱魔女"
-    },
-    {
-      "id": "1339586344934182965",
-      "content": "佬",
-      "author": "two_of_us",
-      "reactions": 1,
-      "channel": "獵顱魔女"
-    },
-    {
-      "id": "1339659015998799902",
-      "content": "佬",
-      "author": "ena04564",
       "reactions": 1,
       "channel": "獵顱魔女"
     }

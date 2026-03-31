@@ -1,27 +1,29 @@
 {
   "date": "2024-09-21",
-  "messages": 21,
+  "messages": 27,
   "unique_authors": 4,
   "reactions_total": 63,
-  "attachments": 8,
+  "attachments": 10,
   "channel_activity": {
+    "新人求建议": 4,
+    "為什麼沒有哈姆林的生日信": 2,
     "【敌方意图收录】第8章中篇新增单位一览": 1,
     "超维哈姆林主c思路": 16,
     "我們偉大的音樂家（哈姆林樓？）": 1,
     "混沌界域-傷害型喚醒體：卡利歐佩": 3
   },
   "hourly_activity": {
+    "1": 11,
+    "10": 1,
+    "11": 2,
     "13": 1,
-    "1": 7,
     "12": 9,
-    "11": 1,
     "4": 1,
     "7": 1,
     "8": 1
   },
   "message_types": {
-    "0": 20,
-    "19": 1
+    "0": 6
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,14 @@
 {
   "date": "2025-07-17",
-  "messages": 18,
+  "messages": 29,
   "unique_authors": 7,
-  "reactions_total": 50,
+  "reactions_total": 51,
   "attachments": 6,
   "channel_activity": {
+    "先提前开一个杜勒加强方案筹划吧": 6,
+    "How to promote the game for new players": 1,
+    "New player advice": 3,
+    "Feedback/general review on latest morimens merchandise": 1,
     "說好的怪圖呢": 3,
     "这里也发一下，虽然只是摸鱼": 2,
     "（蔚蓝档案x忘却前夜同人）Sensei瞬息弥萨格（第二幕 已完结）": 4,
@@ -12,16 +16,18 @@
     "早期蟲族捕捉哈基米的珍貴影像(修正版)": 6
   },
   "hourly_activity": {
+    "8": 12,
+    "14": 2,
+    "13": 2,
+    "2": 1,
     "7": 3,
     "16": 5,
     "15": 3,
-    "17": 1,
-    "8": 6
+    "17": 1
   },
   "message_types": {
-    "0": 14,
-    "19": 3,
-    "4": 1
+    "0": 10,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -58,6 +64,13 @@
       "author": "void_1546.",
       "reactions": 7,
       "channel": "早期蟲族捕捉哈基米的珍貴影像(修正版)"
+    },
+    {
+      "id": "1395401233035956355",
+      "content": "We have <#1356200968311803956> and another entire section for <#1304022827824844",
+      "author": "red_rest",
+      "reactions": 1,
+      "channel": "New player advice"
     },
     {
       "id": "1395441104475918407",

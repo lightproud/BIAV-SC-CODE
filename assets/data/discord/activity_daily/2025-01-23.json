@@ -1,14 +1,20 @@
 {
   "date": "2025-01-23",
-  "messages": 5,
+  "messages": 10,
   "unique_authors": 4,
-  "reactions_total": 37,
+  "reactions_total": 47,
   "attachments": 2,
   "channel_activity": {
+    "English Page pls !!": 2,
+    "Steam download button missing": 3,
     "where i post stuff": 3,
     "【时摆组】水死体は恋したい": 2
   },
   "hourly_activity": {
+    "1": 1,
+    "23": 1,
+    "13": 2,
+    "15": 1,
     "2": 1,
     "10": 4
   },
@@ -29,6 +35,20 @@
       "author": "yingmai_",
       "reactions": 9,
       "channel": "【时摆组】水死体は恋したい"
+    },
+    {
+      "id": "1332005519694630922",
+      "content": "😭😭😭We apologize to everyone. We are currently investigating why the download but",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "Steam download button missing"
+    },
+    {
+      "id": "1331981828705484844",
+      "content": "It appears that new players can no longer download the game from steam as the do",
+      "author": "monchi3524",
+      "reactions": 4,
+      "channel": "Steam download button missing"
     },
     {
       "id": "1331927435003822121",

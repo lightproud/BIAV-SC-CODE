@@ -1,23 +1,57 @@
 {
   "date": "2025-01-12",
-  "messages": 9,
-  "unique_authors": 4,
-  "reactions_total": 13,
-  "attachments": 0,
+  "messages": 37,
+  "unique_authors": 18,
+  "reactions_total": 57,
+  "attachments": 4,
   "channel_activity": {
+    "有沒有考慮新增好友私信功能？": 1,
+    "对不起我蠢,我的停服维修补偿什哪里？": 3,
+    "[Feature Request] Sweep or instant clear for weekly skill material (Transcendental Entity)?": 1,
+    "我可以帮忙将这个游戏翻译成其他语言吗？": 8,
+    "塔薇的相位对弈技能是谁设计的": 5,
+    "关于配队系统的建议": 3,
+    "[Bug] Delirium Symptom Card Does 0 damage": 3,
+    "弥撒格第一届反击大赛!!": 4,
     "好餓哦，雜食來吃飯了": 9
   },
   "hourly_activity": {
+    "11": 4,
+    "7": 8,
+    "17": 2,
+    "5": 3,
+    "14": 7,
+    "13": 2,
+    "4": 4,
     "2": 4,
-    "3": 3,
-    "7": 1,
-    "13": 1
+    "3": 3
   },
   "message_types": {
-    "0": 5,
-    "19": 4
+    "0": 27,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1327870886778372106",
+      "content": "例如越南语或英语，我想帮助开发人员翻译游戏，并希望更多人了解该游戏🥹🥹\n在测试版本中，我发现了很多错误和不正确的翻译（越南语翻译）",
+      "author": "jstxr._",
+      "reactions": 15,
+      "channel": "我可以帮忙将这个游戏翻译成其他语言吗？"
+    },
+    {
+      "id": "1327959713878376448",
+      "content": "如題。\n\n突然想到的，也不知道之前有沒有人提過。因為好友列表裡有是全角色高練度且願意借/換助戰的人，但大多都是看到對方說「在某某app私信換借助戰」之類的，特意",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "有沒有考慮新增好友私信功能？"
+    },
+    {
+      "id": "1327899141350887459",
+      "content": "在组件配对的时候，我时常感到繁琐，每次选择新的角色之后，不仅要调整命轮，还要调整密契，感到相当繁琐。虽然新版本有些改善，但还是提出了如下建议\n\n在新版本可以任意",
+      "author": "cq_zheng",
+      "reactions": 10,
+      "channel": "关于配队系统的建议"
+    },
     {
       "id": "1327843768191291525",
       "content": "校工和校貓",
@@ -26,11 +60,32 @@
       "channel": "好餓哦，雜食來吃飯了"
     },
     {
+      "id": "1327904777069400125",
+      "content": "1/13還沒到，這只是公告",
+      "author": "yami_no_gemu",
+      "reactions": 5,
+      "channel": "对不起我蠢,我的停服维修补偿什哪里？"
+    },
+    {
       "id": "1327840659939528807",
       "content": "兩大質體代行者這種設定這麼好嗑不嗑都對不起雜食這麼名字了，還記得繁衍狂熱裡塔薇說什麼嗎？沒錯，就是「她會後悔散播這樣的慾念的」\n怎麼個後悔法\n怎麼個後\n怎麼\n你",
       "author": "ena04564",
       "reactions": 5,
       "channel": "好餓哦，雜食來吃飯了"
+    },
+    {
+      "id": "1328049344481591408",
+      "content": "A run takes quite awhile (just like doing story, except with assist usable), so ",
+      "author": "mozaic2nd",
+      "reactions": 2,
+      "channel": "[Feature Request] Sweep or instant clear for weekly skill material (Transcendental Entity)?"
+    },
+    {
+      "id": "1327895494642634762",
+      "content": "This card duplicated Nymphea's card, which I got from Tawil's Exalt. It does 0 d",
+      "author": "mozaic2nd",
+      "reactions": 1,
+      "channel": "[Bug] Delirium Symptom Card Does 0 damage"
     },
     {
       "id": "1327833712670281728",

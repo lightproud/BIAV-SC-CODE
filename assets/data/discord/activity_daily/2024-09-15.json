@@ -1,18 +1,58 @@
 {
   "date": "2024-09-15",
-  "messages": 9,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 3,
+  "messages": 62,
+  "unique_authors": 17,
+  "reactions_total": 18,
+  "attachments": 12,
   "channel_activity": {
+    "靈知深化很容易誤觸": 13,
+    "下一个复刻的角色是谁？": 8,
+    "呃呃呃 這算什麼bug": 2,
+    "關於哈姆林活動SR命輪效果……": 13,
+    "配队问题": 14,
+    "後天中秋節 該來點禮包碼了吧": 3,
     "超维哈姆林主c思路": 9
   },
   "hourly_activity": {
-    "1": 8,
-    "12": 1
+    "16": 14,
+    "9": 12,
+    "17": 2,
+    "19": 4,
+    "12": 8,
+    "13": 1,
+    "14": 2,
+    "15": 1,
+    "21": 1,
+    "6": 1,
+    "7": 3,
+    "11": 5,
+    "1": 8
   },
   "message_types": {
-    "0": 9
+    "0": 44,
+    "19": 9
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1284889732039311432",
+      "content": "校貓我好想你~~的禮包碼~~",
+      "author": "_buqi",
+      "reactions": 9,
+      "channel": "後天中秋節 該來點禮包碼了吧"
+    },
+    {
+      "id": "1284908851065262163",
+      "content": "在點擊喚醒體詳情的時候\n由於詳情跟靈知深化的按鈕都在同個位置\n很容易一個卡頓連續點擊兩三次\n啪一下等級上限道具就沒了\n也沒個額外的確定按鈕\n\n另外深潛兌換的三隻",
+      "author": "hananichiya",
+      "reactions": 6,
+      "channel": "靈知深化很容易誤觸"
+    },
+    {
+      "id": "1284831961646633031",
+      "content": "沒+4就變成大部分隊伍都不需要他",
+      "author": "whimsical_starfish_19845",
+      "reactions": 3,
+      "channel": "配队问题"
+    }
+  ]
 }

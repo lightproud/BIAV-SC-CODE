@@ -1,27 +1,44 @@
 {
   "date": "2025-02-14",
-  "messages": 12,
-  "unique_authors": 5,
-  "reactions_total": 32,
-  "attachments": 2,
+  "messages": 96,
+  "unique_authors": 23,
+  "reactions_total": 62,
+  "attachments": 10,
   "channel_activity": {
+    "謹告各位守密人關於深潛36000條約": 18,
+    "能还我抽了+4朵的几百抽吗": 38,
+    "本来是来反馈拉蒙娜r命轮不生效的bug的": 10,
+    "I can't get into the game": 9,
+    "送的R命輪": 6,
+    "你是...首領嗎...？": 3,
     "近半個月收集的PVP隊伍統整與簡介": 1,
     "听说，今天拉蒙娜送我花花欸！（速写练习）": 4,
     "拿下索瓦爾格商用權了慶祝一下XD": 6,
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "6": 1,
-    "9": 5,
+    "3": 8,
+    "4": 13,
+    "7": 4,
+    "9": 7,
+    "23": 6,
+    "0": 2,
+    "2": 5,
+    "6": 14,
+    "10": 5,
+    "13": 9,
+    "14": 6,
+    "15": 4,
+    "12": 6,
+    "5": 2,
+    "8": 1,
+    "11": 2,
     "1": 1,
-    "2": 1,
-    "13": 3,
     "17": 1
   },
   "message_types": {
-    "0": 8,
-    "4": 1,
-    "19": 2
+    "19": 23,
+    "0": 61
   },
   "top_reacted_messages": [
     {
@@ -39,11 +56,116 @@
       "channel": ""
     },
     {
+      "id": "1339892211600330773",
+      "content": "海超36000報到",
+      "author": "pray_unbeliever",
+      "reactions": 8,
+      "channel": "謹告各位守密人關於深潛36000條約"
+    },
+    {
       "id": "1339846109345874000",
       "content": "https://forum.gamer.com.tw/C.php?bsn=78829&snA=701&tnum=1",
       "author": "ekko9950",
       "reactions": 5,
       "channel": "近半個月收集的PVP隊伍統整與簡介"
+    },
+    {
+      "id": "1340105808511504555",
+      "content": "而且打太低會很容易被不知道條約的路人直接擠下去",
+      "author": "_cwz_",
+      "reactions": 4,
+      "channel": "謹告各位守密人關於深潛36000條約"
+    },
+    {
+      "id": "1339790241929887816",
+      "content": "互不互动无所谓了 得听进去建议啊",
+      "author": "two_of_us",
+      "reactions": 3,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339803187523092573",
+      "content": "起床战争加油",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "謹告各位守密人關於深潛36000條約"
+    },
+    {
+      "id": "1339802971331891220",
+      "content": "现在不是蒸蒸（火气）日上了吗<:Coffee:1240919421791375380>",
+      "author": "cs001092",
+      "reactions": 2,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339852532603949067",
+      "content": "可能不同人判定標準不同吧🫠",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339802519781638260",
+      "content": "没影响 我满血过关<:wish:1236951537788649492>",
+      "author": "galagalaguo",
+      "reactions": 1,
+      "channel": "謹告各位守密人關於深潛36000條約"
+    },
+    {
+      "id": "1339802572642320435",
+      "content": "推广到深潜新手也不见了应该也是好事一件<:Coffee:1240919421791375380>",
+      "author": "cs001092",
+      "reactions": 1,
+      "channel": "謹告各位守密人關於深潛36000條約"
+    },
+    {
+      "id": "1339814013378232351",
+      "content": "玩的至純超維，熔朵c",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "謹告各位守密人關於深潛36000條約"
+    },
+    {
+      "id": "1339960558325338124",
+      "content": "喔 油污的10張卡 想起來了",
+      "author": "elkmilu",
+      "reactions": 1,
+      "channel": "能还我抽了+4朵的几百抽吗"
+    },
+    {
+      "id": "1339908239424487434",
+      "content": "# 玩忘卻這輩子有了",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "本来是来反馈拉蒙娜r命轮不生效的bug的"
+    },
+    {
+      "id": "1339930410762637384",
+      "content": "看到这，这就去刷同调",
+      "author": "yoroha_null",
+      "reactions": 1,
+      "channel": "本来是来反馈拉蒙娜r命轮不生效的bug的"
+    },
+    {
+      "id": "1339785411685257337",
+      "content": "Got it, we'll send this to staff and have a thorough check!<:heart:1239910691218",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "I can't get into the game"
+    },
+    {
+      "id": "1339816626870292512",
+      "content": "對耶 灰底的\n但照銀鑰排它又比R命輪高\n<:sigh:1236949926357766218>",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "送的R命輪"
+    },
+    {
+      "id": "1339805246314250240",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 1,
+      "channel": "你是...首領嗎...？"
     },
     {
       "id": "1339890121721249872",

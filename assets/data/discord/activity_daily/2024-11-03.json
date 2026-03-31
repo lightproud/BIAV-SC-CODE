@@ -1,10 +1,18 @@
 {
   "date": "2024-11-03",
-  "messages": 66,
+  "messages": 87,
   "unique_authors": 10,
-  "reactions_total": 67,
-  "attachments": 12,
+  "reactions_total": 79,
+  "attachments": 13,
   "channel_activity": {
+    "每次死抵不是会回手极夜微光吗": 5,
+    "周年庆是否像半周年一样能刷印章": 2,
+    "沒什麼營養的問題之二": 2,
+    "求高清圖": 2,
+    "伤转盾吃2次强效算bug吗？": 6,
+    "suggestion regarding breeding frenzy event": 1,
+    "哈基米，罗杰斯什么时候出": 2,
+    "忠烈祠二代": 1,
     "死亡已經迫近，消亡已經開始": 5,
     "混沌唤醒体·塔薇": 1,
     "八維癮犯了，給你遊角色判型": 4,
@@ -15,21 +23,29 @@
     "自創喚醒體相關：牢于😭互動一下": 13
   },
   "hourly_activity": {
-    "16": 4,
-    "18": 2,
-    "6": 2,
+    "19": 1,
+    "20": 1,
+    "21": 4,
+    "23": 1,
+    "16": 5,
+    "18": 3,
+    "22": 2,
+    "3": 2,
+    "7": 4,
+    "9": 3,
+    "6": 5,
     "12": 25,
     "13": 8,
     "17": 2,
     "5": 2,
     "11": 16,
-    "7": 2,
     "8": 1,
     "10": 2
   },
   "message_types": {
-    "0": 49,
-    "19": 17
+    "0": 14,
+    "19": 6,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -61,6 +77,13 @@
       "channel": "珊"
     },
     {
+      "id": "1302564105323941888",
+      "content": "不确定，目前人手依然非常紧张。",
+      "author": "game.producer.light",
+      "reactions": 5,
+      "channel": "伤转盾吃2次强效算bug吗？"
+    },
+    {
       "id": "1302703312285466717",
       "content": "摸魚",
       "author": "kong760",
@@ -82,6 +105,20 @@
       "channel": "Boss設計：「偉大之狼」▼▼斯▼"
     },
     {
+      "id": "1302676660427948086",
+      "content": "- 除了討論後續運營的茶會之外，有沒有規劃做更多劇情層面的茶會？\n- 有沒有計畫做其他語言的交流會？\n- 1.7版有機會看到癲狂難度主線嗎？困難遺忘之理已經可以",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "沒什麼營養的問題之二"
+    },
+    {
+      "id": "1302469985410482216",
+      "content": "Thank you for your feedback, and I apologize for your discomfort. We will consid",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "suggestion regarding breeding frenzy event"
+    },
+    {
       "id": "1302665169008332800",
       "content": "下週四或五更，期中週較忙見諒，然後學長的part想塞一點東西",
       "author": "kong760",
@@ -101,6 +138,27 @@
       "author": "flim_of_life_burst",
       "reactions": 2,
       "channel": "自創喚醒體相關：您的仙女座之唇，将是我们幽会的契机。"
+    },
+    {
+      "id": "1302722642973032519",
+      "content": "死抵好多次也不给极夜微光了，输出卡都被溶蚀了还打个集贸",
+      "author": "ioshift_24740",
+      "reactions": 1,
+      "channel": "每次死抵不是会回手极夜微光吗"
+    },
+    {
+      "id": "1302757259599941725",
+      "content": "有这个活动一系列的高清图",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "求高清圖"
+    },
+    {
+      "id": "1302563538967068683",
+      "content": "算BUG",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "伤转盾吃2次强效算bug吗？"
     },
     {
       "id": "1302677007603073116",
@@ -129,41 +187,6 @@
       "author": "flim_of_life_burst",
       "reactions": 1,
       "channel": "Boss設計：「偉大之狼」▼▼斯▼"
-    },
-    {
-      "id": "1302613001949548556",
-      "content": "你怎么知道28天后的决战boos不是这个属性",
-      "author": "qiamo0664",
-      "reactions": 1,
-      "channel": "Boss設計：「偉大之狼」▼▼斯▼"
-    },
-    {
-      "id": "1302614140988293150",
-      "content": "快點把時間倒回去，不要發出來😭",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "Boss設計：「偉大之狼」▼▼斯▼"
-    },
-    {
-      "id": "1302529000526057493",
-      "content": "啊啊啊好的其實我只是約稿的！索瓦爾格的sr命輪大概這個月會出來，講的就是他們兩個的故事！",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "自創喚醒體相關：牢于😭互動一下"
-    },
-    {
-      "id": "1302552914627395616",
-      "content": "期待！",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "自創喚醒體相關：牢于😭互動一下"
-    },
-    {
-      "id": "1302598171834449927",
-      "content": "是这样的<:flop:1236937860922343466>",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "自創喚醒體相關：牢于😭互動一下"
     }
   ]
 }

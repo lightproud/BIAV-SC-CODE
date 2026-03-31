@@ -1,23 +1,63 @@
 {
   "date": "2025-03-13",
-  "messages": 6,
-  "unique_authors": 5,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 55,
+  "unique_authors": 12,
+  "reactions_total": 3,
+  "attachments": 7,
   "channel_activity": {
+    "✅「Answered」PC steam version help": 3,
+    "✅「Answered」Million loving gaze description": 2,
+    "相位对弈中故意拖延时间的有什么办法么": 24,
+    "✅「Answered」Murphy Wheel Skey bug ?": 13,
+    "💭「處理中」星辰篇銀鑰微光選擇第四樂章後會直接視作已使用卡判定抽兩張": 4,
+    "✅「Answered」Hameln exalt text error": 2,
+    "關於星辰篇劇情走格子探索地圖要素": 1,
     "主线章节通讯彩蛋合集": 1,
     "存档 顺便参加一下活动": 4,
     "墨菲豬，羊喵和拉蒙拿豬": 1
   },
   "hourly_activity": {
-    "4": 1,
-    "6": 2,
+    "2": 8,
+    "3": 8,
+    "15": 6,
+    "0": 4,
+    "7": 1,
+    "9": 6,
+    "13": 3,
+    "16": 3,
+    "4": 6,
+    "5": 2,
+    "6": 6,
     "8": 1,
-    "12": 1,
-    "16": 1
+    "12": 1
   },
   "message_types": {
-    "0": 6
+    "0": 23,
+    "4": 4,
+    "19": 21,
+    "46": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1349763771232550932",
+      "content": "The text is overlapping",
+      "author": "lol120_1",
+      "reactions": 1,
+      "channel": "✅「Answered」Million loving gaze description"
+    },
+    {
+      "id": "1349731969738608720",
+      "content": "其實我真的挺想問問官方人員的 \n\npray的那封句句血淚的勸諫書被你們給禁言了\n\n而這個叫啥大王的小屁孩 天天發一堆無腦抱怨的廢文洗版 你們卻跟沒看到一樣  \n",
+      "author": "lazuritefox",
+      "reactions": 1,
+      "channel": "相位对弈中故意拖延时间的有什么办法么"
+    },
+    {
+      "id": "1349562770798149713",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "關於星辰篇劇情走格子探索地圖要素"
+    }
+  ]
 }

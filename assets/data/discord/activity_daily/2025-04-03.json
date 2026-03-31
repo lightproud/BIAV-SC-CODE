@@ -1,10 +1,20 @@
 {
   "date": "2025-04-03",
-  "messages": 13,
-  "unique_authors": 5,
-  "reactions_total": 426,
-  "attachments": 3,
+  "messages": 47,
+  "unique_authors": 12,
+  "reactions_total": 430,
+  "attachments": 6,
   "channel_activity": {
+    "💭「Processing」Error 7028001": 4,
+    "关于三种代币兑换灵核碎片的问题": 3,
+    "克莱门汀的唤醒体手册呢": 2,
+    "克萊門汀的出現，開始有對種族特攻": 2,
+    "校猫出来说话": 2,
+    "新版本確定要改這麼多嗎": 1,
+    "我不知道有什麼用但我決定幫Pray立一個碑": 1,
+    "💭「處理中」狀態BUG": 11,
+    "✅「Answered」Game is stuck on the \"Checking for resource updates\" screen.": 6,
+    "✅「已回答」結算頁面資訊": 2,
     "至2.1版本全角色暱稱綽號一覽": 6,
     "「   」的故事（上）": 1,
     "嘗試做了網頁:33": 3,
@@ -13,15 +23,22 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "8": 4,
-    "10": 6,
+    "7": 4,
+    "8": 13,
+    "13": 4,
+    "14": 2,
+    "3": 2,
+    "9": 8,
+    "12": 1,
+    "10": 10,
     "11": 1,
     "5": 1,
     "2": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 1
+    "0": 22,
+    "4": 4,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -58,6 +75,27 @@
       "author": "ena04564",
       "reactions": 3,
       "channel": "嘗試做了網頁:33"
+    },
+    {
+      "id": "1357248838330749068",
+      "content": "下方圖標出現紫色向下箭頭 旁邊描述多出一個保留狀態\n請問是正常的嗎\n編輯：融災2-3",
+      "author": "elkmilu",
+      "reactions": 2,
+      "channel": "💭「處理中」狀態BUG"
+    },
+    {
+      "id": "1357256242585931786",
+      "content": "Error cood 7028001\n\nWhat's wrong?\nHow do I fix it?",
+      "author": "patwigim",
+      "reactions": 1,
+      "channel": "💭「Processing」Error 7028001"
+    },
+    {
+      "id": "1357303828101464165",
+      "content": "謝謝戈雅",
+      "author": "elkmilu",
+      "reactions": 1,
+      "channel": "💭「處理中」狀態BUG"
     }
   ]
 }

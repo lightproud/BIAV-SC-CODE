@@ -1,16 +1,25 @@
 {
   "date": "2025-08-03",
-  "messages": 17,
-  "unique_authors": 4,
-  "reactions_total": 50,
-  "attachments": 3,
+  "messages": 23,
+  "unique_authors": 5,
+  "reactions_total": 57,
+  "attachments": 4,
   "channel_activity": {
+    "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
+    "✅「Answered」Ban by mistake refund": 1,
+    "✅「已回答」调查数据有误": 3,
+    "✅「Answered」Resetting Helot but ended up resetting Nautilla": 1,
     "约的稿 拿来参加一下同人大赛": 5,
     "杜勒赛因x你 18+": 10,
     "（蔚蓝档案x忘却前夜同人）Sensei瞬息弥萨格（第二幕 已完结）": 1,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "22": 1,
+    "16": 1,
+    "2": 2,
+    "3": 1,
+    "15": 1,
     "12": 4,
     "13": 6,
     "10": 5,
@@ -18,8 +27,8 @@
     "18": 1
   },
   "message_types": {
-    "0": 15,
-    "4": 1
+    "0": 4,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -35,6 +44,34 @@
       "author": "navirecorbeau",
       "reactions": 22,
       "channel": ""
+    },
+    {
+      "id": "1401606277049745558",
+      "content": "Hi! Hello! I was banned from Morimens and I think I know why: I stupidly request",
+      "author": "xraven90",
+      "reactions": 3,
+      "channel": "✅「Answered」Ban by mistake refund"
+    },
+    {
+      "id": "1401695895350808788",
+      "content": "我们计划在未来的大版本中处理。可能不会很快，但会追溯。 @everyone",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "✅「已回答」什么时候才能提升限定角色的溢出补偿？"
+    },
+    {
+      "id": "1401404345102373008",
+      "content": "https://discord.com/channels/1131791637933199470/1400569715276910724",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "✅「已回答」调查数据有误"
+    },
+    {
+      "id": "1401583413156380863",
+      "content": "Oh no. That's fine. At least you checked the record. Thanks admin! Appreciate yo",
+      "author": "bert3",
+      "reactions": 1,
+      "channel": "✅「Answered」Resetting Helot but ended up resetting Nautilla"
     }
   ]
 }

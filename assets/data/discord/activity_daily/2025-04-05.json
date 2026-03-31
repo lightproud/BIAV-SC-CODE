@@ -1,10 +1,15 @@
 {
   "date": "2025-04-05",
-  "messages": 17,
+  "messages": 27,
   "unique_authors": 12,
-  "reactions_total": 89,
-  "attachments": 12,
+  "reactions_total": 96,
+  "attachments": 15,
   "channel_activity": {
+    "2nd artwork for characters": 1,
+    "✅「Answered」Incorrect Assignment Rewards": 4,
+    "✅「已回答」网易云音乐第五章OST": 1,
+    "退游倒计时": 1,
+    "預料之外的背刺": 3,
     "新版本御四家0成本开荒教学": 2,
     "魚": 1,
     "拉蒙娜 鋼筆畫": 1,
@@ -16,19 +21,21 @@
     "【Morimens】弥萨格的サカバンバスピス": 1
   },
   "hourly_activity": {
+    "9": 2,
+    "5": 6,
+    "6": 5,
+    "19": 1,
+    "14": 2,
+    "0": 2,
     "3": 2,
     "18": 1,
-    "14": 1,
     "15": 2,
-    "0": 1,
-    "5": 4,
     "10": 3,
-    "11": 1,
-    "6": 2
+    "11": 1
   },
   "message_types": {
-    "0": 14,
-    "19": 3
+    "0": 6,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -60,6 +67,13 @@
       "channel": "血肉+深海diy唤醒体设定"
     },
     {
+      "id": "1358080744697626695",
+      "content": "別人退遊我會感嘆一下，但這個退遊我只能說你真6",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "退游倒计时"
+    },
+    {
       "id": "1357881722083082280",
       "content": "```背脊的盾鱗如華貴的披風，手中的三叉戟宛若權杖，他自凡庸的淤泥中脫穎而出，拋下低賤的基因、受辱的童年，還有曾經帶他逃跑的那隻手的主人。\n人說王者皆有佳偶，但",
       "author": "ernest_heart",
@@ -79,6 +93,13 @@
       "author": "y_win7",
       "reactions": 4,
       "channel": "超维新唤醒体DIY创作"
+    },
+    {
+      "id": "1357970594078916718",
+      "content": "BUG回報 - > 遊戲建議\n240 Max - > ∞",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "✅「Answered」Incorrect Assignment Rewards"
     }
   ]
 }

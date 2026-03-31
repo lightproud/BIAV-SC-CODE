@@ -1,10 +1,17 @@
 {
   "date": "2025-03-11",
-  "messages": 34,
+  "messages": 63,
   "unique_authors": 17,
-  "reactions_total": 39,
-  "attachments": 13,
+  "reactions_total": 48,
+  "attachments": 15,
   "channel_activity": {
+    "✅「已回答」珊珊瑚螺旋 相位bug": 1,
+    "相位对弈中故意拖延时间的有什么办法么": 9,
+    "✅「已回答」試訓模式 命輪裝不了": 11,
+    "✅「已回答」繁衍狂熱": 1,
+    "💭「Processing」Black Screen": 3,
+    "✅「已回答」棱彩透镜毒量上限依然根据当回合生命值实时结算": 1,
+    "💭「Processing」Script Error": 3,
     "神國圖魯教 星辰篇": 1,
     "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略": 17,
     "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
@@ -17,23 +24,27 @@
     "做了忘却前夜产品连线表格老师们请用！": 3
   },
   "hourly_activity": {
+    "3": 4,
+    "9": 4,
+    "11": 3,
+    "13": 4,
+    "14": 12,
+    "15": 2,
+    "5": 4,
+    "6": 5,
+    "10": 7,
+    "2": 2,
     "0": 2,
     "8": 4,
-    "9": 2,
-    "10": 6,
     "12": 4,
-    "13": 2,
-    "14": 4,
-    "6": 2,
-    "2": 1,
     "17": 1,
     "1": 4,
-    "7": 1,
-    "11": 1
+    "7": 1
   },
   "message_types": {
-    "0": 31,
-    "19": 3
+    "0": 23,
+    "19": 4,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -58,6 +69,20 @@
       "channel": "PVP刷牌队攻略"
     },
     {
+      "id": "1348952255877091378",
+      "content": "能不能到第二次再不点结束，拖到倒计时为0直接判输？【忘却前夜相位对弈墨迹玩家雪莲炖栗子-哔哩哔哩】 https://b23.tv/QkdyakI",
+      "author": "luhongran",
+      "reactions": 3,
+      "channel": "相位对弈中故意拖延时间的有什么办法么"
+    },
+    {
+      "id": "1348888399444049920",
+      "content": "如題\n槍響換命輪的也不行",
+      "author": "_buqi",
+      "reactions": 3,
+      "channel": "✅「已回答」試訓模式 命輪裝不了"
+    },
+    {
       "id": "1348947569237299254",
       "content": "~~去恰饭，晚上再施工~~",
       "author": "flarinsidia",
@@ -70,6 +95,27 @@
       "author": "sadisticgirl.",
       "reactions": 3,
       "channel": "扔一点最近的"
+    },
+    {
+      "id": "1348957365340340234",
+      "content": "雖然我已經很久沒打相位了\n但我之前玩的時候也是常常會拖到倒計時結束的那種人\n不是想拖而是單純腦袋轉的比較慢\n我認為這並沒有錯<:shy:123991133833",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": "相位对弈中故意拖延时间的有什么办法么"
+    },
+    {
+      "id": "1348900306070536212",
+      "content": "收到反饋🌹 ，已踢踢校工~",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」試訓模式 命輪裝不了"
+    },
+    {
+      "id": "1348854477251280976",
+      "content": "Hello, we have received your question and are already checking and adjusting it~",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Script Error"
     },
     {
       "id": "1348961934057410571",

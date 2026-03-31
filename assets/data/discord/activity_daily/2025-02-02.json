@@ -1,25 +1,35 @@
 {
   "date": "2025-02-02",
-  "messages": 6,
-  "unique_authors": 5,
-  "reactions_total": 31,
-  "attachments": 1,
+  "messages": 28,
+  "unique_authors": 10,
+  "reactions_total": 42,
+  "attachments": 3,
   "channel_activity": {
+    "English Page pls !!": 9,
+    "大过年过来吐槽": 5,
+    "大佬们有什么能过8-9的低配阵容吗": 1,
+    "主線H5-10海德拉攻擊動畫卡死": 6,
+    "請問有人困難第九章滿成就的嗎？": 1,
     "【PVE攻略】艾继丝石化使用指南、技巧大全": 1,
     "新春-Aigis [為喚醒體換新裝]": 4,
     "【梗图】堆点我P过的梗图": 1
   },
   "hourly_activity": {
+    "2": 4,
+    "8": 4,
+    "9": 3,
+    "3": 3,
+    "5": 1,
+    "7": 7,
+    "16": 1,
+    "11": 2,
+    "0": 1,
     "6": 1,
-    "9": 2,
-    "10": 1,
-    "11": 1,
-    "3": 1
+    "10": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 3,
-    "4": 1
+    "19": 4,
+    "0": 18
   },
   "top_reacted_messages": [
     {
@@ -28,6 +38,27 @@
       "author": "sijya",
       "reactions": 31,
       "channel": "新春-Aigis [為喚醒體換新裝]"
+    },
+    {
+      "id": "1335508148269879360",
+      "content": "~~盲目吃魚之蛇~~",
+      "author": "_cwz_",
+      "reactions": 6,
+      "channel": "主線H5-10海德拉攻擊動畫卡死"
+    },
+    {
+      "id": "1335507212340301856",
+      "content": "不影響通關與遊戲進行，純粹就是攻擊後動畫卡在我頭上\n\n~~雖然吃魚畫面蠻有趣但還是回報一下~~",
+      "author": "yukine7473",
+      "reactions": 4,
+      "channel": "主線H5-10海德拉攻擊動畫卡死"
+    },
+    {
+      "id": "1335489569172488277",
+      "content": "<:stoppage:1236938521365839872> <:stoppage:1236938521365839872> 那個…你鋼筆不要的話 可以給我練",
+      "author": "east_pudding",
+      "reactions": 1,
+      "channel": "大过年过来吐槽"
     }
   ]
 }

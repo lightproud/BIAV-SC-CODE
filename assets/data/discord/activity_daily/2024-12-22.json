@@ -1,23 +1,32 @@
 {
   "date": "2024-12-22",
-  "messages": 5,
-  "unique_authors": 4,
-  "reactions_total": 6,
-  "attachments": 2,
+  "messages": 19,
+  "unique_authors": 8,
+  "reactions_total": 9,
+  "attachments": 3,
   "channel_activity": {
+    "English Page pls !!": 3,
+    "图鲁怎么还没进池": 1,
+    "请问校猫light": 10,
     "彌薩格校貓 你到底想干嘛？": 1,
     "請大家吃生日蛋糕/Happy Birthday to Solvarg vol.3": 1,
     "玩重返未来魔怔了导致的": 2,
     "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1": 1
   },
   "hourly_activity": {
+    "5": 2,
+    "23": 1,
+    "0": 2,
+    "6": 2,
+    "7": 5,
+    "8": 3,
     "18": 1,
-    "0": 1,
     "3": 2,
     "4": 1
   },
   "message_types": {
-    "0": 1
+    "19": 4,
+    "0": 10
   },
   "top_reacted_messages": [
     {
@@ -26,6 +35,27 @@
       "author": "gzx616",
       "reactions": 4,
       "channel": "玩重返未来魔怔了导致的"
+    },
+    {
+      "id": "1320269064848801833",
+      "content": "I use the Singapore AppStore has well so I was able to download the game",
+      "author": "toastowo",
+      "reactions": 1,
+      "channel": "English Page pls !!"
+    },
+    {
+      "id": "1320279315614535690",
+      "content": "他爆了個資吧",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "请问校猫light"
+    },
+    {
+      "id": "1320311572442251274",
+      "content": "好像不吃腦就沒事",
+      "author": "ekko9950",
+      "reactions": 1,
+      "channel": "请问校猫light"
     },
     {
       "id": "1320189928763818026",

@@ -1,30 +1,62 @@
 {
   "date": "2025-08-05",
-  "messages": 25,
-  "unique_authors": 5,
-  "reactions_total": 19,
-  "attachments": 7,
+  "messages": 49,
+  "unique_authors": 11,
+  "reactions_total": 64,
+  "attachments": 23,
   "channel_activity": {
+    "关于幻梦深潜": 6,
+    "✅「Answered」Clarification on gacha odds for standard limited": 2,
+    "管理員又封錯人": 2,
+    "✅「已回答」宁妃在意想不到的地方更加赔钱了": 2,
+    "✅「已回答」主線7-14普通難度存在翻譯問題": 1,
+    "✅「已回答」發現了新的特殊代稱翻譯問題": 1,
+    "✅「已回答」通訊器-圖魯的特殊代稱存在翻譯問題": 2,
+    "✅「Answered」Not a bug, missed an important detail!": 5,
+    "您好，加强一下艾继丝三启，谢谢": 2,
+    "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
     "救救狗吧融災求助": 13,
     "针对新融灾375-425的角色榜单": 11,
     "朋友画了赛淋涅（杜勒的妹妹）": 1
   },
   "hourly_activity": {
+    "3": 3,
+    "4": 2,
+    "8": 1,
+    "13": 1,
+    "10": 3,
+    "15": 3,
+    "11": 3,
+    "16": 4,
+    "21": 1,
+    "22": 4,
+    "1": 2,
     "19": 5,
     "20": 7,
     "23": 1,
     "0": 1,
-    "1": 1,
-    "3": 1,
-    "16": 1,
     "17": 7,
     "6": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 4
+    "0": 22,
+    "4": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1402132769999425576",
+      "content": "幻梦深潜已经半年没更新了，既然实质上已经放弃这个模式去做新内容，应该稍微减负了吧？你们应该也希望玩家把更多的时间花在体验你们集中精力产出的新内容上<:Emoji",
+      "author": "zhaoxing233",
+      "reactions": 21,
+      "channel": "关于幻梦深潜"
+    },
+    {
+      "id": "1402246276870832229",
+      "content": "居然还是五连抽，居然不出金",
+      "author": "akalanden",
+      "reactions": 11,
+      "channel": "✅「已回答」宁妃在意想不到的地方更加赔钱了"
+    },
     {
       "id": "1402088669350858927",
       "content": "这个榜单更多参考的角色单体的强度，不代表在各个队伍里面的绝对强度。\n比方说融朵，达夫戴尔，诺蒂拉三个一起肯定算当前最强的队伍之一。",
@@ -40,6 +72,20 @@
       "channel": "朋友画了赛淋涅（杜勒的妹妹）"
     },
     {
+      "id": "1402233530469187614",
+      "content": "加一句“并使本回合临时手牌上限加1”即可\n我代表我被小小愿望卡没的100个链球发出此帖",
+      "author": "muliupan",
+      "reactions": 5,
+      "channel": "您好，加强一下艾继丝三启，谢谢"
+    },
+    {
+      "id": "1402400913406034051",
+      "content": "~~The wheel's description says it should be 2% Crit Rate per enemy killed, but a",
+      "author": "sophiechoice",
+      "reactions": 3,
+      "channel": "✅「Answered」Not a bug, missed an important detail!"
+    },
+    {
       "id": "1402376360462127166",
       "content": "把400的獎勵放到350也行",
       "author": "ahuahuahua",
@@ -52,6 +98,41 @@
       "author": "wild_pansy",
       "reactions": 2,
       "channel": "救救狗吧融災求助"
+    },
+    {
+      "id": "1402281483510743040",
+      "content": "现在还会有人因为排行榜吵起来。最根本的原因就在于这个排行榜机制。早点优化掉吧。",
+      "author": "xyakoto",
+      "reactions": 1,
+      "channel": "关于幻梦深潜"
+    },
+    {
+      "id": "1402312621058949354",
+      "content": "說真的這好像不是一天兩天，國際dc社區目前的中文區管理員不知道是因為現生還是什麼問題，每次社區產生爭端都不了解事件全貌就隨便禁言別人，常常導致根本不是當事人只是",
+      "author": "kong760",
+      "reactions": 1,
+      "channel": "管理員又封錯人"
+    },
+    {
+      "id": "1402324802160689243",
+      "content": "截圖已指出具體問題出現的位置。",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "✅「已回答」發現了新的特殊代稱翻譯問題"
+    },
+    {
+      "id": "1402321474777514107",
+      "content": "截圖已突出具體翻譯出問題的地方，感覺圖魯的代稱是翻譯問題的重災區……",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "✅「已回答」通訊器-圖魯的特殊代稱存在翻譯問題"
+    },
+    {
+      "id": "1402099480093790300",
+      "content": "有回应就行，不然连个盼头都没有，每次溢出都是对心态的一次重击。",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "✅「已回答」什么时候才能提升限定角色的溢出补偿？"
     },
     {
       "id": "1402383758296092742",

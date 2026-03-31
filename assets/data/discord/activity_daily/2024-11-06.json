@@ -1,10 +1,21 @@
 {
   "date": "2024-11-06",
-  "messages": 10,
-  "unique_authors": 4,
-  "reactions_total": 25,
-  "attachments": 3,
+  "messages": 40,
+  "unique_authors": 14,
+  "reactions_total": 30,
+  "attachments": 9,
   "channel_activity": {
+    "Game is currently unplayable in steam deck no matter what proton version": 9,
+    "來自德語區的反饋": 2,
+    "有玩家反應steam無法登入，是否有解?": 3,
+    "为什么神国幻影是症状卡": 4,
+    "你这字体大小能不能统一一下": 2,
+    "每次死抵不是会回手极夜微光吗": 1,
+    "Possible Bug for the final boss fight at chapter 8?": 4,
+    "周年庆是否像半周年一样能刷印章": 1,
+    "Text bug on wanda's wheel of life": 2,
+    "除了塔薇，還有要出新角嗎?": 1,
+    "女王的戒律": 1,
     "原創造物：通用、四界域與原創界域": 1,
     "《忘卻前夜》限定喚醒體「彌利亞姆」復刻宣導PV": 1,
     "打印机施工完成": 4,
@@ -12,15 +23,20 @@
     "做了一個共鳴，整點活幹？": 3
   },
   "hourly_activity": {
-    "15": 4,
-    "12": 1,
-    "7": 1,
+    "6": 4,
+    "12": 7,
+    "15": 13,
+    "0": 2,
+    "11": 2,
+    "7": 4,
+    "9": 2,
+    "5": 1,
+    "2": 1,
     "8": 4
   },
   "message_types": {
-    "0": 7,
-    "19": 1,
-    "4": 2
+    "0": 26,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -36,6 +52,41 @@
       "author": "menoctus",
       "reactions": 7,
       "channel": "《忘卻前夜》限定喚醒體「彌利亞姆」復刻宣導PV"
+    },
+    {
+      "id": "1303605099305635860",
+      "content": "Currently the game is unplayable on the steam deck no matter what proton version",
+      "author": "satachan",
+      "reactions": 1,
+      "channel": "Game is currently unplayable in steam deck no matter what proton version"
+    },
+    {
+      "id": "1303696715890823274",
+      "content": "<@139343733714845697>",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "Game is currently unplayable in steam deck no matter what proton version"
+    },
+    {
+      "id": "1303700090170507336",
+      "content": "● 修復了第八章激活共鳴「鑰冢儀式」後，觸發 3 次以上死亡抵抗無法再次獲得「極夜微光」的問題。",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "每次死抵不是会回手极夜微光吗"
+    },
+    {
+      "id": "1303658891476992012",
+      "content": "是的",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "周年庆是否像半周年一样能刷印章"
+    },
+    {
+      "id": "1303596653282066472",
+      "content": "你周年課多一點就有機會",
+      "author": "taoi002",
+      "reactions": 1,
+      "channel": "除了塔薇，還有要出新角嗎?"
     }
   ]
 }

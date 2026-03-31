@@ -1,17 +1,34 @@
 {
   "date": "2025-06-24",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 7,
-  "attachments": 1,
+  "messages": 17,
+  "unique_authors": 8,
+  "reactions_total": 11,
+  "attachments": 8,
   "channel_activity": {
+    "💭「Processing」UI bug (0/1 Hidden silver not appearing on some stages)": 9,
+    "✅「Answered」LANGUAGE BUG.": 2,
+    "✅「Answered」Steam English Language Bug": 1,
+    "💭「Processing」Card remain on screen and can not be interact with after being played": 1,
+    "✅「Answered」Rule set missing text": 1,
+    "✅「Answered」Awaker cards not discarding": 2,
     "展示品？": 1
   },
   "hourly_activity": {
+    "13": 2,
+    "20": 3,
+    "21": 5,
+    "3": 1,
+    "23": 1,
+    "15": 1,
+    "22": 1,
+    "0": 1,
+    "10": 1,
     "5": 1
   },
   "message_types": {
-    "0": 1
+    "0": 9,
+    "19": 6,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -20,6 +37,27 @@
       "author": "ainei_00",
       "reactions": 7,
       "channel": "展示品？"
+    },
+    {
+      "id": "1387203316345344133",
+      "content": "The whole line with 70% is missing in English version.",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "✅「Answered」Rule set missing text"
+    },
+    {
+      "id": "1387217156948889650",
+      "content": "",
+      "author": "sahmerann",
+      "reactions": 1,
+      "channel": "✅「Answered」LANGUAGE BUG."
+    },
+    {
+      "id": "1387097360496332800",
+      "content": "I just encounter maybe a visual bug after playing karen 0 cost and rather than t",
+      "author": "melwyn7591",
+      "reactions": 1,
+      "channel": "💭「Processing」Card remain on screen and can not be interact with after being played"
     }
   ]
 }

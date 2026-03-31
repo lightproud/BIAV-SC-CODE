@@ -1,10 +1,12 @@
 {
   "date": "2024-10-26",
-  "messages": 17,
+  "messages": 21,
   "unique_authors": 5,
   "reactions_total": 15,
   "attachments": 6,
   "channel_activity": {
+    "I have no sound in the steam version. any know how fix?": 2,
+    "菲茵特的天赋描述是什么意思": 2,
     "忘卻困難版大挑戰！": 7,
     "苦海……": 2,
     "在卿卿我我上創了個尤烏哈希": 3,
@@ -12,17 +14,19 @@
     "1181998821291606097": 2
   },
   "hourly_activity": {
+    "15": 3,
+    "10": 2,
+    "11": 1,
     "14": 7,
     "0": 1,
     "8": 2,
     "13": 2,
     "17": 1,
-    "10": 1,
-    "15": 1,
     "9": 2
   },
   "message_types": {
-    "0": 15
+    "19": 1,
+    "0": 3
   },
   "top_reacted_messages": [
     {

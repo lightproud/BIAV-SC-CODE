@@ -1,23 +1,56 @@
 {
   "date": "2025-07-28",
-  "messages": 10,
-  "unique_authors": 4,
-  "reactions_total": 57,
-  "attachments": 4,
+  "messages": 80,
+  "unique_authors": 15,
+  "reactions_total": 66,
+  "attachments": 21,
   "channel_activity": {
+    "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 2,
+    "✅「Answered」Fit remaining time in default view": 2,
+    "✅「已回答」Bug report": 3,
+    "💭「Processing」I can't start the game, it freezes": 4,
+    "✅「Answered」Traphase Sanga Endless Refinement Discard not getting buffed by amp": 2,
+    "✅「Answered」Wanda Soulforge Aptitude text error": 6,
+    "✅「Answered」Preview skin bugged": 3,
+    "✅「已回答」克珀珊特  觸腕易傷bug": 2,
+    "✅「已回答」活動造物錯誤": 2,
+    "✅「Answered」Wanda soulforge bug": 3,
+    "✅「Ответ дан」Баг при описании карты на русском языке.": 4,
+    "✅「已回答」希萊斯特的觸腕傷害出錯了": 4,
+    "✅「Ответ дан」Баг \"увеличение для просмотра карты\"": 5,
+    "✅「Answered」bug - stage 3-4 arc 2 text error": 3,
+    "✅「Answered」Freezing issue in story chapter": 2,
+    "✅「Answered」BUG report stuck at 7-12 normal.": 2,
+    "✅「Answered」Text line bug": 2,
+    "✅「Answered」Impossible to upgrade certain skills on the PC client!": 2,
+    "💭「Processing」Animations not Loading": 1,
+    "💭「处理中」自動分解命輪 不能解成就": 2,
+    "✅「已回答」文本框显示bug": 2,
+    "OVEREXALTING TULU": 12,
     "鼠耳摩斯和莱生🕵🏻‍♂️🐀嗯嗯": 3,
     "其实只是在想下一餐该吃什么": 2,
     "不允許深海界域到現在還沒有一張濕衣服圖": 4,
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "12": 4,
-    "6": 4,
-    "2": 2
+    "12": 7,
+    "14": 5,
+    "4": 2,
+    "10": 7,
+    "11": 3,
+    "19": 2,
+    "3": 21,
+    "1": 4,
+    "2": 10,
+    "7": 1,
+    "15": 1,
+    "6": 5,
+    "8": 12
   },
   "message_types": {
-    "0": 7,
-    "19": 2
+    "0": 41,
+    "4": 19,
+    "19": 10
   },
   "top_reacted_messages": [
     {
@@ -40,6 +73,62 @@
       "author": "dittoqwq",
       "reactions": 5,
       "channel": "其实只是在想下一餐该吃什么"
+    },
+    {
+      "id": "1399404733910880349",
+      "content": "",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 2,
+      "channel": "✅「已回答」希萊斯特的觸腕傷害出錯了"
+    },
+    {
+      "id": "1399338923682959380",
+      "content": "🙏 🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」Bug report"
+    },
+    {
+      "id": "1399345524439515206",
+      "content": "When you borrowed the new doresain skin it doesn't show in the team lineup",
+      "author": "melwyn7591",
+      "reactions": 1,
+      "channel": "✅「Answered」Preview skin bugged"
+    },
+    {
+      "id": "1399231960055939148",
+      "content": "🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Wanda soulforge bug"
+    },
+    {
+      "id": "1399340173468368948",
+      "content": "Спасибо за обратную связь, мы поищем причину❤️",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Ответ дан」Баг при описании карты на русском языке."
+    },
+    {
+      "id": "1399245030488674405",
+      "content": "После обновления все работает как нужно. Можно закрыть тему ❤️<:goodjob2:1356053",
+      "author": "closetom",
+      "reactions": 1,
+      "channel": "✅「Ответ дан」Баг \"увеличение для просмотра карты\""
+    },
+    {
+      "id": "1399276884696760420",
+      "content": "Thank you!",
+      "author": "fishhazardthewizard",
+      "reactions": 1,
+      "channel": "✅「Answered」bug - stage 3-4 arc 2 text error"
+    },
+    {
+      "id": "1399310715533398076",
+      "content": "yeah I didn't see that\nhabit took over reading\nsorry",
+      "author": "sexysneakystoat1625",
+      "reactions": 1,
+      "channel": "OVEREXALTING TULU"
     }
   ]
 }

@@ -1,35 +1,92 @@
 {
   "date": "2025-06-09",
-  "messages": 29,
-  "unique_authors": 4,
-  "reactions_total": 5,
-  "attachments": 1,
+  "messages": 69,
+  "unique_authors": 7,
+  "reactions_total": 16,
+  "attachments": 7,
   "channel_activity": {
+    "💭「Processing」Pc ver. Stuck on update resource screen and then error 35": 2,
+    "✅「已回答」魔女寬簷帽": 3,
+    "卡茜亞狂氣爆發永久降力Bug": 3,
+    "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\"": 2,
+    "✅「已回答」鸟人活动bug": 2,
+    "✅「Answered」Losing 1st posse": 2,
+    "✅「已回答」畸變+鎖鏈=2畸變?": 5,
+    "✅「Answered」Untranslated text for castor": 4,
+    "💭「Processing」Untranslated Castor skill in TH ver.": 2,
+    "💭「處理中」關於雙發鑰令": 2,
+    "✅「已回答」鑰令效果哪個才是正確的": 1,
+    "✅「Answered」Emote": 2,
+    "✅「Answered」Event rewards is missing bonus for Mathematics Textbook": 2,
+    "✅「已回答」弥萨格在逃女守头像": 2,
+    "超血空間黑羽Bug": 6,
     "利莫里亞沙丁魚罐頭": 7,
     "我要吃現pa 我現在就要吃現pa 👊": 20,
     "小水母生贺": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "2": 7,
+    "12": 1,
+    "16": 1,
+    "3": 15,
+    "5": 4,
+    "23": 3,
+    "6": 19,
+    "2": 11,
+    "9": 1,
+    "11": 6,
     "4": 5,
     "18": 1,
     "1": 1,
-    "5": 3,
-    "6": 11,
     "19": 1
   },
   "message_types": {
-    "19": 8,
-    "0": 20
+    "0": 23,
+    "4": 14,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1381773770460495992",
+      "content": "【【忘却前夜】歡迎來到不可思議國度!——满编60级0启全1技能无灵塑融灾禁区1-5-哔哩哔哩】 https://b23.tv/vtmyLJO\n\n如視頻卡茜亞造物",
+      "author": "Deleted User",
+      "reactions": 7,
+      "channel": "卡茜亞狂氣爆發永久降力Bug"
+    },
     {
       "id": "1381505841659645993",
       "content": "奧提斯\n奧提斯•奈傑爾•霍華德\nOutis 是奧德修斯用來欺騙獨眼巨人的假名\nNigel 有黑黝黝的意思\n霍華德致敬一下洛老",
       "author": "yolo_mode",
       "reactions": 2,
       "channel": "我要吃現pa 我現在就要吃現pa 👊"
+    },
+    {
+      "id": "1381608059301789787",
+      "content": "Tried to play game on PC but stuck on update resource screen, then get error 35.",
+      "author": "guffy10",
+      "reactions": 1,
+      "channel": "💭「Processing」Pc ver. Stuck on update resource screen and then error 35"
+    },
+    {
+      "id": "1381504063442780222",
+      "content": "",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "✅「已回答」魔女寬簷帽"
+    },
+    {
+      "id": "1381478551286448139",
+      "content": "🙏 🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Untranslated Castor skill in TH ver."
+    },
+    {
+      "id": "1381473701111009391",
+      "content": "問題已收到，感謝反饋🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「處理中」關於雙發鑰令"
     },
     {
       "id": "1381459651866005515",

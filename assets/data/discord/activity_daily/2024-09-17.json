@@ -1,10 +1,14 @@
 {
   "date": "2024-09-17",
-  "messages": 39,
+  "messages": 52,
   "unique_authors": 10,
-  "reactions_total": 52,
-  "attachments": 18,
+  "reactions_total": 58,
+  "attachments": 20,
   "channel_activity": {
+    "靈知深化很容易誤觸": 5,
+    "活動關卡刻印效果不會顯示": 5,
+    "哈姆林把我的指令牌吐出來": 2,
+    "密契": 1,
     "Posse List": 8,
     "超维哈姆林主c思路": 8,
     "第8章「終末交響曲」關卡地圖總覽": 1,
@@ -14,6 +18,12 @@
     "（已封存）【蚰蜒的vrm影像馆】": 4
   },
   "hourly_activity": {
+    "6": 2,
+    "8": 2,
+    "15": 4,
+    "16": 2,
+    "14": 2,
+    "1": 1,
     "13": 8,
     "2": 8,
     "12": 2,
@@ -23,8 +33,8 @@
     "19": 1
   },
   "message_types": {
-    "0": 36,
-    "19": 3
+    "0": 12,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -40,6 +50,13 @@
       "author": "maximus__111",
       "reactions": 20,
       "channel": "Posse List"
+    },
+    {
+      "id": "1285620699792277656",
+      "content": "这个简单,不拿灵核不就没有灵核被浪费了🤓☝️",
+      "author": "yang_42",
+      "reactions": 5,
+      "channel": "靈知深化很容易誤觸"
     },
     {
       "id": "1285648303639498862",
@@ -61,6 +78,13 @@
       "author": "nancyjofla",
       "reactions": 2,
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1285622400968429579",
+      "content": "雖然只剩五天了還是回報一下\n挑卡上刻印階段都不會顯示效果，其他常見的還認得但這個我不認識🥲",
+      "author": "menta_y_menta",
+      "reactions": 1,
+      "channel": "活動關卡刻印效果不會顯示"
     },
     {
       "id": "1285593340586360926",

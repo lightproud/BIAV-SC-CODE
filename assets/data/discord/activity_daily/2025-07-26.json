@@ -1,26 +1,35 @@
 {
   "date": "2025-07-26",
-  "messages": 31,
-  "unique_authors": 4,
-  "reactions_total": 8,
-  "attachments": 4,
+  "messages": 47,
+  "unique_authors": 10,
+  "reactions_total": 17,
+  "attachments": 8,
   "channel_activity": {
+    "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 2,
+    "3 Reruns": 2,
+    "✅「Answered」bug - stage 3-4 arc 2 text error": 1,
+    "✅「Answered」Text line bug": 2,
+    "✅「Answered」Impossible to upgrade certain skills on the PC client!": 7,
+    "💭「处理中」自動分解命輪 不能解成就": 1,
+    "Doresain \"skin\".": 1,
     "Slay the Spire Morimens Mod Text Provided Post": 24,
     "仿一点官方q版（失败版": 7
   },
   "hourly_activity": {
-    "4": 1,
-    "7": 4,
+    "10": 5,
+    "7": 6,
+    "4": 4,
+    "19": 4,
+    "23": 5,
+    "15": 1,
+    "1": 1,
     "8": 7,
     "9": 5,
     "13": 6,
-    "23": 2,
-    "5": 3,
-    "10": 3
+    "5": 3
   },
   "message_types": {
-    "19": 7,
-    "0": 24
+    "0": 16
   },
   "top_reacted_messages": [
     {
@@ -29,6 +38,27 @@
       "author": "dittoqwq",
       "reactions": 7,
       "channel": "仿一点官方q版（失败版"
+    },
+    {
+      "id": "1398474192982380554",
+      "content": "I'm a massive Doresain fan, but I feel like for the first awaker with a paid ski",
+      "author": "phantasidreamin",
+      "reactions": 5,
+      "channel": "Doresain \"skin\"."
+    },
+    {
+      "id": "1398689995468046427",
+      "content": "系統中勾選自動分解，不算入成就中，這已經是bug了吧?",
+      "author": "insomnia07763",
+      "reactions": 3,
+      "channel": "💭「处理中」自動分解命輪 不能解成就"
+    },
+    {
+      "id": "1398561815025156227",
+      "content": "Plus, do we just lose the SR wheels from the other 2 characters events? \nHow wil",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "3 Reruns"
     },
     {
       "id": "1398560994820751410",

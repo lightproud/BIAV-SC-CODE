@@ -1,16 +1,22 @@
 {
   "date": "2025-07-04",
-  "messages": 29,
+  "messages": 35,
   "unique_authors": 9,
-  "reactions_total": 78,
-  "attachments": 3,
+  "reactions_total": 83,
+  "attachments": 5,
   "channel_activity": {
+    "✅「Answered」I just started, How do I fix this": 2,
+    "💭「Processing」Dont know if this is a bug but here it is": 3,
+    "Image of wheels in Archive": 1,
     "命轮二创画像：《人》": 2,
     "《雙人舞》": 11,
     "1181998821291606097": 1,
     "1390375103707218041": 15
   },
   "hourly_activity": {
+    "20": 3,
+    "21": 1,
+    "23": 2,
     "14": 3,
     "13": 9,
     "15": 3,
@@ -20,8 +26,7 @@
     "11": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 2
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -67,11 +72,25 @@
       "channel": ""
     },
     {
+      "id": "1390795442781950003",
+      "content": "Can we please have text-free full images of the wheels in-game or at least relea",
+      "author": "theborkerr",
+      "reactions": 4,
+      "channel": "Image of wheels in Archive"
+    },
+    {
       "id": "1390685051179761726",
       "content": "—————\n\n放個已經很久了的惡役雙人組（沒有要完稿的意思（草",
       "author": "yolo_mode",
       "reactions": 3,
       "channel": "《雙人舞》"
+    },
+    {
+      "id": "1390840059984482304",
+      "content": "<:takenotes:1357186646294138890> <:takenotes:1357186646294138890>",
+      "author": "venustoglasskin",
+      "reactions": 1,
+      "channel": "💭「Processing」Dont know if this is a bug but here it is"
     },
     {
       "id": "1390510222434635817",

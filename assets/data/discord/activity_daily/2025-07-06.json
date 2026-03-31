@@ -1,22 +1,75 @@
 {
   "date": "2025-07-06",
-  "messages": 5,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 23,
+  "unique_authors": 9,
+  "reactions_total": 14,
+  "attachments": 11,
   "channel_activity": {
+    "✅「Answered」Hameln's rouse and searches that set cost to 0": 3,
+    "✅「Answered」Relic missing description texts": 1,
+    "💭「Processing」2-7, Bugged Dialogue": 1,
+    "✅「Answered」Agrippa's Skin Resolution": 2,
+    "Why not release Doresain then add the VA later?": 9,
+    "你遊特有的公告與實際不同": 1,
+    "BP timer reduction and clear tasks": 1,
     "给莱克宝宝的生贺🥺🥺💕": 1,
     "《雙人舞》": 1,
     "1390375103707218041": 3
   },
   "hourly_activity": {
+    "10": 1,
+    "14": 2,
+    "22": 1,
+    "16": 3,
+    "9": 1,
+    "13": 1,
+    "17": 5,
+    "21": 3,
+    "5": 1,
     "11": 1,
     "4": 1,
     "8": 2,
     "12": 1
   },
   "message_types": {
+    "0": 16,
     "19": 2
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1391529683312443545",
+      "content": "I'm with the dev with this one, sell complete products only. \nHaving a standard ",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "Why not release Doresain then add the VA later?"
+    },
+    {
+      "id": "1391346290381820014",
+      "content": "Agrippa's skin resolution kinda buggy",
+      "author": "sexysneakystoat1625",
+      "reactions": 2,
+      "channel": "✅「Answered」Agrippa's Skin Resolution"
+    },
+    {
+      "id": "1391463199387291729",
+      "content": "Question is in the title...I understand that there is a lot of moving parts to m",
+      "author": "phantasidreamin",
+      "reactions": 2,
+      "channel": "Why not release Doresain then add the VA later?"
+    },
+    {
+      "id": "1391287689025818745",
+      "content": "Hello, i was wondering if it is possible to reduce some of the missions requirem",
+      "author": "moyashi0672",
+      "reactions": 2,
+      "channel": "BP timer reduction and clear tasks"
+    },
+    {
+      "id": "1391528787803639859",
+      "content": "Then doresain will come out with no video trailer, no asmr, no nothing. Just a s",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "Why not release Doresain then add the VA later?"
+    }
+  ]
 }

@@ -1,20 +1,61 @@
 {
   "date": "2025-05-01",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 50,
+  "unique_authors": 10,
+  "reactions_total": 5,
+  "attachments": 10,
   "channel_activity": {
+    "✅「已回答」蟲族羊媽狂氣減費bug": 2,
+    "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 32,
+    "✅「已回答」第四樂章使用四次後無法生效": 7,
+    "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event": 7,
     "一點點鯊守私設文...吧? （清水.jpg）": 1,
     "OOC鯊守(?) 不是幼兒園的車，小心謹慎注意上車": 1
   },
   "hourly_activity": {
-    "22": 1,
-    "12": 1
+    "18": 2,
+    "11": 2,
+    "12": 3,
+    "13": 25,
+    "14": 6,
+    "15": 7,
+    "9": 2,
+    "16": 1,
+    "17": 1,
+    "22": 1
   },
   "message_types": {
-    "4": 1,
-    "0": 1
+    "19": 7,
+    "0": 41
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1367469935894466621",
+      "content": "戈雅：\n\n**請轉告逆活一世協助人員**\n\n根據空間本人的說明\n置入空間的指令卡皆為原始臨時複製\n理論上來說置入超維空間的幻夢詩篇與原本的幻夢詩篇是不同個體\n所",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》"
+    },
+    {
+      "id": "1367564704381272095",
+      "content": "改了我可以不吃靈芝三星過H2-12",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "✅「已回答」蟲族羊媽狂氣減費bug"
+    },
+    {
+      "id": "1367527644496924672",
+      "content": "如圖，之前的效果是剛好第四次使用後就會觸發四個靈感的效果了，結果現在都用了五六次了還一直給我第四樂章二選一",
+      "author": "shaw_51",
+      "reactions": 1,
+      "channel": "✅「已回答」第四樂章使用四次後無法生效"
+    },
+    {
+      "id": "1367528572503457883",
+      "content": "這我可能沒注意到，不過我第四次也沒靈感耶🤔",
+      "author": "shaw_51",
+      "reactions": 1,
+      "channel": "✅「已回答」第四樂章使用四次後無法生效"
+    }
+  ]
 }

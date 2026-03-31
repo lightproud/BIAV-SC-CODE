@@ -1,10 +1,26 @@
 {
   "date": "2025-05-30",
-  "messages": 21,
-  "unique_authors": 4,
-  "reactions_total": 890,
-  "attachments": 8,
+  "messages": 70,
+  "unique_authors": 16,
+  "reactions_total": 908,
+  "attachments": 26,
   "channel_activity": {
+    "✅「Answered」In-game texts do not match the language selected in the settings.": 6,
+    "✅「已回答」周年命轮疑似与未送出的花冲突": 7,
+    "✅「Answered」Adventurer's pack text bug": 2,
+    "✅「Answered」Surging tides description": 1,
+    "✅「Answered」Erica Defence text bug + Clem strike": 2,
+    "💭「Processing」Can't access the game": 2,
+    "✅「Answered」Goliath Exalt Effect Selection Text Error": 1,
+    "✅「Answered」Solved - New code not working": 4,
+    "什么时候给伤痛调整效果": 3,
+    "💭「Processing」Cutscene Error": 1,
+    "✅「已回答」水母腺体余波狂气问题": 3,
+    "✅「Answered」Unable to start game - stuck on checking for updates screen": 3,
+    "✅「Answered」Annihilated Rebirth Wheel text wrong translate ?": 4,
+    "✅「已回答」命轮分解界面没有1.5周年命轮泯土": 2,
+    "💭「Processing」Aurita defense text bug": 1,
+    "數不清的▒▒▒▒是5張無形者請柬？？？？": 7,
     "✅「已回答」莉兹个人剧情结束后无通讯器幕间": 2,
     "弥萨格经济学课：分解无用命轮换等级碎片": 12,
     "🔸礼包码┊gift-codes": 2,
@@ -13,17 +29,27 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "17": 1,
-    "18": 1,
+    "8": 5,
+    "9": 17,
+    "10": 4,
+    "18": 4,
+    "19": 1,
+    "2": 1,
+    "4": 1,
+    "13": 3,
+    "14": 10,
+    "15": 4,
+    "17": 3,
+    "3": 4,
+    "6": 1,
+    "7": 2,
     "12": 6,
-    "13": 2,
-    "14": 4,
-    "15": 2,
-    "16": 4,
-    "10": 1
+    "16": 4
   },
   "message_types": {
-    "0": 2
+    "19": 7,
+    "0": 33,
+    "4": 9
   },
   "top_reacted_messages": [
     {
@@ -48,6 +74,13 @@
       "channel": ""
     },
     {
+      "id": "1378021686737244190",
+      "content": "Am I too impatient ?\nThe code was announced here, but it's not yet valid.",
+      "author": "__goz__",
+      "reactions": 10,
+      "channel": "✅「Answered」Solved - New code not working"
+    },
+    {
       "id": "1378062939583680552",
       "content": "如题\n\n倒也不是非要有嘛…\n~~但是过剧情的时候有点磕到栗子和守的cp~~\n以及正好栗子新皮肤有提到她会做噩梦梦到那时候的事…~~如果她正好收米潜游那天梦到原主",
       "author": "flarinsidia",
@@ -67,6 +100,41 @@
       "author": "yingmai_",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1377954542154682469",
+      "content": "In the 1.5 update the default stance give 1 permanent tentacle the next turn, th",
+      "author": "vxvendetta",
+      "reactions": 3,
+      "channel": "✅「Answered」Surging tides description"
+    },
+    {
+      "id": "1378015471693201418",
+      "content": "New player here, created a few accounts to see which one would get the best unit",
+      "author": "guinchox",
+      "reactions": 2,
+      "channel": "💭「Processing」Can't access the game"
+    },
+    {
+      "id": "1378010352570339368",
+      "content": "When unselected, there are Chinese text on the confirmation button.",
+      "author": "adrelius",
+      "reactions": 1,
+      "channel": "✅「Answered」Goliath Exalt Effect Selection Text Error"
+    },
+    {
+      "id": "1377943459809329254",
+      "content": "2-13 \"Whispers of the Immortal\"",
+      "author": "adrelius",
+      "reactions": 1,
+      "channel": "💭「Processing」Cutscene Error"
+    },
+    {
+      "id": "1377938312685420595",
+      "content": "I downloaded the game on Steam and logged in with my account. It functioned norm",
+      "author": "azurrys",
+      "reactions": 1,
+      "channel": "✅「Answered」Unable to start game - stuck on checking for updates screen"
     },
     {
       "id": "1377991915475304508",

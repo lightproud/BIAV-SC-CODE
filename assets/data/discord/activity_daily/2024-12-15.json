@@ -1,24 +1,34 @@
 {
   "date": "2024-12-15",
-  "messages": 10,
-  "unique_authors": 3,
-  "reactions_total": 23,
-  "attachments": 6,
+  "messages": 27,
+  "unique_authors": 11,
+  "reactions_total": 29,
+  "attachments": 9,
   "channel_activity": {
+    "When is Tulu going to be on standard banner?": 1,
+    "拿不到三星": 3,
+    "关于后续卡池安排？": 10,
+    "塔薇拉牌後的圖像": 3,
     "一點亂摸立繪👉👈👉👈": 4,
     "《希洛》": 2,
     "希洛padoru": 1,
     "🔸【超越維度的祝福】認領專區": 3
   },
   "hourly_activity": {
+    "8": 3,
+    "12": 4,
+    "16": 1,
+    "5": 7,
+    "10": 1,
+    "11": 1,
+    "6": 3,
     "14": 4,
     "15": 2,
-    "2": 1,
-    "6": 2,
-    "8": 1
+    "2": 1
   },
   "message_types": {
-    "0": 7
+    "0": 15,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -34,6 +44,20 @@
       "author": "miuchin",
       "reactions": 9,
       "channel": "一點亂摸立繪👉👈👉👈"
+    },
+    {
+      "id": "1317768692615876711",
+      "content": "I don't know if someone asked this question before.\n\nWhen is Tulu going to go to",
+      "author": "haripax",
+      "reactions": 3,
+      "channel": "When is Tulu going to be on standard banner?"
+    },
+    {
+      "id": "1317719340656627762",
+      "content": "水母牌应该是谵妄来的\n可能是塔薇发现的卡牌在抽牌堆里被定义成原唤醒体的卡牌\n所以谵妄变形时是变成原唤醒体的卡牌（也有可能只是改变图像）",
+      "author": "be_queitplease",
+      "reactions": 3,
+      "channel": "塔薇拉牌後的圖像"
     },
     {
       "id": "1317737865144172564",

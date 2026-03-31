@@ -1,26 +1,41 @@
 {
   "date": "2024-11-07",
-  "messages": 38,
-  "unique_authors": 8,
-  "reactions_total": 25,
-  "attachments": 5,
+  "messages": 69,
+  "unique_authors": 10,
+  "reactions_total": 33,
+  "attachments": 14,
   "channel_activity": {
+    "御四家除朵尔和两个希洛档案中部分语音缺失": 3,
+    "為什麼希洛這麼好看": 5,
+    "螺湮的歡愉 疑似沒觸發到": 1,
+    "Steam version not letting me sign in": 7,
+    "Game is currently unplayable in steam deck no matter what proton version": 2,
+    "來自德語區的反饋": 9,
+    "有玩家反應steam無法登入，是否有解?": 1,
+    "为什么神国幻影是症状卡": 1,
+    "為什麼希洛長這麼好看": 2,
     "有點像是三創了.jpg": 9,
     "原作里:": 29
   },
   "hourly_activity": {
+    "15": 16,
+    "11": 6,
+    "16": 3,
+    "7": 1,
+    "8": 7,
+    "9": 4,
+    "14": 15,
+    "10": 5,
+    "4": 3,
+    "2": 5,
+    "1": 1,
     "0": 1,
-    "2": 4,
-    "3": 2,
-    "16": 2,
-    "8": 2,
-    "10": 2,
-    "14": 14,
-    "15": 11
+    "3": 2
   },
   "message_types": {
-    "0": 34,
-    "19": 4
+    "0": 23,
+    "4": 2,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -38,6 +53,13 @@
       "channel": "有點像是三創了.jpg"
     },
     {
+      "id": "1304038854445240410",
+      "content": "希洛怎麼這麼好看\n我要幫他把那群可恨的斯巴達人給刀了",
+      "author": "ice_storys",
+      "reactions": 5,
+      "channel": "為什麼希洛這麼好看"
+    },
+    {
       "id": "1304102246505775175",
       "content": "~~不過油污想要取悅同類的話，總的來說還是在求偶吧（幹~~\n但是感覺想主人和狗狗（幹",
       "author": "foxcatfurry",
@@ -50,6 +72,27 @@
       "author": "flim_of_life_burst",
       "reactions": 2,
       "channel": "有點像是三創了.jpg"
+    },
+    {
+      "id": "1304125577984213052",
+      "content": "回合内造成3次伤害才会生成临触吧<:__:1239909731125035058>",
+      "author": "be_queitplease",
+      "reactions": 1,
+      "channel": "螺湮的歡愉 疑似沒觸發到"
+    },
+    {
+      "id": "1303984868866265100",
+      "content": "I use linux(ubuntu) and play on steam with proton experimental and it seems to n",
+      "author": "d0qh_y261ubwbwoq",
+      "reactions": 1,
+      "channel": "Steam version not letting me sign in"
+    },
+    {
+      "id": "1304105478753878088",
+      "content": "Since I can't install windows otherwise it's gonna run like an oven",
+      "author": "d0qh_y261ubwbwoq",
+      "reactions": 1,
+      "channel": "Steam version not letting me sign in"
     },
     {
       "id": "1303916881547366441",

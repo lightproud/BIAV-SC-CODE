@@ -1,26 +1,37 @@
 {
   "date": "2024-08-30",
-  "messages": 10,
-  "unique_authors": 6,
-  "reactions_total": 6,
-  "attachments": 0,
+  "messages": 34,
+  "unique_authors": 10,
+  "reactions_total": 10,
+  "attachments": 1,
   "channel_activity": {
+    "✅「已回答」（我正在使用谷歌翻譯 google translate）使用虚拟机会给我带来麻烦吗？": 6,
+    "✅「已回答」官方考不考慮這個宣傳？": 1,
+    "莉莉的特遣「故事的魔法」": 2,
+    "ipad自设定背景图比例失真": 2,
+    "一個萌新想組圖魯國家隊..": 13,
     "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）": 4,
     "相位基本型推介／PVP typical team suggestion": 2,
     "莱克攻略(共3期)": 3,
     "幻夢深淺15000分挑戰成功，借了80級薩爾瓦多，拖3個40級險過": 1
   },
   "hourly_activity": {
+    "4": 1,
+    "6": 3,
+    "7": 3,
+    "10": 2,
+    "8": 1,
+    "13": 2,
+    "14": 13,
     "1": 2,
     "19": 4,
     "3": 1,
     "9": 1,
-    "10": 1,
     "11": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 8
+    "0": 20,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -29,6 +40,27 @@
       "author": "tranquil_monkey_73179",
       "reactions": 6,
       "channel": "莱克攻略(共3期)"
+    },
+    {
+      "id": "1279078107177029644",
+      "content": "莉莉低清無碼流出…",
+      "author": "falst_over_",
+      "reactions": 2,
+      "channel": "ipad自设定背景图比例失真"
+    },
+    {
+      "id": "1279026084846764076",
+      "content": "https://forum.gamer.com.tw/C.php?bsn=60146&snA=6924\n\n天天版主，就決定是你了！",
+      "author": "gum1206",
+      "reactions": 1,
+      "channel": "✅「已回答」官方考不考慮這個宣傳？"
+    },
+    {
+      "id": "1278988216623562803",
+      "content": "應該是有改過 沒改到 \n\n只記得\n初版莉莉共鳴是加三圍\n復刻時 三圍改成銀鑰狂氣強效<:flop:1243504846062223360>",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "莉莉的特遣「故事的魔法」"
     }
   ]
 }

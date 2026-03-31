@@ -1,28 +1,44 @@
 {
   "date": "2025-07-24",
-  "messages": 22,
-  "unique_authors": 5,
-  "reactions_total": 1076,
-  "attachments": 10,
+  "messages": 44,
+  "unique_authors": 7,
+  "reactions_total": 1094,
+  "attachments": 11,
   "channel_activity": {
+    "✅「Answered」Resetting Helot but ended up resetting Nautilla": 4,
+    "💭「Processing」Animations not Loading": 2,
+    "✅「Answered」I bought a pack and it’s gone now": 3,
+    "Volunteering to aid with the English translation!": 2,
+    "✅「Answered」{SKErrorDomain,0} when trying to top-up on iPhone!": 2,
+    "✅「Answered」Ouroboros codex missing after buying with couple of days left": 3,
+    "✅「Answered」Ouroboros codex pack missing login multiple times": 3,
+    "(English Translation/Lore) Is it supposed to be Akut, or Acushnet?": 2,
+    "2nd Anniversary or Christmas Event Suggestion": 1,
     "杜勒赛因x你 18+": 11,
     "（蔚蓝档案x忘却前夜同人）Sensei瞬息弥萨格（第二幕 已完结）": 3,
     "🔸礼包码┊gift-codes": 3,
     "1305430084420898868": 5
   },
   "hourly_activity": {
+    "3": 2,
+    "4": 14,
+    "17": 1,
+    "6": 3,
+    "12": 1,
+    "2": 2,
+    "1": 2,
+    "0": 1,
     "9": 6,
     "10": 1,
     "11": 6,
     "22": 1,
     "13": 3,
-    "3": 1,
-    "4": 3,
     "15": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 2
+    "0": 13,
+    "19": 2,
+    "4": 7
   },
   "top_reacted_messages": [
     {
@@ -54,11 +70,39 @@
       "channel": ""
     },
     {
+      "id": "1397795611293519882",
+      "content": "The issue with Ouroboros Codex has been fixed, and any rewards you did not recei",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "✅「Answered」I bought a pack and it’s gone now"
+    },
+    {
+      "id": "1397820803898150995",
+      "content": "I'm not sure who I should reach out to, but I'd like to volunteer.\n\nI'm only in ",
+      "author": "sophiechoice",
+      "reactions": 6,
+      "channel": "Volunteering to aid with the English translation!"
+    },
+    {
       "id": "1397871303737872435",
       "content": "开车内容，不好意思我不会开车。\n\n？主要是忘却没什么我嗑的男同，就开始写这种文了\n\n哇是子安武哎\n\n你=守密人，守密人≠你，懂？我怕ooc\n\n文画双修的我表示别",
       "author": "dittoqwq",
       "reactions": 6,
       "channel": "杜勒赛因x你 18+"
+    },
+    {
+      "id": "1397798182536085545",
+      "content": "I don’t have but when I read the warning, it says Helot 😦",
+      "author": "bert3",
+      "reactions": 2,
+      "channel": "✅「Answered」Resetting Helot but ended up resetting Nautilla"
+    },
+    {
+      "id": "1397825207644983407",
+      "content": "Hello, we previously disabled the payment function of Brazilian IOS, but we are ",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」{SKErrorDomain,0} when trying to top-up on iPhone!"
     },
     {
       "id": "1397798887783137280",

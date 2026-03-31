@@ -1,28 +1,48 @@
 {
   "date": "2024-12-05",
-  "messages": 48,
-  "unique_authors": 7,
-  "reactions_total": 16,
-  "attachments": 4,
+  "messages": 80,
+  "unique_authors": 17,
+  "reactions_total": 39,
+  "attachments": 10,
   "channel_activity": {
+    "✅「Answered」Tawil card \" Master of all thing\" bug": 8,
+    "能不能再来个100抽": 14,
+    "總感覺最近很卡頓": 5,
+    "艾爾瓦解除封印問題": 1,
+    "卡了登入不了": 4,
     "原初之影__第四關陣容推薦": 2,
     "自創界域燒壞我腦袋的cpu了": 24,
     "自創喚醒體-星空之遙(又稱遙佬or星空佬)": 22
   },
   "hourly_activity": {
+    "4": 4,
+    "12": 3,
+    "15": 4,
+    "16": 2,
+    "0": 4,
+    "1": 3,
+    "2": 4,
+    "3": 18,
+    "6": 7,
+    "7": 3,
+    "9": 5,
     "17": 3,
     "5": 2,
-    "6": 4,
     "8": 14,
-    "9": 4,
-    "3": 17,
     "18": 4
   },
   "message_types": {
-    "0": 37,
-    "19": 11
+    "0": 31,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1314128104561705032",
+      "content": "好溫和",
+      "author": "yizilven",
+      "reactions": 18,
+      "channel": "能不能再来个100抽"
+    },
     {
       "id": "1314094285854871552",
       "content": "原創界域  生魂 (Spirit)\n\n初始手牌上限+2，戰鬥開始時，進入「輪迴」狀態\n輪迴：每4回合手牌上限+1，可選擇一次投胎/重生，若沒有或無法選擇投胎/重",
@@ -36,6 +56,27 @@
       "author": "ice_storys",
       "reactions": 5,
       "channel": "自創喚醒體-星空之遙(又稱遙佬or星空佬)"
+    },
+    {
+      "id": "1314081958288035841",
+      "content": "早上就卡了，是要點修復嗎？",
+      "author": "neryssu4869",
+      "reactions": 3,
+      "channel": "卡了登入不了"
+    },
+    {
+      "id": "1314120650775986197",
+      "content": "銀芯和福利請多多關注後續活動，都會有的！還請守密人不要刷貼哦。",
+      "author": "lubi_17667",
+      "reactions": 1,
+      "channel": "能不能再来个100抽"
+    },
+    {
+      "id": "1314258151679459381",
+      "content": "应该已经修复了",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "艾爾瓦解除封印問題"
     },
     {
       "id": "1314145303229894726",

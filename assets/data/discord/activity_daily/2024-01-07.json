@@ -1,10 +1,11 @@
 {
   "date": "2024-01-07",
-  "messages": 14,
-  "unique_authors": 5,
-  "reactions_total": 62,
+  "messages": 38,
+  "unique_authors": 8,
+  "reactions_total": 68,
   "attachments": 14,
   "channel_activity": {
+    "對於目前公關與營運方面的想法與建議。": 24,
     "Morimens平行宇宙論": 1,
     "“她將成為自己的勇士。”": 1,
     "密契副词条转录讲解（守密人55级解锁）": 1,
@@ -13,13 +14,18 @@
     "自娱自乐的梗图": 5
   },
   "hourly_activity": {
+    "10": 1,
+    "11": 15,
+    "12": 7,
+    "13": 1,
     "16": 3,
     "21": 3,
     "3": 2,
     "20": 6
   },
   "message_types": {
-    "0": 2
+    "0": 15,
+    "19": 9
   },
   "top_reacted_messages": [
     {
@@ -35,6 +41,13 @@
       "author": "morningnews",
       "reactions": 8,
       "channel": "“她將成為自己的勇士。”"
+    },
+    {
+      "id": "1193509262706618449",
+      "content": "關於遊戲內容、機制、更新、補償那些不會在這裡提到，那些是官方本來就應該做好的事情。\n\n1.對外宣發\n\n忘卻前夜本身的題材與玩法並不算大眾，這本身對於遊戲擴大玩家",
+      "author": "07_li",
+      "reactions": 6,
+      "channel": "對於目前公關與營運方面的想法與建議。"
     },
     {
       "id": "1193594553635192974",

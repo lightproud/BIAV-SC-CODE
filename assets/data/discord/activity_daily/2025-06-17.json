@@ -1,17 +1,59 @@
 {
   "date": "2025-06-17",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 16,
+  "unique_authors": 7,
+  "reactions_total": 5,
+  "attachments": 4,
   "channel_activity": {
+    "✅「已回答」混沌界域第二次鑰令觸發不了雙發鑰令": 4,
+    "💭「處理中」翠玉拓印": 1,
+    "✅「Answered」Castor Posse missing": 7,
+    "蜘蛛超限加強或重做": 1,
+    "應該要加強某些角色吧": 2,
     "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers": 1
   },
   "hourly_activity": {
-    "13": 1
+    "18": 3,
+    "19": 1,
+    "13": 2,
+    "7": 4,
+    "8": 2,
+    "14": 2,
+    "6": 2
   },
   "message_types": {
-    "0": 1
+    "0": 11,
+    "4": 1,
+    "19": 3
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1384596424490090566",
+      "content": "我們修復了混沌界域第二次鑰令可以雙發的問題<:takenotes:1357186646294138890>",
+      "author": "wild_pansy",
+      "reactions": 2,
+      "channel": "✅「已回答」混沌界域第二次鑰令觸發不了雙發鑰令"
+    },
+    {
+      "id": "1384535578434867284",
+      "content": "<@1131790839291596841>  It's back with the patch !",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "✅「Answered」Castor Posse missing"
+    },
+    {
+      "id": "1384535621980389549",
+      "content": "[CM_PicardiaSalute](https://cdn.discordapp.com/emojis/1064651116970782861.webp?s",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "✅「Answered」Castor Posse missing"
+    },
+    {
+      "id": "1384431090608902147",
+      "content": "🙏 🫶",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "蜘蛛超限加強或重做"
+    }
+  ]
 }

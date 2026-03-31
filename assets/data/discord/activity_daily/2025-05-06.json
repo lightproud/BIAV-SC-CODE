@@ -1,0 +1,50 @@
+{
+  "date": "2025-05-06",
+  "messages": 45,
+  "unique_authors": 9,
+  "reactions_total": 1,
+  "attachments": 6,
+  "channel_activity": {
+    "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 6,
+    "✅「已回答」试用机制是否有些不合理": 2,
+    "✅「已回答」讚的": 2,
+    "✅「Answered」Winkle Relic Not Working": 2,
+    "✅「Answered」Text not translate": 2,
+    "✅「Answered」Spelling mistakes in wheel of destiny": 2,
+    "💭「Processing」Minor translation mistake": 2,
+    "✅「Answered」Rules on Standard WoD banner is wrong": 2,
+    "Daffodil's Talent Question - Translation question": 5,
+    "✅「已回答」聖火，但是神王": 4,
+    "✅「已回答」對弈新命輪均有bug": 3,
+    "✅「已回答」第四樂章使用四次後無法生效": 3,
+    "✅「Answered」Corposant skill description error in traphase": 4,
+    "克珀珊特領航Bug與靈塑加強建議": 3,
+    "💭「Processing」Corposant Star Chapter Talent": 2,
+    "✅「Answered」Sanga misnamed as corposant": 1
+  },
+  "hourly_activity": {
+    "2": 10,
+    "7": 17,
+    "10": 2,
+    "3": 4,
+    "4": 3,
+    "16": 1,
+    "17": 1,
+    "21": 5,
+    "6": 2
+  },
+  "message_types": {
+    "4": 16,
+    "0": 22,
+    "19": 7
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1369138584375791716",
+      "content": "OK, thanks for the feedback~🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Sanga misnamed as corposant"
+    }
+  ]
+}

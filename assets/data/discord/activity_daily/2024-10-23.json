@@ -1,25 +1,41 @@
 {
   "date": "2024-10-23",
-  "messages": 11,
-  "unique_authors": 4,
-  "reactions_total": 27,
-  "attachments": 9,
+  "messages": 42,
+  "unique_authors": 17,
+  "reactions_total": 30,
+  "attachments": 17,
   "channel_activity": {
+    "沒別的意思 就是覺得深海國家打不動了": 2,
+    "是否考慮為同調率增加功能": 1,
+    "I have no sound in the steam version. any know how fix?": 1,
+    "Steam acc lost after new update": 2,
+    "steam 版更新完帳號消失": 16,
+    "命輪成就計算錯誤": 2,
+    "活動Bug": 1,
+    "大 頭怪嬰血希": 2,
+    "真超模啊": 4,
     "忘卻困難版大挑戰！": 5,
     "各位好～我是鲨": 4,
     "嘿嘿": 1,
     "以下開放留言講缺點": 1
   },
   "hourly_activity": {
-    "12": 2,
+    "11": 1,
+    "12": 19,
+    "1": 1,
+    "6": 1,
+    "13": 2,
+    "9": 3,
+    "10": 1,
+    "4": 2,
+    "7": 2,
+    "8": 3,
     "15": 6,
-    "5": 1,
-    "7": 1,
-    "9": 1
+    "5": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 29,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -28,6 +44,13 @@
       "author": "shadiaodiaodeyu_89215",
       "reactions": 25,
       "channel": "各位好～我是鲨"
+    },
+    {
+      "id": "1298629364635930714",
+      "content": "如圖，透過steam下載的忘卻原本應該是綁steam才對\n但我的帳號消失了\n想請問官方該如何解決，若帳號永久遺失是否可要求補償",
+      "author": "four_leaves_clover",
+      "reactions": 3,
+      "channel": "steam 版更新完帳號消失"
     },
     {
       "id": "1298666092952027268",

@@ -1,25 +1,59 @@
 {
   "date": "2025-05-15",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 2,
-  "attachments": 0,
+  "messages": 13,
+  "unique_authors": 7,
+  "reactions_total": 10,
+  "attachments": 4,
   "channel_activity": {
+    "✅「Answered」Technical problem on bootup": 4,
+    "點讚100000次有成就嗎": 2,
+    "Petition to rename Wheel Unseen to Concealed Truth": 1,
+    "「已回答✅ 」如图所示，温柯尔弃牌不触发余波效果": 4,
+    "💭「處理中」如图": 1,
     "發點摸魚時寫的船長（克柏珊特）MOBA遊戲的技能組（與原作不相干）": 1
   },
   "hourly_activity": {
+    "2": 4,
+    "5": 1,
+    "20": 1,
+    "16": 3,
+    "12": 1,
+    "15": 2,
     "17": 1
   },
   "message_types": {
-    "0": 1
+    "0": 8,
+    "4": 2,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1372394499833069659",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 6,
+      "channel": "點讚100000次有成就嗎"
+    },
     {
       "id": "1372627148011077804",
       "content": "姓名：克柏珊特\n職業：戰士\n推薦位置：上路\n\n\n被動：引領。友方英雄朝向自身、「旗幟」移動或自身朝向友方單位、「旗幟」移動時增加20%移速；對敵方英雄造成傷害後",
       "author": "void_1546.",
       "reactions": 2,
       "channel": "發點摸魚時寫的船長（克柏珊特）MOBA遊戲的技能組（與原作不相干）"
+    },
+    {
+      "id": "1372603109637095497",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "「已回答✅ 」如图所示，温柯尔弃牌不触发余波效果"
+    },
+    {
+      "id": "1372605716673597551",
+      "content": "我刚测了，触发",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "「已回答✅ 」如图所示，温柯尔弃牌不触发余波效果"
     }
   ]
 }

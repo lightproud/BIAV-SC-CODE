@@ -1,15 +1,31 @@
 {
   "date": "2025-03-23",
-  "messages": 19,
-  "unique_authors": 13,
-  "reactions_total": 28,
-  "attachments": 7,
+  "messages": 58,
+  "unique_authors": 14,
+  "reactions_total": 33,
+  "attachments": 11,
   "channel_activity": {
+    "才晓得": 2,
+    "关于加固机制设计问题": 14,
+    "✅「已回答」为什么回合自动刷新回第一回合": 12,
+    "✅「Answered」I cant change my visitor in domitory": 4,
+    "角色占位对攻击的敌人会有影响吗": 3,
+    "✅「已回答」斷關續連能不能續在當前回合數": 3,
+    "PVP模式到底谁在爱打😃": 1,
     "四小強星辰篇通關記錄分享": 15,
     "新版本御四家0成本开荒教学": 3,
     "where i post stuff": 1
   },
   "hourly_activity": {
+    "10": 5,
+    "4": 2,
+    "5": 3,
+    "7": 12,
+    "8": 7,
+    "6": 1,
+    "11": 4,
+    "15": 4,
+    "3": 1,
     "12": 4,
     "13": 12,
     "14": 1,
@@ -17,9 +33,8 @@
     "22": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 3,
-    "4": 1
+    "0": 32,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -28,6 +43,41 @@
       "author": "ahuahuahua",
       "reactions": 28,
       "channel": "四小強星辰篇通關記錄分享"
+    },
+    {
+      "id": "1353287490752217099",
+      "content": "你怎麼覺得毒跟出血能獨善其身",
+      "author": "huangyu0876",
+      "reactions": 1,
+      "channel": "关于加固机制设计问题"
+    },
+    {
+      "id": "1353287656007663616",
+      "content": "你怎麼覺得校貓會覺得加固太噁心",
+      "author": "huangyu0876",
+      "reactions": 1,
+      "channel": "关于加固机制设计问题"
+    },
+    {
+      "id": "1353288599726067853",
+      "content": "那是骂过的都已经被移除社区了",
+      "author": "molove0286",
+      "reactions": 1,
+      "channel": "关于加固机制设计问题"
+    },
+    {
+      "id": "1353389447227379723",
+      "content": "U need to change to scene CG",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "✅「Answered」I cant change my visitor in domitory"
+    },
+    {
+      "id": "1353397739110793328",
+      "content": "It work thank you so much<:Heartbeat:1236951458176565389>",
+      "author": "cant_be_alone_cant_be_together",
+      "reactions": 1,
+      "channel": "✅「Answered」I cant change my visitor in domitory"
     }
   ]
 }

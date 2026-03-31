@@ -1,25 +1,50 @@
 {
   "date": "2025-06-07",
-  "messages": 72,
-  "unique_authors": 5,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 87,
+  "unique_authors": 10,
+  "reactions_total": 6,
+  "attachments": 5,
   "channel_activity": {
+    "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\"": 1,
+    "✅「Answered」Untranslated text for castor": 4,
+    "✅「已回答」鑰令效果哪個才是正確的": 7,
+    "這ai痕跡太明顯了吧": 1,
+    "Got Softlock in this bleak!": 2,
     "攻略合集": 6,
     "相位對弈麻痹大隊小型指南：我沒說你可以打擊了": 63,
     "我要吃現pa 我現在就要吃現pa 👊": 3
   },
   "hourly_activity": {
+    "5": 4,
+    "3": 1,
+    "4": 3,
+    "1": 4,
+    "12": 2,
+    "14": 3,
+    "19": 1,
+    "2": 1,
     "0": 4,
-    "4": 1,
-    "5": 1,
     "6": 63,
-    "14": 2,
     "16": 1
   },
   "message_types": {
-    "0": 53,
-    "19": 19
+    "0": 14,
+    "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1380717824917377125",
+      "content": "如題\n而且強效數值也不對",
+      "author": "_buqi",
+      "reactions": 4,
+      "channel": "✅「已回答」鑰令效果哪個才是正確的"
+    },
+    {
+      "id": "1380757353011347566",
+      "content": "",
+      "author": "satachan",
+      "reactions": 2,
+      "channel": "✅「Answered」Untranslated text for castor"
+    }
+  ]
 }

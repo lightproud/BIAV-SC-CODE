@@ -1,17 +1,31 @@
 {
   "date": "2025-06-23",
-  "messages": 1,
-  "unique_authors": 1,
+  "messages": 23,
+  "unique_authors": 6,
   "reactions_total": 9,
-  "attachments": 2,
+  "attachments": 7,
   "channel_activity": {
+    "💭「Processing」D-effect Zone First Time Reward Not Crediting": 2,
+    "✅「Answered」LANGUAGE BUG.": 4,
+    "✅「Answered」Aliemus display bug": 2,
+    "Traphase inaccurate descriptions for Derison of Destiny and Wheel Unseen (Conceal)": 1,
+    "✅「Answered」Awaker cards not discarding": 9,
+    "💭「Processing」Chapter 2-7 missing files or pointers.": 2,
+    "✅「Answered」network error": 2,
     "关卡地图「融灾禁区」总览37期·星辰篇": 1
   },
   "hourly_activity": {
+    "8": 11,
+    "15": 1,
+    "21": 1,
+    "16": 2,
+    "17": 7,
     "9": 1
   },
   "message_types": {
-    "0": 1
+    "0": 14,
+    "4": 5,
+    "19": 3
   },
   "top_reacted_messages": [
     {

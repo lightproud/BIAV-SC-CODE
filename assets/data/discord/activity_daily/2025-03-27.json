@@ -1,10 +1,17 @@
 {
   "date": "2025-03-27",
-  "messages": 14,
-  "unique_authors": 4,
+  "messages": 35,
+  "unique_authors": 5,
   "reactions_total": 400,
-  "attachments": 6,
+  "attachments": 8,
   "channel_activity": {
+    "✅「已回答」bug": 5,
+    "✅「Answered」Add crafting for Shattered Remnant of Dreams": 1,
+    "✅「已回答」4-4精英": 6,
+    "✅「已回答」小騎士維度影像": 2,
+    "✅「Answered」Does the OST Won't update to Netease Music Anymore?": 1,
+    "✅「已回答」返校報到（好像是這個）的那個藍色領取按鈕，有紅點的時候點了領取之後不會變成灰色再點也點不動": 4,
+    "✅「已回答」新钥令虚无瘟疫缺乏怪物25%血血量提示": 2,
     "是雷婭": 1,
     "不会再有了": 1,
     "《巨人的新娘》戈利亞X妳": 1,
@@ -15,16 +22,21 @@
     "1350058287688712253": 2
   },
   "hourly_activity": {
-    "15": 1,
-    "10": 5,
+    "3": 4,
+    "6": 2,
+    "11": 8,
+    "15": 7,
+    "16": 1,
+    "10": 7,
+    "17": 1,
+    "2": 1,
     "18": 1,
-    "6": 1,
-    "9": 3,
-    "11": 3
+    "9": 3
   },
   "message_types": {
-    "0": 2,
-    "19": 3
+    "4": 5,
+    "0": 11,
+    "19": 5
   },
   "top_reacted_messages": [
     {

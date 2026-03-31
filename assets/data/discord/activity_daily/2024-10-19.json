@@ -1,30 +1,103 @@
 {
   "date": "2024-10-19",
-  "messages": 6,
-  "unique_authors": 5,
-  "reactions_total": 5,
-  "attachments": 0,
+  "messages": 61,
+  "unique_authors": 24,
+  "reactions_total": 38,
+  "attachments": 3,
   "channel_activity": {
+    "沒別的意思 就是覺得深海國家打不動了": 9,
+    "点角色界面也会卡住": 4,
+    "能不能把希洛的形态切换动画加回来呀？": 3,
+    "主線第6章畫面bug": 2,
+    "手滑选错了怎么办": 24,
+    "求救": 13,
     "第19期融灾禁区（241014-241028）攻略、配队思路、打法建议": 1,
     "以下開放留言講缺點": 5
   },
   "hourly_activity": {
-    "16": 1,
-    "5": 1,
-    "8": 2,
-    "10": 2
+    "1": 1,
+    "7": 2,
+    "14": 4,
+    "15": 18,
+    "17": 1,
+    "10": 7,
+    "11": 1,
+    "12": 1,
+    "9": 6,
+    "3": 1,
+    "4": 5,
+    "5": 3,
+    "6": 4,
+    "8": 6,
+    "16": 1
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "0": 50,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1297199017780056085",
+      "content": "聖嬰疑似食用了橡膠果實",
+      "author": "nazhigezihk",
+      "reactions": 9,
+      "channel": "主線第6章畫面bug"
+    },
+    {
+      "id": "1297136288478138462",
+      "content": "【解禁|堆一下忘却的pv过程（中？）】  https://www.bilibili.com/video/BV1s6yPYME7G/?share_source=c",
+      "author": "tururu_37124",
+      "reactions": 6,
+      "channel": "能不能把希洛的形态切换动画加回来呀？"
+    },
+    {
+      "id": "1297224340781138030",
+      "content": "打下一个难度的精英怪头都给我薅飞了",
+      "author": "luoqixikiss",
+      "reactions": 5,
+      "channel": "沒別的意思 就是覺得深海國家打不動了"
+    },
+    {
+      "id": "1297085402456526882",
+      "content": "都问你「是否确定选择」了都能选错只能怪自己了<:cute:1239911255121068082>",
+      "author": "yang_42",
+      "reactions": 5,
+      "channel": "手滑选错了怎么办"
+    },
     {
       "id": "1297239943457800253",
       "content": "https://www.bilibili.com/video/BV1mPCfY4Eme/?vd_source=3d48e3192fa4ec65a5856f793",
       "author": "mtyl.eth",
       "reactions": 5,
       "channel": "第19期融灾禁区（241014-241028）攻略、配队思路、打法建议"
+    },
+    {
+      "id": "1297108549138386976",
+      "content": "但記得考慮清楚<:wish:1236951537788649492>",
+      "author": "wild_pansy",
+      "reactions": 3,
+      "channel": "手滑选错了怎么办"
+    },
+    {
+      "id": "1297143346615029823",
+      "content": "有点幽默了",
+      "author": "ioshift_24740",
+      "reactions": 2,
+      "channel": "点角色界面也会卡住"
+    },
+    {
+      "id": "1297179730335764543",
+      "content": "拉蒙娜/環形拉蒙娜的切換界面\n薩爾瓦多的名字\n血鏈希洛的啟靈\n<:cry:1239910167668326480>",
+      "author": "_buqi",
+      "reactions": 2,
+      "channel": "点角色界面也会卡住"
+    },
+    {
+      "id": "1297053406682288129",
+      "content": "每個輔助都想要它啊",
+      "author": "kong760",
+      "reactions": 1,
+      "channel": "手滑选错了怎么办"
     }
   ]
 }

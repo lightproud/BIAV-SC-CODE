@@ -1,10 +1,13 @@
 {
   "date": "2025-04-06",
-  "messages": 26,
+  "messages": 31,
   "unique_authors": 10,
   "reactions_total": 64,
-  "attachments": 9,
+  "attachments": 11,
   "channel_activity": {
+    "✅「已回答」bug": 2,
+    "✅「Answered」Screen had freeze": 1,
+    "✅「已回答」网易云音乐第五章OST": 2,
     "魚": 1,
     "《把你的名字刻在幻影號上》—諾締拉": 4,
     "【二创向剧情解析】未完成的夜晚": 3,
@@ -15,6 +18,8 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "16": 3,
+    "2": 2,
     "7": 2,
     "3": 2,
     "21": 2,
@@ -25,9 +30,9 @@
     "5": 1
   },
   "message_types": {
-    "0": 23,
-    "4": 1,
-    "19": 1
+    "19": 1,
+    "0": 3,
+    "4": 1
   },
   "top_reacted_messages": [
     {

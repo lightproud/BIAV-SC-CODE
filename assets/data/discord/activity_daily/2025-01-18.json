@@ -1,24 +1,41 @@
 {
   "date": "2025-01-18",
-  "messages": 16,
-  "unique_authors": 9,
-  "reactions_total": 53,
-  "attachments": 3,
+  "messages": 31,
+  "unique_authors": 11,
+  "reactions_total": 63,
+  "attachments": 5,
   "channel_activity": {
+    "遊戲好玩是真好玩，體驗爛也是真爛": 1,
+    "English Page pls !!": 3,
+    "澳門充值渠道": 1,
+    "相位对弈分数上不去能不能改？": 2,
+    "通訊器的墨菲頭像": 1,
+    "友谊赛能设置个先后手吗？": 1,
+    "Any chance for better payment options for Global users and discount/other features now that 2.0.": 1,
+    "Possibility of a traphase Deck testing function?": 1,
+    "你可以讓他睡兩次": 4,
     "2.0 BOSS難度排行榜": 13,
     "快哉快哉": 2,
     "約稿展示 請大家吃飯": 1
   },
   "hourly_activity": {
+    "7": 1,
+    "2": 2,
+    "23": 1,
+    "13": 4,
+    "15": 3,
+    "17": 1,
+    "18": 2,
+    "1": 1,
+    "10": 3,
+    "11": 1,
     "12": 9,
     "14": 2,
-    "15": 2,
-    "22": 1,
-    "13": 1,
-    "18": 1
+    "22": 1
   },
   "message_types": {
-    "0": 16
+    "0": 14,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -36,6 +53,13 @@
       "channel": "約稿展示 請大家吃飯"
     },
     {
+      "id": "1330203234630893599",
+      "content": "哪个游戏排位赛分数上不去的？为啥1000分遇见2000分下来炸鱼的，还扣40多分？能改不能，不能改换游戏了",
+      "author": "luhongran",
+      "reactions": 8,
+      "channel": "相位对弈分数上不去能不能改？"
+    },
+    {
       "id": "1330148857689931897",
       "content": "## 各種BOSS通用對策思路\n**敵方有反擊**：用少段攻擊或者潘迪婭2費解決~~，或者在對面上反擊之前打死對面~~\n**敵方有小怪且在BOSS後面**：用全",
       "author": "_cwz_",
@@ -48,6 +72,20 @@
       "author": "_cwz_",
       "reactions": 4,
       "channel": "2.0 BOSS難度排行榜"
+    },
+    {
+      "id": "1330070548608192563",
+      "content": "嘎啦嘎啦果制作的攻略影片挺不错的。",
+      "author": "fengtengjayden9754",
+      "reactions": 1,
+      "channel": "遊戲好玩是真好玩，體驗爛也是真爛"
+    },
+    {
+      "id": "1330164557347557396",
+      "content": "Title, currently its very intrusive to pay and support the game, I already bough",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "Any chance for better payment options for Global users and discount/other features now that 2.0."
     },
     {
       "id": "1330152937942548480",

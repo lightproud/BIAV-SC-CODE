@@ -1,10 +1,11 @@
 {
   "date": "2024-06-04",
-  "messages": 82,
+  "messages": 83,
   "unique_authors": 31,
   "reactions_total": 64,
   "attachments": 27,
   "channel_activity": {
+    "强效属性对固定毒反的作用": 1,
     "銀鑰充能與狂氣回充衰減紀錄": 1,
     "【PVE攻略】艾继丝石化使用指南、技巧大全": 1,
     "弥萨格校友号码本(已废弃)": 6,
@@ -25,6 +26,7 @@
     "「故障機器人」": 19
   },
   "hourly_activity": {
+    "6": 1,
     "23": 2,
     "16": 2,
     "3": 7,
@@ -45,9 +47,7 @@
     "11": 6
   },
   "message_types": {
-    "0": 70,
-    "19": 11,
-    "4": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

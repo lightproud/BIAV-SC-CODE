@@ -1,10 +1,19 @@
 {
   "date": "2025-03-12",
-  "messages": 12,
-  "unique_authors": 6,
-  "reactions_total": 76,
-  "attachments": 7,
+  "messages": 48,
+  "unique_authors": 15,
+  "reactions_total": 88,
+  "attachments": 13,
   "channel_activity": {
+    "✅「Answered」PC steam version help": 3,
+    "相位对弈中故意拖延时间的有什么办法么": 14,
+    "💭「處理中」星辰篇銀鑰微光選擇第四樂章後會直接視作已使用卡判定抽兩張": 4,
+    "✅「Answered」Hameln exalt text error": 2,
+    "English Page pls !!": 3,
+    "✅「已回答」試訓模式 命輪裝不了": 6,
+    "要是把海德拉幹掉後小怪還沒死是不會結束戰鬥的": 1,
+    "✅「已回答」繁衍狂熱": 2,
+    "什么时候把第九章ost放出来？": 1,
     "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略": 5,
     "主线章节通讯彩蛋合集": 2,
     "存档 顺便参加一下活动": 2,
@@ -13,14 +22,27 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "7": 1,
-    "8": 5,
-    "6": 4,
-    "9": 1,
+    "11": 1,
+    "15": 7,
+    "4": 1,
+    "7": 3,
+    "9": 2,
+    "10": 2,
+    "13": 3,
+    "14": 3,
+    "19": 2,
+    "16": 2,
+    "0": 2,
+    "6": 9,
+    "8": 7,
+    "5": 2,
+    "2": 1,
     "1": 1
   },
   "message_types": {
-    "0": 11
+    "0": 28,
+    "19": 6,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -57,6 +79,48 @@
       "author": "flarinsidia",
       "reactions": 5,
       "channel": "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略"
+    },
+    {
+      "id": "1349403164910030979",
+      "content": "如題",
+      "author": "arr5721",
+      "reactions": 3,
+      "channel": "💭「處理中」星辰篇銀鑰微光選擇第四樂章後會直接視作已使用卡判定抽兩張"
+    },
+    {
+      "id": "1349214353492148255",
+      "content": "星辰一章都放出来了 那我第九章第八章呢？\n想我的大眼珠子们了<:scared:1239910882943832065>",
+      "author": "two_of_us",
+      "reactions": 3,
+      "channel": "什么时候把第九章ost放出来？"
+    },
+    {
+      "id": "1349332340014317621",
+      "content": "",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "相位对弈中故意拖延时间的有什么办法么"
+    },
+    {
+      "id": "1349262128527441964",
+      "content": "Haha~ In the future, we will try our best to provide both Chinese and English ve",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "English Page pls !!"
+    },
+    {
+      "id": "1349351056840065034",
+      "content": "I have a problem, game become like this after i miss click, and i tried to log i",
+      "author": "nyan_sus",
+      "reactions": 1,
+      "channel": "✅「Answered」PC steam version help"
+    },
+    {
+      "id": "1349180075177939085",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 1,
+      "channel": "English Page pls !!"
     }
   ]
 }

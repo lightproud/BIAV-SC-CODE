@@ -1,20 +1,32 @@
 {
   "date": "2025-03-28",
-  "messages": 4,
-  "unique_authors": 2,
-  "reactions_total": 715,
-  "attachments": 0,
+  "messages": 18,
+  "unique_authors": 6,
+  "reactions_total": 721,
+  "attachments": 1,
   "channel_activity": {
+    "✅「Answered」Add crafting for Shattered Remnant of Dreams": 1,
+    "✅「Answered」Korean Unicode Error": 5,
+    "✅「已回答」4-4精英": 3,
+    "✅「已回答」小騎士維度影像": 2,
+    "✅「Answered」Does the OST Won't update to Netease Music Anymore?": 2,
+    "请问羊妈估计几月份复刻啊": 1,
     "是雷婭": 3,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "2": 1,
+    "3": 6,
+    "4": 3,
+    "6": 2,
+    "7": 2,
+    "2": 2,
     "10": 2,
     "9": 1
   },
   "message_types": {
-    "0": 3
+    "19": 3,
+    "0": 7,
+    "4": 4
   },
   "top_reacted_messages": [
     {
@@ -23,6 +35,34 @@
       "author": "morimensstaff01",
       "reactions": 713,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1355039839061278950",
+      "content": "Title of awake list keep broke on Korean setting",
+      "author": "legion_schindler",
+      "reactions": 2,
+      "channel": "✅「Answered」Korean Unicode Error"
+    },
+    {
+      "id": "1355040593495064758",
+      "content": "Thanks for posting. We will look into it👍",
+      "author": "cometovilla",
+      "reactions": 2,
+      "channel": "✅「Answered」Korean Unicode Error"
+    },
+    {
+      "id": "1355070925653147749",
+      "content": "Thanks for the feedback, goya has conveyed it~🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Korean Unicode Error"
+    },
+    {
+      "id": "1355020680839823483",
+      "content": "Hi, we will continue to upload new OST~🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Does the OST Won't update to Netease Music Anymore?"
     },
     {
       "id": "1355011407208255631",

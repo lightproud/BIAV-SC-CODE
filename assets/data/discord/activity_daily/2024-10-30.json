@@ -1,10 +1,15 @@
 {
   "date": "2024-10-30",
-  "messages": 40,
+  "messages": 66,
   "unique_authors": 14,
-  "reactions_total": 99,
-  "attachments": 10,
+  "reactions_total": 125,
+  "attachments": 16,
   "channel_activity": {
+    "沒別的意思 就是覺得深海國家打不動了": 1,
+    "哈基米 我也想長大一下": 6,
+    "聖誕節出世": 16,
+    "Fix hitboxes on cards": 1,
+    "Some text is not visible in Japanese": 2,
     "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
     "血链·希洛的抽取建议": 3,
     "忘卻困難版大挑戰！": 3,
@@ -16,24 +21,27 @@
     "1181998821291606097": 2
   },
   "hourly_activity": {
+    "2": 5,
+    "1": 2,
+    "4": 3,
+    "23": 2,
+    "13": 5,
+    "15": 21,
+    "0": 1,
+    "12": 6,
+    "14": 1,
     "7": 2,
-    "2": 2,
     "19": 1,
-    "15": 9,
-    "4": 2,
     "6": 1,
     "8": 1,
     "9": 9,
     "11": 1,
-    "12": 5,
-    "13": 1,
     "16": 4,
-    "1": 1,
     "10": 1
   },
   "message_types": {
-    "0": 28,
-    "19": 10
+    "0": 22,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -65,6 +73,13 @@
       "channel": "死亡已經迫近，消亡已經開始"
     },
     {
+      "id": "1301041058498740304",
+      "content": "希望活久一點",
+      "author": "ice_storys",
+      "reactions": 12,
+      "channel": "哈基米 我也想長大一下"
+    },
+    {
       "id": "1301263939862134907",
       "content": "果爷被猫踹走了<:flop:1236937860922343466>",
       "author": "ioshift_24740",
@@ -79,11 +94,32 @@
       "channel": "死亡已經迫近，消亡已經開始"
     },
     {
+      "id": "1301202680630218842",
+      "content": "忘卻前夜大謎團：這些開口閉口要復仇的人活在現代到底要向誰復仇",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "聖誕節出世"
+    },
+    {
+      "id": "1301161895822098533",
+      "content": "Some text is not visible in Japanese.\n1.Assignment(課題)、2.Elite battle(精鋭戦)、3.Fin",
+      "author": "x013318908",
+      "reactions": 6,
+      "channel": "Some text is not visible in Japanese"
+    },
+    {
       "id": "1301151027516670032",
       "content": "~~拉蒙娜他爸可以嗎~~",
       "author": "ahuahuahua",
       "reactions": 5,
       "channel": "死亡已經迫近，消亡已經開始"
+    },
+    {
+      "id": "1301196301119000576",
+      "content": "thanks！",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "Some text is not visible in Japanese"
     }
   ]
 }

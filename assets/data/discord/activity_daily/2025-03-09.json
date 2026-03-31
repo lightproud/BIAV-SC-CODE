@@ -1,0 +1,59 @@
+{
+  "date": "2025-03-09",
+  "messages": 82,
+  "unique_authors": 9,
+  "reactions_total": 10,
+  "attachments": 3,
+  "channel_activity": {
+    "✅「已回答」账号找不到了": 1,
+    "这是我的配置": 80,
+    "相位对弈命轮能不能改改": 1
+  },
+  "hourly_activity": {
+    "7": 2,
+    "11": 17,
+    "12": 4,
+    "15": 59
+  },
+  "message_types": {
+    "0": 65,
+    "19": 17
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1348199686984700134",
+      "content": "空虚能不能改成以前版本:不能获得狂气？要不就改成打他一次扣一次狂气，目的就是不让他开大，那咋还是能得狂气？图二要是打完第一个目标，第二个目标成血盾最高的，也来1",
+      "author": "luhongran",
+      "reactions": 5,
+      "channel": "相位对弈命轮能不能改改"
+    },
+    {
+      "id": "1348258767879405660",
+      "content": "入藥 可以更容易製造翅膀 打傷害",
+      "author": "cuanbingtao",
+      "reactions": 2,
+      "channel": "这是我的配置"
+    },
+    {
+      "id": "1348259979672424499",
+      "content": "喜欢这个角色",
+      "author": "287405tjy_28066",
+      "reactions": 1,
+      "channel": "这是我的配置"
+    },
+    {
+      "id": "1348313220586274887",
+      "content": "困难",
+      "author": "sadanshishen",
+      "reactions": 1,
+      "channel": "这是我的配置"
+    },
+    {
+      "id": "1348314706598826044",
+      "content": "还有这一说吗？我以为联络者是只要出非指令卡就加盾和力量的",
+      "author": "287405tjy_28066",
+      "reactions": 1,
+      "channel": "这是我的配置"
+    }
+  ]
+}

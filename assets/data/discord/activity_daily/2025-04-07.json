@@ -1,24 +1,49 @@
 {
   "date": "2025-04-07",
-  "messages": 8,
-  "unique_authors": 3,
-  "reactions_total": 45,
-  "attachments": 4,
+  "messages": 69,
+  "unique_authors": 11,
+  "reactions_total": 58,
+  "attachments": 25,
   "channel_activity": {
+    "✅「已回答」bug": 1,
+    "✅「Answered」Audio stops when leaving game window": 7,
+    "✅「已回答」可能是bug": 4,
+    "✅「已回答」這算bug嗎": 5,
+    "✅「已回答」星辰篇2-6的敵人跑到畫面外了": 2,
+    "2nd artwork for characters": 11,
+    "✅「已回答」圖示不一": 1,
+    "✅「Answered」Ryker's Wheel bug": 12,
+    "克莱门汀的唤醒体手册呢": 1,
+    "✅「Answered」Incorrect Assignment Rewards": 2,
+    "💭「Processing」Missing test": 6,
+    "💭「處理中」第二章天赋bug": 3,
+    "💭「Processing」[BUG] Blue Stone Throne wheel + Myriam in PvP": 2,
+    "✅「Answered」Screen had freeze": 2,
+    "💭「Processing」Minor Materials Visual bug": 2,
     "克莱门汀...": 2,
     "「   」的故事（上）": 3,
     "1271491376881598494": 3
   },
   "hourly_activity": {
-    "3": 2,
-    "12": 1,
-    "15": 1,
-    "19": 2,
-    "4": 2
+    "7": 17,
+    "0": 3,
+    "21": 1,
+    "6": 8,
+    "10": 5,
+    "15": 3,
+    "22": 1,
+    "11": 11,
+    "12": 2,
+    "17": 1,
+    "4": 5,
+    "5": 2,
+    "3": 8,
+    "19": 2
   },
   "message_types": {
-    "0": 4,
-    "4": 1
+    "19": 4,
+    "0": 48,
+    "4": 9
   },
   "top_reacted_messages": [
     {
@@ -36,11 +61,67 @@
       "channel": ""
     },
     {
+      "id": "1358653655263215746",
+      "content": "在把开局狂气到100的角色变成虫族的时候会出现这个弹窗，意义不明",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": "💭「處理中」第二章天赋bug"
+    },
+    {
       "id": "1358886526070685998",
       "content": "`察覺對方話語間的疲憊，希萊斯特追問，對方便帶她至船長室，拿出兩張地圖詳加說明。\n\n「這是過去傳說中沒有融蝕的航海圖，而這是去年最新版的世界地圖。發現了嗎？已經",
       "author": "sam511011",
       "reactions": 3,
       "channel": "「   」的故事（上）"
+    },
+    {
+      "id": "1358828729769529355",
+      "content": "請幫幫弟弟",
+      "author": "menta_y_menta",
+      "reactions": 2,
+      "channel": "✅「已回答」星辰篇2-6的敵人跑到畫面外了"
+    },
+    {
+      "id": "1358659027894276224",
+      "content": "New chapter 2 Resonance miss text\nNode \"Existential transcendence\" miss text",
+      "author": "aegisx",
+      "reactions": 2,
+      "channel": "💭「Processing」Missing test"
+    },
+    {
+      "id": "1358638963459489834",
+      "content": "Hi~ This problem should be fixed after the game update today🙏 If you have any ot",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「Answered」Screen had freeze"
+    },
+    {
+      "id": "1358702742624927845",
+      "content": "好的",
+      "author": "287405tjy_28066",
+      "reactions": 1,
+      "channel": "✅「已回答」可能是bug"
+    },
+    {
+      "id": "1358751108352315602",
+      "content": "我先拿了一個偶然謬誤給宿命坍縮降1費\n然後打完精英怪拿了石碑把偶然謬誤變掉\n接著又在路邊撿到了偶然謬誤\n選擇給宿命坍縮降費後還是維持在2費",
+      "author": "water_heart",
+      "reactions": 1,
+      "channel": "✅「已回答」這算bug嗎"
+    },
+    {
+      "id": "1358771322729267472",
+      "content": "that \"lucky time\" is another trans from \"good fortune time\"",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "✅「Answered」Ryker's Wheel bug"
+    },
+    {
+      "id": "1358645439829639289",
+      "content": "Thanks for the feedback, the problem is being checked🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」[BUG] Blue Stone Throne wheel + Myriam in PvP"
     }
   ]
 }

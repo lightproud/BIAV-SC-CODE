@@ -1,17 +1,38 @@
 {
   "date": "2025-01-15",
-  "messages": 1,
-  "unique_authors": 1,
-  "reactions_total": 21,
-  "attachments": 1,
+  "messages": 76,
+  "unique_authors": 14,
+  "reactions_total": 36,
+  "attachments": 10,
   "channel_activity": {
+    "✅「已回答」請勿輕信官方PC跳轉連結": 1,
+    "莉莉的狂气爆发没有享受到中毒加成": 3,
+    "steam登录显示出错，账号登陆显示无法登录": 3,
+    "Resolutions problem after update": 4,
+    "湮滅顯示異常": 3,
+    "文字重疊": 3,
+    "手機用APPLE ID登錄和電腦用同一個APPLE ID登錄出現全新帳號": 3,
+    "中途變性": 3,
+    "鮮血鏈條刻上回聲刻印會被消耗掉": 50,
+    "Login issue": 1,
+    "問卷的必要性": 1,
     "快哉快哉": 1
   },
   "hourly_activity": {
-    "15": 1
+    "12": 2,
+    "7": 7,
+    "15": 6,
+    "18": 3,
+    "14": 3,
+    "8": 39,
+    "16": 3,
+    "9": 7,
+    "10": 5,
+    "2": 1
   },
   "message_types": {
-    "0": 1
+    "19": 7,
+    "0": 68
   },
   "top_reacted_messages": [
     {
@@ -20,6 +41,48 @@
       "author": "flim_of_life_burst",
       "reactions": 21,
       "channel": "快哉快哉"
+    },
+    {
+      "id": "1329023746345795634",
+      "content": "Bug真多，你們乾脆讓我們隨時都能切換性別好了",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "中途變性"
+    },
+    {
+      "id": "1328996822643114028",
+      "content": "如題，剛剛刻了一個回聲在血希的鏈條上丟出去這牌直接虛無掉整場不再出現，好像是bug",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "鮮血鏈條刻上回聲刻印會被消耗掉"
+    },
+    {
+      "id": "1329031944553500694",
+      "content": "就能繼續按照現在的流程去走",
+      "author": "mob1065",
+      "reactions": 3,
+      "channel": "鮮血鏈條刻上回聲刻印會被消耗掉"
+    },
+    {
+      "id": "1329068840201748572",
+      "content": "😭 URL的跳轉沒有處理好，需要用進程管理器關掉才可以啦。\n下次我們會優化的。",
+      "author": "lubi_17667",
+      "reactions": 2,
+      "channel": "✅「已回答」請勿輕信官方PC跳轉連結"
+    },
+    {
+      "id": "1329068331344330774",
+      "content": "修了修了！",
+      "author": "lubi_17667",
+      "reactions": 1,
+      "channel": "中途變性"
+    },
+    {
+      "id": "1329029424364130376",
+      "content": "我覺得應該是回聲要讓第一次鏈條生效兩次然後一樣打完鏈球消耗掉",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "鮮血鏈條刻上回聲刻印會被消耗掉"
     }
   ]
 }

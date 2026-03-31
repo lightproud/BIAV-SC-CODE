@@ -1,10 +1,12 @@
 {
   "date": "2024-11-14",
-  "messages": 10,
-  "unique_authors": 5,
-  "reactions_total": 33,
-  "attachments": 8,
+  "messages": 21,
+  "unique_authors": 11,
+  "reactions_total": 34,
+  "attachments": 9,
   "channel_activity": {
+    "請願加強圖魯和深海新角": 10,
+    "画面设置相关": 1,
     "死抗序列": 1,
     "三創": 2,
     "把希洛頭像擴大了一點": 1,
@@ -13,16 +15,22 @@
     "喚醒體投稿，假如SV的唯我絕傑轉生到忘卻前夜": 1
   },
   "hourly_activity": {
+    "0": 1,
+    "2": 1,
+    "11": 2,
+    "12": 1,
+    "13": 2,
+    "15": 3,
+    "20": 1,
+    "23": 1,
     "17": 1,
     "14": 2,
     "4": 1,
-    "15": 1,
     "9": 4,
     "19": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 11
   },
   "top_reacted_messages": [
     {
@@ -59,6 +67,13 @@
       "author": "nancyjofla",
       "reactions": 2,
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1306619322088820748",
+      "content": "想问问红蓝偏移和裁剪边缘模糊是什么？这倆是开了好还是关了好啊，都分别设置了一下好像肉眼也看不大出来😂",
+      "author": "147asd",
+      "reactions": 1,
+      "channel": "画面设置相关"
     },
     {
       "id": "1306629322789883954",

@@ -1,10 +1,27 @@
 {
   "date": "2025-06-30",
-  "messages": 10,
-  "unique_authors": 4,
-  "reactions_total": 24,
-  "attachments": 3,
+  "messages": 55,
+  "unique_authors": 16,
+  "reactions_total": 40,
+  "attachments": 19,
   "channel_activity": {
+    "💭「Processing」Connection issues": 2,
+    "✅「Answered」Quotes Bug? for Castor": 4,
+    "✅「已回答」顯示bug": 2,
+    "✅「Answered」Supply box now bug": 3,
+    "✅「已回答」为什么领不了礼匣": 3,
+    "💭「Processing」Leap keyword not formatted": 1,
+    "为什么普池那里未来角色入池时间消失了": 4,
+    "索蕾尔出货概率是不是有问题？": 4,
+    "✅「已回答」頭像朝向問題": 5,
+    "Please let us have this as a skin option!!!!!": 1,
+    "✅「Answered」UI bug - Resonance description in English doesn't fit": 2,
+    "✅「Answered」Corrosion damage not counted in Damage counter": 4,
+    "💭「Processing」Game doesn't let me make a new account": 2,
+    "💭「Processing」Casiah Heal incorrectly measured in Traphase end of game stat graphs": 2,
+    "✅「Answered」In-game texts do not match the language selected in the settings.": 2,
+    "✅「Answered」Tutorial can cause soft-lock if player has Awakeners from multiple realms.": 2,
+    "缩短了课题周期，是不是应该额外补偿多一倍的常驻抽数？": 2,
     "卡斯托爾使用手冊！": 1,
     "the intellectual body's vacation": 1,
     "邂逅于门扉": 1,
@@ -13,15 +30,27 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "2": 6,
+    "15": 4,
+    "18": 1,
+    "23": 2,
+    "9": 2,
+    "10": 4,
+    "11": 7,
+    "8": 3,
+    "16": 2,
+    "4": 2,
+    "5": 1,
+    "6": 3,
+    "3": 14,
     "12": 1,
-    "11": 2,
-    "2": 1,
     "13": 2,
-    "3": 3,
     "22": 1
   },
   "message_types": {
-    "0": 3
+    "0": 33,
+    "4": 9,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -37,6 +66,76 @@
       "author": "kourinn0707_82175",
       "reactions": 5,
       "channel": "卡斯托爾使用手冊！"
+    },
+    {
+      "id": "1389193107391909990",
+      "content": "我今天上午一次性砸了260抽到血肉池里，除了索蕾尔谁都见过\n前前后后砸进去至少有600~800抽了\n到现在都没见过索蕾尔\n是不是概率有问题？",
+      "author": "anzzz_a",
+      "reactions": 3,
+      "channel": "索蕾尔出货概率是不是有问题？"
+    },
+    {
+      "id": "1389101674559442964",
+      "content": "如题",
+      "author": "lurenjiao",
+      "reactions": 3,
+      "channel": "缩短了课题周期，是不是应该额外补偿多一倍的常驻抽数？"
+    },
+    {
+      "id": "1389186197062160405",
+      "content": "When i use them regardless of any number or any rarity of them(blue green violet",
+      "author": "jamalibnsulaiman",
+      "reactions": 2,
+      "channel": "✅「Answered」Supply box now bug"
+    },
+    {
+      "id": "1389164939511599146",
+      "content": "感謝反饋~後續會修正🙏",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」頭像朝向問題"
+    },
+    {
+      "id": "1389175625339895880",
+      "content": "如圖",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "✅「已回答」顯示bug"
+    },
+    {
+      "id": "1389200674679554058",
+      "content": "Same like me",
+      "author": "variel_oz",
+      "reactions": 1,
+      "channel": "✅「Answered」Supply box now bug"
+    },
+    {
+      "id": "1389191934781816922",
+      "content": "如题，课题礼匣无法领取",
+      "author": "anzzz_a",
+      "reactions": 1,
+      "channel": "✅「已回答」为什么领不了礼匣"
+    },
+    {
+      "id": "1389159958691450921",
+      "content": "Jenkins' card \"*Get'em! Brown*\" has an unformatted ***Leap*** keyword (no ⚠️ sym",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "💭「Processing」Leap keyword not formatted"
+    },
+    {
+      "id": "1389082424696373351",
+      "content": "Corrosion directly results in the loss of the opponent's life and is not conside",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Corrosion damage not counted in Damage counter"
+    },
+    {
+      "id": "1389072953764745238",
+      "content": "Some players have encountered this situation before, which should have triggered",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Tutorial can cause soft-lock if player has Awakeners from multiple realms."
     },
     {
       "id": "1389237499196346469",

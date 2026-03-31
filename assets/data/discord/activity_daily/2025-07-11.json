@@ -1,22 +1,52 @@
 {
   "date": "2025-07-11",
-  "messages": 8,
-  "unique_authors": 2,
-  "reactions_total": 1,
-  "attachments": 0,
+  "messages": 18,
+  "unique_authors": 6,
+  "reactions_total": 9,
+  "attachments": 1,
   "channel_activity": {
+    "Please relaunch MY TURN: INFINITE MAGIC DUEL": 4,
+    "✅Add HP + Shield UI": 3,
+    "💭「Processing」Error 7028001": 2,
+    "✅「Answered」bug with skin": 1,
     "Slay the Spire Morimens Mod Text Provided Post": 8
   },
   "hourly_activity": {
-    "10": 1,
+    "7": 3,
+    "8": 2,
+    "17": 1,
+    "18": 2,
+    "2": 1,
+    "10": 2,
     "13": 7
   },
   "message_types": {
-    "19": 3,
-    "0": 4,
-    "4": 1
+    "0": 6,
+    "4": 2,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1393283292656304229",
+      "content": "I suggest adding (HP + Shield) number next to the total incoming damage number s",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "✅Add HP + Shield UI"
+    },
+    {
+      "id": "1393296523860775015",
+      "content": "We’ll take it into consideration, thank you!",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "✅Add HP + Shield UI"
+    },
+    {
+      "id": "1393178803181846610",
+      "content": "i use windows 11 and i downloaded the game on mobile it works fine there. so i g",
+      "author": "asura2526",
+      "reactions": 2,
+      "channel": "💭「Processing」Error 7028001"
+    },
     {
       "id": "1393183588450697236",
       "content": "A figure in the mist\n\nThick fog swiftly engulfed the surroundings. The damp, icy",

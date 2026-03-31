@@ -1,23 +1,50 @@
 {
   "date": "2025-08-06",
-  "messages": 15,
-  "unique_authors": 4,
-  "reactions_total": 24,
-  "attachments": 5,
+  "messages": 80,
+  "unique_authors": 16,
+  "reactions_total": 59,
+  "attachments": 20,
   "channel_activity": {
+    "关于幻梦深潜": 6,
+    "✅「Answered」Clarification on gacha odds for standard limited": 3,
+    "✅「Answered」Rus translate": 8,
+    "💭「处理中」相位对弈唤醒体技能显示错误": 12,
+    "Please give us teasers/trailers/etc for awakers and new content!": 1,
+    "管理員又封錯人": 9,
+    "✅「已回答」宁妃在意想不到的地方更加赔钱了": 4,
+    "分享一下": 1,
+    "✅「Answered」Survey links bug": 2,
+    "✅「已回答」主線7-14普通難度存在翻譯問題": 2,
+    "✅「已回答」發現了新的特殊代稱翻譯問題": 2,
+    "✅「已回答」通訊器-圖魯的特殊代稱存在翻譯問題": 6,
+    "✅「Answered」Not a bug, missed an important detail!": 2,
+    "请尽快重视深潜奖励机制的问题": 7,
     "救救狗吧融災求助": 2,
     "分享一下这期425融灾的配队，顺便简评一下各个角色的使用感受。": 10,
     "偽造之物": 3
   },
   "hourly_activity": {
-    "3": 1,
-    "7": 1,
-    "11": 10,
-    "22": 3
+    "7": 5,
+    "13": 1,
+    "16": 3,
+    "19": 1,
+    "8": 3,
+    "18": 9,
+    "11": 14,
+    "12": 4,
+    "20": 3,
+    "22": 4,
+    "2": 2,
+    "3": 4,
+    "6": 15,
+    "10": 5,
+    "4": 2,
+    "1": 5
   },
   "message_types": {
-    "0": 1,
-    "19": 1
+    "0": 47,
+    "19": 9,
+    "4": 9
   },
   "top_reacted_messages": [
     {
@@ -26,6 +53,83 @@
       "author": "yolo_mode",
       "reactions": 22,
       "channel": "偽造之物"
+    },
+    {
+      "id": "1402564599366029364",
+      "content": "Greetings, Keeper!\n\nTo clarify, the 0.5% Limited SSR rate in the Standard Banner",
+      "author": "morimens_15",
+      "reactions": 10,
+      "channel": "✅「Answered」Clarification on gacha odds for standard limited"
+    },
+    {
+      "id": "1402602278518657075",
+      "content": "🙏 感谢理解与支持，有问题也欢迎大家@或私信戈雅，我们会尽快出面解决",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "管理員又封錯人"
+    },
+    {
+      "id": "1402462153608527912",
+      "content": "从2.0新材料需要排名拿去预告开始我就是反对的，现在作为已经过完1.5周年马上2周年的节点请尽快更新减负深潜奖励机制，把一个养成的必须材料放在排名机制里前期可以",
+      "author": "ruhebaoyangsiwa_97871",
+      "reactions": 5,
+      "channel": "请尽快重视深潜奖励机制的问题"
+    },
+    {
+      "id": "1402496668569567354",
+      "content": "好的，是昨晚約九點左右的時候。不是你們的工作人員，是中文區下放群裡成員的管理員jackpot。\n這位已經多次不去瞭解事情整體經過也不去針對當事人做調解，或根本不",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "管理員又封錯人"
+    },
+    {
+      "id": "1402651804512288879",
+      "content": "要么直接把奖励直接放到分数里面，靠分数拿奖励，要么就拿出来放到别的活动里面。核心就是把奖励变成单机的，能不能拿到，不同练度拿到多少，那就另说，但是这些起码只是玩",
+      "author": "lurenjiao",
+      "reactions": 3,
+      "channel": "关于幻梦深潜"
+    },
+    {
+      "id": "1402537870086115359",
+      "content": "感谢戈雅善解人意<:blowkiss:1356053035780014150>",
+      "author": "carme.0588",
+      "reactions": 3,
+      "channel": "管理員又封錯人"
+    },
+    {
+      "id": "1402695950866059295",
+      "content": "||因為你也知道我們的策劃是沒有什麼良心的||",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "关于幻梦深潜"
+    },
+    {
+      "id": "1402621605640929291",
+      "content": "不只是鼠鼠，其他角色也有这个问题",
+      "author": "ioshift_24740",
+      "reactions": 1,
+      "channel": "💭「处理中」相位对弈唤醒体技能显示错误"
+    },
+    {
+      "id": "1402621878929068082",
+      "content": "对了，唤醒体实训也用不了了",
+      "author": "ioshift_24740",
+      "reactions": 1,
+      "channel": "💭「处理中」相位对弈唤醒体技能显示错误"
+    },
+    {
+      "id": "1402623446520823929",
+      "content": "",
+      "author": "ioshift_24740",
+      "reactions": 1,
+      "channel": "💭「处理中」相位对弈唤醒体技能显示错误"
+    },
+    {
+      "id": "1402546474331410473",
+      "content": "Thank you for your feedback. We will fix it this afternoon! At that time, everyo",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Survey links bug"
     },
     {
       "id": "1402613968354283530",

@@ -1,27 +1,44 @@
 {
   "date": "2025-01-27",
-  "messages": 14,
-  "unique_authors": 5,
-  "reactions_total": 8,
-  "attachments": 1,
+  "messages": 37,
+  "unique_authors": 8,
+  "reactions_total": 11,
+  "attachments": 2,
   "channel_activity": {
+    "English Page pls !!": 3,
+    "請問第九章最終boss怎麼過?": 3,
+    "活动材料分布": 17,
     "💭「处理中」steam端进不去": 1,
     "2.0 BOSS難度排行榜": 11,
     "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
     "［為喚醒體換新裝］图鲁 灯会主题新年皮 含服设和简单二分立绘思路": 1
   },
   "hourly_activity": {
+    "0": 1,
+    "19": 1,
+    "23": 1,
+    "13": 6,
+    "14": 9,
+    "15": 8,
+    "16": 2,
     "12": 1,
     "10": 5,
-    "13": 5,
     "17": 1,
     "20": 1,
     "1": 1
   },
   "message_types": {
-    "19": 1
+    "0": 18,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1333440781309972623",
+      "content": "我記得界域材料4個為一組 \n積分沒差的\n經驗瓶、升階、技能材料",
+      "author": "_buqi",
+      "reactions": 3,
+      "channel": "活动材料分布"
+    },
     {
       "id": "1333385897504280576",
       "content": "我要抱怨：艾瑞卡分明是Insane",

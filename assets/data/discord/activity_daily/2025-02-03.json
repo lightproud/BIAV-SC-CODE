@@ -1,22 +1,34 @@
 {
   "date": "2025-02-03",
-  "messages": 7,
-  "unique_authors": 4,
-  "reactions_total": 11,
+  "messages": 18,
+  "unique_authors": 8,
+  "reactions_total": 18,
   "attachments": 3,
   "channel_activity": {
+    "English Page pls !!": 1,
+    "大过年过来吐槽": 2,
+    "台服的Discord論壇可以管理一下嗎?": 6,
+    "好想要烏撒貓貓律當宿舍背景🐾": 2,
     "2.0 BOSS難度排行榜": 5,
     "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
     "關卡地圖「融災禁區」總覽27期": 1
   },
   "hourly_activity": {
+    "0": 1,
+    "14": 1,
+    "20": 1,
+    "8": 4,
+    "9": 2,
+    "4": 1,
+    "5": 1,
     "17": 1,
     "18": 4,
     "22": 1,
     "13": 1
   },
   "message_types": {
-    "0": 7
+    "0": 10,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -32,6 +44,27 @@
       "author": "ernest_heart",
       "reactions": 4,
       "channel": "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得"
+    },
+    {
+      "id": "1336065699566583849",
+      "content": "幸好discord上的大伙都很温柔，换别的地方你的浮木可能保不了一点",
+      "author": "shiqihongya",
+      "reactions": 3,
+      "channel": "大过年过来吐槽"
+    },
+    {
+      "id": "1335987072120393800",
+      "content": "这哥们要么小学生要么正宗唐氏吧？名字+迷惑发言+密契没一个不唐的，创个b站号整天发他那相位对弈阴间局，打不过人家给人家挂网上说人家阴间，真就被融蚀了？",
+      "author": "nowimfaceless",
+      "reactions": 2,
+      "channel": "大过年过来吐槽"
+    },
+    {
+      "id": "1335837101597655123",
+      "content": "虽然但是，每天登陆看到校猫被暴揍了 10w+次我就心情舒畅🤤😋",
+      "author": "mzmz07033",
+      "reactions": 2,
+      "channel": "好想要烏撒貓貓律當宿舍背景🐾"
     },
     {
       "id": "1336043589473538143",

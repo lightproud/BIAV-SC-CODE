@@ -1,10 +1,15 @@
 {
   "date": "2025-08-08",
-  "messages": 22,
+  "messages": 32,
   "unique_authors": 7,
-  "reactions_total": 1103,
-  "attachments": 18,
+  "reactions_total": 1104,
+  "attachments": 21,
   "channel_activity": {
+    "关于幻梦深潜": 1,
+    "💭「Processing」Death Resistance on Overview screen is not converted to Astral Reign value": 4,
+    "✅「Answered」Clarification on gacha odds for standard limited": 1,
+    "✅「已回答」調查行動7-17普通難度存在翻譯問題": 3,
+    "💭「处理中」三角血量": 1,
     "✅「已回答」伺服器會不會有標籤？": 1,
     "✅「已回答」杜勒需要加強": 6,
     "✅「已回答」什么时候加回英文名": 1,
@@ -18,6 +23,11 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "16": 1,
+    "3": 1,
+    "8": 2,
+    "15": 1,
+    "2": 5,
     "9": 3,
     "13": 7,
     "12": 2,
@@ -27,8 +37,8 @@
     "17": 3
   },
   "message_types": {
-    "0": 11,
-    "19": 1
+    "0": 6,
+    "4": 4
   },
   "top_reacted_messages": [
     {
@@ -72,6 +82,13 @@
       "author": "magushermes",
       "reactions": 2,
       "channel": "✅「已回答」杜勒需要加強"
+    },
+    {
+      "id": "1403417799325384835",
+      "content": "你游还有十队融灾呢🤣 ，这版本355到400还塞了等级上限材料",
+      "author": "relmx",
+      "reactions": 1,
+      "channel": "关于幻梦深潜"
     },
     {
       "id": "1403304210468175974",

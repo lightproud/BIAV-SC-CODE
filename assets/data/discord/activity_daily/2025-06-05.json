@@ -1,10 +1,18 @@
 {
   "date": "2025-06-05",
-  "messages": 60,
+  "messages": 86,
   "unique_authors": 12,
-  "reactions_total": 78,
-  "attachments": 6,
+  "reactions_total": 86,
+  "attachments": 15,
   "channel_activity": {
+    "✅「已回答」周年命轮疑似与未送出的花冲突": 7,
+    "✅「Answered」Hey, I (and some other players) have an issue logging into the game.": 3,
+    "✅「Answered」Please make animated backgrounds be able to be turned off. 請提供關閉動畫背景的選項。": 1,
+    "放過神國祭司吧": 3,
+    "✅「已回答」旺达不进普池吗": 7,
+    "✅「已回答」切换头像时头像选择界面会变成这样": 2,
+    "✅「Answered」Dungeon State Error": 2,
+    "Nautila's story change": 1,
     "弥萨格校友号码本4.0": 1,
     "相位對弈麻痹大隊小型指南：我沒說你可以打擊了": 4,
     "卡斯托尔加强后综合测评：玩法详解+抽取建议": 1,
@@ -20,23 +28,27 @@
     "1380131496278495333": 1
   },
   "hourly_activity": {
+    "22": 7,
+    "19": 2,
+    "21": 2,
+    "9": 6,
+    "17": 3,
+    "3": 6,
+    "10": 8,
+    "11": 2,
+    "14": 3,
+    "16": 7,
+    "8": 5,
     "4": 1,
-    "9": 4,
-    "8": 4,
     "6": 13,
-    "16": 5,
     "5": 15,
-    "17": 2,
-    "11": 1,
     "12": 3,
-    "13": 3,
-    "14": 2,
-    "10": 7
+    "13": 3
   },
   "message_types": {
-    "19": 8,
-    "0": 45,
-    "4": 1
+    "0": 22,
+    "4": 3,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -61,6 +73,13 @@
       "channel": ""
     },
     {
+      "id": "1380121536840732682",
+      "content": "<:24_clown:1374289675417686016>",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "放過神國祭司吧"
+    },
+    {
       "id": "1380048484320940033",
       "content": "更新一下:莉莉+12，80級",
       "author": "universe.dark",
@@ -82,6 +101,13 @@
       "channel": "趕快趁我還神智不清的時候"
     },
     {
+      "id": "1380264096645251223",
+      "content": "Error code is 502",
+      "author": "drlester",
+      "reactions": 2,
+      "channel": "✅「Answered」Hey, I (and some other players) have an issue logging into the game."
+    },
+    {
       "id": "1380232933062873179",
       "content": "兩個老師的飯都好好吃，我吃吃吃吃吃吃吃",
       "author": "void_1546.",
@@ -94,6 +120,13 @@
       "author": "dongpormeat",
       "reactions": 2,
       "channel": "趕快趁我還神智不清的時候"
+    },
+    {
+      "id": "1380023171410821172",
+      "content": "Hi, the cause of this issue has been identified and arrangements will be made to",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Dungeon State Error"
     },
     {
       "id": "1380063033849679912",

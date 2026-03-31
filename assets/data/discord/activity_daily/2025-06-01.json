@@ -1,25 +1,63 @@
 {
   "date": "2025-06-01",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 2,
-  "attachments": 2,
+  "messages": 16,
+  "unique_authors": 12,
+  "reactions_total": 20,
+  "attachments": 6,
   "channel_activity": {
+    "考虑出个练习模式嘛": 2,
+    "✅「已回答」切换头像时头像选择界面会变成这样": 1,
+    "✅「已回答」溫柯爾3費盾觸發躍遷問題": 2,
+    "About Merchandise": 2,
+    "错字：差异，诧异": 2,
+    "Downloadable CG Gallery": 1,
+    "Counter Damage Conversion in ruleset": 1,
+    "为什么意识潜游：热情归尘的战斗关卡是星辰篇": 3,
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "11": 2,
+    "3": 1,
+    "5": 2,
+    "16": 3,
+    "9": 2,
+    "15": 2,
+    "12": 1,
+    "13": 1,
     "8": 2
   },
   "message_types": {
-    "0": 2
+    "0": 13,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1378693829649236031",
+      "content": "如题\n\n提供木桩子~~类似pvp里的猫~~给玩家测试队伍伤害和手法之类\n最好能提供自选造物功能和一键满大招功能，毕竟你游现在各种乘区越来越多了，像星辰篇那堆基伤",
+      "author": "flarinsidia",
+      "reactions": 12,
+      "channel": "考虑出个练习模式嘛"
+    },
+    {
+      "id": "1378756955236991056",
+      "content": "Was the wording removed in the astral reign ruleset about the 70% reduction in c",
+      "author": "monchi3524",
+      "reactions": 5,
+      "channel": "Counter Damage Conversion in ruleset"
+    },
     {
       "id": "1378658072741937215",
       "content": "收米回家",
       "author": "yingmai_",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1378721442912403657",
+      "content": "可能因为是星辰篇出的吧",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "为什么意识潜游：热情归尘的战斗关卡是星辰篇"
     }
   ]
 }

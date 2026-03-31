@@ -1,10 +1,11 @@
 {
   "date": "2024-01-08",
-  "messages": 30,
+  "messages": 31,
   "unique_authors": 8,
   "reactions_total": 119,
   "attachments": 16,
   "channel_activity": {
+    "對於目前公關與營運方面的想法與建議。": 1,
     "Morimens平行宇宙論": 5,
     "《忘卻前夜》聲優檔案 - CHAOS": 1,
     "一圖流角色養成指南 | 1.0-雨鎮詭影": 10,
@@ -12,6 +13,7 @@
     "1193859503096070234": 11
   },
   "hourly_activity": {
+    "13": 1,
     "0": 1,
     "6": 2,
     "12": 3,
@@ -25,7 +27,7 @@
     "11": 2
   },
   "message_types": {
-    "0": 6
+    "0": 1
   },
   "top_reacted_messages": [
     {

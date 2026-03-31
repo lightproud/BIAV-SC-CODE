@@ -1,10 +1,18 @@
 {
   "date": "2025-03-14",
-  "messages": 13,
-  "unique_authors": 6,
-  "reactions_total": 42,
-  "attachments": 1,
+  "messages": 40,
+  "unique_authors": 10,
+  "reactions_total": 44,
+  "attachments": 4,
   "channel_activity": {
+    "星辰篇搞波次战斗能不能显示波次": 2,
+    "純討論，為什麼熔朵的體重少了0.1磅": 8,
+    "✅「Answered」PC steam version help": 1,
+    "Should Lily be added to new Chaos Banner as she was added to permanent banner?": 1,
+    "什么时候才能出双方同时选卡牌的活动？": 2,
+    "✅「已回答」卡牌错位": 8,
+    "✅「已回答」珊珊瑚螺旋 相位bug": 3,
+    "✅「Answered」Million loving gaze description": 2,
     "存档 顺便参加一下活动": 1,
     "1350060973083590666": 1,
     "1350060160739184690": 8,
@@ -12,14 +20,23 @@
     "1350058287688712253": 2
   },
   "hourly_activity": {
+    "8": 6,
+    "13": 6,
+    "15": 7,
+    "16": 1,
+    "4": 1,
+    "6": 3,
+    "9": 1,
+    "12": 3,
+    "3": 3,
     "11": 3,
     "10": 4,
-    "12": 1,
-    "13": 3,
     "19": 2
   },
   "message_types": {
-    "0": 1
+    "0": 20,
+    "19": 3,
+    "4": 4
   },
   "top_reacted_messages": [
     {
@@ -56,6 +73,13 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1349960307082133584",
+      "content": "这卡这里了",
+      "author": "molove0286",
+      "reactions": 2,
+      "channel": "✅「已回答」卡牌错位"
     },
     {
       "id": "1350102008106975322",

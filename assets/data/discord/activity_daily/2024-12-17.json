@@ -1,10 +1,14 @@
 {
   "date": "2024-12-17",
-  "messages": 35,
+  "messages": 46,
   "unique_authors": 11,
-  "reactions_total": 102,
-  "attachments": 2,
+  "reactions_total": 107,
+  "attachments": 4,
   "channel_activity": {
+    "三星bug没完全修好": 7,
+    "會活下來嗎": 2,
+    "When is Tulu going to be on standard banner?": 1,
+    "请问有没有银钥匙的周边": 1,
     "彌薩格校貓 你到底想干嘛？": 28,
     "萊克同人轉載": 1,
     "這太美麗了😭": 2,
@@ -12,16 +16,21 @@
     "🔸【超越維度的祝福】認領專區": 1
   },
   "hourly_activity": {
+    "5": 1,
+    "6": 1,
+    "13": 3,
+    "14": 4,
+    "8": 1,
+    "9": 2,
+    "7": 2,
     "15": 22,
     "16": 7,
     "23": 2,
-    "14": 2,
-    "18": 1,
-    "9": 1
+    "18": 1
   },
   "message_types": {
-    "0": 24,
-    "19": 4
+    "0": 10,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -88,11 +97,25 @@
       "channel": "彌薩格校貓 你到底想干嘛？"
     },
     {
+      "id": "1318477645649809449",
+      "content": "暫時還沒有哦，收到守密人的周邊建議。",
+      "author": "lubi_17667",
+      "reactions": 3,
+      "channel": "请问有没有银钥匙的周边"
+    },
+    {
       "id": "1318605580138709012",
       "content": "這是這款的核心強項",
       "author": "Deleted User",
       "reactions": 3,
       "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1318500988436484117",
+      "content": "N真的該出 有認真看後面劇情的應該都知道...",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "會活下來嗎"
     },
     {
       "id": "1318714617912098928",

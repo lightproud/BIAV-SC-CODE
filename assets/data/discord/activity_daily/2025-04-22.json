@@ -1,26 +1,41 @@
 {
   "date": "2025-04-22",
-  "messages": 36,
-  "unique_authors": 6,
-  "reactions_total": 20,
-  "attachments": 7,
+  "messages": 58,
+  "unique_authors": 7,
+  "reactions_total": 23,
+  "attachments": 13,
   "channel_activity": {
+    "✅「已回答」蟲族羊媽狂氣減費bug": 1,
+    "✅「Answered」Translation for French": 2,
+    "✅「已回答」关于怨恨锁链封印无效": 1,
+    "💭「處理中」校友名單慘遭融蝕": 2,
+    "✅「Answered」24 Chaos Trial bug! Rouse ain't 24!": 3,
+    "✅「已回答」原来怨恨锁链是个长达一年的bug吗": 4,
+    "✅「已回答」如图所示,怨恨锁链生效不正常": 1,
+    "✅「已回答」bug": 6,
+    "✅「已回答」试用关卡「24」bug": 2,
     "相位对弈新速攻队伍攻略": 1,
     "一點點鯊守私設文...吧? （清水.jpg）": 2,
     "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑": 32,
     "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）": 1
   },
   "hourly_activity": {
-    "13": 3,
+    "14": 1,
+    "23": 2,
+    "13": 4,
+    "19": 2,
+    "3": 2,
+    "6": 5,
+    "4": 3,
+    "2": 7,
     "10": 1,
     "11": 7,
-    "12": 24,
-    "4": 1
+    "12": 24
   },
   "message_types": {
-    "0": 33,
-    "19": 2,
-    "4": 1
+    "0": 13,
+    "4": 4,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -36,6 +51,13 @@
       "author": "tianfang5580",
       "reactions": 5,
       "channel": "相位对弈新速攻队伍攻略"
+    },
+    {
+      "id": "1364252054817869937",
+      "content": "號令可以成功的減兩費但螺湮只能減一費",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "✅「已回答」蟲族羊媽狂氣減費bug"
     },
     {
       "id": "1364190375023087616",

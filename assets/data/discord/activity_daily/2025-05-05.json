@@ -1,10 +1,24 @@
 {
   "date": "2025-05-05",
-  "messages": 15,
-  "unique_authors": 8,
-  "reactions_total": 47,
-  "attachments": 13,
+  "messages": 53,
+  "unique_authors": 16,
+  "reactions_total": 68,
+  "attachments": 34,
   "channel_activity": {
+    "✅「Answered」 Strike to protect Bug": 2,
+    "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 3,
+    "✅「已回答」试用机制是否有些不合理": 2,
+    "✅「已回答」讚的": 1,
+    "✅「Answered」Winkle Relic Not Working": 4,
+    "✅「Answered」Text not translate": 2,
+    "✅「已回答」聖火，但是神王": 5,
+    "✅「已回答」對弈新命輪均有bug": 4,
+    "✅「Answered」Corposant skill description error in traphase": 2,
+    "克珀珊特領航Bug與靈塑加強建議": 2,
+    "💭「Processing」Corposant Star Chapter Talent": 3,
+    "✅「Answered」Sanga misnamed as corposant": 5,
+    "船长已经出了整整3个小时了，怎么还没有发布加强公告": 1,
+    "[Visual Bug?] Corposant Height": 2,
     "Tentacle Crit Build Theory Crafting": 7,
     "【MMD】神っぽいな「克莱门汀」": 1,
     "5771新春活动招人+预热": 1,
@@ -12,16 +26,24 @@
     "1271491376881598494": 2
   },
   "hourly_activity": {
-    "12": 6,
+    "10": 9,
+    "12": 7,
+    "4": 6,
+    "5": 3,
+    "11": 2,
+    "9": 10,
+    "3": 2,
+    "14": 2,
+    "2": 4,
+    "15": 2,
+    "1": 1,
+    "13": 1,
     "23": 2,
-    "14": 1,
-    "0": 2,
-    "4": 2,
-    "10": 1,
-    "2": 1
+    "0": 2
   },
   "message_types": {
-    "0": 13
+    "0": 35,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -39,11 +61,67 @@
       "channel": ""
     },
     {
+      "id": "1368965706787455128",
+      "content": "我知道字面上寫「戰鬥開始時，使所有敵人……」意思是戰鬥開始那一刻在場上的敵人，所以我是想建議改成「給自己觸手最終傷害+15%」的buff取代給敵人debuff。",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "克珀珊特領航Bug與靈塑加強建議"
+    },
+    {
+      "id": "1368916549863211008",
+      "content": "官群大佬用萌新号打了下试用，发现虽然角色给的是50级的，但血量转化比例是跟着账号等级走的，于是就出现了55血打1w6血的试用。\n试用这种练度独立的模式会被玩家账",
+      "author": "muliupan",
+      "reactions": 5,
+      "channel": "✅「已回答」试用机制是否有些不合理"
+    },
+    {
       "id": "1368923751898546197",
       "content": "# Why not stack strength and tentacle damage via full aqua team?\nI find tentacle",
       "author": "aurora3981",
       "reactions": 5,
       "channel": "Tentacle Crit Build Theory Crafting"
+    },
+    {
+      "id": "1368880169510502423",
+      "content": "The 'Each time another Awaker unleashes Exalt, Winkle gains 5 Aliemus, and the A",
+      "author": "hakugin0_",
+      "reactions": 2,
+      "channel": "✅「Answered」Winkle Relic Not Working"
+    },
+    {
+      "id": "1368767835261632573",
+      "content": "I think in the patch notes it includes her star chapter talent, but in game I do",
+      "author": "starfish3302",
+      "reactions": 2,
+      "channel": "💭「Processing」Corposant Star Chapter Talent"
+    },
+    {
+      "id": "1368877749942489128",
+      "content": "<@1131790839291596841>\nScreenshot taken today (<t:1746436242>), Corposant is out",
+      "author": "__goz__",
+      "reactions": 2,
+      "channel": "✅「Answered」Sanga misnamed as corposant"
+    },
+    {
+      "id": "1368789301873082471",
+      "content": "Corposant Event -  Stage Old Sextant Madness text not translate",
+      "author": "aegisx",
+      "reactions": 1,
+      "channel": "✅「Answered」Text not translate"
+    },
+    {
+      "id": "1368772918363947070",
+      "content": "聖火指引 圖示錯誤\n\n領航者大錯特錯 \n完全變成催眠靈擺，效果也是催眠的\n\n另外催眠靈擺是不是削了 變扣12點",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "✅「已回答」對弈新命輪均有bug"
+    },
+    {
+      "id": "1368882171854454834",
+      "content": "",
+      "author": "satachan",
+      "reactions": 1,
+      "channel": "✅「Answered」Corposant skill description error in traphase"
     },
     {
       "id": "1369094762321285180",

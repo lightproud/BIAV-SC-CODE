@@ -1,19 +1,41 @@
 {
   "date": "2024-08-24",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 8,
+  "unique_authors": 4,
+  "reactions_total": 22,
+  "attachments": 3,
   "channel_activity": {
+    "✅「已回答」賬號丟失？！": 3,
+    "真的很需要改進命輪分解的功能……": 2,
+    "💭「處理中」ios優化": 1,
     "同人自創忘卻模式": 1,
     "自創喚醒體相關：暗殺失敗的懲罰": 1
   },
   "hourly_activity": {
-    "14": 1,
+    "23": 3,
+    "15": 1,
+    "16": 1,
+    "14": 2,
     "17": 1
   },
   "message_types": {
-    "0": 2
+    "0": 5,
+    "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1276932920203808951",
+      "content": "抽卡的時候遇上命輪已滿需要分解不是什麼大問題\n問題就在於你們的分解功能做的很爛！R命輪一律被鎖定不能立刻分解反而不鎖定SR命輪\n這樣讓我真的很不方便……\n還需要",
+      "author": "roast_fish",
+      "reactions": 11,
+      "channel": "真的很需要改進命輪分解的功能……"
+    },
+    {
+      "id": "1276934341355634728",
+      "content": "设定可以调吧",
+      "author": "be_queitplease",
+      "reactions": 11,
+      "channel": "真的很需要改進命輪分解的功能……"
+    }
+  ]
 }

@@ -1,16 +1,25 @@
 {
   "date": "2025-05-10",
-  "messages": 9,
-  "unique_authors": 4,
-  "reactions_total": 14,
-  "attachments": 4,
+  "messages": 18,
+  "unique_authors": 6,
+  "reactions_total": 16,
+  "attachments": 5,
   "channel_activity": {
+    "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 1,
+    "✅「Answered」Region lock..": 1,
+    "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 1,
+    "✅「Answered」Permission of image use for planner app": 2,
+    "💭「處理中」游戏停留在检查资源更新的界面，无法进入游戏": 4,
     "關卡地圖「幻夢深潛」總覽Ⅰ（重置版）": 1,
     "關卡地圖「幻夢深潛」總覽Ⅱ（重製版）": 3,
     "簡單分享 領航員ー克珀珊特 及 命輪聖火中的指引 在相位對弈(PVP)中的作用、隊伍": 2,
     "女仆日当然是……": 3
   },
   "hourly_activity": {
+    "9": 4,
+    "7": 1,
+    "10": 3,
+    "11": 1,
     "17": 1,
     "18": 3,
     "0": 1,
@@ -19,7 +28,7 @@
   },
   "message_types": {
     "0": 8,
-    "19": 1
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -28,6 +37,20 @@
       "author": "cjsyds9784",
       "reactions": 12,
       "channel": "女仆日当然是……"
+    },
+    {
+      "id": "1370665273966723173",
+      "content": "只有我是被卡墨跟小貓的奇異男同愛情吸引進來的嗎",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+    },
+    {
+      "id": "1370703295483482124",
+      "content": "Thank you for your enthusiasm and development efforts! You have permission to us",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "✅「Answered」Permission of image use for planner app"
     },
     {
       "id": "1370554581737803786",

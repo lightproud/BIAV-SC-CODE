@@ -1,19 +1,24 @@
 {
   "date": "2025-05-17",
-  "messages": 2,
-  "unique_authors": 1,
+  "messages": 5,
+  "unique_authors": 3,
   "reactions_total": 2,
-  "attachments": 0,
+  "attachments": 2,
   "channel_activity": {
+    "✅「已回答」找不到有互相關注的校友的助戰": 2,
+    "💭「Processing」Music overlap": 1,
     "關卡地圖「幻夢深潛」總覽Ⅲ": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "18": 1,
+    "23": 1,
+    "5": 1,
     "0": 1,
     "17": 1
   },
   "message_types": {
-    "0": 1
+    "0": 3
   },
   "top_reacted_messages": [
     {

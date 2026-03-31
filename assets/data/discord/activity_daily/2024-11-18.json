@@ -1,24 +1,52 @@
 {
   "date": "2024-11-18",
-  "messages": 14,
-  "unique_authors": 7,
-  "reactions_total": 80,
-  "attachments": 3,
+  "messages": 89,
+  "unique_authors": 29,
+  "reactions_total": 94,
+  "attachments": 29,
   "channel_activity": {
+    "About official materials usage": 4,
+    "这么搞就没意思了": 5,
+    "密契無法預覽": 3,
+    "这是什么bug": 25,
+    "2次": 2,
+    "老鼠動作被吃了": 1,
+    "其实出不了新角色的话可以卖皮肤啊": 4,
+    "闪退bug": 1,
+    "Is there no trial for Tulu?": 2,
+    "這位無法攻擊的大人是誰家的部將": 1,
+    "Text font bug ?": 6,
+    "希洛的毒抗已經突破天際": 3,
+    "萊克 攤牌時刻-衍生卡語音錯誤": 4,
+    "御四家除朵尔和两个希洛档案中部分语音缺失": 2,
+    "为什么一周年的活动不如半年年？": 8,
+    "你遊除了四大界域還有哪些界域": 2,
+    "逼死強迫症": 1,
+    "关于卡茜亚": 1,
     "塔薇...": 2,
     "打不過本源朵爾，只好來畫畫": 4,
     "跑不掉 不跑了（原地躺下": 8
   },
   "hourly_activity": {
-    "4": 1,
-    "10": 3,
-    "6": 1,
-    "8": 1,
-    "3": 8
+    "7": 6,
+    "10": 16,
+    "6": 3,
+    "15": 2,
+    "17": 1,
+    "4": 25,
+    "5": 3,
+    "16": 1,
+    "13": 3,
+    "11": 4,
+    "12": 3,
+    "3": 17,
+    "9": 1,
+    "8": 3,
+    "2": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 4
+    "0": 68,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -43,6 +71,13 @@
       "channel": "跑不掉 不跑了（原地躺下"
     },
     {
+      "id": "1307913709972357130",
+      "content": "歪掉了",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "逼死強迫症"
+    },
+    {
       "id": "1307903235629121586",
       "content": "戈利亞的脖子：（危）",
       "author": "yolo_mode",
@@ -50,11 +85,81 @@
       "channel": "跑不掉 不跑了（原地躺下"
     },
     {
+      "id": "1308014657990037526",
+      "content": "get 我们会尝试修正这个问题",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "萊克 攤牌時刻-衍生卡語音錯誤"
+    },
+    {
       "id": "1307915629923274894",
       "content": "省略了一點東西\n準確來講是想看他被揍飛之後在地上吐血的狼狽樣子（好",
       "author": "yolo_mode",
       "reactions": 2,
       "channel": "跑不掉 不跑了（原地躺下"
+    },
+    {
+      "id": "1308015948456001548",
+      "content": "Thank you for your support of the game! You are free to use the official materia",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "About official materials usage"
+    },
+    {
+      "id": "1307962781391388745",
+      "content": "塔维变的鼠群冲击，在下一关变成詹金的了，伤害还强制为一，那变的意义在哪",
+      "author": "sadanshishen",
+      "reactions": 1,
+      "channel": "这么搞就没意思了"
+    },
+    {
+      "id": "1307926924760186880",
+      "content": "",
+      "author": "sadanshishen",
+      "reactions": 1,
+      "channel": "这是什么bug"
+    },
+    {
+      "id": "1307929646519681085",
+      "content": "打出衍生的牌会变成原来的牌进牌库",
+      "author": "sadanshishen",
+      "reactions": 1,
+      "channel": "这是什么bug"
+    },
+    {
+      "id": "1308056540204367912",
+      "content": "",
+      "author": ".galeroar",
+      "reactions": 1,
+      "channel": "2次"
+    },
+    {
+      "id": "1308062091223240777",
+      "content": "剛剛有被這個2次戳到笑點，不過有隱形捲軸可以拉，好像是往下滑一下就可以看到全文",
+      "author": "menta_y_menta",
+      "reactions": 1,
+      "channel": "2次"
+    },
+    {
+      "id": "1308040745961394207",
+      "content": "墨菲主線那套便服其實也很好看，立繪可以直接拿來用",
+      "author": "kamiya246",
+      "reactions": 1,
+      "channel": "其实出不了新角色的话可以卖皮肤啊"
+    },
+    {
+      "id": "1307921351134281739",
+      "content": "前一個是抽獎型的不太想刷吧，但上上次我記得有真的無限印章🤔",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "为什么一周年的活动不如半年年？"
+    },
+    {
+      "id": "1307924971670081557",
+      "content": "半周年的时候是多了一个最后一关，每次扫荡直接掉落印章，比那种抽奖的池子效率高非常非常多",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "为什么一周年的活动不如半年年？"
     }
   ]
 }

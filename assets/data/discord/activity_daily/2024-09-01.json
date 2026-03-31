@@ -1,26 +1,46 @@
 {
   "date": "2024-09-01",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 6,
-  "attachments": 1,
+  "messages": 9,
+  "unique_authors": 6,
+  "reactions_total": 17,
+  "attachments": 2,
   "channel_activity": {
+    "✅「已回答」定向命轮普池什么时候修改了": 7,
     "閒著沒事的蝦虎蘭天賦設計": 2
   },
   "hourly_activity": {
+    "2": 2,
+    "3": 1,
+    "7": 1,
+    "15": 3,
     "12": 1,
     "14": 1
   },
   "message_types": {
-    "0": 2
+    "0": 6,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1279636851950489621",
+      "content": "本來也不是百份百，只是一開始有之前的積累這樣",
+      "author": "cra0261_",
+      "reactions": 10,
+      "channel": "✅「已回答」定向命轮普池什么时候修改了"
+    },
     {
       "id": "1279782330411782285",
       "content": "UID：100041951\n\n起源：有的角色有天賦，有的沒有，\"我認為\"不符合整體的設計美感(再次強調，只是\"我認為\"而已)，感覺設計組要嘛不以為意，無傷大雅，",
       "author": "hailananxie7110",
       "reactions": 6,
       "channel": "閒著沒事的蝦虎蘭天賦設計"
+    },
+    {
+      "id": "1279707217183899689",
+      "content": "有没有一种可能，之前你抽的有补偿次数，现在你抽完补偿次数了",
+      "author": "hawkbeck",
+      "reactions": 1,
+      "channel": "✅「已回答」定向命轮普池什么时候修改了"
     }
   ]
 }

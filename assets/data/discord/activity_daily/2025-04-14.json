@@ -1,10 +1,28 @@
 {
   "date": "2025-04-14",
-  "messages": 11,
-  "unique_authors": 5,
-  "reactions_total": 2,
-  "attachments": 4,
+  "messages": 111,
+  "unique_authors": 19,
+  "reactions_total": 28,
+  "attachments": 23,
   "channel_activity": {
+    "✅「已回答」如图所示,怨恨锁链生效不正常": 18,
+    "✅「Answered」Audio stops when leaving game window": 7,
+    "✅「Answered」Origin of Time Rewind/Reversion Bug?": 2,
+    "💭「處理中」重复精英战斗": 2,
+    "✅「已回答」典藏館又被融蝕了": 4,
+    "✅「Answered」Material Conversation button for Shattered Remnants does nothing": 4,
+    "✅「已回答」手機遊玩卡在 正在檢查資源更新 沒有進度": 3,
+    "關於靈知消耗": 15,
+    "✅「已回答」2-15bug": 8,
+    "💭「處理中」2-16怪物不叠疯狂": 3,
+    "✅「已回答」星辰篇2章克莱门汀事件重复": 5,
+    "✅「已回答」克莱门汀打克莱门汀不出血": 6,
+    "✅「已回答」弥利老bug了": 4,
+    "✅「已回答」沒牌 真的沒牌": 8,
+    "✅「Ответ дан」Ежемесячная подписка не работает": 7,
+    "small UI concern (Suggestion)": 1,
+    "下周更新典藏館該上新星辰篇一二章壁紙了": 1,
+    "✅「Answered」Does It work": 2,
     "新版本御四家0成本开荒教学": 3,
     "✦第2章「蜕变」关卡流程总览·星辰篇✦": 1,
     "✦第2章「克莱门汀」无提示事件·星辰篇✦": 3,
@@ -13,23 +31,124 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "11": 3,
-    "14": 1,
-    "15": 3,
-    "4": 1,
-    "5": 2,
-    "8": 1
+    "4": 8,
+    "6": 9,
+    "8": 22,
+    "15": 6,
+    "3": 6,
+    "22": 5,
+    "2": 7,
+    "11": 5,
+    "9": 3,
+    "10": 7,
+    "7": 10,
+    "12": 15,
+    "5": 7,
+    "14": 1
   },
   "message_types": {
-    "0": 10
+    "0": 67,
+    "4": 19,
+    "19": 14
   },
   "top_reacted_messages": [
+    {
+      "id": "1361255986618171544",
+      "content": "經校工查驗，克萊門汀不是蟲族生物🙏她是喚醒體，和蟲族生物有本質區別",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": "✅「已回答」克莱门汀打克莱门汀不出血"
+    },
+    {
+      "id": "1361249765882331258",
+      "content": "2-2和2-14的事件一模一样，这不太对",
+      "author": "silverstream_s",
+      "reactions": 3,
+      "channel": "✅「已回答」星辰篇2章克莱门汀事件重复"
+    },
+    {
+      "id": "1361311464400355611",
+      "content": "我記得以前復活藥戰鬥失敗會返還的，但是我打星辰篇時候戰鬥失敗的靈芝消耗是沒有返還的，請問是我記憶錯亂還是官方有改？麻煩請告訴我一下這真的很重要",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "關於靈知消耗"
+    },
+    {
+      "id": "1361318377557070026",
+      "content": "流程是這樣的\n第一次戰鬥失敗-點靈芝-依然失敗-放棄戰鬥\n然後下次再戰鬥的時候靈芝的狀態減一了",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "關於靈知消耗"
+    },
+    {
+      "id": "1361248540570947624",
+      "content": "👁️催眠妖虫是不是虫族，说话.jpg",
+      "author": "navirecorbeau",
+      "reactions": 2,
+      "channel": "✅「已回答」克莱门汀打克莱门汀不出血"
+    },
+    {
+      "id": "1361167102433558699",
+      "content": "Goya去問問👁️ 👁️",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "下周更新典藏館該上新星辰篇一二章壁紙了"
+    },
     {
       "id": "1361215609869701241",
       "content": "大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第5期（第32期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\nP.S.图片较长，在线预览无法显",
       "author": "silverstream_s",
       "reactions": 2,
       "channel": "✦关卡地图「融灾禁区」总览32期·星辰篇✦"
+    },
+    {
+      "id": "1361230542074282114",
+      "content": "好滴🫶",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」如图所示,怨恨锁链生效不正常"
+    },
+    {
+      "id": "1361252734551986296",
+      "content": "嗨~校工已查驗到問題，後續會修復多層封印疊加的情況🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」如图所示,怨恨锁链生效不正常"
+    },
+    {
+      "id": "1361468147227689082",
+      "content": "Thanks again, this a minor issue at the end of the day. Take your time, I'm stil",
+      "author": "foxblood13",
+      "reactions": 1,
+      "channel": "✅「Answered」Audio stops when leaving game window"
+    },
+    {
+      "id": "1361173918718886059",
+      "content": "Thanks for the feedback, we are checking🥹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Origin of Time Rewind/Reversion Bug?"
+    },
+    {
+      "id": "1361278288089186404",
+      "content": "廣播劇後半段被融蝕",
+      "author": "elkmilu",
+      "reactions": 1,
+      "channel": "✅「已回答」典藏館又被融蝕了"
+    },
+    {
+      "id": "1361187911474876526",
+      "content": "<@1131790839291596841>",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "✅「已回答」2-15bug"
+    },
+    {
+      "id": "1361252960939802624",
+      "content": "謝謝你！",
+      "author": "2041880926",
+      "reactions": 1,
+      "channel": "✅「已回答」沒牌 真的沒牌"
     }
   ]
 }

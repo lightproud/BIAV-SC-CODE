@@ -1,10 +1,11 @@
 {
   "date": "2025-03-30",
-  "messages": 6,
+  "messages": 7,
   "unique_authors": 3,
   "reactions_total": 2,
-  "attachments": 1,
+  "attachments": 2,
   "channel_activity": {
+    "不会是有啥elo吧": 1,
     "【同人活動毀損灰霧之都】マーフィーを描いてみた": 1,
     "*千面幻象*达芙黛尔单人向": 1,
     "存档 顺便参加一下活动": 1,
@@ -13,6 +14,7 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "15": 1,
     "2": 2,
     "4": 1,
     "21": 1,
@@ -20,7 +22,7 @@
     "8": 1
   },
   "message_types": {
-    "0": 3
+    "0": 1
   },
   "top_reacted_messages": [
     {

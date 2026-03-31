@@ -1,10 +1,14 @@
 {
   "date": "2025-05-03",
-  "messages": 23,
+  "messages": 30,
   "unique_authors": 13,
-  "reactions_total": 30,
-  "attachments": 8,
+  "reactions_total": 38,
+  "attachments": 9,
   "channel_activity": {
+    "✅「已回答」蟲族羊媽狂氣減費bug": 1,
+    "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 1,
+    "✅「Answered」 Strike to protect Bug": 4,
+    "✅「已回答」第四樂章使用四次後無法生效": 1,
     "神國圖魯教 星辰篇": 6,
     "好久没画依然是没细化完的一张，先发发了": 7,
     "以葛籣，角色技能與命輪介紹": 6,
@@ -12,6 +16,9 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "2": 3,
+    "8": 4,
+    "10": 2,
     "11": 1,
     "14": 12,
     "15": 2,
@@ -19,12 +26,11 @@
     "6": 1,
     "7": 1,
     "9": 1,
-    "8": 2,
     "13": 2
   },
   "message_types": {
-    "0": 18,
-    "19": 4
+    "19": 3,
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -49,11 +55,32 @@
       "channel": "5771新春活动招人+预热"
     },
     {
+      "id": "1368170487297085500",
+      "content": "I had the same issue with Wanda's 4 cost and 3 cost cards in the past, and i'll ",
+      "author": "zier.0",
+      "reactions": 4,
+      "channel": "✅「Answered」 Strike to protect Bug"
+    },
+    {
+      "id": "1368136646150848512",
+      "content": "One of Lily's cards are broken, both on computer and mobile.\nWhen you go to use ",
+      "author": "rei_the_witch",
+      "reactions": 3,
+      "channel": "✅「Answered」 Strike to protect Bug"
+    },
+    {
       "id": "1368153793555861586",
       "content": "我覺得非利士人我好像都可以",
       "author": "fengliyaowo",
       "reactions": 2,
       "channel": "以葛籣，角色技能與命輪介紹"
+    },
+    {
+      "id": "1368054319286583376",
+      "content": "親愛的海之心：\n\n問題已知悉，戈雅會整理給校工進行查驗，祝您週末愉快（90度鞠躬）（吻手💋 ）\n\n戈雅敬上🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》"
     },
     {
       "id": "1368233748507787326",

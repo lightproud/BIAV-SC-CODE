@@ -1,23 +1,77 @@
 {
   "date": "2025-04-04",
-  "messages": 6,
-  "unique_authors": 3,
-  "reactions_total": 3,
-  "attachments": 0,
+  "messages": 31,
+  "unique_authors": 15,
+  "reactions_total": 17,
+  "attachments": 7,
   "channel_activity": {
+    "✅「Answered」Incorrect Assignment Rewards": 1,
+    "💭「Processing」[BUG] Blue Stone Throne wheel + Myriam in PvP": 5,
+    "💭「Processing」Minor Materials Visual bug": 3,
+    "退游倒计时": 9,
+    "关于时间原点": 3,
+    "克萊門汀的出現，開始有對種族特攻": 1,
+    "校猫出来说话": 1,
+    "預料之外的背刺": 2,
     "*千面幻象*达芙黛尔单人向": 2,
     "「   」的故事（上）": 4
   },
   "hourly_activity": {
-    "2": 2,
+    "8": 3,
+    "12": 10,
+    "13": 3,
+    "9": 1,
+    "10": 1,
+    "11": 2,
+    "20": 1,
+    "5": 1,
+    "2": 3,
+    "4": 1,
+    "14": 1,
     "15": 3,
     "16": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 4
+    "0": 21,
+    "4": 2,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1357685492195266731",
+      "content": "限定唤醒体应该得到可以回溯启灵的效果，因为有的限定角色完全不强（作为限定来说），甚至也不适用于星辰篇。可以预见长时间内都不会有相应补强，一个是因猫独断专行惯了，",
+      "author": "287405tjy_28066",
+      "reactions": 4,
+      "channel": "关于时间原点"
+    },
+    {
+      "id": "1357627067713323031",
+      "content": "I should be getting more due to higher total level",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "✅「Answered」Incorrect Assignment Rewards"
+    },
+    {
+      "id": "1357635678841602213",
+      "content": "感谢忘却前夜八个月的陪伴【忘却前夜相位对弈送分，退游倒计时-哔哩哔哩】 https://b23.tv/8UIUbKL\n<:pray:13560531162604",
+      "author": "luhongran",
+      "reactions": 3,
+      "channel": "退游倒计时"
+    },
+    {
+      "id": "1357700513872740483",
+      "content": "",
+      "author": "madlax",
+      "reactions": 2,
+      "channel": "💭「Processing」[BUG] Blue Stone Throne wheel + Myriam in PvP"
+    },
+    {
+      "id": "1357642466060271678",
+      "content": "再削成蠢銀嚕",
+      "author": "_buqi",
+      "reactions": 2,
+      "channel": "退游倒计时"
+    },
     {
       "id": "1357744039461392757",
       "content": "`你的臉瞬間燒了起來。張口結舌，額頭抵住彎起的膝蓋，你發出無意義的呻吟；她則一味輕笑，透著惡作劇般的愉悅。\n\n「怎麼了？」\n\n「太丟臉了……」你悶聲說道，手指用",

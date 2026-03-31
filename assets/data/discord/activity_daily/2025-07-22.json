@@ -1,10 +1,31 @@
 {
   "date": "2025-07-22",
-  "messages": 32,
-  "unique_authors": 4,
-  "reactions_total": 18,
-  "attachments": 25,
+  "messages": 105,
+  "unique_authors": 14,
+  "reactions_total": 23,
+  "attachments": 53,
   "channel_activity": {
+    "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
+    "💭「Processing」I can't start the game, it freezes": 5,
+    "✅「Answered」{SKErrorDomain,0} when trying to top-up on iPhone!": 3,
+    "✅「Answered」Incorrect Description of Realm Specific Gift of Knowledge Reward Items": 1,
+    "💭「Processing」All my wheels disappeared?": 3,
+    "✅「已回答」回溯之后红点去不掉了咋办": 4,
+    "✅「Answered」Can't redeploy an Assignment after collecting the rewards for only one assignment": 4,
+    "✅「Answered」Can't upgrade Wanda's Spine Needle Cains card/skill": 11,
+    "✅「Answered」Problem signing in with Account": 3,
+    "More English channels! Such as \"General Chat\", \"Lore and Speculation\" and \"New Player Help\"": 1,
+    "💭「Processing」tabbing out during Ramona's dialogue in the tutorial turns of the music in the scene.": 1,
+    "✅「Answered」Some sort of Prologue dialogue bug…?": 1,
+    "✅「Answered」Incorrect wording with the description of 'Original Essence Chapter - Oblivion Chapter'": 2,
+    "✅「Answered」Visual Bug after mission clear": 3,
+    "✅「Answered」Multidimensional Link bug": 2,
+    "💭「Processing」Softlocked?": 3,
+    "💭「Processing」Text error in arc 2 chapter 3-4": 2,
+    "✅「Answered」Some tooltip bugs!": 5,
+    "✅「Answered」Some UI bugs/issues": 12,
+    "💭「处理中」宿舍背景": 4,
+    "💭「Processing」Boss bugged to 1 Max hp": 2,
     "✅「已回答」需要修复dc22000订阅没有礼包码的bug": 2,
     "✅「Answered」Some leftover awkward translations!": 2,
     "深海隊攻略之—水船隊": 1,
@@ -14,19 +35,27 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "20": 2,
+    "8": 23,
+    "9": 15,
+    "13": 3,
+    "23": 1,
+    "15": 3,
+    "16": 1,
+    "10": 7,
+    "11": 2,
+    "17": 6,
+    "4": 6,
+    "7": 18,
+    "5": 14,
+    "6": 2,
     "14": 1,
-    "15": 1,
-    "7": 3,
-    "20": 1,
-    "5": 7,
-    "19": 1,
-    "8": 7,
-    "10": 6,
-    "17": 5
+    "19": 1
   },
   "message_types": {
-    "0": 2,
-    "4": 2
+    "0": 52,
+    "4": 19,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -42,6 +71,41 @@
       "author": "void_1546.",
       "reactions": 7,
       "channel": "深海隊攻略之—水船隊"
+    },
+    {
+      "id": "1397152488980742205",
+      "content": "<@409650839402184704>🌹 The binding process is as follows:\nUser Center-Link Socia",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Problem signing in with Account"
+    },
+    {
+      "id": "1397141716733268069",
+      "content": "I'm really sorry for the misunderstanding caused. The English translation of the",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Incorrect wording with the description of 'Original Essence Chapter - Oblivion Chapter'"
+    },
+    {
+      "id": "1397134147192881152",
+      "content": "🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Softlocked?"
+    },
+    {
+      "id": "1397122318131527793",
+      "content": "🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "💭「Processing」Text error in arc 2 chapter 3-4"
+    },
+    {
+      "id": "1397081684196720651",
+      "content": "Here are a few user interface bugs i've noticed, they're minor, but it would be ",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "✅「Answered」Some UI bugs/issues"
     }
   ]
 }

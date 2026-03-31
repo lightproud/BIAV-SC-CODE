@@ -1,23 +1,27 @@
 {
   "date": "2024-11-23",
-  "messages": 5,
+  "messages": 15,
   "unique_authors": 4,
-  "reactions_total": 11,
+  "reactions_total": 15,
   "attachments": 0,
   "channel_activity": {
+    "請願本源朵爾進典藏館以及實裝上線": 10,
     "塔薇...": 3,
     "往日余影": 1,
     "歡愉脊髓劍": 1
   },
   "hourly_activity": {
+    "0": 3,
+    "1": 1,
+    "7": 3,
+    "9": 4,
     "2": 1,
     "5": 1,
     "11": 1,
-    "9": 1,
     "3": 1
   },
   "message_types": {
-    "0": 5
+    "0": 10
   },
   "top_reacted_messages": [
     {
@@ -26,6 +30,13 @@
       "author": "ena04564",
       "reactions": 5,
       "channel": "塔薇..."
+    },
+    {
+      "id": "1309809356237443113",
+      "content": "沒有我只是拿朵爾會自爆開玩笑而已",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "請願本源朵爾進典藏館以及實裝上線"
     },
     {
       "id": "1309714542703677481",

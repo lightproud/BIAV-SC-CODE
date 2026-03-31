@@ -1,24 +1,31 @@
 {
   "date": "2025-01-24",
-  "messages": 18,
+  "messages": 23,
   "unique_authors": 5,
   "reactions_total": 41,
-  "attachments": 4,
+  "attachments": 6,
   "channel_activity": {
+    "English Page pls !!": 1,
+    "脑缸能不能给我们表演一下背刺黄牛": 1,
+    "請問第九章最終boss怎麼過?": 3,
     "需要吃一點只能在垃圾桶找到的愛情線": 15,
     "讨厌您来": 1,
     "【时摆组】水死体は恋したい": 1,
     "cat fist": 1
   },
   "hourly_activity": {
+    "0": 1,
+    "17": 1,
+    "9": 2,
+    "11": 1,
     "6": 13,
     "13": 2,
     "10": 1,
     "7": 2
   },
   "message_types": {
-    "0": 10,
-    "19": 8
+    "0": 3,
+    "19": 2
   },
   "top_reacted_messages": [
     {

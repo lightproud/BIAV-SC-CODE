@@ -1,24 +1,40 @@
 {
   "date": "2025-05-08",
-  "messages": 9,
-  "unique_authors": 3,
-  "reactions_total": 2,
-  "attachments": 5,
+  "messages": 19,
+  "unique_authors": 7,
+  "reactions_total": 4,
+  "attachments": 7,
   "channel_activity": {
+    "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 1,
+    "✅「Answered」Corposant Overexalt Lightning Retribution Bug?": 1,
+    "✅「已回答」新角劇情第二章BGM怪怪的": 1,
+    "有沒有考慮出個命輪排序功能": 4,
+    "For Corposant Overexalt": 3,
     "🪸": 2,
     "【MMD】神っぽいな「克莱门汀」": 1,
     "1271491376881598494": 6
   },
   "hourly_activity": {
-    "2": 1,
+    "17": 1,
+    "16": 1,
+    "8": 5,
+    "0": 1,
+    "2": 2,
+    "4": 2,
     "5": 5,
-    "4": 1,
     "6": 2
   },
   "message_types": {
-    "0": 3
+    "0": 10
   },
   "top_reacted_messages": [
+    {
+      "id": "1369951164711440464",
+      "content": "目前隨著角色增多，需求不同的密契，以及不同的屬性，配套的密契也越來越多。\n可不可以考慮按照密契约類型排序方便玩家選擇？",
+      "author": "randomplayer852",
+      "reactions": 2,
+      "channel": "有沒有考慮出個命輪排序功能"
+    },
     {
       "id": "1369912455492276294",
       "content": "輸出向 / 詩籤→隕日→巨人之刃（跨越疼痛→堅鋼意志） 「懲戒雷霆 刻印小丑」\n\n輔助拐 / 隱祕的誕生\n\n生存向 / 靈魂誕生→珊瑚女之死→跨越疼痛→吞噬搖籃",

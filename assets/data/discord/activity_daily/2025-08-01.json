@@ -1,10 +1,21 @@
 {
   "date": "2025-08-01",
-  "messages": 42,
-  "unique_authors": 5,
-  "reactions_total": 4,
-  "attachments": 17,
+  "messages": 69,
+  "unique_authors": 12,
+  "reactions_total": 10,
+  "attachments": 25,
   "channel_activity": {
+    "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 5,
+    "✅「已回答」调查数据bug：最高力量": 5,
+    "✅「Answered」Tawil card \" Master of all thing\" bug": 1,
+    "💭「Processing」Fin of Sorrow Wheel is Bugged- Effect is doubled currently": 1,
+    "💭「处理中」狂气特殊词汇错误": 1,
+    "💭「Processing」Bug if parasite enemy attempts to infect you while having death resistance": 2,
+    "通讯设备+首领战无效": 2,
+    "能不能考虑出钢笔礼包": 3,
+    "💭「Processing」H9-3 achievement bug": 3,
+    "💭「Processing」Issue with logging in": 2,
+    "💭「Processing」Tl error in salvador exalt": 2,
     "Remove recommended account level from game": 1,
     "神國圖魯教 星辰篇": 34,
     "是复古报纸！": 3,
@@ -12,7 +23,18 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
-    "3": 8,
+    "16": 7,
+    "1": 2,
+    "2": 2,
+    "11": 1,
+    "12": 1,
+    "19": 1,
+    "15": 2,
+    "6": 6,
+    "8": 2,
+    "3": 9,
+    "14": 1,
+    "0": 1,
     "4": 26,
     "5": 1,
     "17": 5,
@@ -20,9 +42,25 @@
     "10": 1
   },
   "message_types": {
-    "0": 1
+    "0": 19,
+    "4": 5,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1400762010345410632",
+      "content": "根本不够用啊，群里高练度的群友都说缺钢笔洗密契，如果出相关礼包一定会买，比起红石头来说大家更需要钢笔，希望尽快上新礼包🙏🏻",
+      "author": "cheshire0529",
+      "reactions": 4,
+      "channel": "能不能考虑出钢笔礼包"
+    },
+    {
+      "id": "1400670500606316596",
+      "content": "关于【最高力量为0】的问题，我们已经查找到原因了，会尽快修复放出<:pray:1356053116260454534> \n其他问题我们看看<:Emoji_XLS",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」调查数据bug：最高力量"
+    },
     {
       "id": "1400685122319155263",
       "content": "還可以啦",

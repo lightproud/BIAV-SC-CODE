@@ -1,26 +1,32 @@
 {
   "date": "2025-05-18",
-  "messages": 11,
-  "unique_authors": 5,
-  "reactions_total": 21,
-  "attachments": 1,
+  "messages": 45,
+  "unique_authors": 8,
+  "reactions_total": 29,
+  "attachments": 9,
   "channel_activity": {
+    "✅「已回答」找不到有互相關注的校友的助戰": 31,
+    "一些便利性方面的建议": 2,
+    "✅「Answered」Corposant mysteriously missing all base art in my game": 1,
     "醫生": 4,
     "1271491376881598494": 5,
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "8": 2,
+    "7": 8,
+    "8": 22,
+    "14": 6,
+    "15": 1,
+    "22": 1,
     "9": 2,
     "0": 1,
     "1": 1,
     "4": 1,
-    "5": 2,
-    "7": 1,
-    "14": 1
+    "5": 2
   },
   "message_types": {
-    "0": 4
+    "19": 12,
+    "0": 22
   },
   "top_reacted_messages": [
     {
@@ -29,6 +35,27 @@
       "author": "undecember_news",
       "reactions": 21,
       "channel": "醫生"
+    },
+    {
+      "id": "1373674189994725386",
+      "content": "钥令来源杂乱其实我想说好久了，基本所有地方都会有钥令产出，而且缺乏对应角色的专属效果。\n然后就是特删记录作为当前时间线主角参与的故事我觉得应该有主线级别的待遇，",
+      "author": "ruhebaoyangsiwa_97871",
+      "reactions": 4,
+      "channel": "一些便利性方面的建议"
+    },
+    {
+      "id": "1373578396440858715",
+      "content": "只能提供莉莉給你",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "✅「已回答」找不到有互相關注的校友的助戰"
+    },
+    {
+      "id": "1373789068625711114",
+      "content": "I recently went and reinstalled morimen's on a new computer and when I synched u",
+      "author": "hanedtom",
+      "reactions": 2,
+      "channel": "✅「Answered」Corposant mysteriously missing all base art in my game"
     }
   ]
 }

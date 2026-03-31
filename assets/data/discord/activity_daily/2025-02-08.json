@@ -1,25 +1,73 @@
 {
   "date": "2025-02-08",
-  "messages": 2,
-  "unique_authors": 1,
-  "reactions_total": 5,
-  "attachments": 1,
+  "messages": 14,
+  "unique_authors": 11,
+  "reactions_total": 49,
+  "attachments": 2,
   "channel_activity": {
+    "English Page pls !!": 1,
+    "💭「Processing」Stuck in \"Checking for resource updates\"": 1,
+    "别给500沉淀转移注意了，深潜养成材料更是重量级": 8,
+    "Will there be a login screen fix for linux any time soon?": 1,
+    "编队组合要求增加至少十组": 1,
     "［繪畫］當你補習時，畫出的畫令你覺得你到底要會考了嗎": 2
   },
   "hourly_activity": {
+    "13": 1,
+    "11": 1,
+    "1": 3,
+    "2": 1,
+    "3": 2,
+    "18": 3,
+    "0": 1,
     "7": 2
   },
   "message_types": {
-    "0": 2
+    "19": 4,
+    "0": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1337614778247680032",
+      "content": "必须抵制赛博打工，本来深潜+活动65首通+活动癫狂首通+融灾+主线就已经很肝了，现在深潜还得不跳过战斗去硬肝分数，策划的目标群体是有多闲😡",
+      "author": "chaostheory_123",
+      "reactions": 21,
+      "channel": "别给500沉淀转移注意了，深潜养成材料更是重量级"
+    },
+    {
+      "id": "1337848462686814248",
+      "content": "看不懂在抱怨什麼 想要高報酬不就該高投入嗎？",
+      "author": "night0140",
+      "reactions": 14,
+      "channel": "别给500沉淀转移注意了，深潜养成材料更是重量级"
+    },
+    {
+      "id": "1337593250227290214",
+      "content": "要37天主宰或56天深潛大師才能練滿一隻角色的新天賦哦",
+      "author": "_cwz_",
+      "reactions": 5,
+      "channel": "别给500沉淀转移注意了，深潜养成材料更是重量级"
+    },
     {
       "id": "1337690793279754270",
       "content": "我媽表示（完全不像\n（應該以後拿來丟圖片",
       "author": "huangziqiao_45693",
       "reactions": 5,
       "channel": "［繪畫］當你補習時，畫出的畫令你覺得你到底要會考了嗎"
+    },
+    {
+      "id": "1337750536094482493",
+      "content": "I m just download game for first time dont have account yet and keep stucking in",
+      "author": "thesiras",
+      "reactions": 2,
+      "channel": "💭「Processing」Stuck in \"Checking for resource updates\""
+    },
+    {
+      "id": "1337579204300243038",
+      "content": "配队需要增加本来就是官方组队功能特别辣鸡的缘故，每次组队都要必须上命轮，如果要更改密契还得上密契，现在官方却因此推出收费编队组合，我只能说真的不要脸<:fing",
+      "author": "sense25.",
+      "reactions": 2,
+      "channel": "编队组合要求增加至少十组"
     }
   ]
 }

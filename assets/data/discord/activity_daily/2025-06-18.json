@@ -1,22 +1,29 @@
 {
   "date": "2025-06-18",
-  "messages": 53,
+  "messages": 60,
   "unique_authors": 5,
-  "reactions_total": 11,
-  "attachments": 11,
+  "reactions_total": 12,
+  "attachments": 12,
   "channel_activity": {
+    "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 3,
+    "✅「已回答」混沌界域第二次鑰令觸發不了雙發鑰令": 2,
+    "✅「Answered」Castor Posse missing": 2,
     "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers": 1,
     "银河行星的日服大冒险": 51,
     "杜勒赛因技能组diy": 1
   },
   "hourly_activity": {
-    "3": 1,
+    "4": 1,
+    "5": 2,
+    "3": 5,
     "12": 13,
     "16": 38,
     "18": 1
   },
   "message_types": {
-    "0": 1
+    "0": 4,
+    "4": 2,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -32,6 +39,13 @@
       "author": "akalanden",
       "reactions": 3,
       "channel": "银河行星的日服大冒险"
+    },
+    {
+      "id": "1384732866235334719",
+      "content": "Yes, this issue has been fixed~https://discord.com/channels/1131791637933199470/",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✅「Answered」Castor Posse missing"
     }
   ]
 }

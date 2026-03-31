@@ -1,22 +1,36 @@
 {
   "date": "2025-03-15",
-  "messages": 2,
-  "unique_authors": 2,
-  "reactions_total": 1,
-  "attachments": 1,
+  "messages": 11,
+  "unique_authors": 7,
+  "reactions_total": 12,
+  "attachments": 5,
   "channel_activity": {
+    "✅「Answered」Add crafting for Shattered Remnant of Dreams": 4,
+    "✅「已回答」steam登录港服登不了": 2,
+    "純討論，為什麼熔朵的體重少了0.1磅": 1,
+    "Should Lily be added to new Chaos Banner as she was added to permanent banner?": 2,
     "1271491376881598494": 1,
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "11": 1,
+    "11": 5,
+    "20": 2,
+    "14": 1,
+    "9": 1,
+    "23": 1,
     "21": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 1
+    "0": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1350432555400167466",
+      "content": "Please add a way to exchange gold tier to purple. <:wish:1236951537788649492>",
+      "author": "aurora3981",
+      "reactions": 11,
+      "channel": "✅「Answered」Add crafting for Shattered Remnant of Dreams"
+    },
     {
       "id": "1350581729760645224",
       "content": "При усилении реликвии описание полностью не помещается",

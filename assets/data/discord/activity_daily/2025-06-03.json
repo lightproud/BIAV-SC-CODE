@@ -1,10 +1,18 @@
 {
   "date": "2025-06-03",
-  "messages": 10,
-  "unique_authors": 6,
-  "reactions_total": 52,
-  "attachments": 11,
+  "messages": 49,
+  "unique_authors": 15,
+  "reactions_total": 62,
+  "attachments": 25,
   "channel_activity": {
+    "✅「Answered」In-game texts do not match the language selected in the settings.": 3,
+    "✅「已回答」PVP鳥人Bug": 15,
+    "✅「已回答」PVP突破底層代碼了（蓄力疊加超過10層）": 2,
+    "About Merchandise": 1,
+    "✅「Answered」Event shop broken + other bugs": 4,
+    "✅「已回答」如视频所示": 9,
+    "💭「處理中」顯示不完整": 4,
+    "Skin Voucher Expiry": 1,
     "弥萨格校友号码本4.0": 6,
     "卡斯托尔...": 1,
     "黑皮大学生": 1,
@@ -12,15 +20,24 @@
     "1379534998704488528": 1
   },
   "hourly_activity": {
+    "4": 1,
+    "12": 9,
+    "13": 11,
+    "2": 10,
+    "1": 3,
+    "6": 1,
+    "19": 1,
+    "20": 3,
+    "21": 4,
     "9": 1,
     "17": 2,
     "18": 2,
-    "21": 3,
-    "8": 1,
-    "13": 1
+    "8": 1
   },
   "message_types": {
-    "0": 8
+    "19": 9,
+    "0": 29,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -38,11 +55,25 @@
       "channel": "弥萨格校友号码本4.0"
     },
     {
+      "id": "1379282985336967248",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 5,
+      "channel": "✅「已回答」如视频所示"
+    },
+    {
       "id": "1379524537338695872",
       "content": "100425856 席維斯汀\n\n90級+12薩爾瓦多，+12石板+12藏品，87%二律背反\n預兆10級，靈塑10級",
       "author": "xu6_",
       "reactions": 4,
       "channel": "弥萨格校友号码本4.0"
+    },
+    {
+      "id": "1379431555847684258",
+      "content": "任意角色攜帶命輪：不可承受的自由後護盾疊加超過110，在下個回合開始時會擁有11層蓄力",
+      "author": "void_1546.",
+      "reactions": 3,
+      "channel": "✅「已回答」PVP突破底層代碼了（蓄力疊加超過10層）"
     },
     {
       "id": "1379398323915718697",
@@ -57,6 +88,20 @@
       "author": "taayoui",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1379437785051697372",
+      "content": "I will be waiting for good news!",
+      "author": "ataraxion",
+      "reactions": 1,
+      "channel": "✅「Answered」In-game texts do not match the language selected in the settings."
+    },
+    {
+      "id": "1379282906580783209",
+      "content": "<@139343733714845697> check in game notice ....",
+      "author": "aegisx",
+      "reactions": 1,
+      "channel": "✅「Answered」Event shop broken + other bugs"
     }
   ]
 }

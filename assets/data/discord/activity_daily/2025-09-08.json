@@ -1,10 +1,11 @@
 {
   "date": "2025-09-08",
-  "messages": 135,
+  "messages": 136,
   "unique_authors": 34,
   "reactions_total": 67,
   "attachments": 37,
   "channel_activity": {
+    "Traphase opponent card visual bug": 1,
     "✅「Answered」Dialogue Scroll Was a Mistake": 5,
     "✅「已回答」遺骨逼我刪牌": 1,
     "✅「已回答」皮克曼2費拿完造物之後不能不消耗狂想": 1,
@@ -36,6 +37,7 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "7": 11,
     "18": 3,
     "20": 4,
     "14": 4,
@@ -48,7 +50,6 @@
     "15": 10,
     "12": 8,
     "3": 12,
-    "7": 10,
     "23": 1,
     "11": 8,
     "2": 5,
@@ -58,9 +59,7 @@
     "16": 5
   },
   "message_types": {
-    "0": 86,
-    "4": 18,
-    "19": 5
+    "0": 1
   },
   "top_reacted_messages": [
     {

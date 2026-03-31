@@ -1,29 +1,36 @@
 {
   "date": "2025-07-09",
-  "messages": 31,
+  "messages": 38,
   "unique_authors": 8,
-  "reactions_total": 77,
-  "attachments": 2,
+  "reactions_total": 84,
+  "attachments": 7,
   "channel_activity": {
+    "Feedback/general review on latest morimens merchandise": 1,
+    "✅「Answered」Holy Banner Bug": 2,
+    "Minor Event UI Quality of Life Suggestions": 1,
+    "翻譯建議": 2,
+    "唤醒体天赋洗点": 1,
     "❌Is the art Ai generated?": 25,
     "Server tags": 1,
     "《他們的女兒》": 1,
     "1390375103707218041": 4
   },
   "hourly_activity": {
+    "3": 4,
+    "10": 1,
+    "17": 6,
+    "13": 1,
+    "15": 8,
+    "12": 1,
     "11": 6,
-    "15": 7,
-    "17": 4,
     "19": 8,
     "14": 1,
     "9": 1,
-    "0": 1,
-    "3": 3
+    "0": 1
   },
   "message_types": {
-    "19": 5,
-    "0": 19,
-    "4": 2
+    "0": 6,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -53,6 +60,34 @@
       "author": "risend",
       "reactions": 5,
       "channel": "Server tags"
+    },
+    {
+      "id": "1392446993699180584",
+      "content": "Lemme explain how this thing has happened:\nI exit from the Traphase after i won ",
+      "author": "ameumaru31",
+      "reactions": 2,
+      "channel": "✅「Answered」Holy Banner Bug"
+    },
+    {
+      "id": "1392552628332003368",
+      "content": "1) When selecting a difficulty, the game defaults to Madness if it was cleared b",
+      "author": "mac2492",
+      "reactions": 2,
+      "channel": "Minor Event UI Quality of Life Suggestions"
+    },
+    {
+      "id": "1392503496414068906",
+      "content": "現版本拉蒙娜2費卡：攻勢推演的英文翻譯是Assault Thesis\n將其翻譯改為Offensive Deduction是否會更好？",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "翻譯建議"
+    },
+    {
+      "id": "1392558845816995990",
+      "content": "why ru playing morimens inside the black pool <:takenotes:1357186646294138890>",
+      "author": "venustoglasskin",
+      "reactions": 1,
+      "channel": "✅「Answered」Holy Banner Bug"
     },
     {
       "id": "1392525146497093742",

@@ -1,27 +1,38 @@
 {
   "date": "2025-07-10",
-  "messages": 77,
+  "messages": 91,
   "unique_authors": 13,
-  "reactions_total": 49,
-  "attachments": 0,
+  "reactions_total": 55,
+  "attachments": 2,
   "channel_activity": {
+    "Feedback/general review on latest morimens merchandise": 1,
+    "💭「Processing」Error 7028001": 1,
+    "✅「Answered」bug with skin": 3,
+    "✅「已回答」典藏館文字邏輯bug": 4,
+    "✅「Answered」Holy Banner Bug": 4,
+    "关于氪金相关的问题。": 1,
     "❌Is the art Ai generated?": 75,
     "《他們的女兒》": 1,
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "2": 32,
+    "21": 1,
+    "16": 1,
+    "17": 1,
+    "20": 1,
+    "3": 3,
+    "6": 9,
+    "5": 27,
     "1": 9,
-    "2": 29,
-    "3": 1,
-    "5": 26,
-    "6": 5,
     "7": 1,
     "11": 5,
     "9": 1
   },
   "message_types": {
-    "19": 20,
-    "0": 55
+    "19": 2,
+    "0": 8,
+    "4": 4
   },
   "top_reacted_messages": [
     {
@@ -60,11 +71,25 @@
       "channel": "❌Is the art Ai generated?"
     },
     {
+      "id": "1392922720756437184",
+      "content": "This not a bug because the skin just change the cards picture, during the game t",
+      "author": "be_queitplease",
+      "reactions": 3,
+      "channel": "✅「Answered」bug with skin"
+    },
+    {
       "id": "1392699293311439069",
       "content": "i think you have a point when you say that 'ai is just a tool, in the end it's s",
       "author": "applepieeater123",
       "reactions": 3,
       "channel": "❌Is the art Ai generated?"
+    },
+    {
+      "id": "1392749283945742499",
+      "content": "哈喽，戈利亚的部分确实存在少量逻辑问题，校工后续会优化~\n\n莉兹的部分是正常的🌹",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」典藏館文字邏輯bug"
     },
     {
       "id": "1392696650975150120",
@@ -79,6 +104,13 @@
       "author": "thpdom",
       "reactions": 2,
       "channel": "❌Is the art Ai generated?"
+    },
+    {
+      "id": "1392694532679929926",
+      "content": "Goya has already conveyed it to the art department~Thank you again🥰",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "Feedback/general review on latest morimens merchandise"
     },
     {
       "id": "1392694053136502967",

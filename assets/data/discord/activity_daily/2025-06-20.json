@@ -1,25 +1,42 @@
 {
   "date": "2025-06-20",
-  "messages": 9,
-  "unique_authors": 3,
-  "reactions_total": 764,
-  "attachments": 2,
+  "messages": 35,
+  "unique_authors": 10,
+  "reactions_total": 768,
+  "attachments": 7,
   "channel_activity": {
+    "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血": 3,
+    "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 3,
+    "✅「已回答」熔朵的超限爆發 有時語音會沒聲音": 3,
+    "💭「Processing」Pc ver. Stuck on update resource screen and then error 35": 2,
+    "✅「已回答」混沌界域第二次鑰令觸發不了雙發鑰令": 3,
+    "💭「處理中」翠玉拓印": 2,
+    "✅「已回答」無法透過角色技能素材需求進入技本": 4,
+    "💭「Processing」Text line problem": 5,
+    "序章的这张cg能放进档案馆吗": 1,
     "银河行星的日服大冒险": 4,
     "好久没做DIY了，发一个杜勒塞因": 4,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "2": 1,
-    "9": 2,
+    "9": 4,
+    "10": 1,
+    "6": 12,
+    "19": 1,
+    "3": 3,
+    "17": 1,
+    "8": 2,
+    "2": 2,
+    "4": 3,
+    "0": 1,
     "14": 2,
     "5": 1,
-    "7": 2,
-    "8": 1
+    "7": 2
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "0": 13,
+    "19": 7,
+    "4": 6
   },
   "top_reacted_messages": [
     {
@@ -30,11 +47,32 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1385455056610136115",
+      "content": "嗨守密人~這個問題我們已經在安排修復了，會盡快放出🥰",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "✅「已回答」熔朵的超限爆發 有時語音會沒聲音"
+    },
+    {
       "id": "1385497823491002378",
       "content": "按厨师等方面在写，算是利用血肉界域精通释出的一个角色向补强，同时无胎吞噬和多重吞噬也能弥补其他血肉角色的弱点，力量方面虽然可能数值给的不少，但是想到有克莱门汀这",
       "author": "dyyqcwj",
       "reactions": 2,
       "channel": "好久没做DIY了，发一个杜勒塞因"
+    },
+    {
+      "id": "1385541815892967504",
+      "content": "done",
+      "author": "guffy10",
+      "reactions": 1,
+      "channel": "💭「Processing」Pc ver. Stuck on update resource screen and then error 35"
+    },
+    {
+      "id": "1385510049232850944",
+      "content": "好的謝謝戈雅<:love:1356053099931897977>",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": "✅「已回答」混沌界域第二次鑰令觸發不了雙發鑰令"
     }
   ]
 }

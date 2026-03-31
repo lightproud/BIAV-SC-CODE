@@ -1,0 +1,40 @@
+{
+  "date": "2025-05-24",
+  "messages": 6,
+  "unique_authors": 5,
+  "reactions_total": 4,
+  "attachments": 2,
+  "channel_activity": {
+    "✅「已回答」蟲族羊媽狂氣減費bug": 1,
+    "💭「Processing」Steam Error": 1,
+    "How do I change the window size?": 3,
+    "Increase the number of seals dropped from upcoming boss": 1
+  },
+  "hourly_activity": {
+    "15": 1,
+    "6": 2,
+    "2": 1,
+    "4": 1,
+    "18": 1
+  },
+  "message_types": {
+    "19": 1,
+    "0": 5
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1375726785639223366",
+      "content": "same issue i cant play on my pc because of this. stuck with using mobile for the",
+      "author": "ancilage",
+      "reactions": 2,
+      "channel": "💭「Processing」Steam Error"
+    },
+    {
+      "id": "1375900706657276035",
+      "content": "Each quill is worth 20 seals so Sovereign's Decree gives 10*20 = 200 seals per c",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "Increase the number of seals dropped from upcoming boss"
+    }
+  ]
+}

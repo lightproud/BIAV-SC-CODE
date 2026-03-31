@@ -1,10 +1,15 @@
 {
   "date": "2025-01-22",
-  "messages": 11,
-  "unique_authors": 7,
-  "reactions_total": 37,
-  "attachments": 4,
+  "messages": 36,
+  "unique_authors": 13,
+  "reactions_total": 51,
+  "attachments": 6,
   "channel_activity": {
+    "English Page pls !!": 4,
+    "脑缸能不能给我们表演一下背刺黄牛": 4,
+    "請問第九章最終boss怎麼過?": 11,
+    "忘却前夜匹配时间长不能加个人机": 5,
+    "新年期间能多复刻几个角色吗？": 1,
     "2.0 BOSS難度排行榜": 1,
     "沉淵之光，幽藍而耀｜泛用向全深海融災禁區通關心得": 1,
     "約稿展示 請大家吃飯": 3,
@@ -13,15 +18,24 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "3": 2,
-    "14": 2,
+    "0": 1,
+    "5": 8,
+    "14": 3,
+    "17": 1,
+    "2": 4,
+    "7": 1,
+    "6": 2,
+    "9": 2,
+    "15": 3,
+    "16": 2,
+    "3": 4,
     "8": 3,
     "10": 1,
-    "2": 2,
     "20": 1
   },
   "message_types": {
-    "0": 10
+    "0": 23,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -53,6 +67,13 @@
       "channel": "約稿展示 請大家吃飯"
     },
     {
+      "id": "1331503598265307228",
+      "content": "你就撐到第八回合它就會自己進下一階段了\n不然就是一直睡",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "請問第九章最終boss怎麼過?"
+    },
+    {
       "id": "1331576520745029632",
       "content": "big胆！看见你游唯一官配还不速速跪下",
       "author": "yingmai_",
@@ -60,11 +81,60 @@
       "channel": "【守密人×小蛋糕】纱麻"
     },
     {
+      "id": "1331558563692286045",
+      "content": "打黑化朵儿我用的尤乌雷姬逃课队",
+      "author": "luoqixikiss",
+      "reactions": 2,
+      "channel": "請問第九章最終boss怎麼過?"
+    },
+    {
+      "id": "1331652341610446879",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 2,
+      "channel": "請問第九章最終boss怎麼過?"
+    },
+    {
+      "id": "1331469838396293200",
+      "content": "180秒...",
+      "author": "tofu0834",
+      "reactions": 2,
+      "channel": "忘却前夜匹配时间长不能加个人机"
+    },
+    {
       "id": "1331548597677981758",
       "content": "玄學都一堆朋友和錢\n輸光...",
       "author": "ice_storys",
       "reactions": 2,
       "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1331489498323882004",
+      "content": "要蹭也是什麼絕望零緋紅檔案崩壞新北鐵道之類的",
+      "author": "tofu0834",
+      "reactions": 1,
+      "channel": "脑缸能不能给我们表演一下背刺黄牛"
+    },
+    {
+      "id": "1331504924353232896",
+      "content": "前八回如果能扛住就別打死",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "請問第九章最終boss怎麼過?"
+    },
+    {
+      "id": "1331652401354248262",
+      "content": "血条再厚，七刀带走",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "請問第九章最終boss怎麼過?"
+    },
+    {
+      "id": "1331663954493177948",
+      "content": "是bug",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "請問第九章最終boss怎麼過?"
     }
   ]
 }

@@ -1,10 +1,13 @@
 {
   "date": "2025-07-19",
-  "messages": 26,
+  "messages": 41,
   "unique_authors": 10,
-  "reactions_total": 117,
-  "attachments": 23,
+  "reactions_total": 121,
+  "attachments": 25,
   "channel_activity": {
+    "✅「Answered」Unable to claim the new code": 1,
+    "新版本融灾问题": 13,
+    "24's Birthday": 1,
     "蔷薇的旋转圆舞曲": 1,
     "灵芝骑士变身表情包": 1,
     "Lore Accurate Doresain": 4,
@@ -14,8 +17,13 @@
     "1390375103707218041": 5
   },
   "hourly_activity": {
+    "16": 2,
+    "2": 1,
+    "8": 3,
+    "9": 2,
+    "12": 9,
+    "14": 3,
     "6": 2,
-    "12": 5,
     "5": 5,
     "7": 3,
     "17": 6,
@@ -23,7 +31,8 @@
     "4": 2
   },
   "message_types": {
-    "0": 21
+    "0": 14,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -74,6 +83,34 @@
       "author": "muliupan",
       "reactions": 3,
       "channel": "灵芝骑士变身表情包"
+    },
+    {
+      "id": "1396168933546917898",
+      "content": "Hi I tried to redeem the new code but I am getting a message saying it is not va",
+      "author": "monchi3524",
+      "reactions": 1,
+      "channel": "✅「Answered」Unable to claim the new code"
+    },
+    {
+      "id": "1396058840340107347",
+      "content": "平常打350的可以繼續打350\n獎勵依然不變不是嗎",
+      "author": "glacy_9918",
+      "reactions": 1,
+      "channel": "新版本融灾问题"
+    },
+    {
+      "id": "1396100139260710955",
+      "content": "校猫你是不是忘了曾经说过高难只是给高难玩家打来玩的，奖励很少<:24_clown:1374289675417686016>",
+      "author": "kepler0519",
+      "reactions": 1,
+      "channel": "新版本融灾问题"
+    },
+    {
+      "id": "1396066429404581899",
+      "content": "i'm surprise her birthday isn't on the 24th <:lotan_laugh:1374289754245304381>",
+      "author": "jormiejormungandr",
+      "reactions": 1,
+      "channel": "24's Birthday"
     },
     {
       "id": "1395995828107219104",
