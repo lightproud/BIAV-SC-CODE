@@ -1,18 +1,8 @@
 {
-  "collected_at": "2026-03-31T12:06:37.637228+00:00",
+  "collected_at": "2026-03-31T16:36:04.475897+00:00",
   "source": "all",
-  "item_count": 10,
+  "item_count": 8,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-03-30T12:07:20+00:00",
-      "lang": "",
-      "title": "神国队打5-5医生也太赤石了",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/av116318032367403",
-      "author": "夏茉琳SummerRing",
-      "engagement": 1278
-    },
     {
       "source": "bilibili",
       "time": "2026-03-31T06:06:54+00:00",
@@ -21,37 +11,7 @@
       "summary": "感谢群友卡芙卡提供的素材",
       "url": "https://www.bilibili.com/video/av116322277002826",
       "author": "莱星Ligh",
-      "engagement": 388
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-03-30T15:31:40+00:00",
-      "lang": "",
-      "title": "又是一期徐水法5-5",
-      "summary": "我自己60级法棍老是差100k伤害遂借人，不过也是没有水母专造就是了，还是挺好打的。",
-      "url": "https://www.bilibili.com/video/av116318837803599",
-      "author": "伊莎玛拉-大群来了",
-      "engagement": 354
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-03-30T16:05:47+00:00",
-      "lang": "",
-      "title": "十队轮椅的425融灾记录 3.30-4.12",
-      "summary": "然而这期不够轮椅",
-      "url": "https://www.bilibili.com/video/av116318938404983",
-      "author": "子夜唯雪",
-      "engagement": 336
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-03-30T12:53:25+00:00",
-      "lang": "",
-      "title": "[忘却前夜]：没有技术，全是狗运的一期425，依旧四小只4-5这一块",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/av116318216920878",
-      "author": "龢利喵",
-      "engagement": 291
+      "engagement": 470
     },
     {
       "source": "bilibili",
@@ -61,7 +21,7 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/av116321689804067",
       "author": "路过的耄耋",
-      "engagement": 267
+      "engagement": 369
     },
     {
       "source": "bilibili",
@@ -71,7 +31,24 @@
       "summary": "长草中……\n省到最后忘记出汀了",
       "url": "https://www.bilibili.com/video/av116322327337798",
       "author": "朝星-",
-      "engagement": 111
+      "engagement": 159
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-03-31T15:28:14+00:00",
+      "lang": "",
+      "title": "忘却前夜，3.31融灾，400拼好队",
+      "summary": "打的有点想骂人这一期。我只能说太有数值了，1图N4都接近30W的血量。三段攻击上千输出一轮，是人？",
+      "url": "https://www.bilibili.com/video/av116324458044259",
+      "author": "断裂免罪符",
+      "engagement": 43
+    },
+    {
+      "language": "english",
+      "voted_up": false,
+      "review": "Decent card game with good aethestics, but is extremely dupe heavy for some builds.\n\nAs for Mar 31, 2026, they have removed the ability to autoplay D-Tide, an important weekly mode that grants level u",
+      "timestamp_created": 1774955963,
+      "playtime_forever": 14858
     },
     {
       "language": "schinese",
@@ -92,7 +69,7 @@
       "voted_up": true,
       "review": "Deeply satisfying dopamine hits, pretty great F2P, fun card battler mechanics, steamrolling everything at the moment and I'm up to the 3rd Investigation. Digging the vibes and lovecraftian / anime cro",
       "timestamp_created": 1774917387,
-      "playtime_forever": 3239
+      "playtime_forever": 3347
     }
   ]
 }

@@ -1,8 +1,15 @@
 {
-  "collected_at": "2026-03-31T12:06:37.637228+00:00",
+  "collected_at": "2026-03-31T16:36:04.475897+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
+    {
+      "language": "english",
+      "voted_up": false,
+      "review": "Decent card game with good aethestics, but is extremely dupe heavy for some builds.\n\nAs for Mar 31, 2026, they have removed the ability to autoplay D-Tide, an important weekly mode that grants level u",
+      "timestamp_created": 1774955963,
+      "playtime_forever": 14858
+    },
     {
       "language": "schinese",
       "voted_up": false,
@@ -22,7 +29,7 @@
       "voted_up": true,
       "review": "Deeply satisfying dopamine hits, pretty great F2P, fun card battler mechanics, steamrolling everything at the moment and I'm up to the 3rd Investigation. Digging the vibes and lovecraftian / anime cro",
       "timestamp_created": 1774917387,
-      "playtime_forever": 3239
+      "playtime_forever": 3347
     }
   ]
 }

@@ -1,70 +1,18 @@
 {
-  "updated_at": "2026-03-31T12:06:37.637228+00:00",
-  "summary": "今日热门话题：神国队打5-5医生也太赤石了；［相位］一天出一把，一把爽一天；又是一期徐水法5-5；十队轮椅的425融灾记录 3.30-4.12；[忘却前夜]：没有技术，全是狗运的一期425，依旧四小只4-。",
+  "updated_at": "2026-03-31T16:36:04.475897+00:00",
+  "summary": "今日热门话题：［相位］一天出一把，一把爽一天；莫斯5分49秒速通容灾5-5，一镜到底；【忘却前夜】10超维不借人融灾禁区425。",
   "news": [
-    {
-      "title": "神国队打5-5医生也太赤石了",
-      "summary": "",
-      "source": "bilibili",
-      "time": "2026-03-30T12:07:20+00:00",
-      "url": "https://www.bilibili.com/video/av116318032367403",
-      "engagement": 1278,
-      "is_hot": true,
-      "author": "夏茉琳SummerRing",
-      "tags": [
-        "日常"
-      ]
-    },
     {
       "title": "［相位］一天出一把，一把爽一天",
       "summary": "感谢群友卡芙卡提供的素材",
       "source": "bilibili",
       "time": "2026-03-31T06:06:54+00:00",
       "url": "https://www.bilibili.com/video/av116322277002826",
-      "engagement": 388,
+      "engagement": 470,
       "is_hot": true,
       "author": "莱星Ligh",
       "tags": [
         "日常"
-      ]
-    },
-    {
-      "title": "又是一期徐水法5-5",
-      "summary": "我自己60级法棍老是差100k伤害遂借人，不过也是没有水母专造就是了，还是挺好打的。",
-      "source": "bilibili",
-      "time": "2026-03-30T15:31:40+00:00",
-      "url": "https://www.bilibili.com/video/av116318837803599",
-      "engagement": 354,
-      "is_hot": true,
-      "author": "伊莎玛拉-大群来了",
-      "tags": [
-        "手机游戏"
-      ]
-    },
-    {
-      "title": "十队轮椅的425融灾记录 3.30-4.12",
-      "summary": "然而这期不够轮椅",
-      "source": "bilibili",
-      "time": "2026-03-30T16:05:47+00:00",
-      "url": "https://www.bilibili.com/video/av116318938404983",
-      "engagement": 336,
-      "is_hot": true,
-      "author": "子夜唯雪",
-      "tags": [
-        "手机游戏"
-      ]
-    },
-    {
-      "title": "[忘却前夜]：没有技术，全是狗运的一期425，依旧四小只4-5这一块",
-      "summary": "",
-      "source": "bilibili",
-      "time": "2026-03-30T12:53:25+00:00",
-      "url": "https://www.bilibili.com/video/av116318216920878",
-      "engagement": 291,
-      "is_hot": true,
-      "author": "龢利喵",
-      "tags": [
-        "单机游戏"
       ]
     },
     {
@@ -73,8 +21,8 @@
       "source": "bilibili",
       "time": "2026-03-31T03:39:28+00:00",
       "url": "https://www.bilibili.com/video/av116321689804067",
-      "engagement": 267,
-      "is_hot": false,
+      "engagement": 369,
+      "is_hot": true,
       "author": "路过的耄耋",
       "tags": [
         "手机游戏"
@@ -86,12 +34,45 @@
       "source": "bilibili",
       "time": "2026-03-31T06:19:03+00:00",
       "url": "https://www.bilibili.com/video/av116322327337798",
-      "engagement": 111,
-      "is_hot": false,
+      "engagement": 159,
+      "is_hot": true,
       "author": "朝星-",
       "tags": [
         "手机游戏"
       ]
+    },
+    {
+      "title": "忘却前夜，3.31融灾，400拼好队",
+      "summary": "打的有点想骂人这一期。我只能说太有数值了，1图N4都接近30W的血量。三段攻击上千输出一轮，是人？",
+      "source": "bilibili",
+      "time": "2026-03-31T15:28:14+00:00",
+      "url": "https://www.bilibili.com/video/av116324458044259",
+      "engagement": 43,
+      "is_hot": false,
+      "author": "断裂免罪符",
+      "tags": [
+        "网络游戏"
+      ]
+    },
+    {
+      "title": "[负面] Decent card game with good aethestics, but is extr...",
+      "summary": "Decent card game with good aethestics, but is extremely dupe heavy for some builds.\n\nAs for Mar 31, 2026, they have removed the ability to autoplay D-Tide, an important weekly mode that grants level u",
+      "source": "steam_review",
+      "time": "2026-03-31T11:19:23+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198085254903/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198085254903",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 14858,
+        "votes_up": 0,
+        "timestamp_created": 1774955963
+      }
     },
     {
       "title": "[负面] 拉完了，卡牌构筑毫无水平，纯自动战斗养成，还有超绝剧情迷宫战斗的“灵动”交互\r\n你还致敬上杀戮尖塔了...",
@@ -148,7 +129,7 @@
       "language": "english",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 3239,
+        "playtime_forever": 3347,
         "votes_up": 0,
         "timestamp_created": 1774917387
       }
