@@ -1,10 +1,27 @@
 {
   "date": "2026-02-05",
-  "messages": 13839,
+  "messages": 17563,
   "unique_authors": 183,
-  "reactions_total": 1772,
-  "attachments": 413,
+  "reactions_total": 2154,
+  "attachments": 541,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 336,
+    "🔸canal-español": 583,
+    "🔸canal-português": 260,
+    "🔸ruang-obrolan-indonesia": 31,
+    "🔸ห้องสนทนาภาษาไทย": 276,
+    "🔸traphase": 74,
+    "🔸lore-chat": 268,
+    "🔸频道建议┊server-suggestions": 13,
+    "🔸team-building": 345,
+    "🔸general-chat": 515,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸game-question": 949,
+    "🔸忘却前夜┊morimens-tv": 4,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 52,
+    "🔸机器人命令┊bot-commands": 36,
+    "1468806631545507920": 1,
+    "1469031156866486508": 1,
     "🔸剧情交流": 39,
     "🔸晒卡分享": 4,
     "🔸相位对弈": 9,
@@ -22,9 +39,6 @@
     "謂之「尸解」而登仙": 30,
     "Bug": 2,
     "Poison have problem and some words about DoT team in game": 1,
-    "🔸频道建议┊server-suggestions": 2,
-    "🔸忘却前夜┊morimens-tv": 2,
-    "🔸两周年纪念反馈┊2yr-anniv-feedback": 26,
     "1296113810549112874": 2,
     "1442292634575175710": 1,
     "🔸綜合討論": 1920,
@@ -32,34 +46,36 @@
     "🔸morimens-game-chat": 7628
   },
   "hourly_activity": {
-    "6": 472,
-    "7": 881,
-    "8": 931,
-    "10": 1034,
-    "13": 644,
-    "16": 378,
-    "1": 260,
-    "14": 581,
-    "17": 775,
-    "9": 1142,
-    "0": 241,
-    "3": 269,
-    "11": 683,
-    "15": 573,
-    "19": 512,
-    "18": 780,
-    "4": 116,
-    "12": 801,
-    "20": 733,
-    "21": 648,
-    "22": 505,
-    "23": 395,
-    "5": 174,
-    "2": 311
+    "2": 367,
+    "4": 165,
+    "5": 260,
+    "6": 555,
+    "7": 1058,
+    "8": 1061,
+    "9": 1631,
+    "10": 1173,
+    "11": 730,
+    "12": 1138,
+    "13": 993,
+    "14": 845,
+    "15": 694,
+    "23": 578,
+    "0": 319,
+    "1": 293,
+    "3": 334,
+    "16": 671,
+    "17": 952,
+    "18": 837,
+    "19": 572,
+    "20": 841,
+    "21": 738,
+    "22": 758
   },
   "message_types": {
-    "0": 2951,
-    "19": 1106
+    "0": 2893,
+    "19": 828,
+    "20": 1,
+    "21": 2
   },
   "top_reacted_messages": [
     {
@@ -89,6 +105,13 @@
       "author": "aurora3981",
       "reactions": 12,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469097816486842623",
+      "content": "<@276521152245923840> ahora estás absuelto de tu tarea",
+      "author": "duxadidus",
+      "reactions": 10,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1468837581935349911",
@@ -133,6 +156,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1468975140661628978",
+      "content": "The ban should've happened a long time ago. People keep enabling him to do whate",
+      "author": "velmi",
+      "reactions": 7,
+      "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
       "id": "1469062970511458405",
       "content": "這就是我最後一把忘卻前夜了",
       "author": "ernest_heart",
@@ -168,6 +198,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1468964279989436448",
+      "content": "<@214749389632176129> i sleep and next day, i can make 1mil+ in valley",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1468979753900965899",
       "content": "啊？",
       "author": "_hannah0508",
@@ -180,27 +217,6 @@
       "author": "ena04564",
       "reactions": 6,
       "channel": "V2.4.2.2 版本前瞻 ┊ Version Outlook"
-    },
-    {
-      "id": "1468782118673842268",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468782128753021094",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468868623006433291",
-      "content": "🤓 怎么找到我的",
-      "author": "galagalaguo",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }

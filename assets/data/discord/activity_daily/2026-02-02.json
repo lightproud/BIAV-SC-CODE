@@ -1,10 +1,25 @@
 {
   "date": "2026-02-02",
-  "messages": 8645,
-  "unique_authors": 175,
-  "reactions_total": 2023,
-  "attachments": 438,
+  "messages": 11859,
+  "unique_authors": 181,
+  "reactions_total": 3067,
+  "attachments": 599,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 165,
+    "🔸canal-español": 359,
+    "🔸canal-português": 224,
+    "🔸ruang-obrolan-indonesia": 21,
+    "🔸ห้องสนทนาภาษาไทย": 470,
+    "🔸traphase": 27,
+    "🔸lore-chat": 32,
+    "🔸服务器公告┊server-announcement": 4,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 423,
+    "🔸general-chat": 432,
+    "🔸邀请码互助┊swap-invitation-codes": 4,
+    "🔸game-question": 800,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 248,
+    "🔸机器人命令┊bot-commands": 26,
     "🔸相位对弈": 13,
     "🔸交友频道": 29,
     "🔸日本語チャンネル": 5,
@@ -22,8 +37,6 @@
     "做不到的事能不能不要轻易承诺": 2,
     "加載守密人檔案時候有明顯卡頓": 1,
     "融災顯示bug": 3,
-    "🔸服务器公告┊server-announcement": 2,
-    "🔸两周年纪念反馈┊2yr-anniv-feedback": 20,
     "1421408684776357929": 6,
     "1467801756359589971": 25,
     "1462840887553032335": 2,
@@ -36,34 +49,35 @@
     "🔸morimens-game-chat": 7013
   },
   "hourly_activity": {
-    "14": 513,
-    "15": 606,
-    "16": 590,
-    "18": 435,
-    "1": 348,
-    "4": 198,
-    "0": 172,
-    "5": 387,
-    "8": 397,
-    "23": 251,
-    "3": 471,
-    "7": 296,
-    "9": 307,
-    "13": 483,
-    "17": 524,
-    "19": 413,
-    "20": 299,
-    "21": 374,
-    "22": 301,
-    "6": 361,
-    "10": 241,
-    "11": 215,
-    "12": 263,
-    "2": 200
+    "3": 526,
+    "4": 266,
+    "5": 437,
+    "8": 519,
+    "9": 376,
+    "10": 401,
+    "11": 259,
+    "12": 322,
+    "13": 644,
+    "14": 1109,
+    "15": 854,
+    "0": 261,
+    "1": 384,
+    "2": 266,
+    "6": 396,
+    "7": 329,
+    "16": 775,
+    "17": 828,
+    "18": 655,
+    "19": 582,
+    "20": 549,
+    "21": 426,
+    "22": 359,
+    "23": 336
   },
   "message_types": {
-    "0": 596,
-    "19": 190
+    "0": 2389,
+    "19": 824,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -123,6 +137,27 @@
       "channel": ""
     },
     {
+      "id": "1467951849402269944",
+      "content": "For the love of the big eye, let us farm soulforge mats with our stamina",
+      "author": "oatstemp",
+      "reactions": 14,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1467952434834837658",
+      "content": "👉👈 can\nCan i get e3 +12 for free?",
+      "author": "su_pp",
+      "reactions": 11,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1467961881065951442",
+      "content": "everything was good except the raids. wish it worked more like azur lane where t",
+      "author": ".kyuubey",
+      "reactions": 11,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
       "id": "1467760023013822695",
       "content": "",
       "author": "ernest_heart",
@@ -142,6 +177,20 @@
       "author": "rain_scarlet",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1467952815275245873",
+      "content": "I mostly like everything. Events were cool, characters are great, and the genero",
+      "author": ".saltynacl",
+      "reactions": 9,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1467953085572714749",
+      "content": "Cons: \n\n- Some of the level difficulty for like some event story fights are loke",
+      "author": "manboobenthusiast",
+      "reactions": 9,
+      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
     },
     {
       "id": "1467728841685471480",
@@ -170,41 +219,6 @@
       "author": "angbak",
       "reactions": 9,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1467963678224683058",
-      "content": "I made this post just to be sure, because the Pool in https://discord.com/channe",
-      "author": "vxvendetta97",
-      "reactions": 8,
-      "channel": "✅「Answered」Anniversary was Great, the Raid was not"
-    },
-    {
-      "id": "1467857686476623943",
-      "content": "忘记发了<:T_sleep2:1356085993626665200>   \n收工<:pray:1356053116260454534>   \n修完bug艾尔瓦",
-      "author": "sweet_25367",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1467952992484331600",
-      "content": "",
-      "author": "bailuoxiao",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1467876860888350721",
-      "content": "aurora the fun police",
-      "author": "lavache.",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1467848755364761776",
-      "content": "",
-      "author": "cornonthemacabre_",
-      "reactions": 7,
-      "channel": "Enemy still only attacking once after Wanda 10 stack exalt"
     }
   ]
 }

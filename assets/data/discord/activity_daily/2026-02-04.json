@@ -1,10 +1,25 @@
 {
   "date": "2026-02-04",
-  "messages": 10159,
+  "messages": 13096,
   "unique_authors": 162,
-  "reactions_total": 1485,
-  "attachments": 360,
+  "reactions_total": 1718,
+  "attachments": 501,
   "channel_activity": {
+    "🔸phòng-chat-tiếng-việt": 252,
+    "🔸canal-español": 246,
+    "🔸canal-português": 132,
+    "🔸ruang-obrolan-indonesia": 100,
+    "🔸ห้องสนทนาภาษาไทย": 221,
+    "🔸traphase": 41,
+    "🔸lore-chat": 2,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 194,
+    "🔸general-chat": 1267,
+    "🔸邀请码互助┊swap-invitation-codes": 5,
+    "🔸game-question": 445,
+    "🔸游戏问题": 2,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 16,
+    "🔸机器人命令┊bot-commands": 19,
     "🔸剧情交流": 6,
     "🔸晒卡分享": 1,
     "🔸欢乐梗图": 6,
@@ -25,42 +40,41 @@
     "Bug": 4,
     "✅「已回答」你是電你是光你是唯一的神話": 1,
     "We need more SR characters": 4,
-    "🔸游戏问题": 1,
-    "🔸两周年纪念反馈┊2yr-anniv-feedback": 8,
     "1467225902029996154": 4,
     "🔸綜合討論": 968,
     "🔸阵容构建": 90,
     "🔸morimens-game-chat": 6324
   },
   "hourly_activity": {
-    "3": 209,
-    "4": 276,
-    "6": 174,
-    "7": 181,
-    "13": 598,
-    "8": 221,
-    "9": 222,
-    "11": 373,
-    "1": 80,
-    "2": 253,
-    "12": 495,
-    "0": 182,
-    "5": 221,
-    "16": 826,
-    "21": 397,
-    "22": 196,
-    "23": 169,
-    "10": 540,
-    "14": 1427,
-    "15": 1250,
-    "17": 829,
-    "18": 495,
-    "19": 364,
-    "20": 181
+    "1": 148,
+    "3": 273,
+    "4": 511,
+    "5": 423,
+    "6": 396,
+    "8": 313,
+    "9": 276,
+    "10": 593,
+    "12": 562,
+    "14": 1932,
+    "16": 1131,
+    "17": 877,
+    "0": 232,
+    "2": 285,
+    "11": 543,
+    "15": 1335,
+    "19": 429,
+    "20": 296,
+    "21": 463,
+    "13": 899,
+    "22": 214,
+    "23": 212,
+    "18": 513,
+    "7": 240
   },
   "message_types": {
-    "0": 2111,
-    "19": 624
+    "0": 2216,
+    "19": 718,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -85,18 +99,18 @@
       "channel": "Girl's lament: Aigis"
     },
     {
-      "id": "1468635075364261888",
-      "content": "Hola.",
-      "author": "hestion.1",
-      "reactions": 18,
-      "channel": "Feliz caceria."
-    },
-    {
       "id": "1468597441195409428",
       "content": "I really dislike the recent trend of locking a unit's scaling behind E1. It star",
       "author": "inkouah",
       "reactions": 18,
       "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1468635075364261888",
+      "content": "Hola.",
+      "author": "hestion.1",
+      "reactions": 18,
+      "channel": "Feliz caceria."
     },
     {
       "id": "1468520163434434571",
@@ -111,6 +125,13 @@
       "author": "arisuu0604",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468645165391675426",
+      "content": "To clarify, our jurisdiction is limited to this server. We should not be passing",
+      "author": "cometovilla",
+      "reactions": 8,
+      "channel": "🔸频道建议┊server-suggestions"
     },
     {
       "id": "1468544901200351253",
@@ -176,18 +197,18 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1468600998384767222",
-      "content": "<:agree:1400771815076528258>",
-      "author": "_hannah0508",
+      "id": "1468472425099296853",
+      "content": "Estoy muerto <:dead:1356082627509092372>",
+      "author": "duxadidus",
       "reactions": 5,
-      "channel": "🔸晒卡分享"
+      "channel": "🔸canal-español"
     },
     {
-      "id": "1468533337181126656",
-      "content": "更新換本期有加成的助戰",
-      "author": "universe.dark",
+      "id": "1468522091325427753",
+      "content": "omg i havent been olaying in a while",
+      "author": "dollyxqyan",
       "reactions": 5,
-      "channel": "🔸交友频道"
+      "channel": "🔸game-question"
     },
     {
       "id": "1468467776875270155",
@@ -195,13 +216,6 @@
       "author": "shun5984",
       "reactions": 5,
       "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
-    },
-    {
-      "id": "1468547332541779988",
-      "content": "這位是薩摩大佬嗎",
-      "author": "yy42974466",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }

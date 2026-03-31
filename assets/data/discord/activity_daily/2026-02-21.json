@@ -1,10 +1,26 @@
 {
   "date": "2026-02-21",
-  "messages": 7162,
-  "unique_authors": 148,
-  "reactions_total": 859,
-  "attachments": 303,
+  "messages": 10242,
+  "unique_authors": 171,
+  "reactions_total": 1092,
+  "attachments": 469,
   "channel_activity": {
+    "🔸русский-канал": 281,
+    "🔸phòng-chat-tiếng-việt": 450,
+    "🔸canal-español": 188,
+    "🔸canal-português": 549,
+    "🔸ruang-obrolan-indonesia": 64,
+    "🔸ห้องสนทนาภาษาไทย": 45,
+    "🔸traphase": 102,
+    "🔸lore-chat": 100,
+    "🔸频道建议┊server-suggestions": 4,
+    "🔸team-building": 248,
+    "🔸general-chat": 313,
+    "🔸邀请码互助┊swap-invitation-codes": 8,
+    "🔸game-question": 711,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 17,
+    "1474748352066359410": 1,
     "🔸morimens-game-chat": 5229,
     "🔸剧情交流": 62,
     "🔸晒卡分享": 11,
@@ -18,8 +34,6 @@
     "✅「已回答」今天打肉鸽咋没算出牌数做不了每日": 4,
     "Please allow us to reutrn Doresain to the Black Pool": 12,
     "塗鴉": 2,
-    "🔸频道建议┊server-suggestions": 2,
-    "🔸忘却前夜┊morimens-tv": 1,
     "1241345906826153984": 10,
     "1467225902029996154": 1,
     "1471356257708408843": 1,
@@ -30,36 +44,37 @@
     "🔸阵容构建": 54
   },
   "hourly_activity": {
-    "0": 353,
-    "1": 466,
-    "2": 175,
-    "3": 173,
-    "4": 374,
-    "5": 131,
-    "6": 25,
-    "7": 281,
-    "8": 143,
-    "9": 275,
-    "10": 292,
-    "11": 153,
-    "12": 410,
-    "13": 419,
-    "14": 507,
-    "15": 419,
-    "16": 382,
-    "17": 258,
-    "18": 308,
-    "19": 518,
-    "20": 297,
-    "21": 149,
-    "22": 447,
-    "23": 207
+    "6": 272,
+    "9": 337,
+    "10": 418,
+    "11": 264,
+    "12": 593,
+    "13": 650,
+    "15": 654,
+    "16": 646,
+    "17": 398,
+    "18": 411,
+    "19": 658,
+    "20": 388,
+    "21": 337,
+    "0": 587,
+    "2": 240,
+    "3": 238,
+    "4": 395,
+    "5": 234,
+    "14": 730,
+    "1": 530,
+    "23": 242,
+    "22": 478,
+    "7": 373,
+    "8": 169
   },
   "message_types": {
-    "19": 1525,
-    "0": 3909,
-    "46": 2,
-    "23": 1
+    "0": 2348,
+    "19": 729,
+    "6": 1,
+    "20": 1,
+    "21": 1
   },
   "top_reacted_messages": [
     {
@@ -77,6 +92,13 @@
       "channel": "doresain…. again"
     },
     {
+      "id": "1474796785892331695",
+      "content": "dạy em chơi đi ank",
+      "author": "vermiyy",
+      "reactions": 10,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
       "id": "1474583447677829251",
       "content": "",
       "author": "water_heart",
@@ -89,6 +111,13 @@
       "author": "busy_chipmunk_73748_41947",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1474796456731738313",
+      "content": "giỏi wa trời",
+      "author": "vermiyy",
+      "reactions": 7,
+      "channel": "🔸phòng-chat-tiếng-việt"
     },
     {
       "id": "1474788692630569063",
@@ -119,6 +148,13 @@
       "channel": "🔸阵容构建"
     },
     {
+      "id": "1474801824199479419",
+      "content": "Wave 1: boss này khá dễ, máu ít, mechanic cũng không phức tạp, weakness, fragile",
+      "author": "komugi0506",
+      "reactions": 5,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
       "id": "1474574037928640583",
       "content": "another piece of evidence for spooky fraud theory",
       "author": "bagels5899",
@@ -147,6 +183,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1474880528191590573",
+      "content": "",
+      "author": "sayokolefay",
+      "reactions": 4,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1474706657388007444",
       "content": "7 hp bars",
       "author": "arkaether",
@@ -171,34 +214,6 @@
       "id": "1474760722272751688",
       "content": "effortless double posse every turn is pretty good",
       "author": "nuttyputty5612",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1474769581598834788",
-      "content": "Lens in the wild",
-      "author": "idotly",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1474776374790066356",
-      "content": "you could listen to the 8 minute summary portion of my hit youtube™ video if you",
-      "author": "reya.li",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1474778403331903691",
-      "content": "aequor",
-      "author": "polkarain",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1474780374155530311",
-      "content": "nah, eos incoming",
-      "author": "arandomflamev2",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }

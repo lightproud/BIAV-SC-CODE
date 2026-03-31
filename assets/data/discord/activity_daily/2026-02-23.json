@@ -1,10 +1,27 @@
 {
   "date": "2026-02-23",
-  "messages": 9443,
-  "unique_authors": 194,
-  "reactions_total": 1731,
-  "attachments": 465,
+  "messages": 17240,
+  "unique_authors": 244,
+  "reactions_total": 2312,
+  "attachments": 846,
   "channel_activity": {
+    "🔸русский-канал": 213,
+    "🔸phòng-chat-tiếng-việt": 2679,
+    "🔸canal-español": 467,
+    "🔸canal-português": 1515,
+    "🔸ruang-obrolan-indonesia": 232,
+    "🔸ห้องสนทนาภาษาไทย": 261,
+    "🔸traphase": 137,
+    "🔸lore-chat": 129,
+    "🔸team-building": 591,
+    "🔸general-chat": 211,
+    "🔸邀请码互助┊swap-invitation-codes": 4,
+    "🐱light’s-nest": 2,
+    "🔸game-question": 1323,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "🔸机器人命令┊bot-commands": 31,
+    "1475478335684345895": 1,
     "🔸morimens-game-chat": 7704,
     "🔸剧情交流": 68,
     "🔸晒卡分享": 15,
@@ -31,9 +48,6 @@
     "Age requirement suddenly failed": 2,
     "先祝大家新年快樂": 5,
     "猫咪节快乐！|| 杜勒赛因x西维斯特": 3,
-    "🐱light’s-nest": 1,
-    "🔸忘却前夜┊morimens-tv": 1,
-    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "1475232782169932038": 1,
     "1472620151634661499": 1,
     "1462840887553032335": 6,
@@ -51,35 +65,37 @@
     "🔸阵容构建": 75
   },
   "hourly_activity": {
-    "0": 430,
-    "1": 238,
-    "2": 330,
-    "3": 263,
-    "4": 313,
-    "5": 348,
-    "6": 246,
-    "7": 484,
-    "8": 365,
-    "9": 534,
-    "10": 445,
-    "11": 348,
-    "12": 280,
-    "13": 465,
-    "14": 796,
-    "15": 360,
-    "16": 235,
-    "17": 424,
-    "18": 376,
-    "19": 489,
-    "20": 153,
-    "21": 262,
-    "22": 435,
-    "23": 824
+    "1": 460,
+    "2": 617,
+    "4": 393,
+    "5": 516,
+    "8": 643,
+    "11": 452,
+    "12": 546,
+    "13": 769,
+    "14": 1566,
+    "15": 1543,
+    "16": 1099,
+    "17": 1421,
+    "18": 783,
+    "19": 713,
+    "22": 484,
+    "3": 616,
+    "6": 442,
+    "7": 862,
+    "9": 788,
+    "10": 552,
+    "20": 203,
+    "0": 545,
+    "21": 352,
+    "23": 875
   },
   "message_types": {
-    "19": 2683,
-    "0": 5221,
-    "20": 1
+    "0": 5453,
+    "19": 2339,
+    "23": 1,
+    "20": 3,
+    "21": 1
   },
   "top_reacted_messages": [
     {
@@ -123,6 +139,20 @@
       "author": "zyocuh",
       "reactions": 15,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475581486693617905",
+      "content": "Sirven estas dos?",
+      "author": "hectorwolffox",
+      "reactions": 12,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1475532112840097873",
+      "content": "thế tuii chs ... nhá",
+      "author": "hoangziet.",
+      "reactions": 11,
+      "channel": "🔸phòng-chat-tiếng-việt"
     },
     {
       "id": "1475309003729932408",
@@ -188,6 +218,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1475297998639599757",
+      "content": "<@702167871144591461> very important winkle lore hidden behind one-time only cut",
+      "author": "nikolazuli",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
+    },
+    {
       "id": "1475420839057948765",
       "content": "",
       "author": "princess.goth",
@@ -200,27 +237,6 @@
       "author": "lotan_045",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1475348002037039114",
-      "content": "105抽<:Pollux_cute:1459090749286252586>",
-      "author": "be_queitplease",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1475400719061221510",
-      "content": "領爽了",
-      "author": "ena04564",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1475523521588363274",
-      "content": "HI IM BACK HAPPY CLEM PULLS THIS WEEK FOR ALL GAMBLING",
-      "author": "mimiruku",
-      "reactions": 6,
-      "channel": ""
     }
   ]
 }

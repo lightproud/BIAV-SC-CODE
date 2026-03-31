@@ -1,10 +1,27 @@
 {
   "date": "2026-02-09",
-  "messages": 10899,
+  "messages": 16162,
   "unique_authors": 252,
-  "reactions_total": 1659,
-  "attachments": 890,
+  "reactions_total": 2062,
+  "attachments": 1225,
   "channel_activity": {
+    "🔸русский-канал": 1422,
+    "🔸phòng-chat-tiếng-việt": 317,
+    "🔸canal-español": 555,
+    "🔸canal-português": 303,
+    "🔸ruang-obrolan-indonesia": 204,
+    "🔸ห้องสนทนาภาษาไทย": 391,
+    "🔸traphase": 40,
+    "🔸lore-chat": 147,
+    "🔸team-building": 497,
+    "🔸general-chat": 555,
+    "🔸邀请码互助┊swap-invitation-codes": 2,
+    "🔸game-question": 793,
+    "🔸忘却前夜┊morimens-tv": 4,
+    "🔸游戏问题": 12,
+    "🔸机器人命令┊bot-commands": 27,
+    "1470253239118069811": 1,
+    "1470527797083640053": 1,
     "🔸剧情交流": 11,
     "🔸晒卡分享": 17,
     "🔸相位对弈": 3,
@@ -35,42 +52,42 @@
     "You have Mother Tree Ceremony debuff for the whole run after fighting Thais in HSR mode": 2,
     "Chrono Pendulum Charge infinite str down": 1,
     "Mother Tree debuff lasts after boss fight": 1,
-    "🔸忘却前夜┊morimens-tv": 2,
-    "🔸游戏问题": 6,
     "1403373754175721657": 2,
     "🔸綜合討論": 2528,
     "🔸阵容构建": 92,
     "🔸morimens-game-chat": 7898
   },
   "hourly_activity": {
-    "6": 610,
-    "7": 714,
-    "8": 573,
-    "2": 561,
-    "4": 511,
-    "5": 776,
-    "10": 361,
-    "12": 450,
-    "15": 968,
-    "3": 606,
-    "11": 388,
-    "13": 530,
-    "14": 542,
-    "18": 257,
-    "21": 139,
-    "22": 346,
-    "9": 507,
-    "16": 371,
-    "17": 249,
-    "19": 383,
-    "20": 245,
-    "0": 343,
-    "1": 310,
-    "23": 159
+    "0": 397,
+    "2": 718,
+    "3": 858,
+    "6": 780,
+    "7": 1012,
+    "8": 802,
+    "9": 617,
+    "12": 859,
+    "13": 789,
+    "14": 1005,
+    "15": 1342,
+    "16": 721,
+    "17": 376,
+    "18": 361,
+    "19": 532,
+    "20": 672,
+    "21": 313,
+    "22": 435,
+    "1": 439,
+    "4": 756,
+    "5": 948,
+    "10": 566,
+    "11": 581,
+    "23": 283
   },
   "message_types": {
-    "0": 215,
-    "19": 17
+    "19": 1168,
+    "0": 4091,
+    "20": 2,
+    "21": 2
   },
   "top_reacted_messages": [
     {
@@ -144,18 +161,18 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1470434910291492916",
-      "content": "好消息 有兄弟了\n壞消息 茉夏是我唯一一隻+12",
-      "author": "r8776",
-      "reactions": 7,
-      "channel": "🔸晒卡分享"
-    },
-    {
       "id": "1470253239118069811",
       "content": "https://www.youtube.com/watch?v=QGPFHPkK1zc Blind Playthroughs of the new mode l",
       "author": "reya.li",
       "reactions": 7,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1470434910291492916",
+      "content": "好消息 有兄弟了\n壞消息 茉夏是我唯一一隻+12",
+      "author": "r8776",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1470441339874447490",
@@ -177,6 +194,13 @@
       "author": "angbak",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470228144450699317",
+      "content": "hola Dux Dex Eli",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1470543677595058420",
@@ -205,13 +229,6 @@
       "author": "rain_scarlet",
       "reactions": 6,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470245783038329017",
-      "content": "ITS UPDATING",
-      "author": "crowlov1",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,16 +1,30 @@
 {
   "date": "2026-02-08",
-  "messages": 8676,
-  "unique_authors": 160,
-  "reactions_total": 1215,
-  "attachments": 409,
+  "messages": 13957,
+  "unique_authors": 174,
+  "reactions_total": 1555,
+  "attachments": 590,
   "channel_activity": {
+    "🔸русский-канал": 3090,
+    "🔸phòng-chat-tiếng-việt": 365,
+    "🔸canal-español": 65,
+    "🔸canal-português": 290,
+    "🔸ruang-obrolan-indonesia": 63,
+    "🔸ห้องสนทนาภาษาไทย": 157,
+    "🔸traphase": 71,
+    "🔸lore-chat": 9,
+    "🔸team-building": 240,
+    "🔸general-chat": 271,
+    "🔸邀请码互助┊swap-invitation-codes": 13,
+    "🔸game-question": 1738,
+    "🔸游戏问题": 26,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "🔸机器人命令┊bot-commands": 37,
     "🔸剧情交流": 1,
     "🔸晒卡分享": 11,
     "🔸欢乐梗图": 4,
     "🔸课间休息闲聊": 176,
     "🔸chaîne-française": 122,
-    "🔸русский-канал": 1142,
     "1 in a Million Banner general advices": 3,
     "Flares' Comprehensive Beginner Guide to Morimens": 2,
     "Ramona wip (best girl)🗝": 1,
@@ -24,8 +38,6 @@
     "wrong value for Tulu's soulforge": 2,
     "新年假期~ || 杜勒赛因x西维斯特": 5,
     "绘画//戈利亚相关楼": 4,
-    "🔸游戏问题": 13,
-    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "1462840887553032335": 1,
     "1467225902029996154": 3,
     "1450001353064714320": 19,
@@ -37,36 +49,45 @@
     "🔸morimens-game-chat": 5801
   },
   "hourly_activity": {
-    "16": 653,
-    "3": 221,
-    "5": 477,
-    "10": 315,
-    "11": 218,
-    "9": 285,
-    "6": 283,
-    "7": 261,
-    "8": 186,
-    "12": 333,
-    "13": 451,
-    "14": 517,
-    "17": 171,
-    "21": 403,
-    "20": 288,
-    "22": 504,
-    "23": 448,
-    "2": 352,
-    "15": 822,
-    "4": 417,
-    "1": 141,
-    "19": 364,
-    "0": 402,
-    "18": 164
+    "16": 998,
+    "17": 964,
+    "18": 802,
+    "19": 1109,
+    "20": 336,
+    "21": 507,
+    "3": 405,
+    "5": 624,
+    "6": 479,
+    "7": 435,
+    "8": 248,
+    "9": 688,
+    "10": 710,
+    "11": 434,
+    "14": 682,
+    "22": 538,
+    "23": 504,
+    "0": 434,
+    "2": 441,
+    "12": 410,
+    "13": 499,
+    "15": 903,
+    "4": 462,
+    "1": 345
   },
   "message_types": {
-    "0": 938,
-    "19": 516
+    "19": 1325,
+    "0": 3953,
+    "46": 1,
+    "20": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1470145896120324352",
+      "content": "Вайфу отряд сам себя не соберёт",
+      "author": "lcharowol",
+      "reactions": 44,
+      "channel": "🔸русский-канал"
+    },
     {
       "id": "1470046492122415308",
       "content": "https://tenor.com/view/aaaaaaaaaaaaaaaaaaa-getoutofmyhead-cat-gif-24215722",
@@ -115,6 +136,13 @@
       "author": "h3ll0hu",
       "reactions": 10,
       "channel": "hi leonora cosplay in rh"
+    },
+    {
+      "id": "1469878632477495450",
+      "content": "lore accurate image of xu",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "🔸lore-chat"
     },
     {
       "id": "1470006710251815108",
@@ -192,20 +220,6 @@
       "author": "moyashi0672",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1470113537660555429",
-      "content": "",
-      "author": "lynexists",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469946755528527882",
-      "content": "omg",
-      "author": "_hannah0508",
-      "reactions": 5,
-      "channel": "🔸课间休息闲聊"
     }
   ]
 }

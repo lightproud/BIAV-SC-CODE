@@ -1,10 +1,26 @@
 {
   "date": "2026-02-15",
-  "messages": 7698,
-  "unique_authors": 144,
-  "reactions_total": 1583,
-  "attachments": 418,
+  "messages": 10429,
+  "unique_authors": 167,
+  "reactions_total": 1763,
+  "attachments": 581,
   "channel_activity": {
+    "🔸русский-канал": 187,
+    "🔸phòng-chat-tiếng-việt": 286,
+    "🔸canal-español": 138,
+    "🔸canal-português": 104,
+    "🔸ruang-obrolan-indonesia": 12,
+    "🔸ห้องสนทนาภาษาไทย": 92,
+    "🔸traphase": 36,
+    "🔸lore-chat": 18,
+    "🔸team-building": 636,
+    "🔸general-chat": 516,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 649,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "🔸机器人命令┊bot-commands": 43,
+    "1472442748907819019": 1,
     "🔸morimens-game-chat": 6533,
     "🔸剧情交流": 46,
     "🔸晒卡分享": 14,
@@ -29,8 +45,6 @@
     "✅「Answered」Train game mode improvement feedback": 1,
     "給你遊拉磨😋": 3,
     "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取": 2,
-    "🔸忘却前夜┊morimens-tv": 1,
-    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "1421408684776357929": 1,
     "1472620151634661499": 10,
     "1462840887553032335": 1,
@@ -47,35 +61,36 @@
     "🔸阵容构建": 193
   },
   "hourly_activity": {
-    "0": 464,
-    "1": 167,
-    "2": 438,
-    "3": 219,
-    "4": 261,
-    "5": 433,
-    "6": 407,
-    "7": 183,
-    "8": 82,
-    "9": 144,
-    "10": 62,
-    "11": 378,
-    "12": 312,
-    "13": 397,
-    "14": 395,
-    "15": 637,
-    "16": 258,
-    "17": 329,
-    "18": 319,
-    "19": 167,
-    "20": 506,
-    "21": 395,
-    "22": 470,
-    "23": 275
+    "0": 529,
+    "1": 281,
+    "9": 230,
+    "10": 97,
+    "11": 419,
+    "12": 351,
+    "13": 482,
+    "14": 447,
+    "15": 1138,
+    "16": 454,
+    "17": 435,
+    "18": 361,
+    "19": 251,
+    "20": 652,
+    "23": 408,
+    "2": 567,
+    "3": 487,
+    "5": 508,
+    "6": 640,
+    "7": 213,
+    "8": 111,
+    "4": 384,
+    "21": 481,
+    "22": 503
   },
   "message_types": {
-    "19": 2122,
-    "0": 4540,
-    "20": 2
+    "0": 2122,
+    "19": 604,
+    "20": 4,
+    "21": 1
   },
   "top_reacted_messages": [
     {
@@ -133,6 +148,13 @@
       "author": "game.producer.light",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1472430252415516743",
+      "content": "maybe im too fat",
+      "author": "arisuu0604",
+      "reactions": 8,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1472536311599595551",
@@ -210,13 +232,6 @@
       "author": "totallyrealhumanperson",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1472428203590029355",
-      "content": "神秘數字",
-      "author": "ena04564",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
     }
   ]
 }
