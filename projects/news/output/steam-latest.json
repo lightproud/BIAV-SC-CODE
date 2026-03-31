@@ -1,14 +1,28 @@
 {
-  "collected_at": "2026-03-31T05:56:32.569494+00:00",
+  "collected_at": "2026-03-31T09:45:33.975988+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "language": "english",
       "voted_up": true,
       "review": "With over 600 hours and maybe even more alongside mobile (yes this game is crossplatform)\nDo me a favor and press download while reading.\n\nIts a REAL diamond in the rough in the gacha space.\n\nA Lovecr",
       "timestamp_created": 1774869192,
-      "playtime_forever": 37203
+      "playtime_forever": 37304
+    },
+    {
+      "language": "german",
+      "voted_up": true,
+      "review": "zupa",
+      "timestamp_created": 1774933871,
+      "playtime_forever": 1496
+    },
+    {
+      "language": "english",
+      "voted_up": true,
+      "review": "Deeply satisfying dopamine hits, pretty great F2P, fun card battler mechanics, steamrolling everything at the moment and I'm up to the 3rd Investigation. Digging the vibes and lovecraftian / anime cro",
+      "timestamp_created": 1774917387,
+      "playtime_forever": 3089
     },
     {
       "language": "english",
@@ -16,13 +30,6 @@
       "review": "Once again I'm trying out new stuff and wondering why it got that positive reviews ~.~\nYes, it has unique aesthetics but..that's it?\n\n- another gacha that starts fully voiced and you think 'Oh cool, t",
       "timestamp_created": 1774869884,
       "playtime_forever": 204
-    },
-    {
-      "language": "english",
-      "voted_up": true,
-      "review": "Lovecraftian horror Slay the Spire in a free to play package.  If you can navigate the truly dizzying number of currencies this game throws at you, it's a great game.  Cool character designs, enjoyabl",
-      "timestamp_created": 1774858985,
-      "playtime_forever": 1651
     }
   ]
 }
