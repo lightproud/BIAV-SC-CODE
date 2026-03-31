@@ -1,10 +1,18 @@
 {
   "date": "2026-02-12",
-  "messages": 6389,
+  "messages": 6449,
   "unique_authors": 143,
-  "reactions_total": 1318,
-  "attachments": 328,
+  "reactions_total": 1367,
+  "attachments": 348,
   "channel_activity": {
+    "🔸剧情交流": 8,
+    "🔸晒卡分享": 9,
+    "🔸欢乐梗图": 4,
+    "🔸交友频道": 1,
+    "🔸日本語チャンネル": 8,
+    "🔸한국어-채팅방": 22,
+    "🔸deutscher-chatraum": 8,
+    "🔸chaîne-française": 2,
     "V2.4.2 第一块血迹┊The First Bloodstain": 1,
     "逆向推理┊Reverse Inference": 25,
     "V2.4.2.2 版本前瞻 ┊ Version Outlook": 1,
@@ -22,7 +30,6 @@
     "✅「Answered」I'd like to request a refund": 2,
     "✅「Answered」Contest": 3,
     "转载 频道的波吕克斯": 1,
-    "🔸欢乐梗图": 2,
     "🔸频道建议┊server-suggestions": 4,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 4,
     "1462840887553032335": 4,
@@ -34,37 +41,34 @@
     "🔸阵容构建": 76
   },
   "hourly_activity": {
-    "9": 455,
-    "2": 168,
-    "3": 501,
-    "5": 410,
-    "7": 261,
-    "8": 579,
-    "12": 175,
-    "14": 290,
-    "15": 223,
-    "17": 191,
-    "6": 376,
-    "16": 234,
-    "23": 239,
+    "7": 271,
+    "8": 583,
+    "9": 457,
+    "10": 311,
+    "13": 329,
+    "4": 431,
+    "5": 421,
+    "6": 377,
+    "18": 78,
+    "14": 291,
+    "12": 176,
+    "3": 502,
+    "11": 167,
+    "1": 252,
+    "2": 169,
+    "15": 225,
+    "16": 237,
+    "21": 44,
+    "23": 240,
+    "17": 196,
     "0": 329,
-    "1": 249,
-    "4": 426,
-    "10": 310,
-    "11": 164,
-    "13": 326,
-    "18": 77,
     "19": 26,
     "20": 280,
-    "21": 43,
     "22": 57
   },
   "message_types": {
-    "0": 3797,
-    "19": 1748,
-    "6": 1,
-    "20": 3,
-    "23": 1
+    "0": 53,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -117,6 +121,13 @@
       "channel": ""
     },
     {
+      "id": "1471575363695018091",
+      "content": "1130",
+      "author": "ena04564",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1471574436510433462",
       "content": "after like 2 months, I finished Arc 1 Normal mode deathless. That final boss was",
       "author": "farawayalt",
@@ -143,6 +154,27 @@
       "author": "sweet_25367",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1471364216651911251",
+      "content": "",
+      "author": "xingxiu_0209",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1471408897066664033",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies ( The timer",
+      "author": "moyashi0672",
+      "reactions": 7,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1471409065715568814",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies ( The timer",
+      "author": "moyashi0672",
+      "reactions": 7,
+      "channel": "🔸chaîne-française"
     },
     {
       "id": "1471508553696018443",
@@ -177,34 +209,6 @@
       "content": "",
       "author": "water_heart",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471414077820768276",
-      "content": "⁨⁨⁨``` 🔒 Message hidden ```⁩⁩⁩\n-# You need an OE Daffodil to see this message, a",
-      "author": "balls8",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1471557924156608718",
-      "content": "using these.",
-      "author": "hitsu4",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1471356268961857679",
-      "content": "**✦ Just a quick note...**\n\nWe’re doing our best to get back to everyone, but si",
-      "author": "morimens_15",
-      "reactions": 6,
-      "channel": ""
-    },
-    {
-      "id": "1471347667211649086",
-      "content": "孩子们🤓",
-      "author": "galagalaguo",
-      "reactions": 6,
       "channel": "🔸綜合討論"
     }
   ]

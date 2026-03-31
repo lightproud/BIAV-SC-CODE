@@ -1,10 +1,17 @@
 {
   "date": "2026-02-15",
-  "messages": 1034,
-  "unique_authors": 63,
-  "reactions_total": 492,
-  "attachments": 125,
+  "messages": 7698,
+  "unique_authors": 144,
+  "reactions_total": 1583,
+  "attachments": 418,
   "channel_activity": {
+    "🔸morimens-game-chat": 6533,
+    "🔸剧情交流": 46,
+    "🔸晒卡分享": 14,
+    "🔸欢乐梗图": 16,
+    "🔸日本語チャンネル": 9,
+    "🔸한국어-채팅방": 20,
+    "🔸deutscher-chatraum": 34,
     "🎉忘却前夜新春会┊Morimens Spring Festival Gala": 1,
     "求方向": 6,
     "求融災隊伍": 8,
@@ -22,7 +29,6 @@
     "✅「Answered」Train game mode improvement feedback": 1,
     "給你遊拉磨😋": 3,
     "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取": 2,
-    "🔸欢乐梗图": 8,
     "🔸忘却前夜┊morimens-tv": 1,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "1421408684776357929": 1,
@@ -41,40 +47,57 @@
     "🔸阵容构建": 193
   },
   "hourly_activity": {
-    "6": 95,
-    "5": 14,
-    "1": 44,
-    "3": 37,
-    "7": 44,
-    "9": 83,
-    "4": 33,
-    "13": 20,
-    "8": 20,
-    "19": 10,
-    "10": 15,
-    "15": 236,
-    "23": 14,
-    "11": 135,
-    "14": 116,
-    "16": 26,
-    "18": 16,
-    "0": 1,
-    "2": 20,
-    "12": 38,
-    "17": 13,
-    "22": 4
+    "0": 464,
+    "1": 167,
+    "2": 438,
+    "3": 219,
+    "4": 261,
+    "5": 433,
+    "6": 407,
+    "7": 183,
+    "8": 82,
+    "9": 144,
+    "10": 62,
+    "11": 378,
+    "12": 312,
+    "13": 397,
+    "14": 395,
+    "15": 637,
+    "16": 258,
+    "17": 329,
+    "18": 319,
+    "19": 167,
+    "20": 506,
+    "21": 395,
+    "22": 470,
+    "23": 275
   },
   "message_types": {
-    "19": 4,
-    "0": 11
+    "19": 2122,
+    "0": 4540,
+    "20": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1472715295167614976",
+      "content": "Fuck im stupid",
+      "author": "spooky_penguin_",
+      "reactions": 47,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1472620151634661499",
       "content": "",
       "author": "no.tea.",
       "reactions": 38,
       "channel": ""
+    },
+    {
+      "id": "1472742071688233207",
+      "content": "bruh I look like a single dad in his 30s",
+      "author": "_kito_kato_",
+      "reactions": 30,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1472497014720696467",
@@ -140,6 +163,20 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1472529916489764986",
+      "content": "hi i just started 2 minutes ago how do i clear ch7",
+      "author": "liluaa",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1472450087274676355",
+      "content": "どうにか3000",
+      "author": "eyu17",
+      "reactions": 7,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
       "id": "1472620457340567593",
       "content": "",
       "author": "no.tea.",
@@ -154,60 +191,32 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1472561268308312095",
-      "content": "",
-      "author": "corposant_1003",
+      "id": "1472603678748704889",
+      "content": "Flares propaganda ?\nYes I was part of the cult once\nLong ago\nUntil I decided to ",
+      "author": "legendaryredz",
       "reactions": 6,
-      "channel": "🔸欢乐梗图"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1472604823638769850",
-      "content": "Speaking of Jenkin’s story stage, here’s a small behind-the-scenes detail about ",
-      "author": "game.producer.light",
-      "reactions": 6,
-      "channel": ""
-    },
-    {
-      "id": "1472615672000286771",
-      "content": "That “will” scene moved us deeply as well, so later on we used our limited budge",
-      "author": "game.producer.light",
-      "reactions": 6,
-      "channel": ""
-    },
-    {
-      "id": "1472455555854372958",
-      "content": "Traphase and P dive both have lv100 as cap. I think it's only fair HSR also has ",
-      "author": "aurora3981",
-      "reactions": 5,
-      "channel": "✅「Answered」Add level 100 for HSR"
-    },
-    {
-      "id": "1472620612085350490",
-      "content": "",
-      "author": "no.tea.",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1472392346652901507",
-      "content": "i lv 90-ed my leigh in hope of attention. Her life matters",
+      "id": "1472606424256483491",
+      "content": "i saved a bit for caraboo. and will continue doing",
       "author": "arandomflamev2",
-      "reactions": 5,
-      "channel": ""
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1472574802152784016",
-      "content": "貓還在回，他真的，我哭死（為了留言這個我願意被硬控十五分鐘）<:Helot_slack_off:1459092159465521184>",
-      "author": "writevil",
-      "reactions": 5,
-      "channel": ""
+      "id": "1472611660727586992",
+      "content": "JUST BEAT CH3 BOSS WITH ONLY LVL 10 CHARACTERS",
+      "author": "totallyrealhumanperson",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1472437439217012939",
-      "content": "我的簡介怎麼還在更新次數",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "id": "1472428203590029355",
+      "content": "神秘數字",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
     }
   ]
 }

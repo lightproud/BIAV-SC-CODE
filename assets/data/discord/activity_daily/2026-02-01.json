@@ -1,10 +1,15 @@
 {
   "date": "2026-02-01",
-  "messages": 7090,
+  "messages": 8670,
   "unique_authors": 151,
-  "reactions_total": 1121,
-  "attachments": 329,
+  "reactions_total": 1237,
+  "attachments": 374,
   "channel_activity": {
+    "🔸晒卡分享": 15,
+    "🔸交友频道": 3,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 4,
+    "🔸русский-канал": 1555,
     "Detailed Damage Formula Graphic": 3,
     "Beginner Awakening/Gatcha help.": 5,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 1,
@@ -33,34 +38,34 @@
     "🔸morimens-game-chat": 5874
   },
   "hourly_activity": {
+    "1": 302,
+    "2": 381,
+    "4": 563,
+    "13": 508,
+    "9": 372,
+    "10": 421,
+    "23": 194,
+    "6": 155,
+    "14": 627,
+    "5": 317,
+    "7": 175,
+    "11": 231,
+    "12": 531,
+    "15": 597,
+    "16": 966,
+    "17": 704,
+    "18": 412,
+    "19": 83,
+    "20": 77,
     "8": 287,
-    "9": 363,
-    "13": 409,
     "0": 182,
-    "1": 295,
-    "14": 619,
     "3": 401,
-    "15": 271,
-    "18": 193,
-    "10": 419,
-    "6": 147,
-    "2": 375,
     "22": 155,
-    "12": 530,
-    "4": 562,
-    "5": 309,
-    "7": 161,
-    "11": 229,
-    "16": 511,
-    "17": 312,
-    "19": 82,
-    "20": 56,
-    "23": 193,
     "21": 29
   },
   "message_types": {
-    "0": 6,
-    "19": 2
+    "0": 1197,
+    "19": 383
   },
   "top_reacted_messages": [
     {
@@ -85,11 +90,32 @@
       "channel": "Can we have a 100m hp battle dummy?"
     },
     {
+      "id": "1467339951636086855",
+      "content": "~~臭~~",
+      "author": "kalpiko.",
+      "reactions": 18,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1467346920371650738",
       "content": "Please add a confirmation button for accidental clicks on the 60 silver prime si",
       "author": "angbak",
       "reactions": 12,
       "channel": "Confirmation button for silver prime roll"
+    },
+    {
+      "id": "1467329607953940500",
+      "content": "90啦<:pray:1356053116260454534>   \n然后区别大概是一张灵感24临力变成25临力<:takenotes:1357186646294",
+      "author": "sweet_25367",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1467336394664972539",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1467540918167932991",
@@ -111,6 +137,13 @@
       "author": "necronomikkon",
       "reactions": 9,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1467330824058700020",
+      "content": "+12了 140抽出了11金 四隻徐其他全歪",
+      "author": "axe_proficient",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1467397801934721319",
@@ -174,34 +207,6 @@
       "author": "necronomikkon",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1467653354250305640",
-      "content": "\"nice house btw. So which part you didn't like about my tierlist?\"",
-      "author": "arandomflamev2",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1467434028494749706",
-      "content": "I never realised how insanely intricate her eye mask was until i had to draw it.",
-      "author": "j.i9star.",
-      "reactions": 5,
-      "channel": "Ramona wip (best girl)🗝"
-    },
-    {
-      "id": "1467443967762366484",
-      "content": "Scrapped Alien Stage 'KARMA' with keeper and ramona \nhttps://vt.tiktok.com/ZSaqA",
-      "author": "j.i9star.",
-      "reactions": 5,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1467424333365510227",
-      "content": "狗肉湯麵往這裡走",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }

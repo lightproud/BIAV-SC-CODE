@@ -1,10 +1,17 @@
 {
   "date": "2026-02-21",
-  "messages": 1725,
-  "unique_authors": 52,
-  "reactions_total": 256,
-  "attachments": 109,
+  "messages": 7162,
+  "unique_authors": 148,
+  "reactions_total": 859,
+  "attachments": 303,
   "channel_activity": {
+    "🔸morimens-game-chat": 5229,
+    "🔸剧情交流": 62,
+    "🔸晒卡分享": 11,
+    "🔸相位对弈": 122,
+    "🔸课间休息闲聊": 3,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 7,
     "V2.4.2 第一块血迹┊The First Bloodstain": 1,
     "Team building help!": 7,
     "doresain…. again": 3,
@@ -23,32 +30,36 @@
     "🔸阵容构建": 54
   },
   "hourly_activity": {
-    "2": 20,
-    "12": 211,
-    "16": 111,
-    "9": 7,
-    "10": 108,
-    "11": 94,
-    "1": 26,
-    "15": 320,
-    "17": 34,
-    "18": 107,
-    "14": 119,
-    "0": 24,
-    "3": 6,
-    "4": 27,
-    "5": 25,
-    "6": 2,
-    "7": 1,
-    "8": 47,
-    "13": 151,
-    "19": 204,
-    "20": 77,
-    "21": 2,
-    "23": 2
+    "0": 353,
+    "1": 466,
+    "2": 175,
+    "3": 173,
+    "4": 374,
+    "5": 131,
+    "6": 25,
+    "7": 281,
+    "8": 143,
+    "9": 275,
+    "10": 292,
+    "11": 153,
+    "12": 410,
+    "13": 419,
+    "14": 507,
+    "15": 419,
+    "16": 382,
+    "17": 258,
+    "18": 308,
+    "19": 518,
+    "20": 297,
+    "21": 149,
+    "22": 447,
+    "23": 207
   },
   "message_types": {
-    "0": 8
+    "19": 1525,
+    "0": 3909,
+    "46": 2,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -80,6 +91,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1474788692630569063",
+      "content": "League players <:doll_ign:1468259900655145213>",
+      "author": "frosthief",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1474771878391451820",
       "content": "別再畫女鬼了吧明明我舒適圈就不是畫女人😔(Ｔ＿Ｔ)",
       "author": "carrot_chicken",
@@ -99,6 +117,13 @@
       "author": "yy42974466",
       "reactions": 7,
       "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1474574037928640583",
+      "content": "another piece of evidence for spooky fraud theory",
+      "author": "bagels5899",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1474809097718202612",
@@ -122,74 +147,60 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1474576791439147140",
-      "content": "I agree with that dude above, its much easier to find someone who can translate ",
-      "author": "iwthahe",
+      "id": "1474706657388007444",
+      "content": "7 hp bars",
+      "author": "arkaether",
       "reactions": 4,
-      "channel": ""
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1474651161608065095",
-      "content": "",
-      "author": "water_heart",
+      "id": "1474725570846789674",
+      "content": "<@702167871144591461> <:ramona_tuff_:1441426630420467753>",
+      "author": "arisuu0604",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1474740578909683785",
-      "content": "~~要不然我11天打完星辰篇幹嘛~~",
-      "author": "yy42974466",
+      "id": "1474730376780841102",
+      "content": "Omg hi Lolo!",
+      "author": "shagaru0802",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1474776669137928223",
-      "content": "終於過了普通<:takenotes:1357186646294138890>",
-      "author": "watercomet",
+      "id": "1474760722272751688",
+      "content": "effortless double posse every turn is pretty good",
+      "author": "nuttyputty5612",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1474633829409886279",
-      "content": "<:takenotes:1357186646294138890>",
-      "author": "quackdayo",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1474769581598834788",
+      "content": "Lens in the wild",
+      "author": "idotly",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1474723648148606987",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1474776374790066356",
+      "content": "you could listen to the 8 minute summary portion of my hit youtube™ video if you",
+      "author": "reya.li",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1474738490473447485",
-      "content": "赤石挑戰",
-      "author": "lululu9858",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1474778403331903691",
+      "content": "aequor",
+      "author": "polkarain",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1474743631465414828",
-      "content": "1092界精",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474766699340238950",
-      "content": "那演奏酒神頌吧",
-      "author": "vgvfvffcc",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474841028836987012",
-      "content": "又舔！！！（舔）",
-      "author": "huangyu0876",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1474780374155530311",
+      "content": "nah, eos incoming",
+      "author": "arandomflamev2",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,18 @@
 {
   "date": "2026-02-23",
-  "messages": 1538,
-  "unique_authors": 63,
-  "reactions_total": 505,
-  "attachments": 107,
+  "messages": 9443,
+  "unique_authors": 194,
+  "reactions_total": 1731,
+  "attachments": 465,
   "channel_activity": {
+    "🔸morimens-game-chat": 7704,
+    "🔸剧情交流": 68,
+    "🔸晒卡分享": 15,
+    "🔸相位对弈": 3,
+    "🔸课间休息闲聊": 11,
+    "🔸한국어-채팅방": 5,
+    "🔸deutscher-chatraum": 89,
+    "🔸chaîne-française": 10,
     "V2.4.2 版本前瞻 ┊ Version Outlook": 99,
     "想健檢+請問這周抽那些池子": 14,
     "我要蓋一個毫無根據的神父原型樓在這裡（很短的樓": 23,
@@ -43,33 +51,35 @@
     "🔸阵容构建": 75
   },
   "hourly_activity": {
-    "9": 257,
-    "3": 53,
-    "4": 65,
-    "5": 106,
-    "8": 78,
-    "10": 143,
-    "19": 8,
-    "23": 87,
-    "16": 20,
-    "17": 4,
-    "18": 32,
-    "14": 286,
-    "1": 41,
-    "0": 7,
-    "20": 8,
-    "6": 12,
-    "13": 52,
-    "11": 41,
-    "12": 24,
-    "2": 99,
-    "7": 90,
-    "15": 7,
-    "22": 18
+    "0": 430,
+    "1": 238,
+    "2": 330,
+    "3": 263,
+    "4": 313,
+    "5": 348,
+    "6": 246,
+    "7": 484,
+    "8": 365,
+    "9": 534,
+    "10": 445,
+    "11": 348,
+    "12": 280,
+    "13": 465,
+    "14": 796,
+    "15": 360,
+    "16": 235,
+    "17": 424,
+    "18": 376,
+    "19": 489,
+    "20": 153,
+    "21": 262,
+    "22": 435,
+    "23": 824
   },
   "message_types": {
-    "19": 8,
-    "0": 105
+    "19": 2683,
+    "0": 5221,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -94,11 +104,25 @@
       "channel": "‘24’ Crimson Kaede"
     },
     {
+      "id": "1475522955973754931",
+      "content": "",
+      "author": "game.producer.light",
+      "reactions": 25,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1475529512912687205",
       "content": "\"Do you fancy there are such things as form or matter? I tell you, I have struck",
       "author": "sexysneakystoat1625",
       "reactions": 19,
       "channel": "Tillinghast Character Reveal and WoD"
+    },
+    {
+      "id": "1475502831854424145",
+      "content": "thanks!",
+      "author": "zyocuh",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1475309003729932408",
@@ -115,6 +139,13 @@
       "channel": "我要蓋一個毫無根據的神父原型樓在這裡（很短的樓"
     },
     {
+      "id": "1475503262558847016",
+      "content": "is he stupid",
+      "author": "nooom",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1475311774646669508",
       "content": "5 weeks left and here's a late kitty arachne to make up for missing cat day",
       "author": "fishhazardthewizard",
@@ -129,6 +160,27 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1475637490676404409",
+      "content": "IM THE STUPIDEST PERSON HERE",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475373295422537759",
+      "content": "",
+      "author": "ka_0414",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1475329682529456189",
+      "content": "<@296679098703544321> anyway she's done. But I think I've grown to like Lily mor",
+      "author": "hitsu4",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1475387067008680082",
       "content": "尽吃我保底的小皮！",
       "author": "dittoqwq",
@@ -136,81 +188,39 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1475420839057948765",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475500733435744427",
+      "content": "No aurita image = Aurita sucks",
+      "author": "lotan_045",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475348002037039114",
+      "content": "105抽<:Pollux_cute:1459090749286252586>",
+      "author": "be_queitplease",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1475400719061221510",
+      "content": "領爽了",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1475523521588363274",
       "content": "HI IM BACK HAPPY CLEM PULLS THIS WEEK FOR ALL GAMBLING",
       "author": "mimiruku",
       "reactions": 6,
       "channel": ""
-    },
-    {
-      "id": "1475425076076609643",
-      "content": "<:wish:1356084702468899117>",
-      "author": "sweet_25367",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475475837154230343",
-      "content": "怪剩3000時打百萬  怪剩百萬時打3000 這就是杜勒<:doresain_proud:1468257815238938645>",
-      "author": "partycatss.",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475522959618867293",
-      "content": "",
-      "author": "game.producer.light",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475401334055243776",
-      "content": "",
-      "author": "navirecorbeau",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475413076676186227",
-      "content": "<:please:1356053110375714817>",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475428143031652523",
-      "content": "~~遲來的新年快樂jojo~~",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475428760227680368",
-      "content": "~~幫補圖~~",
-      "author": "ass191044",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475437269618786486",
-      "content": "🌿 什么理财产品",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475441550598082674",
-      "content": "寫了神父原型的猜測\n因為很想讓人圍觀自己的毫無根據長篇大論所以我跑來當小丑😭 \nhttps://discord.com/channels/11317916379",
-      "author": "yolo_mode",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475444984542138460",
-      "content": "去血肉老老实实生胎吧",
-      "author": "polkarain",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }

@@ -1,10 +1,19 @@
 {
   "date": "2026-02-24",
-  "messages": 1522,
-  "unique_authors": 57,
-  "reactions_total": 192,
-  "attachments": 86,
+  "messages": 9936,
+  "unique_authors": 156,
+  "reactions_total": 1477,
+  "attachments": 393,
   "channel_activity": {
+    "🔸morimens-game-chat": 8213,
+    "🔸剧情交流": 89,
+    "🔸晒卡分享": 10,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 3,
+    "🔸课间休息闲聊": 6,
+    "🔸日本語チャンネル": 13,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 76,
     "Happy Cat Day! || Doresain x Sylvester": 1,
     "‘24’ Crimson Kaede": 2,
     "💭「處理中」回放不能看": 3,
@@ -33,7 +42,6 @@
     "✅「Answered」About the Event section in Archive": 3,
     "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 1,
     "萊克同人轉載": 2,
-    "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "1475923875392131273": 2,
@@ -51,40 +59,57 @@
     "🔸阵容构建": 31
   },
   "hourly_activity": {
-    "9": 86,
-    "0": 54,
-    "1": 7,
-    "16": 39,
-    "11": 331,
-    "17": 33,
-    "23": 8,
-    "8": 216,
-    "6": 26,
-    "5": 22,
-    "4": 18,
-    "3": 20,
-    "2": 10,
-    "13": 39,
-    "14": 13,
-    "22": 14,
-    "18": 7,
-    "7": 222,
-    "10": 73,
-    "12": 51,
-    "15": 229,
-    "19": 3,
-    "20": 1
+    "0": 511,
+    "1": 163,
+    "2": 342,
+    "3": 698,
+    "4": 353,
+    "5": 500,
+    "6": 492,
+    "7": 347,
+    "8": 476,
+    "9": 141,
+    "10": 119,
+    "11": 505,
+    "12": 171,
+    "13": 328,
+    "14": 452,
+    "15": 664,
+    "16": 491,
+    "17": 599,
+    "18": 413,
+    "19": 560,
+    "20": 525,
+    "21": 464,
+    "22": 185,
+    "23": 437
   },
   "message_types": {
-    "0": 3
+    "0": 5469,
+    "19": 2937,
+    "20": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1475899322477445171",
+      "content": "locked in",
+      "author": "dexetro",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1475738287233826960",
       "content": "update on lineart",
       "author": "moon.orchd",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1475996423307919380",
+      "content": "https://www.reddit.com/r/Morimens/comments/1rdwdug/psa_please_be_careful_about_i",
+      "author": "dracozion",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1475664604372930670",
@@ -94,6 +119,62 @@
       "channel": ""
     },
     {
+      "id": "1475739866317717515",
+      "content": "Fck",
+      "author": "._.aahh",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475870607202713621",
+      "content": "You cannot control how people act in response to media rather than removing the ",
+      "author": "cqteiie",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475872861758427158",
+      "content": "Please respect my pronouns",
+      "author": "legendaryredz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475873597707915265",
+      "content": "here have this",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475961596210712647",
+      "content": "Frost is boolie-able",
+      "author": "necronomikkon",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475965571882422385",
+      "content": "yeah so this whole thing is kind of a clusterfuck of misunderstanding cuz transl",
+      "author": "arkaether",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475993022960238813",
+      "content": "I personally think Cas and Tinct are pretty bad\nAnd Liz is only good cuz Xu\nWink",
+      "author": "frosthief",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475856370719920170",
+      "content": "偶尔一运气……嘿嘿嘿",
+      "author": "_haru555_",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1475701839172341760",
       "content": "我快刷到瘋魔了",
       "author": "water_heart",
@@ -101,123 +182,53 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1475773650283139174",
-      "content": "",
-      "author": "lululu9858",
+      "id": "1475690138456559740",
+      "content": "Well, jsut say that hydra can have lots of heads above 9",
+      "author": "necronomikkon",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1475923875392131273",
-      "content": "For some people it's also known as \"game is literally unplayable\" or something. ",
-      "author": "iwthahe",
-      "reactions": 4,
-      "channel": ""
+      "id": "1475836334756204585",
+      "content": "i managed to get a5 <:Murphy_satisfy:1468258389850193960>",
+      "author": "chinkeeyong",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1475903223121444925",
-      "content": "NYMPHAEA!!!! my saviour in traphase also my first time trying lasso art bcs she ",
-      "author": "midnight_emporium",
-      "reactions": 4,
-      "channel": ""
+      "id": "1475861170836734086",
+      "content": "xu was so mid",
+      "author": "princess.goth",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1475774978849767446",
-      "content": "我怕她跟我以前一樣都不敢用",
-      "author": "yy42974466",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1475864839883853955",
+      "content": "six seven brought me back to life",
+      "author": "bagels5899",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1475801561346342954",
-      "content": "我是墨菲黑",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "id": "1475872307175227422",
+      "content": "Residents of this discord have a weird habit of assuming that everyone is female",
+      "author": "sirtealot",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1475790171504115723",
-      "content": "I cannot answer these questions right now, but I will share everyone's suggestio",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "✅「Answered」Custom difficulty in HSR"
-    },
-    {
-      "id": "1475977452151902303",
-      "content": "A short video of what it looks like to play the Corpita Pure Blue Comp, with wha",
+      "id": "1475884557088587909",
+      "content": "Run Aequor",
       "author": "frosthief",
-      "reactions": 3,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1475713147339014318",
-      "content": "这么多人支持吗？那我也支持一个🙏",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1475763530430025821",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475769550581530820",
-      "content": "記得充電",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475774511319224433",
-      "content": "對了，我問一下，回聲這東西是真的一局內用過的牌就消失嗎",
-      "author": "laier0903",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475803877159866468",
-      "content": "是我媽",
-      "author": "ahong0727",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475836416721289276",
-      "content": "36小時又是誰",
-      "author": "quackdayo",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475882616598302822",
-      "content": "医生是免费5抽出的",
-      "author": "a_li_ya",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475643828202508501",
-      "content": "找到了 之前常闇的",
-      "author": "quackdayo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475672722498523320",
-      "content": "健檢完啦<:24_Clown:1468259444423921871> \n收到報告就能入職了 欸嘿",
-      "author": "xingxiu_0209",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475717788898426913",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "id": "1475890946234384445",
+      "content": "Lol the relic boxes are clipping",
+      "author": "linireo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,18 @@
 {
   "date": "2026-02-06",
-  "messages": 7653,
+  "messages": 9220,
   "unique_authors": 159,
-  "reactions_total": 1315,
-  "attachments": 243,
+  "reactions_total": 1584,
+  "attachments": 322,
   "channel_activity": {
+    "🔸剧情交流": 2,
+    "🔸晒卡分享": 2,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 6,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 1552,
     "V2.4.2.2 版本前瞻 ┊ Version Outlook": 8,
     "中奖名单公布┊Lottery Winners Announced!": 1,
     "《秘银日冕》系列唤醒体徽章发货延迟及补偿告知┊Shipping Delay & Compensation: \"Silver Corona\" Awakener Badges": 1,
@@ -21,7 +29,6 @@
     "謂之「尸解」而登仙": 2,
     "Enemy still only attacking once after Wanda 10 stack exalt": 1,
     "アイロニーナ || 杜勒赛因x西维斯特": 17,
-    "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 3,
     "🔸忘却前夜┊morimens-tv": 1,
     "1448648649486635128": 2,
@@ -33,34 +40,36 @@
     "🔸morimens-game-chat": 6433
   },
   "hourly_activity": {
-    "4": 93,
-    "9": 301,
-    "14": 481,
-    "18": 391,
-    "2": 275,
+    "17": 278,
+    "4": 95,
+    "9": 334,
+    "8": 289,
+    "11": 525,
+    "7": 308,
+    "10": 738,
+    "23": 253,
+    "1": 246,
+    "2": 280,
+    "12": 884,
+    "13": 522,
+    "14": 527,
+    "15": 572,
+    "16": 390,
+    "18": 392,
+    "19": 280,
+    "20": 461,
+    "21": 504,
+    "22": 103,
     "3": 382,
-    "12": 660,
-    "13": 224,
-    "15": 387,
-    "16": 174,
-    "17": 125,
-    "19": 248,
-    "7": 284,
-    "8": 252,
-    "10": 620,
-    "11": 350,
     "5": 220,
-    "21": 503,
     "0": 553,
-    "1": 243,
-    "6": 84,
-    "22": 102,
-    "23": 252,
-    "20": 449
+    "6": 84
   },
   "message_types": {
-    "0": 9,
-    "19": 5
+    "0": 970,
+    "19": 592,
+    "20": 1,
+    "23": 4
   },
   "top_reacted_messages": [
     {
@@ -120,11 +129,39 @@
       "channel": ""
     },
     {
+      "id": "1469325435450949643",
+      "content": "this discussion doesn't get anywhere.",
+      "author": "craux.",
+      "reactions": 8,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1469413733678977075",
+      "content": "Всем привет,\n\nМы заметили недавние нарушения наших правил сообщества. Пожалуйста",
+      "author": "cometovilla",
+      "reactions": 8,
+      "channel": "🔸русский-канал"
+    },
+    {
       "id": "1469131691175051408",
       "content": "better drink than tea, sorry Tea <:takenotes:1357186646294138890>",
       "author": "arisuu0604",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469181765980520571",
+      "content": "...沒想到我神父的石板是從普池撈出來的",
+      "author": "clovertea",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1469251086861733988",
+      "content": "又爬回传奇的位置了<:happy:1356053849894420683>",
+      "author": "cs001092",
+      "reactions": 6,
+      "channel": "🔸相位对弈"
     },
     {
       "id": "1469253894331961435",
@@ -174,34 +211,6 @@
       "author": "princess.goth",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469346972904460339",
-      "content": "Ofc idiot killed the chat",
-      "author": "spooky_penguin_",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469354797630226649",
-      "content": "",
-      "author": "legendaryredz",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469359577354076260",
-      "content": "Dang no 24 buff <:24_Meow:1468259476107821137> 🔫",
-      "author": "reya.li",
-      "reactions": 5,
-      "channel": "V2.4.2.2 停服维护公告"
-    },
-    {
-      "id": "1469176490590474552",
-      "content": "I wanted to provide a final update. I’ve been in contact with the member to disc",
-      "author": "cometovilla",
-      "reactions": 5,
-      "channel": "🔸频道建议┊server-suggestions"
     }
   ]
 }

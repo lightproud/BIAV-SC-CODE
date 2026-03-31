@@ -1,10 +1,16 @@
 {
   "date": "2026-02-03",
-  "messages": 7804,
+  "messages": 10652,
   "unique_authors": 164,
-  "reactions_total": 1218,
-  "attachments": 350,
+  "reactions_total": 1387,
+  "attachments": 461,
   "channel_activity": {
+    "🔸晒卡分享": 10,
+    "🔸相位对弈": 7,
+    "🔸交友频道": 3,
+    "🔸日本語チャンネル": 10,
+    "🔸한국어-채팅방": 55,
+    "🔸русский-канал": 2763,
     "한국어 번역 피드백 컬렉션": 3,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 1,
     "Balala Casiah,Aigis,Jenkins": 2,
@@ -25,33 +31,34 @@
     "🔸morimens-game-chat": 5877
   },
   "hourly_activity": {
-    "1": 361,
-    "14": 377,
-    "16": 174,
-    "0": 395,
-    "3": 439,
-    "12": 437,
+    "8": 352,
+    "9": 357,
+    "11": 669,
+    "16": 345,
+    "0": 401,
+    "7": 333,
+    "17": 574,
+    "10": 482,
+    "12": 574,
+    "14": 453,
+    "15": 596,
+    "1": 362,
+    "5": 607,
+    "6": 269,
+    "23": 159,
+    "3": 441,
+    "13": 546,
+    "18": 893,
+    "19": 860,
+    "20": 332,
+    "21": 100,
+    "22": 128,
     "4": 617,
-    "13": 498,
-    "19": 215,
-    "20": 21,
-    "6": 265,
-    "2": 202,
-    "5": 601,
-    "9": 334,
-    "11": 386,
-    "7": 322,
-    "8": 349,
-    "10": 306,
-    "15": 561,
-    "17": 300,
-    "18": 419,
-    "21": 32,
-    "22": 75,
-    "23": 118
+    "2": 202
   },
   "message_types": {
-    "19": 3
+    "0": 1990,
+    "19": 858
   },
   "top_reacted_messages": [
     {
@@ -104,6 +111,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1468303600873771088",
+      "content": "🛐🛐🛐🛐⬜⬜🛐🛐🛐🛐\n🛐🛐⬜⬜🛐🛐⬜⬜🛐🛐\n⬜⬜🛐🛐⬜⬜🛐🛐⬜⬜\n🛐🛐⬜🛐⬜⬜🛐🛐🛐🛐\n🛐🛐⬜⬜🛐⬜⬜🛐🛐🛐\n🛐🛐🛐🛐⬜⬜⬜⬜🛐🛐\n🛐🛐🛐🛐🛐🛐⬜⬜🛐🛐\n🛐🛐🛐",
+      "author": "akkom730",
+      "reactions": 9,
+      "channel": "🔸交友频道"
+    },
+    {
       "id": "1468088432436707373",
       "content": "佬融災都打425<:point:1356053112292511815>",
       "author": "universe.dark",
@@ -116,6 +130,20 @@
       "author": "corposant_1003",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1468204440472522990",
+      "content": "快了再過幾天...",
+      "author": "axe_proficient",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1468291032549429552",
+      "content": "好友++  求融朵 地瓜 鳥弟 誕墨 大佬~<:pray:1356053116260454534>",
+      "author": "yy42974466",
+      "reactions": 8,
+      "channel": "🔸交友频道"
     },
     {
       "id": "1468324605570715691",
@@ -153,6 +181,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1468164014063353999",
+      "content": "二的十次方",
+      "author": "akalanden",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1468124603271352441",
       "content": "我記得我當初羊媽主C也是打到第8章",
       "author": "a4485",
@@ -164,34 +199,6 @@
       "content": "no",
       "author": "khykken",
       "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1468123845209751635",
-      "content": "不 我沒有他\n我要玩他的難度可能是0.12%",
-      "author": "xingxiu_0209",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468223359224643835",
-      "content": "",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468034810906935430",
-      "content": "",
-      "author": "spooky_penguin_",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1468045742798147687",
-      "content": "yo +12 finally",
-      "author": "sooneruzuki",
-      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }
   ]

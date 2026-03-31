@@ -1,10 +1,18 @@
 {
   "date": "2026-02-26",
-  "messages": 568,
-  "unique_authors": 51,
-  "reactions_total": 411,
-  "attachments": 55,
+  "messages": 8990,
+  "unique_authors": 160,
+  "reactions_total": 2009,
+  "attachments": 374,
   "channel_activity": {
+    "🔸morimens-game-chat": 8301,
+    "🔸欢乐梗图": 4,
+    "🔸相位对弈": 28,
+    "🔸课间休息闲聊": 1,
+    "🔸交友频道": 49,
+    "🔸한국어-채팅방": 26,
+    "🔸deutscher-chatraum": 13,
+    "🔸chaîne-française": 2,
     "[Art Dump Thread] WILLIAMPOSTING 2": 2,
     "chapter was traumatising thank you morimens": 5,
     "Idk Jenkin sketch": 3,
@@ -17,7 +25,6 @@
     "✅「Answered」misspelling in one of the tutorials": 5,
     "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 4,
     "蛋塔隊馴服玩家影像流露": 2,
-    "🔸欢乐梗图": 2,
     "🐱light’s-nest": 1,
     "1475232782169932038": 3,
     "1463456408249831446": 1,
@@ -35,33 +42,35 @@
     "🔸綜合討論": 498
   },
   "hourly_activity": {
-    "21": 22,
-    "14": 78,
-    "15": 46,
-    "23": 5,
-    "6": 11,
-    "18": 3,
-    "19": 3,
-    "20": 9,
-    "2": 11,
-    "3": 2,
-    "5": 2,
-    "11": 119,
-    "8": 30,
-    "10": 63,
-    "7": 12,
-    "1": 5,
-    "9": 13,
-    "0": 2,
-    "22": 1,
-    "4": 10,
-    "12": 94,
-    "13": 16,
-    "16": 9,
-    "17": 2
+    "0": 433,
+    "1": 430,
+    "2": 398,
+    "3": 272,
+    "4": 114,
+    "5": 226,
+    "6": 362,
+    "7": 407,
+    "8": 572,
+    "9": 346,
+    "10": 226,
+    "11": 209,
+    "12": 348,
+    "13": 456,
+    "14": 375,
+    "15": 443,
+    "16": 186,
+    "17": 481,
+    "18": 725,
+    "19": 575,
+    "20": 568,
+    "21": 302,
+    "22": 218,
+    "23": 318
   },
   "message_types": {
-    "0": 10
+    "0": 5416,
+    "19": 3005,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -86,11 +95,32 @@
       "channel": ""
     },
     {
+      "id": "1476569497560154245",
+      "content": "casiah is worse than aurita",
+      "author": "princess.goth",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476499380285607977",
+      "content": "Yippeeee",
+      "author": "fishhazardthewizard",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1476398717383741440",
       "content": "Allows Users to\n\n- Decrease / Increase the Edify Levels of their Awakeners\n- Dec",
       "author": "snorlax01",
       "reactions": 13,
       "channel": "✅「Answered」Expiramental Play Testing"
+    },
+    {
+      "id": "1476678921914286291",
+      "content": "I don't like feet",
+      "author": "spooky_penguin_",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1476689972340850768",
@@ -121,11 +151,39 @@
       "channel": ""
     },
     {
+      "id": "1476679547008319659",
+      "content": "I talk to some people here more than my shity parents",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1476689842745114705",
       "content": "williams incoming",
       "author": "exhibitionism",
       "reactions": 8,
       "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
+      "id": "1476577270721413233",
+      "content": "Okay no dreams miryam",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476586823651430592",
+      "content": "yes lien and bagels are dating..",
+      "author": "princess.goth",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476607649612169257",
+      "content": "can i have plain noodles with no flavor ass character",
+      "author": "princess.goth",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1476522139027767337",
@@ -135,74 +193,25 @@
       "channel": "🔸欢乐梗图"
     },
     {
-      "id": "1476528168016810024",
-      "content": "非常感谢您的建议，我们很认真的记下来了！<:24_smile:1459073862544130131>",
-      "author": "morimensstaff01",
+      "id": "1476533522712756305",
+      "content": "Thank you so much for such a thoughtful breakdown of Leigh's design. It's clear ",
+      "author": "legendaryredz",
       "reactions": 6,
-      "channel": ""
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1476649238602715249",
-      "content": "Added some shading",
-      "author": "nothing_of_wisdom",
-      "reactions": 5,
-      "channel": "Idk Jenkin sketch"
+      "id": "1476571142700404789",
+      "content": "miryam chosen helps A LOT",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1476485713825632469",
-      "content": "wip!!!!",
-      "author": "mimiruku",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1476405898305077259",
-      "content": "I feel like increase is kinda questionable from a business standpoint, but decre",
-      "author": "cornonthemacabre_",
-      "reactions": 4,
-      "channel": "✅「Answered」Expiramental Play Testing"
-    },
-    {
-      "id": "1476432275486015600",
-      "content": "3啟血希暴打癲狂列車",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476482638888964118",
-      "content": "我愛福袋",
-      "author": "l8989c",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476545510650282014",
-      "content": "If you stun the boss after triggering its first phase transition and then kill i",
-      "author": "clockworktomato0441",
-      "reactions": 3,
-      "channel": "💭「Processing」If you stun the Chapter 8 boss during its phase transition, it skips"
-    },
-    {
-      "id": "1476378535793791140",
-      "content": "",
-      "author": "fishhazardthewizard",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1476433639934918781",
-      "content": "第三章有一个增加最大生命值的事件\n是单次增加还是会一直增加的啊<:jenkins_processing:1468259790168789075> \n我进场只有4",
-      "author": "be_queitplease",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476542367115776080",
-      "content": "我想知道为什么我+12蜘蛛了，菲因特还是0启",
-      "author": "polkarain",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "id": "1476606139423785170",
+      "content": "i spend all my money on morimens",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

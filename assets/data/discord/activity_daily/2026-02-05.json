@@ -1,10 +1,19 @@
 {
   "date": "2026-02-05",
-  "messages": 9782,
+  "messages": 13839,
   "unique_authors": 183,
-  "reactions_total": 1513,
-  "attachments": 359,
+  "reactions_total": 1772,
+  "attachments": 413,
   "channel_activity": {
+    "🔸剧情交流": 39,
+    "🔸晒卡分享": 4,
+    "🔸相位对弈": 9,
+    "🔸交友频道": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 12,
+    "🔸deutscher-chatraum": 26,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 3960,
     "V2.4.2.2 版本前瞻 ┊ Version Outlook": 88,
     "Xu but i gave her a monster mouth": 8,
     "clementine moment": 1,
@@ -23,34 +32,34 @@
     "🔸morimens-game-chat": 7628
   },
   "hourly_activity": {
-    "6": 453,
-    "7": 758,
-    "8": 778,
-    "9": 887,
-    "10": 537,
-    "11": 537,
-    "12": 703,
-    "13": 600,
-    "14": 553,
-    "15": 544,
-    "23": 348,
-    "0": 225,
+    "6": 472,
+    "7": 881,
+    "8": 931,
+    "10": 1034,
+    "13": 644,
+    "16": 378,
+    "1": 260,
+    "14": 581,
+    "17": 775,
+    "9": 1142,
+    "0": 241,
+    "3": 269,
+    "11": 683,
+    "15": 573,
+    "19": 512,
+    "18": 780,
+    "4": 116,
+    "12": 801,
+    "20": 733,
+    "21": 648,
+    "22": 505,
+    "23": 395,
     "5": 174,
-    "19": 188,
-    "22": 136,
-    "3": 261,
-    "18": 298,
-    "4": 109,
-    "21": 269,
-    "1": 258,
-    "2": 311,
-    "16": 312,
-    "17": 164,
-    "20": 379
+    "2": 311
   },
   "message_types": {
-    "19": 15,
-    "0": 73
+    "0": 2951,
+    "19": 1106
   },
   "top_reacted_messages": [
     {
@@ -87,6 +96,13 @@
       "author": "notjustthewind",
       "reactions": 10,
       "channel": "clementine moment"
+    },
+    {
+      "id": "1468774260515541155",
+      "content": "<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1468989205647589501",
@@ -152,6 +168,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1468979753900965899",
+      "content": "啊？",
+      "author": "_hannah0508",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1468974733793034240",
       "content": "This event celebrates the Lunar New Year.",
       "author": "ena04564",
@@ -178,20 +201,6 @@
       "author": "galagalaguo",
       "reactions": 6,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1469104045825462333",
-      "content": "在砍瓜切菜跟砍瓜切菜之間我分不出差別",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468879408130424915",
-      "content": "the new gamemode is where daff will shine",
-      "author": "princess.goth",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

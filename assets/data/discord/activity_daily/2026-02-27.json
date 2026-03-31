@@ -1,10 +1,17 @@
 {
   "date": "2026-02-27",
-  "messages": 624,
-  "unique_authors": 52,
-  "reactions_total": 774,
-  "attachments": 54,
+  "messages": 8811,
+  "unique_authors": 148,
+  "reactions_total": 2423,
+  "attachments": 371,
   "channel_activity": {
+    "🔸morimens-game-chat": 8106,
+    "🔸晒卡分享": 9,
+    "🔸欢乐梗图": 10,
+    "🔸相位对弈": 24,
+    "🔸课间休息闲聊": 7,
+    "🔸한국어-채팅방": 23,
+    "🔸deutscher-chatraum": 13,
     "Teambuilding help": 10,
     "to Light PD... i want morimens acrylic merch...": 1,
     "[Art Dump Thread] WILLIAMPOSTING 2": 3,
@@ -22,7 +29,6 @@
     "💭「Processing」The Boss intentions for Acr1 4-3 are a mess": 2,
     "✅「Answered」Anniversary was Great, the Raid was not": 2,
     "💭「Processing」If you stun the Chapter 8 boss during its phase transition, it skips": 2,
-    "🔸欢乐梗图": 5,
     "🔸礼包码┊gift-codes": 1,
     "🔸频道建议┊server-suggestions": 5,
     "1475232782169932038": 2,
@@ -39,33 +45,34 @@
     "🔸阵容构建": 29
   },
   "hourly_activity": {
-    "19": 2,
-    "20": 9,
-    "17": 5,
-    "0": 12,
-    "2": 19,
-    "11": 28,
-    "3": 23,
-    "4": 8,
-    "8": 22,
-    "9": 45,
-    "18": 3,
-    "16": 12,
-    "5": 7,
-    "6": 19,
-    "12": 51,
-    "13": 47,
-    "10": 70,
-    "7": 28,
-    "23": 10,
-    "22": 3,
-    "15": 91,
-    "1": 8,
-    "14": 102
+    "0": 678,
+    "1": 405,
+    "2": 466,
+    "3": 158,
+    "4": 141,
+    "5": 335,
+    "6": 139,
+    "7": 98,
+    "8": 331,
+    "9": 328,
+    "10": 365,
+    "11": 212,
+    "12": 221,
+    "13": 468,
+    "14": 699,
+    "15": 779,
+    "16": 324,
+    "17": 507,
+    "18": 483,
+    "19": 537,
+    "20": 331,
+    "21": 78,
+    "22": 403,
+    "23": 325
   },
   "message_types": {
-    "0": 9,
-    "19": 1
+    "19": 2744,
+    "0": 5443
   },
   "top_reacted_messages": [
     {
@@ -111,6 +118,83 @@
       "channel": ""
     },
     {
+      "id": "1476741771848318987",
+      "content": "<@88644018673582080>",
+      "author": "angbak",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476962870892695656",
+      "content": "<:Wheezechamp:1353842839683072210>",
+      "author": "necronomikkon",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476737852426551479",
+      "content": "C TIER MOUCHETTE BUFF CONFIRMED?",
+      "author": "angbak",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476881568109691010",
+      "content": "If I don't see a Jinx update in less than 3 hours I'll blame you personally for ",
+      "author": "zekiei",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476953082750570568",
+      "content": "Oh wow I guess the game is telling me what it wants me to play next",
+      "author": "linireo",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1477077397995262065",
+      "content": "You're right, Thais is not Caro, she's a Goat Unit",
+      "author": "snorlax01",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476919945165275176",
+      "content": "",
+      "author": "aaaa_00098",
+      "reactions": 8,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1476738137287032903",
+      "content": "Mouchette buff: deals 5% less damage so she can use her dr more <:ramona_tuff_:1",
+      "author": "syruponstrawberrycake",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476821436633972766",
+      "content": "There is",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476962504721829932",
+      "content": "<:Dawww:965272358959079454>",
+      "author": "necronomikkon",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476962178526351544",
+      "content": "10抽3金看呆",
+      "author": "mdma_v10d",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1476741665883684966",
       "content": "<:Helot_slack_off:1459092159465521184>",
       "author": "corposant_1003",
@@ -118,95 +202,18 @@
       "channel": "🔸欢乐梗图"
     },
     {
-      "id": "1476766795850580108",
-      "content": "Pls open automatically without needing to step on the tile, when we find the key",
-      "author": "you_morio",
+      "id": "1476735860106985583",
+      "content": "funny thing, i used to win community thingies in reverse1999 and use the prize m",
+      "author": "null.pointer_exception",
       "reactions": 6,
-      "channel": "🔸频道建议┊server-suggestions"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1476768054640902233",
-      "content": "The idea is excellent, and we certainly understand that it would be very useful ",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "✅「Answered」Expiramental Play Testing"
-    },
-    {
-      "id": "1476882095950532628",
-      "content": "Doresain +12 buff. Trust",
-      "author": "yeriko703",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1476770168536301759",
-      "content": "QNFA-JHCW-JMVH",
-      "author": "xingxiu_0209",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476842150837747877",
-      "content": "😋 😋",
-      "author": "be_queitplease",
-      "reactions": 5,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1476903965856895067",
-      "content": "<:thinking1:1356068128936820929> ❓",
-      "author": "exhibitionism",
-      "reactions": 4,
-      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
-    },
-    {
-      "id": "1476781092248752158",
-      "content": "Because it is indeed useful, it is still under consideration, but I don't want t",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "✅「Answered」Expiramental Play Testing"
-    },
-    {
-      "id": "1477022502390857738",
-      "content": "Thank you for directing them to the right channels🙏",
-      "author": "cometovilla",
-      "reactions": 3,
-      "channel": "🔸频道建议┊server-suggestions"
-    },
-    {
-      "id": "1477068623779598426",
-      "content": "Old sketch I forgot to post <:stone:1356053165874741490>",
-      "author": "happyskull",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1476826864705081446",
-      "content": "31 days left!!",
-      "author": "fishhazardthewizard",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1476923008181342270",
-      "content": "大佬別奶了",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476938650599034961",
-      "content": "我要用这个影片~~陷害~~推荐所有大数字爱好者去玩杜勒（X",
-      "author": "be_queitplease",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476745346146369677",
-      "content": "TYTYYY!!!!!",
-      "author": "mimiruku",
-      "reactions": 2,
-      "channel": "chapter was traumatising thank you morimens"
+      "id": "1476768764635775076",
+      "content": "corpo",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

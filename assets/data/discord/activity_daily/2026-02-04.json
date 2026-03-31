@@ -1,10 +1,18 @@
 {
   "date": "2026-02-04",
-  "messages": 7424,
+  "messages": 10159,
   "unique_authors": 162,
-  "reactions_total": 1288,
-  "attachments": 302,
+  "reactions_total": 1485,
+  "attachments": 360,
   "channel_activity": {
+    "🔸剧情交流": 6,
+    "🔸晒卡分享": 1,
+    "🔸欢乐梗图": 6,
+    "🔸相位对弈": 9,
+    "🔸交友频道": 14,
+    "🔸한국어-채팅방": 172,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 2529,
     "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup...": 3,
     "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
     "登入問題": 2,
@@ -17,7 +25,6 @@
     "Bug": 4,
     "✅「已回答」你是電你是光你是唯一的神話": 1,
     "We need more SR characters": 4,
-    "🔸欢乐梗图": 3,
     "🔸游戏问题": 1,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 8,
     "1467225902029996154": 4,
@@ -26,34 +33,34 @@
     "🔸morimens-game-chat": 6324
   },
   "hourly_activity": {
-    "11": 329,
-    "18": 462,
-    "17": 611,
-    "9": 219,
-    "10": 530,
-    "0": 60,
-    "22": 114,
-    "23": 166,
-    "2": 249,
-    "4": 257,
-    "12": 449,
-    "16": 316,
-    "15": 676,
-    "1": 74,
-    "5": 210,
-    "7": 177,
-    "8": 220,
-    "14": 720,
-    "13": 519,
-    "6": 161,
-    "3": 202,
-    "19": 351,
-    "20": 122,
-    "21": 230
+    "3": 209,
+    "4": 276,
+    "6": 174,
+    "7": 181,
+    "13": 598,
+    "8": 221,
+    "9": 222,
+    "11": 373,
+    "1": 80,
+    "2": 253,
+    "12": 495,
+    "0": 182,
+    "5": 221,
+    "16": 826,
+    "21": 397,
+    "22": 196,
+    "23": 169,
+    "10": 540,
+    "14": 1427,
+    "15": 1250,
+    "17": 829,
+    "18": 495,
+    "19": 364,
+    "20": 181
   },
   "message_types": {
-    "19": 1,
-    "0": 5
+    "0": 2111,
+    "19": 624
   },
   "top_reacted_messages": [
     {
@@ -169,6 +176,20 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1468600998384767222",
+      "content": "<:agree:1400771815076528258>",
+      "author": "_hannah0508",
+      "reactions": 5,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1468533337181126656",
+      "content": "更新換本期有加成的助戰",
+      "author": "universe.dark",
+      "reactions": 5,
+      "channel": "🔸交友频道"
+    },
+    {
       "id": "1468467776875270155",
       "content": "Pros\nSkill Design: I found the skill designs for Xu and Mouchette to be excellen",
       "author": "shun5984",
@@ -179,20 +200,6 @@
       "id": "1468547332541779988",
       "content": "這位是薩摩大佬嗎",
       "author": "yy42974466",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468559754036252723",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468575208209387593",
-      "content": "如果你的心力有5萬的話",
-      "author": "ernest_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

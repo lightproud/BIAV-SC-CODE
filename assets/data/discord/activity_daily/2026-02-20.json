@@ -1,10 +1,16 @@
 {
   "date": "2026-02-20",
-  "messages": 1726,
-  "unique_authors": 58,
-  "reactions_total": 262,
-  "attachments": 95,
+  "messages": 8357,
+  "unique_authors": 155,
+  "reactions_total": 1210,
+  "attachments": 410,
   "channel_activity": {
+    "🔸morimens-game-chat": 6591,
+    "🔸剧情交流": 3,
+    "🔸晒卡分享": 13,
+    "🔸欢乐梗图": 4,
+    "🔸한국어-채팅방": 8,
+    "🔸deutscher-chatraum": 14,
     "Year of the horse...? || Doresain x Sylvester": 2,
     "murphy and desserts 🍓": 1,
     "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 4,
@@ -18,7 +24,6 @@
     "塗鴉": 4,
     "皮克曼生日快乐": 9,
     "马年……？|| 杜勒赛因x西维斯特": 4,
-    "🔸欢乐梗图": 2,
     "🔸频道建议┊server-suggestions": 3,
     "1462840887553032335": 8,
     "1296113810549112874": 1,
@@ -30,33 +35,36 @@
     "🔸阵容构建": 41
   },
   "hourly_activity": {
-    "3": 84,
-    "9": 55,
-    "0": 7,
-    "4": 210,
-    "8": 32,
-    "18": 23,
-    "19": 11,
-    "21": 2,
-    "13": 106,
-    "17": 130,
-    "7": 20,
-    "14": 30,
-    "15": 86,
-    "16": 299,
-    "2": 72,
-    "6": 59,
-    "1": 21,
-    "10": 8,
-    "22": 3,
-    "5": 81,
-    "12": 280,
-    "23": 2,
-    "11": 103,
-    "20": 2
+    "0": 318,
+    "1": 373,
+    "2": 394,
+    "3": 294,
+    "4": 526,
+    "5": 267,
+    "6": 305,
+    "7": 249,
+    "8": 169,
+    "9": 193,
+    "10": 220,
+    "11": 387,
+    "12": 527,
+    "13": 532,
+    "14": 326,
+    "15": 422,
+    "16": 529,
+    "17": 319,
+    "18": 348,
+    "19": 577,
+    "20": 172,
+    "21": 193,
+    "22": 516,
+    "23": 201
   },
   "message_types": {
-    "0": 3
+    "0": 4474,
+    "19": 2155,
+    "46": 1,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -95,6 +103,34 @@
       "channel": "Year of the horse...? || Doresain x Sylvester"
     },
     {
+      "id": "1474321838640468082",
+      "content": "i could have had lv 90 uvhash a month ago 😭😭",
+      "author": "crowlov1",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1474263109085561032",
+      "content": "",
+      "author": "crowlov1",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1474416519495811188",
+      "content": "<@756514927870476519> I heard new info on upcoming character, https://x.com/Idot",
+      "author": "sunless_echoing",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1474440410259787861",
+      "content": "",
+      "author": "ena04564",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1474389809324884125",
       "content": "等待杜師傅斗篷中（當時選髮色的時候看起來蠻深的，沒想到實物做出來看起來很淡||杜杜褪色中||，不過也可以<:Daffodil_Calm:146825930905",
       "author": "navirecorbeau",
@@ -102,11 +138,60 @@
       "channel": ""
     },
     {
+      "id": "1474209203106349116",
+      "content": "Will also not login for a while after this",
+      "author": "manitar",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1474390576723132436",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1474394144599183563",
+      "content": "Confidential leaks, don't let anyone know <:Tulu_stare:1468258231078879325>",
+      "author": "not_blueberry",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1474404655323807845",
+      "content": "Relevant",
+      "author": "._.aahh",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1474242616735563839",
       "content": "\"杜勒赛因！....杜勒赛因？\n\n新年艺术第二弹！这只是我随手画的小涂鸦，描绘西维斯特戴着马面具的样子。\n\n杜勒赛因可能有点困惑，至少他觉得挺有趣的。",
       "author": "that_one_chippy",
       "reactions": 6,
       "channel": "马年……？|| 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1474242571684548638",
+      "content": "<@1471414323883540501>",
+      "author": "princess.goth",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1474370068082196573",
+      "content": "Even train will not make me use 2x",
+      "author": "linireo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1474438497455571026",
+      "content": "damn she didnt feel nice to play on w5?",
+      "author": "dracozion",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1474421593055826011",
@@ -121,83 +206,6 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474455234460909568",
-      "content": "環拉：我在無限的時間線裡找到了正確的時間線\n守密：我在無限的回朔裡找到難5的答案",
-      "author": "eddy10051115",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474264340172374171",
-      "content": "I spent like a whole afternoon for a run.",
-      "author": "xyakoto",
-      "reactions": 4,
-      "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
-    },
-    {
-      "id": "1474449595839807588",
-      "content": "交往了七年的傢伙怎麼可能沒有www",
-      "author": "eddy10051115",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474548799094390994",
-      "content": "對了也樂見更多跟死抗關聯的玩法，像茉夏這樣就太爽了直接給他抽了超限⋯好爽⋯好愛⋯喜歡我的死抗次數加成嗎😍現在死抗隊不成體制東一塊西一塊的還有索蕾爾啟三這種低難關",
-      "author": "amstelredam",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1474251537634295980",
-      "content": "(我不佬",
-      "author": "forg30215",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474299392017301514",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474377073471520820",
-      "content": "我剛抓了兩個入坑\n得到經驗是周年那時候那邊差不多兩個月才能全通主線\n還是趕上了茉夏跟誕墨這種比較輪椅的角色",
-      "author": "eddy10051115",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474440695749284073",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474395842583728290",
-      "content": "Probably could try to contact the Customer service, from the home screen icon fo",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": "✅「Answered」problems with donations"
-    },
-    {
-      "id": "1474399549375250507",
-      "content": "*whisper*\n“I love you Doresain”\nThrow him into the Black Pool because of my brok",
-      "author": "_venush",
-      "reactions": 2,
-      "channel": "Please allow us to reutrn Doresain to the Black Pool"
-    },
-    {
-      "id": "1474221466697470160",
-      "content": "本期为大家带来的是星辰篇第27期（第54期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n◆本期融灾时间：2026年2月16日9:00 - 3月2日9:",
-      "author": "menoctus",
-      "reactions": 2,
-      "channel": "✦关卡地图「融灾禁区」总览54期·星辰篇✦"
     }
   ]
 }

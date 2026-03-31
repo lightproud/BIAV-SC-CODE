@@ -1,10 +1,16 @@
 {
   "date": "2026-02-08",
-  "messages": 7222,
+  "messages": 8676,
   "unique_authors": 160,
-  "reactions_total": 967,
-  "attachments": 355,
+  "reactions_total": 1215,
+  "attachments": 409,
   "channel_activity": {
+    "🔸剧情交流": 1,
+    "🔸晒卡分享": 11,
+    "🔸欢乐梗图": 4,
+    "🔸课间休息闲聊": 176,
+    "🔸chaîne-française": 122,
+    "🔸русский-канал": 1142,
     "1 in a Million Banner general advices": 3,
     "Flares' Comprehensive Beginner Guide to Morimens": 2,
     "Ramona wip (best girl)🗝": 1,
@@ -18,7 +24,6 @@
     "wrong value for Tulu's soulforge": 2,
     "新年假期~ || 杜勒赛因x西维斯特": 5,
     "绘画//戈利亚相关楼": 4,
-    "🔸欢乐梗图": 2,
     "🔸游戏问题": 13,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "1462840887553032335": 1,
@@ -32,33 +37,34 @@
     "🔸morimens-game-chat": 5801
   },
   "hourly_activity": {
-    "9": 262,
-    "12": 287,
-    "11": 208,
-    "21": 354,
-    "17": 167,
-    "8": 185,
-    "3": 220,
+    "16": 653,
+    "3": 221,
+    "5": 477,
+    "10": 315,
+    "11": 218,
+    "9": 285,
+    "6": 283,
+    "7": 261,
+    "8": 186,
+    "12": 333,
+    "13": 451,
+    "14": 517,
+    "17": 171,
+    "21": 403,
+    "20": 288,
+    "22": 504,
+    "23": 448,
+    "2": 352,
+    "15": 822,
     "4": 417,
-    "22": 439,
-    "5": 473,
-    "2": 351,
-    "10": 224,
     "1": 141,
     "19": 364,
     "0": 402,
-    "18": 164,
-    "6": 197,
-    "7": 235,
-    "13": 348,
-    "14": 242,
-    "15": 536,
-    "16": 276,
-    "20": 287,
-    "23": 443
+    "18": 164
   },
   "message_types": {
-    "0": 5
+    "0": 938,
+    "19": 516
   },
   "top_reacted_messages": [
     {
@@ -76,6 +82,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1469927753217343581",
+      "content": "入坑12天以來的所有\n隨機限定全出紅夫人",
+      "author": "xingxiu_0209",
+      "reactions": 11,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1469984711660142696",
       "content": "Hoy everyone, the **\"1 in a Million\" Banner** is coming soon and we wanted to cl",
       "author": "vxvendetta97",
@@ -90,11 +103,25 @@
       "channel": "Faint Costume Idea!! - \"A Star's Dying Light\""
     },
     {
+      "id": "1470091534375452735",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 10,
+      "channel": "🔸晒卡分享"
+    },
+    {
       "id": "1470172690353619084",
       "content": "sorry it's blurry im on mobile",
       "author": "h3ll0hu",
       "reactions": 10,
       "channel": "hi leonora cosplay in rh"
+    },
+    {
+      "id": "1470006710251815108",
+      "content": "囤囤鼠大王<:pray:1356053116260454534>",
+      "author": "kalpiko.",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1469922999045062923",
@@ -123,6 +150,13 @@
       "author": "sooneruzuki",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470009775172485205",
+      "content": "雙+12",
+      "author": "andy1123",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1470086129691922474",
@@ -167,39 +201,11 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1470132158973870100",
-      "content": "Overall I enjoyed the anniversary but as others have said the raid format felt u",
-      "author": "sephallia",
+      "id": "1469946755528527882",
+      "content": "omg",
+      "author": "_hannah0508",
       "reactions": 5,
-      "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
-    },
-    {
-      "id": "1469891751522209924",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470071807288803439",
-      "content": "誕墨也很簡單\n輪舞、輪舞、輪舞、輪舞、輪舞、輪舞、輪舞、輪舞、輪舞、輪舞、輪舞、輪舞",
-      "author": "void_1546.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470082160558997730",
-      "content": "waiting for the right moment",
-      "author": "sooneruzuki",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1470095345022271683",
-      "content": "lock",
-      "author": "necronomikkon",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸课间休息闲聊"
     }
   ]
 }

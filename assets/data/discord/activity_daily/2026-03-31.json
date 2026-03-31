@@ -1,37 +1,42 @@
 {
   "date": "2026-03-31",
-  "messages": 10367,
+  "messages": 13512,
   "unique_authors": 155,
-  "reactions_total": 1295,
-  "attachments": 483,
+  "reactions_total": 1763,
+  "attachments": 644,
   "channel_activity": {
-    "🔸綜合討論": 792,
-    "🔸morimens-game-chat": 6308,
-    "🔸相位对弈": 136,
-    "🔸日本語チャンネル": 10,
-    "🔸한국어-채팅방": 20,
-    "🔸phòng-chat-tiếng-việt": 749,
-    "🔸canal-español": 215,
-    "🔸canal-português": 383,
-    "🔸ruang-obrolan-indonesia": 100,
-    "🔸ห้องสนทนาภาษาไทย": 128,
-    "🔸lore-chat": 115,
-    "🔸team-building": 174,
-    "🔸general-chat": 233,
-    "🔸邀请码互助┊swap-invitation-codes": 8,
-    "🔸game-question": 811,
-    "🔸机器人命令┊bot-commands": 23,
-    "🔸erica-playground": 19,
-    "想提點奇怪的建議": 8,
+    "🔸綜合討論": 1057,
+    "🔸morimens-game-chat": 8158,
+    "🔸相位对弈": 138,
+    "🔸日本語チャンネル": 11,
+    "🔸한국어-채팅방": 21,
+    "🔸русский-канал": 7,
+    "🔸phòng-chat-tiếng-việt": 1068,
+    "🔸canal-español": 302,
+    "🔸canal-português": 538,
+    "🔸ruang-obrolan-indonesia": 133,
+    "🔸ห้องสนทนาภาษาไทย": 131,
+    "🔸traphase": 7,
+    "🔸lore-chat": 145,
+    "🔸team-building": 177,
+    "🔸general-chat": 302,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 1099,
+    "🔸机器人命令┊bot-commands": 28,
+    "🔸erica-playground": 24,
+    "問一下關於阿拉克涅的": 7,
+    "過了這麼久，最終法則的消息呢？🧐": 4,
+    "想提點奇怪的建議": 9,
+    "💭「Processing」Game freezing after ending boss": 6,
+    "关于愚人节跳脸剧情的问一问": 2,
+    "Your Awakeners look different today... [April Fools]": 4,
     "融災紅寶石胸針數值不符": 3,
     "Prismatic Lens Caps and Ultra Turn Interaction": 1,
-    "💭「Processing」Game freezing after ending boss": 4,
     "An In Depth Video Guide about Vortice": 1,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 1,
     "Flares' Comprehensive Guide to Morimens V1": 2,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 2,
     "🔸课间休息闲聊": 54,
-    "🔸traphase": 6,
     "基珀先生，請問我可以請您跳支舞嗎？|| W.I.P": 4,
     "Enable Auto Battle for D-Zone/Tide and Character Trials again": 2,
     "steam无法登陆": 2,
@@ -47,17 +52,20 @@
     "Tawil as a male (WIP)": 1,
     "Teatime Doll wip": 2,
     "William posting": 16,
-    "🔸русский-канал": 2,
     "💭「处理中」错字": 4,
     "💭「处理中」小猫克扣魔术师专造力量降低": 5,
     "💭「處理中」波呂克斯的超限?": 2
   },
   "hourly_activity": {
+    "15": 1002,
+    "16": 909,
+    "17": 960,
+    "18": 119,
+    "14": 708,
     "10": 756,
     "11": 1127,
     "12": 745,
     "13": 902,
-    "14": 553,
     "5": 514,
     "6": 461,
     "7": 452,
@@ -70,12 +78,18 @@
     "2": 724
   },
   "message_types": {
-    "0": 2517,
-    "19": 1207,
-    "20": 4,
-    "4": 1
+    "0": 1964,
+    "19": 1180,
+    "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1488584254387392532",
+      "content": "Sorry for sending this a second time, I seriously can't get over how pretty she ",
+      "author": "unwavering_soul",
+      "reactions": 15,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1488511036905492681",
       "content": "https://docs.google.com/document/d/1THjxR9hHs4NWHqSWHHa2dHAGuE_cRGelfzXdBfCnIlM/",
@@ -84,10 +98,45 @@
       "channel": "🔸game-question"
     },
     {
+      "id": "1488579397215588522",
+      "content": "~~有過遊戲外的小劇情~~",
+      "author": "wild_pansy",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488580675077411019",
+      "content": "or we can celebrate that the community came together and fight racism together <",
+      "author": "l8989c",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488583103978012864",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1488427679685279846",
       "content": "67",
       "author": "_venush",
       "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488555049117290627",
+      "content": "新手先抽旋转旋转+12",
+      "author": "ponponnyaru",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488566972814987434",
+      "content": "Rain, you are a hero for making those dtide posts.",
+      "author": "monchi3524",
+      "reactions": 7,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -126,94 +175,52 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488494284373229578",
-      "content": "don't listen to the 法国人's lies",
-      "author": "jyeusu",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488457735044595823",
-      "content": "",
-      "author": "void_1546.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488471964434567168",
-      "content": "",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488435975469400295",
-      "content": "I either finish this before the event or this is going to be kept in my folder f",
-      "author": "that_one_chippy",
-      "reactions": 5,
-      "channel": "May I have this dance, Mr. Keeper? || W.I.P"
-    },
-    {
-      "id": "1488492706991706163",
-      "content": "",
+      "id": "1488568210121953380",
+      "content": "<@1471414323883540501> <:please:1356053110375714817>",
       "author": "blecnes.",
-      "reactions": 4,
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488494524635414650",
-      "content": "Thats creepy",
-      "author": "monchi3524",
-      "reactions": 4,
+      "id": "1488574125801996380",
+      "content": "> William helping \nHAHAHAHA that's the funniest joke I have ever heard",
+      "author": "aurora3981",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488498067576717403",
-      "content": "https://media.discordapp.net/attachments/568153599855689729/1073673983083417630/",
-      "author": "dyssayah",
-      "reactions": 4,
+      "id": "1488576436196605962",
+      "content": "Guys open Morimens!!",
+      "author": "2.alwys.remmber",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488507397126357103",
-      "content": "And this doesnt feel the same",
-      "author": "necronomikkon",
-      "reactions": 4,
+      "id": "1488576885725069353",
+      "content": "🦦",
+      "author": "junakaru4ever",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488508382041346058",
-      "content": "And I fucking hatebit",
-      "author": "necronomikkon",
-      "reactions": 4,
+      "id": "1488579883599794312",
+      "content": "No as in i need to know whether or not i want to block you over that <:24_smile:",
+      "author": "fishhazardthewizard",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488511702537338922",
-      "content": "I just came back after clearing 400",
-      "author": "angbak",
-      "reactions": 4,
+      "id": "1488580310705770627",
+      "content": "my peasants, please give me a chance",
+      "author": "bagels5899",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488525955617001593",
-      "content": "BYEBYE",
-      "author": "l8989c",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488526783841042522",
-      "content": "i mean",
-      "author": "blecnes.",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488527926444953712",
-      "content": "the unspoken one goes hard",
-      "author": "princess.goth",
-      "reactions": 4,
+      "id": "1488581397571436564",
+      "content": "The most fake Chinese person you'll ever know",
+      "author": "aurora3981",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }
   ]

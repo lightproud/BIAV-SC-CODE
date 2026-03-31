@@ -1,13 +1,19 @@
 {
   "date": "2026-02-13",
-  "messages": 6529,
+  "messages": 7376,
   "unique_authors": 113,
-  "reactions_total": 945,
-  "attachments": 303,
+  "reactions_total": 1078,
+  "attachments": 345,
   "channel_activity": {
+    "🔸morimens-game-chat": 6602,
+    "🔸剧情交流": 5,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 1,
+    "🔸日本語チャンネル": 7,
+    "🔸한국어-채팅방": 32,
+    "🔸deutscher-chatraum": 13,
     "逆向推理┊Reverse Inference": 3,
     "求方向": 1,
-    "🔸morimens-game-chat": 5814,
     "Stop aurafarming!": 2,
     "Lotan": 1,
     "💭「處理中」Bug列車": 3,
@@ -36,7 +42,6 @@
     "✅「Answered」I'd like to request a refund": 2,
     "💭「處理中」偏方骰子應該要能吃到物象研究深度": 2,
     "❤️": 5,
-    "🔸欢乐梗图": 1,
     "🔸频道建议┊server-suggestions": 2,
     "🔸游戏问题": 1,
     "1462840887553032335": 2,
@@ -52,35 +57,34 @@
     "🔸阵容构建": 7
   },
   "hourly_activity": {
-    "0": 61,
-    "9": 379,
+    "20": 590,
+    "21": 83,
+    "22": 75,
+    "23": 205,
+    "16": 613,
+    "15": 598,
+    "17": 354,
+    "3": 457,
+    "11": 330,
+    "13": 323,
+    "0": 64,
+    "1": 115,
+    "4": 128,
+    "5": 213,
+    "9": 380,
+    "10": 499,
+    "19": 318,
     "7": 189,
-    "1": 114,
     "2": 181,
-    "3": 455,
-    "4": 125,
-    "5": 206,
     "6": 78,
     "8": 491,
-    "10": 491,
-    "11": 328,
     "12": 166,
-    "13": 318,
     "14": 421,
-    "15": 593,
-    "16": 604,
-    "17": 351,
-    "18": 505,
-    "19": 315,
-    "20": 154,
-    "23": 3,
-    "21": 1
+    "18": 505
   },
   "message_types": {
-    "19": 1924,
-    "0": 3888,
-    "23": 1,
-    "20": 5
+    "19": 334,
+    "0": 513
   },
   "top_reacted_messages": [
     {
@@ -110,6 +114,13 @@
       "author": "xyakoto",
       "reactions": 10,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1471964581814599720",
+      "content": "",
+      "author": "_kito_kato_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1471793909696036904",
@@ -212,13 +223,6 @@
     {
       "id": "1471786420212465684",
       "content": "flares answervis im fine",
-      "author": "flares117",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1471787444495192271",
-      "content": "i made it through day 2 and 3 with none of the prescribed pain meds",
       "author": "flares117",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"

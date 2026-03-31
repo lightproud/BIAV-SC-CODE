@@ -1,10 +1,15 @@
 {
   "date": "2026-02-22",
-  "messages": 1470,
-  "unique_authors": 47,
-  "reactions_total": 291,
-  "attachments": 103,
+  "messages": 6098,
+  "unique_authors": 143,
+  "reactions_total": 1000,
+  "attachments": 308,
   "channel_activity": {
+    "🔸morimens-game-chat": 4480,
+    "🔸剧情交流": 15,
+    "🔸晒卡分享": 12,
+    "🔸课间休息闲聊": 107,
+    "🔸chaîne-française": 14,
     "Need a team for progression": 9,
     "who do i get from this protoparadise?": 8,
     "Team building help!": 12,
@@ -29,34 +34,36 @@
     "🔸阵容构建": 13
   },
   "hourly_activity": {
-    "1": 54,
-    "5": 46,
-    "3": 23,
-    "4": 31,
-    "9": 188,
-    "19": 3,
-    "21": 38,
-    "23": 2,
-    "7": 100,
-    "22": 9,
-    "10": 229,
-    "11": 63,
-    "15": 134,
-    "16": 84,
-    "20": 99,
-    "0": 2,
-    "17": 49,
-    "2": 60,
-    "6": 9,
-    "8": 110,
-    "12": 11,
-    "13": 6,
-    "14": 111,
-    "18": 9
+    "0": 133,
+    "1": 132,
+    "2": 212,
+    "3": 259,
+    "4": 272,
+    "5": 147,
+    "6": 93,
+    "7": 290,
+    "8": 166,
+    "9": 233,
+    "10": 543,
+    "11": 250,
+    "12": 239,
+    "13": 255,
+    "14": 215,
+    "15": 334,
+    "16": 424,
+    "17": 172,
+    "18": 297,
+    "19": 243,
+    "20": 248,
+    "21": 391,
+    "22": 327,
+    "23": 223
   },
   "message_types": {
-    "0": 27,
-    "19": 2
+    "19": 1367,
+    "0": 3259,
+    "46": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -88,11 +95,25 @@
       "channel": "猫咪节快乐！|| 杜勒赛因x西维斯特"
     },
     {
+      "id": "1475102397964750981",
+      "content": "",
+      "author": "moyashi0672",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1475159481930485811",
       "content": "For level roles, add e3, OE, and +12 Awakener roles, too many people have a key ",
       "author": "syruponstrawberrycake",
       "reactions": 8,
       "channel": "🔸频道建议┊server-suggestions"
+    },
+    {
+      "id": "1475132140835442688",
+      "content": "This game might be peak...",
+      "author": "nerdmui",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1475060782139052122",
@@ -116,6 +137,55 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1475041327870771231",
+      "content": "普池已经捞出5只了",
+      "author": "txt101225.",
+      "reactions": 6,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1475127299816034548",
+      "content": "",
+      "author": "vivian35._.",
+      "reactions": 6,
+      "channel": "🔸课间休息闲聊"
+    },
+    {
+      "id": "1475074679440932916",
+      "content": "Just keep 24 in red and keep striking",
+      "author": "undeterredhomo",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475110472301805651",
+      "content": "D-Tide should be renamed Wuthering Waves\nJust like the train mode was named HSR",
+      "author": "legendaryredz",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475119040178421890",
+      "content": "no mention of my a5 clear with lower investment kath <:Helot_slack_off:145909215",
+      "author": "chinkeeyong",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475164980734066759",
+      "content": "whhAAATT",
+      "author": "nerdmui",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1475203572160528516",
+      "content": "I thought ch. 9 was fun but it’s a player preference thing",
+      "author": "frosthief",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1475232782169932038",
       "content": "界域：超維\n輔助型\n名字：希\n————————————————\n狀態\n等級：60\n體質220\n攻擊60\n防禦87\n————————————————\n詳細屬性\n爆",
       "author": "vgvfvffcc",
@@ -130,74 +200,11 @@
       "channel": ""
     },
     {
-      "id": "1475022776430760068",
-      "content": "",
-      "author": "water_heart",
+      "id": "1474963676137263236",
+      "content": "I tried watching ur video it was probabaly very educational but I fell asleep so",
+      "author": "frosthief",
       "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475086275248787600",
-      "content": "列車圖看多了突然竟然有1668x2的傷害很溫柔的感覺<:nocomment:1356053106038673610>",
-      "author": "partycatss.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475105457147216053",
-      "content": "弥利随手一刀砍掉七十五万<:cry3:1356082134447558748>",
-      "author": "akalanden",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474965873491185697",
-      "content": "https://youtu.be/1JI24zzT7hA?si=5hwzec8KcnofXnDl - Guia de aigis algunas composi",
-      "author": "yaoshidoppa",
-      "reactions": 3,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1474929281955004637",
-      "content": "<@1212395834029641778> 勞斯需要這個",
-      "author": "ernest_heart",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1474934478945259723",
-      "content": "#72 finally on time today, have pretty arachne (36 days left)",
-      "author": "fishhazardthewizard",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1474954170971979889",
-      "content": "<:pray:1356053116260454534> 没忍住抽到双12了",
-      "author": "xyakoto",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474997037140410428",
-      "content": "我們一定要用400k毒跟這東西打嗎",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475038648889249854",
-      "content": "融朵赤石挑戰",
-      "author": "lululu9858",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475159554613579907",
-      "content": "對他使用深淵號令吧",
-      "author": "lululu9858",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

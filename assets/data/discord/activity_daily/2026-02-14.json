@@ -1,10 +1,20 @@
 {
   "date": "2026-02-14",
-  "messages": 1036,
-  "unique_authors": 63,
-  "reactions_total": 418,
-  "attachments": 153,
+  "messages": 7705,
+  "unique_authors": 168,
+  "reactions_total": 1352,
+  "attachments": 448,
   "channel_activity": {
+    "🔸morimens-game-chat": 6602,
+    "🔸剧情交流": 26,
+    "🔸晒卡分享": 3,
+    "🔸欢乐梗图": 2,
+    "🔸相位对弈": 10,
+    "🔸课间休息闲聊": 15,
+    "🔸日本語チャンネル": 4,
+    "🔸한국어-채팅방": 3,
+    "🔸deutscher-chatraum": 3,
+    "🔸chaîne-française": 2,
     "🎉忘却前夜新春会┊Morimens Spring Festival Gala": 95,
     "求融災隊伍": 1,
     "Can’t get into the game": 1,
@@ -30,7 +40,6 @@
     "給你遊拉磨😋": 5,
     "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取": 1,
     "請吃音樂家": 2,
-    "🔸欢乐梗图": 1,
     "1462840887553032335": 4,
     "1440735573206761734": 7,
     "1403373754175721657": 5,
@@ -45,34 +54,34 @@
     "🔸阵容构建": 26
   },
   "hourly_activity": {
-    "12": 95,
-    "13": 99,
-    "14": 52,
-    "16": 25,
-    "17": 39,
-    "18": 9,
-    "15": 25,
-    "10": 26,
-    "1": 13,
-    "19": 15,
-    "8": 73,
-    "9": 32,
-    "7": 110,
-    "11": 83,
-    "6": 51,
-    "3": 92,
-    "4": 95,
-    "5": 48,
-    "0": 1,
-    "20": 3,
-    "23": 2,
-    "2": 47,
-    "22": 1
+    "0": 137,
+    "1": 368,
+    "2": 557,
+    "3": 273,
+    "4": 210,
+    "5": 270,
+    "6": 284,
+    "7": 300,
+    "8": 370,
+    "9": 361,
+    "10": 272,
+    "11": 517,
+    "12": 372,
+    "13": 441,
+    "14": 224,
+    "15": 350,
+    "16": 784,
+    "17": 295,
+    "18": 336,
+    "19": 209,
+    "20": 115,
+    "21": 209,
+    "22": 259,
+    "23": 192
   },
   "message_types": {
-    "19": 9,
-    "0": 88,
-    "6": 1
+    "0": 4328,
+    "19": 2341
   },
   "top_reacted_messages": [
     {
@@ -132,11 +141,46 @@
       "channel": "請吃音樂家"
     },
     {
+      "id": "1472225761154039872",
+      "content": "EQUB-ATGJ-PJUV\nHKAJ-UQAG-BFTV\nZVFT-FMZJ-DTLS",
+      "author": "enumaellis",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1472269061655105558",
+      "content": "<:realm_aequor:1437283645051375777>  (derogatory)",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1472216629722218621",
+      "content": "excuse me?!",
+      "author": "serene9935",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1472350398932062210",
+      "content": "Remove aequor and replace it with jp ultra",
+      "author": "2ndselna",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1472179029762244749",
       "content": "共鳴開起來後 困難很簡單 幾乎每場都滿血<:thumbsup:1356086340298473574>",
       "author": "_buqi",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1472239715406315723",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1472215140928589970",
@@ -151,6 +195,13 @@
       "author": "shostakovich524",
       "reactions": 7,
       "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
+    },
+    {
+      "id": "1472197841937105019",
+      "content": "Use the pizza which generates strike on odd turns + faros wheel on clem. With th",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1472221094600638504",
@@ -172,48 +223,6 @@
       "author": "rdkanami",
       "reactions": 6,
       "channel": "給你遊拉磨😋"
-    },
-    {
-      "id": "1472199735837327370",
-      "content": "🌿 忘卻的春晚直播被判定掛機\n然後直接被封了1分鐘",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472279682064978143",
-      "content": "1200銀芯嘿嘿嘿\n希望淡墨能三啟",
-      "author": "xingxiu_0209",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472216507067924550",
-      "content": "還有相聲節目（驚喜",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
-    },
-    {
-      "id": "1472218270441541663",
-      "content": "校貓發666禮物把我直播幹卡了",
-      "author": "shostakovich524",
-      "reactions": 5,
-      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
-    },
-    {
-      "id": "1472225022968987900",
-      "content": "不行了，校貓砸了差不多1200，銀行卡就爆了🌿",
-      "author": "shostakovich524",
-      "reactions": 5,
-      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
-    },
-    {
-      "id": "1472273409919418500",
-      "content": "【是新春会的熔朵呀-哔哩哔哩】 https://b23.tv/C9rrwhm\n\n【忘却前夜新春会单品disease-哔哩哔哩】 https://b23.tv/r",
-      "author": "shostakovich524",
-      "reactions": 5,
-      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
     }
   ]
 }

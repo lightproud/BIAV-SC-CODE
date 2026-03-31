@@ -1,10 +1,19 @@
 {
   "date": "2026-02-25",
-  "messages": 804,
-  "unique_authors": 57,
-  "reactions_total": 153,
-  "attachments": 68,
+  "messages": 9048,
+  "unique_authors": 151,
+  "reactions_total": 1424,
+  "attachments": 384,
   "channel_activity": {
+    "🔸morimens-game-chat": 8114,
+    "🔸晒卡分享": 6,
+    "🔸欢乐梗图": 4,
+    "🔸相位对弈": 8,
+    "🔸交友频道": 18,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 66,
+    "🔸deutscher-chatraum": 24,
+    "🔸chaîne-française": 3,
     "V2.4.2 版本前瞻 ┊ Version Outlook": 1,
     "想健檢+請問這周抽那些池子": 1,
     "Happy Cat Day! || Doresain x Sylvester": 1,
@@ -21,7 +30,6 @@
     "✅「已回答」我的帳號已經跟APPLE ID連結，但是用手機會變成全新帳號": 2,
     "✅「已回答」極夜微光可否改回在手中時增加使用次數，而非張數": 8,
     "💭「處理中」為什麼我有四張蠟像共鳴降費過的旺達四費？？": 11,
-    "🔸欢乐梗图": 2,
     "1423337172655935600": 3,
     "1476239209596457141": 4,
     "1475923875392131273": 2,
@@ -37,41 +45,64 @@
     "🔸阵容构建": 4
   },
   "hourly_activity": {
-    "11": 4,
-    "1": 24,
-    "3": 58,
-    "6": 40,
-    "9": 36,
-    "14": 50,
-    "15": 13,
-    "13": 67,
-    "5": 127,
-    "8": 63,
-    "7": 31,
-    "2": 18,
-    "4": 20,
-    "10": 32,
-    "22": 8,
-    "23": 3,
-    "20": 3,
-    "16": 7,
-    "17": 50,
-    "21": 3,
-    "18": 34,
-    "19": 2,
-    "0": 8,
-    "12": 103
+    "0": 655,
+    "1": 745,
+    "2": 286,
+    "3": 92,
+    "4": 314,
+    "5": 758,
+    "6": 303,
+    "7": 293,
+    "8": 368,
+    "9": 199,
+    "10": 100,
+    "11": 221,
+    "12": 373,
+    "13": 421,
+    "14": 426,
+    "15": 508,
+    "16": 424,
+    "17": 405,
+    "18": 269,
+    "19": 510,
+    "20": 461,
+    "21": 516,
+    "22": 40,
+    "23": 361
   },
   "message_types": {
-    "0": 2
+    "0": 5425,
+    "19": 2818,
+    "46": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1476208081112269053",
+      "content": "https://x.com/i/status/2026640592994972085",
+      "author": "idotly",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1476170955398185103",
       "content": "<:24_smile:1459073862544130131>",
       "author": "._.aahh",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1476170429831053313",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476216268922290348",
+      "content": "kill idot",
+      "author": "princess.goth",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1476288951483629652",
@@ -81,6 +112,62 @@
       "channel": ""
     },
     {
+      "id": "1476196428270272558",
+      "content": "",
+      "author": "blecnes.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476364626697654448",
+      "content": "most mentally stable morimens player",
+      "author": "princess.goth",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476227928403480638",
+      "content": "偽マーフィーの専用遺物来てほしかったけどクリアできたから許しちゃう",
+      "author": "mta.576487576",
+      "reactions": 7,
+      "channel": "🔸日本語チャンネル"
+    },
+    {
+      "id": "1476028219181502575",
+      "content": "<:GDoll_Inferno_serenity:1468257540809822302>",
+      "author": "chinkeeyong",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476079999902548030",
+      "content": "he just like working in maid cafe",
+      "author": "polkarain",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476208373765767209",
+      "content": "https://x.com/morisommmm_/status/2026337447962141003",
+      "author": "blecnes.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476236962867449857",
+      "content": "",
+      "author": "snorlax01",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476334997760901322",
+      "content": "This game needs SEGSSS",
+      "author": "andersen_2214",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1476160759665791078",
       "content": "",
       "author": "navirecorbeau",
@@ -88,123 +175,46 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1476099336713535631",
-      "content": "摸一下就死",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476102564524200091",
-      "content": "I understand what you mean. Since the event has been running for a while, aside ",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
-    },
-    {
-      "id": "1476123637546352670",
-      "content": "我承認我很怪\n\n\n但我沒有阿宏那麼怪<:Pollux_gift:1459081694148558943>",
-      "author": "xingxiu_0209",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476223652814131416",
-      "content": "神國末夏都不用出",
-      "author": "sfn28409633",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476217499161722902",
-      "content": "evil 💔",
-      "author": "_venush",
-      "reactions": 3,
-      "channel": "✅「Answered」Add level 100 for HSR"
-    },
-    {
-      "id": "1476054923048128633",
-      "content": "~~話是這麽說，但我第一場戰鬥選了4費千面，有點搞~~",
-      "author": "cameliia._.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476117841177743431",
-      "content": "1500k大反擊",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476136500365361172",
-      "content": "此子已有故人之資",
-      "author": "void_1546.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476215446926659644",
-      "content": "報的話有種在給校貓打工的感覺讓我不是太想報<:idk:1356084138280489080>",
-      "author": "partycatss.",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476033593644945450",
-      "content": "...6",
-      "author": "fungi_01",
-      "reactions": 2,
-      "channel": "想健檢+請問這周抽那些池子"
-    },
-    {
-      "id": "1476100055562846290",
-      "content": "I'm too late! Let me see...<:Helot_slack_off:1459092159465521184>",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
-    },
-    {
-      "id": "1476321520421961920",
-      "content": "Pandia Caro would go hard",
-      "author": "crowlov1",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1476160596188860476",
-      "content": "2/25封禁名单（部分）丨 2/25Ban List (Partial)\n101648339\n101648236\n101648500\n101649310\n101",
-      "author": "morimensstaff02",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1476029272425496730",
-      "content": "Will bump here since there was a couple of changes since last time..!\n### https:",
-      "author": "fjantsa",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1476020205611253952",
-      "content": "尼瑪",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476058874179223563",
-      "content": "將畢業證書棄置於此",
-      "author": "quackdayo",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476070123977834597",
+      "id": "1476008203820208356",
       "content": "",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "author": "moyashi0672",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476012986002047159",
+      "content": "unironically if draco had posted aurita sucks in a meme format it'd probably be ",
+      "author": "arkaether",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476029352293433354",
+      "content": "<@332573289438380032> your combo sucks",
+      "author": "monchi3524",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476088175154692116",
+      "content": "good enough.",
+      "author": "jyeusu",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476207421075492917",
+      "content": "hello red",
+      "author": "blecnes.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1476214096809431162",
+      "content": "weebos",
+      "author": "andersen_2214",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
