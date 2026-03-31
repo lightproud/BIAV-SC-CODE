@@ -1,10 +1,18 @@
 {
   "date": "2025-02-22",
-  "messages": 41,
-  "unique_authors": 12,
-  "reactions_total": 47,
+  "messages": 89,
+  "unique_authors": 23,
+  "reactions_total": 75,
   "attachments": 7,
   "channel_activity": {
+    "💟獻上愛的圖騰——來自小花腦的信函": 1,
+    "✅前瞻：V2.1 关卡篇章": 1,
+    "✅前瞻：V2.1.1 相位对弈联动": 37,
+    "✅前瞻：V2.1.0.4 星辰篇调整": 1,
+    "✅前瞻：V2.1 灵塑适性与钥令收集": 4,
+    "✅前瞻：V2.1 无形者的礼券&请柬": 2,
+    "✅前瞻：V2.1 维度影像": 1,
+    "✅前瞻：V2.1 融灾与篇章调整": 1,
     "✅「已回答」知無不言還是沒有正確聯動反擊造物": 1,
     "活動打出兩張虛無是正常的嗎？": 14,
     "Page moved": 6,
@@ -14,23 +22,26 @@
     "不会再有了": 1
   },
   "hourly_activity": {
+    "11": 19,
+    "10": 17,
+    "9": 9,
+    "13": 4,
+    "14": 5,
+    "15": 8,
+    "20": 1,
     "17": 1,
     "2": 1,
     "3": 2,
     "7": 6,
     "8": 9,
-    "11": 3,
-    "13": 1,
-    "14": 2,
-    "15": 4,
     "23": 1,
-    "9": 5,
     "16": 5,
     "5": 1
   },
   "message_types": {
     "0": 26,
-    "19": 12
+    "4": 6,
+    "19": 16
   },
   "top_reacted_messages": [
     {
@@ -48,6 +59,41 @@
       "channel": "Page moved"
     },
     {
+      "id": "1342888509043638304",
+      "content": "為什麼角色可以超模卻不能超我",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+    },
+    {
+      "id": "1342875520056037448",
+      "content": "现在星辰篇限这限那的，你下个角色打算咋出？就你星辰篇烂这个逼样，还有你这个逼出一个角色超模一个角色的样子，我都不敢想下一个放忘却篇得有多超模💩",
+      "author": "wuxu0045_64015",
+      "reactions": 5,
+      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+    },
+    {
+      "id": "1342885627980681366",
+      "content": "一年19个角色，后面的角色包膨胀的。看看同样是一年19个角色的1999和星穹铁道都膨胀成啥样了。等几个月出角色一个赛一个超模，看看谁抽捏",
+      "author": "nekoiiii.",
+      "reactions": 5,
+      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+    },
+    {
+      "id": "1342804338036441181",
+      "content": "不会，这些产能还是留给忘却前夜吧！主要是一些小表情小剧情和相位对弈专属的一个钥令以及限时相位对弈任务奖励。",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+    },
+    {
+      "id": "1342825328317431890",
+      "content": "果然小眾遊戲就是爽，反正就隨先出個超模角，先騙氪一波，一個禮拜後告訴玩家角色我沒砍，但環境整個腰斬現有角色都是殘障，想保持遊戲體驗請每支新角都氪金抽超限4以上，",
+      "author": "ama3409",
+      "reactions": 4,
+      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+    },
+    {
       "id": "1342763543774232648",
       "content": "做研究会给一张，貌似是做三个研究",
       "author": "sense25.",
@@ -60,6 +106,20 @@
       "author": "menta_y_menta",
       "reactions": 3,
       "channel": "About Voice Actor"
+    },
+    {
+      "id": "1342825621402947584",
+      "content": "總之加油🍟 ，雖然還有很多問題沒有改善就是了<:cry:1239910167668326480> 。",
+      "author": "07_li",
+      "reactions": 2,
+      "channel": "✅前瞻：V2.1.1 相位对弈联动"
+    },
+    {
+      "id": "1342828001666011147",
+      "content": "我現在遊戲也不登了 每天上社群就為了看這遊戲甚麼時候4已祭奠我氪的首儲",
+      "author": "ama3409",
+      "reactions": 2,
+      "channel": "✅前瞻：V2.1.1 相位对弈联动"
     },
     {
       "id": "1342908420571009096",
@@ -120,34 +180,6 @@
     {
       "id": "1342776198903627797",
       "content": "Is Anyone can let me know every characters' voice actor?",
-      "author": "legion_schindler",
-      "reactions": 1,
-      "channel": "About Voice Actor"
-    },
-    {
-      "id": "1342890141186003027",
-      "content": "> ﻿🎭﻿ \nRamona：山本 亜衣（Ai Yamamoto）\nOgier：音羽 里奏（Rina Otowa，English translation \"Kan",
-      "author": "menta_y_menta",
-      "reactions": 1,
-      "channel": "About Voice Actor"
-    },
-    {
-      "id": "1342890247083790378",
-      "content": "> 🌊 \nCaecus：星乃 圭吾（Keigo Hoshino）\nMurphy：白瀬 まゆ（Mayu Shitase，English translation \"",
-      "author": "menta_y_menta",
-      "reactions": 1,
-      "channel": "About Voice Actor"
-    },
-    {
-      "id": "1342890337613512714",
-      "content": "> ﻿🩸﻿ \nHelot：國実 久留子（Kuruko Kunimi）\nLeigh：小坂 ほのか（Honoka  Kosaka）\n﻿﻿ Uvhash：森田 絵音（",
-      "author": "menta_y_menta",
-      "reactions": 1,
-      "channel": "About Voice Actor"
-    },
-    {
-      "id": "1342902020255911986",
-      "content": "Thx U🥰🥰🥰🥰",
       "author": "legion_schindler",
       "reactions": 1,
       "channel": "About Voice Actor"

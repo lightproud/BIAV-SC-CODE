@@ -1,10 +1,11 @@
 {
   "date": "2025-12-17",
-  "messages": 88,
+  "messages": 91,
   "unique_authors": 13,
-  "reactions_total": 71,
+  "reactions_total": 72,
   "attachments": 14,
   "channel_activity": {
+    "线上问题修复公告": 3,
     "Who Ryker's Designer pls come talk ?": 4,
     "💭「Processing」Would be nice for autoplay to remain turned on after finishing a stage.": 1,
     "✅「Answered」Another Bug? in Doll Boss": 4,
@@ -26,6 +27,8 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "15": 5,
+    "18": 2,
     "16": 23,
     "17": 6,
     "13": 2,
@@ -41,13 +44,10 @@
     "12": 1,
     "14": 1,
     "4": 11,
-    "8": 2,
-    "15": 4
+    "8": 2
   },
   "message_types": {
-    "0": 24,
-    "19": 2,
-    "4": 5
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -128,6 +128,13 @@
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
     },
     {
+      "id": "1450913924047180012",
+      "content": "there's a slight mistranslation in the english which might be causing some confu",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "线上问题修复公告"
+    },
+    {
       "id": "1450695916238409769",
       "content": "感谢反馈，后续会优化上述内容使之统一🌹",
       "author": "morimensstaff01",
@@ -180,13 +187,6 @@
       "id": "1450910291771785246",
       "content": "<:emoji_21:1448545489933832245> <:emoji_21:1448545489933832245> <:emoji_21:14485",
       "author": "souri.10244",
-      "reactions": 1,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1450973635945693338",
-      "content": "老师听到了吗我读完了。<:A_pinch:1432980538536493057>",
-      "author": "dittoqwq",
       "reactions": 1,
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
     }

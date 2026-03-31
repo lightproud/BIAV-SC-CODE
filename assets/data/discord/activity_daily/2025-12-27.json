@@ -1,10 +1,13 @@
 {
   "date": "2025-12-27",
-  "messages": 91,
+  "messages": 147,
   "unique_authors": 22,
-  "reactions_total": 65,
-  "attachments": 24,
+  "reactions_total": 237,
+  "attachments": 51,
   "channel_activity": {
+    "Bunch of doodles and sillies": 42,
+    "So that one MS Teams Shark huh": 5,
+    "Pollux": 9,
     "Who Ryker's Designer pls come talk ?": 1,
     "✅「已回答」取消SSR命輪自動分解": 3,
     "💭「Processing」The Spacebar/Enter key on Steam PC version not working": 1,
@@ -33,33 +36,57 @@
     "1454438358351609857": 24
   },
   "hourly_activity": {
+    "1": 17,
+    "2": 4,
+    "3": 14,
+    "5": 2,
+    "6": 4,
+    "7": 3,
+    "9": 6,
+    "13": 4,
+    "15": 24,
+    "21": 2,
+    "10": 13,
     "12": 3,
     "4": 4,
-    "5": 1,
-    "6": 1,
-    "9": 2,
-    "10": 11,
     "11": 13,
     "16": 6,
     "17": 4,
     "18": 2,
     "19": 7,
-    "1": 1,
-    "2": 1,
-    "7": 1,
     "20": 2,
     "8": 2,
     "14": 6,
     "0": 3,
-    "22": 2,
-    "13": 3,
-    "15": 16
+    "22": 2
   },
   "message_types": {
-    "0": 40,
-    "19": 10
+    "0": 44,
+    "19": 11,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1454280934164791548",
+      "content": "*pops up to slap my silly doodles and sketches*  (oOo)/",
+      "author": "lotusbunyee",
+      "reactions": 55,
+      "channel": "Bunch of doodles and sillies"
+    },
+    {
+      "id": "1454401007500136583",
+      "content": "<:Cheerup:1400771555939844149> <:love:1356053099931897977>",
+      "author": "annaxxe_",
+      "reactions": 52,
+      "channel": "Pollux"
+    },
+    {
+      "id": "1454501539946430516",
+      "content": "<@452731110556696596> i told ya i would do it",
+      "author": "nikolazuli",
+      "reactions": 24,
+      "channel": "So that one MS Teams Shark huh"
+    },
     {
       "id": "1454438358351609857",
       "content": "I always use my sona for MC in every game I play.\nBut this one, I prefer her to ",
@@ -68,11 +95,39 @@
       "channel": ""
     },
     {
+      "id": "1454281172623429815",
+      "content": "",
+      "author": "lotusbunyee",
+      "reactions": 14,
+      "channel": "Bunch of doodles and sillies"
+    },
+    {
       "id": "1454559788213076051",
       "content": "During exploration, Gmurphy's tentacle DMG stays the same after I used the Glutt",
       "author": "egoist_2314",
       "reactions": 12,
       "channel": "✅「Answered」Gmurphy's base tentacle DMG doesn't get updated after increasing your max HP"
+    },
+    {
+      "id": "1454281210829344769",
+      "content": "",
+      "author": "lotusbunyee",
+      "reactions": 8,
+      "channel": "Bunch of doodles and sillies"
+    },
+    {
+      "id": "1454281046068559892",
+      "content": "",
+      "author": "lotusbunyee",
+      "reactions": 6,
+      "channel": "Bunch of doodles and sillies"
+    },
+    {
+      "id": "1454283155493093497",
+      "content": "Some of the ladies in suits because yes",
+      "author": "lotusbunyee",
+      "reactions": 6,
+      "channel": "Bunch of doodles and sillies"
     },
     {
       "id": "1454513599098650769",
@@ -117,6 +172,20 @@
       "channel": ""
     },
     {
+      "id": "1454281815417294918",
+      "content": "",
+      "author": "lotusbunyee",
+      "reactions": 2,
+      "channel": "Bunch of doodles and sillies"
+    },
+    {
+      "id": "1454288349719166977",
+      "content": "",
+      "author": "lotusbunyee",
+      "reactions": 2,
+      "channel": "Bunch of doodles and sillies"
+    },
+    {
       "id": "1454454168344334387",
       "content": "你的也是<:agree:1400771815076528258>",
       "author": "Deleted User",
@@ -131,67 +200,11 @@
       "channel": ""
     },
     {
-      "id": "1454334767011987456",
-      "content": "到底要不要改回原本那樣",
-      "author": "ahuahuahua",
+      "id": "1454289607595393068",
+      "content": "",
+      "author": "lotusbunyee",
       "reactions": 1,
-      "channel": "✅「已回答」取消SSR命輪自動分解"
-    },
-    {
-      "id": "1454563873318502500",
-      "content": "In line of this, can we know what is the exact scaling of the Normal Tentacles t",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "✅「Answered」Gmurphy's base tentacle DMG doesn't get updated after increasing your max HP"
-    },
-    {
-      "id": "1454484656907878574",
-      "content": "this is the code but it happens to all the replays i watched recently",
-      "author": "hycel0553",
-      "reactions": 1,
-      "channel": "💭「Processing」Replay Issue"
-    },
-    {
-      "id": "1454412336558375047",
-      "content": "DEVWWTDQWKPA also seems to have expired 4 days ago as shown in the codes list, b",
-      "author": "snorlax01",
-      "reactions": 1,
-      "channel": "Christmas Code"
-    },
-    {
-      "id": "1454434025988030535",
-      "content": "抓到友列\n畫風真的好好看<:pray:1356053116260454534>",
-      "author": "tanchen0811",
-      "reactions": 1,
-      "channel": "嗨又是我我又畫了哈姆林"
-    },
-    {
-      "id": "1454434359816749057",
-      "content": "丟一下模考產物\n鳥弟憑印象畫的 有畫錯",
-      "author": "tanchen0811",
-      "reactions": 1,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1454608498875695160",
-      "content": "https://youtu.be/oo4uOclTGi8 hablando de Helot: catena funcionalidad covenants +",
-      "author": "yaoshidoppa",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1454608705478725674",
-      "content": "https://youtu.be/EYZi46hrdiw?si=coO9Bp1xFpox5nJI D-Tide Guide for this current o",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1454466729714389033",
-      "content": "It's still working in process and I might not take it too seriously.\nBut still I",
-      "author": "noeyebunny.nobunsu",
-      "reactions": 1,
-      "channel": ""
+      "channel": "Bunch of doodles and sillies"
     }
   ]
 }

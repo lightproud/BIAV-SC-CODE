@@ -1,10 +1,12 @@
 {
   "date": "2025-07-10",
-  "messages": 91,
+  "messages": 96,
   "unique_authors": 13,
-  "reactions_total": 55,
+  "reactions_total": 57,
   "attachments": 2,
   "channel_activity": {
+    "V2.2.3.2 在线维护公告": 4,
+    "Morimens edit": 1,
     "Feedback/general review on latest morimens merchandise": 1,
     "💭「Processing」Error 7028001": 1,
     "✅「Answered」bug with skin": 3,
@@ -16,7 +18,8 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "2": 32,
+    "2": 36,
+    "11": 6,
     "21": 1,
     "16": 1,
     "17": 1,
@@ -26,13 +29,10 @@
     "5": 27,
     "1": 9,
     "7": 1,
-    "11": 5,
     "9": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 8,
-    "4": 4
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -83,6 +83,13 @@
       "author": "applepieeater123",
       "reactions": 3,
       "channel": "❌Is the art Ai generated?"
+    },
+    {
+      "id": "1392823194104369244",
+      "content": "https://vt.tiktok.com/ZSBHgAS6U/",
+      "author": "j.i9star.",
+      "reactions": 2,
+      "channel": "Morimens edit"
     },
     {
       "id": "1392749283945742499",

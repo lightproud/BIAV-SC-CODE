@@ -1,10 +1,11 @@
 {
   "date": "2025-12-29",
-  "messages": 171,
+  "messages": 173,
   "unique_authors": 30,
-  "reactions_total": 55,
+  "reactions_total": 57,
   "attachments": 23,
   "channel_activity": {
+    "Bunch of doodles and sillies": 2,
     "Who Ryker's Designer pls come talk ?": 3,
     "✅「已回答」取消SSR命輪自動分解": 3,
     "💭「处理中」回放bug": 3,
@@ -56,6 +57,8 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "7": 15,
+    "8": 17,
     "14": 1,
     "16": 21,
     "9": 26,
@@ -63,21 +66,18 @@
     "4": 2,
     "10": 7,
     "6": 17,
-    "8": 16,
     "11": 9,
     "12": 2,
     "18": 2,
     "22": 5,
-    "7": 14,
     "15": 3,
     "5": 1,
     "1": 2,
     "0": 9
   },
   "message_types": {
-    "0": 86,
-    "4": 52,
-    "19": 23
+    "19": 1,
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -128,6 +128,13 @@
       "author": "yaoshidoppa",
       "reactions": 3,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1455104178673160253",
+      "content": "笑死我跟他在推特上已經相認（ㄍ",
+      "author": "yolo_mode",
+      "reactions": 2,
+      "channel": "Bunch of doodles and sillies"
     },
     {
       "id": "1455134384423436390",
@@ -212,13 +219,6 @@
       "author": "amstelredam",
       "reactions": 1,
       "channel": "✅「已回答」希望長按卡片顯示數值計算公式"
-    },
-    {
-      "id": "1455149032920977474",
-      "content": "謝謝戈雅<:pray:1356053116260454534>",
-      "author": "water_heart",
-      "reactions": 1,
-      "channel": "✅「已回答」無底創痕可以不計入溢出的回血量嗎"
     }
   ]
 }

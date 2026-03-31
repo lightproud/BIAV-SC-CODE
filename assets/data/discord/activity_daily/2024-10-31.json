@@ -1,10 +1,12 @@
 {
   "date": "2024-10-31",
-  "messages": 49,
-  "unique_authors": 17,
-  "reactions_total": 150,
-  "attachments": 43,
+  "messages": 142,
+  "unique_authors": 23,
+  "reactions_total": 254,
+  "attachments": 48,
   "channel_activity": {
+    "📜《忘卻前夜 Morimens》V1.6.5即將開放！精彩資訊一網打盡！": 89,
+    "蹈海野貓雜技團（釘選有目錄）": 4,
     "沒別的意思 就是覺得深海國家打不動了": 2,
     "哈基米 我也想長大一下": 16,
     "for a lot of wheel of destiny, the text cuts off right at the end for the lore section": 6,
@@ -22,14 +24,16 @@
     "蹦蹦": 1
   },
   "hourly_activity": {
+    "14": 25,
+    "15": 46,
+    "16": 26,
+    "18": 2,
+    "20": 1,
+    "23": 8,
+    "6": 2,
+    "8": 8,
     "4": 2,
-    "8": 6,
-    "15": 6,
-    "16": 9,
     "17": 2,
-    "18": 1,
-    "23": 1,
-    "14": 2,
     "21": 4,
     "7": 1,
     "1": 10,
@@ -39,8 +43,8 @@
     "9": 1
   },
   "message_types": {
-    "0": 26,
-    "19": 4
+    "0": 73,
+    "19": 20
   },
   "top_reacted_messages": [
     {
@@ -56,6 +60,48 @@
       "author": "game.producer.light",
       "reactions": 29,
       "channel": "哈基米 我也想長大一下"
+    },
+    {
+      "id": "1301560254190063666",
+      "content": "深海共生：重做。探索开始时队伍中每有一名混沌唤醒体，基础触腕伤害提高最大生命的 1%，该效果获得的触腕伤害会受到伤害强效加成。混沌唤醒体释放狂气爆发后，回合结束",
+      "author": "game.producer.light",
+      "reactions": 20,
+      "channel": "📜《忘卻前夜 Morimens》V1.6.5即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1301559984697638955",
+      "content": "深海的故事在“这个世界”中已经基本结束了。",
+      "author": "game.producer.light",
+      "reactions": 17,
+      "channel": "📜《忘卻前夜 Morimens》V1.6.5即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1301563591262208000",
+      "content": "給公告留點面子。",
+      "author": "game.producer.light",
+      "reactions": 17,
+      "channel": "📜《忘卻前夜 Morimens》V1.6.5即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1301554618731466752",
+      "content": "",
+      "author": "lemoncandy25",
+      "reactions": 13,
+      "channel": "📜《忘卻前夜 Morimens》V1.6.5即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1301556542637735987",
+      "content": "我看到重點了!",
+      "author": "kaikai030",
+      "reactions": 13,
+      "channel": "📜《忘卻前夜 Morimens》V1.6.5即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1301563409103585361",
+      "content": "如果有未來，我們的計劃很多。",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "📜《忘卻前夜 Morimens》V1.6.5即將開放！精彩資訊一網打盡！"
     },
     {
       "id": "1301395896159834153",
@@ -77,6 +123,13 @@
       "author": "shadiaodiaodeyu_89215",
       "reactions": 9,
       "channel": "是点菜表情包"
+    },
+    {
+      "id": "1301569671362904114",
+      "content": "~~如果不交代深海組的後續我就要在同人樓裡編造野史嘍😈~~",
+      "author": "kong760",
+      "reactions": 8,
+      "channel": "📜《忘卻前夜 Morimens》V1.6.5即將開放！精彩資訊一網打盡！"
     },
     {
       "id": "1301478113636646953",
@@ -121,53 +174,18 @@
       "channel": "做的周边"
     },
     {
+      "id": "1301556722313465887",
+      "content": "~~有總比沒有好~~",
+      "author": "kaikai030",
+      "reactions": 3,
+      "channel": "📜《忘卻前夜 Morimens》V1.6.5即將開放！精彩資訊一網打盡！"
+    },
+    {
       "id": "1301573913947406406",
       "content": "對於此類問題我不會再更多回應，團隊和遊戲開發本身還有許多工作要做。這次週年，對《忘卻前夜》的故事來說是一個重大意義的節點，而對於腦缸組的意義也一模一樣。接下來我",
       "author": "game.producer.light",
       "reactions": 3,
       "channel": "哈基米 我也想長大一下"
-    },
-    {
-      "id": "1301359038885269515",
-      "content": "很多，可以随意使用",
-      "author": "shadiaodiaodeyu_89215",
-      "reactions": 3,
-      "channel": "表情包"
-    },
-    {
-      "id": "1301364625975283763",
-      "content": "好吃",
-      "author": "shadiaodiaodeyu_89215",
-      "reactions": 2,
-      "channel": "死亡已經迫近，消亡已經開始"
-    },
-    {
-      "id": "1301603616397852712",
-      "content": "一點開就是原神啟動",
-      "author": "xinyue.57",
-      "reactions": 1,
-      "channel": "哈基米 我也想長大一下"
-    },
-    {
-      "id": "1301466698125148224",
-      "content": "设备名称    LAPTOP-3J1PDQB9\n处理器    AMD Ryzen 9 7940H w/ Radeon 780M Graphics        ",
-      "author": "nyxionv",
-      "reactions": 1,
-      "channel": "pc端官服和steam服都是点击进入大学直接卡死，只有声音，画面没动静，鼠标点击有音效但是无法解决卡死问题"
-    },
-    {
-      "id": "1301362627414462496",
-      "content": "摸鱼也",
-      "author": "shadiaodiaodeyu_89215",
-      "reactions": 1,
-      "channel": "旧图"
-    },
-    {
-      "id": "1301457668715708467",
-      "content": "超好笑我推特也沒什麼東西可以看 就只是放圖而已",
-      "author": "yolo_mode",
-      "reactions": 1,
-      "channel": "那閃爍於夜空之物是窮盡一生也無法觸及的夢"
     }
   ]
 }

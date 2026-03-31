@@ -1,10 +1,12 @@
 {
   "date": "2026-01-20",
-  "messages": 67,
+  "messages": 71,
   "unique_authors": 10,
-  "reactions_total": 674,
-  "attachments": 9,
+  "reactions_total": 724,
+  "attachments": 10,
   "channel_activity": {
+    "Taste test || Doresain & Sylvester": 3,
+    "Art dump thread": 1,
     "✅「已回答」错字": 2,
     "Goliath bleed damage description": 2,
     "Cannot log in on PC client": 1,
@@ -29,15 +31,15 @@
     "1234769700735418368": 2
   },
   "hourly_activity": {
+    "9": 3,
+    "11": 3,
+    "13": 7,
     "7": 16,
     "14": 5,
     "8": 12,
-    "9": 2,
     "10": 11,
-    "13": 6,
     "12": 3,
     "22": 1,
-    "11": 1,
     "4": 1,
     "5": 2,
     "2": 2,
@@ -47,9 +49,8 @@
     "1": 1
   },
   "message_types": {
-    "19": 7,
-    "4": 7,
-    "0": 16
+    "0": 3,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -58,6 +59,13 @@
       "author": "morimensstaff01",
       "reactions": 605,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1463109950690820166",
+      "content": "Sylvester wish granted...?<:rizz1:1356085398379692165><:Dore_proud:1459076042722",
+      "author": "that_one_chippy",
+      "reactions": 47,
+      "channel": "Taste test || Doresain & Sylvester"
     },
     {
       "id": "1463152563145674808",
@@ -86,6 +94,13 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "💭「处理中」透明人在打透明怪"
+    },
+    {
+      "id": "1463140204935123093",
+      "content": "Who wanna volunteer after Sylvester <:Dore_proud:1459076042722639905>",
+      "author": "that_one_chippy",
+      "reactions": 2,
+      "channel": "Taste test || Doresain & Sylvester"
     },
     {
       "id": "1463075061664583726",
@@ -121,6 +136,13 @@
       "author": "frosthief",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1463135274069655698",
+      "content": "I wonder what Doresain tastes like 😳",
+      "author": "exhibitionism",
+      "reactions": 1,
+      "channel": "Taste test || Doresain & Sylvester"
     },
     {
       "id": "1463074375376044259",
@@ -170,20 +192,6 @@
       "author": "ass191044",
       "reactions": 1,
       "channel": "味觉测试 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1463046112813383818",
-      "content": "可愛小波",
-      "author": "quackdayo",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463119325694136487",
-      "content": "<:Helot_slack_off:1459092159465521184>",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

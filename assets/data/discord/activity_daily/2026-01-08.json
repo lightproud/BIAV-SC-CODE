@@ -1,10 +1,12 @@
 {
   "date": "2026-01-08",
-  "messages": 27,
+  "messages": 33,
   "unique_authors": 7,
-  "reactions_total": 5,
-  "attachments": 4,
+  "reactions_total": 37,
+  "attachments": 5,
   "channel_activity": {
+    "Ryker": 5,
+    "Bunch of doodles and sillies": 1,
     "💭「Processing」Frequent Crash all of a sudden": 1,
     "✅「Answered」之前杜勒和诞墨之间排期额外多隔了一个人，这是因为产能不足吗？如果是，后续的角色排期都是这样吗": 2,
     "💭「处理中」bug反馈": 5,
@@ -15,23 +17,31 @@
     "1305430084420898868": 9
   },
   "hourly_activity": {
+    "8": 2,
+    "15": 4,
+    "16": 3,
+    "18": 1,
+    "4": 4,
     "12": 1,
-    "4": 3,
     "11": 4,
     "2": 1,
-    "8": 1,
     "10": 4,
-    "15": 3,
     "3": 1,
     "0": 3,
-    "16": 1,
     "17": 5
   },
   "message_types": {
-    "0": 7,
+    "0": 5,
     "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1458741346033733695",
+      "content": "Hit, Stand, Blackjack!\n\nThe gambling addict and N are my two favs so the stuff I",
+      "author": "ellezard",
+      "reactions": 32,
+      "channel": "Ryker"
+    },
     {
       "id": "1458623559579603153",
       "content": "",

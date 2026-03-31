@@ -1,10 +1,12 @@
 {
   "date": "2025-12-15",
-  "messages": 150,
+  "messages": 164,
   "unique_authors": 29,
-  "reactions_total": 40,
-  "attachments": 16,
+  "reactions_total": 49,
+  "attachments": 17,
   "channel_activity": {
+    "线上问题修复公告": 11,
+    "A bit too late for anniversary but this cake is still good :D": 3,
     "Who Ryker's Designer pls come talk ?": 4,
     "💭「处理中」拉蒙娜鑰令和夏活鑰令是否可以加入鑰令分類頁籤？": 1,
     "请联动《新月同行》": 1,
@@ -40,12 +42,16 @@
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
-    "13": 2,
-    "14": 5,
+    "13": 4,
+    "14": 7,
+    "18": 2,
+    "20": 5,
+    "23": 1,
+    "1": 2,
+    "3": 10,
     "7": 21,
     "9": 15,
     "2": 8,
-    "3": 9,
     "5": 3,
     "6": 13,
     "12": 3,
@@ -55,14 +61,11 @@
     "15": 22,
     "16": 1,
     "17": 1,
-    "18": 1,
     "19": 2,
     "0": 3
   },
   "message_types": {
-    "0": 68,
-    "4": 23,
-    "19": 14
+    "0": 14
   },
   "top_reacted_messages": [
     {
@@ -71,6 +74,13 @@
       "author": "mythicmoonwort",
       "reactions": 7,
       "channel": "💭「Processing」Recurring Notification from event"
+    },
+    {
+      "id": "1450123342521696417",
+      "content": "**Online Maintenance Announcement**\n\nDear Keeper,\n    The Mythag University Admi",
+      "author": "morimensstaff02",
+      "reactions": 6,
+      "channel": "线上问题修复公告"
     },
     {
       "id": "1449953299129303260",
@@ -101,6 +111,13 @@
       "channel": "我也丟一下之前畫的 圖樓"
     },
     {
+      "id": "1450138527399678113",
+      "content": "Is there any way we can get the discount somehow still, I already bought the adv",
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "线上问题修复公告"
+    },
+    {
       "id": "1450054328181329961",
       "content": "能期待一手吗？",
       "author": "2300011747",
@@ -113,6 +130,13 @@
       "author": "ixchel._.99",
       "reactions": 2,
       "channel": "💭「处理中」眼睛好痛"
+    },
+    {
+      "id": "1450123275635261460",
+      "content": "守密人你好：\n       弥萨格大学校务处已经于12月15日19:30进行校内设施修复，本次更新无需下载补丁，已经生效。对于更新可能给大家带来的不便，我们会准",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": "线上问题修复公告"
     },
     {
       "id": "1450056553062465558",
@@ -181,27 +205,6 @@
       "id": "1450018138015141901",
       "content": "我在這樓裡確實也說了，我不認為他們的話題不好，只是跟這一串沒有關聯，離題了，影響閱讀。以及我一開始對他發言是一視同仁的，既然最初的部分是關於凱刻斯的黑印是否足夠",
       "author": "amstelredam",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
-    },
-    {
-      "id": "1450039016966848563",
-      "content": "這樣不行嗎",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
-    },
-    {
-      "id": "1450039758326599710",
-      "content": "屬於一個到處傳播個人剪貼但是不願意有朝一日被說滋事但是又希望別人知道自己在罵誰但是又不希望別人有立場說他罵人\n的既要又要",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
-    },
-    {
-      "id": "1450040392052375603",
-      "content": "要的話可以私聊",
-      "author": "void_1546.",
       "reactions": 1,
       "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
     }

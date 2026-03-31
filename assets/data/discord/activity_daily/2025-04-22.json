@@ -1,10 +1,12 @@
 {
   "date": "2025-04-22",
-  "messages": 58,
+  "messages": 62,
   "unique_authors": 7,
-  "reactions_total": 23,
+  "reactions_total": 28,
   "attachments": 13,
   "channel_activity": {
+    "游戏美术资源上的文字": 1,
+    "[克蘇魯]你應該要知道的那些事_(超級不專業版)": 3,
     "✅「已回答」蟲族羊媽狂氣減費bug": 1,
     "✅「Answered」Translation for French": 2,
     "✅「已回答」关于怨恨锁链封印无效": 1,
@@ -20,6 +22,7 @@
     "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）": 1
   },
   "hourly_activity": {
+    "11": 11,
     "14": 1,
     "23": 2,
     "13": 4,
@@ -29,13 +32,10 @@
     "4": 3,
     "2": 7,
     "10": 1,
-    "11": 7,
     "12": 24
   },
   "message_types": {
-    "0": 13,
-    "4": 4,
-    "19": 5
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -44,6 +44,13 @@
       "author": "fengliyaowo",
       "reactions": 7,
       "channel": "一點點鯊守私設文...吧? （清水.jpg）"
+    },
+    {
+      "id": "1364199601367683072",
+      "content": "**外神們**\n\n外神在整個故事世界中可說是其中一個*最為強大的種族*，\n\n外神可說是宇宙外強大力量的具現化，是遠超宇宙之外的存在，\n\n其能力是舊日支配者遠遠比",
+      "author": "huangziqiao_45693",
+      "reactions": 5,
+      "channel": "[克蘇魯]你應該要知道的那些事_(超級不專業版)"
     },
     {
       "id": "1364237615569567775",

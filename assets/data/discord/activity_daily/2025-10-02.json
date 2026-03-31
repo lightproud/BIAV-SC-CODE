@@ -1,10 +1,11 @@
 {
   "date": "2025-10-02",
-  "messages": 73,
+  "messages": 74,
   "unique_authors": 7,
-  "reactions_total": 62,
-  "attachments": 34,
+  "reactions_total": 66,
+  "attachments": 36,
   "channel_activity": {
+    "忘却前夜OST：畸变丰穰之种": 1,
     "✅「已回答」寧妃，夜潮，BUG": 3,
     "✅「Answered」No Gnosis Fragments from Awakening Events": 1,
     "✅「Answered」Silver Background  Bug": 4,
@@ -23,8 +24,8 @@
     "1423337172655935600": 3
   },
   "hourly_activity": {
+    "15": 37,
     "12": 1,
-    "15": 36,
     "23": 1,
     "1": 14,
     "5": 2,
@@ -39,9 +40,7 @@
     "17": 1
   },
   "message_types": {
-    "0": 21,
-    "4": 10,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -50,6 +49,13 @@
       "author": "scholar_2",
       "reactions": 40,
       "channel": ""
+    },
+    {
+      "id": "1423326420289061045",
+      "content": "**15.母亲-Mother-**\n\n祂们拥抱着血脉、手足、爱人、挚友，他们献出自我，消融进一场黑甜的复生。\n祂们的骨归于母树，祂们的肉淌入圣河。\n\nThey ",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "忘却前夜OST：畸变丰穰之种"
     },
     {
       "id": "1423287753302343700",

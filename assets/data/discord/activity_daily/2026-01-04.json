@@ -1,10 +1,11 @@
 {
   "date": "2026-01-04",
-  "messages": 56,
+  "messages": 59,
   "unique_authors": 11,
-  "reactions_total": 48,
+  "reactions_total": 52,
   "attachments": 27,
   "channel_activity": {
+    "Forehead tierlist": 3,
     "💭「处理中」典藏馆事件的解锁到底是什么机制？": 3,
     "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 3,
     "💭「Processing」100% crash rate Lemurian team": 2,
@@ -32,10 +33,10 @@
     "1457202535138857132": 4
   },
   "hourly_activity": {
+    "9": 14,
     "3": 13,
     "16": 1,
     "8": 8,
-    "9": 11,
     "11": 1,
     "4": 3,
     "18": 4,
@@ -48,9 +49,8 @@
     "13": 1
   },
   "message_types": {
-    "0": 10,
-    "4": 13,
-    "19": 5
+    "19": 1,
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -66,6 +66,13 @@
       "author": "morimensstaff01",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1457308953984766105",
+      "content": "That's why i don't count hair style, otherwise everyone would be S tier",
+      "author": "moyashi0672",
+      "reactions": 4,
+      "channel": "Forehead tierlist"
     },
     {
       "id": "1457284698186453033",

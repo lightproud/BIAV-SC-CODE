@@ -1,10 +1,11 @@
 {
   "date": "2025-10-31",
-  "messages": 50,
+  "messages": 55,
   "unique_authors": 7,
-  "reactions_total": 114,
-  "attachments": 21,
+  "reactions_total": 120,
+  "attachments": 28,
   "channel_activity": {
+    "忘却前夜OST：波吕克斯EP·暴风起时": 5,
     "✅「已回答」广播剧缸中之梦进不去": 1,
     "💭「Processing」Quality of Life Features": 5,
     "✅「Answered」8-10 N and potential other N stages Bugs": 2,
@@ -23,8 +24,9 @@
     "1432654338982940783": 3
   },
   "hourly_activity": {
+    "6": 15,
+    "7": 7,
     "15": 2,
-    "6": 12,
     "12": 4,
     "2": 3,
     "18": 1,
@@ -34,13 +36,10 @@
     "11": 4,
     "16": 1,
     "4": 3,
-    "7": 5,
     "0": 1
   },
   "message_types": {
-    "0": 18,
-    "4": 9,
-    "19": 3
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -91,6 +90,13 @@
       "author": "moistwater",
       "reactions": 13,
       "channel": ""
+    },
+    {
+      "id": "1433711574329196574",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：波吕克斯EP·暴风起时 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "忘却前夜OST：波吕克斯EP·暴风起时"
     },
     {
       "id": "1433701757988634656",

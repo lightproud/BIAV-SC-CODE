@@ -1,10 +1,12 @@
 {
   "date": "2025-04-08",
-  "messages": 22,
+  "messages": 27,
   "unique_authors": 5,
-  "reactions_total": 1,
+  "reactions_total": 2,
   "attachments": 2,
   "channel_activity": {
+    "[克蘇魯神話元素] 溫柯爾裡面的人": 3,
+    "✅校猫碎碎念#近况分享": 2,
     "✅「已回答」對弈催眠靈擺bug": 5,
     "✅「已回答」星辰篇2-6的敵人跑到畫面外了": 4,
     "2nd artwork for characters": 3,
@@ -14,6 +16,9 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
+    "14": 4,
+    "13": 1,
+    "15": 1,
     "5": 4,
     "6": 3,
     "2": 7,
@@ -21,16 +26,21 @@
     "10": 1,
     "23": 2,
     "1": 1,
-    "14": 1,
     "8": 1,
     "12": 1
   },
   "message_types": {
-    "0": 12,
-    "4": 4,
-    "19": 2
+    "19": 2,
+    "0": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1359176930347192350",
+      "content": "免得大家都說我們產能拿來幹嘛",
+      "author": "kong760",
+      "reactions": 1,
+      "channel": "[克蘇魯神話元素] 溫柯爾裡面的人"
+    },
     {
       "id": "1359313847042969732",
       "content": "hope one day, maybe next year or 2 in future you will implement this",

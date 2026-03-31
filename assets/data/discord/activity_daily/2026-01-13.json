@@ -1,10 +1,13 @@
 {
   "date": "2026-01-13",
-  "messages": 22,
+  "messages": 27,
   "unique_authors": 6,
-  "reactions_total": 19,
-  "attachments": 4,
+  "reactions_total": 82,
+  "attachments": 7,
   "channel_activity": {
+    "「相位对弈」轮选模式功能异常": 1,
+    "[Art Dump Thread] WILLIAMPOSTING 2": 2,
+    "Doresain & Sylvester (WIP)": 2,
     "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 1,
     "✅「已回答」相位bug": 1,
     "✅「Resolved」Account bugged and unable to load into the game after login": 8,
@@ -20,24 +23,39 @@
     "1234769700735418368": 2
   },
   "hourly_activity": {
+    "22": 1,
+    "21": 3,
+    "8": 1,
+    "9": 6,
     "13": 1,
     "12": 1,
     "2": 4,
     "4": 2,
     "7": 1,
-    "9": 5,
     "10": 3,
     "11": 2,
     "18": 1,
-    "21": 1,
     "5": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 8,
-    "4": 5
+    "0": 4,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1460741850645270612",
+      "content": "New art dump thread for me since the old one was getting kind of clogged. This o",
+      "author": "exhibitionism",
+      "reactions": 33,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
+      "id": "1460558652564963492",
+      "content": "Something something song will delete when finished",
+      "author": "that_one_chippy",
+      "reactions": 28,
+      "channel": "Doresain & Sylvester (WIP)"
+    },
     {
       "id": "1460465033359397025",
       "content": "🥹 <:Sendflowers:1400771545370067118>",
@@ -51,6 +69,13 @@
       "author": "yaoshidoppa",
       "reactions": 3,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1460752589858537482",
+      "content": "<:drool:1356053063139463248>",
+      "author": "bagels5899",
+      "reactions": 2,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
       "id": "1460513254450139342",

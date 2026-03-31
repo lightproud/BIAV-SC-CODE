@@ -1,10 +1,13 @@
 {
   "date": "2026-02-10",
-  "messages": 11493,
+  "messages": 11497,
   "unique_authors": 287,
-  "reactions_total": 2133,
+  "reactions_total": 2136,
   "attachments": 559,
   "channel_activity": {
+    "V2.4.2.3 在线维护公告": 2,
+    "The sculptress": 1,
+    "Ramona wip (best girl)🗝": 1,
     "💭「Processing」IOS App stops all background sound/music": 1,
     "✅「已回答」会出原画集吗？或者其他例如立牌和玩偶的周边？": 1,
     "Who Ryker's Designer pls come talk ?": 3,
@@ -37,6 +40,8 @@
     "🔸morimens-game-chat": 9198
   },
   "hourly_activity": {
+    "3": 272,
+    "6": 396,
     "20": 324,
     "15": 516,
     "5": 289,
@@ -45,9 +50,7 @@
     "14": 521,
     "9": 280,
     "22": 930,
-    "3": 269,
     "8": 444,
-    "6": 395,
     "7": 455,
     "16": 390,
     "4": 331,
@@ -63,9 +66,7 @@
     "11": 671
   },
   "message_types": {
-    "0": 29,
-    "19": 3,
-    "4": 7
+    "0": 4
   },
   "top_reacted_messages": [
     {

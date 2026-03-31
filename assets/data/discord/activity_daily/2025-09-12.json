@@ -1,10 +1,12 @@
 {
   "date": "2025-09-12",
-  "messages": 89,
+  "messages": 101,
   "unique_authors": 14,
-  "reactions_total": 47,
-  "attachments": 5,
+  "reactions_total": 147,
+  "attachments": 22,
   "channel_activity": {
+    "忘却前夜OST：神明诞生之日": 9,
+    "\"Oh? Keeper, you're approaching me? Instead of running away, you're coming right to me?\"": 3,
     "能不能新增一个撤回上一张出牌的功能？": 16,
     "主線癲狂難度": 1,
     "✅「Answered」Can you let us choose the start screen (log in animation)?": 1,
@@ -25,7 +27,10 @@
     "我喜歡卡斯托爾": 2
   },
   "hourly_activity": {
-    "8": 4,
+    "8": 13,
+    "15": 1,
+    "16": 1,
+    "19": 1,
     "9": 11,
     "12": 7,
     "14": 12,
@@ -39,11 +44,23 @@
     "13": 2
   },
   "message_types": {
-    "0": 56,
-    "19": 15,
-    "4": 8
+    "0": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1416087892316651581",
+      "content": "",
+      "author": "mount_fisherman",
+      "reactions": 72,
+      "channel": "\"Oh? Keeper, you're approaching me? Instead of running away, you're coming right to me?\""
+    },
+    {
+      "id": "1415972606871339058",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：神明诞生之日，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则",
+      "author": "morimensstaff01",
+      "reactions": 19,
+      "channel": "忘却前夜OST：神明诞生之日"
+    },
     {
       "id": "1415904814088458352",
       "content": "写在前面——\n**点个薯条谢谢哇~**\n||**~~啊啊啊啊啊想参加想参加想参加啊啊啊啊啊一万银芯啊啊啊啊啊银芯宝宝等我等我等我我来带你回家啊啊啊啊啊（战吼起手",
@@ -66,6 +83,13 @@
       "channel": "能不能新增一个撤回上一张出牌的功能？"
     },
     {
+      "id": "1416139231662837830",
+      "content": "Doresain caked up <:kittyblush:1337763746042609736>💖",
+      "author": "snowvleopard",
+      "reactions": 4,
+      "channel": "\"Oh? Keeper, you're approaching me? Instead of running away, you're coming right to me?\""
+    },
+    {
       "id": "1416067207384924181",
       "content": "||雖然這樣講很孝子但一直利好玩家很容易變成無限上綱||",
       "author": "ahuahuahua",
@@ -78,6 +102,20 @@
       "author": "ahuahuahua",
       "reactions": 4,
       "channel": "能不能新增一个撤回上一张出牌的功能？"
+    },
+    {
+      "id": "1415972742616059975",
+      "content": "**01.纯白神女-Blessed Maiden-**\n\n神迹若有形状，应如她合十的双手。\n神明若有样貌，应如她安宁的面庞。\n\nIf miracles had ",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "忘却前夜OST：神明诞生之日"
+    },
+    {
+      "id": "1416091967686967336",
+      "content": "this is perfect",
+      "author": "mckashira",
+      "reactions": 2,
+      "channel": "\"Oh? Keeper, you're approaching me? Instead of running away, you're coming right to me?\""
     },
     {
       "id": "1416037583355514921",

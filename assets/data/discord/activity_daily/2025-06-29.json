@@ -1,10 +1,11 @@
 {
   "date": "2025-06-29",
-  "messages": 13,
+  "messages": 15,
   "unique_authors": 4,
-  "reactions_total": 31,
+  "reactions_total": 32,
   "attachments": 6,
   "channel_activity": {
+    "關於腳本/外掛賬號的處理說明": 2,
     "💭「Processing」Connection issues": 1,
     "💭「Processing」Casiah Heal incorrectly measured in Traphase end of game stat graphs": 1,
     "✅「Answered」Tutorial can cause soft-lock if player has Awakeners from multiple realms.": 2,
@@ -14,6 +15,7 @@
     "1181998821291606097": 4
   },
   "hourly_activity": {
+    "21": 2,
     "10": 5,
     "14": 1,
     "15": 1,
@@ -22,7 +24,7 @@
     "13": 4
   },
   "message_types": {
-    "0": 5
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -38,6 +40,13 @@
       "author": "firepanda95",
       "reactions": 10,
       "channel": "Artist credit on the character designs!"
+    },
+    {
+      "id": "1388994439585992815",
+      "content": "",
+      "author": "iTranslator",
+      "reactions": 1,
+      "channel": "關於腳本/外掛賬號的處理說明"
     }
   ]
 }

@@ -1,10 +1,15 @@
 {
   "date": "2025-01-13",
-  "messages": 166,
+  "messages": 197,
   "unique_authors": 52,
-  "reactions_total": 75,
-  "attachments": 38,
+  "reactions_total": 89,
+  "attachments": 43,
   "channel_activity": {
+    "V2.0.0.1 在線維護公告": 12,
+    "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！": 2,
+    "客户端整包更新提醒": 11,
+    "V2.0.0.0 停服維護公告": 2,
+    "✅前瞻：V2.0 双界域混编": 4,
     "✅「Answered」Audio stops when leaving game window": 12,
     "English Page pls !!": 2,
     "✅「已回答」請勿輕信官方PC跳轉連結": 11,
@@ -43,31 +48,31 @@
     "帮我想想画什么": 1
   },
   "hourly_activity": {
-    "6": 13,
-    "7": 11,
+    "13": 21,
+    "14": 25,
+    "18": 7,
+    "17": 4,
+    "2": 5,
+    "6": 15,
+    "7": 19,
+    "12": 13,
     "0": 1,
     "9": 4,
     "5": 11,
-    "12": 9,
-    "17": 3,
-    "14": 20,
     "15": 18,
     "16": 8,
-    "18": 3,
-    "13": 17,
     "22": 1,
     "23": 2,
     "4": 18,
     "11": 4,
     "8": 3,
     "3": 17,
-    "2": 2,
     "1": 1
   },
   "message_types": {
-    "0": 130,
-    "19": 30,
-    "4": 1
+    "0": 25,
+    "19": 5,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -76,6 +81,13 @@
       "author": "morimensstaff01",
       "reactions": 31,
       "channel": "🍸【忘卻前夜】主題雞尾酒——來自「塞納河底晴雨表」"
+    },
+    {
+      "id": "1328191233109266453",
+      "content": "守密人，\n        請注意本次維護結束後，需重新下載並安裝最新版本的用戶端，才能繼續進行遊玩。\n        用戶端在舊版本的情況下，有可能出現安裝跳轉",
+      "author": "morimensstaff02",
+      "reactions": 10,
+      "channel": "客户端整包更新提醒"
     },
     {
       "id": "1328353107989495880",
@@ -97,6 +109,13 @@
       "author": "phantom_ye",
       "reactions": 4,
       "channel": "可否开放更多编队？"
+    },
+    {
+      "id": "1328357338695860345",
+      "content": "● 修復了某些情況下超維***職業***回合不能正常結束的問題。",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "V2.0.0.1 在線維護公告"
     },
     {
       "id": "1328377427432570881",
@@ -148,6 +167,13 @@
       "channel": "关于塔薇复活相位对弈技能"
     },
     {
+      "id": "1328187708874690642",
+      "content": "來～跟我寫，「湮滅」",
+      "author": "iamnotbunny",
+      "reactions": 1,
+      "channel": "V2.0.0.0 停服維護公告"
+    },
+    {
       "id": "1328366815088345129",
       "content": "血肉我只知道1.血希帶羊媽倆混沌輔亮亮按按（不用帶奶或盾因為她自己衍生四費可以回血）\n2.希洛鯊魚隊如圖所示\n其他你問 <@113117168566036893",
       "author": "kong760",
@@ -188,27 +214,6 @@
       "author": "mein_1",
       "reactions": 1,
       "channel": "更新"
-    },
-    {
-      "id": "1328216117323366451",
-      "content": "I am using Aequor and Ultra realm but ultra bar is not showing up and I am stuck",
-      "author": "jormiejormungandr",
-      "reactions": 1,
-      "channel": "Lily event realm mixing"
-    },
-    {
-      "id": "1328202488985161840",
-      "content": "9-5",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "剛剛才想到好像哪裡不對"
-    },
-    {
-      "id": "1328204850583830618",
-      "content": "收到守密人的BUG反饋！我們後續會修復該問題的~🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "剛剛才想到好像哪裡不對"
     }
   ]
 }

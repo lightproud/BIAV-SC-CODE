@@ -1,10 +1,11 @@
 {
   "date": "2025-05-06",
-  "messages": 45,
-  "unique_authors": 9,
-  "reactions_total": 1,
+  "messages": 69,
+  "unique_authors": 11,
+  "reactions_total": 17,
   "attachments": 6,
   "channel_activity": {
+    "✅前瞻：1.5周年～战斗增强篇": 24,
     "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 6,
     "✅「已回答」试用机制是否有些不合理": 2,
     "✅「已回答」讚的": 2,
@@ -23,22 +24,67 @@
     "✅「Answered」Sanga misnamed as corposant": 1
   },
   "hourly_activity": {
+    "3": 9,
+    "6": 3,
+    "7": 20,
+    "8": 1,
+    "9": 7,
+    "10": 5,
+    "15": 4,
     "2": 10,
-    "7": 17,
-    "10": 2,
-    "3": 4,
     "4": 3,
     "16": 1,
     "17": 1,
-    "21": 5,
-    "6": 2
+    "21": 5
   },
   "message_types": {
-    "4": 16,
-    "0": 22,
-    "19": 7
+    "0": 20,
+    "6": 3,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1369157515270422599",
+      "content": "[Faded Legacy Difficulty Lowered]\nThe difficulty of Chapter 8 and the Final Chap",
+      "author": "game.producer.light",
+      "reactions": 5,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1369245374526525471",
+      "content": "原来不是扣一送吗",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1369245256175845416",
+      "content": "这里没有零请不要扣一",
+      "author": "287405tjy_28066",
+      "reactions": 3,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1369248762215792650",
+      "content": "可以对某个人扣一或者零，然后得到他（仅限于男同对男同）",
+      "author": "287405tjy_28066",
+      "reactions": 2,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1369209708249874512",
+      "content": "你圖那麼愛睡就乾脆不要醒好了，缺狂氣缺算力缺傷害，給的還是尊貴不凡的臨觸。下次直接加強餘波效果好了，負責睡覺就可以了，符合角色設定。帶入藥跟女T專武，一直棄牌一",
+      "author": "glacy_9918",
+      "reactions": 1,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1369242503362117722",
+      "content": "儲值666就送超強角色神圖魯",
+      "author": "tofu0834",
+      "reactions": 1,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
     {
       "id": "1369138584375791716",
       "content": "OK, thanks for the feedback~🌹",

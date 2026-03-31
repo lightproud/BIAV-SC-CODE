@@ -1,10 +1,11 @@
 {
   "date": "2025-11-12",
-  "messages": 23,
+  "messages": 26,
   "unique_authors": 8,
-  "reactions_total": 33,
-  "attachments": 5,
+  "reactions_total": 36,
+  "attachments": 25,
   "channel_activity": {
+    "【考據】第三章中的怪物「嘉爾姆？」的原型": 3,
     "✅「Answered」2nd anniversary suggestion": 1,
     "✅「已回答」还能见到星辰篇的地图吗": 1,
     "✅「已回答」需要更多5771壁纸": 1,
@@ -16,6 +17,7 @@
     "🔸欢乐梗图": 3
   },
   "hourly_activity": {
+    "9": 3,
     "18": 3,
     "2": 10,
     "6": 1,
@@ -29,8 +31,7 @@
     "8": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 1,
+    "0": 2,
     "4": 1
   },
   "top_reacted_messages": [
@@ -54,6 +55,13 @@
       "author": "ahh_1234567890",
       "reactions": 5,
       "channel": "仔细看 这是一个尤乌"
+    },
+    {
+      "id": "1438095314757226577",
+      "content": "起因是當時給地獄犬oc起名在查閱資料中，在克蘇魯公社的“姆西斯哈”條目中發現了這樣一句話——“原型為北歐神話中的芬里爾”（P3英文克蘇魯wiki也證實了這一點）",
+      "author": "flim_of_life_burst",
+      "reactions": 3,
+      "channel": "【考據】第三章中的怪物「嘉爾姆？」的原型"
     },
     {
       "id": "1437985641974599792",

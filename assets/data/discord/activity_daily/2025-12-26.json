@@ -1,10 +1,12 @@
 {
   "date": "2025-12-26",
-  "messages": 125,
+  "messages": 146,
   "unique_authors": 29,
-  "reactions_total": 75,
-  "attachments": 17,
+  "reactions_total": 86,
+  "attachments": 18,
   "channel_activity": {
+    "V2.4.1.1 在线维护公告": 15,
+    "V2.4.1.0 停服维护公告": 6,
     "Who Ryker's Designer pls come talk ?": 1,
     "💭「Processing」The Spacebar/Enter key on Steam PC version not working": 9,
     "✅「已回答」可否增設命輪和密契的計數器": 2,
@@ -32,16 +34,16 @@
     "1403373754175721657": 9
   },
   "hourly_activity": {
+    "10": 18,
+    "11": 18,
+    "12": 5,
+    "2": 9,
+    "3": 16,
     "20": 1,
-    "10": 13,
-    "11": 9,
-    "12": 2,
     "13": 2,
     "14": 13,
-    "3": 13,
     "4": 5,
     "9": 23,
-    "2": 8,
     "7": 2,
     "5": 2,
     "6": 21,
@@ -52,9 +54,8 @@
     "17": 3
   },
   "message_types": {
-    "0": 80,
-    "19": 13,
-    "4": 11
+    "0": 15,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -70,6 +71,13 @@
       "author": "zier.0",
       "reactions": 8,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1453947971736703177",
+      "content": "<@233217233583734785><@330867601691639809><@645758482305253422><@143748726402331",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "V2.4.1.0 停服维护公告"
     },
     {
       "id": "1454195843065450680",
@@ -156,46 +164,39 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1454065926323568705",
+      "content": "**V2.4.1.1 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": "V2.4.1.1 在线维护公告"
+    },
+    {
+      "id": "1454068524828852345",
+      "content": "Hi Redz\nI am Rain",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "V2.4.1.1 在线维护公告"
+    },
+    {
+      "id": "1453949093750640640",
+      "content": "its ok Goya, thanks for the clarification",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "V2.4.1.0 停服维护公告"
+    },
+    {
+      "id": "1453955159783637034",
+      "content": "Can the dev change how Sacrifice work? Traphase All-pick in shambles because it'",
+      "author": "hskzu",
+      "reactions": 1,
+      "channel": "V2.4.1.0 停服维护公告"
+    },
+    {
       "id": "1454057389635670098",
       "content": "好耶謝謝戈雅！",
       "author": "amstelredam",
       "reactions": 1,
       "channel": "✅「已回答」可否增設命輪和密契的計數器"
-    },
-    {
-      "id": "1454055111063240774",
-      "content": "oops mighta used the wrong tag but its ok",
-      "author": "lordbabel",
-      "reactions": 1,
-      "channel": "✅「Resolved」Traphase softlock bug"
-    },
-    {
-      "id": "1454081302142783650",
-      "content": "The maintenance unstuck us! (I think.) Still very annoying as if there wasn't a ",
-      "author": "lordbabel",
-      "reactions": 1,
-      "channel": "✅「Resolved」Traphase softlock bug"
-    },
-    {
-      "id": "1454049751036067882",
-      "content": "Basically, we did a friendly battle with <@757449821551460452> while i was in a ",
-      "author": "moyashi0672",
-      "reactions": 1,
-      "channel": "✅「Resolved」Traphase bug"
-    },
-    {
-      "id": "1454052884776747049",
-      "content": "4-13剧情卡住的问题今天会修复，另一个问题还在查验",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」星辰篇4-13劇情卡住、通關紀錄回放好像也怪怪的"
-    },
-    {
-      "id": "1454059267362525338",
-      "content": "辛苦了<:goodjob1:1356083729558274149>",
-      "author": "menta_y_menta",
-      "reactions": 1,
-      "channel": "💭「处理中」星辰篇4-13劇情卡住、通關紀錄回放好像也怪怪的"
     }
   ]
 }

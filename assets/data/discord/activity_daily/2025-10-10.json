@@ -1,10 +1,11 @@
 {
   "date": "2025-10-10",
-  "messages": 105,
+  "messages": 113,
   "unique_authors": 16,
-  "reactions_total": 10,
-  "attachments": 10,
+  "reactions_total": 57,
+  "attachments": 23,
   "channel_activity": {
+    "忘却前夜OST：命运前奏之曲": 8,
     "✅「已回答」對弈 強效對凱刻斯的回血沒效果": 1,
     "✅「Answered」friend cannot bind invitation": 1,
     "✅「已解决」steam端忘却前夜打开一直黑屏": 3,
@@ -17,6 +18,7 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "8": 8,
     "3": 5,
     "15": 8,
     "16": 13,
@@ -33,10 +35,37 @@
     "22": 2
   },
   "message_types": {
-    "0": 82,
-    "19": 18
+    "0": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1426119922811146360",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：命运前奏之曲 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，O",
+      "author": "morimensstaff01",
+      "reactions": 29,
+      "channel": "忘却前夜OST：命运前奏之曲"
+    },
+    {
+      "id": "1426120393327902831",
+      "content": "**04. 踏对节拍-Keep the Beat-**\n\n捕捉每一个音符，落在正确的节奏上。\n小心，注意，面对挑剔的指挥家，行差踏错会让你落入万劫不复的境地。\n",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "忘却前夜OST：命运前奏之曲"
+    },
+    {
+      "id": "1426121381480890500",
+      "content": "<:H_immerse:1426122347643146250> 以上就是本次OST的全部曲目~\nThe above are all the tracks of",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "忘却前夜OST：命运前奏之曲"
+    },
+    {
+      "id": "1426120097600241694",
+      "content": "**01. 恢弘律令-The Grand Melody-**\n\n噤声，前行。序曲早已奏响。\n我会伴你走向，注定的、无上的、至美的终章。\n\nSilence. Ad",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "忘却前夜OST：命运前奏之曲"
+    },
     {
       "id": "1426228100093448315",
       "content": "Reawakening weakens the awakener involved, and she's loyal to Mythag because Tul",

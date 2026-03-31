@@ -1,10 +1,12 @@
 {
   "date": "2026-02-13",
-  "messages": 708,
+  "messages": 711,
   "unique_authors": 53,
-  "reactions_total": 259,
-  "attachments": 96,
+  "reactions_total": 281,
+  "attachments": 98,
   "channel_activity": {
+    "Stop aurafarming!": 2,
+    "Lotan": 1,
     "💭「處理中」Bug列車": 3,
     "💭「Processing」IOS App stops all background sound/music": 3,
     "✅「已回答」能否回放戰鬥紀錄": 2,
@@ -47,6 +49,9 @@
     "🔸阵容构建": 7
   },
   "hourly_activity": {
+    "14": 21,
+    "20": 1,
+    "18": 6,
     "9": 57,
     "12": 39,
     "6": 31,
@@ -57,24 +62,28 @@
     "2": 89,
     "4": 68,
     "7": 37,
-    "14": 20,
     "23": 3,
     "11": 35,
     "1": 21,
     "5": 45,
     "15": 22,
     "16": 21,
-    "18": 5,
     "0": 30,
     "13": 4,
     "21": 1
   },
   "message_types": {
-    "4": 24,
-    "0": 40,
-    "19": 17
+    "0": 2,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1471939172532097228",
+      "content": "🐳 🐳 🐳",
+      "author": "deldry8",
+      "reactions": 21,
+      "channel": "Lotan"
+    },
     {
       "id": "1471780869734924413",
       "content": "",
@@ -205,13 +214,6 @@
       "id": "1471746701545967708",
       "content": "我們一定要玩這麼累的東西嗎（",
       "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471788130712686622",
-      "content": "怒打17回合，双子这些技能我一个都就没见过hhhh",
-      "author": "xyakoto",
       "reactions": 4,
       "channel": "🔸綜合討論"
     }

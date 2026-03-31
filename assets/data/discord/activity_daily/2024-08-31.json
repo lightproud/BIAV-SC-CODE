@@ -1,10 +1,11 @@
 {
   "date": "2024-08-31",
-  "messages": 35,
+  "messages": 36,
   "unique_authors": 8,
   "reactions_total": 18,
   "attachments": 5,
   "channel_activity": {
+    "阅读剧情时发现的一些文本错误": 1,
     "一鍵領取": 1,
     "莉莉的特遣「故事的魔法」": 1,
     "如何推出新玩法来盘活这个游戏？": 11,
@@ -15,6 +16,7 @@
     "相位基本型推介／PVP typical team suggestion": 1
   },
   "hourly_activity": {
+    "13": 1,
     "10": 8,
     "5": 7,
     "6": 9,
@@ -24,8 +26,7 @@
     "12": 5
   },
   "message_types": {
-    "0": 16,
-    "19": 3
+    "0": 1
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,12 @@
 {
   "date": "2025-07-23",
-  "messages": 90,
+  "messages": 105,
   "unique_authors": 25,
-  "reactions_total": 64,
+  "reactions_total": 446,
   "attachments": 36,
   "channel_activity": {
+    "校猫碎碎念#Translation Plan Update 本地化计划变更": 14,
+    "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 1,
     "✅「Answered」faros e3 text wrong": 3,
     "✅「已回答」2-14 Boss血量變為1": 7,
     "💭「Processing」Animations not Loading": 3,
@@ -29,6 +31,10 @@
     "1390375103707218041": 1
   },
   "hourly_activity": {
+    "17": 8,
+    "18": 6,
+    "19": 3,
+    "23": 2,
     "3": 8,
     "8": 24,
     "6": 8,
@@ -39,19 +45,24 @@
     "10": 1,
     "0": 3,
     "2": 4,
-    "19": 2,
-    "23": 1,
     "4": 7,
     "11": 1,
-    "9": 2,
-    "17": 1
+    "9": 2
   },
   "message_types": {
-    "0": 56,
-    "4": 10,
-    "19": 15
+    "0": 5,
+    "6": 2,
+    "19": 7,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1397635407516008541",
+      "content": "Many English-speaking players have been closely following our localization progr",
+      "author": "game.producer.light",
+      "reactions": 357,
+      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+    },
     {
       "id": "1397433385500151888",
       "content": "We have had the channel suggestion channel for a while now and still no changes.",
@@ -65,6 +76,20 @@
       "author": "queyangheimao.",
       "reactions": 13,
       "channel": "发一下做的海报和小说封面————"
+    },
+    {
+      "id": "1397640109440106546",
+      "content": "Most new content will be released with gpt translation, while human translation ",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+    },
+    {
+      "id": "1397729003363897507",
+      "content": "There are three reasons. First is the budget issue—outsourcing directly would re",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
     },
     {
       "id": "1397448679853523045",
@@ -100,6 +125,13 @@
       "author": "nekoiiii.",
       "reactions": 3,
       "channel": "能不能出一个真正的想随时赌一把的那种的肉鸽玩法"
+    },
+    {
+      "id": "1397640262846517339",
+      "content": "Good decision, would have hated to hear if content was slowed down due to this.",
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
     },
     {
       "id": "1397494833739726859",
@@ -160,13 +192,6 @@
     {
       "id": "1397449727338876988",
       "content": "被暗算了沒有之前順滑的錄影可以對比<:scared2:1356085635374383145>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "✅「已回答」點讚紀錄變卡頓了"
-    },
-    {
-      "id": "1397497429133361203",
-      "content": "謝謝戈雅辛苦了愛你們呦<:love:1356053099931897977>",
       "author": "wild_pansy",
       "reactions": 1,
       "channel": "✅「已回答」點讚紀錄變卡頓了"

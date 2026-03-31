@@ -1,10 +1,12 @@
 {
   "date": "2025-11-06",
-  "messages": 23,
+  "messages": 29,
   "unique_authors": 8,
-  "reactions_total": 871,
+  "reactions_total": 881,
   "attachments": 4,
   "channel_activity": {
+    "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 1,
+    "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment": 5,
     "✅「已回答」關於生涯成就": 1,
     "✅「Answered」Make Doresain overflow damage on others when killing": 2,
     "✅「Answered」Card Art for Awakener Skills/Rouse": 10,
@@ -17,22 +19,21 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "3": 2,
+    "0": 3,
+    "5": 4,
     "12": 1,
     "2": 6,
-    "3": 1,
-    "5": 1,
     "17": 7,
     "21": 1,
     "18": 1,
     "13": 1,
     "23": 1,
     "6": 1,
-    "0": 1,
     "14": 1
   },
   "message_types": {
-    "0": 13,
-    "4": 3,
+    "0": 3,
     "19": 3
   },
   "top_reacted_messages": [
@@ -51,11 +52,25 @@
       "channel": "✅「Answered」Card Art for Awakener Skills/Rouse"
     },
     {
+      "id": "1435787478433923163",
+      "content": "After communicating with the community, the team discussed the matter again.",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
+    },
+    {
       "id": "1435962810390806590",
       "content": "雖然也許是華而不實的小東西，不過生涯成就的項目裡有一系列中毒成就，希望同為共通被動傷害的反擊也可以有一些成就可以拿🥺以及出血跟觸傷也想要🥺真的好想要可愛小玩意兒",
       "author": "amstelredam",
       "reactions": 4,
       "channel": "✅「已回答」關於生涯成就"
+    },
+    {
+      "id": "1435860103713788077",
+      "content": "他們目前能想到的方式就是，你越抽不到想要的角色，對他們越有利。但他們沒想到的是，越抽不到想要的角色，退坑的人越多",
+      "author": "taoi002",
+      "reactions": 3,
+      "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
     },
     {
       "id": "1435885031599116398",

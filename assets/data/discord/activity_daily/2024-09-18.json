@@ -1,10 +1,11 @@
 {
   "date": "2024-09-18",
-  "messages": 77,
+  "messages": 78,
   "unique_authors": 11,
-  "reactions_total": 49,
+  "reactions_total": 51,
   "attachments": 30,
   "channel_activity": {
+    "🎁🎁禮包兌換碼更新樓🎁🎁": 1,
     "关于这次活动图": 3,
     "有三个问题": 5,
     "有没有人觉得新活动/角色出的好慢": 10,
@@ -16,6 +17,7 @@
     "（已封存）【蚰蜒的vrm影像馆】": 1
   },
   "hourly_activity": {
+    "2": 10,
     "18": 3,
     "15": 3,
     "17": 5,
@@ -23,13 +25,11 @@
     "14": 10,
     "9": 24,
     "10": 14,
-    "2": 9,
     "8": 3,
     "1": 1
   },
   "message_types": {
-    "0": 17,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -80,6 +80,13 @@
       "author": "jiujiyuzhouguairen",
       "reactions": 3,
       "channel": "有三个问题"
+    },
+    {
+      "id": "1285793765545476117",
+      "content": "戈雅的月餅禮盒已送達~\n\n禮包碼：MOONCAKE\n禮包內容：銀芯*1000\n有效期至：2024/09/23 23:59:59",
+      "author": "lubi_17667",
+      "reactions": 2,
+      "channel": "🎁🎁禮包兌換碼更新樓🎁🎁"
     },
     {
       "id": "1286031985160097912",

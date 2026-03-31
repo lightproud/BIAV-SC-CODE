@@ -1,10 +1,12 @@
 {
   "date": "2026-01-21",
-  "messages": 55,
+  "messages": 58,
   "unique_authors": 18,
-  "reactions_total": 67,
-  "attachments": 13,
+  "reactions_total": 79,
+  "attachments": 15,
   "channel_activity": {
+    "[Art Dump Thread] WILLIAMPOSTING 2": 1,
+    "Art dump thread": 2,
     "💭「处理中」透明人在打透明怪": 2,
     "Bug? When choosing team": 1,
     "需要官方高清海报": 1,
@@ -20,6 +22,8 @@
     "1455822126568308957": 5
   },
   "hourly_activity": {
+    "2": 2,
+    "18": 1,
     "14": 6,
     "12": 3,
     "7": 2,
@@ -37,8 +41,7 @@
     "6": 4
   },
   "message_types": {
-    "0": 4,
-    "19": 1
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -63,6 +66,20 @@
       "channel": ""
     },
     {
+      "id": "1463354386754437220",
+      "content": "https://x.com/i/status/2013355358358479178\nForgot",
+      "author": "kiriwoamizaki",
+      "reactions": 5,
+      "channel": "Art dump thread"
+    },
+    {
+      "id": "1463606197545468098",
+      "content": "I'm soooo lazy",
+      "author": "kiriwoamizaki",
+      "reactions": 5,
+      "channel": "Art dump thread"
+    },
+    {
       "id": "1463434461315338290",
       "content": "I know Morimens have a small team and it is difficult at this time, but I hope a",
       "author": "chiwazuki",
@@ -75,6 +92,13 @@
       "author": "akkom730",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1463354586956955751",
+      "content": "Incredible. Wow . Wow. I'm a big fan",
+      "author": "kiriwoamizaki",
+      "reactions": 2,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
       "id": "1463403108380971008",
@@ -157,27 +181,6 @@
       "id": "1463486477550878770",
       "content": "And even if you avoid decay you still have 2 turn weakness)",
       "author": "twilightsparkle163163",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463545113962614854",
-      "content": "I feel that using discard on W5 was a critical mistake on my part\nNone of my oth",
-      "author": "legendaryredz",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463545359472005162",
-      "content": "Should have cleared that first",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463576795474301124",
-      "content": "It's fine\nI found a way",
-      "author": "legendaryredz",
       "reactions": 1,
       "channel": ""
     }

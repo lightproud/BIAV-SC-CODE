@@ -1,10 +1,11 @@
 {
   "date": "2025-07-08",
-  "messages": 21,
-  "unique_authors": 6,
-  "reactions_total": 18,
-  "attachments": 11,
+  "messages": 34,
+  "unique_authors": 12,
+  "reactions_total": 19,
+  "attachments": 12,
   "channel_activity": {
+    "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 13,
     "Feedback/general review on latest morimens merchandise": 4,
     "✅「已回答」典藏館文字邏輯bug": 2,
     "💭「Processing」D-effect Zone First Time Reward Not Crediting": 2,
@@ -15,19 +16,23 @@
     "1390375103707218041": 1
   },
   "hourly_activity": {
-    "9": 1,
+    "0": 2,
+    "2": 4,
+    "4": 1,
+    "5": 8,
+    "7": 1,
+    "9": 4,
+    "10": 2,
+    "23": 1,
     "11": 4,
     "12": 1,
     "18": 2,
     "3": 3,
-    "5": 6,
-    "2": 3,
     "16": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 2,
-    "4": 3
+    "0": 6,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -43,6 +48,13 @@
       "author": "ernest_heart",
       "reactions": 6,
       "channel": "✅「已回答」典藏館文字邏輯bug"
+    },
+    {
+      "id": "1392089075561005086",
+      "content": "Thank you!",
+      "author": "kabipo",
+      "reactions": 1,
+      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
     },
     {
       "id": "1392101383477657682",

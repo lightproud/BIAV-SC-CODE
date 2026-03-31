@@ -1,10 +1,12 @@
 {
   "date": "2026-02-20",
-  "messages": 1723,
+  "messages": 1726,
   "unique_authors": 58,
-  "reactions_total": 235,
-  "attachments": 93,
+  "reactions_total": 262,
+  "attachments": 95,
   "channel_activity": {
+    "Year of the horse...? || Doresain x Sylvester": 2,
+    "murphy and desserts 🍓": 1,
     "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 4,
     "✅「Answered」Creator accounts": 3,
     "✅「Answered」problems with donations": 2,
@@ -28,6 +30,9 @@
     "🔸阵容构建": 41
   },
   "hourly_activity": {
+    "3": 84,
+    "9": 55,
+    "0": 7,
     "4": 210,
     "8": 32,
     "18": 23,
@@ -36,7 +41,6 @@
     "13": 106,
     "17": 130,
     "7": 20,
-    "9": 54,
     "14": 30,
     "15": 86,
     "16": 299,
@@ -44,20 +48,24 @@
     "6": 59,
     "1": 21,
     "10": 8,
-    "3": 83,
     "22": 3,
     "5": 81,
     "12": 280,
     "23": 2,
-    "0": 6,
     "11": 103,
     "20": 2
   },
   "message_types": {
-    "0": 19,
-    "19": 8
+    "0": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1474241504720588861",
+      "content": "\"Doresain! Doresain...?\"\n\nPart 2 of of the new year art! But a tiny doodle, I th",
+      "author": "that_one_chippy",
+      "reactions": 17,
+      "channel": "Year of the horse...? || Doresain x Sylvester"
+    },
     {
       "id": "1474488466954911784",
       "content": "真的好喜歡神父 😭",
@@ -78,6 +86,13 @@
       "author": "bagels5899",
       "reactions": 14,
       "channel": "Please allow us to reutrn Doresain to the Black Pool"
+    },
+    {
+      "id": "1474339314618990726",
+      "content": "",
+      "author": "that_one_chippy",
+      "reactions": 10,
+      "channel": "Year of the horse...? || Doresain x Sylvester"
     },
     {
       "id": "1474389809324884125",
@@ -183,20 +198,6 @@
       "author": "menoctus",
       "reactions": 2,
       "channel": "✦关卡地图「融灾禁区」总览54期·星辰篇✦"
-    },
-    {
-      "id": "1474339276404822150",
-      "content": "Sylvester is coming!",
-      "author": "that_one_chippy",
-      "reactions": 2,
-      "channel": "马年……？|| 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1474527720246345780",
-      "content": ">> 1. 你是在什么时候，因为什么原因开始玩「忘却前夜」的？\n\n老實說一開始是聽說跟 1999 很像，當時對兩者都有興趣，順便玩的。是杜勒版本剛過的時候（活動",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": ""
     }
   ]
 }

@@ -1,10 +1,13 @@
 {
   "date": "2026-02-06",
-  "messages": 7609,
+  "messages": 7639,
   "unique_authors": 159,
-  "reactions_total": 1230,
-  "attachments": 229,
+  "reactions_total": 1302,
+  "attachments": 235,
   "channel_activity": {
+    "V2.4.2.2 停服维护公告": 25,
+    "Daffodil": 4,
+    "アイロニーナ || Doresain & Sylvester": 1,
     "游戏下载": 1,
     "💭「Processing」game client crashed...somewhat": 2,
     "Please help. I'm not at fault. I love this game.": 28,
@@ -26,35 +29,34 @@
     "🔸morimens-game-chat": 6433
   },
   "hourly_activity": {
+    "12": 660,
+    "13": 224,
+    "15": 387,
+    "16": 174,
+    "17": 125,
+    "19": 248,
+    "7": 284,
+    "14": 480,
+    "8": 252,
     "2": 274,
-    "7": 282,
     "9": 294,
     "10": 620,
     "11": 350,
-    "15": 382,
-    "13": 222,
-    "12": 644,
     "5": 220,
     "3": 379,
-    "8": 251,
     "4": 92,
-    "19": 247,
     "21": 503,
     "0": 553,
     "1": 243,
     "6": 84,
-    "14": 479,
-    "16": 173,
-    "17": 124,
     "18": 390,
     "22": 102,
     "23": 252,
     "20": 449
   },
   "message_types": {
-    "0": 32,
-    "19": 8,
-    "20": 1
+    "0": 28,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -63,6 +65,34 @@
       "author": "princess.goth",
       "reactions": 20,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469231000226889769",
+      "content": "",
+      "author": "moon.orchd",
+      "reactions": 19,
+      "channel": "Daffodil"
+    },
+    {
+      "id": "1469321068203479116",
+      "content": "They removed hsr for fear of copyright <:takenotes:1357186646294138890>",
+      "author": "vxvendetta97",
+      "reactions": 16,
+      "channel": "V2.4.2.2 停服维护公告"
+    },
+    {
+      "id": "1469307727724544044",
+      "content": "守密人你好：\n       弥萨格大学预计于2月9日08:00~11:00（UTC+8）进行校内设施维护。\n       维护结束后需要重新登入并更新资源，补给",
+      "author": "morimensstaff02",
+      "reactions": 14,
+      "channel": "V2.4.2.2 停服维护公告"
+    },
+    {
+      "id": "1469252918359232562",
+      "content": "This had been one of my most favorite song for a long time! And I really enjoy m",
+      "author": "that_one_chippy",
+      "reactions": 11,
+      "channel": "アイロニーナ || Doresain & Sylvester"
     },
     {
       "id": "1469244729156829288",
@@ -149,6 +179,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1469359577354076260",
+      "content": "Dang no 24 buff <:24_Meow:1468259476107821137> 🔫",
+      "author": "reya.li",
+      "reactions": 5,
+      "channel": "V2.4.2.2 停服维护公告"
+    },
+    {
       "id": "1469176490590474552",
       "content": "I wanted to provide a final update. I’ve been in contact with the member to disc",
       "author": "cometovilla",
@@ -161,41 +198,6 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1469125214649585674",
-      "content": "",
-      "author": "arandomflamev2",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469126446906867976",
-      "content": "",
-      "author": "arkaether",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469276857953161339",
-      "content": "you should try skincare btw",
-      "author": "chinkeeyong",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469283807776473118",
-      "content": "i got everyone to sf5",
-      "author": "chinkeeyong",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469471075141419110",
-      "content": "You don't have her ?",
-      "author": "legendaryredz",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

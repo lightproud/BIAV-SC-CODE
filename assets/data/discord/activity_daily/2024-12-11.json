@@ -1,10 +1,13 @@
 {
   "date": "2024-12-11",
-  "messages": 21,
-  "unique_authors": 11,
-  "reactions_total": 103,
-  "attachments": 9,
+  "messages": 60,
+  "unique_authors": 18,
+  "reactions_total": 121,
+  "attachments": 14,
   "channel_activity": {
+    "腳本及外掛處理規則": 16,
+    "🌌【已開獎】超越維度的祝福": 3,
+    "V1.7.3.0 停服維護公告": 20,
     "會活下來嗎": 5,
     "遊戲大廳能否可以自行更改遊戲的BGM?": 1,
     "如何将 Steam 帐户链接到移动手机版？": 1,
@@ -15,7 +18,14 @@
     "這太美麗了😭": 7
   },
   "hourly_activity": {
-    "3": 2,
+    "2": 14,
+    "3": 6,
+    "8": 1,
+    "11": 8,
+    "12": 4,
+    "13": 6,
+    "14": 1,
+    "15": 1,
     "5": 1,
     "6": 6,
     "21": 1,
@@ -26,7 +36,8 @@
     "10": 2
   },
   "message_types": {
-    "0": 12
+    "0": 34,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -63,6 +74,27 @@
       "author": "pray_unbeliever",
       "reactions": 9,
       "channel": "會活下來嗎"
+    },
+    {
+      "id": "1316240365409407026",
+      "content": "可能是针对淘宝那一堆自抽号初始号",
+      "author": "nekoiiii.",
+      "reactions": 8,
+      "channel": "腳本及外掛處理規則"
+    },
+    {
+      "id": "1316374539285954580",
+      "content": "~~搞不好是因為要開最後一關了趕快砍一下血鏈 說不定最後一關有黃金造物能刷所以才要避免血鏈太強勢~~",
+      "author": "pray_unbeliever",
+      "reactions": 6,
+      "channel": "V1.7.3.0 停服維護公告"
+    },
+    {
+      "id": "1316235099003424809",
+      "content": "該不會是共戰用腳本刷吧，那次數會退回來嗎?",
+      "author": "sleepingcat103",
+      "reactions": 4,
+      "channel": "腳本及外掛處理規則"
     },
     {
       "id": "1316457188968894605",

@@ -1,10 +1,12 @@
 {
   "date": "2025-09-10",
-  "messages": 63,
+  "messages": 69,
   "unique_authors": 13,
   "reactions_total": 52,
-  "attachments": 8,
+  "attachments": 9,
   "channel_activity": {
+    "V2.3.2.2 在线维护公告": 3,
+    "前瞻：相位对弈改动 Traphase Changes": 3,
     "✅「Answered」Dialogue Scroll Was a Mistake": 5,
     "💭「Processing」Steam game login bricked when hitting exit": 20,
     "✅「Answered」Merch Question": 2,
@@ -27,22 +29,21 @@
     "1415230955387621397": 1
   },
   "hourly_activity": {
+    "12": 14,
+    "3": 5,
     "6": 12,
     "7": 6,
-    "12": 11,
     "13": 2,
     "15": 5,
     "16": 5,
     "21": 1,
     "8": 1,
     "9": 14,
-    "14": 4,
-    "3": 2
+    "14": 4
   },
   "message_types": {
-    "0": 41,
-    "19": 8,
-    "4": 11
+    "0": 5,
+    "19": 1
   },
   "top_reacted_messages": [
     {

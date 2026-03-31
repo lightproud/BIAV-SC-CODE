@@ -1,10 +1,12 @@
 {
   "date": "2025-08-21",
-  "messages": 64,
+  "messages": 73,
   "unique_authors": 13,
-  "reactions_total": 17,
-  "attachments": 13,
+  "reactions_total": 32,
+  "attachments": 23,
   "channel_activity": {
+    "Edit": 1,
+    "忘却前夜OST：旺达EP·赴死酣宴": 8,
     "✅「Answered」Launch the game via Steam and getting the \"Network busy\"": 4,
     "💭「处理中」星辰困难第一章1-6事件bug": 1,
     "✅「Answered」Awakeners \"on duty\" when reorganizing assignments": 1,
@@ -24,6 +26,9 @@
     "1181147096234065920": 3
   },
   "hourly_activity": {
+    "8": 18,
+    "19": 1,
+    "20": 1,
     "0": 3,
     "3": 10,
     "12": 1,
@@ -37,15 +42,19 @@
     "6": 6,
     "10": 5,
     "7": 10,
-    "15": 1,
-    "8": 11
+    "15": 1
   },
   "message_types": {
-    "0": 31,
-    "4": 9,
-    "19": 2
+    "0": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1408000123140833340",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：旺达EP·赴死酣宴，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同",
+      "author": "morimensstaff01",
+      "reactions": 15,
+      "channel": "忘却前夜OST：旺达EP·赴死酣宴"
+    },
     {
       "id": "1408133005993709690",
       "content": "Hollow Knight.\n\nA lot of us keepers love Hollow Knight. \n\nWe would love it. \n\nCh",

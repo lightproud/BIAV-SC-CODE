@@ -1,10 +1,12 @@
 {
   "date": "2024-08-04",
-  "messages": 75,
+  "messages": 79,
   "unique_authors": 18,
-  "reactions_total": 58,
-  "attachments": 14,
+  "reactions_total": 59,
+  "attachments": 15,
   "channel_activity": {
+    "《忘卻前夜》8月2日全面登陸PC平台！": 1,
+    "📜《忘卻前夜 Morimens》V1.5.2即將開放！精彩資訊一網打盡！": 3,
     "建議不再在直接打王的活動本中設置祂的神諭+為默認造物": 12,
     "✅「已回答」请问电脑端与服务器通信的域名是？": 1,
     "✅「已回答」震怒bug": 7,
@@ -25,13 +27,13 @@
     "DIY唤醒体 鲁利姆（Rlim）": 3
   },
   "hourly_activity": {
+    "7": 2,
+    "4": 13,
     "6": 6,
     "8": 3,
     "9": 1,
     "10": 6,
-    "7": 1,
     "3": 1,
-    "4": 10,
     "5": 1,
     "12": 1,
     "17": 9,
@@ -45,8 +47,8 @@
     "18": 3
   },
   "message_types": {
-    "0": 23,
-    "19": 2
+    "19": 2,
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -104,6 +106,13 @@
       "author": "anachico",
       "reactions": 2,
       "channel": "【敌方意图收录】群星正位活动新增单位一览"
+    },
+    {
+      "id": "1269513029536714826",
+      "content": "别整",
+      "author": "you_zuo",
+      "reactions": 1,
+      "channel": "📜《忘卻前夜 Morimens》V1.5.2即將開放！精彩資訊一網打盡！"
     }
   ]
 }

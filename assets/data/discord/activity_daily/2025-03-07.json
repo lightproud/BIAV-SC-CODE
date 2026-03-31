@@ -1,10 +1,12 @@
 {
   "date": "2025-03-07",
-  "messages": 12,
-  "unique_authors": 7,
-  "reactions_total": 4,
-  "attachments": 3,
+  "messages": 103,
+  "unique_authors": 22,
+  "reactions_total": 33,
+  "attachments": 5,
   "channel_activity": {
+    "V2.1.1.0 停服維護公告": 86,
+    "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！": 5,
     "✅「Answered」I can't check favorite List.": 5,
     "✅「已回答」账号找不到了": 1,
     "以前的表情+头像获取方式不能再多点么？": 2,
@@ -13,27 +15,73 @@
     "女守X鯊（OOC警告）": 1
   },
   "hourly_activity": {
-    "2": 5,
-    "10": 1,
+    "4": 15,
+    "5": 21,
+    "6": 33,
+    "7": 9,
+    "8": 1,
+    "10": 3,
+    "11": 3,
+    "13": 4,
+    "16": 2,
+    "2": 8,
+    "3": 2,
     "15": 1,
-    "13": 1,
-    "16": 1,
-    "6": 1,
-    "7": 1,
     "9": 1
   },
   "message_types": {
-    "0": 9,
-    "4": 1,
-    "19": 1
+    "0": 76,
+    "19": 15
   },
   "top_reacted_messages": [
+    {
+      "id": "1347439709244096564",
+      "content": "我覺得這個PVP活動只會讓我這種PVE玩家想退坑\nPVP活動憑什麼是給PVE素材",
+      "author": "_cwz_",
+      "reactions": 15,
+      "channel": "V2.1.1.0 停服維護公告"
+    },
+    {
+      "id": "1347609716632719360",
+      "content": "跟前作自嗨連動就算了還強迫玩家打PVP 🚮",
+      "author": "menta_y_menta",
+      "reactions": 10,
+      "channel": "V2.1.1.0 停服維護公告"
+    },
     {
       "id": "1347566379431100486",
       "content": "只有前面两个大段位才有这个票，为啥不能普及一下……",
       "author": "luhongran",
       "reactions": 2,
       "channel": "以前的表情+头像获取方式不能再多点么？"
+    },
+    {
+      "id": "1347424233516568577",
+      "content": "<:stoppage:1236938521365839872>",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "V2.1.1.0 停服維護公告"
+    },
+    {
+      "id": "1347446002101256253",
+      "content": "除非他们开放活动期间全池可用❓",
+      "author": "cs001092",
+      "reactions": 1,
+      "channel": "V2.1.1.0 停服維護公告"
+    },
+    {
+      "id": "1347449354385887235",
+      "content": "他的意思是假設原本100獻祭\n獲得100獻祭之後變200\n同時會獲得200×6%的觸力",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "V2.1.1.0 停服維護公告"
+    },
+    {
+      "id": "1347450043879133186",
+      "content": "~~這也太猛了吧~~",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "V2.1.1.0 停服維護公告"
     },
     {
       "id": "1347395130914508841",

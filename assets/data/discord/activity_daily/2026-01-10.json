@@ -1,10 +1,11 @@
 {
   "date": "2026-01-10",
-  "messages": 94,
+  "messages": 95,
   "unique_authors": 11,
   "reactions_total": 26,
   "attachments": 15,
   "channel_activity": {
+    "Bunch of doodles and sillies": 1,
     "Possibilty of rebalancing Wanda?": 6,
     "建議讓戰鬥統計也能顯示助戰的具體數值": 2,
     "✅「Resolved」\"Tiny Wish\" Posse interface bug": 3,
@@ -19,6 +20,7 @@
     "1305430084420898868": 2
   },
   "hourly_activity": {
+    "12": 1,
     "14": 1,
     "15": 2,
     "16": 4,
@@ -33,9 +35,7 @@
     "7": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 2,
-    "4": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

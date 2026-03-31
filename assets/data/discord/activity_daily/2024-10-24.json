@@ -1,10 +1,11 @@
 {
   "date": "2024-10-24",
-  "messages": 91,
+  "messages": 92,
   "unique_authors": 17,
   "reactions_total": 55,
   "attachments": 9,
   "channel_activity": {
+    "Steam賬號數據問題說明": 1,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 49,
     "是否考慮為同調率增加功能": 3,
     "ios手机怎么能玩上？人在加拿大": 10,
@@ -25,6 +26,7 @@
     "嘿嘿": 1
   },
   "hourly_activity": {
+    "1": 1,
     "13": 33,
     "14": 9,
     "16": 8,
@@ -44,8 +46,7 @@
     "7": 1
   },
   "message_types": {
-    "0": 59,
-    "19": 20
+    "0": 1
   },
   "top_reacted_messages": [
     {

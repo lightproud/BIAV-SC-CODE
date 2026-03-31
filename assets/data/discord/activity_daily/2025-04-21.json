@@ -1,10 +1,11 @@
 {
   "date": "2025-04-21",
-  "messages": 43,
+  "messages": 45,
   "unique_authors": 11,
   "reactions_total": 1,
-  "attachments": 11,
+  "attachments": 12,
   "channel_activity": {
+    "V2.2.0.4 在線維護公告": 2,
     "✅「Answered」24 Chaos Trial bug! Rouse ain't 24!": 5,
     "✅「已回答」原来怨恨锁链是个长达一年的bug吗": 3,
     "✅「已回答」如图所示,怨恨锁链生效不正常": 3,
@@ -14,6 +15,7 @@
     "跟我朋友零元購了一個稿，成效甚好": 1
   },
   "hourly_activity": {
+    "14": 2,
     "6": 4,
     "11": 3,
     "15": 3,
@@ -25,9 +27,7 @@
     "5": 2
   },
   "message_types": {
-    "0": 31,
-    "4": 3,
-    "19": 7
+    "0": 2
   },
   "top_reacted_messages": [
     {

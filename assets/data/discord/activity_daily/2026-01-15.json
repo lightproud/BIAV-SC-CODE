@@ -1,10 +1,11 @@
 {
   "date": "2026-01-15",
-  "messages": 15,
+  "messages": 28,
   "unique_authors": 7,
-  "reactions_total": 7,
-  "attachments": 4,
+  "reactions_total": 46,
+  "attachments": 12,
   "channel_activity": {
+    "Art dump thread": 13,
     "💭「处理中」典藏馆事件的解锁到底是什么机制？": 1,
     "✅「Answered」Google sign-in issues": 1,
     "Threat emote in Traphase appears to be bugged": 1,
@@ -16,26 +17,65 @@
     "1445556242381672559": 2
   },
   "hourly_activity": {
+    "13": 4,
+    "15": 1,
+    "16": 3,
+    "17": 2,
+    "19": 3,
+    "20": 1,
     "10": 1,
     "9": 1,
     "14": 2,
     "11": 1,
     "0": 3,
     "8": 5,
-    "1": 1,
-    "19": 1
+    "1": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 8
+    "0": 13
   },
   "top_reacted_messages": [
+    {
+      "id": "1461349227040084152",
+      "content": "Umm just reposting stuff I've posted to Twitter yea",
+      "author": "kiriwoamizaki",
+      "reactions": 23,
+      "channel": "Art dump thread"
+    },
+    {
+      "id": "1461444939064803500",
+      "content": "Thais and Alva modern au aka me not wanting to draw their outfits",
+      "author": "kiriwoamizaki",
+      "reactions": 5,
+      "channel": "Art dump thread"
+    },
+    {
+      "id": "1461453052446773466",
+      "content": "Drew salv",
+      "author": "kiriwoamizaki",
+      "reactions": 5,
+      "channel": "Art dump thread"
+    },
+    {
+      "id": "1461350314685759589",
+      "content": "Forgot one",
+      "author": "kiriwoamizaki",
+      "reactions": 4,
+      "channel": "Art dump thread"
+    },
     {
       "id": "1461155535825932392",
       "content": "~~在黑池裡放顆雞蛋能吃到溫泉蛋嗎~~",
       "author": "shostakovich524",
       "reactions": 3,
       "channel": "疑似文本错误"
+    },
+    {
+      "id": "1461404127883038885",
+      "content": "Modern au tulu is always on that damn phone",
+      "author": "kiriwoamizaki",
+      "reactions": 2,
+      "channel": "Art dump thread"
     },
     {
       "id": "1461275204453007402",

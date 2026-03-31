@@ -1,10 +1,12 @@
 {
   "date": "2026-02-05",
-  "messages": 9685,
+  "messages": 9694,
   "unique_authors": 183,
-  "reactions_total": 1462,
-  "attachments": 351,
+  "reactions_total": 1477,
+  "attachments": 352,
   "channel_activity": {
+    "Xu but i gave her a monster mouth": 8,
+    "clementine moment": 1,
     "✅「已回答」求助！这是什么bug！": 1,
     "💭「Processing」Astral Reign 1-8 story is broken": 1,
     "謂之「尸解」而登仙": 30,
@@ -20,8 +22,12 @@
     "🔸morimens-game-chat": 7628
   },
   "hourly_activity": {
-    "7": 732,
-    "11": 532,
+    "0": 225,
+    "7": 733,
+    "11": 535,
+    "12": 699,
+    "14": 547,
+    "5": 174,
     "13": 599,
     "15": 541,
     "19": 188,
@@ -32,22 +38,18 @@
     "4": 109,
     "21": 269,
     "8": 762,
-    "0": 223,
     "1": 258,
     "2": 311,
-    "5": 173,
     "6": 444,
     "10": 533,
-    "12": 698,
-    "14": 546,
     "16": 312,
     "17": 164,
     "20": 379,
     "23": 346
   },
   "message_types": {
-    "0": 27,
-    "19": 8
+    "0": 8,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -77,6 +79,13 @@
       "author": "aurora3981",
       "reactions": 12,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468837581935349911",
+      "content": "",
+      "author": "notjustthewind",
+      "reactions": 10,
+      "channel": "clementine moment"
     },
     {
       "id": "1468989205647589501",
@@ -180,13 +189,6 @@
       "id": "1468935750564319313",
       "content": "No one is excited for it",
       "author": "undeterredhomo",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1468985225408413722",
-      "content": "Ignore them. Morimens needs money, if everyone did the optimal strategy. Game wo",
-      "author": "aurora3981",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }

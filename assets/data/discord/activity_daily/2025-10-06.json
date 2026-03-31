@@ -1,10 +1,11 @@
 {
   "date": "2025-10-06",
-  "messages": 66,
+  "messages": 74,
   "unique_authors": 17,
-  "reactions_total": 64,
+  "reactions_total": 81,
   "attachments": 17,
   "channel_activity": {
+    "V2.3.3.0 停服维护公告": 8,
     "✅「Answered」Name change": 1,
     "✅「Answered」How many cards does \"Mutated Heart\" draw without Resonances?": 1,
     "✅「已解决」steam端忘却前夜打开一直黑屏": 2,
@@ -24,6 +25,10 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "5": 21,
+    "9": 3,
+    "10": 8,
+    "13": 3,
     "19": 1,
     "7": 7,
     "4": 2,
@@ -33,17 +38,14 @@
     "3": 1,
     "14": 6,
     "6": 5,
-    "9": 1,
-    "10": 6,
-    "5": 20,
     "8": 2,
     "11": 4,
     "16": 1,
     "12": 1
   },
   "message_types": {
-    "0": 41,
-    "19": 9
+    "0": 6,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -52,6 +54,13 @@
       "author": "navirecorbeau",
       "reactions": 22,
       "channel": ""
+    },
+    {
+      "id": "1424634751746310185",
+      "content": "○ Keepers who participated in past \"The Timeless Call\" will receive a retrospect",
+      "author": "choco_minnto",
+      "reactions": 11,
+      "channel": "V2.3.3.0 停服维护公告"
     },
     {
       "id": "1424787795779784715",
@@ -80,6 +89,20 @@
       "author": "scholar_2",
       "reactions": 5,
       "channel": "诞妄·墨菲+自制超维血肉唤醒体技能组diy"
+    },
+    {
+      "id": "1424694118725980161",
+      "content": "Mods answer now or I'll raid ur fridge",
+      "author": "lotan_045",
+      "reactions": 3,
+      "channel": "V2.3.3.0 停服维护公告"
+    },
+    {
+      "id": "1424695672795430963",
+      "content": "Can you at least say how the compensation is gonna work? Is it a %refund based o",
+      "author": "lotan_045",
+      "reactions": 2,
+      "channel": "V2.3.3.0 停服维护公告"
     },
     {
       "id": "1424653673363013694",
@@ -115,6 +138,13 @@
       "author": "wild_pansy",
       "reactions": 2,
       "channel": "沒拿到相位支配者獎勵"
+    },
+    {
+      "id": "1424753428764168443",
+      "content": "is good only if you want both unit and wheel, in that case can be pretty nice, b",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "V2.3.3.0 停服维护公告"
     },
     {
       "id": "1424586786247676016",

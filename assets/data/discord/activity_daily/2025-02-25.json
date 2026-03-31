@@ -1,10 +1,12 @@
 {
   "date": "2025-02-25",
-  "messages": 12,
-  "unique_authors": 9,
-  "reactions_total": 19,
+  "messages": 34,
+  "unique_authors": 11,
+  "reactions_total": 82,
   "attachments": 0,
   "channel_activity": {
+    "💟獻上愛的圖騰——來自小花腦的信函": 1,
+    "🎁DC15000守密人達成禮": 21,
     "關於攻略募集": 2,
     "✅「已回答」典藏館解鎖的朵和活動頁面不一致": 1,
     "紅夫人回溯": 2,
@@ -14,6 +16,9 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "12": 6,
+    "13": 14,
+    "14": 2,
     "8": 2,
     "16": 4,
     "18": 2,
@@ -22,10 +27,30 @@
     "3": 2
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 22
   },
   "top_reacted_messages": [
+    {
+      "id": "1343921784113856533",
+      "content": "《忘卻前夜Morimens》DC全球頻道達到15000人啦！\n感謝每一位守密人的支持和陪伴，稍後我們將通過遊戲内信件為守密人獻上慶祝禮包喔~！\n\n禮包內容：銀芯",
+      "author": "morimensstaff02",
+      "reactions": 31,
+      "channel": "🎁DC15000守密人達成禮"
+    },
+    {
+      "id": "1343931924657471490",
+      "content": "真的算我求你了😭",
+      "author": "ena04564",
+      "reactions": 17,
+      "channel": "🎁DC15000守密人達成禮"
+    },
+    {
+      "id": "1343930400472563712",
+      "content": "願淫藥勾引前路",
+      "author": "ernest_heart",
+      "reactions": 14,
+      "channel": "🎁DC15000守密人達成禮"
+    },
     {
       "id": "1343865436046884874",
       "content": "分享攻略不就是让策划照着砍",
@@ -39,6 +64,13 @@
       "author": "nidie0256_61327",
       "reactions": 4,
       "channel": "關於攻略募集"
+    },
+    {
+      "id": "1343931886451556423",
+      "content": "把你的規則改掉好嗎",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "🎁DC15000守密人達成禮"
     },
     {
       "id": "1344020061249208370",

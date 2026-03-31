@@ -1,10 +1,12 @@
 {
   "date": "2025-04-05",
-  "messages": 27,
+  "messages": 36,
   "unique_authors": 12,
-  "reactions_total": 96,
-  "attachments": 15,
+  "reactions_total": 103,
+  "attachments": 18,
   "channel_activity": {
+    "V2.2.0.0 停服維護公告": 3,
+    "游戏美术资源上的文字": 6,
     "2nd artwork for characters": 1,
     "✅「Answered」Incorrect Assignment Rewards": 4,
     "✅「已回答」网易云音乐第五章OST": 1,
@@ -21,21 +23,20 @@
     "【Morimens】弥萨格的サカバンバスピス": 1
   },
   "hourly_activity": {
-    "9": 2,
-    "5": 6,
-    "6": 5,
+    "5": 7,
+    "6": 6,
+    "18": 2,
+    "9": 3,
+    "14": 5,
+    "15": 4,
     "19": 1,
-    "14": 2,
     "0": 2,
     "3": 2,
-    "18": 1,
-    "15": 2,
     "10": 3,
     "11": 1
   },
   "message_types": {
-    "0": 6,
-    "19": 4
+    "0": 9
   },
   "top_reacted_messages": [
     {
@@ -88,11 +89,25 @@
       "channel": "【Morimens】弥萨格的サカバンバスピス"
     },
     {
+      "id": "1358096722458316810",
+      "content": "~~不得不说，克莱门汀真是个偷税犯啊~~",
+      "author": "silverstream_s",
+      "reactions": 4,
+      "channel": "游戏美术资源上的文字"
+    },
+    {
       "id": "1358103432417771550",
       "content": "uid：100832341\n我们超维要有自己的小艾继丝",
       "author": "y_win7",
       "reactions": 4,
       "channel": "超维新唤醒体DIY创作"
+    },
+    {
+      "id": "1358013852045934662",
+      "content": "【V2.2】克莱门汀pv\n主视角到医生门前，门牌上写的是：\nDR.CLEMENTINE'S\nSANATORIUM FOR NERVOUS DISORDERS\n克",
+      "author": "silverstream_s",
+      "reactions": 3,
+      "channel": "游戏美术资源上的文字"
     },
     {
       "id": "1357970594078916718",

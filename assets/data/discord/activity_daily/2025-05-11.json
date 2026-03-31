@@ -1,10 +1,11 @@
 {
   "date": "2025-05-11",
-  "messages": 34,
+  "messages": 38,
   "unique_authors": 7,
   "reactions_total": 34,
   "attachments": 24,
   "channel_activity": {
+    "✅前瞻：1.5周年～活动福利篇": 4,
     "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血": 4,
     "✅「Answered」Logo Is very bright...": 3,
     "✅「Answered」Echo + Exhaust Bug": 4,
@@ -17,19 +18,20 @@
     "1296113810549112874": 3
   },
   "hourly_activity": {
+    "9": 7,
+    "15": 1,
+    "22": 2,
     "10": 6,
     "16": 11,
     "18": 5,
     "17": 2,
     "23": 2,
-    "9": 6,
     "7": 1,
     "14": 1
   },
   "message_types": {
-    "0": 12,
-    "4": 1,
-    "19": 5
+    "0": 2,
+    "19": 2
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,13 @@
 {
   "date": "2025-08-30",
-  "messages": 154,
-  "unique_authors": 18,
-  "reactions_total": 90,
+  "messages": 227,
+  "unique_authors": 30,
+  "reactions_total": 246,
   "attachments": 19,
   "channel_activity": {
+    "忘却前夜OST：骸骨长眠之所": 1,
+    "前瞻：Skin rarity planning 皮肤稀有度规划": 71,
+    "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 1,
     "✅「Answered」Question: Policy on fan-made/unofficial items": 4,
     "💭「处理中」關於莉莉超限是否應該受到天賦影響的提問": 2,
     "✅「已回答」伺服器會不會有標籤？": 1,
@@ -42,37 +45,65 @@
     "全4級400融災攻略": 54
   },
   "hourly_activity": {
+    "7": 24,
+    "16": 35,
+    "17": 19,
+    "18": 9,
+    "19": 3,
+    "20": 5,
+    "21": 1,
+    "23": 12,
     "3": 1,
     "4": 10,
     "5": 12,
     "12": 3,
     "11": 4,
-    "23": 3,
-    "19": 1,
-    "20": 2,
     "6": 12,
     "15": 2,
     "14": 7,
-    "7": 23,
     "9": 35,
     "10": 25,
-    "8": 8,
-    "16": 1,
-    "17": 4,
-    "18": 1
+    "8": 8
   },
   "message_types": {
-    "0": 57,
-    "19": 8,
-    "4": 33
+    "0": 55,
+    "19": 18
   },
   "top_reacted_messages": [
+    {
+      "id": "1411411788293083247",
+      "content": "!! Please think of the following situation. You go to the department store to bu",
+      "author": "tksn.",
+      "reactions": 38,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
     {
       "id": "1411240188641939588",
       "content": "想打375 或是新手為了融災向練角的也可以先看看 提前練角色\n吃練度和卡池深度\n我有壓練度可以按需要補上命輪或是去借角色\n以下會分享10個隊伍 會分享角色需要練",
       "author": "0.0._.0_0.",
       "reactions": 26,
       "channel": "全4級400融災攻略"
+    },
+    {
+      "id": "1411441117324644424",
+      "content": "@everyone 感谢大家的热烈反馈，我们内部会仔细讨论这一切，然后在实装之前做出可能需要的调整。Thank you all for the enthusia",
+      "author": "game.producer.light",
+      "reactions": 14,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411398048084398321",
+      "content": "money will come",
+      "author": "quasar_7",
+      "reactions": 11,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411417140120129788",
+      "content": "I think, instead of gacha, it should be a fixed price with benefits. For example",
+      "author": "tksn.",
+      "reactions": 10,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
     },
     {
       "id": "1411360566026698884",
@@ -89,11 +120,81 @@
       "channel": "✅「Answered」Triple Reruns in the Future"
     },
     {
+      "id": "1411399213228622057",
+      "content": "5⭐️皮肤水准到底有多高\n有全新语音吗，\n有炫酷特效吗\n有抖来抖去的LV2d立绘，并且有四五个点击动作吗\n有待机特殊动作吗\n有回城特效吗\n有买装备特殊语音吗\n有",
+      "author": "muliupan",
+      "reactions": 9,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411419340636684330",
+      "content": "不是这……摆明了要大圈特圈💰啊，演都不演了，关键是你们做的皮肤质量能对得起这个标价吗，你游又没有什么首充双倍的优惠，而且充值还有汇率，花比68块还多的钱买一张图",
+      "author": "rdaw5211_53564",
+      "reactions": 9,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411393879940534452",
+      "content": "不需要重配吧?  sp找相似的聲音配就好 sp性格不同 聲音有些許不同也很正常",
+      "author": "insomnia07763",
+      "reactions": 8,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411394349627084810",
+      "content": "考虑到我们还需要给墨菲补充新需要的语音，这是必须之举。",
+      "author": "game.producer.light",
+      "reactions": 8,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411494393919045706",
+      "content": "阿出都還沒出你是要怎麼知道值不值 甚至連卡池概率也沒有 而且皮膚是什麼會影響到你玩遊戲嗎 覺得不值不要買不就好了 又不是有人拿槍指著你要你買",
+      "author": "undecember_news",
+      "reactions": 7,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411394156886233188",
+      "content": "保留原墨菲最好",
+      "author": "muliupan",
+      "reactions": 6,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411395507187875922",
+      "content": "你不是校貓\n還我們漏勺校貓",
+      "author": "shchng.",
+      "reactions": 6,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
       "id": "1411360921544036363",
       "content": "Please always remember: for some people, making games is a way to make money. Fo",
       "author": "game.producer.light",
       "reactions": 5,
       "channel": "✅「Answered」Triple Reruns in the Future"
+    },
+    {
+      "id": "1411394813521035426",
+      "content": "钉宫",
+      "author": "muliupan",
+      "reactions": 4,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411402329449566319",
+      "content": "I wouldn't mind paying directly the higher rarity skin even if they're 3280 or m",
+      "author": "chunliba",
+      "reactions": 4,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411447209332834324",
+      "content": "I honestly don't see the point of gacha skin, because skins are a show off and d",
+      "author": "wolfierce",
+      "reactions": 4,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
     },
     {
       "id": "1411363124518453320",
@@ -107,104 +208,6 @@
       "content": "@everyone",
       "author": "game.producer.light",
       "reactions": 4,
-      "channel": "✅「Answered」Suggestion: Please allow us to toggle Enlightens!"
-    },
-    {
-      "id": "1411399292882522132",
-      "content": "我队伍堆了149强效这样",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "全4級400融災攻略"
-    },
-    {
-      "id": "1411278944833110146",
-      "content": "我們會在未來做出調整。",
-      "author": "game.producer.light",
-      "reactions": 3,
-      "channel": "✅「已回答」關於尤烏哈希的專造"
-    },
-    {
-      "id": "1411205849271238776",
-      "content": "Thank you so much for your enthusiasm! We have an open attitude toward fan-made ",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "✅「Answered」Question: Policy on fan-made/unofficial items"
-    },
-    {
-      "id": "1411208523915722782",
-      "content": "Thank you for the answer!!",
-      "author": "fishhazardthewizard",
-      "reactions": 2,
-      "channel": "✅「Answered」Question: Policy on fan-made/unofficial items"
-    },
-    {
-      "id": "1411429312237932645",
-      "content": "The new autoscroll during story is very annoying. I often have to check the log ",
-      "author": "rakshaa9232",
-      "reactions": 2,
-      "channel": "✅「Answered」Story autoscroll"
-    },
-    {
-      "id": "1411297501662674985",
-      "content": "謝謝反饋！我們後續會補充。",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "✅「已回答」莉兹个人剧情结束后无通讯器幕间"
-    },
-    {
-      "id": "1411287769363513355",
-      "content": "I’ve previously shared that the team will expand appropriately, which will impro",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "✅「Answered」Concerns about dev resources with the Japanese release."
-    },
-    {
-      "id": "1411278773269168202",
-      "content": "Thank you for the feedback—we haven’t forgotten. Going forward, we will add elig",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "✅「Answered」About Myriam/Thais/Wanda"
-    },
-    {
-      "id": "1411423075857072149",
-      "content": "血希靈塑6",
-      "author": "0.0._.0_0.",
-      "reactions": 2,
-      "channel": "全4級400融災攻略"
-    },
-    {
-      "id": "1411239607227519026",
-      "content": "Great idea! We also have lots of ideas for skins. However, this would consume a ",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「Answered」Fun Skin suggestions?"
-    },
-    {
-      "id": "1411291027846725653",
-      "content": "I just answered this question in another thread, and I’d like to add a bit more ",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「Answered」Separation of GLB and JP"
-    },
-    {
-      "id": "1411288337276211310",
-      "content": "考慮到我們已經是一款全球化的遊戲，這一條內容有時候對於其他語言的玩家過於迷惑。我們不會再加入這一項內容，如果想要關心可以直接切換英文語言進行查閱。",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「已回答」什么时候加回英文名"
-    },
-    {
-      "id": "1411267653322014813",
-      "content": "谢谢你的建议。我们会考虑这个问题。",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「已回答」相位嘲諷機制"
-    },
-    {
-      "id": "1411225160769343573",
-      "content": "Thanks a lot for the consideration, we appreciate it",
-      "author": "vxvendetta",
-      "reactions": 1,
       "channel": "✅「Answered」Suggestion: Please allow us to toggle Enlightens!"
     }
   ]

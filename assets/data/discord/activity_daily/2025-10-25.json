@@ -1,10 +1,12 @@
 {
   "date": "2025-10-25",
-  "messages": 8,
-  "unique_authors": 4,
-  "reactions_total": 7,
-  "attachments": 0,
+  "messages": 68,
+  "unique_authors": 24,
+  "reactions_total": 228,
+  "attachments": 3,
   "channel_activity": {
+    "V2.3.4.2 在线维护公告": 5,
+    "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 55,
     "✅「Answered」About new Ryker buff": 1,
     "💭「Processing」Loading menu music plays at full volume before it finishes loading in the intro video": 1,
     "💭「Processing」Suggestion - Traphase": 1,
@@ -13,22 +15,132 @@
     "1429401798439080028": 2
   },
   "hourly_activity": {
-    "17": 3,
+    "18": 15,
+    "19": 3,
+    "21": 3,
+    "17": 40,
+    "20": 2,
+    "23": 1,
     "7": 1,
     "15": 1,
-    "21": 1,
     "12": 2
   },
   "message_types": {
-    "0": 4
+    "0": 41,
+    "19": 19
   },
   "top_reacted_messages": [
+    {
+      "id": "1431695221720350850",
+      "content": "随着两周年版本临近，为了让更多守密人能够更顺畅的跟上最新的故事，我们决定在V2.4中做出一些调整。\n\n- 下调忘却篇第四章到第八章的推荐等级。将从 40/50/",
+      "author": "game.producer.light",
+      "reactions": 125,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431697181550579936",
+      "content": "我们很清楚游戏的独特魅力之一来源于挑战，但我们认为V1.X后期内容的难度过于陡峭，不再适合当前的成长节奏。并且困难模式和其他内容仍然富有挑战。我们也会确保对应推",
+      "author": "game.producer.light",
+      "reactions": 31,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431712803437281300",
+      "content": "I don't get why everyone is clowning on Pollux when he is an upgrade to an alrea",
+      "author": "albomboklat",
+      "reactions": 11,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1431717827764813836",
+      "content": "He's worse than a free character in one of his best synergies",
+      "author": "kitsu_hsk",
+      "reactions": 9,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1431696291536175204",
+      "content": "",
+      "author": "tomatoexistsforfame_65410",
+      "reactions": 7,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431723503551254558",
+      "content": "I don't see Jenkins doing 5000 damage in one strike with no strength buffs.",
+      "author": "albomboklat",
+      "reactions": 6,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1431714331241746442",
+      "content": "請問你們有考慮下調星辰篇第一章困難的難度嗎，特別是針對個別敵人的，緊急聯絡體的機制需要削弱",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431747653577736233",
+      "content": "算你愛赤石跟算你厲害選一個😭",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431699549973516338",
+      "content": "目前没有更多可透露的情报，但应该不会等待太久的！",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431751908317593741",
+      "content": "但小心如果什麼都調成沒難度整個過程就沒記憶點沒吸引力了      沒有人對三角型怪有特別記憶但電話怪打過的都記得  有一兩種這樣的怪不一定是壞事",
+      "author": "partycatss.",
+      "reactions": 3,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
     {
       "id": "1431552826798116956",
       "content": "It's not super high priority, but when I boot up the game late at night, those f",
       "author": "sophiechoice",
       "reactions": 3,
       "channel": "💭「Processing」Loading menu music plays at full volume before it finishes loading in the intro video"
+    },
+    {
+      "id": "1431699317378257059",
+      "content": "Actually, Kathigu-ra is the correct spelling of the name.",
+      "author": ".cnork",
+      "reactions": 2,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431700304587391146",
+      "content": "I’ll check with our translation team about this. Thanks for the feedback!",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431714491271217413",
+      "content": "我们有多次讨论这个问题，我们会再审视一下。",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431716222902206534",
+      "content": "這邊有個拙見，緊急聯絡體的至少把力量成長改為臨時力量以及打出備用腦缸時不會觸發，聯絡體的護盾獲得量也需要下調\n再來是關卡B-68的boss血量太高了，作為一個打",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431779804016808078",
+      "content": "Science i've gotten heavy Problems with Clearing chapter 8 i'm delighted to read",
+      "author": "skyla064795",
+      "reactions": 2,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
     },
     {
       "id": "1431663120010444810",
@@ -43,6 +155,20 @@
       "author": "ice_storys",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1431695909355258158",
+      "content": "剛打完忘卻篇🥹",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431697333380452543",
+      "content": "Sadly No.",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
     }
   ]
 }

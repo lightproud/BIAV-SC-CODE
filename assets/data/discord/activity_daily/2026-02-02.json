@@ -1,10 +1,14 @@
 {
   "date": "2026-02-02",
-  "messages": 7822,
+  "messages": 7857,
   "unique_authors": 175,
-  "reactions_total": 1901,
-  "attachments": 401,
+  "reactions_total": 1996,
+  "attachments": 406,
   "channel_activity": {
+    "Teaser || Doresain & Sylvester": 1,
+    "Balala Casiah,Aigis,Jenkins": 10,
+    "Alistair": 16,
+    "Cute manga about awakens": 8,
     "✅「Answered」Anniversary was Great, the Raid was not": 3,
     "Salvador's Special Ops dialogue lag. ''Our failing": 6,
     "Enemy still only attacking once after Wanda 10 stack exalt": 1,
@@ -26,34 +30,34 @@
     "🔸morimens-game-chat": 7013
   },
   "hourly_activity": {
+    "0": 171,
+    "5": 359,
+    "6": 361,
+    "15": 594,
+    "20": 197,
+    "23": 233,
+    "14": 509,
+    "16": 398,
+    "22": 228,
+    "8": 389,
+    "10": 241,
+    "11": 215,
+    "21": 330,
     "19": 272,
     "17": 508,
     "18": 357,
-    "11": 212,
     "3": 461,
-    "14": 506,
     "7": 288,
-    "21": 329,
-    "22": 227,
-    "23": 232,
     "4": 193,
-    "8": 388,
     "9": 306,
-    "10": 239,
-    "15": 591,
     "12": 263,
     "2": 200,
-    "5": 358,
-    "0": 170,
     "1": 306,
-    "6": 355,
-    "13": 478,
-    "16": 389,
-    "20": 194
+    "13": 478
   },
   "message_types": {
-    "0": 14,
-    "19": 3
+    "19": 6,
+    "0": 29
   },
   "top_reacted_messages": [
     {
@@ -71,6 +75,20 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1467895177589821470",
+      "content": "",
+      "author": "sunstopshining",
+      "reactions": 28,
+      "channel": "Alistair"
+    },
+    {
+      "id": "1467804120873177242",
+      "content": "Hi, I drew cute manga about the massage with murphy, hope you'll like it !\nAt fi",
+      "author": "souri.10244",
+      "reactions": 23,
+      "channel": "Cute manga about awakens"
+    },
+    {
       "id": "1468023306375528520",
       "content": "Coming from Mihoyo gacha games, seeing so many pulls given during anniversary wa",
       "author": "armyofthalia",
@@ -85,6 +103,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1467760607678959862",
+      "content": "Mod will release soon ig",
+      "author": "astellar_blue",
+      "reactions": 19,
+      "channel": "Balala Casiah,Aigis,Jenkins"
+    },
+    {
       "id": "1467801756359589971",
       "content": "不定期更新忘Q前夜四格漫畫\n本來想說周更的但我畫一張畫了5天周更不來<:takenotes:1357186646294138890> \n目前的想法是把角色短訊跟",
       "author": "souri.10244",
@@ -97,6 +122,13 @@
       "author": "ernest_heart",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1467903889662808168",
+      "content": "",
+      "author": "astellar_blue",
+      "reactions": 10,
+      "channel": "Balala Casiah,Aigis,Jenkins"
     },
     {
       "id": "1467677303671885856",
@@ -167,34 +199,6 @@
       "author": "cornonthemacabre_",
       "reactions": 7,
       "channel": "Enemy still only attacking once after Wanda 10 stack exalt"
-    },
-    {
-      "id": "1467806979719172097",
-      "content": "醬油香蕉蒸蛋佐乾燥紅藻",
-      "author": "ernest_heart",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1467728545777320051",
-      "content": "",
-      "author": "necronomikkon",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1467708072716931285",
-      "content": "对面的茉夏好吵喔<:dead:1356082627509092372>",
-      "author": "sweet_25367",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1467807817216950410",
-      "content": "大家再見",
-      "author": "ahuahuahua",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }

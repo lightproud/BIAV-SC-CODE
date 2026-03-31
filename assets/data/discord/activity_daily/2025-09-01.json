@@ -1,10 +1,14 @@
 {
   "date": "2025-09-01",
-  "messages": 113,
+  "messages": 119,
   "unique_authors": 25,
-  "reactions_total": 887,
-  "attachments": 25,
+  "reactions_total": 892,
+  "attachments": 26,
   "channel_activity": {
+    "V2.3.1.6 在线维护公告": 2,
+    "忘却前夜OST：骸骨长眠之所": 1,
+    "前瞻：Skin rarity planning 皮肤稀有度规划": 2,
+    "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy": 1,
     "✅「Answered」Launch the game via Steam and getting the \"Network busy\"": 3,
     "救救狗吧融災求助": 2,
     "✅「已解決」我号呢": 13,
@@ -36,17 +40,18 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "12": 3,
+    "4": 10,
+    "10": 10,
+    "11": 2,
+    "14": 1,
     "3": 38,
-    "4": 9,
     "8": 8,
-    "12": 1,
     "18": 1,
     "15": 12,
     "16": 2,
     "21": 2,
-    "10": 9,
     "9": 4,
-    "11": 1,
     "20": 1,
     "7": 3,
     "2": 7,
@@ -55,9 +60,8 @@
     "1": 3
   },
   "message_types": {
-    "19": 20,
-    "0": 65,
-    "4": 14
+    "0": 5,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -115,6 +119,13 @@
       "author": "arkaether",
       "reactions": 5,
       "channel": "✅「Answered」Heart of Silver's unclear effect"
+    },
+    {
+      "id": "1412033266449645621",
+      "content": "專屬繁衍狂熱故事好🥵 🥵 🥵 \n但扭蛋壞文明！！<:flop1:1356083604236800030> <:flop1:1356083604236800030",
+      "author": "yiwu2015",
+      "reactions": 4,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
     },
     {
       "id": "1411965563097321532",
@@ -180,25 +191,18 @@
       "channel": "✦关卡地图「融灾禁区」总览42期·星辰篇✦"
     },
     {
+      "id": "1412023376377020427",
+      "content": "",
+      "author": "iTranslator",
+      "reactions": 1,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
       "id": "1412116008554074254",
       "content": "感恩",
       "author": "jidu1418",
       "reactions": 1,
       "channel": "✅「已解決」我号呢"
-    },
-    {
-      "id": "1412004048177074266",
-      "content": "Should be, is just the same as in this other post https://discord.com/channels/1",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "✅「Answered」“Bug” with paradox and overexalt?"
-    },
-    {
-      "id": "1411915447254777909",
-      "content": "21日的錄屏就沒有了，估計就是這段時間裏面的更新出了bug動到了",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "✅「已回答」戰鬥不顯示第幾波"
     }
   ]
 }

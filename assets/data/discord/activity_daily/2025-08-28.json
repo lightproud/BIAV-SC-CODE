@@ -1,10 +1,11 @@
 {
   "date": "2025-08-28",
-  "messages": 28,
+  "messages": 29,
   "unique_authors": 8,
   "reactions_total": 44,
   "attachments": 5,
   "channel_activity": {
+    "V2.3.1.3 在线维护公告": 1,
     "✅「Answered」Question: Policy on fan-made/unofficial items": 2,
     "💭「Processing」Estado de Fiamma en el Despertar de Kathigu-Ra tras el uso de su propia llave (Posse)": 1,
     "✅「已回答」復刻活動": 1,
@@ -17,6 +18,7 @@
     "2.3表情包": 2
   },
   "hourly_activity": {
+    "8": 1,
     "20": 1,
     "22": 1,
     "2": 1,
@@ -30,8 +32,7 @@
     "11": 2
   },
   "message_types": {
-    "0": 5,
-    "4": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

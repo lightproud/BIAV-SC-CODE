@@ -1,10 +1,12 @@
 {
   "date": "2026-02-09",
-  "messages": 10602,
+  "messages": 10612,
   "unique_authors": 252,
-  "reactions_total": 1532,
-  "attachments": 867,
+  "reactions_total": 1582,
+  "attachments": 869,
   "channel_activity": {
+    "V2.4.2.3 在线维护公告": 2,
+    "The sculptress": 8,
     "✅「Answered」Salvador Bug in Train Event": 34,
     "✅「Answered」Crimson Brooch STR not added in HSR": 5,
     "✅「Resolved」Bug after fighting Ch4 boss in the train mode and killing it when it enters Ultra turn": 1,
@@ -31,37 +33,42 @@
     "🔸morimens-game-chat": 7898
   },
   "hourly_activity": {
+    "12": 447,
+    "14": 513,
+    "15": 964,
+    "16": 370,
+    "17": 248,
+    "18": 256,
     "9": 474,
     "10": 348,
-    "12": 445,
-    "14": 512,
     "8": 502,
     "11": 378,
-    "17": 246,
     "21": 138,
     "4": 499,
     "3": 595,
     "7": 663,
     "5": 775,
-    "18": 255,
     "0": 343,
     "1": 310,
     "2": 553,
     "6": 602,
     "13": 521,
-    "15": 963,
-    "16": 367,
     "19": 380,
     "20": 244,
     "22": 330,
     "23": 159
   },
   "message_types": {
-    "0": 64,
-    "4": 6,
-    "19": 4
+    "0": 10
   },
   "top_reacted_messages": [
+    {
+      "id": "1470421922704785652",
+      "content": "Celebration for maxing her dupes & cards + her WoD + Affinity Yippeeee",
+      "author": "laarzenman",
+      "reactions": 49,
+      "channel": "The sculptress"
+    },
     {
       "id": "1470477044516257836",
       "content": "The rewards for beating the hard mode missions of the new Train game mode are li",
@@ -192,13 +199,6 @@
       "id": "1470257507799929078",
       "content": "鳥弟一張聖心一隻怪",
       "author": "axe_proficient",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470261207050223872",
-      "content": "980女池出了地瓜和醫生",
-      "author": "kalpiko.",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

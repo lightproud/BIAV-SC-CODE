@@ -1,10 +1,13 @@
 {
   "date": "2025-11-17",
-  "messages": 303,
+  "messages": 344,
   "unique_authors": 87,
-  "reactions_total": 206,
-  "attachments": 99,
+  "reactions_total": 220,
+  "attachments": 104,
   "channel_activity": {
+    "V2.4.0.0 停服维护公告": 26,
+    "V2.4.0.1 在线维护公告": 14,
+    "3+1 [Pollux and Castor Fanfic]": 1,
     "Arc 1 story content nerf": 23,
     "✅「Resolved」Pull animation breaks after 100 single pulls": 1,
     "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled": 18,
@@ -95,8 +98,17 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "14": 12,
-    "15": 8,
+    "0": 7,
+    "1": 1,
+    "2": 2,
+    "3": 6,
+    "4": 25,
+    "6": 8,
+    "7": 50,
+    "13": 6,
+    "12": 19,
+    "14": 13,
+    "15": 9,
     "17": 11,
     "18": 10,
     "20": 11,
@@ -107,21 +119,13 @@
     "8": 57,
     "9": 54,
     "10": 6,
-    "4": 17,
     "5": 21,
-    "7": 48,
     "11": 3,
-    "13": 5,
-    "12": 6,
-    "19": 4,
-    "2": 1,
-    "6": 7,
-    "3": 1
+    "19": 4
   },
   "message_types": {
-    "0": 220,
-    "19": 31,
-    "4": 46
+    "0": 32,
+    "19": 9
   },
   "top_reacted_messages": [
     {
@@ -172,6 +176,13 @@
       "author": "foxblood13",
       "reactions": 7,
       "channel": "✅「Answered」G-Helot defense bleed not triggering"
+    },
+    {
+      "id": "1440003049266614316",
+      "content": "most underrated writer in the server. you wrote such beautiful masterpiece with ",
+      "author": "jormiejormungandr",
+      "reactions": 6,
+      "channel": "3+1 [Pollux and Castor Fanfic]"
     },
     {
       "id": "1439998549361426454",
@@ -237,32 +248,25 @@
       "channel": "💭「处理中」按讚延遲"
     },
     {
-      "id": "1440003284348960798",
-      "content": "I'm guessing they want to introduce the madness difficulty in story, which by lo",
-      "author": "wolfierce",
+      "id": "1439811059899699360",
+      "content": "啊 蕾娅还是被遗忘了",
+      "author": "phenomenal_dove_62993",
       "reactions": 2,
-      "channel": "Arc 1 story content nerf"
+      "channel": "V2.4.0.0 停服维护公告"
     },
     {
-      "id": "1440080564060295330",
-      "content": "i feel like this should instead be a new story difficulty below normal",
-      "author": "lumato",
+      "id": "1439815946377363498",
+      "content": "没感觉到，她现在的作用就是那个0费卡挂件了",
+      "author": "mhchen.",
       "reactions": 2,
-      "channel": "Arc 1 story content nerf"
+      "channel": "V2.4.0.0 停服维护公告"
     },
     {
-      "id": "1440017050318798981",
-      "content": "While owning an SSR ‘Wheel’ at +12, obtaining an additional duplicate SSR ‘Wheel",
-      "author": "zura_0000",
+      "id": "1439953160260030505",
+      "content": "守密人你好：\n       弥萨格大学校务处将于11月17日20:20(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家",
+      "author": "morimensstaff02",
       "reactions": 2,
-      "channel": "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled"
-    },
-    {
-      "id": "1439910521305436250",
-      "content": "漂亮溫柔又善解人意戈雅對不起我眼殘看錯了拜託原諒我😭",
-      "author": "2041880926",
-      "reactions": 2,
-      "channel": "✅「已回答」今天bug黏著我不放"
+      "channel": "V2.4.0.1 在线维护公告"
     }
   ]
 }

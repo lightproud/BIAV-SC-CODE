@@ -1,10 +1,13 @@
 {
   "date": "2025-06-27",
-  "messages": 19,
-  "unique_authors": 8,
-  "reactions_total": 18,
-  "attachments": 1,
+  "messages": 49,
+  "unique_authors": 9,
+  "reactions_total": 30,
+  "attachments": 6,
   "channel_activity": {
+    "V2.2.3.0 停服維護公告": 22,
+    "忘卻前夜OST：珊EP·石化藝術": 7,
+    "忘卻前夜OST：索蕾爾 EP | 薔薇的秘密": 1,
     "💭「Processing」UI bug (0/1 Hidden silver not appearing on some stages)": 1,
     "艾继丝艾瑞卡小水母的试用关是不是忘做了": 3,
     "✅「Answered」Limited Awakener Rates in Realm Study are Unclear/Incorrect": 5,
@@ -16,17 +19,21 @@
     "the intellectual body's vacation": 1
   },
   "hourly_activity": {
-    "12": 1,
-    "11": 4,
+    "11": 19,
+    "12": 4,
+    "13": 1,
+    "16": 2,
+    "18": 2,
+    "8": 6,
+    "10": 1,
+    "7": 1,
     "0": 1,
     "3": 11,
-    "4": 1,
-    "16": 1
+    "4": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 5,
-    "4": 5
+    "0": 28,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -37,11 +44,32 @@
       "channel": "the intellectual body's vacation"
     },
     {
+      "id": "1388070499476705331",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：珊EP·石化藝術，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請遵照同",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "忘卻前夜OST：珊EP·石化藝術"
+    },
+    {
       "id": "1387991639561076766",
       "content": "Sorry for the confusion caused! The English translation typo will be fixed in an",
       "author": "morimens_15",
       "reactions": 2,
       "channel": "✅「Answered」Limited Awakener Rates in Realm Study are Unclear/Incorrect"
+    },
+    {
+      "id": "1388128345589289053",
+      "content": "○ 青石王座：\n        ■ 刪除多餘的描述。\n        ■ 舊：手牌上限 + 2 。回合結束時，使手牌中裝備者所有「技能」造成的傷害、治療與護盾提",
+      "author": "0.0._.0_0.",
+      "reactions": 1,
+      "channel": "V2.2.3.0 停服維護公告"
+    },
+    {
+      "id": "1388056376496095264",
+      "content": "错字了，是凋亡，不是雕亡<:proud2:1356053123445297233>",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "忘卻前夜OST：索蕾爾 EP | 薔薇的秘密"
     },
     {
       "id": "1387993108783829113",

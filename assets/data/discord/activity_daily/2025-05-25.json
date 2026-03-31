@@ -1,31 +1,41 @@
 {
   "date": "2025-05-25",
-  "messages": 24,
+  "messages": 30,
   "unique_authors": 7,
-  "reactions_total": 3,
-  "attachments": 2,
+  "reactions_total": 5,
+  "attachments": 5,
   "channel_activity": {
+    "忘卻前夜OST：希洛EP·以血洗仇": 4,
+    "✅校猫碎碎念#序章配音决定": 1,
+    "✅前瞻：1.5周年～战斗增强篇": 1,
     "✅「Answered」Game not starting": 1,
     "喜歡綠色正太的每回合寸止嗎": 18,
     "How do I change the window size?": 5
   },
   "hourly_activity": {
+    "3": 5,
+    "4": 1,
+    "6": 2,
     "21": 1,
-    "6": 1,
     "7": 5,
     "8": 4,
     "9": 1,
     "11": 1,
     "12": 1,
     "13": 5,
-    "3": 1,
     "23": 4
   },
   "message_types": {
-    "0": 16,
-    "19": 8
+    "0": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1376058742860288010",
+      "content": "坐等繁衍狂熱配音🥵",
+      "author": "yiwu2015",
+      "reactions": 2,
+      "channel": "✅校猫碎碎念#序章配音决定"
+    },
     {
       "id": "1376176243732644015",
       "content": "我就知道是aaa打勾，AAA游戏理解比较高",

@@ -1,10 +1,12 @@
 {
   "date": "2026-01-02",
-  "messages": 33,
+  "messages": 37,
   "unique_authors": 9,
-  "reactions_total": 47,
-  "attachments": 11,
+  "reactions_total": 84,
+  "attachments": 12,
   "channel_activity": {
+    "I errr.... #2": 2,
+    "Forehead tierlist": 2,
     "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 2,
     "希望活动钥令可以提前解锁": 1,
     "Options to turn off Enlihtens": 4,
@@ -21,27 +23,34 @@
     "1441326394817908736": 2
   },
   "hourly_activity": {
+    "5": 2,
+    "15": 3,
+    "16": 2,
     "22": 4,
     "4": 3,
     "3": 1,
     "17": 4,
     "19": 1,
     "2": 3,
-    "16": 1,
     "23": 1,
     "11": 3,
     "0": 3,
     "12": 3,
     "13": 2,
     "6": 1,
-    "8": 1,
-    "15": 2
+    "8": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 1
+    "0": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1456676099021869246",
+      "content": "",
+      "author": "moyashi0672",
+      "reactions": 37,
+      "channel": "Forehead tierlist"
+    },
     {
       "id": "1456785570914242610",
       "content": "Here you are\n\nhttps://discord.com/channels/1131791637933199470/14563062878841120",

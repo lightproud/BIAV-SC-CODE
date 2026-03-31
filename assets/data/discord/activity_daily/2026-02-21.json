@@ -1,10 +1,11 @@
 {
   "date": "2026-02-21",
-  "messages": 1714,
+  "messages": 1717,
   "unique_authors": 52,
-  "reactions_total": 237,
-  "attachments": 106,
+  "reactions_total": 256,
+  "attachments": 108,
   "channel_activity": {
+    "doresain…. again": 3,
     "✅「已回答」今天打肉鸽咋没算出牌数做不了每日": 4,
     "Please allow us to reutrn Doresain to the Black Pool": 12,
     "塗鴉": 2,
@@ -20,17 +21,17 @@
     "🔸阵容构建": 54
   },
   "hourly_activity": {
+    "9": 7,
+    "10": 108,
+    "11": 94,
     "1": 26,
-    "10": 107,
     "12": 210,
     "2": 19,
     "15": 320,
     "17": 34,
     "18": 107,
     "14": 119,
-    "9": 6,
     "16": 105,
-    "11": 93,
     "0": 24,
     "3": 6,
     "4": 27,
@@ -45,8 +46,7 @@
     "23": 2
   },
   "message_types": {
-    "0": 6,
-    "19": 10
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -55,6 +55,13 @@
       "author": "reya.li",
       "reactions": 23,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1474704817027809352",
+      "content": "experimenting and stuff idk what to do with this rlly",
+      "author": "dollyxqyan",
+      "reactions": 18,
+      "channel": "doresain…. again"
     },
     {
       "id": "1474583447677829251",
@@ -181,13 +188,6 @@
       "author": "huangyu0876",
       "reactions": 3,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474782391120953505",
-      "content": "",
-      "author": "xiaosama666",
-      "reactions": 2,
-      "channel": "塗鴉"
     }
   ]
 }

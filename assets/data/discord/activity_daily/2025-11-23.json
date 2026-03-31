@@ -1,10 +1,13 @@
 {
   "date": "2025-11-23",
-  "messages": 154,
+  "messages": 158,
   "unique_authors": 25,
-  "reactions_total": 507,
-  "attachments": 29,
+  "reactions_total": 531,
+  "attachments": 46,
   "channel_activity": {
+    "忘却前夜OST：原初宿命之战": 1,
+    "Aigis": 1,
+    "meme dump": 2,
     "✅「已回答」繁中PC端黑屏": 1,
     "💭「Processing」Time Rewind Bug": 1,
     "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled": 1,
@@ -32,12 +35,13 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
+    "11": 14,
+    "17": 4,
+    "16": 5,
     "5": 4,
     "4": 3,
-    "17": 3,
     "12": 15,
     "21": 2,
-    "11": 13,
     "6": 4,
     "7": 3,
     "1": 3,
@@ -47,7 +51,6 @@
     "10": 2,
     "13": 8,
     "14": 9,
-    "16": 3,
     "18": 6,
     "19": 1,
     "0": 2,
@@ -57,9 +60,7 @@
     "20": 2
   },
   "message_types": {
-    "0": 83,
-    "4": 1,
-    "19": 44
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -77,11 +78,25 @@
       "channel": "🔸新生守则┊rules"
     },
     {
+      "id": "1442211169397112945",
+      "content": "",
+      "author": "deldry8",
+      "reactions": 14,
+      "channel": "Aigis"
+    },
+    {
       "id": "1442299505499177122",
       "content": "当弥利亚姆发现戈利亚真的少用了八成力气之后，她心底蔓延出来的是被轻视的怒火和对方擅作主张的不愉。所以当战斗一结束，戈利亚的手腕就立刻被弥利亚姆抓住，主祭瘦弱的手",
       "author": "knifep_",
       "reactions": 10,
       "channel": "相位对弈之后"
+    },
+    {
+      "id": "1442191663517929716",
+      "content": "some of my favorite memes (in eng n rus), may contain spoilers",
+      "author": "me4tgr1nder",
+      "reactions": 9,
+      "channel": "meme dump"
     },
     {
       "id": "1442169631879073822",
@@ -168,6 +183,13 @@
       "channel": ""
     },
     {
+      "id": "1442192135259558083",
+      "content": "",
+      "author": "me4tgr1nder",
+      "reactions": 1,
+      "channel": "meme dump"
+    },
+    {
       "id": "1442036268190924820",
       "content": "you might getting tripped up by the Arc 2 ruleset - all aliemus% values are halv",
       "author": "arkaether",
@@ -180,27 +202,6 @@
       "author": "kingofnooblol",
       "reactions": 1,
       "channel": "💭「Processing」Wrong effect description on Putney Morning Post"
-    },
-    {
-      "id": "1442127561936076880",
-      "content": "Ya let's js hope they do smthn for marketing 2nd Anni or else it's a waste",
-      "author": "thigh_god.",
-      "reactions": 1,
-      "channel": "✅「Answered」This game needs more marketing"
-    },
-    {
-      "id": "1442200966618153053",
-      "content": "This game gotta rise",
-      "author": "andro3168",
-      "reactions": 1,
-      "channel": "✅「Answered」This game needs more marketing"
-    },
-    {
-      "id": "1442230427187281941",
-      "content": "https://youtu.be/gxtp1IrBZ68?si=UZP19RXmCLbM5N2y\n\nAlso this video creator mentio",
-      "author": "crowlov1",
-      "reactions": 1,
-      "channel": "✅「Answered」This game needs more marketing"
     }
   ]
 }

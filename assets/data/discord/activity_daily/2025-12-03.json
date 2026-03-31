@@ -1,10 +1,11 @@
 {
   "date": "2025-12-03",
-  "messages": 141,
+  "messages": 147,
   "unique_authors": 29,
   "reactions_total": 46,
-  "attachments": 10,
+  "attachments": 20,
   "channel_activity": {
+    "各角色原型考据": 6,
     "💭「Processing」Morimens freeze when I log in": 3,
     "✅「已回答」繁中PC端黑屏": 1,
     "关于【献祭】的bug修复": 2,
@@ -45,6 +46,7 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
+    "3": 28,
     "12": 5,
     "13": 15,
     "7": 12,
@@ -54,7 +56,6 @@
     "4": 17,
     "17": 1,
     "5": 7,
-    "3": 22,
     "22": 3,
     "18": 1,
     "6": 24,
@@ -67,9 +68,7 @@
     "10": 1
   },
   "message_types": {
-    "0": 61,
-    "19": 27,
-    "4": 17
+    "0": 6
   },
   "top_reacted_messages": [
     {

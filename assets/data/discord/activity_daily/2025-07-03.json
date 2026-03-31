@@ -1,10 +1,18 @@
 {
   "date": "2025-07-03",
-  "messages": 67,
+  "messages": 95,
   "unique_authors": 28,
-  "reactions_total": 85,
-  "attachments": 1,
+  "reactions_total": 114,
+  "attachments": 2,
   "channel_activity": {
+    "V2.2.3.1 在線維護公告": 1,
+    "禁止「解包」和「传播解包信息」行为的声明": 21,
+    "✅校猫碎碎念#序章配音决定": 1,
+    "✅校猫碎碎念#卡斯托尔加强": 1,
+    "✅校猫碎碎念#近况分享": 1,
+    "✅前瞻：1.5周年～系统优化篇": 1,
+    "✅前瞻：1.5周年～活动福利篇": 1,
+    "✅前瞻：1.5周年～战斗增强篇": 1,
     "关于氪金相关的问题。": 1,
     "💭「Processing」Connection issues": 1,
     "💭「Processing」Follow button says 'Following' before user is followed": 3,
@@ -15,21 +23,26 @@
     "1390375103707218041": 48
   },
   "hourly_activity": {
+    "18": 24,
+    "9": 11,
+    "10": 1,
+    "12": 3,
+    "13": 3,
+    "14": 1,
+    "16": 9,
     "8": 1,
     "2": 5,
     "1": 3,
     "7": 1,
-    "16": 1,
-    "18": 23,
     "17": 29,
     "20": 1,
     "22": 2,
     "23": 1
   },
   "message_types": {
-    "0": 6,
-    "19": 1,
-    "4": 2
+    "0": 15,
+    "19": 7,
+    "4": 6
   },
   "top_reacted_messages": [
     {
@@ -38,6 +51,13 @@
       "author": "game.producer.light",
       "reactions": 20,
       "channel": ""
+    },
+    {
+      "id": "1390365944076832849",
+      "content": "Thank you for your love and support! We currently don’t have plans to release th",
+      "author": "game.producer.light",
+      "reactions": 18,
+      "channel": "禁止「解包」和「传播解包信息」行为的声明"
     },
     {
       "id": "1390398453284339836",
@@ -52,6 +72,13 @@
       "author": "beenax.",
       "reactions": 12,
       "channel": ""
+    },
+    {
+      "id": "1390270220412915763",
+      "content": "follow-up follow-up : can we get a public API pretty please ?\n# <:please:1356053",
+      "author": "__goz__",
+      "reactions": 9,
+      "channel": "禁止「解包」和「传播解包信息」行为的声明"
     },
     {
       "id": "1390378933110833295",
@@ -80,6 +107,13 @@
       "author": "nowimfaceless",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1390315695987757098",
+      "content": "Sorry, we don’t have one at the moment.",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "禁止「解包」和「传播解包信息」行为的声明"
     },
     {
       "id": "1390400401274048604",
@@ -148,20 +182,6 @@
       "id": "1390397754835996733",
       "content": "??? EVERYONE???",
       "author": "maximus__111",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1390400848118546645",
-      "content": "Hell yeah lets goooo",
-      "author": "yonagoda",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1390469614605041805",
-      "content": "<:24_clown:1374289675417686016>",
-      "author": "shenhuang0212",
       "reactions": 1,
       "channel": ""
     }

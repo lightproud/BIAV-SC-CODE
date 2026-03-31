@@ -1,10 +1,11 @@
 {
   "date": "2025-12-16",
-  "messages": 77,
+  "messages": 78,
   "unique_authors": 21,
   "reactions_total": 680,
   "attachments": 24,
   "channel_activity": {
+    "线上问题修复公告": 1,
     "Who Ryker's Designer pls come talk ?": 4,
     "✅「Answered」Battlepass Timer bug": 1,
     "✅「Answered」Purchasing Silver Prime": 1,
@@ -33,10 +34,10 @@
     "🔸忘却前夜┊morimens-tv": 4
   },
   "hourly_activity": {
+    "0": 3,
     "8": 7,
     "12": 4,
     "13": 1,
-    "0": 2,
     "22": 1,
     "2": 8,
     "3": 27,
@@ -53,9 +54,7 @@
     "9": 1
   },
   "message_types": {
-    "0": 34,
-    "4": 16,
-    "19": 6
+    "19": 1
   },
   "top_reacted_messages": [
     {

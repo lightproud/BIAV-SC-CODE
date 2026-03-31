@@ -1,10 +1,12 @@
 {
   "date": "2025-04-06",
-  "messages": 31,
-  "unique_authors": 10,
-  "reactions_total": 64,
-  "attachments": 11,
+  "messages": 78,
+  "unique_authors": 18,
+  "reactions_total": 71,
+  "attachments": 13,
   "channel_activity": {
+    "V2.2.0.0 停服維護公告": 2,
+    "✅校猫碎碎念#近况分享": 45,
     "✅「已回答」bug": 2,
     "✅「Answered」Screen had freeze": 1,
     "✅「已回答」网易云音乐第五章OST": 2,
@@ -18,21 +20,23 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "1": 1,
+    "13": 5,
+    "12": 26,
+    "14": 13,
+    "15": 19,
     "16": 3,
     "2": 2,
     "7": 2,
     "3": 2,
     "21": 2,
-    "15": 6,
     "6": 1,
     "10": 1,
-    "14": 11,
     "5": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 3,
-    "4": 1
+    "19": 14,
+    "0": 33
   },
   "top_reacted_messages": [
     {
@@ -83,6 +87,55 @@
       "author": "akalanden",
       "reactions": 2,
       "channel": "黛博拉粉絲喚醒者套裝 Deborah fan Awakener kit"
+    },
+    {
+      "id": "1358428615762640937",
+      "content": "Bro, just to clarify, my English isn't great and this translation was done with ",
+      "author": "xuanyan.",
+      "reactions": 1,
+      "channel": "V2.2.0.0 停服維護公告"
+    },
+    {
+      "id": "1358414470128599090",
+      "content": "是的，我也認同，但官方現在根本不鳥，你看我們過了多久才得到策劃回應我們的機會？",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#近况分享"
+    },
+    {
+      "id": "1358415176159854713",
+      "content": "<@633215996508766229> 我的動態鯊魚壁紙跟主僕糧呢😭",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#近况分享"
+    },
+    {
+      "id": "1358415384289742928",
+      "content": "相信的力量还在发力\n相信!",
+      "author": "molove0286",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#近况分享"
+    },
+    {
+      "id": "1358419697523228824",
+      "content": "像汀克特這個效果描述誤導挺嚴重的，在星辰篇的環境\n~~雖然本來也沒多少出場機會~~",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#近况分享"
+    },
+    {
+      "id": "1358465374009426136",
+      "content": "~~這裡是男同前夜，出鯊魚皮膚肯定能賣~~",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#近况分享"
+    },
+    {
+      "id": "1358465925895946240",
+      "content": "這裡不是麻辣前夜嗎",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#近况分享"
     },
     {
       "id": "1358381030138052731",

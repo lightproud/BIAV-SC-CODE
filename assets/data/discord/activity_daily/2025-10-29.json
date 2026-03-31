@@ -1,10 +1,11 @@
 {
   "date": "2025-10-29",
-  "messages": 48,
-  "unique_authors": 18,
-  "reactions_total": 212,
-  "attachments": 10,
+  "messages": 102,
+  "unique_authors": 25,
+  "reactions_total": 413,
+  "attachments": 11,
   "channel_activity": {
+    "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 54,
     "✅「Answered」About new Ryker buff": 1,
     "✅「已回答」触腕集结是否该得到加强": 9,
     "✅「Answered」Give us a way to view emote description": 1,
@@ -22,13 +23,17 @@
     "1356210707867107391": 2
   },
   "hourly_activity": {
+    "7": 34,
+    "8": 1,
+    "10": 7,
+    "11": 6,
+    "12": 10,
+    "13": 1,
+    "16": 2,
+    "17": 1,
+    "18": 8,
     "5": 2,
-    "10": 5,
-    "11": 3,
-    "12": 5,
     "19": 1,
-    "16": 1,
-    "18": 2,
     "14": 3,
     "3": 6,
     "4": 1,
@@ -38,9 +43,8 @@
     "22": 1
   },
   "message_types": {
-    "0": 17,
-    "19": 1,
-    "4": 2
+    "0": 42,
+    "19": 12
   },
   "top_reacted_messages": [
     {
@@ -49,6 +53,20 @@
       "author": "game.producer.light",
       "reactions": 135,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1432994035508711424",
+      "content": "有许多作品很优秀，却因种种现实原因离开了舞台。\n\n这是这类作品的宿命。\n\n我们在去年也曾经面临解散的危机。\n\n也因此懂得“不被遗忘”的珍贵。\n\n就如同我们的故事",
+      "author": "game.producer.light",
+      "reactions": 94,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1432994348089475082",
+      "content": "意思是這些遊戲成為喚醒體被黑池喚醒是吧",
+      "author": "ena04564",
+      "reactions": 24,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
       "id": "1432980691099844641",
@@ -65,6 +83,13 @@
       "channel": ""
     },
     {
+      "id": "1432995508380631130",
+      "content": "会有角色",
+      "author": "game.producer.light",
+      "reactions": 15,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
       "id": "1432978380944314478",
       "content": "<@658320022359375882>",
       "author": "morimensstaff01",
@@ -72,11 +97,67 @@
       "channel": ""
     },
     {
+      "id": "1432995018083139616",
+      "content": "你遊是其他遊戲的死亡抵抗",
+      "author": "ena04564",
+      "reactions": 14,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1432996341205958788",
+      "content": "Light will you consider a collab with alchemy stars?",
+      "author": "jamalibnsulaiman",
+      "reactions": 12,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1432995237155831818",
+      "content": "怎麼辦，喜歡的遊戲還在運營\n只好把他們都變成屍體了",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1432994414388842497",
+      "content": "# 銀芯科技還是太強大了",
+      "author": "ena04564",
+      "reactions": 10,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1432994749731831869",
+      "content": "所以原來是專門去找屍體聯動的嗎",
+      "author": "ice_storys",
+      "reactions": 6,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1433006952987754556",
+      "content": "Seconding Alchemy Stars~ I think the Grimlight devs would also be open to it!",
+      "author": "dahongtsa",
+      "reactions": 6,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1433040618321481759",
+      "content": "校貓的陰影軍團\n貓：站起來",
+      "author": "elkmilu",
+      "reactions": 5,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
       "id": "1433044552624771253",
       "content": "由于触腕集结的机制是回合后造成伤害，面对多血条boss切金身时(打掉血条切换的状态：免疫伤害)无法有效输出，完美被克制，且无法与一些指令卡大招联动,。\n\n深海界",
       "author": "muqingfeng513",
       "reactions": 4,
       "channel": "✅「已回答」触腕集结是否该得到加强"
+    },
+    {
+      "id": "1432994375474085889",
+      "content": "Dragalia Lost collab pls pls pls <:pray:1356053116260454534>",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
       "id": "1433110475792715907",
@@ -104,55 +185,6 @@
       "content": "Reading the english vs chinese responses is kinda hilarious",
       "author": "asleeplessman",
       "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1433135848425127946",
-      "content": "联动角色和新老角色up的排期会不会有冲突？",
-      "author": "rong486",
-      "reactions": 1,
-      "channel": "话说你们这个联动，角色up的排期怎么办？联动角色是直接当新角色排吗？"
-    },
-    {
-      "id": "1433155749399367722",
-      "content": "A lot of amazing art in this game, would be really nice to be able to download t",
-      "author": "atomless",
-      "reactions": 1,
-      "channel": "Download media from the archive"
-    },
-    {
-      "id": "1432930892086513684",
-      "content": "It may be caused by network fluctuations. Generally, this prompt indicates unsta",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Can't Log In"
-    },
-    {
-      "id": "1433107120852570284",
-      "content": "四月，猩红，入药",
-      "author": "ququ12358",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1433049310463000678",
-      "content": "谢谢~ 爱你哦 <:like:1400771686965444648>",
-      "author": "vaerre",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1432974094944702506",
-      "content": "忘卻篇無所謂，星辰篇也要打完四章",
-      "author": "taoi002",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1433116629784330361",
-      "content": "这…这画风突变了吧…<:cry2:1356068126894194758>",
-      "author": "koukou0213",
-      "reactions": 1,
       "channel": ""
     }
   ]

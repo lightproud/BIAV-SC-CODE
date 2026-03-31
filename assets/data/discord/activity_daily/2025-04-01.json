@@ -1,10 +1,12 @@
 {
   "date": "2025-04-01",
-  "messages": 38,
+  "messages": 54,
   "unique_authors": 9,
-  "reactions_total": 212,
-  "attachments": 15,
+  "reactions_total": 236,
+  "attachments": 29,
   "channel_activity": {
+    "游戏美术资源上的文字": 4,
+    "忘卻前夜OST：深港幽靈之船": 12,
     "✅「已回答」7；40为啥诺缔拉死了还能抽到他的牌？": 1,
     "biubiu加速器": 2,
     "✅「已回答」神父活動-時靈擺迷失bug": 9,
@@ -19,21 +21,20 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "8": 17,
+    "10": 3,
+    "13": 2,
     "12": 15,
     "2": 1,
     "3": 3,
     "4": 4,
     "6": 7,
     "14": 1,
-    "5": 1,
-    "10": 2,
-    "13": 1,
-    "8": 3
+    "5": 1
   },
   "message_types": {
-    "0": 24,
-    "4": 2,
-    "19": 5
+    "0": 15,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -42,6 +43,13 @@
       "author": "morimensstaff01",
       "reactions": 183,
       "channel": "🔸翻译器教程┊translator-tutorial"
+    },
+    {
+      "id": "1356548092450832385",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：深港幽靈之船，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請遵照同人規",
+      "author": "morimensstaff01",
+      "reactions": 16,
+      "channel": "忘卻前夜OST：深港幽靈之船"
     },
     {
       "id": "1356618655382896811",
@@ -56,6 +64,13 @@
       "author": "blue_yogurt_chan",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1356541685664059413",
+      "content": "感觉已经过去很久了……之前说要做的有pv、背景、ui和地图。造物和背景差不多了，ui随缘放送。\n接下来准备动工地图和pv。其实每次pv出来就有第一时间研究，不过",
+      "author": "silverstream_s",
+      "reactions": 4,
+      "channel": "游戏美术资源上的文字"
     },
     {
       "id": "1356495072631197776",
@@ -84,6 +99,27 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "🔸翻译器教程┊translator-tutorial"
+    },
+    {
+      "id": "1356542108189855965",
+      "content": "▼\n羊妈pv(只有一句)：\n\nMOTHER OF ALL\n万千子嗣之母\n\nWith the envoy, the Mother Tree be once mor",
+      "author": "silverstream_s",
+      "reactions": 2,
+      "channel": "游戏美术资源上的文字"
+    },
+    {
+      "id": "1356619150268698728",
+      "content": "好久不見<:hello:1356053084790460437> 感謝潤色～",
+      "author": "silverstream_s",
+      "reactions": 1,
+      "channel": "游戏美术资源上的文字"
+    },
+    {
+      "id": "1356549216293621781",
+      "content": "**07.尊榮神母-Divine Mother-**\n\n上天已賜下尊貴的神母，用以接我們到祂的國。\n讚美「吾主」！\nGod has given us the n",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "忘卻前夜OST：深港幽靈之船"
     },
     {
       "id": "1356515547646529548",

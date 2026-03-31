@@ -1,10 +1,14 @@
 {
   "date": "2025-02-06",
-  "messages": 46,
-  "unique_authors": 14,
-  "reactions_total": 19,
-  "attachments": 4,
+  "messages": 262,
+  "unique_authors": 25,
+  "reactions_total": 121,
+  "attachments": 12,
   "channel_activity": {
+    "📜熔燬·朵爾喚醒體&命輪介紹": 85,
+    "📜《忘卻前夜 Morimens》V2.1.0即將開放！精彩資訊一網打盡！": 54,
+    "✅前瞻：V2.1 灵塑适性与钥令收集": 76,
+    "✅前瞻：V2.1 融灾与篇章调整": 1,
     "English Page pls !!": 6,
     "✅「已回答」這眼睛顔色不對吧.jpg": 1,
     "好久没出卡池和活动预告了": 14,
@@ -17,31 +21,55 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "1": 29,
+    "2": 19,
+    "3": 4,
+    "4": 21,
+    "5": 16,
+    "6": 5,
+    "9": 35,
+    "10": 54,
+    "11": 7,
+    "12": 38,
+    "13": 4,
+    "14": 7,
+    "15": 12,
     "0": 2,
-    "5": 4,
     "23": 3,
-    "12": 2,
-    "10": 12,
-    "11": 1,
-    "3": 1,
-    "4": 9,
-    "8": 6,
-    "9": 1,
-    "1": 2,
-    "15": 2,
-    "13": 1
+    "8": 6
   },
   "message_types": {
-    "0": 33,
-    "19": 6
+    "0": 174,
+    "19": 42
   },
   "top_reacted_messages": [
+    {
+      "id": "1337036663314190357",
+      "content": "📜《忘卻前夜 Morimens》V2.1.0即將開放！精彩資訊一網打盡！",
+      "author": "morimensstaff02",
+      "reactions": 10,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.0即將開放！精彩資訊一網打盡！"
+    },
     {
       "id": "1337079280232042680",
       "content": "",
       "author": "xuanxue007",
       "reactions": 7,
       "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1336995662620790815",
+      "content": "~~可能朵爾幫校貓做開顱手術失敗了吧，貓才會這麼若紙~~",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
+    },
+    {
+      "id": "1337000220965339197",
+      "content": "<@633215996508766229> 臨時傷害強效這件事，假如熔朵先爆發一次，然後彌利發動3祭禮效果，透過彌利3啟得到的成長是經過臨時強效增幅過的對吧？\n",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
     },
     {
       "id": "1337056604159475723",
@@ -51,6 +79,69 @@
       "channel": ""
     },
     {
+      "id": "1336953549891833903",
+      "content": "因為壞消息：其他的角色也被針對得死死的",
+      "author": "tofu0834",
+      "reactions": 5,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
+    },
+    {
+      "id": "1337026104761909281",
+      "content": "已修复，谢谢您提出的强效bug",
+      "author": "galagalaguo",
+      "reactions": 5,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
+    },
+    {
+      "id": "1337071743113625690",
+      "content": "頭像的畫風是不是變了",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.0即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1336880936939294812",
+      "content": "但我不確定校貓覺得可不可以",
+      "author": "tofu0834",
+      "reactions": 4,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
+    },
+    {
+      "id": "1337024997914443828",
+      "content": "我感覺你會問倒校貓",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
+    },
+    {
+      "id": "1336878296566075544",
+      "content": "主要還是錢從哪裡來",
+      "author": "tofu0834",
+      "reactions": 3,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
+    },
+    {
+      "id": "1336927169795854336",
+      "content": "塔薇体质是爆炸朵的1.37倍\n系数1.37\n\n80级专武塔薇开超限\n27x1.2x1.37x1.35x(1+3)=240\n\n80级专武满200狂塔薇\n27x1.",
+      "author": "galagalaguo",
+      "reactions": 3,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
+    },
+    {
+      "id": "1336928642399338567",
+      "content": "各种条件拉到极限能回1000血",
+      "author": "galagalaguo",
+      "reactions": 3,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
+    },
+    {
+      "id": "1337044420612325386",
+      "content": "游戏内等那个老虎机",
+      "author": "whshhsa",
+      "reactions": 3,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.0即將開放！精彩資訊一網打盡！"
+    },
+    {
       "id": "1337005146298650645",
       "content": "~~疑似原始人已知用火~~",
       "author": "ena04564",
@@ -58,25 +149,39 @@
       "channel": "好久没出卡池和活动预告了"
     },
     {
-      "id": "1336925272968007773",
-      "content": "Well... I thought I'd say that.\n\nWhile it's a good idea to keep posting messages",
-      "author": "07_li",
-      "reactions": 1,
-      "channel": "English Page pls !!"
+      "id": "1336923078709608550",
+      "content": "血肉宁>>混沌宁\n双爆宁>>强效宁",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
     },
     {
-      "id": "1336919649022902304",
-      "content": "沒有序章的文本",
-      "author": "night0140",
-      "reactions": 1,
-      "channel": "序章相關的問題"
+      "id": "1336930145914847295",
+      "content": "目前融灾爆死抗的50加成还是额外乘区 \n所以最极限是1500",
+      "author": "galagalaguo",
+      "reactions": 2,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
     },
     {
-      "id": "1336922513506308119",
-      "content": "~~沒有商用應該灰色~~",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "图鲁"
+      "id": "1336946621283303425",
+      "content": "壞了，才剛細看星辰篇的改動。<:flop:1243504846062223360> 感覺喜歡用的角色都被針對地死死的。",
+      "author": "randomplayer852",
+      "reactions": 2,
+      "channel": "📜熔燬·朵爾喚醒體&命輪介紹"
+    },
+    {
+      "id": "1337036735573393480",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.0即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1337037239292661771",
+      "content": "是不健全的",
+      "author": "whshhsa",
+      "reactions": 2,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.0即將開放！精彩資訊一網打盡！"
     }
   ]
 }

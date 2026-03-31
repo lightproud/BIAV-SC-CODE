@@ -1,10 +1,12 @@
 {
   "date": "2025-12-28",
-  "messages": 53,
+  "messages": 56,
   "unique_authors": 14,
-  "reactions_total": 142,
-  "attachments": 16,
+  "reactions_total": 162,
+  "attachments": 17,
   "channel_activity": {
+    "V2.4.1.1 在线维护公告": 1,
+    "Ramona is holding her sword wrong": 2,
     "💭「处理中」回放bug": 1,
     "💭「Processing」Incorrect card description": 1,
     "✅「Answered」Gmurphy's base tentacle DMG doesn't get updated after increasing your max HP": 1,
@@ -24,16 +26,17 @@
     "1445334381404094475": 11
   },
   "hourly_activity": {
+    "23": 1,
+    "12": 7,
+    "14": 5,
     "3": 3,
     "2": 4,
     "8": 1,
     "10": 1,
     "11": 3,
-    "12": 6,
     "17": 1,
     "21": 2,
     "15": 10,
-    "14": 4,
     "16": 3,
     "13": 11,
     "6": 1,
@@ -42,7 +45,8 @@
     "22": 1
   },
   "message_types": {
-    "0": 19
+    "0": 2,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -51,6 +55,13 @@
       "author": "root_51811",
       "reactions": 25,
       "channel": "克莱门汀"
+    },
+    {
+      "id": "1454815647027695651",
+      "content": "I noticed that in her artworks, Ramona is holding her rapier in a hammer grip, w",
+      "author": "tankbovino",
+      "reactions": 20,
+      "channel": "Ramona is holding her sword wrong"
     },
     {
       "id": "1454842178516943020",
@@ -177,13 +188,6 @@
       "author": "lingcheng.0",
       "reactions": 1,
       "channel": "嗨又是我我又畫了哈姆林"
-    },
-    {
-      "id": "1454717576637583443",
-      "content": "Еще чуть-чуть \"мемов\" \nhttps://www.youtube.com/shorts/Ip8G0JQdi4o",
-      "author": "closetom",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
     }
   ]
 }

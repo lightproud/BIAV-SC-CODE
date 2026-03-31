@@ -1,23 +1,24 @@
 {
   "date": "2025-04-17",
-  "messages": 8,
+  "messages": 10,
   "unique_authors": 4,
-  "reactions_total": 1201,
+  "reactions_total": 1202,
   "attachments": 5,
   "channel_activity": {
+    "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 2,
     "✅「已回答」钥令未成功触发": 4,
     "✅「已回答」如图所示,怨恨锁链生效不正常": 1,
     "💭「處理中」相位对弈红夫人开大不消耗算力自动上命轮": 2,
     "🔸新生守则┊rules": 1
   },
   "hourly_activity": {
+    "2": 2,
+    "3": 2,
     "16": 5,
-    "3": 1,
-    "2": 1,
     "11": 1
   },
   "message_types": {
-    "0": 7
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -33,6 +34,13 @@
       "author": "287405tjy_28066",
       "reactions": 2,
       "channel": "✅「已回答」钥令未成功触发"
+    },
+    {
+      "id": "1362275533660098581",
+      "content": "谢谢",
+      "author": "287405tjy_28066",
+      "reactions": 1,
+      "channel": "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！"
     }
   ]
 }

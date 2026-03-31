@@ -1,10 +1,11 @@
 {
   "date": "2024-09-08",
-  "messages": 22,
-  "unique_authors": 6,
-  "reactions_total": 16,
-  "attachments": 9,
+  "messages": 37,
+  "unique_authors": 7,
+  "reactions_total": 20,
+  "attachments": 10,
   "channel_activity": {
+    "📜哈姆林喚醒體&命輪介紹": 15,
     "刚入坑的萌新瑟瑟发抖": 9,
     "无法登陆，一直显示不在当前发行区😢😢😢": 1,
     "你遊核心玩法本質上是一種玩家們自發的玩家競賽（含大量個人觀點）": 4,
@@ -14,16 +15,20 @@
     "莉兹": 2
   },
   "hourly_activity": {
+    "3": 1,
+    "4": 1,
+    "6": 3,
+    "8": 2,
+    "9": 1,
+    "10": 15,
     "13": 5,
     "14": 7,
     "5": 1,
-    "6": 1,
-    "10": 7,
     "16": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 1
+    "0": 12,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -39,6 +44,13 @@
       "author": "nancyjofla",
       "reactions": 6,
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1282190778369835051",
+      "content": "一躍成攻",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "📜哈姆林喚醒體&命輪介紹"
     },
     {
       "id": "1282286980725608468",

@@ -1,10 +1,11 @@
 {
   "date": "2025-01-11",
-  "messages": 89,
+  "messages": 96,
   "unique_authors": 13,
-  "reactions_total": 54,
-  "attachments": 15,
+  "reactions_total": 55,
+  "attachments": 16,
   "channel_activity": {
+    "V2.0.0.0 停服維護公告": 7,
     "关于三种代币兑换灵核碎片的问题": 2,
     "English Page pls !!": 3,
     "手機用APPLE ID登錄和電腦用同一個APPLE ID登錄出現全新帳號": 6,
@@ -17,6 +18,10 @@
     "好餓哦，雜食來吃飯了": 15
   },
   "hourly_activity": {
+    "6": 7,
+    "7": 1,
+    "9": 2,
+    "17": 11,
     "8": 2,
     "4": 4,
     "23": 2,
@@ -24,18 +29,15 @@
     "13": 2,
     "15": 40,
     "16": 6,
-    "17": 9,
-    "9": 1,
     "10": 3,
     "0": 3,
     "1": 1,
     "2": 2,
-    "3": 5,
-    "6": 4
+    "3": 5
   },
   "message_types": {
-    "0": 57,
-    "19": 8
+    "0": 5,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -107,6 +109,13 @@
       "author": "_cwz_",
       "reactions": 2,
       "channel": "好餓哦，雜食來吃飯了"
+    },
+    {
+      "id": "1327538640644997215",
+      "content": "脓包病毒",
+      "author": "art1_2_3",
+      "reactions": 1,
+      "channel": "V2.0.0.0 停服維護公告"
     },
     {
       "id": "1327654868193775686",

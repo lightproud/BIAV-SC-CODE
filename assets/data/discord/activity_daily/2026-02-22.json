@@ -1,10 +1,12 @@
 {
   "date": "2026-02-22",
-  "messages": 1437,
+  "messages": 1441,
   "unique_authors": 47,
-  "reactions_total": 255,
-  "attachments": 96,
+  "reactions_total": 291,
+  "attachments": 98,
   "channel_activity": {
+    "Happy Cat Day! || Doresain x Sylvester": 1,
+    "Caecus": 3,
     "✅「已回答」徐的奪魄被錯誤識別為負面狀態": 1,
     "✅「Answered」Magnolia's Lure WoD should have been available for the entire duration of Xu's banner": 2,
     "Please allow us to reutrn Doresain to the Black Pool": 4,
@@ -24,12 +26,13 @@
     "🔸阵容构建": 13
   },
   "hourly_activity": {
+    "9": 188,
+    "19": 3,
+    "21": 38,
     "1": 53,
-    "21": 37,
     "23": 2,
     "7": 100,
     "22": 9,
-    "9": 187,
     "10": 229,
     "11": 63,
     "15": 134,
@@ -39,7 +42,6 @@
     "0": 2,
     "5": 30,
     "17": 49,
-    "19": 1,
     "2": 60,
     "4": 20,
     "6": 9,
@@ -50,7 +52,7 @@
     "18": 9
   },
   "message_types": {
-    "0": 7,
+    "0": 3,
     "19": 1
   },
   "top_reacted_messages": [
@@ -60,6 +62,20 @@
       "author": "vxvendetta97",
       "reactions": 35,
       "channel": ""
+    },
+    {
+      "id": "1475057948857466920",
+      "content": "I only realized today while scrolling that it was indeed cat day... I hadn't kno",
+      "author": "that_one_chippy",
+      "reactions": 22,
+      "channel": "Happy Cat Day! || Doresain x Sylvester"
+    },
+    {
+      "id": "1475215349040418937",
+      "content": "<:cry2:1356068126894194758>",
+      "author": "w3b_toddynho7749",
+      "reactions": 14,
+      "channel": "Caecus"
     },
     {
       "id": "1475060100967432254",
@@ -177,20 +193,6 @@
       "id": "1475159554613579907",
       "content": "對他使用深淵號令吧",
       "author": "lululu9858",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475159850911666369",
-      "content": "加固99",
-      "author": "kevin.yienwenst",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1475226464457851071",
-      "content": "我都玩茉夏了怎麼可能是 M",
-      "author": "eddy10051115",
       "reactions": 3,
       "channel": "🔸綜合討論"
     }

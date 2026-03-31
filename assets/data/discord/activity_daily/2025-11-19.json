@@ -1,10 +1,16 @@
 {
   "date": "2025-11-19",
-  "messages": 129,
-  "unique_authors": 31,
-  "reactions_total": 245,
-  "attachments": 28,
+  "messages": 294,
+  "unique_authors": 37,
+  "reactions_total": 396,
+  "attachments": 74,
   "channel_activity": {
+    "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!": 5,
+    "V2.4.0.3 在线维护公告": 9,
+    "忘却前夜OST：原初宿命之战": 9,
+    "忘却前夜OST：创世痴愚之主": 15,
+    "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version": 96,
+    "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments": 31,
     "Arc 2 events are kind of boring in comparison to arc 1's events": 2,
     "💭「Processing」PLEASE remove the auto-scroll.": 17,
     "💭「Processing」Can't reset WoD": 1,
@@ -46,34 +52,34 @@
     "1234769700735418368": 5
   },
   "hourly_activity": {
+    "11": 5,
+    "12": 3,
+    "13": 11,
+    "15": 8,
+    "9": 35,
+    "5": 33,
+    "6": 54,
+    "7": 34,
+    "8": 5,
+    "10": 7,
+    "16": 20,
+    "0": 8,
+    "1": 12,
+    "2": 6,
+    "3": 22,
+    "4": 6,
     "18": 4,
     "19": 5,
-    "0": 1,
-    "1": 7,
-    "2": 3,
-    "6": 24,
-    "10": 5,
-    "15": 6,
-    "16": 18,
     "17": 5,
     "20": 1,
-    "13": 3,
-    "9": 9,
-    "12": 1,
     "14": 8,
     "23": 1,
-    "11": 1,
-    "7": 4,
-    "3": 14,
-    "5": 3,
-    "4": 3,
-    "22": 1,
-    "8": 2
+    "22": 1
   },
   "message_types": {
-    "0": 83,
-    "4": 24,
-    "19": 12
+    "0": 136,
+    "4": 1,
+    "19": 28
   },
   "top_reacted_messages": [
     {
@@ -91,11 +97,25 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1440671478528999464",
+      "content": "Hello Keepers! \nWe have some important news to share regarding both our localiza",
+      "author": "morimens_15",
+      "reactions": 58,
+      "channel": "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!"
+    },
+    {
       "id": "1440732097131053158",
       "content": "",
       "author": "game.producer.light",
       "reactions": 17,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1440627975102922753",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：创世痴愚之主 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，O",
+      "author": "morimensstaff01",
+      "reactions": 15,
+      "channel": "忘却前夜OST：创世痴愚之主"
     },
     {
       "id": "1440626783048437790",
@@ -126,6 +146,69 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1440689818748063785",
+      "content": "● Fixed the issue of abnormal display of the new tag for the \"Premium Hall\" entr",
+      "author": "morimensstaff02",
+      "reactions": 12,
+      "channel": "V2.4.0.3 在线维护公告"
+    },
+    {
+      "id": "1440631823192428564",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：原初宿命之战 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，O",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "忘却前夜OST：原初宿命之战"
+    },
+    {
+      "id": "1440526160436924520",
+      "content": "Can't comment on the business side because i don't know what you know - but must",
+      "author": "nactra",
+      "reactions": 7,
+      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
+    },
+    {
+      "id": "1440633762194001952",
+      "content": "**06. 敌人，友人-Foe, Friend-**\n\n一个完整的传奇不能缺少化敌为友。\n\nNo complete legend is without foes",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "忘却前夜OST：原初宿命之战"
+    },
+    {
+      "id": "1440564863167627366",
+      "content": "I do think the core Morimens experience is feeling like you're actually fighting",
+      "author": "onoyasumi",
+      "reactions": 6,
+      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
+    },
+    {
+      "id": "1440630829792493580",
+      "content": "**13. 来自遗忘<▼>-From the Oblivion-**\n\n呼唤我的名字，在被忘却的黎明之前。\n\nCall my name, please, bef",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "忘却前夜OST：创世痴愚之主"
+    },
+    {
+      "id": "1440501783700177059",
+      "content": "You can have both modes, just call one easy mode and the other normal. As someon",
+      "author": "dragoon2323",
+      "reactions": 5,
+      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
+    },
+    {
+      "id": "1440592752529379328",
+      "content": "he or she will be wacking enemies with the briefcase we carry around all the tim",
+      "author": "crowlov1",
+      "reactions": 4,
+      "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
+    },
+    {
+      "id": "1440645302297165846",
+      "content": "now, to the wheel jail",
+      "author": ".vistar",
+      "reactions": 4,
+      "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
+    },
+    {
       "id": "1440630823148589188",
       "content": "卡在1，不給我算力",
       "author": "ernest_heart",
@@ -133,74 +216,11 @@
       "channel": "✅「已回答」普特尼晨報計數器卡住"
     },
     {
-      "id": "1440752464881254432",
-      "content": "Bug where things with barrier glow bright. I had it happen with my awakeners too",
-      "author": "mythicmoonwort",
+      "id": "1440685342888955924",
+      "content": "Korean! Finally!!!",
+      "author": "vagova_16966",
       "reactions": 3,
-      "channel": "💭「Processing」Awakeners and enemies with barrier sometimes glow bright"
-    },
-    {
-      "id": "1440502000071479426",
-      "content": "It appears that I am being ignored. Well, you've lost another paying player.",
-      "author": "crimsondream24",
-      "reactions": 2,
-      "channel": "💭「Processing」PLEASE remove the auto-scroll."
-    },
-    {
-      "id": "1440562547982860298",
-      "content": "劇情有改過所以有一個要重看",
-      "author": "arr5721",
-      "reactions": 2,
-      "channel": "✅「已解决」典藏馆角色解锁"
-    },
-    {
-      "id": "1440713180639920318",
-      "content": "超級小杯 更難打了",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "💭「处理中」關卡回調之後效果沒有變回來"
-    },
-    {
-      "id": "1440844810700324914",
-      "content": "it's hell ...",
-      "author": "sexysneakystoat1625",
-      "reactions": 1,
-      "channel": "Phantsamal dive"
-    },
-    {
-      "id": "1440598183372783657",
-      "content": "下面這個沒，已解決了",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "💭「处理中」下調難度後無法達成成就"
-    },
-    {
-      "id": "1440587381068660858",
-      "content": "嗨，这个问题正在安排修复，会尽快放出",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」抽卡破圖"
-    },
-    {
-      "id": "1440587688930705508",
-      "content": "Hi, this issue is being fixed and will be released as soon as possible",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Bugged Mission Report Phase III [Manual]"
-    },
-    {
-      "id": "1440626902720315484",
-      "content": "No problem, I'll look for it<:bow:1356053037159944473>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1440641787881455676",
-      "content": "This helps a lot <:pray:1356053116260454534>",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": ""
+      "channel": "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!"
     }
   ]
 }

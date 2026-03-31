@@ -1,10 +1,11 @@
 {
   "date": "2024-09-17",
-  "messages": 52,
+  "messages": 59,
   "unique_authors": 10,
-  "reactions_total": 58,
+  "reactions_total": 119,
   "attachments": 20,
   "channel_activity": {
+    "戈雅的月餅禮盒已經送達！": 7,
     "靈知深化很容易誤觸": 5,
     "活動關卡刻印效果不會顯示": 5,
     "哈姆林把我的指令牌吐出來": 2,
@@ -18,6 +19,9 @@
     "（已封存）【蚰蜒的vrm影像馆】": 4
   },
   "hourly_activity": {
+    "3": 2,
+    "5": 2,
+    "7": 3,
     "6": 2,
     "8": 2,
     "15": 4,
@@ -33,10 +37,16 @@
     "19": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 1
+    "0": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1285435248372486144",
+      "content": "據說今天晚上是一年中月亮最亮的時候，戈雅正好新學會做一種叫「月餅」的點心，今晚賞月的時候一起嘗嘗吧~\n\n禮包碼：MOONCAKE\n禮包內容：銀芯*1000\n有效",
+      "author": "morimensstaff01",
+      "reactions": 55,
+      "channel": "戈雅的月餅禮盒已經送達！"
+    },
     {
       "id": "1285533740461719647",
       "content": "膠片可以投影欸超酷的",
@@ -50,6 +60,13 @@
       "author": "maximus__111",
       "reactions": 20,
       "channel": "Posse List"
+    },
+    {
+      "id": "1285437038514016306",
+      "content": "MOONCAKE",
+      "author": "sin.cos_tan",
+      "reactions": 5,
+      "channel": "戈雅的月餅禮盒已經送達！"
     },
     {
       "id": "1285620699792277656",
@@ -78,6 +95,13 @@
       "author": "nancyjofla",
       "reactions": 2,
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1285505658455851010",
+      "content": "誰給我月餅我就祝誰中秋節快樂",
+      "author": "tofu0834",
+      "reactions": 1,
+      "channel": "戈雅的月餅禮盒已經送達！"
     },
     {
       "id": "1285622400968429579",

@@ -1,16 +1,18 @@
 {
   "date": "2024-12-09",
-  "messages": 17,
+  "messages": 19,
   "unique_authors": 6,
   "reactions_total": 16,
-  "attachments": 3,
+  "attachments": 5,
   "channel_activity": {
+    "🏆【已開獎】彌薩格週年頒獎典禮": 2,
     "遊戲大廳能否可以自行更改遊戲的BGM?": 7,
     "有人知道蘿坦是對應克蘇魯的哪一隻嗎": 3,
     "原初之影 第二關 恐懼之眼 攻略": 2,
     "原初之影 第六關 瘋狂之視 分享": 5
   },
   "hourly_activity": {
+    "0": 2,
     "3": 2,
     "4": 5,
     "9": 3,
@@ -21,8 +23,7 @@
     "11": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {

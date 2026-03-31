@@ -1,10 +1,12 @@
 {
   "date": "2025-06-28",
-  "messages": 24,
+  "messages": 28,
   "unique_authors": 10,
   "reactions_total": 14,
   "attachments": 17,
   "channel_activity": {
+    "V2.2.3.0 停服維護公告": 3,
+    "忘卻前夜OST：珊EP·石化藝術": 1,
     "Please let us have this as a skin option!!!!!": 1,
     "✅「Answered」UI bug - Resonance description in English doesn't fit": 1,
     "✅「Answered」Corrosion damage not counted in Damage counter": 3,
@@ -16,8 +18,9 @@
     "1181998821291606097": 4
   },
   "hourly_activity": {
+    "3": 5,
+    "18": 1,
     "8": 4,
-    "3": 2,
     "21": 2,
     "16": 1,
     "20": 1,
@@ -29,8 +32,7 @@
     "13": 2
   },
   "message_types": {
-    "0": 16,
-    "19": 2
+    "0": 4
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,15 @@
 {
   "date": "2026-02-08",
-  "messages": 7210,
+  "messages": 7217,
   "unique_authors": 160,
-  "reactions_total": 933,
-  "attachments": 348,
+  "reactions_total": 955,
+  "attachments": 354,
   "channel_activity": {
+    "Ramona wip (best girl)🗝": 1,
+    "hi leonora cosplay in rh": 1,
+    "Faint Costume Idea!! - \"A Star's Dying Light\"": 1,
+    "New Year Break~ || Doresain & Sylvester": 1,
+    "Teaser || Doresain & Sylvester": 3,
     "💭「Processing」game client crashed...somewhat": 1,
     "Who Ryker's Designer pls come talk ?": 1,
     "Please nerf P-Dive": 18,
@@ -25,20 +30,21 @@
     "🔸morimens-game-chat": 5801
   },
   "hourly_activity": {
+    "11": 208,
+    "21": 354,
+    "17": 167,
+    "8": 185,
+    "3": 220,
+    "4": 417,
     "22": 439,
     "5": 473,
     "2": 351,
-    "3": 219,
-    "4": 415,
     "10": 224,
-    "8": 184,
     "9": 259,
     "1": 141,
-    "11": 207,
     "19": 364,
     "12": 285,
     "0": 402,
-    "17": 166,
     "18": 164,
     "6": 197,
     "7": 235,
@@ -47,12 +53,10 @@
     "15": 536,
     "16": 276,
     "20": 287,
-    "23": 443,
-    "21": 353
+    "23": 443
   },
   "message_types": {
-    "0": 21,
-    "19": 1
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -68,6 +72,20 @@
       "author": "corposant_1003",
       "reactions": 23,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1470112935618547948",
+      "content": "\"Darkness.\"\n\n\"All one could see across the cold void of the universe was Darknes",
+      "author": "lynexists",
+      "reactions": 11,
+      "channel": "Faint Costume Idea!! - \"A Star's Dying Light\""
+    },
+    {
+      "id": "1470172690353619084",
+      "content": "sorry it's blurry im on mobile",
+      "author": "h3ll0hu",
+      "reactions": 10,
+      "channel": "hi leonora cosplay in rh"
     },
     {
       "id": "1469922999045062923",
@@ -180,20 +198,6 @@
       "author": "legendaryredz",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1469918565439242342",
-      "content": "還好我都是威脅代肝幫我打",
-      "author": "souri.10244",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1469992564869562501",
-      "content": "",
-      "author": "ass191044",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }

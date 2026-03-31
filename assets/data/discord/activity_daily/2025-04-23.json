@@ -1,10 +1,13 @@
 {
   "date": "2025-04-23",
-  "messages": 22,
+  "messages": 33,
   "unique_authors": 7,
-  "reactions_total": 0,
-  "attachments": 1,
+  "reactions_total": 11,
+  "attachments": 6,
   "channel_activity": {
+    "V2.2.0.5 在線維護公告": 4,
+    "忘卻前夜OST：奧吉爾EP·無愧榮光": 6,
+    "忘卻前夜OST：深港幽靈之船": 1,
     "✅「已回答」蟲族羊媽狂氣減費bug": 5,
     "💭「處理中」融災3-3": 3,
     "✅「已回答」典藏館與命輪文案衝突": 8,
@@ -14,6 +17,11 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "12": 2,
+    "14": 1,
+    "15": 1,
+    "10": 6,
+    "11": 2,
     "1": 1,
     "2": 8,
     "3": 1,
@@ -21,13 +29,26 @@
     "20": 2,
     "7": 5,
     "9": 1,
-    "11": 1,
     "18": 1
   },
   "message_types": {
-    "0": 13,
-    "4": 5,
-    "19": 3
+    "0": 10,
+    "19": 1
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1364553167936819301",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：奧吉爾EP·無愧榮光，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請遵",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "忘卻前夜OST：奧吉爾EP·無愧榮光"
+    },
+    {
+      "id": "1364551314130079764",
+      "content": "戈雅去問問~",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "忘卻前夜OST：深港幽靈之船"
+    }
+  ]
 }

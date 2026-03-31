@@ -1,10 +1,13 @@
 {
   "date": "2026-02-14",
-  "messages": 924,
+  "messages": 938,
   "unique_authors": 63,
-  "reactions_total": 284,
-  "attachments": 141,
+  "reactions_total": 308,
+  "attachments": 145,
   "channel_activity": {
+    "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫": 9,
+    "uvhash": 4,
+    "Stop aurafarming!": 1,
     "✅「Answered」Memory leaks": 11,
     "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 7,
     "✅「Answered」Battle progress reset": 7,
@@ -38,24 +41,24 @@
     "🔸阵容构建": 26
   },
   "hourly_activity": {
+    "13": 43,
+    "14": 49,
+    "15": 24,
+    "10": 26,
+    "1": 13,
     "18": 8,
     "19": 15,
     "8": 73,
     "9": 32,
     "7": 110,
-    "13": 42,
     "11": 83,
     "16": 20,
     "17": 25,
-    "1": 12,
     "6": 51,
     "3": 92,
     "4": 95,
     "5": 48,
-    "15": 17,
-    "10": 22,
     "0": 1,
-    "14": 48,
     "20": 3,
     "23": 2,
     "2": 47,
@@ -63,9 +66,8 @@
     "22": 1
   },
   "message_types": {
-    "0": 58,
-    "19": 8,
-    "4": 10
+    "0": 9,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -74,6 +76,13 @@
       "author": "xyakoto",
       "reactions": 22,
       "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
+    },
+    {
+      "id": "1472177463282106369",
+      "content": "this collab me and my friend did … my very first morimens fanart btw",
+      "author": "dollyxqyan",
+      "reactions": 20,
+      "channel": "uvhash"
     },
     {
       "id": "1472248622199472241",
@@ -153,6 +162,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1472225123753791703",
+      "content": "",
+      "author": "s64987866",
+      "reactions": 4,
+      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
+    },
+    {
       "id": "1472082740584120566",
       "content": "我只是想解50牌而已  \n我破防了",
       "author": "sweet_25367",
@@ -192,20 +208,6 @@
       "content": "<:blind:1356053033724674255>",
       "author": "sweet_25367",
       "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472086163480121589",
-      "content": "Just add Goya as an awakener",
-      "author": "crowlov1",
-      "reactions": 3,
-      "channel": "✅「Resolved」Bug Screen freezes after clearing cosmic residue"
-    },
-    {
-      "id": "1472045337123225610",
-      "content": "https://media.discordapp.net/attachments/628628021057814539/942759672824348712/3",
-      "author": "xingxiu_0209",
-      "reactions": 3,
       "channel": "🔸綜合討論"
     }
   ]

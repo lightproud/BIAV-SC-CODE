@@ -1,10 +1,12 @@
 {
   "date": "2025-06-07",
-  "messages": 87,
+  "messages": 90,
   "unique_authors": 10,
   "reactions_total": 6,
-  "attachments": 5,
+  "attachments": 6,
   "channel_activity": {
+    "V2.2.2.7 在線維護公告": 2,
+    "V2.2.2.6 在線維護公告": 1,
     "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\"": 1,
     "✅「Answered」Untranslated text for castor": 4,
     "✅「已回答」鑰令效果哪個才是正確的": 7,
@@ -15,8 +17,8 @@
     "我要吃現pa 我現在就要吃現pa 👊": 3
   },
   "hourly_activity": {
+    "3": 4,
     "5": 4,
-    "3": 1,
     "4": 3,
     "1": 4,
     "12": 2,
@@ -28,8 +30,7 @@
     "16": 1
   },
   "message_types": {
-    "0": 14,
-    "19": 1
+    "0": 3
   },
   "top_reacted_messages": [
     {

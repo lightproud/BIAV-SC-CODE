@@ -1,10 +1,11 @@
 {
   "date": "2025-03-05",
-  "messages": 116,
+  "messages": 191,
   "unique_authors": 32,
-  "reactions_total": 55,
-  "attachments": 22,
+  "reactions_total": 101,
+  "attachments": 24,
   "channel_activity": {
+    "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！": 75,
     "我不知道有什麼用但我決定幫Pray立一個碑": 12,
     "星辰篇搞波次战斗能不能显示波次": 2,
     "關於星辰篇劇情走格子探索地圖要素": 1,
@@ -26,28 +27,28 @@
     "塗些主線角色": 1
   },
   "hourly_activity": {
+    "9": 36,
+    "10": 18,
+    "11": 7,
+    "12": 11,
+    "13": 33,
+    "14": 4,
+    "15": 16,
+    "16": 8,
+    "17": 3,
+    "23": 3,
     "1": 1,
     "3": 12,
     "4": 3,
     "7": 28,
     "8": 3,
-    "9": 7,
-    "11": 6,
-    "15": 13,
     "2": 2,
-    "13": 15,
-    "17": 2,
-    "16": 5,
-    "14": 3,
     "20": 1,
-    "23": 2,
-    "10": 11,
     "6": 2
   },
   "message_types": {
-    "0": 88,
-    "4": 8,
-    "19": 15
+    "0": 64,
+    "19": 11
   },
   "top_reacted_messages": [
     {
@@ -58,11 +59,46 @@
       "channel": "塗些主線角色"
     },
     {
+      "id": "1346778385220898837",
+      "content": "抽完繼續退遊",
+      "author": "lingcheng.0",
+      "reactions": 11,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1346784867811328011",
+      "content": "歡迎",
+      "author": "lingcheng.0",
+      "reactions": 10,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
       "id": "1346789811725406319",
       "content": "但星辰篇（ry",
       "author": "ernest_heart",
       "reactions": 6,
       "channel": "💭「處理中」Boss關忘了放彩虹"
+    },
+    {
+      "id": "1346820214431551551",
+      "content": "沒新角色 那應該是關服有望了吧 日子終於有點盼頭了",
+      "author": "mob1065",
+      "reactions": 5,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1346817686059089963",
+      "content": "墨菲加強有反擊\n神父加強有出血",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1346839649754021930",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 4,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
     },
     {
       "id": "1346810744154624022",
@@ -86,6 +122,13 @@
       "channel": "伺服器漏洞"
     },
     {
+      "id": "1346819644400472167",
+      "content": "神父加強：每有一層重創或者任意減療效果治療量翻倍",
+      "author": "_cwz_",
+      "reactions": 3,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
       "id": "1346870325463486626",
       "content": "~~可惡 當時吃13顆靈知的希冀都沒那麼高 可惡的終末~~<:Coffee:1240919421791375380>",
       "author": "lemoncandy25",
@@ -98,6 +141,34 @@
       "author": "menoctus",
       "reactions": 3,
       "channel": "◆第1章「重临雾都」关卡流程总览·星辰篇"
+    },
+    {
+      "id": "1346780600442556458",
+      "content": "每一點獻祭轉換成我方的一點力量",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1346801684017582140",
+      "content": "急急急 我要看怎麼個加強法",
+      "author": "_buqi",
+      "reactions": 2,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1346831249003647086",
+      "content": "僅在星辰篇",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
+    },
+    {
+      "id": "1346835598996013160",
+      "content": "我支持狂氣回充轉換爆傷爆率黑印精通跟死抗",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！"
     },
     {
       "id": "1346900335674921011",
@@ -119,34 +190,6 @@
       "author": "tofu0834",
       "reactions": 2,
       "channel": "💭「處理中」Boss關忘了放彩虹"
-    },
-    {
-      "id": "1346665751464906794",
-      "content": "如果要改成波次可以改成在同一場戰鬥裡嗎",
-      "author": "xiangan3069",
-      "reactions": 1,
-      "channel": "關於星辰篇劇情走格子探索地圖要素"
-    },
-    {
-      "id": "1346842520633741383",
-      "content": "我满盾对面毒一下打一下是怎么把我打没的",
-      "author": "carme.0588",
-      "reactions": 1,
-      "channel": "💭「處理中」一次性满盾后伤害异常"
-    },
-    {
-      "id": "1346878687794172045",
-      "content": "带入药之梦时，青石王座的不朽支配只对其中一张生效。\n剧情关卡，血链开大的下回合禁止获得护盾好像也还没修，紧急联络还是生盾",
-      "author": "nidie0256_61327",
-      "reactions": 1,
-      "channel": "💭「處理中」青石王座bug"
-    },
-    {
-      "id": "1346680042247421982",
-      "content": "Cant read all effect",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "💭「Processing」Star Chapter Effect Description missing text"
     }
   ]
 }

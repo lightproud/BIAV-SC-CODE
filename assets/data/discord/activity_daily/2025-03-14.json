@@ -1,10 +1,13 @@
 {
   "date": "2025-03-14",
-  "messages": 40,
+  "messages": 46,
   "unique_authors": 10,
-  "reactions_total": 44,
-  "attachments": 4,
+  "reactions_total": 52,
+  "attachments": 6,
   "channel_activity": {
+    "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 2,
+    "【結束|Finish】🌟獎勵加碼🌟彌薩格大學『毀損灰霧之都』攻略活動開啟！限定頭像框、無門檻參與獎應有盡有！": 2,
+    "《忘卻前夜》OST：雪落噬影之鎮": 2,
     "星辰篇搞波次战斗能不能显示波次": 2,
     "純討論，為什麼熔朵的體重少了0.1磅": 8,
     "✅「Answered」PC steam version help": 1,
@@ -20,23 +23,23 @@
     "1350058287688712253": 2
   },
   "hourly_activity": {
+    "12": 7,
+    "3": 4,
+    "6": 4,
     "8": 6,
     "13": 6,
     "15": 7,
     "16": 1,
     "4": 1,
-    "6": 3,
     "9": 1,
-    "12": 3,
-    "3": 3,
     "11": 3,
     "10": 4,
     "19": 2
   },
   "message_types": {
-    "0": 20,
-    "19": 3,
-    "4": 4
+    "0": 3,
+    "6": 2,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -52,6 +55,13 @@
       "author": "morimensstaff01",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1349987955908804729",
+      "content": "建議已收到~我們計劃在未來陸續安排上🥳",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
     },
     {
       "id": "1350060160739184690",
@@ -73,6 +83,13 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1349952846593785969",
+      "content": "能不能直接在 yt 放撥放清單",
+      "author": "sleepingcat103",
+      "reactions": 2,
+      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
     },
     {
       "id": "1349960307082133584",

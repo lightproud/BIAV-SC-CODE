@@ -1,10 +1,11 @@
 {
   "date": "2025-11-28",
-  "messages": 162,
+  "messages": 163,
   "unique_authors": 22,
-  "reactions_total": 223,
-  "attachments": 17,
+  "reactions_total": 242,
+  "attachments": 18,
   "channel_activity": {
+    "Leigh": 1,
     "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎": 1,
     "✅「已回答」繁中PC端黑屏": 2,
     "✅「Answered」Bonus Damage and Fortress": 1,
@@ -39,6 +40,7 @@
     "1441326394817908736": 10
   },
   "hourly_activity": {
+    "18": 3,
     "3": 23,
     "10": 13,
     "12": 1,
@@ -49,7 +51,6 @@
     "17": 9,
     "22": 8,
     "23": 4,
-    "18": 2,
     "0": 3,
     "16": 7,
     "19": 2,
@@ -62,9 +63,7 @@
     "13": 1
   },
   "message_types": {
-    "4": 20,
-    "0": 52,
-    "19": 15
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -80,6 +79,13 @@
       "author": "nikolazuli",
       "reactions": 26,
       "channel": ""
+    },
+    {
+      "id": "1444029360398008501",
+      "content": "<:wow:1356053147029864518>",
+      "author": "chi_feichi",
+      "reactions": 19,
+      "channel": "Leigh"
     },
     {
       "id": "1443848465158504528",
@@ -199,13 +205,6 @@
       "author": "fishhazardthewizard",
       "reactions": 1,
       "channel": "✅「Answered」rose script icon not showing up"
-    },
-    {
-      "id": "1443901624472043614",
-      "content": "Thank you for your feedback. We will verify it🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」G murphy Exalt description swapped in her trial mode"
     }
   ]
 }

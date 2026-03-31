@@ -1,10 +1,13 @@
 {
   "date": "2025-12-01",
-  "messages": 421,
+  "messages": 475,
   "unique_authors": 52,
-  "reactions_total": 175,
-  "attachments": 27,
+  "reactions_total": 281,
+  "attachments": 30,
   "channel_activity": {
+    "V2.4.0.7 停服维护公告": 9,
+    "V2.4.0.8 在线维护公告": 43,
+    "Mini-rimens": 2,
     "💭「Processing」Morimens freeze when I log in": 8,
     "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎": 3,
     "✅「已回答」繁中PC端黑屏": 1,
@@ -62,36 +65,42 @@
     "1441326394817908736": 15
   },
   "hourly_activity": {
-    "3": 21,
+    "3": 29,
+    "13": 11,
+    "12": 25,
+    "14": 16,
+    "15": 29,
+    "18": 8,
+    "19": 6,
+    "20": 14,
+    "8": 6,
     "9": 14,
     "10": 4,
     "7": 20,
-    "14": 11,
-    "15": 16,
     "16": 127,
-    "20": 12,
     "22": 7,
     "6": 20,
     "17": 36,
     "0": 2,
     "2": 9,
-    "18": 3,
-    "19": 3,
-    "12": 17,
     "21": 79,
     "4": 6,
     "5": 3,
-    "8": 5,
-    "13": 2,
     "1": 3,
     "23": 1
   },
   "message_types": {
-    "0": 299,
-    "4": 37,
-    "19": 56
+    "0": 42,
+    "19": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1444972986187911228",
+      "content": "Tulu",
+      "author": "calcduc",
+      "reactions": 40,
+      "channel": "Mini-rimens"
+    },
     {
       "id": "1445022854046548010",
       "content": "The boss died approximately 8 hours after the update. Keepers who couldn't play ",
@@ -112,6 +121,27 @@
       "author": "vxvendetta97",
       "reactions": 19,
       "channel": "Raid Problems and Solutions (The feedbacks have been shared with Light )"
+    },
+    {
+      "id": "1444887433417199698",
+      "content": "這件事沒有炎上的原因不是問題不夠嚴重而是你遊的資深玩家越來越少了",
+      "author": "shchng.",
+      "reactions": 17,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1445026884537548830",
+      "content": "No fix for the raid boss?",
+      "author": "sanna7424",
+      "reactions": 16,
+      "channel": "V2.4.0.8 在线维护公告"
+    },
+    {
+      "id": "1444890325662437406",
+      "content": "Also not entirely sure if the change makes sense to be called a bug, like consid",
+      "author": "detectivedango",
+      "reactions": 9,
+      "channel": "V2.4.0.7 停服维护公告"
     },
     {
       "id": "1445063807998103727",
@@ -149,6 +179,27 @@
       "channel": "图鲁"
     },
     {
+      "id": "1444889452119068853",
+      "content": "||下一個被踢的就是我🤡 🤡 ||",
+      "author": "shchng.",
+      "reactions": 5,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1445026206507597935",
+      "content": "守密人你好：\n       弥萨格大学校务处将于12月1日20:15(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带",
+      "author": "morimensstaff02",
+      "reactions": 5,
+      "channel": "V2.4.0.8 在线维护公告"
+    },
+    {
+      "id": "1445072209180889201",
+      "content": "True, also there has been several complain regarding the same event during anniv",
+      "author": "moyashi0672",
+      "reactions": 4,
+      "channel": "V2.4.0.8 在线维护公告"
+    },
+    {
       "id": "1445024259679457331",
       "content": "seriously, remove the cap. Keep the number counts for the clear, but let people ",
       "author": "wolfierce",
@@ -177,60 +228,11 @@
       "channel": "摸了资深守密人"
     },
     {
-      "id": "1445062664350076940",
-      "content": "Remove the cap. No need for this FOMO (Fear of missing out) nonsense. All it doe",
-      "author": "crescendo09",
+      "id": "1445071427647705098",
+      "content": "嗯...最近各国玩家都变多了，但是还用着老方法来办这类限制数量的全服活动，策划有点笨笨的喔",
+      "author": "yang015148",
       "reactions": 3,
-      "channel": "多来点大眼"
-    },
-    {
-      "id": "1445067122232393862",
-      "content": "<@633215996508766229> \n你遊的描述本來就有點空泛，真要找機會調整一下，汀克特超限跟算力調和的事情也有很多人提起過了，吃不吃效果或衝突什麼的",
-      "author": "heikwok",
-      "reactions": 2,
-      "channel": "关于【献祭】的bug修复"
-    },
-    {
-      "id": "1445156390154010774",
-      "content": "我同样认为这是bug  \n并且，这个bug如果不修复，会对后续游戏环境会产生非常负面的影响。  \n这也是我前面为什么会提到目前毒队道中已经非常不利，我并不希望加",
-      "author": "sweet_25367",
-      "reactions": 2,
-      "channel": "关于【献祭】的bug修复"
-    },
-    {
-      "id": "1445071165470277662",
-      "content": "<@633215996508766229> Some of my best experiences playing mmos (and some gachas)",
-      "author": "lavache.",
-      "reactions": 2,
-      "channel": "✅「Answered」Unfair Raid Event"
-    },
-    {
-      "id": "1445179023599866090",
-      "content": "Wao thread already off topic",
-      "author": "est008",
-      "reactions": 2,
-      "channel": "Raid Problems and Solutions (The feedbacks have been shared with Light )"
-    },
-    {
-      "id": "1445061703409860618",
-      "content": "今天的大眼五万只一天就打完了，想必策划已经知道目前游戏的火爆程度了（），所以之后几个大眼睛能不能提高上限，至少不要一天就打完吧<:dead:1356082627",
-      "author": "2300011747",
-      "reactions": 2,
-      "channel": "多来点大眼"
-    },
-    {
-      "id": "1444934292265373736",
-      "content": "100478139",
-      "author": "taayoui",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1444886130540548231",
-      "content": "Would it be possible to request an additional version of OST1, Track 9, to be av",
-      "author": "arkaether",
-      "reactions": 2,
-      "channel": ""
+      "channel": "V2.4.0.8 在线维护公告"
     }
   ]
 }

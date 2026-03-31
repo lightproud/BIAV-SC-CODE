@@ -1,10 +1,12 @@
 {
   "date": "2025-12-24",
-  "messages": 98,
+  "messages": 128,
   "unique_authors": 16,
-  "reactions_total": 271,
+  "reactions_total": 416,
   "attachments": 18,
   "channel_activity": {
+    "对于联动的期限规划 On the Duration and Planning of Collaborations": 25,
+    "Ramona": 5,
     "Who Ryker's Designer pls come talk ?": 1,
     "💭「Processing」The Spacebar/Enter key on Steam PC version not working": 14,
     "Tentacle Gathering for Enemies": 1,
@@ -46,6 +48,9 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "16": 7,
+    "17": 22,
+    "4": 5,
     "14": 1,
     "6": 5,
     "7": 36,
@@ -54,19 +59,17 @@
     "13": 1,
     "2": 1,
     "10": 6,
-    "17": 2,
     "19": 4,
     "22": 1,
     "12": 1,
     "3": 3,
-    "16": 2,
     "15": 3,
     "1": 1
   },
   "message_types": {
-    "0": 46,
-    "4": 25,
-    "19": 17
+    "0": 19,
+    "6": 2,
+    "19": 9
   },
   "top_reacted_messages": [
     {
@@ -77,11 +80,46 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1453432460934119465",
+      "content": "Our view and planning for collaborations are quite different from most games.\n\nO",
+      "author": "game.producer.light",
+      "reactions": 73,
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
+    },
+    {
       "id": "1453416161315262718",
       "content": "",
       "author": "game.producer.light",
       "reactions": 54,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1453430808919543879",
+      "content": "我们对于联动的看法和规划和大部份游戏不同。\n\n我们的着重点不是短期商业变现行为，而是希望在《忘却前夜》中探讨联动作品的更多可能。加上本来我们就产能有限而宝贵，所",
+      "author": "game.producer.light",
+      "reactions": 43,
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
+    },
+    {
+      "id": "1453433210099859539",
+      "content": "考虑到我们产能非常宝贵，还是希望留出一些时间来继续《忘却前夜》自己的故事。",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
+    },
+    {
+      "id": "1453440638874943670",
+      "content": "迟早会有的！",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
+    },
+    {
+      "id": "1453435074321190973",
+      "content": "Thank you for the team this is pretty new in the gacha space and i hope your rev",
+      "author": "pinguimally3689",
+      "reactions": 5,
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     },
     {
       "id": "1453224617110933525",
@@ -103,6 +141,27 @@
       "author": "shostakovich524",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1453433101345882185",
+      "content": "因为涉及不同的代理商、多家公司授权，情况会比较复杂，但我们会非常希望也会尽力让全地区内容保持统一。",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
+    },
+    {
+      "id": "1453434233895784560",
+      "content": "That is a nice approach, thank you for the clarifications",
+      "author": "vxvendetta97",
+      "reactions": 3,
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
+    },
+    {
+      "id": "1453435563695804697",
+      "content": "也就是你们把人家看板娘永久拐过来了",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     },
     {
       "id": "1453466223869165691",
@@ -140,74 +199,18 @@
       "channel": "✅「Answered」Ham Exalt Text is wrongly string-interpolated"
     },
     {
-      "id": "1453303063975825511",
-      "content": "<@113374123798859776> \nWe are in communication! Hope this helps you, too.",
-      "author": "enumaellis",
+      "id": "1453432484736925831",
+      "content": "",
+      "author": "game.producer.light",
       "reactions": 1,
-      "channel": "💭「Processing」The Spacebar/Enter key on Steam PC version not working"
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     },
     {
-      "id": "1453307976323694704",
-      "content": "Oh crap, i completely forgot about GPU drivers. Thank you very much!",
-      "author": "fallen.archangel",
+      "id": "1453436708648386704",
+      "content": "借版詢問24在日服上的三星幻衣有機會在國際服上架嗎",
+      "author": "souri.10244",
       "reactions": 1,
-      "channel": "💭「Processing」Morimens freeze when I log in"
-    },
-    {
-      "id": "1453304309168210055",
-      "content": "感謝官方的用心！我未來必努力抽滿＋12",
-      "author": "soft_whisper",
-      "reactions": 1,
-      "channel": "✅「已回答」建議角色＋12需要有特效比較吸引人抽＋12（比起命輪）"
-    },
-    {
-      "id": "1453298981064020050",
-      "content": "又是愛戈雅的一天(雖然天天都是",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "✅「已回答」什麼樣的造物會被收藏？"
-    },
-    {
-      "id": "1453295415800627392",
-      "content": "感谢建议，我们已采纳，具体的奖励内容还在计划中，后续将在公告中与大家同步🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」+12喚醒體需要特殊獎勵"
-    },
-    {
-      "id": "1453294093357682690",
-      "content": "哈喽，应当简化描述，后续更新优化",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」圖魯的卡卡面描述依然有贅句"
-    },
-    {
-      "id": "1453293731175207003",
-      "content": "Hi, this is not a bug. H7-9 doesn't have any silver",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」H7-9 Storm Wall has no hidden Silver?"
-    },
-    {
-      "id": "1453293964504596613",
-      "content": "这里确实是bug，具体原因还在查验",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」「獲得 0 點觸腕傷害」？"
-    },
-    {
-      "id": "1453285630715887666",
-      "content": "Hi, this issue is already being fixed and will be released as soon as possible🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Very small nitpick"
-    },
-    {
-      "id": "1453280735338303559",
-      "content": "Hi, I have already raised this issue before. Please rest assured that this featu",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Question about the name"
+      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     }
   ]
 }

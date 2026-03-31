@@ -1,10 +1,11 @@
 {
   "date": "2025-07-07",
-  "messages": 62,
-  "unique_authors": 9,
-  "reactions_total": 734,
-  "attachments": 22,
+  "messages": 107,
+  "unique_authors": 17,
+  "reactions_total": 755,
+  "attachments": 23,
   "channel_activity": {
+    "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 45,
     "关于氪金相关的问题。": 1,
     "✅「Answered」I just started, How do I fix this": 4,
     "✅「Answered」Relic missing description texts": 5,
@@ -22,6 +23,10 @@
     "1390375103707218041": 15
   },
   "hourly_activity": {
+    "16": 36,
+    "17": 4,
+    "18": 2,
+    "19": 7,
     "14": 6,
     "3": 15,
     "8": 3,
@@ -29,18 +34,17 @@
     "4": 5,
     "7": 1,
     "5": 8,
-    "19": 3,
     "6": 3,
     "11": 1,
     "0": 1,
     "9": 1,
-    "10": 6,
-    "16": 1
+    "10": 6
   },
   "message_types": {
-    "0": 18,
-    "4": 6,
-    "19": 1
+    "0": 32,
+    "19": 11,
+    "4": 1,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -51,11 +55,25 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1391822763840241877",
+      "content": "What if I'm poor and can't donate? Should I suck my paw?",
+      "author": ".cnork",
+      "reactions": 12,
+      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
+    },
+    {
       "id": "1391781063017234452",
       "content": "害羞詹金真的很可愛",
       "author": "ftyannn",
       "reactions": 9,
       "channel": "詹金"
+    },
+    {
+      "id": "1391824470833893538",
+      "content": "You are a good company and your game is excellent... it's a pity there are so fe",
+      "author": ".cnork",
+      "reactions": 5,
+      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
     },
     {
       "id": "1391635935036444702",
@@ -72,11 +90,32 @@
       "channel": "关卡地图「融灾禁区」总览38期·星辰篇"
     },
     {
+      "id": "1391823411600429107",
+      "content": "Даниил ты чё",
+      "author": "jeka6670",
+      "reactions": 2,
+      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
+    },
+    {
       "id": "1391673001547661362",
       "content": "忘却前夜2026新春会开始报名了，我们是忘却前夜玩家自发的同人组织，现邀请各位有相同爱好的朋友一起来参与，有意参加制作的朋友们可以进Q群报名，群号:102208",
       "author": "tianfang5580",
       "reactions": 2,
       "channel": "2026忘却前夜新春会节目预告:道理剧场之误入弥大"
+    },
+    {
+      "id": "1391816840262582443",
+      "content": "延長朵兒卡池一週也可以<:hehe:1357185439089295390>",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
+    },
+    {
+      "id": "1391823633273327727",
+      "content": "a shiny new credit card limit!",
+      "author": "aettitude",
+      "reactions": 1,
+      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
     },
     {
       "id": "1391617484104269924",

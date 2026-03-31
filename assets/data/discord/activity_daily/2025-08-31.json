@@ -1,10 +1,11 @@
 {
   "date": "2025-08-31",
-  "messages": 37,
+  "messages": 60,
   "unique_authors": 11,
-  "reactions_total": 29,
+  "reactions_total": 46,
   "attachments": 17,
   "channel_activity": {
+    "前瞻：Skin rarity planning 皮肤稀有度规划": 23,
     "💭「Processing」Petrify dispel": 1,
     "POSSES future and changes": 4,
     "✅「Answered」Clementine's wheel description is broken": 5,
@@ -20,25 +21,37 @@
     "一點拉郎": 5
   },
   "hourly_activity": {
+    "0": 3,
+    "1": 2,
+    "2": 11,
+    "4": 1,
+    "5": 5,
+    "7": 10,
+    "14": 2,
+    "15": 1,
+    "18": 1,
     "8": 1,
     "10": 2,
     "12": 8,
     "13": 3,
-    "14": 1,
     "6": 3,
-    "7": 9,
     "20": 1,
     "21": 1,
     "9": 3,
-    "2": 2,
-    "1": 1,
     "22": 2
   },
   "message_types": {
-    "0": 22,
-    "4": 3
+    "0": 18,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1411783513950392412",
+      "content": "反正就審慎考慮好再做吧，別翻車就好\n\n目前也沒多少角色合適做成高級皮，一些常駐角色甚至從來沒有登場過，目前文案相比忘卻篇水平大幅下降也是事實\n\n星辰篇連||常駐",
+      "author": "heikwok",
+      "reactions": 13,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
     {
       "id": "1411659585072398388",
       "content": "At the moment this is not a suggestion, but I wanted to have an idea on what the",
@@ -66,6 +79,20 @@
       "author": "insomnia07763",
       "reactions": 3,
       "channel": "✅「已回答」課題的獎勵數量顯示錯誤"
+    },
+    {
+      "id": "1411586697916842135",
+      "content": "可以省下鯊魚褲子的費用花在神圖上嗎",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
+    },
+    {
+      "id": "1411613476803055667",
+      "content": "考虑给环拉皮肤和之前的皮肤出周边吗，皮肤卖这么贵了那谷子能不能卖便宜点",
+      "author": "yingmai_",
+      "reactions": 2,
+      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
     },
     {
       "id": "1411624909335040072",

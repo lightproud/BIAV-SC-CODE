@@ -1,10 +1,11 @@
 {
   "date": "2025-09-25",
-  "messages": 69,
+  "messages": 70,
   "unique_authors": 9,
   "reactions_total": 32,
   "attachments": 6,
   "channel_activity": {
+    "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 1,
     "✅「已回答」遺骨逼我刪牌": 2,
     "💭「Processing」i can't enter the game via steam": 5,
     "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 2,
@@ -24,6 +25,7 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "13": 2,
     "6": 9,
     "17": 8,
     "19": 4,
@@ -39,13 +41,10 @@
     "23": 1,
     "5": 1,
     "8": 1,
-    "11": 1,
-    "13": 1
+    "11": 1
   },
   "message_types": {
-    "0": 16,
-    "19": 4,
-    "4": 10
+    "0": 1
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,13 @@
 {
   "date": "2025-08-06",
-  "messages": 80,
+  "messages": 90,
   "unique_authors": 16,
-  "reactions_total": 59,
-  "attachments": 20,
+  "reactions_total": 71,
+  "attachments": 21,
   "channel_activity": {
+    "Call for Community Volunteer Translators: Applications Open!": 1,
+    "V2.3.0.4 在线维护公告": 4,
+    "[杜勒塞因原型解读]弧月高悬之处": 5,
     "关于幻梦深潜": 6,
     "✅「Answered」Clarification on gacha odds for standard limited": 3,
     "✅「Answered」Rus translate": 8,
@@ -24,13 +27,14 @@
     "偽造之物": 3
   },
   "hourly_activity": {
-    "7": 5,
+    "7": 6,
+    "11": 17,
+    "16": 4,
+    "21": 5,
     "13": 1,
-    "16": 3,
     "19": 1,
     "8": 3,
     "18": 9,
-    "11": 14,
     "12": 4,
     "20": 3,
     "22": 4,
@@ -42,9 +46,7 @@
     "1": 5
   },
   "message_types": {
-    "0": 47,
-    "19": 9,
-    "4": 9
+    "0": 10
   },
   "top_reacted_messages": [
     {
@@ -53,6 +55,13 @@
       "author": "yolo_mode",
       "reactions": 22,
       "channel": "偽造之物"
+    },
+    {
+      "id": "1402763327456677908",
+      "content": "如题，照例来薅一波银芯\n\n—————观前须知—————\n\n>是基于星辰篇第三章剧情与杜勒档案进行的人物剧情分析，阅读之前请确保已经至少阅读过第三章剧情已获得正常",
+      "author": "flarinsidia",
+      "reactions": 12,
+      "channel": "[杜勒塞因原型解读]弧月高悬之处"
     },
     {
       "id": "1402564599366029364",

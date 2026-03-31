@@ -1,10 +1,11 @@
 {
   "date": "2025-12-14",
-  "messages": 131,
+  "messages": 136,
   "unique_authors": 7,
-  "reactions_total": 104,
-  "attachments": 6,
+  "reactions_total": 159,
+  "attachments": 14,
   "channel_activity": {
+    "A bit too late for anniversary but this cake is still good :D": 5,
     "求助，我是被版本淘汰了？": 56,
     "💭「处理中」是否考慮為喚醒體設置啟靈開關和天賦開關？": 1,
     "✅「已回答」凱刻斯靈塑內容": 1,
@@ -17,24 +18,23 @@
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
+    "20": 6,
+    "22": 2,
+    "23": 5,
     "15": 8,
     "16": 48,
     "13": 3,
-    "20": 4,
     "0": 42,
     "1": 1,
     "11": 1,
     "12": 12,
     "17": 1,
-    "23": 3,
     "9": 2,
     "2": 4,
-    "7": 1,
-    "22": 1
+    "7": 1
   },
   "message_types": {
-    "0": 60,
-    "19": 3
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -43,6 +43,13 @@
       "author": "cometovilla",
       "reactions": 76,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1449867158631874735",
+      "content": "I made a little guy and now I want to show him everywhere ᕕ( ᐛ )ᕗ",
+      "author": "shwabr",
+      "reactions": 55,
+      "channel": "A bit too late for anniversary but this cake is still good :D"
     },
     {
       "id": "1449691818525589605",

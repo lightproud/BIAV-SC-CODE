@@ -1,10 +1,11 @@
 {
   "date": "2025-09-27",
-  "messages": 39,
+  "messages": 58,
   "unique_authors": 5,
-  "reactions_total": 27,
-  "attachments": 22,
+  "reactions_total": 47,
+  "attachments": 54,
   "channel_activity": {
+    "忘却前夜OST：畸变丰穰之种": 19,
     "✅「Answered」Good day devs [problems with Apple Pay on iOS]": 1,
     "✅「已回答」每日登入獎勵": 8,
     "💭「处理中」相位：米粒技能 x 加固 bug": 3,
@@ -13,19 +14,17 @@
     "1420092491125755985": 2
   },
   "hourly_activity": {
+    "9": 3,
+    "10": 20,
     "14": 2,
     "4": 1,
     "8": 25,
-    "9": 2,
-    "10": 2,
     "11": 4,
     "5": 1,
     "12": 2
   },
   "message_types": {
-    "0": 8,
-    "4": 3,
-    "19": 1
+    "0": 19
   },
   "top_reacted_messages": [
     {
@@ -36,11 +35,32 @@
       "channel": ""
     },
     {
+      "id": "1421435867402338375",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：畸变丰穰之种 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，O",
+      "author": "morimensstaff01",
+      "reactions": 17,
+      "channel": "忘却前夜OST：畸变丰穰之种"
+    },
+    {
       "id": "1421452403105861743",
       "content": "補發杜勒考官的戰績",
       "author": "water_heart",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1421439785771335761",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "忘却前夜OST：畸变丰穰之种"
+    },
+    {
+      "id": "1421439063092891679",
+      "content": "<:snicker:1400771784982397049> 以上就是本次OST的全部曲目~\nThe above are all the tracks of t",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "忘却前夜OST：畸变丰穰之种"
     },
     {
       "id": "1421511153502130339",

@@ -1,10 +1,12 @@
 {
   "date": "2025-07-21",
-  "messages": 126,
+  "messages": 135,
   "unique_authors": 30,
-  "reactions_total": 64,
-  "attachments": 70,
+  "reactions_total": 69,
+  "attachments": 72,
   "channel_activity": {
+    "V2.3.0.0 停服维护公告": 3,
+    "V2.3.0.1 在线维护公告": 6,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 2,
     "💭「Processing」I can't start the game, it freezes": 1,
     "✅「Answered」{SKErrorDomain,0} when trying to top-up on iPhone!": 8,
@@ -40,11 +42,14 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "6": 15,
+    "3": 5,
+    "6": 16,
+    "10": 2,
+    "13": 11,
+    "14": 8,
     "18": 1,
     "23": 2,
     "12": 9,
-    "14": 6,
     "16": 2,
     "17": 4,
     "22": 1,
@@ -52,20 +57,15 @@
     "8": 15,
     "9": 8,
     "7": 30,
-    "3": 4,
     "11": 3,
     "5": 6,
     "15": 1,
-    "10": 1,
     "19": 1,
-    "13": 7,
     "4": 8,
     "2": 1
   },
   "message_types": {
-    "0": 76,
-    "19": 6,
-    "4": 22
+    "0": 9
   },
   "top_reacted_messages": [
     {
@@ -95,6 +95,13 @@
       "author": "akalanden",
       "reactions": 5,
       "channel": "💭「处理中」你素……？"
+    },
+    {
+      "id": "1396740070408458240",
+      "content": "Please add the montly pass back!! <:cry2:1356068126894194758>",
+      "author": "neyuse",
+      "reactions": 3,
+      "channel": "V2.3.0.0 停服维护公告"
     },
     {
       "id": "1396771126415462471",
@@ -130,6 +137,20 @@
       "author": "silverstream_s",
       "reactions": 2,
       "channel": "◆第3章「餍飨」关卡流程总览·星辰篇"
+    },
+    {
+      "id": "1396692304638771210",
+      "content": "The game's monthly pass is missing from the shop, has it been discontinued?",
+      "author": "satachan",
+      "reactions": 1,
+      "channel": "V2.3.0.0 停服维护公告"
+    },
+    {
+      "id": "1396846611925307452",
+      "content": "守密人你好：\n       弥萨格大学校务处将于7月21日21:40进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我们会",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": "V2.3.0.1 在线维护公告"
     },
     {
       "id": "1396977659606732820",
@@ -186,27 +207,6 @@
       "author": "hiamkaito",
       "reactions": 1,
       "channel": "✅「Answered」Soulsfeast - replenish menophin , cant select method"
-    },
-    {
-      "id": "1396760465580753011",
-      "content": "We plan to fix this issue today🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Soulsfeast - replenish menophin , cant select method"
-    },
-    {
-      "id": "1396760693042319391",
-      "content": "We plan to fix this issue today🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Has the daily login pass been discontinued?"
-    },
-    {
-      "id": "1396739776358383668",
-      "content": "嗨，是因为时间配置错误，昨天已经修正了，可正常领取❤️",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」兌換碼😭😭😭"
     }
   ]
 }

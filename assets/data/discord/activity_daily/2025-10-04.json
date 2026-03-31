@@ -1,10 +1,11 @@
 {
   "date": "2025-10-04",
-  "messages": 20,
+  "messages": 30,
   "unique_authors": 11,
-  "reactions_total": 12,
-  "attachments": 7,
+  "reactions_total": 25,
+  "attachments": 22,
   "channel_activity": {
+    "忘却前夜OST：莱克 EP·狼的下周一": 10,
     "💭「Processing」English translation not translation to english. (Pc version)": 1,
     "✅「Answered」Add a payment processor for EN": 1,
     "💭「Processing」Faros missing info": 1,
@@ -17,6 +18,9 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "7": 8,
+    "8": 1,
+    "9": 1,
     "0": 1,
     "23": 1,
     "16": 1,
@@ -30,16 +34,29 @@
     "17": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 4
+    "0": 10
   },
   "top_reacted_messages": [
+    {
+      "id": "1423941553302409258",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：莱克 EP·狼的下周一 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": "忘却前夜OST：莱克 EP·狼的下周一"
+    },
     {
       "id": "1423863742562832496",
       "content": "送你一隻圖魯",
       "author": "insomnia07763",
       "reactions": 5,
       "channel": "这次的周年福利还会送限定角色吗"
+    },
+    {
+      "id": "1423959418944618536",
+      "content": "<:Showoff:1400771654199541850>",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "忘却前夜OST：莱克 EP·狼的下周一"
     },
     {
       "id": "1424063459838132254",

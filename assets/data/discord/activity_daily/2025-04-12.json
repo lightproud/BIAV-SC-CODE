@@ -1,10 +1,11 @@
 {
   "date": "2025-04-12",
-  "messages": 28,
+  "messages": 32,
   "unique_authors": 10,
   "reactions_total": 594,
-  "attachments": 12,
+  "attachments": 13,
   "channel_activity": {
+    "✅校猫碎碎念#近况分享": 4,
     "✅「Answered」Audio stops when leaving game window": 2,
     "✅「Answered」Origin of Time Rewind/Reversion Bug?": 4,
     "✅「已回答」手機遊玩卡在 正在檢查資源更新 沒有進度": 2,
@@ -15,19 +16,18 @@
     "1296113810549112874": 8
   },
   "hourly_activity": {
+    "10": 10,
     "8": 2,
     "9": 1,
     "11": 1,
     "13": 4,
     "14": 2,
     "7": 3,
-    "10": 6,
     "2": 1,
     "6": 8
   },
   "message_types": {
-    "0": 15,
-    "19": 1
+    "0": 4
   },
   "top_reacted_messages": [
     {

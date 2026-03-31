@@ -1,10 +1,14 @@
 {
   "date": "2025-05-20",
-  "messages": 23,
+  "messages": 28,
   "unique_authors": 10,
-  "reactions_total": 10,
-  "attachments": 5,
+  "reactions_total": 11,
+  "attachments": 6,
   "channel_activity": {
+    "V2.2.1.4 在線維護公告": 2,
+    "忘卻前夜OST：奧吉爾EP·無愧榮光": 1,
+    "忘卻前夜OST：深港幽靈之船": 1,
+    "✅前瞻：1.5周年～活动福利篇": 1,
     "Add Off Topic Channel": 1,
     "✅「已回答」520信件缺失": 2,
     "💭「Processing」Something confusing happened": 6,
@@ -16,7 +20,8 @@
     "拿下索瓦爾格商用權了慶祝一下XD": 2
   },
   "hourly_activity": {
-    "12": 3,
+    "12": 5,
+    "18": 3,
     "10": 2,
     "7": 1,
     "13": 3,
@@ -28,8 +33,7 @@
     "2": 5
   },
   "message_types": {
-    "0": 13,
-    "19": 8
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -52,6 +56,13 @@
       "author": "aurora3981",
       "reactions": 2,
       "channel": "💭「Processing」Gelot chain and Ultra bar UI bug"
+    },
+    {
+      "id": "1374447548030390344",
+      "content": "之前在别处说过，再说一下『刚刚玩了骑士 的个人剧情。真不错。没玩之前我是不太感兴趣。但是确实be美学了（）。你们的文案真的很会讲故事，然后音效音乐和美术也能三者",
+      "author": "kaap2880",
+      "reactions": 1,
+      "channel": "忘卻前夜OST：奧吉爾EP·無愧榮光"
     },
     {
       "id": "1374205528229675129",

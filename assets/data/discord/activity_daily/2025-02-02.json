@@ -1,10 +1,11 @@
 {
   "date": "2025-02-02",
-  "messages": 28,
+  "messages": 29,
   "unique_authors": 10,
-  "reactions_total": 42,
-  "attachments": 3,
+  "reactions_total": 81,
+  "attachments": 4,
   "channel_activity": {
+    "✨為喚醒體著新裝！": 1,
     "English Page pls !!": 9,
     "大过年过来吐槽": 5,
     "大佬们有什么能过8-9的低配阵容吗": 1,
@@ -15,9 +16,9 @@
     "【梗图】堆点我P过的梗图": 1
   },
   "hourly_activity": {
+    "9": 4,
     "2": 4,
     "8": 4,
-    "9": 3,
     "3": 3,
     "5": 1,
     "7": 7,
@@ -28,10 +29,16 @@
     "10": 1
   },
   "message_types": {
-    "19": 4,
-    "0": 18
+    "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1335545765950656523",
+      "content": "I like the original artworks. Felt too awkward to paint over them. So I draw new",
+      "author": "tete_ttnhana",
+      "reactions": 39,
+      "channel": "✨為喚醒體著新裝！"
+    },
     {
       "id": "1335546677972434944",
       "content": "It has a lion mask as its motif. a cute child. \nI hope you are happy this year, ",

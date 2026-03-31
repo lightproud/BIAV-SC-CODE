@@ -1,10 +1,11 @@
 {
   "date": "2025-05-13",
-  "messages": 39,
+  "messages": 54,
   "unique_authors": 7,
-  "reactions_total": 32,
-  "attachments": 10,
+  "reactions_total": 57,
+  "attachments": 11,
   "channel_activity": {
+    "✅前瞻：1.5周年～活动福利篇": 15,
     "✅「Answered」Error on game launch": 2,
     "💭「處理中」如图": 2,
     "✅「Answered」Logo Is very bright...": 2,
@@ -20,27 +21,34 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "11": 3,
+    "12": 9,
+    "16": 5,
+    "17": 2,
     "2": 3,
     "3": 6,
     "8": 1,
-    "11": 1,
-    "16": 2,
     "9": 2,
     "10": 9,
     "1": 1,
     "4": 4,
     "5": 3,
     "7": 3,
-    "12": 1,
     "14": 1,
     "15": 2
   },
   "message_types": {
-    "19": 2,
-    "4": 6,
-    "0": 12
+    "19": 4,
+    "0": 11
   },
   "top_reacted_messages": [
+    {
+      "id": "1371891936293818379",
+      "content": "如果是5次单抽那有的",
+      "author": "susairis",
+      "reactions": 23,
+      "channel": "✅前瞻：1.5周年～活动福利篇"
+    },
     {
       "id": "1371701239187771515",
       "content": "偷給他半邊臉畫成沒有魚鱗和魚鰭耳朵了",
@@ -75,6 +83,20 @@
       "author": "void_1546.",
       "reactions": 2,
       "channel": "「我享受疼痛，女巫大人。」"
+    },
+    {
+      "id": "1371821894067818647",
+      "content": "强烈建议80-90级改为只消耗精粹灵核。吃两套太伤了",
+      "author": "shunia3055",
+      "reactions": 1,
+      "channel": "✅前瞻：1.5周年～活动福利篇"
+    },
+    {
+      "id": "1371829805607288843",
+      "content": "除非不顾效率全迦只砸厨力角色，不然这碎片就和隔壁舟游溢出四位数的模组材料一样弱智",
+      "author": "shunia3055",
+      "reactions": 1,
+      "channel": "✅前瞻：1.5周年～活动福利篇"
     },
     {
       "id": "1371806849988427846",

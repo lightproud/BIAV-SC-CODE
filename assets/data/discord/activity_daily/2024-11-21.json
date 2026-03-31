@@ -1,10 +1,12 @@
 {
   "date": "2024-11-21",
-  "messages": 69,
+  "messages": 72,
   "unique_authors": 12,
-  "reactions_total": 71,
-  "attachments": 22,
+  "reactions_total": 79,
+  "attachments": 24,
   "channel_activity": {
+    "🎁露比帶著禮包兌換碼來啦~": 1,
+    "V1.7.1.2 在線維護公告": 2,
     "請願本源朵爾進典藏館以及實裝上線": 18,
     "戰鬥失敗的退出有問題": 25,
     "这么搞就没意思了": 3,
@@ -18,11 +20,12 @@
     "群山的呼唤": 2
   },
   "hourly_activity": {
+    "3": 1,
+    "13": 11,
+    "14": 16,
     "2": 1,
     "11": 4,
     "12": 10,
-    "13": 10,
-    "14": 15,
     "15": 2,
     "16": 5,
     "17": 13,
@@ -35,8 +38,7 @@
     "7": 2
   },
   "message_types": {
-    "0": 41,
-    "19": 7
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -61,6 +63,13 @@
       "channel": "請願本源朵爾進典藏館以及實裝上線"
     },
     {
+      "id": "1309147626691756123",
+      "content": "守密人你好：\n       彌薩格大學校務處將於11月21日21:30(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶",
+      "author": "morimensstaff02",
+      "reactions": 6,
+      "channel": "V1.7.1.2 在線維護公告"
+    },
+    {
       "id": "1309155308907528254",
       "content": "选完图片长按",
       "author": "qiamo0664",
@@ -80,6 +89,13 @@
       "author": "yingmai_",
       "reactions": 3,
       "channel": "【梗图】堆点我P过的梗图"
+    },
+    {
+      "id": "1308997774683148360",
+      "content": "HVGX-HLDX-QKKN\nQKBQ-SSDG-JZYU\nDC5000\nSILVERKEY\nCATSGIFT",
+      "author": ".2.718281828",
+      "reactions": 2,
+      "channel": "🎁露比帶著禮包兌換碼來啦~"
     },
     {
       "id": "1309156409299963985",

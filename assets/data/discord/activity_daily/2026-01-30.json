@@ -1,10 +1,13 @@
 {
   "date": "2026-01-30",
-  "messages": 157,
+  "messages": 181,
   "unique_authors": 20,
-  "reactions_total": 99,
-  "attachments": 11,
+  "reactions_total": 191,
+  "attachments": 13,
   "channel_activity": {
+    "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 11,
+    "[Art Dump Thread] WILLIAMPOSTING 2": 9,
+    "Teaser || Doresain & Sylvester": 4,
     "我們神母怎麼沒辦法講下去": 1,
     "Text bugs during story": 1,
     "Character designs": 1,
@@ -27,31 +30,46 @@
     "1464228375316136072": 4
   },
   "hourly_activity": {
-    "2": 4,
-    "15": 5,
-    "19": 3,
-    "1": 15,
-    "3": 4,
-    "4": 17,
-    "5": 12,
-    "6": 41,
+    "1": 16,
+    "2": 6,
+    "3": 5,
+    "4": 18,
+    "5": 14,
+    "6": 43,
+    "13": 4,
+    "16": 4,
+    "19": 6,
+    "0": 8,
+    "15": 7,
+    "14": 1,
     "11": 1,
     "12": 5,
     "18": 5,
-    "16": 3,
-    "0": 1,
     "17": 1,
     "23": 1,
     "7": 24,
     "8": 9,
-    "13": 3,
     "20": 3
   },
   "message_types": {
-    "0": 47,
-    "19": 31
+    "0": 17,
+    "19": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1466674893646205128",
+      "content": "Doresain teasing Sylvester was cute to me... <:A_pinch:1432980538536493057>  I h",
+      "author": "that_one_chippy",
+      "reactions": 37,
+      "channel": "Teaser || Doresain & Sylvester"
+    },
+    {
+      "id": "1466783514447052812",
+      "content": "我写信是为了表达对近期公告的深切关注与失望——该公告称，在游戏的第三年，男性醒觉者的发布数量将显著减少。这一决定显得十分突然，且缺乏清晰的解释说明，这令玩家群体",
+      "author": "sleppyissleepy",
+      "reactions": 32,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
     {
       "id": "1466818074979074128",
       "content": "我妈就这样权威\n画完头发已经神志不清了，理论上徐x何家小姐含有很多捏造",
@@ -72,6 +90,13 @@
       "author": "mimiruku",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1466679152047554683",
+      "content": "算力調和的情況下延長你的連招表",
+      "author": "foxcatfurry",
+      "reactions": 6,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
     },
     {
       "id": "1466775059363401944",
@@ -95,6 +120,27 @@
       "channel": "Regarding the possible +12 Paywall"
     },
     {
+      "id": "1466604592241573949",
+      "content": "this new update is a big disappointment.",
+      "author": "milky_w",
+      "reactions": 4,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466596374572433592",
+      "content": "interesting<:thinking1:1356068128936820929>",
+      "author": "sunstopshining",
+      "reactions": 4,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
+      "id": "1466596401843667068",
+      "content": "truly interesting <:thinking1:1356068128936820929>",
+      "author": "sunstopshining",
+      "reactions": 4,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
       "id": "1466824072770879568",
       "content": "Was just breezing through story and got to a message where it's forced to scroll",
       "author": "dragonsoul333",
@@ -114,6 +160,13 @@
       "author": "detectivedango",
       "reactions": 4,
       "channel": "Suggestion: a new covenant filter"
+    },
+    {
+      "id": "1466618923599528037",
+      "content": "看了好几天哥们还在为萝坦发声，但你猫好像只回了你0个问题，你是我见过最坚持的厨子之一<:Helot_slack_off:1459092159465521184>",
+      "author": "yang015148",
+      "reactions": 3,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
     },
     {
       "id": "1466603426363478098",
@@ -142,55 +195,6 @@
       "author": "ass191044",
       "reactions": 2,
       "channel": ""
-    },
-    {
-      "id": "1466622255369949329",
-      "content": "<:Meow:1400771520757891123>",
-      "author": "yeriko703",
-      "reactions": 1,
-      "channel": "Character designs"
-    },
-    {
-      "id": "1466884818741755906",
-      "content": "現在可以考慮了嘛",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "✅「已回答」取消SSR命輪自動分解"
-    },
-    {
-      "id": "1466872043256680487",
-      "content": "I had ... once\nthen I took an arrow in the knee",
-      "author": "sexysneakystoat1625",
-      "reactions": 1,
-      "channel": "Suggestion: a new covenant filter"
-    },
-    {
-      "id": "1466680779466866721",
-      "content": "Hopefully we get more stories on doresain ❤️",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466681803963109408",
-      "content": "<:Pandia_love:1459078512303411261>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466684781159907388",
-      "content": "不～垃圾機翻<:takenotes:1357186646294138890>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1466686170338558139",
-      "content": "<:Dore_proud:1459076042722639905>",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "预告片 || 杜勒赛因x西维斯特"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-06-06",
-  "messages": 58,
+  "messages": 71,
   "unique_authors": 10,
-  "reactions_total": 9,
-  "attachments": 14,
+  "reactions_total": 14,
+  "attachments": 17,
   "channel_activity": {
+    "V2.2.2.6 在線維護公告": 11,
+    "伺服器網路波動公告": 2,
     "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\"": 9,
     "✅「已回答」鸟人活动bug": 14,
     "✅「已回答」畸變+鎖鏈=2畸變?": 16,
@@ -19,8 +21,10 @@
     "趕快趁我還神智不清的時候": 2
   },
   "hourly_activity": {
+    "11": 7,
+    "12": 5,
+    "1": 5,
     "23": 9,
-    "1": 3,
     "2": 19,
     "7": 10,
     "8": 6,
@@ -30,16 +34,21 @@
     "20": 1,
     "18": 1,
     "13": 1,
-    "11": 1,
     "3": 2,
     "9": 1
   },
   "message_types": {
-    "0": 40,
-    "19": 6,
-    "4": 5
+    "0": 12,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1380355838341808191",
+      "content": "Server Network Fluctuations Announcement\n\nKeeper, \n    We are very sorry that st",
+      "author": "morimensstaff02",
+      "reactions": 5,
+      "channel": "伺服器網路波動公告"
+    },
     {
       "id": "1380364473247731742",
       "content": "如图，只有一种材料吃到了加成，另一种材料没吃到加成",

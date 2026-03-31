@@ -1,10 +1,11 @@
 {
   "date": "2025-11-29",
-  "messages": 195,
+  "messages": 196,
   "unique_authors": 33,
-  "reactions_total": 837,
+  "reactions_total": 841,
   "attachments": 19,
   "channel_activity": {
+    "Leigh": 1,
     "✅「已回答」繁中PC端黑屏": 3,
     "Please let us trade up with Dreamshard": 4,
     "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled": 1,
@@ -33,6 +34,7 @@
     "1441326394817908736": 8
   },
   "hourly_activity": {
+    "0": 5,
     "7": 1,
     "8": 2,
     "12": 6,
@@ -40,7 +42,6 @@
     "4": 5,
     "16": 25,
     "19": 2,
-    "0": 4,
     "3": 1,
     "13": 3,
     "14": 7,
@@ -58,8 +59,7 @@
     "6": 2
   },
   "message_types": {
-    "19": 18,
-    "0": 163
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -140,6 +140,13 @@
       "channel": "Raids suck"
     },
     {
+      "id": "1444119884425597018",
+      "content": "let's ALL love Leigh",
+      "author": "echidna7311",
+      "reactions": 4,
+      "channel": "Leigh"
+    },
+    {
       "id": "1444364269847052430",
       "content": "楼主的当务之急是删除手机里的番茄小说app",
       "author": "jef05",
@@ -194,13 +201,6 @@
       "author": "void_1546.",
       "reactions": 2,
       "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
-    },
-    {
-      "id": "1444377511898124308",
-      "content": "A suggestion for a christmas skin for liz\nSeeing as Mariah carey is an eldritch ",
-      "author": "satachan",
-      "reactions": 2,
-      "channel": "Possible christmas skin for Liz?"
     }
   ]
 }

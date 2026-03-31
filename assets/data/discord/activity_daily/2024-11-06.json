@@ -1,10 +1,13 @@
 {
   "date": "2024-11-06",
-  "messages": 40,
+  "messages": 46,
   "unique_authors": 14,
   "reactions_total": 30,
-  "attachments": 9,
+  "attachments": 10,
   "channel_activity": {
+    "V1.6.5.2 在線維護公告": 3,
+    "V1.6.5.0 停服維護公告": 2,
+    "蹈海野貓雜技團（釘選有目錄）": 1,
     "Game is currently unplayable in steam deck no matter what proton version": 9,
     "來自德語區的反饋": 2,
     "有玩家反應steam無法登入，是否有解?": 3,
@@ -23,9 +26,10 @@
     "做了一個共鳴，整點活幹？": 3
   },
   "hourly_activity": {
+    "12": 8,
+    "15": 17,
+    "14": 1,
     "6": 4,
-    "12": 7,
-    "15": 13,
     "0": 2,
     "11": 2,
     "7": 4,
@@ -35,8 +39,8 @@
     "8": 4
   },
   "message_types": {
-    "0": 26,
-    "19": 4
+    "0": 5,
+    "19": 1
   },
   "top_reacted_messages": [
     {

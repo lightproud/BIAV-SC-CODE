@@ -1,10 +1,14 @@
 {
   "date": "2025-04-07",
-  "messages": 69,
-  "unique_authors": 11,
-  "reactions_total": 58,
-  "attachments": 25,
+  "messages": 89,
+  "unique_authors": 14,
+  "reactions_total": 63,
+  "attachments": 26,
   "channel_activity": {
+    "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 2,
+    "【結束|Finish】🌟獎勵加碼🌟彌薩格大學『毀損灰霧之都』攻略活動開啟！限定頭像框、無門檻參與獎應有盡有！": 2,
+    "V2.2.0.1 在線維護公告": 9,
+    "✅校猫碎碎念#近况分享": 7,
     "✅「已回答」bug": 1,
     "✅「Answered」Audio stops when leaving game window": 7,
     "✅「已回答」可能是bug": 4,
@@ -25,25 +29,28 @@
     "1271491376881598494": 3
   },
   "hourly_activity": {
-    "7": 17,
-    "0": 3,
-    "21": 1,
+    "7": 21,
+    "13": 7,
+    "21": 3,
+    "0": 4,
+    "1": 1,
+    "2": 2,
+    "4": 6,
+    "17": 2,
+    "18": 1,
     "6": 8,
     "10": 5,
     "15": 3,
     "22": 1,
     "11": 11,
     "12": 2,
-    "17": 1,
-    "4": 5,
     "5": 2,
     "3": 8,
     "19": 2
   },
   "message_types": {
-    "19": 4,
-    "0": 48,
-    "4": 9
+    "0": 18,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -61,6 +68,13 @@
       "channel": ""
     },
     {
+      "id": "1358801774974079086",
+      "content": "Happy to see the change to the ultra roud to help mixing whit ultra, but hopping",
+      "author": "vxvendetta",
+      "reactions": 3,
+      "channel": "V2.2.0.1 在線維護公告"
+    },
+    {
       "id": "1358653655263215746",
       "content": "在把开局狂气到100的角色变成虫族的时候会出现这个弹窗，意义不明",
       "author": "muliupan",
@@ -73,6 +87,13 @@
       "author": "sam511011",
       "reactions": 3,
       "channel": "「   」的故事（上）"
+    },
+    {
+      "id": "1358799944974073896",
+      "content": "守密人你好：\n       彌薩格大學校務處將於4月7日21:50進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": "V2.2.0.1 在線維護公告"
     },
     {
       "id": "1358828729769529355",

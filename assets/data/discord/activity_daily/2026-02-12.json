@@ -1,10 +1,13 @@
 {
   "date": "2026-02-12",
-  "messages": 830,
+  "messages": 839,
   "unique_authors": 72,
-  "reactions_total": 393,
-  "attachments": 110,
+  "reactions_total": 407,
+  "attachments": 111,
   "channel_activity": {
+    "V2.4.2.4 在线维护公告": 3,
+    "Stop aurafarming!": 3,
+    "Morimens Mah-jong? lol": 3,
     "💭「處理中」Bug列車": 6,
     "✅「Answered」Salvador Bug with Train and Ultra Turn": 1,
     "✅「Answered」Train game mode improvement feedback": 18,
@@ -25,16 +28,18 @@
     "🔸阵容构建": 76
   },
   "hourly_activity": {
+    "3": 82,
+    "6": 57,
+    "7": 8,
+    "11": 31,
+    "15": 40,
+    "2": 51,
     "8": 86,
     "10": 78,
     "1": 14,
-    "2": 48,
-    "3": 81,
     "4": 32,
     "5": 30,
     "23": 30,
-    "15": 39,
-    "6": 55,
     "13": 24,
     "16": 10,
     "17": 13,
@@ -42,17 +47,14 @@
     "18": 4,
     "14": 69,
     "20": 3,
-    "11": 30,
     "12": 54,
     "22": 1,
     "0": 13,
-    "7": 7,
     "19": 1
   },
   "message_types": {
-    "0": 33,
-    "19": 9,
-    "4": 1
+    "0": 7,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -82,6 +84,13 @@
       "author": "game.producer.light",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1471410827083911321",
+      "content": "I saw a twt post about this concept so I had to draw Mouchette and Salvador with",
+      "author": "sofiaebby",
+      "reactions": 12,
+      "channel": "Stop aurafarming!"
     },
     {
       "id": "1471638778954125539",
@@ -185,13 +194,6 @@
       "id": "1471374409452486781",
       "content": "~~困難好像沒啥難度~~",
       "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471400256032735425",
-      "content": "",
-      "author": "navirecorbeau",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

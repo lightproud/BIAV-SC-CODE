@@ -1,10 +1,12 @@
 {
   "date": "2026-02-17",
-  "messages": 1428,
+  "messages": 1436,
   "unique_authors": 70,
-  "reactions_total": 373,
-  "attachments": 82,
+  "reactions_total": 419,
+  "attachments": 84,
   "channel_activity": {
+    "Happy New year~! || Doresain x Sylvester": 3,
+    "Yay 1st time drawing her": 5,
     "✅「Answered」About music volume reduction during actions": 1,
     "皮克曼生日快乐": 4,
     "[利莫里亞]第一大將軍‼️淩晨私會🔞神秘魚人": 5,
@@ -29,15 +31,16 @@
     "🔸阵容构建": 22
   },
   "hourly_activity": {
+    "9": 154,
+    "2": 97,
+    "3": 12,
     "22": 5,
     "0": 15,
     "15": 50,
     "16": 5,
     "20": 3,
-    "9": 151,
     "11": 258,
     "12": 145,
-    "2": 94,
     "8": 36,
     "1": 73,
     "13": 49,
@@ -47,14 +50,13 @@
     "17": 13,
     "18": 23,
     "14": 170,
-    "3": 10,
     "5": 144,
     "19": 2,
     "6": 91,
     "10": 22
   },
   "message_types": {
-    "0": 1
+    "0": 8
   },
   "top_reacted_messages": [
     {
@@ -65,11 +67,25 @@
       "channel": "[利莫里亞]第一大將軍‼️淩晨私會🔞神秘魚人"
     },
     {
+      "id": "1473248003945922684",
+      "content": "May luck and prosperity be with everyone on this special occasion~ As well as I ",
+      "author": "that_one_chippy",
+      "reactions": 24,
+      "channel": "Happy New year~! || Doresain x Sylvester"
+    },
+    {
       "id": "1473329092735668245",
       "content": "Getting back into the groove of doodling quick full body sprites, and what bette",
       "author": "midnight_emporium",
       "reactions": 24,
       "channel": ""
+    },
+    {
+      "id": "1473141784191176785",
+      "content": "",
+      "author": "he_xuan33",
+      "reactions": 21,
+      "channel": "Yay 1st time drawing her"
     },
     {
       "id": "1473309037851443200",
@@ -181,20 +197,6 @@
       "content": "",
       "author": "xingxiu_0209",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473186464702529557",
-      "content": "我還沒疊完",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1473258873434669212",
-      "content": "玩我",
-      "author": "ahong0727",
-      "reactions": 4,
       "channel": "🔸綜合討論"
     }
   ]

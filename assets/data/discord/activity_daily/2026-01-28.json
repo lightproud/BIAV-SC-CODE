@@ -1,10 +1,15 @@
 {
   "date": "2026-01-28",
-  "messages": 84,
-  "unique_authors": 19,
-  "reactions_total": 54,
-  "attachments": 16,
+  "messages": 257,
+  "unique_authors": 67,
+  "reactions_total": 334,
+  "attachments": 24,
   "channel_activity": {
+    "V2.4.2.1 在线维护公告": 22,
+    "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 50,
+    "对各位守密人的致歉与近况说明 Apology and Update to All Keepers": 99,
+    "One sour grape doll was bad enough": 1,
+    "Why are you looking at me like that?": 1,
     "Who Ryker's Designer pls come talk ?": 1,
     "💭「Processing」Astral Reign 1-8 story is broken": 5,
     "✅「已回答」你是電你是光你是唯一的神話": 7,
@@ -26,36 +31,125 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "5": 3,
+    "11": 20,
+    "12": 28,
+    "15": 10,
+    "17": 3,
+    "13": 8,
+    "14": 8,
+    "18": 4,
+    "19": 6,
+    "22": 8,
+    "23": 1,
+    "5": 35,
+    "6": 38,
+    "7": 14,
+    "8": 27,
+    "9": 9,
+    "10": 20,
+    "4": 1,
+    "0": 1,
     "21": 4,
-    "22": 4,
-    "10": 19,
-    "11": 3,
     "3": 8,
-    "17": 2,
-    "14": 1,
-    "12": 3,
     "16": 2,
-    "13": 2,
-    "8": 17,
-    "9": 2,
-    "15": 5,
-    "18": 2,
-    "19": 1,
-    "6": 4,
     "2": 2
   },
   "message_types": {
-    "0": 26,
-    "19": 4
+    "0": 130,
+    "19": 42,
+    "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1466068509174927422",
+      "content": "<@633215996508766229> 只要还能保持推出一定数量的男性角色，即便像“忘却篇”那样女性角色比例较高，我个人觉得也是完全没问题的——尽管我是那种",
+      "author": "vndev",
+      "reactions": 25,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466053047401582612",
+      "content": "很抱歉今天的交流可能要告一段落了，现在我必须去忙其他工作。我后续会继续抽空关注大家的反馈！\n\nI'm sorry to say our chat today h",
+      "author": "game.producer.light",
+      "reactions": 22,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466058418929405992",
+      "content": "关于最终法则，有些话想说，整体不做评价，因为他说的话不少是有道理的，我也是从开服第一天开始玩到现在的，产能是真的比第一年掉很多很多，毕竟第一年前期甚至会有一个版",
+      "author": "yiyiyi524810_13458",
+      "reactions": 18,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466074602232086682",
+      "content": "~~像是某只绿色的鸟这样吗~~",
+      "author": "ka_0414",
+      "reactions": 16,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1465948582560661607",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 15,
+      "channel": "对各位守密人的致歉与近况说明 Apology and Update to All Keepers"
+    },
+    {
+      "id": "1466049745129705585",
+      "content": "~~没有关系网是因为剧情各种莫名其妙的吃书跟逻辑混乱吗~~ 。搞半天我也没搞清楚故事走向（）",
+      "author": "dittoqwq",
+      "reactions": 14,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466076605196533985",
+      "content": "<@633215996508766229> \n+12送幻衣\n原本的喚醒體圖變成動圖\n算成幻衣就不打破SP才有動圖的規則😏 \n希望自己的老公／老婆會動",
+      "author": "mengdiehuan",
+      "reactions": 14,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1465972446078435421",
+      "content": "感谢大家的理解。我也收到了大家在这个帖子内的反馈，我会优先完成后续其他内容的说明日志，再尽我所能的回应一些问题。\n\nThank you for your und",
+      "author": "game.producer.light",
+      "reactions": 12,
+      "channel": "对各位守密人的致歉与近况说明 Apology and Update to All Keepers"
+    },
+    {
+      "id": "1465865439484580107",
+      "content": "",
+      "author": "kirikonuto",
+      "reactions": 11,
+      "channel": "Why are you looking at me like that?"
+    },
     {
       "id": "1466112412074901504",
       "content": "發覺我沒有在這裡發過之前的梗圖遂發之",
       "author": "souri.10244",
       "reactions": 10,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1466053067140108504",
+      "content": "有沒有可能會出一個像一鍵已讀公告那樣，在典藏館搞一個一鍵消滅煩人的「新」的小按鈕？🧐",
+      "author": "shostakovich524",
+      "reactions": 9,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466197794900676669",
+      "content": "還有就是你們應該有想到：盡然第一波最重法則是商店角色，那應該有想到增加原型視界的販賣數量吧？還有專造能不能換成是一種賣角色、鼓勵角色抽取的動機，那能不能在關卡放",
+      "author": "gazima",
+      "reactions": 9,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1465947010694647890",
+      "content": "<@633215996508766229> 不是說沒有放棄溝通 發完就跑是幾個意思",
+      "author": "quackdayo",
+      "reactions": 9,
+      "channel": "对各位守密人的致歉与近况说明 Apology and Update to All Keepers"
     },
     {
       "id": "1465911369714110661",
@@ -65,130 +159,46 @@
       "channel": ""
     },
     {
+      "id": "1466031286622748826",
+      "content": "Triple the amount of spellbound? Does that mean Xu's OE inflicts 8 spellbound?",
+      "author": "necronomikkon",
+      "reactions": 7,
+      "channel": "V2.4.2.1 在线维护公告"
+    },
+    {
+      "id": "1466048479188095037",
+      "content": "我们会考虑一下这件事！谢谢你的意见！",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466048986774241445",
+      "content": "关系网暂时没有计划，这可能会非常复杂而且会随着剧情发展而变化。不过我们对于调查行动、特遣纪录、意识潜游等内容最建议的顺序做一个指南。",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466050081466744842",
+      "content": "喔對了可以問下典藏館的\"新\"很必要嗎，命輪點的好煩躁",
+      "author": "arr5721",
+      "reactions": 7,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1465943669625585809",
+      "content": "Be confident, 10000 a day!",
+      "author": "carme.0588",
+      "reactions": 7,
+      "channel": "对各位守密人的致歉与近况说明 Apology and Update to All Keepers"
+    },
+    {
       "id": "1466016714972991488",
       "content": "打牌打到一半怎麼有人自體發光",
       "author": "ying_papa",
       "reactions": 6,
       "channel": "✅「已回答」你是電你是光你是唯一的神話"
-    },
-    {
-      "id": "1466188545634078821",
-      "content": "I hired this GDoll to stare at you",
-      "author": "bagels5899",
-      "reactions": 4,
-      "channel": "💭「Processing」Astral Reign 1-8 story is broken"
-    },
-    {
-      "id": "1466017356982779995",
-      "content": "https://tenor.com/view/out-disappear-bye-vanished-gif-4932063",
-      "author": "ying_papa",
-      "reactions": 4,
-      "channel": "✅「已回答」你是電你是光你是唯一的神話"
-    },
-    {
-      "id": "1466188228091445404",
-      "content": "After Doll: Inferno's first line of dialogue, the text scrolls as if there were ",
-      "author": "wolfmaw",
-      "reactions": 3,
-      "channel": "💭「Processing」Astral Reign 1-8 story is broken"
-    },
-    {
-      "id": "1466069056980254750",
-      "content": "I am horribly late to the Mouchette train but I wanted to show off what she can ",
-      "author": "zier.0",
-      "reactions": 3,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1466042833948381296",
-      "content": "~~好像很多人搞不懂為什麼我會去凹死抗~~<:takenotes:1357186646294138890>",
-      "author": "wild_pansy",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1466028334436847692",
-      "content": "Обзор Сюй <:realm_caro:1437283648134058004> \nhttps://www.youtube.com/watch?v=nYV",
-      "author": "closetom",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1466016116978487296",
-      "content": "主题：关于提升“超維”界域魅力及改进机制的建议\n开发者您好：\n我是一名喜爱《莫里门斯》的玩家。虽然我很想尝试并培养“超維”界域的觉醒体，但说实话，由于目前该界域",
-      "author": "flynn50784",
-      "reactions": 1,
-      "channel": "[建议] 关于优化“超次元”界域机制의建议"
-    },
-    {
-      "id": "1466016645062594560",
-      "content": "簡單翻譯：超次元—>超維",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "[建议] 关于优化“超次元”界域机制의建议"
-    },
-    {
-      "id": "1466026091666866281",
-      "content": "算上你和我在內已經五個人了，去有問必答回報也沒人回應(",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "🔸游戏问题"
-    },
-    {
-      "id": "1465953887604441214",
-      "content": "是超级纯爱我们没救了",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1465988625027039400",
-      "content": "杜勒赛因开车皮克曼纯爱，还有祖传端水环节",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1465989150866931803",
-      "content": "怎么小木春一直在输入",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1465989182450040895",
-      "content": "小椿也有很敬重的文手\n但每個人都會寫出自己的風格\n小魚糕能吸收優點、能和對方多交流，但小魚糕就是小魚糕，我們喜歡您的風格就是喜歡，希望您知道<:Pandia_l",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1465989780457263104",
-      "content": "有新外号了，你就叫木春",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1465912058619891802",
-      "content": "thank you for drawing her <:dishes:1356083313063759922>  she looks so vibrant...",
-      "author": "sunstopshining",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1465953202573676637",
-      "content": "Just a very little precisation, Alert doesn't work on the tentacle shields, or r",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1466204095596462161",
-      "content": "Thank you for this!!! I lack some of the premium poison units so it's nice to se",
-      "author": "kcockcidsinep",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

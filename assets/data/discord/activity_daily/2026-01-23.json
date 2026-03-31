@@ -1,10 +1,12 @@
 {
   "date": "2026-01-23",
-  "messages": 60,
-  "unique_authors": 15,
-  "reactions_total": 171,
-  "attachments": 10,
+  "messages": 123,
+  "unique_authors": 19,
+  "reactions_total": 282,
+  "attachments": 12,
   "channel_activity": {
+    "V2.4.2.0 停服维护公告": 61,
+    "Art dump thread": 2,
     "💭「处理中」一上號發現突然有了波呂克斯": 6,
     "双持两个+12命轮的使用优化建议": 3,
     "希望可以增加角色重复获取人格深化的上限": 7,
@@ -24,25 +26,30 @@
     "1455822126568308957": 17
   },
   "hourly_activity": {
+    "10": 36,
+    "11": 9,
+    "12": 14,
+    "15": 2,
+    "16": 2,
+    "17": 6,
+    "18": 2,
+    "19": 1,
+    "22": 2,
     "1": 2,
     "2": 8,
     "3": 3,
     "4": 2,
     "14": 5,
     "13": 6,
-    "15": 1,
     "20": 1,
-    "12": 7,
-    "11": 2,
     "7": 5,
     "9": 5,
-    "16": 1,
     "0": 2,
     "6": 10
   },
   "message_types": {
-    "19": 3,
-    "0": 25
+    "0": 58,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -51,6 +58,13 @@
       "author": "mimiruku",
       "reactions": 68,
       "channel": ""
+    },
+    {
+      "id": "1464209956143239211",
+      "content": "<@633215996508766229> More +12 buffs are kinda concerning,  it's fine for the fr",
+      "author": "rain_scarlet",
+      "reactions": 33,
+      "channel": "V2.4.2.0 停服维护公告"
     },
     {
       "id": "1464102185154510930",
@@ -67,11 +81,39 @@
       "channel": "双持两个+12命轮的使用优化建议"
     },
     {
+      "id": "1464339139641217210",
+      "content": "Basically every player starts off as free-to-play, and F2P players still form a ",
+      "author": "mac2492",
+      "reactions": 13,
+      "channel": "V2.4.2.0 停服维护公告"
+    },
+    {
+      "id": "1464211919400468555",
+      "content": "can we have a special art for that specific awakener at +12?\ncan use it for lobb",
+      "author": "_venush",
+      "reactions": 12,
+      "channel": "V2.4.2.0 停服维护公告"
+    },
+    {
+      "id": "1464212522251980933",
+      "content": "Yes, more pay to win mechanics will definitely hurt the game and may even result",
+      "author": "angy_24_s",
+      "reactions": 10,
+      "channel": "V2.4.2.0 停服维护公告"
+    },
+    {
       "id": "1464158531304554698",
       "content": "2025 December & January contribution list is here!\nWe sincerely thank the below ",
       "author": "morimens314",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1464217954387365973",
+      "content": "I think though if standard units need a buff they should just be buffed. Axiom a",
+      "author": "beenax.",
+      "reactions": 9,
+      "channel": "V2.4.2.0 停服维护公告"
     },
     {
       "id": "1464242985112834232",
@@ -81,11 +123,25 @@
       "channel": ""
     },
     {
+      "id": "1464388438328475865",
+      "content": "Because I finished chap 3",
+      "author": "kiriwoamizaki",
+      "reactions": 5,
+      "channel": "Art dump thread"
+    },
+    {
       "id": "1464247290134003753",
       "content": "bonus instagram notes doodle lmao",
       "author": "mimiruku",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1464199421125202004",
+      "content": "~~期待什麼，課金前夜正式到來嗎~~",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "V2.4.2.0 停服维护公告"
     },
     {
       "id": "1464188862199762974",
@@ -102,53 +158,39 @@
       "channel": ""
     },
     {
-      "id": "1464263824353001525",
-      "content": "These are wonderful.",
-      "author": "sleepypillow",
-      "reactions": 2,
-      "channel": ""
+      "id": "1464198873089048783",
+      "content": "[Language]\n● Universal\n    ○ Fixed the issue where, under certain language setti",
+      "author": "morimensstaff02",
+      "reactions": 3,
+      "channel": "V2.4.2.0 停服维护公告"
     },
     {
-      "id": "1464062318487932990",
-      "content": "應該是艾爾瓦吧",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "💭「处理中」一上號發現突然有了波呂克斯"
+      "id": "1464217296431091733",
+      "content": "Please do NOT add axiom buffs to limited units.... Standard units i guess not so",
+      "author": "beenax.",
+      "reactions": 3,
+      "channel": "V2.4.2.0 停服维护公告"
     },
     {
-      "id": "1464282000977301525",
-      "content": "我说让你滚",
-      "author": "shunia3055",
-      "reactions": 1,
-      "channel": "希望可以增加角色重复获取人格深化的上限"
+      "id": "1464217556167426121",
+      "content": "Axiom for standard units is a great thing. Because everyone has access to them a",
+      "author": "angy_24_s",
+      "reactions": 3,
+      "channel": "V2.4.2.0 停服维护公告"
     },
     {
-      "id": "1464241497724682327",
-      "content": "Well you can't overdraw, the cards stay in the deck if the hand is full\nHowever ",
-      "author": "legendaryredz",
-      "reactions": 1,
-      "channel": "Swap Aigis and Aurita Absolute Axiom"
+      "id": "1464218506714419363",
+      "content": "That is true. I believe the devs are doing this in such a roundabout way to avoi",
+      "author": "angy_24_s",
+      "reactions": 3,
+      "channel": "V2.4.2.0 停服维护公告"
     },
     {
-      "id": "1464161937209426004",
-      "content": "似乎每一个章节的记忆归档的字体都是这样，不知是特殊设计(？)，还是错误",
-      "author": "ka_0414",
-      "reactions": 1,
-      "channel": "简中，但「记忆归档」是繁体字"
-    },
-    {
-      "id": "1464239293001367724",
-      "content": "https://youtu.be/ftOU5jgrQ9w?si=EkyPDwCevmLuA8di - 2.4.2 Patch Overview and CT s",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1464247154087559178",
-      "content": "TYTYYYY!!!! 💓💓💓💓 ur so kind",
-      "author": "mimiruku",
-      "reactions": 1,
-      "channel": ""
+      "id": "1464219936992792709",
+      "content": "they already “avoided stepping on limited units toes” by only buffing limited st",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "V2.4.2.0 停服维护公告"
     }
   ]
 }

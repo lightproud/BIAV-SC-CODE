@@ -1,10 +1,12 @@
 {
   "date": "2025-08-29",
-  "messages": 52,
+  "messages": 66,
   "unique_authors": 8,
-  "reactions_total": 46,
-  "attachments": 10,
+  "reactions_total": 65,
+  "attachments": 30,
   "channel_activity": {
+    "V2.3.1.5 在线维护公告": 2,
+    "忘却前夜OST：骸骨长眠之所": 12,
     "💭「处理中」關於莉莉超限是否應該受到天賦影響的提問": 1,
     "💭「Processing」A bug where all the characters in my game are floating heads.": 2,
     "✅「Answered」[IOS] Chapter 7 allows to proceed without choosing a card from Nourishing Mother": 2,
@@ -30,10 +32,11 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
+    "13": 6,
+    "8": 11,
+    "9": 12,
     "15": 3,
-    "9": 11,
     "10": 5,
-    "13": 4,
     "14": 3,
     "20": 1,
     "18": 12,
@@ -44,9 +47,7 @@
     "12": 1
   },
   "message_types": {
-    "0": 26,
-    "4": 15,
-    "19": 1
+    "0": 14
   },
   "top_reacted_messages": [
     {
@@ -55,6 +56,13 @@
       "author": "xcecilex.",
       "reactions": 18,
       "channel": "莉兹✨"
+    },
+    {
+      "id": "1410902950745739264",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：骸骨长眠之所，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则",
+      "author": "morimensstaff01",
+      "reactions": 14,
+      "channel": "忘却前夜OST：骸骨长眠之所"
     },
     {
       "id": "1411006455364194534",
@@ -69,6 +77,13 @@
       "author": "void_1546.",
       "reactions": 5,
       "channel": "墨菲的下午茶時間"
+    },
+    {
+      "id": "1410905057435582464",
+      "content": "**09.勿忘我的送别-Forget-Me-Not from Him-**\n\n别离与死亡，都是世间无法逃离的常态。\n从无数牺牲与死亡中脱离，走向渺茫的前路，淡淡",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "忘却前夜OST：骸骨长眠之所"
     },
     {
       "id": "1411048082451337278",
@@ -97,6 +112,13 @@
       "author": "be_queitplease",
       "reactions": 2,
       "channel": "✅「已回答」关于游戏后续内容的一点疑问"
+    },
+    {
+      "id": "1410984060813316268",
+      "content": "V2.3.1.5 Online Maintenance Announcement\n\nDear Keeper,\nThe Mythag Administration",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": "V2.3.1.5 在线维护公告"
     },
     {
       "id": "1410932514570240100",

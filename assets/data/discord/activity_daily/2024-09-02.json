@@ -1,10 +1,11 @@
 {
   "date": "2024-09-02",
-  "messages": 35,
+  "messages": 37,
   "unique_authors": 14,
   "reactions_total": 64,
   "attachments": 11,
   "channel_activity": {
+    "🎊《忘卻前夜》今日已正式登陸Steam並開放下載啦！🎊": 2,
     "融災——離譜": 11,
     "從steam版開始玩的玩家要怎麼連回手機版遊玩": 4,
     "商店卡住": 2,
@@ -21,6 +22,7 @@
     "更一波宝宝们的傻大头": 2
   },
   "hourly_activity": {
+    "6": 2,
     "7": 2,
     "11": 1,
     "12": 4,
@@ -39,9 +41,8 @@
     "17": 1
   },
   "message_types": {
-    "0": 22,
-    "19": 3,
-    "4": 5
+    "0": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {

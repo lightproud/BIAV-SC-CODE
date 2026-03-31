@@ -1,10 +1,17 @@
 {
   "date": "2026-01-25",
-  "messages": 108,
+  "messages": 121,
   "unique_authors": 16,
-  "reactions_total": 105,
-  "attachments": 16,
+  "reactions_total": 205,
+  "attachments": 19,
   "channel_activity": {
+    "V2.4.2.0 停服维护公告": 5,
+    "[Art Dump Thread] WILLIAMPOSTING 2": 2,
+    "To the Stars": 1,
+    "Art dump thread": 1,
+    "clementine": 2,
+    "Eternal Moratorium - Xu Fan ASMR [Link]": 1,
+    "\"Oh? Keeper, you're approaching me? Instead of running away, you're coming right to me?\"": 1,
     "能别搞最终法则吗！": 2,
     "希望可以增加角色重复获取人格深化的上限": 56,
     "臨時強效無法影響到黏液彙集的bug": 1,
@@ -23,37 +30,69 @@
     "1455822126568308957": 7
   },
   "hourly_activity": {
+    "0": 1,
+    "4": 2,
+    "9": 28,
+    "19": 5,
+    "23": 2,
+    "2": 3,
+    "18": 19,
+    "21": 2,
+    "13": 6,
     "7": 9,
     "6": 1,
     "8": 6,
-    "9": 27,
-    "13": 5,
     "14": 7,
     "15": 15,
     "17": 1,
-    "18": 18,
-    "19": 3,
     "11": 5,
     "1": 3,
     "5": 1,
     "3": 1,
-    "21": 1,
     "12": 2,
-    "23": 1,
     "10": 1,
     "16": 1
   },
   "message_types": {
-    "19": 26,
-    "0": 51
+    "0": 10,
+    "19": 1,
+    "20": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1464811218396250348",
+      "content": "keeper/william/keeper 3p",
+      "author": "exhibitionism",
+      "reactions": 28,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
+      "id": "1465052206574338352",
+      "content": "UID: 100980405\ncool chapter",
+      "author": "tobbbbby",
+      "reactions": 24,
+      "channel": "clementine"
+    },
+    {
+      "id": "1465093653939618067",
+      "content": "https://www.youtube.com/watch?v=o8GKKhAdMLw\n\n\"I cherish the scent of every uniqu",
+      "author": "inana_istar",
+      "reactions": 24,
+      "channel": "Eternal Moratorium - Xu Fan ASMR [Link]"
+    },
     {
       "id": "1464913090511503430",
       "content": "（代投）狗男智商低：100756090",
       "author": "calmdreab",
       "reactions": 16,
       "channel": ""
+    },
+    {
+      "id": "1464834822076891176",
+      "content": "didnt light previously mentioned that we won’t be following jp game changes ? \n\n",
+      "author": "choco_minnto",
+      "reactions": 11,
+      "channel": "V2.4.2.0 停服维护公告"
     },
     {
       "id": "1465020324205691018",
@@ -75,6 +114,13 @@
       "author": "ass191044",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1464815724387373099",
+      "content": "🫃  *100",
+      "author": "zzio_",
+      "reactions": 8,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
       "id": "1464972828372893709",
@@ -103,6 +149,13 @@
       "author": "sirend3r",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1464814376094666916",
+      "content": "Caec and Castor",
+      "author": "kiriwoamizaki",
+      "reactions": 3,
+      "channel": "Art dump thread"
     },
     {
       "id": "1464951404497080437",
@@ -145,48 +198,6 @@
       "author": "ka_0414",
       "reactions": 2,
       "channel": "银钥匙在说话"
-    },
-    {
-      "id": "1465050156243095727",
-      "content": "坑填好了，至于怎么填的还有新增的坑怎么出现的先别管(",
-      "author": "ka_0414",
-      "reactions": 2,
-      "channel": "银钥匙在说话"
-    },
-    {
-      "id": "1465050559555047424",
-      "content": "草，怎么还在处理中，两个月了喂",
-      "author": "ka_0414",
-      "reactions": 2,
-      "channel": "银钥匙在说话"
-    },
-    {
-      "id": "1464888738864693441",
-      "content": "我是覺得沒差啦~~反正大家都在坐牢~~",
-      "author": "aaaa_00098",
-      "reactions": 1,
-      "channel": "能别搞最终法则吗！"
-    },
-    {
-      "id": "1464882942063939604",
-      "content": "我说让你滚",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "希望可以增加角色重复获取人格深化的上限"
-    },
-    {
-      "id": "1464900304700178442",
-      "content": "Ture",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "希望可以增加角色重复获取人格深化的上限"
-    },
-    {
-      "id": "1464912453669228659",
-      "content": "用這些無用的帖子佔用有問必答",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "希望可以增加角色重复获取人格深化的上限"
     }
   ]
 }

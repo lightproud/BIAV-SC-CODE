@@ -1,10 +1,14 @@
 {
   "date": "2026-03-30",
-  "messages": 5819,
+  "messages": 5826,
   "unique_authors": 180,
-  "reactions_total": 473,
-  "attachments": 302,
+  "reactions_total": 481,
+  "attachments": 303,
   "channel_activity": {
+    "William AI baby": 2,
+    "Quick Liz": 2,
+    "morimens sybau 💔": 2,
+    "Tawil as a male (WIP)": 1,
     "🔸morimens-game-chat": 2431,
     "🔸相位对弈": 8,
     "🔸한국어-채팅방": 62,
@@ -45,12 +49,12 @@
     "1482261084101541969": 1
   },
   "hourly_activity": {
+    "20": 711,
+    "18": 1060,
+    "23": 548,
     "22": 354,
-    "23": 546,
-    "20": 709,
     "21": 393,
     "17": 819,
-    "18": 1057,
     "19": 544,
     "14": 260,
     "15": 200,
@@ -71,9 +75,8 @@
     "5": 13
   },
   "message_types": {
-    "0": 640,
-    "19": 252,
-    "20": 1
+    "0": 6,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -89,6 +92,13 @@
       "author": "thuanlatao38",
       "reactions": 8,
       "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1488269429023440926",
+      "content": "Keeper 😭😭 I’m crine 😭😭\n\n(Maybe more stuff soon",
+      "author": "bandoh36",
+      "reactions": 6,
+      "channel": "William AI baby"
     },
     {
       "id": "1488231357950857236",
@@ -206,13 +216,6 @@
       "id": "1488256011818242150",
       "content": "The worst part of my account is that I have never, ever, pulled this thing on it",
       "author": "good.th",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488256903313227856",
-      "content": "1105 now",
-      "author": "fishhazardthewizard",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }

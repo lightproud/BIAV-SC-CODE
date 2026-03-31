@@ -1,10 +1,13 @@
 {
   "date": "2026-01-16",
-  "messages": 45,
+  "messages": 60,
   "unique_authors": 9,
-  "reactions_total": 44,
-  "attachments": 17,
+  "reactions_total": 85,
+  "attachments": 22,
   "channel_activity": {
+    "V2.4.1.3 在线维护公告": 7,
+    "[Art Dump Thread] WILLIAMPOSTING 2": 4,
+    "Art dump thread": 4,
     "✅「已回答」错字": 3,
     "Cannot log in on PC client": 3,
     "💭「Processing」Arc 1 3-12 Elite bug": 1,
@@ -24,23 +27,27 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
+    "7": 7,
+    "8": 2,
+    "16": 4,
+    "20": 1,
+    "22": 3,
+    "0": 3,
+    "3": 2,
     "18": 11,
     "15": 6,
     "13": 2,
     "4": 1,
     "5": 1,
     "19": 10,
-    "16": 3,
-    "3": 1,
     "11": 3,
     "12": 2,
     "1": 1,
-    "7": 3,
     "21": 1
   },
   "message_types": {
-    "0": 18,
-    "19": 3
+    "0": 13,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -51,11 +58,60 @@
       "channel": "Thank you for everything"
     },
     {
+      "id": "1461565533341356286",
+      "content": "A punk fishy",
+      "author": "kiriwoamizaki",
+      "reactions": 16,
+      "channel": "Art dump thread"
+    },
+    {
+      "id": "1461854004182126744",
+      "content": "i think they'd be funny ass roommates",
+      "author": "exhibitionism",
+      "reactions": 11,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
+      "id": "1461823918179619020",
+      "content": "my modern teenager au (not linear timeline just two different au) inspired by ip",
+      "author": "exhibitionism",
+      "reactions": 9,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
       "id": "1461791627864445140",
       "content": "這是一個純娛樂向，不講求幻夢高分速刷，純個人體驗靠手氣挑戰死裡逃生的娛樂組隊！\n第一次寫這種分享文可能很多細節不太清楚，甚至不知道這能不能算攻略請多多包涵。如過",
       "author": "carrot_chicken",
       "reactions": 7,
       "channel": "諸君，我喜歡抽牌"
+    },
+    {
+      "id": "1461627779979280549",
+      "content": "... No helot gmurphy + hameln gmurphy nerf for traphase?",
+      "author": "moyashi0672",
+      "reactions": 2,
+      "channel": "V2.4.1.3 在线维护公告"
+    },
+    {
+      "id": "1461624749762412668",
+      "content": "守密人你好：\n       弥萨格大学校务处将于1月16日15:45(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": "V2.4.1.3 在线维护公告"
+    },
+    {
+      "id": "1461632444028686379",
+      "content": "商店進不去了<:takenotes:1357186646294138890>",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "V2.4.1.3 在线维护公告"
+    },
+    {
+      "id": "1461523064784162859",
+      "content": "Truth bomb",
+      "author": "kiriwoamizaki",
+      "reactions": 1,
+      "channel": "Art dump thread"
     },
     {
       "id": "1461791290411847918",

@@ -1,10 +1,12 @@
 {
   "date": "2025-08-20",
-  "messages": 42,
+  "messages": 48,
   "unique_authors": 7,
-  "reactions_total": 48,
+  "reactions_total": 58,
   "attachments": 9,
   "channel_activity": {
+    "Call for Community Volunteer Translators: Applications Open!": 4,
+    "V2.3.1.2 在线维护公告": 2,
     "✅「已回答」最近的簡體中文變多了": 1,
     "✅「Answered」Posse visual glitch": 1,
     "✅「Answered」Search tutorials": 1,
@@ -25,6 +27,9 @@
     "1305430084420898868": 3
   },
   "hourly_activity": {
+    "3": 9,
+    "15": 2,
+    "5": 2,
     "6": 6,
     "20": 3,
     "2": 2,
@@ -32,15 +37,12 @@
     "14": 2,
     "1": 1,
     "4": 6,
-    "3": 6,
-    "15": 1,
     "17": 2,
     "8": 1
   },
   "message_types": {
-    "0": 25,
-    "4": 9,
-    "19": 2
+    "19": 2,
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -56,6 +58,13 @@
       "author": "morimensstaff01",
       "reactions": 14,
       "channel": ""
+    },
+    {
+      "id": "1407567661625512026",
+      "content": "@everyoneHello, Keepers! We have extended invitations to the first batch of abou",
+      "author": "ace_asteria_lan",
+      "reactions": 10,
+      "channel": "Call for Community Volunteer Translators: Applications Open!"
     },
     {
       "id": "1407775575581397083",

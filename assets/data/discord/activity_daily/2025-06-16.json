@@ -1,10 +1,12 @@
 {
   "date": "2025-06-16",
-  "messages": 94,
+  "messages": 114,
   "unique_authors": 18,
-  "reactions_total": 18,
-  "attachments": 7,
+  "reactions_total": 35,
+  "attachments": 12,
   "channel_activity": {
+    "V2.2.2.8 在線維護公告": 19,
+    "游戏美术资源上的文字": 1,
     "✅「Answered」In-game texts do not match the language selected in the settings.": 1,
     "✅「已回答」熔朵的超限爆發 有時語音會沒聲音": 2,
     "✅「Answered」Castor Posse missing": 6,
@@ -22,15 +24,15 @@
     "杜勒赛因技能组diy": 1
   },
   "hourly_activity": {
-    "3": 4,
+    "14": 15,
+    "15": 18,
+    "3": 5,
     "2": 8,
     "18": 3,
     "19": 3,
     "10": 4,
     "11": 16,
-    "15": 13,
     "9": 14,
-    "14": 1,
     "0": 2,
     "1": 11,
     "16": 2,
@@ -39,17 +41,37 @@
     "5": 1
   },
   "message_types": {
-    "19": 14,
-    "0": 68,
-    "4": 11
+    "0": 18,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1384183098522075288",
+      "content": "@everyone 克莱门汀这条修复经过复核后处理方式有误，很抱歉，我们会后续调整为 50% 攻击力。",
+      "author": "game.producer.light",
+      "reactions": 10,
+      "channel": "V2.2.2.8 在線維護公告"
+    },
+    {
+      "id": "1384187261884698674",
+      "content": "這次貓不錯\n\n以前的貓 可能會跟你說發佈前後調整 執意45%\n引發炎上<:thumbsup:1356086340298473574>",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "V2.2.2.8 在線維護公告"
+    },
     {
       "id": "1384101431438479380",
       "content": "戈雅會去反饋一下🥹 🙏",
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "應該要加強某些角色吧"
+    },
+    {
+      "id": "1384174546474504327",
+      "content": "V2.2.2.8 Online Maintenance Notice\nDear Keeper,\n    The Mythag University Admini",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": "V2.2.2.8 在線維護公告"
     },
     {
       "id": "1384009465384276039",

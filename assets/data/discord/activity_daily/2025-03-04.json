@@ -1,10 +1,11 @@
 {
   "date": "2025-03-04",
-  "messages": 95,
+  "messages": 96,
   "unique_authors": 35,
-  "reactions_total": 159,
+  "reactions_total": 162,
   "attachments": 11,
   "channel_activity": {
+    "✅前瞻：V2.1.1 相位对弈联动": 1,
     "我不知道有什麼用但我決定幫Pray立一個碑": 17,
     "Should Lily be added to new Chaos Banner as she was added to permanent banner?": 1,
     "✅「已回答」棱彩透镜毒量上限依然根据当回合生命值实时结算": 2,
@@ -23,6 +24,7 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "1": 3,
     "13": 9,
     "14": 6,
     "15": 4,
@@ -30,7 +32,6 @@
     "17": 3,
     "7": 5,
     "11": 2,
-    "1": 2,
     "9": 2,
     "12": 3,
     "2": 4,
@@ -44,9 +45,7 @@
     "18": 2
   },
   "message_types": {
-    "0": 76,
-    "4": 3,
-    "19": 9
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -125,6 +124,13 @@
       "author": "menoctus",
       "reactions": 4,
       "channel": "关卡地图「融灾禁区」总览29期·星辰篇"
+    },
+    {
+      "id": "1346294049027657740",
+      "content": "麻烦把一些加强直接放在本体，比如这次的🌰，本体加强的部分几乎无关痛痒忘却篇依旧查无此人但是新被动又给的不少，可是这部分在忘却篇又不生效，新被动的材料获取也不是很",
+      "author": "ruhebaoyangsiwa_97871",
+      "reactions": 3,
+      "channel": "✅前瞻：V2.1.1 相位对弈联动"
     },
     {
       "id": "1346407287962599445",

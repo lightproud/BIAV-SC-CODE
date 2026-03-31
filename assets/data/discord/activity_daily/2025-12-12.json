@@ -1,10 +1,13 @@
 {
   "date": "2025-12-12",
-  "messages": 83,
+  "messages": 90,
   "unique_authors": 20,
-  "reactions_total": 62,
-  "attachments": 23,
+  "reactions_total": 77,
+  "attachments": 26,
   "channel_activity": {
+    "V2.4.0.11 停服维护公告": 5,
+    "冲刺一个月 我要肝全角色满同调": 1,
+    "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 1,
     "✅「已回答」繁中PC端黑屏": 3,
     "✅「Answered」Curiculum(Battle Pass) Premium rewards suggestion": 14,
     "✅「已解决」良性bug": 1,
@@ -30,8 +33,10 @@
     "1241345906826153984": 4
   },
   "hourly_activity": {
+    "10": 6,
+    "16": 2,
+    "7": 20,
     "3": 3,
-    "7": 19,
     "21": 6,
     "22": 12,
     "23": 1,
@@ -43,16 +48,12 @@
     "20": 2,
     "8": 2,
     "6": 3,
-    "10": 1,
     "5": 4,
     "14": 1,
-    "16": 1,
     "15": 1
   },
   "message_types": {
-    "19": 6,
-    "0": 49,
-    "4": 15
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -63,11 +64,25 @@
       "channel": "铲不完了先用草稿顶一下，总之好娜娜生日快乐"
     },
     {
+      "id": "1448990353519804467",
+      "content": "守密人你好：\n       弥萨格大学预计于12月15日08:00~12:00（UTC+8）进行校内设施维护。\n       维护结束后需要重新登入并更新资源，",
+      "author": "morimensstaff02",
+      "reactions": 9,
+      "channel": "V2.4.0.11 停服维护公告"
+    },
+    {
       "id": "1449157947665158256",
       "content": "With the lastest major patch, the Curiculum premium track was upgraded to provid",
       "author": "pyros_",
       "reactions": 7,
       "channel": "✅「Answered」Curiculum(Battle Pass) Premium rewards suggestion"
+    },
+    {
+      "id": "1448939789993771179",
+      "content": "連動這個",
+      "author": "beach55",
+      "reactions": 6,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
       "id": "1448956855077310575",
@@ -180,13 +195,6 @@
       "author": "souri.10244",
       "reactions": 1,
       "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1449093985057505341",
-      "content": "The whole pic will be released on 21st XD",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "給異格也P了一版仿官海報（）"
     }
   ]
 }

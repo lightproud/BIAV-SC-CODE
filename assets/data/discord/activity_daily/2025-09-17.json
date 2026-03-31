@@ -1,10 +1,11 @@
 {
   "date": "2025-09-17",
-  "messages": 42,
+  "messages": 49,
   "unique_authors": 12,
-  "reactions_total": 33,
-  "attachments": 11,
+  "reactions_total": 39,
+  "attachments": 22,
   "channel_activity": {
+    "忘却前夜OST：皮克曼EP·疯画奇旅": 7,
     "✅「Answered」About new Ryker buff": 4,
     "✅「Answered」Issue with Thai UI vowel positioning.": 3,
     "✅「已回答」請問官網充值是否可以避免平台扣30%的抽成?": 1,
@@ -22,10 +23,10 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "8": 9,
     "3": 9,
     "4": 2,
     "6": 2,
-    "8": 2,
     "18": 1,
     "10": 2,
     "11": 1,
@@ -40,9 +41,7 @@
     "16": 1
   },
   "message_types": {
-    "0": 21,
-    "4": 5,
-    "19": 3
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -51,6 +50,13 @@
       "author": "dittoqwq",
       "reactions": 9,
       "channel": "杜勒杜勒我们喜欢你😭"
+    },
+    {
+      "id": "1417792099675279361",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：皮克曼EP·疯画奇旅，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "忘却前夜OST：皮克曼EP·疯画奇旅"
     },
     {
       "id": "1417690715818950706",

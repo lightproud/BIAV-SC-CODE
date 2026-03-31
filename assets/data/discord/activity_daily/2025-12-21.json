@@ -1,10 +1,14 @@
 {
   "date": "2025-12-21",
-  "messages": 39,
+  "messages": 52,
   "unique_authors": 13,
-  "reactions_total": 73,
-  "attachments": 20,
+  "reactions_total": 139,
+  "attachments": 25,
   "channel_activity": {
+    "V2.4.0.12 在线维护公告": 2,
+    "冲刺一个月 我要肝全角色满同调": 4,
+    "💜Happy Birthday to My OC Solvarg 💜": 4,
+    "Ramona: Loop / Timeworn Poster": 3,
     "Tentacle Gathering for Enemies": 14,
     "✅「已回答」可否增設命輪和密契的計數器": 1,
     "✅「已回答」無底創痕可以不計入溢出的回血量嗎": 1,
@@ -25,11 +29,17 @@
     "1447283719843872808": 1
   },
   "hourly_activity": {
+    "5": 2,
+    "7": 1,
+    "6": 3,
+    "16": 8,
+    "4": 3,
+    "23": 2,
+    "15": 3,
     "8": 6,
     "9": 6,
     "10": 5,
     "18": 2,
-    "16": 6,
     "2": 1,
     "3": 1,
     "1": 1,
@@ -37,15 +47,27 @@
     "22": 1,
     "12": 2,
     "13": 1,
-    "4": 2,
-    "14": 1,
-    "23": 1
+    "14": 1
   },
   "message_types": {
-    "0": 23,
-    "19": 4
+    "19": 1,
+    "0": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1452159516928901195",
+      "content": "˖⁺‧₊⟡₊˚⊹ 𝙷𝚊𝚙𝚙𝚢 𝚋𝚒𝚛𝚝𝚑𝚍𝚊𝚢 𝚝𝚘 𝚂𝚘𝚕𝚟𝚊𝚛𝚐⋆⭒˚.⋆\n\n𝕿𝖍𝖎𝖘 𝖎𝖘 𝖞𝖔𝖚𝖗 𝖘𝖊𝖈𝖔𝖓𝖉 𝖞𝖊𝖆𝖗 𝖘𝖎𝖓𝖈𝖊 𝖉𝖊𝖘𝖈𝖊𝖓𝖉𝖎",
+      "author": "flim_of_life_burst",
+      "reactions": 43,
+      "channel": "💜Happy Birthday to My OC Solvarg 💜"
+    },
+    {
+      "id": "1452317235191353517",
+      "content": "Ramona: Loop / Timeworn Dreamy Vacation",
+      "author": "exfial",
+      "reactions": 14,
+      "channel": "Ramona: Loop / Timeworn Poster"
+    },
     {
       "id": "1452158639874904217",
       "content": "˖⁺‧₊⟡₊˚⊹ 𝙷𝚊𝚙𝚙𝚢 𝚋𝚒𝚛𝚝𝚑𝚍𝚊𝚢 𝚝𝚘 𝚂𝚘𝚕𝚟𝚊𝚛𝚐⋆⭒˚.⋆\n\n這是你降臨卡達斯的第二年……宏偉之庭的王子，你仍在饒有興致地注視著這個世界麼？",
@@ -103,6 +125,20 @@
       "channel": "✅「已回答」無底創痕可以不計入溢出的回血量嗎"
     },
     {
+      "id": "1452204245800714291",
+      "content": "我現在就祈禱頭像醜暈這樣就不用廚子買單了<:proud:1400771683664658433>",
+      "author": "navirecorbeau",
+      "reactions": 3,
+      "channel": "V2.4.0.12 在线维护公告"
+    },
+    {
+      "id": "1452188698040074485",
+      "content": "Very s*x",
+      "author": "crowlov1",
+      "reactions": 3,
+      "channel": "💜Happy Birthday to My OC Solvarg 💜"
+    },
+    {
       "id": "1452215373310197781",
       "content": "I also agree, the past 2 tides W5 bosses Murphy and Gmurphy essentially are chec",
       "author": "dracozion",
@@ -131,18 +167,32 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1452332204821712917",
+      "content": "过于强大啦",
+      "author": "ququ12358",
+      "reactions": 1,
+      "channel": "冲刺一个月 我要肝全角色满同调"
+    },
+    {
+      "id": "1452176910019727404",
+      "content": "Damn...so beatiful",
+      "author": "i_me_myself_caffeine",
+      "reactions": 1,
+      "channel": "💜Happy Birthday to My OC Solvarg 💜"
+    },
+    {
+      "id": "1452449523178799295",
+      "content": "<:Cheerup:1400771555939844149>",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "💜Happy Birthday to My OC Solvarg 💜"
+    },
+    {
       "id": "1452226281708982385",
       "content": "let's hope that it will get fixed with the patch tomorrow.\nIt seems that if you ",
       "author": "vxvendetta97",
       "reactions": 1,
       "channel": "💭「Processing」Error 502"
-    },
-    {
-      "id": "1452218034608406610",
-      "content": "When cards have too much text on them, scrolling becomes weird. Specifically, th",
-      "author": "pyros_",
-      "reactions": 1,
-      "channel": "💭「Processing」Scrolling issues on cards with long descriptions"
     }
   ]
 }

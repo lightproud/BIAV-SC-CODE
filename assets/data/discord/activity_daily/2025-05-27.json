@@ -1,10 +1,12 @@
 {
   "date": "2025-05-27",
-  "messages": 68,
+  "messages": 71,
   "unique_authors": 18,
   "reactions_total": 18,
-  "attachments": 10,
+  "attachments": 11,
   "channel_activity": {
+    "V2.2.2.1 在線維護公告": 2,
+    "✅前瞻：1.5周年～系统优化篇": 1,
     "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 5,
     "助戰求優化": 1,
     "✅「Answered」bugged gift code": 2,
@@ -31,6 +33,8 @@
     "弥萨格校友号码本4.0": 3
   },
   "hourly_activity": {
+    "11": 2,
+    "13": 1,
     "4": 7,
     "5": 1,
     "8": 2,
@@ -45,9 +49,7 @@
     "23": 3
   },
   "message_types": {
-    "0": 39,
-    "4": 17,
-    "19": 9
+    "0": 3
   },
   "top_reacted_messages": [
     {

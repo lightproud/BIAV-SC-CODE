@@ -1,10 +1,11 @@
 {
   "date": "2025-08-26",
-  "messages": 23,
+  "messages": 28,
   "unique_authors": 7,
-  "reactions_total": 81,
-  "attachments": 4,
+  "reactions_total": 90,
+  "attachments": 11,
   "channel_activity": {
+    "忘却前夜OST：凯蒂古拉EP·烈火的葬礼": 5,
     "✅「已回答」戰鬥不顯示第幾波": 1,
     "✅「Answered」Fun Skin suggestions?": 2,
     "✅ 「已回答」克珀珊特天赋加強": 2,
@@ -15,6 +16,7 @@
     "託乎瓦波之夢": 1
   },
   "hourly_activity": {
+    "8": 5,
     "13": 3,
     "17": 2,
     "3": 4,
@@ -27,9 +29,7 @@
     "15": 2
   },
   "message_types": {
-    "0": 9,
-    "19": 1,
-    "4": 2
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -45,6 +45,13 @@
       "author": "yolo_mode",
       "reactions": 30,
       "channel": "尤烏哈希你是一隻大狗"
+    },
+    {
+      "id": "1409821028594614302",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：凯蒂古拉EP·烈火的葬礼，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "忘却前夜OST：凯蒂古拉EP·烈火的葬礼"
     },
     {
       "id": "1409897762790838353",

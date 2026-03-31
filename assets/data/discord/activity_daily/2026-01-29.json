@@ -1,10 +1,16 @@
 {
   "date": "2026-01-29",
-  "messages": 262,
+  "messages": 300,
   "unique_authors": 28,
-  "reactions_total": 195,
-  "attachments": 32,
+  "reactions_total": 300,
+  "attachments": 38,
   "channel_activity": {
+    "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 23,
+    "对各位守密人的致歉与近况说明 Apology and Update to All Keepers": 1,
+    "[Art Dump Thread] WILLIAMPOSTING 2": 2,
+    "Leigh sketch 👀🙏": 1,
+    "KING'S VANITY (Bright color!!!!) || Doresain & Sylvester": 2,
+    "Art dump thread": 9,
     "Who Ryker's Designer pls come talk ?": 1,
     "💭「Processing」Astral Reign 1-8 story is broken": 4,
     "Poison have problem and some words about DoT team in game": 97,
@@ -33,29 +39,32 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
-    "11": 7,
+    "0": 3,
+    "2": 4,
+    "3": 13,
+    "4": 1,
+    "5": 1,
+    "11": 10,
+    "13": 16,
+    "14": 7,
+    "15": 100,
+    "9": 16,
+    "1": 1,
+    "23": 3,
+    "19": 11,
+    "12": 18,
+    "7": 7,
     "8": 38,
-    "15": 99,
     "16": 25,
-    "9": 15,
-    "14": 2,
-    "19": 10,
     "22": 4,
     "6": 5,
-    "7": 6,
-    "12": 17,
-    "13": 13,
     "18": 4,
-    "3": 1,
     "17": 4,
-    "10": 9,
-    "2": 1,
-    "23": 2
+    "10": 9
   },
   "message_types": {
-    "0": 122,
-    "4": 6,
-    "19": 49
+    "19": 17,
+    "0": 21
   },
   "top_reacted_messages": [
     {
@@ -64,6 +73,13 @@
       "author": "glitzy_x",
       "reactions": 29,
       "channel": ""
+    },
+    {
+      "id": "1466520824381964390",
+      "content": "",
+      "author": "ravenessa_art",
+      "reactions": 27,
+      "channel": "Leigh sketch 👀🙏"
     },
     {
       "id": "1466476838095290620",
@@ -85,6 +101,34 @@
       "author": "yeriko703",
       "reactions": 22,
       "channel": "Character designs"
+    },
+    {
+      "id": "1466258738372542656",
+      "content": "这么说吧，你加12给神秘小房间都比这个靠谱，你看看有这个谁会反对，加12给数值还有机制什么都很离谱",
+      "author": "carme.0588",
+      "reactions": 16,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466360297278144697",
+      "content": "其实刚刚靠着隔壁卡厄斯太烂以及忘却本身还不错的基础和周年福利吸引了不少萌新。现在还没满半年 但正是长草期的时候 想出来了最终法则，真的完全不怕全被吓跑吗？能想出",
+      "author": "david.chen.123",
+      "reactions": 10,
+      "channel": "对各位守密人的致歉与近况说明 Apology and Update to All Keepers"
+    },
+    {
+      "id": "1466577059777347696",
+      "content": "normal picture of william. nothing to see here.",
+      "author": "exhibitionism",
+      "reactions": 10,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
+      "id": "1466237949598236809",
+      "content": "we love senior 😔",
+      "author": "exhibitionism",
+      "reactions": 9,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
       "id": "1466364904104657060",
@@ -115,6 +159,27 @@
       "channel": "Regarding the possible +12 Paywall"
     },
     {
+      "id": "1466388487413563454",
+      "content": "弱的只是超限吗？这角色拆的有多散做的有多畸形你自己不知道？你玩不玩自家游戏？不会做角色不想加强就再去加强徐的专造改成一回合免费叠两层痴醉好不好？以后专造都照着这",
+      "author": "si05214",
+      "reactions": 7,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466255690380218573",
+      "content": "感覺給角色加個角色專屬留言功能(比如說可以讓各個玩家留言表達喜愛或者推薦玩法/配隊)的話也挺不錯🧐\n\n而且好想問會不會公開角色相關的數據(比如說持有率、使用率)",
+      "author": "shostakovich524",
+      "reactions": 5,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466279060824129638",
+      "content": "You are 100% correct. As someone who recommended this game heavily among friends",
+      "author": "silencio3507",
+      "reactions": 5,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
       "id": "1466455404837077064",
       "content": "不是哥們，這是第四章要給我的大驚喜還是其實神母不想跟我講話",
       "author": "myth1538",
@@ -141,62 +206,6 @@
       "author": "zzio_",
       "reactions": 4,
       "channel": "Character designs"
-    },
-    {
-      "id": "1466554748583936152",
-      "content": "I really hope this is a temporary thing <:dead:1356082627509092372>  the unusual",
-      "author": "zzio_",
-      "reactions": 4,
-      "channel": "Character designs"
-    },
-    {
-      "id": "1466555152608526621",
-      "content": "3 white feathers sticking out of her thigh is as about as tame as cat ears/tail ",
-      "author": "zzio_",
-      "reactions": 4,
-      "channel": "Character designs"
-    },
-    {
-      "id": "1466345251957510296",
-      "content": "<:Sendflowers:1400771545370067118>",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "💭「Processing」Astral Reign 1-8 story is broken"
-    },
-    {
-      "id": "1466457377724432386",
-      "content": "神母一言不发，只是一味地静坐在你的床尾\n~~可能睡了好一会儿了~~",
-      "author": "ka_0414",
-      "reactions": 3,
-      "channel": "我們神母怎麼沒辦法講下去"
-    },
-    {
-      "id": "1466370616033546302",
-      "content": "It's based on the track record that they sucked at balancing. \nAnd since they ca",
-      "author": "satachan",
-      "reactions": 3,
-      "channel": "Regarding the possible +12 Paywall"
-    },
-    {
-      "id": "1466429758689513644",
-      "content": "I'm not entirely sure why skins are even brought up in the first place, consider",
-      "author": "sirtealot",
-      "reactions": 3,
-      "channel": "Regarding the possible +12 Paywall"
-    },
-    {
-      "id": "1466312980433076276",
-      "content": "超级可爱的<:Dore_proud:1459076042722639905>",
-      "author": "dittoqwq",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1466516581692735601",
-      "content": "Also btw. If you just want to play the game but not bust your ass for not having",
-      "author": "crowlov1",
-      "reactions": 2,
-      "channel": "Regarding the possible +12 Paywall"
     }
   ]
 }

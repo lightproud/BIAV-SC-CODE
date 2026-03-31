@@ -1,10 +1,11 @@
 {
   "date": "2025-11-27",
-  "messages": 50,
+  "messages": 51,
   "unique_authors": 14,
-  "reactions_total": 53,
+  "reactions_total": 56,
   "attachments": 12,
   "channel_activity": {
+    "V2.4.0.6 在线维护公告": 1,
     "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎": 2,
     "✅「已回答」繁中PC端黑屏": 7,
     "✅「已回答」我抽獎時怎麼卡BUG了": 5,
@@ -22,13 +23,13 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
+    "3": 5,
     "13": 2,
     "6": 10,
     "7": 2,
     "8": 10,
     "10": 2,
     "2": 2,
-    "3": 4,
     "15": 4,
     "23": 3,
     "0": 1,
@@ -41,9 +42,7 @@
     "22": 1
   },
   "message_types": {
-    "0": 23,
-    "19": 9,
-    "4": 1
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -59,6 +58,13 @@
       "author": "souri.10244",
       "reactions": 7,
       "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1443438381660110870",
+      "content": "Thank you for your reminder. I have conveyed it to my colleague in charge of the",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "V2.4.0.6 在线维护公告"
     },
     {
       "id": "1443524062922936331",

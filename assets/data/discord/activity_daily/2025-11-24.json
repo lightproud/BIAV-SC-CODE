@@ -1,10 +1,13 @@
 {
   "date": "2025-11-24",
-  "messages": 103,
+  "messages": 110,
   "unique_authors": 35,
-  "reactions_total": 70,
-  "attachments": 42,
+  "reactions_total": 71,
+  "attachments": 44,
   "channel_activity": {
+    "V2.4.0.5 在线维护公告": 3,
+    "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!": 1,
+    "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version": 3,
     "💭「Processing」Time Rewind Bug": 1,
     "✅「已回答」我抽獎時怎麼卡BUG了": 3,
     "✅「Resolved」bug | gmurphy story not unlocking properly": 4,
@@ -45,6 +48,9 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
+    "9": 4,
+    "13": 3,
+    "14": 18,
     "23": 2,
     "2": 4,
     "3": 3,
@@ -62,16 +68,11 @@
     "18": 3,
     "19": 2,
     "11": 2,
-    "13": 2,
-    "14": 15,
     "1": 1,
-    "0": 4,
-    "9": 1
+    "0": 4
   },
   "message_types": {
-    "0": 61,
-    "19": 13,
-    "4": 2
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -150,6 +151,13 @@
       "author": "shunia3055",
       "reactions": 2,
       "channel": "在抽卡界面增加流明之芯不足时自动购买流明的选项"
+    },
+    {
+      "id": "1442525015525294121",
+      "content": "pollux needs at leasr his midgame stat ghrowth re-adjusted if this is the new ba",
+      "author": "thpdom",
+      "reactions": 1,
+      "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
     },
     {
       "id": "1442386642672291911",

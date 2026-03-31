@@ -1,10 +1,11 @@
 {
   "date": "2024-12-20",
-  "messages": 19,
+  "messages": 27,
   "unique_authors": 6,
-  "reactions_total": 13,
-  "attachments": 5,
+  "reactions_total": 31,
+  "attachments": 6,
   "channel_activity": {
+    "官方周邊建議征集": 8,
     "關於我還沒打主線卻莫名得到了三星這回事": 2,
     "Ping很大在马来西亚": 5,
     "请问校猫light": 1,
@@ -14,19 +15,22 @@
     "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1": 1
   },
   "hourly_activity": {
+    "1": 1,
+    "4": 5,
+    "6": 2,
+    "11": 2,
     "0": 1,
     "16": 3,
     "15": 6,
-    "6": 1,
     "19": 1,
     "10": 2,
     "9": 1,
-    "11": 1,
     "14": 2,
     "22": 1
   },
   "message_types": {
-    "0": 12
+    "19": 2,
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -35,6 +39,20 @@
       "author": "flim_of_life_burst",
       "reactions": 11,
       "channel": "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1"
+    },
+    {
+      "id": "1319552492664524831",
+      "content": "真出周边的话考虑下这个吧（伸手）图鲁小雕像可可爱爱",
+      "author": "flarinsidia",
+      "reactions": 10,
+      "channel": "官方周邊建議征集"
+    },
+    {
+      "id": "1319629010824593429",
+      "content": "命輪書籤",
+      "author": "elkmilu",
+      "reactions": 8,
+      "channel": "官方周邊建議征集"
     },
     {
       "id": "1319687598431539327",

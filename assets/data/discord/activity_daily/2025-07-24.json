@@ -1,10 +1,13 @@
 {
   "date": "2025-07-24",
-  "messages": 44,
+  "messages": 57,
   "unique_authors": 7,
-  "reactions_total": 1094,
+  "reactions_total": 1106,
   "attachments": 11,
   "channel_activity": {
+    "V2.3.0.0 停服维护公告": 3,
+    "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\"": 2,
+    "校猫碎碎念#Translation Plan Update 本地化计划变更": 8,
     "✅「Answered」Resetting Helot but ended up resetting Nautilla": 4,
     "💭「Processing」Animations not Loading": 2,
     "✅「Answered」I bought a pack and it’s gone now": 3,
@@ -20,14 +23,15 @@
     "1305430084420898868": 5
   },
   "hourly_activity": {
-    "3": 2,
-    "4": 14,
+    "1": 4,
+    "5": 2,
+    "3": 4,
+    "0": 5,
+    "2": 4,
+    "4": 15,
     "17": 1,
     "6": 3,
     "12": 1,
-    "2": 2,
-    "1": 2,
-    "0": 1,
     "9": 6,
     "10": 1,
     "11": 6,
@@ -36,9 +40,9 @@
     "15": 1
   },
   "message_types": {
-    "0": 13,
-    "19": 2,
-    "4": 7
+    "0": 7,
+    "19": 5,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -91,11 +95,46 @@
       "channel": "杜勒赛因x你 18+"
     },
     {
+      "id": "1397763806838521866",
+      "content": "I think you guys are really incredible, you are doing a lot with such a tiny tea",
+      "author": "junakaru4ever",
+      "reactions": 4,
+      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+    },
+    {
+      "id": "1397743939200749750",
+      "content": "Factual clarification: Most of the first three chapters have already been re-tra",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+    },
+    {
+      "id": "1397807696786493542",
+      "content": "MORIMENS DEV TEAM, GIVE ME MORIMENS MERCHANDISE AND MY LIFE IS YOURS <:pray:1356",
+      "author": "mushiware",
+      "reactions": 2,
+      "channel": "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\""
+    },
+    {
+      "id": "1397793019121635400",
+      "content": "there is a feedback thread here in the discord https://discord.com/channels/1131",
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+    },
+    {
       "id": "1397798182536085545",
       "content": "I don’t have but when I read the warning, it says Helot 😦",
       "author": "bert3",
       "reactions": 2,
       "channel": "✅「Answered」Resetting Helot but ended up resetting Nautilla"
+    },
+    {
+      "id": "1397730177605177375",
+      "content": "Of course, we’ve done our best to use the paid version. AI translation often wor",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
     },
     {
       "id": "1397825207644983407",

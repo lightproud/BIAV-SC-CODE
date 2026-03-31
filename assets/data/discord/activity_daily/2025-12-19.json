@@ -1,10 +1,12 @@
 {
   "date": "2025-12-19",
-  "messages": 79,
+  "messages": 90,
   "unique_authors": 20,
-  "reactions_total": 94,
-  "attachments": 22,
+  "reactions_total": 124,
+  "attachments": 23,
   "channel_activity": {
+    "V2.4.0.12 在线维护公告": 10,
+    "A bit too late for anniversary but this cake is still good :D": 1,
     "Who Ryker's Designer pls come talk ?": 28,
     "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details": 1,
     "💭「Processing」Clarification Requested Regarding": 1,
@@ -29,32 +31,31 @@
     "1451677796085661888": 1
   },
   "hourly_activity": {
+    "9": 6,
+    "13": 7,
+    "15": 6,
+    "16": 8,
+    "17": 2,
+    "2": 5,
     "0": 12,
     "1": 2,
     "4": 5,
     "5": 2,
     "6": 2,
     "8": 4,
-    "9": 3,
-    "15": 3,
-    "2": 4,
     "7": 2,
     "12": 11,
-    "13": 6,
     "22": 4,
     "23": 2,
     "11": 2,
     "14": 3,
-    "16": 7,
     "18": 1,
     "19": 2,
     "21": 1,
     "20": 1
   },
   "message_types": {
-    "19": 12,
-    "0": 44,
-    "4": 1
+    "0": 11
   },
   "top_reacted_messages": [
     {
@@ -63,6 +64,13 @@
       "author": "zzio_",
       "reactions": 30,
       "channel": ""
+    },
+    {
+      "id": "1451505980608348220",
+      "content": "3. Optimization and Problem Fix\n● Fixed the issue where clicking on Wheel of Des",
+      "author": "morimensstaff02",
+      "reactions": 26,
+      "channel": "V2.4.0.12 在线维护公告"
     },
     {
       "id": "1451641492555698239",
@@ -107,6 +115,13 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1451571294159245383",
+      "content": "<@633215996508766229> 一个头像到底凭什么卖268，你把你冯算进去了？😅",
+      "author": "rong486",
+      "reactions": 3,
+      "channel": "V2.4.0.12 在线维护公告"
+    },
+    {
       "id": "1451482161839345780",
       "content": "May I ask what the intention is behind refusing to process a refund despite havi",
       "author": ".prayanne",
@@ -133,6 +148,13 @@
       "author": "flim_of_life_burst",
       "reactions": 2,
       "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1451596037146935550",
+      "content": "<@633215996508766229> 我是厨子也不是给你这样薅钱的吧？一个头像268块一个表情68块？（这还没算汇率）然后再给点时尚小垃圾？你自己想想这合",
+      "author": "_kokawa_",
+      "reactions": 1,
+      "channel": "V2.4.0.12 在线维护公告"
     },
     {
       "id": "1451704886075855069",
@@ -173,13 +195,6 @@
       "id": "1451591998422122538",
       "content": "写的好棒，是冬夜热可可的温度！<:Sendflowers:1400771545370067118>",
       "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1451688829026172928",
-      "content": "op i love you this is so good T_TTTTTTTT",
-      "author": "exhibitionism",
       "reactions": 1,
       "channel": ""
     }

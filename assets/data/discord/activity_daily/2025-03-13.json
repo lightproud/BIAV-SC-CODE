@@ -1,10 +1,14 @@
 {
   "date": "2025-03-13",
-  "messages": 55,
+  "messages": 65,
   "unique_authors": 12,
-  "reactions_total": 3,
-  "attachments": 7,
+  "reactions_total": 13,
+  "attachments": 13,
   "channel_activity": {
+    "🔥可正常使用！【翻译器】介绍及使用教程！Channel 【Translator function】introduction and usage tutorial！": 1,
+    "V2.1.1.2 在線維護公告": 1,
+    "游戏美术资源上的文字": 1,
+    "《忘卻前夜》OST：阿格里帕EP·坎布里安的晨曦": 7,
     "✅「Answered」PC steam version help": 3,
     "✅「Answered」Million loving gaze description": 2,
     "相位对弈中故意拖延时间的有什么办法么": 24,
@@ -17,27 +21,40 @@
     "墨菲豬，羊喵和拉蒙拿豬": 1
   },
   "hourly_activity": {
+    "6": 8,
+    "10": 1,
+    "7": 5,
+    "8": 4,
     "2": 8,
     "3": 8,
     "15": 6,
     "0": 4,
-    "7": 1,
     "9": 6,
     "13": 3,
     "16": 3,
     "4": 6,
     "5": 2,
-    "6": 6,
-    "8": 1,
     "12": 1
   },
   "message_types": {
-    "0": 23,
-    "4": 4,
-    "19": 21,
-    "46": 1
+    "19": 1,
+    "0": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1349652563418415104",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：阿格里帕EP·坎布里安的晨曦，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "《忘卻前夜》OST：阿格里帕EP·坎布里安的晨曦"
+    },
+    {
+      "id": "1349653506725773332",
+      "content": "<:rose1:1234798154000633949> 以上就是本次OST的全部曲目啦~\nThe above are all the tracks of th",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "《忘卻前夜》OST：阿格里帕EP·坎布里安的晨曦"
+    },
     {
       "id": "1349763771232550932",
       "content": "The text is overlapping",

@@ -1,10 +1,14 @@
 {
   "date": "2025-09-19",
-  "messages": 82,
-  "unique_authors": 7,
-  "reactions_total": 45,
-  "attachments": 7,
+  "messages": 109,
+  "unique_authors": 8,
+  "reactions_total": 77,
+  "attachments": 30,
   "channel_activity": {
+    "Call for Community Volunteer Translators: Applications Open!": 1,
+    "V2.3.2.4 在线维护公告": 1,
+    "[皮克曼考据]就用这颤抖的双手去描绘吧": 11,
+    "忘却前夜OST：奥尔拉EP·献给春天的花束": 14,
     "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 6,
     "✅「Answered」Will there be any new systems or new in-game creations introduced in the future?": 2,
     "✅「Answered」We need steamOS compatibility": 3,
@@ -19,26 +23,40 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "4": 2,
+    "13": 1,
+    "3": 11,
+    "5": 2,
+    "8": 15,
     "2": 4,
     "6": 38,
     "11": 3,
     "18": 7,
     "17": 8,
-    "3": 2,
     "19": 1,
     "14": 1,
     "23": 1,
     "7": 14,
-    "8": 1,
-    "5": 1,
     "10": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 4,
-    "4": 2
+    "0": 27
   },
   "top_reacted_messages": [
+    {
+      "id": "1418510528275546203",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：奥尔拉EP·献给春天的花束 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵",
+      "author": "morimensstaff01",
+      "reactions": 16,
+      "channel": "忘却前夜OST：奥尔拉EP·献给春天的花束"
+    },
+    {
+      "id": "1418431862858186813",
+      "content": "如题，大薅特薅\n\n———观前须知———\n>是基于皮克曼意识潜游及个人故事/语音等资料所做的人物考据，请在至少阅读过皮克曼意识潜游后食用以保证顺畅体验\n>不预先假",
+      "author": "flarinsidia",
+      "reactions": 12,
+      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
+    },
     {
       "id": "1418486868886159381",
       "content": "先警告，ooc警告。因为我觉得皮克曼没什么性知识，纯属造谣\n是发短信的那段剧情，不知道的就大概讲一下：皮克曼带着珊去偷杜勒赛因的食材。\n我写成搞笑文的感觉\n前戏",
@@ -94,6 +112,34 @@
       "author": "yingmai_",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1418444392779350118",
+      "content": "<:please:1356053110375714817>",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
+    },
+    {
+      "id": "1418460868898979910",
+      "content": "<:pray:1400771650064089112>",
+      "author": "be_queitplease",
+      "reactions": 1,
+      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
+    },
+    {
+      "id": "1418473184323174401",
+      "content": "<:pray:1400771650064089112>",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "[皮克曼考据]就用这颤抖的双手去描绘吧"
+    },
+    {
+      "id": "1418512101449924699",
+      "content": "**10.最后的诗篇-The Last Verse-**\n\n每写下一段诗句，便会长出一片花瓣吧，她想。\n她用生命浇灌字句，当最后的诗篇完成，她们便能回到曾经的花",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "忘却前夜OST：奥尔拉EP·献给春天的花束"
     },
     {
       "id": "1418433040908025856",

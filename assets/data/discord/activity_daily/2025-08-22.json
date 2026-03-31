@@ -1,10 +1,11 @@
 {
   "date": "2025-08-22",
-  "messages": 46,
-  "unique_authors": 17,
-  "reactions_total": 32,
-  "attachments": 11,
+  "messages": 129,
+  "unique_authors": 71,
+  "reactions_total": 113,
+  "attachments": 12,
   "channel_activity": {
+    "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们": 83,
     "💭「处理中」星辰困难第一章1-6事件bug": 2,
     "✅「Answered」Awakeners \"on duty\" when reorganizing assignments": 2,
     "✅「Answered」Suggestion: Please allow us to toggle Enlightens!": 3,
@@ -18,6 +19,12 @@
     "彌撒格最般配的男同性戀2.0": 2
   },
   "hourly_activity": {
+    "16": 68,
+    "17": 9,
+    "18": 1,
+    "19": 3,
+    "22": 3,
+    "23": 2,
     "2": 12,
     "20": 1,
     "21": 2,
@@ -31,14 +38,11 @@
     "4": 2,
     "6": 1,
     "13": 1,
-    "16": 1,
-    "17": 1,
-    "23": 1,
     "14": 2
   },
   "message_types": {
-    "0": 22,
-    "4": 4
+    "0": 78,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -49,6 +53,20 @@
       "channel": "✅「Answered」Suggestion: Please allow us to toggle Enlightens!"
     },
     {
+      "id": "1408487065141907506",
+      "content": "I think this news deserve a gift code...",
+      "author": "ppmkii",
+      "reactions": 14,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484133922930800",
+      "content": "Hopefully the game'll last for longer, anyways where's our three hundred luminou",
+      "author": "solxeko",
+      "reactions": 11,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
       "id": "1408458276898734161",
       "content": "私人約稿禁一切\n我們鯊凱真是天操地射的一對啊",
       "author": "calmdreab",
@@ -56,39 +74,116 @@
       "channel": "彌撒格最般配的男同性戀2.0"
     },
     {
-      "id": "1408283593393963059",
-      "content": "I played in steam client with windowed mode if that's related",
-      "author": "hskzu",
-      "reactions": 1,
-      "channel": "✅「Answered」Posse visual glitch"
+      "id": "1408485553522999417",
+      "content": "Need some billionaire to support morimens.\nAny Billionaire around here ?",
+      "author": "sexysneakystoat1625",
+      "reactions": 7,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
     },
     {
-      "id": "1408393812677623948",
-      "content": "<:pray:1356053116260454534> thanks for the effort",
-      "author": "hskzu",
-      "reactions": 1,
-      "channel": "✅「Answered」Posse visual glitch"
+      "id": "1408534369660047422",
+      "content": "文案产能这块呢\n凯蒂的文案拉成什么样了，错别字，诡异自造词，吃书\n半周年海国剧情之后说好的文案反思呢",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
     },
     {
-      "id": "1408434437049417910",
-      "content": "This is a series of text errors and missing updates that needs to be done (In th",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "💭「Processing」Missing updated text and errors"
+      "id": "1408484996540403823",
+      "content": "I have fallen in love with this game and it's world, this makes me insanely happ",
+      "author": "neyuse",
+      "reactions": 6,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
     },
     {
-      "id": "1408370716860223549",
+      "id": "1408487949640794123",
       "content": "",
-      "author": "__goz__",
-      "reactions": 1,
-      "channel": "✅「Answered」Search tutorials"
+      "author": "void_1546.",
+      "reactions": 5,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
     },
     {
-      "id": "1408316758611464312",
-      "content": "医生不如直接上普娜",
-      "author": "ioshift_24740",
+      "id": "1408484082026938449",
+      "content": "please keep cooking",
+      "author": "starfish3302",
+      "reactions": 3,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484276852359279",
+      "content": "Continuation of service announcement <:STONKS:703686480555409500>",
+      "author": "naviking",
+      "reactions": 3,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484651151921323",
+      "content": "please buff Death Resistance again 🥹",
+      "author": "skyfallterminus",
+      "reactions": 3,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484890818773062",
+      "content": "https://tenor.com/view/absolute-cinema-ultrakill-v1-gif-13645334871069381593",
+      "author": "disgustedingucci",
+      "reactions": 3,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408492297196273804",
+      "content": "make Dexter playable and you will get more funds <:point:1356053112292511815>",
+      "author": "theborkerr",
+      "reactions": 3,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484118790012969",
+      "content": "Thank you mr kitty kat",
+      "author": "whirli_bri",
+      "reactions": 2,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484136766930974",
+      "content": "THE CAT DID IT AGAIN, THEY SAVED MYTHAG",
+      "author": "null.pointer_exception",
+      "reactions": 2,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484492288720926",
+      "content": "每一次觸發死亡抵抗，笑死\n你說的是對面觸發抵抗吧\n我們在星辰篇的死抗都被弄沒了",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408485338338426941",
+      "content": "~~我真的很需要限定回溯把杜勒回了~~",
+      "author": "ahong0727",
+      "reactions": 2,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484283710177290",
+      "content": "thank you for the hard work <a:glorpcheer:1323429771711090688>",
+      "author": "meatyexplosions",
       "reactions": 1,
-      "channel": "相位對弈—凱蒂古拉OTK隊"
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484374634168320",
+      "content": "❤️",
+      "author": "_pdt",
+      "reactions": 1,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408484746358427719",
+      "content": "省流 來新員工了",
+      "author": "undecember_news",
+      "reactions": 1,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
     }
   ]
 }

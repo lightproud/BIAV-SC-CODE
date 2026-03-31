@@ -1,10 +1,12 @@
 {
   "date": "2026-01-14",
-  "messages": 68,
+  "messages": 73,
   "unique_authors": 10,
-  "reactions_total": 52,
-  "attachments": 16,
+  "reactions_total": 107,
+  "attachments": 18,
   "channel_activity": {
+    "[Art Dump Thread] WILLIAMPOSTING 2": 1,
+    "KING'S VANITY (Bright color!!!!) || Doresain & Sylvester": 4,
     "Who Ryker's Designer pls come talk ?": 1,
     "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 1,
     "💭「Processing」Can't see the new intro scene on Steam": 1,
@@ -24,32 +26,45 @@
     "1445556242381672559": 7
   },
   "hourly_activity": {
-    "5": 5,
+    "23": 6,
+    "5": 7,
+    "11": 6,
     "2": 26,
-    "23": 5,
     "20": 4,
     "10": 2,
     "7": 5,
     "8": 5,
     "6": 4,
     "9": 2,
-    "11": 4,
     "15": 1,
     "3": 3,
     "4": 2
   },
   "message_types": {
-    "0": 28,
-    "19": 4,
-    "4": 4
+    "0": 4,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1460869113525043230",
+      "content": "There's not enough food... I can't write so I will draw.. <:A_pinch:143298053853",
+      "author": "that_one_chippy",
+      "reactions": 36,
+      "channel": "KING'S VANITY (Bright color!!!!) || Doresain & Sylvester"
+    },
     {
       "id": "1460844658048499818",
       "content": "",
       "author": "zzio_",
       "reactions": 26,
       "channel": ""
+    },
+    {
+      "id": "1461142543713435734",
+      "content": "Some updates",
+      "author": "exhibitionism",
+      "reactions": 19,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
       "id": "1460882071185788978",

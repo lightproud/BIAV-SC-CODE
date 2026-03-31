@@ -1,10 +1,15 @@
 {
   "date": "2025-04-29",
-  "messages": 52,
+  "messages": 71,
   "unique_authors": 16,
-  "reactions_total": 58,
-  "attachments": 15,
+  "reactions_total": 120,
+  "attachments": 29,
   "channel_activity": {
+    "V2.2.1.2 在線維護公告": 2,
+    "English Localization Fixes & What's Next": 3,
+    "忘卻前夜OST：迷幻蟲巢之夢": 12,
+    "忘卻前夜OSTⅡ：傳承求索之途": 1,
+    "寧菲亞立繪": 1,
     "✅「Answered」Tawil card \" Master of all thing\" bug": 6,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 3,
     "✅「Answered」Sanga misnamed as corposant": 3,
@@ -21,17 +26,18 @@
     "1350059696945500171": 13
   },
   "hourly_activity": {
+    "12": 5,
+    "8": 14,
+    "6": 4,
     "2": 8,
     "3": 2,
     "7": 5,
     "5": 2,
-    "6": 3,
     "16": 5,
     "15": 3,
     "17": 1,
     "18": 3,
     "23": 2,
-    "8": 1,
     "9": 1,
     "0": 1,
     "1": 1,
@@ -39,8 +45,7 @@
     "22": 13
   },
   "message_types": {
-    "0": 31,
-    "4": 3,
+    "0": 18,
     "19": 1
   },
   "top_reacted_messages": [
@@ -52,11 +57,53 @@
       "channel": "《金絲籠外》汀克特"
     },
     {
+      "id": "1366749080042209330",
+      "content": "Greetings, Keepers! \nWe have seen your latest feedback on English localization, ",
+      "author": "morimensstaff02",
+      "reactions": 17,
+      "channel": "English Localization Fixes & What's Next"
+    },
+    {
+      "id": "1366749169829806140",
+      "content": "● Fixed \"Recommended\" button displaying as \"HOT\" (same tool issue).\n● We are cur",
+      "author": "morimensstaff02",
+      "reactions": 12,
+      "channel": "English Localization Fixes & What's Next"
+    },
+    {
+      "id": "1366749182538547220",
+      "content": "**[To Our Volunteer Proofreaders:]**\nA huge thank you to everyone who volunteere",
+      "author": "morimensstaff02",
+      "reactions": 11,
+      "channel": "English Localization Fixes & What's Next"
+    },
+    {
+      "id": "1366690241443790921",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：迷幻蟲巢之夢，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請遵照同人規",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "忘卻前夜OST：迷幻蟲巢之夢"
+    },
+    {
+      "id": "1366691367270613054",
+      "content": "<:slick:1356053160531198064> 以上就是本次OST的全部曲目囉~\nThe above are all the tracks of th",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "忘卻前夜OST：迷幻蟲巢之夢"
+    },
+    {
       "id": "1366723303829536899",
       "content": "想了解《忘卻前夜》背後的克蘇魯神話設定嗎？這位巴哈大神的考據太猛了，推爆🔥\nhttps://forum.gamer.com.tw/C.php?bsn=78829",
       "author": "taoi002",
       "reactions": 5,
       "channel": "從克蘇魯神話視角解讀《忘卻前夜》：角色與設定的神話源流分析"
+    },
+    {
+      "id": "1366692153388044308",
+      "content": "你好~這裡請收",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "忘卻前夜OSTⅡ：傳承求索之途"
     },
     {
       "id": "1366811241858994176",
@@ -71,6 +118,13 @@
       "author": "glacy_9918",
       "reactions": 4,
       "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
+    },
+    {
+      "id": "1366691268297625610",
+      "content": "**09.集群意志-Hive Will-**\n\n你與之戰鬥的，是無數個同心同體的靈魂。他們抗拒你、他們邀請你，放下無謂的自我吧，讓你無知的大腦，一同加入永不孤獨",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "忘卻前夜OST：迷幻蟲巢之夢"
     },
     {
       "id": "1366668673439367168",

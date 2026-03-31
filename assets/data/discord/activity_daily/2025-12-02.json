@@ -1,10 +1,14 @@
 {
   "date": "2025-12-02",
-  "messages": 111,
+  "messages": 149,
   "unique_authors": 31,
-  "reactions_total": 142,
-  "attachments": 30,
+  "reactions_total": 188,
+  "attachments": 32,
   "channel_activity": {
+    "V2.4.0.9 在线维护公告": 34,
+    "V2.4.0.7 停服维护公告": 1,
+    "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 1,
+    "Mini-rimens": 2,
     "✅「已回答」繁中PC端黑屏": 1,
     "关于【献祭】的bug修复": 5,
     "💭「Processing」Raid stuck after clearing fight seemingly only on certain parties?": 3,
@@ -40,33 +44,32 @@
     "1441326394817908736": 7
   },
   "hourly_activity": {
+    "9": 4,
+    "10": 7,
+    "11": 4,
+    "12": 27,
+    "13": 8,
+    "14": 15,
+    "15": 7,
+    "16": 3,
+    "5": 4,
     "7": 9,
     "2": 11,
     "6": 8,
-    "12": 15,
     "3": 4,
     "4": 15,
-    "5": 3,
     "20": 2,
     "22": 3,
-    "13": 3,
     "8": 6,
-    "14": 10,
-    "15": 4,
     "17": 2,
-    "16": 1,
     "18": 1,
-    "9": 2,
     "0": 3,
     "1": 5,
-    "19": 1,
-    "10": 1,
-    "11": 2
+    "19": 1
   },
   "message_types": {
-    "19": 15,
-    "0": 57,
-    "4": 7
+    "0": 31,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -84,6 +87,13 @@
       "channel": ""
     },
     {
+      "id": "1445439603174539385",
+      "content": "Murphy",
+      "author": "calcduc",
+      "reactions": 18,
+      "channel": "Mini-rimens"
+    },
+    {
       "id": "1445494642249433212",
       "content": "畫了醫生",
       "author": "souri.10244",
@@ -98,11 +108,25 @@
       "channel": ""
     },
     {
+      "id": "1445343477440319488",
+      "content": "守密人你好：\n       弥萨格大学校务处将于12月2日17:20(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带",
+      "author": "morimensstaff02",
+      "reactions": 10,
+      "channel": "V2.4.0.9 在线维护公告"
+    },
+    {
       "id": "1445428856642342942",
       "content": "讓我想起某張圖",
       "author": "tsubaki9884",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1445401355081482311",
+      "content": "我新入坑的，想问下全服限时限次的意义是什么？每个人固定次数、活动期间内限时，众生平等不就好了？这两天打的上头还跟朋友推呢，结果上来整这一出啊👍",
+      "author": "xiaohuo1554",
+      "reactions": 6,
+      "channel": "V2.4.0.9 在线维护公告"
     },
     {
       "id": "1445429741179113662",
@@ -117,6 +141,13 @@
       "author": "ass191044",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1445360968946290768",
+      "content": "Why not just increase the entries limit to 150k and remove single use units + wh",
+      "author": "moyashi0672",
+      "reactions": 4,
+      "channel": "V2.4.0.9 在线维护公告"
     },
     {
       "id": "1445547666820829318",
@@ -147,6 +178,20 @@
       "channel": "Automatic movement or drag/trace to move"
     },
     {
+      "id": "1445442607961477260",
+      "content": "if there is already the limit of 17 times per day, at most, why also establish t",
+      "author": "reynard_fuchs",
+      "reactions": 3,
+      "channel": "V2.4.0.9 在线维护公告"
+    },
+    {
+      "id": "1445454537472348243",
+      "content": "One of the worst events is back. I don't know why they can't get it right on the",
+      "author": "prower___",
+      "reactions": 3,
+      "channel": "V2.4.0.9 在线维护公告"
+    },
+    {
       "id": "1445219292927754290",
       "content": "I was expecting to try the already overly restricted event that favors old playe",
       "author": "iwthahe",
@@ -166,48 +211,6 @@
       "author": "ernest_heart",
       "reactions": 2,
       "channel": ""
-    },
-    {
-      "id": "1445317469802729566",
-      "content": "沒錯，繁中版就是TW官網的PC包。\n而重新安裝問題上，第一次是覆蓋、有正常啟動，但第二天就黑屏了。\n而之後的重裝有確實刪除原資料夾後再重裝，但依然是黑屏。",
-      "author": "o5214658",
-      "reactions": 1,
-      "channel": "✅「已回答」繁中PC端黑屏"
-    },
-    {
-      "id": "1445294599630225499",
-      "content": "是的，但是我认为本质没什么区别吧，重点现在官方打算五十银芯草草了事这怎么能接受呢",
-      "author": "2300011747",
-      "reactions": 1,
-      "channel": "关于【献祭】的bug修复"
-    },
-    {
-      "id": "1445386794865786894",
-      "content": "真搞不明白多为玩家着想一点会怎么样",
-      "author": "2300011747",
-      "reactions": 1,
-      "channel": "关于【献祭】的bug修复"
-    },
-    {
-      "id": "1445398741862318225",
-      "content": "Can start to see it around 22 seconds in to the video",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "✅「Answered」Auto-scroll fixes not in effect"
-    },
-    {
-      "id": "1445412244103106560",
-      "content": "Another thing that happen about everywhere is the story, look from 25 second in ",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "✅「Answered」Auto-scroll fixes not in effect"
-    },
-    {
-      "id": "1445321675787862137",
-      "content": "Any stage with free trial story support (like Sorel side-story or in Thais story",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」Support Visual Bug"
     }
   ]
 }

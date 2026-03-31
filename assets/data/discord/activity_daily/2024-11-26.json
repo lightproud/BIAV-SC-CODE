@@ -1,10 +1,11 @@
 {
   "date": "2024-11-26",
-  "messages": 43,
+  "messages": 50,
   "unique_authors": 19,
-  "reactions_total": 58,
-  "attachments": 13,
+  "reactions_total": 59,
+  "attachments": 16,
   "channel_activity": {
+    "V1.7.1.3 在線維護公告": 7,
     "30号到底还有没有周年庆活": 1,
     "希望加強一下艾爾瓦": 22,
     "連續抽到一樣的造物": 2,
@@ -17,6 +18,10 @@
     "約稿展示 請大家吃飯": 1
   },
   "hourly_activity": {
+    "20": 1,
+    "21": 1,
+    "22": 5,
+    "23": 1,
     "14": 1,
     "9": 10,
     "10": 6,
@@ -24,7 +29,6 @@
     "13": 5,
     "18": 1,
     "19": 1,
-    "22": 1,
     "8": 1,
     "15": 2,
     "16": 1,
@@ -34,8 +38,8 @@
     "6": 1
   },
   "message_types": {
-    "0": 29,
-    "19": 5
+    "0": 5,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -107,6 +111,13 @@
       "author": "menoctus",
       "reactions": 2,
       "channel": "關卡地圖「融災禁區」總覽22期"
+    },
+    {
+      "id": "1311101535257759815",
+      "content": "Press this ,and then pull down",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "V1.7.1.3 在線維護公告"
     },
     {
       "id": "1310906343972147280",

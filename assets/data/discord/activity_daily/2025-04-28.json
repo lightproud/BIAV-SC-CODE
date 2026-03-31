@@ -1,10 +1,13 @@
 {
   "date": "2025-04-28",
-  "messages": 67,
+  "messages": 81,
   "unique_authors": 20,
-  "reactions_total": 92,
-  "attachments": 12,
+  "reactions_total": 95,
+  "attachments": 15,
   "channel_activity": {
+    "V2.2.1.0 停服維護公告": 5,
+    "V2.2.1.1 在線維護公告": 7,
+    "✅校猫碎碎念#近况分享": 2,
     "✅「Answered」Error on game launch": 2,
     "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event": 2,
     "✅「Answered」Translation problem": 2,
@@ -21,9 +24,13 @@
     "OOC鯊守(?) 不是幼兒園的車，小心謹慎注意上車": 5
   },
   "hourly_activity": {
+    "8": 5,
+    "14": 2,
+    "15": 2,
+    "12": 6,
+    "13": 5,
+    "21": 2,
     "6": 12,
-    "8": 4,
-    "13": 2,
     "20": 2,
     "22": 1,
     "23": 1,
@@ -31,7 +38,6 @@
     "18": 2,
     "7": 3,
     "10": 3,
-    "12": 2,
     "9": 8,
     "3": 3,
     "4": 7,
@@ -40,9 +46,8 @@
     "5": 1
   },
   "message_types": {
-    "0": 42,
-    "4": 4,
-    "19": 6
+    "0": 13,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -86,6 +91,13 @@
       "author": "fengliyaowo",
       "reactions": 5,
       "channel": "OOC鯊守(?) 不是幼兒園的車，小心謹慎注意上車"
+    },
+    {
+      "id": "1366391258733477898",
+      "content": "守密人你好：\n       彌薩格大學校務處將於4月28日 21:15 進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我",
+      "author": "morimensstaff02",
+      "reactions": 3,
+      "channel": "V2.2.1.1 在線維護公告"
     },
     {
       "id": "1366300814120980481",

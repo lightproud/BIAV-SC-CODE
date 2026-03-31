@@ -1,15 +1,19 @@
 {
   "date": "2025-04-19",
-  "messages": 17,
+  "messages": 19,
   "unique_authors": 6,
   "reactions_total": 13,
   "attachments": 1,
   "channel_activity": {
+    "忘卻前夜OST：深港幽靈之船": 1,
+    "✅校猫碎碎念#近况分享": 1,
     "新版本御四家0成本开荒教学": 3,
     "一个小故事（但不好看）": 5,
     "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑": 9
   },
   "hourly_activity": {
+    "3": 1,
+    "11": 1,
     "6": 5,
     "13": 8,
     "1": 1,
@@ -17,8 +21,7 @@
     "12": 2
   },
   "message_types": {
-    "0": 15,
-    "4": 2
+    "0": 2
   },
   "top_reacted_messages": [
     {

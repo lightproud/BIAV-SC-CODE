@@ -1,10 +1,11 @@
 {
   "date": "2025-06-13",
-  "messages": 14,
+  "messages": 16,
   "unique_authors": 6,
-  "reactions_total": 16,
+  "reactions_total": 17,
   "attachments": 1,
   "channel_activity": {
+    "忘卻前夜OST：卡斯托爾EP·於暴風中": 2,
     "✅「已回答」熔朵的超限爆發 有時語音會沒聲音": 2,
     "應該要加強某些角色吧": 1,
     "✅「已回答」魔女寬簷帽": 1,
@@ -15,7 +16,8 @@
     "我们5771正在进军小说界": 4
   },
   "hourly_activity": {
-    "14": 2,
+    "2": 1,
+    "14": 3,
     "4": 1,
     "18": 2,
     "16": 1,
@@ -25,7 +27,7 @@
     "13": 4
   },
   "message_types": {
-    "0": 6
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -41,6 +43,13 @@
       "author": "mrs.doodoo",
       "reactions": 3,
       "channel": "In game death animation"
+    },
+    {
+      "id": "1383088175748087808",
+      "content": "ok! 我已到那個頻道發文",
+      "author": "insomnia07763",
+      "reactions": 1,
+      "channel": "忘卻前夜OST：卡斯托爾EP·於暴風中"
     }
   ]
 }

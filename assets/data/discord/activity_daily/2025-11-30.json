@@ -1,10 +1,11 @@
 {
   "date": "2025-11-30",
-  "messages": 114,
+  "messages": 204,
   "unique_authors": 34,
-  "reactions_total": 276,
-  "attachments": 35,
+  "reactions_total": 410,
+  "attachments": 38,
   "channel_activity": {
+    "V2.4.0.7 停服维护公告": 90,
     "💭「Processing」Morimens freeze when I log in": 2,
     "💭「Processing」PLEASE remove the auto-scroll.": 4,
     "✅「Answered」How to get a \"Formless One's Invitation\" ticket?": 1,
@@ -34,31 +35,31 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "11": 3,
-    "12": 1,
+    "7": 67,
+    "8": 11,
+    "9": 7,
+    "10": 6,
+    "11": 6,
+    "12": 9,
+    "13": 6,
+    "14": 19,
+    "15": 5,
+    "16": 3,
     "6": 31,
-    "9": 6,
     "17": 2,
     "3": 2,
     "5": 6,
-    "8": 4,
     "23": 3,
-    "13": 5,
     "0": 6,
-    "10": 4,
     "20": 4,
     "4": 3,
-    "7": 7,
     "2": 5,
     "1": 2,
-    "15": 4,
-    "14": 15,
     "22": 1
   },
   "message_types": {
-    "0": 56,
-    "4": 1,
-    "19": 21
+    "0": 80,
+    "19": 10
   },
   "top_reacted_messages": [
     {
@@ -67,6 +68,13 @@
       "author": "game.producer.light",
       "reactions": 128,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1444603691406721055",
+      "content": "卡池开了一个多星期了，用了这么久突然来说有BUG，什么补偿措施都没有，花钱抽卡的人是冤大头吗？原本看周年福利发的多，新人入坑玩一下，结果才几天，先是弄一个活动要",
+      "author": "chuzhibai.",
+      "reactions": 39,
+      "channel": "V2.4.0.7 停服维护公告"
     },
     {
       "id": "1444707613433401546",
@@ -90,6 +98,13 @@
       "channel": "⟨提燈雙子 - 破曉⟩"
     },
     {
+      "id": "1444632081752657980",
+      "content": "● 修复了玩家恶意氪金抽取诞墨的bug\n● 修复了玩家蓄意游玩忘却前夜困难主线的bug",
+      "author": "kpkp784755247",
+      "reactions": 11,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
       "id": "1444781775221162206",
       "content": "繁衍狂熱微捏造",
       "author": "souri.10244",
@@ -104,11 +119,46 @@
       "channel": "自製喚醒體：異度·索瓦爾格"
     },
     {
+      "id": "1444672476633108602",
+      "content": "没过几天星辰来",
+      "author": "carme.0588",
+      "reactions": 9,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1444683031888789679",
+      "content": "游戏就是毁在了校猫的手里",
+      "author": "1234789aa",
+      "reactions": 9,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1444656766922260661",
+      "content": "繼續搞這種操作 能不能撐到三周年還不好說",
+      "author": "quackdayo",
+      "reactions": 8,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1444702821248274532",
+      "content": "修复了玩家太多的bug🤣",
+      "author": "phenomena_298",
+      "reactions": 8,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
       "id": "1444506008704516107",
       "content": "",
       "author": "timee_ky",
       "reactions": 8,
       "channel": "纯血神国..."
+    },
+    {
+      "id": "1444645627144175747",
+      "content": "卖完角色就削吗？有点意思",
+      "author": "jiushijiuxingjiang",
+      "reactions": 7,
+      "channel": "V2.4.0.7 停服维护公告"
     },
     {
       "id": "1444479726969163906",
@@ -125,81 +175,32 @@
       "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
     },
     {
+      "id": "1444589994525065307",
+      "content": "赶紧去吃屎证明自己的实力",
+      "author": "junakaru4ever",
+      "reactions": 6,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1444663331632844830",
+      "content": "666又要请离开了吗，想你了大福袋",
+      "author": "banli42",
+      "reactions": 6,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1444670065474535515",
+      "content": "这里<:pray:1356053116260454534>",
+      "author": "sweet_25367",
+      "reactions": 5,
+      "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
       "id": "1444516872010731602",
       "content": "静海盾可达",
       "author": "timee_ky",
       "reactions": 5,
       "channel": "纯血神国..."
-    },
-    {
-      "id": "1444714514112319559",
-      "content": "勞斯\n我們圖魯廚需要您的幫助😭 😭 😭",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "图鲁"
-    },
-    {
-      "id": "1444619519262720144",
-      "content": "活动关两关打下来常常是40多张牌，尬住",
-      "author": "shunia3055",
-      "reactions": 3,
-      "channel": "每日試訓的「打出50張牌」"
-    },
-    {
-      "id": "1444478951715115079",
-      "content": "是主線劇情關裡手持重生卡永遠打不死的詹金啊（",
-      "author": "amstelredam",
-      "reactions": 2,
-      "channel": "✅「Answered」Jenkins shows up 2 times in friends list filter"
-    },
-    {
-      "id": "1444565712822603807",
-      "content": "🤷‍♀️ i mean sure it is a perfect event for an unmarried 30 year old man living i",
-      "author": "frowningquokka",
-      "reactions": 2,
-      "channel": "Raids suck"
-    },
-    {
-      "id": "1444517546144567467",
-      "content": "Scroll wheel does not full capture all text.",
-      "author": "darlingkafka",
-      "reactions": 2,
-      "channel": "✅「Answered」Unable to read full message in Saved Mails"
-    },
-    {
-      "id": "1444712558136266895",
-      "content": "補充：相位對弈語音\n\n**開場**      輕率的遊戲……姑且陪你們玩玩吧。\n**思考**      要怎樣撕碎他們？\n**催促**      太慢了。實在是",
-      "author": "flim_of_life_burst",
-      "reactions": 2,
-      "channel": "自製喚醒體：異度·索瓦爾格"
-    },
-    {
-      "id": "1444620517620322494",
-      "content": "I believe Jenkins have 2 sprites, one human and one as Awakener, with Rat 🐭 ears",
-      "author": "doomsser",
-      "reactions": 1,
-      "channel": "💭「Processing」(probably) wrong Jenkins sprites?"
-    },
-    {
-      "id": "1444684846730575895",
-      "content": "Don't do them is certainly an option, but there are ways they could make it bett",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "Raids suck"
-    },
-    {
-      "id": "1444575372682461204",
-      "content": "其实一周年的时候就看到你游了，但是被steam差评劝退（现在该我去打差评了）",
-      "author": "luozijie_45939",
-      "reactions": 1,
-      "channel": "打柱子活动能不能离开"
-    },
-    {
-      "id": "1444593095189463134",
-      "content": "这游戏是抖m玩的",
-      "author": "danwangmofei",
-      "reactions": 1,
-      "channel": "打柱子活动能不能离开"
     }
   ]
 }

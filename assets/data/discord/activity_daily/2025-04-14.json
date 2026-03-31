@@ -1,10 +1,14 @@
 {
   "date": "2025-04-14",
-  "messages": 111,
+  "messages": 136,
   "unique_authors": 19,
-  "reactions_total": 28,
-  "attachments": 23,
+  "reactions_total": 39,
+  "attachments": 32,
   "channel_activity": {
+    "V2.2.0.3 在線維護公告": 4,
+    "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 8,
+    "【結束|Finish】🌟獎勵加碼🌟彌薩格大學『毀損灰霧之都』攻略活動開啟！限定頭像框、無門檻參與獎應有盡有！": 7,
+    "忘卻前夜OST：艾瑞卡EP·機械之心": 6,
     "✅「已回答」如图所示,怨恨锁链生效不正常": 18,
     "✅「Answered」Audio stops when leaving game window": 7,
     "✅「Answered」Origin of Time Rewind/Reversion Bug?": 2,
@@ -31,25 +35,25 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "14": 3,
+    "15": 8,
+    "8": 32,
+    "10": 15,
+    "16": 3,
     "4": 8,
     "6": 9,
-    "8": 22,
-    "15": 6,
     "3": 6,
     "22": 5,
     "2": 7,
     "11": 5,
     "9": 3,
-    "10": 7,
     "7": 10,
     "12": 15,
-    "5": 7,
-    "14": 1
+    "5": 7
   },
   "message_types": {
-    "0": 67,
-    "4": 19,
-    "19": 14
+    "0": 23,
+    "6": 2
   },
   "top_reacted_messages": [
     {
@@ -60,11 +64,25 @@
       "channel": "✅「已回答」克莱门汀打克莱门汀不出血"
     },
     {
+      "id": "1361260947083235470",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：艾瑞卡EP·機械之心，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請遵",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "忘卻前夜OST：艾瑞卡EP·機械之心"
+    },
+    {
       "id": "1361249765882331258",
       "content": "2-2和2-14的事件一模一样，这不太对",
       "author": "silverstream_s",
       "reactions": 3,
       "channel": "✅「已回答」星辰篇2章克莱门汀事件重复"
+    },
+    {
+      "id": "1361290513843490906",
+      "content": "已经没有东西可以拿出来||炒冷饭||展示给大家看了……\n看来只能拿出那个||新建文件夹之界域主线、新建文件夹之特遣纪录、新建文件夹之繁衍狂热、新建文件夹之立绘命",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！"
     },
     {
       "id": "1361311464400355611",
@@ -100,6 +118,34 @@
       "author": "silverstream_s",
       "reactions": 2,
       "channel": "✦关卡地图「融灾禁区」总览32期·星辰篇✦"
+    },
+    {
+      "id": "1361283953885052988",
+      "content": "嗨大家好，V2.1【毀損灰霧之都】二創征集獲獎名單公佈！\n感謝大家的精彩創作🎉 獎勵將在本週內發給大家~\n\nHi everyone, the list of w",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！"
+    },
+    {
+      "id": "1361283617090965685",
+      "content": "嗨大家好，V2.1【毀損灰霧之都】攻略征集獲獎名單公佈！\n感謝大家的精彩創作👏 獎勵將在本週內發給大家~\n\nHi everyone, the list of w",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "【結束|Finish】🌟獎勵加碼🌟彌薩格大學『毀損灰霧之都』攻略活動開啟！限定頭像框、無門檻參與獎應有盡有！"
+    },
+    {
+      "id": "1361261337094782976",
+      "content": "**01.天才的煩惱-Prodigy's Faux Pas-**\n\n天才的腦迴路總有那麼一些蜿蜒、曲折、與眾不同，但那正是她的可愛之處，不是嗎？\nThe bra",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "忘卻前夜OST：艾瑞卡EP·機械之心"
+    },
+    {
+      "id": "1361261433811243019",
+      "content": "**02.孤獨救援-Solitary Rescue-**\n\n她的靈魂在你身後，你一人即是此刻唯一的城牆，而命運的無力感將你牢牢俘獲，你改變不了那個結局。\n那個她",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "忘卻前夜OST：艾瑞卡EP·機械之心"
     },
     {
       "id": "1361230542074282114",

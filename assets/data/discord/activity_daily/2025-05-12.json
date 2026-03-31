@@ -1,10 +1,11 @@
 {
   "date": "2025-05-12",
-  "messages": 69,
+  "messages": 72,
   "unique_authors": 18,
   "reactions_total": 19,
   "attachments": 15,
   "channel_activity": {
+    "✅前瞻：1.5周年～活动福利篇": 3,
     "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血": 4,
     "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 2,
     "✅「Answered」Error on game launch": 2,
@@ -27,6 +28,7 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "8": 3,
     "2": 5,
     "3": 34,
     "11": 2,
@@ -42,9 +44,8 @@
     "1": 1
   },
   "message_types": {
-    "0": 39,
-    "4": 13,
-    "19": 11
+    "0": 2,
+    "19": 1
   },
   "top_reacted_messages": [
     {

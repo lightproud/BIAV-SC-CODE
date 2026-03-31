@@ -1,10 +1,11 @@
 {
   "date": "2025-11-14",
-  "messages": 36,
+  "messages": 45,
   "unique_authors": 12,
-  "reactions_total": 976,
-  "attachments": 5,
+  "reactions_total": 985,
+  "attachments": 20,
   "channel_activity": {
+    "忘却前夜OST：逆转回合EP·万象旅店的回响": 9,
     "✅「已回答」卡斯托爾廣播劇": 2,
     "✅「已回答」还能见到星辰篇的地图吗": 3,
     "💭「Processing」Having game crash recently": 1,
@@ -22,22 +23,20 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "7": 5,
+    "8": 9,
     "9": 3,
     "3": 5,
-    "8": 4,
     "16": 1,
     "6": 14,
     "5": 3,
     "11": 2,
     "15": 1,
-    "7": 1,
     "20": 1,
     "4": 1
   },
   "message_types": {
-    "0": 17,
-    "4": 7,
-    "19": 8
+    "0": 9
   },
   "top_reacted_messages": [
     {
@@ -55,11 +54,25 @@
       "channel": "堆一下忘却相关的图"
     },
     {
+      "id": "1438800071977078814",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：逆转回合EP·万象旅店的回响 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": "忘却前夜OST：逆转回合EP·万象旅店的回响"
+    },
+    {
       "id": "1438993825828831462",
       "content": "",
       "author": "flim_of_life_burst",
       "reactions": 3,
       "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1438801266569515131",
+      "content": "<:shocked:1400771713498746901> 以上就是本次OST的全部曲目~\nThe above are all the tracks of t",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "忘却前夜OST：逆转回合EP·万象旅店的回响"
     },
     {
       "id": "1438807686190989352",

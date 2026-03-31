@@ -1,10 +1,12 @@
 {
   "date": "2025-06-17",
-  "messages": 16,
+  "messages": 19,
   "unique_authors": 7,
   "reactions_total": 5,
-  "attachments": 4,
+  "attachments": 6,
   "channel_activity": {
+    "V2.2.2.9 在線維護公告": 2,
+    "畫質有待改進🚮 Sorry for the poor image quality 🚮": 1,
     "✅「已回答」混沌界域第二次鑰令觸發不了雙發鑰令": 4,
     "💭「處理中」翠玉拓印": 1,
     "✅「Answered」Castor Posse missing": 7,
@@ -13,18 +15,17 @@
     "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers": 1
   },
   "hourly_activity": {
+    "13": 4,
+    "11": 1,
     "18": 3,
     "19": 1,
-    "13": 2,
     "7": 4,
     "8": 2,
     "14": 2,
     "6": 2
   },
   "message_types": {
-    "0": 11,
-    "4": 1,
-    "19": 3
+    "0": 3
   },
   "top_reacted_messages": [
     {

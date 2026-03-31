@@ -1,10 +1,12 @@
 {
   "date": "2025-08-19",
-  "messages": 64,
+  "messages": 68,
   "unique_authors": 16,
-  "reactions_total": 35,
-  "attachments": 23,
+  "reactions_total": 44,
+  "attachments": 24,
   "channel_activity": {
+    "V2.3.1.2 在线维护公告": 3,
+    "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 1,
     "✅「Answered」Separation of GLB and JP": 1,
     "✅「Answered」Concerns about dev resources with the Japanese release.": 1,
     "✅「Answered」Potential changes for Kathi": 2,
@@ -36,9 +38,9 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "13": 2,
+    "13": 5,
+    "2": 9,
     "14": 2,
-    "2": 8,
     "8": 23,
     "17": 1,
     "22": 1,
@@ -55,9 +57,7 @@
     "9": 1
   },
   "message_types": {
-    "0": 42,
-    "19": 3,
-    "4": 13
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -82,11 +82,32 @@
       "channel": "2.3表情包"
     },
     {
+      "id": "1407353715060379769",
+      "content": "守密人你好：\n       弥萨格大学校务处将于8月19日 21:30 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我",
+      "author": "morimensstaff02",
+      "reactions": 4,
+      "channel": "V2.3.1.2 在线维护公告"
+    },
+    {
       "id": "1407490572117217342",
       "content": "Hello, I was wondering if I was reading it wrong, but banners say you receive gn",
       "author": "wolfierce",
       "reactions": 3,
       "channel": "✅「Answered」Gnosis fragments drop from awakenings"
+    },
+    {
+      "id": "1407353790180364390",
+      "content": "**V2.3.1.2 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": "V2.3.1.2 在线维护公告"
+    },
+    {
+      "id": "1407360254253072415",
+      "content": "莉莉大人坠机了",
+      "author": "carme.0588",
+      "reactions": 2,
+      "channel": "V2.3.1.2 在线维护公告"
     },
     {
       "id": "1407352797091069962",
@@ -101,6 +122,13 @@
       "author": "menoctus",
       "reactions": 2,
       "channel": "✦关卡地图「融灾禁区」总览41期·星辰篇✦"
+    },
+    {
+      "id": "1407184808748253278",
+      "content": "shhhhh keep it in its funny",
+      "author": "whirli_bri",
+      "reactions": 1,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
       "id": "1407213861962125312",

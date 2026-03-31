@@ -1,10 +1,15 @@
 {
   "date": "2026-02-04",
-  "messages": 7408,
+  "messages": 7418,
   "unique_authors": 162,
-  "reactions_total": 1154,
-  "attachments": 296,
+  "reactions_total": 1288,
+  "attachments": 301,
   "channel_activity": {
+    "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 1,
+    "Xu but i gave her a monster mouth": 2,
+    "Girl's lament: Aigis": 4,
+    "Feliz caceria.": 1,
+    "Balala Casiah,Aigis,Jenkins": 2,
     "謂之「尸解」而登仙": 1,
     "Bug": 4,
     "✅「已回答」你是電你是光你是唯一的神話": 1,
@@ -18,6 +23,16 @@
     "🔸morimens-game-chat": 6324
   },
   "hourly_activity": {
+    "0": 60,
+    "22": 114,
+    "23": 166,
+    "2": 249,
+    "4": 257,
+    "12": 449,
+    "16": 316,
+    "15": 676,
+    "1": 74,
+    "5": 210,
     "7": 177,
     "8": 220,
     "11": 327,
@@ -26,34 +41,45 @@
     "9": 218,
     "13": 519,
     "6": 161,
-    "4": 256,
     "18": 461,
-    "22": 113,
-    "0": 59,
-    "1": 73,
-    "2": 248,
     "3": 202,
-    "5": 209,
-    "12": 448,
-    "15": 675,
-    "16": 315,
     "17": 610,
     "19": 351,
-    "23": 165,
     "20": 122,
     "21": 230
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 9,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1468735137083822293",
+      "content": "\"Fine, i'll do it myself\"",
+      "author": "zzio_",
+      "reactions": 79,
+      "channel": "Xu but i gave her a monster mouth"
+    },
     {
       "id": "1468655367826178119",
       "content": "wait we can downvote in discord? how we do that?",
       "author": "lavache.",
       "reactions": 71,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468432358737969379",
+      "content": "",
+      "author": "kirikonuto",
+      "reactions": 28,
+      "channel": "Girl's lament: Aigis"
+    },
+    {
+      "id": "1468635075364261888",
+      "content": "Hola.",
+      "author": "hestion.1",
+      "reactions": 18,
+      "channel": "Feliz caceria."
     },
     {
       "id": "1468597441195409428",
@@ -103,6 +129,13 @@
       "author": "lavache.",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468424172408537119",
+      "content": "",
+      "author": "astellar_blue",
+      "reactions": 6,
+      "channel": "Balala Casiah,Aigis,Jenkins"
     },
     {
       "id": "1468459235997122796",
@@ -159,34 +192,6 @@
       "author": "ernest_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468589672597819474",
-      "content": "困难融朵",
-      "author": "akalanden",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468623212698009782",
-      "content": "斧頭救命~",
-      "author": "yy42974466",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1468400942583123968",
-      "content": "Finally beat that idiot god. Thank you guys for the team recs",
-      "author": "kuroji0531",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1468555633598005409",
-      "content": "my wife is 1cm taller than me",
-      "author": "princess.goth",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

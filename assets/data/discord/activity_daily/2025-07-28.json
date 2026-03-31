@@ -1,10 +1,12 @@
 {
   "date": "2025-07-28",
-  "messages": 80,
+  "messages": 100,
   "unique_authors": 15,
-  "reactions_total": 66,
-  "attachments": 21,
+  "reactions_total": 67,
+  "attachments": 23,
   "channel_activity": {
+    "V2.3.0.0 停服维护公告": 1,
+    "V2.3.0.2 在线维护公告": 19,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 2,
     "✅「Answered」Fit remaining time in default view": 2,
     "✅「已回答」Bug report": 3,
@@ -33,6 +35,12 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "1": 5,
+    "0": 1,
+    "5": 10,
+    "7": 3,
+    "8": 15,
+    "9": 3,
     "12": 7,
     "14": 5,
     "4": 2,
@@ -40,17 +48,13 @@
     "11": 3,
     "19": 2,
     "3": 21,
-    "1": 4,
     "2": 10,
-    "7": 1,
     "15": 1,
-    "6": 5,
-    "8": 12
+    "6": 5
   },
   "message_types": {
-    "0": 41,
-    "4": 19,
-    "19": 10
+    "19": 6,
+    "0": 14
   },
   "top_reacted_messages": [
     {
@@ -80,6 +84,13 @@
       "author": "jinmenlianbanggongheguo",
       "reactions": 2,
       "channel": "✅「已回答」希萊斯特的觸腕傷害出錯了"
+    },
+    {
+      "id": "1399259403710107741",
+      "content": "我在講A你在講B",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "V2.3.0.2 在线维护公告"
     },
     {
       "id": "1399338923682959380",

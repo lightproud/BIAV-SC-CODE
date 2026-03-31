@@ -1,10 +1,14 @@
 {
   "date": "2025-03-12",
-  "messages": 48,
+  "messages": 78,
   "unique_authors": 15,
-  "reactions_total": 88,
-  "attachments": 13,
+  "reactions_total": 149,
+  "attachments": 40,
   "channel_activity": {
+    "🔥可正常使用！【翻译器】介绍及使用教程！Channel 【Translator function】introduction and usage tutorial！": 3,
+    "V2.1.1.2 在線維護公告": 1,
+    "《忘卻前夜》OST：雪落噬影之鎮": 15,
+    "《忘卻前夜》OST：復甦黑日之世": 11,
     "✅「Answered」PC steam version help": 3,
     "相位对弈中故意拖延时间的有什么办法么": 14,
     "💭「處理中」星辰篇銀鑰微光選擇第四樂章後會直接視作已使用卡判定抽兩張": 4,
@@ -22,27 +26,27 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "11": 1,
+    "11": 2,
+    "13": 5,
+    "12": 1,
+    "3": 11,
+    "4": 12,
+    "5": 3,
+    "6": 12,
     "15": 7,
-    "4": 1,
     "7": 3,
     "9": 2,
     "10": 2,
-    "13": 3,
     "14": 3,
     "19": 2,
     "16": 2,
     "0": 2,
-    "6": 9,
     "8": 7,
-    "5": 2,
     "2": 1,
     "1": 1
   },
   "message_types": {
-    "0": 28,
-    "19": 6,
-    "4": 2
+    "0": 30
   },
   "top_reacted_messages": [
     {
@@ -53,6 +57,20 @@
       "channel": "存档 顺便参加一下活动"
     },
     {
+      "id": "1349218982866980864",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：復甦黑日之世，今日發佈囉～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！（二創請遵照同人規",
+      "author": "morimensstaff01",
+      "reactions": 24,
+      "channel": "《忘卻前夜》OST：復甦黑日之世"
+    },
+    {
+      "id": "1349229925940596776",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：雪落噬影之鎮，今日發佈囉～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！（二創請遵照同人規",
+      "author": "morimensstaff01",
+      "reactions": 12,
+      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
+    },
+    {
       "id": "1349266396147744778",
       "content": "收录的是过完对应关卡后立刻出现的通讯，延时发送的通讯仅收录了第四章莉莉。因为有5银芯和一点主线相关剧情，。应该算重要。\n【】中文字为通讯记录里的标题内容，已触发",
       "author": "muliupan",
@@ -60,11 +78,25 @@
       "channel": "主线章节通讯彩蛋合集"
     },
     {
+      "id": "1349336678959022121",
+      "content": "各位守密人，为了方便大家的日常交流，我们在频道引入了【翻译器】功能！\n大家可以通过它自由翻译帖子、评论、聊天频道等任意一句话~\n\n**下面是【翻译器】的使用教程",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": "🔥可正常使用！【翻译器】介绍及使用教程！Channel 【Translator function】introduction and usage tutorial！"
+    },
+    {
       "id": "1349188340573802578",
       "content": "更新一下\n角色Lv86 瘋狂預兆Lv12 靈適塑性Lv10",
       "author": "_cwz_",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1349231414910128219",
+      "content": "🥰 以上就是本次OST的全部曲目啦~\nThe above are all the tracks of this OST~",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
     },
     {
       "id": "1349305920437489725",
@@ -81,6 +113,13 @@
       "channel": "直到阴影屏住呼吸——弥利亚姆主c深海毒攻略"
     },
     {
+      "id": "1349272817551806474",
+      "content": "7.熔毀終末讚歌-Coda of Scorch-\n高唱吧，高唱吧！讓熔毀的機械奏鳴響徹寰宇，讚頌名為永恆黑暗的終末！\nSing loudly, sing lou",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "《忘卻前夜》OST：復甦黑日之世"
+    },
+    {
       "id": "1349403164910030979",
       "content": "如題",
       "author": "arr5721",
@@ -95,6 +134,27 @@
       "channel": "什么时候把第九章ost放出来？"
     },
     {
+      "id": "1349365608059375658",
+      "content": "守密人你好：\n       彌薩格大學校務處將於3月12日21:05進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": "V2.1.1.2 在線維護公告"
+    },
+    {
+      "id": "1349230875421966406",
+      "content": "9.血肉同源-Same Source Blood -\n我要將你帶回去，帶回去見“主人”，只有這樣…\nI want to take you back, take ",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
+    },
+    {
+      "id": "1349231180364648448",
+      "content": "12.癲狂執念-Obsessive Madness-\n血肉翻飛，利刃狂舞，怪物用無法理解的言語高聲歌唱。狂暴的大腦中只剩下一個念頭──抓住她，不惜一切代價，抓住",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
+    },
+    {
       "id": "1349332340014317621",
       "content": "",
       "author": "galagalaguo",
@@ -107,6 +167,13 @@
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "English Page pls !!"
+    },
+    {
+      "id": "1349230473079160873",
+      "content": "4.水仙小屋-Daffodil Cottage-\n淡雅的清香，琳瑯的商品，可又有幾人，能支付水仙夫人開出的價格？\nThe elegant fragrance, ",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "《忘卻前夜》OST：雪落噬影之鎮"
     },
     {
       "id": "1349351056840065034",

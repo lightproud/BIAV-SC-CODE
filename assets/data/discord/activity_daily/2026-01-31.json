@@ -1,10 +1,13 @@
 {
   "date": "2026-01-31",
-  "messages": 27,
+  "messages": 48,
   "unique_authors": 14,
-  "reactions_total": 25,
-  "attachments": 7,
+  "reactions_total": 91,
+  "attachments": 10,
   "channel_activity": {
+    "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 13,
+    "Teaser || Doresain & Sylvester": 7,
+    "Doodles and other such scribbles": 1,
     "Poison have problem and some words about DoT team in game": 1,
     "我們神母怎麼沒辦法講下去": 2,
     "Text bugs during story": 1,
@@ -25,28 +28,65 @@
     "1458187614879486146": 1
   },
   "hourly_activity": {
+    "2": 4,
+    "3": 5,
+    "5": 2,
+    "6": 5,
+    "9": 4,
+    "17": 4,
+    "1": 5,
+    "4": 3,
+    "20": 1,
     "16": 4,
-    "4": 1,
     "11": 2,
     "22": 1,
-    "17": 2,
     "14": 1,
-    "3": 2,
     "7": 1,
-    "2": 1,
-    "9": 3,
     "0": 1,
     "19": 1,
-    "1": 1,
     "23": 1,
-    "18": 3,
-    "6": 2
+    "18": 3
   },
   "message_types": {
-    "0": 16,
-    "19": 3
+    "0": 13,
+    "19": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1467207922160369786",
+      "content": "<@633215996508766229> 想起一件很重要的事，被最終法則的事情鬧太大被蓋掉了我差點忘記\n就是你那個幻夢深淺的計分方式，這遊戲很大一個樂趣就是帶",
+      "author": "ena04564",
+      "reactions": 15,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1467032163751952425",
+      "content": "I don't mind male or female characters bc their design is peak regardless. But i",
+      "author": "sleppyissleepy",
+      "reactions": 12,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1467033162218471550",
+      "content": "Yeah, it's a bad phrasing, bad timing (with the whole +12 thing) and generally j",
+      "author": "silencio3507",
+      "reactions": 11,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1467254930753458443",
+      "content": "i have no idea what i'm doing posting art here but! i gift you all with my art r",
+      "author": "hallowednebulae",
+      "reactions": 11,
+      "channel": "Doodles and other such scribbles"
+    },
+    {
+      "id": "1467003002618515601",
+      "content": "People want different things. Some people like female characters, other male cha",
+      "author": "silencio3507",
+      "reactions": 9,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
     {
       "id": "1467225902029996154",
       "content": "This is about the description of the devour effect on leigh and if it works as i",
@@ -60,6 +100,13 @@
       "author": "satachan",
       "reactions": 5,
       "channel": "Regarding the possible +12 Paywall"
+    },
+    {
+      "id": "1467037703022579845",
+      "content": "My main concern is about the **ratio**, not the **amount**. If we're talking abo",
+      "author": "sleppyissleepy",
+      "reactions": 4,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
     },
     {
       "id": "1467308113660215326",
@@ -76,11 +123,32 @@
       "channel": "Text bugs during story"
     },
     {
+      "id": "1467050620057030819",
+      "content": "I completely agree with you that there's no point in speculating. Though I'd hop",
+      "author": "sleppyissleepy",
+      "reactions": 2,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
       "id": "1467117108256313531",
       "content": "<@1131790839291596841>",
       "author": "akalanden",
       "reactions": 2,
       "channel": "✅「已回答」取消SSR命輪自動分解"
+    },
+    {
+      "id": "1466986557880664128",
+      "content": "if anything I think people misinterpreted them and we will still get the same am",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1466987540295979028",
+      "content": "We'll see. Writing that would make things more obvious. So far, we have another ",
+      "author": "silencio3507",
+      "reactions": 1,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
     },
     {
       "id": "1467007561130709064",

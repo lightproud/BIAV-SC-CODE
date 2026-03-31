@@ -1,10 +1,14 @@
 {
   "date": "2025-05-07",
-  "messages": 46,
-  "unique_authors": 16,
-  "reactions_total": 64,
-  "attachments": 14,
+  "messages": 89,
+  "unique_authors": 22,
+  "reactions_total": 121,
+  "attachments": 27,
   "channel_activity": {
+    "Complete glossary of Wheel of Destiny names": 5,
+    "V2.2.1.3 在線維護公告": 24,
+    "忘卻前夜OST：無還的血與沙": 6,
+    "✅前瞻：1.5周年～战斗增强篇": 8,
     "✅「Answered」 Strike to protect Bug": 1,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 2,
     "✅「已回答」新角劇情第二章BGM怪怪的": 2,
@@ -20,26 +24,27 @@
     "1350059696945500171": 2
   },
   "hourly_activity": {
-    "17": 1,
-    "8": 1,
-    "14": 10,
-    "12": 6,
-    "4": 3,
+    "13": 18,
+    "14": 17,
+    "17": 3,
+    "19": 2,
+    "8": 9,
+    "4": 4,
+    "5": 5,
+    "12": 7,
     "9": 1,
     "15": 5,
     "6": 2,
     "1": 2,
     "2": 6,
-    "5": 1,
     "3": 4,
     "16": 1,
     "18": 1,
     "7": 2
   },
   "message_types": {
-    "0": 29,
-    "19": 6,
-    "4": 3
+    "0": 39,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -50,6 +55,34 @@
       "channel": "🪸"
     },
     {
+      "id": "1369669300201193512",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 18,
+      "channel": "Complete glossary of Wheel of Destiny names"
+    },
+    {
+      "id": "1369669171620745329",
+      "content": "Greetings, Keepers!\n    Today we are bringing you a complete glossary of Wheel o",
+      "author": "morimensstaff02",
+      "reactions": 11,
+      "channel": "Complete glossary of Wheel of Destiny names"
+    },
+    {
+      "id": "1369668725783138324",
+      "content": "● Fixed the issue where \"Alumni Donation Fund\" could not be claimed.\n● Fixed the",
+      "author": "morimensstaff02",
+      "reactions": 8,
+      "channel": "V2.2.1.3 在線維護公告"
+    },
+    {
+      "id": "1369589878429454367",
+      "content": "**03.沐浴鮮血的紅日-Bloodied Sunset-**\n\n血紅的夕陽下，是浸滿鮮血的黃沙。\n最強大的戰士佇立在即將沉入黑夜的戰場，回憶舊日里金色的火焰與",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "忘卻前夜OST：無還的血與沙"
+    },
+    {
       "id": "1369679656592080948",
       "content": "克萊門汀還能通過出血判斷對方是不是「蟲族」敵人，既然靈塑趨勢是要加上對陣營的加成，那就應該在狀態説明或者別的什麽途徑寫清楚陣營，比如寫清對方怪物是「提燈」「雕塑",
       "author": "navirecorbeau",
@@ -57,11 +90,39 @@
       "channel": "星辰篇的所有敵人應該在狀態説明那邊説清楚是什麽分類的敵人"
     },
     {
+      "id": "1369589148499054603",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：無還的血與沙，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請遵照同人規",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "忘卻前夜OST：無還的血與沙"
+    },
+    {
+      "id": "1369668198999527516",
+      "content": "守密人你好：\n       彌薩格大學校務處將於5月7日21:40進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會準",
+      "author": "morimensstaff02",
+      "reactions": 4,
+      "channel": "V2.2.1.3 在線維護公告"
+    },
+    {
       "id": "1369584274558418974",
       "content": "Hola <@1131790839291596841> espero que estés bien <:hug:1356083899553288382> .  ",
       "author": "Deleted User",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1369689103813185645",
+      "content": "we need that archive section up and running",
+      "author": "monchi3524",
+      "reactions": 2,
+      "channel": "Complete glossary of Wheel of Destiny names"
+    },
+    {
+      "id": "1369549792987975775",
+      "content": "再看看 我其實也挺想的",
+      "author": "lingcheng.0",
+      "reactions": 2,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
     },
     {
       "id": "1369682840962465824",
@@ -76,6 +137,13 @@
       "author": "ena04564",
       "reactions": 2,
       "channel": "星辰篇的所有敵人應該在狀態説明那邊説清楚是什麽分類的敵人"
+    },
+    {
+      "id": "1369760658891210762",
+      "content": "全遊戲只有深海限定是多少帶著負面效果的\n墨菲要處理獻祭\n彌利有執妄卡手\n克珀有領航牌庫污染",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "V2.2.1.3 在線維護公告"
     },
     {
       "id": "1369722828336795780",

@@ -1,10 +1,12 @@
 {
   "date": "2025-05-05",
-  "messages": 53,
-  "unique_authors": 16,
-  "reactions_total": 68,
-  "attachments": 34,
+  "messages": 104,
+  "unique_authors": 19,
+  "reactions_total": 111,
+  "attachments": 36,
   "channel_activity": {
+    "✅校猫碎碎念#近况分享": 3,
+    "✅前瞻：1.5周年～战斗增强篇": 48,
     "✅「Answered」 Strike to protect Bug": 2,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 3,
     "✅「已回答」试用机制是否有些不合理": 2,
@@ -26,24 +28,25 @@
     "1271491376881598494": 2
   },
   "hourly_activity": {
-    "10": 9,
-    "12": 7,
+    "0": 3,
+    "10": 10,
+    "11": 3,
+    "12": 42,
+    "13": 10,
+    "14": 5,
+    "16": 1,
     "4": 6,
     "5": 3,
-    "11": 2,
     "9": 10,
     "3": 2,
-    "14": 2,
     "2": 4,
     "15": 2,
     "1": 1,
-    "13": 1,
-    "23": 2,
-    "0": 2
+    "23": 2
   },
   "message_types": {
-    "0": 35,
-    "19": 3
+    "0": 26,
+    "19": 25
   },
   "top_reacted_messages": [
     {
@@ -54,6 +57,13 @@
       "channel": "【MMD】神っぽいな「克莱门汀」"
     },
     {
+      "id": "1368925688597315636",
+      "content": "這點我可以解讀成 困難模式、融災 必須完全依賴特定強勢組合才能順利通關嗎",
+      "author": "_buqi",
+      "reactions": 13,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
       "id": "1368806335298408500",
       "content": "100183070，更新了一下配置",
       "author": "randomplayer852",
@@ -61,11 +71,32 @@
       "channel": ""
     },
     {
+      "id": "1368936446081237083",
+      "content": "可以優化一下船長的狂氣讓他可以自己選要把什麼牌丟掉嗎放到三啟也可以，隊伍通常是船長開狂上易傷開始輸出，把關鍵的輸出牌丟掉後就很難輸出，你也不能確保抽上來的牌會不",
+      "author": "shchng.",
+      "reactions": 9,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
       "id": "1368965706787455128",
       "content": "我知道字面上寫「戰鬥開始時，使所有敵人……」意思是戰鬥開始那一刻在場上的敵人，所以我是想建議改成「給自己觸手最終傷害+15%」的buff取代給敵人debuff。",
       "author": "ernest_heart",
       "reactions": 7,
       "channel": "克珀珊特領航Bug與靈塑加強建議"
+    },
+    {
+      "id": "1368932304042459196",
+      "content": "主线的强度差异太大，故事也都有特定情况，所以共鸣不合适挪用。但我们在研究推出类似无尽模式，可能是一次性获取所有共鸣、成就、任务后就无需再挑战的关卡这种形式，但要",
+      "author": "game.producer.light",
+      "reactions": 5,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1368935262335406130",
+      "content": "能不能尽快更新，或者多讲一下更新内容，补个戈雅碎碎念也行。主线通关之后光吃融灾很单调",
+      "author": "287405tjy_28066",
+      "reactions": 5,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
     },
     {
       "id": "1368916549863211008",
@@ -80,6 +111,41 @@
       "author": "aurora3981",
       "reactions": 5,
       "channel": "Tentacle Crit Build Theory Crafting"
+    },
+    {
+      "id": "1368933874314379336",
+      "content": "你也知道星辰篇主线难度大<:alone:1356053021318189307> 有没有考虑降低一些数值方面上的难度\n虽然看到在研究新玩法，但是我现在看到星辰篇",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1368934492839870485",
+      "content": "<@633215996508766229> 自选池以后都是这样只能选一次，然后角色和专武共占大保底的机制吗。这个池子的现在最多的别称是毒池，给萌新最多的推荐是别",
+      "author": "muliupan",
+      "reactions": 2,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1368934561010024528",
+      "content": "有機會做個單角色闖關模式嗎，像試用那種，然後道中通關給各種數值能力提升/造物/增益牌之類的",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1368960871354597468",
+      "content": "先猜sp鯨在星辰篇結尾出來顛覆神國，詳細劇本請參考忘卻篇熔朵☝️ 🤓",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1368981546744418416",
+      "content": "猫，能不能把“触腕集结”这个buff改个图标呀，毕竟只要玩了深海队下面肯定会有触腕集结，感觉值得一个特殊图标",
+      "author": "nekoiiii.",
+      "reactions": 2,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
     },
     {
       "id": "1368880169510502423",
@@ -103,6 +169,13 @@
       "channel": "✅「Answered」Sanga misnamed as corposant"
     },
     {
+      "id": "1368922668858085469",
+      "content": "有，15回合仍然是获取星级奖励的条件。",
+      "author": "game.producer.light",
+      "reactions": 1,
+      "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
       "id": "1368789301873082471",
       "content": "Corposant Event -  Stage Old Sextant Madness text not translate",
       "author": "aegisx",
@@ -115,27 +188,6 @@
       "author": "_buqi",
       "reactions": 1,
       "channel": "✅「已回答」對弈新命輪均有bug"
-    },
-    {
-      "id": "1368882171854454834",
-      "content": "",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "✅「Answered」Corposant skill description error in traphase"
-    },
-    {
-      "id": "1369094762321285180",
-      "content": "jenkin Rouse ?\nmore crit damage, and you stack it for free with her cards if you",
-      "author": "__goz__",
-      "reactions": 1,
-      "channel": "Tentacle Crit Build Theory Crafting"
-    },
-    {
-      "id": "1368781120711295158",
-      "content": "謝謝大佬讓我玩",
-      "author": "Deleted User",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

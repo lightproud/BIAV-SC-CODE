@@ -1,10 +1,11 @@
 {
   "date": "2025-12-30",
-  "messages": 103,
+  "messages": 113,
   "unique_authors": 23,
-  "reactions_total": 721,
-  "attachments": 24,
+  "reactions_total": 731,
+  "attachments": 26,
   "channel_activity": {
+    "V2.4.1.2 在线维护公告": 10,
     "Who Ryker's Designer pls come talk ?": 2,
     "💭「Processing」Intro movie not changing on PC when it changes on mobile.": 5,
     "✅「已回答」可否增設命輪和密契的計數器": 1,
@@ -34,12 +35,13 @@
     "1455453095592071269": 4
   },
   "hourly_activity": {
+    "8": 9,
+    "9": 6,
+    "11": 4,
+    "17": 6,
     "5": 1,
-    "17": 3,
     "7": 17,
-    "8": 6,
     "3": 3,
-    "11": 3,
     "12": 12,
     "18": 3,
     "19": 1,
@@ -49,16 +51,12 @@
     "21": 3,
     "14": 1,
     "6": 11,
-    "9": 3,
     "22": 1,
     "0": 1,
     "16": 1
   },
   "message_types": {
-    "0": 64,
-    "19": 17,
-    "4": 6,
-    "6": 1
+    "0": 10
   },
   "top_reacted_messages": [
     {
@@ -90,6 +88,13 @@
       "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
     },
     {
+      "id": "1455610444864815219",
+      "content": "it's a lie made by big crit so they can sell you more SSR wheels/Coves",
+      "author": "omni_colon",
+      "reactions": 6,
+      "channel": "V2.4.1.2 在线维护公告"
+    },
+    {
       "id": "1455497859540582460",
       "content": "To separate the concerns of card naming and card effects, and to better understa",
       "author": "null.pointer_exception",
@@ -102,6 +107,13 @@
       "author": "frosthief",
       "reactions": 5,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1455520211636715634",
+      "content": "This Is annoying as shit. Thank you",
+      "author": "uchodotprichoda",
+      "reactions": 4,
+      "channel": "V2.4.1.2 在线维护公告"
     },
     {
       "id": "1455399500750262312",
@@ -186,13 +198,6 @@
       "author": "vxvendetta97",
       "reactions": 1,
       "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1455464855460122654",
-      "content": "<@1131790839291596841>",
-      "author": "2300011747",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

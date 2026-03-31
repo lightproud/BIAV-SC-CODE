@@ -1,10 +1,11 @@
 {
   "date": "2025-05-16",
-  "messages": 35,
+  "messages": 36,
   "unique_authors": 8,
   "reactions_total": 14,
   "attachments": 11,
   "channel_activity": {
+    "Complete glossary of Wheel of Destiny names": 1,
     "✅「Answered」Strange cuts in the dialogue": 2,
     "💭「Processing」Music overlap": 1,
     "✅「已回答」画框bug之可不可以不要太快修复😭": 16,
@@ -15,6 +16,7 @@
     "Petition to rename Wheel Unseen to Concealed Truth": 1
   },
   "hourly_activity": {
+    "14": 1,
     "9": 6,
     "19": 1,
     "10": 20,
@@ -24,8 +26,6 @@
     "2": 1
   },
   "message_types": {
-    "0": 27,
-    "4": 7,
     "19": 1
   },
   "top_reacted_messages": [

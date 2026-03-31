@@ -1,10 +1,12 @@
 {
   "date": "2024-10-22",
-  "messages": 51,
+  "messages": 56,
   "unique_authors": 17,
   "reactions_total": 77,
-  "attachments": 12,
+  "attachments": 15,
   "channel_activity": {
+    "✏『彌薩格大學』第七期攻略募集活動開始啦！": 2,
+    "✏彌薩格大學同人二創活動六期開始進行啦！": 3,
     "沒別的意思 就是覺得深海國家打不動了": 3,
     "是否考慮為同調率增加功能": 2,
     "I have no sound in the steam version. any know how fix?": 1,
@@ -22,6 +24,7 @@
     "混沌唤醒体·塔薇": 2
   },
   "hourly_activity": {
+    "11": 5,
     "7": 2,
     "10": 3,
     "3": 2,
@@ -37,8 +40,7 @@
     "17": 2
   },
   "message_types": {
-    "0": 28,
-    "19": 3
+    "0": 5
   },
   "top_reacted_messages": [
     {

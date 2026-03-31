@@ -1,10 +1,12 @@
 {
   "date": "2026-01-24",
-  "messages": 157,
+  "messages": 162,
   "unique_authors": 14,
-  "reactions_total": 135,
-  "attachments": 11,
+  "reactions_total": 148,
+  "attachments": 12,
   "channel_activity": {
+    "V2.4.2.0 停服维护公告": 1,
+    "Art dump thread": 4,
     "Who Ryker's Designer pls come talk ?": 3,
     "能别搞最终法则吗！": 11,
     "双持两个+12命轮的使用优化建议": 4,
@@ -21,7 +23,10 @@
     "1455822126568308957": 6
   },
   "hourly_activity": {
-    "3": 3,
+    "3": 4,
+    "4": 22,
+    "18": 2,
+    "23": 3,
     "5": 67,
     "6": 2,
     "8": 5,
@@ -31,18 +36,14 @@
     "15": 9,
     "16": 7,
     "2": 3,
-    "4": 21,
     "7": 5,
     "13": 4,
     "12": 2,
     "14": 2,
-    "23": 2,
     "21": 6
   },
   "message_types": {
-    "0": 93,
-    "19": 22,
-    "4": 3
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -65,6 +66,13 @@
       "author": "calmdreab",
       "reactions": 14,
       "channel": "表情包两枚"
+    },
+    {
+      "id": "1464468810496081991",
+      "content": "I'm a spender, I have some maxed out units and I still think it's a bad idea. St",
+      "author": "silencio3507",
+      "reactions": 11,
+      "channel": "V2.4.2.0 停服维护公告"
     },
     {
       "id": "1464597936649408791",
@@ -151,6 +159,13 @@
       "channel": "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look"
     },
     {
+      "id": "1464761891216949249",
+      "content": "Divine mother",
+      "author": "kiriwoamizaki",
+      "reactions": 2,
+      "channel": "Art dump thread"
+    },
+    {
       "id": "1464570924811681895",
       "content": "可以三持命輪",
       "author": "200000139",
@@ -168,20 +183,6 @@
       "id": "1464497004980994100",
       "content": "对呀，所以我已经准备跑路了",
       "author": "2300011747",
-      "reactions": 2,
-      "channel": "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look"
-    },
-    {
-      "id": "1464497295939600537",
-      "content": "但问题是原神有几千万玩家，你游呢？活人玩家有超过十万吗？",
-      "author": "2300011747",
-      "reactions": 2,
-      "channel": "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look"
-    },
-    {
-      "id": "1464531867461222433",
-      "content": "小小建議一下避免使用削弱這個字眼不然怕等一下有人在那邊挑",
-      "author": "ahuahuahua",
       "reactions": 2,
       "channel": "蘿坦調整補強負提升，希望再審視 The changes of Lotan are totally messed up. Hope the devs will take a sec to look"
     }

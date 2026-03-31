@@ -1,10 +1,12 @@
 {
   "date": "2025-05-29",
-  "messages": 59,
+  "messages": 61,
   "unique_authors": 10,
   "reactions_total": 11,
   "attachments": 17,
   "channel_activity": {
+    "Morimens English Localization Notes #1": 1,
+    "V2.2.2.2 在線維護公告": 1,
     "✅「Answered」In-game texts do not match the language selected in the settings.": 6,
     "✅「已回答」周年命轮疑似与未送出的花冲突": 2,
     "✅「已回答」水母腺体余波狂气问题": 7,
@@ -22,6 +24,8 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "3": 1,
+    "11": 4,
     "7": 16,
     "18": 2,
     "21": 2,
@@ -30,16 +34,13 @@
     "4": 4,
     "10": 5,
     "16": 2,
-    "11": 3,
     "5": 1,
     "8": 14,
     "1": 2,
     "17": 1
   },
   "message_types": {
-    "0": 32,
-    "4": 4,
-    "19": 4
+    "0": 2
   },
   "top_reacted_messages": [
     {

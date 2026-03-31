@@ -1,10 +1,14 @@
 {
   "date": "2025-11-18",
-  "messages": 214,
+  "messages": 399,
   "unique_authors": 53,
-  "reactions_total": 195,
-  "attachments": 53,
+  "reactions_total": 342,
+  "attachments": 61,
   "channel_activity": {
+    "V2.4.0.0 停服维护公告": 6,
+    "V2.4.0.2 在线维护公告": 10,
+    "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments": 69,
+    "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive": 100,
     "Arc 1 story content nerf": 17,
     "✅「已回答」繁中PC端黑屏": 2,
     "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled": 8,
@@ -81,30 +85,32 @@
     "1431233782605807666": 1
   },
   "hourly_activity": {
+    "3": 19,
+    "4": 4,
+    "6": 50,
+    "13": 23,
+    "14": 17,
+    "20": 56,
+    "21": 1,
+    "22": 3,
+    "23": 13,
+    "8": 43,
+    "9": 26,
+    "10": 13,
+    "11": 15,
+    "12": 20,
+    "15": 30,
+    "16": 18,
+    "17": 13,
     "0": 3,
     "7": 12,
-    "8": 38,
-    "12": 14,
-    "14": 8,
-    "15": 5,
     "1": 6,
-    "3": 17,
     "5": 9,
-    "6": 47,
-    "11": 2,
-    "4": 3,
-    "16": 4,
-    "10": 10,
-    "9": 18,
-    "13": 9,
-    "19": 5,
-    "22": 1,
-    "20": 3
+    "19": 5
   },
   "message_types": {
-    "0": 136,
-    "19": 20,
-    "4": 53
+    "19": 41,
+    "0": 144
   },
   "top_reacted_messages": [
     {
@@ -122,6 +128,34 @@
       "channel": "畫了這賽季的相位對弈貼圖☝️"
     },
     {
+      "id": "1440302535184486521",
+      "content": "Regarding phantasmal dive, I believe bringing back the ranking per realm is one ",
+      "author": "wolfierce",
+      "reactions": 29,
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
+    },
+    {
+      "id": "1440435402912694343",
+      "content": "And because Doresain's voice actor is just so perfect and so well-known, many ne",
+      "author": "game.producer.light",
+      "reactions": 20,
+      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
+    },
+    {
+      "id": "1440435851741102173",
+      "content": "4 hours MAXIMUM for me",
+      "author": "game.producer.light",
+      "reactions": 19,
+      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
+    },
+    {
+      "id": "1440366074351714536",
+      "content": "Combined with multiple adjustments, the current main storyline may be even easie",
+      "author": "game.producer.light",
+      "reactions": 16,
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
+    },
+    {
       "id": "1440254779744849960",
       "content": "I hate to do this. Because it goes against my own morals as a human being, not b",
       "author": "thpdom",
@@ -129,11 +163,32 @@
       "channel": "Arc 1 story content nerf"
     },
     {
+      "id": "1440367476885160152",
+      "content": "as a new player, i love this difficulty level, that's it, goodbye ❤️",
+      "author": "rhatsu",
+      "reactions": 10,
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
+    },
+    {
       "id": "1440292419164831810",
       "content": "還有跟自家守密人的互動（～兩邊都沒什麼表情的很和平開心～）",
       "author": "xu6_",
       "reactions": 8,
       "channel": "畫了這賽季的相位對弈貼圖☝️"
+    },
+    {
+      "id": "1440288765036855357",
+      "content": "深海的最大的特點同時也是問題就是慢啟動，現在深潛根本沒有要讓深海活的意思啊<:takenotes:1357186646294138890>",
+      "author": "lanl4n",
+      "reactions": 6,
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
+    },
+    {
+      "id": "1440378480293580811",
+      "content": "Our player base is more diverse than ever: story enthusiasts, art lovers, hardco",
+      "author": "game.producer.light",
+      "reactions": 5,
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
     },
     {
       "id": "1440324421846831205",
@@ -150,102 +205,53 @@
       "channel": "💭「Processing」Sound setting not working as intended"
     },
     {
-      "id": "1440133404598468789",
-      "content": "100% agree. I'm assuming they're trying to draw in the casual gacha gamer crowd ",
-      "author": "tksn.",
+      "id": "1440336617460994071",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 4,
+      "channel": "V2.4.0.2 在线维护公告"
+    },
+    {
+      "id": "1440434570951655547",
+      "content": "In fact, we've found that some excellent voice actors don't actually cost as muc",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
+    },
+    {
+      "id": "1440291963210563675",
+      "content": "一直覺得吃回合數的積分機制很微妙，快攻隊與慢啟動隊都有各自的特色，一直採用回合限制分數只是在限制大家的玩法\n感覺可以加個不同的輪換積分制，比如像假設今天是最大毒",
+      "author": "lanl4n",
+      "reactions": 4,
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
+    },
+    {
+      "id": "1440300521570177065",
+      "content": "有點嗆請見諒",
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
+    },
+    {
+      "id": "1440273835667751004",
+      "content": "Some tuning for the difficulty spikes, at least in Normal Mode, was needed, but ",
+      "author": "vxvendetta97",
       "reactions": 3,
-      "channel": "Arc 1 story content nerf"
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
     },
     {
-      "id": "1440340400396304566",
-      "content": "離開+關後台再回來忘卻前夜也不行，我這輩子能廚上這麼多垃圾山代碼的遊戲也是有了💀",
-      "author": "shostakovich524",
+      "id": "1440339011661987941",
+      "content": "其實有差\n讓想凹的更累",
+      "author": "0.0._.0_0.",
       "reactions": 3,
-      "channel": "💭「处理中」不讓我玩深潛(；д；)"
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
     },
     {
-      "id": "1440213788857991188",
-      "content": "Last hit damage is not added to the 'Deal XX points of damage in one turn' Level",
-      "author": "genericid.",
+      "id": "1440363289715675188",
+      "content": "Reiterating that while I think normal mode needed a bit of a nerf this was too m",
+      "author": "neyuse",
       "reactions": 3,
-      "channel": "✅「Answered」'Deal XX points of damage in one turn' achievements needs a fix too."
-    },
-    {
-      "id": "1440232871242760202",
-      "content": "Thank you for providing the information, I will relay it to them",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Duplicate SSR ‘Wheel’ at +12 Automatically Dismantled"
-    },
-    {
-      "id": "1440226589328801832",
-      "content": "会有下一期，还没有发布\n问题收到，感谢反馈",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已解决」角色名不统一"
-    },
-    {
-      "id": "1440249653646987358",
-      "content": "Thank you for providing the information. We will try again",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Visual Bug"
-    },
-    {
-      "id": "1440370822610157579",
-      "content": "打过了",
-      "author": "jef05",
-      "reactions": 1,
-      "channel": "💭「处理中」下調難度後無法達成成就"
-    },
-    {
-      "id": "1440278203972190299",
-      "content": "Thank you, I'll show it to the programmer first",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Resolved」Account recovery"
-    },
-    {
-      "id": "1440298361747013723",
-      "content": "Customer support got back to me and I got my account back, thank you!",
-      "author": "pleinairz",
-      "reactions": 1,
-      "channel": "✅「Resolved」Account recovery"
-    },
-    {
-      "id": "1440429170936254694",
-      "content": "The mission to \"Synthesize Materials once\" does not work, I have gone to \"Materi",
-      "author": "inde3586",
-      "reactions": 1,
-      "channel": "✅「Answered」Bugged Mission Report Phase III [Manual]"
-    },
-    {
-      "id": "1440348603276071033",
-      "content": "https://discord.com/channels/1131791637933199470/1440332592325984296/14403366174",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "✅「Resolved」9-5 Story Dialogue Bug"
-    },
-    {
-      "id": "1440265816192061450",
-      "content": "Hello, the recording function was only opened yesterday. This issue of D-Effect ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Replay Button Bug"
-    },
-    {
-      "id": "1440199339187109940",
-      "content": "this has been fixed, thank you so much <:please:1356053110375714817> y'all are d",
-      "author": "emlan",
-      "reactions": 1,
-      "channel": "✅「Resolved」I can't edify GDoll despite completing the chapter 1 prerequisite. She is lvl 10."
-    },
-    {
-      "id": "1440263657933242369",
-      "content": "嗨，今天会修复",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」助戰Bug"
+      "channel": "前瞻：V2.4.0.X 幻梦深潜 Preview: V2.4.0.X Phantasmal Dive"
     }
   ]
 }

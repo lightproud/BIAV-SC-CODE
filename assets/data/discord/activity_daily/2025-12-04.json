@@ -1,10 +1,11 @@
 {
   "date": "2025-12-04",
-  "messages": 53,
+  "messages": 58,
   "unique_authors": 17,
-  "reactions_total": 108,
-  "attachments": 25,
+  "reactions_total": 112,
+  "attachments": 27,
   "channel_activity": {
+    "V2.4.0.10 在线维护公告": 5,
     "关于【献祭】的bug修复": 3,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 4,
     "Feedback/Suggestion from a new player": 1,
@@ -29,13 +30,13 @@
     "1441326394817908736": 2
   },
   "hourly_activity": {
+    "12": 5,
+    "13": 3,
     "1": 2,
     "14": 6,
     "21": 4,
-    "12": 2,
     "16": 2,
     "15": 1,
-    "13": 1,
     "11": 4,
     "0": 5,
     "8": 4,
@@ -48,8 +49,7 @@
     "19": 1
   },
   "message_types": {
-    "0": 28,
-    "19": 3
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -107,6 +107,13 @@
       "author": "exhibitionism",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1446122378332606618",
+      "content": "3. Localization\n[English]\n● Corrected the translation for the Posse \"Cruel Homag",
+      "author": "morimensstaff02",
+      "reactions": 4,
+      "channel": "V2.4.0.10 在线维护公告"
     },
     {
       "id": "1446089171348357232",

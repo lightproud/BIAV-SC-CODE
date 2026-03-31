@@ -1,10 +1,11 @@
 {
   "date": "2026-01-01",
-  "messages": 71,
+  "messages": 169,
   "unique_authors": 8,
-  "reactions_total": 84,
-  "attachments": 4,
+  "reactions_total": 90,
+  "attachments": 5,
   "channel_activity": {
+    "I errr.... #2": 98,
     "Options to turn off Enlihtens": 1,
     "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 1,
     "💭「Processing」Game getting stuck in chinese bug": 1,
@@ -19,9 +20,9 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
-    "15": 7,
+    "14": 93,
+    "15": 14,
     "13": 5,
-    "14": 2,
     "2": 1,
     "0": 1,
     "12": 10,
@@ -37,8 +38,8 @@
     "5": 1
   },
   "message_types": {
-    "0": 4,
-    "19": 1
+    "0": 67,
+    "19": 31
   },
   "top_reacted_messages": [
     {
@@ -91,6 +92,48 @@
       "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
     },
     {
+      "id": "1456288864837832714",
+      "content": "https://tenor.com/view/cyclops-ryu-dap-me-up-dap-dap-up-gif-2485274535169214603",
+      "author": "i_me_myself_caffeine",
+      "reactions": 1,
+      "channel": "I errr.... #2"
+    },
+    {
+      "id": "1456289994942451881",
+      "content": "I am someone who appreciates many things, my friend",
+      "author": "i_me_myself_caffeine",
+      "reactions": 1,
+      "channel": "I errr.... #2"
+    },
+    {
+      "id": "1456290152350613709",
+      "content": "Just as you appreciate a peach, you have to appreciate a banana",
+      "author": "i_me_myself_caffeine",
+      "reactions": 1,
+      "channel": "I errr.... #2"
+    },
+    {
+      "id": "1456291389020049601",
+      "content": "isnt nsfw prohibited from this server???",
+      "author": "thespookboo",
+      "reactions": 1,
+      "channel": "I errr.... #2"
+    },
+    {
+      "id": "1456295177047244915",
+      "content": "It's fine",
+      "author": "lowtown77",
+      "reactions": 1,
+      "channel": "I errr.... #2"
+    },
+    {
+      "id": "1456296007791935611",
+      "content": "sue sure",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "I errr.... #2"
+    },
+    {
       "id": "1456283108868489306",
       "content": "然后纪行系命轮在末尾",
       "author": "shunia3055",
@@ -138,27 +181,6 @@
       "author": "void_1546.",
       "reactions": 1,
       "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456393549078859857",
-      "content": "Now it looks like a real character release",
-      "author": "legendaryredz",
-      "reactions": 1,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456291303041138709",
-      "content": "Happy New Year guys!!\nEdit with Ramona and Leonora with the song Undressed by So",
-      "author": "parovayabulochka",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1456381122341638424",
-      "content": "https://www.youtube.com/watch?v=YyF15Lx2ksQ",
-      "author": "lonely_tree",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
     }
   ]
 }

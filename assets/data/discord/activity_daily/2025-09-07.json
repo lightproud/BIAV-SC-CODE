@@ -1,24 +1,27 @@
 {
   "date": "2025-09-07",
-  "messages": 6,
-  "unique_authors": 4,
-  "reactions_total": 4,
-  "attachments": 1,
+  "messages": 22,
+  "unique_authors": 5,
+  "reactions_total": 5,
+  "attachments": 3,
   "channel_activity": {
+    "前瞻：相位对弈改动 Traphase Changes": 16,
     "邀請碼互助/Invitation code help each other": 3,
     "我也要開圖樓": 1,
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "10": 15,
+    "14": 2,
     "1": 1,
     "11": 1,
     "21": 1,
     "12": 1,
-    "13": 1,
-    "14": 1
+    "13": 1
   },
   "message_types": {
-    "0": 4
+    "19": 4,
+    "0": 12
   },
   "top_reacted_messages": [
     {
@@ -27,6 +30,13 @@
       "author": "yingmai_",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1414197921901183048",
+      "content": "以及老闆娘（鼠）的天賦",
+      "author": "taco94487",
+      "reactions": 1,
+      "channel": "前瞻：相位对弈改动 Traphase Changes"
     },
     {
       "id": "1414237527136534598",

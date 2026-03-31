@@ -1,10 +1,12 @@
 {
   "date": "2025-07-17",
-  "messages": 29,
+  "messages": 41,
   "unique_authors": 7,
-  "reactions_total": 51,
-  "attachments": 6,
+  "reactions_total": 146,
+  "attachments": 9,
   "channel_activity": {
+    "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\"": 6,
+    "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 6,
     "先提前开一个杜勒加强方案筹划吧": 6,
     "How to promote the game for new players": 1,
     "New player advice": 3,
@@ -16,20 +18,40 @@
     "早期蟲族捕捉哈基米的珍貴影像(修正版)": 6
   },
   "hourly_activity": {
+    "11": 4,
+    "12": 1,
+    "14": 3,
+    "4": 2,
+    "6": 1,
+    "17": 2,
+    "18": 2,
     "8": 12,
-    "14": 2,
     "13": 2,
     "2": 1,
     "7": 3,
     "16": 5,
-    "15": 3,
-    "17": 1
+    "15": 3
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 8,
+    "4": 1,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1395364429826101289",
+      "content": "脑缸组成员今天吃饱了！\n谢谢，你们正是我们仍然坚守仍然努力的全部意义。\n\nThe B.I.A.V.Studio members are well fed tod",
+      "author": "game.producer.light",
+      "reactions": 70,
+      "channel": "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\""
+    },
+    {
+      "id": "1395416667265437706",
+      "content": "Pray to Miryam. Hear her voice, hear the echoes of the glories of Lemuria. Give ",
+      "author": "reya.li",
+      "reactions": 15,
+      "channel": "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\""
+    },
     {
       "id": "1395321327229079592",
       "content": "戈雅拜託不要把我蛋雕",
@@ -43,6 +65,13 @@
       "author": "undecember_news",
       "reactions": 11,
       "channel": "蟲門friend的點圖～"
+    },
+    {
+      "id": "1395366042133594122",
+      "content": "<@633215996508766229> 不要忘記野貓今天幫你點的畫喔",
+      "author": "shchng.",
+      "reactions": 9,
+      "channel": "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\""
     },
     {
       "id": "1395312380975513785",
@@ -64,6 +93,13 @@
       "author": "void_1546.",
       "reactions": 7,
       "channel": "早期蟲族捕捉哈基米的珍貴影像(修正版)"
+    },
+    {
+      "id": "1395466420657197289",
+      "content": "That’s very cool! Thank you!",
+      "author": "kabipo",
+      "reactions": 1,
+      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
     },
     {
       "id": "1395401233035956355",

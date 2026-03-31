@@ -1,10 +1,11 @@
 {
   "date": "2026-03-19",
-  "messages": 145,
+  "messages": 147,
   "unique_authors": 47,
   "reactions_total": 268,
-  "attachments": 30,
+  "attachments": 31,
   "channel_activity": {
+    "dont know what to write": 2,
     "🔸晒卡分享": 14,
     "🔸课间休息闲聊": 15,
     "🔸频道建议┊server-suggestions": 2,
@@ -35,8 +36,8 @@
     "1483973977884852224": 3
   },
   "hourly_activity": {
+    "15": 16,
     "14": 13,
-    "15": 14,
     "18": 14,
     "8": 9,
     "10": 5,
@@ -58,9 +59,8 @@
     "3": 3
   },
   "message_types": {
-    "0": 124,
-    "19": 19,
-    "4": 2
+    "4": 1,
+    "0": 1
   },
   "top_reacted_messages": [
     {

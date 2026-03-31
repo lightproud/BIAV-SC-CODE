@@ -1,10 +1,13 @@
 {
   "date": "2025-08-15",
-  "messages": 46,
-  "unique_authors": 9,
-  "reactions_total": 27,
-  "attachments": 18,
+  "messages": 128,
+  "unique_authors": 20,
+  "reactions_total": 379,
+  "attachments": 31,
   "channel_activity": {
+    "V2.3.1.0 停服维护公告": 31,
+    "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy": 1,
+    "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 50,
     "✅「Answered」Triple Reruns in the Future": 2,
     "✅「Answered」Clementine scaling is wrong": 4,
     "✅「Answered」I cant enter the game": 2,
@@ -18,6 +21,14 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "12": 27,
+    "13": 6,
+    "14": 17,
+    "19": 2,
+    "21": 4,
+    "11": 9,
+    "10": 17,
+    "15": 1,
     "7": 3,
     "8": 9,
     "18": 4,
@@ -27,14 +38,49 @@
     "3": 12,
     "4": 4,
     "5": 1,
-    "6": 2,
-    "14": 1
+    "6": 2
   },
   "message_types": {
-    "0": 14,
-    "19": 2
+    "0": 65,
+    "19": 15,
+    "6": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1405864369371349072",
+      "content": "Hey there, Keepers!\nIt's me, Ace! I'm back with the Second Issue of Localization",
+      "author": "morimens_15",
+      "reactions": 93,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405929628673114194",
+      "content": "And some silver to sweeten the deal 🤝",
+      "author": "chiefcornflake",
+      "reactions": 40,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405864473687756820",
+      "content": "**What's New and What's Next**\n\n**Existing Content**\nAs of Version 2.3.1, we've ",
+      "author": "morimens_15",
+      "reactions": 36,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405911257936298015",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 26,
+      "channel": "V2.3.1.0 停服维护公告"
+    },
+    {
+      "id": "1405865644515135538",
+      "content": "Thank you all again for your incredible support. We couldn't do this without you",
+      "author": "morimens_15",
+      "reactions": 18,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
     {
       "id": "1405968761043030088",
       "content": "有一隻蛾子哈皮兒波斯day<:Emoji_AEW_M_02:1400771550097051669>",
@@ -43,39 +89,102 @@
       "channel": ""
     },
     {
-      "id": "1405829703486672906",
-      "content": "<@885713804917346355>Hi, we fixed it and see if the phone can log in to the game",
-      "author": "morimensstaff01",
-      "reactions": 3,
-      "channel": "✅「Answered」Can't log in"
+      "id": "1405864967885951017",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 16,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
-      "id": "1405769917814276127",
-      "content": "大家好，有鑑於組隊專有名詞太多(什麼深海24、血海之類的)，本人在此蓋一樓專門用來提供快速查詢的大樓。\n望各位大佬能提供簡單的組隊圖片配上組隊名稱，使之後的查閱",
-      "author": "dongpormeat",
-      "reactions": 2,
-      "channel": "做個組隊專樓(請大佬支援攻略"
+      "id": "1405864642265485424",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 14,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
-      "id": "1405797329558179932",
-      "content": "圖魯:\n·命輪:堅韌意志+不存在之地\n·密契:遠方的歡宴\n策略:\n帶上裝備後圖魯即使70級也可以打出58盾的防禦卡而配備3張(大大提高抽到防禦卡的機率)\n這個策",
-      "author": "corposant_1003",
-      "reactions": 2,
-      "channel": "研發圖魯玩法(防禦篇)"
+      "id": "1405924718774714489",
+      "content": "Yeah am not going back to replay old chapters just because they were re-translat",
+      "author": "chiefcornflake",
+      "reactions": 14,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
-      "id": "1405968960381386923",
-      "content": "Been trying to get it but it wont let me been trying the spamming click method b",
-      "author": "apssin",
-      "reactions": 1,
-      "channel": "✅「Answered」I cant enter the game"
+      "id": "1405927208001867939",
+      "content": "Correction, people with a full time job don't have time for that.",
+      "author": "chiefcornflake",
+      "reactions": 14,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
-      "id": "1405746154406416569",
-      "content": "Не знаю, что произошло, но теперь звук появился и все работает стабильно. Спасиб",
-      "author": "closetom",
-      "reactions": 1,
-      "channel": "💭「В процессе」Пропал звук в игре, версия steam"
+      "id": "1405865053030322209",
+      "content": "**Upcoming UI Updates**\n\n● We're working on a feature that will let you **check ",
+      "author": "morimens_15",
+      "reactions": 13,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405864912500031578",
+      "content": "",
+      "author": "morimens_15",
+      "reactions": 12,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405865128959807499",
+      "content": "**Term Updates**\n\nFinally, here's a selection of new terms for those of you who ",
+      "author": "morimens_15",
+      "reactions": 8,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405873278974824448",
+      "content": "if this is the translating bgm... I have no words XD",
+      "author": "thpdom",
+      "reactions": 7,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405873528850350174",
+      "content": "Oops is something playing? I was recording with headphones off<:takenotes:135718",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405873697591398401",
+      "content": "~~...You were playing music but you had your headphones off~~",
+      "author": "zier.0",
+      "reactions": 7,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405924961104691211",
+      "content": "Can you imagine walking into buckingham palace and the music playing is aviici",
+      "author": "whirli_bri",
+      "reactions": 7,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405878540578066505",
+      "content": "Appreciate you and the team works as always 🙏",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1405911177254535209",
+      "content": "My favorite awaker is back",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "V2.3.1.0 停服维护公告"
+    },
+    {
+      "id": "1405923976730902579",
+      "content": "This is not it king",
+      "author": "whirli_bri",
+      "reactions": 4,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     }
   ]
 }

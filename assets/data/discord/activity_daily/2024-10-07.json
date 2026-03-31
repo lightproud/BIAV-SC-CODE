@@ -1,10 +1,13 @@
 {
   "date": "2024-10-07",
-  "messages": 96,
+  "messages": 110,
   "unique_authors": 33,
-  "reactions_total": 238,
-  "attachments": 33,
+  "reactions_total": 240,
+  "attachments": 40,
   "channel_activity": {
+    "GooglePlay儲值功能維護完成": 1,
+    "📜血鏈 · 希洛喚醒體&命輪介紹": 6,
+    "游戏美术资源上的文字": 7,
     "能不能把希洛活动的动画加到角色里？": 13,
     "我们忘却前夜太有游戏性了": 26,
     "我们环娜也想要新的专武": 1,
@@ -28,16 +31,17 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "14": 15,
+    "5": 6,
+    "6": 13,
+    "16": 13,
     "8": 8,
     "10": 5,
     "11": 6,
     "12": 7,
-    "14": 14,
     "9": 11,
     "13": 4,
-    "16": 6,
     "23": 4,
-    "6": 12,
     "7": 3,
     "4": 1,
     "15": 2,
@@ -45,13 +49,11 @@
     "2": 5,
     "3": 2,
     "1": 2,
-    "5": 1,
     "17": 1
   },
   "message_types": {
-    "0": 69,
-    "19": 10,
-    "4": 1
+    "0": 13,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -174,18 +176,25 @@
       "channel": ""
     },
     {
+      "id": "1292888308409700417",
+      "content": "Through Silver we gain Knowledge\nThrough Knowledge we gain the key\nThe Key shall",
+      "author": "silverstream_s",
+      "reactions": 1,
+      "channel": "游戏美术资源上的文字"
+    },
+    {
+      "id": "1292888916118077653",
+      "content": "◁和之前的稍微有点不一样，但是差不多https://discord.com/channels/1131791637933199470/1221527962495",
+      "author": "silverstream_s",
+      "reactions": 1,
+      "channel": "游戏美术资源上的文字"
+    },
+    {
       "id": "1292777599000514593",
       "content": "好消息，应该是bug\n坏消息，能看见的大招里也只有一句话，也没好到哪去，还是一脸死相😅",
       "author": "iceyss_",
       "reactions": 1,
       "channel": "希洛的技能小故事呢？？？"
-    },
-    {
-      "id": "1292840836886827050",
-      "content": "<@&1166257943742787615> 這裡是打算改名有問不答了嗎<:__:1239909731125035058>",
-      "author": "pigeon_0415",
-      "reactions": 1,
-      "channel": "程式員扣錢😡"
     }
   ]
 }

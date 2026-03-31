@@ -1,10 +1,11 @@
 {
   "date": "2025-05-01",
-  "messages": 50,
+  "messages": 53,
   "unique_authors": 10,
-  "reactions_total": 5,
-  "attachments": 10,
+  "reactions_total": 6,
+  "attachments": 19,
   "channel_activity": {
+    "游戏美术资源上的文字": 3,
     "✅「已回答」蟲族羊媽狂氣減費bug": 2,
     "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 32,
     "✅「已回答」第四樂章使用四次後無法生效": 7,
@@ -13,10 +14,10 @@
     "OOC鯊守(?) 不是幼兒園的車，小心謹慎注意上車": 1
   },
   "hourly_activity": {
+    "13": 28,
     "18": 2,
     "11": 2,
     "12": 3,
-    "13": 25,
     "14": 6,
     "15": 7,
     "9": 2,
@@ -25,8 +26,7 @@
     "22": 1
   },
   "message_types": {
-    "19": 7,
-    "0": 41
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -35,6 +35,13 @@
       "author": "water_heart",
       "reactions": 2,
       "channel": "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》"
+    },
+    {
+      "id": "1367487543959879821",
+      "content": "character banner also have flavour text in the background\n\nthis is 24\n\"One, two,",
+      "author": "skyfallterminus",
+      "reactions": 1,
+      "channel": "游戏美术资源上的文字"
     },
     {
       "id": "1367564704381272095",

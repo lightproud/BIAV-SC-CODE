@@ -1,10 +1,12 @@
 {
   "date": "2026-02-03",
-  "messages": 7798,
+  "messages": 7801,
   "unique_authors": 164,
-  "reactions_total": 1211,
-  "attachments": 349,
+  "reactions_total": 1217,
+  "attachments": 350,
   "channel_activity": {
+    "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 1,
+    "Balala Casiah,Aigis,Jenkins": 2,
     "💭「處理中」回放不能看": 1,
     "Who Ryker's Designer pls come talk ?": 1,
     "謂之「尸解」而登仙": 1,
@@ -22,6 +24,9 @@
     "🔸morimens-game-chat": 5877
   },
   "hourly_activity": {
+    "16": 174,
+    "0": 395,
+    "3": 439,
     "12": 437,
     "4": 617,
     "13": 498,
@@ -33,9 +38,6 @@
     "5": 601,
     "9": 334,
     "11": 386,
-    "16": 173,
-    "0": 394,
-    "3": 438,
     "7": 322,
     "8": 349,
     "10": 306,
@@ -48,8 +50,7 @@
     "23": 118
   },
   "message_types": {
-    "0": 8,
-    "19": 2
+    "0": 3
   },
   "top_reacted_messages": [
     {

@@ -1,55 +1,131 @@
 {
   "date": "2026-03-31",
-  "messages": 4127,
+  "messages": 6638,
   "unique_authors": 155,
-  "reactions_total": 404,
-  "attachments": 224,
+  "reactions_total": 759,
+  "attachments": 328,
   "channel_activity": {
-    "🔸綜合討論": 211,
-    "🔸morimens-game-chat": 2500,
-    "🔸相位对弈": 12,
-    "🔸课间休息闲聊": 25,
-    "🔸한국어-채팅방": 1,
+    "🔸綜合討論": 520,
+    "🔸morimens-game-chat": 4187,
+    "🔸相位对弈": 13,
+    "🔸课间休息闲聊": 54,
+    "🔸日本語チャンネル": 9,
+    "🔸한국어-채팅방": 13,
+    "🔸phòng-chat-tiếng-việt": 191,
+    "🔸canal-español": 141,
+    "🔸canal-português": 335,
+    "🔸ruang-obrolan-indonesia": 75,
+    "🔸ห้องสนทนาภาษาไทย": 66,
+    "🔸traphase": 6,
+    "🔸lore-chat": 59,
+    "🔸team-building": 168,
+    "🔸general-chat": 103,
+    "🔸邀请码互助┊swap-invitation-codes": 7,
+    "🔸game-question": 600,
+    "🔸机器人命令┊bot-commands": 16,
+    "基珀先生，請問我可以請您跳支舞嗎？|| W.I.P": 4,
+    "Enable Auto Battle for D-Zone/Tide and Character Trials again": 2,
+    "steam无法登陆": 2,
+    "💭「处理中」星辰造物": 2,
+    "💭「處理中」倒數計時Bug?": 1,
+    "💭「處理中」等量出血": 1,
+    "💭「Processing」Skip button isn't working on Mobile": 2,
+    "💭「Processing」Game not yet released in region": 2,
+    "\"24\" lives matter": 2,
+    "May I have this dance, Mr. Keeper? || W.I.P": 2,
+    "William AI baby": 1,
+    "morimens sybau 💔": 8,
+    "Tawil as a male (WIP)": 1,
+    "Teatime Doll wip": 2,
+    "William posting": 16,
     "🔸русский-канал": 2,
-    "🔸phòng-chat-tiếng-việt": 173,
-    "🔸canal-español": 138,
-    "🔸canal-português": 283,
-    "🔸ruang-obrolan-indonesia": 34,
-    "🔸ห้องสนทนาภาษาไทย": 57,
-    "🔸traphase": 1,
-    "🔸lore-chat": 39,
-    "🔸team-building": 92,
-    "🔸general-chat": 97,
-    "🔸邀请码互助┊swap-invitation-codes": 3,
-    "🔸game-question": 423,
-    "🔸机器人命令┊bot-commands": 11,
     "🔸erica-playground": 14,
     "💭「处理中」错字": 4,
     "💭「处理中」小猫克扣魔术师专造力量降低": 5,
     "💭「處理中」波呂克斯的超限?": 2
   },
   "hourly_activity": {
+    "6": 459,
+    "7": 452,
+    "8": 566,
+    "9": 704,
+    "10": 359,
+    "0": 574,
+    "3": 873,
+    "4": 710,
+    "5": 511,
     "1": 706,
-    "2": 724,
-    "3": 872,
-    "4": 696,
-    "5": 510,
-    "0": 571,
-    "6": 48
+    "2": 724
   },
   "message_types": {
-    "0": 2845,
-    "19": 1217,
-    "20": 5,
-    "4": 3
+    "19": 822,
+    "0": 1683,
+    "20": 2,
+    "4": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1488427679685279846",
+      "content": "67",
+      "author": "_venush",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488382893091848244",
+      "content": "My art was not arting these past days so i drew casual William to decompress <:t",
+      "author": "zzio_",
+      "reactions": 7,
+      "channel": "William posting"
+    },
     {
       "id": "1488373969487790232",
       "content": "Which one should I use? 1 - 4",
       "author": "snorlax01",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488471412120227962",
+      "content": "sorry for spoilers",
+      "author": "dyssayah",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488457735044595823",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488471964434567168",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488435975469400295",
+      "content": "I either finish this before the event or this is going to be kept in my folder f",
+      "author": "that_one_chippy",
+      "reactions": 5,
+      "channel": "May I have this dance, Mr. Keeper? || W.I.P"
+    },
+    {
+      "id": "1488479465599143956",
+      "content": "Ellie ちゃん! はい!\n何がすき?\nチョコミント\nよりもあ、な、た!",
+      "author": "polkarain",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488481880109220000",
+      "content": "The biggest reason I quit gacha games is if they don't respect my time and the d",
+      "author": "blumenwiz",
+      "reactions": 4,
+      "channel": "Enable Auto Battle for D-Zone/Tide and Character Trials again"
     },
     {
       "id": "1488372003348943039",
@@ -66,123 +142,67 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488335923342082108",
-      "content": "-# I can't take it anymore. I'm sick of Thais. I try to play Horla. My Thais doe",
-      "author": "duskisnotdust",
+      "id": "1488455631575715900",
+      "content": "For the newbies out there, don't forget to redeem codes for freebies ( The timer",
+      "author": "tnimreppep",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488353786350141571",
-      "content": "I FINALLY MADE IT",
-      "author": "l8989c",
+      "id": "1488465916445331466",
+      "content": "time to burn my Silver on Standard Ultra for +12 Liz  🗣️ 🔥",
+      "author": "ahmedamr30",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488358743694508313",
-      "content": "I just exalted with her and it dealt 70k",
-      "author": "l8989c",
+      "id": "1488466980787716207",
+      "content": "You can do strike dps tinct!!!",
+      "author": "jyeusu",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488371643473596558",
-      "content": "fck this tulu and blue bs",
-      "author": "arisuu0604",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488374775083696299",
-      "content": "Easy <@296679098703544321>",
-      "author": "l8989c",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488380657112715356",
-      "content": "just for Idot I decided to level my Wanda",
-      "author": "bagels5899",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488383151196602498",
-      "content": "This is what a good dinner looks like",
-      "author": "frosthief",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488383151821819965",
-      "content": "Mfs couldn't go the extra mile to actually leave their shopping carts where it w",
-      "author": "snorlax01",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488384854058860595",
-      "content": "youre not",
+      "id": "1488468287644897371",
+      "content": "red is arguably the best realm in the game",
       "author": "princess.goth",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488384862619570319",
-      "content": "creature",
-      "author": "princess.goth",
+      "id": "1488470639424573543",
+      "content": "Pure Chaos is the most fun realm",
+      "author": "good.th",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488386226276012032",
-      "content": "Voretits and carcus",
-      "author": "cqteiie",
+      "id": "1488474247948140544",
+      "content": "im literally a gooner who likes nikke <:Doll_Wait:1468259092459032606>",
+      "author": "chinkeeyong",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488388928640782336",
-      "content": "Nvm they js liked my post fuck my life",
-      "author": "cqteiie",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488392915222003823",
-      "content": "I cannot enjoy Traphase. B/c I hate interacting with others.",
-      "author": "minmin_winwin",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488395065096409210",
-      "content": "It would be really funny if Nyarla was given a blue name\nWithout any of the actu",
-      "author": "frosthief",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488407456047435846",
-      "content": "i actually got really lucky twice!!!",
-      "author": "princess.goth",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488363733041414334",
+      "id": "1488474319968272484",
       "content": "",
-      "author": "trevorsuyu",
+      "author": "good.th",
       "reactions": 3,
-      "channel": "🔸相位对弈"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488372621283426324",
-      "content": "哎呦手滑了",
-      "author": "akkom730",
+      "id": "1488476748076023911",
+      "content": "你将为你所犯下的罪行受到惩罚，即使我不会成为审判者，我也会成为检察官，小中国男孩。",
+      "author": "princess.goth",
       "reactions": 3,
-      "channel": "🔸相位对弈"
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488477503046811851",
+      "content": "https://tenor.com/view/bingchilling-gif-10067072887923246131",
+      "author": "moyashi0672",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

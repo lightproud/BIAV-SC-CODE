@@ -1,10 +1,11 @@
 {
   "date": "2025-06-05",
-  "messages": 86,
+  "messages": 91,
   "unique_authors": 12,
-  "reactions_total": 86,
-  "attachments": 15,
+  "reactions_total": 94,
+  "attachments": 19,
   "channel_activity": {
+    "忘卻前夜OST：奧瑞塔EP·天真的驚悚童話": 5,
     "✅「已回答」周年命轮疑似与未送出的花冲突": 7,
     "✅「Answered」Hey, I (and some other players) have an issue logging into the game.": 3,
     "✅「Answered」Please make animated backgrounds be able to be turned off. 請提供關閉動畫背景的選項。": 1,
@@ -28,6 +29,7 @@
     "1380131496278495333": 1
   },
   "hourly_activity": {
+    "8": 10,
     "22": 7,
     "19": 2,
     "21": 2,
@@ -38,7 +40,6 @@
     "11": 2,
     "14": 3,
     "16": 7,
-    "8": 5,
     "4": 1,
     "6": 13,
     "5": 15,
@@ -46,9 +47,7 @@
     "13": 3
   },
   "message_types": {
-    "0": 22,
-    "4": 3,
-    "19": 1
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -71,6 +70,13 @@
       "author": "morimensstaff01",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1380096650923606107",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：奧瑞塔EP·天真的驚悚童話，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": "忘卻前夜OST：奧瑞塔EP·天真的驚悚童話"
     },
     {
       "id": "1380121536840732682",

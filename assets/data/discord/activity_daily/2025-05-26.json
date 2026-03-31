@@ -1,10 +1,11 @@
 {
   "date": "2025-05-26",
-  "messages": 124,
+  "messages": 125,
   "unique_authors": 24,
   "reactions_total": 222,
   "attachments": 31,
   "channel_activity": {
+    "Sharing my 1.5 anniversary day 1 experience": 1,
     "✅「已回答」蟲族羊媽狂氣減費bug": 1,
     "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 1,
     "✅「Answered」Text not translate": 8,
@@ -35,13 +36,13 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "12": 20,
     "2": 7,
     "14": 1,
     "3": 18,
     "6": 16,
     "11": 23,
     "17": 4,
-    "12": 19,
     "4": 3,
     "1": 1,
     "8": 4,
@@ -55,9 +56,7 @@
     "7": 3
   },
   "message_types": {
-    "19": 17,
-    "0": 73,
-    "4": 14
+    "0": 1
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,11 @@
 {
   "date": "2025-10-03",
-  "messages": 31,
+  "messages": 33,
   "unique_authors": 9,
   "reactions_total": 24,
   "attachments": 7,
   "channel_activity": {
+    "忘却前夜OST：皮克曼EP·疯画奇旅": 2,
     "💭「Processing」English translation not translation to english. (Pc version)": 1,
     "✅「Answered」No Gnosis Fragments from Awakening Events": 5,
     "这次的周年福利还会送限定角色吗": 3,
@@ -16,6 +17,7 @@
     "1423337172655935600": 1
   },
   "hourly_activity": {
+    "6": 4,
     "18": 3,
     "2": 2,
     "3": 2,
@@ -26,14 +28,12 @@
     "11": 1,
     "4": 2,
     "5": 1,
-    "6": 2,
     "17": 2,
     "13": 1,
     "1": 1
   },
   "message_types": {
-    "0": 17,
-    "19": 2
+    "0": 2
   },
   "top_reacted_messages": [
     {

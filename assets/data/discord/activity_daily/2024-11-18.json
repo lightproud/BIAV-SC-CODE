@@ -1,10 +1,12 @@
 {
   "date": "2024-11-18",
-  "messages": 89,
+  "messages": 97,
   "unique_authors": 29,
-  "reactions_total": 94,
-  "attachments": 29,
+  "reactions_total": 96,
+  "attachments": 31,
   "channel_activity": {
+    "🎁露比帶著禮包兌換碼來啦~": 3,
+    "V1.7.1.0 停服維護公告": 5,
     "About official materials usage": 4,
     "这么搞就没意思了": 5,
     "密契無法預覽": 3,
@@ -28,15 +30,16 @@
     "跑不掉 不跑了（原地躺下": 8
   },
   "hourly_activity": {
+    "13": 6,
+    "5": 5,
+    "17": 3,
+    "19": 1,
     "7": 6,
     "10": 16,
     "6": 3,
     "15": 2,
-    "17": 1,
     "4": 25,
-    "5": 3,
     "16": 1,
-    "13": 3,
     "11": 4,
     "12": 3,
     "3": 17,
@@ -45,8 +48,8 @@
     "2": 1
   },
   "message_types": {
-    "0": 68,
-    "19": 7
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -97,6 +100,20 @@
       "author": "yolo_mode",
       "reactions": 2,
       "channel": "跑不掉 不跑了（原地躺下"
+    },
+    {
+      "id": "1308066590331240540",
+      "content": "",
+      "author": "ekko9950",
+      "reactions": 1,
+      "channel": "🎁露比帶著禮包兌換碼來啦~"
+    },
+    {
+      "id": "1308119992004382801",
+      "content": "還有異種，現在在維修中",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "V1.7.1.0 停服維護公告"
     },
     {
       "id": "1308015948456001548",

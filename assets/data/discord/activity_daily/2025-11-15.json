@@ -1,10 +1,13 @@
 {
   "date": "2025-11-15",
-  "messages": 31,
-  "unique_authors": 14,
-  "reactions_total": 305,
-  "attachments": 10,
+  "messages": 94,
+  "unique_authors": 26,
+  "reactions_total": 379,
+  "attachments": 15,
   "channel_activity": {
+    "V2.4.0.0 停服维护公告": 60,
+    "3+1 [Pollux and Castor Fanfic]": 2,
+    "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫": 1,
     "💭「处理中」背景音訊出問題": 3,
     "✅「已回答」仙网": 11,
     "💭「Processing」bug in the description Caren ult": 3,
@@ -17,21 +20,24 @@
     "1423337172655935600": 6
   },
   "hourly_activity": {
+    "11": 31,
+    "12": 17,
+    "13": 5,
+    "14": 9,
+    "17": 1,
+    "23": 1,
+    "9": 3,
+    "6": 4,
     "5": 1,
-    "6": 3,
     "4": 8,
     "8": 6,
-    "13": 2,
-    "14": 1,
     "15": 2,
     "7": 1,
-    "9": 1,
-    "12": 1,
     "0": 5
   },
   "message_types": {
-    "0": 20,
-    "19": 1
+    "19": 26,
+    "0": 37
   },
   "top_reacted_messages": [
     {
@@ -42,11 +48,39 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1439185535644995644",
+      "content": "hello i'm back with another fic <:shy:1356053151349997829> <:M_satisfy:140077169",
+      "author": "annaxxe_",
+      "reactions": 38,
+      "channel": "3+1 [Pollux and Castor Fanfic]"
+    },
+    {
+      "id": "1439309048355880962",
+      "content": "This is an amazing patch. The team should be proud of the work you're doing!",
+      "author": "ox1clean",
+      "reactions": 12,
+      "channel": "V2.4.0.0 停服维护公告"
+    },
+    {
+      "id": "1439227104381370448",
+      "content": "cause no one plays tulu",
+      "author": "rain_scarlet",
+      "reactions": 9,
+      "channel": "V2.4.0.0 停服维护公告"
+    },
+    {
       "id": "1439105622309343356",
       "content": "为什么服务器上会有这些角色名称？我不明白“术士”、“幽灵”、“诅咒”和“凡人”与《忘卻前夜》有什么关系？这个服务器现在变成了修仙网文吗？凡人和术士和洛夫克拉夫特",
       "author": "tksn.",
       "reactions": 8,
       "channel": "✅「已回答」仙网"
+    },
+    {
+      "id": "1439222028698914837",
+      "content": "都有在派股息（叠加奖励）<:processing:1357185814567718963>",
+      "author": "cs001092",
+      "reactions": 7,
+      "channel": "V2.4.0.0 停服维护公告"
     },
     {
       "id": "1439108402646224896",
@@ -63,6 +97,20 @@
       "channel": "💭「Processing」bug in the description Caren ult"
     },
     {
+      "id": "1439139965501182034",
+      "content": "",
+      "author": "s64987866",
+      "reactions": 3,
+      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
+    },
+    {
+      "id": "1439187178470248498",
+      "content": "This is my favorite Morimens fanfic set ever truthfully <:M_satisfy:140077169032",
+      "author": "reya.li",
+      "reactions": 2,
+      "channel": "3+1 [Pollux and Castor Fanfic]"
+    },
+    {
       "id": "1439107943151697920",
       "content": "don’t disrespect <@523084324724146193> the egirl aigis dogger like that",
       "author": "frowningquokka",
@@ -75,6 +123,27 @@
       "author": "theborkerr",
       "reactions": 2,
       "channel": "Goliath's interaction with the Keeper in Arc 2 Chapter 3 is inconsistent with the main story"
+    },
+    {
+      "id": "1439219592881897553",
+      "content": "沒關係我甚至連9-12都還沒打過",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "V2.4.0.0 停服维护公告"
+    },
+    {
+      "id": "1439221069314785374",
+      "content": "好色 都給你",
+      "author": "0.0._.0_0.",
+      "reactions": 1,
+      "channel": "V2.4.0.0 停服维护公告"
+    },
+    {
+      "id": "1439258476642570386",
+      "content": "original says 17",
+      "author": "ggwpnp",
+      "reactions": 1,
+      "channel": "V2.4.0.0 停服维护公告"
     }
   ]
 }

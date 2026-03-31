@@ -1,10 +1,11 @@
 {
   "date": "2025-04-15",
-  "messages": 53,
+  "messages": 54,
   "unique_authors": 13,
   "reactions_total": 21,
   "attachments": 7,
   "channel_activity": {
+    "忘卻前夜OST：深港幽靈之船": 1,
     "之前听说星辰篇要遏制数值膨胀": 14,
     "✅「已回答」魔術師取物超距卡沒減費用": 4,
     "💭「處理中」你是描述錯誤還是bug": 4,
@@ -15,6 +16,7 @@
     "不会再有了": 2
   },
   "hourly_activity": {
+    "15": 1,
     "18": 11,
     "19": 3,
     "9": 9,
@@ -29,8 +31,7 @@
     "5": 1
   },
   "message_types": {
-    "0": 42,
-    "19": 8
+    "19": 1
   },
   "top_reacted_messages": [
     {

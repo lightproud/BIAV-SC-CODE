@@ -1,10 +1,12 @@
 {
   "date": "2025-06-04",
-  "messages": 94,
-  "unique_authors": 16,
-  "reactions_total": 38,
+  "messages": 145,
+  "unique_authors": 17,
+  "reactions_total": 59,
   "attachments": 7,
   "channel_activity": {
+    "V2.2.2.4 在線維護公告": 2,
+    "✅校猫碎碎念#卡斯托尔加强": 49,
     "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 1,
     "✅「已回答」PVP鳥人Bug": 2,
     "考虑出个练习模式嘛": 3,
@@ -39,25 +41,26 @@
     "黑皮大学生": 1
   },
   "hourly_activity": {
+    "6": 6,
+    "2": 16,
+    "3": 8,
+    "4": 8,
+    "5": 2,
+    "7": 11,
+    "9": 30,
+    "10": 4,
+    "13": 3,
+    "15": 15,
+    "16": 6,
     "0": 1,
-    "2": 9,
-    "9": 16,
-    "10": 3,
     "8": 28,
     "1": 1,
-    "4": 3,
-    "6": 4,
-    "7": 7,
     "12": 3,
-    "16": 3,
-    "3": 5,
-    "17": 3,
-    "15": 8
+    "17": 3
   },
   "message_types": {
-    "0": 49,
-    "4": 24,
-    "19": 4
+    "0": 37,
+    "19": 14
   },
   "top_reacted_messages": [
     {
@@ -82,6 +85,13 @@
       "channel": "✅「已回答」如视频所示"
     },
     {
+      "id": "1379754098835853436",
+      "content": "请把弟弟拿来（）",
+      "author": "rain_scarlet",
+      "reactions": 4,
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
+    },
+    {
       "id": "1379737053134327810",
       "content": "Haha suggestion received, I'll look for it later<:pray:1356053116260454534>",
       "author": "morimensstaff01",
@@ -96,6 +106,13 @@
       "channel": "✅「Answered」Corrosion + counter damage going through phase Invul"
     },
     {
+      "id": "1379710170191499365",
+      "content": "只有数值变动什么的不要啊～",
+      "author": "rain_scarlet",
+      "reactions": 3,
+      "channel": "V2.2.2.4 在線維護公告"
+    },
+    {
       "id": "1379755711336022116",
       "content": "第一个商店马上只剩那个1：40的金券了，接下来两个也撑不了多久。\n能不能多开放点材料兑换，金券再多没材料也升不了啊",
       "author": "287405tjy_28066",
@@ -103,53 +120,88 @@
       "channel": "如图"
     },
     {
-      "id": "1379756389093871716",
-      "content": "<@&1166257943742787615> 捞一下（",
-      "author": "flarinsidia",
+      "id": "1379672237304451143",
+      "content": "<:takenotes:1357186646294138890>",
+      "author": "rain_scarlet",
       "reactions": 1,
-      "channel": "考虑出个练习模式嘛"
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
     },
     {
-      "id": "1379742791701106769",
-      "content": "btw我建议加上回放并全部重写活动剧情",
-      "author": "navirecorbeau",
+      "id": "1379697981741203476",
+      "content": "坐等再次上修",
+      "author": "ahuahuahua",
       "reactions": 1,
-      "channel": "這ai痕跡太明顯了吧"
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
     },
     {
-      "id": "1379726278755749898",
-      "content": "Hi~We plan to provide switch options in the settings! We will implement this fea",
-      "author": "morimensstaff01",
+      "id": "1379751574993375374",
+      "content": "这次1.5周年过的有点寒酸了呀，角色pv没有，新主线没有，角色强度又很难评，拉新人家问我抽不抽新角色我都不知道怎么和人家说",
+      "author": "13020059251_89639",
       "reactions": 1,
-      "channel": "✅「Answered」Please make animated backgrounds be able to be turned off. 請提供關閉動畫背景的選項。"
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
     },
     {
-      "id": "1379737278909255720",
-      "content": "Hi, we will fix this issue",
-      "author": "morimensstaff01",
+      "id": "1379751998861213758",
+      "content": "~~要不要發個自選讓我騙騙新人入坑~~",
+      "author": "heikwok",
       "reactions": 1,
-      "channel": "✅「Answered」Adventurer's pack text bug"
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
     },
     {
-      "id": "1379744171685842964",
-      "content": "Hi~This issue has been fixed🙏",
-      "author": "morimensstaff01",
+      "id": "1379752577469775913",
+      "content": "一个还没怎么说的问题就是这个角色对于新人其实不是很友好",
+      "author": "rain_scarlet",
       "reactions": 1,
-      "channel": "✅「Answered」Adventurer's pack text bug"
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
     },
     {
-      "id": "1379743585423065159",
-      "content": "Hi~The suggestion has been accepted and we will implement it as soon as possible",
-      "author": "morimensstaff01",
+      "id": "1379753474010513481",
+      "content": "要是其他俩周年角色，可以直接建议新人抽爆",
+      "author": "rain_scarlet",
       "reactions": 1,
-      "channel": "✅「Answered」Surging tides description"
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
     },
     {
-      "id": "1379742755600859167",
-      "content": "Hi~This issue has been fixed❤️",
-      "author": "morimensstaff01",
+      "id": "1379753549520437379",
+      "content": "但你会建议新人抽爆鸟鸟嘛（",
+      "author": "rain_scarlet",
       "reactions": 1,
-      "channel": "✅「Answered」Erica Defence text bug + Clem strike"
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
+    },
+    {
+      "id": "1379770154593943664",
+      "content": "~~我建議抽來舔~~",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
+    },
+    {
+      "id": "1379816054934732840",
+      "content": "這遊戲不適合新人玩",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
+    },
+    {
+      "id": "1379817112725618809",
+      "content": "这游戏不是人玩的",
+      "author": "287405tjy_28066",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
+    },
+    {
+      "id": "1379842162753011782",
+      "content": "說甚麼大實話",
+      "author": "limejuice0829",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
+    },
+    {
+      "id": "1379847858483630224",
+      "content": "怎麼不是大筆一揮 變成18+遊戲<:love:1356053099931897977>",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "✅校猫碎碎念#卡斯托尔加强"
     }
   ]
 }

@@ -1,29 +1,30 @@
 {
   "date": "2024-12-18",
-  "messages": 32,
+  "messages": 37,
   "unique_authors": 14,
-  "reactions_total": 141,
+  "reactions_total": 158,
   "attachments": 3,
   "channel_activity": {
+    "官方周邊建議征集": 5,
     "彌薩格校貓 你到底想干嘛？": 28,
     "【梗图】堆点我P过的梗图": 3,
     "約稿了墨菲的等身抱枕": 1
   },
   "hourly_activity": {
+    "1": 2,
+    "4": 8,
+    "9": 4,
+    "16": 3,
+    "23": 1,
     "0": 1,
-    "1": 1,
-    "4": 7,
     "5": 8,
     "7": 1,
-    "9": 3,
     "10": 6,
     "11": 2,
-    "16": 2,
     "8": 1
   },
   "message_types": {
-    "0": 20,
-    "19": 8
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -53,6 +54,13 @@
       "author": "heikwok",
       "reactions": 17,
       "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1318973779065438259",
+      "content": "求官方line貼圖，相位對弈設計的那些都很棒，而且這個不用做出實體",
+      "author": "qiyun0493",
+      "reactions": 16,
+      "channel": "官方周邊建議征集"
     },
     {
       "id": "1318735512436998174",
@@ -95,6 +103,13 @@
       "author": "arr5721",
       "reactions": 2,
       "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1318795567543091311",
+      "content": "蛤我還想看到校貓欸",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "官方周邊建議征集"
     },
     {
       "id": "1318839666362941451",

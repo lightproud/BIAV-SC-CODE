@@ -1,10 +1,13 @@
 {
   "date": "2025-03-28",
-  "messages": 18,
+  "messages": 22,
   "unique_authors": 6,
-  "reactions_total": 721,
-  "attachments": 1,
+  "reactions_total": 724,
+  "attachments": 2,
   "channel_activity": {
+    "V2.1.1.7 在線維護公告": 2,
+    "✅前瞻：V2.1.1 相位对弈联动": 1,
+    "✅前瞻：V2.1 融灾黑潮·熔毁": 1,
     "✅「Answered」Add crafting for Shattered Remnant of Dreams": 1,
     "✅「Answered」Korean Unicode Error": 5,
     "✅「已回答」4-4精英": 3,
@@ -15,18 +18,17 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "9": 3,
+    "10": 4,
     "3": 6,
     "4": 3,
     "6": 2,
     "7": 2,
-    "2": 2,
-    "10": 2,
-    "9": 1
+    "2": 2
   },
   "message_types": {
-    "19": 3,
-    "0": 7,
-    "4": 4
+    "0": 2,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -35,6 +37,13 @@
       "author": "morimensstaff01",
       "reactions": 713,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1355121517779877928",
+      "content": "✅前瞻：V2.1.1 相位对弈联动",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "✅前瞻：V2.1.1 相位对弈联动"
     },
     {
       "id": "1355039839061278950",
@@ -49,6 +58,13 @@
       "author": "cometovilla",
       "reactions": 2,
       "channel": "✅「Answered」Korean Unicode Error"
+    },
+    {
+      "id": "1355109011447611486",
+      "content": "守密人你好：\n       彌薩格大學校務處將於3月28日17:30進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶來的不便，我們會",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": "V2.1.1.7 在線維護公告"
     },
     {
       "id": "1355070925653147749",

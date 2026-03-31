@@ -1,10 +1,11 @@
 {
   "date": "2025-08-01",
-  "messages": 69,
+  "messages": 71,
   "unique_authors": 12,
-  "reactions_total": 10,
+  "reactions_total": 23,
   "attachments": 25,
   "channel_activity": {
+    "Call for Community Volunteer Translators: Applications Open!": 2,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 5,
     "✅「已回答」调查数据bug：最高力量": 5,
     "✅「Answered」Tawil card \" Master of all thing\" bug": 1,
@@ -23,6 +24,8 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
+    "4": 27,
+    "7": 1,
     "16": 7,
     "1": 2,
     "2": 2,
@@ -35,18 +38,22 @@
     "3": 9,
     "14": 1,
     "0": 1,
-    "4": 26,
     "5": 1,
     "17": 5,
     "9": 1,
     "10": 1
   },
   "message_types": {
-    "0": 19,
-    "4": 5,
-    "19": 3
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1400694998709833788",
+      "content": "We'll be reaching out to our selected volunteers through Discord. We've saved yo",
+      "author": "morimens_15",
+      "reactions": 13,
+      "channel": "Call for Community Volunteer Translators: Applications Open!"
+    },
     {
       "id": "1400762010345410632",
       "content": "根本不够用啊，群里高练度的群友都说缺钢笔洗密契，如果出相关礼包一定会买，比起红石头来说大家更需要钢笔，希望尽快上新礼包🙏🏻",

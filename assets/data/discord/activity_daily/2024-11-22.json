@@ -1,10 +1,12 @@
 {
   "date": "2024-11-22",
-  "messages": 70,
+  "messages": 72,
   "unique_authors": 10,
-  "reactions_total": 30,
-  "attachments": 8,
+  "reactions_total": 33,
+  "attachments": 9,
   "channel_activity": {
+    "V1.7.1.3 在線維護公告": 1,
+    "V1.7.1.2 在線維護公告": 1,
     "請願本源朵爾進典藏館以及實裝上線": 5,
     "為何0費吃不到上行音": 7,
     "Quick select current Posse when using G-Ramona Exalt": 1,
@@ -15,20 +17,21 @@
     "蜡像先生和羅杰斯のLove": 47
   },
   "hourly_activity": {
+    "1": 1,
+    "0": 3,
     "7": 6,
     "10": 2,
     "13": 5,
     "17": 1,
     "8": 3,
     "12": 1,
-    "0": 2,
     "3": 1,
     "16": 1,
     "6": 1,
     "14": 47
   },
   "message_types": {
-    "0": 16
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -58,6 +61,13 @@
       "author": "nancyjofla",
       "reactions": 4,
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1309322971130626109",
+      "content": "守密人你好：\n       彌薩格大學校務處將於11月22日04:25(UTC+8)進行校內設施修復，更新完成後您將得到通知，重新進入遊戲。對於更新可能給大家帶",
+      "author": "morimensstaff02",
+      "reactions": 3,
+      "channel": "V1.7.1.3 在線維護公告"
     },
     {
       "id": "1309426959335297064",

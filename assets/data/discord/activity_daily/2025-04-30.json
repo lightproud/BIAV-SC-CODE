@@ -1,10 +1,12 @@
 {
   "date": "2025-04-30",
-  "messages": 31,
+  "messages": 33,
   "unique_authors": 10,
   "reactions_total": 6,
   "attachments": 6,
   "channel_activity": {
+    "V2.2.1.2 在線維護公告": 1,
+    "✅校猫碎碎念#近况分享": 1,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 1,
     "✅「Answered」Spelling mistakes in wheel of destiny": 5,
     "✅「Answered」Sanga misnamed as corposant": 8,
@@ -15,17 +17,16 @@
     "✅「已回答」基础打防是什么意思": 1
   },
   "hourly_activity": {
+    "11": 4,
+    "16": 1,
     "8": 14,
     "3": 4,
     "9": 2,
     "15": 1,
-    "11": 3,
     "2": 7
   },
   "message_types": {
-    "0": 22,
-    "4": 6,
-    "19": 3
+    "0": 2
   },
   "top_reacted_messages": [
     {

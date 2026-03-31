@@ -1,10 +1,11 @@
 {
   "date": "2024-12-17",
-  "messages": 46,
-  "unique_authors": 11,
-  "reactions_total": 107,
-  "attachments": 4,
+  "messages": 105,
+  "unique_authors": 15,
+  "reactions_total": 171,
+  "attachments": 7,
   "channel_activity": {
+    "官方周邊建議征集": 59,
     "三星bug没完全修好": 7,
     "會活下來嗎": 2,
     "When is Tulu going to be on standard banner?": 1,
@@ -16,21 +17,24 @@
     "🔸【超越維度的祝福】認領專區": 1
   },
   "hourly_activity": {
+    "2": 13,
+    "3": 17,
+    "4": 9,
+    "6": 2,
+    "7": 3,
+    "8": 2,
+    "15": 28,
+    "16": 18,
     "5": 1,
-    "6": 1,
     "13": 3,
     "14": 4,
-    "8": 1,
     "9": 2,
-    "7": 2,
-    "15": 22,
-    "16": 7,
     "23": 2,
     "18": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "19": 8,
+    "0": 51
   },
   "top_reacted_messages": [
     {
@@ -39,6 +43,13 @@
       "author": "game.producer.light",
       "reactions": 34,
       "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1318612608827527273",
+      "content": "因为打赢就可以请人了。",
+      "author": "game.producer.light",
+      "reactions": 27,
+      "channel": "官方周邊建議征集"
     },
     {
       "id": "1318611325030764585",
@@ -69,6 +80,27 @@
       "channel": "彌薩格校貓 你到底想干嘛？"
     },
     {
+      "id": "1318410258112319518",
+      "content": "出抱枕",
+      "author": "kong760",
+      "reactions": 7,
+      "channel": "官方周邊建議征集"
+    },
+    {
+      "id": "1318432714025734184",
+      "content": "还有小人立体书 整点莉莉活动剧情 那个感觉挺可爱的（幻想）",
+      "author": "shimotsuki14_72248",
+      "reactions": 6,
+      "channel": "官方周邊建議征集"
+    },
+    {
+      "id": "1318420868992340055",
+      "content": "而且香水要藥妝合格證\n蠟燭不用",
+      "author": "kong760",
+      "reactions": 5,
+      "channel": "官方周邊建議征集"
+    },
+    {
       "id": "1318605823311872071",
       "content": "我的日常生活里面游戏占比很大，所以难得玩到一个不错的游戏，我还是希望我的认真对待，能让他活得更久一点",
       "author": "lurenjiao",
@@ -81,6 +113,20 @@
       "author": "dyyqcwj",
       "reactions": 5,
       "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1318413962651631698",
+      "content": "圖魯帽子可以參考這個",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "官方周邊建議征集"
+    },
+    {
+      "id": "1318461742048612362",
+      "content": "命轮的镭射卡",
+      "author": "alisazhou_73452",
+      "reactions": 4,
+      "channel": "官方周邊建議征集"
     },
     {
       "id": "1318605350571610143",
@@ -97,6 +143,13 @@
       "channel": "彌薩格校貓 你到底想干嘛？"
     },
     {
+      "id": "1318403529651650602",
+      "content": "說，都說<:wish:1236951537788649492>",
+      "author": "07_li",
+      "reactions": 3,
+      "channel": "官方周邊建議征集"
+    },
+    {
       "id": "1318477645649809449",
       "content": "暫時還沒有哦，收到守密人的周邊建議。",
       "author": "lubi_17667",
@@ -111,39 +164,18 @@
       "channel": "彌薩格校貓 你到底想干嘛？"
     },
     {
-      "id": "1318500988436484117",
-      "content": "N真的該出 有認真看後面劇情的應該都知道...",
-      "author": "Deleted User",
+      "id": "1318413003204333628",
+      "content": "這個好像真的很適合出抱枕",
+      "author": "ice_storys",
       "reactions": 2,
-      "channel": "會活下來嗎"
+      "channel": "官方周邊建議征集"
     },
     {
-      "id": "1318714617912098928",
-      "content": "考虑尺度转型是啥意思！！？复活赛打赢要变成黄油啦？？别太离谱了❓❓❓现在这样就挺好，",
-      "author": "nekoiiii.",
-      "reactions": 1,
-      "channel": "彌薩格校貓 你到底想干嘛？"
-    },
-    {
-      "id": "1318582651489357906",
-      "content": "https://vxtwitter.com/VoidpathyArts/status/1860210057205678196?t=P-BC8P8TZOyvONk",
-      "author": "nazhigezihk",
-      "reactions": 1,
-      "channel": "萊克同人轉載"
-    },
-    {
-      "id": "1318720828828946452",
-      "content": "庫洛魔法使的感覺🤣\n真心好看，感覺拿棒子敲一下就能召喚于麗出來",
-      "author": "ekko9950",
-      "reactions": 1,
-      "channel": "這太美麗了😭"
-    },
-    {
-      "id": "1318585444371529739",
-      "content": "召喚牌佬<:play:1238448692441251910>",
-      "author": "yummy_9673",
-      "reactions": 1,
-      "channel": "🔸【超越維度的祝福】認領專區"
+      "id": "1318420183529951273",
+      "content": "喔對阿潘好像可以出一系列香氛蠟燭欸\n這個超賺",
+      "author": "kong760",
+      "reactions": 2,
+      "channel": "官方周邊建議征集"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2025-12-05",
-  "messages": 89,
+  "messages": 94,
   "unique_authors": 14,
-  "reactions_total": 49,
-  "attachments": 12,
+  "reactions_total": 73,
+  "attachments": 13,
   "channel_activity": {
+    "V2.4.0.10 在线维护公告": 5,
     "💭「Processing」Morimens freeze when I log in": 1,
     "✅「已回答」繁中PC端黑屏": 2,
     "关于【献祭】的bug修复": 3,
@@ -30,7 +31,10 @@
     "1446286446599078021": 1
   },
   "hourly_activity": {
-    "6": 5,
+    "6": 7,
+    "11": 30,
+    "16": 1,
+    "19": 2,
     "9": 9,
     "7": 10,
     "15": 5,
@@ -39,20 +43,31 @@
     "13": 2,
     "20": 1,
     "23": 3,
-    "19": 1,
     "5": 1,
     "3": 5,
     "10": 2,
-    "11": 29,
     "12": 1,
     "0": 1
   },
   "message_types": {
-    "0": 35,
-    "19": 5,
-    "4": 13
+    "0": 4,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1446387410207510702",
+      "content": "December 186?",
+      "author": "solxeko",
+      "reactions": 10,
+      "channel": "V2.4.0.10 在线维护公告"
+    },
+    {
+      "id": "1446535256785162270",
+      "content": "Sorry for my poor English. I hope the idea I’m trying to convey will be clear.\nI",
+      "author": "gillesderais",
+      "reactions": 10,
+      "channel": "V2.4.0.10 在线维护公告"
+    },
     {
       "id": "1446439376287694919",
       "content": "這邊也留一下預計皮皮視角的色杜要等第二輛黃車出爐再一起發👁️~~三年後再見~~",
@@ -66,6 +81,13 @@
       "author": "lovefortruelovegod",
       "reactions": 7,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1446459714345893930",
+      "content": "games' trick to postpone the new year event until they feel ready",
+      "author": "wolfierce",
+      "reactions": 4,
+      "channel": "V2.4.0.10 在线维护公告"
     },
     {
       "id": "1446469058693173321",
@@ -168,13 +190,6 @@
     {
       "id": "1446466808956850269",
       "content": "||~~然後不小心一個激動拔出一根開始召喚葬骸城先祖~~||",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1446488408569544888",
-      "content": "",
       "author": "ass191044",
       "reactions": 1,
       "channel": ""

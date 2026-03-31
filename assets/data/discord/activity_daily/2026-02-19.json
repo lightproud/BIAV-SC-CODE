@@ -1,10 +1,12 @@
 {
   "date": "2026-02-19",
-  "messages": 1716,
+  "messages": 1722,
   "unique_authors": 62,
-  "reactions_total": 1228,
-  "attachments": 80,
+  "reactions_total": 1276,
+  "attachments": 81,
   "channel_activity": {
+    "murphy and desserts 🍓": 4,
+    "doresain": 2,
     "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 3,
     "✅「Answered」Card disappear": 4,
     "✅「Answered」Creator accounts": 7,
@@ -28,15 +30,17 @@
     "🔸阵容构建": 61
   },
   "hourly_activity": {
+    "21": 24,
+    "22": 8,
+    "23": 90,
+    "2": 28,
+    "9": 39,
     "7": 12,
-    "2": 27,
     "20": 9,
     "6": 34,
     "8": 16,
     "17": 25,
     "19": 7,
-    "23": 89,
-    "9": 38,
     "13": 275,
     "14": 278,
     "15": 388,
@@ -46,16 +50,13 @@
     "18": 40,
     "0": 8,
     "12": 188,
-    "22": 7,
     "3": 16,
     "4": 47,
     "5": 17,
-    "11": 7,
-    "21": 22
+    "11": 7
   },
   "message_types": {
-    "0": 34,
-    "19": 16
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -78,6 +79,13 @@
       "author": "morimensstaff02",
       "reactions": 61,
       "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1474159836244611216",
+      "content": "i was thinking about Murphy in a cute outfit... \nhere we are :)\n\n<:Murphy_satisf",
+      "author": "bluepomander",
+      "reactions": 43,
+      "channel": "murphy and desserts 🍓"
     },
     {
       "id": "1474045882524504266",
@@ -188,13 +196,6 @@
       "id": "1474028084477952225",
       "content": "他們說36的TV才是正常配置",
       "author": "sfn28409633",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1474048514458910740",
-      "content": "他也不懂",
-      "author": "dittoqwq",
       "reactions": 4,
       "channel": "🔸綜合討論"
     }

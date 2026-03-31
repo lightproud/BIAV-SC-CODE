@@ -1,10 +1,11 @@
 {
   "date": "2026-01-26",
-  "messages": 102,
+  "messages": 106,
   "unique_authors": 37,
-  "reactions_total": 166,
+  "reactions_total": 170,
   "attachments": 52,
   "channel_activity": {
+    "clementine": 4,
     "✅「Answered」Choose if OE or not.": 1,
     "✅「Resolved」Resonance Reset": 1,
     "徐设计的什么逼玩意？恶心玩家": 8,
@@ -36,10 +37,11 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
+    "6": 4,
+    "7": 12,
     "20": 1,
     "13": 15,
     "5": 4,
-    "7": 10,
     "17": 3,
     "10": 5,
     "16": 7,
@@ -52,12 +54,10 @@
     "11": 3,
     "12": 9,
     "9": 3,
-    "6": 2,
     "8": 1
   },
   "message_types": {
-    "0": 78,
-    "19": 8
+    "0": 4
   },
   "top_reacted_messages": [
     {

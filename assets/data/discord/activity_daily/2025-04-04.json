@@ -1,10 +1,11 @@
 {
   "date": "2025-04-04",
-  "messages": 31,
+  "messages": 47,
   "unique_authors": 15,
-  "reactions_total": 17,
-  "attachments": 7,
+  "reactions_total": 23,
+  "attachments": 8,
   "channel_activity": {
+    "V2.2.0.0 停服維護公告": 16,
     "✅「Answered」Incorrect Assignment Rewards": 1,
     "💭「Processing」[BUG] Blue Stone Throne wheel + Myriam in PvP": 5,
     "💭「Processing」Minor Materials Visual bug": 3,
@@ -17,11 +18,13 @@
     "「   」的故事（上）": 4
   },
   "hourly_activity": {
-    "8": 3,
+    "6": 8,
+    "8": 8,
+    "10": 2,
+    "18": 2,
     "12": 10,
     "13": 3,
     "9": 1,
-    "10": 1,
     "11": 2,
     "20": 1,
     "5": 1,
@@ -32,11 +35,17 @@
     "16": 1
   },
   "message_types": {
-    "0": 21,
-    "4": 2,
-    "19": 2
+    "0": 15,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1357600630121959556",
+      "content": "守密人你好：\n       彌薩格大學預計於4月7日08:00~12:00（UTC+8）進行校內設施維護。\n       維護結束後需要重新登入並進行更新，補給",
+      "author": "morimensstaff02",
+      "reactions": 4,
+      "channel": "V2.2.0.0 停服維護公告"
+    },
     {
       "id": "1357685492195266731",
       "content": "限定唤醒体应该得到可以回溯启灵的效果，因为有的限定角色完全不强（作为限定来说），甚至也不适用于星辰篇。可以预见长时间内都不会有相应补强，一个是因猫独断专行惯了，",
@@ -57,6 +66,13 @@
       "author": "luhongran",
       "reactions": 3,
       "channel": "退游倒计时"
+    },
+    {
+      "id": "1357664591672381532",
+      "content": "Very happy to see old and standard characters getting some love to make them mor",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "V2.2.0.0 停服維護公告"
     },
     {
       "id": "1357700513872740483",

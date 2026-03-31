@@ -1,10 +1,12 @@
 {
   "date": "2025-10-11",
-  "messages": 98,
+  "messages": 143,
   "unique_authors": 19,
-  "reactions_total": 41,
-  "attachments": 15,
+  "reactions_total": 129,
+  "attachments": 31,
   "channel_activity": {
+    "忘却前夜OST：永无乡假日": 10,
+    "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework": 35,
     "✅「Answered」Name change": 3,
     "✅「已回答」勒姆瓦西，终末交响曲和终章的音乐什么时候出？": 1,
     "✅「已回答」每个大版本一到两次的两个空窗期，你们打算怎么处理？": 3,
@@ -34,25 +36,63 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "8": 21,
-    "10": 15,
+    "10": 24,
+    "11": 15,
+    "3": 23,
+    "4": 14,
+    "5": 1,
+    "7": 6,
+    "8": 22,
     "23": 1,
-    "11": 13,
     "13": 2,
     "9": 16,
     "12": 5,
     "14": 1,
     "15": 1,
-    "4": 8,
-    "6": 12,
-    "7": 3
+    "6": 12
   },
   "message_types": {
-    "0": 60,
-    "4": 22,
-    "19": 12
+    "0": 29,
+    "4": 1,
+    "19": 14,
+    "6": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1426405667823947817",
+      "content": "在此前日志 https://discord.com/channels/1131791637933199470/1402967510415839262 中给大家分",
+      "author": "game.producer.light",
+      "reactions": 41,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+    },
+    {
+      "id": "1426419958891675770",
+      "content": "限定SSR命轮和唤醒体溢出的奖励我们会提高！",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+    },
+    {
+      "id": "1426469295910551655",
+      "content": "<@633215996508766229> \n感覺兌換角色直接改成不限購也行，啟靈又不像命輪存在溢出能無限分解換成靈核碎片的情況\n反正珠子產量對新手也就那麼回事",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+    },
+    {
+      "id": "1426471207955599360",
+      "content": "补一嘴能不能考虑增加/不限制次数兑换极夜破晓和纯银初心<:takenotes:1357186646294138890> 自建号玩家要换整整一年半才能+12，40",
+      "author": "_neyko_",
+      "reactions": 7,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+    },
+    {
+      "id": "1426416565880098986",
+      "content": "对全勤老玩家来说暂时没有，我们会关注这个问题。今后余梦材料会由融蚀之珠每周兑换。融蚀之珠也会改为每周试炼任务奖励，并且比原先更多，保证可以换到比原先更多的余梦材",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+    },
     {
       "id": "1426479556650467490",
       "content": "抱歉各位，帖子下面的讨论渐渐有些激动，戈雅先把帖子关闭了🙏 \n感谢各位守密人对忘却前夜一直以来的支持，我们一直心怀感恩<:Sendflowers:1400771",
@@ -68,11 +108,39 @@
       "channel": ""
     },
     {
+      "id": "1426438786832924723",
+      "content": "<@633215996508766229>这个确实可以考虑，因为马上也周年了，最近陆陆续续入坑的新人也不少，这样开放限2可以让新人更有选择性的放弃一部分角色，集",
+      "author": "lurenjiao",
+      "reactions": 4,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+    },
+    {
       "id": "1426552475221233744",
       "content": "星辰篇怎么不算一种去往异星吧(",
       "author": "yingmai_",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1426523827449626745",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：永无乡假日 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，OS",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "忘却前夜OST：永无乡假日"
+    },
+    {
+      "id": "1426409503192121354",
+      "content": "I also wonder if its possible to add trial fights for bosses, the more bosses ad",
+      "author": "pinguimally3689",
+      "reactions": 3,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
+    },
+    {
+      "id": "1426429572412473354",
+      "content": "考虑过开放深潜命轮启灵兑换限2给新人追进度吗",
+      "author": "fantuan9711",
+      "reactions": 3,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
     },
     {
       "id": "1426558383464648796",
@@ -87,6 +155,13 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "✅「Answered」Rotating menu background"
+    },
+    {
+      "id": "1426417353129984112",
+      "content": "溢出限定。。溢出限定。。咳咳。",
+      "author": "randomplayer852",
+      "reactions": 2,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
     },
     {
       "id": "1426515360512737341",
@@ -117,81 +192,11 @@
       "channel": "我们规划一下每个卡池的小版本全勤0氪150抽好吗"
     },
     {
-      "id": "1426487218498830389",
-      "content": "Hi, there is indeed an issue here. We will adjust the naming restrictions as soo",
-      "author": "morimensstaff01",
+      "id": "1426527854094450861",
+      "content": "5没有音频",
+      "author": "silverstream_s",
       "reactions": 1,
-      "channel": "✅「Answered」Name change"
-    },
-    {
-      "id": "1426521866713038909",
-      "content": "Thank you, I'll be waiting",
-      "author": "dusha_69",
-      "reactions": 1,
-      "channel": "✅「Answered」Name change"
-    },
-    {
-      "id": "1426711458238169160",
-      "content": "超喜欢这几章的音乐，好像典藏馆里还没有？请问什么时候能出哇",
-      "author": "bwtuf",
-      "reactions": 1,
-      "channel": "✅「已回答」勒姆瓦西，终末交响曲和终章的音乐什么时候出？"
-    },
-    {
-      "id": "1426523258756272170",
-      "content": "俺去追追！",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」寧妃，夜潮，BUG"
-    },
-    {
-      "id": "1426572127385161868",
-      "content": "Thanks, didn't knew that",
-      "author": "zerami",
-      "reactions": 1,
-      "channel": "✅「Answered」friend cannot bind invitation"
-    },
-    {
-      "id": "1426528619769102387",
-      "content": "Sorry, this is a limited time event, so it cannot be permanently retained🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Please consider making the archive permanent when purchased"
-    },
-    {
-      "id": "1426587428071936042",
-      "content": "Thank you for responding! Will still support the game 🙇‍♂️",
-      "author": "thebeastslumbers",
-      "reactions": 1,
-      "channel": "✅「Answered」Please consider making the archive permanent when purchased"
-    },
-    {
-      "id": "1426517163421864026",
-      "content": "感谢建议，戈雅去反馈一下🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」是否考虑给皮肤增加预览/试玩界面"
-    },
-    {
-      "id": "1426527788084760596",
-      "content": "嗨~谢谢你的建议，我们计划采纳<:Cheerup:1400771555939844149> 将在未来实现这个功能~",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」是否考虑给皮肤增加预览/试玩界面"
-    },
-    {
-      "id": "1426487833509756938",
-      "content": "感谢反馈，戈雅和核对一下",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」瘟疫診斷書沒生效"
-    },
-    {
-      "id": "1426497256323809301",
-      "content": "嗨守密人，造物是获取量+100%\n因此是41×2，而非41+100\n目前效果是正确的 2+41×2=84\n<:camera:135605304025114646",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」瘟疫診斷書沒生效"
+      "channel": "忘却前夜OST：永无乡假日"
     }
   ]
 }

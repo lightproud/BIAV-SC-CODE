@@ -1,10 +1,12 @@
 {
   "date": "2024-10-09",
-  "messages": 94,
+  "messages": 96,
   "unique_authors": 22,
-  "reactions_total": 135,
+  "reactions_total": 141,
   "attachments": 33,
   "channel_activity": {
+    "SP希洛 4T 深潜 全程实录": 1,
+    "輔助密契低練度的深潛24000": 1,
     "我们忘却前夜太有游戏性了": 2,
     "血鏈希洛能不能放動畫在角色介面啊": 3,
     "真是敷衍完了给你们": 15,
@@ -35,7 +37,8 @@
     "希洛": 1
   },
   "hourly_activity": {
-    "7": 7,
+    "8": 8,
+    "7": 8,
     "9": 10,
     "4": 1,
     "6": 17,
@@ -43,7 +46,6 @@
     "2": 9,
     "3": 12,
     "5": 2,
-    "8": 7,
     "12": 6,
     "13": 2,
     "14": 1,
@@ -56,8 +58,7 @@
     "18": 2
   },
   "message_types": {
-    "0": 29,
-    "19": 16
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -108,6 +109,13 @@
       "author": "yingmai_",
       "reactions": 7,
       "channel": "【梗图】堆点我P过的梗图"
+    },
+    {
+      "id": "1293490920007925840",
+      "content": "https://www.bilibili.com/video/BV1nq2cY8E1Y/?spm_id_from=333.337.search-card.all",
+      "author": "randomplayer852",
+      "reactions": 6,
+      "channel": "SP希洛 4T 深潜 全程实录"
     },
     {
       "id": "1293409630382198795",
@@ -190,13 +198,6 @@
       "id": "1293462177369423873",
       "content": "考虑凹个钢锯就可以解决问题了，今天凹了很多吧不同造物，发现钢锯真的太强了，一个减到费的条，可以直接给60%胎，超限开一两次以后，一个回合能靠一把钢锯转出来3—5",
       "author": "lurenjiao",
-      "reactions": 2,
-      "channel": "SP希洛个人使用心得。"
-    },
-    {
-      "id": "1293493392642412615",
-      "content": "https://www.bilibili.com/video/BV1nq2cY8E1Y/?spm_id_from=333.337.search-card.all",
-      "author": "randomplayer852",
       "reactions": 2,
       "channel": "SP希洛个人使用心得。"
     }

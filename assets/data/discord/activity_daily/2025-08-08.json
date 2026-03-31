@@ -1,10 +1,11 @@
 {
   "date": "2025-08-08",
-  "messages": 32,
+  "messages": 39,
   "unique_authors": 7,
-  "reactions_total": 1104,
+  "reactions_total": 1106,
   "attachments": 21,
   "channel_activity": {
+    "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy": 7,
     "关于幻梦深潜": 1,
     "💭「Processing」Death Resistance on Overview screen is not converted to Astral Reign value": 4,
     "✅「Answered」Clarification on gacha odds for standard limited": 1,
@@ -23,6 +24,9 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "4": 1,
+    "5": 1,
+    "6": 5,
     "16": 1,
     "3": 1,
     "8": 2,
@@ -37,8 +41,7 @@
     "17": 3
   },
   "message_types": {
-    "0": 6,
-    "4": 4
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -82,6 +85,20 @@
       "author": "magushermes",
       "reactions": 2,
       "channel": "✅「已回答」杜勒需要加強"
+    },
+    {
+      "id": "1403239838446256169",
+      "content": "直接把幻梦深浅还成赛季制大肉鸽好吗",
+      "author": "ruhebaoyangsiwa_97871",
+      "reactions": 1,
+      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
+    },
+    {
+      "id": "1403258007004905472",
+      "content": "加強杜勒賽因",
+      "author": "ahuahuahua",
+      "reactions": 1,
+      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
     },
     {
       "id": "1403417799325384835",

@@ -1,10 +1,12 @@
 {
   "date": "2025-07-29",
-  "messages": 177,
+  "messages": 185,
   "unique_authors": 22,
-  "reactions_total": 41,
-  "attachments": 19,
+  "reactions_total": 53,
+  "attachments": 20,
   "channel_activity": {
+    "V2.3.0.3 在线维护公告": 7,
+    "校猫碎碎念#Translation Plan Update 本地化计划变更": 1,
     "✅「已回答」朵爾等價顯示問題又出現了": 3,
     "✅「已回答」Bug report": 2,
     "💭「Processing」I can't start the game, it freezes": 4,
@@ -29,7 +31,9 @@
     "【忘卻前夜乙女向同人】在某個宇宙中…   圖魯x妳": 4
   },
   "hourly_activity": {
-    "13": 68,
+    "12": 6,
+    "13": 70,
+    "7": 2,
     "16": 1,
     "2": 23,
     "3": 10,
@@ -39,17 +43,13 @@
     "14": 46,
     "20": 2,
     "23": 1,
-    "7": 1,
     "9": 3,
-    "12": 1,
     "17": 1,
     "15": 1,
     "0": 1
   },
   "message_types": {
-    "0": 122,
-    "4": 12,
-    "19": 23
+    "0": 8
   },
   "top_reacted_messages": [
     {
@@ -58,6 +58,20 @@
       "author": "kong760",
       "reactions": 28,
       "channel": "阿空高速推活時刻"
+    },
+    {
+      "id": "1399732024805294273",
+      "content": "● Localization Fixes and Improvements (English Language Setting):\n    ○We fixed ",
+      "author": "morimensstaff02",
+      "reactions": 8,
+      "channel": "V2.3.0.3 在线维护公告"
+    },
+    {
+      "id": "1399657628308733972",
+      "content": "Would it be possible to somehow mark in game which story segments have been manu",
+      "author": "tharob",
+      "reactions": 3,
+      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
     },
     {
       "id": "1399753765917032645",
@@ -72,6 +86,13 @@
       "author": "ice_storys",
       "reactions": 2,
       "channel": "血希同人"
+    },
+    {
+      "id": "1399734980711546910",
+      "content": "绷，「暗潮虫鸣·限时预购」早结束几个月了怎么还有BUG",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "V2.3.0.3 在线维护公告"
     },
     {
       "id": "1399743061453438996",

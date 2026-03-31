@@ -1,10 +1,11 @@
 {
   "date": "2025-01-14",
-  "messages": 58,
+  "messages": 61,
   "unique_authors": 21,
   "reactions_total": 66,
   "attachments": 11,
   "channel_activity": {
+    "V2.0.0.1 在線維護公告": 3,
     "English Page pls !!": 3,
     "Login issue": 3,
     "建議在主線中加入類似日/月相加成類系統（類似時靈擺）": 7,
@@ -23,9 +24,9 @@
     "【攻略】只花15分钟 低配阵容也能拿满幻梦深潜3w分一次性奖励（大量银芯、羽笔、代币）": 6
   },
   "hourly_activity": {
+    "2": 10,
     "0": 2,
     "23": 1,
-    "2": 7,
     "6": 3,
     "8": 2,
     "13": 7,
@@ -43,9 +44,8 @@
     "18": 3
   },
   "message_types": {
-    "0": 38,
-    "19": 10,
-    "4": 3
+    "0": 1,
+    "19": 2
   },
   "top_reacted_messages": [
     {

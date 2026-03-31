@@ -1,10 +1,12 @@
 {
   "date": "2025-04-02",
-  "messages": 28,
+  "messages": 32,
   "unique_authors": 6,
-  "reactions_total": 26,
-  "attachments": 8,
+  "reactions_total": 27,
+  "attachments": 9,
   "channel_activity": {
+    "⛓💥守密人？可笑至極，這場不切實際的夢，該醒了。": 1,
+    "忘卻前夜OST：深港幽靈之船": 3,
     "克莱门汀的唤醒体手册呢": 7,
     "✅「Answered」Game is stuck on the \"Checking for resource updates\" screen.": 5,
     "✅「已回答」結算頁面資訊": 1,
@@ -17,10 +19,10 @@
     "塔薇杯賽制同款表格開源！": 1
   },
   "hourly_activity": {
-    "6": 7,
+    "6": 8,
+    "3": 7,
     "9": 5,
     "22": 1,
-    "3": 4,
     "7": 1,
     "20": 1,
     "23": 2,
@@ -31,9 +33,8 @@
     "13": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 4,
-    "4": 2
+    "0": 2,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -77,6 +78,13 @@
       "author": "calmdreab",
       "reactions": 2,
       "channel": "塔薇杯賽制同款表格開源！"
+    },
+    {
+      "id": "1356829830553010348",
+      "content": "Ah! I see Thank you🥲🥲🥲🥲",
+      "author": "legion_schindler",
+      "reactions": 1,
+      "channel": "忘卻前夜OST：深港幽靈之船"
     },
     {
       "id": "1356885195663605820",

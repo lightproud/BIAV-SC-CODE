@@ -1,10 +1,11 @@
 {
   "date": "2026-01-17",
-  "messages": 18,
+  "messages": 19,
   "unique_authors": 5,
-  "reactions_total": 12,
-  "attachments": 13,
+  "reactions_total": 21,
+  "attachments": 14,
   "channel_activity": {
+    "Art dump thread": 1,
     "Thank you for everything": 1,
     "融灾王关血量伤害“bug”": 2,
     "Rainy Town/Daffodil's Story: The Raining Effect Is Misplaced": 3,
@@ -15,6 +16,7 @@
     "1193859503096070234": 1
   },
   "hourly_activity": {
+    "16": 1,
     "9": 1,
     "19": 2,
     "14": 4,
@@ -25,7 +27,7 @@
     "12": 1
   },
   "message_types": {
-    "0": 7
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -34,6 +36,13 @@
       "author": "nailong0565",
       "reactions": 11,
       "channel": "融灾王关血量伤害“bug”"
+    },
+    {
+      "id": "1462114857372487733",
+      "content": "This is very lazy",
+      "author": "kiriwoamizaki",
+      "reactions": 9,
+      "channel": "Art dump thread"
     },
     {
       "id": "1462054643944394843",

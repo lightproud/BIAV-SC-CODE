@@ -1,10 +1,14 @@
 {
   "date": "2026-02-11",
-  "messages": 3215,
+  "messages": 3227,
   "unique_authors": 165,
-  "reactions_total": 2837,
-  "attachments": 269,
+  "reactions_total": 2889,
+  "attachments": 275,
   "channel_activity": {
+    "V2.4.2.4 在线维护公告": 8,
+    "Morimens Mah-jong? lol": 2,
+    "Xu but i gave her a monster mouth": 1,
+    "Emote redraws 🤍": 1,
     "💭「處理中」Bug列車": 9,
     "✅「已回答」能否回放戰鬥紀錄": 1,
     "✅「Answered」Salvador Bug with Train and Ultra Turn": 2,
@@ -40,14 +44,17 @@
     "🔸morimens-game-chat": 1783
   },
   "hourly_activity": {
+    "11": 148,
+    "12": 75,
+    "20": 5,
+    "21": 3,
+    "8": 37,
+    "3": 266,
     "10": 50,
-    "11": 142,
     "7": 73,
-    "12": 73,
     "13": 98,
     "6": 69,
     "17": 10,
-    "3": 265,
     "16": 23,
     "18": 46,
     "4": 139,
@@ -56,19 +63,14 @@
     "15": 28,
     "14": 58,
     "19": 2,
-    "20": 4,
     "23": 2,
     "2": 444,
     "5": 237,
-    "21": 2,
     "22": 3,
-    "1": 596,
-    "8": 36
+    "1": 596
   },
   "message_types": {
-    "0": 39,
-    "19": 8,
-    "4": 7
+    "0": 12
   },
   "top_reacted_messages": [
     {
@@ -112,6 +114,20 @@
       "author": "redo50",
       "reactions": 22,
       "channel": "🔸两周年纪念反馈┊2yr-anniv-feedback"
+    },
+    {
+      "id": "1471242098513674345",
+      "content": "I sketched this because I wanted to see a mahjong tile concept. I’d love to make",
+      "author": "gaedol.",
+      "reactions": 18,
+      "channel": "Morimens Mah-jong? lol"
+    },
+    {
+      "id": "1470981979888418881",
+      "content": "",
+      "author": "floriography",
+      "reactions": 16,
+      "channel": "Emote redraws 🤍"
     },
     {
       "id": "1470933363446775950",
@@ -196,20 +212,6 @@
       "author": "kidi0402_21673",
       "reactions": 7,
       "channel": ""
-    },
-    {
-      "id": "1471079337338994853",
-      "content": "神人机翻",
-      "author": "carme.0588",
-      "reactions": 7,
-      "channel": ""
-    },
-    {
-      "id": "1471166152993538303",
-      "content": "",
-      "author": "ninetyyearsoldguy",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
     }
   ]
 }

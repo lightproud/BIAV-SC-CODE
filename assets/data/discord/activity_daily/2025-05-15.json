@@ -1,10 +1,12 @@
 {
   "date": "2025-05-15",
-  "messages": 13,
+  "messages": 23,
   "unique_authors": 7,
-  "reactions_total": 10,
-  "attachments": 4,
+  "reactions_total": 16,
+  "attachments": 5,
   "channel_activity": {
+    "忘卻前夜OST：領航手記": 1,
+    "✅前瞻：1.5周年～活动福利篇": 9,
     "✅「Answered」Technical problem on bootup": 4,
     "點讚100000次有成就嗎": 2,
     "Petition to rename Wheel Unseen to Concealed Truth": 1,
@@ -13,7 +15,10 @@
     "發點摸魚時寫的船長（克柏珊特）MOBA遊戲的技能組（與原作不相干）": 1
   },
   "hourly_activity": {
-    "2": 4,
+    "2": 5,
+    "1": 1,
+    "10": 5,
+    "11": 3,
     "5": 1,
     "20": 1,
     "16": 3,
@@ -22,9 +27,8 @@
     "17": 1
   },
   "message_types": {
-    "0": 8,
-    "4": 2,
-    "19": 2
+    "19": 2,
+    "0": 8
   },
   "top_reacted_messages": [
     {
@@ -33,6 +37,20 @@
       "author": "water_heart",
       "reactions": 6,
       "channel": "點讚100000次有成就嗎"
+    },
+    {
+      "id": "1372526243743793193",
+      "content": "栗子就要开始跳舞了",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": "✅前瞻：1.5周年～活动福利篇"
+    },
+    {
+      "id": "1372526547201822802",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": "✅前瞻：1.5周年～活动福利篇"
     },
     {
       "id": "1372627148011077804",

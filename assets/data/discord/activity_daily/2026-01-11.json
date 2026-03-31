@@ -1,10 +1,12 @@
 {
   "date": "2026-01-11",
-  "messages": 175,
+  "messages": 181,
   "unique_authors": 15,
-  "reactions_total": 43,
-  "attachments": 13,
+  "reactions_total": 69,
+  "attachments": 14,
   "channel_activity": {
+    "「相位对弈」轮选模式功能异常": 5,
+    "Bunch of doodles and sillies": 1,
     "💭「Processing」game client crashed...somewhat": 60,
     "Who Ryker's Designer pls come talk ?": 1,
     "Possibilty of rebalancing Wanda?": 4,
@@ -24,8 +26,11 @@
     "1445556242381672559": 14
   },
   "hourly_activity": {
+    "8": 4,
+    "9": 4,
+    "11": 67,
+    "5": 7,
     "4": 1,
-    "5": 6,
     "7": 4,
     "17": 5,
     "18": 5,
@@ -35,20 +40,17 @@
     "3": 1,
     "2": 2,
     "6": 3,
-    "8": 1,
-    "9": 3,
     "1": 19,
     "10": 2,
     "13": 1,
     "14": 3,
     "15": 2,
     "21": 3,
-    "16": 1,
-    "11": 66
+    "16": 1
   },
   "message_types": {
-    "0": 56,
-    "19": 16
+    "0": 4,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -59,11 +61,32 @@
       "channel": "💭「Processing」game client crashed...somewhat"
     },
     {
+      "id": "1459829572685005024",
+      "content": "This bug cost me 160 points.<:dead:1356082627509092372>",
+      "author": "ssk716",
+      "reactions": 11,
+      "channel": "「相位对弈」轮选模式功能异常"
+    },
+    {
       "id": "1459717069464539330",
       "content": "Francis\n\nRealm: Ultra\nType: Assault\nBirthday: ####\nGender: Female\nNous index: 37",
       "author": "rain_scarlet",
       "reactions": 11,
       "channel": "Awakener Kit Speculation: Francis"
+    },
+    {
+      "id": "1459869408708002068",
+      "content": "I lost 277 points<:dead:1356082627509092372>",
+      "author": "souri.10244",
+      "reactions": 9,
+      "channel": "「相位对弈」轮选模式功能异常"
+    },
+    {
+      "id": "1459827838902337617",
+      "content": "守密人，\n    目前「相位对弈」轮选模式功能出现异常，会出现无法选择队伍配置，导致卡死的问题，请守密人暂时不要进行轮选模式游玩。\n    校工目前正在针对问题",
+      "author": "morimensstaff02",
+      "reactions": 6,
+      "channel": "「相位对弈」轮选模式功能异常"
     },
     {
       "id": "1459937265051766784",

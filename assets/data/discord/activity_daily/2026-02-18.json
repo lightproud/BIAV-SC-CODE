@@ -1,10 +1,12 @@
 {
   "date": "2026-02-18",
-  "messages": 1533,
+  "messages": 1539,
   "unique_authors": 51,
-  "reactions_total": 236,
-  "attachments": 95,
+  "reactions_total": 289,
+  "attachments": 98,
   "channel_activity": {
+    "doresain": 2,
+    "Some tincts… (my wife)": 4,
     "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 2,
     "✅「Answered」Custom difficulty in HSR": 2,
     "💭「處理中」可是戈雅，我回不去了": 4,
@@ -32,8 +34,12 @@
     "🔸阵容构建": 4
   },
   "hourly_activity": {
+    "12": 42,
+    "17": 63,
+    "10": 60,
+    "11": 49,
+    "22": 2,
     "19": 5,
-    "22": 1,
     "7": 297,
     "6": 40,
     "8": 47,
@@ -44,25 +50,26 @@
     "4": 55,
     "16": 230,
     "0": 2,
-    "12": 41,
     "9": 6,
-    "11": 48,
     "21": 1,
     "1": 2,
     "2": 156,
-    "10": 59,
     "13": 41,
-    "17": 61,
     "18": 35,
     "20": 1,
     "23": 22
   },
   "message_types": {
-    "0": 18,
-    "19": 6,
-    "4": 6
+    "0": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1473652928085626974",
+      "content": "he is real!",
+      "author": "dollyxqyan",
+      "reactions": 31,
+      "channel": "doresain"
+    },
     {
       "id": "1473639095166308484",
       "content": "William care <:love:1356053099931897977> ~~(or very late valentines art)~~",
@@ -76,6 +83,13 @@
       "author": "morimensstaff01",
       "reactions": 20,
       "channel": "💭「處理中」可是戈雅，我回不去了"
+    },
+    {
+      "id": "1473632625695658170",
+      "content": "I’m still trying to get used to her design 🤪",
+      "author": "tealsnicker",
+      "reactions": 18,
+      "channel": "Some tincts… (my wife)"
     },
     {
       "id": "1473787301178904847",
@@ -188,20 +202,6 @@
       "author": "evowi",
       "reactions": 3,
       "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1473556859465105428",
-      "content": "Thank you for your suggestion<:Pandia_love:1459078512303411261> . I will take no",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1473512996117680229",
-      "content": "那就叫海鲜队吧",
-      "author": "asarikotone",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
     }
   ]
 }

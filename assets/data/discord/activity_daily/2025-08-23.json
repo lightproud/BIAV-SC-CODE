@@ -1,10 +1,11 @@
 {
   "date": "2025-08-23",
-  "messages": 32,
+  "messages": 48,
   "unique_authors": 11,
-  "reactions_total": 38,
+  "reactions_total": 54,
   "attachments": 5,
   "channel_activity": {
+    "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们": 16,
     "✅「Answered」Normal battle is treat as boss battle in H9-11": 1,
     "✅「Answered」Suggestion: Please allow us to toggle Enlightens!": 4,
     "✅「已回答」能不要顯示新物資的提示嗎?": 4,
@@ -15,9 +16,11 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "1": 3,
+    "3": 9,
+    "11": 5,
+    "12": 3,
     "19": 2,
-    "1": 2,
-    "3": 1,
     "5": 2,
     "6": 3,
     "9": 4,
@@ -25,7 +28,6 @@
     "20": 1,
     "0": 1,
     "7": 1,
-    "11": 1,
     "16": 1,
     "18": 3,
     "17": 2,
@@ -33,8 +35,8 @@
     "14": 1
   },
   "message_types": {
-    "19": 6,
-    "0": 9
+    "0": 8,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -50,6 +52,27 @@
       "author": "navirecorbeau",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1408647570246602815",
+      "content": "Thank you for always working hard despite all the hurdles and obstacles you guys",
+      "author": "kuronxx",
+      "reactions": 5,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408660476811808888",
+      "content": "I hope their situation will be better",
+      "author": ".cnork",
+      "reactions": 5,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408786549721661551",
+      "content": "因为大家每一次触发死亡抵抗都不放弃，所以你就要在星辰篇里把大伙的死亡抵抗直接扣光让大伙一次死亡抵抗都触发不了吗，哈基米你这家伙",
+      "author": "xmj140028",
+      "reactions": 4,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
     },
     {
       "id": "1408685535912005763",
@@ -71,6 +94,20 @@
       "author": "ahong0727",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1408779634266603684",
+      "content": "希望强度膨胀不要太厉害<:Emoji_SLE_P_09:1400771743630491749>  常驻和忘却片唤醒体在四年后也能发光发热，可以吗？",
+      "author": "nekoiiii.",
+      "reactions": 1,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+    },
+    {
+      "id": "1408783935135289474",
+      "content": "不可",
+      "author": "danwangmofei",
+      "reactions": 1,
+      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
     },
     {
       "id": "1408695488097681409",

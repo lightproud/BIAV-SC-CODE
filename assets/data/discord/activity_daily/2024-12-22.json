@@ -1,10 +1,11 @@
 {
   "date": "2024-12-22",
-  "messages": 19,
+  "messages": 21,
   "unique_authors": 8,
-  "reactions_total": 9,
+  "reactions_total": 11,
   "attachments": 3,
   "channel_activity": {
+    "官方周邊建議征集": 2,
     "English Page pls !!": 3,
     "图鲁怎么还没进池": 1,
     "请问校猫light": 10,
@@ -14,6 +15,7 @@
     "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1": 1
   },
   "hourly_activity": {
+    "9": 2,
     "5": 2,
     "23": 1,
     "0": 2,
@@ -25,8 +27,8 @@
     "4": 1
   },
   "message_types": {
-    "19": 4,
-    "0": 10
+    "19": 1,
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -35,6 +37,13 @@
       "author": "gzx616",
       "reactions": 4,
       "channel": "玩重返未来魔怔了导致的"
+    },
+    {
+      "id": "1320324922811355197",
+      "content": "~~他的衣服要可以脫的那種~~",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "官方周邊建議征集"
     },
     {
       "id": "1320269064848801833",

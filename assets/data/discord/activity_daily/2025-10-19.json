@@ -1,10 +1,11 @@
 {
   "date": "2025-10-19",
-  "messages": 43,
+  "messages": 74,
   "unique_authors": 12,
-  "reactions_total": 15,
-  "attachments": 6,
+  "reactions_total": 39,
+  "attachments": 9,
   "channel_activity": {
+    "V2.3.4.0 停服维护公告": 31,
     "誕妄墨菲立繪": 4,
     "相位：对面有反击，打对面和对面一起死了然后判负。不是先伤害后反击吗？如果同时为什么不算平局？": 3,
     "✅「已回答」皮克曼2費拿完造物之後不能不消耗狂想": 1,
@@ -17,29 +18,59 @@
     "1429401798439080028": 23
   },
   "hourly_activity": {
-    "13": 4,
+    "1": 17,
+    "2": 8,
+    "5": 2,
+    "6": 2,
+    "13": 7,
     "14": 5,
     "12": 20,
     "16": 3,
     "11": 5,
     "4": 1,
-    "5": 1,
     "15": 1,
     "0": 1,
     "19": 1,
     "9": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 3
+    "0": 31
   },
   "top_reacted_messages": [
+    {
+      "id": "1429288231626739764",
+      "content": "● Fixed the severe lag issue when opening and dragging the \"Awakening Details\" i",
+      "author": "morimensstaff02",
+      "reactions": 8,
+      "channel": "V2.3.4.0 停服维护公告"
+    },
+    {
+      "id": "1429287431403733063",
+      "content": "**V2.3.4.0 Maintenance Announcement**\n\nDear Keeper,\nMythag University is schedul",
+      "author": "morimensstaff02",
+      "reactions": 6,
+      "channel": "V2.3.4.0 停服维护公告"
+    },
+    {
+      "id": "1429465846509473935",
+      "content": "不要笑挑战",
+      "author": "rong486",
+      "reactions": 6,
+      "channel": "V2.3.4.0 停服维护公告"
+    },
     {
       "id": "1429467304898592768",
       "content": "",
       "author": "rong486",
       "reactions": 6,
       "channel": "我说把PVP改回大改动之前比现在平衡10000倍，有没有懂的？"
+    },
+    {
+      "id": "1429287023440826438",
+      "content": "【幻衣活动：不发糖就捣蛋】\n    ○ 在 10 月 20 日 9:00 - 12 月 15 日 9:00 期间，幻衣活动「不发糖就捣蛋」限时开放！\n     ",
+      "author": "morimensstaff02",
+      "reactions": 3,
+      "channel": "V2.3.4.0 停服维护公告"
     },
     {
       "id": "1429426480017838234",
@@ -54,6 +85,13 @@
       "author": "arr5721",
       "reactions": 2,
       "channel": "✅「已回答」希洛相位对弈bug"
+    },
+    {
+      "id": "1429287678188322846",
+      "content": "2. Battle\n[Awakener Enhancement]\n● Awakener \"Tawil\"\n    ○ Talent \"Soulforge Apti",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": "V2.3.4.0 停服维护公告"
     },
     {
       "id": "1429478124806082740",

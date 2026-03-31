@@ -1,10 +1,11 @@
 {
   "date": "2025-06-24",
-  "messages": 17,
+  "messages": 20,
   "unique_authors": 8,
   "reactions_total": 11,
-  "attachments": 8,
+  "attachments": 14,
   "channel_activity": {
+    "游戏美术资源上的文字": 3,
     "💭「Processing」UI bug (0/1 Hidden silver not appearing on some stages)": 9,
     "✅「Answered」LANGUAGE BUG.": 2,
     "✅「Answered」Steam English Language Bug": 1,
@@ -14,21 +15,19 @@
     "展示品？": 1
   },
   "hourly_activity": {
+    "15": 4,
     "13": 2,
     "20": 3,
     "21": 5,
     "3": 1,
     "23": 1,
-    "15": 1,
     "22": 1,
     "0": 1,
     "10": 1,
     "5": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 6,
-    "4": 1
+    "0": 3
   },
   "top_reacted_messages": [
     {

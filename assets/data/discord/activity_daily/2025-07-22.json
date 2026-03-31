@@ -1,10 +1,11 @@
 {
   "date": "2025-07-22",
-  "messages": 105,
+  "messages": 108,
   "unique_authors": 14,
   "reactions_total": 23,
   "attachments": 53,
   "channel_activity": {
+    "V2.3.0.0 停服维护公告": 3,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
     "💭「Processing」I can't start the game, it freezes": 5,
     "✅「Answered」{SKErrorDomain,0} when trying to top-up on iPhone!": 3,
@@ -35,10 +36,10 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "13": 6,
     "20": 2,
     "8": 23,
     "9": 15,
-    "13": 3,
     "23": 1,
     "15": 3,
     "16": 1,
@@ -53,8 +54,7 @@
     "19": 1
   },
   "message_types": {
-    "0": 52,
-    "4": 19,
+    "0": 1,
     "19": 2
   },
   "top_reacted_messages": [

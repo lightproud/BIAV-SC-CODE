@@ -1,10 +1,13 @@
 {
   "date": "2025-05-30",
-  "messages": 70,
+  "messages": 82,
   "unique_authors": 16,
-  "reactions_total": 908,
-  "attachments": 26,
+  "reactions_total": 909,
+  "attachments": 28,
   "channel_activity": {
+    "Morimens English Localization Notes #1": 1,
+    "V2.2.2.3 在線維護公告": 9,
+    "忘卻前夜OST：薩爾瓦多EP·蒼白的聖徒": 2,
     "✅「Answered」In-game texts do not match the language selected in the settings.": 6,
     "✅「已回答」周年命轮疑似与未送出的花冲突": 7,
     "✅「Answered」Adventurer's pack text bug": 2,
@@ -29,6 +32,11 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "15": 5,
+    "12": 12,
+    "13": 4,
+    "14": 12,
+    "3": 6,
     "8": 5,
     "9": 17,
     "10": 4,
@@ -36,20 +44,13 @@
     "19": 1,
     "2": 1,
     "4": 1,
-    "13": 3,
-    "14": 10,
-    "15": 4,
     "17": 3,
-    "3": 4,
     "6": 1,
     "7": 2,
-    "12": 6,
     "16": 4
   },
   "message_types": {
-    "19": 7,
-    "0": 33,
-    "4": 9
+    "0": 12
   },
   "top_reacted_messages": [
     {
@@ -114,6 +115,13 @@
       "author": "guinchox",
       "reactions": 2,
       "channel": "💭「Processing」Can't access the game"
+    },
+    {
+      "id": "1377855048826224742",
+      "content": "https://tenor.com/view/birthday-wishes-happy-birthday-gif-6564994479619966053",
+      "author": "willsalvador",
+      "reactions": 1,
+      "channel": "忘卻前夜OST：薩爾瓦多EP·蒼白的聖徒"
     },
     {
       "id": "1378010352570339368",

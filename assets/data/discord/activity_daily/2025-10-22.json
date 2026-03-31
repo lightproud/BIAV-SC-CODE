@@ -1,10 +1,11 @@
 {
   "date": "2025-10-22",
-  "messages": 101,
+  "messages": 102,
   "unique_authors": 20,
-  "reactions_total": 535,
-  "attachments": 20,
+  "reactions_total": 539,
+  "attachments": 21,
   "channel_activity": {
+    "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework": 1,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 3,
     "✅「Answered」I launch the game through the Steam client, but I can't pay through Steam.": 4,
     "✅「Answered」Salvador Exalt Temp Crit displaying code": 1,
@@ -28,10 +29,10 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
+    "8": 8,
     "0": 2,
     "7": 4,
     "5": 1,
-    "8": 7,
     "10": 30,
     "14": 4,
     "17": 4,
@@ -44,9 +45,7 @@
     "13": 7
   },
   "message_types": {
-    "0": 30,
-    "4": 8,
-    "19": 8
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -76,6 +75,13 @@
       "author": "sweet_25367",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1430470474227253318",
+      "content": "",
+      "author": "morimensstaff02",
+      "reactions": 4,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
     },
     {
       "id": "1430504174373703691",
@@ -181,13 +187,6 @@
       "author": "shostakovich524",
       "reactions": 1,
       "channel": "我想画点莱克的梗图"
-    },
-    {
-      "id": "1430498329430720592",
-      "content": "樹藤般的腳腳被修掉了👀",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

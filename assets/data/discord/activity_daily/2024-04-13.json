@@ -1,10 +1,11 @@
 {
   "date": "2024-04-13",
-  "messages": 163,
+  "messages": 164,
   "unique_authors": 26,
-  "reactions_total": 61,
+  "reactions_total": 62,
   "attachments": 22,
   "channel_activity": {
+    "拉蒙娜立繪": 1,
     "問 蘋果11為什麼打王常常閃退，只有玩這個遊戲會閃退下圖是我升到21等卻還是顯示19（獎勵能正常領取）": 1,
     "✅「已回答」無法消除紅點點": 2,
     "✅「已回答」绿炎的毒不吃伤害强效的bug": 46,
@@ -28,12 +29,12 @@
     "神父活動收益": 5
   },
   "hourly_activity": {
+    "8": 10,
     "6": 11,
     "14": 8,
     "9": 6,
     "10": 44,
     "11": 11,
-    "8": 9,
     "15": 8,
     "16": 9,
     "18": 3,
@@ -49,8 +50,7 @@
     "13": 1
   },
   "message_types": {
-    "0": 91,
-    "19": 8
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -122,6 +122,13 @@
       "author": "whimsical_starfish_19845",
       "reactions": 2,
       "channel": "神父活動收益"
+    },
+    {
+      "id": "1228622291487817792",
+      "content": "墨菲和奈宝求你",
+      "author": "bashibashibash",
+      "reactions": 1,
+      "channel": "拉蒙娜立繪"
     },
     {
       "id": "1228647409500815360",

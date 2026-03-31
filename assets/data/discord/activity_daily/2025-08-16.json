@@ -1,10 +1,12 @@
 {
   "date": "2025-08-16",
-  "messages": 45,
-  "unique_authors": 12,
-  "reactions_total": 1272,
-  "attachments": 7,
+  "messages": 109,
+  "unique_authors": 23,
+  "reactions_total": 1458,
+  "attachments": 11,
   "channel_activity": {
+    "V2.3.1.0 停服维护公告": 1,
+    "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”": 63,
     "✅「已回答」普希洛有可能加強嗎？": 18,
     "✅「已回答」最近的簡體中文變多了": 1,
     "✅「Answered」Posse visual glitch": 1,
@@ -17,24 +19,26 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "6": 2,
+    "11": 41,
+    "12": 4,
+    "13": 9,
+    "14": 17,
+    "15": 7,
+    "19": 1,
+    "21": 3,
+    "23": 6,
     "7": 1,
     "8": 8,
     "10": 4,
-    "11": 4,
-    "12": 2,
-    "14": 13,
-    "15": 3,
     "18": 1,
     "17": 3,
     "0": 1,
-    "6": 1,
-    "13": 2,
-    "9": 1,
-    "21": 1
+    "9": 1
   },
   "message_types": {
-    "0": 30,
-    "19": 7
+    "19": 10,
+    "0": 54
   },
   "top_reacted_messages": [
     {
@@ -45,11 +49,39 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1406236357449224202",
+      "content": "昨晚我联络了MegaCrit，很幸运得到了在《忘却前夜》中自由参考《杀戮尖塔》中角色和IP的许可！这虽然不是一次官方交错联动，而是我们单方面的制作内容致敬，但对",
+      "author": "game.producer.light",
+      "reactions": 121,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+    },
+    {
+      "id": "1406243209193062542",
+      "content": "1) The long-form roguelike mode we mentioned will have a flow and route structur",
+      "author": "game.producer.light",
+      "reactions": 25,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+    },
+    {
+      "id": "1406237024305942669",
+      "content": "now we can have bottled tornado awakener https://cdn.discordapp.com/attachments/",
+      "author": "lokao",
+      "reactions": 16,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+    },
+    {
       "id": "1406215257092784239",
       "content": "像素小人的模板是OMORI的，~~我畫不出超大像素圖~~\n然後戈利亞下方那兩排，取自本群大神對遊戲文字的考究。",
       "author": "zombie0424",
       "reactions": 16,
       "channel": "Wplace像素繪"
+    },
+    {
+      "id": "1406237014688399461",
+      "content": "先許願一下，想要個單角色闖塔模式(畢竟沿用4人1隊設計跟現在也沒什麼差別)\n每隻角色做幾種不同玩法的專造(例如墨菲沒傷害可以直接弄個新機制出傷如承傷或獻祭層數按",
+      "author": "heikwok",
+      "reactions": 10,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
       "id": "1406337292972327146",
@@ -73,6 +105,13 @@
       "channel": "✅「已回答」最近的簡體中文變多了"
     },
     {
+      "id": "1406237623130914867",
+      "content": "just one more run, the spire does not slay itself <:Emoji_24_P_11:14007715414232",
+      "author": "alfa1a",
+      "reactions": 3,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+    },
+    {
       "id": "1406222086808141834",
       "content": "继上次超维和血肉的尝试之后，这次试图写一个混沌界域的\n感谢上次的指正让我对数值的设计有了一点概念，希望这次写的不是错误的🙈\nuid：100832341",
       "author": "y_win7",
@@ -80,74 +119,67 @@
       "channel": "混沌唤醒体DIY"
     },
     {
-      "id": "1406185359322124288",
-      "content": "希洛打起來真的讓人好累，就單純一個星辰h1-10打了三遍，凹了好幾次造物、牌運和死抗才過的（雖然我知道是我自己拿弱角打的關係，但就是有種很可悲的感覺）<:tak",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "✅「已回答」普希洛有可能加強嗎？"
+      "id": "1406236866826731651",
+      "content": "還有更重要的 會把打肉鴿的獎勵塞到排名嗎",
+      "author": "xingkongzhiyao_",
+      "reactions": 2,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406185786847793273",
-      "content": "不如先加強這個",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "✅「已回答」普希洛有可能加強嗎？"
+      "id": "1406266215172931798",
+      "content": "故障機器人艾瑞卡說是",
+      "author": "xingkongzhiyao_",
+      "reactions": 2,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406188918168354846",
-      "content": "杜勒和凱姐(力倍角)\n連續出兩隻力倍也挺離譜的",
-      "author": "corposant_1003",
+      "id": "1406237690378195026",
+      "content": "1. How do you plan to incorporate roguelike mechanics into your game's design an",
+      "author": ".cnork",
       "reactions": 1,
-      "channel": "✅「已回答」普希洛有可能加強嗎？"
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406189566041395261",
-      "content": "~~他是要在月光下一拳打死卡拉布嗎~~",
-      "author": "ice_storys",
+      "id": "1406239049252995132",
+      "content": "It's just so peak",
+      "author": "solxeko",
       "reactions": 1,
-      "channel": "✅「已回答」普希洛有可能加強嗎？"
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406233355233792061",
-      "content": "一部分常駐角有很明顯的問題\n(例如:魔術師、之前的潘和寧紀)\n不過官方也開始改和加強，就是可能改得不盡人意，建議官方有加強常駐角色的意欲前可以參考一部分玩家的意",
-      "author": "corposant_1003",
+      "id": "1406263085995659394",
+      "content": "所以新角色的元素奶也是致敬的一部分吗（不是）",
+      "author": "carme.0588",
       "reactions": 1,
-      "channel": "✅「已回答」普希洛有可能加強嗎？"
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406248592976379957",
-      "content": "nothing big but it happened often the past two days, when you clicked posse it a",
-      "author": "hskzu",
+      "id": "1406278587190870057",
+      "content": "make bottled flame and bottled lightning as new relics but replace the picture w",
+      "author": "whirli_bri",
       "reactions": 1,
-      "channel": "✅「Answered」Posse visual glitch"
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406067818507665432",
-      "content": "It just happened? Before this are you able to login?",
-      "author": "jamalibnsulaiman",
+      "id": "1406279256925016138",
+      "content": "~~那殺戮尖塔方未來有希望和我們連動嗎~~",
+      "author": "tofu0834",
       "reactions": 1,
-      "channel": "✅「Answered」I cant enter the game"
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406163351159181344",
-      "content": "Interesting, it's good you provided a screenshot. The lack of a build no. on the",
-      "author": "omnichromia",
+      "id": "1406279558260326472",
+      "content": "~~不是有鯨魚mod了~~",
+      "author": "heikwok",
       "reactions": 1,
-      "channel": "✅「Answered」I cant enter the game"
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
-      "id": "1406196199207469157",
-      "content": "<@1131790839291596841>",
-      "author": "vxvendetta",
+      "id": "1406391832652419186",
+      "content": "once roguelike is out can we get slay the spire collab",
+      "author": "lumato",
       "reactions": 1,
-      "channel": "✅「Answered」I cant enter the game"
-    },
-    {
-      "id": "1406382397628481576",
-      "content": "是美美的醫生😭",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": ""
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     }
   ]
 }

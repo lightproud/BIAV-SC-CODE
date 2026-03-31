@@ -1,10 +1,13 @@
 {
   "date": "2025-11-22",
-  "messages": 66,
+  "messages": 76,
   "unique_authors": 21,
-  "reactions_total": 296,
+  "reactions_total": 305,
   "attachments": 8,
   "channel_activity": {
+    "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!": 1,
+    "V2.4.0.4 停服维护公告": 8,
+    "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version": 1,
     "能不能新增一个撤回上一张出牌的功能？": 1,
     "開銀鑰的時候也顯示守密人的台詞": 6,
     "💭「Processing」Boss's Ancient Embers dont drop in chapter 2 (stage 2-14) normal mode": 1,
@@ -28,30 +31,30 @@
     "1441904635123208233": 1
   },
   "hourly_activity": {
+    "8": 9,
+    "0": 3,
+    "1": 3,
+    "7": 8,
+    "18": 7,
+    "20": 4,
     "9": 2,
     "10": 4,
     "12": 3,
-    "18": 6,
-    "20": 3,
     "17": 3,
     "19": 1,
-    "8": 8,
     "13": 3,
     "6": 2,
-    "7": 5,
     "23": 1,
     "15": 7,
-    "0": 1,
     "2": 8,
-    "1": 1,
     "5": 3,
     "16": 3,
     "3": 1,
     "21": 1
   },
   "message_types": {
-    "19": 7,
-    "0": 34
+    "0": 9,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -81,6 +84,13 @@
       "author": "andro3168",
       "reactions": 17,
       "channel": "✅「Answered」This game needs more marketing"
+    },
+    {
+      "id": "1441589125559091201",
+      "content": "典藏馆的事件那，要不给打过的老登直接解锁了，要不就加个指引啊，根本不清楚打哪关才能解锁<:dead:1356082627509092372>",
+      "author": "zhi0202__77913",
+      "reactions": 9,
+      "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
     },
     {
       "id": "1441712474763296920",

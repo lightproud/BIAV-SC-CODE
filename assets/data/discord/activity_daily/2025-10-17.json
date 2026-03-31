@@ -1,10 +1,11 @@
 {
   "date": "2025-10-17",
-  "messages": 98,
+  "messages": 99,
   "unique_authors": 18,
-  "reactions_total": 14,
+  "reactions_total": 15,
   "attachments": 8,
   "channel_activity": {
+    "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework": 1,
     "✅「Answered」About new Ryker buff": 1,
     "✅「已回答」關於二創徵集的參與獎": 3,
     "誕妄墨菲立繪": 59,
@@ -18,9 +19,9 @@
     "相位對弈環境攻略": 8
   },
   "hourly_activity": {
+    "14": 42,
     "12": 6,
     "13": 3,
-    "14": 41,
     "15": 30,
     "17": 2,
     "20": 1,
@@ -32,9 +33,7 @@
     "11": 6
   },
   "message_types": {
-    "0": 68,
-    "19": 20,
-    "4": 2
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -57,6 +56,13 @@
       "author": "akkom730",
       "reactions": 2,
       "channel": "相位對弈環境攻略"
+    },
+    {
+      "id": "1428758188743852152",
+      "content": "牢貓別總惦記那破PVP",
+      "author": "nahida._90",
+      "reactions": 1,
+      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
     },
     {
       "id": "1428738651747254332",

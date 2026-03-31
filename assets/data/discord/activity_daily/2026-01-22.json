@@ -1,10 +1,12 @@
 {
   "date": "2026-01-22",
-  "messages": 53,
+  "messages": 67,
   "unique_authors": 15,
-  "reactions_total": 113,
-  "attachments": 19,
+  "reactions_total": 124,
+  "attachments": 21,
   "channel_activity": {
+    "[Art Dump Thread] WILLIAMPOSTING 2": 1,
+    "Forehead tierlist": 13,
     "💭「处理中」一上號發現突然有了波呂克斯": 13,
     "Swap Aigis and Aurita Absolute Axiom": 2,
     "想詢問關於徐的立繪設計": 2,
@@ -23,6 +25,7 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
+    "0": 23,
     "15": 9,
     "16": 3,
     "21": 3,
@@ -33,7 +36,6 @@
     "5": 1,
     "10": 2,
     "9": 1,
-    "0": 9,
     "7": 1,
     "1": 2,
     "4": 5,
@@ -43,8 +45,8 @@
     "23": 2
   },
   "message_types": {
-    "0": 21,
-    "19": 1
+    "0": 10,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -74,6 +76,13 @@
       "author": "vistason",
       "reactions": 13,
       "channel": "【自用】卡斯托尔×波吕克斯 稿件堆积"
+    },
+    {
+      "id": "1463691707311722518",
+      "content": "",
+      "author": "exhibitionism",
+      "reactions": 11,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
       "id": "1463915224938578099",

@@ -1,10 +1,13 @@
 {
   "date": "2025-11-04",
-  "messages": 117,
+  "messages": 124,
   "unique_authors": 18,
-  "reactions_total": 32,
+  "reactions_total": 41,
   "attachments": 20,
   "channel_activity": {
+    "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 2,
+    "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 4,
+    "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”": 1,
     "✅「Resolved」Pull animation breaks after 100 single pulls": 2,
     "✅「Answered」8-10 N and potential other N stages Bugs": 2,
     "✅「Answered」Would it be possible to show transcription quality in the covenant dismantle UI?": 1,
@@ -32,10 +35,11 @@
     "🔸欢乐梗图": 1
   },
   "hourly_activity": {
+    "14": 3,
+    "6": 22,
+    "9": 5,
     "10": 32,
     "16": 2,
-    "6": 18,
-    "9": 4,
     "15": 8,
     "8": 14,
     "3": 10,
@@ -43,15 +47,13 @@
     "13": 3,
     "4": 1,
     "12": 20,
-    "14": 1,
     "0": 1,
     "2": 1,
     "19": 1
   },
   "message_types": {
-    "0": 52,
-    "4": 9,
-    "19": 16
+    "0": 6,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -62,11 +64,25 @@
       "channel": "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上"
     },
     {
+      "id": "1435274800586162299",
+      "content": "連動一下卡厄思吧 快死透了",
+      "author": "oct3000",
+      "reactions": 6,
+      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
       "id": "1435205322464694322",
       "content": "His exalt aims for the lowest HP, he gets strong dmg boost when target is low HP",
       "author": "wolfierce",
       "reactions": 6,
       "channel": "✅「Answered」Make Doresain overflow damage on others when killing"
+    },
+    {
+      "id": "1435150569387065446",
+      "content": "才不是我想玩乱七八糟的但是我没角色这件事",
+      "author": "carme.0588",
+      "reactions": 3,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
     },
     {
       "id": "1435286942345461843",

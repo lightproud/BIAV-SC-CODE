@@ -1,10 +1,12 @@
 {
   "date": "2025-01-24",
-  "messages": 23,
-  "unique_authors": 5,
-  "reactions_total": 41,
-  "attachments": 6,
+  "messages": 61,
+  "unique_authors": 15,
+  "reactions_total": 89,
+  "attachments": 56,
   "channel_activity": {
+    "✨為喚醒體著新裝！": 37,
+    "《忘卻前夜》周邊企劃說明": 1,
     "English Page pls !!": 1,
     "脑缸能不能给我们表演一下背刺黄牛": 1,
     "請問第九章最終boss怎麼過?": 3,
@@ -14,26 +16,46 @@
     "cat fist": 1
   },
   "hourly_activity": {
+    "6": 27,
+    "7": 8,
+    "8": 2,
+    "11": 4,
+    "12": 8,
+    "13": 3,
+    "14": 1,
+    "15": 2,
+    "23": 1,
     "0": 1,
     "17": 1,
     "9": 2,
-    "11": 1,
-    "6": 13,
-    "13": 2,
-    "10": 1,
-    "7": 2
+    "10": 1
   },
   "message_types": {
-    "0": 3,
-    "19": 2
+    "0": 33,
+    "6": 1,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1332237794772516934",
+      "content": "🧨新春將近，彌薩格大學也想要趕趕這來自遠東的時髦。\n除了將全校上下布置成喜慶的紅色、燃放帶有奇異火光的煙火、與熟悉的親友一起共進團圓飯……喚醒體們還希望多完成一",
+      "author": "morimensstaff01",
+      "reactions": 22,
+      "channel": "✨為喚醒體著新裝！"
+    },
     {
       "id": "1332233667896148051",
       "content": "現在就需要看他們兩個殉情(T_T)",
       "author": "yolo_mode",
       "reactions": 15,
       "channel": "需要吃一點只能在垃圾桶找到的愛情線"
+    },
+    {
+      "id": "1332239437240860715",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 12,
+      "channel": "✨為喚醒體著新裝！"
     },
     {
       "id": "1332246959117041749",
@@ -50,11 +72,39 @@
       "channel": "讨厌您来"
     },
     {
+      "id": "1332239435613601822",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "✨為喚醒體著新裝！"
+    },
+    {
       "id": "1332242246354862101",
       "content": "",
       "author": "yolo_mode",
       "reactions": 6,
       "channel": "需要吃一點只能在垃圾桶找到的愛情線"
+    },
+    {
+      "id": "1332239371570774038",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "✨為喚醒體著新裝！"
+    },
+    {
+      "id": "1332263697430872104",
+      "content": "<@1131790839291596841> 校貓的素材呢🥺 🥺",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "✨為喚醒體著新裝！"
+    },
+    {
+      "id": "1332326660342812735",
+      "content": "我拼个图你就懂了真的蛮明显(目移)",
+      "author": "yingmai_",
+      "reactions": 1,
+      "channel": "✨為喚醒體著新裝！"
     },
     {
       "id": "1332234848278020118",

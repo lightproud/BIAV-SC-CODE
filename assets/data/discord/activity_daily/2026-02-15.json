@@ -1,10 +1,13 @@
 {
   "date": "2026-02-15",
-  "messages": 1004,
+  "messages": 1019,
   "unique_authors": 63,
-  "reactions_total": 429,
-  "attachments": 120,
+  "reactions_total": 492,
+  "attachments": 125,
   "channel_activity": {
+    "doresain (wip)": 3,
+    "Minions VS Morimens": 1,
+    "Sanga wip (im confused)": 11,
     "✅「Resolved」Sorry, it was my mistake.": 5,
     "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 1,
     "✅「Answered」Add level 100 for HSR": 9,
@@ -35,14 +38,15 @@
     "🔸阵容构建": 193
   },
   "hourly_activity": {
+    "7": 44,
+    "9": 83,
+    "4": 33,
+    "13": 20,
     "5": 7,
     "8": 20,
-    "9": 82,
     "19": 10,
-    "4": 25,
     "10": 15,
     "15": 236,
-    "13": 17,
     "23": 14,
     "11": 135,
     "3": 34,
@@ -51,7 +55,6 @@
     "6": 91,
     "16": 26,
     "18": 16,
-    "7": 41,
     "0": 1,
     "2": 20,
     "12": 38,
@@ -59,8 +62,9 @@
     "22": 4
   },
   "message_types": {
-    "0": 29,
-    "19": 4
+    "0": 11,
+    "4": 1,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -69,6 +73,27 @@
       "author": "no.tea.",
       "reactions": 38,
       "channel": ""
+    },
+    {
+      "id": "1472497014720696467",
+      "content": "why are his hands genuinely a concept",
+      "author": "dollyxqyan",
+      "reactions": 25,
+      "channel": "doresain (wip)"
+    },
+    {
+      "id": "1472443433116237955",
+      "content": "Does anyone have other art/ref's of her legs I don't know what's going on lmao",
+      "author": "he_xuan33",
+      "reactions": 16,
+      "channel": "Sanga wip (im confused)"
+    },
+    {
+      "id": "1472529639112052840",
+      "content": "just kidding",
+      "author": "gaedol.",
+      "reactions": 15,
+      "channel": "Minions VS Morimens"
     },
     {
       "id": "1472640231516799027",
@@ -179,27 +204,6 @@
       "id": "1472437439217012939",
       "content": "我的簡介怎麼還在更新次數",
       "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472444797095514214",
-      "content": "打了個8840<:wish:1356084702468899117>",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472529140304445441",
-      "content": "38張症狀",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472541602164506715",
-      "content": "如果这个问卷是校猫发的……？😅🤓",
-      "author": "akalanden",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

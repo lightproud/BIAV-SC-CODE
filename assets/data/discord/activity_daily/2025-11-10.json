@@ -1,10 +1,13 @@
 {
   "date": "2025-11-10",
-  "messages": 76,
+  "messages": 81,
   "unique_authors": 16,
-  "reactions_total": 360,
-  "attachments": 19,
+  "reactions_total": 415,
+  "attachments": 21,
   "channel_activity": {
+    "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment": 2,
+    "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework": 1,
+    "Happy Birthday, Caecus!": 2,
     "✅「Answered」Lightless realm expansion": 2,
     "✅「已回答」需要更多5771壁纸": 2,
     "💭「Processing」Material synthesis and conversion": 1,
@@ -30,6 +33,9 @@
     "1432654338982940783": 2
   },
   "hourly_activity": {
+    "7": 5,
+    "3": 4,
+    "23": 2,
     "6": 16,
     "9": 5,
     "13": 6,
@@ -37,10 +43,8 @@
     "8": 6,
     "10": 14,
     "21": 2,
-    "3": 3,
     "16": 5,
     "18": 2,
-    "7": 3,
     "12": 3,
     "4": 1,
     "14": 3,
@@ -49,9 +53,8 @@
     "2": 4
   },
   "message_types": {
-    "0": 38,
-    "4": 12,
-    "19": 4
+    "0": 4,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -76,11 +79,25 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1437577834833903626",
+      "content": "It is rushed but! I couldn't miss his b-day! (I may have already OTL)",
+      "author": "gumseoi",
+      "reactions": 37,
+      "channel": "Happy Birthday, Caecus!"
+    },
+    {
       "id": "1437417008491790508",
       "content": "在寫異格的角色界面於是搞了！兩個小時產出來的xx基本都是自己安的字體和摳的圖可能會比較粗糙請見諒ww\n後2P是中文wiki上的角色頁面，昨天晚上修了一下w",
       "author": "flim_of_life_burst",
       "reactions": 25,
       "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1437578048730955837",
+      "content": "Love goes to best boi <a:bongo_cat_heart:837451354095878185>",
+      "author": "gumseoi",
+      "reactions": 18,
+      "channel": "Happy Birthday, Caecus!"
     },
     {
       "id": "1437519026807902379",

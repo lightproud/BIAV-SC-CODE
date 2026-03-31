@@ -1,10 +1,11 @@
 {
   "date": "2026-01-03",
-  "messages": 13,
+  "messages": 56,
   "unique_authors": 6,
-  "reactions_total": 1,
-  "attachments": 11,
+  "reactions_total": 8,
+  "attachments": 16,
   "channel_activity": {
+    "Forehead tierlist": 43,
     "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 1,
     "💭「处理中」典藏馆事件的解锁到底是什么机制？": 3,
     "💭「Processing」Kathi's Hyperflare gone": 1,
@@ -15,19 +16,44 @@
     "1455453095592071269": 1
   },
   "hourly_activity": {
-    "4": 3,
+    "1": 1,
+    "2": 10,
+    "3": 28,
+    "4": 5,
+    "20": 4,
     "19": 1,
     "16": 1,
     "21": 3,
-    "20": 2,
     "13": 1,
     "18": 1,
     "11": 1
   },
   "message_types": {
-    "0": 10
+    "0": 36,
+    "19": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1456815810520547498",
+      "content": "Technically, Faros only has a forehead and no scalp.",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "Forehead tierlist"
+    },
+    {
+      "id": "1456844427514614016",
+      "content": "In fact, I would argue Liz deserves to be in her own tier below gmurphy’s",
+      "author": "kezrin",
+      "reactions": 2,
+      "channel": "Forehead tierlist"
+    },
+    {
+      "id": "1456847965657370737",
+      "content": "It’s not a big deal",
+      "author": "kezrin",
+      "reactions": 1,
+      "channel": "Forehead tierlist"
+    },
     {
       "id": "1456868051034050581",
       "content": "又有一個錯字，在彌利亞姆的異夢視界第一章",

@@ -1,10 +1,11 @@
 {
   "date": "2025-07-14",
-  "messages": 25,
+  "messages": 28,
   "unique_authors": 7,
-  "reactions_total": 6,
+  "reactions_total": 11,
   "attachments": 7,
   "channel_activity": {
+    "V2.2.3.2 在线维护公告": 3,
     "✅「Answered」Update Exception: Failed to retrieve patch file": 1,
     "✅「已回答」如视频": 2,
     "✅「已回答」奧爾拉專造的描述與實際表現的錯誤": 12,
@@ -14,20 +15,27 @@
     "利莫里亞沙丁魚罐頭": 4
   },
   "hourly_activity": {
+    "4": 3,
+    "6": 4,
     "19": 2,
     "3": 3,
     "11": 12,
-    "4": 2,
-    "6": 2,
     "12": 2,
     "13": 1,
     "14": 1
   },
   "message_types": {
-    "0": 19,
-    "4": 2
+    "0": 1,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1394200133578522702",
+      "content": "美味将在明天端上来！<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "V2.2.3.2 在线维护公告"
+    },
     {
       "id": "1394202979258601575",
       "content": "We have learned about this issue. Thank you for your feedback. We are currently ",
@@ -41,6 +49,13 @@
       "author": "yolo_mode",
       "reactions": 2,
       "channel": "利莫里亞沙丁魚罐頭"
+    },
+    {
+      "id": "1394200605299576952",
+      "content": "<:pray:1356053116260454534>",
+      "author": "navirecorbeau",
+      "reactions": 1,
+      "channel": "V2.2.3.2 在线维护公告"
     },
     {
       "id": "1394283672290725888",

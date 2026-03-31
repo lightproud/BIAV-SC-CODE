@@ -1,10 +1,11 @@
 {
   "date": "2025-01-12",
-  "messages": 37,
+  "messages": 39,
   "unique_authors": 18,
-  "reactions_total": 57,
+  "reactions_total": 60,
   "attachments": 4,
   "channel_activity": {
+    "V2.0.0.0 停服維護公告": 2,
     "有沒有考慮新增好友私信功能？": 1,
     "对不起我蠢,我的停服维修补偿什哪里？": 3,
     "[Feature Request] Sweep or instant clear for weekly skill material (Transcendental Entity)?": 1,
@@ -16,19 +17,19 @@
     "好餓哦，雜食來吃飯了": 9
   },
   "hourly_activity": {
+    "14": 8,
+    "21": 1,
     "11": 4,
     "7": 8,
     "17": 2,
     "5": 3,
-    "14": 7,
     "13": 2,
     "4": 4,
     "2": 4,
     "3": 3
   },
   "message_types": {
-    "0": 27,
-    "19": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -72,6 +73,13 @@
       "author": "ena04564",
       "reactions": 5,
       "channel": "好餓哦，雜食來吃飯了"
+    },
+    {
+      "id": "1328110235390443530",
+      "content": "你遊的更新內容都能塞進國文素養題了（",
+      "author": "qiyun0493",
+      "reactions": 3,
+      "channel": "V2.0.0.0 停服維護公告"
     },
     {
       "id": "1328049344481591408",

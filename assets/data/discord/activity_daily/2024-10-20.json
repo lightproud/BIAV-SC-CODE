@@ -1,10 +1,11 @@
 {
   "date": "2024-10-20",
-  "messages": 33,
+  "messages": 34,
   "unique_authors": 15,
   "reactions_total": 49,
   "attachments": 9,
   "channel_activity": {
+    "📜《忘卻前夜 Morimens》V1.6.4即將開放！精彩資訊一網打盡！": 1,
     "沒別的意思 就是覺得深海國家打不動了": 9,
     "大": 2,
     "來自四小強小小的抱怨": 6,
@@ -16,8 +17,8 @@
     "仔細想想 你遊背景何嘗不是一種末世哨向paro": 2
   },
   "hourly_activity": {
+    "3": 2,
     "2": 2,
-    "3": 1,
     "5": 3,
     "6": 1,
     "10": 1,
@@ -34,8 +35,7 @@
     "13": 1
   },
   "message_types": {
-    "0": 20,
-    "19": 7
+    "19": 1
   },
   "top_reacted_messages": [
     {

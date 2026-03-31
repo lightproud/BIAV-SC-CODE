@@ -1,10 +1,11 @@
 {
   "date": "2025-09-02",
-  "messages": 78,
+  "messages": 79,
   "unique_authors": 11,
   "reactions_total": 43,
   "attachments": 11,
   "channel_activity": {
+    "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy": 1,
     "✅「Answered」Launch the game via Steam and getting the \"Network busy\"": 4,
     "救救狗吧融災求助": 1,
     "✅「Answered」Change Arcane Dominion to a more generic approach": 37,
@@ -23,6 +24,7 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "5": 1,
     "1": 7,
     "7": 9,
     "19": 6,
@@ -39,9 +41,7 @@
     "9": 1
   },
   "message_types": {
-    "0": 58,
-    "19": 5,
-    "4": 4
+    "0": 1
   },
   "top_reacted_messages": [
     {

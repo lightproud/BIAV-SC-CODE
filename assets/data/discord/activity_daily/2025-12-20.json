@@ -1,10 +1,11 @@
 {
   "date": "2025-12-20",
-  "messages": 64,
+  "messages": 71,
   "unique_authors": 21,
-  "reactions_total": 43,
+  "reactions_total": 48,
   "attachments": 20,
   "channel_activity": {
+    "V2.4.0.12 在线维护公告": 7,
     "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 1,
     "💭「Processing」Can't see the new intro scene on Steam": 4,
     "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details": 16,
@@ -27,8 +28,11 @@
     "1443848396585828363": 1
   },
   "hourly_activity": {
+    "3": 1,
+    "5": 5,
+    "6": 19,
+    "19": 2,
     "16": 4,
-    "6": 18,
     "7": 2,
     "11": 5,
     "15": 2,
@@ -36,18 +40,16 @@
     "0": 8,
     "8": 4,
     "21": 3,
-    "5": 1,
     "10": 3,
     "13": 1,
     "17": 1,
     "23": 6,
     "22": 1,
-    "19": 1,
     "14": 1
   },
   "message_types": {
-    "0": 38,
-    "19": 10
+    "0": 6,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -84,6 +86,13 @@
       "author": "flim_of_life_burst",
       "reactions": 4,
       "channel": "✉️OC生贺｜守密人，您收到了两封邮件♛"
+    },
+    {
+      "id": "1451821818301120604",
+      "content": "如果玩家想为养成材料付费，那没问题。我不会去抱怨那些本来就不是给我准备的礼包。别人想买就买，我不想买，也不会因为别人能买而不满。\n\n但把表情和头像强行绑定在礼包",
+      "author": "tksn.",
+      "reactions": 3,
+      "channel": "V2.4.0.12 在线维护公告"
     },
     {
       "id": "1451973844872200202",
@@ -128,6 +137,20 @@
       "channel": ""
     },
     {
+      "id": "1451778369212387511",
+      "content": "<@633215996508766229> 我已经氪完了游戏内所有能氪的礼包和纪行，虽然很缺材料，但是这个礼包的定价依旧让人没有购买的欲望，是否可以增加抽数或者",
+      "author": "grayifies",
+      "reactions": 1,
+      "channel": "V2.4.0.12 在线维护公告"
+    },
+    {
+      "id": "1451813536337760427",
+      "content": "考虑到目前两种礼包的性价比差异不大，是否可以考虑进一步做性价比分级，提供一个值得全体玩家消费的版本？",
+      "author": "qingming6054",
+      "reactions": 1,
+      "channel": "V2.4.0.12 在线维护公告"
+    },
+    {
       "id": "1451817581433323564",
       "content": "can I get thaiass back",
       "author": "rain_scarlet",
@@ -168,13 +191,6 @@
       "author": "sadisticgirl.",
       "reactions": 1,
       "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1451740290292646081",
-      "content": "glad to keep you alive <:Sendflowers:1400771545370067118>",
-      "author": "zzio_",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

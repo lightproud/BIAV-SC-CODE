@@ -1,10 +1,12 @@
 {
   "date": "2024-10-13",
-  "messages": 12,
+  "messages": 22,
   "unique_authors": 5,
-  "reactions_total": 16,
+  "reactions_total": 17,
   "attachments": 3,
   "channel_activity": {
+    "V1.6.3.2 在線維護公告": 9,
+    "✅前瞻：V1.6.4 「月相觀測」與「高階課題」獎勵提升": 1,
     "能不能下修守密人等級限制或主線boss血量": 2,
     "建议统一莱克的造物顺序": 3,
     "4-12的boss会保留哈姆林的回环乐音": 1,
@@ -12,16 +14,18 @@
     "（已封存）【蚰蜒的vrm影像馆】": 4
   },
   "hourly_activity": {
-    "4": 2,
+    "1": 2,
+    "4": 7,
+    "10": 4,
+    "2": 1,
     "8": 1,
     "11": 3,
-    "10": 2,
     "14": 3,
     "17": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "19": 1,
+    "0": 9
   },
   "top_reacted_messages": [
     {
@@ -37,6 +41,13 @@
       "author": "nancyjofla",
       "reactions": 2,
       "channel": "（已封存）【蚰蜒的vrm影像馆】"
+    },
+    {
+      "id": "1294833756116353034",
+      "content": "虽然笑猫总说要平衡,但这就是抽卡手游🤡",
+      "author": "yang_42",
+      "reactions": 1,
+      "channel": "V1.6.3.2 在線維護公告"
     }
   ]
 }

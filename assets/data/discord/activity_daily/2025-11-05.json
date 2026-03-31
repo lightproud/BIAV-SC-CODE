@@ -1,10 +1,12 @@
 {
   "date": "2025-11-05",
-  "messages": 67,
-  "unique_authors": 11,
-  "reactions_total": 21,
+  "messages": 86,
+  "unique_authors": 14,
+  "reactions_total": 92,
   "attachments": 5,
   "channel_activity": {
+    "Call for Community Volunteer Translators: Applications Open!": 1,
+    "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment": 18,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 3,
     "✅「Answered」Quality of Life for Covenant Transcription": 1,
     "✅「Answered」8-10 N and potential other N stages Bugs": 1,
@@ -24,10 +26,12 @@
     "1296113810549112874": 1
   },
   "hourly_activity": {
+    "3": 6,
+    "17": 17,
+    "20": 1,
     "4": 24,
     "8": 4,
     "0": 2,
-    "3": 5,
     "15": 1,
     "18": 1,
     "14": 15,
@@ -37,17 +41,31 @@
     "2": 4
   },
   "message_types": {
-    "0": 34,
-    "4": 13,
-    "19": 5
+    "0": 15,
+    "4": 2,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1435676638439276694",
+      "content": "很抱歉，本次轮换唤醒活动设计考虑不周。我们会在版本更新时将V2.4唤醒体与命轮组合唤醒的形式更换为唤醒体与命轮独立唤醒的形式，敬请注意。\n\n\n我们将在近期发布更",
+      "author": "game.producer.light",
+      "reactions": 68,
+      "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
+    },
     {
       "id": "1435618879488655533",
       "content": "🐱🦊",
       "author": "yingmai_",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1435677009576726771",
+      "content": "我要更多漏勺貓",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
     },
     {
       "id": "1435540986410303538",

@@ -1,10 +1,14 @@
 {
   "date": "2025-05-28",
-  "messages": 71,
+  "messages": 90,
   "unique_authors": 12,
-  "reactions_total": 43,
-  "attachments": 32,
+  "reactions_total": 180,
+  "attachments": 39,
   "channel_activity": {
+    "Morimens English Localization Notes #1": 10,
+    "V2.2.2.2 在線維護公告": 6,
+    "游戏美术资源上的文字": 2,
+    "✅校猫碎碎念#序章配音决定": 1,
     "💭「Processing」Cutscene Error": 4,
     "✅「Answered」Unable to start game - stuck on checking for updates screen": 1,
     "✅「已回答」命轮分解界面没有1.5周年命轮泯土": 4,
@@ -30,26 +34,52 @@
     "血链羊妈体系常用四种输出流程": 1
   },
   "hourly_activity": {
+    "10": 14,
+    "11": 5,
+    "12": 5,
+    "14": 6,
+    "15": 5,
     "8": 12,
-    "10": 8,
     "21": 2,
-    "14": 4,
     "19": 1,
     "3": 9,
     "6": 12,
-    "12": 2,
-    "11": 1,
     "2": 6,
-    "15": 1,
     "7": 9,
     "9": 4
   },
   "message_types": {
-    "0": 24,
-    "4": 12,
-    "19": 9
+    "0": 19
   },
   "top_reacted_messages": [
+    {
+      "id": "1377236011653795880",
+      "content": "**Greetings, Keepers!**\n\nThis is Ace, and I am currently working on Morimens' En",
+      "author": "morimens_15",
+      "reactions": 55,
+      "channel": "Morimens English Localization Notes #1"
+    },
+    {
+      "id": "1377236671568805918",
+      "content": "**Story Translation Plans:**\n\nThis month, we received many kind words and though",
+      "author": "morimens_15",
+      "reactions": 31,
+      "channel": "Morimens English Localization Notes #1"
+    },
+    {
+      "id": "1377245053726232596",
+      "content": "We are very happy that the translation is coming along, wish you the best, and t",
+      "author": "vxvendetta",
+      "reactions": 13,
+      "channel": "Morimens English Localization Notes #1"
+    },
+    {
+      "id": "1377236471962009700",
+      "content": "**Fixed over 100 UI issues:**\n\nThese issues caused text in different languages t",
+      "author": "morimens_15",
+      "reactions": 12,
+      "channel": "Morimens English Localization Notes #1"
+    },
     {
       "id": "1377193301467201577",
       "content": "这里整合一下最近写的各种攻略。因为投稿不接受档案链接，所以把链接内容做成图片发表在dc。",
@@ -65,11 +95,39 @@
       "channel": "弥萨格经济学课：分解无用命轮换等级碎片"
     },
     {
+      "id": "1377252035354689627",
+      "content": "thanks for ur effort guys, I can't wait to have at least the combat naming stand",
+      "author": "nayrath",
+      "reactions": 7,
+      "channel": "Morimens English Localization Notes #1"
+    },
+    {
+      "id": "1377253047415209986",
+      "content": "Sounds cool, thanks for sharing this update.\nRight now I've been seeing more and",
+      "author": "__goz__",
+      "reactions": 7,
+      "channel": "Morimens English Localization Notes #1"
+    },
+    {
+      "id": "1377298503729942598",
+      "content": "V2.2.2.2 Online Maintenance Notice\nDear Keeper,\n    The Mythag University Admini",
+      "author": "morimensstaff02",
+      "reactions": 7,
+      "channel": "V2.2.2.2 在線維護公告"
+    },
+    {
       "id": "1377130779708096644",
       "content": "借塔薇的小伙伴比较多，所以暂时换回来并且拉成90级了，需要借克莱门汀的小伙伴可以私信我",
       "author": "timee_ky",
       "reactions": 6,
       "channel": "弥萨格校友号码本4.0"
+    },
+    {
+      "id": "1377236184740139049",
+      "content": "**Combat-Related Text Progress:**\n\nThis month, we reviewed:\n**● 1,208 Skill Name",
+      "author": "morimens_15",
+      "reactions": 5,
+      "channel": "Morimens English Localization Notes #1"
     },
     {
       "id": "1377226087884390481",

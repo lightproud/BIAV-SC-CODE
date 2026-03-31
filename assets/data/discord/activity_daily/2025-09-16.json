@@ -1,10 +1,13 @@
 {
   "date": "2025-09-16",
-  "messages": 83,
+  "messages": 107,
   "unique_authors": 18,
-  "reactions_total": 133,
-  "attachments": 17,
+  "reactions_total": 135,
+  "attachments": 18,
   "channel_activity": {
+    "V2.3.2.4 在线维护公告": 11,
+    "V2.3.2.3 在线维护公告": 12,
+    "忘却前夜OST：神明诞生之日": 1,
     "✅「Answered」About new Ryker buff": 3,
     "✅「已回答」遺骨逼我刪牌": 1,
     "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 4,
@@ -33,12 +36,14 @@
     "1399369127008796723": 2
   },
   "hourly_activity": {
-    "2": 3,
+    "13": 8,
+    "14": 11,
+    "1": 7,
+    "2": 8,
+    "8": 3,
+    "4": 1,
     "3": 21,
-    "1": 2,
-    "8": 1,
     "12": 2,
-    "13": 5,
     "6": 5,
     "0": 1,
     "9": 4,
@@ -48,13 +53,11 @@
     "16": 12,
     "17": 3,
     "20": 1,
-    "7": 2,
-    "14": 3
+    "7": 2
   },
   "message_types": {
-    "0": 42,
-    "4": 11,
-    "19": 9
+    "0": 21,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -161,6 +164,20 @@
       "author": "nikolazuli",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1417512844232232960",
+      "content": "我的天啊",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "V2.3.2.4 在线维护公告"
+    },
+    {
+      "id": "1417367397756567664",
+      "content": "Finally on Spotify <:Cheerup:1400771555939844149> hopefully you can add Ex Obliv",
+      "author": "theborkerr",
+      "reactions": 1,
+      "channel": "忘却前夜OST：神明诞生之日"
     },
     {
       "id": "1417485003184672861",

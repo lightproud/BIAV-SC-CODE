@@ -1,10 +1,14 @@
 {
   "date": "2026-02-01",
-  "messages": 7070,
+  "messages": 7082,
   "unique_authors": 151,
-  "reactions_total": 1063,
-  "attachments": 323,
+  "reactions_total": 1120,
+  "attachments": 329,
   "channel_activity": {
+    "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 1,
+    "Ramona wip (best girl)🗝": 4,
+    "Teaser || Doresain & Sylvester": 4,
+    "Doodles and other such scribbles": 3,
     "💭「Processing」The Boss intentions for Acr1 4-3 are a mess": 3,
     "💭「Processing」Astral Reign 1-8 story is broken": 1,
     "9-3 20000 deal, does it work?": 3,
@@ -27,20 +31,20 @@
     "🔸morimens-game-chat": 5874
   },
   "hourly_activity": {
+    "9": 361,
+    "8": 286,
+    "0": 182,
+    "1": 295,
+    "14": 619,
+    "3": 401,
+    "15": 271,
     "18": 193,
     "10": 419,
-    "14": 618,
-    "15": 270,
-    "9": 358,
-    "3": 400,
     "6": 147,
     "2": 375,
-    "1": 292,
-    "8": 284,
     "13": 404,
     "22": 155,
     "12": 530,
-    "0": 181,
     "4": 562,
     "5": 309,
     "7": 161,
@@ -53,10 +57,24 @@
     "21": 29
   },
   "message_types": {
-    "0": 17,
-    "4": 1
+    "19": 2,
+    "0": 10
   },
   "top_reacted_messages": [
+    {
+      "id": "1467445223708954645",
+      "content": "<@633215996508766229>過了好幾天我還是很在意，到底堅持不出男性喚醒體的理由是什麼？別再說什麼劇情合理性之類的鬼話，玩家都是成年人了（也許有部",
+      "author": "wangyuan4880",
+      "reactions": 28,
+      "channel": "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan"
+    },
+    {
+      "id": "1467432939288531188",
+      "content": "Havent really been posting much but its alright will probably post the speedpain",
+      "author": "j.i9star.",
+      "reactions": 22,
+      "channel": "Ramona wip (best girl)🗝"
+    },
     {
       "id": "1467348362725687432",
       "content": "For team testing purposes and theory crafting, as well as a place where people c",
@@ -163,6 +181,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1467434028494749706",
+      "content": "I never realised how insanely intricate her eye mask was until i had to draw it.",
+      "author": "j.i9star.",
+      "reactions": 5,
+      "channel": "Ramona wip (best girl)🗝"
+    },
+    {
       "id": "1467443967762366484",
       "content": "Scrapped Alien Stage 'KARMA' with keeper and ramona \nhttps://vt.tiktok.com/ZSaqA",
       "author": "j.i9star.",
@@ -175,27 +200,6 @@
       "author": "ernest_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1467454944478232809",
-      "content": "阿狗氣到拿福袋打穿全部困難星辰篇",
-      "author": "arr5721",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1467324677646057594",
-      "content": "welp i did it",
-      "author": "strolousfozar",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1467464169392439378",
-      "content": "the next aequor should be a siren so she can can support corpo both in game mech",
-      "author": "princess.goth",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

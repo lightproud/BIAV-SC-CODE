@@ -1,10 +1,11 @@
 {
   "date": "2024-12-27",
-  "messages": 29,
+  "messages": 30,
   "unique_authors": 17,
   "reactions_total": 16,
   "attachments": 1,
   "channel_activity": {
+    "✅重生与致歉": 1,
     "既然复活赛打赢了，下周的活动和卡池，还有新一期的战令什么时候有预览或者爆料？": 13,
     "一鍵領取": 3,
     "来问一下关于周年礼盒的发货问题": 3,
@@ -13,6 +14,7 @@
     "with cute hats": 1
   },
   "hourly_activity": {
+    "2": 4,
     "6": 2,
     "7": 1,
     "9": 3,
@@ -21,13 +23,11 @@
     "16": 3,
     "22": 1,
     "23": 2,
-    "2": 3,
     "10": 4,
     "3": 6
   },
   "message_types": {
-    "0": 22,
-    "19": 5
+    "0": 1
   },
   "top_reacted_messages": [
     {

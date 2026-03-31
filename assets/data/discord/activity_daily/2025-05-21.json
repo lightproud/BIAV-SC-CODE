@@ -1,10 +1,11 @@
 {
   "date": "2025-05-21",
-  "messages": 31,
+  "messages": 32,
   "unique_authors": 6,
-  "reactions_total": 7,
+  "reactions_total": 8,
   "attachments": 4,
   "channel_activity": {
+    "忘卻前夜OST：奧吉爾EP·無愧榮光": 1,
     "✅「已回答」520信件缺失": 4,
     "✅「Answered」Game text bugged in tawil and traphase": 2,
     "💭「Processing」Something confusing happened": 6,
@@ -18,11 +19,11 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "8": 2,
     "2": 12,
     "3": 7,
     "6": 1,
     "4": 3,
-    "8": 1,
     "5": 1,
     "0": 1,
     "1": 2,
@@ -31,9 +32,7 @@
     "23": 1
   },
   "message_types": {
-    "0": 13,
-    "4": 8,
-    "19": 4
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -42,6 +41,13 @@
       "author": "flim_of_life_burst",
       "reactions": 3,
       "channel": "拿下索瓦爾格商用權了慶祝一下XD"
+    },
+    {
+      "id": "1374666364857483344",
+      "content": "感謝守密人的肯定與支持💗",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "忘卻前夜OST：奧吉爾EP·無愧榮光"
     },
     {
       "id": "1374577787142279292",

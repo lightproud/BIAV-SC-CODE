@@ -1,10 +1,12 @@
 {
   "date": "2026-02-28",
-  "messages": 689,
+  "messages": 691,
   "unique_authors": 49,
-  "reactions_total": 160,
-  "attachments": 82,
+  "reactions_total": 184,
+  "attachments": 83,
   "channel_activity": {
+    "to Light PD... i want morimens acrylic merch...": 1,
+    "Be my beautiful bride || Sylvester": 1,
     "💭「處理中」奇怪的隊伍遇到奇怪的bug：女王的戒律超量狂氣": 3,
     "✅「Answered」Memory leaks": 3,
     "✅「Answered」Choose if OE or not.": 2,
@@ -32,15 +34,15 @@
     "🔸綜合討論": 623
   },
   "hourly_activity": {
+    "14": 12,
+    "10": 73,
     "7": 51,
     "13": 12,
     "8": 16,
     "11": 31,
     "3": 18,
-    "10": 72,
     "6": 14,
     "19": 4,
-    "14": 11,
     "17": 128,
     "15": 132,
     "16": 128,
@@ -56,11 +58,17 @@
     "18": 1
   },
   "message_types": {
-    "0": 6,
-    "4": 8,
-    "19": 4
+    "19": 1,
+    "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1477252772096380989",
+      "content": "Quick doodle of Sylvester <:MC_Jointhefun2:1468258739181195286> the caption is..",
+      "author": "that_one_chippy",
+      "reactions": 24,
+      "channel": "Be my beautiful bride || Sylvester"
+    },
     {
       "id": "1477439262126379138",
       "content": "I used the banner posters I could find for them. These aren't meant to be duplic",
@@ -191,13 +199,6 @@
       "id": "1477205953547075686",
       "content": "實則都在裝，這群只有我最菜，是誠實的真萌新",
       "author": "universe.dark",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1477206031913324544",
-      "content": "好的\n佬",
-      "author": "foxcatfurry",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

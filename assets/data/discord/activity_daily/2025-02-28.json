@@ -1,10 +1,11 @@
 {
   "date": "2025-02-28",
-  "messages": 66,
-  "unique_authors": 12,
-  "reactions_total": 39,
-  "attachments": 4,
+  "messages": 153,
+  "unique_authors": 17,
+  "reactions_total": 55,
+  "attachments": 7,
   "channel_activity": {
+    "V2.1.0.5 停服維護公告": 87,
     "什么时候才能出双方同时选卡牌的活动？": 1,
     "關於星辰篇劇情走格子探索地圖要素": 5,
     "忘却前夜第一届交易大赛!": 56,
@@ -14,22 +15,24 @@
     "I Made a fan caption in Korean": 1
   },
   "hourly_activity": {
+    "9": 28,
+    "10": 47,
+    "11": 5,
+    "12": 4,
+    "13": 25,
     "5": 2,
     "7": 11,
     "8": 1,
     "16": 1,
     "3": 10,
     "6": 15,
-    "10": 4,
-    "11": 1,
-    "13": 17,
     "15": 2,
     "4": 1,
     "18": 1
   },
   "message_types": {
-    "0": 57,
-    "19": 7
+    "0": 75,
+    "19": 12
   },
   "top_reacted_messages": [
     {
@@ -54,6 +57,20 @@
       "channel": "忘却前夜第一届交易大赛!"
     },
     {
+      "id": "1344970980878979093",
+      "content": "由於栗子加強過了所以我們不會再加強栗子了，我們決定把更多心力花在如何讓其他角色變得跟栗子一樣",
+      "author": "shchng.",
+      "reactions": 5,
+      "channel": "V2.1.0.5 停服維護公告"
+    },
+    {
+      "id": "1344973075787026432",
+      "content": "当前力量临时提升100%简直无敌",
+      "author": "sadanshishen",
+      "reactions": 4,
+      "channel": "V2.1.0.5 停服維護公告"
+    },
+    {
       "id": "1344976223838797857",
       "content": "比賽今天才剛開\n馬上被校貓針對",
       "author": "Deleted User",
@@ -68,11 +85,25 @@
       "channel": "I Made a fan caption in Korean"
     },
     {
+      "id": "1344973108519632967",
+      "content": "這個我們根本測不出來還不跟我們說",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "V2.1.0.5 停服維護公告"
+    },
+    {
       "id": "1344951128152084490",
       "content": "波次等於沒了肉鴿要素，就跟星辰篇的造物一樣，毫無變化，單純加數值，沒有策略成分\n建議改成簡化版的走格子，把主線搞得跟流水活動一樣無聊，也是真有你的",
       "author": "taoi002",
       "reactions": 3,
       "channel": "關於星辰篇劇情走格子探索地圖要素"
+    },
+    {
+      "id": "1344978221866815489",
+      "content": "I love Liz, she's so back\n我愛莉茲，她回來了 <:cute:1239911255121068082>",
+      "author": "reya.li",
+      "reactions": 2,
+      "channel": "V2.1.0.5 停服維護公告"
     },
     {
       "id": "1344898173994401823",
@@ -94,6 +125,20 @@
       "author": "Deleted User",
       "reactions": 2,
       "channel": "忘却前夜第一届交易大赛!"
+    },
+    {
+      "id": "1344972860686471220",
+      "content": "很想罵髒話\n有bug不早說",
+      "author": "_cwz_",
+      "reactions": 1,
+      "channel": "V2.1.0.5 停服維護公告"
+    },
+    {
+      "id": "1344972930777612388",
+      "content": "這個就是欠罵",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "V2.1.0.5 停服維護公告"
     }
   ]
 }

@@ -1,25 +1,30 @@
 {
   "date": "2025-04-26",
-  "messages": 10,
-  "unique_authors": 3,
+  "messages": 21,
+  "unique_authors": 4,
   "reactions_total": 19,
   "attachments": 3,
   "channel_activity": {
+    "V2.2.1.0 停服維護公告": 4,
+    "[克蘇魯]你應該要知道的那些事_(超級不專業版)": 7,
     "✅「Answered」Steam account switching": 1,
     "血链希洛忘却篇星辰篇造物抓取二图流攻略": 6,
     "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑": 2,
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "9": 4,
+    "14": 1,
+    "10": 9,
     "20": 1,
     "7": 1,
-    "9": 1,
     "18": 4,
-    "10": 2,
     "21": 1
   },
   "message_types": {
-    "0": 1
+    "19": 3,
+    "0": 7,
+    "4": 1
   },
   "top_reacted_messages": [
     {

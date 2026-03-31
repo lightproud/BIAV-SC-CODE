@@ -1,10 +1,12 @@
 {
   "date": "2025-11-21",
-  "messages": 199,
+  "messages": 286,
   "unique_authors": 28,
-  "reactions_total": 57,
-  "attachments": 35,
+  "reactions_total": 109,
+  "attachments": 36,
   "channel_activity": {
+    "V2.4.0.4 停服维护公告": 85,
+    "V2.4.0.3 在线维护公告": 2,
     "能不能新增一个撤回上一张出牌的功能？": 3,
     "💭「Processing」Taboo Knowledge Level not being properly shown": 1,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 1,
@@ -56,14 +58,19 @@
     "綜上所述所以我畫了水仙視姦（？）": 3
   },
   "hourly_activity": {
+    "15": 29,
+    "16": 15,
+    "17": 7,
+    "18": 6,
+    "19": 2,
+    "20": 53,
+    "21": 3,
+    "7": 5,
     "13": 7,
-    "15": 16,
     "9": 30,
     "23": 5,
-    "7": 4,
     "11": 12,
     "14": 11,
-    "18": 3,
     "4": 16,
     "10": 34,
     "8": 10,
@@ -71,15 +78,11 @@
     "3": 14,
     "5": 22,
     "6": 1,
-    "21": 2,
-    "0": 1,
-    "16": 5,
-    "20": 3
+    "0": 1
   },
   "message_types": {
-    "19": 28,
-    "0": 84,
-    "4": 39
+    "0": 76,
+    "19": 11
   },
   "top_reacted_messages": [
     {
@@ -90,11 +93,46 @@
       "channel": "綜上所述所以我畫了水仙視姦（？）"
     },
     {
+      "id": "1441465224010924182",
+      "content": "我只能说之前快死了是有道理的，在二周年这种拉新入坑的大好时刻你出个🥚墨我觉得没问题，本来墨菲就是高人气角色，剧情在我看来也算主线短小篇幅里写的算好的了。但是你绑",
+      "author": "hhhh098962",
+      "reactions": 14,
+      "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
+      "id": "1441447745792512106",
+      "content": "Where GMurphy",
+      "author": "wolfierce",
+      "reactions": 9,
+      "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
       "id": "1441445942787178517",
       "content": "原本想說大佬都有各種塔薇解說，就沒想過做攻略了，畢竟我玩牌更偏向直覺，不可能比大佬更精於計算傷害，但群裡有人說玩塔薇頭腦快炸了跟玩塔薇手感很怪，還是打篇文試試看",
       "author": "ena04564",
       "reactions": 7,
       "channel": "一點塔薇玩家的小小心得"
+    },
+    {
+      "id": "1441445089728532581",
+      "content": "守密人你好：\n       弥萨格大学预计于11月24日08:00~11:00（UTC+8）进行校内设施维护。\n       维护结束后需要重新登入并更新资源，",
+      "author": "morimensstaff02",
+      "reactions": 6,
+      "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
+      "id": "1441477068297863189",
+      "content": "都不想多叭叭主线难度了，属于新人看一眼都想跑的程度。\n还有你那个融灾和深潜，减负在哪里？\n深潜那个长的要死的战令在干嘛，还要被嘴是蚊子腿嫌麻烦可以不拿。\n融灾更",
+      "author": "worriesair",
+      "reactions": 5,
+      "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
+      "id": "1441491226850365655",
+      "content": "現在入坑的玩家真是有福了，星辰所有人是三啟起步的，主線難度是炸裂的，忘卻篇輔助是一個不up的，買自抽是要被封的😌如果現在宣布送個自選忘卻角色不是皆大歡喜嗎？不會",
+      "author": "xngxngsuggestion",
+      "reactions": 5,
+      "channel": "V2.4.0.4 停服维护公告"
     },
     {
       "id": "1441284525224366151",
@@ -111,11 +149,39 @@
       "channel": "杜勒X皮的正史（肥腸確定"
     },
     {
+      "id": "1441463096458612798",
+      "content": "你别说，🐱之前还发个公告说要封自抽号，我是看不懂这种操作了，评价你游是纯纯的左脑攻击右脑",
+      "author": "hhhh098962",
+      "reactions": 4,
+      "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
       "id": "1441289007945220138",
       "content": "那一天的視姦視姦起來",
       "author": "foxcatfurry",
       "reactions": 4,
       "channel": "綜上所述所以我畫了水仙視姦（？）"
+    },
+    {
+      "id": "1441463612727230547",
+      "content": "把难度调整回来不把繁育之理调整回来？只复制3张什么意思？而且想保留挑战性就单独开挑战性关卡啊",
+      "author": "chuzhibai.",
+      "reactions": 3,
+      "channel": "V2.4.0.3 在线维护公告"
+    },
+    {
+      "id": "1441469569079181385",
+      "content": "之前承诺过的“本月还有一次更新”在哪呢？不会是这个幽默强度回调吧",
+      "author": "2300011747",
+      "reactions": 2,
+      "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
+      "id": "1441522654011199663",
+      "content": "Arknights was so lucky to release at a time when the monetisation model was not ",
+      "author": "thpdom",
+      "reactions": 2,
+      "channel": "V2.4.0.4 停服维护公告"
     },
     {
       "id": "1441413086878629939",
@@ -132,6 +198,20 @@
       "channel": "杜勒X皮的正史（肥腸確定"
     },
     {
+      "id": "1441477564911845617",
+      "content": "are you referring to the Awakening events? If so, the way I'm reading it is that",
+      "author": "arkaether",
+      "reactions": 1,
+      "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
+      "id": "1441522258714562713",
+      "content": "I'll be back to not playing the game in protest now ig.",
+      "author": "thpdom",
+      "reactions": 1,
+      "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
       "id": "1441493759488557066",
       "content": "水母(奧瑞塔)的天賦只在探索的第一次戰鬥觸發",
       "author": "rainbowteemo",
@@ -144,83 +224,6 @@
       "author": "lumato",
       "reactions": 1,
       "channel": "Plans on merch outside of TaoBao?"
-    },
-    {
-      "id": "1441374031575257211",
-      "content": "Hi, today I inquired about the progress and QA is still investigating the cause🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Visual Bug"
-    },
-    {
-      "id": "1441499476023054376",
-      "content": "No worries, thank you!!",
-      "author": "kalaidoskope",
-      "reactions": 1,
-      "channel": "💭「Processing」Visual Bug"
-    },
-    {
-      "id": "1441397401582571591",
-      "content": "Okay, I will relay it to the designer😊",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Hp values for Hard Mode"
-    },
-    {
-      "id": "1441369403861237912",
-      "content": "Yes. It was just happened today.",
-      "author": "shiio4870",
-      "reactions": 1,
-      "channel": "💭「Processing」Edify Bug. xD"
-    },
-    {
-      "id": "1441397320683098143",
-      "content": "Thank youuu",
-      "author": "shiio4870",
-      "reactions": 1,
-      "channel": "💭「Processing」Edify Bug. xD"
-    },
-    {
-      "id": "1441384901608865862",
-      "content": "I can't spend a little of my blood and sweat money on this anni to give Morimens",
-      "author": "sexysneakystoat1625",
-      "reactions": 1,
-      "channel": "Can't Dolphin/Whale"
-    },
-    {
-      "id": "1441334737301147648",
-      "content": "Went from 8574 Health to 6393, but only 687 Damage is told to be taken. The \"Ony",
-      "author": "genericid.",
-      "reactions": 1,
-      "channel": "✅「Answered」Corrosion Damage is not correctly included in 'Deal XX damage in one turn' calculation"
-    },
-    {
-      "id": "1441342030436634705",
-      "content": "like sent her all the way back",
-      "author": "crowlov1",
-      "reactions": 1,
-      "channel": "✅「Resolved」some characters being removed and saying that they are no longer obtained"
-    },
-    {
-      "id": "1441279767843438632",
-      "content": "救命，我想到了個一個肥腸惡俗的劇情，我非常肯定寫出來的當下會把我創死（已經沒有人類力～悲",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441452625072754748",
-      "content": "還在等梓燃創飛我",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441452711332806716",
-      "content": "這麼想吃大份嗎",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "杜勒X皮的正史（肥腸確定"
     }
   ]
 }

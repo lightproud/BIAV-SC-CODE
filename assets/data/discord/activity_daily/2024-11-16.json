@@ -1,10 +1,13 @@
 {
   "date": "2024-11-16",
-  "messages": 32,
+  "messages": 62,
   "unique_authors": 10,
   "reactions_total": 7,
   "attachments": 5,
   "channel_activity": {
+    "V1.7.1.0 停服維護公告": 2,
+    "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！": 6,
+    "📜塔薇喚醒體&命輪介紹": 22,
     "this card lags on pc(doest play), only way hotkey": 6,
     "請願加強圖魯和深海新角": 4,
     "Tulu wheel missing text": 3,
@@ -14,9 +17,12 @@
     "喬治（R18，有碼": 6
   },
   "hourly_activity": {
+    "13": 3,
+    "18": 1,
+    "15": 9,
+    "16": 1,
+    "2": 22,
     "10": 7,
-    "13": 2,
-    "15": 4,
     "11": 5,
     "12": 5,
     "5": 3,
@@ -24,8 +30,8 @@
     "4": 2
   },
   "message_types": {
-    "0": 20,
-    "19": 2
+    "0": 27,
+    "19": 3
   },
   "top_reacted_messages": [
     {

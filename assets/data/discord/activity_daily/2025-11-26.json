@@ -1,10 +1,11 @@
 {
   "date": "2025-11-26",
-  "messages": 108,
+  "messages": 116,
   "unique_authors": 21,
   "reactions_total": 40,
-  "attachments": 21,
+  "attachments": 23,
   "channel_activity": {
+    "V2.4.0.6 在线维护公告": 8,
     "✅「已回答」繁中PC端黑屏": 1,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 13,
     "✅「Answered」Bonus Damage and Fortress": 1,
@@ -41,9 +42,11 @@
     "1441326394817908736": 8
   },
   "hourly_activity": {
+    "8": 7,
+    "9": 10,
+    "10": 24,
+    "17": 6,
     "2": 3,
-    "9": 9,
-    "10": 23,
     "21": 2,
     "0": 2,
     "23": 3,
@@ -56,16 +59,12 @@
     "15": 3,
     "16": 19,
     "3": 3,
-    "8": 4,
     "1": 2,
-    "17": 3,
     "14": 3,
     "4": 3
   },
   "message_types": {
-    "0": 52,
-    "19": 8,
-    "4": 7
+    "0": 8
   },
   "top_reacted_messages": [
     {

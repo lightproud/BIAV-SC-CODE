@@ -1,10 +1,13 @@
 {
   "date": "2025-08-18",
-  "messages": 80,
+  "messages": 94,
   "unique_authors": 21,
-  "reactions_total": 738,
-  "attachments": 29,
+  "reactions_total": 750,
+  "attachments": 31,
   "channel_activity": {
+    "V2.3.1.1 在线维护公告": 3,
+    "V2.3.1.0 停服维护公告": 2,
+    "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 9,
     "✅「Answered」Normal battle is treat as boss battle in H9-11": 3,
     "✅「已回答」怪物实验习作1贴图错误": 3,
     "✅「已回答」典藏馆cg": 4,
@@ -36,27 +39,29 @@
     "1350058287688712253": 1
   },
   "hourly_activity": {
-    "6": 24,
-    "4": 1,
+    "15": 6,
+    "1": 1,
+    "4": 2,
+    "6": 26,
+    "11": 1,
+    "12": 3,
+    "14": 4,
+    "19": 2,
     "9": 3,
     "10": 9,
-    "19": 1,
     "2": 15,
     "3": 4,
-    "15": 3,
     "22": 1,
     "18": 1,
     "7": 6,
     "16": 2,
     "8": 3,
-    "12": 2,
     "13": 3,
     "5": 2
   },
   "message_types": {
-    "0": 51,
-    "4": 17,
-    "19": 8
+    "0": 7,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -93,6 +98,41 @@
       "author": "morimens_15",
       "reactions": 4,
       "channel": "✅「Answered」Clementine scaling is wrong"
+    },
+    {
+      "id": "1406965241660833923",
+      "content": "Yeah it was one of the very first terms hand picked by the lead writers so when ",
+      "author": "morimens_15",
+      "reactions": 3,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1407090461981802620",
+      "content": "who do i bug about \"ralic\" lol",
+      "author": "clocks",
+      "reactions": 3,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+    },
+    {
+      "id": "1407023317486927942",
+      "content": "守密人你好：\n       弥萨格大学校务处将于8月18日 23:20 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带来的不便，我",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": "V2.3.1.1 在线维护公告"
+    },
+    {
+      "id": "1407023472533700700",
+      "content": "● Wheel of Destiny \"Treasured Rarity\" effect adjusted to: Gain 3 layers of Entwi",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": "V2.3.1.1 在线维护公告"
+    },
+    {
+      "id": "1406886334857220178",
+      "content": "I’m sorry, but we’ve discussed this part of the story and currently have no plan",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
       "id": "1406925768843333673",
@@ -163,20 +203,6 @@
       "author": "morimensstaff01",
       "reactions": 1,
       "channel": "💭「Processing」Tawil, Inconsistent 1 Arithemetica discount application on Omniscient Verity (Skill 1)"
-    },
-    {
-      "id": "1406829278783344823",
-      "content": "😘 <:Emoji_AJE_M_04:1400771555939844149>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Can't log in"
-    },
-    {
-      "id": "1406942734169800858",
-      "content": "新角色凱蒂古拉（後續簡稱烤地瓜）在相位對弈中的強度非常強大，是反方向的杜勒，針對對方後排進行致命打擊\n同時三費的萬物終結配合狂氣爆發能造成巨量的AOE傷害\n自身",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "相位對弈—凱蒂古拉OTK隊"
     }
   ]
 }

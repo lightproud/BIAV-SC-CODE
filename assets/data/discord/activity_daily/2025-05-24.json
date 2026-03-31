@@ -1,25 +1,31 @@
 {
   "date": "2025-05-24",
-  "messages": 6,
+  "messages": 12,
   "unique_authors": 5,
   "reactions_total": 4,
   "attachments": 2,
   "channel_activity": {
+    "V2.2.2.0 停服維護公告": 2,
+    "✅校猫碎碎念#序章配音决定": 3,
+    "✅前瞻：1.5周年～战斗增强篇": 1,
     "✅「已回答」蟲族羊媽狂氣減費bug": 1,
     "💭「Processing」Steam Error": 1,
     "How do I change the window size?": 3,
     "Increase the number of seals dropped from upcoming boss": 1
   },
   "hourly_activity": {
+    "0": 2,
+    "12": 2,
+    "16": 1,
+    "2": 2,
     "15": 1,
     "6": 2,
-    "2": 1,
     "4": 1,
     "18": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 5
+    "0": 5,
+    "19": 1
   },
   "top_reacted_messages": [
     {

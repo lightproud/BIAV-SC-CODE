@@ -1,10 +1,11 @@
 {
   "date": "2025-07-01",
-  "messages": 39,
+  "messages": 44,
   "unique_authors": 10,
-  "reactions_total": 45,
-  "attachments": 11,
+  "reactions_total": 59,
+  "attachments": 15,
   "channel_activity": {
+    "忘卻前夜OST：達芙黛爾EP·雨幕深處": 5,
     "关于氪金相关的问题。": 6,
     "✅「已回答」?": 5,
     "✅「Answered」Traphase Ramona Echoed Stimulation doesn't belong to her after it copies an ally card": 2,
@@ -19,19 +20,18 @@
     "混沌中毒隊🧪通關H2-12記錄與分享": 8
   },
   "hourly_activity": {
+    "8": 9,
     "5": 4,
     "7": 6,
     "14": 2,
     "6": 13,
     "9": 1,
     "21": 2,
-    "8": 4,
     "0": 1,
     "1": 6
   },
   "message_types": {
-    "0": 24,
-    "4": 7
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -40,6 +40,13 @@
       "author": "lurenjiao",
       "reactions": 16,
       "channel": "关于氪金相关的问题。"
+    },
+    {
+      "id": "1389517144319852544",
+      "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：達芙黛爾EP·雨幕深處，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請",
+      "author": "morimensstaff01",
+      "reactions": 14,
+      "channel": "忘卻前夜OST：達芙黛爾EP·雨幕深處"
     },
     {
       "id": "1389423794174693469",

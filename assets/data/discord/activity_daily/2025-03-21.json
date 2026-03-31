@@ -1,10 +1,11 @@
 {
   "date": "2025-03-21",
-  "messages": 45,
+  "messages": 47,
   "unique_authors": 9,
   "reactions_total": 19,
-  "attachments": 10,
+  "attachments": 11,
   "channel_activity": {
+    "V2.1.1.6 在線維護公告": 2,
     "✅「已回答」小騎士維度影像": 2,
     "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？": 1,
     "💭「處理中」還我奧爾拉主C夢": 27,
@@ -17,6 +18,7 @@
     "参加活动……": 1
   },
   "hourly_activity": {
+    "9": 2,
     "2": 5,
     "16": 7,
     "12": 27,
@@ -26,9 +28,7 @@
     "13": 1
   },
   "message_types": {
-    "0": 37,
-    "4": 2,
-    "19": 2
+    "0": 2
   },
   "top_reacted_messages": [
     {

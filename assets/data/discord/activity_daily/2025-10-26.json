@@ -1,10 +1,15 @@
 {
   "date": "2025-10-26",
-  "messages": 24,
-  "unique_authors": 9,
-  "reactions_total": 344,
-  "attachments": 7,
+  "messages": 105,
+  "unique_authors": 21,
+  "reactions_total": 413,
+  "attachments": 12,
   "channel_activity": {
+    "V2.3.4.2 在线维护公告": 55,
+    "忘却前夜OST：图鲁EP·幼王的孤途": 1,
+    "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 23,
+    "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework": 1,
+    "Corpo and Kath at the convenience store (streetwear)": 1,
     "💭「Processing」Quality of Life Features": 5,
     "✅「已回答」圖標顯示錯誤": 1,
     "✅「Answered」Ogier bugged?": 1,
@@ -16,21 +21,27 @@
     "1305430084420898868": 2
   },
   "hourly_activity": {
-    "17": 4,
-    "18": 2,
-    "12": 7,
-    "14": 1,
-    "13": 1,
-    "7": 4,
+    "1": 5,
+    "6": 3,
+    "9": 1,
+    "12": 13,
+    "13": 50,
+    "0": 2,
+    "2": 1,
+    "5": 3,
+    "7": 7,
+    "14": 2,
+    "15": 4,
+    "17": 6,
+    "18": 3,
+    "11": 2,
     "3": 1,
-    "5": 1,
-    "11": 1,
     "4": 1,
     "16": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 2
+    "0": 58,
+    "19": 23
   },
   "top_reacted_messages": [
     {
@@ -48,6 +59,13 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1432030445427753071",
+      "content": "The Keeper ran out of energy drinks so Copro and Kath decided to get some for th",
+      "author": "unicorned_batman",
+      "reactions": 35,
+      "channel": "Corpo and Kath at the convenience store (streetwear)"
+    },
+    {
       "id": "1431847788651483287",
       "content": "#V2.4  同人征集#哎這個tag我真不知道咋打了\n 小鳥貓😨摸摸聖心🥰🥰小鳥貓😨摸摸聖心🥰🥰小鳥貓😨摸摸聖心🥰🥰小鳥貓😨摸摸聖心🥰🥰\nUid：1004941",
       "author": "aeom7.",
@@ -62,11 +80,60 @@
       "channel": "我們偉大的音樂家（哈姆林樓？）"
     },
     {
+      "id": "1431817928537407609",
+      "content": "尤其是今年上半年，几乎只有很少的人，新招团队成员就算加入也要重新适应工作。而下半年本来就不多的美术成员经过一次重要重组，所以可以看到风格上我们都出现了一些波动。",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431944129893502998",
+      "content": "Yeah, in this case, Pollux is indeed incredibly broken...in early game because o",
+      "author": "swadkon",
+      "reactions": 5,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1431994562137821325",
+      "content": "D-Zone and a few story difficulties. I don't see helot being stronger than him u",
+      "author": "albomboklat",
+      "reactions": 5,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1431818210487046296",
+      "content": "我们态度上绝没有你说的那样。我们无比珍视这个作品也无比珍视喜爱这个作品的大家。",
+      "author": "game.producer.light",
+      "reactions": 5,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
       "id": "1432054219166191673",
       "content": "There are a few minor suggestions that I think would make the interface easier t",
       "author": "exaegrum",
       "reactions": 5,
       "channel": "💭「Processing」Quality of Life Features"
+    },
+    {
+      "id": "1431796323387969567",
+      "content": "话说今年才3章主线，纯混好吧😡 😡 😡 😡 😡 😡 😡 😡 😡",
+      "author": "sense25.",
+      "reactions": 4,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431996695033548830",
+      "content": "Pollux needs to get nerfed",
+      "author": "albomboklat",
+      "reactions": 2,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1431826173549219991",
+      "content": "Madness mode for Faded Legacy soon? <:az_Android_pleading:744800344394956870>",
+      "author": "rozu",
+      "reactions": 2,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
     },
     {
       "id": "1432061974014988298",
@@ -90,18 +157,32 @@
       "channel": "✅「Answered」\"Sacred Bleeding Heart\" shows the wrong image"
     },
     {
-      "id": "1431980278183886888",
-      "content": "老師老師我們家波呂克斯的頭像怎麼沒了",
-      "author": "ena04564",
+      "id": "1431823679674908784",
+      "content": "of all the things, why are you comparing pollux (ultra) with Helot (caro) lol",
+      "author": "rain_scarlet",
       "reactions": 1,
-      "channel": "✅「已回答」圖標顯示錯誤"
+      "channel": "V2.3.4.2 在线维护公告"
     },
     {
-      "id": "1431988742503010304",
-      "content": "这个问题是在溯梦里看剧情有的吗，是的话不是bug，8-13关卡里有根据不同状态boss转阶段的分支剧情，溯梦里全收录并依次播放了，仔细看剧情对话部分是有区别的",
-      "author": "_neyko_",
+      "id": "1431994874399428768",
+      "content": "you’re actually saying ghelot and tawil r bad?",
+      "author": "meioh",
       "reactions": 1,
-      "channel": "✅「已解决」淺問一下正不正常（第八章的劇情&對話重複）"
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1431901586224844922",
+      "content": "Always remember, the majority that is happy, doesn't complain. They say nothing.",
+      "author": "thpdom",
+      "reactions": 1,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
+    },
+    {
+      "id": "1431981267649302589",
+      "content": "~~美术团队为什么重组~~",
+      "author": "sweet_25367",
+      "reactions": 1,
+      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
     }
   ]
 }

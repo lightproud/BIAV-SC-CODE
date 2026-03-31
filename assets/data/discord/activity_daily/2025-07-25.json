@@ -1,10 +1,11 @@
 {
   "date": "2025-07-25",
-  "messages": 45,
+  "messages": 54,
   "unique_authors": 14,
-  "reactions_total": 51,
-  "attachments": 18,
+  "reactions_total": 82,
+  "attachments": 25,
   "channel_activity": {
+    "忘却前夜OST：戈利亚EP·踏上新的征途": 9,
     "✅「Answered」Clarification on gacha odds for standard limited": 2,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
     "3 Reruns": 1,
@@ -25,12 +26,13 @@
     "現pa 尤烏哈希你是大明星": 1
   },
   "hourly_activity": {
+    "8": 10,
+    "12": 3,
+    "17": 3,
     "16": 3,
-    "8": 4,
     "14": 1,
     "18": 1,
     "11": 3,
-    "12": 2,
     "0": 1,
     "2": 6,
     "9": 7,
@@ -38,15 +40,19 @@
     "7": 5,
     "4": 1,
     "3": 4,
-    "17": 1,
     "5": 3
   },
   "message_types": {
-    "0": 33,
-    "4": 5,
-    "19": 3
+    "0": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1398214412640194680",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：戈利亚EP·踏上新的征途，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请",
+      "author": "morimensstaff01",
+      "reactions": 31,
+      "channel": "忘却前夜OST：戈利亚EP·踏上新的征途"
+    },
     {
       "id": "1398177962913959957",
       "content": "覺得遊戲裡尤烏好歹也當過鬥獸場的明星，那現pa裡走娛樂圈（玩樂團）那也不算ooc了吧（X\n\n重點是那顏值不走娛樂圈也太暴殄天物（\n——————\n感覺塗鴉應該沒機",

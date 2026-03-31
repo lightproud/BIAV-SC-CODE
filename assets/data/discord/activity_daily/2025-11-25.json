@@ -1,10 +1,12 @@
 {
   "date": "2025-11-25",
-  "messages": 148,
+  "messages": 150,
   "unique_authors": 29,
-  "reactions_total": 128,
+  "reactions_total": 129,
   "attachments": 31,
   "channel_activity": {
+    "忘却前夜OST：原初宿命之战": 1,
+    "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 1,
     "✅「已回答」繁中PC端黑屏": 1,
     "💭「Processing」Time Rewind Bug": 1,
     "✅「已回答」我抽獎時怎麼卡BUG了": 5,
@@ -75,9 +77,10 @@
     "1234769700735418368": 1
   },
   "hourly_activity": {
+    "4": 16,
+    "0": 3,
     "10": 2,
     "3": 15,
-    "4": 15,
     "6": 10,
     "7": 24,
     "18": 9,
@@ -93,15 +96,13 @@
     "5": 6,
     "8": 17,
     "1": 2,
-    "0": 2,
     "2": 4,
     "11": 4,
     "19": 1
   },
   "message_types": {
-    "0": 53,
-    "4": 48,
-    "19": 5
+    "19": 1,
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -196,6 +197,13 @@
       "channel": "✅「Answered」This game needs more marketing"
     },
     {
+      "id": "1442729970890833952",
+      "content": "感谢提醒🙏",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "忘却前夜OST：原初宿命之战"
+    },
+    {
       "id": "1442783921942302761",
       "content": "The issue has been fixed. Thank you for your feedback",
       "author": "morimensstaff01",
@@ -236,13 +244,6 @@
       "author": "navirecorbeau",
       "reactions": 1,
       "channel": "想问一下官方有制作自己的pc客户端的计划么"
-    },
-    {
-      "id": "1442747428943167579",
-      "content": "死因：獻祭疊太多",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "誕墨水船隊"
     }
   ]
 }

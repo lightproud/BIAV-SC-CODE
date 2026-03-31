@@ -1,10 +1,11 @@
 {
   "date": "2024-12-19",
-  "messages": 55,
+  "messages": 57,
   "unique_authors": 13,
   "reactions_total": 34,
-  "attachments": 7,
+  "attachments": 8,
   "channel_activity": {
+    "官方周邊建議征集": 2,
     "關於我還沒打主線卻莫名得到了三星這回事": 4,
     "请问校猫light": 10,
     "純銀命輪bug": 3,
@@ -15,8 +16,8 @@
     "這太美麗了😭": 6
   },
   "hourly_activity": {
+    "12": 8,
     "10": 4,
-    "12": 6,
     "6": 20,
     "7": 1,
     "14": 3,
@@ -30,8 +31,7 @@
     "8": 4
   },
   "message_types": {
-    "0": 20,
-    "19": 3
+    "0": 2
   },
   "top_reacted_messages": [
     {

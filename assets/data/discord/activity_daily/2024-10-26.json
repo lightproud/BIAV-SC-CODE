@@ -1,10 +1,12 @@
 {
   "date": "2024-10-26",
-  "messages": 21,
+  "messages": 24,
   "unique_authors": 5,
   "reactions_total": 15,
   "attachments": 6,
   "channel_activity": {
+    "請勿進行第三方賬號交易": 1,
+    "蹈海野貓雜技團（釘選有目錄）": 2,
     "I have no sound in the steam version. any know how fix?": 2,
     "菲茵特的天赋描述是什么意思": 2,
     "忘卻困難版大挑戰！": 7,
@@ -14,19 +16,21 @@
     "1181998821291606097": 2
   },
   "hourly_activity": {
+    "2": 1,
+    "8": 3,
+    "22": 1,
     "15": 3,
     "10": 2,
     "11": 1,
     "14": 7,
     "0": 1,
-    "8": 2,
     "13": 2,
     "17": 1,
     "9": 2
   },
   "message_types": {
     "19": 1,
-    "0": 3
+    "0": 2
   },
   "top_reacted_messages": [
     {

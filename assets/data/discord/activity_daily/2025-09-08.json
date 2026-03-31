@@ -1,10 +1,11 @@
 {
   "date": "2025-09-08",
-  "messages": 136,
+  "messages": 140,
   "unique_authors": 34,
-  "reactions_total": 67,
-  "attachments": 37,
+  "reactions_total": 121,
+  "attachments": 41,
   "channel_activity": {
+    "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫": 4,
     "Traphase opponent card visual bug": 1,
     "✅「Answered」Dialogue Scroll Was a Mistake": 5,
     "✅「已回答」遺骨逼我刪牌": 1,
@@ -37,6 +38,7 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "16": 9,
     "7": 11,
     "18": 3,
     "20": 4,
@@ -55,13 +57,19 @@
     "2": 5,
     "9": 3,
     "5": 3,
-    "22": 1,
-    "16": 5
+    "22": 1
   },
   "message_types": {
-    "0": 1
+    "0": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1414653470925127690",
+      "content": "",
+      "author": "s64987866",
+      "reactions": 41,
+      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
+    },
     {
       "id": "1414676585772093622",
       "content": "A couple of patches ago in the English translation for the game long messages we",
@@ -84,6 +92,20 @@
       "channel": "為什麼血肉角色越穿越多"
     },
     {
+      "id": "1414653571147894834",
+      "content": "",
+      "author": "s64987866",
+      "reactions": 5,
+      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
+    },
+    {
+      "id": "1414653607437140143",
+      "content": "",
+      "author": "s64987866",
+      "reactions": 5,
+      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
+    },
+    {
       "id": "1414444646607618049",
       "content": "还有一张约得最满意的双人图",
       "author": "s64987866",
@@ -96,6 +118,13 @@
       "author": "darkerkuro",
       "reactions": 4,
       "channel": "💭「Processing」Some cards or UI aren’t translated in TH ver."
+    },
+    {
+      "id": "1414653516559155384",
+      "content": "",
+      "author": "s64987866",
+      "reactions": 3,
+      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
     },
     {
       "id": "1414555908234809386",
@@ -173,27 +202,6 @@
       "author": "randomplayer852",
       "reactions": 1,
       "channel": "✅「Answered」皮克曼天赋不生效，2费4费不给创意。"
-    },
-    {
-      "id": "1414515016090128425",
-      "content": "嗨，这个问题应该已经在今天中午热更修复了，守密人可尝试更新游戏看看是否还有问题",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」皮克曼天赋不生效，2费4费不给创意。"
-    },
-    {
-      "id": "1414505300677099542",
-      "content": "Thank you for your feedback. We will verify it🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Some cards or UI aren’t translated in TH ver."
-    },
-    {
-      "id": "1414456245330509886",
-      "content": "Cannot progress through door even with key",
-      "author": "xxxgirlkisserxxx",
-      "reactions": 1,
-      "channel": "✅「Answered」3-5 key bug"
     }
   ]
 }

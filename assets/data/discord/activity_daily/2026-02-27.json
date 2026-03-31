@@ -1,10 +1,13 @@
 {
   "date": "2026-02-27",
-  "messages": 604,
+  "messages": 614,
   "unique_authors": 52,
-  "reactions_total": 746,
-  "attachments": 50,
+  "reactions_total": 774,
+  "attachments": 52,
   "channel_activity": {
+    "to Light PD... i want morimens acrylic merch...": 1,
+    "[Art Dump Thread] WILLIAMPOSTING 2": 3,
+    "chapter was traumatising thank you morimens": 6,
     "✅「Answered」Choose if OE or not.": 10,
     "✅「Answered」Possibility of using traphase emotes as profile pictures": 1,
     "✅「Answered」Winkle’s leap effect is broken on D-Tide Wave 2 Alert 2": 7,
@@ -35,33 +38,32 @@
     "🔸阵容构建": 29
   },
   "hourly_activity": {
+    "17": 5,
+    "0": 12,
+    "2": 19,
+    "11": 28,
+    "3": 23,
+    "4": 8,
     "8": 22,
     "9": 45,
     "18": 3,
     "16": 12,
-    "0": 10,
-    "2": 18,
     "5": 7,
     "6": 19,
-    "17": 4,
-    "3": 20,
     "12": 51,
     "13": 47,
     "10": 70,
     "7": 28,
-    "4": 6,
     "19": 1,
     "23": 10,
     "22": 3,
     "15": 91,
     "1": 8,
-    "11": 27,
     "14": 102
   },
   "message_types": {
-    "0": 38,
-    "19": 23,
-    "4": 9
+    "0": 5,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -77,6 +79,13 @@
       "author": "raumbobulus",
       "reactions": 46,
       "channel": ""
+    },
+    {
+      "id": "1476988744601964656",
+      "content": "因为使用了翻译器，所以可能会尴尬。 <@633215996508766229> \nIt can be awkward using a translator.",
+      "author": "gaedol.",
+      "reactions": 22,
+      "channel": "to Light PD... i want morimens acrylic merch..."
     },
     {
       "id": "1476803872218415114",
@@ -142,6 +151,13 @@
       "channel": "🔸阵容构建"
     },
     {
+      "id": "1476903965856895067",
+      "content": "<:thinking1:1356068128936820929> ❓",
+      "author": "exhibitionism",
+      "reactions": 4,
+      "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
       "id": "1476781092248752158",
       "content": "Because it is indeed useful, it is still under consideration, but I don't want t",
       "author": "morimensstaff01",
@@ -184,25 +200,11 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1476731545460150413",
-      "content": "",
-      "author": "water_heart",
+      "id": "1476745346146369677",
+      "content": "TYTYYY!!!!!",
+      "author": "mimiruku",
       "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476819650477162556",
-      "content": "",
-      "author": "shchng.",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476848928468238509",
-      "content": "大炮打蚊子伤害是真的很好看吧<:Helot_slack_off:1459092159465521184>",
-      "author": "be_queitplease",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "channel": "chapter was traumatising thank you morimens"
     }
   ]
 }

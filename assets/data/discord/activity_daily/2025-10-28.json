@@ -1,10 +1,11 @@
 {
   "date": "2025-10-28",
-  "messages": 104,
+  "messages": 109,
   "unique_authors": 25,
   "reactions_total": 189,
   "attachments": 16,
   "channel_activity": {
+    "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 5,
     "✅「Answered」Keeping only the background on homescreen / no awakener": 2,
     "✅「已回答」能不能提高一下每个月兑换高级灵核的数量": 3,
     "✅「Answered」About new Ryker buff": 1,
@@ -26,8 +27,9 @@
     "1432654338982940783": 63
   },
   "hourly_activity": {
+    "8": 3,
+    "11": 6,
     "10": 23,
-    "8": 1,
     "9": 52,
     "4": 1,
     "14": 4,
@@ -35,16 +37,14 @@
     "3": 1,
     "23": 1,
     "17": 1,
-    "11": 3,
     "2": 2,
     "12": 1,
     "13": 1,
     "16": 4
   },
   "message_types": {
-    "0": 21,
-    "4": 12,
-    "19": 1
+    "19": 3,
+    "0": 2
   },
   "top_reacted_messages": [
     {

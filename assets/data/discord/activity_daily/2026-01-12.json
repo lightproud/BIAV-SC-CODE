@@ -1,10 +1,14 @@
 {
   "date": "2026-01-12",
-  "messages": 217,
+  "messages": 224,
   "unique_authors": 15,
-  "reactions_total": 108,
-  "attachments": 27,
+  "reactions_total": 174,
+  "attachments": 29,
   "channel_activity": {
+    "「相位对弈」轮选模式功能异常": 3,
+    "Ryker": 1,
+    "chapter 9 out of context": 2,
+    "Doll holding doll?": 1,
     "💭「Processing」game client crashed...somewhat": 18,
     "✅「Resolved」Account bugged and unable to load into the game after login": 1,
     "✅「Resolved」\"Tiny Wish\" Posse interface bug": 3,
@@ -33,35 +37,48 @@
     "1455822126568308957": 2
   },
   "hourly_activity": {
+    "9": 42,
+    "11": 3,
+    "16": 2,
+    "5": 2,
+    "20": 2,
+    "8": 3,
     "0": 3,
     "1": 9,
     "2": 15,
     "3": 10,
     "4": 13,
     "6": 4,
-    "16": 1,
-    "8": 2,
     "10": 102,
-    "11": 2,
     "13": 1,
     "7": 8,
-    "9": 41,
-    "5": 1,
     "14": 3,
     "15": 2
   },
   "message_types": {
-    "19": 6,
-    "0": 36,
-    "4": 10
+    "0": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1460185294069567593",
+      "content": "My first fanart yay ^_^",
+      "author": "ptychodusk",
+      "reactions": 48,
+      "channel": "Doll holding doll?"
+    },
     {
       "id": "1460080322766176266",
       "content": "如題所示，是拿著刀叉的杜老爺",
       "author": "ice_storys",
       "reactions": 18,
       "channel": "杜老爺"
+    },
+    {
+      "id": "1460363916935954688",
+      "content": "as epic as it might look from our perspective its really funny when you realize ",
+      "author": "notjustthewind",
+      "reactions": 15,
+      "channel": "chapter 9 out of context"
     },
     {
       "id": "1460274949796401291",
@@ -141,6 +158,13 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1460204361702703310",
+      "content": "More like trap phase amirite",
+      "author": "fairlysadpanda",
+      "reactions": 2,
+      "channel": "「相位对弈」轮选模式功能异常"
+    },
+    {
       "id": "1460222449667805417",
       "content": "I don't know why i said that the second release doesn't do anything, now that i ",
       "author": "elenakrittik",
@@ -174,27 +198,6 @@
       "author": "rain_scarlet",
       "reactions": 2,
       "channel": ""
-    },
-    {
-      "id": "1460157877267202049",
-      "content": "Thank you for providing the information🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」game client crashed...somewhat"
-    },
-    {
-      "id": "1460240285551431933",
-      "content": "101225889",
-      "author": "thigh_god.",
-      "reactions": 1,
-      "channel": "💭「Processing」Frequent Crash all of a sudden"
-    },
-    {
-      "id": "1460114663957200976",
-      "content": "嶄新bug",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "✅「已回答」收到不屬於我的獎勵"
     }
   ]
 }

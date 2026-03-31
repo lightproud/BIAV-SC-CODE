@@ -1,10 +1,12 @@
 {
   "date": "2025-08-17",
-  "messages": 12,
-  "unique_authors": 4,
-  "reactions_total": 14,
+  "messages": 26,
+  "unique_authors": 8,
+  "reactions_total": 29,
   "attachments": 5,
   "channel_activity": {
+    "V2.3.1.0 停服维护公告": 3,
+    "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”": 11,
     "混沌隊塔薇顯示問題": 1,
     "✅「Answered」Normal battle is treat as boss battle in H9-11": 3,
     "💭「Processing」Tawil, Inconsistent 1 Arithemetica discount application on Omniscient Verity (Skill 1)": 1,
@@ -14,16 +16,20 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "17": 3,
+    "17": 5,
+    "21": 1,
+    "6": 1,
+    "9": 7,
+    "10": 3,
+    "15": 2,
     "13": 3,
     "14": 1,
     "20": 2,
-    "15": 1,
-    "12": 1,
-    "10": 1
+    "12": 1
   },
   "message_types": {
-    "0": 1
+    "0": 8,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -34,11 +40,39 @@
       "channel": "萊克"
     },
     {
+      "id": "1406664681208152225",
+      "content": "<@633215996508766229>\n*如果取得slay the spire使用遊戲中ip和角色的使用許可，是否可以在遊戲打著與slay the spir",
+      "author": "taoi002",
+      "reactions": 8,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+    },
+    {
+      "id": "1406579599751647372",
+      "content": "This is still a capacity issue. Due to a lot of combat design work for the JP se",
+      "author": "game.producer.light",
+      "reactions": 4,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+    },
+    {
+      "id": "1406579737505042524",
+      "content": "我们正在努力做到这一点。",
+      "author": "game.producer.light",
+      "reactions": 2,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
+    },
+    {
       "id": "1406635469818826762",
       "content": "When entering the fight on the bottom left conner behind the mist, the battle is",
       "author": "melwyn7591",
       "reactions": 2,
       "channel": "✅「Answered」Normal battle is treat as boss battle in H9-11"
+    },
+    {
+      "id": "1406526088611369002",
+      "content": "Will there be a dedicated smaller part of the team that adds content to the roug",
+      "author": "thpdom",
+      "reactions": 1,
+      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
       "id": "1406697694902358280",

@@ -1,10 +1,13 @@
 {
   "date": "2024-12-15",
-  "messages": 27,
+  "messages": 39,
   "unique_authors": 11,
-  "reactions_total": 29,
-  "attachments": 9,
+  "reactions_total": 31,
+  "attachments": 10,
   "channel_activity": {
+    "🏆【已開獎】彌薩格週年頒獎典禮": 9,
+    "H9-2 異常問題說明（已修復）": 2,
+    "爱意终于普罗维登斯的春天——游戏内部分neta简要整理": 1,
     "When is Tulu going to be on standard banner?": 1,
     "拿不到三星": 3,
     "关于后续卡池安排？": 10,
@@ -15,20 +18,22 @@
     "🔸【超越維度的祝福】認領專區": 3
   },
   "hourly_activity": {
-    "8": 3,
+    "5": 11,
+    "11": 6,
+    "4": 2,
+    "8": 4,
     "12": 4,
     "16": 1,
-    "5": 7,
     "10": 1,
-    "11": 1,
     "6": 3,
     "14": 4,
     "15": 2,
     "2": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 2
+    "0": 9,
+    "19": 2,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -58,6 +63,13 @@
       "author": "be_queitplease",
       "reactions": 3,
       "channel": "塔薇拉牌後的圖像"
+    },
+    {
+      "id": "1317770943044522014",
+      "content": "-更新-\n洛老在游戏里的名字华德·菲利普斯，既是出现在过门记等作品中的洛老本人化身名字，也是洛老创作《来自遗忘》时所使用的笔名。",
+      "author": "flarinsidia",
+      "reactions": 2,
+      "channel": "爱意终于普罗维登斯的春天——游戏内部分neta简要整理"
     },
     {
       "id": "1317737865144172564",

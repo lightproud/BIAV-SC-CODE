@@ -1,10 +1,11 @@
 {
   "date": "2025-04-25",
-  "messages": 49,
-  "unique_authors": 14,
-  "reactions_total": 23,
-  "attachments": 6,
+  "messages": 139,
+  "unique_authors": 17,
+  "reactions_total": 29,
+  "attachments": 9,
   "channel_activity": {
+    "V2.2.1.0 停服維護公告": 90,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 7,
     "✅「Answered」Translation for French": 3,
     "✅「Answered」More discord emotes pls": 1,
@@ -17,23 +18,22 @@
     "跟我朋友零元購了一個稿，成效甚好": 4
   },
   "hourly_activity": {
+    "12": 26,
+    "13": 66,
+    "14": 10,
+    "16": 8,
+    "21": 7,
     "1": 1,
-    "12": 11,
-    "13": 2,
-    "14": 5,
     "6": 3,
     "11": 3,
     "3": 5,
     "4": 5,
     "5": 1,
-    "16": 7,
-    "21": 2,
     "10": 4
   },
   "message_types": {
-    "19": 7,
-    "0": 27,
-    "4": 1
+    "0": 81,
+    "19": 9
   },
   "top_reacted_messages": [
     {
@@ -58,6 +58,20 @@
       "channel": "✅「已回答」Bug—技能敘述—增傷"
     },
     {
+      "id": "1365309058298544139",
+      "content": "為什麼寫兩次久遠的呼喚",
+      "author": "arr5721",
+      "reactions": 2,
+      "channel": "V2.2.1.0 停服維護公告"
+    },
+    {
+      "id": "1365322861669257336",
+      "content": "這是墨菲十回合的傷害",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "V2.2.1.0 停服維護公告"
+    },
+    {
       "id": "1365331529995391037",
       "content": "<:pray:1356053116260454534> pls pls pls",
       "author": "aurora3981",
@@ -70,6 +84,20 @@
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「Answered」Is there any plan to sell official Goodies?"
+    },
+    {
+      "id": "1365329211354644542",
+      "content": "拉蒙娜3費 症狀牌好像有？",
+      "author": "elkmilu",
+      "reactions": 1,
+      "channel": "V2.2.1.0 停服維護公告"
+    },
+    {
+      "id": "1365330455368437770",
+      "content": "拉蒙娜沒記到<:flop1:1356083604236800030> \n症狀的應該不是，是回合結束若在手中",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "V2.2.1.0 停服維護公告"
     },
     {
       "id": "1365333378852978699",

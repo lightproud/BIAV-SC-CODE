@@ -1,10 +1,12 @@
 {
   "date": "2026-01-18",
-  "messages": 43,
+  "messages": 58,
   "unique_authors": 14,
-  "reactions_total": 74,
-  "attachments": 20,
+  "reactions_total": 103,
+  "attachments": 22,
   "channel_activity": {
+    "Ramona": 14,
+    "Art dump thread": 1,
     "Who Ryker's Designer pls come talk ?": 1,
     "💭「处理中」典藏馆事件的解锁到底是什么机制？": 1,
     "💭「处理中」透明人在打透明怪": 8,
@@ -25,10 +27,12 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "3": 2,
+    "3": 3,
+    "8": 1,
+    "9": 16,
+    "0": 1,
     "4": 2,
     "7": 7,
-    "9": 4,
     "14": 4,
     "10": 3,
     "13": 1,
@@ -44,7 +48,8 @@
     "11": 1
   },
   "message_types": {
-    "0": 21
+    "0": 12,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -53,6 +58,13 @@
       "author": "solisimperium.",
       "reactions": 33,
       "channel": "徐，她真好看"
+    },
+    {
+      "id": "1462368238339100820",
+      "content": "Best girl in fiction",
+      "author": "cooked_chicken99",
+      "reactions": 26,
+      "channel": "Ramona"
     },
     {
       "id": "1462325619529617438",
@@ -74,6 +86,13 @@
       "author": "mezen4181",
       "reactions": 4,
       "channel": "💭「处理中」透明人在打透明怪"
+    },
+    {
+      "id": "1462241462489059408",
+      "content": "Something I might finish <:smh:1356053161999335514>",
+      "author": "kiriwoamizaki",
+      "reactions": 3,
+      "channel": "Art dump thread"
     },
     {
       "id": "1462377421767446569",

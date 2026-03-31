@@ -1,10 +1,11 @@
 {
   "date": "2024-09-12",
-  "messages": 36,
+  "messages": 37,
   "unique_authors": 10,
-  "reactions_total": 111,
+  "reactions_total": 112,
   "attachments": 9,
   "channel_activity": {
+    "✏彌薩格大學同人二創活動六期開始進行啦！": 1,
     "💭「處理中」哈姆林的界域认同": 2,
     "限时主线礼包真没人喷吗": 2,
     "更一波宝宝们的傻大头": 1,
@@ -17,9 +18,9 @@
     "1181998821291606097": 3
   },
   "hourly_activity": {
+    "7": 4,
     "15": 5,
     "23": 4,
-    "7": 3,
     "13": 6,
     "14": 4,
     "5": 7,
@@ -28,7 +29,7 @@
     "0": 1
   },
   "message_types": {
-    "0": 4
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -72,6 +73,13 @@
       "author": "yolo_mode",
       "reactions": 2,
       "channel": "好大一條魚"
+    },
+    {
+      "id": "1283688134055559190",
+      "content": "Sorry! 戈雅疏忽了，現在同人活動與攻略征集都已經補上標籤啦~",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "✏彌薩格大學同人二創活動六期開始進行啦！"
     },
     {
       "id": "1283691600815460415",

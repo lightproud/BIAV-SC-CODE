@@ -1,10 +1,11 @@
 {
   "date": "2024-11-20",
-  "messages": 50,
+  "messages": 51,
   "unique_authors": 17,
-  "reactions_total": 61,
+  "reactions_total": 65,
   "attachments": 13,
   "channel_activity": {
+    "Facebook帳戶登入失敗解決方法": 1,
     "Steam Issue": 1,
     "請願本源朵爾進典藏館以及實裝上線": 4,
     "Quick select current Posse when using G-Ramona Exalt": 1,
@@ -24,9 +25,9 @@
     "早安…": 3
   },
   "hourly_activity": {
+    "2": 9,
     "20": 1,
     "0": 3,
-    "2": 8,
     "8": 3,
     "7": 1,
     "5": 1,
@@ -39,9 +40,7 @@
     "15": 1
   },
   "message_types": {
-    "0": 37,
-    "4": 1,
-    "19": 4
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -64,6 +63,13 @@
       "author": "magushermes",
       "reactions": 5,
       "channel": "請願本源朵爾進典藏館以及實裝上線"
+    },
+    {
+      "id": "1308623540953813022",
+      "content": "近期收到守密人反饋，iOS設備使用Facebook帳戶進行認證登入時，可能出現重複彈出登入認證介面，但無法完成登入的情況。\n    該問題需要在手機【設置】-【",
+      "author": "lubi_17667",
+      "reactions": 4,
+      "channel": "Facebook帳戶登入失敗解決方法"
     },
     {
       "id": "1308631726452506625",

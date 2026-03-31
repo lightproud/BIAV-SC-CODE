@@ -1,10 +1,12 @@
 {
   "date": "2025-10-23",
-  "messages": 47,
+  "messages": 84,
   "unique_authors": 13,
-  "reactions_total": 27,
-  "attachments": 6,
+  "reactions_total": 108,
+  "attachments": 14,
   "channel_activity": {
+    "V2.3.4.2 在线维护公告": 32,
+    "忘却前夜OST：图鲁EP·幼王的孤途": 5,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 1,
     "✅「已回答」能不能提高一下每个月兑换高级灵核的数量": 4,
     "💭「处理中」血希的链球进入超维空间会被还原并且错误显示": 1,
@@ -20,15 +22,17 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "13": 2,
+    "12": 20,
+    "13": 14,
+    "14": 5,
+    "15": 3,
+    "18": 1,
+    "7": 5,
+    "8": 3,
     "9": 10,
-    "14": 4,
     "0": 1,
     "2": 3,
     "6": 2,
-    "7": 1,
-    "8": 2,
-    "12": 5,
     "4": 9,
     "3": 4,
     "5": 1,
@@ -37,11 +41,38 @@
     "20": 1
   },
   "message_types": {
-    "0": 35,
-    "19": 5,
-    "4": 2
+    "0": 31,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1430906868066422955",
+      "content": "BIAV, please give us SOS signal if Juliette is the one in charge of Pollux kit 🙏",
+      "author": "_venush",
+      "reactions": 23,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1430937427534676100",
+      "content": "This doesn't solve anything if they really want to make changes that at least he",
+      "author": "sonatadocantora",
+      "reactions": 18,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1430938326910894100",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 18,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1430827301339402281",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》OST：图鲁EP·幼王的孤途 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人",
+      "author": "morimensstaff01",
+      "reactions": 17,
+      "channel": "忘却前夜OST：图鲁EP·幼王的孤途"
+    },
     {
       "id": "1430851062503313478",
       "content": "如果能给沉淀商店加点东西就更好了，每个月搬空的情况下沉淀还是越来越多了，礼包改版以后，如果打算氪满礼包，这个溢出情况只会更加严重，能不能对氪金玩家好一点",
@@ -62,6 +93,34 @@
       "author": "ass191044",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1430979863371841597",
+      "content": "don't let it get to you",
+      "author": "mutsukabezaka",
+      "reactions": 2,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1430901042219843644",
+      "content": "its absolutely maddening that the extra shield from atonement by pain only happe",
+      "author": "meioh",
+      "reactions": 1,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1430903417710051458",
+      "content": "and it IS weak, but no one was complaining because everyone was too stunned by h",
+      "author": "meioh",
+      "reactions": 1,
+      "channel": "V2.3.4.2 在线维护公告"
+    },
+    {
+      "id": "1430904227294609430",
+      "content": "在非星辰篇還是爛的一坨",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "V2.3.4.2 在线维护公告"
     },
     {
       "id": "1430855640422682717",

@@ -1,10 +1,11 @@
 {
   "date": "2025-02-10",
-  "messages": 84,
+  "messages": 102,
   "unique_authors": 31,
-  "reactions_total": 57,
-  "attachments": 32,
+  "reactions_total": 58,
+  "attachments": 33,
   "channel_activity": {
+    "V2.1.0.1 在線維護公告": 18,
     "💭「Processing」Stuck in \"Checking for resource updates\"": 1,
     "✅「已回答」對弈人偶命輪圖錯了": 1,
     "✅「Answered」No Gdoll in fragment Exchange": 1,
@@ -32,6 +33,9 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "14": 12,
+    "17": 4,
+    "18": 6,
     "7": 6,
     "3": 16,
     "4": 17,
@@ -40,9 +44,7 @@
     "2": 5,
     "5": 3,
     "11": 3,
-    "14": 3,
     "19": 2,
-    "17": 1,
     "12": 1,
     "10": 1,
     "8": 7,
@@ -52,8 +54,8 @@
     "13": 1
   },
   "message_types": {
-    "0": 55,
-    "19": 17
+    "0": 16,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -97,6 +99,13 @@
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「已回答」這眼睛顔色不對吧.jpg"
+    },
+    {
+      "id": "1338523211645583441",
+      "content": "哇过了半天终于修了",
+      "author": "yang015148",
+      "reactions": 1,
+      "channel": "V2.1.0.1 在線維護公告"
     },
     {
       "id": "1338365038490292285",

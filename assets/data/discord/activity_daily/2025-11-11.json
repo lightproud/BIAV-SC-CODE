@@ -1,10 +1,12 @@
 {
   "date": "2025-11-11",
-  "messages": 63,
+  "messages": 65,
   "unique_authors": 12,
-  "reactions_total": 566,
-  "attachments": 30,
+  "reactions_total": 600,
+  "attachments": 31,
   "channel_activity": {
+    "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 1,
+    "Happy birthday fish!": 1,
     "✅「已回答」还能见到星辰篇的地图吗": 4,
     "✅「已回答」需要更多5771壁纸": 1,
     "💭「Processing」Material synthesis and conversion": 1,
@@ -46,8 +48,8 @@
     "1432654338982940783": 1
   },
   "hourly_activity": {
+    "12": 7,
     "9": 4,
-    "12": 5,
     "1": 1,
     "21": 1,
     "14": 4,
@@ -69,9 +71,7 @@
     "22": 1
   },
   "message_types": {
-    "0": 21,
-    "19": 3,
-    "4": 10
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -87,6 +87,13 @@
       "author": "calmdreab",
       "reactions": 56,
       "channel": ""
+    },
+    {
+      "id": "1437778826234167338",
+      "content": "",
+      "author": "neyuse",
+      "reactions": 34,
+      "channel": "Happy birthday fish!"
     },
     {
       "id": "1437751639598436463",
@@ -206,13 +213,6 @@
       "author": "2300011747",
       "reactions": 4,
       "channel": "✅「已回答」还能见到星辰篇的地图吗"
-    },
-    {
-      "id": "1437789794167160964",
-      "content": "UID:100010333",
-      "author": "calmdreab",
-      "reactions": 4,
-      "channel": "【1111凯刻斯生贺/21:00】超度我"
     }
   ]
 }

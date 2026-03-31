@@ -1,10 +1,12 @@
 {
   "date": "2025-03-01",
-  "messages": 21,
+  "messages": 26,
   "unique_authors": 6,
-  "reactions_total": 19,
+  "reactions_total": 22,
   "attachments": 11,
   "channel_activity": {
+    "💟獻上愛的圖騰——來自小花腦的信函": 4,
+    "忘卻前夜劇情合集": 1,
     "命輪似乎未生效": 2,
     "欢宴被暗削了?": 7,
     "Está bonito, pero me gustaría que tuviese una traducción al español oficial.": 6,
@@ -13,7 +15,10 @@
     "不会再有了": 1
   },
   "hourly_activity": {
-    "15": 1,
+    "9": 2,
+    "15": 2,
+    "17": 1,
+    "10": 1,
     "18": 1,
     "1": 6,
     "2": 5,
@@ -22,7 +27,8 @@
     "23": 1
   },
   "message_types": {
-    "0": 15
+    "0": 2,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -31,6 +37,13 @@
       "author": "zerathree",
       "reactions": 13,
       "channel": "吱吱吱…守密人（大概…）速写练习"
+    },
+    {
+      "id": "1345420579561410611",
+      "content": "發圖片留UID的人不足50個，人人有獎",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "💟獻上愛的圖騰——來自小花腦的信函"
     },
     {
       "id": "1345252232097955953",
@@ -45,6 +58,13 @@
       "author": "ivebeenkick",
       "reactions": 2,
       "channel": "不会再有了"
+    },
+    {
+      "id": "1345446899783831554",
+      "content": "被你猜中了🛐\n參見預言家",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "💟獻上愛的圖騰——來自小花腦的信函"
     },
     {
       "id": "1345290073557565490",

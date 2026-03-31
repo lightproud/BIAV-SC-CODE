@@ -1,10 +1,11 @@
 {
   "date": "2025-10-21",
-  "messages": 98,
+  "messages": 102,
   "unique_authors": 20,
-  "reactions_total": 346,
-  "attachments": 21,
+  "reactions_total": 347,
+  "attachments": 22,
   "channel_activity": {
+    "V2.3.4.1 在线维护公告": 4,
     "✅「已回答」可不可以給暗潮蟲鳴也補上現在預購的畫風頭像": 2,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 9,
     "💭「处理中」血希的链球进入超维空间会被还原并且错误显示": 2,
@@ -34,11 +35,11 @@
     "🐱light’s-nest": 1
   },
   "hourly_activity": {
+    "11": 14,
     "3": 35,
     "0": 8,
     "2": 6,
     "9": 4,
-    "11": 10,
     "12": 4,
     "13": 9,
     "15": 2,
@@ -50,9 +51,7 @@
     "4": 1
   },
   "message_types": {
-    "0": 66,
-    "4": 17,
-    "19": 11
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -126,6 +125,13 @@
       "channel": "开个摸鱼楼✨"
     },
     {
+      "id": "1430158926921338950",
+      "content": "**V2.3.4.1 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
+      "author": "morimensstaff02",
+      "reactions": 1,
+      "channel": "V2.3.4.1 在线维护公告"
+    },
+    {
       "id": "1430032924996272199",
       "content": "抱歉守密人 ，这个建议目前无法采纳🙏，后续头像或许也会有其他新风格的尝试",
       "author": "morimensstaff01",
@@ -187,13 +193,6 @@
       "author": "_masscarmine",
       "reactions": 1,
       "channel": "💭「Processing」Update exception: failed to retrieve patch file"
-    },
-    {
-      "id": "1430031340115591270",
-      "content": "Hello, this issue will be fixed today🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Purchase cores from awaken menu?"
     }
   ]
 }

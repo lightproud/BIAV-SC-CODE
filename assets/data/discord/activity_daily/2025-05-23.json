@@ -1,33 +1,91 @@
 {
   "date": "2025-05-23",
-  "messages": 6,
-  "unique_authors": 5,
-  "reactions_total": 4,
-  "attachments": 2,
+  "messages": 78,
+  "unique_authors": 16,
+  "reactions_total": 15,
+  "attachments": 4,
   "channel_activity": {
+    "V2.2.2.0 停服維護公告": 60,
+    "✅前瞻：1.5周年～战斗增强篇": 12,
     "✅「Answered」Region lock..": 1,
     "💭「Processing」Steam Error": 2,
     "✅「Answered」More wrong colours on passives": 2,
     "發點摸魚時寫的船長（克柏珊特）MOBA遊戲的技能組（與原作不相干）": 1
   },
   "hourly_activity": {
-    "14": 1,
-    "19": 1,
-    "23": 1,
-    "16": 2,
+    "14": 6,
+    "15": 36,
+    "16": 6,
+    "19": 2,
+    "20": 13,
+    "23": 2,
+    "3": 2,
+    "4": 6,
+    "5": 2,
+    "12": 1,
+    "18": 1,
     "8": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 4
+    "0": 67,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1375487996886777866",
+      "content": "守密人你好：\n       彌薩格大學預計於5月26日08:00~11:00（UTC+8）進行校內設施維護。\n       維護結束後需要重新登入並更新資源，補",
+      "author": "morimensstaff02",
+      "reactions": 4,
+      "channel": "V2.2.2.0 停服維護公告"
+    },
+    {
+      "id": "1375488766520852650",
+      "content": "[Guaranteed Activity: Awaken - The Unforgotten]\n●  The following activity will b",
+      "author": "morimensstaff02",
+      "reactions": 2,
+      "channel": "V2.2.2.0 停服維護公告"
+    },
     {
       "id": "1375506824135970846",
       "content": "yipeeee blue power and green alert",
       "author": "thpdom",
       "reactions": 2,
       "channel": "✅「Answered」More wrong colours on passives"
+    },
+    {
+      "id": "1375489782905573406",
+      "content": "吓死我了 \n还以为卡到广播站",
+      "author": "be_queitplease",
+      "reactions": 1,
+      "channel": "V2.2.2.0 停服維護公告"
+    },
+    {
+      "id": "1375499543914877069",
+      "content": "蘿坦的傷害低到給了目前唯一的%傷但也因為有這個%傷導致校貓不敢給蘿坦添加直觀的加傷<:takenotes:1357186646294138890>",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": "V2.2.2.0 停服維護公告"
+    },
+    {
+      "id": "1375514067753762948",
+      "content": "我覺得最後一天的活動要需要限定一下固定一段時間內有次數上限",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "V2.2.2.0 停服維護公告"
+    },
+    {
+      "id": "1375565656631541900",
+      "content": "我自己玩星辰篇是用拉蒙娜專造的效果讓女王劍一直觸發2次充界精配合混沌鑰令效果充狂\n開局在手上一次+拉蒙娜專武回收一次+大拉回來一次+過牌上手一次\n通常只要控好都",
+      "author": "wild_pansy",
+      "reactions": 1,
+      "channel": "V2.2.2.0 停服維護公告"
+    },
+    {
+      "id": "1375578416337916055",
+      "content": "每个海怪集群的总次数能有十万么",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "V2.2.2.0 停服維護公告"
     },
     {
       "id": "1375487182864650370",

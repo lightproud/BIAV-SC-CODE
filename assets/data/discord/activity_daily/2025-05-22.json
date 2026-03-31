@@ -1,20 +1,30 @@
 {
   "date": "2025-05-22",
-  "messages": 5,
-  "unique_authors": 3,
-  "reactions_total": 675,
+  "messages": 40,
+  "unique_authors": 14,
+  "reactions_total": 749,
   "attachments": 1,
   "channel_activity": {
+    "✅校猫碎碎念#序章配音决定": 33,
+    "✅前瞻：1.5周年～战斗增强篇": 2,
     "Dynamic Battle Sprite | 动态战斗立绘": 4,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "2": 11,
+    "3": 11,
+    "5": 4,
+    "6": 6,
+    "8": 1,
+    "16": 3,
+    "19": 1,
     "12": 2,
-    "13": 1,
-    "16": 2
+    "13": 1
   },
   "message_types": {
-    "0": 4
+    "0": 29,
+    "6": 1,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -25,11 +35,32 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1374941300213813329",
+      "content": "大家早已知道脑缸组是一个预算十分吃紧的创作团队，一度濒临经营推广不善而关闭的境地。\n\n为了让《忘却前夜》能够持续为大家提供新内容，继续守密人的故事，我们一路走来",
+      "author": "game.producer.light",
+      "reactions": 63,
+      "channel": "✅校猫碎碎念#序章配音决定"
+    },
+    {
       "id": "1375083783119831101",
       "content": "Are there any plans to implement dynamic battle sprites in the future? It is und",
       "author": "zier.0",
       "reactions": 9,
       "channel": "Dynamic Battle Sprite | 动态战斗立绘"
+    },
+    {
+      "id": "1374993755748171787",
+      "content": "當然，如果新手教程可以選擇要大姐姐還是大哥哥就更好了\n顯得好像很隆重，然後死在一些無所謂的地方",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "✅校猫碎碎念#序章配音决定"
+    },
+    {
+      "id": "1374978449286107226",
+      "content": "我還在等繁衍狂熱2.0R18全配音動畫",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "✅校猫碎碎念#序章配音决定"
     },
     {
       "id": "1375147793081176184",

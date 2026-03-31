@@ -1,10 +1,13 @@
 {
   "date": "2026-02-07",
-  "messages": 9983,
+  "messages": 9994,
   "unique_authors": 155,
-  "reactions_total": 1487,
-  "attachments": 376,
+  "reactions_total": 1546,
+  "attachments": 379,
   "channel_activity": {
+    "V2.4.2.2 停服维护公告": 5,
+    "New Year Break~ || Doresain & Sylvester": 3,
+    "Tinct": 3,
     "💭「Processing」game client crashed...somewhat": 3,
     "Please help. I'm not at fault. I love this game.": 5,
     "Request for Account Unban - ErioTo / Morimens Server": 2,
@@ -19,23 +22,23 @@
     "🔸morimens-game-chat": 5971
   },
   "hourly_activity": {
-    "3": 421,
+    "6": 230,
+    "8": 549,
+    "12": 397,
+    "10": 167,
+    "11": 344,
+    "2": 284,
+    "3": 422,
     "4": 500,
     "22": 500,
     "0": 259,
-    "2": 283,
-    "12": 396,
-    "10": 166,
-    "11": 342,
     "21": 542,
     "16": 683,
     "1": 297,
     "15": 691,
     "17": 667,
     "5": 338,
-    "6": 228,
     "7": 469,
-    "8": 546,
     "9": 281,
     "13": 438,
     "14": 458,
@@ -45,10 +48,24 @@
     "20": 267
   },
   "message_types": {
-    "0": 12,
-    "19": 1
+    "0": 8,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1469526119785959474",
+      "content": "I made Tinct fanart.",
+      "author": "floralynn",
+      "reactions": 36,
+      "channel": "Tinct"
+    },
+    {
+      "id": "1469635083743920275",
+      "content": "I do find it endearing that Doresain protected Sylvester his whole time when he ",
+      "author": "that_one_chippy",
+      "reactions": 20,
+      "channel": "New Year Break~ || Doresain & Sylvester"
+    },
     {
       "id": "1469809548926648411",
       "content": "喜欢戈利亚真的好萌好萌\n后面一段时间都会画的",
@@ -172,20 +189,6 @@
       "id": "1469609947418333194",
       "content": "出太簡單那群425玩家可是不買單的喔",
       "author": "forg30215",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1469610283537534976",
-      "content": "我是個誠實的人，不欺諞，的好好人，我不會裝大佬",
-      "author": "universe.dark",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1469624485341561017",
-      "content": "佬帶你三隻+12限定\n一腳踢死Boss",
-      "author": "corposant_1003",
       "reactions": 6,
       "channel": "🔸綜合討論"
     }

@@ -1,10 +1,13 @@
 {
   "date": "2025-12-23",
-  "messages": 76,
+  "messages": 83,
   "unique_authors": 16,
-  "reactions_total": 90,
-  "attachments": 42,
+  "reactions_total": 180,
+  "attachments": 45,
   "channel_activity": {
+    "Ramona": 2,
+    "Sanga x Pickman": 3,
+    "Tulu omamori": 2,
     "Who Ryker's Designer pls come talk ?": 8,
     "💭「Processing」The Spacebar/Enter key on Steam PC version not working": 5,
     "Tentacle Gathering for Enemies": 4,
@@ -23,28 +26,48 @@
     "1443848396585828363": 2
   },
   "hourly_activity": {
+    "15": 5,
+    "18": 5,
+    "22": 4,
     "16": 10,
     "13": 3,
     "14": 2,
-    "15": 2,
     "2": 4,
     "6": 2,
     "11": 2,
-    "18": 3,
     "0": 3,
     "17": 4,
     "10": 4,
-    "22": 2,
     "9": 22,
     "3": 3,
     "5": 9,
     "20": 1
   },
   "message_types": {
-    "0": 28,
-    "19": 5
+    "0": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1453152847154774148",
+      "content": "First time doing embroidery, it was really fun! A Tulu charm to pray for him and",
+      "author": "tchik91",
+      "reactions": 32,
+      "channel": "Tulu omamori"
+    },
+    {
+      "id": "1453050813663547443",
+      "content": "https://x.com/tm_noodles/status/2003491112514904138?s=20",
+      "author": "noodlestm",
+      "reactions": 31,
+      "channel": "Ramona"
+    },
+    {
+      "id": "1453053769305686068",
+      "content": "help\n  https://x.com/i/status/2003334189702418479",
+      "author": "casual_gh0st",
+      "reactions": 26,
+      "channel": "Sanga x Pickman"
+    },
     {
       "id": "1453093337803395175",
       "content": "It would be a great QOL improvement if we are allowed to use the same pieces tha",
@@ -137,6 +160,13 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1453099188794425437",
+      "content": "SO FUKING AMAZING",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "Sanga x Pickman"
+    },
+    {
       "id": "1453033227789799546",
       "content": "<@113374123798859776> here ill make a post of our issue; hope we get a fix.",
       "author": "enumaellis",
@@ -156,20 +186,6 @@
       "author": "tsubaki9884",
       "reactions": 1,
       "channel": "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎"
-    },
-    {
-      "id": "1453083276754554880",
-      "content": "",
-      "author": "yuuuuuuu__0103",
-      "reactions": 1,
-      "channel": "重开个存档楼）"
-    },
-    {
-      "id": "1453083677323169802",
-      "content": "这个波疑似画得太大眼萌妹了，反省之……回头有空重画好了。\n以及波好难画啊＞＜",
-      "author": "yuuuuuuu__0103",
-      "reactions": 1,
-      "channel": "重开个存档楼）"
     }
   ]
 }
