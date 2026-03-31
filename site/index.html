@@ -3,490 +3,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>缸中之脑 · Brain in a Vat</title>
-<meta name="description" content="忘却前夜 (Morimens) 社区项目 — Wiki 资料站 · 社区情报 · 衍生游戏">
-
-<!-- Open Graph -->
-<meta property="og:title" content="缸中之脑 · Brain in a Vat">
-<meta property="og:description" content="忘却前夜 (Morimens) 社区项目 — Wiki 资料站 · 社区情报 · 衍生游戏">
+<title>忘却前夜 Morimens — B.I.A.V. Studio</title>
+<meta name="description" content="忘却前夜 (Morimens) — 洛夫克拉夫特式肉鸽卡牌构建游戏。在认知的边界之外，遗忘是最后的慈悲。">
+<meta name="theme-color" content="#c5a356">
+<meta property="og:title" content="忘却前夜 Morimens">
+<meta property="og:description" content="洛夫克拉夫特式肉鸽卡牌构建游戏">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://lightproud.github.io/brain-in-a-vat/">
-<meta property="og:locale" content="zh_CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="缸中之脑 · Brain in a Vat">
-<meta name="twitter:description" content="忘却前夜 (Morimens) 社区项目 — Wiki 资料站 · 社区情报 · 衍生游戏">
-
-<!-- Favicon: inline SVG -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0b10'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23c5a356' font-family='serif'%3E%E2%97%86%3C/text%3E%3C/svg%3E">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
-body {
-  background: #0a0b10;
-  color: #d4c9a8;
-  font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 500;
-  line-height: 2.0;
-  min-height: 100vh;
-  overflow-x: hidden;
-  opacity: 0;
-  animation: fadeIn 0.6s ease forwards;
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-/* ── Hero ── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 3rem 1.5rem;
-  position: relative;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 30%, rgba(197,163,86,0.07) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.hero-deco {
-  color: #3a3520;
-  font-size: 0.75rem;
-  letter-spacing: 0.5em;
-  margin-bottom: 2rem;
-}
-
-.hero-title {
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 700;
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  color: #e2c97e;
-  letter-spacing: 0.12em;
-  margin-bottom: 0.4rem;
-  position: relative;
-}
-
-.hero-title::after {
-  content: '';
-  display: block;
-  width: 48px;
-  height: 2px;
-  background: #c5a356;
-  margin: 1rem auto 0;
-  border-radius: 1px;
-}
-
-.hero-subtitle {
-  font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 400;
-  font-size: clamp(0.75rem, 2vw, 0.9rem);
-  color: #6b6040;
-  letter-spacing: 0.25em;
-  margin-top: 1.25rem;
-  margin-bottom: 2.5rem;
-}
-
-.hero-desc {
-  max-width: 560px;
-  font-size: 0.95rem;
-  color: #b5aa98;
-  margin-bottom: 3.5rem;
-  line-height: 2;
-}
-
-/* ── Cards ── */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  max-width: 900px;
-  width: 100%;
-}
-
-@media (max-width: 720px) {
-  .cards {
-    grid-template-columns: 1fr;
-    max-width: 440px;
+  :root {
+    --bg:#0a0b10;--bg2:#0f1018;--bg3:#161722;--bg4:#1a1b28;
+    --gold:#c5a356;--gold-l:#e2c97e;--gold-d:#8a7340;
+    --gold-glow:rgba(197,163,86,0.12);
+    --txt:#f0ebe0;--txt-m:#b5aa98;--txt-d:#7a7265;
+    --caro:#8b3a3a;--aequor:#3a6b6b;
+    --serif:'Noto Serif SC',serif;--sans:'Noto Sans SC',sans-serif;
+    --border:rgba(197,163,86,0.08);
   }
-}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-weight:500;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--gold);text-decoration:none}
 
-@media (min-width: 721px) and (max-width: 900px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 580px;
+  /* ── NAV ── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,11,16,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 40px;height:56px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{font-family:var(--serif);font-weight:700;font-size:15px;color:var(--gold);letter-spacing:0.04em}
+  .nav-links{display:flex;gap:28px}
+  .nav-links a{font-size:13px;color:var(--txt-d);font-weight:500;letter-spacing:0.02em;transition:color 0.3s}
+  .nav-links a:hover,.nav-links a.active{color:var(--gold)}
+  .nav-lang{font-size:12px;color:var(--txt-d);border:1px solid var(--border);border-radius:2px;padding:4px 10px;cursor:pointer;background:transparent;transition:border-color 0.3s}
+  .nav-lang:hover{border-color:rgba(197,163,86,0.2)}
+
+  /* ── HERO ── */
+  .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px 60px;overflow:hidden}
+  .hero-fog{position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 30% 60%,rgba(139,58,58,0.07) 0%,transparent 70%),radial-gradient(ellipse 50% 50% at 70% 40%,rgba(58,107,107,0.05) 0%,transparent 60%);animation:fogDrift 12s ease-in-out infinite alternate;z-index:0}
+  .hero-grain{position:absolute;inset:0;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:128px;z-index:1}
+  .hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 65% 50% at 50% 40%,transparent 0%,var(--bg) 100%);z-index:2}
+  .hero-content{position:relative;z-index:3}
+  .hero-title{font-family:var(--serif);font-weight:700;font-size:42px;color:var(--txt);letter-spacing:0.08em;animation:fadeUp 1.2s ease-out both}
+  .hero-sub{font-family:var(--serif);font-weight:400;font-size:16px;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-top:4px;animation:fadeUp 1.2s 0.15s ease-out both}
+  .hero-div{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-d),transparent);margin:24px auto;animation:fadeUp 1.2s 0.3s ease-out both}
+  .hero-tagline{font-size:14px;color:var(--txt-d);max-width:420px;line-height:1.8;margin:0 auto 32px;animation:fadeUp 1.2s 0.45s ease-out both}
+  .hero-cta{display:flex;gap:16px;justify-content:center;animation:fadeUp 1.2s 0.6s ease-out both}
+  .btn-p{display:inline-flex;align-items:center;padding:10px 28px;background:var(--gold);color:var(--bg);font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:0.06em;border-radius:2px;border:none;cursor:pointer;transition:all 0.3s}
+  .btn-p:hover{background:var(--gold-l);box-shadow:0 0 20px rgba(197,163,86,0.25)}
+  .btn-g{display:inline-flex;align-items:center;padding:10px 28px;background:transparent;color:var(--txt-m);font-family:var(--sans);font-weight:500;font-size:13px;letter-spacing:0.06em;border-radius:2px;border:1px solid rgba(197,163,86,0.2);cursor:pointer;transition:all 0.3s}
+  .btn-g:hover{border-color:rgba(197,163,86,0.4);color:var(--gold)}
+  .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:3;animation:fadeUp 1.2s 0.9s ease-out both}
+  .scroll-hint span{display:block;width:1px;height:32px;background:linear-gradient(180deg,var(--gold-d),transparent);margin:0 auto 6px}
+  .scroll-hint small{font-size:10px;color:var(--txt-d);letter-spacing:0.12em;text-transform:uppercase}
+
+  @keyframes fogDrift{0%{opacity:0.6;transform:translateX(-2%)}100%{opacity:1;transform:translateX(2%)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ── SECTIONS ── */
+  section{padding:100px 40px;max-width:960px;margin:0 auto}
+  .sec-label{font-family:var(--serif);font-size:13px;color:var(--gold-d);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:8px}
+  .sec-title{font-family:var(--serif);font-weight:600;font-size:28px;color:var(--txt);margin-bottom:12px;line-height:1.3}
+  .sec-desc{font-size:15px;color:var(--txt-m);margin-bottom:48px;max-width:640px}
+
+  /* ── FEATURES ── */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .feat-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:28px;transition:border-color 0.3s}
+  .feat-card:hover{border-color:rgba(197,163,86,0.18)}
+  .feat-icon{font-size:28px;margin-bottom:16px;filter:grayscale(0.3)}
+  .feat-name{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--gold);margin-bottom:8px}
+  .feat-desc{font-size:14px;color:var(--txt-m);line-height:1.7}
+
+  /* ── WORLD ── */
+  .world-strip{position:relative;width:100vw;margin-left:calc(-50vw + 50%);padding:100px 0;overflow:hidden;margin-top:40px}
+  .world-fog{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 40% 70%,rgba(139,58,58,0.08) 0%,transparent 70%),radial-gradient(ellipse 60% 80% at 70% 30%,rgba(58,107,107,0.06) 0%,transparent 60%),var(--bg);animation:fogDrift 15s ease-in-out infinite alternate}
+  .world-inner{position:relative;z-index:2;max-width:960px;margin:0 auto;padding:0 40px;text-align:center}
+  .world-inner .sec-title{margin-bottom:20px}
+  .world-quote{font-family:var(--serif);font-size:18px;color:var(--txt-m);font-style:italic;max-width:600px;margin:0 auto;line-height:1.7}
+  .realm-row{display:flex;justify-content:center;gap:24px;margin-top:40px}
+  .realm-chip{padding:8px 20px;border-radius:4px;font-size:13px;font-weight:600;font-family:var(--sans)}
+  .r-chaos{background:rgba(197,163,86,0.12);color:var(--gold-l)}
+  .r-aequor{background:rgba(58,107,107,0.12);color:#5dade2}
+  .r-caro{background:rgba(139,58,58,0.12);color:#ec7063}
+  .r-ultra{background:rgba(107,58,139,0.12);color:#bb8fce}
+
+  /* ── COMMUNITY ── */
+  .comm-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+  .comm-link{display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;font-size:13px;color:var(--txt-m);font-weight:500;transition:all 0.3s}
+  .comm-link:hover{border-color:rgba(197,163,86,0.18);color:var(--gold)}
+  .comm-link .dot{width:6px;height:6px;border-radius:50%;background:var(--gold-d)}
+
+  /* ── FOOTER ── */
+  footer{text-align:center;padding:40px;border-top:1px solid var(--border)}
+  .footer-brand{font-family:var(--serif);font-weight:600;font-size:13px;color:var(--gold-d);letter-spacing:0.06em;margin-bottom:8px}
+  .footer-copy{font-size:11px;color:var(--txt-d)}
+
+  /* ── SCROLL REVEAL ── */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease-out,transform 0.6s ease-out}
+  .reveal.visible{opacity:1;transform:translateY(0)}
+
+  /* ── MOBILE ── */
+  @media(max-width:700px){
+    nav{padding:0 20px}
+    .nav-links{display:none}
+    .hero-title{font-size:28px}
+    .hero-sub{font-size:13px}
+    section{padding:60px 20px}
+    .sec-title{font-size:22px}
+    .feat-grid{grid-template-columns:1fr}
+    .world-strip{padding:60px 0}
+    .world-inner{padding:0 20px}
+    .realm-row{flex-wrap:wrap}
   }
-  /* Game card spans full row on 2-col layout */
-  .cards .card:last-child {
-    grid-column: 1 / -1;
-    max-width: 280px;
-    margin: 0 auto;
-    width: 100%;
+
+  @media(prefers-reduced-motion:reduce){
+    .hero-fog{animation:none}
+    .world-fog{animation:none}
+    .hero-title,.hero-sub,.hero-div,.hero-tagline,.hero-cta,.scroll-hint{animation:none}
+    .reveal{transition:none;opacity:1;transform:none}
   }
-}
-
-.card {
-  background: #1e1a10;
-  border: 1px solid #2a2515;
-  border-radius: 10px;
-  padding: 2rem 1.5rem 1.75rem;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease, background 0.25s ease;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #c5a356, transparent);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.card:hover {
-  border-color: rgba(197,163,86,0.5);
-  background: #241f14;
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(197,163,86,0.08);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card-label {
-  font-family: 'Noto Sans SC', sans-serif;
-  font-weight: 700;
-  font-size: 0.65rem;
-  color: #8a7a48;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.card-title {
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #e2c97e;
-  margin-bottom: 0.75rem;
-}
-
-.card-desc {
-  font-size: 0.875rem;
-  color: #8a7a48;
-  line-height: 1.9;
-  flex: 1;
-}
-
-.card-status {
-  display: inline-block;
-  margin-top: 1.25rem;
-  padding: 0.18rem 0.75rem;
-  border-radius: 20px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  align-self: flex-start;
-}
-
-.status-dev  { background: rgba(197,163,86,0.12); color: #c5a356; border: 1px solid rgba(197,163,86,0.2); }
-.status-plan { background: rgba(100,100,100,0.08); color: #6b6040;  border: 1px solid rgba(100,100,100,0.12); }
-
-/* ── About section ── */
-.about {
-  max-width: 680px;
-  margin: 7rem auto 0;
-  padding: 0 1.5rem;
-  text-align: center;
-}
-
-.section-deco {
-  color: #3a3520;
-  font-size: 0.7rem;
-  letter-spacing: 0.5em;
-  margin-bottom: 1.5rem;
-}
-
-.about h2 {
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #e2c97e;
-  margin-bottom: 0.5rem;
-}
-
-.about-rule {
-  width: 40px;
-  height: 1px;
-  background: #c5a356;
-  margin: 1rem auto 1.75rem;
-}
-
-.about p {
-  font-size: 0.9rem;
-  color: #8a7a48;
-  margin-bottom: 1rem;
-  line-height: 2;
-}
-
-.about a {
-  color: #c5a356;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(197,163,86,0.3);
-  transition: border-color 0.2s, color 0.2s;
-}
-
-.about a:hover {
-  color: #e2c97e;
-  border-color: #e2c97e;
-}
-
-/* ── Methodology badge ── */
-.method {
-  max-width: 680px;
-  margin: 4rem auto;
-  padding: 2rem 2.5rem;
-  background: rgba(197,163,86,0.03);
-  border: 1px solid #2a2515;
-  border-left: 3px solid #c5a356;
-  border-radius: 6px;
-  text-align: left;
-}
-
-@media (max-width: 720px) {
-  .method {
-    margin: 3rem 1.5rem;
-    padding: 1.5rem;
-  }
-}
-
-.method h3 {
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 700;
-  font-size: 1rem;
-  color: #c5a356;
-  margin-bottom: 0.5rem;
-}
-
-.method p {
-  font-size: 0.85rem;
-  color: #6b6040;
-  line-height: 1.9;
-}
-
-/* ── Docs section ── */
-.docs {
-  max-width: 680px;
-  margin: 0 auto 4rem;
-  padding: 0 1.5rem;
-}
-
-.docs-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-@media (max-width: 520px) {
-  .docs-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.doc-link {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 1.5rem;
-  background: #1e1a10;
-  border: 1px solid #2a2515;
-  border-radius: 8px;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.25s, background 0.25s, transform 0.2s;
-}
-
-.doc-link:hover {
-  border-color: rgba(197,163,86,0.5);
-  background: #241f14;
-  transform: translateY(-2px);
-}
-
-.doc-icon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(197,163,86,0.08);
-  border-radius: 6px;
-  color: #c5a356;
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 700;
-}
-
-.doc-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.doc-title {
-  font-family: 'Noto Serif SC', serif;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: #e2c97e;
-  margin-bottom: 0.2rem;
-}
-
-.doc-desc {
-  font-size: 0.75rem;
-  color: #6b6040;
-}
-
-/* ── Footer ── */
-footer {
-  text-align: center;
-  padding: 2.5rem 1.5rem;
-  border-top: 1px solid #1e1a10;
-  color: #5a5540;
-  font-size: 0.78rem;
-}
-
-footer a {
-  color: #6b6040;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-footer a:hover { color: #c5a356; }
-
-.footer-sep { margin: 0 0.75rem; opacity: 0.4; }
 </style>
 </head>
 <body>
 
-<section class="hero">
-  <p class="hero-deco">◇ ◇ ◇</p>
-  <h1 class="hero-title">缸中之脑</h1>
-  <p class="hero-subtitle">BRAIN IN A VAT</p>
-  <p class="hero-desc">
-    忘却前夜（Morimens）社区项目。收集游戏情报与数据，构建多语言 Wiki，
-    最终制作一款衍生同人游戏。同时验证并开源「AI 多会话协作开发」方法论。
-  </p>
-
-  <div class="cards">
-    <a class="card" href="./wiki/">
-      <div class="card-label">WIKI</div>
-      <div class="card-title">Wiki 资料站</div>
-      <div class="card-desc">
-        忘却前夜全球游戏百科。50+ 唤醒体、四大界域、装备系统、剧情世界观。中·英·日三语。
-      </div>
-      <span class="card-status status-dev">建设中</span>
-    </a>
-
-    <a class="card" href="./news/">
-      <div class="card-label">NEWS</div>
-      <div class="card-title">社区情报</div>
-      <div class="card-desc">
-        多平台社区热点聚合。自动采集 Steam、Bilibili 等数据源，生成每日社区情报报告。
-      </div>
-      <span class="card-status status-dev">建设中</span>
-    </a>
-
-    <a class="card" href="#about">
-      <div class="card-label">GAME</div>
-      <div class="card-title">衍生游戏</div>
-      <div class="card-desc">
-        基于 Wiki 数据集和社区资产，开发一款忘却前夜衍生同人游戏。
-      </div>
-      <span class="card-status status-plan">规划中</span>
-    </a>
+<nav>
+  <div class="nav-logo">忘却前夜</div>
+  <div class="nav-links">
+    <a class="active" href="#">首页</a>
+    <a href="wiki/">Wiki</a>
+    <a href="wiki/zh/awakeners/">唤醒体</a>
+    <a href="wiki/zh/guides/">攻略</a>
+    <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank">GitHub</a>
   </div>
-</section>
+  <select class="nav-lang" onchange="if(this.value)location.href=this.value">
+    <option value="">简体中文</option>
+    <option value="wiki/en/">English</option>
+    <option value="wiki/ja/">日本語</option>
+  </select>
+</nav>
 
-<section class="about" id="about">
-  <p class="section-deco">◇ ◇ ◇</p>
-  <h2>关于项目</h2>
-  <div class="about-rule"></div>
-  <p>
-    「缸中之脑」由制作人 Light 发起，是忘却前夜官方授权的社区项目。
-    游戏设计内容、系统内容、资产内容归属脑缸组及其合作伙伴所有，本项目引用公开可查阅信息。
-  </p>
-  <p>
-    项目采用「双集群 + 人类调度器」架构：Chat 集群负责分析策划，Code 集群负责开发执行，
-    GitHub 仓库作为「共享外脑」连接所有 AI 会话。
-  </p>
-  <p>
-    <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">GitHub 仓库</a>
-  </p>
-</section>
-
-<div class="method">
-  <h3>AI 多会话协作开发</h3>
-  <p>本项目同时验证一套可复现的 AI 协作方法论。多个 AI 会话按专岗分工，仓库作为中间层传递记忆，人类担任唯一调度器。</p>
-</div>
-
-<section class="about" id="notes">
-  <p class="section-deco">◇ ◇ ◇</p>
-  <h2>制作人笔记</h2>
-  <div class="about-rule"></div>
-  <p>制作人 Light 的项目复盘与方法论沉淀。</p>
-</section>
-
-<div class="docs">
-  <div class="docs-grid">
-    <a class="doc-link" href="./docs/brain-in-a-vat-project.html">
-      <div class="doc-icon">I</div>
-      <div class="doc-info">
-        <div class="doc-title">缸中之脑计划</div>
-        <div class="doc-desc">36 页双语计划书 · v1.0</div>
-      </div>
-    </a>
-    <a class="doc-link" href="./docs/brain-in-a-vat-project.pdf" target="_blank">
-      <div class="doc-icon">PDF</div>
-      <div class="doc-info">
-        <div class="doc-title">缸中之脑计划</div>
-        <div class="doc-desc">PDF 版下载</div>
-      </div>
-    </a>
-    <a class="doc-link" href="./docs/ai-levels.html" style="opacity:0.4; pointer-events:none;">
-      <div class="doc-icon">II</div>
-      <div class="doc-info">
-        <div class="doc-title">AI 使用的六个阶段</div>
-        <div class="doc-desc">L0-L5 分级框架 + 伦理边界 · 即将上线</div>
-      </div>
-    </a>
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-fog"></div>
+  <div class="hero-grain"></div>
+  <div class="hero-vignette"></div>
+  <div class="hero-content">
+    <div class="hero-title">忘 却 前 夜</div>
+    <div class="hero-sub">Morimens</div>
+    <div class="hero-div"></div>
+    <div class="hero-tagline">在认知的边界之外，遗忘是最后的慈悲。<br>洛夫克拉夫特式肉鸽卡牌构建游戏。</div>
+    <div class="hero-cta">
+      <a class="btn-p" href="wiki/">进入 Wiki</a>
+      <a class="btn-g" href="wiki/zh/guides/beginner">新手指南</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span></span>
+    <small>Scroll</small>
   </div>
 </div>
 
+<!-- ═══ FEATURES ═══ -->
+<section>
+  <div class="sec-label reveal">Core</div>
+  <div class="sec-title reveal">三位一体的核心体验</div>
+  <div class="sec-desc reveal">卡牌构筑、Roguelite 探索、克苏鲁叙事——在每一局随机生成的深渊中，构建属于你的策略。</div>
+  <div class="feat-grid">
+    <div class="feat-card reveal">
+      <div class="feat-icon">🃏</div>
+      <div class="feat-name">卡牌构筑</div>
+      <div class="feat-desc">从初始牌组出发，在每一次选择中打磨策略。指令牌、灵体牌、疯狂牌——三种牌型交织出无穷组合。</div>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon">🔄</div>
+      <div class="feat-name">Roguelite 探索</div>
+      <div class="feat-desc">永续变化的关卡结构。每一次进入都是全新的地图、全新的遭遇、全新的抉择。失败是学习，重来是进化。</div>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon">📖</div>
+      <div class="feat-name">克苏鲁叙事</div>
+      <div class="feat-desc">以不可名状的恐惧为底色，讲述关于认知、遗忘与人性边界的故事。真相未必是你想要的答案。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WORLD ═══ -->
+<div class="world-strip">
+  <div class="world-fog"></div>
+  <div class="world-inner">
+    <div class="sec-label reveal">World</div>
+    <div class="sec-title reveal">四大界域</div>
+    <div class="world-quote reveal">「每一个界域都是一种认知的极限。<br>跨越它，或被它吞噬。」</div>
+    <div class="realm-row reveal">
+      <span class="realm-chip r-chaos">混沌 Chaos</span>
+      <span class="realm-chip r-aequor">深海 Aequor</span>
+      <span class="realm-chip r-caro">血肉 Caro</span>
+      <span class="realm-chip r-ultra">超维 Ultra</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ COMMUNITY ═══ -->
+<section>
+  <div class="sec-label reveal">Community</div>
+  <div class="sec-title reveal">加入社区</div>
+  <div class="sec-desc reveal">忘却前夜的全球玩家社区遍布多个平台。找到属于你的据点。</div>
+  <div class="comm-grid reveal">
+    <a class="comm-link" href="#"><span class="dot"></span>Discord 国际服</a>
+    <a class="comm-link" href="#"><span class="dot"></span>Discord 日服</a>
+    <a class="comm-link" href="#"><span class="dot"></span>Bilibili</a>
+    <a class="comm-link" href="#"><span class="dot"></span>NGA</a>
+    <a class="comm-link" href="#"><span class="dot"></span>小红书</a>
+    <a class="comm-link" href="#"><span class="dot"></span>X (Twitter)</a>
+    <a class="comm-link" href="#"><span class="dot"></span>Reddit</a>
+    <a class="comm-link" href="#"><span class="dot"></span>TapTap</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
 <footer>
-  <p>忘却前夜 (Morimens) 非官方社区项目<span class="footer-sep">·</span>游戏内容版权归 B.I.A.V. Studio 所有</p>
-  <p style="margin-top: 0.5rem;">
-    <a href="https://github.com/lightproud/brain-in-a-vat" rel="noopener">Source</a>
-  </p>
+  <div class="footer-brand">B.I.A.V. STUDIO</div>
+  <div class="footer-copy">© 2024-2026 忘却前夜 Morimens. Game content © 灵犀互娱. Wiki content © Contributors.</div>
 </footer>
 
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+}, { threshold: 0.15 });
+reveals.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
