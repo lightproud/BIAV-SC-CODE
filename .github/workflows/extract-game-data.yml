@@ -27,17 +27,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Cache game client
-        id: cache
-        uses: actions/cache@v4
-        with:
-          path: ~/steam_depot
-          key: morimens-${{ github.event.inputs.steam_app_id || '3052450' }}-${{ hashFiles('.github/triggers/extract-game-data') }}
-          restore-keys: |
-            morimens-${{ github.event.inputs.steam_app_id || '3052450' }}-
-
       - name: Download via DepotDownloader
-        if: steps.cache.outputs.cache-hit != 'true'
+        env:
+          STEAM_USER: ${{ secrets.STEAM_USER }}
+          STEAM_PASS: ${{ secrets.STEAM_PASS }}
         run: |
           APP_ID="${{ github.event.inputs.steam_app_id || '3052450' }}"
 
@@ -51,43 +44,31 @@ jobs:
 
           # Build auth args
           AUTH_ARGS=""
-          if [ -n "${{ secrets.STEAM_USER }}" ] && [ -n "${{ secrets.STEAM_PASS }}" ]; then
+          if [ -n "$STEAM_USER" ] && [ -n "$STEAM_PASS" ]; then
             echo "Using Steam account credentials"
-            AUTH_ARGS="-username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}"
+            AUTH_ARGS="-username $STEAM_USER -password $STEAM_PASS"
           else
-            echo "No Steam credentials found, trying anonymous download (F2P)"
+            echo "WARNING: No Steam credentials found (STEAM_USER/STEAM_PASS secrets not set)"
+            echo "Trying anonymous download (may fail for game clients)"
           fi
 
           # Download game
           echo "Downloading Steam App $APP_ID ..."
+          echo "Auth args present: $([ -n "$AUTH_ARGS" ] && echo YES || echo NO)"
           ~/depotdownloader/DepotDownloader \
             -app "$APP_ID" \
             -os windows \
             -dir ~/steam_depot \
             -max-downloads 8 \
-            $AUTH_ARGS \
-            || {
-              echo ""
-              echo "=========================================="
-              echo "ERROR: DepotDownloader failed."
-              echo ""
-              if [ -z "$AUTH_ARGS" ]; then
-                echo "Anonymous download did not work."
-                echo "This F2P game likely requires a Steam account."
-                echo ""
-                echo "To fix: add STEAM_USER and STEAM_PASS as"
-                echo "GitHub Secrets (use a free Steam account"
-                echo "that has claimed Morimens)."
-              fi
-              echo "=========================================="
-              exit 1
-            }
+            $AUTH_ARGS
 
           echo ""
           echo "Download complete."
           du -sh ~/steam_depot
-          echo "Top-level files:"
-          ls -la ~/steam_depot/ | head -20
+          echo "Top-level structure:"
+          find ~/steam_depot -maxdepth 2 -type d | head -30
+          echo "File count:"
+          find ~/steam_depot -type f | wc -l
 
       - uses: actions/setup-python@v5
         with:
