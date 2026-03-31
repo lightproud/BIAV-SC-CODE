@@ -1,10 +1,11 @@
 {
   "date": "2023-12-30",
-  "messages": 29,
+  "messages": 32,
   "unique_authors": 7,
   "reactions_total": 54,
   "attachments": 8,
   "channel_activity": {
+    "长期盖楼《PVP理论与内容分析》": 3,
     "笑话合集": 4,
     "跨區靈感許願池.gif": 11,
     "紅祭禮": 5,
@@ -14,18 +15,19 @@
     "御四家混沌無光8攻略": 3
   },
   "hourly_activity": {
+    "11": 1,
+    "16": 3,
     "2": 2,
     "17": 4,
     "8": 4,
     "9": 7,
     "15": 4,
-    "16": 1,
     "1": 2,
     "3": 4,
     "4": 1
   },
   "message_types": {
-    "0": 24,
+    "0": 2,
     "19": 1
   },
   "top_reacted_messages": [

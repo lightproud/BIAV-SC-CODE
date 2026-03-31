@@ -1,10 +1,14 @@
 {
   "date": "2024-03-30",
-  "messages": 22,
-  "unique_authors": 5,
-  "reactions_total": 99,
-  "attachments": 15,
+  "messages": 91,
+  "unique_authors": 15,
+  "reactions_total": 126,
+  "attachments": 24,
   "channel_activity": {
+    "残缺面具+礼帽的变费问题": 10,
+    "✅「已回答」助战点不了……我请问呢……": 1,
+    "✅「已回答」关于编队系统导致误分解的问题": 9,
+    "想要N唤醒体": 49,
     "紧急摸鱼": 1,
     "「N」qq人（会可爱死人，请慎入！！）": 9,
     "塗鴉": 1,
@@ -14,19 +18,25 @@
     "有種就打鴨⊙ω⊙": 1
   },
   "hourly_activity": {
+    "9": 6,
+    "10": 10,
+    "3": 2,
+    "4": 2,
+    "5": 5,
+    "7": 18,
+    "8": 4,
+    "11": 8,
+    "12": 3,
+    "13": 28,
     "14": 1,
-    "13": 8,
     "17": 1,
     "2": 1,
     "16": 1,
-    "6": 1,
-    "7": 7,
-    "11": 1,
-    "9": 1
+    "6": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 53,
+    "19": 16
   },
   "top_reacted_messages": [
     {
@@ -42,6 +52,13 @@
       "author": "bashibashibash",
       "reactions": 27,
       "channel": "「N」qq人（会可爱死人，请慎入！！）"
+    },
+    {
+      "id": "1223534957230690347",
+      "content": "我是N的舔狗我想要N唤醒体想要N唤醒体想要N唤醒体想要N唤醒体想要N唤醒体想要N唤醒体想要N唤醒体想要N唤醒体想要N唤醒体想要N唤醒体想要N唤醒体想要N唤醒体想",
+      "author": "bashibashibash",
+      "reactions": 21,
+      "channel": "想要N唤醒体"
     },
     {
       "id": "1223564714571989023",
@@ -65,11 +82,32 @@
       "channel": "融灾350攻略超维版"
     },
     {
+      "id": "1223625663051858040",
+      "content": "N摆明是想勾引我",
+      "author": "bashibashibash",
+      "reactions": 4,
+      "channel": "想要N唤醒体"
+    },
+    {
       "id": "1223624708013166683",
       "content": "好小一只 真想把他关起来吼吼吼吼。。。。",
       "author": "bashibashibash",
       "reactions": 2,
       "channel": "「N」qq人（会可爱死人，请慎入！！）"
+    },
+    {
+      "id": "1223582042948767866",
+      "content": "",
+      "author": "kervin_joshua",
+      "reactions": 1,
+      "channel": "残缺面具+礼帽的变费问题"
+    },
+    {
+      "id": "1223625394876452905",
+      "content": "肯定是想和我们贴贴和亲亲",
+      "author": "bashibashibash",
+      "reactions": 1,
+      "channel": "想要N唤醒体"
     }
   ]
 }

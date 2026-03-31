@@ -1,44 +1,188 @@
 {
   "date": "2026-03-31",
-  "messages": 57,
-  "unique_authors": 13,
-  "reactions_total": 4,
-  "attachments": 8,
+  "messages": 4127,
+  "unique_authors": 155,
+  "reactions_total": 404,
+  "attachments": 224,
   "channel_activity": {
-    "🔸morimens-game-chat": 16,
-    "🔸canal-español": 6,
-    "🔸canal-português": 6,
-    "🔸team-building": 6,
-    "🔸game-question": 23
+    "🔸綜合討論": 211,
+    "🔸morimens-game-chat": 2500,
+    "🔸相位对弈": 12,
+    "🔸课间休息闲聊": 25,
+    "🔸한국어-채팅방": 1,
+    "🔸русский-канал": 2,
+    "🔸phòng-chat-tiếng-việt": 173,
+    "🔸canal-español": 138,
+    "🔸canal-português": 283,
+    "🔸ruang-obrolan-indonesia": 34,
+    "🔸ห้องสนทนาภาษาไทย": 57,
+    "🔸traphase": 1,
+    "🔸lore-chat": 39,
+    "🔸team-building": 92,
+    "🔸general-chat": 97,
+    "🔸邀请码互助┊swap-invitation-codes": 3,
+    "🔸game-question": 423,
+    "🔸机器人命令┊bot-commands": 11,
+    "🔸erica-playground": 14,
+    "💭「处理中」错字": 4,
+    "💭「处理中」小猫克扣魔术师专造力量降低": 5,
+    "💭「處理中」波呂克斯的超限?": 2
   },
   "hourly_activity": {
-    "0": 57
+    "1": 706,
+    "2": 724,
+    "3": 872,
+    "4": 696,
+    "5": 510,
+    "0": 571,
+    "6": 48
   },
   "message_types": {
-    "0": 45,
-    "19": 12
+    "0": 2845,
+    "19": 1217,
+    "20": 5,
+    "4": 3
   },
   "top_reacted_messages": [
     {
-      "id": "1488327283776290967",
-      "content": "",
-      "author": "pucciarity",
-      "reactions": 2,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1488327601364926594",
-      "content": "how all the educators in my area look at me after I spend scholarship and award ",
-      "author": "duskisnotdust",
-      "reactions": 1,
+      "id": "1488373969487790232",
+      "content": "Which one should I use? 1 - 4",
+      "author": "snorlax01",
+      "reactions": 7,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488328135031132211",
-      "content": "<@345402009903693824>",
-      "author": "papricaapimentada",
-      "reactions": 1,
-      "channel": "🔸canal-português"
+      "id": "1488372003348943039",
+      "content": "<:Helot_slack_off:1459092159465521184>",
+      "author": "frosthief",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488382748308668608",
+      "content": "Arisu feet reveal",
+      "author": "guava3442",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488335923342082108",
+      "content": "-# I can't take it anymore. I'm sick of Thais. I try to play Horla. My Thais doe",
+      "author": "duskisnotdust",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488353786350141571",
+      "content": "I FINALLY MADE IT",
+      "author": "l8989c",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488358743694508313",
+      "content": "I just exalted with her and it dealt 70k",
+      "author": "l8989c",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488371643473596558",
+      "content": "fck this tulu and blue bs",
+      "author": "arisuu0604",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488374775083696299",
+      "content": "Easy <@296679098703544321>",
+      "author": "l8989c",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488380657112715356",
+      "content": "just for Idot I decided to level my Wanda",
+      "author": "bagels5899",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488383151196602498",
+      "content": "This is what a good dinner looks like",
+      "author": "frosthief",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488383151821819965",
+      "content": "Mfs couldn't go the extra mile to actually leave their shopping carts where it w",
+      "author": "snorlax01",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488384854058860595",
+      "content": "youre not",
+      "author": "princess.goth",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488384862619570319",
+      "content": "creature",
+      "author": "princess.goth",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488386226276012032",
+      "content": "Voretits and carcus",
+      "author": "cqteiie",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488388928640782336",
+      "content": "Nvm they js liked my post fuck my life",
+      "author": "cqteiie",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488392915222003823",
+      "content": "I cannot enjoy Traphase. B/c I hate interacting with others.",
+      "author": "minmin_winwin",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488395065096409210",
+      "content": "It would be really funny if Nyarla was given a blue name\nWithout any of the actu",
+      "author": "frosthief",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488407456047435846",
+      "content": "i actually got really lucky twice!!!",
+      "author": "princess.goth",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488363733041414334",
+      "content": "",
+      "author": "trevorsuyu",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
+    },
+    {
+      "id": "1488372621283426324",
+      "content": "哎呦手滑了",
+      "author": "akkom730",
+      "reactions": 3,
+      "channel": "🔸相位对弈"
     }
   ]
 }
