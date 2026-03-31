@@ -141,6 +141,15 @@
 .server-jp { background: rgba(226, 201, 126, 0.15); color: #e2c97e; }
 .server-tw { background: rgba(155, 89, 182, 0.15); color: #bb8fce; }
 
+/* Character page — wider content area for CharacterSheet component */
+.character-page .VPDoc .container .content {
+  max-width: 1100px;
+}
+
+.character-page .vp-doc > div > h1:first-child {
+  display: none; /* Title rendered inside CharacterSheet */
+}
+
 /* Giscus comment section */
 .giscus,
 .giscus-frame {

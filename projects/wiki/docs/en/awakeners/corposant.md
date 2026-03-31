@@ -2,39 +2,7 @@
 title: Corposant | Morimens Wiki
 description: Full profile of Corposant (克珀珊特), a Aequor Defense in Morimens
 portrait: /portraits/corposant.png
+pageClass: character-page
 ---
-# Corposant (克珀珊特)
 
-<div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/corposant.png'" alt="克珀珊特" class="portrait" />
-
-  | Attribute | Value |
-  |------|-----|
-  | Rarity | SSR |
-  | Realm | Aequor |
-  | Role | Defense |
-  | Limited | Yes |
-  | Availability | 限定活动唤醒 |
-</div>
-
-## Introduction
-
-深海界域限定防御型角色，v2.1~2.2推出。为深海队提供新的防御选择，拥有独特的护盾和减伤机制。名字含义为「圣艾尔摩之火」。
-
-## Skills
-
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
-
-
-
-## Recommended Equipment
-
-Data pending
-
-
-<CharacterCompare />
+<CharacterSheet characterId="corposant" />

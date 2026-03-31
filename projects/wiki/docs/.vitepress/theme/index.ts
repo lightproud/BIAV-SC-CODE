@@ -14,6 +14,7 @@ import FarmingPlanner from './components/FarmingPlanner.vue'
 import DamageCalculator from './components/DamageCalculator.vue'
 import StaminaTracker from './components/StaminaTracker.vue'
 import VoiceLines from './components/VoiceLines.vue'
+import CharacterSheet from './components/CharacterSheet.vue'
 import GiscusComments from './components/GiscusComments.vue'
 
 const theme: Theme = {
@@ -35,6 +36,7 @@ const theme: Theme = {
     app.component('DamageCalculator', DamageCalculator)
     app.component('StaminaTracker', StaminaTracker)
     app.component('VoiceLines', VoiceLines)
+    app.component('CharacterSheet', CharacterSheet)
   },
 }
 

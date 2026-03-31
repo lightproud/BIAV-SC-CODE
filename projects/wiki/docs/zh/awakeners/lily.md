@@ -2,42 +2,7 @@
 title: 莉莉 | 忘却前夜 Wiki
 description: 莉莉（Lily）混沌属性防御角色详细资料
 portrait: /portraits/lily.png
+pageClass: character-page
 ---
-# 莉莉 (Lily)
 
-<div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/lily.png'" alt="莉莉" class="portrait" />
-
-  | 属性 | 值 |
-  |------|-----|
-  | 稀有度 | SSR |
-  | 界域 | 混沌 |
-  | 职能 | 防御 |
-  | 限定 | 否 |
-  | 获取 | 活动唤醒「花不染尘」 |
-</div>
-
-## 简介
-
-混沌界域防御型唤醒体，v1.1下半版本通过「花不染尘」活动推出。主线重要角色，与守密人关系密切。防御能力出色，为混沌队提供稳定护盾。
-
-## 技能
-
-| 卡名 | 费用 | 效果 |
-|------|------|------|
-| **狂气爆发**: 狂气爆发 | — | 数据待补充 |
-| **觉醒卡**: 觉醒卡 | — | 数据待补充 |
-| *指令卡* | — | 数据待补充 |
-| *启灵* | — | 数据待补充 |
-
-
-
-## 推荐装备
-
-### 推荐命轮: 跨越疼痛
-
-数据待补充
-
-
-
-<CharacterCompare />
+<CharacterSheet characterId="lily" />

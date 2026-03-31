@@ -2,39 +2,7 @@
 title: 朵尔 | 忘却前夜 Wiki
 description: 朵尔（Doll）混沌属性攻撃型キャラクター詳細
 portrait: /portraits/doll.png
+pageClass: character-page
 ---
-# 朵尔 (Doll)
 
-<div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/doll.png'" alt="朵尔" class="portrait" />
-
-  | 属性 | 値 |
-  |------|-----|
-  | レアリティ | SSR |
-  | 界域 | 混沌 |
-  | 役割 | 攻撃型 |
-  | 限定 | いいえ |
-  | 入手方法 | 常驻/活动唤醒 |
-</div>
-
-## 紹介
-
-混沌界域T0输出型唤醒体，御四家之一。拥有「终章形态」变身机制：使用终章后全技能改变效果，牺牲治疗换取自伤增强毒伤，化身玻璃大炮。与SR版朵尔为不同角色。
-
-## スキル
-
-| カード名 | コスト | 効果 |
-|------|------|------|
-| **狂気爆発**: 狂气爆发 | — | 普通形态：回复生命并施加毒素。终章形态：失去生命，造成大量毒伤。每叠加一层终章，终章形态的伤害递增。 |
-| **覚醒カード**: 覚醒カード | — | データ準備中 |
-| *指令カード* | — | データ準備中 |
-| *啓霊* | — | データ準備中 |
-
-
-
-## 推奨装備
-
-データ準備中
-
-
-<CharacterCompare />
+<CharacterSheet characterId="doll" />
