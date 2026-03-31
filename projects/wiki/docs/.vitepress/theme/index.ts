@@ -1,7 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
 import type { Theme } from 'vitepress'
 import { h } from 'vue'
-import './custom.css'
+import './morimens-design-tokens.css'
+import './morimens-vitepress-theme.css'
 
 import CharacterGrid from './components/CharacterGrid.vue'
 import CharacterCompare from './components/CharacterCompare.vue'

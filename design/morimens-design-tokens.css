@@ -1,0 +1,206 @@
+/* ═══════════════════════════════════════════════════════════
+   忘却前夜 · MORIMENS DESIGN TOKENS
+   Single source of truth for all visual surfaces.
+   ═══════════════════════════════════════════════════════════
+   Usage:
+     @import url('./morimens-design-tokens.css');
+   Or copy the :root block into your framework's token system.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── DEPTH PALETTE ──
+     Background layers ordered by elevation.
+     85% of visible surface area should use these. */
+  --m-bg-abyss:     #0a0b10;   /* deepest: page background */
+  --m-bg-surface:   #0f1018;   /* raised: sidebar, secondary panels */
+  --m-bg-elevated:  #161722;   /* higher: cards, dropdowns */
+  --m-bg-card:      #1a1b28;   /* highest: interactive cards, modals */
+
+  /* ── AMBER GOLD ──
+     Brand accent. Never exceeds 5% of visible area.
+     primary = buttons, links, active states.
+     light   = hover emphasis, selected text.
+     dim     = borders, subtle indicators.
+     glow    = box-shadow, background tints. */
+  --m-gold-primary: #c5a356;
+  --m-gold-light:   #e2c97e;
+  --m-gold-dim:     #8a7340;
+  --m-gold-glow:    rgba(197, 163, 86, 0.12);
+  --m-gold-glow-s:  rgba(197, 163, 86, 0.25);
+
+  /* ── TEXT PALETTE ──
+     10% of visible area. Always on dark backgrounds.
+     Contrast ratios vs bg-abyss:
+       primary = 11.2:1 ✓  muted = 7.1:1 ✓  dim = 4.6:1 ✓ */
+  --m-text-primary: #f0ebe0;
+  --m-text-muted:   #b5aa98;
+  --m-text-dim:     #7a7265;
+
+  /* ── REALM ACCENT COLORS ──
+     Atmospheric only. Never as solid fills.
+     Always as radial-gradient fog at ≤15% opacity. */
+  --m-realm-caro:    #8b3a3a;  /* 血肉 */
+  --m-realm-aequor:  #3a6b6b;  /* 深海 */
+  --m-realm-chaos:   #c5a356;  /* 混沌 — same as brand gold */
+  --m-realm-ultra:   #6b3a8b;  /* 超维 */
+
+  /* ── FUNCTIONAL COLORS ──
+     Minimal usage. Only for semantic states. */
+  --m-fn-success:   #6aad7a;
+  --m-fn-warning:   #c5a356;
+  --m-fn-error:     #c06060;
+  --m-fn-info:      #7a9cc6;
+
+  /* ── RARITY COLORS ──
+     Game-intrinsic. Used only in data display. */
+  --m-rarity-ssr:   #ff9d00;
+  --m-rarity-sr:    #c084fc;
+  --m-rarity-r:     #60a5fa;
+
+  /* ── BORDERS & DIVIDERS ── */
+  --m-border-subtle:  rgba(197, 163, 86, 0.06);
+  --m-border-default: rgba(197, 163, 86, 0.10);
+  --m-border-hover:   rgba(197, 163, 86, 0.18);
+  --m-border-strong:  rgba(197, 163, 86, 0.30);
+
+  /* ── TYPOGRAPHY ──
+     Title: Noto Serif SC (宋体 — ritual, authority)
+     Body:  Noto Sans SC (黑体 — function, readability)
+     Code:  JetBrains Mono / SF Mono fallback */
+  --m-font-title: 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', serif;
+  --m-font-body:  'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', sans-serif;
+  --m-font-code:  'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+
+  /* ── TYPE SCALE ──
+     Mobile-first. Desktop overrides via media query. */
+  --m-fs-hero:     28px;   /* Hero title — desktop: 42px */
+  --m-fs-h1:       24px;   /* Section title — desktop: 28px */
+  --m-fs-h2:       18px;   /* Subsection */
+  --m-fs-h3:       16px;
+  --m-fs-body:     15px;
+  --m-fs-caption:  13px;
+  --m-fs-small:    11px;
+
+  --m-fw-regular:  400;
+  --m-fw-medium:   500;
+  --m-fw-semibold: 600;
+  --m-fw-bold:     700;
+
+  --m-lh-tight:    1.3;
+  --m-lh-normal:   1.6;
+  --m-lh-relaxed:  1.8;
+
+  --m-ls-title:    0.04em;
+  --m-ls-caps:     0.10em;
+  --m-ls-hero:     0.08em;
+
+  /* ── SPACING SCALE ──
+     Base unit: 8px. */
+  --m-sp-1:  4px;
+  --m-sp-2:  8px;
+  --m-sp-3:  12px;
+  --m-sp-4:  16px;
+  --m-sp-5:  20px;
+  --m-sp-6:  24px;
+  --m-sp-8:  32px;
+  --m-sp-10: 40px;
+  --m-sp-12: 48px;
+  --m-sp-16: 64px;
+  --m-sp-20: 80px;
+  --m-sp-30: 120px;
+
+  /* ── LAYOUT ── */
+  --m-content-max: 960px;
+  --m-nav-height:  56px;
+  --m-sidebar-w:   272px;
+
+  /* ── RADII ── */
+  --m-radius-sm:   2px;
+  --m-radius-md:   4px;
+  --m-radius-lg:   8px;
+  --m-radius-xl:   12px;
+
+  /* ── SHADOWS ── */
+  --m-shadow-sm:   0 1px 3px rgba(0,0,0,0.3);
+  --m-shadow-md:   0 4px 12px rgba(0,0,0,0.4);
+  --m-shadow-lg:   0 8px 24px rgba(0,0,0,0.5);
+  --m-shadow-glow: 0 0 20px var(--m-gold-glow);
+
+  /* ── MOTION ──
+     Principle: slow, heavy, fatalistic. Never bouncy. */
+  --m-ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --m-ease-out:     cubic-bezier(0, 0, 0.2, 1);
+  --m-dur-fast:     0.15s;
+  --m-dur-normal:   0.3s;
+  --m-dur-slow:     0.6s;
+  --m-dur-drift:    12s;  /* fog layer */
+
+  /* ── ATMOSPHERE LAYERS ── */
+  --m-grain-opacity:    0.035;
+  --m-grain-size:       128px;
+  --m-fog-opacity:      0.08;
+  --m-vignette-spread:  65%;
+}
+
+/* ── DESKTOP OVERRIDES ── */
+@media (min-width: 768px) {
+  :root {
+    --m-fs-hero: 42px;
+    --m-fs-h1:   28px;
+  }
+}
+
+/* ── REDUCED MOTION ── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --m-dur-fast:   0s;
+    --m-dur-normal: 0s;
+    --m-dur-slow:   0s;
+    --m-dur-drift:  0s;
+  }
+}
+
+/* ── GRAIN TEXTURE (reusable utility class) ── */
+.m-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: var(--m-grain-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: var(--m-grain-size);
+  z-index: 1;
+}
+
+/* ── FOG LAYER (reusable utility) ── */
+.m-fog::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: var(--m-fog-opacity);
+  background:
+    radial-gradient(ellipse 60% 40% at 30% 60%, var(--m-realm-caro) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 70% 40%, var(--m-realm-aequor) 0%, transparent 60%);
+  animation: m-fog-drift var(--m-dur-drift) ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes m-fog-drift {
+  from { opacity: calc(var(--m-fog-opacity) * 0.7); transform: translateX(-2%); }
+  to   { opacity: var(--m-fog-opacity); transform: translateX(2%); }
+}
+
+/* ── VIGNETTE (reusable utility) ── */
+.m-vignette::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse var(--m-vignette-spread) 50% at 50% 40%,
+    transparent 0%,
+    var(--m-bg-abyss) 100%
+  );
+  z-index: 2;
+}

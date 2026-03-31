@@ -1,0 +1,590 @@
+/* ═══════════════════════════════════════════════════════════
+   忘却前夜 · VITEPRESS THEME OVERRIDE
+   Requires: morimens-design-tokens.css imported first.
+   Replaces: custom.css in .vitepress/theme/
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── MAP TOKENS → VITEPRESS CSS VARS ── */
+:root {
+  --vp-c-brand-1: var(--m-gold-primary);
+  --vp-c-brand-2: var(--m-gold-light);
+  --vp-c-brand-3: var(--m-gold-dim);
+  --vp-c-brand-soft: var(--m-gold-glow);
+
+  --vp-font-family-base: var(--m-font-body);
+  --vp-font-family-mono: var(--m-font-code);
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, var(--m-gold-primary), var(--m-gold-light));
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, rgba(197,163,86,0.2) 50%, rgba(58,107,107,0.1) 50%);
+  --vp-home-hero-image-filter: blur(56px);
+}
+
+/* ── DARK MODE (default) ── */
+.dark {
+  --vp-c-brand-1: var(--m-gold-light);
+  --vp-c-brand-2: var(--m-gold-primary);
+  --vp-c-brand-3: var(--m-gold-dim);
+
+  --vp-c-bg:      var(--m-bg-abyss);
+  --vp-c-bg-alt:  var(--m-bg-surface);
+  --vp-c-bg-elv:  var(--m-bg-elevated);
+  --vp-c-bg-soft: var(--m-bg-card);
+
+  --vp-c-text-1: var(--m-text-primary);
+  --vp-c-text-2: var(--m-text-muted);
+  --vp-c-text-3: var(--m-text-dim);
+
+  --vp-c-divider:   var(--m-border-default);
+  --vp-c-gutter:    var(--m-bg-surface);
+
+  --vp-c-default-1: var(--m-text-primary);
+  --vp-c-default-2: var(--m-border-default);
+  --vp-c-default-3: var(--m-bg-elevated);
+  --vp-c-default-soft: rgba(22, 23, 34, 0.5);
+
+  --vp-nav-bg-color:     rgba(10, 11, 16, 0.92);
+  --vp-sidebar-bg-color: var(--m-bg-abyss);
+  --vp-local-nav-bg-color: rgba(10, 11, 16, 0.92);
+
+  --vp-code-bg: var(--m-bg-elevated);
+  --vp-code-color: var(--m-gold-light);
+
+  --vp-c-tip-1: var(--m-gold-primary);
+  --vp-c-tip-2: var(--m-gold-dim);
+  --vp-c-tip-3: var(--m-gold-glow);
+  --vp-c-tip-soft: var(--m-gold-glow);
+
+  --vp-c-warning-1: var(--m-fn-warning);
+  --vp-c-danger-1:  var(--m-fn-error);
+
+  --vp-button-brand-bg:      var(--m-gold-primary);
+  --vp-button-brand-text:    var(--m-bg-abyss);
+  --vp-button-brand-hover-bg: var(--m-gold-light);
+  --vp-button-brand-active-bg: var(--m-gold-dim);
+
+  --vp-button-alt-bg:       var(--m-bg-elevated);
+  --vp-button-alt-text:     var(--m-text-muted);
+  --vp-button-alt-hover-bg: var(--m-bg-card);
+
+  --vp-input-border-color:       var(--m-border-default);
+  --vp-input-hover-border-color: var(--m-border-hover);
+  --vp-input-switch-bg-color:    var(--m-bg-card);
+
+  --vp-carbon-ads-bg-color: var(--m-bg-surface);
+}
+
+/* ══════════════════════════════════════
+   GLOBAL TYPOGRAPHY
+   ══════════════════════════════════════ */
+
+/* All headings use serif */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6,
+.vp-doc h1, .vp-doc h2, .vp-doc h3 {
+  font-family: var(--m-font-title);
+  color: var(--m-text-primary);
+  letter-spacing: var(--m-ls-title);
+}
+
+.vp-doc h1 {
+  font-size: var(--m-fs-h1);
+  font-weight: var(--m-fw-bold);
+  border-bottom: 1px solid var(--m-border-default);
+  padding-bottom: var(--m-sp-4);
+}
+
+.vp-doc h2 {
+  font-size: var(--m-fs-h2);
+  font-weight: var(--m-fw-semibold);
+  color: var(--m-gold-light);
+  border-top: 1px solid var(--m-border-subtle);
+  padding-top: var(--m-sp-6);
+}
+
+.vp-doc h3 {
+  font-size: var(--m-fs-h3);
+  font-weight: var(--m-fw-semibold);
+  color: var(--m-text-primary);
+}
+
+/* Body text */
+.vp-doc p,
+.vp-doc li,
+.vp-doc td {
+  font-size: var(--m-fs-body);
+  line-height: var(--m-lh-relaxed);
+  color: var(--m-text-muted);
+}
+
+.vp-doc strong {
+  color: var(--m-text-primary);
+  font-weight: var(--m-fw-bold);
+}
+
+/* ══════════════════════════════════════
+   NAVBAR
+   ══════════════════════════════════════ */
+
+.VPNav {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.VPNavBar {
+  border-bottom-color: var(--m-border-subtle) !important;
+}
+
+/* Logo text override */
+.VPNavBarTitle .title {
+  font-family: var(--m-font-title) !important;
+  font-weight: var(--m-fw-bold) !important;
+  font-size: 15px !important;
+  color: var(--m-gold-primary) !important;
+  letter-spacing: var(--m-ls-title) !important;
+}
+
+/* Nav links */
+.VPNavBarMenu .VPNavBarMenuLink {
+  font-family: var(--m-font-body);
+  font-size: var(--m-fs-caption);
+  font-weight: var(--m-fw-medium);
+  color: var(--m-text-dim) !important;
+  letter-spacing: 0.02em;
+  transition: color var(--m-dur-normal) var(--m-ease-default);
+}
+.VPNavBarMenu .VPNavBarMenuLink:hover,
+.VPNavBarMenu .VPNavBarMenuLink.active {
+  color: var(--m-gold-primary) !important;
+}
+
+/* Search button */
+.VPNavBarSearch .DocSearch-Button,
+.VPNavBarSearchButton {
+  border-color: var(--m-border-default) !important;
+  background: var(--m-bg-surface) !important;
+}
+
+/* ══════════════════════════════════════
+   SIDEBAR
+   ══════════════════════════════════════ */
+
+.VPSidebar {
+  border-right-color: var(--m-border-subtle) !important;
+}
+
+.VPSidebarItem .text {
+  font-size: var(--m-fs-caption) !important;
+  color: var(--m-text-dim) !important;
+  transition: color var(--m-dur-normal) var(--m-ease-default);
+}
+
+.VPSidebarItem .text:hover {
+  color: var(--m-text-muted) !important;
+}
+
+.VPSidebarItem.is-active > .item > .indicator {
+  background: var(--m-gold-primary) !important;
+}
+
+.VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--m-gold-primary) !important;
+  font-weight: var(--m-fw-semibold) !important;
+}
+
+/* Sidebar group title */
+.VPSidebarItem.level-0 > .item > .link > .text {
+  font-family: var(--m-font-title);
+  font-weight: var(--m-fw-semibold) !important;
+  font-size: 14px !important;
+  color: var(--m-text-primary) !important;
+  letter-spacing: var(--m-ls-title);
+}
+
+/* ══════════════════════════════════════
+   CONTENT AREA
+   ══════════════════════════════════════ */
+
+/* Links */
+.vp-doc a {
+  color: var(--m-gold-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--m-border-default);
+  transition: all var(--m-dur-normal) var(--m-ease-default);
+}
+.vp-doc a:hover {
+  color: var(--m-gold-light);
+  border-bottom-color: var(--m-gold-dim);
+}
+
+/* Code blocks */
+.vp-doc div[class*='language-'] {
+  background: var(--m-bg-surface) !important;
+  border: 1px solid var(--m-border-subtle);
+  border-radius: var(--m-radius-lg);
+}
+
+.vp-doc div[class*='language-'] code {
+  font-family: var(--m-font-code);
+  font-size: 13px;
+}
+
+/* Inline code */
+.vp-doc :not(pre) > code {
+  background: var(--m-gold-glow) !important;
+  color: var(--m-gold-light) !important;
+  border-radius: var(--m-radius-sm);
+  padding: 2px 6px;
+  font-size: 0.85em;
+}
+
+/* Tables */
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.vp-doc th {
+  font-family: var(--m-font-body);
+  font-weight: var(--m-fw-bold);
+  font-size: var(--m-fs-caption);
+  color: var(--m-text-dim);
+  letter-spacing: var(--m-ls-caps);
+  text-transform: uppercase;
+  background: var(--m-bg-surface);
+  border-bottom: 1px solid var(--m-border-default) !important;
+}
+
+.vp-doc td {
+  border-bottom: 1px solid var(--m-border-subtle) !important;
+}
+
+.vp-doc tr:hover td {
+  background: var(--m-gold-glow);
+}
+
+/* Blockquotes → callout style */
+.vp-doc blockquote {
+  border-left: 2px solid var(--m-gold-dim) !important;
+  background: var(--m-gold-glow);
+  padding: var(--m-sp-4) var(--m-sp-5);
+  border-radius: 0 var(--m-radius-md) var(--m-radius-md) 0;
+  color: var(--m-text-muted);
+}
+
+.vp-doc blockquote p {
+  color: var(--m-text-muted);
+}
+
+/* Custom containers (tip, warning, danger) */
+.vp-doc .custom-block {
+  border-radius: var(--m-radius-lg);
+}
+
+.vp-doc .custom-block.tip {
+  border-color: var(--m-gold-dim);
+  background: var(--m-gold-glow);
+}
+
+.vp-doc .custom-block.tip .custom-block-title {
+  color: var(--m-gold-primary);
+  font-family: var(--m-font-title);
+  font-weight: var(--m-fw-semibold);
+}
+
+/* ══════════════════════════════════════
+   HOME PAGE HERO OVERRIDE
+   ══════════════════════════════════════ */
+
+.VPHero {
+  padding: 80px 0 60px !important;
+}
+
+.VPHero .name {
+  font-family: var(--m-font-title) !important;
+  font-weight: var(--m-fw-bold) !important;
+  letter-spacing: var(--m-ls-hero) !important;
+}
+
+.VPHero .tagline {
+  font-family: var(--m-font-body) !important;
+  color: var(--m-text-muted) !important;
+  font-size: var(--m-fs-body) !important;
+  line-height: var(--m-lh-relaxed) !important;
+  max-width: 500px;
+}
+
+.VPHero .text {
+  font-family: var(--m-font-title) !important;
+  color: var(--m-gold-primary) !important;
+  letter-spacing: var(--m-ls-title);
+}
+
+/* Feature cards on home */
+.VPFeature {
+  background: var(--m-bg-surface) !important;
+  border: 1px solid var(--m-border-subtle) !important;
+  border-radius: var(--m-radius-lg) !important;
+  transition: border-color var(--m-dur-normal) var(--m-ease-default) !important;
+}
+
+.VPFeature:hover {
+  border-color: var(--m-border-hover) !important;
+}
+
+.VPFeature .title {
+  font-family: var(--m-font-title) !important;
+  font-weight: var(--m-fw-semibold) !important;
+  color: var(--m-gold-primary) !important;
+}
+
+.VPFeature .details {
+  color: var(--m-text-muted) !important;
+  font-size: 14px !important;
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════ */
+
+.VPFooter {
+  border-top-color: var(--m-border-subtle) !important;
+  background: var(--m-bg-abyss) !important;
+}
+
+.VPFooter .message {
+  font-size: var(--m-fs-small);
+  color: var(--m-text-dim);
+}
+
+.VPFooter .copyright {
+  font-size: var(--m-fs-small);
+  color: var(--m-text-dim);
+}
+
+/* ══════════════════════════════════════
+   OUTLINE (right-side TOC)
+   ══════════════════════════════════════ */
+
+.VPDocOutlineItem .outline-link {
+  font-size: var(--m-fs-caption) !important;
+  color: var(--m-text-dim) !important;
+  transition: color var(--m-dur-normal) var(--m-ease-default);
+}
+
+.VPDocOutlineItem .outline-link:hover,
+.VPDocOutlineItem .outline-link.active {
+  color: var(--m-gold-primary) !important;
+}
+
+/* ══════════════════════════════════════
+   ATMOSPHERE — GLOBAL BACKGROUND
+   Apply grain + subtle fog to main content area.
+   ══════════════════════════════════════ */
+
+/* Subtle grain on the entire page */
+.Layout {
+  position: relative;
+}
+
+.Layout::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 128px;
+}
+
+/* ══════════════════════════════════════
+   SEARCH MODAL
+   ══════════════════════════════════════ */
+
+.VPLocalSearchBox .shell {
+  background: var(--m-bg-surface) !important;
+  border-color: var(--m-border-default) !important;
+}
+
+.VPLocalSearchBox .search-input {
+  color: var(--m-text-primary) !important;
+  font-family: var(--m-font-body) !important;
+}
+
+.VPLocalSearchBox .result .title {
+  color: var(--m-text-primary) !important;
+}
+
+.VPLocalSearchBox .result.selected {
+  background: var(--m-gold-glow) !important;
+  border-color: var(--m-gold-dim) !important;
+}
+
+/* ══════════════════════════════════════
+   LANGUAGE SWITCHER
+   ══════════════════════════════════════ */
+
+.VPNavBarTranslations .title,
+.VPMenuGroup .title {
+  font-family: var(--m-font-body);
+  font-weight: var(--m-fw-semibold);
+  color: var(--m-text-dim);
+}
+
+.VPFlyout .items {
+  background: var(--m-bg-elevated) !important;
+  border-color: var(--m-border-default) !important;
+}
+
+/* ══════════════════════════════════════
+   GAME-SPECIFIC COMPONENTS
+   (Carried forward from existing custom.css)
+   ══════════════════════════════════════ */
+
+/* Rarity colors */
+.rarity-ssr { color: var(--m-rarity-ssr); font-weight: var(--m-fw-bold); }
+.rarity-sr  { color: var(--m-rarity-sr);  font-weight: var(--m-fw-bold); }
+.rarity-r   { color: var(--m-rarity-r);   font-weight: var(--m-fw-bold); }
+
+/* Realm badges */
+.realm-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: var(--m-radius-md);
+  font-size: 0.85em;
+  font-weight: var(--m-fw-semibold);
+  font-family: var(--m-font-body);
+}
+.realm-chaos  { background: rgba(197, 163, 86, 0.15); color: var(--m-gold-light); }
+.realm-aequor { background: rgba(58, 107, 107, 0.15); color: #5dade2; }
+.realm-caro   { background: rgba(139, 58, 58, 0.15);  color: #ec7063; }
+.realm-ultra  { background: rgba(107, 58, 139, 0.15);  color: #bb8fce; }
+
+/* Card type badges */
+.card-type-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--m-radius-md);
+  font-size: 0.85em;
+  font-weight: var(--m-fw-medium);
+}
+.card-command { background: rgba(197, 163, 86, 0.12); color: var(--m-gold-light); }
+.card-spirit  { background: rgba(226, 201, 126, 0.12); color: #f0e6c8; }
+.card-madness { background: rgba(194, 90, 74, 0.12);  color: #ec7063; }
+
+/* Card grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--m-sp-4);
+  margin: var(--m-sp-4) 0;
+}
+
+.card {
+  background: var(--m-bg-surface);
+  border: 1px solid var(--m-border-subtle);
+  border-radius: var(--m-radius-lg);
+  padding: var(--m-sp-4);
+  transition: all var(--m-dur-normal) var(--m-ease-default);
+}
+.card:hover {
+  border-color: var(--m-border-hover);
+  box-shadow: var(--m-shadow-glow);
+}
+
+/* Stat table */
+.stat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.stat-table th,
+.stat-table td {
+  padding: var(--m-sp-2) var(--m-sp-3);
+  border: 1px solid var(--m-border-subtle);
+  text-align: left;
+}
+.stat-table th {
+  background: var(--m-bg-surface);
+  font-weight: var(--m-fw-semibold);
+  font-family: var(--m-font-body);
+  font-size: var(--m-fs-caption);
+  color: var(--m-text-dim);
+  letter-spacing: var(--m-ls-caps);
+  text-transform: uppercase;
+}
+
+/* Madness bar */
+.madness-bar {
+  height: 8px;
+  background: linear-gradient(90deg, var(--m-realm-caro), var(--m-gold-primary));
+  border-radius: var(--m-radius-md);
+}
+
+/* Arithmetica cost */
+.arithmetica-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 6px;
+  background: var(--m-gold-glow);
+  color: var(--m-gold-primary);
+  border-radius: var(--m-radius-sm);
+  font-size: 0.8em;
+  font-weight: var(--m-fw-bold);
+  font-family: var(--m-font-code);
+}
+
+/* Server badges */
+.server-badge {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: var(--m-radius-sm);
+  font-size: 0.75em;
+  font-weight: var(--m-fw-semibold);
+}
+.server-cn     { background: rgba(194, 90, 74, 0.12);  color: #ec7063; }
+.server-global { background: rgba(122, 173, 90, 0.12); color: #7aad5a; }
+.server-jp     { background: rgba(226, 201, 126, 0.12); color: var(--m-gold-light); }
+.server-tw     { background: rgba(155, 89, 182, 0.12); color: #bb8fce; }
+
+/* Giscus */
+.giscus, .giscus-frame { width: 100%; }
+
+/* ══════════════════════════════════════
+   SCROLLBAR
+   ══════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--m-bg-abyss);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--m-border-default);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--m-border-hover);
+}
+
+/* ══════════════════════════════════════
+   MOBILE OVERRIDES
+   ══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .vp-doc h1 { font-size: 22px; }
+  .vp-doc h2 { font-size: 17px; }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ensure mobile nav gets glass effect */
+  .VPNavBar.has-sidebar .curtain::before {
+    background: rgba(10, 11, 16, 0.92) !important;
+  }
+}
