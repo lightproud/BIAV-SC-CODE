@@ -1,12 +1,12 @@
 # 忘却前夜 社区日报 2026-04-01
 
-> 采集时间：2026-04-01 05:59 UTC+8
+> 采集时间：2026-04-01 07:50 UTC+8
 
 ## 总览
 
 | 平台 | 数据条数 |
 |------|----------|
-| Bilibili | 0（沉默）|
+| Bilibili | 8 |
 | Discord | 0（沉默）|
 | NGA | 0（沉默）|
 | Official | 0（沉默）|
@@ -16,6 +16,14 @@
 | Twitter | 0（沉默）|
 | YouTube | 0（沉默）|
 
+## Bilibili
+
+1. ［相位］一天出一把，一把爽一天 — engagement: 509
+2. 莫斯5分49秒速通容灾5-5，一镜到底 — engagement: 404
+3. 【忘却前夜Morimens】愚人节故事 — engagement: 312
+4. 【忘却前夜】10超维不借人融灾禁区425 — engagement: 182
+5. [忘却前夜强度向]莫丝，最适合当一突的一集 — engagement: 117
+
 ## 沉默平台
 
-Bilibili, Discord, NGA, Official, Reddit, Steam, TapTap, Twitter, YouTube
+Discord, NGA, Official, Reddit, Steam, TapTap, Twitter, YouTube
