@@ -1,10 +1,13 @@
 {
   "date": "2025-12-17",
-  "messages": 91,
+  "messages": 127,
   "unique_authors": 13,
-  "reactions_total": 72,
-  "attachments": 14,
+  "reactions_total": 77,
+  "attachments": 24,
   "channel_activity": {
+    "如果想打400（）": 30,
+    "Team Guidance/Character Investment Suggestions": 1,
+    "Team guidance - Dupe suggestions - General questions": 5,
     "线上问题修复公告": 3,
     "Who Ryker's Designer pls come talk ?": 4,
     "💭「Processing」Would be nice for autoplay to remain turned on after finishing a stage.": 1,
@@ -27,6 +30,10 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "0": 4,
+    "2": 36,
+    "3": 12,
+    "4": 12,
     "15": 5,
     "18": 2,
     "16": 23,
@@ -38,16 +45,13 @@
     "7": 1,
     "10": 3,
     "22": 10,
-    "3": 3,
-    "2": 12,
-    "0": 2,
     "12": 1,
     "14": 1,
-    "4": 11,
     "8": 2
   },
   "message_types": {
-    "0": 3
+    "0": 30,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -114,6 +118,20 @@
       "channel": ""
     },
     {
+      "id": "1450674803781406770",
+      "content": "抽啥都要歪两次我真没招了<:takenotes:1357186646294138890>",
+      "author": "hhhh098962",
+      "reactions": 2,
+      "channel": "如果想打400（）"
+    },
+    {
+      "id": "1450675105675083806",
+      "content": "二十多个金就一个图鲁是限定",
+      "author": "hhhh098962",
+      "reactions": 2,
+      "channel": "如果想打400（）"
+    },
+    {
       "id": "1450843048732004362",
       "content": "Autoplay turning off after every stage is annoying and its strange that keeping ",
       "author": "iwthahe",
@@ -126,6 +144,13 @@
       "author": "void_1546.",
       "reactions": 2,
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
+    },
+    {
+      "id": "1450674493017034923",
+      "content": "任重道远啊<:dead:1356082627509092372>",
+      "author": "hhhh098962",
+      "reactions": 1,
+      "channel": "如果想打400（）"
     },
     {
       "id": "1450913924047180012",
@@ -166,27 +191,6 @@
       "id": "1450889611776626739",
       "content": "我睡前會\n再讀一次\n原因我不說",
       "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1450889619926417470",
-      "content": "阿沒辦法補上🌿",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1450889704663683254",
-      "content": "看來只能補在底下🥀",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": "異端品鑑結尾（皮杜向有黃車描述"
-    },
-    {
-      "id": "1450910291771785246",
-      "content": "<:emoji_21:1448545489933832245> <:emoji_21:1448545489933832245> <:emoji_21:14485",
-      "author": "souri.10244",
       "reactions": 1,
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
     }

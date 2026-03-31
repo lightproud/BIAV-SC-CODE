@@ -1,10 +1,14 @@
 {
   "date": "2026-01-17",
-  "messages": 19,
-  "unique_authors": 5,
-  "reactions_total": 21,
+  "messages": 31,
+  "unique_authors": 10,
+  "reactions_total": 27,
   "attachments": 14,
   "channel_activity": {
+    "Ms Dean?": 3,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 3,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu": 5,
     "Art dump thread": 1,
     "Thank you for everything": 1,
     "融灾王关血量伤害“bug”": 2,
@@ -16,18 +20,25 @@
     "1193859503096070234": 1
   },
   "hourly_activity": {
+    "15": 2,
+    "21": 1,
+    "1": 2,
+    "4": 2,
+    "10": 1,
+    "17": 1,
+    "12": 2,
+    "13": 2,
+    "14": 5,
     "16": 1,
     "9": 1,
     "19": 2,
-    "14": 4,
-    "13": 1,
     "6": 2,
     "7": 3,
-    "8": 4,
-    "12": 1
+    "8": 4
   },
   "message_types": {
-    "0": 1
+    "0": 11,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -43,6 +54,13 @@
       "author": "kiriwoamizaki",
       "reactions": 9,
       "channel": "Art dump thread"
+    },
+    {
+      "id": "1462084440845975824",
+      "content": "I hope she is a caro support that can help ease the burden on Thais",
+      "author": "angy_24_s",
+      "reactions": 6,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
     },
     {
       "id": "1462054643944394843",

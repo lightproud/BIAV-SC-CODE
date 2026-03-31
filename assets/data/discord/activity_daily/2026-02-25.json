@@ -1,10 +1,12 @@
 {
   "date": "2026-02-25",
-  "messages": 802,
+  "messages": 804,
   "unique_authors": 57,
-  "reactions_total": 151,
-  "attachments": 66,
+  "reactions_total": 153,
+  "attachments": 68,
   "channel_activity": {
+    "V2.4.2 版本前瞻 ┊ Version Outlook": 1,
+    "想健檢+請問這周抽那些池子": 1,
     "Happy Cat Day! || Doresain x Sylvester": 1,
     "✅「Answered」Memory leaks": 3,
     "✅「Resolved」Sorry, it was my mistake.": 5,
@@ -35,6 +37,8 @@
     "🔸阵容构建": 4
   },
   "hourly_activity": {
+    "11": 4,
+    "1": 24,
     "3": 58,
     "6": 40,
     "9": 36,
@@ -54,14 +58,12 @@
     "17": 50,
     "21": 3,
     "18": 34,
-    "1": 23,
     "19": 2,
     "0": 8,
-    "11": 3,
     "12": 103
   },
   "message_types": {
-    "19": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -149,6 +151,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1476033593644945450",
+      "content": "...6",
+      "author": "fungi_01",
+      "reactions": 2,
+      "channel": "想健檢+請問這周抽那些池子"
+    },
+    {
       "id": "1476100055562846290",
       "content": "I'm too late! Let me see...<:Helot_slack_off:1459092159465521184>",
       "author": "morimensstaff01",
@@ -194,13 +203,6 @@
       "id": "1476070123977834597",
       "content": "",
       "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1476089642049867806",
-      "content": "可以給我萌新幾個嗎",
-      "author": "universe.dark",
       "reactions": 2,
       "channel": "🔸綜合討論"
     }

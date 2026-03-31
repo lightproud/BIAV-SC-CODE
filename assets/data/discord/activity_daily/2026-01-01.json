@@ -1,10 +1,13 @@
 {
   "date": "2026-01-01",
-  "messages": 169,
+  "messages": 173,
   "unique_authors": 8,
-  "reactions_total": 90,
+  "reactions_total": 98,
   "attachments": 5,
   "channel_activity": {
+    "Cooking with Doresain - A Doresain Guide": 1,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 2,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
     "I errr.... #2": 98,
     "Options to turn off Enlihtens": 1,
     "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 1,
@@ -20,16 +23,17 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
+    "17": 32,
+    "9": 1,
+    "18": 4,
+    "12": 11,
     "14": 93,
     "15": 14,
     "13": 5,
     "2": 1,
     "0": 1,
-    "12": 10,
     "16": 4,
-    "17": 31,
     "21": 1,
-    "18": 3,
     "8": 1,
     "20": 1,
     "10": 1,
@@ -38,8 +42,7 @@
     "5": 1
   },
   "message_types": {
-    "0": 67,
-    "19": 31
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -62,6 +65,13 @@
       "author": "souri.10244",
       "reactions": 16,
       "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1456333059644329984",
+      "content": "https://docs.google.com/presentation/d/1VkEfTeIS2M3Pu02XdlF8BcNy-JJxROy-d_5edqhD",
+      "author": "esserius",
+      "reactions": 8,
+      "channel": "Cooking with Doresain - A Doresain Guide"
     },
     {
       "id": "1456257856339709983",
@@ -172,13 +182,6 @@
       "id": "1456333554119213159",
       "content": "哦你是说命轮效果和属性",
       "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
-    },
-    {
-      "id": "1456334585347707045",
-      "content": "沒那麼爛（",
-      "author": "void_1546.",
       "reactions": 1,
       "channel": "Doorstain's dissoluted siste Rey-Khan OC kit (Meme sorta)"
     }

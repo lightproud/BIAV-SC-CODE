@@ -1,10 +1,26 @@
 {
   "date": "2025-10-05",
-  "messages": 65,
-  "unique_authors": 12,
-  "reactions_total": 68,
-  "attachments": 18,
+  "messages": 99,
+  "unique_authors": 20,
+  "reactions_total": 189,
+  "attachments": 35,
   "channel_activity": {
+    "Kitty kat abs": 1,
+    "Pickdog": 1,
+    "[Morimens ASMR Drama] Deprivation Echo Chamber": 1,
+    "Pickman's Chaos": 1,
+    "Into Pickman's Reality": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!": 3,
+    "I hit a wall need help to build a team": 4,
+    "How does the deck cycle restriction work?": 1,
+    "Reality Verge options": 2,
+    "Do old covenants get substats after I turn acc lv 55?": 4,
+    "Help teambuilding for 9-11": 1,
+    "D-Effect Zone Help": 9,
+    "What do I build from here": 1,
+    "New Player": 2,
+    "Need help building 5 teams for D-Zone": 1,
     "💭「Processing」English translation not translation to english. (Pc version)": 2,
     "✅「Answered」Please consider making the archive permanent when purchased": 9,
     "✅「Answered」Add a payment processor for EN": 8,
@@ -23,33 +39,67 @@
     "超维界域唤醒体DIY": 1
   },
   "hourly_activity": {
-    "8": 4,
-    "4": 1,
-    "13": 9,
-    "16": 1,
-    "18": 3,
+    "16": 2,
+    "23": 1,
+    "19": 3,
+    "18": 4,
+    "10": 6,
+    "1": 8,
+    "9": 3,
+    "17": 2,
+    "12": 11,
+    "15": 2,
+    "3": 2,
+    "13": 12,
+    "14": 1,
+    "2": 10,
+    "8": 5,
+    "4": 2,
+    "5": 1,
     "20": 4,
-    "1": 1,
-    "2": 8,
     "7": 15,
-    "12": 7,
-    "10": 4,
     "11": 4,
-    "17": 1,
-    "21": 1,
-    "19": 2
+    "21": 1
   },
   "message_types": {
-    "19": 9,
-    "0": 30
+    "0": 31,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1424537251811164232",
+      "content": "somebody get their dog, I think he's armed...(I'll see myself out)",
+      "author": "dustsleeper_",
+      "reactions": 34,
+      "channel": "Pickdog"
+    },
+    {
+      "id": "1424468103512854629",
+      "content": "This took forever but I really enjoyed drawing pickman again :3 \nUID: 01135006",
+      "author": "kaisopod",
+      "reactions": 28,
+      "channel": "Pickman's Chaos"
+    },
     {
       "id": "1424346758393102376",
       "content": "都不知道畫畫還得要會貼磁磚 爽了\n\nUID：100047306",
       "author": "carrot_chicken",
       "reactions": 25,
       "channel": "你應當征服青空，直至墜落海洋"
+    },
+    {
+      "id": "1424345397081542767",
+      "content": "This took way too long... Hope you guys like it at least🥹\nUID: 101168998",
+      "author": "dustsleeper_",
+      "reactions": 24,
+      "channel": "Into Pickman's Reality"
+    },
+    {
+      "id": "1424475507080167518",
+      "content": "https://www.youtube.com/watch?v=dvMpXNgCRNs\n\n*Thou hast fallen in a deep slumber",
+      "author": "inana_istar",
+      "reactions": 18,
+      "channel": "[Morimens ASMR Drama] Deprivation Echo Chamber"
     },
     {
       "id": "1424500221433614507",
@@ -64,6 +114,20 @@
       "author": "jueduishigemeng",
       "reactions": 12,
       "channel": "图鲁的梦"
+    },
+    {
+      "id": "1424439934147760169",
+      "content": "UID: 101149262\n1 participation award please<:pray:1400771650064089112> \nWanted t",
+      "author": "whydoihavetodothis69",
+      "reactions": 7,
+      "channel": "Kitty kat abs"
+    },
+    {
+      "id": "1424444670964138037",
+      "content": "can the pack just be 740 or 800 instead of 788 <:dead:1356082627509092372>",
+      "author": "jollysquire",
+      "reactions": 6,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
       "id": "1424512018257547345",
@@ -99,6 +163,34 @@
       "author": "tsubaki9884",
       "reactions": 2,
       "channel": "你應當征服青空，直至墜落海洋"
+    },
+    {
+      "id": "1424407488987398144",
+      "content": "Alright good to know. So I can level them up without worrying about them getting",
+      "author": "blumenwiz",
+      "reactions": 1,
+      "channel": "Do old covenants get substats after I turn acc lv 55?"
+    },
+    {
+      "id": "1424342684075819158",
+      "content": "Still had to burn 2 gnosis, but managed to punch through with a couple tries aft",
+      "author": "sra.esqueleto",
+      "reactions": 1,
+      "channel": "Help teambuilding for 9-11"
+    },
+    {
+      "id": "1424216820423852112",
+      "content": "just try out the teams and see if you like them.\n\nBoth Winkle and Faint are heav",
+      "author": "climbkaly",
+      "reactions": 1,
+      "channel": "D-Effect Zone Help"
+    },
+    {
+      "id": "1424331945260879968",
+      "content": "I was able to level up Faint and I love her, stacking Death Resist feels like ch",
+      "author": "momomigo",
+      "reactions": 1,
+      "channel": "D-Effect Zone Help"
     },
     {
       "id": "1424313768569081898",

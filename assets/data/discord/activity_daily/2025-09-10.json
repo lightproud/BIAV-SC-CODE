@@ -1,10 +1,23 @@
 {
   "date": "2025-09-10",
-  "messages": 69,
-  "unique_authors": 13,
-  "reactions_total": 52,
-  "attachments": 9,
+  "messages": 118,
+  "unique_authors": 17,
+  "reactions_total": 72,
+  "attachments": 23,
   "channel_activity": {
+    "Shhh… he’s sleeping~": 2,
+    "Happy Belated Birthday, Karen ♡": 2,
+    "Pieta": 3,
+    "Flares' Awakener Review : Pickman": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
+    "Flares' Comprehensive Beginner Guide to Morimens": 19,
+    "Need help with team building and game in general": 4,
+    "Team Building Help": 5,
+    "Looking for General Advice": 3,
+    "🥺 Need help with building 5 Dtide teams": 1,
+    "Team comp troubles": 4,
+    "Does the vulnerable count stack?": 2,
+    "(moved to #gameplay-guide)": 2,
     "V2.3.2.2 在线维护公告": 3,
     "前瞻：相位对弈改动 Traphase Changes": 3,
     "✅「Answered」Dialogue Scroll Was a Mistake": 5,
@@ -29,21 +42,29 @@
     "1415230955387621397": 1
   },
   "hourly_activity": {
-    "12": 14,
-    "3": 5,
+    "13": 5,
+    "16": 6,
+    "12": 16,
+    "7": 13,
+    "8": 15,
+    "0": 7,
+    "3": 6,
+    "11": 2,
+    "10": 5,
+    "14": 5,
+    "17": 3,
+    "2": 1,
+    "4": 1,
+    "5": 1,
     "6": 12,
-    "7": 6,
-    "13": 2,
     "15": 5,
-    "16": 5,
     "21": 1,
-    "8": 1,
-    "9": 14,
-    "14": 4
+    "9": 14
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "0": 33,
+    "19": 14,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -61,11 +82,39 @@
       "channel": ""
     },
     {
+      "id": "1415309147179843716",
+      "content": "(reupload)\n\nPixiv: navura https://www.pixiv.net/users/65421453",
+      "author": "maya014632",
+      "reactions": 17,
+      "channel": "Happy Belated Birthday, Karen ♡"
+    },
+    {
       "id": "1415241889841549343",
       "content": "感谢建议，目前我们计划采纳其中一部分。具体落地大家可以参考后续的公告🙏",
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「已回答」预览角色的时候加个显示该角色满级满破数据的选项"
+    },
+    {
+      "id": "1415246558873784350",
+      "content": "In theory one can edit the title, but is still a minor thing, is np.",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "Pieta"
+    },
+    {
+      "id": "1415299557079781408",
+      "content": "oh is sanga not the main dps? 😂 I’ve just been stacking shields using her exalt ",
+      "author": "heartdeyna",
+      "reactions": 1,
+      "channel": "Flares' Comprehensive Beginner Guide to Morimens"
+    },
+    {
+      "id": "1415296046828884089",
+      "content": "https://discord.com/channels/1131791637933199470/1412201921913032714\nI suggest y",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "🥺 Need help with building 5 Dtide teams"
     },
     {
       "id": "1415313363319259247",

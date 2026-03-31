@@ -1,10 +1,14 @@
 {
   "date": "2025-05-31",
-  "messages": 15,
-  "unique_authors": 7,
-  "reactions_total": 2,
+  "messages": 67,
+  "unique_authors": 45,
+  "reactions_total": 16,
   "attachments": 7,
   "channel_activity": {
+    "🎊官周通販：淘寶全球可購！": 44,
+    "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum": 2,
+    "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview": 1,
+    "求配隊": 5,
     "✅「已回答」旺达不进普池吗": 2,
     "✅「已回答」切换头像时头像选择界面会变成这样": 4,
     "✅「Answered」Dungeon State Error": 1,
@@ -13,24 +17,73 @@
     "赫伯曼：孩子们你们的学长回来了": 1
   },
   "hourly_activity": {
-    "11": 2,
-    "7": 2,
-    "8": 1,
-    "13": 1,
-    "4": 2,
-    "12": 7
+    "0": 5,
+    "1": 1,
+    "2": 2,
+    "3": 5,
+    "4": 6,
+    "5": 4,
+    "6": 6,
+    "7": 5,
+    "8": 2,
+    "9": 3,
+    "10": 2,
+    "11": 5,
+    "12": 9,
+    "14": 4,
+    "16": 1,
+    "17": 2,
+    "18": 1,
+    "19": 1,
+    "22": 2,
+    "13": 1
   },
   "message_types": {
-    "0": 11,
-    "19": 3
+    "0": 48,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1378500396062081136",
+      "content": "How about a Ryker themed poker set? I think that would be perfect merch for it.",
+      "author": "suver_",
+      "reactions": 6,
+      "channel": "🎊官周通販：淘寶全球可購！"
+    },
+    {
+      "id": "1378501200365883514",
+      "content": "Pillows or a blanket in the Tulu style are also possible ig",
+      "author": "suver_",
+      "reactions": 4,
+      "channel": "🎊官周通販：淘寶全球可購！"
+    },
+    {
+      "id": "1378243238200213505",
+      "content": "空的几天直接发打满的资源好吗好的",
+      "author": "287405tjy_28066",
+      "reactions": 2,
+      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
+    },
     {
       "id": "1378280151820931122",
       "content": "做切头像成就时发现的",
       "author": "muliupan",
       "reactions": 2,
       "channel": "✅「已回答」切换头像时头像选择界面会变成这样"
+    },
+    {
+      "id": "1378171398295523340",
+      "content": "出萊克的硬幣好像也蠻有趣的",
+      "author": "diito_diito",
+      "reactions": 1,
+      "channel": "🎊官周通販：淘寶全球可購！"
+    },
+    {
+      "id": "1378378930985242734",
+      "content": "I would love to see an artbook, or maybe a book about the stories and lore in th",
+      "author": "moriii_zzz",
+      "reactions": 1,
+      "channel": "🎊官周通販：淘寶全球可購！"
     }
   ]
 }

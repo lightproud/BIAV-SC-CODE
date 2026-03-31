@@ -1,10 +1,13 @@
 {
   "date": "2025-05-10",
-  "messages": 29,
+  "messages": 33,
   "unique_authors": 7,
-  "reactions_total": 18,
-  "attachments": 5,
+  "reactions_total": 64,
+  "attachments": 8,
   "channel_activity": {
+    "Ramona": 2,
+    "TULU": 1,
+    "Morimens lore video in Thai concering Dissolution!": 1,
     "✅前瞻：1.5周年～活动福利篇": 11,
     "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 1,
     "✅「Answered」Region lock..": 1,
@@ -17,12 +20,14 @@
     "女仆日当然是……": 3
   },
   "hourly_activity": {
+    "15": 1,
+    "20": 1,
+    "19": 5,
+    "11": 2,
     "7": 3,
     "9": 5,
     "10": 5,
     "12": 2,
-    "19": 4,
-    "11": 1,
     "17": 1,
     "18": 3,
     "0": 1,
@@ -30,10 +35,23 @@
     "6": 3
   },
   "message_types": {
-    "0": 9,
-    "19": 2
+    "0": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1370844847681835080",
+      "content": "",
+      "author": "deldry8",
+      "reactions": 26,
+      "channel": "TULU"
+    },
+    {
+      "id": "1370780361834889286",
+      "content": "",
+      "author": "maya014632",
+      "reactions": 19,
+      "channel": "Ramona"
+    },
     {
       "id": "1370652155362676796",
       "content": "只画完一半但是为了赶上女仆日提前腿",
@@ -47,6 +65,13 @@
       "author": "Deleted User",
       "reactions": 2,
       "channel": "✅前瞻：1.5周年～活动福利篇"
+    },
+    {
+      "id": "1370865918602903554",
+      "content": "Cute <:point:1356053112292511815>",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "Ramona"
     },
     {
       "id": "1370665273966723173",

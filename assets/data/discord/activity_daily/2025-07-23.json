@@ -1,10 +1,16 @@
 {
   "date": "2025-07-23",
-  "messages": 105,
+  "messages": 118,
   "unique_authors": 25,
-  "reactions_total": 446,
-  "attachments": 36,
+  "reactions_total": 474,
+  "attachments": 43,
   "channel_activity": {
+    "Thais Warm up": 1,
+    "Silly Ryamonya art": 1,
+    "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 2,
+    "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests": 5,
+    "Should I make a new account": 1,
+    "Best team for herlot": 3,
     "校猫碎碎念#Translation Plan Update 本地化计划变更": 14,
     "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 1,
     "✅「Answered」faros e3 text wrong": 3,
@@ -31,29 +37,29 @@
     "1390375103707218041": 1
   },
   "hourly_activity": {
-    "17": 8,
+    "13": 1,
+    "8": 25,
+    "17": 9,
+    "19": 4,
+    "4": 8,
+    "5": 13,
+    "11": 2,
+    "14": 4,
+    "16": 1,
+    "7": 12,
+    "9": 5,
     "18": 6,
-    "19": 3,
     "23": 2,
     "3": 8,
-    "8": 24,
     "6": 8,
-    "7": 11,
-    "14": 3,
     "15": 2,
-    "5": 12,
     "10": 1,
     "0": 3,
-    "2": 4,
-    "4": 7,
-    "11": 1,
-    "9": 2
+    "2": 4
   },
   "message_types": {
-    "0": 5,
-    "6": 2,
-    "19": 7,
-    "4": 1
+    "0": 10,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -62,6 +68,13 @@
       "author": "game.producer.light",
       "reactions": 357,
       "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+    },
+    {
+      "id": "1397503351905583154",
+      "content": "",
+      "author": "maya014632",
+      "reactions": 23,
+      "channel": "Silly Ryamonya art"
     },
     {
       "id": "1397433385500151888",
@@ -111,6 +124,13 @@
       "author": "dittoqwq",
       "reactions": 4,
       "channel": "画一个杜勒"
+    },
+    {
+      "id": "1397619603890241578",
+      "content": "杜需加強 不夠力",
+      "author": "arthasiv",
+      "reactions": 3,
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
     },
     {
       "id": "1397494931173412907",
@@ -176,25 +196,11 @@
       "channel": "💭「处理中」???"
     },
     {
-      "id": "1397410749449764905",
-      "content": "Thank you for providing the information. The programmer is already investigating",
-      "author": "morimensstaff01",
+      "id": "1397451722728935515",
+      "content": "Awesome my favorite artifact",
+      "author": "aslechi",
       "reactions": 1,
-      "channel": "✅「Answered」{SKErrorDomain,0} when trying to top-up on iPhone!"
-    },
-    {
-      "id": "1397512203560554519",
-      "content": "Thank you for your feedback. We will adjust this part of the text to be clearer ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Incorrect Description of Realm Specific Gift of Knowledge Reward Items"
-    },
-    {
-      "id": "1397449727338876988",
-      "content": "被暗算了沒有之前順滑的錄影可以對比<:scared2:1356085635374383145>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "✅「已回答」點讚紀錄變卡頓了"
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
     }
   ]
 }

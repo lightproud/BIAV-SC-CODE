@@ -1,10 +1,13 @@
 {
   "date": "2025-07-04",
-  "messages": 37,
+  "messages": 46,
   "unique_authors": 9,
-  "reactions_total": 83,
-  "attachments": 5,
+  "reactions_total": 87,
+  "attachments": 10,
   "channel_activity": {
+    "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 2,
+    "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!": 2,
+    "Team for progressing main story": 5,
     "V2.2.3.1 在線維護公告": 1,
     "✅校猫碎碎念#近况分享": 1,
     "✅「Answered」I just started, How do I fix this": 2,
@@ -16,6 +19,9 @@
     "1390375103707218041": 15
   },
   "hourly_activity": {
+    "7": 4,
+    "3": 4,
+    "4": 1,
     "2": 3,
     "20": 3,
     "21": 1,
@@ -28,8 +34,8 @@
     "11": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 1
+    "0": 7,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -73,6 +79,13 @@
       "author": "morimens_15",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1390597446832492667",
+      "content": "✨ 嗨大家好，V2.2.2【窥视灵魂之旅】二创征集获奖名单公布！\n感谢大家的精彩创作~奖励将在下周五前发至邮箱\n*注：个别作品因不符合投稿规则，故未参与评价。在",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!"
     },
     {
       "id": "1390795442781950003",

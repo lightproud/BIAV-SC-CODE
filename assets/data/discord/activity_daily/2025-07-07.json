@@ -1,10 +1,14 @@
 {
   "date": "2025-07-07",
-  "messages": 107,
+  "messages": 132,
   "unique_authors": 17,
-  "reactions_total": 755,
-  "attachments": 23,
+  "reactions_total": 849,
+  "attachments": 33,
   "channel_activity": {
+    "My Caecus art": 2,
+    "*Translated & Credited* cn Fan Art Reposts": 11,
+    "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 4,
+    "Which is the better account?": 8,
     "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 45,
     "关于氪金相关的问题。": 1,
     "✅「Answered」I just started, How do I fix this": 4,
@@ -23,15 +27,17 @@
     "1390375103707218041": 15
   },
   "hourly_activity": {
-    "16": 36,
-    "17": 4,
+    "8": 7,
+    "14": 11,
+    "17": 5,
+    "19": 11,
+    "20": 1,
+    "4": 7,
+    "15": 4,
+    "16": 40,
     "18": 2,
-    "19": 7,
-    "14": 6,
     "3": 15,
-    "8": 3,
     "2": 8,
-    "4": 5,
     "7": 1,
     "5": 8,
     "6": 3,
@@ -41,10 +47,8 @@
     "10": 6
   },
   "message_types": {
-    "0": 32,
-    "19": 11,
-    "4": 1,
-    "6": 1
+    "0": 20,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -53,6 +57,27 @@
       "author": "morimensstaff02",
       "reactions": 709,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1391692648544206870",
+      "content": "",
+      "author": "tachwedd_glaw",
+      "reactions": 45,
+      "channel": "My Caecus art"
+    },
+    {
+      "id": "1391871778984558633",
+      "content": "Found some rare chibis of other characters \nlink to OG post: https://x.com/ahapp",
+      "author": "ev_6185",
+      "reactions": 16,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391788508456419499",
+      "content": "<@861369938534727692>  Sorry, life events got the better of me yesterday but her",
+      "author": "ev_6185",
+      "reactions": 14,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
       "id": "1391822763840241877",
@@ -83,11 +108,46 @@
       "channel": "《他們的女兒》"
     },
     {
+      "id": "1391789671771541535",
+      "content": "A Helot solo by the same artist, they're singlehandedly carrying the Helot fan a",
+      "author": "ev_6185",
+      "reactions": 4,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391791564451483759",
+      "content": "There's also this Helot chibi I found that has a dazed cuteness to it. \nlink to ",
+      "author": "ev_6185",
+      "reactions": 4,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391869115710439424",
+      "content": "<@1389312961574866995> It was actually hard to find quality art of Goliath in th",
+      "author": "ev_6185",
+      "reactions": 4,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
       "id": "1391650735468580894",
       "content": "> 大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第11期（第38期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
       "author": "menoctus",
       "reactions": 4,
       "channel": "关卡地图「融灾禁区」总览38期·星辰篇"
+    },
+    {
+      "id": "1391869857343082598",
+      "content": "Thank you so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,so,s",
+      "author": "chev_ron",
+      "reactions": 2,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391697903747076157",
+      "content": "嗯是本期，是我誤認為是上週五發了哈哈。這樣就沒事啦。謝謝。",
+      "author": "ev_6185",
+      "reactions": 2,
+      "channel": "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!"
     },
     {
       "id": "1391823411600429107",
@@ -104,53 +164,32 @@
       "channel": "2026忘却前夜新春会节目预告:道理剧场之误入弥大"
     },
     {
+      "id": "1391693111461285909",
+      "content": "https://tenor.com/view/usher-there-goes-my-baby-music-video-babygirl-mv-gif-2331",
+      "author": "prizemauv",
+      "reactions": 1,
+      "channel": "My Caecus art"
+    },
+    {
+      "id": "1391789221953405038",
+      "content": "THanks og",
+      "author": "ash2k25",
+      "reactions": 1,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391839735156310140",
+      "content": "super cute",
+      "author": "ash2k25",
+      "reactions": 1,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
       "id": "1391816840262582443",
       "content": "延長朵兒卡池一週也可以<:hehe:1357185439089295390>",
       "author": "shchng.",
       "reactions": 1,
       "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
-    },
-    {
-      "id": "1391823633273327727",
-      "content": "a shiny new credit card limit!",
-      "author": "aettitude",
-      "reactions": 1,
-      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
-    },
-    {
-      "id": "1391617484104269924",
-      "content": "Thank you very much, it has been very helpful to us❤️",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」2-7, Bugged Dialogue"
-    },
-    {
-      "id": "1391621768338214935",
-      "content": "okay! Thank you",
-      "author": "queenmushrooms",
-      "reactions": 1,
-      "channel": "💭「Processing」2-7, Bugged Dialogue"
-    },
-    {
-      "id": "1391794013568368653",
-      "content": "",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1391794429798383627",
-      "content": "萌萌金毛女就在这里",
-      "author": "yingmai_",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1391722800758132816",
-      "content": "~~别去，全是男同（）~~",
-      "author": "flarinsidia",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

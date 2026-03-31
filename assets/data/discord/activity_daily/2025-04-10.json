@@ -1,10 +1,13 @@
 {
   "date": "2025-04-10",
-  "messages": 67,
+  "messages": 85,
   "unique_authors": 10,
-  "reactions_total": 12,
-  "attachments": 6,
+  "reactions_total": 56,
+  "attachments": 11,
   "channel_activity": {
+    "Dive Bomb Goliath": 1,
+    "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide": 9,
+    "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請": 8,
     "[克蘇魯神話元素] 溫柯爾裡面的人": 5,
     "✅校猫碎碎念#近况分享": 9,
     "✅「已回答」如图所示": 2,
@@ -19,31 +22,81 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "7": 12,
+    "7": 13,
+    "9": 5,
+    "10": 7,
+    "12": 7,
+    "2": 13,
+    "3": 10,
+    "4": 4,
+    "5": 1,
     "8": 3,
-    "9": 2,
     "13": 1,
     "0": 4,
-    "3": 7,
-    "4": 2,
-    "10": 3,
     "15": 1,
-    "2": 11,
     "11": 1,
-    "6": 15,
-    "12": 5
+    "6": 15
   },
   "message_types": {
-    "19": 8,
-    "0": 6
+    "0": 11,
+    "19": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1359710565601251398",
+      "content": "",
+      "author": "maegu",
+      "reactions": 12,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359786260469776395",
+      "content": "<:pray:1356053116260454534> <:pray:1356053116260454534> <:pray:13560531162604545",
+      "author": "mount_fisherman",
+      "reactions": 9,
+      "channel": "Dive Bomb Goliath"
+    },
+    {
+      "id": "1359828080541171834",
+      "content": "It now includes a comprehensive guide to Every HM Chapter 100% clear deathless. ",
+      "author": "flares117",
+      "reactions": 7,
+      "channel": "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide"
+    },
+    {
+      "id": "1359738724702752889",
+      "content": "",
+      "author": ".2.718281828",
+      "reactions": 6,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359722779431276544",
+      "content": "是我們來選評~吼吼！期待大家有趣的腦洞呀🤩 蟲門🙏",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359739814127210556",
+      "content": "",
+      "author": ".2.718281828",
+      "reactions": 4,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
     {
       "id": "1359796322169000088",
       "content": "這裡都出現過遊戲角色跟策劃替身的色圖了",
       "author": "yizilven",
       "reactions": 3,
       "channel": "有关于同人文创作的一些问题"
+    },
+    {
+      "id": "1359762757515481189",
+      "content": "<@443365370271891456>可以的~",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
       "id": "1359687212937248849",

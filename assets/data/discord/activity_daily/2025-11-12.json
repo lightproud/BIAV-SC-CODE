@@ -1,10 +1,21 @@
 {
   "date": "2025-11-12",
-  "messages": 26,
-  "unique_authors": 8,
-  "reactions_total": 36,
-  "attachments": 25,
+  "messages": 77,
+  "unique_authors": 21,
+  "reactions_total": 121,
+  "attachments": 38,
   "channel_activity": {
+    "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 2,
+    "Tulu gif I got from Twitter": 6,
+    "Ramona art i did": 3,
+    "Mango Murphy": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ": 11,
+    "V2.4 诞妄·墨菲情报：命运似衔尾蛇┊About Murphy: Fauxborn: Ouroboros of Fate": 5,
+    "請問推薦先專注練哪些隊伍": 15,
+    "How do i use pollux": 4,
+    "At which Psyche Surge level is Over-Exaltation available?": 1,
+    "Team Help": 1,
     "【考據】第三章中的怪物「嘉爾姆？」的原型": 3,
     "✅「Answered」2nd anniversary suggestion": 1,
     "✅「已回答」还能见到星辰篇的地图吗": 1,
@@ -17,30 +28,59 @@
     "🔸欢乐梗图": 3
   },
   "hourly_activity": {
-    "9": 3,
+    "12": 2,
+    "13": 9,
+    "23": 3,
+    "17": 1,
+    "3": 4,
+    "10": 4,
+    "2": 16,
+    "4": 3,
+    "7": 2,
+    "15": 11,
+    "9": 5,
+    "14": 4,
+    "1": 3,
     "18": 3,
-    "2": 10,
     "6": 1,
     "11": 2,
-    "13": 1,
     "21": 1,
-    "10": 1,
     "20": 1,
     "0": 1,
-    "7": 1,
     "8": 1
   },
   "message_types": {
-    "0": 2,
-    "4": 1
+    "0": 39,
+    "19": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1438152983098425486",
+      "content": "Enjoy :)",
+      "author": "idotly",
+      "reactions": 30,
+      "channel": "Tulu gif I got from Twitter"
+    },
     {
       "id": "1438131912542654515",
       "content": "Right now, the Morimens steam page is still using the trailer and screenshots fr",
       "author": "insigible",
       "reactions": 16,
       "channel": "✅「Answered」Suggestion: Update the Morimens Steam Page's Screenshots/Trailers"
+    },
+    {
+      "id": "1438224950979858503",
+      "content": "Hmm...",
+      "author": "ykarus.obs",
+      "reactions": 15,
+      "channel": "Mango Murphy"
+    },
+    {
+      "id": "1438314180389245058",
+      "content": "uhhh fanart i guess, first time actually locking in with a digital art app",
+      "author": "nothing_of_wisdom",
+      "reactions": 10,
+      "channel": "Ramona art i did"
     },
     {
       "id": "1438054388194213908",
@@ -50,6 +90,27 @@
       "channel": "💭「Processing」Trade Reality Verge for something else"
     },
     {
+      "id": "1438154263086891100",
+      "content": "<:please:1356053110375714817>",
+      "author": "dustsleeper_",
+      "reactions": 8,
+      "channel": "Tulu gif I got from Twitter"
+    },
+    {
+      "id": "1437997393365831732",
+      "content": "我站之前墨菲的配音",
+      "author": "ahong0727",
+      "reactions": 6,
+      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+    },
+    {
+      "id": "1438185604339732631",
+      "content": "官方不回话这个问题很难得到答案 也就期待下你猫会不会把旧的做成替换语音包的模式吧 旧配墨菲确实不赖",
+      "author": "fantuan9711",
+      "reactions": 5,
+      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+    },
+    {
       "id": "1438260199516278967",
       "content": "众所周知 尤乌十分的帅气",
       "author": "ahh_1234567890",
@@ -57,11 +118,53 @@
       "channel": "仔细看 这是一个尤乌"
     },
     {
+      "id": "1438158252373311601",
+      "content": "<@633215996508766229> 有空看梦女吵架还要装死甘霖耐",
+      "author": "fantuan9711",
+      "reactions": 4,
+      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+    },
+    {
       "id": "1438095314757226577",
       "content": "起因是當時給地獄犬oc起名在查閱資料中，在克蘇魯公社的“姆西斯哈”條目中發現了這樣一句話——“原型為北歐神話中的芬里爾”（P3英文克蘇魯wiki也證實了這一點）",
       "author": "flim_of_life_burst",
       "reactions": 3,
       "channel": "【考據】第三章中的怪物「嘉爾姆？」的原型"
+    },
+    {
+      "id": "1438153244848422922",
+      "content": "<:takenotes:1357186646294138890> oh my... I was about to post it",
+      "author": "dustsleeper_",
+      "reactions": 2,
+      "channel": "Tulu gif I got from Twitter"
+    },
+    {
+      "id": "1437999442157637713",
+      "content": "+1",
+      "author": "akalanden",
+      "reactions": 2,
+      "channel": "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ"
+    },
+    {
+      "id": "1438143071995957290",
+      "content": "Sketch for next scene",
+      "author": "j.i9star.",
+      "reactions": 1,
+      "channel": "Working on karma bridge(alsnt) with morimens (wip drawings, editing)"
+    },
+    {
+      "id": "1438015545562628219",
+      "content": "欸<:agree:1400771815076528258>",
+      "author": "suggestion088922",
+      "reactions": 1,
+      "channel": "V2.4 诞妄·墨菲情报：命运似衔尾蛇┊About Murphy: Fauxborn: Ouroboros of Fate"
+    },
+    {
+      "id": "1437983680483037355",
+      "content": "+4",
+      "author": "jollysquire",
+      "reactions": 1,
+      "channel": "At which Psyche Surge level is Over-Exaltation available?"
     },
     {
       "id": "1437985641974599792",

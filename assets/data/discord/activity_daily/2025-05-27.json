@@ -1,10 +1,19 @@
 {
   "date": "2025-05-27",
-  "messages": 71,
+  "messages": 111,
   "unique_authors": 18,
-  "reactions_total": 18,
-  "attachments": 11,
+  "reactions_total": 58,
+  "attachments": 16,
   "channel_activity": {
+    "aomi’s morimens dump": 1,
+    "Helot - Catena": 1,
+    "New Beginner video for players joining during Half Anni.": 1,
+    "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 3,
+    "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 1,
+    "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!": 1,
+    "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum": 29,
+    "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！": 2,
+    "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 1,
     "V2.2.2.1 在線維護公告": 2,
     "✅前瞻：1.5周年～系统优化篇": 1,
     "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 5,
@@ -33,31 +42,76 @@
     "弥萨格校友号码本4.0": 3
   },
   "hourly_activity": {
-    "11": 2,
-    "13": 1,
+    "8": 3,
+    "23": 4,
+    "15": 2,
+    "3": 7,
+    "7": 27,
+    "13": 5,
+    "9": 3,
+    "1": 1,
+    "5": 10,
+    "10": 17,
+    "11": 3,
+    "12": 4,
     "4": 7,
-    "5": 1,
-    "8": 2,
     "14": 2,
-    "15": 1,
-    "3": 6,
-    "7": 25,
-    "12": 3,
     "6": 15,
-    "10": 2,
-    "22": 1,
-    "23": 3
+    "22": 1
   },
   "message_types": {
-    "0": 3
+    "0": 34,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1377069952393281556",
+      "content": "I'm only wearing the base color, I hope to finish soon, I'll upload how it turns",
+      "author": "nicoflan",
+      "reactions": 12,
+      "channel": "Helot - Catena"
+    },
+    {
+      "id": "1376869238618456168",
+      "content": "比起一个个刷，不如是到达里程碑后所有玩家一起获得奖励",
+      "author": "rain_scarlet",
+      "reactions": 7,
+      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
+    },
+    {
+      "id": "1376842250125971547",
+      "content": "murphy wip! also is considered as a render study i guess\n\n||no i didn’t forget t",
+      "author": "aomi_crinklies04",
+      "reactions": 6,
+      "channel": "aomi’s morimens dump"
+    },
+    {
+      "id": "1376869619117330442",
+      "content": "说实话一天被逼着打20次很消磨对游戏的热情",
+      "author": "nowimfaceless",
+      "reactions": 6,
+      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
+    },
+    {
+      "id": "1376920761737941063",
+      "content": "",
+      "author": "__goz__",
+      "reactions": 6,
+      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
+    },
     {
       "id": "1376863199718277140",
       "content": ".",
       "author": ".galeroar",
       "reactions": 5,
       "channel": "💭「處理中」塔薇放功了"
+    },
+    {
+      "id": "1376869443321466922",
+      "content": "hh其实老东西打的也很累，虽然能通关但是真的很需要减负扫荡……新人我都不敢想，这活动就是对新人很不友好",
+      "author": "nowimfaceless",
+      "reactions": 2,
+      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
     },
     {
       "id": "1376930764788203611",
@@ -86,6 +140,13 @@
       "author": "foxblood13",
       "reactions": 2,
       "channel": "1.5 Event Grind"
+    },
+    {
+      "id": "1376896560972955711",
+      "content": "<:24_clown:1374289675417686016>",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
     },
     {
       "id": "1377061906795331704",

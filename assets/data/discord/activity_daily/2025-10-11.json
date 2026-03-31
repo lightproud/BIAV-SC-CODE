@@ -1,10 +1,17 @@
 {
   "date": "2025-10-11",
-  "messages": 143,
+  "messages": 169,
   "unique_authors": 19,
-  "reactions_total": 129,
-  "attachments": 31,
+  "reactions_total": 136,
+  "attachments": 41,
   "channel_activity": {
+    "Standard Tier List - Early and Endgame": 9,
+    "刚玩一个月小萌新，麻烦大佬们看看怎么配队": 6,
+    "Clear D-effect with my team": 1,
+    "ReRun Banners": 2,
+    "I got hooked on caro": 3,
+    "Banner help": 1,
+    "Protoparadise Choices": 4,
     "忘却前夜OST：永无乡假日": 10,
     "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework": 35,
     "✅「Answered」Name change": 3,
@@ -36,26 +43,28 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "16": 1,
+    "18": 4,
+    "19": 3,
+    "20": 3,
+    "9": 20,
+    "13": 4,
+    "14": 3,
+    "15": 4,
+    "4": 16,
+    "5": 3,
     "10": 24,
     "11": 15,
     "3": 23,
-    "4": 14,
-    "5": 1,
     "7": 6,
     "8": 22,
     "23": 1,
-    "13": 2,
-    "9": 16,
     "12": 5,
-    "14": 1,
-    "15": 1,
     "6": 12
   },
   "message_types": {
-    "0": 29,
-    "4": 1,
-    "19": 14,
-    "6": 1
+    "0": 19,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -157,6 +166,13 @@
       "channel": "✅「Answered」Rotating menu background"
     },
     {
+      "id": "1426642022571446463",
+      "content": "Play around with Kathi.\n\nI'm using Kathi / Tinct / Clem / (Ryker or Castor)",
+      "author": "climbkaly",
+      "reactions": 2,
+      "channel": "Standard Tier List - Early and Endgame"
+    },
+    {
       "id": "1426417353129984112",
       "content": "溢出限定。。溢出限定。。咳咳。",
       "author": "randomplayer852",
@@ -190,13 +206,6 @@
       "author": "carme.0588",
       "reactions": 2,
       "channel": "我们规划一下每个卡池的小版本全勤0氪150抽好吗"
-    },
-    {
-      "id": "1426527854094450861",
-      "content": "5没有音频",
-      "author": "silverstream_s",
-      "reactions": 1,
-      "channel": "忘却前夜OST：永无乡假日"
     }
   ]
 }

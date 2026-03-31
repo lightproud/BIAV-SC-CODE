@@ -1,10 +1,12 @@
 {
   "date": "2025-08-09",
-  "messages": 60,
+  "messages": 67,
   "unique_authors": 8,
   "reactions_total": 30,
-  "attachments": 12,
+  "attachments": 15,
   "channel_activity": {
+    "Banner Priorities?": 1,
+    "Need a guide for Arc 1 rolls": 6,
     "120 fps mode": 3,
     "✅「Answered」Can't log in": 1,
     "✅「已回答」没跳隐藏成就": 2,
@@ -17,18 +19,19 @@
     "忘記誰點的小混帳了": 7
   },
   "hourly_activity": {
+    "18": 1,
+    "13": 7,
     "21": 3,
     "23": 2,
     "11": 2,
     "14": 8,
     "12": 35,
     "1": 1,
-    "13": 1,
     "15": 1,
     "9": 7
   },
   "message_types": {
-    "0": 12,
+    "0": 6,
     "19": 1
   },
   "top_reacted_messages": [

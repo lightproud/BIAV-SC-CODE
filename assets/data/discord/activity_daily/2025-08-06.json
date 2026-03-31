@@ -1,10 +1,14 @@
 {
   "date": "2025-08-06",
-  "messages": 90,
+  "messages": 98,
   "unique_authors": 16,
-  "reactions_total": 71,
-  "attachments": 21,
+  "reactions_total": 120,
+  "attachments": 26,
   "channel_activity": {
+    "Doresain, in flesh (or not, idk i am stuck at 1st arc)": 1,
+    "corpo acrylic figure (#v2.3 Fan Art)": 1,
+    "7.28：400   Character appearance rate": 2,
+    "Recommend realm as a beginner, and what to invest the silver/silver core in": 4,
     "Call for Community Volunteer Translators: Applications Open!": 1,
     "V2.3.0.4 在线维护公告": 4,
     "[杜勒塞因原型解读]弧月高悬之处": 5,
@@ -27,28 +31,37 @@
     "偽造之物": 3
   },
   "hourly_activity": {
+    "15": 1,
+    "10": 6,
+    "20": 5,
+    "14": 1,
+    "16": 5,
+    "21": 6,
+    "22": 5,
     "7": 6,
     "11": 17,
-    "16": 4,
-    "21": 5,
     "13": 1,
     "19": 1,
     "8": 3,
     "18": 9,
     "12": 4,
-    "20": 3,
-    "22": 4,
     "2": 2,
     "3": 4,
     "6": 15,
-    "10": 5,
     "4": 2,
     "1": 5
   },
   "message_types": {
-    "0": 10
+    "0": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1402603099150876796",
+      "content": "i wanted to show the corpo figure i made:)\n\nthe  base and background was inspire",
+      "author": "dose1694",
+      "reactions": 42,
+      "channel": "corpo acrylic figure (#v2.3 Fan Art)"
+    },
     {
       "id": "1402782248314605598",
       "content": "一家子都是鬼，好呀（起立鼓掌\n\nUID: 100047306",
@@ -69,6 +82,13 @@
       "author": "morimens_15",
       "reactions": 10,
       "channel": "✅「Answered」Clarification on gacha odds for standard limited"
+    },
+    {
+      "id": "1402747858628907168",
+      "content": "Additional note: Wave 3 from the previous issue had a special method of passing.",
+      "author": "lurenjiao",
+      "reactions": 5,
+      "channel": "7.28：400   Character appearance rate"
     },
     {
       "id": "1402602278518657075",
@@ -104,6 +124,13 @@
       "author": "carme.0588",
       "reactions": 3,
       "channel": "管理員又封錯人"
+    },
+    {
+      "id": "1402681974229045299",
+      "content": "this is amazing 🛐",
+      "author": "jormiejormungandr",
+      "reactions": 2,
+      "channel": "Doresain, in flesh (or not, idk i am stuck at 1st arc)"
     },
     {
       "id": "1402695950866059295",

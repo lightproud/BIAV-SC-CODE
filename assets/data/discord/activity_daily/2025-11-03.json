@@ -1,10 +1,20 @@
 {
   "date": "2025-11-03",
-  "messages": 73,
-  "unique_authors": 13,
-  "reactions_total": 39,
-  "attachments": 18,
+  "messages": 206,
+  "unique_authors": 27,
+  "reactions_total": 95,
+  "attachments": 39,
   "channel_activity": {
+    "William sketches": 10,
+    "Gdoll in Instagram": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn": 23,
+    "R和SR命輪都是疊到+12就可以全分解了嗎？": 7,
+    "新號角色配隊及抽取": 80,
+    "Flares' Comprehensive Beginner Guide to Morimens": 1,
+    "What would you try to pull for next during the Anniversary?": 1,
+    "Tawil help": 6,
+    "Tawil team": 3,
     "✅「Resolved」Pull animation breaks after 100 single pulls": 1,
     "✅「已回答」广播剧缸中之梦进不去": 2,
     "✅「已回答」相位對弈屏蔽位置": 2,
@@ -28,34 +38,54 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "9": 1,
-    "10": 21,
-    "14": 1,
-    "15": 1,
-    "18": 2,
+    "8": 2,
+    "9": 3,
+    "10": 49,
+    "23": 3,
+    "22": 1,
+    "17": 8,
+    "0": 7,
+    "3": 13,
+    "4": 17,
+    "5": 4,
+    "7": 2,
+    "13": 5,
+    "14": 18,
+    "15": 2,
+    "11": 31,
+    "12": 13,
+    "1": 16,
+    "18": 3,
     "20": 1,
     "19": 7,
-    "12": 1,
-    "17": 4,
-    "0": 2,
-    "7": 1,
-    "1": 15,
-    "4": 14,
-    "5": 1,
     "2": 1
   },
   "message_types": {
-    "0": 25,
-    "4": 9,
-    "19": 5
+    "0": 83,
+    "4": 1,
+    "19": 49
   },
   "top_reacted_messages": [
+    {
+      "id": "1434822620771123272",
+      "content": "Hello, I'm back with another senior William fanart. I hope you enjoy it as much ",
+      "author": "sunstopshining",
+      "reactions": 36,
+      "channel": "William sketches"
+    },
     {
       "id": "1434761758370959441",
       "content": "需要看到黑化女兒把爸爸踩在腳下",
       "author": "carrot_chicken",
       "reactions": 21,
       "channel": "「我還記得你原本應該是什麼樣子」"
+    },
+    {
+      "id": "1435031045668995187",
+      "content": "Made Doll:Inferno using the new instagram drawing feature :3\nI love her design s",
+      "author": "ee2x_",
+      "reactions": 9,
+      "channel": "Gdoll in Instagram"
     },
     {
       "id": "1434857066668757102",
@@ -86,6 +116,83 @@
       "channel": "「我還記得你原本應該是什麼樣子」"
     },
     {
+      "id": "1434845226844946526",
+      "content": "Senior William",
+      "author": "sunstopshining",
+      "reactions": 1,
+      "channel": "William sketches"
+    },
+    {
+      "id": "1434963461883957290",
+      "content": "X8Z7AS03UO still looking for someone to help me get the skin!!! <:Cheerup:140077",
+      "author": "__morganlefay",
+      "reactions": 1,
+      "channel": "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!"
+    },
+    {
+      "id": "1434703000005378119",
+      "content": "It’s the Genesis version, like Doll and Helot",
+      "author": "tny_gilgmsh",
+      "reactions": 1,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434704427515641936",
+      "content": "Alternate version",
+      "author": "willsalvador",
+      "reactions": 1,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434747809323684003",
+      "content": "The eyes looks great, although i don't like how they added more hair, it became ",
+      "author": "moyashi0672",
+      "reactions": 1,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434751028049219614",
+      "content": "all of the genesis so far have also essentially been Bad End IDs lmao",
+      "author": "itsmemiki",
+      "reactions": 1,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434899563323592705",
+      "content": "如題，開始爆倉了，看好像效果都是隊伍唯一，想說是不是疊滿一張後多的都分解掉，但又聽說後面有多隊玩法，不知道那邊是不是可以留幾張同樣的命輪放在不同隊，或是還有其他",
+      "author": "nanfanggaosu",
+      "reactions": 1,
+      "channel": "R和SR命輪都是疊到+12就可以全分解了嗎？"
+    },
+    {
+      "id": "1434860088631234660",
+      "content": "啊我這裡推薦常駐抽全部不要抽下下禮拜羊媽進常駐",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "新號角色配隊及抽取"
+    },
+    {
+      "id": "1434865035242508288",
+      "content": "這隻嗎",
+      "author": "jay55662",
+      "reactions": 1,
+      "channel": "新號角色配隊及抽取"
+    },
+    {
+      "id": "1434885123668443248",
+      "content": "女僕換到三啟當個賭徒",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "新號角色配隊及抽取"
+    },
+    {
+      "id": "1434960879618887790",
+      "content": "You just click confirm to not use posse.\nIf your not doing dmg your doing someth",
+      "author": "enternameunavailable",
+      "reactions": 1,
+      "channel": "Tawil help"
+    },
+    {
       "id": "1435003546616467527",
       "content": "A general sentiment i heard from a lot of players is that this boss is very anno",
       "author": "vxvendetta",
@@ -98,55 +205,6 @@
       "author": "memento_mori_01",
       "reactions": 1,
       "channel": "✅「Resolved」Error code (7009001)"
-    },
-    {
-      "id": "1434853633752825988",
-      "content": "感谢反馈，我们查验一下🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」希萊斯特及圖魯卡面文字誤植"
-    },
-    {
-      "id": "1434706604946755584",
-      "content": "",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "✅「Answered」About new Ryker buff"
-    },
-    {
-      "id": "1434857188891033702",
-      "content": "這個群可以沒有校貓但不能沒有戈雅",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "✅「已回答」触腕集结是否该得到加强"
-    },
-    {
-      "id": "1434720591356891156",
-      "content": "好，谢谢你大大",
-      "author": "howard0798",
-      "reactions": 1,
-      "channel": "这次新的up池最值得抽的是哪一位？"
-    },
-    {
-      "id": "1434762297787551878",
-      "content": "阿姆阿姆（吃吃吃吃吃吃",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "「我還記得你原本應該是什麼樣子」"
-    },
-    {
-      "id": "1434764654986657894",
-      "content": "辛苦了勞斯",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "「我還記得你原本應該是什麼樣子」"
-    },
-    {
-      "id": "1434768885348827297",
-      "content": "這構圖故事性好強<:M_satisfy:1400771690321154110> 勞斯好厲害",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": "「我還記得你原本應該是什麼樣子」"
     }
   ]
 }

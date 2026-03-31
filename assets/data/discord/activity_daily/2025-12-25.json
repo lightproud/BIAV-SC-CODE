@@ -1,10 +1,19 @@
 {
   "date": "2025-12-25",
-  "messages": 127,
-  "unique_authors": 13,
-  "reactions_total": 643,
-  "attachments": 12,
+  "messages": 243,
+  "unique_authors": 44,
+  "reactions_total": 786,
+  "attachments": 45,
   "channel_activity": {
+    "Thais.": 13,
+    "A Christmas Gift from Salvador!": 4,
+    "V2.4.1 茉夏的异世界冒险日志Ⅰ┊Mouchette's Otherworld Adventure LogⅠ": 1,
+    "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction": 10,
+    "V2.4.1 版本前瞻 ┊ Version Outlook": 64,
+    "V2.4.1 茉夏的酣畅一战！Mouchette's Thrilling Battle!": 1,
+    "V2.4.1 茉夏的异世界冒险日志 Ⅱ┊Mouchette's Otherworld Adventure Log Ⅱ": 1,
+    "健检+配队建议": 18,
+    "新手求助": 4,
     "V2.4.1.0 停服维护公告": 44,
     "对于联动的期限规划 On the Duration and Planning of Collaborations": 4,
     "Who Ryker's Designer pls come talk ?": 6,
@@ -23,26 +32,29 @@
     "1426215442783142041": 3
   },
   "hourly_activity": {
-    "12": 19,
-    "13": 14,
-    "14": 15,
-    "15": 6,
-    "16": 1,
+    "3": 32,
+    "9": 16,
+    "11": 13,
+    "13": 23,
+    "6": 15,
+    "8": 24,
+    "10": 9,
+    "16": 8,
+    "4": 7,
+    "5": 6,
+    "7": 24,
+    "12": 21,
+    "15": 13,
+    "17": 7,
+    "14": 18,
     "1": 3,
-    "3": 3,
-    "9": 5,
-    "10": 8,
-    "4": 1,
     "21": 1,
     "0": 1,
-    "6": 7,
-    "7": 22,
-    "8": 19,
     "22": 2
   },
   "message_types": {
-    "0": 45,
-    "19": 3
+    "0": 91,
+    "19": 25
   },
   "top_reacted_messages": [
     {
@@ -53,11 +65,46 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1453584314225791138",
+      "content": "▎《忘却前夜 Morimens》V2.4.1 即将开放！精彩资讯一网打尽！\n\n▎Morimens V2.4.1 is launching soon! Get a",
+      "author": "morimensstaff02",
+      "reactions": 37,
+      "channel": "V2.4.1 版本前瞻 ┊ Version Outlook"
+    },
+    {
       "id": "1453641289953185905",
       "content": "原本沒打算的但靈機一動覺得排版裡除了漁元素以外，混點角色選擇頁面的成分進去也不錯⋯⋯\nUID: 100047306",
       "author": "carrot_chicken",
       "reactions": 20,
       "channel": "選擇你的喚醒體！"
+    },
+    {
+      "id": "1453585572437295258",
+      "content": "what the hell is that thais wheel",
+      "author": "yinyang3d",
+      "reactions": 19,
+      "channel": "V2.4.1 版本前瞻 ┊ Version Outlook"
+    },
+    {
+      "id": "1453706090880569354",
+      "content": "He gives you thanks for helping him deliver presents today as a fellow Papa Noel",
+      "author": "sofiaebby",
+      "reactions": 18,
+      "channel": "A Christmas Gift from Salvador!"
+    },
+    {
+      "id": "1453588756358500403",
+      "content": "we really getting thais flashlight together this update",
+      "author": "rain_scarlet",
+      "reactions": 17,
+      "channel": "V2.4.1 版本前瞻 ┊ Version Outlook"
+    },
+    {
+      "id": "1453593694421651693",
+      "content": "Taking a bath.\n\nhttps://x.com/TavvyVyes/status/2004034783270277303?s=20",
+      "author": "shiio4870",
+      "reactions": 13,
+      "channel": "Thais."
     },
     {
       "id": "1453878951230439628",
@@ -67,11 +114,25 @@
       "channel": "【同人绘画】忘却前夜×P5R，怎会做这样的梦？"
     },
     {
+      "id": "1453681765750145188",
+      "content": "Thais usually wears silks so I personally think its appropriate for her. Especia",
+      "author": "hatictm",
+      "reactions": 10,
+      "channel": "V2.4.1 版本前瞻 ┊ Version Outlook"
+    },
+    {
       "id": "1453651076002615380",
       "content": "今年的年度回顧 大家聖誕快樂",
       "author": "carrot_chicken",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1453680084383830070",
+      "content": "Golden Goats Dance looks like typical New Year's art in every gacha game. It's s",
+      "author": "meatloversus",
+      "reactions": 7,
+      "channel": "V2.4.1 版本前瞻 ┊ Version Outlook"
     },
     {
       "id": "1453677596150599763",
@@ -81,11 +142,32 @@
       "channel": ""
     },
     {
+      "id": "1453665295305539696",
+      "content": "[30%攻擊力x基傷x1.85(星天+靈塑35打擊基傷)x1.6(茉夏專追擊基傷)x強效+力量]x暴傷x終傷x(3~5)段數?",
+      "author": "heikwok",
+      "reactions": 4,
+      "channel": "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1453737649377513514",
       "content": "can we just remove him from the game please",
       "author": "lordbabel",
       "reactions": 4,
       "channel": "Who Ryker's Designer pls come talk ?"
+    },
+    {
+      "id": "1453589297415585873",
+      "content": "那我看下要不要把藏品抽满",
+      "author": "sweet_25367",
+      "reactions": 3,
+      "channel": "V2.4.1 版本前瞻 ┊ Version Outlook"
+    },
+    {
+      "id": "1453669252136566786",
+      "content": "這是融蝕麵包嗎",
+      "author": "amstelredam",
+      "reactions": 3,
+      "channel": "V2.4.1 茉夏的酣畅一战！Mouchette's Thrilling Battle!"
     },
     {
       "id": "1453668166868795433",
@@ -102,81 +184,18 @@
       "channel": ""
     },
     {
+      "id": "1453634601430810714",
+      "content": "Русская версия постера <:proud:1400771683664658433> \n—— сделана российской орган",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1453695768040050709",
       "content": "<@1139202390919233566>才看到这条消息，守咪人有顺利参加紧张刺激的圣诞活动吗<:camera:1356053040251146460>",
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「已回答」這什麼酷東西"
-    },
-    {
-      "id": "1453727268181512337",
-      "content": "2. Summary\n[Battle]\n● The performance in \"Battle\" has been optimized to be smoot",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "V2.4.1.0 停服维护公告"
-    },
-    {
-      "id": "1453742049793937509",
-      "content": "有變化就是好事",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "V2.4.1.0 停服维护公告"
-    },
-    {
-      "id": "1453588535021015221",
-      "content": "",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "Who Ryker's Designer pls come talk ?"
-    },
-    {
-      "id": "1453737617614045254",
-      "content": "Man i hate this character",
-      "author": "lordbabel",
-      "reactions": 1,
-      "channel": "Who Ryker's Designer pls come talk ?"
-    },
-    {
-      "id": "1453541536523354224",
-      "content": "我们会看看！谢谢反馈！",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "💭「处理中」蘿坦桀驁之刃或靈知覺醒bug"
-    },
-    {
-      "id": "1453696325190156399",
-      "content": "有看到<:pray:1356053116260454534> \n已兌換<:kath_cool:1447714576413233315>",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "✅「已回答」這什麼酷東西"
-    },
-    {
-      "id": "1453645298131009702",
-      "content": "勞斯辛苦了<:pray:1356053116260454534>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "選擇你的喚醒體！"
-    },
-    {
-      "id": "1453651544322084897",
-      "content": "我進來的那一刻就已經吃飽了",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "選擇你的喚醒體！"
-    },
-    {
-      "id": "1453745822603808912",
-      "content": "https://youtu.be/MA0kDqlepqE - Patch Overview",
-      "author": "flares117",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1453634798462439511",
-      "content": "Already uploaded, waiting for platform release🥰",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

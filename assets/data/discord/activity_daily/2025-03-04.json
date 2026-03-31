@@ -1,10 +1,13 @@
 {
   "date": "2025-03-04",
-  "messages": 96,
+  "messages": 109,
   "unique_authors": 35,
-  "reactions_total": 162,
+  "reactions_total": 173,
   "attachments": 11,
   "channel_activity": {
+    "fuckupatoo's morimens fanfics": 8,
+    "i made morimens lore archive in case someone want to read the story": 3,
+    "Star Chapter 2.1 Tier List": 2,
     "✅前瞻：V2.1.1 相位对弈联动": 1,
     "我不知道有什麼用但我決定幫Pray立一個碑": 17,
     "Should Lily be added to new Chaos Banner as she was added to permanent banner?": 1,
@@ -24,28 +27,29 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "9": 3,
+    "10": 4,
+    "12": 7,
+    "7": 8,
+    "5": 31,
     "1": 3,
     "13": 9,
     "14": 6,
     "15": 4,
     "16": 3,
     "17": 3,
-    "7": 5,
     "11": 2,
-    "9": 2,
-    "12": 3,
     "2": 4,
     "3": 7,
-    "5": 29,
     "23": 1,
     "4": 5,
     "8": 5,
-    "10": 1,
     "6": 2,
     "18": 2
   },
   "message_types": {
-    "0": 1
+    "0": 11,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -75,6 +79,13 @@
       "author": "void_1546.",
       "reactions": 11,
       "channel": "女守X鯊（OOC警告）"
+    },
+    {
+      "id": "1346380941542690917",
+      "content": "https://www.youtube.com/@MorimensLoreArchive",
+      "author": "maegu",
+      "reactions": 10,
+      "channel": "i made morimens lore archive in case someone want to read the story"
     },
     {
       "id": "1346375434702684200",
@@ -161,6 +172,13 @@
       "channel": "Should Lily be added to new Chaos Banner as she was added to permanent banner?"
     },
     {
+      "id": "1346422916170121226",
+      "content": "<@735137568307282011>",
+      "author": "zier.0",
+      "reactions": 1,
+      "channel": "fuckupatoo's morimens fanfics"
+    },
+    {
       "id": "1346295249915482265",
       "content": "神父2费触发无底之后血量转炉子会吃一次，使用炉子回血会再吃一次，也就是吃两次无底的减治疗<:Coffee:1240919421791375380>",
       "author": "ruhebaoyangsiwa_97871",
@@ -173,20 +191,6 @@
       "author": "shchng.",
       "reactions": 1,
       "channel": "請官方叫我不要玩忘卻前夜"
-    },
-    {
-      "id": "1346357883712835647",
-      "content": "請離開了<:bow:1243504932460433498>",
-      "author": "9735fgyt",
-      "reactions": 1,
-      "channel": "請官方叫我不要玩忘卻前夜"
-    },
-    {
-      "id": "1346385688945360897",
-      "content": "Hi~The problem is being solved, thank you for your feedback💗",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Script Error"
     }
   ]
 }

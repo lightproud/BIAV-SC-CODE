@@ -1,10 +1,15 @@
 {
   "date": "2025-05-06",
-  "messages": 69,
+  "messages": 81,
   "unique_authors": 11,
-  "reactions_total": 17,
-  "attachments": 6,
+  "reactions_total": 151,
+  "attachments": 14,
   "channel_activity": {
+    "Goliath": 2,
+    "A Pair of Roses, Horla & Sanga Fanfic": 1,
+    "Clementine": 5,
+    "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant": 3,
+    "🐾喚醒體五一遊記┊Awaker Holiday Travels": 1,
     "✅前瞻：1.5周年～战斗增强篇": 24,
     "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 6,
     "✅「已回答」试用机制是否有些不合理": 2,
@@ -24,25 +29,62 @@
     "✅「Answered」Sanga misnamed as corposant": 1
   },
   "hourly_activity": {
+    "11": 1,
+    "15": 7,
+    "5": 1,
+    "16": 2,
+    "22": 2,
+    "6": 6,
+    "10": 6,
     "3": 9,
-    "6": 3,
     "7": 20,
     "8": 1,
     "9": 7,
-    "10": 5,
-    "15": 4,
     "2": 10,
     "4": 3,
-    "16": 1,
     "17": 1,
     "21": 5
   },
   "message_types": {
-    "0": 20,
-    "6": 3,
+    "0": 11,
     "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1369274916364357643",
+      "content": "I like him <:hehe:1357185439089295390>  so I draw <:hehe:1357185439089295390>",
+      "author": "oketan",
+      "reactions": 67,
+      "channel": "Goliath"
+    },
+    {
+      "id": "1369333243890896956",
+      "content": "No pits for you she has giant mofumofu to cover them",
+      "author": "rohaluss",
+      "reactions": 28,
+      "channel": "Clementine"
+    },
+    {
+      "id": "1369205637015277659",
+      "content": "為大家奉上克珀珊特的留影作為紀念~守密人可在留言區保存平板、手機尺寸的壁紙🌹 。\n\n「人世間的航線，無法指引向幸福。」\n「終於，在獻上一切後，我看到了……」\n\n",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant"
+    },
+    {
+      "id": "1369261464367534122",
+      "content": "~~普通的學長普通地進行書籍閱覽~~",
+      "author": "silverstream_s",
+      "reactions": 6,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1369205760243798046",
+      "content": "<:cute1:1356053053568192717> 平板和手機尺寸的壁紙\nTablet and phone sized wallpapers",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant"
+    },
     {
       "id": "1369157515270422599",
       "content": "[Faded Legacy Difficulty Lowered]\nThe difficulty of Chapter 8 and the Final Chap",
@@ -58,6 +100,20 @@
       "channel": "✅前瞻：1.5周年～战斗增强篇"
     },
     {
+      "id": "1369332783071236136",
+      "content": "How dare he flaunt dem chest on grabbing distance (i'll risk my arm fr fr)",
+      "author": "rohaluss",
+      "reactions": 3,
+      "channel": "Goliath"
+    },
+    {
+      "id": "1369206084492988527",
+      "content": "高清還不錯",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant"
+    },
+    {
       "id": "1369245256175845416",
       "content": "这里没有零请不要扣一",
       "author": "287405tjy_28066",
@@ -65,11 +121,32 @@
       "channel": "✅前瞻：1.5周年～战斗增强篇"
     },
     {
+      "id": "1369437869718110229",
+      "content": "My artist social is rohalussworld",
+      "author": "rohaluss",
+      "reactions": 2,
+      "channel": "Clementine"
+    },
+    {
       "id": "1369248762215792650",
       "content": "可以对某个人扣一或者零，然后得到他（仅限于男同对男同）",
       "author": "287405tjy_28066",
       "reactions": 2,
       "channel": "✅前瞻：1.5周年～战斗增强篇"
+    },
+    {
+      "id": "1369191456916639764",
+      "content": "YURI",
+      "author": "whirli_bri",
+      "reactions": 1,
+      "channel": "A Pair of Roses, Horla & Sanga Fanfic"
+    },
+    {
+      "id": "1369334742822158357",
+      "content": "Cool",
+      "author": "davin00977",
+      "reactions": 1,
+      "channel": "Clementine"
     },
     {
       "id": "1369209708249874512",

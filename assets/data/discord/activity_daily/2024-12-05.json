@@ -1,10 +1,11 @@
 {
   "date": "2024-12-05",
-  "messages": 85,
+  "messages": 86,
   "unique_authors": 17,
-  "reactions_total": 40,
+  "reactions_total": 51,
   "attachments": 14,
   "channel_activity": {
+    "Morimens review in Thai!": 1,
     "🏆【已開獎】彌薩格週年頒獎典禮": 4,
     "V1.7.2.4 在線維護公告": 1,
     "✅「Answered」Tawil card \" Master of all thing\" bug": 8,
@@ -17,9 +18,9 @@
     "自創喚醒體-星空之遙(又稱遙佬or星空佬)": 22
   },
   "hourly_activity": {
+    "10": 2,
     "3": 19,
     "9": 7,
-    "10": 1,
     "1": 4,
     "4": 4,
     "12": 3,
@@ -35,8 +36,7 @@
     "18": 4
   },
   "message_types": {
-    "0": 4,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -45,6 +45,13 @@
       "author": "yizilven",
       "reactions": 18,
       "channel": "能不能再来个100抽"
+    },
+    {
+      "id": "1314179525969711134",
+      "content": "https://www.youtube.com/watch?v=emvZBAKU_ls",
+      "author": "satachan",
+      "reactions": 11,
+      "channel": "Morimens review in Thai!"
     },
     {
       "id": "1314094285854871552",

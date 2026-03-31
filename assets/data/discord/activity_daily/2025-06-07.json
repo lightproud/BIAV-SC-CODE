@@ -1,10 +1,12 @@
 {
   "date": "2025-06-07",
-  "messages": 90,
+  "messages": 94,
   "unique_authors": 10,
   "reactions_total": 6,
-  "attachments": 6,
+  "attachments": 10,
   "channel_activity": {
+    "Seimau Art": 3,
+    "Morimens' Extensive Lore Video Part 1 : Chaos, Primer and Chaos Units by Flares.": 1,
     "V2.2.2.7 在線維護公告": 2,
     "V2.2.2.6 在線維護公告": 1,
     "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\"": 1,
@@ -17,8 +19,10 @@
     "我要吃現pa 我現在就要吃現pa 👊": 3
   },
   "hourly_activity": {
+    "5": 5,
+    "6": 65,
+    "22": 1,
     "3": 4,
-    "5": 4,
     "4": 3,
     "1": 4,
     "12": 2,
@@ -26,11 +30,10 @@
     "19": 1,
     "2": 1,
     "0": 4,
-    "6": 63,
     "16": 1
   },
   "message_types": {
-    "0": 3
+    "0": 4
   },
   "top_reacted_messages": [
     {

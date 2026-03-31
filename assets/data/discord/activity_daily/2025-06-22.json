@@ -1,10 +1,11 @@
 {
   "date": "2025-06-22",
-  "messages": 18,
+  "messages": 20,
   "unique_authors": 8,
-  "reactions_total": 10,
-  "attachments": 5,
+  "reactions_total": 57,
+  "attachments": 6,
   "channel_activity": {
+    "Aurita First Big Mission Briefing": 2,
     "💭「Processing」D-effect Zone First Time Reward Not Crediting": 2,
     "✅「Answered」LANGUAGE BUG.": 4,
     "💭「Processing」Chapter 2-7 missing files or pointers.": 1,
@@ -16,6 +17,7 @@
     "[二创伪联动][忘却前夜 x Sunless Sea]白如磷火/Pale as Corporsant": 2
   },
   "hourly_activity": {
+    "12": 2,
     "23": 3,
     "18": 3,
     "19": 1,
@@ -28,10 +30,16 @@
     "15": 2
   },
   "message_types": {
-    "0": 9,
-    "19": 2
+    "0": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1386324739622178847",
+      "content": "UID 100943429\n\nThis drawing will also be posted on my portfolio on Cara, Instagr",
+      "author": "rohaluss",
+      "reactions": 47,
+      "channel": "Aurita First Big Mission Briefing"
+    },
     {
       "id": "1386212609258426378",
       "content": "瀧 UID：100021999\nhttps://forum.gamer.com.tw/C.php?bsn=78829&snA=863&tnum=2",

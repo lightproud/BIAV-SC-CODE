@@ -1,10 +1,12 @@
 {
   "date": "2025-07-30",
-  "messages": 29,
+  "messages": 34,
   "unique_authors": 7,
-  "reactions_total": 9,
-  "attachments": 8,
+  "reactions_total": 22,
+  "attachments": 9,
   "channel_activity": {
+    "Sanga": 1,
+    "Event's should you do them?": 4,
     "忘却前夜OST：戈利亚EP·踏上新的征途": 1,
     "✅「已回答」朵爾等價顯示問題又出現了": 2,
     "✅「已回答」Bug report": 3,
@@ -19,20 +21,28 @@
     "◆第3章「餍飨」关卡流程总览·星辰篇": 1
   },
   "hourly_activity": {
+    "5": 1,
+    "0": 5,
     "2": 12,
     "1": 1,
     "3": 6,
     "23": 1,
     "6": 4,
     "14": 2,
-    "0": 1,
     "17": 1,
     "4": 1
   },
   "message_types": {
-    "19": 1
+    "0": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1399994785107808300",
+      "content": "Try to draw my love 🔥🌹",
+      "author": "sangalover_97971",
+      "reactions": 13,
+      "channel": "Sanga"
+    },
     {
       "id": "1399954657643859978",
       "content": "Buff Doresain please. <:pray:1356053116260454534> \nPreview description also impl",

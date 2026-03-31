@@ -1,21 +1,68 @@
 {
   "date": "2025-07-13",
-  "messages": 97,
-  "unique_authors": 2,
-  "reactions_total": 1,
-  "attachments": 5,
+  "messages": 104,
+  "unique_authors": 3,
+  "reactions_total": 50,
+  "attachments": 10,
   "channel_activity": {
+    "My Caecus art": 1,
+    "*Translated & Credited* cn Fan Art Reposts": 6,
     "✅「已回答」如视频": 96,
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "21": 1,
+    "0": 6,
     "16": 96,
     "9": 1
   },
   "message_types": {
-    "0": 96
+    "0": 6,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1393747117499220049",
+      "content": "Our best little keepers\nlink to OG post: https://xiling817.lofter.com/post/1f5f7",
+      "author": "ev_6185",
+      "reactions": 16,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1393746385676931072",
+      "content": "Liz\nlink to OG post: https://nocongjiangsuan.lofter.com/post/74368a56_2bace87fc\n",
+      "author": "ev_6185",
+      "reactions": 12,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1393748895430869214",
+      "content": "Jellyfish \nlink to OG post: https://kikuko4545.lofter.com/post/33e2ba_2baf9df97\n",
+      "author": "ev_6185",
+      "reactions": 11,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1393752149279903846",
+      "content": "Our old friend Tamilala drew some coloured pieces \nlink to OG post:⁠ ⁠https://di",
+      "author": "ev_6185",
+      "reactions": 6,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1393750230779953323",
+      "content": "Very moody Doll piece \nlink to OG post: https://yuan3423.lofter.com/post/1ffed24",
+      "author": "ev_6185",
+      "reactions": 3,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1394061975805366324",
+      "content": "I'm truly impressed wow. It's really amazing <:wow:1356053147029864518>",
+      "author": "iibenigml1588",
+      "reactions": 1,
+      "channel": "My Caecus art"
+    },
     {
       "id": "1393894057306095616",
       "content": "勞斯做飯最好吃了",

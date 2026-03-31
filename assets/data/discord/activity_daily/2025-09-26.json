@@ -1,10 +1,19 @@
 {
   "date": "2025-09-26",
-  "messages": 31,
-  "unique_authors": 9,
-  "reactions_total": 16,
-  "attachments": 7,
+  "messages": 96,
+  "unique_authors": 20,
+  "reactions_total": 113,
+  "attachments": 30,
   "channel_activity": {
+    "Tulutinct, Tinlu, TTT, Tutilu, Titulu, stargazers, TuTi,": 1,
+    "🎨🖌️": 2,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 17,
+    "Tier List & Banner Guide": 2,
+    "Recent Banners Example Teams in DTide": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
+    "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!": 38,
+    "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！": 2,
+    "Another team?": 1,
     "💭「Processing」i can't enter the game via steam": 3,
     "✅「已回答」能不能给复刻活动也加入星辰篇材料": 2,
     "💭「处理中」相位異常": 8,
@@ -15,31 +24,86 @@
     "1420092491125755985": 6
   },
   "hourly_activity": {
+    "18": 1,
+    "8": 17,
+    "13": 1,
+    "20": 13,
+    "21": 5,
+    "3": 2,
+    "5": 6,
+    "6": 6,
+    "7": 22,
+    "11": 2,
+    "17": 2,
+    "10": 6,
     "0": 4,
-    "6": 5,
     "1": 3,
-    "3": 1,
     "4": 2,
-    "10": 5,
     "9": 1,
     "15": 1,
     "16": 1,
-    "5": 4,
-    "7": 2,
-    "20": 1,
     "2": 1
   },
   "message_types": {
-    "0": 12,
-    "4": 3
+    "0": 51,
+    "19": 14
   },
   "top_reacted_messages": [
+    {
+      "id": "1421050681196023838",
+      "content": "A reminder to work on your WIP",
+      "author": "sunstopshining",
+      "reactions": 29,
+      "channel": "🎨🖌️"
+    },
+    {
+      "id": "1421035896999907379",
+      "content": "若命运曾施与怜悯，\n玫瑰将开满花园，诗歌抚拭焰中的哭啼；\n母亲轻哼着歌谣，幸福浸入孩童的梦香；\n……\n若一切如常，愿一切如常。\n\n✨ 特别活动「如果一切如常」，",
+      "author": "morimensstaff01",
+      "reactions": 23,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+    },
+    {
+      "id": "1421208611073298603",
+      "content": "Can’t decide on the ship name and background. Wiwiwiwi ( ∩˃<˂∩)♡ inspiration by ",
+      "author": "mount_fisherman",
+      "reactions": 18,
+      "channel": "Tulutinct, Tinlu, TTT, Tutilu, Titulu, stargazers, TuTi,"
+    },
+    {
+      "id": "1421037648377675807",
+      "content": "So free to play 0%?",
+      "author": "aurora3981",
+      "reactions": 16,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+    },
     {
       "id": "1421042485152583722",
       "content": "下一話：萊克的嘴筒x守咪人的||四角褲||",
       "author": "nazhigezihk",
       "reactions": 4,
       "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
+    },
+    {
+      "id": "1421036054823174184",
+      "content": "English",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+    },
+    {
+      "id": "1421041927431913484",
+      "content": "~~看了一下标题，所以原来是普娜版本吗~~",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+    },
+    {
+      "id": "1421103159182360708",
+      "content": "之後活動也不要再刪除了好嗎<:please:1356053110375714817>",
+      "author": "wild_pansy",
+      "reactions": 3,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
       "id": "1420932717641732097",
@@ -68,6 +132,20 @@
       "author": "dyyqcwj",
       "reactions": 2,
       "channel": "创作欲大爆发，给每个界域手搓了一个新人"
+    },
+    {
+      "id": "1421235262117253243",
+      "content": "Thanks so much. Looks like there will be a new banner that includes Thais. i gue",
+      "author": "flinx",
+      "reactions": 1,
+      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
+    },
+    {
+      "id": "1421046886080577618",
+      "content": "凯姐版本唐突缩短成20天，然后接一个40天的版本，不会只多了个皮肤活动吧（",
+      "author": "flarinsidia",
+      "reactions": 1,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
       "id": "1421012907667230720",

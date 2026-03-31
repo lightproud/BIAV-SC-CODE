@@ -1,10 +1,33 @@
 {
   "date": "2025-08-19",
-  "messages": 68,
-  "unique_authors": 16,
-  "reactions_total": 44,
-  "attachments": 24,
+  "messages": 121,
+  "unique_authors": 28,
+  "reactions_total": 281,
+  "attachments": 48,
   "channel_activity": {
+    "Doresain (first try)": 2,
+    "mii - Gallery": 1,
+    "[Submission] \"...Point thy path to the Divine Realm!\"": 9,
+    "OUR LORD'S BIRTHDAY": 3,
+    "Flares' Awaker Review : Kathigu - Ra.": 1,
+    "Contenido en español": 1,
+    "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!": 4,
+    "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\"": 1,
+    "📜V2.3.1 版本前瞻┊ Version Outlook": 1,
+    "Spam de códigos de recrutamento mythag(portuguese)": 1,
+    "New Player": 2,
+    "Future Pull Advice": 1,
+    "Aequor Tentacles: Strategy and Pull Trajectory.": 4,
+    "Just starting, quick question on pulls": 1,
+    "Please help with team building": 2,
+    "I'm interested in running an ultra comp": 2,
+    "Should i go for Thais E2 or wait for Horla?": 2,
+    "Would like some team ideas to run with while im going through act 1.": 2,
+    "Team help": 1,
+    "Team build suggestions?": 2,
+    "Thais E3 Question": 1,
+    "(moved to #gameplay-guide)": 5,
+    "Hi! I'd like advice on teams ...": 4,
     "V2.3.1.2 在线维护公告": 3,
     "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 1,
     "✅「Answered」Separation of GLB and JP": 1,
@@ -38,28 +61,75 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "13": 5,
-    "2": 9,
-    "14": 2,
+    "10": 6,
+    "11": 4,
+    "21": 9,
+    "14": 11,
+    "15": 4,
+    "16": 5,
+    "7": 5,
+    "3": 7,
+    "9": 3,
+    "2": 10,
+    "4": 7,
+    "18": 2,
+    "22": 3,
+    "6": 5,
+    "12": 6,
+    "13": 6,
+    "19": 2,
+    "20": 1,
     "8": 23,
     "17": 1,
-    "22": 1,
-    "4": 2,
-    "6": 3,
-    "10": 2,
-    "12": 5,
-    "3": 6,
-    "18": 1,
-    "15": 3,
-    "7": 2,
-    "5": 1,
-    "11": 1,
-    "9": 1
+    "5": 1
   },
   "message_types": {
-    "0": 4
+    "0": 44,
+    "19": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1407364816300937236",
+      "content": "UID 100943429\n\n# [EDIT] I FORGOT TO FINISH HIS RIGHT LEG please check link for t",
+      "author": "rohaluss",
+      "reactions": 70,
+      "channel": "[Submission] \"...Point thy path to the Divine Realm!\""
+    },
+    {
+      "id": "1407396719519334401",
+      "content": "Today is our lord Tulu's birthday 💚🎁🎉\n(also, please send Miryam some restraining",
+      "author": "rowlynt66",
+      "reactions": 39,
+      "channel": "OUR LORD'S BIRTHDAY"
+    },
+    {
+      "id": "1407482433645056051",
+      "content": "I will occasionally post my art here. Probably mostly sketches <:takenotes:13571",
+      "author": "0_010",
+      "reactions": 38,
+      "channel": "mii - Gallery"
+    },
+    {
+      "id": "1407313746140860539",
+      "content": "I am naaawt used to shading the color blue… he’s just so charming i had to draw ",
+      "author": "pebooner",
+      "reactions": 27,
+      "channel": "Doresain (first try)"
+    },
+    {
+      "id": "1407324301966704681",
+      "content": "Sandwich (keeper flavor)",
+      "author": "pebooner",
+      "reactions": 20,
+      "channel": "Doresain (first try)"
+    },
+    {
+      "id": "1407403813106614473",
+      "content": "Tulu, when Miryam knows what day it is today",
+      "author": "rowlynt66",
+      "reactions": 19,
+      "channel": "OUR LORD'S BIRTHDAY"
+    },
     {
       "id": "1407433261533364254",
       "content": "Hi all,\n\nThe \"Retain\" property is missing on the rouse card of Kathigu-Ra. This ",
@@ -68,11 +138,25 @@
       "channel": "💭「Processing」\"Retain\" property missing on Kathigu-Ra's rouse card."
     },
     {
+      "id": "1407266734351843378",
+      "content": "📅 **活动时间：**\n2025/8/18 00:00~2025/9/7 23:59 (UTC+8)\n\n📌**重要信息：**\nUGC创作征集分为两个投稿方向，守",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
+    },
+    {
       "id": "1407373877000142889",
       "content": "Congrats on the official Japanese release.\n\nHowever, from what I can gather, the",
       "author": "xyakoto",
       "reactions": 6,
       "channel": "✅「Answered」Concerns about dev resources with the Japanese release."
+    },
+    {
+      "id": "1407267050463821894",
+      "content": "✨ English",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1407304150802235493",
@@ -87,6 +171,13 @@
       "author": "morimensstaff02",
       "reactions": 4,
       "channel": "V2.3.1.2 在线维护公告"
+    },
+    {
+      "id": "1407481842852036751",
+      "content": "he is beautiful 😭💚 happy birthday tulu! i'll make sure to lock miryam away so yo",
+      "author": "jormiejormungandr",
+      "reactions": 3,
+      "channel": "[Submission] \"...Point thy path to the Divine Realm!\""
     },
     {
       "id": "1407490572117217342",
@@ -124,74 +215,18 @@
       "channel": "✦关卡地图「融灾禁区」总览41期·星辰篇✦"
     },
     {
-      "id": "1407184808748253278",
-      "content": "shhhhh keep it in its funny",
-      "author": "whirli_bri",
+      "id": "1407372361396916396",
+      "content": "Bro's 8ft tall (the tentacle counts!!)\n\nAlso uploaded on all of my main art blog",
+      "author": "rohaluss",
       "reactions": 1,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
+      "channel": "[Submission] \"...Point thy path to the Divine Realm!\""
     },
     {
-      "id": "1407213861962125312",
-      "content": "Title says it all, I tried to switch to a new account, but now I can't switch ba",
-      "author": "phantasidreamin",
+      "id": "1407374466593591441",
+      "content": "I forgot to draw his right sock strap",
+      "author": "rohaluss",
       "reactions": 1,
-      "channel": "💭「Processing」Can't switch back to my old account"
-    },
-    {
-      "id": "1407280668022542477",
-      "content": "",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "✅「已回答」新"
-    },
-    {
-      "id": "1407282998243496110",
-      "content": "我们再看看<:Emoji_24_P_10:1400771520757891123>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」新"
-    },
-    {
-      "id": "1407285104144945227",
-      "content": "<@977903961694674974>蹲蹲uid<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」新"
-    },
-    {
-      "id": "1407285293840863282",
-      "content": "100001377",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "✅「已回答」新"
-    },
-    {
-      "id": "1407278840971001888",
-      "content": "Hi, this issue was fixed last night<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Kathigu-Ra's wheel's description on the banner page is incorrect!"
-    },
-    {
-      "id": "1407278428406939660",
-      "content": "Hi, this issue was fixed last night<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Kathigu-Ra - Soulforge Aptitude : broken preview"
-    },
-    {
-      "id": "1407277807259877376",
-      "content": "Thank you for the feedback. This issue was fixed last night<:pray:13560531162604",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」NEW bug"
-    },
-    {
-      "id": "1407225278094245888",
-      "content": "麗莎蘇生反擊流(死抗隊)\n詳情請見 https://truth.bahamut.com.tw/s01/202508/forum/78829/ee2490c215",
-      "author": "dongpormeat",
-      "reactions": 1,
-      "channel": "做個組隊專樓(請大佬支援攻略"
+      "channel": "[Submission] \"...Point thy path to the Divine Realm!\""
     }
   ]
 }

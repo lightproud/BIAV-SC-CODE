@@ -1,10 +1,20 @@
 {
   "date": "2025-09-13",
-  "messages": 16,
-  "unique_authors": 9,
-  "reactions_total": 812,
-  "attachments": 3,
+  "messages": 73,
+  "unique_authors": 17,
+  "reactions_total": 896,
+  "attachments": 22,
   "channel_activity": {
+    "Kath - RA Art Submission by Flares.": 2,
+    "☄️": 7,
+    "Tawil fan art": 5,
+    "CaeJun Seafood Boil - Art Submission - Shiv": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
+    "收个卡斯托尔超限号…初始号": 5,
+    "刚入坑，这个配队可以吗？": 22,
+    "Evaluation of my initial teams": 8,
+    "In serious help of Team Building and how to basic morimens": 4,
+    "New Player Team Building Help": 2,
     "能不能新增一个撤回上一张出牌的功能？": 1,
     "✅「已回答」遺骨逼我刪牌": 1,
     "✅「Answered」Can you let us choose the start screen (log in animation)?": 1,
@@ -17,17 +27,30 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "1": 1,
-    "15": 5,
+    "9": 2,
+    "12": 5,
+    "15": 8,
+    "16": 7,
+    "18": 3,
+    "19": 3,
+    "14": 9,
+    "11": 5,
+    "4": 2,
+    "13": 6,
+    "1": 5,
+    "2": 2,
+    "3": 6,
+    "17": 1,
+    "20": 1,
+    "22": 4,
+    "23": 1,
     "8": 1,
-    "3": 3,
-    "13": 1,
-    "12": 3,
     "21": 1,
     "0": 1
   },
   "message_types": {
-    "0": 12
+    "0": 39,
+    "19": 18
   },
   "top_reacted_messages": [
     {
@@ -38,6 +61,27 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1416437178417811536",
+      "content": "",
+      "author": "cooked_chicken99",
+      "reactions": 30,
+      "channel": "Tawil fan art"
+    },
+    {
+      "id": "1416396759025979402",
+      "content": "UID: 101086498",
+      "author": "zharysche",
+      "reactions": 27,
+      "channel": "☄️"
+    },
+    {
+      "id": "1416388364495622184",
+      "content": "",
+      "author": "chivervine",
+      "reactions": 20,
+      "channel": "CaeJun Seafood Boil - Art Submission - Shiv"
+    },
+    {
       "id": "1416219709925359667",
       "content": "小皮，其实是摸鱼混一下……👉👈\n\nuid100559282\n\n\n\n\n\n＃V2.3同人征集\n（其实我也不知为何我要再打一个这个）",
       "author": "xuyu0447_77124",
@@ -45,11 +89,53 @@
       "channel": "同人创作……"
     },
     {
+      "id": "1416399808750424179",
+      "content": "配水母",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "刚入坑，这个配队可以吗？"
+    },
+    {
       "id": "1416411596107808909",
       "content": "Can't read full level achievement",
       "author": "aurora3981",
       "reactions": 2,
       "channel": "💭「Processing」Level achievement text cutoff"
+    },
+    {
+      "id": "1416506028270551160",
+      "content": "Yup",
+      "author": "zharysche",
+      "reactions": 1,
+      "channel": "☄️"
+    },
+    {
+      "id": "1416385104334422066",
+      "content": "只有这几个而已",
+      "author": "alatin.",
+      "reactions": 1,
+      "channel": "刚入坑，这个配队可以吗？"
+    },
+    {
+      "id": "1416564139282792489",
+      "content": "Gotcha, thanks for the help!",
+      "author": "naviking",
+      "reactions": 1,
+      "channel": "Evaluation of my initial teams"
+    },
+    {
+      "id": "1416278517980725319",
+      "content": "Joined because the art looked really nice, but super confused on teams. I've don",
+      "author": "sairaphis",
+      "reactions": 1,
+      "channel": "New Player Team Building Help"
+    },
+    {
+      "id": "1416378968655007867",
+      "content": "Get a Corposant, she do well even in one dupe.\nKeep pulling in chaos for nautilu",
+      "author": "mount_fisherman",
+      "reactions": 1,
+      "channel": "New Player Team Building Help"
     },
     {
       "id": "1416403272494874725",

@@ -1,10 +1,28 @@
 {
   "date": "2025-11-27",
-  "messages": 51,
-  "unique_authors": 14,
-  "reactions_total": 56,
-  "attachments": 12,
+  "messages": 177,
+  "unique_authors": 40,
+  "reactions_total": 400,
+  "attachments": 40,
   "channel_activity": {
+    "jenkins": 2,
+    "morimens pixel art": 5,
+    "Helot art": 1,
+    "i put Sylvester in a pretty outfit 🎀": 1,
+    "GMurphy Fanart": 1,
+    "Detailed Damage Formula Graphic": 1,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 2,
+    "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!": 3,
+    "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!": 3,
+    "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1": 16,
+    "V2.4.0 广播剧《神诞七日》┊Radio Drama - Seven Days": 12,
+    "新手求助": 2,
+    "關於刪卡": 51,
+    "卡关求救": 3,
+    "来个大佬看看喵": 4,
+    "Teambuilding Poison for Astral Reign": 3,
+    "upcoming banners to pull?": 2,
+    "New Player - Team Building and Pull Plan": 14,
     "V2.4.0.6 在线维护公告": 1,
     "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎": 2,
     "✅「已回答」繁中PC端黑屏": 7,
@@ -23,28 +41,56 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "3": 5,
-    "13": 2,
-    "6": 10,
-    "7": 2,
-    "8": 10,
-    "10": 2,
-    "2": 2,
-    "15": 4,
-    "23": 3,
-    "0": 1,
-    "14": 1,
+    "8": 20,
+    "9": 3,
+    "14": 13,
+    "19": 5,
+    "1": 3,
+    "16": 51,
+    "21": 1,
+    "10": 5,
+    "11": 3,
+    "2": 4,
+    "12": 3,
+    "17": 2,
+    "20": 2,
+    "7": 14,
+    "13": 3,
+    "6": 13,
+    "15": 13,
+    "23": 5,
+    "0": 3,
+    "22": 2,
+    "3": 6,
     "4": 1,
-    "5": 2,
-    "9": 2,
-    "16": 2,
-    "1": 1,
-    "22": 1
+    "5": 2
   },
   "message_types": {
-    "19": 1
+    "0": 98,
+    "19": 28
   },
   "top_reacted_messages": [
+    {
+      "id": "1443501971272372356",
+      "content": "自那之后，你所不在的弥萨格——\n\nThis is what Mythag University has looked like since you left..",
+      "author": "morimensstaff01",
+      "reactions": 140,
+      "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
+    },
+    {
+      "id": "1443523858882760764",
+      "content": "artblocked :')",
+      "author": "esororo",
+      "reactions": 45,
+      "channel": "jenkins"
+    },
+    {
+      "id": "1443604200155123915",
+      "content": "我是喜欢《忘却前夜》这款游戏的韩国玩家。\n用翻译器对话真是抱歉",
+      "author": "aigiseu_98967",
+      "reactions": 38,
+      "channel": "morimens pixel art"
+    },
     {
       "id": "1443516178520608780",
       "content": "如題上一期的主題下一期才完成again🤩🥀",
@@ -53,11 +99,74 @@
       "channel": "⟨提燈雙子 - 破曉⟩"
     },
     {
+      "id": "1443682842184781966",
+      "content": "wife 🫶",
+      "author": "lxlac_dei",
+      "reactions": 21,
+      "channel": "i put Sylvester in a pretty outfit 🎀"
+    },
+    {
+      "id": "1443643397964304525",
+      "content": "I miss some detail, but I'm happy how it turns out.",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 15,
+      "channel": "GMurphy Fanart"
+    },
+    {
+      "id": "1443490311786467410",
+      "content": "*宿命、命运，皆是虚妄……\n你这怪物……凭什么决定我的未来？*\n\n✦ 诞妄·墨菲 CV：能登麻美子\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n*\"Dest",
+      "author": "morimensstaff01",
+      "reactions": 14,
+      "channel": "V2.4.0 广播剧《神诞七日》┊Radio Drama - Seven Days"
+    },
+    {
+      "id": "1443418758428495992",
+      "content": "Helot art except I have NO idea how to render or do anything<:sad:13560855055231",
+      "author": "velvetrene._cake",
+      "reactions": 12,
+      "channel": "Helot art"
+    },
+    {
+      "id": "1443525862610702437",
+      "content": "Holy shit my indie game have enough budget to spare to do two long manga style a",
+      "author": "red_rest",
+      "reactions": 12,
+      "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
+    },
+    {
+      "id": "1443548206519816376",
+      "content": "感谢大家热情的参与，我们收到了很多特别棒的作品！\n经过了多轮评选后，诞生了最终的获奖名单：\n\n✦ 奖励会在本周五24点前发到大家的邮箱~\n一等奖的头像框如果以前",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1443509722505281658",
+      "content": "Hi Keepers! Here's the CN-EN transcription of Murphy: Fauxborn's Radio Drama \"Se",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "V2.4.0 广播剧《神诞七日》┊Radio Drama - Seven Days"
+    },
+    {
       "id": "1443515775964024894",
       "content": "拉蒙娜表示請好好讀書不要暈喚醒體的船",
       "author": "souri.10244",
       "reactions": 7,
       "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1443637328600895508",
+      "content": "有時候會卡手",
+      "author": "akkom730",
+      "reactions": 5,
+      "channel": "關於刪卡"
+    },
+    {
+      "id": "1443605514432024716",
+      "content": "<:pray:1356053116260454534> <:pray:1356053116260454534> <:pray:13560531162604545",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "morimens pixel art"
     },
     {
       "id": "1443438381660110870",
@@ -74,95 +183,32 @@
       "channel": "⟨提燈雙子 - 破曉⟩"
     },
     {
-      "id": "1443422980561436814",
-      "content": "希望可以盡快處理好\n我現在不知道我還要不要繼續儲值\n怕影響後續",
-      "author": "meow51103",
+      "id": "1443581624670359562",
+      "content": "I'd like to thank Salvador for leading me to this game... Happy 2nd anniversary,",
+      "author": "sofiaebby",
       "reactions": 2,
-      "channel": "✅「已回答」我抽獎時怎麼卡BUG了"
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
     },
     {
-      "id": "1443625367637196932",
-      "content": "说句实话现在有点感觉小破游越来越厉害，但是却越来越远离老玩家和设计组的初心的感觉",
-      "author": "2300011747",
+      "id": "1443505043511705600",
+      "content": "也是有錢了，可以請人畫漫畫了🙄💅",
+      "author": "ena04564",
       "reactions": 2,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
+      "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
     },
     {
-      "id": "1443479682501836840",
-      "content": "想要这个<:pray:1356053116260454534>",
-      "author": "sweet_25367",
+      "id": "1443640370268340384",
+      "content": "有虛弱易傷",
+      "author": "ena04564",
       "reactions": 2,
-      "channel": ""
+      "channel": "關於刪卡"
     },
     {
-      "id": "1443593038898397257",
-      "content": "一直會誤觸到那個自動戰鬥，可不可以跟大招和鑰令一樣，做一個可以自己決定要不要開的確認介面。",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎"
-    },
-    {
-      "id": "1443551731794579507",
-      "content": "101181074",
-      "author": "o5214658",
-      "reactions": 1,
-      "channel": "✅「已回答」繁中PC端黑屏"
-    },
-    {
-      "id": "1443501982974476398",
-      "content": "hi there! apparently the rose script icon doesn't show up for me in multiple men",
-      "author": "fishhazardthewizard",
-      "reactions": 1,
-      "channel": "✅「Answered」rose script icon not showing up"
-    },
-    {
-      "id": "1443462611831230486",
-      "content": "兄弟，我看完之後感想跟你一樣🫠 \n甚至我覺得一起對抗樂園帷幕那裡都轉的挺硬的\n最後跟朋友聊天只能給一個瑕不掩瑜+瑜不掩瑕的評價",
-      "author": "soleil_sun",
-      "reactions": 1,
-      "channel": "剧情文案"
-    },
-    {
-      "id": "1443483168983351438",
-      "content": "你直接写两人一起进去然后掉到下一章开始双排都比这合理",
-      "author": "carme.0588",
-      "reactions": 1,
-      "channel": "剧情文案"
-    },
-    {
-      "id": "1443487636277952563",
-      "content": "守密人自己一個人走小黑路就不覺得哪裡怪怪的嗎",
-      "author": "soleil_sun",
-      "reactions": 1,
-      "channel": "剧情文案"
-    },
-    {
-      "id": "1443518512290201712",
-      "content": "-# <:Cheerup:1400771555939844149> <:pray:1356053116260454534> <:thumbsup:1356086",
-      "author": "waterrr0212",
-      "reactions": 1,
-      "channel": "⟨提燈雙子 - 破曉⟩"
-    },
-    {
-      "id": "1443527447873323159",
-      "content": "<:Cheerup:1400771555939844149>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "⟨提燈雙子 - 破曉⟩"
-    },
-    {
-      "id": "1443623828143083531",
-      "content": "自從關注這樓之後這麼多年缺失的營養直接給我補上來了",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1443643254552920304",
-      "content": "好爽的我高舉父母大旗🤩🤩",
-      "author": "yolo_mode",
-      "reactions": 1,
-      "channel": ""
+      "id": "1443640683498831955",
+      "content": "誕墨的海國重新讓50黑印變回圖圖4費",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "關於刪卡"
     }
   ]
 }

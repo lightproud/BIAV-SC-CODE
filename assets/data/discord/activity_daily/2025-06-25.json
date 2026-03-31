@@ -1,10 +1,17 @@
 {
   "date": "2025-06-25",
-  "messages": 24,
-  "unique_authors": 5,
-  "reactions_total": 20,
-  "attachments": 5,
+  "messages": 105,
+  "unique_authors": 28,
+  "reactions_total": 141,
+  "attachments": 12,
   "channel_activity": {
+    "A24 fan art": 4,
+    "He surely did nothing (might art dump here)": 2,
+    "I like her and wish she'll have a playable form...": 1,
+    "V2.2.3預告：特別幻衣活動┊V2.2.3 Preview: Awakener Skins Event": 11,
+    "V2.2.3預告：自選活動喚醒┊V2.2.3 Preview: Self-Select Event Awakening": 56,
+    "V2.2.3預告：特別學園活動┊V2.2.3 Preview: Special Mythag Events": 3,
+    "🎊官周通販：淘寶全球可購！": 4,
     "💭「Processing」UI bug (0/1 Hidden silver not appearing on some stages)": 4,
     "✅「Answered」Steam English Language Bug": 2,
     "Traphase inaccurate descriptions for Derison of Destiny and Wheel Unseen (Conceal)": 1,
@@ -17,20 +24,48 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "3": 5,
-    "5": 2,
-    "2": 4,
-    "15": 3,
-    "9": 2,
-    "12": 2,
-    "14": 3,
-    "8": 3
+    "11": 4,
+    "12": 3,
+    "14": 5,
+    "15": 6,
+    "7": 17,
+    "0": 1,
+    "2": 5,
+    "3": 7,
+    "6": 1,
+    "9": 4,
+    "10": 3,
+    "8": 46,
+    "13": 1,
+    "5": 2
   },
   "message_types": {
-    "4": 4,
-    "0": 7
+    "0": 68,
+    "4": 1,
+    "19": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1387392445548990546",
+      "content": "UID: 101006443\n\nI did fan art of A24 with  Tomie as the inspiration.",
+      "author": "jackomoria",
+      "reactions": 42,
+      "channel": "A24 fan art"
+    },
+    {
+      "id": "1387329593236520971",
+      "content": "⭐**活動時間：** 6 月 30 日 9:00 - 7 月 28 日 9:00\n\n⭐**活動介紹：**\n✦ 守密人可在自選活動喚醒「久遠的呼喚」中，任選下面一",
+      "author": "morimensstaff01",
+      "reactions": 24,
+      "channel": "V2.2.3預告：自選活動喚醒┊V2.2.3 Preview: Self-Select Event Awakening"
+    },
+    {
+      "id": "1387329220090400788",
+      "content": "第19期特別學園活動\n⭐**活動時間：**6 月 30 日 9:00 - 7 月 14 日 9:00\n\n⭐**活動介紹：**\n✦** 第十九期「學園禮贈」**\n",
+      "author": "morimensstaff01",
+      "reactions": 19,
+      "channel": "V2.2.3預告：特別學園活動┊V2.2.3 Preview: Special Mythag Events"
+    },
     {
       "id": "1387357502345183262",
       "content": "总算在结束前画完了！请永远支持我们泰旖丝女士好吗！\nuid：100377370",
@@ -39,11 +74,81 @@
       "channel": "圣母怜子……"
     },
     {
+      "id": "1387336969876410378",
+      "content": "Sarah is very cute!",
+      "author": "yonagoda",
+      "reactions": 11,
+      "channel": "I like her and wish she'll have a playable form..."
+    },
+    {
+      "id": "1387449555250970715",
+      "content": "I mean really, he's just silly :3",
+      "author": "lushlake0871",
+      "reactions": 8,
+      "channel": "He surely did nothing (might art dump here)"
+    },
+    {
+      "id": "1387319113076183101",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 4,
+      "channel": "V2.2.3預告：特別幻衣活動┊V2.2.3 Preview: Awakener Skins Event"
+    },
+    {
+      "id": "1387341593408835685",
+      "content": "这轮赌下去，我下轮新角就没法超限了<:24_clown:1374289675417686016>",
+      "author": "cs001092",
+      "reactions": 4,
+      "channel": "V2.2.3預告：自選活動喚醒┊V2.2.3 Preview: Self-Select Event Awakening"
+    },
+    {
+      "id": "1387404946818859139",
+      "content": "I love the colours and the composition! Amazing work<:cute1:1356053053568192717>",
+      "author": "Deleted User",
+      "reactions": 2,
+      "channel": "A24 fan art"
+    },
+    {
+      "id": "1387439375737950278",
+      "content": "Very beautiful",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "A24 fan art"
+    },
+    {
+      "id": "1387339237237719172",
+      "content": "這個混沌池對新手很好欸||~~不要抽到莉莉的話~~||",
+      "author": "ahong0727",
+      "reactions": 2,
+      "channel": "V2.2.3預告：自選活動喚醒┊V2.2.3 Preview: Self-Select Event Awakening"
+    },
+    {
       "id": "1387354786877280308",
       "content": "催催游戏内请柬头像更新啦，谢谢戈雅！<:pray:1356053116260454534>",
       "author": "sweet_25367",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1387460326789742614",
+      "content": "Woah! I love it",
+      "author": "yonagoda",
+      "reactions": 1,
+      "channel": "A24 fan art"
+    },
+    {
+      "id": "1387353781553070111",
+      "content": "<@707595366513639425>沒收到訊息嗎？辛苦你把收件信息私信給我🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "🎊官周通販：淘寶全球可購！"
+    },
+    {
+      "id": "1387354739938820249",
+      "content": "好，那我晚上傳，謝謝戈雅<:pray:1356053116260454534>",
+      "author": "xu6_",
+      "reactions": 1,
+      "channel": "🎊官周通販：淘寶全球可購！"
     },
     {
       "id": "1387266909778612314",

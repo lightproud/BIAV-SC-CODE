@@ -1,10 +1,12 @@
 {
   "date": "2025-04-29",
-  "messages": 71,
+  "messages": 76,
   "unique_authors": 16,
-  "reactions_total": 120,
-  "attachments": 29,
+  "reactions_total": 152,
+  "attachments": 30,
   "channel_activity": {
+    "Tulu is adorable": 4,
+    "Just a pixel image of Jenkin looking outside with Brown": 1,
     "V2.2.1.2 在線維護公告": 2,
     "English Localization Fixes & What's Next": 3,
     "忘卻前夜OST：迷幻蟲巢之夢": 12,
@@ -26,6 +28,9 @@
     "1350059696945500171": 13
   },
   "hourly_activity": {
+    "14": 2,
+    "15": 5,
+    "21": 1,
     "12": 5,
     "8": 14,
     "6": 4,
@@ -34,7 +39,6 @@
     "7": 5,
     "5": 2,
     "16": 5,
-    "15": 3,
     "17": 1,
     "18": 3,
     "23": 2,
@@ -45,7 +49,7 @@
     "22": 13
   },
   "message_types": {
-    "0": 18,
+    "0": 4,
     "19": 1
   },
   "top_reacted_messages": [
@@ -55,6 +59,13 @@
       "author": "blue_yogurt_chan",
       "reactions": 41,
       "channel": "《金絲籠外》汀克特"
+    },
+    {
+      "id": "1366780583874920530",
+      "content": "",
+      "author": "rowlynt66",
+      "reactions": 32,
+      "channel": "Tulu is adorable"
     },
     {
       "id": "1366749080042209330",

@@ -1,10 +1,22 @@
 {
   "date": "2025-10-02",
-  "messages": 74,
-  "unique_authors": 7,
-  "reactions_total": 66,
-  "attachments": 36,
+  "messages": 121,
+  "unique_authors": 15,
+  "reactions_total": 95,
+  "attachments": 43,
   "channel_activity": {
+    "Tinct on a swing": 1,
+    "Thais Warm up": 1,
+    "blackjack!": 1,
+    "pickman": 1,
+    "Shhh… he’s sleeping~": 1,
+    "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!": 5,
+    "I hit a wall need help to build a team": 12,
+    "New Player Arc1 Team": 1,
+    "I don't undertands Caecus tentacle counter attack mean": 5,
+    "Good addition to those three": 8,
+    "9-5 Help": 6,
+    "Which account level is good enough to try chapter 6?": 5,
     "忘却前夜OST：畸变丰穰之种": 1,
     "✅「已回答」寧妃，夜潮，BUG": 3,
     "✅「Answered」No Gnosis Fragments from Awakening Events": 1,
@@ -24,23 +36,27 @@
     "1423337172655935600": 3
   },
   "hourly_activity": {
-    "15": 37,
-    "12": 1,
-    "23": 1,
-    "1": 14,
+    "16": 5,
+    "11": 10,
+    "17": 2,
+    "12": 6,
+    "14": 6,
+    "15": 41,
+    "8": 12,
+    "23": 2,
+    "1": 15,
+    "13": 4,
+    "3": 2,
+    "9": 3,
+    "0": 5,
     "5": 2,
     "10": 1,
-    "11": 2,
     "18": 1,
-    "0": 3,
-    "2": 4,
-    "3": 1,
-    "14": 5,
-    "16": 1,
-    "17": 1
+    "2": 4
   },
   "message_types": {
-    "0": 1
+    "0": 35,
+    "19": 12
   },
   "top_reacted_messages": [
     {
@@ -49,6 +65,13 @@
       "author": "scholar_2",
       "reactions": 40,
       "channel": ""
+    },
+    {
+      "id": "1423345619866615919",
+      "content": "lucky wolf for the fanart event\nUID: 101024720",
+      "author": "wraithdust",
+      "reactions": 22,
+      "channel": "blackjack!"
     },
     {
       "id": "1423326420289061045",
@@ -65,11 +88,25 @@
       "channel": "✅「已回答」寧妃，夜潮，BUG"
     },
     {
+      "id": "1423323589721194627",
+      "content": "下下周会有<:Cheerup:1400771555939844149>",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+    },
+    {
       "id": "1423326462328700939",
       "content": "<:alone:1356053021318189307>",
       "author": "xcecilex.",
       "reactions": 3,
       "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423327216145797202",
+      "content": "啃啃戈雅",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
     },
     {
       "id": "1423319181549506560",
@@ -98,6 +135,20 @@
       "author": "xcecilex.",
       "reactions": 2,
       "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1423344568375710111",
+      "content": "oh this is beautiful!",
+      "author": "wraithdust",
+      "reactions": 1,
+      "channel": "Tinct on a swing"
+    },
+    {
+      "id": "1423231075848556625",
+      "content": "im at 9-11 (so the final chapter of arc 1) and my units are skill level 3 to 4 o",
+      "author": "yannic2112",
+      "reactions": 1,
+      "channel": "I hit a wall need help to build a team"
     },
     {
       "id": "1423180892016480388",

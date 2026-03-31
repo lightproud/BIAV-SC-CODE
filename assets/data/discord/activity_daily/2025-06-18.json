@@ -1,10 +1,13 @@
 {
   "date": "2025-06-18",
-  "messages": 66,
+  "messages": 73,
   "unique_authors": 5,
-  "reactions_total": 15,
-  "attachments": 12,
+  "reactions_total": 47,
+  "attachments": 14,
   "channel_activity": {
+    "Keeper caught a rat in the room 🐀": 1,
+    "cold Leigh": 1,
+    "大佬們幫幫忙求助": 5,
     "V2.2.2.9 在線維護公告": 6,
     "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 3,
     "✅「已回答」混沌界域第二次鑰令觸發不了雙發鑰令": 2,
@@ -14,22 +17,39 @@
     "杜勒赛因技能组diy": 1
   },
   "hourly_activity": {
+    "14": 1,
+    "4": 2,
+    "0": 1,
+    "2": 1,
+    "3": 8,
     "9": 1,
     "10": 2,
     "13": 2,
     "15": 1,
-    "4": 1,
     "5": 2,
-    "3": 5,
     "12": 13,
     "16": 38,
     "18": 1
   },
   "message_types": {
-    "0": 2,
-    "19": 4
+    "0": 4,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1384908877618745504",
+      "content": "",
+      "author": "mount_fisherman",
+      "reactions": 18,
+      "channel": "Keeper caught a rat in the room 🐀"
+    },
+    {
+      "id": "1384745378037104640",
+      "content": "She dreams of warmth (would give her the shirt off my back)",
+      "author": "misqui",
+      "reactions": 12,
+      "channel": "cold Leigh"
+    },
     {
       "id": "1384873620005982229",
       "content": "身高体重单位是cm/kg\n刻印每回合只生效一次\n镜像：复制两张带消耗的手牌进入牌库\n易伤虚弱改成可叠层\n虚弱：第一层10%，后续每层5%，最高叠至25%，每回合",
@@ -43,6 +63,13 @@
       "author": "akalanden",
       "reactions": 3,
       "channel": "银河行星的日服大冒险"
+    },
+    {
+      "id": "1384689632234573825",
+      "content": "是，每一關都是一個小肉鴿耗時挺久的",
+      "author": "cheerful_courgette_11883",
+      "reactions": 2,
+      "channel": "大佬們幫幫忙求助"
     },
     {
       "id": "1384833990338285659",

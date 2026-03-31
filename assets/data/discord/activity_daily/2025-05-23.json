@@ -1,10 +1,23 @@
 {
   "date": "2025-05-23",
-  "messages": 78,
-  "unique_authors": 16,
-  "reactions_total": 15,
-  "attachments": 4,
+  "messages": 255,
+  "unique_authors": 50,
+  "reactions_total": 139,
+  "attachments": 20,
   "channel_activity": {
+    "WIP of Thais": 1,
+    "he's cranky": 2,
+    "Seimau Art": 2,
+    "tulu pet?": 1,
+    "Miss Coral": 2,
+    "2.2.2 Half Anni Overview": 2,
+    "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 38,
+    "V2.2.2 版本前瞻┊V2.2.2 Version Outlook": 78,
+    "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!": 5,
+    "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 2,
+    "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!": 4,
+    "🎊彌薩格藝術展：精彩同人作品分享┊Mythag Art Exhibition: Amazing Fan Art Showcase": 39,
+    "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!": 1,
     "V2.2.2.0 停服維護公告": 60,
     "✅前瞻：1.5周年～战斗增强篇": 12,
     "✅「Answered」Region lock..": 1,
@@ -13,30 +26,103 @@
     "發點摸魚時寫的船長（克柏珊特）MOBA遊戲的技能組（與原作不相干）": 1
   },
   "hourly_activity": {
-    "14": 6,
-    "15": 36,
-    "16": 6,
-    "19": 2,
-    "20": 13,
-    "23": 2,
-    "3": 2,
-    "4": 6,
-    "5": 2,
-    "12": 1,
-    "18": 1,
-    "8": 1
+    "20": 14,
+    "13": 41,
+    "1": 2,
+    "5": 3,
+    "4": 8,
+    "15": 42,
+    "9": 4,
+    "10": 8,
+    "11": 5,
+    "12": 10,
+    "14": 25,
+    "16": 18,
+    "17": 25,
+    "18": 23,
+    "19": 3,
+    "23": 3,
+    "2": 1,
+    "8": 3,
+    "7": 13,
+    "21": 2,
+    "3": 2
   },
   "message_types": {
-    "0": 67,
-    "19": 5
+    "0": 144,
+    "19": 32,
+    "6": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1375567694656704602",
+      "content": "Got some things I wanna still fix up but it's coming along!",
+      "author": "polarisu",
+      "reactions": 25,
+      "channel": "WIP of Thais"
+    },
+    {
+      "id": "1375469079002873856",
+      "content": "Who dares disturb his nap",
+      "author": "rowlynt66",
+      "reactions": 25,
+      "channel": "he's cranky"
+    },
+    {
+      "id": "1375368491858919484",
+      "content": "<:slick:1356053160531198064> 萊克轉盤呼呼轉動，這次指針指向──校園舞會群舞時間！\n必得召喚活動“未被忘卻的”，5連抽必得《忘卻篇》",
+      "author": "morimensstaff01",
+      "reactions": 23,
+      "channel": "🎊彌薩格藝術展：精彩同人作品分享┊Mythag Art Exhibition: Amazing Fan Art Showcase"
+    },
+    {
+      "id": "1375350465230929961",
+      "content": "",
+      "author": "i_eat_catalogues",
+      "reactions": 20,
+      "channel": "tulu pet?"
+    },
+    {
+      "id": "1375368350275993600",
+      "content": "自開服以來，我們透過同人徵集活動收穫了諸多精美作品，感謝大家精彩絕倫的創作，更感謝大家對《忘卻前夜》的支持與喜愛！\n\n未來我們將定期分享所徵集到的優秀二創與攻略",
+      "author": "morimensstaff01",
+      "reactions": 15,
+      "channel": "🎊彌薩格藝術展：精彩同人作品分享┊Mythag Art Exhibition: Amazing Fan Art Showcase"
+    },
+    {
+      "id": "1375495232287801364",
+      "content": "https://www.youtube.com/watch?v=9vygZZDqhbM&t=8s&ab_channel=Flares%27sidechannel",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "2.2.2 Half Anni Overview"
+    },
+    {
+      "id": "1375487089478733854",
+      "content": "let him shoot his shot",
+      "author": "zier.0",
+      "reactions": 4,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+    },
+    {
+      "id": "1375464703614259251",
+      "content": "另一個花錢的太貴了就抬另一個花錢的福利嗎有意思",
+      "author": "navirecorbeau",
+      "reactions": 4,
+      "channel": "🎊彌薩格藝術展：精彩同人作品分享┊Mythag Art Exhibition: Amazing Fan Art Showcase"
+    },
     {
       "id": "1375487996886777866",
       "content": "守密人你好：\n       彌薩格大學預計於5月26日08:00~11:00（UTC+8）進行校內設施維護。\n       維護結束後需要重新登入並更新資源，補",
       "author": "morimensstaff02",
       "reactions": 4,
       "channel": "V2.2.2.0 停服維護公告"
+    },
+    {
+      "id": "1375414520595353681",
+      "content": "damn my luck's suck  <:flop1:1356083604236800030>",
+      "author": "juans3854",
+      "reactions": 2,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
     },
     {
       "id": "1375488766520852650",
@@ -51,6 +137,20 @@
       "author": "thpdom",
       "reactions": 2,
       "channel": "✅「Answered」More wrong colours on passives"
+    },
+    {
+      "id": "1375288176259629210",
+      "content": "I HAV TULUBLESSED DAY I LOVE YOU THANK FOR DRAWING THE SQUID KING",
+      "author": "rohaluss",
+      "reactions": 1,
+      "channel": "Seimau Art"
+    },
+    {
+      "id": "1375466709309194310",
+      "content": "這太壞了，又重新私信了一次~辛苦再看看",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
     },
     {
       "id": "1375489782905573406",
@@ -93,13 +193,6 @@
       "author": "f4everr_",
       "reactions": 1,
       "channel": "✅「Answered」Region lock.."
-    },
-    {
-      "id": "1375560483662331924",
-      "content": "Hi, I've been having trouble running Morimens on Steam/PC. I've tried reinstalli",
-      "author": "jwkku",
-      "reactions": 1,
-      "channel": "💭「Processing」Steam Error"
     }
   ]
 }

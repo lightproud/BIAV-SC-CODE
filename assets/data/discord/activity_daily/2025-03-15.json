@@ -1,10 +1,13 @@
 {
   "date": "2025-03-15",
-  "messages": 11,
-  "unique_authors": 7,
-  "reactions_total": 12,
-  "attachments": 5,
+  "messages": 27,
+  "unique_authors": 8,
+  "reactions_total": 15,
+  "attachments": 6,
   "channel_activity": {
+    "How can I make a good team": 8,
+    "Morimens loading screen lore compilation": 4,
+    "【日本語訳】フィードバック": 4,
     "✅「Answered」Add crafting for Shattered Remnant of Dreams": 4,
     "✅「已回答」steam登录港服登不了": 2,
     "純討論，為什麼熔朵的體重少了0.1磅": 1,
@@ -13,15 +16,20 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "11": 5,
+    "12": 1,
+    "13": 4,
+    "14": 5,
+    "15": 1,
+    "11": 10,
+    "8": 1,
     "20": 2,
-    "14": 1,
     "9": 1,
     "23": 1,
     "21": 1
   },
   "message_types": {
-    "0": 9
+    "19": 5,
+    "0": 11
   },
   "top_reacted_messages": [
     {
@@ -30,6 +38,20 @@
       "author": "aurora3981",
       "reactions": 11,
       "channel": "✅「Answered」Add crafting for Shattered Remnant of Dreams"
+    },
+    {
+      "id": "1350390115297529947",
+      "content": "「守秘者」も「シークレットキーパー」「秘密保持者」のほか「守密人」（中国語と同じ）があります。ラモンナ(Ramona)がボイスで言うのは「守秘者」です。",
+      "author": "x013318908",
+      "reactions": 2,
+      "channel": "【日本語訳】フィードバック"
+    },
+    {
+      "id": "1350428931836084236",
+      "content": "itd be really funny if all the EN optimisations have drastically changed the tex",
+      "author": "itsmemiki",
+      "reactions": 1,
+      "channel": "Morimens loading screen lore compilation"
     },
     {
       "id": "1350581729760645224",

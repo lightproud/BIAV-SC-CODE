@@ -1,10 +1,20 @@
 {
   "date": "2026-01-11",
-  "messages": 181,
-  "unique_authors": 15,
-  "reactions_total": 69,
-  "attachments": 14,
+  "messages": 243,
+  "unique_authors": 16,
+  "reactions_total": 138,
+  "attachments": 24,
   "channel_activity": {
+    "I errr....": 2,
+    "I errrr #3. (Kath and Corpo.": 12,
+    "just a lil mouchette drawing~": 1,
+    "morimens drawings (ignore how chunky they look I did most at school)": 2,
+    "The Wait (Hastur)": 2,
+    "Tulu: Fauxborn": 1,
+    "hi... william (and dante) edit for the william kisser...": 37,
+    "That Damnable Play": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!": 3,
     "「相位对弈」轮选模式功能异常": 5,
     "Bunch of doodles and sillies": 1,
     "💭「Processing」game client crashed...somewhat": 60,
@@ -26,33 +36,48 @@
     "1445556242381672559": 14
   },
   "hourly_activity": {
-    "8": 4,
+    "7": 9,
+    "13": 4,
+    "14": 5,
+    "15": 5,
+    "23": 8,
+    "17": 10,
+    "8": 5,
+    "2": 39,
+    "10": 3,
     "9": 4,
     "11": 67,
     "5": 7,
     "4": 1,
-    "7": 4,
-    "17": 5,
     "18": 5,
     "19": 1,
     "22": 43,
-    "23": 3,
     "3": 1,
-    "2": 2,
     "6": 3,
     "1": 19,
-    "10": 2,
-    "13": 1,
-    "14": 3,
-    "15": 2,
     "21": 3,
     "16": 1
   },
   "message_types": {
-    "0": 4,
-    "19": 2
+    "19": 6,
+    "0": 55,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1460049808109736037",
+      "content": "i love morimens !! :3",
+      "author": "vaniillee",
+      "reactions": 29,
+      "channel": "just a lil mouchette drawing~"
+    },
+    {
+      "id": "1459808779871850676",
+      "content": "||Full version on X||",
+      "author": "shiio4870",
+      "reactions": 18,
+      "channel": "I errrr #3. (Kath and Corpo."
+    },
     {
       "id": "1459771909007872041",
       "content": "<:Tawil_autistic:1459078936070721718>  Hello.... I  was playing around for fun..",
@@ -82,11 +107,25 @@
       "channel": "「相位对弈」轮选模式功能异常"
     },
     {
+      "id": "1459966354303090709",
+      "content": "Hastur concept in written form. All will inevitably rest, in Carcosa.\n\n\nhttps://",
+      "author": "al_leyway",
+      "reactions": 6,
+      "channel": "The Wait (Hastur)"
+    },
+    {
       "id": "1459827838902337617",
       "content": "守密人，\n    目前「相位对弈」轮选模式功能出现异常，会出现无法选择队伍配置，导致卡死的问题，请守密人暂时不要进行轮选模式游玩。\n    校工目前正在针对问题",
       "author": "morimensstaff02",
       "reactions": 6,
       "channel": "「相位对弈」轮选模式功能异常"
+    },
+    {
+      "id": "1459736957449146390",
+      "content": "hello this is for <@1307852017468964877> ... art creds go to <@10716869762830827",
+      "author": "enzoperry",
+      "reactions": 5,
+      "channel": "hi... william (and dante) edit for the william kisser..."
     },
     {
       "id": "1459937265051766784",
@@ -96,11 +135,32 @@
       "channel": ""
     },
     {
+      "id": "1459957289841725739",
+      "content": "yes I drew albino twice<:thinking2:1356053172065534153>",
+      "author": "h3ll0hu",
+      "reactions": 4,
+      "channel": "morimens drawings (ignore how chunky they look I did most at school)"
+    },
+    {
       "id": "1459966575531790675",
       "content": "丟ㄍ調一調配色的古老者跟臨時搓出來不是古老者的喚醒體草稿🤩",
       "author": "ass191044",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1460060200454193182",
+      "content": "Elemental booba yuri",
+      "author": "rain_scarlet",
+      "reactions": 2,
+      "channel": "I errrr #3. (Kath and Corpo."
+    },
+    {
+      "id": "1459826002283860112",
+      "content": "I need a fanfic of that timeline... <:Doll_Inferno_serenity:1459091720229752843>",
+      "author": "noname0963",
+      "reactions": 2,
+      "channel": "Tulu: Fauxborn"
     },
     {
       "id": "1459895605701771326",
@@ -117,39 +177,32 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1459929537554157588",
+      "content": "Look forward",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "I errrr #3. (Kath and Corpo."
+    },
+    {
+      "id": "1460048549302767697",
+      "content": "Wait I forgot the thais drawing",
+      "author": "h3ll0hu",
+      "reactions": 1,
+      "channel": "morimens drawings (ignore how chunky they look I did most at school)"
+    },
+    {
+      "id": "1459739872448479272",
+      "content": "THANK YOU SO MUCH 🥹 ❤️‍🩹",
+      "author": "enzoperry",
+      "reactions": 1,
+      "channel": "hi... william (and dante) edit for the william kisser..."
+    },
+    {
       "id": "1459790081027211295",
       "content": "Plus, those changes are pointed not on the generation, but on the damage scaling",
       "author": "vxvendetta97",
       "reactions": 1,
       "channel": "Possibilty of rebalancing Wanda?"
-    },
-    {
-      "id": "1459824273605660780",
-      "content": "相比较最初公布的计划，会有各方面原因进行调整，有可能更多有可能更少，包括但不限于产能、节日安排、后续版本适合的日期等等。",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「Answered」之前杜勒和诞墨之间排期额外多隔了一个人，这是因为产能不足吗？如果是，后续的角色排期都是这样吗"
-    },
-    {
-      "id": "1459858974659838205",
-      "content": "那是我的問題了\n沒看懂意思",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "Awakener Kit Speculation: Francis"
-    },
-    {
-      "id": "1459928797364355143",
-      "content": "<:ramona_tuff_:1441426630420467753>  funni poison",
-      "author": "mistakendoge",
-      "reactions": 1,
-      "channel": "Awakener Kit Speculation: Francis"
-    },
-    {
-      "id": "1459716491204231269",
-      "content": "You may proceed, Ramona kisser 3000.",
-      "author": "zzio_",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

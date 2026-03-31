@@ -1,10 +1,32 @@
 {
   "date": "2025-10-06",
-  "messages": 74,
-  "unique_authors": 17,
-  "reactions_total": 81,
-  "attachments": 17,
+  "messages": 201,
+  "unique_authors": 30,
+  "reactions_total": 328,
+  "attachments": 40,
   "channel_activity": {
+    "The Persistence of Fading Glow | Tulu Fanfic": 10,
+    "Pickman art competition submissions": 1,
+    "Dov'è Cacus？": 4,
+    "Pickman's Model | Pickman and Sylvester fanfic with bonus fanart": 2,
+    "Pickman": 2,
+    "Pickman Fanart Submission": 2,
+    "Concordant Fates (Tulu & Murphy Fanfic)": 1,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 5,
+    "Beginner Progression Video Guide (with timestamps!) & Caro Realm Rundown": 1,
+    "The Seafarer stray’s Aequor Cult ｜Blue blood realm only has one no used (used gpt trans)": 15,
+    "The Timeless Call Banner Guide": 3,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
+    "久遠的呼喚建議下池嗎（下版本": 1,
+    "Flares' Comprehensive Beginner Guide to Morimens": 1,
+    "Is Kaleido Recollection Banner good?": 24,
+    "Team help": 1,
+    "who should I pull on the timeless banner?": 11,
+    "How many RadixSediment u get a month?? Does it enough to buy something else beside the 2 select SSR": 1,
+    "What should I pull on timeless banner?": 12,
+    "[Newbie] Who should I pull on the Timeless Banner": 24,
+    "Should I pull for GHelot to E3 or Tawil on Timeless Call banner?": 3,
+    "Who to pull for timeless banner?": 2,
     "V2.3.3.0 停服维护公告": 8,
     "✅「Answered」Name change": 1,
     "✅「Answered」How many cards does \"Mutated Heart\" draw without Resonances?": 1,
@@ -25,35 +47,82 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "5": 21,
-    "9": 3,
-    "10": 8,
-    "13": 3,
-    "19": 1,
-    "7": 7,
+    "16": 10,
+    "19": 22,
+    "12": 26,
+    "15": 7,
+    "18": 2,
+    "1": 3,
+    "6": 12,
+    "23": 3,
+    "13": 8,
+    "5": 33,
+    "17": 1,
+    "14": 7,
+    "2": 17,
+    "3": 7,
+    "8": 8,
+    "7": 10,
+    "9": 4,
+    "10": 10,
+    "11": 7,
     "4": 2,
-    "20": 2,
-    "15": 4,
-    "2": 3,
-    "3": 1,
-    "14": 6,
-    "6": 5,
-    "8": 2,
-    "11": 4,
-    "16": 1,
-    "12": 1
+    "20": 2
   },
   "message_types": {
-    "0": 6,
-    "19": 2
+    "0": 90,
+    "19": 36,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1424784342093140028",
+      "content": "UID: 101091715\n\nLet me paint you <:rizz2:1356053138133614753>",
+      "author": "haneopng",
+      "reactions": 69,
+      "channel": "Pickman Fanart Submission"
+    },
+    {
+      "id": "1424774275688300544",
+      "content": "[Modern AU] The painting surfaced quietly—no signature, no date, only a boy fram",
+      "author": "ayla1425",
+      "reactions": 46,
+      "channel": "Pickman's Model | Pickman and Sylvester fanfic with bonus fanart"
+    },
+    {
+      "id": "1424730335924584578",
+      "content": "Dov'è la sua città?",
+      "author": "calmdreab",
+      "reactions": 33,
+      "channel": "Dov'è Cacus？"
+    },
+    {
+      "id": "1424780181759066172",
+      "content": "contest submission :)\nUID: 100971267",
+      "author": "0_010",
+      "reactions": 26,
+      "channel": "Pickman"
+    },
     {
       "id": "1424699657707065394",
       "content": "~~跪下來求自己別畫姐了發現跪下來也能畫~~",
       "author": "navirecorbeau",
       "reactions": 22,
       "channel": ""
+    },
+    {
+      "id": "1424790906422169650",
+      "content": "UID: 100961933\nIngame name and discord name is Seamen. (^^)/\n<@13591568001081059",
+      "author": "mount_fisherman",
+      "reactions": 19,
+      "channel": "Pickman art competition submissions"
+    },
+    {
+      "id": "1424748681097121813",
+      "content": "https://www.youtube.com/watch?v=ausZ_FAATLw\n\n*This is a full guide covering all ",
+      "author": "reya.li",
+      "reactions": 14,
+      "channel": "Beginner Progression Video Guide (with timestamps!) & Caro Realm Rundown"
     },
     {
       "id": "1424634751746310185",
@@ -77,6 +146,20 @@
       "channel": "预警？"
     },
     {
+      "id": "1424568175760117862",
+      "content": "In the months after the Sona-Nyl, Tulu suffers terrible nightmares.\n\nhttps://arc",
+      "author": "fuckupa2",
+      "reactions": 9,
+      "channel": "Concordant Fates (Tulu & Murphy Fanfic)"
+    },
+    {
+      "id": "1424836775427444936",
+      "content": "Hey everyone — it’s me, Ernest the stray, still alive.\n Apparently, there’s been",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "The Seafarer stray’s Aequor Cult ｜Blue blood realm only has one no used (used gpt trans)"
+    },
+    {
       "id": "1424717158658736139",
       "content": "大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第17期（第44期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首领\n",
       "author": "silverstream_s",
@@ -98,6 +181,27 @@
       "channel": "V2.3.3.0 停服维护公告"
     },
     {
+      "id": "1424793810831020042",
+      "content": "i shall read this whole masterpiece 💚",
+      "author": "jormiejormungandr",
+      "reactions": 2,
+      "channel": "The Persistence of Fading Glow | Tulu Fanfic"
+    },
+    {
+      "id": "1424793890959134752",
+      "content": "the tulu emote should be the most reacted one noooooo",
+      "author": "jormiejormungandr",
+      "reactions": 2,
+      "channel": "The Persistence of Fading Glow | Tulu Fanfic"
+    },
+    {
+      "id": "1424841645169311896",
+      "content": "<:bow:1356053037159944473> thank you!! im so happy you liked it <:shy:1356053151",
+      "author": "annaxxe_",
+      "reactions": 2,
+      "channel": "The Persistence of Fading Glow | Tulu Fanfic"
+    },
+    {
       "id": "1424695672795430963",
       "content": "Can you at least say how the compensation is gonna work? Is it a %refund based o",
       "author": "lotan_045",
@@ -110,55 +214,6 @@
       "author": "omnichromia",
       "reactions": 2,
       "channel": "✅「Answered」How many cards does \"Mutated Heart\" draw without Resonances?"
-    },
-    {
-      "id": "1424859324987211870",
-      "content": "手冊介面的獎勵圖標背景都變成白色是有意為之嗎？\n比較喜歡原本的樣貌<:please:1356053110375714817>",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": "✅「已回答」手冊介面"
-    },
-    {
-      "id": "1424585089756565555",
-      "content": "怎么回事？我的延期补偿呢？邮箱里没有啊，总不可能是猫没发吧😫",
-      "author": "rong486",
-      "reactions": 2,
-      "channel": "✅「已回答」我没有收到延期补偿"
-    },
-    {
-      "id": "1424632111591194734",
-      "content": "",
-      "author": "insomnia07763",
-      "reactions": 2,
-      "channel": "沒拿到相位支配者獎勵"
-    },
-    {
-      "id": "1424634866909057064",
-      "content": "",
-      "author": "wild_pansy",
-      "reactions": 2,
-      "channel": "沒拿到相位支配者獎勵"
-    },
-    {
-      "id": "1424753428764168443",
-      "content": "is good only if you want both unit and wheel, in that case can be pretty nice, b",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "V2.3.3.0 停服维护公告"
-    },
-    {
-      "id": "1424586786247676016",
-      "content": "视频来自百合子堂堂登场",
-      "author": "rong486",
-      "reactions": 1,
-      "channel": "💭「处理中」环娜皮肤大招远景小人没变"
-    },
-    {
-      "id": "1424626740323422228",
-      "content": "我昨天pvp相位支配者  我還特的po圖給朋友看，今天沒發獎勵給我\n\nuid:100869250",
-      "author": "insomnia07763",
-      "reactions": 1,
-      "channel": "沒拿到相位支配者獎勵"
     }
   ]
 }

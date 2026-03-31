@@ -1,10 +1,12 @@
 {
   "date": "2025-02-25",
-  "messages": 34,
+  "messages": 37,
   "unique_authors": 11,
-  "reactions_total": 82,
-  "attachments": 0,
+  "reactions_total": 84,
+  "attachments": 1,
   "channel_activity": {
+    "Show the Entire Map after stage Completion": 1,
+    "Origin of time": 2,
     "💟獻上愛的圖騰——來自小花腦的信函": 1,
     "🎁DC15000守密人達成禮": 21,
     "關於攻略募集": 2,
@@ -16,6 +18,9 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "7": 1,
+    "20": 1,
+    "22": 1,
     "12": 6,
     "13": 14,
     "14": 2,
@@ -27,7 +32,8 @@
     "3": 2
   },
   "message_types": {
-    "0": 22
+    "0": 2,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -64,6 +70,13 @@
       "author": "nidie0256_61327",
       "reactions": 4,
       "channel": "關於攻略募集"
+    },
+    {
+      "id": "1343843502345424940",
+      "content": "As the title suggests, having it would be great. When you're back tracking and t",
+      "author": "cometovilla",
+      "reactions": 2,
+      "channel": "Show the Entire Map after stage Completion"
     },
     {
       "id": "1343931886451556423",

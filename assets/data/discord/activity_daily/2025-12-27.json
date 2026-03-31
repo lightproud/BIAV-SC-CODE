@@ -1,10 +1,17 @@
 {
   "date": "2025-12-27",
-  "messages": 147,
+  "messages": 179,
   "unique_authors": 22,
-  "reactions_total": 237,
-  "attachments": 51,
+  "reactions_total": 268,
+  "attachments": 55,
   "channel_activity": {
+    "[Fan Awakener Kit] Sophia, the Vindictive Liberator": 1,
+    "Water color tulu fanart": 5,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 7,
+    "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction": 2,
+    "400……": 3,
+    "新手抽卡跟配隊請益": 13,
+    "新手求助": 1,
     "Bunch of doodles and sillies": 42,
     "So that one MS Teams Shark huh": 5,
     "Pollux": 9,
@@ -36,33 +43,33 @@
     "1454438358351609857": 24
   },
   "hourly_activity": {
-    "1": 17,
+    "14": 9,
+    "9": 10,
+    "10": 14,
+    "13": 5,
+    "16": 10,
+    "17": 6,
+    "18": 3,
+    "15": 26,
+    "1": 29,
+    "4": 5,
+    "3": 15,
     "2": 4,
-    "3": 14,
     "5": 2,
     "6": 4,
     "7": 3,
-    "9": 6,
-    "13": 4,
-    "15": 24,
     "21": 2,
-    "10": 13,
     "12": 3,
-    "4": 4,
     "11": 13,
-    "16": 6,
-    "17": 4,
-    "18": 2,
     "19": 7,
     "20": 2,
     "8": 2,
-    "14": 6,
     "0": 3,
     "22": 2
   },
   "message_types": {
-    "0": 44,
-    "19": 11,
+    "0": 29,
+    "19": 2,
     "4": 1
   },
   "top_reacted_messages": [
@@ -88,6 +95,13 @@
       "channel": "So that one MS Teams Shark huh"
     },
     {
+      "id": "1454487577745817662",
+      "content": "https://docs.google.com/document/d/1Axy5dIAik9TsMXOML5U6GL_83OfvIgbFzN72E8JR8kU/",
+      "author": "inana_istar",
+      "reactions": 18,
+      "channel": "[Fan Awakener Kit] Sophia, the Vindictive Liberator"
+    },
+    {
       "id": "1454438358351609857",
       "content": "I always use my sona for MC in every game I play.\nBut this one, I prefer her to ",
       "author": "noeyebunny.nobunsu",
@@ -107,6 +121,13 @@
       "author": "egoist_2314",
       "reactions": 12,
       "channel": "✅「Answered」Gmurphy's base tentacle DMG doesn't get updated after increasing your max HP"
+    },
+    {
+      "id": "1454399327098241047",
+      "content": "There was an attempt... <:takenotes:1357186646294138890>\n\nUID : 101012654",
+      "author": "noname0963",
+      "reactions": 9,
+      "channel": "Water color tulu fanart"
     },
     {
       "id": "1454281210829344769",
@@ -191,20 +212,6 @@
       "author": "Deleted User",
       "reactions": 2,
       "channel": "嗨又是我我又畫了哈姆林"
-    },
-    {
-      "id": "1454414757749854281",
-      "content": "忘oc，她俩搭档还没画…\n你忘什么时候卖一口黑深残小女同给我吃吃",
-      "author": "yingmai_",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1454289607595393068",
-      "content": "",
-      "author": "lotusbunyee",
-      "reactions": 1,
-      "channel": "Bunch of doodles and sillies"
     }
   ]
 }

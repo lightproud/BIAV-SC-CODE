@@ -1,10 +1,20 @@
 {
   "date": "2025-07-17",
-  "messages": 41,
-  "unique_authors": 7,
-  "reactions_total": 146,
-  "attachments": 9,
+  "messages": 118,
+  "unique_authors": 32,
+  "reactions_total": 356,
+  "attachments": 21,
   "channel_activity": {
+    "Hammy Chibi": 15,
+    "Casiah Sketch": 1,
+    "Pandia": 1,
+    "Liz Sketch": 2,
+    "Doresain's Pre Release Kit Review.": 1,
+    "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 7,
+    "V2.3 夜宴邀请函┊Banquet Invitation": 19,
+    "《忘却前夜》序章语音追加┊Morimens Prologue voice addition": 14,
+    "V2.3 杜勒赛因情报：葬骸城旅游攻略┊About Doresain: NECROVIA CITY TRAVEL GUIDE": 13,
+    "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain": 4,
     "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\"": 6,
     "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 6,
     "先提前开一个杜勒加强方案筹划吧": 6,
@@ -18,24 +28,31 @@
     "早期蟲族捕捉哈基米的珍貴影像(修正版)": 6
   },
   "hourly_activity": {
-    "11": 4,
-    "12": 1,
+    "6": 6,
+    "8": 19,
+    "12": 5,
+    "21": 3,
+    "23": 5,
+    "4": 4,
+    "1": 1,
+    "0": 3,
+    "2": 3,
+    "9": 15,
+    "10": 9,
+    "11": 11,
+    "13": 4,
+    "16": 6,
+    "7": 13,
+    "3": 1,
     "14": 3,
-    "4": 2,
-    "6": 1,
     "17": 2,
     "18": 2,
-    "8": 12,
-    "13": 2,
-    "2": 1,
-    "7": 3,
-    "16": 5,
     "15": 3
   },
   "message_types": {
-    "0": 8,
-    "4": 1,
-    "19": 3
+    "0": 63,
+    "19": 12,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -44,6 +61,55 @@
       "author": "game.producer.light",
       "reactions": 70,
       "channel": "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\""
+    },
+    {
+      "id": "1395341296549232753",
+      "content": "✦在 7 月 21 日 9:00- 8 月 18 日 9:00 期间，累计登录 7 天即可领取「无垢之芯」×100 的丰厚奖励！\n✦王邸长案备席已齐，诸位可要准",
+      "author": "morimensstaff01",
+      "reactions": 41,
+      "channel": "V2.3 夜宴邀请函┊Banquet Invitation"
+    },
+    {
+      "id": "1395285182793388143",
+      "content": "Celebration for hitting aff 10~",
+      "author": "ev_6185",
+      "reactions": 29,
+      "channel": "Hammy Chibi"
+    },
+    {
+      "id": "1395334018597388328",
+      "content": "为序章、「忘却篇-终章」9-13关卡追加语音！\n已完成序章首次通关的守密人，可以在「调查行动-普通模式」中重新游玩序章。\n\n——✦——✦—— ✦✦✦ ——✦——",
+      "author": "morimensstaff01",
+      "reactions": 26,
+      "channel": "《忘却前夜》序章语音追加┊Morimens Prologue voice addition"
+    },
+    {
+      "id": "1395255653379080294",
+      "content": "quick liz doodle",
+      "author": "rumbyy_",
+      "reactions": 20,
+      "channel": "Liz Sketch"
+    },
+    {
+      "id": "1395328361261436998",
+      "content": "",
+      "author": "rumbyy_",
+      "reactions": 19,
+      "channel": "Casiah Sketch"
+    },
+    {
+      "id": "1395320349104537661",
+      "content": "Woe, Pandia be upon thee",
+      "author": "polarisu",
+      "reactions": 17,
+      "channel": "Pandia"
+    },
+    {
+      "id": "1395299113683259472",
+      "content": "🕛️**集合时间：**晚上12点\n🗺️**集合地点：**离你最近的墓园，找到一口石质棺椁，躺进去并压低呼吸\n👜**必带物品：**\n腐味试剂：它能掩盖你的活人气息",
+      "author": "morimensstaff01",
+      "reactions": 16,
+      "channel": "V2.3 杜勒赛因情报：葬骸城旅游攻略┊About Doresain: NECROVIA CITY TRAVEL GUIDE"
     },
     {
       "id": "1395416667265437706",
@@ -58,6 +124,13 @@
       "author": "undecember_news",
       "reactions": 14,
       "channel": "早期蟲族捕捉哈基米的珍貴影像(修正版)"
+    },
+    {
+      "id": "1395237692480163900",
+      "content": "Glad u liked it Keeper o7",
+      "author": "morimens_15",
+      "reactions": 11,
+      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
     },
     {
       "id": "1395439135115972800",
@@ -88,6 +161,20 @@
       "channel": "（蔚蓝档案x忘却前夜同人）Sensei瞬息弥萨格（第二幕 已完结）"
     },
     {
+      "id": "1395307037998714980",
+      "content": "We're fixing this machine translation<:takenotes:1357186646294138890>",
+      "author": "morimens_15",
+      "reactions": 7,
+      "channel": "V2.3 杜勒赛因情报：葬骸城旅游攻略┊About Doresain: NECROVIA CITY TRAVEL GUIDE"
+    },
+    {
+      "id": "1395307705769398313",
+      "content": "什么都吃，只会让大家||营养均衡👍 ||",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "V2.3 杜勒赛因情报：葬骸城旅游攻略┊About Doresain: NECROVIA CITY TRAVEL GUIDE"
+    },
+    {
       "id": "1395324504200183949",
       "content": "為什麼校貓能夠寫出蛻變這章，各位有所不知，校貓曾經賣過XX給蟲族老爺，從而換取收集蟲族外型的機會，感謝新．克萊門汀醫生的蟲子．聞台讓這段歷史重現",
       "author": "void_1546.",
@@ -95,25 +182,18 @@
       "channel": "早期蟲族捕捉哈基米的珍貴影像(修正版)"
     },
     {
-      "id": "1395466420657197289",
-      "content": "That’s very cool! Thank you!",
-      "author": "kabipo",
-      "reactions": 1,
-      "channel": "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus"
+      "id": "1395195527884308661",
+      "content": "数值看着挺强的，唯一不太理解的是，既然都设计好残骸这个机制了，怎么就只和狂气爆发有联动，其它能力都和残骸机制无关？",
+      "author": "rain_scarlet",
+      "reactions": 3,
+      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
     },
     {
-      "id": "1395401233035956355",
-      "content": "We have <#1356200968311803956> and another entire section for <#1304022827824844",
-      "author": "red_rest",
-      "reactions": 1,
-      "channel": "New player advice"
-    },
-    {
-      "id": "1395441104475918407",
-      "content": "你能夠寫這麼長是真的很厲害",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "（蔚蓝档案x忘却前夜同人）Sensei瞬息弥萨格（第二幕 已完结）"
+      "id": "1395302369994080327",
+      "content": "<@1131790839291596841> \n12：00到就啃啃戈雅",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "V2.3 杜勒赛因情报：葬骸城旅游攻略┊About Doresain: NECROVIA CITY TRAVEL GUIDE"
     }
   ]
 }

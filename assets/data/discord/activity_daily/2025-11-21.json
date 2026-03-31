@@ -1,10 +1,21 @@
 {
   "date": "2025-11-21",
-  "messages": 286,
+  "messages": 342,
   "unique_authors": 28,
-  "reactions_total": 109,
-  "attachments": 36,
+  "reactions_total": 186,
+  "attachments": 47,
   "channel_activity": {
+    "Genesis Murphy Fanart": 2,
+    "wip keeper": 3,
+    "Keep Quiet or else I'll Six Wings": 1,
+    "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!": 3,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 2,
+    "新手求助": 2,
+    "不算新的新人求助": 27,
+    "配队求助": 6,
+    "9-12 help": 1,
+    "What are proxy certificates for now?": 3,
+    "help with teambuilding": 6,
     "V2.4.0.4 停服维护公告": 85,
     "V2.4.0.3 在线维护公告": 2,
     "能不能新增一个撤回上一张出牌的功能？": 3,
@@ -58,33 +69,48 @@
     "綜上所述所以我畫了水仙視姦（？）": 3
   },
   "hourly_activity": {
-    "15": 29,
+    "8": 13,
+    "9": 34,
+    "10": 60,
+    "2": 5,
+    "5": 24,
+    "4": 22,
+    "12": 1,
+    "11": 15,
+    "17": 8,
+    "14": 15,
+    "15": 31,
+    "13": 9,
     "16": 15,
-    "17": 7,
     "18": 6,
     "19": 2,
     "20": 53,
     "21": 3,
     "7": 5,
-    "13": 7,
-    "9": 30,
     "23": 5,
-    "11": 12,
-    "14": 11,
-    "4": 16,
-    "10": 34,
-    "8": 10,
-    "2": 3,
     "3": 14,
-    "5": 22,
     "6": 1,
     "0": 1
   },
   "message_types": {
-    "0": 76,
-    "19": 11
+    "0": 44,
+    "19": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1441338125098942534",
+      "content": "UID : 101017310\nI can't wait to learn more about her ><",
+      "author": "mareluce",
+      "reactions": 30,
+      "channel": "Genesis Murphy Fanart"
+    },
+    {
+      "id": "1441355779809611798",
+      "content": "got any suggestions for the background and like accessory details?",
+      "author": "arkenret",
+      "reactions": 30,
+      "channel": "wip keeper"
+    },
     {
       "id": "1441282954876817479",
       "content": "前情提要\n\nhttps://discord.com/channels/1131791637933199470/1173463482503536711/14406",
@@ -98,6 +124,13 @@
       "author": "hhhh098962",
       "reactions": 14,
       "channel": "V2.4.0.4 停服维护公告"
+    },
+    {
+      "id": "1441379641620430868",
+      "content": "I'm very sorry, I would like to apply to announce the list of winners next week.",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1441447745792512106",
@@ -163,6 +196,13 @@
       "channel": "綜上所述所以我畫了水仙視姦（？）"
     },
     {
+      "id": "1441341611761074256",
+      "content": "Ah i forgot to share i have the fullbody version (in which i think kind of odd i",
+      "author": "mareluce",
+      "reactions": 3,
+      "channel": "Genesis Murphy Fanart"
+    },
+    {
       "id": "1441463612727230547",
       "content": "把难度调整回来不把繁育之理调整回来？只复制3张什么意思？而且想保留挑战性就单独开挑战性关卡啊",
       "author": "chuzhibai.",
@@ -196,34 +236,6 @@
       "author": "void_1546.",
       "reactions": 2,
       "channel": "杜勒X皮的正史（肥腸確定"
-    },
-    {
-      "id": "1441477564911845617",
-      "content": "are you referring to the Awakening events? If so, the way I'm reading it is that",
-      "author": "arkaether",
-      "reactions": 1,
-      "channel": "V2.4.0.4 停服维护公告"
-    },
-    {
-      "id": "1441522258714562713",
-      "content": "I'll be back to not playing the game in protest now ig.",
-      "author": "thpdom",
-      "reactions": 1,
-      "channel": "V2.4.0.4 停服维护公告"
-    },
-    {
-      "id": "1441493759488557066",
-      "content": "水母(奧瑞塔)的天賦只在探索的第一次戰鬥觸發",
-      "author": "rainbowteemo",
-      "reactions": 1,
-      "channel": "💭「处理中」水母(奧瑞塔)的天賦只在探索的第一次戰鬥觸發"
-    },
-    {
-      "id": "1441572705567510580",
-      "content": "make money by sell merch to en people <:Ichithumbsup:590020195519823873>",
-      "author": "lumato",
-      "reactions": 1,
-      "channel": "Plans on merch outside of TaoBao?"
     }
   ]
 }

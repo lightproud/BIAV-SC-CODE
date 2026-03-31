@@ -1,10 +1,11 @@
 {
   "date": "2026-02-07",
-  "messages": 9994,
+  "messages": 9996,
   "unique_authors": 155,
-  "reactions_total": 1546,
+  "reactions_total": 1548,
   "attachments": 379,
   "channel_activity": {
+    "中奖名单公布┊Lottery Winners Announced!": 2,
     "V2.4.2.2 停服维护公告": 5,
     "New Year Break~ || Doresain & Sylvester": 3,
     "Tinct": 3,
@@ -22,6 +23,8 @@
     "🔸morimens-game-chat": 5971
   },
   "hourly_activity": {
+    "7": 470,
+    "9": 282,
     "6": 230,
     "8": 549,
     "12": 397,
@@ -38,8 +41,6 @@
     "15": 691,
     "17": 667,
     "5": 338,
-    "7": 469,
-    "9": 281,
     "13": 438,
     "14": 458,
     "18": 425,
@@ -48,8 +49,8 @@
     "20": 267
   },
   "message_types": {
-    "0": 8,
-    "19": 3
+    "0": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {

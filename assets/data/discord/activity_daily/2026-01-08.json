@@ -1,10 +1,20 @@
 {
   "date": "2026-01-08",
-  "messages": 33,
-  "unique_authors": 7,
-  "reactions_total": 37,
-  "attachments": 5,
+  "messages": 63,
+  "unique_authors": 16,
+  "reactions_total": 107,
+  "attachments": 18,
   "channel_activity": {
+    "I errr....": 6,
+    "Chibi Tulu": 1,
+    "Karen meme": 1,
+    "Analysis of Minimum Limited Unit Overexalt Investment Required for 425 Dtide": 3,
+    "How to set someone as a \"Favorite\" support:": 1,
+    "Standard Tier List - Early and Endgame": 3,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
+    "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!": 6,
+    "弥萨格艺术展 4┊Mythag Art Exhibition 4": 2,
+    "健检": 6,
     "Ryker": 5,
     "Bunch of doodles and sillies": 1,
     "💭「Processing」Frequent Crash all of a sudden": 1,
@@ -17,24 +27,40 @@
     "1305430084420898868": 9
   },
   "hourly_activity": {
-    "8": 2,
-    "15": 4,
+    "6": 4,
+    "9": 1,
+    "13": 5,
+    "22": 1,
+    "0": 4,
+    "21": 3,
+    "18": 2,
+    "20": 1,
+    "8": 8,
+    "14": 2,
+    "15": 7,
+    "7": 2,
     "16": 3,
-    "18": 1,
     "4": 4,
     "12": 1,
     "11": 4,
     "2": 1,
     "10": 4,
     "3": 1,
-    "0": 3,
     "17": 5
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "0": 23,
+    "19": 5,
+    "4": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1458953667322581104",
+      "content": "<:T_stare:1400771751650136145>",
+      "author": "catniim",
+      "reactions": 36,
+      "channel": "Chibi Tulu"
+    },
     {
       "id": "1458741346033733695",
       "content": "Hit, Stand, Blackjack!\n\nThe gambling addict and N are my two favs so the stuff I",
@@ -43,11 +69,46 @@
       "channel": "Ryker"
     },
     {
+      "id": "1458622796203687966",
+      "content": "Karen meme.",
+      "author": "hestion.1",
+      "reactions": 19,
+      "channel": "Karen meme"
+    },
+    {
+      "id": "1458885057270906995",
+      "content": "Short video I made showing how to use someone's character as a support without n",
+      "author": "velmi",
+      "reactions": 6,
+      "channel": "How to set someone as a \"Favorite\" support:"
+    },
+    {
+      "id": "1458733758185214007",
+      "content": "<@&1440553558238953482> \n感谢大家热情的参与，我们收到了很多特别棒的作品！\n经过了多轮评选后，诞生了最终的获奖名单：\n\n✦ 奖励会在本周",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1458940797326987427",
+      "content": "UID: 101073278\n\nCase study on the most recent Chaos Ring of December 22nd, 2025 ",
+      "author": "dracozion",
+      "reactions": 3,
+      "channel": "Analysis of Minimum Limited Unit Overexalt Investment Required for 425 Dtide"
+    },
+    {
       "id": "1458623559579603153",
       "content": "",
       "author": "duxadidus",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1458812155196604468",
+      "content": "Thank you ! <:pray:1356053116260454534>",
+      "author": "zzio_",
+      "reactions": 1,
+      "channel": "弥萨格艺术展 4┊Mythag Art Exhibition 4"
     },
     {
       "id": "1458773913113727099",

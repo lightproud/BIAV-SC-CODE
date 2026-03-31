@@ -1,10 +1,16 @@
 {
   "date": "2025-05-19",
-  "messages": 45,
-  "unique_authors": 11,
-  "reactions_total": 18,
-  "attachments": 10,
+  "messages": 139,
+  "unique_authors": 26,
+  "reactions_total": 46,
+  "attachments": 12,
   "channel_activity": {
+    "aomi’s morimens dump": 1,
+    "24": 1,
+    "Fun Morimen's Music Video I made": 1,
+    "Flares' Comprehensive Guide V3 (D-Tide/Arc 2 HM/Tier List/24 update)": 1,
+    "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview": 89,
+    "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！": 1,
     "✅校猫碎碎念#近况分享": 2,
     "✅「已回答」找不到有互相關注的校友的助戰": 6,
     "✅「Answered」Strange cuts in the dialogue": 2,
@@ -22,32 +28,65 @@
     "關卡地圖「幻夢深潛」總覽Ⅰ（重置版）": 1
   },
   "hourly_activity": {
+    "13": 3,
+    "11": 15,
+    "20": 1,
+    "6": 18,
+    "7": 47,
+    "8": 8,
+    "9": 3,
+    "10": 8,
+    "12": 2,
+    "15": 4,
+    "16": 2,
+    "17": 8,
     "3": 3,
-    "10": 5,
     "5": 9,
-    "6": 6,
-    "13": 2,
     "1": 2,
     "2": 4,
-    "15": 2,
-    "16": 1,
-    "17": 6,
-    "11": 1,
     "0": 1,
-    "21": 1,
-    "9": 2
+    "21": 1
   },
   "message_types": {
-    "0": 1,
-    "19": 1
+    "0": 73,
+    "19": 20,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1374017678712246364",
+      "content": "keeping this alive with a wip fan animation i’m making with winkle!",
+      "author": "aomi_crinklies04",
+      "reactions": 17,
+      "channel": "aomi’s morimens dump"
+    },
     {
       "id": "1373959860227674172",
       "content": "350中低配",
       "author": "moxiangsenluo.",
       "reactions": 10,
       "channel": "融灾"
+    },
+    {
+      "id": "1374124584789610586",
+      "content": "https://www.youtube.com/watch?v=8aDSBw8ewKg&ab_channel=Flares%27sidechannel I'm ",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "Fun Morimen's Music Video I made"
+    },
+    {
+      "id": "1373932891943473174",
+      "content": "神父終於要露胸了",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview"
+    },
+    {
+      "id": "1373918476208439337",
+      "content": "都說了是超維 男",
+      "author": "_buqi",
+      "reactions": 3,
+      "channel": "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview"
     },
     {
       "id": "1374130540130861067",

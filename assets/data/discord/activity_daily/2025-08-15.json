@@ -1,10 +1,24 @@
 {
   "date": "2025-08-15",
-  "messages": 128,
-  "unique_authors": 20,
-  "reactions_total": 379,
-  "attachments": 31,
+  "messages": 217,
+  "unique_authors": 44,
+  "reactions_total": 427,
+  "attachments": 45,
   "channel_activity": {
+    "Tier List for 375-425": 2,
+    "Flares' Awaker Review : Corpo -  2 Videos. Recap Review. A tier Discard": 3,
+    "Flares' Awaker Review : Horla - S Tier Support": 2,
+    "Flares' Awaker Review : Hameln- S tier Chaos support": 2,
+    "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\"": 8,
+    "📜V2.3.1 版本前瞻┊ Version Outlook": 25,
+    "V2.3.1 广播剧《永燃不烬的追猎》┊Radio Drama - Everburning Hunt": 14,
+    "do traphase points rewards reset every season?": 7,
+    "Needing help on building Jenkin": 7,
+    "should i start buying/farming covenants as soon as they're unlocked?": 6,
+    "What do I build for him?": 6,
+    "Need Advise": 2,
+    "How does one obtain these?": 3,
+    "Anyone whale out there wanna add me need the supports（￣︶￣）↗": 2,
     "V2.3.1.0 停服维护公告": 31,
     "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy": 1,
     "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 50,
@@ -21,29 +35,33 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "12": 27,
+    "15": 5,
+    "0": 3,
+    "4": 7,
+    "5": 5,
+    "2": 3,
+    "3": 16,
+    "6": 8,
+    "8": 18,
+    "9": 8,
+    "10": 19,
+    "7": 18,
+    "16": 10,
+    "11": 10,
+    "19": 4,
+    "20": 5,
+    "21": 7,
+    "23": 4,
+    "17": 9,
+    "14": 18,
+    "12": 30,
     "13": 6,
-    "14": 17,
-    "19": 2,
-    "21": 4,
-    "11": 9,
-    "10": 17,
-    "15": 1,
-    "7": 3,
-    "8": 9,
-    "18": 4,
-    "17": 4,
-    "9": 5,
-    "2": 1,
-    "3": 12,
-    "4": 4,
-    "5": 1,
-    "6": 2
+    "18": 4
   },
   "message_types": {
-    "0": 65,
-    "19": 15,
-    "6": 2
+    "0": 72,
+    "19": 16,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -73,6 +91,13 @@
       "author": "aurora3981",
       "reactions": 26,
       "channel": "V2.3.1.0 停服维护公告"
+    },
+    {
+      "id": "1405815533676269640",
+      "content": "“小姑娘小伙子们，觉睡得够多了。”\n“该起来活动活动筋骨了，肆意焚烧吧！把这罪恶的一切，全部摧毁！”\n\n✦ 凯蒂古拉 CV：鸟羽优好\n\n——✦——✦—— ✦✦✦",
+      "author": "morimensstaff01",
+      "reactions": 21,
+      "channel": "V2.3.1 广播剧《永燃不烬的追猎》┊Radio Drama - Everburning Hunt"
     },
     {
       "id": "1405865644515135538",
@@ -131,6 +156,13 @@
       "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     },
     {
+      "id": "1405823552359370824",
+      "content": "<:dishes:1356083313063759922> Here's the transcript of this time's Radio Drama, ",
+      "author": "morimens_15",
+      "reactions": 11,
+      "channel": "V2.3.1 广播剧《永燃不烬的追猎》┊Radio Drama - Everburning Hunt"
+    },
+    {
       "id": "1405865128959807499",
       "content": "**Term Updates**\n\nFinally, here's a selection of new terms for those of you who ",
       "author": "morimens_15",
@@ -170,20 +202,6 @@
       "content": "Appreciate you and the team works as always 🙏",
       "author": "_venush",
       "reactions": 5,
-      "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
-    },
-    {
-      "id": "1405911177254535209",
-      "content": "My favorite awaker is back",
-      "author": "aurora3981",
-      "reactions": 4,
-      "channel": "V2.3.1.0 停服维护公告"
-    },
-    {
-      "id": "1405923976730902579",
-      "content": "This is not it king",
-      "author": "whirli_bri",
-      "reactions": 4,
       "channel": "忘却前夜 本地化日志第二期 Morimens Localization Notes #2"
     }
   ]

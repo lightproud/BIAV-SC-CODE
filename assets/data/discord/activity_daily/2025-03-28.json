@@ -1,10 +1,13 @@
 {
   "date": "2025-03-28",
-  "messages": 22,
+  "messages": 26,
   "unique_authors": 6,
   "reactions_total": 724,
-  "attachments": 2,
+  "attachments": 5,
   "channel_activity": {
+    "Need help with team comp/builds": 1,
+    "NOTICE FOR ALL NEW PLAYERS": 1,
+    "【日本語訳】フィードバック": 2,
     "V2.1.1.7 在線維護公告": 2,
     "✅前瞻：V2.1.1 相位对弈联动": 1,
     "✅前瞻：V2.1 融灾黑潮·熔毁": 1,
@@ -18,6 +21,9 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "22": 1,
+    "16": 1,
+    "18": 2,
     "9": 3,
     "10": 4,
     "3": 6,
@@ -27,8 +33,7 @@
     "2": 2
   },
   "message_types": {
-    "0": 2,
-    "4": 2
+    "0": 4
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,17 @@
 {
   "date": "2025-07-24",
-  "messages": 57,
-  "unique_authors": 7,
-  "reactions_total": 1106,
-  "attachments": 11,
+  "messages": 99,
+  "unique_authors": 13,
+  "reactions_total": 1148,
+  "attachments": 16,
   "channel_activity": {
+    "Thais Warm up": 1,
+    "A Song of Blood and Hunger (Uvhash Morimens Fanfic)": 1,
+    "My Morimens Gallery": 3,
+    "fuckupatoo's morimens fanfics": 17,
+    "Doresain x you fanfic 18+": 8,
+    "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 7,
+    "Should I make a new account": 5,
     "V2.3.0.0 停服维护公告": 3,
     "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\"": 2,
     "校猫碎碎念#Translation Plan Update 本地化计划变更": 8,
@@ -23,26 +30,29 @@
     "1305430084420898868": 5
   },
   "hourly_activity": {
+    "9": 7,
+    "4": 25,
+    "10": 15,
+    "6": 7,
+    "7": 1,
+    "0": 7,
+    "13": 4,
+    "14": 3,
+    "23": 1,
+    "16": 3,
+    "17": 3,
     "1": 4,
     "5": 2,
     "3": 4,
-    "0": 5,
     "2": 4,
-    "4": 15,
-    "17": 1,
-    "6": 3,
     "12": 1,
-    "9": 6,
-    "10": 1,
     "11": 6,
     "22": 1,
-    "13": 3,
     "15": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 5,
-    "6": 1
+    "19": 6,
+    "0": 36
   },
   "top_reacted_messages": [
     {
@@ -74,11 +84,32 @@
       "channel": ""
     },
     {
+      "id": "1397887544909103125",
+      "content": "I use chatgpt hope it work well. Not really good in English. I mean I know how t",
+      "author": "dittoqwq",
+      "reactions": 12,
+      "channel": "Doresain x you fanfic 18+"
+    },
+    {
       "id": "1397795611293519882",
       "content": "The issue with Ouroboros Codex has been fixed, and any rewards you did not recei",
       "author": "morimensstaff01",
       "reactions": 9,
       "channel": "✅「Answered」I bought a pack and it’s gone now"
+    },
+    {
+      "id": "1397888129397948456",
+      "content": "[Afterword / Epilogue:]\n\nYou: (waking up, looking at yourself in the mirror) …Wh",
+      "author": "dittoqwq",
+      "reactions": 8,
+      "channel": "Doresain x you fanfic 18+"
+    },
+    {
+      "id": "1397803026504224798",
+      "content": "\"4:30. Ran 6 miles across the Isis River. [Uvhash] argued with a passerby elderl",
+      "author": "fuckupa2",
+      "reactions": 7,
+      "channel": "A Song of Blood and Hunger (Uvhash Morimens Fanfic)"
     },
     {
       "id": "1397820803898150995",
@@ -95,6 +126,13 @@
       "channel": "杜勒赛因x你 18+"
     },
     {
+      "id": "1397883869037985853",
+      "content": "",
+      "author": "lowtownnivn",
+      "reactions": 4,
+      "channel": "My Morimens Gallery"
+    },
+    {
       "id": "1397763806838521866",
       "content": "I think you guys are really incredible, you are doing a lot with such a tiny tea",
       "author": "junakaru4ever",
@@ -102,11 +140,32 @@
       "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
     },
     {
+      "id": "1397876025421070456",
+      "content": "<:sakoneBow:1298330601706754128> i do a random drawing before getting to commiss",
+      "author": "rumbyy_",
+      "reactions": 3,
+      "channel": "Thais Warm up"
+    },
+    {
+      "id": "1397803601719726101",
+      "content": "",
+      "author": "fuckupa2",
+      "reactions": 3,
+      "channel": "fuckupatoo's morimens fanfics"
+    },
+    {
       "id": "1397743939200749750",
       "content": "Factual clarification: Most of the first three chapters have already been re-tra",
       "author": "game.producer.light",
       "reactions": 3,
       "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+    },
+    {
+      "id": "1397801657953157131",
+      "content": "AHHHH THANK YOUUUUUU, hope i can deliver more like this in the future as well...",
+      "author": "fuckupa2",
+      "reactions": 2,
+      "channel": "fuckupatoo's morimens fanfics"
     },
     {
       "id": "1397807696786493542",
@@ -130,32 +189,11 @@
       "channel": "✅「Answered」Resetting Helot but ended up resetting Nautilla"
     },
     {
-      "id": "1397730177605177375",
-      "content": "Of course, we’ve done our best to use the paid version. AI translation often wor",
-      "author": "game.producer.light",
+      "id": "1397883857021177986",
+      "content": "",
+      "author": "lowtownnivn",
       "reactions": 1,
-      "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
-    },
-    {
-      "id": "1397825207644983407",
-      "content": "Hello, we previously disabled the payment function of Brazilian IOS, but we are ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」{SKErrorDomain,0} when trying to top-up on iPhone!"
-    },
-    {
-      "id": "1397798887783137280",
-      "content": "<@589115953355423805>",
-      "author": "foxcatfurry",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1397958828888166461",
-      "content": "谢谢戈雅",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": ""
+      "channel": "My Morimens Gallery"
     }
   ]
 }

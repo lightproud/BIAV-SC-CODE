@@ -1,10 +1,19 @@
 {
   "date": "2025-11-15",
-  "messages": 94,
+  "messages": 189,
   "unique_authors": 26,
-  "reactions_total": 379,
-  "attachments": 15,
+  "reactions_total": 439,
+  "attachments": 20,
   "channel_activity": {
+    "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 1,
+    "A Small Problem": 1,
+    "Gmurphy Art": 2,
+    "OC awakener story": 1,
+    "Liz painting": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction": 80,
+    "想问问配队&建议": 6,
+    "R和SR命輪都是疊到+12就可以全分解了嗎？": 2,
     "V2.4.0.0 停服维护公告": 60,
     "3+1 [Pollux and Castor Fanfic]": 2,
     "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫": 1,
@@ -20,24 +29,29 @@
     "1423337172655935600": 6
   },
   "hourly_activity": {
-    "11": 31,
-    "12": 17,
-    "13": 5,
-    "14": 9,
+    "12": 19,
+    "22": 1,
+    "11": 33,
+    "16": 64,
+    "9": 4,
+    "6": 7,
+    "3": 1,
+    "7": 9,
+    "10": 1,
+    "14": 11,
+    "15": 10,
+    "19": 1,
+    "13": 6,
     "17": 1,
     "23": 1,
-    "9": 3,
-    "6": 4,
     "5": 1,
     "4": 8,
     "8": 6,
-    "15": 2,
-    "7": 1,
     "0": 5
   },
   "message_types": {
-    "19": 26,
-    "0": 37
+    "0": 73,
+    "19": 22
   },
   "top_reacted_messages": [
     {
@@ -53,6 +67,20 @@
       "author": "annaxxe_",
       "reactions": 38,
       "channel": "3+1 [Pollux and Castor Fanfic]"
+    },
+    {
+      "id": "1439386065143336970",
+      "content": "Get out of there, Ryker. No more games, i'm trying to think here.",
+      "author": "ykarus.obs",
+      "reactions": 14,
+      "channel": "A Small Problem"
+    },
+    {
+      "id": "1439144587368206418",
+      "content": "在看了新神母的技能組之後一直覺得有點奇怪，但又說不上來，這幾天想了想，應該是因為感覺她現在的技能組其實不是一個真正的角色 而是一個集神國界域和利莫里亞的群體光環",
+      "author": "linling.xup615",
+      "reactions": 12,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
     },
     {
       "id": "1439309048355880962",
@@ -76,11 +104,25 @@
       "channel": "✅「已回答」仙网"
     },
     {
+      "id": "1439145481996599389",
+      "content": "最後 這是第一次發這種需要邏輯的長文 若有不清楚或冒犯到誰的請見諒",
+      "author": "linling.xup615",
+      "reactions": 7,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1439222028698914837",
       "content": "都有在派股息（叠加奖励）<:processing:1357185814567718963>",
       "author": "cs001092",
       "reactions": 7,
       "channel": "V2.4.0.0 停服维护公告"
+    },
+    {
+      "id": "1439289624567484688",
+      "content": "我也好你也罢大家都是利莫里亚了",
+      "author": "junakaru4ever",
+      "reactions": 6,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
     },
     {
       "id": "1439108402646224896",
@@ -97,11 +139,39 @@
       "channel": "💭「Processing」bug in the description Caren ult"
     },
     {
+      "id": "1439340324949332098",
+      "content": "BuffGmurphy",
+      "author": "sexysneakystoat1625",
+      "reactions": 5,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1439152561952395316",
+      "content": "別告訴當初給你看了，還說給自己的內部人員做參考了。\n\n很明顯沒有甚至敷衍。尤其是船長，他的覺醒只有一點是有符合我說要有的，但卻就做那一個。\n\n結果給你那麼多時間",
+      "author": "suggestion088922",
+      "reactions": 4,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1439291482463932466",
+      "content": "~~所以我選擇先罵為敬🤓 ~~",
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1439139965501182034",
       "content": "",
       "author": "s64987866",
       "reactions": 3,
       "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
+    },
+    {
+      "id": "1439151424494895104",
+      "content": "講了，也不清楚小貓要不要看了，甚至給你一大堆時間設計，卻是這樣的。給你範本了不看給你真正的設計也不看，然後搬日服的垃圾設定過來就叫神國。\n\n我告訴妳，這叫自殺甚",
+      "author": "suggestion088922",
+      "reactions": 2,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
     },
     {
       "id": "1439187178470248498",
@@ -123,27 +193,6 @@
       "author": "theborkerr",
       "reactions": 2,
       "channel": "Goliath's interaction with the Keeper in Arc 2 Chapter 3 is inconsistent with the main story"
-    },
-    {
-      "id": "1439219592881897553",
-      "content": "沒關係我甚至連9-12都還沒打過",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "V2.4.0.0 停服维护公告"
-    },
-    {
-      "id": "1439221069314785374",
-      "content": "好色 都給你",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "V2.4.0.0 停服维护公告"
-    },
-    {
-      "id": "1439258476642570386",
-      "content": "original says 17",
-      "author": "ggwpnp",
-      "reactions": 1,
-      "channel": "V2.4.0.0 停服维护公告"
     }
   ]
 }

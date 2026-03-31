@@ -1,10 +1,12 @@
 {
   "date": "2025-06-09",
-  "messages": 69,
+  "messages": 73,
   "unique_authors": 7,
   "reactions_total": 16,
   "attachments": 7,
   "channel_activity": {
+    "Introduction to the Holy Spreadsheet.": 1,
+    "🎊官周通販：淘寶全球可購！": 3,
     "💭「Processing」Pc ver. Stuck on update resource screen and then error 35": 2,
     "✅「已回答」魔女寬簷帽": 3,
     "卡茜亞狂氣爆發永久降力Bug": 3,
@@ -26,24 +28,23 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "14": 1,
+    "1": 2,
+    "2": 12,
+    "11": 7,
     "12": 1,
     "16": 1,
     "3": 15,
     "5": 4,
     "23": 3,
     "6": 19,
-    "2": 11,
     "9": 1,
-    "11": 6,
     "4": 5,
     "18": 1,
-    "1": 1,
     "19": 1
   },
   "message_types": {
-    "0": 23,
-    "4": 14,
-    "19": 3
+    "0": 4
   },
   "top_reacted_messages": [
     {

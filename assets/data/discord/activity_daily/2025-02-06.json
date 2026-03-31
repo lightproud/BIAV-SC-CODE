@@ -1,10 +1,11 @@
 {
   "date": "2025-02-06",
-  "messages": 262,
+  "messages": 270,
   "unique_authors": 25,
   "reactions_total": 121,
   "attachments": 12,
   "channel_activity": {
+    "GDoll preview rough TL": 8,
     "📜熔燬·朵爾喚醒體&命輪介紹": 85,
     "📜《忘卻前夜 Morimens》V2.1.0即將開放！精彩資訊一網打盡！": 54,
     "✅前瞻：V2.1 灵塑适性与钥令收集": 76,
@@ -21,8 +22,8 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "1": 29,
-    "2": 19,
+    "1": 31,
+    "2": 25,
     "3": 4,
     "4": 21,
     "5": 16,
@@ -39,8 +40,8 @@
     "8": 6
   },
   "message_types": {
-    "0": 174,
-    "19": 42
+    "0": 7,
+    "19": 1
   },
   "top_reacted_messages": [
     {

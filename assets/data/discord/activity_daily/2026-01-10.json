@@ -1,10 +1,16 @@
 {
   "date": "2026-01-10",
-  "messages": 95,
+  "messages": 116,
   "unique_authors": 11,
-  "reactions_total": 26,
-  "attachments": 15,
+  "reactions_total": 45,
+  "attachments": 16,
   "channel_activity": {
+    "I errr....": 12,
+    "Tulu: Fauxborn": 2,
+    "☔┆Lonely Club": 1,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 3,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!": 2,
     "Bunch of doodles and sillies": 1,
     "Possibilty of rebalancing Wanda?": 6,
     "建議讓戰鬥統計也能顯示助戰的具體數值": 2,
@@ -20,24 +26,36 @@
     "1305430084420898868": 2
   },
   "hourly_activity": {
+    "3": 12,
+    "0": 1,
+    "8": 2,
+    "15": 3,
+    "4": 3,
+    "9": 5,
+    "16": 5,
+    "1": 2,
     "12": 1,
     "14": 1,
-    "15": 2,
-    "16": 4,
     "18": 3,
     "5": 3,
     "23": 1,
-    "4": 2,
-    "9": 4,
     "10": 3,
     "11": 69,
     "13": 1,
     "7": 1
   },
   "message_types": {
-    "0": 1
+    "19": 3,
+    "0": 18
   },
   "top_reacted_messages": [
+    {
+      "id": "1459566607503331409",
+      "content": "",
+      "author": "kirikonuto",
+      "reactions": 16,
+      "channel": "☔┆Lonely Club"
+    },
     {
       "id": "1459555990478524569",
       "content": "While I know that asking for rebalance isn't really a viable thing to do because",
@@ -67,11 +85,25 @@
       "channel": "唤醒体设计：列维"
     },
     {
+      "id": "1459337748975452446",
+      "content": "does that mean he got 🫃",
+      "author": "zzio_",
+      "reactions": 2,
+      "channel": "Tulu: Fauxborn"
+    },
+    {
       "id": "1459585317429575864",
       "content": "true that, here’s hoping they give Wanda literally anything, maybe after the thi",
       "author": "bagels5899",
       "reactions": 2,
       "channel": "Possibilty of rebalancing Wanda?"
+    },
+    {
+      "id": "1459469838899740693",
+      "content": "I suppose it's either 🫃and GMurphy doesn't exist or he's GMurphy's son and Mirya",
+      "author": "happyskull",
+      "reactions": 1,
+      "channel": "Tulu: Fauxborn"
     },
     {
       "id": "1459582253603750173",

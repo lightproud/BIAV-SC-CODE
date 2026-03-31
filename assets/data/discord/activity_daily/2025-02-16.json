@@ -1,10 +1,13 @@
 {
   "date": "2025-02-16",
-  "messages": 37,
+  "messages": 54,
   "unique_authors": 11,
-  "reactions_total": 20,
-  "attachments": 6,
+  "reactions_total": 21,
+  "attachments": 8,
   "channel_activity": {
+    "Tier list as of 2.0": 12,
+    "I am new": 2,
+    "Team Comp Recommendations": 3,
     "💟獻上愛的圖騰——來自小花腦的信函": 2,
     "✅前瞻：V2.1.0.2 星辰篇规则": 8,
     "謹告各位守密人關於深潛36000條約": 16,
@@ -16,21 +19,25 @@
     "拿下索瓦爾格商用權了慶祝一下XD": 2
   },
   "hourly_activity": {
+    "3": 3,
+    "11": 6,
+    "12": 8,
+    "17": 3,
+    "21": 3,
+    "13": 5,
+    "14": 1,
+    "0": 3,
+    "2": 3,
+    "6": 1,
     "10": 10,
-    "13": 4,
-    "2": 2,
     "9": 3,
-    "17": 2,
-    "0": 2,
     "4": 3,
-    "11": 4,
-    "12": 3,
     "18": 1,
-    "3": 2,
     "16": 1
   },
   "message_types": {
-    "0": 10
+    "0": 15,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -53,6 +60,13 @@
       "author": "_cwz_",
       "reactions": 2,
       "channel": "謹告各位守密人關於深潛36000條約"
+    },
+    {
+      "id": "1340569851164491867",
+      "content": "Got it! Ty",
+      "author": "sialuxi",
+      "reactions": 1,
+      "channel": "Team Comp Recommendations"
     },
     {
       "id": "1340514394131533927",

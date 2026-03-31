@@ -1,10 +1,14 @@
 {
   "date": "2025-12-14",
-  "messages": 136,
+  "messages": 140,
   "unique_authors": 7,
-  "reactions_total": 159,
+  "reactions_total": 192,
   "attachments": 14,
   "channel_activity": {
+    "Ramona!": 1,
+    "Crimson Kaede": 1,
+    "Morimens Awakeners Database": 1,
+    "V2.4.0.11 一星幻衣「泰旖丝·孽宴狂欲」，限时免费获取！Claim the New Thais Skin: \"Sinful Decadence\" for Free!": 1,
     "A bit too late for anniversary but this cake is still good :D": 5,
     "求助，我是被版本淘汰了？": 56,
     "💭「处理中」是否考慮為喚醒體設置啟靈開關和天賦開關？": 1,
@@ -18,23 +22,25 @@
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
-    "20": 6,
+    "1": 2,
+    "2": 5,
+    "19": 1,
+    "20": 7,
     "22": 2,
     "23": 5,
     "15": 8,
     "16": 48,
     "13": 3,
     "0": 42,
-    "1": 1,
     "11": 1,
     "12": 12,
     "17": 1,
     "9": 2,
-    "2": 4,
     "7": 1
   },
   "message_types": {
-    "0": 5
+    "0": 3,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -50,6 +56,13 @@
       "author": "shwabr",
       "reactions": 55,
       "channel": "A bit too late for anniversary but this cake is still good :D"
+    },
+    {
+      "id": "1449583059434344528",
+      "content": "Can't wait for her skin to be released on global <:pray:1356053116260454534> \nUI",
+      "author": "raumbobulus",
+      "reactions": 32,
+      "channel": "Crimson Kaede"
     },
     {
       "id": "1449691818525589605",
@@ -92,6 +105,13 @@
       "author": "ernest_heart",
       "reactions": 2,
       "channel": "✅「已回答」凱刻斯靈塑內容"
+    },
+    {
+      "id": "1449571424325996637",
+      "content": "Best girl🥹💖謝謝你@我🥺",
+      "author": "shostakovich524",
+      "reactions": 1,
+      "channel": "Ramona!"
     },
     {
       "id": "1449759761695379610",

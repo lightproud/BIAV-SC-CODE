@@ -1,10 +1,18 @@
 {
   "date": "2025-12-03",
-  "messages": 147,
+  "messages": 176,
   "unique_authors": 29,
-  "reactions_total": 46,
-  "attachments": 20,
+  "reactions_total": 243,
+  "attachments": 41,
   "channel_activity": {
+    "Stolen memes of the day": 2,
+    "morimens pixel art": 1,
+    "Some doodles": 2,
+    "A few quick xmas emote edits": 1,
+    "Tulu Pencil Art": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!": 15,
+    "弥萨格留言墙┊Mythag Message Wall": 6,
     "各角色原型考据": 6,
     "💭「Processing」Morimens freeze when I log in": 3,
     "✅「已回答」繁中PC端黑屏": 1,
@@ -46,31 +54,81 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
+    "6": 26,
+    "14": 7,
+    "8": 22,
+    "12": 6,
+    "22": 4,
+    "10": 3,
+    "11": 10,
+    "15": 5,
+    "9": 3,
     "3": 28,
-    "12": 5,
     "13": 15,
     "7": 12,
-    "8": 6,
     "16": 3,
-    "15": 4,
     "4": 17,
     "17": 1,
     "5": 7,
-    "22": 3,
     "18": 1,
-    "6": 24,
     "19": 2,
     "0": 2,
-    "11": 9,
-    "14": 4,
-    "9": 1,
-    "2": 2,
-    "10": 1
+    "2": 2
   },
   "message_types": {
-    "0": 6
+    "0": 27,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1445692666527617104",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 42,
+      "channel": "弥萨格留言墙┊Mythag Message Wall"
+    },
+    {
+      "id": "1445788073689612460",
+      "content": "Lets prepare the server for the jolly season together <:HelotJollyFish:144514807",
+      "author": "sirtealot",
+      "reactions": 36,
+      "channel": "A few quick xmas emote edits"
+    },
+    {
+      "id": "1445777431767027906",
+      "content": "My favorite girl is Aigis.",
+      "author": "aigiseu_98967",
+      "reactions": 31,
+      "channel": "morimens pixel art"
+    },
+    {
+      "id": "1445688394158964867",
+      "content": "欢迎加入 X 官方社区🌹 \nWelcome to the X official community\n\nhttps://x.com/i/communities/1",
+      "author": "morimensstaff01",
+      "reactions": 27,
+      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
+    },
+    {
+      "id": "1445698182360203306",
+      "content": "# 我說我溫就是你遊最強狂氣輔你爾多龍媽",
+      "author": "ena04564",
+      "reactions": 14,
+      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
+    },
+    {
+      "id": "1445689269652819998",
+      "content": "~~什麽時候能統計自己的過去一年的數據比較想看這個~~",
+      "author": "navirecorbeau",
+      "reactions": 13,
+      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
+    },
+    {
+      "id": "1445697467915178114",
+      "content": "~~記得是這個~~\nhttps://www.bilibili.com/video/BV1wQ4tziEVU/?share_source=copy_web&vd_",
+      "author": "water_heart",
+      "reactions": 7,
+      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
+    },
     {
       "id": "1445700494512361554",
       "content": "It's important to maintain good will with your  customers. Bug or not, there are",
@@ -84,6 +142,34 @@
       "author": "kezrin",
       "reactions": 7,
       "channel": "Quasi Realm Tutorial"
+    },
+    {
+      "id": "1445757011378835549",
+      "content": "<:shy:1356053151349997829>",
+      "author": "l0tusg4rd3n",
+      "reactions": 6,
+      "channel": "Some doodles"
+    },
+    {
+      "id": "1445906099063488623",
+      "content": "Made this in like 2 hours with a crappy 0.5mm lead mechanical pencil that kept r",
+      "author": "nothing_of_wisdom",
+      "reactions": 6,
+      "channel": "Tulu Pencil Art"
+    },
+    {
+      "id": "1445696388775149588",
+      "content": "好像是有个佬整活凹深潜低分（",
+      "author": "sweet_25367",
+      "reactions": 6,
+      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
+    },
+    {
+      "id": "1445666110354620476",
+      "content": "bruh credit the og creators if ur gonna do this stuff",
+      "author": "zuraznable",
+      "reactions": 5,
+      "channel": "Stolen memes of the day"
     },
     {
       "id": "1445641235288031362",
@@ -107,6 +193,13 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1445697429570850846",
+      "content": "Some more doodles <:sign:1356085886793678848> <:cry1:1356053046374961212>",
+      "author": "l0tusg4rd3n",
+      "reactions": 2,
+      "channel": "Some doodles"
+    },
+    {
       "id": "1445759937966903307",
       "content": "<:point:1356053112292511815>",
       "author": "wolfierce",
@@ -121,95 +214,11 @@
       "channel": "蓋個圖樓"
     },
     {
-      "id": "1445626146594230333",
-      "content": "Thank you for providing the information. I have forwarded it to QA❤️",
-      "author": "morimensstaff01",
+      "id": "1445691069185527944",
+      "content": "什么大佬，输光...",
+      "author": "dittoqwq",
       "reactions": 1,
-      "channel": "💭「Processing」Raid stuck after clearing fight seemingly only on certain parties?"
-    },
-    {
-      "id": "1445775996753281138",
-      "content": "能不能开启碎裂余梦合成群星余梦的功能啊，大灵塑材料获取效率太低了",
-      "author": "o_o12382",
-      "reactions": 1,
-      "channel": "✅「已回答」合成"
-    },
-    {
-      "id": "1445578682608386180",
-      "content": "因为0.5%就是不想让你出呀",
-      "author": "relmx",
-      "reactions": 1,
-      "channel": "为什么我1100＋抽常驻池了，只出过一个限定"
-    },
-    {
-      "id": "1445815312745234462",
-      "content": "本來就不應該出沒什好搞心態的",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "为什么我1100＋抽常驻池了，只出过一个限定"
-    },
-    {
-      "id": "1445760748436455559",
-      "content": "100551275",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」Support Visual Bug"
-    },
-    {
-      "id": "1445704748828201122",
-      "content": "Is not mine, is Rhys（101121967）\n\nIt was made on December 1",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」Replay Bug"
-    },
-    {
-      "id": "1445618507822792854",
-      "content": "Yes, the designer is already considering optimizing the description",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Cruel homage posse bug"
-    },
-    {
-      "id": "1445634514775834770",
-      "content": "thank you",
-      "author": "meioh",
-      "reactions": 1,
-      "channel": "✅「Answered」Cruel homage posse bug"
-    },
-    {
-      "id": "1445623879564398593",
-      "content": "暂时没有这个ost的上线计划🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」卡斯托爾廣播劇"
-    },
-    {
-      "id": "1445778658684833935",
-      "content": "本節考點：\n破屏障、控狂氣量\n是的，麻煩的破(爛)屏障來了\n\n處理方法：\n毒、反、穿刺傷害、溫2費、多刀戰術\n\n又是塔薇 + 3廢物局\n好啦有其他解法\n提供一下",
-      "author": "akkom730",
-      "reactions": 1,
-      "channel": "大眼球D3(第三波"
-    },
-    {
-      "id": "1445683681011437600",
-      "content": "有在考慮課淵海紀行那裡還有個萬能啟靈大不了先給小玫瑰<:410082304598343682:1139503282742636574>",
-      "author": "hon_ey0",
-      "reactions": 1,
-      "channel": "一點塔薇玩家的小小心得"
-    },
-    {
-      "id": "1445698123556196486",
-      "content": "收到了再次感謝指導<:agree:1400771815076528258> <:happy:1356053849894420683>",
-      "author": "hon_ey0",
-      "reactions": 1,
-      "channel": "一點塔薇玩家的小小心得"
-    },
-    {
-      "id": "1445647586101821540",
-      "content": "很好笑",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "蓋個圖樓"
+      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
     }
   ]
 }

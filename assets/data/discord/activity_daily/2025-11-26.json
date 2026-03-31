@@ -1,10 +1,15 @@
 {
   "date": "2025-11-26",
-  "messages": 116,
+  "messages": 157,
   "unique_authors": 21,
-  "reactions_total": 40,
-  "attachments": 23,
+  "reactions_total": 200,
+  "attachments": 45,
   "channel_activity": {
+    "How it feels when Tawil plays Ramona cards": 1,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 1,
+    "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!": 5,
+    "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!": 14,
+    "卡关求救": 20,
     "V2.4.0.6 在线维护公告": 8,
     "✅「已回答」繁中PC端黑屏": 1,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 13,
@@ -42,31 +47,63 @@
     "1441326394817908736": 8
   },
   "hourly_activity": {
-    "8": 7,
-    "9": 10,
-    "10": 24,
+    "5": 4,
+    "9": 13,
+    "8": 8,
+    "14": 5,
+    "18": 2,
+    "19": 2,
+    "10": 29,
+    "11": 26,
+    "13": 5,
+    "15": 4,
+    "16": 20,
+    "20": 1,
+    "12": 7,
     "17": 6,
     "2": 3,
     "21": 2,
     "0": 2,
     "23": 3,
-    "11": 10,
-    "12": 3,
     "22": 1,
-    "5": 3,
     "7": 6,
-    "13": 3,
-    "15": 3,
-    "16": 19,
     "3": 3,
     "1": 2,
-    "14": 3,
     "4": 3
   },
   "message_types": {
-    "0": 8
+    "0": 35,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1443109550994755706",
+      "content": "",
+      "author": "joekimlee",
+      "reactions": 43,
+      "channel": "How it feels when Tawil plays Ramona cards"
+    },
+    {
+      "id": "1443176325312413799",
+      "content": "哎？守密人快来看看帽子这样戴好看吗？\n\n🥳**生日礼帽diy：**\n为「忘却前夜」设计一款生日礼帽，在评论区分享并留下你的uid，我们将在11月30日选出10位",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443302731510190081",
+      "content": "101121410",
+      "author": "meatloversus",
+      "reactions": 13,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443161172822982727",
+      "content": "so many memories that are so difficult to compress in one collage! so i made two",
+      "author": "jormiejormungandr",
+      "reactions": 12,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
     {
       "id": "1443294793307389995",
       "content": "丟丟點圖",
@@ -75,11 +112,81 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1443336028411789444",
+      "content": "101097409  <:T_stare:1400771751650136145>",
+      "author": "someone793",
+      "reactions": 11,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443191354325729361",
+      "content": "Cool idea. I wanted to visualize it 👀\nUID: 100651376",
+      "author": "ayla1425",
+      "reactions": 9,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443228558364512327",
+      "content": "101281500\nsry, the birthday hat got in contact with some weird black slime 🙁",
+      "author": "_whoisthatguy_",
+      "reactions": 8,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443256736168284202",
+      "content": "101161068\n~~这已经连不是帽子都不是了吧~~\n感谢潘狄娅赞助的蜡烛<:blowkiss:1356053035780014150> (等等，谁？",
+      "author": "ka_0414",
+      "reactions": 8,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443246259321176215",
+      "content": "Third picture \nHanna: Fuck.. that's downright nasty!\n\nFourth picture \nSometimes ",
+      "author": "be_queitplease",
+      "reactions": 6,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
+    {
+      "id": "1443228085674840095",
+      "content": "100329257",
+      "author": "muliupan",
+      "reactions": 6,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443303448966856846",
+      "content": "<:realm_ultra:1437283545784651926>  A Year of Morimens <:realm_caro:143728364813",
+      "author": "gillamaru",
+      "reactions": 5,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
+    {
+      "id": "1443177417081618564",
+      "content": "morimens official birthday hat should be the magic hat/trickster's hat <:cute1:1",
+      "author": "jormiejormungandr",
+      "reactions": 5,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1443184053665923103",
+      "content": "誰來幫我扣圖💀\n（101050839）",
+      "author": "shostakovich524",
+      "reactions": 5,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
       "id": "1443203388400472074",
       "content": "说真的，你们这最后一关剧情是不是有点难绷，我知道是为了说守密人下一章没离开这个世界，但是守密人追着学长来的然后墨菲说可以送守密人走了然后问都没问学长，甚至守密人",
       "author": "carme.0588",
       "reactions": 4,
       "channel": "剧情文案"
+    },
+    {
+      "id": "1443192436225478706",
+      "content": "Haha, are you sure? Well, don't mind me if I do <:happy:1356053849894420683>",
+      "author": "ayla1425",
+      "reactions": 3,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
     },
     {
       "id": "1443349984631329053",
@@ -103,95 +210,11 @@
       "channel": ""
     },
     {
-      "id": "1443228796378419251",
-      "content": "Post update, bleed seems to have inconsistent behavior when healing (maybe speci",
-      "author": "exaegrum",
+      "id": "1443191771453587529",
+      "content": "lol feel free to steal it!",
+      "author": "jormiejormungandr",
       "reactions": 2,
-      "channel": "Bleed sometimes not being removed upon heal"
-    },
-    {
-      "id": "1443294425542562035",
-      "content": "补一个H4-10不爆灵芝通关，纯神海目前还是缺少削减献祭的方式，带上墨菲会使得这一短板被补足，血量差不多低了一千但是生存好的多了。\n目前看来纯神海更适合10回合",
-      "author": "timee_ky",
-      "reactions": 2,
-      "channel": "纯血神国..."
-    },
-    {
-      "id": "1443380143874769000",
-      "content": "<:Cheerup:1400771555939844149> this got fixed with the story unlock requirements",
-      "author": "fishhazardthewizard",
-      "reactions": 1,
-      "channel": "✅「Resolved」bug | gmurphy story not unlocking properly"
-    },
-    {
-      "id": "1443203520554602496",
-      "content": "下次又遇到学长了\n学长：woc你直接抛弃我走了",
-      "author": "carme.0588",
-      "reactions": 1,
-      "channel": "剧情文案"
-    },
-    {
-      "id": "1443188193787772938",
-      "content": "这里是bug，问题已知正在安排修复，会尽快放出",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」在夕光裡沒有觸發"
-    },
-    {
-      "id": "1443165786603651205",
-      "content": "如題",
-      "author": "cameliia._.",
-      "reactions": 1,
-      "channel": "💭「处理中」星辰篇第四章記憶歸檔畫面異常"
-    },
-    {
-      "id": "1443047779164356728",
-      "content": "O口O原來如此，感謝🛐",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "開銀鑰的時候也顯示守密人的台詞"
-    },
-    {
-      "id": "1443273122462699675",
-      "content": "ok，有空试试拿去打第四章困难boss",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "2.4 角色命轮榜单"
-    },
-    {
-      "id": "1443186264483299388",
-      "content": "然後哈姆林恆燐換成神母，多少吃一點神國人的特性",
-      "author": "kourinn0707_82175",
-      "reactions": 1,
-      "channel": "誕塔隊初體驗"
-    },
-    {
-      "id": "1443206003221991496",
-      "content": "他應該是在說米粒........？",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "誕塔隊初體驗"
-    },
-    {
-      "id": "1443104317409333318",
-      "content": "勞斯窩好喜歡泥的線和用色",
-      "author": "undecember_news",
-      "reactions": 1,
-      "channel": "蓋個圖樓"
-    },
-    {
-      "id": "1443221439787438122",
-      "content": "對吧對吧(不對",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1443270430910841094",
-      "content": "logo of all (Chaos, Ultra, Aequor, Caro) plssss",
-      "author": "sinh_40042",
-      "reactions": 1,
-      "channel": ""
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
     }
   ]
 }

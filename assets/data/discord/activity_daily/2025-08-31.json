@@ -1,10 +1,21 @@
 {
   "date": "2025-08-31",
-  "messages": 60,
-  "unique_authors": 11,
-  "reactions_total": 46,
-  "attachments": 17,
+  "messages": 165,
+  "unique_authors": 14,
+  "reactions_total": 87,
+  "attachments": 47,
   "channel_activity": {
+    "🫴💚👑🐙": 1,
+    "Priority/Investment help.": 15,
+    "Help me.": 1,
+    "Got any advice for me?": 1,
+    "Any team building advice?": 3,
+    "Team Building Help": 37,
+    "Need Help on Account Progression": 12,
+    "Need help with team building": 11,
+    "general teambuilding and pull usage": 9,
+    "Just a few questions": 1,
+    "Investment Help": 14,
     "前瞻：Skin rarity planning 皮肤稀有度规划": 23,
     "💭「Processing」Petrify dispel": 1,
     "POSSES future and changes": 4,
@@ -21,30 +32,41 @@
     "一點拉郎": 5
   },
   "hourly_activity": {
-    "0": 3,
+    "0": 10,
+    "9": 11,
+    "14": 14,
+    "15": 5,
+    "16": 5,
+    "17": 3,
+    "21": 5,
+    "23": 3,
+    "12": 11,
+    "3": 2,
+    "4": 2,
+    "8": 2,
+    "10": 17,
+    "13": 18,
+    "2": 23,
+    "7": 13,
+    "22": 9,
     "1": 2,
-    "2": 11,
-    "4": 1,
     "5": 5,
-    "7": 10,
-    "14": 2,
-    "15": 1,
     "18": 1,
-    "8": 1,
-    "10": 2,
-    "12": 8,
-    "13": 3,
     "6": 3,
-    "20": 1,
-    "21": 1,
-    "9": 3,
-    "22": 2
+    "20": 1
   },
   "message_types": {
-    "0": 18,
-    "19": 5
+    "0": 83,
+    "19": 22
   },
   "top_reacted_messages": [
+    {
+      "id": "1411504505043812372",
+      "content": "I have come to give you\n\ns m a l l ✨💚👑🐙",
+      "author": "rowlynt66",
+      "reactions": 37,
+      "channel": "🫴💚👑🐙"
+    },
     {
       "id": "1411783513950392412",
       "content": "反正就審慎考慮好再做吧，別翻車就好\n\n目前也沒多少角色合適做成高級皮，一些常駐角色甚至從來沒有登場過，目前文案相比忘卻篇水平大幅下降也是事實\n\n星辰篇連||常駐",
@@ -114,6 +136,34 @@
       "author": "yolo_mode",
       "reactions": 2,
       "channel": "一點拉郎"
+    },
+    {
+      "id": "1411701252198236201",
+      "content": "From paid 5x pulls",
+      "author": "mrcheekyy",
+      "reactions": 1,
+      "channel": "Team Building Help"
+    },
+    {
+      "id": "1411705241522667540",
+      "content": "收到",
+      "author": "mrcheekyy",
+      "reactions": 1,
+      "channel": "Team Building Help"
+    },
+    {
+      "id": "1411509121835859968",
+      "content": "probably 'cause of her exalt",
+      "author": "zev0558",
+      "reactions": 1,
+      "channel": "Just a few questions"
+    },
+    {
+      "id": "1411742151242682460",
+      "content": "For the standard wheel banner, pull for Titan, it’s the best dps wheel rn so try",
+      "author": "yannic2112",
+      "reactions": 1,
+      "channel": "Investment Help"
     },
     {
       "id": "1411705781446770780",

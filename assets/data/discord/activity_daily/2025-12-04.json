@@ -1,10 +1,23 @@
 {
   "date": "2025-12-04",
-  "messages": 58,
-  "unique_authors": 17,
-  "reactions_total": 112,
-  "attachments": 27,
+  "messages": 110,
+  "unique_authors": 20,
+  "reactions_total": 131,
+  "attachments": 64,
   "channel_activity": {
+    "Some doodles": 1,
+    "I found a keeper in the snow": 2,
+    "Morimens things": 11,
+    "Tulu Pencil Art": 1,
+    "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!": 2,
+    "弥萨格留言墙┊Mythag Message Wall": 1,
+    "求神国推图输出手法以及星辰篇推图阵容相关建议": 3,
+    "新人求助": 5,
+    "萌新該怎麼玩忘卻": 14,
+    "Teambuilding for D-tide and arc  2 clear": 2,
+    "D-Tide Team Suggestions": 1,
+    "Need help making D-Tide team": 8,
+    "What should I prioritize?": 1,
     "V2.4.0.10 在线维护公告": 5,
     "关于【献祭】的bug修复": 3,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 4,
@@ -30,26 +43,32 @@
     "1441326394817908736": 2
   },
   "hourly_activity": {
-    "12": 5,
+    "9": 4,
+    "8": 5,
+    "12": 6,
+    "1": 3,
+    "2": 16,
+    "4": 9,
+    "6": 5,
+    "15": 6,
+    "3": 10,
+    "5": 6,
+    "20": 2,
+    "0": 7,
     "13": 3,
-    "1": 2,
     "14": 6,
     "21": 4,
     "16": 2,
-    "15": 1,
     "11": 4,
-    "0": 5,
-    "8": 4,
-    "3": 2,
-    "4": 3,
-    "5": 5,
     "10": 6,
     "7": 1,
     "23": 4,
     "19": 1
   },
   "message_types": {
-    "0": 5
+    "0": 45,
+    "19": 6,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -81,6 +100,13 @@
       "channel": "我也丟一下之前畫的 圖樓"
     },
     {
+      "id": "1446053893719982112",
+      "content": "<:W_falldown:1400771812542906389>",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "I found a keeper in the snow"
+    },
+    {
       "id": "1446180833189822614",
       "content": "When i play H4-10 and want to retry battle to play more optimize (without the ne",
       "author": "melwyn7591",
@@ -109,11 +135,32 @@
       "channel": ""
     },
     {
+      "id": "1445957584065527998",
+      "content": "I got so bored so i started coloring it a bit in one layer\n\nForgot her tail",
+      "author": "su_pp",
+      "reactions": 4,
+      "channel": "Morimens things"
+    },
+    {
       "id": "1446122378332606618",
       "content": "3. Localization\n[English]\n● Corrected the translation for the Posse \"Cruel Homag",
       "author": "morimensstaff02",
       "reactions": 4,
       "channel": "V2.4.0.10 在线维护公告"
+    },
+    {
+      "id": "1445987675709505536",
+      "content": "敢不敢全截 再裝就不像了",
+      "author": "axe_proficient",
+      "reactions": 3,
+      "channel": "萌新該怎麼玩忘卻"
+    },
+    {
+      "id": "1446069973566099586",
+      "content": "<:wisdom:1400771656510734356> <:processing:1357185814567718963> <:Pity:140077162",
+      "author": "l0tusg4rd3n",
+      "reactions": 2,
+      "channel": "Some doodles"
     },
     {
       "id": "1446089171348357232",
@@ -128,6 +175,20 @@
       "author": "tanchen0811",
       "reactions": 2,
       "channel": "我也丟一下之前畫的 圖樓"
+    },
+    {
+      "id": "1446076544199037063",
+      "content": "22次死抗⋯突然覺得我死抗兩千不夠看了（",
+      "author": "amstelredam",
+      "reactions": 1,
+      "channel": "弥萨格大学「银钥奖」颁奖典礼正式开幕！Mythag University \"Silver Key Award\" Ceremony Officially Begins!"
+    },
+    {
+      "id": "1446164231467827312",
+      "content": "原来～让我们一起加油！↖(^ω^)↗",
+      "author": "elaine1787",
+      "reactions": 1,
+      "channel": "新人求助"
     },
     {
       "id": "1445996139995205632",

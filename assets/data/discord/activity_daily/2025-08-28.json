@@ -1,10 +1,19 @@
 {
   "date": "2025-08-28",
-  "messages": 29,
-  "unique_authors": 8,
-  "reactions_total": 44,
-  "attachments": 5,
+  "messages": 123,
+  "unique_authors": 46,
+  "reactions_total": 185,
+  "attachments": 14,
   "channel_activity": {
+    "uvhash fan art submission": 1,
+    "goliath doodle": 4,
+    "Wplace tulu": 3,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?": 79,
+    "Is this team endgame worthy?": 1,
+    "is E0 daff wheel worth getting?": 1,
+    "I have a few questions about team building": 1,
+    "New player": 2,
     "V2.3.1.3 在线维护公告": 1,
     "✅「Answered」Question: Policy on fan-made/unofficial items": 2,
     "💭「Processing」Estado de Fiamma en el Despertar de Kathigu-Ra tras el uso de su propia llave (Posse)": 1,
@@ -18,29 +27,66 @@
     "2.3表情包": 2
   },
   "hourly_activity": {
-    "8": 1,
+    "2": 5,
+    "0": 1,
+    "6": 2,
+    "8": 40,
+    "9": 10,
+    "13": 4,
+    "15": 2,
+    "10": 7,
+    "11": 11,
+    "12": 10,
+    "14": 3,
+    "16": 4,
+    "17": 13,
+    "18": 3,
+    "22": 2,
+    "23": 2,
     "20": 1,
-    "22": 1,
-    "2": 1,
-    "18": 2,
     "3": 1,
     "5": 1,
-    "14": 2,
-    "21": 1,
-    "12": 5,
-    "17": 11,
-    "11": 2
+    "21": 1
   },
   "message_types": {
-    "0": 1
+    "0": 76,
+    "19": 18
   },
   "top_reacted_messages": [
+    {
+      "id": "1410537381005754490",
+      "content": "✍**已知：**\n守密人正与唤醒体们在伦蒂尼恩海边度假。此时，几十位唤醒体纷纷向你发出邀请：\n“摆躺椅、沏茶、还有涂防晒霜……我还有好多事情要你帮忙呢。”\n“冰",
+      "author": "morimensstaff01",
+      "reactions": 66,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
     {
       "id": "1410597309796061305",
       "content": "如題，開圖樓感覺很好玩",
       "author": "undecember_news",
       "reactions": 35,
       "channel": "我也要開圖樓"
+    },
+    {
+      "id": "1410690330185175166",
+      "content": "糟糕 这个地方草稿忘记改完 审图也没发现后续会改 太赶时间画师忙晕了 非常抱歉！！！！！！",
+      "author": "game.producer.light",
+      "reactions": 21,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410570121189265442",
+      "content": "插沙子裡了，變成稻草人",
+      "author": "ena04564",
+      "reactions": 9,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410546453020938241",
+      "content": "這復用有點好笑了，希望實裝好點",
+      "author": "navirecorbeau",
+      "reactions": 7,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
     },
     {
       "id": "1410635542651211826",
@@ -50,18 +96,102 @@
       "channel": "克萊門汀的特殊治療方法"
     },
     {
-      "id": "1410446177337475072",
-      "content": "Esto es un bug que me ha estado apareciendo mínimo una vez por partida el día de",
-      "author": "duxadidus",
-      "reactions": 1,
-      "channel": "💭「Processing」Estado de Fiamma en el Despertar de Kathigu-Ra tras el uso de su propia llave (Posse)"
+      "id": "1410542229663121429",
+      "content": "",
+      "author": "noname0963",
+      "reactions": 5,
+      "channel": "Wplace tulu"
     },
     {
-      "id": "1410585269614280756",
-      "content": "",
-      "author": "muliupan",
+      "id": "1410669116334936084",
+      "content": "「N」份（确信",
+      "author": "flarinsidia",
+      "reactions": 5,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410538335948247081",
+      "content": "這題我會看誰的最大\n我指的是年紀🤓 🤓",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410768607625085039",
+      "content": "我準備好了，可以發銀芯了",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410538031412150282",
+      "content": "唐突发饼，戈雅好\n~~只是这饼怎么看怎么像聚众嬤收米人是怎么回事~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410545759044108300",
+      "content": "艾瑞卡那雙腳會直接插進沙裡吧",
+      "author": "elkmilu",
+      "reactions": 3,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410455002488639589",
+      "content": "<@777861907973406731>",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "goliath doodle"
+    },
+    {
+      "id": "1410556556906336267",
+      "content": "好玩遊戲進攻我的小頭（",
+      "author": "oct3000",
+      "reactions": 2,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410594074552959066",
+      "content": "畫了不賣\n心胸狹隘",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410543229853634600",
+      "content": "~~還是說繁衍狂熱2~~",
+      "author": "heikwok",
       "reactions": 1,
-      "channel": "2.3表情包"
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410546808261967923",
+      "content": "讓沒手的角色打排球也是挺狠心的",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410553729509363733",
+      "content": "環拉廚(確定",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410593828427268208",
+      "content": "環拉棍勇夢碎了..",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1410620428640321586",
+      "content": "why isnt Kat actively on fire",
+      "author": "whydoihavetodothis69",
+      "reactions": 1,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
     }
   ]
 }

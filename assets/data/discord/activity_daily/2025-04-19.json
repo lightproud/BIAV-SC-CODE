@@ -1,10 +1,11 @@
 {
   "date": "2025-04-19",
-  "messages": 19,
+  "messages": 38,
   "unique_authors": 6,
-  "reactions_total": 13,
-  "attachments": 1,
+  "reactions_total": 14,
+  "attachments": 2,
   "channel_activity": {
+    "Star Chapter 1 + 2 Tier List": 19,
     "忘卻前夜OST：深港幽靈之船": 1,
     "✅校猫碎碎念#近况分享": 1,
     "新版本御四家0成本开荒教学": 3,
@@ -12,6 +13,9 @@
     "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑": 9
   },
   "hourly_activity": {
+    "14": 4,
+    "16": 1,
+    "23": 14,
     "3": 1,
     "11": 1,
     "6": 5,
@@ -21,7 +25,8 @@
     "12": 2
   },
   "message_types": {
-    "0": 2
+    "0": 17,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -44,6 +49,13 @@
       "author": "287405tjy_28066",
       "reactions": 3,
       "channel": "一个小故事（但不好看）"
+    },
+    {
+      "id": "1363155917490618469",
+      "content": "Retaliate stocks going up in chapter 2 bumped up a couple of units, though wanda",
+      "author": ".galeroar",
+      "reactions": 1,
+      "channel": "Star Chapter 1 + 2 Tier List"
     },
     {
       "id": "1363040842217947146",

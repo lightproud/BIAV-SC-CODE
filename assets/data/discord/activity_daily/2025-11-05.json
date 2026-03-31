@@ -1,10 +1,22 @@
 {
   "date": "2025-11-05",
-  "messages": 86,
-  "unique_authors": 14,
-  "reactions_total": 92,
-  "attachments": 5,
+  "messages": 277,
+  "unique_authors": 47,
+  "reactions_total": 269,
+  "attachments": 20,
   "channel_activity": {
+    "G Murphy Apology Form": 1,
+    "Ogier": 1,
+    "what was once lost...": 1,
+    "Posters": 1,
+    "Posse Per Second (PPS)": 6,
+    "A Very Brief Video Tier List and Rundown of ALL Awakeners in Arc 1": 3,
+    "Bagel's Okayge guide for Anniversary": 1,
+    "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn": 3,
+    "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ": 80,
+    "新人求助": 89,
+    "回坑玩家配队求助": 1,
+    "Flares' Comprehensive Beginner Guide to Morimens": 4,
     "Call for Community Volunteer Translators: Applications Open!": 1,
     "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment": 18,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 3,
@@ -26,24 +38,31 @@
     "1296113810549112874": 1
   },
   "hourly_activity": {
+    "14": 58,
+    "13": 38,
+    "11": 1,
+    "4": 28,
+    "17": 24,
+    "21": 3,
+    "22": 2,
+    "15": 80,
+    "16": 5,
+    "18": 3,
+    "23": 2,
+    "1": 3,
+    "6": 7,
+    "19": 3,
+    "10": 2,
     "3": 6,
-    "17": 17,
     "20": 1,
-    "4": 24,
     "8": 4,
     "0": 2,
-    "15": 1,
-    "18": 1,
-    "14": 15,
-    "13": 4,
     "7": 1,
-    "6": 6,
     "2": 4
   },
   "message_types": {
-    "0": 15,
-    "4": 2,
-    "19": 2
+    "0": 113,
+    "19": 78
   },
   "top_reacted_messages": [
     {
@@ -54,11 +73,116 @@
       "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
     },
     {
+      "id": "1435677743072411810",
+      "content": "UID: 100804972\n\nGuide on how to get the highest PPS for the 200 posse event.\nThe",
+      "author": "aurora3981",
+      "reactions": 25,
+      "channel": "Posse Per Second (PPS)"
+    },
+    {
+      "id": "1435594884177461269",
+      "content": "UID: 100663156",
+      "author": "decativated",
+      "reactions": 22,
+      "channel": "what was once lost..."
+    },
+    {
+      "id": "1435640112800071801",
+      "content": "For those who dissed her design.",
+      "author": "aurora3981",
+      "reactions": 21,
+      "channel": "G Murphy Apology Form"
+    },
+    {
+      "id": "1435637505474166804",
+      "content": "反正換是一定能滿",
+      "author": "lingcheng.0",
+      "reactions": 16,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1435646776869654678",
+      "content": "我來了墨菲🤡 第一天就給你全滿 能點的都點 雖然專武看起來有點怪怪的",
+      "author": "taayoui",
+      "reactions": 14,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1435683916978851933",
+      "content": "If I got anything wrong please call me out\n\nhttps://docs.google.com/document/d/1",
+      "author": "bagels5899",
+      "reactions": 10,
+      "channel": "Bagel's Okayge guide for Anniversary"
+    },
+    {
+      "id": "1435624106815913994",
+      "content": "~~忘卻美術的人物骨架其實全都是不正常的長度~~",
+      "author": "ass191044",
+      "reactions": 10,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1435679161850003557",
+      "content": "“We all love Aurora!”, we say in union.",
+      "author": "disgustedingucci",
+      "reactions": 8,
+      "channel": "Posse Per Second (PPS)"
+    },
+    {
+      "id": "1435741940028014684",
+      "content": "This is mostly both to help newer players to the game as well as for my own enjo",
+      "author": "reya.li",
+      "reactions": 8,
+      "channel": "A Very Brief Video Tier List and Rundown of ALL Awakeners in Arc 1"
+    },
+    {
+      "id": "1435624482625687572",
+      "content": "其實鯊魚小人有露出來是尾椎",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+    },
+    {
       "id": "1435618879488655533",
       "content": "🐱🦊",
       "author": "yingmai_",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1435637032885162164",
+      "content": "反正先抽個深化12",
+      "author": "lingcheng.0",
+      "reactions": 5,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1435662494508257504",
+      "content": "荷包：🏚️ 💸 🚑 🏥 💀⚰️ 🪦",
+      "author": "cs001092",
+      "reactions": 5,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1435625385172668518",
+      "content": "~~裙子底下不都是黑洞嗎~~",
+      "author": "ass191044",
+      "reactions": 4,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1435624195546681365",
+      "content": "伸縮自如",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1435624387813445754",
+      "content": "鯊魚就不知道了~~可能屁股吧~~",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
     },
     {
       "id": "1435677009576726771",
@@ -75,74 +199,11 @@
       "channel": "✅「Answered」Gnosis fragments"
     },
     {
-      "id": "1435539947976261684",
-      "content": "Thank you for your suggestion. I will convey it to the designer🙏",
-      "author": "morimensstaff01",
+      "id": "1435752164818681997",
+      "content": "i promise it's all sincere aside from my use of the word \"brief\"",
+      "author": "reya.li",
       "reactions": 2,
-      "channel": "✅「Answered」Flaws and Weaknesses in Pollux's skill design"
-    },
-    {
-      "id": "1435470285720785006",
-      "content": "Hi, we will add this feature in the future\n﻿\nIn fact, the current background of ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Keeping only the background on homescreen / no awakener"
-    },
-    {
-      "id": "1435482058242789437",
-      "content": "I didnt even think about it up until wolfierce had mentioned it",
-      "author": "dragonshiny7",
-      "reactions": 1,
-      "channel": "✅「Answered」Gnosis fragments"
-    },
-    {
-      "id": "1435482210886094948",
-      "content": "If only I could explain things better<:takenotes:1357186646294138890>",
-      "author": "dragonshiny7",
-      "reactions": 1,
-      "channel": "✅「Answered」Gnosis fragments"
-    },
-    {
-      "id": "1435521121062748172",
-      "content": "好",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": "✅「已回答」第七章共鳴字體重疊"
-    },
-    {
-      "id": "1435626990618284072",
-      "content": "<@769245092351180871> 請問委託佬畫這部片的ppt需要多少💵 \nhttps://youtu.be/Yl-yWV3Mg2o?si=NbgHRe",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1435633839908065340",
-      "content": "總共六個角色，大概切幾張圖我數一下有100~120左右吧（太多",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1435637208496210061",
-      "content": "我想目前大概兩個方向，一個是當委託，這樣要先討論內容畫面和數量(有個檔案讓我看看實際畫面等等)再評估工期估價；一個是大概東西給我，我慢慢來抽空~~當爽圖~~來畫",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1435639614546382969",
-      "content": "我好像找到之前那個mad了\n差不多這種完成度就好（？\nhttps://youtu.be/V6eeWGGYlVU?si=LbuUNugJLO1LPWbx",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
-    },
-    {
-      "id": "1435641105889890427",
-      "content": "那首先後續我們可能要先私訊討論🌿不然梗圖版不太方便笑死",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": "🔸欢乐梗图"
+      "channel": "A Very Brief Video Tier List and Rundown of ALL Awakeners in Arc 1"
     }
   ]
 }

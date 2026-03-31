@@ -1,10 +1,18 @@
 {
   "date": "2025-05-14",
-  "messages": 22,
+  "messages": 39,
   "unique_authors": 6,
-  "reactions_total": 5,
-  "attachments": 7,
+  "reactions_total": 38,
+  "attachments": 36,
   "channel_activity": {
+    "study of morimens art style :))": 2,
+    "Fishman 🐟": 1,
+    "Murphy": 1,
+    "aomi's morimens fic dump ✍": 1,
+    "Lotan": 3,
+    "D-tide Budget Teams (2025 May 16)": 4,
+    "D-Tide Leaderboard (2025 May 16)": 4,
+    "Kaly's Beginner Guides": 1,
     "忘卻前夜OST：領航手記": 6,
     "✅前瞻：1.5周年～活动福利篇": 3,
     "✅「Answered」Technical problem on bootup": 2,
@@ -16,27 +24,79 @@
     "✦关卡地图「融灾禁区」总览34期·星辰篇✦": 2
   },
   "hourly_activity": {
+    "4": 9,
+    "21": 1,
+    "2": 1,
+    "3": 6,
+    "18": 6,
+    "14": 3,
+    "15": 2,
     "8": 5,
-    "15": 1,
     "0": 1,
-    "4": 3,
-    "18": 2,
     "12": 3,
     "17": 1,
-    "3": 5,
     "5": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 1
+    "0": 16,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1372332613544579162",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 20,
+      "channel": "Fishman 🐟"
+    },
+    {
+      "id": "1372040819191578634",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "Lotan"
+    },
     {
       "id": "1372126697494806619",
       "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：領航手記，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請遵照同人規則，",
       "author": "morimensstaff01",
       "reactions": 5,
       "channel": "忘卻前夜OST：領航手記"
+    },
+    {
+      "id": "1372074014352212029",
+      "content": "Enjoyable read. Thank u🥰",
+      "author": "cometovilla",
+      "reactions": 1,
+      "channel": "aomi's morimens fic dump ✍"
+    },
+    {
+      "id": "1372276591564165351",
+      "content": "Wave 2:",
+      "author": "willsalvador",
+      "reactions": 1,
+      "channel": "D-tide Budget Teams (2025 May 16)"
+    },
+    {
+      "id": "1372277007525740628",
+      "content": "Wave 3:",
+      "author": "willsalvador",
+      "reactions": 1,
+      "channel": "D-tide Budget Teams (2025 May 16)"
+    },
+    {
+      "id": "1372277342201712720",
+      "content": "Wave 4:",
+      "author": "willsalvador",
+      "reactions": 1,
+      "channel": "D-tide Budget Teams (2025 May 16)"
+    },
+    {
+      "id": "1372277579532341459",
+      "content": "Wave 5:",
+      "author": "willsalvador",
+      "reactions": 1,
+      "channel": "D-tide Budget Teams (2025 May 16)"
     }
   ]
 }

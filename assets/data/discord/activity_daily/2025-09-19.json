@@ -1,10 +1,19 @@
 {
   "date": "2025-09-19",
-  "messages": 109,
-  "unique_authors": 8,
-  "reactions_total": 77,
-  "attachments": 30,
+  "messages": 145,
+  "unique_authors": 15,
+  "reactions_total": 173,
+  "attachments": 51,
   "channel_activity": {
+    "Thais Warm up": 4,
+    "doresain x pickman fan fic R18": 14,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 1,
+    "Flares' Awakener Review :Salvador": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 7,
+    "弥萨格艺术展 3┊Mythag Art Exhibition 3": 5,
+    "Standard Awakener Selection Help": 1,
+    "What should i aim for": 2,
+    "D-Tide advice": 1,
     "Call for Community Volunteer Translators: Applications Open!": 1,
     "V2.3.2.4 在线维护公告": 1,
     "[皮克曼考据]就用这颤抖的双手去描绘吧": 11,
@@ -23,32 +32,49 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "7": 38,
+    "9": 2,
+    "17": 9,
+    "10": 2,
+    "8": 18,
+    "14": 2,
+    "18": 10,
+    "15": 1,
     "4": 2,
     "13": 1,
     "3": 11,
     "5": 2,
-    "8": 15,
     "2": 4,
     "6": 38,
     "11": 3,
-    "18": 7,
-    "17": 8,
     "19": 1,
-    "14": 1,
-    "23": 1,
-    "7": 14,
-    "10": 1
+    "23": 1
   },
   "message_types": {
-    "0": 27
+    "0": 35,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1418496479160696922",
+      "content": "▎精彩同人作品分享，感谢大家精彩绝伦的创作！\n▎V2.3.2 UGC征集已开启，一等奖将获得10000银芯奖励，欢迎参与~\n\n——✦——✦—— ✦✦✦ ——✦—",
+      "author": "morimensstaff01",
+      "reactions": 76,
+      "channel": "弥萨格艺术展 3┊Mythag Art Exhibition 3"
+    },
     {
       "id": "1418510528275546203",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：奥尔拉EP·献给春天的花束 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵",
       "author": "morimensstaff01",
       "reactions": 16,
       "channel": "忘却前夜OST：奥尔拉EP·献给春天的花束"
+    },
+    {
+      "id": "1418500231674462218",
+      "content": "okay not putting tags since I already post one in chinese.Still, I am posting R1",
+      "author": "dittoqwq",
+      "reactions": 12,
+      "channel": "doresain x pickman fan fic R18"
     },
     {
       "id": "1418431862858186813",
@@ -77,6 +103,13 @@
       "author": "ass191044",
       "reactions": 7,
       "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
+    },
+    {
+      "id": "1418510050179289202",
+      "content": "<@998965744530370730> <@1006158341673865316> <@1182869265901162543> <@7021365609",
+      "author": "be_queitplease",
+      "reactions": 6,
+      "channel": "弥萨格艺术展 3┊Mythag Art Exhibition 3"
     },
     {
       "id": "1418509000802172969",
@@ -114,6 +147,20 @@
       "channel": ""
     },
     {
+      "id": "1418653325414371412",
+      "content": "This isn't really a guide per se, but I did do a full commentary of a 72000 Deep",
+      "author": "reya.li",
+      "reactions": 1,
+      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
+    },
+    {
+      "id": "1418504238874624102",
+      "content": "喵",
+      "author": "dittoqwq",
+      "reactions": 1,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
       "id": "1418444392779350118",
       "content": "<:please:1356053110375714817>",
       "author": "akalanden",
@@ -147,41 +194,6 @@
       "author": "morimensstaff01",
       "reactions": 1,
       "channel": "✅「Answered」We need steamOS compatibility"
-    },
-    {
-      "id": "1418611474183749792",
-      "content": "S56VE3T08I",
-      "author": "txt101225.",
-      "reactions": 1,
-      "channel": "邀請碼互助/Invitation code help each other"
-    },
-    {
-      "id": "1418748096518557868",
-      "content": "😋 好吃",
-      "author": "dittoqwq",
-      "reactions": 1,
-      "channel": "異端狂熱創作品鑑（繁衍狂熱皮杜向 有車有互攻有ooc）"
-    },
-    {
-      "id": "1418493161558245407",
-      "content": "||等我文寫完||",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "杜勒和皮克曼的车文来了"
-    },
-    {
-      "id": "1418667384117657734",
-      "content": "豪赤",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "啊欸嗯"
-    },
-    {
-      "id": "1418472594595905678",
-      "content": "別人都發兩篇文了，剩我一個一字未動",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": "【收米人&OC向】【繁衍狂热向】梦境之外"
     }
   ]
 }

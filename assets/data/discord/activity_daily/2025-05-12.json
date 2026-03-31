@@ -1,10 +1,16 @@
 {
   "date": "2025-05-12",
-  "messages": 72,
+  "messages": 84,
   "unique_authors": 18,
-  "reactions_total": 19,
-  "attachments": 15,
+  "reactions_total": 25,
+  "attachments": 29,
   "channel_activity": {
+    "aomi's morimens fic dump ✍": 3,
+    "D-Tide Frequency Tierlist (2025 May 11)": 4,
+    "D-Tide Leaderboard (2025 May 16)": 1,
+    "D-Tide Leaderboard (2025 May 11)": 1,
+    "2025 May 12 D-Tide Leaderboard": 1,
+    "萌新想蹲一个深海配队": 2,
     "✅前瞻：1.5周年～活动福利篇": 3,
     "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血": 4,
     "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 2,
@@ -28,8 +34,12 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "8": 3,
-    "2": 5,
+    "5": 3,
+    "8": 7,
+    "2": 8,
+    "7": 3,
+    "6": 5,
+    "1": 2,
     "3": 34,
     "11": 2,
     "19": 2,
@@ -37,15 +47,11 @@
     "10": 2,
     "20": 4,
     "14": 2,
-    "7": 2,
-    "4": 7,
-    "5": 2,
-    "6": 3,
-    "1": 1
+    "4": 7
   },
   "message_types": {
-    "0": 2,
-    "19": 1
+    "0": 11,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -54,6 +60,13 @@
       "author": "muliupan",
       "reactions": 7,
       "channel": "✅「已回答」图鲁吃人事件"
+    },
+    {
+      "id": "1371362481649221642",
+      "content": "back in march, i thought of writing morimens fanfics, so now i decided to write ",
+      "author": "aomi_crinklies04",
+      "reactions": 4,
+      "channel": "aomi's morimens fic dump ✍"
     },
     {
       "id": "1371341182080127098",
@@ -75,6 +88,20 @@
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「Answered」Corposant Overexalt Lightning Retribution Bug?"
+    },
+    {
+      "id": "1371400791944073296",
+      "content": "This is really good!",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "aomi's morimens fic dump ✍"
+    },
+    {
+      "id": "1371306167850238034",
+      "content": "",
+      "author": "willsalvador",
+      "reactions": 1,
+      "channel": "D-Tide Frequency Tierlist (2025 May 11)"
     },
     {
       "id": "1371583765368930405",

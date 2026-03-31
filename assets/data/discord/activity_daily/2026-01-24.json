@@ -1,10 +1,14 @@
 {
   "date": "2026-01-24",
-  "messages": 162,
+  "messages": 170,
   "unique_authors": 14,
-  "reactions_total": 148,
+  "reactions_total": 149,
   "attachments": 12,
   "channel_activity": {
+    "leonora": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "关于+12角色最终法则的分析": 3,
+    "刚入坑咋玩，配对缺啥": 3,
     "V2.4.2.0 停服维护公告": 1,
     "Art dump thread": 4,
     "Who Ryker's Designer pls come talk ?": 3,
@@ -23,8 +27,12 @@
     "1455822126568308957": 6
   },
   "hourly_activity": {
+    "0": 1,
+    "4": 23,
+    "19": 2,
+    "21": 7,
+    "14": 5,
     "3": 4,
-    "4": 22,
     "18": 2,
     "23": 3,
     "5": 67,
@@ -38,12 +46,10 @@
     "2": 3,
     "7": 5,
     "13": 4,
-    "12": 2,
-    "14": 2,
-    "21": 6
+    "12": 2
   },
   "message_types": {
-    "0": 5
+    "0": 8
   },
   "top_reacted_messages": [
     {

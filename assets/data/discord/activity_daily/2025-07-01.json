@@ -1,10 +1,11 @@
 {
   "date": "2025-07-01",
-  "messages": 44,
+  "messages": 48,
   "unique_authors": 10,
   "reactions_total": 59,
-  "attachments": 15,
+  "attachments": 17,
   "channel_activity": {
+    "求配隊": 4,
     "忘卻前夜OST：達芙黛爾EP·雨幕深處": 5,
     "关于氪金相关的问题。": 6,
     "✅「已回答」?": 5,
@@ -20,6 +21,8 @@
     "混沌中毒隊🧪通關H2-12記錄與分享": 8
   },
   "hourly_activity": {
+    "10": 3,
+    "12": 1,
     "8": 9,
     "5": 4,
     "7": 6,
@@ -31,7 +34,8 @@
     "1": 6
   },
   "message_types": {
-    "0": 5
+    "0": 3,
+    "19": 1
   },
   "top_reacted_messages": [
     {

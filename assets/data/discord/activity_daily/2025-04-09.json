@@ -1,10 +1,12 @@
 {
   "date": "2025-04-09",
-  "messages": 50,
-  "unique_authors": 10,
-  "reactions_total": 20,
-  "attachments": 2,
+  "messages": 83,
+  "unique_authors": 11,
+  "reactions_total": 98,
+  "attachments": 15,
   "channel_activity": {
+    "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請": 32,
+    "How To Create a Team + Other Information": 1,
     "✅校猫碎碎念#近况分享": 16,
     "✅「Answered」Audio stops when leaving game window": 1,
     "关于三种代币兑换灵核碎片的问题": 7,
@@ -17,28 +19,73 @@
     "1357184174485671966": 13
   },
   "hourly_activity": {
+    "10": 3,
+    "11": 11,
+    "12": 14,
+    "13": 8,
+    "18": 1,
+    "23": 1,
+    "3": 5,
     "1": 1,
     "2": 1,
-    "3": 4,
     "4": 3,
     "5": 2,
     "7": 3,
     "9": 11,
-    "10": 2,
-    "11": 3,
     "15": 1,
     "20": 2,
     "8": 5,
-    "12": 1,
     "6": 1,
     "21": 6,
     "22": 4
   },
   "message_types": {
-    "0": 14,
-    "19": 2
+    "0": 29,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1359520102457938131",
+      "content": "",
+      "author": "taoi002",
+      "reactions": 16,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359482947744436315",
+      "content": "大腦中斑斕的想像與記憶最是美味，為克萊門汀獻上你的腦洞，製作最獨一無二的表情包取悅她吧~\n特別的作品將獲得克萊門汀的額外獎賞——一次沉浸式的心靈診療，在顱內感受",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359516382890299644",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 11,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359667962927382741",
+      "content": "",
+      "author": "flares117",
+      "reactions": 11,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359499385519472792",
+      "content": "好了，圖做好了",
+      "author": "ena04564",
+      "reactions": 10,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1359507496074481715",
+      "content": "本来想做成0，不过还是卡墨更有趣",
+      "author": "287405tjy_28066",
+      "reactions": 10,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
     {
       "id": "1359456547767320606",
       "content": "好巧喔我也是\n我是最乖最善良的那一批跟某墨不一樣",
@@ -47,11 +94,25 @@
       "channel": "✅校猫碎碎念#近况分享"
     },
     {
+      "id": "1359589704537997352",
+      "content": "",
+      "author": "ed2800",
+      "reactions": 7,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
       "id": "1359339795775619354",
       "content": "不要鬧 把貓開了你遊準備收攤了\n雖然他確實很多謎之操作但你不能否認沒有他堅持留這遊戲靈犀早就把資金投去免洗頁遊跟三國殺了\n講建議拜託對事不對人 你在這講這句本身",
       "author": "kong760",
       "reactions": 7,
       "channel": "✅校猫碎碎念#近况分享"
+    },
+    {
+      "id": "1359484718961131651",
+      "content": "醫生原來也這麼抽象，搞心理學的都不正常",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
       "id": "1359393667810590931",

@@ -1,10 +1,14 @@
 {
   "date": "2025-07-31",
-  "messages": 81,
+  "messages": 92,
   "unique_authors": 14,
-  "reactions_total": 128,
-  "attachments": 10,
+  "reactions_total": 153,
+  "attachments": 14,
   "channel_activity": {
+    "Jenkin & Brown card :mouse2:": 3,
+    "Pierot: Ultra Boy": 1,
+    "Pierot": 2,
+    "What is the quickest / most proficient way to gain exp and level up?": 5,
     "Call for Community Volunteer Translators: Applications Open!": 29,
     "V2.3.0.0 停服维护公告": 3,
     "✅「已回答」调查数据bug：最高力量": 2,
@@ -34,17 +38,18 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "7": 1,
+    "11": 6,
+    "12": 7,
+    "20": 10,
     "8": 2,
     "9": 5,
     "10": 11,
-    "11": 5,
-    "12": 6,
     "13": 2,
     "14": 5,
     "15": 2,
     "18": 6,
     "22": 2,
-    "20": 2,
     "17": 1,
     "19": 1,
     "3": 19,
@@ -57,8 +62,8 @@
     "4": 1
   },
   "message_types": {
-    "0": 24,
-    "19": 8
+    "0": 10,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -74,6 +79,13 @@
       "author": "morimens_15",
       "reactions": 28,
       "channel": "Call for Community Volunteer Translators: Applications Open!"
+    },
+    {
+      "id": "1400582101652475964",
+      "content": "♫ ☆•° * Your nightmares are our dreams, the night is our stage, and we'll make t",
+      "author": "sexysneakystoat1625",
+      "reactions": 18,
+      "channel": "Pierot: Ultra Boy"
     },
     {
       "id": "1400422765734924321",
@@ -102,6 +114,13 @@
       "author": "ahuahuahua",
       "reactions": 6,
       "channel": "Doresain still needs buff."
+    },
+    {
+      "id": "1400376117420101632",
+      "content": "Forgor to share, Illustration + Timelapse 🧀",
+      "author": "valoup",
+      "reactions": 5,
+      "channel": "Jenkin & Brown card :mouse2:"
     },
     {
       "id": "1400487526204178534",
@@ -146,6 +165,20 @@
       "channel": "杜勒賽因真的不加強嘛"
     },
     {
+      "id": "1400456572974399518",
+      "content": "Sure !",
+      "author": "valoup",
+      "reactions": 1,
+      "channel": "Jenkin & Brown card :mouse2:"
+    },
+    {
+      "id": "1400574415996981318",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "Pierot"
+    },
+    {
       "id": "1400433659194118174",
       "content": "Спасибо большое!♥️",
       "author": "suver_",
@@ -172,13 +205,6 @@
       "author": "morimensstaff01",
       "reactions": 1,
       "channel": "✅「Answered」Wanda Soulforge Aptitude text error"
-    },
-    {
-      "id": "1400544779913138206",
-      "content": "This warning message has no meaning. You will see it throughout your whole journ",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "Remove recommended account level from game"
     }
   ]
 }

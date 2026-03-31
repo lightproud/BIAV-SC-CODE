@@ -1,10 +1,17 @@
 {
   "date": "2025-08-30",
-  "messages": 227,
+  "messages": 256,
   "unique_authors": 30,
   "reactions_total": 246,
-  "attachments": 19,
+  "attachments": 31,
   "channel_activity": {
+    "uvhash fan art submission": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 5,
+    "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\"": 5,
+    "Priority/Investment help.": 12,
+    "Just a few questions": 3,
+    "Anyone wants to help this newbie D-Effect Zone": 2,
+    "Dtide teams": 1,
     "忘却前夜OST：骸骨长眠之所": 1,
     "前瞻：Skin rarity planning 皮肤稀有度规划": 71,
     "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 1,
@@ -45,29 +52,32 @@
     "全4級400融災攻略": 54
   },
   "hourly_activity": {
+    "2": 2,
+    "1": 1,
+    "11": 9,
+    "17": 22,
+    "21": 2,
+    "3": 3,
+    "4": 11,
+    "15": 4,
+    "16": 44,
+    "18": 10,
+    "23": 14,
     "7": 24,
-    "16": 35,
-    "17": 19,
-    "18": 9,
     "19": 3,
     "20": 5,
-    "21": 1,
-    "23": 12,
-    "3": 1,
-    "4": 10,
     "5": 12,
     "12": 3,
-    "11": 4,
     "6": 12,
-    "15": 2,
     "14": 7,
     "9": 35,
     "10": 25,
     "8": 8
   },
   "message_types": {
-    "0": 55,
-    "19": 18
+    "0": 27,
+    "19": 1,
+    "4": 1
   },
   "top_reacted_messages": [
     {

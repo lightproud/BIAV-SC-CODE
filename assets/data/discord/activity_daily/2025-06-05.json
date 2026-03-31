@@ -1,10 +1,16 @@
 {
   "date": "2025-06-05",
-  "messages": 91,
-  "unique_authors": 12,
-  "reactions_total": 94,
-  "attachments": 19,
+  "messages": 138,
+  "unique_authors": 21,
+  "reactions_total": 137,
+  "attachments": 29,
   "channel_activity": {
+    "A World Where Nothing's Aligned": 5,
+    "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!": 1,
+    "🎊官周通販：淘寶全球可購！": 10,
+    "📸壁紙分享-卡斯托尔┊Wallpaper Sharing-Castor": 18,
+    "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant": 2,
+    "求配隊": 11,
     "忘卻前夜OST：奧瑞塔EP·天真的驚悚童話": 5,
     "✅「已回答」周年命轮疑似与未送出的花冲突": 7,
     "✅「Answered」Hey, I (and some other players) have an issue logging into the game.": 3,
@@ -29,25 +35,30 @@
     "1380131496278495333": 1
   },
   "hourly_activity": {
+    "5": 25,
+    "7": 3,
+    "10": 10,
+    "15": 2,
+    "21": 3,
+    "3": 12,
+    "11": 4,
+    "13": 4,
+    "16": 8,
+    "18": 1,
+    "4": 8,
+    "12": 14,
     "8": 10,
     "22": 7,
     "19": 2,
-    "21": 2,
     "9": 6,
     "17": 3,
-    "3": 6,
-    "10": 8,
-    "11": 2,
     "14": 3,
-    "16": 7,
-    "4": 1,
-    "6": 13,
-    "5": 15,
-    "12": 3,
-    "13": 3
+    "6": 13
   },
   "message_types": {
-    "0": 5
+    "0": 35,
+    "19": 11,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -56,6 +67,13 @@
       "author": "gualu_.",
       "reactions": 28,
       "channel": "之前画的艾继丝"
+    },
+    {
+      "id": "1380023959445176320",
+      "content": "為大家奉上卡斯托爾的留影作為紀念~守密人可在留言區保存PC、平板、手機尺寸的壁紙。\n\n「被困在城堡裡的公主，真像之前的我們。」\n「不過沒有騎士來拯救我們……我們",
+      "author": "morimensstaff01",
+      "reactions": 17,
+      "channel": "📸壁紙分享-卡斯托尔┊Wallpaper Sharing-Castor"
     },
     {
       "id": "1380226917466374215",
@@ -72,11 +90,25 @@
       "channel": ""
     },
     {
+      "id": "1380027300782936067",
+      "content": "<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "📸壁紙分享-卡斯托尔┊Wallpaper Sharing-Castor"
+    },
+    {
       "id": "1380096650923606107",
       "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：奧瑞塔EP·天真的驚悚童話，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二",
       "author": "morimensstaff01",
       "reactions": 8,
       "channel": "忘卻前夜OST：奧瑞塔EP·天真的驚悚童話"
+    },
+    {
+      "id": "1380024689081978980",
+      "content": "<:rizz2:1356053138133614753> 活動已於6月4日23:59（UTC+8）結束，戈雅會儘快在評論區開獎\n\n<:rizz1:1356085",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "🎊官周通販：淘寶全球可購！"
     },
     {
       "id": "1380121536840732682",
@@ -128,39 +160,46 @@
       "channel": "趕快趁我還神智不清的時候"
     },
     {
-      "id": "1380023171410821172",
-      "content": "Hi, the cause of this issue has been identified and arrangements will be made to",
+      "id": "1380061589268594698",
+      "content": "Wth this is insane \nAn instant +12 for me\nPls BIAV makes this a reality",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "A World Where Nothing's Aligned"
+    },
+    {
+      "id": "1380083049282273341",
+      "content": "yeah, we rlly need to contact qookaa games to make g!24 a reality!",
+      "author": "aomi_crinklies04",
+      "reactions": 1,
+      "channel": "A World Where Nothing's Aligned"
+    },
+    {
+      "id": "1380128821403189291",
+      "content": "😍",
       "author": "morimensstaff01",
       "reactions": 1,
-      "channel": "✅「Answered」Dungeon State Error"
+      "channel": "A World Where Nothing's Aligned"
     },
     {
-      "id": "1380063033849679912",
-      "content": "戈尤這拉郎可能更莫名一點但給我兩小時我能說服任何一個跟我抬槓的人（扭脖子（沒",
-      "author": "yolo_mode",
+      "id": "1380206648487841862",
+      "content": "I'd whish\nthere is a great opportunity lore for a madness plague coming from a t",
+      "author": "sexysneakystoat1625",
       "reactions": 1,
-      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+      "channel": "A World Where Nothing's Aligned"
     },
     {
-      "id": "1380077615171371069",
-      "content": "等我一下",
-      "author": "yun_lai_yi_meng_32",
+      "id": "1380300376909283489",
+      "content": "really cool work and attention to detail Silence, i especially love the art for ",
+      "author": "reya.li",
       "reactions": 1,
-      "channel": "我要吃現pa 我現在就要吃現pa 👊"
+      "channel": "A World Where Nothing's Aligned"
     },
     {
-      "id": "1380130588907933781",
-      "content": "戈雅會在這個帖子裏及時同步最新的官方徵集活動：\n🐦 **【V2.3.2：征集中】10000银芯奖励！**\nhttps://discord.com/channel",
+      "id": "1380080044117983242",
+      "content": "30份是DC和FB一起抽~<:rizz1:1356085398379692165>",
       "author": "morimensstaff01",
       "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1380127964162687037",
-      "content": "戈雅會在這個帖子裏及時同步最新的官方徵集活動：\n🐦 **【V2.3.2：征集中】10000银芯奖励！**\nhttps://discord.com/channel",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": ""
+      "channel": "🎊官周通販：淘寶全球可購！"
     }
   ]
 }

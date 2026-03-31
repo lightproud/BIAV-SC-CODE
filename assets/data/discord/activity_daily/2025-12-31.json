@@ -1,10 +1,16 @@
 {
   "date": "2025-12-31",
-  "messages": 76,
-  "unique_authors": 11,
-  "reactions_total": 392,
-  "attachments": 23,
+  "messages": 129,
+  "unique_authors": 15,
+  "reactions_total": 456,
+  "attachments": 26,
   "channel_activity": {
+    "I errr....": 5,
+    "aequor doodle": 15,
+    "😌": 25,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 6,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "健检+配队建议": 1,
     "V2.4.1.2 在线维护公告": 1,
     "对于联动的期限规划 On the Duration and Planning of Collaborations": 1,
     "I was bored": 2,
@@ -32,30 +38,32 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "17": 1,
-    "3": 4,
-    "16": 3,
+    "3": 9,
+    "9": 14,
+    "14": 6,
+    "15": 9,
+    "16": 5,
+    "17": 10,
+    "4": 7,
+    "6": 4,
+    "10": 17,
+    "12": 13,
+    "0": 2,
+    "20": 3,
     "19": 2,
-    "12": 12,
     "18": 2,
     "8": 1,
-    "9": 9,
     "13": 3,
-    "14": 3,
-    "15": 4,
     "23": 4,
     "21": 4,
-    "4": 6,
-    "10": 2,
     "11": 8,
     "2": 2,
-    "20": 2,
     "5": 1,
     "7": 3
   },
   "message_types": {
-    "0": 4,
-    "19": 1
+    "19": 15,
+    "0": 38
   },
   "top_reacted_messages": [
     {
@@ -71,6 +79,13 @@
       "author": "vxvendetta97",
       "reactions": 46,
       "channel": ""
+    },
+    {
+      "id": "1455924595143213220",
+      "content": "hes so silly",
+      "author": "deellln",
+      "reactions": 36,
+      "channel": "aequor doodle"
     },
     {
       "id": "1455822126568308957",
@@ -94,6 +109,13 @@
       "channel": "Bunch of doodles and sillies"
     },
     {
+      "id": "1455770394668564501",
+      "content": "Clem X Juliette\nHell nawh couple\n\nhttps://x.com/i/status/2006211065588376009",
+      "author": "lowtown77",
+      "reactions": 16,
+      "channel": "😌"
+    },
+    {
       "id": "1455986384379580496",
       "content": "1/1我們注定難忘今宵",
       "author": "carrot_chicken",
@@ -115,11 +137,53 @@
       "channel": "now spell."
     },
     {
+      "id": "1455947533581815929",
+      "content": "",
+      "author": "deellln",
+      "reactions": 6,
+      "channel": "aequor doodle"
+    },
+    {
       "id": "1455822775427006476",
       "content": "How to play:\n\n1. Get the rouse card for mouch ASAP\n\n2. Sell Helot 4 cost ASAP(se",
       "author": "rain_scarlet",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1455974571034546318",
+      "content": "I WILL DEF DRAW OGIER IN THE FUTURE",
+      "author": "deellln",
+      "reactions": 2,
+      "channel": "aequor doodle"
+    },
+    {
+      "id": "1455848783400140871",
+      "content": "More corpokath ….",
+      "author": "sirmordreds_8080",
+      "reactions": 1,
+      "channel": "I errr...."
+    },
+    {
+      "id": "1455866396423491595",
+      "content": "I trust my friend <@899814369926471750> to do it",
+      "author": "lowtown77",
+      "reactions": 1,
+      "channel": "😌"
+    },
+    {
+      "id": "1455867360115298366",
+      "content": "Welp, here goes MoriR+18",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "😌"
+    },
+    {
+      "id": "1455872473848483840",
+      "content": "Bro.. lmao.\nfine then. I'll see what I can do, either later or tomorrow",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "😌"
     },
     {
       "id": "1455850886763905211",
@@ -141,41 +205,6 @@
       "author": "passerbycat",
       "reactions": 1,
       "channel": "💭「处理中」造物「蟲群意識」不一定會驅散出血狀態"
-    },
-    {
-      "id": "1456070941435236457",
-      "content": "His passive say that he will spawn a minion in the back every time you deplete 1",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」Blessor passive interaction"
-    },
-    {
-      "id": "1455779409448402984",
-      "content": "Thank you for your feedback. After inspection, it was found that there were some",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Can't click specific WoDs in Lineup"
-    },
-    {
-      "id": "1456020143413919975",
-      "content": "那個問題已經回報過了，他是這麼說的：\n感謝您的回饋。經過檢查，發現部分輪子的點擊區域存在一些問題。我們已安排進行修復，並會在完成後盡快更新。\nhttps://d",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "無法選中理智明燈"
-    },
-    {
-      "id": "1455793431027781632",
-      "content": "Обзор Мушетт <:pray:1356053116260454534> \nhttps://www.youtube.com/watch?v=XZGwWY",
-      "author": "closetom",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1455883010292322445",
-      "content": "This is such a small change that it does have a bigger possibility to be integra",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

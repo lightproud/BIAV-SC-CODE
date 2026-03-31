@@ -1,10 +1,15 @@
 {
   "date": "2025-04-22",
-  "messages": 62,
+  "messages": 85,
   "unique_authors": 7,
-  "reactions_total": 28,
-  "attachments": 13,
+  "reactions_total": 68,
+  "attachments": 15,
   "channel_activity": {
+    "V2.2 Submission || Tulu": 2,
+    "Erica": 2,
+    "This Watercolor Cafe doodle brought to you by: failing to pull 24 in 24 pulls /j": 1,
+    "ALL HAIL SQUID KING TULU": 2,
+    "Star Chapter 1 + 2 Tier List": 16,
     "游戏美术资源上的文字": 1,
     "[克蘇魯]你應該要知道的那些事_(超級不專業版)": 3,
     "✅「已回答」蟲族羊媽狂氣減費bug": 1,
@@ -22,22 +27,40 @@
     "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）": 1
   },
   "hourly_activity": {
+    "13": 5,
+    "17": 2,
+    "8": 1,
+    "12": 39,
+    "3": 4,
+    "7": 2,
     "11": 11,
     "14": 1,
     "23": 2,
-    "13": 4,
     "19": 2,
-    "3": 2,
     "6": 5,
     "4": 3,
     "2": 7,
-    "10": 1,
-    "12": 24
+    "10": 1
   },
   "message_types": {
-    "0": 4
+    "0": 18,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1364238128663232674",
+      "content": "UID 100943429\n\nThis drawing will also be posted on my portfolio on Cara, Instagr",
+      "author": "rohaluss",
+      "reactions": 31,
+      "channel": "V2.2 Submission || Tulu"
+    },
+    {
+      "id": "1364157336197009459",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 8,
+      "channel": "Erica"
+    },
     {
       "id": "1364231541101826088",
       "content": "嗨 又是我(?) 不知為何就是想寫一下鯊鯊的另一面(?\n\n老樣子\n#OOC我的\n~~#吵架就是我對~~\n~~#如有雷同 就是你抄我~~\n\n這次預計沒那麼多肉..",
@@ -79,6 +102,13 @@
       "author": "fengliyaowo",
       "reactions": 2,
       "channel": "與鯊魚瘋狂炒飯那檔事-完結(?)  等待開第二坑"
+    },
+    {
+      "id": "1364288630599975105",
+      "content": "gila bagus bat",
+      "author": "masian131",
+      "reactions": 1,
+      "channel": "ALL HAIL SQUID KING TULU"
     },
     {
       "id": "1364200917469237249",

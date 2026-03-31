@@ -1,10 +1,11 @@
 {
   "date": "2024-12-12",
-  "messages": 151,
+  "messages": 164,
   "unique_authors": 29,
-  "reactions_total": 172,
-  "attachments": 58,
+  "reactions_total": 173,
+  "attachments": 59,
   "channel_activity": {
+    "Reruns priority guide (for newcomers and general)": 13,
     "🏆【已開獎】彌薩格週年頒獎典禮": 1,
     "🌌【已開獎】超越維度的祝福": 10,
     "🌌【超越維度的祝福】活動說明": 2,
@@ -30,6 +31,9 @@
     "🔸【超越維度的祝福】認領專區": 35
   },
   "hourly_activity": {
+    "7": 9,
+    "8": 19,
+    "11": 3,
     "10": 6,
     "2": 9,
     "3": 20,
@@ -37,25 +41,21 @@
     "12": 28,
     "5": 3,
     "1": 2,
-    "7": 8,
     "13": 20,
     "14": 9,
     "6": 8,
     "16": 1,
     "23": 2,
     "17": 7,
-    "11": 2,
     "0": 2,
-    "8": 8,
     "9": 4,
     "15": 2,
     "22": 3,
     "20": 1
   },
   "message_types": {
-    "0": 16,
-    "4": 2,
-    "19": 8
+    "0": 9,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -192,11 +192,11 @@
       "channel": "🔸【超越維度的祝福】認領專區"
     },
     {
-      "id": "1316610781093171250",
-      "content": "守密人，\n        來自萬千維度的抵抗對造物主產生了顯著的重創效果，敵人 「原初誕臨之影」每回合結束後已損失生命的回復比例，由 35% 降低為 10%（戰",
-      "author": "lubi_17667",
+      "id": "1316682447823441962",
+      "content": "Hameln\nAnd yea they're both very good pulls\nTawil, Thais, horla, hameln all very",
+      "author": "roto_rooster",
       "reactions": 1,
-      "channel": "「原初誕臨之影」敵人調整說明"
+      "channel": "Reruns priority guide (for newcomers and general)"
     }
   ]
 }

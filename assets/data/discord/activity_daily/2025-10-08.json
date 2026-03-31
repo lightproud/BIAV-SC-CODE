@@ -1,10 +1,16 @@
 {
   "date": "2025-10-08",
-  "messages": 13,
-  "unique_authors": 8,
+  "messages": 28,
+  "unique_authors": 10,
   "reactions_total": 18,
-  "attachments": 1,
+  "attachments": 8,
   "channel_activity": {
+    "Beginner Progression Video Guide (with timestamps!) & Caro Realm Rundown": 2,
+    "Flares' Comprehensive Beginner Guide to Morimens": 2,
+    "team help": 3,
+    "D-Tide team?": 4,
+    "Wheels help": 1,
+    "Get help to pass 5-14": 3,
     "✅「已回答」是否考虑给皮肤增加预览/试玩界面": 1,
     "✅「已回答」今天上线还是没发现有发延期补偿": 4,
     "✅「Answered」question about fan content": 1,
@@ -14,18 +20,25 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "1": 4,
+    "8": 1,
+    "14": 2,
+    "11": 1,
+    "18": 3,
+    "22": 2,
+    "23": 2,
+    "6": 1,
+    "13": 1,
     "7": 5,
     "17": 1,
-    "18": 1,
-    "14": 1,
     "4": 2,
     "9": 1,
     "10": 1,
     "12": 1
   },
   "message_types": {
-    "0": 6,
-    "19": 4
+    "0": 10,
+    "19": 5
   },
   "top_reacted_messages": [
     {

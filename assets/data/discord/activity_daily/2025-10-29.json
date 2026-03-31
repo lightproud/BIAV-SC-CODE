@@ -1,10 +1,24 @@
 {
   "date": "2025-10-29",
-  "messages": 102,
-  "unique_authors": 25,
-  "reactions_total": 413,
-  "attachments": 11,
+  "messages": 263,
+  "unique_authors": 46,
+  "reactions_total": 506,
+  "attachments": 46,
   "channel_activity": {
+    "Clementine!!!": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 1,
+    "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!": 96,
+    "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction": 1,
+    "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！": 1,
+    "📜V2.3.4 版本前瞻┊ Version Outlook": 1,
+    "🐦 奔逃的双生鸟：逃出提灯教会！Running Fledglings: Escape the Cave!": 1,
+    "萌新求帮！": 31,
+    "How to Play Castor x Pollux? And their team I can make?": 18,
+    "not sure if i should pull for dupes or get cards": 1,
+    "need some teambuilding help": 2,
+    "New Player - First SSR Choice?": 2,
+    "Need team making": 4,
     "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 54,
     "✅「Answered」About new Ryker buff": 1,
     "✅「已回答」触腕集结是否该得到加强": 9,
@@ -23,28 +37,29 @@
     "1356210707867107391": 2
   },
   "hourly_activity": {
-    "7": 34,
-    "8": 1,
-    "10": 7,
-    "11": 6,
-    "12": 10,
-    "13": 1,
-    "16": 2,
-    "17": 1,
+    "12": 19,
+    "15": 12,
+    "1": 2,
+    "7": 63,
+    "8": 6,
+    "9": 10,
+    "10": 15,
+    "11": 24,
+    "13": 25,
+    "14": 27,
+    "17": 3,
+    "22": 2,
+    "5": 20,
+    "6": 14,
+    "16": 4,
+    "19": 2,
     "18": 8,
-    "5": 2,
-    "19": 1,
-    "14": 3,
     "3": 6,
-    "4": 1,
-    "1": 1,
-    "6": 7,
-    "15": 10,
-    "22": 1
+    "4": 1
   },
   "message_types": {
-    "0": 42,
-    "19": 12
+    "0": 119,
+    "19": 42
   },
   "top_reacted_messages": [
     {
@@ -104,11 +119,25 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
+      "id": "1433097055353573478",
+      "content": "",
+      "author": "thpdom",
+      "reactions": 12,
+      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
+    },
+    {
       "id": "1432996341205958788",
       "content": "Light will you consider a collab with alchemy stars?",
       "author": "jamalibnsulaiman",
       "reactions": 12,
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
+    },
+    {
+      "id": "1432992396697796649",
+      "content": "你遊角色全是死人所以聯動的都是屍體對吧",
+      "author": "ena04564",
+      "reactions": 11,
+      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
     },
     {
       "id": "1432995237155831818",
@@ -125,6 +154,34 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
+      "id": "1432996517475651624",
+      "content": "和忘却前夜联动过的游戏",
+      "author": "muliupan",
+      "reactions": 9,
+      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
+    },
+    {
+      "id": "1432992406663331952",
+      "content": "我不行了，你游是在cos什么二游送葬人吗？<:processing:1357185814567718963>",
+      "author": "wuxu0045_64015",
+      "reactions": 7,
+      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
+    },
+    {
+      "id": "1432998771226316872",
+      "content": "校🐱：先记录下这些游戏名，接下来有可能用得到<:takenotes:1357186646294138890>",
+      "author": "cs001092",
+      "reactions": 6,
+      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
+    },
+    {
+      "id": "1433092682644717568",
+      "content": "cheap collab and they get to do what ever they want with the IP, it's not like a",
+      "author": "wolfierce",
+      "reactions": 6,
+      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
+    },
+    {
       "id": "1432994749731831869",
       "content": "所以原來是專門去找屍體聯動的嗎",
       "author": "ice_storys",
@@ -139,53 +196,11 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
-      "id": "1433040618321481759",
-      "content": "校貓的陰影軍團\n貓：站起來",
-      "author": "elkmilu",
+      "id": "1433097890883964999",
+      "content": "So if I understand correctly, that one Posse which is traphase only is another c",
+      "author": "zekiei",
       "reactions": 5,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
-    },
-    {
-      "id": "1433044552624771253",
-      "content": "由于触腕集结的机制是回合后造成伤害，面对多血条boss切金身时(打掉血条切换的状态：免疫伤害)无法有效输出，完美被克制，且无法与一些指令卡大招联动,。\n\n深海界",
-      "author": "muqingfeng513",
-      "reactions": 4,
-      "channel": "✅「已回答」触腕集结是否该得到加强"
-    },
-    {
-      "id": "1432994375474085889",
-      "content": "Dragalia Lost collab pls pls pls <:pray:1356053116260454534>",
-      "author": "aurora3981",
-      "reactions": 3,
-      "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
-    },
-    {
-      "id": "1433110475792715907",
-      "content": "二周年发一个限定回溯好吗",
-      "author": "jidu1418",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1433045973151649802",
-      "content": "",
-      "author": "code03089",
-      "reactions": 3,
-      "channel": ""
-    },
-    {
-      "id": "1433181462408200304",
-      "content": "I would like to view the description of the emotes I have but can't.",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "✅「Answered」Give us a way to view emote description"
-    },
-    {
-      "id": "1433158861597966336",
-      "content": "Reading the english vs chinese responses is kinda hilarious",
-      "author": "asleeplessman",
-      "reactions": 2,
-      "channel": ""
+      "channel": "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!"
     }
   ]
 }

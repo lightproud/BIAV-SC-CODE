@@ -1,10 +1,16 @@
 {
   "date": "2025-05-13",
-  "messages": 54,
+  "messages": 65,
   "unique_authors": 7,
-  "reactions_total": 57,
-  "attachments": 11,
+  "reactions_total": 70,
+  "attachments": 33,
   "channel_activity": {
+    "Murphy": 1,
+    "Old D-Tide Leaderboards": 1,
+    "D-Tide Frequency Tierlist (2025 May 11)": 2,
+    "D-Tide Leaderboard (2025 May 16)": 5,
+    "D-Tide Leaderboard (2025 May 11)": 1,
+    "萌新想蹲一个深海配队": 1,
     "✅前瞻：1.5周年～活动福利篇": 15,
     "✅「Answered」Error on game launch": 2,
     "💭「處理中」如图": 2,
@@ -21,25 +27,25 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "15": 3,
+    "2": 12,
+    "8": 2,
     "11": 3,
     "12": 9,
     "16": 5,
     "17": 2,
-    "2": 3,
     "3": 6,
-    "8": 1,
     "9": 2,
     "10": 9,
     "1": 1,
     "4": 4,
     "5": 3,
     "7": 3,
-    "14": 1,
-    "15": 2
+    "14": 1
   },
   "message_types": {
-    "19": 4,
-    "0": 11
+    "0": 6,
+    "4": 5
   },
   "top_reacted_messages": [
     {
@@ -55,6 +61,13 @@
       "author": "yolo_mode",
       "reactions": 19,
       "channel": "黑潮"
+    },
+    {
+      "id": "1371876554577150026",
+      "content": "",
+      "author": "maya014632",
+      "reactions": 13,
+      "channel": "Murphy"
     },
     {
       "id": "1371882899422580779",

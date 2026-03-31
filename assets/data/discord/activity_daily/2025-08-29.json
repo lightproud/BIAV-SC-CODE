@@ -1,10 +1,23 @@
 {
   "date": "2025-08-29",
-  "messages": 66,
-  "unique_authors": 8,
-  "reactions_total": 65,
-  "attachments": 30,
+  "messages": 142,
+  "unique_authors": 40,
+  "reactions_total": 219,
+  "attachments": 46,
   "channel_activity": {
+    "Tulu doodling": 1,
+    "goliath doodle": 1,
+    "Wplace tulu": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?": 3,
+    "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!": 45,
+    "📜V2.3.1 版本前瞻┊ Version Outlook": 1,
+    "求抽卡配队指南": 9,
+    "Help me": 7,
+    "Is this team endgame worthy?": 1,
+    "is E0 daff wheel worth getting?": 1,
+    "Doresain WoD Help": 2,
+    "New player": 3,
     "V2.3.1.5 在线维护公告": 2,
     "忘却前夜OST：骸骨长眠之所": 12,
     "💭「处理中」關於莉莉超限是否應該受到天賦影響的提問": 1,
@@ -32,24 +45,52 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
-    "13": 6,
-    "8": 11,
-    "9": 12,
-    "15": 3,
-    "10": 5,
-    "14": 3,
+    "18": 14,
+    "16": 1,
+    "2": 4,
+    "23": 1,
+    "1": 1,
+    "3": 3,
+    "5": 1,
+    "8": 17,
+    "9": 34,
+    "10": 11,
+    "11": 5,
+    "14": 6,
+    "17": 16,
+    "12": 9,
+    "13": 7,
+    "15": 6,
+    "21": 4,
     "20": 1,
-    "18": 12,
-    "17": 6,
-    "6": 1,
-    "3": 1,
-    "11": 4,
-    "12": 1
+    "6": 1
   },
   "message_types": {
-    "0": 14
+    "0": 63,
+    "19": 13
   },
   "top_reacted_messages": [
+    {
+      "id": "1411062501122113586",
+      "content": "https://x.com/lushlake0871/status/1961503479018533284?t=gJPSr-_t9dmAdroQStWPkw&s",
+      "author": "lushlake0871",
+      "reactions": 23,
+      "channel": "Tulu doodling"
+    },
+    {
+      "id": "1410916549312647200",
+      "content": "I'll be honest, I kind of hate the design, I'm sorry 😭  wheels look so good in g",
+      "author": "silencio3507",
+      "reactions": 20,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
+    },
+    {
+      "id": "1410916382253518958",
+      "content": "i can't lie the wheel not having the same art style as the others is really ugly",
+      "author": "lokao",
+      "reactions": 19,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
+    },
     {
       "id": "1411004132730605569",
       "content": "改次再上色🙈✨",
@@ -65,6 +106,55 @@
       "channel": "忘却前夜OST：骸骨长眠之所"
     },
     {
+      "id": "1410909473178124379",
+      "content": "烈日坠入大海，海滩上的欢腾声戛然而止——\n水汽蒸腾间一道金黄的身影隐现，竟有点像一只刚出炉还冒着热气的“烤地瓜”。\n“吵醒我睡觉的人，必须付出代价”，冷冽的枪口",
+      "author": "morimensstaff01",
+      "reactions": 12,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
+    },
+    {
+      "id": "1410912804117942424",
+      "content": "Why break the Wheel of Destiny aesthetic? <:cry3:1356082134447558748>",
+      "author": "sirtealot",
+      "reactions": 12,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
+    },
+    {
+      "id": "1411041196016668702",
+      "content": "Alright then… what’s coming next is… (gets muffled by other devs)",
+      "author": "game.producer.light",
+      "reactions": 11,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
+    },
+    {
+      "id": "1410909737570144256",
+      "content": "✨ English：",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
+    },
+    {
+      "id": "1411036979172212818",
+      "content": "<@264894122148495362> <@290209576366637056> <@618475034465533954> We’ve received",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
+    },
+    {
+      "id": "1411039811627778048",
+      "content": "<@1154601435141509192> <@88644018673582080> <@244028747999608832> <@195401302145",
+      "author": "game.producer.light",
+      "reactions": 7,
+      "channel": "📜V2.3.1 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1410911241798553631",
+      "content": "畫了不賣\n心胸狹隘",
+      "author": "void_1546.",
+      "reactions": 6,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
+    },
+    {
       "id": "1411006455364194534",
       "content": "簡單來說\n莉莉天賦表示獲得的忍耐量提升\n莉莉超限表示獲得等同最大生命值的忍耐\n那麼莉莉超限獲得的忍耐是否會受到天賦的影響而變高呢\n目前是不會受到天賦影響\n但還是",
       "author": "water_heart",
@@ -77,6 +167,13 @@
       "author": "void_1546.",
       "reactions": 5,
       "channel": "墨菲的下午茶時間"
+    },
+    {
+      "id": "1410912318568796161",
+      "content": "地瓜姐",
+      "author": "ena04564",
+      "reactions": 4,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
     },
     {
       "id": "1410905057435582464",
@@ -100,67 +197,18 @@
       "channel": ""
     },
     {
-      "id": "1411057941330788373",
-      "content": "感谢反馈！",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "✅「已回答」能不要顯示新物資的提示嗎?"
+      "id": "1410797988644917471",
+      "content": "low quality tulu is way more funny than it should be",
+      "author": "madoor",
+      "reactions": 3,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
     },
     {
-      "id": "1410932315684737034",
-      "content": "3.0后说不定会有机会啦（）\n至于现在<:Emoji_TYS_O_08:1400771784982397049>",
-      "author": "be_queitplease",
-      "reactions": 2,
-      "channel": "✅「已回答」关于游戏后续内容的一点疑问"
-    },
-    {
-      "id": "1410984060813316268",
-      "content": "V2.3.1.5 Online Maintenance Announcement\n\nDear Keeper,\nThe Mythag Administration",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "V2.3.1.5 在线维护公告"
-    },
-    {
-      "id": "1410932514570240100",
-      "content": "Hi, can you record a video for us?🙏 \nHola, PUEDES GRABARNOS un video?",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Estado de Fiamma en el Despertar de Kathigu-Ra tras el uso de su propia llave (Posse)"
-    },
-    {
-      "id": "1411052942408286330",
-      "content": "非常理解。我们会考虑一下在配音前将过短内容进行扩写。\n\n至于故事设定顺序，在万千宇宙中，总有某个守密人抽到戈利亚拿去打戈利亚这种事。此类特异情况都视为更早些时间",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「已回答」關於繁衍狂熱的劇情"
-    },
-    {
-      "id": "1411057390480261170",
-      "content": "至于专属CG……可以的话我们也非常想要，但对于脑缸组当前的开发事务来说有更优先的工作，例如新的主线、新的角色。",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「已回答」關於繁衍狂熱的劇情"
-    },
-    {
-      "id": "1411049446040535171",
-      "content": "感谢反馈，我们会持续关注唤醒体的可用性。然而我们暂时没有调整克珀珊特的计划。",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅ 「已回答」克珀珊特天赋加強"
-    },
-    {
-      "id": "1410932197439045632",
-      "content": "应该很难 全新的界域代表要设计至少4,5个新界域的常驻角色，常驻命轮\n然后还要考虑到界域共生的机制什么的",
-      "author": "be_queitplease",
-      "reactions": 1,
-      "channel": "✅「已回答」关于游戏后续内容的一点疑问"
-    },
-    {
-      "id": "1411047380698009682",
-      "content": "当然考虑过！那些开始就埋下的卫星我总是想要有机会实现的。不过配套设施和设计内容堆积成山实在是太多了。未来我们可能会以特殊界域的方式实现。",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅「已回答」关于游戏后续内容的一点疑问"
+      "id": "1410912729945997322",
+      "content": "画了不卖\n心胸狭隘",
+      "author": "jidu1418",
+      "reactions": 3,
+      "channel": "特别活动「黑阳垂照的永夏」，奖励一览！Summer under Black Sun: Rewards Overview!"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-02-03",
-  "messages": 29,
+  "messages": 31,
   "unique_authors": 8,
   "reactions_total": 102,
-  "attachments": 4,
+  "attachments": 6,
   "channel_activity": {
+    "GPT translation synonyms": 1,
+    "Chapter 9": 1,
     "✨為喚醒體著新裝！": 1,
     "《忘卻前夜》丨2.1廣播劇——《缸中之夢》（建議佩戴耳機🎧）": 10,
     "English Page pls !!": 1,
@@ -16,13 +18,13 @@
     "關卡地圖「融災禁區」總覽27期": 1
   },
   "hourly_activity": {
+    "18": 7,
+    "0": 2,
     "11": 1,
     "8": 9,
     "9": 3,
     "14": 2,
-    "18": 6,
     "19": 1,
-    "0": 1,
     "20": 1,
     "4": 1,
     "5": 1,
@@ -31,8 +33,7 @@
     "13": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 2
+    "0": 2
   },
   "top_reacted_messages": [
     {

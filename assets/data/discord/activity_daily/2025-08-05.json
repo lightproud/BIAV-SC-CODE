@@ -1,10 +1,14 @@
 {
   "date": "2025-08-05",
-  "messages": 49,
+  "messages": 80,
   "unique_authors": 11,
-  "reactions_total": 64,
-  "attachments": 23,
+  "reactions_total": 137,
+  "attachments": 32,
   "channel_activity": {
+    "Doresain, in flesh (or not, idk i am stuck at 1st arc)": 1,
+    "Tier List for 375-425": 21,
+    "求求补启和配队建议": 5,
+    "請問配隊及資源分配規劃": 4,
     "关于幻梦深潜": 6,
     "✅「Answered」Clarification on gacha odds for standard limited": 2,
     "管理員又封錯人": 2,
@@ -20,6 +24,13 @@
     "朋友画了赛淋涅（杜勒的妹妹）": 1
   },
   "hourly_activity": {
+    "12": 6,
+    "0": 2,
+    "2": 1,
+    "6": 3,
+    "7": 4,
+    "14": 16,
+    "5": 1,
     "3": 3,
     "4": 2,
     "8": 1,
@@ -34,15 +45,20 @@
     "19": 5,
     "20": 7,
     "23": 1,
-    "0": 1,
-    "17": 7,
-    "6": 1
+    "17": 7
   },
   "message_types": {
-    "0": 22,
-    "4": 2
+    "0": 25,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1402269982167142561",
+      "content": "Hi\n\nGood night",
+      "author": "rohaluss",
+      "reactions": 56,
+      "channel": "Doresain, in flesh (or not, idk i am stuck at 1st arc)"
+    },
     {
       "id": "1402132769999425576",
       "content": "幻梦深潜已经半年没更新了，既然实质上已经放弃这个模式去做新内容，应该稍微减负了吧？你们应该也希望玩家把更多的时间花在体验你们集中精力产出的新内容上<:Emoji",
@@ -56,6 +72,13 @@
       "author": "akalanden",
       "reactions": 11,
       "channel": "✅「已回答」宁妃在意想不到的地方更加赔钱了"
+    },
+    {
+      "id": "1402090181590384744",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 8,
+      "channel": "Tier List for 375-425"
     },
     {
       "id": "1402088669350858927",
@@ -79,11 +102,25 @@
       "channel": "您好，加强一下艾继丝三启，谢谢"
     },
     {
+      "id": "1402291884428366086",
+      "content": "",
+      "author": "lotan_045",
+      "reactions": 4,
+      "channel": "Tier List for 375-425"
+    },
+    {
       "id": "1402400913406034051",
       "content": "~~The wheel's description says it should be 2% Crit Rate per enemy killed, but a",
       "author": "sophiechoice",
       "reactions": 3,
       "channel": "✅「Answered」Not a bug, missed an important detail!"
+    },
+    {
+      "id": "1402290417789304953",
+      "content": "Lotan's performance in difficulty IV and difficulty V is not optimistic.",
+      "author": "lurenjiao",
+      "reactions": 2,
+      "channel": "Tier List for 375-425"
     },
     {
       "id": "1402376360462127166",
@@ -98,6 +135,27 @@
       "author": "wild_pansy",
       "reactions": 2,
       "channel": "救救狗吧融災求助"
+    },
+    {
+      "id": "1402266888100249661",
+      "content": "You just need to stop the mindset of staying permanently in joy",
+      "author": "good.th",
+      "reactions": 1,
+      "channel": "Tier List for 375-425"
+    },
+    {
+      "id": "1402290596672180406",
+      "content": "oh,mb.The first tulu1* should be murphy1*.",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "Tier List for 375-425"
+    },
+    {
+      "id": "1402291047006208175",
+      "content": "This issue is controversial, but based on all the circumstances, I believe that ",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "Tier List for 375-425"
     },
     {
       "id": "1402281483510743040",
@@ -133,13 +191,6 @@
       "author": "lurenjiao",
       "reactions": 1,
       "channel": "✅「已回答」什么时候才能提升限定角色的溢出补偿？"
-    },
-    {
-      "id": "1402383758296092742",
-      "content": "<@1131790839291596841>  至少300 能拿一點紫碎片吧，一塊也可以，不然新手真的很難拿",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "救救狗吧融災求助"
     }
   ]
 }

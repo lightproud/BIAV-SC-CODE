@@ -1,10 +1,12 @@
 {
   "date": "2025-06-17",
-  "messages": 19,
+  "messages": 101,
   "unique_authors": 7,
-  "reactions_total": 5,
-  "attachments": 6,
+  "reactions_total": 40,
+  "attachments": 9,
   "channel_activity": {
+    "Detailed Damage Formula Graphic": 4,
+    "大佬們幫幫忙求助": 78,
     "V2.2.2.9 在線維護公告": 2,
     "畫質有待改進🚮 Sorry for the poor image quality 🚮": 1,
     "✅「已回答」混沌界域第二次鑰令觸發不了雙發鑰令": 4,
@@ -15,25 +17,51 @@
     "✅「Resolved」I Can't Find \"Morimens Fanmerch Policy\" for English Speakers": 1
   },
   "hourly_activity": {
+    "9": 5,
+    "10": 1,
+    "14": 23,
+    "15": 53,
+    "22": 2,
     "13": 4,
     "11": 1,
     "18": 3,
     "19": 1,
     "7": 4,
     "8": 2,
-    "14": 2,
     "6": 2
   },
   "message_types": {
-    "0": 3
+    "0": 55,
+    "19": 27
   },
   "top_reacted_messages": [
+    {
+      "id": "1384463374213189652",
+      "content": "Big thanks to <@239474863570419712> for helping me put this together ^^\n\nQuestio",
+      "author": "zier.0",
+      "reactions": 28,
+      "channel": "Detailed Damage Formula Graphic"
+    },
+    {
+      "id": "1384466811550175252",
+      "content": "Updated version cause someone pointed it out to me (thanks Goz)\n\nReinforce shoul",
+      "author": "zier.0",
+      "reactions": 6,
+      "channel": "Detailed Damage Formula Graphic"
+    },
     {
       "id": "1384596424490090566",
       "content": "我們修復了混沌界域第二次鑰令可以雙發的問題<:takenotes:1357186646294138890>",
       "author": "wild_pansy",
       "reactions": 2,
       "channel": "✅「已回答」混沌界域第二次鑰令觸發不了雙發鑰令"
+    },
+    {
+      "id": "1384561344946241706",
+      "content": "第五",
+      "author": "cheerful_courgette_11883",
+      "reactions": 1,
+      "channel": "大佬們幫幫忙求助"
     },
     {
       "id": "1384535578434867284",

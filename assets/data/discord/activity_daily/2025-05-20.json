@@ -1,10 +1,16 @@
 {
   "date": "2025-05-20",
-  "messages": 28,
-  "unique_authors": 10,
-  "reactions_total": 11,
-  "attachments": 6,
+  "messages": 124,
+  "unique_authors": 30,
+  "reactions_total": 152,
+  "attachments": 14,
   "channel_activity": {
+    "Seimau Art": 2,
+    "Celeste": 1,
+    "24": 1,
+    "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview": 5,
+    "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 62,
+    "💘520的奇怪快遞┊520's Strange Express Delivery": 25,
     "V2.2.1.4 在線維護公告": 2,
     "忘卻前夜OST：奧吉爾EP·無愧榮光": 1,
     "忘卻前夜OST：深港幽靈之船": 1,
@@ -20,28 +26,104 @@
     "拿下索瓦爾格商用權了慶祝一下XD": 2
   },
   "hourly_activity": {
-    "12": 5,
+    "6": 1,
+    "7": 2,
+    "3": 3,
+    "11": 7,
+    "8": 5,
+    "9": 29,
+    "10": 37,
+    "12": 8,
+    "13": 11,
+    "14": 4,
+    "16": 2,
+    "17": 5,
     "18": 3,
-    "10": 2,
-    "7": 1,
-    "13": 3,
-    "17": 4,
     "15": 1,
-    "16": 1,
-    "8": 2,
     "1": 1,
     "2": 5
   },
   "message_types": {
-    "0": 5
+    "0": 79,
+    "19": 17
   },
   "top_reacted_messages": [
+    {
+      "id": "1374280323319468094",
+      "content": "I did a Tulu doodle <:sleep2:1356085993626665200>",
+      "author": "prizemauv",
+      "reactions": 34,
+      "channel": "Seimau Art"
+    },
+    {
+      "id": "1374326670688911373",
+      "content": "5月20日是什麼特別的日子嗎？堆滿彌薩格取貨間並收到了大量寄給守密人的快遞 ，呀不好！幾隻鮮活的章魚腳從盒子縫隙處鑽出了！！！\n\n💭寄件名單極其混亂，守密人能從",
+      "author": "morimensstaff01",
+      "reactions": 22,
+      "channel": "💘520的奇怪快遞┊520's Strange Express Delivery"
+    },
+    {
+      "id": "1374328206479462500",
+      "content": "GPAXWADZYWKF\nKGNYERWCQSGV\nWZDCXREYSEDQ\nKYJRMSGGDBWS\nCLHRNYNQLQWQ\nXRCHTLAVYJXZ",
+      "author": ".galeroar",
+      "reactions": 19,
+      "channel": "💘520的奇怪快遞┊520's Strange Express Delivery"
+    },
+    {
+      "id": "1374328269608063097",
+      "content": "```GPAXWADZYWKF```\n```KGNYERWCQSGV```\n```WZDCXREYSEDQ```\n```KYJRMSGGDBWS```\n```C",
+      "author": "__goz__",
+      "reactions": 19,
+      "channel": "💘520的奇怪快遞┊520's Strange Express Delivery"
+    },
+    {
+      "id": "1374295447274782832",
+      "content": "Tulu doodle page :D",
+      "author": "prizemauv",
+      "reactions": 15,
+      "channel": "Seimau Art"
+    },
+    {
+      "id": "1374331870401134677",
+      "content": "XRCHTLAVYJXZ",
+      "author": "vxvendetta",
+      "reactions": 12,
+      "channel": "💘520的奇怪快遞┊520's Strange Express Delivery"
+    },
+    {
+      "id": "1374345651319472210",
+      "content": "<@633215996508766229> 給個建議\n你那個界域限定池可以的源液可以設定成漸進式增加到一定的值，讓無課有想課金的慾望，||因為課金只有零次跟無數",
+      "author": "shchng.",
+      "reactions": 9,
+      "channel": "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview"
+    },
+    {
+      "id": "1374310084682977332",
+      "content": "Byakhee",
+      "author": "kong760",
+      "reactions": 4,
+      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
+    },
     {
       "id": "1374359348595130448",
       "content": "I would like an Off Topic channel to filter <#1170692781216378960> so that it is",
       "author": "aurora3981",
       "reactions": 4,
       "channel": "Add Off Topic Channel"
+    },
+    {
+      "id": "1374311224019386410",
+      "content": "Other flying creatures don't have feather as l know",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
+    },
+    {
+      "id": "1374321108442021890",
+      "content": "唯有在宙斯身上才不奇怪的神秘剧情",
+      "author": "rain_scarlet",
+      "reactions": 3,
+      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
     },
     {
       "id": "1374439250468274264",
@@ -56,6 +138,13 @@
       "author": "aurora3981",
       "reactions": 2,
       "channel": "💭「Processing」Gelot chain and Ultra bar UI bug"
+    },
+    {
+      "id": "1374345223664308277",
+      "content": "1.哈姆林 2.羊妈（喜欢蜘蛛） 3.戈利亚 4.宁妃（帽子和手捧花符合立绘） 5.新角色 6.拉蒙娜",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "💘520的奇怪快遞┊520's Strange Express Delivery"
     },
     {
       "id": "1374447548030390344",

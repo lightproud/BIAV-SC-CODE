@@ -1,10 +1,20 @@
 {
   "date": "2025-07-18",
-  "messages": 79,
-  "unique_authors": 15,
-  "reactions_total": 243,
-  "attachments": 6,
+  "messages": 226,
+  "unique_authors": 62,
+  "reactions_total": 382,
+  "attachments": 55,
   "channel_activity": {
+    "Tawil Fanart": 5,
+    "Liz Sketch": 2,
+    "Traphase gameplay mechanics. Arithmetica, hand reading, mulligan, and deck shuffle. YouTube video": 1,
+    "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 6,
+    "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests": 50,
+    "📜V2.3 版本前瞻┊V2.3 Version Outlook": 60,
+    "V2.2.3預告：特別幻衣活動┊V2.2.3 Preview: Awakener Skins Event": 2,
+    "V2.3 夜宴邀请函┊Banquet Invitation": 13,
+    "Speedrun Team for Early Game": 1,
+    "Should I make a new account": 7,
     "V2.3.0.0 停服维护公告": 60,
     "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\"": 2,
     "新版本融灾问题": 2,
@@ -14,22 +24,31 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "13": 46,
-    "14": 14,
-    "8": 1,
-    "19": 2,
-    "16": 1,
-    "23": 1,
-    "18": 1,
-    "3": 1,
-    "5": 6,
-    "9": 2,
-    "4": 3,
-    "17": 1
+    "9": 8,
+    "2": 5,
+    "8": 5,
+    "11": 13,
+    "6": 18,
+    "7": 34,
+    "10": 6,
+    "12": 1,
+    "13": 49,
+    "14": 18,
+    "15": 3,
+    "16": 6,
+    "17": 9,
+    "23": 2,
+    "3": 12,
+    "4": 22,
+    "5": 10,
+    "19": 4,
+    "18": 1
   },
   "message_types": {
-    "0": 56,
-    "19": 6
+    "0": 115,
+    "4": 3,
+    "19": 28,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -40,11 +59,60 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1395656645580820523",
+      "content": "在少量食材里发现了大量守密人😈 \nFound a large number of keepers in a small amount of ingredient",
+      "author": "morimensstaff01",
+      "reactions": 40,
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+    },
+    {
+      "id": "1395653299054710815",
+      "content": "🤵🏻各位游客，这份见面礼还请收下，它能帮助您更极致地体验葬骸城特色——\n**书名：**《做人的智慧》\n**作者：**葬骸城最好的厨尸•疯狂美食家•老钱贵族•舞会",
+      "author": "morimensstaff01",
+      "reactions": 21,
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+    },
+    {
+      "id": "1395612654516572269",
+      "content": "▎《忘却前夜 Morimens》V2.3 即将开放！精彩资讯一网打尽！\n——高清切图可在评论区查看！\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n▎Mori",
+      "author": "morimensstaff01",
+      "reactions": 17,
+      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
+    },
+    {
+      "id": "1395693115368804392",
+      "content": "What to put here?",
+      "author": "capunggaje",
+      "reactions": 12,
+      "channel": "Tawil Fanart"
+    },
+    {
       "id": "1395808509823549501",
       "content": "①融灾吃满核心奖励需要400分是认真的吗（真的觉得之前能打375的队伍还能在多出5队打相同难度吗，多打5队的设定根本起不到所谓的减负，或者说其实就是专门这样设计",
       "author": "chunjuyi",
       "reactions": 7,
       "channel": "新版本融灾问题"
+    },
+    {
+      "id": "1395637693274132501",
+      "content": "It will come, it just needs some more time.",
+      "author": "game.producer.light",
+      "reactions": 6,
+      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
+    },
+    {
+      "id": "1395590132232618095",
+      "content": "https://www.youtube.com/watch?v=tdTiertx9E4",
+      "author": "theandykat",
+      "reactions": 4,
+      "channel": "Traphase gameplay mechanics. Arithmetica, hand reading, mulligan, and deck shuffle. YouTube video"
+    },
+    {
+      "id": "1395736938232676472",
+      "content": "🔫 🕊️",
+      "author": "zier.0",
+      "reactions": 4,
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
     },
     {
       "id": "1395852805272506479",
@@ -54,6 +122,27 @@
       "channel": "24's Birthday"
     },
     {
+      "id": "1395658359176302633",
+      "content": "~~找尤乌哈希和阿格里帕帮忙<:thinking2:1356053172065534153> 他俩前阵子饿得天天夜潜学校后厨哩~~",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+    },
+    {
+      "id": "1395612826864717925",
+      "content": "【English HD Cut Picture 】",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
+    },
+    {
+      "id": "1395637725176139838",
+      "content": "晚一些。",
+      "author": "game.producer.light",
+      "reactions": 3,
+      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
+    },
+    {
       "id": "1395758098781831249",
       "content": "守密人你好：\n       弥萨格大学预计于7月21日08:00~11:00（UTC+8）进行校内设施维护。\n       维护结束后需要重新登入并更新资源，补",
       "author": "morimensstaff02",
@@ -61,53 +150,46 @@
       "channel": "V2.3.0.0 停服维护公告"
     },
     {
-      "id": "1395758523115241648",
-      "content": "Dear Keeper,\nMythag University is scheduled to conduct campus facility maintenan",
-      "author": "morimensstaff02",
+      "id": "1395657089409617968",
+      "content": "Yummy <:huh1:1356053088552747141>",
+      "author": "Deleted User",
       "reactions": 2,
-      "channel": "V2.3.0.0 停服维护公告"
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
     },
     {
-      "id": "1395764516838445126",
-      "content": "打不过375的🤡",
-      "author": "be_queitplease",
+      "id": "1395658341161897984",
+      "content": "<:cry3:1356082134447558748>",
+      "author": "sweet_25367",
       "reactions": 2,
-      "channel": "V2.3.0.0 停服维护公告"
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
     },
     {
-      "id": "1395831685383458997",
-      "content": "24's birthday letter was sent July 15 while her profile says she was born July 1",
-      "author": "willsalvador",
+      "id": "1395658823389286462",
+      "content": "❤️",
+      "author": "iibenigml1588",
       "reactions": 2,
-      "channel": "24's Birthday"
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
     },
     {
-      "id": "1395638159617822761",
-      "content": "I will try to recreate it if i can so thanks for the support",
-      "author": "melwyn7591",
+      "id": "1395765154930753646",
+      "content": "poor castor",
+      "author": "jormiejormungandr",
       "reactions": 2,
-      "channel": "✅「Answered」Level up screen don't show up."
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
     },
     {
-      "id": "1395697887060693043",
-      "content": "Hi, this issue is being arranged for processing~❤️",
-      "author": "morimensstaff01",
+      "id": "1395616264508014612",
+      "content": "帶不帶都沒差的那種",
+      "author": "ernest_heart",
       "reactions": 2,
-      "channel": "✅「Answered」Level up screen don't show up."
+      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
     },
     {
-      "id": "1395768102897188874",
-      "content": "一想到不能全拿滿 就渾身都不得勁",
-      "author": "0.0._.0_0.",
-      "reactions": 1,
-      "channel": "V2.3.0.0 停服维护公告"
-    },
-    {
-      "id": "1395768425602617394",
-      "content": "● 修复了怪物附加「彩墨」的卡牌会错误跳出「怨恨锁链」词缀的问题。\n你上次那個好像是這問題",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "V2.3.0.0 停服维护公告"
+      "id": "1395618776472358922",
+      "content": "看來必須委託更多校貓的nsfw創作來激勵腦缸",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "📜V2.3 版本前瞻┊V2.3 Version Outlook"
     }
   ]
 }

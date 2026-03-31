@@ -1,10 +1,16 @@
 {
   "date": "2025-09-27",
-  "messages": 58,
-  "unique_authors": 5,
-  "reactions_total": 47,
-  "attachments": 54,
+  "messages": 72,
+  "unique_authors": 11,
+  "reactions_total": 150,
+  "attachments": 55,
   "channel_activity": {
+    "Mythag`s Cat want to share cool art with you": 3,
+    "Queens !": 2,
+    "🎨🖌️": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!": 5,
+    "Another team?": 1,
     "忘却前夜OST：畸变丰穰之种": 19,
     "✅「Answered」Good day devs [problems with Apple Pay on iOS]": 1,
     "✅「已回答」每日登入獎勵": 8,
@@ -14,19 +20,38 @@
     "1420092491125755985": 2
   },
   "hourly_activity": {
+    "10": 23,
+    "11": 6,
+    "0": 1,
+    "4": 2,
+    "6": 1,
+    "8": 26,
+    "1": 2,
+    "3": 1,
+    "5": 3,
     "9": 3,
-    "10": 20,
     "14": 2,
-    "4": 1,
-    "8": 25,
-    "11": 4,
-    "5": 1,
     "12": 2
   },
   "message_types": {
-    "0": 19
+    "0": 13,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1421291393258881055",
+      "content": "I love Murphy sm ;; \nALSO-FMC is such a CUTIE  <a:SCmicAAA:771793738477207572>",
+      "author": "gumseoi",
+      "reactions": 50,
+      "channel": "Queens !"
+    },
+    {
+      "id": "1421459995756855403",
+      "content": "@ everyone",
+      "author": "game.producer.light",
+      "reactions": 39,
+      "channel": "Mythag`s Cat want to share cool art with you"
+    },
     {
       "id": "1421408684776357929",
       "content": "UID：100607245",
@@ -42,6 +67,13 @@
       "channel": "忘却前夜OST：畸变丰穰之种"
     },
     {
+      "id": "1421303622536527933",
+      "content": "can we get the update for ddive and traphase leaderboard based rewards? moving i",
+      "author": "lumato",
+      "reactions": 13,
+      "channel": "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!"
+    },
+    {
       "id": "1421452403105861743",
       "content": "補發杜勒考官的戰績",
       "author": "water_heart",
@@ -54,6 +86,13 @@
       "author": "akalanden",
       "reactions": 2,
       "channel": "忘却前夜OST：畸变丰穰之种"
+    },
+    {
+      "id": "1421383436022710282",
+      "content": "it's a sign my friend<:wink:1400771743630491749>",
+      "author": "sunstopshining",
+      "reactions": 1,
+      "channel": "🎨🖌️"
     },
     {
       "id": "1421439063092891679",

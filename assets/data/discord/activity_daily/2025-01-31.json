@@ -1,10 +1,12 @@
 {
   "date": "2025-01-31",
-  "messages": 10,
+  "messages": 19,
   "unique_authors": 5,
-  "reactions_total": 4,
-  "attachments": 1,
+  "reactions_total": 9,
+  "attachments": 2,
   "channel_activity": {
+    "Tier list as of 2.0": 6,
+    "morimens story recap channel": 3,
     "English Page pls !!": 1,
     "好想要烏撒貓貓律當宿舍背景🐾": 1,
     "还有佬助战满练度珊嘛": 1,
@@ -12,6 +14,11 @@
     "Miryam": 5
   },
   "hourly_activity": {
+    "17": 2,
+    "18": 2,
+    "19": 2,
+    "5": 2,
+    "12": 1,
     "23": 1,
     "4": 1,
     "10": 1,
@@ -19,15 +26,30 @@
     "16": 6
   },
   "message_types": {
-    "0": 5
+    "0": 8,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1334944684190990450",
+      "content": "i feel lile this tier list just for personal taste , he didnt  test all team wit",
+      "author": "aegisx",
+      "reactions": 4,
+      "channel": "Tier list as of 2.0"
+    },
     {
       "id": "1334829234916429895",
       "content": "号码本的大佬珊已经弃坑了的样子👀",
       "author": "nidie0256_61327",
       "reactions": 3,
       "channel": "还有佬助战满练度珊嘛"
+    },
+    {
+      "id": "1334942153989689376",
+      "content": "shield up on <Reliable Barrier> well past the point of overcap, do you wan to de",
+      "author": "aruein1",
+      "reactions": 1,
+      "channel": "Tier list as of 2.0"
     },
     {
       "id": "1334919733669138513",

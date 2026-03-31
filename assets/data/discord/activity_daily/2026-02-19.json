@@ -1,10 +1,14 @@
 {
   "date": "2026-02-19",
-  "messages": 1722,
+  "messages": 1774,
   "unique_authors": 62,
-  "reactions_total": 1276,
-  "attachments": 81,
+  "reactions_total": 1290,
+  "attachments": 87,
   "channel_activity": {
+    "🎉忘却前夜新春会┊Morimens Spring Festival Gala": 4,
+    "I need people Brain Come here": 32,
+    "are my teams good?": 13,
+    "Flares' Comprehensive Beginner Guide to Morimens": 3,
     "murphy and desserts 🍓": 4,
     "doresain": 2,
     "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event.": 3,
@@ -30,6 +34,11 @@
     "🔸阵容构建": 61
   },
   "hourly_activity": {
+    "15": 398,
+    "13": 296,
+    "14": 283,
+    "12": 201,
+    "6": 37,
     "21": 24,
     "22": 8,
     "23": 90,
@@ -37,26 +46,23 @@
     "9": 39,
     "7": 12,
     "20": 9,
-    "6": 34,
     "8": 16,
     "17": 25,
     "19": 7,
-    "13": 275,
-    "14": 278,
-    "15": 388,
     "10": 57,
     "16": 87,
     "1": 22,
     "18": 40,
     "0": 8,
-    "12": 188,
     "3": 16,
     "4": 47,
     "5": 17,
     "11": 7
   },
   "message_types": {
-    "0": 6
+    "0": 44,
+    "6": 1,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -100,6 +106,13 @@
       "author": "midnight_emporium",
       "reactions": 13,
       "channel": ""
+    },
+    {
+      "id": "1474071209934323774",
+      "content": "**PART 5 - 视频/Video**\n①佚名 @潜水的榆\n②「小剧场/Small theater」道理剧场之误入弥大 @天方 @皓月白月 @菜菜鱼 @非典",
+      "author": "morimensstaff01",
+      "reactions": 12,
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
     },
     {
       "id": "1474030309048717322",
@@ -191,13 +204,6 @@
       "author": "yeriko703",
       "reactions": 4,
       "channel": "Please allow us to reutrn Doresain to the Black Pool"
-    },
-    {
-      "id": "1474028084477952225",
-      "content": "他們說36的TV才是正常配置",
-      "author": "sfn28409633",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }

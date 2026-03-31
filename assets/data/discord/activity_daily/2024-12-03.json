@@ -1,10 +1,11 @@
 {
   "date": "2024-12-03",
-  "messages": 134,
+  "messages": 135,
   "unique_authors": 48,
   "reactions_total": 21,
   "attachments": 53,
   "channel_activity": {
+    "Reruns priority guide (for newcomers and general)": 1,
     "🏆【已開獎】彌薩格週年頒獎典禮": 51,
     "🌌【已開獎】超越維度的祝福": 15,
     "助戰問題修復公告": 2,
@@ -22,6 +23,7 @@
     "原初之影__第四關陣容推薦": 3
   },
   "hourly_activity": {
+    "5": 5,
     "9": 18,
     "10": 15,
     "11": 6,
@@ -38,12 +40,10 @@
     "2": 3,
     "3": 23,
     "4": 20,
-    "5": 4,
     "18": 2
   },
   "message_types": {
-    "0": 67,
-    "19": 7
+    "19": 1
   },
   "top_reacted_messages": [
     {

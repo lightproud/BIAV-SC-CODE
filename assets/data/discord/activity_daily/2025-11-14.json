@@ -1,10 +1,18 @@
 {
   "date": "2025-11-14",
-  "messages": 45,
-  "unique_authors": 12,
-  "reactions_total": 985,
-  "attachments": 20,
+  "messages": 85,
+  "unique_authors": 15,
+  "reactions_total": 1038,
+  "attachments": 31,
   "channel_activity": {
+    "What do i wanna play": 1,
+    "Gmurphy Art": 1,
+    "Liz painting": 1,
+    "Rat be upon ye": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction": 8,
+    "想问问配队&建议": 2,
+    "Pulls advice": 25,
     "忘却前夜OST：逆转回合EP·万象旅店的回响": 9,
     "✅「已回答」卡斯托爾廣播劇": 2,
     "✅「已回答」还能见到星辰篇的地图吗": 3,
@@ -23,20 +31,27 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "7": 5,
-    "8": 9,
+    "3": 28,
+    "5": 4,
+    "19": 1,
+    "18": 2,
+    "0": 1,
+    "12": 2,
+    "13": 1,
+    "15": 3,
+    "16": 3,
+    "7": 6,
+    "8": 10,
+    "2": 3,
     "9": 3,
-    "3": 5,
-    "16": 1,
     "6": 14,
-    "5": 3,
     "11": 2,
-    "15": 1,
     "20": 1,
     "4": 1
   },
   "message_types": {
-    "0": 9
+    "0": 29,
+    "19": 11
   },
   "top_reacted_messages": [
     {
@@ -47,11 +62,32 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1438954086916427957",
+      "content": "Something for the Morimens fandom that isn't my usual Salvador art...",
+      "author": "sofiaebby",
+      "reactions": 20,
+      "channel": "Rat be upon ye"
+    },
+    {
+      "id": "1438763401181397062",
+      "content": "",
+      "author": "flares117",
+      "reactions": 16,
+      "channel": "Gmurphy Art"
+    },
+    {
       "id": "1438734530700640447",
       "content": "好想吃饭（抓）饭来，饭从四面八方来",
       "author": "ikki142_79811",
       "reactions": 15,
       "channel": "堆一下忘却相关的图"
+    },
+    {
+      "id": "1438975601267445810",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 8,
+      "channel": "Liz painting"
     },
     {
       "id": "1438800071977078814",
@@ -61,11 +97,39 @@
       "channel": "忘却前夜OST：逆转回合EP·万象旅店的回响"
     },
     {
+      "id": "1438737473558806698",
+      "content": "",
+      "author": "weeaboogod",
+      "reactions": 6,
+      "channel": "What do i wanna play"
+    },
+    {
       "id": "1438993825828831462",
       "content": "",
       "author": "flim_of_life_burst",
       "reactions": 3,
       "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1438923287320068127",
+      "content": "神他媽暗影詩章，增幅完然後開門是吧",
+      "author": "lin022.",
+      "reactions": 1,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1438927284118749185",
+      "content": "",
+      "author": "glacy_9918",
+      "reactions": 1,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1438954682251870389",
+      "content": "At the start i didn't realize that she don't upgrade the Tentacle stances but co",
+      "author": "vxvendetta97",
+      "reactions": 1,
+      "channel": "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction"
     },
     {
       "id": "1438801266569515131",

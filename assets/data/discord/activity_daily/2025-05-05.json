@@ -1,10 +1,17 @@
 {
   "date": "2025-05-05",
-  "messages": 104,
+  "messages": 117,
   "unique_authors": 19,
-  "reactions_total": 111,
-  "attachments": 36,
+  "reactions_total": 153,
+  "attachments": 40,
   "channel_activity": {
+    "A Pair of Roses, Horla & Sanga Fanfic": 1,
+    "Sanga": 2,
+    "Fully enlightened Corposant 🌊": 2,
+    "Star Chapter 1 + 2 Tier List": 3,
+    "Flares' Morimens Awaker Review : Corposant - A to S tier": 2,
+    "🐾喚醒體五一遊記┊Awaker Holiday Travels": 2,
+    "Kaly's Beginner Guides": 1,
     "✅校猫碎碎念#近况分享": 3,
     "✅前瞻：1.5周年～战斗增强篇": 48,
     "✅「Answered」 Strike to protect Bug": 2,
@@ -28,25 +35,31 @@
     "1271491376881598494": 2
   },
   "hourly_activity": {
+    "17": 1,
+    "23": 4,
+    "9": 12,
+    "22": 3,
+    "7": 1,
+    "16": 3,
+    "20": 1,
+    "6": 1,
     "0": 3,
     "10": 10,
     "11": 3,
     "12": 42,
     "13": 10,
     "14": 5,
-    "16": 1,
     "4": 6,
     "5": 3,
-    "9": 10,
     "3": 2,
     "2": 4,
     "15": 2,
-    "1": 1,
-    "23": 2
+    "1": 1
   },
   "message_types": {
-    "0": 26,
-    "19": 25
+    "4": 1,
+    "0": 11,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -55,6 +68,20 @@
       "author": "silverstream_s",
       "reactions": 29,
       "channel": "【MMD】神っぽいな「克莱门汀」"
+    },
+    {
+      "id": "1368883124338954241",
+      "content": "",
+      "author": "mount_fisherman",
+      "reactions": 18,
+      "channel": "Fully enlightened Corposant 🌊"
+    },
+    {
+      "id": "1369089857351061534",
+      "content": "",
+      "author": "maya014632",
+      "reactions": 17,
+      "channel": "Sanga"
     },
     {
       "id": "1368925688597315636",
@@ -113,6 +140,20 @@
       "channel": "Tentacle Crit Build Theory Crafting"
     },
     {
+      "id": "1369055917722570762",
+      "content": "а можно ему другого психолога",
+      "author": "me4tgr1nder",
+      "reactions": 4,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368983271127388160",
+      "content": "卡最後一天丟嘻嘻，這是牛肉麵",
+      "author": "rou_yi_rou",
+      "reactions": 2,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
       "id": "1368933874314379336",
       "content": "你也知道星辰篇主线难度大<:alone:1356053021318189307> 有没有考虑降低一些数值方面上的难度\n虽然看到在研究新玩法，但是我现在看到星辰篇",
       "author": "akalanden",
@@ -160,34 +201,6 @@
       "author": "starfish3302",
       "reactions": 2,
       "channel": "💭「Processing」Corposant Star Chapter Talent"
-    },
-    {
-      "id": "1368877749942489128",
-      "content": "<@1131790839291596841>\nScreenshot taken today (<t:1746436242>), Corposant is out",
-      "author": "__goz__",
-      "reactions": 2,
-      "channel": "✅「Answered」Sanga misnamed as corposant"
-    },
-    {
-      "id": "1368922668858085469",
-      "content": "有，15回合仍然是获取星级奖励的条件。",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "✅前瞻：1.5周年～战斗增强篇"
-    },
-    {
-      "id": "1368789301873082471",
-      "content": "Corposant Event -  Stage Old Sextant Madness text not translate",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "✅「Answered」Text not translate"
-    },
-    {
-      "id": "1368772918363947070",
-      "content": "聖火指引 圖示錯誤\n\n領航者大錯特錯 \n完全變成催眠靈擺，效果也是催眠的\n\n另外催眠靈擺是不是削了 變扣12點",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "✅「已回答」對弈新命輪均有bug"
     }
   ]
 }

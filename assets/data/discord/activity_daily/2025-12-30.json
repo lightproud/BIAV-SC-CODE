@@ -1,10 +1,14 @@
 {
   "date": "2025-12-30",
-  "messages": 113,
+  "messages": 140,
   "unique_authors": 23,
-  "reactions_total": 731,
-  "attachments": 26,
+  "reactions_total": 751,
+  "attachments": 31,
   "channel_activity": {
+    "I errr....": 16,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 8,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "📸壁纸分享: 茉夏┊Wallpaper Sharing: Mouchette": 2,
     "V2.4.1.2 在线维护公告": 10,
     "Who Ryker's Designer pls come talk ?": 2,
     "💭「Processing」Intro movie not changing on PC when it changes on mobile.": 5,
@@ -35,28 +39,30 @@
     "1455453095592071269": 4
   },
   "hourly_activity": {
-    "8": 9,
+    "0": 5,
+    "4": 29,
+    "8": 11,
+    "10": 3,
+    "12": 15,
+    "13": 9,
+    "7": 19,
+    "16": 2,
+    "19": 2,
+    "21": 5,
+    "23": 1,
+    "3": 4,
+    "6": 13,
     "9": 6,
     "11": 4,
     "17": 6,
     "5": 1,
-    "7": 17,
-    "3": 3,
-    "12": 12,
     "18": 3,
-    "19": 1,
-    "4": 28,
-    "10": 1,
-    "13": 4,
-    "21": 3,
     "14": 1,
-    "6": 11,
-    "22": 1,
-    "0": 1,
-    "16": 1
+    "22": 1
   },
   "message_types": {
-    "0": 10
+    "0": 19,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -81,11 +87,25 @@
       "channel": ""
     },
     {
+      "id": "1455444851993739284",
+      "content": "✦为大家奉上茉夏的留影作为纪念~\n守密人可在留言区保存PC、平板、手机尺寸的壁纸。\n\n✦Here are photos of Mouchette as a so",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "📸壁纸分享: 茉夏┊Wallpaper Sharing: Mouchette"
+    },
+    {
       "id": "1455469398411444447",
       "content": "Hi, thank you all for your supervision🙏 \nThe information that everyone hopes to ",
       "author": "morimensstaff01",
       "reactions": 7,
       "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
+    },
+    {
+      "id": "1455444963687927882",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "📸壁纸分享: 茉夏┊Wallpaper Sharing: Mouchette"
     },
     {
       "id": "1455610444864815219",
@@ -116,6 +136,20 @@
       "channel": "V2.4.1.2 在线维护公告"
     },
     {
+      "id": "1455352602471698483",
+      "content": "Woow, I didn't expect for the reaction.\nI guess I will make some of these again.",
+      "author": "shiio4870",
+      "reactions": 3,
+      "channel": "I errr...."
+    },
+    {
+      "id": "1455506674201657385",
+      "content": "Of course it is! it's Corpo!",
+      "author": "shiio4870",
+      "reactions": 3,
+      "channel": "I errr...."
+    },
+    {
       "id": "1455399500750262312",
       "content": "<#1180845276823564288> \n问问N可能实装吗？三权柱就N没有实装了，而且这个人设感觉也挺有意思的，想看N的繁衍剧情，不知道他这个性格会干啥。",
       "author": "0399_ryomina",
@@ -144,6 +178,13 @@
       "channel": ""
     },
     {
+      "id": "1455557484696703181",
+      "content": "I'll see what I can do",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "I errr...."
+    },
+    {
       "id": "1455540122991722578",
       "content": "那就改成「抽到此卡的回合，若出牌數少於等於三」",
       "author": "amstelredam",
@@ -163,41 +204,6 @@
       "author": "_venush",
       "reactions": 1,
       "channel": "✅「Answered」Pursuit does not count towards Mouchette's wheel"
-    },
-    {
-      "id": "1455501859719610449",
-      "content": "There is a problem that a specific WoD is not selected normally on the WoD equip",
-      "author": "shrike784",
-      "reactions": 1,
-      "channel": "✅「Answered」Can't click specific WoDs in Lineup"
-    },
-    {
-      "id": "1455556198261723238",
-      "content": "場景CG才有劇情CG沒法顯示",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "✅「已解决」主頁角色不見了"
-    },
-    {
-      "id": "1455575693487243316",
-      "content": "thanks for following up, yup appreciate this could take some time, but glad it'l",
-      "author": "lavache.",
-      "reactions": 1,
-      "channel": "✅「Answered」Display crit rate (and maybe final dmg if crit) per card?"
-    },
-    {
-      "id": "1455534729452585033",
-      "content": "我反而是覺得沒BGM之後很枯燥乏味🤣我都在戰鬥爽，沒BGM就沒有那種急切感或者危機感了，就會打得沒那麼爽(",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "✅「已回答」豹豹貓貓請問我音樂呢"
-    },
-    {
-      "id": "1455471637041381553",
-      "content": "Thanks for the consideration",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
     }
   ]
 }

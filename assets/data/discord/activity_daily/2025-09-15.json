@@ -1,10 +1,19 @@
 {
   "date": "2025-09-15",
-  "messages": 92,
+  "messages": 114,
   "unique_authors": 32,
-  "reactions_total": 57,
-  "attachments": 32,
+  "reactions_total": 75,
+  "attachments": 38,
   "channel_activity": {
+    "Pickmin": 2,
+    "Morimens Glossary (Wheels and Covenants equip guide)": 1,
+    "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!": 2,
+    "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction": 4,
+    "Evaluation of my initial teams": 4,
+    "Team Composition Help": 4,
+    "New Player Summon/Team Help": 1,
+    "does anyone have a tierlist?": 2,
+    "Need help with the Invitation event": 2,
     "V2.3.2.3 在线维护公告": 13,
     "✅「Answered」About new Ryker buff": 3,
     "✅「已回答」遺骨逼我刪牌": 3,
@@ -37,30 +46,37 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "12": 11,
-    "14": 8,
-    "15": 7,
+    "15": 9,
+    "19": 5,
+    "17": 5,
+    "18": 4,
+    "10": 5,
+    "11": 4,
+    "12": 12,
+    "20": 11,
+    "3": 12,
+    "6": 8,
+    "14": 9,
     "16": 10,
     "2": 10,
-    "17": 3,
-    "19": 4,
-    "20": 5,
-    "18": 3,
-    "6": 6,
     "8": 3,
     "9": 2,
-    "10": 2,
     "5": 2,
-    "11": 2,
     "23": 2,
-    "3": 11,
     "0": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 3
+    "0": 18,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1417237861412896859",
+      "content": "This is a resource from the Mythag University server containing a general indica",
+      "author": "vxvendetta",
+      "reactions": 18,
+      "channel": "Morimens Glossary (Wheels and Covenants equip guide)"
+    },
     {
       "id": "1417214585244614727",
       "content": "我亲爱的友人，黛博拉：\n\n我亲爱的友人，在我生日那天，我再一次想起你。弥利亚姆再一次想起黛博拉。\n\n当我挑选着给墨菲的甜品的时候，不知为何，我想起了你。你也很爱",

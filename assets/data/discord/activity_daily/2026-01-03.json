@@ -1,10 +1,15 @@
 {
   "date": "2026-01-03",
-  "messages": 56,
-  "unique_authors": 6,
-  "reactions_total": 8,
-  "attachments": 16,
+  "messages": 71,
+  "unique_authors": 13,
+  "reactions_total": 38,
+  "attachments": 19,
   "channel_activity": {
+    "aequor doodle": 5,
+    "Aurora's Guide to F2P Greed": 2,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 6,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "健检+配队建议": 1,
     "Forehead tierlist": 43,
     "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 1,
     "💭「处理中」典藏馆事件的解锁到底是什么机制？": 3,
@@ -16,23 +21,51 @@
     "1455453095592071269": 1
   },
   "hourly_activity": {
+    "10": 3,
+    "11": 2,
+    "13": 3,
+    "15": 1,
+    "17": 1,
+    "21": 4,
+    "5": 2,
+    "9": 1,
+    "16": 2,
+    "23": 1,
+    "19": 2,
     "1": 1,
     "2": 10,
     "3": 28,
     "4": 5,
     "20": 4,
-    "19": 1,
-    "16": 1,
-    "21": 3,
-    "13": 1,
-    "18": 1,
-    "11": 1
+    "18": 1
   },
   "message_types": {
-    "0": 36,
-    "19": 7
+    "0": 13,
+    "4": 1,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1457061467562967041",
+      "content": "UID: 100804972\n\nThis Guide is for beginners who are already familiar with strate",
+      "author": "aurora3981",
+      "reactions": 18,
+      "channel": "Aurora's Guide to F2P Greed"
+    },
+    {
+      "id": "1457002092760793191",
+      "content": "a divine maiden btw..",
+      "author": "deellln",
+      "reactions": 8,
+      "channel": "aequor doodle"
+    },
+    {
+      "id": "1456961930748231801",
+      "content": "work in progress",
+      "author": "deellln",
+      "reactions": 4,
+      "channel": "aequor doodle"
+    },
     {
       "id": "1456815810520547498",
       "content": "Technically, Faros only has a forehead and no scalp.",

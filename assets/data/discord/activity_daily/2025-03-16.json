@@ -1,10 +1,13 @@
 {
   "date": "2025-03-16",
-  "messages": 29,
+  "messages": 35,
   "unique_authors": 9,
-  "reactions_total": 42,
-  "attachments": 10,
+  "reactions_total": 43,
+  "attachments": 14,
   "channel_activity": {
+    "Team Comps": 3,
+    "การรวบรวมคำติชมการแปลภาษาไทย": 2,
+    "Deutsche Übersetzung - Sammlung von Rückmeldungen": 1,
     "PVP活動": 3,
     "純討論，為什麼熔朵的體重少了0.1磅": 8,
     "💭「處理中」文本描述錯誤": 1,
@@ -17,9 +20,11 @@
     "1350059696945500171": 3
   },
   "hourly_activity": {
+    "7": 4,
+    "9": 1,
+    "15": 2,
     "10": 6,
     "11": 1,
-    "15": 1,
     "1": 5,
     "4": 1,
     "8": 2,
@@ -31,8 +36,7 @@
     "18": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 4
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -48,6 +52,13 @@
       "author": "llhwwc_89248",
       "reactions": 13,
       "channel": "弥萨格周报·星辰篇第二期"
+    },
+    {
+      "id": "1350851245434474547",
+      "content": "Hallo! Ich freue mich sehr, dass die deutsche Übersetzung für dieses Spiel verbe",
+      "author": "kabipo",
+      "reactions": 1,
+      "channel": "Deutsche Übersetzung - Sammlung von Rückmeldungen"
     },
     {
       "id": "1350792689875943577",

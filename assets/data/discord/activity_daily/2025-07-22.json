@@ -1,10 +1,14 @@
 {
   "date": "2025-07-22",
-  "messages": 108,
+  "messages": 117,
   "unique_authors": 14,
-  "reactions_total": 23,
-  "attachments": 53,
+  "reactions_total": 151,
+  "attachments": 66,
   "channel_activity": {
+    "Thais Warm up": 1,
+    "24 and Caecus merch": 1,
+    "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests": 4,
+    "📸V2.3 PV细节欣赏┊Appreciation of Details": 3,
     "V2.3.0.0 停服维护公告": 3,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
     "💭「Processing」I can't start the game, it freezes": 5,
@@ -36,28 +40,49 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "23": 2,
+    "17": 8,
+    "6": 3,
+    "11": 3,
+    "12": 1,
+    "10": 10,
     "13": 6,
     "20": 2,
     "8": 23,
     "9": 15,
-    "23": 1,
     "15": 3,
     "16": 1,
-    "10": 7,
-    "11": 2,
-    "17": 6,
     "4": 6,
     "7": 18,
     "5": 14,
-    "6": 2,
     "14": 1,
     "19": 1
   },
   "message_types": {
-    "0": 1,
-    "19": 2
+    "0": 9
   },
   "top_reacted_messages": [
+    {
+      "id": "1397358893453283462",
+      "content": "https://x.com/Rumbyy_/status/1947798949898641617",
+      "author": "rumbyy_",
+      "reactions": 83,
+      "channel": "Thais Warm up"
+    },
+    {
+      "id": "1397156776587038770",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 30,
+      "channel": "📸V2.3 PV细节欣赏┊Appreciation of Details"
+    },
+    {
+      "id": "1397276666514116668",
+      "content": "I made myself a badge and a keychain with my art of them",
+      "author": "happyskull",
+      "reactions": 13,
+      "channel": "24 and Caecus merch"
+    },
     {
       "id": "1397118646140141691",
       "content": "第一次玩拼豆，拼了2個杜勒",
@@ -71,6 +96,20 @@
       "author": "void_1546.",
       "reactions": 7,
       "channel": "深海隊攻略之—水船隊"
+    },
+    {
+      "id": "1397097133638942810",
+      "content": "It’s perfect for an artist like me~ <:behave:1361909598067625984>",
+      "author": "ev_6185",
+      "reactions": 1,
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+    },
+    {
+      "id": "1397157460455854190",
+      "content": "建议再发200银当公告",
+      "author": "carme.0588",
+      "reactions": 1,
+      "channel": "📸V2.3 PV细节欣赏┊Appreciation of Details"
     },
     {
       "id": "1397152488980742205",

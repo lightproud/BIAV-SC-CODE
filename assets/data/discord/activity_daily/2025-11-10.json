@@ -1,10 +1,28 @@
 {
   "date": "2025-11-10",
-  "messages": 81,
-  "unique_authors": 16,
-  "reactions_total": 415,
-  "attachments": 21,
+  "messages": 207,
+  "unique_authors": 65,
+  "reactions_total": 957,
+  "attachments": 79,
   "channel_activity": {
+    "Kathigu-Ra: Ardor Blossom Star": 2,
+    "[Birthday wishes for Caecus /0：00]": 2,
+    "[Birthday wishes for Caecus /1：00]": 1,
+    "Aigis-neon watercolors.": 1,
+    "Is a chair enough?": 7,
+    "GMurphy finished": 1,
+    "Mother of all": 1,
+    "Miryam b4 painting": 6,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ": 21,
+    "V2.4 诞妄·墨菲情报：命运似衔尾蛇┊About Murphy: Fauxborn: Ouroboros of Fate": 22,
+    "V2.4.0 美梦中酣眠┊Nightly Night 💤": 48,
+    "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn": 2,
+    "D-tide team comps": 1,
+    "Complete Beginner": 1,
+    "Is this Team good?": 4,
+    "What is the \"Leap\" of Lady Daffodil? How can it be used? It's on some of her cards.": 2,
+    "Who do i get copies of": 3,
     "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment": 2,
     "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework": 1,
     "Happy Birthday, Caecus!": 2,
@@ -33,28 +51,35 @@
     "1432654338982940783": 2
   },
   "hourly_activity": {
-    "7": 5,
-    "3": 4,
-    "23": 2,
-    "6": 16,
-    "9": 5,
-    "13": 6,
-    "19": 1,
-    "8": 6,
-    "10": 14,
-    "21": 2,
-    "16": 5,
-    "18": 2,
-    "12": 3,
-    "4": 1,
-    "14": 3,
-    "17": 1,
-    "1": 1,
-    "2": 4
+    "17": 4,
+    "20": 2,
+    "16": 7,
+    "22": 6,
+    "14": 5,
+    "4": 5,
+    "5": 3,
+    "1": 12,
+    "12": 6,
+    "3": 8,
+    "8": 32,
+    "9": 13,
+    "10": 24,
+    "13": 9,
+    "15": 6,
+    "18": 3,
+    "19": 4,
+    "23": 3,
+    "7": 25,
+    "11": 6,
+    "6": 17,
+    "2": 5,
+    "21": 2
   },
   "message_types": {
-    "0": 4,
-    "19": 1
+    "0": 105,
+    "19": 19,
+    "6": 1,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -79,6 +104,20 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1437356495229550592",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 42,
+      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
+    },
+    {
+      "id": "1437356151716184125",
+      "content": "Life could be dream",
+      "author": "hajskans",
+      "reactions": 37,
+      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
+    },
+    {
       "id": "1437577834833903626",
       "content": "It is rushed but! I couldn't miss his b-day! (I may have already OTL)",
       "author": "gumseoi",
@@ -86,11 +125,67 @@
       "channel": "Happy Birthday, Caecus!"
     },
     {
+      "id": "1437359364397731923",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 36,
+      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
+    },
+    {
+      "id": "1437473308630061168",
+      "content": "[Birthday wishes for Caecus /0：00] Glass Animals - Youth\n'You'll be happy all th",
+      "author": "calmdreab",
+      "reactions": 33,
+      "channel": "[Birthday wishes for Caecus /0：00]"
+    },
+    {
+      "id": "1437338869434679367",
+      "content": "你做过这样的梦吗？\n愚蠢的期愿孕育于子宫，用血与泪滋养出胎动；\n数不清这是第几次啼哭，只记得降生从未停过；\n好了好了，我就在这儿。乖乖睡吧，海的小宝贝……\n\n呵",
+      "author": "morimensstaff01",
+      "reactions": 33,
+      "channel": "V2.4 诞妄·墨菲情报：命运似衔尾蛇┊About Murphy: Fauxborn: Ouroboros of Fate"
+    },
+    {
+      "id": "1437487034460668026",
+      "content": "Still restless, wasting away in a lifetime of numbness.\n\n“还是不安一生麻木间蹉跎”\n\n——GONG -",
+      "author": "calmdreab",
+      "reactions": 27,
+      "channel": "[Birthday wishes for Caecus /1：00]"
+    },
+    {
+      "id": "1437352488402681958",
+      "content": "Aurita's head is too empty to have thoughts!",
+      "author": "arkaether",
+      "reactions": 27,
+      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
+    },
+    {
       "id": "1437417008491790508",
       "content": "在寫異格的角色界面於是搞了！兩個小時產出來的xx基本都是自己安的字體和摳的圖可能會比較粗糙請見諒ww\n後2P是中文wiki上的角色頁面，昨天晚上修了一下w",
       "author": "flim_of_life_burst",
       "reactions": 25,
       "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1437451688817463436",
+      "content": "With the plot of the story aigis is inspired by I think painting it with neon co",
+      "author": "not_amon.",
+      "reactions": 23,
+      "channel": "Aigis-neon watercolors."
+    },
+    {
+      "id": "1437253528773984348",
+      "content": "",
+      "author": "anthony.lego",
+      "reactions": 22,
+      "channel": "Miryam b4 painting"
+    },
+    {
+      "id": "1437359684712534026",
+      "content": "Thinking of how she was robbed of a bigger forehead 😭",
+      "author": "jollysquire",
+      "reactions": 22,
+      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
     },
     {
       "id": "1437578048730955837",
@@ -107,88 +202,25 @@
       "channel": "💭「Processing」Material synthesis and conversion"
     },
     {
-      "id": "1437487204187242627",
-      "content": "【1111凯刻斯生贺/1:00】宫阁《不算经常 但是偶尔》\n还是不安一生麻木间蹉跎\n\n——宫阁《不算经常 但是偶尔》\nUID:100000287",
-      "author": "calmdreab",
-      "reactions": 11,
-      "channel": "【1111凯刻斯生贺/1:00】"
+      "id": "1437361829893640223",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 15,
+      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
     },
     {
-      "id": "1437473688885788704",
-      "content": "【1111凯刻斯生贺/0:00】Glass Animals《Youth》\n\"You'll be happy all the time''\n你将快乐无忧到永远。\n",
-      "author": "calmdreab",
-      "reactions": 11,
-      "channel": "【1111凯刻斯生贺/0:00】"
+      "id": "1437461449713914037",
+      "content": "",
+      "author": "ren3816",
+      "reactions": 15,
+      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
     },
     {
-      "id": "1437381100942000199",
-      "content": "我们早点把医生之前的壁纸也补一下好吗，这对我真的很重要",
-      "author": "wushengchi7012",
-      "reactions": 5,
-      "channel": "✅「已回答」需要更多5771壁纸"
-    },
-    {
-      "id": "1437369359809904680",
-      "content": "好，那我要把我+12搭档分解了",
-      "author": "txt101225.",
-      "reactions": 4,
-      "channel": "✅「已回答」問題"
-    },
-    {
-      "id": "1437433474171801620",
-      "content": "國宴級別",
-      "author": "ahong0727",
-      "reactions": 2,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1437394147471392889",
-      "content": "Русская версия постера🥰 \n—— сделана российской организацией 【Morimens Ru Info Ch",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1437368105063022714",
-      "content": "<@&1166257943742787615>",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "✅「Answered」Is steam payment broken?"
-    },
-    {
-      "id": "1437384455730761839",
-      "content": "<@231543819026300928>Hi, can you provide me with UID?\nAlso, where is your IP add",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Is steam payment broken?"
-    },
-    {
-      "id": "1437355628912705539",
-      "content": "嗨，被弃掉后是会获得护盾，此处缺少描述，会在下次更新补充🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」相位-隱沒的痛楚"
-    },
-    {
-      "id": "1437331173041901648",
-      "content": "感谢建议，戈雅会去沟通一下",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」蘿坦支援卡是否可以在詞綴說明處加上「不竭戰意」的預覽"
-    },
-    {
-      "id": "1437440452721901569",
-      "content": "写了新命轮文案（x",
-      "author": "flim_of_life_burst",
-      "reactions": 1,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1437455858278727732",
-      "content": "謝謝勞斯",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "給異格也P了一版仿官海報（）"
+      "id": "1437349338333581333",
+      "content": "Here, take a little break <:M_satisfy:1400771690321154110>",
+      "author": "zekiei",
+      "reactions": 14,
+      "channel": "V2.4.0 美梦中酣眠┊Nightly Night 💤"
     }
   ]
 }

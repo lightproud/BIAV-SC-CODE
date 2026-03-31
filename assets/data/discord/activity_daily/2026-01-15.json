@@ -1,10 +1,17 @@
 {
   "date": "2026-01-15",
-  "messages": 28,
-  "unique_authors": 7,
-  "reactions_total": 46,
-  "attachments": 12,
+  "messages": 54,
+  "unique_authors": 15,
+  "reactions_total": 54,
+  "attachments": 19,
   "channel_activity": {
+    "Ms Dean?": 11,
+    "whormentine + tournament": 4,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 5,
+    "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!": 2,
+    "刚入坑咋玩，配对缺啥": 2,
+    "Team Guidance/Character Investment Suggestions": 1,
+    "newbie team build direction advice": 1,
     "Art dump thread": 13,
     "💭「处理中」典藏馆事件的解锁到底是什么机制？": 1,
     "✅「Answered」Google sign-in issues": 1,
@@ -17,22 +24,26 @@
     "1445556242381672559": 2
   },
   "hourly_activity": {
-    "13": 4,
-    "15": 1,
+    "6": 6,
+    "7": 3,
+    "13": 6,
+    "14": 5,
+    "15": 3,
+    "8": 7,
+    "9": 4,
+    "11": 2,
+    "21": 1,
+    "10": 4,
     "16": 3,
     "17": 2,
     "19": 3,
     "20": 1,
-    "10": 1,
-    "9": 1,
-    "14": 2,
-    "11": 1,
     "0": 3,
-    "8": 5,
     "1": 1
   },
   "message_types": {
-    "0": 13
+    "0": 20,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -41,6 +52,13 @@
       "author": "kiriwoamizaki",
       "reactions": 23,
       "channel": "Art dump thread"
+    },
+    {
+      "id": "1461242936552456309",
+      "content": "\"https://x.com/TavvyVyes/status/2011683781472825535?s=20\"\naddition to the bnnuy ",
+      "author": "shiio4870",
+      "reactions": 6,
+      "channel": "Ms Dean?"
     },
     {
       "id": "1461444939064803500",
@@ -76,6 +94,20 @@
       "author": "kiriwoamizaki",
       "reactions": 2,
       "channel": "Art dump thread"
+    },
+    {
+      "id": "1461295292157657281",
+      "content": "tysm!",
+      "author": "shirox0_.",
+      "reactions": 1,
+      "channel": "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1461257089337790505",
+      "content": "hihii!! returning player here, so not that familiar with current meta, but from ",
+      "author": "glitzy_x",
+      "reactions": 1,
+      "channel": "Team Guidance/Character Investment Suggestions"
     },
     {
       "id": "1461275204453007402",

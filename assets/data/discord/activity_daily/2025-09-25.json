@@ -1,10 +1,18 @@
 {
   "date": "2025-09-25",
-  "messages": 70,
-  "unique_authors": 9,
-  "reactions_total": 32,
-  "attachments": 6,
+  "messages": 146,
+  "unique_authors": 24,
+  "reactions_total": 174,
+  "attachments": 15,
   "channel_activity": {
+    "Mythag`s Cat want to share cool art with you": 3,
+    "Tier List & Banner Guide": 25,
+    "Wheel tier List": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 2,
+    "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！": 30,
+    "剛玩一個禮拜 這配對很強嗎": 3,
+    "Flares' Comprehensive Beginner Guide to Morimens": 1,
+    "Suggestions for Team Comps": 11,
     "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 1,
     "✅「已回答」遺骨逼我刪牌": 2,
     "💭「Processing」i can't enter the game via steam": 5,
@@ -25,28 +33,60 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "13": 2,
-    "6": 9,
-    "17": 8,
-    "19": 4,
+    "20": 19,
+    "6": 16,
+    "7": 1,
+    "8": 2,
+    "19": 5,
+    "11": 4,
+    "13": 5,
+    "9": 28,
+    "10": 1,
+    "15": 5,
+    "14": 4,
+    "17": 17,
+    "18": 2,
     "2": 7,
-    "20": 1,
     "3": 7,
     "1": 3,
     "4": 2,
-    "14": 2,
-    "15": 4,
     "16": 16,
-    "18": 1,
     "23": 1,
-    "5": 1,
-    "8": 1,
-    "11": 1
+    "5": 1
   },
   "message_types": {
-    "0": 1
+    "0": 57,
+    "19": 19
   },
   "top_reacted_messages": [
+    {
+      "id": "1420866891374657649",
+      "content": "UID: 101149262",
+      "author": "whydoihavetodothis69",
+      "reactions": 50,
+      "channel": "Mythag`s Cat want to share cool art with you"
+    },
+    {
+      "id": "1420702130863603785",
+      "content": "**V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」，可在限时纪行获取！\n**\n\n⏰️**活动时间： **\n10月6日 9:00 - 10月20日 9:00",
+      "author": "morimensstaff01",
+      "reactions": 31,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420702442680487998",
+      "content": "She looks so pretty",
+      "author": "spooky_penguin_",
+      "reactions": 17,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420867660370940005",
+      "content": "Light if you're reading this, you can do the funniest thing right now.",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "Mythag`s Cat want to share cool art with you"
+    },
     {
       "id": "1420811475353731222",
       "content": "UID：100005174\n\n~~震驚？！聖河氾濫二度來襲，這次守咪人究竟如何守護他的🌼花----！？？~~\n\n本來標題是||在下守咪人，有何貴幹？||但打完後",
@@ -55,11 +95,67 @@
       "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
     },
     {
+      "id": "1420653274415235094",
+      "content": "This guide only covers Astral Reign, not Faded Legacy.",
+      "author": "lurenjiao",
+      "reactions": 7,
+      "channel": "Tier List & Banner Guide"
+    },
+    {
       "id": "1420645988468658199",
       "content": "Now that the thread is chill, I'd like to say: Having been more or less in your ",
       "author": "wolfierce",
       "reactions": 7,
       "channel": ""
+    },
+    {
+      "id": "1420703891753795675",
+      "content": "Armpit and feet zoom in.\nWe have made it bros, the gacha skin standard <:Wait:14",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420708645657641010",
+      "content": "Yeah I think this skin star rating system needs to be properly detailed in game ",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420702845501571073",
+      "content": "FEET",
+      "author": "spooky_penguin_",
+      "reactions": 4,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420709066027565076",
+      "content": "Worth for feet hole",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420709157392220312",
+      "content": "maybe later, pay 180 silver prime to upgrade skin by 1 star to L2D",
+      "author": "wolfierce",
+      "reactions": 3,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420703540300611585",
+      "content": "When you say, \"Combat Sprite\", you mean that the in-battle model will have this ",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420708963573305418",
+      "content": "only available until 20/10",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
     },
     {
       "id": "1420658276848238622",
@@ -83,81 +179,25 @@
       "channel": ""
     },
     {
+      "id": "1420706202937196574",
+      "content": "feel weird when a skin for Genesis characters won’t have L2D just bc it’s not hi",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
+      "id": "1420709316855468092",
+      "content": "Yeah, the skin seems nice, and if is true that the battle model is updated, that",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "V2.3.3.0 二星幻衣「环行·拉蒙娜·幻梦假日」预告！Ramona: Timeworn's Two-Star Skin \"Dreamy Vacation\" Preview！"
+    },
+    {
       "id": "1420655069854040085",
       "content": "<@&1166257943742787615> <@633215996508766229>",
       "author": "arr5721",
       "reactions": 1,
       "channel": "✅「已回答」遺骨逼我刪牌"
-    },
-    {
-      "id": "1420850716645396643",
-      "content": "have you tried reinstalling? or using the fix feature?\nSome have been able to en",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "💭「Processing」i can't enter the game via steam"
-    },
-    {
-      "id": "1420865566205415455",
-      "content": "When you don't have the bp wheels unlocked, in the store you can't really read t",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "💭「Processing」Battle pass wheels warning in the store"
-    },
-    {
-      "id": "1420658617962463263",
-      "content": "Thank you very much!",
-      "author": "eeeeeeeeseks",
-      "reactions": 1,
-      "channel": "✅「Answered」Is it possible to retrieve a lost guest account?"
-    },
-    {
-      "id": "1420658070471839744",
-      "content": "Hi, this is indeed a bug. We will fix it in the next version🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」8-4 Ham bug"
-    },
-    {
-      "id": "1420781010936795417",
-      "content": "YQ6S328WN0",
-      "author": "nelson059557",
-      "reactions": 1,
-      "channel": "邀請碼互助/Invitation code help each other"
-    },
-    {
-      "id": "1420814462499295385",
-      "content": "明天看",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
-    },
-    {
-      "id": "1420814569898643517",
-      "content": "勞斯你好高產",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
-    },
-    {
-      "id": "1420839741728882689",
-      "content": "(突然出現)好吃，還要，求你了老師我三秒沒吃飯了我會餓死的🛐(滑跪)(？)",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
-    },
-    {
-      "id": "1420921795413803168",
-      "content": "<:please:1356053110375714817>",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）"
-    },
-    {
-      "id": "1420793267385143459",
-      "content": "More options for people who aren't ebin hardcore gamers would be nice is all.",
-      "author": "ceoreparque",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

@@ -1,10 +1,13 @@
 {
   "date": "2025-02-01",
-  "messages": 52,
+  "messages": 105,
   "unique_authors": 27,
-  "reactions_total": 102,
-  "attachments": 13,
+  "reactions_total": 108,
+  "attachments": 17,
   "channel_activity": {
+    "Tier list as of 2.0": 32,
+    "Counter or Shield Team": 5,
+    "Chapter 9": 16,
     "✨為喚醒體著新裝！": 2,
     "English Page pls !!": 1,
     "大过年过来吐槽": 19,
@@ -17,24 +20,30 @@
     "Miryam": 2
   },
   "hourly_activity": {
+    "6": 13,
+    "18": 8,
+    "19": 3,
+    "20": 15,
+    "22": 1,
+    "23": 2,
+    "21": 4,
+    "8": 5,
+    "16": 8,
+    "17": 7,
     "5": 3,
-    "23": 1,
     "2": 3,
-    "6": 7,
     "7": 11,
-    "8": 1,
     "9": 3,
     "12": 3,
     "14": 4,
     "15": 2,
-    "17": 1,
     "13": 3,
-    "16": 3,
     "11": 2,
     "4": 5
   },
   "message_types": {
-    "0": 2
+    "0": 52,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -87,11 +96,46 @@
       "channel": "mockup ui for realm selection and silver key posse"
     },
     {
+      "id": "1335352702716215346",
+      "content": "虫子酱 — Wants a call\n</thank the late think> a retard is a delay that must be adde",
+      "author": "aruein1",
+      "reactions": 2,
+      "channel": "Counter or Shield Team"
+    },
+    {
       "id": "1335248106601713664",
       "content": "这很权威了",
       "author": "yingmai_",
       "reactions": 2,
       "channel": "【梗图】堆点我P过的梗图"
+    },
+    {
+      "id": "1335131035939246113",
+      "content": "to end on a proposition 65 number",
+      "author": "aruein1",
+      "reactions": 1,
+      "channel": "Tier list as of 2.0"
+    },
+    {
+      "id": "1335343983550795816",
+      "content": "do it before or after the additon of a value, say you want a negative penny, and",
+      "author": "aruein1",
+      "reactions": 1,
+      "channel": "Tier list as of 2.0"
+    },
+    {
+      "id": "1335358378175762544",
+      "content": "if the simple inputs of 1 and 0 turn into binary popcorn <a:PaimonNOMMING:732171",
+      "author": "aruein1",
+      "reactions": 1,
+      "channel": "Counter or Shield Team"
+    },
+    {
+      "id": "1335310079351591013",
+      "content": "if there was 68 different types of classifications for contradictions allowed to",
+      "author": "aruein1",
+      "reactions": 1,
+      "channel": "Chapter 9"
     },
     {
       "id": "1335146096300916776",

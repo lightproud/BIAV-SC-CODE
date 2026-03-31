@@ -1,10 +1,13 @@
 {
   "date": "2025-03-01",
-  "messages": 26,
-  "unique_authors": 6,
-  "reactions_total": 22,
-  "attachments": 11,
+  "messages": 57,
+  "unique_authors": 7,
+  "reactions_total": 23,
+  "attachments": 27,
   "channel_activity": {
+    "Posse List": 23,
+    "Star Chapter 2.1 Tier List": 5,
+    "Can anyone please tell me who are the characters that pair well with the red doll?": 3,
     "💟獻上愛的圖騰——來自小花腦的信函": 4,
     "忘卻前夜劇情合集": 1,
     "命輪似乎未生效": 2,
@@ -15,20 +18,24 @@
     "不会再有了": 1
   },
   "hourly_activity": {
+    "5": 22,
+    "6": 2,
+    "7": 6,
+    "0": 1,
+    "8": 1,
+    "18": 2,
     "9": 2,
     "15": 2,
     "17": 1,
     "10": 1,
-    "18": 1,
     "1": 6,
     "2": 5,
-    "7": 2,
     "4": 5,
     "23": 1
   },
   "message_types": {
-    "0": 2,
-    "19": 3
+    "0": 22,
+    "19": 9
   },
   "top_reacted_messages": [
     {
@@ -58,6 +65,13 @@
       "author": "ivebeenkick",
       "reactions": 2,
       "channel": "不会再有了"
+    },
+    {
+      "id": "1345463153277931582",
+      "content": "when you unlock phantasmal dive you can see the leaderboard for team examples, h",
+      "author": "iibenigml1588",
+      "reactions": 1,
+      "channel": "Can anyone please tell me who are the characters that pair well with the red doll?"
     },
     {
       "id": "1345446899783831554",

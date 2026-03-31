@@ -1,10 +1,29 @@
 {
   "date": "2025-10-23",
-  "messages": 84,
-  "unique_authors": 13,
-  "reactions_total": 108,
-  "attachments": 14,
+  "messages": 198,
+  "unique_authors": 36,
+  "reactions_total": 188,
+  "attachments": 45,
   "channel_activity": {
+    "go rat go!!": 8,
+    "Morimens chap 8 be like": 3,
+    "Morimens Glossary (Wheels and Covenants equip guide)": 1,
+    "The Boss Compendium Project": 28,
+    "Flares' Awakener Review : Pollux - C Tier": 6,
+    "Morimens: Game Mechanics and Terms": 1,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 3,
+    "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!": 9,
+    "🐦 奔逃的双生鸟：折翼的雏鸟与珍藏的羽毛┊Running Fledglings: Broken Wings and Cherished Feathers": 2,
+    "新人求配对🥺🥺🥺": 7,
+    "新手 想打融災 求配對": 9,
+    "萌新求新阵容": 20,
+    "Pulling and Team Advice": 2,
+    "Question about Pollux and Castor.": 1,
+    "What to pick and pull?": 4,
+    "Game Advice, Pulling, and Team Building": 1,
+    "Pulling on limited characters already in standard pool.": 7,
+    "pull advice": 1,
     "V2.3.4.2 在线维护公告": 32,
     "忘却前夜OST：图鲁EP·幼王的孤途": 5,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 1,
@@ -22,29 +41,42 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "12": 20,
-    "13": 14,
-    "14": 5,
-    "15": 3,
-    "18": 1,
-    "7": 5,
-    "8": 3,
-    "9": 10,
-    "0": 1,
-    "2": 3,
-    "6": 2,
-    "4": 9,
-    "3": 4,
-    "5": 1,
-    "1": 1,
-    "19": 1,
-    "20": 1
+    "5": 4,
+    "7": 7,
+    "11": 3,
+    "19": 3,
+    "23": 6,
+    "15": 7,
+    "16": 6,
+    "17": 2,
+    "6": 36,
+    "10": 2,
+    "2": 11,
+    "8": 4,
+    "9": 11,
+    "4": 10,
+    "12": 26,
+    "14": 16,
+    "13": 23,
+    "0": 3,
+    "1": 2,
+    "20": 3,
+    "21": 1,
+    "18": 2,
+    "3": 10
   },
   "message_types": {
-    "0": 31,
-    "19": 6
+    "0": 92,
+    "19": 22
   },
   "top_reacted_messages": [
+    {
+      "id": "1430792345812467773",
+      "content": "🐀  idk if anyone expected me to draw anything else :p\n\n<:idk:1356084138280489080",
+      "author": "fishhazardthewizard",
+      "reactions": 30,
+      "channel": "go rat go!!"
+    },
     {
       "id": "1430906868066422955",
       "content": "BIAV, please give us SOS signal if Juliette is the one in charge of Pollux kit 🙏",
@@ -74,11 +106,32 @@
       "channel": "忘却前夜OST：图鲁EP·幼王的孤途"
     },
     {
+      "id": "1430939973468819487",
+      "content": "A fan try to join the Fan Art contest but can't draw and have skill issue.\n\nUID:",
+      "author": "phanducthinh.com",
+      "reactions": 15,
+      "channel": "Morimens chap 8 be like"
+    },
+    {
       "id": "1430851062503313478",
       "content": "如果能给沉淀商店加点东西就更好了，每个月搬空的情况下沉淀还是越来越多了，礼包改版以后，如果打算氪满礼包，这个溢出情况只会更加严重，能不能对氪金玩家好一点",
       "author": "lurenjiao",
       "reactions": 11,
       "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
+    },
+    {
+      "id": "1430995529021521941",
+      "content": "i mean i guess i drew castor as well?",
+      "author": "fishhazardthewizard",
+      "reactions": 10,
+      "channel": "go rat go!!"
+    },
+    {
+      "id": "1430842617805017110",
+      "content": "奖励已经发到大家邮箱咯~\n一等奖的头像框如果以前获取过，在点击“领奖”后会自动转化成500银芯和50个追念羽笔🥰 \n如果奖励方面有问题也请联系我<:Cheeru",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1430848810292351008",
@@ -88,11 +141,39 @@
       "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
     },
     {
+      "id": "1430800662744272897",
+      "content": "Hi everyone, we wanted to let you all know of a great community project that is ",
+      "author": "vxvendetta",
+      "reactions": 5,
+      "channel": "The Boss Compendium Project"
+    },
+    {
       "id": "1431004004468523018",
       "content": "~~性癖在立繪上一覽無遺~~\n||為什麼我要設計這套破衣服直接讓他裸●⁠不好嗎（陰暗爬行||",
       "author": "ass191044",
       "reactions": 4,
       "channel": ""
+    },
+    {
+      "id": "1430744326828327013",
+      "content": "I inquired and it will be sent out today\nSorry for keeping everyone waiting🙏",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1431026305855655936",
+      "content": "If you are looking purely from a meta standpoint, pulling now for Castor or in a",
+      "author": "hitsu4",
+      "reactions": 3,
+      "channel": "Pulling and Team Advice"
+    },
+    {
+      "id": "1430854971917860997",
+      "content": "I got it, thank you kindly for your work!",
+      "author": "sanna7424",
+      "reactions": 2,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1430979863371841597",
@@ -102,60 +183,32 @@
       "channel": "V2.3.4.2 在线维护公告"
     },
     {
-      "id": "1430901042219843644",
-      "content": "its absolutely maddening that the extra shield from atonement by pain only happe",
-      "author": "meioh",
+      "id": "1430801856141070367",
+      "content": "technically a lot more usable",
+      "author": "vxvendetta",
       "reactions": 1,
-      "channel": "V2.3.4.2 在线维护公告"
+      "channel": "The Boss Compendium Project"
     },
     {
-      "id": "1430903417710051458",
-      "content": "and it IS weak, but no one was complaining because everyone was too stunned by h",
-      "author": "meioh",
+      "id": "1430802915517268028",
+      "content": "Even if you can't contribute directly, can try to spread the info around to help",
+      "author": "vxvendetta",
       "reactions": 1,
-      "channel": "V2.3.4.2 在线维护公告"
+      "channel": "The Boss Compendium Project"
     },
     {
-      "id": "1430904227294609430",
-      "content": "在非星辰篇還是爛的一坨",
-      "author": "shchng.",
+      "id": "1430804050646925453",
+      "content": "will be considered",
+      "author": "vxvendetta",
       "reactions": 1,
-      "channel": "V2.3.4.2 在线维护公告"
+      "channel": "The Boss Compendium Project"
     },
     {
-      "id": "1430855640422682717",
-      "content": "如果能给氪金奖励奖励加几档就更好了",
-      "author": "lurenjiao",
+      "id": "1430972606575804459",
+      "content": "The 2.4 tag doesn't exist?",
+      "author": "jollysquire",
       "reactions": 1,
-      "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
-    },
-    {
-      "id": "1430895721237840005",
-      "content": "？我的天啊你这种自以为是的傲慢是在哪个地方习得的。不论是你的老师还是你的家长都应该为TA的教育的失败感到羞愧。其次以防你说我断章取义我来粘贴你的原话好了：“我覺",
-      "author": "2300011747",
-      "reactions": 1,
-      "channel": "💭「处理中」忘卻篇第六章共鳴卡純白之帆 & 第八章共鳴歡愉之理"
-    },
-    {
-      "id": "1430772523959717941",
-      "content": "没有弃到算力牌就应该像鲨鱼钥令一样，只给个10狂<:nocomment:1356053106038673610>",
-      "author": "cs001092",
-      "reactions": 1,
-      "channel": "💭「处理中」群星的庇佑能弃到不含算力的钥令/打击是正常的吗？"
-    },
-    {
-      "id": "1430755486445342780",
-      "content": "感谢反馈，我们查验一下",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」阿格里帕的靈知覺醒無法顯示戒備加成之錯誤"
-    },
-    {
-      "id": "1430903526372151296",
-      "content": "Pollux plsss🌷",
-      "author": "sinh_40042",
-      "reactions": 1,
-      "channel": ""
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
     }
   ]
 }

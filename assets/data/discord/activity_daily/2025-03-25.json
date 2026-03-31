@@ -1,10 +1,14 @@
 {
   "date": "2025-03-25",
-  "messages": 18,
+  "messages": 24,
   "unique_authors": 6,
   "reactions_total": 5,
-  "attachments": 2,
+  "attachments": 5,
   "channel_activity": {
+    "Kinda confused help me for the team": 1,
+    "Help deciding the next pulling plan": 3,
+    "การรวบรวมคำติชมการแปลภาษาไทย": 1,
+    "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia": 1,
     "✅「已回答」返校報到（好像是這個）的那個藍色領取按鈕，有紅點的時候點了領取之後不會變成灰色再點也點不動": 2,
     "沒有喚醒體技能搶先看了嗎": 1,
     "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？": 1,
@@ -16,20 +20,20 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
-    "15": 4,
-    "16": 4,
-    "8": 1,
+    "0": 2,
+    "11": 2,
+    "15": 5,
+    "17": 1,
+    "8": 2,
+    "16": 5,
     "6": 3,
     "13": 1,
     "9": 1,
-    "11": 1,
-    "0": 1,
     "3": 1,
     "14": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 1
+    "0": 6
   },
   "top_reacted_messages": [
     {

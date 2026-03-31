@@ -1,10 +1,13 @@
 {
   "date": "2026-02-09",
-  "messages": 10612,
+  "messages": 10667,
   "unique_authors": 252,
-  "reactions_total": 1582,
-  "attachments": 869,
+  "reactions_total": 1619,
+  "attachments": 871,
   "channel_activity": {
+    "Traduction en Français - Collecte de Traduction en Français - Collecte de Retour": 1,
+    "V2.4.2 第一块血迹┊The First Bloodstain": 51,
+    "V2.4.2.2 版本前瞻 ┊ Version Outlook": 3,
     "V2.4.2.3 在线维护公告": 2,
     "The sculptress": 8,
     "✅「Answered」Salvador Bug in Train Event": 34,
@@ -33,33 +36,35 @@
     "🔸morimens-game-chat": 7898
   },
   "hourly_activity": {
+    "13": 523,
+    "7": 678,
+    "8": 511,
+    "9": 481,
+    "10": 352,
+    "11": 383,
+    "14": 514,
+    "15": 966,
+    "16": 371,
+    "17": 249,
+    "19": 383,
+    "20": 245,
+    "22": 333,
+    "4": 500,
     "12": 447,
-    "14": 513,
-    "15": 964,
-    "16": 370,
-    "17": 248,
     "18": 256,
-    "9": 474,
-    "10": 348,
-    "8": 502,
-    "11": 378,
     "21": 138,
-    "4": 499,
     "3": 595,
-    "7": 663,
     "5": 775,
     "0": 343,
     "1": 310,
     "2": 553,
     "6": 602,
-    "13": 521,
-    "19": 380,
-    "20": 244,
-    "22": 330,
     "23": 159
   },
   "message_types": {
-    "0": 10
+    "0": 53,
+    "19": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -68,6 +73,13 @@
       "author": "laarzenman",
       "reactions": 49,
       "channel": "The sculptress"
+    },
+    {
+      "id": "1470313287731253300",
+      "content": "溅在漆黑帷幕上的第一滴血，宣告了这场杀戮游戏的开始。\n凄惨的死者，幽闭的列车，猜忌的种子已经悄悄种下。\n「可是……为什么会是她？」\n\n<:question2:1",
+      "author": "morimensstaff01",
+      "reactions": 22,
+      "channel": "V2.4.2 第一块血迹┊The First Bloodstain"
     },
     {
       "id": "1470477044516257836",
@@ -140,6 +152,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1470543677595058420",
+      "content": "N must be really bored",
+      "author": "arandomflamev2",
+      "reactions": 6,
+      "channel": "V2.4.2 第一块血迹┊The First Bloodstain"
+    },
+    {
       "id": "1470363364097261590",
       "content": "戈雅也要：當你們一邊閒聊,一邊離開此地時——（這邊速去反饋一下哦<:24_smile:1459073862544130131> ）",
       "author": "morimensstaff01",
@@ -184,20 +203,6 @@
     {
       "id": "1470250755314286612",
       "content": "一堆碎片",
-      "author": "axe_proficient",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470253691729608776",
-      "content": "",
-      "author": "dog_0630",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1470257507799929078",
-      "content": "鳥弟一張聖心一隻怪",
       "author": "axe_proficient",
       "reactions": 5,
       "channel": "🔸綜合討論"

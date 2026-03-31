@@ -1,10 +1,13 @@
 {
   "date": "2025-04-05",
-  "messages": 36,
-  "unique_authors": 12,
-  "reactions_total": 103,
+  "messages": 126,
+  "unique_authors": 13,
+  "reactions_total": 142,
   "attachments": 18,
   "channel_activity": {
+    "🎬V2.2 概念PV「窺視靈魂之旅」┊ V2.2 PV - Gaze into the Soul's Depths": 6,
+    "📜克萊門汀┊喚醒體&命輪介紹": 83,
+    "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook": 1,
     "V2.2.0.0 停服維護公告": 3,
     "游戏美术资源上的文字": 6,
     "2nd artwork for characters": 1,
@@ -23,20 +26,25 @@
     "【Morimens】弥萨格的サカバンバスピス": 1
   },
   "hourly_activity": {
+    "4": 4,
+    "7": 1,
+    "9": 5,
+    "8": 4,
+    "10": 5,
+    "11": 2,
+    "12": 1,
+    "14": 35,
+    "15": 49,
     "5": 7,
     "6": 6,
     "18": 2,
-    "9": 3,
-    "14": 5,
-    "15": 4,
     "19": 1,
     "0": 2,
-    "3": 2,
-    "10": 3,
-    "11": 1
+    "3": 2
   },
   "message_types": {
-    "0": 9
+    "0": 65,
+    "19": 25
   },
   "top_reacted_messages": [
     {
@@ -45,6 +53,13 @@
       "author": "gazhua123",
       "reactions": 42,
       "channel": "魚"
+    },
+    {
+      "id": "1357931395720286338",
+      "content": "依從她的指引，你終會跨越痛苦，走向「痊癒」。\n4月7日 克萊門汀 正式登場。\n@everyone\n\n——◆——◆—— ◆◆◆ ——◆——◆——\n\nFollow ",
+      "author": "morimensstaff02",
+      "reactions": 27,
+      "channel": "🎬V2.2 概念PV「窺視靈魂之旅」┊ V2.2 PV - Gaze into the Soul's Depths"
     },
     {
       "id": "1358088635920023552",
@@ -103,6 +118,20 @@
       "channel": "超维新唤醒体DIY创作"
     },
     {
+      "id": "1358021415642857533",
+      "content": "萊克萊聯盟",
+      "author": "tofu0834",
+      "reactions": 3,
+      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+    },
+    {
+      "id": "1358083325113274609",
+      "content": "換沉澱是個好習慣👍",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+    },
+    {
       "id": "1358013852045934662",
       "content": "【V2.2】克莱门汀pv\n主视角到医生门前，门牌上写的是：\nDR.CLEMENTINE'S\nSANATORIUM FOR NERVOUS DISORDERS\n克",
       "author": "silverstream_s",
@@ -115,6 +144,48 @@
       "author": "aurora3981",
       "reactions": 2,
       "channel": "✅「Answered」Incorrect Assignment Rewards"
+    },
+    {
+      "id": "1358083366032769187",
+      "content": "好爽哦 醫生起飛",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+    },
+    {
+      "id": "1358087511720595687",
+      "content": "pv真像恐怖電影",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+    },
+    {
+      "id": "1358087625042300968",
+      "content": "看完直接傻眼",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+    },
+    {
+      "id": "1358088134654558439",
+      "content": "廣播劇也是，很喜歡醫生單方面發話透露的詭異（主要是那個抽神經的asmr很讚",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+    },
+    {
+      "id": "1358088546539278548",
+      "content": "用耳機聽可太爽了",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
+    },
+    {
+      "id": "1358101742319042803",
+      "content": "比較好奇後面其他新角要怎樣圓角色劇情，畢竟兩個世界，用通訊器補多少有點劇透/吃書",
+      "author": "heikwok",
+      "reactions": 1,
+      "channel": "📜克萊門汀┊喚醒體&命輪介紹"
     }
   ]
 }

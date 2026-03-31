@@ -1,10 +1,16 @@
 {
   "date": "2025-05-04",
-  "messages": 15,
-  "unique_authors": 4,
-  "reactions_total": 5,
-  "attachments": 4,
+  "messages": 26,
+  "unique_authors": 8,
+  "reactions_total": 94,
+  "attachments": 9,
   "channel_activity": {
+    "Ramona": 1,
+    "A Pair of Roses, Horla & Sanga Fanfic": 3,
+    "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~": 3,
+    "Uvhash fanart": 1,
+    "🐾喚醒體五一遊記┊Awaker Holiday Travels": 2,
+    "Kaly's Beginner Guides": 1,
     "✅校猫碎碎念#近况分享": 1,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 1,
     "✅「Answered」Rules on Standard WoD banner is wrong": 2,
@@ -16,24 +22,72 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "15": 1,
+    "10": 3,
+    "12": 2,
+    "14": 3,
+    "16": 2,
+    "6": 5,
+    "0": 1,
+    "3": 1,
     "21": 1,
     "9": 3,
     "2": 2,
-    "7": 2,
-    "6": 3,
-    "10": 2,
-    "14": 2
+    "7": 2
   },
   "message_types": {
-    "0": 1
+    "0": 10,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1368601539643576420",
+      "content": "https://www.youtube.com/watch?v=gV3Q_GgsDqA\n\n'Tis morose to be stricken with the",
+      "author": "inana_istar",
+      "reactions": 26,
+      "channel": "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~"
+    },
+    {
+      "id": "1368538140591259718",
+      "content": "Softly—“They’re warm.”\nSanga blinked. “They’re stone.”\nHorla shook her head. “St",
+      "author": "annaxxe_",
+      "reactions": 25,
+      "channel": "A Pair of Roses, Horla & Sanga Fanfic"
+    },
+    {
+      "id": "1368612936792408224",
+      "content": "Uid:100959948",
+      "author": "Deleted User",
+      "reactions": 17,
+      "channel": "Ramona"
+    },
+    {
+      "id": "1368433394383585393",
+      "content": "",
+      "author": "meowtwo57",
+      "reactions": 15,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368385463869636711",
+      "content": "[N] enjoying a nice little stroll on his day off <:slick:1356053160531198064>",
+      "author": "reya.li",
+      "reactions": 4,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
     {
       "id": "1368526930017783850",
       "content": "上次写个超维，这次试试看写个血肉🧐\nuid：100832341",
       "author": "y_win7",
       "reactions": 4,
       "channel": "血肉唤醒体DIY"
+    },
+    {
+      "id": "1368622272407146738",
+      "content": "Very nice work, always good to see more english support for morimens.\nIs ok if i",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~"
     },
     {
       "id": "1368598631757647903",

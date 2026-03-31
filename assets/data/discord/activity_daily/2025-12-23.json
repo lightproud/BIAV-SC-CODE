@@ -1,10 +1,18 @@
 {
   "date": "2025-12-23",
-  "messages": 83,
-  "unique_authors": 16,
-  "reactions_total": 180,
-  "attachments": 45,
+  "messages": 130,
+  "unique_authors": 27,
+  "reactions_total": 243,
+  "attachments": 65,
   "channel_activity": {
+    "Ryker and Horla": 1,
+    "G Doll Fan Splash Art": 1,
+    "More references discovered": 6,
+    "V2.4.1 茉夏的异世界冒险日志Ⅰ┊Mouchette's Otherworld Adventure LogⅠ": 1,
+    "V2.4.1 茉夏的酣畅一战！Mouchette's Thrilling Battle!": 19,
+    "V2.4.1 茉夏的异世界冒险日志 Ⅱ┊Mouchette's Otherworld Adventure Log Ⅱ": 7,
+    "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette": 8,
+    "求配队": 4,
     "Ramona": 2,
     "Sanga x Pickman": 3,
     "Tulu omamori": 2,
@@ -26,25 +34,30 @@
     "1443848396585828363": 2
   },
   "hourly_activity": {
+    "14": 3,
+    "1": 1,
+    "16": 17,
+    "3": 4,
+    "8": 13,
+    "9": 31,
+    "11": 3,
+    "12": 2,
+    "13": 5,
+    "5": 11,
+    "10": 10,
+    "23": 2,
     "15": 5,
     "18": 5,
     "22": 4,
-    "16": 10,
-    "13": 3,
-    "14": 2,
     "2": 4,
     "6": 2,
-    "11": 2,
     "0": 3,
     "17": 4,
-    "10": 4,
-    "9": 22,
-    "3": 3,
-    "5": 9,
     "20": 1
   },
   "message_types": {
-    "0": 7
+    "0": 45,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -53,6 +66,13 @@
       "author": "tchik91",
       "reactions": 32,
       "channel": "Tulu omamori"
+    },
+    {
+      "id": "1452940543050121257",
+      "content": "🪓茉夏的爱斧混在一堆杂物中，守密人能准确找出爱斧协助茉夏战胜敌人吗？\n\n🪓Mouchette's beloved axe is hidden in a pile",
+      "author": "morimensstaff01",
+      "reactions": 31,
+      "channel": "V2.4.1 茉夏的酣畅一战！Mouchette's Thrilling Battle!"
     },
     {
       "id": "1453050813663547443",
@@ -67,6 +87,13 @@
       "author": "casual_gh0st",
       "reactions": 26,
       "channel": "Sanga x Pickman"
+    },
+    {
+      "id": "1452934877497393235",
+      "content": "「一个一个又一个……在无人知晓的浓雾里，我尽情发泄♪」\n「敲开你的脑壳，深入你的大脑，让我们在追逐中打发时间♪」\n\n呼，今天最有意思的事情发生了——战斗！\n🪓蜡",
+      "author": "morimensstaff01",
+      "reactions": 16,
+      "channel": "V2.4.1 茉夏的异世界冒险日志 Ⅱ┊Mouchette's Otherworld Adventure Log Ⅱ"
     },
     {
       "id": "1453093337803395175",
@@ -88,6 +115,13 @@
       "author": "zzio_",
       "reactions": 15,
       "channel": ""
+    },
+    {
+      "id": "1453027059185225750",
+      "content": "an unusual couple\nhttps://x.com/TavvyVyes/status/2003467448348201136?s=20",
+      "author": "shiio4870",
+      "reactions": 13,
+      "channel": "Ryker and Horla"
     },
     {
       "id": "1452955130587512842",
@@ -132,6 +166,13 @@
       "channel": ""
     },
     {
+      "id": "1452973698871988224",
+      "content": "感觉第五波的队伍可以打难3",
+      "author": "txt101225.",
+      "reactions": 2,
+      "channel": "求配队"
+    },
+    {
       "id": "1453056165025026260",
       "content": "Your two important points about Ryker—his design philosophy and understanding of",
       "author": "tnimreppep",
@@ -158,34 +199,6 @@
       "author": "animeholic09",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1453099188794425437",
-      "content": "SO FUKING AMAZING",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "Sanga x Pickman"
-    },
-    {
-      "id": "1453033227789799546",
-      "content": "<@113374123798859776> here ill make a post of our issue; hope we get a fix.",
-      "author": "enumaellis",
-      "reactions": 1,
-      "channel": "💭「Processing」The Spacebar/Enter key on Steam PC version not working"
-    },
-    {
-      "id": "1452853051659391078",
-      "content": "(They still do anyway)",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "Tentacle Gathering for Enemies"
-    },
-    {
-      "id": "1453146600397340732",
-      "content": "今天解主線時也不小心按到了<:cry2:1356068126894194758> \n我只是想看隊伍狀態\n然後Auto直接幫我開了三隻角色的狂氣<:A_pinch",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎"
     }
   ]
 }

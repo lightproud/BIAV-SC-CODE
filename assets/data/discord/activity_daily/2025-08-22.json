@@ -1,10 +1,15 @@
 {
   "date": "2025-08-22",
-  "messages": 129,
+  "messages": 139,
   "unique_authors": 71,
-  "reactions_total": 113,
-  "attachments": 12,
+  "reactions_total": 200,
+  "attachments": 14,
   "channel_activity": {
+    "Tawil fan model": 1,
+    "ogier": 4,
+    "Kath - RA Art Submission by Flares.": 1,
+    "Team comp help?": 1,
+    "Hi! I'd like advice on teams ...": 3,
     "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们": 83,
     "💭「处理中」星辰困难第一章1-6事件bug": 2,
     "✅「Answered」Awakeners \"on duty\" when reorganizing assignments": 2,
@@ -19,9 +24,14 @@
     "彌撒格最般配的男同性戀2.0": 2
   },
   "hourly_activity": {
-    "16": 68,
-    "17": 9,
-    "18": 1,
+    "16": 71,
+    "6": 2,
+    "7": 1,
+    "9": 4,
+    "12": 5,
+    "10": 4,
+    "17": 10,
+    "18": 2,
     "19": 3,
     "22": 3,
     "23": 2,
@@ -30,21 +40,24 @@
     "21": 2,
     "3": 3,
     "5": 6,
-    "10": 3,
-    "12": 4,
     "8": 2,
-    "9": 3,
     "0": 1,
     "4": 2,
-    "6": 1,
     "13": 1,
     "14": 2
   },
   "message_types": {
-    "0": 78,
-    "19": 5
+    "0": 7,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1408336224313282590",
+      "content": "uid - 100859200",
+      "author": "ruppit",
+      "reactions": 85,
+      "channel": "ogier"
+    },
     {
       "id": "1408543814506774588",
       "content": "Some characters, like Horla and Jenkin for example, have Enlightens that change ",
@@ -165,25 +178,18 @@
       "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
     },
     {
-      "id": "1408484283710177290",
-      "content": "thank you for the hard work <a:glorpcheer:1323429771711090688>",
-      "author": "meatyexplosions",
+      "id": "1408427718382714943",
+      "content": "Thanks, u may! Please credit my twitter @ ruppitus or link the post https://x.co",
+      "author": "ruppit",
       "reactions": 1,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+      "channel": "ogier"
     },
     {
-      "id": "1408484374634168320",
-      "content": "❤️",
-      "author": "_pdt",
+      "id": "1408519379338924193",
+      "content": "https://www.youtube.com/watch?v=bW5XXMt37DE\nDoresain, Thais, Hameln/G. Ramona/Ka",
+      "author": "limewareplatter",
       "reactions": 1,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
-    },
-    {
-      "id": "1408484746358427719",
-      "content": "省流 來新員工了",
-      "author": "undecember_news",
-      "reactions": 1,
-      "channel": "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们"
+      "channel": "Hi! I'd like advice on teams ..."
     }
   ]
 }

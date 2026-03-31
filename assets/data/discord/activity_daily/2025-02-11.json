@@ -1,10 +1,13 @@
 {
   "date": "2025-02-11",
-  "messages": 58,
+  "messages": 69,
   "unique_authors": 17,
-  "reactions_total": 32,
+  "reactions_total": 33,
   "attachments": 12,
   "channel_activity": {
+    "Tier list as of 2.0": 5,
+    "GPT translation synonyms": 5,
+    "D Tide Wave 5 Guide For Easy Max Clear THIS WEEK SPECIFICALLY": 1,
     "✨為喚醒體著新裝！": 1,
     "【2/11更新】對弈牌組實戰分享": 2,
     "✅「Answered」Sound didnt play when game at background": 2,
@@ -21,6 +24,14 @@
     "1271491376881598494": 7
   },
   "hourly_activity": {
+    "19": 2,
+    "20": 2,
+    "23": 2,
+    "6": 4,
+    "13": 3,
+    "15": 3,
+    "21": 2,
+    "2": 2,
     "7": 4,
     "11": 9,
     "16": 3,
@@ -28,22 +39,16 @@
     "10": 2,
     "14": 4,
     "17": 2,
-    "21": 1,
     "22": 2,
-    "23": 1,
     "8": 3,
     "5": 2,
-    "13": 2,
     "3": 2,
     "4": 1,
-    "0": 1,
-    "2": 1,
-    "6": 2,
-    "15": 2
+    "0": 1
   },
   "message_types": {
-    "0": 2,
-    "4": 1
+    "19": 4,
+    "0": 7
   },
   "top_reacted_messages": [
     {
@@ -59,6 +64,13 @@
       "author": "jidu1418",
       "reactions": 2,
       "channel": "背景没了"
+    },
+    {
+      "id": "1338986816237338746",
+      "content": "yep i agree, but they would also work the same for cards, arent they? cause we t",
+      "author": "lolyafedor",
+      "reactions": 1,
+      "channel": "GPT translation synonyms"
     },
     {
       "id": "1338792424532606996",

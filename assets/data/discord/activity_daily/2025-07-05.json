@@ -1,19 +1,88 @@
 {
   "date": "2025-07-05",
-  "messages": 3,
-  "unique_authors": 1,
-  "reactions_total": 0,
-  "attachments": 0,
+  "messages": 13,
+  "unique_authors": 2,
+  "reactions_total": 106,
+  "attachments": 16,
   "channel_activity": {
+    "My Morimens Gallery": 1,
+    "*Translated & Credited* cn Fan Art Reposts": 9,
     "V2.2.3.0 停服維護公告": 1,
     "《雙人舞》": 2
   },
   "hourly_activity": {
+    "7": 1,
+    "18": 5,
+    "19": 4,
     "16": 1,
     "20": 2
   },
   "message_types": {
-    "20": 1
+    "0": 10
   },
-  "top_reacted_messages": []
+  "top_reacted_messages": [
+    {
+      "id": "1390952761348329482",
+      "content": "Horla \n\n( I drew each hair)",
+      "author": "lowtownnivn",
+      "reactions": 30,
+      "channel": "My Morimens Gallery"
+    },
+    {
+      "id": "1391117912512925767",
+      "content": "Due to high demand for translated content from the cn sphere I've decided to ope",
+      "author": "ev_6185",
+      "reactions": 19,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391141198848327781",
+      "content": "For the Tulu kins & cute stuff enjoyers \nlink to OG post: https://hydrogenbondin",
+      "author": "ev_6185",
+      "reactions": 15,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391144374527721566",
+      "content": "Our resident boyfailure \nlink to OG post: https://ingoshadow.lofter.com/post/1d5",
+      "author": "ev_6185",
+      "reactions": 13,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391139797283901624",
+      "content": "<@214749389632176129>  I don't know if you've seen this fan art yet but here\nlin",
+      "author": "ev_6185",
+      "reactions": 9,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391118106956402759",
+      "content": "*Do note that you will be tagged if you requested me to find specific content. \n",
+      "author": "ev_6185",
+      "reactions": 8,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391122381866795009",
+      "content": "for people who like cute drawings here's 3 chibi pfps I found\nlink to OG post: h",
+      "author": "ev_6185",
+      "reactions": 6,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391120880221945906",
+      "content": "<@693905974750216212>  more silly drawings from the Jenkin artist for you \nlink ",
+      "author": "ev_6185",
+      "reactions": 4,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391134926447050863",
+      "content": "link to OG post: ⁠https://weibo.com/7852855432/PxBHJchQB\nCreator Profile: https:",
+      "author": "ev_6185",
+      "reactions": 2,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    }
+  ]
 }

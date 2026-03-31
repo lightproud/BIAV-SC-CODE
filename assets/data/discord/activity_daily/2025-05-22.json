@@ -1,30 +1,43 @@
 {
   "date": "2025-05-22",
-  "messages": 40,
-  "unique_authors": 14,
-  "reactions_total": 749,
-  "attachments": 1,
+  "messages": 139,
+  "unique_authors": 27,
+  "reactions_total": 792,
+  "attachments": 11,
   "channel_activity": {
+    "Miss Coral": 2,
+    "📸壁紙分享-克珀珊特┊Wallpaper Sharing-Corposant": 4,
+    "🎊1.5週年福利前瞻┊1.5th Anniversary Benefits Preview": 3,
+    "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!": 82,
+    "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 4,
+    "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!": 3,
+    "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!": 1,
     "✅校猫碎碎念#序章配音决定": 33,
     "✅前瞻：1.5周年～战斗增强篇": 2,
     "Dynamic Battle Sprite | 动态战斗立绘": 4,
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
-    "2": 11,
+    "2": 13,
+    "4": 2,
+    "9": 2,
+    "10": 4,
+    "11": 62,
+    "0": 1,
+    "12": 10,
+    "13": 2,
+    "15": 9,
+    "16": 6,
+    "17": 1,
+    "5": 5,
+    "6": 8,
+    "8": 2,
     "3": 11,
-    "5": 4,
-    "6": 6,
-    "8": 1,
-    "16": 3,
-    "19": 1,
-    "12": 2,
-    "13": 1
+    "19": 1
   },
   "message_types": {
-    "0": 29,
-    "6": 1,
-    "19": 5
+    "0": 91,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -42,11 +55,32 @@
       "channel": "✅校猫碎碎念#序章配音决定"
     },
     {
+      "id": "1374937614100070511",
+      "content": "Pov: You're fish",
+      "author": "lowtownnivn",
+      "reactions": 18,
+      "channel": "Miss Coral"
+    },
+    {
+      "id": "1374969616639459389",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 15,
+      "channel": "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!"
+    },
+    {
       "id": "1375083783119831101",
       "content": "Are there any plans to implement dynamic battle sprites in the future? It is und",
       "author": "zier.0",
       "reactions": 9,
       "channel": "Dynamic Battle Sprite | 动态战斗立绘"
+    },
+    {
+      "id": "1375075849841414155",
+      "content": "我先说我是业余用手机画的 但是你这比例不是超级大鼙鼓就是超级竹节虫 你游美工已经跨越十头身服设超模比例一泻千里来到二位数了吗",
+      "author": "847590850",
+      "reactions": 8,
+      "channel": "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!"
     },
     {
       "id": "1374993755748171787",
@@ -68,6 +102,13 @@
       "author": "ernest_heart",
       "reactions": 3,
       "channel": "Dynamic Battle Sprite | 动态战斗立绘"
+    },
+    {
+      "id": "1375074771963744380",
+      "content": "上面两个腿离谱",
+      "author": "carme.0588",
+      "reactions": 2,
+      "channel": "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!"
     },
     {
       "id": "1375095915177578569",

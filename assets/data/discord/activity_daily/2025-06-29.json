@@ -1,10 +1,15 @@
 {
   "date": "2025-06-29",
-  "messages": 15,
-  "unique_authors": 4,
-  "reactions_total": 32,
-  "attachments": 6,
+  "messages": 26,
+  "unique_authors": 7,
+  "reactions_total": 222,
+  "attachments": 11,
   "channel_activity": {
+    "Tulu Being Sleepy": 6,
+    "Castor": 1,
+    "Higher quality of my caecus art for the contest": 1,
+    "Short story about Doll: Inferno and the Keeper from between Arc 1 and Arc 2": 1,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 2,
     "關於腳本/外掛賬號的處理說明": 2,
     "💭「Processing」Connection issues": 1,
     "💭「Processing」Casiah Heal incorrectly measured in Traphase end of game stat graphs": 1,
@@ -15,18 +20,45 @@
     "1181998821291606097": 4
   },
   "hourly_activity": {
+    "3": 1,
+    "5": 1,
+    "7": 1,
+    "9": 3,
+    "15": 2,
+    "14": 4,
+    "22": 1,
+    "1": 1,
     "21": 2,
     "10": 5,
-    "14": 1,
-    "15": 1,
     "12": 1,
-    "9": 1,
     "13": 4
   },
   "message_types": {
-    "20": 2
+    "0": 9,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1388719489117454467",
+      "content": "I just found out about the art contest this morning and I gotta crash rn due to ",
+      "author": "ev_6185",
+      "reactions": 87,
+      "channel": "Tulu Being Sleepy"
+    },
+    {
+      "id": "1388889008242954332",
+      "content": "my submission for the contest :)\nUID: 100971267",
+      "author": "0_010",
+      "reactions": 39,
+      "channel": "Castor"
+    },
+    {
+      "id": "1388888207005061120",
+      "content": "https://docs.google.com/document/d/1gwJCR1TSVzjln7Li96aEE0-_rA3Brfthei7CqnQkr-Y/",
+      "author": "reya.li",
+      "reactions": 39,
+      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
+    },
     {
       "id": "1388816131598319676",
       "content": "uid：100020854",
@@ -35,11 +67,32 @@
       "channel": "邂逅于门扉"
     },
     {
+      "id": "1388694104686460971",
+      "content": "https://docs.google.com/document/d/1LUkMX5PBfaNU3J3bWdwHCRdPQhHhPDb23lpI6W2U0FE/",
+      "author": "reya.li",
+      "reactions": 13,
+      "channel": "Short story about Doll: Inferno and the Keeper from between Arc 1 and Arc 2"
+    },
+    {
+      "id": "1389008966024953916",
+      "content": "UID: 101022845",
+      "author": "yonagoda",
+      "reactions": 10,
+      "channel": "Higher quality of my caecus art for the contest"
+    },
+    {
       "id": "1388901742477049976",
       "content": "Would be nice to have an artist credit on the page with the outfits (similar to ",
       "author": "firepanda95",
       "reactions": 10,
       "channel": "Artist credit on the character designs!"
+    },
+    {
+      "id": "1388899982605680712",
+      "content": "<:happyhappy:1091991086953664522>",
+      "author": "firepanda95",
+      "reactions": 2,
+      "channel": "Tulu Being Sleepy"
     },
     {
       "id": "1388994439585992815",

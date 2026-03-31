@@ -1,10 +1,15 @@
 {
   "date": "2025-07-21",
-  "messages": 135,
+  "messages": 154,
   "unique_authors": 30,
-  "reactions_total": 69,
-  "attachments": 72,
+  "reactions_total": 98,
+  "attachments": 95,
   "channel_activity": {
+    "My Morimens Gallery": 1,
+    "Flares' Awaker Review : Doresain.": 1,
+    "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests": 3,
+    "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain": 13,
+    "Best team for herlot": 1,
     "V2.3.0.0 停服维护公告": 3,
     "V2.3.0.1 在线维护公告": 6,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 2,
@@ -42,22 +47,22 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "12": 11,
+    "11": 5,
+    "7": 31,
+    "18": 2,
+    "9": 20,
+    "14": 9,
     "3": 5,
     "6": 16,
     "10": 2,
     "13": 11,
-    "14": 8,
-    "18": 1,
     "23": 2,
-    "12": 9,
     "16": 2,
     "17": 4,
     "22": 1,
     "21": 1,
     "8": 15,
-    "9": 8,
-    "7": 30,
-    "11": 3,
     "5": 6,
     "15": 1,
     "19": 1,
@@ -65,9 +70,17 @@
     "2": 1
   },
   "message_types": {
-    "0": 9
+    "19": 5,
+    "0": 14
   },
   "top_reacted_messages": [
+    {
+      "id": "1396787130017124362",
+      "content": "✦为大家奉上杜勒赛因的留影作为纪念~\n守密人可在留言区保存PC、平板、手机尺寸的壁纸。\n\n✦Here are photos of Doresain as a s",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain"
+    },
     {
       "id": "1396684405782610080",
       "content": "Normally there is a button to buy a monthly pass. Did I miss a change? Not the b",
@@ -95,6 +108,13 @@
       "author": "akalanden",
       "reactions": 5,
       "channel": "💭「处理中」你素……？"
+    },
+    {
+      "id": "1396788266317119571",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain"
     },
     {
       "id": "1396740070408458240",
@@ -125,6 +145,13 @@
       "channel": "关卡地图「融灾禁区」总览39期·星辰篇"
     },
     {
+      "id": "1396754353808736356",
+      "content": "",
+      "author": "rou_yi_rou",
+      "reactions": 2,
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+    },
+    {
       "id": "1396726935794749481",
       "content": "BUG we will fix this soon. Sorry",
       "author": "game.producer.light",
@@ -139,6 +166,41 @@
       "channel": "◆第3章「餍飨」关卡流程总览·星辰篇"
     },
     {
+      "id": "1396825544749875231",
+      "content": "<:huh1:1356053088552747141>",
+      "author": "lipeege",
+      "reactions": 1,
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+    },
+    {
+      "id": "1396916505769414697",
+      "content": "Pretty <:rizz2:1356053138133614753>",
+      "author": "deification.",
+      "reactions": 1,
+      "channel": "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests"
+    },
+    {
+      "id": "1396788397812748429",
+      "content": "Thank you Goya!",
+      "author": "red_rest",
+      "reactions": 1,
+      "channel": "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain"
+    },
+    {
+      "id": "1396788408159965274",
+      "content": "Maybe that's his aura. Been aura farming since human",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "📸壁纸分享-杜勒赛因┊Wallpaper Sharing-Doresain"
+    },
+    {
+      "id": "1396862600402178128",
+      "content": "What the best team for herlot ?",
+      "author": "smollpasta",
+      "reactions": 1,
+      "channel": "Best team for herlot"
+    },
+    {
       "id": "1396692304638771210",
       "content": "The game's monthly pass is missing from the shop, has it been discontinued?",
       "author": "satachan",
@@ -151,62 +213,6 @@
       "author": "morimensstaff02",
       "reactions": 1,
       "channel": "V2.3.0.1 在线维护公告"
-    },
-    {
-      "id": "1396977659606732820",
-      "content": "As title - 'Claim All' button works properly, but now claiming a single assignme",
-      "author": "reya.li",
-      "reactions": 1,
-      "channel": "✅「Answered」Can't redeploy an Assignment after collecting the rewards for only one assignment"
-    },
-    {
-      "id": "1396761094546128906",
-      "content": "Surprisingly, i cannot re-create it. It may be a first time boot thing.",
-      "author": "thpdom",
-      "reactions": 1,
-      "channel": "💭「Processing」tabbing out during Ramona's dialogue in the tutorial turns of the music in the scene."
-    },
-    {
-      "id": "1396818784391663616",
-      "content": "Happened a couple of times after most recent update",
-      "author": "zehirete",
-      "reactions": 1,
-      "channel": "✅「Answered」Visual Bug after mission clear"
-    },
-    {
-      "id": "1396771896921423952",
-      "content": "In the prologue, when clicking on the ? button for Realm Mastery, the tooltip th",
-      "author": "sophiechoice",
-      "reactions": 1,
-      "channel": "✅「Answered」Some tooltip bugs!"
-    },
-    {
-      "id": "1396846550411640866",
-      "content": "pc的",
-      "author": "_neyko_",
-      "reactions": 1,
-      "channel": "公告中的快捷性優化第一條 沒有啊"
-    },
-    {
-      "id": "1396715767470362685",
-      "content": "I used the reset-thingy on Leigh, but now the red dot won't go away. It shows up",
-      "author": "silencio3507",
-      "reactions": 1,
-      "channel": "✅「Answered」Red dot after reset"
-    },
-    {
-      "id": "1396787983713304606",
-      "content": "it'll go away in 27d 🙂",
-      "author": "jollysquire",
-      "reactions": 1,
-      "channel": "✅「Answered」Red dot after reset"
-    },
-    {
-      "id": "1396702461900619887",
-      "content": "Only in that mode cant select, the normal way working well",
-      "author": "hiamkaito",
-      "reactions": 1,
-      "channel": "✅「Answered」Soulsfeast - replenish menophin , cant select method"
     }
   ]
 }

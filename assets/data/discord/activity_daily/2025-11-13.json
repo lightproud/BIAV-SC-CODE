@@ -1,10 +1,24 @@
 {
   "date": "2025-11-13",
-  "messages": 52,
-  "unique_authors": 13,
-  "reactions_total": 58,
-  "attachments": 6,
+  "messages": 133,
+  "unique_authors": 19,
+  "reactions_total": 76,
+  "attachments": 20,
   "channel_activity": {
+    "Collection of Morimens fanart and doodles": 3,
+    "Tulu gif I got from Twitter": 4,
+    "Oc": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ": 1,
+    "V2.4 诞妄·墨菲情报：命运似衔尾蛇┊About Murphy: Fauxborn: Ouroboros of Fate": 1,
+    "不算新的新人求助": 1,
+    "想问问配队&建议": 48,
+    "R和SR命輪都是疊到+12就可以全分解了嗎？": 4,
+    "配隊求助": 1,
+    "請問推薦先專注練哪些隊伍": 3,
+    "Pulls advice": 3,
+    "Team Help": 8,
+    "Team help": 1,
     "✅「Answered」2nd anniversary suggestion": 1,
     "✅「已回答」还能见到星辰篇的地图吗": 5,
     "💭「Processing」My game died": 14,
@@ -23,25 +37,29 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
+    "11": 8,
+    "4": 3,
+    "6": 9,
+    "0": 1,
+    "19": 14,
+    "23": 4,
+    "8": 22,
+    "14": 2,
+    "7": 1,
+    "9": 16,
+    "12": 25,
+    "3": 9,
+    "5": 1,
+    "18": 2,
     "2": 5,
-    "3": 6,
-    "4": 1,
-    "8": 2,
-    "12": 1,
-    "18": 1,
-    "19": 13,
-    "11": 5,
-    "9": 6,
     "17": 4,
     "21": 5,
-    "23": 1,
     "20": 1,
     "15": 1
   },
   "message_types": {
-    "0": 37,
-    "4": 5,
-    "19": 3
+    "0": 46,
+    "19": 35
   },
   "top_reacted_messages": [
     {
@@ -57,6 +75,13 @@
       "author": "ernest_heart",
       "reactions": 12,
       "channel": "誕妄．墨菲機制與搭配探討"
+    },
+    {
+      "id": "1438327785604120830",
+      "content": "Oc for the game<:Cheerup:1400771555939844149>",
+      "author": "wisewwivard_10391",
+      "reactions": 9,
+      "channel": "Oc"
     },
     {
       "id": "1438484737697251341",
@@ -101,6 +126,62 @@
       "channel": "💭「Processing」Final Dmg/Def/Aliemus Total  Suggestion"
     },
     {
+      "id": "1438504158499049582",
+      "content": "所以只是懶（我不信超限醫生+鳥兄弟打不過）",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 2,
+      "channel": "想问问配队&建议"
+    },
+    {
+      "id": "1438410755186888796",
+      "content": "Need a bed in background",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "Tulu gif I got from Twitter"
+    },
+    {
+      "id": "1438435994700484710",
+      "content": "入坑一個多月有塔維+9\n跟血希、醫生、鳥哥3啟\n強度黨 🛐",
+      "author": "meow51103",
+      "reactions": 1,
+      "channel": "不算新的新人求助"
+    },
+    {
+      "id": "1438448781308858439",
+      "content": "普通腳色如果到時啟靈開差不多了\n可以改抽普池命倫 巨輪之刃",
+      "author": "meow51103",
+      "reactions": 1,
+      "channel": "想问问配队&建议"
+    },
+    {
+      "id": "1438449919743492127",
+      "content": "+12之後你就可以放兩張SSR卡給主C了哦",
+      "author": "meow51103",
+      "reactions": 1,
+      "channel": "想问问配队&建议"
+    },
+    {
+      "id": "1438452592538550273",
+      "content": "拉蒙娜的3費卡",
+      "author": "meow51103",
+      "reactions": 1,
+      "channel": "想问问配队&建议"
+    },
+    {
+      "id": "1438453119120838726",
+      "content": "周年活動 \n深海篇腳色會進入普池 到時候可以看運氣\n撈其他輔助角",
+      "author": "meow51103",
+      "reactions": 1,
+      "channel": "想问问配队&建议"
+    },
+    {
+      "id": "1438505033493647461",
+      "content": "補藥啊",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 1,
+      "channel": "想问问配队&建议"
+    },
+    {
       "id": "1438366890102755339",
       "content": "感谢建议，戈雅去问问",
       "author": "morimensstaff01",
@@ -120,13 +201,6 @@
       "author": "reya.li",
       "reactions": 1,
       "channel": "The ability to freely reduce your MAX HP modifier"
-    },
-    {
-      "id": "1438359068820635669",
-      "content": "Thank you for the reminder. We are already planning the images for Steam and may",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Suggestion: Update the Morimens Steam Page's Screenshots/Trailers"
     }
   ]
 }

@@ -1,10 +1,19 @@
 {
   "date": "2025-10-12",
-  "messages": 102,
-  "unique_authors": 16,
-  "reactions_total": 2012,
-  "attachments": 6,
+  "messages": 175,
+  "unique_authors": 17,
+  "reactions_total": 2013,
+  "attachments": 13,
   "channel_activity": {
+    "The Seafarer stray’s Aequor Cult ｜Blue blood realm only has one no used (used gpt trans)": 2,
+    "V2.3.3.0 弥萨格大学·社团大乱斗！Mythag University: Club Brawl!": 1,
+    "剛登入第四天 有些新手問題想問": 3,
+    "刚玩一个月小萌新，麻烦大佬们看看怎么配队": 42,
+    "Flares' Comprehensive Beginner Guide to Morimens": 1,
+    "Speedrun Team for Early Game": 12,
+    "Im starting to struggle": 7,
+    "Need Help With Mythag Invite": 1,
+    "Clear D-effect with my team": 4,
     "忘却前夜OST：命运前奏之曲": 1,
     "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework": 5,
     "✅「已回答」每个大版本一到两次的两个空窗期，你们打算怎么处理？": 16,
@@ -16,25 +25,33 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "7": 5,
-    "10": 5,
-    "15": 11,
-    "20": 4,
+    "9": 4,
+    "15": 12,
+    "21": 1,
+    "4": 4,
+    "5": 1,
+    "10": 6,
+    "1": 17,
+    "2": 15,
+    "3": 13,
+    "20": 8,
+    "6": 8,
+    "7": 10,
+    "18": 3,
+    "19": 9,
+    "16": 12,
     "13": 5,
     "14": 1,
-    "9": 3,
     "11": 2,
     "12": 2,
-    "16": 11,
     "17": 39,
     "23": 1,
-    "19": 8,
-    "4": 3,
     "8": 2
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "19": 34,
+    "0": 38,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -120,6 +137,13 @@
       "author": "shchng.",
       "reactions": 2,
       "channel": "【討論】星辰篇深海角色困境與建議｜截至v2.3.3.1版本"
+    },
+    {
+      "id": "1426749214351953952",
+      "content": "用汀的爆发减费",
+      "author": "txt101225.",
+      "reactions": 1,
+      "channel": "刚玩一个月小萌新，麻烦大佬们看看怎么配队"
     },
     {
       "id": "1426958298082447472",

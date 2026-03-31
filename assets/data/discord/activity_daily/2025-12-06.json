@@ -1,10 +1,17 @@
 {
   "date": "2025-12-06",
-  "messages": 44,
+  "messages": 58,
   "unique_authors": 16,
-  "reactions_total": 42,
-  "attachments": 17,
+  "reactions_total": 83,
+  "attachments": 22,
   "channel_activity": {
+    "The girl that brings misfortune (Aigis)": 2,
+    "Detailed Damage Formula Graphic": 3,
+    "Beginner Navigation Guide": 1,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 4,
+    "特别短篇漫画 :「你我终将重逢」终章┊Special Short Comics: \"We Will Meet Again\" Final Chapter": 2,
+    "新手求助": 1,
+    "Help With Dtide Team Investment": 1,
     "Who Ryker's Designer pls come talk ?": 1,
     "✅「已回答」繁中PC端黑屏": 1,
     "关于【献祭】的bug修复": 4,
@@ -21,24 +28,43 @@
     "1241345906826153984": 3
   },
   "hourly_activity": {
+    "23": 10,
+    "17": 10,
+    "21": 1,
+    "22": 1,
+    "18": 1,
+    "11": 4,
+    "5": 2,
+    "14": 1,
+    "0": 3,
     "4": 10,
     "6": 2,
     "13": 1,
     "15": 3,
-    "0": 2,
     "3": 4,
     "20": 1,
-    "23": 8,
     "12": 3,
-    "17": 9,
     "10": 1
   },
   "message_types": {
-    "0": 31,
-    "19": 4,
-    "4": 4
+    "0": 9,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1447008109720768653",
+      "content": "",
+      "author": "kirikonuto",
+      "reactions": 24,
+      "channel": "The girl that brings misfortune (Aigis)"
+    },
+    {
+      "id": "1446829311758696498",
+      "content": "Hhh You want this ?",
+      "author": "ass191044",
+      "reactions": 10,
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+    },
     {
       "id": "1446719432050343987",
       "content": "對\n說的就是H4-10\n劇情\n很煩\n看一次還好\n重複打就很痛苦了\n我的跳過鍵在哪裡\n打母樹的時候那個跳過劇情不是做的很好嗎\n怎麼後面都沒有了",
@@ -75,11 +101,39 @@
       "channel": "Will official character design reference sheets of Awakeners and Characters be created?"
     },
     {
+      "id": "1446988263129874504",
+      "content": "Hahahah\nRats: rat about corpo racism bug\nBlesser gets a massive buff*\nWhen will ",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "Detailed Damage Formula Graphic"
+    },
+    {
+      "id": "1446931443249975376",
+      "content": "This was initially started when I played the game for 2 months and I wanted a \"s",
+      "author": "climbkaly",
+      "reactions": 2,
+      "channel": "Beginner Navigation Guide"
+    },
+    {
+      "id": "1446825727449239737",
+      "content": "Can i have your profile picture",
+      "author": "._.aahh",
+      "reactions": 2,
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+    },
+    {
       "id": "1446916344590241863",
       "content": "達芙戴爾路過後，拉蒙娜提醒詹金的對話前後文有衝突\n最近在重看劇情，希望我不會太頻繁出現在這裡 <:Clown:1400771541423226971>\n\n喔，還",
       "author": "soleil_sun",
       "reactions": 2,
       "channel": "💭「处理中」2-2【三條規則】前後文衝突、其他文案繁體化有誤（錯字）"
+    },
+    {
+      "id": "1446829380469915658",
+      "content": "Thanks",
+      "author": "._.aahh",
+      "reactions": 1,
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1446757133562413179",

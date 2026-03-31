@@ -1,10 +1,15 @@
 {
   "date": "2026-01-21",
-  "messages": 58,
-  "unique_authors": 18,
-  "reactions_total": 79,
-  "attachments": 15,
+  "messages": 138,
+  "unique_authors": 30,
+  "reactions_total": 113,
+  "attachments": 21,
   "channel_activity": {
+    "The Scholar's Last Paper": 1,
+    "Gpreg": 2,
+    "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup...": 5,
+    "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction": 69,
+    "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu": 3,
     "[Art Dump Thread] WILLIAMPOSTING 2": 1,
     "Art dump thread": 2,
     "💭「处理中」透明人在打透明怪": 2,
@@ -22,26 +27,31 @@
     "1455822126568308957": 5
   },
   "hourly_activity": {
+    "15": 4,
+    "16": 7,
+    "3": 1,
+    "4": 3,
+    "7": 4,
+    "8": 7,
+    "12": 48,
+    "13": 8,
+    "14": 15,
+    "17": 3,
+    "22": 2,
     "2": 2,
     "18": 1,
-    "14": 6,
-    "12": 3,
-    "7": 2,
     "19": 1,
     "5": 2,
-    "8": 5,
     "9": 4,
     "10": 11,
-    "15": 2,
-    "17": 1,
     "1": 4,
-    "16": 3,
     "23": 5,
     "11": 2,
     "6": 4
   },
   "message_types": {
-    "0": 3
+    "0": 63,
+    "19": 17
   },
   "top_reacted_messages": [
     {
@@ -50,6 +60,13 @@
       "author": "ass191044",
       "reactions": 18,
       "channel": ""
+    },
+    {
+      "id": "1463557310860496999",
+      "content": "hello <:H_immerse:1426122347643146250> i actually wrote it this for tulu but i t",
+      "author": "annaxxe_",
+      "reactions": 11,
+      "channel": "The Scholar's Last Paper"
     },
     {
       "id": "1463402306606465080",
@@ -64,6 +81,20 @@
       "author": "ass191044",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1463540146422022186",
+      "content": "<:A_pinch:1432980538536493057>",
+      "author": "syruponstrawberrycake",
+      "reactions": 8,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1463518565956321353",
+      "content": "",
+      "author": "carme.0588",
+      "reactions": 6,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
     },
     {
       "id": "1463354386754437220",
@@ -94,6 +125,27 @@
       "channel": ""
     },
     {
+      "id": "1463512676788342916",
+      "content": "玲瓏骰子安紅豆，入骨相思知不知",
+      "author": "ena04564",
+      "reactions": 3,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1463387435130945652",
+      "content": "",
+      "author": "megadumb_aru",
+      "reactions": 2,
+      "channel": "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup..."
+    },
+    {
+      "id": "1463512503769239649",
+      "content": "non human humanoids ig",
+      "author": "rye_ribs",
+      "reactions": 2,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1463354586956955751",
       "content": "Incredible. Wow . Wow. I'm a big fan",
       "author": "kiriwoamizaki",
@@ -115,6 +167,20 @@
       "channel": ""
     },
     {
+      "id": "1463515017050853491",
+      "content": "0启可用反正是",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1463525229094768841",
+      "content": "感觉下毒效率一般？全靠一个二费，应该还是偏向毒爆辅助，没办法像融朵那样自己下毒自己爆？<:Brown_think:1459080117308620996>",
+      "author": "xmj140028",
+      "reactions": 1,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1463615008985317448",
       "content": "Xu kit revealed <:Helot_slack_off:1459092159465521184> That's francis but suppor",
       "author": "yeriko703",
@@ -125,62 +191,6 @@
       "id": "1463462435527852134",
       "content": "佬🛐",
       "author": "shostakovich524",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463470569940062386",
-      "content": "<:Uv_love:1459079222155935811>",
-      "author": "waterrr0212",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463475465401401447",
-      "content": "<:Pandia_love:1459078512303411261>",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463476668726509642",
-      "content": "太棒了！！<:please:1356053110375714817> <:please:1356053110375714817>",
-      "author": "that_one_chippy",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463484560133066836",
-      "content": "支持你油進軍男模",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463484984319803412",
-      "content": "小孩才做選擇，全部都進軍男ㄇ--（消音",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463486302031974532",
-      "content": "（可以口嗨但動筆困難",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463503559944437943",
-      "content": "一切都太美了！！<:takenotes:1357186646294138890> <:takenotes:1357186646294138890>",
-      "author": "that_one_chippy",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1463486477550878770",
-      "content": "And even if you avoid decay you still have 2 turn weakness)",
-      "author": "twilightsparkle163163",
       "reactions": 1,
       "channel": ""
     }

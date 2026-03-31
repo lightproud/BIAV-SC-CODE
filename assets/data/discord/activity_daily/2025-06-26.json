@@ -1,10 +1,14 @@
 {
   "date": "2025-06-26",
-  "messages": 19,
-  "unique_authors": 8,
-  "reactions_total": 20,
-  "attachments": 5,
+  "messages": 52,
+  "unique_authors": 22,
+  "reactions_total": 62,
+  "attachments": 8,
   "channel_activity": {
+    "hair down pandia": 2,
+    "😢求助！守護最好的彌薩格廚房┊Help! Protect the Best Mythag Kitchen": 20,
+    "V2.2.3預告：自選活動喚醒┊V2.2.3 Preview: Self-Select Event Awakening": 10,
+    "萌新想蹲一个深海配队": 1,
     "艾继丝艾瑞卡小水母的试用关是不是忘做了": 2,
     "✅「Answered」Limited Awakener Rates in Realm Study are Unclear/Incorrect": 6,
     "✅「已回答」艾瑞卡对守密人的称呼是【主角】": 3,
@@ -13,22 +17,37 @@
     "超維喚醒體：戈登": 2
   },
   "hourly_activity": {
-    "13": 1,
+    "6": 1,
+    "7": 1,
+    "8": 6,
+    "9": 10,
+    "10": 2,
+    "11": 4,
+    "12": 1,
+    "13": 2,
+    "15": 5,
+    "21": 5,
+    "23": 1,
+    "20": 3,
     "16": 1,
-    "21": 4,
     "22": 2,
     "14": 1,
-    "15": 2,
     "2": 3,
-    "8": 1,
     "18": 2,
     "17": 2
   },
   "message_types": {
-    "0": 14,
-    "4": 1
+    "0": 30,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1387713490931679322",
+      "content": "進賊了！彌薩格進賊了！\n近期彌薩格廚房頻繁遭小賊光顧，上到美味肉排、下到瓜果蔬菜，都慘遭洗劫！\n小賊作案手法高明，鐵門封鎖、高科技陷阱仍未能阻止……\n\n**📢在",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": "😢求助！守護最好的彌薩格廚房┊Help! Protect the Best Mythag Kitchen"
+    },
     {
       "id": "1387792150661431486",
       "content": "",
@@ -37,11 +56,39 @@
       "channel": "艾继丝艾瑞卡小水母的试用关是不是忘做了"
     },
     {
+      "id": "1387688139069587517",
+      "content": "",
+      "author": "yonagoda",
+      "reactions": 11,
+      "channel": "hair down pandia"
+    },
+    {
+      "id": "1387931309183205466",
+      "content": "To stop the kitchen thief, who is definitely not Uvhash, I recommend painting a ",
+      "author": "reya.li",
+      "reactions": 9,
+      "channel": "😢求助！守護最好的彌薩格廚房┊Help! Protect the Best Mythag Kitchen"
+    },
+    {
+      "id": "1387727265701560320",
+      "content": "我会先他们一步洗劫干净😋",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "😢求助！守護最好的彌薩格廚房┊Help! Protect the Best Mythag Kitchen"
+    },
+    {
       "id": "1387912740114534570",
       "content": "Here are a few possible solutions that the community has bounced around:\n\n**1)**",
       "author": "mac2492",
       "reactions": 3,
       "channel": "✅「Answered」Limited Awakener Rates in Realm Study are Unclear/Incorrect"
+    },
+    {
+      "id": "1387735336683175936",
+      "content": "Uvhash?",
+      "author": "phantasidreamin",
+      "reactions": 1,
+      "channel": "😢求助！守護最好的彌薩格廚房┊Help! Protect the Best Mythag Kitchen"
     },
     {
       "id": "1387912463055458365",

@@ -1,10 +1,11 @@
 {
   "date": "2025-01-07",
-  "messages": 199,
+  "messages": 200,
   "unique_authors": 28,
   "reactions_total": 169,
   "attachments": 10,
   "channel_activity": {
+    "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185": 1,
     "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！": 67,
     "✅前瞻：V2.0 玩法奖励追加": 2,
     "校猫碎碎念#自我风评反思": 15,
@@ -21,6 +22,7 @@
     "宝宝们": 4
   },
   "hourly_activity": {
+    "11": 4,
     "9": 12,
     "12": 8,
     "13": 65,
@@ -28,7 +30,6 @@
     "16": 6,
     "4": 12,
     "10": 3,
-    "11": 3,
     "14": 6,
     "3": 15,
     "6": 4,
@@ -42,8 +43,7 @@
     "17": 1
   },
   "message_types": {
-    "19": 18,
-    "0": 66
+    "0": 1
   },
   "top_reacted_messages": [
     {

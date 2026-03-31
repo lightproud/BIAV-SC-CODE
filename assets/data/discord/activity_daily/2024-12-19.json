@@ -1,10 +1,14 @@
 {
   "date": "2024-12-19",
-  "messages": 57,
+  "messages": 63,
   "unique_authors": 13,
-  "reactions_total": 34,
-  "attachments": 8,
+  "reactions_total": 40,
+  "attachments": 11,
   "channel_activity": {
+    "Rykerrrr": 1,
+    "GPT translation synonyms": 1,
+    "Morimens loading screen lore compilation": 3,
+    "Can someone recap a story about tawil for me about how she turned to a monster at very beginning?": 1,
     "官方周邊建議征集": 2,
     "關於我還沒打主線卻莫名得到了三星這回事": 4,
     "请问校猫light": 10,
@@ -16,22 +20,23 @@
     "這太美麗了😭": 6
   },
   "hourly_activity": {
+    "7": 2,
+    "4": 5,
+    "9": 1,
     "12": 8,
     "10": 4,
     "6": 20,
-    "7": 1,
     "14": 3,
     "15": 2,
     "16": 1,
     "20": 2,
     "13": 5,
-    "4": 1,
     "5": 5,
     "17": 1,
     "8": 4
   },
   "message_types": {
-    "0": 2
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -47,6 +52,13 @@
       "author": "_cwz_",
       "reactions": 10,
       "channel": "彌薩格校貓 你到底想干嘛？"
+    },
+    {
+      "id": "1319209740030705706",
+      "content": "https://x.com/viosgit/status/1702028072344764586?s=46",
+      "author": "cover19",
+      "reactions": 6,
+      "channel": "Rykerrrr"
     },
     {
       "id": "1319183185804001371",

@@ -1,10 +1,17 @@
 {
   "date": "2025-07-11",
-  "messages": 19,
-  "unique_authors": 6,
-  "reactions_total": 9,
-  "attachments": 1,
+  "messages": 31,
+  "unique_authors": 9,
+  "reactions_total": 89,
+  "attachments": 9,
   "channel_activity": {
+    "Aurita First Big Mission Briefing": 1,
+    "Tulu Being Sleepy": 2,
+    "drowsy king": 1,
+    "*Translated & Credited* cn Fan Art Reposts": 2,
+    "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 3,
+    "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!": 2,
+    "🚚周边补货说明┊Official Merchandise Restock Notice": 1,
     "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 1,
     "Please relaunch MY TURN: INFINITE MAGIC DUEL": 4,
     "✅Add HP + Shield UI": 3,
@@ -13,19 +20,69 @@
     "Slay the Spire Morimens Mod Text Provided Post": 8
   },
   "hourly_activity": {
+    "2": 2,
+    "6": 2,
+    "21": 1,
+    "4": 1,
+    "23": 1,
+    "11": 1,
+    "14": 2,
+    "3": 3,
     "0": 1,
     "7": 3,
     "8": 2,
     "17": 1,
     "18": 2,
-    "2": 1,
     "10": 2,
     "13": 7
   },
   "message_types": {
-    "0": 1
+    "0": 10,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1393370982496075939",
+      "content": "Our happy found family \nlink to OG post:https://bigring.lofter.com/post/1d5df6e8",
+      "author": "ev_6185",
+      "reactions": 23,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1393116308455030894",
+      "content": "Got the avatar frame as promised today! Thank you all once again for all your lo",
+      "author": "ev_6185",
+      "reactions": 20,
+      "channel": "Tulu Being Sleepy"
+    },
+    {
+      "id": "1393350144510005318",
+      "content": "i focused on this too long im gonna take a nap now",
+      "author": "wraithdust",
+      "reactions": 19,
+      "channel": "drowsy king"
+    },
+    {
+      "id": "1393067500903596043",
+      "content": "**⭐「旧日梦呓」忘却篇-镭射票补货说明⭐**\n各位守密人，第二批「旧日梦呓」忘却篇-镭射票将陆续上架淘宝“灵犀互娱官方旗舰店”：https://s.tb.cn",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": "🚚周边补货说明┊Official Merchandise Restock Notice"
+    },
+    {
+      "id": "1393088731438776352",
+      "content": "horlaaaaa",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1393186988269768787",
+      "content": "sweet !",
+      "author": "sexysneakystoat1625",
+      "reactions": 3,
+      "channel": "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!"
+    },
     {
       "id": "1393283292656304229",
       "content": "I suggest adding (HP + Shield) number next to the total incoming damage number s",
@@ -41,11 +98,25 @@
       "channel": "✅Add HP + Shield UI"
     },
     {
+      "id": "1393061621059817523",
+      "content": "This is  literally my main team for story content",
+      "author": "shadowemperor7636",
+      "reactions": 2,
+      "channel": "Aurita First Big Mission Briefing"
+    },
+    {
       "id": "1393178803181846610",
       "content": "i use windows 11 and i downloaded the game on mobile it works fine there. so i g",
       "author": "asura2526",
       "reactions": 2,
       "channel": "💭「Processing」Error 7028001"
+    },
+    {
+      "id": "1393078472834023565",
+      "content": "哇刚说就收到了，谢谢！<:pray:1356053116260454534>",
+      "author": "kepler0519",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!"
     },
     {
       "id": "1393183588450697236",

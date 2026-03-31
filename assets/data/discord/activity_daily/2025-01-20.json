@@ -1,10 +1,12 @@
 {
   "date": "2025-01-20",
-  "messages": 52,
+  "messages": 57,
   "unique_authors": 11,
-  "reactions_total": 41,
+  "reactions_total": 42,
   "attachments": 15,
   "channel_activity": {
+    "morimens story recap channel": 2,
+    "Can someone recap a story about tawil for me about how she turned to a monster at very beginning?": 3,
     "English Page pls !!": 1,
     "💭「Processing」Master of All thing bug": 2,
     "脑缸能不能给我们表演一下背刺黄牛": 4,
@@ -19,6 +21,8 @@
     "約稿展示 請大家吃飯": 3
   },
   "hourly_activity": {
+    "18": 2,
+    "21": 3,
     "0": 2,
     "13": 8,
     "16": 4,
@@ -35,8 +39,7 @@
     "9": 1
   },
   "message_types": {
-    "0": 23,
-    "19": 4
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -94,6 +97,13 @@
       "author": "yang015148",
       "reactions": 2,
       "channel": "2.0 BOSS難度排行榜"
+    },
+    {
+      "id": "1330962874482294834",
+      "content": "fuiyoh",
+      "author": "roto_rooster",
+      "reactions": 1,
+      "channel": "morimens story recap channel"
     },
     {
       "id": "1330843996590702642",

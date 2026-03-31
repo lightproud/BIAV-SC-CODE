@@ -1,10 +1,14 @@
 {
   "date": "2025-08-04",
-  "messages": 48,
+  "messages": 62,
   "unique_authors": 10,
-  "reactions_total": 27,
-  "attachments": 10,
+  "reactions_total": 28,
+  "attachments": 16,
   "channel_activity": {
+    "daffodil": 1,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 1,
+    "Tawil Guide Series by flares.": 2,
+    "請問配隊及資源分配規劃": 10,
     "✅「Answered」Survey links bug": 5,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
     "✅「已回答」朵爾等價顯示問題又出現了": 7,
@@ -24,11 +28,14 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "7": 10,
+    "12": 1,
+    "23": 5,
+    "9": 7,
+    "10": 3,
     "22": 2,
-    "23": 3,
     "3": 9,
     "6": 14,
-    "7": 9,
     "8": 2,
     "0": 1,
     "2": 4,
@@ -37,9 +44,7 @@
     "13": 1
   },
   "message_types": {
-    "0": 23,
-    "19": 10,
-    "4": 13
+    "0": 14
   },
   "top_reacted_messages": [
     {
@@ -69,6 +74,13 @@
       "author": "menoctus",
       "reactions": 3,
       "channel": "关卡地图「融灾禁区」总览40期·星辰篇"
+    },
+    {
+      "id": "1401910164524761118",
+      "content": "appreciate it love the guides for uvhash he is really fun to play",
+      "author": "poodaloom",
+      "reactions": 1,
+      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
     },
     {
       "id": "1401813463755657227",

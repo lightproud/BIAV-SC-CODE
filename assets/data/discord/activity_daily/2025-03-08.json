@@ -1,10 +1,12 @@
 {
   "date": "2025-03-08",
-  "messages": 13,
+  "messages": 24,
   "unique_authors": 7,
   "reactions_total": 15,
-  "attachments": 2,
+  "attachments": 4,
   "channel_activity": {
+    "Star Chapter 2.1 Tier List": 7,
+    "Tier list for Standard and Limited separated 2.1": 4,
     "Where can i see a prologue again?": 1,
     "✅「已回答」账号找不到了": 1,
     "这活动奖励缩水也缩的太厉害了吧": 8,
@@ -12,7 +14,9 @@
     "新手第三天自己研发的毒队。": 2
   },
   "hourly_activity": {
-    "14": 2,
+    "6": 7,
+    "13": 3,
+    "14": 3,
     "1": 2,
     "3": 3,
     "4": 4,
@@ -20,8 +24,8 @@
     "18": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "19": 1,
+    "0": 10
   },
   "top_reacted_messages": [
     {

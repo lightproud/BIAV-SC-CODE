@@ -1,10 +1,14 @@
 {
   "date": "2025-12-13",
-  "messages": 85,
+  "messages": 91,
   "unique_authors": 14,
-  "reactions_total": 70,
-  "attachments": 17,
+  "reactions_total": 73,
+  "attachments": 18,
   "channel_activity": {
+    "Ramona!": 1,
+    "中奖名单公布┊Lottery Winners Announced!": 1,
+    "新手求助": 1,
+    "How to obtain D-Jewels?": 3,
     "Who Ryker's Designer pls come talk ?": 2,
     "💭「处理中」拉蒙娜鑰令和夏活鑰令是否可以加入鑰令分類頁籤？": 1,
     "关于【献祭】的bug修复": 1,
@@ -24,15 +28,16 @@
     "1442647324575928441": 1
   },
   "hourly_activity": {
+    "22": 5,
+    "1": 3,
+    "13": 4,
+    "12": 4,
     "3": 1,
     "5": 11,
     "8": 15,
     "4": 1,
-    "1": 2,
     "9": 9,
-    "13": 3,
     "10": 10,
-    "22": 4,
     "6": 1,
     "7": 3,
     "14": 1,
@@ -40,13 +45,11 @@
     "19": 3,
     "17": 4,
     "15": 3,
-    "20": 1,
-    "12": 1
+    "20": 1
   },
   "message_types": {
-    "0": 39,
-    "19": 13,
-    "4": 1
+    "0": 5,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -113,6 +116,13 @@
       "channel": "一點仿官"
     },
     {
+      "id": "1449525079015948318",
+      "content": "<@883992032530563082> <@614083839131648021> 來看守密人正宮",
+      "author": "amstelredam",
+      "reactions": 2,
+      "channel": "Ramona!"
+    },
+    {
       "id": "1449389676958847017",
       "content": "P.s Goya, don't worry, i already talked to Light about this ^\nBut we could still",
       "author": "vxvendetta97",
@@ -155,6 +165,13 @@
       "channel": "🔸忘却前夜┊morimens-tv"
     },
     {
+      "id": "1449379359642226870",
+      "content": "Below daily quest",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "How to obtain D-Jewels?"
+    },
+    {
       "id": "1449318057452372040",
       "content": "如題，目前夏活鑰令仲夏留念和美夢一剎，以及現活動拉蒙娜鑰令重逢心願，都是沒有加入彌撒格&四界域分類的，在選鑰令時必須在全部鑰令的第一頁拉到最下面，並且也不是堆在",
       "author": "amstelredam",
@@ -174,13 +191,6 @@
       "author": "vxvendetta97",
       "reactions": 1,
       "channel": "✅「Answered」Faros \"Homesick\" shield scaling talent doesn't benefit from her Soulforge"
-    },
-    {
-      "id": "1449478874273550467",
-      "content": "終末,目視之餘：獲得10點算力，算力上限提高2點；無視算力調和、算力滿盈。\n\n「它」的餘光瞥向你\n你的腦內浮現出不可名狀、不可議論之物\n你痛苦的跪倒\n當他目光轉",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "一點仿官"
     }
   ]
 }

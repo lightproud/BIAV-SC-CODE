@@ -1,10 +1,11 @@
 {
   "date": "2025-05-18",
-  "messages": 45,
+  "messages": 46,
   "unique_authors": 8,
-  "reactions_total": 29,
-  "attachments": 9,
+  "reactions_total": 50,
+  "attachments": 10,
   "channel_activity": {
+    "Celeste": 1,
     "✅「已回答」找不到有互相關注的校友的助戰": 31,
     "一些便利性方面的建议": 2,
     "✅「Answered」Corposant mysteriously missing all base art in my game": 1,
@@ -13,6 +14,7 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
+    "16": 1,
     "7": 8,
     "8": 22,
     "14": 6,
@@ -25,10 +27,16 @@
     "5": 2
   },
   "message_types": {
-    "19": 12,
-    "0": 22
+    "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1373706410495316018",
+      "content": "",
+      "author": "maya014632",
+      "reactions": 21,
+      "channel": "Celeste"
+    },
     {
       "id": "1373579340603981845",
       "content": "我愛醫生",

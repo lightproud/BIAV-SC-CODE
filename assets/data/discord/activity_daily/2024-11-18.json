@@ -1,10 +1,11 @@
 {
   "date": "2024-11-18",
-  "messages": 97,
+  "messages": 98,
   "unique_authors": 29,
   "reactions_total": 96,
-  "attachments": 31,
+  "attachments": 32,
   "channel_activity": {
+    "Relic Tierlist": 1,
     "🎁露比帶著禮包兌換碼來啦~": 3,
     "V1.7.1.0 停服維護公告": 5,
     "About official materials usage": 4,
@@ -30,6 +31,7 @@
     "跑不掉 不跑了（原地躺下": 8
   },
   "hourly_activity": {
+    "1": 1,
     "13": 6,
     "5": 5,
     "17": 3,
@@ -48,8 +50,7 @@
     "2": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

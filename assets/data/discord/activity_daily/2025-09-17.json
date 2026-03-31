@@ -1,10 +1,20 @@
 {
   "date": "2025-09-17",
-  "messages": 49,
+  "messages": 81,
   "unique_authors": 12,
-  "reactions_total": 39,
-  "attachments": 22,
+  "reactions_total": 88,
+  "attachments": 32,
   "channel_activity": {
+    "Murphy 🍰": 2,
+    "Kaly Tier Lists - Sept 2025": 3,
+    "Morimens: Game Mechanics and Terms": 1,
+    "刚入坑，这个配队可以吗？": 1,
+    "What should i aim for": 4,
+    "what teams can i build or characters to summon for future teams?": 2,
+    "I can't Dismantle low rank WOD cause they're lock": 12,
+    "Team Building, Selectors and Pulling Plan": 5,
+    "Its safe to start WoD jail?": 1,
+    "New player? What WoD to pull in standard banner": 1,
     "忘却前夜OST：皮克曼EP·疯画奇旅": 7,
     "✅「Answered」About new Ryker buff": 4,
     "✅「Answered」Issue with Thai UI vowel positioning.": 3,
@@ -23,33 +33,59 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "8": 9,
-    "3": 9,
-    "4": 2,
+    "22": 4,
+    "5": 2,
+    "8": 11,
+    "15": 1,
+    "4": 3,
+    "20": 3,
+    "21": 2,
+    "16": 4,
+    "7": 6,
+    "18": 12,
+    "11": 2,
+    "3": 10,
     "6": 2,
-    "18": 1,
     "10": 2,
-    "11": 1,
-    "21": 1,
     "17": 5,
     "13": 5,
     "14": 1,
     "23": 1,
     "1": 1,
-    "2": 4,
-    "7": 4,
-    "16": 1
+    "2": 4
   },
   "message_types": {
-    "0": 7
+    "0": 26,
+    "19": 6
   },
   "top_reacted_messages": [
+    {
+      "id": "1418001662081105920",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 17,
+      "channel": "Murphy 🍰"
+    },
+    {
+      "id": "1417749216842743899",
+      "content": "Often new players are asking for a Tier List.  I'm not really a fan of a large g",
+      "author": "climbkaly",
+      "reactions": 14,
+      "channel": "Kaly Tier Lists - Sept 2025"
+    },
     {
       "id": "1417761650869538896",
       "content": "挺满意的一张，应该吧。至少我用了不同风格来作画。只要不细看就很好看啦（有点废话\n\n幸好我一直没发出来（我应该没发这张吧），这次有10000，不得不发了。\n\n发量",
       "author": "dittoqwq",
       "reactions": 9,
       "channel": "杜勒杜勒我们喜欢你😭"
+    },
+    {
+      "id": "1417994340177022981",
+      "content": "This is a resource from the Mythag University server containing a **PowerPoint t",
+      "author": "vxvendetta",
+      "reactions": 8,
+      "channel": "Morimens: Game Mechanics and Terms"
     },
     {
       "id": "1417792099675279361",
@@ -73,6 +109,13 @@
       "channel": ""
     },
     {
+      "id": "1418001782721740915",
+      "content": "Bonus doodles",
+      "author": "happyskull",
+      "reactions": 3,
+      "channel": "Murphy 🍰"
+    },
+    {
       "id": "1417772740278095943",
       "content": "神秘垂耳兔",
       "author": "yingmai_",
@@ -85,6 +128,13 @@
       "author": "yingmai_",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1417842352642588692",
+      "content": "I've attached my current box below, new to the game and is still trying to figur",
+      "author": "maririn.g",
+      "reactions": 2,
+      "channel": "Team Building, Selectors and Pulling Plan"
     },
     {
       "id": "1417766646642249819",
@@ -108,32 +158,46 @@
       "channel": "✅「已回答」缠绕机制能改下吗？"
     },
     {
+      "id": "1417967240858566858",
+      "content": "Clem Horla winkle orgier. Pull Clem on the upcoming reruns\nTawil Ham Ryker Karen",
+      "author": "iibenigml1588",
+      "reactions": 1,
+      "channel": "what teams can i build or characters to summon for future teams?"
+    },
+    {
+      "id": "1417944493960724571",
+      "content": "you can't, that is why you stack them and then you dismantle the +12 you form",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "I can't Dismantle low rank WOD cause they're lock"
+    },
+    {
+      "id": "1417944691483348993",
+      "content": "Thank a lot",
+      "author": "andrewgotfame_38019",
+      "reactions": 1,
+      "channel": "I can't Dismantle low rank WOD cause they're lock"
+    },
+    {
+      "id": "1417915730187518144",
+      "content": "There are two posion teams endgame:\n\n1. 24 Blue. The unit 24 (you don't have) in",
+      "author": "climbkaly",
+      "reactions": 1,
+      "channel": "Team Building, Selectors and Pulling Plan"
+    },
+    {
+      "id": "1417935601000255618",
+      "content": "Enjoy. Have fun!",
+      "author": "climbkaly",
+      "reactions": 1,
+      "channel": "Team Building, Selectors and Pulling Plan"
+    },
+    {
       "id": "1417736066307330168",
       "content": "pls check DM if can",
       "author": "aegisx",
       "reactions": 1,
       "channel": "✅「Answered」About new Ryker buff"
-    },
-    {
-      "id": "1417794451157286996",
-      "content": "Thank you for your feedback. We will verify it🙏 🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Issue with Thai UI vowel positioning."
-    },
-    {
-      "id": "1417933802008870963",
-      "content": "問題一\n官網充值是否能避免平台（如 App Store、Google Play、Steam 等）扣取約 30% 的抽成？\n目前玩家大多使用遊戲內購買方式進行充值",
-      "author": "taoi002",
-      "reactions": 1,
-      "channel": "✅「已回答」請問官網充值是否可以避免平台扣30%的抽成?"
-    },
-    {
-      "id": "1417923220203634708",
-      "content": "最近满街蜘蛛缠绕队\n\n10组对战中蜘蛛出现率贼高<:flop2:1356053072924774421> \n包括命轮\n\n缠绕2回已经严重影响其他组合的正常发挥<",
-      "author": "cs001092",
-      "reactions": 1,
-      "channel": "✅「已回答」缠绕机制能改下吗？"
     }
   ]
 }

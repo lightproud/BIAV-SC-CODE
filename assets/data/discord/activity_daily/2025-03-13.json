@@ -1,10 +1,14 @@
 {
   "date": "2025-03-13",
-  "messages": 65,
+  "messages": 70,
   "unique_authors": 12,
-  "reactions_total": 13,
-  "attachments": 13,
+  "reactions_total": 16,
+  "attachments": 15,
   "channel_activity": {
+    "Team Comps": 1,
+    "How can I make a good team": 1,
+    "Genesis Garden Pick": 1,
+    "Newbie help": 2,
     "🔥可正常使用！【翻译器】介绍及使用教程！Channel 【Translator function】introduction and usage tutorial！": 1,
     "V2.1.1.2 在線維護公告": 1,
     "游戏美术资源上的文字": 1,
@@ -21,24 +25,23 @@
     "墨菲豬，羊喵和拉蒙拿豬": 1
   },
   "hourly_activity": {
-    "6": 8,
-    "10": 1,
+    "2": 9,
+    "12": 2,
+    "10": 2,
+    "6": 9,
+    "13": 4,
     "7": 5,
     "8": 4,
-    "2": 8,
     "3": 8,
     "15": 6,
     "0": 4,
     "9": 6,
-    "13": 3,
     "16": 3,
     "4": 6,
-    "5": 2,
-    "12": 1
+    "5": 2
   },
   "message_types": {
-    "19": 1,
-    "0": 9
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -47,6 +50,20 @@
       "author": "morimensstaff01",
       "reactions": 9,
       "channel": "《忘卻前夜》OST：阿格里帕EP·坎布里安的晨曦"
+    },
+    {
+      "id": "1349735573828669502",
+      "content": "In general, for the standard banner is good to start whit aqueor, the tentacle o",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "Newbie help"
+    },
+    {
+      "id": "1349691647985713162",
+      "content": "I think what he means is if u have a character that have  been edified to +2 and",
+      "author": "unmaskingbellows",
+      "reactions": 1,
+      "channel": "Genesis Garden Pick"
     },
     {
       "id": "1349653506725773332",

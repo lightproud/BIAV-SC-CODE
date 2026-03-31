@@ -1,10 +1,18 @@
 {
   "date": "2025-10-25",
-  "messages": 68,
+  "messages": 86,
   "unique_authors": 24,
-  "reactions_total": 228,
-  "attachments": 3,
+  "reactions_total": 236,
+  "attachments": 9,
   "channel_activity": {
+    "Blackjack!": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
+    "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!": 2,
+    "🐦 奔逃的双生鸟：逃出提灯教会！Running Fledglings: Escape the Cave!": 3,
+    "How to obtain ISARAU'S GAZE wheel?": 1,
+    "Which realm on standard banner to pull for? What mechanics do elements have?": 3,
+    "How gacha system work? How get skin?": 6,
+    "Help pls ik almost nothing bout who to pull & how the game is😭": 1,
     "V2.3.4.2 在线维护公告": 5,
     "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 55,
     "✅「Answered」About new Ryker buff": 1,
@@ -15,19 +23,24 @@
     "1429401798439080028": 2
   },
   "hourly_activity": {
+    "3": 1,
+    "2": 1,
+    "12": 6,
+    "22": 2,
+    "10": 3,
+    "15": 2,
+    "19": 4,
+    "8": 4,
+    "13": 1,
     "18": 15,
-    "19": 3,
     "21": 3,
     "17": 40,
     "20": 2,
     "23": 1,
-    "7": 1,
-    "15": 1,
-    "12": 2
+    "7": 1
   },
   "message_types": {
-    "0": 41,
-    "19": 19
+    "0": 18
   },
   "top_reacted_messages": [
     {
@@ -108,6 +121,20 @@
       "channel": "💭「Processing」Loading menu music plays at full volume before it finishes loading in the intro video"
     },
     {
+      "id": "1431665078247231611",
+      "content": "So Aqueor (the tentacle realm) is pretty easy to get into, so pulling more of th",
+      "author": "sierrayagurl",
+      "reactions": 2,
+      "channel": "Which realm on standard banner to pull for? What mechanics do elements have?"
+    },
+    {
+      "id": "1431723411406589973",
+      "content": "A note that when playing ultra, you can click the left hand side of the gauge an",
+      "author": "reverie.is.dead",
+      "reactions": 2,
+      "channel": "Which realm on standard banner to pull for? What mechanics do elements have?"
+    },
+    {
       "id": "1431699317378257059",
       "content": "Actually, Kathigu-ra is the correct spelling of the name.",
       "author": ".cnork",
@@ -155,20 +182,6 @@
       "author": "ice_storys",
       "reactions": 2,
       "channel": ""
-    },
-    {
-      "id": "1431695909355258158",
-      "content": "剛打完忘卻篇🥹",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
-    },
-    {
-      "id": "1431697333380452543",
-      "content": "Sadly No.",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments"
     }
   ]
 }

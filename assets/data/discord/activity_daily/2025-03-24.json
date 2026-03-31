@@ -1,10 +1,14 @@
 {
   "date": "2025-03-24",
-  "messages": 79,
+  "messages": 89,
   "unique_authors": 10,
-  "reactions_total": 41,
-  "attachments": 26,
+  "reactions_total": 42,
+  "attachments": 27,
   "channel_activity": {
+    "Kinda confused help me for the team": 3,
+    "Any tips?": 4,
+    "Is Salvador a must have?": 2,
+    "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia": 1,
     "忘卻前夜OST：薩爾瓦多EP·蒼白的聖徒": 11,
     "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？": 3,
     "忘却前夜的周年庆在啥时候": 2,
@@ -24,23 +28,28 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "12": 2,
+    "23": 2,
+    "19": 1,
+    "20": 3,
+    "21": 1,
+    "9": 3,
+    "6": 25,
     "8": 11,
     "3": 14,
     "5": 4,
     "15": 4,
     "16": 2,
     "22": 1,
-    "9": 2,
     "10": 4,
     "11": 1,
-    "6": 24,
     "2": 9,
     "1": 1,
-    "13": 1,
-    "20": 1
+    "13": 1
   },
   "message_types": {
-    "0": 11
+    "0": 8,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -77,6 +86,13 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？"
+    },
+    {
+      "id": "1353705427975536730",
+      "content": "Yes absolutely one copy is enough.",
+      "author": "jamalibnsulaiman",
+      "reactions": 1,
+      "channel": "Is Salvador a must have?"
     },
     {
       "id": "1353674418924294215",

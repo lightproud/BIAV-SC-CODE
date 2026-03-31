@@ -1,10 +1,22 @@
 {
   "date": "2025-11-08",
-  "messages": 62,
-  "unique_authors": 9,
-  "reactions_total": 582,
-  "attachments": 8,
+  "messages": 97,
+  "unique_authors": 17,
+  "reactions_total": 717,
+  "attachments": 28,
   "channel_activity": {
+    "Pollux tied up": 3,
+    "Keep Quiet or else I'll Six Wings": 3,
+    "GMurphy finished": 4,
+    "Ogier & Tulu": 5,
+    "Little tulu sketch cause i really like him": 1,
+    "A preview of Caecus' birthday project": 2,
+    "Bluewil guide": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ": 1,
+    "Who do i get copies of": 1,
+    "team help": 3,
+    "Difficulty with Clearing": 9,
     "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 1,
     "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment": 1,
     "✅「Answered」Lightless realm expansion": 1,
@@ -21,23 +33,27 @@
     "1431233782605807666": 1
   },
   "hourly_activity": {
+    "18": 9,
+    "7": 13,
+    "11": 3,
+    "10": 3,
+    "0": 6,
+    "2": 2,
+    "3": 4,
+    "4": 22,
+    "6": 21,
+    "20": 2,
+    "22": 1,
+    "5": 2,
+    "1": 4,
     "15": 1,
-    "4": 13,
     "12": 1,
-    "5": 1,
-    "6": 20,
-    "7": 8,
-    "20": 1,
-    "10": 1,
-    "0": 3,
-    "1": 3,
     "8": 2,
-    "17": 1,
-    "18": 6,
-    "3": 1
+    "17": 1
   },
   "message_types": {
-    "0": 2
+    "0": 29,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -48,11 +64,53 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1436660182930161714",
+      "content": "I'll definitely draw her again once her banner drops <:pray:1356053116260454534>",
+      "author": "honolulu_37",
+      "reactions": 32,
+      "channel": "GMurphy finished"
+    },
+    {
+      "id": "1436612201346764862",
+      "content": "",
+      "author": "zuraznable",
+      "reactions": 31,
+      "channel": "Keep Quiet or else I'll Six Wings"
+    },
+    {
       "id": "1436574373992726708",
       "content": "I'm a loyal Morimens player, and there are some areas where the recent anniversa",
       "author": "2300011747",
       "reactions": 20,
       "channel": "✅「Answered」2nd anniversary suggestion"
+    },
+    {
+      "id": "1436784337000599554",
+      "content": "pollux trying to rizz<:rizz1:1356085398379692165> into getting his e3 <:Showoff:",
+      "author": "honolulu_37",
+      "reactions": 16,
+      "channel": "Pollux tied up"
+    },
+    {
+      "id": "1436580206415446026",
+      "content": "Idk if this counts as fanart since its only really a headshot and stuff but i re",
+      "author": "cqteiie",
+      "reactions": 15,
+      "channel": "Little tulu sketch cause i really like him"
+    },
+    {
+      "id": "1436505533384495135",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 13,
+      "channel": "Ogier & Tulu"
+    },
+    {
+      "id": "1436610522429657220",
+      "content": "A guide on how to play Bluewil (blue Tawil), some info about my setup but a lot ",
+      "author": "syruponstrawberrycake",
+      "reactions": 12,
+      "channel": "Bluewil guide"
     },
     {
       "id": "1436577994880847902",
@@ -67,6 +125,20 @@
       "author": "calmdreab",
       "reactions": 8,
       "channel": "1111凯刻斯生贺预告"
+    },
+    {
+      "id": "1436572725362556938",
+      "content": "",
+      "author": "calmdreab",
+      "reactions": 6,
+      "channel": "A preview of Caecus' birthday project"
+    },
+    {
+      "id": "1436587337936142336",
+      "content": "error naming this wheel?",
+      "author": "jollysquire",
+      "reactions": 6,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
     },
     {
       "id": "1436523670800695447",
@@ -97,32 +169,32 @@
       "channel": "无塔薇血希本期425镇楼＋锐评下半预告"
     },
     {
-      "id": "1436606940552626227",
-      "content": "I understand they already did a lot but some decisions like buffing all limiteds",
-      "author": "_venush",
+      "id": "1436616768130121788",
+      "content": "Blue - Tulu, Corpo, Celeste/Caecus, Aurita/Goliath\nRed - Ryker, Ghelot, Aggripa,",
+      "author": "enternameunavailable",
       "reactions": 1,
-      "channel": "✅「Answered」2nd anniversary suggestion"
+      "channel": "team help"
     },
     {
-      "id": "1436609980580102144",
-      "content": "Probably it stems from the fact that this game doesn't have a real separation be",
-      "author": "vxvendetta",
+      "id": "1436565966979989594",
+      "content": "Replace Murphy SSR wheel with Greed.\nUpgrade your Tawil skills a bit more",
+      "author": "enternameunavailable",
       "reactions": 1,
-      "channel": "✅「Answered」2nd anniversary suggestion"
+      "channel": "Difficulty with Clearing"
     },
     {
-      "id": "1436610880786796574",
-      "content": "I did hoped for something in that sense, but they are very limited on where they",
-      "author": "vxvendetta",
+      "id": "1436566015654887556",
+      "content": "You can complete lightless realm if you want lv60",
+      "author": "enternameunavailable",
       "reactions": 1,
-      "channel": "✅「Answered」2nd anniversary suggestion"
+      "channel": "Difficulty with Clearing"
     },
     {
-      "id": "1436625667600154754",
-      "content": "We will see it\nbut I hope they will address the stat increase for limiteds but n",
-      "author": "_venush",
+      "id": "1436578474226876416",
+      "content": "Cleared pretty easy, tysm 🔥",
+      "author": "xv.qx",
       "reactions": 1,
-      "channel": "✅「Answered」2nd anniversary suggestion"
+      "channel": "Difficulty with Clearing"
     }
   ]
 }

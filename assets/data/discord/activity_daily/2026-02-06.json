@@ -1,10 +1,14 @@
 {
   "date": "2026-02-06",
-  "messages": 7639,
+  "messages": 7653,
   "unique_authors": 159,
-  "reactions_total": 1302,
-  "attachments": 235,
+  "reactions_total": 1315,
+  "attachments": 243,
   "channel_activity": {
+    "V2.4.2.2 版本前瞻 ┊ Version Outlook": 8,
+    "中奖名单公布┊Lottery Winners Announced!": 1,
+    "《秘银日冕》系列唤醒体徽章发货延迟及补偿告知┊Shipping Delay & Compensation: \"Silver Corona\" Awakener Badges": 1,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 4,
     "V2.4.2.2 停服维护公告": 25,
     "Daffodil": 4,
     "アイロニーナ || Doresain & Sylvester": 1,
@@ -29,6 +33,12 @@
     "🔸morimens-game-chat": 6433
   },
   "hourly_activity": {
+    "4": 93,
+    "9": 301,
+    "14": 481,
+    "18": 391,
+    "2": 275,
+    "3": 382,
     "12": 660,
     "13": 224,
     "15": 387,
@@ -36,27 +46,21 @@
     "17": 125,
     "19": 248,
     "7": 284,
-    "14": 480,
     "8": 252,
-    "2": 274,
-    "9": 294,
     "10": 620,
     "11": 350,
     "5": 220,
-    "3": 379,
-    "4": 92,
     "21": 503,
     "0": 553,
     "1": 243,
     "6": 84,
-    "18": 390,
     "22": 102,
     "23": 252,
     "20": 449
   },
   "message_types": {
-    "0": 28,
-    "19": 2
+    "0": 9,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -93,6 +97,13 @@
       "author": "that_one_chippy",
       "reactions": 11,
       "channel": "アイロニーナ || Doresain & Sylvester"
+    },
+    {
+      "id": "1469267146126393424",
+      "content": "Русская версия постера <:dishes:1356083313063759922> \n—— сделана российской орга",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "V2.4.2.2 版本前瞻 ┊ Version Outlook"
     },
     {
       "id": "1469244729156829288",
@@ -191,13 +202,6 @@
       "author": "cometovilla",
       "reactions": 5,
       "channel": "🔸频道建议┊server-suggestions"
-    },
-    {
-      "id": "1469181580194091111",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }

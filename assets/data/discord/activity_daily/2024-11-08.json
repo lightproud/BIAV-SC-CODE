@@ -1,10 +1,11 @@
 {
   "date": "2024-11-08",
-  "messages": 22,
+  "messages": 26,
   "unique_authors": 11,
-  "reactions_total": 6,
+  "reactions_total": 23,
   "attachments": 6,
   "channel_activity": {
+    "GPT translation synonyms": 4,
     "蹈海野貓雜技團（釘選有目錄）": 1,
     "御四家除朵尔和两个希洛档案中部分语音缺失": 8,
     "第八章羊媽召喚的艾繼絲機制": 4,
@@ -12,6 +13,8 @@
     "自創喚醒體相關：您的仙女座之唇，将是我们幽会的契机。": 1
   },
   "hourly_activity": {
+    "2": 3,
+    "12": 1,
     "17": 1,
     "9": 1,
     "10": 1,
@@ -25,15 +28,37 @@
     "8": 1
   },
   "message_types": {
-    "0": 1
+    "0": 3,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1304268020780109874",
+      "content": "Hi,keeper!May I get this list in text?\nI think this would help us with GPT trans",
+      "author": "morimensstaff02",
+      "reactions": 7,
+      "channel": "GPT translation synonyms"
+    },
+    {
+      "id": "1304270743856611328",
+      "content": "Here you go, hope this help <:rose1:1234798154000633949>",
+      "author": "_venush",
+      "reactions": 7,
+      "channel": "GPT translation synonyms"
+    },
     {
       "id": "1304517233581756459",
       "content": "一直都是如此，這應該就是機制了",
       "author": "ernest_heart",
       "reactions": 4,
       "channel": "第八章羊媽召喚的艾繼絲機制"
+    },
+    {
+      "id": "1304429953483276290",
+      "content": "Unique = Team Unique (wheel effects - only one effect of a wheel of the same nam",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "GPT translation synonyms"
     },
     {
       "id": "1304550640755675157",

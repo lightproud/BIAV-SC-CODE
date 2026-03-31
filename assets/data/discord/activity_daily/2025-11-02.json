@@ -1,10 +1,23 @@
 {
   "date": "2025-11-02",
-  "messages": 27,
-  "unique_authors": 14,
-  "reactions_total": 25,
-  "attachments": 5,
+  "messages": 288,
+  "unique_authors": 51,
+  "reactions_total": 129,
+  "attachments": 31,
   "channel_activity": {
+    "pumpkin murphy sketch": 3,
+    "go rat go!!": 1,
+    "pollux doodle": 1,
+    "Lovecraft and other reference I found in Morimens": 5,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!": 2,
+    "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn": 69,
+    "目前剛課一條龍": 64,
+    "回坑求配隊": 16,
+    "新手求助配队": 82,
+    "Flares' Comprehensive Beginner Guide to Morimens": 2,
+    "What to focus on at the start?": 11,
+    "team building": 3,
     "V2.3.4.3 在线维护公告": 1,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 1,
     "✅「Answered」Would it be possible to show transcription quality in the covenant dismantle UI?": 2,
@@ -20,21 +33,29 @@
     "1432654338982940783": 1
   },
   "hourly_activity": {
-    "3": 1,
-    "7": 1,
-    "18": 3,
-    "19": 1,
+    "6": 31,
+    "18": 4,
+    "5": 27,
+    "4": 21,
+    "7": 25,
+    "3": 36,
+    "9": 4,
+    "8": 8,
+    "10": 3,
+    "12": 1,
+    "16": 48,
+    "17": 2,
+    "23": 1,
+    "15": 23,
+    "1": 14,
+    "2": 31,
+    "19": 2,
     "13": 5,
-    "2": 2,
-    "10": 1,
-    "4": 3,
-    "15": 3,
-    "21": 2,
-    "5": 4,
-    "17": 1
+    "21": 2
   },
   "message_types": {
-    "0": 1
+    "0": 177,
+    "19": 84
   },
   "top_reacted_messages": [
     {
@@ -45,32 +66,137 @@
       "channel": "✅「Answered」Would it be possible to have the OST tracks in the jukebox play on the home screen"
     },
     {
-      "id": "1434539436624056472",
-      "content": "I just passed this suggestion to Light today, hope they will be able to do it in",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "✅「Answered」Would it be possible to have the OST tracks in the jukebox play on the home screen"
+      "id": "1434429431241379871",
+      "content": "hi i like pumpkin murphy i hope you like my sketch <:M_satisfy:14007716903211541",
+      "author": "syruponstrawberrycake",
+      "reactions": 18,
+      "channel": "pumpkin murphy sketch"
     },
     {
-      "id": "1434540061403385927",
-      "content": "I mean, i didn't do anything special, thank to you for bringing up the suggestio",
-      "author": "vxvendetta",
-      "reactions": 1,
-      "channel": "✅「Answered」Would it be possible to have the OST tracks in the jukebox play on the home screen"
+      "id": "1434457749923823646",
+      "content": "我說眼睛改回去你爾多龍嗎<:angry1:1356053023272599668>",
+      "author": "rickycen",
+      "reactions": 15,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
     },
     {
-      "id": "1434566811981975753",
-      "content": "所以这一段时间保持宽容吧（看在送200抽的份上我会给校猫好脸色一段时间的）",
-      "author": "2300011747",
-      "reactions": 1,
-      "channel": "✅「已回答」能不能提高一下每个月兑换高级灵核的数量"
+      "id": "1434405637256642671",
+      "content": "是黑泥，不喜欢别看\n||你游官方是和黑暗子宫作者有什么合作关系吗，墨菲剧情，墨菲活动页面，墨菲命轮复读黑暗子宫还不够，sp墨背景继续复读\n克希拉首次出场的故事是",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
     },
     {
-      "id": "1434412314773426337",
-      "content": "感觉是我鼠标的问题",
-      "author": "luozijie_45939",
+      "id": "1434455839657168956",
+      "content": "還有這文案史無前例的尬",
+      "author": "undecember_news",
+      "reactions": 7,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434462951007326318",
+      "content": "she's hypermobile, that's indeed a curse",
+      "author": "sexysneakystoat1625",
+      "reactions": 7,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434422115473559633",
+      "content": "還我墨菲的死人感算我求你了<:takenotes:1357186646294138890>",
+      "author": "lanl4n",
+      "reactions": 4,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434440261215195146",
+      "content": "https://tenor.com/view/yakuza-gif-18148683",
+      "author": "whirli_bri",
+      "reactions": 4,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434359989249638521",
+      "content": "界域是什么",
+      "author": "sailieli_59793_57722",
+      "reactions": 4,
+      "channel": "新手求助配队"
+    },
+    {
+      "id": "1434422297225072700",
+      "content": "別的不説了，把白眼睛改回來",
+      "author": "navirecorbeau",
+      "reactions": 3,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434426846044356609",
+      "content": "我的死人墨菲呢",
+      "author": "muxia5978",
+      "reactions": 3,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434457004901924964",
+      "content": "sp墨的畫風又不像會說這種話\n前面1.5周年有說過話好像也不是這風格🤔",
+      "author": "heikwok",
+      "reactions": 3,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434475666375577712",
+      "content": "對啊對啊官方你爾多龍嗎😡😡😡",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434574209769672796",
+      "content": "这个臀腿比例太怪了，什么二次元卡戴珊。🙏血书重绘，听听玩家的声音吧",
+      "author": "leviatz",
+      "reactions": 3,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434394685195030558",
+      "content": "male leigh doodle",
+      "author": "ellumi",
+      "reactions": 2,
+      "channel": "pollux doodle"
+    },
+    {
+      "id": "1434431246515044475",
+      "content": "血液供給雙十一特價哥特洋裝",
+      "author": "kong760",
+      "reactions": 2,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434434800113942650",
+      "content": "改前派vs改後派",
+      "author": "nazhigezihk",
+      "reactions": 2,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434445604821667921",
+      "content": "Murphy but all traces of joy and silly are forever gone<:please:1356053110375714",
+      "author": "zekiei",
+      "reactions": 2,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434490856060223560",
+      "content": "這就是沒討到糖果而黑化的墨菲\n一切都對上了",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn"
+    },
+    {
+      "id": "1434429676339855371",
+      "content": "<:Cheerup:1400771555939844149>",
+      "author": "shagaru0802",
       "reactions": 1,
-      "channel": "✅「已解决」pc操作问题"
+      "channel": "pumpkin murphy sketch"
     }
   ]
 }

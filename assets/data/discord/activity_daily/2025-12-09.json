@@ -1,10 +1,17 @@
 {
   "date": "2025-12-09",
-  "messages": 71,
+  "messages": 118,
   "unique_authors": 12,
-  "reactions_total": 506,
-  "attachments": 16,
+  "reactions_total": 509,
+  "attachments": 30,
   "channel_activity": {
+    "Explosion: Ramona": 1,
+    "求助一些队伍的输出手法": 11,
+    "求神国推图输出手法以及星辰篇推图阵容相关建议": 2,
+    "抽數緊張的情況下，有需要去抽克萊和船長嗎？命輪也是同問": 6,
+    "What resources are refunded by the Special (the brown pyramid)": 1,
+    "how do caro teams work?": 21,
+    "Help With Dtide Team Investment": 5,
     "✅「Answered」Battlepass Timer bug": 1,
     "💭「Processing」Morimens freeze when I log in": 1,
     "✅「已回答」繁中PC端黑屏": 2,
@@ -32,27 +39,30 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "0": 1,
+    "11": 16,
+    "12": 13,
+    "13": 10,
+    "14": 2,
+    "10": 3,
+    "19": 2,
+    "17": 4,
+    "5": 3,
+    "6": 4,
     "23": 1,
     "7": 23,
     "2": 5,
     "3": 19,
     "4": 3,
-    "5": 2,
-    "13": 1,
     "21": 1,
-    "11": 2,
-    "12": 1,
     "8": 5,
     "18": 1,
-    "9": 2,
-    "17": 3,
-    "14": 1,
-    "19": 1
+    "9": 2
   },
   "message_types": {
-    "0": 37,
-    "19": 18,
-    "4": 10
+    "0": 43,
+    "19": 3,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -82,6 +92,13 @@
       "author": "morimensstaff01",
       "reactions": 4,
       "channel": "💭「Processing」Time Rewind Bug"
+    },
+    {
+      "id": "1447946733278728275",
+      "content": "If you want more info, look in the guides section. I think there are Caro-focuse",
+      "author": "juuki0811",
+      "reactions": 3,
+      "channel": "how do caro teams work?"
     },
     {
       "id": "1447785311923994764",

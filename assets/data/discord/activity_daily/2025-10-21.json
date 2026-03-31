@@ -1,10 +1,25 @@
 {
   "date": "2025-10-21",
-  "messages": 102,
-  "unique_authors": 20,
-  "reactions_total": 347,
-  "attachments": 22,
+  "messages": 246,
+  "unique_authors": 75,
+  "reactions_total": 404,
+  "attachments": 92,
   "channel_activity": {
+    "🦅": 1,
+    "Flares' Awakener Review : Pollux - C Tier": 3,
+    "Português Tradução - Coleta de Feedback": 2,
+    "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!": 47,
+    "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction": 3,
+    "🐦 奔逃的双生鸟：逃出提灯教会！Running Fledglings: Escape the Cave!": 21,
+    "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!": 10,
+    "📸壁纸分享: 波吕克斯┊Wallpaper Sharing: Pollux": 3,
+    "回坑玩家求配隊、練角建議": 43,
+    "Flares' Comprehensive Beginner Guide to Morimens": 3,
+    "Which Awakener should I choose?": 2,
+    "Pull advice": 2,
+    "Team build help": 2,
+    "I hit a wall need help to build a team": 1,
+    "Casiah New E3": 1,
     "V2.3.4.1 在线维护公告": 4,
     "✅「已回答」可不可以給暗潮蟲鳴也補上現在預購的畫風頭像": 2,
     "✅「Answered」Flaws and Weaknesses in Pollux's skill design": 9,
@@ -35,23 +50,30 @@
     "🐱light’s-nest": 1
   },
   "hourly_activity": {
-    "11": 14,
+    "18": 8,
+    "2": 7,
+    "15": 7,
+    "11": 27,
+    "12": 15,
+    "13": 15,
+    "14": 6,
+    "16": 31,
+    "19": 16,
+    "22": 3,
+    "23": 10,
+    "8": 8,
+    "4": 2,
+    "7": 4,
+    "17": 27,
+    "9": 8,
+    "1": 5,
     "3": 35,
     "0": 8,
-    "2": 6,
-    "9": 4,
-    "12": 4,
-    "13": 9,
-    "15": 2,
-    "21": 4,
-    "19": 5,
-    "23": 6,
-    "16": 3,
-    "1": 1,
-    "4": 1
+    "21": 4
   },
   "message_types": {
-    "0": 4
+    "0": 121,
+    "19": 23
   },
   "top_reacted_messages": [
     {
@@ -76,6 +98,41 @@
       "channel": "✅「Answered」Flaws and Weaknesses in Pollux's skill design"
     },
     {
+      "id": "1430116552081932330",
+      "content": "✦为大家奉上波吕克斯的留影作为纪念~\n守密人可在留言区保存PC、平板、手机尺寸的壁纸。\n\n✦Here are photos of Pollux as a sou",
+      "author": "morimensstaff01",
+      "reactions": 15,
+      "channel": "📸壁纸分享: 波吕克斯┊Wallpaper Sharing: Pollux"
+    },
+    {
+      "id": "1430231516289433660",
+      "content": "趁熱擼出來ㄌ🫴（？",
+      "author": "ass191044",
+      "reactions": 13,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1430268661922398229",
+      "content": "",
+      "author": "maeeeeeeeeeeeee",
+      "reactions": 9,
+      "channel": "🦅"
+    },
+    {
+      "id": "1430266735059013783",
+      "content": "These three would be nice as candy",
+      "author": "rqwe1",
+      "reactions": 3,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1430126007012167752",
+      "content": "e2/3",
+      "author": "flares117",
+      "reactions": 3,
+      "channel": "Pull advice"
+    },
+    {
       "id": "1430313748580532337",
       "content": "Example images following:",
       "author": "siatarr",
@@ -88,6 +145,13 @@
       "author": "xcecilex.",
       "reactions": 3,
       "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1430326003418267780",
+      "content": "pollux was consumed by an eldritch abomination...",
+      "author": "reya.li",
+      "reactions": 2,
+      "channel": "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!"
     },
     {
       "id": "1430037936778510347",
@@ -125,74 +189,32 @@
       "channel": "开个摸鱼楼✨"
     },
     {
-      "id": "1430158926921338950",
-      "content": "**V2.3.4.1 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
-      "author": "morimensstaff02",
+      "id": "1430163227731296367",
+      "content": "",
+      "author": "respawn_4_ever",
       "reactions": 1,
-      "channel": "V2.3.4.1 在线维护公告"
+      "channel": "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!"
     },
     {
-      "id": "1430032924996272199",
-      "content": "抱歉守密人 ，这个建议目前无法采纳🙏，后续头像或许也会有其他新风格的尝试",
-      "author": "morimensstaff01",
+      "id": "1430272107652317234",
+      "content": "They pasted a blank 4th template that you can use. I used Krita to photoshop emo",
+      "author": "rqwe1",
       "reactions": 1,
-      "channel": "✅「已回答」可不可以給暗潮蟲鳴也補上現在預購的畫風頭像"
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
     },
     {
-      "id": "1430304290496446515",
-      "content": "Salvador's exalt is displaying code for devour temp crit, instead of the actual ",
-      "author": "crivers",
+      "id": "1430125019576401976",
+      "content": "<@1301813973703852035> 壞女人黑絲",
+      "author": "ernest_heart",
       "reactions": 1,
-      "channel": "✅「Answered」Salvador Exalt Temp Crit displaying code"
+      "channel": "📸壁纸分享: 波吕克斯┊Wallpaper Sharing: Pollux"
     },
     {
-      "id": "1430158248291598387",
-      "content": "你們看一下我領取了兩百銀芯嗎",
-      "author": "ena04564",
+      "id": "1430238622786912276",
+      "content": "你現在有兩個選項\n1.久遠的呼喚選羊媽抽他的命輪\n2直接抽卡斯托爾的命輪",
+      "author": "shchng.",
       "reactions": 1,
-      "channel": "✅「已回答」不好意思好像用不了這個兌換碼"
-    },
-    {
-      "id": "1430037820311080970",
-      "content": "感谢反馈，我们会核对一下🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」忘卻篇第六章共鳴卡純白之帆 & 第八章共鳴歡愉之理"
-    },
-    {
-      "id": "1430124938819407944",
-      "content": "那應該是我記錯了，我以為升格時也會有文字",
-      "author": "ujay2040",
-      "reactions": 1,
-      "channel": "✅「已回答」新角升格文字消失"
-    },
-    {
-      "id": "1430225976138399775",
-      "content": "第四句中的「髮放」應該是「發放」。\n         簡體的头「发」与「发」送，「发」同字，但繁體不同，如果直接簡轉繁就會錯誤。",
-      "author": "mezen4181",
-      "reactions": 1,
-      "channel": "💭「处理中」文案錯字"
-    },
-    {
-      "id": "1430185354950082631",
-      "content": "<@&1166257943742787615>",
-      "author": "blecnes",
-      "reactions": 1,
-      "channel": "💭「Processing」Kathigu-ra bug in cards"
-    },
-    {
-      "id": "1430129476464939109",
-      "content": "如題",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "💭「处理中」0%"
-    },
-    {
-      "id": "1430129262144262195",
-      "content": "The UID is: 101209161. I've already used the repair function and will be downloa",
-      "author": "_masscarmine",
-      "reactions": 1,
-      "channel": "💭「Processing」Update exception: failed to retrieve patch file"
+      "channel": "回坑玩家求配隊、練角建議"
     }
   ]
 }

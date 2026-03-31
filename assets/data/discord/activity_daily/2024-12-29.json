@@ -1,10 +1,11 @@
 {
   "date": "2024-12-29",
-  "messages": 33,
+  "messages": 37,
   "unique_authors": 10,
-  "reactions_total": 32,
-  "attachments": 3,
+  "reactions_total": 37,
+  "attachments": 4,
   "channel_activity": {
+    "A team I would recommend for newer players (only standard units/wheels, free units and shop wheels)": 4,
     "V1.7.4.0 在線維護公告": 18,
     "選完後能換主角性別嗎?": 3,
     "刷新bug": 2,
@@ -18,6 +19,8 @@
     "約稿展示 請大家吃飯": 3
   },
   "hourly_activity": {
+    "13": 3,
+    "14": 5,
     "16": 12,
     "17": 2,
     "21": 1,
@@ -26,15 +29,12 @@
     "7": 2,
     "8": 1,
     "4": 2,
-    "13": 2,
     "5": 1,
     "1": 1,
-    "14": 2,
     "12": 2
   },
   "message_types": {
-    "0": 16,
-    "19": 2
+    "0": 4
   },
   "top_reacted_messages": [
     {
@@ -50,6 +50,13 @@
       "author": "xuanxue007",
       "reactions": 9,
       "channel": "約稿展示 請大家吃飯"
+    },
+    {
+      "id": "1322926804587122819",
+      "content": "Can be used for d tide, story progression and dive.",
+      "author": ".galeroar",
+      "reactions": 5,
+      "channel": "A team I would recommend for newer players (only standard units/wheels, free units and shop wheels)"
     },
     {
       "id": "1322959509924085833",

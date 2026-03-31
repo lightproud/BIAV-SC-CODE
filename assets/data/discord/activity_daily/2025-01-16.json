@@ -1,10 +1,11 @@
 {
   "date": "2025-01-16",
-  "messages": 31,
+  "messages": 32,
   "unique_authors": 11,
   "reactions_total": 18,
   "attachments": 4,
   "channel_activity": {
+    "Stats and realm mechanics (and some tips)": 1,
     "V2.0.0.3 在線維護公告": 6,
     "English Page pls !!": 3,
     "莉莉的狂气爆发没有享受到中毒加成": 2,
@@ -16,9 +17,9 @@
     "死抗序列": 3
   },
   "hourly_activity": {
+    "0": 7,
     "13": 5,
     "14": 5,
-    "0": 6,
     "5": 1,
     "8": 2,
     "9": 1,
@@ -29,8 +30,7 @@
     "16": 3
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

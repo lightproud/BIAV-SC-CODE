@@ -1,10 +1,36 @@
 {
   "date": "2025-11-11",
-  "messages": 65,
-  "unique_authors": 12,
-  "reactions_total": 600,
-  "attachments": 31,
+  "messages": 126,
+  "unique_authors": 25,
+  "reactions_total": 996,
+  "attachments": 63,
   "channel_activity": {
+    "[Birthday wishes for Caecus /Bonus Segment]": 1,
+    "King Caecus": 4,
+    "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 3,
+    "[Birthday wishes for Caecus /Bonus Segment 2]": 1,
+    "[Birthday wishes for Caecus /24：00]": 1,
+    "[Birthday wishes for Caecus /23：00]": 1,
+    "[Birthday wishes for Caecus /22：00]": 1,
+    "[Birthday wishes for Caecus /21：00] Salvage Me": 2,
+    "[Birthday wishes for Caecus /19：00]": 1,
+    "[Birthday wishes for Caecus /18：00]": 1,
+    "[Birthday wishes for Caecus /14：00]": 2,
+    "[Birthday wishes for Caecus /17：00]": 1,
+    "[Birthday wishes for Caecus /16：00]": 1,
+    "[Birthday wishes for Caecus /15：00]": 1,
+    "[Birthday wishes for Caecus /12：00]": 3,
+    "[Birthday wishes for Caecus /13：00]": 1,
+    "[Birthday wishes for Caecus /11：00]": 1,
+    "[Birthday wishes for Caecus /1：00]": 2,
+    "[Birthday wishes for Caecus /10：00]": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ": 7,
+    "V2.4.0 美梦中酣眠┊Nightly Night 💤": 5,
+    "配隊求助": 11,
+    "How do i use pollux": 1,
+    "At which Psyche Surge level is Over-Exaltation available?": 1,
+    "Complete Beginner": 5,
     "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 1,
     "Happy birthday fish!": 1,
     "✅「已回答」还能见到星辰篇的地图吗": 4,
@@ -48,30 +74,33 @@
     "1432654338982940783": 1
   },
   "hourly_activity": {
-    "12": 7,
-    "9": 4,
-    "1": 1,
+    "17": 2,
+    "23": 7,
+    "8": 4,
+    "9": 7,
+    "10": 7,
+    "18": 4,
+    "16": 4,
+    "15": 5,
+    "14": 6,
+    "13": 6,
+    "11": 3,
+    "6": 13,
+    "7": 14,
+    "4": 4,
+    "5": 4,
+    "3": 17,
+    "2": 5,
+    "12": 9,
+    "1": 2,
     "21": 1,
-    "14": 4,
-    "7": 8,
-    "2": 2,
-    "3": 8,
-    "6": 12,
-    "13": 3,
-    "15": 2,
-    "11": 1,
-    "23": 2,
-    "17": 1,
     "20": 1,
-    "16": 1,
-    "10": 2,
-    "8": 2,
-    "5": 1,
-    "4": 1,
     "22": 1
   },
   "message_types": {
-    "0": 2
+    "0": 55,
+    "19": 5,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -89,11 +118,102 @@
       "channel": ""
     },
     {
+      "id": "1437854026803712010",
+      "content": "[Birthday wishes for Caecus /Bonus Segment]  Rob Grant/Lana Del Rey - Lost at Se",
+      "author": "calmdreab",
+      "reactions": 54,
+      "channel": "[Birthday wishes for Caecus /Bonus Segment]"
+    },
+    {
       "id": "1437778826234167338",
       "content": "",
       "author": "neyuse",
       "reactions": 34,
       "channel": "Happy birthday fish!"
+    },
+    {
+      "id": "1437684730018529281",
+      "content": "[Birthday wishes for Caecus /14：00] \nJude Chiu - Last Night I Dreamed I learned ",
+      "author": "calmdreab",
+      "reactions": 26,
+      "channel": "[Birthday wishes for Caecus /14：00]"
+    },
+    {
+      "id": "1437623599652409404",
+      "content": "[Birthday wishes for Caecus /10：00] Ina Wroldsen - Sea\n\nI spent so long looking ",
+      "author": "calmdreab",
+      "reactions": 25,
+      "channel": "[Birthday wishes for Caecus /10：00]"
+    },
+    {
+      "id": "1437743760535457843",
+      "content": "[Birthday wishes for Caecus /18：00] Kung Gnu - Humor\n\nA flutter in the chest, co",
+      "author": "calmdreab",
+      "reactions": 24,
+      "channel": "[Birthday wishes for Caecus /18：00]"
+    },
+    {
+      "id": "1437834361922916402",
+      "content": "[Birthday wishes for Caecus /24：00] Wang Jiayi - Between Coming and Going\n\nThe b",
+      "author": "calmdreab",
+      "reactions": 23,
+      "channel": "[Birthday wishes for Caecus /24：00]"
+    },
+    {
+      "id": "1437728655857156316",
+      "content": "[Birthday wishes for Caecus /17：00]\nNCT 127 - Gold Dust\n\n감은 눈 뜨면 순간 너와 하늘이길\nWhen",
+      "author": "calmdreab",
+      "reactions": 23,
+      "channel": "[Birthday wishes for Caecus /17：00]"
+    },
+    {
+      "id": "1437639052009406546",
+      "content": "[Birthday wishes for Caecus /11：00] Qi Zitan - Dear Friend\n\nThe self you chase\n你",
+      "author": "calmdreab",
+      "reactions": 23,
+      "channel": "[Birthday wishes for Caecus /11：00]"
+    },
+    {
+      "id": "1437945146334515371",
+      "content": "Better late than never.",
+      "author": "ykarus.obs",
+      "reactions": 22,
+      "channel": "King Caecus"
+    },
+    {
+      "id": "1437826964030357514",
+      "content": "[Birthday wishes for Caecus /23：00] Lumi Xu - A Day Suitable for Watching the Se",
+      "author": "calmdreab",
+      "reactions": 22,
+      "channel": "[Birthday wishes for Caecus /23：00]"
+    },
+    {
+      "id": "1437758805977989150",
+      "content": "[Birthday wishes for Caecus /19：00] Waa Wei - Are You Still You?\n\nDo you miss me",
+      "author": "calmdreab",
+      "reactions": 22,
+      "channel": "[Birthday wishes for Caecus /19：00]"
+    },
+    {
+      "id": "1437624129980334150",
+      "content": "[Birthday wishes for Caecus /1：00] GONG - Not Often, But Occasionally\n'Still res",
+      "author": "calmdreab",
+      "reactions": 20,
+      "channel": "[Birthday wishes for Caecus /1：00]"
+    },
+    {
+      "id": "1437713599073226752",
+      "content": "[Birthday wishes for Caecus /16：00] Ning An - Escape\n\nFold a little boat and let",
+      "author": "calmdreab",
+      "reactions": 17,
+      "channel": "[Birthday wishes for Caecus /16：00]"
+    },
+    {
+      "id": "1437806107056803870",
+      "content": "[Birthday wishes for Caecus /22：00] Hamshor Tang - Atom\n\nWe are all made of atom",
+      "author": "calmdreab",
+      "reactions": 15,
+      "channel": "[Birthday wishes for Caecus /22：00]"
     },
     {
       "id": "1437751639598436463",
@@ -103,116 +223,25 @@
       "channel": "kks要知道他还的钱被拿去约稿了"
     },
     {
+      "id": "1437699718682775633",
+      "content": "[Birthday wishes for Caecus /15：00]\n ATEEZ - WAVE\n\n지금 이 순간이 우리의 파도라면\nIf this ver",
+      "author": "calmdreab",
+      "reactions": 13,
+      "channel": "[Birthday wishes for Caecus /15：00]"
+    },
+    {
+      "id": "1437668614550327337",
+      "content": "[Birthday wishes for Caecus /13：00] KLP - Halberd Kiss\n\nThe halberd kisses the g",
+      "author": "calmdreab",
+      "reactions": 13,
+      "channel": "[Birthday wishes for Caecus /13：00]"
+    },
+    {
       "id": "1437774181654855750",
       "content": "【1111凯刻斯生贺/20:00】阿弗娄《应该》\n每条神经都浮肿，\n\n浸泡在最寂静的宇宙，\n\n等待爱回眸。\n\n——阿弗娄《应该》\n\nUID:100000287",
       "author": "calmdreab",
       "reactions": 13,
       "channel": "【1111凯刻斯生贺/20:00】"
-    },
-    {
-      "id": "1437716334984302622",
-      "content": "沒什麼主題就只是想看他們換衣服（",
-      "author": "carrot_chicken",
-      "reactions": 13,
-      "channel": "現pa 差不多可以開始畫冬裝了"
-    },
-    {
-      "id": "1437854363145212036",
-      "content": "【1111凯刻斯生贺/彩蛋】Rob Grant/Lana Del Rey《Lost at Sea》\n\nAnd there were waves over me\n",
-      "author": "calmdreab",
-      "reactions": 9,
-      "channel": "【1111凯刻斯生贺/彩蛋】"
-    },
-    {
-      "id": "1437623808490995812",
-      "content": "【1111凯刻斯生贺/10:00】Ina Wroldsen《Sea》\nI spent so long looking for a way\n我耗费数寸光阴寻找归路",
-      "author": "calmdreab",
-      "reactions": 9,
-      "channel": "【1111凯刻斯生贺/10:00】"
-    },
-    {
-      "id": "1437805885589160089",
-      "content": "【1111凯刻斯生贺/22:00】唐汉霄《原子》\n\"我们都由原子而组成\n\n总会奢望看得到永恒\n\n——唐汉霄《原子》\n\nUID:100000287",
-      "author": "calmdreab",
-      "reactions": 8,
-      "channel": "【1111凯刻斯生贺/22:00】"
-    },
-    {
-      "id": "1437758927113818154",
-      "content": "【1111凯刻斯生贺/19:00】魏如萱《你还是你吗》\n你有想我吗？\n早就习惯自问自答（有吗有啊）\n——魏如萱《你还是你吗》\n\nUID:100000287",
-      "author": "calmdreab",
-      "reactions": 7,
-      "channel": "【1111凯刻斯生贺/19:00】"
-    },
-    {
-      "id": "1437827571495473203",
-      "content": "【1111凯刻斯生贺/23:00】许含光《一个适合看海的日子》\n\n在歌的尽头\n\n她说她快乐地想起我\n\n——许含光《一个适合看海的日子》\n\n（是谁在唱歌？）\n\nU",
-      "author": "calmdreab",
-      "reactions": 7,
-      "channel": "【1111凯刻斯生贺/23:00】"
-    },
-    {
-      "id": "1437728827504590929",
-      "content": "【1111凯刻斯生贺/17:00】NCT 127《波光 (Gold Dust)》\n감은 눈 뜨면 순간 너와 하늘이길\n\n睁开闭着的眼那瞬 希望是你和天空\n\n—",
-      "author": "calmdreab",
-      "reactions": 7,
-      "channel": "【1111凯刻斯生贺/17:00】"
-    },
-    {
-      "id": "1437638884182855720",
-      "content": "【1111凯刻斯生贺/11:00】祁紫檀《Dear Friend》\n你追逐的自己\n\n和现实具象总有一条鸿沟的差距\n\n——祁紫檀《Dear Friend》\nUID",
-      "author": "calmdreab",
-      "reactions": 7,
-      "channel": "【1111凯刻斯生贺/11:00】"
-    },
-    {
-      "id": "1437705872867590186",
-      "content": "https://www.bilibili.com/video/BV1okW9zdEmV/\nhttps://www.bilibili.com/video/BV15",
-      "author": "lurenjiao",
-      "reactions": 6,
-      "channel": "最近的一个攻略合集"
-    },
-    {
-      "id": "1437684127427067914",
-      "content": "【1111凯刻斯生贺/14:00】裘德《昨晚我梦见我学会了游泳》\n\n所以接受溺毙的危险\n\n自由只是微小的差别\n\n但我拥抱 这种幻觉\n\n——裘德《昨晚我梦见我学会",
-      "author": "calmdreab",
-      "reactions": 6,
-      "channel": "【1111凯刻斯生贺/14:00】"
-    },
-    {
-      "id": "1437943225729155282",
-      "content": "基於忘已有信息和克原典寫了oc本源索瓦爾格的故事1，有大量neta弗蘭克·朗的《通往永恆之門》《廷達羅斯的獵犬》。\n\n*其中弗蘭克·查默斯這個名字由《廷達羅斯的",
-      "author": "flim_of_life_burst",
-      "reactions": 5,
-      "channel": "節選自彌薩格大學弗蘭克·查默斯教授遺作，《▼▼▼▼之犬》"
-    },
-    {
-      "id": "1437744002223968367",
-      "content": "【1111凯刻斯生贺/18:00】King Gnu 《ユーモア》\n\"その心、裏腹に胸騒ぎ，\n\n那颗心  总是惴惴不安\n\n——King Gnu 《ユーモア》\n\nU",
-      "author": "calmdreab",
-      "reactions": 5,
-      "channel": "【1111凯刻斯生贺/18:00】"
-    },
-    {
-      "id": "1437668749736935444",
-      "content": "【1111凯刻斯生贺/13:00】可令怕《戟吻》\n戟吻一口沙 孑然半身鳞甲\n——可令怕《戟吻》\n\n https://y.music.163.com/m/song",
-      "author": "calmdreab",
-      "reactions": 5,
-      "channel": "【1111凯刻斯生贺/13:00】"
-    },
-    {
-      "id": "1437653222247632906",
-      "content": "【1111凯刻斯生贺/12:00】安艺恩《The Word》\n구름의 소매 잡고 마중을 나갈까\n要抓住云朵的衣袖去迎接吗\n——安艺恩《The Word》\nht",
-      "author": "calmdreab",
-      "reactions": 5,
-      "channel": "【1111凯刻斯生贺/12:00】"
-    },
-    {
-      "id": "1437737493045973023",
-      "content": "好像星辰篇的所有主线和活动都没有设计新的地图了，甚至都没有走格子环节了，这是星辰篇的设计特色还是说之后会考虑添加新的地图？个人还是挺喜欢地图本身的探索感的，希望",
-      "author": "2300011747",
-      "reactions": 4,
-      "channel": "✅「已回答」还能见到星辰篇的地图吗"
     }
   ]
 }

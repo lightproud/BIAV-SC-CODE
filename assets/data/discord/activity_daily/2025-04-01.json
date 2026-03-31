@@ -1,10 +1,14 @@
 {
   "date": "2025-04-01",
-  "messages": 54,
+  "messages": 65,
   "unique_authors": 9,
-  "reactions_total": 236,
-  "attachments": 29,
+  "reactions_total": 249,
+  "attachments": 33,
   "channel_activity": {
+    "Speedrun Team for Early Game": 1,
+    "How To Create a Team + Other Information": 3,
+    "Team for newer players (only standard, shop or free units and wheels)": 6,
+    "Полезные рекомендации начинающим игрокам, все о синергиях царств": 1,
     "游戏美术资源上的文字": 4,
     "忘卻前夜OST：深港幽靈之船": 12,
     "✅「已回答」7；40为啥诺缔拉死了还能抽到他的牌？": 1,
@@ -21,19 +25,20 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "4": 6,
+    "1": 2,
+    "2": 6,
+    "3": 5,
     "8": 17,
     "10": 3,
     "13": 2,
     "12": 15,
-    "2": 1,
-    "3": 3,
-    "4": 4,
     "6": 7,
     "14": 1,
     "5": 1
   },
   "message_types": {
-    "0": 15,
+    "0": 10,
     "19": 1
   },
   "top_reacted_messages": [
@@ -50,6 +55,13 @@
       "author": "morimensstaff01",
       "reactions": 16,
       "channel": "忘卻前夜OST：深港幽靈之船"
+    },
+    {
+      "id": "1356486735764258856",
+      "content": "Goal:\nAOE kill all mobs consistently turn 1.\n\nMinimum requirement:\n- Goliath (Aw",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "Speedrun Team for Early Game"
     },
     {
       "id": "1356618655382896811",
@@ -99,6 +111,20 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "🔸翻译器教程┊translator-tutorial"
+    },
+    {
+      "id": "1356454078774902845",
+      "content": "Can be used for d tide, story progression and dive.",
+      "author": ".galeroar",
+      "reactions": 2,
+      "channel": "Team for newer players (only standard, shop or free units and wheels)"
+    },
+    {
+      "id": "1356478158777483364",
+      "content": "В видео вы узнаете о том, как работают синергии в разных царствах (фракциях), а ",
+      "author": "closetom",
+      "reactions": 2,
+      "channel": "Полезные рекомендации начинающим игрокам, все о синергиях царств"
     },
     {
       "id": "1356542108189855965",

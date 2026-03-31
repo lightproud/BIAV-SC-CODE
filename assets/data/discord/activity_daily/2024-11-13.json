@@ -1,10 +1,12 @@
 {
   "date": "2024-11-13",
-  "messages": 58,
+  "messages": 63,
   "unique_authors": 10,
   "reactions_total": 76,
-  "attachments": 6,
+  "attachments": 7,
   "channel_activity": {
+    "Posse List": 1,
+    "Tawii Translation": 4,
     "⏳穿越窮極之門，世界的終極奧秘將對你敞開。": 44,
     "請願加強圖魯和深海新角": 6,
     "請願加強希洛": 2,
@@ -13,18 +15,20 @@
     "我們約定過的，拉蒙娜。": 4
   },
   "hourly_activity": {
+    "7": 1,
+    "15": 5,
+    "23": 1,
     "10": 40,
     "11": 4,
     "13": 3,
-    "15": 2,
     "18": 1,
     "5": 3,
     "12": 1,
     "16": 4
   },
   "message_types": {
-    "0": 37,
-    "19": 7
+    "0": 4,
+    "19": 1
   },
   "top_reacted_messages": [
     {

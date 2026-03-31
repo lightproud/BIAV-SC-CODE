@@ -1,10 +1,11 @@
 {
   "date": "2025-04-17",
-  "messages": 10,
+  "messages": 12,
   "unique_authors": 4,
-  "reactions_total": 1202,
-  "attachments": 5,
+  "reactions_total": 1225,
+  "attachments": 6,
   "channel_activity": {
+    "ALL HAIL SQUID KING TULU": 2,
     "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 2,
     "✅「已回答」钥令未成功触发": 4,
     "✅「已回答」如图所示,怨恨锁链生效不正常": 1,
@@ -12,13 +13,14 @@
     "🔸新生守则┊rules": 1
   },
   "hourly_activity": {
+    "14": 2,
     "2": 2,
     "3": 2,
     "16": 5,
     "11": 1
   },
   "message_types": {
-    "19": 2
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -27,6 +29,13 @@
       "author": "morimensstaff01",
       "reactions": 1199,
       "channel": "🔸新生守则┊rules"
+    },
+    {
+      "id": "1362431180405739701",
+      "content": "",
+      "author": "rohaluss",
+      "reactions": 23,
+      "channel": "ALL HAIL SQUID KING TULU"
     },
     {
       "id": "1362464621402918952",

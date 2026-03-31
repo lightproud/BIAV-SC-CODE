@@ -1,10 +1,14 @@
 {
   "date": "2026-02-14",
-  "messages": 938,
+  "messages": 1036,
   "unique_authors": 63,
-  "reactions_total": 308,
-  "attachments": 145,
+  "reactions_total": 418,
+  "attachments": 153,
   "channel_activity": {
+    "🎉忘却前夜新春会┊Morimens Spring Festival Gala": 95,
+    "求融災隊伍": 1,
+    "Can’t get into the game": 1,
+    "Game stuck on downloading/checking resources": 1,
     "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫": 9,
     "uvhash": 4,
     "Stop aurafarming!": 1,
@@ -41,19 +45,20 @@
     "🔸阵容构建": 26
   },
   "hourly_activity": {
-    "13": 43,
-    "14": 49,
-    "15": 24,
+    "12": 95,
+    "13": 99,
+    "14": 52,
+    "16": 25,
+    "17": 39,
+    "18": 9,
+    "15": 25,
     "10": 26,
     "1": 13,
-    "18": 8,
     "19": 15,
     "8": 73,
     "9": 32,
     "7": 110,
     "11": 83,
-    "16": 20,
-    "17": 25,
     "6": 51,
     "3": 92,
     "4": 95,
@@ -62,12 +67,12 @@
     "20": 3,
     "23": 2,
     "2": 47,
-    "12": 77,
     "22": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 5
+    "19": 9,
+    "0": 88,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -99,6 +104,27 @@
       "channel": "✅「Answered」Memory leaks"
     },
     {
+      "id": "1472223473999806506",
+      "content": "難忘今宵\nUnforgettable Tonight<:Ogier_Cheerup:1468259351889318049>",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
+    },
+    {
+      "id": "1472227582840672428",
+      "content": "ZVFT-FMZJ-DTLS\nEQUB-ATGJ-PJUV\nHKAJ-UQAG-BFTV\nDXCN-YDEA-JCKA\n\n沒有更多兌換碼了，大家快去兌換吧<:O",
+      "author": "shostakovich524",
+      "reactions": 10,
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
+    },
+    {
+      "id": "1472229436446212107",
+      "content": "🔹 兑换码有效期至<t:1772294340:f>\n🔹 The redemption code is valid until<t:1772294340:f>",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
+    },
+    {
       "id": "1472101859756867825",
       "content": "祝彌撒格情人節快樂！\n雖然圖和情人節沒有關聯但是請（端）\n\n其實是自己夢圖的一部分但是為了發上來還是拆開來畫了，祝各位哈姆林P情人節幸福😋🌷",
       "author": "ix_eternity",
@@ -111,6 +137,34 @@
       "author": "_buqi",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1472215140928589970",
+      "content": "我想知道小N给了多少出场费<:Nautila_think:1459077762684948500>\nI want to know how much appear",
+      "author": "morimensstaff01",
+      "reactions": 7,
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
+    },
+    {
+      "id": "1472221002699112460",
+      "content": "這是兌換碼嗎🤣 (不是",
+      "author": "shostakovich524",
+      "reactions": 7,
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
+    },
+    {
+      "id": "1472221094600638504",
+      "content": "开头\n米利:神王的一切我都会教你",
+      "author": "annabelle0868",
+      "reactions": 6,
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
+    },
+    {
+      "id": "1472228129299759249",
+      "content": "大家新年快樂<:happy:1356053849894420683>",
+      "author": "0.0._.0_0.",
+      "reactions": 6,
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
     },
     {
       "id": "1472248887271096401",
@@ -134,81 +188,32 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1472157612010377301",
-      "content": "I guess make sense turn off poison/counter cap in train to make teams that use i",
-      "author": "yeriko703",
+      "id": "1472216507067924550",
+      "content": "還有相聲節目（驚喜",
+      "author": "morimensstaff01",
       "reactions": 5,
-      "channel": "✅「已回答」关于癫狂列车的毒上限。About poison scaling in the train event."
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
     },
     {
-      "id": "1472219299723608090",
-      "content": "情人节了，发一下梦图～",
-      "author": "s64987866",
+      "id": "1472218270441541663",
+      "content": "校貓發666禮物把我直播幹卡了",
+      "author": "shostakovich524",
       "reactions": 5,
-      "channel": "发点自己约的萊克，含萊克梦男向自行避雷吧m(._.)m所有图片禁止拿取"
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
     },
     {
-      "id": "1472238875601539336",
-      "content": "I FINALLY REACHED AFFINITY 10 WITH HER YEAAH AFFINITY EVENT TMR!!!! <:cute1:1356",
-      "author": "mimiruku",
+      "id": "1472225022968987900",
+      "content": "不行了，校貓砸了差不多1200，銀行卡就爆了🌿",
+      "author": "shostakovich524",
       "reactions": 5,
-      "channel": ""
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
     },
     {
-      "id": "1472169494372942000",
-      "content": "怎麼又是樂園",
-      "author": "xingxiu_0209",
+      "id": "1472273409919418500",
+      "content": "【是新春会的熔朵呀-哔哩哔哩】 https://b23.tv/C9rrwhm\n\n【忘却前夜新春会单品disease-哔哩哔哩】 https://b23.tv/r",
+      "author": "shostakovich524",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472225123753791703",
-      "content": "",
-      "author": "s64987866",
-      "reactions": 4,
-      "channel": "Ryker's Comission (oc warning!)Unauthorized repost prohibited 🚫"
-    },
-    {
-      "id": "1472082740584120566",
-      "content": "我只是想解50牌而已  \n我破防了",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472089313272401922",
-      "content": "I have a 拉蒙娜 I have a 墨菲  uh 艾爾莎",
-      "author": "forg30215",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472095005282668707",
-      "content": "收工<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472096513525022864",
-      "content": "<:wish:1356084702468899117>",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472173799494647808",
-      "content": "",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472251014517100715",
-      "content": "<:blind:1356053033724674255>",
-      "author": "sweet_25367",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🎉忘却前夜新春会┊Morimens Spring Festival Gala"
     }
   ]
 }

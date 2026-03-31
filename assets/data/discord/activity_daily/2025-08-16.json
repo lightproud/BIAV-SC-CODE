@@ -1,10 +1,19 @@
 {
   "date": "2025-08-16",
-  "messages": 109,
+  "messages": 156,
   "unique_authors": 23,
-  "reactions_total": 1458,
-  "attachments": 11,
+  "reactions_total": 1460,
+  "attachments": 21,
   "channel_activity": {
+    "corpo acrylic figure (#v2.3 Fan Art)": 1,
+    "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\"": 2,
+    "📜V2.3.1 版本前瞻┊ Version Outlook": 9,
+    "Team help": 1,
+    "Which Team Investment?": 1,
+    "What and who should i pull for my team?": 3,
+    "What does the object Prototype Horizon do?": 20,
+    "Needing help on building Jenkin": 8,
+    "Hey, where can I find this flower thing?": 2,
     "V2.3.1.0 停服维护公告": 1,
     "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”": 63,
     "✅「已回答」普希洛有可能加強嗎？": 18,
@@ -19,26 +28,35 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "16": 4,
+    "5": 3,
+    "9": 4,
+    "18": 3,
+    "19": 4,
+    "20": 17,
+    "4": 1,
+    "21": 9,
+    "22": 1,
+    "0": 2,
+    "1": 3,
+    "3": 1,
+    "2": 2,
     "6": 2,
     "11": 41,
     "12": 4,
     "13": 9,
     "14": 17,
     "15": 7,
-    "19": 1,
-    "21": 3,
     "23": 6,
     "7": 1,
     "8": 8,
     "10": 4,
-    "18": 1,
-    "17": 3,
-    "0": 1,
-    "9": 1
+    "17": 3
   },
   "message_types": {
-    "19": 10,
-    "0": 54
+    "4": 1,
+    "0": 38,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -133,6 +151,20 @@
       "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     },
     {
+      "id": "1406363584354713700",
+      "content": "i do hope they think about it",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "📜V2.3.1 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1406374980102652035",
+      "content": "Hello! I'm a new player, i have been playing for four days. Before making this p",
+      "author": "hipermanuel",
+      "reactions": 1,
+      "channel": "What does the object Prototype Horizon do?"
+    },
+    {
       "id": "1406237690378195026",
       "content": "1. How do you plan to incorporate roguelike mechanics into your game's design an",
       "author": ".cnork",
@@ -164,20 +196,6 @@
       "id": "1406279256925016138",
       "content": "~~那殺戮尖塔方未來有希望和我們連動嗎~~",
       "author": "tofu0834",
-      "reactions": 1,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406279558260326472",
-      "content": "~~不是有鯨魚mod了~~",
-      "author": "heikwok",
-      "reactions": 1,
-      "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
-    },
-    {
-      "id": "1406391832652419186",
-      "content": "once roguelike is out can we get slay the spire collab",
-      "author": "lumato",
       "reactions": 1,
       "channel": "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”"
     }

@@ -1,10 +1,12 @@
 {
   "date": "2025-04-12",
-  "messages": 32,
+  "messages": 42,
   "unique_authors": 10,
-  "reactions_total": 594,
-  "attachments": 13,
+  "reactions_total": 611,
+  "attachments": 16,
   "channel_activity": {
+    "aomi’s morimens dump": 5,
+    "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請": 5,
     "✅校猫碎碎念#近况分享": 4,
     "✅「Answered」Audio stops when leaving game window": 2,
     "✅「Answered」Origin of Time Rewind/Reversion Bug?": 4,
@@ -16,18 +18,21 @@
     "1296113810549112874": 8
   },
   "hourly_activity": {
-    "10": 10,
+    "3": 1,
+    "9": 3,
+    "10": 12,
+    "7": 4,
+    "12": 1,
+    "13": 7,
     "8": 2,
-    "9": 1,
     "11": 1,
-    "13": 4,
     "14": 2,
-    "7": 3,
     "2": 1,
     "6": 8
   },
   "message_types": {
-    "0": 4
+    "0": 7,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -38,11 +43,25 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1360612803039465542",
+      "content": "o well, i'll just post this anyways, hopefully someone finds it funny <:love:135",
+      "author": "reya.li",
+      "reactions": 10,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
       "id": "1360501065346191553",
       "content": "不是，是我机关算尽一手策划绞尽脑汁强求来的",
       "author": "yingmai_",
       "reactions": 6,
       "channel": ""
+    },
+    {
+      "id": "1360612914008035612",
+      "content": "",
+      "author": "meowtwo57",
+      "reactions": 4,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
       "id": "1360552386308997292",
@@ -64,6 +83,27 @@
       "author": "navirecorbeau",
       "reactions": 2,
       "channel": "下周更新典藏館該上新星辰篇一二章壁紙了"
+    },
+    {
+      "id": "1360462854830161930",
+      "content": "💋 😍",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "aomi’s morimens dump"
+    },
+    {
+      "id": "1360546330417823887",
+      "content": "cant wait to see what comes of this",
+      "author": "al_leyway",
+      "reactions": 1,
+      "channel": "aomi’s morimens dump"
+    },
+    {
+      "id": "1360518860083691590",
+      "content": "",
+      "author": "yiwen_94018_52861",
+      "reactions": 1,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
       "id": "1360565714645291159",

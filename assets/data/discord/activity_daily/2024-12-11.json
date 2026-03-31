@@ -1,10 +1,11 @@
 {
   "date": "2024-12-11",
-  "messages": 60,
+  "messages": 62,
   "unique_authors": 18,
-  "reactions_total": 121,
-  "attachments": 14,
+  "reactions_total": 129,
+  "attachments": 15,
   "channel_activity": {
+    "[Official Announcement]V1.7.3.0 Maintenance Announcement": 2,
     "腳本及外掛處理規則": 16,
     "🌌【已開獎】超越維度的祝福": 3,
     "V1.7.3.0 停服維護公告": 20,
@@ -18,13 +19,13 @@
     "這太美麗了😭": 7
   },
   "hourly_activity": {
+    "14": 3,
     "2": 14,
     "3": 6,
     "8": 1,
     "11": 8,
     "12": 4,
     "13": 6,
-    "14": 1,
     "15": 1,
     "5": 1,
     "6": 6,
@@ -36,8 +37,7 @@
     "10": 2
   },
   "message_types": {
-    "0": 34,
-    "19": 5
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -74,6 +74,13 @@
       "author": "pray_unbeliever",
       "reactions": 9,
       "channel": "會活下來嗎"
+    },
+    {
+      "id": "1316410555006980127",
+      "content": "Maintenance from December 12th 08:00-11:00 (UTC+8)\nMaintenance Compensation: Sil",
+      "author": "gd_prawl",
+      "reactions": 8,
+      "channel": "[Official Announcement]V1.7.3.0 Maintenance Announcement"
     },
     {
       "id": "1316240365409407026",

@@ -1,10 +1,24 @@
 {
   "date": "2025-07-19",
-  "messages": 44,
-  "unique_authors": 10,
-  "reactions_total": 121,
-  "attachments": 25,
+  "messages": 117,
+  "unique_authors": 38,
+  "reactions_total": 633,
+  "attachments": 59,
   "channel_activity": {
+    "My Morimens Gallery": 1,
+    "Pollux": 1,
+    "Not even a single raw meat left": 1,
+    "Doresain Fanart": 1,
+    "*Translated & Credited* cn Fan Art Reposts": 1,
+    "🎨V2.3.0版本同人征集开启！Fan Collection Is Open!": 3,
+    "🎯V2.3.0版本攻略征集开启！V2.3.0 Fan Collection Is Open!": 3,
+    "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet": 49,
+    "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 1,
+    "V2.3 杜勒赛因情报：做人的智慧┊Doresain and His Locally-Sourced, Free Range Guests": 1,
+    "弥萨格艺术展2┊Mythag Art Exhibition 2": 4,
+    "📜V2.3 版本前瞻┊V2.3 Version Outlook": 1,
+    "求配隊": 5,
+    "幫我姊求個配隊": 1,
     "V2.3.0.0 停服维护公告": 1,
     "分享#收到了来自“黄印餐厅”的作品投喂 Received a submission from \"Hastur’s Restaurant\"": 1,
     "✅校猫碎碎念#卡斯托尔加强": 1,
@@ -20,31 +34,79 @@
     "1390375103707218041": 5
   },
   "hourly_activity": {
-    "5": 6,
-    "1": 1,
-    "11": 4,
-    "16": 2,
-    "2": 1,
-    "8": 3,
-    "9": 2,
-    "12": 9,
-    "14": 3,
-    "6": 2,
-    "7": 3,
-    "17": 6,
-    "4": 2
+    "14": 4,
+    "0": 1,
+    "18": 1,
+    "5": 23,
+    "3": 1,
+    "4": 10,
+    "6": 18,
+    "7": 7,
+    "8": 8,
+    "9": 4,
+    "10": 3,
+    "11": 12,
+    "12": 11,
+    "16": 3,
+    "15": 1,
+    "2": 2,
+    "1": 2,
+    "17": 6
   },
   "message_types": {
-    "0": 1,
-    "19": 2
+    "0": 65,
+    "4": 1,
+    "19": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1396012735615074335",
+      "content": "",
+      "author": "moyashi0672",
+      "reactions": 128,
+      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
+    },
+    {
+      "id": "1395984850841767937",
+      "content": "享用吧，狂欢吧。在这骨与血的盛宴中，获得真正的永恒！\n7月21日 王邸的夜宴 杜勒赛因登场\n\nCV：子安 武人\n——✦——✦—— ✦✦✦ ——✦——✦——\n\nI",
+      "author": "morimensstaff01",
+      "reactions": 103,
+      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
+    },
+    {
+      "id": "1395990503719440394",
+      "content": "精彩同人作品分享，感谢大家精彩绝伦的创作！\nIncredible fan art! Thank you for bringing our world to li",
+      "author": "morimensstaff01",
+      "reactions": 54,
+      "channel": "弥萨格艺术展2┊Mythag Art Exhibition 2"
+    },
+    {
+      "id": "1395997979797623019",
+      "content": "My great art I made live on video",
+      "author": "flares117",
+      "reactions": 32,
+      "channel": "Doresain Fanart"
+    },
     {
       "id": "1396013744277950524",
       "content": "Thanks to the devs team, i can finally make this meme. <:happy:13560538498944206",
       "author": "moyashi0672",
       "reactions": 31,
       "channel": "Lore Accurate Doresain"
+    },
+    {
+      "id": "1396198342345625600",
+      "content": "UVA and Grip left veggies for peepaw, how considerate of them <:evil:13560834430",
+      "author": "mount_fisherman",
+      "reactions": 30,
+      "channel": "Not even a single raw meat left"
+    },
+    {
+      "id": "1395986116573790322",
+      "content": "Dio VA in this economy??",
+      "author": "junakaru4ever",
+      "reactions": 29,
+      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
     },
     {
       "id": "1396008945297916017",
@@ -61,11 +123,53 @@
       "channel": "Practice calligraphy with Doresain's lines"
     },
     {
+      "id": "1395933020250177586",
+      "content": "A random doodle I did last night (I hope he got front sprite)",
+      "author": "capunggaje",
+      "reactions": 18,
+      "channel": "Pollux"
+    },
+    {
+      "id": "1396099227934916769",
+      "content": "",
+      "author": "moyashi0672",
+      "reactions": 17,
+      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
+    },
+    {
       "id": "1396037366715777074",
       "content": "（p1是威廉和他的友人，但是没有官方形象故自己搓了一个）",
       "author": "gualu_.",
       "reactions": 16,
       "channel": "男同女同啃嘴图"
+    },
+    {
+      "id": "1396133690517487636",
+      "content": "",
+      "author": "lowtownnivn",
+      "reactions": 14,
+      "channel": "My Morimens Gallery"
+    },
+    {
+      "id": "1396102808771756032",
+      "content": "",
+      "author": "moyashi0672",
+      "reactions": 14,
+      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
+    },
+    {
+      "id": "1396021040672542730",
+      "content": "ok forget what i said about only e3ing him. I AM PULLING FOR OE",
+      "author": "jormiejormungandr",
+      "reactions": 13,
+      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
+    },
+    {
+      "id": "1396060203765469224",
+      "content": "中间那撮毛（？）和冒火的眼睛似乎再次一会在左边一会在右边了\n可以透露一下是有意为之还是失误吗（",
+      "author": "flarinsidia",
+      "reactions": 12,
+      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
     },
     {
       "id": "1396002426636472423",
@@ -75,53 +179,25 @@
       "channel": "开祷！"
     },
     {
-      "id": "1396002554214613166",
-      "content": "",
-      "author": "zerathree",
-      "reactions": 5,
-      "channel": "开祷！"
-    },
-    {
-      "id": "1396114061602586654",
-      "content": "Kamen Rider Gnosis",
-      "author": "muliupan",
-      "reactions": 3,
-      "channel": "灵芝骑士变身表情包"
-    },
-    {
-      "id": "1396168933546917898",
-      "content": "Hi I tried to redeem the new code but I am getting a message saying it is not va",
-      "author": "monchi3524",
-      "reactions": 1,
-      "channel": "✅「Answered」Unable to claim the new code"
-    },
-    {
-      "id": "1396058840340107347",
-      "content": "平常打350的可以繼續打350\n獎勵依然不變不是嗎",
-      "author": "glacy_9918",
-      "reactions": 1,
-      "channel": "新版本融灾问题"
-    },
-    {
-      "id": "1396100139260710955",
-      "content": "校猫你是不是忘了曾经说过高难只是给高难玩家打来玩的，奖励很少<:24_clown:1374289675417686016>",
-      "author": "kepler0519",
-      "reactions": 1,
-      "channel": "新版本融灾问题"
-    },
-    {
-      "id": "1396066429404581899",
-      "content": "i'm surprise her birthday isn't on the 24th <:lotan_laugh:1374289754245304381>",
+      "id": "1396022118445219880",
+      "content": "i am going to spend a lot of money to show my heartfelt thanks <:dishes:13560833",
       "author": "jormiejormungandr",
-      "reactions": 1,
-      "channel": "24's Birthday"
+      "reactions": 10,
+      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
     },
     {
-      "id": "1395995828107219104",
-      "content": "好啦 我會😡",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": ""
+      "id": "1395999247505297428",
+      "content": "https://tenor.com/view/me-atrapaste-es-cine-its-cinema-cinema-esto-es-cine-gif-1",
+      "author": "willsalvador",
+      "reactions": 7,
+      "channel": "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet"
+    },
+    {
+      "id": "1395969624662736937",
+      "content": "link to OG post:⁠ https://m.weibo.cn/detail/5107107495939659\nCreator Profile: ht",
+      "author": "ev_6185",
+      "reactions": 5,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
     }
   ]
 }

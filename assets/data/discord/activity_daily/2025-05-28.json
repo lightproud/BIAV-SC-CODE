@@ -1,10 +1,16 @@
 {
   "date": "2025-05-28",
-  "messages": 90,
+  "messages": 103,
   "unique_authors": 12,
-  "reactions_total": 180,
-  "attachments": 39,
+  "reactions_total": 216,
+  "attachments": 41,
   "channel_activity": {
+    "aomi’s morimens dump": 2,
+    "Clementine": 1,
+    "Comprehensive Gelot Team Comp Video. Going over all meta comps. With and Without Thais": 1,
+    "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 1,
+    "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum": 2,
+    "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 6,
     "Morimens English Localization Notes #1": 10,
     "V2.2.2.2 在線維護公告": 6,
     "游戏美术资源上的文字": 2,
@@ -34,22 +40,26 @@
     "血链羊妈体系常用四种输出流程": 1
   },
   "hourly_activity": {
+    "2": 10,
+    "14": 7,
+    "17": 3,
+    "4": 1,
+    "7": 11,
+    "8": 13,
+    "16": 1,
     "10": 14,
     "11": 5,
     "12": 5,
-    "14": 6,
     "15": 5,
-    "8": 12,
     "21": 2,
     "19": 1,
     "3": 9,
     "6": 12,
-    "2": 6,
-    "7": 9,
     "9": 4
   },
   "message_types": {
-    "0": 19
+    "0": 11,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -65,6 +75,13 @@
       "author": "morimens_15",
       "reactions": 31,
       "channel": "Morimens English Localization Notes #1"
+    },
+    {
+      "id": "1377290495373476031",
+      "content": "This draw still doodle, I will update when it's finished.\n\n(Exam hit next week)",
+      "author": "lowtownnivn",
+      "reactions": 25,
+      "channel": "Clementine"
     },
     {
       "id": "1377245053726232596",
@@ -137,11 +154,32 @@
       "channel": "血链羊妈体系常用四种输出流程"
     },
     {
+      "id": "1377322362692964514",
+      "content": "",
+      "author": "akalanden",
+      "reactions": 4,
+      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
+    },
+    {
       "id": "1377305795926167586",
       "content": "100377735\n90级血链，命轮12+12，天赋11+10\n更新一下，密契100％了",
       "author": "287405tjy_28066",
       "reactions": 3,
       "channel": "弥萨格校友号码本4.0"
+    },
+    {
+      "id": "1377337514158854155",
+      "content": "https://www.youtube.com/watch?v=t-_sLI85zS4&ab_channel=Flares%27sidechannel",
+      "author": "flares117",
+      "reactions": 2,
+      "channel": "Comprehensive Gelot Team Comp Video. Going over all meta comps. With and Without Thais"
+    },
+    {
+      "id": "1377143834009403453",
+      "content": "It's kinda solid actually\nHe shares his color scheme, realm & swan theme with Li",
+      "author": "theriddleofcards",
+      "reactions": 2,
+      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
     },
     {
       "id": "1377203661297422357",
@@ -151,46 +189,18 @@
       "channel": "💭「Processing」Cutscene Error"
     },
     {
-      "id": "1377204239671099472",
-      "content": "让队伍里的人携带了也找不到，而极夜银心都能找到也能正常分解",
-      "author": "muliupan",
+      "id": "1377107773669769347",
+      "content": "Keep it coming",
+      "author": "cometovilla",
       "reactions": 1,
-      "channel": "✅「已回答」命轮分解界面没有1.5周年命轮泯土"
+      "channel": "aomi’s morimens dump"
     },
     {
-      "id": "1377396378292060212",
-      "content": "As per the title",
-      "author": "vxvendetta",
+      "id": "1377107860319768787",
+      "content": "<:bow:1356053037159944473> <:love:1356053099931897977>",
+      "author": "cometovilla",
       "reactions": 1,
-      "channel": "💭「Processing」Aurita defense text bug"
-    },
-    {
-      "id": "1377297572791845156",
-      "content": "現在打血希活動點界域刷新都沒反應了(超維，上面四個最近助戰",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "助戰求優化"
-    },
-    {
-      "id": "1377246589046886520",
-      "content": "oh I must have missed it then. thanks for clarifying.",
-      "author": ".sqrrl",
-      "reactions": 1,
-      "channel": "✅「Answered」bugged gift code"
-    },
-    {
-      "id": "1377131734750990399",
-      "content": "Its fixed, thanks 😄",
-      "author": "kaanny",
-      "reactions": 1,
-      "channel": "✅「Answered」Bug locks you into first pulls instruction"
-    },
-    {
-      "id": "1377225730810974268",
-      "content": "之前拿去和卡夫卡做了展示视频，那正好word文档弄成图片再发这边\n够把猫 100258814",
-      "author": "847590850",
-      "reactions": 1,
-      "channel": "血链羊妈体系配队相关及案例展示"
+      "channel": "aomi’s morimens dump"
     }
   ]
 }

@@ -1,10 +1,15 @@
 {
   "date": "2025-03-20",
-  "messages": 58,
+  "messages": 77,
   "unique_authors": 10,
   "reactions_total": 25,
-  "attachments": 7,
+  "attachments": 17,
   "channel_activity": {
+    "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 2,
+    "Need help with team comps I'm new": 5,
+    "Need help": 8,
+    "need help with team comps": 2,
+    "การรวบรวมคำติชมการแปลภาษาไทย": 2,
     "V2.1.1.4 在線維護公告": 1,
     "V2.1.1.5 在線維護公告": 2,
     "✅「已回答」小騎士維度影像": 3,
@@ -19,22 +24,25 @@
     "不会再有了": 5
   },
   "hourly_activity": {
+    "0": 2,
+    "14": 3,
+    "19": 2,
+    "8": 7,
+    "12": 10,
+    "7": 17,
+    "9": 2,
     "11": 9,
-    "7": 16,
     "18": 3,
     "10": 5,
-    "9": 1,
     "2": 3,
     "13": 2,
     "6": 4,
-    "8": 5,
     "3": 7,
-    "16": 1,
-    "12": 2
+    "16": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 2
+    "19": 4,
+    "0": 15
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,12 @@
 {
   "date": "2026-02-17",
-  "messages": 1436,
+  "messages": 1445,
   "unique_authors": 70,
   "reactions_total": 419,
   "attachments": 84,
   "channel_activity": {
+    "Flares' Comprehensive Beginner Guide to Morimens": 1,
+    "Are there any good characters?": 8,
     "Happy New year~! || Doresain x Sylvester": 3,
     "Yay 1st time drawing her": 5,
     "✅「Answered」About music volume reduction during actions": 1,
@@ -31,12 +33,13 @@
     "🔸阵容构建": 22
   },
   "hourly_activity": {
+    "15": 53,
+    "6": 97,
     "9": 154,
     "2": 97,
     "3": 12,
     "22": 5,
     "0": 15,
-    "15": 50,
     "16": 5,
     "20": 3,
     "11": 258,
@@ -52,11 +55,11 @@
     "14": 170,
     "5": 144,
     "19": 2,
-    "6": 91,
     "10": 22
   },
   "message_types": {
-    "0": 8
+    "19": 3,
+    "0": 6
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,23 @@
 {
   "date": "2025-11-01",
-  "messages": 35,
-  "unique_authors": 11,
-  "reactions_total": 269,
-  "attachments": 13,
+  "messages": 89,
+  "unique_authors": 21,
+  "reactions_total": 424,
+  "attachments": 41,
   "channel_activity": {
+    "pollux doodle": 1,
+    "\"For you, Pale Flame, I am not afraid to face the pyre once more.\"": 1,
+    "🥀💜": 1,
+    "leigh": 3,
+    "Keeper Does Not Dream of Bunny Boy Uvhash": 1,
+    "Video Guide to Rates, Banner Types & Characters for Beginners": 1,
+    "融灾求助": 4,
+    "什麼是\"狀態卡\"?": 15,
+    "Flares' Comprehensive Beginner Guide to Morimens": 2,
+    "What to focus on at the start?": 2,
+    "team building": 21,
+    "How to Play Castor x Pollux? And their team I can make?": 1,
+    "I need help with Pollux team": 1,
     "V2.3.4.3 在线维护公告": 2,
     "關於腳本/外掛賬號的處理說明": 1,
     "✅「已回答」广播剧缸中之梦进不去": 1,
@@ -22,21 +35,31 @@
     "🐱light’s-nest": 2
   },
   "hourly_activity": {
-    "9": 3,
-    "11": 2,
+    "18": 14,
+    "12": 7,
+    "8": 1,
+    "5": 1,
+    "6": 2,
+    "0": 1,
+    "10": 4,
+    "17": 5,
+    "20": 1,
+    "11": 16,
+    "15": 3,
+    "21": 1,
+    "9": 4,
+    "14": 12,
+    "3": 2,
+    "1": 1,
     "2": 7,
     "19": 1,
-    "14": 1,
-    "18": 9,
-    "17": 1,
     "23": 4,
-    "13": 2,
-    "15": 1,
-    "12": 4
+    "13": 2
   },
   "message_types": {
-    "0": 2,
-    "20": 1
+    "0": 48,
+    "4": 1,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -47,11 +70,46 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1433968825434374324",
+      "content": "A messy sketch I had fun with ♡\n\nUID: 100859047",
+      "author": "deification.",
+      "reactions": 39,
+      "channel": "Keeper Does Not Dream of Bunny Boy Uvhash"
+    },
+    {
+      "id": "1434046018508558387",
+      "content": "i love her sm, the reason i started the game <3",
+      "author": "juli_fromme",
+      "reactions": 34,
+      "channel": "leigh"
+    },
+    {
+      "id": "1434152465380675745",
+      "content": "A little self interpretation on one of Salvador's voice lines.\n\nUID: 101171815",
+      "author": "sofiaebby",
+      "reactions": 32,
+      "channel": "\"For you, Pale Flame, I am not afraid to face the pyre once more.\""
+    },
+    {
       "id": "1434158496072601803",
       "content": "【双生羽翼】\n\"双生子的命运注定一生纠缠，无法分割。\"\n\"我们终将重逢。\"\n\"从今往后，不会再有任何事能将我们分开，哪怕是死亡。\"\n    \n是约的鸟骨弟哥\nU",
       "author": "calmdreab",
       "reactions": 28,
       "channel": "树上滴鸟儿成双对"
+    },
+    {
+      "id": "1434103033075339354",
+      "content": "⸜(｡˃ ᵕ ˂ )⸝♡\nUID: 101138677",
+      "author": "lxlac_dei",
+      "reactions": 26,
+      "channel": "🥀💜"
+    },
+    {
+      "id": "1434247942956519494",
+      "content": "<:Cheerup:1400771555939844149>",
+      "author": "ellumi",
+      "reactions": 18,
+      "channel": "pollux doodle"
     },
     {
       "id": "1434252065982513345",
@@ -87,6 +145,41 @@
       "author": "human10062",
       "reactions": 3,
       "channel": "✅「已回答」触腕集结是否该得到加强"
+    },
+    {
+      "id": "1434068811639951441",
+      "content": "Smash",
+      "author": "idotly",
+      "reactions": 2,
+      "channel": "leigh"
+    },
+    {
+      "id": "1434121555041845408",
+      "content": "As her banner is coming for the 2nd anniversary, this simple guide will help you",
+      "author": "rrzex_35227",
+      "reactions": 1,
+      "channel": "Video Guide to Rates, Banner Types & Characters for Beginners"
+    },
+    {
+      "id": "1434147931753021581",
+      "content": "「石頭」一章王就有吧？",
+      "author": "akkom730",
+      "reactions": 1,
+      "channel": "什麼是\"狀態卡\"?"
+    },
+    {
+      "id": "1434156669088305276",
+      "content": "結果在試玩的地方是寫重新洗牌..lol",
+      "author": "rurumi4279",
+      "reactions": 1,
+      "channel": "什麼是\"狀態卡\"?"
+    },
+    {
+      "id": "1434241055762546840",
+      "content": "非常见鬼的描述, 弃掉症状和状态卡, “将其他手牌洗入抽牌堆” 圣心应该进抽牌堆了吧",
+      "author": "human10062",
+      "reactions": 1,
+      "channel": "什麼是\"狀態卡\"?"
     }
   ]
 }

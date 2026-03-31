@@ -1,10 +1,12 @@
 {
   "date": "2026-02-23",
-  "messages": 1425,
+  "messages": 1538,
   "unique_authors": 63,
-  "reactions_total": 503,
-  "attachments": 100,
+  "reactions_total": 505,
+  "attachments": 107,
   "channel_activity": {
+    "V2.4.2 版本前瞻 ┊ Version Outlook": 99,
+    "想健檢+請問這周抽那些池子": 14,
     "我要蓋一個毫無根據的神父原型樓在這裡（很短的樓": 23,
     "Happy Cat Day! || Doresain x Sylvester": 1,
     "‘24’ Crimson Kaede": 4,
@@ -41,11 +43,12 @@
     "🔸阵容构建": 75
   },
   "hourly_activity": {
-    "4": 61,
+    "9": 257,
+    "3": 53,
+    "4": 65,
+    "5": 106,
     "8": 78,
-    "9": 158,
     "10": 143,
-    "3": 52,
     "19": 8,
     "23": 87,
     "16": 20,
@@ -57,7 +60,6 @@
     "20": 8,
     "6": 12,
     "13": 52,
-    "5": 97,
     "11": 41,
     "12": 24,
     "2": 99,
@@ -66,9 +68,8 @@
     "22": 18
   },
   "message_types": {
-    "0": 34,
-    "19": 1,
-    "4": 1
+    "19": 8,
+    "0": 105
   },
   "top_reacted_messages": [
     {

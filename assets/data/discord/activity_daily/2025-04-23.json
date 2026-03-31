@@ -1,10 +1,12 @@
 {
   "date": "2025-04-23",
-  "messages": 33,
+  "messages": 37,
   "unique_authors": 7,
-  "reactions_total": 11,
-  "attachments": 6,
+  "reactions_total": 34,
+  "attachments": 8,
   "channel_activity": {
+    "Tawil and Merlin on Traphase": 2,
+    "Clem": 2,
     "V2.2.0.5 在線維護公告": 4,
     "忘卻前夜OST：奧吉爾EP·無愧榮光": 6,
     "忘卻前夜OST：深港幽靈之船": 1,
@@ -17,9 +19,11 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "18": 3,
+    "15": 2,
+    "16": 1,
     "12": 2,
     "14": 1,
-    "15": 1,
     "10": 6,
     "11": 2,
     "1": 1,
@@ -28,20 +32,33 @@
     "17": 2,
     "20": 2,
     "7": 5,
-    "9": 1,
-    "18": 1
+    "9": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 3,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1364664590939721840",
+      "content": "Art by : Emi kirara",
+      "author": "merlincute",
+      "reactions": 17,
+      "channel": "Tawil and Merlin on Traphase"
+    },
     {
       "id": "1364553167936819301",
       "content": "感謝各位守密人的支持！\n《忘卻前夜》OST：奧吉爾EP·無愧榮光，今日發佈～歡迎大家收聽、下載及分享～如果有基於OST的二次創作，也歡迎分享給我們！ （二創請遵",
       "author": "morimensstaff01",
       "reactions": 9,
       "channel": "忘卻前夜OST：奧吉爾EP·無愧榮光"
+    },
+    {
+      "id": "1364626040105861163",
+      "content": "Mfw I cant even play the chapter so i just slapped scraps\nUid: 100687199",
+      "author": "undeterredhomo",
+      "reactions": 6,
+      "channel": "Clem"
     },
     {
       "id": "1364551314130079764",

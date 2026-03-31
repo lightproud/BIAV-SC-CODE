@@ -1,10 +1,14 @@
 {
   "date": "2025-07-14",
-  "messages": 28,
+  "messages": 40,
   "unique_authors": 7,
-  "reactions_total": 11,
-  "attachments": 7,
+  "reactions_total": 67,
+  "attachments": 14,
   "channel_activity": {
+    "Leigh": 1,
+    "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 2,
+    "幫我姊求個配隊": 4,
+    "Speedrun Team for Early Game": 5,
     "V2.2.3.2 在线维护公告": 3,
     "✅「Answered」Update Exception: Failed to retrieve patch file": 1,
     "✅「已回答」如视频": 2,
@@ -15,20 +19,30 @@
     "利莫里亞沙丁魚罐頭": 4
   },
   "hourly_activity": {
+    "18": 1,
+    "3": 5,
+    "15": 4,
+    "7": 5,
     "4": 3,
     "6": 4,
     "19": 2,
-    "3": 3,
     "11": 12,
     "12": 2,
     "13": 1,
     "14": 1
   },
   "message_types": {
-    "0": 1,
+    "0": 10,
     "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1394385215043928125",
+      "content": "",
+      "author": "rumbyy_",
+      "reactions": 55,
+      "channel": "Leigh"
+    },
     {
       "id": "1394200133578522702",
       "content": "美味将在明天端上来！<:pray:1356053116260454534>",
@@ -49,6 +63,13 @@
       "author": "yolo_mode",
       "reactions": 2,
       "channel": "利莫里亞沙丁魚罐頭"
+    },
+    {
+      "id": "1394165121307250729",
+      "content": "嗨，我的uid是 100748055 🩷",
+      "author": "reya.li",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!"
     },
     {
       "id": "1394200605299576952",

@@ -1,10 +1,17 @@
 {
   "date": "2025-10-16",
-  "messages": 34,
-  "unique_authors": 13,
-  "reactions_total": 36,
-  "attachments": 12,
+  "messages": 143,
+  "unique_authors": 25,
+  "reactions_total": 108,
+  "attachments": 21,
   "channel_activity": {
+    "Pre Release - Pollux Kit Review.": 1,
+    "V2.3.4 全新唤醒体✦波吕克斯┊New Awakener✦Pollux": 4,
+    "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction": 87,
+    "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！": 4,
+    "🎧 V2.3.4 四星幻衣「墨菲·糖果劫案」广播剧：幽灵故事会┊Murphy's Skin \"Candy Snatcher\" Radio Drama - Ghost Story Time": 4,
+    "Which should I pull on?": 4,
+    "Should I use the prototype horizon or use them": 5,
     "✅「Answered」Question about fanart & merch": 4,
     "✅「已回答」改改珊的覺醒卡": 14,
     "Is it possible to get 3 or more SSRs/Awakers in a 5 pull?": 1,
@@ -17,21 +24,29 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "3": 7,
+    "20": 1,
+    "1": 2,
+    "8": 4,
+    "10": 1,
+    "14": 93,
+    "16": 3,
+    "18": 3,
+    "22": 1,
+    "3": 11,
+    "4": 2,
+    "7": 4,
+    "6": 1,
+    "15": 2,
     "17": 2,
     "11": 4,
     "13": 2,
-    "14": 9,
     "12": 1,
-    "18": 1,
     "23": 4,
-    "0": 2,
-    "8": 2
+    "0": 2
   },
   "message_types": {
-    "0": 20,
-    "19": 7,
-    "4": 5
+    "0": 82,
+    "19": 27
   },
   "top_reacted_messages": [
     {
@@ -42,11 +57,60 @@
       "channel": "Please please please please"
     },
     {
+      "id": "1428285981164830730",
+      "content": "“什么是糖果幽灵👻？”\n\n“靠过来点，你们可要竖起耳朵仔细听清楚，这个饥肠辘辘的亡灵的故事……”\n\n✦ 墨菲 CV：大内 茜\n\n——✦——✦—— ✦✦✦ ——✦",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": "🎧 V2.3.4 四星幻衣「墨菲·糖果劫案」广播剧：幽灵故事会┊Murphy's Skin \"Candy Snatcher\" Radio Drama - Ghost Story Time"
+    },
+    {
+      "id": "1428388260446601336",
+      "content": "就會被你們帶壞開始整天口口",
+      "author": "ernest_heart",
+      "reactions": 7,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428391562596974614",
+      "content": "鳥弟：好想進去哥哥的空間口牙",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428392382520365156",
+      "content": "誰來做個梗圖\n進超維空間的時候鳥哥蹲在旁邊尖叫\n鳥弟拿著他的3費說：here's johny",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1428434564711321693",
       "content": "醜得要命",
       "author": "ena04564",
       "reactions": 6,
       "channel": "✅「已回答」什麼時候把這東西調回來"
+    },
+    {
+      "id": "1428392526699692244",
+      "content": "",
+      "author": "welcome8344",
+      "reactions": 4,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428390215751565485",
+      "content": "圖魯🚮",
+      "author": "void_1546.",
+      "reactions": 3,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428391466165735425",
+      "content": "機制寫明了玩法\n本身吃抽牌拐，就讓你在超維回合用其他方法把他的牌抽上來打\n壓根沒希望你把他的牌塞進空間的想法",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
     },
     {
       "id": "1428225585758601236",
@@ -56,6 +120,55 @@
       "channel": "✅「Answered」Question about fanart & merch"
     },
     {
+      "id": "1428387779859185716",
+      "content": "之前還看到有人會在下面發中文的，不過現在可能放棄了",
+      "author": "navirecorbeau",
+      "reactions": 2,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428387900424323234",
+      "content": "他有說郭他會試試看的!",
+      "author": "melody60925",
+      "reactions": 2,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428388111792210000",
+      "content": "可以看得出來你很拘謹，Dc待幾個月後把校貓前塵往事了解完你就直接罵了🫰",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428388490634199100",
+      "content": "哈吉咪忘本也不是一天兩天的事了",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428388683874304032",
+      "content": "<:nekoinnocent:1200338279145414656>",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428390366221959179",
+      "content": "圖魯那個已經是~~霍金~~了",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1428216579602256014",
+      "content": "you need a copy of her to use her skin, at least that's how it worked so far. sh",
+      "author": "silencio3507",
+      "reactions": 2,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
+    },
+    {
       "id": "1428518661299376158",
       "content": "I AGREE WITH THIS GUY 👆",
       "author": "bongosjam",
@@ -63,39 +176,18 @@
       "channel": "Agrippa background with open eyes"
     },
     {
-      "id": "1428225681380216852",
-      "content": "thank you!",
-      "author": "theborkerr",
+      "id": "1428387457480785920",
+      "content": "建議直接罵就好了，不用太禮貌",
+      "author": "ena04564",
       "reactions": 1,
-      "channel": "✅「Answered」Question about fanart & merch"
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
     },
     {
-      "id": "1428427587587276820",
-      "content": "Thank you so much! <:Cheerup:1400771555939844149>",
-      "author": "bumcchi",
+      "id": "1428387485695742144",
+      "content": "建議直接罵就好了，不用太禮貌",
+      "author": "navirecorbeau",
       "reactions": 1,
-      "channel": "✅「Answered」Question about fanart & merch"
-    },
-    {
-      "id": "1428337891691597864",
-      "content": "經我的觀察，大部份玩家在玩珊這隻角色都會以她為盾擊隊的主C，而盾擊亦是珊的主流玩法，相信當初設計珊這隻角色是也是以盾擊主C為特色。但不合理的是珊的覺醒卡卻用於增",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "✅「已回答」改改珊的覺醒卡"
-    },
-    {
-      "id": "1428517958874959973",
-      "content": "The Agrippa art of the phonograph is amazing, especially her eyes, can we have t",
-      "author": "sanna7424",
-      "reactions": 1,
-      "channel": "Agrippa background with open eyes"
-    },
-    {
-      "id": "1428176663467786292",
-      "content": "已使用手機綁定\n依然無效\n申請了人工客服",
-      "author": "dongdong71",
-      "reactions": 1,
-      "channel": "✅「已回答」能否把模擬器的帳戶轉到steam版本上？"
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
   "date": "2026-03-30",
-  "messages": 5826,
+  "messages": 5827,
   "unique_authors": 180,
   "reactions_total": 481,
   "attachments": 303,
   "channel_activity": {
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 1,
     "William AI baby": 2,
     "Quick Liz": 2,
     "morimens sybau 💔": 2,
@@ -49,12 +50,12 @@
     "1482261084101541969": 1
   },
   "hourly_activity": {
+    "17": 820,
     "20": 711,
     "18": 1060,
     "23": 548,
     "22": 354,
     "21": 393,
-    "17": 819,
     "19": 544,
     "14": 260,
     "15": 200,
@@ -75,8 +76,7 @@
     "5": 13
   },
   "message_types": {
-    "0": 6,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

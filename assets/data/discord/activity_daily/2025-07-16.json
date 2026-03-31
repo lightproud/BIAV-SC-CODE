@@ -1,10 +1,16 @@
 {
   "date": "2025-07-16",
-  "messages": 36,
-  "unique_authors": 14,
-  "reactions_total": 17,
-  "attachments": 9,
+  "messages": 130,
+  "unique_authors": 26,
+  "reactions_total": 85,
+  "attachments": 17,
   "channel_activity": {
+    "Leigh": 2,
+    "*Translated & Credited* cn Fan Art Reposts": 7,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 3,
+    "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 63,
+    "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain": 6,
+    "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata": 13,
     "Официальный русский перевод.": 2,
     "先提前开一个杜勒加强方案筹划吧": 14,
     "Feedback/general review on latest morimens merchandise": 1,
@@ -16,25 +22,45 @@
     "栗子": 1
   },
   "hourly_activity": {
-    "3": 1,
+    "3": 4,
+    "20": 7,
+    "0": 3,
+    "11": 23,
+    "12": 27,
+    "13": 14,
+    "14": 5,
+    "16": 5,
+    "7": 12,
+    "17": 7,
+    "9": 7,
+    "10": 2,
+    "22": 1,
     "5": 2,
-    "13": 3,
-    "14": 3,
     "15": 4,
-    "16": 2,
-    "17": 3,
     "2": 4,
-    "7": 11,
     "6": 1,
     "1": 1,
     "8": 1
   },
   "message_types": {
-    "0": 24,
-    "19": 5,
-    "4": 6
+    "0": 82,
+    "19": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1394979286447947798",
+      "content": "管风琴弹奏腐朽，高脚杯中血液正黏稠；\n群尸从坟墓爬出，跳着诡异的踢踏舞步。\n\n墓园舞会，不过是对礼节的戏仿；\n尖利爪牙，袒露着最原始的欲望；\n在餐盘中下入致死量",
+      "author": "morimensstaff01",
+      "reactions": 27,
+      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+    },
+    {
+      "id": "1394981541053993022",
+      "content": "（思考）",
+      "author": "navirecorbeau",
+      "reactions": 13,
+      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+    },
     {
       "id": "1394953318522163350",
       "content": "迟来的剧情的摸",
@@ -43,11 +69,95 @@
       "channel": "栗子"
     },
     {
+      "id": "1394845758859120743",
+      "content": "https://www.youtube.com/watch?v=jrlBAmjd_kY",
+      "author": "reya.li",
+      "reactions": 7,
+      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
+    },
+    {
+      "id": "1394982808027402341",
+      "content": "Wearing  👠?\nChef is <:slay:1103459199180099614>",
+      "author": "meatyexplosions",
+      "reactions": 4,
+      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+    },
+    {
+      "id": "1395173053717151744",
+      "content": "",
+      "author": "mengdiehuan",
+      "reactions": 4,
+      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
+    },
+    {
+      "id": "1395142905387159713",
+      "content": "Been gatekeeping this one for a while but no more! Nothing is yummier than our t",
+      "author": "ev_6185",
+      "reactions": 3,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1395101472211075104",
+      "content": "For those that missed my discussion on Doresain in gen chat, they spiced up the ",
+      "author": "ev_6185",
+      "reactions": 3,
+      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+    },
+    {
       "id": "1394874850362789939",
       "content": "Thank you for your suggestion. Goya will submit it to the relevant responsible p",
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": "Suggestion: rework automatic locking of wheels before maxed"
+    },
+    {
+      "id": "1394876883757170831",
+      "content": "wow! <:love:1356053099931897977>",
+      "author": "jormiejormungandr",
+      "reactions": 1,
+      "channel": "Leigh"
+    },
+    {
+      "id": "1395146466900578365",
+      "content": "A very well rendered Aigis piece for balance \nlink to OG post:⁠ https://lbhsqq.l",
+      "author": "ev_6185",
+      "reactions": 1,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1395012362909782168",
+      "content": "殺死三隻可能不是同一個判定",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1395012913139552287",
+      "content": "神父专武护盾加成不限指令卡也不算",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1395027641672663151",
+      "content": "杜勒加强方案：杜勒生吃胚胎可以获得一层亡骸，每回合一次。",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1394939671112581232",
+      "content": "輔助超模是血肉傳統",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+    },
+    {
+      "id": "1395036356819816589",
+      "content": "就是單純的necro+via",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "V2.3 杜勒赛因情报：祭灵舞会┊V2.3 About Doresain: Carrion Cantata"
     },
     {
       "id": "1394949746094903296",

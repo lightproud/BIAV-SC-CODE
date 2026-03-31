@@ -1,10 +1,16 @@
 {
   "date": "2025-07-27",
-  "messages": 78,
+  "messages": 94,
   "unique_authors": 10,
-  "reactions_total": 61,
-  "attachments": 9,
+  "reactions_total": 80,
+  "attachments": 12,
   "channel_activity": {
+    "niko's silly meme arts": 1,
+    "Doresain Fanart": 2,
+    "Pretty boys..": 1,
+    "Doll and Alistair": 3,
+    "What to do early game with rolls? Pure core.": 4,
+    "New player looking for advice with team comps.": 5,
     "V2.3.0.0 停服维护公告": 1,
     "V2.3.0.2 在线维护公告": 14,
     "忘却前夜OST：戈利亚EP·踏上新的征途": 1,
@@ -19,30 +25,32 @@
     "不允許深海界域到現在還沒有一張濕衣服圖": 4
   },
   "hourly_activity": {
+    "11": 18,
+    "17": 5,
+    "16": 1,
+    "12": 2,
+    "18": 8,
+    "23": 5,
     "10": 3,
     "0": 6,
     "1": 2,
     "3": 2,
     "4": 4,
     "7": 4,
-    "12": 1,
-    "23": 4,
     "14": 1,
     "8": 5,
-    "18": 7,
     "19": 3,
     "20": 3,
     "2": 2,
     "5": 2,
     "6": 5,
     "9": 5,
-    "11": 11,
     "13": 1,
     "15": 7
   },
   "message_types": {
-    "0": 8,
-    "19": 8
+    "19": 4,
+    "0": 12
   },
   "top_reacted_messages": [
     {
@@ -51,6 +59,13 @@
       "author": "yolo_mode",
       "reactions": 18,
       "channel": "不允許深海界域到現在還沒有一張濕衣服圖"
+    },
+    {
+      "id": "1399071946527739934",
+      "content": "a quick sketch of esteemed professors\n(I swear I can do proper fan arts too т_т ",
+      "author": "_avienna",
+      "reactions": 17,
+      "channel": "Doll and Alistair"
     },
     {
       "id": "1399097548404293722",
@@ -100,6 +115,20 @@
       "author": "muliupan",
       "reactions": 2,
       "channel": "Slay the Spire Morimens Mod Text Provided Post"
+    },
+    {
+      "id": "1398997839614447717",
+      "content": "Oh, I love this man sm...\nGreen as tree✨️",
+      "author": "capunggaje",
+      "reactions": 1,
+      "channel": "niko's silly meme arts"
+    },
+    {
+      "id": "1399097266782076979",
+      "content": "https://discord.com/channels/1131791637933199470/1357183866183618741",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "What to do early game with rolls? Pure core."
     },
     {
       "id": "1398835880835289271",

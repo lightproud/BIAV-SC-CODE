@@ -1,10 +1,15 @@
 {
   "date": "2025-07-26",
-  "messages": 116,
+  "messages": 131,
   "unique_authors": 18,
-  "reactions_total": 65,
-  "attachments": 8,
+  "reactions_total": 114,
+  "attachments": 14,
   "channel_activity": {
+    "Getting some Doresain fan art": 1,
+    "niko's silly meme arts": 2,
+    "Pretty boys..": 1,
+    "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 10,
+    "「杜勒赛因·致勿忘我」简约幻衣，可在限时纪行获取！Doresain: Forget-Me-Not available in Limited-Time Archives!": 1,
     "V2.3.0.2 在线维护公告": 67,
     "忘却前夜OST：戈利亚EP·踏上新的征途": 1,
     "校猫碎碎念#Translation Plan Update 本地化计划变更": 1,
@@ -19,31 +24,55 @@
     "仿一点官方q版（失败版": 7
   },
   "hourly_activity": {
-    "14": 56,
+    "5": 7,
+    "12": 5,
+    "4": 5,
+    "8": 9,
+    "14": 59,
+    "20": 2,
     "15": 2,
     "16": 2,
     "19": 10,
     "23": 7,
-    "5": 5,
     "10": 5,
     "7": 6,
-    "4": 4,
     "1": 1,
-    "8": 7,
     "9": 5,
     "13": 6
   },
   "message_types": {
-    "0": 58,
-    "19": 11
+    "0": 13,
+    "4": 1,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1398534592650149969",
+      "content": "Drew my OC with the pretty boys of Morimens lol",
+      "author": "kuroshianaki",
+      "reactions": 24,
+      "channel": "Pretty boys.."
+    },
+    {
+      "id": "1398542023421595710",
+      "content": "I wonder if I could post it here too, it's a different section anyway. QwQ I wan",
+      "author": "dittoqwq",
+      "reactions": 15,
+      "channel": "Getting some Doresain fan art"
+    },
     {
       "id": "1398700656809869494",
       "content": "By the way, what is up with the Tulu Over-Exalt change?\n\nIt is completely ignora",
       "author": "zier.0",
       "reactions": 14,
       "channel": "V2.3.0.2 在线维护公告"
+    },
+    {
+      "id": "1398645751739060234",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 9,
+      "channel": "niko's silly meme arts"
     },
     {
       "id": "1398675193781817464",
@@ -107,6 +136,13 @@
       "author": "phantasidreamin",
       "reactions": 2,
       "channel": "V2.3.0.2 在线维护公告"
+    },
+    {
+      "id": "1398769393395302536",
+      "content": "I'm afraid thise ended a while ago, just hasn't been locked yet. <:dizzy2:135608",
+      "author": "smolive_oil",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
     },
     {
       "id": "1398810959866368041",

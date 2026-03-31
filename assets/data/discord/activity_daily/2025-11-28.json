@@ -1,10 +1,27 @@
 {
   "date": "2025-11-28",
-  "messages": 163,
-  "unique_authors": 22,
-  "reactions_total": 242,
-  "attachments": 18,
+  "messages": 227,
+  "unique_authors": 31,
+  "reactions_total": 409,
+  "attachments": 32,
   "channel_activity": {
+    "jenkins": 1,
+    "morimens pixel art": 3,
+    "\"Reverie\" | Tulu fanfic": 3,
+    "Castor WIP": 6,
+    "Detailed Damage Formula Graphic": 2,
+    "Traduction en Français - Collecte de Traduction en Français - Collecte de Retour": 5,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 2,
+    "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!": 2,
+    "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2": 8,
+    "📸壁纸分享-诞妄·墨菲┊Wallpaper Sharing-Murphy: Fauxborn": 2,
+    "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1": 2,
+    "問問選哪個好？想選凱蒂古拉組第二個隊但不知道0+0能不能用:dead:": 3,
+    "卡关求救": 9,
+    "Flares' Comprehensive Beginner Guide to Morimens": 1,
+    "Teambuilding Poison for Astral Reign": 3,
+    "upcoming banners to pull?": 11,
     "Leigh": 1,
     "✅「已回答」可以給自動戰鬥像開大招和鑰令的一樣，做一個可以在設置自己選擇要不要有的確認鍵嗎": 1,
     "✅「已回答」繁中PC端黑屏": 2,
@@ -40,30 +57,35 @@
     "1441326394817908736": 10
   },
   "hourly_activity": {
-    "18": 3,
-    "3": 23,
-    "10": 13,
+    "13": 6,
+    "1": 10,
+    "8": 10,
+    "16": 10,
+    "17": 11,
+    "4": 9,
+    "14": 3,
+    "18": 7,
+    "10": 15,
+    "3": 25,
+    "20": 2,
+    "9": 13,
+    "5": 48,
+    "7": 10,
+    "11": 9,
+    "0": 5,
+    "2": 2,
     "12": 1,
     "15": 4,
     "21": 2,
-    "11": 8,
-    "7": 5,
-    "17": 9,
     "22": 8,
     "23": 4,
-    "0": 3,
-    "16": 7,
     "19": 2,
-    "4": 3,
-    "9": 8,
-    "5": 39,
-    "6": 11,
-    "8": 8,
-    "2": 1,
-    "13": 1
+    "6": 11
   },
   "message_types": {
-    "0": 1
+    "0": 49,
+    "4": 2,
+    "19": 13
   },
   "top_reacted_messages": [
     {
@@ -74,11 +96,32 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1443860573740601515",
+      "content": "食堂专座上无人分享的小蛋糕，建校人雕像旁孤单萌芽的树苗，笛音空旷回荡的音乐教室。\n\n校园的每一个角落，好像都缺了点什么。\n\n——✦——✦—— ✦✦✦ ——✦——",
+      "author": "morimensstaff01",
+      "reactions": 66,
+      "channel": "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2"
+    },
+    {
+      "id": "1443819021870043156",
+      "content": "她喜欢蛋糕 🍰",
+      "author": "aigiseu_98967",
+      "reactions": 34,
+      "channel": "morimens pixel art"
+    },
+    {
       "id": "1443848396585828363",
       "content": "***SPOILERS FOR CHAPTER 8 AND 9, as well as minor spoilers for Arc 2 Chapter 1**",
       "author": "nikolazuli",
       "reactions": 26,
       "channel": ""
+    },
+    {
+      "id": "1443973863561105439",
+      "content": "Sharing the progress of  my Castor fanart c: (from ArtOfStarseeker on X)",
+      "author": "orpheusffxiv",
+      "reactions": 24,
+      "channel": "Castor WIP"
     },
     {
       "id": "1444029360398008501",
@@ -93,6 +136,41 @@
       "author": "nikolazuli",
       "reactions": 16,
       "channel": ""
+    },
+    {
+      "id": "1443889624807374969",
+      "content": "Should have one of G Ramona watching keeper in 4K with 🍿",
+      "author": "aurora3981",
+      "reactions": 11,
+      "channel": "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2"
+    },
+    {
+      "id": "1444062952708771982",
+      "content": "101165253",
+      "author": "chiedgaf",
+      "reactions": 7,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1444009344751636630",
+      "content": "Actually i posed this to ao3 a few days ago but only remembered to submit it for",
+      "author": "noname0963",
+      "reactions": 6,
+      "channel": "\"Reverie\" | Tulu fanfic"
+    },
+    {
+      "id": "1443816983849340990",
+      "content": "<:processing:1357185814567718963> 前几天我刚开始写一个主题几乎一样的同人文……预计在十二月二十日写完，打算当圣诞节贺文的……",
+      "author": "150_ripe",
+      "reactions": 6,
+      "channel": "特别短篇漫画 :「你我终将重逢」第一章┊Special Short Comics: \"We Will Meet Again\" Chapter 1"
+    },
+    {
+      "id": "1443832824552755241",
+      "content": "100772003",
+      "author": "mecohor_11034",
+      "reactions": 5,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
     },
     {
       "id": "1444098121100558470",
@@ -116,11 +194,25 @@
       "channel": "写一些惊恐的。"
     },
     {
+      "id": "1443951193515626516",
+      "content": "荡秋千那张有更清晰的露出另一只脚的尺寸吗🥺拜托了这对我真的很重要",
+      "author": "wushengchi7012",
+      "reactions": 3,
+      "channel": "📸壁纸分享-诞妄·墨菲┊Wallpaper Sharing-Murphy: Fauxborn"
+    },
+    {
       "id": "1443922670134759435",
       "content": "副歌part的骨架一半了(好少",
       "author": "undecember_news",
       "reactions": 3,
       "channel": "我也要開圖樓"
+    },
+    {
+      "id": "1443865191736545341",
+      "content": "多來點",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2"
     },
     {
       "id": "1444100420623401021",
@@ -135,76 +227,6 @@
       "author": "lumato",
       "reactions": 2,
       "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
-    },
-    {
-      "id": "1443842642655055872",
-      "content": "算了，自己寫一篇好了",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "写一些惊恐的。"
-    },
-    {
-      "id": "1443851231864029305",
-      "content": "||當皮醒來後，屁股還流⋯⋯看向了挺立的帳篷，鑽入被窩開始把⋯⋯⋯直到完全甦醒，再整個人壓著杜勒，坐⋯⋯⋯等到快要高潮時，杜勒醒來，瀕臨高潮和被發現的羞恥感⋯⋯",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "写一些惊恐的。"
-    },
-    {
-      "id": "1443883590411751529",
-      "content": "我寫（我跟我的軟肋拼了<:takenotes:1357186646294138890>",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "写一些惊恐的。"
-    },
-    {
-      "id": "1443884110924746863",
-      "content": "可能會晚點，我要先寫獵奇文🥲",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "写一些惊恐的。"
-    },
-    {
-      "id": "1443862100995866676",
-      "content": "星辰4-15的王關。另外開鑰令守密人的立繪偶然會時近時遠，通常去到下一關卡就會恢復正常。",
-      "author": "nazhigezihk",
-      "reactions": 1,
-      "channel": "💭「处理中」星辰篇第4章boss階段音頻中斷"
-    },
-    {
-      "id": "1443921027058106490",
-      "content": "<@1131790839291596841> 100683124\nSamsung s25",
-      "author": "nazhigezihk",
-      "reactions": 1,
-      "channel": "💭「处理中」星辰篇第4章boss階段音頻中斷"
-    },
-    {
-      "id": "1444102505343484004",
-      "content": "reminds me of the bug on the eyeballs back when we used gelot on it, and attacki",
-      "author": "lumato",
-      "reactions": 1,
-      "channel": "💭「Processing」Over 100 Fortress bug"
-    },
-    {
-      "id": "1443827745229377586",
-      "content": "100749157",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "💭「Processing」Enemy death resistance not working as intended"
-    },
-    {
-      "id": "1443870766167887883",
-      "content": "It has been reported by multiple people in general",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "💭「Processing」Enemy death resistance not working as intended"
-    },
-    {
-      "id": "1444102490613350451",
-      "content": "Thank you! And for everything you’ve done for everyone <:bow:1356053037159944473",
-      "author": "fishhazardthewizard",
-      "reactions": 1,
-      "channel": "✅「Answered」rose script icon not showing up"
     }
   ]
 }

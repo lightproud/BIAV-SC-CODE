@@ -1,10 +1,17 @@
 {
   "date": "2025-12-19",
-  "messages": 90,
+  "messages": 213,
   "unique_authors": 20,
-  "reactions_total": 124,
-  "attachments": 23,
+  "reactions_total": 156,
+  "attachments": 31,
   "channel_activity": {
+    "G Doll Fan Splash Art": 1,
+    "Ah, yes. The three genders.": 4,
+    "健檢": 93,
+    "燃尽了（）": 6,
+    "新手池子要抽哪個比較好開荒": 13,
+    "求隊": 4,
+    "By the Silver Key Advice": 2,
     "V2.4.0.12 在线维护公告": 10,
     "A bit too late for anniversary but this cake is still good :D": 1,
     "Who Ryker's Designer pls come talk ?": 28,
@@ -31,31 +38,32 @@
     "1451677796085661888": 1
   },
   "hourly_activity": {
+    "19": 6,
+    "11": 5,
+    "12": 93,
+    "18": 4,
+    "13": 10,
+    "20": 11,
+    "14": 4,
+    "15": 9,
+    "16": 9,
+    "4": 18,
     "9": 6,
-    "13": 7,
-    "15": 6,
-    "16": 8,
     "17": 2,
     "2": 5,
     "0": 12,
     "1": 2,
-    "4": 5,
     "5": 2,
     "6": 2,
     "8": 4,
     "7": 2,
-    "12": 11,
     "22": 4,
     "23": 2,
-    "11": 2,
-    "14": 3,
-    "18": 1,
-    "19": 2,
-    "21": 1,
-    "20": 1
+    "21": 1
   },
   "message_types": {
-    "0": 11
+    "0": 109,
+    "19": 14
   },
   "top_reacted_messages": [
     {
@@ -64,6 +72,13 @@
       "author": "zzio_",
       "reactions": 30,
       "channel": ""
+    },
+    {
+      "id": "1451534506191356037",
+      "content": "",
+      "author": "artsuwaifu",
+      "reactions": 29,
+      "channel": "Ah, yes. The three genders."
     },
     {
       "id": "1451505980608348220",
@@ -113,6 +128,13 @@
       "author": "nechromicon",
       "reactions": 4,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1451547507749290076",
+      "content": "that IS a cool hat",
+      "author": "thespookboo",
+      "reactions": 3,
+      "channel": "Ah, yes. The three genders."
     },
     {
       "id": "1451571294159245383",
@@ -183,20 +205,6 @@
       "author": "void_1546.",
       "reactions": 1,
       "channel": "圖魯睡覺"
-    },
-    {
-      "id": "1451547724364251217",
-      "content": "畫風好喜歡！！！",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "圖魯睡覺"
-    },
-    {
-      "id": "1451591998422122538",
-      "content": "写的好棒，是冬夜热可可的温度！<:Sendflowers:1400771545370067118>",
-      "author": "150_ripe",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

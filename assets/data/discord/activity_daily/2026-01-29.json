@@ -1,10 +1,11 @@
 {
   "date": "2026-01-29",
-  "messages": 300,
+  "messages": 310,
   "unique_authors": 28,
   "reactions_total": 300,
-  "attachments": 38,
+  "attachments": 41,
   "channel_activity": {
+    "Seeking covenant + wheel advice for Helot/Thais/Mouchette/Faint build": 10,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 23,
     "对各位守密人的致歉与近况说明 Apology and Update to All Keepers": 1,
     "[Art Dump Thread] WILLIAMPOSTING 2": 2,
@@ -39,11 +40,13 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
+    "5": 2,
+    "6": 11,
+    "7": 10,
     "0": 3,
     "2": 4,
     "3": 13,
     "4": 1,
-    "5": 1,
     "11": 10,
     "13": 16,
     "14": 7,
@@ -53,18 +56,16 @@
     "23": 3,
     "19": 11,
     "12": 18,
-    "7": 7,
     "8": 38,
     "16": 25,
     "22": 4,
-    "6": 5,
     "18": 4,
     "17": 4,
     "10": 9
   },
   "message_types": {
-    "19": 17,
-    "0": 21
+    "0": 8,
+    "19": 2
   },
   "top_reacted_messages": [
     {

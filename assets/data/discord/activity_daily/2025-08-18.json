@@ -1,10 +1,28 @@
 {
   "date": "2025-08-18",
-  "messages": 94,
-  "unique_authors": 21,
-  "reactions_total": 750,
-  "attachments": 31,
+  "messages": 187,
+  "unique_authors": 39,
+  "reactions_total": 841,
+  "attachments": 52,
   "channel_activity": {
+    "Tulu keychain!!!": 1,
+    "Tulu Being Sleepy": 3,
+    "Flares' Awaker Review : Kathigu - Ra.": 2,
+    "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\"": 1,
+    "📸壁纸分享: 凯蒂古拉┊Wallpaper Sharing: Kathigu-Ra": 4,
+    "Spam de códigos de recrutamento mythag(portuguese)": 19,
+    "New Player": 1,
+    "Please help with team building": 2,
+    "Team help": 6,
+    "Thais E3 Question": 2,
+    "is there a way to view all available relics?": 40,
+    "skill priority in an aequor team": 2,
+    "do traphase points rewards reset every season?": 1,
+    "need advice": 1,
+    "Tentacle dupe priority": 3,
+    "Traphase team comp help🙏🏻": 1,
+    "good tentacle team": 3,
+    "Best team? Help please 🙏🏻": 1,
     "V2.3.1.1 在线维护公告": 3,
     "V2.3.1.0 停服维护公告": 2,
     "忘却前夜 本地化日志第二期 Morimens Localization Notes #2": 9,
@@ -39,29 +57,34 @@
     "1350058287688712253": 1
   },
   "hourly_activity": {
+    "16": 6,
+    "1": 4,
+    "10": 14,
+    "18": 5,
+    "11": 6,
+    "2": 16,
+    "3": 12,
+    "4": 4,
+    "5": 3,
+    "7": 8,
+    "13": 8,
+    "14": 7,
+    "17": 1,
+    "20": 38,
+    "23": 5,
+    "19": 3,
+    "21": 2,
+    "12": 4,
+    "9": 5,
     "15": 6,
-    "1": 1,
-    "4": 2,
     "6": 26,
-    "11": 1,
-    "12": 3,
-    "14": 4,
-    "19": 2,
-    "9": 3,
-    "10": 9,
-    "2": 15,
-    "3": 4,
     "22": 1,
-    "18": 1,
-    "7": 6,
-    "16": 2,
-    "8": 3,
-    "13": 3,
-    "5": 2
+    "8": 3
   },
   "message_types": {
-    "0": 7,
-    "19": 7
+    "0": 85,
+    "19": 7,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -72,6 +95,13 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1407043507079610461",
+      "content": "I've been thinking about making a Tulu keychain for myself so I worked on it for",
+      "author": "rowlynt66",
+      "reactions": 71,
+      "channel": "Tulu keychain!!!"
+    },
+    {
       "id": "1407085166781792386",
       "content": "Kathigu-ra is a pretty nice unit and it can be very strong, but the difference f",
       "author": "vxvendetta",
@@ -79,11 +109,32 @@
       "channel": "✅「Answered」Potential changes for Kathi"
     },
     {
+      "id": "1406806080654151720",
+      "content": "I wasn't kidding when I said I rushed my submission so I'll finish it one of the",
+      "author": "ev_6185",
+      "reactions": 6,
+      "channel": "Tulu Being Sleepy"
+    },
+    {
       "id": "1407028141045583944",
       "content": "I am on story chapter 4, and after the update rolled out, any text that has more",
       "author": "yunayukivrc",
       "reactions": 6,
       "channel": "✅「Answered」Text auto-scrolling down on PC version after update"
+    },
+    {
+      "id": "1406941330390913086",
+      "content": "https://youtu.be/bW5XXMt37DE",
+      "author": "flares117",
+      "reactions": 4,
+      "channel": "Flares' Awaker Review : Kathigu - Ra."
+    },
+    {
+      "id": "1406943508614352976",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "📸壁纸分享: 凯蒂古拉┊Wallpaper Sharing: Kathigu-Ra"
     },
     {
       "id": "1406842817770291200",
@@ -142,67 +193,39 @@
       "channel": "✅「已回答」典藏馆cg"
     },
     {
-      "id": "1406934394874105947",
-      "content": "I'm sorry if this is the wrong channel or inappropriate to suggest but I didn't ",
-      "author": "snowvleopard",
+      "id": "1406945166039711784",
+      "content": "goya it's the wrong name",
+      "author": "melwyn7591",
       "reactions": 1,
-      "channel": "✅「Answered」Instagram + more OSTs on Spotify"
+      "channel": "📸壁纸分享: 凯蒂古拉┊Wallpaper Sharing: Kathigu-Ra"
     },
     {
-      "id": "1406945415340888155",
-      "content": "Thank you for your suggestion. Currently, there is no manpower available to buil",
-      "author": "morimensstaff01",
+      "id": "1406951682948075570",
+      "content": "好酷",
+      "author": "danwangmofei",
       "reactions": 1,
-      "channel": "✅「Answered」Instagram + more OSTs on Spotify"
+      "channel": "📸壁纸分享: 凯蒂古拉┊Wallpaper Sharing: Kathigu-Ra"
     },
     {
-      "id": "1406954965423095909",
-      "content": "Thank you🥹 , your concern and affirmation have warmed our hearts<:love:135605309",
-      "author": "morimensstaff01",
+      "id": "1407094729501446185",
+      "content": "Theres a silver relic that grants u shield per tentacle, extra in shield stance",
+      "author": "swaggymutton",
       "reactions": 1,
-      "channel": "✅「Answered」Instagram + more OSTs on Spotify"
+      "channel": "is there a way to view all available relics?"
     },
     {
-      "id": "1406909156186656841",
-      "content": "感谢反馈，已经修复了，会尽快放出🩷",
-      "author": "morimensstaff01",
+      "id": "1407105304960958535",
+      "content": "done it! didn't need to change posse",
+      "author": "lavache.",
       "reactions": 1,
-      "channel": "✅「已回答」新"
+      "channel": "is there a way to view all available relics?"
     },
     {
-      "id": "1406913792775946240",
-      "content": "Stat bonus & Keyflare bonus on rouse are highlighted but do not show next level'",
-      "author": "__goz__",
+      "id": "1406991755726819389",
+      "content": "yup confirmed the rewards don't reset, phew no pressure",
+      "author": "lavache.",
       "reactions": 1,
-      "channel": "✅「Answered」Kathigu-Ra - Soulforge Aptitude : broken preview"
-    },
-    {
-      "id": "1406949933621186560",
-      "content": "🙏 🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Kathigu-Ra - Soulforge Aptitude : broken preview"
-    },
-    {
-      "id": "1406989333117927485",
-      "content": "https://discord.com/channels/1131791637933199470/1406905720368140381",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "✅「Answered」NEW bug"
-    },
-    {
-      "id": "1407000927096930396",
-      "content": "命輪介紹與卡面說明不符。",
-      "author": "ko_anngetsu",
-      "reactions": 1,
-      "channel": "✅「已回答」文案錯誤"
-    },
-    {
-      "id": "1406906562605350974",
-      "content": "🙏 🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Tawil, Inconsistent 1 Arithemetica discount application on Omniscient Verity (Skill 1)"
+      "channel": "do traphase points rewards reset every season?"
     }
   ]
 }

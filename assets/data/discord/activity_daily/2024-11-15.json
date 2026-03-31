@@ -1,10 +1,11 @@
 {
   "date": "2024-11-15",
-  "messages": 131,
+  "messages": 136,
   "unique_authors": 25,
-  "reactions_total": 95,
-  "attachments": 13,
+  "reactions_total": 102,
+  "attachments": 15,
   "channel_activity": {
+    "Overexalt list": 5,
     "V1.7.1.0 停服維護公告": 17,
     "⏳穿越窮極之門，世界的終極奧秘將對你敞開。": 2,
     "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！": 22,
@@ -24,7 +25,7 @@
     "喬治色圖（未滿18慎入，有碼）": 2
   },
   "hourly_activity": {
-    "10": 10,
+    "10": 15,
     "12": 12,
     "13": 6,
     "7": 18,
@@ -45,9 +46,7 @@
     "16": 4
   },
   "message_types": {
-    "0": 41,
-    "6": 4,
-    "19": 11
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -86,6 +85,13 @@
       "channel": "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！"
     },
     {
+      "id": "1306922490253279232",
+      "content": "Overexalt effects for all awakers (except Tawil). \nWill update Tawil overexalt l",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "Overexalt list"
+    },
+    {
       "id": "1306888730010845254",
       "content": "你们还有新唤醒体的立绘备货吗？ 再不济刀几个npc也是勉强能用",
       "author": "moyan0454",
@@ -119,6 +125,13 @@
       "author": "ice_storys",
       "reactions": 4,
       "channel": "羅傑斯畫像第二彈"
+    },
+    {
+      "id": "1306926528008814633",
+      "content": "i love how the standard's realm is on the right and the limited's realm is on th",
+      "author": "maximus__111",
+      "reactions": 1,
+      "channel": "Overexalt list"
     },
     {
       "id": "1306931167949226035",

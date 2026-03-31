@@ -1,10 +1,20 @@
 {
   "date": "2025-12-11",
-  "messages": 84,
+  "messages": 135,
   "unique_authors": 18,
-  "reactions_total": 76,
-  "attachments": 23,
+  "reactions_total": 276,
+  "attachments": 36,
   "channel_activity": {
+    "Ramona!": 4,
+    "G Doll Fan Splash Art": 1,
+    "Morimens Awakeners Database": 1,
+    "中奖名单公布┊Lottery Winners Announced!": 8,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 2,
+    "V2.4.0.11 一星幻衣「泰旖丝·孽宴狂欲」，限时免费获取！Claim the New Thais Skin: \"Sinful Decadence\" for Free!": 2,
+    "V2.4.0.11 版本前瞻 ┊ Version Outlook": 3,
+    "下次轮转皮克曼，我有需要抽专吗？还是补他的启灵？": 5,
+    "抽卡咨詢": 23,
+    "新手玩兩個禮拜 目前在忘卻第六章": 2,
     "冲刺一个月 我要肝全角色满同调": 2,
     "Mini-rimens": 2,
     "✅「Answered」Battlepass Timer bug": 1,
@@ -33,34 +43,68 @@
     "1441326394817908736": 1
   },
   "hourly_activity": {
+    "20": 4,
+    "21": 3,
+    "0": 2,
+    "5": 7,
+    "10": 14,
+    "7": 25,
+    "9": 12,
+    "8": 10,
+    "6": 2,
+    "18": 7,
+    "1": 3,
     "16": 3,
-    "9": 11,
     "3": 7,
     "13": 8,
-    "18": 4,
-    "8": 5,
     "11": 9,
     "12": 8,
     "15": 1,
-    "10": 11,
-    "7": 4,
     "14": 3,
     "17": 1,
     "2": 5,
-    "6": 1,
-    "22": 1,
-    "1": 2
+    "22": 1
   },
   "message_types": {
-    "0": 4
+    "0": 42,
+    "19": 7,
+    "6": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1448784495435059404",
+      "content": "for fun",
+      "author": "someone0956",
+      "reactions": 77,
+      "channel": "G Doll Fan Splash Art"
+    },
+    {
+      "id": "1448774434319110204",
+      "content": "Happy birthday to the best girl who has stuck through so much bs for us <:SCpoli",
+      "author": "gumseoi",
+      "reactions": 47,
+      "channel": "Ramona!"
+    },
+    {
+      "id": "1448774548542459915",
+      "content": "",
+      "author": "gumseoi",
+      "reactions": 36,
+      "channel": "Ramona!"
+    },
     {
       "id": "1448600412994142399",
       "content": "Caecus",
       "author": "calcduc",
       "reactions": 19,
       "channel": "Mini-rimens"
+    },
+    {
+      "id": "1448467800703238274",
+      "content": "Thought I would create a site that would allow you to filter characters better(*",
+      "author": "sg__",
+      "reactions": 14,
+      "channel": "Morimens Awakeners Database"
     },
     {
       "id": "1448599661525864500",
@@ -84,6 +128,20 @@
       "channel": "🔸欢乐梗图"
     },
     {
+      "id": "1448783841048395959",
+      "content": "Ramona my beloved you are adorable and if anything happened to you I'd kill ever",
+      "author": "hallowednebulae",
+      "reactions": 8,
+      "channel": "Ramona!"
+    },
+    {
+      "id": "1448582425910317056",
+      "content": "谷歌文档已更新/Google Docs has been updated",
+      "author": "morimensstaff01",
+      "reactions": 8,
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
+    },
+    {
       "id": "1448658655724699792",
       "content": "unc why would you report this 💔",
       "author": "avalon_roland",
@@ -98,11 +156,39 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1448586642565758987",
+      "content": "Русская версия постера🫶 \n—— сделана российской организацией 【Morimens Ru Info Ch",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
+    },
+    {
       "id": "1448808973619826688",
       "content": "祝拉蒙娜生日快乐！\n\n奉上小词一首，这既是以拉蒙娜视角写的《踏莎行》，也是不久后的圣诞节贺文的先导预告，大体上是第一篇小故事的总结。这次的同人文将在12月20日",
       "author": "150_ripe",
       "reactions": 3,
       "channel": "踏莎行（拉蒙娜生日贺词）"
+    },
+    {
+      "id": "1448783722743726333",
+      "content": "yeah that art is a mood",
+      "author": "hallowednebulae",
+      "reactions": 2,
+      "channel": "Ramona!"
+    },
+    {
+      "id": "1448586831674347662",
+      "content": "Русская версия постера <:bow:1356053037159944473> \n—— сделана российской организ",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "V2.4.0.11 一星幻衣「泰旖丝·孽宴狂欲」，限时免费获取！Claim the New Thais Skin: \"Sinful Decadence\" for Free!"
+    },
+    {
+      "id": "1448584120358801408",
+      "content": "~~當時小皮剛出來就是我第一個拿去當C用了~~\nhttps://youtu.be/9G4CHrAp5uU?si=kiEUytA-qiRYNDBC",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "抽卡咨詢"
     },
     {
       "id": "1448628993040584735",
@@ -119,32 +205,11 @@
       "channel": ""
     },
     {
-      "id": "1448505122593443900",
-      "content": "Thank you for your suggestion<:Cheerup:1400771555939844149>",
-      "author": "morimensstaff01",
+      "id": "1448581891346268302",
+      "content": "小皮自己可以當主C嗎",
+      "author": "glacy_9918",
       "reactions": 1,
-      "channel": "✅「Resolved」Name Changes for the bot Titles"
-    },
-    {
-      "id": "1448595936002707528",
-      "content": "畫完了",
-      "author": "tanchen0811",
-      "reactions": 1,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1448596000238473227",
-      "content": "然後醫生",
-      "author": "tanchen0811",
-      "reactions": 1,
-      "channel": "我也丟一下之前畫的 圖樓"
-    },
-    {
-      "id": "1448672152953032836",
-      "content": "前陣子推特很紅的那個\n畫24\n草稿",
-      "author": "tanchen0811",
-      "reactions": 1,
-      "channel": "我也丟一下之前畫的 圖樓"
+      "channel": "抽卡咨詢"
     }
   ]
 }

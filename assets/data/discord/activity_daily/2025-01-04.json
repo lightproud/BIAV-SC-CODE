@@ -1,10 +1,11 @@
 {
   "date": "2025-01-04",
-  "messages": 339,
+  "messages": 341,
   "unique_authors": 41,
   "reactions_total": 408,
   "attachments": 13,
   "channel_activity": {
+    "[Official Giveaway] Blessing Beyond Dimensions": 2,
     "腳本及外掛處理規則": 1,
     "✅前瞻：V2.1 关卡篇章": 29,
     "✅前瞻：V2.0 玩法奖励追加": 2,
@@ -25,6 +26,7 @@
     "帮我想想画什么": 14
   },
   "hourly_activity": {
+    "13": 4,
     "9": 20,
     "2": 13,
     "3": 11,
@@ -41,7 +43,6 @@
     "6": 9,
     "10": 21,
     "11": 8,
-    "13": 2,
     "14": 3,
     "19": 1,
     "20": 5,
@@ -49,9 +50,7 @@
     "18": 162
   },
   "message_types": {
-    "19": 48,
-    "0": 95,
-    "6": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {

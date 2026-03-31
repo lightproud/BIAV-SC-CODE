@@ -1,10 +1,21 @@
 {
   "date": "2025-09-23",
-  "messages": 144,
+  "messages": 170,
   "unique_authors": 18,
-  "reactions_total": 144,
-  "attachments": 14,
+  "reactions_total": 284,
+  "attachments": 26,
   "channel_activity": {
+    "pickman and avery": 5,
+    "Hi! There is my first contribution for the Morimens Fan Art Contest.": 6,
+    "#V2.3 同人征集# UID100198134": 2,
+    "The rat you found inside sewage": 3,
+    "Pickmin": 1,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 1,
+    "Pickman Review": 1,
+    "การรวบรวมคำติชมการแปลภาษาไทย": 1,
+    "Suggestions for Team Comps": 2,
+    "Pls help explain how to play my team in depth": 1,
+    "WoD choice": 3,
     "Call for Community Volunteer Translators: Applications Open!": 1,
     "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 1,
     "✅「Answered」Is it possible to retrieve a lost guest account?": 7,
@@ -24,14 +35,21 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "17": 37,
-    "2": 2,
-    "3": 17,
-    "16": 1,
-    "9": 1,
+    "0": 2,
+    "3": 18,
+    "13": 3,
+    "15": 7,
+    "16": 3,
+    "11": 4,
+    "10": 3,
+    "17": 38,
+    "23": 2,
+    "12": 2,
+    "1": 1,
+    "2": 3,
+    "9": 2,
     "5": 3,
     "7": 4,
-    "11": 2,
     "4": 7,
     "8": 3,
     "18": 31,
@@ -39,20 +57,40 @@
     "20": 4,
     "21": 15,
     "22": 4,
-    "12": 1,
-    "14": 2,
-    "23": 1
+    "14": 2
   },
   "message_types": {
-    "0": 1
+    "0": 25,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1420072658090856531",
+      "content": "Hope u like it!\nPickman\nUID: 101137749",
+      "author": "reglisse8040",
+      "reactions": 63,
+      "channel": "Hi! There is my first contribution for the Morimens Fan Art Contest."
+    },
+    {
+      "id": "1420005000859353272",
+      "content": "Clementine",
+      "author": "lmfurrydragon",
+      "reactions": 37,
+      "channel": "#V2.3 同人征集# UID100198134"
+    },
     {
       "id": "1420030717747794055",
       "content": "画都画了就在这边发一下...第一次用discord第一次投征集不知道tag什么的对不对\nuid：100652322",
       "author": "chapelete5234",
       "reactions": 32,
       "channel": "小皮小皮"
+    },
+    {
+      "id": "1419987110659751936",
+      "content": "UID: 101074681\n\nCoincidentally I was thinking on making morimen fanart, And then",
+      "author": "kichiro4244",
+      "reactions": 29,
+      "channel": "The rat you found inside sewage"
     },
     {
       "id": "1420101292088360961",
@@ -88,6 +126,13 @@
       "author": "heikwok",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1420043830526480518",
+      "content": "Hello everyone,\n\nI have released a video about reviewing pickman and his kit: ht",
+      "author": "wolfierce",
+      "reactions": 4,
+      "channel": "Pickman Review"
     },
     {
       "id": "1420102643967332362",
@@ -146,46 +191,18 @@
       "channel": ""
     },
     {
-      "id": "1419878556896465016",
-      "content": "Thank you very much. We will take a look now🌹",
-      "author": "morimensstaff01",
+      "id": "1420073134945468619",
+      "content": "<:wow:1356053147029864518> <:wow:1356053147029864518> <:wow:1356053147029864518>",
+      "author": "sanna7424",
       "reactions": 1,
-      "channel": "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive"
+      "channel": "Hi! There is my first contribution for the Morimens Fan Art Contest."
     },
     {
-      "id": "1419892001616429078",
-      "content": "Thank you very much",
-      "author": "eeeeeeeeseks",
+      "id": "1420075319158767669",
+      "content": "<:processing:1357185814567718963> <:processing:1357185814567718963> Oh my gosh, ",
+      "author": "kichiro4244",
       "reactions": 1,
-      "channel": "✅「Answered」Is it possible to retrieve a lost guest account?"
-    },
-    {
-      "id": "1419973708440801350",
-      "content": "死抗噁心+1，為了這個重打很多次浪費時間還崩心態真的傻眼",
-      "author": "xu6_",
-      "reactions": 1,
-      "channel": "✅「已回答」融灾能不能别调这么难"
-    },
-    {
-      "id": "1419921020889862174",
-      "content": "I get the VA situation is rough, but <:dead:1356082627509092372> \n\nWe will reall",
-      "author": "zekiei",
-      "reactions": 1,
-      "channel": "✅「Answered」About Realm Inbalance, any plans to even out the number of limited units in each realms?"
-    },
-    {
-      "id": "1419890834530373695",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "✅「Answered」Clementine Keyflare Exalt"
-    },
-    {
-      "id": "1419910249196028026",
-      "content": "We will adjust the panel description of skill growth effects to align with the a",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Clementine Keyflare Exalt"
+      "channel": "Hi! There is my first contribution for the Morimens Fan Art Contest."
     }
   ]
 }

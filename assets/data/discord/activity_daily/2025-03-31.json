@@ -1,10 +1,12 @@
 {
   "date": "2025-03-31",
-  "messages": 39,
+  "messages": 50,
   "unique_authors": 7,
-  "reactions_total": 75,
-  "attachments": 16,
+  "reactions_total": 89,
+  "attachments": 21,
   "channel_activity": {
+    "【新人求助】": 4,
+    "How To Create a Team + Other Information": 7,
     "✅「Answered」Main Illust go transparent": 2,
     "✅「Answered」Add crafting for Shattered Remnant of Dreams": 2,
     "✅「Answered」Korean Unicode Error": 2,
@@ -24,6 +26,10 @@
     "1356210800091467928": 2
   },
   "hourly_activity": {
+    "10": 4,
+    "11": 3,
+    "22": 2,
+    "23": 5,
     "14": 6,
     "7": 18,
     "5": 4,
@@ -32,12 +38,10 @@
     "13": 1,
     "20": 1,
     "8": 1,
-    "10": 3,
     "19": 1
   },
   "message_types": {
-    "0": 12,
-    "4": 5,
+    "0": 10,
     "19": 1
   },
   "top_reacted_messages": [
@@ -63,6 +67,13 @@
       "channel": "奧瑞塔二創"
     },
     {
+      "id": "1356212306400510163",
+      "content": "~~如标题所示，我是个新人，听说星辰篇毒反队被砍得连怪物的屁股都打不动\n我想问问什么时候爆几个回溯给我重新组织队伍~~🫶<:idk:13560841382804",
+      "author": "akalanden",
+      "reactions": 8,
+      "channel": "【新人求助】"
+    },
+    {
       "id": "1356240269359579267",
       "content": "I made database for Awaker, Info about New Dismesion Relics in Star Stage, and W",
       "author": "tete_ttnhana",
@@ -70,11 +81,39 @@
       "channel": "Database"
     },
     {
+      "id": "1356397370840973543",
+      "content": "Almost everyday, someone asks \"Is this character good?\"  or \"What team can I cre",
+      "author": "climbkaly",
+      "reactions": 2,
+      "channel": "How To Create a Team + Other Information"
+    },
+    {
+      "id": "1356417168501375056",
+      "content": "**Starting Aequor Team Example**",
+      "author": "climbkaly",
+      "reactions": 2,
+      "channel": "How To Create a Team + Other Information"
+    },
+    {
       "id": "1356171052102975529",
       "content": "（愛哭鬼原型：阿爾瓦撒）\n\n60級屬性 血肉\n體質111\n攻擊136\n防禦114\n\n打擊：1費\n造成（攻擊力20%）27傷害，獲得10點狂氣，獲得（攻擊力2.5",
       "author": "ice_storys",
       "reactions": 2,
       "channel": "原創喚醒體 “愛哭鬼和小女孩”"
+    },
+    {
+      "id": "1356232081751146686",
+      "content": "帮助了，戈雅快给我发回溯",
+      "author": "287405tjy_28066",
+      "reactions": 1,
+      "channel": "【新人求助】"
+    },
+    {
+      "id": "1356397681161015477",
+      "content": "***Realm Types***\nAll Realms (factions) are good. Ultimately you should decide o",
+      "author": "climbkaly",
+      "reactions": 1,
+      "channel": "How To Create a Team + Other Information"
     },
     {
       "id": "1356162836082065459",

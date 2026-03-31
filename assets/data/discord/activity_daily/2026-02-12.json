@@ -1,10 +1,16 @@
 {
   "date": "2026-02-12",
-  "messages": 839,
-  "unique_authors": 72,
-  "reactions_total": 407,
-  "attachments": 111,
+  "messages": 6389,
+  "unique_authors": 143,
+  "reactions_total": 1318,
+  "attachments": 328,
   "channel_activity": {
+    "V2.4.2 第一块血迹┊The First Bloodstain": 1,
+    "逆向推理┊Reverse Inference": 25,
+    "V2.4.2.2 版本前瞻 ┊ Version Outlook": 1,
+    "求方向": 3,
+    "求融災隊伍": 1,
+    "🔸morimens-game-chat": 5519,
     "V2.4.2.4 在线维护公告": 3,
     "Stop aurafarming!": 3,
     "Morimens Mah-jong? lol": 3,
@@ -28,33 +34,37 @@
     "🔸阵容构建": 76
   },
   "hourly_activity": {
-    "3": 82,
-    "6": 57,
-    "7": 8,
-    "11": 31,
-    "15": 40,
-    "2": 51,
-    "8": 86,
-    "10": 78,
-    "1": 14,
-    "4": 32,
-    "5": 30,
-    "23": 30,
-    "13": 24,
-    "16": 10,
-    "17": 13,
-    "9": 108,
-    "18": 4,
-    "14": 69,
-    "20": 3,
-    "12": 54,
-    "22": 1,
-    "0": 13,
-    "19": 1
+    "9": 455,
+    "2": 168,
+    "3": 501,
+    "5": 410,
+    "7": 261,
+    "8": 579,
+    "12": 175,
+    "14": 290,
+    "15": 223,
+    "17": 191,
+    "6": 376,
+    "16": 234,
+    "23": 239,
+    "0": 329,
+    "1": 249,
+    "4": 426,
+    "10": 310,
+    "11": 164,
+    "13": 326,
+    "18": 77,
+    "19": 26,
+    "20": 280,
+    "21": 43,
+    "22": 57
   },
   "message_types": {
-    "0": 7,
-    "19": 2
+    "0": 3797,
+    "19": 1748,
+    "6": 1,
+    "20": 3,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -107,6 +117,20 @@
       "channel": ""
     },
     {
+      "id": "1471574436510433462",
+      "content": "after like 2 months, I finished Arc 1 Normal mode deathless. That final boss was",
+      "author": "farawayalt",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1471625501012660296",
+      "content": "Done",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1471497523100389398",
       "content": "YEAHHHHH",
       "author": "honoka_kisaragi",
@@ -119,6 +143,13 @@
       "author": "sweet_25367",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1471508553696018443",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1471482749230645279",
@@ -149,6 +180,20 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1471414077820768276",
+      "content": "⁨⁨⁨``` 🔒 Message hidden ```⁩⁩⁩\n-# You need an OE Daffodil to see this message, a",
+      "author": "balls8",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1471557924156608718",
+      "content": "using these.",
+      "author": "hitsu4",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1471356268961857679",
       "content": "**✦ Just a quick note...**\n\nWe’re doing our best to get back to everyone, but si",
       "author": "morimens_15",
@@ -160,41 +205,6 @@
       "content": "孩子们🤓",
       "author": "galagalaguo",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471426552960123044",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471428958137487382",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471386994771759104",
-      "content": "Can we be able to see our high score on the train mode on our keeper profiles?\nI",
-      "author": "spooky_penguin_",
-      "reactions": 5,
-      "channel": "✅「Answered」Addition to the Keeper profile"
-    },
-    {
-      "id": "1471392667219792060",
-      "content": "sorry, A FUCKING HUNDRED???????????",
-      "author": "lordbabel",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1471374409452486781",
-      "content": "~~困難好像沒啥難度~~",
-      "author": "quackdayo",
-      "reactions": 5,
       "channel": "🔸綜合討論"
     }
   ]

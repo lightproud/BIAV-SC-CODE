@@ -1,10 +1,16 @@
 {
   "date": "2025-07-28",
-  "messages": 100,
+  "messages": 116,
   "unique_authors": 15,
-  "reactions_total": 67,
-  "attachments": 23,
+  "reactions_total": 151,
+  "attachments": 25,
   "channel_activity": {
+    "Modern AU Goliath": 2,
+    "just thinking what to eat for the next meal": 1,
+    "V2.3.0 广播剧《最初的晚餐》┊Radio Drama - The First Supper": 7,
+    "🎬V2.3 概念PV「王邸的夜宴」┊PV-The King's Banquet": 1,
+    "求配隊": 4,
+    "What to do early game with rolls? Pure core.": 1,
     "V2.3.0.0 停服维护公告": 1,
     "V2.3.0.2 在线维护公告": 19,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 2,
@@ -35,11 +41,14 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "6": 13,
+    "13": 2,
+    "7": 4,
+    "15": 2,
+    "8": 18,
+    "0": 2,
     "1": 5,
-    "0": 1,
     "5": 10,
-    "7": 3,
-    "8": 15,
     "9": 3,
     "12": 7,
     "14": 5,
@@ -48,21 +57,33 @@
     "11": 3,
     "19": 2,
     "3": 21,
-    "2": 10,
-    "15": 1,
-    "6": 5
+    "2": 10
   },
   "message_types": {
-    "19": 6,
-    "0": 14
+    "0": 15,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1399283287368794132",
+      "content": "Ok I usually post in CN fan art channel, but I like this one so I want to post i",
+      "author": "yolo_mode",
+      "reactions": 44,
+      "channel": "Modern AU Goliath"
+    },
     {
       "id": "1399369127008796723",
       "content": "Table of Contents:\n1. Disclaimer and Thanks\n2. Kadath (Arc 1) Timeline, aka the ",
       "author": "nikolazuli",
       "reactions": 34,
       "channel": ""
+    },
+    {
+      "id": "1399270831645003876",
+      "content": "“今年的祭灵节，我们一定会见到一幅伟大的画作。”\n“欢迎来到葬骸城，画家先生。”\n\n✦ 杜勒赛因 CV：子安武人\n✦ 皮克曼 CV：野田卓見\n——✦——✦—— ",
+      "author": "morimensstaff01",
+      "reactions": 30,
+      "channel": "V2.3.0 广播剧《最初的晚餐》┊Radio Drama - The First Supper"
     },
     {
       "id": "1399367539171131442",
@@ -72,6 +93,13 @@
       "channel": "鼠耳摩斯和莱生🕵🏻‍♂️🐀嗯嗯"
     },
     {
+      "id": "1399285366682292254",
+      "content": "hi guys it is me again Drawing Doresain.\n\nI love high ponytail and glasses , hop",
+      "author": "dittoqwq",
+      "reactions": 7,
+      "channel": "just thinking what to eat for the next meal"
+    },
+    {
       "id": "1399284478148608040",
       "content": "听完广播剧我又死了啊啊啊，好爽。杜勒赛因还是那么帅，不过皮克曼吃东西的声音太搞笑了吧（褒义  \n\n是融合了一下我的xp，高马尾+眼镜\n\n还有就是他头上的刀叉，其",
       "author": "dittoqwq",
@@ -79,11 +107,25 @@
       "channel": "其实只是在想下一餐该吃什么"
     },
     {
+      "id": "1399277354697883739",
+      "content": "pickman the ||twinkman|| <:pray:1356053116260454534>",
+      "author": "jormiejormungandr",
+      "reactions": 2,
+      "channel": "V2.3.0 广播剧《最初的晚餐》┊Radio Drama - The First Supper"
+    },
+    {
       "id": "1399404733910880349",
       "content": "",
       "author": "jinmenlianbanggongheguo",
       "reactions": 2,
       "channel": "✅「已回答」希萊斯特的觸腕傷害出錯了"
+    },
+    {
+      "id": "1399386872328884296",
+      "content": "Thank you for the breakfast <:bow:1356053037159944473> <:bow:1356053037159944473",
+      "author": "mount_fisherman",
+      "reactions": 1,
+      "channel": "Modern AU Goliath"
     },
     {
       "id": "1399259403710107741",

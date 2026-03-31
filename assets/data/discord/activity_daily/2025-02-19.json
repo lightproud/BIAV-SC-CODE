@@ -1,10 +1,11 @@
 {
   "date": "2025-02-19",
-  "messages": 268,
+  "messages": 274,
   "unique_authors": 30,
-  "reactions_total": 257,
-  "attachments": 57,
+  "reactions_total": 266,
+  "attachments": 58,
   "channel_activity": {
+    "2.1 Tier List / Character Guide": 6,
     "💟獻上愛的圖騰——來自小花腦的信函": 4,
     "V2.1.0.2 停服維護公告": 18,
     "✅前瞻：V2.1.0.2 星辰篇规则": 8,
@@ -39,6 +40,8 @@
     "1271491376881598494": 11
   },
   "hourly_activity": {
+    "14": 10,
+    "15": 4,
     "2": 25,
     "3": 43,
     "4": 12,
@@ -50,20 +53,17 @@
     "12": 6,
     "18": 86,
     "13": 1,
-    "15": 3,
     "16": 3,
     "17": 6,
     "20": 3,
     "21": 1,
     "23": 1,
-    "14": 5,
     "6": 4,
     "0": 6,
     "5": 8
   },
   "message_types": {
-    "0": 23,
-    "19": 9
+    "0": 6
   },
   "top_reacted_messages": [
     {
@@ -137,6 +137,13 @@
       "channel": "会痛的话就是现实…"
     },
     {
+      "id": "1341784912247918696",
+      "content": "Character Analysis here: https://docs.google.com/document/u/0/d/1liixnERyCP2wot_",
+      "author": "cornonthemacabre_",
+      "reactions": 9,
+      "channel": "2.1 Tier List / Character Guide"
+    },
+    {
       "id": "1341795213819121688",
       "content": "星辰篇太好玩啦",
       "author": "nekoiiii.",
@@ -198,13 +205,6 @@
       "author": "shchng.",
       "reactions": 4,
       "channel": "死抗序列"
-    },
-    {
-      "id": "1341673470165258280",
-      "content": "講不贏就踢人，真的是一群非人類。",
-      "author": "patsung_0",
-      "reactions": 3,
-      "channel": "V2.1.0.2 停服維護公告"
     }
   ]
 }

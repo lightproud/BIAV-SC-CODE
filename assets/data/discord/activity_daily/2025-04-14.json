@@ -1,10 +1,16 @@
 {
   "date": "2025-04-14",
-  "messages": 136,
+  "messages": 147,
   "unique_authors": 19,
-  "reactions_total": 39,
-  "attachments": 32,
+  "reactions_total": 70,
+  "attachments": 34,
   "channel_activity": {
+    "aomi’s morimens dump": 1,
+    "Clementine": 1,
+    "Arc 2 Chapter 2 H2-12 Deathless 3 Star Blue tawil": 1,
+    "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide": 3,
+    "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請": 4,
+    "🎬V2.2 概念PV「窺視靈魂之旅」┊ V2.2 PV - Gaze into the Soul's Depths": 1,
     "V2.2.0.3 在線維護公告": 4,
     "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 8,
     "【結束|Finish】🌟獎勵加碼🌟彌薩格大學『毀損灰霧之都』攻略活動開啟！限定頭像框、無門檻參與獎應有盡有！": 7,
@@ -35,33 +41,56 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "2": 8,
+    "4": 10,
+    "23": 1,
+    "0": 2,
+    "7": 13,
+    "6": 10,
+    "9": 4,
     "14": 3,
     "15": 8,
     "8": 32,
     "10": 15,
     "16": 3,
-    "4": 8,
-    "6": 9,
     "3": 6,
     "22": 5,
-    "2": 7,
     "11": 5,
-    "9": 3,
-    "7": 10,
     "12": 15,
     "5": 7
   },
   "message_types": {
-    "0": 23,
-    "6": 2
+    "19": 3,
+    "0": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1361195730621956266",
+      "content": "UID: 100898505",
+      "author": "sacrouriel0163",
+      "reactions": 14,
+      "channel": "Clementine"
+    },
+    {
+      "id": "1361234134848245851",
+      "content": "",
+      "author": "maegu",
+      "reactions": 10,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
     {
       "id": "1361255986618171544",
       "content": "經校工查驗，克萊門汀不是蟲族生物🙏她是喚醒體，和蟲族生物有本質區別",
       "author": "morimensstaff01",
       "reactions": 8,
       "channel": "✅「已回答」克莱门汀打克莱门汀不出血"
+    },
+    {
+      "id": "1361241998606073916",
+      "content": "在活動截止前（4月11日23:59），**恭喜大家成功解鎖了第一檔獎勵：**\n≥10條，抽3位守密人送出「100銀芯」；即3位守密人 皆獲得100銀芯！\n\n感謝",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
       "id": "1361260947083235470",
@@ -120,6 +149,20 @@
       "channel": "✦关卡地图「融灾禁区」总览32期·星辰篇✦"
     },
     {
+      "id": "1361166851962437812",
+      "content": "Haha, no worries~ Wishing you success in your studies!✨",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "aomi’s morimens dump"
+    },
+    {
+      "id": "1361242524575858708",
+      "content": "Very interesting haha😆 “hi , please give me a can of protein🪳 ”",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
       "id": "1361283953885052988",
       "content": "嗨大家好，V2.1【毀損灰霧之都】二創征集獲獎名單公佈！\n感謝大家的精彩創作🎉 獎勵將在本週內發給大家~\n\nHi everyone, the list of w",
       "author": "morimensstaff01",
@@ -160,41 +203,6 @@
       "author": "morimensstaff01",
       "reactions": 1,
       "channel": "✅「已回答」如图所示,怨恨锁链生效不正常"
-    },
-    {
-      "id": "1361468147227689082",
-      "content": "Thanks again, this a minor issue at the end of the day. Take your time, I'm stil",
-      "author": "foxblood13",
-      "reactions": 1,
-      "channel": "✅「Answered」Audio stops when leaving game window"
-    },
-    {
-      "id": "1361173918718886059",
-      "content": "Thanks for the feedback, we are checking🥹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Origin of Time Rewind/Reversion Bug?"
-    },
-    {
-      "id": "1361278288089186404",
-      "content": "廣播劇後半段被融蝕",
-      "author": "elkmilu",
-      "reactions": 1,
-      "channel": "✅「已回答」典藏館又被融蝕了"
-    },
-    {
-      "id": "1361187911474876526",
-      "content": "<@1131790839291596841>",
-      "author": "muliupan",
-      "reactions": 1,
-      "channel": "✅「已回答」2-15bug"
-    },
-    {
-      "id": "1361252960939802624",
-      "content": "謝謝你！",
-      "author": "2041880926",
-      "reactions": 1,
-      "channel": "✅「已回答」沒牌 真的沒牌"
     }
   ]
 }

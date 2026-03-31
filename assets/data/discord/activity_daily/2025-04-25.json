@@ -1,10 +1,18 @@
 {
   "date": "2025-04-25",
-  "messages": 139,
-  "unique_authors": 17,
-  "reactions_total": 29,
-  "attachments": 9,
+  "messages": 226,
+  "unique_authors": 29,
+  "reactions_total": 95,
+  "attachments": 15,
   "channel_activity": {
+    "brown attack!": 4,
+    "Just a pixel image of Jenkin looking outside with Brown": 1,
+    "Goliath Fanart": 3,
+    "Tawil and Merlin on Traphase": 1,
+    "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook": 66,
+    "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas": 7,
+    "Bug report 24 cost 3 card": 3,
+    "Wheel Guide - In Depth": 2,
     "V2.2.1.0 停服維護公告": 90,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 7,
     "✅「Answered」Translation for French": 3,
@@ -18,30 +26,71 @@
     "跟我朋友零元購了一個稿，成效甚好": 4
   },
   "hourly_activity": {
-    "12": 26,
-    "13": 66,
+    "0": 2,
+    "2": 7,
+    "3": 6,
+    "4": 9,
+    "18": 1,
+    "19": 2,
+    "10": 34,
+    "11": 32,
+    "12": 32,
+    "13": 68,
+    "15": 2,
+    "16": 9,
     "14": 10,
-    "16": 8,
     "21": 7,
     "1": 1,
     "6": 3,
-    "11": 3,
-    "3": 5,
-    "4": 5,
-    "5": 1,
-    "10": 4
+    "5": 1
   },
   "message_types": {
-    "0": 81,
-    "19": 9
+    "0": 70,
+    "19": 14,
+    "6": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1365400986327191595",
+      "content": "I started playing this game because my friend shared goliath screenshot <:Prayge",
+      "author": "meatyexplosions",
+      "reactions": 20,
+      "channel": "Goliath Fanart"
+    },
+    {
+      "id": "1365125302304374815",
+      "content": "AI generated image",
+      "author": "starfish3302",
+      "reactions": 13,
+      "channel": "Just a pixel image of Jenkin looking outside with Brown"
+    },
+    {
+      "id": "1365279495078154340",
+      "content": "",
+      "author": "aurora3981",
+      "reactions": 9,
+      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
+    },
+    {
+      "id": "1365276043233071135",
+      "content": "原型，史密斯的《亚威隆尼之兽》里带来恶魔的彗星",
+      "author": "flarinsidia",
+      "reactions": 8,
+      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
+    },
     {
       "id": "1365281232451014727",
       "content": "Can't believe ultra realm players want more shield when they already have winkle",
       "author": "aurora3981",
       "reactions": 8,
       "channel": "Ultra Greed"
+    },
+    {
+      "id": "1365278131065196554",
+      "content": "~~讓她本體摳我~~",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
     },
     {
       "id": "1365304224887476286",
@@ -56,6 +105,27 @@
       "author": "elkmilu",
       "reactions": 4,
       "channel": "✅「已回答」Bug—技能敘述—增傷"
+    },
+    {
+      "id": "1365284946796740618",
+      "content": "# 傳下去，鐵T沒辦法拯救陰盛陽衰",
+      "author": "kong760",
+      "reactions": 3,
+      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
+    },
+    {
+      "id": "1365285363949633558",
+      "content": "然後你發現那是個扶他<:love:1356053099931897977> <:love:1356053099931897977>",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
+    },
+    {
+      "id": "1365155520100696074",
+      "content": "上面的東西火藥味這麼重都沒爆",
+      "author": "yizilven",
+      "reactions": 2,
+      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
     },
     {
       "id": "1365309058298544139",
@@ -86,32 +156,39 @@
       "channel": "✅「Answered」Is there any plan to sell official Goodies?"
     },
     {
+      "id": "1365276745904816241",
+      "content": "如果洗面奶的話會不會被電",
+      "author": "ahong0727",
+      "reactions": 1,
+      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
+    },
+    {
+      "id": "1365284425314734091",
+      "content": "半周年的时间好像也快到了",
+      "author": "be_queitplease",
+      "reactions": 1,
+      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
+    },
+    {
+      "id": "1365156619280715826",
+      "content": "火爆的都被踢走了",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "喚醒體爆料：溟海領航┊Awaker Revelations: Navigating the Abyssal Seas"
+    },
+    {
+      "id": "1365355679862227007",
+      "content": "It gives another card retain when played",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "Bug report 24 cost 3 card"
+    },
+    {
       "id": "1365329211354644542",
       "content": "拉蒙娜3費 症狀牌好像有？",
       "author": "elkmilu",
       "reactions": 1,
       "channel": "V2.2.1.0 停服維護公告"
-    },
-    {
-      "id": "1365330455368437770",
-      "content": "拉蒙娜沒記到<:flop1:1356083604236800030> \n症狀的應該不是，是回合結束若在手中",
-      "author": "_buqi",
-      "reactions": 1,
-      "channel": "V2.2.1.0 停服維護公告"
-    },
-    {
-      "id": "1365333378852978699",
-      "content": "注：最近的一次版本更新解决了第一个问题🍟后续的问题希望在以后的版本更新中也能得到改善🛐🛐🛐",
-      "author": "nowimfaceless",
-      "reactions": 1,
-      "channel": "针对星辰篇部分系统设定的三点建议"
-    },
-    {
-      "id": "1365180368625602560",
-      "content": "Yeah, I keep it updated, I'll try that if it happens again",
-      "author": "basscarrier",
-      "reactions": 1,
-      "channel": "✅「Answered」Stuck on Checking Resources (mobile)"
     }
   ]
 }

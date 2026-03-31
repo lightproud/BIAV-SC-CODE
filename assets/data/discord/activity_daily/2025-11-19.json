@@ -1,10 +1,17 @@
 {
   "date": "2025-11-19",
-  "messages": 294,
+  "messages": 311,
   "unique_authors": 37,
-  "reactions_total": 396,
-  "attachments": 74,
+  "reactions_total": 451,
+  "attachments": 83,
   "channel_activity": {
+    "Our beautiful King~": 2,
+    "Damn I thought Jenkins had a great vocal performance...": 1,
+    "BP guide or why you might want to buy Premium Topic now (for Whales, trigger warning for F2P)": 2,
+    "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!": 1,
+    "新人配隊求助": 1,
+    "求抽卡規劃": 6,
+    "新手組隊求助": 4,
     "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!": 5,
     "V2.4.0.3 在线维护公告": 9,
     "忘却前夜OST：原初宿命之战": 9,
@@ -52,34 +59,33 @@
     "1234769700735418368": 5
   },
   "hourly_activity": {
+    "23": 3,
+    "1": 13,
+    "3": 23,
+    "7": 40,
+    "9": 36,
+    "22": 2,
+    "12": 4,
+    "4": 8,
+    "5": 35,
     "11": 5,
-    "12": 3,
     "13": 11,
     "15": 8,
-    "9": 35,
-    "5": 33,
     "6": 54,
-    "7": 34,
     "8": 5,
     "10": 7,
     "16": 20,
     "0": 8,
-    "1": 12,
     "2": 6,
-    "3": 22,
-    "4": 6,
     "18": 4,
     "19": 5,
     "17": 5,
     "20": 1,
-    "14": 8,
-    "23": 1,
-    "22": 1
+    "14": 8
   },
   "message_types": {
-    "0": 136,
-    "4": 1,
-    "19": 28
+    "0": 12,
+    "19": 5
   },
   "top_reacted_messages": [
     {
@@ -102,6 +108,13 @@
       "author": "morimens_15",
       "reactions": 58,
       "channel": "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!"
+    },
+    {
+      "id": "1440846219634020414",
+      "content": "It's his birthday!! 🎉 🎉",
+      "author": "gumseoi",
+      "reactions": 39,
+      "channel": "Our beautiful King~"
     },
     {
       "id": "1440732097131053158",
@@ -153,6 +166,13 @@
       "channel": "V2.4.0.3 在线维护公告"
     },
     {
+      "id": "1440846393798557777",
+      "content": "here is one without his crown <:owo:450773462152118274>",
+      "author": "gumseoi",
+      "reactions": 8,
+      "channel": "Our beautiful King~"
+    },
+    {
       "id": "1440631823192428564",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：原初宿命之战 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，O",
       "author": "morimensstaff01",
@@ -165,6 +185,13 @@
       "author": "nactra",
       "reactions": 7,
       "channel": "前瞻：V2.4.0.X 挑战性调整 Preview: V2.4.0.X Challenge Adjustments"
+    },
+    {
+      "id": "1440509117234937917",
+      "content": "",
+      "author": "omarpassione",
+      "reactions": 6,
+      "channel": "Damn I thought Jenkins had a great vocal performance..."
     },
     {
       "id": "1440633762194001952",
@@ -200,27 +227,6 @@
       "author": "crowlov1",
       "reactions": 4,
       "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
-    },
-    {
-      "id": "1440645302297165846",
-      "content": "now, to the wheel jail",
-      "author": ".vistar",
-      "reactions": 4,
-      "channel": "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version"
-    },
-    {
-      "id": "1440630823148589188",
-      "content": "卡在1，不給我算力",
-      "author": "ernest_heart",
-      "reactions": 4,
-      "channel": "✅「已回答」普特尼晨報計數器卡住"
-    },
-    {
-      "id": "1440685342888955924",
-      "content": "Korean! Finally!!!",
-      "author": "vagova_16966",
-      "reactions": 3,
-      "channel": "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!"
     }
   ]
 }

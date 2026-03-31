@@ -1,10 +1,15 @@
 {
   "date": "2025-09-11",
-  "messages": 20,
+  "messages": 44,
   "unique_authors": 8,
-  "reactions_total": 7,
-  "attachments": 4,
+  "reactions_total": 9,
+  "attachments": 6,
   "channel_activity": {
+    "Flares' Awakener Review : Ryker": 1,
+    "Need help with team building and game in general": 1,
+    "Team Building Help": 8,
+    "Budget Pickman Team": 10,
+    "teambuilding help": 4,
     "主線癲狂難度": 3,
     "💭「Processing」Steam game login bricked when hitting exit": 2,
     "💭「Processing」[IOS][Visual bug] Result screen isn’t fullscreen after the endlos of chapter 8": 2,
@@ -16,20 +21,25 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
+    "8": 3,
+    "23": 1,
+    "10": 6,
+    "18": 3,
+    "19": 4,
+    "1": 3,
+    "16": 3,
+    "5": 5,
     "13": 1,
     "14": 2,
     "2": 4,
-    "18": 2,
-    "5": 2,
     "3": 5,
     "7": 2,
     "17": 1,
     "6": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 5,
-    "4": 4
+    "0": 15,
+    "19": 9
   },
   "top_reacted_messages": [
     {
@@ -45,6 +55,20 @@
       "author": "_cwz_",
       "reactions": 2,
       "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1415646885791662182",
+      "content": "caecus-tawil (use the prototype from sediment shop to get E1) - ham - corpo\\naut",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "Budget Pickman Team"
+    },
+    {
+      "id": "1415647545652150405",
+      "content": "Thank you!",
+      "author": "jezune",
+      "reactions": 1,
+      "channel": "Budget Pickman Team"
     },
     {
       "id": "1415698629187993680",

@@ -1,10 +1,24 @@
 {
   "date": "2025-09-09",
-  "messages": 78,
-  "unique_authors": 19,
-  "reactions_total": 63,
-  "attachments": 15,
+  "messages": 173,
+  "unique_authors": 31,
+  "reactions_total": 189,
+  "attachments": 46,
   "channel_activity": {
+    "Pickmin": 6,
+    "Shhh… he’s sleeping~": 1,
+    "Pieta": 3,
+    "shhhh... He's sleeping~": 1,
+    "Ramona/Gramona F.A.Q": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 25,
+    "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman": 1,
+    "求《融灾禁区》配队指南，新手": 1,
+    "Flares' Comprehensive Beginner Guide to Morimens": 30,
+    "Need help with team building and game in general": 11,
+    "Team Building Help": 1,
+    "🥺 Need help with building 5 Dtide teams": 7,
+    "Priority/Investment help.": 6,
     "V2.3.2.1 在线维护公告": 4,
     "✅「Answered」Dialogue Scroll Was a Mistake": 12,
     "✅「已回答」遺骨逼我刪牌": 2,
@@ -29,31 +43,55 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "13": 5,
-    "3": 7,
-    "7": 2,
-    "8": 6,
+    "11": 13,
+    "17": 4,
+    "19": 9,
+    "20": 8,
+    "18": 7,
+    "3": 8,
+    "7": 5,
+    "8": 16,
+    "10": 5,
+    "16": 2,
+    "22": 7,
+    "6": 8,
+    "1": 20,
+    "4": 10,
+    "12": 6,
+    "13": 7,
+    "23": 14,
+    "5": 5,
+    "2": 15,
     "15": 1,
-    "18": 4,
-    "19": 5,
-    "23": 3,
-    "2": 13,
-    "11": 2,
     "9": 1,
-    "1": 4,
-    "4": 9,
-    "6": 7,
-    "22": 1,
-    "16": 1,
-    "0": 2,
-    "20": 3,
-    "5": 1,
-    "10": 1
+    "0": 2
   },
   "message_types": {
-    "0": 4
+    "0": 73,
+    "19": 22
   },
   "top_reacted_messages": [
+    {
+      "id": "1415027076456648844",
+      "content": "UID: 100938315",
+      "author": "rowlynt66",
+      "reactions": 45,
+      "channel": "Shhh… he’s sleeping~"
+    },
+    {
+      "id": "1415059472539324579",
+      "content": "[UID: 101171815]\n\nI just can't help but really be moved by Salvador's character.",
+      "author": "sofiaebby",
+      "reactions": 33,
+      "channel": "Pieta"
+    },
+    {
+      "id": "1414879504316497980",
+      "content": "📅 **活动时间：**\n2025/9/8 00:00~2025/10/6 23:59 (UTC+8)\n\n📌**重要信息：**\nUGC创作征集分为两个投稿方向，守",
+      "author": "morimensstaff01",
+      "reactions": 23,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
     {
       "id": "1414891042590822500",
       "content": "",
@@ -83,11 +121,46 @@
       "channel": "忘却前夜队伍构筑思路讲解·上"
     },
     {
+      "id": "1414884006549393521",
+      "content": "題外話，~~我感覺我新學期快死掉了有好多情要做~~",
+      "author": "_cwz_",
+      "reactions": 7,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1414860636755595315",
+      "content": "<@702167871144591461>Thank you for liking them. These fonts are carefully custom",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
+    },
+    {
       "id": "1414928345019318302",
       "content": "Idk if it not being there is a bug or intended.",
       "author": "aurora3981",
       "reactions": 3,
       "channel": "✅「Answered」Add background from summer event to archive"
+    },
+    {
+      "id": "1414940345925632000",
+      "content": "<@523084324724146193>",
+      "author": "le_fishmael",
+      "reactions": 2,
+      "channel": "Pickmin"
+    },
+    {
+      "id": "1415045827256258661",
+      "content": "UID 100896287\nhttps://docs.google.com/document/d/1xZxHDopaPk34souvd7fc2TuGLBD7XB",
+      "author": "_pdt",
+      "reactions": 2,
+      "channel": "Ramona/Gramona F.A.Q"
+    },
+    {
+      "id": "1415030868401197177",
+      "content": "for what i know, it should be about any Morimens related stuff, you can find dif",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1415074963710546094",
@@ -97,25 +170,46 @@
       "channel": "忘却前夜队伍构筑思路讲解·上"
     },
     {
-      "id": "1414912552931950643",
-      "content": "<:pray:1356053116260454534>",
-      "author": "ahong0727",
+      "id": "1415065691735982143",
+      "content": "Holy cow this is gorgeous! ✨",
+      "author": "talecrafter8625",
       "reactions": 1,
-      "channel": "✅「已回答」相位对弈bug"
+      "channel": "Pieta"
     },
     {
-      "id": "1414829690375376917",
-      "content": "然后指望0启完全体太不现实了，这个游戏全图鉴甚至不需要氪金也不需要日日全勤，机制在启灵里面也就是最好的情况了，像融朵机制在超限里面才是最糟糕的",
-      "author": "lurenjiao",
+      "id": "1415065976948392018",
+      "content": "Thank you so much for your kind words 🥰",
+      "author": "sofiaebby",
       "reactions": 1,
-      "channel": "新人对这个游戏的一点看法与建议"
+      "channel": "Pieta"
     },
     {
-      "id": "1414887207101272145",
-      "content": "嗨 戈雅去问问",
-      "author": "morimensstaff01",
+      "id": "1415032953502699651",
+      "content": "Goya, is the submitting date repeated?",
+      "author": "vxvendetta",
       "reactions": 1,
-      "channel": ""
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1415034220643876885",
+      "content": "Thank you very much 🙇‍♀️🙇‍♀️🙇‍♀️",
+      "author": "sofiaebby",
+      "reactions": 1,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1414950192196751525",
+      "content": "Nah save it, you hoard them until you are ready . Probably for tawil",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "Flares' Comprehensive Beginner Guide to Morimens"
+    },
+    {
+      "id": "1414790682870288546",
+      "content": "but im only on chapter 2 so right now my sanga is still nuking the boss in 1 tur",
+      "author": "heartdeyna",
+      "reactions": 1,
+      "channel": "Need help with team building and game in general"
     }
   ]
 }

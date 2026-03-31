@@ -1,10 +1,13 @@
 {
   "date": "2025-06-28",
-  "messages": 28,
+  "messages": 38,
   "unique_authors": 10,
-  "reactions_total": 14,
+  "reactions_total": 17,
   "attachments": 17,
   "channel_activity": {
+    "Caecus": 1,
+    "V2.2.3預告：自選活動喚醒┊V2.2.3 Preview: Self-Select Event Awakening": 6,
+    "求配隊": 3,
     "V2.2.3.0 停服維護公告": 3,
     "忘卻前夜OST：珊EP·石化藝術": 1,
     "Please let us have this as a skin option!!!!!": 1,
@@ -18,6 +21,10 @@
     "1181998821291606097": 4
   },
   "hourly_activity": {
+    "6": 1,
+    "14": 5,
+    "15": 9,
+    "0": 3,
     "3": 5,
     "18": 1,
     "8": 4,
@@ -25,14 +32,14 @@
     "16": 1,
     "20": 1,
     "22": 1,
-    "15": 8,
     "1": 1,
     "2": 1,
     "12": 1,
     "13": 2
   },
   "message_types": {
-    "0": 4
+    "0": 7,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -57,11 +64,25 @@
       "channel": "✅「Answered」Tutorial can cause soft-lock if player has Awakeners from multiple realms."
     },
     {
+      "id": "1388540663829631108",
+      "content": "EOS?",
+      "author": "tete_ttnhana",
+      "reactions": 2,
+      "channel": "V2.2.3預告：自選活動喚醒┊V2.2.3 Preview: Self-Select Event Awakening"
+    },
+    {
       "id": "1388441678251294730",
       "content": "Rule 1 of Corrosion: it is not damage. \nThe number on the right shows total DAMA",
       "author": "aurora3981",
       "reactions": 2,
       "channel": "✅「Answered」Corrosion damage not counted in Damage counter"
+    },
+    {
+      "id": "1388404652286152705",
+      "content": "I love this so much!!! He's a good looking fella but also just slightly fishy an",
+      "author": "yonagoda",
+      "reactions": 1,
+      "channel": "Caecus"
     }
   ]
 }

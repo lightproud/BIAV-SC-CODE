@@ -1,10 +1,21 @@
 {
   "date": "2025-12-26",
-  "messages": 146,
-  "unique_authors": 29,
-  "reactions_total": 86,
-  "attachments": 18,
+  "messages": 214,
+  "unique_authors": 30,
+  "reactions_total": 217,
+  "attachments": 32,
   "channel_activity": {
+    "corposant edit ayayay (ignore the intro plspls i have no ideas)": 1,
+    "pollux sketch! (lf references i cannot find any)": 1,
+    "Pollux emote doodle": 1,
+    "What Has Already Been Born": 1,
+    "Thais.": 2,
+    "Tulu & Ogier comic": 2,
+    "🔥「因雾之名」惊喜来袭：SSR限定联动唤醒体「茉夏」免费获取！\"Rendezvous in Mist\" Surprise:  \"Mouchette\" for Free!": 31,
+    "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction": 10,
+    "V2.4.1 版本前瞻 ┊ Version Outlook": 10,
+    "健检+配队建议": 8,
+    "新手抽卡跟配隊請益": 1,
     "V2.4.1.1 在线维护公告": 15,
     "V2.4.1.0 停服维护公告": 6,
     "Who Ryker's Designer pls come talk ?": 1,
@@ -34,30 +45,52 @@
     "1403373754175721657": 9
   },
   "hourly_activity": {
-    "10": 18,
-    "11": 18,
-    "12": 5,
-    "2": 9,
-    "3": 16,
-    "20": 1,
-    "13": 2,
+    "8": 10,
+    "4": 9,
+    "2": 14,
+    "1": 11,
+    "9": 40,
+    "10": 23,
+    "11": 27,
+    "13": 5,
+    "12": 6,
+    "18": 1,
+    "3": 17,
+    "5": 8,
+    "20": 2,
     "14": 13,
-    "4": 5,
-    "9": 23,
     "7": 2,
-    "5": 2,
     "6": 21,
     "19": 1,
-    "1": 4,
-    "8": 2,
     "15": 1,
     "17": 3
   },
   "message_types": {
-    "0": 15,
-    "19": 6
+    "19": 16,
+    "0": 52
   },
   "top_reacted_messages": [
+    {
+      "id": "1454034808677072937",
+      "content": "**忘却前夜×雾境序列 特别联动纪念之礼：**\n在2025/12/29 9:00 - 2026/01/26 9:00 (UTC+8) 期间，通过主线第一章，即可",
+      "author": "morimensstaff01",
+      "reactions": 57,
+      "channel": "🔥「因雾之名」惊喜来袭：SSR限定联动唤醒体「茉夏」免费获取！\"Rendezvous in Mist\" Surprise:  \"Mouchette\" for Free!"
+    },
+    {
+      "id": "1453974544363688047",
+      "content": "UID: 101168998",
+      "author": "dustsleeper_",
+      "reactions": 29,
+      "channel": "What Has Already Been Born"
+    },
+    {
+      "id": "1453923676754808882",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 22,
+      "channel": "Tulu & Ogier comic"
+    },
     {
       "id": "1453922172207890596",
       "content": "簡略很多因為這傢伙太難畫☝️",
@@ -101,6 +134,13 @@
       "channel": "嗨又是我我又畫了哈姆林"
     },
     {
+      "id": "1454035872440782911",
+      "content": "怎麼連免費混沌傷害型的位置都要篡位",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔥「因雾之名」惊喜来袭：SSR限定联动唤醒体「茉夏」免费获取！\"Rendezvous in Mist\" Surprise:  \"Mouchette\" for Free!"
+    },
+    {
       "id": "1453995811968123113",
       "content": "<@1131171685660368937> 我刚刚去了解了一下情况，今天更新以后导致所有兑换码兑换都出现问题，已经在紧急处理，预计今晚更新修复🌹",
       "author": "morimensstaff01",
@@ -108,11 +148,32 @@
       "channel": "✅「已回答」輸禮包碼他說有非法字元"
     },
     {
+      "id": "1454055893380501575",
+      "content": "This was drawn by the art staff of the project team",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1454106534949949643",
+      "content": "~~直接問紅觸~~",
+      "author": "heikwok",
+      "reactions": 4,
+      "channel": "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1453997081227296780",
       "content": "<@337768468092944387>有的，但是这些文件都需要额外整理，比较花时间，目前我们没有多余的人力来处理这个事情，未来会考虑在社区分享",
       "author": "morimensstaff01",
       "reactions": 4,
       "channel": "✅「已回答」請問有沒有怪物和人物模型圖鑑?"
+    },
+    {
+      "id": "1454028172378247240",
+      "content": "milking the 5 ss because game is too unpopular to have fanart in pinterest",
+      "author": "rusb7n",
+      "reactions": 3,
+      "channel": "corposant edit ayayay (ignore the intro plspls i have no ideas)"
     },
     {
       "id": "1454051238831325367",
@@ -129,6 +190,13 @@
       "channel": "✅「已回答」3-7劇情無法推進"
     },
     {
+      "id": "1453979456719814737",
+      "content": "感謝佬科普，衍生卡數量確實多，造成了就算每回合打出四五十張卡的狀態，其中也是有相當一部分衍生卡，基本上過牌能力沒有變化。情況變成打牌數量多—衍生卡數量多，這種動",
+      "author": "ququ12358",
+      "reactions": 2,
+      "channel": "V2.4.1 版本前瞻 ┊ Version Outlook"
+    },
+    {
       "id": "1454113424970612900",
       "content": "and auto free 5 limited pulls sent via mail",
       "author": "lavache.",
@@ -141,62 +209,6 @@
       "author": "lordbabel",
       "reactions": 2,
       "channel": "✅「Resolved」Traphase softlock bug"
-    },
-    {
-      "id": "1453943220806357237",
-      "content": "I tried to exchange redeem code but it's not working cuz it containing the fobbi",
-      "author": "legion_schindler",
-      "reactions": 2,
-      "channel": "✅「Answered」Christmas Gift code not working."
-    },
-    {
-      "id": "1454116461592445020",
-      "content": "感谢各位到现在还在关注《银霜节日历》系列作品。对于我而言，这次的写作毫无疑问是一次勇敢的尝试。\n\n提前祝各位元旦快乐！\n\nQ：为什么开始写文章？\nA：暑假无聊翻",
-      "author": "150_ripe",
-      "reactions": 2,
-      "channel": "银霜节日历（圣诞节贺文）"
-    },
-    {
-      "id": "1454052875457138810",
-      "content": "Сори, не удержался с мемом 😄😄\nhttps://www.youtube.com/shorts/ClMw6gbCfTQ",
-      "author": "closetom",
-      "reactions": 2,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1454065926323568705",
-      "content": "**V2.4.1.1 Online Maintenance Announcement**\n\nDear Keeper,\nThe Mythag Administra",
-      "author": "morimensstaff02",
-      "reactions": 1,
-      "channel": "V2.4.1.1 在线维护公告"
-    },
-    {
-      "id": "1454068524828852345",
-      "content": "Hi Redz\nI am Rain",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "V2.4.1.1 在线维护公告"
-    },
-    {
-      "id": "1453949093750640640",
-      "content": "its ok Goya, thanks for the clarification",
-      "author": "rain_scarlet",
-      "reactions": 1,
-      "channel": "V2.4.1.0 停服维护公告"
-    },
-    {
-      "id": "1453955159783637034",
-      "content": "Can the dev change how Sacrifice work? Traphase All-pick in shambles because it'",
-      "author": "hskzu",
-      "reactions": 1,
-      "channel": "V2.4.1.0 停服维护公告"
-    },
-    {
-      "id": "1454057389635670098",
-      "content": "好耶謝謝戈雅！",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "✅「已回答」可否增設命輪和密契的計數器"
     }
   ]
 }

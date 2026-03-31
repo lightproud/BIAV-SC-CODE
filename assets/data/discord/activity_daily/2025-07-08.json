@@ -1,10 +1,11 @@
 {
   "date": "2025-07-08",
-  "messages": 34,
+  "messages": 38,
   "unique_authors": 12,
-  "reactions_total": 19,
+  "reactions_total": 21,
   "attachments": 12,
   "channel_activity": {
+    "My Caecus art": 4,
     "✅前瞻：V2.3 源液提取追加奖励 Preview：V2.3 Sliver Prime Extra Bonus": 13,
     "Feedback/general review on latest morimens merchandise": 4,
     "✅「已回答」典藏館文字邏輯bug": 2,
@@ -16,8 +17,9 @@
     "1390375103707218041": 1
   },
   "hourly_activity": {
+    "2": 5,
+    "13": 3,
     "0": 2,
-    "2": 4,
     "4": 1,
     "5": 8,
     "7": 1,
@@ -31,8 +33,8 @@
     "16": 1
   },
   "message_types": {
-    "0": 6,
-    "19": 7
+    "0": 1,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -48,6 +50,20 @@
       "author": "ernest_heart",
       "reactions": 6,
       "channel": "✅「已回答」典藏館文字邏輯bug"
+    },
+    {
+      "id": "1392133067006804081",
+      "content": "sure, thank you",
+      "author": "tachwedd_glaw",
+      "reactions": 1,
+      "channel": "My Caecus art"
+    },
+    {
+      "id": "1392133399577366569",
+      "content": "nickname's Elathan \n🐟",
+      "author": "tachwedd_glaw",
+      "reactions": 1,
+      "channel": "My Caecus art"
     },
     {
       "id": "1392089075561005086",

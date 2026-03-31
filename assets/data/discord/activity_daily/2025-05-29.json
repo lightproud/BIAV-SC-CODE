@@ -1,10 +1,19 @@
 {
   "date": "2025-05-29",
-  "messages": 61,
-  "unique_authors": 10,
-  "reactions_total": 11,
-  "attachments": 17,
+  "messages": 153,
+  "unique_authors": 31,
+  "reactions_total": 41,
+  "attachments": 21,
   "channel_activity": {
+    "Castor Kit Review, Pre Release.": 1,
+    "[Thai] Morimens lore: What is the dissolution?": 1,
+    "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 20,
+    "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 1,
+    "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!": 5,
+    "📜卡斯托爾┊喚醒體&命輪介紹；Castor┊Awaker & Wheel of Destiny Introduction": 42,
+    "活動結束|Event ends🎨同人征集┊Fan Art collection：V2.2『窺視靈魂之旅』開啟！": 1,
+    "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！": 4,
+    "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 17,
     "Morimens English Localization Notes #1": 1,
     "V2.2.2.2 在線維護公告": 1,
     "✅「Answered」In-game texts do not match the language selected in the settings.": 6,
@@ -24,25 +33,47 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "17": 15,
+    "4": 7,
+    "6": 1,
+    "7": 23,
+    "10": 9,
+    "11": 7,
+    "12": 18,
+    "13": 2,
+    "14": 2,
+    "16": 15,
+    "18": 19,
+    "19": 4,
+    "20": 2,
+    "21": 3,
+    "23": 2,
+    "8": 18,
+    "9": 2,
     "3": 1,
-    "11": 4,
-    "7": 16,
-    "18": 2,
-    "21": 2,
-    "12": 6,
-    "14": 1,
-    "4": 4,
-    "10": 5,
-    "16": 2,
     "5": 1,
-    "8": 14,
-    "1": 2,
-    "17": 1
+    "1": 2
   },
   "message_types": {
-    "0": 2
+    "0": 69,
+    "19": 19,
+    "4": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1377567662355386388",
+      "content": "🍀  Activity rules: English version",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!"
+    },
+    {
+      "id": "1377625745182031954",
+      "content": "就來！",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
+    },
     {
       "id": "1377598900973735937",
       "content": "玩了一年半的牢玩家来了，就给萌新写一点1.5周年的抽卡向吧（毕竟不是大佬写不了什么www）\n❀「未被忘却的」——推荐抽取\n（性价比很高，想氪金的萌新可以抽，推荐",
@@ -51,11 +82,81 @@
       "channel": "萌新抽卡向"
     },
     {
+      "id": "1377568440021286943",
+      "content": "<@139343733714845697> The game story belongs to the category of \"doujin works\". ",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!"
+    },
+    {
+      "id": "1377511436674273320",
+      "content": "https://youtu.be/SBoabNYNVsE",
+      "author": "satachan",
+      "reactions": 2,
+      "channel": "[Thai] Morimens lore: What is the dissolution?"
+    },
+    {
+      "id": "1377567515210813463",
+      "content": "🍁 Activity rules: English version",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!"
+    },
+    {
       "id": "1377556222902931496",
       "content": "Here it is <:pray:1356053116260454534>",
       "author": "ataraxion",
       "reactions": 2,
       "channel": "✅「Answered」In-game texts do not match the language selected in the settings."
+    },
+    {
+      "id": "1377697488525463653",
+      "content": "https://www.youtube.com/watch?v=btUFAZb-rmA&ab_channel=Flares%27sidechannel",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "Castor Kit Review, Pre Release."
+    },
+    {
+      "id": "1377547082172334160",
+      "content": "<@1196488644421226598>幸運獎券活動裡的虛擬獎品今明兩天會發放~高階課題是下個版本的（6月2日版本）🫶 \n\n本次中獎周邊是已絕版的周邊，暫時",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+    },
+    {
+      "id": "1377748252354543717",
+      "content": "Deseo por una mejor comprensión lectora para algunos Guardianes <:wish:135608470",
+      "author": "duxadidus",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+    },
+    {
+      "id": "1377545819758137385",
+      "content": "I'm sorry! The time in the picture is incorrect🙏 \nThe submission period is from ",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!"
+    },
+    {
+      "id": "1377688947857297419",
+      "content": "一启还有一个",
+      "author": "akalanden",
+      "reactions": 1,
+      "channel": "📜卡斯托爾┊喚醒體&命輪介紹；Castor┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1377696295107432619",
+      "content": "~~此时深海在船长弃圣礼~~",
+      "author": "flarinsidia",
+      "reactions": 1,
+      "channel": "📜卡斯托爾┊喚醒體&命輪介紹；Castor┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1377627130724221031",
+      "content": "人美心善的戈雅",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather"
     },
     {
       "id": "1377554919464239174",

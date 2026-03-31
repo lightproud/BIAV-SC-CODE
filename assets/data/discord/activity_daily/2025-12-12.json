@@ -1,10 +1,14 @@
 {
   "date": "2025-12-12",
-  "messages": 90,
+  "messages": 152,
   "unique_authors": 20,
-  "reactions_total": 77,
-  "attachments": 26,
+  "reactions_total": 91,
+  "attachments": 29,
   "channel_activity": {
+    "G Doll Fan Splash Art": 3,
+    "中奖名单公布┊Lottery Winners Announced!": 1,
+    "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊": 56,
+    "By the Silver Key Advice": 2,
     "V2.4.0.11 停服维护公告": 5,
     "冲刺一个月 我要肝全角色满同调": 1,
     "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 1,
@@ -33,27 +37,29 @@
     "1241345906826153984": 4
   },
   "hourly_activity": {
-    "10": 6,
+    "2": 2,
+    "6": 4,
+    "5": 5,
+    "10": 43,
+    "11": 20,
+    "20": 3,
+    "21": 7,
     "16": 2,
     "7": 20,
     "3": 3,
-    "21": 6,
     "22": 12,
     "23": 1,
-    "11": 1,
     "12": 8,
     "13": 5,
     "17": 7,
     "19": 6,
-    "20": 2,
     "8": 2,
-    "6": 3,
-    "5": 4,
     "14": 1,
     "15": 1
   },
   "message_types": {
-    "0": 7
+    "0": 44,
+    "19": 18
   },
   "top_reacted_messages": [
     {
@@ -99,6 +105,13 @@
       "channel": "✅「Answered」About emote usage: Profile decoration and PvE emotes"
     },
     {
+      "id": "1448990089093972062",
+      "content": "不要理他",
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
+    },
+    {
       "id": "1449167728551133234",
       "content": "I was doing some testing on my alternate account with a full \"Lemuria\" team and ",
       "author": "reya.li",
@@ -111,6 +124,20 @@
       "author": "flim_of_life_burst",
       "reactions": 3,
       "channel": "給異格也P了一版仿官海報（）"
+    },
+    {
+      "id": "1448983774166651021",
+      "content": "嗨嗨嗨嗨嗨嗨，我是主線一路用菲茵特從1-1打到星辰有四章上半的常駐廚萊克N天生一對，我想來安麗上個月速通忘卻困難第七章的隊伍✌🏻如果能稍微幫到打算打下期活動拿銀",
+      "author": "amstelredam",
+      "reactions": 2,
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
+    },
+    {
+      "id": "1448991994599833641",
+      "content": "脾氣好（",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
     },
     {
       "id": "1449004495680835636",
@@ -134,67 +161,46 @@
       "channel": "✅「已回答」希望典藏館-事件的提示能夠更詳細一點"
     },
     {
-      "id": "1449033359215821002",
-      "content": "oh i don't think payment is available for philippines atm, they replied to someo",
-      "author": "jollysquire",
+      "id": "1448910466956001331",
+      "content": "i had no idea i won the giveaway! never been this lucky in my life lol. thank yo",
+      "author": "jormiejormungandr",
       "reactions": 1,
-      "channel": "✅「Answered」Error code 7004104"
+      "channel": "中奖名单公布┊Lottery Winners Announced!"
     },
     {
-      "id": "1449033645892309093",
-      "content": "I’ll try via steam instead.",
-      "author": "riri_rara_",
+      "id": "1448990452551516283",
+      "content": "有，不過是他",
+      "author": "corposant_1003",
       "reactions": 1,
-      "channel": "✅「Answered」Error code 7004104"
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
     },
     {
-      "id": "1449016702359703654",
-      "content": "辛苦戈雅了",
-      "author": "harowolf",
+      "id": "1448991409020600390",
+      "content": "星辰篇的凱克斯受環境影響強度大跌",
+      "author": "shchng.",
       "reactions": 1,
-      "channel": "✅「已解决」融災重置隊伍後，重新進入無法按命輪(刷同調率突然發現)"
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
     },
     {
-      "id": "1448949924409380897",
-      "content": "I'll go ask about the situation. This question was already recorded at that time",
-      "author": "morimensstaff01",
+      "id": "1448991876995616829",
+      "content": "你如果不想看到的話直接封鎖就好",
+      "author": "shchng.",
       "reactions": 1,
-      "channel": "💭「Processing」Raid stuck after clearing fight seemingly only on certain parties?"
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
     },
     {
-      "id": "1448942344815771668",
-      "content": "Hi, this issue has been fixed and will be released as soon as possible🙏",
-      "author": "morimensstaff01",
+      "id": "1448991893894598718",
+      "content": "他這甚至不是第二次而是至少第三次了🙄",
+      "author": "amstelredam",
       "reactions": 1,
-      "channel": "✅「Answered」Saved Mail Text Bug"
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
     },
     {
-      "id": "1448908801104412753",
-      "content": "調查行動第1章的範圍就有點廣了\n希望是直接告訴你 在1-5啊 在1-8啊 什麼的\n我跑遍了第一章的每一張圖都沒收集完",
-      "author": "water_heart",
+      "id": "1448992323865153648",
+      "content": "另一個嘴賤的人",
+      "author": "shchng.",
       "reactions": 1,
-      "channel": "✅「已回答」希望典藏館-事件的提示能夠更詳細一點"
-    },
-    {
-      "id": "1448939553187561482",
-      "content": "謝謝戈雅<:pray:1356053116260454534>",
-      "author": "water_heart",
-      "reactions": 1,
-      "channel": "✅「已回答」希望典藏館-事件的提示能夠更詳細一點"
-    },
-    {
-      "id": "1448937205358923907",
-      "content": "The expiration date of this validity period follows the current Curriculum.\nAt p",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Origin of Time Expiration Time"
-    },
-    {
-      "id": "1449014863937671179",
-      "content": "畫了鯊凱但是不是不能丟這裡啊",
-      "author": "souri.10244",
-      "reactions": 1,
-      "channel": "蓋個圖樓"
+      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊"
     }
   ]
 }

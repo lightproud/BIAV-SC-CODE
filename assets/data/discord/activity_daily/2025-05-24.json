@@ -1,10 +1,15 @@
 {
   "date": "2025-05-24",
-  "messages": 12,
-  "unique_authors": 5,
-  "reactions_total": 4,
+  "messages": 43,
+  "unique_authors": 19,
+  "reactions_total": 20,
   "attachments": 2,
   "channel_activity": {
+    "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 9,
+    "V2.2.2 版本前瞻┊V2.2.2 Version Outlook": 12,
+    "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!": 2,
+    "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 2,
+    "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!": 6,
     "V2.2.2.0 停服維護公告": 2,
     "✅校猫碎碎念#序章配音决定": 3,
     "✅前瞻：1.5周年～战斗增强篇": 1,
@@ -14,20 +19,41 @@
     "Increase the number of seals dropped from upcoming boss": 1
   },
   "hourly_activity": {
+    "4": 5,
+    "5": 4,
+    "9": 3,
+    "11": 2,
+    "13": 2,
+    "2": 4,
+    "12": 12,
+    "17": 2,
+    "3": 2,
     "0": 2,
-    "12": 2,
     "16": 1,
-    "2": 2,
     "15": 1,
     "6": 2,
-    "4": 1,
     "18": 1
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "0": 24,
+    "19": 6,
+    "6": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1375768036992225300",
+      "content": "可惡哇！這讓昨晚瘋狂複製粘貼發私信的我像個小丑🥹 戈雅現在私私！中了實體周邊的守密人也可以直接後台找我~",
+      "author": "morimensstaff01",
+      "reactions": 13,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+    },
+    {
+      "id": "1375833093855776922",
+      "content": "我也没收到<:dead:1356082627509092372>",
+      "author": "lethalpianist",
+      "reactions": 2,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+    },
     {
       "id": "1375726785639223366",
       "content": "same issue i cant play on my pc because of this. stuck with using mobile for the",
@@ -41,6 +67,13 @@
       "author": "aurora3981",
       "reactions": 2,
       "channel": "Increase the number of seals dropped from upcoming boss"
+    },
+    {
+      "id": "1375767865109643354",
+      "content": "你點戈雅頭像按傳送訊息看看",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
     }
   ]
 }

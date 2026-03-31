@@ -1,10 +1,18 @@
 {
   "date": "2025-09-04",
-  "messages": 60,
-  "unique_authors": 8,
-  "reactions_total": 46,
-  "attachments": 14,
+  "messages": 140,
+  "unique_authors": 38,
+  "reactions_total": 274,
+  "attachments": 41,
   "channel_activity": {
+    "Carried": 1,
+    "D-dive 45K Aequor/Caro Guide": 4,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 3,
+    "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University": 17,
+    "V2.3.2 皮克曼情报3：探访画中世界，名额有限先到先得┊About Pickman: Explore the world within the painting": 29,
+    "求抽卡配對，想找一些搭配汀克特🫠": 10,
+    "Covenant help": 14,
+    "Team Building/Character Help": 2,
     "Exceso del límite de Llave": 6,
     "Blade of the Titan behaves inconsistently in Faded Legacy (arc 1) compared to Astral Reign (arc 2)": 7,
     "💭「Processing」Equipo híbrido de 3": 1,
@@ -23,33 +31,143 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "20": 7,
-    "1": 4,
-    "4": 3,
-    "12": 2,
+    "10": 5,
+    "19": 5,
+    "1": 5,
+    "20": 8,
+    "22": 3,
+    "2": 3,
+    "3": 1,
+    "4": 4,
+    "5": 4,
+    "6": 3,
+    "8": 3,
+    "13": 15,
+    "14": 6,
+    "15": 21,
+    "16": 10,
+    "9": 6,
+    "12": 34,
     "0": 2,
-    "6": 2,
-    "16": 6,
-    "13": 7,
-    "9": 4,
-    "8": 2,
     "7": 1,
-    "15": 17,
-    "17": 1,
-    "5": 1,
-    "2": 1
+    "17": 1
   },
   "message_types": {
-    "0": 10,
-    "19": 3
+    "0": 68,
+    "19": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1413087055050969088",
+      "content": "《艺术娱报》，只报猛料。\n\n读者朋友们，你们是否思考过“真实与虚假”的问题：我们所看见的世界是真实的吗？\n\n🖼️皮克曼先生宣扬自己的画有“进入真实”的魔力，他的",
+      "author": "morimensstaff01",
+      "reactions": 73,
+      "channel": "V2.3.2 皮克曼情报3：探访画中世界，名额有限先到先得┊About Pickman: Explore the world within the painting"
+    },
+    {
+      "id": "1413293887044321321",
+      "content": "\"Sir, I have class in two minutes...\"",
+      "author": "talecrafter8625",
+      "reactions": 22,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
     {
       "id": "1413179361191792710",
       "content": "卡斯托爾 x 莉奧諾拉 一點點🔞但都蓋住了\n還沒畫完但先偷發😔",
       "author": "muggypeasant",
       "reactions": 18,
       "channel": "我喜歡卡斯托爾"
+    },
+    {
+      "id": "1413195394317549801",
+      "content": "everyone did such great work~ I hope he comes home for all of us ദ്ദി(˵ •̀ ᴗ - ˵",
+      "author": "dahongtsa",
+      "reactions": 16,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413196039007240283",
+      "content": "yay, I'm so excited to see pickman again!!🥰",
+      "author": "rivenscursed",
+      "reactions": 16,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413155458482442373",
+      "content": "This guy made me pick a brush after like years of not drawing at all <:pray:1400",
+      "author": "poppypollen479",
+      "reactions": 15,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413104067441590353",
+      "content": "The artist for this need a pay rise <:point:1356053112292511815> cuz holy hell t",
+      "author": "red_rest",
+      "reactions": 12,
+      "channel": "V2.3.2 皮克曼情报3：探访画中世界，名额有限先到先得┊About Pickman: Explore the world within the painting"
+    },
+    {
+      "id": "1413193387414388989",
+      "content": "",
+      "author": "b_i_a",
+      "reactions": 11,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412985480441495562",
+      "content": "where's my headpats >:3",
+      "author": "sunstopshining",
+      "reactions": 10,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413237740140630036",
+      "content": "**Overview:**\n\nI’ll provide a quick guide on one specific team that allows me to",
+      "author": "wolfierce",
+      "reactions": 8,
+      "channel": "D-dive 45K Aequor/Caro Guide"
+    },
+    {
+      "id": "1413047670435741727",
+      "content": "",
+      "author": "wild_pansy",
+      "reactions": 7,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412984310847508660",
+      "content": "This belongs in a museum",
+      "author": "zer0xpgained",
+      "reactions": 6,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413071717060055131",
+      "content": "I drew you so pls come home next week Pickman🫶🏼",
+      "author": "myd334.",
+      "reactions": 6,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413178542438486096",
+      "content": "手太難了",
+      "author": "rou_yi_rou",
+      "reactions": 5,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413106760369045606",
+      "content": "Kit drop when ????????????????????????????¿¿???¿¿???¿¿???¿¿???... I need it.",
+      "author": "morified53",
+      "reactions": 5,
+      "channel": "V2.3.2 皮克曼情报3：探访画中世界，名额有限先到先得┊About Pickman: Explore the world within the painting"
+    },
+    {
+      "id": "1412997765553717292",
+      "content": "",
+      "author": "insomnia07763",
+      "reactions": 4,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
     },
     {
       "id": "1413090248103301191",
@@ -78,76 +196,6 @@
       "author": "zdttjqxwxmzs",
       "reactions": 4,
       "channel": "皮克曼技能组"
-    },
-    {
-      "id": "1413253561306976266",
-      "content": "",
-      "author": "shadow_20954",
-      "reactions": 3,
-      "channel": "💭「Processing」Equipo híbrido de 3"
-    },
-    {
-      "id": "1413267040898256968",
-      "content": "Muchas gracias por la aclaración",
-      "author": "duxadidus",
-      "reactions": 1,
-      "channel": "Exceso del límite de Llave"
-    },
-    {
-      "id": "1413140947780370532",
-      "content": "我现在正在举办一系列pve比赛，想问一下官方能不能提供一些奖品什么的？比如之前pvp比赛的头像框👀",
-      "author": "zdttjqxwxmzs",
-      "reactions": 1,
-      "channel": "✅「已回答」提问"
-    },
-    {
-      "id": "1413098118869942404",
-      "content": "Thank you for the feedback. I will go and confirm<:pray:1356053116260454534>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Scion of Purity wording"
-    },
-    {
-      "id": "1413182684800352316",
-      "content": "咦原來會封的嗎\n因為之前好像有在這個服看到瑟圖 不太確定現在怎麼規定ㄉ\n\n但我還沒畫完要等一下 🫠",
-      "author": "muggypeasant",
-      "reactions": 1,
-      "channel": "我喜歡卡斯托爾"
-    },
-    {
-      "id": "1413183172362899576",
-      "content": "敏感部分不能露",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "我喜歡卡斯托爾"
-    },
-    {
-      "id": "1413183380974997504",
-      "content": "萌！",
-      "author": "sweet_25367",
-      "reactions": 1,
-      "channel": "我喜歡卡斯托爾"
-    },
-    {
-      "id": "1413184780463374446",
-      "content": "這樣應該可以吧我不會被封吧 有點緊張",
-      "author": "muggypeasant",
-      "reactions": 1,
-      "channel": "我喜歡卡斯托爾"
-    },
-    {
-      "id": "1413184843432595537",
-      "content": "勞斯你是我們忘卻的珍寶😭 😭 😭 \n有您是鳥人廚的福氣",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "我喜歡卡斯托爾"
-    },
-    {
-      "id": "1413188705396592721",
-      "content": "不是不是\n只是進度比較快而已",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "我喜歡卡斯托爾"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2026-01-30",
-  "messages": 181,
+  "messages": 202,
   "unique_authors": 20,
-  "reactions_total": 191,
-  "attachments": 13,
+  "reactions_total": 200,
+  "attachments": 22,
   "channel_activity": {
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 10,
+    "求融災禁區配隊建議": 11,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 11,
     "[Art Dump Thread] WILLIAMPOSTING 2": 9,
     "Teaser || Doresain & Sylvester": 4,
@@ -30,30 +32,32 @@
     "1464228375316136072": 4
   },
   "hourly_activity": {
+    "7": 26,
+    "8": 11,
+    "9": 1,
+    "12": 7,
+    "13": 5,
+    "15": 8,
+    "16": 7,
+    "17": 8,
+    "23": 3,
     "1": 16,
     "2": 6,
     "3": 5,
     "4": 18,
     "5": 14,
     "6": 43,
-    "13": 4,
-    "16": 4,
     "19": 6,
     "0": 8,
-    "15": 7,
     "14": 1,
     "11": 1,
-    "12": 5,
     "18": 5,
-    "17": 1,
-    "23": 1,
-    "7": 24,
-    "8": 9,
     "20": 3
   },
   "message_types": {
     "0": 17,
-    "19": 7
+    "6": 1,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -90,6 +94,13 @@
       "author": "mimiruku",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1466694848315920395",
+      "content": "恭喜以下守密人在留言活动中获奖，我们将在7个自然日内为您发放相应的奖励~\nCongratulations to the following Keepers fo",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log"
     },
     {
       "id": "1466679152047554683",
@@ -188,13 +199,6 @@
       "author": "aegisx",
       "reactions": 2,
       "channel": "Regarding the possible +12 Paywall"
-    },
-    {
-      "id": "1466676093888102608",
-      "content": "打二米五的章魚賣章魚燒（？",
-      "author": "ass191044",
-      "reactions": 2,
-      "channel": ""
     }
   ]
 }

@@ -1,10 +1,19 @@
 {
   "date": "2025-07-25",
-  "messages": 54,
-  "unique_authors": 14,
-  "reactions_total": 82,
-  "attachments": 25,
+  "messages": 314,
+  "unique_authors": 49,
+  "reactions_total": 198,
+  "attachments": 33,
   "channel_activity": {
+    "Doresain Fanart": 1,
+    "Wip": 1,
+    "Flares' Awaker Review : Thais": 1,
+    "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts": 8,
+    "「杜勒赛因·致勿忘我」简约幻衣，可在限时纪行获取！Doresain: Forget-Me-Not available in Limited-Time Archives!": 99,
+    "📜V2.3.0.2 版本前瞻┊ Version Outlook": 100,
+    "V2.3 杜勒赛因┊唤醒体&命轮介绍；V2.3 Doresain┊Awaker & Wheel of Destiny Introduction": 7,
+    "Team comp help": 42,
+    "Should I make a new account": 1,
     "忘却前夜OST：戈利亚EP·踏上新的征途": 9,
     "✅「Answered」Clarification on gacha odds for standard limited": 2,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
@@ -26,26 +35,40 @@
     "現pa 尤烏哈希你是大明星": 1
   },
   "hourly_activity": {
-    "8": 10,
-    "12": 3,
-    "17": 3,
-    "16": 3,
-    "14": 1,
-    "18": 1,
-    "11": 3,
-    "0": 1,
-    "2": 6,
-    "9": 7,
-    "13": 3,
+    "2": 47,
+    "8": 11,
+    "21": 1,
+    "12": 21,
+    "15": 4,
+    "17": 5,
+    "18": 4,
+    "23": 1,
+    "11": 85,
+    "13": 11,
+    "9": 29,
+    "10": 50,
+    "14": 16,
+    "16": 6,
+    "19": 3,
+    "0": 4,
+    "3": 5,
+    "1": 2,
     "7": 5,
     "4": 1,
-    "3": 4,
     "5": 3
   },
   "message_types": {
-    "0": 9
+    "0": 215,
+    "19": 45
   },
   "top_reacted_messages": [
+    {
+      "id": "1398126499827159040",
+      "content": "+ Ogier, Doll, Aigis, and M!Keeper doodles <:happy_cat:1083455671476957309>",
+      "author": "itsmrsparker",
+      "reactions": 34,
+      "channel": "Doresain Fanart"
+    },
     {
       "id": "1398214412640194680",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：戈利亚EP·踏上新的征途，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请",
@@ -68,11 +91,102 @@
       "channel": "3 Reruns"
     },
     {
+      "id": "1398218450932994188",
+      "content": "Something broke the quality, the color was supposed to be warmer,",
+      "author": "uvhashhaha",
+      "reactions": 11,
+      "channel": "Wip"
+    },
+    {
+      "id": "1398317952729616526",
+      "content": "People already pointed this out but pls give him an actual new artwork and not a",
+      "author": "_venush",
+      "reactions": 11,
+      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1398238085103485052",
+      "content": "那就開回溯吧",
+      "author": "0.0._.0_0.",
+      "reactions": 9,
+      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1398242949740892250",
+      "content": "福袋是被nerf\n杜勒是buff炎上我覺得也是稀世美景的",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1398318363364823101",
+      "content": "",
+      "author": "_venush",
+      "reactions": 7,
+      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1398264099120484383",
+      "content": "然後他們事後才給杜勒皮膚加特效",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "「杜勒赛因·致勿忘我」简约幻衣，可在限时纪行获取！Doresain: Forget-Me-Not available in Limited-Time Archives!"
+    },
+    {
+      "id": "1398317165358092372",
+      "content": "Doresain needs different buffs to feel smoother... Like retain on his 3 cost car",
+      "author": "beenax.",
+      "reactions": 4,
+      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1398237770933338155",
+      "content": "老不死的",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1398293935721287761",
+      "content": "a lot of limiteds have been added to standard so can we get their old SR wheels ",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+    },
+    {
       "id": "1398201793514831933",
       "content": "過了一場最大生命還在3204",
       "author": "ernest_heart",
       "reactions": 3,
       "channel": "✅「已回答」共鳴「猩紅果實」沒有正確運作"
+    },
+    {
+      "id": "1398327735910137990",
+      "content": "No. 75\nUID: 101027230 *just saw the date, it popped notif so i thought this is n",
+      "author": "zicco_piyatat",
+      "reactions": 2,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+    },
+    {
+      "id": "1398358556360708280",
+      "content": "96\nUID 100901979\n\nCongratulations to the game on its anniversary. I have been pl",
+      "author": "uwulerauwu",
+      "reactions": 2,
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
+    },
+    {
+      "id": "1398235150382534740",
+      "content": "其实我倒是能理解这些加强都意在拓宽玩法和搭配。\n\n但主要是目前星辰篇数值和规则摆在这，任何不符合角色定位的小改动都显得非常多余😂",
+      "author": "xyakoto",
+      "reactions": 2,
+      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1398246630813077535",
+      "content": "but it definitely would help Goli gain more strength",
+      "author": "ernest_heart",
+      "reactions": 2,
+      "channel": "📜V2.3.0.2 版本前瞻┊ Version Outlook"
     },
     {
       "id": "1398218947123220541",
@@ -82,46 +196,11 @@
       "channel": "💭「处理中」劇情標題錯誤"
     },
     {
-      "id": "1398340165482844302",
-      "content": "Please clarify once and for all the odds of getting a limited character from the",
-      "author": "__goz__",
+      "id": "1398282081506955378",
+      "content": "39",
+      "author": "tnimreppep",
       "reactions": 1,
-      "channel": "✅「Answered」Clarification on gacha odds for standard limited"
-    },
-    {
-      "id": "1398303529504084049",
-      "content": "",
-      "author": "draconiatikey",
-      "reactions": 1,
-      "channel": "💭「Processing」Animations not Loading"
-    },
-    {
-      "id": "1398266453211222037",
-      "content": "<@1131790839291596841> 我錄下來反覆同時撥了幾次，應該是音效跟音樂重疊，加上遊戲端撥音樂不如直接聽音樂的感受\n應該是沒有漏掉的情況，這部分",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "💭「处理中」劇情標題錯誤"
-    },
-    {
-      "id": "1398209894527533066",
-      "content": "https://discord.com/channels/1131791637933199470/1398201793514831933",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": "✅「Answered」CH3 Max HP resonance does not work"
-    },
-    {
-      "id": "1398132683695063162",
-      "content": "Thank you all for your warm-hearted assistance. We will release a volunteer recr",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "Volunteering to aid with the English translation!"
-    },
-    {
-      "id": "1398177056348569752",
-      "content": "",
-      "author": "zerathree",
-      "reactions": 1,
-      "channel": "开祷！"
+      "channel": "活動結束|Event ends🎊幸運獎券：50份大禮花落誰家┊Lucky lottery ticket:  50 big gifts"
     }
   ]
 }

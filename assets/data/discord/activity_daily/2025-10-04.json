@@ -1,10 +1,22 @@
 {
   "date": "2025-10-04",
-  "messages": 30,
-  "unique_authors": 11,
-  "reactions_total": 25,
-  "attachments": 22,
+  "messages": 61,
+  "unique_authors": 18,
+  "reactions_total": 53,
+  "attachments": 39,
   "channel_activity": {
+    "The Persistence of Fading Glow | Tulu Fanfic": 1,
+    "Hi! There is my first contribution for the Morimens Fan Art Contest.": 1,
+    "William Delapore doodle(s)": 5,
+    "Miscellaneous Works Contest Submission": 1,
+    "blackjack!": 1,
+    "Francis cuz why not": 1,
+    "The Timeless Call Banner Guide": 3,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "V2.3.3.0 弥萨格大学·社团大乱斗！Mythag University: Club Brawl!": 4,
+    "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!": 2,
+    "Help teambuilding for 9-11": 8,
+    "When do I shift realms": 2,
     "忘却前夜OST：莱克 EP·狼的下周一": 10,
     "💭「Processing」English translation not translation to english. (Pc version)": 1,
     "✅「Answered」Add a payment processor for EN": 1,
@@ -18,31 +30,54 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "7": 8,
+    "6": 1,
+    "14": 6,
+    "0": 2,
+    "3": 6,
+    "11": 3,
+    "18": 1,
+    "5": 1,
+    "20": 2,
+    "22": 3,
+    "10": 2,
+    "19": 8,
+    "1": 3,
+    "2": 2,
+    "13": 2,
+    "17": 2,
+    "7": 9,
+    "15": 3,
     "8": 1,
     "9": 1,
-    "0": 1,
     "23": 1,
     "16": 1,
-    "14": 4,
-    "3": 5,
-    "15": 2,
-    "22": 2,
-    "2": 1,
-    "4": 1,
-    "1": 1,
-    "17": 1
+    "4": 1
   },
   "message_types": {
-    "0": 10
+    "0": 28,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1424103346041524275",
+      "content": "Hi everyone!! Here is my submission for the miscellaneous works contest. I made ",
+      "author": "chara_25",
+      "reactions": 20,
+      "channel": "Miscellaneous Works Contest Submission"
+    },
     {
       "id": "1423941553302409258",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：莱克 EP·狼的下周一 已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同",
       "author": "morimensstaff01",
       "reactions": 11,
       "channel": "忘却前夜OST：莱克 EP·狼的下周一"
+    },
+    {
+      "id": "1423990606518157414",
+      "content": "Without 🫳 emoji",
+      "author": "sunstopshining",
+      "reactions": 5,
+      "channel": "William Delapore doodle(s)"
     },
     {
       "id": "1423863742562832496",
@@ -71,6 +106,27 @@
       "author": "ruhebaoyangsiwa_97871",
       "reactions": 2,
       "channel": "请大家多多捧场喵"
+    },
+    {
+      "id": "1423912949050773567",
+      "content": "Omg that's so good. Well done dude",
+      "author": "angy_24_s",
+      "reactions": 1,
+      "channel": "The Persistence of Fading Glow | Tulu Fanfic"
+    },
+    {
+      "id": "1423911385154326528",
+      "content": "She needs to be drawn hotter. She is the hottest woman in morimens.",
+      "author": "angy_24_s",
+      "reactions": 1,
+      "channel": "Francis cuz why not"
+    },
+    {
+      "id": "1423935809303740416",
+      "content": "I think it better to wait for the anni event and see what happen bro maybe the m",
+      "author": "phanducthinh.com",
+      "reactions": 1,
+      "channel": "When do I shift realms"
     },
     {
       "id": "1423880918870917141",

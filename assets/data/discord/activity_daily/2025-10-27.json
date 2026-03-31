@@ -1,10 +1,20 @@
 {
   "date": "2025-10-27",
-  "messages": 26,
-  "unique_authors": 7,
-  "reactions_total": 167,
-  "attachments": 8,
+  "messages": 53,
+  "unique_authors": 15,
+  "reactions_total": 256,
+  "attachments": 16,
   "channel_activity": {
+    "Clementine!!!": 4,
+    "Silver Core Studies": 1,
+    "Pollux WIP": 2,
+    "A deranged midgame goldfish' guide on Pollux": 1,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 1,
+    "新手 求隊伍配置以及後續該朝哪方面補強": 5,
+    "回鍋新手求助": 4,
+    "Lost new player": 2,
+    "Do you have to log on every day to get the full payout from Moonphase Vigil": 1,
+    "i need help with team building": 6,
     "✅「Answered」About new Ryker buff": 1,
     "✅「已回答」相位对弈字打错了": 2,
     "✅「已回答」圖標顯示錯誤": 1,
@@ -18,17 +28,25 @@
     "1421408684776357929": 2
   },
   "hourly_activity": {
-    "4": 4,
+    "12": 4,
+    "15": 1,
+    "21": 4,
+    "22": 1,
+    "0": 3,
+    "6": 1,
+    "2": 7,
+    "4": 7,
+    "9": 1,
+    "16": 7,
+    "20": 1,
     "7": 7,
     "11": 2,
-    "13": 7,
-    "16": 4,
-    "2": 2
+    "13": 7
   },
   "message_types": {
-    "0": 12,
-    "4": 6,
-    "19": 3
+    "0": 20,
+    "4": 1,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -46,11 +64,39 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1432341378678915215",
+      "content": "Just the best artist drawing the BEST character! <:blowkiss:1356053035780014150>",
+      "author": "spooky_penguin_",
+      "reactions": 33,
+      "channel": "Clementine!!!"
+    },
+    {
+      "id": "1432485226428240085",
+      "content": "thinking of submitting this for the contest if I get to finish it",
+      "author": "honolulu_37",
+      "reactions": 32,
+      "channel": "Pollux WIP"
+    },
+    {
+      "id": "1432384047635632218",
+      "content": "how many can you identify?",
+      "author": "nikolazuli",
+      "reactions": 17,
+      "channel": "Silver Core Studies"
+    },
+    {
       "id": "1432188305662804130",
       "content": "",
       "author": "water_heart",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1432256518748639242",
+      "content": "Yes, this is to tell everyone how to obtain the links onFB、 YTB and X. Generally",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1432368234438590607",
@@ -65,6 +111,34 @@
       "author": "arkaether",
       "reactions": 2,
       "channel": "Is there a limit?"
+    },
+    {
+      "id": "1432496132445180025",
+      "content": "https://tenor.com/view/hungy-lizard-lick-gif-17981615152551697402",
+      "author": "bagels5899",
+      "reactions": 1,
+      "channel": "Pollux WIP"
+    },
+    {
+      "id": "1432191146305650790",
+      "content": "熔朵先超限",
+      "author": "sayo.0320",
+      "reactions": 1,
+      "channel": "新手 求隊伍配置以及後續該朝哪方面補強"
+    },
+    {
+      "id": "1432458846705811506",
+      "content": "can use it temporarily, it just doesn't synergize that well though",
+      "author": "syruponstrawberrycake",
+      "reactions": 1,
+      "channel": "i need help with team building"
+    },
+    {
+      "id": "1432478715115474945",
+      "content": "yeah you can. especially in the early game.\nI've used a similar team to clear mo",
+      "author": "unicorned_batman",
+      "reactions": 1,
+      "channel": "i need help with team building"
     },
     {
       "id": "1432355266241888256",

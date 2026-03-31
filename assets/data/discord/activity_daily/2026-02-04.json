@@ -1,10 +1,13 @@
 {
   "date": "2026-02-04",
-  "messages": 7418,
+  "messages": 7424,
   "unique_authors": 162,
   "reactions_total": 1288,
-  "attachments": 301,
+  "attachments": 302,
   "channel_activity": {
+    "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup...": 3,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
+    "登入問題": 2,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 1,
     "Xu but i gave her a monster mouth": 2,
     "Girl's lament: Aigis": 4,
@@ -23,6 +26,11 @@
     "🔸morimens-game-chat": 6324
   },
   "hourly_activity": {
+    "11": 329,
+    "18": 462,
+    "17": 611,
+    "9": 219,
+    "10": 530,
     "0": 60,
     "22": 114,
     "23": 166,
@@ -35,22 +43,17 @@
     "5": 210,
     "7": 177,
     "8": 220,
-    "11": 327,
     "14": 720,
-    "10": 529,
-    "9": 218,
     "13": 519,
     "6": 161,
-    "18": 461,
     "3": 202,
-    "17": 610,
     "19": 351,
     "20": 122,
     "21": 230
   },
   "message_types": {
-    "0": 9,
-    "4": 1
+    "19": 1,
+    "0": 5
   },
   "top_reacted_messages": [
     {

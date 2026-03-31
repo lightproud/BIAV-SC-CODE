@@ -1,10 +1,17 @@
 {
   "date": "2025-12-28",
-  "messages": 56,
-  "unique_authors": 14,
-  "reactions_total": 162,
-  "attachments": 17,
+  "messages": 80,
+  "unique_authors": 18,
+  "reactions_total": 259,
+  "attachments": 23,
   "channel_activity": {
+    "🌼 Pollux 🌼": 1,
+    "Octopus Octopus We Like You Club joining benefit": 2,
+    "Three Mismatched Lamps & Hairclips [Nautila & Alva Fanfic]": 3,
+    "Just any art": 4,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 11,
+    "🔥「因雾之名」惊喜来袭：SSR限定联动唤醒体「茉夏」免费获取！\"Rendezvous in Mist\" Surprise:  \"Mouchette\" for Free!": 1,
+    "健检+配队建议": 2,
     "V2.4.1.1 在线维护公告": 1,
     "Ramona is holding her sword wrong": 2,
     "💭「处理中」回放bug": 1,
@@ -26,29 +33,40 @@
     "1445334381404094475": 11
   },
   "hourly_activity": {
-    "23": 1,
-    "12": 7,
+    "13": 12,
+    "15": 11,
+    "16": 4,
+    "9": 5,
+    "5": 5,
+    "2": 5,
+    "8": 2,
+    "12": 8,
+    "17": 3,
+    "19": 2,
+    "20": 1,
+    "23": 2,
+    "22": 2,
+    "6": 3,
     "14": 5,
     "3": 3,
-    "2": 4,
-    "8": 1,
     "10": 1,
     "11": 3,
-    "17": 1,
     "21": 2,
-    "15": 10,
-    "16": 3,
-    "13": 11,
-    "6": 1,
-    "9": 1,
-    "18": 1,
-    "22": 1
+    "18": 1
   },
   "message_types": {
-    "0": 2,
-    "4": 1
+    "0": 22,
+    "4": 1,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1454861058383544555",
+      "content": "\"Tremble before these muscles... They are always ready to sever your head.\"\n\n※Ar",
+      "author": "ernest_heart",
+      "reactions": 48,
+      "channel": "Octopus Octopus We Like You Club joining benefit"
+    },
     {
       "id": "1454842417571172392",
       "content": "（哭泣脸）（）<:dead:1356082627509092372>",
@@ -83,6 +101,27 @@
       "author": "reya.li",
       "reactions": 19,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1454832153614356480",
+      "content": "UID: 101186794",
+      "author": "mythicmoonwort",
+      "reactions": 15,
+      "channel": "🌼 Pollux 🌼"
+    },
+    {
+      "id": "1454771234897137714",
+      "content": "A quick drabble for Nautila & Alva <:M_satisfy:1400771690321154110> <:love:13560",
+      "author": "annaxxe_",
+      "reactions": 14,
+      "channel": "Three Mismatched Lamps & Hairclips [Nautila & Alva Fanfic]"
+    },
+    {
+      "id": "1454712451391164604",
+      "content": "1) Liz- I drew this hard for 4 hours and 40 minutes...... But please omit the po",
+      "author": "kaira._.22",
+      "reactions": 14,
+      "channel": "Just any art"
     },
     {
       "id": "1454955322547376234",
@@ -120,11 +159,25 @@
       "channel": ""
     },
     {
+      "id": "1454866938529321143",
+      "content": "tell you a joke, when I switched the game to English to see the English dialogue",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "Octopus Octopus We Like You Club joining benefit"
+    },
+    {
       "id": "1454834076388163594",
       "content": "101165253",
       "author": "chiedgaf",
       "reactions": 3,
       "channel": "some GMurphy doodles"
+    },
+    {
+      "id": "1454715007609864377",
+      "content": "3) 24- unfinished (revised it, old art)",
+      "author": "kaira._.22",
+      "reactions": 2,
+      "channel": "Just any art"
     },
     {
       "id": "1454662875766460528",
@@ -146,48 +199,6 @@
       "author": "oatstemp",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1454656074035630090",
-      "content": "She became doll 😔 <:Wait:1400771580757409844>",
-      "author": "fishhazardthewizard",
-      "reactions": 1,
-      "channel": "💭「Processing」Incorrect card description"
-    },
-    {
-      "id": "1454783010435108895",
-      "content": "<@1131790839291596841> I think you can close this post and also https://discord.",
-      "author": "moyashi0672",
-      "reactions": 1,
-      "channel": "✅「Resolved」Traphase bug"
-    },
-    {
-      "id": "1454672075171299379",
-      "content": "如題，自己沒羊媽造型的情況下無法觀看對應回放",
-      "author": "arr5721",
-      "reactions": 1,
-      "channel": "✅「已回答」回放bug?"
-    },
-    {
-      "id": "1454850962606002370",
-      "content": "謝謝勞斯😭",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "克莱门汀"
-    },
-    {
-      "id": "1454857238421176484",
-      "content": "香香的飯😭 😭 😭",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "克莱门汀"
-    },
-    {
-      "id": "1454800149082804378",
-      "content": "好看好看",
-      "author": "lingcheng.0",
-      "reactions": 1,
-      "channel": "嗨又是我我又畫了哈姆林"
     }
   ]
 }

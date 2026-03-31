@@ -1,10 +1,15 @@
 {
   "date": "2026-01-13",
-  "messages": 27,
-  "unique_authors": 6,
-  "reactions_total": 82,
-  "attachments": 7,
+  "messages": 39,
+  "unique_authors": 10,
+  "reactions_total": 131,
+  "attachments": 11,
   "channel_activity": {
+    "mouchette i drew during math class": 2,
+    "Ms Dean?": 2,
+    "Sea of Primordial Essence": 3,
+    "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!": 4,
+    "兄弟们今天刚入坑如果买自抽号的话应该怎么玩": 1,
     "「相位对弈」轮选模式功能异常": 1,
     "[Art Dump Thread] WILLIAMPOSTING 2": 2,
     "Doresain & Sylvester (WIP)": 2,
@@ -23,13 +28,16 @@
     "1234769700735418368": 2
   },
   "hourly_activity": {
-    "22": 1,
-    "21": 3,
+    "9": 7,
+    "16": 2,
+    "2": 9,
+    "15": 1,
+    "22": 2,
+    "17": 1,
+    "21": 4,
     "8": 1,
-    "9": 6,
     "13": 1,
     "12": 1,
-    "2": 4,
     "4": 2,
     "7": 1,
     "10": 3,
@@ -38,8 +46,8 @@
     "5": 1
   },
   "message_types": {
-    "0": 4,
-    "4": 1
+    "0": 8,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -57,6 +65,20 @@
       "channel": "Doresain & Sylvester (WIP)"
     },
     {
+      "id": "1460663814386094110",
+      "content": "",
+      "author": "nikolazuli",
+      "reactions": 22,
+      "channel": "Sea of Primordial Essence"
+    },
+    {
+      "id": "1460571601949954143",
+      "content": "i didn't have a reference so not the most accurate to her design, sorry!",
+      "author": "glitzy_x",
+      "reactions": 16,
+      "channel": "mouchette i drew during math class"
+    },
+    {
       "id": "1460465033359397025",
       "content": "🥹 <:Sendflowers:1400771545370067118>",
       "author": "morimensstaff01",
@@ -64,11 +86,39 @@
       "channel": ""
     },
     {
+      "id": "1460679617219399794",
+      "content": "cool style",
+      "author": "sleepypillow",
+      "reactions": 3,
+      "channel": "mouchette i drew during math class"
+    },
+    {
+      "id": "1460461111680962571",
+      "content": "<@282543586275229706> Hi, please rest assured that only accounts that receive re",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1460463776401981560",
+      "content": "If there are any abnormalities with the reward, please feel free to contact me a",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!"
+    },
+    {
       "id": "1460752631747317893",
       "content": "https://youtu.be/VQ5foXDsbww - Como funciona Miryam Habilidades, covenants, arma",
       "author": "yaoshidoppa",
       "reactions": 3,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1460692351914873006",
+      "content": "hello please correct me if i am wrong but from what i understand the people on f",
+      "author": "shirox0_.",
+      "reactions": 2,
+      "channel": "🔥10000银芯奖励！V2.4.0 UGC创作征集开启！10,000 Silver reward! V2.4.0 UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1460752589858537482",

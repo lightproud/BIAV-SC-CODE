@@ -1,10 +1,17 @@
 {
   "date": "2025-04-08",
-  "messages": 27,
-  "unique_authors": 5,
-  "reactions_total": 2,
-  "attachments": 2,
+  "messages": 41,
+  "unique_authors": 9,
+  "reactions_total": 25,
+  "attachments": 12,
   "channel_activity": {
+    "Flares' Submission to the Fanart Contest. 24 with Jenkins and Brown": 2,
+    "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 1,
+    "活動結束|Event ends🎨同人征集┊Fan Art collection：V2.2『窺視靈魂之旅』開啟！": 2,
+    "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！": 2,
+    "🎬V2.2 概念PV「窺視靈魂之旅」┊ V2.2 PV - Gaze into the Soul's Depths": 1,
+    "📸壁紙分享-克萊門汀┊Wallpaper Sharing-Clementine": 1,
+    "兄弟们怎么配队": 5,
     "[克蘇魯神話元素] 溫柯爾裡面的人": 3,
     "✅校猫碎碎念#近况分享": 2,
     "✅「已回答」對弈催眠靈擺bug": 5,
@@ -16,24 +23,49 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
+    "8": 8,
+    "12": 2,
+    "7": 2,
+    "5": 5,
+    "4": 1,
+    "9": 1,
+    "18": 1,
     "14": 4,
     "13": 1,
     "15": 1,
-    "5": 4,
     "6": 3,
     "2": 7,
     "3": 1,
     "10": 1,
     "23": 2,
-    "1": 1,
-    "8": 1,
-    "12": 1
+    "1": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 3
+    "0": 11,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1359083858217402470",
+      "content": "Here is a very intricate image of 24 with her hands trying to strangle her with ",
+      "author": "flares117",
+      "reactions": 15,
+      "channel": "Flares' Submission to the Fanart Contest. 24 with Jenkins and Brown"
+    },
+    {
+      "id": "1359079305518256128",
+      "content": "活動獎勵升級，新增限定頭像框和無門檻參與獎，下面是詳細訊息：\n\n**🎨【投稿時間】**\n2025年4月7日00:00-2025年5月4日23:59 (UTC+8",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "活動結束|Event ends🎨同人征集┊Fan Art collection：V2.2『窺視靈魂之旅』開啟！"
+    },
+    {
+      "id": "1359081696783499397",
+      "content": "🎁獎勵新增“限定頭像框”與無門檻參與獎，歡迎各位守密人一起來創作遊戲攻略！\n\n**🎯【投稿時間】**\n2025年4月7日00:00-2025年5月4日23:59",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
+    },
     {
       "id": "1359176930347192350",
       "content": "免得大家都說我們產能拿來幹嘛",

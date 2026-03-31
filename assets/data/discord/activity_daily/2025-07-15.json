@@ -1,10 +1,13 @@
 {
   "date": "2025-07-15",
-  "messages": 27,
-  "unique_authors": 9,
-  "reactions_total": 24,
-  "attachments": 7,
+  "messages": 68,
+  "unique_authors": 26,
+  "reactions_total": 172,
+  "attachments": 10,
   "channel_activity": {
+    "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain": 30,
+    "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure": 10,
+    "幫我姊求個配隊": 1,
     "V2.2.3.2 在线维护公告": 1,
     "✅「已回答」吃飽了拿不了體質卡了": 3,
     "Suggestion: rework automatic locking of wheels before maxed": 1,
@@ -17,23 +20,44 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "6": 6,
+    "7": 11,
+    "8": 1,
+    "9": 5,
+    "10": 12,
+    "15": 4,
+    "16": 1,
+    "18": 2,
+    "19": 4,
+    "12": 3,
+    "1": 1,
     "14": 1,
-    "19": 1,
     "23": 3,
     "2": 7,
-    "6": 1,
     "13": 1,
-    "10": 5,
-    "12": 1,
     "4": 3,
     "3": 2,
-    "5": 1,
-    "15": 1
+    "5": 1
   },
   "message_types": {
-    "0": 1
+    "0": 39,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1394569081830506567",
+      "content": "“进食，是我们学会的第一件事。请来我身边吧，我亲爱的客人。\n不必害怕，感受我的唇齿，划过你的肌肤与脏器。”\n\n“啊……我的珍馐，我的爱侣……”\n\n——✦——✦—",
+      "author": "morimensstaff01",
+      "reactions": 61,
+      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+    },
+    {
+      "id": "1394575126577807411",
+      "content": "每个人都有最美味的部位：记者的声带、政治家的舌头、舞者的腓肠肌…\n\n但，无法满足啊~残月如何与满月媲美？\n渴望一具完美的肉身！一具像「杜勒赛因」般的至美珍馐：\n",
+      "author": "morimensstaff01",
+      "reactions": 35,
+      "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
+    },
     {
       "id": "1394698125721075712",
       "content": "摸一下克萊因藍<:shy:1356053151349997829>",
@@ -42,11 +66,67 @@
       "channel": ""
     },
     {
+      "id": "1394579825536143370",
+      "content": "中文：進食\n英文：伊比鳩魯（享樂主義，但其實是教人尋求安寧的高級快樂，唯物主義者）",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
+    },
+    {
+      "id": "1394575098593280011",
+      "content": "“■■，是我们学会的第一件事。请■我■■吧，我亲爱的客人。\n不必害怕，感受我的■■，■■你的■■与■■。”\n\n“啊……我的■■，我的爱侣……”",
+      "author": "ernest_heart",
+      "reactions": 9,
+      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+    },
+    {
+      "id": "1394582533366091857",
+      "content": "肚饿塞因",
+      "author": "muliupan",
+      "reactions": 7,
+      "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
+    },
+    {
+      "id": "1394768483832827914",
+      "content": "next on the biav kink list: hard vore lmfao",
+      "author": "yonagoda",
+      "reactions": 6,
+      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+    },
+    {
+      "id": "1394621603404451962",
+      "content": "Im ready for the full course meal chef 🍽️",
+      "author": "meatyexplosions",
+      "reactions": 6,
+      "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
+    },
+    {
+      "id": "1394607716919410708",
+      "content": "And all in a bloody paragraph I was made a thousand time more willing to open my",
+      "author": "red_rest",
+      "reactions": 5,
+      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+    },
+    {
       "id": "1394828315683983441",
       "content": "This usually isnt't a problem for anyone invested enough to realize having +12 m",
       "author": "lumato",
       "reactions": 5,
       "channel": "Suggestion: rework automatic locking of wheels before maxed"
+    },
+    {
+      "id": "1394576388484501524",
+      "content": "",
+      "author": "iTranslator",
+      "reactions": 4,
+      "channel": "V2.3 全新唤醒体✦杜勒赛因┊V2.3 New Awakener✦Doresain"
+    },
+    {
+      "id": "1394587010525696152",
+      "content": "Eating their own body as the finest delicacy? that's Banica Conchita coded and I",
+      "author": "zekiei",
+      "reactions": 4,
+      "channel": "V2.3 杜勒赛因情报：进食┊V2.3 About Doresain: The Epicure"
     },
     {
       "id": "1394763354991628401",

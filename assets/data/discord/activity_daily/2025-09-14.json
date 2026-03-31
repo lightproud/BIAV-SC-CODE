@@ -1,10 +1,22 @@
 {
   "date": "2025-09-14",
-  "messages": 29,
-  "unique_authors": 8,
-  "reactions_total": 12,
-  "attachments": 2,
+  "messages": 120,
+  "unique_authors": 22,
+  "reactions_total": 104,
+  "attachments": 15,
   "channel_activity": {
+    "Flares' Pickman Fanart": 1,
+    "☄️": 2,
+    "Cat tulu": 3,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 3,
+    "求配隊": 3,
+    "收个卡斯托尔超限号…初始号": 2,
+    "刚入坑，这个配队可以吗？": 53,
+    "请问忘却适合氪金吗，最好氪什么？": 5,
+    "一個純萌新": 9,
+    "New Player Summon/Team Help": 6,
+    "Need help with the Invitation event": 1,
+    "What can I do to level up fast?": 3,
     "忘却前夜OST：神明诞生之日": 1,
     "\"Oh? Keeper, you're approaching me? Instead of running away, you're coming right to me?\"": 1,
     "敵人不應被加強": 1,
@@ -15,27 +27,89 @@
     "【忘却前夜乙女向】艺术经理理智守则  皮克曼x你": 7
   },
   "hourly_activity": {
+    "0": 1,
+    "13": 43,
+    "19": 1,
+    "8": 4,
+    "16": 10,
+    "18": 1,
+    "21": 1,
+    "11": 2,
+    "12": 10,
+    "5": 5,
+    "3": 4,
+    "6": 9,
+    "14": 1,
+    "23": 1,
+    "1": 1,
+    "2": 3,
+    "9": 13,
+    "10": 2,
     "7": 1,
-    "13": 2,
-    "8": 1,
     "15": 4,
-    "16": 7,
     "17": 2,
-    "9": 8,
-    "4": 1,
-    "10": 1,
-    "12": 2
+    "4": 1
   },
   "message_types": {
-    "0": 2
+    "0": 65,
+    "19": 26
   },
   "top_reacted_messages": [
+    {
+      "id": "1416705034011414578",
+      "content": "Cthulhu\nCa tu lu\nCat Tulu\n\nUID : 101012654",
+      "author": "noname0963",
+      "reactions": 30,
+      "channel": "Cat tulu"
+    },
+    {
+      "id": "1416576394477047960",
+      "content": "",
+      "author": "flares117",
+      "reactions": 26,
+      "channel": "Flares' Pickman Fanart"
+    },
+    {
+      "id": "1416705171895091392",
+      "content": "Miss sanga agrees <:sleep2:1356085993626665200>",
+      "author": "noname0963",
+      "reactions": 8,
+      "channel": "Cat tulu"
+    },
+    {
+      "id": "1416705110737944688",
+      "content": "",
+      "author": "noname0963",
+      "reactions": 4,
+      "channel": "Cat tulu"
+    },
+    {
+      "id": "1416652929796149308",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 4,
+      "channel": "收个卡斯托尔超限号…初始号"
+    },
     {
       "id": "1416704809272213576",
       "content": "這很直接地影響了遊戲體驗",
       "author": "ahuahuahua",
       "reactions": 4,
       "channel": "敵人不應被加強"
+    },
+    {
+      "id": "1416679371862708225",
+      "content": "不要課",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "请问忘却适合氪金吗，最好氪什么？"
+    },
+    {
+      "id": "1416609051550158971",
+      "content": "把他丟掉",
+      "author": "shchng.",
+      "reactions": 3,
+      "channel": "一個純萌新"
     },
     {
       "id": "1416711518879481856",
@@ -52,18 +126,74 @@
       "channel": "【忘却前夜乙女向】艺术经理理智守则  皮克曼x你"
     },
     {
-      "id": "1416776463520366723",
-      "content": "I finally got the reference... thank you for making this work of art 👌",
-      "author": "sofiaebby",
-      "reactions": 1,
-      "channel": "\"Oh? Keeper, you're approaching me? Instead of running away, you're coming right to me?\""
+      "id": "1416622790773047457",
+      "content": "我聞到深海味",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "刚入坑，这个配队可以吗？"
     },
     {
-      "id": "1416713177793826961",
-      "content": "~~因為我忘了~~",
-      "author": "ahuahuahua",
+      "id": "1416653246709104686",
+      "content": "校規要記得看<:Target:1400771609014435923>",
+      "author": "ahong0727",
       "reactions": 1,
-      "channel": "💭「处理中」意圖上沒有出血"
+      "channel": "收个卡斯托尔超限号…初始号"
+    },
+    {
+      "id": "1416671748723572807",
+      "content": "不是",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "刚入坑，这个配队可以吗？"
+    },
+    {
+      "id": "1416779541766209610",
+      "content": "目前存着",
+      "author": "alatin.",
+      "reactions": 1,
+      "channel": "刚入坑，这个配队可以吗？"
+    },
+    {
+      "id": "1416779660284657815",
+      "content": "引航女配船長 完美",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 1,
+      "channel": "刚入坑，这个配队可以吗？"
+    },
+    {
+      "id": "1416780760832278579",
+      "content": "理性在說不要",
+      "author": "corposant_1003",
+      "reactions": 1,
+      "channel": "刚入坑，这个配队可以吗？"
+    },
+    {
+      "id": "1416781304225337495",
+      "content": "yaya，奥尔拉和哈姆林我都是各抽一只",
+      "author": "alatin.",
+      "reactions": 1,
+      "channel": "刚入坑，这个配队可以吗？"
+    },
+    {
+      "id": "1416781389591744562",
+      "content": "嗯",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 1,
+      "channel": "刚入坑，这个配队可以吗？"
+    },
+    {
+      "id": "1416784141038653540",
+      "content": "我加了~",
+      "author": "alatin.",
+      "reactions": 1,
+      "channel": "刚入坑，这个配队可以吗？"
+    },
+    {
+      "id": "1416786877532344361",
+      "content": "100872328",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "刚入坑，这个配队可以吗？"
     }
   ]
 }

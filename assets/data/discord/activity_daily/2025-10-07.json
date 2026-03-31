@@ -1,10 +1,17 @@
 {
   "date": "2025-10-07",
-  "messages": 16,
-  "unique_authors": 10,
-  "reactions_total": 14,
-  "attachments": 2,
+  "messages": 41,
+  "unique_authors": 15,
+  "reactions_total": 26,
+  "attachments": 10,
   "channel_activity": {
+    "Pickman's Model | Pickman and Sylvester fanfic with bonus fanart": 1,
+    "Day 1 Newb": 8,
+    "久遠的呼喚建議下池嗎（下版本": 4,
+    "Team Help?": 1,
+    "Team help": 5,
+    "who should I pull on the timeless banner?": 2,
+    "Get help to pass 5-14": 4,
     "✅「已回答」手冊介面": 1,
     "✅「Answered」Rotating menu background": 1,
     "💭「处理中」考不考虑把星辰篇主线的成就奖励加回来": 1,
@@ -16,19 +23,25 @@
     "【收米人&OC向】【繁衍狂热向】岁月为笔相思": 4
   },
   "hourly_activity": {
-    "15": 4,
+    "15": 6,
+    "12": 8,
+    "13": 1,
+    "14": 1,
+    "0": 4,
+    "23": 1,
+    "16": 3,
+    "18": 5,
+    "21": 2,
     "7": 1,
-    "16": 1,
     "3": 2,
     "10": 1,
-    "18": 1,
     "5": 1,
     "6": 1,
     "9": 4
   },
   "message_types": {
-    "0": 8,
-    "19": 4
+    "0": 19,
+    "19": 6
   },
   "top_reacted_messages": [
     {
@@ -51,6 +64,83 @@
       "author": "sweet_25367",
       "reactions": 3,
       "channel": "✅「已解决」进了普池的限定角色的活动以后还会复刻吗？"
+    },
+    {
+      "id": "1425099939062485002",
+      "content": "Good evening everyone. I keep getting recommendations from my friends and youtub",
+      "author": "lalalanz.",
+      "reactions": 2,
+      "channel": "Day 1 Newb"
+    },
+    {
+      "id": "1425101741694648384",
+      "content": "<#1357184174485671966>",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "Day 1 Newb"
+    },
+    {
+      "id": "1425101829989208157",
+      "content": "to the holy spreadsheet you go friend",
+      "author": "omni_colon",
+      "reactions": 1,
+      "channel": "Day 1 Newb"
+    },
+    {
+      "id": "1425101833835122772",
+      "content": "You can focus on caecus for the early chapters up to chapter 4 for now. Hameln i",
+      "author": "angbak",
+      "reactions": 1,
+      "channel": "Day 1 Newb"
+    },
+    {
+      "id": "1425101968036073576",
+      "content": "You should be able to unlock events at around chapter 2-8 or 2-9. Add friends an",
+      "author": "angbak",
+      "reactions": 1,
+      "channel": "Day 1 Newb"
+    },
+    {
+      "id": "1425116963063205928",
+      "content": "if you want to learn a bit better how the realms and game work in a more clear w",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "Day 1 Newb"
+    },
+    {
+      "id": "1425126459655192777",
+      "content": "Thanks everyone 💚",
+      "author": "lalalanz.",
+      "reactions": 1,
+      "channel": "Day 1 Newb"
+    },
+    {
+      "id": "1425191923424952446",
+      "content": "slap the Blade on Titan on Salv if you have it and he's carrying so hard when yo",
+      "author": "ellezard",
+      "reactions": 1,
+      "channel": "Team help"
+    },
+    {
+      "id": "1425192071307989132",
+      "content": "I don't have access to Covenant Transcription yet due to being below level 55 an",
+      "author": "ellezard",
+      "reactions": 1,
+      "channel": "Team help"
+    },
+    {
+      "id": "1425094696346062860",
+      "content": "yes i’m going to save now, thanks a lot for your advice!",
+      "author": ".luobingge",
+      "reactions": 1,
+      "channel": "who should I pull on the timeless banner?"
+    },
+    {
+      "id": "1425238387551375402",
+      "content": "current event let you choose to buy what you want, so theres no real reason to d",
+      "author": "reverie.is.dead",
+      "reactions": 1,
+      "channel": "Get help to pass 5-14"
     }
   ]
 }

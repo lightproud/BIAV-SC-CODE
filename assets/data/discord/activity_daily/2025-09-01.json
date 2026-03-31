@@ -1,10 +1,22 @@
 {
   "date": "2025-09-01",
-  "messages": 119,
+  "messages": 179,
   "unique_authors": 25,
-  "reactions_total": 892,
-  "attachments": 26,
+  "reactions_total": 981,
+  "attachments": 43,
   "channel_activity": {
+    "uvhash fan art submission": 1,
+    "Tulu keychain!!!": 8,
+    "Carried": 1,
+    "Wplace tulu": 3,
+    "Hameln fanart": 1,
+    "September 1, 2025 D-Tide Playlist": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 3,
+    "Covenant help": 3,
+    "How do cards that inflict a status based on damage work with damage modifiers": 6,
+    "Hello": 5,
+    "Help me.": 25,
+    "Investment Help": 3,
     "V2.3.1.6 在线维护公告": 2,
     "忘却前夜OST：骸骨长眠之所": 1,
     "前瞻：Skin rarity planning 皮肤稀有度规划": 2,
@@ -40,27 +52,33 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "12": 3,
-    "4": 10,
-    "10": 10,
-    "11": 2,
-    "14": 1,
+    "0": 18,
+    "10": 16,
+    "12": 5,
+    "17": 2,
+    "18": 3,
+    "11": 4,
+    "23": 2,
+    "13": 1,
+    "14": 3,
+    "16": 3,
+    "22": 7,
+    "4": 12,
+    "6": 8,
+    "9": 5,
+    "1": 11,
+    "2": 8,
+    "5": 7,
     "3": 38,
     "8": 8,
-    "18": 1,
     "15": 12,
-    "16": 2,
     "21": 2,
-    "9": 4,
     "20": 1,
-    "7": 3,
-    "2": 7,
-    "6": 6,
-    "5": 6,
-    "1": 3
+    "7": 3
   },
   "message_types": {
-    "0": 5,
+    "0": 58,
+    "4": 1,
     "19": 1
   },
   "top_reacted_messages": [
@@ -70,6 +88,13 @@
       "author": "morimensstaff01",
       "reactions": 792,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1412125656313233538",
+      "content": "I love Door-man.",
+      "author": "gumseoi",
+      "reactions": 80,
+      "channel": "Carried"
     },
     {
       "id": "1411895151097286798",
@@ -135,6 +160,20 @@
       "channel": "板寫守密人遺書"
     },
     {
+      "id": "1412019009938788494",
+      "content": "ITS HERE",
+      "author": "rowlynt66",
+      "reactions": 3,
+      "channel": "Tulu keychain!!!"
+    },
+    {
+      "id": "1412056094599286877",
+      "content": "",
+      "author": "rowlynt66",
+      "reactions": 3,
+      "channel": "Tulu keychain!!!"
+    },
+    {
       "id": "1412020838403670180",
       "content": "Thank you, we will check first🙏",
       "author": "morimensstaff01",
@@ -182,27 +221,6 @@
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「已回答」日服BUG可以在這底回報嗎"
-    },
-    {
-      "id": "1412104411768946728",
-      "content": "> 大家好，这里是难忘今宵攻略组。本期为大家带来的是星辰篇第15期（第42期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：地图\n图二：造物与首",
-      "author": "menoctus",
-      "reactions": 2,
-      "channel": "✦关卡地图「融灾禁区」总览42期·星辰篇✦"
-    },
-    {
-      "id": "1412023376377020427",
-      "content": "",
-      "author": "iTranslator",
-      "reactions": 1,
-      "channel": "前瞻：Skin rarity planning 皮肤稀有度规划"
-    },
-    {
-      "id": "1412116008554074254",
-      "content": "感恩",
-      "author": "jidu1418",
-      "reactions": 1,
-      "channel": "✅「已解決」我号呢"
     }
   ]
 }

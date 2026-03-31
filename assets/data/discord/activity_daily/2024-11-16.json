@@ -1,10 +1,11 @@
 {
   "date": "2024-11-16",
-  "messages": 62,
+  "messages": 65,
   "unique_authors": 10,
-  "reactions_total": 7,
-  "attachments": 5,
+  "reactions_total": 12,
+  "attachments": 8,
   "channel_activity": {
+    "Relic Tierlist": 3,
     "V1.7.1.0 停服維護公告": 2,
     "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！": 6,
     "📜塔薇喚醒體&命輪介紹": 22,
@@ -17,23 +18,29 @@
     "喬治（R18，有碼": 6
   },
   "hourly_activity": {
+    "12": 6,
+    "16": 2,
+    "18": 2,
     "13": 3,
-    "18": 1,
     "15": 9,
-    "16": 1,
     "2": 22,
     "10": 7,
     "11": 5,
-    "12": 5,
     "5": 3,
     "1": 4,
     "4": 2
   },
   "message_types": {
-    "0": 27,
-    "19": 3
+    "0": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1307317449485455391",
+      "content": "Make your own tier list for relics, and place your explanations on some relics h",
+      "author": "rozu",
+      "reactions": 5,
+      "channel": "Relic Tierlist"
+    },
     {
       "id": "1307335675674361896",
       "content": "坐等加強",

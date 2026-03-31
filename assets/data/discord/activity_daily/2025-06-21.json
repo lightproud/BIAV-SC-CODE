@@ -1,10 +1,13 @@
 {
   "date": "2025-06-21",
-  "messages": 19,
-  "unique_authors": 5,
-  "reactions_total": 5,
-  "attachments": 6,
+  "messages": 55,
+  "unique_authors": 6,
+  "reactions_total": 46,
+  "attachments": 8,
   "channel_activity": {
+    "aigis!": 3,
+    "求配隊": 31,
+    "Guia en español para principiantes": 2,
     "✅「Answered」Aliemus display bug": 3,
     "💭「Processing」Chapter 2-7 missing files or pointers.": 1,
     "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血": 3,
@@ -13,6 +16,9 @@
     "好久没做DIY了，发一个杜勒塞因": 2
   },
   "hourly_activity": {
+    "11": 3,
+    "0": 31,
+    "19": 2,
     "2": 1,
     "5": 1,
     "21": 1,
@@ -27,10 +33,24 @@
     "1": 2
   },
   "message_types": {
-    "0": 10,
-    "19": 1
+    "0": 32,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1385948039004553256",
+      "content": "",
+      "author": "poki0poki",
+      "reactions": 30,
+      "channel": "aigis!"
+    },
+    {
+      "id": "1386060729697964113",
+      "content": "https://youtube.com/@justg-g?feature=shared\n\nbuenas muchachos en mi nuevo canal ",
+      "author": "yaoshidoppa",
+      "reactions": 10,
+      "channel": "Guia en español para principiantes"
+    },
     {
       "id": "1385809719884775475",
       "content": "My Doll:Inferno has 8 base aliemus regen but on the teambuild stat checking scre",
@@ -44,6 +64,13 @@
       "author": "thefallen6666",
       "reactions": 2,
       "channel": "💭「Processing」Chapter 2-7 missing files or pointers."
+    },
+    {
+      "id": "1386062282672312320",
+      "content": "Mientras expliques a los nuevos jugadores sobre la supremacía Caro, todo perfect",
+      "author": "duxadidus",
+      "reactions": 1,
+      "channel": "Guia en español para principiantes"
     },
     {
       "id": "1385865469092958238",

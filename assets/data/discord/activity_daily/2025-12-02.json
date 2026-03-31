@@ -1,10 +1,31 @@
 {
   "date": "2025-12-02",
-  "messages": 149,
+  "messages": 207,
   "unique_authors": 31,
-  "reactions_total": 188,
-  "attachments": 32,
+  "reactions_total": 357,
+  "attachments": 73,
   "channel_activity": {
+    "Stolen memes of the day": 2,
+    "Caecus 🐠": 1,
+    "hi morimens meme dump (ooc warning me and oomf were goofing aruond)": 1,
+    "William painting": 2,
+    "Some doodles": 3,
+    "Morimens things": 10,
+    "Pickman, Drawing without anatomy guide, wishing for the best for my poor brain": 3,
+    "I just wanna draw my favs": 4,
+    "KEEPER PADORU": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 5,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 1,
+    "V2.4.0 版本前瞻-下┊ Version Outlook - Part Ⅱ": 1,
+    "V2.4.0.7 版本前瞻 ┊ Version Outlook": 2,
+    "新手求助": 1,
+    "融灾配队（辅助疑惑）": 5,
+    "大眼球D2": 3,
+    "What are good teams for what I have right now?": 1,
+    "Team Suggestions for D-Tide": 6,
+    "Team building and which banner to pull": 4,
+    "Team-building sort of": 1,
     "V2.4.0.9 在线维护公告": 34,
     "V2.4.0.7 停服维护公告": 1,
     "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 1,
@@ -44,32 +65,34 @@
     "1441326394817908736": 7
   },
   "hourly_activity": {
+    "5": 7,
+    "13": 14,
+    "2": 12,
+    "0": 5,
+    "8": 11,
+    "10": 13,
+    "11": 7,
+    "16": 5,
+    "17": 11,
+    "20": 3,
+    "18": 4,
+    "15": 12,
+    "14": 17,
+    "12": 32,
+    "1": 6,
+    "19": 2,
+    "21": 1,
+    "7": 10,
+    "4": 16,
     "9": 4,
-    "10": 7,
-    "11": 4,
-    "12": 27,
-    "13": 8,
-    "14": 15,
-    "15": 7,
-    "16": 3,
-    "5": 4,
-    "7": 9,
-    "2": 11,
     "6": 8,
     "3": 4,
-    "4": 15,
-    "20": 2,
-    "22": 3,
-    "8": 6,
-    "17": 2,
-    "18": 1,
-    "0": 3,
-    "1": 5,
-    "19": 1
+    "22": 3
   },
   "message_types": {
-    "0": 31,
-    "19": 7
+    "0": 47,
+    "19": 10,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -80,11 +103,39 @@
       "channel": ""
     },
     {
+      "id": "1445447447760470037",
+      "content": "Shrimps <@132954937972752384> on namewheel",
+      "author": "su_pp",
+      "reactions": 28,
+      "channel": "Morimens things"
+    },
+    {
       "id": "1445334381404094475",
       "content": "如題想說畫都畫了乾脆讓大家一起看~~色皮~~👁️（？\n\n然後皮皮有了杜勒好像也應該要有，所以有空再來補ㄍ（淹沒在一堆草稿裡咕嚕咕嚕",
       "author": "ass191044",
       "reactions": 28,
       "channel": ""
+    },
+    {
+      "id": "1445247260014280734",
+      "content": "My most reliable 🥰\n\nUID: 101274471",
+      "author": "yukisetsura",
+      "reactions": 26,
+      "channel": "Caecus 🐠"
+    },
+    {
+      "id": "1445337602738753596",
+      "content": "Hes on all four",
+      "author": "su_pp",
+      "reactions": 22,
+      "channel": "Pickman, Drawing without anatomy guide, wishing for the best for my poor brain"
+    },
+    {
+      "id": "1445424300197675050",
+      "content": "",
+      "author": "deldry8",
+      "reactions": 20,
+      "channel": "KEEPER PADORU"
     },
     {
       "id": "1445439603174539385",
@@ -101,11 +152,32 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1445363989411270739",
+      "content": "I doodled Karen and Aigis because I was bored<:scared1:1356053141816213507> <:Fe",
+      "author": "l0tusg4rd3n",
+      "reactions": 13,
+      "channel": "Some doodles"
+    },
+    {
+      "id": "1445434185182613555",
+      "content": "",
+      "author": "imfreakyandiknowit",
+      "reactions": 12,
+      "channel": "I just wanna draw my favs"
+    },
+    {
       "id": "1445321631026384998",
       "content": "我已經參透你們這群落難男的話術了 看看你們一個個舔得跟什麼一樣（X",
       "author": "carrot_chicken",
       "reactions": 11,
       "channel": ""
+    },
+    {
+      "id": "1445372464019406969",
+      "content": "Русская версия постера🌹 \n \n—— сделана российской организацией 【Morimens Ru Info ",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "V2.4.0.7 版本前瞻 ┊ Version Outlook"
     },
     {
       "id": "1445343477440319488",
@@ -120,6 +192,20 @@
       "author": "tsubaki9884",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1445461612696830194",
+      "content": "Anyway just rough lines, because if i color her i might as well just dip my ball",
+      "author": "su_pp",
+      "reactions": 7,
+      "channel": "Morimens things"
+    },
+    {
+      "id": "1445398486014103672",
+      "content": "ai smell...",
+      "author": "meatloversus",
+      "reactions": 6,
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1445401355081482311",
@@ -143,74 +229,11 @@
       "channel": ""
     },
     {
-      "id": "1445360968946290768",
-      "content": "Why not just increase the entries limit to 150k and remove single use units + wh",
-      "author": "moyashi0672",
+      "id": "1445287729419124737",
+      "content": "omg that's my Murphies and the cats art",
+      "author": "lotusbunyee",
       "reactions": 4,
-      "channel": "V2.4.0.9 在线维护公告"
-    },
-    {
-      "id": "1445547666820829318",
-      "content": "可能單純是你的運氣問題<:processing:1357185814567718963>",
-      "author": "myth1538",
-      "reactions": 4,
-      "channel": "为什么我1100＋抽常驻池了，只出过一个限定"
-    },
-    {
-      "id": "1445246627483750483",
-      "content": "I will go and convey this suggestion🙏",
-      "author": "morimensstaff01",
-      "reactions": 4,
-      "channel": "✅「Answered」Unfair Raid Event"
-    },
-    {
-      "id": "1445384861149036604",
-      "content": "boss还有8层死扛，直接死了是怎么回事，有没有懂哥看看是bug还是啥东西",
-      "author": "78187815",
-      "reactions": 4,
-      "channel": "✅「已回答」bug还是什么"
-    },
-    {
-      "id": "1445488207444578314",
-      "content": "I'm not sure if this was ever covered in any dev news, but I was wondering if we",
-      "author": "kcockcidsinep",
-      "reactions": 4,
-      "channel": "Automatic movement or drag/trace to move"
-    },
-    {
-      "id": "1445442607961477260",
-      "content": "if there is already the limit of 17 times per day, at most, why also establish t",
-      "author": "reynard_fuchs",
-      "reactions": 3,
-      "channel": "V2.4.0.9 在线维护公告"
-    },
-    {
-      "id": "1445454537472348243",
-      "content": "One of the worst events is back. I don't know why they can't get it right on the",
-      "author": "prower___",
-      "reactions": 3,
-      "channel": "V2.4.0.9 在线维护公告"
-    },
-    {
-      "id": "1445219292927754290",
-      "content": "I was expecting to try the already overly restricted event that favors old playe",
-      "author": "iwthahe",
-      "reactions": 2,
-      "channel": "Isn't anniversary supposed to be like a celebratory thing? So far it feels like im getting fisted."
-    },
-    {
-      "id": "1445394961255370836",
-      "content": "100036805\n助戰換醫生很久了，一直沒更新有需要可以在Dc群叫我改+12溫",
-      "author": "ena04564",
-      "reactions": 2,
-      "channel": ""
-    },
-    {
-      "id": "1445422810942935132",
-      "content": "我以為皮皮會把杜勒的義肢拔掉然後抱起來……",
-      "author": "ernest_heart",
-      "reactions": 2,
-      "channel": ""
+      "channel": "Stolen memes of the day"
     }
   ]
 }

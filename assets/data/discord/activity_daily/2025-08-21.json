@@ -1,10 +1,18 @@
 {
   "date": "2025-08-21",
-  "messages": 73,
+  "messages": 88,
   "unique_authors": 13,
-  "reactions_total": 32,
-  "attachments": 23,
+  "reactions_total": 99,
+  "attachments": 29,
   "channel_activity": {
+    "Tawil fan model": 1,
+    "Kath - RA Art Submission by Flares.": 1,
+    "Flares' Bimonthly coaching Session . Gdoll Alert 5, x8. 20 hours of coaching this dtide.": 2,
+    "🎨V2.3.0版本同人征集开启！Fan Collection Is Open!": 3,
+    "Team suggenstions": 2,
+    "Deck Thinnin Deck Winnin": 3,
+    "pull question": 2,
+    "Future Pull Advice": 1,
     "Edit": 1,
     "忘却前夜OST：旺达EP·赴死酣宴": 8,
     "✅「Answered」Launch the game via Steam and getting the \"Network busy\"": 4,
@@ -26,28 +34,38 @@
     "1181147096234065920": 3
   },
   "hourly_activity": {
+    "1": 1,
+    "9": 7,
+    "0": 5,
+    "20": 2,
+    "3": 11,
+    "7": 11,
+    "13": 1,
+    "15": 5,
+    "10": 6,
     "8": 18,
     "19": 1,
-    "20": 1,
-    "0": 3,
-    "3": 10,
     "12": 1,
     "14": 6,
     "2": 1,
     "16": 1,
-    "9": 4,
     "11": 1,
     "17": 2,
     "22": 2,
-    "6": 6,
-    "10": 5,
-    "7": 10,
-    "15": 1
+    "6": 6
   },
   "message_types": {
-    "0": 9
+    "0": 10,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1407896257246269560",
+      "content": "I didnt know this page existed lol",
+      "author": "cooked_chicken99",
+      "reactions": 49,
+      "channel": "Tawil fan model"
+    },
     {
       "id": "1408000123140833340",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：旺达EP·赴死酣宴，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同",
@@ -56,11 +74,25 @@
       "channel": "忘却前夜OST：旺达EP·赴死酣宴"
     },
     {
+      "id": "1407877199607894148",
+      "content": "https://youtu.be/BiZxcyqx7kM",
+      "author": "flares117",
+      "reactions": 14,
+      "channel": "Flares' Bimonthly coaching Session . Gdoll Alert 5, x8. 20 hours of coaching this dtide."
+    },
+    {
       "id": "1408133005993709690",
       "content": "Hollow Knight.\n\nA lot of us keepers love Hollow Knight. \n\nWe would love it. \n\nCh",
       "author": "climbkaly",
       "reactions": 5,
       "channel": "✅「Answered」Crossover Suggestion"
+    },
+    {
+      "id": "1407988821286457418",
+      "content": "i see. simply because it garnered many reactions from how \"funny\" and terrible l",
+      "author": "jormiejormungandr",
+      "reactions": 4,
+      "channel": "🎨V2.3.0版本同人征集开启！Fan Collection Is Open!"
     },
     {
       "id": "1408109677530845328",

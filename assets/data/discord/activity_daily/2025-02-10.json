@@ -1,10 +1,13 @@
 {
   "date": "2025-02-10",
-  "messages": 102,
+  "messages": 118,
   "unique_authors": 31,
   "reactions_total": 58,
-  "attachments": 33,
+  "attachments": 34,
   "channel_activity": {
+    "Tier list as of 2.0": 2,
+    "GDoll preview rough TL": 6,
+    "D Tide Wave 5 Guide For Easy Max Clear THIS WEEK SPECIFICALLY": 8,
     "V2.1.0.1 在線維護公告": 18,
     "💭「Processing」Stuck in \"Checking for resource updates\"": 1,
     "✅「已回答」對弈人偶命輪圖錯了": 1,
@@ -33,9 +36,15 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
+    "22": 1,
+    "23": 1,
+    "11": 4,
+    "12": 3,
+    "18": 8,
+    "21": 1,
+    "9": 9,
     "14": 12,
     "17": 4,
-    "18": 6,
     "7": 6,
     "3": 16,
     "4": 17,
@@ -43,18 +52,15 @@
     "6": 7,
     "2": 5,
     "5": 3,
-    "11": 3,
     "19": 2,
-    "12": 1,
     "10": 1,
     "8": 7,
-    "9": 1,
     "0": 1,
     "1": 2,
     "13": 1
   },
   "message_types": {
-    "0": 16,
+    "0": 14,
     "19": 2
   },
   "top_reacted_messages": [

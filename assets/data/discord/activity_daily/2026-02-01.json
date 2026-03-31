@@ -1,10 +1,12 @@
 {
   "date": "2026-02-01",
-  "messages": 7082,
+  "messages": 7090,
   "unique_authors": 151,
-  "reactions_total": 1120,
+  "reactions_total": 1121,
   "attachments": 329,
   "channel_activity": {
+    "Detailed Damage Formula Graphic": 3,
+    "Beginner Awakening/Gatcha help.": 5,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 1,
     "Ramona wip (best girl)🗝": 4,
     "Teaser || Doresain & Sylvester": 4,
@@ -31,8 +33,9 @@
     "🔸morimens-game-chat": 5874
   },
   "hourly_activity": {
-    "9": 361,
-    "8": 286,
+    "8": 287,
+    "9": 363,
+    "13": 409,
     "0": 182,
     "1": 295,
     "14": 619,
@@ -42,7 +45,6 @@
     "10": 419,
     "6": 147,
     "2": 375,
-    "13": 404,
     "22": 155,
     "12": 530,
     "4": 562,
@@ -57,8 +59,8 @@
     "21": 29
   },
   "message_types": {
-    "19": 2,
-    "0": 10
+    "0": 6,
+    "19": 2
   },
   "top_reacted_messages": [
     {

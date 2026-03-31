@@ -1,10 +1,23 @@
 {
   "date": "2025-11-22",
-  "messages": 76,
-  "unique_authors": 21,
-  "reactions_total": 305,
-  "attachments": 8,
+  "messages": 201,
+  "unique_authors": 75,
+  "reactions_total": 320,
+  "attachments": 23,
   "channel_activity": {
+    "Someone whose name starts with A which idk how to spell": 10,
+    "wip keeper": 4,
+    "Kathigu-Ra: Ardor Blossom Star": 1,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 61,
+    "新手求助": 2,
+    "求配队": 1,
+    "新人求助": 1,
+    "不算新的新人求助": 1,
+    "配队求助": 30,
+    "輪換抽卡": 7,
+    "New Player - Team Building and Pull Plan": 1,
+    "New Player - Team Building Help": 3,
+    "In what chapter is Arc 2 unlocked????Can a new player get all the 200 pulls before that deadline?": 3,
     "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!": 1,
     "V2.4.0.4 停服维护公告": 8,
     "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version": 1,
@@ -31,30 +44,34 @@
     "1441904635123208233": 1
   },
   "hourly_activity": {
-    "8": 9,
-    "0": 3,
-    "1": 3,
-    "7": 8,
-    "18": 7,
-    "20": 4,
+    "7": 9,
+    "10": 7,
+    "14": 10,
+    "16": 13,
+    "19": 6,
+    "11": 13,
+    "12": 15,
+    "13": 14,
+    "15": 13,
+    "17": 6,
+    "18": 8,
+    "20": 7,
+    "21": 2,
+    "22": 2,
+    "23": 3,
+    "4": 6,
+    "0": 21,
+    "1": 15,
+    "3": 2,
+    "8": 10,
+    "5": 6,
+    "2": 9,
     "9": 2,
-    "10": 4,
-    "12": 3,
-    "17": 3,
-    "19": 1,
-    "13": 3,
-    "6": 2,
-    "23": 1,
-    "15": 7,
-    "2": 8,
-    "5": 3,
-    "16": 3,
-    "3": 1,
-    "21": 1
+    "6": 2
   },
   "message_types": {
-    "0": 9,
-    "19": 1
+    "0": 97,
+    "19": 28
   },
   "top_reacted_messages": [
     {
@@ -100,6 +117,13 @@
       "channel": "💭「处理中」有繁中版潤校職缺或者志願者計畫嗎？"
     },
     {
+      "id": "1441699616423677962",
+      "content": "This guy's name starts with A, he looked pretty, I saw his pic it was a sticker.",
+      "author": "yvaine_yve_43407",
+      "reactions": 5,
+      "channel": "Someone whose name starts with A which idk how to spell"
+    },
+    {
       "id": "1441738656057397300",
       "content": "就跟其他角色開大一樣 招式就是要把台詞喊出來 這樣比較帥",
       "author": "lingcheng.0",
@@ -128,6 +152,13 @@
       "channel": "N的究極羞辱"
     },
     {
+      "id": "1441828628915818618",
+      "content": "https://tenor.com/view/morimens-picmix-murphy-murphy-morimens-morimens-murphy-gi",
+      "author": "chiedgaf",
+      "reactions": 3,
+      "channel": "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage"
+    },
+    {
       "id": "1441857962942533693",
       "content": "繁衍狂熱配音也配收咪人就好了😭但是可惜也沒多少喚醒體有語音<:A_pinch:1432980538536493057>",
       "author": "shostakovich524",
@@ -149,46 +180,39 @@
       "channel": "開銀鑰的時候也顯示守密人的台詞"
     },
     {
-      "id": "1441857517931200627",
-      "content": "要是有更多收米人語音就好了(泣",
-      "author": "shostakovich524",
+      "id": "1441780036913987626",
+      "content": "The channel also doesn't come up when searching for \"morimens official\"",
+      "author": "cm_richio",
       "reactions": 1,
-      "channel": "開銀鑰的時候也顯示守密人的台詞"
+      "channel": "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage"
     },
     {
-      "id": "1441776575514279936",
-      "content": "__**Phantasmal Dive**__\n\nI think that this -20pts penalty per round played shoul",
-      "author": "stelladiosa",
+      "id": "1441593626663587903",
+      "content": "因為我現在的關打痛苦榨取怪就沒了 有必要時還是會開大",
+      "author": "jinmenlianbanggongheguo",
       "reactions": 1,
-      "channel": "Phantasmal Dive + Nerf"
+      "channel": "配队求助"
     },
     {
-      "id": "1441813627517669543",
-      "content": "There is really no balancing cheat, no theoretical perfection that will enable n",
-      "author": "thpdom",
+      "id": "1441601871256223825",
+      "content": "另外一個想帶啥都行",
+      "author": "water_heart",
       "reactions": 1,
-      "channel": "Phantasmal Dive + Nerf"
+      "channel": "配队求助"
     },
     {
-      "id": "1441611700838076526",
-      "content": "unfortunately, i have never seen them able to do this",
-      "author": "monchi3524",
+      "id": "1441635799220228238",
+      "content": "都是看當天想玩誰",
+      "author": "jinmenlianbanggongheguo",
       "reactions": 1,
-      "channel": "Account migration"
+      "channel": "配队求助"
     },
     {
-      "id": "1441806115519070238",
-      "content": "~~顯然是誕墨~~",
-      "author": "ernest_heart",
+      "id": "1441650907082260511",
+      "content": "抽深海的常駐，其實是想撈撈看墨菲來的...（之前常駐就剩墨菲了），然後沒成功...🫠",
+      "author": "wobuzai2830",
       "reactions": 1,
-      "channel": "誕妄．墨菲機制與搭配探討"
-    },
-    {
-      "id": "1441811392553554105",
-      "content": "這到底是什麼……不管了先赤🛐",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "N的究極羞辱"
+      "channel": "輪換抽卡"
     }
   ]
 }

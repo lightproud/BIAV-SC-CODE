@@ -1,10 +1,17 @@
 {
   "date": "2025-05-16",
-  "messages": 36,
+  "messages": 58,
   "unique_authors": 8,
-  "reactions_total": 14,
-  "attachments": 11,
+  "reactions_total": 73,
+  "attachments": 22,
   "channel_activity": {
+    "GTulu Theory (with fanart) (this will age poorly, will it?)": 13,
+    "N": 1,
+    "24": 2,
+    "Haku Morimens Sketch Log": 2,
+    "Old D-Tide Leaderboards": 2,
+    "D-tide Budget Teams (2025 May 16)": 1,
+    "D-Tide Leaderboard (2025 May 16)": 1,
     "Complete glossary of Wheel of Destiny names": 1,
     "✅「Answered」Strange cuts in the dialogue": 2,
     "💭「Processing」Music overlap": 1,
@@ -16,8 +23,14 @@
     "Petition to rename Wheel Unseen to Concealed Truth": 1
   },
   "hourly_activity": {
+    "11": 3,
+    "12": 10,
+    "9": 7,
+    "20": 1,
+    "22": 1,
+    "16": 2,
+    "17": 4,
     "14": 1,
-    "9": 6,
     "19": 1,
     "10": 20,
     "13": 1,
@@ -26,15 +39,51 @@
     "2": 1
   },
   "message_types": {
-    "19": 1
+    "0": 19,
+    "4": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1373030237734178926",
+      "content": "let them eat cake?\n\ni drew 24 for my bday yay",
+      "author": "argo.4467",
+      "reactions": 25,
+      "channel": "24"
+    },
+    {
+      "id": "1372875996495351889",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 13,
+      "channel": "N"
+    },
+    {
+      "id": "1372971041202110554",
+      "content": "gonna try to progressively add my mori arts as I make them starting with Tinct s",
+      "author": "hakugin0_",
+      "reactions": 10,
+      "channel": "Haku Morimens Sketch Log"
+    },
+    {
+      "id": "1372905582574440518",
+      "content": "Okay so there was a question in ID chatgroup asking me if GTulu will be a bishou",
+      "author": "rohaluss",
+      "reactions": 7,
+      "channel": "GTulu Theory (with fanart) (this will age poorly, will it?)"
+    },
     {
       "id": "1372875454633214053",
       "content": "There are some strange cuts in the dialogue in the story and events, that weren'",
       "author": "vxvendetta",
       "reactions": 6,
       "channel": "✅「Answered」Strange cuts in the dialogue"
+    },
+    {
+      "id": "1372971188657192960",
+      "content": "fanmade Keeper design + Keeper and Tulu bonding(?)",
+      "author": "hakugin0_",
+      "reactions": 3,
+      "channel": "Haku Morimens Sketch Log"
     },
     {
       "id": "1373017482960568391",
@@ -49,6 +98,13 @@
       "author": "aurora3981",
       "reactions": 3,
       "channel": "Change the default settings of the game"
+    },
+    {
+      "id": "1372913169072390186",
+      "content": "Yes",
+      "author": "lowtownnivn",
+      "reactions": 1,
+      "channel": "GTulu Theory (with fanart) (this will age poorly, will it?)"
     },
     {
       "id": "1372875778789736478",

@@ -1,10 +1,17 @@
 {
   "date": "2025-09-16",
-  "messages": 107,
+  "messages": 181,
   "unique_authors": 18,
-  "reactions_total": 135,
-  "attachments": 18,
+  "reactions_total": 170,
+  "attachments": 30,
   "channel_activity": {
+    "⛓️": 7,
+    "Morimens Glossary (Wheels and Covenants equip guide)": 1,
+    "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!": 16,
+    "Its safe to start WoD jail?": 3,
+    "New player? What WoD to pull in standard banner": 7,
+    "what banner should i pull for": 23,
+    "can anyone please help me create a team out of these?": 17,
     "V2.3.2.4 在线维护公告": 11,
     "V2.3.2.3 在线维护公告": 12,
     "忘却前夜OST：神明诞生之日": 1,
@@ -36,28 +43,31 @@
     "1399369127008796723": 2
   },
   "hourly_activity": {
+    "10": 17,
+    "8": 11,
+    "0": 4,
+    "2": 12,
+    "4": 4,
+    "7": 6,
+    "21": 1,
+    "22": 2,
+    "23": 1,
+    "11": 9,
+    "12": 4,
+    "14": 12,
+    "15": 26,
+    "9": 15,
     "13": 8,
-    "14": 11,
     "1": 7,
-    "2": 8,
-    "8": 3,
-    "4": 1,
     "3": 21,
-    "12": 2,
     "6": 5,
-    "0": 1,
-    "9": 4,
-    "10": 8,
-    "11": 6,
-    "15": 4,
     "16": 12,
     "17": 3,
-    "20": 1,
-    "7": 2
+    "20": 1
   },
   "message_types": {
-    "0": 21,
-    "19": 3
+    "0": 55,
+    "19": 19
   },
   "top_reacted_messages": [
     {
@@ -73,6 +83,13 @@
       "author": "morimens_15",
       "reactions": 38,
       "channel": ""
+    },
+    {
+      "id": "1417458001098571857",
+      "content": "",
+      "author": "zharysche",
+      "reactions": 27,
+      "channel": "⛓️"
     },
     {
       "id": "1417459936497111120",
@@ -110,6 +127,13 @@
       "channel": "莉兹✨"
     },
     {
+      "id": "1417407507630002226",
+      "content": "<@885882671899746305> 嗨，笔和500银芯是重复获得头像框后转换的奖励，这边补发头像框会扣除误发的笔和银芯\n\n<@5245634987816",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
+    },
+    {
       "id": "1417449962362372117",
       "content": "可恶我还没写完呢怎么动作那么快<:processing:1357185814567718963>",
       "author": "dittoqwq",
@@ -129,6 +153,20 @@
       "author": "akalanden",
       "reactions": 3,
       "channel": "杜勒X皮克曼"
+    },
+    {
+      "id": "1417338102615375882",
+      "content": "<@885882671899746305> 抱歉 uid查重的时候出现了失误（头像框不能重复获取，我们会去重曾拿到过头像框的uid），我们稍后会给你补发🌹",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1417341628640923681",
+      "content": "<@524563498781638677>Sorry, there was indeed an error during the plagiarism chec",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!"
     },
     {
       "id": "1417348632264572938",
@@ -166,32 +204,11 @@
       "channel": ""
     },
     {
-      "id": "1417512844232232960",
-      "content": "我的天啊",
-      "author": "ena04564",
+      "id": "1417531108270145650",
+      "content": "ive heard hes pretty good",
+      "author": "isakrai",
       "reactions": 1,
-      "channel": "V2.3.2.4 在线维护公告"
-    },
-    {
-      "id": "1417367397756567664",
-      "content": "Finally on Spotify <:Cheerup:1400771555939844149> hopefully you can add Ex Obliv",
-      "author": "theborkerr",
-      "reactions": 1,
-      "channel": "忘却前夜OST：神明诞生之日"
-    },
-    {
-      "id": "1417485003184672861",
-      "content": "不少人認為克珀珊特的覺醒卡優先度較低，我認為可以有以下改進的空間（建議不太好，大家可只看看）：\n首先覺醒卡的領航作用不大，我認為拿到的领航可以加強為高級領航不帶",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "✅「已回答」關於克珀珊特覺醒卡的調整建議"
-    },
-    {
-      "id": "1417487811254423693",
-      "content": "So I beat Phantasmal Dive 7 yesterday as per usual, which should give me my dail",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "✅「Answered」Phantasmal Dive rewards are bugged"
+      "channel": "what banner should i pull for"
     }
   ]
 }

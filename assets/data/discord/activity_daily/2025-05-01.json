@@ -1,10 +1,16 @@
 {
   "date": "2025-05-01",
-  "messages": 53,
-  "unique_authors": 10,
-  "reactions_total": 6,
-  "attachments": 19,
+  "messages": 157,
+  "unique_authors": 14,
+  "reactions_total": 65,
+  "attachments": 25,
   "channel_activity": {
+    "Tulu is adorable": 1,
+    "Murphy": 1,
+    "Morimens x Pokemon (Feat. Dexter)": 1,
+    "🍲珈倫廚力大爆發┊Karen's cooking power explodes": 1,
+    "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction": 93,
+    "🎧克珀珊特 Corposant丨2.2廣播劇《航海譫妄症》（建議佩戴耳機）": 7,
     "游戏美术资源上的文字": 3,
     "✅「已回答」蟲族羊媽狂氣減費bug": 2,
     "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 32,
@@ -14,21 +20,76 @@
     "OOC鯊守(?) 不是幼兒園的車，小心謹慎注意上車": 1
   },
   "hourly_activity": {
-    "13": 28,
-    "18": 2,
+    "23": 19,
+    "16": 4,
+    "13": 29,
+    "8": 11,
+    "15": 19,
+    "18": 9,
+    "19": 21,
+    "21": 5,
+    "22": 23,
+    "7": 3,
     "11": 2,
     "12": 3,
     "14": 6,
-    "15": 7,
     "9": 2,
-    "16": 1,
-    "17": 1,
-    "22": 1
+    "17": 1
   },
   "message_types": {
-    "0": 3
+    "0": 82,
+    "19": 22
   },
   "top_reacted_messages": [
+    {
+      "id": "1367499270701187142",
+      "content": "...I have no explaination.",
+      "author": "rohaluss",
+      "reactions": 18,
+      "channel": "Morimens x Pokemon (Feat. Dexter)"
+    },
+    {
+      "id": "1367534334340239490",
+      "content": "",
+      "author": "Deleted User",
+      "reactions": 17,
+      "channel": "Murphy"
+    },
+    {
+      "id": "1367407345155575828",
+      "content": "原文（）\n你游翻译刚刚活一点求不倒退）",
+      "author": "flarinsidia",
+      "reactions": 4,
+      "channel": "🎧克珀珊特 Corposant丨2.2廣播劇《航海譫妄症》（建議佩戴耳機）"
+    },
+    {
+      "id": "1367644391090425926",
+      "content": "<:angry3:1356053026863058994> <:sleep2:1356085993626665200>",
+      "author": "rowlynt66",
+      "reactions": 2,
+      "channel": "Tulu is adorable"
+    },
+    {
+      "id": "1367417047461662761",
+      "content": "~~森林裡的不是黑山羊是黑色蟲子~~",
+      "author": "undecember_news",
+      "reactions": 2,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367525036591808553",
+      "content": "看起來滿軟 指令卡沒什麼護盾",
+      "author": "jackpot_7",
+      "reactions": 2,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367634313151254618",
+      "content": "我有+12水母🤓",
+      "author": "shchng.",
+      "reactions": 2,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
     {
       "id": "1367469935894466621",
       "content": "戈雅：\n\n**請轉告逆活一世協助人員**\n\n根據空間本人的說明\n置入空間的指令卡皆為原始臨時複製\n理論上來說置入超維空間的幻夢詩篇與原本的幻夢詩篇是不同個體\n所",
@@ -37,32 +98,88 @@
       "channel": "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》"
     },
     {
-      "id": "1367487543959879821",
-      "content": "character banner also have flavour text in the background\n\nthis is 24\n\"One, two,",
-      "author": "skyfallterminus",
+      "id": "1367416323256094772",
+      "content": "蟲族也在增值",
+      "author": "ernest_heart",
       "reactions": 1,
-      "channel": "游戏美术资源上的文字"
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
     },
     {
-      "id": "1367564704381272095",
-      "content": "改了我可以不吃靈芝三星過H2-12",
+      "id": "1367416499907727442",
+      "content": "喜歡我們蟲族嗎🤓",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367416539355287726",
+      "content": "大草",
+      "author": "undecember_news",
+      "reactions": 1,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367526194043420844",
+      "content": "塔維給的盾應該比較高會成長",
+      "author": "jackpot_7",
+      "reactions": 1,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367529981839802478",
+      "content": "对，伤害确实高",
+      "author": "287405tjy_28066",
+      "reactions": 1,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367541613194121388",
+      "content": "免費盾欸",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367580877961302156",
+      "content": "看成200臨時觸力",
       "author": "shchng.",
       "reactions": 1,
-      "channel": "✅「已回答」蟲族羊媽狂氣減費bug"
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
     },
     {
-      "id": "1367527644496924672",
-      "content": "如圖，之前的效果是剛好第四次使用後就會觸發四個靈感的效果了，結果現在都用了五六次了還一直給我第四樂章二選一",
-      "author": "shaw_51",
+      "id": "1367621299781898280",
+      "content": "自身產盾就可以+14全隊爆擊",
+      "author": "shchng.",
       "reactions": 1,
-      "channel": "✅「已回答」第四樂章使用四次後無法生效"
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
     },
     {
-      "id": "1367528572503457883",
-      "content": "這我可能沒注意到，不過我第四次也沒靈感耶🤔",
-      "author": "shaw_51",
+      "id": "1367636988542320692",
+      "content": "沒有帶圖魯就是傾向開超限有圖魯就是用普通狂氣",
+      "author": "shchng.",
       "reactions": 1,
-      "channel": "✅「已回答」第四樂章使用四次後無法生效"
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367638075773157387",
+      "content": "還要圖魯C幹嘛",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367640976977428642",
+      "content": "對",
+      "author": "shchng.",
+      "reactions": 1,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1367534745822433353",
+      "content": "Another asmr? DEVS I KNEEL, keep cooking.",
+      "author": "starfish3302",
+      "reactions": 1,
+      "channel": "🎧克珀珊特 Corposant丨2.2廣播劇《航海譫妄症》（建議佩戴耳機）"
     }
   ]
 }

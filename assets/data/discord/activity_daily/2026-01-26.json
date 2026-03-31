@@ -1,10 +1,11 @@
 {
   "date": "2026-01-26",
-  "messages": 106,
+  "messages": 108,
   "unique_authors": 37,
   "reactions_total": 170,
-  "attachments": 52,
+  "attachments": 54,
   "channel_activity": {
+    "剛入坑，求配隊🙏": 2,
     "clementine": 4,
     "✅「Answered」Choose if OE or not.": 1,
     "✅「Resolved」Resonance Reset": 1,
@@ -37,13 +38,14 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
+    "9": 4,
+    "10": 6,
     "6": 4,
     "7": 12,
     "20": 1,
     "13": 15,
     "5": 4,
     "17": 3,
-    "10": 5,
     "16": 7,
     "4": 13,
     "14": 8,
@@ -53,11 +55,10 @@
     "18": 5,
     "11": 3,
     "12": 9,
-    "9": 3,
     "8": 1
   },
   "message_types": {
-    "0": 4
+    "0": 2
   },
   "top_reacted_messages": [
     {

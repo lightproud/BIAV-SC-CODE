@@ -1,10 +1,14 @@
 {
   "date": "2026-01-04",
-  "messages": 59,
+  "messages": 70,
   "unique_authors": 11,
-  "reactions_total": 52,
-  "attachments": 27,
+  "reactions_total": 57,
+  "attachments": 31,
   "channel_activity": {
+    "aequor doodle": 3,
+    "Morimens Awakeners Database": 1,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 3,
+    "请求支援": 4,
     "Forehead tierlist": 3,
     "💭「处理中」典藏馆事件的解锁到底是什么机制？": 3,
     "✅「已回答」“你我终将重逢”在图鉴中的排序应该在和其他周年命轮一起，置于“重生于湮土之后”": 3,
@@ -33,12 +37,15 @@
     "1457202535138857132": 4
   },
   "hourly_activity": {
-    "9": 14,
-    "3": 13,
+    "4": 5,
+    "6": 1,
+    "19": 2,
+    "3": 14,
+    "7": 1,
+    "9": 18,
     "16": 1,
     "8": 8,
     "11": 1,
-    "4": 3,
     "18": 4,
     "17": 1,
     "5": 1,
@@ -49,8 +56,8 @@
     "13": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 2
+    "19": 3,
+    "0": 8
   },
   "top_reacted_messages": [
     {
@@ -101,6 +108,27 @@
       "author": "souri.10244",
       "reactions": 3,
       "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1457232589604786359",
+      "content": "<:Cheerup:1400771555939844149> <:pray:1356053116260454534>",
+      "author": "deellln",
+      "reactions": 2,
+      "channel": "aequor doodle"
+    },
+    {
+      "id": "1457267196303773762",
+      "content": "baby is growing so fast",
+      "author": "deellln",
+      "reactions": 2,
+      "channel": "aequor doodle"
+    },
+    {
+      "id": "1457300684163776564",
+      "content": "好的，巨刃是命轮对吧？",
+      "author": "l_1427_08233",
+      "reactions": 1,
+      "channel": "请求支援"
     },
     {
       "id": "1457406215972720815",

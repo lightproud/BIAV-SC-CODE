@@ -1,10 +1,21 @@
 {
   "date": "2025-09-28",
-  "messages": 108,
-  "unique_authors": 15,
-  "reactions_total": 26,
-  "attachments": 7,
+  "messages": 150,
+  "unique_authors": 19,
+  "reactions_total": 149,
+  "attachments": 20,
   "channel_activity": {
+    "Tinct on a swing": 8,
+    "24, Daffodil, Liz and Tulu Sketches!": 1,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 2,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!": 1,
+    "Flares' Comprehensive Beginner Guide to Morimens": 7,
+    "What team should I build (caro)": 3,
+    "My game just wont open properly.": 6,
+    "team help :,(": 2,
+    "Im kinda new and am wondering what covenant and team to use for Kathigu Ra": 7,
+    "Chapter 5 help": 4,
     "V2.3.3.0 停服维护公告": 28,
     "Timeless Banner Question": 6,
     "星辰篇规则还会继续优化吗？": 2,
@@ -22,25 +33,46 @@
     "1420092491125755985": 5
   },
   "hourly_activity": {
-    "9": 15,
+    "1": 4,
+    "2": 8,
+    "7": 9,
+    "11": 35,
+    "14": 4,
+    "16": 2,
+    "13": 10,
+    "20": 3,
+    "12": 3,
+    "6": 10,
+    "9": 16,
+    "5": 3,
+    "21": 9,
+    "22": 3,
+    "23": 2,
+    "17": 7,
     "10": 9,
-    "11": 34,
-    "17": 3,
-    "5": 1,
-    "6": 9,
-    "7": 6,
-    "12": 2,
-    "13": 9,
     "3": 7,
-    "4": 6,
-    "2": 6,
-    "23": 1
+    "4": 6
   },
   "message_types": {
-    "0": 26,
-    "19": 2
+    "0": 32,
+    "19": 9,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1421675493857558588",
+      "content": "UID:101167798\nMy submission for the art contest\nThis took me a while...",
+      "author": "zzio_",
+      "reactions": 95,
+      "channel": "Tinct on a swing"
+    },
+    {
+      "id": "1421851110054035466",
+      "content": "My interpretation in a few cases, but they are still the beloved characters <:wi",
+      "author": "annaxxe_",
+      "reactions": 27,
+      "channel": "24, Daffodil, Liz and Tulu Sketches!"
+    },
     {
       "id": "1421825092941385931",
       "content": "从星辰篇上线开始星辰篇的规则包括唤醒体的星辰篇天赋都有一定的调整，确实极大地改善了星辰篇的游戏体验。但是现在星辰篇的游戏性上来说还是有缺陷，比如作为一个出牌游戏",
@@ -82,6 +114,13 @@
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「已回答」不清楚是bug，还是废案，还是有意为之"
+    },
+    {
+      "id": "1421690677254950944",
+      "content": "Such a perfect picture of an angel...<:like:1400771686965444648>",
+      "author": "sunstopshining",
+      "reactions": 1,
+      "channel": "Tinct on a swing"
     },
     {
       "id": "1421825407841341460",

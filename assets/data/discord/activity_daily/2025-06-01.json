@@ -1,10 +1,15 @@
 {
   "date": "2025-06-01",
-  "messages": 16,
-  "unique_authors": 12,
-  "reactions_total": 20,
-  "attachments": 6,
+  "messages": 36,
+  "unique_authors": 16,
+  "reactions_total": 68,
+  "attachments": 14,
   "channel_activity": {
+    "Aurita": 1,
+    "Mid-Issue D-tide Meta Report (2025 June 1)": 5,
+    "🎊官周通販：淘寶全球可購！": 10,
+    "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum": 2,
+    "求配隊": 2,
     "考虑出个练习模式嘛": 2,
     "✅「已回答」切换头像时头像选择界面会变成这样": 1,
     "✅「已回答」溫柯爾3費盾觸發躍遷問題": 2,
@@ -16,27 +21,46 @@
     "1296113810549112874": 2
   },
   "hourly_activity": {
+    "23": 1,
+    "13": 4,
+    "14": 6,
+    "3": 2,
+    "4": 1,
+    "7": 3,
+    "12": 2,
+    "15": 3,
+    "17": 1,
+    "20": 1,
+    "8": 3,
     "11": 2,
-    "3": 1,
     "5": 2,
     "16": 3,
-    "9": 2,
-    "15": 2,
-    "12": 1,
-    "13": 1,
-    "8": 2
+    "9": 2
   },
   "message_types": {
-    "0": 13,
-    "19": 1
+    "0": 20
   },
   "top_reacted_messages": [
+    {
+      "id": "1378876946972151818",
+      "content": "",
+      "author": "maya014632",
+      "reactions": 35,
+      "channel": "Aurita"
+    },
     {
       "id": "1378693829649236031",
       "content": "如题\n\n提供木桩子~~类似pvp里的猫~~给玩家测试队伍伤害和手法之类\n最好能提供自选造物功能和一键满大招功能，毕竟你游现在各种乘区越来越多了，像星辰篇那堆基伤",
       "author": "flarinsidia",
       "reactions": 12,
       "channel": "考虑出个练习模式嘛"
+    },
+    {
+      "id": "1378733828708892752",
+      "content": "Here are the teams with most play rates in the current d-tide (started May 26). ",
+      "author": "willsalvador",
+      "reactions": 6,
+      "channel": "Mid-Issue D-tide Meta Report (2025 June 1)"
     },
     {
       "id": "1378756955236991056",
@@ -46,11 +70,32 @@
       "channel": "Counter Damage Conversion in ruleset"
     },
     {
+      "id": "1378720696867491911",
+      "content": "别说一天打20次了一天两次都懒得打……太恶心了",
+      "author": "lunar77_.",
+      "reactions": 3,
+      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
+    },
+    {
+      "id": "1378733588564152381",
+      "content": "還有一個原因",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 3,
+      "channel": "求配隊"
+    },
+    {
       "id": "1378658072741937215",
       "content": "收米回家",
       "author": "yingmai_",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1378652960069779617",
+      "content": "超狗屎 還真沒見過週年活動這樣慶祝的 主C課到超限 週年獎勵關卡打到吃石頭 好好玩喔這遊戲",
+      "author": "rookie1017",
+      "reactions": 1,
+      "channel": "🎊週年活動劇情預告：窺覷神國的陰影┊Anniversary event plot preview: Glimpse Beyond Sanctum"
     },
     {
       "id": "1378721442912403657",

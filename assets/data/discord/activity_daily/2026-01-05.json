@@ -1,10 +1,13 @@
 {
   "date": "2026-01-05",
-  "messages": 38,
+  "messages": 45,
   "unique_authors": 8,
-  "reactions_total": 23,
-  "attachments": 16,
+  "reactions_total": 36,
+  "attachments": 18,
   "channel_activity": {
+    "my morning drawing with no effort": 1,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 3,
+    "Team / Pull help": 3,
     "✅「Resolved」Faros Boss Strange Stuff": 2,
     "Who Ryker's Designer pls come talk ?": 1,
     "💭「处理中」典藏馆事件的解锁到底是什么机制？": 2,
@@ -26,14 +29,15 @@
     "1305430084420898868": 2
   },
   "hourly_activity": {
+    "15": 2,
+    "3": 1,
+    "9": 10,
+    "10": 4,
     "21": 2,
     "4": 2,
     "14": 8,
     "16": 1,
-    "9": 7,
-    "10": 2,
     "20": 1,
-    "15": 1,
     "17": 4,
     "22": 1,
     "13": 2,
@@ -43,11 +47,17 @@
     "2": 1
   },
   "message_types": {
-    "0": 21,
-    "19": 4,
-    "4": 3
+    "0": 6,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1457757213417541676",
+      "content": "",
+      "author": "redb100dedwoman",
+      "reactions": 13,
+      "channel": "my morning drawing with no effort"
+    },
     {
       "id": "1457624350797598782",
       "content": "「咱們走著瞧⋯⋯」",

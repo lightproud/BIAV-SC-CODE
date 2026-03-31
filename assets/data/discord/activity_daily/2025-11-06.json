@@ -1,10 +1,21 @@
 {
   "date": "2025-11-06",
-  "messages": 29,
-  "unique_authors": 8,
-  "reactions_total": 881,
-  "attachments": 4,
+  "messages": 110,
+  "unique_authors": 27,
+  "reactions_total": 896,
+  "attachments": 28,
   "channel_activity": {
+    "Collection of Morimens fanart and doodles": 2,
+    "A Very Brief Video Tier List and Rundown of ALL Awakeners in Arc 1": 1,
+    "Bagel's Okayge guide for Anniversary": 21,
+    "Guide for noobs": 1,
+    "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ": 14,
+    "不算新的新人求助": 20,
+    "剛入坑新手求": 14,
+    "choosing free awakener": 5,
+    "What would you try to pull for next during the Anniversary?": 1,
+    "Tawil help": 1,
+    "Team for Regional D-Effect Zone": 1,
     "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 1,
     "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment": 5,
     "✅「已回答」關於生涯成就": 1,
@@ -19,22 +30,32 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "3": 2,
+    "8": 6,
+    "21": 3,
+    "2": 8,
+    "3": 18,
+    "16": 3,
+    "17": 9,
+    "5": 10,
+    "1": 4,
+    "4": 5,
+    "12": 2,
+    "13": 3,
+    "14": 6,
+    "10": 6,
+    "11": 8,
+    "18": 6,
+    "6": 4,
+    "7": 1,
+    "15": 2,
+    "22": 1,
+    "20": 1,
     "0": 3,
-    "5": 4,
-    "12": 1,
-    "2": 6,
-    "17": 7,
-    "21": 1,
-    "18": 1,
-    "13": 1,
-    "23": 1,
-    "6": 1,
-    "14": 1
+    "23": 1
   },
   "message_types": {
-    "0": 3,
-    "19": 3
+    "0": 68,
+    "19": 13
   },
   "top_reacted_messages": [
     {
@@ -59,6 +80,20 @@
       "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
     },
     {
+      "id": "1435943084981747762",
+      "content": "入坑一個多月了\n感覺也是該準備挑戰融災更高分\n目前主線推完困難看這禮拜推不推的完忘卻\n有點在角色上的不知道怎麼分配資源\n把身上能擠出來的石頭都ALLIN塔薇後 ",
+      "author": "dog_0630",
+      "reactions": 5,
+      "channel": "不算新的新人求助"
+    },
+    {
+      "id": "1435907919286898770",
+      "content": "<:grin:1400771716665446471>",
+      "author": "le_fishmael",
+      "reactions": 4,
+      "channel": "Collection of Morimens fanart and doodles"
+    },
+    {
       "id": "1435962810390806590",
       "content": "雖然也許是華而不實的小東西，不過生涯成就的項目裡有一系列中毒成就，希望同為共通被動傷害的反擊也可以有一些成就可以拿🥺以及出血跟觸傷也想要🥺真的好想要可愛小玩意兒",
       "author": "amstelredam",
@@ -71,6 +106,41 @@
       "author": "taoi002",
       "reactions": 3,
       "channel": "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment"
+    },
+    {
+      "id": "1435858141572239511",
+      "content": "pull ultra standard. Ultra good. Best value. \n\nThanks for coming to my talk. See",
+      "author": "frowningquokka",
+      "reactions": 2,
+      "channel": "Guide for noobs"
+    },
+    {
+      "id": "1435912240493629510",
+      "content": "還不能確定你未來的方向",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "剛入坑新手求"
+    },
+    {
+      "id": "1436013973836136590",
+      "content": "<@1435983614595567656> event coming next update",
+      "author": "detectivedango",
+      "reactions": 1,
+      "channel": "choosing free awakener"
+    },
+    {
+      "id": "1436093898484220016",
+      "content": "if you like blue, then corpo would fit in well. castor and tawil are also some o",
+      "author": "sorqaqtani",
+      "reactions": 1,
+      "channel": "What would you try to pull for next during the Anniversary?"
+    },
+    {
+      "id": "1435933039111835708",
+      "content": "check out my tawil playlist on my channel",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "Tawil help"
     },
     {
       "id": "1435885031599116398",

@@ -1,10 +1,27 @@
 {
   "date": "2025-10-24",
-  "messages": 53,
-  "unique_authors": 9,
-  "reactions_total": 158,
-  "attachments": 9,
+  "messages": 133,
+  "unique_authors": 28,
+  "reactions_total": 253,
+  "attachments": 30,
   "channel_activity": {
+    "24 Squish": 9,
+    "Blackjack!": 3,
+    "Karen": 2,
+    "Morimens chap 8 be like": 4,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 7,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 3,
+    "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!": 5,
+    "📜V2.3.4 版本前瞻┊ Version Outlook": 2,
+    "回坑玩家求配隊、練角建議": 1,
+    "萌新求助": 14,
+    "新人求配对🥺🥺🥺": 1,
+    "新手 想打融災 求配對": 3,
+    "Pulling and Team Advice": 1,
+    "Need Team Advice": 11,
+    "Question about Pollux and Castor.": 8,
+    "What to pick and pull?": 1,
+    "Game Advice, Pulling, and Team Building": 5,
     "V2.3.4.2 在线维护公告": 8,
     "✅「Answered」Keeping only the background on homescreen / no awakener": 1,
     "✅「Answered」Suggestions from Korean Keepers": 5,
@@ -23,25 +40,33 @@
     "1431233782605807666": 1
   },
   "hourly_activity": {
-    "0": 7,
-    "1": 6,
-    "7": 1,
-    "10": 10,
-    "3": 2,
-    "4": 5,
-    "9": 1,
-    "12": 2,
-    "19": 1,
-    "23": 1,
-    "5": 9,
-    "6": 3,
-    "8": 1,
-    "13": 3,
-    "14": 1
+    "18": 3,
+    "19": 2,
+    "21": 6,
+    "15": 3,
+    "17": 10,
+    "20": 2,
+    "4": 7,
+    "6": 9,
+    "3": 5,
+    "5": 11,
+    "7": 6,
+    "10": 13,
+    "0": 8,
+    "2": 2,
+    "11": 1,
+    "8": 6,
+    "12": 13,
+    "13": 4,
+    "9": 7,
+    "1": 8,
+    "16": 3,
+    "14": 3,
+    "23": 1
   },
   "message_types": {
-    "0": 7,
-    "19": 1
+    "0": 62,
+    "19": 18
   },
   "top_reacted_messages": [
     {
@@ -52,6 +77,13 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1431304012593889480",
+      "content": "Hello everyone! I was one of the participants for the last creation campaign. I ",
+      "author": "dahongtsa",
+      "reactions": 34,
+      "channel": "Blackjack!"
+    },
+    {
       "id": "1431233782605807666",
       "content": "Been working on this sheet for a while, started off as just tracking when limite",
       "author": "jollysquire",
@@ -59,11 +91,32 @@
       "channel": ""
     },
     {
+      "id": "1431346392583897198",
+      "content": "A little something for the competition\nHope it makes someone else smile as well\n",
+      "author": "spraayer",
+      "reactions": 28,
+      "channel": "24 Squish"
+    },
+    {
       "id": "1431130723749724302",
       "content": "畫完來不及投上期投稿所以壓箱到這期掏出來(⁠｢⁠`⁠･⁠ω⁠･⁠)⁠｢\n~~都有造謠文了怎麼能沒有造謠封面ㄋ~~\n\nUID:100005174",
       "author": "ass191044",
       "reactions": 20,
       "channel": "皮杜造謠同人圖"
+    },
+    {
+      "id": "1431222403220115516",
+      "content": "嗨，V2.3.2的参赛作品终于整理成了在线表格~大家久等啦！ \n我用中英双语备注了投稿内容，大家可以按需食用<:Cheerup:1400771555939844",
+      "author": "morimensstaff01",
+      "reactions": 12,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1431382700974936084",
+      "content": "Lo vi y dije. \"Con lo poco que se lo are igual.\"",
+      "author": "hestion.1",
+      "reactions": 9,
+      "channel": "Karen"
     },
     {
       "id": "1431270786060128277",
@@ -80,6 +133,20 @@
       "channel": "皮杜造謠同人圖"
     },
     {
+      "id": "1431346801239396495",
+      "content": "(and I do too!!!)",
+      "author": "bagels5899",
+      "reactions": 2,
+      "channel": "24 Squish"
+    },
+    {
+      "id": "1431160890702430298",
+      "content": "收到了，非常感谢解我燃眉之急<:pray:1356053116260454534> 接下来就等周年充值首冲再氪金了",
+      "author": "shanghuamochou8139",
+      "reactions": 2,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
       "id": "1431124281571414089",
       "content": "其實是~~中性美人~~🌿",
       "author": "ass191044",
@@ -87,81 +154,60 @@
       "channel": ""
     },
     {
-      "id": "1431082973536718920",
-      "content": "hey, at least cassiah buff was nice",
-      "author": "rain_scarlet",
+      "id": "1431334462553194509",
+      "content": "Ryker in this style is kinda spooky... ~~and hot~~",
+      "author": "nazhigezihk",
       "reactions": 1,
-      "channel": "V2.3.4.2 在线维护公告"
+      "channel": "Blackjack!"
     },
     {
-      "id": "1431230940293894336",
-      "content": "Unsure if this is a feature request or a QOL request, but i cannot find an optio",
-      "author": "nactra",
+      "id": "1431164425057996851",
+      "content": "The submission has been successful~\nThe video content complies with the submissi",
+      "author": "morimensstaff01",
       "reactions": 1,
-      "channel": "✅「Answered」Keeping only the background on homescreen / no awakener"
+      "channel": "Morimens chap 8 be like"
     },
     {
-      "id": "1431140739999596554",
-      "content": "好吧ovo",
-      "author": "2300011747",
+      "id": "1431165184826937355",
+      "content": "Many thanks mr Goya",
+      "author": "phanducthinh.com",
       "reactions": 1,
-      "channel": "💭「处理中」血希的链球进入超维空间会被还原并且错误显示"
+      "channel": "Morimens chap 8 be like"
     },
     {
-      "id": "1431223700115554366",
-      "content": "如题",
-      "author": "txt101225.",
+      "id": "1431164769565671424",
+      "content": "I have provided a detailed answer to this question in your post, you can take a ",
+      "author": "morimensstaff01",
       "reactions": 1,
-      "channel": "✅「已回答」相位对弈字打错了"
+      "channel": "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!"
     },
     {
-      "id": "1431262185627062312",
-      "content": "<@&1179385403413897256> <@&1166257943742787615> <@1131790839291596841>",
-      "author": "txt101225.",
-      "reactions": 1,
-      "channel": "✅「已回答」相位对弈字打错了"
-    },
-    {
-      "id": "1431130986049044572",
-      "content": "🛐",
-      "author": "waterrr0212",
-      "reactions": 1,
-      "channel": "皮杜造謠同人圖"
-    },
-    {
-      "id": "1431137451836964907",
-      "content": "仙品\n九九成\n稀罕物～",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "皮杜造謠同人圖"
-    },
-    {
-      "id": "1431148381895524383",
-      "content": "进去了吗",
+      "id": "1431223060198850671",
+      "content": "果然，我写的太黄还是不好啊，以后写清水算了（）",
       "author": "dittoqwq",
       "reactions": 1,
-      "channel": "皮杜造謠同人圖"
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
     },
     {
-      "id": "1431150802948329584",
-      "content": "跟你们会写文又会画画的人拼了。",
-      "author": "dittoqwq",
+      "id": "1431249305372590212",
+      "content": "截到了！\nUid：100125811",
+      "author": "gooi6490",
       "reactions": 1,
-      "channel": "皮杜造謠同人圖"
+      "channel": "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!"
     },
     {
-      "id": "1431171962998095992",
-      "content": "跟你們會寫文又會畫畫的人拼了<:takenotes:1357186646294138890>",
-      "author": "tsubaki9884",
+      "id": "1431305727078695033",
+      "content": "Find Him!! UID:100365900",
+      "author": "35sui",
       "reactions": 1,
-      "channel": "皮杜造謠同人圖"
+      "channel": "🐦 奔逃的双生鸟：找到波吕克斯，逃离抓捕！Running Fledglings: Find Pollux and Escape the Pursuit!"
     },
     {
-      "id": "1431155534727217243",
-      "content": "好想被他壓在身上，然後⋯⋯⋯🥵",
-      "author": "void_1546.",
+      "id": "1431255510706946078",
+      "content": "Ping me if you have other queries",
+      "author": "angbak",
       "reactions": 1,
-      "channel": ""
+      "channel": "Game Advice, Pulling, and Team Building"
     }
   ]
 }

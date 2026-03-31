@@ -1,10 +1,16 @@
 {
   "date": "2025-04-04",
-  "messages": 47,
+  "messages": 66,
   "unique_authors": 15,
-  "reactions_total": 23,
-  "attachments": 8,
+  "reactions_total": 70,
+  "attachments": 10,
   "channel_activity": {
+    "Today's this man's birthdays": 2,
+    "New Player Mechanics and Progression Guide": 1,
+    "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook": 3,
+    "🎧 克萊門汀 Clementine丨2.2廣播劇——《拥抱本我》（建議佩戴耳機）": 5,
+    "👁克萊門汀的瘋狂┊Clementine's Madness": 1,
+    "Tulu team recommendation": 7,
     "V2.2.0.0 停服維護公告": 16,
     "✅「Answered」Incorrect Assignment Rewards": 1,
     "💭「Processing」[BUG] Blue Stone Throne wheel + Myriam in PvP": 5,
@@ -18,7 +24,13 @@
     "「   」的故事（上）": 4
   },
   "hourly_activity": {
-    "6": 8,
+    "15": 7,
+    "17": 2,
+    "5": 4,
+    "6": 10,
+    "7": 1,
+    "14": 6,
+    "16": 3,
     "8": 8,
     "10": 2,
     "18": 2,
@@ -27,18 +39,36 @@
     "9": 1,
     "11": 2,
     "20": 1,
-    "5": 1,
     "2": 3,
-    "4": 1,
-    "14": 1,
-    "15": 3,
-    "16": 1
+    "4": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 1
+    "0": 11,
+    "19": 7,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1357589913725308928",
+      "content": "“噓——稍安勿躁，也不必嘗試逃跑。”\n“我在看著你👁️，每時每刻、無時👁️無刻……”\n\n整個城市👁️都是克萊門汀的👁️眼線，你還能逃去哪裡？\n扭曲與痛苦方能填飽",
+      "author": "morimensstaff01",
+      "reactions": 15,
+      "channel": "👁克萊門汀的瘋狂┊Clementine's Madness"
+    },
+    {
+      "id": "1357733616846901418",
+      "content": "Hooray, wish him happy birthdays yippeee",
+      "author": "lushlake0871",
+      "reactions": 14,
+      "channel": "Today's this man's birthdays"
+    },
+    {
+      "id": "1357587355111784458",
+      "content": "\"別掙扎，保持平靜…\"\n\n\"您不會想知道上一個掙扎的先生去了哪裡，不過教堂後院的薔薇今年開得格外艷麗不是嗎？\"\n\n——◆——◆—— ◆◆◆ ——◆——◆——\n\n",
+      "author": "morimensstaff01",
+      "reactions": 14,
+      "channel": "🎧 克萊門汀 Clementine丨2.2廣播劇——《拥抱本我》（建議佩戴耳機）"
+    },
     {
       "id": "1357600630121959556",
       "content": "守密人你好：\n       彌薩格大學預計於4月7日08:00~12:00（UTC+8）進行校內設施維護。\n       維護結束後需要重新登入並進行更新，補給",
@@ -94,6 +124,34 @@
       "author": "sam511011",
       "reactions": 2,
       "channel": "「   」的故事（上）"
+    },
+    {
+      "id": "1357743417966329996",
+      "content": "||原本誰知道25%是多少||，然後對面有損血就能觸發了",
+      "author": "arr5721",
+      "reactions": 1,
+      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
+    },
+    {
+      "id": "1357608053561888809",
+      "content": "<@702167871144591461>Hi~ The voice actor is 国実 久留子 (Kunimi Kuruko)✨",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "🎧 克萊門汀 Clementine丨2.2廣播劇——《拥抱本我》（建議佩戴耳機）"
+    },
+    {
+      "id": "1357608525928468571",
+      "content": "Thank you! <:dishes:1356083313063759922>",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "🎧 克萊門汀 Clementine丨2.2廣播劇——《拥抱本我》（建議佩戴耳機）"
+    },
+    {
+      "id": "1357719084795560137",
+      "content": "Oh okay thanks",
+      "author": "axisstorm_",
+      "reactions": 1,
+      "channel": "Tulu team recommendation"
     },
     {
       "id": "1357539359754293248",

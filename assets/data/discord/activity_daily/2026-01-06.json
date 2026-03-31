@@ -1,10 +1,13 @@
 {
   "date": "2026-01-06",
-  "messages": 46,
+  "messages": 50,
   "unique_authors": 11,
   "reactions_total": 45,
-  "attachments": 7,
+  "attachments": 13,
   "channel_activity": {
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "星辰篇": 1,
     "✅「Resolved」Faros Boss Strange Stuff": 1,
     "Who Ryker's Designer pls come talk ?": 4,
     "Options to turn off Enlihtens": 2,
@@ -29,6 +32,9 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
+    "3": 1,
+    "0": 3,
+    "14": 1,
     "10": 14,
     "12": 7,
     "13": 2,
@@ -38,14 +44,11 @@
     "20": 1,
     "8": 3,
     "1": 2,
-    "0": 1,
     "19": 1,
     "17": 1
   },
   "message_types": {
-    "4": 5,
-    "0": 24,
-    "19": 4
+    "0": 4
   },
   "top_reacted_messages": [
     {

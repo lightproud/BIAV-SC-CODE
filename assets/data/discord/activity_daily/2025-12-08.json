@@ -1,10 +1,17 @@
 {
   "date": "2025-12-08",
-  "messages": 122,
+  "messages": 158,
   "unique_authors": 24,
-  "reactions_total": 49,
-  "attachments": 30,
+  "reactions_total": 96,
+  "attachments": 39,
   "channel_activity": {
+    "Explosion: Ramona": 2,
+    "Nymphaea!": 1,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 5,
+    "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!": 1,
+    "新手求助": 1,
+    "N4-16尾王求助": 24,
+    "how do caro teams work?": 2,
     "💭「Processing」Morimens freeze when I log in": 2,
     "✅「已回答」繁中PC端黑屏": 6,
     "关于【献祭】的bug修复": 2,
@@ -39,33 +46,39 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "7": 10,
-    "9": 8,
-    "8": 4,
+    "13": 8,
+    "15": 8,
+    "4": 8,
+    "14": 11,
+    "20": 5,
+    "6": 19,
+    "8": 5,
+    "7": 12,
+    "9": 10,
+    "10": 24,
     "11": 4,
     "12": 16,
-    "15": 5,
-    "10": 9,
-    "13": 7,
-    "14": 4,
     "22": 1,
     "23": 2,
-    "6": 18,
     "16": 2,
     "18": 1,
-    "20": 2,
     "0": 3,
     "5": 1,
     "3": 16,
-    "4": 7,
     "1": 2
   },
   "message_types": {
-    "0": 51,
-    "19": 14,
-    "4": 16
+    "0": 33,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1447587432894697543",
+      "content": "",
+      "author": "kirikonuto",
+      "reactions": 39,
+      "channel": "Explosion: Ramona"
+    },
     {
       "id": "1447508499411238983",
       "content": "「早在第一次見面時我就該剪掉你的舌頭。」",
@@ -86,6 +99,20 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1447481457135190108",
+      "content": "",
+      "author": "souri.10244",
+      "reactions": 4,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
+    {
+      "id": "1447499207610208377",
+      "content": "成功+4",
+      "author": "santianliangjuesleep",
+      "reactions": 4,
+      "channel": "新手求助"
     },
     {
       "id": "1447480841490923612",

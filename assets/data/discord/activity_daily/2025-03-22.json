@@ -1,10 +1,14 @@
 {
   "date": "2025-03-22",
-  "messages": 20,
+  "messages": 38,
   "unique_authors": 9,
-  "reactions_total": 10,
-  "attachments": 2,
+  "reactions_total": 14,
+  "attachments": 4,
   "channel_activity": {
+    "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 2,
+    "Is this a good team?": 14,
+    "การรวบรวมคำติชมการแปลภาษาไทย": 1,
+    "【日本語訳】フィードバック": 1,
     "✅「已回答」联动剧情把米粒剧情挤去意识潜游，认真的吗？": 4,
     "忘却前夜的周年庆在啥时候": 3,
     "角色占位对攻击的敌人会有影响吗": 3,
@@ -14,22 +18,32 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "4": 4,
+    "4": 6,
+    "6": 1,
+    "0": 1,
+    "1": 2,
+    "13": 3,
+    "14": 11,
+    "15": 3,
     "16": 2,
     "18": 1,
     "23": 1,
-    "15": 2,
     "11": 5,
     "12": 1,
-    "8": 1,
-    "13": 2,
-    "1": 1
+    "8": 1
   },
   "message_types": {
-    "0": 12,
+    "0": 14,
     "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1352892501974978682",
+      "content": "Clementine will save ultra poison.",
+      "author": "mengluo",
+      "reactions": 4,
+      "channel": "Clementine 2.2 Kit and Tier Placement Guessing Tournament"
+    },
     {
       "id": "1352855144575930438",
       "content": "<@&1166257943742787615> 你們最好是給出合理解釋\n為什麼要因為聯動把我推的位置擠走，這種做法觀感很差\n\n根本異夢跟其他兩個模式的敘事人稱是",

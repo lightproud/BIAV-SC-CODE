@@ -1,10 +1,11 @@
 {
   "date": "2024-12-15",
-  "messages": 39,
+  "messages": 45,
   "unique_authors": 11,
   "reactions_total": 31,
   "attachments": 10,
   "channel_activity": {
+    "Reruns priority guide (for newcomers and general)": 6,
     "🏆【已開獎】彌薩格週年頒獎典禮": 9,
     "H9-2 異常問題說明（已修復）": 2,
     "爱意终于普罗维登斯的春天——游戏内部分neta简要整理": 1,
@@ -18,8 +19,8 @@
     "🔸【超越維度的祝福】認領專區": 3
   },
   "hourly_activity": {
+    "11": 12,
     "5": 11,
-    "11": 6,
     "4": 2,
     "8": 4,
     "12": 4,
@@ -31,9 +32,8 @@
     "2": 1
   },
   "message_types": {
-    "0": 9,
-    "19": 2,
-    "4": 1
+    "0": 5,
+    "19": 1
   },
   "top_reacted_messages": [
     {

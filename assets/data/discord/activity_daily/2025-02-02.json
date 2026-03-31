@@ -1,10 +1,13 @@
 {
   "date": "2025-02-02",
-  "messages": 29,
+  "messages": 36,
   "unique_authors": 10,
   "reactions_total": 81,
   "attachments": 4,
   "channel_activity": {
+    "Tier list as of 2.0": 1,
+    "Chapter 9": 1,
+    "morimens story recap channel": 5,
     "✨為喚醒體著新裝！": 1,
     "English Page pls !!": 9,
     "大过年过来吐槽": 5,
@@ -16,6 +19,9 @@
     "【梗图】堆点我P过的梗图": 1
   },
   "hourly_activity": {
+    "0": 2,
+    "14": 1,
+    "18": 5,
     "9": 4,
     "2": 4,
     "8": 4,
@@ -24,12 +30,12 @@
     "7": 7,
     "16": 1,
     "11": 2,
-    "0": 1,
     "6": 1,
     "10": 1
   },
   "message_types": {
-    "0": 1
+    "19": 1,
+    "0": 6
   },
   "top_reacted_messages": [
     {

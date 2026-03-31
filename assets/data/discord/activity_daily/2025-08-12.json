@@ -1,10 +1,19 @@
 {
   "date": "2025-08-12",
-  "messages": 36,
-  "unique_authors": 6,
-  "reactions_total": 40,
-  "attachments": 3,
+  "messages": 178,
+  "unique_authors": 59,
+  "reactions_total": 284,
+  "attachments": 10,
   "channel_activity": {
+    "[CH8 Spoiler] What Actually Happened to Dexter...": 5,
+    "clementine": 1,
+    "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra": 83,
+    "V2.3.1 凯蒂古拉情报1：太阳自黑夜升起┊About Kathigu-Ra: The Sun Rises from Darkness": 12,
+    "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!": 35,
+    "Needing help on building Jenkin": 1,
+    "Thais Team Help": 2,
+    "Newbie Hitting a Wall": 2,
+    "(moved to #gameplay-guide)": 1,
     "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy": 13,
     "✅「Answered」Can't log in": 9,
     "mockup ui for realm selection and silver key posse": 1,
@@ -15,28 +24,132 @@
     "一个大头的画": 2
   },
   "hourly_activity": {
-    "13": 13,
-    "14": 3,
-    "1": 5,
-    "10": 2,
-    "11": 3,
-    "4": 5,
-    "6": 1,
-    "8": 1,
-    "7": 1,
-    "15": 2
+    "14": 10,
+    "15": 5,
+    "18": 1,
+    "20": 1,
+    "6": 4,
+    "7": 22,
+    "8": 17,
+    "9": 39,
+    "10": 9,
+    "11": 31,
+    "13": 16,
+    "16": 6,
+    "17": 5,
+    "22": 1,
+    "4": 6,
+    "1": 5
   },
   "message_types": {
-    "0": 11,
-    "19": 2
+    "0": 122,
+    "19": 20
   },
   "top_reacted_messages": [
+    {
+      "id": "1404724343011020943",
+      "content": "贫瘠的黄沙带走了这座小镇最后一丝人性：\n在这里，死亡是神最后施予的怜悯；\n在这里，生命的重量轻过一袋食粮；\n在这里，新生将注定承受无尽苦难。\n\n“神…啊…求求…",
+      "author": "morimensstaff01",
+      "reactions": 37,
+      "channel": "V2.3.1 凯蒂古拉情报1：太阳自黑夜升起┊About Kathigu-Ra: The Sun Rises from Darkness"
+    },
+    {
+      "id": "1404835395803283580",
+      "content": "",
+      "author": "zier.0",
+      "reactions": 35,
+      "channel": "[CH8 Spoiler] What Actually Happened to Dexter..."
+    },
+    {
+      "id": "1404744727093444688",
+      "content": "📢**凯蒂古拉佣兵团今日招新：**\n想年入百万银芯吗？想成为庇护一方的霸主吗？快来加入我们吧！\n\n📋️**入团第1步：填写入团心理测试题**\n这个测试准得可怕，",
+      "author": "morimensstaff01",
+      "reactions": 26,
+      "channel": "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!"
+    },
+    {
+      "id": "1404715808009228348",
+      "content": "hello idk what am i doing, i just love her.",
+      "author": "aomi_yuu_2.0",
+      "reactions": 25,
+      "channel": "clementine"
+    },
     {
       "id": "1404853107367743578",
       "content": "虽然我们杜勒没画完，但是先丢到这里<:Emoji_24_P_11:1400771541423226971> \nuid：100082465",
       "author": "arki1i_",
       "reactions": 19,
       "channel": "一个大头的画"
+    },
+    {
+      "id": "1404881926115819650",
+      "content": "像是普通二游会出现的家伙",
+      "author": "carme.0588",
+      "reactions": 16,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
+    },
+    {
+      "id": "1404792548492447744",
+      "content": "Personal I think they can juggle body horror and conventional attractive just fi",
+      "author": "red_rest",
+      "reactions": 9,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
+    },
+    {
+      "id": "1404760011791532113",
+      "content": "打乱阵型<:rizz2:1356053138133614753>",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!"
+    },
+    {
+      "id": "1404791146055471246",
+      "content": "I wish her art is a bit more blurry/have that soft water colour style of the fir",
+      "author": "red_rest",
+      "reactions": 8,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
+    },
+    {
+      "id": "1404792656860549202",
+      "content": "the art is indeed very good\nit just misses some loose blurry speedpaint parts to",
+      "author": "sexysneakystoat1625",
+      "reactions": 8,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
+    },
+    {
+      "id": "1404880050062491681",
+      "content": "怎么感觉设计水平越来越倒退了",
+      "author": "mwuyue",
+      "reactions": 8,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
+    },
+    {
+      "id": "1404791925944487937",
+      "content": "I've recently seen some comments that some people would want to pull for more 'a",
+      "author": "gillamaru",
+      "reactions": 7,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
+    },
+    {
+      "id": "1404762556807122964",
+      "content": "發點戈雅看看傭兵團實力<:Emoji_AEW_M_02:1400771550097051669>",
+      "author": "flarinsidia",
+      "reactions": 7,
+      "channel": "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!"
+    },
+    {
+      "id": "1404730308271538276",
+      "content": "我们不要再画这么亮了好吗，我们回头去看看红花你汀之类的大面积固有色的画法怎么样<:takenotes:1357186646294138890> 这个截个上半身完",
+      "author": "ruhebaoyangsiwa_97871",
+      "reactions": 6,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
+    },
+    {
+      "id": "1404753847104049223",
+      "content": "Karen selling fire resistance potions",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
     },
     {
       "id": "1404790536858107904",
@@ -46,53 +159,32 @@
       "channel": "《37個鑰令全解析｜融災實用Top10推薦》"
     },
     {
-      "id": "1404823706794201131",
-      "content": "你要解決這個問題有三個解決方案\n1 出吃不到羊媽輔助的角色 \n2 削弱羊媽\n3 出比羊媽更暴力的輔助",
-      "author": "shchng.",
-      "reactions": 3,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
-    },
-    {
-      "id": "1404824411411841274",
-      "content": "嗯\n第二項確實像是你遊能幹出的事",
-      "author": "ice_storys",
-      "reactions": 3,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
-    },
-    {
-      "id": "1404854238584111134",
-      "content": "",
-      "author": "arki1i_",
-      "reactions": 3,
-      "channel": "一个大头的画"
-    },
-    {
-      "id": "1404823833755516998",
-      "content": "第二项",
+      "id": "1404763132508766280",
+      "content": "这个戈雅怎么这么坏啊（bushi）",
       "author": "carme.0588",
-      "reactions": 2,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
+      "reactions": 4,
+      "channel": "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!"
     },
     {
-      "id": "1404830442217013378",
-      "content": "此事在旺达与伤痛亦有记载",
-      "author": "carme.0588",
-      "reactions": 2,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
+      "id": "1404739582519541782",
+      "content": "猫你最好出的不是混沌肚饿",
+      "author": "wk123hl9298",
+      "reactions": 3,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
     },
     {
-      "id": "1404822683082031165",
-      "content": "我覺得你的意見沒有問題✅",
-      "author": "kong760",
-      "reactions": 1,
-      "channel": "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy"
+      "id": "1404757249792020652",
+      "content": "Bro she looks... Fire <:cute1:1356053053568192717>",
+      "author": "zekiei",
+      "reactions": 3,
+      "channel": "V2.3.1 全新唤醒体✦凯蒂古拉┊New Awakener✦Kathigu-Ra"
     },
     {
-      "id": "1404749425976279081",
-      "content": "沒事\n已解答了",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "✅「已回答」疊不了盾"
+      "id": "1404747464426262588",
+      "content": "多出點這種生草環節吧，孩子愛看",
+      "author": "oct3000",
+      "reactions": 3,
+      "channel": "V2.3.1 佣兵团招新: 心理笔试《佣兵模拟器》┊Mercenary is Hiring! Take the Quiz Today!"
     }
   ]
 }

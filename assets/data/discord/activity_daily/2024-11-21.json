@@ -1,10 +1,11 @@
 {
   "date": "2024-11-21",
-  "messages": 72,
+  "messages": 95,
   "unique_authors": 12,
-  "reactions_total": 79,
+  "reactions_total": 82,
   "attachments": 24,
   "channel_activity": {
+    "Chapter 9": 23,
     "🎁露比帶著禮包兌換碼來啦~": 1,
     "V1.7.1.2 在線維護公告": 2,
     "請願本源朵爾進典藏館以及實裝上線": 18,
@@ -20,7 +21,8 @@
     "群山的呼唤": 2
   },
   "hourly_activity": {
-    "3": 1,
+    "3": 18,
+    "5": 6,
     "13": 11,
     "14": 16,
     "2": 1,
@@ -38,7 +40,8 @@
     "7": 2
   },
   "message_types": {
-    "0": 3
+    "0": 19,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -91,6 +94,13 @@
       "channel": "【梗图】堆点我P过的梗图"
     },
     {
+      "id": "1308992154093228092",
+      "content": "Then create Mythag together",
+      "author": "gd_prawl",
+      "reactions": 2,
+      "channel": "Chapter 9"
+    },
+    {
       "id": "1308997774683148360",
       "content": "HVGX-HLDX-QKKN\nQKBQ-SSDG-JZYU\nDC5000\nSILVERKEY\nCATSGIFT",
       "author": ".2.718281828",
@@ -103,6 +113,13 @@
       "author": "kong760",
       "reactions": 2,
       "channel": "戰鬥失敗的退出有問題"
+    },
+    {
+      "id": "1308999944035897425",
+      "content": "Reasonable",
+      "author": "gd_prawl",
+      "reactions": 1,
+      "channel": "Chapter 9"
     },
     {
       "id": "1309140272256516158",

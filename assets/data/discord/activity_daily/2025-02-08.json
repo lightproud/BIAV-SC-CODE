@@ -1,10 +1,12 @@
 {
   "date": "2025-02-08",
-  "messages": 117,
+  "messages": 122,
   "unique_authors": 24,
   "reactions_total": 129,
-  "attachments": 2,
+  "attachments": 4,
   "channel_activity": {
+    "GDoll preview rough TL": 3,
+    "Any advice on what to choose based on what i already have": 2,
     "V2.1.0.0 停服維護公告": 93,
     "📜熔燬·朵爾喚醒體&命輪介紹": 10,
     "English Page pls !!": 1,
@@ -15,6 +17,8 @@
     "［繪畫］當你補習時，畫出的畫令你覺得你到底要會考了嗎": 2
   },
   "hourly_activity": {
+    "0": 4,
+    "17": 2,
     "1": 8,
     "2": 17,
     "3": 3,
@@ -30,12 +34,10 @@
     "13": 2,
     "21": 1,
     "11": 1,
-    "18": 3,
-    "0": 1
+    "18": 3
   },
   "message_types": {
-    "0": 84,
-    "19": 19
+    "0": 5
   },
   "top_reacted_messages": [
     {

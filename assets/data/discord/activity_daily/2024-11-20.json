@@ -1,10 +1,13 @@
 {
   "date": "2024-11-20",
-  "messages": 51,
+  "messages": 69,
   "unique_authors": 17,
-  "reactions_total": 65,
-  "attachments": 13,
+  "reactions_total": 82,
+  "attachments": 15,
   "channel_activity": {
+    "The light of the abyss, dark blue shin in dreams︱D-Tide All-Aequor Workthrough": 9,
+    "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185": 6,
+    "Relic Tierlist": 3,
     "Facebook帳戶登入失敗解決方法": 1,
     "Steam Issue": 1,
     "請願本源朵爾進典藏館以及實裝上線": 4,
@@ -25,6 +28,13 @@
     "早安…": 3
   },
   "hourly_activity": {
+    "9": 6,
+    "10": 3,
+    "14": 3,
+    "15": 2,
+    "16": 2,
+    "11": 5,
+    "12": 1,
     "2": 9,
     "20": 1,
     "0": 3,
@@ -33,14 +43,13 @@
     "5": 1,
     "18": 3,
     "21": 1,
-    "11": 3,
     "6": 15,
     "4": 3,
-    "3": 7,
-    "15": 1
+    "3": 7
   },
   "message_types": {
-    "0": 1
+    "0": 16,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -56,6 +65,13 @@
       "author": "shadiaodiaodeyu_89215",
       "reactions": 21,
       "channel": "早安…"
+    },
+    {
+      "id": "1308730391825354845",
+      "content": "Hello everyone, I'm 鯊魚腳下的野貓 aka Ernest the Silver hunter.\nThis time, I'd like to",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "The light of the abyss, dark blue shin in dreams︱D-Tide All-Aequor Workthrough"
     },
     {
       "id": "1308710450426282066",
@@ -77,6 +93,62 @@
       "author": "game.producer.light",
       "reactions": 3,
       "channel": "关于塔薇"
+    },
+    {
+      "id": "1308795753728311317",
+      "content": "chaos seem to be mising 24 \n\nher best enlighten is the one that improves her 3-c",
+      "author": "andrewaw",
+      "reactions": 2,
+      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
+    },
+    {
+      "id": "1308730508963745792",
+      "content": "## Tentacle <:sleep:1238448786540462130> <:Heartbeat:1236951458176565389> \n**Adv",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "The light of the abyss, dark blue shin in dreams︱D-Tide All-Aequor Workthrough"
+    },
+    {
+      "id": "1308738724267560960",
+      "content": "",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "The light of the abyss, dark blue shin in dreams︱D-Tide All-Aequor Workthrough"
+    },
+    {
+      "id": "1308795175723859988",
+      "content": "Hello i made a guide to help me and others find the best Enlighten",
+      "author": "andiekitten",
+      "reactions": 1,
+      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
+    },
+    {
+      "id": "1308799679688867972",
+      "content": "<:heart:1239910691218001961> I have updated the sheet for 24 and Sorel, thank yo",
+      "author": "andiekitten",
+      "reactions": 1,
+      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
+    },
+    {
+      "id": "1308817841843339284",
+      "content": "I think Tawil can stop at E2\nsince she can get crit from relics, supports and wh",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
+    },
+    {
+      "id": "1308825352797290607",
+      "content": "Since this is a f2p guide, I think it is worth mentioning that tulu will likely ",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
+    },
+    {
+      "id": "1308826607925858387",
+      "content": "Tulu will have abyssal rate so his status won’t be that different",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "https://steamcommunity.com/sharedfiles/filedetails/?id=3368298185"
     },
     {
       "id": "1308758970093011005",

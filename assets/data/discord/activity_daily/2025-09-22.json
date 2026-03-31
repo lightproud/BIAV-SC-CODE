@@ -1,10 +1,17 @@
 {
   "date": "2025-09-22",
-  "messages": 98,
+  "messages": 117,
   "unique_authors": 14,
-  "reactions_total": 47,
-  "attachments": 16,
+  "reactions_total": 64,
+  "attachments": 26,
   "channel_activity": {
+    "3D Render: Horla": 4,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
+    "Flares' Comprehensive Beginner Guide to Morimens": 1,
+    "Unsure what comp to run Pickman in.": 3,
+    "Is there any reason NOT to turn on \"Auto convert extra R/SR wheels of destiny\" in Settings?": 3,
+    "Im still quite lost.": 5,
+    "aq/ultra domain": 2,
     "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 2,
     "✅「Answered」Is it possible to retrieve a lost guest account?": 10,
     "✅「已回答」融灾能不能别调这么难": 2,
@@ -24,32 +31,38 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "3": 9,
-    "9": 5,
-    "0": 1,
+    "3": 11,
+    "4": 25,
+    "8": 3,
+    "9": 6,
+    "18": 3,
+    "19": 5,
+    "20": 2,
+    "13": 11,
+    "15": 2,
+    "0": 3,
     "6": 2,
     "7": 13,
-    "13": 7,
     "14": 2,
-    "18": 1,
-    "19": 2,
     "21": 8,
     "12": 12,
-    "20": 1,
     "10": 1,
-    "15": 1,
     "1": 2,
-    "4": 24,
     "5": 1,
-    "11": 5,
-    "8": 1
+    "11": 5
   },
   "message_types": {
-    "19": 10,
-    "0": 35,
-    "4": 5
+    "0": 16,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1419533512825897000",
+      "content": "A little practice to render a painterly style in blender. \nHonestly could use mo",
+      "author": "xyakoto",
+      "reactions": 14,
+      "channel": "3D Render: Horla"
+    },
     {
       "id": "1419491603608768595",
       "content": "~~單發是因爲畫的時候笑得有點缺德~~",
@@ -91,6 +104,27 @@
       "author": "ena04564",
       "reactions": 2,
       "channel": "杜勒和皮克曼的车文来了"
+    },
+    {
+      "id": "1419520183885627522",
+      "content": "<@1339576837990514740> Fan art is usually a painting work, and for video works, ",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1419767732911476846",
+      "content": "not really, you can activate it with no problem",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "Is there any reason NOT to turn on \"Auto convert extra R/SR wheels of destiny\" in Settings?"
+    },
+    {
+      "id": "1419768585475194992",
+      "content": "no reason, the only downside was a bug (auto-dismantle used to not count towards",
+      "author": "__goz__",
+      "reactions": 1,
+      "channel": "Is there any reason NOT to turn on \"Auto convert extra R/SR wheels of destiny\" in Settings?"
     },
     {
       "id": "1419698660672929812",

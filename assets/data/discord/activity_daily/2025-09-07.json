@@ -1,35 +1,150 @@
 {
   "date": "2025-09-07",
-  "messages": 22,
-  "unique_authors": 5,
-  "reactions_total": 5,
-  "attachments": 3,
+  "messages": 128,
+  "unique_authors": 20,
+  "reactions_total": 190,
+  "attachments": 25,
   "channel_activity": {
+    "Salvador warmup doodle": 1,
+    "My fan art submission uid 101084291": 6,
+    "Kathigu-ra Fanart Submission": 2,
+    "Kathigu-ra sketch": 1,
+    "Doll: Inferno Fanart Submission": 2,
+    "Castor bookmarks for school": 1,
+    "i don't think i'm even something real at all (N Fanfic)": 1,
+    "[Custom Awakener Kit] Kaom: Viator ex Nihilo": 5,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 3,
+    "求抽卡配對，想找一些搭配汀克特🫠": 8,
+    "Need help with team building and game in general": 62,
+    "Looking for General Advice": 3,
+    "Priority/Investment help.": 5,
+    "help pls": 3,
+    "Caecus/Corposant team?": 1,
+    "Awakener picks": 2,
     "前瞻：相位对弈改动 Traphase Changes": 16,
     "邀請碼互助/Invitation code help each other": 3,
     "我也要開圖樓": 1,
     "1296113810549112874": 2
   },
   "hourly_activity": {
-    "10": 15,
-    "14": 2,
-    "1": 1,
-    "11": 1,
-    "21": 1,
-    "12": 1,
-    "13": 1
+    "7": 1,
+    "11": 3,
+    "16": 4,
+    "23": 1,
+    "12": 4,
+    "18": 2,
+    "15": 4,
+    "6": 6,
+    "5": 3,
+    "2": 1,
+    "4": 1,
+    "8": 24,
+    "13": 4,
+    "14": 4,
+    "9": 20,
+    "10": 28,
+    "21": 2,
+    "22": 11,
+    "19": 3,
+    "20": 1,
+    "1": 1
   },
   "message_types": {
-    "19": 4,
-    "0": 12
+    "0": 80,
+    "4": 1,
+    "19": 25
   },
   "top_reacted_messages": [
+    {
+      "id": "1414269259193778290",
+      "content": "UID: 101091715\n\nThis is my first ever Morimens fanart that I started around last",
+      "author": "haneopng",
+      "reactions": 56,
+      "channel": "Doll: Inferno Fanart Submission"
+    },
+    {
+      "id": "1414223563849990174",
+      "content": "uid: 101095095\n\nTake my messy painting <:flop2:1356053072924774421>\nKathigu-ra v",
+      "author": "ezer2112",
+      "reactions": 41,
+      "channel": "Kathigu-ra Fanart Submission"
+    },
+    {
+      "id": "1414269972414333038",
+      "content": "These are the early color sketches, ended up picking the third one bcs of the vi",
+      "author": "haneopng",
+      "reactions": 18,
+      "channel": "Doll: Inferno Fanart Submission"
+    },
+    {
+      "id": "1414155998599581706",
+      "content": "I'm pretty new (started 3 days ago) here but have already gotten my heart taken ",
+      "author": "sofiaebby",
+      "reactions": 16,
+      "channel": "Salvador warmup doodle"
+    },
+    {
+      "id": "1414128048114237460",
+      "content": "*Refracted splinters We are rebound: Once a maiden, once a beast; interlaced thr",
+      "author": "inana_istar",
+      "reactions": 16,
+      "channel": "[Custom Awakener Kit] Kaom: Viator ex Nihilo"
+    },
+    {
+      "id": "1414277138068279378",
+      "content": "UID: 101035604",
+      "author": "mobiosity",
+      "reactions": 14,
+      "channel": "Kathigu-ra sketch"
+    },
+    {
+      "id": "1414279996842836060",
+      "content": "deadline over but i just want to sher \nIts still far from done but welp ill just",
+      "author": "eyadx23",
+      "reactions": 11,
+      "channel": "My fan art submission uid 101084291"
+    },
+    {
+      "id": "1414129765740183563",
+      "content": "A retelling of Kathigu-Ra's side story from N's perspective.\n\nhttps://archiveofo",
+      "author": "fuckupa2",
+      "reactions": 6,
+      "channel": "i don't think i'm even something real at all (N Fanfic)"
+    },
+    {
+      "id": "1414204979027116123",
+      "content": "",
+      "author": "eyadx23",
+      "reactions": 3,
+      "channel": "My fan art submission uid 101084291"
+    },
     {
       "id": "1414258276744564828",
       "content": "温师傅生日快乐！",
       "author": "yingmai_",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1414314129493327963",
+      "content": "Oh yeah, the sketch >>",
+      "author": "ezer2112",
+      "reactions": 2,
+      "channel": "Kathigu-ra Fanart Submission"
+    },
+    {
+      "id": "1414377299062820945",
+      "content": "i just still don’t fully understand how to play the game",
+      "author": "gracinem",
+      "reactions": 1,
+      "channel": "Need help with team building and game in general"
+    },
+    {
+      "id": "1414378701340147805",
+      "content": "dont think my team is bad but im definitely not playing it right at all",
+      "author": "gracinem",
+      "reactions": 1,
+      "channel": "Need help with team building and game in general"
     },
     {
       "id": "1414197921901183048",

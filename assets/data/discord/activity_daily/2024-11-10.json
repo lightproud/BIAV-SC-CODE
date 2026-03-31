@@ -1,10 +1,12 @@
 {
   "date": "2024-11-10",
-  "messages": 26,
+  "messages": 38,
   "unique_authors": 10,
-  "reactions_total": 76,
-  "attachments": 17,
+  "reactions_total": 95,
+  "attachments": 23,
   "channel_activity": {
+    "Stats and realm mechanics (and some tips)": 7,
+    "GPT translation synonyms": 5,
     "请问周年庆有什么活动爆料么？": 1,
     "覺得羅坦需要加強": 4,
     "據說主美走了？": 3,
@@ -18,6 +20,8 @@
     "復仇、復仇。": 1
   },
   "hourly_activity": {
+    "16": 15,
+    "17": 4,
     "15": 1,
     "5": 2,
     "8": 1,
@@ -28,13 +32,10 @@
     "7": 1,
     "0": 1,
     "14": 1,
-    "22": 1,
-    "16": 4,
-    "17": 3
+    "22": 1
   },
   "message_types": {
-    "0": 5,
-    "19": 11
+    "0": 12
   },
   "top_reacted_messages": [
     {
@@ -43,6 +44,13 @@
       "author": "phantom_ye",
       "reactions": 21,
       "channel": "【1111凯刻斯生贺】少年与海"
+    },
+    {
+      "id": "1305204021425995816",
+      "content": "Advice: Read the game mechanic in the light bulb icon on the left of your lobby ",
+      "author": "_venush",
+      "reactions": 19,
+      "channel": "Stats and realm mechanics (and some tips)"
     },
     {
       "id": "1305195860778422292",

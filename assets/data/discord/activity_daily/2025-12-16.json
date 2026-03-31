@@ -1,10 +1,15 @@
 {
   "date": "2025-12-16",
-  "messages": 78,
+  "messages": 98,
   "unique_authors": 21,
-  "reactions_total": 680,
-  "attachments": 24,
+  "reactions_total": 695,
+  "attachments": 32,
   "channel_activity": {
+    "Pencil art": 1,
+    "Liz : Hollow Dance of Destruction": 2,
+    "chibi murphy": 1,
+    "求配队": 1,
+    "求隊": 15,
     "线上问题修复公告": 1,
     "Who Ryker's Designer pls come talk ?": 4,
     "✅「Answered」Battlepass Timer bug": 1,
@@ -34,27 +39,29 @@
     "🔸忘却前夜┊morimens-tv": 4
   },
   "hourly_activity": {
+    "4": 2,
+    "12": 6,
+    "15": 1,
+    "13": 2,
+    "5": 4,
+    "11": 15,
     "0": 3,
     "8": 7,
-    "12": 4,
-    "13": 1,
     "22": 1,
     "2": 8,
     "3": 27,
     "16": 6,
-    "5": 3,
     "10": 1,
-    "11": 1,
     "6": 3,
     "14": 3,
-    "4": 1,
     "1": 3,
     "23": 3,
     "17": 2,
     "9": 1
   },
   "message_types": {
-    "19": 1
+    "0": 17,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -86,11 +93,32 @@
       "channel": "一點仿官"
     },
     {
+      "id": "1450486107316682866",
+      "content": "cake :3",
+      "author": "lornitho_o",
+      "reactions": 7,
+      "channel": "chibi murphy"
+    },
+    {
       "id": "1450366314534277151",
       "content": "家產",
       "author": "souri.10244",
       "reactions": 7,
       "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1450342205666496513",
+      "content": "24",
+      "author": "nothing_of_wisdom",
+      "reactions": 4,
+      "channel": "Pencil art"
+    },
+    {
+      "id": "1450360597660172289",
+      "content": "更新一下",
+      "author": "txt101225.",
+      "reactions": 4,
+      "channel": "求配队"
     },
     {
       "id": "1450623504616657089",

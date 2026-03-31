@@ -1,10 +1,15 @@
 {
   "date": "2025-06-15",
-  "messages": 28,
+  "messages": 55,
   "unique_authors": 13,
-  "reactions_total": 12,
-  "attachments": 6,
+  "reactions_total": 61,
+  "attachments": 7,
   "channel_activity": {
+    "The twins": 6,
+    "Reruns priority guide (for newcomers and general)": 2,
+    "Monchi's Guide to DDive 36k.": 1,
+    "求配隊": 1,
+    "大佬們幫幫忙求助": 17,
     "✅「Answered」In-game texts do not match the language selected in the settings.": 1,
     "應該要加強某些角色吧": 10,
     "一些弱势角色的加强建议": 1,
@@ -14,24 +19,36 @@
     "杜勒赛因技能组diy": 2
   },
   "hourly_activity": {
+    "15": 5,
+    "18": 2,
+    "19": 2,
+    "23": 1,
+    "17": 2,
+    "3": 1,
+    "13": 7,
+    "8": 12,
+    "9": 5,
     "14": 1,
     "2": 2,
     "6": 5,
     "10": 1,
     "11": 1,
-    "13": 6,
-    "15": 2,
     "16": 1,
     "1": 1,
-    "18": 1,
-    "19": 1,
     "12": 6
   },
   "message_types": {
-    "0": 20,
-    "19": 6
+    "0": 23,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1383833139461226597",
+      "content": "always love doomed siblings plot <:cry2:1356068126894194758> <:cry2:135606812689",
+      "author": "oketan",
+      "reactions": 46,
+      "channel": "The twins"
+    },
     {
       "id": "1383626556328382564",
       "content": "Many of us didn't get to view the full story of the event due to bugs or boss dy",
@@ -45,6 +62,27 @@
       "author": "scholar_2",
       "reactions": 4,
       "channel": "杜勒赛因技能组diy"
+    },
+    {
+      "id": "1383834668750737560",
+      "content": "So stunning!<:wow:1356053147029864518>",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "The twins"
+    },
+    {
+      "id": "1383835043943944403",
+      "content": "Beautiful",
+      "author": "red_rest",
+      "reactions": 1,
+      "channel": "The twins"
+    },
+    {
+      "id": "1383883246839791658",
+      "content": "Truly beautiful",
+      "author": "vxvendetta",
+      "reactions": 1,
+      "channel": "The twins"
     },
     {
       "id": "1383700462959726643",

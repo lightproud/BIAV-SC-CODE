@@ -1,10 +1,22 @@
 {
   "date": "2025-11-25",
-  "messages": 150,
-  "unique_authors": 29,
-  "reactions_total": 129,
-  "attachments": 31,
+  "messages": 213,
+  "unique_authors": 35,
+  "reactions_total": 310,
+  "attachments": 69,
   "channel_activity": {
+    "Caecus doodle": 1,
+    "Murphy: Fauxborn fanart": 1,
+    "2.4": 2,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 5,
+    "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!": 20,
+    "📸壁纸分享-诞妄·墨菲┊Wallpaper Sharing-Murphy: Fauxborn": 2,
+    "来个大佬看看喵": 5,
+    "角色补充": 11,
+    "卡关问问怎么办": 2,
+    "Low spender struggles": 11,
+    "New Player Help": 2,
+    "OE Clem team building": 1,
     "忘却前夜OST：原初宿命之战": 1,
     "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 1,
     "✅「已回答」繁中PC端黑屏": 1,
@@ -77,32 +89,34 @@
     "1234769700735418368": 1
   },
   "hourly_activity": {
-    "4": 16,
+    "2": 6,
+    "19": 2,
+    "22": 1,
+    "11": 15,
+    "12": 8,
+    "16": 10,
+    "17": 12,
+    "10": 5,
+    "13": 2,
+    "15": 11,
+    "18": 10,
+    "23": 5,
+    "7": 29,
+    "9": 17,
+    "14": 3,
+    "6": 11,
+    "4": 17,
     "0": 3,
-    "10": 2,
     "3": 15,
-    "6": 10,
-    "7": 24,
-    "18": 9,
     "21": 1,
-    "9": 12,
-    "15": 8,
-    "12": 2,
-    "14": 2,
-    "23": 4,
-    "17": 2,
     "20": 5,
-    "16": 1,
     "5": 6,
     "8": 17,
-    "1": 2,
-    "2": 4,
-    "11": 4,
-    "19": 1
+    "1": 2
   },
   "message_types": {
-    "19": 1,
-    "0": 1
+    "0": 55,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -111,6 +125,62 @@
       "author": "souri.10244",
       "reactions": 34,
       "channel": "蓋個圖樓"
+    },
+    {
+      "id": "1442827420431548428",
+      "content": "✦为大家奉上诞妄·墨菲的留影作为纪念~\n\n✦Here are photos of Murphy: Fauxborn as a souvenir~",
+      "author": "morimensstaff01",
+      "reactions": 26,
+      "channel": "📸壁纸分享-诞妄·墨菲┊Wallpaper Sharing-Murphy: Fauxborn"
+    },
+    {
+      "id": "1442705174379630622",
+      "content": "I am new to the game and I fell in love with his design ;-; hope you like my lit",
+      "author": "orpheusffxiv",
+      "reactions": 20,
+      "channel": "Caecus doodle"
+    },
+    {
+      "id": "1442701931519803453",
+      "content": "",
+      "author": "einlei.",
+      "reactions": 19,
+      "channel": "Murphy: Fauxborn fanart"
+    },
+    {
+      "id": "1442847477576237107",
+      "content": "Такой длинный путь.. - длинною в один год",
+      "author": "closetom",
+      "reactions": 19,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
+    {
+      "id": "1442914708884557917",
+      "content": "速速畫了！二周年快樂！✨",
+      "author": "rdkanami",
+      "reactions": 19,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
+    {
+      "id": "1442904635420709087",
+      "content": "群友搞笑聊天 hilarious group chats",
+      "author": "muliupan",
+      "reactions": 18,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
+    {
+      "id": "1442825647138406480",
+      "content": "各位守密人在「忘却前夜」是否有许多或有趣或难忘的记忆？哪些时刻最能代表你当时的经历和心情？\n📸游戏高光截图、欧皇时刻、痛扁boss、CG、音乐……\n📸因游戏结缘",
+      "author": "morimensstaff01",
+      "reactions": 14,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
+    {
+      "id": "1442843582854598776",
+      "content": "Human legs and feet are sinful. <:approved:1356053028787982558>",
+      "author": "inana_istar",
+      "reactions": 13,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
     },
     {
       "id": "1442939413624782949",
@@ -155,6 +225,27 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1442961498648477909",
+      "content": "",
+      "author": "lurenjiao",
+      "reactions": 7,
+      "channel": "2.4"
+    },
+    {
+      "id": "1442843833078517801",
+      "content": "~~更正一下，图里面那个名字是错误的，“咖”改成“啡”即可<:A_pinch:1432980538536493057> ~~",
+      "author": "ka_0414",
+      "reactions": 6,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
+    {
+      "id": "1442938114321551421",
+      "content": "When I used Lotan for everything <:proud1:1356053120651755641>",
+      "author": "airithyll",
+      "reactions": 6,
+      "channel": "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!"
+    },
+    {
       "id": "1442961773060690112",
       "content": "",
       "author": "lurenjiao",
@@ -167,83 +258,6 @@
       "author": "oct3000",
       "reactions": 6,
       "channel": "You should sacrifice yourself now"
-    },
-    {
-      "id": "1442831784537489489",
-      "content": "uid:100863485",
-      "author": "syaoran0397",
-      "reactions": 6,
-      "channel": "FINAL VENT"
-    },
-    {
-      "id": "1442988418178089031",
-      "content": "Currently the boss of chapter 3, if killed by passive damage will die immediatel",
-      "author": "satachan",
-      "reactions": 3,
-      "channel": "💭「Processing」Enemy death resistance not working as intended"
-    },
-    {
-      "id": "1442916774306775120",
-      "content": "我只是想知道珊啥時能像其他叫一樣動起來\n\n目前能動的只有彩匡(?)角\n像是血希、融朵、誕墨、環拉\n\n# 我想看到珊立繪動起來的模樣啊啊啊啊啊\n附一段血希動起來的",
-      "author": "akkom730",
-      "reactions": 2,
-      "channel": "我沒有要瑟瑟"
-    },
-    {
-      "id": "1442731720095825921",
-      "content": "Thank you for your suggestion. There are some things we also want to do, but we ",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」This game needs more marketing"
-    },
-    {
-      "id": "1442729970890833952",
-      "content": "感谢提醒🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "忘却前夜OST：原初宿命之战"
-    },
-    {
-      "id": "1442783921942302761",
-      "content": "The issue has been fixed. Thank you for your feedback",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Event archive bug and mistranslation of aequor"
-    },
-    {
-      "id": "1442806481593434144",
-      "content": "Found this bug during the stream. \nIt said that she did 5 damage 400 times. \n\nht",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "✅「Answered」G murphy Exalt description swapped in her trial mode"
-    },
-    {
-      "id": "1443026856994406591",
-      "content": "item icons missing in exchange",
-      "author": "darlingkafka",
-      "reactions": 1,
-      "channel": "💭「Processing」Rites of Divine Birth Event exchange rewards displaying no item icon"
-    },
-    {
-      "id": "1442804209866244128",
-      "content": "The translation issue with Aqua tents has been fixed, and I have conveyed other ",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Aqua tentacles not translated and weird screen glitches."
-    },
-    {
-      "id": "1442734110635196457",
-      "content": "好像昨天修好了，感謝",
-      "author": "glacy_9918",
-      "reactions": 1,
-      "channel": "✅「已解决」Bug Report: 融災第二關"
-    },
-    {
-      "id": "1442700045928370236",
-      "content": "https://morimens.sialiagames.com.tw/",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": "想问一下官方有制作自己的pc客户端的计划么"
     }
   ]
 }

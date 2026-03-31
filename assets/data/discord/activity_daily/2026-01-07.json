@@ -1,10 +1,17 @@
 {
   "date": "2026-01-07",
-  "messages": 58,
-  "unique_authors": 10,
-  "reactions_total": 91,
-  "attachments": 24,
+  "messages": 82,
+  "unique_authors": 14,
+  "reactions_total": 149,
+  "attachments": 34,
   "channel_activity": {
+    "I errr....": 3,
+    "Play house? (Collab story fancomic)": 1,
+    "Happy 2026 Fellow Keepers": 1,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "弥萨格艺术展 4┊Mythag Art Exhibition 4": 11,
+    "星辰篇": 6,
     "忘却前夜OST：茉夏EP·迷雾消散之时": 8,
     "Bunch of doodles and sillies": 12,
     "Who Ryker's Designer pls come talk ?": 1,
@@ -25,27 +32,36 @@
     "1455822126568308957": 2
   },
   "hourly_activity": {
+    "0": 1,
+    "1": 5,
+    "18": 2,
+    "15": 4,
+    "17": 5,
+    "8": 12,
+    "9": 6,
+    "11": 6,
+    "4": 10,
     "7": 7,
-    "8": 8,
-    "1": 4,
     "2": 2,
-    "4": 4,
     "14": 3,
-    "15": 2,
     "16": 5,
     "6": 1,
-    "9": 3,
     "10": 9,
     "3": 3,
-    "11": 3,
-    "17": 3,
     "21": 1
   },
   "message_types": {
-    "0": 15,
-    "19": 5
+    "19": 5,
+    "0": 19
   },
   "top_reacted_messages": [
+    {
+      "id": "1458383128811933920",
+      "content": "精彩同人作品分享，感谢大家精彩绝伦的创作！\nV2.4.1 UGC征集已开启，一等奖将获得10000银芯奖励，欢迎参与~\n\n——✦——✦—— ✦✦✦ ——✦——✦",
+      "author": "morimensstaff01",
+      "reactions": 45,
+      "channel": "弥萨格艺术展 4┊Mythag Art Exhibition 4"
+    },
     {
       "id": "1458491651239710851",
       "content": "朋友的合本插花<:S_OK:1400771749506715668> \n去年11月畫的，畫的時候難得手感靈感全死畫得要死要活<:dead:13560826275",
@@ -59,6 +75,13 @@
       "author": "sexysneakystoat1625",
       "reactions": 11,
       "channel": "Realm's effect/Synergy/Ideas"
+    },
+    {
+      "id": "1458481774261833791",
+      "content": "I wonder what did Mouchette mean by that? Where did she even get that idea????",
+      "author": "sofiaebby",
+      "reactions": 9,
+      "channel": "Play house? (Collab story fancomic)"
     },
     {
       "id": "1458368370947653674",
@@ -110,6 +133,13 @@
       "channel": "Realm's effect/Synergy/Ideas"
     },
     {
+      "id": "1458421032405827616",
+      "content": "游佐岚",
+      "author": "gl0wtail",
+      "reactions": 2,
+      "channel": "弥萨格艺术展 4┊Mythag Art Exhibition 4"
+    },
+    {
       "id": "1458372320040190016",
       "content": "<:H_immerse:1426122347643146250> 以上就是本次OST的全部曲目~\nThe above are all the tracks of",
       "author": "morimensstaff01",
@@ -136,6 +166,20 @@
       "author": "flares117",
       "reactions": 2,
       "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1458479505512333425",
+      "content": "Happy 2026 🎉🎉🎉",
+      "author": "sofiaebby",
+      "reactions": 1,
+      "channel": "Happy 2026 Fellow Keepers"
+    },
+    {
+      "id": "1458421340603285607",
+      "content": "Ty!",
+      "author": "ellezard",
+      "reactions": 1,
+      "channel": "弥萨格艺术展 4┊Mythag Art Exhibition 4"
     },
     {
       "id": "1458405139869204545",

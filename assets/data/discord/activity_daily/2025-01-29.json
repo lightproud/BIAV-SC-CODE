@@ -1,24 +1,25 @@
 {
   "date": "2025-01-29",
-  "messages": 7,
+  "messages": 9,
   "unique_authors": 4,
   "reactions_total": 0,
   "attachments": 0,
   "channel_activity": {
+    "morimens story recap channel": 2,
     "《忘卻前夜》周邊企劃說明": 1,
     "English Page pls !!": 3,
     "好想要烏撒貓貓律當宿舍背景🐾": 2,
     "aomi's morimens fan content corner (english ver.) 🎨": 1
   },
   "hourly_activity": {
-    "10": 1,
+    "10": 3,
     "0": 2,
     "5": 2,
     "23": 1,
     "2": 1
   },
   "message_types": {
-    "0": 1
+    "0": 2
   },
   "top_reacted_messages": []
 }

@@ -1,10 +1,13 @@
 {
   "date": "2025-12-18",
-  "messages": 170,
+  "messages": 181,
   "unique_authors": 27,
-  "reactions_total": 131,
-  "attachments": 41,
+  "reactions_total": 148,
+  "attachments": 45,
   "channel_activity": {
+    "Pencil art": 3,
+    "hi morimens meme dump (ooc warning me and oomf were goofing aruond)": 2,
+    "By the Silver Key Advice": 6,
     "Who Ryker's Designer pls come talk ?": 13,
     "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details": 31,
     "💭「Processing」Would be nice for autoplay to remain turned on after finishing a stage.": 5,
@@ -36,13 +39,15 @@
     "1451073706427285677": 3
   },
   "hourly_activity": {
+    "21": 13,
+    "3": 5,
+    "5": 11,
+    "4": 16,
+    "6": 12,
+    "7": 14,
     "13": 13,
     "14": 5,
     "17": 5,
-    "4": 15,
-    "5": 10,
-    "6": 11,
-    "7": 10,
     "20": 1,
     "9": 25,
     "11": 9,
@@ -54,16 +59,13 @@
     "22": 8,
     "19": 1,
     "18": 1,
-    "21": 10,
     "0": 7,
     "2": 3,
-    "3": 4,
     "12": 2
   },
   "message_types": {
-    "19": 15,
-    "0": 75,
-    "4": 5
+    "0": 9,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -130,6 +132,34 @@
       "channel": "異端品鑑結尾（皮杜向有黃車描述"
     },
     {
+      "id": "1451332689281024131",
+      "content": "Nymphaea, was listening to sinking town and in my mind I think the song fits her",
+      "author": "nothing_of_wisdom",
+      "reactions": 4,
+      "channel": "Pencil art"
+    },
+    {
+      "id": "1451332897968488448",
+      "content": "Simple Horla drawing",
+      "author": "nothing_of_wisdom",
+      "reactions": 4,
+      "channel": "Pencil art"
+    },
+    {
+      "id": "1451333066113941614",
+      "content": "And WIP Caecus",
+      "author": "nothing_of_wisdom",
+      "reactions": 4,
+      "channel": "Pencil art"
+    },
+    {
+      "id": "1451052192541835295",
+      "content": "this one is kidna freaky dknt ban me guys",
+      "author": "enzoperry",
+      "reactions": 4,
+      "channel": "hi morimens meme dump (ooc warning me and oomf were goofing aruond)"
+    },
+    {
       "id": "1451152833654296677",
       "content": "The text advances too slow on its own, and slightly too fast when it's at 2x\nI a",
       "author": "chocolateburgerkingfootlettuce",
@@ -177,34 +207,6 @@
       "author": "shostakovich524",
       "reactions": 3,
       "channel": ""
-    },
-    {
-      "id": "1451206011489878049",
-      "content": "the other dps can kill instanly the mob if the mob hp is around bellow 5k but mo",
-      "author": "wolfyy1",
-      "reactions": 2,
-      "channel": "Who Ryker's Designer pls come talk ?"
-    },
-    {
-      "id": "1451121125059854377",
-      "content": "but... why is that even an inconvenience?",
-      "author": "rain_scarlet",
-      "reactions": 2,
-      "channel": "💭「Processing」Would be nice for autoplay to remain turned on after finishing a stage."
-    },
-    {
-      "id": "1451342068315066439",
-      "content": "This is a Full list of all the errors or missing\\strange text in the Awakeners S",
-      "author": "vxvendetta97",
-      "reactions": 2,
-      "channel": "✅「Answered」Full List of Wrong Text for Awakeners"
-    },
-    {
-      "id": "1451144686625493033",
-      "content": "～～～～～～～\n附上今天畫的拉蒙娜\n娜娜我永遠喜歡你<:takenotes:1357186646294138890>",
-      "author": "souri.10244",
-      "reactions": 2,
-      "channel": "拉蒙娜生日快樂（遲到版）"
     }
   ]
 }

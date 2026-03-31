@@ -1,10 +1,20 @@
 {
   "date": "2025-10-10",
-  "messages": 113,
+  "messages": 164,
   "unique_authors": 16,
-  "reactions_total": 57,
-  "attachments": 23,
+  "reactions_total": 61,
+  "attachments": 34,
   "channel_activity": {
+    "The Seafarer stray’s Aequor Cult ｜Blue blood realm only has one no used (used gpt trans)": 1,
+    "D-dive 45K Aequor/Caro Guide": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 2,
+    "剛登入第四天 有些新手問題想問": 31,
+    "Clear D-effect with my team": 2,
+    "Banner help": 2,
+    "Protoparadise Choices": 1,
+    "team help": 3,
+    "Memories Faded Paid Banner Help": 2,
+    "Get help to pass 5-14": 6,
     "忘却前夜OST：命运前奏之曲": 8,
     "✅「已回答」對弈 強效對凱刻斯的回血沒效果": 1,
     "✅「Answered」friend cannot bind invitation": 1,
@@ -18,24 +28,30 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "8": 8,
+    "7": 25,
+    "23": 1,
+    "2": 4,
+    "11": 3,
+    "1": 1,
+    "8": 17,
+    "17": 5,
+    "22": 3,
+    "0": 1,
+    "9": 34,
+    "10": 13,
+    "16": 14,
     "3": 5,
     "15": 8,
-    "16": 13,
     "5": 1,
-    "10": 12,
-    "11": 2,
     "21": 8,
-    "9": 31,
     "12": 7,
     "14": 5,
-    "17": 2,
     "18": 3,
-    "19": 6,
-    "22": 2
+    "19": 6
   },
   "message_types": {
-    "0": 8
+    "0": 44,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -74,11 +90,32 @@
       "channel": ""
     },
     {
+      "id": "1426034185759490069",
+      "content": "<@255636127816482817> You can send me a private message in the background and gi",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
       "id": "1426255682176417812",
       "content": "哈哈",
       "author": "confusion666_89132",
       "reactions": 2,
       "channel": "我们规划一下每个卡池的小版本全勤0氪150抽好吗"
+    },
+    {
+      "id": "1426142309174738985",
+      "content": "101202783",
+      "author": "quan8122",
+      "reactions": 1,
+      "channel": "Get help to pass 5-14"
+    },
+    {
+      "id": "1426247743420104795",
+      "content": "I not good enough to do this, i just put random team and some how clear it in d ",
+      "author": "phanducthinh.com",
+      "reactions": 1,
+      "channel": "Get help to pass 5-14"
     },
     {
       "id": "1426158968924930048",

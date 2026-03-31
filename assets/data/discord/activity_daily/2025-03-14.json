@@ -1,10 +1,19 @@
 {
   "date": "2025-03-14",
-  "messages": 46,
-  "unique_authors": 10,
-  "reactions_total": 52,
-  "attachments": 6,
+  "messages": 85,
+  "unique_authors": 13,
+  "reactions_total": 68,
+  "attachments": 19,
   "channel_activity": {
+    "Tier list as of 2.0": 1,
+    "How can I make a good team": 3,
+    "Traduction en Français - Collecte de Traduction en Français - Collecte de Retour": 1,
+    "한국어 번역 피드백 컬렉션": 2,
+    "Português Tradução - Coleta de Feedback": 12,
+    "การรวบรวมคำติชมการแปลภาษาไทย": 7,
+    "【日本語訳】フィードバック": 3,
+    "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia": 9,
+    "Deutsche Übersetzung - Sammlung von Rückmeldungen": 1,
     "【結束|Finish】🎨獎勵升級🎨彌薩格大學『毀損灰霧之都』二創活動開啟，限定頭像框、無門檻參與獎等你來拿！": 2,
     "【結束|Finish】🌟獎勵加碼🌟彌薩格大學『毀損灰霧之都』攻略活動開啟！限定頭像框、無門檻參與獎應有盡有！": 2,
     "《忘卻前夜》OST：雪落噬影之鎮": 2,
@@ -23,23 +32,27 @@
     "1350058287688712253": 2
   },
   "hourly_activity": {
-    "12": 7,
+    "0": 1,
+    "7": 1,
+    "12": 15,
+    "22": 11,
+    "10": 11,
+    "13": 10,
+    "19": 3,
+    "15": 10,
+    "14": 2,
+    "11": 4,
     "3": 4,
     "6": 4,
     "8": 6,
-    "13": 6,
-    "15": 7,
     "16": 1,
     "4": 1,
-    "9": 1,
-    "11": 3,
-    "10": 4,
-    "19": 2
+    "9": 1
   },
   "message_types": {
-    "0": 3,
-    "6": 2,
-    "19": 1
+    "20": 1,
+    "0": 35,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -64,6 +77,20 @@
       "channel": "《忘卻前夜》OST：雪落噬影之鎮"
     },
     {
+      "id": "1350059802323058728",
+      "content": "Por favor, jogadores que usam português, deixem suas opiniões sobre a tradução d",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "Português Tradução - Coleta de Feedback"
+    },
+    {
+      "id": "1350121269672280219",
+      "content": "お世話になってます！いつも楽しませていただいてます\n日本語訳については多くあるんですが😅 💦\n特にキャラクターの名前が統一されていない事が気になります\n\n例えば",
+      "author": "murphy.p",
+      "reactions": 3,
+      "channel": "【日本語訳】フィードバック"
+    },
+    {
       "id": "1350060160739184690",
       "content": "Пожалуйста, игроки, использующие русский язык, оставляйте свои мысли о переводе ",
       "author": "morimensstaff01",
@@ -83,6 +110,27 @@
       "author": "morimensstaff01",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1350097494893264908",
+      "content": "I made A character name correction Sheet. \n\nhttps://docs.google.com/spreadsheets",
+      "author": "legion_schindler",
+      "reactions": 2,
+      "channel": "한국어 번역 피드백 컬렉션"
+    },
+    {
+      "id": "1350089366881435739",
+      "content": "ภาษาไทยในเกมแปลได้ค่อนข้างแย่ \nหลายครั้งเปลี่ยนชื่อ NPC เหมือนไม่รู้ว่าจะอ่านชื่",
+      "author": "littleyoukai",
+      "reactions": 2,
+      "channel": "การรวบรวมคำติชมการแปลภาษาไทย"
+    },
+    {
+      "id": "1350059045054316644",
+      "content": "日本語話者の皆様は、この投稿のコメント欄に、ゲーム内の日本語翻訳に関するご意見を寄せていただけますでしょうか？\nバグ、翻訳エラー、わかりにくい表現、提案など、何",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "【日本語訳】フィードバック"
     },
     {
       "id": "1349952846593785969",
@@ -118,6 +166,27 @@
       "author": "karsh_1",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1350102797282050170",
+      "content": "คนไทย = Thai people",
+      "author": "littleyoukai",
+      "reactions": 1,
+      "channel": "การรวบรวมคำติชมการแปลภาษาไทย"
+    },
+    {
+      "id": "1350086287612444793",
+      "content": "Mungkin itu saja yang bisa saya sampaikan, terima kasih.",
+      "author": "rosemry",
+      "reactions": 1,
+      "channel": "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia"
+    },
+    {
+      "id": "1350091491271381113",
+      "content": "Terima kasih banyak! 🥹 ❤️",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia"
     },
     {
       "id": "1350101119266721882",

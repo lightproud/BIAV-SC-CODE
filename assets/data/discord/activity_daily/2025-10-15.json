@@ -1,10 +1,18 @@
 {
   "date": "2025-10-15",
-  "messages": 20,
-  "unique_authors": 6,
-  "reactions_total": 17,
-  "attachments": 1,
+  "messages": 345,
+  "unique_authors": 51,
+  "reactions_total": 138,
+  "attachments": 19,
   "channel_activity": {
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 4,
+    "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！": 94,
+    "V2.3.4 四星幻衣「墨菲·糖果劫案」PV 展示┊Murphy's 4-Star Skin \"Candy Snatcher\" Preview!": 49,
+    "V2.3.4广播剧《净化》┊Radio Drama - Purification": 4,
+    "新手問配隊及抽取建議": 91,
+    "萌新求助": 70,
+    "Which should I pull on?": 1,
+    "Do I need these items on the image for anything else?": 12,
     "✅「Answered」Question about fanart & merch": 3,
     "✅「Answered」Ogier bugged?": 2,
     "💭「处理中」是否有考慮以後出新角色都做個技能展示PV": 13,
@@ -12,24 +20,82 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "19": 3,
-    "8": 1,
-    "9": 2,
-    "14": 13,
-    "13": 1
+    "3": 3,
+    "19": 4,
+    "8": 80,
+    "9": 34,
+    "10": 7,
+    "11": 115,
+    "13": 10,
+    "14": 16,
+    "21": 1,
+    "7": 4,
+    "12": 64,
+    "15": 1,
+    "20": 2,
+    "1": 3,
+    "6": 1
   },
   "message_types": {
-    "0": 13,
-    "4": 1,
-    "19": 5
+    "19": 72,
+    "0": 253
   },
   "top_reacted_messages": [
+    {
+      "id": "1427928573737570374",
+      "content": "“可恶的弥萨格，竟敢阻拦我拿糖果！”\n“哼哼，怎么样，还不是被我吃到了？🍬”\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Those despicable",
+      "author": "morimensstaff01",
+      "reactions": 35,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」PV 展示┊Murphy's 4-Star Skin \"Candy Snatcher\" Preview!"
+    },
+    {
+      "id": "1427975361538293841",
+      "content": "什麼時候可以讓觸手的水花改成白色液體",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
+    },
+    {
+      "id": "1427824972407111771",
+      "content": "",
+      "author": "reya.li",
+      "reactions": 8,
+      "channel": "V2.3.4广播剧《净化》┊Radio Drama - Purification"
+    },
     {
       "id": "1428021212742811668",
       "content": "Have you ever considered making a skill showcase video for every new character?\n",
       "author": "taoi002",
       "reactions": 7,
       "channel": "💭「处理中」是否有考慮以後出新角色都做個技能展示PV"
+    },
+    {
+      "id": "1427938739379896512",
+      "content": "最大的骗局",
+      "author": "choco_minnto",
+      "reactions": 6,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
+    },
+    {
+      "id": "1427929394164404305",
+      "content": "",
+      "author": "zekiei",
+      "reactions": 5,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」PV 展示┊Murphy's 4-Star Skin \"Candy Snatcher\" Preview!"
+    },
+    {
+      "id": "1427932778187718656",
+      "content": "同行內卷",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」PV 展示┊Murphy's 4-Star Skin \"Candy Snatcher\" Preview!"
+    },
+    {
+      "id": "1427931685189713940",
+      "content": "戈雅配音<:agree:1400771815076528258> <:agree:1400771815076528258>",
+      "author": "shchng.",
+      "reactions": 4,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」PV 展示┊Murphy's 4-Star Skin \"Candy Snatcher\" Preview!"
     },
     {
       "id": "1428006502354124810",
@@ -39,6 +105,48 @@
       "channel": ""
     },
     {
+      "id": "1427939575279390802",
+      "content": "https://tenor.com/view/shut-up-and-take-my-money-money-futurama-gif-688212465781",
+      "author": "cs001092",
+      "reactions": 3,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
+    },
+    {
+      "id": "1427942600433860669",
+      "content": "呃呃所以零氪肯定拿不到了吗，再见了可爱的小墨菲",
+      "author": "dittoqwq",
+      "reactions": 3,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
+    },
+    {
+      "id": "1427950903536910346",
+      "content": "而且这么点金券还不够塞牙缝的，疯狂预兆点两下就用完了<:Clown:1400771541423226971>",
+      "author": "_neyko_",
+      "reactions": 3,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
+    },
+    {
+      "id": "1427954572743278667",
+      "content": "小皮我觉得画师在平台解禁的原稿比实装的更好看一点能不能改回去🫴",
+      "author": "_neyko_",
+      "reactions": 3,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
+    },
+    {
+      "id": "1427930984665321492",
+      "content": "后续在公告中和大家正式公布<:pray:1356053116260454534>",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」PV 展示┊Murphy's 4-Star Skin \"Candy Snatcher\" Preview!"
+    },
+    {
+      "id": "1427947183428337796",
+      "content": "少了點傲 多了點嬌",
+      "author": "undecember_news",
+      "reactions": 3,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」PV 展示┊Murphy's 4-Star Skin \"Candy Snatcher\" Preview!"
+    },
+    {
       "id": "1428021623142748312",
       "content": "以前有从旺达到羊妈有，现在被砍了",
       "author": "navirecorbeau",
@@ -46,18 +154,32 @@
       "channel": "💭「处理中」是否有考慮以後出新角色都做個技能展示PV"
     },
     {
-      "id": "1428026597771841566",
-      "content": "",
-      "author": "navirecorbeau",
+      "id": "1427931708958838845",
+      "content": "有機會造型幾率超低\n强制你保底",
+      "author": "glacy_9918",
       "reactions": 2,
-      "channel": "💭「处理中」是否有考慮以後出新角色都做個技能展示PV"
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
     },
     {
-      "id": "1428021719003824270",
-      "content": "看來校貓又有新籍口拖了(x",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "💭「处理中」是否有考慮以後出新角色都做個技能展示PV"
+      "id": "1427935888251293697",
+      "content": "so it's 1980 silver prime for all prizes? with skin possible from 5th pulls at 4",
+      "author": "zekiei",
+      "reactions": 2,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
+    },
+    {
+      "id": "1427938254979600445",
+      "content": "拿走我的臭錢\n把香香的她給我",
+      "author": "void_1546.",
+      "reactions": 2,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
+    },
+    {
+      "id": "1427943101644935188",
+      "content": "我要抽抽",
+      "author": "axe_proficient",
+      "reactions": 2,
+      "channel": "V2.3.4 四星幻衣「墨菲·糖果劫案」，可通过幻衣活动获取！Murphy's 4-Star Skin \"Candy Snatcher\" Available in Special Skin Even！"
     }
   ]
 }

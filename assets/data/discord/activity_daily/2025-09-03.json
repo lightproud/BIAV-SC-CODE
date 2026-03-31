@@ -1,10 +1,18 @@
 {
   "date": "2025-09-03",
-  "messages": 63,
-  "unique_authors": 13,
-  "reactions_total": 39,
-  "attachments": 6,
+  "messages": 130,
+  "unique_authors": 34,
+  "reactions_total": 725,
+  "attachments": 29,
   "channel_activity": {
+    "Carried": 1,
+    "Detailed Damage Formula Graphic": 2,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman": 7,
+    "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University": 25,
+    "V2.3.2 皮克曼情报2：一切为了艺术！ About Pickman: All for Art!": 12,
+    "Covenant help": 7,
+    "Priority/Investment help.": 11,
     "前瞻：Skin rarity planning 皮肤稀有度规划": 1,
     "More time for investigation supply box": 2,
     "忘却前夜第一届-叠火大赛（补档）": 2,
@@ -23,29 +31,131 @@
     "1181147096234065920": 3
   },
   "hourly_activity": {
+    "13": 11,
+    "14": 4,
+    "2": 1,
+    "8": 18,
+    "6": 10,
+    "10": 16,
+    "9": 18,
+    "11": 9,
+    "12": 7,
+    "22": 1,
+    "5": 4,
+    "20": 8,
+    "0": 5,
+    "7": 6,
+    "16": 4,
     "21": 1,
-    "20": 2,
-    "12": 5,
     "1": 1,
-    "9": 13,
     "17": 1,
-    "10": 5,
-    "11": 6,
-    "16": 3,
     "15": 1,
-    "13": 3,
-    "6": 5,
-    "0": 3,
     "3": 2,
-    "4": 2,
-    "7": 3,
-    "8": 4,
-    "5": 3
+    "4": 2
   },
   "message_types": {
-    "19": 1
+    "0": 56,
+    "19": 11
   },
   "top_reacted_messages": [
+    {
+      "id": "1412749011944734741",
+      "content": "",
+      "author": "ezer2112",
+      "reactions": 109,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412724837050224742",
+      "content": "I'm Van Gogh~",
+      "author": "2300011747",
+      "reactions": 57,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412755789113724969",
+      "content": "",
+      "author": "rambles_3057",
+      "reactions": 51,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412787905600159917",
+      "content": "",
+      "author": "iscariote_19",
+      "reactions": 51,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412744010576953476",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 48,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412791681035538624",
+      "content": "uid：100028052",
+      "author": "calmdreab",
+      "reactions": 47,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412744760464244777",
+      "content": "",
+      "author": "fantomwalker",
+      "reactions": 45,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412765657887539273",
+      "content": "had to stop my work to try drawing him quick <a:noted:984205225403486329>💦",
+      "author": "meatyexplosions",
+      "reactions": 36,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412718678549598219",
+      "content": "**小编在弥萨格大学听到一条传言：**\n在大学后院的某处空地，曾有一个抱着画具的人追着守密人跑了一整晚，他嘴里嚷嚷着：“为我画一幅肖像画吧！为我画一幅肖像画吧！",
+      "author": "morimensstaff01",
+      "reactions": 33,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412747055839051796",
+      "content": "不想画了，皮克曼你自己画吧",
+      "author": "dittoqwq",
+      "reactions": 29,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412756601739280456",
+      "content": "",
+      "author": ".chichichi",
+      "reactions": 25,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412779608704679957",
+      "content": "",
+      "author": "yingmai_",
+      "reactions": 24,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412783111854358628",
+      "content": "我已經懶得畫了（",
+      "author": "ahuahuahua",
+      "reactions": 20,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1412925410190033007",
+      "content": "",
+      "author": "xanoreas",
+      "reactions": 20,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
     {
       "id": "1412721480873021471",
       "content": "如題所示！開了一條報名串，歡迎留言卡角色，卡角色者再麻煩留言fb/ig的cos帳讓我知道你是誰，以及會更新人員表在本串\n服裝規定：無硬性服裝規定，可自搭私服私設",
@@ -54,109 +164,39 @@
       "channel": "2025/12/14駁二ff忘卻前夜cos團徵集"
     },
     {
-      "id": "1412737241012375624",
-      "content": "So, in the lineups, when you have a team with a character that has a covenant, a",
-      "author": "wolfierce",
-      "reactions": 3,
-      "channel": "✅「Answered」Covenants visually misleading in lineups"
+      "id": "1412743608456577054",
+      "content": "101116065\n<:proud1:1356053120651755641>",
+      "author": "frowningquokka",
+      "reactions": 15,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
     },
     {
-      "id": "1412817837487292488",
-      "content": "To easily drop the burden of daily dive, could you please remove the relic bonus",
-      "author": "climbkaly",
-      "reactions": 2,
-      "channel": "Lessen Burden - Daily Dive"
+      "id": "1412732436290342933",
+      "content": "You guys are not alone doing lovecraftian horrors.",
+      "author": "_pdt",
+      "reactions": 13,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
     },
     {
-      "id": "1412592891431354409",
-      "content": "是有守密人出現的CG\n但具體是什麼就不說了（防爆雷",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "✅「已解决」想問立繪方面的問題"
+      "id": "1412712357347725363",
+      "content": "God I hate these events, it’s not even about inviting people but to pester rando",
+      "author": "yannic2112",
+      "reactions": 10,
+      "channel": "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!"
     },
     {
-      "id": "1412735378267312138",
-      "content": "Σ(°Д°;我還有一些問題沒被解答捏",
-      "author": "shostakovich524",
-      "reactions": 2,
-      "channel": "✅「已解决」想問立繪方面的問題"
+      "id": "1412733804241621124",
+      "content": "",
+      "author": "roto_rooster",
+      "reactions": 10,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
     },
     {
-      "id": "1412726076286959677",
-      "content": "Thank you for the suggestion, but currently we have no plans to change this mode",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Change Arcane Dominion to a more generic approach"
-    },
-    {
-      "id": "1412687951523090535",
-      "content": "😯 感谢反馈，我们核对一下",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」蘿坦超限描述問題"
-    },
-    {
-      "id": "1412753669643829268",
-      "content": "嗨~\n「混沌之兽」状态的描述有误，不应当有「打击伤害提升」的描述。\n不过萝坦的超限爆发文本效果是对的，因此我们会修复错误的状态描述<:pray:13560531",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」蘿坦超限描述問題"
-    },
-    {
-      "id": "1412764556484153446",
-      "content": "謝謝戈雅<:love:1356053099931897977>",
-      "author": "wild_pansy",
-      "reactions": 1,
-      "channel": "✅「已回答」蘿坦超限描述問題"
-    },
-    {
-      "id": "1412593289055571989",
-      "content": "活動、深潛、相位、融災這些盡量打打\n給的資源多",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "✅「已解决」想問立繪方面的問題"
-    },
-    {
-      "id": "1412753340906995732",
-      "content": "更多的立绘动作设计、守密人的新衣服立绘等是否有更多计划，戈雅会去问问看<:please:1356053110375714817>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已解决」想問立繪方面的問題"
-    },
-    {
-      "id": "1412741725604282490",
-      "content": "J6ASY94L1G",
-      "author": "nanni4568",
-      "reactions": 1,
-      "channel": "邀請碼互助/Invitation code help each other"
-    },
-    {
-      "id": "1412723825618976858",
-      "content": "@everyone <:Cheerup:1400771555939844149>",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "2025/12/14駁二ff忘卻前夜cos團徵集"
-    },
-    {
-      "id": "1412704290312814713",
-      "content": "我先吃",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1412711351519936605",
-      "content": "啃啃牢斯",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1412716145122742323",
-      "content": "再看一次還是好想吃<:drool:1356053063139463248> <:satisfy:1400771690321154110>",
-      "author": "_cwz_",
-      "reactions": 1,
-      "channel": ""
+      "id": "1412802511298887841",
+      "content": "the next mona lisa",
+      "author": "thegoose6582",
+      "reactions": 10,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
     }
   ]
 }

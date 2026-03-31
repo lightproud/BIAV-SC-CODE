@@ -1,10 +1,21 @@
 {
   "date": "2025-11-29",
-  "messages": 196,
-  "unique_authors": 33,
-  "reactions_total": 841,
-  "attachments": 19,
+  "messages": 268,
+  "unique_authors": 41,
+  "reactions_total": 916,
+  "attachments": 34,
   "channel_activity": {
+    "Castor WIP": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 1,
+    "V2.4.0.7 版本前瞻 ┊ Version Outlook": 32,
+    "特别短篇漫画:「你我终将重逢」第三章┊Special Short Comics: \"We Will Meet Again\" Chapter 3": 10,
+    "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!": 3,
+    "特别短篇漫画 :「你我终将重逢」第二章┊Special Short Comics: \"We Will Meet Again\" Chapter 2": 3,
+    "📸壁纸分享-诞妄·墨菲┊Wallpaper Sharing-Murphy: Fauxborn": 2,
+    "問問選哪個好？想選凱蒂古拉組第二個隊但不知道0+0能不能用:dead:": 14,
+    "關於刪卡": 4,
+    "Team building and which banner to pull": 1,
     "Leigh": 1,
     "✅「已回答」繁中PC端黑屏": 3,
     "Please let us trade up with Dreamshard": 4,
@@ -34,32 +45,34 @@
     "1441326394817908736": 8
   },
   "hourly_activity": {
+    "5": 7,
+    "12": 8,
+    "17": 6,
+    "13": 12,
+    "14": 12,
+    "15": 19,
+    "18": 11,
+    "20": 91,
+    "22": 7,
+    "3": 3,
+    "4": 9,
+    "7": 10,
+    "19": 4,
+    "10": 5,
+    "1": 3,
+    "2": 1,
+    "8": 9,
+    "6": 3,
     "0": 5,
-    "7": 1,
-    "8": 2,
-    "12": 6,
-    "15": 10,
-    "4": 5,
     "16": 25,
-    "19": 2,
-    "3": 1,
-    "13": 3,
-    "14": 7,
-    "18": 9,
-    "20": 88,
     "23": 5,
     "11": 2,
     "21": 7,
-    "5": 2,
-    "9": 4,
-    "10": 4,
-    "22": 2,
-    "17": 3,
-    "1": 1,
-    "6": 2
+    "9": 4
   },
   "message_types": {
-    "0": 1
+    "0": 60,
+    "19": 12
   },
   "top_reacted_messages": [
     {
@@ -68,6 +81,13 @@
       "author": "morimensstaff01",
       "reactions": 709,
       "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1444175211955224728",
+      "content": "我们始终坚信，在某个遥远的维度，依然有你存在的痕迹。\n请侧耳倾听：\n所有曾与你链接的心跳，都在为一场渴盼的重逢，澄澈而清晰地共鸣。\n\n——✦——✦—— ✦✦✦ ",
+      "author": "morimensstaff01",
+      "reactions": 35,
+      "channel": "特别短篇漫画:「你我终将重逢」第三章┊Special Short Comics: \"We Will Meet Again\" Chapter 3"
     },
     {
       "id": "1444338871256223874",
@@ -91,11 +111,32 @@
       "channel": ""
     },
     {
+      "id": "1444272884578259039",
+      "content": "UID: 100997034",
+      "author": "taplii",
+      "reactions": 10,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
       "id": "1444435732931412118",
       "content": "Ok dont do it then",
       "author": "monchi3524",
       "reactions": 10,
       "channel": "Raids suck"
+    },
+    {
+      "id": "1444179579613745293",
+      "content": "然後鳥兄弟1.0確定了啊",
+      "author": "foxcatfurry",
+      "reactions": 8,
+      "channel": "特别短篇漫画:「你我终将重逢」第三章┊Special Short Comics: \"We Will Meet Again\" Chapter 3"
+    },
+    {
+      "id": "1444180892560920647",
+      "content": "Doll hand reveal",
+      "author": "koppter",
+      "reactions": 8,
+      "channel": "特别短篇漫画:「你我终将重逢」第三章┊Special Short Comics: \"We Will Meet Again\" Chapter 3"
     },
     {
       "id": "1444477811371933756",
@@ -124,6 +165,13 @@
       "author": "carrot_chicken",
       "reactions": 6,
       "channel": "【Thalassophobia 深海恐懼症】"
+    },
+    {
+      "id": "1444202895657406597",
+      "content": "Progress",
+      "author": "orpheusffxiv",
+      "reactions": 5,
+      "channel": "Castor WIP"
     },
     {
       "id": "1444294266573684877",
@@ -166,41 +214,6 @@
       "author": "omenatyyppi",
       "reactions": 3,
       "channel": "✅「Answered」Jenkins shows up 2 times in friends list filter"
-    },
-    {
-      "id": "1444365700754964601",
-      "content": "番茄里的小说基流程\n觉醒系统>赠送外挂>装逼打脸",
-      "author": "jef05",
-      "reactions": 3,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
-    },
-    {
-      "id": "1444446037493158119",
-      "content": "我認為這個情況與融災以及深潛有本質上的不同\n因為它是固定資源不是輪換資源\n沒有人能因為早點獲得而取得更多利益\n也沒有人會因為晚點獲得而減少獲取量\n所以等到你有能",
-      "author": "wild_pansy",
-      "reactions": 3,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
-    },
-    {
-      "id": "1444434611399688242",
-      "content": "<@1332363043656433738> 你感觉这样会好点吗",
-      "author": "qingming6054",
-      "reactions": 2,
-      "channel": "打柱子活动能不能离开"
-    },
-    {
-      "id": "1444266158269141114",
-      "content": "不懂一個互相交流的地方\n為什麼開口閉口  別人都沒有基本認知跟理解能力的部分 \n一直覺得不同聲音就是在反駁你 \n連吃屎這種話你都能說出來\n666\n基本素質都沒有",
-      "author": "meow51103",
-      "reactions": 2,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
-    },
-    {
-      "id": "1444267026573951016",
-      "content": "我只能說你既不靠手法也不靠練度就想拿滿遊戲的獎勵，拜託這可是二遊，你玩二遊不就是為了炫耀你的推角怎樣怎樣，打過了什麼難關，這種遊戲能體現出玩家差距的只有高難關和",
-      "author": "void_1546.",
-      "reactions": 2,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
     }
   ]
 }

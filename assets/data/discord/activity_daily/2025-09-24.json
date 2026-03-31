@@ -1,10 +1,18 @@
 {
   "date": "2025-09-24",
-  "messages": 34,
-  "unique_authors": 9,
-  "reactions_total": 74,
-  "attachments": 10,
+  "messages": 67,
+  "unique_authors": 15,
+  "reactions_total": 175,
+  "attachments": 21,
   "channel_activity": {
+    "sleepiest lord": 2,
+    "pickman": 4,
+    "Kaly Tier Lists - Sept 2025": 1,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 1,
+    "Recent Banners Example Teams in DTide": 7,
+    "剛玩一個禮拜 這配對很強嗎": 16,
+    "Suggestions for Team Comps": 1,
+    "Pls help explain how to play my team in depth": 1,
     "前瞻：Skin rarity planning 皮肤稀有度规划": 2,
     "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 1,
     "✅「已回答」彌薩格愛寧協會聲明：謝絕一切標題黨行為": 3,
@@ -20,33 +28,50 @@
     "1420092491125755985": 6
   },
   "hourly_activity": {
+    "1": 3,
+    "4": 1,
+    "5": 12,
+    "8": 3,
+    "17": 6,
+    "15": 7,
+    "2": 4,
+    "3": 6,
+    "9": 1,
+    "12": 5,
+    "11": 3,
     "7": 6,
-    "17": 4,
     "13": 3,
-    "8": 1,
-    "2": 2,
-    "5": 2,
-    "11": 2,
-    "1": 2,
     "10": 3,
-    "15": 2,
     "18": 1,
     "23": 1,
-    "12": 2,
     "14": 1,
-    "3": 1,
     "6": 1
   },
   "message_types": {
-    "0": 2
+    "0": 30,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1420280036812132382",
+      "content": "he saved you some",
+      "author": "kaisopod",
+      "reactions": 64,
+      "channel": "pickman"
+    },
     {
       "id": "1420391823389622292",
       "content": "uid100439362  感觉手书赶不上了啊啊啊",
       "author": "yingmai_",
       "reactions": 30,
       "channel": "请支持我们绿玛瑙和恋爱奶酪"
+    },
+    {
+      "id": "1420223106852585545",
+      "content": "started off as a lil doodle but i kept going",
+      "author": "wraithdust",
+      "reactions": 28,
+      "channel": "sleepiest lord"
     },
     {
       "id": "1420300715510726666",
@@ -61,6 +86,13 @@
       "author": "astra098737",
       "reactions": 15,
       "channel": "✨冥府之路✨"
+    },
+    {
+      "id": "1420233335078125568",
+      "content": "Hey everyone,\n\n<@201897606572539904> asked me yesterday to see runs of my DTide ",
+      "author": "climbkaly",
+      "reactions": 4,
+      "channel": "Recent Banners Example Teams in DTide"
     },
     {
       "id": "1420253777444732938",
@@ -82,6 +114,41 @@
       "author": "yingmai_",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1420263195100188743",
+      "content": "https://tenor.com/view/morimens-cthulhu-funny-tulu-morimens-gif-8345018138555694",
+      "author": "kichiro4244",
+      "reactions": 1,
+      "channel": "sleepiest lord"
+    },
+    {
+      "id": "1420461649902698557",
+      "content": "<@1164303137293729792> As requested, your photos. \n\nNotes: There is no Chaos Tie",
+      "author": "climbkaly",
+      "reactions": 1,
+      "channel": "Kaly Tier Lists - Sept 2025"
+    },
+    {
+      "id": "1420242771402424432",
+      "content": "Thank you!",
+      "author": "hitsu4",
+      "reactions": 1,
+      "channel": "Recent Banners Example Teams in DTide"
+    },
+    {
+      "id": "1420338407200133232",
+      "content": "",
+      "author": "shouqiang5050",
+      "reactions": 1,
+      "channel": "剛玩一個禮拜 這配對很強嗎"
+    },
+    {
+      "id": "1420375358531702935",
+      "content": "Probably Clem and her wod she's great",
+      "author": "renaiya",
+      "reactions": 1,
+      "channel": "Pls help explain how to play my team in depth"
     },
     {
       "id": "1420232243095277728",

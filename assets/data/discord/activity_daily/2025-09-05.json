@@ -1,10 +1,24 @@
 {
   "date": "2025-09-05",
-  "messages": 130,
-  "unique_authors": 16,
-  "reactions_total": 105,
-  "attachments": 27,
+  "messages": 375,
+  "unique_authors": 48,
+  "reactions_total": 262,
+  "attachments": 62,
   "channel_activity": {
+    "uvhash fan art submission": 2,
+    "D-dive 45K Aequor/Caro Guide": 7,
+    "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction": 60,
+    "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman": 1,
+    "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University": 3,
+    "📜V2.3.2 版本前瞻┊ Version Outlook": 46,
+    "V2.3.2 广播剧《真实的艺术》┊Radio Drama -True Art": 15,
+    "求抽卡配對，想找一些搭配汀克特🫠": 3,
+    "我刚玩这个游戏两周，有没有大佬能带带我？": 41,
+    "Need help with team building and game in general": 5,
+    "Caecus/Corposant team?": 7,
+    "Help with team building": 26,
+    "Questions about standard banner": 4,
+    "Help with priority/team building": 25,
     "V2.3.2.0 停服维护公告": 35,
     "前瞻：Skin rarity planning 皮肤稀有度规划": 1,
     "前瞻：相位对弈改动 Traphase Changes": 14,
@@ -28,34 +42,64 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "11": 23,
-    "12": 4,
-    "13": 3,
-    "14": 9,
-    "18": 6,
-    "9": 3,
-    "17": 18,
+    "2": 8,
+    "7": 24,
+    "11": 50,
+    "12": 28,
+    "13": 8,
+    "15": 17,
+    "17": 19,
+    "10": 27,
+    "6": 51,
+    "8": 9,
+    "1": 5,
+    "9": 37,
+    "21": 12,
+    "22": 1,
+    "14": 12,
+    "18": 7,
+    "19": 5,
+    "20": 17,
+    "16": 13,
     "0": 9,
-    "2": 5,
     "5": 1,
-    "6": 7,
-    "15": 2,
-    "16": 12,
-    "19": 2,
-    "20": 1,
     "23": 1,
-    "10": 1,
     "4": 9,
-    "3": 5,
-    "1": 4,
-    "7": 4,
-    "8": 1
+    "3": 5
   },
   "message_types": {
-    "0": 39,
-    "19": 11
+    "0": 206,
+    "19": 39
   },
   "top_reacted_messages": [
+    {
+      "id": "1413512439110172844",
+      "content": "",
+      "author": "simpyeong",
+      "reactions": 28,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
+    {
+      "id": "1413411026661277819",
+      "content": "“今天是个多么美好的日子！我获得了一位朋友，而您，见到了真正的艺术。”\n“疯狂与贪婪，这正是人类与世界最真实的样子。”\n\n✦ 皮克曼 CV：野田卓見\n\n——✦—",
+      "author": "morimensstaff01",
+      "reactions": 28,
+      "channel": "V2.3.2 广播剧《真实的艺术》┊Radio Drama -True Art"
+    },
+    {
+      "id": "1413406907472937094",
+      "content": "▎《忘却前夜 Morimens》V2.3.2 即将开放！精彩资讯一网打尽！\n\n▎Morimens V2.3.2 will be released soon! G",
+      "author": "morimensstaff01",
+      "reactions": 27,
+      "channel": "📜V2.3.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1413472866586067058",
+      "content": "My beloved GF made this for you all guys 👋👋",
+      "author": "sanna7424",
+      "reactions": 25,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
+    },
     {
       "id": "1413415419712245851",
       "content": "",
@@ -76,6 +120,13 @@
       "author": "undecember_news",
       "reactions": 16,
       "channel": "小QQ系列-四小強+混沌界域上半"
+    },
+    {
+      "id": "1413470721912475718",
+      "content": "",
+      "author": "pinguimally3689",
+      "reactions": 10,
+      "channel": "V2.3.2 额外放送：弥萨格大学传说一则┊Extra Broadcast: A Legend of Mythag University"
     },
     {
       "id": "1413489949373759631",
@@ -106,11 +157,46 @@
       "channel": "✅「Answered」New Ryker Enhencemant . 500 sigil ??"
     },
     {
+      "id": "1413410878988226601",
+      "content": "<@1131790839291596841> Hello , for Ryker   Enhancement . Did you guys test it wi",
+      "author": "aegisx",
+      "reactions": 5,
+      "channel": "📜V2.3.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1413415887167557673",
+      "content": "(I don’t mind knowing his artist and his concepts actually)",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "V2.3.2 广播剧《真实的艺术》┊Radio Drama -True Art"
+    },
+    {
       "id": "1413502996939280407",
       "content": "would the obtained relics take up a relic slot, and will they show up even if i ",
       "author": "gisstar",
       "reactions": 5,
       "channel": "Questions about Pickman's 2 cost"
+    },
+    {
+      "id": "1413507868669509744",
+      "content": "https://discord.com/channels/1131791637933199470/1313054288976678932",
+      "author": "_cwz_",
+      "reactions": 4,
+      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1413412768178114601",
+      "content": "maybe with a more MtG style of text would be clearer, there's a reason MtG has a",
+      "author": "wolfierce",
+      "reactions": 4,
+      "channel": "📜V2.3.2 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1413414050423111822",
+      "content": "they'll reveal everything, his lore, his concept art, the artist behind it, befo",
+      "author": "wolfierce",
+      "reactions": 4,
+      "channel": "V2.3.2 广播剧《真实的艺术》┊Radio Drama -True Art"
     },
     {
       "id": "1413313840178925768",
@@ -120,81 +206,11 @@
       "channel": "[克莱门汀x女守密人]二重决断"
     },
     {
-      "id": "1413579763372789920",
-      "content": "游戏内没打算",
-      "author": "game.producer.light",
+      "id": "1413494329770639421",
+      "content": "<@633215996508766229> 創構造物能用來當成深潛8造物分數的最後一個造物嗎",
+      "author": "ernest_heart",
       "reactions": 2,
-      "channel": "前瞻：相位对弈改动 Traphase Changes"
-    },
-    {
-      "id": "1413581139821596762",
-      "content": "每个人心中最适合的不一样，很难说符合你的期待。但我们和CV都一定会尽力塑造好。",
-      "author": "game.producer.light",
-      "reactions": 2,
-      "channel": "前瞻：相位对弈改动 Traphase Changes"
-    },
-    {
-      "id": "1413431081545240636",
-      "content": "~~順道一提 好想體驗產卵舌吻~~",
-      "author": "undecember_news",
-      "reactions": 2,
-      "channel": "[克莱门汀x女守密人]二重决断"
-    },
-    {
-      "id": "1413434532497068032",
-      "content": "啊啊啊超感谢喜欢（比心比心）（第一次在你游收到评论qwq幸福感拉满）（被夸到迷迷糊糊了就是说）\n~~产卵舌吻什么的是饺子醋不可缺少的一部分（点头）换谁不想试试呢",
-      "author": "flarinsidia",
-      "reactions": 2,
-      "channel": "[克莱门汀x女守密人]二重决断"
-    },
-    {
-      "id": "1413528111718338631",
-      "content": "因为没有官方的数据，只能依靠群友的大数据与体感环境出场率大致推算",
-      "author": "deadlykilling777",
-      "reactions": 1,
-      "channel": "V2.3.2.0 停服维护公告"
-    },
-    {
-      "id": "1413588707247788152",
-      "content": "在预览卡池里面的角色的时候添加一个按钮来显示这个角色满级满破的数据。\n在唤醒体里面也可以加个按钮，有这个角色就显示他她现在的数据（没有的话就显示 1 级），按一",
-      "author": "elpedrito4933",
-      "reactions": 1,
-      "channel": "✅「已回答」预览角色的时候加个显示该角色满级满破数据的选项"
-    },
-    {
-      "id": "1413451471693025280",
-      "content": "为什么不回我的私信，我也在问类似的问题",
-      "author": "lurenjiao",
-      "reactions": 1,
-      "channel": "✅「已回答」提问"
-    },
-    {
-      "id": "1413462568764178514",
-      "content": "https://discord.com/channels/1131791637933199470/1411687349498155140 already rep",
-      "author": "__goz__",
-      "reactions": 1,
-      "channel": "✅「Answered」Clementine WoD number error"
-    },
-    {
-      "id": "1413343772183367781",
-      "content": "It's so sad but tks u for supporting me <:pray:1356053116260454534>",
-      "author": "winter110306",
-      "reactions": 1,
-      "channel": "✅「Answered」Purchase"
-    },
-    {
-      "id": "1413332544220430418",
-      "content": "勞斯這簡直是滿漢全席😭 😭 😭 \n沒了你我們這些廚該怎麼辦😭 😭 😭",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "[克莱门汀x女守密人]二重决断"
-    },
-    {
-      "id": "1413363968847642715",
-      "content": "我吃吃吃…大吃特吃",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "[克莱门汀x女守密人]二重决断"
+      "channel": "V2.3.2 皮克曼✦唤醒体&命轮介绍┊Pickman✦Awaker & Wheel of Destiny Introduction"
     }
   ]
 }

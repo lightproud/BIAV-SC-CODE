@@ -1,10 +1,13 @@
 {
   "date": "2025-02-28",
-  "messages": 153,
+  "messages": 162,
   "unique_authors": 17,
-  "reactions_total": 55,
-  "attachments": 7,
+  "reactions_total": 65,
+  "attachments": 8,
   "channel_activity": {
+    "New Player Mechanics and Progression Guide": 3,
+    "Star Chapter 2.1 Tier List": 2,
+    "Can anyone please tell me who are the characters that pair well with the red doll?": 4,
     "V2.1.0.5 停服維護公告": 87,
     "什么时候才能出双方同时选卡牌的活动？": 1,
     "關於星辰篇劇情走格子探索地圖要素": 5,
@@ -15,8 +18,14 @@
     "I Made a fan caption in Korean": 1
   },
   "hourly_activity": {
+    "14": 1,
+    "19": 1,
+    "21": 1,
+    "1": 3,
+    "10": 48,
+    "18": 2,
+    "23": 1,
     "9": 28,
-    "10": 47,
     "11": 5,
     "12": 4,
     "13": 25,
@@ -27,14 +36,20 @@
     "3": 10,
     "6": 15,
     "15": 2,
-    "4": 1,
-    "18": 1
+    "4": 1
   },
   "message_types": {
-    "0": 75,
-    "19": 12
+    "0": 5,
+    "19": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1345046823068499968",
+      "content": "https://www.youtube.com/watch?v=Eq7WXNXG-Ok",
+      "author": "cornonthemacabre_",
+      "reactions": 9,
+      "channel": "New Player Mechanics and Progression Guide"
+    },
     {
       "id": "1344869608540340324",
       "content": "你知道的，我一直都是我们达芙黛尔的狗，来比拼一下星辰篇15回合能达到的最高交易卡吧",
@@ -125,6 +140,13 @@
       "author": "Deleted User",
       "reactions": 2,
       "channel": "忘却前夜第一届交易大赛!"
+    },
+    {
+      "id": "1345153033759232141",
+      "content": "glad it was helpful <:PeepoHappy:402867832175460363>",
+      "author": "cornonthemacabre_",
+      "reactions": 1,
+      "channel": "New Player Mechanics and Progression Guide"
     },
     {
       "id": "1344972860686471220",

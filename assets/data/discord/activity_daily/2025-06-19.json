@@ -1,10 +1,11 @@
 {
   "date": "2025-06-19",
-  "messages": 45,
+  "messages": 48,
   "unique_authors": 9,
-  "reactions_total": 10,
-  "attachments": 19,
+  "reactions_total": 17,
+  "attachments": 24,
   "channel_activity": {
+    "Reading Your Opponent's Hand in Traphase": 3,
     "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 1,
     "💭「Processing」Pc ver. Stuck on update resource screen and then error 35": 1,
     "✅「已回答」無法透過角色技能素材需求進入技本": 2,
@@ -16,6 +17,7 @@
     "[二创伪联动][忘却前夜 x Sunless Sea]白如磷火/Pale as Corporsant": 4
   },
   "hourly_activity": {
+    "20": 3,
     "7": 1,
     "15": 1,
     "10": 3,
@@ -29,10 +31,16 @@
     "1": 4
   },
   "message_types": {
-    "0": 18,
-    "19": 2
+    "0": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1385349955644035177",
+      "content": "# Key Concept\n- All cards are organized in a specific order.\n- You can see which",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "Reading Your Opponent's Hand in Traphase"
+    },
     {
       "id": "1385095190263369828",
       "content": "Thank you🙏 , currently we do not have similar rules. I will write one as soon as",

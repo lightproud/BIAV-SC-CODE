@@ -1,10 +1,27 @@
 {
   "date": "2025-11-24",
-  "messages": 110,
+  "messages": 188,
   "unique_authors": 35,
-  "reactions_total": 71,
-  "attachments": 44,
+  "reactions_total": 158,
+  "attachments": 100,
   "channel_activity": {
+    "Doresain x Pickman": 2,
+    "thais dump": 1,
+    "corposant edit ayayay (ignore the intro plspls i have no ideas)": 1,
+    "hi morimens meme dump (ooc warning me and oomf were goofing aruond)": 11,
+    "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 5,
+    "Someone whose name starts with A which idk how to spell": 1,
+    "Corpo Sketch :D": 2,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 14,
+    "新手求助": 16,
+    "求配队": 6,
+    "角色补充": 11,
+    "新手求配队": 1,
+    "抽卡求解": 1,
+    "接下去抽什么": 1,
+    "新手抽卡救助": 3,
+    "New Player - Team Building and Pull Plan": 1,
+    "GMurphy team building": 1,
     "V2.4.0.5 在线维护公告": 3,
     "🌟 Announcement: Exclusive Avatar Frames for Translation Volunteers and Other Localization News!": 1,
     "前瞻：V2.4.0.3 挑战性调整 最终版 Preview: V2.4.0.3 Challenge Adjustments Final Version": 3,
@@ -48,33 +65,64 @@
     "1442292634575175710": 7
   },
   "hourly_activity": {
-    "9": 4,
-    "13": 3,
-    "14": 18,
-    "23": 2,
-    "2": 4,
-    "3": 3,
-    "4": 20,
-    "5": 3,
+    "0": 9,
+    "21": 1,
+    "2": 16,
+    "13": 6,
+    "18": 6,
+    "10": 10,
+    "11": 10,
+    "12": 8,
+    "8": 3,
+    "1": 6,
+    "5": 8,
+    "16": 3,
+    "20": 1,
+    "23": 3,
+    "4": 27,
+    "14": 21,
+    "3": 5,
+    "9": 15,
+    "7": 11,
     "6": 9,
-    "12": 7,
     "15": 2,
-    "7": 10,
     "22": 2,
-    "8": 1,
-    "10": 5,
-    "16": 1,
     "17": 4,
-    "18": 3,
-    "19": 2,
-    "11": 2,
-    "1": 1,
-    "0": 4
+    "19": 2
   },
   "message_types": {
-    "0": 7
+    "0": 64,
+    "19": 14
   },
   "top_reacted_messages": [
+    {
+      "id": "1442313010377916507",
+      "content": "",
+      "author": "sunstopshining",
+      "reactions": 23,
+      "channel": "Doresain x Pickman"
+    },
+    {
+      "id": "1442623890051436575",
+      "content": "",
+      "author": "juli_fromme",
+      "reactions": 23,
+      "channel": "thais dump"
+    },
+    {
+      "id": "1442310827045552319",
+      "content": "i love corposant so much ughhhfgh 🥹🥹🥹🥹🥹🤤🤤🤤😭😭😭😭",
+      "author": "enzoperry",
+      "reactions": 18,
+      "channel": "corposant edit ayayay (ignore the intro plspls i have no ideas)"
+    },
+    {
+      "id": "1442343622002606150",
+      "content": "i lovr ramonora",
+      "author": "enzoperry",
+      "reactions": 15,
+      "channel": "hi morimens meme dump (ooc warning me and oomf were goofing aruond)"
+    },
     {
       "id": "1442387652891508788",
       "content": "献祭层数因为出牌太快忘记看了，摸了一局5-5放下效果",
@@ -102,6 +150,13 @@
       "author": "ena04564",
       "reactions": 7,
       "channel": "誕塔隊初體驗"
+    },
+    {
+      "id": "1442314028851527771",
+      "content": "Ref",
+      "author": "sunstopshining",
+      "reactions": 6,
+      "channel": "Doresain x Pickman"
     },
     {
       "id": "1442647324575928441",
@@ -153,6 +208,20 @@
       "channel": "在抽卡界面增加流明之芯不足时自动购买流明的选项"
     },
     {
+      "id": "1442309907092209775",
+      "content": "TYYY!! I’m hopefully gonna be able to do a proper illustration sometime soon, I ",
+      "author": "raumbobulus",
+      "reactions": 1,
+      "channel": "Corpo Sketch :D"
+    },
+    {
+      "id": "1442370738018582560",
+      "content": "诞墨要抽吗？",
+      "author": "santianliangjuesleep",
+      "reactions": 1,
+      "channel": "新手求助"
+    },
+    {
       "id": "1442525015525294121",
       "content": "pollux needs at leasr his midgame stat ghrowth re-adjusted if this is the new ba",
       "author": "thpdom",
@@ -165,41 +234,6 @@
       "author": "crowlov1",
       "reactions": 1,
       "channel": "✅「Resolved」bug | gmurphy story not unlocking properly"
-    },
-    {
-      "id": "1442378885529341963",
-      "content": "Investigation-D-Effect Zone: Wave 3: Alert IV Battle Replay\nKeeper: Frost（100956",
-      "author": "frosthief",
-      "reactions": 1,
-      "channel": "💭「Processing」Wave 3 Boss Instakill Bug?"
-    },
-    {
-      "id": "1442410482978787329",
-      "content": "這樣比較不愁獻祭問題",
-      "author": "ena04564",
-      "reactions": 1,
-      "channel": "誕塔隊初體驗"
-    },
-    {
-      "id": "1442471720538738741",
-      "content": "||蛋撻隊 🗣️ 🗣️ 🔥 🔥 (在發瘋不用理我）||",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "誕塔隊初體驗"
-    },
-    {
-      "id": "1442526606089523221",
-      "content": "需要美丽诞墨和邮票头<:please:1356053110375714817>",
-      "author": "navirecorbeau",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1442418437161881660",
-      "content": "Better. <:goodjob:1400771550097051669>",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": ""
     }
   ]
 }

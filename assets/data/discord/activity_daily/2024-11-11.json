@@ -1,10 +1,11 @@
 {
   "date": "2024-11-11",
-  "messages": 62,
+  "messages": 63,
   "unique_authors": 12,
   "reactions_total": 92,
-  "attachments": 9,
+  "attachments": 10,
   "channel_activity": {
+    "GPT translation synonyms": 1,
     "请问周年庆有什么活动爆料么？": 3,
     "覺得羅坦需要加強": 1,
     "Horla card text wrong": 2,
@@ -15,6 +16,7 @@
     "1181998821291606097": 2
   },
   "hourly_activity": {
+    "14": 1,
     "9": 9,
     "23": 1,
     "10": 19,
@@ -29,8 +31,7 @@
     "7": 2
   },
   "message_types": {
-    "0": 5,
-    "19": 1
+    "0": 1
   },
   "top_reacted_messages": [
     {

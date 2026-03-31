@@ -1,10 +1,16 @@
 {
   "date": "2025-12-29",
-  "messages": 173,
+  "messages": 196,
   "unique_authors": 30,
-  "reactions_total": 57,
-  "attachments": 23,
+  "reactions_total": 142,
+  "attachments": 26,
   "channel_activity": {
+    "I errr....": 7,
+    "🌼 Pollux 🌼": 2,
+    "Fish baby boy": 3,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 8,
+    "V2.4.1 茉夏的异世界冒险日志Ⅰ┊Mouchette's Otherworld Adventure LogⅠ": 1,
+    "400……": 2,
     "Bunch of doodles and sillies": 2,
     "Who Ryker's Designer pls come talk ?": 3,
     "✅「已回答」取消SSR命輪自動分解": 3,
@@ -57,29 +63,54 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
-    "7": 15,
+    "15": 4,
+    "16": 23,
+    "17": 2,
+    "19": 1,
+    "22": 8,
+    "6": 18,
+    "1": 8,
+    "0": 11,
+    "2": 1,
+    "4": 3,
+    "18": 3,
+    "7": 16,
+    "13": 1,
     "8": 17,
     "14": 1,
-    "16": 21,
     "9": 26,
     "3": 34,
-    "4": 2,
     "10": 7,
-    "6": 17,
     "11": 9,
     "12": 2,
-    "18": 2,
-    "22": 5,
-    "15": 3,
-    "5": 1,
-    "1": 2,
-    "0": 9
+    "5": 1
   },
   "message_types": {
-    "19": 1,
-    "0": 1
+    "0": 16,
+    "19": 7
   },
   "top_reacted_messages": [
+    {
+      "id": "1455227949698777189",
+      "content": "https://x.com/TavvyVyes/status/2005668230099357856?s=20",
+      "author": "shiio4870",
+      "reactions": 52,
+      "channel": "I errr...."
+    },
+    {
+      "id": "1455011382939488441",
+      "content": "He is just so precious... deserves all the love in the world... 🥺 \n||*ugly sobbi",
+      "author": "yandrewm",
+      "reactions": 22,
+      "channel": "Fish baby boy"
+    },
+    {
+      "id": "1455320492364796111",
+      "content": "Finally Corpo getting the revenge from Kath she deserves after her comment",
+      "author": "legendaryredz",
+      "reactions": 9,
+      "channel": "I errr...."
+    },
     {
       "id": "1455120559103934515",
       "content": "塗到一半先這樣去忙ㄌ🤩~~什麼男魅魔~~",
@@ -165,6 +196,20 @@
       "channel": ""
     },
     {
+      "id": "1455285892670558314",
+      "content": "Mmm CorpoKath Yuri <:pray:1356053116260454534>",
+      "author": "seelkadoom0",
+      "reactions": 1,
+      "channel": "I errr...."
+    },
+    {
+      "id": "1455333360120369356",
+      "content": "Omg yuri 💕 we LOVE to see it",
+      "author": "celestial.noise",
+      "reactions": 1,
+      "channel": "I errr...."
+    },
+    {
       "id": "1455135880678215868",
       "content": "抱歉，这个建议暂不考虑",
       "author": "morimensstaff01",
@@ -184,41 +229,6 @@
       "author": "amstelredam",
       "reactions": 1,
       "channel": "✅「已回答」可否增設命輪和密契的計數器"
-    },
-    {
-      "id": "1455114017730203794",
-      "content": "💭「Processing」Incorrect card description",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Incorrect card description"
-    },
-    {
-      "id": "1455231813235507271",
-      "content": "If Mouchette's dramatic encounter pursuit counts as a strike, I would think it s",
-      "author": "monchi3524",
-      "reactions": 1,
-      "channel": "✅「Answered」Pursuit does not count towards Mouchette's wheel"
-    },
-    {
-      "id": "1455268972646633522",
-      "content": "update? we need an accurate explanation for the things we are PAYING MONEY for",
-      "author": "tksn.",
-      "reactions": 1,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1455112226355675249",
-      "content": "Understood, I have already submitted this question🫡",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」emoji"
-    },
-    {
-      "id": "1455156460261478544",
-      "content": "好～～！謝謝戈雅和腦缸～～",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "✅「已回答」希望長按卡片顯示數值計算公式"
     }
   ]
 }

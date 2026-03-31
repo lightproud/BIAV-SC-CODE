@@ -1,10 +1,21 @@
 {
   "date": "2025-08-26",
-  "messages": 28,
-  "unique_authors": 7,
-  "reactions_total": 90,
-  "attachments": 11,
+  "messages": 53,
+  "unique_authors": 20,
+  "reactions_total": 242,
+  "attachments": 25,
   "channel_activity": {
+    "tawil": 2,
+    "uvhash fan art submission": 2,
+    "Ogier": 2,
+    "doodles": 2,
+    "Tulu sketch": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 5,
+    "Need Help on Account Progression": 1,
+    "What dtide teams can I make": 2,
+    "Just started": 3,
+    "Dupes of Hameln, Horla, Corpo": 2,
+    "What is realm mastery?": 3,
     "忘却前夜OST：凯蒂古拉EP·烈火的葬礼": 5,
     "✅「已回答」戰鬥不顯示第幾波": 1,
     "✅「Answered」Fun Skin suggestions?": 2,
@@ -16,22 +27,45 @@
     "託乎瓦波之夢": 1
   },
   "hourly_activity": {
-    "8": 5,
+    "7": 2,
+    "8": 6,
+    "0": 2,
+    "2": 3,
+    "3": 6,
+    "4": 4,
+    "20": 1,
+    "1": 3,
+    "12": 2,
+    "14": 1,
+    "17": 3,
+    "19": 1,
+    "21": 1,
+    "5": 2,
+    "6": 5,
     "13": 3,
-    "17": 2,
-    "3": 4,
     "9": 4,
-    "4": 2,
     "22": 2,
-    "2": 2,
-    "5": 1,
-    "6": 1,
     "15": 2
   },
   "message_types": {
-    "0": 5
+    "0": 24,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1409740423622037525",
+      "content": "I've been wanting to draw one of the Awakers in Morimens since I played the game",
+      "author": "leonnore",
+      "reactions": 62,
+      "channel": "Ogier"
+    },
+    {
+      "id": "1409797273684279367",
+      "content": "some sketch",
+      "author": "koyanskayaofdak",
+      "reactions": 53,
+      "channel": "tawil"
+    },
     {
       "id": "1410022905596612799",
       "content": "世間不過是您的一縷夢境。睡吧，無目之瞳。\n群星將伴您入眠，願您永不甦醒。\n\nuid:100047306",
@@ -47,6 +81,20 @@
       "channel": "尤烏哈希你是一隻大狗"
     },
     {
+      "id": "1409752976767062067",
+      "content": "forgot to post this on his bday<:cry3:1356082134447558748>",
+      "author": "sunstopshining",
+      "reactions": 18,
+      "channel": "Tulu sketch"
+    },
+    {
+      "id": "1409749392042365079",
+      "content": "silly little uncolored doodles, either for character birthdays or simply because",
+      "author": "fishhazardthewizard",
+      "reactions": 16,
+      "channel": "doodles"
+    },
+    {
       "id": "1409821028594614302",
       "content": "感谢各位守密人的支持！\n《忘却前夜》OST：凯蒂古拉EP·烈火的葬礼，今日发布～欢迎大家收听、下载及分享～如果有基于OST的二次创作，也欢迎分享给我们！（二创请",
       "author": "morimensstaff01",
@@ -59,6 +107,13 @@
       "author": "corposant_1003",
       "reactions": 8,
       "channel": "✅ 「已回答」克珀珊特天赋加強"
+    },
+    {
+      "id": "1410004306517819453",
+      "content": "blehhhhhh",
+      "author": "fishhazardthewizard",
+      "reactions": 3,
+      "channel": "doodles"
     },
     {
       "id": "1409951769211179079",

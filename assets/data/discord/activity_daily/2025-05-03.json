@@ -1,10 +1,12 @@
 {
   "date": "2025-05-03",
-  "messages": 30,
+  "messages": 56,
   "unique_authors": 13,
-  "reactions_total": 38,
-  "attachments": 9,
+  "reactions_total": 140,
+  "attachments": 24,
   "channel_activity": {
+    "🐾喚醒體五一遊記┊Awaker Holiday Travels": 19,
+    "🍲珈倫廚力大爆發┊Karen's cooking power explodes": 7,
     "✅「已回答」蟲族羊媽狂氣減費bug": 1,
     "✅「已回答」《無bug空間的逆襲 ～ 一度被稱為bug空間的我逆活一世，在維修公告拿出證明自己無bug的真本事 ～》": 1,
     "✅「Answered」 Strike to protect Bug": 4,
@@ -16,29 +18,95 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "4": 13,
+    "5": 4,
+    "9": 2,
+    "10": 3,
+    "14": 13,
+    "3": 5,
+    "8": 5,
     "2": 3,
-    "8": 4,
-    "10": 2,
     "11": 1,
-    "14": 12,
     "15": 2,
     "16": 1,
     "6": 1,
     "7": 1,
-    "9": 1,
     "13": 2
   },
   "message_types": {
-    "19": 3,
-    "0": 4
+    "0": 18,
+    "19": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1368076356868509757",
+      "content": "<:processing:1357185814567718963> 糟糕，果然還是不能靠貓貓太近！\nOops, getting too close to cat",
+      "author": "morimensstaff01",
+      "reactions": 17,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
     {
       "id": "1368233406454038659",
       "content": "什么时候加强我雷\nuid：100082465",
       "author": "arki1i_",
       "reactions": 17,
       "channel": "好久没画依然是没细化完的一张，先发发了"
+    },
+    {
+      "id": "1368094335395954788",
+      "content": "<:perfect:1356084498630053979>",
+      "author": "zier.0",
+      "reactions": 14,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368076144611561512",
+      "content": "守密人的假期過得如何？趁著休假日，喚醒體們也相約外出遊樂：雲間迷藏、花卉攝影、逗樂貓咪、林間SPA……大家還挺會享受嘛！\n\n🌼歡迎守密人**在留言區分享你的度假",
+      "author": "morimensstaff01",
+      "reactions": 12,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368153122727399444",
+      "content": "五一假期一个寻常的星期四下午，那颗纯银之心的悸动，让我感受到了你的到来……跨越万千维度，银钥指引着我们，终将再会……这一次，我一定会亲手收下，来自那最初的亲爱的",
+      "author": "nowimfaceless",
+      "reactions": 12,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368096426772660294",
+      "content": "在家蒸黑糖糕 吃完一半了<:thumbsup:1356086340298473574>",
+      "author": "_buqi",
+      "reactions": 10,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368230182334500987",
+      "content": "Ну.. Выходной с шашлычками удался <:pray:1356053116260454534><:love:135605309993",
+      "author": "closetom",
+      "reactions": 9,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368082483786022943",
+      "content": "~~请给我一份精粹灵核谢谢~~",
+      "author": "akalanden",
+      "reactions": 8,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368090966329921729",
+      "content": "如图所示，五一是和唤醒体戈雅过的（真人戈雅给的钱是虚拟的，唤醒体戈雅给的钱也是一样虚拟的。四舍五入，我可以是和唤醒体戈雅过的，毕竟网络上的\"我\"也是虚拟的），她",
+      "author": "287405tjy_28066",
+      "reactions": 7,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368169556652327022",
+      "content": "",
+      "author": "yongzhe0051",
+      "reactions": 6,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
     },
     {
       "id": "1368115331662614588",
@@ -62,11 +130,32 @@
       "channel": "✅「Answered」 Strike to protect Bug"
     },
     {
+      "id": "1368082859474030622",
+      "content": "和你的名字一樣夢幻✨",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
       "id": "1368136646150848512",
       "content": "One of Lily's cards are broken, both on computer and mobile.\nWhen you go to use ",
       "author": "rei_the_witch",
       "reactions": 3,
       "channel": "✅「Answered」 Strike to protect Bug"
+    },
+    {
+      "id": "1368081231417311255",
+      "content": "Another great summer day shopping at Costco",
+      "author": "flares117",
+      "reactions": 2,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
+      "id": "1368062540915146782",
+      "content": "<@272394963642220545> 🛎️ Evil Jenkin stole the ingredients👿 ! There is no other ",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
     },
     {
       "id": "1368153793555861586",

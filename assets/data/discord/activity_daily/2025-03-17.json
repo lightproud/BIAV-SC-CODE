@@ -1,10 +1,17 @@
 {
   "date": "2025-03-17",
-  "messages": 150,
+  "messages": 163,
   "unique_authors": 27,
-  "reactions_total": 22,
-  "attachments": 17,
+  "reactions_total": 25,
+  "attachments": 18,
   "channel_activity": {
+    "Tier list as of 2.0": 1,
+    "Star Chapter 2.1 Tier List": 1,
+    "Team Comps": 1,
+    "한국어 번역 피드백 컬렉션": 3,
+    "Português Tradução - Coleta de Feedback": 5,
+    "การรวบรวมคำติชมการแปลภาษาไทย": 1,
+    "Deutsche Übersetzung - Sammlung von Rückmeldungen": 1,
     "🔥可正常使用！【翻译器】介绍及使用教程！Channel 【Translator function】introduction and usage tutorial！": 2,
     "V2.1.1.3 在線維護公告": 3,
     "✅「Answered」Add crafting for Shattered Remnant of Dreams": 1,
@@ -24,29 +31,29 @@
     "1350059696945500171": 1
   },
   "hourly_activity": {
-    "6": 19,
+    "16": 15,
+    "17": 12,
+    "5": 2,
+    "3": 5,
+    "6": 20,
+    "8": 36,
+    "23": 4,
+    "2": 10,
     "7": 17,
     "13": 6,
     "14": 10,
     "11": 5,
-    "8": 33,
     "9": 1,
     "10": 5,
     "4": 2,
-    "5": 1,
     "15": 4,
-    "16": 14,
-    "17": 11,
-    "3": 3,
     "0": 2,
     "1": 5,
-    "2": 9,
-    "20": 2,
-    "23": 1
+    "20": 2
   },
   "message_types": {
-    "19": 2,
-    "0": 3
+    "0": 5,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -90,6 +97,27 @@
       "author": "ruko9999",
       "reactions": 2,
       "channel": "純討論，為什麼熔朵的體重少了0.1磅"
+    },
+    {
+      "id": "1351082549744767019",
+      "content": "Thank you again!<:cry:1243502872021438475> ❤️",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "한국어 번역 피드백 컬렉션"
+    },
+    {
+      "id": "1351106665998581780",
+      "content": "Si tiene alguna pregunta sobre la traducción, no dude en publicarla aquí. Goya r",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "Português Tradução - Coleta de Feedback"
+    },
+    {
+      "id": "1351105889494372424",
+      "content": "<@334271675786854413>ขอขอบคุณสำหรับคำติชมของคุณ โกย่าได้บันทึกไว้ทีละอันแล้ว🌹",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "การรวบรวมคำติชมการแปลภาษาไทย"
     },
     {
       "id": "1351184554542628975",

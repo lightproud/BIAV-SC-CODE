@@ -1,10 +1,11 @@
 {
   "date": "2025-01-08",
-  "messages": 97,
+  "messages": 99,
   "unique_authors": 28,
   "reactions_total": 124,
-  "attachments": 30,
+  "attachments": 31,
   "channel_activity": {
+    "A team I would recommend for newer players (only standard units/wheels, free units and shop wheels)": 2,
     "📜《忘卻前夜 Morimens》V2.0——「損毀灰霧之都」即將開放！精彩資訊一網打盡！": 14,
     "✅前瞻：V2.0 双界域混编": 2,
     "✅「已回答」典藏館與命輪文案衝突": 1,
@@ -25,6 +26,7 @@
     "24": 2
   },
   "hourly_activity": {
+    "5": 11,
     "6": 10,
     "7": 15,
     "8": 2,
@@ -34,7 +36,6 @@
     "16": 1,
     "18": 1,
     "1": 1,
-    "5": 9,
     "11": 3,
     "12": 7,
     "13": 4,
@@ -45,8 +46,7 @@
     "19": 1
   },
   "message_types": {
-    "0": 13,
-    "19": 3
+    "19": 2
   },
   "top_reacted_messages": [
     {

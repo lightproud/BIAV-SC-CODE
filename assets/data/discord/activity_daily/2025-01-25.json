@@ -1,10 +1,11 @@
 {
   "date": "2025-01-25",
-  "messages": 47,
+  "messages": 53,
   "unique_authors": 23,
   "reactions_total": 13,
   "attachments": 9,
   "channel_activity": {
+    "morimens story recap channel": 6,
     "✅前瞻：V2.1 灵塑适性与钥令收集": 1,
     "✅前瞻：V2.1 维度影像": 1,
     "English Page pls !!": 6,
@@ -19,7 +20,7 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "18": 2,
+    "18": 8,
     "5": 6,
     "7": 1,
     "12": 2,
@@ -38,8 +39,7 @@
     "17": 1
   },
   "message_types": {
-    "0": 1,
-    "19": 1
+    "0": 6
   },
   "top_reacted_messages": [
     {

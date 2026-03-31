@@ -1,10 +1,15 @@
 {
   "date": "2025-06-30",
-  "messages": 59,
+  "messages": 64,
   "unique_authors": 16,
-  "reactions_total": 41,
-  "attachments": 21,
+  "reactions_total": 64,
+  "attachments": 22,
   "channel_activity": {
+    "leigh": 1,
+    "June 30 Update Overview": 1,
+    "活動結束|Event ends🎨V2.2.2版本 同人征集開啟！V2.2.2 Fan Collection Is Open!": 1,
+    "活動結束|Event ends🎯V2.2.2版本 攻略征集開啟！V2.2.2 Game Guide Collection Is Open!": 1,
+    "😢求助！守護最好的彌薩格廚房┊Help! Protect the Best Mythag Kitchen": 1,
     "V2.2.3.0 停服維護公告": 2,
     "V2.2.3.1 在線維護公告": 2,
     "💭「Processing」Connection issues": 2,
@@ -32,7 +37,10 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "3": 16,
+    "7": 1,
+    "3": 17,
+    "8": 5,
+    "6": 4,
     "12": 3,
     "2": 6,
     "15": 4,
@@ -41,16 +49,15 @@
     "9": 2,
     "10": 4,
     "11": 7,
-    "8": 3,
     "16": 2,
     "4": 2,
     "5": 1,
-    "6": 3,
     "13": 2,
     "22": 1
   },
   "message_types": {
-    "0": 4
+    "0": 4,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -59,6 +66,20 @@
       "author": "morimensstaff01",
       "reactions": 18,
       "channel": ""
+    },
+    {
+      "id": "1389144820139692115",
+      "content": "",
+      "author": "yonagoda",
+      "reactions": 17,
+      "channel": "leigh"
+    },
+    {
+      "id": "1389133619750113381",
+      "content": "貓抓偷吃的小老鼠，嗯<:thinking1:1356068128936820929> 好主意",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "😢求助！守護最好的彌薩格廚房┊Help! Protect the Best Mythag Kitchen"
     },
     {
       "id": "1389219858729926798",

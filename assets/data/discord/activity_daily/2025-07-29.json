@@ -1,10 +1,14 @@
 {
   "date": "2025-07-29",
-  "messages": 185,
+  "messages": 220,
   "unique_authors": 22,
-  "reactions_total": 53,
-  "attachments": 20,
+  "reactions_total": 84,
+  "attachments": 25,
   "channel_activity": {
+    "Jenkin & Brown card :mouse2:": 3,
+    "All stages Arc 2 Ch 3 HM Deathless recap and Scuffed \"Guide\"": 1,
+    "Arc 2 Ch 3 HM Final Boss Deathless. 83k Counter with Caecus.": 1,
+    "How to play Uvhash in exploration?": 30,
     "V2.3.0.3 在线维护公告": 7,
     "校猫碎碎念#Translation Plan Update 本地化计划变更": 1,
     "✅「已回答」朵爾等價顯示問題又出現了": 3,
@@ -31,25 +35,29 @@
     "【忘卻前夜乙女向同人】在某個宇宙中…   圖魯x妳": 4
   },
   "hourly_activity": {
+    "8": 2,
+    "9": 4,
+    "11": 1,
+    "10": 1,
+    "5": 24,
+    "6": 19,
     "12": 6,
     "13": 70,
     "7": 2,
     "16": 1,
     "2": 23,
     "3": 10,
-    "5": 2,
-    "6": 11,
     "4": 5,
     "14": 46,
     "20": 2,
     "23": 1,
-    "9": 3,
     "17": 1,
     "15": 1,
     "0": 1
   },
   "message_types": {
-    "0": 8
+    "0": 25,
+    "19": 10
   },
   "top_reacted_messages": [
     {
@@ -60,6 +68,13 @@
       "channel": "阿空高速推活時刻"
     },
     {
+      "id": "1399666385910763624",
+      "content": "100723614 [V2.3 Fan Art]\nDrew one of my favorite characters <:processing:1357185",
+      "author": "valoup",
+      "reactions": 25,
+      "channel": "Jenkin & Brown card :mouse2:"
+    },
+    {
       "id": "1399732024805294273",
       "content": "● Localization Fixes and Improvements (English Language Setting):\n    ○We fixed ",
       "author": "morimensstaff02",
@@ -67,11 +82,25 @@
       "channel": "V2.3.0.3 在线维护公告"
     },
     {
+      "id": "1399671924065304676",
+      "content": "This is such a fun concept! I love how dynamic it feels",
+      "author": "Deleted User",
+      "reactions": 3,
+      "channel": "Jenkin & Brown card :mouse2:"
+    },
+    {
       "id": "1399657628308733972",
       "content": "Would it be possible to somehow mark in game which story segments have been manu",
       "author": "tharob",
       "reactions": 3,
       "channel": "校猫碎碎念#Translation Plan Update 本地化计划变更"
+    },
+    {
+      "id": "1399684346238992436",
+      "content": "that is so nice, if only in the future the cards could have this type of persona",
+      "author": "vxvendetta",
+      "reactions": 2,
+      "channel": "Jenkin & Brown card :mouse2:"
     },
     {
       "id": "1399753765917032645",
@@ -86,6 +115,13 @@
       "author": "ice_storys",
       "reactions": 2,
       "channel": "血希同人"
+    },
+    {
+      "id": "1399633314322579558",
+      "content": "so the chapter 1, gotcha",
+      "author": "markiecart",
+      "reactions": 1,
+      "channel": "How to play Uvhash in exploration?"
     },
     {
       "id": "1399734980711546910",

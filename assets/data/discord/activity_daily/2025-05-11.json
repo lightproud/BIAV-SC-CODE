@@ -1,10 +1,15 @@
 {
   "date": "2025-05-11",
-  "messages": 38,
+  "messages": 57,
   "unique_authors": 7,
-  "reactions_total": 34,
-  "attachments": 24,
+  "reactions_total": 40,
+  "attachments": 96,
   "channel_activity": {
+    "Old D-Tide Leaderboards": 14,
+    "D-Tide Leaderboard (2025 May 11)": 2,
+    "Design References to the Cthulhu Mythos": 1,
+    "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！": 1,
+    "萌新想蹲一个深海配队": 1,
     "✅前瞻：1.5周年～活动福利篇": 4,
     "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血": 4,
     "✅「Answered」Logo Is very bright...": 3,
@@ -18,20 +23,22 @@
     "1296113810549112874": 3
   },
   "hourly_activity": {
+    "17": 9,
+    "18": 13,
+    "14": 2,
+    "7": 2,
+    "13": 1,
+    "21": 1,
     "9": 7,
     "15": 1,
     "22": 2,
     "10": 6,
     "16": 11,
-    "18": 5,
-    "17": 2,
-    "23": 2,
-    "7": 1,
-    "14": 1
+    "23": 2
   },
   "message_types": {
-    "0": 2,
-    "19": 2
+    "0": 17,
+    "4": 2
   },
   "top_reacted_messages": [
     {
@@ -56,11 +63,39 @@
       "channel": ""
     },
     {
+      "id": "1371136004261679266",
+      "content": "Wave 1",
+      "author": "willsalvador",
+      "reactions": 3,
+      "channel": "D-Tide Leaderboard (2025 May 11)"
+    },
+    {
       "id": "1371070122357297192",
       "content": "圖一是當前凱刻斯體質，3啟在回合結束時回體質×7.5%的生命值，也就是圖二計算出來的約15血。\n圖三是我的靈塑等級，體質增加18%，理論上應該要能回復圖四計算出",
       "author": "ernest_heart",
       "reactions": 2,
       "channel": "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血"
+    },
+    {
+      "id": "1371180695074111619",
+      "content": "2025 April 27\n\nUser 4267",
+      "author": "willsalvador",
+      "reactions": 1,
+      "channel": "Old D-Tide Leaderboards"
+    },
+    {
+      "id": "1371022670371749909",
+      "content": "https://discord.com/channels/1131791637933199470/1326453763355185215/13315201968",
+      "author": "inkouah",
+      "reactions": 1,
+      "channel": "Design References to the Cthulhu Mythos"
+    },
+    {
+      "id": "1371109880466772028",
+      "content": "v2.3的攻略徵集什麼時候開始🥹",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！"
     },
     {
       "id": "1371159774451990590",

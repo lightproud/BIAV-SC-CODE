@@ -1,10 +1,13 @@
 {
   "date": "2025-06-03",
-  "messages": 100,
+  "messages": 109,
   "unique_authors": 15,
-  "reactions_total": 72,
-  "attachments": 28,
+  "reactions_total": 113,
+  "attachments": 31,
   "channel_activity": {
+    "A World Where Nothing's Aligned": 7,
+    "🎊官周通販：淘寶全球可購！": 1,
+    "📜卡斯托爾┊喚醒體&命輪介紹；Castor┊Awaker & Wheel of Destiny Introduction": 1,
     "V2.2.2.4 在線維護公告": 4,
     "游戏美术资源上的文字": 1,
     "✅校猫碎碎念#卡斯托尔加强": 46,
@@ -23,8 +26,10 @@
     "1379534998704488528": 1
   },
   "hourly_activity": {
+    "19": 8,
+    "3": 2,
+    "7": 1,
     "16": 4,
-    "3": 1,
     "12": 48,
     "14": 6,
     "18": 3,
@@ -33,7 +38,6 @@
     "2": 10,
     "1": 3,
     "6": 1,
-    "19": 1,
     "20": 3,
     "21": 4,
     "9": 1,
@@ -41,10 +45,17 @@
     "8": 1
   },
   "message_types": {
-    "0": 45,
-    "19": 6
+    "0": 7,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1379536807649349733",
+      "content": "Genesis 24\nDownload the Kit Frame to see the effects. Discord doesn't allow the ",
+      "author": "sexysneakystoat1625",
+      "reactions": 38,
+      "channel": "A World Where Nothing's Aligned"
+    },
     {
       "id": "1379534998704488528",
       "content": "Genesis 24 announcement.\nUID: 100815557",
@@ -107,6 +118,27 @@
       "author": "taayoui",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1379537706119332000",
+      "content": "just remain Silence ; )",
+      "author": "sexysneakystoat1625",
+      "reactions": 1,
+      "channel": "A World Where Nothing's Aligned"
+    },
+    {
+      "id": "1379539095218421811",
+      "content": "the wheel looks cool as hell too",
+      "author": "undeterredhomo",
+      "reactions": 1,
+      "channel": "A World Where Nothing's Aligned"
+    },
+    {
+      "id": "1379539352388112514",
+      "content": "Oh my good, the character design, the wheel design and the kit it's all so peak.",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "A World Where Nothing's Aligned"
     },
     {
       "id": "1379304357836886129",

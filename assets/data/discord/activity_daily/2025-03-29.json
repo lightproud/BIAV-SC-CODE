@@ -1,10 +1,13 @@
 {
   "date": "2025-03-29",
-  "messages": 12,
+  "messages": 15,
   "unique_authors": 5,
-  "reactions_total": 108,
+  "reactions_total": 115,
   "attachments": 2,
   "channel_activity": {
+    "Need help with team comp/builds": 1,
+    "Flares' Beginner Cash Shop Guide": 1,
+    "【日本語訳】フィードバック": 1,
     "[克蘇魯神話元素] 溫柯爾裡面的人": 1,
     "忘卻前夜OSTⅡ：傳承求索之途": 1,
     "💭「Processing」Korean Translation get worse after resources update.": 2,
@@ -14,18 +17,20 @@
     "*千面幻象*达芙黛尔单人向": 3
   },
   "hourly_activity": {
+    "11": 1,
+    "3": 2,
+    "15": 1,
     "18": 1,
     "13": 2,
     "4": 2,
     "14": 1,
-    "3": 1,
     "19": 1,
     "20": 1,
     "7": 1,
     "17": 2
   },
   "message_types": {
-    "0": 2
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -48,6 +53,13 @@
       "author": "flares117",
       "reactions": 9,
       "channel": "Flares' NA Cash Shop Guide"
+    },
+    {
+      "id": "1355390572063359118",
+      "content": "It's part of a big Beginner guide project, I'm still working on the awakers and ",
+      "author": "flares117",
+      "reactions": 7,
+      "channel": "Flares' Beginner Cash Shop Guide"
     },
     {
       "id": "1355398774813626542",

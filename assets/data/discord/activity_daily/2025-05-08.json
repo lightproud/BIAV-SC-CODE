@@ -1,10 +1,17 @@
 {
   "date": "2025-05-08",
-  "messages": 107,
+  "messages": 119,
   "unique_authors": 25,
-  "reactions_total": 48,
-  "attachments": 13,
+  "reactions_total": 148,
+  "attachments": 16,
   "channel_activity": {
+    "Goliath": 1,
+    "study of morimens art style :))": 3,
+    "Ogier sketch": 2,
+    "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~": 1,
+    "Karen": 1,
+    "Pandia": 1,
+    "有塔薇佬的腿可以抱吗": 3,
     "Complete glossary of Wheel of Destiny names": 1,
     "V2.2.1.3 在線維護公告": 18,
     "✅前瞻：1.5周年～系统优化篇": 66,
@@ -19,6 +26,13 @@
     "1271491376881598494": 6
   },
   "hourly_activity": {
+    "2": 5,
+    "18": 2,
+    "19": 1,
+    "0": 2,
+    "21": 2,
+    "3": 2,
+    "16": 56,
     "8": 6,
     "1": 3,
     "5": 6,
@@ -27,19 +41,21 @@
     "9": 2,
     "10": 4,
     "13": 3,
-    "16": 55,
     "17": 14,
     "11": 1,
-    "0": 1,
-    "2": 2,
     "4": 2
   },
   "message_types": {
-    "0": 65,
-    "19": 21,
-    "6": 2
+    "0": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1370107694039695472",
+      "content": "with fem keeper as my subject. dont mind the doodles...",
+      "author": "argo.4467",
+      "reactions": 71,
+      "channel": "study of morimens art style :))"
+    },
     {
       "id": "1370085394888265899",
       "content": "看来要爆仓了<:question2:1356053130336272414>",
@@ -48,11 +64,25 @@
       "channel": "✅前瞻：1.5周年～系统优化篇"
     },
     {
+      "id": "1370147844710989985",
+      "content": "",
+      "author": "maya014632",
+      "reactions": 14,
+      "channel": "Pandia"
+    },
+    {
       "id": "1370075486235000932",
       "content": "欢迎来到1.5周年更新前瞻第二篇！\n\n本次我们将聚焦多项系统优化，包括备受期待的留声机系统，以及多项奖励提升，力求改善大家的游戏体验。\n同时，我们还新增了纪念命",
       "author": "game.producer.light",
       "reactions": 13,
       "channel": "✅前瞻：1.5周年～系统优化篇"
+    },
+    {
+      "id": "1370149234577379458",
+      "content": "",
+      "author": "maya014632",
+      "reactions": 12,
+      "channel": "Karen"
     },
     {
       "id": "1369921483928764436",
@@ -81,6 +111,27 @@
       "author": "Deleted User",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1369866809833947156",
+      "content": "🔥 🔥",
+      "author": "cometovilla",
+      "reactions": 1,
+      "channel": "Goliath"
+    },
+    {
+      "id": "1370113118771875941",
+      "content": "wala pong social media other than discord 🥀",
+      "author": "argo.4467",
+      "reactions": 1,
+      "channel": "study of morimens art style :))"
+    },
+    {
+      "id": "1370078103552131224",
+      "content": "谢谢",
+      "author": "gyx_2829",
+      "reactions": 1,
+      "channel": "有塔薇佬的腿可以抱吗"
     },
     {
       "id": "1369915217785524294",

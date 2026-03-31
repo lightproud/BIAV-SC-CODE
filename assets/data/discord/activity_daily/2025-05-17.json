@@ -1,16 +1,20 @@
 {
   "date": "2025-05-17",
-  "messages": 5,
+  "messages": 9,
   "unique_authors": 3,
   "reactions_total": 2,
-  "attachments": 2,
+  "attachments": 17,
   "channel_activity": {
+    "D-Tide Leaderboard (2025 May 16)": 3,
+    "活動結束|Event ends🎯攻略征集┊Game Guide collection：V2.2『窺視靈魂之旅』開啟！": 1,
     "✅「已回答」找不到有互相關注的校友的助戰": 2,
     "💭「Processing」Music overlap": 1,
     "關卡地圖「幻夢深潛」總覽Ⅲ": 1,
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "14": 3,
+    "20": 1,
     "18": 1,
     "23": 1,
     "5": 1,
@@ -18,7 +22,7 @@
     "17": 1
   },
   "message_types": {
-    "0": 3
+    "0": 4
   },
   "top_reacted_messages": [
     {

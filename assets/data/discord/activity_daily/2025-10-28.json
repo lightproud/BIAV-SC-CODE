@@ -1,10 +1,22 @@
 {
   "date": "2025-10-28",
-  "messages": 109,
+  "messages": 142,
   "unique_authors": 25,
-  "reactions_total": 189,
-  "attachments": 16,
+  "reactions_total": 266,
+  "attachments": 29,
   "channel_activity": {
+    "Collection of Morimens fanart and doodles": 1,
+    "Clementine!!!": 7,
+    "Sylvester fanart warning": 2,
+    "Ogier": 1,
+    "Pollux WIP": 4,
+    "🔥10000银芯奖励！V2.3.4 UGC创作征集开启！10,000 Silver reward! V2.3.4 UGC Creation Submission Campaign Launched!": 1,
+    "Need Team advice": 6,
+    "Who do i prioritise raising?": 4,
+    "Pulling and Team Advice": 2,
+    "How to obtain ISARAU'S GAZE wheel?": 1,
+    "how to build a good team w my units? who to pull for?": 1,
+    "Team advice/character priority": 3,
     "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 5,
     "✅「Answered」Keeping only the background on homescreen / no awakener": 2,
     "✅「已回答」能不能提高一下每个月兑换高级灵核的数量": 3,
@@ -27,24 +39,30 @@
     "1432654338982940783": 63
   },
   "hourly_activity": {
-    "8": 3,
+    "13": 4,
+    "14": 15,
+    "7": 6,
+    "6": 3,
+    "20": 1,
+    "0": 1,
+    "1": 2,
+    "10": 24,
+    "15": 12,
+    "8": 4,
+    "3": 2,
     "11": 6,
-    "10": 23,
     "9": 52,
     "4": 1,
-    "14": 4,
-    "15": 9,
-    "3": 1,
     "23": 1,
     "17": 1,
     "2": 2,
     "12": 1,
-    "13": 1,
     "16": 4
   },
   "message_types": {
-    "19": 3,
-    "0": 2
+    "0": 24,
+    "4": 2,
+    "19": 7
   },
   "top_reacted_messages": [
     {
@@ -53,6 +71,20 @@
       "author": "game.producer.light",
       "reactions": 113,
       "channel": "🐱light’s-nest"
+    },
+    {
+      "id": "1432723539797999746",
+      "content": "Old doodle and fanart I did for Morimens (I draw Keeper with my sona)",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 45,
+      "channel": "Collection of Morimens fanart and doodles"
+    },
+    {
+      "id": "1432724314221707376",
+      "content": "Sylvester",
+      "author": "su_pp",
+      "reactions": 31,
+      "channel": "Sylvester fanart warning"
     },
     {
       "id": "1432677904533295244",
@@ -116,6 +148,13 @@
       "author": "wesu.",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1432630082144571392",
+      "content": "continue pulling blue for standard, as anni is coming up i think there will be r",
+      "author": "a3th3r_69708",
+      "reactions": 1,
+      "channel": "Pulling and Team Advice"
     },
     {
       "id": "1432672045237407875",

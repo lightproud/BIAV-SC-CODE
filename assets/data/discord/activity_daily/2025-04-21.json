@@ -1,10 +1,15 @@
 {
   "date": "2025-04-21",
-  "messages": 45,
+  "messages": 53,
   "unique_authors": 11,
-  "reactions_total": 1,
-  "attachments": 12,
+  "reactions_total": 10,
+  "attachments": 28,
   "channel_activity": {
+    "This Watercolor Cafe doodle brought to you by: failing to pull 24 in 24 pulls /j": 1,
+    "Flares' Comprehensive Guide V3 (D-Tide/Arc 2 HM/Tier List/24 update)": 1,
+    "Star Chapter 1 + 2 Tier List": 2,
+    "Pls, anyone with ideas for an Ultra team": 1,
+    "【日本語訳】フィードバック": 3,
     "V2.2.0.4 在線維護公告": 2,
     "✅「Answered」24 Chaos Trial bug! Rouse ain't 24!": 5,
     "✅「已回答」原来怨恨锁链是个长达一年的bug吗": 3,
@@ -15,21 +20,31 @@
     "跟我朋友零元購了一個稿，成效甚好": 1
   },
   "hourly_activity": {
+    "6": 7,
+    "0": 1,
+    "5": 4,
+    "8": 1,
+    "7": 1,
     "14": 2,
-    "6": 4,
     "11": 3,
     "15": 3,
     "16": 3,
     "1": 16,
     "3": 6,
     "2": 2,
-    "4": 4,
-    "5": 2
+    "4": 4
   },
   "message_types": {
-    "0": 2
+    "0": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1363763495501303899",
+      "content": "I did not remember how much but I got her after 2 offrates. Welcome home anyway,",
+      "author": "rohaluss",
+      "reactions": 9,
+      "channel": "This Watercolor Cafe doodle brought to you by: failing to pull 24 in 24 pulls /j"
+    },
     {
       "id": "1363694161546580008",
       "content": "原本要發，發現有人發了\n這裡提供影片",

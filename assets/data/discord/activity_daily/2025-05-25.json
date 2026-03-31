@@ -1,10 +1,13 @@
 {
   "date": "2025-05-25",
-  "messages": 30,
+  "messages": 41,
   "unique_authors": 7,
   "reactions_total": 5,
-  "attachments": 5,
+  "attachments": 6,
   "channel_activity": {
+    "V2.2.2 版本前瞻┊V2.2.2 Version Outlook": 7,
+    "🎊銀樞幻衣：4套簡約幻衣限時免費領取┊Awakener Skins: 4 Basic Skins Free for Limited Time Only!": 2,
+    "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!": 2,
     "忘卻前夜OST：希洛EP·以血洗仇": 4,
     "✅校猫碎碎念#序章配音决定": 1,
     "✅前瞻：1.5周年～战斗增强篇": 1,
@@ -13,20 +16,23 @@
     "How do I change the window size?": 5
   },
   "hourly_activity": {
+    "6": 6,
+    "8": 5,
+    "9": 3,
+    "17": 2,
+    "10": 2,
     "3": 5,
     "4": 1,
-    "6": 2,
     "21": 1,
     "7": 5,
-    "8": 4,
-    "9": 1,
     "11": 1,
     "12": 1,
     "13": 5,
     "23": 4
   },
   "message_types": {
-    "0": 6
+    "0": 10,
+    "19": 1
   },
   "top_reacted_messages": [
     {

@@ -1,10 +1,18 @@
 {
   "date": "2025-09-29",
-  "messages": 29,
-  "unique_authors": 7,
-  "reactions_total": 35,
-  "attachments": 4,
+  "messages": 52,
+  "unique_authors": 13,
+  "reactions_total": 40,
+  "attachments": 6,
   "channel_activity": {
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 3,
+    "V2.3.3.0 特别活动「如果一切如常」，奖励一览！Special Event \"If Life Was As Usual\" Rewards Overview!": 2,
+    "求配隊": 3,
+    "Wheels help": 5,
+    "Is there a way to make it so that Blue Tier WoD doesn't get locked?": 6,
+    "What team should I build (caro)": 1,
+    "My game just wont open properly.": 2,
+    "Focus on 1 team for clearing story or 3-4 teams for weekly D-tide rewards?": 1,
     "V2.3.3.0 停服维护公告": 6,
     "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy": 3,
     "✅「Answered」Mobile login via Steam failed - \"the game is not available in your region\"": 2,
@@ -16,23 +24,30 @@
     "血香腸大狗狗": 1
   },
   "hourly_activity": {
+    "7": 1,
+    "8": 9,
+    "9": 3,
+    "10": 2,
+    "1": 1,
+    "4": 2,
+    "16": 10,
+    "5": 4,
+    "17": 1,
+    "23": 4,
+    "21": 1,
+    "6": 2,
     "0": 2,
     "2": 4,
-    "5": 3,
     "15": 2,
     "18": 1,
-    "16": 5,
     "14": 1,
     "20": 1,
-    "6": 1,
-    "8": 7,
-    "10": 1,
     "11": 1
   },
   "message_types": {
-    "0": 5,
-    "19": 1,
-    "6": 3
+    "0": 18,
+    "19": 4,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -50,11 +65,32 @@
       "channel": "V2.3.3.0 停服维护公告"
     },
     {
+      "id": "1422134556437512194",
+      "content": "我破防了",
+      "author": "ernest_heart",
+      "reactions": 3,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
       "id": "1422172515106553926",
       "content": "Compensate for a new piece of information~\nWe previously made an emergency updat",
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「Answered」Collection of Traphase Wrong Descriptions"
+    },
+    {
+      "id": "1422362658174271528",
+      "content": "cant just leave them separate, 16 per type is a lot...",
+      "author": "reverie.is.dead",
+      "reactions": 1,
+      "channel": "Is there a way to make it so that Blue Tier WoD doesn't get locked?"
+    },
+    {
+      "id": "1422156804095344692",
+      "content": "Ill do that",
+      "author": "lt.mustard",
+      "reactions": 1,
+      "channel": "My game just wont open properly."
     },
     {
       "id": "1422232523034984539",

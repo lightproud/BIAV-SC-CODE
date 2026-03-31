@@ -1,10 +1,21 @@
 {
   "date": "2025-11-04",
-  "messages": 124,
-  "unique_authors": 18,
-  "reactions_total": 41,
-  "attachments": 20,
+  "messages": 192,
+  "unique_authors": 20,
+  "reactions_total": 76,
+  "attachments": 33,
   "channel_activity": {
+    "Posters": 2,
+    "Some old meme stuff": 2,
+    "Uvhash": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4 全新唤醒体✦诞妄·墨菲┊New Awakener✦Murphy: Fauxborn": 2,
+    "新人求助": 6,
+    "如果鼠鼠做主c，塔薇做副c的话环娜、卡茜亚、医生放谁啊": 36,
+    "新手問配隊及抽取建議": 9,
+    "新手 求隊伍配置以及後續該朝哪方面補強": 1,
+    "Flares' Comprehensive Beginner Guide to Morimens": 3,
+    "Tawil help": 5,
     "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 2,
     "前瞻：V2.4 忘却篇主线调整 Preview: V2.4 Faded Legacy Main Story Adjustments": 4,
     "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”": 1,
@@ -35,33 +46,53 @@
     "🔸欢乐梗图": 1
   },
   "hourly_activity": {
-    "14": 3,
+    "22": 9,
+    "4": 3,
+    "2": 7,
+    "13": 6,
+    "0": 2,
+    "1": 1,
+    "23": 3,
+    "10": 43,
+    "11": 19,
+    "14": 8,
+    "15": 9,
+    "19": 2,
+    "18": 5,
+    "5": 1,
+    "8": 15,
     "6": 22,
     "9": 5,
-    "10": 32,
     "16": 2,
-    "15": 8,
-    "8": 14,
     "3": 10,
-    "11": 1,
-    "13": 3,
-    "4": 1,
-    "12": 20,
-    "0": 1,
-    "2": 1,
-    "19": 1
+    "12": 20
   },
   "message_types": {
-    "0": 6,
-    "19": 1
+    "0": 41,
+    "19": 26,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1435391083986026547",
+      "content": "I`m not so good at drawing but I do graphic design plus I saw that artworks are ",
+      "author": "chiedgaf",
+      "reactions": 16,
+      "channel": "Posters"
+    },
     {
       "id": "1435285774877720677",
       "content": "做了一個非洲P\nthink chaos, think !\nthis is how to compensate the players ~~發100普抽~~",
       "author": "oct3000",
       "reactions": 8,
       "channel": "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上"
+    },
+    {
+      "id": "1435127491877535764",
+      "content": "",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 6,
+      "channel": "Some old meme stuff"
     },
     {
       "id": "1435274800586162299",
@@ -76,6 +107,13 @@
       "author": "wolfierce",
       "reactions": 6,
       "channel": "✅「Answered」Make Doresain overflow damage on others when killing"
+    },
+    {
+      "id": "1435336643090583734",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "新手問配隊及抽取建議"
     },
     {
       "id": "1435150569387065446",
@@ -99,6 +137,27 @@
       "channel": "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上"
     },
     {
+      "id": "1435229674778398750",
+      "content": "100834592",
+      "author": "corposant_1003",
+      "reactions": 2,
+      "channel": "如果鼠鼠做主c，塔薇做副c的话环娜、卡茜亚、医生放谁啊"
+    },
+    {
+      "id": "1435231751852265523",
+      "content": "好的好的，谢谢你😘😘😘",
+      "author": "kapibala001",
+      "reactions": 2,
+      "channel": "如果鼠鼠做主c，塔薇做副c的话环娜、卡茜亚、医生放谁啊"
+    },
+    {
+      "id": "1435404784222863431",
+      "content": "可以跟我借，目前詩人+11了，過一陣子就滿了",
+      "author": "universe.dark",
+      "reactions": 2,
+      "channel": "如果鼠鼠做主c，塔薇做副c的话环娜、卡茜亚、医生放谁啊"
+    },
+    {
       "id": "1435286293327122533",
       "content": "I have Sorel with 16 copies, but when I pull on her banner I still get only 1 re",
       "author": "dragonshiny7",
@@ -120,6 +179,20 @@
       "channel": "有鑑於現在卡厄思快死透了，我們忘卻前夜蒸蒸日上"
     },
     {
+      "id": "1435403090386878564",
+      "content": "That's really cool.",
+      "author": "i_me_myself_caffeine",
+      "reactions": 1,
+      "channel": "Posters"
+    },
+    {
+      "id": "1435329917456879708",
+      "content": "你有興趣想玩看看塔薇再玩就好，溫柯爾奧爾拉克萊門汀這三個拴蘿坦就能玩了",
+      "author": "ena04564",
+      "reactions": 1,
+      "channel": "新手問配隊及抽取建議"
+    },
+    {
       "id": "1435218732145446922",
       "content": "Hi, we will fix it in the next version update",
       "author": "morimensstaff01",
@@ -139,27 +212,6 @@
       "author": "morimensstaff01",
       "reactions": 1,
       "channel": "✅「Answered」MAKE BOSSES LESS HARD TO NEW PLAYERS"
-    },
-    {
-      "id": "1435107886769373245",
-      "content": "嗨，这里确实存在问题，后续会进行修复~预计下个版本放出",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」希萊斯特及圖魯卡面文字誤植"
-    },
-    {
-      "id": "1435106867708952578",
-      "content": "",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "✅「Answered」About new Ryker buff"
-    },
-    {
-      "id": "1435061895563575347",
-      "content": "好像要超限哎",
-      "author": "saltyfish_alpha",
-      "reactions": 1,
-      "channel": "这次新的up池最值得抽的是哪一位？"
     }
   ]
 }

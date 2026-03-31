@@ -1,10 +1,12 @@
 {
   "date": "2024-12-24",
-  "messages": 118,
+  "messages": 124,
   "unique_authors": 29,
   "reactions_total": 73,
-  "attachments": 9,
+  "attachments": 14,
   "channel_activity": {
+    "Morimens loading screen lore compilation": 5,
+    "Can someone recap a story about tawil for me about how she turned to a monster at very beginning?": 1,
     "官方周邊建議征集": 3,
     "🏆【已開獎】彌薩格週年頒獎典禮": 10,
     "✅重生与致歉": 85,
@@ -21,11 +23,11 @@
     "Aomi 的忘郤前夜 Morimens作品角": 2
   },
   "hourly_activity": {
+    "5": 11,
+    "10": 10,
     "4": 6,
     "9": 12,
-    "10": 9,
     "2": 4,
-    "5": 6,
     "12": 5,
     "15": 5,
     "6": 37,
@@ -39,9 +41,7 @@
     "19": 1
   },
   "message_types": {
-    "0": 83,
-    "19": 14,
-    "6": 1
+    "0": 6
   },
   "top_reacted_messages": [
     {

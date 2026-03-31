@@ -1,10 +1,15 @@
 {
   "date": "2025-08-23",
-  "messages": 48,
-  "unique_authors": 11,
-  "reactions_total": 54,
-  "attachments": 5,
+  "messages": 67,
+  "unique_authors": 12,
+  "reactions_total": 88,
+  "attachments": 7,
   "channel_activity": {
+    "Tawil fan model": 8,
+    "ogier": 1,
+    "[Doll] Brain in a Bat~": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 8,
+    "Need help with wheels of destiny": 1,
     "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们": 16,
     "✅「Answered」Normal battle is treat as boss battle in H9-11": 1,
     "✅「Answered」Suggestion: Please allow us to toggle Enlightens!": 4,
@@ -16,29 +21,39 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
+    "2": 5,
+    "3": 14,
+    "14": 4,
+    "4": 1,
+    "5": 4,
+    "6": 4,
+    "13": 1,
+    "20": 2,
     "1": 3,
-    "3": 9,
     "11": 5,
     "12": 3,
     "19": 2,
-    "5": 2,
-    "6": 3,
     "9": 4,
     "8": 5,
-    "20": 1,
     "0": 1,
     "7": 1,
     "16": 1,
     "18": 3,
     "17": 2,
-    "15": 2,
-    "14": 1
+    "15": 2
   },
   "message_types": {
-    "0": 8,
-    "19": 8
+    "19": 7,
+    "0": 12
   },
   "top_reacted_messages": [
+    {
+      "id": "1408816528656171038",
+      "content": "I'm admittedly not really good at drawing or coloring (also it's like my first \"",
+      "author": "zier.0",
+      "reactions": 33,
+      "channel": "[Doll] Brain in a Bat~"
+    },
     {
       "id": "1408838316153114716",
       "content": "alternate title: **so you want to make an Awakener OC, now what?**\n\nNiko is back",
@@ -94,6 +109,13 @@
       "author": "ahong0727",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1408653958632701982",
+      "content": "its day here but thanks!",
+      "author": "cooked_chicken99",
+      "reactions": 1,
+      "channel": "Tawil fan model"
     },
     {
       "id": "1408779634266603684",

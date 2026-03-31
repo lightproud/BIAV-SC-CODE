@@ -1,10 +1,12 @@
 {
   "date": "2024-11-07",
-  "messages": 70,
+  "messages": 80,
   "unique_authors": 10,
-  "reactions_total": 33,
-  "attachments": 14,
+  "reactions_total": 94,
+  "attachments": 17,
   "channel_activity": {
+    "Posse List": 9,
+    "GPT translation synonyms": 1,
     "V1.6.5.2 在線維護公告": 1,
     "御四家除朵尔和两个希洛档案中部分语音缺失": 3,
     "為什麼希洛這麼好看": 5,
@@ -19,14 +21,14 @@
     "原作里:": 29
   },
   "hourly_activity": {
+    "10": 13,
+    "14": 17,
     "9": 5,
     "15": 16,
     "11": 6,
     "16": 3,
     "7": 1,
     "8": 7,
-    "14": 15,
-    "10": 5,
     "4": 3,
     "2": 5,
     "1": 1,
@@ -34,9 +36,23 @@
     "3": 2
   },
   "message_types": {
-    "19": 1
+    "0": 10
   },
   "top_reacted_messages": [
+    {
+      "id": "1304088785650188288",
+      "content": "A list of GPT-English translation key words. Use this list as a reference for aw",
+      "author": "_venush",
+      "reactions": 41,
+      "channel": "GPT translation synonyms"
+    },
+    {
+      "id": "1304034169772576829",
+      "content": "I'm listing every Posse available in the game (please tell me if i missed some)",
+      "author": "maximus__111",
+      "reactions": 15,
+      "channel": "Posse List"
+    },
     {
       "id": "1304004213872791582",
       "content": "",
@@ -50,6 +66,13 @@
       "author": "flim_of_life_burst",
       "reactions": 6,
       "channel": "有點像是三創了.jpg"
+    },
+    {
+      "id": "1304093721989615768",
+      "content": "One additional note, you guys can see the Posse list here on this excel link too",
+      "author": "maximus__111",
+      "reactions": 5,
+      "channel": "Posse List"
     },
     {
       "id": "1304038854445240410",

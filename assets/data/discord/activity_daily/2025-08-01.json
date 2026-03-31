@@ -1,10 +1,12 @@
 {
   "date": "2025-08-01",
-  "messages": 71,
+  "messages": 76,
   "unique_authors": 12,
-  "reactions_total": 23,
-  "attachments": 25,
+  "reactions_total": 88,
+  "attachments": 27,
   "channel_activity": {
+    "Ghoul": 4,
+    "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind": 1,
     "Call for Community Volunteer Translators: Applications Open!": 2,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 5,
     "✅「已回答」调查数据bug：最高力量": 5,
@@ -24,35 +26,58 @@
     "1350060160739184690": 2
   },
   "hourly_activity": {
+    "15": 3,
+    "16": 9,
+    "17": 6,
+    "18": 1,
     "4": 27,
     "7": 1,
-    "16": 7,
     "1": 2,
     "2": 2,
     "11": 1,
     "12": 1,
     "19": 1,
-    "15": 2,
     "6": 6,
     "8": 2,
     "3": 9,
     "14": 1,
     "0": 1,
     "5": 1,
-    "17": 5,
     "9": 1,
     "10": 1
   },
   "message_types": {
-    "19": 2
+    "0": 4,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1400864511279239309",
+      "content": "UID: \n\n\"What if Sylvester (Male MC) embraces Necrovia's culture and turns into a",
+      "author": "ayla1425",
+      "reactions": 46,
+      "channel": "Ghoul"
+    },
+    {
+      "id": "1400871871569723453",
+      "content": "I just realized that I posted the wrong one! Only minor change with the flower <",
+      "author": "ayla1425",
+      "reactions": 14,
+      "channel": "Ghoul"
+    },
     {
       "id": "1400694998709833788",
       "content": "We'll be reaching out to our selected volunteers through Discord. We've saved yo",
       "author": "morimens_15",
       "reactions": 13,
       "channel": "Call for Community Volunteer Translators: Applications Open!"
+    },
+    {
+      "id": "1400914204659290113",
+      "content": "I've been quite busy in real life, but in the next week or so I plan to update t",
+      "author": "reya.li",
+      "reactions": 4,
+      "channel": "An Uvhash Guide to Dealing Death and (perhaps) not Receiving It in Kind"
     },
     {
       "id": "1400762010345410632",
@@ -67,6 +92,13 @@
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「已回答」调查数据bug：最高力量"
+    },
+    {
+      "id": "1400891222603599924",
+      "content": "Yes. I have been experimenting with different styles lately so I thought of maki",
+      "author": "ayla1425",
+      "reactions": 1,
+      "channel": "Ghoul"
     },
     {
       "id": "1400685122319155263",

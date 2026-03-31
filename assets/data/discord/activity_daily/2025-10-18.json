@@ -1,10 +1,16 @@
 {
   "date": "2025-10-18",
-  "messages": 44,
-  "unique_authors": 13,
-  "reactions_total": 19,
-  "attachments": 9,
+  "messages": 97,
+  "unique_authors": 21,
+  "reactions_total": 39,
+  "attachments": 12,
   "channel_activity": {
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 1,
+    "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction": 1,
+    "📜V2.3.4 版本前瞻┊ Version Outlook": 13,
+    "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!": 7,
+    "血肉队主线成就": 3,
+    "請教關於銀輝啟程初回特典值得買嗎": 28,
     "誕妄墨菲立繪": 25,
     "✅「已回答」汀克特【安魂曲】bug": 10,
     "✅「Answered」Event currency bug": 6,
@@ -13,22 +19,29 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "4": 7,
-    "7": 2,
-    "8": 1,
-    "9": 7,
+    "2": 1,
+    "10": 3,
+    "9": 8,
+    "11": 8,
+    "13": 9,
+    "14": 2,
+    "8": 4,
+    "16": 2,
+    "22": 1,
+    "23": 2,
+    "4": 10,
+    "6": 25,
+    "7": 3,
     "12": 4,
-    "13": 7,
     "18": 1,
     "0": 6,
     "1": 4,
     "3": 3,
-    "5": 1,
-    "14": 1
+    "5": 1
   },
   "message_types": {
-    "0": 36,
-    "19": 6
+    "0": 39,
+    "19": 14
   },
   "top_reacted_messages": [
     {
@@ -37,6 +50,34 @@
       "author": "yingmai_",
       "reactions": 10,
       "channel": ""
+    },
+    {
+      "id": "1429062055578566731",
+      "content": "She dose not look happy about this lol",
+      "author": "whydoihavetodothis69",
+      "reactions": 6,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1429251530040676524",
+      "content": "Wonder what smug candy tastes like<:M_satisfy:1400771690321154110>",
+      "author": "whydoihavetodothis69",
+      "reactions": 5,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1429046554584551475",
+      "content": "No quasar or leap?",
+      "author": "rose_okkotsu",
+      "reactions": 3,
+      "channel": "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1429061367939334186",
+      "content": "I like new one better\nOld one is white eyes, white skin low contrast, feels like",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
     },
     {
       "id": "1429033129955295342",
@@ -58,6 +99,34 @@
       "author": "tksn.",
       "reactions": 2,
       "channel": "✅「Answered」Event currency bug"
+    },
+    {
+      "id": "1429046249067380799",
+      "content": "Old one captures the Gmurphy vibes better. The new one looks more generic.",
+      "author": "morified53",
+      "reactions": 1,
+      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1429063936128319680",
+      "content": "GMurphy is Murphy but what if she’s not the cake lover we know and already disca",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1429064070455099402",
+      "content": "tldr: red eyes suck",
+      "author": "_venush",
+      "reactions": 1,
+      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1429064665383567381",
+      "content": "Couldn't you keep it red but just dead",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
     },
     {
       "id": "1429028344250372106",

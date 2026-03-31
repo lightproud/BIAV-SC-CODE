@@ -1,10 +1,19 @@
 {
   "date": "2025-11-30",
-  "messages": 204,
+  "messages": 265,
   "unique_authors": 34,
-  "reactions_total": 410,
-  "attachments": 38,
+  "reactions_total": 492,
+  "attachments": 57,
   "channel_activity": {
+    "morimens pixel art": 1,
+    "sanga x pickman wip": 1,
+    "Working on karma bridge(alsnt) with morimens (wip drawings, editing)": 5,
+    "V2.4.0.7 版本前瞻 ┊ Version Outlook": 39,
+    "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!": 3,
+    "問問選哪個好？想選凱蒂古拉組第二個隊但不知道0+0能不能用:dead:": 3,
+    "Team building and which banner to pull": 6,
+    "Teambuilding": 1,
+    "Possible Teams for D-Tide I can make?": 2,
     "V2.4.0.7 停服维护公告": 90,
     "💭「Processing」Morimens freeze when I log in": 2,
     "💭「Processing」PLEASE remove the auto-scroll.": 4,
@@ -35,31 +44,32 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "7": 67,
+    "13": 8,
+    "4": 14,
+    "6": 33,
+    "2": 7,
+    "3": 7,
+    "5": 11,
+    "7": 78,
+    "10": 8,
+    "14": 20,
+    "19": 8,
+    "12": 10,
+    "15": 7,
+    "22": 3,
+    "23": 4,
+    "0": 12,
     "8": 11,
     "9": 7,
-    "10": 6,
     "11": 6,
-    "12": 9,
-    "13": 6,
-    "14": 19,
-    "15": 5,
     "16": 3,
-    "6": 31,
     "17": 2,
-    "3": 2,
-    "5": 6,
-    "23": 3,
-    "0": 6,
     "20": 4,
-    "4": 3,
-    "2": 5,
-    "1": 2,
-    "22": 1
+    "1": 2
   },
   "message_types": {
-    "0": 80,
-    "19": 10
+    "0": 46,
+    "19": 15
   },
   "top_reacted_messages": [
     {
@@ -75,6 +85,13 @@
       "author": "chuzhibai.",
       "reactions": 39,
       "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1444683552963952780",
+      "content": "reverse!! <:goodjob2:1356053078738206840>",
+      "author": "aigiseu_98967",
+      "reactions": 32,
+      "channel": "morimens pixel art"
     },
     {
       "id": "1444707613433401546",
@@ -98,6 +115,13 @@
       "channel": "⟨提燈雙子 - 破曉⟩"
     },
     {
+      "id": "1444686189402787870",
+      "content": "(base by @ anibase_busan on twit bcs my wrists got debuffed)",
+      "author": "casual_gh0st",
+      "reactions": 14,
+      "channel": "sanga x pickman wip"
+    },
+    {
       "id": "1444632081752657980",
       "content": "● 修复了玩家恶意氪金抽取诞墨的bug\n● 修复了玩家蓄意游玩忘却前夜困难主线的bug",
       "author": "kpkp784755247",
@@ -119,6 +143,20 @@
       "channel": "自製喚醒體：異度·索瓦爾格"
     },
     {
+      "id": "1444672600964989113",
+      "content": "I might be late. Take this as a gift anyway :3\n101056872",
+      "author": "reu8090",
+      "reactions": 10,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1444559068038697060",
+      "content": "I wish devs would reconsider this event. At its current state it seems like it's",
+      "author": "binkureru",
+      "reactions": 9,
+      "channel": "V2.4.0.7 版本前瞻 ┊ Version Outlook"
+    },
+    {
       "id": "1444672476633108602",
       "content": "没过几天星辰来",
       "author": "carme.0588",
@@ -131,6 +169,13 @@
       "author": "1234789aa",
       "reactions": 9,
       "channel": "V2.4.0.7 停服维护公告"
+    },
+    {
+      "id": "1444715837368832070",
+      "content": "uid:100425926     是杜勒赛因和皮克曼印象画的。",
+      "author": "dittoqwq",
+      "reactions": 8,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
     },
     {
       "id": "1444656766922260661",
@@ -166,41 +211,6 @@
       "author": "wild_pansy",
       "reactions": 7,
       "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
-    },
-    {
-      "id": "1444577971439534160",
-      "content": "我打的",
-      "author": "sweet_25367",
-      "reactions": 7,
-      "channel": "不抽sp墨菲是不配拿h4-10的300银芯成就奖励吗！"
-    },
-    {
-      "id": "1444589994525065307",
-      "content": "赶紧去吃屎证明自己的实力",
-      "author": "junakaru4ever",
-      "reactions": 6,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444663331632844830",
-      "content": "666又要请离开了吗，想你了大福袋",
-      "author": "banli42",
-      "reactions": 6,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444670065474535515",
-      "content": "这里<:pray:1356053116260454534>",
-      "author": "sweet_25367",
-      "reactions": 5,
-      "channel": "V2.4.0.7 停服维护公告"
-    },
-    {
-      "id": "1444516872010731602",
-      "content": "静海盾可达",
-      "author": "timee_ky",
-      "reactions": 5,
-      "channel": "纯血神国..."
     }
   ]
 }

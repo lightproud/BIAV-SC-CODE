@@ -1,10 +1,17 @@
 {
   "date": "2025-05-07",
-  "messages": 89,
+  "messages": 108,
   "unique_authors": 22,
-  "reactions_total": 121,
-  "attachments": 27,
+  "reactions_total": 152,
+  "attachments": 30,
   "channel_activity": {
+    "Goliath": 1,
+    "Ogier sketch": 2,
+    "\"Embrace Thy True Self\" - Morimens Audio Drama [EN Fandub] ~Acapella~": 1,
+    "Clementine": 1,
+    "Murphy (Cropped Version)": 10,
+    "🐾喚醒體五一遊記┊Awaker Holiday Travels": 3,
+    "有塔薇佬的腿可以抱吗": 1,
     "Complete glossary of Wheel of Destiny names": 5,
     "V2.2.1.3 在線維護公告": 24,
     "忘卻前夜OST：無還的血與沙": 6,
@@ -24,26 +31,27 @@
     "1350059696945500171": 2
   },
   "hourly_activity": {
+    "5": 6,
+    "19": 3,
+    "21": 1,
+    "17": 4,
+    "3": 5,
+    "15": 13,
+    "16": 3,
+    "6": 5,
+    "12": 8,
     "13": 18,
     "14": 17,
-    "17": 3,
-    "19": 2,
     "8": 9,
     "4": 4,
-    "5": 5,
-    "12": 7,
     "9": 1,
-    "15": 5,
-    "6": 2,
     "1": 2,
     "2": 6,
-    "3": 4,
-    "16": 1,
     "18": 1,
     "7": 2
   },
   "message_types": {
-    "0": 39,
+    "0": 15,
     "19": 4
   },
   "top_reacted_messages": [
@@ -62,11 +70,25 @@
       "channel": "Complete glossary of Wheel of Destiny names"
     },
     {
+      "id": "1369757758613618729",
+      "content": "Idk I just like him for some reason.",
+      "author": "happyskull",
+      "reactions": 14,
+      "channel": "Ogier sketch"
+    },
+    {
       "id": "1369669171620745329",
       "content": "Greetings, Keepers!\n    Today we are bringing you a complete glossary of Wheel o",
       "author": "morimensstaff02",
       "reactions": 11,
       "channel": "Complete glossary of Wheel of Destiny names"
+    },
+    {
+      "id": "1369691248784310444",
+      "content": "I DON'T HAVE NITRO PLEASE CHECK MY CARA OR TUMBLR FOR FULL VERSION (cry in poor)",
+      "author": "rohaluss",
+      "reactions": 9,
+      "channel": "Murphy (Cropped Version)"
     },
     {
       "id": "1369668725783138324",
@@ -111,6 +133,20 @@
       "channel": ""
     },
     {
+      "id": "1369711689775316992",
+      "content": "https://tenor.com/view/morimens-murphy-irish-irish-princess-gacha-gif-4210723630",
+      "author": "reya.li",
+      "reactions": 2,
+      "channel": "Murphy (Cropped Version)"
+    },
+    {
+      "id": "1369562331901591604",
+      "content": "<@854689680305160212>「我在看著你…👁️ 」恭喜獲得200銀芯獎勵，請把遊戲UID私訊給我~\n«Я наблюдаю за тобой...",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
+    },
+    {
       "id": "1369689103813185645",
       "content": "we need that archive section up and running",
       "author": "monchi3524",
@@ -139,46 +175,25 @@
       "channel": "星辰篇的所有敵人應該在狀態説明那邊説清楚是什麽分類的敵人"
     },
     {
-      "id": "1369760658891210762",
-      "content": "全遊戲只有深海限定是多少帶著負面效果的\n墨菲要處理獻祭\n彌利有執妄卡手\n克珀有領航牌庫污染",
-      "author": "ernest_heart",
+      "id": "1369543195230208122",
+      "content": "U DID IT WOOOO <a:LETSGO:909313455482347530> <:gooned:1323426486543454332> <a:Su",
+      "author": "meatyexplosions",
       "reactions": 1,
-      "channel": "V2.2.1.3 在線維護公告"
+      "channel": "Goliath"
     },
     {
-      "id": "1369722828336795780",
-      "content": "<:wish:1356084702468899117> Thank you so much for fixing this! 🙏",
-      "author": "rei_the_witch",
+      "id": "1369694749006631002",
+      "content": "Aaaaah, phone user, now I understand",
+      "author": "__goz__",
       "reactions": 1,
-      "channel": "✅「Answered」 Strike to protect Bug"
+      "channel": "Murphy (Cropped Version)"
     },
     {
-      "id": "1369530953680158831",
-      "content": "Can we change\"The discarded card in hand \"Aftershock\" trigger additional 1 times",
-      "author": "aegisx",
+      "id": "1369562126825422998",
+      "content": "<@735137568307282011> 美麗的路邊似乎潛藏著「危機」~恭喜keeper獲得200銀芯獎勵，請把遊戲UID私訊給我~\nThe beautifu",
+      "author": "morimensstaff01",
       "reactions": 1,
-      "channel": "For Corposant Overexalt"
-    },
-    {
-      "id": "1369654444144197652",
-      "content": "the thing i dont like is you waste a lot for Overexalt and after that u need sta",
-      "author": "aegisx",
-      "reactions": 1,
-      "channel": "For Corposant Overexalt"
-    },
-    {
-      "id": "1369482127309017188",
-      "content": "I recommend using 'til instead of until because it is nuanced with current day u",
-      "author": "satachan",
-      "reactions": 1,
-      "channel": "✅「Answered」Spelling mistakes in wheel of destiny"
-    },
-    {
-      "id": "1369506319924592711",
-      "content": "\"Until The Snow Melts\" is more appropriate",
-      "author": "cometovilla",
-      "reactions": 1,
-      "channel": "✅「Answered」Spelling mistakes in wheel of destiny"
+      "channel": "🐾喚醒體五一遊記┊Awaker Holiday Travels"
     }
   ]
 }

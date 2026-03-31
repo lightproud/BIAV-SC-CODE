@@ -1,10 +1,11 @@
 {
   "date": "2026-02-05",
-  "messages": 9694,
+  "messages": 9782,
   "unique_authors": 183,
-  "reactions_total": 1477,
-  "attachments": 352,
+  "reactions_total": 1513,
+  "attachments": 359,
   "channel_activity": {
+    "V2.4.2.2 版本前瞻 ┊ Version Outlook": 88,
     "Xu but i gave her a monster mouth": 8,
     "clementine moment": 1,
     "✅「已回答」求助！这是什么bug！": 1,
@@ -22,34 +23,34 @@
     "🔸morimens-game-chat": 7628
   },
   "hourly_activity": {
+    "6": 453,
+    "7": 758,
+    "8": 778,
+    "9": 887,
+    "10": 537,
+    "11": 537,
+    "12": 703,
+    "13": 600,
+    "14": 553,
+    "15": 544,
+    "23": 348,
     "0": 225,
-    "7": 733,
-    "11": 535,
-    "12": 699,
-    "14": 547,
     "5": 174,
-    "13": 599,
-    "15": 541,
     "19": 188,
     "22": 136,
-    "9": 871,
     "3": 261,
     "18": 298,
     "4": 109,
     "21": 269,
-    "8": 762,
     "1": 258,
     "2": 311,
-    "6": 444,
-    "10": 533,
     "16": 312,
     "17": 164,
-    "20": 379,
-    "23": 346
+    "20": 379
   },
   "message_types": {
-    "0": 8,
-    "19": 1
+    "19": 15,
+    "0": 73
   },
   "top_reacted_messages": [
     {
@@ -93,6 +94,13 @@
       "author": "frosthief",
       "reactions": 9,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1468877518474842228",
+      "content": "The name <:takenotes:1357186646294138890>",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "V2.4.2.2 版本前瞻 ┊ Version Outlook"
     },
     {
       "id": "1468769229900611664",
@@ -144,6 +152,13 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1468974733793034240",
+      "content": "This event celebrates the Lunar New Year.",
+      "author": "ena04564",
+      "reactions": 6,
+      "channel": "V2.4.2.2 版本前瞻 ┊ Version Outlook"
+    },
+    {
       "id": "1468782118673842268",
       "content": "",
       "author": "water_heart",
@@ -175,20 +190,6 @@
       "id": "1468879408130424915",
       "content": "the new gamemode is where daff will shine",
       "author": "princess.goth",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1468933931696001167",
-      "content": "Pull 24 for \"Yes I tried blue 24 and it sucks\" badge",
-      "author": "2ndselna",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1468935750564319313",
-      "content": "No one is excited for it",
-      "author": "undeterredhomo",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }

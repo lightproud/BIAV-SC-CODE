@@ -1,10 +1,15 @@
 {
   "date": "2025-05-21",
-  "messages": 32,
-  "unique_authors": 6,
-  "reactions_total": 8,
-  "attachments": 4,
+  "messages": 156,
+  "unique_authors": 33,
+  "reactions_total": 86,
+  "attachments": 10,
   "channel_activity": {
+    "Seimau Art": 1,
+    "🎊喚醒體爆料：漆黑之羽┊Awaker Revelations:The Dark Feather": 6,
+    "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!": 84,
+    "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!": 32,
+    "💘520的奇怪快遞┊520's Strange Express Delivery": 1,
     "忘卻前夜OST：奧吉爾EP·無愧榮光": 1,
     "✅「已回答」520信件缺失": 4,
     "✅「Answered」Game text bugged in tawil and traphase": 2,
@@ -19,28 +24,88 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "8": 2,
-    "2": 12,
+    "2": 13,
+    "0": 2,
+    "1": 3,
+    "7": 17,
+    "11": 47,
+    "8": 27,
+    "9": 11,
+    "10": 12,
+    "23": 4,
+    "6": 8,
     "3": 7,
-    "6": 1,
     "4": 3,
     "5": 1,
-    "0": 1,
-    "1": 2,
-    "7": 1,
-    "20": 1,
-    "23": 1
+    "20": 1
   },
   "message_types": {
-    "19": 1
+    "0": 110,
+    "19": 14
   },
   "top_reacted_messages": [
+    {
+      "id": "1374639639314301009",
+      "content": "⭐校慶舞台上巨大輪盤呼呼轉動，在萊克的好運Buff加成下，指針停在了最終大獎「數不清的▒▒▒▒」！\n⭐在5 月 26 日 9:00- 6 月 9 日 9:00 ",
+      "author": "morimensstaff01",
+      "reactions": 22,
+      "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
+    },
+    {
+      "id": "1374661659905232906",
+      "content": "墊腳💃旋轉🕺，伴著校慶盛大的音樂與舞伴跳一曲華爾茲~\n守密人會牽手哪位喚醒體漫步舞池呢？活動開啟後，在留言區分享你的舞伴，有機會收穫「驚喜」~\n\n⭐**活動時間",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!"
+    },
+    {
+      "id": "1374641156939579432",
+      "content": "I count 100. Pure Core x100!",
+      "author": "mengluo",
+      "reactions": 18,
+      "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
+    },
+    {
+      "id": "1374689492429963294",
+      "content": "无垢之芯x1 蔷薇金券x1",
+      "author": "muliupan",
+      "reactions": 8,
+      "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
+    },
+    {
+      "id": "1374668512232079452",
+      "content": "~~這個活動感覺隨機得很歹毒~~",
+      "author": "kong760",
+      "reactions": 5,
+      "channel": "🎊必得召喚：牽手舞伴盡情旋轉吧┊Guaranteed Awakening: Dance with Your Fated Partner!"
+    },
+    {
+      "id": "1374641073741238312",
+      "content": "Please give us Dream Dive skip tickets, I have finals exams and I shouldn't spen",
+      "author": "zier.0",
+      "reactions": 5,
+      "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
+    },
     {
       "id": "1374550794732441672",
       "content": "yup of course!!\nSo glad  that you remember him😭😭",
       "author": "flim_of_life_burst",
       "reactions": 3,
       "channel": "拿下索瓦爾格商用權了慶祝一下XD"
+    },
+    {
+      "id": "1374577696369283243",
+      "content": "<:bow:1356053037159944473>",
+      "author": "cometovilla",
+      "reactions": 1,
+      "channel": "Seimau Art"
+    },
+    {
+      "id": "1374651392115085393",
+      "content": "沒仔細看 我還一直點黑色防雷\n<:cry2:1356068126894194758>",
+      "author": "_buqi",
+      "reactions": 1,
+      "channel": "🎊登錄就送：用幸運輪盤轉個好禮┊Login Bonus: Spin the Lucky Wheel for Gifts!"
     },
     {
       "id": "1374666364857483344",

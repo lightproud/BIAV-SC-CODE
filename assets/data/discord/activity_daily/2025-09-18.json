@@ -1,10 +1,23 @@
 {
   "date": "2025-09-18",
-  "messages": 50,
-  "unique_authors": 8,
-  "reactions_total": 54,
-  "attachments": 2,
+  "messages": 78,
+  "unique_authors": 17,
+  "reactions_total": 58,
+  "attachments": 20,
   "channel_activity": {
+    "Tulu keychain!!!": 1,
+    "Tawil Eat Clementine Wings (Dumb Request)": 1,
+    "Morimens Glossary (Wheels and Covenants equip guide)": 1,
+    "Morimens: Game Mechanics and Terms": 2,
+    "刚入坑，这个配队可以吗？": 6,
+    "Flares' Comprehensive Beginner Guide to Morimens": 1,
+    "What should i aim for": 3,
+    "Horla or pickman": 2,
+    "Good teams?": 1,
+    "General purpose team ideas?": 2,
+    "Why are the opponents getting damage when they attack even without counter?": 4,
+    "Teams to build?": 2,
+    "Teambuilding help": 2,
     "💭「Processing」Pickman - Chromaphage \"inspiration\"": 2,
     "✅「Answered」Not Crediting Highest Score/Rank in Deep Dive": 4,
     "✅「Answered」We need steamOS compatibility": 1,
@@ -28,23 +41,32 @@
     "短小精悍的腦洞皮杜刀（？": 4
   },
   "hourly_activity": {
-    "10": 21,
+    "8": 2,
+    "13": 1,
+    "20": 2,
+    "16": 1,
+    "2": 1,
+    "3": 5,
+    "1": 2,
+    "19": 5,
+    "22": 1,
+    "23": 1,
+    "10": 22,
+    "17": 1,
+    "0": 3,
+    "14": 5,
+    "6": 3,
     "9": 10,
     "11": 4,
     "12": 2,
-    "8": 1,
     "18": 1,
-    "19": 1,
     "5": 3,
-    "6": 2,
     "7": 1,
-    "14": 2,
     "15": 2
   },
   "message_types": {
-    "0": 20,
-    "4": 15,
-    "19": 3
+    "0": 26,
+    "19": 2
   },
   "top_reacted_messages": [
     {
@@ -88,6 +110,34 @@
       "author": "corposant_1003",
       "reactions": 2,
       "channel": "✅「已回答」請問官網充值是否可以避免平台扣30%的抽成?"
+    },
+    {
+      "id": "1418154783017144320",
+      "content": "Envy and jealousy of you\nI need this cool thing too.",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "Tulu keychain!!!"
+    },
+    {
+      "id": "1418276793021890701",
+      "content": "Very useful, thank you!",
+      "author": "virkanam",
+      "reactions": 1,
+      "channel": "Morimens: Game Mechanics and Terms"
+    },
+    {
+      "id": "1418280500073598986",
+      "content": "Goli Ramona naut orgier. Goli dmg will fall off mid-late game though",
+      "author": "iibenigml1588",
+      "reactions": 1,
+      "channel": "General purpose team ideas?"
+    },
+    {
+      "id": "1418237963250172056",
+      "content": "",
+      "author": "sanki___",
+      "reactions": 1,
+      "channel": "Why are the opponents getting damage when they attack even without counter?"
     },
     {
       "id": "1418179428340469872",

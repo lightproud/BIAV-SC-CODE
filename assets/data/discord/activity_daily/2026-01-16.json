@@ -1,10 +1,16 @@
 {
   "date": "2026-01-16",
-  "messages": 60,
-  "unique_authors": 9,
-  "reactions_total": 85,
-  "attachments": 22,
+  "messages": 162,
+  "unique_authors": 40,
+  "reactions_total": 214,
+  "attachments": 29,
   "channel_activity": {
+    "G Murphy Fan Splash": 6,
+    "I errrr #3. (Kath and Corpo.": 4,
+    "\"All-Father, please let me end everyone's suffering...\"": 1,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 5,
+    "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu": 82,
+    "Team Guidance/Character Investment Suggestions": 4,
     "V2.4.1.3 在线维护公告": 7,
     "[Art Dump Thread] WILLIAMPOSTING 2": 4,
     "Art dump thread": 4,
@@ -27,29 +33,39 @@
     "1455822126568308957": 1
   },
   "hourly_activity": {
+    "18": 14,
+    "20": 4,
+    "21": 2,
+    "13": 5,
+    "16": 6,
+    "9": 29,
+    "10": 9,
+    "11": 6,
+    "12": 3,
+    "8": 47,
+    "15": 7,
+    "19": 12,
     "7": 7,
-    "8": 2,
-    "16": 4,
-    "20": 1,
     "22": 3,
     "0": 3,
     "3": 2,
-    "18": 11,
-    "15": 6,
-    "13": 2,
     "4": 1,
     "5": 1,
-    "19": 10,
-    "11": 3,
-    "12": 2,
-    "1": 1,
-    "21": 1
+    "1": 1
   },
   "message_types": {
-    "0": 13,
-    "19": 2
+    "0": 82,
+    "19": 19,
+    "6": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1461662094352187432",
+      "content": "no it's not",
+      "author": "sexysneakystoat1625",
+      "reactions": 32,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+    },
     {
       "id": "1461801456410558556",
       "content": "Happy Holidays and New Years! It’s been a wonderful time this past 2025, and mes",
@@ -58,11 +74,39 @@
       "channel": "Thank you for everything"
     },
     {
+      "id": "1461788481754759271",
+      "content": "",
+      "author": "someone0956",
+      "reactions": 25,
+      "channel": "G Murphy Fan Splash"
+    },
+    {
       "id": "1461565533341356286",
       "content": "A punk fishy",
       "author": "kiriwoamizaki",
       "reactions": 16,
       "channel": "Art dump thread"
+    },
+    {
+      "id": "1461634829589418014",
+      "content": "Is it possible to play tic tac toe with them?",
+      "author": "moyashi0672",
+      "reactions": 14,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+    },
+    {
+      "id": "1461718647838871664",
+      "content": "I'm not sure if I posted this artwork here before but yeah, have more Salvador f",
+      "author": "sofiaebby",
+      "reactions": 12,
+      "channel": "\"All-Father, please let me end everyone's suffering...\""
+    },
+    {
+      "id": "1461637317017210880",
+      "content": "原型是这样的，怪物之锤查询:肿胀之女\n奈亚拉托提普：肿胀之女（Bloated Woman, The）\n化身\n通常情况下，这尊化身的大部分形态隐藏于一件染成黑色与",
+      "author": "jutta.l.",
+      "reactions": 11,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
     },
     {
       "id": "1461854004182126744",
@@ -79,11 +123,60 @@
       "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
     },
     {
+      "id": "1461807851440963817",
+      "content": "海國詛咒又要來了嗎",
+      "author": "foxcatfurry",
+      "reactions": 8,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+    },
+    {
       "id": "1461791627864445140",
       "content": "這是一個純娛樂向，不講求幻夢高分速刷，純個人體驗靠手氣挑戰死裡逃生的娛樂組隊！\n第一次寫這種分享文可能很多細節不太清楚，甚至不知道這能不能算攻略請多多包涵。如過",
       "author": "carrot_chicken",
       "reactions": 7,
       "channel": "諸君，我喜歡抽牌"
+    },
+    {
+      "id": "1461637581879115992",
+      "content": "But... How does she bear childs then if her mouth take all of the stomach and su",
+      "author": "moyashi0672",
+      "reactions": 5,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+    },
+    {
+      "id": "1461635702516355152",
+      "content": "（结果数值很肿）",
+      "author": "cs001092",
+      "reactions": 4,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+    },
+    {
+      "id": "1461642267017216143",
+      "content": "我是徐媽媽的狗",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+    },
+    {
+      "id": "1461637628246888468",
+      "content": "红书那个不回应一下吗？那边也不知道这件事啊<:Brown_think:1459080117308620996>",
+      "author": "jutta.l.",
+      "reactions": 2,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+    },
+    {
+      "id": "1461638198995193955",
+      "content": "你可以拿走我的300抽",
+      "author": "ena04564",
+      "reactions": 2,
+      "channel": "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu"
+    },
+    {
+      "id": "1461657490549637216",
+      "content": "2. Gremona not worth it for current account progression, focus more on aequor st",
+      "author": "a3th3r_69708",
+      "reactions": 2,
+      "channel": "Team Guidance/Character Investment Suggestions"
     },
     {
       "id": "1461627779979280549",
@@ -93,74 +186,18 @@
       "channel": "V2.4.1.3 在线维护公告"
     },
     {
-      "id": "1461624749762412668",
-      "content": "守密人你好：\n       弥萨格大学校务处将于1月16日15:45(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带",
-      "author": "morimensstaff02",
+      "id": "1461825569116262400",
+      "content": "Looks amazing <:wow:1356053147029864518>\nI think it could win awards in UGC http",
+      "author": "aurora3981",
       "reactions": 1,
-      "channel": "V2.4.1.3 在线维护公告"
+      "channel": "G Murphy Fan Splash"
     },
     {
-      "id": "1461632444028686379",
-      "content": "商店進不去了<:takenotes:1357186646294138890>",
-      "author": "arr5721",
+      "id": "1461829020407566367",
+      "content": "There's usually always one running at all times so keep an eye out",
+      "author": "aurora3981",
       "reactions": 1,
-      "channel": "V2.4.1.3 在线维护公告"
-    },
-    {
-      "id": "1461523064784162859",
-      "content": "Truth bomb",
-      "author": "kiriwoamizaki",
-      "reactions": 1,
-      "channel": "Art dump thread"
-    },
-    {
-      "id": "1461791290411847918",
-      "content": "“珍惜”→“珍稀”",
-      "author": "shunia3055",
-      "reactions": 1,
-      "channel": "✅「已回答」错字"
-    },
-    {
-      "id": "1461802683676627110",
-      "content": "<@1131790839291596841> <@633215996508766229> <@1376763322568937562> \nFree to sha",
-      "author": "vxvendetta97",
-      "reactions": 1,
-      "channel": "Thank you for everything"
-    },
-    {
-      "id": "1461690950081581107",
-      "content": "https://youtube.com/shorts/A3-0E32mvGU?si=zOYCdsugKf9Xwxel",
-      "author": "animeholic09",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
-    },
-    {
-      "id": "1461535368565358664",
-      "content": "",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1461626777444155637",
-      "content": "都寫",
-      "author": "ernest_heart",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1461756242836852767",
-      "content": "大概是這個吧",
-      "author": "myth1538",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1461833368801906698",
-      "content": "thank youu",
-      "author": "not_blueberry",
-      "reactions": 1,
-      "channel": ""
+      "channel": "G Murphy Fan Splash"
     }
   ]
 }

@@ -1,10 +1,16 @@
 {
   "date": "2025-12-20",
-  "messages": 71,
+  "messages": 91,
   "unique_authors": 21,
-  "reactions_total": 48,
-  "attachments": 20,
+  "reactions_total": 76,
+  "attachments": 29,
   "channel_activity": {
+    "✉️OC’s Birthday | You Have Received Two Mails": 2,
+    "Sylvester": 7,
+    "新手求助": 2,
+    "求配队": 1,
+    "健檢": 7,
+    "燃尽了（）": 1,
     "V2.4.0.12 在线维护公告": 7,
     "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 1,
     "💭「Processing」Can't see the new intro scene on Steam": 4,
@@ -28,30 +34,38 @@
     "1443848396585828363": 1
   },
   "hourly_activity": {
+    "17": 2,
+    "22": 2,
+    "6": 22,
+    "7": 4,
+    "8": 5,
+    "15": 3,
+    "16": 7,
+    "0": 11,
+    "2": 3,
+    "11": 6,
+    "14": 2,
     "3": 1,
     "5": 5,
-    "6": 19,
     "19": 2,
-    "16": 4,
-    "7": 2,
-    "11": 5,
-    "15": 2,
     "9": 3,
-    "0": 8,
-    "8": 4,
     "21": 3,
     "10": 3,
     "13": 1,
-    "17": 1,
-    "23": 6,
-    "22": 1,
-    "14": 1
+    "23": 6
   },
   "message_types": {
-    "0": 6,
-    "19": 1
+    "0": 17,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1451827462785728522",
+      "content": "My first art of him and it's not a serious one 💔 but is my situation rn",
+      "author": "that_one_chippy",
+      "reactions": 20,
+      "channel": "Sylvester"
+    },
     {
       "id": "1451864366315212851",
       "content": "如題，很多怪物和人物模型的設計蠻有趣的，但只能在關卡中看到，有點可惜",
@@ -65,6 +79,13 @@
       "author": "vxvendetta97",
       "reactions": 5,
       "channel": ""
+    },
+    {
+      "id": "1451859932642283621",
+      "content": "Time to pull this out<:tuff_ramona:1441426630420467753>",
+      "author": "sunstopshining",
+      "reactions": 4,
+      "channel": "Sylvester"
     },
     {
       "id": "1451816893152362597",
@@ -86,6 +107,13 @@
       "author": "flim_of_life_burst",
       "reactions": 4,
       "channel": "✉️OC生贺｜守密人，您收到了两封邮件♛"
+    },
+    {
+      "id": "1451942053540925441",
+      "content": "造價太高不敢抽",
+      "author": "ahong0727",
+      "reactions": 3,
+      "channel": "健檢"
     },
     {
       "id": "1451821818301120604",
@@ -137,6 +165,13 @@
       "channel": ""
     },
     {
+      "id": "1451838293170716854",
+      "content": "https://discord.com/channels/1131791637933199470/1441010544500015146\nYou can sub",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "Sylvester"
+    },
+    {
       "id": "1451778369212387511",
       "content": "<@633215996508766229> 我已经氪完了游戏内所有能氪的礼包和纪行，虽然很缺材料，但是这个礼包的定价依旧让人没有购买的欲望，是否可以增加抽数或者",
       "author": "grayifies",
@@ -163,34 +198,6 @@
       "author": "game.producer.light",
       "reactions": 1,
       "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1451906846926569658",
-      "content": "And im quite sure it's a very big issue if we knew that 5x pulls won't get us tr",
-      "author": "angbak",
-      "reactions": 1,
-      "channel": "✅「Answered」Question regarding the SSR Item Drop Rate listed in the Awakening Details"
-    },
-    {
-      "id": "1452050992924201172",
-      "content": "[XD](https://cdn.discordapp.com/emojis/936106628833488906.webp?size=48&name=XD)",
-      "author": "iwthahe",
-      "reactions": 1,
-      "channel": "✅「Answered」Very small nitpick"
-    },
-    {
-      "id": "1451829940998766694",
-      "content": "Yeah but thankfully it's veryfew andfar between that stuff happens.",
-      "author": "vivian_mana_kendall",
-      "reactions": 1,
-      "channel": "The reading experience is not so good"
-    },
-    {
-      "id": "1451900065810747543",
-      "content": "支不支持收米都会超凡所有人的🙄💅",
-      "author": "sadisticgirl.",
-      "reactions": 1,
-      "channel": "蓋個圖樓"
     }
   ]
 }

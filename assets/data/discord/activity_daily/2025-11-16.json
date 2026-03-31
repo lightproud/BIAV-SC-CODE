@@ -1,10 +1,23 @@
 {
   "date": "2025-11-16",
-  "messages": 71,
-  "unique_authors": 9,
-  "reactions_total": 74,
-  "attachments": 20,
+  "messages": 178,
+  "unique_authors": 22,
+  "reactions_total": 216,
+  "attachments": 49,
   "channel_activity": {
+    "Senior William doodle": 5,
+    "AEQUOR": 3,
+    "Lady Juliette comments the church": 1,
+    "Gmurphy Art": 1,
+    "The stabbening™": 4,
+    "family photo": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4.0 诞妄·墨菲✦唤醒体&命轮介绍┊ Murphy: Fauxborn ✦Awaker & Wheel of Destiny Introduction": 8,
+    "新人求助": 5,
+    "主线打的艰难": 36,
+    "R和SR命輪都是疊到+12就可以全分解了嗎？": 1,
+    "Teambuilding help": 1,
+    "Deep dive help needed.": 40,
     "V2.4.0.0 停服维护公告": 8,
     "✅「Answered」Is it possible to have some official  art of events and such for content creation?": 1,
     "💭「处理中」這是複製到哪去了": 2,
@@ -23,29 +36,63 @@
     "1356210707867107391": 1
   },
   "hourly_activity": {
+    "17": 5,
+    "3": 5,
+    "15": 2,
+    "16": 34,
+    "11": 4,
+    "6": 14,
+    "0": 1,
+    "4": 1,
+    "12": 4,
+    "19": 7,
+    "22": 7,
+    "14": 44,
+    "2": 1,
+    "23": 1,
+    "13": 3,
+    "21": 2,
     "1": 1,
     "5": 3,
     "7": 12,
-    "11": 3,
-    "12": 3,
-    "13": 2,
-    "22": 3,
-    "15": 1,
-    "16": 2,
     "18": 6,
-    "3": 1,
     "8": 3,
-    "6": 11,
-    "21": 1,
     "9": 16,
-    "10": 2,
-    "14": 1
+    "10": 2
   },
   "message_types": {
-    "0": 6,
-    "19": 2
+    "0": 85,
+    "19": 22
   },
   "top_reacted_messages": [
+    {
+      "id": "1439664207992979749",
+      "content": "",
+      "author": "sunstopshining",
+      "reactions": 38,
+      "channel": "Senior William doodle"
+    },
+    {
+      "id": "1439454696522645656",
+      "content": "Took way too long, but glad I finished it \nUID: 101213260",
+      "author": "joekimlee",
+      "reactions": 35,
+      "channel": "AEQUOR"
+    },
+    {
+      "id": "1439457842074750996",
+      "content": ":p to be honest I drew this after completing pollux story…. Finally just realize",
+      "author": "fishhazardthewizard",
+      "reactions": 31,
+      "channel": "The stabbening™"
+    },
+    {
+      "id": "1439406289653596160",
+      "content": "uid: 101198886\ni'm fried. this was one hell of a process but. i decided to draw ",
+      "author": "exhibitionism",
+      "reactions": 23,
+      "channel": "family photo"
+    },
     {
       "id": "1439514948165308500",
       "content": "**[11/16] Script/Hack Account Handling Instructions**\n\nKeeper,\nTo ensure the saf",
@@ -66,6 +113,13 @@
       "author": "flim_of_life_burst",
       "reactions": 15,
       "channel": "于麗埃特女士對提燈教會作出重大指示"
+    },
+    {
+      "id": "1439574720906395749",
+      "content": "",
+      "author": "flim_of_life_burst",
+      "reactions": 9,
+      "channel": "Lady Juliette comments the church"
     },
     {
       "id": "1439537981194240073",
@@ -94,6 +148,34 @@
       "author": "150_ripe",
       "reactions": 4,
       "channel": "苍翠草甸往事（原创故事）"
+    },
+    {
+      "id": "1439665443953446942",
+      "content": "LET'S GOOO",
+      "author": "idotly",
+      "reactions": 2,
+      "channel": "Senior William doodle"
+    },
+    {
+      "id": "1439619965933191190",
+      "content": "还有我看鸟哥弟很厉害",
+      "author": "mix6287",
+      "reactions": 2,
+      "channel": "主线打的艰难"
+    },
+    {
+      "id": "1439460154943737969",
+      "content": "<@1301813973703852035>",
+      "author": "ernest_heart",
+      "reactions": 1,
+      "channel": "The stabbening™"
+    },
+    {
+      "id": "1439619620712480952",
+      "content": "专属命轮吗",
+      "author": "mix6287",
+      "reactions": 1,
+      "channel": "主线打的艰难"
     },
     {
       "id": "1439594726318800956",

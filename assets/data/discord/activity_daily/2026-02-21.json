@@ -1,10 +1,12 @@
 {
   "date": "2026-02-21",
-  "messages": 1717,
+  "messages": 1725,
   "unique_authors": 52,
   "reactions_total": 256,
-  "attachments": 108,
+  "attachments": 109,
   "channel_activity": {
+    "V2.4.2 第一块血迹┊The First Bloodstain": 1,
+    "Team building help!": 7,
     "doresain…. again": 3,
     "✅「已回答」今天打肉鸽咋没算出牌数做不了每日": 4,
     "Please allow us to reutrn Doresain to the Black Pool": 12,
@@ -21,17 +23,17 @@
     "🔸阵容构建": 54
   },
   "hourly_activity": {
+    "2": 20,
+    "12": 211,
+    "16": 111,
     "9": 7,
     "10": 108,
     "11": 94,
     "1": 26,
-    "12": 210,
-    "2": 19,
     "15": 320,
     "17": 34,
     "18": 107,
     "14": 119,
-    "16": 105,
     "0": 24,
     "3": 6,
     "4": 27,
@@ -46,7 +48,7 @@
     "23": 2
   },
   "message_types": {
-    "0": 3
+    "0": 8
   },
   "top_reacted_messages": [
     {

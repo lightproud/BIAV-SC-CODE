@@ -1,10 +1,23 @@
 {
   "date": "2025-11-07",
-  "messages": 108,
-  "unique_authors": 13,
-  "reactions_total": 173,
-  "attachments": 12,
+  "messages": 154,
+  "unique_authors": 25,
+  "reactions_total": 251,
+  "attachments": 28,
   "channel_activity": {
+    "Ramona Sketch": 8,
+    "Team Management": 2,
+    "Murphy Fauxborn wip": 1,
+    "Posse Per Second (PPS)": 8,
+    "Bagel's Okayge guide for Anniversary": 1,
+    "team guide for a dummy newbie": 1,
+    "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ": 5,
+    "不算新的新人求助": 4,
+    "新人求助": 5,
+    "Difficulty with Clearing": 2,
+    "How to beat stage 7-7?": 5,
+    "choosing free awakener": 3,
+    "What to pick for protoparadise?": 1,
     "致歉：V2.4.0 轮换唤醒「群星闪耀时」调整 Apology: V2.4.0 Rotation Awakening “Galactic Light” Adjustment": 2,
     "✅「Answered」Lightless realm expansion": 1,
     "✅「Answered」Quality of Life for Covenant Transcription": 5,
@@ -30,29 +43,33 @@
     "1429401798439080028": 5
   },
   "hourly_activity": {
-    "6": 5,
-    "15": 2,
+    "4": 11,
+    "5": 2,
+    "6": 11,
+    "9": 3,
+    "15": 5,
+    "16": 8,
+    "14": 2,
+    "17": 5,
+    "18": 6,
+    "20": 1,
+    "7": 14,
+    "3": 7,
+    "23": 4,
+    "2": 2,
+    "1": 9,
     "8": 18,
     "13": 11,
     "0": 29,
-    "3": 2,
-    "4": 1,
-    "7": 10,
-    "16": 6,
-    "17": 1,
     "12": 2,
-    "9": 1,
-    "5": 1,
-    "14": 1,
-    "18": 3,
     "19": 3,
-    "22": 1,
-    "23": 2,
-    "1": 8,
-    "2": 1
+    "22": 1
   },
   "message_types": {
-    "0": 2
+    "0": 36,
+    "4": 1,
+    "19": 8,
+    "6": 1
   },
   "top_reacted_messages": [
     {
@@ -70,6 +87,13 @@
       "channel": "🔸服务器公告┊server-announcement"
     },
     {
+      "id": "1436216088244256830",
+      "content": "I just got into Morimens and did a quick Ramona sketch over the past few days, I",
+      "author": "raumbobulus",
+      "reactions": 32,
+      "channel": "Ramona Sketch"
+    },
+    {
       "id": "1436344727569043558",
       "content": "都是宫里的老人了不要怪我说的难听。我直接列诉求\n1：不接受只给限定加三维！\n给99女士道歉，你可以加等级三维成长曲线 ，加限定三维的意义素？你那些限定有很多非常",
       "author": "dyyqcwj",
@@ -84,6 +108,20 @@
       "channel": "甚至連疼痛都變得毫無意義"
     },
     {
+      "id": "1436382986185609227",
+      "content": "she's so hauntingly beautiful, mysterious and kinda off-putting....\nwhich means ",
+      "author": "honolulu_37",
+      "reactions": 19,
+      "channel": "Murphy Fauxborn wip"
+    },
+    {
+      "id": "1436385046323007600",
+      "content": "Gonna create my own personal doc with images and codes.",
+      "author": "aurora3981",
+      "reactions": 15,
+      "channel": "Team Management"
+    },
+    {
       "id": "1436349618035097742",
       "content": "I feel like this is gonna be a trap button which you sometimes misclick when usi",
       "author": "aurora3981",
@@ -96,6 +134,20 @@
       "author": "ass191044",
       "reactions": 8,
       "channel": "🔸欢乐梗图"
+    },
+    {
+      "id": "1436368263171801158",
+      "content": "<@1372028651175936080> do you think this is harmful to the game",
+      "author": "tnimreppep",
+      "reactions": 5,
+      "channel": "Posse Per Second (PPS)"
+    },
+    {
+      "id": "1436250611313279057",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
     },
     {
       "id": "1436370496181506159",
@@ -126,6 +178,13 @@
       "channel": "甚至連疼痛都變得毫無意義"
     },
     {
+      "id": "1436211201641156719",
+      "content": "我會努力多抽一點的",
+      "author": "dog_0630",
+      "reactions": 2,
+      "channel": "不算新的新人求助"
+    },
+    {
       "id": "1436267515838992395",
       "content": "Sorry, currently we do not have enough funds and personnel to implement this sug",
       "author": "morimensstaff01",
@@ -147,53 +206,11 @@
       "channel": "甚至連疼痛都變得毫無意義"
     },
     {
-      "id": "1436256919047110746",
-      "content": ".",
-      "author": "insigible",
-      "reactions": 1,
-      "channel": "✅「Answered」1-9 Accidental Narrative Skip"
-    },
-    {
-      "id": "1436269735758266470",
-      "content": "嗨守密人，按钮交互后续会进行优化",
+      "id": "1436249541262311514",
+      "content": "Русская версия постера<:camera:1356053040251146460> \n—— сделана российской орган",
       "author": "morimensstaff01",
       "reactions": 1,
-      "channel": "✅「已回答」相位對弈屏蔽位置"
-    },
-    {
-      "id": "1436267788187598901",
-      "content": "嗨，未来有时间我们会考虑增加这部分的成就设计，目前正在全力准备后续版本的内容，暂时无法分出更多的精力在上面。感谢建议与理解<:Cheerup:140077155",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」關於生涯成就"
-    },
-    {
-      "id": "1436266032732835963",
-      "content": "Hi, we are already preparing for this and it will be implemented in the game soo",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Would it be possible to have the OST tracks in the jukebox play on the home screen"
-    },
-    {
-      "id": "1436266370831745045",
-      "content": "嗨，这件事情我们已经在准备了，近期会在游戏中实现",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」大廳背景音樂"
-    },
-    {
-      "id": "1436398043384512642",
-      "content": "老東西😈",
-      "author": "ass191044",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1436398167817195540",
-      "content": "救命",
-      "author": "tsubaki9884",
-      "reactions": 1,
-      "channel": ""
+      "channel": "V2.4.0 版本前瞻-上┊ Version Outlook - Part Ⅰ"
     }
   ]
 }

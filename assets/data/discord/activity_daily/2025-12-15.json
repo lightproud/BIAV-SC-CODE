@@ -1,10 +1,14 @@
 {
   "date": "2025-12-15",
-  "messages": 164,
+  "messages": 174,
   "unique_authors": 29,
-  "reactions_total": 49,
-  "attachments": 17,
+  "reactions_total": 110,
+  "attachments": 19,
   "channel_activity": {
+    "pollux sketch! (lf references i cannot find any)": 3,
+    "Liz : Hollow Dance of Destruction": 1,
+    "新手求助": 5,
+    "求配队": 1,
     "线上问题修复公告": 11,
     "A bit too late for anniversary but this cake is still good :D": 3,
     "Who Ryker's Designer pls come talk ?": 4,
@@ -42,9 +46,13 @@
     "🔸忘却前夜┊morimens-tv": 1
   },
   "hourly_activity": {
+    "10": 1,
+    "12": 5,
+    "15": 23,
+    "5": 8,
+    "18": 3,
     "13": 4,
     "14": 7,
-    "18": 2,
     "20": 5,
     "23": 1,
     "1": 2,
@@ -52,22 +60,34 @@
     "7": 21,
     "9": 15,
     "2": 8,
-    "5": 3,
     "6": 13,
-    "12": 3,
     "4": 7,
     "8": 32,
     "11": 2,
-    "15": 22,
     "16": 1,
     "17": 1,
     "19": 2,
     "0": 3
   },
   "message_types": {
-    "0": 14
+    "0": 7,
+    "19": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1450067944175440024",
+      "content": "appreciating pollux at literally any new angle",
+      "author": "lykire_",
+      "reactions": 40,
+      "channel": "pollux sketch! (lf references i cannot find any)"
+    },
+    {
+      "id": "1450144313966198865",
+      "content": "How I feel when I use Liz's exalt",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 21,
+      "channel": "Liz : Hollow Dance of Destruction"
+    },
     {
       "id": "1450155051862458551",
       "content": "Everytime I log in this notification always pops up even though there's nothing ",
@@ -193,20 +213,6 @@
       "author": "morimensstaff01",
       "reactions": 1,
       "channel": "✅「Answered」W3A5 (Doll) Battle doesn't end even when the boss is dead"
-    },
-    {
-      "id": "1449957914533167277",
-      "content": "Hi! We are currently fixing this<:sad:1356085505523187712> !!",
-      "author": "morimens_15",
-      "reactions": 1,
-      "channel": "💭「Processing」Doll Boss STR bug"
-    },
-    {
-      "id": "1450018138015141901",
-      "content": "我在這樓裡確實也說了，我不認為他們的話題不好，只是跟這一串沒有關聯，離題了，影響閱讀。以及我一開始對他發言是一視同仁的，既然最初的部分是關於凱刻斯的黑印是否足夠",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "全常駐，低配，無靈知，初見首通三星速通忘卻困難7——打擊轉反擊轉打擊：菲凱希帆血海打擊隊（⚠️忘卻篇限定）"
     }
   ]
 }

@@ -1,10 +1,14 @@
 {
   "date": "2025-10-01",
-  "messages": 19,
+  "messages": 33,
   "unique_authors": 6,
-  "reactions_total": 17,
-  "attachments": 7,
+  "reactions_total": 19,
+  "attachments": 9,
   "channel_activity": {
+    "Shhh… he’s sleeping~": 1,
+    "Eng fic- Thais & Aurita": 1,
+    "I hit a wall need help to build a team": 8,
+    "Good addition to those three": 4,
     "✅「Answered」Silver Background  Bug": 1,
     "✅「Answered」Mobile login via Steam failed - \"the game is not available in your region\"": 1,
     "💭「处理中」超越之目回環與真實亦是幻想互動問題": 4,
@@ -15,18 +19,22 @@
     "彌薩格學院守咪人的日常：繁衍狂熱篇（歡樂文 部分喚醒體出沒）": 1
   },
   "hourly_activity": {
-    "17": 2,
+    "22": 3,
+    "20": 1,
+    "6": 2,
+    "7": 3,
+    "8": 3,
+    "13": 1,
+    "17": 3,
+    "19": 4,
     "16": 1,
     "11": 3,
     "12": 2,
     "4": 2,
-    "19": 3,
-    "15": 5,
-    "22": 1
+    "15": 5
   },
   "message_types": {
-    "0": 9,
-    "19": 1
+    "0": 14
   },
   "top_reacted_messages": [
     {
@@ -56,6 +64,20 @@
       "author": "xcecilex.",
       "reactions": 2,
       "channel": "开个摸鱼楼✨"
+    },
+    {
+      "id": "1422999649979072613",
+      "content": "Faint is one suggestion.",
+      "author": "climbkaly",
+      "reactions": 1,
+      "channel": "Good addition to those three"
+    },
+    {
+      "id": "1423023564700909641",
+      "content": "Aigis + since she’s a welfare you will get her enlightenments fast which are pre",
+      "author": "yannic2112",
+      "reactions": 1,
+      "channel": "Good addition to those three"
     },
     {
       "id": "1422903275124162631",

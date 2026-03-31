@@ -1,10 +1,11 @@
 {
   "date": "2024-12-27",
-  "messages": 30,
+  "messages": 32,
   "unique_authors": 17,
-  "reactions_total": 16,
+  "reactions_total": 17,
   "attachments": 1,
   "channel_activity": {
+    "Morimens review in Thai!": 2,
     "✅重生与致歉": 1,
     "既然复活赛打赢了，下周的活动和卡池，还有新一期的战令什么时候有预览或者爆料？": 13,
     "一鍵領取": 3,
@@ -14,6 +15,7 @@
     "with cute hats": 1
   },
   "hourly_activity": {
+    "5": 2,
     "2": 4,
     "6": 2,
     "7": 1,
@@ -27,7 +29,7 @@
     "3": 6
   },
   "message_types": {
-    "0": 1
+    "0": 2
   },
   "top_reacted_messages": [
     {
@@ -57,6 +59,13 @@
       "author": "muggypeasant",
       "reactions": 2,
       "channel": "with cute hats"
+    },
+    {
+      "id": "1322068132537565205",
+      "content": "<@139343733714845697>",
+      "author": "ughhhhard",
+      "reactions": 1,
+      "channel": "Morimens review in Thai!"
     },
     {
       "id": "1322050865682579456",

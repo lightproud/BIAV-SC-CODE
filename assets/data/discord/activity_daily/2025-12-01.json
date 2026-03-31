@@ -1,10 +1,22 @@
 {
   "date": "2025-12-01",
-  "messages": 475,
+  "messages": 532,
   "unique_authors": 52,
-  "reactions_total": 281,
-  "attachments": 30,
+  "reactions_total": 367,
+  "attachments": 52,
   "channel_activity": {
+    "Stolen memes of the day": 1,
+    "Goliath Doodle": 3,
+    "William painting": 1,
+    "morimens pixel art": 2,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 2,
+    "🍰二周年有奖互动：晒出你的游生四宫格！Prize Event: Share Your Gaming Life in a Four-Grid Collage!": 1,
+    "V2.4.0.7 版本前瞻 ┊ Version Outlook": 27,
+    "特别短篇漫画:「你我终将重逢」第三章┊Special Short Comics: \"We Will Meet Again\" Chapter 3": 4,
+    "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!": 4,
+    "大眼球D1": 7,
+    "萌新求问后续组队": 3,
+    "need help in how to use selector": 2,
     "V2.4.0.7 停服维护公告": 9,
     "V2.4.0.8 在线维护公告": 43,
     "Mini-rimens": 2,
@@ -65,33 +77,34 @@
     "1441326394817908736": 15
   },
   "hourly_activity": {
-    "3": 29,
-    "13": 11,
-    "12": 25,
-    "14": 16,
-    "15": 29,
+    "14": 18,
+    "19": 8,
+    "21": 82,
+    "17": 38,
+    "3": 31,
+    "13": 20,
+    "23": 2,
+    "12": 38,
+    "0": 4,
+    "4": 7,
+    "6": 21,
+    "15": 32,
+    "16": 132,
+    "10": 7,
+    "8": 14,
     "18": 8,
-    "19": 6,
     "20": 14,
-    "8": 6,
     "9": 14,
-    "10": 4,
     "7": 20,
-    "16": 127,
     "22": 7,
-    "6": 20,
-    "17": 36,
-    "0": 2,
     "2": 9,
-    "21": 79,
-    "4": 6,
     "5": 3,
-    "1": 3,
-    "23": 1
+    "1": 3
   },
   "message_types": {
-    "0": 42,
-    "19": 12
+    "0": 48,
+    "19": 8,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -123,6 +136,13 @@
       "channel": "Raid Problems and Solutions (The feedbacks have been shared with Light )"
     },
     {
+      "id": "1445066492180828382",
+      "content": "New player here 🙇‍♀️\nNice to meet you!\n\nUID: 101274471",
+      "author": "yukisetsura",
+      "reactions": 18,
+      "channel": "Goliath Doodle"
+    },
+    {
       "id": "1444887433417199698",
       "content": "這件事沒有炎上的原因不是問題不夠嚴重而是你遊的資深玩家越來越少了",
       "author": "shchng.",
@@ -130,11 +150,32 @@
       "channel": "V2.4.0.7 停服维护公告"
     },
     {
+      "id": "1445102330700632156",
+      "content": "",
+      "author": "happyskull",
+      "reactions": 16,
+      "channel": "William painting"
+    },
+    {
       "id": "1445026884537548830",
       "content": "No fix for the raid boss?",
       "author": "sanna7424",
       "reactions": 16,
       "channel": "V2.4.0.8 在线维护公告"
+    },
+    {
+      "id": "1444993068146102312",
+      "content": "感谢大家的设计🥰 \n恭喜下面10位设计师获得1000银钥的奖励，奖励会在本周五前发到大家邮箱~\n\nThank you all for your design😊 ",
+      "author": "morimensstaff01",
+      "reactions": 13,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
+      "id": "1444936148521717902",
+      "content": "why did i even bother giving feedback about the raid when it's going to fall on ",
+      "author": "jormiejormungandr",
+      "reactions": 10,
+      "channel": "V2.4.0.7 版本前瞻 ┊ Version Outlook"
     },
     {
       "id": "1444890325662437406",
@@ -158,6 +199,13 @@
       "channel": "图鲁"
     },
     {
+      "id": "1445065305314300016",
+      "content": "",
+      "author": "._.aahh",
+      "reactions": 6,
+      "channel": "Stolen memes of the day"
+    },
+    {
       "id": "1445024109892210860",
       "content": "I don't get why it's limited if theyre already limiting the max number of attemp",
       "author": "qijiu",
@@ -179,6 +227,13 @@
       "channel": "图鲁"
     },
     {
+      "id": "1444842357013872772",
+      "content": "\"beautifully\" drawn ensemble using only my finger and android photos pen",
+      "author": "reya.li",
+      "reactions": 5,
+      "channel": "🍰二周年有奖互动：忘却前夜想戴生日礼帽！Prize Event: Morimens Wants a Birthday Hat!"
+    },
+    {
       "id": "1444889452119068853",
       "content": "||下一個被踢的就是我🤡 🤡 ||",
       "author": "shchng.",
@@ -190,48 +245,6 @@
       "content": "守密人你好：\n       弥萨格大学校务处将于12月1日20:15(UTC+8) 进行校内设施修复，更新完成后您将得到通知，重新进入游戏。对于更新可能给大家带",
       "author": "morimensstaff02",
       "reactions": 5,
-      "channel": "V2.4.0.8 在线维护公告"
-    },
-    {
-      "id": "1445072209180889201",
-      "content": "True, also there has been several complain regarding the same event during anniv",
-      "author": "moyashi0672",
-      "reactions": 4,
-      "channel": "V2.4.0.8 在线维护公告"
-    },
-    {
-      "id": "1445024259679457331",
-      "content": "seriously, remove the cap. Keep the number counts for the clear, but let people ",
-      "author": "wolfierce",
-      "reactions": 4,
-      "channel": "✅「Answered」Unfair Raid Event"
-    },
-    {
-      "id": "1444994876491038802",
-      "content": "方便凹死扛，不然起码得退2t",
-      "author": "shunia3055",
-      "reactions": 4,
-      "channel": "在拥有回合倒退特权时，调查失败提供“回到此回合初”的选项"
-    },
-    {
-      "id": "1444977668654104586",
-      "content": "喵了個咪的！\n之前說難度調低缺乏挑戰性，後來難度又調回來了。\n結果根本不是調回來，而是全面加強難度了啊！\n基本上現行所有不吃靈知的打法，都要依靠繁育刻印的爆牌輔",
-      "author": "o5214658",
-      "reactions": 4,
-      "channel": "繁育刻印廢了？！"
-    },
-    {
-      "id": "1445051551126392922",
-      "content": "大概是外勤出多了导致看起来更有前辈感觉的守密人，如今从无形之仪到竞技探戈无一不精。相较于校服选择了更不起眼的黑色长外套，并且佩戴了很多花里胡哨的胸针。没人知道到",
-      "author": "null_0195",
-      "reactions": 4,
-      "channel": "摸了资深守密人"
-    },
-    {
-      "id": "1445071427647705098",
-      "content": "嗯...最近各国玩家都变多了，但是还用着老方法来办这类限制数量的全服活动，策划有点笨笨的喔",
-      "author": "yang015148",
-      "reactions": 3,
       "channel": "V2.4.0.8 在线维护公告"
     }
   ]

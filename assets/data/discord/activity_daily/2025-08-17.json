@@ -1,10 +1,25 @@
 {
   "date": "2025-08-17",
-  "messages": 26,
-  "unique_authors": 8,
-  "reactions_total": 29,
-  "attachments": 5,
+  "messages": 63,
+  "unique_authors": 19,
+  "reactions_total": 187,
+  "attachments": 13,
   "channel_activity": {
+    "Clementine": 5,
+    "Wplace tulu": 5,
+    "Memories Within and Without [GDoll Fanfic]": 3,
+    "\"Questionable\" Rat comp": 1,
+    "Beginner Guide to Caro": 2,
+    "Flares' Comprehensive PvP Guide Spreadsheet + Video": 2,
+    "V2.3.1 佣兵团招新：射击实战“击毙吧！坏蛋”┊Mercenary Live Fire Test: \"Take the Shot, Scumbag!\"": 2,
+    "📜V2.3.1 版本前瞻┊ Version Outlook": 1,
+    "Team help": 1,
+    "Best team? Help please 🙏🏻": 2,
+    "farming priorities?": 2,
+    "Which Team Investment?": 3,
+    "What do i need or who do i need for this team": 5,
+    "Which WoD should I try to get?": 2,
+    "What and who should i pull for my team?": 1,
     "V2.3.1.0 停服维护公告": 3,
     "前瞻：致敬《杀戮尖塔》Preview: An Homage to “Slay the Spire”": 11,
     "混沌隊塔薇顯示問題": 1,
@@ -16,22 +31,63 @@
     "1399369127008796723": 1
   },
   "hourly_activity": {
-    "17": 5,
-    "21": 1,
-    "6": 1,
+    "13": 6,
+    "14": 5,
+    "18": 4,
+    "17": 9,
+    "15": 4,
+    "16": 5,
+    "6": 4,
+    "7": 2,
+    "5": 1,
+    "11": 2,
+    "10": 4,
+    "21": 6,
+    "2": 1,
     "9": 7,
-    "10": 3,
-    "15": 2,
-    "13": 3,
-    "14": 1,
     "20": 2,
     "12": 1
   },
   "message_types": {
-    "0": 8,
-    "19": 6
+    "0": 29,
+    "19": 8
   },
   "top_reacted_messages": [
+    {
+      "id": "1406693522219729137",
+      "content": "Hopefully this is the right channel to post.................",
+      "author": "noname0963",
+      "reactions": 60,
+      "channel": "Wplace tulu"
+    },
+    {
+      "id": "1406626345240367114",
+      "content": "(belated) happy birthday!\nUID: 100971267",
+      "author": "0_010",
+      "reactions": 48,
+      "channel": "Clementine"
+    },
+    {
+      "id": "1406657174603829369",
+      "content": "https://docs.google.com/document/d/16AJ8QL4CbgSjF0NSnrJeNq39sDZiOZszcicLelfPEwI/",
+      "author": "melwyn7591",
+      "reactions": 18,
+      "channel": "\"Questionable\" Rat comp"
+    },
+    {
+      "id": "1406667682006171829",
+      "content": "https://docs.google.com/document/d/1PF8t4_Kd879eOBeyKx2fwMqlTy9KHUPty6h-A_lztiA/",
+      "author": "reya.li",
+      "reactions": 14,
+      "channel": "Memories Within and Without [GDoll Fanfic]"
+    },
+    {
+      "id": "1406647040729157662",
+      "content": "https://docs.google.com/document/d/19oZAR-tf-J668M4lq8wX-SXCiTLlIiqAvXgsAj7gp5g/",
+      "author": "reya.li",
+      "reactions": 12,
+      "channel": "Beginner Guide to Caro"
+    },
     {
       "id": "1406654481071996939",
       "content": "在最近新出的那個地圖畫畫網站畫的，畫伺服器的表情包<:Emoji_LK_M_08:1400771650064089112> \n畫得沒有很好",
@@ -66,6 +122,48 @@
       "author": "melwyn7591",
       "reactions": 2,
       "channel": "✅「Answered」Normal battle is treat as boss battle in H9-11"
+    },
+    {
+      "id": "1406708075150180402",
+      "content": "Yes 👍",
+      "author": "0_010",
+      "reactions": 1,
+      "channel": "Clementine"
+    },
+    {
+      "id": "1406673713927295106",
+      "content": "You managed to capture Dolls character perfectly! It was a really nice read<:Emo",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "Memories Within and Without [GDoll Fanfic]"
+    },
+    {
+      "id": "1406647491981475972",
+      "content": "Luv u 🫶",
+      "author": "k3nt0t69",
+      "reactions": 1,
+      "channel": "Beginner Guide to Caro"
+    },
+    {
+      "id": "1406526885080596520",
+      "content": "https://youtu.be/-k1FW4M0rWg https://docs.google.com/spreadsheets/d/1cC7FOebdy_J",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "Flares' Comprehensive PvP Guide Spreadsheet + Video"
+    },
+    {
+      "id": "1406749525485555804",
+      "content": "1. Generally events\n2. No, getting all the special items is enough. Some events ",
+      "author": "iibenigml1588",
+      "reactions": 1,
+      "channel": "farming priorities?"
+    },
+    {
+      "id": "1406677489258074303",
+      "content": "rn Nymp is considered unusable. Agrippa is somewhat viable but I think her main ",
+      "author": "iibenigml1588",
+      "reactions": 1,
+      "channel": "What do i need or who do i need for this team"
     },
     {
       "id": "1406526088611369002",

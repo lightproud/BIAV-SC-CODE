@@ -1,10 +1,22 @@
 {
   "date": "2026-01-22",
-  "messages": 67,
-  "unique_authors": 15,
-  "reactions_total": 124,
-  "attachments": 21,
+  "messages": 305,
+  "unique_authors": 38,
+  "reactions_total": 183,
+  "attachments": 44,
   "channel_activity": {
+    "Murphy :3!": 4,
+    "mouchette i drew during math class": 1,
+    "Gpreg": 4,
+    "🎑 V2.4.2 徐徐绘花钿┊Help Her with Makeup...": 4,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction": 31,
+    "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu": 1,
+    "V2.4.2 ┊闻香识人The Poetry of Scent": 53,
+    "关于+12角色最终法则的分析": 12,
+    "Is this Team Viable?": 100,
+    "Team build help pls": 25,
     "[Art Dump Thread] WILLIAMPOSTING 2": 1,
     "Forehead tierlist": 13,
     "💭「处理中」一上號發現突然有了波呂克斯": 13,
@@ -25,28 +37,32 @@
     "1455822126568308957": 3
   },
   "hourly_activity": {
-    "0": 23,
-    "15": 9,
-    "16": 3,
+    "9": 10,
+    "10": 3,
+    "7": 2,
+    "0": 29,
+    "8": 5,
+    "12": 48,
+    "13": 1,
+    "3": 3,
+    "1": 21,
+    "2": 6,
+    "4": 10,
+    "5": 11,
+    "6": 11,
+    "11": 9,
+    "20": 2,
+    "14": 13,
+    "16": 5,
+    "15": 108,
+    "19": 2,
     "21": 3,
     "17": 1,
-    "19": 1,
-    "6": 2,
-    "2": 5,
-    "5": 1,
-    "10": 2,
-    "9": 1,
-    "7": 1,
-    "1": 2,
-    "4": 5,
-    "8": 1,
-    "11": 4,
-    "3": 1,
     "23": 2
   },
   "message_types": {
-    "0": 10,
-    "19": 4
+    "19": 55,
+    "0": 183
   },
   "top_reacted_messages": [
     {
@@ -78,11 +94,39 @@
       "channel": "【自用】卡斯托尔×波吕克斯 稿件堆积"
     },
     {
+      "id": "1463831865076224083",
+      "content": "Русская версия постера <:dishes:1356083313063759922> \n—— сделана российской орга",
+      "author": "morimensstaff01",
+      "reactions": 12,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1463691707311722518",
       "content": "",
       "author": "exhibitionism",
       "reactions": 11,
       "channel": "[Art Dump Thread] WILLIAMPOSTING 2"
+    },
+    {
+      "id": "1463865231922167910",
+      "content": "玉兰香🌫️、玫瑰香🌫️、茉莉花香🌫️\n自徐来到弥萨格大学后，学校似乎兴起了“制香”潮流。\n\n💭守密人想制作什么味道的香包？\n制香跟练版教程来啦，守密人快来试试看",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "V2.4.2 ┊闻香识人The Poetry of Scent"
+    },
+    {
+      "id": "1463708057388450024",
+      "content": "||再吐槽一句\n為什麼90級莉莉體質也就比徐高13點||",
+      "author": "water_heart",
+      "reactions": 8,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1463865683975864370",
+      "content": "First",
+      "author": "._.aahh",
+      "reactions": 7,
+      "channel": "V2.4.2 ┊闻香识人The Poetry of Scent"
     },
     {
       "id": "1463915224938578099",
@@ -106,11 +150,39 @@
       "channel": "💭「处理中」一上號發現突然有了波呂克斯"
     },
     {
+      "id": "1463800133161455771",
+      "content": "SHES SO CUTE I LOVE HER",
+      "author": "mimiruku",
+      "reactions": 4,
+      "channel": "mouchette i drew during math class"
+    },
+    {
+      "id": "1463913040780202107",
+      "content": "理性分析讨论哈",
+      "author": "liao_54332",
+      "reactions": 3,
+      "channel": "关于+12角色最终法则的分析"
+    },
+    {
       "id": "1463741514692821105",
       "content": "some very rushed coloring and shading <:Jointhefun1:1400771646293282918>",
       "author": "h3ll0hu",
       "reactions": 3,
       "channel": ""
+    },
+    {
+      "id": "1463706291829739595",
+      "content": "不弱了\n痴醉常駐百分比減傷",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1463710137121505299",
+      "content": "肿胀之女（指体质）",
+      "author": "rain_scarlet",
+      "reactions": 2,
+      "channel": "V2.4.2 徐 ✦ 唤醒体&命轮介绍┊ Xu ✦ Awakener & Wheel of Destiny Introduction"
     },
     {
       "id": "1463787089618407539",
@@ -127,25 +199,11 @@
       "channel": ""
     },
     {
-      "id": "1463917263609397350",
-      "content": "好神奇",
-      "author": "sweet_25367",
+      "id": "1463841172832387216",
+      "content": "THANK YOUUUUU",
+      "author": "celestial.noise",
       "reactions": 1,
-      "channel": "💭「处理中」一上號發現突然有了波呂克斯"
-    },
-    {
-      "id": "1463846582297427999",
-      "content": "她真是太迷人了！<:takenotes:1357186646294138890>",
-      "author": "that_one_chippy",
-      "reactions": 1,
-      "channel": "Nymphaea"
-    },
-    {
-      "id": "1463704818043588804",
-      "content": "https://youtu.be/lYjOv9UP7KM?si=sIuksHt57nTQXogD viendo como sera la nueva perso",
-      "author": "yaoshidoppa",
-      "reactions": 1,
-      "channel": "🔸忘却前夜┊morimens-tv"
+      "channel": "Murphy :3!"
     }
   ]
 }

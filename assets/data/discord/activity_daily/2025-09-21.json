@@ -1,10 +1,17 @@
 {
   "date": "2025-09-21",
-  "messages": 27,
+  "messages": 45,
   "unique_authors": 8,
-  "reactions_total": 9,
-  "attachments": 1,
+  "reactions_total": 65,
+  "attachments": 9,
   "channel_activity": {
+    "pickman and avery": 1,
+    "Faint piece for the art contest": 2,
+    "Kaly Tier Lists - Sept 2025": 1,
+    "Im still quite lost.": 9,
+    "Pls help explain how to play my team in depth": 1,
+    "Worth buying Doll shards?": 2,
+    "Standard Awakener Selection Help": 2,
     "✅「已回答」环娜皮肤是不是快出了": 3,
     "✅「Answered」We need steamOS compatibility": 5,
     "邀請碼互助/Invitation code help each other": 1,
@@ -12,19 +19,37 @@
     "Bang Dream It's 利莫里亞!!!!!      【不會再邀你了/CRYCHIC】": 9
   },
   "hourly_activity": {
+    "22": 1,
+    "20": 6,
+    "12": 6,
+    "17": 2,
+    "18": 4,
+    "21": 4,
+    "19": 1,
     "11": 1,
     "14": 10,
     "16": 1,
-    "12": 5,
-    "21": 1,
     "6": 8,
     "7": 1
   },
   "message_types": {
-    "0": 6,
-    "19": 2
+    "0": 18
   },
   "top_reacted_messages": [
+    {
+      "id": "1419455762471587870",
+      "content": "i liked the interaction between avery and pickman so i tried to imagine what ave",
+      "author": "neta5133",
+      "reactions": 33,
+      "channel": "pickman and avery"
+    },
+    {
+      "id": "1419421278825086987",
+      "content": "UID: 100612259",
+      "author": "winggxrd",
+      "reactions": 20,
+      "channel": "Faint piece for the art contest"
+    },
     {
       "id": "1419324002463383713",
       "content": "彌：小圖 \n        太好了，你終於來了\n        你全身都濕透了，沒事吧？\n        你沒有來發布預言\n        請示神諭也都沒有回覆",
@@ -38,6 +63,20 @@
       "author": "rong486",
       "reactions": 4,
       "channel": "✅「已回答」环娜皮肤是不是快出了"
+    },
+    {
+      "id": "1419421505988591727",
+      "content": "hope i'm not late, this is my first time doing this so please let me know if thi",
+      "author": "winggxrd",
+      "reactions": 2,
+      "channel": "Faint piece for the art contest"
+    },
+    {
+      "id": "1419421332332085450",
+      "content": "Just updated with some Meta Teams for this Dtide.",
+      "author": "climbkaly",
+      "reactions": 1,
+      "channel": "Kaly Tier Lists - Sept 2025"
     }
   ]
 }

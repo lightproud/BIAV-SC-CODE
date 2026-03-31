@@ -1,10 +1,17 @@
 {
   "date": "2026-01-23",
-  "messages": 123,
-  "unique_authors": 19,
-  "reactions_total": 282,
-  "attachments": 12,
+  "messages": 188,
+  "unique_authors": 26,
+  "reactions_total": 450,
+  "attachments": 31,
   "channel_activity": {
+    "leonora": 15,
+    "Tulu 👑": 4,
+    "larry.": 5,
+    "The Scholar's Last Paper": 1,
+    "《秘银日冕》系列唤醒体徽章发货延迟及补偿告知┊Shipping Delay & Compensation: \"Silver Corona\" Awakener Badges": 5,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull": 34,
     "V2.4.2.0 停服维护公告": 61,
     "Art dump thread": 2,
     "💭「处理中」一上號發現突然有了波呂克斯": 6,
@@ -26,30 +33,31 @@
     "1455822126568308957": 17
   },
   "hourly_activity": {
-    "10": 36,
-    "11": 9,
-    "12": 14,
+    "0": 5,
+    "2": 13,
+    "7": 9,
+    "8": 7,
+    "19": 4,
+    "20": 2,
+    "22": 3,
+    "10": 38,
+    "12": 40,
+    "18": 5,
+    "6": 11,
+    "11": 17,
+    "13": 7,
     "15": 2,
     "16": 2,
     "17": 6,
-    "18": 2,
-    "19": 1,
-    "22": 2,
     "1": 2,
-    "2": 8,
     "3": 3,
     "4": 2,
     "14": 5,
-    "13": 6,
-    "20": 1,
-    "7": 5,
-    "9": 5,
-    "0": 2,
-    "6": 10
+    "9": 5
   },
   "message_types": {
-    "0": 58,
-    "19": 5
+    "0": 56,
+    "19": 9
   },
   "top_reacted_messages": [
     {
@@ -81,6 +89,48 @@
       "channel": "双持两个+12命轮的使用优化建议"
     },
     {
+      "id": "1464227657762865240",
+      "content": "Hi Keepers!\n\nHere are the scripts for Xu's Radio Drama \"The Night-Cryer's Lull\" ",
+      "author": "morimens_15",
+      "reactions": 26,
+      "channel": "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull"
+    },
+    {
+      "id": "1464056163191619739",
+      "content": "uid: 101198886\ni've never colored a drawing before in my life",
+      "author": "exhibitionism",
+      "reactions": 22,
+      "channel": "leonora"
+    },
+    {
+      "id": "1464227071139119208",
+      "content": "「小茉莉花，妾身的宝贝，妾身最爱最爱的乖宝贝。」\n「海城会是你的玩具，世界……也会是你的玩具。」\n\n✦ 徐 CV：田中理惠\n——✦——✦—— ✦✦✦ ——✦——",
+      "author": "morimensstaff02",
+      "reactions": 19,
+      "channel": "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull"
+    },
+    {
+      "id": "1464205689214734500",
+      "content": "",
+      "author": "ahong0727",
+      "reactions": 16,
+      "channel": "larry."
+    },
+    {
+      "id": "1464159231505600676",
+      "content": "附带目前徽章的实物拍摄图，供守密人参考：\nHere is actual photo of the badges for Keeper' reference:",
+      "author": "morimensstaff01",
+      "reactions": 13,
+      "channel": "《秘银日冕》系列唤醒体徽章发货延迟及补偿告知┊Shipping Delay & Compensation: \"Silver Corona\" Awakener Badges"
+    },
+    {
+      "id": "1464228634452820081",
+      "content": "We are her baobei❤\n\nHappy weekends, Keepers!<:hug:1356083899553288382>",
+      "author": "morimens_15",
+      "reactions": 13,
+      "channel": "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull"
+    },
+    {
       "id": "1464339139641217210",
       "content": "Basically every player starts off as free-to-play, and F2P players still form a ",
       "author": "mac2492",
@@ -88,11 +138,25 @@
       "channel": "V2.4.2.0 停服维护公告"
     },
     {
+      "id": "1464337981979492556",
+      "content": "UID: 101002861",
+      "author": "happyskull",
+      "reactions": 12,
+      "channel": "Tulu 👑"
+    },
+    {
       "id": "1464211919400468555",
       "content": "can we have a special art for that specific awakener at +12?\ncan use it for lobb",
       "author": "_venush",
       "reactions": 12,
       "channel": "V2.4.2.0 停服维护公告"
+    },
+    {
+      "id": "1464234506784608337",
+      "content": "“姆妈”是流行于中国南方方言区（如吴语、赣语、湘语）对母亲的尊称或口语称呼，在上海话、江苏宜兴、常州及浙江宁波等地使用普遍。它既可指生母，也可泛指跟母亲年龄相近",
+      "author": "rain_scarlet",
+      "reactions": 10,
+      "channel": "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull"
     },
     {
       "id": "1464212522251980933",
@@ -123,74 +187,18 @@
       "channel": ""
     },
     {
-      "id": "1464388438328475865",
-      "content": "Because I finished chap 3",
-      "author": "kiriwoamizaki",
+      "id": "1464239917273186384",
+      "content": "🥵",
+      "author": "ahong0727",
+      "reactions": 7,
+      "channel": "V2.4.2广播剧——《夜哭集》┊ Radio Drama -The Night-Cryer's Lull"
+    },
+    {
+      "id": "1464159067336478927",
+      "content": "",
+      "author": "morimensstaff01",
       "reactions": 5,
-      "channel": "Art dump thread"
-    },
-    {
-      "id": "1464247290134003753",
-      "content": "bonus instagram notes doodle lmao",
-      "author": "mimiruku",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1464199421125202004",
-      "content": "~~期待什麼，課金前夜正式到來嗎~~",
-      "author": "ena04564",
-      "reactions": 4,
-      "channel": "V2.4.2.0 停服维护公告"
-    },
-    {
-      "id": "1464188862199762974",
-      "content": "你遊也是這個👍🏻\n繁中一堆錯誤，簡中偶爾有錯字，然後還來了個乾脆不翻譯🤓👍🏻",
-      "author": "shostakovich524",
-      "reactions": 4,
-      "channel": "简中，但「记忆归档」是繁体字"
-    },
-    {
-      "id": "1464295057665429606",
-      "content": "想给波儿建设一个最近很火的幸福是个圈<:thinking2:1356053172065534153> 目前摸了一只鸟哥努努<:Castor_gift:14590",
-      "author": "yq0227",
-      "reactions": 4,
-      "channel": ""
-    },
-    {
-      "id": "1464198873089048783",
-      "content": "[Language]\n● Universal\n    ○ Fixed the issue where, under certain language setti",
-      "author": "morimensstaff02",
-      "reactions": 3,
-      "channel": "V2.4.2.0 停服维护公告"
-    },
-    {
-      "id": "1464217296431091733",
-      "content": "Please do NOT add axiom buffs to limited units.... Standard units i guess not so",
-      "author": "beenax.",
-      "reactions": 3,
-      "channel": "V2.4.2.0 停服维护公告"
-    },
-    {
-      "id": "1464217556167426121",
-      "content": "Axiom for standard units is a great thing. Because everyone has access to them a",
-      "author": "angy_24_s",
-      "reactions": 3,
-      "channel": "V2.4.2.0 停服维护公告"
-    },
-    {
-      "id": "1464218506714419363",
-      "content": "That is true. I believe the devs are doing this in such a roundabout way to avoi",
-      "author": "angy_24_s",
-      "reactions": 3,
-      "channel": "V2.4.2.0 停服维护公告"
-    },
-    {
-      "id": "1464219936992792709",
-      "content": "they already “avoided stepping on limited units toes” by only buffing limited st",
-      "author": "_venush",
-      "reactions": 3,
-      "channel": "V2.4.2.0 停服维护公告"
+      "channel": "《秘银日冕》系列唤醒体徽章发货延迟及补偿告知┊Shipping Delay & Compensation: \"Silver Corona\" Awakener Badges"
     }
   ]
 }

@@ -1,10 +1,13 @@
 {
   "date": "2025-06-10",
-  "messages": 18,
+  "messages": 23,
   "unique_authors": 7,
-  "reactions_total": 5,
-  "attachments": 0,
+  "reactions_total": 34,
+  "attachments": 2,
   "channel_activity": {
+    "Keeper has two (and more) hands": 3,
+    "D-Tide Alert 4/5 Guide by Flares": 1,
+    "🎊官周通販：淘寶全球可購！": 1,
     "💭「Processing」Pc ver. Stuck on update resource screen and then error 35": 3,
     "卡茜亞狂氣爆發永久降力Bug": 1,
     "✅「已回答」廣播劇的飛鳥尚未墜落之時字幕很明顯快了": 2,
@@ -15,19 +18,40 @@
     "試著用suno生成了角色歌": 5
   },
   "hourly_activity": {
-    "2": 7,
-    "3": 3,
+    "3": 5,
+    "4": 2,
+    "11": 1,
+    "2": 8,
     "15": 1,
     "10": 1,
-    "4": 1,
     "9": 5
   },
   "message_types": {
-    "0": 6,
-    "4": 2,
-    "19": 5
+    "0": 4,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1381844553174220882",
+      "content": "This is what happens after we spend too much time on story theories, and me havi",
+      "author": "baguettesuffering",
+      "reactions": 22,
+      "channel": "Keeper has two (and more) hands"
+    },
+    {
+      "id": "1381827416561029122",
+      "content": "今天戈雅會一一發私信，守密人久等啦！<:please:1356053110375714817>",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "🎊官周通販：淘寶全球可購！"
+    },
+    {
+      "id": "1381845128100188253",
+      "content": "Now the oldest question among mankind, when will we have playable William to com",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "Keeper has two (and more) hands"
+    },
     {
       "id": "1381835599090290811",
       "content": "我好歹還是有看動畫練出來的基本聽力",

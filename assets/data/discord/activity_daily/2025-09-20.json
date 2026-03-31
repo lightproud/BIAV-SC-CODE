@@ -1,10 +1,13 @@
 {
   "date": "2025-09-20",
-  "messages": 26,
+  "messages": 29,
   "unique_authors": 5,
   "reactions_total": 43,
-  "attachments": 7,
+  "attachments": 8,
   "channel_activity": {
+    "Thais Warm up": 1,
+    "Pls help explain how to play my team in depth": 1,
+    "Worth buying Doll shards?": 1,
     "[皮克曼考据]就用这颤抖的双手去描绘吧": 2,
     "✅「已回答」角色立绘/缩略图画质优化": 1,
     "💭「Processing」Dreams of medicine not working on card drawn by Horla’s event wheel": 1,
@@ -15,7 +18,9 @@
     "1305430084420898868": 3
   },
   "hourly_activity": {
-    "2": 2,
+    "2": 3,
+    "12": 1,
+    "20": 1,
     "6": 1,
     "23": 2,
     "8": 2,
@@ -26,7 +31,7 @@
     "16": 1
   },
   "message_types": {
-    "0": 2
+    "0": 3
   },
   "top_reacted_messages": [
     {

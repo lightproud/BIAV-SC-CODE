@@ -1,10 +1,24 @@
 {
   "date": "2025-08-20",
-  "messages": 48,
-  "unique_authors": 7,
-  "reactions_total": 58,
-  "attachments": 9,
+  "messages": 87,
+  "unique_authors": 22,
+  "reactions_total": 255,
+  "attachments": 23,
   "channel_activity": {
+    "happy bday tulu": 1,
+    "[Submission] \"...Point thy path to the Divine Realm!\"": 1,
+    "Kath - RA Art Submission by Flares.": 2,
+    "Cryptcur's Gallery": 2,
+    "Detailed Damage Formula Graphic": 3,
+    "V2.3.1 UGC创作征集开启! UGC Creation Submission Campaign Launched!": 6,
+    "🎨V2.3.0版本同人征集开启！Fan Collection Is Open!": 2,
+    "🎯V2.3.0版本攻略征集开启！V2.3.0 Fan Collection Is Open!": 1,
+    "Spam de códigos de recrutamento mythag(portuguese)": 3,
+    "Future Pull Advice": 4,
+    "Aequor Tentacles: Strategy and Pull Trajectory.": 2,
+    "Just starting, quick question on pulls": 2,
+    "clarifications on mechanics": 6,
+    "What to focus on": 4,
     "Call for Community Volunteer Translators: Applications Open!": 4,
     "V2.3.1.2 在线维护公告": 2,
     "✅「已回答」最近的簡體中文變多了": 1,
@@ -27,30 +41,67 @@
     "1305430084420898868": 3
   },
   "hourly_activity": {
-    "3": 9,
-    "15": 2,
+    "15": 5,
+    "14": 7,
+    "21": 2,
+    "11": 5,
+    "0": 3,
+    "6": 7,
+    "16": 1,
+    "18": 1,
+    "17": 3,
+    "3": 10,
+    "20": 6,
+    "13": 2,
+    "19": 2,
+    "2": 7,
+    "9": 1,
+    "10": 3,
     "5": 2,
-    "6": 6,
-    "20": 3,
-    "2": 2,
     "7": 12,
-    "14": 2,
     "1": 1,
     "4": 6,
-    "17": 2,
     "8": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 4
+    "0": 37,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1407750430527852635",
+      "content": "small doodle to celebrate the tall short king <:flowers:1233344885638299658>",
+      "author": "snowvleopard",
+      "reactions": 81,
+      "channel": "happy bday tulu"
+    },
+    {
+      "id": "1407838548601733170",
+      "content": "Behold, my next masterpiece.",
+      "author": "flares117",
+      "reactions": 40,
+      "channel": "Kath - RA Art Submission by Flares."
+    },
+    {
+      "id": "1407693593942032465",
+      "content": "I'll be posting all my fanart in here LOL.. Mostly just memes for now xd",
+      "author": "cryptcur",
+      "reactions": 39,
+      "channel": "Cryptcur's Gallery"
+    },
     {
       "id": "1407633896090112053",
       "content": "<@1298268532017991702>💐",
       "author": "morimensstaff01",
       "reactions": 22,
       "channel": ""
+    },
+    {
+      "id": "1407525431514497064",
+      "content": "https://docs.google.com/spreadsheets/d/1f3N_75wkZ2XOz3JFtBzQqQ5odRfFg4sZDq8wZ5tu",
+      "author": "aurora3981",
+      "reactions": 17,
+      "channel": "Detailed Damage Formula Graphic"
     },
     {
       "id": "1407631448219058266",
@@ -67,6 +118,13 @@
       "channel": "Call for Community Volunteer Translators: Applications Open!"
     },
     {
+      "id": "1407693621163069594",
+      "content": "",
+      "author": "cryptcur",
+      "reactions": 7,
+      "channel": "Cryptcur's Gallery"
+    },
+    {
       "id": "1407775575581397083",
       "content": "我只是覺得很好笑",
       "author": "ice_storys",
@@ -74,11 +132,67 @@
       "channel": "希爾拉"
     },
     {
+      "id": "1407730790355435683",
+      "content": "I fixed it!!",
+      "author": "rohaluss",
+      "reactions": 4,
+      "channel": "[Submission] \"...Point thy path to the Divine Realm!\""
+    },
+    {
+      "id": "1407526114733199441",
+      "content": "No I won't add a corpo column, tentacle burst is incalculabe.",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "Detailed Damage Formula Graphic"
+    },
+    {
+      "id": "1407685768243183717",
+      "content": "<:Emoji_AJE_M_04:1400771555939844149> 嗨大家好，V2.3.0 攻略征集获奖名单公布！\n感谢大家的精彩创作~奖励将在本周内发",
+      "author": "morimensstaff01",
+      "reactions": 2,
+      "channel": "🎯V2.3.0版本攻略征集开启！V2.3.0 Fan Collection Is Open!"
+    },
+    {
       "id": "1407637319392956426",
       "content": "赞美戈雅<:pray:1356053116260454534>",
       "author": "sweet_25367",
       "reactions": 2,
       "channel": ""
+    },
+    {
+      "id": "1407725846835499130",
+      "content": "Yes because pity carries over. But tbh corpo in the next rerun is better, of the",
+      "author": "iibenigml1588",
+      "reactions": 1,
+      "channel": "Just starting, quick question on pulls"
+    },
+    {
+      "id": "1407551836155809902",
+      "content": "",
+      "author": "kezrin",
+      "reactions": 1,
+      "channel": "clarifications on mechanics"
+    },
+    {
+      "id": "1407552002417754124",
+      "content": "'stage' means the whole dungeon, right? I initially thought it meant each battle",
+      "author": "kezrin",
+      "reactions": 1,
+      "channel": "clarifications on mechanics"
+    },
+    {
+      "id": "1407552806335938601",
+      "content": "after the turn ends, they'll revert back to the original cards right? lmao",
+      "author": "kezrin",
+      "reactions": 1,
+      "channel": "clarifications on mechanics"
+    },
+    {
+      "id": "1407729715627687976",
+      "content": "this increases the amount of poison the wielder inflicts? or does it actually in",
+      "author": "kezrin",
+      "reactions": 1,
+      "channel": "clarifications on mechanics"
     },
     {
       "id": "1407616913538023529",
@@ -93,27 +207,6 @@
       "author": "morimensstaff01",
       "reactions": 1,
       "channel": "✅「Answered」Posse visual glitch"
-    },
-    {
-      "id": "1407620788206698547",
-      "content": "100804972",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "💭「Processing」Kath messages doesn't display properly"
-    },
-    {
-      "id": "1407562051731062854",
-      "content": "Sorry, the list of winners for V2.3.0 has not been announced yet. Goya will stri",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Question about fan work submission event"
-    },
-    {
-      "id": "1407563449139069010",
-      "content": "Thank you very much, Goya <:pray:1356053116260454534>",
-      "author": "ayla1425",
-      "reactions": 1,
-      "channel": "✅「Answered」Question about fan work submission event"
     }
   ]
 }

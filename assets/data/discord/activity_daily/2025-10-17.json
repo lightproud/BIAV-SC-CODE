@@ -1,10 +1,24 @@
 {
   "date": "2025-10-17",
-  "messages": 99,
-  "unique_authors": 18,
-  "reactions_total": 15,
-  "attachments": 8,
+  "messages": 300,
+  "unique_authors": 62,
+  "reactions_total": 377,
+  "attachments": 51,
   "channel_activity": {
+    "Тулу фанарт": 1,
+    "Мудрость мышек - Jenkin": 2,
+    "Video Guide to Rates, Banner Types & Characters for Beginners": 1,
+    "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!": 10,
+    "V2.3.4 波吕克斯✦唤醒体&命轮介绍┊Pollux✦Awaker & Wheel of Destiny Introduction": 4,
+    "📜V2.3.4 版本前瞻┊ Version Outlook": 82,
+    "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!": 54,
+    "血肉队主线成就": 4,
+    "求配隊": 2,
+    "萌新求助": 24,
+    "Pull Direction/Account Building advice.": 6,
+    "Which should I pull on?": 1,
+    "Clementine E2-4 vs Veiled Anguish WoD": 6,
+    "Found this game 3 days ago, and downloaded due to reverse:1999 similarities.": 4,
     "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework": 1,
     "✅「Answered」About new Ryker buff": 1,
     "✅「已回答」關於二創徵集的參與獎": 3,
@@ -19,106 +33,172 @@
     "相位對弈環境攻略": 8
   },
   "hourly_activity": {
-    "14": 42,
-    "12": 6,
-    "13": 3,
-    "15": 30,
-    "17": 2,
-    "20": 1,
-    "6": 1,
+    "17": 4,
+    "18": 7,
+    "10": 15,
+    "6": 2,
+    "11": 11,
+    "12": 14,
+    "13": 33,
+    "9": 10,
+    "15": 39,
+    "14": 116,
+    "8": 25,
+    "19": 2,
+    "20": 4,
+    "21": 5,
+    "23": 3,
+    "3": 1,
+    "4": 5,
     "7": 2,
     "1": 1,
-    "5": 1,
-    "10": 4,
-    "11": 6
+    "5": 1
   },
   "message_types": {
-    "0": 1
+    "19": 41,
+    "0": 159,
+    "4": 1
   },
   "top_reacted_messages": [
     {
-      "id": "1428721724500742146",
-      "content": "<@&1166257943742787615> \n<@&1179385403413897256> \nDont forget this man . \nHE IS ",
-      "author": "aegisx",
-      "reactions": 2,
-      "channel": "✅「Answered」About new Ryker buff"
-    },
-    {
-      "id": "1428749231396487218",
-      "content": "原本pv裡的真的很有忘卻感 但現在新版的微調立繪變得更活人感了 不覺得原本的死人淒美感墨菲更為貼近忘卻的風格嗎？\n\n我本人是更為傾向原版 也就是pv裡的立繪\n\n",
-      "author": "ahong0727",
-      "reactions": 2,
-      "channel": "誕妄墨菲立繪"
-    },
-    {
-      "id": "1428766107464106075",
-      "content": "短暫的永恆是觸發痲痹、毒",
-      "author": "akkom730",
-      "reactions": 2,
-      "channel": "相位對弈環境攻略"
-    },
-    {
-      "id": "1428758188743852152",
-      "content": "牢貓別總惦記那破PVP",
-      "author": "nahida._90",
-      "reactions": 1,
-      "channel": "前瞻：V2.4 幻梦深潜与相位对弈生涯奖励重做 Preview: V2.4 Phantasmal Dive and Traphase Career Rewards Rework"
-    },
-    {
-      "id": "1428738651747254332",
-      "content": "我想詢問一下授獎的資格究竟是什麼？我已經參加了兩次，但是兩次都連參與獎也沒有拿到。第二次我以為是因為我寫的是其他作品角色假想成忘卻前夜的喚醒體，這種crosso",
-      "author": "amstelredam",
-      "reactions": 1,
-      "channel": "✅「已回答」關於二創徵集的參與獎"
-    },
-    {
-      "id": "1428740208916168848",
-      "content": "<@&1166257943742787615>",
-      "author": "oct3000",
-      "reactions": 1,
-      "channel": "✅「已回答」關於二創徵集的參與獎"
-    },
-    {
-      "id": "1428765155663155429",
-      "content": "帖子意義如何突出",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "誕妄墨菲立繪"
-    },
-    {
-      "id": "1428792725788168344",
-      "content": "我忘記我想回什麼了（",
-      "author": "undecember_news",
-      "reactions": 1,
-      "channel": "誕妄墨菲立繪"
-    },
-    {
-      "id": "1428848541949755432",
-      "content": "In the Inventory Pale Descendent wheel says \"triggers 24% of poison\"\n\nIn battle ",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "✅「Answered」Pale Descendent WoD bug"
-    },
-    {
-      "id": "1428713016404475914",
-      "content": "<:Clown:1400771541423226971>",
-      "author": "corposant_1003",
-      "reactions": 1,
-      "channel": "💭「处理中」关于领航"
-    },
-    {
-      "id": "1428698564606824500",
-      "content": "嗨，下次版更会放出~",
+      "id": "1428657852641444051",
+      "content": "奶糖、软糖、夹心糖……呼，要是能把全世界都变成糖果该多美妙（嚼嚼嚼）\n\n咔嚓！咔嚓！「糖果相机」堂堂登场——\n📸嘿图鲁，看镜头：嗯？居然是芥末味\n📸嘿艾继丝，看",
       "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「已回答」什麼時候把這東西調回來"
+      "reactions": 66,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
     },
     {
-      "id": "1428762507530735757",
-      "content": "改id了認不出",
+      "id": "1428808707059224660",
+      "content": "❤️",
+      "author": "maya014632",
+      "reactions": 28,
+      "channel": "Мудрость мышек - Jenkin"
+    },
+    {
+      "id": "1428684884586795038",
+      "content": "",
+      "author": "ass191044",
+      "reactions": 26,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428668699690143785",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 23,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428668635689521312",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 21,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428662040880484403",
+      "content": "Strawberry Murphy Candy",
+      "author": "closetom",
+      "reactions": 17,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428694323976998982",
+      "content": "@everyone 感谢大家热情的参与，我们收到了很多特别棒的作品！\n经过了多轮评选后，诞生了最终的获奖名单：\n\n✍️ 下周戈雅会准备一个谷歌文档，文档里将放上",
+      "author": "morimensstaff01",
+      "reactions": 12,
+      "channel": "🔥10000银芯奖励！V2.3.2 UGC创作征集开启┊10,000 Silver reward, V2.3.2 UGC Creation Submission Campaign Launched!"
+    },
+    {
+      "id": "1428658934733865051",
+      "content": "||我们家小骑士一定是香草味的🥵 ||",
+      "author": "akalanden",
+      "reactions": 12,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428665151816728677",
+      "content": "",
+      "author": "closetom",
+      "reactions": 12,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428721487862431814",
+      "content": "",
+      "author": "arandomflamev2",
+      "reactions": 12,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428686248012152975",
+      "content": "https://www.youtube.com/watch?v=dXrrB37gpco\n\nFeel free to @ me with any question",
+      "author": "reya.li",
+      "reactions": 10,
+      "channel": "Video Guide to Rates, Banner Types & Characters for Beginners"
+    },
+    {
+      "id": "1428665484320051270",
+      "content": "i am craving a matcha takoyaki 🤤",
+      "author": "jormiejormungandr",
+      "reactions": 9,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428666098051579996",
+      "content": "random surprise flavor~",
+      "author": "dahongtsa",
+      "reactions": 9,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428739515064778833",
+      "content": "here you go",
+      "author": "chiedgaf",
+      "reactions": 9,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428666176812093520",
+      "content": "",
+      "author": "closetom",
+      "reactions": 8,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428698520730468362",
+      "content": "there's definitely something wrong with this one",
+      "author": "reya.li",
+      "reactions": 8,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428760931105640632",
+      "content": "the right one is so much better",
+      "author": "_venush",
+      "reactions": 7,
+      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1428763315416334347",
+      "content": "the old one is more better than the new one<:dead:1356082627509092372>",
       "author": "ahong0727",
-      "reactions": 1,
-      "channel": "相位對弈環境攻略"
+      "reactions": 7,
+      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
+    },
+    {
+      "id": "1428720227255849031",
+      "content": "鼠鼠你可以吃糖",
+      "author": "panth3936",
+      "reactions": 7,
+      "channel": "🎃糟糕！不小心变成糖果被吃掉了！Oops! Accidentally turned into a candy and got eaten!"
+    },
+    {
+      "id": "1428763543775482077",
+      "content": "Sorry but ...\nI kinda like the left one <:drool:1356053063139463248>",
+      "author": "legendaryredz",
+      "reactions": 6,
+      "channel": "📜V2.3.4 版本前瞻┊ Version Outlook"
     }
   ]
 }

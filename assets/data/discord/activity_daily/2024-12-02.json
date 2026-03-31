@@ -1,10 +1,12 @@
 {
   "date": "2024-12-02",
-  "messages": 105,
+  "messages": 110,
   "unique_authors": 13,
   "reactions_total": 112,
-  "attachments": 50,
+  "attachments": 51,
   "channel_activity": {
+    "Reruns priority guide (for newcomers and general)": 2,
+    "GPT translation synonyms": 3,
     "🌌【已開獎】超越維度的祝福": 4,
     "🕧【已開獎】決勝戰總動員": 3,
     "V1.7.2.3 在線維護公告": 5,
@@ -26,11 +28,13 @@
     "堆堆莱克相关": 14
   },
   "hourly_activity": {
+    "12": 1,
+    "20": 1,
+    "2": 6,
     "1": 1,
     "4": 4,
     "5": 19,
     "14": 21,
-    "2": 3,
     "15": 12,
     "16": 3,
     "17": 1,
@@ -46,8 +50,8 @@
     "10": 1
   },
   "message_types": {
-    "0": 13,
-    "19": 1
+    "0": 3,
+    "19": 2
   },
   "top_reacted_messages": [
     {

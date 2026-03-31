@@ -1,10 +1,16 @@
 {
   "date": "2025-04-30",
-  "messages": 33,
-  "unique_authors": 10,
-  "reactions_total": 6,
-  "attachments": 6,
+  "messages": 120,
+  "unique_authors": 21,
+  "reactions_total": 84,
+  "attachments": 19,
   "channel_activity": {
+    "Tulu is adorable": 1,
+    "Just a pixel image of Jenkin looking outside with Brown": 1,
+    "Realm Guide Playlist - From Flares' of the Costco": 1,
+    "한국어 번역 피드백 컬렉션": 1,
+    "🍲珈倫廚力大爆發┊Karen's cooking power explodes": 54,
+    "🎧克珀珊特 Corposant丨2.2廣播劇《航海譫妄症》（建議佩戴耳機）": 29,
     "V2.2.1.2 在線維護公告": 1,
     "✅校猫碎碎念#近况分享": 1,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 1,
@@ -17,18 +23,119 @@
     "✅「已回答」基础打防是什么意思": 1
   },
   "hourly_activity": {
-    "11": 4,
+    "4": 1,
+    "6": 11,
+    "0": 1,
+    "8": 17,
+    "7": 4,
+    "9": 26,
+    "10": 16,
+    "11": 7,
+    "12": 1,
+    "13": 4,
+    "14": 2,
+    "15": 18,
     "16": 1,
-    "8": 14,
     "3": 4,
-    "9": 2,
-    "15": 1,
     "2": 7
   },
   "message_types": {
-    "0": 2
+    "0": 63,
+    "19": 23,
+    "4": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1367073994075017249",
+      "content": "<@1212339830835511347>  🛎️ 海產品在大火爆炒下滲出精華湯汁，足上的金箔點綴其中，增添了別樣風味",
+      "author": "morimensstaff01",
+      "reactions": 18,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367076036742873158",
+      "content": "<@330867601691639809> \nFresh, sweet drinks, hastily brought from the desert for ",
+      "author": "morimensstaff01",
+      "reactions": 10,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367080844489130056",
+      "content": "「人世間的航線，無法指引向幸福。終於，在獻上一切後，我看到了……」\n\n——◆——◆—— ◆◆◆ ——◆——◆——\n\n**🎧 Corposant丨2.2Radio",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "🎧克珀珊特 Corposant丨2.2廣播劇《航海譫妄症》（建議佩戴耳機）"
+    },
+    {
+      "id": "1367059555670032505",
+      "content": "<@944524613168279553> 🛎️這樣特殊的點單實在讓人難以忽視呀，祝您……用餐愉快😷",
+      "author": "morimensstaff01",
+      "reactions": 6,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367032728540942450",
+      "content": "烤校貓蛋蛋",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367032942664093736",
+      "content": "然後咖哩味的大便來一份可以嗎",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367088584682901544",
+      "content": "我需要一份从珊的石像刮下来的石沫和石块做成的蛋糕",
+      "author": "ahong0727",
+      "reactions": 4,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1366933271354671104",
+      "content": "From the Creator of the most popular Morimens spreadsheet. I bring you the Realm",
+      "author": "flares117",
+      "reactions": 3,
+      "channel": "Realm Guide Playlist - From Flares' of the Costco"
+    },
+    {
+      "id": "1367028639048138827",
+      "content": "<@1213364721328332840> 您的傳菜員戈雅上線——請享用珈倫為您精心烹飪的美食“斑斕果凍”\n溫馨提示：這道食物需盡快品嘗，不然會逃走喲🍸 🌹",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367030298629505066",
+      "content": "<:point:1356053112292511815>",
+      "author": "akalanden",
+      "reactions": 3,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367052756267044876",
+      "content": "我想要托乎瓦波无上意志的目光作基底，搭配莱克的狼毫、塔薇的头纱、圣婴的触手，最上面再点缀一只N的玫瑰🌹🌹🌹",
+      "author": "nowimfaceless",
+      "reactions": 3,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367075106064437299",
+      "content": "好有实力",
+      "author": "muliupan",
+      "reactions": 3,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367068527173042198",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 2,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
     {
       "id": "1367049230643888128",
       "content": "Admist > amidst\nTwo wheels share the same name\nTill > til",
@@ -44,18 +151,39 @@
       "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
     },
     {
+      "id": "1367060165614112898",
+      "content": "Sorry for the long wait, Goya will go and find out the situation~",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "한국어 번역 피드백 컬렉션"
+    },
+    {
+      "id": "1367032553349058601",
+      "content": "<@1084923460326793289> 🛎️這道佳餚包含了珈倫對“形而上”哲理的全部理解，請守密人慢慢享用~",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367078810834702419",
+      "content": "",
+      "author": "muliupan",
+      "reactions": 1,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367091350750756975",
+      "content": "好建議！戈雅會去提提<:cute1:1356053053568192717>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "🎧克珀珊特 Corposant丨2.2廣播劇《航海譫妄症》（建議佩戴耳機）"
+    },
+    {
       "id": "1367055162811748393",
       "content": "Sorry！ Goya  look now",
       "author": "morimensstaff01",
       "reactions": 1,
       "channel": "About translate correction"
-    },
-    {
-      "id": "1366971554210119760",
-      "content": "I tested this in chapter 6 & 7 normal mode and story mode",
-      "author": "monchi3524",
-      "reactions": 1,
-      "channel": "✅「Answered」First line of story text is being skipped over"
     }
   ]
 }

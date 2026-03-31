@@ -1,10 +1,13 @@
 {
   "date": "2025-03-30",
-  "messages": 7,
-  "unique_authors": 3,
+  "messages": 17,
+  "unique_authors": 8,
   "reactions_total": 2,
   "attachments": 2,
   "channel_activity": {
+    "Kinda confused help me for the team": 1,
+    "Need help with team comp/builds": 1,
+    "NOTICE FOR ALL NEW PLAYERS": 8,
     "不会是有啥elo吧": 1,
     "【同人活動毀損灰霧之都】マーフィーを描いてみた": 1,
     "*千面幻象*达芙黛尔单人向": 1,
@@ -14,15 +17,20 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "1": 2,
+    "8": 3,
+    "9": 3,
+    "10": 2,
+    "11": 1,
     "15": 1,
     "2": 2,
     "4": 1,
     "21": 1,
-    "6": 1,
-    "8": 1
+    "6": 1
   },
   "message_types": {
-    "0": 1
+    "0": 8,
+    "19": 2
   },
   "top_reacted_messages": [
     {

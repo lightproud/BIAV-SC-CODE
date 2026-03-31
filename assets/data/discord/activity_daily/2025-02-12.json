@@ -1,10 +1,12 @@
 {
   "date": "2025-02-12",
-  "messages": 80,
+  "messages": 82,
   "unique_authors": 19,
   "reactions_total": 20,
   "attachments": 13,
   "channel_activity": {
+    "Tier list as of 2.0": 1,
+    "GDoll preview rough TL": 1,
     "✅前瞻：V2.1 无形者的礼券&请柬": 2,
     "✅「Answered」Sound didnt play when game at background": 2,
     "I can't get into the game": 3,
@@ -30,6 +32,8 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "4": 3,
+    "11": 4,
     "14": 5,
     "2": 18,
     "16": 15,
@@ -37,17 +41,16 @@
     "23": 1,
     "5": 1,
     "7": 8,
-    "11": 3,
     "12": 3,
     "13": 5,
     "15": 4,
     "9": 3,
     "3": 9,
-    "4": 2,
     "10": 1
   },
   "message_types": {
-    "0": 2
+    "0": 1,
+    "19": 1
   },
   "top_reacted_messages": [
     {

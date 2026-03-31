@@ -1,10 +1,11 @@
 {
   "date": "2024-11-17",
-  "messages": 70,
+  "messages": 73,
   "unique_authors": 17,
   "reactions_total": 78,
-  "attachments": 5,
+  "attachments": 6,
   "channel_activity": {
+    "Relic Tierlist": 3,
     "V1.7.1.0 停服維護公告": 17,
     "📜《忘卻前夜 Morimens》V1.7即將開放！精彩資訊一網打盡！": 1,
     "這位無法攻擊的大人是誰家的部將": 2,
@@ -19,6 +20,7 @@
     "超絕羅傑斯和喬治畫像": 2
   },
   "hourly_activity": {
+    "6": 3,
     "7": 4,
     "11": 11,
     "12": 10,
@@ -35,8 +37,7 @@
     "1": 1
   },
   "message_types": {
-    "0": 16,
-    "19": 2
+    "0": 3
   },
   "top_reacted_messages": [
     {

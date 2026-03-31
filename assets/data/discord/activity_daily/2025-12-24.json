@@ -1,10 +1,18 @@
 {
   "date": "2025-12-24",
-  "messages": 128,
-  "unique_authors": 16,
-  "reactions_total": 416,
-  "attachments": 18,
+  "messages": 297,
+  "unique_authors": 28,
+  "reactions_total": 438,
+  "attachments": 27,
   "channel_activity": {
+    "Morimens inspired": 8,
+    "Uvash and Leigh": 33,
+    "Senior William doodles": 2,
+    "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction": 78,
+    "V2.4.1 茉夏的酣畅一战！Mouchette's Thrilling Battle!": 4,
+    "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette": 25,
+    "新手求助": 1,
+    "求配队，新手主线已经开始痛苦了……": 18,
     "对于联动的期限规划 On the Duration and Planning of Collaborations": 25,
     "Ramona": 5,
     "Who Ryker's Designer pls come talk ?": 1,
@@ -48,28 +56,31 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
-    "16": 7,
+    "9": 24,
+    "12": 7,
+    "14": 14,
+    "5": 1,
+    "8": 42,
+    "10": 22,
+    "1": 3,
+    "15": 60,
+    "16": 15,
+    "22": 2,
+    "23": 2,
+    "11": 5,
+    "0": 2,
+    "4": 8,
+    "13": 19,
     "17": 22,
-    "4": 5,
-    "14": 1,
     "6": 5,
     "7": 36,
-    "8": 25,
-    "9": 6,
-    "13": 1,
     "2": 1,
-    "10": 6,
     "19": 4,
-    "22": 1,
-    "12": 1,
-    "3": 3,
-    "15": 3,
-    "1": 1
+    "3": 3
   },
   "message_types": {
-    "0": 19,
-    "6": 2,
-    "19": 9
+    "0": 125,
+    "19": 44
   },
   "top_reacted_messages": [
     {
@@ -101,6 +112,13 @@
       "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     },
     {
+      "id": "1453252540819832987",
+      "content": "Reproduction Frenzy ?",
+      "author": "shiio4870",
+      "reactions": 11,
+      "channel": "Uvash and Leigh"
+    },
+    {
       "id": "1453433210099859539",
       "content": "考虑到我们产能非常宝贵，还是希望留出一些时间来继续《忘却前夜》自己的故事。",
       "author": "game.producer.light",
@@ -120,6 +138,13 @@
       "author": "pinguimally3689",
       "reactions": 5,
       "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
+    },
+    {
+      "id": "1453352846324928654",
+      "content": "端上来了，来吃",
+      "author": "morimensstaff01",
+      "reactions": 4,
+      "channel": "V2.4.1 全新唤醒体✦茉夏┊New Awakener✦Mouchette"
     },
     {
       "id": "1453224617110933525",
@@ -171,6 +196,13 @@
       "channel": "💭「处理中」蘿坦桀驁之刃或靈知覺醒bug"
     },
     {
+      "id": "1453402029702779024",
+      "content": "How do you deal damage in this game.\n\nYou're an another specimen who I need repl",
+      "author": "thpdom",
+      "reactions": 2,
+      "channel": "V2.4.1 茉夏✦唤醒体&命轮介绍┊Mouchette✦Awaker & Wheel of Destiny Introduction"
+    },
+    {
       "id": "1453329788050866196",
       "content": "Kk, tnx, mostly to be fair to the community and limit animosity",
       "author": "vxvendetta97",
@@ -190,27 +222,6 @@
       "author": "morimensstaff01",
       "reactions": 2,
       "channel": "✅「已回答」什麼樣的造物會被收藏？"
-    },
-    {
-      "id": "1453296670187196416",
-      "content": "Hi, this issue has been fixed and will be updated as soon as possible",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「Answered」Ham Exalt Text is wrongly string-interpolated"
-    },
-    {
-      "id": "1453432484736925831",
-      "content": "",
-      "author": "game.producer.light",
-      "reactions": 1,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
-    },
-    {
-      "id": "1453436708648386704",
-      "content": "借版詢問24在日服上的三星幻衣有機會在國際服上架嗎",
-      "author": "souri.10244",
-      "reactions": 1,
-      "channel": "对于联动的期限规划 On the Duration and Planning of Collaborations"
     }
   ]
 }

@@ -1,10 +1,12 @@
 {
   "date": "2025-02-15",
-  "messages": 69,
+  "messages": 73,
   "unique_authors": 19,
   "reactions_total": 86,
   "attachments": 25,
   "channel_activity": {
+    "Tier list as of 2.0": 2,
+    "I'm new !": 2,
     "💟獻上愛的圖騰——來自小花腦的信函": 6,
     "✅前瞻：V2.1.0.2 星辰篇规则": 10,
     "謹告各位守密人關於深潛36000條約": 8,
@@ -27,8 +29,9 @@
     "1271491376881598494": 3
   },
   "hourly_activity": {
+    "19": 2,
+    "7": 6,
     "3": 2,
-    "7": 4,
     "9": 11,
     "15": 1,
     "12": 15,
@@ -46,9 +49,7 @@
     "14": 1
   },
   "message_types": {
-    "0": 13,
-    "46": 1,
-    "19": 2
+    "0": 4
   },
   "top_reacted_messages": [
     {

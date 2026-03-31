@@ -1,16 +1,18 @@
 {
   "date": "2024-11-23",
-  "messages": 15,
+  "messages": 16,
   "unique_authors": 4,
-  "reactions_total": 15,
+  "reactions_total": 16,
   "attachments": 0,
   "channel_activity": {
+    "Overexalt list": 1,
     "請願本源朵爾進典藏館以及實裝上線": 10,
     "塔薇...": 3,
     "往日余影": 1,
     "歡愉脊髓劍": 1
   },
   "hourly_activity": {
+    "16": 1,
     "0": 3,
     "1": 1,
     "7": 3,
@@ -21,7 +23,7 @@
     "3": 1
   },
   "message_types": {
-    "0": 10
+    "0": 1
   },
   "top_reacted_messages": [
     {
@@ -51,6 +53,13 @@
       "author": "timee_ky",
       "reactions": 3,
       "channel": "塔薇..."
+    },
+    {
+      "id": "1309921613919289475",
+      "content": "Tawil - Tawil's damage, shield and heal temporarily increased by 35%. change to ",
+      "author": "annaxxe_",
+      "reactions": 1,
+      "channel": "Overexalt list"
     }
   ]
 }

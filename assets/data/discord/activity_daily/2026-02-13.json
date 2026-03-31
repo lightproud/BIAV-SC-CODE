@@ -1,10 +1,13 @@
 {
   "date": "2026-02-13",
-  "messages": 711,
-  "unique_authors": 53,
-  "reactions_total": 281,
-  "attachments": 98,
+  "messages": 6529,
+  "unique_authors": 113,
+  "reactions_total": 945,
+  "attachments": 303,
   "channel_activity": {
+    "逆向推理┊Reverse Inference": 3,
+    "求方向": 1,
+    "🔸morimens-game-chat": 5814,
     "Stop aurafarming!": 2,
     "Lotan": 1,
     "💭「處理中」Bug列車": 3,
@@ -49,32 +52,35 @@
     "🔸阵容构建": 7
   },
   "hourly_activity": {
-    "14": 21,
-    "20": 1,
-    "18": 6,
-    "9": 57,
-    "12": 39,
-    "6": 31,
-    "8": 52,
-    "17": 14,
-    "3": 28,
-    "10": 86,
-    "2": 89,
-    "4": 68,
-    "7": 37,
+    "0": 61,
+    "9": 379,
+    "7": 189,
+    "1": 114,
+    "2": 181,
+    "3": 455,
+    "4": 125,
+    "5": 206,
+    "6": 78,
+    "8": 491,
+    "10": 491,
+    "11": 328,
+    "12": 166,
+    "13": 318,
+    "14": 421,
+    "15": 593,
+    "16": 604,
+    "17": 351,
+    "18": 505,
+    "19": 315,
+    "20": 154,
     "23": 3,
-    "11": 35,
-    "1": 21,
-    "5": 45,
-    "15": 22,
-    "16": 21,
-    "0": 30,
-    "13": 4,
     "21": 1
   },
   "message_types": {
-    "0": 2,
-    "19": 1
+    "19": 1924,
+    "0": 3888,
+    "23": 1,
+    "20": 5
   },
   "top_reacted_messages": [
     {
@@ -106,6 +112,13 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1471793909696036904",
+      "content": "bUT they are probably just saying that",
+      "author": "flares117",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1471721163930468476",
       "content": "<:emoji_17:1401143629392773120>",
       "author": "xingxiu_0209",
@@ -120,11 +133,46 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1471793061741990051",
+      "content": "wtf",
+      "author": "craux.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1471801518008172544",
       "content": "祝我好运（",
       "author": "xyakoto",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1471695574125383810",
+      "content": "She ate like 7 Thais babies and 5 normal babies",
+      "author": "linireo",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1471786513003184190",
+      "content": "say I should go back to the hospital",
+      "author": "flares117",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1471830920507035679",
+      "content": "Oh wait im stupid",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1471896601118376212",
+      "content": "nice try <@1344504250784551014>",
+      "author": "_kito_kato_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1471695306851745929",
@@ -155,67 +203,25 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1471715181292818685",
-      "content": "We have seen your suggestion<:Pandia_love:1459078512303411261> . We may make som",
-      "author": "morimensstaff01",
+      "id": "1471707829961363558",
+      "content": "wait this is insane tech????",
+      "author": "not_blueberry",
       "reactions": 5,
-      "channel": "✅「Answered」Train game mode improvement feedback"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1471724030288728136",
-      "content": "",
-      "author": "water_heart",
+      "id": "1471786420212465684",
+      "content": "flares answervis im fine",
+      "author": "flares117",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1471743139000746128",
-      "content": "",
-      "author": "jiangzehuai",
+      "id": "1471787444495192271",
+      "content": "i made it through day 2 and 3 with none of the prescribed pain meds",
+      "author": "flares117",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471892907534450801",
-      "content": "凹过了癫狂帷幕大人。此生无憾矣（）",
-      "author": "xyakoto",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1472013644727455745",
-      "content": "這個 怎麼會這樣呢 右邊數據是正確的 下面造物也是正確的 但隊伍名單跟裝備清單錯誤了\n不然你說這四個人怎麼可能帶羊媽的維度影像嘛><",
-      "author": "amstelredam",
-      "reactions": 4,
-      "channel": "列車結算頁面隊伍被換頭了"
-    },
-    {
-      "id": "1471696471618228337",
-      "content": "這個海德拉就是菜啦",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471697297048997982",
-      "content": "海平面上升起淡薄的白雾，将万物笼罩在一片朦胧之中。\n跨越生与死的界限，跨越门扉内外的距离，跨越漫长得褪色的记忆，你看见撑着阳伞的淑女逆光的身影。\n与她共度的时光",
-      "author": "navirecorbeau",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471719038689349673",
-      "content": "<:24_Clown:1468259444423921871>",
-      "author": "xingxiu_0209",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1471746701545967708",
-      "content": "我們一定要玩這麼累的東西嗎（",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

@@ -1,10 +1,15 @@
 {
   "date": "2025-04-03",
-  "messages": 47,
+  "messages": 67,
   "unique_authors": 12,
-  "reactions_total": 430,
-  "attachments": 6,
+  "reactions_total": 479,
+  "attachments": 15,
   "channel_activity": {
+    "Tier list as of 2.0": 1,
+    "🔔克萊門汀的酣眠療愈┊Clementine's Sleep Therapy": 1,
+    "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook": 15,
+    "忘却前夜相位对弈构筑攻略": 1,
+    "How To Create a Team + Other Information": 2,
     "💭「Processing」Error 7028001": 4,
     "关于三种代币兑换灵核碎片的问题": 3,
     "克莱门汀的唤醒体手册呢": 2,
@@ -23,22 +28,26 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "1": 1,
+    "8": 20,
+    "9": 11,
+    "10": 14,
+    "16": 2,
+    "13": 5,
+    "20": 1,
+    "23": 1,
     "7": 4,
-    "8": 13,
-    "13": 4,
     "14": 2,
     "3": 2,
-    "9": 8,
     "12": 1,
-    "10": 10,
     "11": 1,
     "5": 1,
     "2": 1
   },
   "message_types": {
-    "0": 22,
-    "4": 4,
-    "19": 8
+    "20": 1,
+    "19": 3,
+    "0": 16
   },
   "top_reacted_messages": [
     {
@@ -63,6 +72,27 @@
       "channel": ""
     },
     {
+      "id": "1357269731844948048",
+      "content": "Attention Keepers🌹 ,\nWe're currently hard at work replacing all previous AI tran",
+      "author": "morimensstaff01",
+      "reactions": 13,
+      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
+    },
+    {
+      "id": "1357271413639221268",
+      "content": "Thank you for the hard work, very happy to see it",
+      "author": "vxvendetta",
+      "reactions": 13,
+      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
+    },
+    {
+      "id": "1357269325198655591",
+      "content": "✨ 《忘卻前夜 Morimens》V2.2.0 即將開放！精彩資訊一網打盡！\n高清切圖可在評論區查看！\n\n✨ 《Morimens》V2.2.0 will be ",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
+    },
+    {
       "id": "1357224836983689318",
       "content": "https://shuangyue.cms.webnode.page/\n如果有侵權行為，或是錯誤可以告訴我!!!!!!!!!!!!!!\n(爆肝",
       "author": "huangziqiao_45693",
@@ -70,11 +100,46 @@
       "channel": "嘗試做了網頁:33"
     },
     {
+      "id": "1357269638861295697",
+      "content": "🔥 **【English HD Cut Picture】**",
+      "author": "morimensstaff01",
+      "reactions": 5,
+      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
+    },
+    {
+      "id": "1357269456996405419",
+      "content": "🔥 **【繁中高清切圖】**",
+      "author": "morimensstaff01",
+      "reactions": 3,
+      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
+    },
+    {
       "id": "1357293591990636567",
       "content": "喔喔喔網頁",
       "author": "ena04564",
       "reactions": 3,
       "channel": "嘗試做了網頁:33"
+    },
+    {
+      "id": "1357282974906716201",
+      "content": "<@655338276554801152> 我们的推角 \n# 强化了",
+      "author": "be_queitplease",
+      "reactions": 2,
+      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
+    },
+    {
+      "id": "1357393380438446100",
+      "content": "應該是像尤烏那樣，前十張布朗不受算力調和影響之類的吧",
+      "author": "heikwok",
+      "reactions": 2,
+      "channel": "📜V2.2.0 版本前瞻┊V2.2.0 Version Outlook"
+    },
+    {
+      "id": "1357341523120754770",
+      "content": "一篇忘却前夜PVP模式相位对弈攻略，作者为前榜一，现常驻高分玩家:维克多-100197209。欢迎大家观看探讨。\nhttps://b23.tv/JKQ2u2y",
+      "author": "deadlykilling777",
+      "reactions": 2,
+      "channel": "忘却前夜相位对弈构筑攻略"
     },
     {
       "id": "1357248838330749068",

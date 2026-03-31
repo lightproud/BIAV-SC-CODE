@@ -1,10 +1,12 @@
 {
   "date": "2025-04-13",
-  "messages": 11,
-  "unique_authors": 3,
+  "messages": 20,
+  "unique_authors": 4,
   "reactions_total": 10,
   "attachments": 4,
   "channel_activity": {
+    "aomi’s morimens dump": 2,
+    "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide": 7,
     "下周更新典藏館該上新星辰篇一二章壁紙了": 4,
     "✅「Answered」Does It work": 1,
     "Sensei瞬息弥萨格（碧蓝档案x忘却前夜同人）（已更新完成第一幕）": 4,
@@ -12,16 +14,20 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
+    "2": 1,
+    "3": 1,
+    "9": 2,
+    "23": 6,
     "8": 3,
     "17": 1,
     "6": 1,
     "4": 2,
     "10": 2,
-    "18": 1,
-    "9": 1
+    "18": 1
   },
   "message_types": {
-    "0": 5
+    "19": 2,
+    "0": 7
   },
   "top_reacted_messages": [
     {

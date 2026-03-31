@@ -1,10 +1,14 @@
 {
   "date": "2026-01-02",
-  "messages": 37,
+  "messages": 51,
   "unique_authors": 9,
-  "reactions_total": 84,
-  "attachments": 12,
+  "reactions_total": 113,
+  "attachments": 13,
   "channel_activity": {
+    "Ms Dean?": 6,
+    "Happy 2026 Fellow Keepers": 1,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 4,
+    "健检+配队建议": 3,
     "I errr.... #2": 2,
     "Forehead tierlist": 2,
     "💭「处理中」常見簡轉繁漏洞：「輓」歌、療「癒」": 2,
@@ -23,25 +27,27 @@
     "1441326394817908736": 2
   },
   "hourly_activity": {
-    "5": 2,
-    "15": 3,
+    "6": 2,
+    "8": 4,
+    "12": 5,
+    "3": 2,
+    "5": 3,
+    "11": 4,
+    "20": 2,
+    "15": 6,
     "16": 2,
     "22": 4,
     "4": 3,
-    "3": 1,
     "17": 4,
     "19": 1,
     "2": 3,
     "23": 1,
-    "11": 3,
     "0": 3,
-    "12": 3,
-    "13": 2,
-    "6": 1,
-    "8": 1
+    "13": 2
   },
   "message_types": {
-    "0": 4
+    "0": 13,
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -52,11 +58,25 @@
       "channel": "Forehead tierlist"
     },
     {
+      "id": "1456486690939076741",
+      "content": "Wishing you a good rest of the year",
+      "author": "hominam",
+      "reactions": 20,
+      "channel": "Happy 2026 Fellow Keepers"
+    },
+    {
       "id": "1456785570914242610",
       "content": "Here you are\n\nhttps://discord.com/channels/1131791637933199470/14563062878841120",
       "author": "amstelredam",
       "reactions": 10,
       "channel": "Enlightment Adjustment"
+    },
+    {
+      "id": "1456541696794824724",
+      "content": "https://x.com/TavvyVyes/status/2006982681863893024?s=20",
+      "author": "shiio4870",
+      "reactions": 9,
+      "channel": "Ms Dean?"
     },
     {
       "id": "1456511232990249033",

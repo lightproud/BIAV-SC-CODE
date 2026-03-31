@@ -1,10 +1,15 @@
 {
   "date": "2025-04-11",
-  "messages": 76,
+  "messages": 102,
   "unique_authors": 14,
-  "reactions_total": 83,
-  "attachments": 22,
+  "reactions_total": 155,
+  "attachments": 41,
   "channel_activity": {
+    "aomi’s morimens dump": 3,
+    "Wheel List": 5,
+    "My Comprehensive Guide to Morimens got updated to V2, now including a HM Chapter Guide": 7,
+    "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請": 4,
+    "How To Create a Team + Other Information": 7,
     "關於腳本/外掛賬號的處理說明": 6,
     "V2.2.0.2 停服維護公告": 20,
     "✅校猫碎碎念#近况分享": 3,
@@ -22,25 +27,30 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
+    "9": 11,
+    "13": 1,
+    "2": 3,
+    "5": 1,
+    "7": 15,
+    "8": 10,
+    "17": 1,
+    "14": 6,
+    "16": 4,
+    "20": 6,
+    "22": 2,
     "15": 24,
     "19": 2,
-    "14": 3,
-    "16": 3,
     "1": 6,
-    "8": 8,
-    "9": 6,
     "3": 5,
-    "7": 11,
     "11": 1,
-    "20": 1,
-    "2": 2,
     "10": 1,
     "18": 2,
     "12": 1
   },
   "message_types": {
-    "0": 27,
-    "19": 2
+    "0": 20,
+    "19": 5,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -49,6 +59,27 @@
       "author": "morimensstaff02",
       "reactions": 47,
       "channel": "關於腳本/外掛賬號的處理說明"
+    },
+    {
+      "id": "1360253430605549921",
+      "content": "悄悄",
+      "author": "silverstream_s",
+      "reactions": 35,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
+    },
+    {
+      "id": "1360183640713203853",
+      "content": "most of this will contain the following:\n- ramona x leonora/female mc (ship name",
+      "author": "aomi_crinklies04",
+      "reactions": 25,
+      "channel": "aomi’s morimens dump"
+    },
+    {
+      "id": "1360288624071151857",
+      "content": "",
+      "author": "nekoiiii.",
+      "reactions": 7,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
       "id": "1360278399452577945",
@@ -63,6 +94,13 @@
       "author": "silverstream_s",
       "reactions": 6,
       "channel": "✦第2章「克莱门汀」无提示事件·星辰篇✦"
+    },
+    {
+      "id": "1360264595322966066",
+      "content": "水一個，我覺得這很好用欸",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "有獎互動┊Rewarded interaction：一封來自「克萊🦋汀」的邀請"
     },
     {
       "id": "1360066705128165458",

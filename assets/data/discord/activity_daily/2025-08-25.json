@@ -1,10 +1,21 @@
 {
   "date": "2025-08-25",
-  "messages": 44,
-  "unique_authors": 9,
-  "reactions_total": 65,
-  "attachments": 6,
+  "messages": 86,
+  "unique_authors": 18,
+  "reactions_total": 231,
+  "attachments": 15,
   "channel_activity": {
+    "uvhash fan art submission": 2,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 3,
+    "萌新入坑想组个深海队，目前有这些角色，应该怎么配队": 8,
+    "Why not getting shields with Arithmetica Harmony?": 1,
+    "Team building next steps": 8,
+    "Myriam at Psyche Surge 2 not over-exalting, why?": 3,
+    "Common team comps for Horla/Corposant/Tawil": 1,
+    "should I use 3 prototype to e3 ghelot now? any thoughts?": 1,
+    "Question about guarantee on limited banners": 6,
+    "Limited character question": 3,
+    "Pulling Chaos vs Aequor": 6,
     "V2.3.1.3 在线维护公告": 13,
     "A tinct!": 1,
     "✅「Answered」Normal battle is treat as boss battle in H9-11": 1,
@@ -25,28 +36,47 @@
     "1181147096234065920": 2
   },
   "hourly_activity": {
-    "12": 9,
-    "13": 4,
-    "14": 1,
-    "15": 4,
-    "23": 2,
-    "8": 1,
-    "3": 7,
+    "23": 4,
+    "2": 12,
+    "16": 4,
+    "17": 4,
+    "20": 1,
+    "12": 10,
+    "13": 9,
+    "14": 3,
+    "18": 1,
+    "15": 7,
+    "11": 1,
+    "3": 9,
+    "4": 1,
+    "8": 3,
+    "1": 3,
+    "0": 6,
     "9": 1,
     "19": 3,
     "6": 2,
     "7": 1,
-    "16": 3,
-    "17": 3,
-    "2": 1,
-    "1": 1,
     "22": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 2
+    "0": 37,
+    "19": 5
   },
   "top_reacted_messages": [
+    {
+      "id": "1409687053700173825",
+      "content": "uid 101099384\n\nI wanted to do something better for the contest but i haven't pai",
+      "author": "snowvleopard",
+      "reactions": 128,
+      "channel": "uvhash fan art submission"
+    },
+    {
+      "id": "1409687248902950983",
+      "content": "the sketch <:point:1356053112292511815>",
+      "author": "snowvleopard",
+      "reactions": 35,
+      "channel": "uvhash fan art submission"
+    },
     {
       "id": "1409448836606464081",
       "content": "",
@@ -109,6 +139,27 @@
       "author": "oct3000",
       "reactions": 2,
       "channel": "✅ 「已回答」同調上限與獎勵"
+    },
+    {
+      "id": "1409541711570538506",
+      "content": "For now, focus on aequor teams since tentacle mechanic is easy to understand and",
+      "author": "juuki0811",
+      "reactions": 1,
+      "channel": "Team building next steps"
+    },
+    {
+      "id": "1409375520746897409",
+      "content": "That's still good even if it'll carry over to upcoming triple banners \nSince the",
+      "author": "juuki0811",
+      "reactions": 1,
+      "channel": "Question about guarantee on limited banners"
+    },
+    {
+      "id": "1409328006979260486",
+      "content": "Wheel jail off you go",
+      "author": "flares117",
+      "reactions": 1,
+      "channel": "Pulling Chaos vs Aequor"
     },
     {
       "id": "1409531555696738314",

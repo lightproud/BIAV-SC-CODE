@@ -1,10 +1,14 @@
 {
   "date": "2025-03-26",
-  "messages": 46,
+  "messages": 52,
   "unique_authors": 9,
-  "reactions_total": 2,
+  "reactions_total": 4,
   "attachments": 4,
   "channel_activity": {
+    "Português Tradução - Coleta de Feedback": 1,
+    "การรวบรวมคำติชมการแปลภาษาไทย": 1,
+    "【日本語訳】フィードバック": 3,
+    "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia": 1,
     "✅「已回答」bug": 29,
     "✅「已回答」返校報到（好像是這個）的那個藍色領取按鈕，有紅點的時候點了領取之後不會變成灰色再點也點不動": 7,
     "沒有喚醒體技能搶先看了嗎": 1,
@@ -18,20 +22,21 @@
     "1350060160739184690": 1
   },
   "hourly_activity": {
+    "10": 3,
+    "9": 3,
+    "2": 5,
     "12": 6,
     "13": 23,
-    "2": 4,
     "14": 4,
     "6": 4,
     "5": 1,
     "4": 1,
     "11": 1,
-    "19": 1,
-    "9": 1
+    "19": 1
   },
   "message_types": {
-    "0": 31,
-    "19": 10
+    "19": 1,
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -40,6 +45,20 @@
       "author": "Deleted User",
       "reactions": 2,
       "channel": "沒有喚醒體技能搶先看了嗎"
+    },
+    {
+      "id": "1354383609061965845",
+      "content": "<@247436324942905345><@334271675786854413>ขอบคุณสำหรับข้อเสนอแนะ Goya ได้ส่งต่อแ",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "การรวบรวมคำติชมการแปลภาษาไทย"
+    },
+    {
+      "id": "1354380883557089280",
+      "content": "<@443365370271891456>Terima kasih atas cadangan anda~❤️",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "Kumpulan Umpan Balik Terjemahan Bahasa Indonesia"
     }
   ]
 }

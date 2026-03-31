@@ -1,10 +1,13 @@
 {
   "date": "2025-04-28",
-  "messages": 81,
+  "messages": 116,
   "unique_authors": 20,
-  "reactions_total": 95,
-  "attachments": 15,
+  "reactions_total": 103,
+  "attachments": 18,
   "channel_activity": {
+    "Just a pixel image of Jenkin looking outside with Brown": 4,
+    "한국어 번역 피드백 컬렉션": 1,
+    "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook": 30,
     "V2.2.1.0 停服維護公告": 5,
     "V2.2.1.1 在線維護公告": 7,
     "✅校猫碎碎念#近况分享": 2,
@@ -24,30 +27,31 @@
     "OOC鯊守(?) 不是幼兒園的車，小心謹慎注意上車": 5
   },
   "hourly_activity": {
+    "16": 3,
+    "22": 2,
+    "5": 4,
+    "10": 8,
+    "11": 23,
+    "12": 7,
+    "14": 8,
     "8": 5,
-    "14": 2,
     "15": 2,
-    "12": 6,
     "13": 5,
     "21": 2,
     "6": 12,
     "20": 2,
-    "22": 1,
     "23": 1,
     "17": 8,
     "18": 2,
     "7": 3,
-    "10": 3,
     "9": 8,
     "3": 3,
     "4": 7,
-    "11": 7,
-    "0": 1,
-    "5": 1
+    "0": 1
   },
   "message_types": {
-    "0": 13,
-    "19": 1
+    "19": 8,
+    "0": 27
   },
   "top_reacted_messages": [
     {
@@ -63,6 +67,13 @@
       "author": "aurora3981",
       "reactions": 7,
       "channel": "Can we rollback the translations?"
+    },
+    {
+      "id": "1366363981412962426",
+      "content": "是置入一張領航",
+      "author": "_buqi",
+      "reactions": 5,
+      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
     },
     {
       "id": "1366546901444464702",
@@ -114,6 +125,13 @@
       "channel": "💭「處理中」對弈戈利亞 狂氣爆發恢復有誤"
     },
     {
+      "id": "1366375520295587850",
+      "content": "我直接进去空过挂机",
+      "author": "molove0286",
+      "reactions": 2,
+      "channel": "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook"
+    },
+    {
       "id": "1366378179811344446",
       "content": "大家好，这里是难忘今宵攻略组，本期为大家带来的是星辰篇第6期（第33期）「融灾禁区」地图，以及初始造物的对应效果与怪物首领。\n\n图一：新增造物\n图二：地图\n图三",
       "author": "silverstream_s",
@@ -126,6 +144,13 @@
       "author": "akalanden",
       "reactions": 2,
       "channel": "自製角色（目前有深海一名、超維一名）"
+    },
+    {
+      "id": "1366452028406104185",
+      "content": "",
+      "author": "starfish3302",
+      "reactions": 1,
+      "channel": "Just a pixel image of Jenkin looking outside with Brown"
     }
   ]
 }

@@ -1,10 +1,13 @@
 {
   "date": "2025-04-18",
-  "messages": 36,
+  "messages": 47,
   "unique_authors": 9,
-  "reactions_total": 14,
-  "attachments": 2,
+  "reactions_total": 16,
+  "attachments": 12,
   "channel_activity": {
+    "ALL HAIL SQUID KING TULU": 1,
+    "Dum dum dum": 1,
+    "刚回坑": 9,
     "關於腳本/外掛賬號的處理說明": 2,
     "V2.2.0.3 在線維護公告": 1,
     "✅校猫碎碎念#近况分享": 2,
@@ -18,21 +21,21 @@
     "希洛": 4
   },
   "hourly_activity": {
+    "11": 4,
+    "3": 8,
+    "4": 9,
     "14": 4,
     "15": 1,
-    "3": 7,
     "9": 7,
     "2": 1,
     "7": 4,
     "10": 1,
     "16": 3,
     "0": 1,
-    "4": 1,
-    "11": 2,
     "21": 4
   },
   "message_types": {
-    "0": 4,
+    "0": 10,
     "19": 1
   },
   "top_reacted_messages": [
@@ -56,6 +59,13 @@
       "author": "287405tjy_28066",
       "reactions": 3,
       "channel": "希洛"
+    },
+    {
+      "id": "1362748162711748678",
+      "content": "HAIL TULU",
+      "author": "mount_fisherman",
+      "reactions": 2,
+      "channel": "ALL HAIL SQUID KING TULU"
     },
     {
       "id": "1362579729710055494",

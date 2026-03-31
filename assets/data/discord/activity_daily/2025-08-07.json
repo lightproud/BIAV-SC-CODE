@@ -1,10 +1,17 @@
 {
   "date": "2025-08-07",
-  "messages": 163,
+  "messages": 180,
   "unique_authors": 20,
-  "reactions_total": 60,
-  "attachments": 5,
+  "reactions_total": 62,
+  "attachments": 12,
   "channel_activity": {
+    "daffodil": 1,
+    "7.28：400   Character appearance rate": 2,
+    "求求补启和配队建议": 7,
+    "幫我組個隊": 1,
+    "Who should i invest in and what are good aquar teams?": 4,
+    "Recommend realm as a beginner, and what to invest the silver/silver core in": 1,
+    "Team comp + future investment reccs": 1,
     "V2.3.0.5 在线维护公告": 2,
     "[杜勒塞因原型解读]弧月高悬之处": 2,
     "雷婭立繪": 1,
@@ -21,28 +28,30 @@
     "1390375103707218041": 2
   },
   "hourly_activity": {
-    "11": 7,
-    "0": 3,
-    "19": 2,
+    "0": 5,
+    "1": 1,
+    "19": 3,
+    "3": 4,
+    "4": 7,
+    "8": 4,
+    "11": 9,
+    "15": 10,
+    "14": 37,
     "12": 33,
     "13": 40,
-    "14": 36,
-    "15": 9,
     "16": 6,
     "17": 3,
-    "4": 2,
     "6": 4,
     "7": 1,
-    "3": 2,
     "2": 3,
     "9": 5,
     "10": 3,
-    "8": 2,
     "5": 2
   },
   "message_types": {
-    "0": 60,
-    "19": 19
+    "0": 15,
+    "19": 1,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -123,6 +132,20 @@
       "channel": "我幻想的杜勒賽因加強"
     },
     {
+      "id": "1402809660850831454",
+      "content": "Omgg ily",
+      "author": "eirdonne_",
+      "reactions": 1,
+      "channel": "daffodil"
+    },
+    {
+      "id": "1402831613817262181",
+      "content": "I checked the Chinese version, and the order is correct, but “faint” was acciden",
+      "author": "lurenjiao",
+      "reactions": 1,
+      "channel": "7.28：400   Character appearance rate"
+    },
+    {
       "id": "1402999640231776410",
       "content": "~~按照盾获得暴击伤害~~",
       "author": "rain_scarlet",
@@ -170,20 +193,6 @@
       "author": "clavinmclavin",
       "reactions": 1,
       "channel": "120 fps mode"
-    },
-    {
-      "id": "1403001528834326549",
-      "content": "不是 是我看我姊用圖魯 所以我也用 我是有抽蠻多角色的",
-      "author": "jinmenlianbanggongheguo",
-      "reactions": 1,
-      "channel": "✅「已回答」杜勒需要加強"
-    },
-    {
-      "id": "1403003114444951655",
-      "content": "聽起來很色",
-      "author": "shchng.",
-      "reactions": 1,
-      "channel": "✅「已回答」杜勒需要加強"
     }
   ]
 }

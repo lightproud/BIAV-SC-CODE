@@ -1,10 +1,11 @@
 {
   "date": "2025-08-03",
-  "messages": 23,
+  "messages": 24,
   "unique_authors": 5,
-  "reactions_total": 57,
-  "attachments": 4,
+  "reactions_total": 101,
+  "attachments": 5,
   "channel_activity": {
+    "daffodil": 1,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 1,
     "✅「Answered」Ban by mistake refund": 1,
     "✅「已回答」调查数据有误": 3,
@@ -15,7 +16,7 @@
     "1181998821291606097": 1
   },
   "hourly_activity": {
-    "22": 1,
+    "22": 2,
     "16": 1,
     "2": 2,
     "3": 1,
@@ -27,10 +28,16 @@
     "18": 1
   },
   "message_types": {
-    "0": 4,
-    "19": 2
+    "0": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1401697909640138772",
+      "content": "Its not perfect but I did my best. Art block or skill deterioration has been pre",
+      "author": "eirdonne_",
+      "reactions": 44,
+      "channel": "daffodil"
+    },
     {
       "id": "1401535466838167592",
       "content": "",

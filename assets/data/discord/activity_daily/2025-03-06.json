@@ -1,10 +1,11 @@
 {
   "date": "2025-03-06",
-  "messages": 60,
+  "messages": 83,
   "unique_authors": 10,
   "reactions_total": 10,
-  "attachments": 3,
+  "attachments": 5,
   "channel_activity": {
+    "Star Chapter 2.1 Tier List": 23,
     "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！": 20,
     "我不知道有什麼用但我決定幫Pray立一個碑": 1,
     "✅「Answered」Ryker relic bug": 7,
@@ -18,25 +19,27 @@
     "女守X鯊（OOC警告）": 1
   },
   "hourly_activity": {
+    "2": 19,
+    "11": 1,
+    "12": 1,
+    "14": 7,
     "3": 2,
     "5": 6,
     "7": 7,
     "9": 6,
     "10": 1,
     "13": 2,
-    "14": 2,
     "15": 6,
     "16": 2,
     "17": 3,
     "23": 1,
-    "2": 3,
     "4": 3,
     "6": 13,
     "8": 3
   },
   "message_types": {
-    "0": 15,
-    "19": 5
+    "19": 7,
+    "0": 16
   },
   "top_reacted_messages": [
     {

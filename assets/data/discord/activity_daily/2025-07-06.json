@@ -1,10 +1,13 @@
 {
   "date": "2025-07-06",
-  "messages": 23,
+  "messages": 27,
   "unique_authors": 9,
-  "reactions_total": 14,
-  "attachments": 11,
+  "reactions_total": 36,
+  "attachments": 13,
   "channel_activity": {
+    "Tulu Being Sleepy": 1,
+    "*Translated & Credited* cn Fan Art Reposts": 2,
+    "Flares' Awaker Review : Miryam": 1,
     "✅「Answered」Hameln's rouse and searches that set cost to 0": 3,
     "✅「Answered」Relic missing description texts": 1,
     "💭「Processing」2-7, Bugged Dialogue": 1,
@@ -17,7 +20,9 @@
     "1390375103707218041": 3
   },
   "hourly_activity": {
-    "10": 1,
+    "4": 2,
+    "1": 2,
+    "10": 2,
     "14": 2,
     "22": 1,
     "16": 3,
@@ -27,21 +32,47 @@
     "21": 3,
     "5": 1,
     "11": 1,
-    "4": 1,
     "8": 2,
     "12": 1
   },
   "message_types": {
-    "0": 16,
-    "19": 2
+    "0": 4
   },
   "top_reacted_messages": [
+    {
+      "id": "1391229071949561886",
+      "content": "This one's for the wahmen enjoyers +  wholesome enough\nlink to OG post:⁠ https:/",
+      "author": "ev_6185",
+      "reactions": 11,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1391225818209980489",
+      "content": "This was too cute not to port here\nlink to OG post:https://discord.com/channels/",
+      "author": "ev_6185",
+      "reactions": 7,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
     {
       "id": "1391529683312443545",
       "content": "I'm with the dev with this one, sell complete products only. \nHaving a standard ",
       "author": "aurora3981",
       "reactions": 7,
       "channel": "Why not release Doresain then add the VA later?"
+    },
+    {
+      "id": "1391279450922025090",
+      "content": "<:pray:1356053116260454534>",
+      "author": "cometovilla",
+      "reactions": 2,
+      "channel": "Tulu Being Sleepy"
+    },
+    {
+      "id": "1391370407151534140",
+      "content": "https://www.youtube.com/watch?v=06ksnvLvOcc released it one week early with prer",
+      "author": "flares117",
+      "reactions": 2,
+      "channel": "Flares' Awaker Review : Miryam"
     },
     {
       "id": "1391346290381820014",

@@ -1,10 +1,27 @@
 {
   "date": "2025-12-10",
-  "messages": 95,
-  "unique_authors": 14,
-  "reactions_total": 106,
-  "attachments": 30,
+  "messages": 399,
+  "unique_authors": 62,
+  "reactions_total": 437,
+  "attachments": 66,
   "channel_activity": {
+    "Pollux emote doodle": 1,
+    "Last connection: Doll": 2,
+    "Pollux Emote doodle!": 1,
+    "Nymphaea Fanart Submission": 2,
+    "silly goli thing": 2,
+    "中奖名单公布┊Lottery Winners Announced!": 25,
+    "V2.4.0.11 一星幻衣「泰旖丝·孽宴狂欲」，限时免费获取！Claim the New Thais Skin: \"Sinful Decadence\" for Free!": 21,
+    "V2.4.0.11 版本前瞻 ┊ Version Outlook": 70,
+    "V2.4.0 概念PV「永世虚妄巡礼」┊PV-Eternal Vain Pilgrimage": 2,
+    "新手玩兩個禮拜 目前在忘卻第六章": 98,
+    "想抽个队伍": 58,
+    "刚入坑接近2星期的新手": 11,
+    "怎麼打第四章": 7,
+    "求助一些队伍的输出手法": 1,
+    "Flares' Comprehensive Beginner Guide to Morimens": 1,
+    "Covenant help. Continue to roll, or move on?": 1,
+    "Need help for dtide team current score 335": 1,
     "✅「Answered」Battlepass Timer bug": 5,
     "✅「已回答」繁中PC端黑屏": 2,
     "关于【献祭】的bug修复": 1,
@@ -33,33 +50,98 @@
     "1441326394817908736": 5
   },
   "hourly_activity": {
-    "4": 2,
-    "9": 15,
-    "14": 13,
-    "10": 31,
-    "12": 1,
-    "15": 2,
-    "5": 5,
-    "8": 2,
-    "11": 1,
-    "19": 5,
-    "17": 5,
+    "21": 3,
+    "18": 4,
+    "22": 1,
+    "19": 7,
+    "16": 6,
+    "5": 8,
+    "8": 74,
+    "9": 35,
+    "10": 34,
+    "7": 25,
+    "12": 8,
+    "13": 3,
+    "17": 102,
+    "14": 69,
+    "15": 4,
+    "1": 4,
+    "4": 4,
+    "11": 2,
     "20": 3,
     "2": 1,
-    "7": 2,
-    "16": 1,
-    "18": 2,
-    "1": 1,
-    "13": 1,
     "6": 1,
     "23": 1
   },
   "message_types": {
-    "0": 48,
-    "4": 10,
-    "19": 8
+    "0": 249,
+    "4": 1,
+    "19": 54
   },
   "top_reacted_messages": [
+    {
+      "id": "1448208516438560881",
+      "content": "⏰️**活动时间： **\n在 12 月 15 日 9:00 - 1 月 12 日 9:00 期间，幻衣活动「孽宴狂欲」限时开放。\n\n📌**活动内容：**\n✦**",
+      "author": "morimensstaff01",
+      "reactions": 48,
+      "channel": "V2.4.0.11 一星幻衣「泰旖丝·孽宴狂欲」，限时免费获取！Claim the New Thais Skin: \"Sinful Decadence\" for Free!"
+    },
+    {
+      "id": "1448346018570834112",
+      "content": "She's pretty\n\nUID: 101274471",
+      "author": "yukisetsura",
+      "reactions": 38,
+      "channel": "Nymphaea Fanart Submission"
+    },
+    {
+      "id": "1448185607246315715",
+      "content": "essentially what the title says lmao. was heavily using the morimens goliath sti",
+      "author": "kalaidoskope",
+      "reactions": 27,
+      "channel": "silly goli thing"
+    },
+    {
+      "id": "1448403221726101617",
+      "content": "Saw the new emote and thought of doing a quick doodle!",
+      "author": "orpheusffxiv",
+      "reactions": 26,
+      "channel": "Pollux Emote doodle!"
+    },
+    {
+      "id": "1448222811574370324",
+      "content": "▎《忘却前夜 Morimens》V2.4.0.11 即将开放！精彩资讯一网打尽！\n\n▎Morimens V2.4.0.11 is launching soon!",
+      "author": "morimensstaff01",
+      "reactions": 24,
+      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
+    },
+    {
+      "id": "1448377943091974216",
+      "content": "",
+      "author": "kirikonuto",
+      "reactions": 23,
+      "channel": "Last connection: Doll"
+    },
+    {
+      "id": "1448209768433979503",
+      "content": "Thank you dev for dropping this on December and not November <:pray:135605311626",
+      "author": "aurora3981",
+      "reactions": 23,
+      "channel": "V2.4.0.11 一星幻衣「泰旖丝·孽宴狂欲」，限时免费获取！Claim the New Thais Skin: \"Sinful Decadence\" for Free!"
+    },
+    {
+      "id": "1448431292973584395",
+      "content": "My wife…",
+      "author": "cqteiie",
+      "reactions": 22,
+      "channel": "Pollux emote doodle"
+    },
+    {
+      "id": "1448229795522674770",
+      "content": "「秘银日冕」系列徽章盲盒 与 「能登麻美子 亲笔签名」抽奖活动已结束，现公布中奖名单。\n\n🔔 本周五前我们会通过私信联系中奖的守密人，请大家留意后台私信。\n\n—",
+      "author": "morimensstaff01",
+      "reactions": 19,
+      "channel": "中奖名单公布┊Lottery Winners Announced!"
+    },
     {
       "id": "1448379905283850241",
       "content": "性轉一下",
@@ -89,6 +171,20 @@
       "channel": "蓋個圖樓"
     },
     {
+      "id": "1448223025064444056",
+      "content": "English",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
+    },
+    {
+      "id": "1448223556495212685",
+      "content": "我來了，+12跨越疼痛",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
+    },
+    {
       "id": "1448243975277252669",
       "content": "",
       "author": "morimensstaff01",
@@ -103,102 +199,25 @@
       "channel": "图鲁"
     },
     {
-      "id": "1448353577943695514",
-      "content": "第一幀的線稿在摸魚了七七四十九天以後終於生出來了",
-      "author": "undecember_news",
-      "reactions": 5,
-      "channel": "我也要開圖樓"
+      "id": "1448247063497408665",
+      "content": "<:IMG_20251113_181453:1448240235757568133> <:IMG_20251113_181453:144824023575756",
+      "author": "ice_storys",
+      "reactions": 7,
+      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
     },
     {
-      "id": "1448239818801807410",
-      "content": "No problem, I will release it after the event starts next Monday💗",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": ""
+      "id": "1448224115944194089",
+      "content": "圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯醬圖魯",
+      "author": "void_1546.",
+      "reactions": 6,
+      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
     },
     {
-      "id": "1448242380628295732",
-      "content": "<@419315346424725514> <@1298268532017991702>",
-      "author": "morimensstaff01",
-      "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1448203672788926605",
-      "content": "still waiting for Light <:takenotes:1357186646294138890>",
+      "id": "1448226609139286027",
+      "content": "",
       "author": "_venush",
       "reactions": 5,
-      "channel": ""
-    },
-    {
-      "id": "1448294352546959391",
-      "content": "已確認全部檔案都有，\n只不過“api-”開頭的全都是在system32的子資料夾downlevel裡，不是直接在system32的目錄下。",
-      "author": "o5214658",
-      "reactions": 2,
-      "channel": "✅「已回答」繁中PC端黑屏"
-    },
-    {
-      "id": "1448317372103659601",
-      "content": "我已经忙的没空打游戏了，什么都没时间干。画画也没时间，工作变成全部了！",
-      "author": "lunakknd",
-      "reactions": 2,
-      "channel": "图鲁"
-    },
-    {
-      "id": "1448320877329649716",
-      "content": "<:angry2:1356053025034338505>",
-      "author": "consort_of_asa",
-      "reactions": 1,
-      "channel": "✅「Answered」Battlepass Timer bug"
-    },
-    {
-      "id": "1448255414335569962",
-      "content": "Thank you for providing the video. I will forward it to the designer🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Doresain targeting issue"
-    },
-    {
-      "id": "1448259388396671007",
-      "content": "<@1412921721010393249>Sorry, we are currently unable to reproduce this issue\nI n",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「Processing」Card bug"
-    },
-    {
-      "id": "1448258360288870522",
-      "content": "Hi, this issue is indeed caused by backtracking. We will try to fix it before th",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Dtide W3 Bug"
-    },
-    {
-      "id": "1448258710861381832",
-      "content": "Hi, this issue is indeed caused by backtracking. We will try to fix it before th",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Rewind Turn Bug"
-    },
-    {
-      "id": "1448118885080367217",
-      "content": "期待期待",
-      "author": "kyoyapity",
-      "reactions": 1,
-      "channel": "給異格也P了一版仿官海報（）"
-    },
-    {
-      "id": "1448317161239216245",
-      "content": "勞斯上班辛苦了",
-      "author": "void_1546.",
-      "reactions": 1,
-      "channel": "图鲁"
-    },
-    {
-      "id": "1448317254877053102",
-      "content": "😭",
-      "author": "lunakknd",
-      "reactions": 1,
-      "channel": "图鲁"
+      "channel": "V2.4.0.11 版本前瞻 ┊ Version Outlook"
     }
   ]
 }

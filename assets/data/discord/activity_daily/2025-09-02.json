@@ -1,10 +1,19 @@
 {
   "date": "2025-09-02",
-  "messages": 79,
-  "unique_authors": 11,
-  "reactions_total": 43,
-  "attachments": 11,
+  "messages": 239,
+  "unique_authors": 43,
+  "reactions_total": 371,
+  "attachments": 41,
   "channel_activity": {
+    "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman": 17,
+    "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?": 6,
+    "V2.3.2 皮克曼情报1：皮克曼家世起底┊About Pickman: Revealing the Background of Pickman": 5,
+    "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman": 90,
+    "Priority/Investment help.": 28,
+    "Help with priority/team building": 1,
+    "Chapter 9 is hard": 3,
+    "[Need help with last member- new player]": 5,
+    "Help with catena team and wods.": 5,
     "前瞻：告别负担，重拾乐趣 Preview: Bid farewell to burdens, rediscover the joy": 1,
     "✅「Answered」Launch the game via Steam and getting the \"Network busy\"": 4,
     "救救狗吧融災求助": 1,
@@ -24,32 +33,101 @@
     "1305430084420898868": 1
   },
   "hourly_activity": {
-    "5": 1,
+    "15": 19,
+    "16": 6,
+    "22": 2,
+    "8": 67,
+    "9": 6,
+    "21": 19,
+    "10": 4,
+    "7": 18,
+    "11": 2,
+    "14": 25,
+    "5": 5,
+    "13": 5,
+    "17": 4,
+    "18": 7,
+    "19": 9,
+    "20": 24,
+    "2": 6,
     "1": 7,
-    "7": 9,
-    "19": 6,
-    "20": 23,
-    "21": 16,
     "12": 3,
-    "18": 1,
-    "8": 1,
-    "0": 1,
-    "2": 5,
-    "15": 1,
-    "22": 1,
-    "17": 3,
-    "9": 1
-  },
-  "message_types": {
     "0": 1
   },
+  "message_types": {
+    "0": 143,
+    "19": 17
+  },
   "top_reacted_messages": [
+    {
+      "id": "1412342974108663879",
+      "content": "“我是画家皮克曼，能有幸邀请您，成为我的模特吗？”\n“我在你的身上看到了前所未有的景象……让我靠近一点……让我再多看一点！”\n\n——✦——✦—— ✦✦✦ ——✦",
+      "author": "morimensstaff01",
+      "reactions": 72,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
+    },
+    {
+      "id": "1412460994990575718",
+      "content": "“我是画家皮克曼，能有幸邀请您，成为我的模特吗？”\n“我在你的身上看到了前所未有的景象……让我靠近一点……让我再多看一点！”\n\n——✦——✦—— ✦✦✦ ——✦",
+      "author": "morimensstaff02",
+      "reactions": 49,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
+    },
+    {
+      "id": "1412463820776931508",
+      "content": "a few small background details as well, but not too much\nalso, shamelessly repos",
+      "author": "reya.li",
+      "reactions": 33,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
+    },
+    {
+      "id": "1412347018940256307",
+      "content": "《艺术娱报》，只报猛料：\n本期，我们跟踪采访的是“刻画真实世界的写实主义者”皮克曼。\n\n✦他是天才，是异类，是被社会所排斥的癌细胞般的极端存在；\n✦谩骂也好，夸",
+      "author": "morimensstaff01",
+      "reactions": 33,
+      "channel": "V2.3.2 皮克曼情报1：皮克曼家世起底┊About Pickman: Revealing the Background of Pickman"
+    },
+    {
+      "id": "1412343441924554834",
+      "content": "Sorry, the translation expert is sick, so we will use AI translation for this so",
+      "author": "morimensstaff01",
+      "reactions": 32,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
+    },
     {
       "id": "1412373316924211260",
       "content": "",
       "author": "morimensstaff01",
       "reactions": 17,
       "channel": ""
+    },
+    {
+      "id": "1412467252296548412",
+      "content": "Can I ask if you can let us know what font you use for the names?",
+      "author": "_venush",
+      "reactions": 15,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
+    },
+    {
+      "id": "1412347948829904976",
+      "content": "I'd let him paint my face and insides white<:love:1356053099931897977>",
+      "author": ".lirianthe",
+      "reactions": 13,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
+    },
+    {
+      "id": "1412370091533664326",
+      "content": "",
+      "author": "morimensstaff01",
+      "reactions": 11,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
+    },
+    {
+      "id": "1412461068776636637",
+      "content": "非常抱歉，由于检查疏忽，我们在下午的贴文中放出了错误的立绘，请以当前的立绘预览效果为准。\n\nWe are very sorry. Due to negligen",
+      "author": "morimensstaff02",
+      "reactions": 9,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
     },
     {
       "id": "1412484624160133222",
@@ -59,74 +137,67 @@
       "channel": ""
     },
     {
-      "id": "1412413132629872692",
-      "content": "超限沒有給予打擊加成但屬性面板上顯示有~~有個笨蛋被這面板騙了一年多~~<:Clown:1400771541423226971>",
-      "author": "wild_pansy",
-      "reactions": 4,
-      "channel": "✅「已回答」蘿坦超限描述問題"
+      "id": "1412351101956526112",
+      "content": "輔助杜勒拿殘骸（X\n跟杜勒搶殘骸（O\n杜勒搶不贏他（O",
+      "author": "ernest_heart",
+      "reactions": 8,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     },
     {
-      "id": "1412547521221496994",
-      "content": "At the moment you can't make a new Covenants Plans that include a piece that is ",
+      "id": "1412349823289524287",
+      "content": "支持不做人統治世界喵",
+      "author": "kong760",
+      "reactions": 7,
+      "channel": "V2.3.2 皮克曼情报1：皮克曼家世起底┊About Pickman: Revealing the Background of Pickman"
+    },
+    {
+      "id": "1412464648782876672",
+      "content": "",
+      "author": "void_1546.",
+      "reactions": 6,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
+    },
+    {
+      "id": "1412344831858049125",
+      "content": "I think I'm going to Pick this Man",
       "author": "vxvendetta",
-      "reactions": 2,
-      "channel": "QOL for Covenants Plans"
+      "reactions": 6,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     },
     {
-      "id": "1412547892811403309",
-      "content": "would then add a warning when you are about to apply a wheel plan which needs a ",
-      "author": "yannic2112",
-      "reactions": 2,
-      "channel": "QOL for Covenants Plans"
+      "id": "1412455039674482889",
+      "content": "",
+      "author": "reya.li",
+      "reactions": 6,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     },
     {
-      "id": "1412511348218400850",
-      "content": "It would be nice to have more options to sort characters by. The current options",
-      "author": "yannic2112",
-      "reactions": 2,
-      "channel": "Add more options to sort characters by"
+      "id": "1412572089935728640",
+      "content": "these look very similar to:\n\nWalbaum Fraktur SH\nDenver TS\nLobster\n\n<:thinking1:1",
+      "author": "theborkerr",
+      "reactions": 5,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊V2.3.2 New Awakener✦Pickman"
     },
     {
-      "id": "1412336535218421791",
-      "content": "感谢建议🙏 这确实是必要的，已反馈~",
-      "author": "morimensstaff01",
-      "reactions": 2,
-      "channel": "✅「已回答」夏活剧情序幕暴雷问题"
+      "id": "1412556675210023003",
+      "content": "wait pollux is in the background <:Showoff:1400771654199541850>\n(edit: never min",
+      "author": "reya.li",
+      "reactions": 5,
+      "channel": "🏖️海滩难题：如何均分守密人？Summer Vacation Dilemma: Everyone Gets a Share of Keeper...?"
     },
     {
-      "id": "1412335909571002538",
-      "content": "Thank you for providing the information. We will verify it🌹",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "✅「Answered」Launch the game via Steam and getting the \"Network busy\""
+      "id": "1412381824545722450",
+      "content": "Let him be a support unit I'm begging you.",
+      "author": "perokun6941",
+      "reactions": 5,
+      "channel": "V2.3.2 皮克曼情报1：皮克曼家世起底┊About Pickman: Revealing the Background of Pickman"
     },
     {
-      "id": "1412525115836600412",
-      "content": "The current way that Arcana Dominion works, is that you unlock the farming stage",
-      "author": "yannic2112",
-      "reactions": 1,
-      "channel": "✅「Answered」Change Arcane Dominion to a more generic approach"
-    },
-    {
-      "id": "1412517018317361253",
-      "content": "很想看所有角色們的不同表情啊啊啊啊啊啊啊啊啊啊啊啊！！有沒有/會不會有一個能讓人在遊戲裡看到角色們不同表情差分的地方？不想在角色語音那裡邊聽邊拼手速截圖不同表情",
-      "author": "shostakovich524",
-      "reactions": 1,
-      "channel": "✅「已解决」想問立繪方面的問題"
-    },
-    {
-      "id": "1412334734452985907",
-      "content": "感谢反馈，确认中🙏",
-      "author": "morimensstaff01",
-      "reactions": 1,
-      "channel": "💭「处理中」腐傀转阶段没换碟"
-    },
-    {
-      "id": "1412458834949308527",
-      "content": "2LNIOH7DQ5",
-      "author": "buddymiracle",
-      "reactions": 1,
-      "channel": "邀請碼互助/Invitation code help each other"
+      "id": "1412350533636849715",
+      "content": "能扣到我的■■",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "V2.3.2 全新唤醒体✦皮克曼┊New Awakener✦Pickman"
     }
   ]
 }

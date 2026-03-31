@@ -1,10 +1,12 @@
 {
   "date": "2026-02-08",
-  "messages": 7217,
+  "messages": 7222,
   "unique_authors": 160,
-  "reactions_total": 955,
-  "attachments": 354,
+  "reactions_total": 967,
+  "attachments": 355,
   "channel_activity": {
+    "1 in a Million Banner general advices": 3,
+    "Flares' Comprehensive Beginner Guide to Morimens": 2,
     "Ramona wip (best girl)🗝": 1,
     "hi leonora cosplay in rh": 1,
     "Faint Costume Idea!! - \"A Star's Dying Light\"": 1,
@@ -30,6 +32,8 @@
     "🔸morimens-game-chat": 5801
   },
   "hourly_activity": {
+    "9": 262,
+    "12": 287,
     "11": 208,
     "21": 354,
     "17": 167,
@@ -40,10 +44,8 @@
     "5": 473,
     "2": 351,
     "10": 224,
-    "9": 259,
     "1": 141,
     "19": 364,
-    "12": 285,
     "0": 402,
     "18": 164,
     "6": 197,
@@ -56,7 +58,7 @@
     "23": 443
   },
   "message_types": {
-    "0": 7
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -72,6 +74,13 @@
       "author": "corposant_1003",
       "reactions": 23,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1469984711660142696",
+      "content": "Hoy everyone, the **\"1 in a Million\" Banner** is coming soon and we wanted to cl",
+      "author": "vxvendetta97",
+      "reactions": 11,
+      "channel": "1 in a Million Banner general advices"
     },
     {
       "id": "1470112935618547948",
@@ -189,13 +198,6 @@
       "id": "1470095345022271683",
       "content": "lock",
       "author": "necronomikkon",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1470206220618174508",
-      "content": "Mouchette is strong yeah\nBut C-Tier DPS with 0 utility\nMeanwhile Corpo is A tier",
-      "author": "legendaryredz",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

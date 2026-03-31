@@ -1,10 +1,19 @@
 {
   "date": "2025-10-30",
-  "messages": 30,
-  "unique_authors": 7,
-  "reactions_total": 1081,
-  "attachments": 7,
+  "messages": 167,
+  "unique_authors": 15,
+  "reactions_total": 1135,
+  "attachments": 29,
   "channel_activity": {
+    "Ogier": 2,
+    "Тулу фанарт": 1,
+    "Happy Halloween 🎃": 3,
+    "Erica my pookie": 1,
+    "Lovecraft and other reference I found in Morimens": 41,
+    "雾境序列×忘却前夜 联动预告！Mist Sequence × Morimens: COLLAB COMING SOON!": 1,
+    "回坑玩家配队求助": 85,
+    "not sure if i should pull for dupes or get cards": 2,
+    "need some teambuilding help": 1,
     "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten": 10,
     "✅「Answered」8-10 N and potential other N stages Bugs": 1,
     "✅「Answered」About new Ryker buff": 1,
@@ -16,24 +25,26 @@
     "1432654338982940783": 10
   },
   "hourly_activity": {
+    "7": 2,
+    "15": 106,
+    "19": 5,
+    "20": 1,
+    "6": 3,
+    "12": 4,
+    "16": 6,
+    "17": 4,
+    "18": 4,
+    "13": 4,
+    "14": 16,
+    "22": 3,
     "5": 3,
-    "6": 2,
     "8": 2,
-    "13": 2,
-    "14": 2,
-    "17": 3,
-    "22": 1,
-    "15": 2,
     "21": 1,
-    "12": 2,
-    "10": 3,
-    "16": 2,
-    "18": 2,
-    "19": 3
+    "10": 3
   },
   "message_types": {
-    "19": 1,
-    "0": 9
+    "0": 93,
+    "19": 44
   },
   "top_reacted_messages": [
     {
@@ -58,6 +69,27 @@
       "channel": "🐱light’s-nest"
     },
     {
+      "id": "1433533966006358087",
+      "content": "Drew Castor as a Castor and Aigis as a small lamb 🐑",
+      "author": "deseo0774",
+      "reactions": 15,
+      "channel": "Happy Halloween 🎃"
+    },
+    {
+      "id": "1433347849718071306",
+      "content": "Who loves Erica?! I do!!",
+      "author": "attano124.",
+      "reactions": 13,
+      "channel": "Erica my pookie"
+    },
+    {
+      "id": "1433426782308274257",
+      "content": "I used to upload this on Tumblr and I just discover this channel\nSo I will uploa",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 9,
+      "channel": "Lovecraft and other reference I found in Morimens"
+    },
+    {
       "id": "1433372335142080633",
       "content": "或者北洋政府",
       "author": "ernest_heart",
@@ -72,11 +104,88 @@
       "channel": "致敬那些不该被遗忘的创作 Tribute to works that should not be forgotten"
     },
     {
+      "id": "1433478774095089837",
+      "content": "also ||we actually know that BIAV has a Tsathoggua draft, still unsure if we wil",
+      "author": "_venush",
+      "reactions": 4,
+      "channel": "Lovecraft and other reference I found in Morimens"
+    },
+    {
       "id": "1433473399312613569",
       "content": "",
       "author": "aegisx",
       "reactions": 3,
       "channel": "✅「Answered」About new Ryker buff"
+    },
+    {
+      "id": "1433517744682172530",
+      "content": "N is everywhere",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 2,
+      "channel": "Lovecraft and other reference I found in Morimens"
+    },
+    {
+      "id": "1433475378046963762",
+      "content": "剛開始看到希洛就把常駐抽全灌在血肉池（當時覺得希洛算蠻好看的）然後大概就是按原神的邏輯配隊 連猩紅熔爐 胚胎吞噬都不知道",
+      "author": "jinmenlianbanggongheguo",
+      "reactions": 2,
+      "channel": "回坑玩家配队求助"
+    },
+    {
+      "id": "1433351255958491226",
+      "content": "o hey my bestie commd you recently",
+      "author": "zuraznable",
+      "reactions": 1,
+      "channel": "Ogier"
+    },
+    {
+      "id": "1433545228501123234",
+      "content": "I love your chibi artstyle <:happy:1356053849894420683>",
+      "author": "bagels5899",
+      "reactions": 1,
+      "channel": "Happy Halloween 🎃"
+    },
+    {
+      "id": "1433480682918908059",
+      "content": "This game gives me a lot of inspiration for my own creation, I'm so excited",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 1,
+      "channel": "Lovecraft and other reference I found in Morimens"
+    },
+    {
+      "id": "1433480854658879518",
+      "content": "But I guess I missed that event Orz",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 1,
+      "channel": "Lovecraft and other reference I found in Morimens"
+    },
+    {
+      "id": "1433481445485183037",
+      "content": "This screenshot is not mine, but my friend shows it to me.\nAnd I was like \"WILBU",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 1,
+      "channel": "Lovecraft and other reference I found in Morimens"
+    },
+    {
+      "id": "1433482313332686999",
+      "content": "Or else I would be \"Roger, tell me about my son!!! \"",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 1,
+      "channel": "Lovecraft and other reference I found in Morimens"
+    },
+    {
+      "id": "1433467093663350935",
+      "content": "在第八章，8-11",
+      "author": "1458675044",
+      "reactions": 1,
+      "channel": "回坑玩家配队求助"
+    },
+    {
+      "id": "1433471167888363580",
+      "content": "複製神父二費",
+      "author": "void_1546.",
+      "reactions": 1,
+      "channel": "回坑玩家配队求助"
     }
   ]
 }

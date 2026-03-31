@@ -1,10 +1,13 @@
 {
   "date": "2025-07-12",
-  "messages": 17,
-  "unique_authors": 4,
-  "reactions_total": 39,
-  "attachments": 4,
+  "messages": 26,
+  "unique_authors": 5,
+  "reactions_total": 59,
+  "attachments": 7,
   "channel_activity": {
+    "niko's silly meme arts": 2,
+    "My Caecus art": 1,
+    "*Translated & Credited* cn Fan Art Reposts": 6,
     "V2.2.3.2 在线维护公告": 3,
     "幻衣大图能不能换画质好点的": 1,
     "这里也发一下，虽然只是摸鱼": 1,
@@ -13,18 +16,23 @@
     "1181147096234065920": 1
   },
   "hourly_activity": {
+    "15": 3,
+    "14": 3,
+    "3": 3,
+    "4": 1,
+    "18": 1,
+    "22": 1,
     "9": 2,
     "19": 1,
     "10": 1,
-    "15": 1,
     "5": 2,
     "7": 3,
     "8": 1,
-    "16": 4,
-    "14": 2
+    "16": 4
   },
   "message_types": {
-    "0": 3
+    "0": 5,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -33,6 +41,13 @@
       "author": "ruhebaoyangsiwa_97871",
       "reactions": 19,
       "channel": "这里也发一下，虽然只是摸鱼"
+    },
+    {
+      "id": "1393615286476738771",
+      "content": "tawil eat hot pocket",
+      "author": "nikolazuli",
+      "reactions": 15,
+      "channel": "niko's silly meme arts"
     },
     {
       "id": "1393599382666084412",
@@ -47,6 +62,34 @@
       "author": "navirecorbeau",
       "reactions": 8,
       "channel": ""
+    },
+    {
+      "id": "1393615990142537798",
+      "content": "tawil die",
+      "author": "nikolazuli",
+      "reactions": 2,
+      "channel": "niko's silly meme arts"
+    },
+    {
+      "id": "1393593879575396506",
+      "content": "thank you ^^",
+      "author": "tachwedd_glaw",
+      "reactions": 1,
+      "channel": "My Caecus art"
+    },
+    {
+      "id": "1393654876797665443",
+      "content": "Se presta para un futuro meme con Light, sí <:pray:1356053116260454534>",
+      "author": "duxadidus",
+      "reactions": 1,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
+    },
+    {
+      "id": "1393721540788490280",
+      "content": "De veras",
+      "author": "ev_6185",
+      "reactions": 1,
+      "channel": "*Translated & Credited* cn Fan Art Reposts"
     },
     {
       "id": "1393545974432923658",

@@ -1,10 +1,17 @@
 {
   "date": "2026-01-18",
-  "messages": 58,
+  "messages": 75,
   "unique_authors": 14,
-  "reactions_total": 103,
-  "attachments": 22,
+  "reactions_total": 135,
+  "attachments": 23,
   "channel_activity": {
+    "Murphy :3!": 1,
+    "I errr....": 1,
+    "Ms Dean?": 6,
+    "How it feels when Tawil plays Ramona cards": 1,
+    "한국어 번역 피드백 컬렉션": 1,
+    "V2.4.1 广播剧——《茉夏的异世界调查记录》┊ Radio Drama - Mouchette's Otherworld Investigation Log": 4,
+    "V2.4.2 全新唤醒体✦徐┊New Awakener✦Xu": 3,
     "Ramona": 14,
     "Art dump thread": 1,
     "Who Ryker's Designer pls come talk ?": 1,
@@ -27,19 +34,20 @@
     "1357184174485671966": 1
   },
   "hourly_activity": {
-    "3": 3,
-    "8": 1,
+    "14": 6,
+    "3": 11,
+    "22": 2,
+    "1": 3,
+    "8": 3,
+    "13": 2,
+    "17": 2,
+    "18": 1,
     "9": 16,
     "0": 1,
     "4": 2,
     "7": 7,
-    "14": 4,
     "10": 3,
-    "13": 1,
-    "22": 1,
     "19": 1,
-    "17": 1,
-    "1": 2,
     "2": 2,
     "15": 1,
     "5": 8,
@@ -48,8 +56,8 @@
     "11": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 3
+    "0": 13,
+    "19": 4
   },
   "top_reacted_messages": [
     {
@@ -58,6 +66,13 @@
       "author": "solisimperium.",
       "reactions": 33,
       "channel": "徐，她真好看"
+    },
+    {
+      "id": "1462452246649376875",
+      "content": "",
+      "author": "pissfaggot",
+      "reactions": 29,
+      "channel": "Murphy :3!"
     },
     {
       "id": "1462368238339100820",
@@ -95,6 +110,13 @@
       "channel": "Art dump thread"
     },
     {
+      "id": "1462281659431784522",
+      "content": "Technically, Kath should be scared since like lightning is way hotter than fire",
+      "author": "cooked_chicken99",
+      "reactions": 2,
+      "channel": "I errr...."
+    },
+    {
       "id": "1462377421767446569",
       "content": "很抱歉再次占用公共资源来问我这没什么意义的问题(\n\n第九章最后一个关卡，也就是9—13中出现了字体由白渐变成黄的设计，起初我并未在意(因为我沉浸在剧情的氛围中)",
       "author": "ka_0414",
@@ -114,6 +136,13 @@
       "author": "solisimperium.",
       "reactions": 2,
       "channel": "徐，她真好看"
+    },
+    {
+      "id": "1462288214923673743",
+      "content": "(s)he",
+      "author": "shiio4870",
+      "reactions": 1,
+      "channel": "Ms Dean?"
     },
     {
       "id": "1462294592387944774",

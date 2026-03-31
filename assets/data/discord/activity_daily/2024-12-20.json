@@ -1,10 +1,12 @@
 {
   "date": "2024-12-20",
-  "messages": 27,
+  "messages": 30,
   "unique_authors": 6,
-  "reactions_total": 31,
-  "attachments": 6,
+  "reactions_total": 40,
+  "attachments": 11,
   "channel_activity": {
+    "Wheel List": 2,
+    "Morimens loading screen lore compilation": 1,
     "官方周邊建議征集": 8,
     "關於我還沒打主線卻莫名得到了三星這回事": 2,
     "Ping很大在马来西亚": 5,
@@ -15,22 +17,22 @@
     "索瓦爾格生日快樂🎂Happy Birthday to Solvarg Vol. 1": 1
   },
   "hourly_activity": {
+    "14": 3,
+    "15": 7,
+    "21": 1,
     "1": 1,
     "4": 5,
     "6": 2,
     "11": 2,
     "0": 1,
     "16": 3,
-    "15": 6,
     "19": 1,
     "10": 2,
     "9": 1,
-    "14": 2,
     "22": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 6
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -46,6 +48,13 @@
       "author": "flarinsidia",
       "reactions": 10,
       "channel": "官方周邊建議征集"
+    },
+    {
+      "id": "1319666297759334500",
+      "content": "Standard Wheels\nill add the event sr, sr and r wheels later\n<@702167871144591461",
+      "author": "annaxxe_",
+      "reactions": 9,
+      "channel": "Wheel List"
     },
     {
       "id": "1319629010824593429",

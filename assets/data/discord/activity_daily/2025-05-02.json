@@ -1,10 +1,16 @@
 {
   "date": "2025-05-02",
-  "messages": 20,
-  "unique_authors": 6,
-  "reactions_total": 38,
-  "attachments": 2,
+  "messages": 36,
+  "unique_authors": 7,
+  "reactions_total": 74,
+  "attachments": 4,
   "channel_activity": {
+    "Tulu is adorable": 2,
+    "Uvhash fanart": 1,
+    "Murphy": 1,
+    "🍲珈倫廚力大爆發┊Karen's cooking power explodes": 2,
+    "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction": 7,
+    "Kaly's Beginner Guides": 3,
     "✅「已回答」蟲族羊媽狂氣減費bug": 1,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 7,
     "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event": 1,
@@ -14,26 +20,45 @@
     "1181998821291606097": 3
   },
   "hourly_activity": {
+    "3": 4,
+    "4": 7,
+    "12": 1,
+    "7": 1,
+    "8": 4,
+    "0": 3,
     "6": 1,
     "2": 2,
     "10": 5,
     "5": 2,
     "16": 1,
     "17": 4,
-    "4": 4,
     "11": 1
   },
   "message_types": {
-    "19": 2,
-    "0": 7
+    "0": 14,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1367842629311528960",
+      "content": "When I first saw this character, I instantly loved the design the exposed heart ",
+      "author": "meatyexplosions",
+      "reactions": 20,
+      "channel": "Uvhash fanart"
+    },
     {
       "id": "1367719008354173008",
       "content": "uid：100414863",
       "author": "rustclock",
       "reactions": 12,
       "channel": "Clementine is watching you"
+    },
+    {
+      "id": "1367666260736999514",
+      "content": "I've been playing Morimens for around 60 days now. Here are some guides to thing",
+      "author": "climbkaly",
+      "reactions": 11,
+      "channel": "Kaly's Beginner Guides"
     },
     {
       "id": "1367713913378181140",
@@ -48,6 +73,13 @@
       "author": "nowimfaceless",
       "reactions": 7,
       "channel": "[Suggesion] [Feedback] About Unfair Self-Select Awakening Event"
+    },
+    {
+      "id": "1367716635267305524",
+      "content": "",
+      "author": "rain_scarlet",
+      "reactions": 3,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
     },
     {
       "id": "1367805666911064094",
@@ -69,6 +101,20 @@
       "author": "ernest_heart",
       "reactions": 2,
       "channel": "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊"
+    },
+    {
+      "id": "1367716731770110124",
+      "content": "珈伦来送饭了（）",
+      "author": "rain_scarlet",
+      "reactions": 1,
+      "channel": "🍲珈倫廚力大爆發┊Karen's cooking power explodes"
+    },
+    {
+      "id": "1367703594811523112",
+      "content": "抽不起就+12演算+神王",
+      "author": "Deleted User",
+      "reactions": 1,
+      "channel": "📜克珀珊特┊喚醒體&命輪介紹；Corposant┊Awaker & Wheel of Destiny Introduction"
     },
     {
       "id": "1367910807924641954",

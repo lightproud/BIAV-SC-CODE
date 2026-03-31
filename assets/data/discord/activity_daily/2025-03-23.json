@@ -1,10 +1,15 @@
 {
   "date": "2025-03-23",
-  "messages": 58,
+  "messages": 87,
   "unique_authors": 14,
   "reactions_total": 33,
-  "attachments": 11,
+  "attachments": 18,
   "channel_activity": {
+    "New Player Mechanics and Progression Guide": 1,
+    "Clementine 2.2 Kit and Tier Placement Guessing Tournament": 17,
+    "Kinda confused help me for the team": 5,
+    "Recommendation for newbie team": 5,
+    "Português Tradução - Coleta de Feedback": 1,
     "才晓得": 2,
     "关于加固机制设计问题": 14,
     "✅「已回答」为什么回合自动刷新回第一回合": 12,
@@ -17,24 +22,26 @@
     "where i post stuff": 1
   },
   "hourly_activity": {
+    "4": 6,
+    "7": 20,
+    "9": 10,
+    "5": 4,
+    "11": 7,
+    "8": 8,
+    "12": 5,
+    "1": 1,
     "10": 5,
-    "4": 2,
-    "5": 3,
-    "7": 12,
-    "8": 7,
     "6": 1,
-    "11": 4,
     "15": 4,
     "3": 1,
-    "12": 4,
     "13": 12,
     "14": 1,
     "16": 1,
     "22": 1
   },
   "message_types": {
-    "0": 32,
-    "19": 7
+    "0": 19,
+    "19": 10
   },
   "top_reacted_messages": [
     {

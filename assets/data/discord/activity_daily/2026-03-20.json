@@ -1,10 +1,11 @@
 {
   "date": "2026-03-20",
-  "messages": 296,
+  "messages": 299,
   "unique_authors": 59,
-  "reactions_total": 111,
+  "reactions_total": 112,
   "attachments": 34,
   "channel_activity": {
+    "求建議 後續卡池規劃": 3,
     "🔸课间休息闲聊": 5,
     "🔸日本語チャンネル": 8,
     "🔸chaîne-française": 1,
@@ -44,11 +45,11 @@
     "1484451981773901947": 3
   },
   "hourly_activity": {
+    "4": 8,
     "2": 7,
     "7": 4,
     "11": 80,
     "0": 8,
-    "4": 5,
     "9": 13,
     "20": 3,
     "10": 121,
@@ -68,9 +69,7 @@
     "17": 1
   },
   "message_types": {
-    "0": 257,
-    "19": 36,
-    "4": 3
+    "0": 3
   },
   "top_reacted_messages": [
     {
@@ -186,6 +185,13 @@
       "channel": ""
     },
     {
+      "id": "1484408874168488059",
+      "content": "超高泛用度",
+      "author": "water_heart",
+      "reactions": 1,
+      "channel": "求建議 後續卡池規劃"
+    },
+    {
       "id": "1484372382776037498",
       "content": "",
       "author": "akalanden",
@@ -202,13 +208,6 @@
     {
       "id": "1484506596427038850",
       "content": "小蜘蛛的名字不就是英文的拉婭妮絲嗎",
-      "author": "ice_storys",
-      "reactions": 1,
-      "channel": ""
-    },
-    {
-      "id": "1484354114597945534",
-      "content": "<:pray:1356053116260454534> <:Murphy_satisfy:1468258389850193960>",
       "author": "ice_storys",
       "reactions": 1,
       "channel": ""

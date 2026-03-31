@@ -1,10 +1,13 @@
 {
   "date": "2025-03-05",
-  "messages": 191,
+  "messages": 212,
   "unique_authors": 32,
-  "reactions_total": 101,
-  "attachments": 24,
+  "reactions_total": 104,
+  "attachments": 26,
   "channel_activity": {
+    "fuckupatoo's morimens fanfics": 3,
+    "Star Chapter 2.1 Tier List": 15,
+    "Teams Comps": 3,
     "📜《忘卻前夜 Morimens》V2.1.1 即將開放！精彩資訊一網打盡！": 75,
     "我不知道有什麼用但我決定幫Pray立一個碑": 12,
     "星辰篇搞波次战斗能不能显示波次": 2,
@@ -27,12 +30,15 @@
     "塗些主線角色": 1
   },
   "hourly_activity": {
-    "9": 36,
-    "10": 18,
+    "9": 38,
+    "10": 19,
+    "12": 13,
+    "14": 17,
+    "8": 4,
+    "18": 1,
+    "20": 2,
     "11": 7,
-    "12": 11,
     "13": 33,
-    "14": 4,
     "15": 16,
     "16": 8,
     "17": 3,
@@ -41,14 +47,12 @@
     "3": 12,
     "4": 3,
     "7": 28,
-    "8": 3,
     "2": 2,
-    "20": 1,
     "6": 2
   },
   "message_types": {
-    "0": 64,
-    "19": 11
+    "0": 18,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -143,6 +147,13 @@
       "channel": "◆第1章「重临雾都」关卡流程总览·星辰篇"
     },
     {
+      "id": "1346781312303894570",
+      "content": "you should!! i would love to read it",
+      "author": "fuckupa2",
+      "reactions": 2,
+      "channel": "fuckupatoo's morimens fanfics"
+    },
+    {
       "id": "1346780600442556458",
       "content": "每一點獻祭轉換成我方的一點力量",
       "author": "shchng.",
@@ -181,13 +192,6 @@
       "id": "1346788274009542717",
       "content": "",
       "author": "elkmilu",
-      "reactions": 2,
-      "channel": "💭「處理中」Boss關忘了放彩虹"
-    },
-    {
-      "id": "1346790186947706902",
-      "content": "~~每關都是~~",
-      "author": "tofu0834",
       "reactions": 2,
       "channel": "💭「處理中」Boss關忘了放彩虹"
     }

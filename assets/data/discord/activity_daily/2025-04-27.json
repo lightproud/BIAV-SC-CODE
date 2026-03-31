@@ -1,10 +1,12 @@
 {
   "date": "2025-04-27",
-  "messages": 40,
+  "messages": 46,
   "unique_authors": 9,
-  "reactions_total": 588,
+  "reactions_total": 590,
   "attachments": 6,
   "channel_activity": {
+    "Goliath Fanart": 4,
+    "Overexalt": 2,
     "✅「Answered」Error on game launch": 3,
     "💭「處理中」融災3-3": 3,
     "能不能增加一些真正熱門xp角色的sp跟劇情來救你遊": 3,
@@ -22,10 +24,12 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "5": 6,
+    "6": 1,
+    "9": 2,
+    "16": 2,
     "17": 3,
     "3": 8,
-    "5": 4,
-    "9": 1,
     "2": 9,
     "7": 1,
     "8": 1,
@@ -37,9 +41,8 @@
     "12": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 3,
-    "4": 4
+    "0": 3,
+    "19": 3
   },
   "top_reacted_messages": [
     {
@@ -76,6 +79,20 @@
       "author": "zier.0",
       "reactions": 2,
       "channel": "✅「Answered」Steam account switching"
+    },
+    {
+      "id": "1365983044875325541",
+      "content": "Ehe <:goodjob1:1356083729558274149>",
+      "author": "oketan",
+      "reactions": 1,
+      "channel": "Goliath Fanart"
+    },
+    {
+      "id": "1366085170209357864",
+      "content": "1. You need 8 copies total for an overexalt.\n\nIn other words: 3 Star +4\n\n2. The ",
+      "author": "climbkaly",
+      "reactions": 1,
+      "channel": "Overexalt"
     },
     {
       "id": "1366071232122064957",

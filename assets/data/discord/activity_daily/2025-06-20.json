@@ -1,10 +1,12 @@
 {
   "date": "2025-06-20",
-  "messages": 35,
+  "messages": 38,
   "unique_authors": 10,
   "reactions_total": 768,
   "attachments": 7,
   "channel_activity": {
+    "Reading Your Opponent's Hand in Traphase": 1,
+    "求配隊": 2,
     "✅「Answered」凱刻斯靈塑沒有正確加成到3啟回血": 3,
     "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 3,
     "✅「已回答」熔朵的超限爆發 有時語音會沒聲音": 3,
@@ -19,6 +21,8 @@
     "🔸礼包码┊gift-codes": 1
   },
   "hourly_activity": {
+    "2": 3,
+    "23": 2,
     "9": 4,
     "10": 1,
     "6": 12,
@@ -26,7 +30,6 @@
     "3": 3,
     "17": 1,
     "8": 2,
-    "2": 2,
     "4": 3,
     "0": 1,
     "14": 2,
@@ -34,9 +37,8 @@
     "7": 2
   },
   "message_types": {
-    "0": 13,
-    "19": 7,
-    "4": 6
+    "0": 1,
+    "19": 2
   },
   "top_reacted_messages": [
     {

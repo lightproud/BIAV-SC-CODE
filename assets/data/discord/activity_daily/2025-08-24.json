@@ -1,10 +1,17 @@
 {
   "date": "2025-08-24",
-  "messages": 43,
+  "messages": 57,
   "unique_authors": 14,
-  "reactions_total": 26,
-  "attachments": 10,
+  "reactions_total": 83,
+  "attachments": 17,
   "channel_activity": {
+    "My fan art submission uid 101084291": 2,
+    "Ryker fanart repost": 1,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 4,
+    "Pulling Chaos vs Aequor": 2,
+    "Team help💔": 1,
+    "Comps and how to spend resources effectively": 1,
+    "Do I really have to?": 3,
     "校猫碎碎念#May the Silver Key continue to guide us 愿银钥继续指引我们": 1,
     "✅「已回答」試訓顯示bug": 5,
     "✅「Answered」Suggestion: Please allow us to toggle Enlightens!": 1,
@@ -20,12 +27,18 @@
     "1408838316153114716": 1
   },
   "hourly_activity": {
+    "22": 4,
+    "9": 2,
+    "1": 2,
+    "5": 2,
+    "19": 1,
+    "20": 1,
+    "13": 2,
+    "12": 5,
+    "8": 4,
     "7": 1,
-    "12": 4,
-    "13": 1,
     "16": 6,
     "4": 2,
-    "5": 1,
     "18": 1,
     "3": 4,
     "6": 2,
@@ -34,16 +47,28 @@
     "10": 2,
     "14": 1,
     "15": 1,
-    "8": 1,
-    "9": 1,
     "11": 1,
-    "0": 6,
-    "1": 1
+    "0": 6
   },
   "message_types": {
-    "0": 1
+    "0": 13,
+    "19": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1409100575622168657",
+      "content": "<:Emoji_LK_M_08:1400771650064089112>  \nhttps://vxtwitter.com/H135M7/status/19573",
+      "author": "nazhigezihk",
+      "reactions": 33,
+      "channel": "Ryker fanart repost"
+    },
+    {
+      "id": "1409300217739608146",
+      "content": "W.I.P\n<:takenotes:1357186646294138890>",
+      "author": "eyadx23",
+      "reactions": 24,
+      "channel": "My fan art submission uid 101084291"
+    },
     {
       "id": "1408969158619566200",
       "content": "如题，其实是你游的七夕份怪味小零食\n\n———观前须知———\n>星辰篇神国降临if线\n>有原创世界观和对你游设定的个人理解混入\n>有虚构史学家环节\n>女守中心视角",

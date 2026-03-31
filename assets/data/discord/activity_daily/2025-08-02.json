@@ -1,10 +1,14 @@
 {
   "date": "2025-08-02",
-  "messages": 17,
+  "messages": 28,
   "unique_authors": 8,
-  "reactions_total": 8,
-  "attachments": 5,
+  "reactions_total": 74,
+  "attachments": 9,
   "channel_activity": {
+    "Pierot: Ultra Boy": 7,
+    "professor doll says school is cool!": 1,
+    "buy magic hat they said": 1,
+    "(moved to #gameplay-guide)": 2,
     "✅「已回答」什么时候才能提升限定角色的溢出补偿？": 3,
     "💭「Processing」Helot: Catena - inconsistent interactions with ultra space - Crimson Shackles": 3,
     "💭「Processing」Bug if parasite enemy attempts to infect you while having death resistance": 5,
@@ -13,8 +17,12 @@
     "通讯设备+首领战无效": 2
   },
   "hourly_activity": {
+    "14": 7,
+    "8": 1,
+    "13": 1,
+    "10": 1,
+    "22": 4,
     "0": 3,
-    "22": 3,
     "5": 5,
     "12": 2,
     "17": 1,
@@ -23,16 +31,51 @@
     "3": 1
   },
   "message_types": {
-    "0": 16,
-    "19": 1
+    "0": 9,
+    "19": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1401197401946980442",
+      "content": "101079565 \nmost broken cursed relic they said",
+      "author": "farr8506",
+      "reactions": 39,
+      "channel": "buy magic hat they said"
+    },
+    {
+      "id": "1401120371809456219",
+      "content": "and she's also saying you're slow (affectionate)",
+      "author": "wraithdust",
+      "reactions": 22,
+      "channel": "professor doll says school is cool!"
+    },
     {
       "id": "1401181134259355781",
       "content": "校貓你說新的設計要像日服那樣，久久才能開一次狂氣爆發，讓狂氣爆發更有意義，但杜勒蠻失敗的，他需要付出的代價太多，不管是高配輔助還有血線的掌握",
       "author": "Deleted User",
       "reactions": 8,
       "channel": "Doresain still needs buff."
+    },
+    {
+      "id": "1401150698673930345",
+      "content": "note: this is **Not** a meta based recommendation. this list is based on what is",
+      "author": "nikolazuli",
+      "reactions": 3,
+      "channel": "(moved to #gameplay-guide)"
+    },
+    {
+      "id": "1401212961950793819",
+      "content": "cool",
+      "author": "startofu_fish",
+      "reactions": 1,
+      "channel": "Pierot: Ultra Boy"
+    },
+    {
+      "id": "1401328819368890431",
+      "content": "i appreciate the helpful direction! thanks niko!",
+      "author": "mutsukabezaka",
+      "reactions": 1,
+      "channel": "(moved to #gameplay-guide)"
     }
   ]
 }

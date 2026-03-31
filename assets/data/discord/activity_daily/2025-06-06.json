@@ -1,10 +1,11 @@
 {
   "date": "2025-06-06",
-  "messages": 71,
-  "unique_authors": 10,
-  "reactions_total": 14,
-  "attachments": 17,
+  "messages": 90,
+  "unique_authors": 11,
+  "reactions_total": 24,
+  "attachments": 18,
   "channel_activity": {
+    "🎊官周通販：淘寶全球可購！": 19,
     "V2.2.2.6 在線維護公告": 11,
     "伺服器網路波動公告": 2,
     "💭「Processing」Sometimes when playing Salvador's 2-cost multiple times the card will get \"stuck\"": 9,
@@ -21,27 +22,35 @@
     "趕快趁我還神智不清的時候": 2
   },
   "hourly_activity": {
-    "11": 7,
+    "2": 20,
+    "3": 3,
+    "8": 15,
+    "9": 4,
+    "10": 1,
+    "11": 9,
+    "13": 3,
     "12": 5,
     "1": 5,
     "23": 9,
-    "2": 19,
     "7": 10,
-    "8": 6,
     "14": 2,
     "15": 1,
     "0": 1,
     "20": 1,
-    "18": 1,
-    "13": 1,
-    "3": 2,
-    "9": 1
+    "18": 1
   },
   "message_types": {
-    "0": 12,
-    "19": 1
+    "19": 1,
+    "0": 18
   },
   "top_reacted_messages": [
+    {
+      "id": "1380457848533946398",
+      "content": "<@1213364721328332840> <@1334599963077771266> <@214749389632176129><@27822409797",
+      "author": "morimensstaff01",
+      "reactions": 9,
+      "channel": "🎊官周通販：淘寶全球可購！"
+    },
     {
       "id": "1380355838341808191",
       "content": "Server Network Fluctuations Announcement\n\nKeeper, \n    We are very sorry that st",
@@ -69,6 +78,13 @@
       "author": "wild_pansy",
       "reactions": 2,
       "channel": "💭「處理中」關於雙發鑰令"
+    },
+    {
+      "id": "1380372344874340402",
+      "content": "中獎名單將在轉發活動結束後72小時內公布哩，戈雅今天庫庫搞完！<:please:1356053110375714817>",
+      "author": "morimensstaff01",
+      "reactions": 1,
+      "channel": "🎊官周通販：淘寶全球可購！"
     },
     {
       "id": "1380689251989196831",

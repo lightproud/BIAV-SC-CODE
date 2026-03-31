@@ -1,10 +1,14 @@
 {
   "date": "2025-04-26",
-  "messages": 21,
-  "unique_authors": 4,
-  "reactions_total": 19,
-  "attachments": 3,
+  "messages": 29,
+  "unique_authors": 7,
+  "reactions_total": 26,
+  "attachments": 5,
   "channel_activity": {
+    "Just a pixel image of Jenkin looking outside with Brown": 1,
+    "Goliath Fanart": 2,
+    "📜V2.2.1 版本前瞻┊V2.2.1 Version Outlook": 4,
+    "Beginner Navigation Guide": 1,
     "V2.2.1.0 停服維護公告": 4,
     "[克蘇魯]你應該要知道的那些事_(超級不專業版)": 7,
     "✅「Answered」Steam account switching": 1,
@@ -13,18 +17,20 @@
     "1271491376881598494": 1
   },
   "hourly_activity": {
-    "9": 4,
+    "5": 2,
+    "3": 1,
+    "9": 5,
+    "10": 12,
+    "19": 1,
     "14": 1,
-    "10": 9,
     "20": 1,
     "7": 1,
     "18": 4,
     "21": 1
   },
   "message_types": {
-    "19": 3,
     "0": 7,
-    "4": 1
+    "19": 1
   },
   "top_reacted_messages": [
     {
@@ -40,6 +46,27 @@
       "author": "muliupan",
       "reactions": 8,
       "channel": "血链希洛忘却篇星辰篇造物抓取二图流攻略"
+    },
+    {
+      "id": "1365554644696432681",
+      "content": "Another companion image to go with it, Jenkins is still cuter though.",
+      "author": "starfish3302",
+      "reactions": 3,
+      "channel": "Just a pixel image of Jenkin looking outside with Brown"
+    },
+    {
+      "id": "1365531449155129384",
+      "content": "Giving nips is a must in my house <:o7:1311002802331582647>",
+      "author": "meatyexplosions",
+      "reactions": 2,
+      "channel": "Goliath Fanart"
+    },
+    {
+      "id": "1365765790984569035",
+      "content": "This guide goes over the starting topics of:\n\n1. Keeper Level\n2. Menophin how to",
+      "author": "climbkaly",
+      "reactions": 2,
+      "channel": "Beginner Navigation Guide"
     },
     {
       "id": "1365640574396272700",

@@ -1,10 +1,15 @@
 {
   "date": "2025-06-04",
-  "messages": 145,
+  "messages": 150,
   "unique_authors": 17,
-  "reactions_total": 59,
-  "attachments": 7,
+  "reactions_total": 61,
+  "attachments": 8,
   "channel_activity": {
+    "Aurita": 1,
+    "aomi’s morimens dump": 1,
+    "A World Where Nothing's Aligned": 1,
+    "Castor ♡ (Special for male/ultra awakener enjoyers)": 1,
+    "🎊官周通販：淘寶全球可購！": 1,
     "V2.2.2.4 在線維護公告": 2,
     "✅校猫碎碎念#卡斯托尔加强": 49,
     "校猫，能不能提升一下限定重复分解的收益，亏得我有点头晕了": 1,
@@ -41,10 +46,11 @@
     "黑皮大学生": 1
   },
   "hourly_activity": {
+    "4": 12,
+    "14": 1,
     "6": 6,
     "2": 16,
     "3": 8,
-    "4": 8,
     "5": 2,
     "7": 11,
     "9": 30,
@@ -59,8 +65,7 @@
     "17": 3
   },
   "message_types": {
-    "0": 37,
-    "19": 14
+    "0": 5
   },
   "top_reacted_messages": [
     {
@@ -118,6 +123,20 @@
       "author": "287405tjy_28066",
       "reactions": 2,
       "channel": "如图"
+    },
+    {
+      "id": "1379682779704463411",
+      "content": "Gorgeous 🥰",
+      "author": "cometovilla",
+      "reactions": 1,
+      "channel": "A World Where Nothing's Aligned"
+    },
+    {
+      "id": "1379682949292625940",
+      "content": "<:hug:1356083899553288382>",
+      "author": "cometovilla",
+      "reactions": 1,
+      "channel": "Castor ♡ (Special for male/ultra awakener enjoyers)"
     },
     {
       "id": "1379672237304451143",
@@ -186,20 +205,6 @@
       "id": "1379817112725618809",
       "content": "这游戏不是人玩的",
       "author": "287405tjy_28066",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#卡斯托尔加强"
-    },
-    {
-      "id": "1379842162753011782",
-      "content": "說甚麼大實話",
-      "author": "limejuice0829",
-      "reactions": 1,
-      "channel": "✅校猫碎碎念#卡斯托尔加强"
-    },
-    {
-      "id": "1379847858483630224",
-      "content": "怎麼不是大筆一揮 變成18+遊戲<:love:1356053099931897977>",
-      "author": "_buqi",
       "reactions": 1,
       "channel": "✅校猫碎碎念#卡斯托尔加强"
     }
