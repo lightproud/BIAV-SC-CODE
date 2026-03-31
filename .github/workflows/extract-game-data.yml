@@ -20,73 +20,74 @@ permissions:
   contents: write
 
 jobs:
-  download:
+  download-and-extract:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    outputs:
-      cache-key: ${{ steps.cache-key.outputs.key }}
+    timeout-minutes: 60
+
     steps:
-      - name: Generate cache key
-        id: cache-key
-        run: |
-          # Use date as part of cache key so we re-download periodically
-          echo "key=morimens-client-${{ github.event.inputs.steam_app_id || '3052450' }}-$(date +%Y%m%d)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
 
       - name: Cache game client
         id: cache
         uses: actions/cache@v4
         with:
           path: ~/steam_depot
-          key: ${{ steps.cache-key.outputs.key }}
+          key: morimens-${{ github.event.inputs.steam_app_id || '3052450' }}-${{ hashFiles('.github/triggers/extract-game-data') }}
+          restore-keys: |
+            morimens-${{ github.event.inputs.steam_app_id || '3052450' }}-
 
-      - name: Install DepotDownloader
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: |
-          # Install .NET runtime
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq dotnet-runtime-8.0 || {
-            # Fallback: install from Microsoft
-            wget -q https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
-            chmod +x dotnet-install.sh
-            ./dotnet-install.sh --channel 8.0 --runtime dotnet
-            export PATH="$HOME/.dotnet:$PATH"
-          }
-
-          # Download DepotDownloader
-          LATEST=$(curl -s https://api.github.com/repos/SteamRE/DepotDownloader/releases/latest | grep -oP '"tag_name":\s*"\K[^"]+')
-          VERSION="${LATEST#DepotDownloader_}"
-          echo "DepotDownloader version: $LATEST"
-          curl -sL "https://github.com/SteamRE/DepotDownloader/releases/download/${LATEST}/DepotDownloader-linux-x64.zip" -o dd.zip
-          mkdir -p ~/depotdownloader
-          unzip -q dd.zip -d ~/depotdownloader
-          chmod +x ~/depotdownloader/DepotDownloader
-
-      - name: Download Morimens via Steam (anonymous)
+      - name: Download via DepotDownloader
         if: steps.cache.outputs.cache-hit != 'true'
         run: |
           APP_ID="${{ github.event.inputs.steam_app_id || '3052450' }}"
-          echo "Downloading Steam App $APP_ID (anonymous, F2P)..."
+
+          # Download DepotDownloader (self-contained binary, no .NET needed)
+          LATEST=$(curl -s https://api.github.com/repos/SteamRE/DepotDownloader/releases/latest | grep -oP '"tag_name":\s*"\K[^"]+')
+          echo "DepotDownloader version: $LATEST"
+          curl -sL "https://github.com/SteamRE/DepotDownloader/releases/download/${LATEST}/DepotDownloader-linux-x64.zip" -o /tmp/dd.zip
+          mkdir -p ~/depotdownloader
+          unzip -q /tmp/dd.zip -d ~/depotdownloader
+          chmod +x ~/depotdownloader/DepotDownloader
+
+          # Build auth args
+          AUTH_ARGS=""
+          if [ -n "${{ secrets.STEAM_USER }}" ] && [ -n "${{ secrets.STEAM_PASS }}" ]; then
+            echo "Using Steam account credentials"
+            AUTH_ARGS="-username ${{ secrets.STEAM_USER }} -password ${{ secrets.STEAM_PASS }}"
+          else
+            echo "No Steam credentials found, trying anonymous download (F2P)"
+          fi
+
+          # Download game
+          echo "Downloading Steam App $APP_ID ..."
           ~/depotdownloader/DepotDownloader \
             -app "$APP_ID" \
             -os windows \
             -dir ~/steam_depot \
-            -max-downloads 8
+            -max-downloads 8 \
+            $AUTH_ARGS \
+            || {
+              echo ""
+              echo "=========================================="
+              echo "ERROR: DepotDownloader failed."
+              echo ""
+              if [ -z "$AUTH_ARGS" ]; then
+                echo "Anonymous download did not work."
+                echo "This F2P game likely requires a Steam account."
+                echo ""
+                echo "To fix: add STEAM_USER and STEAM_PASS as"
+                echo "GitHub Secrets (use a free Steam account"
+                echo "that has claimed Morimens)."
+              fi
+              echo "=========================================="
+              exit 1
+            }
+
+          echo ""
           echo "Download complete."
           du -sh ~/steam_depot
-
-      - name: Upload depot as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: steam-depot
-          path: ~/steam_depot
-          retention-days: 3
-
-  extract:
-    runs-on: ubuntu-latest
-    needs: download
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@v4
+          echo "Top-level files:"
+          ls -la ~/steam_depot/ | head -20
 
       - uses: actions/setup-python@v5
         with:
@@ -95,25 +96,21 @@ jobs:
       - name: Install Python dependencies
         run: pip install UnityPy Pillow
 
-      - name: Download depot artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: steam-depot
-          path: ~/steam_depot
-
       - name: Locate game data directory
         id: locate
         run: |
           echo "=== Looking for *_Data directory ==="
           DATA_DIR=$(find ~/steam_depot -maxdepth 3 -type d -name "*_Data" | head -1)
           if [ -z "$DATA_DIR" ]; then
-            echo "No *_Data dir found, trying StreamingAssets..."
-            DATA_DIR=$(find ~/steam_depot -maxdepth 4 -type d -name "StreamingAssets" | head -1)
-            DATA_DIR="${DATA_DIR%/StreamingAssets}"
+            echo "Trying StreamingAssets..."
+            SA=$(find ~/steam_depot -maxdepth 4 -type d -name "StreamingAssets" | head -1)
+            if [ -n "$SA" ]; then
+              DATA_DIR="${SA%/StreamingAssets}"
+            fi
           fi
           if [ -z "$DATA_DIR" ]; then
             echo "ERROR: Cannot locate game data directory"
-            echo "Top-level structure:"
+            echo "Directory structure:"
             find ~/steam_depot -maxdepth 3 -type d
             exit 1
           fi
@@ -134,23 +131,25 @@ jobs:
             $EXTRA_ARGS
 
       - name: Show extraction results
+        if: always()
         run: |
           echo "=== Extraction stats ==="
-          cat projects/wiki/output/client_extract/extraction_stats.json 2>/dev/null || echo "No stats"
+          cat projects/wiki/output/client_extract/extraction_stats.json 2>/dev/null || echo "No stats file"
           echo ""
           echo "=== Extracted files ==="
-          find projects/wiki/output/client_extract -type f | head -50
+          find projects/wiki/output/client_extract -type f 2>/dev/null | head -50
           echo ""
-          echo "=== Total extracted ==="
-          find projects/wiki/output/client_extract -type f | wc -l
-          echo "files"
+          TOTAL=$(find projects/wiki/output/client_extract -type f 2>/dev/null | wc -l)
+          echo "Total: $TOTAL files"
 
       - name: Upload extraction results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: game-data-extract-${{ github.run_id }}
           path: projects/wiki/output/client_extract/
           retention-days: 30
+          if-no-files-found: ignore
 
       - name: Commit extracted data to repo
         run: |
@@ -170,7 +169,6 @@ jobs:
           git add projects/wiki/output/client_extract/extraction_stats.json 2>/dev/null || true
           git add projects/wiki/output/client_extract/schema_mapping_report.json 2>/dev/null || true
 
-          # Also add portraits if extracted
           if [ -d "projects/wiki/output/client_extract/textures" ]; then
             git add projects/wiki/output/client_extract/textures/
           fi
@@ -180,7 +178,7 @@ jobs:
           git commit -m "feat(wiki): auto-extract game data from Steam client
 
           Extracted $JSON_COUNT JSON + $((TOTAL_COUNT - JSON_COUNT)) other config files.
-          Source: Steam App ${{ github.event.inputs.steam_app_id || '3052450' }} via DepotDownloader (anonymous)
+          Source: Steam App ${{ github.event.inputs.steam_app_id || '3052450' }} via DepotDownloader
           [skip ci]"
 
           git pull origin main --rebase
