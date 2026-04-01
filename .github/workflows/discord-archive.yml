@@ -2,9 +2,16 @@ name: Discord Archive
 
 on:
   schedule:
-    # Run once daily at 18:00 UTC (UTC+8 02:00) — reduced from hourly to control repo size
+    # Incremental: once daily at 18:00 UTC (UTC+8 02:00)
     - cron: '0 18 * * *'
+    # Monthly archive: 1st of each month at 06:00 UTC
+    - cron: '0 6 1 * *'
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode: incremental (default) or monthly-archive'
+        required: false
+        default: 'incremental'
 
 permissions:
   contents: write
@@ -22,10 +29,29 @@ jobs:
       - name: Install dependencies
         run: pip install -r projects/news/requirements.txt
 
-      - name: Run Discord archiver
+      - name: Determine run mode
+        id: mode
+        run: |
+          if [ "${{ github.event.schedule }}" = "0 6 1 * *" ] || [ "${{ github.event.inputs.mode }}" = "monthly-archive" ]; then
+            echo "mode=monthly" >> $GITHUB_OUTPUT
+          else
+            echo "mode=incremental" >> $GITHUB_OUTPUT
+          fi
+          echo "Running in ${{ steps.mode.outputs.mode || 'incremental' }} mode"
+
+      - name: Run Discord archiver (incremental)
+        if: steps.mode.outputs.mode == 'incremental'
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: python projects/news/scripts/discord_archiver.py
+
+      - name: Run Discord archiver (monthly archive)
+        if: steps.mode.outputs.mode == 'monthly'
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python projects/news/scripts/discord_archiver.py --archive-monthly
 
       - name: Commit and push if changed
         run: |
@@ -35,7 +61,11 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: archive Discord data [skip ci]"
+            MSG="chore: archive Discord data [skip ci]"
+            if [ "${{ steps.mode.outputs.mode }}" = "monthly" ]; then
+              MSG="chore: monthly Discord archive — old JSONL moved to Releases [skip ci]"
+            fi
+            git commit -m "$MSG"
             for i in 1 2 3 4; do
               git pull --rebase origin main && git push origin main && exit 0
               echo "Push attempt $i failed, retrying in ${i}s..."

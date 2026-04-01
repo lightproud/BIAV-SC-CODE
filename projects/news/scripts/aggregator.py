@@ -612,6 +612,78 @@ def fetch_fandom_wiki():
     return items
 
 
+def fetch_discord_local():
+    """
+    Read today's Discord archive data from assets/data/discord/ and produce
+    news items: one summary item + top-reacted messages as individual items.
+    No API calls — purely local file reads from the archiver's output.
+    """
+    discord_dir = REPO_ROOT / 'assets' / 'data' / 'discord'
+    today_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    yesterday_str = (datetime.now(timezone.utc) - timedelta(days=1)).strftime('%Y-%m-%d')
+    items = []
+
+    # Try today first, fall back to yesterday (archiver may not have run yet today)
+    stats_path = discord_dir / 'activity_daily' / f'{today_str}.json'
+    if not stats_path.exists():
+        stats_path = discord_dir / 'activity_daily' / f'{yesterday_str}.json'
+        today_str = yesterday_str
+    if not stats_path.exists():
+        logger.info('Discord local: no recent daily stats found')
+        return []
+
+    try:
+        with open(stats_path, 'r', encoding='utf-8') as f:
+            stats = json.load(f)
+    except Exception as e:
+        logger.warning(f'Discord local: failed to read stats: {e}')
+        return []
+
+    msg_count = stats.get('messages', 0)
+    authors = stats.get('unique_authors', 0)
+    reactions = stats.get('reactions_total', 0)
+
+    # Top active channels
+    ch_activity = stats.get('channel_activity', {})
+    top_channels = sorted(ch_activity.items(), key=lambda x: x[1], reverse=True)[:5]
+    ch_summary = '、'.join(f'{ch}({cnt})' for ch, cnt in top_channels)
+
+    # Summary item
+    items.append({
+        'title': f'Discord 社区日报 ({today_str})',
+        'summary': f'今日 {msg_count:,} 条消息，{authors} 位活跃用户，{reactions:,} 次反应。热门频道：{ch_summary}',
+        'source': 'discord',
+        'time': datetime.now(timezone.utc).isoformat(),
+        'url': '',
+        'engagement': msg_count,
+        'author': 'Discord Archiver',
+        'tags': ['discord', 'daily-summary'],
+    })
+
+    # Top reacted messages as individual items
+    top_reacted = stats.get('top_reacted_messages', [])
+    for msg in sorted(top_reacted, key=lambda x: x.get('reactions', 0), reverse=True)[:5]:
+        content = msg.get('content', '')[:150]
+        author = msg.get('author', '?')
+        channel = msg.get('channel', '')
+        react_count = msg.get('reactions', 0)
+        if react_count < 5:
+            continue
+        items.append({
+            'title': f'[DC热门] {author}@{channel}: {content[:60]}',
+            'summary': content,
+            'source': 'discord',
+            'time': datetime.now(timezone.utc).isoformat(),
+            'url': '',
+            'engagement': react_count,
+            'author': author,
+            'tags': ['discord', 'hot-message'],
+        })
+
+    logger.info(f'Discord local: {len(items)} items from {today_str} stats')
+    return items
+
+
 def generate_summary(news_items):
     """
     Generate a daily summary. Uses OpenAI-compatible API if available,
@@ -677,6 +749,7 @@ def run():
         ('SteamReviews', fetch_steam_reviews),
         ('SteamNews', fetch_steam_news),
         ('FandomWiki', fetch_fandom_wiki),
+        ('DiscordLocal', fetch_discord_local),
     ]
 
     for name, fetcher in fetchers:
