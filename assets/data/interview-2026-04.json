@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "type": "interview",
+    "date": "2026-04",
+    "participants": ["Light (Producer)", "Jiyue (Chief Scriptwriter)"],
+    "interviewer": "External media (English-language, Lovecraftian/horror focus)",
+    "total_questions": 53,
+    "extracted_by": "战略中心（Code）",
+    "extracted_at": "2026-04-01"
+  },
+
+  "studio": {
+    "name": "B.I.A.V. Studio",
+    "founded": 2019,
+    "founded_by": "Original producer (not Light)",
+    "light_joined": "End of 2021, as second producer",
+    "team_size": "Several dozen people",
+    "longest_serving_members": ["QA lead", "Composer (Frank)"],
+    "previous_project": "My Turn (逆转回合) — fair-play card battle game; design thinking carried into Morimens card mechanics and Traphase mode",
+    "original_working_title": "Codename: Domain (代号：密境)",
+    "key_returnees_since_2024": ["Lead client programmer", "System designer", "Senior concept artist"],
+    "art_team_note": "Most were fresh graduates recruited by lead artist; established the visual style; majority left around late 2024 First Arc finale; new art team now taking over with flexible collaboration with former artists"
+  },
+
+  "timeline": {
+    "2019": "Project founded; three core pillars established: roguelike card mechanics, Cthulhu themes, anime art style",
+    "2020": "First concept PV released, attracted more developers",
+    "2021_end": "Development bottleneck + cost pressure + unclear core gameplay + Genshin Impact raising market expectations → near-dissolution. Light joins as second producer, restructures core gameplay, drops high-cost exploration and overly complex fragmented narrative, refocuses from investigation to combat. Game officially named 'Morimens' during this restart",
+    "2023_h2": "Ported to PC and launched on Steam ahead of potential shutdown. Earned 'Very Positive' rating despite gacha skepticism from Steam community",
+    "2024_end": "Second crisis; core members left; First Arc finale released",
+    "2025_2026": "Team rebuilding; Steam ~1000 DAU; Discord 37,533 members"
+  },
+
+  "narrative": {
+    "original_plan": "3 arcs, each ~10 chapters of main story",
+    "arc1": {
+      "original_chapters": 10,
+      "actual_chapters": 8,
+      "compression_details": "Ch7-8 were supposed to be Keeper's encounter with Tinct and Faint at opera house. Current Ch7 contains content from original Ch9 (Thais's arc). Current Ch8 contains content from original Arc 3 Ch10. Church of the Lightbearers and Sculptors' Association content never fully developed",
+      "ch8_note": "Primarily functions as exposition — establishes core lore, organizes threads, delivers provisional character resolutions. Writer faced unprecedented challenges"
+    },
+    "arc2": {
+      "title": "Astral Reign / When the Stars Are Right (星辰正位之刻)",
+      "planned_chapters": 7,
+      "more_side_stories": true,
+      "exploration_removed": "Removed due to high co-design difficulty, low reusability, limited meaningful branching. May return selectively at key narrative moments",
+      "key_reveal": "The entity Tulu serves will be one of the key figures in Arc 2's concluding stages"
+    },
+    "arc3": {
+      "status": "Early discussions on plot outline and character directions",
+      "will_resolve": "Many previously undisclosed world-building details and hanging narrative threads"
+    },
+    "personal_storyline_drafts_completed": ["Tawil", "Alva", "Pandia", "Nautila"],
+    "key_inspirations": {
+      "primary_lovecraft": ["At the Mountains of Madness (first inspiration for the project)", "Dream-Quest of Unknown Kadath", "Through the Gates of the Silver Key", "Ex Oblivione (one of the true souls of this project)"],
+      "other_mythos_authors": ["Clark Ashton Smith", "Lin Carter"],
+      "literature": ["Maupassant's Le Horla (→ character Horla)", "Thomas Ligotti's The Frolic (homaged in a stage title)"],
+      "team_inspirations": ["The Godfather", "Evangelion", "Martin McDonagh works", "Fullmetal Alchemist", "Junji Ito manga", "True Detective"],
+      "game_inspirations": ["Slay the Spire", "Darkest Dungeon (stress system tension)", "Curse of the Dead Gods", "Chaos Zero Nightmare (card variation during exploration)", "Deemo (music rhythm)", "FF7 Rebirth (mini-games reference)", "Bloodborne"]
+    }
+  },
+
+  "characters": {
+    "first_designed": ["Tawil", "Doll"],
+    "genesis_characters_conceived_together": ["Ramona: Timeworn", "Doll: Inferno", "Helot: Catena", "Murphy: Fauxborn"],
+    "unrevealed": "A mysterious Ultra Realm Genesis character — concept finalized but not yet revealed",
+    "announced_not_implemented": ["Tulu: Godking"],
+    "doll_inferno": "Originally a central figure for Arc 3; had a standalone personal storyline (initial draft complete) that was never released due to Arc 1 compression",
+    "lights_favorite": "Ramona: Timeworn — personally designed her skill set; her ability to replicate last card played mirrors 'drawing strength from past experiences'; added line to V1.1 PV ending: 'No matter how many times I fail, I will ultimately save you'",
+    "24_design": "True exception — compresses four character niches into one unit. Not commercially cost-effective but done to serve 'split personality' narrative. Battle designers 'burned once for their ideals'",
+    "most_difficult_to_write_recently": "Murphy: Fauxborn — original Murphy's story was already complete, limited expansion room; solution: portrayed as Divine Mother facade hiding pure inner self"
+  },
+
+  "game_design": {
+    "three_core_principles": [
+      "1. Unify gameplay and narrative — cards express character identity, not just numbers",
+      "2. Make every choice meaningful — every team comp, relic, card order should create distinct strategic trade-offs",
+      "3. Buffs only, no nerfs (as much as possible) — gacha is a service commitment; if nerf unavoidable, provide refund mechanism"
+    ],
+    "cut_mechanic": {
+      "name": "Madness Scale (疯狂量表)",
+      "concept": "Would shift based on exploration choices, granting dangerous but powerful abilities in final phase",
+      "why_cut": ["Cognitive burden too high with existing systems", "Stage length too variable for granularity", "Negative feedback already heavy enough", "Character identity mismatch — Keeper chooses to face the indescribable, shouldn't be frequently broken"],
+      "simplified_to": "Symptom Cards"
+    },
+    "original_codename_domain_vision": "Narrative focused on campus life, repeated Domain exploration, gradual truth discovery; detailed Mythag University environments; Awakeners only determine starting cards which transform into variants during battle; realm-universal cards collectible during exploration",
+    "hardest_to_design": "Integrating narrative, exploration, and combat into coherent experience without losing player goals/motivation"
+  },
+
+  "upcoming_features": {
+    "confirmed": [
+      "Standard Awakener 'Pure Core' progression to bridge gap with Limited Awakeners (coming very soon)",
+      "Long-form roguelike deckbuilder mode (Train was demo-level test, direction validated)",
+      "Music gameplay mode (inspired by Deemo; Frank has composed hundreds of tracks)",
+      "Casual roguelike modes for relaxation",
+      "Customizable login screen (officially added to schedule during this interview)",
+      "Recommended story order feature (in development)",
+      "Reopening expired Echo'd Pilgrimage packages at reasonable intervals",
+      "Increasing free benefits and event rewards with every major version"
+    ],
+    "under_consideration": [
+      "Guild cooperative gameplay (2-player co-op prioritized over large raids)",
+      "Selective reintroduction of exploration at key narrative moments",
+      "Madness Mode for story missions (delayed — Hard Mode completion rate below expectations)"
+    ],
+    "not_planned": [
+      "New realms during Arc 2",
+      "More multi-realm Awakeners like 24 (unless narrative demands it)",
+      "New non-gacha Awakeners or welfare units with special acquisition",
+      "Major progression system additions (unless game reaches a stage needing new long-term goals)"
+    ]
+  },
+
+  "collaboration": {
+    "upcoming": "One-way collaboration with a classic work of profound influence with cosmic horror flavor. Special character crossover",
+    "past": ["My Turn (narrative event)", "Mist Sequence (one-way character crossover)"],
+    "policy": "No one-time content; all collab content will be obtainable again. Licensing typically multi-year with unlimited reruns"
+  },
+
+  "monetization_philosophy": {
+    "gacha_stance": "Not defending the model itself; explaining specific choices within it",
+    "player_friendly_measures": [
+      "SSR rate 1%→3% in v2.0",
+      "Hard pity 80→30 in v2.0",
+      "Monthly exchangeable universal special materials (Pure Cores)",
+      "Free auto-recovering revival items",
+      "Removed Normal Mode emergency gnosis restriction",
+      "Almost no truly permanently unavailable core content",
+      "Refund mechanism when nerfs are unavoidable"
+    ],
+    "admitted_mistakes": [
+      "Enlighten/Wheel duplicate requirements set too high initially",
+      "Over-Exaltation, extra level caps, Final Axiom added later created psychological burden",
+      "First year nerfs caused poor experience; later reverted some",
+      "Too casual community communication in year 1 led to amplified criticism during monetization adjustments"
+    ],
+    "future_direction": "Increase free benefits per major version; more chances to obtain previously limited content; convenience and stress-reducing features; optimize duplicate overflow rewards"
+  },
+
+  "offline_version_plan": {
+    "commitment": "If servers ever shut down, provide offline-playable version",
+    "technical_approach": "Embed 'virtual private server' locally to simulate server logic",
+    "scope": "Preserves progress, progression, cosmetics, achievements, gallery; open to new players too (not just commemorative)",
+    "inspiration": "SINoALICE by Yoko Taro",
+    "current_action": "Maintaining architecture separability during development; budget reserved",
+    "limitations": "No cross-platform sync in offline version; gacha/stamina settings won't change significantly to respect historical investment",
+    "legal_status": "Not all legal and technical details finalized yet"
+  },
+
+  "community_engagement": {
+    "thpdom_impact": "THPDom's video 'Why I fell in love with this card-based gacha game' moved Light to tears; directly led to voiceover budget for Final Chapter's last section; brought many new loyal players",
+    "content_creator_sponsorship": "Exploring suitable and sustainable collaboration methods",
+    "fan_events": "Irregular fan creation events on Discord; more planned",
+    "lights_hardest_lesson": "Too casual year-1 communication + exhaustion → poor handling of criticism → considered resigning → realized best redemption is making the game better"
+  }
+}
