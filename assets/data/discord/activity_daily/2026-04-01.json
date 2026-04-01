@@ -1,34 +1,38 @@
 {
   "date": "2026-04-01",
-  "messages": 7658,
+  "messages": 9638,
   "unique_authors": 187,
-  "reactions_total": 885,
-  "attachments": 476,
+  "reactions_total": 1224,
+  "attachments": 584,
   "channel_activity": {
-    "🔸綜合討論": 864,
-    "🔸阵容构建": 24,
-    "🔸morimens-game-chat": 4836,
+    "🔸綜合討論": 890,
+    "🔸阵容构建": 26,
+    "🔸morimens-game-chat": 6296,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 47,
+    "🔸phòng-chat-tiếng-việt": 358,
+    "🔸canal-español": 222,
+    "🔸canal-português": 162,
+    "🔸ruang-obrolan-indonesia": 25,
+    "🔸ห้องสนทนาภาษาไทย": 29,
+    "🔸traphase": 3,
+    "🔸lore-chat": 268,
+    "🔸team-building": 120,
+    "🔸general-chat": 478,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🔸game-question": 506,
+    "🔸机器人命令┊bot-commands": 26,
+    "🔸erica-playground": 6,
+    "Miryam Revelate Devotion str/tentacle dmg gain": 1,
+    "\"24\" lives matter": 3,
+    "An unfinished art of my beloved Ramona-  idk when I would finish any art in general 😭": 5,
+    "morimens sybau 💔": 18,
+    "【English Translation】Opinions Collection": 2,
+    "【教L̸o̸a̸d̸i̸n̸g̸.̸.̸.̸系□□□□???0x000告】——[TeachingL̸o̸a̸d̸i̸n̸g̸.̸.̸.̸System□□□□???0x000Notice]": 21,
     "🔸日本語チャンネル": 6,
-    "🔸русский-канал": 34,
-    "🔸phòng-chat-tiếng-việt": 169,
-    "🔸canal-español": 208,
-    "🔸canal-português": 156,
-    "🔸ruang-obrolan-indonesia": 22,
-    "🔸ห้องสนทนาภาษาไทย": 21,
-    "🔸lore-chat": 226,
-    "🔸team-building": 99,
-    "🔸general-chat": 459,
-    "🔸邀请码互助┊swap-invitation-codes": 12,
-    "🔸game-question": 375,
-    "🔸机器人命令┊bot-commands": 20,
-    "An unfinished art of my beloved Ramona-  idk when I would finish any art in general 😭": 2,
-    "morimens sybau 💔": 1,
-    "【教L̸o̸a̸d̸i̸n̸g̸.̸.̸.̸系□□□□???0x000告】——[TeachingL̸o̸a̸d̸i̸n̸g̸.̸.̸.̸System□□□□???0x000Notice]": 15,
     "🔸剧情交流": 32,
     "🔸课间休息闲聊": 7,
     "🔸deutscher-chatraum": 5,
-    "🔸erica-playground": 1,
-    "\"24\" lives matter": 1,
     "Caecus!!": 1,
     "Non-morimens art (i hope this is allowed": 5,
     "Release My Lil'Sis !": 1,
@@ -36,7 +40,6 @@
     "team building + pulls advice if you don't mind": 2,
     "🔸交友频道": 10,
     "🔸한국어-채팅방": 2,
-    "🔸traphase": 2,
     "基珀先生，請問我可以請您跳支舞嗎？|| W.I.P": 2,
     "建个随笔楼": 1,
     "我的戰鬥結果怪怪的": 1,
@@ -44,8 +47,11 @@
     "William posting": 2
   },
   "hourly_activity": {
+    "12": 652,
+    "13": 708,
+    "14": 784,
+    "15": 4,
     "11": 569,
-    "12": 168,
     "10": 336,
     "6": 877,
     "7": 1091,
@@ -59,8 +65,8 @@
     "5": 408
   },
   "message_types": {
-    "19": 298,
-    "0": 588,
+    "19": 622,
+    "0": 1357,
     "20": 1
   },
   "top_reacted_messages": [
@@ -86,6 +92,20 @@
       "channel": "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration"
     },
     {
+      "id": "1488883493365878834",
+      "content": "Maybe if I stopped holding myself back by playing Aequor\nI could ... always be c",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488884823681400913",
+      "content": "i think this is the best i can go now <:GMurphy_peek:1468257868959453305>",
+      "author": "2ndselna",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1488793584667852891",
       "content": "||拉布布||",
       "author": "void_1546.",
@@ -105,6 +125,34 @@
       "author": "zzio_",
       "reactions": 7,
       "channel": "William posting"
+    },
+    {
+      "id": "1488879631338569818",
+      "content": "The truth is\nI never liked Blue\nIt was always a way for me to cope\nBecause I fol",
+      "author": "legendaryredz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488882870893150411",
+      "content": "Heartbreaking: new player joins morimens discord for advice on April fools",
+      "author": "thpdom",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488900418690875552",
+      "content": "<@595414429957619725> <@285755067213152257> <@113374123798859776>",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488903873597804635",
+      "content": "It means:\n    Happiness\n    Joy\n    Hope\n    Kindness\n    Gratitude\n    Peace\n  ",
+      "author": "megidola.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1488794704546889829",
@@ -128,80 +176,38 @@
       "channel": "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration"
     },
     {
-      "id": "1488852188070547576",
-      "content": "For the entire year",
-      "author": "jyeusu",
+      "id": "1488880770402750464",
+      "content": "u must kill a niko and wear its skin",
+      "author": "chinkeeyong",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488830930310271048",
-      "content": "不看機制的下場",
-      "author": "vgvfvffcc",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488792305786814515",
-      "content": "把傻瓜扔出去吧，别要他",
-      "author": "fishhazardthewizard",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488803856568815698",
-      "content": "Deserves all the pats",
-      "author": "unwavering_soul",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488811722738368622",
-      "content": "im considered a vet now...",
-      "author": "nikolazuli",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488772677517836300",
-      "content": "主打一個措手不及的肝<:Brown_think:1459080117308620996>",
-      "author": "heikwok",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488807157519355955",
-      "content": "第一次難5",
-      "author": "kevin.yienwenst",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488833549816561724",
-      "content": "",
-      "author": "vgvfvffcc",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488784978685984810",
-      "content": "I have -2.3 gpa",
-      "author": "guavapersonv2",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488789781138636842",
-      "content": "",
+      "id": "1488895173567053986",
+      "content": "im already down 1.5m scripts",
       "author": "princess.goth",
-      "reactions": 3,
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488794570815832196",
-      "content": "如果他們不加入我們，就可以將他們消滅 <:24_smile:1459073862544130131>",
+      "id": "1488899683312205965",
+      "content": "i finish the rest ser",
+      "author": "l8989c",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488903460421111980",
+      "content": "<:agree:1400771815076528258>",
+      "author": "aegisx",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488904875906433165",
+      "content": "01010111 01101000 01111001 00100000 01100100 01101001 01100100 00100000 01110100",
       "author": "megidola.",
-      "reactions": 3,
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
   ]
