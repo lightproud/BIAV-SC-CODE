@@ -133,6 +133,8 @@ def extract_text_assets(env, output_dir: Path, stats: dict) -> None:
                         json.loads(text)
                     except json.JSONDecodeError:
                         ext = ".txt"
+                elif stripped.startswith("--") or "function " in stripped[:200] or "local " in stripped[:200]:
+                    ext = ".lua"
                 elif "\t" in stripped.split("\n")[0]:
                     ext = ".tsv"
                 elif "," in stripped.split("\n")[0] and stripped.count("\n") > 1:
@@ -147,6 +149,8 @@ def extract_text_assets(env, output_dir: Path, stats: dict) -> None:
 
                 if ext == ".json":
                     stats["json_files"] += 1
+                elif ext == ".lua":
+                    stats["lua_files"] = stats.get("lua_files", 0) + 1
 
             except Exception as e:
                 stats["errors"].append(f"TextAsset: {e}")
