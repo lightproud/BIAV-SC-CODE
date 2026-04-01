@@ -319,10 +319,6 @@ def scan_and_extract(
 
 def map_to_wiki_schema(output_dir: Path) -> dict:
     """Post-process: map extracted JSON files to wiki database schema."""
-    text_dir = output_dir / "text"
-    if not text_dir.exists():
-        return {"mapped": 0}
-
     results = {
         "characters": [],
         "skills": [],
@@ -332,6 +328,10 @@ def map_to_wiki_schema(output_dir: Path) -> dict:
         "unmapped_files": [],
         "mapped": 0,
     }
+
+    text_dir = output_dir / "text"
+    if not text_dir.exists():
+        return results
 
     for json_file in sorted(text_dir.glob("*.json")):
         try:
@@ -424,6 +424,16 @@ def main():
     if not args.game_data_dir.is_dir():
         print(f"ERROR: Not a directory: {args.game_data_dir}", file=sys.stderr)
         sys.exit(1)
+
+    # Auto-detect: if user passed game root (e.g. .../Morimens/), find *_Data inside
+    game_data_dir = args.game_data_dir
+    if not list(game_data_dir.glob("*.assets")) and not (game_data_dir / "StreamingAssets").exists():
+        for d in game_data_dir.iterdir():
+            if d.is_dir() and d.name.endswith("_Data"):
+                print(f"Auto-detected game data directory: {d.name}/")
+                game_data_dir = d
+                break
+    args.game_data_dir = game_data_dir
 
     output_dir = args.output or (PROJECT_ROOT / "output" / "client_extract")
     output_dir.mkdir(parents=True, exist_ok=True)
