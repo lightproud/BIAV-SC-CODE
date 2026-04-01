@@ -1,31 +1,34 @@
 {
   "date": "2026-04-01",
-  "messages": 6771,
+  "messages": 7658,
   "unique_authors": 187,
-  "reactions_total": 779,
-  "attachments": 446,
+  "reactions_total": 885,
+  "attachments": 476,
   "channel_activity": {
-    "🔸綜合討論": 825,
-    "🔸阵容构建": 23,
-    "🔸morimens-game-chat": 4164,
+    "🔸綜合討論": 864,
+    "🔸阵容构建": 24,
+    "🔸morimens-game-chat": 4836,
+    "🔸日本語チャンネル": 6,
+    "🔸русский-канал": 34,
+    "🔸phòng-chat-tiếng-việt": 169,
+    "🔸canal-español": 208,
+    "🔸canal-português": 156,
+    "🔸ruang-obrolan-indonesia": 22,
+    "🔸ห้องสนทนาภาษาไทย": 21,
+    "🔸lore-chat": 226,
+    "🔸team-building": 99,
+    "🔸general-chat": 459,
+    "🔸邀请码互助┊swap-invitation-codes": 12,
+    "🔸game-question": 375,
+    "🔸机器人命令┊bot-commands": 20,
+    "An unfinished art of my beloved Ramona-  idk when I would finish any art in general 😭": 2,
+    "morimens sybau 💔": 1,
+    "【教L̸o̸a̸d̸i̸n̸g̸.̸.̸.̸系□□□□???0x000告】——[TeachingL̸o̸a̸d̸i̸n̸g̸.̸.̸.̸System□□□□???0x000Notice]": 15,
     "🔸剧情交流": 32,
     "🔸课间休息闲聊": 7,
-    "🔸日本語チャンネル": 5,
     "🔸deutscher-chatraum": 5,
-    "🔸русский-канал": 19,
-    "🔸phòng-chat-tiếng-việt": 139,
-    "🔸canal-español": 206,
-    "🔸canal-português": 155,
-    "🔸ruang-obrolan-indonesia": 17,
-    "🔸ห้องสนทนาภาษาไทย": 12,
-    "🔸lore-chat": 211,
-    "🔸general-chat": 451,
-    "🔸邀请码互助┊swap-invitation-codes": 9,
-    "🔸game-question": 329,
-    "🔸机器人命令┊bot-commands": 16,
     "🔸erica-playground": 1,
     "\"24\" lives matter": 1,
-    "An unfinished art of my beloved Ramona-  idk when I would finish any art in general 😭": 1,
     "Caecus!!": 1,
     "Non-morimens art (i hope this is allowed": 5,
     "Release My Lil'Sis !": 1,
@@ -34,7 +37,6 @@
     "🔸交友频道": 10,
     "🔸한국어-채팅방": 2,
     "🔸traphase": 2,
-    "🔸team-building": 80,
     "基珀先生，請問我可以請您跳支舞嗎？|| W.I.P": 2,
     "建个随笔楼": 1,
     "我的戰鬥結果怪怪的": 1,
@@ -42,11 +44,13 @@
     "William posting": 2
   },
   "hourly_activity": {
+    "11": 569,
+    "12": 168,
+    "10": 336,
     "6": 877,
     "7": 1091,
     "8": 516,
     "9": 454,
-    "10": 186,
     "0": 565,
     "1": 877,
     "2": 950,
@@ -55,9 +59,9 @@
     "5": 408
   },
   "message_types": {
-    "0": 1853,
-    "19": 1084,
-    "20": 5
+    "19": 298,
+    "0": 588,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -66,6 +70,13 @@
       "author": "morimens_15",
       "reactions": 21,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488863620443013130",
+      "content": "锵锵——！\n哎呀，各位真的去选课了吗？\n（小N假模假样抹了半秒眼泪，随即绽放出灿烂的笑容。）\n很遗憾——这套选课系统，是小N私自架设的。\n教务处从头到尾什么都不",
+      "author": "morimensstaff01",
+      "reactions": 16,
+      "channel": "【教L̸o̸a̸d̸i̸n̸g̸.̸.̸.̸系□□□□???0x000告】——[TeachingL̸o̸a̸d̸i̸n̸g̸.̸.̸.̸System□□□□???0x000Notice]"
     },
     {
       "id": "1488718524191871136",
@@ -115,6 +126,13 @@
       "author": "kepler0519",
       "reactions": 5,
       "channel": "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration"
+    },
+    {
+      "id": "1488852188070547576",
+      "content": "For the entire year",
+      "author": "jyeusu",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1488830930310271048",
@@ -183,20 +201,6 @@
       "id": "1488794570815832196",
       "content": "如果他們不加入我們，就可以將他們消滅 <:24_smile:1459073862544130131>",
       "author": "megidola.",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488794615472722073",
-      "content": "https://youtu.be/jDneagagd5s?si=sGPdT5HXA0-tO5Lq",
-      "author": "jyeusu",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488799858763763722",
-      "content": "",
-      "author": "hitsu4",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }
