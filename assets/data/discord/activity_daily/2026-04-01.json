@@ -1,51 +1,63 @@
 {
   "date": "2026-04-01",
-  "messages": 3829,
+  "messages": 6771,
   "unique_authors": 187,
-  "reactions_total": 368,
-  "attachments": 318,
+  "reactions_total": 779,
+  "attachments": 446,
   "channel_activity": {
-    "🔸綜合討論": 405,
-    "🔸morimens-game-chat": 2179,
-    "🔸剧情交流": 5,
-    "🔸课间休息闲聊": 4,
+    "🔸綜合討論": 825,
+    "🔸阵容构建": 23,
+    "🔸morimens-game-chat": 4164,
+    "🔸剧情交流": 32,
+    "🔸课间休息闲聊": 7,
+    "🔸日本語チャンネル": 5,
+    "🔸deutscher-chatraum": 5,
+    "🔸русский-канал": 19,
+    "🔸phòng-chat-tiếng-việt": 139,
+    "🔸canal-español": 206,
+    "🔸canal-português": 155,
+    "🔸ruang-obrolan-indonesia": 17,
+    "🔸ห้องสนทนาภาษาไทย": 12,
+    "🔸lore-chat": 211,
+    "🔸general-chat": 451,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🔸game-question": 329,
+    "🔸机器人命令┊bot-commands": 16,
+    "🔸erica-playground": 1,
+    "\"24\" lives matter": 1,
+    "An unfinished art of my beloved Ramona-  idk when I would finish any art in general 😭": 1,
+    "Caecus!!": 1,
+    "Non-morimens art (i hope this is allowed": 5,
+    "Release My Lil'Sis !": 1,
+    "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration": 33,
+    "team building + pulls advice if you don't mind": 2,
     "🔸交友频道": 10,
-    "🔸日本語チャンネル": 1,
     "🔸한국어-채팅방": 2,
-    "🔸deutscher-chatraum": 1,
-    "🔸phòng-chat-tiếng-việt": 61,
-    "🔸canal-español": 198,
-    "🔸canal-português": 154,
-    "🔸ruang-obrolan-indonesia": 7,
-    "🔸ห้องสนทนาภาษาไทย": 10,
     "🔸traphase": 2,
-    "🔸lore-chat": 101,
     "🔸team-building": 80,
-    "🔸general-chat": 441,
-    "🔸邀请码互助┊swap-invitation-codes": 5,
-    "🔸game-question": 123,
-    "🔸机器人命令┊bot-commands": 7,
     "基珀先生，請問我可以請您跳支舞嗎？|| W.I.P": 2,
     "建个随笔楼": 1,
     "我的戰鬥結果怪怪的": 1,
     "💭「Processing」Game not yet released in region": 1,
-    "Non-morimens art (i hope this is allowed": 1,
-    "William posting": 2,
-    "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration": 25
+    "William posting": 2
   },
   "hourly_activity": {
+    "6": 877,
+    "7": 1091,
+    "8": 516,
+    "9": 454,
+    "10": 186,
     "0": 565,
     "1": 877,
     "2": 950,
     "3": 457,
     "4": 390,
-    "5": 408,
-    "6": 182
+    "5": 408
   },
   "message_types": {
-    "0": 2760,
-    "19": 1068,
-    "20": 1
+    "0": 1853,
+    "19": 1084,
+    "20": 5
   },
   "top_reacted_messages": [
     {
@@ -63,6 +75,13 @@
       "channel": "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration"
     },
     {
+      "id": "1488793584667852891",
+      "content": "||拉布布||",
+      "author": "void_1546.",
+      "reactions": 7,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1488704975369666774",
       "content": "",
       "author": "blecnes.",
@@ -77,6 +96,55 @@
       "channel": "William posting"
     },
     {
+      "id": "1488794704546889829",
+      "content": "",
+      "author": "navirecorbeau",
+      "reactions": 5,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1488816650504634510",
+      "content": "",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1488788960858734683",
+      "content": "建议把游戏id改成学号（）",
+      "author": "kepler0519",
+      "reactions": 5,
+      "channel": "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration"
+    },
+    {
+      "id": "1488830930310271048",
+      "content": "不看機制的下場",
+      "author": "vgvfvffcc",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1488792305786814515",
+      "content": "把傻瓜扔出去吧，别要他",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488803856568815698",
+      "content": "Deserves all the pats",
+      "author": "unwavering_soul",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488811722738368622",
+      "content": "im considered a vet now...",
+      "author": "nikolazuli",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1488772677517836300",
       "content": "主打一個措手不及的肝<:Brown_think:1459080117308620996>",
       "author": "heikwok",
@@ -84,109 +152,53 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1488731366383288502",
-      "content": "我不玩忘卻前夜不代表我不玩忘卻前夜DC，畢竟忘卻DC永遠玩不膩，永遠有新樂子🤡 🤡",
-      "author": "shchng.",
+      "id": "1488807157519355955",
+      "content": "第一次難5",
+      "author": "kevin.yienwenst",
       "reactions": 3,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1488747846629855293",
-      "content": "t0断档命轮",
-      "author": "ponponnyaru",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488757757824729238",
+      "id": "1488833549816561724",
       "content": "",
-      "author": "corposant_1003",
+      "author": "vgvfvffcc",
       "reactions": 3,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1488767614888054795",
-      "content": "长草期太长，太无聊了<:doll_ign:1468259900655145213>",
-      "author": "yoroha_null",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488773593213964389",
-      "content": "",
-      "author": "a4485",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488780278490075237",
-      "content": "",
-      "author": "ponponnyaru",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488782622275665981",
-      "content": "",
-      "author": "heikwok",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1488709202066014361",
-      "content": "maybe i proto alva",
-      "author": "monchi3524",
+      "id": "1488784978685984810",
+      "content": "I have -2.3 gpa",
+      "author": "guavapersonv2",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1488718211544256699",
-      "content": "Id*t replied to himself, calling himself Ppep's Alt",
-      "author": "snorelaxxedmf",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488734512203698298",
-      "content": "I dont think she needs it, its her best dmg option by far, but you already have ",
-      "author": "blecnes.",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488739847463239744",
-      "content": "PFFFFFFF",
-      "author": "unwavering_soul",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488727882560835694",
-      "content": "por eso te amo morimens",
-      "author": "yaoshidoppa",
-      "reactions": 3,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1488720766294954225",
-      "content": "第一次這麼期待上學",
-      "author": "shostakovich524",
-      "reactions": 3,
-      "channel": "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration"
-    },
-    {
-      "id": "1488726546800709653",
-      "content": "Can I get a Mythag scholarship with this?",
-      "author": "rosemry",
-      "reactions": 3,
-      "channel": "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration"
-    },
-    {
-      "id": "1488718242766651422",
+      "id": "1488789781138636842",
       "content": "",
-      "author": "danny7766",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "author": "princess.goth",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488794570815832196",
+      "content": "如果他們不加入我們，就可以將他們消滅 <:24_smile:1459073862544130131>",
+      "author": "megidola.",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488794615472722073",
+      "content": "https://youtu.be/jDneagagd5s?si=sGPdT5HXA0-tO5Lq",
+      "author": "jyeusu",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488799858763763722",
+      "content": "",
+      "author": "hitsu4",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
