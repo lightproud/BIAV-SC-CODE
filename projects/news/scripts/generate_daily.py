@@ -13,11 +13,17 @@
 """
 
 import json
+import os
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = REPO_ROOT / 'projects' / 'news' / 'output'
+
+# 联动关键词（与 aggregator.py 保持同步）
+COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ.get('COLLAB_KEYWORDS') else [
+    '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
+]
 
 PLATFORM_NAMES = {
     'steam': 'Steam',
@@ -137,6 +143,27 @@ def build_alerts(active_platforms):
     return alerts
 
 
+def match_collab_keywords(item):
+    """检查单条数据是否匹配联动关键词"""
+    text = (item.get('title', '') + ' ' + item.get('summary', '')).lower()
+    return any(kw.lower() in text for kw in COLLAB_KEYWORDS if kw.strip())
+
+
+def find_collab_items(all_data):
+    """从所有平台数据中提取匹配联动关键词的条目，返回 (display_name, item) 列表"""
+    results = []
+    for key, data in all_data.items():
+        items = data.get('items', [])
+        recent = filter_recent(items)
+        display = PLATFORM_NAMES.get(key, key)
+        for item in recent:
+            if match_collab_keywords(item):
+                results.append((display, item))
+    # 按 engagement 降序
+    results.sort(key=lambda x: x[1].get('engagement', 0), reverse=True)
+    return results
+
+
 def generate_report(all_data, now_utc8):
     """生成 Markdown 日报文本"""
     date_str = now_utc8.strftime('%Y-%m-%d')
@@ -147,6 +174,17 @@ def generate_report(all_data, now_utc8):
     lines.append('')
     lines.append(f'> 采集时间：{time_str} UTC+8')
     lines.append('')
+
+    # 联动动态（匹配 COLLAB_KEYWORDS 的条目前置高亮）
+    collab_items = find_collab_items(all_data)
+    if collab_items:
+        lines.append('## 🔥 联动动态')
+        lines.append('')
+        for idx, (platform, item) in enumerate(collab_items, 1):
+            title = item.get('title', '(无标题)')[:60]
+            eng = item.get('engagement', 0)
+            lines.append(f'{idx}. [{platform}] {title} — engagement: {eng}')
+        lines.append('')
 
     # 总览表格
     lines.append('## 总览')
