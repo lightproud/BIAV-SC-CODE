@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-03-31T23:50:25.439666+00:00",
+  "collected_at": "2026-04-01T06:12:58.985414+00:00",
   "source": "steam",
   "item_count": 7,
   "items": [
@@ -11,11 +11,25 @@
       "playtime_forever": 58
     },
     {
+      "language": "danish",
+      "voted_up": true,
+      "review": "soooooooooooooooooooooooooooo good",
+      "timestamp_created": 1774999915,
+      "playtime_forever": 3502
+    },
+    {
+      "language": "english",
+      "voted_up": false,
+      "review": "Its ok, bit slay the spire clone like. but for me personaly unplayable. i just can not play a card game where every card from each character has the same card image. i will deinstall for now, maybe in",
+      "timestamp_created": 1774994686,
+      "playtime_forever": 60
+    },
+    {
       "language": "english",
       "voted_up": true,
       "review": "GOAT gane",
       "timestamp_created": 1774990184,
-      "playtime_forever": 3065
+      "playtime_forever": 3111
     },
     {
       "language": "english",
@@ -37,20 +51,6 @@
       "review": "拉完了，卡牌构筑毫无水平，纯自动战斗养成，还有超绝剧情迷宫战斗的“灵动”交互\r\n你还致敬上杀戮尖塔了，这点倒是优点\r\n结果一堆脚本鬼服号\r\n搞得我也卖不出去",
       "timestamp_created": 1774948293,
       "playtime_forever": 541
-    },
-    {
-      "language": "german",
-      "voted_up": true,
-      "review": "zupa",
-      "timestamp_created": 1774933871,
-      "playtime_forever": 1591
-    },
-    {
-      "language": "english",
-      "voted_up": true,
-      "review": "Deeply satisfying dopamine hits, pretty great F2P, fun card battler mechanics, steamrolling everything at the moment and I'm up to the 3rd Investigation. Digging the vibes and lovecraftian / anime cro",
-      "timestamp_created": 1774917387,
-      "playtime_forever": 3347
     }
   ]
 }

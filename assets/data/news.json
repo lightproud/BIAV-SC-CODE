@@ -1,42 +1,55 @@
 {
-  "updated_at": "2026-03-31T23:50:25.439666+00:00",
-  "summary": "今日热门话题：［相位］一天出一把，一把爽一天；莫斯5分49秒速通容灾5-5，一镜到底；【忘却前夜Morimens】愚人节故事；【忘却前夜】10超维不借人融灾禁区425；[忘却前夜强度向]莫丝，最适合当一突的一集。",
+  "updated_at": "2026-04-01T06:12:58.985414+00:00",
+  "summary": "今日热门话题：【忘却前夜Morimens】愚人节故事；拥有神力的我们不会输；忘却前夜，3.31融灾，400拼好队；【忘却前夜】愚人节剧情；【忘却前夜】10超维不借人融灾禁区425。",
   "news": [
-    {
-      "title": "［相位］一天出一把，一把爽一天",
-      "summary": "感谢群友卡芙卡提供的素材",
-      "source": "bilibili",
-      "time": "2026-03-31T06:06:54+00:00",
-      "url": "https://www.bilibili.com/video/av116322277002826",
-      "engagement": 509,
-      "is_hot": true,
-      "author": "莱星Ligh",
-      "tags": [
-        "日常"
-      ]
-    },
-    {
-      "title": "莫斯5分49秒速通容灾5-5，一镜到底",
-      "summary": "",
-      "source": "bilibili",
-      "time": "2026-03-31T03:39:28+00:00",
-      "url": "https://www.bilibili.com/video/av116321689804067",
-      "engagement": 404,
-      "is_hot": true,
-      "author": "路过的耄耋",
-      "tags": [
-        "手机游戏"
-      ]
-    },
     {
       "title": "【忘却前夜Morimens】愚人节故事",
       "summary": "唧……？\n守密人变成海獭了！\n拉蒙娜，救救我！",
       "source": "bilibili",
       "time": "2026-03-31T21:33:18+00:00",
       "url": "https://www.bilibili.com/video/av116325900879446",
-      "engagement": 312,
+      "engagement": 1121,
       "is_hot": true,
       "author": "井上银溪",
+      "tags": [
+        "手机游戏"
+      ]
+    },
+    {
+      "title": "拥有神力的我们不会输",
+      "summary": "直播录的视频懒得剪了，反正非常好打，血希大人。",
+      "source": "bilibili",
+      "time": "2026-03-31T16:44:45+00:00",
+      "url": "https://www.bilibili.com/video/av116324777069804",
+      "engagement": 315,
+      "is_hot": true,
+      "author": "伊莎玛拉-大群来了",
+      "tags": [
+        "手机游戏"
+      ]
+    },
+    {
+      "title": "忘却前夜，3.31融灾，400拼好队",
+      "summary": "打的有点想骂人这一期。我只能说太有数值了，1图N4都接近45W的血量。三段攻击上千输出一轮，是人？\n\n5-4塔薇的boss打的不理想，最好是开局把6翼的屏障用了，这样后面血线压力小很多，但是没办法没摸到，因为是前天打的，今天时计才12了，可以给塔薇双持，墨菲其实不用时计也能打的过，这样压力会更小一些。\n后面应该是会考虑给塔薇做一个12的银钥命轮双持，考虑核心溶解，并升到80.塔薇这种就适合长图攻坚",
+      "source": "bilibili",
+      "time": "2026-03-31T15:28:14+00:00",
+      "url": "https://www.bilibili.com/video/av116324458044259",
+      "engagement": 290,
+      "is_hot": true,
+      "author": "断裂免罪符",
+      "tags": [
+        "网络游戏"
+      ]
+    },
+    {
+      "title": "【忘却前夜】愚人节剧情",
+      "summary": "(⊙o⊙)",
+      "source": "bilibili",
+      "time": "2026-03-31T18:12:59+00:00",
+      "url": "https://www.bilibili.com/video/av116325129131348",
+      "engagement": 281,
+      "is_hot": true,
+      "author": "就只是一条普通的水草",
       "tags": [
         "手机游戏"
       ]
@@ -47,9 +60,35 @@
       "source": "bilibili",
       "time": "2026-03-31T06:19:03+00:00",
       "url": "https://www.bilibili.com/video/av116322327337798",
-      "engagement": 182,
+      "engagement": 237,
       "is_hot": true,
       "author": "朝星-",
+      "tags": [
+        "手机游戏"
+      ]
+    },
+    {
+      "title": "［相位］鸟弟：感谢潘姐送的30狂气",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-04-01T03:28:12+00:00",
+      "url": "https://www.bilibili.com/video/av116327310165658",
+      "engagement": 216,
+      "is_hot": false,
+      "author": "莱星Ligh",
+      "tags": [
+        "日常"
+      ]
+    },
+    {
+      "title": "【忘却前夜】3.30-4.12融灾1-5低配鸟蛛思路分享",
+      "summary": "鸟蛛带艾瑞卡魔术师 道中撑15回合吃光锥做状态 王关靠血希专钥群山检索关键牌 王关前期全力防御 主要靠艾临时戒备叠盾 后期蜘蛛永久戒备和魔术师降力保生存 反复抓蜘蛛2费毒慢速杀 第一次自己打打过了 第二次录全流程造物太差没过王关 后续看看能不能做一个全流程",
+      "source": "bilibili",
+      "time": "2026-03-31T15:17:37+00:00",
+      "url": "https://www.bilibili.com/video/av116324424490413",
+      "engagement": 207,
+      "is_hot": false,
+      "author": "伤春客",
       "tags": [
         "手机游戏"
       ]
@@ -60,50 +99,37 @@
       "source": "bilibili",
       "time": "2026-03-31T11:53:55+00:00",
       "url": "https://www.bilibili.com/video/av116323635954318",
-      "engagement": 117,
-      "is_hot": true,
+      "engagement": 173,
+      "is_hot": false,
       "author": "密斯卡托尼克的银猫",
       "tags": [
         "手机游戏"
       ]
     },
     {
-      "title": "【忘却前夜】3.30-4.12融灾1-5低配鸟蛛思路分享",
-      "summary": "鸟蛛带艾瑞卡魔术师 道中撑15回合吃光锥做状态 王关靠血希专钥群山检索关键牌 王关前期全力防御 主要靠艾临时戒备叠盾 后期蜘蛛永久戒备和魔术师降力保生存 反复抓蜘蛛2费毒慢速杀 第一次自己打打过了 第二次录全流程造物太差没过王关 后续看看能不能做一个全流程",
+      "title": "两分钟讲完忘却前夜珊个人剧情",
+      "summary": "",
       "source": "bilibili",
-      "time": "2026-03-31T15:17:37+00:00",
-      "url": "https://www.bilibili.com/video/av116324424490413",
-      "engagement": 114,
+      "time": "2026-04-01T02:06:16+00:00",
+      "url": "https://www.bilibili.com/video/av116326991534667",
+      "engagement": 151,
       "is_hot": false,
-      "author": "伤春客",
+      "author": "你的北浪-",
       "tags": [
         "手机游戏"
       ]
     },
     {
-      "title": "忘却前夜，3.31融灾，400拼好队",
-      "summary": "打的有点想骂人这一期。我只能说太有数值了，1图N4都接近30W的血量。三段攻击上千输出一轮，是人？",
+      "title": "【忘却前夜】请这位心理有问题的心理医生借过一下",
+      "summary": "",
       "source": "bilibili",
-      "time": "2026-03-31T15:28:14+00:00",
-      "url": "https://www.bilibili.com/video/av116324458044259",
-      "engagement": 96,
+      "time": "2026-04-01T03:04:36+00:00",
+      "url": "https://www.bilibili.com/video/av116327226280504",
+      "engagement": 79,
       "is_hot": false,
-      "author": "断裂免罪符",
+      "author": "风凤_WP",
       "tags": [
         "网络游戏"
-      ]
-    },
-    {
-      "title": "拥有神力的我们不会输",
-      "summary": "直播录的视频懒得剪了，反正非常好打，血希大人。",
-      "source": "bilibili",
-      "time": "2026-03-31T16:44:45+00:00",
-      "url": "https://www.bilibili.com/video/av116324777069804",
-      "engagement": 84,
-      "is_hot": false,
-      "author": "伊莎玛拉-大群来了",
-      "tags": [
-        "手机游戏"
       ]
     },
     {
@@ -127,6 +153,46 @@
       }
     },
     {
+      "title": "[正面] soooooooooooooooooooooooooooo good",
+      "summary": "soooooooooooooooooooooooooooo good",
+      "source": "steam_review",
+      "time": "2026-03-31T23:31:55+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199226935273/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199226935273",
+      "tags": [
+        "danish"
+      ],
+      "language": "danish",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 3502,
+        "votes_up": 0,
+        "timestamp_created": 1774999915
+      }
+    },
+    {
+      "title": "[负面] Its ok, bit slay the spire clone like. but for me...",
+      "summary": "Its ok, bit slay the spire clone like. but for me personaly unplayable. i just can not play a card game where every card from each character has the same card image. i will deinstall for now, maybe in",
+      "source": "steam_review",
+      "time": "2026-03-31T22:04:46+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198390854167/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198390854167",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 60,
+        "votes_up": 0,
+        "timestamp_created": 1774994686
+      }
+    },
+    {
       "title": "[正面] GOAT gane",
       "summary": "GOAT gane",
       "source": "steam_review",
@@ -141,7 +207,7 @@
       "language": "english",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 3065,
+        "playtime_forever": 3111,
         "votes_up": 0,
         "timestamp_created": 1774990184
       }
@@ -204,46 +270,6 @@
         "playtime_forever": 541,
         "votes_up": 0,
         "timestamp_created": 1774948293
-      }
-    },
-    {
-      "title": "[正面] zupa",
-      "summary": "zupa",
-      "source": "steam_review",
-      "time": "2026-03-31T05:11:11+00:00",
-      "url": "https://steamcommunity.com/profiles/76561199211447081/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561199211447081",
-      "tags": [
-        "german"
-      ],
-      "language": "german",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 1591,
-        "votes_up": 0,
-        "timestamp_created": 1774933871
-      }
-    },
-    {
-      "title": "[正面] Deeply satisfying dopamine hits, pretty great F2P,...",
-      "summary": "Deeply satisfying dopamine hits, pretty great F2P, fun card battler mechanics, steamrolling everything at the moment and I'm up to the 3rd Investigation. Digging the vibes and lovecraftian / anime cro",
-      "source": "steam_review",
-      "time": "2026-03-31T00:36:27+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198013828202/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561198013828202",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 3347,
-        "votes_up": 0,
-        "timestamp_created": 1774917387
       }
     }
   ]
