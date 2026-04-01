@@ -35,6 +35,10 @@ logger = logging.getLogger(__name__)
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_PATH = REPO_ROOT / 'assets' / 'data' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
+COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ.get('COLLAB_KEYWORDS') else [
+    '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
+]
+ALL_KEYWORDS = SEARCH_KEYWORDS + [k.strip() for k in COLLAB_KEYWORDS if k.strip()]
 HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
 
 # Bilibili creator MIDs known to produce Morimens content
@@ -268,7 +272,8 @@ def _fetch_bilibili_search():
     }
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
-    for keyword in ['忘却前夜', '忘卻前夜']:
+    search_keywords = ['忘却前夜', '忘卻前夜'] + [k for k in COLLAB_KEYWORDS if k.strip()]
+    for keyword in search_keywords:
         url = 'https://api.bilibili.com/x/web-interface/search/type'
         params = {
             'search_type': 'video',

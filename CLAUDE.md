@@ -17,21 +17,41 @@
 - **Code-wiki**：游戏数据集 + 多语言 Wiki 站点
 - **Code-game**：衍生游戏开发
 
-## 当前优先级
-1. Wiki 数据集与站点（wiki）— 积累数据基础 + 社区展示
-2. 新闻收集器完善（news）— 接入更多数据源
-3. 衍生游戏规划（game）— 确定方向
+## 战略计划
+详见 `memory/strategic-plan-2026.md`。当前处于 Phase 0（止血）→ Phase 1（记忆宫殿）过渡期。
+
+### 三条战略主线
+1. **事实圣经**（最高优先级）— 结构化知识库，所有子系统的数据基础
+2. **自动情报循环** — 日报系统采集→生成→反馈闭环
+3. **权威知识站点** — Wiki 对外展示层
+
+### 当前优先级
+1. 事实圣经 v1.0 补全（`assets/data/`）— 采访数据结构化已完成，待校验
+2. 日报 Stage 1 验证（`projects/news/`）— 等制作人连续 14 天确认日报有用
+3. Wiki 数据准确性（`projects/wiki/`）— 审计发现 7 处数据问题待修正
+4. 衍生游戏规划（`projects/game/`）— Phase 4 启动，当前仅方向探索
+
+### 双系统架构
+本仓库是**缸中之脑·银芯**（公开层）。另有**缸中之脑·黑池**（内部层，private repo）处理商业/未发布数据。
+- 银芯是方法论试验场，所有验证过的模式黑池直接复用
+- 数据单向流动：黑池 → 筛选脱敏 → 银芯，绝不反向
+- 设计方案见 `memory/black-pool-design.md`，启动条件：银芯 Phase 1 完成后（~2026年6月）
 
 ## 快速导航
+- 战略计划 → `memory/strategic-plan-2026.md`
+- 战略评估 → `memory/strategic-assessment.md`
 - 项目状态 → `memory/project-status.md`
 - 决策记录 → `memory/decisions.md`
 - 待讨论事项 → `memory/pending-discussions.md`
 - 可用资产 → `assets/index.md`
 - Morimens 背景知识 → `memory/morimens-context.md`
+- 事实圣经数据 → `assets/data/`（interview-2026-04.json, narrative-structure.json, design-decisions.json, characters.json）
 - AI 协作方法论 → `memory/methodology.md`
 - 交付物视觉规范 → `memory/style-guide.md`
 - 踩坑记录 → `memory/lessons-learned.md`
 - 社区采集数据 → `projects/news/output/`（Chat 会话读取社区情报的统一入口）
+- 联动事件预案 → `memory/collab-event-playbook.md`
+- 黑池设计方案 → `memory/black-pool-design.md`
 
 ## 目录结构
 
