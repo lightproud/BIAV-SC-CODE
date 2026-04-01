@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-01T10:36:30.578491+00:00",
+  "collected_at": "2026-04-01T14:55:41.419507+00:00",
   "source": "all",
   "item_count": 8,
   "items": [
@@ -11,7 +11,7 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV11X95BQEWE",
       "author": "金发女人丨型",
-      "engagement": 361
+      "engagement": 525
     },
     {
       "language": "english",
@@ -19,6 +19,13 @@
       "review": "I JUST TURNED INTO AN OTTER!",
       "timestamp_created": 1774985012,
       "playtime_forever": 58
+    },
+    {
+      "language": "russian",
+      "voted_up": true,
+      "review": "сиськи",
+      "timestamp_created": 1775030794,
+      "playtime_forever": 8818
     },
     {
       "language": "schinese",
@@ -46,21 +53,14 @@
       "voted_up": true,
       "review": "GOAT gane",
       "timestamp_created": 1774990184,
-      "playtime_forever": 3113
+      "playtime_forever": 3158
     },
     {
       "language": "english",
       "voted_up": true,
       "review": "Dark Story.\r\nNice visual Style.",
       "timestamp_created": 1774979767,
-      "playtime_forever": 1998
-    },
-    {
-      "language": "english",
-      "voted_up": false,
-      "review": "Decent card game with good aethestics, but is extremely dupe heavy for some builds.\n\nAs for Mar 31, 2026, they have removed the ability to autoplay D-Tide, an important weekly mode that grants level u",
-      "timestamp_created": 1774955963,
-      "playtime_forever": 14858
+      "playtime_forever": 2043
     }
   ]
 }

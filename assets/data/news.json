@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-01T10:36:30.578491+00:00",
+  "updated_at": "2026-04-01T14:55:41.419507+00:00",
   "summary": "今日热门话题：【忘却前夜】神秘的法罗斯潘迪亚毒反队。",
   "news": [
     {
@@ -8,7 +8,7 @@
       "source": "bilibili",
       "time": "2026-04-01T06:19:25+00:00",
       "url": "https://www.bilibili.com/video/BV11X95BQEWE",
-      "engagement": 361,
+      "engagement": 525,
       "is_hot": true,
       "author": "金发女人丨型",
       "tags": [
@@ -33,6 +33,26 @@
         "playtime_forever": 58,
         "votes_up": 1,
         "timestamp_created": 1774985012
+      }
+    },
+    {
+      "title": "[正面] сиськи",
+      "summary": "сиськи",
+      "source": "steam_review",
+      "time": "2026-04-01T08:06:34+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199766203395/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199766203395",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 8818,
+        "votes_up": 0,
+        "timestamp_created": 1775030794
       }
     },
     {
@@ -110,7 +130,7 @@
       "language": "english",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 3113,
+        "playtime_forever": 3158,
         "votes_up": 0,
         "timestamp_created": 1774990184
       }
@@ -130,29 +150,9 @@
       "language": "english",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 1998,
+        "playtime_forever": 2043,
         "votes_up": 0,
         "timestamp_created": 1774979767
-      }
-    },
-    {
-      "title": "[负面] Decent card game with good aethestics, but is extr...",
-      "summary": "Decent card game with good aethestics, but is extremely dupe heavy for some builds.\n\nAs for Mar 31, 2026, they have removed the ability to autoplay D-Tide, an important weekly mode that grants level u",
-      "source": "steam_review",
-      "time": "2026-03-31T11:19:23+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198085254903/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561198085254903",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": false,
-        "playtime_forever": 14858,
-        "votes_up": 0,
-        "timestamp_created": 1774955963
       }
     }
   ]
