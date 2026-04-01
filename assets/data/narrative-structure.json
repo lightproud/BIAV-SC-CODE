@@ -1,0 +1,155 @@
+{
+  "_meta": {
+    "description": "忘却前夜叙事结构数据库 — 事实圣经核心文件",
+    "sources": ["2026-04 制作人采访 (Light + 霁月)", "游戏内公开剧情"],
+    "last_updated": "2026-04-01",
+    "updated_by": "战略中心（Code）",
+    "confidence": "high — 直接来自制作人和主文案的一手陈述"
+  },
+
+  "overall_plan": {
+    "total_arcs": 3,
+    "original_chapters_per_arc": 10,
+    "note": "原始规划为三部，每部约十章主线。因生存危机，实际结构已调整"
+  },
+
+  "arc1": {
+    "title_zh": "忘却篇",
+    "title_en": "Arc of Oblivion",
+    "planned_chapters": 10,
+    "actual_chapters": 8,
+    "status": "completed",
+    "compression_reason": "2024年项目面临停服危机，需在第一部内尽可能完整交代终局。制作人决定破釜沉舟，不留退路",
+    "chapters": {
+      "prologue": { "status": "released", "voiceover_added": true, "note": "序章追加了配音" },
+      "ch1": { "status": "released" },
+      "ch2": { "status": "released", "note": "詹金特殊关卡：放弃传统战斗策略，战斗转为第一视角体验表达工具" },
+      "ch3": { "status": "released" },
+      "ch4": { "status": "released" },
+      "ch5": { "status": "released" },
+      "ch6": { "status": "released" },
+      "ch7": {
+        "status": "released",
+        "original_plan": "原为第九章内容（泰旖丝的故事）",
+        "note": "收尾相对仓促，因原Ch7-8内容（歌剧院汀克特/菲茵特线）被跳过"
+      },
+      "ch8": {
+        "status": "released",
+        "original_plan": "包含原定在第三部第十章左右才揭示的信息",
+        "note": "叙事节奏紧凑、信息密度高。主要功能是交代核心设定、组织脉络与角色阶段性结局。阅读体验偏重信息，情绪与事件铺陈受限。编剧面临前所未有的挑战",
+        "voiceover_added": true,
+        "voiceover_note": "终章最后一节追加配音，因THPDom视频中完整朗读了该段剧情"
+      }
+    },
+    "cut_or_deferred_content": [
+      {
+        "description": "歌剧院汀克特/菲茵特相遇线",
+        "original_position": "Ch7-Ch8",
+        "status": "deferred",
+        "note": "被跳过以加速收束"
+      },
+      {
+        "description": "持光者教会深入展开",
+        "original_position": "后续篇章",
+        "status": "partially_deferred"
+      },
+      {
+        "description": "雕塑家协会深入展开",
+        "original_position": "后续篇章",
+        "status": "partially_deferred"
+      },
+      {
+        "description": "熔毁·朵尔独立个人故事",
+        "original_position": "Arc 1 中段",
+        "status": "deferred",
+        "note": "初稿已完成但未发布。玩家目前只能通过闪回和碎片叙事拼凑"
+      },
+      {
+        "description": "于丽埃特完整故事线",
+        "status": "deferred",
+        "note": "霁月表示'委屈了于丽埃特女士——她的故事尚未完全展开'"
+      }
+    ],
+    "climax_note": "制作人承认终局决策的叙事压缩责任在他。'在当时的处境下，必须破釜沉舟、不留退路，才能让结局真正承载想表达的主题'。决战设计为集大成：守密人失去能力与记忆、逐步找回，音乐/剧情/机制汇合"
+  },
+
+  "arc2": {
+    "title_zh": "星芒篇",
+    "title_en": "Astral Reign / When the Stars Are Right",
+    "subtitle_zh": "星辰正位之刻",
+    "planned_chapters": 7,
+    "status": "in_progress",
+    "current_progress": "序章-第四章已发布",
+    "design_note": "核心设定由霁月个人独立快速完成头脑风暴（团队当时正经历人员变动），详细脚本由2-3位核心剧本作者分别展开",
+    "exploration_removed": true,
+    "exploration_note": "因联合设计难度高、复用性低、熟悉后有意义分支不多而移除。可能在关键叙事节点以克制方式回归",
+    "more_side_stories": true,
+    "key_reveals": [
+      "图鲁所侍奉的存在将是收尾阶段关键角色之一",
+      "'三大质体'及其他'高维意志'存在于更高维度空间"
+    ],
+    "connections_to_arc1": [
+      "熔毁·朵尔目标在第二部第一章呈现",
+      "卡斯托尔与波吕克斯的故事承接泰旖丝篇章"
+    ]
+  },
+
+  "arc3": {
+    "title_zh": "未命名",
+    "status": "early_planning",
+    "note": "早期讨论中（剧情大纲与角色方向）。将补完此前未披露的世界观设定，回收遗留伏笔",
+    "will_resolve": [
+      "许多过往未能释出的设定与内容",
+      "此前遗留的伏笔"
+    ],
+    "original_content_moved_forward": "原定第三部第十章左右的信息已提前在第一部第八章揭示"
+  },
+
+  "personal_storylines": {
+    "completed_drafts": [
+      { "character": "tawil", "name": "塔薇", "status": "first_draft_complete", "release": "pending_quality_and_schedule" },
+      { "character": "alva", "name": "艾尔瓦", "status": "first_draft_complete", "release": "pending_quality_and_schedule" },
+      { "character": "pandia", "name": "潘狄娅", "status": "first_draft_complete", "release": "pending_quality_and_schedule" },
+      { "character": "nautila", "name": "诺缔拉", "status": "first_draft_complete", "release": "pending_quality_and_schedule" }
+    ],
+    "newly_added_in_arc2": [
+      { "character": "tulu", "name": "图鲁", "note": "第二部开始后新增并推进的个人支线" }
+    ],
+    "policy": "优先通过新角色故事和主线/支线交叉承接来拓展既有角色，只有合适契机才单独补充个人支线"
+  },
+
+  "spec_ops_and_side_stories": {
+    "recommended_order_feature": "开发中，将按文案推荐的叙事体验顺序整理支线内容",
+    "unlock_pace": "暂不计划大幅加快，适度节奏保留奖励感和叙事沉浸感",
+    "notable_resonances": {
+      "ch7": "体现'孕育'",
+      "24_spec_ops": "体现'人格分裂、缺失而后重新归一'",
+      "salvador_spec_ops": "体现'负罪前行'"
+    }
+  },
+
+  "literary_references": {
+    "core_inspirations": [
+      { "work": "At the Mountains of Madness", "author": "H.P. Lovecraft", "role": "项目最初灵感来源。南极冰原影子至今可在许多篇章中隐约看见" },
+      { "work": "Ex Oblivione", "author": "H.P. Lovecraft", "role": "项目的灵魂之一。在每个创作者心里埋下灵感种子" },
+      { "work": "The Dream-Quest of Unknown Kadath", "author": "H.P. Lovecraft", "role": "大量彩蛋来源，推荐玩家阅读" },
+      { "work": "Through the Gates of the Silver Key", "author": "H.P. Lovecraft", "role": "与上同，Randolph Carter 系列" }
+    ],
+    "character_name_origins": [
+      { "character": "horla", "source": "莫泊桑短篇小说《奥尔拉》(Le Horla) 中的不明存在" }
+    ],
+    "homages_in_game": [
+      { "work": "The Frolic", "author": "Thomas Ligotti", "location": "某关卡标题" }
+    ],
+    "team_interests": ["The Godfather", "Evangelion", "Martin McDonagh works", "Fullmetal Alchemist", "Junji Ito manga", "True Detective"],
+    "game_influences": [
+      { "game": "Slay the Spire", "aspect": "核心肉鸽卡牌玩法起点" },
+      { "game": "Darkest Dungeon", "aspect": "压力系统张力（多数崩溃，少数逆转——'感受比例'参考）" },
+      { "game": "Chaos Zero Nightmare (卡厄斯梦境)", "aspect": "探索中卡牌变化。战斗设计师米酒深受启发" },
+      { "game": "Deemo", "aspect": "音乐节奏玩法灵感" },
+      { "game": "Bloodborne", "aspect": "怪物图鉴与设定参考" },
+      { "game": "Curse of the Dead Gods", "aspect": "克苏鲁题材疯狂量表参考" }
+    ],
+    "coc_tabletop_influence": "许多内容创作成员参与过COC跑团。守密人/调查员身份设定和冒险框架受COC影响。跑团是团队经典团建形式。霁月最喜欢的模组：《行走在黑暗中的人们的宴会》《活神之手》"
+  }
+}
