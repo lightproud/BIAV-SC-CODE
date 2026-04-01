@@ -1,23 +1,23 @@
 {
   "date": "2026-03-31",
-  "messages": 17006,
+  "messages": 17092,
   "unique_authors": 155,
-  "reactions_total": 2052,
-  "attachments": 871,
+  "reactions_total": 2056,
+  "attachments": 872,
   "channel_activity": {
+    "🔸morimens-game-chat": 10942,
+    "🔸lore-chat": 151,
+    "🔸game-question": 1382,
     "🔸綜合討論": 1070,
-    "🔸morimens-game-chat": 10862,
     "🔸日本語チャンネル": 14,
     "🔸한국어-채팅방": 22,
     "🔸русский-канал": 113,
     "🔸phòng-chat-tiếng-việt": 1146,
     "🔸canal-español": 379,
     "🔸canal-português": 687,
-    "🔸lore-chat": 149,
     "🔸team-building": 199,
     "🔸general-chat": 318,
     "🔸邀请码互助┊swap-invitation-codes": 16,
-    "🔸game-question": 1378,
     "🔸机器人命令┊bot-commands": 36,
     "🔸erica-playground": 26,
     "小煤球的頭貼可以保存起來嗎": 1,
@@ -64,9 +64,9 @@
     "💭「處理中」波呂克斯的超限?": 2
   },
   "hourly_activity": {
+    "23": 633,
     "21": 355,
     "22": 687,
-    "23": 547,
     "18": 866,
     "19": 618,
     "20": 540,
@@ -90,9 +90,8 @@
     "2": 724
   },
   "message_types": {
-    "19": 501,
-    "0": 1074,
-    "20": 2
+    "0": 72,
+    "19": 14
   },
   "top_reacted_messages": [
     {
