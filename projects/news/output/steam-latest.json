@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-01T06:12:58.985414+00:00",
+  "collected_at": "2026-04-01T10:36:30.578491+00:00",
   "source": "steam",
   "item_count": 7,
   "items": [
@@ -9,6 +9,13 @@
       "review": "I JUST TURNED INTO AN OTTER!",
       "timestamp_created": 1774985012,
       "playtime_forever": 58
+    },
+    {
+      "language": "schinese",
+      "voted_up": true,
+      "review": "还行，打发时间没有问题，只不过每一关的节奏比较长",
+      "timestamp_created": 1775013244,
+      "playtime_forever": 603
     },
     {
       "language": "danish",
@@ -29,7 +36,7 @@
       "voted_up": true,
       "review": "GOAT gane",
       "timestamp_created": 1774990184,
-      "playtime_forever": 3111
+      "playtime_forever": 3113
     },
     {
       "language": "english",
@@ -44,13 +51,6 @@
       "review": "Decent card game with good aethestics, but is extremely dupe heavy for some builds.\n\nAs for Mar 31, 2026, they have removed the ability to autoplay D-Tide, an important weekly mode that grants level u",
       "timestamp_created": 1774955963,
       "playtime_forever": 14858
-    },
-    {
-      "language": "schinese",
-      "voted_up": false,
-      "review": "拉完了，卡牌构筑毫无水平，纯自动战斗养成，还有超绝剧情迷宫战斗的“灵动”交互\r\n你还致敬上杀戮尖塔了，这点倒是优点\r\n结果一堆脚本鬼服号\r\n搞得我也卖不出去",
-      "timestamp_created": 1774948293,
-      "playtime_forever": 541
     }
   ]
 }
