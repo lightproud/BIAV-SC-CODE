@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "type": "design-decisions",
+    "extracted_from": "interview-2026-04.json",
+    "extracted_by": "Code-主控台",
+    "extracted_at": "2026-04-01"
+  },
+  "core_principles": [
+    {
+      "id": "unify-gameplay-narrative",
+      "zh": "玩法与叙事统一——卡牌表达角色身份，而非单纯数值",
+      "en": "Unify gameplay and narrative — cards express character identity, not just numbers",
+      "source_quote": "1. Unify gameplay and narrative — cards express character identity, not just numbers"
+    },
+    {
+      "id": "every-choice-meaningful",
+      "zh": "每个选择都有意义——每种队伍配置、遗物、出牌顺序都应创造独特策略权衡",
+      "en": "Make every choice meaningful — every team comp, relic, card order should create distinct strategic trade-offs",
+      "source_quote": "2. Make every choice meaningful — every team comp, relic, card order should create distinct strategic trade-offs"
+    },
+    {
+      "id": "buffs-only-no-nerfs",
+      "zh": "只增强不削弱（尽可能）——抽卡是服务承诺；不得不削弱时提供退还机制",
+      "en": "Buffs only, no nerfs (as much as possible) — gacha is a service commitment; if nerf unavoidable, provide refund mechanism",
+      "source_quote": "3. Buffs only, no nerfs (as much as possible) — gacha is a service commitment; if nerf unavoidable, provide refund mechanism"
+    }
+  ],
+  "cut_mechanics": [
+    {
+      "name_zh": "疯狂量表",
+      "name_en": "Madness Scale",
+      "concept": "Would shift based on exploration choices, granting dangerous but powerful abilities in final phase",
+      "why_cut": [
+        "Cognitive burden too high with existing systems",
+        "Stage length too variable for granularity",
+        "Negative feedback already heavy enough",
+        "Character identity mismatch — Keeper chooses to face the indescribable, shouldn't be frequently broken"
+      ],
+      "simplified_to": "Symptom Cards"
+    }
+  ],
+  "original_vision": {
+    "codename": "Codename: Domain (代号：密境)",
+    "description": "Narrative focused on campus life, repeated Domain exploration, gradual truth discovery; detailed Mythag University environments; Awakeners only determine starting cards which transform into variants during battle; realm-universal cards collectible during exploration",
+    "key_differences_from_current": [
+      "Campus life narrative removed — refocused from investigation to combat when Light joined in 2021",
+      "Repeated Domain exploration removed — high co-design difficulty, low reusability, limited meaningful branching",
+      "Awakener-variant card system simplified",
+      "Realm-universal collectible cards during exploration removed"
+    ]
+  },
+  "balance_philosophy": {
+    "principle": "Buffs only, no nerfs (as much as possible)",
+    "details": "Gacha is a service commitment to players. If a character must be adjusted downward, use environment adjustment (enemy mechanics, stage design) rather than direct stat nerfs",
+    "refund_mechanism": "When nerfs are unavoidable, provide refund mechanism so players don't feel cheated",
+    "first_year_lesson": "First year nerfs caused poor experience; later reverted some. Too casual community communication amplified criticism during monetization adjustments"
+  },
+  "monetization_philosophy": {
+    "gacha_stance": "Not defending the model itself; explaining specific choices within it — pragmatic choice, not soul of the game",
+    "admitted_mistakes": [
+      "Enlighten/Wheel duplicate requirements set too high initially",
+      "Over-Exaltation, extra level caps, Final Axiom added later created psychological burden",
+      "First year nerfs caused poor experience; later reverted some",
+      "Too casual community communication in year 1 led to amplified criticism during monetization adjustments"
+    ],
+    "player_friendly_measures": [
+      "SSR rate 1%→3% in v2.0",
+      "Hard pity 80→30 in v2.0",
+      "Monthly exchangeable universal special materials (Pure Cores)",
+      "Free auto-recovering revival items",
+      "Removed Normal Mode emergency gnosis restriction",
+      "Almost no truly permanently unavailable core content",
+      "Refund mechanism when nerfs are unavoidable"
+    ],
+    "future_direction": "Increase free benefits per major version; more chances to obtain previously limited content; convenience and stress-reducing features; optimize duplicate overflow rewards"
+  },
+  "character_design_cases": [
+    {
+      "character_id": "24",
+      "zh_summary": "四生态位压缩、不划算但为叙事服务、'为理想燃烧一次'",
+      "en_summary": "Compresses four character niches into one unit to serve 'split personality' narrative. Not commercially cost-effective. Battle designers 'burned once for their ideals'",
+      "design_intent": "Dual-form switching, four-realm compatibility, special record 'split then rediscover' resonance mechanism — all serving narrative",
+      "no_more_like_this": "No plan to create another multi-realm Awakener unless narrative demands it"
+    },
+    {
+      "character_id": "ramona-timeworn",
+      "zh_summary": "Light亲手设计技能、复制上回合卡牌=从过去经历获得力量",
+      "en_summary": "Skill set personally designed by producer Light. Core ability: replicate last played card = drawing strength from past experiences",
+      "v11_pv_line": "No matter how many times I fail, I will ultimately save you",
+      "producer_note": "Light's personal most special character"
+    },
+    {
+      "character_id": "murphy-fauxborn",
+      "zh_summary": "原版故事已完整导致拓展空间有限、最终方案：神母外表是自我保护伪装",
+      "en_summary": "Original Murphy's story already complete, limited expansion room. Solution: Divine Mother facade hiding pure inner self",
+      "design_challenge": "Most difficult to write recently — need to maintain strong identity without damaging original's charm"
+    },
+    {
+      "character_id": "lotan",
+      "zh_summary": "第一个打击流角色，从角色人设自然推导而非刻意添加流派",
+      "en_summary": "First strike-flow character. Not designed because the game needed a strike archetype, but because Lotan's abilities and personality naturally suited it",
+      "design_principle": "Embodies 'unify gameplay and narrative' — gameplay feel derived from character identity"
+    },
+    {
+      "character_id": "helot",
+      "zh_summary": "与萝坦有'宿命感'，成为第二个打击流角色",
+      "en_summary": "Has 'fated connection' with Lotan, became the second strike-flow character",
+      "note": "Originally planned for a more important role in Arc 1 (as was Herbert)"
+    },
+    {
+      "character_id": "lily",
+      "zh_summary": "因与希洛的能力来源设定而具备打击能力，'忍耐'机制对应忍耐痛苦的经历",
+      "en_summary": "Has strike capabilities due to shared ability origin with Helot. 'Endurance' mechanic mirrors her experience of enduring pain",
+      "design_chain": "Lotan → Helot → Lily: strike-flow characters derived from character narratives, not archetype planning"
+    },
+    {
+      "character_id": "murphy-fauxborn",
+      "zh_summary_faction": "属于利莫里亚阵营但墨菲不属于，阵营加成设计对应她们各自对利莫里亚的态度差异",
+      "en_summary_faction": "Belongs to Lemuria faction but Murphy does not — faction bonus design reflects their different attitudes toward Lemuria",
+      "design_type": "narrative-driven faction design"
+    }
+  ]
+}
