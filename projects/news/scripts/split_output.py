@@ -87,7 +87,11 @@ def extract_item(raw: dict) -> dict:
 
 
 def extract_steam_item(raw: dict) -> dict:
-    """从 steam_review 原始 item 提取 steam-latest.json 所需字段。"""
+    """从 steam_review 原始 item 提取字段。
+
+    保留标准字段（time, title, source, engagement 等）供 generate_daily.py 使用，
+    同时附带 Steam 特有字段（language, voted_up, playtime_forever）。
+    """
     meta = raw.get('metadata', {})
     timestamp_created = meta.get('timestamp_created', 0)
     if not timestamp_created and raw.get('time'):
@@ -97,6 +101,16 @@ def extract_steam_item(raw: dict) -> dict:
         except (ValueError, TypeError):
             pass
     return {
+        # 标准字段（与 extract_item 一致）
+        'source': 'steam',
+        'time': raw.get('time', ''),
+        'lang': raw.get('language', ''),
+        'title': raw.get('title', ''),
+        'summary': raw.get('summary', '')[:200],
+        'url': raw.get('url', ''),
+        'author': raw.get('author', ''),
+        'engagement': raw.get('engagement', 0),
+        # Steam 特有字段
         'language': raw.get('language', ''),
         'voted_up': meta.get('voted_up', False),
         'review': raw.get('summary', '')[:200],
