@@ -3,6 +3,8 @@
 > 最后更新：2026-04-01 by 战略中心（Code）
 >
 > 基于仓库实际文件状态的全局判断。不猜测，只看事实。
+>
+> 每月 1 日更新。下次更新：2026-05-01。
 
 ---
 
@@ -160,3 +162,25 @@
 - 内容质量达标 ✗
 
 最大的杠杆点是 **修 Steam 数据 + 接 Discord**，这能把日报从"只有 B 站"变成"三个主流平台"，内容丰富度质变。
+
+---
+
+## 六、2026-04-01 行动记录
+
+本次战略会话执行的变更：
+
+1. **Steam 数据标准化修复已验证**：`split_output.py` 的 `extract_steam_item()` 修复已合入，本地重跑后日报正确显示 Steam 评论（6 条，好评率 83%）。等下次 workflow 运行即生效
+2. **Workflow 频率调整**：
+   - `discord-archive.yml`：每小时 → 每日 1 次（18:00 UTC）
+   - `update-news.yml`：每小时 → 每日 2 次（06:00/16:00 UTC）
+   - 预计减少 ~95% 的自动 commit 噪音
+3. **暂停无效 workflow**：
+   - `generate-report.yml`：注释掉 schedule（25+ secrets 未配）
+   - `extract-game-data.yml`：注释掉 push trigger（Steam 认证未通）
+4. **各子项目 CONTEXT.md 更新**：写入本周具体任务
+5. **project-status.md 更新**：添加 Phase 0 阶段说明和 workflow 频率表
+
+### 本周剩余任务（需 Code-news 会话执行）
+
+- [ ] 桥接 Discord 归档 → 聚合器（日报第 3 个数据源）
+- [ ] 实现 Discord 月度归档清理（299MB 止血）

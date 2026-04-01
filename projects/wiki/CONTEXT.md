@@ -39,12 +39,19 @@ npm run docs:preview # 预览构建结果
 python scripts/content_db.py
 ```
 
-## 下一步
+## 本周任务（2026-04-01 ~ 04-07）
+
+> 来源：战略中心 Phase 0 行动方案。Wiki 当前处于维护模式，不加新功能。
+
+1. **数据质量基线**：对 `data/db/` 的 21 个 JSON 做一次完整人工抽查，标记数据覆盖率和准确性。输出一份简要报告到 `projects/wiki/output/data-quality-report.md`
+2. **确认 fetch-wiki-data workflow 健康**：检查最近几次运行结果，确认 7 个抓取脚本是否正常。注意所有步骤都是 continue-on-error，需要手动看日志
+
+## 后续待做（非本周）
 - [ ] 数据准确性校验（与 wiki 源对比）
 - [ ] 接入 Fandom/Gamerch wiki 自动更新
 - [ ] 补充缺失数据（消耗品、活动等）
 - [ ] 填充 Wiki 模板页面
-- [ ] 部署到 GitHub Pages
+- [ ] 站点已部署，持续优化
 
 ## 验证清单
 - [ ] data/db/*.json 全部 JSON 格式有效

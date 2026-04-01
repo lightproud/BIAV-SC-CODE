@@ -1,9 +1,10 @@
 name: Extract Game Data from Client
 
 on:
-  push:
-    paths:
-      - '.github/triggers/extract-game-data'
+  # push:
+  #   paths:
+  #     - '.github/triggers/extract-game-data'
+  #   # 暂停：Steam 认证问题未解决，从未成功执行。手动触发仍可用
   workflow_dispatch:
     inputs:
       steam_app_id:

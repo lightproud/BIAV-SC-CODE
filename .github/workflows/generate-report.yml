@@ -1,9 +1,9 @@
 name: Generate Global Report
 
 on:
-  schedule:
-    # 每天 UTC+8 00:00 (即 UTC 16:00) 运行一次
-    - cron: '0 16 * * *'
+  # schedule:
+  #   # 暂停：25+ secrets 未配置，无法运行。手动触发仍可用
+  #   - cron: '0 16 * * *'
   workflow_dispatch:
 
 permissions:

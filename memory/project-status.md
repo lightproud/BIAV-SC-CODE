@@ -1,15 +1,15 @@
 # 项目状态一览
 
-> 最后更新：2026-03-30 by Code-wiki
+> 最后更新：2026-04-01 by 战略中心
 
 ## 子项目状态
 
 | 子项目 | 状态 | 负责会话 | 下一步 |
 |--------|------|---------|--------|
-| site（主站 + 部署 + 视觉） | 已部署 | Code-site | 主站+Wiki+News 三站已上线，持续优化体验与跨站一致性 |
-| news（新闻聚合 + 报告系统） | 运行中 | Code-news | 配置 API 密钥，启用更多数据源 |
-| wiki（数据集 + Wiki 站点） | 已部署 | Code-wiki | 数据持续补全、角色详细数据抓取 |
-| game（衍生游戏） | 规划中 | 待创建 | 确定游戏类型 |
+| site（主站 + 部署 + 视觉） | 已部署，维护模式 | Code-site | 无新任务 |
+| news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 桥接 Discord → 聚合器、月度归档清理 |
+| wiki（数据集 + Wiki 站点） | 已部署，维护模式 | Code-wiki | 数据质量基线抽查 |
+| game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
 
 ## News 新闻聚合 + 报告系统
 
@@ -105,6 +105,30 @@
 
 - **已完成**：无
 - **待决策**：游戏类型、技术选型、美术方向
+
+## 当前阶段
+
+**Phase 0：收缩与夯实**（2026-04-01 起）
+
+目标：砍到只剩能验证的最小集，让日报覆盖 3 个有效数据源（Bilibili + Steam + Discord），制作人实际在用。
+
+验证门：制作人连续 14 天主动看日报并觉得有用。
+
+详见 `memory/strategic-assessment.md`。
+
+## Workflow 运行频率（2026-04-01 调整）
+
+| Workflow | 频率 | 状态 |
+|----------|------|------|
+| update-news.yml | 每日 2 次（06:00/16:00 UTC） | 运行中 |
+| discord-archive.yml | 每日 1 次（18:00 UTC） | 运行中 |
+| deploy-site.yml | push 触发 | 运行中 |
+| fetch-wiki-data.yml | 每周一 | 运行中 |
+| check-version.yml | 每周一 | 运行中 |
+| validate-data.yml | push 触发 | 运行中 |
+| claude.yml | Issue 触发 | 阻塞（API 无余额） |
+| generate-report.yml | **已暂停** | secrets 未配 |
+| extract-game-data.yml | **已暂停** | Steam 认证未通 |
 
 ## 基础设施状态
 

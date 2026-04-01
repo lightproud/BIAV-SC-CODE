@@ -2,8 +2,8 @@ name: Discord Archive
 
 on:
   schedule:
-    # Run every hour
-    - cron: '0 * * * *'
+    # Run once daily at 18:00 UTC (UTC+8 02:00) — reduced from hourly to control repo size
+    - cron: '0 18 * * *'
   workflow_dispatch:
 
 permissions:
