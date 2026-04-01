@@ -1,34 +1,37 @@
 {
   "date": "2026-04-01",
-  "messages": 9638,
+  "messages": 11812,
   "unique_authors": 187,
-  "reactions_total": 1224,
-  "attachments": 584,
+  "reactions_total": 1396,
+  "attachments": 687,
   "channel_activity": {
-    "🔸綜合討論": 890,
+    "🔸綜合討論": 1242,
+    "🔸morimens-game-chat": 7168,
+    "🔸한국어-채팅방": 5,
+    "🔸chaîne-française": 6,
+    "🔸русский-канал": 94,
+    "🔸phòng-chat-tiếng-việt": 813,
+    "🔸canal-español": 224,
+    "🔸canal-português": 317,
+    "🔸ruang-obrolan-indonesia": 34,
+    "🔸ห้องสนทนาภาษาไทย": 35,
+    "🔸lore-chat": 315,
+    "🔸team-building": 124,
+    "🔸general-chat": 585,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 563,
+    "🔸机器人命令┊bot-commands": 35,
+    "🔸erica-playground": 8,
+    "Traphase bug: Duped Will Unyieldings (WoD)": 1,
+    "An unfinished art of my beloved Ramona-  idk when I would finish any art in general 😭": 6,
+    "morimens sybau 💔": 49,
+    "【教L̸o̸a̸d̸i̸n̸g̸.̸.̸.̸系□□□□???0x000告】——[TeachingL̸o̸a̸d̸i̸n̸g̸.̸.̸.̸System□□□□???0x000Notice]": 22,
+    "291天的萌新想問": 7,
     "🔸阵容构建": 26,
-    "🔸morimens-game-chat": 6296,
-    "🔸chaîne-française": 1,
-    "🔸русский-канал": 47,
-    "🔸phòng-chat-tiếng-việt": 358,
-    "🔸canal-español": 222,
-    "🔸canal-português": 162,
-    "🔸ruang-obrolan-indonesia": 25,
-    "🔸ห้องสนทนาภาษาไทย": 29,
     "🔸traphase": 3,
-    "🔸lore-chat": 268,
-    "🔸team-building": 120,
-    "🔸general-chat": 478,
-    "🔸邀请码互助┊swap-invitation-codes": 14,
-    "🔸game-question": 506,
-    "🔸机器人命令┊bot-commands": 26,
-    "🔸erica-playground": 6,
     "Miryam Revelate Devotion str/tentacle dmg gain": 1,
     "\"24\" lives matter": 3,
-    "An unfinished art of my beloved Ramona-  idk when I would finish any art in general 😭": 5,
-    "morimens sybau 💔": 18,
     "【English Translation】Opinions Collection": 2,
-    "【教L̸o̸a̸d̸i̸n̸g̸.̸.̸.̸系□□□□???0x000告】——[TeachingL̸o̸a̸d̸i̸n̸g̸.̸.̸.̸System□□□□???0x000Notice]": 21,
     "🔸日本語チャンネル": 6,
     "🔸剧情交流": 32,
     "🔸课间休息闲聊": 7,
@@ -39,7 +42,6 @@
     "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration": 33,
     "team building + pulls advice if you don't mind": 2,
     "🔸交友频道": 10,
-    "🔸한국어-채팅방": 2,
     "基珀先生，請問我可以請您跳支舞嗎？|| W.I.P": 2,
     "建个随笔楼": 1,
     "我的戰鬥結果怪怪的": 1,
@@ -47,10 +49,12 @@
     "William posting": 2
   },
   "hourly_activity": {
+    "15": 870,
+    "16": 761,
+    "17": 483,
+    "14": 848,
     "12": 652,
     "13": 708,
-    "14": 784,
-    "15": 4,
     "11": 569,
     "10": 336,
     "6": 877,
@@ -65,9 +69,9 @@
     "5": 408
   },
   "message_types": {
-    "19": 622,
-    "0": 1357,
-    "20": 1
+    "19": 588,
+    "0": 1581,
+    "20": 5
   },
   "top_reacted_messages": [
     {
@@ -90,6 +94,13 @@
       "author": "morimensstaff01",
       "reactions": 10,
       "channel": "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration"
+    },
+    {
+      "id": "1488954688861769931",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1488883493365878834",
@@ -127,6 +138,13 @@
       "channel": "William posting"
     },
     {
+      "id": "1488920415412945046",
+      "content": "So basically...he types like an old man",
+      "author": "frosthief",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1488879631338569818",
       "content": "The truth is\nI never liked Blue\nIt was always a way for me to cope\nBecause I fol",
       "author": "legendaryredz",
@@ -145,6 +163,13 @@
       "content": "<@595414429957619725> <@285755067213152257> <@113374123798859776>",
       "author": "spooky_penguin_",
       "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488918322920558602",
+      "content": "https://x.com/i/status/2039358173077995801",
+      "author": "idotly",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -176,37 +201,16 @@
       "channel": "【弥萨格教务处】调查员技能研修企划——报名开始[Mythag Academic Affairs Office] Investigator Training Program — Registration"
     },
     {
-      "id": "1488880770402750464",
-      "content": "u must kill a niko and wear its skin",
-      "author": "chinkeeyong",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488895173567053986",
-      "content": "im already down 1.5m scripts",
-      "author": "princess.goth",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488899683312205965",
-      "content": "i finish the rest ser",
-      "author": "l8989c",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488903460421111980",
-      "content": "<:agree:1400771815076528258>",
-      "author": "aegisx",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1488904875906433165",
-      "content": "01010111 01101000 01111001 00100000 01100100 01101001 01100100 00100000 01110100",
+      "id": "1488919499184017531",
+      "content": "I don't know why I pinged myself",
       "author": "megidola.",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1488921063424393431",
+      "content": "I'm so fucked",
+      "author": "kurotamavii",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
