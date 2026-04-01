@@ -42,25 +42,26 @@ jobs:
           unzip -q /tmp/dd.zip -d ~/depotdownloader
           chmod +x ~/depotdownloader/DepotDownloader
 
-          # Build auth args
-          AUTH_ARGS=""
+          # Download game
+          echo "Downloading Steam App $APP_ID ..."
           if [ -n "$STEAM_USER" ] && [ -n "$STEAM_PASS" ]; then
-            echo "Using Steam account credentials"
-            AUTH_ARGS="-username $STEAM_USER -password $STEAM_PASS"
+            echo "Using Steam account credentials (user: ${STEAM_USER:0:3}***)"
+            ~/depotdownloader/DepotDownloader \
+              -app "$APP_ID" \
+              -os windows \
+              -dir ~/steam_depot \
+              -max-downloads 8 \
+              -username "$STEAM_USER" \
+              -password "$STEAM_PASS"
           else
             echo "WARNING: No Steam credentials found (STEAM_USER/STEAM_PASS secrets not set)"
             echo "Trying anonymous download (may fail for game clients)"
+            ~/depotdownloader/DepotDownloader \
+              -app "$APP_ID" \
+              -os windows \
+              -dir ~/steam_depot \
+              -max-downloads 8
           fi
-
-          # Download game
-          echo "Downloading Steam App $APP_ID ..."
-          echo "Auth args present: $([ -n "$AUTH_ARGS" ] && echo YES || echo NO)"
-          ~/depotdownloader/DepotDownloader \
-            -app "$APP_ID" \
-            -os windows \
-            -dir ~/steam_depot \
-            -max-downloads 8 \
-            $AUTH_ARGS
 
           echo ""
           echo "Download complete."
