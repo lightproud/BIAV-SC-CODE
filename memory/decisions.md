@@ -1,8 +1,79 @@
 # 决策日志
 
-> 最后更新：2026-04-02 by Code-主控台
+> 最后更新：2026-04-02 by 战略中心（Code）
 >
-> 所有重要的架构、技术、方向决策记录在此。新会话请先阅读。
+> **新会话只需要读「当前有效决策」。历史归档仅供追溯。**
+
+---
+
+## 当前有效决策
+
+以下决策仍然生效，是项目运行的基本规则。
+
+### 全局
+
+| 决策 | 影响范围 |
+|------|---------|
+| 建立多会话协作架构（职责隔离） | 全局 |
+| 目录按 memory/assets/projects 重组 | 全局 |
+| 各子项目按需选择技术栈 | 全局 |
+| 项目完全开源，MIT License | 全局 |
+| 游戏内容版权归脑缸组，项目仅引用公开信息 | 全局 |
+| 仓库定位为"共享外脑 + 中转站"（Code 生产，Chat 加工交付） | 全局 |
+| 子项目保持单仓库，不拆分独立 repo | 全局 |
+| 项目正式命名为「缸中之脑计划」，仓库 brain-in-a-vat | 全局 |
+| 架构定义为前台/中台/后台三层（claude.ai → Claude Code → GitHub） | 全局 |
+| 建立交付物视觉规范 style-guide.md | 全局 |
+| 引入 lessons-learned 踩坑记录 | 全局 |
+| 引入 Plan/Execute 任务标注约定（未标注默认「直接执行」） | 全局 |
+| 创建 .claude/commands/ 可复用工作流 | 全局 |
+| 各 CONTEXT.md 添加验证清单 | 全局 |
+| 引入 Claude Code GitHub Actions（Issue 驱动自动化） | 全局 |
+| Issue 安全策略：只执行 author:lightproud | 全局 |
+| Issue 生命周期闭环管理（WIP 上限 3 个/子项目 + 创建前查重） | 全局 |
+| 所有会话直接推 main，不用分支。冲突时 git pull 重试 | 全局 |
+| 大文件暂不外迁，直接放 git（增长到瓶颈时再评估） | 全局 |
+| 模型使用分层策略：判断层 Opus(Extended)，执行层 Sonnet | 全局 |
+| 前台专岗不固定编制，按需增设 | 全局 |
+| 缸中之脑方向确认为方法论验证（交付物必须可用） | 全局 |
+| main 分支添加 Ruleset 保护规则（禁止删除） | 全局 |
+| 双系统架构：银芯（公开层）+ 黑池（内部层），数据隔离，架构共享 | 全局 |
+| 银芯事实圣经边界：仅收录公开可查阅信息 | 全局 |
+| 战略规划 2026：四阶段计划，详见 strategic-plan-2026.md | 全局 |
+| 黑池定位为内网版本（非独立仓库），银芯验证后黑池复用 | 全局 |
+| 大二进制文件移至 GitHub Releases（不入 git） | 全局 |
+| 架构差距分析 + 8 项改进批量实施（JSON Schema、冒烟测试、Dependabot 等） | 全局 |
+
+### 子项目
+
+| 决策 | 影响范围 |
+|------|---------|
+| 合并 database 和 wiki 为单一 wiki 子项目 | wiki |
+| 主站导航页 + 子路径多站点方案（根路径主站，/wiki/，/news/） | site |
+| 部署方式：peaceiris/actions-gh-pages 推 gh-pages 分支 | site |
+| Wiki 中文设为 root locale + rewrites | wiki |
+| 界域 ID 标准化（aequor/caro/ultra） | wiki/data |
+| 角色职能标准化（attack/sub_attack/defense/support/chorus） | wiki/data |
+| 角色 ID 从拼音改为英文 slug | wiki/data |
+| Wiki 删除 tier 评级数据 | wiki/data |
+| 整合 content_database 技能到 characters.json | wiki/data |
+| 立绘图片存仓库（assets/images/portraits/） | wiki/data |
+| 建立 7 脚本自动化数据抓取体系（Fandom + Steam API） | wiki |
+| Wiki 引入 Vue 交互组件（11 个） | wiki |
+| 自动生成角色详情页（generate_pages.py，63 角色 × 3 语言） | wiki |
+| 添加 SEO 优化（Schema.org + OG + sitemap） | wiki |
+| 版本更新自动检测 + RSS 订阅 | wiki |
+| News 采集管线统一方案（先统一 JSON schema，再逐个接源） | news |
+| 新增 Code-site 子项目（部署流水线 + 跨站前端） | site |
+| Discord 数据分级存储架构（git 保留 60 天 JSONL + 月归档至 Releases） | news/discord |
+| Discord 归档系统 4 项技术决策（断点续传、月报容错、论坛增量、无成员 Intent） | news/discord |
+| 联动关键词确认：沙耶之歌 (Saya no Uta)，日报系统已配置监控 | news |
+
+---
+
+## 决策历史归档
+
+以下为完整历史记录，按时间顺序保留，仅供审计追溯。
 
 | 日期 | 决策 | 原因 | 影响范围 |
 |------|------|------|---------|
