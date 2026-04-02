@@ -11,30 +11,30 @@ No duplicate wheels in the same team. After +12, a second SSR wheel can be equip
 
 | Wheel | Character | Effect |
 |----------|-----------|------|
-| [Treasured Rarity](/en/wheels/treasured-rarity) | 达芙黛尔(Daffodil) | Team Unique: The wielder's Shield Generation increases by 12%. Gain Shield equal |
+| [Treasured Rarity](/en/wheels/treasured-rarity) | 达芙黛尔(Daffodil) | === DMG Amplification: 14.4% === |
 | [By Rose Alone](/en/wheels/by-rose-alone) | 索蕾尔(Sorel) | Critical Strike Rate |
 | [Grace Through Pain](/en/wheels/grace-through-pain) | 莉莉(Lily) | — |
-| [Shrouded Birth](/en/wheels/shrouded-birth) | 神王·图鲁(Divine King Tulu) | Domain Mastery Increases team health limit by 10%. Increases healing and shields |
-| [Queen's Edict](/en/wheels/queens-edict) | 旺达(Wanda) | Team Unique: The wielder's Counter increases by 13%. After playing a card, gain  |
+| [Shrouded Birth](/en/wheels/shrouded-birth) | 神王·图鲁(Divine King Tulu) | Domain Mastery\|team_unique=Increases team health limit by 10%. Increases healing |
+| [Queen's Edict](/en/wheels/queens-edict) | 旺达(Wanda) | === DMG Amplification: 14.4% === |
 | [Aberrant Devour](/en/wheels/aberrant-devour) | 墨菲(Murphy) | Deep Sea series wheel. |
 | [Merciful Nurturing](/en/wheels/merciful-nurturing) | 塔薇(Thais) | Caro (Flesh) series wheel. |
 | [Power of the Pious](/en/wheels/power-of-the-pious) | — | — |
-| [The Last Verse](/en/wheels/the-last-verse) | 奥尔拉(Horla) | Team Unique: The Crit. Rate and Crit. DMG of the wielder's Command Cards, as wel |
-| [Drowning in Crimson](/en/wheels/drowning-in-crimson) | 淡墨(Danmo) | Caro (Flesh) series wheel. |
+| [The Last Verse](/en/wheels/the-last-verse) | 奥尔拉(Horla) | === Death Resistance: 50.4% === |
+| [Drowning in Crimson](/en/wheels/drowning-in-crimson) | 淡墨(Danmo) | == Story == |
 | [Wheel Unseen](/en/wheels/wheel-unseen) | 萝坦(Lotan) | Gains buffs from Key Order triggers and hit count. |
 
 ## SSR Wheels — Stellar Limited
 
 | Wheel | Character | Effect |
 |----------|-----------|------|
-| [Unbearable Freedom](/en/wheels/unbearable-freedom) | 莉兹(Liz) | Hand Limit +2. Effects of the same type cannot stack. The wielder's Base DMG and |
-| [Kiss of Repose](/en/wheels/kiss-of-repose) | 索蕾尔(Sorel) | Team Unique: The wielder's Base DMG +10% During this exploration, every time the |
+| [Unbearable Freedom](/en/wheels/unbearable-freedom) | 莉兹(Liz) | === DMG Amplification: 14.4% === |
+| [Kiss of Repose](/en/wheels/kiss-of-repose) | 索蕾尔(Sorel) | === Crit. DMG: 21.6% === |
 | [Paradoxical Realism](/en/wheels/paradoxical-realism) | 皮克曼(Pickman) | Fury and Power gain +6-12%; after Over-Exalt, increases final damage/shield/heal |
 | [Twisted Knight Ballad](/en/wheels/twisted-knight-ballad) | — | — |
 | [Manikin of Oblivion](/en/wheels/manikin-of-oblivion) | — | — |
 | [Veiled Anguish](/en/wheels/veiled-anguish) | — | — |
-| [Flamebound Navigator](/en/wheels/flamebound-navigator) | — | Team Unique: The Shield caused by the wielder's Exalt increases by 15%. After re |
-| [Amber-Tinted Death](/en/wheels/amber-tinted-death) | — | Team Unique: The wielder's Base DMG dealt +20%, and STR generated +6%. After pla |
+| [Flamebound Navigator](/en/wheels/flamebound-navigator) | — | === Death Resistance: 50.4% === |
+| [Amber-Tinted Death](/en/wheels/amber-tinted-death) | — | === Crit. DMG: 21.6% === |
 | [Uteri Somnia](/en/wheels/uteri-somnia) | — | — |
 | [Doomsday Rampage](/en/wheels/doomsday-rampage) | — | Death Resistance 50.4% |
 | [Vain Regrets](/en/wheels/vain-regrets) | — | — |
@@ -45,10 +45,10 @@ No duplicate wheels in the same team. After +12, a second SSR wheel can be equip
 |----------|-----------|------|
 | [Hymn of the Sovereign](/en/wheels/hymn-of-the-sovereign) | 希莱斯特(Celeste) | Team unique: Gain 16 Fury at battle start. Other Awakeners gain 3 Fury when usin |
 | [In the Storm](/en/wheels/in-the-storm) | 图鲁(Tulu) | v1.4 enhanced: On Strike, inflict 10% Toxin on all enemies (once per turn). |
-| [Death of the Coral Maiden](/en/wheels/death-of-the-coral-maiden) | 珊(Shan) | Team Unique: After playing the wielder's card, gain a Shield equal to 6% of the  |
+| [Death of the Coral Maiden](/en/wheels/death-of-the-coral-maiden) | 珊(Shan) | === Death Resistance: 50.4% === |
 | [Retrograde Timepiece](/en/wheels/retrograde-timepiece) | 拉蒙娜(Ramona) | After using the wearer's command card, 30-60% chance to return it from the disca |
-| [Hour of Fortune](/en/wheels/hour-of-fortune) | 珈伦(Karen) | Team Unique: At the start of battle, the wielder's Command Card Crit. Rate + 3%  |
-| [Eternal Requiem](/en/wheels/eternal-requiem) | 哈姆林(Hameln) | At the start of exploration, shuffle 1 "Silver Key Radiance" into the draw pile  |
+| [Hour of Fortune](/en/wheels/hour-of-fortune) | 珈伦(Karen) | === Sigil Yield: 10.8% === |
+| [Eternal Requiem](/en/wheels/eternal-requiem) | 哈姆林(Hameln) | === Keyflare Regen. Level: 25.2% === |
 | [Tablet of Scriptures](/en/wheels/tablet-of-scriptures) | 萨尔瓦多(Salvador) | — |
 | [Caro Feast](/en/wheels/caro-feast) | 尤乌哈希(Uvhash) | Provides Crit DMG; gain Power through Over-Exalt and Devour. |
 | [Gluttonous Banquet](/en/wheels/gluttonous-banquet) | 雷娅(Rhea) | Increases Over-Exalt healing; gain Power and Shield when taking damage. |
@@ -59,7 +59,7 @@ No duplicate wheels in the same team. After +12, a second SSR wheel can be equip
 | [Mirror Reflection](/en/wheels/mirror-reflection) | — | Realm Mastery 36 |
 | [Polar Night and Dawn](/en/wheels/polar-night-and-dawn) | — | Event reward SSR wheel. |
 | [Silent Banquet](/en/wheels/silent-banquet) | — | — |
-| [Anatomy of Death](/en/wheels/anatomy-of-death) | — | Team Unique: The wielder's Base DMG dealt +20%, and STR generated +6%. After pla |
+| [Anatomy of Death](/en/wheels/anatomy-of-death) | — | === Crit. DMG: 21.6% === |
 | [Rebirth in Ashen Earth](/en/wheels/rebirth-in-ashen-earth) | — | Commemorative edition SSR wheel. |
 
 ## SR Wheels
@@ -71,7 +71,7 @@ No duplicate wheels in the same team. After +12, a second SSR wheel can be equip
 | [Duty Calls](/en/wheels/duty-calls) | 希莱斯特(Celeste) | — |
 | [35mm Magic](/en/wheels/35mm-magic) | 珊(Shan) | — |
 | [Reunion Moment](/en/wheels/reunion-moment) | 拉蒙娜(Ramona) | — |
-| [Silver Cod's Determination](/en/wheels/silver-cods-determination) | — | Team Unique: The wielder enters the Silver Cod persona after exploration begins. |
+| [Silver Cod's Determination](/en/wheels/silver-cods-determination) | — | === Crit. Rate: 7.2% === |
 
 ## R Wheels
 

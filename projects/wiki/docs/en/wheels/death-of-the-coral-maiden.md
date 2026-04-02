@@ -14,4 +14,5 @@ description: "珊瑚女之死(Death of the Coral Maiden) - Morimens Wiki"
 
 ## Effect
 
+=== Death Resistance: 50.4% ===
 Team Unique: After playing the wielder's card, gain a Shield equal to 6% of the wielder's Defence. For each Tentacle, increase the Shield by 1.5% of the wielder's Defense. This effect triggers only once per turn.

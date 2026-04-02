@@ -23,9 +23,16 @@ SSR Chaos Defense Awakener (limited). Chaos frontline with defensive capabilitie
 
 ## Skills
 
-**Role Summary**: 混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。
+| Card | Cost | Effect |
+|------|------|------|
+| **Exalt**: Exalt | — | Data pending |
+| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
+| Defense | — | -
+\|Mist Realm Vestige
+\| |
+| *Enlighten* | — | Data pending |
 
-Data pending
+
 
 ## Recommended Equipment
 

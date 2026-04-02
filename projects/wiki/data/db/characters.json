@@ -1175,11 +1175,12 @@
       "description": "超维界域T0限定输出角色，别称「水仙夫人」。v1.1版本进行过重做，拥有全游戏最多功能的狂气爆发之一。超维队的顶级限定主C选择。",
       "portrait_url": "assets/images/portraits/daffodil.png",
       "skills": {
-        "exalt": {
-          "name": "狂气爆发",
-          "effect": "生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。"
-        },
-        "command_cards_note": "核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。",
+        "command_cards": [
+          {
+            "name": "Awaker",
+            "effect": ", staying hidden by various means.\n* Lady Daffodil has mastered the ability to move freely through dimensions. Because of that, the committee's attempts to capture her always failed."
+          }
+        ],
         "role_in_team": "超维主C，配合卡茜亚可实现现版本越级最强输出组合"
       },
       "description_en": "SSR Ultra DPS Awakener (limited). T0-tier Ultra carry, known as \"Lady Daffodil\". Reworked in v1.1 with one of the most versatile Exalt abilities in the game. Top-tier limited carry for Ultra teams.",
@@ -1784,8 +1785,13 @@
       "portrait_url": "assets/images/portraits/mouchette.png",
       "first_banner_version": "2.3",
       "skills": {
-        "role_in_team": "混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。",
-        "_data_source": "待从公开wiki补充具体技能数据"
+        "command_cards": [
+          {
+            "name": "Defense",
+            "effect": "-\n|Mist Realm Vestige\n|"
+          }
+        ],
+        "role_in_team": "混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。"
       },
       "description_en": "SSR Chaos Defense Awakener (limited). Chaos frontline with defensive capabilities.",
       "obtain_en": "Limited Event Summon",

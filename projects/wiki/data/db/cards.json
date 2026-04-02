@@ -395,10 +395,12 @@
       "character_name_en": "Daffodil",
       "rarity": "SSR",
       "realm": "ultra",
-      "exalt": {
-        "name": "狂气爆发",
-        "effect": "生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。"
-      }
+      "command_cards": [
+        {
+          "name": "Awaker",
+          "effect": ", staying hidden by various means.\n* Lady Daffodil has mastered the ability to move freely through dimensions. Because of that, the committee's attempts to capture her always failed."
+        }
+      ]
     },
     {
       "character_id": "casiah",
@@ -487,6 +489,19 @@
       }
     },
     {
+      "character_id": "mouchette",
+      "character_name": "茉夏",
+      "character_name_en": "Mouchette",
+      "rarity": "SSR",
+      "realm": "chaos",
+      "command_cards": [
+        {
+          "name": "Defense",
+          "effect": "-\n|Mist Realm Vestige\n|"
+        }
+      ]
+    },
+    {
       "character_id": "helot",
       "character_name": "血链·希洛",
       "character_name_en": "Helot",
@@ -499,17 +514,6 @@
           "effect": "血链·希洛的核心爆发技能，造成极高单次爆发伤害。配合环行·拉蒙娜的大招召回打击卡，实现「血希」队核心爆发。"
         }
       ]
-    },
-    {
-      "character_id": "murphy",
-      "character_name": "墨菲",
-      "character_name_en": "Murphy",
-      "rarity": "SSR",
-      "realm": "aequor",
-      "special_mechanic": {
-        "name": "献祭(Sacrifice)",
-        "description": "墨菲的专属被动机制。通过献祭自身生命为队伍提供防护，技能组强势补强深海界域弱点。"
-      }
     }
   ]
 }

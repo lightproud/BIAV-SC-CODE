@@ -35,7 +35,7 @@ Critical Strike Rate
 
 ### Signature Wheel: Kiss of Repose
 
-Team Unique: The wielder's Base DMG +10% During this exploration, every time the wielder kills an enemy, their Crit. Rate +2% and Exalt Base DMG +2%, up to 10 times. If the current Realm is Caro, the wielder gains an extra 15 Aliemus when they directly consume Embryo (cooldown 3 turns).
+=== Crit. DMG: 21.6% ===
 
 ### Recommended Wheel: Tablet of Scriptures
 

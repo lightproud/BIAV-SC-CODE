@@ -40,7 +40,7 @@ SSR Ultra DPS Awakener (standard). T0-tier Ultra carry, known as "Green Flame Da
 
 ### Signature Wheel: Unbearable Freedom
 
-Hand Limit +2. Effects of the same type cannot stack. The wielder's Base DMG and Shield Generation are increased by 9%. Obtain 35 Aliemus upon entering the Ultra Round. Release "Annihilation" to grant all Awakeners Temporary Crit. DMG +13%. This effect has a Cooldown of 3 turns.
+=== DMG Amplification: 14.4% ===
 
 
 

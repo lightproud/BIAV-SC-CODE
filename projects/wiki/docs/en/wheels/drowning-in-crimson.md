@@ -14,4 +14,4 @@ description: "沉入殷红(Drowning in Crimson) - Morimens Wiki"
 
 ## Effect
 
-Caro (Flesh) series wheel.
+== Story ==

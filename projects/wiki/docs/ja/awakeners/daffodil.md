@@ -25,14 +25,12 @@ SSR超次元攻撃型覚醒体（限定）。T0評価。
 
 | カード名 | コスト | 効果 |
 |------|------|------|
-| **狂気爆発**: 狂气爆发 | — | 生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。 |
+| **狂気爆発**: 狂気爆発 | — | データ準備中 |
 | **覚醒カード**: 覚醒カード | — | データ準備中 |
-| *指令カード* | — | データ準備中 |
+| Awaker | — | , staying hidden by various means.
+* Lady Daffodil has mastered the ability to move freely through dimensions. Because of that, the committee's attempts to capture her always failed. |
 | *啓霊* | — | データ準備中 |
 
-::: tip
-核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。
-:::
 
 
 ## 推奨装備

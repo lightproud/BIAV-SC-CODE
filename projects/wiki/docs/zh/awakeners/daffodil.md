@@ -25,14 +25,12 @@ portrait: /portraits/daffodil.png
 
 | 卡名 | 费用 | 效果 |
 |------|------|------|
-| **狂气爆发**: 狂气爆发 | — | 生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。 |
+| **狂气爆发**: 狂气爆发 | — | 数据待补充 |
 | **觉醒卡**: 觉醒卡 | — | 数据待补充 |
-| *指令卡* | — | 数据待补充 |
+| Awaker | — | , staying hidden by various means.
+* Lady Daffodil has mastered the ability to move freely through dimensions. Because of that, the committee's attempts to capture her always failed. |
 | *启灵* | — | 数据待补充 |
 
-::: tip
-核心技能为「断颈一击」，可配合卡茜亚的隔空取物从超维空间拉出再打一次。需要前期养成才能发挥全部实力。
-:::
 
 
 ## 推荐装备

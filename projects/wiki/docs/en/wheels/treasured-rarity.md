@@ -14,4 +14,5 @@ description: "至为珍贵的藏品(Treasured Rarity) - Morimens Wiki"
 
 ## Effect
 
+=== DMG Amplification: 14.4% ===
 Team Unique: The wielder's Shield Generation increases by 12%. Gain Shield equal to 10% of the wielder's DEF at the end of the turn, which increases by 2% of the wielder's DEF per turn.
