@@ -59,9 +59,11 @@ push to main 且路径匹配：`site/**`、`projects/site/**`、`projects/wiki/d
 
 ## 文件位置说明
 
-主站源文件位于仓库根目录下的 `site/index.html`（而非 `projects/site/`），
-因为部署流水线 `.github/workflows/deploy-site.yml` 直接引用该路径。
-如需迁移，必须同步修改工作流文件。
+主站源文件已迁移至 `projects/site/public/`（index.html、404.html）。
+设计系统文件位于 `projects/site/design/`。
+
+> **注意**：部署流水线 `.github/workflows/deploy-site.yml` 仍引用旧路径
+> `site/` 和 `design/**`，需要同步更新。
 
 ## 视觉规范
 
