@@ -150,7 +150,9 @@
       "realm": "chaos",
       "role": "attack",
       "is_limited": true,
-      "obtain": "限定活动唤醒",
+      "obtain": "特殊获取",
+      "acquisition": "special",
+      "acquisition_note": "special acquisition method (非标准卡池获取)",
       "aliases": [
         "环拉"
       ],
@@ -180,9 +182,9 @@
         "design_note": "制作人最喜欢的角色。"
       },
       "description_en": "SSR Chaos DPS Awakener (limited). Timeworn variant of Ramona centered on Negentropy and card manipulation. Can recall large amounts of Strike cards to synergize with team burst. Community nickname: \"Ring Ramona\".",
-      "obtain_en": "Limited Event Summon",
+      "obtain_en": "Special Acquisition",
       "description_ja": "SSR混沌攻撃型覚醒体（限定）。環行バリアント。",
-      "obtain_ja": "限定イベント召喚",
+      "obtain_ja": "特殊獲得方法",
       "role_in_team": "大招召回打击卡，配合希洛破链一击爆发。环娜的大招为复制，独立于牌库之外。仅3费降费。",
       "dev_notes": "技能由制作人Light亲手设计。核心意图：从过去经历中获得力量（复制上回合最后打出的卡牌）。V1.1 PV结尾台词：'无论失败多少次，我终将拯救你。'制作人个人最特别的角色。与熔毁朵尔、血链希洛、诞妄墨菲同期构思。"
     },
@@ -1626,7 +1628,9 @@
       "name": "24",
       "name_en": "24",
       "rarity": "SSR",
-      "realm": "chaos",
+      "realm": "all",
+      "realms": ["chaos", "aequor", "caro", "ultra"],
+      "realm_note": "four-realm adaptation (四领域适性) — works across all four realms",
       "role": "attack",
       "is_limited": true,
       "obtain": "限定活动唤醒",
@@ -1891,7 +1895,7 @@
     {
       "id": "helot",
       "name": "血链·希洛",
-      "name_en": "Helot",
+      "name_en": "Helot: Catena",
       "rarity": "SSR",
       "realm": "caro",
       "role": "attack",
