@@ -14,23 +14,18 @@ portrait: /portraits/alice.png
   | Realm | Caro |
   | Role | Sub-Attack |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。常驻池可获取。
+SSR Caro Sub-DPS Awakener (standard). Provides supplementary damage alongside Caro main carries in Devour/Embryo compositions. Available from standard pool.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域T1副输出型唤醒体。配合血肉主C进行副输出，在吞噬/胚胎体系中提供额外伤害。
 
-
+Data pending
 
 ## Recommended Equipment
 

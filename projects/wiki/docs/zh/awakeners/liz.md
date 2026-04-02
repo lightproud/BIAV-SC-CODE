@@ -19,7 +19,7 @@ portrait: /portraits/liz.png
 
 ## 简介
 
-超维界域T0输出型唤醒体，社区别称「青炎舞者」「青炎」。以毒伤+穿刺为核心的爆发型主C，超维队的主要输出选择。青色火焰为其标志性视觉元素。
+超维界域T0输出型唤醒体，社区别称「青炎舞者」「青炎」。以毒伤+穿刺为核心的爆发型主C，超维队的主要输出选择。青色火焰为其标志性视觉元素。常见配队：Ultra Starter Team、Ultra Double-C Double-Shield。
 
 ## 技能
 
@@ -38,7 +38,10 @@ portrait: /portraits/liz.png
 
 ## 推荐装备
 
+### 专属命轮: 不可承受的自由
+
 数据待补充
+
 
 
 <CharacterCompare />

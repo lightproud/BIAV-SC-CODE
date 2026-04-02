@@ -14,24 +14,16 @@ portrait: /portraits/goliath.png
   | Realm | Aequor |
   | Role | Defense |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-深海界域T1防御型唤醒体。为深海队提供稳定的前排防护和触手联动能力。拥有灵塑适性天赋，触腕伤害额外提升。常驻池可获取。
+SSR Aequor Defense Awakener (standard). Provides stable frontline protection and tentacle synergy for Aequor teams. Has Spirit Sculpt talent that further boosts tentacle damage. Featured in: Caecus Counter Team, Shark-Caecus Team.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| **Talent**: Soulforge Aptitude | — | 戈利亚造成的基础伤害提高20%~50%，「巨刃之威」使最终伤害临时提高5~10%。队伍中1/2/3名其他利莫里亚唤醒体时，所有唤醒体力量提高6/15/30%。 |
-| *Enlighten* | — | Data pending |
-
-
+Data pending
 
 ## Recommended Equipment
 

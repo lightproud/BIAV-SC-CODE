@@ -1,14 +1,15 @@
 ---
-title: "Uteri Somnia - 運命の輪"
-description: "Uteri Somnia (黑暗中的安眠) - Morimens 運命の輪"
+title: "黑暗中的安眠（Uteri Somnia）- 運命の輪"
+description: "黑暗中的安眠(Uteri Somnia) - 忘却前夜命轮详情"
 ---
 
-# Uteri Somnia
-**黑暗中的安眠**
+# 黑暗中的安眠
+**Uteri Somnia**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR限定・星辰線 |
 
 ## 効果
 

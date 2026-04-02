@@ -14,12 +14,12 @@ portrait: /portraits/ramona.png
   | Realm | Chaos |
   | Role | Support |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-混沌界域T1辅助型唤醒体，御四家成员之一。可从弃牌堆找回指令卡并最多减4费，卡牌循环能力优秀。社区讨论度高，与SR版拉蒙娜为不同角色。
+SSR Chaos Support Awakener (standard). Versatile support with card recycling and AP generation abilities. Available from standard pool. Featured in: Caecus Counter Team, #24 Chaos National Team.
 
 ## Skills
 
@@ -40,7 +40,7 @@ portrait: /portraits/ramona.png
 
 ### Signature Wheel: Retrograde Timepiece
 
-使用佩戴者指令卡后，30-60%概率从弃牌堆返回手牌。
+After using the wearer's command card, 30-60% chance to return it from the discard pile to hand.
 
 ### Signature Wheel: Reunion Moment
 

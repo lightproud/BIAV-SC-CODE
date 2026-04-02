@@ -12,16 +12,31 @@
 
 ## How It Works
 
-1. **Interact** with Awakeners through the Silver Core Communication interface.
-2. **Give gifts** -- Each Awakener has preferred and disliked gifts.
-3. **Include in battles** -- Using an Awakener in combat slowly builds affinity.
-4. **Complete character quests** -- Special quests that deepen the bond.
+The Silver Core Communication system is accessed from the main menu. Through this interface, the Keeper can interact with any Awakener they have obtained. The system ties directly into the game's lore -- the "Silver Core" is a communication device that allows the Keeper to connect with the minds and memories of Awakened Ones, reflecting the game's central themes of memory and human connection.
+
+1. **Interact** with Awakeners through the Silver Core Communication interface. Daily interactions are available and accumulate affinity over time.
+2. **Give gifts** -- Each Awakener has preferred and disliked gifts based on their personality and lore background. Preferred gifts grant significantly more affinity than neutral ones.
+3. **Include in battles** -- Using an Awakener in your combat party slowly builds affinity through shared experience.
+4. **Complete character quests** -- Special quests tied to each Awakener's backstory that grant substantial affinity boosts upon completion.
 
 ## Affinity Levels
 
-| Level | Affinity Required | Unlocks |
-|-------|-------------------|---------|
-| *To be added* | — | — |
+| Level | Unlocks |
+|-------|---------|
+| 1 | Basic interaction dialogue |
+| 2 | First personal story episode |
+| 3 | New voice lines |
+| 4 | Stat bonus (minor) |
+| 5 | Second personal story episode |
+| 6 | Additional voice lines |
+| 7 | Stat bonus (moderate) |
+| 8 | Third personal story episode |
+| 9 | Special cosmetic content (expressions, profile items) |
+| 10 | Final personal story episode and full stat bonus |
+
+::: info
+Exact affinity point thresholds for each level vary and may be adjusted with game updates. Higher levels require significantly more affinity points than lower ones.
+:::
 
 Each affinity level unlocks new content:
 

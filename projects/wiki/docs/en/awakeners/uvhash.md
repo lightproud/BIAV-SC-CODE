@@ -14,12 +14,12 @@ portrait: /portraits/uvhash.png
   | Realm | Caro |
   | Role | Attack |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-血肉界域T0输出型唤醒体，血肉队核心主C之一。通过自残降血触发吞噬机制，反复释放狂气爆发造成递增伤害。体质属性极高，越战越强的暴走型角色。
+SSR Caro DPS Awakener (standard). Devour-based DPS who consumes Embryo cards for massive damage. Core carry for Caro compositions. Featured in: Uuhashi Standard Flesh.
 
 ## Skills
 
@@ -40,7 +40,7 @@ portrait: /portraits/uvhash.png
 
 ### Signature Wheel: Caro Feast
 
-提供暴伤；通过超限和吞噬获得力量。
+Provides Crit DMG; gain Power through Over-Exalt and Devour.
 
 
 

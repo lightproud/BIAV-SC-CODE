@@ -1,12 +1,12 @@
 ---
 title: Karen | Morimens Wiki
-description: Full profile of Karen (莱克), a Chaos Support in Morimens
+description: Full profile of Karen (珈伦), a Chaos Support in Morimens
 portrait: /portraits/karen.png
 ---
-# Karen (莱克)
+# Karen (珈伦)
 
 <div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/karen.png'" alt="莱克" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/karen.png'" alt="珈伦" class="portrait" />
 
   | Attribute | Value |
   |------|-----|
@@ -14,29 +14,22 @@ portrait: /portraits/karen.png
   | Realm | Chaos |
   | Role | Support |
   | Limited | No |
-  | Availability | 活动唤醒 |
+  | Availability | Event Summon |
 </div>
 
 ## Introduction
 
-混沌界域辅助型唤醒体，v1.5推出。官方定位辅助但输出能力突出，专属命轮极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。
+SSR Chaos Support Awakener (standard). Provides Fury generation and team buffs. Available from standard pool.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
-
-
+Data pending
 
 ## Recommended Equipment
 
-### Recommended Wheel: Grace Through Pain
+### Signature Wheel: Hour of Fortune
 
-Data pending
+Team Unique: At the start of battle, the wielder's Command Card Crit. Rate + 3% for each relic possessed. After using Exalt, roll a 4-sided die; the wielder gains Aliemus and Temporary Crit. DMG equal to 3 times the roll result. If the roll is 4 or higher, other Awakeners also gain half.
 
 
 

@@ -14,14 +14,16 @@ portrait: /portraits/sr_aojier.png
   | Realm | Chaos |
   | Role | Defense |
   | Limited | No |
-  | Availability | 序章教程赠送 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域防御型，提供嘲讽/点名能力。SSR同名角色奥吉尔为独立角色。
+SR Chaos Defense Awakener (standard).
 
 ## Skills
+
+**Role Summary**: 混沌界域T1辅助型唤醒体，御四家成员。提供队伍增益和敌方减益效果，是混沌队稳定的后排辅助。
 
 Data pending
 

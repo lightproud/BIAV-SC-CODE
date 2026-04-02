@@ -1,15 +1,17 @@
 ---
-title: "Hymn of the Sovereign - 運命の輪"
-description: "Hymn of the Sovereign (神王的颂歌) - Morimens 運命の輪"
+title: "神王的颂歌（Hymn of the Sovereign）- 運命の輪"
+description: "神王的颂歌(Hymn of the Sovereign) - 忘却前夜命轮详情"
 ---
 
-# Hymn of the Sovereign
-**神王的颂歌**
+# 神王的颂歌
+**Hymn of the Sovereign**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
-| キャラクター | 希莱斯特(Celeste) |
+| カテゴリ | SSR常設 |
+| 対応キャラ | 希莱斯特(Celeste) |
+| メインステータス | 狂気チャージ 7.2 |
 
 ## 効果
 

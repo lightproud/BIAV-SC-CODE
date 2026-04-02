@@ -14,23 +14,18 @@ portrait: /portraits/clementine.png
   | Realm | Ultra |
   | Role | Support |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。星辰篇时期推出的限定辅助。
+SSR Ultra Support Awakener (limited). Ultra support with unique team synergy.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域限定辅助角色，v2.1推出。为超维队带来新的辅助能力，提升超维队的团队上限。
 
-
+Data pending
 
 ## Recommended Equipment
 

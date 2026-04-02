@@ -1,12 +1,12 @@
 ---
-title: 莱 | 忘却前夜 Wiki
-description: 莱（Leigh）血肉属性合唱型キャラクター詳細
+title: 莱克 | 忘却前夜 Wiki
+description: 莱克（Leigh）血肉属性合唱型キャラクター詳細
 portrait: /portraits/leigh.png
 ---
-# 莱 (Leigh)
+# 莱克 (Leigh)
 
 <div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱克" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|
@@ -19,22 +19,20 @@ portrait: /portraits/leigh.png
 
 ## 紹介
 
-血肉界域常驻合唱型唤醒体，卡文迪什家族的「嗜血患者」。作为合唱型角色与血肉主C产生联携效果，常驻池中即可获取的合唱位选择。
+SSR血肉合唱型覚醒体（恒常）。
 
 ## スキル
 
-| カード名 | コスト | 効果 |
-|------|------|------|
-| **狂気爆発**: 狂気爆発 | — | データ準備中 |
-| **覚醒カード**: 覚醒カード | — | データ準備中 |
-| *指令カード* | — | データ準備中 |
-| *啓霊* | — | データ準備中 |
+**役割概要**: 混沌界域v1.5新增，官方定位辅助但输出能力突出，专属命轮「好运时间」极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。
 
-
+データ準備中
 
 ## 推奨装備
 
+### 推奨命輪: 跨越疼痛（Grace Through Pain）
+
 データ準備中
+
 
 
 <CharacterCompare />

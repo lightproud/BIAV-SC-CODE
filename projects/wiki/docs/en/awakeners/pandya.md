@@ -14,23 +14,18 @@ portrait: /portraits/pandya.png
   | Realm | Chaos |
   | Role | Sub-Attack |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-混沌界域T2副输出型唤醒体。擅长配合混沌主C进行副输出，在混沌队阵容中作为灵活的副C填充位使用。
+SSR Chaos Sub-DPS Awakener (standard). Excels at sub-DPS alongside Chaos main carries, serving as a flexible off-carry slot in Chaos teams.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域T2副输出型唤醒体。配合混沌主C进行副输出。
 
-
+Data pending
 
 ## Recommended Equipment
 

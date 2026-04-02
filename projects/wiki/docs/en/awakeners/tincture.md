@@ -14,23 +14,18 @@ portrait: /portraits/tincture.png
   | Realm | Ultra |
   | Role | Support |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-超维界域T2辅助型唤醒体。提供基础辅助效果，在超维队中作为过渡辅助位使用。常驻池可获取。
+SSR Ultra Support Awakener (standard). Support for Ultra teams. Available from standard pool.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域T2辅助型唤醒体。提供基础辅助效果，过渡辅助位选择。
 
-
+Data pending
 
 ## Recommended Equipment
 

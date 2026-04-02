@@ -6,10 +6,11 @@ description: "永恒安魂曲(Eternal Requiem) - 忘却前夜命轮详情"
 # 永恒安魂曲
 **Eternal Requiem**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-ssr">SSR</span> |
-| 分类 | 常驻 |
+| 分类 | SSR常驻 |
+| 适用角色 | 哈姆林(Hameln) |
 
 ## 效果
 

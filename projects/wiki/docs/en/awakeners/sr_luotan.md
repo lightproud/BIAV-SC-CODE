@@ -14,20 +14,25 @@ portrait: /portraits/sr_luotan.png
   | Realm | Chaos |
   | Role | DPS |
   | Limited | No |
-  | Availability | 序章教程赠送 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域伤害型。SSR同名角色萝坦为独立角色。
+SR Chaos DPS Awakener (standard).
 
 ## Skills
+
+**Role Summary**: 混沌界域T1防御型唤醒体，御四家成员。银钥共鸣体系防御核心，死亡抵抗机制出色。侧重团队护盾和反伤。
 
 Data pending
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Wheel Unseen
+
+Gains buffs from Key Order triggers and hit count.
+
 
 
 <CharacterCompare />

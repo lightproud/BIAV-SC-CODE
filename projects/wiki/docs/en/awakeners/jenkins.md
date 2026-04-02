@@ -14,23 +14,18 @@ portrait: /portraits/jenkins.png
   | Realm | Ultra |
   | Role | Sub-Attack |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-超维界域T1副输出型唤醒体。超维体系中的灵活副C，可为主C提供额外的输出补充。常驻池可获取。
+SSR Ultra Sub-DPS Awakener (standard).
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域T1副输出型唤醒体。超维体系灵活副C，为主C提供额外输出补充。
 
-
+Data pending
 
 ## Recommended Equipment
 

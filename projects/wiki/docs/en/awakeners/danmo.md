@@ -14,27 +14,25 @@ portrait: /portraits/danmo.png
   | Realm | Chaos |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-混沌界域限定输出角色，满配后伤害极高，常作为助战首选。银钥爆发流代表角色，一轮爆发可秒杀大多数Boss。
+SSR Chaos DPS Awakener (limited). Extremely high damage at full investment; often the first choice for friend support. Representative of the Silver Key burst playstyle — one burst rotation can one-shot most bosses.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域限定输出角色，满配后伤害极高，以银钥爆发为核心。一轮爆发可秒杀大多数Boss，常作为助战首选。
 
-
+Data pending
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Drowning in Crimson
+
+Caro (Flesh) series wheel.
+
 
 
 <CharacterCompare />

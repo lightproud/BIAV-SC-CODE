@@ -14,23 +14,18 @@ portrait: /portraits/agrippa.png
   | Realm | Caro |
   | Role | Defense |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-血肉界域T2防御型唤醒体。为血肉队提供前排防护，适合血肉队的防御需求。常驻池可获取。
+SSR Caro Defense Awakener (standard). Provides frontline protection for Caro teams. Available from standard pool.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域T2防御型唤醒体。为血肉队提供前排防护。
 
-
+Data pending
 
 ## Recommended Equipment
 

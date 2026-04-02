@@ -14,14 +14,16 @@ portrait: /portraits/sr_duoer.png
   | Realm | Chaos |
   | Role | Support |
   | Limited | No |
-  | Availability | 序章教程赠送 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域辅助型，提供净化效果。SSR同名角色朵尔及变体熔毁·朵尔为独立角色。
+SR Chaos Support Awakener (standard).
 
 ## Skills
+
+**Role Summary**: 回血回盾回狂气，提供2回合虚弱增加队伍生存能力
 
 Data pending
 

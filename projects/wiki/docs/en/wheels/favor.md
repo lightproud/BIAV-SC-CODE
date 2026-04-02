@@ -1,16 +1,16 @@
 ---
 title: "Favor - Wheel of Destiny"
-description: "Favor (宠爱) - Morimens Wheel of Destiny"
+description: "宠爱(Favor) - Morimens Wiki"
 ---
 
 # Favor
 **宠爱**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Standard |
+| Category | SSR Standard |
 
 ## Effect
 
-狂气获取相关。
+Fury gain related.

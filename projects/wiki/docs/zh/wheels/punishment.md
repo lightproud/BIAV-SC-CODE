@@ -6,7 +6,7 @@ description: "惩戒(Punishment) - 忘却前夜命轮详情"
 # 惩戒
 **Punishment**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-r">R</span> |
 | 分类 | R |

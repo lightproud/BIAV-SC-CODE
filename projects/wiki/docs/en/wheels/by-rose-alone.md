@@ -1,15 +1,16 @@
 ---
 title: "By Rose Alone - Wheel of Destiny"
-description: "By Rose Alone (以蔷薇之名) - Morimens Wheel of Destiny"
+description: "以蔷薇之名(By Rose Alone) - Morimens Wiki"
 ---
 
 # By Rose Alone
 **以蔷薇之名**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Oblivion) |
+| Category | SSR Limited (Oblivion) |
+| Character | 索蕾尔(Sorel) |
 | Recommended | 萨尔瓦多, 泰旖丝, 血链·希洛, 索蕾尔 |
 
 ## Effect

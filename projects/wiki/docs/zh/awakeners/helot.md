@@ -38,7 +38,7 @@ portrait: /portraits/helot.png
 
 数据待补充
 
-### 专属命轮: 神言石板
+### 推荐命轮: 神言石板
 
 数据待补充
 

@@ -1,14 +1,15 @@
 ---
-title: "Enlightenment - 運命の輪"
-description: "Enlightenment (明悟) - Morimens 運命の輪"
+title: "明悟（Enlightenment）- 運命の輪"
+description: "明悟(Enlightenment) - 忘却前夜命轮详情"
 ---
 
-# Enlightenment
-**明悟**
+# 明悟
+**Enlightenment**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-r">R</span> |
+| カテゴリ | R |
 
 ## 効果
 

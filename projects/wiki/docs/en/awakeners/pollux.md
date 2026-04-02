@@ -14,23 +14,18 @@ portrait: /portraits/pollux.png
   | Realm | Ultra |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。名字来源于双子座β星，与卡斯托尔构成双子角色组合。超维队新一代主C选择。
+SSR Ultra DPS Awakener (limited). Introduced in v2.3.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域限定输出角色，v2.3.4推出，卡池「神圣赦免」。超维队新一代主C选择。
 
-
+Data pending
 
 ## Recommended Equipment
 

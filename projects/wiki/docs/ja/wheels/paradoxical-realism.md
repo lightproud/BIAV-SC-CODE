@@ -1,15 +1,17 @@
 ---
-title: "Paradoxical Realism - 運命の輪"
-description: "Paradoxical Realism (写实主义悖谬) - Morimens 運命の輪"
+title: "写实主义悖谬（Paradoxical Realism）- 運命の輪"
+description: "写实主义悖谬(Paradoxical Realism) - 忘却前夜命轮详情"
 ---
 
-# Paradoxical Realism
-**写实主义悖谬**
+# 写实主义悖谬
+**Paradoxical Realism**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
-| キャラクター | 皮克曼(Pickman) |
+| カテゴリ | SSR限定・星辰線 |
+| 対応キャラ | 皮克曼(Pickman) |
+| メインステータス | 狂気チャージ 7.2 |
 
 ## 効果
 

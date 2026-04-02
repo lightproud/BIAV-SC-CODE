@@ -14,23 +14,18 @@ portrait: /portraits/castor.png
   | Realm | Ultra |
   | Role | Defense |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-超维界域限定防御角色，v2.2.2推出。名字来源于双子座α星。与波吕克斯（Pollux，双子座β星）构成双子角色组合。
+SSR Ultra Defense Awakener (limited). Introduced in v2.2.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域限定防御角色，v2.2.2推出。
 
-
+Data pending
 
 ## Recommended Equipment
 

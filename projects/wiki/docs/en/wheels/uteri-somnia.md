@@ -1,15 +1,15 @@
 ---
 title: "Uteri Somnia - Wheel of Destiny"
-description: "Uteri Somnia (黑暗中的安眠) - Morimens Wheel of Destiny"
+description: "黑暗中的安眠(Uteri Somnia) - Morimens Wiki"
 ---
 
 # Uteri Somnia
 **黑暗中的安眠**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Stellar) |
+| Category | SSR Limited (Stellar) |
 
 ## Effect
 

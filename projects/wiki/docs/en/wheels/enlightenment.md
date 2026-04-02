@@ -1,16 +1,16 @@
 ---
 title: "Enlightenment - Wheel of Destiny"
-description: "Enlightenment (明悟) - Morimens Wheel of Destiny"
+description: "明悟(Enlightenment) - Morimens Wiki"
 ---
 
 # Enlightenment
 **明悟**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-r">R</span> |
 | Category | R |
 
 ## Effect
 
-搭配：精通+银钥。
+Synergy: Mastery + Silver Key.

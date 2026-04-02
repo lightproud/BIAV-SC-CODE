@@ -14,12 +14,12 @@ portrait: /portraits/liz.png
   | Realm | Ultra |
   | Role | Attack |
   | Limited | No |
-  | Availability | 活动唤醒 |
+  | Availability | Event Summon |
 </div>
 
 ## Introduction
 
-超维界域T0输出型唤醒体，社区别称「青炎舞者」「青炎」。以毒伤+穿刺为核心的爆发型主C，超维队的主要输出选择。青色火焰为其标志性视觉元素。
+SSR Ultra DPS Awakener (standard). T0-tier Ultra carry, known as "Green Flame Dancer". Poison + piercing burst DPS; primary damage dealer for Ultra teams. Signature green flame visual.
 
 ## Skills
 
@@ -38,7 +38,10 @@ portrait: /portraits/liz.png
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Unbearable Freedom
+
+Hand Limit +2. Effects of the same type cannot stack. The wielder's Base DMG and Shield Generation are increased by 9%. Obtain 35 Aliemus upon entering the Ultra Round. Release "Annihilation" to grant all Awakeners Temporary Crit. DMG +13%. This effect has a Cooldown of 3 turns.
+
 
 
 <CharacterCompare />

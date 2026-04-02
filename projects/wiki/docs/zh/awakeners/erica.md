@@ -19,7 +19,7 @@ portrait: /portraits/erica.png
 
 ## 简介
 
-超维界域T0防御型唤醒体，超维队核心成员，深潜三杰之一。通关血肉沼泽裂隙I免费获取。提供力量加成和易伤效果，是超维队爆发回合的关键角色。新手必练。
+超维界域T0防御型唤醒体，超维队核心成员，深潜三杰之一。通关血肉沼泽裂隙I免费获取。提供力量加成和易伤效果，是超维队爆发回合的关键角色。新手必练。常见配队：Ultra Poison Team (Beginner Recommended)、Ultra Starter Team、Ultra Double-C Double-Shield。
 
 ## 技能
 

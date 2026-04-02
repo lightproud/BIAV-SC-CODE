@@ -14,24 +14,16 @@ portrait: /portraits/galen.png
   | Realm | Chaos |
   | Role | Sub-Attack |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-混沌界域T3副输出型唤醒体，社区也写作「珈伦」。超限后配合塔薇+拉蒙娜阵容可发挥出色表现。常用于凯刻斯反击队体系中。
+SSR Chaos Sub-DPS Awakener (standard). Counter-attack team specialist.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Over-Exalt**: 超限爆发 | — | 将「奇妙料理」洗入抽牌堆和弃牌堆各1张。 |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
-
-
+Data pending
 
 ## Recommended Equipment
 

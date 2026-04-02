@@ -1,15 +1,15 @@
 ---
 title: "Veiled Anguish - Wheel of Destiny"
-description: "Veiled Anguish (隐没的痛楚) - Morimens Wheel of Destiny"
+description: "隐没的痛楚(Veiled Anguish) - Morimens Wiki"
 ---
 
 # Veiled Anguish
 **隐没的痛楚**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Stellar) |
+| Category | SSR Limited (Stellar) |
 
 ## Effect
 

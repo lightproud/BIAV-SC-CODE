@@ -14,12 +14,12 @@ portrait: /portraits/miryam.png
   | Realm | Aequor |
   | Role | Support |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-深海界域限定辅助型唤醒体，强力触手辅助。社区昵称「米粒」。v1.4版本获得增强：技能「至高生命献祭」调整为穿透伤害，灵之觉醒与天赋增强。深海队必备辅助。
+SSR Aequor Support Awakener (limited). Powerful tentacle support. v1.4 enhanced: "Supreme Life Sacrifice" adjusted to penetration damage; Rouse and Talent strengthened. Essential support for Aequor teams. Key synergy: 触手叠加.
 
 ## Skills
 

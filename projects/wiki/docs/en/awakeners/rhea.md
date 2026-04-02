@@ -14,12 +14,12 @@ portrait: /portraits/rhea.png
   | Realm | Caro |
   | Role | Support |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-血肉界域T0辅助型唤醒体，血肉队核心辅助。兼具回血和上盾功能，核心玩法为「养胎流」——通过孕育胚胎积累增益后一次释放爆发。血肉队必备。
+SSR Caro Healer Awakener (standard). Provides healing through Over-Exalt and gains Power and Shield when taking damage. Supports Caro team sustain. Key synergy: 胚胎引擎, 神父血池循环.
 
 ## Skills
 
@@ -39,7 +39,7 @@ portrait: /portraits/rhea.png
 
 ### Signature Wheel: Gluttonous Banquet
 
-增加超限治疗；受伤时获得力量和护盾。
+Increases Over-Exalt healing; gain Power and Shield when taking damage.
 
 
 

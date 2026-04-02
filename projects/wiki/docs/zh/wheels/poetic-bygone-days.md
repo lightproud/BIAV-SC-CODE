@@ -6,12 +6,12 @@ description: "冬夜忆(Poetic Bygone Days) - 忘却前夜命轮详情"
 # 冬夜忆
 **Poetic Bygone Days**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-ssr">SSR</span> |
-| 分类 | 常驻 |
+| 分类 | SSR常驻 |
+| 适用角色 | 艾继丝(Aigis) |
 | 主属性 | 银钥充能 |
-| 适用角色 | 艾继丝(Aegis) |
 
 ## 效果
 

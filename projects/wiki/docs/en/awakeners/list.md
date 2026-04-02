@@ -6,65 +6,65 @@ A complete list of all Awakeners in Morimens, organized by realm and name. There
 
 | Awakener | Realm | Role | Tier | Availability |
 |----------|-------|------|------|-------------|
-| [24](/awakeners/24.html) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T0 | Limited |
-| [Alva](/awakeners/alva.html) | <span class="realm-badge realm-chaos">Chaos</span> | Defense | T0 | Standard |
-| [Danmo](/awakeners/danmo.html) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T1 | Limited |
-| [Doll](/awakeners/doll.html) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T0 | Standard |
-| [Doll: Inferno](/awakeners/doll-inferno.html) | <span class="realm-badge realm-chaos">Chaos</span> | Support | — | Limited |
-| [Galen](/awakeners/galen.html) | <span class="realm-badge realm-chaos">Chaos</span> | Sub-Attack | T3 | Standard |
-| [Hameln](/awakeners/hameln.html) | <span class="realm-badge realm-chaos">Chaos</span> | Support | — | Standard |
-| [Karen](/awakeners/karen.html) | <span class="realm-badge realm-chaos">Chaos</span> | Support | — | Standard |
-| [Kathigu-Ra](/awakeners/kathigu-ra.html) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | — | Limited |
-| [Lily](/awakeners/lily.html) | <span class="realm-badge realm-chaos">Chaos</span> | Defense | T1 | Standard |
-| [Lotan](/awakeners/lotan.html) | <span class="realm-badge realm-chaos">Chaos</span> | Defense | T1 | Standard |
-| [Mouchette](/awakeners/mouchette.html) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | — | Limited |
-| [Nodera](/awakeners/nodera.html) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T2 | Standard |
-| [Nymphia](/awakeners/nymphia.html) | <span class="realm-badge realm-chaos">Chaos</span> | Support | T3 | Standard |
-| [Ogier](/awakeners/ogier.html) | <span class="realm-badge realm-chaos">Chaos</span> | Support | T1 | Standard |
-| [Pandya](/awakeners/pandya.html) | <span class="realm-badge realm-chaos">Chaos</span> | Sub-Attack | T2 | Standard |
-| [Ramona](/awakeners/ramona-timeworn.html) | <span class="realm-badge realm-chaos">Chaos</span> | Support | T1 | Standard |
-| [Ramona: Timeworn](/awakeners/ramona-timeworn.html) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T0 | Limited |
-| [Tawil](/awakeners/tawil.html) | <span class="realm-badge realm-chaos">Chaos</span> | Support | — | Standard |
-| [Aurita](/awakeners/aurita.html) | <span class="realm-badge realm-aequor">Aequor</span> | Attack | T2 | Free (Chaos Rift I) |
-| [Caecus](/awakeners/caecus.html) | <span class="realm-badge realm-aequor">Aequor</span> | Sub-Attack | T2 | Standard |
-| [Celeste](/awakeners/celeste.html) | <span class="realm-badge realm-aequor">Aequor</span> | Support | T1 | Standard |
-| [Corposant](/awakeners/corposant.html) | <span class="realm-badge realm-aequor">Aequor</span> | Defense | — | Limited |
-| [Divine King Tulu](/awakeners/divine-king-tulu.html) | <span class="realm-badge realm-aequor">Aequor</span> | Attack | — | Limited |
-| [Faros](/awakeners/faros.html) | <span class="realm-badge realm-aequor">Aequor</span> | Support | T3 | Standard |
-| [Goliath](/awakeners/goliath.html) | <span class="realm-badge realm-aequor">Aequor</span> | Defense | T1 | Standard |
-| [Miryam](/awakeners/miryam.html) | <span class="realm-badge realm-aequor">Aequor</span> | Support | — | Limited |
-| [Murphy](/awakeners/murphy.html) | <span class="realm-badge realm-aequor">Aequor</span> | Defense | — | Standard |
-| [Murphy: Fauxborn](/awakeners/murphy-fauxborn.html) | <span class="realm-badge realm-aequor">Aequor</span> | Chorus | — | Limited |
-| [Pickman](/awakeners/pickman.html) | <span class="realm-badge realm-aequor">Aequor</span> | Attack | — | Limited |
-| [Shan](/awakeners/shan.html) | <span class="realm-badge realm-aequor">Aequor</span> | Sub-Attack | T1 | Standard |
-| [Tulu](/awakeners/tulu.html) | <span class="realm-badge realm-aequor">Aequor</span> | Attack | T0 | Limited |
-| [Agrippa](/awakeners/agrippa.html) | <span class="realm-badge realm-caro">Caro</span> | Defense | T2 | Standard |
-| [Aigis](/awakeners/aigis.html) | <span class="realm-badge realm-caro">Caro</span> | Support | — | Standard |
-| [Alice](/awakeners/alice.html) | <span class="realm-badge realm-caro">Caro</span> | Sub-Attack | T1 | Standard |
-| [Doresain](/awakeners/doresain.html) | <span class="realm-badge realm-caro">Caro</span> | Attack | — | Limited |
-| [Faint](/awakeners/faint.html) | <span class="realm-badge realm-caro">Caro</span> | Sub-Attack | T2 | Standard |
-| [Helot](/awakeners/helot.html) | <span class="realm-badge realm-caro">Caro</span> | Attack | — | Limited |
-| [Leigh](/awakeners/leigh.html) | <span class="realm-badge realm-caro">Caro</span> | Chorus | — | Standard |
-| [Rhea](/awakeners/rhea.html) | <span class="realm-badge realm-caro">Caro</span> | Support | T0 | Standard |
-| [Salvador](/awakeners/salvador.html) | <span class="realm-badge realm-caro">Caro</span> | Defense | — | Standard |
-| [Shilo](/awakeners/shilo.html) | <span class="realm-badge realm-caro">Caro</span> | Attack | T3 | Standard |
-| [Sorel](/awakeners/sorel.html) | <span class="realm-badge realm-caro">Caro</span> | Attack | T0 | Limited |
-| [Thais](/awakeners/thais.html) | <span class="realm-badge realm-caro">Caro</span> | Support | — | Limited |
-| [Uvhash](/awakeners/uvhash.html) | <span class="realm-badge realm-caro">Caro</span> | Attack | T0 | Standard |
-| [Xu](/awakeners/xu.html) | <span class="realm-badge realm-caro">Caro</span> | Chorus | — | Limited |
-| [Arachne](/awakeners/arachne.html) | <span class="realm-badge realm-ultra">Ultra</span> | Attack | — | Limited (v2.5) |
-| [Casiah](/awakeners/casiah.html) | <span class="realm-badge realm-ultra">Ultra</span> | Sub-Attack | T1 | Standard |
-| [Castor](/awakeners/castor.html) | <span class="realm-badge realm-ultra">Ultra</span> | Defense | — | Limited |
-| [Clementine](/awakeners/clementine.html) | <span class="realm-badge realm-ultra">Ultra</span> | Support | — | Limited |
-| [Daffodil](/awakeners/daffodil.html) | <span class="realm-badge realm-ultra">Ultra</span> | Attack | T0 | Limited |
-| [Erica](/awakeners/erica.html) | <span class="realm-badge realm-ultra">Ultra</span> | Defense | T0 | Free (Caro Rift I) |
-| [Horla](/awakeners/horla.html) | <span class="realm-badge realm-ultra">Ultra</span> | Support | — | Standard |
-| [Jenkins](/awakeners/jenkins.html) | <span class="realm-badge realm-ultra">Ultra</span> | Sub-Attack | T1 | Standard |
-| [Liz](/awakeners/liz.html) | <span class="realm-badge realm-ultra">Ultra</span> | Attack | T0 | Standard |
-| [Pollux](/awakeners/pollux.html) | <span class="realm-badge realm-ultra">Ultra</span> | Attack | — | Limited |
-| [Tincture](/awakeners/tincture.html) | <span class="realm-badge realm-ultra">Ultra</span> | Support | T2 | Standard |
-| [Wanda](/awakeners/wanda.html) | <span class="realm-badge realm-ultra">Ultra</span> | Defense | — | Standard |
-| [Winkle](/awakeners/winkle.html) | <span class="realm-badge realm-ultra">Ultra</span> | Support | T1 | Standard |
+| [24](./24.md) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T0 | Limited |
+| [Alva](./alva.md) | <span class="realm-badge realm-chaos">Chaos</span> | Defense | T0 | Standard |
+| [Danmo](./danmo.md) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T1 | Limited |
+| [Doll](./doll.md) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T0 | Standard |
+| [Doll: Inferno](./doll-inferno.md) | <span class="realm-badge realm-chaos">Chaos</span> | Support | — | Limited |
+| [Galen](./galen.md) | <span class="realm-badge realm-chaos">Chaos</span> | Sub-Attack | T3 | Standard |
+| [Hameln](./hameln.md) | <span class="realm-badge realm-chaos">Chaos</span> | Support | — | Standard |
+| [Karen](./karen.md) | <span class="realm-badge realm-chaos">Chaos</span> | Support | — | Standard |
+| [Kathigu-Ra](./kathigu-ra.md) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | — | Limited |
+| [Lily](./lily.md) | <span class="realm-badge realm-chaos">Chaos</span> | Defense | T1 | Standard |
+| [Lotan](./lotan.md) | <span class="realm-badge realm-chaos">Chaos</span> | Defense | T1 | Standard |
+| [Mouchette](./mouchette.md) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | — | Limited |
+| [Nodera](./nodera.md) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T2 | Standard |
+| [Nymphia](./nymphia.md) | <span class="realm-badge realm-chaos">Chaos</span> | Support | T3 | Standard |
+| [Ogier](./ogier.md) | <span class="realm-badge realm-chaos">Chaos</span> | Support | T1 | Standard |
+| [Pandya](./pandya.md) | <span class="realm-badge realm-chaos">Chaos</span> | Sub-Attack | T2 | Standard |
+| [Ramona](./ramona-timeworn.md) | <span class="realm-badge realm-chaos">Chaos</span> | Support | T1 | Standard |
+| [Ramona: Timeworn](./ramona-timeworn.md) | <span class="realm-badge realm-chaos">Chaos</span> | Attack | T0 | Limited |
+| [Tawil](./tawil.md) | <span class="realm-badge realm-chaos">Chaos</span> | Support | — | Standard |
+| [Aurita](./aurita.md) | <span class="realm-badge realm-aequor">Aequor</span> | Attack | T2 | Free (Chaos Rift I) |
+| [Caecus](./caecus.md) | <span class="realm-badge realm-aequor">Aequor</span> | Sub-Attack | T2 | Standard |
+| [Celeste](./celeste.md) | <span class="realm-badge realm-aequor">Aequor</span> | Support | T1 | Standard |
+| [Corposant](./corposant.md) | <span class="realm-badge realm-aequor">Aequor</span> | Defense | — | Limited |
+| [Divine King Tulu](./divine-king-tulu.md) | <span class="realm-badge realm-aequor">Aequor</span> | Attack | — | Limited |
+| [Faros](./faros.md) | <span class="realm-badge realm-aequor">Aequor</span> | Support | T3 | Standard |
+| [Goliath](./goliath.md) | <span class="realm-badge realm-aequor">Aequor</span> | Defense | T1 | Standard |
+| [Miryam](./miryam.md) | <span class="realm-badge realm-aequor">Aequor</span> | Support | — | Limited |
+| [Murphy](./murphy.md) | <span class="realm-badge realm-aequor">Aequor</span> | Defense | — | Standard |
+| [Murphy: Fauxborn](./murphy-fauxborn.md) | <span class="realm-badge realm-aequor">Aequor</span> | Chorus | — | Limited |
+| [Pickman](./pickman.md) | <span class="realm-badge realm-aequor">Aequor</span> | Attack | — | Limited |
+| [Shan](./shan.md) | <span class="realm-badge realm-aequor">Aequor</span> | Sub-Attack | T1 | Standard |
+| [Tulu](./tulu.md) | <span class="realm-badge realm-aequor">Aequor</span> | Attack | T0 | Limited |
+| [Agrippa](./agrippa.md) | <span class="realm-badge realm-caro">Caro</span> | Defense | T2 | Standard |
+| [Aigis](./aigis.md) | <span class="realm-badge realm-caro">Caro</span> | Support | — | Standard |
+| [Alice](./alice.md) | <span class="realm-badge realm-caro">Caro</span> | Sub-Attack | T1 | Standard |
+| [Doresain](./doresain.md) | <span class="realm-badge realm-caro">Caro</span> | Attack | — | Limited |
+| [Faint](./faint.md) | <span class="realm-badge realm-caro">Caro</span> | Sub-Attack | T2 | Standard |
+| [Helot](./helot.md) | <span class="realm-badge realm-caro">Caro</span> | Attack | — | Limited |
+| [Leigh](./leigh.md) | <span class="realm-badge realm-caro">Caro</span> | Chorus | — | Standard |
+| [Rhea](./rhea.md) | <span class="realm-badge realm-caro">Caro</span> | Support | T0 | Standard |
+| [Salvador](./salvador.md) | <span class="realm-badge realm-caro">Caro</span> | Defense | — | Standard |
+| [Shilo](./shilo.md) | <span class="realm-badge realm-caro">Caro</span> | Attack | T3 | Standard |
+| [Sorel](./sorel.md) | <span class="realm-badge realm-caro">Caro</span> | Attack | T0 | Limited |
+| [Thais](./thais.md) | <span class="realm-badge realm-caro">Caro</span> | Support | — | Limited |
+| [Uvhash](./uvhash.md) | <span class="realm-badge realm-caro">Caro</span> | Attack | T0 | Standard |
+| [Xu](./xu.md) | <span class="realm-badge realm-caro">Caro</span> | Chorus | — | Limited |
+| [Arachne](./arachne.md) | <span class="realm-badge realm-ultra">Ultra</span> | Attack | — | Limited (v2.5) |
+| [Casiah](./casiah.md) | <span class="realm-badge realm-ultra">Ultra</span> | Sub-Attack | T1 | Standard |
+| [Castor](./castor.md) | <span class="realm-badge realm-ultra">Ultra</span> | Defense | — | Limited |
+| [Clementine](./clementine.md) | <span class="realm-badge realm-ultra">Ultra</span> | Support | — | Limited |
+| [Daffodil](./daffodil.md) | <span class="realm-badge realm-ultra">Ultra</span> | Attack | T0 | Limited |
+| [Erica](./erica.md) | <span class="realm-badge realm-ultra">Ultra</span> | Defense | T0 | Free (Caro Rift I) |
+| [Horla](./horla.md) | <span class="realm-badge realm-ultra">Ultra</span> | Support | — | Standard |
+| [Jenkins](./jenkins.md) | <span class="realm-badge realm-ultra">Ultra</span> | Sub-Attack | T1 | Standard |
+| [Liz](./liz.md) | <span class="realm-badge realm-ultra">Ultra</span> | Attack | T0 | Standard |
+| [Pollux](./pollux.md) | <span class="realm-badge realm-ultra">Ultra</span> | Attack | — | Limited |
+| [Tincture](./tincture.md) | <span class="realm-badge realm-ultra">Ultra</span> | Support | T2 | Standard |
+| [Wanda](./wanda.md) | <span class="realm-badge realm-ultra">Ultra</span> | Defense | — | Standard |
+| [Winkle](./winkle.md) | <span class="realm-badge realm-ultra">Ultra</span> | Support | T1 | Standard |
 
 ::: tip
 SSR Awakeners have a 3% pull rate with a guaranteed pity at 30 pulls. See the [Gacha](../modes/gacha.md) page for details.
@@ -87,80 +87,80 @@ The four starter SR Awakeners are given for free during the Prologue tutorial. E
 
 | Awakener | Role | Tier | Availability |
 |----------|------|------|-------------|
-| [24](/awakeners/24.html) | Attack | T0 | Limited |
-| [Alva](/awakeners/alva.html) | Defense | T0 | Standard |
-| [Danmo](/awakeners/danmo.html) | Attack | T1 | Limited |
-| [Doll](/awakeners/doll.html) | Attack | T0 | Standard |
-| [Doll: Inferno](/awakeners/doll-inferno.html) | Support | — | Limited |
-| [Galen](/awakeners/galen.html) | Sub-Attack | T3 | Standard |
-| [Hameln](/awakeners/hameln.html) | Support | — | Standard |
-| [Karen](/awakeners/karen.html) | Support | — | Standard |
-| [Kathigu-Ra](/awakeners/kathigu-ra.html) | Attack | — | Limited |
-| [Lily](/awakeners/lily.html) | Defense | T1 | Standard |
-| [Lotan](/awakeners/lotan.html) | Defense | T1 | Standard |
-| [Mouchette](/awakeners/mouchette.html) | Attack | — | Limited |
-| [Nodera](/awakeners/nodera.html) | Attack | T2 | Standard |
-| [Nymphia](/awakeners/nymphia.html) | Support | T3 | Standard |
-| [Ogier](/awakeners/ogier.html) | Support | T1 | Standard |
-| [Pandya](/awakeners/pandya.html) | Sub-Attack | T2 | Standard |
-| [Ramona](/awakeners/ramona-timeworn.html) | Support | T1 | Standard |
-| [Ramona: Timeworn](/awakeners/ramona-timeworn.html) | Attack | T0 | Limited |
-| [Tawil](/awakeners/tawil.html) | Support | — | Standard |
+| [24](./24.md) | Attack | T0 | Limited |
+| [Alva](./alva.md) | Defense | T0 | Standard |
+| [Danmo](./danmo.md) | Attack | T1 | Limited |
+| [Doll](./doll.md) | Attack | T0 | Standard |
+| [Doll: Inferno](./doll-inferno.md) | Support | — | Limited |
+| [Galen](./galen.md) | Sub-Attack | T3 | Standard |
+| [Hameln](./hameln.md) | Support | — | Standard |
+| [Karen](./karen.md) | Support | — | Standard |
+| [Kathigu-Ra](./kathigu-ra.md) | Attack | — | Limited |
+| [Lily](./lily.md) | Defense | T1 | Standard |
+| [Lotan](./lotan.md) | Defense | T1 | Standard |
+| [Mouchette](./mouchette.md) | Attack | — | Limited |
+| [Nodera](./nodera.md) | Attack | T2 | Standard |
+| [Nymphia](./nymphia.md) | Support | T3 | Standard |
+| [Ogier](./ogier.md) | Support | T1 | Standard |
+| [Pandya](./pandya.md) | Sub-Attack | T2 | Standard |
+| [Ramona](./ramona-timeworn.md) | Support | T1 | Standard |
+| [Ramona: Timeworn](./ramona-timeworn.md) | Attack | T0 | Limited |
+| [Tawil](./tawil.md) | Support | — | Standard |
 
 ### <span class="realm-badge realm-aequor">Aequor</span> Awakeners
 
 | Awakener | Role | Tier | Availability |
 |----------|------|------|-------------|
-| [Aurita](/awakeners/aurita.html) | Attack | T2 | Free (Chaos Rift I) |
-| [Caecus](/awakeners/caecus.html) | Sub-Attack | T2 | Standard |
-| [Celeste](/awakeners/celeste.html) | Support | T1 | Standard |
-| [Corposant](/awakeners/corposant.html) | Defense | — | Limited |
-| [Divine King Tulu](/awakeners/divine-king-tulu.html) | Attack | — | Limited |
-| [Faros](/awakeners/faros.html) | Support | T3 | Standard |
-| [Goliath](/awakeners/goliath.html) | Defense | T1 | Standard |
-| [Miryam](/awakeners/miryam.html) | Support | — | Limited |
-| [Murphy](/awakeners/murphy.html) | Defense | — | Standard |
-| [Murphy: Fauxborn](/awakeners/murphy-fauxborn.html) | Chorus | — | Limited |
-| [Pickman](/awakeners/pickman.html) | Attack | — | Limited |
-| [Shan](/awakeners/shan.html) | Sub-Attack | T1 | Standard |
-| [Tulu](/awakeners/tulu.html) | Attack | T0 | Limited |
+| [Aurita](./aurita.md) | Attack | T2 | Free (Chaos Rift I) |
+| [Caecus](./caecus.md) | Sub-Attack | T2 | Standard |
+| [Celeste](./celeste.md) | Support | T1 | Standard |
+| [Corposant](./corposant.md) | Defense | — | Limited |
+| [Divine King Tulu](./divine-king-tulu.md) | Attack | — | Limited |
+| [Faros](./faros.md) | Support | T3 | Standard |
+| [Goliath](./goliath.md) | Defense | T1 | Standard |
+| [Miryam](./miryam.md) | Support | — | Limited |
+| [Murphy](./murphy.md) | Defense | — | Standard |
+| [Murphy: Fauxborn](./murphy-fauxborn.md) | Chorus | — | Limited |
+| [Pickman](./pickman.md) | Attack | — | Limited |
+| [Shan](./shan.md) | Sub-Attack | T1 | Standard |
+| [Tulu](./tulu.md) | Attack | T0 | Limited |
 
 ### <span class="realm-badge realm-caro">Caro</span> Awakeners
 
 | Awakener | Role | Tier | Availability |
 |----------|------|------|-------------|
-| [Agrippa](/awakeners/agrippa.html) | Defense | T2 | Standard |
-| [Aigis](/awakeners/aigis.html) | Support | — | Standard |
-| [Alice](/awakeners/alice.html) | Sub-Attack | T1 | Standard |
-| [Doresain](/awakeners/doresain.html) | Attack | — | Limited |
-| [Faint](/awakeners/faint.html) | Sub-Attack | T2 | Standard |
-| [Helot](/awakeners/helot.html) | Attack | — | Limited |
-| [Leigh](/awakeners/leigh.html) | Chorus | — | Standard |
-| [Rhea](/awakeners/rhea.html) | Support | T0 | Standard |
-| [Salvador](/awakeners/salvador.html) | Defense | — | Standard |
-| [Shilo](/awakeners/shilo.html) | Attack | T3 | Standard |
-| [Sorel](/awakeners/sorel.html) | Attack | T0 | Limited |
-| [Thais](/awakeners/thais.html) | Support | — | Limited |
-| [Uvhash](/awakeners/uvhash.html) | Attack | T0 | Standard |
-| [Xu](/awakeners/xu.html) | Chorus | — | Limited |
+| [Agrippa](./agrippa.md) | Defense | T2 | Standard |
+| [Aigis](./aigis.md) | Support | — | Standard |
+| [Alice](./alice.md) | Sub-Attack | T1 | Standard |
+| [Doresain](./doresain.md) | Attack | — | Limited |
+| [Faint](./faint.md) | Sub-Attack | T2 | Standard |
+| [Helot](./helot.md) | Attack | — | Limited |
+| [Leigh](./leigh.md) | Chorus | — | Standard |
+| [Rhea](./rhea.md) | Support | T0 | Standard |
+| [Salvador](./salvador.md) | Defense | — | Standard |
+| [Shilo](./shilo.md) | Attack | T3 | Standard |
+| [Sorel](./sorel.md) | Attack | T0 | Limited |
+| [Thais](./thais.md) | Support | — | Limited |
+| [Uvhash](./uvhash.md) | Attack | T0 | Standard |
+| [Xu](./xu.md) | Chorus | — | Limited |
 
 ### <span class="realm-badge realm-ultra">Ultra</span> Awakeners
 
 | Awakener | Role | Tier | Availability |
 |----------|------|------|-------------|
-| [Arachne](/awakeners/arachne.html) | Attack | — | Limited (v2.5) |
-| [Casiah](/awakeners/casiah.html) | Sub-Attack | T1 | Standard |
-| [Castor](/awakeners/castor.html) | Defense | — | Limited |
-| [Clementine](/awakeners/clementine.html) | Support | — | Limited |
-| [Daffodil](/awakeners/daffodil.html) | Attack | T0 | Limited |
-| [Erica](/awakeners/erica.html) | Defense | T0 | Free (Caro Rift I) |
-| [Horla](/awakeners/horla.html) | Support | — | Standard |
-| [Jenkins](/awakeners/jenkins.html) | Sub-Attack | T1 | Standard |
-| [Liz](/awakeners/liz.html) | Attack | T0 | Standard |
-| [Pollux](/awakeners/pollux.html) | Attack | — | Limited |
-| [Tincture](/awakeners/tincture.html) | Support | T2 | Standard |
-| [Wanda](/awakeners/wanda.html) | Defense | — | Standard |
-| [Winkle](/awakeners/winkle.html) | Support | T1 | Standard |
+| [Arachne](./arachne.md) | Attack | — | Limited (v2.5) |
+| [Casiah](./casiah.md) | Sub-Attack | T1 | Standard |
+| [Castor](./castor.md) | Defense | — | Limited |
+| [Clementine](./clementine.md) | Support | — | Limited |
+| [Daffodil](./daffodil.md) | Attack | T0 | Limited |
+| [Erica](./erica.md) | Defense | T0 | Free (Caro Rift I) |
+| [Horla](./horla.md) | Support | — | Standard |
+| [Jenkins](./jenkins.md) | Sub-Attack | T1 | Standard |
+| [Liz](./liz.md) | Attack | T0 | Standard |
+| [Pollux](./pollux.md) | Attack | — | Limited |
+| [Tincture](./tincture.md) | Support | T2 | Standard |
+| [Wanda](./wanda.md) | Defense | — | Standard |
+| [Winkle](./winkle.md) | Support | T1 | Standard |
 
 ## See Also
 

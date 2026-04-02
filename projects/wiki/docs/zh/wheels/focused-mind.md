@@ -6,7 +6,7 @@ description: "专注精神(Focused Mind) - 忘却前夜命轮详情"
 # 专注精神
 **Focused Mind**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-r">R</span> |
 | 分类 | R |

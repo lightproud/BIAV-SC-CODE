@@ -1,14 +1,15 @@
 ---
-title: "Heart's Bastion - 運命の輪"
-description: "Heart's Bastion (心之壁垒) - Morimens 運命の輪"
+title: "心之壁垒（Heart's Bastion）- 運命の輪"
+description: "心之壁垒(Heart's Bastion) - 忘却前夜命轮详情"
 ---
 
-# Heart's Bastion
-**心之壁垒**
+# 心之壁垒
+**Heart's Bastion**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-r">R</span> |
+| カテゴリ | R |
 
 ## 効果
 

@@ -14,23 +14,18 @@ portrait: /portraits/shilo.png
   | Realm | Caro |
   | Role | Attack |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-血肉界域T3输出型唤醒体。血肉队初期主C选择，后续被血链·希洛等限定角色超越。常驻池可获取，有变体「血链·希洛」。
+SSR Caro DPS Awakener (standard).
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域T3输出型唤醒体。血肉队初期主C选择，有限定变体「血链·希洛」。
 
-
+Data pending
 
 ## Recommended Equipment
 

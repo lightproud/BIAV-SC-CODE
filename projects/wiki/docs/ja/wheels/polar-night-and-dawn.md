@@ -1,14 +1,15 @@
 ---
-title: "Polar Night and Dawn - 運命の輪"
-description: "Polar Night and Dawn (极夜与破晓) - Morimens 運命の輪"
+title: "极夜与破晓（Polar Night and Dawn）- 運命の輪"
+description: "极夜与破晓(Polar Night and Dawn) - 忘却前夜命轮详情"
 ---
 
-# Polar Night and Dawn
-**极夜与破晓**
+# 极夜与破晓
+**Polar Night and Dawn**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR常設 |
 
 ## 効果
 

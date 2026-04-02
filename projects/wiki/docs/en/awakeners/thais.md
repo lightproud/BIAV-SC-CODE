@@ -14,23 +14,18 @@ portrait: /portraits/thais.png
   | Realm | Caro |
   | Role | Support |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-血肉界域SSR限定辅助角色，社区昵称「羊妈」。提供队伍增益和回复，是血肉队的顶级辅助选择之一。限定池获取。
+SSR Caro Support Awakener (limited). Caro support focused on the Flesh system mechanics.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域SSR限定辅助角色，社区昵称「羊妈」。为血肉队提供增益和恢复，顶级血肉辅助。签名命轮：慈悲的哺育(Merciful Nurturing)。
 
-
+Data pending
 
 ## Recommended Equipment
 
@@ -38,7 +33,7 @@ portrait: /portraits/thais.png
 
 Critical Strike Rate
 
-### Signature Wheel: Tablet of Scriptures
+### Recommended Wheel: Tablet of Scriptures
 
 Data pending
 

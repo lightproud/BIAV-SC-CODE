@@ -1,16 +1,16 @@
 ---
 title: "Mirror Reflection - Wheel of Destiny"
-description: "Mirror Reflection (镜中人) - Morimens Wheel of Destiny"
+description: "镜中人(Mirror Reflection) - Morimens Wiki"
 ---
 
 # Mirror Reflection
 **镜中人**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Standard |
-| Main Stat | 黑印掉落 10.8% |
+| Category | SSR Standard |
+| Main Stat | Dark Seal Drop 10.8% |
 
 ## Effect
 

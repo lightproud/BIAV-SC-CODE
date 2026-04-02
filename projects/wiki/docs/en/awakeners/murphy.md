@@ -14,27 +14,25 @@ portrait: /portraits/murphy.png
   | Realm | Aequor |
   | Role | Defense |
   | Limited | No |
-  | Availability | 唤醒 |
+  | Availability | Summon |
 </div>
 
 ## Introduction
 
-深海界域防御型唤醒体。技能组强势补强深海界域弱点，拥有专属「献祭」被动机制。深海玩家必抽角色，大幅提升深海队生存能力。
+SSR Aequor Defense Awakener (limited). Strong kit that shores up Aequor's defensive weakness. Has unique "Sacrifice" passive mechanic. Must-pull for Aequor players, greatly improves Aequor team survivability.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 深海界域防御型唤醒体，深海玩家必抽。拥有专属「献祭」被动机制，大幅提升深海队生存能力。签名命轮：隐秘的诞生(Shrouded Birth)。
 
-
+Data pending
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Aberrant Devour
+
+Deep Sea series wheel.
+
 
 
 <CharacterCompare />

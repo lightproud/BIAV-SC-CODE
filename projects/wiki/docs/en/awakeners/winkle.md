@@ -14,23 +14,18 @@ portrait: /portraits/winkle.png
   | Realm | Ultra |
   | Role | Support |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-超维界域T1辅助型唤醒体。为超维队提供稳定的辅助增益，是超维队的常驻辅助选择。常驻池可获取。
+SSR Ultra Support Awakener (standard). Featured in: Ultra Double-C Double-Shield.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 超维界域T1辅助型唤醒体。为超维队提供稳定辅助增益。
 
-
+Data pending
 
 ## Recommended Equipment
 

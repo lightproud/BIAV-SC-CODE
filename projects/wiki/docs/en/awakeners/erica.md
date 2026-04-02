@@ -14,12 +14,12 @@ portrait: /portraits/erica.png
   | Realm | Ultra |
   | Role | Defense |
   | Limited | No |
-  | Availability | 免费获取(通关血肉沼泽裂隙I) |
+  | Availability | Free (Clear Caro Swamp Rift I) |
 </div>
 
 ## Introduction
 
-超维界域T0防御型唤醒体，超维队核心成员，深潜三杰之一。通关血肉沼泽裂隙I免费获取。提供力量加成和易伤效果，是超维队爆发回合的关键角色。新手必练。
+SSR Ultra Defense Awakener (standard). T0-tier Ultra defender, Deep Dive Trio member. Free from clearing Caro Swamp Rift I. Provides Power buff and Vulnerability effects; key character for Ultra burst turns. Must-build for new players. Featured in: Ultra Poison Team (Beginner Recommended), Ultra Starter Team, Ultra Double-C Double-Shield.
 
 ## Skills
 

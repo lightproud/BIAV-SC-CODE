@@ -14,27 +14,22 @@ portrait: /portraits/lily.png
   | Realm | Chaos |
   | Role | Defense |
   | Limited | No |
-  | Availability | 活动唤醒「花不染尘」 |
+  | Availability | Event Summon (Unstained Bloom) |
 </div>
 
 ## Introduction
 
-混沌界域防御型唤醒体，v1.1下半版本通过「花不染尘」活动推出。主线重要角色，与守密人关系密切。防御能力出色，为混沌队提供稳定护盾。
+SSR Chaos Defense Awakener (limited). Released in v1.1 via the "Flower Unstained" event. Important story character with ties to the Keeper. Excellent defensive capabilities for Chaos teams.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域防御型唤醒体。防御能力出色，为混沌队提供稳定护盾。v1.1版本推出，后加入常驻池。
 
-
+Data pending
 
 ## Recommended Equipment
 
-### Recommended Wheel: Grace Through Pain
+### Signature Wheel: Grace Through Pain
 
 Data pending
 

@@ -14,27 +14,23 @@ portrait: /portraits/lotan.png
   | Realm | Chaos |
   | Role | Defense |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-混沌界域T1防御型唤醒体，御四家成员之一。银钥共鸣体系防御核心，死亡抵抗机制出色。与SR版萝坦为不同角色，SSR版侧重团队护盾和反伤。
+SSR Chaos Defense Awakener (standard). Member of the Royal Four. Core of the Silver Key Resonance system.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
-
-
+Data pending
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Wheel Unseen
+
+Gains buffs from Key Order triggers and hit count.
+
 
 
 <CharacterCompare />

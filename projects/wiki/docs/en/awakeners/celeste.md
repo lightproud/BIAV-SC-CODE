@@ -14,30 +14,22 @@ portrait: /portraits/celeste.png
   | Realm | Aequor |
   | Role | Support |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-深海界域T1辅助型唤醒体，适配性极强，同时在混沌队中也有T1表现。高贵的复活奶——0费卡可奶可加算力，高费卡和觉醒技可提供触手。深海队核心辅助。
+SSR Aequor Support Awakener (standard). Extremely versatile support with T1 performance in both Aequor and Chaos teams. Free card heals and grants AP; high-cost card and Rouse provide tentacles. Core Aequor support. Featured in: Deep Sea Double-Carry, Shark-Caecus Team.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| **Talent**: Soulforge Aptitude | — | 希莱斯特造成的触腕伤害提高20%~50%。每回合打出首张指令卡后，额外触发4次天赋「远航号角」。 |
-| *Enlighten* | — | Data pending |
-
-
+Data pending
 
 ## Recommended Equipment
 
 ### Signature Wheel: Hymn of the Sovereign
 
-队伍唯一：战斗开始时获得16狂气。其他唤醒体使用超限时获得3狂气。深海队：超限获得2-5%攻击力的触手伤害。
+Team unique: Gain 16 Fury at battle start. Other Awakeners gain 3 Fury when using Over-Exalt. Aequor team: Over-Exalt deals 2-5% ATK tentacle damage.
 
 ### Signature Wheel: Duty Calls
 

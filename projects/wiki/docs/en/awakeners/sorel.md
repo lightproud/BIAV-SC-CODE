@@ -14,31 +14,30 @@ portrait: /portraits/sorel.png
   | Realm | Caro |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-血肉界域T0限定输出角色，被誉为「红女王」。穿着红色玫瑰裙的沙龙主人，血肉主C之一。附带回血技能，攻守兼备的限定角色。
+SSR Caro DPS Awakener (limited). Versatile Caro carry with multiple build paths. Limited banner character.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域T0限定输出角色，「红女王」。穿着红色玫瑰裙的沙龙主人，附带回血技能，攻守兼备。签名命轮：以蔷薇之名(By Rose Alone)。
 
-
+Data pending
 
 ## Recommended Equipment
 
-### Recommended Wheel: By Rose Alone
+### Signature Wheel: By Rose Alone
 
 Critical Strike Rate
 
-### Signature Wheel: Tablet of Scriptures
+### Signature Wheel: Kiss of Repose
+
+Team Unique: The wielder's Base DMG +10% During this exploration, every time the wielder kills an enemy, their Crit. Rate +2% and Exalt Base DMG +2%, up to 10 times. If the current Realm is Caro, the wielder gains an extra 15 Aliemus when they directly consume Embryo (cooldown 3 turns).
+
+### Recommended Wheel: Tablet of Scriptures
 
 Data pending
 

@@ -14,12 +14,12 @@ portrait: /portraits/shan.png
   | Realm | Aequor |
   | Role | Sub-Attack |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-深海界域T1副输出型唤醒体。深海触手体系中的副C位置，配合图鲁等主C进行触腕联动输出。常驻池可获取。
+SSR Aequor Defense Awakener (standard). Primary defensive option for Aequor teams with shield-based playstyle. Available from standard pool. Featured in: Deep Sea Double-Carry, Shark-Caecus Team, #24 Deep Sea Variant. Key synergy: 护盾打击.
 
 ## Skills
 
@@ -37,7 +37,7 @@ portrait: /portraits/shan.png
 
 ### Signature Wheel: Death of the Coral Maiden
 
-=== Death Resistance: 50.4% ===
+Team Unique: After playing the wielder's card, gain a Shield equal to 6% of the wielder's Defence. For each Tentacle, increase the Shield by 1.5% of the wielder's Defense. This effect triggers only once per turn.
 
 ### Signature Wheel: 35mm Magic
 

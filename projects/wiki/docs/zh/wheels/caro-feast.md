@@ -6,12 +6,12 @@ description: "血肉狂宴(Caro Feast) - 忘却前夜命轮详情"
 # 血肉狂宴
 **Caro Feast**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-ssr">SSR</span> |
-| 分类 | 常驻 |
+| 分类 | SSR常驻 |
+| 适用角色 | 尤乌哈希(Uvhash) |
 | 主属性 | 暴击伤害 |
-| 适用角色 | 尤乌哈希(Yuuhashi) |
 
 ## 效果
 

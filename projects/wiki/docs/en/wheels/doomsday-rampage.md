@@ -1,15 +1,15 @@
 ---
 title: "Doomsday Rampage - Wheel of Destiny"
-description: "Doomsday Rampage (狂戮至世界尽头) - Morimens Wheel of Destiny"
+description: "狂戮至世界尽头(Doomsday Rampage) - Morimens Wiki"
 ---
 
 # Doomsday Rampage
 **狂戮至世界尽头**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Stellar) |
+| Category | SSR Limited (Stellar) |
 
 ## Effect
 

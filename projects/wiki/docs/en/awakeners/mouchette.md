@@ -14,23 +14,18 @@ portrait: /portraits/mouchette.png
   | Realm | Chaos |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-混沌界域限定输出角色，星辰篇v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语，含义为「小苍蝇」。
+SSR Chaos Defense Awakener (limited). Chaos frontline with defensive capabilities.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域限定输出角色，v2.3推出。打击型DPS，以物理打击伤害为核心输出方式。名字来源于法语「小苍蝇」。
 
-
+Data pending
 
 ## Recommended Equipment
 

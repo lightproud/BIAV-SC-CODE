@@ -1,12 +1,12 @@
 ---
-title: 莱克 | 忘却前夜 Wiki
-description: 莱克（Karen）混沌属性支援型キャラクター詳細
+title: 珈伦 | 忘却前夜 Wiki
+description: 珈伦（Karen）混沌属性支援型キャラクター詳細
 portrait: /portraits/karen.png
 ---
-# 莱克 (Karen)
+# 珈伦 (Karen)
 
 <div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/karen.png'" alt="莱克" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/karen.png'" alt="珈伦" class="portrait" />
 
   | 属性 | 値 |
   |------|-----|
@@ -19,22 +19,15 @@ portrait: /portraits/karen.png
 
 ## 紹介
 
-混沌界域辅助型唤醒体，v1.5推出。官方定位辅助但输出能力突出，专属命轮极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。
+SSR混沌支援型覚醒体（恒常）。恒常プールで入手可能。
 
 ## スキル
 
-| カード名 | コスト | 効果 |
-|------|------|------|
-| **狂気爆発**: 狂気爆発 | — | データ準備中 |
-| **覚醒カード**: 覚醒カード | — | データ準備中 |
-| *指令カード* | — | データ準備中 |
-| *啓霊* | — | データ準備中 |
-
-
+データ準備中
 
 ## 推奨装備
 
-### 推奨命輪: 跨越疼痛（Grace Through Pain）
+### 専用命輪: 好运时间（Hour of Fortune）
 
 データ準備中
 

@@ -14,23 +14,18 @@ portrait: /portraits/corposant.png
   | Realm | Aequor |
   | Role | Defense |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-深海界域限定防御型角色，v2.1~2.2推出。为深海队提供新的防御选择，拥有独特的护盾和减伤机制。名字含义为「圣艾尔摩之火」。
+SSR Aequor Defense Awakener (limited). Introduced in v2.1.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 深海界域限定防御型角色，v2.1推出。名字含义为「圣艾尔摩之火」。拥有独特护盾和减伤机制。
 
-
+Data pending
 
 ## Recommended Equipment
 

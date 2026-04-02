@@ -14,23 +14,18 @@ portrait: /portraits/aurita.png
   | Realm | Aequor |
   | Role | Attack |
   | Limited | No |
-  | Availability | 免费获取(通关混沌界域裂隙I) |
+  | Availability | Free (Clear Chaos Realm Rift I) |
 </div>
 
 ## Introduction
 
-深海界域输出型唤醒体，深潜三杰成员之一。通关混沌界域裂隙I免费获取。爆发+循环卡牌打法，被称为「深海万能锤」，新手友好的免费SSR。
+SSR Aequor DPS Awakener (standard). Deep Dive Trio member. Free from clearing Chaos Rift I. Burst + card cycling playstyle, known as the "Aequor Universal Hammer". Beginner-friendly free SSR. Featured in: Tentacle Mixed-Damage Team, Deep Sea Double-Carry. Key synergy: 触手叠加.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 深海界域免费SSR(通关混沌裂隙I获取)，「深潜三杰」成员。爆发+循环卡牌打法，「深海万能锤」，新手友好。
 
-
+Data pending
 
 ## Recommended Equipment
 

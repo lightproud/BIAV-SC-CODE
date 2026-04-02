@@ -14,23 +14,18 @@ portrait: /portraits/salvador.png
   | Realm | Caro |
   | Role | Defense |
   | Limited | No |
-  | Availability | 唤醒 |
+  | Availability | Summon |
 </div>
 
 ## Introduction
 
-血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，专属命轮「神言石板」。以盾反打法为特色，靠反伤和护盾进行输出。
+SSR Caro Healer Awakener (standard). Primary healer for Caro teams with Embryo card healing mechanics. Available from standard pool. Featured in: Father (Salvador) Comp, #24 Flesh Variant. Key synergy: 神父血池循环.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域防御型唤醒体，社区昵称「神父」。盾反队核心成员，靠反伤和护盾进行输出。签名命轮：神言石板(Tablet of Scriptures)。推荐配队：萨尔瓦多+旺达+凯刻斯+哈姆林。
 
-
+Data pending
 
 ## Recommended Equipment
 

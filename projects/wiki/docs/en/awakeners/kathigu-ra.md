@@ -14,23 +14,18 @@ portrait: /portraits/kathigu-ra.png
   | Realm | Chaos |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-混沌界域限定输出角色，v2.2推出。星辰篇新增的混沌主C选择，拥有独特的战斗机制。名字来源于克苏鲁神话体系。
+SSR Chaos DPS Awakener (limited). Introduced in v2.2.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域限定输出角色，v2.2推出。星辰篇混沌主C选择，名字来源于克苏鲁神话体系。
 
-
+Data pending
 
 ## Recommended Equipment
 

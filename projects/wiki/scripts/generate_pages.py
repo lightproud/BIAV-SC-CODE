@@ -282,6 +282,13 @@ def render_skills_table(skills: dict, lang: str) -> str:
     else:
         lines.append(f"| *{L['command_cards']}* | — | {pending} |")
 
+    # ── Special Mechanic (optional) ──
+    spec = skills.get("special_mechanic")
+    if spec and isinstance(spec, dict):
+        sp_name = _name(spec) or "Special"
+        sp_desc = _esc(spec.get("description", spec.get("effect", "")))
+        lines.append(f"| **{sp_name}** | — | {sp_desc} |")
+
     # ── Talent (optional) ──
     talent = skills.get("talent")
     if talent:
@@ -334,7 +341,9 @@ def render_equipment(char: dict, wheel_index: dict[str, list[dict]], lang: str) 
         seen.add(wname)
 
         wname_en = w.get("name_en", "")
-        is_signature = w.get("character") is not None
+        # Check if this wheel's character field matches THIS character
+        wheel_char = w.get("character", "") or ""
+        is_signature = char_name in wheel_char or (char_name_en and char_name_en in wheel_char)
         tag = L["signature_wheel"] if is_signature else L["recommended_wheel"]
 
         display = f"{wname}" if lang == "zh" else (f"{wname_en}" if lang == "en" else f"{wname}（{wname_en}）")
@@ -365,8 +374,18 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
     realm_key = char.get("realm", "chaos")
     role_key = char.get("role", "attack")
     is_limited = char.get("is_limited", False)
-    obtain = char.get("obtain", L["pending"])
-    description = char.get("description", L["pending"])
+    if lang == "en":
+        obtain = char.get("obtain_en", char.get("obtain", L["pending"]))
+    elif lang == "ja":
+        obtain = char.get("obtain_ja", char.get("obtain", L["pending"]))
+    else:
+        obtain = char.get("obtain", L["pending"])
+    if lang == "en":
+        description = char.get("description_en", char.get("description", L["pending"]))
+    elif lang == "ja":
+        description = char.get("description_ja", char.get("description", L["pending"]))
+    else:
+        description = char.get("description", L["pending"])
 
     realm_display = REALM_NAMES[lang].get(realm_key, realm_key)
     role_display = ROLE_NAMES[lang].get(role_key, role_key)
@@ -419,11 +438,38 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
 
     # Skills section
     skills = char.get("skills")
-    if skills:
+    # Check if skills has real data (command_cards, exalt, or rouse with actual content)
+    has_real_skills = (
+        isinstance(skills, dict) and (
+            (isinstance(skills.get("command_cards"), list) and len(skills.get("command_cards", [])) > 0) or
+            (isinstance(skills.get("exalt"), dict) and skills["exalt"].get("effect")) or
+            (isinstance(skills.get("rouse"), dict) and skills["rouse"].get("effect"))
+        )
+    )
+    if has_real_skills:
         body.extend([f"## {L['skills']}", ""])
         body.append(render_skills_table(skills, lang))
+
+        # Lore/design notes from interview data
+        lore_note = skills.get("lore_note", "")
+        design_note = skills.get("design_note", "")
+        if lore_note or design_note:
+            trivia_label = "幕后花絮" if lang == "zh" else "Behind the Scenes" if lang == "en" else "裏話"
+            body.append(f"::: info {trivia_label}")
+            if lore_note:
+                body.append(lore_note)
+            if design_note:
+                body.append(design_note)
+            body.append(":::")
+            body.append("")
     else:
-        body.extend([f"## {L['skills']}", "", L["pending"], ""])
+        body.extend([f"## {L['skills']}", ""])
+        # Show role_in_team as interim info if available
+        rit = char.get("role_in_team", "")
+        if rit:
+            hint_label = "定位说明" if lang == "zh" else "Role Summary" if lang == "en" else "役割概要"
+            body.extend([f"**{hint_label}**: {rit}", ""])
+        body.extend([L["pending"], ""])
 
     # Equipment
     body.append(render_equipment(char, wheel_index, lang))
@@ -437,6 +483,268 @@ def generate_character_page(char: dict, wheel_index: dict[str, list[dict]], lang
 # ---------------------------------------------------------------------------
 # List page update
 # ---------------------------------------------------------------------------
+
+def slugify(text: str) -> str:
+    """Convert text to URL-safe slug."""
+    import re
+    slug = text.lower().strip()
+    slug = re.sub(r"[''']", "", slug)
+    slug = re.sub(r"[^a-z0-9]+", "-", slug)
+    return slug.strip("-")
+
+
+def generate_wheel_pages(equip_data: dict[str, Any], langs: list[str], dry_run: bool) -> int:
+    """Generate/update wheel detail pages from equipment.json data."""
+    wod = equip_data.get("wheels_of_destiny", {})
+    generated = 0
+
+    # Category display names
+    CAT_NAMES = {
+        "zh": {
+            "ssr_limited_oblivion": "SSR限定·忘却线",
+            "ssr_limited_stellar": "SSR限定·星辰线",
+            "ssr_standard": "SSR常驻",
+            "sr_wheels": "SR",
+            "r_wheels": "R",
+        },
+        "en": {
+            "ssr_limited_oblivion": "SSR Limited (Oblivion)",
+            "ssr_limited_stellar": "SSR Limited (Stellar)",
+            "ssr_standard": "SSR Standard",
+            "sr_wheels": "SR",
+            "r_wheels": "R",
+        },
+        "ja": {
+            "ssr_limited_oblivion": "SSR限定・忘却線",
+            "ssr_limited_stellar": "SSR限定・星辰線",
+            "ssr_standard": "SSR常設",
+            "sr_wheels": "SR",
+            "r_wheels": "R",
+        },
+    }
+
+    for cat_key, wheel_list in wod.items():
+        if not isinstance(wheel_list, list):
+            continue
+        for wheel in wheel_list:
+            if not isinstance(wheel, dict):
+                continue
+            name = wheel.get("name", "")
+            name_en = wheel.get("name_en", "")
+            if not name_en:
+                continue
+
+            slug = slugify(name_en)
+            rarity = "SSR" if "ssr" in cat_key else ("SR" if "sr" in cat_key else "R")
+            char_field = wheel.get("character", "")
+            recommended = wheel.get("recommended", [])
+            effect = wheel.get("effect", "")
+            effect_en = wheel.get("effect_en", "")
+            main_stat = wheel.get("main_stat", "")
+
+            for lang in langs:
+                out_dir = DOCS_DIR / lang / "wheels"
+                page_path = out_dir / f"{slug}.md"
+
+                L = LABELS[lang]
+                cat_display = CAT_NAMES.get(lang, CAT_NAMES["zh"]).get(cat_key, cat_key)
+                pending = L["pending"]
+
+                # Build page content
+                if lang == "en":
+                    title = f"{name_en} - Wheel of Destiny"
+                    heading = f"{name_en}"
+                    sub = f"**{name}**" if name else ""
+                elif lang == "ja":
+                    title = f"{name}（{name_en}）- 運命の輪"
+                    heading = f"{name}"
+                    sub = f"**{name_en}**"
+                else:
+                    title = f"{name} - 命轮"
+                    heading = f"{name}"
+                    sub = f"**{name_en}**"
+
+                lines = [
+                    "---",
+                    f'title: "{title}"',
+                    f'description: "{name}({name_en}) - {"Morimens Wiki" if lang == "en" else "忘却前夜命轮详情"}"',
+                    "---",
+                    "",
+                    f"# {heading}",
+                    sub,
+                    "",
+                ]
+
+                # Info table
+                attr_label = L.get("attr", "属性")
+                val_label = L.get("value", "信息")
+                lines.extend([
+                    f"| {attr_label} | {val_label} |",
+                    "|------|------|",
+                    f"| {L['rarity']} | <span class=\"rarity-{rarity.lower()}\">{rarity}</span> |",
+                    f"| {'分类' if lang == 'zh' else 'Category' if lang == 'en' else 'カテゴリ'} | {cat_display} |",
+                ])
+
+                if char_field:
+                    char_label = "适用角色" if lang == "zh" else "Character" if lang == "en" else "対応キャラ"
+                    lines.append(f"| {char_label} | {char_field} |")
+
+                if recommended:
+                    rec_label = "推荐角色" if lang == "zh" else "Recommended" if lang == "en" else "おすすめ"
+                    lines.append(f"| {rec_label} | {', '.join(recommended)} |")
+
+                if main_stat:
+                    stat_label = "主属性" if lang == "zh" else "Main Stat" if lang == "en" else "メインステータス"
+                    stat_val = main_stat
+                    if lang in ("en", "ja"):
+                        stat_translations = {
+                            "暴击伤害": "Crit DMG" if lang == "en" else "会心ダメージ",
+                            "狂气回充 7.2": "Fury Recharge 7.2" if lang == "en" else "狂気チャージ 7.2",
+                            "界域精通": "Realm Mastery" if lang == "en" else "界域精通",
+                            "银钥充能": "Silver Key Charge" if lang == "en" else "銀鍵チャージ",
+                            "银钥充能 21.6": "Silver Key Charge 21.6" if lang == "en" else "銀鍵チャージ 21.6",
+                            "黑印掉落 10.8%": "Dark Seal Drop 10.8%" if lang == "en" else "黒印ドロップ 10.8%",
+                        }
+                        stat_val = stat_translations.get(main_stat, main_stat)
+                    lines.append(f"| {stat_label} | {stat_val} |")
+
+                lines.append("")
+
+                # Effect section
+                eff_label = "效果" if lang == "zh" else "Effect" if lang == "en" else "効果"
+                lines.append(f"## {eff_label}")
+                lines.append("")
+
+                if lang == "en" and effect_en:
+                    lines.append(effect_en)
+                elif effect:
+                    lines.append(effect)
+                elif effect_en:
+                    lines.append(effect_en)
+                else:
+                    lines.append(f"*{pending}*")
+
+                lines.append("")
+                content = "\n".join(lines)
+
+                if dry_run:
+                    print(f"  [DRY-RUN] {page_path.relative_to(PROJECT_ROOT)}")
+                else:
+                    out_dir.mkdir(parents=True, exist_ok=True)
+                    page_path.write_text(content, encoding="utf-8")
+                generated += 1
+
+    return generated
+
+
+def generate_wheel_list_page(equip_data: dict[str, Any], langs: list[str], dry_run: bool) -> int:
+    """Generate/update the wheel list page from equipment.json."""
+    wod = equip_data.get("wheels_of_destiny", {})
+    generated = 0
+
+    SECTION_NAMES = {
+        "zh": {
+            "ssr_limited_oblivion": "SSR 命轮 — 限定忘却篇",
+            "ssr_limited_stellar": "SSR 命轮 — 限定星辰篇",
+            "ssr_standard": "SSR 命轮 — 常驻",
+            "sr_wheels": "SR 命轮",
+            "r_wheels": "R 命轮",
+        },
+        "en": {
+            "ssr_limited_oblivion": "SSR Wheels — Oblivion Limited",
+            "ssr_limited_stellar": "SSR Wheels — Stellar Limited",
+            "ssr_standard": "SSR Wheels — Standard",
+            "sr_wheels": "SR Wheels",
+            "r_wheels": "R Wheels",
+        },
+        "ja": {
+            "ssr_limited_oblivion": "SSR 運命の輪 — 忘却限定",
+            "ssr_limited_stellar": "SSR 運命の輪 — 星辰限定",
+            "ssr_standard": "SSR 運命の輪 — 常設",
+            "sr_wheels": "SR 運命の輪",
+            "r_wheels": "R 運命の輪",
+        },
+    }
+
+    INTRO = {
+        "zh": "# 命轮列表\n\n命轮 (Wheels of Destiny) 是通过抽卡获取的装备道具，类似专属武器，提供属性和被动效果。\n\n::: tip 装备规则\n同一队伍中不可装备相同命轮。命轮+12后可额外装备第二个SSR命轮。命轮以3叠(3个重复合并)性能评估。v2.0后R命轮完全重做，拥有改变探索规则的效果。\n:::\n",
+        "en": "# Wheels of Destiny\n\nWheels of Destiny are equipment items obtained through gacha, similar to signature weapons. They provide stat bonuses and passive effects.\n\n::: tip Equipment Rules\nNo duplicate wheels in the same team. After +12, a second SSR wheel can be equipped. Wheels are evaluated at 3-stack (3 duplicates merged). R wheels were fully reworked in v2.0.\n:::\n",
+        "ja": "# 運命の輪一覧\n\n運命の輪は、ガチャで入手する装備アイテムです。専属武器に似ており、ステータスとパッシブ効果を提供します。\n",
+    }
+
+    for lang in langs:
+        lines = [INTRO.get(lang, INTRO["zh"]), ""]
+
+        for cat_key in ["ssr_limited_oblivion", "ssr_limited_stellar", "ssr_standard", "sr_wheels", "r_wheels"]:
+            wheel_list = wod.get(cat_key)
+            if not isinstance(wheel_list, list) or not wheel_list:
+                continue
+
+            section_name = SECTION_NAMES.get(lang, SECTION_NAMES["zh"]).get(cat_key, cat_key)
+            lines.append(f"## {section_name}")
+            lines.append("")
+
+            header_name = "命轮名称" if lang == "zh" else "Wheel" if lang == "en" else "名前"
+            header_char = "对应唤醒体" if lang == "zh" else "Character" if lang == "en" else "キャラ"
+            header_eff = "效果" if lang == "zh" else "Effect" if lang == "en" else "効果"
+            lines.append(f"| {header_name} | {header_char} | {header_eff} |")
+            lines.append("|----------|-----------|------|")
+
+            for w in wheel_list:
+                if not isinstance(w, dict):
+                    continue
+                name = w.get("name", "")
+                name_en = w.get("name_en", "")
+                slug = slugify(name_en) if name_en else ""
+                char = w.get("character", "")
+                rec = w.get("recommended", [])
+                effect = w.get("effect", "")
+                effect_en = w.get("effect_en", "")
+                main_stat = w.get("main_stat", "")
+
+                # Display name with link
+                if lang == "en":
+                    display = f"[{name_en}](/{lang}/wheels/{slug})" if slug else name_en
+                else:
+                    display = f"[{name} ({name_en})](/{lang}/wheels/{slug})" if slug else f"{name} ({name_en})"
+
+                # Character column
+                if char:
+                    char_display = char
+                elif rec:
+                    char_display = f"推荐：{', '.join(rec)}" if lang == "zh" else f"Rec: {', '.join(rec)}" if lang == "en" else f"推奨: {', '.join(rec)}"
+                else:
+                    char_display = "—"
+
+                # Effect column (brief)
+                if lang == "en" and effect_en:
+                    eff_display = effect_en.split("\n")[0][:80]
+                elif effect:
+                    eff_display = effect.split("\n")[0][:80]
+                elif main_stat:
+                    eff_display = main_stat
+                else:
+                    eff_display = "—"
+
+                # Escape pipe chars
+                eff_display = eff_display.replace("|", "\\|")
+                char_display = char_display.replace("|", "\\|")
+
+                lines.append(f"| {display} | {char_display} | {eff_display} |")
+
+            lines.append("")
+
+        content = "\n".join(lines)
+        out_path = DOCS_DIR / lang / "wheels" / "list.md"
+        if dry_run:
+            print(f"  [DRY-RUN] {out_path.relative_to(PROJECT_ROOT)}")
+        else:
+            out_path.parent.mkdir(parents=True, exist_ok=True)
+            out_path.write_text(content, encoding="utf-8")
+        generated += 1
+
+    return generated
+
 
 def update_list_page(characters: list[dict], lang: str, dry_run: bool) -> str | None:
     """Append <CharacterGrid /> component to list page if not already present."""
@@ -507,10 +815,14 @@ def main() -> None:
         if result:
             updated_lists.append(result)
 
+    # Generate wheel pages and list
+    wheel_count = generate_wheel_pages(equip_data, langs, args.dry_run)
+    wheel_list_count = generate_wheel_list_page(equip_data, langs, args.dry_run)
+
     # Summary
     print()
     print("=" * 60)
-    print(f"  Generated: {generated} character pages")
+    print(f"  Generated: {generated} character pages + {wheel_count} wheel pages")
     print(f"  Languages: {', '.join(langs)}")
     print(f"  Characters: {len(characters)}")
     if updated_lists:

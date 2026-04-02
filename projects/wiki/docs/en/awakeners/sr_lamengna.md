@@ -14,14 +14,16 @@ portrait: /portraits/sr_lamengna.png
   | Realm | Chaos |
   | Role | Support |
   | Limited | No |
-  | Availability | 序章教程赠送 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-初始赠送的4个SR唤醒体之一（初始四小只）。混沌界域辅助型，提供印卡/复制能力。SSR同名角色拉蒙娜及变体环行·拉蒙娜为独立角色。
+SR Chaos Support Awakener (standard).
 
 ## Skills
+
+**Role Summary**: 弃牌找回、降费辅助，配合莉兹等主C使用
 
 Data pending
 
@@ -29,7 +31,7 @@ Data pending
 
 ### Signature Wheel: Retrograde Timepiece
 
-使用佩戴者指令卡后，30-60%概率从弃牌堆返回手牌。
+After using the wearer's command card, 30-60% chance to return it from the discard pile to hand.
 
 ### Signature Wheel: Reunion Moment
 

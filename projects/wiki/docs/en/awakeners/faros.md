@@ -14,23 +14,18 @@ portrait: /portraits/faros.png
   | Realm | Aequor |
   | Role | Support |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。常驻池可获取。
+SSR Aequor Support Awakener (standard).
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 深海界域T3辅助型唤醒体。提供基础辅助效果，在深海队中作为过渡辅助使用。高防御角色，适合搭配心之壁垒命轮。
 
-
+Data pending
 
 ## Recommended Equipment
 

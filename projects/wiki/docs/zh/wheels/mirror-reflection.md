@@ -6,10 +6,10 @@ description: "镜中人(Mirror Reflection) - 忘却前夜命轮详情"
 # 镜中人
 **Mirror Reflection**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-ssr">SSR</span> |
-| 分类 | 常驻 |
+| 分类 | SSR常驻 |
 | 主属性 | 黑印掉落 10.8% |
 
 ## 效果

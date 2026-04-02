@@ -1,16 +1,17 @@
 ---
-title: "Devouring Lullaby - 運命の輪"
-description: "Devouring Lullaby (吞噬摇篮曲) - Morimens 運命の輪"
+title: "吞噬摇篮曲（Devouring Lullaby）- 運命の輪"
+description: "吞噬摇篮曲(Devouring Lullaby) - 忘却前夜命轮详情"
 ---
 
-# Devouring Lullaby
-**吞噬摇篮曲**
+# 吞噬摇篮曲
+**Devouring Lullaby**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
-| キャラクター | 菲茵特(Feint) |
+| カテゴリ | SSR常設 |
+| 対応キャラ | 菲茵特(Faint) |
 
 ## 効果
 
-Death Resistance 50.4%
+触发死亡抵抗后，全队治疗和护盾增强2回合。

@@ -14,23 +14,18 @@ portrait: /portraits/murphy-fauxborn.png
   | Realm | Aequor |
   | Role | Chorus |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为v2.4新增合唱型角色，与深海主C产生联携效果。
+SSR Aequor Chorus Awakener (limited). Chorus-type character that creates synergy effects with main DPS. Introduced in v2.4.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 深海界域限定合唱型角色，墨菲的诞妄变体。v2.4二周年推出，卡池「尊崇之诞」。作为合唱型角色与深海主C产生联携效果。
 
-
+Data pending
 
 ## Recommended Equipment
 

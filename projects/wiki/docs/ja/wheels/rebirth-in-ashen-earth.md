@@ -1,14 +1,15 @@
 ---
-title: "Rebirth in Ashen Earth - 運命の輪"
-description: "Rebirth in Ashen Earth (重生于湮土) - Morimens 運命の輪"
+title: "重生于湮土（Rebirth in Ashen Earth）- 運命の輪"
+description: "重生于湮土(Rebirth in Ashen Earth) - 忘却前夜命轮详情"
 ---
 
-# Rebirth in Ashen Earth
-**重生于湮土**
+# 重生于湮土
+**Rebirth in Ashen Earth**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR常設 |
 
 ## 効果
 

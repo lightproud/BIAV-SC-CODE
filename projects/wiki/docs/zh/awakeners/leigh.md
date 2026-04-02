@@ -1,12 +1,12 @@
 ---
-title: 莱 | 忘却前夜 Wiki
-description: 莱（Leigh）血肉属性合唱角色详细资料
+title: 莱克 | 忘却前夜 Wiki
+description: 莱克（Leigh）血肉属性合唱角色详细资料
 portrait: /portraits/leigh.png
 ---
-# 莱 (Leigh)
+# 莱克 (Leigh)
 
 <div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱克" class="portrait" />
 
   | 属性 | 值 |
   |------|-----|
@@ -23,18 +23,16 @@ portrait: /portraits/leigh.png
 
 ## 技能
 
-| 卡名 | 费用 | 效果 |
-|------|------|------|
-| **狂气爆发**: 狂气爆发 | — | 数据待补充 |
-| **觉醒卡**: 觉醒卡 | — | 数据待补充 |
-| *指令卡* | — | 数据待补充 |
-| *启灵* | — | 数据待补充 |
+**定位说明**: 混沌界域v1.5新增，官方定位辅助但输出能力突出，专属命轮「好运时间」极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。
 
-
+数据待补充
 
 ## 推荐装备
 
+### 推荐命轮: 跨越疼痛
+
 数据待补充
+
 
 
 <CharacterCompare />

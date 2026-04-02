@@ -14,12 +14,12 @@ portrait: /portraits/tawil.png
   | Realm | Chaos |
   | Role | Support |
   | Limited | No |
-  | Availability | 唤醒 |
+  | Availability | Summon |
 </div>
 
 ## Introduction
 
-混沌界域辅助型唤醒体，第一个「唤醒体」，唤醒体技术的源头。守护黑池多年，弥萨格大学最高机密之一。核心技能「通晓万物之理」可从界域全角色卡池五选三，超限后升级为十选三。
+SSR Chaos Support Awakener (standard).
 
 ## Skills
 
@@ -35,11 +35,19 @@ portrait: /portraits/tawil.png
 
 
 
+::: info Behind the Scenes
+塔薇儿与玩偶是最早被设计的角色。
+:::
+
 ## Recommended Equipment
 
 ### Recommended Wheel: Grace Through Pain
 
 Data pending
+
+### Signature Wheel: Merciful Nurturing
+
+Caro (Flesh) series wheel.
 
 
 

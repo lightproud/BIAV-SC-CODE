@@ -14,12 +14,12 @@ portrait: /portraits/aigis.png
   | Realm | Caro |
   | Role | Support |
   | Limited | No |
-  | Availability | 唤醒 |
+  | Availability | Summon |
 </div>
 
 ## Introduction
 
-血肉界域辅助型唤醒体，深潜三杰成员之一。通关第一章免费获取。提供群体易伤、AOE输出和石化效果，攻击面板突出。常规配队：艾继丝+雷亚+拉蒙娜+血肉C。
+SSR Caro Support Awakener (standard). Member of the Deep Dive Trio. Free from clearing Chapter 1. Provides group Vulnerability, AoE damage, and Petrification effects. Featured in: Uuhashi Standard Flesh, Father (Salvador) Comp, #24 Flesh Variant. Key synergy: 胚胎引擎.
 
 ## Skills
 
@@ -37,7 +37,7 @@ portrait: /portraits/aigis.png
 
 ### Signature Wheel: Poetic Bygone Days
 
-防止石化溶解无debuff卡手；加速杂兵/精英战。免费可获取命轮。
+Prevents Petrification/Dissolution debuff clogging; accelerates mob/elite battles. Free-to-obtain wheel.
 
 
 

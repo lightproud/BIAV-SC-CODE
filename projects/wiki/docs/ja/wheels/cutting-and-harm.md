@@ -1,15 +1,16 @@
 ---
-title: "Cutting and Harm - 運命の輪"
-description: "Cutting and Harm (切割与伤害) - Morimens 運命の輪"
+title: "切割与伤害（Cutting and Harm）- 運命の輪"
+description: "切割与伤害(Cutting and Harm) - 忘却前夜命轮详情"
 ---
 
-# Cutting and Harm
-**切割与伤害**
+# 切割与伤害
+**Cutting and Harm**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-sr">SR</span> |
-| キャラクター | 图鲁(Thulhu) |
+| カテゴリ | SR |
+| 対応キャラ | 图鲁(Tulu) |
 
 ## 効果
 

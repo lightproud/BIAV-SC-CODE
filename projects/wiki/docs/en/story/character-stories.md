@@ -10,17 +10,14 @@ Each Awakener in Morimens has a personal backstory that can be unlocked by raisi
 
 ## Character Story List
 
-### <span class="rarity-ssr">SSR</span> Awakener Stories
+Character stories are available for all SSR and SR Awakeners. Stories unlock progressively as you build affinity with each character.
 
-*To be added*
-
-### <span class="rarity-sr">SR</span> Awakener Stories
-
-*To be added*
-
-### <span class="rarity-r">R</span> Awakener Stories
-
-*To be added*
+| Realm | SSR Awakeners with Stories |
+|-------|--------------------------|
+| Chaos (19) | Alva, Doll, Ramona: Timeworn, Ogier, Lotan, Pandya, Nodera, Nymphia, Danmo, Karen, Leigh, Hameln, Aigis, Lily, Mouchette, Agrippa, Clementine, and more |
+| Aequor (13) | Tulu, Divine King Tulu, Celeste, Goliath, Shan, Ramona, Miryam, Pharos, Murphy, Pickman, Aurita, and more |
+| Caro (14) | Uvhash, Salvador, Rhea, Faint, Daffodil, Liz, Wanda, Sorel, Alice, Horla, and more |
+| Ultra (13) | Erica, Tincture, Arachne, Casiah, Tawil, Helot, and more |
 
 ::: tip
 Character stories provide important context for the main narrative and often reveal connections between Awakeners. They are worth reading for lore enthusiasts.

@@ -1,15 +1,16 @@
 ---
-title: "Gluttony - 運命の輪"
-description: "Gluttony (暴食) - Morimens 運命の輪"
+title: "暴食（Gluttony）- 運命の輪"
+description: "暴食(Gluttony) - 忘却前夜命轮详情"
 ---
 
-# Gluttony
-**暴食**
+# 暴食
+**Gluttony**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-r">R</span> |
+| カテゴリ | R |
 
 ## 効果
 
-Realm Mastery 36
+搭配：放逐铭文+生命。

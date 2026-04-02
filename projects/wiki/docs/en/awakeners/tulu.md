@@ -14,12 +14,12 @@ portrait: /portraits/tulu.png
   | Realm | Aequor |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-深海界域T0级输出角色，深海队核心主C。角色原型为克苏鲁，正太外形，被称为「幼主」「沉睡之主」。通过触腕和穿刺伤害造成极高输出，深海体系的绝对核心。
+SSR Aequor DPS Awakener (limited). T0-tier Aequor carry and core of the Deep Sea system. Character prototype is Cthulhu. Deals massive damage through tentacles and piercing attacks; the absolute core of the Aequor archetype. Featured in: Deep Sea Double-Carry, #24 Deep Sea Variant. Key synergy: 触手叠加.
 
 ## Skills
 
@@ -40,7 +40,7 @@ portrait: /portraits/tulu.png
 
 ### Signature Wheel: In the Storm
 
-v1.4增强：打击时对全体敌人施加10%毒素(1次/回合)。
+v1.4 enhanced: On Strike, inflict 10% Toxin on all enemies (once per turn).
 
 ### Signature Wheel: Cutting and Harm
 

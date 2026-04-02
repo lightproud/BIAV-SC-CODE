@@ -14,12 +14,12 @@ portrait: /portraits/ramona-timeworn.png
   | Realm | Chaos |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-混沌界域T0限定输出角色，拉蒙娜的环行变体形态。围绕负熵（Negentropy）和卡牌操控的辅助输出角色，可召回大量打击卡配合队友爆发。社区简称「环拉」。
+SSR Chaos DPS Awakener (limited). Timeworn variant of Ramona centered on Negentropy and card manipulation. Can recall large amounts of Strike cards to synergize with team burst. Community nickname: "Ring Ramona".
 
 ## Skills
 
@@ -35,6 +35,11 @@ portrait: /portraits/ramona-timeworn.png
 负熵=3时，下一张指令卡触发特殊额外效果。
 :::
 
+
+::: info Behind the Scenes
+创世纪角色之一。制作人Light亲自设计的技能组——「复刻上一张打出的卡」体现了「从过往经历中汲取力量」的主题。V1.1 PV结尾加入的台词：「无论失败多少次，我最终一定会拯救你。」
+制作人最喜欢的角色。
+:::
 
 ## Recommended Equipment
 

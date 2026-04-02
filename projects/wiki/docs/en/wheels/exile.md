@@ -1,13 +1,13 @@
 ---
 title: "Exile - Wheel of Destiny"
-description: "Exile (放逐) - Morimens Wheel of Destiny"
+description: "放逐(Exile) - Morimens Wiki"
 ---
 
 # Exile
 **放逐**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-r">R</span> |
 | Category | R |
 

@@ -14,23 +14,18 @@ portrait: /portraits/faint.png
   | Realm | Caro |
   | Role | Sub-Attack |
   | Limited | No |
-  | Availability | 常驻/活动唤醒 |
+  | Availability | Standard/Event Summon |
 </div>
 
 ## Introduction
 
-血肉界域T2副输出型唤醒体。血肉体系中的灵活副C位置，可配合尤乌哈希等主C使用。常驻池可获取。
+SSR Caro Defense Awakener (standard). Triggers team-wide healing and shield enhancement for 2 turns after activating Death Resistance. Caro frontline option. Featured in: Uuhashi Standard Flesh.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 血肉界域T2副输出型唤醒体。血肉体系灵活副C，签名命轮触发死亡抵抗后为队伍提供治疗和护盾增益。
 
-
+Data pending
 
 ## Recommended Equipment
 

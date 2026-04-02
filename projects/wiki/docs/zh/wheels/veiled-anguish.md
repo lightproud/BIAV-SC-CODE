@@ -6,10 +6,10 @@ description: "隐没的痛楚(Veiled Anguish) - 忘却前夜命轮详情"
 # 隐没的痛楚
 **Veiled Anguish**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-ssr">SSR</span> |
-| 分类 | 限定·星辰线 |
+| 分类 | SSR限定·星辰线 |
 
 ## 效果
 

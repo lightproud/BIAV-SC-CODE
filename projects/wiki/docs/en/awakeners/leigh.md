@@ -1,12 +1,12 @@
 ---
 title: Leigh | Morimens Wiki
-description: Full profile of Leigh (莱), a Caro Chorus in Morimens
+description: Full profile of Leigh (莱克), a Caro Chorus in Morimens
 portrait: /portraits/leigh.png
 ---
-# Leigh (莱)
+# Leigh (莱克)
 
 <div class="character-header">
-  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱" class="portrait" />
+  <img :src="'/brain-in-a-vat/wiki/portraits/leigh.png'" alt="莱克" class="portrait" />
 
   | Attribute | Value |
   |------|-----|
@@ -14,27 +14,25 @@ portrait: /portraits/leigh.png
   | Realm | Caro |
   | Role | Chorus |
   | Limited | No |
-  | Availability | 常驻唤醒 |
+  | Availability | Standard Summon |
 </div>
 
 ## Introduction
 
-血肉界域常驻合唱型唤醒体，卡文迪什家族的「嗜血患者」。作为合唱型角色与血肉主C产生联携效果，常驻池中即可获取的合唱位选择。
+SSR Caro Chorus Awakener (standard). Member of the Cavendish family, known as the "Blood Patient". Provides Chorus synergy with Caro main carries. Available from standard pool.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 混沌界域v1.5新增，官方定位辅助但输出能力突出，专属命轮「好运时间」极为专用。推荐配队：塔薇+拉蒙娜+珈伦+莱克。
 
-
+Data pending
 
 ## Recommended Equipment
 
+### Recommended Wheel: Grace Through Pain
+
 Data pending
+
 
 
 <CharacterCompare />

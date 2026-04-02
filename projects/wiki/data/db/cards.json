@@ -499,6 +499,17 @@
           "effect": "血链·希洛的核心爆发技能，造成极高单次爆发伤害。配合环行·拉蒙娜的大招召回打击卡，实现「血希」队核心爆发。"
         }
       ]
+    },
+    {
+      "character_id": "murphy",
+      "character_name": "墨菲",
+      "character_name_en": "Murphy",
+      "rarity": "SSR",
+      "realm": "aequor",
+      "special_mechanic": {
+        "name": "献祭(Sacrifice)",
+        "description": "墨菲的专属被动机制。通过献祭自身生命为队伍提供防护，技能组强势补强深海界域弱点。"
+      }
     }
   ]
 }

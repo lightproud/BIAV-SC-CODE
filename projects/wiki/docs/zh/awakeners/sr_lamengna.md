@@ -23,6 +23,8 @@ portrait: /portraits/sr_lamengna.png
 
 ## 技能
 
+**定位说明**: 弃牌找回、降费辅助，配合莉兹等主C使用
+
 数据待补充
 
 ## 推荐装备

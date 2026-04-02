@@ -1,15 +1,17 @@
 ---
-title: "Eternal Requiem - 運命の輪"
-description: "Eternal Requiem (永恒安魂曲) - Morimens 運命の輪"
+title: "永恒安魂曲（Eternal Requiem）- 運命の輪"
+description: "永恒安魂曲(Eternal Requiem) - 忘却前夜命轮详情"
 ---
 
-# Eternal Requiem
-**永恒安魂曲**
+# 永恒安魂曲
+**Eternal Requiem**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR常設 |
+| 対応キャラ | 哈姆林(Hameln) |
 
 ## 効果
 
-Keyflare Regen. Level: 25.2% At the start of exploration, shuffle 1 "Silver Key Radiance" into the draw pile and add "Destroy". After releasing a posse, the wielder's critical damage increases by 5%. When the wielder deals damage, gain Keyflare equal to 80% of the wielder's Keyflare Regen and 8% Temporary critical rate, up to a maximum of 5 times per turn.
+暴伤无上限；适合8+回合长期战斗。

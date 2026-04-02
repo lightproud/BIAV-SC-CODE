@@ -9,9 +9,9 @@ Morimens offers a variety of game modes spanning combat, exploration, PvP, craft
 | [Combat](./combat.md) | Core | Turn-based card combat system | Tutorial |
 | [Investigation](./investigation.md) | PvE | Roguelite hex-map exploration | Main Story |
 | [Phase Chess](./phase-chess.md) | PvP | Fair competitive card battles | Stage 3-2 |
-| [Consciousness Dive](./consciousness-dive.md) | PvE | *To be added* | *To be added* |
-| [Dream Visions](./dream-visions.md) | PvE | *To be added* | *To be added* |
-| [Proliferation Frenzy](./proliferation.md) | PvE | *To be added* | *To be added* |
+| [Consciousness Dive](./consciousness-dive.md) | PvE | Special exploration stages with unique mechanics | Main Story |
+| [Dream Visions](./dream-visions.md) | PvE | Roguelite ranked challenge with tier system | Main Story |
+| [Proliferation Frenzy](./proliferation.md) | PvE | Multi-team endgame challenge (no duplicate units) | Endgame |
 | [Gacha / Summoning](./gacha.md) | System | Character and equipment summoning | Tutorial |
 | [Smelting Room](./smelting.md) | Crafting | Material crafting and conversion | Main Story |
 | [Dispatch](./dispatch.md) | Idle | Send Awakeners on timed missions | Main Story |

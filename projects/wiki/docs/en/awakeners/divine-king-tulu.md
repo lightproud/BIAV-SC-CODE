@@ -14,27 +14,25 @@ portrait: /portraits/divine-king-tulu.png
   | Realm | Aequor |
   | Role | Attack |
   | Limited | Yes |
-  | Availability | 限定活动唤醒 |
+  | Availability | Limited Event Summon |
 </div>
 
 ## Introduction
 
-图鲁的神王变体形态，深海界域限定角色。社区简称「神王」。作为图鲁的进化形态，战斗能力进一步提升，深海队的顶级主C选择。
+SSR Aequor DPS Awakener (limited). Divine King variant of Tulu with further enhanced combat capabilities. Top-tier Aequor main carry choice.
 
 ## Skills
 
-| Card | Cost | Effect |
-|------|------|------|
-| **Exalt**: Exalt | — | Data pending |
-| **Rouse (Awakening)**: Rouse (Awakening) | — | Data pending |
-| *Command Cards* | — | Data pending |
-| *Enlighten* | — | Data pending |
+**Role Summary**: 图鲁的神王变体形态，深海界域顶级限定主C。深海队的顶级主C选择，触腕体系进化版。
 
-
+Data pending
 
 ## Recommended Equipment
 
-Data pending
+### Signature Wheel: Shrouded Birth
+
+Domain Mastery Increases team health limit by 10%. Increases healing and shields done by the wearer by ≥4% . After playing the wearer's "Strike", recover ≥3% of lost health. After playing the wearer's "Defense", gain a shield of ≥3% of current health. This effect can be triggered up to 1 time per round. SSR|image1=Soul Birth wheel of
+
 
 
 <CharacterCompare />

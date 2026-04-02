@@ -1,15 +1,17 @@
 ---
-title: "Drowning in Crimson - 運命の輪"
-description: "Drowning in Crimson (沉入殷红) - Morimens 運命の輪"
+title: "沉入殷红（Drowning in Crimson）- 運命の輪"
+description: "沉入殷红(Drowning in Crimson) - 忘却前夜命轮详情"
 ---
 
-# Drowning in Crimson
-**沉入殷红**
+# 沉入殷红
+**Drowning in Crimson**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR限定・忘却線 |
+| 対応キャラ | 淡墨(Danmo) |
 
 ## 効果
 
-== Story ==
+血肉系命轮。

@@ -1,15 +1,15 @@
 ---
 title: "Silent Banquet - Wheel of Destiny"
-description: "Silent Banquet (无声欢宴) - Morimens Wheel of Destiny"
+description: "无声欢宴(Silent Banquet) - Morimens Wiki"
 ---
 
 # Silent Banquet
 **无声欢宴**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Standard |
+| Category | SSR Standard |
 
 ## Effect
 

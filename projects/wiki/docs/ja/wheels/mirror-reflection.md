@@ -1,15 +1,17 @@
 ---
-title: "Mirror Reflection - 運命の輪"
-description: "Mirror Reflection (镜中人) - Morimens 運命の輪"
+title: "镜中人（Mirror Reflection）- 運命の輪"
+description: "镜中人(Mirror Reflection) - 忘却前夜命轮详情"
 ---
 
-# Mirror Reflection
-**镜中人**
+# 镜中人
+**Mirror Reflection**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR常設 |
+| メインステータス | 黒印ドロップ 10.8% |
 
 ## 効果
 
-Realm Mastery 36
+队伍唯一：回合结束时获得3狂气。活动限定。
