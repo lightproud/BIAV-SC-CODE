@@ -1,20 +1,28 @@
 # 忘却前夜 社区日报 2026-04-02
 
-> 采集时间：2026-04-02 04:20 UTC+8
+> 采集时间：2026-04-02 17:43 UTC+8
+
+## 🔥 联动动态
+
+1. [Bilibili] 单簧管《ガラスのくつ（玻璃鞋）》（游戏《沙耶之歌》ED） — engagement: 210
 
 ## 总览
 
 | 平台 | 数据条数 |
 |------|----------|
-| Bilibili | 0（沉默）|
+| Bilibili | 1 |
 | Discord | 6 |
 | NGA | 0（沉默）|
 | Official | 0（沉默）|
 | Reddit | 0（沉默）|
-| Steam | 0（沉默）|
+| Steam | 3 |
 | TapTap | 0（沉默）|
 | Twitter | 0（沉默）|
 | YouTube | 0（沉默）|
+
+## ⚠️ 需要关注
+
+- ⚠️ Steam好评率异常：67%
 
 ## Discord
 
@@ -28,6 +36,24 @@
 4. [DC热门] fishhazardthewizard@🔸morimens-game-chat: — engagement: 8
 5. [DC热门] legendaryredz@🔸morimens-game-chat: Maybe if I stopped — engagement: 7
 
+## Steam 评论
+
+- 好评 2 / 差评 1 / 好评率 67%
+- 语言分布：ukrainian 1, koreana 1, schinese 1
+
+### 热门好评
+
+1. [正面] Хороша гра — engagement: 0
+2. [正面] 번역가 구하라는 마음으로 현질했다 ㅇㅇ — engagement: 0
+
+### ⚠️ 差评
+
+- ⚠️ [schinese] 什么JB玩意~进去就更新不说~还一直更不动~2G更新我换节点更了1天多最后不走了！简直了！！！！！！！ — engagement: 0
+
+## Bilibili
+
+1. 单簧管《ガラスのくつ（玻璃鞋）》（游戏《沙耶之歌》ED） — engagement: 210
+
 ## 沉默平台
 
-Bilibili, NGA, Official, Reddit, Steam, TapTap, Twitter, YouTube
+NGA, Official, Reddit, TapTap, Twitter, YouTube
