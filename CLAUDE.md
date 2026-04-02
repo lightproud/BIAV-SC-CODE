@@ -86,9 +86,11 @@
 | 文件 | 场景 |
 |------|------|
 | `memory/methodology.md` | 讨论 AI 协作方法论时 |
-| `memory/lessons-learned.md` | 避免重犯已知错误时（20 条踩坑记录） |
+| `memory/lessons-learned.md` | 避免重犯已知错误时（22 条踩坑记录） |
 | `memory/collab-event-playbook.md` | 联动事件响应时 |
 | `memory/black-pool-design.md` | 讨论内部系统架构时 |
+| `memory/dreaming-agent-design.md` | 做梦 Agent 三层架构设计（浅睡/深睡/REM） |
+| `memory/dreams/` | 做梦 Agent 产出（日志 + 周报 + 洞察库） |
 | `memory/style-guide.md` | 生成交付物时（视觉规范） |
 | `assets/data/VERSION.md` | 事实圣经版本追踪 |
 

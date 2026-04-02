@@ -1,0 +1,200 @@
+name: "Dream: Shallow Sleep"
+
+# 浅睡层 — 感知异常，轻量自修复
+# 纯 shell 脚本，零 token 成本
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: dream-shallow
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  actions: read
+  issues: write
+
+jobs:
+  shallow-sleep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Check data collection health
+        id: data-check
+        run: |
+          ISSUES=""
+
+          # Check if latest data files exist and aren't empty
+          for f in projects/news/output/steam-latest.json projects/news/output/bilibili-latest.json projects/news/output/discord-latest.json; do
+            if [ ! -f "$f" ]; then
+              ISSUES="${ISSUES}- Data file missing: \`$f\`\n"
+            elif [ ! -s "$f" ]; then
+              ISSUES="${ISSUES}- Data file empty: \`$f\`\n"
+            fi
+          done
+
+          # Check if daily report was generated today
+          TODAY=$(date -u +%Y-%m-%d)
+          REPORT="projects/news/output/daily-report-${TODAY}.md"
+          if [ ! -f "$REPORT" ]; then
+            # Check yesterday (timezone difference)
+            YESTERDAY=$(date -u -d "yesterday" +%Y-%m-%d 2>/dev/null || date -u -v-1d +%Y-%m-%d 2>/dev/null)
+            if [ ! -f "projects/news/output/daily-report-${YESTERDAY}.md" ]; then
+              ISSUES="${ISSUES}- No daily report for today ($TODAY) or yesterday ($YESTERDAY)\n"
+            fi
+          fi
+
+          if [ -n "$ISSUES" ]; then
+            echo "issues<<EOF" >> "$GITHUB_OUTPUT"
+            echo -e "$ISSUES" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "has_issues=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_issues=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check workflow health
+        id: workflow-check
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const monitored = [
+              'update-news.yml',
+              'discord-archive.yml',
+              'deploy-site.yml',
+              'generate-report.yml',
+              'validate-data.yml',
+            ];
+
+            const failures = [];
+            const now = new Date();
+
+            for (const wf of monitored) {
+              try {
+                const { data: workflow } = await github.rest.actions.getWorkflow({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  workflow_id: wf,
+                });
+                const { data: runs } = await github.rest.actions.listWorkflowRuns({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  workflow_id: workflow.id,
+                  per_page: 1,
+                  status: 'completed',
+                });
+                if (runs.workflow_runs.length === 0) continue;
+                const latest = runs.workflow_runs[0];
+                const hoursAgo = Math.round((now - new Date(latest.updated_at)) / 3600000);
+                if (latest.conclusion === 'failure') {
+                  failures.push(`- **${wf}**: failed ${hoursAgo}h ago — [logs](${latest.html_url})`);
+                } else if (hoursAgo > 48) {
+                  failures.push(`- **${wf}**: stale (${hoursAgo}h since last success)`);
+                }
+              } catch (e) {
+                failures.push(`- **${wf}**: check error — ${e.message}`);
+              }
+            }
+
+            core.setOutput('failures', failures.join('\n'));
+            core.setOutput('has_failures', failures.length > 0 ? 'true' : 'false');
+
+      - name: Check path references
+        id: path-check
+        run: |
+          BROKEN=""
+
+          # Check that paths referenced in CLAUDE.md actually exist
+          for path in memory/strategic-plan-2026.md memory/strategic-assessment.md memory/project-status.md memory/decisions.md memory/pending-discussions.md assets/index.md memory/morimens-context.md memory/methodology.md memory/style-guide.md memory/lessons-learned.md memory/collab-event-playbook.md memory/black-pool-design.md; do
+            if [ ! -f "$path" ]; then
+              BROKEN="${BROKEN}- CLAUDE.md references missing file: \`$path\`\n"
+            fi
+          done
+
+          if [ -n "$BROKEN" ]; then
+            echo "broken<<EOF" >> "$GITHUB_OUTPUT"
+            echo -e "$BROKEN" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "has_broken=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_broken=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check memory freshness
+        id: memory-check
+        run: |
+          STALE=""
+          NOW=$(date +%s)
+          STALE_DAYS=14
+
+          for f in memory/project-status.md memory/pending-discussions.md memory/decisions.md memory/lessons-learned.md; do
+            if [ -f "$f" ]; then
+              LAST_COMMIT=$(git log -1 --format=%ct -- "$f" 2>/dev/null || echo 0)
+              if [ "$LAST_COMMIT" -gt 0 ]; then
+                DAYS_AGO=$(( (NOW - LAST_COMMIT) / 86400 ))
+                if [ "$DAYS_AGO" -gt "$STALE_DAYS" ]; then
+                  LAST_DATE=$(git log -1 --format=%ci -- "$f" | cut -d' ' -f1)
+                  STALE="${STALE}- \`$f\`: ${DAYS_AGO} days since last update ($LAST_DATE)\n"
+                fi
+              fi
+            fi
+          done
+
+          if [ -n "$STALE" ]; then
+            echo "stale<<EOF" >> "$GITHUB_OUTPUT"
+            echo -e "$STALE" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "has_stale=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_stale=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Report issues
+        if: steps.data-check.outputs.has_issues == 'true' || steps.workflow-check.outputs.has_failures == 'true' || steps.path-check.outputs.has_broken == 'true' || steps.memory-check.outputs.has_stale == 'true'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            let body = '## Shallow Sleep Report\n\n';
+
+            const dataIssues = `${{ steps.data-check.outputs.issues }}`;
+            const wfFailures = `${{ steps.workflow-check.outputs.failures }}`;
+            const broken = `${{ steps.path-check.outputs.broken }}`;
+            const stale = `${{ steps.memory-check.outputs.stale }}`;
+
+            if (dataIssues) body += '### Data Collection\n' + dataIssues + '\n';
+            if (wfFailures) body += '### Workflow Health\n' + wfFailures + '\n';
+            if (broken) body += '### Broken References\n' + broken + '\n';
+            if (stale) body += '### Stale Memory Files\n' + stale + '\n';
+
+            body += `\n_Shallow sleep at ${new Date().toISOString()}_`;
+
+            // Check existing open dream issue
+            const { data: existing } = await github.rest.issues.listForRepo({
+              owner, repo,
+              labels: 'dream',
+              state: 'open',
+              per_page: 1,
+            });
+
+            if (existing.length > 0) {
+              await github.rest.issues.createComment({
+                owner, repo,
+                issue_number: existing[0].number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner, repo,
+                title: '[主控台] Shallow Sleep: anomalies detected',
+                body,
+                labels: ['dream'],
+              });
+            }
