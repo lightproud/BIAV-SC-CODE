@@ -43,6 +43,7 @@
 | 黑池定位为内网版本（非独立仓库），银芯验证后黑池复用 | 全局 |
 | 大二进制文件移至 GitHub Releases（不入 git） | 全局 |
 | 架构差距分析 + 8 项改进批量实施（JSON Schema、冒烟测试、Dependabot 等） | 全局 |
+| 做梦 Agent 三层架构：浅睡(3h,Actions)→深睡(每天,Claude)→REM(每周,Claude)，详见 `memory/dreaming-agent-design.md` | 全局 |
 
 ### 子项目
 
