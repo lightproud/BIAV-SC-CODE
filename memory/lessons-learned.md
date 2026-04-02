@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-03-30 by Code-wiki
+> 最后更新：2026-04-02 by 战略中心（Code）
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -81,7 +81,7 @@
 - **Fix**：规则变更后，如果有已运行的会话，需要由制作人手动告知该会话。CLAUDE.md 只能影响变更后新启动的会话
 - **Impact**：跨会话协作效率
 
-## 12. VitePress 构建：YAML frontmatter 中的冒号必须加引号
+## 12. ~~VitePress 构建：YAML frontmatter 中的冒号必须加引号~~ [已毕业]
 
 - **Context**：generate_pages.py 批量生成 189 个角色页面的 md 文件
 - **Problem**：部分角色名含冒号（如 `Doll: Inferno`），写入 frontmatter `title: Doll: Inferno | ...` 后 VitePress 构建报 YAML 解析错误
@@ -131,7 +131,7 @@
 - **Impact**：减少用户操作，新数据源即写即用
 - **原则**：公开 ID → 硬编码；私密凭据 → secrets。不要过度设计
 
-## 18. VitePress cleanUrls: true 与 GitHub Pages 不兼容
+## 18. ~~VitePress cleanUrls: true 与 GitHub Pages 不兼容~~ [已毕业]
 
 - **Context**：VitePress 配置了 `cleanUrls: true`，生成无扩展名链接（如 `/awakeners/tulu`）
 - **Problem**：GitHub Pages 是纯静态托管，不支持服务端 URL 重写。访问 `/awakeners/tulu` 返回 404，因为实际文件是 `tulu.html`。首页和索引页正常（因为有 `index.html` 兜底），但所有详情页全部 404

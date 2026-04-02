@@ -1,5 +1,7 @@
 # Wiki 子项目上下文
 
+> 最后更新：2026-04-02 by 战略中心（Code）
+
 ## 负责会话
 Code-wiki
 
@@ -43,7 +45,7 @@ python scripts/content_db.py
 
 > 来源：战略中心 Phase 0 行动方案。Wiki 当前处于维护模式，不加新功能。
 
-1. **数据质量基线**：对 `data/db/` 的 21 个 JSON 做一次完整人工抽查，标记数据覆盖率和准确性。输出一份简要报告到 `projects/wiki/output/data-quality-report.md`
+1. **数据质量基线**：对 `data/db/` 的 21 个 JSON 做一次完整人工抽查，标记数据覆盖率和准确性。输出一份简要报告到 `projects/wiki/output/data-quality-report.md`（待生成）
 2. **确认 fetch-wiki-data workflow 健康**：检查最近几次运行结果，确认 7 个抓取脚本是否正常。注意所有步骤都是 continue-on-error，需要手动看日志
 
 ## 后续待做（非本周）

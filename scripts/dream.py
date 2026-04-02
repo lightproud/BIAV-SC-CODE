@@ -65,12 +65,19 @@ def extract_file_refs(text: str) -> list[str]:
     """Find file path references in markdown text."""
     refs = set()
     top_dirs = {"memory", "assets", "projects"}
+    skip_markers = {"待生成", "待创建", "TODO", "todo", "planned"}
     for m in re.finditer(r"(?:memory/[\w./-]+|assets/[\w./-]+|projects/[\w./-]+)", text):
         ref = m.group(0).rstrip(".,;:!?)")
         if "xxx" in ref or "你的" in ref:
             continue
         parts = Path(ref).parts
         if len(parts) >= 2 and parts[0] in top_dirs and parts[1] in top_dirs:
+            continue
+        # Skip refs annotated as pending/to-be-created in surrounding context
+        ctx_start = max(0, m.start() - 20)
+        ctx_end = min(len(text), m.end() + 20)
+        context = text[ctx_start:ctx_end]
+        if any(marker in context for marker in skip_markers):
             continue
         refs.add(ref)
     return sorted(refs)
@@ -119,14 +126,18 @@ def check_lessons():
         return ["  - ? memory/lessons-learned.md not found"], 0
     text = fp.read_text(encoding="utf-8")
     total = len(re.findall(r"^## \d+\.", text, re.MULTILINE))
+    graduated = 0
     resolved_hints = set()
     for block in re.split(r"^## \d+\.", text, flags=re.MULTILINE)[1:]:
         title = block.strip().splitlines()[0].strip()[:60] if block.strip() else ""
+        if "已毕业" in title or "graduated" in title.lower():
+            graduated += 1
+            continue
         for cfg in re.findall(r"`(\w+:\s*\w+)`", block):
             key = cfg.split(":")[0].strip()
             if key and len(key) > 3 and not list(REPO.rglob(f"*{key}*")):
                 resolved_hints.add(title)
-    lines = [f"  - {total} lessons total, {len(resolved_hints)} may be resolved"]
+    lines = [f"  - {total} lessons total, {graduated} graduated, {len(resolved_hints)} may be resolved"]
     for hint in sorted(resolved_hints)[:5]:
         lines.append(f"    - possibly resolved: {hint}")
     return lines, 0
