@@ -4,12 +4,12 @@ on:
   schedule:
     # Incremental: once daily at 18:00 UTC (UTC+8 02:00)
     - cron: '0 18 * * *'
-    # Monthly archive: 1st of each month at 06:00 UTC
+    # Monthly cleanup: 1st of each month at 06:00 UTC
     - cron: '0 6 1 * *'
   workflow_dispatch:
     inputs:
       mode:
-        description: 'Run mode: incremental (default) or monthly-archive'
+        description: 'Run mode: incremental (default) or monthly-cleanup'
         required: false
         default: 'incremental'
 
@@ -32,12 +32,11 @@ jobs:
       - name: Determine run mode
         id: mode
         run: |
-          if [ "${{ github.event.schedule }}" = "0 6 1 * *" ] || [ "${{ github.event.inputs.mode }}" = "monthly-archive" ]; then
+          if [ "${{ github.event.schedule }}" = "0 6 1 * *" ] || [ "${{ github.event.inputs.mode }}" = "monthly-cleanup" ]; then
             echo "mode=monthly" >> $GITHUB_OUTPUT
           else
             echo "mode=incremental" >> $GITHUB_OUTPUT
           fi
-          echo "Running in ${{ steps.mode.outputs.mode || 'incremental' }} mode"
 
       - name: Run Discord archiver (incremental)
         if: steps.mode.outputs.mode == 'incremental'
@@ -45,13 +44,12 @@ jobs:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: python projects/news/scripts/discord_archiver.py
 
-      - name: Run Discord archiver (monthly archive)
+      - name: Run monthly cleanup (archive old data to Releases)
         if: steps.mode.outputs.mode == 'monthly'
         env:
-          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           GH_TOKEN: ${{ github.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: python projects/news/scripts/discord_archiver.py --archive-monthly
+        run: python projects/news/scripts/archive_discord.py
 
       - name: Commit and push if changed
         run: |
@@ -63,7 +61,7 @@ jobs:
           else
             MSG="chore: archive Discord data [skip ci]"
             if [ "${{ steps.mode.outputs.mode }}" = "monthly" ]; then
-              MSG="chore: monthly Discord archive — old JSONL moved to Releases [skip ci]"
+              MSG="chore: monthly Discord cleanup — old JSONL moved to Releases [skip ci]"
             fi
             git commit -m "$MSG"
             for i in 1 2 3 4; do
