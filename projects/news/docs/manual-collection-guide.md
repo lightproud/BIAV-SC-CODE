@@ -4,7 +4,7 @@
 
 ## 概述
 
-小红书、Discord、Arca Live 等平台没有公开 API，需要人工在浏览器中采集数据。采集完成后，将数据整理为**统一格式**存入 `assets/data/platforms/`，报告生成器会自动读取，与自动采集数据合并处理。
+小红书、Discord、Arca Live 等平台没有公开 API，需要人工在浏览器中采集数据。采集完成后，将数据整理为**统一格式**存入 `projects/news/data/platforms/`，报告生成器会自动读取，与自动采集数据合并处理。
 
 **核心原则：手动采集和自动采集走同一条管线，格式完全一致。**
 
@@ -78,7 +78,7 @@
 ## 文件命名与存放路径
 
 ```
-assets/data/platforms/
+projects/news/data/platforms/
 ├── steam.json          # 自动采集（Steam API）
 ├── bilibili.json       # 自动采集（Bilibili API）
 ├── xiaohongshu.json    # 手动采集
@@ -121,7 +121,7 @@ assets/data/platforms/
 1. 在浏览器中打开目标平台，搜索关键词：`忘却前夜`、`Morimens`、`モリメンズ`（日服）
 2. 复制相关帖子/评论内容，记录发布时间和链接
 3. 整理为上述 JSON 格式（可使用任何文本编辑器）
-4. 保存到 `assets/data/platforms/{platform}.json`
+4. 保存到 `projects/news/data/platforms/{platform}.json`
    - 如果文件已存在：在 `items` 数组头部追加新条目，更新 `updated_at`
    - 如果文件不存在：创建完整文件
 5. 提交并推送到 main 分支

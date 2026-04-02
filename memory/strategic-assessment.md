@@ -23,7 +23,7 @@
 
 - **触发频率**：每小时 cron
 - **实际产出**：537 个频道目录，state.json 追踪正常，每日有增量 commit
-- **数据体量**：`assets/data/discord/` 已达 **299MB**，其中 `channels/` 占 291MB
+- **数据体量**：`projects/news/data/discord/` 已达 **299MB**，其中 `channels/` 占 291MB
 - **风险**：按当前增速（单日 commit 含数千行 JSONL），60 天滚动窗口 + Releases 归档机制**尚未实现**。如果不在 1-2 周内上线归档清理，仓库将突破 500MB→1GB
 - **结论**：采集正常，但存储治理是定时炸弹
 
@@ -134,7 +134,7 @@
 
 ### 短期做（1-2 周）
 
-3. **桥接 Discord 归档 → 聚合器**：让 update-news.yml 读取 `assets/data/discord/` 的当日数据，生成摘要进日报
+3. **桥接 Discord 归档 → 聚合器**：让 update-news.yml 读取 `projects/news/data/discord/` 的当日数据，生成摘要进日报
 4. **接通 YouTube 数据源**：需配置 YOUTUBE_API_KEY + YOUTUBE_CHANNEL_ID。代码已就绪
 5. **决策两套采集系统取舍**：aggregator.py vs report-system，二选一或明确分工。拖下去会持续制造混乱
 

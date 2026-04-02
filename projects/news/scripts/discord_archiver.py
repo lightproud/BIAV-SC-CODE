@@ -3,7 +3,7 @@
 Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重
 
 存储结构:
-  assets/data/discord/
+  projects/news/data/discord/
   ├── guild_meta.json              # 服务器元信息
   ├── channels/
   │   ├── {channel_id[-8:]}/       # 目录名用 ID 后 8 位（避免 emoji/特殊字符在路径中）
@@ -36,7 +36,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 _REPO_ROOT = Path(__file__).parent.parent.parent.parent
-DISCORD_DATA_DIR = _REPO_ROOT / 'assets' / 'data' / 'discord'
+DISCORD_DATA_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord'
 STATE_PATH = DISCORD_DATA_DIR / 'state.json'
 
 REQUEST_DELAY = 1.2           # seconds between API calls (conservative, well under 50 req/s)

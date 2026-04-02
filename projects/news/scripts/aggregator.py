@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 忘却前夜 Morimens - 社区热点聚合器
-从各社区平台抓取24小时内的热门话题并生成 assets/data/news.json
+从各社区平台抓取24小时内的热门话题并生成 projects/news/output/news.json
 
 数据源:
   - Reddit (r/Morimens)
@@ -16,7 +16,7 @@
   1. 安装依赖: pip install -r requirements.txt
   2. 配置环境变量 (见 .env.example)
   3. 运行: python scripts/aggregator.py
-  4. 输出: assets/data/news.json
+  4. 输出: projects/news/output/news.json
 """
 
 import json
@@ -33,7 +33,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-OUTPUT_PATH = REPO_ROOT / 'assets' / 'data' / 'news.json'
+OUTPUT_PATH = REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
 COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ.get('COLLAB_KEYWORDS') else [
     '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
@@ -619,11 +619,11 @@ def fetch_fandom_wiki():
 
 def fetch_discord_local():
     """
-    Read today's Discord archive data from assets/data/discord/ and produce
+    Read today's Discord archive data from projects/news/data/discord/ and produce
     news items: one summary item + top-reacted messages as individual items.
     No API calls — purely local file reads from the archiver's output.
     """
-    discord_dir = REPO_ROOT / 'assets' / 'data' / 'discord'
+    discord_dir = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord'
     today_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     yesterday_str = (datetime.now(timezone.utc) - timedelta(days=1)).strftime('%Y-%m-%d')
     items = []

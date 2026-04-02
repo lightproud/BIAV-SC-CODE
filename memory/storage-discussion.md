@@ -39,6 +39,6 @@
 
 ## 当前状态
 
-- Discord 文本数据归档已实现，存在 `assets/data/discord/`（纯文本，每天 2-6MB）
+- Discord 文本数据归档已实现，存在 `projects/news/data/discord/`（纯文本，每天 2-6MB）
 - 附件目前只保存 URL，未下载实体文件
 - Wiki 资产存储方式待定

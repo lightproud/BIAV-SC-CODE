@@ -1,5 +1,5 @@
 """
-split_output.py — 按数据源分割 assets/data/news.json
+split_output.py — 按数据源分割 projects/news/output/news.json
 将合并的聚合结果拆分为各数据源独立的 JSON 文件，统一存放在 projects/news/output/
 
 输出文件：
@@ -44,7 +44,7 @@ from pathlib import Path
 
 # ── 路径 ──────────────────────────────────────────────────────────────────────
 _REPO_ROOT = Path(__file__).parent.parent.parent.parent  # brain-in-a-vat/
-INPUT_PATH = _REPO_ROOT / 'assets' / 'data' / 'news.json'
+INPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
 OUTPUT_DIR = _REPO_ROOT / 'projects' / 'news' / 'output'
 
 # ── 数据源规范化 ──────────────────────────────────────────────────────────────

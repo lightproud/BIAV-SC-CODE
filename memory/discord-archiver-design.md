@@ -11,7 +11,7 @@
 ## 存储架构
 
 ```
-assets/data/discord/
+projects/news/data/discord/
 ├── channels/
 │   ├── 综合讨论_a7982947/        ← 频道名_ID后8位（sanitized）
 │   │   ├── 2026-03-29.jsonl      ← 按自然日分片，保留60天
