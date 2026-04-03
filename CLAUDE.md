@@ -107,6 +107,27 @@
 - 数据单向：黑池 → 脱敏 → 银芯，绝不反向
 - 银芯验证过的模式，黑池直接复用
 
+### 黑池数据同步接口
+
+> **如果你是从黑池（BIAV-BP）启动的会话**，本段与你相关。否则跳过。
+
+如果你的上下文中存在 BIAV-BP.md 或黑池相关指令，说明你是黑池团队成员的 AI 会话，正在读取银芯获取外部公开信息。你的任务不是参与银芯开发，而是：
+
+1. **采集最新公开数据**带回黑池：
+   - 社区日报：`projects/news/output/daily-latest.md`
+   - Steam 评论：`projects/news/output/steam-latest.json`
+   - B站动态：`projects/news/output/bilibili-latest.json`
+   - Discord 摘要：`projects/news/output/discord-latest.json`
+   - 全平台合并：`projects/news/output/all-latest.json`
+   - 角色数据库：`projects/wiki/data/db/characters.json`
+   - 游戏世界观：`memory/morimens-context.md`
+
+2. **提取知识**而非复制文件 — 将公开信息结构化后写入黑池的 inbox/ 或 assets/data/silver-core/
+
+3. **绝不向银芯写入任何内容** — 不创建 Issue、不提交 PR、不修改文件
+
+4. **不将黑池内部信息泄露到银芯** — 你的输出中不能包含未发布内容、商业数据或内部决策
+
 ---
 
 ## 协作规则
