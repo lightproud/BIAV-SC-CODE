@@ -16,7 +16,7 @@
 
 ## 三层做梦架构
 
-### 浅睡（Shallow Sleep）— 每 3 小时
+### 浅睡（Shallow Sleep）— 每 6 小时
 - **实现**：`dream.yml` → `shallow-sleep` job（纯 shell + GitHub Actions，零 token 成本）
 - **职责**：感知异常
   - 数据采集是否空跑/文件缺失
@@ -26,7 +26,7 @@
 - **产出**：异常时开 Issue（标签 `dream`），正常时无输出
 - **替代**：原 health-check.yml + sync-memory.yml
 
-### 深睡（Deep Sleep）— 每天 22:00 UTC
+### 深睡（Deep Sleep）— 每天 19:00 UTC (03:00 UTC+8, 制作人入睡后)
 - **实现**：`dream.yml` → `deep-sleep` job（claude-code-action）
 - **职责**：每日整理
   - 7 天日报趋势分析（平台活跃度、好评率、关键词）
@@ -34,7 +34,7 @@
   - 知识缺口识别（采访 vs 数据库 diff）
 - **产出**：`memory/dreams/YYYY-MM-DD.md` + `insights.json` 追加
 
-### REM — 每周一 21:00 UTC
+### REM — 每周一 01:00 UTC (09:00 UTC+8, 制作人起床时周报就绪)
 - **实现**：`dream.yml` → `rem-sleep` job（claude-code-action）
 - **职责**：周度深度反思
   - 一周 commit 回顾和子项目活跃度分析
