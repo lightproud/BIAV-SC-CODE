@@ -1,17 +1,21 @@
 # 忘却前夜 社区日报 2026-04-03
 
-> 采集时间：2026-04-03 04:58 UTC+8
+> 采集时间：2026-04-03 16:37 UTC+8
+
+## 🔥 联动动态
+
+1. [Bilibili] 【忘却前夜×沙耶之歌】入坑杂谈 &amp; 入坑攻略 — engagement: 1889
 
 ## 总览
 
 | 平台 | 数据条数 |
 |------|----------|
-| Bilibili | 6 |
+| Bilibili | 5 |
 | Discord | 6 |
 | NGA | 0（沉默）|
 | Official | 0（沉默）|
 | Reddit | 0（沉默）|
-| Steam | 4 |
+| Steam | 2 |
 | TapTap | 0（沉默）|
 | Twitter | 0（沉默）|
 | YouTube | 0（沉默）|
@@ -30,23 +34,21 @@
 
 ## Steam 评论
 
-- 好评 4 / 差评 0 / 好评率 100%
-- 语言分布：koreana 2, spanish 1, schinese 1
+- 好评 2 / 差评 0 / 好评率 100%
+- 语言分布：spanish 1, koreana 1
 
 ### 热门好评
 
 1. [正面] Mira que yo odio los gachas con toda mi alma, pero... — engagement: 0
 2. [正面] 세계관이라던가 분위기가 매우 흥미롭고, 초입 부분이라 그런지 조금 풀린 게 없어 어렵지만... — engagement: 0
-3. [正面] nb — engagement: 0
-4. [正面] 찍찍! — engagement: 0
 
 ## Bilibili
 
-1. [忘却前夜]愚人节最新兑换码，二百芯银，感觉有点少 — engagement: 2032
-2. 防止你不知道商店叠满消失的命轮可以下拉继续换升级材料 — engagement: 1467
-3. 【忘却前夜】豪赌茉夏 — engagement: 320
-4. 【忘却前夜】抽了超限的我开荒会顺利吗doge — engagement: 229
-5. 家人们哪有看板娘给主角念遗书的游戏啊 — engagement: 227
+1. 【忘却前夜×沙耶之歌】入坑杂谈 &amp; 入坑攻略 — engagement: 1889
+2. 【忘却前夜】角色攻略之血链·希洛 — engagement: 1143
+3. 家人们哪有看板娘给主角念遗书的游戏啊 — engagement: 357
+4. 无专造两回合双超限莫斯，环法莱莫有多阴? — engagement: 249
+5. 数字小丑携神秘带错命轮深海女子1t5-5医生 — engagement: 105
 
 ## 沉默平台
 
