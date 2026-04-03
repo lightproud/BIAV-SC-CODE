@@ -8,12 +8,12 @@ name: "🌙 Dreaming Agent"
 
 on:
   schedule:
-    # 浅睡：每 6 小时
+    # 浅睡：每 6 小时（零成本）
     - cron: '0 */6 * * *'
-    # 深睡：每天 19:00 UTC (03:00 UTC+8, 制作人入睡后开始)
-    - cron: '0 19 * * *'
-    # REM：每周一 01:00 UTC (09:00 UTC+8, 制作人起床时周报已就绪)
-    - cron: '0 1 * * 1'
+    # 深睡/REM：暂停自动触发，等数据量积累后再开启
+    # 手动触发仍可用（workflow_dispatch）
+    # - cron: '0 19 * * *'
+    # - cron: '0 1 * * 1'
   workflow_dispatch:
     inputs:
       layer:
@@ -201,9 +201,8 @@ jobs:
     needs: shallow-sleep
     # 仅在 22:00 UTC cron 或手动触发时运行
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '0 19 * * *') ||
-      (github.event_name == 'workflow_dispatch' &&
-       (inputs.layer == 'deep' || inputs.layer == 'all'))
+      github.event_name == 'workflow_dispatch' &&
+      (inputs.layer == 'deep' || inputs.layer == 'all')
     steps:
       - uses: actions/checkout@v6
 
@@ -284,9 +283,8 @@ jobs:
     needs: shallow-sleep
     # 仅在周一 21:00 UTC cron 或手动触发时运行
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1') ||
-      (github.event_name == 'workflow_dispatch' &&
-       (inputs.layer == 'rem' || inputs.layer == 'all'))
+      github.event_name == 'workflow_dispatch' &&
+      (inputs.layer == 'rem' || inputs.layer == 'all')
     steps:
       - uses: actions/checkout@v6
         with:
