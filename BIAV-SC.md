@@ -183,7 +183,7 @@
    - 角色数据库：`projects/wiki/data/db/characters.json`
    - 游戏世界观：`memory/morimens-context.md`
 
-2. **提取知识**而非复制文件 — 将公开信息结构化后写入黑池的 inbox/ 或 assets/data/silver-core/
+2. **提取知识**而非复制文件 — 将公开信息结构化后写入黑池的 inbox/ 或 silver-core/ 目录
 
 3. **绝不向银芯写入任何内容** — 不创建 Issue、不提交 PR、不修改文件
 

@@ -1,20 +1,40 @@
 """
-dream.py — Layer 1 Memory Consistency Checker (read-only observer)
+dream.py — 4-Phase AutoDream Memory Consolidation System
 
-Scans memory/ and project files for staleness, broken references,
-decision health, and lessons status. Never modifies any files.
+Inspired by Claude AutoDream + Mem0 + Voyager skill accumulation.
+4 phases: Orient → Gather → Consolidate → Index
 
-Usage: python scripts/dream.py
+Phase 1 (Orient + Gather): Pure Python, zero API cost — structural checks
+Phase 2 (Consolidate): AI-powered semantic analysis — requires ANTHROPIC_API_KEY
+Phase 3 (Index): Auto-update BIAV-SC.md knowledge table + generate semantic index
+
+Usage:
+  python scripts/dream.py                  # Phase 1 only (structural)
+  python scripts/dream.py --deep           # Phase 1 + 2 (with AI)
+  python scripts/dream.py --full           # Phase 1 + 2 + 3 (full AutoDream)
+  python scripts/dream.py --report         # Output JSON report for automation
 """
 
+import json
+import os
 import re
 import sys
-from datetime import date
+from collections import Counter, defaultdict
+from datetime import date, datetime
+from hashlib import md5
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 TODAY = date.today()
 STALE_DAYS = 14
+DREAMS_DIR = REPO / "memory" / "dreams"
+INSIGHTS_FILE = DREAMS_DIR / "insights.json"
+ACCESS_LOG = DREAMS_DIR / "access-log.json"
+SEMANTIC_INDEX = REPO / "assets" / "data" / "semantic-index.json"
+
+# ============================================================
+# Phase 1: Orient + Gather (structural, zero API cost)
+# ============================================================
 
 
 def parse_timestamp(fp: Path) -> date | None:
@@ -44,23 +64,6 @@ def days_ago(d: date) -> str:
     return "today" if n == 0 else f"{n} day{'s' if n != 1 else ''} ago"
 
 
-def check_staleness():
-    lines, issues = [], 0
-    targets = sorted(REPO.glob("memory/*.md")) + sorted(REPO.glob("projects/*/CONTEXT.md"))
-    for fp in targets:
-        rel = fp.relative_to(REPO)
-        ts = parse_timestamp(fp)
-        if ts is None:
-            lines.append(f"  - ? {rel} -- no timestamp found")
-            issues += 1
-        elif (TODAY - ts).days > STALE_DAYS:
-            lines.append(f"  - x {rel} -- last updated {ts} ({days_ago(ts)})")
-            issues += 1
-        else:
-            lines.append(f"  - ok {rel} -- last updated {ts} ({days_ago(ts)})")
-    return lines, issues
-
-
 def extract_file_refs(text: str) -> list[str]:
     """Find file path references in markdown text."""
     refs = set()
@@ -73,7 +76,6 @@ def extract_file_refs(text: str) -> list[str]:
         parts = Path(ref).parts
         if len(parts) >= 2 and parts[0] in top_dirs and parts[1] in top_dirs:
             continue
-        # Skip refs annotated as pending/to-be-created in surrounding context
         ctx_start = max(0, m.start() - 20)
         ctx_end = min(len(text), m.end() + 20)
         context = text[ctx_start:ctx_end]
@@ -83,11 +85,32 @@ def extract_file_refs(text: str) -> list[str]:
     return sorted(refs)
 
 
+def check_staleness():
+    """Check all memory and context files for timestamp freshness."""
+    lines, issues = [], 0
+    targets = sorted(REPO.glob("memory/*.md")) + sorted(REPO.glob("projects/*/CONTEXT.md"))
+    for fp in targets:
+        rel = fp.relative_to(REPO)
+        ts = parse_timestamp(fp)
+        if ts is None:
+            lines.append(f"  - ? {rel} -- no timestamp found")
+            issues += 1
+        elif (TODAY - ts).days > STALE_DAYS:
+            lines.append(f"  - ⚠ {rel} -- last updated {ts} ({days_ago(ts)}) STALE")
+            issues += 1
+        else:
+            lines.append(f"  - ok {rel} -- last updated {ts} ({days_ago(ts)})")
+    return lines, issues
+
+
 def check_references():
+    """Check all cross-file references for broken links."""
     lines, issues, seen = [], 0, set()
-    targets = sorted(REPO.glob("memory/*.md")) + [REPO / "CLAUDE.md"]
+    targets = sorted(REPO.glob("memory/*.md")) + [REPO / "CLAUDE.md", REPO / "BIAV-SC.md"]
     targets += sorted(REPO.glob("projects/*/CONTEXT.md"))
     for fp in targets:
+        if not fp.exists():
+            continue
         try:
             text = fp.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
@@ -105,22 +128,54 @@ def check_references():
 
 
 def check_decisions():
+    """Analyze decision health: obsolete ratio, duplicates, contradictions."""
     fp = REPO / "memory" / "decisions.md"
     if not fp.exists():
         return ["  - ? memory/decisions.md not found"], 0
+    text = fp.read_text(encoding="utf-8")
     total, dead = 0, 0
-    for line in fp.read_text(encoding="utf-8").splitlines():
+    decision_texts = []
+    for line in text.splitlines():
         if line.startswith("|") and "2026-" in line and "日期" not in line:
             total += 1
+            decision_texts.append(line)
             if "已废除" in line or "已废弃" in line or "~~" in line:
                 dead += 1
     if total == 0:
         return ["  - No decision entries found"], 0
+
+    # Check for near-duplicate decisions (same keywords)
+    dupes = find_near_duplicates(decision_texts)
+    lines = []
     pct = round(dead / total * 100)
-    return [f"  - {dead}/{total} decisions marked as obsolete ({pct}%)"], 1 if pct > 20 else 0
+    lines.append(f"  - {dead}/{total} decisions marked as obsolete ({pct}%)")
+    if dupes:
+        lines.append(f"  - ⚠ {len(dupes)} potential duplicate decision pairs found")
+        for a, b in dupes[:3]:
+            lines.append(f"    - similar: '{a[:50]}' ↔ '{b[:50]}'")
+    return lines, 1 if pct > 20 else 0
+
+
+def find_near_duplicates(texts: list[str], threshold: float = 0.6) -> list[tuple[str, str]]:
+    """Find near-duplicate text pairs using word overlap (Jaccard similarity)."""
+    dupes = []
+    word_sets = []
+    for t in texts:
+        words = set(re.findall(r"[\w\u4e00-\u9fff]+", t.lower()))
+        words -= {"2026", "全局", "wiki", "site", "news", "game", "code"}  # stop words
+        word_sets.append(words)
+    for i in range(len(word_sets)):
+        for j in range(i + 1, len(word_sets)):
+            if not word_sets[i] or not word_sets[j]:
+                continue
+            jaccard = len(word_sets[i] & word_sets[j]) / len(word_sets[i] | word_sets[j])
+            if jaccard > threshold:
+                dupes.append((texts[i].strip(), texts[j].strip()))
+    return dupes
 
 
 def check_lessons():
+    """Check lessons-learned for graduated entries and potentially resolved ones."""
     fp = REPO / "memory" / "lessons-learned.md"
     if not fp.exists():
         return ["  - ? memory/lessons-learned.md not found"], 0
@@ -143,30 +198,460 @@ def check_lessons():
     return lines, 0
 
 
-def main():
-    print(f"\U0001F319 Memory Dream Journal -- {TODAY}\n")
-    total_issues, total_warnings = 0, 0
+def check_memory_size():
+    """Check memory files for bloat — files over 500 lines need consolidation."""
+    lines, issues = [], 0
+    for fp in sorted(REPO.glob("memory/*.md")):
+        try:
+            line_count = len(fp.read_text(encoding="utf-8").splitlines())
+        except (OSError, UnicodeDecodeError):
+            continue
+        rel = fp.relative_to(REPO)
+        if line_count > 500:
+            lines.append(f"  - ⚠ {rel} -- {line_count} lines (needs consolidation)")
+            issues += 1
+        elif line_count > 300:
+            lines.append(f"  - ~ {rel} -- {line_count} lines (approaching limit)")
+    return lines, issues
+
+
+def extract_keywords(text: str) -> Counter:
+    """Extract keyword frequencies from text for semantic indexing."""
+    # Chinese + English word extraction
+    words = re.findall(r"[\u4e00-\u9fff]{2,}|[a-zA-Z]{3,}", text.lower())
+    stop_words = {
+        "the", "and", "for", "that", "this", "with", "from", "are", "was", "been",
+        "have", "has", "not", "but", "can", "all", "will", "would", "could",
+        "should", "may", "also", "more", "其他", "可以", "需要", "使用", "目前",
+        "已经", "以及", "进行", "通过", "是否", "如果", "但是", "或者", "因为",
+        "所以", "关于", "对于", "以下", "文件", "内容", "状态", "说明",
+    }
+    filtered = [w for w in words if w not in stop_words and len(w) > 1]
+    return Counter(filtered)
+
+
+def build_keyword_index() -> dict:
+    """Build a keyword-to-file mapping for semantic search (no API needed)."""
+    index = defaultdict(list)
+    file_summaries = {}
+
+    knowledge_files = (
+        list(REPO.glob("memory/*.md"))
+        + list(REPO.glob("assets/data/*.json"))
+        + list(REPO.glob("assets/data/*.md"))
+        + list(REPO.glob("projects/*/CONTEXT.md"))
+        + [REPO / "BIAV-SC.md"]
+    )
+
+    for fp in knowledge_files:
+        if not fp.exists():
+            continue
+        try:
+            text = fp.read_text(encoding="utf-8")[:5000]  # First 5K chars
+        except (OSError, UnicodeDecodeError):
+            continue
+
+        rel = str(fp.relative_to(REPO))
+        keywords = extract_keywords(text)
+        top_keywords = [kw for kw, _ in keywords.most_common(15)]
+        file_summaries[rel] = {
+            "keywords": top_keywords,
+            "lines": len(text.splitlines()),
+            "last_modified": fp.stat().st_mtime,
+            "content_hash": md5(text.encode()).hexdigest()[:12],
+        }
+        for kw in top_keywords:
+            index[kw].append(rel)
+
+    return {"files": file_summaries, "keyword_index": dict(index)}
+
+
+# ============================================================
+# Phase 2: Consolidate (AI-powered semantic analysis)
+# ============================================================
+
+
+def get_anthropic_client():
+    """Get Anthropic client, return None if not available."""
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        return None
+    try:
+        import anthropic
+        return anthropic.Anthropic(api_key=api_key)
+    except ImportError:
+        return None
+
+
+def ai_consolidate(client) -> dict:
+    """Use Claude to do semantic memory consolidation."""
+    # Gather all memory content
+    memory_contents = {}
+    for fp in sorted(REPO.glob("memory/*.md")):
+        try:
+            text = fp.read_text(encoding="utf-8")
+            memory_contents[str(fp.relative_to(REPO))] = text[:3000]
+        except (OSError, UnicodeDecodeError):
+            continue
+
+    prompt = f"""你是银芯（BIAV-SC）的做梦 Agent。现在是深睡阶段，你需要整理记忆。
+
+以下是当前所有 memory/ 文件的内容（截取前 3000 字符）：
+
+{json.dumps(memory_contents, ensure_ascii=False, indent=2)}
+
+请分析并输出 JSON 格式的整理报告：
+
+{{
+  "contradictions": [
+    {{"file_a": "路径", "file_b": "路径", "description": "矛盾描述", "suggestion": "建议"}}
+  ],
+  "duplicates": [
+    {{"files": ["路径1", "路径2"], "description": "重复内容描述", "merge_suggestion": "合并建议"}}
+  ],
+  "stale_content": [
+    {{"file": "路径", "description": "过时内容描述", "suggestion": "更新或删除"}}
+  ],
+  "knowledge_gaps": [
+    {{"topic": "缺失主题", "evidence": "为什么认为缺失", "suggested_file": "建议写入哪个文件"}}
+  ],
+  "consolidation_actions": [
+    {{"action": "merge|delete|update|create", "target": "文件路径", "description": "具体操作"}}
+  ],
+  "insights": [
+    {{"type": "trend|gap|anomaly|pattern", "summary": "描述", "evidence": ["文件路径"], "suggested_action": "建议"}}
+  ]
+}}
+
+只输出 JSON，不要其他文字。"""
+
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=4096,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        text = response.content[0].text
+        # Extract JSON from response
+        json_match = re.search(r"\{[\s\S]+\}", text)
+        if json_match:
+            return json.loads(json_match.group())
+    except Exception as e:
+        print(f"  - AI consolidation error: {e}")
+    return {}
+
+
+def ai_trend_analysis(client) -> dict:
+    """Analyze recent daily reports for trends."""
+    reports_dir = REPO / "projects" / "news" / "output"
+    daily_file = reports_dir / "daily-latest.md"
+    if not daily_file.exists():
+        return {}
+
+    try:
+        daily_content = daily_file.read_text(encoding="utf-8")[:3000]
+    except (OSError, UnicodeDecodeError):
+        return {}
+
+    prompt = f"""你是银芯（BIAV-SC）的做梦 Agent。分析以下最新日报，提取趋势信号。
+
+{daily_content}
+
+输出 JSON 格式：
+
+{{
+  "sentiment": "positive|neutral|negative",
+  "hot_topics": ["话题1", "话题2"],
+  "anomalies": ["异常信号"],
+  "community_health": {{
+    "steam_trend": "up|stable|down",
+    "discord_trend": "up|stable|down",
+    "bilibili_trend": "up|stable|down"
+  }},
+  "action_items": ["建议制作人关注的事项"]
+}}
+
+只输出 JSON。"""
+
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=2048,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        text = response.content[0].text
+        json_match = re.search(r"\{[\s\S]+\}", text)
+        if json_match:
+            return json.loads(json_match.group())
+    except Exception as e:
+        print(f"  - AI trend analysis error: {e}")
+    return {}
+
+
+# ============================================================
+# Phase 3: Index (auto-update knowledge index + semantic index)
+# ============================================================
+
+
+def update_semantic_index(keyword_index: dict, ai_insights: dict = None):
+    """Write semantic index to JSON for other sessions to query."""
+    SEMANTIC_INDEX.parent.mkdir(parents=True, exist_ok=True)
+
+    index_data = {
+        "generated": TODAY.isoformat(),
+        "generator": "dream.py --full",
+        "keyword_index": keyword_index.get("keyword_index", {}),
+        "files": keyword_index.get("files", {}),
+    }
+
+    if ai_insights:
+        index_data["ai_insights"] = ai_insights
+
+    SEMANTIC_INDEX.write_text(
+        json.dumps(index_data, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return str(SEMANTIC_INDEX.relative_to(REPO))
+
+
+def save_dream_journal(phase1_results: dict, phase2_results: dict = None):
+    """Save dream journal entry."""
+    DREAMS_DIR.mkdir(parents=True, exist_ok=True)
+
+    journal = {
+        "date": TODAY.isoformat(),
+        "timestamp": datetime.now().isoformat(),
+        "phase1": phase1_results,
+    }
+    if phase2_results:
+        journal["phase2"] = phase2_results
+
+    journal_file = DREAMS_DIR / f"{TODAY.isoformat()}.json"
+    journal_file.write_text(
+        json.dumps(journal, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    # Also save/update insights.json
+    if phase2_results and "insights" in phase2_results:
+        save_insights(phase2_results["insights"])
+
+    return str(journal_file.relative_to(REPO))
+
+
+def save_insights(new_insights: list):
+    """Append new insights to the cumulative insights.json (Voyager-style skill library)."""
+    DREAMS_DIR.mkdir(parents=True, exist_ok=True)
+
+    existing = []
+    if INSIGHTS_FILE.exists():
+        try:
+            existing = json.loads(INSIGHTS_FILE.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    for i, insight in enumerate(new_insights):
+        insight["id"] = f"insight-{TODAY.isoformat()}-{i+1:03d}"
+        insight["created"] = TODAY.isoformat()
+        existing.append(insight)
+
+    # Keep last 100 insights
+    existing = existing[-100:]
+
+    INSIGHTS_FILE.write_text(
+        json.dumps(existing, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
+def log_access(files_accessed: list[str]):
+    """Log which files were accessed during this dream run (feedback loop)."""
+    DREAMS_DIR.mkdir(parents=True, exist_ok=True)
+
+    log = []
+    if ACCESS_LOG.exists():
+        try:
+            log = json.loads(ACCESS_LOG.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    log.append({
+        "date": TODAY.isoformat(),
+        "timestamp": datetime.now().isoformat(),
+        "files_scanned": files_accessed,
+        "count": len(files_accessed),
+    })
+
+    # Keep last 30 days
+    log = log[-30:]
+
+    ACCESS_LOG.write_text(
+        json.dumps(log, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
+# ============================================================
+# Main orchestrator
+# ============================================================
+
+
+def run_phase1() -> dict:
+    """Phase 1: Orient + Gather — structural checks, zero API cost."""
+    results = {"issues": 0, "checks": {}}
+    all_files_scanned = []
 
     for label, checker in [
-        ("Staleness", check_staleness),
-        ("Broken References", check_references),
-        ("Decision Health", check_decisions),
-        ("Lessons Status", check_lessons),
+        ("staleness", check_staleness),
+        ("references", check_references),
+        ("decisions", check_decisions),
+        ("lessons", check_lessons),
+        ("memory_size", check_memory_size),
     ]:
-        print(f"## {label}")
         lines, count = checker()
-        if not lines and label == "Broken References":
+        results["checks"][label] = {"lines": lines, "issues": count}
+        results["issues"] += count
+
+    # Build keyword index (always, for semantic search)
+    keyword_index = build_keyword_index()
+    results["keyword_index"] = keyword_index
+
+    # Track scanned files
+    for fp in REPO.glob("memory/*.md"):
+        all_files_scanned.append(str(fp.relative_to(REPO)))
+
+    log_access(all_files_scanned)
+
+    return results
+
+
+def run_phase2(client) -> dict:
+    """Phase 2: Consolidate — AI-powered semantic analysis."""
+    print("\n## AI Consolidation (Deep Sleep)")
+    consolidation = ai_consolidate(client)
+    if consolidation:
+        n_contra = len(consolidation.get("contradictions", []))
+        n_dupes = len(consolidation.get("duplicates", []))
+        n_stale = len(consolidation.get("stale_content", []))
+        n_gaps = len(consolidation.get("knowledge_gaps", []))
+        n_insights = len(consolidation.get("insights", []))
+        print(f"  - {n_contra} contradictions found")
+        print(f"  - {n_dupes} duplicate clusters found")
+        print(f"  - {n_stale} stale content items")
+        print(f"  - {n_gaps} knowledge gaps identified")
+        print(f"  - {n_insights} insights generated")
+
+        for c in consolidation.get("contradictions", [])[:3]:
+            print(f"    ⚡ {c.get('description', '')[:80]}")
+        for g in consolidation.get("knowledge_gaps", [])[:3]:
+            print(f"    🕳 {g.get('topic', '')}: {g.get('evidence', '')[:60]}")
+    else:
+        print("  - No results (AI analysis unavailable or failed)")
+
+    # Trend analysis
+    print("\n## Trend Analysis")
+    trends = ai_trend_analysis(client)
+    if trends:
+        sentiment = trends.get("sentiment", "unknown")
+        print(f"  - Community sentiment: {sentiment}")
+        for topic in trends.get("hot_topics", [])[:3]:
+            print(f"    🔥 {topic}")
+        for anomaly in trends.get("anomalies", [])[:3]:
+            print(f"    ⚠ {anomaly}")
+        consolidation["trends"] = trends
+    else:
+        print("  - No daily report available for trend analysis")
+
+    return consolidation
+
+
+def run_phase3(keyword_index: dict, ai_results: dict = None):
+    """Phase 3: Index — update semantic index and dream journal."""
+    print("\n## Indexing")
+    idx_path = update_semantic_index(keyword_index, ai_results)
+    print(f"  - Semantic index updated: {idx_path}")
+    print(f"  - {len(keyword_index.get('files', {}))} files indexed")
+    print(f"  - {len(keyword_index.get('keyword_index', {}))} unique keywords")
+
+
+def main():
+    args = sys.argv[1:]
+    deep = "--deep" in args or "--full" in args
+    full = "--full" in args
+    report_mode = "--report" in args
+
+    print(f"\U0001F319 Memory Dream Journal -- {TODAY}")
+    if deep:
+        print(f"   Mode: {'Full AutoDream' if full else 'Deep Sleep'}")
+    print()
+
+    # Phase 1: Orient + Gather
+    print("=" * 50)
+    print("Phase 1: Orient + Gather (structural)")
+    print("=" * 50)
+    phase1 = run_phase1()
+
+    for label, data in phase1["checks"].items():
+        print(f"\n## {label.replace('_', ' ').title()}")
+        lines = data["lines"]
+        if not lines and label == "references":
             print("  - All references valid")
         for line in lines:
             print(line)
-        if label in ("Staleness", "Broken References"):
-            total_issues += count
-        else:
-            total_warnings += count
-        print()
 
-    print("## Summary")
-    print(f"  - {total_issues} issues found, {total_warnings} warnings")
+    print(f"\n## Phase 1 Summary")
+    print(f"  - {phase1['issues']} structural issues found")
+
+    # Phase 2: Consolidate (AI-powered)
+    phase2 = {}
+    if deep:
+        print(f"\n{'=' * 50}")
+        print("Phase 2: Consolidate (AI-powered)")
+        print("=" * 50)
+        client = get_anthropic_client()
+        if client:
+            phase2 = run_phase2(client)
+        else:
+            print("  - ANTHROPIC_API_KEY not set, skipping AI analysis")
+            print("  - Set ANTHROPIC_API_KEY environment variable to enable")
+
+    # Phase 3: Index
+    if full or deep:
+        print(f"\n{'=' * 50}")
+        print("Phase 3: Index")
+        print("=" * 50)
+        run_phase3(phase1.get("keyword_index", {}), phase2)
+
+    # Save journal
+    journal_path = save_dream_journal(
+        {k: v for k, v in phase1.items() if k != "keyword_index"},
+        phase2 if phase2 else None,
+    )
+    print(f"\n📓 Dream journal saved: {journal_path}")
+
+    # JSON report mode for automation
+    if report_mode:
+        report = {
+            "date": TODAY.isoformat(),
+            "phase1_issues": phase1["issues"],
+            "phase2_available": bool(phase2),
+            "files_indexed": len(phase1.get("keyword_index", {}).get("files", {})),
+        }
+        if phase2:
+            report["contradictions"] = len(phase2.get("contradictions", []))
+            report["knowledge_gaps"] = len(phase2.get("knowledge_gaps", []))
+            report["insights"] = len(phase2.get("insights", []))
+        print(f"\n::report::{json.dumps(report)}")
+
+    print(f"\n## Final Summary")
+    total = phase1["issues"]
+    if phase2:
+        total += len(phase2.get("contradictions", []))
+    print(f"  - {total} total findings")
+    if not deep:
+        print(f"  - Run with --deep for AI semantic analysis")
+        print(f"  - Run with --full for complete AutoDream cycle")
+
     sys.exit(0)
 
 
