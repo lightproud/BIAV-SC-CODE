@@ -3,9 +3,11 @@
 > 创建：2026-04-02 by Code-主控台
 > 状态：已确认，已实现
 
-## 设计理念
+## 设计原则
 
-对标业界最前沿的自主 Agent 系统：
+**可移植性优先**：所有配置、prompt、调度逻辑全部存在 git 仓库内（`.github/workflows/dream.yml`）。不依赖任何外部平台的云端状态（如 `/schedule`）。换任何 AI 工具、fork 到其他项目，做梦系统都完整可用。
+
+## 对标系统
 - **Claude Code AutoDream** — 空闲时自动整理 memory（直接对标）
 - **Voyager (NVIDIA)** — 自主探索积累可检索技能库 → 我们的 insights.json
 - **Reflexion** — 失败后自我反思写入记忆 → 自动写入 lessons-learned
@@ -15,7 +17,7 @@
 ## 三层做梦架构
 
 ### 浅睡（Shallow Sleep）— 每 3 小时
-- **实现**：`dream-shallow.yml`（纯 shell + GitHub Actions，零 token 成本）
+- **实现**：`dream.yml` → `shallow-sleep` job（纯 shell + GitHub Actions，零 token 成本）
 - **职责**：感知异常
   - 数据采集是否空跑/文件缺失
   - Workflow 是否失败/停滞
@@ -25,7 +27,7 @@
 - **替代**：原 health-check.yml + sync-memory.yml
 
 ### 深睡（Deep Sleep）— 每天 22:00 UTC
-- **实现**：`dream-deep.yml`（claude-code-action）
+- **实现**：`dream.yml` → `deep-sleep` job（claude-code-action）
 - **职责**：每日整理
   - 7 天日报趋势分析（平台活跃度、好评率、关键词）
   - Memory 一致性检查 + 自动修正时间戳
@@ -33,7 +35,7 @@
 - **产出**：`memory/dreams/YYYY-MM-DD.md` + `insights.json` 追加
 
 ### REM — 每周一 21:00 UTC
-- **实现**：`dream-rem.yml`（claude-code-action）
+- **实现**：`dream.yml` → `rem-sleep` job（claude-code-action）
 - **职责**：周度深度反思
   - 一周 commit 回顾和子项目活跃度分析
   - 经验提炼 → 自动追加 lessons-learned.md

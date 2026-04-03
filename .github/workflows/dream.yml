@@ -1,0 +1,408 @@
+name: "🌙 Dreaming Agent"
+
+# 三层做梦系统：浅睡(3h) + 深睡(每天) + REM(每周)
+# 设计文档：memory/dreaming-agent-design.md
+#
+# 所有配置留在 git 仓库内，不依赖外部平台。
+# 换任何 AI 工具都能复现完整做梦系统。
+
+on:
+  schedule:
+    # 浅睡：每 3 小时
+    - cron: '0 */3 * * *'
+    # 深睡：每天 22:00 UTC (06:00 UTC+8)
+    - cron: '0 22 * * *'
+    # REM：每周一 21:00 UTC (05:00 UTC+8 Tuesday)
+    - cron: '0 21 * * 1'
+  workflow_dispatch:
+    inputs:
+      layer:
+        description: '手动触发哪一层 (shallow / deep / rem / all)'
+        required: false
+        default: 'all'
+
+concurrency:
+  group: dreaming-agent
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  actions: read
+  issues: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  # ============================================================
+  # 浅睡层 — 纯 shell，零 token 成本
+  # ============================================================
+  shallow-sleep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # 每次 cron 都跑浅睡；手动触发时按 input 决定
+    if: >-
+      github.event_name == 'schedule' ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.layer == 'shallow' || inputs.layer == 'all'))
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Check data collection health
+        id: data-check
+        run: |
+          ISSUES=""
+          for f in projects/news/output/steam-latest.json projects/news/output/bilibili-latest.json projects/news/output/discord-latest.json; do
+            if [ ! -f "$f" ]; then
+              ISSUES="${ISSUES}- Data file missing: \`$f\`\n"
+            elif [ ! -s "$f" ]; then
+              ISSUES="${ISSUES}- Data file empty: \`$f\`\n"
+            fi
+          done
+
+          TODAY=$(date -u +%Y-%m-%d)
+          YESTERDAY=$(date -u -d "yesterday" +%Y-%m-%d 2>/dev/null || date -u -v-1d +%Y-%m-%d 2>/dev/null)
+          if [ ! -f "projects/news/output/daily-report-${TODAY}.md" ] && [ ! -f "projects/news/output/daily-report-${YESTERDAY}.md" ]; then
+            ISSUES="${ISSUES}- No daily report for $TODAY or $YESTERDAY\n"
+          fi
+
+          if [ -n "$ISSUES" ]; then
+            echo "issues<<EOF" >> "$GITHUB_OUTPUT"
+            echo -e "$ISSUES" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "has_issues=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_issues=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check workflow health
+        id: workflow-check
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const monitored = [
+              'update-news.yml', 'discord-archive.yml', 'deploy-site.yml',
+              'generate-report.yml', 'validate-data.yml',
+            ];
+            const failures = [];
+            const now = new Date();
+            for (const wf of monitored) {
+              try {
+                const { data: workflow } = await github.rest.actions.getWorkflow({
+                  owner: context.repo.owner, repo: context.repo.repo, workflow_id: wf,
+                });
+                const { data: runs } = await github.rest.actions.listWorkflowRuns({
+                  owner: context.repo.owner, repo: context.repo.repo,
+                  workflow_id: workflow.id, per_page: 1, status: 'completed',
+                });
+                if (runs.workflow_runs.length === 0) continue;
+                const latest = runs.workflow_runs[0];
+                const hoursAgo = Math.round((now - new Date(latest.updated_at)) / 3600000);
+                if (latest.conclusion === 'failure') {
+                  failures.push(`- **${wf}**: failed ${hoursAgo}h ago — [logs](${latest.html_url})`);
+                } else if (hoursAgo > 48) {
+                  failures.push(`- **${wf}**: stale (${hoursAgo}h since last success)`);
+                }
+              } catch (e) {
+                failures.push(`- **${wf}**: check error — ${e.message}`);
+              }
+            }
+            core.setOutput('failures', failures.join('\n'));
+            core.setOutput('has_failures', failures.length > 0 ? 'true' : 'false');
+
+      - name: Check path references
+        id: path-check
+        run: |
+          BROKEN=""
+          for path in memory/strategic-plan-2026.md memory/strategic-assessment.md memory/project-status.md memory/decisions.md memory/pending-discussions.md memory/morimens-context.md memory/methodology.md memory/style-guide.md memory/lessons-learned.md memory/collab-event-playbook.md memory/black-pool-design.md memory/dreaming-agent-design.md; do
+            if [ ! -f "$path" ]; then
+              BROKEN="${BROKEN}- CLAUDE.md references missing file: \`$path\`\n"
+            fi
+          done
+          if [ -n "$BROKEN" ]; then
+            echo "broken<<EOF" >> "$GITHUB_OUTPUT"
+            echo -e "$BROKEN" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "has_broken=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_broken=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check memory freshness
+        id: memory-check
+        run: |
+          STALE=""
+          NOW=$(date +%s)
+          for f in memory/project-status.md memory/pending-discussions.md memory/decisions.md memory/lessons-learned.md; do
+            if [ -f "$f" ]; then
+              LAST_COMMIT=$(git log -1 --format=%ct -- "$f" 2>/dev/null || echo 0)
+              if [ "$LAST_COMMIT" -gt 0 ]; then
+                DAYS_AGO=$(( (NOW - LAST_COMMIT) / 86400 ))
+                if [ "$DAYS_AGO" -gt 14 ]; then
+                  LAST_DATE=$(git log -1 --format=%ci -- "$f" | cut -d' ' -f1)
+                  STALE="${STALE}- \`$f\`: ${DAYS_AGO} days since last update ($LAST_DATE)\n"
+                fi
+              fi
+            fi
+          done
+          if [ -n "$STALE" ]; then
+            echo "stale<<EOF" >> "$GITHUB_OUTPUT"
+            echo -e "$STALE" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "has_stale=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_stale=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Report anomalies
+        if: >-
+          steps.data-check.outputs.has_issues == 'true' ||
+          steps.workflow-check.outputs.has_failures == 'true' ||
+          steps.path-check.outputs.has_broken == 'true' ||
+          steps.memory-check.outputs.has_stale == 'true'
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            let body = '## 🌙 Shallow Sleep Report\n\n';
+            const dataIssues = `${{ steps.data-check.outputs.issues }}`;
+            const wfFailures = `${{ steps.workflow-check.outputs.failures }}`;
+            const broken = `${{ steps.path-check.outputs.broken }}`;
+            const stale = `${{ steps.memory-check.outputs.stale }}`;
+            if (dataIssues) body += '### Data Collection\n' + dataIssues + '\n';
+            if (wfFailures) body += '### Workflow Health\n' + wfFailures + '\n';
+            if (broken) body += '### Broken References\n' + broken + '\n';
+            if (stale) body += '### Stale Memory Files\n' + stale + '\n';
+            body += `\n_Shallow sleep at ${new Date().toISOString()}_`;
+
+            const { data: existing } = await github.rest.issues.listForRepo({
+              owner, repo, labels: 'dream', state: 'open', per_page: 1,
+            });
+            if (existing.length > 0) {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: existing[0].number, body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner, repo,
+                title: '[主控台] 🌙 Shallow Sleep: anomalies detected',
+                body, labels: ['dream'],
+              });
+            }
+
+  # ============================================================
+  # 深睡层 — Claude 驱动，每日整理
+  # ============================================================
+  deep-sleep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: shallow-sleep
+    # 仅在 22:00 UTC cron 或手动触发时运行
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '0 22 * * *') ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.layer == 'deep' || inputs.layer == 'all'))
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          direct_push: "true"
+          prompt: |
+            你是做梦 Agent（深睡层）。你的任务是在无人值守时自主整理项目记忆。
+
+            ## 你要做的事
+
+            ### 1. 日报趋势分析
+            读取 projects/news/output/ 下最近 7 天的 daily-report-*.md（如果不足 7 天就用全部）。
+            分析：
+            - 各平台数据量趋势（上升/平稳/下降）
+            - Steam 好评率变化
+            - Discord 活跃度变化
+            - 是否出现新的高频关键词
+            - 联动关键词命中情况
+
+            ### 2. Memory 一致性检查
+            检查 memory/ 下所有 .md 文件的头部时间戳是否与 git log 一致。
+            检查 CLAUDE.md 中引用的文件路径是否全部存在。
+            检查 pending-discussions.md 中是否有已完成但未标记的条目（对比 decisions.md）。
+            发现问题直接修正（更新时间戳、标记已完成项），不需要请示。
+
+            ### 3. 知识缺口识别
+            对比 assets/data/interview-2026-04.json 提到的实体（角色、机制、地点）与 projects/wiki/data/db/ 中的数据，列出"采访提到但数据库中缺失或不完整"的条目。
+
+            ## 产出
+
+            将以上分析写入 memory/dreams/YYYY-MM-DD.md（用今天的日期），格式：
+
+            ```markdown
+            # Deep Sleep — YYYY-MM-DD
+
+            ## 趋势
+            （简要描述，3-5 行）
+
+            ## Memory 修正
+            （列出自动修正的内容，或"无需修正"）
+
+            ## 知识缺口
+            （列出缺失项，每条一行）
+
+            ## 洞察
+            （如果发现了跨数据源的关联或值得关注的模式，写在这里）
+            ```
+
+            同时，如果发现了值得长期追踪的洞察，追加到 memory/dreams/insights.json 的 insights 数组中，格式：
+            {"id": "insight-YYYY-MM-DD-NNN", "type": "trend|gap|anomaly|pattern", "summary": "...", "evidence": ["file1", "file2"], "suggested_action": "...", "auto_actionable": true/false}
+
+            ## 行动边界
+            - 可以直接修正：时间戳、已完成标记、明显笔误
+            - 只记录不动手：架构建议、数据缺口、趋势判断
+            - 提交信息前缀：dream(deep):
+
+            完成后 git add 并 commit 所有变更。
+
+      - name: Merge to main
+        if: success()
+        run: |
+          BRANCH=$(git branch --show-current)
+          if [ "$BRANCH" = "main" ] || [ -z "$BRANCH" ]; then exit 0; fi
+          git fetch origin main
+          git checkout main
+          git merge "$BRANCH" --no-edit || { git merge --abort; exit 1; }
+          git push origin main
+          git push origin --delete "$BRANCH" 2>/dev/null || \
+          git push origin --delete "${BRANCH/claude\//brain-in-a-vat\/}" 2>/dev/null || true
+
+  # ============================================================
+  # REM 层 — Claude 驱动，每周深度反思
+  # ============================================================
+  rem-sleep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    needs: shallow-sleep
+    # 仅在周一 21:00 UTC cron 或手动触发时运行
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '0 21 * * 1') ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.layer == 'rem' || inputs.layer == 'all'))
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          direct_push: "true"
+          prompt: |
+            你是做梦 Agent（REM 层）。你的任务是进行每周深度反思和知识整理。
+
+            ## 你要做的事
+
+            ### 1. 一周回顾
+            运行 `git log --oneline --since="7 days ago"` 查看本周所有 commit。
+            分析：
+            - 本周完成了哪些重要工作
+            - 哪些子项目最活跃
+            - 是否有失败的 workflow 或被 revert 的 commit
+
+            ### 2. 经验提炼
+            检查本周 commit 中是否有：
+            - 反复出现的问题模式（同类 bug 修了多次）
+            - 值得记录的新发现（但还没写入 lessons-learned.md）
+            - 跨子项目的协调问题
+            如果发现值得记录的经验，追加到 memory/lessons-learned.md（保持编号连续、格式一致）。
+
+            ### 3. project-status.md 自动同步
+            读取各子项目的实际文件状态：
+            - projects/news/: 检查脚本数量、output 文件时间、workflow 配置
+            - projects/wiki/: 检查数据文件数量、页面数量
+            - projects/site/: 检查部署配置
+            与 memory/project-status.md 对比，发现不一致就更新。
+
+            ### 4. pending-discussions.md 清理
+            检查 pending-discussions.md 中的每一条待办：
+            - 对比 decisions.md，已决策的标记 [x]
+            - 对比实际文件，已实现的标记 [x]
+            - 移除已关闭超过 2 周的条目
+
+            ### 5. 洞察整合
+            读取本周所有 memory/dreams/YYYY-MM-DD.md（深睡日志），提炼跨天的趋势。
+            将有价值的洞察合并到 memory/dreams/insights.json。
+
+            ### 6. 下周建议
+            基于以上分析，给出 3-5 条具体的下周工作建议。
+
+            ## 产出
+
+            写入 memory/dreams/YYYY-WNN-weekly.md，格式：
+
+            ```markdown
+            # REM Weekly — YYYY-WNN
+
+            ## 本周概况
+            - X 个 commit，Y 个 Issue 关闭
+            - 最活跃：[子项目名]
+            - 关键里程碑：...
+
+            ## 经验提炼
+            （新增到 lessons-learned.md 的条目列表，或"无新增"）
+
+            ## Memory 同步
+            （更新了哪些 memory 文件，或"无需更新"）
+
+            ## 洞察
+            （本周跨天/跨源的关联发现）
+
+            ## 下周建议
+            1. ...
+            2. ...
+            3. ...
+            ```
+
+            ## 行动边界
+            - 可以直接修正：project-status.md、pending-discussions.md、lessons-learned.md、时间戳
+            - 只记录不动手：架构建议、新功能提议、资源分配建议
+            - 提交信息前缀：dream(rem):
+
+            完成后 git add 并 commit 所有变更。
+
+      - name: Merge to main
+        if: success()
+        run: |
+          BRANCH=$(git branch --show-current)
+          if [ "$BRANCH" = "main" ] || [ -z "$BRANCH" ]; then exit 0; fi
+          git fetch origin main
+          git checkout main
+          git merge "$BRANCH" --no-edit || { git merge --abort; exit 1; }
+          git push origin main
+          git push origin --delete "$BRANCH" 2>/dev/null || \
+          git push origin --delete "${BRANCH/claude\//brain-in-a-vat\/}" 2>/dev/null || true
+
+      - name: Post weekly summary
+        if: success()
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const dreamsDir = 'memory/dreams';
+            const files = fs.readdirSync(dreamsDir).filter(f => f.includes('-weekly.md')).sort().reverse();
+            if (files.length === 0) return;
+            const content = fs.readFileSync(path.join(dreamsDir, files[0]), 'utf-8');
+            const suggestions = content.split('## 下周建议')[1] || '';
+            if (!suggestions.trim()) return;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner, repo: context.repo.repo,
+              labels: 'dream', state: 'open', per_page: 1,
+            });
+            const body = `## 🌙 REM Weekly Report\n\n${suggestions.trim()}\n\n_Full report: \`${files[0]}\`_`;
+            if (issues.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner, repo: context.repo.repo,
+                issue_number: issues[0].number, body,
+              });
+            }
