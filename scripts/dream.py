@@ -68,7 +68,7 @@ def extract_file_refs(text: str) -> list[str]:
     skip_markers = {"待生成", "待创建", "TODO", "todo", "planned"}
     for m in re.finditer(r"(?:memory/[\w./-]+|assets/[\w./-]+|projects/[\w./-]+)", text):
         ref = m.group(0).rstrip(".,;:!?)")
-        if "xxx" in ref or "你的" in ref:
+        if "xxx" in ref or "你的" in ref or "YYYY" in ref:
             continue
         parts = Path(ref).parts
         if len(parts) >= 2 and parts[0] in top_dirs and parts[1] in top_dirs:
