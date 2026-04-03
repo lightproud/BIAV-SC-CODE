@@ -225,11 +225,10 @@ jobs:
             - 是否出现新的高频关键词
             - 联动关键词命中情况
 
-            ### 2. Memory 一致性检查
-            检查 memory/ 下所有 .md 文件的头部时间戳是否与 git log 一致。
-            检查 CLAUDE.md 中引用的文件路径是否全部存在。
-            检查 pending-discussions.md 中是否有已完成但未标记的条目（对比 decisions.md）。
-            发现问题直接修正（更新时间戳、标记已完成项），不需要请示。
+            ### 2. Memory 一致性修正
+            检查 memory/ 下所有 .md 文件的头部时间戳是否与 git log 一致，不一致的直接修正。
+            检查 pending-discussions.md 中是否有已完成但未标记的条目（对比 decisions.md），发现就标记。
+            注意：路径引用和文件新鲜度由浅睡层检查，这里不重复。
 
             ### 3. 知识缺口识别
             对比 assets/data/interview-2026-04.json 提到的实体（角色、机制、地点）与 projects/wiki/data/db/ 中的数据，列出"采访提到但数据库中缺失或不完整"的条目。
@@ -323,17 +322,11 @@ jobs:
             - projects/site/: 检查部署配置
             与 memory/project-status.md 对比，发现不一致就更新。
 
-            ### 4. pending-discussions.md 清理
-            检查 pending-discussions.md 中的每一条待办：
-            - 对比 decisions.md，已决策的标记 [x]
-            - 对比实际文件，已实现的标记 [x]
-            - 移除已关闭超过 2 周的条目
-
-            ### 5. 洞察整合
+            ### 4. 洞察整合
             读取本周所有 memory/dreams/YYYY-MM-DD.md（深睡日志），提炼跨天的趋势。
             将有价值的洞察合并到 memory/dreams/insights.json。
 
-            ### 6. 下周建议
+            ### 5. 下周建议
             基于以上分析，给出 3-5 条具体的下周工作建议。
 
             ## 产出
