@@ -236,9 +236,11 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 #topbar{padding-top:calc(12px + env(safe-area-inset-top, 0px))}
 
 /* Responsive */
-@media(max-width:768px){
-  #sidebar{position:fixed;left:0;top:0;height:100%;height:100dvh;z-index:90;background:#0a0b10}
-  #sidebar.hidden{transform:translateX(-100%)}
+@media(max-width:1024px){
+  #sidebar{position:fixed;left:0;top:0;width:280px;height:100%;height:100dvh;z-index:200;background:#0a0b10;box-shadow:4px 0 24px rgba(0,0,0,.6)}
+  #sidebar.hidden{transform:translateX(-100%);box-shadow:none}
+  #sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:190}
+  #sidebar-overlay.open{display:block}
   #msg-container,#input-wrap,#file-preview{padding-left:12px;padding-right:12px}
   #artifacts{position:fixed;right:0;top:0;height:100%;height:100dvh;z-index:80;width:100%;max-width:none;background:#0a0b10}
   #topbar{gap:8px;padding-left:12px;padding-right:12px}
@@ -254,8 +256,10 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <body>
 
 <div id="app">
+  <!-- Sidebar overlay for mobile -->
+  <div id="sidebar-overlay"></div>
   <!-- Sidebar -->
-  <nav id="sidebar">
+  <nav id="sidebar" class="hidden">
     <div id="sidebar-header">
       <h1>缸中之脑</h1>
       <p>B.I.A.V. Studio</p>
@@ -396,7 +400,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.5.0';
+const APP_VERSION = '0.5.1';
 
 /* ===== State ===== */
 const S = {
@@ -600,7 +604,7 @@ function loadConv(id) {
   if (c) { S.provider = c.provider; S.model = c.model; updateModelBtn() }
   renderMessages();
   renderSidebar();
-  if (isMobile()) sidebar.classList.add('hidden');
+  if (isMobile()) { sidebar.classList.add('hidden'); sidebarOverlay.classList.remove('open'); }
 }
 
 function deleteConv(id) {
@@ -900,7 +904,7 @@ async function streamClaude(conv, signal) {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': key,
-        'anthropic-version': '2023-06-01',
+        'anthropic-version': '2025-04-14',
         'anthropic-dangerous-direct-browser-access': 'true',
       },
       body: JSON.stringify(body),
@@ -1243,9 +1247,15 @@ function adjustInput() {
 function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML }
 
 /* ===== Event Listeners ===== */
-$('#toggle-sidebar').onclick = () => sidebar.classList.toggle('hidden');
+$('#toggle-sidebar').onclick = toggleSidebar;
 // Auto-hide sidebar on mobile when selecting conversation
-const isMobile = () => window.innerWidth <= 768;
+const isMobile = () => window.innerWidth <= 1024;
+const sidebarOverlay = $('#sidebar-overlay');
+function toggleSidebar() {
+  sidebar.classList.toggle('hidden');
+  if (isMobile()) sidebarOverlay.classList.toggle('open', !sidebar.classList.contains('hidden'));
+}
+sidebarOverlay.onclick = () => { sidebar.classList.add('hidden'); sidebarOverlay.classList.remove('open'); };
 $('#new-chat-btn').onclick = newChat;
 modelBtn.onclick = () => { buildModelDropdown(); modelDropdown.classList.toggle('open') };
 document.addEventListener('mousedown', e => {
