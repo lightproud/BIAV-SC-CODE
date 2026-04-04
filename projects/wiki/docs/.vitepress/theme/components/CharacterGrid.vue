@@ -116,51 +116,29 @@ function getPortraitUrl(id: string): string {
 <template>
   <div class="character-grid-wrapper">
     <div class="cg-toolbar">
-      <div class="cg-search">
-        <input
-          v-model="searchQuery"
-          type="text"
-          placeholder="Search characters..."
-          class="cg-search-input"
-        />
-      </div>
-
-      <div class="cg-filters">
-        <select v-model="filterRealm" class="cg-select">
-          <option value="all">All Realms</option>
-          <option v-for="(label, key) in realmLabels" :key="key" :value="key">
-            {{ realmEmoji[key] }} {{ label }}
-          </option>
-        </select>
-
-        <select v-model="filterRole" class="cg-select">
-          <option value="all">All Roles</option>
-          <option v-for="(label, key) in roleLabels" :key="key" :value="key">
-            {{ label }}
-          </option>
-        </select>
-
-        <select v-model="filterRarity" class="cg-select">
-          <option value="all">All Rarities</option>
-          <option value="SSR">SSR</option>
-          <option value="SR">SR</option>
-        </select>
-
-        <select v-model="sortBy" class="cg-select">
-          <option value="name">Sort: Name</option>
-          <option value="realm">Sort: Realm</option>
-          <option value="role">Sort: Role</option>
-          <option value="rarity">Sort: Rarity</option>
-        </select>
-      </div>
+      <input
+        v-model="searchQuery"
+        type="text"
+        placeholder="Search..."
+        class="cg-search-input"
+      />
+      <select v-model="filterRealm" class="cg-select">
+        <option value="all">Realm</option>
+        <option v-for="(label, key) in realmLabels" :key="key" :value="key">{{ label }}</option>
+      </select>
+      <select v-model="filterRole" class="cg-select">
+        <option value="all">Role</option>
+        <option v-for="(label, key) in roleLabels" :key="key" :value="key">{{ label }}</option>
+      </select>
+      <select v-model="filterRarity" class="cg-select">
+        <option value="all">Rarity</option>
+        <option value="SSR">SSR</option>
+        <option value="SR">SR</option>
+      </select>
     </div>
 
-    <div v-if="loading" class="cg-loading">Loading characters...</div>
+    <div v-if="loading" class="cg-loading">Loading...</div>
     <div v-else-if="error" class="cg-error">{{ error }}</div>
-
-    <div class="cg-count" v-if="!loading && !error">
-      {{ filteredCharacters.length }} character{{ filteredCharacters.length !== 1 ? 's' : '' }}
-    </div>
 
     <div class="cg-grid" v-if="!loading && !error">
       <div
@@ -201,28 +179,25 @@ function getPortraitUrl(id: string): string {
 
 <style scoped>
 .character-grid-wrapper {
-  margin: 16px 0;
+  margin: 0;
 }
 
 .cg-toolbar {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 20px;
-  padding: 16px;
-  background: var(--vp-c-bg-soft);
-  border-radius: 12px;
-  border: 1px solid var(--vp-c-divider);
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
 }
 
 .cg-search-input {
-  width: 100%;
-  padding: 10px 14px;
+  flex: 1;
+  min-width: 100px;
+  padding: 6px 10px;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  background: var(--vp-c-bg);
+  border-radius: 6px;
+  background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);
-  font-size: 14px;
+  font-size: 13px;
   outline: none;
   transition: border-color 0.2s;
 }
@@ -231,32 +206,19 @@ function getPortraitUrl(id: string): string {
   border-color: var(--vp-c-brand-1);
 }
 
-.cg-filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
 .cg-select {
-  padding: 8px 12px;
+  padding: 6px 8px;
   border: 1px solid var(--vp-c-divider);
-  border-radius: 8px;
-  background: var(--vp-c-bg);
+  border-radius: 6px;
+  background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-1);
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
   outline: none;
-  min-width: 140px;
 }
 
 .cg-select:focus {
   border-color: var(--vp-c-brand-1);
-}
-
-.cg-count {
-  font-size: 13px;
-  color: var(--vp-c-text-2);
-  margin-bottom: 12px;
 }
 
 .cg-loading, .cg-error {
@@ -393,9 +355,28 @@ function getPortraitUrl(id: string): string {
 }
 
 @media (max-width: 640px) {
+  .cg-toolbar {
+    gap: 4px;
+  }
+
+  .cg-search-input {
+    flex-basis: 100%;
+  }
+
+  .cg-select {
+    flex: 1;
+    min-width: 0;
+    font-size: 11px;
+    padding: 5px 4px;
+  }
+
   .cg-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    gap: 6px;
+  }
+
+  .cg-card {
+    border-radius: 8px;
   }
 
   .cg-card__portrait {
@@ -403,11 +384,12 @@ function getPortraitUrl(id: string): string {
   }
 
   .cg-card__info {
-    padding: 6px 8px;
+    padding: 4px 6px 6px;
   }
 
   .cg-card__name {
     font-size: 12px;
+    line-height: 1.2;
   }
 
   .cg-card__name-en {
@@ -415,7 +397,7 @@ function getPortraitUrl(id: string): string {
   }
 
   .cg-card__meta {
-    gap: 4px;
+    gap: 3px;
   }
 
   .cg-realm-badge,
@@ -436,23 +418,6 @@ function getPortraitUrl(id: string): string {
     padding: 1px 4px;
     top: 4px;
     right: 4px;
-  }
-
-  .cg-filters {
-    flex-direction: column;
-  }
-
-  .cg-select {
-    width: 100%;
-  }
-
-  .cg-toolbar {
-    padding: 10px;
-  }
-
-  .cg-search-input {
-    padding: 8px 10px;
-    font-size: 13px;
   }
 }
 </style>
