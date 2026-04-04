@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-04-04T18:20:12.009612+00:00",
+  "collected_at": "2026-04-04T19:48:46.265088+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-04T15:42:34+00:00",
+      "lang": "english",
+      "title": "[正面] worth checking out if you like sts or pmoon games",
+      "summary": "worth checking out if you like sts or pmoon games",
+      "url": "https://steamcommunity.com/profiles/76561198131752763/recommended/3052450",
+      "author": "76561198131752763",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "worth checking out if you like sts or pmoon games",
+      "timestamp_created": 1775317354,
+      "playtime_forever": 35148
+    },
     {
       "source": "steam",
       "time": "2026-04-04T06:42:08+00:00",

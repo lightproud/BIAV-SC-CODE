@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-05
 
-> 采集时间：2026-04-05 02:20 UTC+8
+> 采集时间：2026-04-05 03:48 UTC+8
 
 ## 🔥 联动动态
 
@@ -40,7 +40,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 0（沉默）|
 | Ruliweb | 0（沉默）|
-| Steam | 1 |
+| Steam | 2 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -73,20 +73,21 @@
 
 ## Steam 评论
 
-- 好评 1 / 差评 0 / 好评率 100%
-- 语言分布：english 1
+- 好评 2 / 差评 0 / 好评率 100%
+- 语言分布：english 2
 
 ### 热门好评
 
-1. [正面] kathi my mommy 10/10 — engagement: 0
+1. [正面] worth checking out if you like sts or pmoon games — engagement: 0
+2. [正面] kathi my mommy 10/10 — engagement: 0
 
 ## Bilibili
 
-1. 三启塔罗向众神求助，回应她的只有死扛 — engagement: 449
-2. 船长蛋筒图鲁 — engagement: 237
-3. gmod沙耶 甩葱歌 — engagement: 224
-4. 吃馍片吃香辣牛肉（鸭肉）左臂太疼我醒来 晚上帮寄寄子倒垃圾 — engagement: 217
-5. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 177
+1. 三启塔罗向众神求助，回应她的只有死扛 — engagement: 455
+2. gmod沙耶 甩葱歌 — engagement: 278
+3. 船长蛋筒图鲁 — engagement: 247
+4. 吃馍片吃香辣牛肉（鸭肉）左臂太疼我醒来 晚上帮寄寄子倒垃圾 — engagement: 225
+5. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 203
 
 ## Gamerch Wiki
 
