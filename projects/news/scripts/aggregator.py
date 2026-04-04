@@ -39,7 +39,7 @@ COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ
     '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
 ]
 ALL_KEYWORDS = SEARCH_KEYWORDS + [k.strip() for k in COLLAB_KEYWORDS if k.strip()]
-HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
+HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 48))
 
 # Bilibili creator MIDs known to produce Morimens content
 # Format: mid (int) -> display name (str). Add more as confirmed.
@@ -371,84 +371,157 @@ def fetch_twitter():
 def fetch_nga():
     """
     Fetch NGA forum posts for Morimens.
-    NGA has rate limiting - be respectful.
+    Uses mobile API (ngabbs.com) which is more reliable than web API.
+    Falls back to web API if mobile fails.
     """
-    import subprocess as _sp
-
     items = []
-    # NGA forum ID for 忘却前夜 - update this with the actual forum ID
     nga_fid = os.environ.get('NGA_FORUM_ID') or '-447601'
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
-    url = f'https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1'
+    # Mobile API (more reliable, no cookie needed)
+    mobile_url = f'https://ngabbs.com/thread.php?fid={nga_fid}&lite=js&noprefix'
+    # Web API as fallback
+    web_url = f'https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1'
+
     headers = {
-        'User-Agent': 'Mozilla/5.0',
-        'Accept': 'application/json',
+        'User-Agent': 'NGA/9.9.9 (Android 14; Pixel 8)',
+        'Accept': 'application/json, text/plain, */*',
     }
-    try:
-        resp = requests.get(url, headers=headers, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-        threads = data.get('data', {}).get('__T', {})
-        for tid, thread in threads.items():
-            postdate = thread.get('postdate', 0)
-            if isinstance(postdate, str):
-                continue
-            created = datetime.fromtimestamp(postdate, tz=timezone.utc)
-            if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
-                continue
-            replies = thread.get('replies', 0)
-            items.append({
-                'title': thread.get('subject', ''),
-                'summary': '',
-                'source': 'nga',
-                'time': created.isoformat(),
-                'url': f"https://bbs.nga.cn/read.php?tid={tid}",
-                'engagement': replies,
-                'is_hot': replies > 50,
-                'author': thread.get('author', ''),
-                'tags': [],
-            })
-        logger.info(f'NGA: fetched {len(items)} threads')
-    except Exception as e:
-        logger.warning(f'NGA failed: {e}')
 
+    data = None
+    for url in [mobile_url, web_url]:
+        try:
+            resp = requests.get(url, headers=headers, timeout=15)
+            resp.raise_for_status()
+            text = resp.text.strip()
+            # NGA sometimes wraps JSON in JS: window.script_muti_get_var_store=...
+            if text.startswith('window.'):
+                text = text.split('=', 1)[1].rstrip(';')
+            data = json.loads(text)
+            break
+        except Exception as e:
+            logger.warning(f'NGA {url.split("/")[2]} failed: {e}')
+
+    if not data:
+        return items
+
+    # Parse threads from the response
+    threads = data.get('data', {}).get('__T', {})
+    if isinstance(threads, list):
+        threads = {str(i): t for i, t in enumerate(threads) if isinstance(t, dict)}
+
+    for tid_key, thread in threads.items():
+        if not isinstance(thread, dict):
+            continue
+        tid = thread.get('tid', tid_key)
+        postdate = thread.get('postdate', thread.get('lastpost', 0))
+        if isinstance(postdate, str):
+            try:
+                postdate = int(postdate)
+            except (ValueError, TypeError):
+                continue
+        if not postdate:
+            continue
+        created = datetime.fromtimestamp(postdate, tz=timezone.utc)
+        if created < cutoff:
+            continue
+        replies = thread.get('replies', 0) or 0
+        items.append({
+            'title': thread.get('subject', ''),
+            'summary': '',
+            'source': 'nga',
+            'time': created.isoformat(),
+            'url': f"https://bbs.nga.cn/read.php?tid={tid}",
+            'engagement': int(replies),
+            'is_hot': int(replies) > 50,
+            'author': thread.get('author', ''),
+            'tags': [],
+        })
+    logger.info(f'NGA: fetched {len(items)} threads')
     return items
 
 
 def fetch_taptap():
-    """Fetch TapTap community posts for Morimens."""
-    import subprocess as _sp
-
+    """
+    Fetch TapTap community posts for Morimens.
+    Tries CN API first, then global (taptap.io) as fallback.
+    """
     app_id = os.environ.get('TAPTAP_APP_ID') or '364992'
-
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
     items = []
-    url = f'https://api.taptap.cn/app/v2/app/{app_id}/topic/list'
+
+    # Try multiple API endpoints (CN and global)
+    endpoints = [
+        f'https://api.taptap.cn/app/v2/app/{app_id}/topic/list',
+        f'https://api.taptap.io/app/v2/app/{app_id}/topic/list',
+    ]
+    headers = {
+        'User-Agent': 'TapTap/3.0.0 (Android 14)',
+        'X-UA': 'V=1&PN=TapTap&VN_CODE=300',
+    }
     params = {'type': 'hot', 'limit': 20}
-    headers = {'User-Agent': 'Mozilla/5.0'}
 
-    try:
-        resp = requests.get(url, params=params, headers=headers, timeout=15)
-        resp.raise_for_status()
-        topics = resp.json().get('data', {}).get('list', [])
-        for topic in topics:
-            created = datetime.fromtimestamp(topic.get('created_time', 0), tz=timezone.utc)
-            if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
-                continue
-            items.append({
-                'title': topic.get('title', ''),
-                'summary': topic.get('summary', '')[:200],
-                'source': 'taptap',
-                'time': created.isoformat(),
-                'url': topic.get('share_url', ''),
-                'engagement': topic.get('comment_count', 0) + topic.get('like_count', 0),
-                'is_hot': topic.get('like_count', 0) > 100,
-                'author': topic.get('user', {}).get('name', ''),
-                'tags': [],
-            })
-        logger.info(f'TapTap: fetched {len(items)} topics')
-    except Exception as e:
-        logger.warning(f'TapTap failed: {e}')
+    data_list = None
+    for url in endpoints:
+        try:
+            resp = requests.get(url, params=params, headers=headers, timeout=15)
+            resp.raise_for_status()
+            data_list = resp.json().get('data', {}).get('list', [])
+            if data_list:
+                break
+        except Exception as e:
+            logger.warning(f'TapTap {url.split("/")[2]} failed: {e}')
 
+    if not data_list:
+        # Final fallback: scrape review page
+        try:
+            review_url = f'https://api.taptap.cn/app/v2/app/{app_id}/review/list/recent'
+            resp = requests.get(review_url, params={'limit': 20}, headers=headers, timeout=15)
+            resp.raise_for_status()
+            reviews = resp.json().get('data', {}).get('list', [])
+            for review in reviews:
+                ts = review.get('created_time', 0)
+                if not ts:
+                    continue
+                created = datetime.fromtimestamp(ts, tz=timezone.utc)
+                if created < cutoff:
+                    continue
+                score = review.get('score', 0)
+                sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
+                items.append({
+                    'title': f'[TapTap {sentiment}] {review.get("contents", {}).get("text", "")[:60]}',
+                    'summary': review.get('contents', {}).get('text', '')[:200],
+                    'source': 'taptap',
+                    'time': created.isoformat(),
+                    'url': f'https://www.taptap.cn/app/{app_id}/review',
+                    'engagement': review.get('like_count', 0),
+                    'author': review.get('user', {}).get('name', ''),
+                    'tags': [sentiment],
+                })
+            logger.info(f'TapTap reviews fallback: {len(items)} items')
+        except Exception as e:
+            logger.warning(f'TapTap review fallback failed: {e}')
+        return items
+
+    for topic in data_list:
+        created_ts = topic.get('created_time', 0)
+        if not created_ts:
+            continue
+        created = datetime.fromtimestamp(created_ts, tz=timezone.utc)
+        if created < cutoff:
+            continue
+        items.append({
+            'title': topic.get('title', ''),
+            'summary': (topic.get('summary', '') or topic.get('intro', ''))[:200],
+            'source': 'taptap',
+            'time': created.isoformat(),
+            'url': topic.get('share_url', ''),
+            'engagement': (topic.get('comment_count', 0) or 0) + (topic.get('like_count', 0) or 0),
+            'is_hot': (topic.get('like_count', 0) or 0) > 100,
+            'author': topic.get('user', {}).get('name', ''),
+            'tags': [],
+        })
+    logger.info(f'TapTap: fetched {len(items)} topics')
     return items
 
 

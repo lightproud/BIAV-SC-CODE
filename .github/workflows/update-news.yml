@@ -2,8 +2,8 @@ name: Update Community News
 
 on:
   schedule:
-    # Run twice daily: UTC 06:00 (UTC+8 14:00) and 19:00 (UTC+8 03:00, after Discord archive at 18:00)
-    - cron: '0 6,19 * * *'
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:
