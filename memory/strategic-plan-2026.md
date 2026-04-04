@@ -204,7 +204,7 @@
 
 | 瓶颈 | 影响 | 解法 |
 |------|------|------|
-| ANTHROPIC_API_KEY 余额为零 | claude.yml 自动化和 AI 分析报告全部阻塞 | 制作人充值 |
+| ~~ANTHROPIC_API_KEY 余额为零~~ | ✅ 已恢复（2026-04-04） | — |
 | 制作人时间 | 日报验收、数据抽查、方向决策都需要制作人参与 | 每周一次 15 分钟同步，其余异步（Issue + memory/ 文件）|
 | YouTube/Twitter/NGA API 密钥 | 数据源扩展受限 | Phase 2 逐个配置，不阻塞 Phase 0-1 |
 

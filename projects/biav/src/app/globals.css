@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: #0a0b10;
+  color: #d4c9a8;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 500;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0b10;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2515;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3520;
+}
+
+/* Selection */
+::selection {
+  background: rgba(197, 163, 86, 0.3);
+  color: #e2c97e;
+}
+
+/* Markdown content styling */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
+  font-family: 'Noto Serif SC', serif;
+  color: #e2c97e;
+  font-weight: 700;
+  margin: 1.2em 0 0.6em;
+}
+
+.markdown-content h1 { font-size: 1.5rem; }
+.markdown-content h2 { font-size: 1.25rem; }
+.markdown-content h3 { font-size: 1.1rem; }
+
+.markdown-content p {
+  margin: 0.6em 0;
+  line-height: 1.8;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.markdown-content li {
+  margin: 0.3em 0;
+  line-height: 1.7;
+}
+
+.markdown-content li::marker {
+  color: #c5a356;
+}
+
+.markdown-content code {
+  background: #1e1a10;
+  color: #e2c97e;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: 'Menlo', 'Consolas', monospace;
+}
+
+.markdown-content pre {
+  background: #1e1a10;
+  border: 1px solid #2a2515;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  margin: 0.8em 0;
+}
+
+.markdown-content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+.markdown-content blockquote {
+  border-left: 3px solid #c5a356;
+  padding-left: 1em;
+  color: #8a7a48;
+  margin: 0.8em 0;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8em 0;
+  font-size: 0.9em;
+}
+
+.markdown-content th {
+  background: #1e1a10;
+  color: #e2c97e;
+  font-weight: 700;
+  padding: 0.5em 0.75em;
+  border: 1px solid #2a2515;
+  text-align: left;
+}
+
+.markdown-content td {
+  padding: 0.5em 0.75em;
+  border: 1px solid #2a2515;
+}
+
+.markdown-content tr:nth-child(even) td {
+  background: rgba(197, 163, 86, 0.04);
+}
+
+.markdown-content a {
+  color: #c5a356;
+  text-decoration: none;
+}
+
+.markdown-content a:hover {
+  color: #e2c97e;
+  text-decoration: underline;
+}
+
+.markdown-content strong {
+  color: #e2c97e;
+  font-weight: 700;
+}
+
+/* Typing cursor animation */
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.typing-cursor::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: #c5a356;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s infinite;
+}

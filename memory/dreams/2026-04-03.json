@@ -1,0 +1,56 @@
+{
+  "date": "2026-04-03",
+  "timestamp": "2026-04-03T18:20:41.593833",
+  "phase1": {
+    "issues": 0,
+    "checks": {
+      "staleness": {
+        "lines": [
+          "  - ok memory/black-pool-design.md -- last updated 2026-04-02 (1 day ago)",
+          "  - ok memory/collab-event-playbook.md -- last updated 2026-04-01 (2 days ago)",
+          "  - ok memory/decisions.md -- last updated 2026-04-03 (today)",
+          "  - ok memory/discord-archiver-design.md -- last updated 2026-03-30 (4 days ago)",
+          "  - ok memory/dreaming-agent-design.md -- last updated 2026-04-02 (1 day ago)",
+          "  - ok memory/lessons-learned.md -- last updated 2026-04-02 (1 day ago)",
+          "  - ok memory/methodology.md -- last updated 2026-03-29 (5 days ago)",
+          "  - ok memory/morimens-context.md -- last updated 2026-04-01 (2 days ago)",
+          "  - ok memory/pending-discussions.md -- last updated 2026-04-01 (2 days ago)",
+          "  - ok memory/project-status.md -- last updated 2026-04-01 (2 days ago)",
+          "  - ok memory/research-best-wiki-features.md -- last updated 2026-03-30 (4 days ago)",
+          "  - ok memory/storage-discussion.md -- last updated 2026-03-29 (5 days ago)",
+          "  - ok memory/strategic-assessment.md -- last updated 2026-04-01 (2 days ago)",
+          "  - ok memory/strategic-plan-2026.md -- last updated 2026-04-01 (2 days ago)",
+          "  - ok memory/style-guide.md -- last updated 2026-03-29 (5 days ago)",
+          "  - ok memory/task-wiki-data-audit-2026-04.md -- last updated 2026-04-02 (1 day ago)",
+          "  - ok projects/game/CONTEXT.md -- last updated 2026-04-02 (1 day ago)",
+          "  - ok projects/news/CONTEXT.md -- last updated 2026-04-01 (2 days ago)",
+          "  - ok projects/site/CONTEXT.md -- last updated 2026-04-01 (2 days ago)",
+          "  - ok projects/wiki/CONTEXT.md -- last updated 2026-04-02 (1 day ago)"
+        ],
+        "issues": 0
+      },
+      "references": {
+        "lines": [],
+        "issues": 0
+      },
+      "decisions": {
+        "lines": [
+          "  - 3/57 decisions marked as obsolete (5%)"
+        ],
+        "issues": 0
+      },
+      "lessons": {
+        "lines": [
+          "  - 21 lessons total, 2 graduated, 0 may be resolved"
+        ],
+        "issues": 0
+      },
+      "memory_size": {
+        "lines": [
+          "  - ~ memory/research-best-wiki-features.md -- 388 lines (approaching limit)"
+        ],
+        "issues": 0
+      }
+    }
+  }
+}
