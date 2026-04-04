@@ -1,10 +1,7 @@
 // Cache name derived from ?v= param passed during registration
 const VERSION = new URL(self.location).searchParams.get('v') || '0';
-const CACHE_NAME = 'biva-v' + VERSION;
+const CACHE_NAME = 'biav-v' + VERSION;
 const ASSETS = [
-  './',
-  './index.html',
-  './manifest.json',
   'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap',
   'https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js',
   'https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js',
@@ -33,17 +30,14 @@ self.addEventListener('fetch', (e) => {
   const url = new URL(e.request.url);
 
   // Don't cache API calls
-  if (url.hostname === 'api.anthropic.com' || url.hostname === 'api.openai.com' || url.pathname.startsWith('/api/')) {
+  if (url.hostname === 'api.anthropic.com' || url.hostname === 'api.openai.com' || url.hostname === 'api.github.com') {
     return;
   }
 
-  e.respondWith(
-    caches.match(e.request).then((cached) => {
-      // Cache-first for static assets, network-first for HTML
-      if (cached && !e.request.url.endsWith('.html') && !e.request.url.endsWith('/')) {
-        return cached;
-      }
-      return fetch(e.request)
+  // HTML files: network-first with cache-bust, fallback to cache
+  if (e.request.mode === 'navigate' || e.request.url.endsWith('.html') || e.request.url.endsWith('/')) {
+    e.respondWith(
+      fetch(e.request, { cache: 'no-cache' })
         .then((res) => {
           if (res.ok) {
             const clone = res.clone();
@@ -51,7 +45,22 @@ self.addEventListener('fetch', (e) => {
           }
           return res;
         })
-        .catch(() => cached || new Response('Offline', { status: 503 }));
+        .catch(() => caches.match(e.request).then(c => c || new Response('Offline', { status: 503 })))
+    );
+    return;
+  }
+
+  // Other assets: cache-first
+  e.respondWith(
+    caches.match(e.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(e.request).then((res) => {
+        if (res.ok) {
+          const clone = res.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(e.request, clone));
+        }
+        return res;
+      });
     })
   );
 });
