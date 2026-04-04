@@ -2781,9 +2781,31 @@ if (isMobile()) sidebar.classList.add('hidden');
 // Set version text
 document.querySelectorAll('.ver,[id="sidebar-footer"]').forEach(el => el.textContent = 'v' + APP_VERSION);
 
-// Register Service Worker with version param to auto-refresh on update
+// Register Service Worker with auto-update on new version
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js?v=' + APP_VERSION).catch(() => {});
+  navigator.serviceWorker.register('sw.js?v=' + APP_VERSION).then(reg => {
+    // Check for updates immediately, then every 5 minutes
+    reg.update().catch(() => {});
+    setInterval(() => reg.update().catch(() => {}), 5 * 60 * 1000);
+    // When a new SW is found, auto-reload to apply
+    reg.addEventListener('updatefound', () => {
+      const newSW = reg.installing;
+      if (!newSW) return;
+      newSW.addEventListener('statechange', () => {
+        if (newSW.state === 'activated' && navigator.serviceWorker.controller) {
+          // New SW activated — reload to get fresh content
+          if (!S.streaming) location.reload();
+        }
+      });
+    });
+  }).catch(() => {});
+  // Also reload if controller changes (e.g. skipWaiting from new SW)
+  let refreshing = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (refreshing) return;
+    refreshing = true;
+    if (!S.streaming) location.reload();
+  });
 }
 
 </script>
