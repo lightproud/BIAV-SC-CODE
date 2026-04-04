@@ -413,7 +413,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.7.2';
+const APP_VERSION = '0.8.0';
 
 /* ===== State ===== */
 const S = {
@@ -493,6 +493,7 @@ const PROMPTS = {
 - generate_chart：用 Chart.js 生成数据可视化图表 PNG（柱状图、折线图、饼图等）
 - ai_image：使用 DALL-E 3 AI 生成图片（需用户配置 OpenAI Key）。图片会在对话中显示并下载。
 - generate_pixel_art：像素风图片生成（调色板+索引网格）。适合 RPG Maker 风格精灵、图标、贴图。
+- generate_midi：生成 MIDI 音乐文件（多轨道、GM 乐器、和弦、休止符）。
 
 当用户询问具体数据（角色属性、技能、日报详情、代码实现等）时，优先使用 read_file 读取原始文件，而不是仅凭预加载的摘要回答。仓库中的关键数据路径：
 - projects/wiki/data/db/characters.json — 63角色完整数据
@@ -1014,6 +1015,45 @@ const TOOLS = [
       },
       required: ['palette', 'grid']
     }
+  },
+  {
+    name: 'generate_midi',
+    description: '生成 MIDI 音乐文件（.mid）并下载。可定义多轨道、音符序列、节奏和乐器。支持和弦、休止符。生成标准 MIDI 文件，可在任意播放器/DAW 中打开。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        tempo: { type: 'number', description: 'BPM (default 120)', default: 120 },
+        tracks: {
+          type: 'array',
+          description: 'Array of tracks',
+          items: {
+            type: 'object',
+            properties: {
+              name: { type: 'string', description: 'Track name', default: 'Track' },
+              instrument: { type: 'number', description: 'General MIDI instrument (0=Piano, 24=Guitar, 33=Bass, 40=Violin, 56=Trumpet, 73=Flute, etc.)', default: 0 },
+              channel: { type: 'number', description: 'MIDI channel 1-16 (10=drums)', default: 1 },
+              notes: {
+                type: 'array',
+                description: 'Sequence of note events',
+                items: {
+                  type: 'object',
+                  properties: {
+                    pitch: { description: 'Note name(s): "C4", "D#5", or chord ["C4","E4","G4"]. Use "rest" for silence.' },
+                    duration: { type: 'string', description: '"1"=whole, "2"=half, "4"=quarter, "8"=eighth, "16"=sixteenth, "d4"=dotted quarter, "t8"=triplet eighth' },
+                    velocity: { type: 'number', description: 'Volume 1-100 (default 80)', default: 80 },
+                    wait: { type: 'string', description: 'Rest before this note (same format as duration)' }
+                  },
+                  required: ['pitch', 'duration']
+                }
+              }
+            },
+            required: ['notes']
+          }
+        },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'music' }
+      },
+      required: ['tracks']
+    }
   }
 ];
 
@@ -1305,6 +1345,58 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
           resolve(`Pixel art generated: ${fname}.png (${cols}×${rows} pixels, scale ${scale}x, actual ${cols * scale}×${rows * scale}px)`);
         }, 'image/png');
       });
+    }
+    if (name === 'generate_midi') {
+      // Lazy-load midi-writer-js
+      if (!window.MidiWriter) {
+        await new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = 'https://cdn.jsdelivr.net/npm/midi-writer-js@2.1.4/build/MidiWriter.js';
+          s.onload = resolve; s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      }
+      const fname = (input.filename || 'music').replace(/\.mid$/i, '');
+      const tracks = [];
+      for (const t of input.tracks) {
+        const track = new MidiWriter.Track();
+        if (t.name) track.addTrackName(t.name);
+        if (input.tempo) track.setTempo(input.tempo);
+        // Set instrument (program change)
+        const ch = (t.channel || 1) - 1; // 0-indexed internally
+        if (t.instrument !== undefined) {
+          track.addEvent(new MidiWriter.ProgramChangeEvent({ instrument: t.instrument, channel: ch + 1 }));
+        }
+        // Add notes
+        for (const n of (t.notes || [])) {
+          if (n.pitch === 'rest') {
+            // Rest: use a note with 0 velocity, or just wait
+            track.addEvent(new MidiWriter.NoteEvent({
+              pitch: ['C4'], duration: n.duration || '4', velocity: 0, channel: ch + 1
+            }));
+          } else {
+            const pitchArr = Array.isArray(n.pitch) ? n.pitch : [n.pitch];
+            const evt = {
+              pitch: pitchArr,
+              duration: n.duration || '4',
+              velocity: n.velocity || 80,
+              channel: ch + 1
+            };
+            if (n.wait) evt.wait = n.wait;
+            track.addEvent(new MidiWriter.NoteEvent(evt));
+          }
+        }
+        tracks.push(track);
+      }
+      const writer = new MidiWriter.Writer(tracks);
+      const blob = new Blob([writer.buildFile()], { type: 'audio/midi' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = fname + '.mid';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      const totalNotes = input.tracks.reduce((s, t) => s + (t.notes?.length || 0), 0);
+      return `MIDI generated: ${fname}.mid (${input.tracks.length} track(s), ${totalNotes} notes, ${input.tempo || 120} BPM)`;
     }
     if (name === 'ai_image') {
       const cfg = loadConfig();
