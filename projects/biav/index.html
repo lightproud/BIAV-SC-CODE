@@ -138,14 +138,13 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 
 /* Messages area */
 #messages{flex:1;overflow-y:auto;min-height:0}
-#empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:20px}
-#empty-state h2{font-family:'Noto Serif SC',serif;font-size:28px;color:#e2c97e;font-weight:700;margin-bottom:4px}
-#empty-state .subtitle{color:#6b6040;font-size:13px}
-#empty-state .deco-line{width:64px;height:1px;background:#c5a356;opacity:.4;margin:24px 0}
-#empty-state .intro{max-width:460px;color:#5a5540;font-size:12.5px;line-height:1.8;text-align:left}
-#empty-state .intro strong{color:#8a7a48;font-weight:700}
-#empty-state .intro .tag{display:inline-block;background:#1e1a10;color:#6b6040;font-size:11px;padding:1px 6px;border-radius:3px;margin:0 1px;font-family:Menlo,Consolas,monospace}
-#empty-state .ver{color:#3a3520;font-size:11px;margin-top:20px;letter-spacing:1px}
+#empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:20px;gap:8px}
+.greeting-icon{font-size:40px;color:#c5a356;margin-bottom:4px}
+#empty-state h2{font-family:'Noto Serif SC',serif;font-size:26px;color:#d4c9a8;font-weight:700;margin-bottom:16px}
+.quick-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:480px;margin-top:8px}
+.quick-chip{padding:8px 16px;border-radius:20px;border:1px solid #2a2515;background:#1e1a10;color:#8a7a48;font-size:13px;cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s;white-space:nowrap}
+.quick-chip:hover{border-color:#8a7a48;color:#d4c9a8;background:#241f14}
+#empty-state .ver{color:#3a3520;font-size:11px;margin-top:24px;letter-spacing:1px}
 #msg-container{max-width:720px;margin:0 auto;padding:24px 16px}
 
 /* Message entrance animation */
@@ -448,15 +447,15 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
     <!-- Messages -->
     <div id="messages">
       <div id="empty-state">
-        <h2>缸中之脑</h2>
-        <p class="subtitle">BIAV-SC 银芯系统 · AI 增强终端</p>
-        <div class="deco-line"></div>
-        <div class="intro">
-          <strong>银芯（BIAV-SC）</strong>是 B.I.A.V. Studio 为「忘却前夜 Morimens」构建的 AI 增强系统。<br><br>
-          已接入 <span class="tag">仓库实时读取</span> <span class="tag">网页搜索</span> <span class="tag">AI 画图</span> <span class="tag">代码执行</span> <span class="tag">文档导出</span> <span class="tag">Extended Thinking</span> <span class="tag">跨会话记忆</span>，覆盖 63 角色事实圣经、每日社区情报循环、Wiki 权威站点等核心能力。<br><br>
-          默认以 <strong>BIAV Analyst</strong> 身份应答。支持消息编辑、分支对话、文件上传、Artifacts 预览。
+        <div class="greeting-icon" id="greeting-icon">✦</div>
+        <h2 id="greeting-text">你好</h2>
+        <div class="quick-chips" id="quick-chips">
+          <button class="quick-chip" data-msg="帮我分析一下最新的社区动态">📊 社区分析</button>
+          <button class="quick-chip" data-msg="帮我写一份项目进展报告，生成 PDF">📄 生成报告</button>
+          <button class="quick-chip" data-msg="搜索一下忘却前夜最近的新闻">🔍 搜索资讯</button>
+          <button class="quick-chip" data-msg="请读取角色数据库，帮我梳理角色关系">🎭 角色分析</button>
         </div>
-        <span class="ver">v0.2.1</span>
+        <span class="ver"></span>
       </div>
     </div>
 
@@ -2777,6 +2776,31 @@ renderSidebar();
 renderMessages();
 updateModelBtn();
 if (isMobile()) sidebar.classList.add('hidden');
+
+// Time-aware greeting
+(function setGreeting() {
+  const h = new Date().getHours();
+  const icon = $('#greeting-icon');
+  const text = $('#greeting-text');
+  if (h >= 5 && h < 8) { icon.textContent = '🌅'; text.textContent = '早安，新的一天'; }
+  else if (h >= 8 && h < 12) { icon.textContent = '☀️'; text.textContent = '上午好'; }
+  else if (h >= 12 && h < 14) { icon.textContent = '🌤'; text.textContent = '午安'; }
+  else if (h >= 14 && h < 18) { icon.textContent = '⛅'; text.textContent = '下午好'; }
+  else if (h >= 18 && h < 22) { icon.textContent = '🌙'; text.textContent = '晚上好'; }
+  else { icon.textContent = '✦'; text.textContent = '夜深了，还在忙？'; }
+})();
+
+// Quick chip click → send message
+document.querySelectorAll('.quick-chip').forEach(chip => {
+  chip.onclick = () => {
+    const msg = chip.dataset.msg;
+    if (msg && !S.streaming) {
+      inputEl.value = '';
+      adjustInput();
+      sendMessage(msg);
+    }
+  };
+});
 
 // Set version text
 document.querySelectorAll('.ver,[id="sidebar-footer"]').forEach(el => el.textContent = 'v' + APP_VERSION);
