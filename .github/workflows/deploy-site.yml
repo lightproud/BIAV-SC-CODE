@@ -54,8 +54,10 @@ jobs:
           fi
           [ -f projects/biva/manifest.json ] && cp projects/biva/manifest.json dist/biva/manifest.json
           [ -f projects/biva/sw.js ] && cp projects/biva/sw.js dist/biva/sw.js
-          mkdir -p dist/news/data
+          mkdir -p dist/news/data dist/biva/data
           [ -f projects/news/output/news.json ] && cp projects/news/output/news.json dist/news/data/news.json
+          [ -f projects/news/output/daily-latest.md ] && cp projects/news/output/daily-latest.md dist/biva/data/daily-latest.md
+          [ -f memory/boot-snapshot.md ] && cp memory/boot-snapshot.md dist/biva/data/boot-snapshot.md
           [ -d assets/styles ] && cp -r assets/styles/* dist/shared/
           mkdir -p dist/docs
           [ -f "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" ] && cp "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" dist/docs/brain-in-a-vat-project.html

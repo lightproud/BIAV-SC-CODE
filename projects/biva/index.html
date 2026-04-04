@@ -367,7 +367,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script>
-const APP_VERSION = '0.2.1';
+const APP_VERSION = '0.3.0';
 
 /* ===== State ===== */
 const S = {
@@ -450,10 +450,31 @@ const PROMPTS = {
   custom: '',
 };
 
+// Live context fetched from deployed data files
+let liveContext = '';
+(async function loadLiveContext() {
+  const base = location.href.includes('github.io') ? '' : '';
+  const files = ['data/boot-snapshot.md', 'data/daily-latest.md'];
+  const parts = [];
+  for (const f of files) {
+    try {
+      const res = await fetch(f, { cache: 'no-cache' });
+      if (res.ok) parts.push(await res.text());
+    } catch {}
+  }
+  if (parts.length) {
+    liveContext = '\n\n---\n以下是银芯系统实时数据，请基于这些数据回答问题：\n\n' + parts.join('\n\n---\n\n');
+    console.log('[BIVA] Live context loaded:', parts.length, 'files');
+  }
+})();
+
 function getSystemPrompt() {
   const sel = $('#prompt-select').value;
-  if (sel === 'custom') return loadConfig().customPrompt || '';
-  return PROMPTS[sel] || '';
+  let prompt = '';
+  if (sel === 'custom') prompt = loadConfig().customPrompt || '';
+  else prompt = PROMPTS[sel] || '';
+  if (sel === 'biav' && liveContext) prompt += liveContext;
+  return prompt;
 }
 
 /* ===== Markdown + Syntax Highlighting ===== */
