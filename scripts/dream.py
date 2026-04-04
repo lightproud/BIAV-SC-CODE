@@ -31,6 +31,259 @@ DREAMS_DIR = REPO / "memory" / "dreams"
 INSIGHTS_FILE = DREAMS_DIR / "insights.json"
 ACCESS_LOG = DREAMS_DIR / "access-log.json"
 SEMANTIC_INDEX = REPO / "assets" / "data" / "semantic-index.json"
+SENTINEL_BASELINE = REPO / "assets" / "data" / "sentinel-baseline.json"
+ALERTS_FILE = REPO / "projects" / "news" / "output" / "alerts.json"
+NEWS_OUTPUT = REPO / "projects" / "news" / "output"
+
+# ============================================================
+# Sentinel Layer — proactive anomaly detection (zero API cost)
+# ============================================================
+
+# Thresholds for alert levels
+SENTINEL_THRESHOLDS = {
+    "red": 3.0,     # 3x deviation from baseline → red alert
+    "orange": 2.0,  # 2x deviation → orange alert
+    "yellow": 1.5,  # 1.5x deviation → yellow alert
+}
+
+# Negative keywords to track (Chinese + English)
+NEGATIVE_KEYWORDS = [
+    "退款", "bug", "闪退", "崩溃", "卡死", "差评", "垃圾", "骗钱",
+    "refund", "crash", "broken", "scam", "unplayable", "worst",
+]
+
+
+def load_sentinel_baseline() -> dict:
+    """Load the sliding 7-day baseline."""
+    if SENTINEL_BASELINE.exists():
+        try:
+            return json.loads(SENTINEL_BASELINE.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+    return {"history": [], "baseline": {}}
+
+
+def save_sentinel_baseline(data: dict):
+    """Save sentinel baseline to disk."""
+    SENTINEL_BASELINE.parent.mkdir(parents=True, exist_ok=True)
+    SENTINEL_BASELINE.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
+def extract_source_metrics(source: str, items: list) -> dict:
+    """Extract key metrics from a data source's items."""
+    metrics = {
+        "item_count": len(items),
+        "total_engagement": sum(it.get("engagement", 0) for it in items),
+    }
+
+    if source == "steam":
+        voted_up = sum(1 for it in items if it.get("voted_up", True))
+        voted_down = len(items) - voted_up
+        metrics["positive_count"] = voted_up
+        metrics["negative_count"] = voted_down
+        metrics["negative_rate"] = voted_down / max(len(items), 1)
+
+    if source == "discord":
+        # Extract message count from summary (first item is daily summary)
+        for it in items:
+            title = it.get("title", "")
+            if "日报" in title or "Daily" in title:
+                eng = it.get("engagement", 0)
+                if eng > 0:
+                    metrics["daily_messages"] = eng
+                break
+
+    # Negative keyword scan across all items
+    neg_hits = 0
+    neg_keywords_found = []
+    for it in items:
+        text = " ".join([
+            it.get("title", ""), it.get("summary", ""),
+            it.get("review", ""),
+        ]).lower()
+        for kw in NEGATIVE_KEYWORDS:
+            if kw in text:
+                neg_hits += 1
+                if kw not in neg_keywords_found:
+                    neg_keywords_found.append(kw)
+    metrics["negative_keyword_hits"] = neg_hits
+    metrics["negative_keywords"] = neg_keywords_found
+
+    return metrics
+
+
+def compute_deviation(current: float, baseline: float) -> float:
+    """Compute how many times current deviates from baseline (ratio)."""
+    if baseline <= 0:
+        return 0.0
+    return current / baseline
+
+
+def sentinel_scan() -> list[dict]:
+    """
+    Scan all data sources against sliding baselines.
+    Returns list of alerts (may be empty if everything is normal).
+    """
+    baseline_data = load_sentinel_baseline()
+    history = baseline_data.get("history", [])
+    alerts = []
+
+    # Collect today's metrics from each source
+    today_metrics = {}
+    sources = ["steam", "bilibili", "discord"]
+    for src in sources:
+        src_file = NEWS_OUTPUT / f"{src}-latest.json"
+        if not src_file.exists():
+            continue
+        try:
+            data = json.loads(src_file.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        items = data.get("items", [])
+        if not items:
+            continue
+        today_metrics[src] = extract_source_metrics(src, items)
+
+    if not today_metrics:
+        return alerts
+
+    # Compute baselines from history (last 7 entries)
+    recent = history[-7:] if len(history) >= 2 else []
+    baselines = {}
+    if recent:
+        for src in sources:
+            src_history = [h.get(src, {}) for h in recent if src in h]
+            if not src_history:
+                continue
+            baselines[src] = {}
+            for key in ["item_count", "total_engagement", "negative_keyword_hits"]:
+                vals = [h.get(key, 0) for h in src_history]
+                baselines[src][key] = sum(vals) / max(len(vals), 1)
+            if src == "steam":
+                vals = [h.get("negative_rate", 0) for h in src_history]
+                baselines[src]["negative_rate"] = sum(vals) / max(len(vals), 1)
+            if src == "discord":
+                vals = [h.get("daily_messages", 0) for h in src_history if h.get("daily_messages")]
+                baselines[src]["daily_messages"] = sum(vals) / max(len(vals), 1) if vals else 0
+
+    # Generate alerts by comparing today vs baseline
+    for src, metrics in today_metrics.items():
+        src_baseline = baselines.get(src, {})
+
+        # Steam negative rate spike
+        if src == "steam" and "negative_rate" in src_baseline:
+            bl = src_baseline["negative_rate"]
+            cur = metrics.get("negative_rate", 0)
+            if bl > 0 and cur > bl:
+                ratio = cur / bl
+                if ratio >= SENTINEL_THRESHOLDS["red"]:
+                    alerts.append({
+                        "level": "red",
+                        "source": src,
+                        "metric": "negative_rate",
+                        "message": f"Steam 差评率飙升：{cur:.0%}（基线 {bl:.0%}，{ratio:.1f}x）",
+                        "current": cur,
+                        "baseline": bl,
+                    })
+                elif ratio >= SENTINEL_THRESHOLDS["orange"]:
+                    alerts.append({
+                        "level": "orange",
+                        "source": src,
+                        "metric": "negative_rate",
+                        "message": f"Steam 差评率上升：{cur:.0%}（基线 {bl:.0%}，{ratio:.1f}x）",
+                        "current": cur,
+                        "baseline": bl,
+                    })
+
+        # Discord message volume spike
+        if src == "discord":
+            bl = src_baseline.get("daily_messages", 0)
+            cur = metrics.get("daily_messages", 0)
+            if bl > 0 and cur > 0:
+                ratio = cur / bl
+                if ratio >= SENTINEL_THRESHOLDS["red"]:
+                    alerts.append({
+                        "level": "yellow",
+                        "source": src,
+                        "metric": "daily_messages",
+                        "message": f"Discord 消息量暴涨：{cur:,}（基线 {bl:,.0f}，{ratio:.1f}x）",
+                        "current": cur,
+                        "baseline": bl,
+                    })
+
+        # Engagement spike (any source)
+        bl_eng = src_baseline.get("total_engagement", 0)
+        cur_eng = metrics.get("total_engagement", 0)
+        if bl_eng > 0 and cur_eng > bl_eng:
+            ratio = cur_eng / bl_eng
+            if ratio >= SENTINEL_THRESHOLDS["red"]:
+                alerts.append({
+                    "level": "yellow",
+                    "source": src,
+                    "metric": "total_engagement",
+                    "message": f"{src} 互动量异常：{cur_eng:,}（基线 {bl_eng:,.0f}，{ratio:.1f}x）",
+                    "current": cur_eng,
+                    "baseline": bl_eng,
+                })
+
+        # Negative keyword spike
+        bl_neg = src_baseline.get("negative_keyword_hits", 0)
+        cur_neg = metrics.get("negative_keyword_hits", 0)
+        if cur_neg > 0 and (bl_neg == 0 or cur_neg / max(bl_neg, 1) >= SENTINEL_THRESHOLDS["orange"]):
+            kws = metrics.get("negative_keywords", [])
+            if bl_neg == 0 and cur_neg >= 3:
+                alerts.append({
+                    "level": "orange",
+                    "source": src,
+                    "metric": "negative_keywords",
+                    "message": f"{src} 负面关键词突增：{cur_neg} 次（{', '.join(kws[:5])}）",
+                    "current": cur_neg,
+                    "baseline": bl_neg,
+                })
+            elif bl_neg > 0:
+                ratio = cur_neg / bl_neg
+                if ratio >= SENTINEL_THRESHOLDS["orange"]:
+                    alerts.append({
+                        "level": "orange",
+                        "source": src,
+                        "metric": "negative_keywords",
+                        "message": f"{src} 负面关键词上升：{cur_neg} 次（基线 {bl_neg:.0f}，{', '.join(kws[:5])}）",
+                        "current": cur_neg,
+                        "baseline": bl_neg,
+                    })
+
+    # Update history (append today, keep last 14 entries)
+    history.append(today_metrics)
+    history = history[-14:]
+    baseline_data["history"] = history
+    baseline_data["last_scan"] = datetime.now().isoformat()
+    baseline_data["baseline"] = baselines
+    save_sentinel_baseline(baseline_data)
+
+    # Write alerts.json
+    if alerts:
+        alert_record = {
+            "date": TODAY.isoformat(),
+            "timestamp": datetime.now().isoformat(),
+            "alerts": alerts,
+        }
+        # Load existing alerts, append, keep last 30 days
+        existing_alerts = []
+        if ALERTS_FILE.exists():
+            try:
+                existing_alerts = json.loads(ALERTS_FILE.read_text(encoding="utf-8"))
+            except (json.JSONDecodeError, OSError):
+                pass
+        existing_alerts.append(alert_record)
+        existing_alerts = existing_alerts[-30:]
+        ALERTS_FILE.write_text(
+            json.dumps(existing_alerts, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+
+    return alerts
+
 
 # ============================================================
 # Phase 1: Orient + Gather (structural, zero API cost)
@@ -678,6 +931,13 @@ def run_phase1() -> dict:
     keyword_index = build_keyword_index()
     results["keyword_index"] = keyword_index
 
+    # Sentinel scan — proactive anomaly detection
+    sentinel_alerts = sentinel_scan()
+    results["sentinel"] = {
+        "alerts": sentinel_alerts,
+        "alert_count": len(sentinel_alerts),
+    }
+
     # Track scanned files
     for fp in REPO.glob("memory/*.md"):
         all_files_scanned.append(str(fp.relative_to(REPO)))
@@ -888,8 +1148,22 @@ def main():
         for line in lines:
             print(line)
 
+    # Sentinel results
+    sentinel = phase1.get("sentinel", {})
+    alert_count = sentinel.get("alert_count", 0)
+    print(f"\n## Sentinel (Anomaly Detection)")
+    if alert_count == 0:
+        print("  - ✅ All data sources within normal range")
+    else:
+        for alert in sentinel.get("alerts", []):
+            level = alert["level"]
+            icon = {"red": "🔴", "orange": "🟠", "yellow": "🟡"}.get(level, "⚪")
+            print(f"  - {icon} [{level.upper()}] {alert['message']}")
+
     print(f"\n## Phase 1 Summary")
     print(f"  - {phase1['issues']} structural issues found")
+    if alert_count > 0:
+        print(f"  - ⚠ {alert_count} sentinel alerts generated → projects/news/output/alerts.json")
 
     # Phase 2: Consolidate (AI-powered)
     phase2 = {}
@@ -923,6 +1197,7 @@ def main():
         report = {
             "date": TODAY.isoformat(),
             "phase1_issues": phase1["issues"],
+            "sentinel_alerts": phase1.get("sentinel", {}).get("alert_count", 0),
             "phase2_available": bool(phase2),
             "files_indexed": len(phase1.get("keyword_index", {}).get("files", {})),
         }
