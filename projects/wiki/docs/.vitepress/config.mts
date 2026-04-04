@@ -422,5 +422,5 @@ export default defineConfig({
 
   lastUpdated: true,
   cleanUrls: false,
-  appearance: 'dark',
+  appearance: 'force-dark',
 })
