@@ -41,7 +41,7 @@
 
 ### 阻塞项
 
-- ANTHROPIC_API_KEY 余额为零 → 自动化 Actions 全部停摆
+- ~~ANTHROPIC_API_KEY 余额为零~~ → ✅ 已恢复（2026-04-04 确认）
 - YouTube/Twitter/NGA/TapTap API 未配置 → 情报源不全
 
 详细状态 → `memory/project-status.md`
