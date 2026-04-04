@@ -254,12 +254,12 @@ body{min-height:100vh;min-height:-webkit-fill-available}
         <div id="model-dropdown"></div>
       </div>
       <select id="prompt-select" title="System Prompt">
-        <option value="">No system prompt</option>
+        <option value="biav" selected>BIAV Analyst</option>
         <option value="assistant">General Assistant</option>
         <option value="coder">Coding Expert</option>
         <option value="writer">Creative Writer</option>
         <option value="translator">Translator</option>
-        <option value="biav">BIAV Analyst</option>
+        <option value="">No prompt</option>
         <option value="custom">Custom...</option>
       </select>
       <div style="flex:1"></div>
@@ -353,7 +353,6 @@ body{min-height:100vh;min-height:-webkit-fill-available}
           <button class="preset-chip" data-p="You are an expert programmer. Write clean, efficient code with clear explanations. Use best practices.">Coder</button>
           <button class="preset-chip" data-p="You are a creative writer. Write vivid, engaging prose with strong narrative voice.">Writer</button>
           <button class="preset-chip" data-p="You are a professional translator. Translate accurately while preserving tone and nuance. Always provide the translation directly without explanation unless asked.">Translator</button>
-          <button class="preset-chip" data-p="You are the BIAV-SC analyst for Morimens by B.I.A.V. Studio. Respond in Chinese. Focus on game community data, player sentiment, and strategic recommendations.">BIAV</button>
         </div>
       </div>
     </div>
@@ -422,11 +421,32 @@ const settingsOverlay = $('#settings-overlay');
 /* ===== System Prompts ===== */
 const PROMPTS = {
   '': '',
+  biav: `你是 BIAV-SC（银芯）系统的 AI 分析师，服务于 B.I.A.V. Studio 的忘却前夜（Morimens）项目。
+
+身份：缸中之脑·银芯系统核心 AI，代号 BIVA。
+制作人：Light（B.I.A.V. Studio）
+
+你的能力：
+- 回答忘却前夜世界观、63个角色、叙事结构、设计哲学问题
+- 分析社区动态（Steam/Bilibili/Discord）
+- 提供项目管理建议和战略分析
+- 辅助内容创作和文档编写
+
+当前状态：Phase 1（记忆宫殿）已验证，Phase 2（内容权威）准备中。
+三条主线：事实圣经（知识库）、自动情报循环（日报+哨兵）、权威知识站点（Wiki）。
+银芯记忆系统 9 模块已上线：TF-IDF搜索、知识图谱、MemRL-lite、Sleep-Time Compute、哨兵层、MCP Server、虚拟上下文管理、Reflexion、选择性记忆。
+
+双系统架构：银芯（公开层，你在这里）+ 黑池（内部层，内网运行）。
+
+沟通规则：
+- 始终使用中文进行所有过程说明和对话
+- 代码注释和 commit message 可用英文
+- 简洁、专业、数据驱动
+- 主动提供基于数据的建议`,
   assistant: 'You are a helpful assistant. Answer concisely and accurately.',
   coder: 'You are an expert programmer. Write clean, efficient code with clear explanations. Use best practices.',
   writer: 'You are a creative writer. Write vivid, engaging prose with strong narrative voice.',
   translator: 'You are a professional translator. Translate accurately while preserving tone and nuance. Always provide the translation directly without explanation unless asked.',
-  biav: 'You are the BIAV-SC analyst for Morimens by B.I.A.V. Studio. Respond in Chinese. Focus on game community data, player sentiment, and strategic recommendations.',
   custom: '',
 };
 
@@ -1097,6 +1117,11 @@ renderSidebar();
 renderMessages();
 updateModelBtn();
 if (isMobile()) sidebar.classList.add('hidden');
+
+// Register Service Worker for offline caching
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
 
 </script>
 </body>
