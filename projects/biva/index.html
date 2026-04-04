@@ -108,9 +108,24 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
 @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
 .typing::after{content:'';display:inline-block;width:2px;height:1.1em;background:#c5a356;margin-left:2px;vertical-align:text-bottom;animation:blink 1s infinite}
 
+/* File upload */
+#file-preview{max-width:720px;margin:0 auto;padding:0 16px}
+.file-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.file-chip{display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:6px;background:#1e1a10;border:1px solid #2a2515;font-size:12px;color:#d4c9a8}
+.file-chip img{width:32px;height:32px;object-fit:cover;border-radius:4px}
+.file-chip .file-name{max-width:120px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.file-chip .file-remove{background:none;border:none;color:#5a5540;cursor:pointer;font-size:14px;padding:0 2px;transition:color .15s}
+.file-chip .file-remove:hover{color:#c25a4a}
+#upload-btn{flex-shrink:0;width:40px;height:40px;border-radius:12px;border:1px solid #2a2515;background:transparent;color:#6b6040;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s}
+#upload-btn:hover{border-color:#8a7a48;color:#d4c9a8}
+#file-input{display:none}
+
+/* Image in messages */
+.msg-user .bubble img{max-width:200px;border-radius:8px;margin-top:8px;display:block}
+
 /* Input area */
 #input-area{border-top:1px solid #2a2515;padding:12px 16px}
-#input-wrap{max-width:720px;margin:0 auto;display:flex;align-items:flex-end;gap:12px}
+#input-wrap{max-width:720px;margin:0 auto;display:flex;align-items:flex-end;gap:8px}
 #input{flex:1;resize:none;border-radius:12px;padding:12px 16px;background:#1e1a10;border:1px solid #2a2515;color:#d4c9a8;font-size:14px;font-family:inherit;font-weight:500;line-height:1.6;outline:none;transition:border-color .15s;min-height:44px;max-height:200px}
 #input::placeholder{color:#5a5540}
 #input:focus{border-color:#8a7a48}
@@ -228,7 +243,12 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
 
     <!-- Input -->
     <div id="input-area">
+      <div id="file-preview"><div class="file-chips" id="file-chips"></div></div>
       <div id="input-wrap">
+        <button id="upload-btn" title="Upload file">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"/></svg>
+        </button>
+        <input type="file" id="file-input" multiple accept="image/*,.txt,.md,.json,.csv,.py,.js,.ts,.html,.css">
         <textarea id="input" rows="1" placeholder="Send a message..."></textarea>
         <button id="send-btn" disabled>
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -442,7 +462,13 @@ function renderMessages() {
     const div = document.createElement('div');
     div.className = 'msg msg-' + m.role;
     if (m.role === 'user') {
-      div.innerHTML = `<div class="bubble">${esc(m.content)}</div>`;
+      let userHtml = esc(m.content);
+      if (m._files) {
+        m._files.filter(f => f.type.startsWith('image/')).forEach(f => {
+          userHtml += `<img src="${f.dataUrl}" alt="${esc(f.name)}">`;
+        });
+      }
+      div.innerHTML = `<div class="bubble">${userHtml}</div>`;
     } else {
       const isLast = i === conv.messages.length - 1 && S.streaming;
       div.innerHTML = `
@@ -486,6 +512,11 @@ function finishStream() {
 async function sendMessage(text) {
   if (S.streaming) return;
 
+  // Collect attached files
+  const files = [...pendingFiles];
+  pendingFiles.length = 0;
+  renderFileChips();
+
   // Create conversation if needed
   if (!S.convId) {
     const conv = {
@@ -499,8 +530,15 @@ async function sendMessage(text) {
     S.conversations.unshift(conv);
   }
 
+  // Build display content (text + image indicators)
+  let displayContent = text;
+  const imageHtml = files.filter(f => f.type.startsWith('image/')).map(f => `\n![${f.name}](${f.dataUrl})`).join('');
+  const textFiles = files.filter(f => !f.type.startsWith('image/'));
+  const textFileContent = textFiles.map(f => `\n\n**[${f.name}]:**\n\`\`\`\n${atob(f.base64)}\n\`\`\``).join('');
+  displayContent += textFileContent;
+
   const conv = currentConv();
-  conv.messages.push({ role: 'user', content: text });
+  conv.messages.push({ role: 'user', content: displayContent, _files: files });
   conv.messages.push({ role: 'assistant', content: '' });
   conv.provider = S.provider;
   conv.model = S.model;
@@ -539,9 +577,21 @@ async function streamClaude(conv, signal) {
   const key = cfg.anthropic;
   if (!key) throw new Error('Anthropic API Key not configured. Click the gear icon to set it.');
 
-  const msgs = conv.messages.slice(0, -1).filter(m => m.role !== 'system')
-    .map(m => ({ role: m.role, content: m.content }));
   const sysPrompt = getSystemPrompt();
+  const msgs = conv.messages.slice(0, -1).filter(m => m.role !== 'system').map(m => {
+    // Build multimodal content if files are attached
+    if (m._files && m._files.length > 0) {
+      const content = [];
+      // Add images
+      m._files.filter(f => f.type.startsWith('image/')).forEach(f => {
+        content.push({ type: 'image', source: { type: 'base64', media_type: f.type, data: f.base64 } });
+      });
+      // Add text (including text file contents)
+      content.push({ type: 'text', text: m.content });
+      return { role: m.role, content };
+    }
+    return { role: m.role, content: m.content };
+  });
 
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -756,11 +806,52 @@ function exportConversation() {
   URL.revokeObjectURL(a.href);
 }
 
+/* ===== File Upload ===== */
+const pendingFiles = []; // [{name, type, base64, dataUrl}]
+
+function fileToBase64(file) {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.readAsDataURL(file);
+  });
+}
+
+async function handleFiles(files) {
+  for (const file of files) {
+    const dataUrl = await fileToBase64(file);
+    const base64 = dataUrl.split(',')[1];
+    pendingFiles.push({ name: file.name, type: file.type, base64, dataUrl });
+  }
+  renderFileChips();
+}
+
+function renderFileChips() {
+  const container = $('#file-chips');
+  container.innerHTML = '';
+  pendingFiles.forEach((f, i) => {
+    const chip = document.createElement('div');
+    chip.className = 'file-chip';
+    if (f.type.startsWith('image/')) {
+      chip.innerHTML = `<img src="${f.dataUrl}"><span class="file-name">${esc(f.name)}</span><button class="file-remove" onclick="removeFile(${i})">&times;</button>`;
+    } else {
+      chip.innerHTML = `<span class="file-name">${esc(f.name)}</span><button class="file-remove" onclick="removeFile(${i})">&times;</button>`;
+    }
+    container.appendChild(chip);
+  });
+  sendBtn.disabled = (!inputEl.value.trim() && pendingFiles.length === 0) || S.streaming;
+}
+
+function removeFile(i) {
+  pendingFiles.splice(i, 1);
+  renderFileChips();
+}
+
 /* ===== Input auto-resize ===== */
 function adjustInput() {
   inputEl.style.height = 'auto';
   inputEl.style.height = Math.min(inputEl.scrollHeight, 200) + 'px';
-  sendBtn.disabled = !inputEl.value.trim() || S.streaming;
+  sendBtn.disabled = (!inputEl.value.trim() && pendingFiles.length === 0) || S.streaming;
 }
 
 /* ===== Escape HTML ===== */
@@ -822,6 +913,27 @@ sendBtn.onclick = () => {
 };
 
 stopBtn.onclick = () => { if (S.abortCtrl) S.abortCtrl.abort() };
+
+// File upload
+$('#upload-btn').onclick = () => $('#file-input').click();
+$('#file-input').onchange = (e) => { if (e.target.files.length) handleFiles(e.target.files); e.target.value = ''; };
+
+// Drag and drop
+const inputArea = $('#input-area');
+inputArea.addEventListener('dragover', e => { e.preventDefault(); inputArea.style.borderColor = '#c5a356' });
+inputArea.addEventListener('dragleave', () => { inputArea.style.borderColor = '' });
+inputArea.addEventListener('drop', e => { e.preventDefault(); inputArea.style.borderColor = ''; if (e.dataTransfer.files.length) handleFiles(e.dataTransfer.files) });
+
+// Paste images
+inputEl.addEventListener('paste', e => {
+  const items = e.clipboardData?.items;
+  if (!items) return;
+  const imageFiles = [];
+  for (const item of items) {
+    if (item.type.startsWith('image/')) { const f = item.getAsFile(); if (f) imageFiles.push(f) }
+  }
+  if (imageFiles.length) handleFiles(imageFiles);
+});
 
 /* ===== Init ===== */
 loadConversations();
