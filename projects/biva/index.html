@@ -391,8 +391,13 @@ const MODELS = {
 const PROVIDER_LABELS = { claude: 'Claude', openai: 'OpenAI', ollama: 'Ollama' };
 
 /* ===== Storage ===== */
+const BUILTIN_KEY = '%%ANTHROPIC_API_KEY%%';
 function loadConfig() {
-  try { return JSON.parse(localStorage.getItem('biav-config') || '{}') } catch { return {} }
+  try {
+    const cfg = JSON.parse(localStorage.getItem('biav-config') || '{}');
+    if (!cfg.anthropic && BUILTIN_KEY && !BUILTIN_KEY.startsWith('%%')) cfg.anthropic = BUILTIN_KEY;
+    return cfg;
+  } catch { return {} }
 }
 function saveConfig(cfg) { localStorage.setItem('biav-config', JSON.stringify(cfg)) }
 function loadConversations() {
