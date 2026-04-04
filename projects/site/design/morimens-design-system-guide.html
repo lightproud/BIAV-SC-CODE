@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>忘却前夜 · Design System 落地指南</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root{--bg:#0a0b10;--bg2:#0f1018;--bg3:#161722;--bg4:#1a1b28;--gold:#c5a356;--gold-l:#e2c97e;--gold-d:#8a7340;--gg:rgba(197,163,86,0.12);--txt:#f0ebe0;--txt-m:#b5aa98;--txt-d:#7a7265;--serif:'Noto Serif SC',serif;--sans:'Noto Sans SC',sans-serif;--mono:'JetBrains Mono','SF Mono',monospace;--border:rgba(197,163,86,0.08)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-weight:500;font-size:15px;line-height:1.8;-webkit-font-smoothing:antialiased}
+  .header{position:sticky;top:0;z-index:100;background:rgba(10,11,16,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
+  .header h1{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--gold);letter-spacing:0.04em}
+  .header .meta{font-size:12px;color:var(--txt-d)}
+  .body{max-width:900px;margin:0 auto;padding:60px 40px 120px}
+  .sec{margin-bottom:72px}
+  .sec-num{font-family:var(--serif);font-size:13px;color:var(--gold-d);letter-spacing:0.12em;margin-bottom:8px}
+  .sec-title{font-family:var(--serif);font-weight:600;font-size:26px;color:var(--txt);margin-bottom:12px;line-height:1.3}
+  .sec-desc{font-size:15px;color:var(--txt-m);margin-bottom:36px;max-width:640px}
+  h3{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--gold-l);margin:32px 0 14px}
+  p{margin-bottom:14px;color:var(--txt-m)}
+  strong{color:var(--txt);font-weight:700}
+  code{font-family:var(--mono);font-size:12px;color:var(--gold-l);background:var(--gg);padding:2px 6px;border-radius:2px}
+  pre{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:20px;margin:16px 0;overflow-x:auto;font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--txt-m)}
+  pre code{background:none;padding:0;font-size:13px}
+  table{width:100%;border-collapse:collapse;margin:16px 0}
+  th{font-family:var(--sans);font-weight:700;font-size:11px;color:var(--txt-d);letter-spacing:0.1em;text-transform:uppercase;text-align:left;padding:10px 14px;border-bottom:1px solid rgba(197,163,86,0.1)}
+  td{font-size:14px;color:var(--txt-m);padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.02);vertical-align:top}
+  td:first-child{color:var(--txt);font-weight:500;white-space:nowrap}
+  .note{background:var(--gg);border-left:2px solid var(--gold-d);padding:14px 18px;border-radius:0 4px 4px 0;margin:16px 0;font-size:14px;color:var(--txt-m)}
+  .note strong{color:var(--gold-l)}
+  .file-tree{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:20px;margin:16px 0;font-family:var(--mono);font-size:13px;line-height:1.8;color:var(--txt-m)}
+  .file-tree .dir{color:var(--gold)}
+  .file-tree .new{color:#6aad7a}
+  .file-tree .mod{color:#c5a356}
+  .badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;font-family:var(--sans);margin-left:6px}
+  .badge-new{background:rgba(106,173,122,0.15);color:#6aad7a}
+  .badge-mod{background:rgba(197,163,86,0.15);color:#e2c97e}
+  .badge-keep{background:rgba(122,156,198,0.15);color:#7a9cc6}
+  @media(max-width:700px){.body{padding:40px 20px 80px}.header{padding:12px 20px}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Design System 落地指南</h1>
+  <span class="meta">v1.0 · 忘却前夜 · 全载体适配</span>
+</div>
+
+<div class="body">
+
+<!-- ═══ 01 OVERVIEW ═══ -->
+<div class="sec">
+  <div class="sec-num">01</div>
+  <div class="sec-title">架构总览</div>
+  <div class="sec-desc">一套 Token → 三个载体。Token 文件是唯一的颜色/字体/间距真值源，各载体通过映射层适配。</div>
+
+  <table>
+    <tr><th>载体</th><th>技术栈</th><th>适配方式</th><th>状态</th></tr>
+    <tr><td>GitHub Pages 主页</td><td>纯 HTML/CSS/JS</td><td>直接引用 Token CSS</td><td><span class="badge badge-new">新建</span></td></tr>
+    <tr><td>VitePress Wiki</td><td>VitePress + Vue</td><td>Token CSS + VP 变量映射层</td><td><span class="badge badge-mod">改造</span></td></tr>
+    <tr><td>社区情报日报</td><td>HTML → PDF (weasyprint)</td><td>Token CSS 子集内联</td><td><span class="badge badge-keep">微调</span></td></tr>
+  </table>
+
+  <h3>文件交付清单</h3>
+  <div class="file-tree">
+<span class="dir">brain-in-a-vat/</span>
+├── <span class="new">design/</span>
+│   └── <span class="new">morimens-design-tokens.css</span>    <span class="badge badge-new">新增</span> 共享 Token
+├── <span class="new">index.html</span>                          <span class="badge badge-new">新增</span> 主页（根目录）
+├── <span class="dir">projects/wiki/docs/.vitepress/theme/</span>
+│   ├── <span class="mod">index.ts</span>                       <span class="badge badge-mod">修改</span> 引入新 CSS
+│   ├── <span class="new">morimens-design-tokens.css</span>     <span class="badge badge-new">新增</span> Token 副本
+│   └── <span class="mod">custom.css → morimens-vitepress-theme.css</span> <span class="badge badge-mod">替换</span>
+└── <span class="dir">projects/news/</span>
+    └── <span class="mod">report-template.html</span>           <span class="badge badge-mod">微调</span> 对齐 Token 命名
+  </div>
+</div>
+
+<!-- ═══ 02 TOKEN SYSTEM ═══ -->
+<div class="sec">
+  <div class="sec-num">02</div>
+  <div class="sec-title">Token 体系说明</div>
+  <div class="sec-desc">所有 Token 以 <code>--m-</code> 前缀命名，避免与 VitePress <code>--vp-</code> 和其他框架变量冲突。</div>
+
+  <h3>命名规则</h3>
+  <table>
+    <tr><th>前缀</th><th>含义</th><th>示例</th></tr>
+    <tr><td><code>--m-bg-*</code></td><td>背景层级</td><td><code>--m-bg-abyss</code>, <code>--m-bg-card</code></td></tr>
+    <tr><td><code>--m-gold-*</code></td><td>品牌金色</td><td><code>--m-gold-primary</code>, <code>--m-gold-glow</code></td></tr>
+    <tr><td><code>--m-text-*</code></td><td>文本色</td><td><code>--m-text-primary</code>, <code>--m-text-dim</code></td></tr>
+    <tr><td><code>--m-realm-*</code></td><td>界域辅助色</td><td><code>--m-realm-caro</code></td></tr>
+    <tr><td><code>--m-border-*</code></td><td>边框</td><td><code>--m-border-hover</code></td></tr>
+    <tr><td><code>--m-font-*</code></td><td>字体族</td><td><code>--m-font-title</code></td></tr>
+    <tr><td><code>--m-fs-*</code></td><td>字号</td><td><code>--m-fs-hero</code></td></tr>
+    <tr><td><code>--m-sp-*</code></td><td>间距</td><td><code>--m-sp-8</code> = 32px</td></tr>
+    <tr><td><code>--m-dur-*</code></td><td>动画时长</td><td><code>--m-dur-drift</code> = 12s</td></tr>
+  </table>
+
+  <h3>色彩比例铁律</h3>
+  <p><strong>85 / 10 / 5</strong> — 深色底 85% · 暖灰文本 10% · 金色点缀 5%。任何新组件在动手前先过这个比例检查。</p>
+
+  <h3>氛围层三件套</h3>
+  <p>Token 文件提供了三个工具类：<code>.m-fog</code>（雾气）、<code>.m-grain</code>（噪点）、<code>.m-vignette</code>（暗角）。使用时在容器上添加 <code>position: relative; overflow: hidden;</code> 即可叠加。三层可以组合使用，也可以单独使用。</p>
+
+  <div class="note"><strong>性能红线：</strong>雾气动画只用 <code>transform + opacity</code>，不触发 layout。噪点是 SVG repeat，不用 canvas。三层都用 <code>pointer-events: none</code> 避免阻断交互。</div>
+</div>
+
+<!-- ═══ 03 HOMEPAGE ═══ -->
+<div class="sec">
+  <div class="sec-num">03</div>
+  <div class="sec-title">载体 A · GitHub Pages 主页</div>
+  <div class="sec-desc">纯静态 HTML，部署在仓库根目录 index.html。是玩家接触项目的第一触点。</div>
+
+  <h3>部署方式</h3>
+  <pre><code># 将 morimens-homepage.html 重命名为 index.html
+# 放置在仓库根目录（或 gh-pages 分支根目录）
+cp morimens-homepage.html index.html
+git add index.html
+git commit -m "feat: add branded homepage"
+git push</code></pre>
+
+  <h3>注意事项</h3>
+  <table>
+    <tr><th>项目</th><th>说明</th></tr>
+    <tr><td>Wiki 链接</td><td>导航中 Wiki 链接指向 <code>wiki/</code>，对应 VitePress 的 <code>base: '/brain-in-a-vat/wiki/'</code> 配置</td></tr>
+    <tr><td>社区链接</td><td>Community 区块的 href 需要替换为实际链接（Discord、Bilibili 等）</td></tr>
+    <tr><td>OG Image</td><td>需要补充 <code>og:image</code> meta tag，建议用 Hero 区截图生成 1200×630</td></tr>
+    <tr><td>Favicon</td><td>需要补充 <code>link rel="icon"</code>，建议与 Wiki 共用同一个 logo.svg</td></tr>
+    <tr><td>Pages Source</td><td>确认 GitHub Pages Source 设置为 <code>gh-pages</code> 分支</td></tr>
+  </table>
+</div>
+
+<!-- ═══ 04 VITEPRESS ═══ -->
+<div class="sec">
+  <div class="sec-num">04</div>
+  <div class="sec-title">载体 B · VitePress Wiki</div>
+  <div class="sec-desc">完全自定义视觉，保留 VitePress 的导航/侧边栏/搜索/i18n 基础设施。</div>
+
+  <h3>改造步骤</h3>
+
+  <p><strong>Step 1：替换 CSS 文件</strong></p>
+  <pre><code># 在 docs/.vitepress/theme/ 目录下
+# 1. 复制 Token 文件
+cp design/morimens-design-tokens.css docs/.vitepress/theme/
+
+# 2. 用新的主题 CSS 替换旧的 custom.css
+cp morimens-vitepress-theme.css docs/.vitepress/theme/
+# 旧的 custom.css 可以删除或改名备份</code></pre>
+
+  <p><strong>Step 2：修改 index.ts</strong></p>
+  <pre><code>// docs/.vitepress/theme/index.ts
+import DefaultTheme from 'vitepress/theme'
+import type { Theme } from 'vitepress'
+import { h } from 'vue'
+
+// ▼ 新增：先引 Token，再引主题覆盖
+import './morimens-design-tokens.css'
+import './morimens-vitepress-theme.css'
+// ▲ 删除旧的: import './custom.css'
+
+import GiscusComments from './components/GiscusComments.vue'
+// ... 其他组件 import 保持不变 ...
+
+const theme: Theme = {
+  extends: DefaultTheme,
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'doc-after': () => h(GiscusComments),
+    })
+  },
+  enhanceApp({ app }) {
+    // ... 组件注册保持不变 ...
+  },
+}
+
+export default theme</code></pre>
+
+  <p><strong>Step 3：验证构建</strong></p>
+  <pre><code>cd projects/wiki
+npm run docs:dev
+# 检查：深渊底色 ✓ 金色链接 ✓ 宋体标题 ✓ 噪点纹理 ✓</code></pre>
+
+  <h3>VitePress 变量映射关系</h3>
+  <table>
+    <tr><th>VitePress 变量</th><th>→ Token 映射</th><th>用途</th></tr>
+    <tr><td><code>--vp-c-bg</code></td><td><code>--m-bg-abyss</code></td><td>页面底色</td></tr>
+    <tr><td><code>--vp-c-bg-alt</code></td><td><code>--m-bg-surface</code></td><td>侧边栏底色</td></tr>
+    <tr><td><code>--vp-c-bg-soft</code></td><td><code>--m-bg-card</code></td><td>代码块、卡片背景</td></tr>
+    <tr><td><code>--vp-c-brand-1</code></td><td><code>--m-gold-light</code></td><td>主品牌色（dark mode）</td></tr>
+    <tr><td><code>--vp-c-text-1</code></td><td><code>--m-text-primary</code></td><td>主文本色</td></tr>
+    <tr><td><code>--vp-c-divider</code></td><td><code>--m-border-default</code></td><td>分割线</td></tr>
+    <tr><td><code>--vp-nav-bg-color</code></td><td><code>rgba(bg-abyss, 0.92)</code></td><td>导航栏毛玻璃底</td></tr>
+    <tr><td><code>--vp-button-brand-bg</code></td><td><code>--m-gold-primary</code></td><td>主按钮</td></tr>
+  </table>
+
+  <h3>游戏组件样式迁移</h3>
+  <p>原 custom.css 中的游戏组件样式（<code>.rarity-*</code>、<code>.realm-badge</code>、<code>.card-grid</code> 等）已全部迁移到新的主题 CSS 中，并改用 Token 变量。所有 Vue 组件无需修改模板，只要 class name 没变就自动生效。</p>
+
+  <div class="note"><strong>不兼容注意：</strong>新 CSS 中 <code>.card</code> 类增加了 <code>background: var(--m-bg-surface)</code>，如果现有 Vue 组件中有内联 background 样式，需要删除内联让 CSS 接管。</div>
+</div>
+
+<!-- ═══ 05 DAILY REPORT ═══ -->
+<div class="sec">
+  <div class="sec-num">05</div>
+  <div class="sec-title">载体 C · 社区情报日报</div>
+  <div class="sec-desc">日报已基本对齐深渊+金色体系。需要做的是变量命名对齐和微调。</div>
+
+  <h3>当前状态 vs 目标</h3>
+  <table>
+    <tr><th>项目</th><th>当前值</th><th>对齐目标</th><th>差异</th></tr>
+    <tr><td>Background</td><td><code>#0a0b10</code></td><td><code>--m-bg-abyss</code></td><td>✓ 一致</td></tr>
+    <tr><td>Gold</td><td><code>#c5a356</code></td><td><code>--m-gold-primary</code></td><td>✓ 一致</td></tr>
+    <tr><td>Text</td><td><code>#d4c4a0</code></td><td><code>#f0ebe0</code></td><td>▲ 需调亮</td></tr>
+    <tr><td>Title font</td><td>Noto Serif SC</td><td><code>--m-font-title</code></td><td>✓ 一致</td></tr>
+    <tr><td>Body font</td><td>Noto Sans SC</td><td><code>--m-font-body</code></td><td>✓ 一致</td></tr>
+    <tr><td>Divider</td><td><code>#2a2520</code></td><td><code>rgba(gold, 0.10)</code></td><td>▲ 需换用金色透明度</td></tr>
+  </table>
+
+  <h3>适配方式</h3>
+  <p>日报模板是内联 CSS（因为要生成 PDF），不适合直接引用外部 Token 文件。做法是：</p>
+  <pre><code>/* 在日报模板 &lt;style&gt; 块开头，手动同步核心 Token */
+:root {
+  --bg: #0a0b10;  /* = --m-bg-abyss */
+  --gold: #c5a356;  /* = --m-gold-primary */
+  --txt: #f0ebe0;  /* = --m-text-primary  ← 从 #d4c4a0 调亮 */
+  --txt-d: #b5aa98;  /* = --m-text-muted */
+  --bdr: rgba(197, 163, 86, 0.10);  /* = --m-border-default */
+  /* ... */
+}</code></pre>
+
+  <div class="note"><strong>PDF 渲染限制：</strong>weasyprint 不支持 <code>backdrop-filter</code>、CSS 动画、SVG filter 噪点纹理。日报中的氛围层只能用纯 radial-gradient 实现，不叠噪点和动画。这是 PDF 载体的固有约束，不影响视觉统一性。</div>
+</div>
+
+<!-- ═══ 06 GUARDRAILS ═══ -->
+<div class="sec">
+  <div class="sec-num">06</div>
+  <div class="sec-title">设计护栏</div>
+  <div class="sec-desc">任何人（包括 AI agent）在三个载体上新增视觉元素时，必须遵守的硬性约束。</div>
+
+  <h3>绝对禁止</h3>
+  <table>
+    <tr><th>禁止项</th><th>原因</th></tr>
+    <tr><td>大面积金色铺陈</td><td>金色是「记忆的残光」，出现得少才有意义。5% 上限</td></tr>
+    <tr><td>界域色作为纯色填充</td><td>只能作为雾气层 radial-gradient，≤15% opacity</td></tr>
+    <tr><td>弹跳/旋转/缩放 >1.02 动画</td><td>基调是沉重、缓慢、宿命感，不是活泼</td></tr>
+    <tr><td>白色或亮色背景</td><td>视觉语言是「从黑暗中浮现」</td></tr>
+    <tr><td>圆角 >12px</td><td>锐利感服务于克苏鲁美学</td></tr>
+    <tr><td>字号 <14px（移动端正文）</td><td>移动端可读性底线</td></tr>
+    <tr><td>非体系字体</td><td>只能用 Noto Serif SC + Noto Sans SC + 等宽码字体</td></tr>
+  </table>
+
+  <h3>必须遵守</h3>
+  <table>
+    <tr><th>规则</th><th>说明</th></tr>
+    <tr><td>骨架对称 · 细节自由</td><td>布局居中对称，纹理/雾气允许不对称</td></tr>
+    <tr><td>一屏一主题</td><td>全幅区块独占至少一个 viewport 高度</td></tr>
+    <tr><td>标题必须宋体</td><td>h1–h3 用 <code>--m-font-title</code>，不可用黑体</td></tr>
+    <tr><td>所有新颜色必须走 Token</td><td>禁止硬编码色值。新增颜色需先加入 Token 文件</td></tr>
+    <tr><td>对比度 ≥ 4.5:1</td><td>WCAG AA 标准。主文本 on 深渊底 = 11.2:1 ✓</td></tr>
+    <tr><td><code>prefers-reduced-motion</code></td><td>所有动画必须在 reduced-motion 下归零</td></tr>
+  </table>
+</div>
+
+<!-- ═══ 07 AGENT INSTRUCTIONS ═══ -->
+<div class="sec">
+  <div class="sec-num">07</div>
+  <div class="sec-title">给 AI Agent 的指令模板</div>
+  <div class="sec-desc">以下文本可直接复制到 Claude Code 或 Chat session 的系统指令中，让 agent 在执行任务时自动遵守设计规范。</div>
+
+  <pre><code>## 视觉规范约束（Design System v1.0）
+
+你在为「忘却前夜 Morimens」项目生成前端代码或视觉内容时，
+必须遵守以下约束：
+
+### 色彩
+- 背景: #0a0b10（深渊）/ #0f1018（表面）/ #161722（抬升）
+- 品牌金: #c5a356（主）/ #e2c97e（亮）/ #8a7340（暗）
+- 文本: #f0ebe0（主）/ #b5aa98（次）/ #7a7265（弱）
+- 金色面积 ≤5%，界域辅助色只用于 radial-gradient 雾气层 ≤15% opacity
+
+### 字体
+- 标题: Noto Serif SC SemiBold(600)/Bold(700)
+- 正文: Noto Sans SC Medium(500) ≥15px
+- 代码: JetBrains Mono
+- 移动端最小字号: 14px
+
+### 动效
+- 只允许: fade-in, translateY, opacity, transform
+- 禁止: bounce, rotate, scale>1.02, spring
+- 缓动: cubic-bezier(0.4, 0, 0.2, 1)
+- 雾气漂移: 10-15s, ease-in-out, infinite alternate
+
+### 氛围层
+- 三层: 雾气(radial-gradient) + 噪点(SVG feTurbulence) + 暗角(radial-gradient)
+- 噪点 opacity ≤ 0.05
+- 所有层 pointer-events: none
+
+### 布局
+- 最大内容宽度: 960px
+- 基础间距单位: 8px
+- 一屏一主题，区块间距 80-120px
+- 骨架对称，细节自由</code></pre>
+</div>
+
+<!-- ═══ 08 CHECKLIST ═══ -->
+<div class="sec">
+  <div class="sec-num">08</div>
+  <div class="sec-title">落地检查清单</div>
+  <div class="sec-desc">逐项完成即视觉统一。</div>
+
+  <table>
+    <tr><th>#</th><th>任务</th><th>载体</th><th>复杂度</th></tr>
+    <tr><td>1</td><td>创建 <code>design/morimens-design-tokens.css</code></td><td>仓库</td><td>复制粘贴</td></tr>
+    <tr><td>2</td><td>替换 <code>custom.css</code> → <code>morimens-vitepress-theme.css</code></td><td>Wiki</td><td>替换文件</td></tr>
+    <tr><td>3</td><td>修改 <code>index.ts</code> 引入新 CSS</td><td>Wiki</td><td>改两行</td></tr>
+    <tr><td>4</td><td>本地 <code>npm run docs:dev</code> 验证</td><td>Wiki</td><td>5 min</td></tr>
+    <tr><td>5</td><td>部署主页 <code>index.html</code> 到仓库根/gh-pages</td><td>主页</td><td>复制粘贴</td></tr>
+    <tr><td>6</td><td>确认 GitHub Pages Source = gh-pages</td><td>部署</td><td>Settings 一键</td></tr>
+    <tr><td>7</td><td>日报模板 <code>--txt</code> 从 #d4c4a0 → #f0ebe0</td><td>日报</td><td>改一行</td></tr>
+    <tr><td>8</td><td>日报模板 divider 从 #2a2520 → rgba(gold,0.10)</td><td>日报</td><td>改一行</td></tr>
+    <tr><td>9</td><td>补充主页社区链接实际 URL</td><td>主页</td><td>填链接</td></tr>
+    <tr><td>10</td><td>生成 OG Image + Favicon</td><td>全站</td><td>需设计</td></tr>
+  </table>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,15 +1,16 @@
 ---
 title: "Drowning in Crimson - Wheel of Destiny"
-description: "Drowning in Crimson (沉入殷红) - Morimens Wheel of Destiny"
+description: "沉入殷红(Drowning in Crimson) - Morimens Wiki"
 ---
 
 # Drowning in Crimson
 **沉入殷红**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Oblivion) |
+| Category | SSR Limited (Oblivion) |
+| Character | 淡墨(Danmo) |
 
 ## Effect
 

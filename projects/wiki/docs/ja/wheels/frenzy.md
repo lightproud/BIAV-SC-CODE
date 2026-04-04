@@ -1,15 +1,16 @@
 ---
-title: "Frenzy - 運命の輪"
-description: "Frenzy (狂乱) - Morimens 運命の輪"
+title: "狂乱（Frenzy）- 運命の輪"
+description: "狂乱(Frenzy) - 忘却前夜命轮详情"
 ---
 
-# Frenzy
-**狂乱**
+# 狂乱
+**Frenzy**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-r">R</span> |
-| キャラクター | 珊(Coral) |
+| カテゴリ | R |
+| 対応キャラ | 珊(Shan) |
 
 ## 効果
 

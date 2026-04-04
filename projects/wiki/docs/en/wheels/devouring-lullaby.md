@@ -1,16 +1,16 @@
 ---
 title: "Devouring Lullaby - Wheel of Destiny"
-description: "Devouring Lullaby (吞噬摇篮曲) - Morimens Wheel of Destiny"
+description: "吞噬摇篮曲(Devouring Lullaby) - Morimens Wiki"
 ---
 
 # Devouring Lullaby
 **吞噬摇篮曲**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Standard |
-| Character | 菲茵特(Feint) |
+| Category | SSR Standard |
+| Character | 菲茵特(Faint) |
 
 ## Effect
 

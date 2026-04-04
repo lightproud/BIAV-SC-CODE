@@ -1,16 +1,17 @@
 ---
 title: "Aberrant Devour - Wheel of Destiny"
-description: "Aberrant Devour (畸体回噬) - Morimens Wheel of Destiny"
+description: "畸体回噬(Aberrant Devour) - Morimens Wiki"
 ---
 
 # Aberrant Devour
 **畸体回噬**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Oblivion) |
+| Category | SSR Limited (Oblivion) |
+| Character | 墨菲(Murphy) |
 
 ## Effect
 
-深海系命轮。
+Deep Sea series wheel.

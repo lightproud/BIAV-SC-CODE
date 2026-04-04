@@ -1,15 +1,16 @@
 ---
-title: "To Dear Friend - 運命の輪"
-description: "To Dear Friend (致挚友) - Morimens 運命の輪"
+title: "致挚友（To Dear Friend）- 運命の輪"
+description: "致挚友(To Dear Friend) - 忘却前夜命轮详情"
 ---
 
-# To Dear Friend
-**致挚友**
+# 致挚友
+**To Dear Friend**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-sr">SR</span> |
-| キャラクター | 图鲁(Thulhu) |
+| カテゴリ | SR |
+| 対応キャラ | 图鲁(Tulu) |
 
 ## 効果
 

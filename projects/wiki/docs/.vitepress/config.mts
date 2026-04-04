@@ -229,6 +229,7 @@ export default defineConfig({
                 { text: '新手指南', link: '/guides/beginner' },
                 { text: '日常任务', link: '/guides/dailies' },
                 { text: '节奏榜', link: '/guides/tier-list' },
+                { text: '术语表', link: '/guides/glossary' },
                 { text: '常见问题', link: '/guides/faq' },
               ]
             }
@@ -339,7 +340,7 @@ export default defineConfig({
           '/en/story/': [{ text: 'Story & Lore', items: [{ text: 'Overview', link: '/en/story/' }, { text: 'Main Story', link: '/en/story/main' }, { text: 'Character Stories', link: '/en/story/character-stories' }, { text: 'Worldbuilding', link: '/en/story/worldbuilding' }, { text: 'Silver Core', link: '/en/story/silver-core' }] }],
           '/en/items/': [{ text: 'Items', items: [{ text: 'Overview', link: '/en/items/' }, { text: 'Materials', link: '/en/items/materials' }, { text: 'Creations', link: '/en/items/creations' }, { text: 'Currency', link: '/en/items/currency' }] }],
           '/en/events/': [{ text: 'Events', items: [{ text: 'Overview', link: '/en/events/' }, { text: 'Current', link: '/en/events/current' }, { text: 'History', link: '/en/events/history' }, { text: 'Collaborations', link: '/en/events/collab' }] }],
-          '/en/guides/': [{ text: 'Guides', items: [{ text: 'Overview', link: '/en/guides/' }, { text: 'Beginner Guide', link: '/en/guides/beginner' }, { text: 'Daily Tasks', link: '/en/guides/dailies' }, { text: 'Tier List', link: '/en/guides/tier-list' }, { text: 'FAQ', link: '/en/guides/faq' }] }],
+          '/en/guides/': [{ text: 'Guides', items: [{ text: 'Overview', link: '/en/guides/' }, { text: 'Beginner Guide', link: '/en/guides/beginner' }, { text: 'Daily Tasks', link: '/en/guides/dailies' }, { text: 'Tier List', link: '/en/guides/tier-list' }, { text: 'Glossary', link: '/en/guides/glossary' }, { text: 'FAQ', link: '/en/guides/faq' }] }],
         },
         editLink: { pattern: 'https://github.com/lightproud/brain-in-a-vat/edit/main/projects/wiki/docs/:path', text: 'Edit this page on GitHub' },
         search: { provider: 'local' },
@@ -394,7 +395,7 @@ export default defineConfig({
           '/ja/story/': [{ text: 'ストーリー', items: [{ text: '概要', link: '/ja/story/' }, { text: 'メインストーリー', link: '/ja/story/main' }, { text: 'キャラストーリー', link: '/ja/story/character-stories' }, { text: '世界観', link: '/ja/story/worldbuilding' }, { text: '銀芯通信', link: '/ja/story/silver-core' }] }],
           '/ja/items/': [{ text: 'アイテム', items: [{ text: '概要', link: '/ja/items/' }, { text: '素材', link: '/ja/items/materials' }, { text: '造物', link: '/ja/items/creations' }, { text: '通貨', link: '/ja/items/currency' }] }],
           '/ja/events/': [{ text: 'イベント', items: [{ text: '概要', link: '/ja/events/' }, { text: '開催中', link: '/ja/events/current' }, { text: '過去', link: '/ja/events/history' }, { text: 'コラボ', link: '/ja/events/collab' }] }],
-          '/ja/guides/': [{ text: '攻略', items: [{ text: '概要', link: '/ja/guides/' }, { text: '初心者ガイド', link: '/ja/guides/beginner' }, { text: 'デイリー', link: '/ja/guides/dailies' }, { text: 'Tier表', link: '/ja/guides/tier-list' }, { text: 'FAQ', link: '/ja/guides/faq' }] }],
+          '/ja/guides/': [{ text: '攻略', items: [{ text: '概要', link: '/ja/guides/' }, { text: '初心者ガイド', link: '/ja/guides/beginner' }, { text: 'デイリー', link: '/ja/guides/dailies' }, { text: 'Tier表', link: '/ja/guides/tier-list' }, { text: '用語集', link: '/ja/guides/glossary' }, { text: 'FAQ', link: '/ja/guides/faq' }] }],
         },
         outline: { label: '目次' },
         docFooter: { prev: '前へ', next: '次へ' },

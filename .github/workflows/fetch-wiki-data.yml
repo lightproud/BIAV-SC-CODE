@@ -89,6 +89,10 @@ jobs:
         run: python3 scripts/fetch_lore.py
         continue-on-error: true
 
+      - name: Regenerate character pages from updated data
+        run: python3 scripts/generate_pages.py
+        continue-on-error: true
+
       - name: Guard against corrupted data
         run: |
           cd $GITHUB_WORKSPACE
@@ -115,7 +119,7 @@ jobs:
         id: changes
         run: |
           cd $GITHUB_WORKSPACE
-          git add projects/wiki/data/ assets/images/portraits/
+          git add projects/wiki/data/ projects/wiki/docs/ assets/images/portraits/
           git diff --cached --quiet && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push

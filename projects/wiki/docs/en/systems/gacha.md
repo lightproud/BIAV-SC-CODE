@@ -1,39 +1,59 @@
 # Gacha System (Summoning)
 
-## Summoning Types
+Morimens uses a gacha (summoning) system to obtain Awakeners and Wheels of Destiny.
 
-| Type | Description | Pity System |
-|------|-------------|-------------|
-| Standard Banner | Permanent character/weapon pool | Yes |
-| Limited Banner | Featured character rate-up pool | Yes |
-| Weapon Banner | Featured weapon rate-up pool | Yes |
+## Summoning Rates
 
-## Rate Information
+| Rarity | Base Rate | Notes |
+|--------|-----------|-------|
+| <span class="rarity-ssr">SSR</span> | **3%** | Increased from 1.02% in v2.0 |
+| <span class="rarity-sr">SR</span> | Guaranteed every 5 pulls | — |
+| On-Banner (UP) | 33.33% | When pulling SSR, 33.33% chance to be the featured character/wheel |
 
-| Rarity | Base Rate |
-|--------|-----------|
-| <span class="rarity-ssr">SSR</span> | *To be confirmed* |
-| <span class="rarity-sr">SR</span> | *To be confirmed* |
-| <span class="rarity-r">R</span> | *To be confirmed* |
+::: tip
+The SSR rate was tripled from 1.02% to 3% in v2.0, making Morimens one of the more generous gacha games.
+:::
 
 ## Pity System
 
-### Hard Pity
+### Small Pity (Hard Pity)
 
-*Pity details to be added...*
+- **30 pulls** guarantees an SSR (reduced from 80 in v1.x)
 
-### Soft Pity
+### Escalating Guarantee
 
-*Pity details to be added...*
+| SSR # | UP Chance | Notes |
+|-------|-----------|-------|
+| 1st SSR | 33.33% UP | Standard rate |
+| 2nd SSR | 66.66% UP | If 1st was off-banner |
+| 3rd SSR | 100% UP | Guaranteed featured character |
 
-## Summoning Currency Sources
+- **Big Pity**: 120 pulls maximum to guarantee the UP character (4 small pity cycles)
+- **Anti-Duplicate**: After pulling the same UP item twice in a row, the next UP is guaranteed to be a different one
 
-| Currency | How to Obtain |
-|----------|---------------|
-| *To be added* | - |
+### Cross-Banner Pity
+
+Limited and standard banner pity counters are tracked independently.
+
+## Banner Types
+
+| Banner | Type | Currency | Notes |
+|--------|------|----------|-------|
+| The Unforgotten | Standard | Silver Core (无垢之芯) | Permanent SSR pool. No UP mechanic. Every 5th awakening guarantees SSR + Wheel |
+| Obsidian Wings | Limited Debut | Lumen Core (流明之芯) | New limited character debut. Limited SSR do not enter standard pool |
+| Kaleido Recollections | Limited Exclusive | — | Pure limited character pool, excludes standard SSR |
+
+## Summoning Currencies
+
+| Currency | Type | How to Obtain |
+|----------|------|---------------|
+| Silver Prime (源液) | Premium (paid) | Real money purchase |
+| Silver Core (银芯) | Free premium | Daily tasks, main story ratings (100/stage), achievements, events, battle pass |
+| Lumen Core (流明之芯) | Limited summon ticket | Exchange from Silver Core, event rewards |
+| Silver Core (无垢之芯) | Standard summon ticket | Exchange from Silver Core, event rewards |
 
 ::: tip Summoning Advice
-- Prioritize pulling on limited banners for characters you want
-- Plan your currency usage to avoid wasting pity
-- Keep an eye out for free summon tickets from events
+- Prioritize limited banners for characters you want — limited SSR do not enter the standard pool
+- Plan currency around the 120-pull big pity guarantee
+- Some older limited characters (Tulu, Lily, Sorel) have been added to standard pool over time
 :::

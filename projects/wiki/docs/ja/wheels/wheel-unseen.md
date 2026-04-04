@@ -1,14 +1,16 @@
 ---
-title: "Wheel Unseen - 運命の輪"
-description: "Wheel Unseen (隐世的转轮) - Morimens 運命の輪"
+title: "隐世的转轮（Wheel Unseen）- 運命の輪"
+description: "隐世的转轮(Wheel Unseen) - 忘却前夜命轮详情"
 ---
 
-# Wheel Unseen
-**隐世的转轮**
+# 隐世的转轮
+**Wheel Unseen**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR限定・忘却線 |
+| 対応キャラ | 萝坦(Lotan) |
 
 ## 効果
 

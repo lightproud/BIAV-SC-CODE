@@ -1,5 +1,6 @@
 # Best Game Wiki Features & UX Patterns Research
 
+> 最后更新：2026-03-30 by Code-wiki
 > Research date: 2026-03-30
 > Purpose: Inform Morimens Wiki design decisions by cataloging what the best game wikis do well.
 

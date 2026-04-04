@@ -395,10 +395,12 @@
       "character_name_en": "Daffodil",
       "rarity": "SSR",
       "realm": "ultra",
-      "exalt": {
-        "name": "狂气爆发",
-        "effect": "生成免费洞察力(Insight)，可用于恢复算力和额外抽牌。特定条件下创建千幻镜(Thousand Mirage)的定制复制。"
-      }
+      "command_cards": [
+        {
+          "name": "Awaker",
+          "effect": ", staying hidden by various means.\n* Lady Daffodil has mastered the ability to move freely through dimensions. Because of that, the committee's attempts to capture her always failed."
+        }
+      ]
     },
     {
       "character_id": "casiah",
@@ -485,6 +487,19 @@
         "name": "超限爆发",
         "effect": "接下来3回合内，每回合开始时回复20%体质的生命，并使所有唤醒体获得10点狂气。"
       }
+    },
+    {
+      "character_id": "mouchette",
+      "character_name": "茉夏",
+      "character_name_en": "Mouchette",
+      "rarity": "SSR",
+      "realm": "chaos",
+      "command_cards": [
+        {
+          "name": "Defense",
+          "effect": "-\n|Mist Realm Vestige\n|"
+        }
+      ]
     },
     {
       "character_id": "helot",

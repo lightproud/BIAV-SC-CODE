@@ -1,97 +1,88 @@
-# Wheels of Destiny List
+# Wheels of Destiny
 
-A complete list of all Wheels of Destiny in Morimens, organized by rarity and category.
+Wheels of Destiny are equipment items obtained through gacha, similar to signature weapons. They provide stat bonuses and passive effects.
 
-## <span class="rarity-ssr">SSR</span> Wheels
-
-### SSR Limited -- Oblivion Series
-
-| Wheel Name | Awakener | Effect |
-|------------|----------|--------|
-| [Treasured Rarity](/wheels/treasured-rarity.html) | Daffodil | Permanent crit DMG buff on kill, stacks up to 5 times. |
-| [By Rose Alone](/wheels/by-rose-alone.html) | — (Rec: Salvador, Thais, Helot, Sorel) | Oblivion limited wheel. |
-| [Grace Through Pain](/wheels/grace-through-pain.html) | — (Rec: Lily, 24, Karen, Hameln, Tawil) | Oblivion limited wheel. |
-| [Shrouded Birth](/wheels/shrouded-birth.html) | — | Same group as Hymn of the Sovereign and Power of the Pious. |
-| [Queen's Edict](/wheels/queens-edict.html) | — (Rec: Daffodil, Wanda, Horla) | Oblivion limited wheel. |
-| [Aberrant Devour](/wheels/aberrant-devour.html) | — | Deep Sea series wheel. |
-| [Merciful Nurturing](/wheels/merciful-nurturing.html) | — | Flesh series wheel. |
-| [Power of the Pious](/wheels/power-of-the-pious.html) | — | Oblivion limited wheel. |
-| [The Last Verse](/wheels/the-last-verse.html) | — | Timing adjusted: triggers after strike instead of before. |
-| [Drowning in Crimson](/wheels/drowning-in-crimson.html) | — | Flesh series wheel. |
-| [Wheel Unseen](/wheels/wheel-unseen.html) | — | Gains buffs from Key Order triggers and hit count. |
-
-### SSR Limited -- Stellar Series
-
-| Wheel Name | Awakener | Effect |
-|------------|----------|--------|
-| [Unbearable Freedom](/wheels/unbearable-freedom.html) | — | Stellar limited wheel. |
-| [Kiss of Repose](/wheels/kiss-of-repose.html) | — | Stellar limited wheel. |
-| [Paradoxical Realism](/wheels/paradoxical-realism.html) | Pickman | Aliemus and Power gain +6-12%; post-Overload boosts final DMG/shield/heal. |
-| [Twisted Knight Ballad](/wheels/twisted-knight-ballad.html) | — | Stellar limited wheel. |
-| [Manikin of Oblivion](/wheels/manikin-of-oblivion.html) | — | Stellar limited wheel. |
-| [Veiled Anguish](/wheels/veiled-anguish.html) | — | Stellar limited wheel. |
-| [Flamebound Navigator](/wheels/flamebound-navigator.html) | — | Stellar limited wheel. |
-| [Amber-Tinted Death](/wheels/amber-tinted-death.html) | — | Stellar limited wheel. |
-| [Uteri Somnia](/wheels/uteri-somnia.html) | — | Stellar limited wheel. |
-| [Doomsday Rampage](/wheels/doomsday-rampage.html) | — | Stellar limited wheel. |
-| [Vain Regrets](/wheels/vain-regrets.html) | — | Stellar limited wheel. |
-
-### SSR Standard
-
-| Wheel Name | Awakener | Effect |
-|------------|----------|--------|
-| [Hymn of the Sovereign](/wheels/hymn-of-the-sovereign.html) | Celeste | Team-unique: gain 16 Aliemus at battle start. Other Awakeners gain 3 Aliemus on Overload use. Deep Sea: Overload gains tentacle DMG equal to 2-5% ATK. |
-| [In the Storm](/wheels/in-the-storm.html) | Tulu | v1.4 enhanced: on strike, inflict 10% Poison on all enemies (1x/turn). |
-| [Death of the Coral Maiden](/wheels/death-of-the-coral-maiden.html) | Coral (Shan) | Deep Sea exclusive wheel. |
-| [Retrograde Timepiece](/wheels/retrograde-timepiece.html) | Ramona | 30-60% chance to return used command card from discard pile to hand. |
-| [Hour of Fortune](/wheels/hour-of-fortune.html) | — (Rec: Deep Sea characters) | Standard SSR wheel. |
-| [Eternal Requiem](/wheels/eternal-requiem.html) | — | Crit DMG uncapped; suited for 8+ turn long fights. |
-| [Tablet of Scriptures](/wheels/tablet-of-scriptures.html) | Salvador (Rec: Salvador, Sorel, Thais, Helot) | Salvador's signature wheel. |
-| [Caro Feast](/wheels/caro-feast.html) | Uvhash | Provides crit DMG; gains Power through Overload and Devour. |
-| [Gluttonous Banquet](/wheels/gluttonous-banquet.html) | Rhea | Increases Overload healing; gains Power and shield when damaged. |
-| [Poetic Bygone Days](/wheels/poetic-bygone-days.html) | Aigis | Prevents petrification/dissolution card lock; speeds up mob/elite clears. Free obtainable wheel. |
-| [Devouring Lullaby](/wheels/devouring-lullaby.html) | Faint | After triggering Death Resist, enhances team heal and shield for 2 turns. |
-| [Favor](/wheels/favor.html) | — | Aliemus acquisition related. |
-| [Whisper](/wheels/whisper.html) | — | Aliemus acquisition related. |
-| [Mirror Reflection](/wheels/mirror-reflection.html) | — | Team-unique: gain 3 Aliemus at end of turn. Event limited. |
-| [Polar Night and Dawn](/wheels/polar-night-and-dawn.html) | — | Event gift SSR wheel. |
-| [Silent Banquet](/wheels/silent-banquet.html) | — | Standard SSR wheel. |
-| [Anatomy of Death](/wheels/anatomy-of-death.html) | — | Standard SSR wheel. |
-| [Rebirth in Ashen Earth](/wheels/rebirth-in-ashen-earth.html) | — | Commemorative SSR wheel. |
-
-## <span class="rarity-sr">SR</span> Wheels
-
-| Wheel Name | Awakener | Effect |
-|------------|----------|--------|
-| [Cutting and Harm](/wheels/cutting-and-harm.html) | Tulu | SR wheel for Tulu. |
-| [To Dear Friend](/wheels/to-dear-friend.html) | Tulu | SR wheel for Tulu. |
-| [Duty Calls](/wheels/duty-calls.html) | Celeste | SR wheel for Celeste. |
-| [35mm Magic](/wheels/35mm-magic.html) | Coral (Shan) | SR wheel for Coral. |
-| [Reunion Moment](/wheels/reunion-moment.html) | Ramona | SR wheel for Ramona. |
-| [Silver Cod's Determination](/wheels/silver-cods-determination.html) | — | Multidimensional Connection event limited SR wheel. |
-
-## <span class="rarity-r">R</span> Wheels
-
-R-quality wheels were completely reworked in v2.0 and now feature effects that change exploration rules.
-
-| Wheel Name | Awakener | Effect |
-|------------|----------|--------|
-| [Punishment](/wheels/punishment.html) | — | Keep 50 Black Ink before Boss = +250% Death Resist. Highest rated R wheel. |
-| [Emergence](/wheels/emergence.html) | Celeste | R wheel for Celeste. |
-| [Frenzy](/wheels/frenzy.html) | Coral (Shan) | R wheel for Coral. |
-| [Delirium](/wheels/delirium.html) | — | Reduce Black Ink through Awakening. Recommended R wheel. |
-| [Gluttony](/wheels/gluttony.html) | — | Pairs with: Exile engraving + HP. |
-| [Exile](/wheels/exile.html) | — | Pairs with: Mastery + sell status cards. |
-| [Enlightenment](/wheels/enlightenment.html) | — | Pairs with: Mastery + Silver Key. |
-| [Focused Mind](/wheels/focused-mind.html) | — | Pairs with: Silver Key + Aliemus. |
-| [Heart's Bastion](/wheels/hearts-bastion.html) | — | Suited for high-DEF characters like Faros or Shan. |
-
-::: tip
-Duplicate wheels cannot be equipped in the same team. After upgrading a wheel to +12, you can equip an additional SSR wheel. In v2.0+, reaching a certain progression point allows equipping an extra R or SR wheel.
+::: tip Equipment Rules
+No duplicate wheels in the same team. After +12, a second SSR wheel can be equipped. Wheels are evaluated at 3-stack (3 duplicates merged). R wheels were fully reworked in v2.0.
 :::
 
-## See Also
 
-- [Wheels of Destiny Overview](./index.md)
-- [Awakener List](../awakeners/list.md)
-- [Covenants List](../covenants/list.md)
+## SSR Wheels — Oblivion Limited
+
+| Wheel | Character | Effect |
+|----------|-----------|------|
+| [Treasured Rarity](/en/wheels/treasured-rarity) | 达芙黛尔(Daffodil) | === DMG Amplification: 14.4% === |
+| [By Rose Alone](/en/wheels/by-rose-alone) | 索蕾尔(Sorel) | Critical Strike Rate |
+| [Grace Through Pain](/en/wheels/grace-through-pain) | 莉莉(Lily) | — |
+| [Shrouded Birth](/en/wheels/shrouded-birth) | 神王·图鲁(Divine King Tulu) | Domain Mastery\|team_unique=Increases team health limit by 10%. Increases healing |
+| [Queen's Edict](/en/wheels/queens-edict) | 旺达(Wanda) | === DMG Amplification: 14.4% === |
+| [Aberrant Devour](/en/wheels/aberrant-devour) | 墨菲(Murphy) | Deep Sea series wheel. |
+| [Merciful Nurturing](/en/wheels/merciful-nurturing) | 塔薇(Thais) | Caro (Flesh) series wheel. |
+| [Power of the Pious](/en/wheels/power-of-the-pious) | — | — |
+| [The Last Verse](/en/wheels/the-last-verse) | 奥尔拉(Horla) | === Death Resistance: 50.4% === |
+| [Drowning in Crimson](/en/wheels/drowning-in-crimson) | 淡墨(Danmo) | == Story == |
+| [Wheel Unseen](/en/wheels/wheel-unseen) | 萝坦(Lotan) | Gains buffs from Key Order triggers and hit count. |
+
+## SSR Wheels — Stellar Limited
+
+| Wheel | Character | Effect |
+|----------|-----------|------|
+| [Unbearable Freedom](/en/wheels/unbearable-freedom) | 莉兹(Liz) | === DMG Amplification: 14.4% === |
+| [Kiss of Repose](/en/wheels/kiss-of-repose) | 索蕾尔(Sorel) | === Crit. DMG: 21.6% === |
+| [Paradoxical Realism](/en/wheels/paradoxical-realism) | 皮克曼(Pickman) | Fury and Power gain +6-12%; after Over-Exalt, increases final damage/shield/heal |
+| [Twisted Knight Ballad](/en/wheels/twisted-knight-ballad) | — | — |
+| [Manikin of Oblivion](/en/wheels/manikin-of-oblivion) | — | — |
+| [Veiled Anguish](/en/wheels/veiled-anguish) | — | — |
+| [Flamebound Navigator](/en/wheels/flamebound-navigator) | — | === Death Resistance: 50.4% === |
+| [Amber-Tinted Death](/en/wheels/amber-tinted-death) | — | === Crit. DMG: 21.6% === |
+| [Uteri Somnia](/en/wheels/uteri-somnia) | — | — |
+| [Doomsday Rampage](/en/wheels/doomsday-rampage) | — | Death Resistance 50.4% |
+| [Vain Regrets](/en/wheels/vain-regrets) | — | — |
+
+## SSR Wheels — Standard
+
+| Wheel | Character | Effect |
+|----------|-----------|------|
+| [Hymn of the Sovereign](/en/wheels/hymn-of-the-sovereign) | 希莱斯特(Celeste) | Team unique: Gain 16 Fury at battle start. Other Awakeners gain 3 Fury when usin |
+| [In the Storm](/en/wheels/in-the-storm) | 图鲁(Tulu) | v1.4 enhanced: On Strike, inflict 10% Toxin on all enemies (once per turn). |
+| [Death of the Coral Maiden](/en/wheels/death-of-the-coral-maiden) | 珊(Shan) | === Death Resistance: 50.4% === |
+| [Retrograde Timepiece](/en/wheels/retrograde-timepiece) | 拉蒙娜(Ramona) | After using the wearer's command card, 30-60% chance to return it from the disca |
+| [Hour of Fortune](/en/wheels/hour-of-fortune) | 珈伦(Karen) | === Sigil Yield: 10.8% === |
+| [Eternal Requiem](/en/wheels/eternal-requiem) | 哈姆林(Hameln) | === Keyflare Regen. Level: 25.2% === |
+| [Tablet of Scriptures](/en/wheels/tablet-of-scriptures) | 萨尔瓦多(Salvador) | — |
+| [Caro Feast](/en/wheels/caro-feast) | 尤乌哈希(Uvhash) | Provides Crit DMG; gain Power through Over-Exalt and Devour. |
+| [Gluttonous Banquet](/en/wheels/gluttonous-banquet) | 雷娅(Rhea) | Increases Over-Exalt healing; gain Power and Shield when taking damage. |
+| [Poetic Bygone Days](/en/wheels/poetic-bygone-days) | 艾继丝(Aigis) | Prevents Petrification/Dissolution debuff clogging; accelerates mob/elite battle |
+| [Devouring Lullaby](/en/wheels/devouring-lullaby) | 菲茵特(Faint) | Death Resistance 50.4% |
+| [Favor](/en/wheels/favor) | — | Fury gain related. |
+| [Whisper](/en/wheels/whisper) | — | Fury gain related. |
+| [Mirror Reflection](/en/wheels/mirror-reflection) | — | Realm Mastery 36 |
+| [Polar Night and Dawn](/en/wheels/polar-night-and-dawn) | — | Event reward SSR wheel. |
+| [Silent Banquet](/en/wheels/silent-banquet) | — | — |
+| [Anatomy of Death](/en/wheels/anatomy-of-death) | — | === Crit. DMG: 21.6% === |
+| [Rebirth in Ashen Earth](/en/wheels/rebirth-in-ashen-earth) | — | Commemorative edition SSR wheel. |
+
+## SR Wheels
+
+| Wheel | Character | Effect |
+|----------|-----------|------|
+| [Cutting and Harm](/en/wheels/cutting-and-harm) | 图鲁(Tulu) | — |
+| [To Dear Friend](/en/wheels/to-dear-friend) | 图鲁(Tulu) | — |
+| [Duty Calls](/en/wheels/duty-calls) | 希莱斯特(Celeste) | — |
+| [35mm Magic](/en/wheels/35mm-magic) | 珊(Shan) | — |
+| [Reunion Moment](/en/wheels/reunion-moment) | 拉蒙娜(Ramona) | — |
+| [Silver Cod's Determination](/en/wheels/silver-cods-determination) | — | === Crit. Rate: 7.2% === |
+
+## R Wheels
+
+| Wheel | Character | Effect |
+|----------|-----------|------|
+| [Punishment](/en/wheels/punishment) | — | Retain 50 Dark Seals before Boss = +250% Death Resistance. Highest rated R wheel |
+| [Emergence](/en/wheels/emergence) | 希莱斯特(Celeste) | — |
+| [Frenzy](/en/wheels/frenzy) | 珊(Shan) | — |
+| [Delirium](/en/wheels/delirium) | — | Reduce Dark Seals through Awakening. Recommended R wheel. |
+| [Gluttony](/en/wheels/gluttony) | — | Realm Mastery 36 |
+| [Exile](/en/wheels/exile) | — | Realm Mastery 18 |
+| [Enlightenment](/en/wheels/enlightenment) | — | Synergy: Mastery + Silver Key. |
+| [Focused Mind](/en/wheels/focused-mind) | — | Synergy: Silver Key + Fury. |
+| [Heart's Bastion](/en/wheels/hearts-bastion) | — | Suited for high-DEF characters like Pharos or Shan. |

@@ -13,11 +13,17 @@
 """
 
 import json
+import os
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = REPO_ROOT / 'projects' / 'news' / 'output'
+
+# 联动关键词（与 aggregator.py 保持同步）
+COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ.get('COLLAB_KEYWORDS') else [
+    '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
+]
 
 PLATFORM_NAMES = {
     'steam': 'Steam',
@@ -100,6 +106,64 @@ def negative_items(items):
     return [i for i in items if '[负面]' in i.get('title', '')]
 
 
+def build_alerts(active_platforms):
+    """构建需要关注的警报列表"""
+    alerts = []
+
+    # Steam 好评率低于 70%
+    if 'steam' in active_platforms:
+        _, steam_items = active_platforms['steam']
+        stats = steam_stats(steam_items)
+        if stats['total'] > 0:
+            rate_pct = stats['positive'] / stats['total'] * 100
+            if rate_pct < 70:
+                alerts.append(f'Steam好评率异常：{rate_pct:.0f}%')
+
+            # 高关注差评（engagement > 5）
+            for item in negative_items(steam_items):
+                eng = item.get('engagement', 0)
+                if eng > 5:
+                    summary = item.get('summary', item.get('title', ''))[:60]
+                    alerts.append(f'高关注差评：{summary}')
+
+    # Discord 异常沉默（当日消息 < 1000）
+    if 'discord' in active_platforms:
+        _, discord_items = active_platforms['discord']
+        if discord_items:
+            first = discord_items[0]
+            summary_text = first.get('summary', '')
+            # 从摘要中提取消息数："今日 11,812 条消息"
+            import re
+            m = re.search(r'(\d[\d,]*)\s*条消息', summary_text)
+            if m:
+                msg_count = int(m.group(1).replace(',', ''))
+                if msg_count < 1000:
+                    alerts.append(f'Discord异常沉默：仅{msg_count:,}条消息')
+
+    return alerts
+
+
+def match_collab_keywords(item):
+    """检查单条数据是否匹配联动关键词"""
+    text = (item.get('title', '') + ' ' + item.get('summary', '')).lower()
+    return any(kw.lower() in text for kw in COLLAB_KEYWORDS if kw.strip())
+
+
+def find_collab_items(all_data):
+    """从所有平台数据中提取匹配联动关键词的条目，返回 (display_name, item) 列表"""
+    results = []
+    for key, data in all_data.items():
+        items = data.get('items', [])
+        recent = filter_recent(items)
+        display = PLATFORM_NAMES.get(key, key)
+        for item in recent:
+            if match_collab_keywords(item):
+                results.append((display, item))
+    # 按 engagement 降序
+    results.sort(key=lambda x: x[1].get('engagement', 0), reverse=True)
+    return results
+
+
 def generate_report(all_data, now_utc8):
     """生成 Markdown 日报文本"""
     date_str = now_utc8.strftime('%Y-%m-%d')
@@ -110,6 +174,17 @@ def generate_report(all_data, now_utc8):
     lines.append('')
     lines.append(f'> 采集时间：{time_str} UTC+8')
     lines.append('')
+
+    # 联动动态（匹配 COLLAB_KEYWORDS 的条目前置高亮）
+    collab_items = find_collab_items(all_data)
+    if collab_items:
+        lines.append('## 🔥 联动动态')
+        lines.append('')
+        for idx, (platform, item) in enumerate(collab_items, 1):
+            title = item.get('title', '(无标题)')[:60]
+            eng = item.get('engagement', 0)
+            lines.append(f'{idx}. [{platform}] {title} — engagement: {eng}')
+        lines.append('')
 
     # 总览表格
     lines.append('## 总览')
@@ -140,6 +215,37 @@ def generate_report(all_data, now_utc8):
 
     lines.append('')
 
+    # 需要关注区块（条件触发）
+    alerts = build_alerts(active_platforms)
+    if alerts:
+        lines.append('## ⚠️ 需要关注')
+        lines.append('')
+        for alert in alerts:
+            lines.append(f'- ⚠️ {alert}')
+        lines.append('')
+
+    # Discord 摘要（完整文本）
+    if 'discord' in active_platforms:
+        _, discord_items = active_platforms['discord']
+        if discord_items:
+            first = discord_items[0]
+            summary_text = first.get('summary', '')
+            if summary_text:
+                lines.append('## Discord')
+                lines.append('')
+                lines.append(summary_text)
+                lines.append('')
+                # 其余热门内容
+                rest = top_engagement(discord_items[1:], n=5) if len(discord_items) > 1 else []
+                if rest:
+                    lines.append('### 热门话题')
+                    lines.append('')
+                    for idx, item in enumerate(rest, 1):
+                        title = item.get('title', '(无标题)')[:60]
+                        eng = item.get('engagement', 0)
+                        lines.append(f'{idx}. {title} — engagement: {eng}')
+                    lines.append('')
+
     # Steam 评论详情
     if 'steam' in active_platforms:
         _, steam_items = active_platforms['steam']
@@ -160,30 +266,33 @@ def generate_report(all_data, now_utc8):
 
         lines.append('')
 
-        # 热门内容（按 engagement）
-        top = top_engagement(steam_items)
-        lines.append('### 热门内容')
-        lines.append('')
-        for idx, item in enumerate(top, 1):
-            title = item.get('title', '(无标题)')[:60]
-            eng = item.get('engagement', 0)
-            lines.append(f'{idx}. {title} — engagement: {eng}')
-        lines.append('')
+        # 热门好评（按 engagement）
+        positive_items = [i for i in steam_items if '[正面]' in i.get('title', '')]
+        top = top_engagement(positive_items)
+        if top:
+            lines.append('### 热门好评')
+            lines.append('')
+            for idx, item in enumerate(top, 1):
+                title = item.get('title', '(无标题)')[:60]
+                eng = item.get('engagement', 0)
+                lines.append(f'{idx}. {title} — engagement: {eng}')
+            lines.append('')
 
-        # 差评摘要
+        # 差评（单独区块，带警告标记）
         negs = negative_items(steam_items)
         if negs:
-            lines.append('### 值得关注的差评')
+            lines.append('### ⚠️ 差评')
             lines.append('')
             for item in negs:
                 lang = item.get('lang', '') or 'unknown'
+                eng = item.get('engagement', 0)
                 summary = item.get('summary', item.get('title', ''))[:80]
-                lines.append(f'- [{lang}] {summary}')
+                lines.append(f'- ⚠️ [{lang}] {summary} — engagement: {eng}')
             lines.append('')
 
-    # 其他活跃平台
+    # 其他活跃平台（跳过已单独处理的 steam 和 discord）
     for key, (display, items) in active_platforms.items():
-        if key == 'steam':
+        if key in ('steam', 'discord'):
             continue
         lines.append(f'## {display}')
         lines.append('')

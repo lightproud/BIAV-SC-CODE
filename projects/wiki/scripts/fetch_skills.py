@@ -28,6 +28,8 @@ CHARACTERS_JSON = SCRIPT_DIR.parent / "data" / "db" / "characters.json"
 UA = "Mozilla/5.0 (compatible; MorimensWikiBot/1.0; +https://github.com/lightproud/brain-in-a-vat)"
 
 FANDOM_BASE = "https://forget-last-night-morimens.fandom.com"
+FANDOM_ALT = "https://morimens.fandom.com"
+BILIGAME_BASE = "https://wiki.biligame.com/morimens"
 
 # Character ID -> Fandom page title mapping (from fetch_portraits.py)
 PAGE_MAP = {
@@ -92,30 +94,82 @@ PAGE_MAP = {
     "arachne": "Arachne",
 }
 
-# ── Fandom API helpers ──────────────────────────────────────────────────────
+# Bilibili Wiki (Chinese) page title mapping
+# Format: character_id -> Chinese page name on wiki.biligame.com/morimens
+BILI_PAGE_MAP = {
+    "alva": "阿尔瓦", "doll": "玩偶", "ramona-timeworn": "拉蒙娜·经年",
+    "ogier": "奥吉尔", "lotan": "洛坦", "ramona": "拉蒙娜",
+    "pandya": "潘迪亚", "nodera": "诺德拉", "galen": "加仑",
+    "nymphia": "宁芙", "lily": "莉莉", "danmo": "丹莫",
+    "miryam": "弥利亚姆", "tulu": "图鲁", "divine-king-tulu": "图鲁·神王",
+    "celeste": "希莱斯特", "goliath": "戈利亚", "shan": "杉",
+    "aurita": "奥瑞塔", "caecus": "凯刻斯", "faros": "法罗斯",
+    "uvhash": "尤乌哈希", "rhea": "蕾亚", "sorel": "索蕾尔",
+    "thais": "塔薇", "alice": "爱丽丝", "faint": "费恩特",
+    "agrippa": "阿格里帕", "shilo": "希洛", "erica": "艾瑞卡",
+    "liz": "莉兹", "daffodil": "水仙", "winkle": "环娜",
+    "casiah": "迦叶", "jenkins": "詹金斯", "tincture": "酊剂",
+    "horla": "奥尔拉", "karen": "珈伦", "hameln": "哈姆林",
+    "murphy": "墨菲", "salvador": "萨尔瓦多", "tawil": "塔薇儿",
+    "wanda": "旺达", "aigis": "艾癸斯", "doll-inferno": "玩偶·炼狱",
+    "24": "24", "clementine": "克莱门汀", "corposant": "圣艾尔摩之火",
+    "kathigu-ra": "卡蒂古拉", "murphy-fauxborn": "墨菲·诞妄",
+    "mouchette": "穆雪特", "xu": "勖", "castor": "卡斯托尔",
+    "pollux": "波吕克斯", "helot": "希洛特", "leigh": "莱克",
+    "doresain": "多瑞塞", "pickman": "皮克曼", "arachne": "阿拉克涅",
+}
 
-def api_get(url: str) -> dict:
-    """Make a GET request and return JSON."""
-    req = urllib.request.Request(url, headers={"User-Agent": UA})
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return json.loads(resp.read().decode())
+# ── API helpers ─────────────────────────────────────────────────────────────
+
+def api_get(url: str, retries: int = 2) -> dict:
+    """Make a GET request and return JSON, with retries."""
+    for attempt in range(retries + 1):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=20) as resp:
+                return json.loads(resp.read().decode())
+        except Exception:
+            if attempt < retries:
+                time.sleep(1 * (attempt + 1))
+            else:
+                raise
 
 
 def fetch_wikitext(page_title: str) -> Optional[str]:
-    """Fetch raw wikitext for a Fandom page via the MediaWiki parse API."""
+    """Fetch raw wikitext for a Fandom page. Tries primary, then alt Fandom."""
+    for base in [FANDOM_BASE, FANDOM_ALT]:
+        params = urllib.parse.urlencode({
+            "action": "parse",
+            "page": page_title,
+            "prop": "wikitext",
+            "format": "json",
+        })
+        url = f"{base}/api.php?{params}"
+        try:
+            data = api_get(url)
+            wikitext = data.get("parse", {}).get("wikitext", {}).get("*", "")
+            if wikitext:
+                return wikitext
+        except Exception as e:
+            print(f"  [WARN] {base}: {e}")
+    return None
+
+
+def fetch_biligame_wikitext(page_title: str) -> Optional[str]:
+    """Fetch raw wikitext from Bilibili Game Wiki (wiki.biligame.com)."""
     params = urllib.parse.urlencode({
         "action": "parse",
         "page": page_title,
         "prop": "wikitext",
         "format": "json",
     })
-    url = f"{FANDOM_BASE}/api.php?{params}"
+    url = f"{BILIGAME_BASE}/api.php?{params}"
     try:
         data = api_get(url)
         wikitext = data.get("parse", {}).get("wikitext", {}).get("*", "")
         return wikitext if wikitext else None
     except Exception as e:
-        print(f"  [WARN] Failed to fetch wikitext for '{page_title}': {e}")
+        print(f"  [WARN] biligame: {e}")
         return None
 
 
@@ -596,18 +650,41 @@ def extract_from_tabber(wikitext: str) -> dict:
 
 # ── Main ────────────────────────────────────────────────────────────────────
 
+def needs_skill_update(char: dict) -> bool:
+    """Check if a character needs skill data fetched/updated."""
+    skills = char.get("skills")
+    if not skills or not isinstance(skills, dict):
+        return True
+    # Has placeholder data only (role_in_team, _data_source, but no real skills)
+    real_skill_keys = {"command_cards", "rouse", "exalt", "enlighten", "talent", "overexalt"}
+    has_real = any(k in skills for k in real_skill_keys)
+    if not has_real:
+        return True
+    # Has command_cards with actual card data?
+    cards = skills.get("command_cards")
+    if isinstance(cards, list) and len(cards) > 0:
+        return False  # Already has structured card data
+    # Has at least rouse+exalt with effect text?
+    rouse = skills.get("rouse", {})
+    exalt = skills.get("exalt", {})
+    if rouse.get("effect") and exalt.get("effect"):
+        return False  # Has decent skill data
+    return True
+
+
 def main():
     dry_run = "--dry-run" in sys.argv
+    force = "--force" in sys.argv
 
     # Load characters
     with open(CHARACTERS_JSON) as f:
         data = json.load(f)
 
-    # Find characters without skills
+    # Find characters needing skill data
     targets = []
     for char in data["characters"]:
-        if "skills" not in char:
-            char_id = char["id"]
+        char_id = char["id"]
+        if force or needs_skill_update(char):
             if char_id in PAGE_MAP:
                 targets.append((char_id, PAGE_MAP[char_id], char))
             else:
@@ -621,17 +698,37 @@ def main():
     for i, (char_id, page_title, char_obj) in enumerate(targets, 1):
         print(f"[{i}/{len(targets)}] {char_id} -> {page_title}")
 
+        # Try Fandom first
         wikitext = fetch_wikitext(page_title)
-        if not wikitext:
-            print(f"  [WARN] No wikitext returned, skipping")
-            failed += 1
-            time.sleep(0.5)
-            continue
+        skills = None
+        if wikitext:
+            try:
+                skills = extract_skills_from_wikitext(wikitext)
+            except Exception as e:
+                print(f"  [WARN] Fandom parse failed: {e}")
 
-        try:
-            skills = extract_skills_from_wikitext(wikitext)
-        except Exception as e:
-            print(f"  [WARN] Parsing failed: {e}, skipping")
+        # Fallback: try Bilibili Game Wiki
+        if not skills or not skills.get("command_cards"):
+            bili_page = BILI_PAGE_MAP.get(char_id)
+            if bili_page:
+                print(f"  Trying biligame: {bili_page}")
+                bili_wikitext = fetch_biligame_wikitext(bili_page)
+                if bili_wikitext:
+                    try:
+                        bili_skills = extract_skills_from_wikitext(bili_wikitext)
+                        if bili_skills:
+                            # Merge: Bilibili data fills gaps
+                            if not skills:
+                                skills = bili_skills
+                            else:
+                                for k, v in bili_skills.items():
+                                    if k not in skills:
+                                        skills[k] = v
+                    except Exception as e:
+                        print(f"  [WARN] biligame parse failed: {e}")
+
+        if not wikitext and not skills:
+            print(f"  [WARN] No data from any source, skipping")
             failed += 1
             time.sleep(0.5)
             continue
@@ -645,6 +742,14 @@ def main():
             if dry_run:
                 print(f"  (dry-run) {json.dumps(skills, ensure_ascii=False)[:200]}")
             else:
+                # Merge: keep existing metadata, add/overwrite real skill fields
+                existing = char_obj.get("skills", {})
+                for key in ("role_in_team", "signature_wheel", "signature_wheel_effect",
+                            "lore_connection", "character_trait"):
+                    if key in existing and key not in skills:
+                        skills[key] = existing[key]
+                # Remove placeholder markers
+                skills.pop("_data_source", None)
                 char_obj["skills"] = skills
             updated += 1
 

@@ -1,15 +1,16 @@
 ---
-title: "Exile - 運命の輪"
-description: "Exile (放逐) - Morimens 運命の輪"
+title: "放逐（Exile）- 運命の輪"
+description: "放逐(Exile) - 忘却前夜命轮详情"
 ---
 
-# Exile
-**放逐**
+# 放逐
+**Exile**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-r">R</span> |
+| カテゴリ | R |
 
 ## 効果
 
-Realm Mastery 18
+搭配：精通+卖症状卡。

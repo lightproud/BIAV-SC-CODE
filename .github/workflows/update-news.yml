@@ -2,7 +2,8 @@ name: Update Community News
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:
@@ -40,7 +41,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/data/ projects/news/output/
+          git add projects/news/output/ projects/news/data/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else

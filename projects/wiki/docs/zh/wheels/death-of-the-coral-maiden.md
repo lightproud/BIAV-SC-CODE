@@ -6,11 +6,11 @@ description: "珊瑚女之死(Death of the Coral Maiden) - 忘却前夜命轮详
 # 珊瑚女之死
 **Death of the Coral Maiden**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-ssr">SSR</span> |
-| 分类 | 常驻 |
-| 适用角色 | 珊(Coral) |
+| 分类 | SSR常驻 |
+| 适用角色 | 珊(Shan) |
 
 ## 效果
 

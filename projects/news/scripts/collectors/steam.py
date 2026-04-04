@@ -8,7 +8,7 @@ Steam 评论采集器 — 输出统一 platform-data schema 格式
   python steam.py --all            # 采集全量评论（首次初始化）
 
 输出：
-  assets/data/platforms/steam.json
+  projects/news/data/platforms/steam.json
 """
 
 import argparse
@@ -44,7 +44,7 @@ PARAMS_BASE = {
 REPO_ROOT = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..", "..", "..", "..")
 )
-OUTPUT_PATH = os.path.join(REPO_ROOT, "assets", "data", "platforms", "steam.json")
+OUTPUT_PATH = os.path.join(REPO_ROOT, "projects", "news", "data", "platforms", "steam.json")
 
 
 def fetch_page(app_id: int, cursor: str = "*") -> dict:

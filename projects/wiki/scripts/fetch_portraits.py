@@ -102,6 +102,32 @@ PAGE_MAP = {
     "arachne": "Arachne",
 }
 
+# Bilibili Wiki (Chinese) page title mapping for fallback
+BILI_PAGE_MAP = {
+    "alva": "阿尔瓦", "doll": "玩偶", "ramona-timeworn": "拉蒙娜·经年",
+    "ogier": "奥吉尔", "lotan": "洛坦", "ramona": "拉蒙娜",
+    "pandya": "潘迪亚", "nodera": "诺德拉", "galen": "加仑",
+    "nymphia": "宁芙", "lily": "莉莉", "danmo": "丹莫",
+    "miryam": "弥利亚姆", "tulu": "图鲁", "divine-king-tulu": "图鲁·神王",
+    "celeste": "希莱斯特", "goliath": "戈利亚", "shan": "杉",
+    "aurita": "奥瑞塔", "caecus": "凯刻斯", "faros": "法罗斯",
+    "uvhash": "尤乌哈希", "rhea": "蕾亚", "sorel": "索蕾尔",
+    "thais": "塔薇", "alice": "爱丽丝", "faint": "费恩特",
+    "agrippa": "阿格里帕", "shilo": "希洛", "erica": "艾瑞卡",
+    "liz": "莉兹", "daffodil": "水仙", "winkle": "环娜",
+    "casiah": "迦叶", "jenkins": "詹金斯", "tincture": "酊剂",
+    "horla": "奥尔拉", "karen": "珈伦", "hameln": "哈姆林",
+    "murphy": "墨菲", "salvador": "萨尔瓦多", "tawil": "塔薇儿",
+    "wanda": "旺达", "aigis": "艾癸斯", "doll-inferno": "玩偶·炼狱",
+    "24": "24", "clementine": "克莱门汀", "corposant": "圣艾尔摩之火",
+    "kathigu-ra": "卡蒂古拉", "murphy-fauxborn": "墨菲·诞妄",
+    "mouchette": "穆雪特", "xu": "勖", "castor": "卡斯托尔",
+    "pollux": "波吕克斯", "helot": "希洛特", "leigh": "莱克",
+    "doresain": "多瑞塞", "pickman": "皮克曼", "arachne": "阿拉克涅",
+}
+
+BILIGAME_BASE = "https://wiki.biligame.com/morimens"
+
 
 def api_get(url: str) -> dict:
     """Make a GET request and return JSON."""
@@ -237,8 +263,30 @@ def fetch_all_portraits(dry_run: bool = False) -> dict[str, dict]:
                     found = True
                     break
 
+        # Fallback: try Bilibili Wiki
         if not found:
-            print(f"  ✗ No portrait found")
+            bili_page = BILI_PAGE_MAP.get(char_id)
+            if bili_page:
+                print(f"  Trying biligame: {bili_page}")
+                images = fetch_page_images(BILIGAME_BASE, bili_page)
+                if images:
+                    best = find_portrait_image(images, bili_page)
+                    if best:
+                        url = get_image_url(BILIGAME_BASE, best)
+                        if url:
+                            ext = get_extension(url)
+                            local_path = PORTRAITS_DIR / f"{char_id}{ext}"
+                            rel_path = f"assets/images/portraits/{char_id}{ext}"
+                            if dry_run:
+                                results[char_id] = {"url": url, "local": rel_path}
+                                print(f"  ✓ (biligame) {url[:80]}...")
+                            elif download_image(url, local_path):
+                                results[char_id] = {"url": url, "local": rel_path}
+                                print(f"  ✓ (biligame) saved to {rel_path}")
+                                found = True
+
+        if not found:
+            print(f"  ✗ No portrait found on any source")
 
         time.sleep(0.5)  # Rate limiting
 

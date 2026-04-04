@@ -1,15 +1,17 @@
 ---
-title: "Caro Feast - 運命の輪"
-description: "Caro Feast (血肉狂宴) - Morimens 運命の輪"
+title: "血肉狂宴（Caro Feast）- 運命の輪"
+description: "血肉狂宴(Caro Feast) - 忘却前夜命轮详情"
 ---
 
-# Caro Feast
-**血肉狂宴**
+# 血肉狂宴
+**Caro Feast**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
-| キャラクター | 尤乌哈希(Yuuhashi) |
+| カテゴリ | SSR常設 |
+| 対応キャラ | 尤乌哈希(Uvhash) |
+| メインステータス | 会心ダメージ |
 
 ## 効果
 

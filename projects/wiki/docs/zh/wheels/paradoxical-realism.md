@@ -6,12 +6,12 @@ description: "写实主义悖谬(Paradoxical Realism) - 忘却前夜命轮详情
 # 写实主义悖谬
 **Paradoxical Realism**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-ssr">SSR</span> |
-| 分类 | 限定·星辰线 |
-| 主属性 | 狂气回充 7.2 |
+| 分类 | SSR限定·星辰线 |
 | 适用角色 | 皮克曼(Pickman) |
+| 主属性 | 狂气回充 7.2 |
 
 ## 效果
 

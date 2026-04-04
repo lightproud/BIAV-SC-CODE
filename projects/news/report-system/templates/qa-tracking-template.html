@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<style>
+@page {
+  size: A4;
+  margin: 24mm 20mm 22mm 20mm;
+  @bottom-center {
+    content: counter(page) " / " counter(pages);
+    font-family: 'Noto Sans CJK SC', sans-serif;
+    font-size: 8pt;
+    color: #5a5a5a;
+  }
+}
+
+body {
+  font-family: 'Noto Sans CJK SC', sans-serif;
+  font-size: 10pt;
+  color: #e8e0d0;
+  background: #0a0b10;
+  line-height: 1.65;
+}
+
+.cover {
+  page-break-after: always;
+  text-align: center;
+  padding-top: 140px;
+}
+.cover h1 {
+  font-family: 'Noto Serif CJK SC', serif;
+  font-size: 26pt;
+  color: #c5a356;
+  margin-bottom: 6px;
+}
+.cover .subtitle {
+  font-size: 13pt;
+  color: #b5aa98;
+  margin-bottom: 40px;
+}
+.cover .meta {
+  font-size: 9.5pt;
+  color: #7a7060;
+  margin-top: 60px;
+}
+.cover .meta div { margin: 3px 0; }
+
+h2 {
+  font-family: 'Noto Serif CJK SC', serif;
+  font-size: 15pt;
+  color: #c5a356;
+  border-bottom: 1px solid #3a3020;
+  padding-bottom: 5px;
+  margin-top: 28px;
+  margin-bottom: 14px;
+}
+
+/* Bug card */
+.bug {
+  background: #12131a;
+  border: 1px solid #2a2520;
+  border-radius: 5px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  page-break-inside: avoid;
+}
+.bug-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+.bug-id {
+  font-family: 'Noto Serif CJK SC', serif;
+  font-size: 11.5pt;
+  color: #e2c97e;
+  font-weight: 600;
+}
+.pri {
+  display: inline-block;
+  padding: 1px 9px;
+  border-radius: 3px;
+  font-size: 8.5pt;
+  font-weight: 700;
+  color: #0a0b10;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+.p1 { background: #c25a4a; }
+.p2 { background: #c5a356; }
+.p3 { background: #5a8aad; }
+.bal { background: #7aad5a; }
+
+.tag {
+  display: inline-block;
+  padding: 0px 7px;
+  border-radius: 3px;
+  font-size: 7.5pt;
+  font-weight: 600;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.t-proc { background: #3a3020; color: #c5a356; }
+.t-done { background: #1a3020; color: #7aad5a; }
+.t-new { background: #3a1a1a; color: #c25a4a; }
+
+.field {
+  margin: 7px 0;
+}
+.field-label {
+  color: #8a8070;
+  font-size: 8.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+.field-val {
+  color: #d0c8b8;
+  font-size: 9.5pt;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 18px;
+  color: #d0c8b8;
+  font-size: 9.5pt;
+}
+.steps li {
+  margin: 2px 0;
+}
+
+.result-row {
+  display: flex;
+  gap: 12px;
+  margin: 7px 0;
+}
+.result-box {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 9.5pt;
+}
+.actual {
+  background: #1a1015;
+  border-left: 3px solid #c25a4a;
+  color: #d0a8a0;
+}
+.expected {
+  background: #101a15;
+  border-left: 3px solid #7aad5a;
+  color: #a0d0b0;
+}
+
+.impact {
+  background: #0d0e14;
+  border: 1px solid #2a2a3a;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 9pt;
+  color: #a0a8c0;
+  margin-top: 7px;
+}
+.impact strong { color: #c5a356; }
+
+.source {
+  font-size: 8pt;
+  color: #5a5a5a;
+  margin-top: 6px;
+  border-top: 1px solid #1a1a20;
+  padding-top: 4px;
+}
+
+.att {
+  font-size: 8.5pt;
+  color: #6a6a70;
+  margin-top: 4px;
+}
+.att-item {
+  display: inline-block;
+  background: #1a1b22;
+  padding: 1px 7px;
+  border-radius: 3px;
+  margin: 1px 4px 1px 0;
+}
+
+/* Summary table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 9pt;
+}
+th {
+  background: #1a1b22;
+  color: #c5a356;
+  font-weight: 700;
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid #3a3020;
+}
+td {
+  padding: 5px 8px;
+  border-bottom: 1px solid #1a1a20;
+  color: #d0c8b8;
+  vertical-align: top;
+}
+
+.insight {
+  background: #12131a;
+  border: 1px solid #5a8aad;
+  border-radius: 5px;
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 9.5pt;
+  color: #a0b8c8;
+}
+.insight h3 {
+  color: #5a8aad;
+  font-size: 10.5pt;
+  margin: 0 0 6px 0;
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <h1>忘却前夜 QA 追踪报告</h1>
+  <div class="subtitle">Discord 社区 Bug 汇总 · QA 定位版</div>
+  <div class="meta">
+    <div>数据来源：#有問必答 + 工单频道 + 多语言聊天区</div>
+    <div>覆盖范围：2026-03-05 ~ 2026-04-03</div>
+    <div>Bug 总数：19 条（P1×4 / P2×8 / P3×3 / 平衡×4）</div>
+    <div>报告日期：2026-04-04</div>
+  </div>
+</div>
+
+<!-- Summary Table -->
+<h2>Bug 索引</h2>
+
+<table>
+<tr><th>#</th><th>优先级</th><th>标题</th><th>状态</th><th>平台</th><th>影响面</th></tr>
+<tr><td>01</td><td><span class="pri p1">P1</span></td><td>英语语言失效，界面显示中文</td><td><span class="tag t-new">NEW</span></td><td>全平台</td><td>6+ 人复现</td></tr>
+<tr><td>02</td><td><span class="pri p1">P1</span></td><td>PC 端击败 Boss 后冻结</td><td><span class="tag t-proc">处理中</span></td><td>Steam/PC</td><td>不可绕过</td></tr>
+<tr><td>03</td><td><span class="pri p1">P1</span></td><td>特定设备卡登录，修复按钮不可点击</td><td><span class="tag t-proc">处理中</span></td><td>Mobile</td><td>设备相关</td></tr>
+<tr><td>04</td><td><span class="pri p1">P1</span></td><td>Steam 端登录闪退</td><td><span class="tag t-proc">处理中</span></td><td>Steam</td><td>不可绕过</td></tr>
+<tr><td>05</td><td><span class="pri p2">P2</span></td><td>造物/遗物数值系统性偏低</td><td><span class="tag t-new">NEW</span></td><td>全平台</td><td>核心战斗</td></tr>
+<tr><td>06</td><td><span class="pri p2">P2</span></td><td>Vortice 命轮临时界域精通无效</td><td><span class="tag t-new">NEW</span></td><td>全平台</td><td>角色核心机制</td></tr>
+<tr><td>07</td><td><span class="pri p2">P2</span></td><td>Moss 海之契约效果不触发</td><td><span class="tag t-new">NEW</span></td><td>全平台</td><td>角色机制</td></tr>
+<tr><td>08</td><td><span class="pri p2">P2</span></td><td>波吕克斯超限问题</td><td><span class="tag t-proc">处理中</span></td><td>全平台</td><td>—</td></tr>
+<tr><td>09</td><td><span class="pri p2">P2</span></td><td>倒数计时 Bug</td><td><span class="tag t-proc">处理中</span></td><td>—</td><td>—</td></tr>
+<tr><td>10</td><td><span class="pri p2">P2</span></td><td>等量出血问题</td><td><span class="tag t-proc">处理中</span></td><td>—</td><td>—</td></tr>
+<tr><td>11</td><td><span class="pri p2">P2</span></td><td>重锁无故削弱</td><td><span class="tag t-proc">处理中</span></td><td>—</td><td>—</td></tr>
+<tr><td>12</td><td><span class="pri p2">P2</span></td><td>星辰造物问题</td><td><span class="tag t-proc">处理中</span></td><td>—</td><td>—</td></tr>
+<tr><td>13</td><td><span class="pri p3">P3</span></td><td>Deep Currents 触发与描述不符</td><td><span class="tag t-new">NEW</span></td><td>全平台</td><td>小众配队</td></tr>
+<tr><td>14</td><td><span class="pri p3">P3</span></td><td>Skip 按钮手机端不工作</td><td><span class="tag t-proc">处理中</span></td><td>Mobile</td><td>体验</td></tr>
+<tr><td>15</td><td><span class="pri p3">P3</span></td><td>Leigh 力量获取异常</td><td><span class="tag t-proc">处理中</span></td><td>—</td><td>—</td></tr>
+<tr><td>16</td><td><span class="pri bal">BAL</span></td><td>Traphase 不屈意志卡牌复制</td><td><span class="tag t-proc">处理中</span></td><td>全平台</td><td>PvP 公平性</td></tr>
+<tr><td>17</td><td><span class="pri bal">BAL</span></td><td>Miryam 觉醒虔诚数值显示不一致</td><td><span class="tag t-new">NEW</span></td><td>全平台</td><td>显示误导</td></tr>
+<tr><td>18</td><td><span class="pri bal">BAL</span></td><td>Traphase 伤害特效可见性不足</td><td><span class="tag t-new">NEW</span></td><td>全平台</td><td>UX</td></tr>
+<tr><td>19</td><td><span class="pri bal">BAL</span></td><td>Mouchette Traphase AOE 流血过强</td><td><span class="tag t-new">NEW</span></td><td>全平台</td><td>PvP 平衡</td></tr>
+</table>
+
+<div class="insight">
+<h3>根因关联分析</h3>
+Bug #05 涵盖了 Casiah 遗物（差 17 点）、红宝石胸针（差 24 点）、魔术师专造（差 16 点）三个独立报告。社区玩家确认"自从列车活动以来遗物数值就有问题"，指向同一个底层造物/遗物加成计算模块的回归问题。建议作为一个 ticket 统一排查。
+</div>
+
+<!-- P1 Bugs -->
+<h2>P1 — 阻断性 Bug</h2>
+
+<!-- #01 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#01 英语语言失效，界面显示中文</span>
+    <span><span class="pri p1">P1</span> <span class="tag t-new">NEW</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">游戏语言设定为英语后，界面文本显示为中文。法语、德语、日语等其他语言切换正常，仅英语失效。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>进入游戏设置 → 语言</li>
+      <li>选择 English</li>
+      <li>返回游戏界面</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      界面文本显示为中文，与未切换前一致
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      界面文本应显示为英文
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>6+ 位玩家独立复现。英语是国际服最大用户群的首选语言。重装游戏无法修复。疑似近期 patch 引入（vxvendetta97: "probably the patch triggered it"）。kira720696 已额外提交了官方 bug report。
+  </div>
+
+  <div class="att">
+    <span class="att-item">📎 IMG_0169.png (622KB)</span>
+  </div>
+  <div class="source">来源：#有問必答 | 报告者：.tsubasa. | 2026-04-03 | 确认者：dankest.dungeon4321, letmejustjumpoffakliff, rakki.0424, duyducmai, kira720696</div>
+</div>
+
+<!-- #02 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#02 PC 端击败 Boss 后游戏冻结</span>
+    <span><span class="pri p1">P1</span> <span class="tag t-proc">处理中</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">Steam/PC 端击败 boss 后游戏冻结，无法继续。卸载 Steam 版重装官网版、重启电脑均无效。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>PC 端进入战斗</li>
+      <li>击败 boss</li>
+      <li>观察战斗结算画面</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      游戏冻结在结算阶段，无法操作
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      正常显示战斗结算并返回主界面
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>完全阻断游戏进程。玩家尝试了全部自救手段（重装、重启）均失败。社区建议清除 AppData/Morimens 文件夹。已附 2 段录屏（共 170MB）。
+  </div>
+
+  <div class="att">
+    <span class="att-item">📎 Recording_2026-03-31 (89MB) 录屏</span>
+    <span class="att-item">📎 Screen_Recording_2026-03-31 (80MB) 录屏</span>
+  </div>
+  <div class="source">来源：#有問必答 | 报告者：thedragon_hates.you | 2026-03-31 | 平台：Steam PC</div>
+</div>
+
+<!-- #03 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#03 特定设备卡在登录界面，修复按钮不可点击</span>
+    <span><span class="pri p1">P1</span> <span class="tag t-proc">处理中</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">手机端卡在"使用者中心登录"画面。右上角修复按钮无法点击。换另一台手机正常。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>在特定设备上启动游戏</li>
+      <li>进入"使用者中心登录"界面</li>
+      <li>点击右上角修复按钮</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      卡在登录画面，修复按钮不响应点击，无法进入游戏
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      修复按钮可点击并执行修复，或正常完成登录
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>设备相关问题，换机可绕过但不可接受。可能与特定分辨率下 UI 触控区域失效有关。官方客服 morimensstaff01 已介入但未解决。
+  </div>
+
+  <div class="source">来源：工单频道 (01841898) | 报告者：vivian35 | 2026-03-30 | 平台：Mobile（具体机型未知）</div>
+</div>
+
+<!-- #04 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#04 Steam 端登录后立即闪退</span>
+    <span><span class="pri p1">P1</span> <span class="tag t-proc">处理中</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">Steam 端可以登录账号，进入游戏后卡在"使用者中心登录"阶段直接闪退。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>Steam 端启动游戏</li>
+      <li>成功登录账号</li>
+      <li>等待进入游戏主界面</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      卡在使用者中心登录阶段后直接闪退
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      正常完成登录并进入游戏主界面
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>与 #03 可能是同一登录流程的问题但平台不同。完全无法进入游戏。
+  </div>
+
+  <div class="source">来源：工单频道 (81319055) | 报告者：suxue8 | 2026-03-30 | 平台：Steam</div>
+</div>
+
+<!-- P2 Bugs -->
+<h2>P2 — 重要 Bug</h2>
+
+<!-- #05 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#05 造物/遗物数值系统性偏低（3 个独立报告）</span>
+    <span><span class="pri p2">P2</span> <span class="tag t-new">NEW</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">多个造物和遗物的实际数值低于标注值。社区确认"自从列车活动以来遗物数值就有问题"。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">已知受影响项</div>
+    <table>
+    <tr><th>项目</th><th>标注值</th><th>实际值</th><th>差值</th><th>报告者</th></tr>
+    <tr><td>Casiah 遗物（力量降低）</td><td>53</td><td>36</td><td>-17</td><td>aaabbbababaab.</td></tr>
+    <tr><td>融灾红宝石胸针（力量提升）</td><td>133</td><td>109</td><td>-24</td><td>amstelredam</td></tr>
+    <tr><td>魔术师专造（力量降低）</td><td>49</td><td>33</td><td>-16</td><td>akalanden</td></tr>
+    </table>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>装备上述任一造物/遗物</li>
+      <li>进入战斗</li>
+      <li>查看队伍状态中对应属性的实际增减值</li>
+      <li>对比造物/遗物标注的效果值</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      属性变化低于造物/遗物标注值，差值 16~24 点
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      属性变化应等于造物/遗物标注值
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>核心战斗数值问题。三个独立来源确认，疑似造物/遗物加成链计算模块的回归 bug。melwyn7591 指出列车活动后一直存在，说明已持续数周未修。影响所有使用这些造物的玩家战斗体验和构筑决策。
+  </div>
+
+  <div class="att">
+    <span class="att-item">📎 Screenshot_20260403_190731 (128KB) Casiah</span>
+    <span class="att-item">📎 Screenshot_20260403_190711 (281KB) Casiah</span>
+    <span class="att-item">📎 IMG_2743.png (1.6MB) 红宝石胸针</span>
+  </div>
+  <div class="source">来源：#有問必答 | 2026-03-31~04-03 | 确认者：melwyn7591, be_queitplease</div>
+</div>
+
+<!-- #06 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#06 Vortice 命轮「临时界域精通」效果无用</span>
+    <span><span class="pri p2">P2</span> <span class="tag t-new">NEW</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">Vortice SSR/SR 命轮的"切换怒涛姿态时获得临时界域精通"效果在姿态切换后才生效，无法影响怒涛姿态乘数，使命轮核心效果实质无用。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>使用 Vortice，装备 SSR 和/或 SR 命轮</li>
+      <li>战斗中切换到怒涛姿态</li>
+      <li>观察怒涛姿态乘数和触手伤害</li>
+      <li>对比：先使用大招获得界域精通 → 再切换姿态的数值</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      命轮给予 146 界域精通后乘数仍为 144%（409→588=409×144%）
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      乘数应变为 154%（409→630=409×154%）。先开大招再切换时验证为 563×154%=866 ✓
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>Vortice 的 SSR + SR 命轮核心效果完全无用。这是设计缺陷还是实现 bug 需要确认——如果切换时获得的精通是在姿态乘数计算之后才应用，属于 buff 时序问题。报告者提供了 10 张精确对比截图和完整计算过程。vxvendetta97: "the wod is useless for everyone if they don't fix it"。
+  </div>
+
+  <div class="att">
+    <span class="att-item">📎 10张截图 (共60MB+) — 完整验证</span>
+  </div>
+  <div class="source">来源：#有問必答 | 报告者：arkaether | 2026-04-02</div>
+</div>
+
+<!-- #07 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#07 Moss 海之契约效果不触发</span>
+    <span><span class="pri p2">P2</span> <span class="tag t-new">NEW</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">Moss 的海之契约效果（바다계약）不触发。攻略作者记录了该问题。技能描述"神国深海""触手集结"等术语可能导致误解。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>使用 Moss，触发海之契约效果</li>
+      <li>观察效果是否生效</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      效果不触发（或文案描述与实际触发条件不一致）
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      按技能描述条件触发效果
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>需先确认是实际 bug 还是文案误导。报告者 napzk 建议修改"촉수 집결"（触手集结）术语措辞。如为文案问题，影响韩语区所有 Moss 使用者的理解。
+  </div>
+
+  <div class="source">来源：한국어-채팅방 | 报告者：napzk | 2026-03-30</div>
+</div>
+
+<!-- #08-12 处理中 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#08~#12 官方已标记处理中（缺少详情）</span>
+    <span><span class="pri p2">P2</span> <span class="tag t-proc">处理中</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">以下问题已被官方客服标记为「处理中」，但原始帖子详情不在当前归档范围内，仅有标题：</div>
+  </div>
+
+  <table>
+  <tr><th>#</th><th>标题</th><th>日期</th></tr>
+  <tr><td>08</td><td>波吕克斯的超限?（官方致歉：非常抱歉！我们会及时解决！）</td><td>2026-03-31</td></tr>
+  <tr><td>09</td><td>倒数计时 Bug</td><td>2026-03-31</td></tr>
+  <tr><td>10</td><td>等量出血</td><td>2026-03-31</td></tr>
+  <tr><td>11</td><td>重锁平白无故遭到削弱</td><td>2026-04-03</td></tr>
+  <tr><td>12</td><td>星辰造物</td><td>2026-03-31</td></tr>
+  </table>
+
+  <div class="impact">
+    <strong>影响分析：</strong>这 5 条均为 forum 帖子的原始内容未被归档（forum 频道归档功能刚上线，部分帖子首条消息缺失）。后续归档完善后可补全。
+  </div>
+
+  <div class="source">来源：#有問必答 | 2026-03-31~04-03</div>
+</div>
+
+<!-- P3 Bugs -->
+<h2>P3 — 一般 Bug</h2>
+
+<!-- #13 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#13 Deep Currents（深流）触发机制与描述不符</span>
+    <span><span class="pri p3">P3</span> <span class="tag t-new">NEW</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">Faros 的 Deep Current（触手伤害时施加中毒）配合 GMurphy 怒涛姿态 + Mouchette 打击时不触发。描述中"触手伤害"的范围不明确。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>队伍：Faros + GMurphy + Mouchette</li>
+      <li>使用 Deep Current</li>
+      <li>切换触手姿态到 Raging Waves</li>
+      <li>使用 Mouchette 打击触发怒涛触手攻击</li>
+      <li>观察是否触发 Deep Current 的中毒效果</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      怒涛触手攻击不触发 Deep Current 中毒
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      "触手伤害"应包括所有来源的触手伤害
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>社区有争议。king_in_ye11ow 反驳称 Dominion 祈祷、E2、触手集结、Aurita 大招+红色姿态都能触发 Deep Current。可能是特定触手伤害来源的判定问题，或报告者操作有误。优先级 P3 因影响面窄。
+  </div>
+
+  <div class="source">来源：#有問必答 | 报告者：bro_xin | 2026-03-05</div>
+</div>
+
+<!-- #14 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#14 Skip 按钮手机端不工作</span>
+    <span><span class="pri p3">P3</span> <span class="tag t-proc">处理中</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">手机端 Skip 按钮无法点击。官方已确认正在调查。</div>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      点击 Skip 按钮无响应
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      Skip 按钮应跳过当前内容
+    </div>
+  </div>
+
+  <div class="source">来源：#有問必答 | 2026-03-31 | 平台：Mobile</div>
+</div>
+
+<!-- #15 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#15 Leigh 力量获取异常</span>
+    <span><span class="pri p3">P3</span> <span class="tag t-proc">处理中</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">Leigh 的力量获取机制可能存在 bug。原始详情不在当前归档范围。</div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>可能与 #05 造物/遗物数值偏低属同一底层问题。待原始报告补全后确认。
+  </div>
+
+  <div class="source">来源：#有問必答 | 报告者：arandomflamev2 | 2026-03-31</div>
+</div>
+
+<!-- Balance -->
+<h2>平衡 / 设计问题</h2>
+
+<!-- #16 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#16 Traphase: 不屈意志卡牌被复制</span>
+    <span><span class="pri bal">BAL</span> <span class="tag t-proc">处理中</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">全选模式 Traphase 中，对手使用「一枪之泣」替换不屈意志后，洗牌时出现两张不屈意志（抽牌堆 + 手牌），直接锁定胜局。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>Traphase 全选模式，使用含 Will Unyielding 的 Caecus 队伍</li>
+      <li>对手使用 Data is Flesh 的 Unequal Exchange 中「一枪之泣」替换 Will Unyielding</li>
+      <li>被替换后，更换命轮为另一个 WoD（Drowning in Crimson）</li>
+      <li>触发洗牌</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      洗牌后出现 2 张 Will Unyielding（1 张在抽牌堆，1 张在手牌）
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      牌组中只应存在 1 张 Will Unyielding
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>PvP 公平性问题。报告者提供了完整 replay ID（d3f0f4f3-cb76-30cb-9e73-25a6356bf4a2#P#nSmUE）和双方 UID（101272630 vs 101160556），可直接复查。报告者后续分析认为根因在「一枪之泣」的卡组操作逻辑。morimensstaff06 已受理。
+  </div>
+
+  <div class="att">
+    <span class="att-item">📎 IMG_0623~0630.png (7 张, 共 8.8MB)</span>
+  </div>
+  <div class="source">来源：#有問必答 | 报告者：c3raphile (UID: 101272630) | 2026-04-01</div>
+</div>
+
+<!-- #17 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#17 Miryam 觉醒虔诚数值与描述不一致</span>
+    <span><span class="pri bal">BAL</span> <span class="tag t-new">NEW</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">觉醒虔诚效果选择时显示 10/11，buff 显示 7/7，实际获得 +7。报告者分析为 Goliath 利莫里亚被动的力量增益加成未正确应用于觉醒虔诚 buff。</div>
+  </div>
+
+  <div class="field">
+    <div class="field-label">复现步骤</div>
+    <ol class="steps">
+      <li>队伍包含 Miryam(E3+1, Lv64) + Goliath + 其他利莫里亚角色</li>
+      <li>进入 D-tide 3 (Tulu) alert 3</li>
+      <li>触发觉醒虔诚</li>
+      <li>对比选择面板数值、buff 图标数值和实际属性变化</li>
+      <li>对照测试：Miryam + 3 混沌角色（非利莫里亚）</li>
+    </ol>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      有利莫里亚队友时：选择面板 10/11，buff 7/7，实际 +7<br>
+      无利莫里亚队友时：选择面板 7/8，实际 +7 ✓
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      有利莫里亚队友时，30% 加成后应为 10/11，实际获得也应为 10/11
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>利莫里亚被动对觉醒虔诚 buff 的加成计算可能存在问题——选择面板显示了加成后的值但实际未应用。可能与 #05 属同类数值计算问题。报告者还指出 buff 描述暗示力量和触手伤害相同，但实际两个增益可以独立变化。
+  </div>
+
+  <div class="att">
+    <span class="att-item">📎 3 张截图 — 数值对比</span>
+  </div>
+  <div class="source">来源：#有問必答 | 报告者：fjantsa | 2026-04-01</div>
+</div>
+
+<!-- #18 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#18 Traphase 伤害特效可见性不足</span>
+    <span><span class="pri bal">BAL</span> <span class="tag t-new">NEW</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">Multiple Projection 伤害特效过于密集且消失过快，无法在限时内判断 Clementine 大招的最优目标。Sanga 珊瑚旋涡也有同样问题。</div>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      伤害特效密集闪过，需要逐个数每个角色的伤害次数
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      特效有足够停留时间，或全体受伤时延长间隔使整体长度可辨
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>UX 设计问题，影响 Traphase 竞技体验。已附录屏。
+  </div>
+
+  <div class="att">
+    <span class="att-item">📎 Video_Project_23.mp4 (2.3MB)</span>
+  </div>
+  <div class="source">来源：#有問必答 | 报告者：shrike784 | 2026-03-31</div>
+</div>
+
+<!-- #19 -->
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">#19 Mouchette Traphase AOE 流血疑似过强</span>
+    <span><span class="pri bal">BAL</span> <span class="tag t-new">参考</span></span>
+  </div>
+
+  <div class="field">
+    <div class="field-label">问题概括</div>
+    <div class="field-val">Mouchette 在 Traphase 中 2 算力即可对全体施加流血。多个频道（traphase、game-chat、阵容构建）的玩家反映体感过强。</div>
+  </div>
+
+  <div class="result-row">
+    <div class="result-box actual">
+      <div class="field-label">实际结果</div>
+      2 算力 AOE 全体流血，性价比远超同类技能
+    </div>
+    <div class="result-box expected">
+      <div class="field-label">预期结果</div>
+      效果强度应与算力消耗成正比，与其他角色保持平衡
+    </div>
+  </div>
+
+  <div class="impact">
+    <strong>影响分析：</strong>非 bug，属平衡向反馈。但跨 4 个频道重复出现，说明玩家感知一致。soyboy69420: "it felt a little broken"。另有 tnimreppep 贴出 Mouch 的实战伤害截图佐证。
+  </div>
+
+  <div class="source">来源：#traphase + #game-chat + #阵容构建 | 多人反馈 | 2026-03-30</div>
+</div>
+
+<!-- Appendix -->
+<h2>附录：其他值得关注的反馈</h2>
+
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">Prismatic Lens Caps 与 Ultra Turn 交互（bump 4 天无回应）</span>
+    <span><span class="pri p3">P3</span> <span class="tag t-new">NEW</span></span>
+  </div>
+  <div class="field">
+    <div class="field-val">玩家 2ndselna 从 3/31 起多次 bump 未获官方回应。问题核心：Ultra Turn 时不触发回合结束效果且毒素已被提前消减，造成双重惩罚。已持续 4 天，melwyn7591 协助 @Staff。</div>
+  </div>
+  <div class="source">来源：#有問必答 | 报告者：2ndselna | 2026-03-31~04-03</div>
+</div>
+
+<div class="bug">
+  <div class="bug-head">
+    <span class="bug-id">战斗结果异常：配置消失又恢复</span>
+    <span><span class="pri p3">P3</span> <span class="tag t-done">已回答</span></span>
+  </div>
+  <div class="field">
+    <div class="field-val">trevorsuyu 报告角色与命轮配置在战斗结果画面消失，之后恢复正常。morimensstaff06 已标记已回答。附 2 张截图。</div>
+  </div>
+  <div class="source">来源：#有問必答 | 报告者：trevorsuyu | 2026-04-01</div>
+</div>
+
+</body>
+</html>

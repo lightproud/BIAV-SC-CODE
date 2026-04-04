@@ -1,15 +1,15 @@
 ---
 title: "Vain Regrets - Wheel of Destiny"
-description: "Vain Regrets (枉蹙眉) - Morimens Wheel of Destiny"
+description: "枉蹙眉(Vain Regrets) - Morimens Wiki"
 ---
 
 # Vain Regrets
 **枉蹙眉**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Stellar) |
+| Category | SSR Limited (Stellar) |
 
 ## Effect
 

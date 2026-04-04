@@ -1,15 +1,17 @@
 # 项目状态一览
 
-> 最后更新：2026-03-30 by Code-wiki
+> 最后更新：2026-04-01T22:30 by Code-wiki
+>
+> 战略规划详见 `memory/strategic-plan-2026.md`
 
 ## 子项目状态
 
 | 子项目 | 状态 | 负责会话 | 下一步 |
 |--------|------|---------|--------|
-| site（主站 + 部署 + 视觉） | 已部署 | Code-site | 主站+Wiki+News 三站已上线，持续优化体验与跨站一致性 |
-| news（新闻聚合 + 报告系统） | 运行中 | Code-news | 配置 API 密钥，启用更多数据源 |
-| wiki（数据集 + Wiki 站点） | 已部署 | Code-wiki | 数据持续补全、角色详细数据抓取 |
-| game（衍生游戏） | 规划中 | 待创建 | 确定游戏类型 |
+| site（主站 + 部署 + 视觉） | 已部署，维护模式 | Code-site | 无新任务 |
+| news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 桥接 Discord → 聚合器、月度归档清理 |
+| wiki（数据集 + Wiki 站点） | 数据补全中 | Code-wiki | 触发 fetch-wiki-data workflow 抓取 47 个角色技能数据 + 12 个缺失立绘 |
+| game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
 
 ## News 新闻聚合 + 报告系统
 
@@ -17,7 +19,7 @@
 - **已完成**：前端页面、B站抓取、GitHub Actions 自动化
 - **阻塞**：Twitter/NGA/TapTap 需配置密钥
 - **数据落盘位置**：
-  - `assets/data/news.json` — 所有数据源合并的原始输出（由 aggregator.py 写入）
+  - `projects/news/output/news.json` — 所有数据源合并的原始输出（由 aggregator.py 写入）
   - `projects/news/output/` — **Chat 会话统一读取入口**，按数据源分割的 JSON 文件
     - `bilibili-latest.json`、`steam-latest.json`、`taptap-latest.json` 等
     - `all-latest.json` — 所有源合并（适合日报/分析场景）
@@ -42,8 +44,9 @@
 - **已完成**：
   - 18 个 JSON 数据文件（`projects/wiki/data/db/`）
   - 63 个唤醒体数据（59 SSR + 4 SR）
-  - 59/59 角色有技能数据（11 个有完整结构化卡牌数据，48 个有描述性数据待结构化）
-  - 47/59 角色立绘已下载到 `assets/images/portraits/`
+  - 63/63 角色有元数据（EN/JA 描述、获取方式翻译完成），11 个有结构化卡牌/技能数据，52 个待 Fandom 抓取补充
+  - 47/59 角色立绘已下载到 `assets/images/portraits/`（12 个缺失，已配置 Bilibili Wiki 备用源）
+  - 命轮数据：55 个命轮，31 个有角色归属，39 个有效果文本（EN 翻译完成），16 个缺失待抓取
   - 命轮与密契装备体系
   - 四大界域体系（Chaos、Aequor、Caro、Ultra）
   - 版本线 v1.0→v2.5（含 3 个联动记录）
@@ -55,8 +58,8 @@
   - content_database.json 技能数据已整合到 characters.json
 - **已删除**：tier 评级字段（非项目关注点）
 - **自动化抓取**：7 个脚本 + GitHub Actions workflow
-  - `fetch_portraits.py` — Fandom 立绘下载（47/59 成功）
-  - `fetch_skills.py` — 角色技能抓取
+  - `fetch_portraits.py` — Fandom + Bilibili Wiki 立绘下载（47/59 成功，12 缺失待 Bilibili 源补充）
+  - `fetch_skills.py` — 角色技能抓取（已改进：智能检测 47 个需更新角色，Fandom + Bilibili 双源，保留元数据合并）
   - `fetch_cards.py` — 卡牌详情抓取
   - `fetch_stats.py` — 角色数值抓取
   - `fetch_stages.py` — 关卡掉落抓取
@@ -65,7 +68,7 @@
   - `fetch_voice_lines.py` — 语音台词抓取
   - `fetch_steam_assets.py` — Steam 公开资产下载
   - `extract_game_data.py` — Unity 客户端数据解包工具
-  - `generate_pages.py` — 从 JSON 自动生成角色详情页
+  - `generate_pages.py` — 自动生成角色详情页（189 页）+ 命轮详情页（165 页）+ 命轮列表页
   - `generate_rss.py` — RSS/Atom 订阅源生成
   - `check_version.py` — 游戏版本更新检测
   - `fetch-wiki-data.yml` — 每周一自动运行全部抓取
@@ -75,8 +78,11 @@
 ### Wiki 站点
 - **已完成**：
   - VitePress 站点框架、三语言结构（ZH/EN/JA）
-  - 189 个角色详情页（63 角色 × 3 语言，自动生成）
-  - 约 250+ 页 Markdown 内容
+  - 189 个角色详情页 + 165 个命轮详情页 + 3 个命轮列表页（全部自动生成）
+  - 约 580+ 页 Markdown 内容（ZH 193 + EN 198 + JA 197 页）
+  - 内容完成度：系统页 100%，命轮页 71%（39/55 有效果数据），角色元数据 100%（EN/JA 描述均完成），角色技能 17%（11/63 有结构化数据）
+  - 加权总完成度约 83%（系统30%×100% + 角色元数据40%×100% + 技能15%×17% + 命轮15%×71%）
+  - 达到 90% 需要：fetch-wiki-data workflow 抓取 52 个角色技能 + 16 个命轮效果
   - 11 个 Vue 交互组件（全部已注册到 theme）：
     - CharacterGrid（角色筛选/排序）— 已嵌入唤醒体索引页
     - CharacterCompare（角色对比）
@@ -105,6 +111,30 @@
 
 - **已完成**：无
 - **待决策**：游戏类型、技术选型、美术方向
+
+## 当前阶段
+
+**Phase 0：收缩与夯实**（2026-04-01 起）
+
+目标：砍到只剩能验证的最小集，让日报覆盖 3 个有效数据源（Bilibili + Steam + Discord），制作人实际在用。
+
+验证门：制作人连续 14 天主动看日报并觉得有用。
+
+详见 `memory/strategic-assessment.md`。
+
+## Workflow 运行频率（2026-04-01 调整）
+
+| Workflow | 频率 | 状态 |
+|----------|------|------|
+| update-news.yml | 每日 2 次（06:00/16:00 UTC） | 运行中 |
+| discord-archive.yml | 每日 1 次（18:00 UTC） | 运行中 |
+| deploy-site.yml | push 触发 | 运行中 |
+| fetch-wiki-data.yml | 每周一 | 运行中 |
+| check-version.yml | 每周一 | 运行中 |
+| validate-data.yml | push 触发 | 运行中 |
+| claude.yml | Issue 触发 | 阻塞（API 无余额） |
+| generate-report.yml | **已暂停** | secrets 未配 |
+| extract-game-data.yml | **已暂停** | Steam 认证未通 |
 
 ## 基础设施状态
 

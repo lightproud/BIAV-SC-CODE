@@ -1,14 +1,15 @@
 ---
-title: "Vain Regrets - 運命の輪"
-description: "Vain Regrets (枉蹙眉) - Morimens 運命の輪"
+title: "枉蹙眉（Vain Regrets）- 運命の輪"
+description: "枉蹙眉(Vain Regrets) - 忘却前夜命轮详情"
 ---
 
-# Vain Regrets
-**枉蹙眉**
+# 枉蹙眉
+**Vain Regrets**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR限定・星辰線 |
 
 ## 効果
 

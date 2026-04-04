@@ -44,20 +44,71 @@ Adjust based on content difficulty. Easier content can run multiple DPS; harder 
 - Can borrow strong cards from other realms for a versatile deck.
 - Best for players with a diverse roster.
 
+**Recommended Compositions:**
+
+| Team | Members | Notes |
+|------|---------|-------|
+| #24 Chaos National | 24 / Ramona / Ogier / Lily | Top-tier Chaos comp |
+| #24 Deep Sea Variant | 24 / Tulu / Murphy / Shan | Cross-realm flex |
+
 ### <span class="realm-badge realm-aequor">Aequor</span> Teams
 - Build around Tentacle summoning synergies.
 - Prioritize Awakeners whose cards generate or empower Tentacles.
 - Strong sustained damage through summon uptime.
+
+**Recommended Compositions:**
+
+| Team | Members | Notes |
+|------|---------|-------|
+| Deep Sea Double-Carry | Tulu / Aurita / Celeste / Shan | Standard Aequor meta |
+| Tentacle Mixed-Damage | Miryam / Aurita / Caecus / Murphy | Tentacle stacking |
+| Caecus Counter | Caecus / Hameln / Goliath / Ramona | Counter-based damage |
+| Shark-Caecus | Goliath / Caecus / Celeste / Shan | Defensive Aequor |
 
 ### <span class="realm-badge realm-caro">Caro</span> Teams
 - Revolve around creating Embryo cards and consuming them for powerful effects.
 - Requires good hand management and turn planning.
 - High burst damage potential when combos align.
 
+**Recommended Compositions:**
+
+| Team | Members | Notes |
+|------|---------|-------|
+| Uvhash Standard | Uvhash / Rhea / Aigis / Faint | Core Caro comp |
+| Father Comp | Salvador / Rhea / Aigis / 24 or Ramona | Shield-counter focus |
+| #24 Flesh Variant | 24 / Helot or Rhea / Aigis / Salvador | Burst damage |
+
 ### <span class="realm-badge realm-ultra">Ultra</span> Teams
 - Play as many cards as possible per turn to trigger extra turn effects.
 - Low-cost cards and Arithmetica efficiency are critical.
 - Snowball potential — the more turns you take, the more damage you deal.
+
+**Recommended Compositions:**
+
+| Team | Members | Notes |
+|------|---------|-------|
+| Ultra Poison (Beginner) | Wanda / Nodera / Erica / Nymphia | Beginner-friendly |
+| Ultra Starter | Liz / Erica / Ogier / Doll | Free characters only |
+| Ultra Double-C | Winkle / Erica / Liz / Flex | Endgame Ultra |
+
+## Key Synergies
+
+| Synergy | Characters | Mechanic |
+|---------|-----------|----------|
+| Tentacle Stacking | Tulu + Aurita + Miryam | Each adds tentacle instances; auto-follow attacks multiply |
+| Embryo Engine | Rhea + Aigis | Rhea devours embryos for healing; Aigis produces/manages them |
+| Father's Blood Pool | Salvador + Rhea | Rhea copies Salvador's 2-cost card; HP drain cycle for damage |
+| Counter Scaling | Caecus + Nodera | Caecus E3 defense cards deal counter crit damage; Nodera fills gauge |
+| #24 Universal | 24 + Any Realm | Resonance adapts to team realm, always provides matching buffs |
+| Shield Strike | Shan + Nodera | Shan's shield-based DPS needs Nodera's support to function |
+
+## Beginner Priority
+
+| Priority | Team | Why |
+|----------|------|-----|
+| 1 | Deep Sea SR (Caecus / Pharos / Aurita / Celeste) | Only needs 4 SR to clear all main story. Tentacles auto-follow, simple to play |
+| 2 | Ultra Poison (Liz / Erica / Ogier / Doll) | All free/starter characters. Stack poison to win |
+| 3 | Chaos Starter (Initial 4) | Decent strength, builds game understanding |
 
 ## General Tips
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 忘却前夜 Morimens - 社区热点聚合器
-从各社区平台抓取24小时内的热门话题并生成 assets/data/news.json
+从各社区平台抓取24小时内的热门话题并生成 projects/news/output/news.json
 
 数据源:
   - Reddit (r/Morimens)
@@ -16,7 +16,7 @@
   1. 安装依赖: pip install -r requirements.txt
   2. 配置环境变量 (见 .env.example)
   3. 运行: python scripts/aggregator.py
-  4. 输出: assets/data/news.json
+  4. 输出: projects/news/output/news.json
 """
 
 import json
@@ -33,9 +33,13 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(me
 logger = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
-OUTPUT_PATH = REPO_ROOT / 'assets' / 'data' / 'news.json'
+OUTPUT_PATH = REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
-HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
+COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ.get('COLLAB_KEYWORDS') else [
+    '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
+]
+ALL_KEYWORDS = SEARCH_KEYWORDS + [k.strip() for k in COLLAB_KEYWORDS if k.strip()]
+HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 48))
 
 # Bilibili creator MIDs known to produce Morimens content
 # Format: mid (int) -> display name (str). Add more as confirmed.
@@ -268,7 +272,8 @@ def _fetch_bilibili_search():
     }
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
-    for keyword in ['忘却前夜', '忘卻前夜']:
+    search_keywords = ['忘却前夜', '忘卻前夜'] + [k for k in COLLAB_KEYWORDS if k.strip()]
+    for keyword in search_keywords:
         url = 'https://api.bilibili.com/x/web-interface/search/type'
         params = {
             'search_type': 'video',
@@ -366,84 +371,157 @@ def fetch_twitter():
 def fetch_nga():
     """
     Fetch NGA forum posts for Morimens.
-    NGA has rate limiting - be respectful.
+    Uses mobile API (ngabbs.com) which is more reliable than web API.
+    Falls back to web API if mobile fails.
     """
-    import subprocess as _sp
-
     items = []
-    # NGA forum ID for 忘却前夜 - update this with the actual forum ID
     nga_fid = os.environ.get('NGA_FORUM_ID') or '-447601'
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
-    url = f'https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1'
+    # Mobile API (more reliable, no cookie needed)
+    mobile_url = f'https://ngabbs.com/thread.php?fid={nga_fid}&lite=js&noprefix'
+    # Web API as fallback
+    web_url = f'https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1'
+
     headers = {
-        'User-Agent': 'Mozilla/5.0',
-        'Accept': 'application/json',
+        'User-Agent': 'NGA/9.9.9 (Android 14; Pixel 8)',
+        'Accept': 'application/json, text/plain, */*',
     }
-    try:
-        resp = requests.get(url, headers=headers, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-        threads = data.get('data', {}).get('__T', {})
-        for tid, thread in threads.items():
-            postdate = thread.get('postdate', 0)
-            if isinstance(postdate, str):
-                continue
-            created = datetime.fromtimestamp(postdate, tz=timezone.utc)
-            if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
-                continue
-            replies = thread.get('replies', 0)
-            items.append({
-                'title': thread.get('subject', ''),
-                'summary': '',
-                'source': 'nga',
-                'time': created.isoformat(),
-                'url': f"https://bbs.nga.cn/read.php?tid={tid}",
-                'engagement': replies,
-                'is_hot': replies > 50,
-                'author': thread.get('author', ''),
-                'tags': [],
-            })
-        logger.info(f'NGA: fetched {len(items)} threads')
-    except Exception as e:
-        logger.warning(f'NGA failed: {e}')
 
+    data = None
+    for url in [mobile_url, web_url]:
+        try:
+            resp = requests.get(url, headers=headers, timeout=15)
+            resp.raise_for_status()
+            text = resp.text.strip()
+            # NGA sometimes wraps JSON in JS: window.script_muti_get_var_store=...
+            if text.startswith('window.'):
+                text = text.split('=', 1)[1].rstrip(';')
+            data = json.loads(text)
+            break
+        except Exception as e:
+            logger.warning(f'NGA {url.split("/")[2]} failed: {e}')
+
+    if not data:
+        return items
+
+    # Parse threads from the response
+    threads = data.get('data', {}).get('__T', {})
+    if isinstance(threads, list):
+        threads = {str(i): t for i, t in enumerate(threads) if isinstance(t, dict)}
+
+    for tid_key, thread in threads.items():
+        if not isinstance(thread, dict):
+            continue
+        tid = thread.get('tid', tid_key)
+        postdate = thread.get('postdate', thread.get('lastpost', 0))
+        if isinstance(postdate, str):
+            try:
+                postdate = int(postdate)
+            except (ValueError, TypeError):
+                continue
+        if not postdate:
+            continue
+        created = datetime.fromtimestamp(postdate, tz=timezone.utc)
+        if created < cutoff:
+            continue
+        replies = thread.get('replies', 0) or 0
+        items.append({
+            'title': thread.get('subject', ''),
+            'summary': '',
+            'source': 'nga',
+            'time': created.isoformat(),
+            'url': f"https://bbs.nga.cn/read.php?tid={tid}",
+            'engagement': int(replies),
+            'is_hot': int(replies) > 50,
+            'author': thread.get('author', ''),
+            'tags': [],
+        })
+    logger.info(f'NGA: fetched {len(items)} threads')
     return items
 
 
 def fetch_taptap():
-    """Fetch TapTap community posts for Morimens."""
-    import subprocess as _sp
-
+    """
+    Fetch TapTap community posts for Morimens.
+    Tries CN API first, then global (taptap.io) as fallback.
+    """
     app_id = os.environ.get('TAPTAP_APP_ID') or '364992'
-
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
     items = []
-    url = f'https://api.taptap.cn/app/v2/app/{app_id}/topic/list'
+
+    # Try multiple API endpoints (CN and global)
+    endpoints = [
+        f'https://api.taptap.cn/app/v2/app/{app_id}/topic/list',
+        f'https://api.taptap.io/app/v2/app/{app_id}/topic/list',
+    ]
+    headers = {
+        'User-Agent': 'TapTap/3.0.0 (Android 14)',
+        'X-UA': 'V=1&PN=TapTap&VN_CODE=300',
+    }
     params = {'type': 'hot', 'limit': 20}
-    headers = {'User-Agent': 'Mozilla/5.0'}
 
-    try:
-        resp = requests.get(url, params=params, headers=headers, timeout=15)
-        resp.raise_for_status()
-        topics = resp.json().get('data', {}).get('list', [])
-        for topic in topics:
-            created = datetime.fromtimestamp(topic.get('created_time', 0), tz=timezone.utc)
-            if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
-                continue
-            items.append({
-                'title': topic.get('title', ''),
-                'summary': topic.get('summary', '')[:200],
-                'source': 'taptap',
-                'time': created.isoformat(),
-                'url': topic.get('share_url', ''),
-                'engagement': topic.get('comment_count', 0) + topic.get('like_count', 0),
-                'is_hot': topic.get('like_count', 0) > 100,
-                'author': topic.get('user', {}).get('name', ''),
-                'tags': [],
-            })
-        logger.info(f'TapTap: fetched {len(items)} topics')
-    except Exception as e:
-        logger.warning(f'TapTap failed: {e}')
+    data_list = None
+    for url in endpoints:
+        try:
+            resp = requests.get(url, params=params, headers=headers, timeout=15)
+            resp.raise_for_status()
+            data_list = resp.json().get('data', {}).get('list', [])
+            if data_list:
+                break
+        except Exception as e:
+            logger.warning(f'TapTap {url.split("/")[2]} failed: {e}')
 
+    if not data_list:
+        # Final fallback: scrape review page
+        try:
+            review_url = f'https://api.taptap.cn/app/v2/app/{app_id}/review/list/recent'
+            resp = requests.get(review_url, params={'limit': 20}, headers=headers, timeout=15)
+            resp.raise_for_status()
+            reviews = resp.json().get('data', {}).get('list', [])
+            for review in reviews:
+                ts = review.get('created_time', 0)
+                if not ts:
+                    continue
+                created = datetime.fromtimestamp(ts, tz=timezone.utc)
+                if created < cutoff:
+                    continue
+                score = review.get('score', 0)
+                sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
+                items.append({
+                    'title': f'[TapTap {sentiment}] {review.get("contents", {}).get("text", "")[:60]}',
+                    'summary': review.get('contents', {}).get('text', '')[:200],
+                    'source': 'taptap',
+                    'time': created.isoformat(),
+                    'url': f'https://www.taptap.cn/app/{app_id}/review',
+                    'engagement': review.get('like_count', 0),
+                    'author': review.get('user', {}).get('name', ''),
+                    'tags': [sentiment],
+                })
+            logger.info(f'TapTap reviews fallback: {len(items)} items')
+        except Exception as e:
+            logger.warning(f'TapTap review fallback failed: {e}')
+        return items
+
+    for topic in data_list:
+        created_ts = topic.get('created_time', 0)
+        if not created_ts:
+            continue
+        created = datetime.fromtimestamp(created_ts, tz=timezone.utc)
+        if created < cutoff:
+            continue
+        items.append({
+            'title': topic.get('title', ''),
+            'summary': (topic.get('summary', '') or topic.get('intro', ''))[:200],
+            'source': 'taptap',
+            'time': created.isoformat(),
+            'url': topic.get('share_url', ''),
+            'engagement': (topic.get('comment_count', 0) or 0) + (topic.get('like_count', 0) or 0),
+            'is_hot': (topic.get('like_count', 0) or 0) > 100,
+            'author': topic.get('user', {}).get('name', ''),
+            'tags': [],
+        })
+    logger.info(f'TapTap: fetched {len(items)} topics')
     return items
 
 
@@ -612,6 +690,78 @@ def fetch_fandom_wiki():
     return items
 
 
+def fetch_discord_local():
+    """
+    Read today's Discord archive data from projects/news/data/discord/ and produce
+    news items: one summary item + top-reacted messages as individual items.
+    No API calls — purely local file reads from the archiver's output.
+    """
+    discord_dir = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord'
+    today_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+    yesterday_str = (datetime.now(timezone.utc) - timedelta(days=1)).strftime('%Y-%m-%d')
+    items = []
+
+    # Try today first, fall back to yesterday (archiver may not have run yet today)
+    stats_path = discord_dir / 'activity_daily' / f'{today_str}.json'
+    if not stats_path.exists():
+        stats_path = discord_dir / 'activity_daily' / f'{yesterday_str}.json'
+        today_str = yesterday_str
+    if not stats_path.exists():
+        logger.info('Discord local: no recent daily stats found')
+        return []
+
+    try:
+        with open(stats_path, 'r', encoding='utf-8') as f:
+            stats = json.load(f)
+    except Exception as e:
+        logger.warning(f'Discord local: failed to read stats: {e}')
+        return []
+
+    msg_count = stats.get('messages', 0)
+    authors = stats.get('unique_authors', 0)
+    reactions = stats.get('reactions_total', 0)
+
+    # Top active channels
+    ch_activity = stats.get('channel_activity', {})
+    top_channels = sorted(ch_activity.items(), key=lambda x: x[1], reverse=True)[:5]
+    ch_summary = '、'.join(f'{ch}({cnt})' for ch, cnt in top_channels)
+
+    # Summary item
+    items.append({
+        'title': f'Discord 社区日报 ({today_str})',
+        'summary': f'今日 {msg_count:,} 条消息，{authors} 位活跃用户，{reactions:,} 次反应。热门频道：{ch_summary}',
+        'source': 'discord',
+        'time': datetime.now(timezone.utc).isoformat(),
+        'url': '',
+        'engagement': msg_count,
+        'author': 'Discord Archiver',
+        'tags': ['discord', 'daily-summary'],
+    })
+
+    # Top reacted messages as individual items
+    top_reacted = stats.get('top_reacted_messages', [])
+    for msg in sorted(top_reacted, key=lambda x: x.get('reactions', 0), reverse=True)[:5]:
+        content = msg.get('content', '')[:150]
+        author = msg.get('author', '?')
+        channel = msg.get('channel', '')
+        react_count = msg.get('reactions', 0)
+        if react_count < 5:
+            continue
+        items.append({
+            'title': f'[DC热门] {author}@{channel}: {content[:60]}',
+            'summary': content,
+            'source': 'discord',
+            'time': datetime.now(timezone.utc).isoformat(),
+            'url': '',
+            'engagement': react_count,
+            'author': author,
+            'tags': ['discord', 'hot-message'],
+        })
+
+    logger.info(f'Discord local: {len(items)} items from {today_str} stats')
+    return items
+
+
 def generate_summary(news_items):
     """
     Generate a daily summary. Uses OpenAI-compatible API if available,
@@ -677,6 +827,7 @@ def run():
         ('SteamReviews', fetch_steam_reviews),
         ('SteamNews', fetch_steam_news),
         ('FandomWiki', fetch_fandom_wiki),
+        ('DiscordLocal', fetch_discord_local),
     ]
 
     for name, fetcher in fetchers:

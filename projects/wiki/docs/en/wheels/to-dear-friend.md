@@ -1,16 +1,16 @@
 ---
 title: "To Dear Friend - Wheel of Destiny"
-description: "To Dear Friend (致挚友) - Morimens Wheel of Destiny"
+description: "致挚友(To Dear Friend) - Morimens Wiki"
 ---
 
 # To Dear Friend
 **致挚友**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-sr">SR</span> |
 | Category | SR |
-| Character | 图鲁(Thulhu) |
+| Character | 图鲁(Tulu) |
 
 ## Effect
 

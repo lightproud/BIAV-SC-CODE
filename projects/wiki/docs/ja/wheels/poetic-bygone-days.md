@@ -1,15 +1,17 @@
 ---
-title: "Poetic Bygone Days - 運命の輪"
-description: "Poetic Bygone Days (冬夜忆) - Morimens 運命の輪"
+title: "冬夜忆（Poetic Bygone Days）- 運命の輪"
+description: "冬夜忆(Poetic Bygone Days) - 忘却前夜命轮详情"
 ---
 
-# Poetic Bygone Days
-**冬夜忆**
+# 冬夜忆
+**Poetic Bygone Days**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
-| キャラクター | 艾继丝(Aegis) |
+| カテゴリ | SSR常設 |
+| 対応キャラ | 艾继丝(Aigis) |
+| メインステータス | 銀鍵チャージ |
 
 ## 効果
 

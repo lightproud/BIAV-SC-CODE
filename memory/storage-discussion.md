@@ -1,5 +1,7 @@
 # 大文件存储方案讨论
 
+> 最后更新：2026-03-29 by Code-news
+
 ## 背景
 
 项目中有两类大文件存储需求：
@@ -39,6 +41,6 @@
 
 ## 当前状态
 
-- Discord 文本数据归档已实现，存在 `assets/data/discord/`（纯文本，每天 2-6MB）
+- Discord 文本数据归档已实现，存在 `projects/news/data/discord/`（纯文本，每天 2-6MB）
 - 附件目前只保存 URL，未下载实体文件
 - Wiki 资产存储方式待定

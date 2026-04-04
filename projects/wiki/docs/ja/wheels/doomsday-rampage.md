@@ -1,14 +1,15 @@
 ---
-title: "Doomsday Rampage - 運命の輪"
-description: "Doomsday Rampage (狂戮至世界尽头) - Morimens 運命の輪"
+title: "狂戮至世界尽头（Doomsday Rampage）- 運命の輪"
+description: "狂戮至世界尽头(Doomsday Rampage) - 忘却前夜命轮详情"
 ---
 
-# Doomsday Rampage
-**狂戮至世界尽头**
+# 狂戮至世界尽头
+**Doomsday Rampage**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR限定・星辰線 |
 
 ## 効果
 

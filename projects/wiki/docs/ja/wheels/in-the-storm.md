@@ -1,15 +1,16 @@
 ---
-title: "In the Storm - 運命の輪"
-description: "In the Storm (于暴雨之中) - Morimens 運命の輪"
+title: "于暴雨之中（In the Storm）- 運命の輪"
+description: "于暴雨之中(In the Storm) - 忘却前夜命轮详情"
 ---
 
-# In the Storm
-**于暴雨之中**
+# 于暴雨之中
+**In the Storm**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
-| キャラクター | 图鲁(Thulhu) |
+| カテゴリ | SSR常設 |
+| 対応キャラ | 图鲁(Tulu) |
 
 ## 効果
 

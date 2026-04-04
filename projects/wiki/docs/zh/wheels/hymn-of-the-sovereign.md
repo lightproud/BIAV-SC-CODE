@@ -6,12 +6,12 @@ description: "神王的颂歌(Hymn of the Sovereign) - 忘却前夜命轮详情"
 # 神王的颂歌
 **Hymn of the Sovereign**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-ssr">SSR</span> |
-| 分类 | 常驻 |
-| 主属性 | 狂气回充 7.2 |
+| 分类 | SSR常驻 |
 | 适用角色 | 希莱斯特(Celeste) |
+| 主属性 | 狂气回充 7.2 |
 
 ## 效果
 

@@ -1,5 +1,6 @@
 # Discord 数据归档系统设计方案
 
+> 最后更新：2026-03-30 by Code-news
 > 供主控台审阅。Code-news 会话整理，待决策后实现。
 
 ## 背景
@@ -11,7 +12,7 @@
 ## 存储架构
 
 ```
-assets/data/discord/
+projects/news/data/discord/
 ├── channels/
 │   ├── 综合讨论_a7982947/        ← 频道名_ID后8位（sanitized）
 │   │   ├── 2026-03-29.jsonl      ← 按自然日分片，保留60天

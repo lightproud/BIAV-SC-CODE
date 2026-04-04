@@ -1,15 +1,17 @@
 ---
-title: "Retrograde Timepiece - 運命の輪"
-description: "Retrograde Timepiece (溯洄时计) - Morimens 運命の輪"
+title: "溯洄时计（Retrograde Timepiece）- 運命の輪"
+description: "溯洄时计(Retrograde Timepiece) - 忘却前夜命轮详情"
 ---
 
-# Retrograde Timepiece
-**溯洄时计**
+# 溯洄时计
+**Retrograde Timepiece**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
-| キャラクター | 拉蒙娜(Ramona) |
+| カテゴリ | SSR常設 |
+| 対応キャラ | 拉蒙娜(Ramona) |
+| メインステータス | 銀鍵チャージ 21.6 |
 
 ## 効果
 

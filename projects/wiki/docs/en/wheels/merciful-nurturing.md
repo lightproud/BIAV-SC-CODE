@@ -1,16 +1,17 @@
 ---
 title: "Merciful Nurturing - Wheel of Destiny"
-description: "Merciful Nurturing (慈悲的哺育) - Morimens Wheel of Destiny"
+description: "慈悲的哺育(Merciful Nurturing) - Morimens Wiki"
 ---
 
 # Merciful Nurturing
 **慈悲的哺育**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Oblivion) |
+| Category | SSR Limited (Oblivion) |
+| Character | 塔薇(Thais) |
 
 ## Effect
 
-血肉系命轮。
+Caro (Flesh) series wheel.

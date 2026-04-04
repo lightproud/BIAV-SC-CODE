@@ -1,28 +1,22 @@
 {
-  "collected_at": "2026-03-30T23:52:36.565661+00:00",
+  "collected_at": "2026-04-03T20:04:50.588819+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 1,
   "items": [
     {
-      "language": "english",
+      "source": "steam",
+      "time": "2026-04-03T03:28:55+00:00",
+      "lang": "latam",
+      "title": "[正面] G",
+      "summary": "G",
+      "url": "https://steamcommunity.com/profiles/76561199548441986/recommended/3052450",
+      "author": "76561199548441986",
+      "engagement": 0,
+      "language": "latam",
       "voted_up": true,
-      "review": "With over 600 hours and maybe even more alongside mobile (yes this game is crossplatform)\nDo me a favor and press download while reading.\n\nIts a REAL diamond in the rough in the gacha space.\n\nA Lovecr",
-      "timestamp_created": 1774869192,
-      "playtime_forever": 37203
-    },
-    {
-      "language": "english",
-      "voted_up": false,
-      "review": "Once again I'm trying out new stuff and wondering why it got that positive reviews ~.~\nYes, it has unique aesthetics but..that's it?\n\n- another gacha that starts fully voiced and you think 'Oh cool, t",
-      "timestamp_created": 1774869884,
-      "playtime_forever": 204
-    },
-    {
-      "language": "english",
-      "voted_up": true,
-      "review": "Lovecraftian horror Slay the Spire in a free to play package.  If you can navigate the truly dizzying number of currencies this game throws at you, it's a great game.  Cool character designs, enjoyabl",
-      "timestamp_created": 1774858985,
-      "playtime_forever": 1651
+      "review": "G",
+      "timestamp_created": 1775186935,
+      "playtime_forever": 2541
     }
   ]
 }

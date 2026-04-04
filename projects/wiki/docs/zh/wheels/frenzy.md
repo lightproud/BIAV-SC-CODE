@@ -6,11 +6,11 @@ description: "狂乱(Frenzy) - 忘却前夜命轮详情"
 # 狂乱
 **Frenzy**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-r">R</span> |
 | 分类 | R |
-| 适用角色 | 珊(Coral) |
+| 适用角色 | 珊(Shan) |
 
 ## 效果
 

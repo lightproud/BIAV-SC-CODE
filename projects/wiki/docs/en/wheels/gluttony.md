@@ -1,13 +1,13 @@
 ---
 title: "Gluttony - Wheel of Destiny"
-description: "Gluttony (暴食) - Morimens Wheel of Destiny"
+description: "暴食(Gluttony) - Morimens Wiki"
 ---
 
 # Gluttony
 **暴食**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-r">R</span> |
 | Category | R |
 

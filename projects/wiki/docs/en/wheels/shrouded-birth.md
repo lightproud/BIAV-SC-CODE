@@ -1,15 +1,16 @@
 ---
 title: "Shrouded Birth - Wheel of Destiny"
-description: "Shrouded Birth (隐秘的诞生) - Morimens Wheel of Destiny"
+description: "隐秘的诞生(Shrouded Birth) - Morimens Wiki"
 ---
 
 # Shrouded Birth
 **隐秘的诞生**
 
-| Attribute | Info |
-|-----------|------|
+| Attribute | Value |
+|------|------|
 | Rarity | <span class="rarity-ssr">SSR</span> |
-| Category | Limited (Oblivion) |
+| Category | SSR Limited (Oblivion) |
+| Character | 神王·图鲁(Divine King Tulu) |
 
 ## Effect
 

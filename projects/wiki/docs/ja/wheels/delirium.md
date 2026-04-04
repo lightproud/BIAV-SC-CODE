@@ -1,14 +1,15 @@
 ---
-title: "Delirium - 運命の輪"
-description: "Delirium (谵妄) - Morimens 運命の輪"
+title: "谵妄（Delirium）- 運命の輪"
+description: "谵妄(Delirium) - 忘却前夜命轮详情"
 ---
 
-# Delirium
-**谵妄**
+# 谵妄
+**Delirium**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-r">R</span> |
+| カテゴリ | R |
 
 ## 効果
 

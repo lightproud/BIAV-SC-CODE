@@ -6,7 +6,7 @@ description: "职责所在(Duty Calls) - 忘却前夜命轮详情"
 # 职责所在
 **Duty Calls**
 
-| 属性 | 信息 |
+| 属性 | 值 |
 |------|------|
 | 稀有度 | <span class="rarity-sr">SR</span> |
 | 分类 | SR |

@@ -1,14 +1,15 @@
 ---
-title: "Punishment - 運命の輪"
-description: "Punishment (惩戒) - Morimens 運命の輪"
+title: "惩戒（Punishment）- 運命の輪"
+description: "惩戒(Punishment) - 忘却前夜命轮详情"
 ---
 
-# Punishment
-**惩戒**
+# 惩戒
+**Punishment**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-r">R</span> |
+| カテゴリ | R |
 
 ## 効果
 

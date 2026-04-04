@@ -1,14 +1,15 @@
 ---
-title: "Whisper - 運命の輪"
-description: "Whisper (呢喃) - Morimens 運命の輪"
+title: "呢喃（Whisper）- 運命の輪"
+description: "呢喃(Whisper) - 忘却前夜命轮详情"
 ---
 
-# Whisper
-**呢喃**
+# 呢喃
+**Whisper**
 
-| 属性 | 情報 |
+| 属性 | 値 |
 |------|------|
 | レアリティ | <span class="rarity-ssr">SSR</span> |
+| カテゴリ | SSR常設 |
 
 ## 効果
 
