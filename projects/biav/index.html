@@ -245,6 +245,9 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 .select-mode .msg.selected::before{background:#c5a356;border-color:#c5a356;content:'✓';color:#0a0b10;font-size:12px;font-weight:700;text-align:center;line-height:18px}
 .select-mode .msg-edit-btn,.select-mode .msg-actions{display:none!important}
 
+/* Conversation section labels */
+.conv-section-label{padding:8px 12px 4px;font-size:11px;color:#5a5540;font-weight:600;letter-spacing:.5px}
+
 /* Conversation star */
 .conv-star{opacity:0;background:none;border:none;color:#5a5540;cursor:pointer;padding:2px 4px;font-size:13px;transition:all .15s;flex-shrink:0}
 .conv-item:hover .conv-star,.conv-star.starred{opacity:1}
@@ -800,19 +803,39 @@ let convSearchQuery = '';
 function renderSidebar() {
   convList.innerHTML = '';
   const q = convSearchQuery.toLowerCase();
-  // Sort: starred first, then by most recent
-  const sorted = [...S.conversations].sort((a, b) => (b.starred ? 1 : 0) - (a.starred ? 1 : 0));
-  sorted.forEach(c => {
-    if (q && !c.title.toLowerCase().includes(q)) return;
-    const div = document.createElement('div');
-    div.className = 'conv-item' + (c.id === S.convId ? ' active' : '');
-    div.innerHTML = `<button class="conv-star${c.starred ? ' starred' : ''}" title="Star">★</button><span>${esc(c.title)}</span><button class="conv-del" title="Delete">&#x2715;</button>`;
-    div.querySelector('span').onclick = () => loadConv(c.id);
-    div.querySelector('span').ondblclick = (e) => { e.stopPropagation(); startRenameConv(c.id, div); };
-    div.querySelector('.conv-star').onclick = (e) => { e.stopPropagation(); toggleStar(c.id); };
-    div.querySelector('.conv-del').onclick = (e) => { e.stopPropagation(); deleteConv(c.id) };
-    convList.appendChild(div);
-  });
+  const starred = S.conversations.filter(c => c.starred && (!q || c.title.toLowerCase().includes(q)));
+  const recents = S.conversations.filter(c => !c.starred && (!q || c.title.toLowerCase().includes(q)));
+
+  if (starred.length) {
+    const label = document.createElement('div');
+    label.className = 'conv-section-label';
+    label.textContent = 'Starred';
+    convList.appendChild(label);
+    starred.forEach(c => convList.appendChild(makeConvItem(c)));
+  }
+
+  if (recents.length) {
+    const label = document.createElement('div');
+    label.className = 'conv-section-label';
+    label.textContent = 'Recents';
+    convList.appendChild(label);
+    recents.forEach(c => convList.appendChild(makeConvItem(c)));
+  }
+
+  if (!starred.length && !recents.length && q) {
+    convList.innerHTML = '<div style="padding:12px;text-align:center;color:#5a5540;font-size:12px">无匹配对话</div>';
+  }
+}
+
+function makeConvItem(c) {
+  const div = document.createElement('div');
+  div.className = 'conv-item' + (c.id === S.convId ? ' active' : '');
+  div.innerHTML = `<button class="conv-star${c.starred ? ' starred' : ''}" title="Star">★</button><span>${esc(c.title)}</span><button class="conv-del" title="Delete">&#x2715;</button>`;
+  div.querySelector('span').onclick = () => loadConv(c.id);
+  div.querySelector('span').ondblclick = (e) => { e.stopPropagation(); startRenameConv(c.id, div); };
+  div.querySelector('.conv-star').onclick = (e) => { e.stopPropagation(); toggleStar(c.id); };
+  div.querySelector('.conv-del').onclick = (e) => { e.stopPropagation(); deleteConv(c.id) };
+  return div;
 }
 
 function toggleStar(id) {
