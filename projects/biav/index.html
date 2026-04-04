@@ -413,7 +413,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.7.1';
+const APP_VERSION = '0.7.2';
 
 /* ===== State ===== */
 const S = {
@@ -492,6 +492,7 @@ const PROMPTS = {
 - generate_image：将 SVG 渲染为高清 PNG 图片并下载（图标、示意图、信息图）
 - generate_chart：用 Chart.js 生成数据可视化图表 PNG（柱状图、折线图、饼图等）
 - ai_image：使用 DALL-E 3 AI 生成图片（需用户配置 OpenAI Key）。图片会在对话中显示并下载。
+- generate_pixel_art：像素风图片生成（调色板+索引网格）。适合 RPG Maker 风格精灵、图标、贴图。
 
 当用户询问具体数据（角色属性、技能、日报详情、代码实现等）时，优先使用 read_file 读取原始文件，而不是仅凭预加载的摘要回答。仓库中的关键数据路径：
 - projects/wiki/data/db/characters.json — 63角色完整数据
@@ -991,6 +992,28 @@ const TOOLS = [
       },
       required: ['prompt']
     }
+  },
+  {
+    name: 'generate_pixel_art',
+    description: '生成像素风格图片（RPG Maker 风格）。使用调色板+索引网格格式，适合角色精灵、物品图标、地图贴图等。每行字符串中的每个字符对应一个调色板索引（支持 0-9 和 a-z，共 36 色）。scale 控制每个像素放大倍数。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        palette: {
+          type: 'object',
+          description: 'Color palette map. Keys are single characters (0-9, a-z), values are CSS colors. Use "transparent" or "" for empty pixels. Example: {"0":"transparent","1":"#000","2":"#8B4513","3":"#FFD700"}'
+        },
+        grid: {
+          type: 'array',
+          description: 'Array of strings. Each string is one row of pixels. Each character maps to a palette key. All rows must be same length. Example: ["00100","01210","12321"]',
+          items: { type: 'string' }
+        },
+        scale: { type: 'number', description: 'Pixel scale factor (default 8, range 1-32). 8 = each pixel becomes 8x8 on screen.', default: 8 },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'pixel-art' },
+        background: { type: 'string', description: 'Background color behind transparent pixels (default: transparent)', default: 'transparent' }
+      },
+      required: ['palette', 'grid']
+    }
   }
 ];
 
@@ -1239,6 +1262,47 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
           a.click();
           URL.revokeObjectURL(a.href);
           resolve(`Chart generated: ${fname}.png (${w * 2}×${h * 2}px, type: ${input.type})`);
+        }, 'image/png');
+      });
+    }
+    if (name === 'generate_pixel_art') {
+      const palette = input.palette || {};
+      const grid = input.grid || [];
+      const scale = Math.max(1, Math.min(32, input.scale || 8));
+      const fname = (input.filename || 'pixel-art').replace(/\.png$/i, '');
+      if (!grid.length) return 'Error: grid is empty';
+      const cols = grid[0].length;
+      const rows = grid.length;
+      const canvas = document.createElement('canvas');
+      canvas.width = cols * scale;
+      canvas.height = rows * scale;
+      const ctx = canvas.getContext('2d');
+      // Background
+      if (input.background && input.background !== 'transparent') {
+        ctx.fillStyle = input.background;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+      // Draw pixels
+      for (let y = 0; y < rows; y++) {
+        const row = grid[y];
+        for (let x = 0; x < Math.min(row.length, cols); x++) {
+          const ch = row[x];
+          const color = palette[ch];
+          if (!color || color === 'transparent' || color === '') continue;
+          ctx.fillStyle = color;
+          ctx.fillRect(x * scale, y * scale, scale, scale);
+        }
+      }
+      // Export
+      return new Promise(resolve => {
+        canvas.toBlob(blob => {
+          const imgUrl = URL.createObjectURL(blob);
+          // Download
+          const a = document.createElement('a');
+          a.href = imgUrl; a.download = fname + '.png'; a.click();
+          // Display inline
+          appendDelta(`\n\n![${fname}](${imgUrl})\n\n`);
+          resolve(`Pixel art generated: ${fname}.png (${cols}×${rows} pixels, scale ${scale}x, actual ${cols * scale}×${rows * scale}px)`);
         }, 'image/png');
       });
     }
