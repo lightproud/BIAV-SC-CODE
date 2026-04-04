@@ -413,7 +413,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.8.0';
+const APP_VERSION = '0.8.1';
 
 /* ===== State ===== */
 const S = {
@@ -493,6 +493,7 @@ const PROMPTS = {
 - generate_chart：用 Chart.js 生成数据可视化图表 PNG（柱状图、折线图、饼图等）
 - ai_image：使用 DALL-E 3 AI 生成图片（需用户配置 OpenAI Key）。图片会在对话中显示并下载。
 - generate_pixel_art：像素风图片生成（调色板+索引网格）。适合 RPG Maker 风格精灵、图标、贴图。
+- generate_html：生成完整 HTML 文件并下载 + Artifacts 面板预览（交互页面、小工具、看板）
 - generate_midi：生成 MIDI 音乐文件（多轨道、GM 乐器、和弦、休止符）。
 
 当用户询问具体数据（角色属性、技能、日报详情、代码实现等）时，优先使用 read_file 读取原始文件，而不是仅凭预加载的摘要回答。仓库中的关键数据路径：
@@ -1017,6 +1018,19 @@ const TOOLS = [
     }
   },
   {
+    name: 'generate_html',
+    description: '生成完整的 HTML 文件并下载，同时在 Artifacts 面板中预览。适合交互式可视化、小工具、演示页面、游戏原型、数据看板等。请生成完整的 HTML（含 <!DOCTYPE html>），可内联 CSS 和 JS。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        html: { type: 'string', description: 'Complete HTML content (must include <!DOCTYPE html> and full page structure)' },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'page' },
+        title: { type: 'string', description: 'Artifact panel title', default: 'HTML Artifact' }
+      },
+      required: ['html']
+    }
+  },
+  {
     name: 'generate_midi',
     description: '生成 MIDI 音乐文件（.mid）并下载。可定义多轨道、音符序列、节奏和乐器。支持和弦、休止符。生成标准 MIDI 文件，可在任意播放器/DAW 中打开。',
     input_schema: {
@@ -1345,6 +1359,22 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
           resolve(`Pixel art generated: ${fname}.png (${cols}×${rows} pixels, scale ${scale}x, actual ${cols * scale}×${rows * scale}px)`);
         }, 'image/png');
       });
+    }
+    if (name === 'generate_html') {
+      const fname = (input.filename || 'page').replace(/\.html?$/i, '');
+      const title = input.title || 'HTML Artifact';
+      // Download
+      const blob = new Blob([input.html], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = fname + '.html';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      // Open in Artifacts panel for preview
+      openArtifact(input.html, 'html');
+      $('#art-title').textContent = title;
+      showArtView('preview');
+      return `HTML file generated: ${fname}.html (${input.html.length} bytes). Preview opened in Artifacts panel.`;
     }
     if (name === 'generate_midi') {
       // Lazy-load midi-writer-js
