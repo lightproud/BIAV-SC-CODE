@@ -45,8 +45,8 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
 .art-footer .copy-btn{font-size:12px;padding:4px 12px}
 
 /* Sidebar */
-#sidebar{width:260px;display:flex;flex-direction:column;border-right:1px solid #2a2515;flex-shrink:0;transition:margin-left .2s}
-#sidebar.hidden{margin-left:-260px}
+#sidebar{width:260px;display:flex;flex-direction:column;border-right:1px solid #2a2515;flex-shrink:0;transition:transform .25s ease;position:relative;z-index:90}
+#sidebar.hidden{transform:translateX(-100%);position:absolute;height:100%}
 #sidebar-header{padding:16px;border-bottom:1px solid #2a2515}
 #sidebar-header h1{font-family:'Noto Serif SC',serif;color:#e2c97e;font-size:18px;font-weight:700;letter-spacing:2px}
 #sidebar-header p{color:#5a5540;font-size:12px;margin-top:2px}
@@ -205,8 +205,8 @@ body{min-height:100vh;min-height:-webkit-fill-available}
 
 /* Responsive */
 @media(max-width:768px){
-  #sidebar{position:fixed;left:0;top:0;height:100%;z-index:90;background:#0a0b10;transition:transform .25s ease}
-  #sidebar.hidden{transform:translateX(-100%);margin-left:0}
+  #sidebar{position:fixed;left:0;top:0;height:100%;z-index:90;background:#0a0b10}
+  #sidebar.hidden{transform:translateX(-100%)}
   #msg-container,#input-wrap,#file-preview{padding-left:12px;padding-right:12px}
   #artifacts{position:fixed;right:0;top:0;height:100%;z-index:80;width:100%;max-width:none;background:#0a0b10}
   #topbar{gap:8px;padding-left:12px;padding-right:12px}
@@ -331,18 +331,6 @@ body{min-height:100vh;min-height:-webkit-fill-available}
         <label>ANTHROPIC API KEY</label>
         <input id="cfg-anthropic" type="password" placeholder="sk-ant-...">
       </div>
-      <div class="setting-group">
-        <label>OPENAI API KEY</label>
-        <input id="cfg-openai" type="password" placeholder="sk-...">
-      </div>
-      <div class="setting-group">
-        <label>OPENAI BASE URL</label>
-        <input id="cfg-openai-base" type="text" placeholder="https://api.openai.com/v1">
-      </div>
-      <div class="setting-group">
-        <label>OLLAMA BASE URL</label>
-        <input id="cfg-ollama" type="text" placeholder="http://localhost:11434">
-      </div>
     </div>
     <div id="pane-prompts" class="settings-pane">
       <div class="setting-group">
@@ -370,7 +358,7 @@ body{min-height:100vh;min-height:-webkit-fill-available}
 /* ===== State ===== */
 const S = {
   provider: 'claude',
-  model: 'claude-sonnet-4-20250514',
+  model: 'claude-sonnet-4-6-20260401',
   convId: null,
   conversations: [],  // [{id, title, provider, model, messages:[{role,content}]}]
   streaming: false,
@@ -379,15 +367,13 @@ const S = {
 
 const MODELS = {
   claude: [
-    'claude-opus-4-20250514',
-    'claude-sonnet-4-20250514',
+    'claude-opus-4-6-20260401',
+    'claude-sonnet-4-6-20260401',
     'claude-haiku-4-5-20251001',
   ],
-  openai: ['gpt-4o', 'gpt-4o-mini', 'o3-mini'],
-  ollama: [],
 };
 
-const PROVIDER_LABELS = { claude: 'Claude', openai: 'OpenAI', ollama: 'Ollama' };
+const PROVIDER_LABELS = { claude: 'Claude' };
 
 /* ===== Storage ===== */
 const BUILTIN_KEY = '%%ANTHROPIC_API_KEY%%';
@@ -815,32 +801,26 @@ async function streamOllama(conv, signal) {
 function buildModelDropdown() {
   const cfg = loadConfig();
   modelDropdown.innerHTML = '';
-  for (const [prov, models] of Object.entries(MODELS)) {
-    let available = false;
-    if (prov === 'claude') available = !!cfg.anthropic;
-    else if (prov === 'openai') available = !!cfg.openai;
-    else if (prov === 'ollama') available = models.length > 0;
+  const available = !!cfg.anthropic || (BUILTIN_KEY && !BUILTIN_KEY.startsWith('%%'));
 
-    const label = document.createElement('div');
-    label.className = 'provider-group-label';
-    label.innerHTML = `<span class="provider-dot ${available ? 'on' : 'off'}"></span>${PROVIDER_LABELS[prov]}${!available ? ' <span style="color:#5a5540">(no key)</span>' : ''}`;
-    modelDropdown.appendChild(label);
+  const label = document.createElement('div');
+  label.className = 'provider-group-label';
+  label.innerHTML = `<span class="provider-dot ${available ? 'on' : 'off'}"></span>Claude${!available ? ' <span style="color:#5a5540">(no key)</span>' : ''}`;
+  modelDropdown.appendChild(label);
 
-    if (available || prov === 'claude' || prov === 'openai') {
-      models.forEach(m => {
-        const btn = document.createElement('button');
-        btn.className = 'model-option' + (prov === S.provider && m === S.model ? ' selected' : '');
-        btn.textContent = m;
-        btn.onclick = () => {
-          S.provider = prov;
-          S.model = m;
-          updateModelBtn();
-          modelDropdown.classList.remove('open');
-        };
-        modelDropdown.appendChild(btn);
-      });
-    }
-  }
+  MODELS.claude.forEach(m => {
+    const btn = document.createElement('button');
+    btn.className = 'model-option' + (m === S.model ? ' selected' : '');
+    const shortName = m.replace('claude-', '').replace(/-\d{8}$/, '');
+    btn.textContent = shortName;
+    btn.onclick = () => {
+      S.provider = 'claude';
+      S.model = m;
+      updateModelBtn();
+      modelDropdown.classList.remove('open');
+    };
+    modelDropdown.appendChild(btn);
+  });
 }
 
 function updateModelBtn() {
@@ -853,9 +833,6 @@ function updateModelBtn() {
 function openSettings() {
   const cfg = loadConfig();
   $('#cfg-anthropic').value = cfg.anthropic || '';
-  $('#cfg-openai').value = cfg.openai || '';
-  $('#cfg-openai-base').value = cfg.openaiBase || '';
-  $('#cfg-ollama').value = cfg.ollama || '';
   $('#cfg-custom-prompt').value = cfg.customPrompt || '';
   settingsOverlay.classList.add('open');
 }
@@ -865,9 +842,6 @@ function closeSettings() { settingsOverlay.classList.remove('open') }
 function saveSettings() {
   const cfg = {
     anthropic: $('#cfg-anthropic').value.trim(),
-    openai: $('#cfg-openai').value.trim(),
-    openaiBase: $('#cfg-openai-base').value.trim(),
-    ollama: $('#cfg-ollama').value.trim(),
     customPrompt: $('#cfg-custom-prompt').value.trim(),
   };
   saveConfig(cfg);

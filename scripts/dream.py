@@ -944,6 +944,15 @@ def run_phase1() -> dict:
 
     log_access(all_files_scanned)
 
+    # Generate boot snapshot
+    try:
+        from boot_snapshot import generate_snapshot
+        snapshot_path = REPO / "memory" / "boot-snapshot.md"
+        snapshot_path.write_text(generate_snapshot() + "\n", encoding="utf-8")
+        print("  Boot snapshot updated")
+    except Exception as e:
+        print(f"  Boot snapshot failed: {e}")
+
     return results
 
 
