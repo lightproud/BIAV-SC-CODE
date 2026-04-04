@@ -10,10 +10,10 @@ on:
   schedule:
     # 浅睡：每 6 小时（零成本）
     - cron: '0 */6 * * *'
-    # 深睡/REM：暂停自动触发，等数据量积累后再开启
-    # 手动触发仍可用（workflow_dispatch）
-    # - cron: '0 19 * * *'
-    # - cron: '0 1 * * 1'
+    # 深睡：每天 19:00 UTC（北京时间凌晨 3 点）
+    - cron: '0 19 * * *'
+    # REM：每周一 01:00 UTC（北京时间周一上午 9 点）
+    - cron: '0 1 * * 1'
   workflow_dispatch:
     inputs:
       layer:
@@ -180,7 +180,7 @@ jobs:
           if [ -f "memory/dreams/$(date -u +%Y-%m-%d).json" ]; then
             git config user.name "dream-agent[bot]"
             git config user.email "dream-agent[bot]@users.noreply.github.com"
-            git add memory/dreams/ assets/data/semantic-index.json 2>/dev/null || true
+            git add memory/dreams/ assets/data/semantic-index.json assets/data/sentinel-baseline.json projects/news/output/alerts.json 2>/dev/null || true
             git diff --cached --quiet || git commit -m "dream(shallow): Phase 1 structural check $(date -u +%Y-%m-%d)"
             git push origin main || true
           fi
@@ -232,10 +232,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     needs: shallow-sleep
-    # 仅在 22:00 UTC cron 或手动触发时运行
+    # 深睡：每天 19:00 UTC cron 或手动触发
     if: >-
-      github.event_name == 'workflow_dispatch' &&
-      (inputs.layer == 'deep' || inputs.layer == 'all')
+      (github.event_name == 'schedule' && github.event.schedule == '0 19 * * *') ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.layer == 'deep' || inputs.layer == 'all'))
     steps:
       - uses: actions/checkout@v6
 
@@ -335,10 +336,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     needs: shallow-sleep
-    # 仅在周一 21:00 UTC cron 或手动触发时运行
+    # REM：每周一 01:00 UTC cron 或手动触发
     if: >-
-      github.event_name == 'workflow_dispatch' &&
-      (inputs.layer == 'rem' || inputs.layer == 'all')
+      (github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1') ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.layer == 'rem' || inputs.layer == 'all'))
     steps:
       - uses: actions/checkout@v6
         with:
