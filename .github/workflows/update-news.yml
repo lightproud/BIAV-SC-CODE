@@ -31,11 +31,31 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
         run: python projects/news/scripts/aggregator.py
 
+      - name: Run global collectors (29 platforms)
+        env:
+          TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_IDS: ${{ secrets.DISCORD_CHANNEL_IDS }}
+          FACEBOOK_ACCESS_TOKEN: ${{ secrets.FACEBOOK_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_IDS: ${{ secrets.FACEBOOK_PAGE_IDS }}
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_ACCESS_TOKEN: ${{ secrets.TWITCH_ACCESS_TOKEN }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ secrets.INSTAGRAM_USER_ID }}
+          TELEGRAM_CHANNELS: ${{ secrets.TELEGRAM_CHANNELS }}
+          DC_GALLERY_ID: ${{ secrets.DC_GALLERY_ID }}
+          QQ_CHANNEL: ${{ secrets.QQ_CHANNEL }}
+        run: python projects/news/scripts/collect_global.py
+
       - name: Split output by platform
         run: python projects/news/scripts/split_output.py
 
       - name: Generate daily report
         run: python projects/news/scripts/generate_daily.py
+
+      - name: Archive platform data by date
+        run: python projects/news/scripts/archive_platforms.py
 
       - name: Commit and push if changed
         run: |

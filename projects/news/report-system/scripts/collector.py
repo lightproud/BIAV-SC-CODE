@@ -48,9 +48,16 @@ def _refresh_cutoff():
 # 多语言搜索关键词
 KEYWORDS = {
     "zh": ["忘却前夜", "忘卻前夜"],
-    "en": ["Morimens"],
+    "en": ["Morimens", "morimens"],
     "ja": ["忘却前夜", "モリメンス"],
     "ko": ["망각전야", "모리멘스", "Morimens"],
+    "vi": ["Morimens"],
+    "th": ["Morimens"],
+    "es": ["Morimens"],
+    "pt": ["Morimens"],
+    "ru": ["Morimens"],
+    "de": ["Morimens"],
+    "fr": ["Morimens"],
 }
 ALL_KEYWORDS = [kw for group in KEYWORDS.values() for kw in group]
 
@@ -576,44 +583,99 @@ def fetch_naver_cafe():
 
 
 def fetch_dcinside():
-    """从 DCInside 搜索韩国忘却前夜 Gallery。"""
-    dc_gallery_id = os.environ.get("DC_GALLERY_ID", "")
-    if not dc_gallery_id:
-        logger.info("DCInside: DC_GALLERY_ID not set, skipping")
-        return []
-
+    """从 DCInside 搜索韩国忘却前夜 Gallery（미니 갤러리）。"""
+    dc_gallery_id = os.environ.get("DC_GALLERY_ID", "morimens")
     items = []
+
     try:
-        data = _get(
-            f"https://gall.dcinside.com/board/lists/?id={dc_gallery_id}&page=1",
-            headers={"Referer": "https://gall.dcinside.com"},
+        resp = _get(
+            f"https://gall.dcinside.com/mgallery/board/lists/",
+            params={"id": dc_gallery_id, "page": 1},
+            headers={
+                "Referer": "https://gall.dcinside.com",
+                "User-Agent": "Mozilla/5.0",
+            },
         )
-        # DCInside 返回 HTML，需要简单解析
-        # 实际使用时建议用 BeautifulSoup
-        logger.info(f"DCInside: attempted gallery {dc_gallery_id}")
+        html = resp.text
+
+        # Parse article list from HTML
+        import re as _re
+        for match in _re.finditer(
+            r'data-no="(\d+)".*?'
+            r'class="gall_tit[^"]*"[^>]*>.*?<a[^>]*>([^<]+)</a>.*?'
+            r'class="gall_date"[^>]*title="([^"]*)"',
+            html, _re.DOTALL
+        ):
+            article_no, title, date_str = match.groups()
+            title = title.strip()
+            if not title or title in ('공지', '설문'):
+                continue
+            items.append(_make_item(
+                title=title,
+                summary="",
+                source="dcinside",
+                platform_region="kr",
+                time_str=date_str.strip(),
+                url=f"https://gall.dcinside.com/mgallery/board/view/?id={dc_gallery_id}&no={article_no}",
+                engagement=0,
+                is_hot=False,
+                author="",
+                lang="ko",
+            ))
+
+        logger.info(f'DCInside "{dc_gallery_id}": {len(items)} articles')
     except Exception as e:
-        logger.warning(f"DCInside failed: {e}")
+        logger.warning(f'DCInside "{dc_gallery_id}" failed: {e}')
 
     return items
 
 
 def fetch_arca_live():
-    """从 Arca.live 搜索韩国忘却前夜频道。"""
-    arca_channel = os.environ.get("ARCA_CHANNEL", "")
-    if not arca_channel:
-        logger.info("Arca.live: ARCA_CHANNEL not set, skipping")
-        return []
-
+    """从 Arca.live 抓取韩国忘却前夜频道 (forgettingeve)。"""
+    arca_channel = os.environ.get("ARCA_CHANNEL", "forgettingeve")
     items = []
-    try:
-        data = _get(
-            f"https://arca.live/b/{arca_channel}",
-            params={"mode": "best", "p": 1},
-        )
-        # Arca.live 返回 HTML
-        logger.info(f"Arca.live: attempted channel {arca_channel}")
-    except Exception as e:
-        logger.warning(f"Arca.live failed: {e}")
+
+    for mode in ("best", ""):  # best=인기, ""=최신
+        try:
+            params = {"p": 1}
+            if mode:
+                params["mode"] = mode
+            resp = _get(
+                f"https://arca.live/b/{arca_channel}",
+                params=params,
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            html = resp.text
+
+            # Parse article list from HTML using regex (avoids BeautifulSoup dependency)
+            import re as _re
+            # Match article rows: data-url="/b/forgettingeve/12345"
+            for match in _re.finditer(
+                r'data-url="(/b/[^"]+/(\d+))"[^>]*>.*?'
+                r'class="title"[^>]*>([^<]+)</a>.*?'
+                r'class="col-time"[^>]*>([^<]+)',
+                html, _re.DOTALL
+            ):
+                path, article_id, title, time_text = match.groups()
+                title = title.strip()
+                if not title:
+                    continue
+                items.append(_make_item(
+                    title=title,
+                    summary="",
+                    source="arca_live",
+                    platform_region="kr",
+                    time_str=time_text.strip(),
+                    url=f"https://arca.live{path}",
+                    engagement=0,
+                    is_hot=(mode == "best"),
+                    author="",
+                    lang="ko",
+                ))
+
+            logger.info(f'Arca.live "{arca_channel}" mode={mode or "latest"}: {len(items)} items')
+        except Exception as e:
+            logger.warning(f'Arca.live "{arca_channel}" mode={mode or "latest"} failed: {e}')
 
     return items
 
@@ -714,7 +776,7 @@ def fetch_appstore_reviews():
     """从 App Store / Google Play 获取近期评论趋势。"""
     items = []
     # Apple App Store RSS
-    appstore_id = os.environ.get("APPSTORE_APP_ID", "")
+    appstore_id = os.environ.get("APPSTORE_APP_ID", "6447354150")
     if appstore_id:
         for country in ["cn", "us", "jp", "kr"]:
             try:
@@ -745,10 +807,10 @@ def fetch_appstore_reviews():
 
 def fetch_qq():
     """从 QQ 频道/群组获取忘却前夜相关讨论。"""
-    qq_guild_id = os.environ.get("QQ_GUILD_ID", "")
-    qq_bot_token = os.environ.get("QQ_BOT_TOKEN", "")
-    if not qq_guild_id or not qq_bot_token:
-        logger.info("QQ: QQ_GUILD_ID or QQ_BOT_TOKEN not set, skipping")
+    qq_guild_id = os.environ.get("QQ_GUILD_ID", "Morimens0617")
+    qq_bot_token = os.environ.get("QQ_CHANNEL", "") or os.environ.get("QQ_BOT_TOKEN", "")
+    if not qq_bot_token:
+        logger.info("QQ: QQ_BOT_TOKEN not set, skipping")
         return []
 
     items = []
@@ -992,10 +1054,7 @@ def fetch_fivech():
 
 def fetch_google_play():
     """从 Google Play Store 获取忘却前夜评论。"""
-    gp_package = os.environ.get("GOOGLE_PLAY_PACKAGE", "")
-    if not gp_package:
-        logger.info("Google Play: GOOGLE_PLAY_PACKAGE not set, skipping")
-        return []
+    gp_package = os.environ.get("GOOGLE_PLAY_PACKAGE", "com.qookkagames.z1.gp.hk")
 
     items = []
     # Google Play 没有官方评论 API，使用第三方数据解析
@@ -1028,6 +1087,196 @@ def fetch_google_play():
             logger.info(f"Google Play ({lang_code}): {len(items)} reviews")
         except Exception as e:
             logger.warning(f"Google Play ({lang_code}) failed: {e}")
+
+    return items
+
+
+def fetch_qooapp():
+    """从 QooApp 获取忘却前夜评论和评分。"""
+    # QooApp App IDs: 23472 (HK/MO/SG/MY), 23471 (Taiwan), 138538 (Global)
+    qooapp_ids = [
+        ("23472", "hk", "zh"),
+        ("23471", "tw", "zh"),
+        ("138538", "global", "en"),
+    ]
+    items = []
+
+    for app_id, region, lang in qooapp_ids:
+        try:
+            resp = _get(
+                f"https://m-apps.qoo-app.com/en-US/app/{app_id}",
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            html = resp.text
+
+            import re as _re
+
+            # Extract review entries from QooApp HTML
+            for match in _re.finditer(
+                r'class="comment-content"[^>]*>.*?'
+                r'class="[^"]*star[^"]*"[^>]*data-score="(\d)".*?'
+                r'class="comment-text"[^>]*>([^<]+)</.*?'
+                r'class="comment-date"[^>]*>([^<]+)',
+                html, _re.DOTALL
+            ):
+                score, text, date_str = match.groups()
+                rating = int(score)
+                text = text.strip()
+                if not text:
+                    continue
+
+                sentiment = '好评' if rating >= 4 else ('中评' if rating == 3 else '差评')
+                items.append(_make_item(
+                    title=f"[QooApp {sentiment}] {text[:40]}",
+                    summary=text[:300],
+                    source="qooapp",
+                    platform_region=region,
+                    time_str=date_str.strip(),
+                    url=f"https://m-apps.qoo-app.com/en-US/app/{app_id}",
+                    engagement=rating,
+                    is_hot=False,
+                    author="",
+                    lang=lang,
+                ))
+
+            # Also try the review API endpoint
+            try:
+                review_resp = _get(
+                    f"https://m-apps.qoo-app.com/en/app-review-detail/{app_id}",
+                    headers={"User-Agent": "Mozilla/5.0"},
+                )
+                review_html = review_resp.text
+                for match in _re.finditer(
+                    r'class="review-item"[^>]*>.*?'
+                    r'class="[^"]*score[^"]*"[^>]*>(\d).*?'
+                    r'class="[^"]*review-text[^"]*"[^>]*>([^<]+).*?'
+                    r'class="[^"]*time[^"]*"[^>]*>([^<]+)',
+                    review_html, _re.DOTALL
+                ):
+                    score, text, date_str = match.groups()
+                    rating = int(score)
+                    text = text.strip()
+                    if not text:
+                        continue
+                    sentiment = '好评' if rating >= 4 else ('中评' if rating == 3 else '差评')
+                    items.append(_make_item(
+                        title=f"[QooApp {sentiment}] {text[:40]}",
+                        summary=text[:300],
+                        source="qooapp",
+                        platform_region=region,
+                        time_str=date_str.strip(),
+                        url=f"https://m-apps.qoo-app.com/en/app-review-detail/{app_id}",
+                        engagement=rating,
+                        is_hot=False,
+                        author="",
+                        lang=lang,
+                    ))
+            except Exception:
+                pass
+
+            logger.info(f'QooApp ({region}): {len(items)} reviews')
+        except Exception as e:
+            logger.warning(f'QooApp ({region}) failed: {e}')
+
+    return items
+
+
+def fetch_epic_store():
+    """从 Epic Games Store 获取忘却前夜页面评分和评论。"""
+    slug = "morimens-61a2b4"
+    items = []
+
+    try:
+        # Epic GraphQL API for product info
+        resp = _get(
+            "https://store.epicgames.com/graphql",
+            params={
+                "operationName": "getCatalogOffer",
+                "variables": json.dumps({"locale": "en-US", "slug": slug}),
+                "extensions": json.dumps({"persistedQuery": {"version": 1}}),
+            },
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Referer": f"https://store.epicgames.com/en-US/p/{slug}",
+            },
+        )
+        if resp.status_code == 200:
+            try:
+                data = resp.json()
+                product = data.get("data", {}).get("Catalog", {}).get("catalogOffer", {})
+                if product:
+                    title = product.get("title", "Morimens")
+                    desc = product.get("description", "")
+                    items.append(_make_item(
+                        title=f"[Epic Store] {title}",
+                        summary=desc[:300],
+                        source="epic",
+                        platform_region="global",
+                        time_str=product.get("effectiveDate", datetime.now(timezone.utc).isoformat()),
+                        url=f"https://store.epicgames.com/en-US/p/{slug}",
+                        engagement=0,
+                        is_hot=False,
+                        author="Epic Games Store",
+                        lang="en",
+                    ))
+            except (ValueError, KeyError):
+                pass
+    except Exception as e:
+        logger.warning(f"Epic GraphQL failed: {e}")
+
+    # Fallback: scrape the store page HTML for reviews/ratings
+    try:
+        resp = _get(
+            f"https://store.epicgames.com/en-US/p/{slug}",
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        html = resp.text
+        import re as _re
+
+        # Look for user ratings/reviews in the page
+        rating_match = _re.search(r'"averageRating"\s*:\s*([\d.]+)', html)
+        count_match = _re.search(r'"ratingCount"\s*:\s*(\d+)', html)
+
+        if rating_match:
+            avg_rating = float(rating_match.group(1))
+            rating_count = int(count_match.group(1)) if count_match else 0
+            items.append(_make_item(
+                title=f"[Epic评分] Morimens ★{avg_rating:.1f} ({rating_count}条评价)",
+                summary=f"Epic Games Store 平均评分 {avg_rating:.1f}/5，共 {rating_count} 条评价",
+                source="epic",
+                platform_region="global",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url=f"https://store.epicgames.com/en-US/p/{slug}",
+                engagement=rating_count,
+                is_hot=rating_count > 100,
+                author="Epic Games Store",
+                lang="en",
+            ))
+
+        # Extract individual review snippets if visible
+        for match in _re.finditer(
+            r'"reviewText"\s*:\s*"([^"]{10,300})".*?"rating"\s*:\s*(\d)',
+            html, _re.DOTALL
+        ):
+            text, score = match.groups()
+            rating = int(score)
+            sentiment = '好评' if rating >= 4 else '差评'
+            items.append(_make_item(
+                title=f"[Epic {sentiment}] {text[:40]}",
+                summary=text[:300],
+                source="epic",
+                platform_region="global",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url=f"https://store.epicgames.com/en-US/p/{slug}",
+                engagement=rating,
+                is_hot=False,
+                author="",
+                lang="en",
+            ))
+
+        logger.info(f"Epic Store: {len(items)} items")
+    except Exception as e:
+        logger.warning(f"Epic Store scrape failed: {e}")
 
     return items
 
@@ -1417,6 +1666,502 @@ def fetch_instagram():
             logger.info(f'Instagram #{hashtag}: {len(items)} posts')
         except Exception as e:
             logger.warning(f'Instagram #{hashtag} failed: {e}')
+
+    return items
+
+
+# ─── 微信公众号 (via 搜狗) ─────────────────────────────────
+
+def fetch_weixin():
+    """通过搜狗微信搜索抓取忘却前夜相关公众号文章。
+
+    搜狗是唯一公开索引微信公众号文章的搜索引擎。
+    """
+    items = []
+    for keyword in KEYWORDS["zh"]:
+        try:
+            resp = _get(
+                "https://weixin.sogou.com/weixin",
+                params={"type": 2, "query": keyword, "ie": "utf8", "s_from": "input", "page": 1},
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+                    "Referer": "https://weixin.sogou.com/",
+                },
+            )
+            html = resp.text
+            import re as _re
+
+            # Parse search results
+            for match in _re.finditer(
+                r'<h3>.*?<a[^>]*href="([^"]+)"[^>]*>(.+?)</a>.*?'
+                r'class="s-p"[^>]*>([^<]*)',
+                html, _re.DOTALL
+            ):
+                url, title_html, meta = match.groups()
+                # Clean HTML tags from title
+                title = _re.sub(r'<[^>]+>', '', title_html).strip()
+                if not title:
+                    continue
+
+                # Extract author from meta
+                author_match = _re.search(r'微信公众号\s*[:：]\s*([^\s<]+)', meta)
+                author = author_match.group(1) if author_match else ""
+
+                items.append(_make_item(
+                    title=f"[微信] {title}",
+                    summary="",
+                    source="weixin",
+                    platform_region="cn",
+                    time_str=datetime.now(timezone.utc).isoformat(),
+                    url=url,
+                    engagement=0,
+                    is_hot=False,
+                    author=author,
+                    lang="zh",
+                ))
+
+            logger.info(f'搜狗微信 "{keyword}": {len(items)} articles')
+        except Exception as e:
+            logger.warning(f'搜狗微信 "{keyword}" failed: {e}')
+
+    return items
+
+
+# ─── 日本語プラットフォーム ────────────────────────────────
+
+def fetch_gamerch():
+    """从 Gamerch Wiki 获取忘却前夜攻略更新。"""
+    items = []
+    try:
+        resp = _get(
+            "https://gamerch.com/morimens/",
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        html = resp.text
+        import re as _re
+
+        # Extract recent updates / article links from the wiki
+        for match in _re.finditer(
+            r'<a[^>]*href="(https://gamerch\.com/morimens/\d+)"[^>]*>\s*([^<]+?)\s*</a>',
+            html
+        ):
+            url, title = match.groups()
+            title = title.strip()
+            if not title or len(title) < 5:
+                continue
+            items.append(_make_item(
+                title=f"[Gamerch] {title}",
+                summary="",
+                source="gamerch",
+                platform_region="jp",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url=url,
+                engagement=0,
+                is_hot=False,
+                author="Gamerch Wiki",
+                lang="ja",
+            ))
+
+        logger.info(f"Gamerch Wiki: {len(items)} articles")
+    except Exception as e:
+        logger.warning(f"Gamerch Wiki failed: {e}")
+
+    return items
+
+
+def fetch_note_com():
+    """从 Note.com 搜索忘却前夜/モリメンス 攻略文章。"""
+    items = []
+    for keyword in KEYWORDS["ja"]:
+        try:
+            resp = _get(
+                "https://note.com/api/v2/search",
+                params={"q": keyword, "size": 20, "sort": "new", "context": "note"},
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                for note in data.get("data", {}).get("notes", {}).get("contents", []) or []:
+                    items.append(_make_item(
+                        title=note.get("name", ""),
+                        summary=note.get("body", "")[:300],
+                        source="note_com",
+                        platform_region="jp",
+                        time_str=note.get("publishAt", datetime.now(timezone.utc).isoformat()),
+                        url=note.get("noteUrl", ""),
+                        engagement=note.get("likeCount", 0) + note.get("commentCount", 0),
+                        is_hot=note.get("likeCount", 0) > 50,
+                        author=note.get("user", {}).get("nickname", ""),
+                        lang="ja",
+                    ))
+
+            logger.info(f'Note.com "{keyword}": {len(items)} notes')
+        except Exception as e:
+            logger.warning(f'Note.com "{keyword}" failed: {e}')
+
+    return items
+
+
+# ─── 韓国追加プラットフォーム ──────────────────────────────
+
+def fetch_ruliweb():
+    """从 Ruliweb 搜索韩国忘却前夜讨论。"""
+    items = []
+    for keyword in KEYWORDS["ko"]:
+        try:
+            resp = _get(
+                "https://bbs.ruliweb.com/search",
+                params={"q": keyword, "page": 1},
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            html = resp.text
+            import re as _re
+
+            for match in _re.finditer(
+                r'class="subject_link"[^>]*href="([^"]+)"[^>]*>\s*([^<]+?)\s*</a>.*?'
+                r'class="recomd"[^>]*>(\d+)?',
+                html, _re.DOTALL
+            ):
+                url, title, likes = match.groups()
+                title = title.strip()
+                if not title:
+                    continue
+                likes_count = int(likes) if likes else 0
+
+                if not url.startswith("http"):
+                    url = f"https://bbs.ruliweb.com{url}"
+
+                items.append(_make_item(
+                    title=title,
+                    summary="",
+                    source="ruliweb",
+                    platform_region="kr",
+                    time_str=datetime.now(timezone.utc).isoformat(),
+                    url=url,
+                    engagement=likes_count,
+                    is_hot=likes_count > 10,
+                    author="",
+                    lang="ko",
+                ))
+
+            logger.info(f'Ruliweb "{keyword}": {len(items)} posts')
+        except Exception as e:
+            logger.warning(f'Ruliweb "{keyword}" failed: {e}')
+
+    return items
+
+
+# ─── Русские платформы ─────────────────────────────────────
+
+def fetch_vkplay():
+    """从 VK Play 获取忘却前夜页面信息。"""
+    items = []
+    try:
+        resp = _get(
+            "https://vkplay.ru/play/game/morimens/",
+            headers={"User-Agent": "Mozilla/5.0", "Accept-Language": "ru-RU,ru;q=0.9"},
+        )
+        html = resp.text
+        import re as _re
+
+        # Extract rating
+        rating_match = _re.search(r'"rating"[:\s]*(\d+\.?\d*)', html)
+        if rating_match:
+            rating = float(rating_match.group(1))
+            items.append(_make_item(
+                title=f"[VK Play] Morimens — рейтинг {rating:.1f}",
+                summary="",
+                source="vkplay",
+                platform_region="ru",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url="https://vkplay.ru/play/game/morimens/",
+                engagement=int(rating * 10),
+                is_hot=False,
+                author="VK Play",
+                lang="ru",
+            ))
+
+        # Extract reviews / comments
+        for match in _re.finditer(
+            r'class="[^"]*review[^"]*"[^>]*>.*?'
+            r'class="[^"]*text[^"]*"[^>]*>([^<]{10,300})',
+            html, _re.DOTALL
+        ):
+            text = match.group(1).strip()
+            items.append(_make_item(
+                title=f"[VK Play] {text[:60]}",
+                summary=text[:300],
+                source="vkplay",
+                platform_region="ru",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url="https://vkplay.ru/play/game/morimens/",
+                engagement=0,
+                is_hot=False,
+                author="",
+                lang="ru",
+            ))
+
+        logger.info(f"VK Play: {len(items)} items")
+    except Exception as e:
+        logger.warning(f"VK Play failed: {e}")
+
+    return items
+
+
+def fetch_stopgame():
+    """从 StopGame.ru 获取忘却前夜评测和评分。"""
+    items = []
+    try:
+        resp = _get(
+            "https://stopgame.ru/game/morimens",
+            headers={"User-Agent": "Mozilla/5.0", "Accept-Language": "ru-RU,ru;q=0.9"},
+        )
+        html = resp.text
+        import re as _re
+
+        # Extract game rating
+        rating_match = _re.search(r'class="[^"]*rating[^"]*"[^>]*>(\d+\.?\d*)', html)
+        review_count_match = _re.search(r'(\d+)\s*(?:отзыв|оцен)', html)
+
+        if rating_match:
+            rating = float(rating_match.group(1))
+            count = int(review_count_match.group(1)) if review_count_match else 0
+            items.append(_make_item(
+                title=f"[StopGame] Morimens — {rating}/10 ({count} оценок)",
+                summary="",
+                source="stopgame",
+                platform_region="ru",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url="https://stopgame.ru/game/morimens",
+                engagement=count,
+                is_hot=count > 50,
+                author="StopGame.ru",
+                lang="ru",
+            ))
+
+        # Extract user reviews
+        for match in _re.finditer(
+            r'class="[^"]*review-text[^"]*"[^>]*>([^<]{10,300})',
+            html, _re.DOTALL
+        ):
+            text = match.group(1).strip()
+            items.append(_make_item(
+                title=f"[StopGame] {text[:60]}",
+                summary=text[:300],
+                source="stopgame",
+                platform_region="ru",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url="https://stopgame.ru/game/morimens",
+                engagement=0,
+                is_hot=False,
+                author="",
+                lang="ru",
+            ))
+
+        logger.info(f"StopGame: {len(items)} items")
+    except Exception as e:
+        logger.warning(f"StopGame failed: {e}")
+
+    return items
+
+
+# ─── Global English wiki/guide platforms ───────────────────
+
+def fetch_gacharevenue():
+    """从 GACHAREVENUE 获取忘却前夜收入数据。"""
+    items = []
+    try:
+        resp = _get(
+            "https://revenue.ennead.cc/games/morimens",
+            headers={"User-Agent": "Mozilla/5.0"},
+        )
+        html = resp.text
+        import re as _re
+
+        # Extract revenue data from the page
+        revenue_match = _re.search(r'"revenue"[:\s]*([\d,]+)', html)
+        if revenue_match:
+            revenue = revenue_match.group(1)
+            items.append(_make_item(
+                title=f"[GACHAREVENUE] Morimens 收入数据: ${revenue}",
+                summary="",
+                source="gacharevenue",
+                platform_region="global",
+                time_str=datetime.now(timezone.utc).isoformat(),
+                url="https://revenue.ennead.cc/games/morimens",
+                engagement=0,
+                is_hot=False,
+                author="GACHAREVENUE",
+                lang="en",
+            ))
+
+        logger.info(f"GACHAREVENUE: {len(items)} items")
+    except Exception as e:
+        logger.warning(f"GACHAREVENUE failed: {e}")
+
+    return items
+
+
+def fetch_miraheze_wiki():
+    """从 Miraheze Wiki 获取忘却前夜最近更改。"""
+    items = []
+    try:
+        resp = _get(
+            "https://morimenseveofoblivion.miraheze.org/w/api.php",
+            params={
+                "action": "query",
+                "list": "recentchanges",
+                "rcnamespace": "0",
+                "rclimit": "20",
+                "rcprop": "title|timestamp|user|comment|sizes",
+                "rctype": "edit|new",
+                "format": "json",
+            },
+            headers={"User-Agent": "MorimensNewsBot/1.0"},
+        )
+        data = resp.json()
+        changes = data.get("query", {}).get("recentchanges", [])
+
+        for change in changes:
+            title = change.get("title", "")
+            user = change.get("user", "")
+            comment = change.get("comment", "")
+            ts = change.get("timestamp", "")
+            diff = abs(change.get("newlen", 0) - change.get("oldlen", 0))
+
+            items.append(_make_item(
+                title=f"[Miraheze Wiki] {title}",
+                summary=comment[:200] if comment else f"Edited by {user} (+{diff} bytes)",
+                source="miraheze_wiki",
+                platform_region="global",
+                time_str=ts,
+                url=f"https://morimenseveofoblivion.miraheze.org/wiki/{title.replace(' ', '_')}",
+                engagement=diff,
+                is_hot=diff > 500,
+                author=user,
+                lang="en",
+            ))
+
+        logger.info(f"Miraheze Wiki: {len(items)} recent changes")
+    except Exception as e:
+        logger.warning(f"Miraheze Wiki failed: {e}")
+
+    return items
+
+
+# ─── 东南亚 & 中文补充 ─────────────────────────────────────
+
+def fetch_gamekee():
+    """从 GameKee Wiki 获取忘却前夜论坛和攻略更新。"""
+    items = []
+
+    # GameKee 论坛社区 API
+    try:
+        resp = _get(
+            "https://morimens.gamekee.com/v1/content/lists",
+            params={"page": 1, "size": 20, "order": "new"},
+            headers={"User-Agent": "Mozilla/5.0", "Referer": "https://www.gamekee.com/morimens/"},
+        )
+        if resp.status_code == 200:
+            try:
+                data = resp.json()
+                for item in data.get("data", {}).get("list", []) or []:
+                    items.append(_make_item(
+                        title=item.get("title", ""),
+                        summary=item.get("summary", "")[:300],
+                        source="gamekee",
+                        platform_region="cn",
+                        time_str=item.get("created_at", datetime.now(timezone.utc).isoformat()),
+                        url=f"https://www.gamekee.com/morimens/{item.get('content_id', '')}",
+                        engagement=item.get("view_num", 0),
+                        is_hot=item.get("view_num", 0) > 1000,
+                        author=item.get("user", {}).get("nickname", ""),
+                        lang="zh",
+                    ))
+            except (ValueError, KeyError):
+                pass
+    except Exception as e:
+        logger.warning(f"GameKee API failed: {e}")
+
+    # Fallback: scrape main wiki page for recent articles
+    if not items:
+        try:
+            resp = _get(
+                "https://www.gamekee.com/morimens/",
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            html = resp.text
+            import re as _re
+            for match in _re.finditer(
+                r'href="(/morimens/(\d+)\.html)"[^>]*>\s*([^<]+?)\s*</a>',
+                html
+            ):
+                path, article_id, title = match.groups()
+                title = title.strip()
+                if not title or len(title) < 5:
+                    continue
+                items.append(_make_item(
+                    title=f"[GameKee] {title}",
+                    summary="",
+                    source="gamekee",
+                    platform_region="cn",
+                    time_str=datetime.now(timezone.utc).isoformat(),
+                    url=f"https://www.gamekee.com{path}",
+                    engagement=0,
+                    is_hot=False,
+                    author="GameKee Wiki",
+                    lang="zh",
+                ))
+        except Exception as e:
+            logger.warning(f"GameKee scrape failed: {e}")
+
+    logger.info(f"GameKee: {len(items)} items")
+    return items
+
+
+def fetch_huiji_wiki():
+    """从灰机 Wiki 获取忘却前夜最近更改。"""
+    items = []
+    try:
+        resp = _get(
+            "https://morimens.huijiwiki.com/api.php",
+            params={
+                "action": "query",
+                "list": "recentchanges",
+                "rcnamespace": "0",
+                "rclimit": "20",
+                "rcprop": "title|timestamp|user|comment|sizes",
+                "rctype": "edit|new",
+                "format": "json",
+            },
+            headers={"User-Agent": "MorimensNewsBot/1.0"},
+        )
+        data = resp.json()
+        changes = data.get("query", {}).get("recentchanges", [])
+
+        for change in changes:
+            title = change.get("title", "")
+            user = change.get("user", "")
+            comment = change.get("comment", "")
+            ts = change.get("timestamp", "")
+            diff = abs(change.get("newlen", 0) - change.get("oldlen", 0))
+
+            items.append(_make_item(
+                title=f"[灰机Wiki] {title}",
+                summary=comment[:200] if comment else f"{user} 编辑 (+{diff} 字节)",
+                source="huiji_wiki",
+                platform_region="cn",
+                time_str=ts,
+                url=f"https://morimens.huijiwiki.com/wiki/{title.replace(' ', '_')}",
+                engagement=diff,
+                is_hot=diff > 500,
+                author=user,
+                lang="zh",
+            ))
+
+        logger.info(f"Huiji Wiki: {len(items)} recent changes")
+    except Exception as e:
+        logger.warning(f"Huiji Wiki failed: {e}")
 
     return items
 

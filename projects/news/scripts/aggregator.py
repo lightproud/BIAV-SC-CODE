@@ -52,7 +52,7 @@ BILIBILI_MORIMENS_CREATORS = {
 }
 
 # Valid source identifiers
-VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review'}
+VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion'}
 
 # Required fields for each news item
 REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
@@ -634,6 +634,94 @@ def fetch_steam_news():
     return items
 
 
+def fetch_steam_discussions():
+    """Fetch recent Steam Community discussions for Morimens (App ID: 3052450).
+
+    Steam has no public API for discussions, so we scrape the HTML listing page.
+    """
+    import subprocess as _sp
+    import re as _re
+
+    app_id = 3052450
+    base_url = f'https://steamcommunity.com/app/{app_id}/discussions/0/'
+    items = []
+
+    try:
+        result = _sp.run(
+            ['curl', '-s', '-L',
+             '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+             '-H', 'Accept-Language: en-US,en;q=0.9,zh-CN;q=0.8,ko;q=0.7,ja;q=0.6',
+             base_url],
+            capture_output=True, text=True, timeout=30,
+        )
+        if result.returncode != 0:
+            logger.warning(f'Steam Discussions curl failed: {result.stderr[:200]}')
+            return items
+
+        html = result.stdout
+
+        # Parse discussion threads from HTML
+        # Each thread has a forum_topic_searchresult block with title link and reply count
+        for match in _re.finditer(
+            r'class="forum_topic_searchresult"[^>]*>.*?'
+            r'href="(https://steamcommunity\.com/app/\d+/discussions/\d+/[^"]+)"[^>]*>'
+            r'\s*([^<]+?)\s*</a>.*?'
+            r'class="forum_topic_reply_count"[^>]*>\s*(\d+)\s*',
+            html, _re.DOTALL
+        ):
+            url, title, reply_count = match.groups()
+            title = title.strip()
+            replies = int(reply_count)
+
+            if not title:
+                continue
+
+            items.append({
+                'title': f'[Steam论坛] {title}',
+                'summary': '',
+                'source': 'steam_discussion',
+                'time': datetime.now(timezone.utc).isoformat(),
+                'url': url,
+                'engagement': replies,
+                'is_hot': replies >= 10,
+                'author': '',
+                'tags': ['steam_forum'],
+            })
+
+        # Also try the alternate HTML structure: forum_topic with separate elements
+        if not items:
+            for match in _re.finditer(
+                r'<a[^>]*href="(https://steamcommunity\.com/app/\d+/discussions/\d+/\d+/?)"[^>]*class="[^"]*forum_topic_overlay[^"]*"[^>]*>\s*</a>.*?'
+                r'class="topictitle"[^>]*>([^<]+)</a>.*?'
+                r'(?:class="[^"]*replycount[^"]*"[^>]*>\s*(\d+))?',
+                html, _re.DOTALL
+            ):
+                url = match.group(1)
+                title = match.group(2).strip()
+                replies = int(match.group(3)) if match.group(3) else 0
+
+                if not title:
+                    continue
+
+                items.append({
+                    'title': f'[Steam论坛] {title}',
+                    'summary': '',
+                    'source': 'steam_discussion',
+                    'time': datetime.now(timezone.utc).isoformat(),
+                    'url': url,
+                    'engagement': replies,
+                    'is_hot': replies >= 10,
+                    'author': '',
+                    'tags': ['steam_forum'],
+                })
+
+        logger.info(f'Steam Discussions: fetched {len(items)} threads')
+    except Exception as e:
+        logger.warning(f'Steam Discussions failed: {e}')
+
+    return items
+
+
 def fetch_fandom_wiki():
     """Fetch recent changes from Morimens Fandom wiki."""
     url = 'https://morimens.fandom.com/api.php'
@@ -826,6 +914,7 @@ def run():
         ('TapTap', fetch_taptap),
         ('SteamReviews', fetch_steam_reviews),
         ('SteamNews', fetch_steam_news),
+        ('SteamDiscussions', fetch_steam_discussions),
         ('FandomWiki', fetch_fandom_wiki),
         ('DiscordLocal', fetch_discord_local),
     ]

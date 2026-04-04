@@ -28,13 +28,59 @@ COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ
 PLATFORM_NAMES = {
     'steam': 'Steam',
     'bilibili': 'Bilibili',
-    'twitter': 'Twitter',
+    'twitter': 'Twitter/X',
     'discord': 'Discord',
     'nga': 'NGA',
     'taptap': 'TapTap',
     'youtube': 'YouTube',
     'reddit': 'Reddit',
     'official': 'Official',
+    'steam_discussion': 'Steam 论坛',
+    # 中文扩展
+    'weibo': '微博',
+    'xiaohongshu': '小红书',
+    'douyin': '抖音',
+    'tieba': '百度贴吧',
+    'zhihu': '知乎',
+    'bahamut': '巴哈姆特',
+    # 韩语社区
+    'naver_cafe': 'Naver Cafe',
+    'dcinside': 'DCInside',
+    'arca_live': 'Arca.live',
+    # 日语社区
+    'fivech': '5ch',
+    # 应用商店
+    'appstore': 'App Store',
+    'google_play': 'Google Play',
+    # 全球社交
+    'tiktok': 'TikTok',
+    'facebook': 'Facebook',
+    'telegram': 'Telegram',
+    'twitch': 'Twitch',
+    'instagram': 'Instagram',
+    # 同人/周边
+    'pixiv': 'Pixiv',
+    'lofter': 'Lofter',
+    'xianyu': '闲鱼',
+    'taobao': '淘宝',
+    'qq': 'QQ频道',
+    'qooapp': 'QooApp',
+    'epic': 'Epic Games Store',
+    # 日語
+    'gamerch': 'Gamerch Wiki',
+    'note_com': 'Note.com',
+    # 韓国語追加
+    'ruliweb': 'Ruliweb',
+    # ロシア語
+    'vkplay': 'VK Play',
+    'stopgame': 'StopGame.ru',
+    # Global English
+    'gacharevenue': 'GACHAREVENUE',
+    'miraheze_wiki': 'Miraheze Wiki',
+    # 中文补充
+    'gamekee': 'GameKee Wiki',
+    'huiji_wiki': '灰机Wiki',
+    'weixin': '微信公众号',
 }
 
 CUTOFF_HOURS = 24
