@@ -318,7 +318,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         <div class="deco-line"></div>
         <div class="intro">
           <strong>银芯（BIAV-SC）</strong>是 B.I.A.V. Studio 为「忘却前夜 Morimens」构建的 AI 增强系统。<br><br>
-          已接入 <span class="tag">仓库实时读取</span> <span class="tag">Extended Thinking</span> <span class="tag">跨会话记忆</span> <span class="tag">LaTeX</span> <span class="tag">Mermaid</span>，覆盖 63 角色事实圣经、每日社区情报循环、Wiki 权威站点等核心能力。<br><br>
+          已接入 <span class="tag">仓库实时读取</span> <span class="tag">网页搜索</span> <span class="tag">代码执行</span> <span class="tag">Extended Thinking</span> <span class="tag">跨会话记忆</span> <span class="tag">LaTeX</span> <span class="tag">Mermaid</span>，覆盖 63 角色事实圣经、每日社区情报循环、Wiki 权威站点等核心能力。<br><br>
           默认以 <strong>BIAV Analyst</strong> 身份应答。支持消息编辑、分支对话、文件上传、Artifacts 预览。
         </div>
         <span class="ver">v0.2.1</span>
@@ -407,7 +407,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.5.7';
+const APP_VERSION = '0.6.0';
 
 /* ===== State ===== */
 const S = {
@@ -477,6 +477,8 @@ const PROMPTS = {
 - list_files：列出目录内容，发现可用数据
 - search_code：搜索仓库代码和文本
 - save_memory：保存重要信息到跨会话记忆
+- web_search：搜索互联网获取最新信息（内置服务端工具）
+- run_javascript：在浏览器沙箱中执行 JS 代码，用于计算、数据处理
 
 当用户询问具体数据（角色属性、技能、日报详情、代码实现等）时，优先使用 read_file 读取原始文件，而不是仅凭预加载的摘要回答。仓库中的关键数据路径：
 - projects/wiki/data/db/characters.json — 63角色完整数据
@@ -844,6 +846,17 @@ const TOOLS = [
       },
       required: ['query']
     }
+  },
+  {
+    name: 'run_javascript',
+    description: '在浏览器沙箱中执行 JavaScript 代码并返回输出。用于计算、数据处理、生成内容等。使用 console.log() 输出结果。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        code: { type: 'string', description: 'JavaScript code to execute. Use console.log() for output.' }
+      },
+      required: ['code']
+    }
   }
 ];
 
@@ -877,6 +890,45 @@ async function execTool(name, input) {
       const data = await res.json();
       return data.items?.slice(0, 10).map(i => `${i.path} (score: ${i.score?.toFixed(1)})`).join('\n') || 'No results found';
     }
+    if (name === 'run_javascript') {
+      return new Promise((resolve) => {
+        const iframe = document.createElement('iframe');
+        iframe.sandbox = 'allow-scripts';
+        iframe.style.display = 'none';
+        document.body.appendChild(iframe);
+        const logs = [];
+        const timer = setTimeout(() => {
+          window.removeEventListener('message', handler);
+          iframe.remove();
+          resolve(logs.join('\n') + '\n[Timeout: exceeded 10s]');
+        }, 10000);
+        function handler(e) {
+          if (e.source !== iframe.contentWindow) return;
+          if (e.data?.t === 'log') logs.push(e.data.v);
+          if (e.data?.t === 'done' || e.data?.t === 'err') {
+            clearTimeout(timer);
+            window.removeEventListener('message', handler);
+            iframe.remove();
+            if (e.data.t === 'err') logs.push('Error: ' + e.data.v);
+            resolve(logs.join('\n') || '(no output)');
+          }
+        }
+        window.addEventListener('message', handler);
+        const code = input.code;
+        iframe.srcdoc = '<script>' +
+          'console.log=console.warn=console.error=(...a)=>{' +
+            'parent.postMessage({t:"log",v:a.map(x=>typeof x==="object"?JSON.stringify(x,null,2):String(x)).join(" ")},"*")' +
+          '};' +
+          'try{' +
+            'const r=(0,eval)('+JSON.stringify(code)+');' +
+            'if(r!==undefined)console.log(r);' +
+            'parent.postMessage({t:"done"},"*")' +
+          '}catch(e){' +
+            'parent.postMessage({t:"err",v:e.message},"*")' +
+          '}' +
+        '<\/script>';
+      });
+    }
     return 'Unknown tool';
   } catch (e) {
     return `Error: ${e.message}`;
@@ -890,7 +942,6 @@ async function streamClaude(conv, signal) {
   if (!key) throw new Error('Anthropic API Key not configured. Click the gear icon to set it.');
 
   const sysPrompt = getSystemPrompt();
-  const useTools = (currentPrompt === 'biav');
 
   function buildMsgs() {
     return conv.messages.slice(0, -1).filter(m => m.role !== 'system').map(m => {
@@ -911,6 +962,12 @@ async function streamClaude(conv, signal) {
   const cfg2 = loadConfig();
   const useThinking = cfg2.enableThinking && !S.model.includes('haiku');
 
+  // Build tools array: user-defined tools + server tools
+  const allTools = [
+    { type: 'web_search_20250305', name: 'web_search' },
+    ...TOOLS
+  ];
+
   // API messages for tool use loop (separate from display messages)
   let apiMessages = buildMsgs();
   const MAX_TOOL_ROUNDS = 8;
@@ -921,7 +978,7 @@ async function streamClaude(conv, signal) {
       max_tokens: useThinking ? 16000 : 8192,
       stream: true,
       ...(sysPrompt ? { system: sysPrompt } : {}),
-      ...(useTools ? { tools: TOOLS } : {}),
+      tools: allTools,
       ...(useThinking ? { thinking: { type: 'enabled', budget_tokens: 8000 } } : {}),
       messages: apiMessages,
     };
@@ -980,10 +1037,18 @@ async function streamClaude(conv, signal) {
             if (j.content_block?.type === 'thinking') {
               inThinking = true;
               thinkingText = '';
+            } else if (j.content_block?.type === 'web_search_tool_result') {
+              // Server-side search results — show indicator
+              appendDelta('\n\n> 🔍 搜索完成\n\n');
             } else if (j.content_block?.type === 'tool_use') {
-              currentToolId = j.content_block.id;
-              currentToolName = j.content_block.name;
-              currentToolInput = '';
+              if (j.content_block.name === 'web_search') {
+                // Server tool — show indicator, don't track for client execution
+                appendDelta('\n\n> 🔍 正在搜索网页...\n\n');
+              } else {
+                currentToolId = j.content_block.id;
+                currentToolName = j.content_block.name;
+                currentToolInput = '';
+              }
             }
           } else if (j.type === 'content_block_delta') {
             if (j.delta?.type === 'thinking_delta' && j.delta.thinking) {
