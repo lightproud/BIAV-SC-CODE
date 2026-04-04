@@ -802,6 +802,66 @@ def run_phase3(keyword_index: dict, ai_results: dict = None):
     print("\n## Knowledge Graph")
     rebuild_knowledge_graph()
 
+    # Selective memory: check for archival candidates
+    print("\n## Selective Memory")
+    selective_memory_check()
+
+    # Reflexion: scan for failure patterns
+    print("\n## Reflexion")
+    run_reflexion()
+
+
+def selective_memory_check():
+    """Check for files that should be compressed or archived."""
+    try:
+        from memrl import compute_utility, suggest_archival
+        utility = compute_utility()
+        archival = suggest_archival(utility)
+        if archival:
+            print(f"  - {len(archival)} files suggested for archival:")
+            for a in archival[:3]:
+                print(f"    - {a['file']}: {a['reason']}")
+        else:
+            print(f"  - No files need archival (all healthy)")
+
+        # Check for bloated files
+        bloated = []
+        for fp in sorted(REPO.glob("memory/*.md")):
+            try:
+                lines = len(fp.read_text(encoding="utf-8").splitlines())
+            except (OSError, UnicodeDecodeError):
+                continue
+            rel = str(fp.relative_to(REPO))
+            u = utility.get(rel, {}).get("utility", 0.5)
+            if lines > 400 and u < 0.6:
+                bloated.append({"file": rel, "lines": lines, "utility": u})
+
+        if bloated:
+            print(f"  - {len(bloated)} bloated + low-utility files (candidates for compression):")
+            for b in bloated:
+                print(f"    - {b['file']}: {b['lines']} lines, utility={b['utility']:.3f}")
+        else:
+            print(f"  - No bloated files need compression")
+
+    except ImportError:
+        print("  - memrl.py not available, skipping")
+    except Exception as e:
+        print(f"  - Selective memory error: {e}")
+
+
+def run_reflexion():
+    """Run Reflexion failure analysis."""
+    try:
+        from reflexion import scan_all
+        report = scan_all()
+        n_failures = report.get("failures", {}).get("total", 0)
+        n_patterns = report.get("patterns", 0)
+        print(f"  - {n_failures} failure signals, {n_patterns} patterns found")
+    except ImportError:
+        print("  - reflexion.py not available, skipping")
+    except Exception as e:
+        print(f"  - Reflexion error: {e}")
+
 
 def main():
     args = sys.argv[1:]

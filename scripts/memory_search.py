@@ -515,14 +515,21 @@ def search(query: str, top_k: int = 5, use_reranker: bool = True) -> list[dict]:
         print("  ⚠ 索引不存在，请先运行: python scripts/memory_search.py --build")
         return []
 
-    q_vec = query_to_vector(query, index["idf"], index["vocabulary"])
+    is_dense = index.get("meta", {}).get("layer", "tfidf") != "tfidf"
+
+    if is_dense:
+        q_vec = embedding_query_vector(query)
+    else:
+        q_vec = query_to_vector(query, index["idf"], index["vocabulary"])
+
     if not q_vec:
         return []
 
     # Score all chunks
+    sim_fn = cosine_similarity_dense if is_dense else cosine_similarity
     results = []
     for chunk_id, vec in index["vectors"].items():
-        sim = cosine_similarity(q_vec, vec)
+        sim = sim_fn(q_vec, vec)
         if sim > 0.01:  # threshold
             meta = index["chunks"].get(chunk_id, {})
             results.append({
@@ -548,7 +555,17 @@ def search(query: str, top_k: int = 5, use_reranker: bool = True) -> list[dict]:
     if use_reranker:
         deduped = rerank(deduped, query)
 
-    return deduped[:top_k]
+    final = deduped[:top_k]
+
+    # Reflexion: log search failures for pattern analysis
+    if not final:
+        try:
+            from reflexion import log_search_failure
+            log_search_failure(query, tokenize(query))
+        except (ImportError, Exception):
+            pass
+
+    return final
 
 
 # ============================================================
@@ -556,8 +573,97 @@ def search(query: str, top_k: int = 5, use_reranker: bool = True) -> list[dict]:
 # ============================================================
 
 
+# ============================================================
+# Layer 2: API Embedding (optional upgrade)
+# ============================================================
+
+
+def get_embedding_client():
+    """Get Voyage AI client if available."""
+    api_key = os.environ.get("VOYAGE_API_KEY")
+    if not api_key:
+        return None
+    try:
+        import voyageai
+        return voyageai.Client(api_key=api_key)
+    except ImportError:
+        return None
+
+
+def build_embedding_index(chunks: list[dict]) -> dict:
+    """Build dense embedding vectors using Voyage AI API."""
+    client = get_embedding_client()
+    if not client:
+        return {}
+
+    texts = [c["text"][:2000] for c in chunks]  # Voyage limit
+    print(f"  Voyage AI: encoding {len(texts)} chunks...")
+
+    # Batch encode (Voyage supports up to 128 per batch)
+    all_embeddings = []
+    batch_size = 64
+    for i in range(0, len(texts), batch_size):
+        batch = texts[i : i + batch_size]
+        try:
+            result = client.embed(batch, model="voyage-3", input_type="document")
+            all_embeddings.extend(result.embeddings)
+        except Exception as e:
+            print(f"  Voyage API error at batch {i}: {e}")
+            return {}
+
+    if len(all_embeddings) != len(chunks):
+        print(f"  Embedding count mismatch: {len(all_embeddings)} vs {len(chunks)}")
+        return {}
+
+    # Build index with dense vectors
+    vectors = {}
+    chunk_meta = {}
+    for chunk, emb in zip(chunks, all_embeddings):
+        cid = chunk["chunk_id"]
+        # Store as list (dense vector)
+        vectors[cid] = emb
+        chunk_meta[cid] = {
+            "file": chunk["file"],
+            "preview": chunk["text"][:200],
+            "offset": chunk["offset"],
+        }
+
+    return {
+        "vocabulary": {},  # Not used for embeddings
+        "idf": {},
+        "vectors": vectors,
+        "chunks": chunk_meta,
+    }
+
+
+def embedding_query_vector(query: str) -> list[float] | None:
+    """Encode a query using Voyage AI."""
+    client = get_embedding_client()
+    if not client:
+        return None
+    try:
+        result = client.embed([query], model="voyage-3", input_type="query")
+        return result.embeddings[0]
+    except Exception:
+        return None
+
+
+def cosine_similarity_dense(v1: list, v2: list) -> float:
+    """Cosine similarity for dense vectors (lists)."""
+    dot = sum(a * b for a, b in zip(v1, v2))
+    norm1 = sum(a * a for a in v1) ** 0.5
+    norm2 = sum(a * a for a in v2) ** 0.5
+    if norm1 == 0 or norm2 == 0:
+        return 0.0
+    return dot / (norm1 * norm2)
+
+
 def build_index() -> dict:
-    """Build complete vector index from all knowledge files."""
+    """Build complete vector index from all knowledge files.
+
+    Automatically selects Layer 2 (Voyage AI) if VOYAGE_API_KEY is set,
+    otherwise falls back to Layer 1 (TF-IDF).
+    """
     files = discover_files()
     print(f"  发现 {len(files)} 个知识文件")
 
@@ -568,14 +674,26 @@ def build_index() -> dict:
 
     print(f"  切分为 {len(all_chunks)} 个文本块")
 
-    index = build_tfidf_index(all_chunks)
+    # Try Layer 2 first
+    layer = "tfidf"
+    if os.environ.get("VOYAGE_API_KEY"):
+        print("  检测到 VOYAGE_API_KEY → 使用 Layer 2 (API Embedding)")
+        index = build_embedding_index(all_chunks)
+        if index and index.get("vectors"):
+            layer = "voyage-3"
+        else:
+            print("  Layer 2 失败，回退到 Layer 1 (TF-IDF)")
+            index = build_tfidf_index(all_chunks)
+    else:
+        index = build_tfidf_index(all_chunks)
+
     index["meta"] = {
         "generated": TODAY.isoformat(),
         "generator": "memory_search.py",
         "files_count": len(files),
         "chunks_count": len(all_chunks),
-        "vocab_size": len(index["vocabulary"]),
-        "layer": "tfidf",
+        "vocab_size": len(index.get("vocabulary", {})),
+        "layer": layer,
     }
 
     # Save
