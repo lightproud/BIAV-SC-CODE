@@ -365,7 +365,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script>
-const APP_VERSION = '0.3.1';
+const APP_VERSION = '0.4.0';
 
 /* ===== State ===== */
 const S = {
@@ -696,72 +696,211 @@ async function sendMessage(text) {
   finishStream();
 }
 
-/* -- Claude API (direct from browser) -- */
+/* ===== Tool Use: GitHub Repo Access ===== */
+const REPO_OWNER = 'lightproud';
+const REPO_NAME = 'brain-in-a-vat';
+const GITHUB_API = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}`;
+
+const TOOLS = [
+  {
+    name: 'read_file',
+    description: '读取仓库中的文件内容。可读取 memory/、projects/、assets/、scripts/ 等任意路径的文件。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        path: { type: 'string', description: '文件路径，例如 memory/project-status.md 或 projects/wiki/data/db/characters.json' }
+      },
+      required: ['path']
+    }
+  },
+  {
+    name: 'list_files',
+    description: '列出仓库目录下的文件和子目录。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        path: { type: 'string', description: '目录路径，例如 memory/ 或 projects/news/output/。留空列出根目录。', default: '' }
+      },
+      required: []
+    }
+  },
+  {
+    name: 'search_code',
+    description: '在仓库中搜索代码或文本内容。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        query: { type: 'string', description: '搜索关键词' }
+      },
+      required: ['query']
+    }
+  }
+];
+
+async function execTool(name, input) {
+  try {
+    if (name === 'read_file') {
+      const res = await fetch(`${GITHUB_API}/contents/${encodeURIComponent(input.path).replace(/%2F/g, '/')}`, {
+        headers: { 'Accept': 'application/vnd.github.v3.raw' }
+      });
+      if (!res.ok) return `Error: file not found (${res.status}) - ${input.path}`;
+      const text = await res.text();
+      // Truncate very large files
+      if (text.length > 30000) return text.slice(0, 30000) + '\n\n... (truncated, file too large)';
+      return text;
+    }
+    if (name === 'list_files') {
+      const p = (input.path || '').replace(/\/+$/, '');
+      const res = await fetch(`${GITHUB_API}/contents/${p}`, {
+        headers: { 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return `Error: directory not found (${res.status})`;
+      const items = await res.json();
+      if (!Array.isArray(items)) return 'Error: path is a file, not a directory';
+      return items.map(i => `${i.type === 'dir' ? '📁' : '📄'} ${i.name} ${i.size ? `(${i.size}B)` : ''}`).join('\n');
+    }
+    if (name === 'search_code') {
+      const res = await fetch(`https://api.github.com/search/code?q=${encodeURIComponent(input.query)}+repo:${REPO_OWNER}/${REPO_NAME}`, {
+        headers: { 'Accept': 'application/vnd.github.v3+json' }
+      });
+      if (!res.ok) return `Error: search failed (${res.status})`;
+      const data = await res.json();
+      return data.items?.slice(0, 10).map(i => `${i.path} (score: ${i.score?.toFixed(1)})`).join('\n') || 'No results found';
+    }
+    return 'Unknown tool';
+  } catch (e) {
+    return `Error: ${e.message}`;
+  }
+}
+
+/* -- Claude API (direct from browser, with tool use) -- */
 async function streamClaude(conv, signal) {
   const cfg = loadConfig();
   const key = cfg.anthropic;
   if (!key) throw new Error('Anthropic API Key not configured. Click the gear icon to set it.');
 
   const sysPrompt = getSystemPrompt();
-  const msgs = conv.messages.slice(0, -1).filter(m => m.role !== 'system').map(m => {
-    // Build multimodal content if files are attached
-    if (m._files && m._files.length > 0) {
-      const content = [];
-      // Add images
-      m._files.filter(f => f.type.startsWith('image/')).forEach(f => {
-        content.push({ type: 'image', source: { type: 'base64', media_type: f.type, data: f.base64 } });
-      });
-      // Add text (including text file contents)
-      content.push({ type: 'text', text: m.content });
-      return { role: m.role, content };
-    }
-    return { role: m.role, content: m.content };
-  });
+  const promptSel = $('#prompt-select').value;
+  const useTools = (promptSel === 'biav');
 
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'x-api-key': key,
-      'anthropic-version': '2023-06-01',
-      'anthropic-dangerous-direct-browser-access': 'true',
-    },
-    body: JSON.stringify({
+  function buildMsgs() {
+    return conv.messages.slice(0, -1).filter(m => m.role !== 'system').map(m => {
+      if (m._toolMessages) return null; // skip marker
+      if (m._files && m._files.length > 0) {
+        const content = [];
+        m._files.filter(f => f.type.startsWith('image/')).forEach(f => {
+          content.push({ type: 'image', source: { type: 'base64', media_type: f.type, data: f.base64 } });
+        });
+        content.push({ type: 'text', text: m.content });
+        return { role: m.role, content };
+      }
+      return { role: m.role, content: m.content };
+    }).filter(Boolean);
+  }
+
+  // API messages for tool use loop (separate from display messages)
+  let apiMessages = buildMsgs();
+  const MAX_TOOL_ROUNDS = 8;
+
+  for (let round = 0; round <= MAX_TOOL_ROUNDS; round++) {
+    const body = {
       model: S.model,
       max_tokens: 8192,
       stream: true,
       ...(sysPrompt ? { system: sysPrompt } : {}),
-      messages: msgs,
-    }),
-    signal,
-  });
+      ...(useTools ? { tools: TOOLS } : {}),
+      messages: apiMessages,
+    };
 
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`Claude API ${res.status}: ${err}`);
-  }
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': key,
+        'anthropic-version': '2023-06-01',
+        'anthropic-dangerous-direct-browser-access': 'true',
+      },
+      body: JSON.stringify(body),
+      signal,
+    });
 
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buf = '';
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buf += decoder.decode(value, { stream: true });
-    const lines = buf.split('\n');
-    buf = lines.pop() || '';
-    for (const line of lines) {
-      if (!line.startsWith('data: ')) continue;
-      const data = line.slice(6);
-      if (data === '[DONE]') return;
-      try {
-        const j = JSON.parse(data);
-        if (j.type === 'content_block_delta' && j.delta?.text) {
-          appendDelta(j.delta.text);
-        }
-      } catch {}
+    if (!res.ok) {
+      const err = await res.text();
+      throw new Error(`Claude API ${res.status}: ${err}`);
     }
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = '';
+    let toolCalls = [];
+    let currentToolId = null;
+    let currentToolName = null;
+    let currentToolInput = '';
+    let stopReason = null;
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      buf += decoder.decode(value, { stream: true });
+      const lines = buf.split('\n');
+      buf = lines.pop() || '';
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue;
+        const data = line.slice(6);
+        if (data === '[DONE]') break;
+        try {
+          const j = JSON.parse(data);
+          if (j.type === 'content_block_start' && j.content_block?.type === 'tool_use') {
+            currentToolId = j.content_block.id;
+            currentToolName = j.content_block.name;
+            currentToolInput = '';
+          } else if (j.type === 'content_block_delta') {
+            if (j.delta?.type === 'text_delta' && j.delta.text) {
+              appendDelta(j.delta.text);
+            } else if (j.delta?.type === 'input_json_delta' && j.delta.partial_json) {
+              currentToolInput += j.delta.partial_json;
+            }
+          } else if (j.type === 'content_block_stop' && currentToolId) {
+            let input = {};
+            try { input = JSON.parse(currentToolInput); } catch {}
+            toolCalls.push({ id: currentToolId, name: currentToolName, input });
+            currentToolId = null;
+            currentToolName = null;
+            currentToolInput = '';
+          } else if (j.type === 'message_delta' && j.delta?.stop_reason) {
+            stopReason = j.delta.stop_reason;
+          }
+        } catch {}
+      }
+    }
+
+    // If no tool calls, we're done
+    if (stopReason !== 'tool_use' || toolCalls.length === 0) break;
+
+    // Show tool use indicator
+    const toolNames = toolCalls.map(t => t.name === 'read_file' ? t.input.path : t.name === 'list_files' ? `ls ${t.input.path||'/'}` : t.input.query);
+    appendDelta(`\n\n> 🔧 ${toolNames.join(', ')}\n\n`);
+
+    // Build assistant message with tool_use blocks
+    const assistantContent = [];
+    // Include any text that was streamed
+    const currentText = conv.messages[conv.messages.length - 1].content;
+    const textBeforeTools = currentText.split('\n\n> 🔧')[0].trim();
+    if (textBeforeTools) assistantContent.push({ type: 'text', text: textBeforeTools });
+    for (const tc of toolCalls) {
+      assistantContent.push({ type: 'tool_use', id: tc.id, name: tc.name, input: tc.input });
+    }
+
+    // Execute tools and collect results
+    const toolResults = [];
+    for (const tc of toolCalls) {
+      const result = await execTool(tc.name, tc.input);
+      toolResults.push({ type: 'tool_result', tool_use_id: tc.id, content: result });
+    }
+
+    // Append to API messages for next round
+    apiMessages.push({ role: 'assistant', content: assistantContent });
+    apiMessages.push({ role: 'user', content: toolResults });
   }
 }
 
