@@ -98,6 +98,21 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 #empty-state .ver{color:#3a3520;font-size:11px;margin-top:20px;letter-spacing:1px}
 #msg-container{max-width:720px;margin:0 auto;padding:24px 16px}
 
+/* Message entrance animation */
+.msg{margin-bottom:16px;animation:msgIn 0.25s ease-out}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* Loading indicator (thinking dots) */
+.thinking-dots{display:flex;align-items:center;gap:5px;padding:8px 0}
+.thinking-dots span{display:inline-block;width:6px;height:6px;border-radius:50%;background:#c5a356;animation:dotPulse 1.2s ease-in-out infinite}
+.thinking-dots span:nth-child(2){animation-delay:0.15s}
+.thinking-dots span:nth-child(3){animation-delay:0.3s}
+@keyframes dotPulse{0%,60%,100%{opacity:.25;transform:scale(.8)}30%{opacity:1;transform:scale(1)}}
+
+/* Send button click animation */
+@keyframes sendPop{0%{transform:scale(1)}50%{transform:scale(.88)}100%{transform:scale(1)}}
+.send-pop{animation:sendPop .2s ease-out}
+
 /* Message bubbles */
 .msg{margin-bottom:16px}
 .msg-user{display:flex;justify-content:flex-end}
@@ -184,7 +199,7 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 /* Input area */
 #input-area{border-top:1px solid #2a2515;padding:12px 16px}
 #input-wrap{max-width:720px;margin:0 auto;display:flex;align-items:flex-end;gap:8px}
-#input{flex:1;resize:none;border-radius:12px;padding:12px 16px;background:#1e1a10;border:1px solid #2a2515;color:#d4c9a8;font-size:14px;font-family:inherit;font-weight:500;line-height:1.6;outline:none;transition:border-color .15s;min-height:44px;max-height:200px}
+#input{flex:1;resize:none;border-radius:12px;padding:12px 16px;background:#1e1a10;border:1px solid #2a2515;color:#d4c9a8;font-size:14px;font-family:inherit;font-weight:500;line-height:1.6;outline:none;transition:border-color .15s,height .1s ease;min-height:44px;max-height:200px}
 #input::placeholder{color:#5a5540}
 #input:focus{border-color:#8a7a48}
 #send-btn{flex-shrink:0;width:40px;height:40px;border-radius:12px;border:none;background:#c5a356;color:#0a0b10;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s}
@@ -413,7 +428,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.8.1';
+const APP_VERSION = '0.8.2';
 
 /* ===== State ===== */
 const S = {
@@ -726,7 +741,9 @@ function submitEditMsg(idx, newText) {
   conv.messages.push({ role: 'user', content: newText });
   conv.messages.push({ role: 'assistant', content: '' });
   S.streaming = true;
+  _firstDeltaReceived = false;
   renderMessages();
+  showThinkingDots();
   stopBtn.style.display = 'flex';
   sendBtn.style.display = 'none';
   const ctrl = new AbortController();
@@ -739,30 +756,89 @@ function submitEditMsg(idx, newText) {
   }).finally(() => finishStream());
 }
 
+/* ===== Debounced streaming render ===== */
+let _renderRAF = 0;
+let _renderTimeout = 0;
+const RENDER_DEBOUNCE_MS = 80;
+
+/* ===== Smart scroll: only auto-scroll if user hasn't scrolled up ===== */
+let userScrolledUp = false;
+messagesEl.addEventListener('scroll', () => {
+  const threshold = 60;
+  userScrolledUp = (messagesEl.scrollHeight - messagesEl.scrollTop - messagesEl.clientHeight) > threshold;
+});
+
+function smoothScrollToBottom() {
+  if (userScrolledUp) return;
+  messagesEl.scrollTo({ top: messagesEl.scrollHeight, behavior: 'smooth' });
+}
+
+/* ===== Loading indicator (thinking dots) ===== */
+let _thinkingDotsEl = null;
+function showThinkingDots() {
+  removeThinkingDots();
+  const contentEl = messagesEl.querySelector('#msg-container .msg:last-child .msg-content');
+  if (!contentEl) return;
+  _thinkingDotsEl = document.createElement('div');
+  _thinkingDotsEl.className = 'thinking-dots';
+  _thinkingDotsEl.innerHTML = '<span></span><span></span><span></span>';
+  contentEl.appendChild(_thinkingDotsEl);
+  smoothScrollToBottom();
+}
+function removeThinkingDots() {
+  if (_thinkingDotsEl) { _thinkingDotsEl.remove(); _thinkingDotsEl = null; }
+}
+
+let _firstDeltaReceived = false;
+
 function appendDelta(text) {
   const conv = currentConv();
   if (!conv) return;
   const last = conv.messages[conv.messages.length - 1];
   if (last && last.role === 'assistant') {
     last.content += text;
-    // Incremental render for performance
-    const contentEl = messagesEl.querySelector('#msg-container .msg:last-child .msg-content');
-    if (contentEl) {
-      contentEl.innerHTML = renderMd(last.content);
-      contentEl.classList.add('typing');
-      messagesEl.scrollTop = messagesEl.scrollHeight;
+
+    // Remove thinking dots on first real content
+    if (!_firstDeltaReceived) {
+      _firstDeltaReceived = true;
+      removeThinkingDots();
     }
+
+    // Debounced markdown re-render via rAF + timeout
+    if (_renderRAF) cancelAnimationFrame(_renderRAF);
+    clearTimeout(_renderTimeout);
+    _renderTimeout = setTimeout(() => {
+      _renderRAF = requestAnimationFrame(() => {
+        const contentEl = messagesEl.querySelector('#msg-container .msg:last-child .msg-content');
+        if (contentEl) {
+          contentEl.innerHTML = renderMd(last.content);
+          contentEl.classList.add('typing');
+          smoothScrollToBottom();
+        }
+      });
+    }, RENDER_DEBOUNCE_MS);
   }
 }
 
 function finishStream() {
   S.streaming = false;
   S.abortCtrl = null;
+  _firstDeltaReceived = false;
+  removeThinkingDots();
+  // Cancel any pending debounced render and do a final full render
+  if (_renderRAF) cancelAnimationFrame(_renderRAF);
+  clearTimeout(_renderTimeout);
+  const conv = currentConv();
+  const contentEl = messagesEl.querySelector('#msg-container .msg:last-child .msg-content');
+  if (contentEl) {
+    const last = conv && conv.messages[conv.messages.length - 1];
+    if (last && last.role === 'assistant') contentEl.innerHTML = renderMd(last.content);
+    contentEl.classList.remove('typing');
+  }
   stopBtn.style.display = 'none';
   sendBtn.style.display = 'flex';
   sendBtn.disabled = (!inputEl.value.trim() && pendingFiles.length === 0);
-  const contentEl = messagesEl.querySelector('#msg-container .msg:last-child .msg-content');
-  if (contentEl) contentEl.classList.remove('typing');
+  userScrolledUp = false;
   saveConversations();
   addArtifactButtons();
 }
@@ -802,8 +878,10 @@ async function sendMessage(text) {
   conv.provider = S.provider;
   conv.model = S.model;
   S.streaming = true;
+  _firstDeltaReceived = false;
   renderMessages();
   renderSidebar();
+  showThinkingDots();
 
   stopBtn.style.display = 'flex';
   sendBtn.style.display = 'none';
@@ -2015,6 +2093,8 @@ inputEl.addEventListener('keydown', e => {
 sendBtn.onclick = () => {
   const text = inputEl.value.trim();
   if (text && !S.streaming) {
+    sendBtn.classList.add('send-pop');
+    setTimeout(() => sendBtn.classList.remove('send-pop'), 200);
     inputEl.value = '';
     adjustInput();
     sendMessage(text);
