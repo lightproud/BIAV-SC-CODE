@@ -1,0 +1,53 @@
+{
+  "date": "2026-04-03",
+  "archived_at": "2026-04-04T15:55:55.622584+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-03T14:23:43+00:00",
+      "lang": "spanish",
+      "title": "[正面] Buen juego por turnos, y eso que no me gustan tant...",
+      "summary": "Buen juego por turnos, y eso que no me gustan tanto el genero. También añado que, su tono oscuro y la historia estilo lovercraftiana es lo que más atrapa",
+      "url": "https://steamcommunity.com/profiles/76561199089856615/recommended/3052450",
+      "author": "76561199089856615",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Buen juego por turnos, y eso que no me gustan tanto el genero. También añado que, su tono oscuro y la historia estilo lovercraftiana es lo que más atrapa",
+      "timestamp_created": 1775226223,
+      "playtime_forever": 6044
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-03T03:28:55+00:00",
+      "lang": "latam",
+      "title": "[正面] G",
+      "summary": "G",
+      "url": "https://steamcommunity.com/profiles/76561199548441986/recommended/3052450",
+      "author": "76561199548441986",
+      "engagement": 0,
+      "language": "latam",
+      "voted_up": true,
+      "review": "G",
+      "timestamp_created": 1775186935,
+      "playtime_forever": 2863
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-02T16:30:43+00:00",
+      "lang": "spanish",
+      "title": "[正面] Mira que yo odio los gachas con toda mi alma, pero...",
+      "summary": "Mira que yo odio los gachas con toda mi alma, pero este juego a sido la excepción, la jugabilidad e historia están increíbles y esta gratis coño, dale una oportunidad.",
+      "url": "https://steamcommunity.com/profiles/76561198965207281/recommended/3052450",
+      "author": "76561198965207281",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Mira que yo odio los gachas con toda mi alma, pero este juego a sido la excepción, la jugabilidad e historia están increíbles y esta gratis coño, dale una oportunidad.",
+      "timestamp_created": 1775147443,
+      "playtime_forever": 1410
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 # News 聚合器 — 会话上下文
 
 > 启动时请先阅读根目录 `CLAUDE.md` 了解全局。
-> 最后更新：2026-04-01 by 战略中心
+> 最后更新：2026-04-04 by Code-news
 
 ## 当前状态：收缩夯实阶段
 
@@ -25,6 +25,14 @@
 - [x] B站 + Steam 数据源接通
 - [x] Discord 全量归档系统（537 频道）
 - [x] split_output.py Steam 数据标准化修复
+
+## 多平台按日归档
+- **已完成**：`archive_platforms.py` — 将 *-latest.json 按日期存入 `data/platforms/{platform}/YYYY-MM-DD.json`
+- 覆盖平台：Steam / Bilibili / Official / Reddit / Twitter / YouTube / NGA / TapTap
+- Discord 已有独立归档器（`discord_archiver.py`），不重复
+- 已集成到 `update-news.yml` workflow，每次聚合后自动归档
+- 支持去重合并、指定日期归档、统计报表
+- 运行方式：`python scripts/archive_platforms.py [--date YYYY-MM-DD] [--stats]`
 
 ## 后续待做（非本周）
 - Reddit 子版块名需确认（r/Morimens 是否存在）
