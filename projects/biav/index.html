@@ -74,7 +74,7 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 #model-btn{display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:8px;background:#1e1a10;border:1px solid #2a2515;color:#6b6040;font-size:13px;cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s;white-space:nowrap;flex-shrink:0}
 #model-btn:hover{border-color:#8a7a48;color:#d4c9a8}
 #model-btn .provider-tag{color:#c5a356;font-size:11px;font-weight:700}
-#model-dropdown{display:none;position:absolute;top:100%;left:0;margin-top:4px;width:300px;border-radius:8px;border:1px solid #2a2515;background:#1e1a10;z-index:50;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+#model-dropdown{display:none;position:absolute;top:100%;left:0;margin-top:4px;width:300px;border-radius:8px;border:1px solid #2a2515;background:#1e1a10;z-index:500;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.5)}
 #model-dropdown.open{display:block}
 .provider-group-label{padding:8px 12px;font-size:11px;font-weight:700;color:#8a7a48;border-bottom:1px solid #2a2515;display:flex;align-items:center;gap:6px}
 .provider-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
@@ -210,10 +210,15 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 .topbar-btn{background:none;border:none;color:#6b6040;cursor:pointer;padding:4px;transition:color .15s}
 .topbar-btn:hover{color:#d4c9a8}
 
-/* System prompt selector */
-#prompt-select{padding:4px 8px;border-radius:6px;background:#1e1a10;border:1px solid #2a2515;color:#6b6040;font-size:12px;font-family:inherit;font-weight:500;cursor:pointer;outline:none;max-width:140px}
-#prompt-select:hover{border-color:#8a7a48;color:#d4c9a8}
-#prompt-select option{background:#1e1a10;color:#d4c9a8}
+/* System prompt selector (custom dropdown) */
+#prompt-wrap{position:relative}
+#prompt-btn{display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:6px;background:#1e1a10;border:1px solid #2a2515;color:#6b6040;font-size:12px;font-family:inherit;font-weight:500;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .15s}
+#prompt-btn:hover{border-color:#8a7a48;color:#d4c9a8}
+#prompt-dropdown{display:none;position:absolute;top:100%;left:0;margin-top:4px;min-width:180px;border-radius:8px;border:1px solid #2a2515;background:#1e1a10;z-index:500;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+#prompt-dropdown.open{display:block}
+.prompt-option{display:block;width:100%;text-align:left;padding:8px 14px;font-size:12px;color:#d4c9a8;background:none;border:none;cursor:pointer;font-family:inherit;font-weight:500;transition:background .1s}
+.prompt-option:hover{background:#241f14}
+.prompt-option.selected{color:#e2c97e;background:#241f14}
 
 /* Settings tabs */
 .settings-tabs{display:flex;gap:0;margin-bottom:16px;border-bottom:1px solid #2a2515}
@@ -245,7 +250,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
   #artifacts{position:fixed;right:0;top:0;height:100%;height:100dvh;z-index:80;width:100%;max-width:none;background:#0a0b10}
   #topbar{gap:8px;padding-left:12px;padding-right:12px}
   #model-btn{padding:4px 8px;font-size:12px}
-  #prompt-select{max-width:100px;font-size:11px}
+  #prompt-btn{font-size:11px}
   #input{font-size:16px}
   .msg-user .bubble{max-width:85%}
   .msg-content{max-width:95%}
@@ -289,15 +294,13 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         </button>
         <div id="model-dropdown"></div>
       </div>
-      <select id="prompt-select" title="System Prompt">
-        <option value="biav" selected>BIAV Analyst</option>
-        <option value="assistant">General Assistant</option>
-        <option value="coder">Coding Expert</option>
-        <option value="writer">Creative Writer</option>
-        <option value="translator">Translator</option>
-        <option value="">No prompt</option>
-        <option value="custom">Custom...</option>
-      </select>
+      <div id="prompt-wrap">
+        <button id="prompt-btn">
+          <span id="prompt-label">BIAV Analyst</span>
+          <svg width="10" height="10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div id="prompt-dropdown"></div>
+      </div>
       <div style="flex:1"></div>
       <button class="topbar-btn" id="export-btn" title="Export conversation">
         <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
@@ -404,7 +407,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.5.2';
+const APP_VERSION = '0.5.3';
 
 /* ===== State ===== */
 const S = {
@@ -487,6 +490,18 @@ const PROMPTS = {
   custom: '',
 };
 
+const PROMPT_LABELS = {
+  biav: 'BIAV Analyst',
+  assistant: 'General Assistant',
+  coder: 'Coding Expert',
+  writer: 'Creative Writer',
+  translator: 'Translator',
+  '': 'No prompt',
+  custom: 'Custom...',
+};
+
+let currentPrompt = 'biav';
+
 // Live context fetched from deployed data files
 let liveContext = '';
 (async function loadLiveContext() {
@@ -524,11 +539,10 @@ let liveContext = '';
 })();
 
 function getSystemPrompt() {
-  const sel = $('#prompt-select').value;
   let prompt = '';
-  if (sel === 'custom') prompt = loadConfig().customPrompt || '';
-  else prompt = PROMPTS[sel] || '';
-  if (sel === 'biav' && liveContext) prompt += liveContext;
+  if (currentPrompt === 'custom') prompt = loadConfig().customPrompt || '';
+  else prompt = PROMPTS[currentPrompt] || '';
+  if (currentPrompt === 'biav' && liveContext) prompt += liveContext;
   const mem = getMemoryPrompt();
   if (mem) prompt += mem;
   return prompt;
@@ -867,8 +881,7 @@ async function streamClaude(conv, signal) {
   if (!key) throw new Error('Anthropic API Key not configured. Click the gear icon to set it.');
 
   const sysPrompt = getSystemPrompt();
-  const promptSel = $('#prompt-select').value;
-  const useTools = (promptSel === 'biav');
+  const useTools = (currentPrompt === 'biav');
 
   function buildMsgs() {
     return conv.messages.slice(0, -1).filter(m => m.role !== 'system').map(m => {
@@ -1289,10 +1302,27 @@ document.querySelectorAll('.preset-chip').forEach(chip => {
   chip.onclick = () => { $('#cfg-custom-prompt').value = chip.dataset.p; };
 });
 
-// Prompt selector - open custom in settings
-$('#prompt-select').onchange = function() {
-  if (this.value === 'custom') openSettings();
-};
+// Custom prompt dropdown
+function buildPromptDropdown() {
+  const dd = $('#prompt-dropdown');
+  dd.innerHTML = '';
+  for (const [key, label] of Object.entries(PROMPT_LABELS)) {
+    const btn = document.createElement('button');
+    btn.className = 'prompt-option' + (key === currentPrompt ? ' selected' : '');
+    btn.textContent = label;
+    btn.onclick = () => {
+      currentPrompt = key;
+      $('#prompt-label').textContent = label;
+      dd.classList.remove('open');
+      if (key === 'custom') openSettings();
+    };
+    dd.appendChild(btn);
+  }
+}
+$('#prompt-btn').onclick = () => { buildPromptDropdown(); $('#prompt-dropdown').classList.toggle('open'); };
+document.addEventListener('mousedown', e => {
+  if (!$('#prompt-wrap').contains(e.target)) $('#prompt-dropdown').classList.remove('open');
+});
 
 inputEl.addEventListener('input', adjustInput);
 inputEl.addEventListener('keydown', e => {
