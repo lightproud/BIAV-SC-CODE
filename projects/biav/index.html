@@ -455,11 +455,18 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
           <button class="quick-chip" data-msg="搜索一下忘却前夜最近的新闻">🔍 搜索资讯</button>
           <button class="quick-chip" data-msg="请读取角色数据库，帮我梳理角色关系">🎭 角色分析</button>
         </div>
-        <div id="key-hint" style="display:none;margin-top:20px">
-          <button id="key-hint-btn" style="padding:10px 20px;border-radius:10px;border:1px solid #2a2515;background:#1e1a10;color:#8a7a48;font-size:13px;cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s;display:flex;align-items:center;gap:8px">
-            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
-            设置 API Key 开始使用
-          </button>
+        <div id="key-hint" style="display:none;margin-top:24px;width:100%;max-width:400px">
+          <div style="background:#1e1a10;border:1px solid #2a2515;border-radius:12px;padding:16px 20px">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#8a7a48"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+              <span style="font-size:13px;color:#8a7a48;font-weight:600">输入 API Key 开始使用</span>
+            </div>
+            <div style="display:flex;gap:8px">
+              <input id="home-key-input" type="password" placeholder="sk-ant-..." style="flex:1;padding:8px 12px;border-radius:8px;border:1px solid #2a2515;background:#0a0b10;color:#d4c9a8;font-size:13px;font-family:inherit;outline:none;min-width:0">
+              <button id="home-key-save" style="padding:8px 16px;border-radius:8px;border:none;background:#c5a356;color:#0a0b10;font-size:13px;font-family:inherit;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .15s">保存</button>
+            </div>
+            <div style="font-size:11px;color:#3a3520;margin-top:8px">从 <span style="color:#5a5540">console.anthropic.com</span> 获取密钥</div>
+          </div>
         </div>
         <span class="ver"></span>
       </div>
@@ -2808,14 +2815,23 @@ document.querySelectorAll('.quick-chip').forEach(chip => {
   };
 });
 
-// Show key hint if no API key configured
-(function checkKeyHint() {
+// Show key input on home if no API key configured
+function checkKeyHint() {
   const cfg = loadConfig();
   const hasKey = cfg.anthropic || (BUILTIN_KEY && !BUILTIN_KEY.startsWith('%%'));
   const hint = $('#key-hint');
   if (hint) hint.style.display = hasKey ? 'none' : 'block';
-})();
-$('#key-hint-btn').onclick = openSettings;
+}
+checkKeyHint();
+$('#home-key-save').onclick = () => {
+  const val = $('#home-key-input').value.trim();
+  if (!val) { $('#home-key-input').focus(); return; }
+  const cfg = loadConfig();
+  cfg.anthropic = val;
+  saveConfig(cfg);
+  $('#key-hint').style.display = 'none';
+  buildModelDropdown();
+};
 
 // Set version text
 document.querySelectorAll('.ver,[id="sidebar-footer"]').forEach(el => el.textContent = 'v' + APP_VERSION);
