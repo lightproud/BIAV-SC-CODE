@@ -88,10 +88,13 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 /* Messages area */
 #messages{flex:1;overflow-y:auto}
 #empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:20px}
-#empty-state h2{font-family:'Noto Serif SC',serif;font-size:24px;color:#e2c97e;font-weight:700;margin-bottom:8px}
-#empty-state p{color:#6b6040;font-size:14px;max-width:400px}
-#empty-state .deco-line{width:64px;height:1px;background:#c5a356;opacity:.4;margin-top:32px}
-#empty-state .ver{color:#3a3520;font-size:11px;margin-top:12px;letter-spacing:1px}
+#empty-state h2{font-family:'Noto Serif SC',serif;font-size:28px;color:#e2c97e;font-weight:700;margin-bottom:4px}
+#empty-state .subtitle{color:#6b6040;font-size:13px}
+#empty-state .deco-line{width:64px;height:1px;background:#c5a356;opacity:.4;margin:24px 0}
+#empty-state .intro{max-width:460px;color:#5a5540;font-size:12.5px;line-height:1.8;text-align:left}
+#empty-state .intro strong{color:#8a7a48;font-weight:700}
+#empty-state .intro .tag{display:inline-block;background:#1e1a10;color:#6b6040;font-size:11px;padding:1px 6px;border-radius:3px;margin:0 1px;font-family:Menlo,Consolas,monospace}
+#empty-state .ver{color:#3a3520;font-size:11px;margin-top:20px;letter-spacing:1px}
 #msg-container{max-width:720px;margin:0 auto;padding:24px 16px}
 
 /* Message bubbles */
@@ -234,7 +237,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
       New Chat
     </button>
     <div id="conv-list"></div>
-    <div id="sidebar-footer">v0.2.0</div>
+    <div id="sidebar-footer">v0.2.1</div>
   </nav>
 
   <!-- Main -->
@@ -275,10 +278,15 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
     <!-- Messages -->
     <div id="messages">
       <div id="empty-state">
-        <h2>BIVA</h2>
-        <p>B.I.A.V. Studio AI Assistant</p>
+        <h2>碧瓦</h2>
+        <p class="subtitle">BIAV-SC 银芯系统 · AI 增强终端</p>
         <div class="deco-line"></div>
-        <span class="ver">v0.2.0</span>
+        <div class="intro">
+          <strong>银芯（BIAV-SC）</strong>是 B.I.A.V. Studio 为「忘却前夜 Morimens」构建的 AI 增强系统。<br><br>
+          已接入 <span class="tag">9 模块记忆系统</span> <span class="tag">做梦三层架构</span> <span class="tag">知识图谱</span>，覆盖 63 角色事实圣经、每日社区情报循环、Wiki 权威站点等核心能力。<br><br>
+          默认以 <strong>BIAV Analyst</strong> 身份应答，具备完整项目上下文。可切换顶栏预设使用通用助手、编程专家等模式。
+        </div>
+        <span class="ver">v0.2.1</span>
       </div>
     </div>
 
