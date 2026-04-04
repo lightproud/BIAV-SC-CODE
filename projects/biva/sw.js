@@ -9,6 +9,8 @@ const ASSETS = [
   'https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js',
   'https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js',
   'https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/styles/github-dark-dimmed.min.css',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js',
+  'https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css',
 ];
 
 self.addEventListener('install', (e) => {

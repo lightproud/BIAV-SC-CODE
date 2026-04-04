@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/styles/github-dark-dimmed.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <style>
 /* ===== Reset & Base ===== */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -129,6 +130,35 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 .msg-content a:hover{color:#e2c97e;text-decoration:underline}
 .msg-content strong{color:#e2c97e;font-weight:700}
 .msg-content hr{border:none;border-top:1px solid #2a2515;margin:1em 0}
+
+/* Thinking block (Extended Thinking L6) */
+.thinking-block{margin:.8em 0;border:1px solid #2a2515;border-radius:6px;overflow:hidden}
+.thinking-toggle{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#161210;color:#6b6040;font-size:12px;cursor:pointer;width:100%;border:none;font-family:inherit;text-align:left;transition:color .15s}
+.thinking-toggle:hover{color:#d4c9a8}
+.thinking-toggle svg{transition:transform .2s}
+.thinking-toggle.open svg{transform:rotate(90deg)}
+.thinking-content{display:none;padding:10px 12px;font-size:12.5px;line-height:1.7;color:#5a5540;border-top:1px solid #2a2515;background:#0d0c08}
+.thinking-content.open{display:block}
+
+/* Edit message (L7) */
+.msg-user{position:relative}
+.msg-edit-btn{display:none;position:absolute;left:-30px;top:50%;transform:translateY(-50%);background:none;border:none;color:#3a3520;cursor:pointer;padding:4px;transition:color .15s}
+.msg-user:hover .msg-edit-btn{display:block}
+.msg-edit-btn:hover{color:#c5a356}
+.msg-edit-wrap{display:flex;flex-direction:column;gap:8px;max-width:75%}
+.msg-edit-wrap textarea{width:100%;padding:10px 14px;border-radius:12px;background:#1e1a10;border:1px solid #2a2515;color:#d4c9a8;font-size:14px;font-family:inherit;line-height:1.6;outline:none;resize:vertical;min-height:60px}
+.msg-edit-wrap textarea:focus{border-color:#8a7a48}
+.msg-edit-actions{display:flex;gap:6px;justify-content:flex-end}
+.msg-edit-actions button{padding:4px 14px;border-radius:6px;font-size:12px;font-family:inherit;cursor:pointer;border:1px solid #2a2515;transition:all .15s}
+.msg-edit-actions .save{background:#c5a356;color:#0a0b10;border-color:#c5a356}
+.msg-edit-actions .cancel{background:none;color:#6b6040}
+
+/* Memory indicator (L9) */
+.memory-indicator{display:inline-flex;align-items:center;gap:4px;font-size:10px;color:#3a3520;margin-left:8px}
+.memory-indicator .dot{width:5px;height:5px;border-radius:50%;background:#7aad5a}
+
+/* LaTeX */
+.katex-display{overflow-x:auto;padding:4px 0}
 
 /* Typing cursor */
 @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
@@ -281,8 +311,8 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         <div class="deco-line"></div>
         <div class="intro">
           <strong>银芯（BIAV-SC）</strong>是 B.I.A.V. Studio 为「忘却前夜 Morimens」构建的 AI 增强系统。<br><br>
-          已接入 <span class="tag">9 模块记忆系统</span> <span class="tag">做梦三层架构</span> <span class="tag">知识图谱</span>，覆盖 63 角色事实圣经、每日社区情报循环、Wiki 权威站点等核心能力。<br><br>
-          默认以 <strong>BIAV Analyst</strong> 身份应答，具备完整项目上下文。可切换顶栏预设使用通用助手、编程专家等模式。
+          已接入 <span class="tag">仓库实时读取</span> <span class="tag">Extended Thinking</span> <span class="tag">跨会话记忆</span> <span class="tag">LaTeX</span> <span class="tag">Mermaid</span>，覆盖 63 角色事实圣经、每日社区情报循环、Wiki 权威站点等核心能力。<br><br>
+          默认以 <strong>BIAV Analyst</strong> 身份应答。支持消息编辑、分支对话、文件上传、Artifacts 预览。
         </div>
         <span class="ver">v0.2.1</span>
       </div>
@@ -364,8 +394,9 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <!-- Dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.4.0';
+const APP_VERSION = '0.5.0';
 
 /* ===== State ===== */
 const S = {
@@ -490,6 +521,8 @@ function getSystemPrompt() {
   if (sel === 'custom') prompt = loadConfig().customPrompt || '';
   else prompt = PROMPTS[sel] || '';
   if (sel === 'biav' && liveContext) prompt += liveContext;
+  const mem = getMemoryPrompt();
+  if (mem) prompt += mem;
   return prompt;
 }
 
@@ -520,7 +553,18 @@ customRenderer.code = function(token) {
 };
 marked.use({ renderer: customRenderer });
 
-function renderMd(text) { return marked.parse(text) }
+function renderMd(text) {
+  // Process LaTeX before markdown: $$ block $$ and $ inline $
+  text = text.replace(/\$\$([\s\S]+?)\$\$/g, (_, tex) => {
+    try { return '<div class="katex-display">' + katex.renderToString(tex.trim(), { displayMode: true, throwOnError: false }) + '</div>'; }
+    catch { return '$$' + tex + '$$'; }
+  });
+  text = text.replace(/(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)/g, (_, tex) => {
+    try { return katex.renderToString(tex.trim(), { displayMode: false, throwOnError: false }); }
+    catch { return '$' + tex + '$'; }
+  });
+  return marked.parse(text);
+}
 
 function copyCode(id) {
   const el = document.getElementById(id);
@@ -591,7 +635,8 @@ function renderMessages() {
           userHtml += `<img src="${f.dataUrl}" alt="${esc(f.name)}">`;
         });
       }
-      div.innerHTML = `<div class="bubble">${userHtml}</div>`;
+      div.innerHTML = `<button class="msg-edit-btn" data-idx="${i}" title="Edit">✏</button><div class="bubble">${userHtml}</div>`;
+      div.querySelector('.msg-edit-btn').onclick = () => startEditMsg(i);
     } else {
       const isLast = i === conv.messages.length - 1 && S.streaming;
       div.innerHTML = `
@@ -603,6 +648,46 @@ function renderMessages() {
   messagesEl.appendChild(container);
   messagesEl.scrollTop = messagesEl.scrollHeight;
   setTimeout(addArtifactButtons, 0);
+}
+
+function startEditMsg(idx) {
+  const conv = currentConv();
+  if (!conv || S.streaming) return;
+  const m = conv.messages[idx];
+  if (m.role !== 'user') return;
+  const msgEl = messagesEl.querySelectorAll('#msg-container .msg')[idx];
+  if (!msgEl) return;
+  const bubble = msgEl.querySelector('.bubble');
+  const editBtn = msgEl.querySelector('.msg-edit-btn');
+  if (editBtn) editBtn.style.display = 'none';
+  bubble.outerHTML = `<div class="msg-edit-wrap"><textarea class="edit-ta">${esc(m.content)}</textarea><div class="msg-edit-actions"><button class="cancel" onclick="renderMessages()">Cancel</button><button class="save" data-idx="${idx}">Send</button></div></div>`;
+  const wrap = msgEl.querySelector('.msg-edit-wrap');
+  const ta = wrap.querySelector('.edit-ta');
+  ta.focus();
+  ta.setSelectionRange(ta.value.length, ta.value.length);
+  wrap.querySelector('.save').onclick = () => submitEditMsg(idx, ta.value.trim());
+}
+
+function submitEditMsg(idx, newText) {
+  if (!newText || S.streaming) return;
+  const conv = currentConv();
+  if (!conv) return;
+  // Truncate conversation from edit point (branch)
+  conv.messages = conv.messages.slice(0, idx);
+  conv.messages.push({ role: 'user', content: newText });
+  conv.messages.push({ role: 'assistant', content: '' });
+  S.streaming = true;
+  renderMessages();
+  stopBtn.style.display = 'flex';
+  sendBtn.style.display = 'none';
+  const ctrl = new AbortController();
+  S.abortCtrl = ctrl;
+  streamClaude(conv, ctrl.signal).catch(err => {
+    if (err.name !== 'AbortError') {
+      const last = conv.messages[conv.messages.length - 1];
+      if (last.role === 'assistant' && !last.content) { last.content = 'Error: ' + err.message; renderMessages(); }
+    }
+  }).finally(() => finishStream());
 }
 
 function appendDelta(text) {
@@ -677,13 +762,7 @@ async function sendMessage(text) {
   S.abortCtrl = ctrl;
 
   try {
-    if (S.provider === 'claude') {
-      await streamClaude(conv, ctrl.signal);
-    } else if (S.provider === 'openai') {
-      await streamOpenAI(conv, ctrl.signal);
-    } else if (S.provider === 'ollama') {
-      await streamOllama(conv, ctrl.signal);
-    }
+    await streamClaude(conv, ctrl.signal);
   } catch (err) {
     if (err.name !== 'AbortError') {
       const last = conv.messages[conv.messages.length - 1];
@@ -798,6 +877,9 @@ async function streamClaude(conv, signal) {
     }).filter(Boolean);
   }
 
+  // Extended thinking for non-haiku models
+  const useThinking = !S.model.includes('haiku');
+
   // API messages for tool use loop (separate from display messages)
   let apiMessages = buildMsgs();
   const MAX_TOOL_ROUNDS = 8;
@@ -805,10 +887,11 @@ async function streamClaude(conv, signal) {
   for (let round = 0; round <= MAX_TOOL_ROUNDS; round++) {
     const body = {
       model: S.model,
-      max_tokens: 8192,
+      max_tokens: useThinking ? 16000 : 8192,
       stream: true,
       ...(sysPrompt ? { system: sysPrompt } : {}),
       ...(useTools ? { tools: TOOLS } : {}),
+      ...(useThinking ? { thinking: { type: 'enabled', budget_tokens: 8000 } } : {}),
       messages: apiMessages,
     };
 
@@ -837,6 +920,8 @@ async function streamClaude(conv, signal) {
     let currentToolName = null;
     let currentToolInput = '';
     let stopReason = null;
+    let thinkingText = '';
+    let inThinking = false;
 
     while (true) {
       const { done, value } = await reader.read();
@@ -850,23 +935,39 @@ async function streamClaude(conv, signal) {
         if (data === '[DONE]') break;
         try {
           const j = JSON.parse(data);
-          if (j.type === 'content_block_start' && j.content_block?.type === 'tool_use') {
-            currentToolId = j.content_block.id;
-            currentToolName = j.content_block.name;
-            currentToolInput = '';
+          if (j.type === 'content_block_start') {
+            if (j.content_block?.type === 'thinking') {
+              inThinking = true;
+              thinkingText = '';
+            } else if (j.content_block?.type === 'tool_use') {
+              currentToolId = j.content_block.id;
+              currentToolName = j.content_block.name;
+              currentToolInput = '';
+            }
           } else if (j.type === 'content_block_delta') {
-            if (j.delta?.type === 'text_delta' && j.delta.text) {
+            if (j.delta?.type === 'thinking_delta' && j.delta.thinking) {
+              thinkingText += j.delta.thinking;
+            } else if (j.delta?.type === 'text_delta' && j.delta.text) {
               appendDelta(j.delta.text);
             } else if (j.delta?.type === 'input_json_delta' && j.delta.partial_json) {
               currentToolInput += j.delta.partial_json;
             }
-          } else if (j.type === 'content_block_stop' && currentToolId) {
-            let input = {};
-            try { input = JSON.parse(currentToolInput); } catch {}
-            toolCalls.push({ id: currentToolId, name: currentToolName, input });
-            currentToolId = null;
-            currentToolName = null;
-            currentToolInput = '';
+          } else if (j.type === 'content_block_stop') {
+            if (inThinking && thinkingText) {
+              // Insert thinking block as collapsible before text
+              const thinkId = 'think-' + Math.random().toString(36).slice(2, 8);
+              appendDelta(`<div class="thinking-block"><button class="thinking-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>Thinking...</button><div class="thinking-content">${esc(thinkingText)}</div></div>\n\n`);
+              inThinking = false;
+              thinkingText = '';
+            }
+            if (currentToolId) {
+              let input = {};
+              try { input = JSON.parse(currentToolInput); } catch {}
+              toolCalls.push({ id: currentToolId, name: currentToolName, input });
+              currentToolId = null;
+              currentToolName = null;
+              currentToolInput = '';
+            }
           } else if (j.type === 'message_delta' && j.delta?.stop_reason) {
             stopReason = j.delta.stop_reason;
           }
@@ -894,96 +995,13 @@ async function streamClaude(conv, signal) {
     // Execute tools and collect results
     const toolResults = [];
     for (const tc of toolCalls) {
-      const result = await execTool(tc.name, tc.input);
+      const result = await execToolWithMemory(tc.name, tc.input);
       toolResults.push({ type: 'tool_result', tool_use_id: tc.id, content: result });
     }
 
     // Append to API messages for next round
     apiMessages.push({ role: 'assistant', content: assistantContent });
     apiMessages.push({ role: 'user', content: toolResults });
-  }
-}
-
-/* -- OpenAI API -- */
-async function streamOpenAI(conv, signal) {
-  const cfg = loadConfig();
-  const key = cfg.openai;
-  if (!key) throw new Error('OpenAI API Key not configured. Click the gear icon to set it.');
-  const base = cfg.openaiBase || 'https://api.openai.com/v1';
-
-  const sysP = getSystemPrompt();
-  const msgs = conv.messages.slice(0, -1).map(m => ({ role: m.role, content: m.content }));
-  if (sysP) msgs.unshift({ role: 'system', content: sysP });
-
-  const res = await fetch(`${base}/chat/completions`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
-    body: JSON.stringify({ model: S.model, messages: msgs, stream: true }),
-    signal,
-  });
-
-  if (!res.ok) {
-    const err = await res.text();
-    throw new Error(`OpenAI API ${res.status}: ${err}`);
-  }
-
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buf = '';
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buf += decoder.decode(value, { stream: true });
-    const lines = buf.split('\n');
-    buf = lines.pop() || '';
-    for (const line of lines) {
-      if (!line.startsWith('data: ')) continue;
-      const data = line.slice(6);
-      if (data === '[DONE]') return;
-      try {
-        const j = JSON.parse(data);
-        const delta = j.choices?.[0]?.delta?.content;
-        if (delta) appendDelta(delta);
-      } catch {}
-    }
-  }
-}
-
-/* -- Ollama API -- */
-async function streamOllama(conv, signal) {
-  const cfg = loadConfig();
-  const base = cfg.ollama || 'http://localhost:11434';
-  const sysO = getSystemPrompt();
-  const msgs = conv.messages.slice(0, -1).map(m => ({ role: m.role, content: m.content }));
-  if (sysO) msgs.unshift({ role: 'system', content: sysO });
-
-  const res = await fetch(`${base}/api/chat`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: S.model, messages: msgs, stream: true }),
-    signal,
-  });
-
-  if (!res.ok) throw new Error(`Ollama ${res.status}: ${res.statusText}`);
-
-  const reader = res.body.getReader();
-  const decoder = new TextDecoder();
-  let buf = '';
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-    buf += decoder.decode(value, { stream: true });
-    const lines = buf.split('\n');
-    buf = lines.pop() || '';
-    for (const line of lines) {
-      if (!line.trim()) continue;
-      try {
-        const j = JSON.parse(line);
-        if (j.message?.content) appendDelta(j.message.content);
-      } catch {}
-    }
   }
 }
 
@@ -1171,6 +1189,47 @@ function renderFileChips() {
 function removeFile(i) {
   pendingFiles.splice(i, 1);
   renderFileChips();
+}
+
+/* ===== Cross-session Memory (L9) ===== */
+const MEMORY_KEY = 'biav-memory';
+function loadMemory() {
+  try { return JSON.parse(localStorage.getItem(MEMORY_KEY) || '[]'); } catch { return []; }
+}
+function saveMemory(mem) { localStorage.setItem(MEMORY_KEY, JSON.stringify(mem)); }
+function addMemory(text) {
+  const mem = loadMemory();
+  mem.push({ text, ts: Date.now() });
+  if (mem.length > 50) mem.shift(); // keep max 50 entries
+  saveMemory(mem);
+}
+function getMemoryPrompt() {
+  const mem = loadMemory();
+  if (!mem.length) return '';
+  return '\n\n---\n用户跨会话记忆（请参考但不要主动提及）：\n' + mem.map(m => '- ' + m.text).join('\n');
+}
+
+// Memory tool for AI to save memories
+TOOLS.push({
+  name: 'save_memory',
+  description: '保存重要信息到用户的跨会话记忆中。当用户提到偏好、重要决策、或要求你记住某件事时使用。',
+  input_schema: {
+    type: 'object',
+    properties: {
+      content: { type: 'string', description: '要记住的内容，简洁明了' }
+    },
+    required: ['content']
+  }
+});
+
+// Extend execTool
+const _origExecTool = execTool;
+async function execToolWithMemory(name, input) {
+  if (name === 'save_memory') {
+    addMemory(input.content);
+    return `Memory saved: "${input.content}"`;
+  }
+  return _origExecTool(name, input);
 }
 
 /* ===== Input auto-resize ===== */
