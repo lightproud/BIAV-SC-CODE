@@ -483,6 +483,14 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         </div>
       </div>
     </div>
+    <div class="setting-group" style="border-top:1px solid #2a2515;padding-top:12px;margin-top:8px">
+      <label>缓存管理</label>
+      <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <button id="btn-clear-cache" style="padding:6px 14px;border-radius:6px;border:1px solid #c25a4a;background:none;color:#c25a4a;font-size:12px;cursor:pointer;font-family:inherit;transition:all .15s">🔄 强制刷新缓存</button>
+        <button id="btn-clear-all" style="padding:6px 14px;border-radius:6px;border:1px solid #5a5540;background:none;color:#5a5540;font-size:12px;cursor:pointer;font-family:inherit;transition:all .15s">🗑 清除所有数据</button>
+      </div>
+      <p style="font-size:11px;color:#5a5540;margin-top:6px">强制刷新：清除 Service Worker 缓存并重载页面。清除所有数据：同时清除对话、记忆等 localStorage 数据。</p>
+    </div>
     <div class="setting-actions">
       <button id="settings-cancel">Cancel</button>
       <button id="settings-save">Save</button>
@@ -2317,6 +2325,28 @@ document.addEventListener('mousedown', e => {
 $('#settings-btn').onclick = openSettings;
 $('#settings-cancel').onclick = closeSettings;
 $('#settings-save').onclick = saveSettings;
+$('#btn-clear-cache').onclick = async () => {
+  if (!confirm('确定要清除缓存并重载页面？')) return;
+  if ('serviceWorker' in navigator) {
+    const regs = await navigator.serviceWorker.getRegistrations();
+    await Promise.all(regs.map(r => r.unregister()));
+  }
+  const keys = await caches.keys();
+  await Promise.all(keys.map(k => caches.delete(k)));
+  localStorage.removeItem('biav-context-cache');
+  location.reload(true);
+};
+$('#btn-clear-all').onclick = async () => {
+  if (!confirm('⚠️ 将清除所有对话、记忆、设置和缓存，确定？')) return;
+  if ('serviceWorker' in navigator) {
+    const regs = await navigator.serviceWorker.getRegistrations();
+    await Promise.all(regs.map(r => r.unregister()));
+  }
+  const keys = await caches.keys();
+  await Promise.all(keys.map(k => caches.delete(k)));
+  localStorage.clear();
+  location.reload(true);
+};
 $('#export-btn').onclick = exportConversation;
 settingsOverlay.addEventListener('mousedown', e => { if (e.target === settingsOverlay) closeSettings() });
 
