@@ -6,6 +6,7 @@
 <title>BIVA / Brain in a Vat</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/styles/github-dark-dimmed.min.css">
 <style>
 /* ===== Reset & Base ===== */
 *{box-sizing:border-box;margin:0;padding:0}
@@ -85,8 +86,14 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
 .msg-content li{margin:.2em 0;line-height:1.7}
 .msg-content li::marker{color:#c5a356}
 .msg-content code{background:#1e1a10;color:#e2c97e;padding:2px 6px;border-radius:3px;font-size:.9em;font-family:Menlo,Consolas,monospace}
-.msg-content pre{background:#1e1a10;border:1px solid #2a2515;border-radius:6px;padding:12px;overflow-x:auto;margin:.8em 0}
-.msg-content pre code{background:none;padding:0;font-size:.85em;line-height:1.6}
+.msg-content pre{background:#1e1a10;border:1px solid #2a2515;border-radius:6px;overflow-x:auto;margin:.8em 0;position:relative}
+.msg-content pre code{background:none;padding:12px;display:block;font-size:.85em;line-height:1.6}
+.msg-content pre code.hljs{background:#1e1a10!important}
+.code-header{display:flex;align-items:center;justify-content:space-between;padding:6px 12px;background:#161210;border-bottom:1px solid #2a2515;font-size:11px;color:#8a7a48}
+.code-lang{font-weight:700;text-transform:uppercase}
+.copy-btn{background:none;border:1px solid #2a2515;color:#6b6040;font-size:11px;padding:2px 10px;border-radius:4px;cursor:pointer;font-family:inherit;transition:all .15s}
+.copy-btn:hover{border-color:#8a7a48;color:#d4c9a8}
+.copy-btn.copied{color:#7aad5a;border-color:#7aad5a}
 .msg-content blockquote{border-left:3px solid #c5a356;padding-left:1em;color:#8a7a48;margin:.8em 0}
 .msg-content table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.9em}
 .msg-content th{background:#1e1a10;color:#e2c97e;font-weight:700;padding:6px 10px;border:1px solid #2a2515;text-align:left}
@@ -129,6 +136,27 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
 #settings-cancel:hover{color:#d4c9a8}
 #settings-btn{background:none;border:none;color:#6b6040;cursor:pointer;padding:4px;transition:color .15s;font-size:16px}
 #settings-btn:hover{color:#d4c9a8}
+.topbar-btn{background:none;border:none;color:#6b6040;cursor:pointer;padding:4px;transition:color .15s}
+.topbar-btn:hover{color:#d4c9a8}
+
+/* System prompt selector */
+#prompt-select{padding:4px 8px;border-radius:6px;background:#1e1a10;border:1px solid #2a2515;color:#6b6040;font-size:12px;font-family:inherit;font-weight:500;cursor:pointer;outline:none;max-width:140px}
+#prompt-select:hover{border-color:#8a7a48;color:#d4c9a8}
+#prompt-select option{background:#1e1a10;color:#d4c9a8}
+
+/* Settings tabs */
+.settings-tabs{display:flex;gap:0;margin-bottom:16px;border-bottom:1px solid #2a2515}
+.settings-tab{padding:8px 16px;font-size:13px;color:#6b6040;background:none;border:none;border-bottom:2px solid transparent;cursor:pointer;font-family:inherit;font-weight:500;transition:all .15s}
+.settings-tab:hover{color:#d4c9a8}
+.settings-tab.active{color:#e2c97e;border-bottom-color:#c5a356}
+.settings-pane{display:none}
+.settings-pane.active{display:block}
+.setting-group textarea{width:100%;padding:8px 12px;border-radius:8px;border:1px solid #2a2515;background:#1e1a10;color:#d4c9a8;font-size:13px;font-family:inherit;font-weight:500;outline:none;resize:vertical;min-height:80px}
+.setting-group textarea:focus{border-color:#8a7a48}
+.setting-group textarea::placeholder{color:#5a5540}
+.preset-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.preset-chip{padding:4px 10px;border-radius:4px;border:1px solid #2a2515;background:none;color:#6b6040;font-size:11px;cursor:pointer;font-family:inherit;transition:all .15s}
+.preset-chip:hover{border-color:#8a7a48;color:#c5a356}
 
 /* Responsive */
 @media(max-width:768px){
@@ -170,8 +198,20 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
         </button>
         <div id="model-dropdown"></div>
       </div>
+      <select id="prompt-select" title="System Prompt">
+        <option value="">No system prompt</option>
+        <option value="assistant">General Assistant</option>
+        <option value="coder">Coding Expert</option>
+        <option value="writer">Creative Writer</option>
+        <option value="translator">Translator</option>
+        <option value="biav">BIAV Analyst</option>
+        <option value="custom">Custom...</option>
+      </select>
       <div style="flex:1"></div>
-      <button id="settings-btn" title="API Keys">
+      <button class="topbar-btn" id="export-btn" title="Export conversation">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+      </button>
+      <button id="settings-btn" title="Settings">
         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
       </button>
       <button id="stop-btn">Stop</button>
@@ -201,22 +241,41 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
 <!-- Settings Modal -->
 <div id="settings-overlay">
   <div id="settings-modal">
-    <h2>API Configuration</h2>
-    <div class="setting-group">
-      <label>ANTHROPIC API KEY</label>
-      <input id="cfg-anthropic" type="password" placeholder="sk-ant-...">
+    <h2>Settings</h2>
+    <div class="settings-tabs">
+      <button class="settings-tab active" data-tab="api">API Keys</button>
+      <button class="settings-tab" data-tab="prompts">Prompts</button>
     </div>
-    <div class="setting-group">
-      <label>OPENAI API KEY</label>
-      <input id="cfg-openai" type="password" placeholder="sk-...">
+    <div id="pane-api" class="settings-pane active">
+      <div class="setting-group">
+        <label>ANTHROPIC API KEY</label>
+        <input id="cfg-anthropic" type="password" placeholder="sk-ant-...">
+      </div>
+      <div class="setting-group">
+        <label>OPENAI API KEY</label>
+        <input id="cfg-openai" type="password" placeholder="sk-...">
+      </div>
+      <div class="setting-group">
+        <label>OPENAI BASE URL</label>
+        <input id="cfg-openai-base" type="text" placeholder="https://api.openai.com/v1">
+      </div>
+      <div class="setting-group">
+        <label>OLLAMA BASE URL</label>
+        <input id="cfg-ollama" type="text" placeholder="http://localhost:11434">
+      </div>
     </div>
-    <div class="setting-group">
-      <label>OPENAI BASE URL</label>
-      <input id="cfg-openai-base" type="text" placeholder="https://api.openai.com/v1">
-    </div>
-    <div class="setting-group">
-      <label>OLLAMA BASE URL</label>
-      <input id="cfg-ollama" type="text" placeholder="http://localhost:11434">
+    <div id="pane-prompts" class="settings-pane">
+      <div class="setting-group">
+        <label>CUSTOM SYSTEM PROMPT</label>
+        <textarea id="cfg-custom-prompt" rows="6" placeholder="Enter your custom system prompt here..."></textarea>
+        <div class="preset-chips">
+          <button class="preset-chip" data-p="You are a helpful assistant. Answer concisely and accurately.">General</button>
+          <button class="preset-chip" data-p="You are an expert programmer. Write clean, efficient code with clear explanations. Use best practices.">Coder</button>
+          <button class="preset-chip" data-p="You are a creative writer. Write vivid, engaging prose with strong narrative voice.">Writer</button>
+          <button class="preset-chip" data-p="You are a professional translator. Translate accurately while preserving tone and nuance. Always provide the translation directly without explanation unless asked.">Translator</button>
+          <button class="preset-chip" data-p="You are the BIAV-SC analyst for Morimens by B.I.A.V. Studio. Respond in Chinese. Focus on game community data, player sentiment, and strategic recommendations.">BIAV</button>
+        </div>
+      </div>
     </div>
     <div class="setting-actions">
       <button id="settings-cancel">Cancel</button>
@@ -225,8 +284,9 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
   </div>
 </div>
 
-<!-- Markdown: use marked.js from CDN -->
+<!-- Dependencies -->
 <script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script>
 /* ===== State ===== */
 const S = {
@@ -274,9 +334,60 @@ const modelDropdown = $('#model-dropdown');
 const modelLabel = $('#model-label');
 const settingsOverlay = $('#settings-overlay');
 
-/* ===== Markdown ===== */
-marked.setOptions({ breaks: true, gfm: true });
+/* ===== System Prompts ===== */
+const PROMPTS = {
+  '': '',
+  assistant: 'You are a helpful assistant. Answer concisely and accurately.',
+  coder: 'You are an expert programmer. Write clean, efficient code with clear explanations. Use best practices.',
+  writer: 'You are a creative writer. Write vivid, engaging prose with strong narrative voice.',
+  translator: 'You are a professional translator. Translate accurately while preserving tone and nuance. Always provide the translation directly without explanation unless asked.',
+  biav: 'You are the BIAV-SC analyst for Morimens by B.I.A.V. Studio. Respond in Chinese. Focus on game community data, player sentiment, and strategic recommendations.',
+  custom: '',
+};
+
+function getSystemPrompt() {
+  const sel = $('#prompt-select').value;
+  if (sel === 'custom') return loadConfig().customPrompt || '';
+  return PROMPTS[sel] || '';
+}
+
+/* ===== Markdown + Syntax Highlighting ===== */
+marked.setOptions({
+  breaks: true,
+  gfm: true,
+  highlight: function(code, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      return hljs.highlight(code, { language: lang }).value;
+    }
+    return hljs.highlightAuto(code).value;
+  }
+});
+
+const defaultRenderer = new marked.Renderer();
+const customRenderer = new marked.Renderer();
+customRenderer.code = function(token) {
+  const lang = (token.lang || '').split(' ')[0] || '';
+  let highlighted;
+  if (lang && hljs.getLanguage(lang)) {
+    highlighted = hljs.highlight(token.text, { language: lang }).value;
+  } else {
+    highlighted = hljs.highlightAuto(token.text).value;
+  }
+  const id = 'cb-' + Math.random().toString(36).slice(2, 8);
+  return `<pre><div class="code-header"><span class="code-lang">${esc(lang || 'code')}</span><button class="copy-btn" onclick="copyCode('${id}')">Copy</button></div><code id="${id}" class="hljs">${highlighted}</code></pre>`;
+};
+marked.use({ renderer: customRenderer });
+
 function renderMd(text) { return marked.parse(text) }
+
+function copyCode(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  navigator.clipboard.writeText(el.textContent).then(() => {
+    const btn = el.previousElementSibling?.querySelector('.copy-btn');
+    if (btn) { btn.textContent = 'Copied!'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied') }, 1500) }
+  });
+}
 
 /* ===== Sidebar ===== */
 function renderSidebar() {
@@ -430,6 +541,7 @@ async function streamClaude(conv, signal) {
 
   const msgs = conv.messages.slice(0, -1).filter(m => m.role !== 'system')
     .map(m => ({ role: m.role, content: m.content }));
+  const sysPrompt = getSystemPrompt();
 
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST',
@@ -443,6 +555,7 @@ async function streamClaude(conv, signal) {
       model: S.model,
       max_tokens: 8192,
       stream: true,
+      ...(sysPrompt ? { system: sysPrompt } : {}),
       messages: msgs,
     }),
     signal,
@@ -484,7 +597,9 @@ async function streamOpenAI(conv, signal) {
   if (!key) throw new Error('OpenAI API Key not configured. Click the gear icon to set it.');
   const base = cfg.openaiBase || 'https://api.openai.com/v1';
 
+  const sysP = getSystemPrompt();
   const msgs = conv.messages.slice(0, -1).map(m => ({ role: m.role, content: m.content }));
+  if (sysP) msgs.unshift({ role: 'system', content: sysP });
 
   const res = await fetch(`${base}/chat/completions`, {
     method: 'POST',
@@ -525,7 +640,9 @@ async function streamOpenAI(conv, signal) {
 async function streamOllama(conv, signal) {
   const cfg = loadConfig();
   const base = cfg.ollama || 'http://localhost:11434';
+  const sysO = getSystemPrompt();
   const msgs = conv.messages.slice(0, -1).map(m => ({ role: m.role, content: m.content }));
+  if (sysO) msgs.unshift({ role: 'system', content: sysO });
 
   const res = await fetch(`${base}/api/chat`, {
     method: 'POST',
@@ -601,6 +718,7 @@ function openSettings() {
   $('#cfg-openai').value = cfg.openai || '';
   $('#cfg-openai-base').value = cfg.openaiBase || '';
   $('#cfg-ollama').value = cfg.ollama || '';
+  $('#cfg-custom-prompt').value = cfg.customPrompt || '';
   settingsOverlay.classList.add('open');
 }
 
@@ -612,10 +730,30 @@ function saveSettings() {
     openai: $('#cfg-openai').value.trim(),
     openaiBase: $('#cfg-openai-base').value.trim(),
     ollama: $('#cfg-ollama').value.trim(),
+    customPrompt: $('#cfg-custom-prompt').value.trim(),
   };
   saveConfig(cfg);
   closeSettings();
   buildModelDropdown();
+}
+
+/* ===== Export ===== */
+function exportConversation() {
+  const conv = currentConv();
+  if (!conv || conv.messages.length === 0) return;
+  let md = `# ${conv.title}\n\n`;
+  md += `> Model: ${conv.provider} / ${conv.model}\n`;
+  md += `> Date: ${new Date(conv.messages[0].createdAt || Date.now()).toLocaleString()}\n\n---\n\n`;
+  conv.messages.forEach(m => {
+    if (m.role === 'user') md += `## User\n\n${m.content}\n\n`;
+    else md += `## Assistant\n\n${m.content}\n\n`;
+  });
+  const blob = new Blob([md], { type: 'text/markdown' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `${conv.title.slice(0, 30).replace(/[^a-zA-Z0-9\u4e00-\u9fff]/g, '_')}.md`;
+  a.click();
+  URL.revokeObjectURL(a.href);
 }
 
 /* ===== Input auto-resize ===== */
@@ -638,7 +776,28 @@ document.addEventListener('mousedown', e => {
 $('#settings-btn').onclick = openSettings;
 $('#settings-cancel').onclick = closeSettings;
 $('#settings-save').onclick = saveSettings;
+$('#export-btn').onclick = exportConversation;
 settingsOverlay.addEventListener('mousedown', e => { if (e.target === settingsOverlay) closeSettings() });
+
+// Settings tabs
+document.querySelectorAll('.settings-tab').forEach(tab => {
+  tab.onclick = () => {
+    document.querySelectorAll('.settings-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.settings-pane').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('pane-' + tab.dataset.tab).classList.add('active');
+  };
+});
+
+// Preset chips
+document.querySelectorAll('.preset-chip').forEach(chip => {
+  chip.onclick = () => { $('#cfg-custom-prompt').value = chip.dataset.p; };
+});
+
+// Prompt selector - open custom in settings
+$('#prompt-select').onchange = function() {
+  if (this.value === 'custom') openSettings();
+};
 
 inputEl.addEventListener('input', adjustInput);
 inputEl.addEventListener('keydown', e => {
