@@ -3,7 +3,7 @@
 > 读完本文件，你将成为忘却前夜（Morimens）领域专家。
 > 制作人：Light（B.I.A.V. Studio）。本仓库仅引用公开可查阅信息。
 >
-> **⚠️ 当前状态：概念 DEMO。数据不完整，结构每天都在变化。所有内容均为建设中。**
+> **当前状态：Phase 1 已验证，进入 Phase 2 准备期。记忆系统 9 模块上线，做梦 Agent 三层全启动。**
 >
 > 本文件为 AI 增强插件入口，不依赖特定 AI 平台。
 
@@ -30,19 +30,33 @@
 
 ## 项目当前状态
 
-**阶段**：Phase 0（止血）→ Phase 1（记忆宫殿）过渡期
-**聚焦目标**：事实圣经做到全网最权威 + 沙耶之歌联动打响第一炮
+**阶段**：Phase 1（记忆宫殿）✅ 已验证 → Phase 2（内容权威）准备中
+**聚焦目标**：Wiki 数据 100% 完整 + 联动内容快速上线能力
 
 ### 三条主线（按优先级）
 
-1. **事实圣经** — 结构化知识库 v0.9，7 处数据问题待修。校验脚本：`assets/data/validate.py`
-2. **自动情报循环** — 日报系统 3 源运行中（Bilibili/Steam/Discord），等制作人 14 天验证
-3. **权威知识站点** — Wiki 已部署，63 角色 × 3 语言，数据准确性待提升
+1. **事实圣经** — 结构化知识库 v1.0，63 角色 + 叙事结构 + 设计决策。校验脚本：`assets/data/validate.py`
+2. **自动情报循环** — ✅ Stage 1 验证通过（2026-04-04）。日报 3 源运行中 + 哨兵层主动异常检测 + 做梦 Agent 三层全启动
+3. **权威知识站点** — Wiki 已部署，63 角色 × 3 语言，完成度 ~83%（技能数据 11/63 待补）
 
 ### 阻塞项
 
-- ~~ANTHROPIC_API_KEY 余额为零~~ → ✅ 已恢复（2026-04-04 确认）
-- YouTube/Twitter/NGA/TapTap API 未配置 → 情报源不全
+- ~~ANTHROPIC_API_KEY 余额为零~~ → ✅ 已恢复（2026-04-04）
+- YouTube/Twitter/NGA/TapTap API 未配置 → 情报源不全（不阻塞核心管线）
+
+### 银芯记忆系统（2026-04-04 上线）
+
+| 模块 | 脚本 | 功能 |
+|------|------|------|
+| TF-IDF 向量搜索 | `scripts/memory_search.py` | 中文双字符分词 + 4维重排序 |
+| 知识图谱 | `scripts/knowledge_graph.py` | 217节点 443边 实体关系图 |
+| MemRL-lite | `scripts/memrl.py` | EMA效用评分 + 归档建议 |
+| Sleep-Time Compute | `scripts/dream.py` | 热门话题预计算缓存 |
+| 哨兵层 | `scripts/dream.py` | Steam/Bilibili/Discord 异常检测（零成本） |
+| MCP Server | `scripts/mcp_server.py` | 7工具暴露给任意AI |
+| 虚拟上下文管理 | `scripts/context_manager.py` | MemGPT式4层上下文推荐 |
+| Reflexion | `scripts/reflexion.py` | 失败模式自动学习 |
+| 选择性记忆 | `scripts/dream.py` | 膨胀检测 + 低效用归档 |
 
 详细状态 → `memory/project-status.md`
 战略全文 → `memory/strategic-plan-2026.md`
@@ -92,6 +106,7 @@
 | `memory/collab-event-playbook.md` | 联动事件响应时 |
 | `memory/black-pool-design.md` | 讨论内部系统架构时 |
 | `memory/dreaming-agent-design.md` | 做梦 Agent 三层架构设计（浅睡/深睡/REM） |
+| `memory/advanced-memory-design.md` | 高级记忆系统设计文档（9模块） |
 | `memory/dreams/` | 做梦 Agent 产出（日志 + 周报 + 洞察库） |
 | `memory/style-guide.md` | 生成交付物时（视觉规范） |
 | `assets/data/VERSION.md` | 事实圣经版本追踪 |
