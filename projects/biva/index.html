@@ -367,6 +367,8 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script>
+const APP_VERSION = '0.2.1';
+
 /* ===== State ===== */
 const S = {
   provider: 'claude',
@@ -1105,9 +1107,12 @@ renderMessages();
 updateModelBtn();
 if (isMobile()) sidebar.classList.add('hidden');
 
-// Register Service Worker for offline caching
+// Set version text
+document.querySelectorAll('.ver,[id="sidebar-footer"]').forEach(el => el.textContent = 'v' + APP_VERSION);
+
+// Register Service Worker with version param to auto-refresh on update
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.register('sw.js?v=' + APP_VERSION).catch(() => {});
 }
 
 </script>

@@ -1,4 +1,6 @@
-const CACHE_NAME = 'biva-v2';
+// Cache name derived from ?v= param passed during registration
+const VERSION = new URL(self.location).searchParams.get('v') || '0';
+const CACHE_NAME = 'biva-v' + VERSION;
 const ASSETS = [
   './',
   './index.html',
