@@ -428,7 +428,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.8.2';
+const APP_VERSION = '0.8.3';
 
 /* ===== State ===== */
 const S = {
@@ -544,8 +544,11 @@ const PROMPT_LABELS = {
 
 let currentPrompt = 'biav';
 
-// Live context fetched from deployed data files
+// Live context fetched from deployed data files (with localStorage cache)
 let liveContext = '';
+const CONTEXT_CACHE_KEY = 'biav-context-cache';
+const CONTEXT_CACHE_TTL = 30 * 60 * 1000; // 30 minutes
+
 (async function loadLiveContext() {
   const files = [
     'data/BIAV-SC.md',
@@ -563,11 +566,28 @@ let liveContext = '';
     'data/interview-2026-04.json',
     'data/narrative-structure.json',
   ];
+
+  // Try loading from cache first
+  try {
+    const cached = JSON.parse(localStorage.getItem(CONTEXT_CACHE_KEY) || 'null');
+    if (cached && cached.version === APP_VERSION && (Date.now() - cached.ts) < CONTEXT_CACHE_TTL) {
+      liveContext = cached.context;
+      console.log('[BIAV] Context loaded from cache (' + cached.fileCount + ' files, ' + Math.round((Date.now() - cached.ts) / 1000) + 's ago)');
+      // Background refresh if older than 5 minutes
+      if ((Date.now() - cached.ts) > 5 * 60 * 1000) refreshContext(files);
+      return;
+    }
+  } catch {}
+
+  await refreshContext(files);
+})();
+
+async function refreshContext(files) {
   const parts = [];
   const loaded = [];
   for (const f of files) {
     try {
-      const res = await fetch(f, { cache: 'no-cache' });
+      const res = await fetch(f);
       if (res.ok) {
         const txt = await res.text();
         if (txt.trim()) { parts.push('## ' + f.replace('data/','') + '\n\n' + txt.trim()); loaded.push(f); }
@@ -576,9 +596,15 @@ let liveContext = '';
   }
   if (parts.length) {
     liveContext = '\n\n---\n以下是银芯系统完整知识库（' + loaded.length + ' 个文件），请基于这些数据回答问题：\n\n' + parts.join('\n\n---\n\n');
-    console.log('[BIVA] Live context loaded:', loaded.length, '/', files.length, 'files');
+    // Save to cache
+    try {
+      localStorage.setItem(CONTEXT_CACHE_KEY, JSON.stringify({
+        context: liveContext, ts: Date.now(), fileCount: loaded.length, version: APP_VERSION
+      }));
+    } catch { /* localStorage full, ignore */ }
+    console.log('[BIAV] Context refreshed:', loaded.length, '/', files.length, 'files');
   }
-})();
+}
 
 function getSystemPrompt() {
   let prompt = '';
