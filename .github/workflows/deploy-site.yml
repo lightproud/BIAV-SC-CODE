@@ -10,6 +10,7 @@ on:
       - 'projects/wiki/docs/**'
       - 'projects/wiki/package.json'
       - 'projects/news/index.html'
+      - 'projects/biav/chat.html'
       - 'deliverables/**'
       - '.github/workflows/deploy-site.yml'
   workflow_dispatch:
@@ -46,6 +47,8 @@ jobs:
           [ -d design ] && cp -r design dist/design
           cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/
           cp projects/news/index.html dist/news/index.html
+          mkdir -p dist/chat
+          [ -f projects/biav/chat.html ] && cp projects/biav/chat.html dist/chat/index.html
           mkdir -p dist/news/data
           [ -f projects/news/output/news.json ] && cp projects/news/output/news.json dist/news/data/news.json
           [ -d assets/styles ] && cp -r assets/styles/* dist/shared/
@@ -62,7 +65,7 @@ jobs:
           echo "=== index.html title ==="
           grep '<title>' dist/index.html
           echo ""
-          for f in dist/index.html dist/wiki/index.html dist/news/index.html; do
+          for f in dist/index.html dist/wiki/index.html dist/news/index.html dist/chat/index.html; do
             if [ ! -f "$f" ]; then
               echo "MISSING: $f" && exit 1
             fi
@@ -111,7 +114,7 @@ jobs:
           sleep 30
           BASE="https://lightproud.github.io/brain-in-a-vat"
           # zh content is at /wiki/ root (via VitePress rewrites), not /wiki/zh/
-          for url in "$BASE/" "$BASE/wiki/" "$BASE/wiki/en/" "$BASE/news/"; do
+          for url in "$BASE/" "$BASE/wiki/" "$BASE/wiki/en/" "$BASE/news/" "$BASE/chat/"; do
             status=$(curl -s -o /dev/null -w "%{http_code}" "$url" || echo "000")
             if [ "$status" = "200" ]; then
               echo "OK: $url → $status"
