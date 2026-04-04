@@ -2,8 +2,14 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>BIVA / Brain in a Vat</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BIVA">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0a0b10">
+<link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/styles/github-dark-dimmed.min.css">
@@ -191,12 +197,25 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
 .preset-chip{padding:4px 10px;border-radius:4px;border:1px solid #2a2515;background:none;color:#6b6040;font-size:11px;cursor:pointer;font-family:inherit;transition:all .15s}
 .preset-chip:hover{border-color:#8a7a48;color:#c5a356}
 
+/* PWA safe areas */
+html{height:100%;height:-webkit-fill-available}
+body{min-height:100vh;min-height:-webkit-fill-available}
+#input-area{padding-bottom:calc(12px + env(safe-area-inset-bottom, 0px))}
+#topbar{padding-top:calc(12px + env(safe-area-inset-top, 0px))}
+
 /* Responsive */
 @media(max-width:768px){
-  #sidebar{position:fixed;left:0;top:0;height:100%;z-index:90;background:#0a0b10}
-  #sidebar.hidden{margin-left:-260px}
-  #msg-container,#input-wrap{padding-left:12px;padding-right:12px}
-  #artifacts{position:fixed;right:0;top:0;height:100%;z-index:80;width:85%;max-width:none;background:#0a0b10}
+  #sidebar{position:fixed;left:0;top:0;height:100%;z-index:90;background:#0a0b10;transition:transform .25s ease}
+  #sidebar.hidden{transform:translateX(-100%);margin-left:0}
+  #msg-container,#input-wrap,#file-preview{padding-left:12px;padding-right:12px}
+  #artifacts{position:fixed;right:0;top:0;height:100%;z-index:80;width:100%;max-width:none;background:#0a0b10}
+  #topbar{gap:8px;padding-left:12px;padding-right:12px}
+  #model-btn{padding:4px 8px;font-size:12px}
+  #prompt-select{max-width:100px;font-size:11px}
+  #input{font-size:16px}
+  .msg-user .bubble{max-width:85%}
+  .msg-content{max-width:95%}
+  #settings-modal{width:95vw;max-height:85vh;overflow-y:auto}
 }
 </style>
 </head>
@@ -475,6 +494,7 @@ function loadConv(id) {
   if (c) { S.provider = c.provider; S.model = c.model; updateModelBtn() }
   renderMessages();
   renderSidebar();
+  if (isMobile()) sidebar.classList.add('hidden');
 }
 
 function deleteConv(id) {
@@ -976,6 +996,8 @@ function esc(s) { const d = document.createElement('div'); d.textContent = s; re
 
 /* ===== Event Listeners ===== */
 $('#toggle-sidebar').onclick = () => sidebar.classList.toggle('hidden');
+// Auto-hide sidebar on mobile when selecting conversation
+const isMobile = () => window.innerWidth <= 768;
 $('#new-chat-btn').onclick = newChat;
 modelBtn.onclick = () => { buildModelDropdown(); modelDropdown.classList.toggle('open') };
 document.addEventListener('mousedown', e => {
@@ -1069,6 +1091,7 @@ loadConversations();
 renderSidebar();
 renderMessages();
 updateModelBtn();
+if (isMobile()) sidebar.classList.add('hidden');
 
 </script>
 </body>
