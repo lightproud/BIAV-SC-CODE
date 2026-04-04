@@ -50,7 +50,16 @@ jobs:
           cp projects/news/index.html dist/news/index.html
           mkdir -p dist/biav
           if [ -f projects/biav/index.html ]; then
-            sed "s|%%ANTHROPIC_API_KEY%%|${ANTHROPIC_API_KEY}|g" projects/biav/index.html > dist/biav/index.html
+            python3 -c "
+import os, sys
+key = os.environ.get('ANTHROPIC_API_KEY', '')
+with open('projects/biav/index.html', 'r') as f:
+    content = f.read()
+content = content.replace('%%ANTHROPIC_API_KEY%%', key)
+with open('dist/biav/index.html', 'w') as f:
+    f.write(content)
+print(f'Key injected: {len(key)} chars, starts with {key[:10]}...' if key else 'WARNING: No key found')
+"
           fi
           [ -f projects/biav/manifest.json ] && cp projects/biav/manifest.json dist/biav/manifest.json
           [ -f projects/biav/sw.js ] && cp projects/biav/sw.js dist/biav/sw.js
