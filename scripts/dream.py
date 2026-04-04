@@ -582,6 +582,23 @@ def rebuild_vector_index():
         return False
 
 
+def rebuild_knowledge_graph():
+    """Rebuild knowledge graph via knowledge_graph module."""
+    try:
+        from knowledge_graph import build_graph
+        graph = build_graph()
+        n_nodes = graph["meta"]["node_count"]
+        n_edges = graph["meta"]["edge_count"]
+        print(f"  - Knowledge graph rebuilt: {n_nodes} nodes, {n_edges} edges")
+        return True
+    except ImportError:
+        print("  - knowledge_graph.py not found, skipping graph")
+        return False
+    except Exception as e:
+        print(f"  - Knowledge graph build error: {e}")
+        return False
+
+
 def run_phase3(keyword_index: dict, ai_results: dict = None):
     """Phase 3: Index — update semantic index, vector index, and dream journal."""
     print("\n## Indexing")
@@ -593,6 +610,10 @@ def run_phase3(keyword_index: dict, ai_results: dict = None):
     # Rebuild vector index (TF-IDF)
     print("\n## Vector Index")
     rebuild_vector_index()
+
+    # Rebuild knowledge graph
+    print("\n## Knowledge Graph")
+    rebuild_knowledge_graph()
 
 
 def main():

@@ -365,12 +365,74 @@ def utility_score(file_path: str) -> float:
     return entry.get("utility", 0.5)
 
 
+_graph_cache = None
+
+
+def _load_graph_cached():
+    """Load graph once per session."""
+    global _graph_cache
+    if _graph_cache is None:
+        try:
+            from knowledge_graph import load_graph
+            _graph_cache = load_graph() or False
+        except ImportError:
+            _graph_cache = False
+    return _graph_cache if _graph_cache else None
+
+
+_graph_query_cache = {}
+
+
 def graph_proximity_score(file_path: str, query: str) -> float:
-    """Placeholder for knowledge graph distance score.
-    Will be implemented in Sprint 2.
-    Returns neutral 0.5 for now.
+    """Score based on knowledge graph distance between file and query entities.
+
+    Tokenizes the query into terms, finds matching entities in the graph,
+    then checks if this file is within 2 hops of any matched entity.
+    Closer = higher score: 1 hop → 1.0, 2 hops → 0.6, not found → 0.2
     """
-    return 0.5
+    graph = _load_graph_cached()
+    if not graph:
+        return 0.5
+
+    # Cache related files per query to avoid repeated graph traversals
+    if query not in _graph_query_cache:
+        try:
+            from knowledge_graph import find_related_files, find_node
+        except ImportError:
+            return 0.5
+
+        # Try full query first, then individual terms
+        all_related = {}
+        query_terms = [query]
+
+        # Split into sub-terms for Chinese/English
+        import re
+        # Chinese: extract bigrams for graph matching
+        for run in re.findall(r"[\u4e00-\u9fff]+", query):
+            for i in range(len(run) - 1):
+                query_terms.append(run[i : i + 2])
+        english_terms = re.findall(r"[a-zA-Z]{3,}", query)
+        query_terms.extend(english_terms)
+
+        for term in query_terms:
+            if not find_node(graph, term):
+                continue
+            for r in find_related_files(graph, term, max_depth=2):
+                fp = r["file"]
+                if fp not in all_related or all_related[fp] > r["distance"]:
+                    all_related[fp] = r["distance"]
+
+        _graph_query_cache[query] = all_related
+
+    distance = _graph_query_cache[query].get(file_path)
+    if distance is None:
+        return 0.2
+    if distance == 1:
+        return 1.0
+    elif distance == 2:
+        return 0.6
+    else:
+        return 0.4
 
 
 def rerank(candidates: list[dict], query: str, weights: dict = None) -> list[dict]:
