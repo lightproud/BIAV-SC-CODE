@@ -1070,11 +1070,6 @@ renderSidebar();
 renderMessages();
 updateModelBtn();
 
-// Auto-open settings if no key configured
-const initCfg = loadConfig();
-if (!initCfg.anthropic && !initCfg.openai) {
-  setTimeout(openSettings, 300);
-}
 </script>
 </body>
 </html>
