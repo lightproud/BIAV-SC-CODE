@@ -389,6 +389,168 @@ def ai_trend_analysis(client) -> dict:
 
 
 # ============================================================
+# Sleep-Time Compute (precomputed cache)
+# ============================================================
+
+CACHE_FILE = REPO / "assets" / "data" / "precomputed-cache.json"
+
+
+def identify_hot_topics() -> list[str]:
+    """Identify hot topics from access logs, insights, and recent files.
+
+    Returns a list of topic strings for cache precomputation.
+    """
+    topics = []
+
+    # From access-log: most frequently scanned files → their topics
+    if ACCESS_LOG.exists():
+        try:
+            logs = json.loads(ACCESS_LOG.read_text(encoding="utf-8"))
+            file_counts = Counter()
+            for entry in logs[-7:]:  # Last 7 entries
+                for fp in entry.get("files_scanned", []):
+                    file_counts[fp] += 1
+            # Top 5 files → extract topic from filename
+            for fp, _ in file_counts.most_common(5):
+                name = Path(fp).stem.replace("-", " ").replace("_", " ")
+                topics.append(name)
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # Fixed high-value topics for this project
+    core_topics = [
+        "项目当前状态和三条主线进展",
+        "技术债和阻塞项",
+        "社区数据趋势摘要",
+        "最近的重要决策",
+        "下一步工作建议",
+    ]
+    topics.extend(core_topics)
+
+    return list(dict.fromkeys(topics))[:10]  # Deduplicate, max 10
+
+
+def generate_cache_entries(client, topics: list[str]) -> list[dict]:
+    """Use AI to precompute answers for hot topics."""
+    # Gather context for the AI
+    context_parts = []
+    context_files = [
+        ("memory/project-status.md", 2000),
+        ("memory/decisions.md", 1500),
+        ("memory/strategic-assessment.md", 2000),
+        ("memory/pending-discussions.md", 1000),
+    ]
+    for rel, limit in context_files:
+        fp = REPO / rel
+        if fp.exists():
+            try:
+                text = fp.read_text(encoding="utf-8")[:limit]
+                context_parts.append(f"### {rel}\n{text}")
+            except (OSError, UnicodeDecodeError):
+                pass
+
+    context = "\n\n".join(context_parts)
+    topics_str = "\n".join(f"- {t}" for t in topics)
+
+    prompt = f"""你是银芯（BIAV-SC）的 Sleep-Time Compute 模块。
+在深睡时预生成常见问题的结构化回答，供新会话快速引用。
+
+当前知识上下文：
+
+{context}
+
+请为以下高频话题各生成一个简洁回答（3-5句话）：
+
+{topics_str}
+
+输出 JSON 数组格式：
+[
+  {{
+    "question_patterns": ["关键词1", "关键词2"],
+    "answer": "简洁回答",
+    "sources": ["引用的文件路径"],
+    "confidence": 0.0-1.0
+  }}
+]
+
+只输出 JSON 数组。回答要基于上下文中的事实，不要猜测。"""
+
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=4096,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        text = response.content[0].text
+        json_match = re.search(r"\[[\s\S]+\]", text)
+        if json_match:
+            entries = json.loads(json_match.group())
+            # Add metadata
+            for i, entry in enumerate(entries):
+                entry["id"] = f"cache-{TODAY.isoformat()}-{i+1:03d}"
+                entry["hit_count"] = 0
+            return entries
+    except Exception as e:
+        print(f"  - Cache generation error: {e}")
+    return []
+
+
+def update_precomputed_cache(entries: list[dict]):
+    """Write precomputed cache to disk."""
+    CACHE_FILE.parent.mkdir(parents=True, exist_ok=True)
+
+    cache = {
+        "generated": TODAY.isoformat(),
+        "ttl_days": 1,
+        "generator": "dream.py sleep-time-compute",
+        "entries": entries,
+    }
+
+    CACHE_FILE.write_text(
+        json.dumps(cache, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return len(entries)
+
+
+def check_cache(query: str) -> dict | None:
+    """Check if a query matches any precomputed cache entry.
+
+    Returns the best matching entry or None.
+    """
+    if not CACHE_FILE.exists():
+        return None
+
+    try:
+        cache = json.loads(CACHE_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return None
+
+    # Check TTL
+    try:
+        gen_date = date.fromisoformat(cache.get("generated", "2000-01-01"))
+        ttl = cache.get("ttl_days", 1)
+        if (TODAY - gen_date).days > ttl:
+            return None
+    except ValueError:
+        return None
+
+    # Match query against patterns
+    query_lower = query.lower()
+    best_match = None
+    best_score = 0
+
+    for entry in cache.get("entries", []):
+        patterns = entry.get("question_patterns", [])
+        score = sum(1 for p in patterns if p.lower() in query_lower)
+        if score > best_score:
+            best_score = score
+            best_match = entry
+
+    return best_match if best_score > 0 else None
+
+
+# ============================================================
 # Phase 3: Index (auto-update knowledge index + semantic index)
 # ============================================================
 
@@ -561,6 +723,31 @@ def run_phase2(client) -> dict:
         consolidation["trends"] = trends
     else:
         print("  - No daily report available for trend analysis")
+
+    # Sleep-Time Compute: precompute answers for hot topics
+    print("\n## Sleep-Time Compute")
+    topics = identify_hot_topics()
+    print(f"  - {len(topics)} hot topics identified")
+    cache_entries = generate_cache_entries(client, topics)
+    if cache_entries:
+        n = update_precomputed_cache(cache_entries)
+        print(f"  - {n} cache entries generated and saved")
+        consolidation["cache_entries"] = n
+    else:
+        print("  - Cache generation skipped (no entries)")
+
+    # MemRL: compute utility scores
+    print("\n## MemRL Utility")
+    try:
+        from memrl import compute_utility
+        utility = compute_utility()
+        print(f"  - {len(utility)} files scored")
+        avg = sum(d["utility"] for d in utility.values()) / max(len(utility), 1)
+        print(f"  - Average utility: {avg:.3f}")
+    except ImportError:
+        print("  - memrl.py not found, skipping")
+    except Exception as e:
+        print(f"  - MemRL error: {e}")
 
     return consolidation
 

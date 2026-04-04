@@ -486,11 +486,30 @@ def load_index() -> dict | None:
         return None
 
 
+def check_precomputed_cache(query: str) -> dict | None:
+    """Check Sleep-Time Compute cache for a precomputed answer.
+
+    Returns {answer, sources, confidence} or None.
+    """
+    try:
+        sys.path.insert(0, str(Path(__file__).parent))
+        from dream import check_cache
+        return check_cache(query)
+    except (ImportError, Exception):
+        return None
+
+
 def search(query: str, top_k: int = 5, use_reranker: bool = True) -> list[dict]:
     """Semantic search: query → top-K relevant knowledge chunks.
 
+    Also checks precomputed cache first for instant answers.
     Returns [{chunk_id, file, preview, score, final_score, scores}]
     """
+    # Check cache first
+    cached = check_precomputed_cache(query)
+    if cached:
+        print(f"  💤 Sleep-Time cache hit: {cached.get('id', '?')}")
+
     index = load_index()
     if not index:
         print("  ⚠ 索引不存在，请先运行: python scripts/memory_search.py --build")
