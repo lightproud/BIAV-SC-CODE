@@ -1,57 +1,57 @@
 # 忘却前夜 社区日报 2026-04-04
 
-> 采集时间：2026-04-04 04:04 UTC+8
-
-## 🔥 联动动态
-
-1. [Bilibili] 【忘却前夜×沙耶之歌】入坑杂谈 &amp; 入坑攻略 — engagement: 3012
-2. [Bilibili] 沙耶の唄 — engagement: 1218
-3. [Bilibili] 沙耶之歌 绝对不能穿越的世界（安卓直装＋PC）神作推荐分享！ — engagement: 562
-4. [Bilibili] So Bitterrrrrrr — engagement: 426
-5. [Bilibili] 苏联版沙耶之歌，我在大雪中被一个神秘的女孩拉到怪异的大楼 — engagement: 282
+> 采集时间：2026-04-04 22:05 UTC+8
 
 ## 总览
 
 | 平台 | 数据条数 |
 |------|----------|
-| Bilibili | 11 |
+| Bilibili | 5 |
 | Discord | 6 |
 | NGA | 0（沉默）|
 | Official | 0（沉默）|
 | Reddit | 0（沉默）|
-| Steam | 1 |
+| Steam | 2 |
 | TapTap | 0（沉默）|
 | Twitter | 0（沉默）|
 | YouTube | 0（沉默）|
 
+## ⚠️ 需要关注
+
+- ⚠️ Steam好评率异常：50%
+
 ## Discord
 
-今日 10,279 条消息，336 位活跃用户，1,859 次反应。热门频道：🔸morimens-game-chat(3052)、🔸綜合討論(3048)、🔸game-question(1273)、🔸phòng-chat-tiếng-việt(967)、🔸team-building(418)
+今日 2,469 条消息，192 位活跃用户，201 次反应。热门频道：🔸綜合討論(571)、🔸game-question(493)、🔸phòng-chat-tiếng-việt(477)、🔸general-chat(387)、🔸한국어-채팅방(147)
 
 ### 热门话题
 
-1. [DC热门] morimensstaff06@🔸礼包码┊gift-codes: **🎁 DC 38000守密人达成礼 / — engagement: 387
-2. [DC热门] morimensstaff06@🔸服务器公告┊server-announcement: Hi Keeper — engagement: 326
-3. [DC热门] shio2311@1 million chromaphages: — engagement: 23
-4. [DC热门] vxvendetta97@BOSS COMPENDIUM: Hoy everyone, we wanted — engagement: 10
-5. [DC热门] butterfly14@A Letter For You Keeper!:  - Ramona Fanar — engagement: 9
+1. [DC热门] morimensstaff02@English Language Setting Abnormality  — engagement: 10
+2. [DC热门] sunstopshining@William says lock in: — engagement: 8
+3. [DC热门] water_heart@🔸綜合討論: — engagement: 5
+4. [DC热门] calvin_hz@🔸綜合討論: 玩了 大概12天 — engagement: 5
+5. [DC热门] salami_87@🔸canal-español: https://tenor.com/view/cat- — engagement: 5
 
 ## Steam 评论
 
-- 好评 1 / 差评 0 / 好评率 100%
-- 语言分布：latam 1
+- 好评 1 / 差评 1 / 好评率 50%
+- 语言分布：english 1, spanish 1
 
 ### 热门好评
 
-1. [正面] G — engagement: 0
+1. [正面] Buen juego por turnos, y eso que no me gustan tant... — engagement: 0
+
+### ⚠️ 差评
+
+- ⚠️ [english] The English language setting did nothing for me, the game language continued to  — engagement: 0
 
 ## Bilibili
 
-1. 【忘却前夜×沙耶之歌】入坑杂谈 &amp; 入坑攻略 — engagement: 3012
-2. 【忘却前夜】角色攻略之血链·希洛 — engagement: 1904
-3. 沙耶の唄 — engagement: 1218
-4. 沙耶之歌 绝对不能穿越的世界（安卓直装＋PC）神作推荐分享！ — engagement: 562
-5. 无专造两回合双超限莫斯，环法莱莫有多阴? — engagement: 508
+1. 三启塔罗向众神求助，回应她的只有死扛 — engagement: 389
+2. 血希2-5王关4t — engagement: 229
+3. 船长蛋筒图鲁 — engagement: 151
+4. 第四届塔薇杯-第十日录播 — engagement: 75
+5. 第四届塔薇杯-第十一日录播 — engagement: 14
 
 ## 沉默平台
 
