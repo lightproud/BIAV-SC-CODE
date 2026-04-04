@@ -375,6 +375,10 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         <label>ANTHROPIC API KEY</label>
         <input id="cfg-anthropic" type="password" placeholder="sk-ant-...">
       </div>
+      <div class="setting-group" style="display:flex;align-items:center;gap:8px">
+        <input type="checkbox" id="cfg-thinking" style="width:auto;accent-color:#c5a356">
+        <label for="cfg-thinking" style="margin:0;cursor:pointer">启用 Extended Thinking（思维链展示）</label>
+      </div>
     </div>
     <div id="pane-prompts" class="settings-pane">
       <div class="setting-group">
@@ -881,8 +885,9 @@ async function streamClaude(conv, signal) {
     }).filter(Boolean);
   }
 
-  // Extended thinking for non-haiku models
-  const useThinking = !S.model.includes('haiku');
+  // Extended thinking — disabled by default, toggle via settings
+  const cfg2 = loadConfig();
+  const useThinking = cfg2.enableThinking && !S.model.includes('haiku');
 
   // API messages for tool use loop (separate from display messages)
   let apiMessages = buildMsgs();
@@ -904,7 +909,7 @@ async function streamClaude(conv, signal) {
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': key,
-        'anthropic-version': '2025-04-14',
+        'anthropic-version': '2025-01-24',
         'anthropic-dangerous-direct-browser-access': 'true',
       },
       body: JSON.stringify(body),
@@ -1045,6 +1050,7 @@ function updateModelBtn() {
 function openSettings() {
   const cfg = loadConfig();
   $('#cfg-anthropic').value = cfg.anthropic || '';
+  $('#cfg-thinking').checked = !!cfg.enableThinking;
   $('#cfg-custom-prompt').value = cfg.customPrompt || '';
   settingsOverlay.classList.add('open');
 }
@@ -1054,6 +1060,7 @@ function closeSettings() { settingsOverlay.classList.remove('open') }
 function saveSettings() {
   const cfg = {
     anthropic: $('#cfg-anthropic').value.trim(),
+    enableThinking: $('#cfg-thinking').checked,
     customPrompt: $('#cfg-custom-prompt').value.trim(),
   };
   saveConfig(cfg);
