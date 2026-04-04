@@ -131,7 +131,7 @@ jobs:
           sleep 30
           BASE="https://lightproud.github.io/brain-in-a-vat"
           # zh content is at /wiki/ root (via VitePress rewrites), not /wiki/zh/
-          for url in "$BASE/" "$BASE/wiki/" "$BASE/wiki/en/" "$BASE/news/" "$BASE/biva/"; do
+          for url in "$BASE/" "$BASE/wiki/" "$BASE/wiki/en/" "$BASE/news/" "$BASE/biav/"; do
             status=$(curl -s -o /dev/null -w "%{http_code}" "$url" || echo "000")
             if [ "$status" = "200" ]; then
               echo "OK: $url → $status"
