@@ -1,4 +1,4 @@
-const CACHE_NAME = 'biva-v1';
+const CACHE_NAME = 'biva-v2';
 const ASSETS = [
   './',
   './index.html',
