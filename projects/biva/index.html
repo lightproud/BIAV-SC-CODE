@@ -16,7 +16,7 @@
 <style>
 /* ===== Reset & Base ===== */
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC',sans-serif;font-weight:500}
+html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC',sans-serif;font-weight:500}
 ::selection{background:rgba(197,163,86,.3);color:#e2c97e}
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:#0a0b10}
@@ -24,7 +24,7 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
 ::-webkit-scrollbar-thumb:hover{background:#3a3520}
 
 /* ===== Layout ===== */
-#app{display:flex;height:100vh}
+#app{display:flex;height:100vh;height:100dvh;height:-webkit-fill-available;overflow:hidden}
 #main-area{display:flex;flex:1;min-width:0}
 #chat-col{display:flex;flex-direction:column;flex:1;min-width:0}
 
@@ -198,17 +198,17 @@ html,body{height:100%;background:#0a0b10;color:#d4c9a8;font-family:'Noto Sans SC
 .preset-chip:hover{border-color:#8a7a48;color:#c5a356}
 
 /* PWA safe areas */
-html{height:100%;height:-webkit-fill-available}
-body{min-height:100vh;min-height:-webkit-fill-available}
+html{height:100%;height:-webkit-fill-available;overflow:hidden}
+body{height:100%;height:-webkit-fill-available;overflow:hidden}
 #input-area{padding-bottom:calc(12px + env(safe-area-inset-bottom, 0px))}
 #topbar{padding-top:calc(12px + env(safe-area-inset-top, 0px))}
 
 /* Responsive */
 @media(max-width:768px){
-  #sidebar{position:fixed;left:0;top:0;height:100%;z-index:90;background:#0a0b10}
+  #sidebar{position:fixed;left:0;top:0;height:100%;height:100dvh;z-index:90;background:#0a0b10}
   #sidebar.hidden{transform:translateX(-100%)}
   #msg-container,#input-wrap,#file-preview{padding-left:12px;padding-right:12px}
-  #artifacts{position:fixed;right:0;top:0;height:100%;z-index:80;width:100%;max-width:none;background:#0a0b10}
+  #artifacts{position:fixed;right:0;top:0;height:100%;height:100dvh;z-index:80;width:100%;max-width:none;background:#0a0b10}
   #topbar{gap:8px;padding-left:12px;padding-right:12px}
   #model-btn{padding:4px 8px;font-size:12px}
   #prompt-select{max-width:100px;font-size:11px}
