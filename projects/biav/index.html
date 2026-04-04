@@ -455,17 +455,21 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
           <button class="quick-chip" data-msg="搜索一下忘却前夜最近的新闻">🔍 搜索资讯</button>
           <button class="quick-chip" data-msg="请读取角色数据库，帮我梳理角色关系">🎭 角色分析</button>
         </div>
-        <div id="key-hint" style="display:none;margin-top:24px;width:100%;max-width:400px">
+        <div id="login-card" style="display:none;margin-top:24px;width:100%;max-width:400px">
           <div style="background:#1e1a10;border:1px solid #2a2515;border-radius:12px;padding:16px 20px">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#8a7a48"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
-              <span style="font-size:13px;color:#8a7a48;font-weight:600">输入 API Key 开始使用</span>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+              <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#8a7a48"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+              <span style="font-size:13px;color:#8a7a48;font-weight:600">登录</span>
             </div>
-            <div style="display:flex;gap:8px">
-              <input id="home-key-input" type="password" placeholder="sk-ant-..." style="flex:1;padding:8px 12px;border-radius:8px;border:1px solid #2a2515;background:#0a0b10;color:#d4c9a8;font-size:13px;font-family:inherit;outline:none;min-width:0">
-              <button id="home-key-save" style="padding:8px 16px;border-radius:8px;border:none;background:#c5a356;color:#0a0b10;font-size:13px;font-family:inherit;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .15s">保存</button>
+            <input id="login-name" type="text" placeholder="用户名" style="width:100%;padding:8px 12px;border-radius:8px;border:1px solid #2a2515;background:#0a0b10;color:#d4c9a8;font-size:13px;font-family:inherit;outline:none;margin-bottom:8px;box-sizing:border-box">
+            <input id="login-key" type="password" placeholder="API Key（sk-ant-...）" style="width:100%;padding:8px 12px;border-radius:8px;border:1px solid #2a2515;background:#0a0b10;color:#d4c9a8;font-size:13px;font-family:inherit;outline:none;margin-bottom:8px;box-sizing:border-box">
+            <div style="display:flex;gap:8px;align-items:center">
+              <select id="login-select" style="flex:1;padding:8px 12px;border-radius:8px;border:1px solid #2a2515;background:#0a0b10;color:#5a5540;font-size:12px;font-family:inherit;outline:none;display:none">
+                <option value="">已有账号快速登录...</option>
+              </select>
+              <button id="login-btn" style="padding:8px 20px;border-radius:8px;border:none;background:#c5a356;color:#0a0b10;font-size:13px;font-family:inherit;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .15s">登录</button>
             </div>
-            <div style="font-size:11px;color:#3a3520;margin-top:8px">从 <span style="color:#5a5540">console.anthropic.com</span> 获取密钥</div>
+            <div style="font-size:11px;color:#3a3520;margin-top:8px">Key 从 <span style="color:#5a5540">console.anthropic.com</span> 获取 · 已有账号无需重填 Key</div>
           </div>
         </div>
         <span class="ver"></span>
@@ -528,6 +532,15 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
       <button class="settings-tab" data-tab="prompts">Prompts</button>
     </div>
     <div id="pane-api" class="settings-pane active">
+      <div class="setting-group" id="account-info" style="display:none;padding:10px 12px;background:#1e1a10;border-radius:8px;border:1px solid #2a2515;margin-bottom:16px">
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <div style="display:flex;align-items:center;gap:8px">
+            <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#8a7a48"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+            <span id="account-name" style="font-size:13px;color:#d4c9a8;font-weight:600"></span>
+          </div>
+          <button id="logout-btn" style="padding:4px 12px;border-radius:6px;border:1px solid #2a2515;background:none;color:#c25a4a;font-size:11px;cursor:pointer;font-family:inherit;transition:all .15s">退出登录</button>
+        </div>
+      </div>
       <div class="setting-group">
         <label>ANTHROPIC API KEY</label>
         <input id="cfg-anthropic" type="password" placeholder="sk-ant-...">
@@ -595,16 +608,49 @@ const MODELS = {
 
 const PROVIDER_LABELS = { claude: 'Claude' };
 
-/* ===== Storage ===== */
+/* ===== Storage: Account System ===== */
 const BUILTIN_KEY = '%%ANTHROPIC_API_KEY%%';
+const ACCOUNTS_KEY = 'biav-accounts';
+const CURRENT_USER_KEY = 'biav-current-user';
+
+function loadAccounts() {
+  try { return JSON.parse(localStorage.getItem(ACCOUNTS_KEY) || '{}'); } catch { return {}; }
+}
+function saveAccounts(accts) { localStorage.setItem(ACCOUNTS_KEY, JSON.stringify(accts)); }
+function currentUser() { return localStorage.getItem(CURRENT_USER_KEY) || ''; }
+function setCurrentUser(name) { localStorage.setItem(CURRENT_USER_KEY, name); }
+
 function loadConfig() {
   try {
-    const cfg = JSON.parse(localStorage.getItem('biav-config') || '{}');
+    const user = currentUser();
+    const accts = loadAccounts();
+    const cfg = user && accts[user] ? { ...accts[user] } : {};
+    // Migrate: old single-account format
+    if (!user && !Object.keys(accts).length) {
+      const old = JSON.parse(localStorage.getItem('biav-config') || '{}');
+      if (old.anthropic) return old;
+    }
     if (!cfg.anthropic && BUILTIN_KEY && !BUILTIN_KEY.startsWith('%%')) cfg.anthropic = BUILTIN_KEY;
     return cfg;
-  } catch { return {} }
+  } catch { return {}; }
 }
-function saveConfig(cfg) { localStorage.setItem('biav-config', JSON.stringify(cfg)) }
+function saveConfig(cfg) {
+  const user = currentUser();
+  if (!user) { localStorage.setItem('biav-config', JSON.stringify(cfg)); return; }
+  const accts = loadAccounts();
+  accts[user] = cfg;
+  saveAccounts(accts);
+}
+function loginAccount(name, key) {
+  const accts = loadAccounts();
+  if (!accts[name]) accts[name] = {};
+  if (key) accts[name].anthropic = key;
+  saveAccounts(accts);
+  setCurrentUser(name);
+}
+function logoutAccount() {
+  setCurrentUser('');
+}
 function loadConversations() {
   try { S.conversations = JSON.parse(localStorage.getItem('biav-convs') || '[]') } catch { S.conversations = [] }
 }
@@ -2122,6 +2168,11 @@ function openSettings() {
   $('#cfg-openai').value = cfg.openai || '';
   $('#cfg-thinking').checked = !!cfg.enableThinking;
   $('#cfg-custom-prompt').value = cfg.customPrompt || '';
+  // Account info
+  const user = currentUser();
+  const info = $('#account-info');
+  if (user) { info.style.display = 'block'; $('#account-name').textContent = user; }
+  else { info.style.display = 'none'; }
   settingsOverlay.classList.add('open');
 }
 
@@ -2657,6 +2708,13 @@ document.addEventListener('mousedown', e => {
 });
 $('#settings-btn').onclick = openSettings;
 $('#settings-cancel').onclick = closeSettings;
+$('#logout-btn').onclick = () => {
+  logoutAccount();
+  closeSettings();
+  updateGreetingUser();
+  refreshLoginCard();
+  renderMessages();
+};
 $('#settings-save').onclick = saveSettings;
 $('#btn-clear-cache').onclick = async () => {
   if (!confirm('确定要清除缓存并重载页面？')) return;
@@ -2790,18 +2848,7 @@ renderMessages();
 updateModelBtn();
 if (isMobile()) sidebar.classList.add('hidden');
 
-// Time-aware greeting
-(function setGreeting() {
-  const h = new Date().getHours();
-  const icon = $('#greeting-icon');
-  const text = $('#greeting-text');
-  if (h >= 5 && h < 8) { icon.textContent = '🌅'; text.textContent = '早安，新的一天'; }
-  else if (h >= 8 && h < 12) { icon.textContent = '☀️'; text.textContent = '上午好'; }
-  else if (h >= 12 && h < 14) { icon.textContent = '🌤'; text.textContent = '午安'; }
-  else if (h >= 14 && h < 18) { icon.textContent = '⛅'; text.textContent = '下午好'; }
-  else if (h >= 18 && h < 22) { icon.textContent = '🌙'; text.textContent = '晚上好'; }
-  else { icon.textContent = '✦'; text.textContent = '夜深了，还在忙？'; }
-})();
+// Greeting is set by updateGreetingUser() above
 
 // Quick chip click → send message
 document.querySelectorAll('.quick-chip').forEach(chip => {
@@ -2815,23 +2862,73 @@ document.querySelectorAll('.quick-chip').forEach(chip => {
   };
 });
 
-// Show key input on home if no API key configured
-function checkKeyHint() {
+// Account system: login card logic
+function refreshLoginCard() {
+  const user = currentUser();
+  const card = $('#login-card');
   const cfg = loadConfig();
-  const hasKey = cfg.anthropic || (BUILTIN_KEY && !BUILTIN_KEY.startsWith('%%'));
-  const hint = $('#key-hint');
-  if (hint) hint.style.display = hasKey ? 'none' : 'block';
+  const hasBuiltin = BUILTIN_KEY && !BUILTIN_KEY.startsWith('%%');
+
+  if (user || hasBuiltin) {
+    card.style.display = 'none';
+  } else {
+    card.style.display = 'block';
+    // Populate account selector if existing accounts
+    const accts = loadAccounts();
+    const sel = $('#login-select');
+    const names = Object.keys(accts);
+    if (names.length) {
+      sel.style.display = '';
+      sel.innerHTML = '<option value="">已有账号快速登录...</option>';
+      names.forEach(n => { const o = document.createElement('option'); o.value = n; o.textContent = n; sel.appendChild(o); });
+    } else {
+      sel.style.display = 'none';
+    }
+  }
 }
-checkKeyHint();
-$('#home-key-save').onclick = () => {
-  const val = $('#home-key-input').value.trim();
-  if (!val) { $('#home-key-input').focus(); return; }
-  const cfg = loadConfig();
-  cfg.anthropic = val;
-  saveConfig(cfg);
-  $('#key-hint').style.display = 'none';
+
+function updateGreetingUser() {
+  const user = currentUser();
+  const h = new Date().getHours();
+  const icon = $('#greeting-icon');
+  const text = $('#greeting-text');
+  let timeText;
+  if (h >= 5 && h < 8) { icon.textContent = '🌅'; timeText = '早安'; }
+  else if (h >= 8 && h < 12) { icon.textContent = '☀️'; timeText = '上午好'; }
+  else if (h >= 12 && h < 14) { icon.textContent = '🌤'; timeText = '午安'; }
+  else if (h >= 14 && h < 18) { icon.textContent = '⛅'; timeText = '下午好'; }
+  else if (h >= 18 && h < 22) { icon.textContent = '🌙'; timeText = '晚上好'; }
+  else { icon.textContent = '✦'; timeText = '夜深了'; }
+  text.textContent = user ? `${timeText}，${user}` : timeText;
+}
+
+refreshLoginCard();
+updateGreetingUser();
+
+$('#login-btn').onclick = () => {
+  const name = $('#login-name').value.trim();
+  const key = $('#login-key').value.trim();
+  if (!name) { $('#login-name').focus(); return; }
+  // If existing account, key is optional
+  const accts = loadAccounts();
+  if (!key && !accts[name]?.anthropic) { $('#login-key').focus(); return; }
+  loginAccount(name, key);
+  refreshLoginCard();
+  updateGreetingUser();
   buildModelDropdown();
 };
+$('#login-select').onchange = (e) => {
+  const name = e.target.value;
+  if (!name) return;
+  setCurrentUser(name);
+  refreshLoginCard();
+  updateGreetingUser();
+  buildModelDropdown();
+  e.target.value = '';
+};
+// Enter key in login inputs
+$('#login-name').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); $('#login-key').focus(); } };
+$('#login-key').onkeydown = (e) => { if (e.key === 'Enter') { e.preventDefault(); $('#login-btn').click(); } };
 
 // Set version text
 document.querySelectorAll('.ver,[id="sidebar-footer"]').forEach(el => el.textContent = 'v' + APP_VERSION);
