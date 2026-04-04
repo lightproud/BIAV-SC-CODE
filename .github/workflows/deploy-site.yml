@@ -4,8 +4,6 @@ on:
   push:
     branches: [main]
     paths:
-      - 'site/**'
-      - 'design/**'
       - 'projects/site/**'
       - 'projects/wiki/docs/**'
       - 'projects/wiki/package.json'
@@ -42,9 +40,9 @@ jobs:
         run: |
           mkdir -p dist/wiki dist/news dist/shared
 
-          cp site/index.html dist/
-          [ -f site/404.html ] && cp site/404.html dist/404.html
-          [ -d design ] && cp -r design dist/design
+          cp projects/site/public/index.html dist/
+          [ -f projects/site/public/404.html ] && cp projects/site/public/404.html dist/404.html
+          [ -d projects/site/design ] && cp -r projects/site/design dist/design
           cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/
           cp projects/news/index.html dist/news/index.html
           mkdir -p dist/biva
