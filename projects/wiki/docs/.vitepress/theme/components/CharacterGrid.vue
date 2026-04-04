@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted } from 'vue'
-import { useRouter, withBase } from 'vitepress'
+import { useRouter, useData, withBase } from 'vitepress'
 
 interface Character {
   id: string
@@ -15,6 +15,7 @@ interface Character {
 }
 
 const router = useRouter()
+const { lang } = useData()
 const characters = ref<Character[]>([])
 const loading = ref(true)
 const error = ref('')
@@ -53,7 +54,7 @@ onMounted(async () => {
     const res = await fetch(withBase('/data/db/characters.json'))
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = await res.json()
-    characters.value = data.characters || []
+    characters.value = [...(data.characters || []), ...(data.sr_characters || [])]
   } catch (e: any) {
     error.value = `Failed to load character data: ${e.message}`
   } finally {
@@ -101,7 +102,10 @@ const filteredCharacters = computed(() => {
 })
 
 function navigateToCharacter(id: string) {
-  router.go(withBase(`/zh/awakeners/${id}`))
+  // zh is rewritten to root via VitePress rewrites; en/ja keep prefix
+  const l = lang.value || 'zh'
+  const prefix = l === 'zh' || l === 'root' ? '' : `/${l}`
+  router.go(withBase(`${prefix}/awakeners/${id}.html`))
 }
 
 function getPortraitUrl(id: string): string {
@@ -182,8 +186,7 @@ function getPortraitUrl(id: string): string {
           <span v-if="char.is_limited" class="cg-card__limited">Limited</span>
         </div>
         <div class="cg-card__info">
-          <div class="cg-card__name">{{ char.name }}</div>
-          <div class="cg-card__name-en">{{ char.name_en }}</div>
+          <div class="cg-card__name">{{ char.name }} <span class="cg-card__name-en">{{ char.name_en }}</span></div>
           <div class="cg-card__meta">
             <span class="cg-realm-badge" :class="`realm-${char.realm}`">
               {{ realmEmoji[char.realm] }} {{ realmLabels[char.realm] }}
@@ -268,13 +271,13 @@ function getPortraitUrl(id: string): string {
 
 .cg-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
 }
 
 .cg-card {
   border: 1px solid var(--vp-c-divider);
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -282,8 +285,8 @@ function getPortraitUrl(id: string): string {
 }
 
 .cg-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   border-color: var(--vp-c-brand-1);
 }
 
@@ -295,7 +298,7 @@ function getPortraitUrl(id: string): string {
 .cg-card__portrait {
   position: relative;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   background: var(--vp-c-bg-soft);
   overflow: hidden;
 }
@@ -304,6 +307,7 @@ function getPortraitUrl(id: string): string {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .cg-card__rarity {
@@ -340,20 +344,21 @@ function getPortraitUrl(id: string): string {
 }
 
 .cg-card__info {
-  padding: 12px;
+  padding: 8px 10px;
 }
 
 .cg-card__name {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--vp-c-text-1);
   line-height: 1.3;
+  margin-bottom: 4px;
 }
 
 .cg-card__name-en {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--vp-c-text-2);
-  margin-bottom: 8px;
+  font-weight: 400;
 }
 
 .cg-card__meta {
@@ -389,8 +394,48 @@ function getPortraitUrl(id: string): string {
 
 @media (max-width: 640px) {
   .cg-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .cg-card__portrait {
+    aspect-ratio: 1;
+  }
+
+  .cg-card__info {
+    padding: 6px 8px;
+  }
+
+  .cg-card__name {
+    font-size: 12px;
+  }
+
+  .cg-card__name-en {
+    display: none;
+  }
+
+  .cg-card__meta {
+    gap: 4px;
+  }
+
+  .cg-realm-badge,
+  .cg-role-badge {
+    font-size: 9px;
+    padding: 1px 4px;
+  }
+
+  .cg-card__rarity {
+    font-size: 9px;
+    padding: 1px 5px;
+    top: 4px;
+    left: 4px;
+  }
+
+  .cg-card__limited {
+    font-size: 8px;
+    padding: 1px 4px;
+    top: 4px;
+    right: 4px;
   }
 
   .cg-filters {
@@ -399,6 +444,15 @@ function getPortraitUrl(id: string): string {
 
   .cg-select {
     width: 100%;
+  }
+
+  .cg-toolbar {
+    padding: 10px;
+  }
+
+  .cg-search-input {
+    padding: 8px 10px;
+    font-size: 13px;
   }
 }
 </style>
