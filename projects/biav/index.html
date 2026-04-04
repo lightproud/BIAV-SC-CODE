@@ -407,7 +407,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.6.1';
+const APP_VERSION = '0.6.2';
 
 /* ===== State ===== */
 const S = {
@@ -481,6 +481,8 @@ const PROMPTS = {
 - run_javascript：在浏览器沙箱中执行 JS 代码，用于计算、数据处理
 - generate_pdf：将 Markdown 内容渲染为 PDF 并下载（报告、分析文档）
 - generate_docx：将 Markdown 内容生成 Word 文档并下载（可编辑文档）
+- generate_excel：将 JSON 数据生成 Excel（.xlsx）并下载（数据表格、统计）
+- generate_pptx：生成 PowerPoint 演示文稿（.pptx）并下载（汇报、展示）
 
 当用户询问具体数据（角色属性、技能、日报详情、代码实现等）时，优先使用 read_file 读取原始文件，而不是仅凭预加载的摘要回答。仓库中的关键数据路径：
 - projects/wiki/data/db/characters.json — 63角色完整数据
@@ -883,6 +885,53 @@ const TOOLS = [
       },
       required: ['content']
     }
+  },
+  {
+    name: 'generate_excel',
+    description: '生成 Excel 文件（.xlsx）并触发下载。传入 JSON 数组数据，每个对象的 key 作为列标题。支持多 sheet。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        sheets: {
+          type: 'array',
+          description: 'Array of sheets. Each sheet: {name: "Sheet1", data: [{col1: val1, ...}, ...]}',
+          items: {
+            type: 'object',
+            properties: {
+              name: { type: 'string', description: 'Sheet name' },
+              data: { type: 'array', description: 'Array of row objects. Keys become column headers.', items: { type: 'object' } }
+            },
+            required: ['name', 'data']
+          }
+        },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'data' }
+      },
+      required: ['sheets']
+    }
+  },
+  {
+    name: 'generate_pptx',
+    description: '生成 PowerPoint 演示文稿（.pptx）并触发下载。传入幻灯片数组，每页包含标题和内容。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        slides: {
+          type: 'array',
+          description: 'Array of slides',
+          items: {
+            type: 'object',
+            properties: {
+              title: { type: 'string', description: 'Slide title' },
+              content: { type: 'string', description: 'Slide body text (supports newlines for bullet points)' },
+              layout: { type: 'string', description: '"title" for title slide, "section" for section break, "content" for normal (default)', default: 'content' }
+            },
+            required: ['title']
+          }
+        },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'presentation' }
+      },
+      required: ['slides']
+    }
   }
 ];
 
@@ -972,6 +1021,72 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
       a.click();
       URL.revokeObjectURL(a.href);
       return `Word document generated and downloaded: ${fname}.doc`;
+    }
+    if (name === 'generate_excel') {
+      // Lazy-load SheetJS
+      if (!window.XLSX) {
+        await new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = 'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js';
+          s.onload = resolve; s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      }
+      const fname = (input.filename || 'data').replace(/\.xlsx?$/i, '');
+      const wb = XLSX.utils.book_new();
+      for (const sheet of input.sheets) {
+        const ws = XLSX.utils.json_to_sheet(sheet.data);
+        // Auto-width columns
+        const colWidths = {};
+        [Object.keys(sheet.data[0] || {}), ...sheet.data.map(r => Object.values(r).map(String))].forEach(row => {
+          row.forEach((v, i) => { colWidths[i] = Math.max(colWidths[i] || 8, Math.min(String(v).length + 2, 40)); });
+        });
+        ws['!cols'] = Object.values(colWidths).map(w => ({ wch: w }));
+        XLSX.utils.book_append_sheet(wb, ws, sheet.name || 'Sheet');
+      }
+      XLSX.writeFile(wb, fname + '.xlsx');
+      const totalRows = input.sheets.reduce((s, sh) => s + sh.data.length, 0);
+      return `Excel generated: ${fname}.xlsx (${input.sheets.length} sheet(s), ${totalRows} rows)`;
+    }
+    if (name === 'generate_pptx') {
+      // Lazy-load PptxGenJS
+      if (!window.PptxGenJS) {
+        await new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = 'https://cdn.jsdelivr.net/npm/pptxgenjs@3.12.0/dist/pptxgen.bundle.js';
+          s.onload = resolve; s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      }
+      const fname = (input.filename || 'presentation').replace(/\.pptx?$/i, '');
+      const pptx = new PptxGenJS();
+      pptx.layout = 'LAYOUT_WIDE';
+      // BIAV theme colors
+      const gold = '#C5A356', darkBg = '#0A0B10', darkCard = '#1E1A10', lightText = '#D4C9A8';
+      for (const s of input.slides) {
+        const slide = pptx.addSlide();
+        slide.background = { color: darkBg };
+        if (s.layout === 'title') {
+          slide.addText(s.title, { x: 0.5, y: 2.0, w: '90%', h: 1.5, fontSize: 36, fontFace: 'Microsoft YaHei', color: gold, bold: true, align: 'center' });
+          if (s.content) slide.addText(s.content, { x: 0.5, y: 3.8, w: '90%', h: 1, fontSize: 18, color: lightText, align: 'center' });
+          slide.addShape(pptx.ShapeType.line, { x: 3.5, y: 3.5, w: 6, h: 0, line: { color: gold, width: 1.5 } });
+        } else if (s.layout === 'section') {
+          slide.addText(s.title, { x: 0.5, y: 2.5, w: '90%', h: 1.2, fontSize: 32, fontFace: 'Microsoft YaHei', color: gold, bold: true, align: 'center' });
+        } else {
+          slide.addText(s.title, { x: 0.5, y: 0.3, w: '90%', h: 0.8, fontSize: 24, fontFace: 'Microsoft YaHei', color: gold, bold: true });
+          slide.addShape(pptx.ShapeType.line, { x: 0.5, y: 1.05, w: 12, h: 0, line: { color: '2A2515', width: 1 } });
+          if (s.content) {
+            const bullets = s.content.split('\n').filter(l => l.trim());
+            const textRows = bullets.map(b => {
+              const isBullet = /^[-•*]\s/.test(b.trim());
+              return { text: isBullet ? b.trim().replace(/^[-•*]\s+/, '') : b.trim(), options: { fontSize: 16, color: lightText, bullet: isBullet ? { code: '2022' } : false, paraSpaceAfter: 8 } };
+            });
+            slide.addText(textRows, { x: 0.5, y: 1.3, w: 12, h: 5.5, fontFace: 'Microsoft YaHei', valign: 'top' });
+          }
+        }
+      }
+      await pptx.writeFile({ fileName: fname + '.pptx' });
+      return `PowerPoint generated: ${fname}.pptx (${input.slides.length} slides)`;
     }
     if (name === 'run_javascript') {
       return new Promise((resolve) => {
