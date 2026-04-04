@@ -710,7 +710,12 @@ function renderMessages() {
   });
   messagesEl.innerHTML = '';
   messagesEl.appendChild(container);
-  messagesEl.scrollTop = messagesEl.scrollHeight;
+  // Use instant scroll for full re-renders (history load), smooth for streaming
+  if (S.streaming) {
+    messagesEl.scrollTo({ top: messagesEl.scrollHeight, behavior: 'smooth' });
+  } else {
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
   setTimeout(addArtifactButtons, 0);
 }
 
