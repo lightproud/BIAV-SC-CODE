@@ -407,7 +407,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.6.0';
+const APP_VERSION = '0.6.1';
 
 /* ===== State ===== */
 const S = {
@@ -479,6 +479,8 @@ const PROMPTS = {
 - save_memory：保存重要信息到跨会话记忆
 - web_search：搜索互联网获取最新信息（内置服务端工具）
 - run_javascript：在浏览器沙箱中执行 JS 代码，用于计算、数据处理
+- generate_pdf：将 Markdown 内容渲染为 PDF 并下载（报告、分析文档）
+- generate_docx：将 Markdown 内容生成 Word 文档并下载（可编辑文档）
 
 当用户询问具体数据（角色属性、技能、日报详情、代码实现等）时，优先使用 read_file 读取原始文件，而不是仅凭预加载的摘要回答。仓库中的关键数据路径：
 - projects/wiki/data/db/characters.json — 63角色完整数据
@@ -857,6 +859,30 @@ const TOOLS = [
       },
       required: ['code']
     }
+  },
+  {
+    name: 'generate_pdf',
+    description: '生成 PDF 文件并触发下载。传入 Markdown 格式的内容（支持标题、列表、表格、代码块等）。适合报告、分析文档、数据汇总等。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        content: { type: 'string', description: 'Markdown content for the PDF' },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'document' }
+      },
+      required: ['content']
+    }
+  },
+  {
+    name: 'generate_docx',
+    description: '生成 Word 文档（.doc）并触发下载。传入 Markdown 格式的内容。适合需要用户后续编辑的文档。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        content: { type: 'string', description: 'Markdown content for the Word document' },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'document' }
+      },
+      required: ['content']
+    }
   }
 ];
 
@@ -889,6 +915,63 @@ async function execTool(name, input) {
       if (!res.ok) return `Error: search failed (${res.status})`;
       const data = await res.json();
       return data.items?.slice(0, 10).map(i => `${i.path} (score: ${i.score?.toFixed(1)})`).join('\n') || 'No results found';
+    }
+    if (name === 'generate_pdf') {
+      // Lazy-load html2pdf.js
+      if (!window.html2pdf) {
+        await new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = 'https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.2/dist/html2pdf.bundle.min.js';
+          s.onload = resolve; s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      }
+      const fname = (input.filename || 'document').replace(/\.pdf$/i, '');
+      const html = renderMd(input.content);
+      const container = document.createElement('div');
+      container.innerHTML = html;
+      container.style.cssText = 'font-family:"Noto Sans SC",sans-serif;color:#1a1a1a;font-size:13px;line-height:1.8;max-width:680px;padding:20px';
+      container.querySelectorAll('h1,h2,h3').forEach(el => { el.style.color = '#8a6d20'; el.style.borderBottom = '1px solid #e8e0c8'; el.style.paddingBottom = '4px'; });
+      container.querySelectorAll('code').forEach(el => { el.style.background = '#f5f0e0'; el.style.padding = '1px 4px'; el.style.borderRadius = '3px'; el.style.fontSize = '12px'; });
+      container.querySelectorAll('pre').forEach(el => { el.style.background = '#f5f0e0'; el.style.padding = '10px'; el.style.borderRadius = '6px'; el.style.overflow = 'auto'; });
+      container.querySelectorAll('pre code').forEach(el => { el.style.background = 'none'; el.style.padding = '0'; });
+      container.querySelectorAll('table').forEach(el => { el.style.borderCollapse = 'collapse'; el.style.width = '100%'; el.style.fontSize = '12px'; });
+      container.querySelectorAll('th,td').forEach(el => { el.style.border = '1px solid #d4c9a8'; el.style.padding = '5px 8px'; });
+      container.querySelectorAll('th').forEach(el => { el.style.background = '#f5f0e0'; el.style.fontWeight = '700'; });
+      container.querySelectorAll('blockquote').forEach(el => { el.style.borderLeft = '3px solid #c5a356'; el.style.paddingLeft = '12px'; el.style.color = '#666'; });
+      document.body.appendChild(container);
+      try {
+        await html2pdf().set({
+          margin: [15, 15, 15, 15],
+          filename: fname + '.pdf',
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        }).from(container).save();
+        return `PDF generated and downloaded: ${fname}.pdf`;
+      } finally { container.remove(); }
+    }
+    if (name === 'generate_docx') {
+      const fname = (input.filename || 'document').replace(/\.docx?$/i, '');
+      const html = renderMd(input.content);
+      const docHtml = `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">
+<head><meta charset="utf-8"><style>
+body{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;color:#1a1a1a;font-size:13px;line-height:1.8;max-width:680px;margin:0 auto;padding:24px}
+h1,h2,h3{color:#8a6d20;border-bottom:1px solid #e8e0c8;padding-bottom:4px}
+code{background:#f5f0e0;padding:1px 4px;border-radius:3px;font-size:12px;font-family:Consolas,monospace}
+pre{background:#f5f0e0;padding:10px;border-radius:6px;overflow:auto}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th,td{border:1px solid #d4c9a8;padding:5px 8px}
+th{background:#f5f0e0;font-weight:700}
+blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px 0}
+</style></head><body>${html}</body></html>`;
+      const blob = new Blob([docHtml], { type: 'application/msword' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = fname + '.doc';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      return `Word document generated and downloaded: ${fname}.doc`;
     }
     if (name === 'run_javascript') {
       return new Promise((resolve) => {
