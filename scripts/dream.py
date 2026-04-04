@@ -565,13 +565,34 @@ def run_phase2(client) -> dict:
     return consolidation
 
 
+def rebuild_vector_index():
+    """Rebuild TF-IDF vector index via memory_search module."""
+    try:
+        from memory_search import build_index
+        index = build_index()
+        n_chunks = len(index.get("vectors", {}))
+        n_vocab = len(index.get("vocabulary", {}))
+        print(f"  - Vector index rebuilt: {n_chunks} chunks, {n_vocab} vocabulary")
+        return True
+    except ImportError:
+        print("  - memory_search.py not found, skipping vector index")
+        return False
+    except Exception as e:
+        print(f"  - Vector index build error: {e}")
+        return False
+
+
 def run_phase3(keyword_index: dict, ai_results: dict = None):
-    """Phase 3: Index — update semantic index and dream journal."""
+    """Phase 3: Index — update semantic index, vector index, and dream journal."""
     print("\n## Indexing")
     idx_path = update_semantic_index(keyword_index, ai_results)
     print(f"  - Semantic index updated: {idx_path}")
     print(f"  - {len(keyword_index.get('files', {}))} files indexed")
     print(f"  - {len(keyword_index.get('keyword_index', {}))} unique keywords")
+
+    # Rebuild vector index (TF-IDF)
+    print("\n## Vector Index")
+    rebuild_vector_index()
 
 
 def main():

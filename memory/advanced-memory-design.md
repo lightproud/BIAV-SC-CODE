@@ -118,7 +118,7 @@ def extract_relations(entities, text) -> list[dict]:
     """提取实体间关系（共现 + 模式匹配）"""
 
 def build_graph() -> dict:
-    """构建完整知识图谱 → assets/data/knowledge-graph.json"""
+    """构建完整知识图谱（待创建 assets/data/knowledge-graph.json）"""
 
 def query_graph(entity, relation_type=None, depth=1) -> list[dict]:
     """图查询：返回与 entity 相关的节点和边"""
@@ -242,7 +242,7 @@ utility[file] = α × new_signal + (1-α) × utility[file]
 **存储**：
 
 ```json
-// assets/data/memory-utility.json
+// 待创建 assets/data/memory-utility.json
 {
   "memory/decisions.md": {
     "utility": 0.82,
@@ -310,7 +310,7 @@ def weekly_calibration():
 **缓存结构**：
 
 ```json
-// assets/data/precomputed-cache.json
+// 待创建 assets/data/precomputed-cache.json
 {
   "generated": "2026-04-04",
   "ttl_days": 1,
@@ -351,7 +351,7 @@ def update_cache_hits(cache_id: str):
 ### 新会话启动流程（更新）
 
 1. 读完本文件
-2. **检查 assets/data/precomputed-cache.json 是否存在且未过期**
+2. **检查预计算缓存是否存在且未过期**
 3. 读 memory/project-status.md
 4. 读你负责的 projects/xxx/CONTEXT.md
 5. 主动告诉用户你能做什么 + 建议
@@ -420,9 +420,9 @@ def update_cache_hits(cache_id: str):
 | `scripts/memrl.py` | 新建 | MemRL-lite 效用追踪 |
 | `scripts/dream.py` | 修改 | Phase 3 集成图谱/向量/缓存重建 |
 | `assets/data/vectors.json` | 生成 | TF-IDF 向量索引 |
-| `assets/data/knowledge-graph.json` | 生成 | 知识图谱 |
-| `assets/data/memory-utility.json` | 生成 | 效用分数 |
-| `assets/data/precomputed-cache.json` | 生成 | 预计算缓存 |
+| `assets/data/knowledge-graph.json` | 待生成 | 知识图谱 |
+| `assets/data/memory-utility.json` | 待生成 | 效用分数 |
+| `assets/data/precomputed-cache.json` | 待生成 | 预计算缓存 |
 | `BIAV-SC.md` | 修改 | 新增语义检索能力声明 |
 | `.github/workflows/dream.yml` | 修改 | 深睡集成新模块 |
 | `memory/dreaming-agent-design.md` | 修改 | 更新架构说明 |
