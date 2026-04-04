@@ -229,6 +229,22 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 /* Token usage */
 .token-usage{font-size:10px;color:#3a3520;margin-top:4px;display:flex;gap:10px}
 
+/* Select mode */
+#select-bar{display:none;position:absolute;bottom:80px;left:50%;transform:translateX(-50%);background:#1e1a10;border:1px solid #2a2515;border-radius:12px;padding:8px 16px;gap:10px;align-items:center;box-shadow:0 8px 32px rgba(0,0,0,.5);z-index:60}
+#select-bar.open{display:flex}
+#select-count{font-size:12px;color:#8a7a48;white-space:nowrap}
+#select-bar button{padding:6px 14px;border-radius:8px;font-size:12px;font-family:inherit;font-weight:500;cursor:pointer;border:1px solid #2a2515;background:none;color:#6b6040;transition:all .15s;white-space:nowrap}
+#select-bar button:hover{border-color:#8a7a48;color:#d4c9a8}
+#select-save-btn{background:#c5a356!important;color:#0a0b10!important;border-color:#c5a356!important}
+#select-save-btn:hover{background:#e2c97e!important}
+#select-cancel-btn:hover{color:#c25a4a;border-color:#c25a4a}
+.select-mode .msg{cursor:pointer;border-radius:8px;padding:6px 8px;margin-left:-8px;margin-right:-8px;transition:background .1s,box-shadow .1s}
+.select-mode .msg:hover{background:rgba(197,163,86,.05)}
+.select-mode .msg.selected{background:rgba(197,163,86,.1);box-shadow:inset 3px 0 0 #c5a356}
+.select-mode .msg::before{content:'';display:inline-block;width:18px;height:18px;border:2px solid #3a3520;border-radius:4px;vertical-align:middle;margin-right:8px;flex-shrink:0;transition:all .15s}
+.select-mode .msg.selected::before{background:#c5a356;border-color:#c5a356;content:'✓';color:#0a0b10;font-size:12px;font-weight:700;text-align:center;line-height:18px}
+.select-mode .msg-edit-btn,.select-mode .msg-actions{display:none!important}
+
 /* Conversation star */
 .conv-star{opacity:0;background:none;border:none;color:#5a5540;cursor:pointer;padding:2px 4px;font-size:13px;transition:all .15s;flex-shrink:0}
 .conv-item:hover .conv-star,.conv-star.starred{opacity:1}
@@ -415,6 +431,9 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         <div id="prompt-dropdown"></div>
       </div>
       <div style="flex:1"></div>
+      <button class="topbar-btn" id="select-btn" title="选择消息导出图片">
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      </button>
       <button class="topbar-btn" id="export-btn" title="Export conversation">
         <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
       </button>
@@ -454,6 +473,13 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
           <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="6" y="6" width="12" height="12" rx="2" stroke-width="2.5"/></svg>
         </button>
       </div>
+    </div>
+    <!-- Select mode floating bar -->
+    <div id="select-bar">
+      <span id="select-count">已选 0 条</span>
+      <button id="select-all-btn">全选</button>
+      <button id="select-save-btn">保存为图片</button>
+      <button id="select-cancel-btn">取消</button>
     </div>
     </div><!-- /chat-col -->
 
@@ -2097,6 +2123,139 @@ function exportConversation() {
   URL.revokeObjectURL(a.href);
 }
 
+/* ===== Select Mode (save as image) ===== */
+let selectMode = false;
+const selectedMsgs = new Set();
+
+function enterSelectMode() {
+  const conv = currentConv();
+  if (!conv || conv.messages.length === 0 || S.streaming) return;
+  selectMode = true;
+  selectedMsgs.clear();
+  const container = messagesEl.querySelector('#msg-container');
+  if (container) container.classList.add('select-mode');
+  $('#select-bar').classList.add('open');
+  updateSelectCount();
+  // Bind click on messages
+  document.querySelectorAll('#msg-container .msg').forEach((el, i) => {
+    el._selectIdx = i;
+    el.onclick = (e) => {
+      if (!selectMode) return;
+      e.stopPropagation();
+      if (selectedMsgs.has(i)) { selectedMsgs.delete(i); el.classList.remove('selected'); }
+      else { selectedMsgs.add(i); el.classList.add('selected'); }
+      updateSelectCount();
+    };
+  });
+}
+
+function exitSelectMode() {
+  selectMode = false;
+  selectedMsgs.clear();
+  const container = messagesEl.querySelector('#msg-container');
+  if (container) {
+    container.classList.remove('select-mode');
+    container.querySelectorAll('.msg.selected').forEach(el => el.classList.remove('selected'));
+  }
+  $('#select-bar').classList.remove('open');
+}
+
+function selectAllMsgs() {
+  const conv = currentConv();
+  if (!conv) return;
+  const all = document.querySelectorAll('#msg-container .msg');
+  all.forEach((el, i) => { selectedMsgs.add(i); el.classList.add('selected'); });
+  updateSelectCount();
+}
+
+function updateSelectCount() {
+  $('#select-count').textContent = `已选 ${selectedMsgs.size} 条`;
+  $('#select-save-btn').disabled = selectedMsgs.size === 0;
+}
+
+async function saveSelectedAsImage() {
+  if (selectedMsgs.size === 0) return;
+  const conv = currentConv();
+  if (!conv) return;
+
+  // Lazy-load html2canvas
+  if (!window.html2canvas) {
+    await new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+      s.onload = resolve; s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  // Build a styled container with selected messages
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'position:fixed;left:-9999px;top:0;width:720px;padding:24px 20px;background:#0a0b10;font-family:"Noto Sans SC",sans-serif;color:#d4c9a8;font-size:14px;line-height:1.8';
+
+  // Header
+  const header = document.createElement('div');
+  header.style.cssText = 'display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #2a2515';
+  header.innerHTML = `<span style="font-family:\'Noto Serif SC\',serif;color:#e2c97e;font-size:16px;font-weight:700;letter-spacing:2px">缸中之脑</span><span style="color:#3a3520;font-size:11px">${conv.title.slice(0, 40)}</span>`;
+  wrap.appendChild(header);
+
+  // Messages
+  const sorted = [...selectedMsgs].sort((a, b) => a - b);
+  sorted.forEach(idx => {
+    const m = conv.messages[idx];
+    if (!m) return;
+    const div = document.createElement('div');
+    div.style.cssText = 'margin-bottom:14px';
+    if (m.role === 'user') {
+      div.style.cssText += ';display:flex;justify-content:flex-end';
+      const bubble = document.createElement('div');
+      bubble.style.cssText = 'max-width:75%;padding:10px 14px;border-radius:14px 14px 4px 14px;background:#1e1a10;border:1px solid #2a2515;font-size:14px;line-height:1.8;white-space:pre-wrap';
+      bubble.textContent = m.content;
+      div.appendChild(bubble);
+    } else {
+      const content = document.createElement('div');
+      content.style.cssText = 'max-width:85%;font-size:14px;line-height:1.8';
+      content.innerHTML = renderMd(m.content);
+      // Style inline elements for image
+      content.querySelectorAll('h1,h2,h3').forEach(el => { el.style.color = '#e2c97e'; el.style.fontWeight = '700'; });
+      content.querySelectorAll('strong').forEach(el => el.style.color = '#e2c97e');
+      content.querySelectorAll('code').forEach(el => { el.style.background = '#1e1a10'; el.style.color = '#e2c97e'; el.style.padding = '2px 6px'; el.style.borderRadius = '3px'; el.style.fontSize = '.9em'; });
+      content.querySelectorAll('pre').forEach(el => { el.style.background = '#1e1a10'; el.style.border = '1px solid #2a2515'; el.style.borderRadius = '6px'; el.style.padding = '12px'; el.style.overflow = 'hidden'; });
+      content.querySelectorAll('pre code').forEach(el => { el.style.background = 'none'; el.style.padding = '0'; el.style.display = 'block'; });
+      content.querySelectorAll('blockquote').forEach(el => { el.style.borderLeft = '3px solid #c5a356'; el.style.paddingLeft = '1em'; el.style.color = '#8a7a48'; });
+      content.querySelectorAll('a').forEach(el => el.style.color = '#c5a356');
+      div.appendChild(content);
+    }
+    wrap.appendChild(div);
+  });
+
+  // Footer
+  const footer = document.createElement('div');
+  footer.style.cssText = 'margin-top:12px;padding-top:10px;border-top:1px solid #2a2515;display:flex;justify-content:space-between;font-size:10px;color:#3a3520';
+  footer.innerHTML = `<span>BIAV-SC · ${S.model}</span><span>${new Date().toLocaleDateString('zh-CN')}</span>`;
+  wrap.appendChild(footer);
+
+  document.body.appendChild(wrap);
+
+  try {
+    const canvas = await html2canvas(wrap, {
+      backgroundColor: '#0a0b10',
+      scale: 2,
+      useCORS: true,
+      logging: false,
+    });
+    canvas.toBlob(blob => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `biav-${Date.now()}.png`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }, 'image/png');
+  } finally {
+    wrap.remove();
+  }
+  exitSelectMode();
+}
+
 /* ===== Artifacts ===== */
 const artPanel = { code: '', lang: '', open: false };
 const PREVIEWABLE = ['html', 'svg', 'mermaid'];
@@ -2487,6 +2646,10 @@ $('#btn-clear-all').onclick = async () => {
   location.reload(true);
 };
 $('#export-btn').onclick = exportConversation;
+$('#select-btn').onclick = enterSelectMode;
+$('#select-all-btn').onclick = selectAllMsgs;
+$('#select-save-btn').onclick = saveSelectedAsImage;
+$('#select-cancel-btn').onclick = exitSelectMode;
 settingsOverlay.addEventListener('mousedown', e => { if (e.target === settingsOverlay) closeSettings() });
 
 // Settings tabs
