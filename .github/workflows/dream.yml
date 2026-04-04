@@ -10,10 +10,10 @@ on:
   schedule:
     # 浅睡：每 6 小时（零成本）
     - cron: '0 */6 * * *'
-    # 深睡/REM：暂停自动触发，等数据量积累后再开启
-    # 手动触发仍可用（workflow_dispatch）
-    # - cron: '0 19 * * *'
-    # - cron: '0 1 * * 1'
+    # 深睡：每天 19:00 UTC（北京时间凌晨 3 点）
+    - cron: '0 19 * * *'
+    # REM：每周一 01:00 UTC（北京时间周一上午 9 点）
+    - cron: '0 1 * * 1'
   workflow_dispatch:
     inputs:
       layer:
@@ -48,6 +48,25 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run dream.py Phase 1 (structural checks)
+        id: dream-phase1
+        run: |
+          OUTPUT=$(python scripts/dream.py --report 2>&1)
+          echo "$OUTPUT"
+          # Extract report JSON
+          REPORT=$(echo "$OUTPUT" | grep "^::report::" | sed 's/^::report:://')
+          if [ -n "$REPORT" ]; then
+            ISSUES=$(echo "$REPORT" | python3 -c "import sys,json; print(json.load(sys.stdin).get('phase1_issues',0))")
+            echo "phase1_issues=$ISSUES" >> "$GITHUB_OUTPUT"
+          else
+            echo "phase1_issues=0" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Check data collection health
         id: data-check
@@ -155,8 +174,20 @@ jobs:
             echo "has_stale=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Commit dream journal
+        if: always()
+        run: |
+          if [ -f "memory/dreams/$(date -u +%Y-%m-%d).json" ]; then
+            git config user.name "dream-agent[bot]"
+            git config user.email "dream-agent[bot]@users.noreply.github.com"
+            git add memory/dreams/ assets/data/semantic-index.json assets/data/sentinel-baseline.json projects/news/output/alerts.json 2>/dev/null || true
+            git diff --cached --quiet || git commit -m "dream(shallow): Phase 1 structural check $(date -u +%Y-%m-%d)"
+            git push origin main || true
+          fi
+
       - name: Report anomalies
         if: >-
+          steps.dream-phase1.outputs.phase1_issues > 0 ||
           steps.data-check.outputs.has_issues == 'true' ||
           steps.workflow-check.outputs.has_failures == 'true' ||
           steps.path-check.outputs.has_broken == 'true' ||
@@ -167,10 +198,12 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
             let body = '## 🌙 Shallow Sleep Report\n\n';
+            const p1Issues = '${{ steps.dream-phase1.outputs.phase1_issues }}';
             const dataIssues = `${{ steps.data-check.outputs.issues }}`;
             const wfFailures = `${{ steps.workflow-check.outputs.failures }}`;
             const broken = `${{ steps.path-check.outputs.broken }}`;
             const stale = `${{ steps.memory-check.outputs.stale }}`;
+            if (p1Issues && p1Issues !== '0') body += `### dream.py Phase 1\n- ${p1Issues} structural issues detected (see dream journal)\n\n`;
             if (dataIssues) body += '### Data Collection\n' + dataIssues + '\n';
             if (wfFailures) body += '### Workflow Health\n' + wfFailures + '\n';
             if (broken) body += '### Broken References\n' + broken + '\n';
@@ -199,12 +232,27 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     needs: shallow-sleep
-    # 仅在 22:00 UTC cron 或手动触发时运行
+    # 深睡：每天 19:00 UTC cron 或手动触发
     if: >-
-      github.event_name == 'workflow_dispatch' &&
-      (inputs.layer == 'deep' || inputs.layer == 'all')
+      (github.event_name == 'schedule' && github.event.schedule == '0 19 * * *') ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.layer == 'deep' || inputs.layer == 'all'))
     steps:
       - uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic
+
+      - name: Run dream.py Phase 1+2+3 (full AutoDream)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python scripts/dream.py --full --report
 
       - uses: anthropics/claude-code-action@v1
         with:
@@ -212,6 +260,13 @@ jobs:
           direct_push: "true"
           prompt: |
             你是做梦 Agent（深睡层）。你的任务是在无人值守时自主整理项目记忆。
+
+            dream.py 已经运行了 4-phase AutoDream，产出了:
+            - memory/dreams/$(date +%Y-%m-%d).json（梦境日志，含 Phase 1 结构检查 + Phase 2 AI 分析结果）
+            - memory/dreams/insights.json（洞察库，Voyager 式累积）
+            - assets/data/semantic-index.json（语义索引）
+
+            先读取今天的梦境日志，了解 dream.py 已发现的问题，然后补充完成以下工作：
 
             ## 你要做的事
 
@@ -281,10 +336,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     needs: shallow-sleep
-    # 仅在周一 21:00 UTC cron 或手动触发时运行
+    # REM：每周一 01:00 UTC cron 或手动触发
     if: >-
-      github.event_name == 'workflow_dispatch' &&
-      (inputs.layer == 'rem' || inputs.layer == 'all')
+      (github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1') ||
+      (github.event_name == 'workflow_dispatch' &&
+       (inputs.layer == 'rem' || inputs.layer == 'all'))
     steps:
       - uses: actions/checkout@v6
         with:

@@ -26,3 +26,12 @@ projects/news/report-system/data/memory.json
 projects/news/data/discord/archives/
 assets/data/discord/
 morimens_extract.zip
+
+# auto-generated indexes (rebuilt by dream.py / memory_search.py)
+assets/data/vectors.json
+assets/data/semantic-index.json
+assets/data/knowledge-graph.json
+assets/data/memory-utility.json
+assets/data/precomputed-cache.json
+assets/data/sentinel-baseline.json
+projects/news/output/alerts.json

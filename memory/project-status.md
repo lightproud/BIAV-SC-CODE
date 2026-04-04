@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-04-01T22:30 by Code-wiki
+> 最后更新：2026-04-04 by Code-主控台
 >
 > 战略规划详见 `memory/strategic-plan-2026.md`
 
@@ -114,11 +114,15 @@
 
 ## 当前阶段
 
-**Phase 0：收缩与夯实**（2026-04-01 起）
+**Phase 1：记忆宫殿** — ✅ 已验证通过（2026-04-04）
 
-目标：砍到只剩能验证的最小集，让日报覆盖 3 个有效数据源（Bilibili + Steam + Discord），制作人实际在用。
+- Phase 0（止血）：✅ 完成
+- Stage 1 验证（日报 14 天）：✅ 制作人确认通过
+- 事实圣经 v1.0：✅ 63 角色 + 叙事结构 + 设计决策
+- 记忆系统 9 模块：✅ 全部上线（3410 行新代码）
+- 做梦 Agent 三层：✅ 全部启动（浅睡6h + 深睡每日 + REM每周）
 
-验证门：制作人连续 14 天主动看日报并觉得有用。
+**下一阶段**：Phase 2（内容权威，6-8月）— Wiki 数据 100% + 联动实战
 
 详见 `memory/strategic-assessment.md`。
 
@@ -132,7 +136,10 @@
 | fetch-wiki-data.yml | 每周一 | 运行中 |
 | check-version.yml | 每周一 | 运行中 |
 | validate-data.yml | push 触发 | 运行中 |
-| claude.yml | Issue 触发 | 阻塞（API 无余额） |
+| dream.yml（浅睡） | 每 6 小时 | ✅ 运行中（含哨兵层） |
+| dream.yml（深睡） | 每日 19:00 UTC | ✅ 运行中（2026-04-04 启用） |
+| dream.yml（REM） | 每周一 01:00 UTC | ✅ 运行中（2026-04-04 启用） |
+| claude.yml | Issue 触发 | ✅ 可用（API 已恢复） |
 | generate-report.yml | **已暂停** | secrets 未配 |
 | extract-game-data.yml | **已暂停** | Steam 认证未通 |
 
@@ -143,5 +150,43 @@
 | GitHub PAT (Issues) | 已配置 | Fine-grained, brain-in-a-vat only |
 | Claude GitHub App | 已安装 | 权限已更新 |
 | .github/workflows/claude.yml | 已部署 | 含 id-token:write |
-| ANTHROPIC_API_KEY Secret | 已配置 | 余额为零，待充值 |
-| Actions 自动化 | 触发链通，执行失败 | 原因：API 无余额。充值后即可激活 |
+| ANTHROPIC_API_KEY Secret | ✅ 已配置 | 余额已恢复（2026-04-04） |
+| Actions 自动化 | ✅ 全部可用 | claude.yml + dream.yml 深睡/REM 已激活 |
+
+## 银芯记忆系统（2026-04-04 上线）
+
+两轮架构升级，9 模块共 3410 行代码。
+
+| 模块 | 脚本 | 行数 | 功能 |
+|------|------|------|------|
+| TF-IDF 向量搜索 | `scripts/memory_search.py` | 780 | 中文双字符分词、L2归一化稀疏向量、余弦相似度 |
+| 4维重排序器 | `scripts/memory_search.py` | — | semantic × recency × access_freq × graph_proximity |
+| 知识图谱 | `scripts/knowledge_graph.py` | 704 | 217节点 443边（角色/界域/决策/系统/概念/文件） |
+| MemRL-lite | `scripts/memrl.py` | 378 | EMA效用评分（α=0.3）、归档建议、权重自校准 |
+| Sleep-Time Compute | `scripts/dream.py` | — | 热门话题识别 → 预计算缓存 → TTL过期 |
+| 哨兵层 | `scripts/dream.py` | 227 | Steam差评率/Discord消息量/负面关键词 异常检测 |
+| MCP Server | `scripts/mcp_server.py` | 200 | 7工具（search/graph/utility/cache/context/rebuild） |
+| 虚拟上下文管理 | `scripts/context_manager.py` | 180 | MemGPT式4层推荐（角色默认+语义+图谱+效用） |
+| Reflexion | `scripts/reflexion.py` | 280 | 失败模式收集 → 规律分析 → 经验提取 |
+| 选择性记忆 | `scripts/dream.py` | — | 膨胀检测（>400行+低效用）+ 归档建议 |
+
+### 索引文件（运行时生成，gitignored）
+
+| 文件 | 用途 |
+|------|------|
+| `assets/data/vectors.json` | TF-IDF 向量索引（~979KB） |
+| `assets/data/semantic-index.json` | 关键词索引（~37KB） |
+| `assets/data/knowledge-graph.json` | 知识图谱（~135KB） |
+| `assets/data/memory-utility.json` | 效用评分（~6KB） |
+| `assets/data/sentinel-baseline.json` | 哨兵基线数据 |
+| `projects/news/output/alerts.json` | 异常告警记录 |
+
+## 做梦 Agent 三层架构
+
+| 层 | 频率 | 引擎 | 成本 | 产出 |
+|---|------|------|------|------|
+| 浅睡 | 每6小时 | 纯Python+shell | ¥0 | 结构检查 + 哨兵扫描 + 索引重建 |
+| 深睡 | 每天19:00 UTC | Claude AI | ~$0.1-0.2/天 | 趋势分析 + Memory修正 + 知识缺口识别 |
+| REM | 每周一01:00 UTC | Claude AI | ~$0.3-0.5/周 | 周报 + 经验提炼 + 状态同步 + 洞察整合 |
+
+设计文档：`memory/dreaming-agent-design.md`
