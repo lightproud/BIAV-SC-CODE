@@ -26,7 +26,7 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 /* ===== Layout ===== */
 #app{display:flex;height:100vh;height:100dvh;height:-webkit-fill-available;overflow:hidden}
 #main-area{display:flex;flex:1;min-width:0}
-#chat-col{display:flex;flex-direction:column;flex:1;min-width:0}
+#chat-col{display:flex;flex-direction:column;flex:1;min-width:0;min-height:0;overflow:hidden}
 
 /* Artifacts panel */
 #artifacts{display:none;width:45%;max-width:560px;border-left:1px solid #2a2515;flex-direction:column;background:#0a0b10}
@@ -63,7 +63,7 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 #sidebar-footer{padding:12px;border-top:1px solid #2a2515;text-align:center;color:#5a5540;font-size:11px}
 
 /* Main */
-#main{flex:1;display:flex;flex-direction:column;min-width:0}
+#main{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden}
 
 /* Top bar */
 #topbar{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid #2a2515;flex-shrink:0;overflow:hidden}
@@ -86,7 +86,7 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 #stop-btn:hover{background:#d96a5a}
 
 /* Messages area */
-#messages{flex:1;overflow-y:auto}
+#messages{flex:1;overflow-y:auto;min-height:0}
 #empty-state{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;text-align:center;padding:20px}
 #empty-state h2{font-family:'Noto Serif SC',serif;font-size:28px;color:#e2c97e;font-weight:700;margin-bottom:4px}
 #empty-state .subtitle{color:#6b6040;font-size:13px}
@@ -102,8 +102,6 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 .msg-user{display:flex;justify-content:flex-end}
 .msg-user .bubble{max-width:75%;padding:12px 16px;border-radius:16px 16px 4px 16px;background:#1e1a10;border:1px solid #2a2515;font-size:14px;line-height:1.8;white-space:pre-wrap}
 .msg-assistant{display:flex;gap:12px}
-.msg-avatar{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#1e1a10;border:1px solid #8a7a48;display:flex;align-items:center;justify-content:center;margin-top:4px}
-.msg-avatar span{color:#c5a356;font-size:12px;font-family:'Noto Serif SC',serif;font-weight:700}
 .msg-content{min-width:0;max-width:85%;font-size:14px;line-height:1.8}
 
 /* Markdown in assistant messages */
@@ -367,7 +365,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script>
-const APP_VERSION = '0.3.0';
+const APP_VERSION = '0.3.1';
 
 /* ===== State ===== */
 const S = {
@@ -453,18 +451,36 @@ const PROMPTS = {
 // Live context fetched from deployed data files
 let liveContext = '';
 (async function loadLiveContext() {
-  const base = location.href.includes('github.io') ? '' : '';
-  const files = ['data/boot-snapshot.md', 'data/daily-latest.md'];
+  const files = [
+    'data/BIAV-SC.md',
+    'data/boot-snapshot.md',
+    'data/daily-latest.md',
+    'data/all-latest.json',
+    'data/project-status.md',
+    'data/strategic-assessment.md',
+    'data/morimens-context.md',
+    'data/strategic-plan-2026.md',
+    'data/methodology.md',
+    'data/decisions.md',
+    'data/lessons-learned.md',
+    'data/design-decisions.json',
+    'data/interview-2026-04.json',
+    'data/narrative-structure.json',
+  ];
   const parts = [];
+  const loaded = [];
   for (const f of files) {
     try {
       const res = await fetch(f, { cache: 'no-cache' });
-      if (res.ok) parts.push(await res.text());
+      if (res.ok) {
+        const txt = await res.text();
+        if (txt.trim()) { parts.push('## ' + f.replace('data/','') + '\n\n' + txt.trim()); loaded.push(f); }
+      }
     } catch {}
   }
   if (parts.length) {
-    liveContext = '\n\n---\n以下是银芯系统实时数据，请基于这些数据回答问题：\n\n' + parts.join('\n\n---\n\n');
-    console.log('[BIVA] Live context loaded:', parts.length, 'files');
+    liveContext = '\n\n---\n以下是银芯系统完整知识库（' + loaded.length + ' 个文件），请基于这些数据回答问题：\n\n' + parts.join('\n\n---\n\n');
+    console.log('[BIVA] Live context loaded:', loaded.length, '/', files.length, 'files');
   }
 })();
 
@@ -579,7 +595,6 @@ function renderMessages() {
     } else {
       const isLast = i === conv.messages.length - 1 && S.streaming;
       div.innerHTML = `
-        <div class="msg-avatar"><span>B</span></div>
         <div class="msg-content${isLast ? ' typing' : ''}">${renderMd(m.content)}</div>`;
     }
     container.appendChild(div);
