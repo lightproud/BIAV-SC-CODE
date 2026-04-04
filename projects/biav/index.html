@@ -407,7 +407,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.6.2';
+const APP_VERSION = '0.7.0';
 
 /* ===== State ===== */
 const S = {
@@ -483,6 +483,8 @@ const PROMPTS = {
 - generate_docx：将 Markdown 内容生成 Word 文档并下载（可编辑文档）
 - generate_excel：将 JSON 数据生成 Excel（.xlsx）并下载（数据表格、统计）
 - generate_pptx：生成 PowerPoint 演示文稿（.pptx）并下载（汇报、展示）
+- generate_image：将 SVG 渲染为高清 PNG 图片并下载（图标、示意图、信息图）
+- generate_chart：用 Chart.js 生成数据可视化图表 PNG（柱状图、折线图、饼图等）
 
 当用户询问具体数据（角色属性、技能、日报详情、代码实现等）时，优先使用 read_file 读取原始文件，而不是仅凭预加载的摘要回答。仓库中的关键数据路径：
 - projects/wiki/data/db/characters.json — 63角色完整数据
@@ -932,6 +934,41 @@ const TOOLS = [
       },
       required: ['slides']
     }
+  },
+  {
+    name: 'generate_image',
+    description: '将 SVG 代码渲染为 PNG 图片并下载。适合生成图标、示意图、信息图、流程图、自定义插图等。请生成完整的 SVG 代码（含 width/height 属性）。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        svg: { type: 'string', description: 'Complete SVG code (must include width and height attributes on the root <svg> element)' },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'image' },
+        scale: { type: 'number', description: 'Resolution multiplier (default 2 for retina)', default: 2 }
+      },
+      required: ['svg']
+    }
+  },
+  {
+    name: 'generate_chart',
+    description: '用 Chart.js 生成数据可视化图表并下载为 PNG。支持 bar/line/pie/doughnut/radar/polarArea 等图表类型。适合数据分析、统计展示。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        type: { type: 'string', description: 'Chart type: bar, line, pie, doughnut, radar, polarArea, scatter, bubble' },
+        data: {
+          type: 'object',
+          description: 'Chart.js data object: {labels: [...], datasets: [{label, data, backgroundColor, ...}]}'
+        },
+        options: {
+          type: 'object',
+          description: 'Chart.js options object (optional). Defaults to BIAV dark theme.'
+        },
+        width: { type: 'number', description: 'Canvas width in pixels', default: 800 },
+        height: { type: 'number', description: 'Canvas height in pixels', default: 500 },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'chart' }
+      },
+      required: ['type', 'data']
+    }
   }
 ];
 
@@ -1087,6 +1124,101 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
       }
       await pptx.writeFile({ fileName: fname + '.pptx' });
       return `PowerPoint generated: ${fname}.pptx (${input.slides.length} slides)`;
+    }
+    if (name === 'generate_image') {
+      const fname = (input.filename || 'image').replace(/\.png$/i, '');
+      const scale = input.scale || 2;
+      return new Promise((resolve, reject) => {
+        const svgStr = input.svg.trim();
+        // Extract dimensions from SVG
+        const wMatch = svgStr.match(/width="(\d+)/);
+        const hMatch = svgStr.match(/height="(\d+)/);
+        const vbMatch = svgStr.match(/viewBox="[^"]*\s(\d+)\s(\d+)"/);
+        const w = parseInt(wMatch?.[1] || vbMatch?.[1] || '400');
+        const h = parseInt(hMatch?.[1] || vbMatch?.[2] || '300');
+        const canvas = document.createElement('canvas');
+        canvas.width = w * scale;
+        canvas.height = h * scale;
+        const ctx = canvas.getContext('2d');
+        ctx.scale(scale, scale);
+        const img = new Image();
+        const svgBlob = new Blob([svgStr], { type: 'image/svg+xml;charset=utf-8' });
+        const url = URL.createObjectURL(svgBlob);
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0, w, h);
+          URL.revokeObjectURL(url);
+          canvas.toBlob(blob => {
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = fname + '.png';
+            a.click();
+            URL.revokeObjectURL(a.href);
+            resolve(`Image generated: ${fname}.png (${w * scale}×${h * scale}px)`);
+          }, 'image/png');
+        };
+        img.onerror = () => { URL.revokeObjectURL(url); resolve('Error: Failed to render SVG. Check SVG syntax.'); };
+        img.src = url;
+      });
+    }
+    if (name === 'generate_chart') {
+      // Lazy-load Chart.js
+      if (!window.Chart) {
+        await new Promise((resolve, reject) => {
+          const s = document.createElement('script');
+          s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js';
+          s.onload = resolve; s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      }
+      const fname = (input.filename || 'chart').replace(/\.png$/i, '');
+      const w = input.width || 800, h = input.height || 500;
+      const canvas = document.createElement('canvas');
+      canvas.width = w * 2; canvas.height = h * 2;
+      canvas.style.cssText = `width:${w}px;height:${h}px;position:fixed;left:-9999px`;
+      document.body.appendChild(canvas);
+      // BIAV dark theme defaults
+      const biavColors = ['#C5A356','#7AAD5A','#5A9AC2','#C25A4A','#9B6DC2','#D4C9A8','#E2C97E','#5A5540'];
+      const defaultOpts = {
+        responsive: false,
+        animation: false,
+        plugins: {
+          legend: { labels: { color: '#D4C9A8', font: { size: 14 } } },
+          title: { color: '#E2C97E', font: { size: 18, weight: 'bold' } }
+        },
+        scales: (['pie','doughnut','polarArea','radar'].includes(input.type)) ? undefined : {
+          x: { ticks: { color: '#D4C9A8' }, grid: { color: '#2A2515' } },
+          y: { ticks: { color: '#D4C9A8' }, grid: { color: '#2A2515' } }
+        }
+      };
+      // Apply default colors if not set
+      if (input.data?.datasets) {
+        input.data.datasets.forEach((ds, i) => {
+          if (!ds.backgroundColor) {
+            if (['pie','doughnut','polarArea'].includes(input.type)) ds.backgroundColor = biavColors;
+            else ds.backgroundColor = biavColors[i % biavColors.length];
+          }
+          if (!ds.borderColor && ['line','radar'].includes(input.type)) ds.borderColor = biavColors[i % biavColors.length];
+        });
+      }
+      const ctx = canvas.getContext('2d');
+      ctx.scale(2, 2);
+      // Merge user options with defaults
+      const mergedOpts = { ...defaultOpts, ...(input.options || {}) };
+      const chart = new Chart(ctx, { type: input.type, data: input.data, options: mergedOpts });
+      // Wait for render
+      await new Promise(r => setTimeout(r, 100));
+      return new Promise(resolve => {
+        canvas.toBlob(blob => {
+          chart.destroy();
+          canvas.remove();
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = fname + '.png';
+          a.click();
+          URL.revokeObjectURL(a.href);
+          resolve(`Chart generated: ${fname}.png (${w * 2}×${h * 2}px, type: ${input.type})`);
+        }, 'image/png');
+      });
     }
     if (name === 'run_javascript') {
       return new Promise((resolve) => {
