@@ -940,6 +940,16 @@ async function streamClaude(conv, signal) {
 
     if (!res.ok) {
       const err = await res.text();
+      if (res.status === 401) {
+        // Clear invalid key from config
+        const c = loadConfig(); delete c.anthropic; saveConfig(c);
+        openSettings();
+        const input = $('#cfg-anthropic');
+        input.value = '';
+        input.placeholder = '密钥无效，请输入有效的 API Key';
+        input.focus();
+        throw new Error('API 密钥无效或已过期，请在设置中更新密钥');
+      }
       throw new Error(`Claude API ${res.status}: ${err}`);
     }
 
