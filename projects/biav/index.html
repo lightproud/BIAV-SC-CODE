@@ -178,6 +178,8 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 
 /* Image in messages */
 .msg-user .bubble img{max-width:200px;border-radius:8px;margin-top:8px;display:block}
+.msg-content img{max-width:100%;border-radius:8px;margin:8px 0;border:1px solid #2a2515;cursor:pointer;transition:transform .2s}
+.msg-content img:hover{transform:scale(1.02)}
 
 /* Input area */
 #input-area{border-top:1px solid #2a2515;padding:12px 16px}
@@ -318,7 +320,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         <div class="deco-line"></div>
         <div class="intro">
           <strong>银芯（BIAV-SC）</strong>是 B.I.A.V. Studio 为「忘却前夜 Morimens」构建的 AI 增强系统。<br><br>
-          已接入 <span class="tag">仓库实时读取</span> <span class="tag">网页搜索</span> <span class="tag">代码执行</span> <span class="tag">Extended Thinking</span> <span class="tag">跨会话记忆</span> <span class="tag">LaTeX</span> <span class="tag">Mermaid</span>，覆盖 63 角色事实圣经、每日社区情报循环、Wiki 权威站点等核心能力。<br><br>
+          已接入 <span class="tag">仓库实时读取</span> <span class="tag">网页搜索</span> <span class="tag">AI 画图</span> <span class="tag">代码执行</span> <span class="tag">文档导出</span> <span class="tag">Extended Thinking</span> <span class="tag">跨会话记忆</span>，覆盖 63 角色事实圣经、每日社区情报循环、Wiki 权威站点等核心能力。<br><br>
           默认以 <strong>BIAV Analyst</strong> 身份应答。支持消息编辑、分支对话、文件上传、Artifacts 预览。
         </div>
         <span class="ver">v0.2.1</span>
@@ -378,6 +380,10 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         <label>ANTHROPIC API KEY</label>
         <input id="cfg-anthropic" type="password" placeholder="sk-ant-...">
       </div>
+      <div class="setting-group">
+        <label>OPENAI API KEY <span style="font-weight:400;color:#5a5540">（DALL-E AI 画图）</span></label>
+        <input id="cfg-openai" type="password" placeholder="sk-...">
+      </div>
       <div class="setting-group" style="display:flex;align-items:center;gap:8px">
         <input type="checkbox" id="cfg-thinking" style="width:auto;accent-color:#c5a356">
         <label for="cfg-thinking" style="margin:0;cursor:pointer">启用 Extended Thinking（思维链展示）</label>
@@ -407,7 +413,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.7.0';
+const APP_VERSION = '0.7.1';
 
 /* ===== State ===== */
 const S = {
@@ -485,6 +491,7 @@ const PROMPTS = {
 - generate_pptx：生成 PowerPoint 演示文稿（.pptx）并下载（汇报、展示）
 - generate_image：将 SVG 渲染为高清 PNG 图片并下载（图标、示意图、信息图）
 - generate_chart：用 Chart.js 生成数据可视化图表 PNG（柱状图、折线图、饼图等）
+- ai_image：使用 DALL-E 3 AI 生成图片（需用户配置 OpenAI Key）。图片会在对话中显示并下载。
 
 当用户询问具体数据（角色属性、技能、日报详情、代码实现等）时，优先使用 read_file 读取原始文件，而不是仅凭预加载的摘要回答。仓库中的关键数据路径：
 - projects/wiki/data/db/characters.json — 63角色完整数据
@@ -969,6 +976,21 @@ const TOOLS = [
       },
       required: ['type', 'data']
     }
+  },
+  {
+    name: 'ai_image',
+    description: '使用 DALL-E 3 AI 生成图片。需要用户在设置中配置 OpenAI API Key。提供详细的英文 prompt 以获得最佳效果。生成的图片会同时在对话中显示并下载。',
+    input_schema: {
+      type: 'object',
+      properties: {
+        prompt: { type: 'string', description: 'Detailed image generation prompt (English recommended for best results)' },
+        size: { type: 'string', description: 'Image size: 1024x1024 (square), 1792x1024 (landscape), 1024x1792 (portrait)', default: '1024x1024' },
+        style: { type: 'string', description: '"vivid" for hyper-real/dramatic, "natural" for more subdued/realistic', default: 'vivid' },
+        quality: { type: 'string', description: '"hd" for higher detail, "standard" for faster/cheaper', default: 'standard' },
+        filename: { type: 'string', description: 'Output filename without extension', default: 'ai-image' }
+      },
+      required: ['prompt']
+    }
   }
 ];
 
@@ -1219,6 +1241,57 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
           resolve(`Chart generated: ${fname}.png (${w * 2}×${h * 2}px, type: ${input.type})`);
         }, 'image/png');
       });
+    }
+    if (name === 'ai_image') {
+      const cfg = loadConfig();
+      const key = cfg.openai;
+      if (!key) {
+        openSettings();
+        const el = $('#cfg-openai');
+        el.value = '';
+        el.placeholder = '请输入 OpenAI API Key 以使用 AI 画图';
+        el.focus();
+        return 'Error: OpenAI API Key not configured. Please set it in Settings (gear icon).';
+      }
+      const fname = (input.filename || 'ai-image').replace(/\.png$/i, '');
+      appendDelta('\n\n> 🎨 正在生成 AI 图片...\n\n');
+      const res = await fetch('https://api.openai.com/v1/images/generations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${key}` },
+        body: JSON.stringify({
+          model: 'dall-e-3',
+          prompt: input.prompt,
+          n: 1,
+          size: input.size || '1024x1024',
+          style: input.style || 'vivid',
+          quality: input.quality || 'standard',
+          response_format: 'b64_json'
+        })
+      });
+      if (!res.ok) {
+        const err = await res.text();
+        if (res.status === 401) {
+          openSettings();
+          $('#cfg-openai').focus();
+          return 'Error: OpenAI API Key invalid. Please update in Settings.';
+        }
+        return `Error: DALL-E API ${res.status}: ${err}`;
+      }
+      const data = await res.json();
+      const b64 = data.data[0].b64_json;
+      const revisedPrompt = data.data[0].revised_prompt || '';
+      // Convert base64 to blob and download
+      const binary = atob(b64);
+      const arr = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i++) arr[i] = binary.charCodeAt(i);
+      const blob = new Blob([arr], { type: 'image/png' });
+      const imgUrl = URL.createObjectURL(blob);
+      // Download
+      const a = document.createElement('a');
+      a.href = imgUrl; a.download = fname + '.png'; a.click();
+      // Display inline in chat
+      appendDelta(`\n\n![${fname}](${imgUrl})\n\n`);
+      return `Image generated and downloaded: ${fname}.png (${input.size || '1024x1024'})` + (revisedPrompt ? `\nRevised prompt: ${revisedPrompt}` : '');
     }
     if (name === 'run_javascript') {
       return new Promise((resolve) => {
@@ -1477,6 +1550,7 @@ function updateModelBtn() {
 function openSettings() {
   const cfg = loadConfig();
   $('#cfg-anthropic').value = cfg.anthropic || '';
+  $('#cfg-openai').value = cfg.openai || '';
   $('#cfg-thinking').checked = !!cfg.enableThinking;
   $('#cfg-custom-prompt').value = cfg.customPrompt || '';
   settingsOverlay.classList.add('open');
@@ -1487,6 +1561,7 @@ function closeSettings() { settingsOverlay.classList.remove('open') }
 function saveSettings() {
   const cfg = {
     anthropic: $('#cfg-anthropic').value.trim(),
+    openai: $('#cfg-openai').value.trim(),
     enableThinking: $('#cfg-thinking').checked,
     customPrompt: $('#cfg-custom-prompt').value.trim(),
   };
