@@ -19,7 +19,7 @@ import json
 import sys
 import os
 import logging
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
@@ -218,12 +218,31 @@ def load_existing_news() -> list[dict]:
         return []
 
 
+MAX_AGE_HOURS = 48
+
+
+def _is_recent(time_str: str) -> bool:
+    """Check if a timestamp is within MAX_AGE_HOURS of now."""
+    if not time_str:
+        return False
+    try:
+        dt = datetime.fromisoformat(time_str)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return (datetime.now(timezone.utc) - dt) < timedelta(hours=MAX_AGE_HOURS)
+    except (ValueError, TypeError):
+        return False
+
+
 def merge_and_dedup(existing: list[dict], new_items: list[dict]) -> list[dict]:
-    """Merge and deduplicate items, keeping higher-engagement version."""
+    """Merge and deduplicate items, keeping higher-engagement version.
+    Filters out items older than MAX_AGE_HOURS."""
     seen: dict[str, dict] = {}
 
     # Existing items first (they're already validated)
     for item in existing:
+        if not _is_recent(item.get('time', '')):
+            continue
         key = dedup_key(item)
         if key not in seen or item.get('engagement', 0) > seen[key].get('engagement', 0):
             seen[key] = item
@@ -231,6 +250,8 @@ def merge_and_dedup(existing: list[dict], new_items: list[dict]) -> list[dict]:
     # New items (from global collectors)
     for item in new_items:
         converted = convert_item(item)
+        if not _is_recent(converted.get('time', '')):
+            continue
         key = dedup_key(converted)
         if key not in seen or converted.get('engagement', 0) > seen[key].get('engagement', 0):
             seen[key] = converted
