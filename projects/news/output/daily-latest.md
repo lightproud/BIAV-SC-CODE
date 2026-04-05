@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-06
 
-> 采集时间：2026-04-06 05:07 UTC+8
+> 采集时间：2026-04-06 07:07 UTC+8
 
 ## 🔥 联动动态
 
@@ -60,15 +60,15 @@
 
 ## Discord
 
-今日 13,242 条消息，212 位活跃用户，1,308 次反应。热门频道：🔸morimens-game-chat(5771)、🔸canal-português(1992)、🔸phòng-chat-tiếng-việt(1612)、🔸綜合討論(1352)、🔸game-question(1001)
+今日 14,105 条消息，212 位活跃用户，1,365 次反应。热门频道：🔸morimens-game-chat(6307)、🔸canal-português(2154)、🔸phòng-chat-tiếng-việt(1612)、🔸綜合討論(1354)、🔸game-question(1113)
 
 ### 热门话题
 
 1. [DC热门] climbkaly@🔸morimens-game-chat: E1 sexy people. 1 more — engagement: 8
 2. [DC热门] that_one_chippy@Tonight or Never || Arc 2 Chapter 3:  — engagement: 8
-3. [DC热门] .angellveil@🔸morimens-game-chat: oh yeah uh guys remi — engagement: 6
-4. [DC热门] arandomflamev2@🔸morimens-game-chat: YEAHHH — engagement: 6
-5. [DC热门] ponponnyaru@🔸綜合討論: 我停服公告呢 — engagement: 6
+3. [DC热门] climbkaly@🔸morimens-game-chat: Even the Queen trash t — engagement: 6
+4. [DC热门] .angellveil@🔸morimens-game-chat: oh yeah uh guys remi — engagement: 6
+5. [DC热门] arandomflamev2@🔸morimens-game-chat: YEAHHH — engagement: 6
 
 ## Steam 评论
 
@@ -87,10 +87,10 @@ ai 번역이 단점이지만, 번역 이슈가 있음에... — engagement: 0
 
 ## Bilibili
 
-1. [忘却前夜]最艺术的一集 — engagement: 534
-2. [忘却前夜]最艺术的一集 — engagement: 534
-3. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 196
-4. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 196
+1. [忘却前夜]最艺术的一集 — engagement: 571
+2. [忘却前夜]最艺术的一集 — engagement: 571
+3. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 211
+4. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 211
 5. 第四届塔薇杯-第十二日录播 — engagement: 20
 
 ## Gamerch Wiki
