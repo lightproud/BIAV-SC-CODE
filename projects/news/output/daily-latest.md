@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-05
 
-> 采集时间：2026-04-05 16:07 UTC+8
+> 采集时间：2026-04-05 20:48 UTC+8
 
 ## 🔥 联动动态
 
@@ -60,16 +60,15 @@
 
 ## Discord
 
-今日 14,034 条消息，192 位活跃用户，1,489 次反应。热门频道：🔸morimens-game-chat(8912)、🔸綜合討論(1467)、🔸game-question(1024)、🔸general-chat(847)、🔸phòng-chat-tiếng-việt(517)
+今日 5,018 条消息，212 位活跃用户，597 次反应。热门频道：🔸morimens-game-chat(2772)、🔸綜合討論(533)、🔸phòng-chat-tiếng-việt(461)、🔸canal-português(359)、🔸game-question(301)
 
 ### 热门话题
 
-1. [DC热门] resazur1n@【生贺】🥳🥳🥳: 「……守密人怎么会喜欢吃这种东西？」
-无cp倾向，祝尤乌生日快乐🎉🎉 — engagement: 13
-2. [DC热门] morimensstaff02@English Language Setting Abnormality  — engagement: 10
-3. [DC热门] sunstopshining@William says lock in: — engagement: 8
-4. [DC热门] nikolazuli@🔸morimens-game-chat: nah im just a bbit ju — engagement: 7
-5. [DC热门] chinkeeyong@🔸morimens-game-chat: — engagement: 6
+1. [DC热门] that_one_chippy@Tonight or Never || Arc 2 Chapter 3:  — engagement: 8
+2. [DC热门] ponponnyaru@🔸綜合討論: 我停服公告呢 — engagement: 6
+3. [DC热门] water_heart@🔸綜合討論: — engagement: 6
+4. [DC热门] l8989c@🔸morimens-game-chat: Holy shit I did it with t — engagement: 6
+5. [DC热门] planetes0415@🔸相位对弈: — engagement: 6
 
 ## Steam 评论
 
@@ -83,11 +82,11 @@
 
 ## Bilibili
 
-1. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 487
-2. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 487
-3. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 356
-4. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 356
-5. 我喜欢你们每个人 — engagement: 196
+1. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 600
+2. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 600
+3. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 389
+4. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 389
+5. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 133
 
 ## Gamerch Wiki
 
@@ -106,8 +105,8 @@
 1. [微信] 制作人长文复盘:数次濒临解散,二游《忘却前夜》如何艰难续命的? — engagement: 0
 2. [微信] 《忘却前夜》正式上线:游戏获取,游戏介绍,四种体系发展萌新必看攻略! — engagement: 0
 3. [微信] 《忘却前夜》预计11/30上线国际服,二次元x克苏鲁x爬塔满足你的幻想 — engagement: 0
-4. [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-5. [微信] 忘却前夜/希洛&amp;血链&middot;希洛 头像 — engagement: 0
+4. [微信] 忘却前夜/希洛&amp;血链&middot;希洛 头像 — engagement: 0
+5. [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 
 ## 沉默平台
 

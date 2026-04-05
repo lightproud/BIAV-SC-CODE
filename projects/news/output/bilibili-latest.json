@@ -1,38 +1,8 @@
 {
-  "collected_at": "2026-04-05T08:07:33.868792+00:00",
+  "collected_at": "2026-04-05T12:48:38.446680+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 15,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-04-03T11:00:00+00:00",
-      "lang": "",
-      "title": "沙耶の唄",
-      "summary": "审核放过我。",
-      "url": "https://www.bilibili.com/video/av116338802559748",
-      "author": "年年大王复仇记",
-      "engagement": 1606
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-04-03T08:39:51+00:00",
-      "lang": "",
-      "title": "［相位］我说哀兵必胜，你👂🐉🐴？",
-      "summary": "",
-      "url": "https://www.bilibili.com/video/av116339859522218",
-      "author": "莱星Ligh",
-      "engagement": 699
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-04-04T04:25:09+00:00",
-      "lang": "",
-      "title": "三启塔罗向众神求助，回应她的只有死扛",
-      "summary": "萌新依旧打的稀烂",
-      "url": "https://www.bilibili.com/video/av116344523659872",
-      "author": "雨鸦永远喜欢mili",
-      "engagement": 547
-    },
     {
       "source": "bilibili",
       "time": "2026-04-04T14:27:30+00:00",
@@ -41,7 +11,7 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/av116346889177757",
       "author": "莱星Ligh",
-      "engagement": 487
+      "engagement": 600
     },
     {
       "source": "bilibili",
@@ -51,7 +21,19 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116346889177757",
       "author": "莱星Ligh",
-      "engagement": 487
+      "engagement": 600,
+      "media_url": "//i2.hdslb.com/bfs/archive/268f1be92c938803cb1ef3f082809424875c2ba7.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-04T04:25:09+00:00",
+      "lang": "",
+      "title": "三启塔罗向众神求助，回应她的只有死扛",
+      "summary": "萌新依旧打的稀烂",
+      "url": "https://www.bilibili.com/video/av116344523659872",
+      "author": "雨鸦永远喜欢mili",
+      "engagement": 584
     },
     {
       "source": "bilibili",
@@ -61,7 +43,7 @@
       "summary": "杜勒叫3个小怪直接爽偷力量，反击也是3倍，非常爽，这样看55也能蒸一下。",
       "url": "https://www.bilibili.com/video/av116347476380594",
       "author": "伊莎玛拉-大群来了",
-      "engagement": 356
+      "engagement": 389
     },
     {
       "source": "bilibili",
@@ -71,17 +53,9 @@
       "summary": "杜勒叫3个小怪直接爽偷力量，反击也是3倍，非常爽，这样看55也能蒸一下。",
       "url": "http://www.bilibili.com/video/av116347476380594",
       "author": "伊莎玛拉-大群来了",
-      "engagement": 356
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-04-03T08:39:01+00:00",
-      "lang": "",
-      "title": "“杀死我们，拯救我们”《忘却前夜》第八章-终末交响曲（boss阶段）",
-      "summary": "222",
-      "url": "https://www.bilibili.com/video/av116339842751189",
-      "author": "薇儿小灰",
-      "engagement": 326
+      "engagement": 389,
+      "media_url": "//i1.hdslb.com/bfs/archive/ee6c535d4234c189f2b12913bb31bf289de7816a.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -91,7 +65,7 @@
       "summary": "豪赌四张四费就触发一张，小红温，可恶的1/4概率\n船长打深海怪是这样的",
       "url": "https://www.bilibili.com/video/av116344003632022",
       "author": "唬隌洳鄞",
-      "engagement": 294
+      "engagement": 295
     },
     {
       "source": "bilibili",
@@ -101,7 +75,7 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/av116342090892378",
       "author": "寂榕",
-      "engagement": 254
+      "engagement": 258
     },
     {
       "source": "bilibili",
@@ -111,27 +85,7 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/av116346436192977",
       "author": "密斯卡托尼克的银猫",
-      "engagement": 196
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-04-04T12:33:23+00:00",
-      "lang": "zh",
-      "title": "我喜欢你们每个人",
-      "summary": "-",
-      "url": "http://www.bilibili.com/video/av116346436192977",
-      "author": "密斯卡托尼克的银猫",
-      "engagement": 196
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-04-03T13:04:28+00:00",
-      "lang": "",
-      "title": "雷娅阴角（自用）",
-      "summary": "一好友因外放此视频在家人面前坠机遂发bb空间",
-      "url": "https://www.bilibili.com/video/av116340899714258",
-      "author": "缘夜澄",
-      "engagement": 124
+      "engagement": 202
     },
     {
       "source": "bilibili",
@@ -141,17 +95,61 @@
       "summary": "第十一日直播录播\n本次比赛为预组比赛，赛程如下\nA牛肉批发黄姨VSHijiriKikka\n淸淸梓燃VS莘希\n冥心VS独涯小姐姐\n冥心VS莘希\n莱星VS唐luiouser",
       "url": "https://www.bilibili.com/video/av116346452973317",
       "author": "God7777",
-      "engagement": 101
+      "engagement": 151
     },
     {
       "source": "bilibili",
-      "time": "2026-04-04T12:38:13+00:00",
+      "time": "2026-04-03T13:04:28+00:00",
+      "lang": "",
+      "title": "雷娅阴角（自用）",
+      "summary": "一好友因外放此视频在家人面前坠机遂发bb空间",
+      "url": "https://www.bilibili.com/video/av116340899714258",
+      "author": "缘夜澄",
+      "engagement": 143
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T05:51:50+00:00",
+      "lang": "",
+      "title": "攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了",
+      "summary": "福袋大王，5771伤害上限最高的山，太美妙了",
+      "url": "https://www.bilibili.com/video/av116350513126151",
+      "author": "甜甜甜甜甜菜菜菜菜菜",
+      "engagement": 133
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T05:51:50+00:00",
       "lang": "zh",
-      "title": "第四届塔薇杯-第十一日录播",
-      "summary": "第十一日直播录播\n本次比赛为预组比赛，赛程如下\nA牛肉批发黄姨VSHijiriKikka\n淸淸梓燃VS莘希\n冥心VS独涯小姐姐\n冥心VS莘希\n莱星VS唐luiouser",
-      "url": "http://www.bilibili.com/video/av116346452973317",
-      "author": "God7777",
-      "engagement": 101
+      "title": "攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了",
+      "summary": "福袋大王，5771伤害上限最高的山，太美妙了",
+      "url": "http://www.bilibili.com/video/av116350513126151",
+      "author": "甜甜甜甜甜菜菜菜菜菜",
+      "engagement": 133,
+      "media_url": "//i1.hdslb.com/bfs/archive/794a6a04bb32cda9936d11e353d9b103e72f6a6a.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T11:21:38+00:00",
+      "lang": "",
+      "title": "[忘却前夜]最艺术的一集",
+      "summary": "这人做了什么机把视频",
+      "url": "https://www.bilibili.com/video/av116351821742211",
+      "author": "密斯卡托尼克的银猫",
+      "engagement": 104
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T11:21:38+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]最艺术的一集",
+      "summary": "这人做了什么机把视频",
+      "url": "http://www.bilibili.com/video/av116351821742211",
+      "author": "密斯卡托尼克的银猫",
+      "engagement": 104,
+      "media_url": "//i0.hdslb.com/bfs/archive/4dbc57058fb1785f15fdcf0c2cc4893906ba9434.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -161,7 +159,7 @@
       "summary": "第十日直播录播\n本次比赛为预组比赛，赛程如下\n输了和魔龙舌吻VS绘奇旅\n希宵VSSilent\n明空VS狩猎邪龙沃柏尔\n明空VSSilent\n天方VS维克托\n绘奇旅VS冥心\n狩猎邪龙沃柏尔VS莱星\nSilentVS淸淸梓燃\n狩猎邪龙沃柏尔VS淸淸梓燃\n维克托VSA牛肉批发黄姨",
       "url": "https://www.bilibili.com/video/av116341302368408",
       "author": "God7777",
-      "engagement": 93
+      "engagement": 95
     }
   ]
 }

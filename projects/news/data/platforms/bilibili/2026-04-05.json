@@ -1,8 +1,8 @@
 {
   "date": "2026-04-05",
-  "archived_at": "2026-04-05T08:07:34.022971+00:00",
+  "archived_at": "2026-04-05T12:48:39.952143+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 6,
   "items": [
     {
       "source": "bilibili",
@@ -13,6 +13,50 @@
       "url": "https://www.bilibili.com/video/av116347476380594",
       "author": "伊莎玛拉-大群来了",
       "engagement": 309
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T05:51:50+00:00",
+      "lang": "",
+      "title": "攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了",
+      "summary": "福袋大王，5771伤害上限最高的山，太美妙了",
+      "url": "https://www.bilibili.com/video/av116350513126151",
+      "author": "甜甜甜甜甜菜菜菜菜菜",
+      "engagement": 133
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T05:51:50+00:00",
+      "lang": "zh",
+      "title": "攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了",
+      "summary": "福袋大王，5771伤害上限最高的山，太美妙了",
+      "url": "http://www.bilibili.com/video/av116350513126151",
+      "author": "甜甜甜甜甜菜菜菜菜菜",
+      "engagement": 133,
+      "media_url": "//i1.hdslb.com/bfs/archive/794a6a04bb32cda9936d11e353d9b103e72f6a6a.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T11:21:38+00:00",
+      "lang": "",
+      "title": "[忘却前夜]最艺术的一集",
+      "summary": "这人做了什么机把视频",
+      "url": "https://www.bilibili.com/video/av116351821742211",
+      "author": "密斯卡托尼克的银猫",
+      "engagement": 104
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T11:21:38+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]最艺术的一集",
+      "summary": "这人做了什么机把视频",
+      "url": "http://www.bilibili.com/video/av116351821742211",
+      "author": "密斯卡托尼克的银猫",
+      "engagement": 104,
+      "media_url": "//i0.hdslb.com/bfs/archive/4dbc57058fb1785f15fdcf0c2cc4893906ba9434.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
