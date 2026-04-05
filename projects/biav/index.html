@@ -187,8 +187,8 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 .copy-btn.copied{color:#7aad5a;border-color:#7aad5a}
 .msg-content blockquote{border-left:3px solid #c5a356;padding-left:1em;color:#8a7a48;margin:.8em 0}
 .msg-content table{width:100%;border-collapse:collapse;margin:.8em 0;font-size:.9em}
-.msg-content th{background:#1e1a10;color:#e2c97e;font-weight:700;padding:6px 10px;border:1px solid #2a2515;text-align:left}
-.msg-content td{padding:6px 10px;border:1px solid #2a2515}
+.msg-content th{background:#1e1a10;color:#e2c97e;font-weight:700;padding:8px 12px;border:1px solid #2a2515;text-align:left;white-space:nowrap}
+.msg-content td{padding:8px 12px;border:1px solid #2a2515;vertical-align:top;line-height:1.6}
 .msg-content tr:nth-child(even) td{background:rgba(197,163,86,.04)}
 .msg-content a{color:#c5a356;text-decoration:none}
 .msg-content a:hover{color:#e2c97e;text-decoration:underline}
@@ -200,9 +200,10 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 .thinking-toggle{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#161210;color:#6b6040;font-size:12px;cursor:pointer;width:100%;border:none;font-family:inherit;text-align:left;transition:color .15s}
 .thinking-toggle:hover{color:#d4c9a8}
 .thinking-toggle svg{transition:transform .2s}
-.thinking-toggle.open svg{transform:rotate(90deg)}
-.thinking-content{display:none;padding:10px 12px;font-size:12.5px;line-height:1.7;color:#5a5540;border-top:1px solid #2a2515;background:#0d0c08}
-.thinking-content.open{display:block}
+.thinking-content{display:block;padding:10px 12px;font-size:12.5px;line-height:1.7;color:#5a5540;border-top:1px solid #2a2515;background:#0d0c08;max-height:200px;overflow-y:auto}
+.thinking-content.closed{display:none}
+.thinking-toggle svg{transform:rotate(90deg)}
+.thinking-toggle.closed svg{transform:rotate(0deg)}
 
 /* Edit message (L7) */
 .msg-user{position:relative}
@@ -841,7 +842,7 @@ function renderMsgHtml(msg) {
   let html = '';
   if (msg._thinking && msg._thinking.length) {
     msg._thinking.forEach(t => {
-      html += `<div class="thinking-block"><button class="thinking-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>Thinking...</button><div class="thinking-content">${esc(t)}</div></div>`;
+      html += `<div class="thinking-block"><button class="thinking-toggle" onclick="this.classList.toggle('closed');this.nextElementSibling.classList.toggle('closed')"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>思考过程</button><div class="thinking-content">${esc(t)}</div></div>`;
     });
   }
   html += renderMd(msg.content);
@@ -1166,12 +1167,16 @@ function startStreaming(conv) {
   renderSidebar();
   const ctrl = new AbortController();
   S.abortCtrls[conv.id] = ctrl;
+  // Safety timeout: abort after 5 minutes to prevent stuck state
+  const safetyTimer = setTimeout(() => {
+    if (S.streamingConvs.has(conv.id)) { ctrl.abort(); }
+  }, 5 * 60 * 1000);
   streamClaude(conv, ctrl.signal).catch(err => {
     if (err.name !== 'AbortError') {
       const last = conv.messages[conv.messages.length - 1];
       if (last.role === 'assistant' && !last.content) { last.content = 'Error: ' + err.message; }
     }
-  }).finally(() => finishStream(conv.id));
+  }).finally(() => { clearTimeout(safetyTimer); finishStream(conv.id); });
 }
 
 function finishStream(convId) {
