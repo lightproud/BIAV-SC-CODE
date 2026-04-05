@@ -1,29 +1,31 @@
 {
   "date": "2026-04-05",
-  "messages": 12039,
+  "messages": 13242,
   "unique_authors": 212,
-  "reactions_total": 1190,
-  "attachments": 552,
+  "reactions_total": 1308,
+  "attachments": 621,
   "channel_activity": {
-    "🔸綜合討論": 1334,
-    "🔸morimens-game-chat": 5098,
-    "🔸日本語チャンネル": 15,
-    "🔸русский-канал": 494,
+    "🔸綜合討論": 1352,
+    "🔸morimens-game-chat": 5771,
+    "🔸日本語チャンネル": 20,
+    "🔸русский-канал": 495,
+    "🔸canal-español": 87,
+    "🔸canal-português": 1992,
+    "🔸lore-chat": 133,
+    "🔸频道建议┊server-suggestions": 8,
+    "🔸team-building": 268,
+    "🔸general-chat": 175,
+    "🔸邀请码互助┊swap-invitation-codes": 21,
+    "🔸game-question": 1001,
+    "🔸机器人命令┊bot-commands": 39,
+    "關於莫絲": 3,
+    "喚醒體設計 烏爾托斯": 1,
     "🔸phòng-chat-tiếng-việt": 1612,
-    "🔸canal-español": 57,
-    "🔸canal-português": 1891,
     "🔸traphase": 16,
-    "🔸lore-chat": 119,
-    "🔸频道建议┊server-suggestions": 2,
-    "🔸team-building": 233,
-    "🔸general-chat": 100,
-    "🔸game-question": 767,
-    "🔸机器人命令┊bot-commands": 33,
     "Leigh wip!!!!": 2,
     "🔸阵容构建": 2,
     "🔸晒卡分享": 2,
     "🔸ruang-obrolan-indonesia": 136,
-    "🔸邀请码互助┊swap-invitation-codes": 20,
     "🔸游戏问题": 3,
     "今夜不做，更待何時 || 第二篇 第三章": 5,
     "媽媽孩子抱着我不肯放手": 2,
@@ -46,9 +48,10 @@
     "Team Building and Progression advice.": 14
   },
   "hourly_activity": {
+    "18": 729,
+    "19": 491,
     "16": 1149,
     "17": 848,
-    "18": 17,
     "11": 788,
     "12": 802,
     "13": 1245,
@@ -67,11 +70,19 @@
     "9": 305
   },
   "message_types": {
-    "0": 1285,
-    "19": 682,
-    "20": 1
+    "0": 811,
+    "19": 389,
+    "20": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1490415220802195518",
+      "channel_id": "1170692781216378960",
+      "content": "E1 sexy people. 1 more to go.",
+      "author": "climbkaly",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1490279130170921040",
       "channel_id": "1490279130170921040",
@@ -129,6 +140,14 @@
       "channel": "🔸相位对弈"
     },
     {
+      "id": "1490420532888211486",
+      "channel_id": "1170692781216378960",
+      "content": "Why are you greeting people? Don't you know that that's against the channel rule",
+      "author": "megidola.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1490373324608372746",
       "channel_id": "1170692781216378960",
       "content": "i think 2 weeks is fine tbh...",
@@ -151,6 +170,22 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490420684998840473",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490433499679953097",
+      "channel_id": "1170692781216378960",
+      "content": "Enduring the grind.\n\nAt chapter 5 now.",
+      "author": "climbkaly",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1490400956746174474",
@@ -199,38 +234,6 @@
       "author": "guava3442",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490322452775964773",
-      "channel_id": "1170692781216378960",
-      "content": "https://fixupx.com/magenta_pengin4/status/2040461768926101678",
-      "author": "46982105",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490325401686245557",
-      "channel_id": "1170692781216378960",
-      "content": "blec will not like the fact this is what made me clear",
-      "author": "megidola.",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490338717502799952",
-      "channel_id": "1170692781216378960",
-      "content": "i bought mythag and regret",
-      "author": "monchi3524",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490354234464534712",
-      "channel_id": "1400749543288475770",
-      "content": "https://tenor.com/view/nilou-genshin-genshin-impact-nilou-eating-paimon-nilou-ea",
-      "author": "snorlax01",
-      "reactions": 4,
-      "channel": "🔸team-building"
     }
   ]
 }
