@@ -457,7 +457,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
     <div class="sb-panel" id="panel-memory"></div>
     <!-- Tools panel -->
     <div class="sb-panel" id="panel-tools"></div>
-    <div id="sidebar-footer">v0.14.0</div>
+    <div id="sidebar-footer">v0.15.0</div>
   </nav>
 
   <!-- Main -->
@@ -622,6 +622,12 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         <input type="checkbox" id="cfg-safemode" style="width:auto;accent-color:#c5a356">
         <label for="cfg-safemode" style="margin:0;cursor:pointer">安全模式（高风险工具执行前确认）</label>
       </div>
+      <div class="setting-group" style="border-top:1px solid var(--border);padding-top:12px;margin-top:8px">
+        <label>API 网关 <span style="font-weight:400;color:var(--text-dim)">（团队部署，留空则直连 Anthropic）</span></label>
+        <input id="cfg-gateway-url" type="url" placeholder="https://your-gateway.internal/api">
+        <input id="cfg-gateway-token" type="password" placeholder="网关 Token（由管理员分配）" style="margin-top:6px">
+        <p style="font-size:11px;color:var(--text-dim);margin-top:4px">配置网关后，所有 API 请求将通过网关转发，无需填写 Anthropic 密钥。</p>
+      </div>
     </div>
     <div id="pane-prompts" class="settings-pane">
       <div class="setting-group">
@@ -655,7 +661,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.14.0';
+const APP_VERSION = '0.15.0';
 
 /* ===== State ===== */
 const S = {
@@ -907,10 +913,38 @@ function loginAccount(name, key) {
 function logoutAccount() {
   setCurrentUser('');
 }
-function loadConversations() {
-  try { S.conversations = JSON.parse(localStorage.getItem('biav-convs') || '[]') } catch { S.conversations = [] }
+// User-isolated storage key helper
+function userKey(base) {
+  const u = currentUser();
+  return u ? `biav-${u}-${base}` : `biav-${base}`;
 }
-function saveConversations() { localStorage.setItem('biav-convs', JSON.stringify(S.conversations)) }
+function loadConversations() {
+  try { S.conversations = JSON.parse(localStorage.getItem(userKey('convs')) || '[]') } catch { S.conversations = [] }
+}
+function saveConversations() { localStorage.setItem(userKey('convs'), JSON.stringify(S.conversations)) }
+
+/* ===== API Gateway ===== */
+const ANTHROPIC_DIRECT = 'https://api.anthropic.com/v1/messages';
+
+function getApiConfig() {
+  const cfg = loadConfig();
+  const isGateway = !!cfg.gatewayUrl;
+  const url = isGateway ? cfg.gatewayUrl.replace(/\/+$/, '') + '/v1/messages' : ANTHROPIC_DIRECT;
+  const key = isGateway ? (cfg.gatewayToken || '') : (cfg.anthropic || (typeof BUILTIN_KEY !== 'undefined' && !BUILTIN_KEY.startsWith('%%') ? BUILTIN_KEY : ''));
+  return { url, key, isGateway };
+}
+
+function buildApiHeaders(key, isGateway, extraHeaders) {
+  const h = { 'Content-Type': 'application/json' };
+  if (isGateway) {
+    h['Authorization'] = 'Bearer ' + key;
+  } else {
+    h['x-api-key'] = key;
+    h['anthropic-version'] = '2023-06-01';
+    h['anthropic-dangerous-direct-browser-access'] = 'true';
+  }
+  return { ...h, ...extraHeaders };
+}
 
 /* ===== DOM refs ===== */
 const $ = (s) => document.querySelector(s);
@@ -1486,14 +1520,13 @@ async function generateSuggestions(convId) {
   if (!conv || conv.messages.length < 2) return;
   const last = conv.messages[conv.messages.length - 1];
   if (!last || last.role !== 'assistant' || last.content.startsWith('错误')) return;
-  const cfg = loadConfig();
-  const key = cfg.anthropic || (typeof BUILTIN_KEY !== 'undefined' && !BUILTIN_KEY.startsWith('%%') ? BUILTIN_KEY : '');
-  if (!key) return;
+  const { url: suggestUrl, key: suggestKey, isGateway: suggestGw } = getApiConfig();
+  if (!suggestKey) return;
   try {
     const recent = conv.messages.slice(-4).map(m => ({role: m.role, content: (m.content || '').slice(0, 300)}));
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch(suggestUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      headers: buildApiHeaders(suggestKey, suggestGw),
       body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 200, messages: [...recent, {role:'user',content:'基于以上对话，用中文给出3个简短的后续问题建议（每个不超过20字），用JSON数组返回，格式：["问题1","问题2","问题3"]。只返回JSON，不要其他内容。'}] })
     });
     if (!res.ok) return;
@@ -2307,9 +2340,8 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
 
 /* -- Claude API (direct from browser, with tool use) -- */
 async function streamClaude(conv, signal) {
-  const cfg = loadConfig();
-  const key = cfg.anthropic;
-  if (!key) throw new Error('Anthropic API Key not configured. Click the gear icon to set it.');
+  const { url: apiUrl, key, isGateway } = getApiConfig();
+  if (!key) throw new Error(isGateway ? '网关 Token 未配置，请在设置中填写。' : 'Anthropic API Key not configured. Click the gear icon to set it.');
 
   const sysPrompt = getSystemPrompt();
 
@@ -2357,15 +2389,9 @@ async function streamClaude(conv, signal) {
       messages: apiMessages,
     };
 
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch(apiUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': key,
-        'anthropic-version': '2023-06-01',
-        'anthropic-beta': 'prompt-caching-2024-07-31',
-        'anthropic-dangerous-direct-browser-access': 'true',
-      },
+      headers: buildApiHeaders(key, isGateway, isGateway ? {} : { 'anthropic-beta': 'prompt-caching-2024-07-31' }),
       body: JSON.stringify(body),
       signal,
     });
@@ -2570,6 +2596,8 @@ function openSettings() {
   $('#cfg-openai').value = cfg.openai || '';
   $('#cfg-thinking').checked = !!cfg.enableThinking;
   $('#cfg-safemode').checked = !!cfg.safeMode;
+  $('#cfg-gateway-url').value = cfg.gatewayUrl || '';
+  $('#cfg-gateway-token').value = cfg.gatewayToken || '';
   $('#cfg-custom-prompt').value = cfg.customPrompt || '';
   // Account info
   const user = currentUser();
@@ -2587,6 +2615,8 @@ function saveSettings() {
     openai: $('#cfg-openai').value.trim(),
     enableThinking: $('#cfg-thinking').checked,
     safeMode: $('#cfg-safemode').checked,
+    gatewayUrl: $('#cfg-gateway-url').value.trim(),
+    gatewayToken: $('#cfg-gateway-token').value.trim(),
     customPrompt: $('#cfg-custom-prompt').value.trim(),
   };
   saveConfig(cfg);
@@ -2912,18 +2942,15 @@ function removeFile(i) {
 }
 
 /* ===== Cross-session Memory (L9) — Index + Topics ===== */
-const MEMORY_KEY = 'biav-memory';
-const MEMORY_TOPICS_KEY = 'biav-memory-topics';
-
 function loadMemory() {
-  try { return JSON.parse(localStorage.getItem(MEMORY_KEY) || '[]'); } catch { return []; }
+  try { return JSON.parse(localStorage.getItem(userKey('memory')) || '[]'); } catch { return []; }
 }
-function saveMemory(mem) { localStorage.setItem(MEMORY_KEY, JSON.stringify(mem)); }
+function saveMemory(mem) { localStorage.setItem(userKey('memory'), JSON.stringify(mem)); }
 
 function loadTopics() {
-  try { return JSON.parse(localStorage.getItem(MEMORY_TOPICS_KEY) || '{}'); } catch { return {}; }
+  try { return JSON.parse(localStorage.getItem(userKey('memory-topics')) || '{}'); } catch { return {}; }
 }
-function saveTopics(topics) { localStorage.setItem(MEMORY_TOPICS_KEY, JSON.stringify(topics)); }
+function saveTopics(topics) { localStorage.setItem(userKey('memory-topics'), JSON.stringify(topics)); }
 
 function addMemory(text) {
   // Auto-categorize into topic
@@ -3018,12 +3045,11 @@ async function runBackgroundTask(input) {
   // Fire and forget — runs asynchronously
   (async () => {
     try {
-      const cfg = loadConfig();
-      const key = cfg.anthropic || (typeof BUILTIN_KEY !== 'undefined' && !BUILTIN_KEY.startsWith('%%') ? BUILTIN_KEY : '');
-      if (!key) { _bgTasks[taskId] = { status: 'error', result: 'No API key', label }; return; }
-      const res = await fetch('https://api.anthropic.com/v1/messages', {
+      const { url: bgUrl, key: bgKey, isGateway: bgGw } = getApiConfig();
+      if (!bgKey) { _bgTasks[taskId] = { status: 'error', result: 'No API key', label }; return; }
+      const res = await fetch(bgUrl, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+        headers: buildApiHeaders(bgKey, bgGw),
         body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 4000, messages: [{role:'user',content:`${input.task}\n\n${input.context || ''}`}] })
       });
       if (!res.ok) { _bgTasks[taskId] = { status: 'error', result: `API error ${res.status}`, label }; return; }
@@ -3080,9 +3106,8 @@ function microCompact(apiMessages) {
 // AutoCompact: when conversation is too long, summarize early messages using Haiku
 async function autoCompact(conv) {
   if (!conv || conv.messages.length < 20) return; // only for long conversations
-  const cfg = loadConfig();
-  const key = cfg.anthropic || (typeof BUILTIN_KEY !== 'undefined' && !BUILTIN_KEY.startsWith('%%') ? BUILTIN_KEY : '');
-  if (!key) return;
+  const { url: compactUrl, key: compactKey, isGateway: compactGw } = getApiConfig();
+  if (!compactKey) return;
   // Count approximate tokens (rough: 1 char ≈ 0.5 tokens for Chinese)
   const totalChars = conv.messages.reduce((s, m) => s + (m.content?.length || 0), 0);
   if (totalChars < 40000) return; // ~20K tokens, not yet critical
@@ -3091,9 +3116,9 @@ async function autoCompact(conv) {
   const toSummarize = conv.messages.slice(0, splitAt);
   const summaryInput = toSummarize.map(m => `[${m.role}]: ${(m.content || '').slice(0, 500)}`).join('\n');
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch(compactUrl, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      headers: buildApiHeaders(compactKey, compactGw),
       body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 1000, messages: [{role:'user',content:`请将以下对话摘要为简洁的要点（不超过500字），保留关键信息、决策和文件名：\n\n${summaryInput}`}] })
     });
     if (!res.ok) return;
@@ -3322,6 +3347,7 @@ $('#settings-btn').onclick = openSettings;
 $('#settings-cancel').onclick = closeSettings;
 $('#logout-btn').onclick = () => {
   logoutAccount();
+  loadConversations(); S.convId = null; renderSidebar();
   closeSettings();
   updateGreetingUser();
   refreshLoginCard();
@@ -3627,6 +3653,7 @@ $('#login-btn').onclick = () => {
   const accts = loadAccounts();
   if (!key && !accts[name]?.anthropic) { $('#login-key').focus(); return; }
   loginAccount(name, key);
+  loadConversations(); S.convId = null; renderSidebar(); renderMessages();
   refreshLoginCard();
   updateGreetingUser();
   buildModelDropdown();
@@ -3635,6 +3662,7 @@ $('#login-select').onchange = (e) => {
   const name = e.target.value;
   if (!name) return;
   setCurrentUser(name);
+  loadConversations(); S.convId = null; renderSidebar(); renderMessages();
   refreshLoginCard();
   updateGreetingUser();
   buildModelDropdown();
