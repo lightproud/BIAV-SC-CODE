@@ -457,7 +457,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
     <div class="sb-panel" id="panel-memory"></div>
     <!-- Tools panel -->
     <div class="sb-panel" id="panel-tools"></div>
-    <div id="sidebar-footer">v0.13.0</div>
+    <div id="sidebar-footer">v0.14.0</div>
   </nav>
 
   <!-- Main -->
@@ -618,6 +618,10 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
         <input type="checkbox" id="cfg-thinking" style="width:auto;accent-color:#c5a356">
         <label for="cfg-thinking" style="margin:0;cursor:pointer">启用 Extended Thinking（思维链展示）</label>
       </div>
+      <div class="setting-group" style="display:flex;align-items:center;gap:8px">
+        <input type="checkbox" id="cfg-safemode" style="width:auto;accent-color:#c5a356">
+        <label for="cfg-safemode" style="margin:0;cursor:pointer">安全模式（高风险工具执行前确认）</label>
+      </div>
     </div>
     <div id="pane-prompts" class="settings-pane">
       <div class="setting-group">
@@ -651,7 +655,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.13.0';
+const APP_VERSION = '0.14.0';
 
 /* ===== State ===== */
 const S = {
@@ -1068,6 +1072,7 @@ function getSystemPrompt() {
   if (mem) prompt += mem;
   const stylePrompt = OUTPUT_STYLES[currentStyle]?.prompt || '';
   if (stylePrompt) prompt += stylePrompt;
+  if (_userFrustrated) prompt += '\n\n[注意：用户似乎感到沮丧或不满。请更加耐心、直接地回答，避免冗长解释，快速解决问题。如果之前有错误请先道歉。]';
   return prompt;
 }
 
@@ -1514,6 +1519,23 @@ async function generateSuggestions(convId) {
   } catch {}
 }
 
+// Sentiment detection (regex-based, like Claude Code's userPromptKeywords)
+function detectFrustration(text) {
+  const patterns = [
+    /[操草艹靠擦卧槽]{1}/,
+    /什么(垃圾|破|鬼|玩意)/,
+    /不[行好对能]用/,
+    /太(慢|烂|差|蠢|笨)了/,
+    /怎么(又|还|总是)/,
+    /有(毛)?病/,
+    /搞(什么|毛)/,
+    /废(物|话)/,
+    /wtf|wth|ffs|omg|damn|shit|fuck|sucks|horrible|terrible|broken|useless/i,
+  ];
+  return patterns.some(p => p.test(text));
+}
+let _userFrustrated = false;
+
 // Auto emoji for conversation titles
 function autoTitleEmoji(text) {
   const t = text.toLowerCase();
@@ -1552,6 +1574,9 @@ async function sendMessage(text) {
 
   const conv = currentConv();
   if (!conv || isStreaming(conv.id)) return;
+
+  // Sentiment detection
+  _userFrustrated = detectFrustration(text);
 
   // Build display content
   let displayContent = text;
@@ -2313,8 +2338,11 @@ async function streamClaude(conv, signal) {
     ...TOOLS
   ];
 
+  // Auto-compact long conversations before starting
+  await autoCompact(conv);
+
   // API messages for tool use loop (separate from display messages)
-  let apiMessages = buildMsgs();
+  let apiMessages = microCompact(buildMsgs());
   const MAX_TOOL_ROUNDS = 8;
 
   for (let round = 0; round <= MAX_TOOL_ROUNDS; round++) {
@@ -2541,6 +2569,7 @@ function openSettings() {
   $('#cfg-anthropic').value = cfg.anthropic || '';
   $('#cfg-openai').value = cfg.openai || '';
   $('#cfg-thinking').checked = !!cfg.enableThinking;
+  $('#cfg-safemode').checked = !!cfg.safeMode;
   $('#cfg-custom-prompt').value = cfg.customPrompt || '';
   // Account info
   const user = currentUser();
@@ -2557,9 +2586,11 @@ function saveSettings() {
     anthropic: $('#cfg-anthropic').value.trim(),
     openai: $('#cfg-openai').value.trim(),
     enableThinking: $('#cfg-thinking').checked,
+    safeMode: $('#cfg-safemode').checked,
     customPrompt: $('#cfg-custom-prompt').value.trim(),
   };
   saveConfig(cfg);
+  _safeMode = cfg.safeMode;
   closeSettings();
   buildModelDropdown();
 }
@@ -2880,22 +2911,63 @@ function removeFile(i) {
   renderFileChips();
 }
 
-/* ===== Cross-session Memory (L9) ===== */
+/* ===== Cross-session Memory (L9) — Index + Topics ===== */
 const MEMORY_KEY = 'biav-memory';
+const MEMORY_TOPICS_KEY = 'biav-memory-topics';
+
 function loadMemory() {
   try { return JSON.parse(localStorage.getItem(MEMORY_KEY) || '[]'); } catch { return []; }
 }
 function saveMemory(mem) { localStorage.setItem(MEMORY_KEY, JSON.stringify(mem)); }
-function addMemory(text) {
-  const mem = loadMemory();
-  mem.push({ text, ts: Date.now() });
-  if (mem.length > 50) mem.shift(); // keep max 50 entries
-  saveMemory(mem);
+
+function loadTopics() {
+  try { return JSON.parse(localStorage.getItem(MEMORY_TOPICS_KEY) || '{}'); } catch { return {}; }
 }
+function saveTopics(topics) { localStorage.setItem(MEMORY_TOPICS_KEY, JSON.stringify(topics)); }
+
+function addMemory(text) {
+  // Auto-categorize into topic
+  const topic = categorizeMemory(text);
+  const mem = loadMemory();
+  mem.push({ text, ts: Date.now(), topic });
+  if (mem.length > 100) mem.shift();
+  saveMemory(mem);
+  // Update topic index
+  const topics = loadTopics();
+  if (!topics[topic]) topics[topic] = { label: topic, count: 0 };
+  topics[topic].count++;
+  topics[topic].lastUpdate = Date.now();
+  saveTopics(topics);
+}
+
+function categorizeMemory(text) {
+  const t = text.toLowerCase();
+  if (/偏好|喜欢|不喜欢|习惯|风格/.test(t)) return '用户偏好';
+  if (/项目|进度|部署|版本|任务/.test(t)) return '项目状态';
+  if (/角色|剧情|世界观|设定/.test(t)) return '游戏知识';
+  if (/api|代码|bug|技术|工具/.test(t)) return '技术笔记';
+  if (/决策|决定|方案|选择/.test(t)) return '决策记录';
+  return '通用';
+}
+
 function getMemoryPrompt() {
   const mem = loadMemory();
   if (!mem.length) return '';
-  return '\n\n---\n用户跨会话记忆（请参考但不要主动提及）：\n' + mem.map(m => '- ' + m.text).join('\n');
+  // Build index (always injected, lightweight)
+  const topics = loadTopics();
+  const topicList = Object.keys(topics);
+  let prompt = '\n\n---\n用户跨会话记忆索引：';
+  topicList.forEach(t => { prompt += `\n- [${t}] ${topics[t].count} 条`; });
+  // Inject recent items (last 10) directly, older ones only as index
+  const recent = mem.slice(-10);
+  prompt += '\n\n近期记忆：\n' + recent.map(m => `- ${m.text}`).join('\n');
+  // For older items, only include if explicitly relevant (topic match with recent user message)
+  return prompt;
+}
+
+// Retrieve topic-specific memories on demand
+function getTopicMemories(topic) {
+  return loadMemory().filter(m => m.topic === topic);
 }
 
 // Memory tool for AI to save memories
@@ -2911,14 +2983,131 @@ TOOLS.push({
   }
 });
 
-// Extend execTool
+// PreToolUse Hook: confirm high-risk tools before execution
+const HIGH_RISK_TOOLS = new Set(['run_javascript', 'ai_image']);
+let _safeMode = false; // toggled via settings
+
+async function preToolUseHook(name, input) {
+  if (!_safeMode) return true;
+  if (!HIGH_RISK_TOOLS.has(name)) return true;
+  const toolLabel = {run_javascript:'执行 JavaScript 代码',ai_image:'调用 DALL-E 生成图片'}[name] || name;
+  const detail = name === 'run_javascript' ? `\n代码:\n${(input.code || '').slice(0, 200)}` : `\n提示词: ${(input.prompt || '').slice(0, 100)}`;
+  return confirm(`⚠️ ${toolLabel}\n${detail}\n\n是否允许执行？`);
+}
+
+// Sub-agent: background task execution via Haiku (non-blocking)
+const _bgTasks = {}; // id → {status, result, label}
+TOOLS.push({
+  name: 'background_task',
+  description: '启动一个后台子任务（使用 Haiku 模型异步执行）。适用于：摘要长文本、翻译、数据分析等不需要实时交互的任务。主对话不会被阻塞。',
+  input_schema: {
+    type: 'object',
+    properties: {
+      task: { type: 'string', description: '要执行的任务描述' },
+      context: { type: 'string', description: '提供给子任务的上下文信息' },
+      label: { type: 'string', description: '任务标签（显示给用户）', default: '后台任务' }
+    },
+    required: ['task']
+  }
+});
+
+async function runBackgroundTask(input) {
+  const taskId = 'bg-' + Math.random().toString(36).slice(2, 8);
+  const label = input.label || '后台任务';
+  _bgTasks[taskId] = { status: 'running', result: null, label };
+  // Fire and forget — runs asynchronously
+  (async () => {
+    try {
+      const cfg = loadConfig();
+      const key = cfg.anthropic || (typeof BUILTIN_KEY !== 'undefined' && !BUILTIN_KEY.startsWith('%%') ? BUILTIN_KEY : '');
+      if (!key) { _bgTasks[taskId] = { status: 'error', result: 'No API key', label }; return; }
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+        body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 4000, messages: [{role:'user',content:`${input.task}\n\n${input.context || ''}`}] })
+      });
+      if (!res.ok) { _bgTasks[taskId] = { status: 'error', result: `API error ${res.status}`, label }; return; }
+      const data = await res.json();
+      _bgTasks[taskId] = { status: 'done', result: data.content?.[0]?.text || '', label };
+    } catch (e) { _bgTasks[taskId] = { status: 'error', result: e.message, label }; }
+  })();
+  return taskId;
+}
+
+// Extend execTool with memory + hooks
 const _origExecTool = execTool;
 async function execToolWithMemory(name, input) {
   if (name === 'save_memory') {
     addMemory(input.content);
     return `Memory saved: "${input.content}"`;
   }
+  if (name === 'background_task') {
+    const taskId = await runBackgroundTask(input);
+    return `后台任务已启动 [${taskId}]: ${input.label || input.task.slice(0, 50)}。任务将异步完成，结果会在完成后可用。`;
+  }
+  // PreToolUse hook
+  const allowed = await preToolUseHook(name, input);
+  if (!allowed) return `Tool "${name}" was denied by user.`;
   return _origExecTool(name, input);
+}
+
+/* ===== Context Compression (MicroCompact + AutoCompact) ===== */
+// MicroCompact: trim old tool outputs in API messages to save tokens
+function microCompact(apiMessages) {
+  // Only trim messages beyond the most recent 4 turns
+  const keepRecent = 8; // 4 user + 4 assistant
+  if (apiMessages.length <= keepRecent) return apiMessages;
+  return apiMessages.map((m, i) => {
+    if (i >= apiMessages.length - keepRecent) return m; // keep recent
+    // Trim tool_result content blocks
+    if (m.role === 'user' && Array.isArray(m.content)) {
+      return { ...m, content: m.content.map(c => {
+        if (c.type === 'tool_result' && typeof c.content === 'string' && c.content.length > 200) {
+          const short = c.content.slice(0, 150).replace(/\n/g, ' ');
+          return { ...c, content: `[已裁剪] ${short}...` };
+        }
+        return c;
+      })};
+    }
+    // Trim long assistant text in old messages
+    if (m.role === 'assistant' && typeof m.content === 'string' && m.content.length > 800) {
+      return { ...m, content: m.content.slice(0, 600) + '\n\n[...内容已裁剪以节省上下文]' };
+    }
+    return m;
+  });
+}
+
+// AutoCompact: when conversation is too long, summarize early messages using Haiku
+async function autoCompact(conv) {
+  if (!conv || conv.messages.length < 20) return; // only for long conversations
+  const cfg = loadConfig();
+  const key = cfg.anthropic || (typeof BUILTIN_KEY !== 'undefined' && !BUILTIN_KEY.startsWith('%%') ? BUILTIN_KEY : '');
+  if (!key) return;
+  // Count approximate tokens (rough: 1 char ≈ 0.5 tokens for Chinese)
+  const totalChars = conv.messages.reduce((s, m) => s + (m.content?.length || 0), 0);
+  if (totalChars < 40000) return; // ~20K tokens, not yet critical
+  // Take the first half of messages to summarize
+  const splitAt = Math.floor(conv.messages.length / 2);
+  const toSummarize = conv.messages.slice(0, splitAt);
+  const summaryInput = toSummarize.map(m => `[${m.role}]: ${(m.content || '').slice(0, 500)}`).join('\n');
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'x-api-key': key, 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' },
+      body: JSON.stringify({ model: 'claude-haiku-4-5-20251001', max_tokens: 1000, messages: [{role:'user',content:`请将以下对话摘要为简洁的要点（不超过500字），保留关键信息、决策和文件名：\n\n${summaryInput}`}] })
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    const summary = data.content?.[0]?.text;
+    if (!summary) return;
+    // Replace old messages with summary
+    const summaryMsg = { role: 'user', content: `[对话历史摘要]\n${summary}` };
+    const summaryReply = { role: 'assistant', content: '好的，我已了解之前的对话内容，请继续。' };
+    conv.messages = [summaryMsg, summaryReply, ...conv.messages.slice(splitAt)];
+    conv._compacted = true;
+    saveConversations();
+    console.log('[BIAV] AutoCompact: compressed', splitAt, 'messages into summary');
+  } catch (e) { console.warn('[BIAV] AutoCompact failed:', e); }
 }
 
 /* ===== Input auto-resize ===== */
@@ -3179,6 +3368,7 @@ $('#theme-btn').onclick = () => {
   applyTheme(isLight ? 'dark' : 'light');
 };
 applyTheme(localStorage.getItem('biav-theme') || 'dark');
+_safeMode = !!loadConfig().safeMode;
 $('#select-btn').onclick = enterSelectMode;
 $('#select-all-btn').onclick = selectAllMsgs;
 $('#select-save-btn').onclick = saveSelectedAsImage;
@@ -3237,26 +3427,40 @@ function buildStyleDropdown() {
 $('#style-btn').onclick = () => { buildStyleDropdown(); $('#style-dropdown').classList.toggle('open'); };
 
 inputEl.addEventListener('input', adjustInput);
+// Steering: allow sending during stream — aborts current, injects user message, restarts
+function steerOrSend(text) {
+  if (!text) return;
+  if (isCurrentStreaming()) {
+    // Abort current stream and queue new message
+    const ctrl = S.abortCtrls[S.convId];
+    if (ctrl) ctrl.abort();
+    // Wait for finishStream then send
+    setTimeout(() => sendMessage(text), 300);
+  } else {
+    sendMessage(text);
+  }
+}
+
 inputEl.addEventListener('keydown', e => {
   if (e.key === 'Enter' && !e.shiftKey) {
     e.preventDefault();
     const text = inputEl.value.trim();
-    if (text && !isCurrentStreaming()) {
+    if (text) {
       inputEl.value = '';
       adjustInput();
-      sendMessage(text);
+      steerOrSend(text);
     }
   }
 });
 
 sendBtn.onclick = () => {
   const text = inputEl.value.trim();
-  if (text && !isCurrentStreaming()) {
+  if (text) {
     sendBtn.classList.add('send-pop');
     setTimeout(() => sendBtn.classList.remove('send-pop'), 200);
     inputEl.value = '';
     adjustInput();
-    sendMessage(text);
+    steerOrSend(text);
   }
 };
 
