@@ -928,6 +928,7 @@ function newChat() {
 }
 
 function loadConv(id) {
+  if (S.streaming) return; // prevent switching during streaming
   S.convId = id;
   const c = S.conversations.find(x => x.id === id);
   if (c) { S.provider = c.provider; S.model = c.model; updateModelBtn() }
@@ -1130,12 +1131,15 @@ function removeThinkingDots() {
 
 let _firstDeltaReceived = false;
 
-function appendDelta(text) {
-  const conv = currentConv();
+function appendDelta(text, targetConv) {
+  const conv = targetConv || currentConv();
   if (!conv) return;
   const last = conv.messages[conv.messages.length - 1];
   if (last && last.role === 'assistant') {
     last.content += text;
+
+    // Only update DOM if this is the active conversation
+    if (conv.id !== S.convId) return;
 
     // Remove thinking dots on first real content
     if (!_firstDeltaReceived) {
@@ -2046,11 +2050,11 @@ async function streamClaude(conv, signal) {
               thinkingText = '';
             } else if (j.content_block?.type === 'web_search_tool_result') {
               // Server-side search results — show indicator
-              appendDelta('\n\n> 🔍 搜索完成\n\n');
+              appendDelta('\n\n> 🔍 搜索完成\n\n', conv);
             } else if (j.content_block?.type === 'tool_use') {
               if (j.content_block.name === 'web_search') {
                 // Server tool — show indicator, don't track for client execution
-                appendDelta('\n\n> 🔍 正在搜索网页...\n\n');
+                appendDelta('\n\n> 🔍 正在搜索网页...\n\n', conv);
               } else {
                 currentToolId = j.content_block.id;
                 currentToolName = j.content_block.name;
@@ -2061,7 +2065,7 @@ async function streamClaude(conv, signal) {
             if (j.delta?.type === 'thinking_delta' && j.delta.thinking) {
               thinkingText += j.delta.thinking;
             } else if (j.delta?.type === 'text_delta' && j.delta.text) {
-              appendDelta(j.delta.text);
+              appendDelta(j.delta.text, conv);
             } else if (j.delta?.type === 'input_json_delta' && j.delta.partial_json) {
               currentToolInput += j.delta.partial_json;
             }
@@ -2069,7 +2073,7 @@ async function streamClaude(conv, signal) {
             if (inThinking && thinkingText) {
               // Insert thinking block as collapsible before text
               const thinkId = 'think-' + Math.random().toString(36).slice(2, 8);
-              appendDelta(`<div class="thinking-block"><button class="thinking-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>Thinking...</button><div class="thinking-content">${esc(thinkingText)}</div></div>\n\n`);
+              appendDelta(`<div class="thinking-block"><button class="thinking-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>Thinking...</button><div class="thinking-content">${esc(thinkingText)}</div></div>\n\n`, conv);
               inThinking = false;
               thinkingText = '';
             }
@@ -2103,14 +2107,18 @@ async function streamClaude(conv, signal) {
     if (stopReason !== 'tool_use' || toolCalls.length === 0) break;
 
     // Show tool use indicator
-    const toolNames = toolCalls.map(t => t.name === 'read_file' ? t.input.path : t.name === 'list_files' ? `ls ${t.input.path||'/'}` : t.input.query);
-    appendDelta(`\n\n> 🔧 ${toolNames.join(', ')}\n\n`);
+    const toolLabels = toolCalls.map(t => {
+      const icons = {read_file:'📖',list_files:'📂',search_code:'🔎',generate_pdf:'📄',generate_docx:'📝',generate_excel:'📊',generate_pptx:'📽',generate_image:'🖼',generate_chart:'📈',generate_pixel_art:'👾',generate_html:'🌐',generate_midi:'🎵',ai_image:'🎨',run_javascript:'⚡',save_memory:'💾'};
+      const icon = icons[t.name] || '🔧';
+      const detail = t.name === 'read_file' ? t.input.path : t.name === 'list_files' ? (t.input.path || '/') : t.name === 'search_code' ? t.input.query : '';
+      return `${icon} ${t.name}${detail ? ': ' + detail : ''}`;
+    });
+    appendDelta(`\n\n> ${toolLabels.join('\n> ')}\n\n`, conv);
 
     // Build assistant message with tool_use blocks
     const assistantContent = [];
-    // Include any text that was streamed
     const currentText = conv.messages[conv.messages.length - 1].content;
-    const textBeforeTools = currentText.split('\n\n> 🔧')[0].trim();
+    const textBeforeTools = currentText.split('\n\n> ')[0].trim();
     if (textBeforeTools) assistantContent.push({ type: 'text', text: textBeforeTools });
     for (const tc of toolCalls) {
       assistantContent.push({ type: 'tool_use', id: tc.id, name: tc.name, input: tc.input });
@@ -2121,6 +2129,11 @@ async function streamClaude(conv, signal) {
     for (const tc of toolCalls) {
       const result = await execToolWithMemory(tc.name, tc.input);
       toolResults.push({ type: 'tool_result', tool_use_id: tc.id, content: result });
+      // Show result card in chat for file-generating tools
+      const fileTools = ['generate_pdf','generate_docx','generate_excel','generate_pptx','generate_image','generate_chart','generate_pixel_art','generate_html','generate_midi','ai_image'];
+      if (fileTools.includes(tc.name) && !result.startsWith('Error')) {
+        appendDelta(`\n\n> ✅ ${result}\n\n`, conv);
+      }
     }
 
     // Append to API messages for next round
