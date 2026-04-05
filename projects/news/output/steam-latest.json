@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-05T16:06:14.303390+00:00",
+  "collected_at": "2026-04-05T18:05:12.577726+00:00",
   "source": "steam",
   "item_count": 10,
   "items": [
@@ -17,6 +17,21 @@
       "review": "上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好 \nPVE 算力构筑 对的上xp的 一玩就是天亮了系列\n送的和活动给的资源非常多， 主线做做 活动玩玩 ，不氪金游戏自带送的4小只强度很高 搭配很灵活配队不死绑，自由度非常高 ，0氪就能全破 能体验到游戏所有内容，有点追求的 氪完双倍就能爽玩\nPVP 对战 纯公平 良心卡牌竞技 ，现在这样的二游卡牌 PVP",
       "timestamp_created": 1775380027,
       "playtime_forever": 3672
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-05T15:34:17+00:00",
+      "lang": "koreana",
+      "title": "[正面] 아름다운 스토리와 그래픽, 게임성이 훌륭함.\r\nai 번역이 단점이지만, 번역 이슈가 있음에...",
+      "summary": "아름다운 스토리와 그래픽, 게임성이 훌륭함.\r\nai 번역이 단점이지만, 번역 이슈가 있음에도 스토리 자체가 재미있음!!",
+      "url": "https://steamcommunity.com/profiles/76561198871848775/recommended/3052450",
+      "author": "76561198871848775",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "아름다운 스토리와 그래픽, 게임성이 훌륭함.\r\nai 번역이 단점이지만, 번역 이슈가 있음에도 스토리 자체가 재미있음!!",
+      "timestamp_created": 1775403257,
+      "playtime_forever": 563
     },
     {
       "source": "steam",
@@ -76,7 +91,7 @@
       "voted_up": true,
       "review": "Slay the Spire gameplay + Reverse 1999-like story but lovecraftian, story has been cool so far\nMorimens is also generous with pulls, so there's no issue w/ progressing w/o spending money",
       "timestamp_created": 1775387899,
-      "playtime_forever": 540
+      "playtime_forever": 660
     },
     {
       "source": "steam",
@@ -106,7 +121,7 @@
       "voted_up": true,
       "review": "Just sitting in my hideout menu hits me hard in the nostalgia melancholy feels with that absolutely gorgeous music..\n\nAs I start the next mission a new soul-crushingly beautiful little tune plays and",
       "timestamp_created": 1775327953,
-      "playtime_forever": 1983
+      "playtime_forever": 2103
     },
     {
       "source": "steam",
@@ -136,22 +151,7 @@
       "voted_up": true,
       "review": "kathi my mommy 10/10",
       "timestamp_created": 1775284928,
-      "playtime_forever": 3210
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-03T17:46:37+00:00",
-      "lang": "english",
-      "title": "[负面] The English language setting did nothing for me, t...",
-      "summary": "The English language setting did nothing for me, the game language continued to be Chinese even after re-logging in. If the English would work, I would be happy to give the game another shot.",
-      "url": "https://steamcommunity.com/profiles/76561198117780296/recommended/3052450",
-      "author": "76561198117780296",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "The English language setting did nothing for me, the game language continued to be Chinese even after re-logging in. If the English would work, I would be happy to give the game another shot.",
-      "timestamp_created": 1775238397,
-      "playtime_forever": 29
+      "playtime_forever": 3276
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-04-06",
-  "archived_at": "2026-04-05T16:06:14.591411+00:00",
+  "archived_at": "2026-04-05T18:05:12.872527+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -153,6 +153,21 @@
       "review": "The English language setting did nothing for me, the game language continued to be Chinese even after re-logging in. If the English would work, I would be happy to give the game another shot.",
       "timestamp_created": 1775238397,
       "playtime_forever": 29
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-05T15:34:17+00:00",
+      "lang": "koreana",
+      "title": "[正面] 아름다운 스토리와 그래픽, 게임성이 훌륭함.\r\nai 번역이 단점이지만, 번역 이슈가 있음에...",
+      "summary": "아름다운 스토리와 그래픽, 게임성이 훌륭함.\r\nai 번역이 단점이지만, 번역 이슈가 있음에도 스토리 자체가 재미있음!!",
+      "url": "https://steamcommunity.com/profiles/76561198871848775/recommended/3052450",
+      "author": "76561198871848775",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "아름다운 스토리와 그래픽, 게임성이 훌륭함.\r\nai 번역이 단점이지만, 번역 이슈가 있음에도 스토리 자체가 재미있음!!",
+      "timestamp_created": 1775403257,
+      "playtime_forever": 563
     }
   ]
 }
