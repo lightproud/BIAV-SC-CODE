@@ -148,6 +148,12 @@ def validate_news_item(item):
         cleaned['language'] = str(item['language'])
     if 'metadata' in item and isinstance(item['metadata'], dict):
         cleaned['metadata'] = item['metadata']
+    # Preserve media fields for image archival
+    if item.get('media_url'):
+        cleaned['media_url'] = sanitize_url(item['media_url'])
+        cleaned['content_type'] = item.get('content_type', 'image')
+    if item.get('lang'):
+        cleaned['lang'] = str(item['lang'])
 
     # Title must not be empty after sanitization
     if not cleaned['title']:
@@ -815,12 +821,13 @@ def fetch_discord_local():
     ch_summary = '、'.join(f'{ch}({cnt})' for ch, cnt in top_channels)
 
     # Summary item
+    guild_id = os.environ.get('DISCORD_GUILD_ID', '1131791637933199470')
     items.append({
         'title': f'Discord 社区日报 ({today_str})',
         'summary': f'今日 {msg_count:,} 条消息，{authors} 位活跃用户，{reactions:,} 次反应。热门频道：{ch_summary}',
         'source': 'discord',
         'time': datetime.now(timezone.utc).isoformat(),
-        'url': '',
+        'url': f'https://discord.com/channels/{guild_id}',
         'engagement': msg_count,
         'author': 'Discord Archiver',
         'tags': ['discord', 'daily-summary'],
@@ -832,15 +839,19 @@ def fetch_discord_local():
         content = msg.get('content', '')[:150]
         author = msg.get('author', '?')
         channel = msg.get('channel', '')
+        channel_id = msg.get('channel_id', '')
+        msg_id = msg.get('id', '')
         react_count = msg.get('reactions', 0)
         if react_count < 5:
             continue
+        # Construct Discord message permalink
+        msg_url = f'https://discord.com/channels/{guild_id}/{channel_id}/{msg_id}' if channel_id and msg_id else ''
         items.append({
             'title': f'[DC热门] {author}@{channel}: {content[:60]}',
             'summary': content,
             'source': 'discord',
             'time': datetime.now(timezone.utc).isoformat(),
-            'url': '',
+            'url': msg_url,
             'engagement': react_count,
             'author': author,
             'tags': ['discord', 'hot-message'],

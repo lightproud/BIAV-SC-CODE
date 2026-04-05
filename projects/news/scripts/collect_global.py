@@ -84,7 +84,7 @@ SOURCE_MAP = {
 def convert_item(item: dict) -> dict:
     """Convert a report-system item to aggregator format."""
     source = SOURCE_MAP.get(item.get('source', ''), item.get('source', 'unknown'))
-    return {
+    converted = {
         'title': item.get('title', ''),
         'summary': item.get('summary', ''),
         'source': source,
@@ -97,6 +97,11 @@ def convert_item(item: dict) -> dict:
         'lang': item.get('lang', ''),
         'platform_region': item.get('platform_region', ''),
     }
+    # Preserve media fields for image archival
+    if item.get('media_url'):
+        converted['media_url'] = item['media_url']
+        converted['content_type'] = item.get('content_type', 'image')
+    return converted
 
 
 def dedup_key(item: dict) -> str:
@@ -149,6 +154,7 @@ def run_zero_cost_collectors() -> list[dict]:
         ('GameKee', c.fetch_gamekee),
         ('Huiji Wiki', c.fetch_huiji_wiki),
         ('搜狗微信', c.fetch_weixin),
+        ('RSSHub', c.fetch_rsshub),
     ]
 
     # Also run API-key collectors if keys are available

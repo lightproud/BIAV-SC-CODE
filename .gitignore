@@ -27,6 +27,17 @@ projects/news/data/discord/archives/
 assets/data/discord/
 morimens_extract.zip
 
+# media cache (downloaded images/covers, archived to GitHub Releases)
+projects/news/data/media/*.jpg
+projects/news/data/media/*.jpeg
+projects/news/data/media/*.png
+projects/news/data/media/*.gif
+projects/news/data/media/*.webp
+projects/news/data/media/*.avif
+projects/news/data/media/*.mp4
+projects/news/data/media/*.webm
+projects/news/data/media/*.tar.gz
+
 # auto-generated indexes (rebuilt by dream.py / memory_search.py)
 assets/data/vectors.json
 assets/data/semantic-index.json
