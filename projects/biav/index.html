@@ -291,12 +291,12 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 /* LaTeX */
 .katex-display{overflow-x:auto;padding:4px 0}
 
-/* Typing cursor + shimmer glow sweep */
+/* Typing cursor + shimmer text material */
 @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
-@keyframes shimmerSweep{0%{left:-40%}100%{left:140%}}
-.typing{position:relative;overflow:hidden}
+@keyframes shimmerText{0%{background-position:-200% 0}100%{background-position:200% 0}}
 .typing::after{content:'';display:inline-block;width:2px;height:1.1em;background:#c5a356;margin-left:2px;vertical-align:text-bottom;animation:blink 1s infinite}
-.typing::before{content:'';position:absolute;top:0;left:-40%;width:40%;height:100%;background:linear-gradient(90deg,transparent 0%,rgba(226,201,126,.07) 40%,rgba(197,163,86,.12) 50%,rgba(226,201,126,.07) 60%,transparent 100%);animation:shimmerSweep 2.8s ease-in-out infinite;pointer-events:none;z-index:1}
+.typing>:last-child{background:linear-gradient(90deg,#d4c9a8 0%,#d4c9a8 35%,#e2c97e 50%,#d4c9a8 65%,#d4c9a8 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerText 3s ease-in-out infinite}
+.typing>:last-child code,.typing>:last-child strong,.typing>:last-child a{-webkit-text-fill-color:initial}
 
 /* File upload */
 #file-preview{max-width:720px;margin:0 auto;padding:0 16px}
@@ -1843,12 +1843,24 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
     if (name === 'generate_midi') {
       // Lazy-load midi-writer-js
       if (!window.MidiWriter) {
-        await new Promise((resolve, reject) => {
-          const s = document.createElement('script');
-          s.src = 'https://cdn.jsdelivr.net/npm/midi-writer-js@2.1.4/build/MidiWriter.js';
-          s.onload = resolve; s.onerror = reject;
-          document.head.appendChild(s);
-        });
+        const urls = [
+          'https://cdn.jsdelivr.net/npm/midi-writer-js@2.1.4/build/MidiWriter.js',
+          'https://unpkg.com/midi-writer-js@2.1.4/build/MidiWriter.js'
+        ];
+        let loaded = false;
+        for (const url of urls) {
+          if (loaded) break;
+          try {
+            await new Promise((resolve, reject) => {
+              const s = document.createElement('script');
+              s.src = url;
+              s.onload = () => { loaded = true; resolve(); };
+              s.onerror = reject;
+              document.head.appendChild(s);
+            });
+          } catch {}
+        }
+        if (!window.MidiWriter) return 'Error: Failed to load MIDI library. Please check your network connection.';
       }
       const fname = (input.filename || 'music').replace(/\.mid$/i, '');
       const tracks = [];
