@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-06
 
-> 采集时间：2026-04-06 04:01 UTC+8
+> 采集时间：2026-04-06 05:07 UTC+8
 
 ## 🔥 联动动态
 
@@ -40,7 +40,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 0（沉默）|
 | Ruliweb | 0（沉默）|
-| Steam | 7 |
+| Steam | 9 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -60,38 +60,38 @@
 
 ## Discord
 
-今日 12,039 条消息，212 位活跃用户，1,190 次反应。热门频道：🔸morimens-game-chat(5098)、🔸canal-português(1891)、🔸phòng-chat-tiếng-việt(1612)、🔸綜合討論(1334)、🔸game-question(767)
+今日 13,242 条消息，212 位活跃用户，1,308 次反应。热门频道：🔸morimens-game-chat(5771)、🔸canal-português(1992)、🔸phòng-chat-tiếng-việt(1612)、🔸綜合討論(1352)、🔸game-question(1001)
 
 ### 热门话题
 
-1. [DC热门] that_one_chippy@Tonight or Never || Arc 2 Chapter 3:  — engagement: 8
-2. [DC热门] .angellveil@🔸morimens-game-chat: oh yeah uh guys remi — engagement: 6
-3. [DC热门] arandomflamev2@🔸morimens-game-chat: YEAHHH — engagement: 6
-4. [DC热门] ponponnyaru@🔸綜合討論: 我停服公告呢 — engagement: 6
-5. [DC热门] water_heart@🔸綜合討論: — engagement: 6
+1. [DC热门] climbkaly@🔸morimens-game-chat: E1 sexy people. 1 more — engagement: 8
+2. [DC热门] that_one_chippy@Tonight or Never || Arc 2 Chapter 3:  — engagement: 8
+3. [DC热门] .angellveil@🔸morimens-game-chat: oh yeah uh guys remi — engagement: 6
+4. [DC热门] arandomflamev2@🔸morimens-game-chat: YEAHHH — engagement: 6
+5. [DC热门] ponponnyaru@🔸綜合討論: 我停服公告呢 — engagement: 6
 
 ## Steam 评论
 
-- 好评 7 / 差评 0 / 好评率 100%
-- 语言分布：english 3, schinese 2, koreana 1, russian 1
+- 好评 9 / 差评 0 / 好评率 100%
+- 语言分布：english 4, schinese 3, koreana 1, russian 1
 
 ### 热门好评
 
 1. [正面] 上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好 
-PV... — engagement: 2
-2. [正面] 아름다운 스토리와 그래픽, 게임성이 훌륭함.
+PV... — engagement: 3
+2. [正面] Very engaging gameplay, I find myself stuck playin... — engagement: 0
+3. [正面] windows系统steam平台运行越运行越卡。肉鸽地图加角色养成，角色配队就是流派，启灵需要反复抽... — engagement: 0
+4. [正面] 아름다운 스토리와 그래픽, 게임성이 훌륭함.
 ai 번역이 단점이지만, 번역 이슈가 있음에... — engagement: 0
-3. [正面] Love the game, especially the story. The lovecraft... — engagement: 0
-4. [正面] 每次登陆更新都卡进度条，居然用两个小时，真是离谱开门离谱到家了。。。 — engagement: 0
-5. [正面] Классная игра. Особенно понравилась возможность по... — engagement: 0
+5. [正面] Love the game, especially the story. The lovecraft... — engagement: 0
 
 ## Bilibili
 
-1. [忘却前夜]最艺术的一集 — engagement: 516
-2. [忘却前夜]最艺术的一集 — engagement: 516
-3. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 187
-4. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 187
-5. 第四届塔薇杯-第十二日录播 — engagement: 14
+1. [忘却前夜]最艺术的一集 — engagement: 534
+2. [忘却前夜]最艺术的一集 — engagement: 534
+3. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 196
+4. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 196
+5. 第四届塔薇杯-第十二日录播 — engagement: 20
 
 ## Gamerch Wiki
 
