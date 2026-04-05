@@ -115,7 +115,7 @@ def normalize_source(raw: str) -> str:
 
 def extract_item(raw: dict) -> dict:
     """从原始 news item 提取 Chat 会话关心的字段。"""
-    return {
+    item = {
         'source': normalize_source(raw.get('source', 'unknown')),
         'time': raw.get('time', ''),
         'lang': raw.get('lang', ''),
@@ -125,6 +125,11 @@ def extract_item(raw: dict) -> dict:
         'author': raw.get('author', ''),
         'engagement': raw.get('engagement', 0),
     }
+    # Preserve media fields when present
+    if raw.get('media_url'):
+        item['media_url'] = raw['media_url']
+        item['content_type'] = raw.get('content_type', 'image')
+    return item
 
 
 def extract_steam_item(raw: dict) -> dict:

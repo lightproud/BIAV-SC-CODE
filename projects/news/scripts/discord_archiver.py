@@ -341,6 +341,7 @@ class DiscordArchiver:
         if total_reactions > 0:
             stats['top_reacted'].append({
                 'id': slim['id'],
+                'channel_id': slim['channel_id'],
                 'content': slim['content'][:80],
                 'author': slim['author_name'],
                 'reactions': total_reactions,

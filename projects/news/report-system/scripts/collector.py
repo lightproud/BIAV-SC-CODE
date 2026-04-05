@@ -860,13 +860,14 @@ def fetch_appstore_reviews():
                 entries = data.get("feed", {}).get("entry", [])
                 for entry in entries[:10]:
                     rating = int(entry.get("im:rating", {}).get("label", "0"))
+                    review_url = f"https://apps.apple.com/{country}/app/id{appstore_id}?see-all=reviews"
                     items.append(_make_item(
                         title=entry.get("title", {}).get("label", ""),
                         summary=entry.get("content", {}).get("label", ""),
                         source="appstore",
                         platform_region=country,
                         time_str=entry.get("updated", {}).get("label", ""),
-                        url="",
+                        url=review_url,
                         engagement=rating,
                         is_hot=False,
                         author=entry.get("author", {}).get("name", {}).get("label", ""),
@@ -916,13 +917,15 @@ def fetch_qq():
                     if not any(kw in content for kw in ALL_KEYWORDS):
                         continue
                     reactions = sum(r.get("count", 0) for r in msg.get("reactions", []))
+                    msg_id = msg.get("id", "")
+                    qq_url = f"https://qun.qq.com/qqweb/qunpro/share?channelId={channel_id}&msgSeq={msg_id}" if msg_id else ""
                     items.append(_make_item(
                         title=content[:100],
                         summary=content[:300],
                         source="qq",
                         platform_region="cn",
                         time_str=msg.get("timestamp", datetime.now(timezone.utc).isoformat()),
-                        url="",
+                        url=qq_url,
                         engagement=reactions,
                         is_hot=reactions > 10,
                         author=msg.get("author", {}).get("username", ""),

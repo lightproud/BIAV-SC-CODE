@@ -55,6 +55,9 @@ jobs:
       - name: Generate daily report
         run: python projects/news/scripts/generate_daily.py
 
+      - name: Download media (images, covers, fan art)
+        run: python projects/news/scripts/download_media.py --max-downloads 100
+
       - name: Archive platform data by date
         run: python projects/news/scripts/archive_platforms.py
 
