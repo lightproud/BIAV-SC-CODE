@@ -2367,6 +2367,85 @@ def deduplicate(items):
     return unique
 
 
+# ─── RSSHub 通用采集器 ────────────────────────────────────────
+
+# RSSHub routes: (route, source_name, platform_region, lang)
+RSSHUB_ROUTES = [
+    ("/weibo/keyword/忘却前夜", "weibo", "cn", "zh"),
+    ("/weibo/keyword/Morimens", "weibo", "cn", "zh"),
+    ("/zhihu/search/忘却前夜", "zhihu", "cn", "zh"),
+    ("/xiaohongshu/keyword/忘却前夜", "xiaohongshu", "cn", "zh"),
+    ("/douyin/keyword/忘却前夜", "douyin", "cn", "zh"),
+    ("/pixiv/search/忘却前夜", "pixiv", "jp", "ja"),
+    ("/pixiv/search/モリメンス", "pixiv", "jp", "ja"),
+    ("/tiktok/keyword/Morimens", "tiktok", "global", "en"),
+]
+
+
+def fetch_rsshub():
+    """通过自部署 RSSHub 实例采集多个平台（微博/知乎/小红书/抖音/Pixiv/TikTok）。
+
+    需要设置环境变量 RSSHUB_URL，指向你的 RSSHub 实例地址。
+    例如: RSSHUB_URL=https://rsshub.example.com
+    """
+    rsshub_url = os.environ.get("RSSHUB_URL", "").rstrip("/")
+    if not rsshub_url:
+        logger.info("RSSHub: RSSHUB_URL not set, skipping (deploy RSSHub and set this env var)")
+        return []
+
+    items = []
+    import re as _re
+
+    for route, source, region, lang in RSSHUB_ROUTES:
+        try:
+            resp = _get(
+                f"{rsshub_url}{route}",
+                params={"format": "json", "limit": 20},
+                headers={"Accept": "application/json"},
+                timeout=20,
+            )
+
+            data = resp.json()
+            feed_items = data.get("items", [])
+
+            for entry in feed_items:
+                title = entry.get("title", "")
+                if not title:
+                    continue
+                # Clean HTML from title/content
+                title = _re.sub(r'<[^>]+>', '', title).strip()
+                content = entry.get("content_text", "") or entry.get("content_html", "")
+                content = _re.sub(r'<[^>]+>', '', content).strip()[:300]
+
+                url = entry.get("url", "") or entry.get("id", "")
+                time_str = entry.get("date_published", "") or entry.get("date_modified", "")
+
+                # Extract author
+                authors = entry.get("authors", [])
+                author = authors[0].get("name", "") if authors else ""
+
+                items.append(_make_item(
+                    title=title,
+                    summary=content,
+                    source=source,
+                    platform_region=region,
+                    time_str=time_str or datetime.now(timezone.utc).isoformat(),
+                    url=url,
+                    engagement=0,
+                    is_hot=False,
+                    author=author,
+                    lang=lang,
+                ))
+
+            if feed_items:
+                logger.info(f"RSSHub {route}: +{len(feed_items)} items")
+        except Exception as e:
+            logger.warning(f"RSSHub {route} failed: {e}")
+
+    logger.info(f"RSSHub total: {len(items)} items from {len(RSSHUB_ROUTES)} routes")
+    return items
+
+
 def collect_all():
     """运行所有采集器，合并、去重、排序后输出。"""
     logger.info("=== 忘却前夜 全球信息收集开始 ===")
@@ -2424,6 +2503,8 @@ def collect_all():
         ("GameKee", fetch_gamekee),
         ("Huiji Wiki", fetch_huiji_wiki),
         ("搜狗微信", fetch_weixin),
+        # RSSHub 代理采集（微博/知乎/小红书/抖音/Pixiv/TikTok）
+        ("RSSHub", fetch_rsshub),
     ]
 
     for name, fn in fetchers:

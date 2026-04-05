@@ -149,6 +149,7 @@ def run_zero_cost_collectors() -> list[dict]:
         ('GameKee', c.fetch_gamekee),
         ('Huiji Wiki', c.fetch_huiji_wiki),
         ('搜狗微信', c.fetch_weixin),
+        ('RSSHub', c.fetch_rsshub),
     ]
 
     # Also run API-key collectors if keys are available

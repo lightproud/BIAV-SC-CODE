@@ -46,6 +46,7 @@ jobs:
           TELEGRAM_CHANNELS: ${{ secrets.TELEGRAM_CHANNELS }}
           DC_GALLERY_ID: ${{ secrets.DC_GALLERY_ID }}
           QQ_CHANNEL: ${{ secrets.QQ_CHANNEL }}
+          RSSHUB_URL: ${{ secrets.RSSHUB_URL }}
         run: python projects/news/scripts/collect_global.py
 
       - name: Split output by platform
