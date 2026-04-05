@@ -1,8 +1,83 @@
 {
-  "collected_at": "2026-04-05T12:48:38.446680+00:00",
+  "collected_at": "2026-04-05T15:00:02.722333+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-05T09:07:07+00:00",
+      "lang": "schinese",
+      "title": "[正面] 上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好 \nPV...",
+      "summary": "上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好 \nPVE 算力构筑 对的上xp的 一玩就是天亮了系列\n送的和活动给的资源非常多， 主线做做 活动玩玩 ，不氪金游戏自带送的4小只强度很高 搭配很灵活配队不死绑，自由度非常高 ，0氪就能全破 能体验到游戏所有内容，有点追求的 氪完双倍就能爽玩\nPVP 对战 纯公平 良心卡牌竞技 ，现在这样的二游卡牌 PVP",
+      "url": "https://steamcommunity.com/profiles/76561198201781425/recommended/3052450",
+      "author": "76561198201781425",
+      "engagement": 2,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好 \nPVE 算力构筑 对的上xp的 一玩就是天亮了系列\n送的和活动给的资源非常多， 主线做做 活动玩玩 ，不氪金游戏自带送的4小只强度很高 搭配很灵活配队不死绑，自由度非常高 ，0氪就能全破 能体验到游戏所有内容，有点追求的 氪完双倍就能爽玩\nPVP 对战 纯公平 良心卡牌竞技 ，现在这样的二游卡牌 PVP",
+      "timestamp_created": 1775380027,
+      "playtime_forever": 3672
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-05T12:10:27+00:00",
+      "lang": "schinese",
+      "title": "[正面] 每次登陆更新都卡进度条，居然用两个小时，真是离谱开门离谱到家了。。。",
+      "summary": "每次登陆更新都卡进度条，居然用两个小时，真是离谱开门离谱到家了。。。",
+      "url": "https://steamcommunity.com/profiles/76561198452169146/recommended/3052450",
+      "author": "76561198452169146",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "每次登陆更新都卡进度条，居然用两个小时，真是离谱开门离谱到家了。。。",
+      "timestamp_created": 1775391027,
+      "playtime_forever": 1813
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-05T12:09:10+00:00",
+      "lang": "russian",
+      "title": "[正面] Классная игра. Особенно понравилась возможность по...",
+      "summary": "Классная игра. Особенно понравилась возможность поставить себе могилу",
+      "url": "https://steamcommunity.com/profiles/76561198781863452/recommended/3052450",
+      "author": "76561198781863452",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Классная игра. Особенно понравилась возможность поставить себе могилу",
+      "timestamp_created": 1775390950,
+      "playtime_forever": 3138
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-05T11:18:19+00:00",
+      "lang": "english",
+      "title": "[正面] Slay the Spire gameplay + Reverse 1999-like story...",
+      "summary": "Slay the Spire gameplay + Reverse 1999-like story but lovecraftian, story has been cool so far\nMorimens is also generous with pulls, so there's no issue w/ progressing w/o spending money",
+      "url": "https://steamcommunity.com/profiles/76561198388387862/recommended/3052450",
+      "author": "76561198388387862",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Slay the Spire gameplay + Reverse 1999-like story but lovecraftian, story has been cool so far\nMorimens is also generous with pulls, so there's no issue w/ progressing w/o spending money",
+      "timestamp_created": 1775387899,
+      "playtime_forever": 480
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-05T10:27:06+00:00",
+      "lang": "english",
+      "title": "[正面] Gorgeous game with an amazing story direction. Hav...",
+      "summary": "Gorgeous game with an amazing story direction. Have been playing it almost nonstop for some months now on steam and my phone and couldn't be happier with it! I play a lot of games with the gacha eleme",
+      "url": "https://steamcommunity.com/profiles/76561198811877014/recommended/3052450",
+      "author": "76561198811877014",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Gorgeous game with an amazing story direction. Have been playing it almost nonstop for some months now on steam and my phone and couldn't be happier with it! I play a lot of games with the gacha eleme",
+      "timestamp_created": 1775384826,
+      "playtime_forever": 4421
+    },
     {
       "source": "steam",
       "time": "2026-04-04T18:39:13+00:00",
@@ -16,7 +91,7 @@
       "voted_up": true,
       "review": "Just sitting in my hideout menu hits me hard in the nostalgia melancholy feels with that absolutely gorgeous music..\n\nAs I start the next mission a new soul-crushingly beautiful little tune plays and",
       "timestamp_created": 1775327953,
-      "playtime_forever": 1831
+      "playtime_forever": 1923
     },
     {
       "source": "steam",
@@ -62,21 +137,6 @@
       "review": "The English language setting did nothing for me, the game language continued to be Chinese even after re-logging in. If the English would work, I would be happy to give the game another shot.",
       "timestamp_created": 1775238397,
       "playtime_forever": 29
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-03T14:23:43+00:00",
-      "lang": "spanish",
-      "title": "[正面] Buen juego por turnos, y eso que no me gustan tant...",
-      "summary": "Buen juego por turnos, y eso que no me gustan tanto el genero. También añado que, su tono oscuro y la historia estilo lovercraftiana es lo que más atrapa",
-      "url": "https://steamcommunity.com/profiles/76561199089856615/recommended/3052450",
-      "author": "76561199089856615",
-      "engagement": 0,
-      "language": "spanish",
-      "voted_up": true,
-      "review": "Buen juego por turnos, y eso que no me gustan tanto el genero. También añado que, su tono oscuro y la historia estilo lovercraftiana es lo que más atrapa",
-      "timestamp_created": 1775226223,
-      "playtime_forever": 6044
     }
   ]
 }

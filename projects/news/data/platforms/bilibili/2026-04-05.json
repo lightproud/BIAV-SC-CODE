@@ -1,9 +1,29 @@
 {
   "date": "2026-04-05",
-  "archived_at": "2026-04-05T12:48:39.952143+00:00",
+  "archived_at": "2026-04-05T15:00:03.322385+00:00",
   "source": "bilibili",
-  "item_count": 6,
+  "item_count": 10,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T03:00:00+00:00",
+      "lang": "",
+      "title": "被血肉包裹的&quot;纯爱&quot;神话！《沙耶之歌》凭什么成为20年不破的畸形神作？",
+      "summary": "很多人讨厌这个游戏，很多人喜欢这个游戏\n我是既喜欢又讨厌这个游戏",
+      "url": "https://www.bilibili.com/video/av116346754958875",
+      "author": "华鸽儿",
+      "engagement": 7339
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-04T23:20:31+00:00",
+      "lang": "",
+      "title": "【量级评定】沙耶之歌量级评定",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/av116348986333334",
+      "author": "只是一位无名者罢了",
+      "engagement": 375
+    },
     {
       "source": "bilibili",
       "time": "2026-04-04T16:56:39+00:00",
@@ -67,6 +87,28 @@
       "url": "http://www.bilibili.com/video/av116347476380594",
       "author": "伊莎玛拉-大群来了",
       "engagement": 34
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T14:28:46+00:00",
+      "lang": "",
+      "title": "【电吉他】沙耶之歌ED - ガラスのくつ (玻璃鞋) solo",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/av116352559940155",
+      "author": "Anon-Peking",
+      "engagement": 9
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-05T14:37:33+00:00",
+      "lang": "zh",
+      "title": "第四届塔薇杯-第十二日录播",
+      "summary": "第十二日直播录播\n本次比赛为预组比赛，赛程如下\nA牛肉批发黄姨VS阮渊\n淸淸梓燃VS湫雨亦\n冥心VSSilence\n莱星VS是澜阿口牙\nA牛肉批发黄姨VS我不是kk\n淸淸梓燃VS立誓氪金打400\n冥心VS咕咕嘎嘎咕咕咕\n莱星VS惑星",
+      "url": "http://www.bilibili.com/video/av116352559879439",
+      "author": "God7777",
+      "engagement": 3,
+      "media_url": "//i1.hdslb.com/bfs/archive/0adf3eb48a62e7dd7249b089c12b0353057b7349.jpg",
+      "content_type": "video"
     }
   ]
 }
