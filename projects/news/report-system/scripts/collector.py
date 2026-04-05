@@ -82,6 +82,20 @@ def _get(url, params=None, headers=None, timeout=15):
             time.sleep(attempt + 1)
 
 
+def _get_cf(url, params=None, headers=None, timeout=15):
+    """GET request using cloudscraper for Cloudflare-protected sites."""
+    try:
+        import cloudscraper
+        scraper = cloudscraper.create_scraper(browser={'browser': 'chrome', 'platform': 'linux'})
+        h = {**DEFAULT_HEADERS, **(headers or {})}
+        resp = scraper.get(url, params=params, headers=h, timeout=timeout)
+        resp.raise_for_status()
+        return resp
+    except ImportError:
+        logger.warning("cloudscraper not installed, falling back to requests")
+        return _get(url, params=params, headers=headers, timeout=timeout)
+
+
 def _post(url, json_data=None, headers=None, timeout=30):
     """带重试的 POST 请求 (间隔 1s/2s)。"""
     h = {**DEFAULT_HEADERS, **(headers or {})}
@@ -339,16 +353,70 @@ def fetch_youtube():
 
 def fetch_nga():
     """从 NGA 论坛获取忘却前夜版块帖子。"""
+    # NGA forum ID for 忘却前夜 — can be overridden via env var
+    # Search NGA for the correct FID if this one doesn't work
     nga_fid = os.environ.get("NGA_FORUM_ID", "")
-    if not nga_fid:
-        logger.info("NGA: NGA_FORUM_ID not set, skipping")
-        return []
 
     items = []
+
+    # If no fixed FID, try NGA search instead
+    if not nga_fid:
+        import re as _re
+        for keyword in KEYWORDS["zh"][:2]:
+            try:
+                resp = _get(
+                    "https://bbs.nga.cn/thread.php",
+                    params={"key": keyword, "fid": 0, "ajax": 1},
+                    headers={
+                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                        "Cookie": "nga_read_toma=1",
+                        "Accept": "application/json",
+                    },
+                )
+                try:
+                    data = resp.json()
+                except ValueError:
+                    # NGA sometimes returns JSONP, try to extract JSON
+                    text = resp.text.strip()
+                    json_match = _re.search(r'\{.*\}', text, _re.DOTALL)
+                    if json_match:
+                        data = json.loads(json_match.group())
+                    else:
+                        continue
+
+                threads = data.get("data", {}).get("__T", {})
+                if isinstance(threads, dict):
+                    for tid, thread in threads.items():
+                        postdate = thread.get("postdate", 0)
+                        if not isinstance(postdate, (int, float)):
+                            continue
+                        created = datetime.fromtimestamp(postdate, tz=timezone.utc)
+                        replies = thread.get("replies", 0)
+                        items.append(_make_item(
+                            title=thread.get("subject", ""),
+                            summary="",
+                            source="nga",
+                            platform_region="cn",
+                            time_str=created.isoformat(),
+                            url=f"https://bbs.nga.cn/read.php?tid={tid}",
+                            engagement=replies,
+                            is_hot=replies > 50,
+                            author=thread.get("author", ""),
+                            lang="zh",
+                        ))
+                logger.info(f'NGA search "{keyword}": {len(items)} threads')
+            except Exception as e:
+                logger.warning(f'NGA search "{keyword}" failed: {e}')
+        return items
+
     try:
         data = _get(
             f"https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1",
-            headers={"Accept": "application/json"},
+            headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                "Cookie": "nga_read_toma=1",
+                "Accept": "application/json",
+            },
         ).json()
 
         threads = data.get("data", {}).get("__T", {})
@@ -521,25 +589,31 @@ def fetch_douyin():
 
 
 def fetch_tieba():
-    """从百度贴吧获取忘却前夜吧帖子。"""
+    """从百度贴吧获取忘却前夜吧帖子（客户端 API，无需登录）。"""
     items = []
     try:
         data = _get(
-            "https://tieba.baidu.com/mo/q/newmoindex",
-            params={"forum_name": "忘却前夜"},
+            "https://tieba.baidu.com/c/f/frs/page",
+            params={"kw": "忘却前夜", "pn": 0, "rn": 30},
+            headers={"User-Agent": "bdtb for Android 12.57.1.2"},
         ).json()
 
-        for thread in data.get("data", {}).get("thread_list", []) or []:
+        for thread in data.get("thread_list", []) or []:
+            tid = thread.get("tid", "") or thread.get("id", "")
+            reply_num = int(thread.get("reply_num", 0))
+            last_time = thread.get("last_time_int", 0)
+            time_str = (datetime.fromtimestamp(int(last_time), tz=timezone.utc).isoformat()
+                        if last_time else datetime.now(timezone.utc).isoformat())
             items.append(_make_item(
                 title=thread.get("title", ""),
-                summary=thread.get("abstract", ""),
+                summary=thread.get("abstract", [""])[0] if isinstance(thread.get("abstract"), list) else thread.get("abstract", ""),
                 source="tieba",
                 platform_region="cn",
-                time_str=datetime.now(timezone.utc).isoformat(),
-                url=f"https://tieba.baidu.com/p/{thread.get('tid', '')}",
-                engagement=int(thread.get("reply_num", 0)),
-                is_hot=int(thread.get("reply_num", 0)) > 50,
-                author=thread.get("author", {}).get("name_show", ""),
+                time_str=time_str,
+                url=f"https://tieba.baidu.com/p/{tid}",
+                engagement=reply_num,
+                is_hot=reply_num > 50,
+                author=thread.get("author", {}).get("name_show", "") if isinstance(thread.get("author"), dict) else "",
                 lang="zh",
             ))
 
@@ -583,17 +657,17 @@ def fetch_naver_cafe():
 
 
 def fetch_dcinside():
-    """从 DCInside 搜索韩国忘却前夜 Gallery（미니 갤러리）。"""
+    """从 DCInside 搜索韩国忘却前夜 Gallery + 搜索。"""
     dc_gallery_id = os.environ.get("DC_GALLERY_ID", "morimens")
     items = []
 
     try:
-        resp = _get(
+        resp = _get_cf(
             f"https://gall.dcinside.com/mgallery/board/lists/",
             params={"id": dc_gallery_id, "page": 1},
             headers={
                 "Referer": "https://gall.dcinside.com",
-                "User-Agent": "Mozilla/5.0",
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
             },
         )
         html = resp.text
@@ -640,7 +714,7 @@ def fetch_arca_live():
             params = {"p": 1}
             if mode:
                 params["mode"] = mode
-            resp = _get(
+            resp = _get_cf(
                 f"https://arca.live/b/{arca_channel}",
                 params=params,
                 headers={"User-Agent": "Mozilla/5.0"},
@@ -903,41 +977,65 @@ def fetch_pixiv():
 
 
 def fetch_lofter():
-    """从 Lofter 搜索忘却前夜同人创作。"""
+    """从 Lofter 标签页抓取忘却前夜同人创作（HTML 解析，无需登录）。"""
+    import re as _re
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
-            data = _get(
-                "https://www.lofter.com/dwr/call/plaincall/TagBean.search.dwr",
-                params={"t": keyword, "type": "new"},
-                headers={"Referer": "https://www.lofter.com"},
+            resp = _get(
+                f"https://www.lofter.com/tag/{keyword}",
+                headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                    "Referer": "https://www.lofter.com",
+                },
             )
-            # Lofter 返回的是 DWR 格式或 HTML，实际部署需要解析
-            # 使用备用的 tag 搜索页
-            data = _get(
-                f"https://api.lofter.com/v2.0/search.json",
-                params={"keyword": keyword, "type": 0, "offset": 0, "limit": 20},
-            )
-            if data and data.status_code == 200:
-                try:
-                    result = data.json()
-                    for post in result.get("data", {}).get("posts", []) or []:
-                        hot = post.get("hot", 0)
-                        items.append(_make_item(
-                            title=post.get("title", "") or post.get("digest", "")[:100],
-                            summary=post.get("digest", "")[:300],
-                            source="lofter",
-                            platform_region="cn",
-                            time_str=datetime.now(timezone.utc).isoformat(),
-                            url=post.get("blogPageUrl", ""),
-                            engagement=hot,
-                            is_hot=hot > 200,
-                            author=post.get("blogInfo", {}).get("blogNickName", ""),
-                            lang="zh",
-                            content_type="image" if post.get("photoLinks") else "text",
-                        ))
-                except ValueError:
-                    pass
+            html = resp.text
+
+            # Lofter tag page embeds post data in HTML
+            for match in _re.finditer(
+                r'class="txtcnt"[^>]*>.*?<a[^>]*href="([^"]+)"[^>]*>([^<]+)</a>',
+                html, _re.DOTALL
+            ):
+                url, title = match.groups()
+                title = title.strip()
+                if not title:
+                    continue
+                items.append(_make_item(
+                    title=title,
+                    summary="",
+                    source="lofter",
+                    platform_region="cn",
+                    time_str=datetime.now(timezone.utc).isoformat(),
+                    url=url if url.startswith("http") else f"https://www.lofter.com{url}",
+                    engagement=0,
+                    is_hot=False,
+                    author="",
+                    lang="zh",
+                    content_type="image",
+                ))
+
+            # Fallback: try to find post items via data-id pattern
+            if not items:
+                for match in _re.finditer(
+                    r'data-id="(\d+)".*?<a[^>]*href="([^"]*)"[^>]*title="([^"]*)"',
+                    html, _re.DOTALL
+                ):
+                    post_id, url, title = match.groups()
+                    title = title.strip()
+                    if not title:
+                        continue
+                    items.append(_make_item(
+                        title=title,
+                        summary="",
+                        source="lofter",
+                        platform_region="cn",
+                        time_str=datetime.now(timezone.utc).isoformat(),
+                        url=url if url.startswith("http") else f"https://www.lofter.com{url}",
+                        engagement=0,
+                        is_hot=False,
+                        author="",
+                        lang="zh",
+                    ))
 
             logger.info(f'Lofter "{keyword}": {len(items)} posts')
         except Exception as e:
@@ -1032,20 +1130,84 @@ def fetch_taobao_merch():
 
 
 def fetch_fivech():
-    """从 5ch (日本) 搜索忘却前夜相关帖子。"""
+    """从 5ch (日本) 搜索忘却前夜相关帖子（subject.txt + 搜索）。"""
     items = []
+    import re as _re
+
+    # Method 1: scan applism (手游板) subject.txt for matching threads
+    boards = [
+        ("pug", "applism"),     # アプリ/ソシャゲ
+        ("krsw", "gamesm"),     # スマホゲーム
+    ]
+    for server, board in boards:
+        try:
+            resp = _get(
+                f"https://{server}.5ch.net/{board}/subject.txt",
+                headers={"User-Agent": "Monazilla/1.00"},
+            )
+            text = resp.text
+            for line in text.split("\n"):
+                # Format: 1234567890.dat<>Title (reply_count)
+                if not line.strip():
+                    continue
+                # Check if thread title matches any keyword
+                matched = any(kw in line for kw in KEYWORDS["ja"])
+                if not matched:
+                    continue
+                match = _re.match(r'(\d+)\.dat<>(.+)\((\d+)\)', line)
+                if match:
+                    tid, title, replies = match.groups()
+                    items.append(_make_item(
+                        title=title.strip(),
+                        summary="",
+                        source="fivech",
+                        platform_region="jp",
+                        time_str=datetime.now(timezone.utc).isoformat(),
+                        url=f"https://{server}.5ch.net/test/read.cgi/{board}/{tid}/",
+                        engagement=int(replies),
+                        is_hot=int(replies) > 100,
+                        author="",
+                        lang="ja",
+                    ))
+        except Exception as e:
+            logger.warning(f"5ch {server}/{board} failed: {e}")
+
+    # Method 2: find.5ch.net search with HTML parsing
     for keyword in KEYWORDS["ja"]:
         try:
-            # 5ch search API
-            data = _get(
+            resp = _get(
                 "https://find.5ch.net/search",
-                params={"q": keyword, "sort": "date"},
+                params={"q": keyword, "sort": "created"},
+                headers={"User-Agent": "Mozilla/5.0"},
             )
-            # 5ch 返回 HTML，实际部署时需要解析
-            logger.info(f'5ch "{keyword}": attempted search')
+            html = resp.text
+            for match in _re.finditer(
+                r'<a[^>]*href="(https?://[^"]*5ch\.net/test/read\.cgi/[^"]+)"[^>]*>([^<]+)</a>',
+                html
+            ):
+                url, title = match.groups()
+                title = title.strip()
+                if not title or len(title) < 3:
+                    continue
+                # Avoid duplicates from subject.txt
+                if any(i.get("url") == url for i in items):
+                    continue
+                items.append(_make_item(
+                    title=title,
+                    summary="",
+                    source="fivech",
+                    platform_region="jp",
+                    time_str=datetime.now(timezone.utc).isoformat(),
+                    url=url,
+                    engagement=0,
+                    is_hot=False,
+                    author="",
+                    lang="ja",
+                ))
         except Exception as e:
-            logger.warning(f'5ch "{keyword}" failed: {e}')
+            logger.warning(f'5ch search "{keyword}" failed: {e}')
 
+    logger.info(f"5ch: {len(items)} threads")
     return items
 
 
@@ -1053,38 +1215,42 @@ def fetch_fivech():
 
 
 def fetch_google_play():
-    """从 Google Play Store 获取忘却前夜评论。"""
+    """从 Google Play Store 获取忘却前夜评论（使用 google-play-scraper 库）。"""
     gp_package = os.environ.get("GOOGLE_PLAY_PACKAGE", "com.qookkagames.z1.gp.hk")
-
     items = []
-    # Google Play 没有官方评论 API，使用第三方数据解析
-    for lang_code, region in [("zh_CN", "cn"), ("en_US", "global"), ("ja_JP", "jp"), ("ko_KR", "kr")]:
-        try:
-            data = _get(
-                f"https://store.googleapis.com/store/api/reviews",
-                params={"id": gp_package, "hl": lang_code, "num": 15, "sort": 0},
-            )
-            if data and data.status_code == 200:
-                try:
-                    result = data.json()
-                    for review in result if isinstance(result, list) else result.get("reviews", []) or []:
-                        rating = review.get("score", 0)
-                        items.append(_make_item(
-                            title=review.get("title", f"★{'★' * (rating - 1)}"),
-                            summary=review.get("text", "")[:300],
-                            source="google_play",
-                            platform_region=region,
-                            time_str=review.get("date", datetime.now(timezone.utc).isoformat()),
-                            url=f"https://play.google.com/store/apps/details?id={gp_package}",
-                            engagement=rating,
-                            is_hot=False,
-                            author=review.get("userName", ""),
-                            lang=lang_code[:2],
-                        ))
-                except (ValueError, KeyError):
-                    pass
 
-            logger.info(f"Google Play ({lang_code}): {len(items)} reviews")
+    try:
+        from google_play_scraper import reviews as gp_reviews, Sort as GPSort
+    except ImportError:
+        logger.warning("Google Play: google-play-scraper not installed, skipping")
+        return items
+
+    for lang_code, region in [("zh_CN", "cn"), ("en", "global"), ("ja", "jp"), ("ko", "kr")]:
+        try:
+            result, _ = gp_reviews(
+                gp_package,
+                lang=lang_code,
+                count=20,
+                sort=GPSort.NEWEST,
+            )
+            for review in result:
+                rating = review.get("score", 0)
+                text = review.get("content", "")
+                sentiment = '好评' if rating >= 4 else ('中评' if rating == 3 else '差评')
+                items.append(_make_item(
+                    title=f"[Google Play {sentiment}] ★{rating} {text[:40]}",
+                    summary=text[:300],
+                    source="google_play",
+                    platform_region=region,
+                    time_str=review["at"].isoformat() if review.get("at") else datetime.now(timezone.utc).isoformat(),
+                    url=f"https://play.google.com/store/apps/details?id={gp_package}",
+                    engagement=review.get("thumbsUpCount", 0),
+                    is_hot=False,
+                    author=review.get("userName", ""),
+                    lang=lang_code[:2],
+                ))
+
+            logger.info(f"Google Play ({lang_code}): {len(result)} reviews")
         except Exception as e:
             logger.warning(f"Google Play ({lang_code}) failed: {e}")
 
@@ -1770,18 +1936,23 @@ def fetch_gamerch():
 
 
 def fetch_note_com():
-    """从 Note.com 搜索忘却前夜/モリメンス 攻略文章。"""
+    """从 Note.com 搜索忘却前夜/モリメンス 攻略文章（API v3）。"""
     items = []
     for keyword in KEYWORDS["ja"]:
         try:
             resp = _get(
-                "https://note.com/api/v2/search",
+                "https://note.com/api/v3/searches",
                 params={"q": keyword, "size": 20, "sort": "new", "context": "note"},
                 headers={"User-Agent": "Mozilla/5.0"},
             )
             if resp.status_code == 200:
                 data = resp.json()
-                for note in data.get("data", {}).get("notes", {}).get("contents", []) or []:
+                # v3 response: data.notes.contents or data.sections[0].contents
+                notes_data = data.get("data", {})
+                contents = (notes_data.get("notes", {}).get("contents", [])
+                           or notes_data.get("sections", [{}])[0].get("contents", [])
+                           if notes_data.get("sections") else [])
+                for note in contents or []:
                     items.append(_make_item(
                         title=note.get("name", ""),
                         summary=note.get("body", "")[:300],
@@ -1809,10 +1980,10 @@ def fetch_ruliweb():
     items = []
     for keyword in KEYWORDS["ko"]:
         try:
-            resp = _get(
+            resp = _get_cf(
                 "https://bbs.ruliweb.com/search",
                 params={"q": keyword, "page": 1},
-                headers={"User-Agent": "Mozilla/5.0"},
+                headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"},
             )
             html = resp.text
             import re as _re
@@ -1854,57 +2025,73 @@ def fetch_ruliweb():
 # ─── Русские платформы ─────────────────────────────────────
 
 def fetch_vkplay():
-    """从 VK Play 获取忘却前夜页面信息。"""
+    """从 VK Play API 获取忘却前夜页面和评论。"""
     items = []
+    game_slug = "morimens"
+    try:
+        # Try VK Play API for game info
+        resp = _get(
+            f"https://api.vkplay.ru/play/games/{game_slug}/",
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Referer": "https://vkplay.ru/",
+                "Accept": "application/json",
+            },
+        )
+        if resp.status_code == 200:
+            data = resp.json()
+            rating = data.get("rating", 0)
+            title_name = data.get("title", "Morimens")
+            if rating:
+                items.append(_make_item(
+                    title=f"[VK Play] {title_name} — рейтинг {rating}",
+                    summary=data.get("description", "")[:300],
+                    source="vkplay",
+                    platform_region="ru",
+                    time_str=datetime.now(timezone.utc).isoformat(),
+                    url=f"https://vkplay.ru/play/game/{game_slug}/",
+                    engagement=int(float(str(rating)) * 10) if rating else 0,
+                    is_hot=False,
+                    author="VK Play",
+                    lang="ru",
+                ))
+    except Exception as e:
+        logger.warning(f"VK Play game info failed: {e}")
+
+    # Try reviews API
     try:
         resp = _get(
-            "https://vkplay.ru/play/game/morimens/",
-            headers={"User-Agent": "Mozilla/5.0", "Accept-Language": "ru-RU,ru;q=0.9"},
+            f"https://api.vkplay.ru/play/games/{game_slug}/reviews/",
+            params={"limit": 20, "offset": 0},
+            headers={
+                "User-Agent": "Mozilla/5.0",
+                "Referer": "https://vkplay.ru/",
+                "Accept": "application/json",
+            },
         )
-        html = resp.text
-        import re as _re
-
-        # Extract rating
-        rating_match = _re.search(r'"rating"[:\s]*(\d+\.?\d*)', html)
-        if rating_match:
-            rating = float(rating_match.group(1))
-            items.append(_make_item(
-                title=f"[VK Play] Morimens — рейтинг {rating:.1f}",
-                summary="",
-                source="vkplay",
-                platform_region="ru",
-                time_str=datetime.now(timezone.utc).isoformat(),
-                url="https://vkplay.ru/play/game/morimens/",
-                engagement=int(rating * 10),
-                is_hot=False,
-                author="VK Play",
-                lang="ru",
-            ))
-
-        # Extract reviews / comments
-        for match in _re.finditer(
-            r'class="[^"]*review[^"]*"[^>]*>.*?'
-            r'class="[^"]*text[^"]*"[^>]*>([^<]{10,300})',
-            html, _re.DOTALL
-        ):
-            text = match.group(1).strip()
-            items.append(_make_item(
-                title=f"[VK Play] {text[:60]}",
-                summary=text[:300],
-                source="vkplay",
-                platform_region="ru",
-                time_str=datetime.now(timezone.utc).isoformat(),
-                url="https://vkplay.ru/play/game/morimens/",
-                engagement=0,
-                is_hot=False,
-                author="",
-                lang="ru",
-            ))
-
-        logger.info(f"VK Play: {len(items)} items")
+        if resp.status_code == 200:
+            data = resp.json()
+            reviews = data.get("results", []) or data if isinstance(data, list) else []
+            for review in (reviews if isinstance(reviews, list) else []):
+                text = review.get("text", "") or review.get("body", "")
+                if not text:
+                    continue
+                items.append(_make_item(
+                    title=f"[VK Play] {text[:60]}",
+                    summary=text[:300],
+                    source="vkplay",
+                    platform_region="ru",
+                    time_str=review.get("created_at", datetime.now(timezone.utc).isoformat()),
+                    url=f"https://vkplay.ru/play/game/{game_slug}/",
+                    engagement=review.get("likes", 0),
+                    is_hot=False,
+                    author=review.get("user", {}).get("name", "") if isinstance(review.get("user"), dict) else "",
+                    lang="ru",
+                ))
     except Exception as e:
-        logger.warning(f"VK Play failed: {e}")
+        logger.warning(f"VK Play reviews failed: {e}")
 
+    logger.info(f"VK Play: {len(items)} items")
     return items
 
 
@@ -2224,6 +2411,19 @@ def collect_all():
         # 应用商店
         ("App Store", fetch_appstore_reviews),
         ("Google Play", fetch_google_play),
+        # 以下平台此前漏注册
+        ("QooApp", fetch_qooapp),
+        ("Epic Store", fetch_epic_store),
+        ("Gamerch Wiki", fetch_gamerch),
+        ("Note.com", fetch_note_com),
+        ("Ruliweb", fetch_ruliweb),
+        ("VK Play", fetch_vkplay),
+        ("StopGame", fetch_stopgame),
+        ("GACHAREVENUE", fetch_gacharevenue),
+        ("Miraheze Wiki", fetch_miraheze_wiki),
+        ("GameKee", fetch_gamekee),
+        ("Huiji Wiki", fetch_huiji_wiki),
+        ("搜狗微信", fetch_weixin),
     ]
 
     for name, fn in fetchers:
