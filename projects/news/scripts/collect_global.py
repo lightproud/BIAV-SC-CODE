@@ -169,16 +169,33 @@ def run_zero_cost_collectors() -> list[dict]:
 
     all_fetchers = zero_cost_fetchers + api_fetchers
 
+    succeeded = []
+    failed = []
+    empty = []
+
     for name, fn in all_fetchers:
         try:
             result = fn()
             if result:
                 items.extend(result)
-                logger.info(f"  {name}: +{len(result)} items")
+                succeeded.append((name, len(result)))
+                logger.info(f"  ✓ {name}: +{len(result)} items")
             else:
-                logger.info(f"  {name}: 0 items (skipped or empty)")
+                empty.append(name)
+                logger.info(f"  · {name}: 0 items")
         except Exception as e:
-            logger.warning(f"  {name} failed: {e}")
+            failed.append((name, str(e)[:120]))
+            logger.warning(f"  ✗ {name} FAILED: {e}")
+
+    # Diagnostic summary
+    logger.info("=== 采集诊断 ===")
+    logger.info(f"成功 ({len(succeeded)}): {', '.join(f'{n}({c})' for n, c in succeeded)}")
+    if empty:
+        logger.info(f"空结果 ({len(empty)}): {', '.join(empty)}")
+    if failed:
+        logger.warning(f"失败 ({len(failed)}):")
+        for name, err in failed:
+            logger.warning(f"  {name}: {err}")
 
     return items
 
