@@ -295,9 +295,9 @@ html,body{height:100%;overflow:hidden;background:#0a0b10;color:#d4c9a8;font-fami
 
 /* Typing cursor + shimmer text material */
 @keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
-@keyframes shimmerText{0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes shimmerText{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .typing::after{content:'';display:inline-block;width:2px;height:1.1em;background:#c5a356;margin-left:2px;vertical-align:text-bottom;animation:blink 1s infinite}
-.typing>:last-child{background:linear-gradient(90deg,#d4c9a8 0%,#d4c9a8 35%,#e2c97e 50%,#d4c9a8 65%,#d4c9a8 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerText 3s ease-in-out infinite}
+.typing>:last-child{background:linear-gradient(90deg,#d4c9a8 0%,#d4c9a8 30%,#f0d678 48%,#ffe8a0 50%,#f0d678 52%,#d4c9a8 70%,#d4c9a8 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmerText 6s ease-in-out infinite}
 .typing>:last-child code,.typing>:last-child strong,.typing>:last-child a{-webkit-text-fill-color:initial}
 
 /* File upload */
@@ -628,10 +628,10 @@ function isStreaming(convId) { return S.streamingConvs.has(convId || S.convId); 
 function isCurrentStreaming() { return isStreaming(S.convId); }
 
 // File blob registry — keeps generated files downloadable across re-renders
-const _fileRegistry = {}; // key: fileId → {blob, filename, type}
-function registerFile(blob, filename, type) {
+const _fileRegistry = {}; // key: fileId → {blob, filename, type, data?}
+function registerFile(blob, filename, type, data) {
   const id = 'file-' + Math.random().toString(36).slice(2, 10);
-  _fileRegistry[id] = { blob, filename, type };
+  _fileRegistry[id] = { blob, filename, type, data };
   return id;
 }
 function downloadFile(fileId) {
@@ -645,14 +645,13 @@ function downloadFile(fileId) {
 }
 window.downloadFile = downloadFile; // expose for onclick
 
-const _previewableExts = new Set(['png','jpg','jpeg','gif','svg','pdf','doc','html','htm']);
+const _previewableExts = new Set(['png','jpg','jpeg','gif','svg','pdf','doc','html','htm','xlsx','xls','pptx','mid','midi']);
 function previewFile(fileId) {
   const f = _fileRegistry[fileId];
   if (!f) return;
   const ext = f.filename.split('.').pop().toLowerCase();
   if (!_previewableExts.has(ext)) { downloadFile(fileId); return; }
 
-  const url = URL.createObjectURL(f.blob);
   $('#artifacts').classList.add('open');
   $('#art-tab-code').style.display = 'none';
   $('#art-tab-preview').style.display = '';
@@ -663,6 +662,8 @@ function previewFile(fileId) {
   $('#art-lang').textContent = ext.toUpperCase();
 
   const iframe = $('#art-iframe');
+  const url = URL.createObjectURL(f.blob);
+
   if (['png','jpg','jpeg','gif','svg'].includes(ext)) {
     $('#art-title').textContent = '图片预览';
     iframe.srcdoc = `<!DOCTYPE html><html><body style="margin:0;display:flex;align-items:center;justify-content:center;min-height:100vh;background:#1e1a10"><img src="${url}" style="max-width:100%;max-height:100vh;object-fit:contain"></body></html>`;
@@ -670,14 +671,135 @@ function previewFile(fileId) {
     $('#art-title').textContent = 'PDF 预览';
     iframe.removeAttribute('srcdoc');
     iframe.src = url;
+  } else if (['xlsx','xls'].includes(ext)) {
+    $('#art-title').textContent = 'Excel 预览';
+    _previewExcel(f, iframe);
+  } else if (ext === 'pptx') {
+    $('#art-title').textContent = 'PPT 预览';
+    _previewPptx(f, iframe);
+  } else if (['mid','midi'].includes(ext)) {
+    $('#art-title').textContent = 'MIDI 播放';
+    _previewMidi(f, iframe);
+  } else if (ext === 'doc' || ext === 'docx') {
+    $('#art-title').textContent = 'Word 预览';
+    f.blob.text().then(html => { iframe.srcdoc = html; });
   } else {
-    // doc (HTML-based) and html
-    $('#art-title').textContent = ext === 'doc' ? 'Word 预览' : 'HTML 预览';
+    $('#art-title').textContent = 'HTML 预览';
     iframe.removeAttribute('srcdoc');
     iframe.src = url;
   }
 }
 window.previewFile = previewFile;
+
+function _previewExcel(f, iframe) {
+  const d = f.data; // {sheets: [{name, data: [{col:val}]}]}
+  if (!d || !d.sheets) { iframe.srcdoc = '<body style="color:#aaa;font-family:sans-serif;padding:20px">无预览数据</body>'; return; }
+  let html = '<!DOCTYPE html><html><head><style>*{box-sizing:border-box;margin:0}body{background:#0a0b10;color:#d4c9a8;font-family:"Noto Sans SC",sans-serif;padding:12px;font-size:13px}';
+  html += '.tab-bar{display:flex;gap:2px;margin-bottom:10px;flex-wrap:wrap}.tab-btn{padding:5px 14px;border-radius:6px 6px 0 0;border:1px solid #2a2515;border-bottom:none;background:#1e1a10;color:#6b6040;cursor:pointer;font-size:12px;font-family:inherit}.tab-btn.active{background:#241f14;color:#e2c97e}';
+  html += '.sheet{display:none}.sheet.active{display:block}table{border-collapse:collapse;width:100%}th{background:#1e1a10;color:#e2c97e;font-weight:700;padding:6px 10px;border:1px solid #2a2515;text-align:left;position:sticky;top:0;font-size:12px}td{padding:5px 10px;border:1px solid #2a2515;font-size:12px}tr:nth-child(even) td{background:rgba(197,163,86,.04)}';
+  html += '</style></head><body>';
+  html += '<div class="tab-bar">';
+  d.sheets.forEach((s, i) => { html += `<button class="tab-btn${i===0?' active':''}" onclick="document.querySelectorAll('.sheet').forEach(el=>el.classList.remove('active'));document.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('active'));document.getElementById('s${i}').classList.add('active');this.classList.add('active')">${s.name || 'Sheet'+(i+1)}</button>`; });
+  html += '</div>';
+  d.sheets.forEach((s, i) => {
+    html += `<div class="sheet${i===0?' active':''}" id="s${i}"><table><thead><tr>`;
+    const keys = s.data.length ? Object.keys(s.data[0]) : [];
+    keys.forEach(k => { html += `<th>${k}</th>`; });
+    html += '</tr></thead><tbody>';
+    s.data.forEach(row => { html += '<tr>'; keys.forEach(k => { html += `<td>${row[k] ?? ''}</td>`; }); html += '</tr>'; });
+    html += '</tbody></table></div>';
+  });
+  html += '</body></html>';
+  iframe.srcdoc = html;
+}
+
+function _previewPptx(f, iframe) {
+  const d = f.data; // {slides: [{title, content, layout}], tempo?}
+  if (!d || !d.slides) { iframe.srcdoc = '<body style="color:#aaa;font-family:sans-serif;padding:20px">无预览数据</body>'; return; }
+  const gold = '#C5A356', bg = '#0A0B10', card = '#1E1A10', text = '#D4C9A8';
+  let html = `<!DOCTYPE html><html><head><style>*{box-sizing:border-box;margin:0}body{background:#161210;font-family:"Noto Sans SC",sans-serif;display:flex;flex-direction:column;align-items:center;padding:16px;gap:12px;min-height:100vh}`;
+  html += `.slide{width:100%;max-width:640px;aspect-ratio:16/9;background:${bg};border:1px solid #2a2515;border-radius:8px;padding:32px 40px;display:flex;flex-direction:column;justify-content:center;position:relative;flex-shrink:0}`;
+  html += `.s-num{position:absolute;bottom:8px;right:14px;font-size:10px;color:#3a3520}`;
+  html += `.s-title{color:${gold};font-size:22px;font-weight:700;margin-bottom:12px}.s-title-big{color:${gold};font-size:30px;font-weight:700;text-align:center;margin-bottom:8px}`;
+  html += `.s-content{color:${text};font-size:14px;line-height:1.8;white-space:pre-wrap}.s-divider{width:120px;height:2px;background:${gold};margin:10px auto;border-radius:1px}`;
+  html += `.nav{display:flex;gap:8px;position:sticky;bottom:12px}.nav button{padding:6px 16px;border-radius:6px;border:1px solid #2a2515;background:${card};color:#8a7a48;cursor:pointer;font-family:inherit;font-size:12px}.nav button:hover{border-color:#8a7a48;color:${text}}`;
+  html += `</style></head><body>`;
+  d.slides.forEach((s, i) => {
+    html += `<div class="slide" id="sl${i}">`;
+    if (s.layout === 'title') {
+      html += `<div class="s-title-big">${s.title||''}</div><div class="s-divider"></div>`;
+      if (s.content) html += `<div class="s-content" style="text-align:center;color:#8a7a48;font-size:16px">${s.content}</div>`;
+    } else if (s.layout === 'section') {
+      html += `<div class="s-title-big">${s.title||''}</div>`;
+    } else {
+      html += `<div class="s-title">${s.title||''}</div>`;
+      if (s.content) html += `<div class="s-content">${s.content}</div>`;
+    }
+    html += `<span class="s-num">${i+1} / ${d.slides.length}</span></div>`;
+  });
+  html += '</body></html>';
+  iframe.srcdoc = html;
+}
+
+function _previewMidi(f, iframe) {
+  const d = f.data; // {tracks: [{name, instrument, notes: [{pitch,duration,velocity}]}], tempo}
+  if (!d || !d.tracks) { iframe.srcdoc = '<body style="color:#aaa;font-family:sans-serif;padding:20px">无预览数据</body>'; return; }
+  const tempo = d.tempo || 120;
+  const bps = tempo / 60;
+  // Build a simple Web Audio player
+  let html = `<!DOCTYPE html><html><head><style>*{box-sizing:border-box;margin:0}body{background:#0a0b10;color:#d4c9a8;font-family:"Noto Sans SC",sans-serif;padding:16px;font-size:13px}`;
+  html += `.header{display:flex;align-items:center;gap:12px;margin-bottom:16px}.play-btn{width:48px;height:48px;border-radius:50%;border:2px solid #c5a356;background:none;color:#c5a356;cursor:pointer;font-size:20px;display:flex;align-items:center;justify-content:center;transition:all .15s}.play-btn:hover{background:#1e1a10}`;
+  html += `.info{font-size:12px;color:#8a7a48}.info b{color:#e2c97e}`;
+  html += `.track{margin-bottom:12px;padding:10px 12px;border:1px solid #2a2515;border-radius:8px;background:#1e1a10}`;
+  html += `.t-name{font-size:12px;color:#e2c97e;font-weight:600;margin-bottom:6px}`;
+  html += `.notes-bar{height:24px;background:#0a0b10;border-radius:4px;display:flex;gap:1px;overflow:hidden;align-items:flex-end}`;
+  html += `.note-pip{background:#c5a356;border-radius:1px;min-width:2px;opacity:.6;transition:opacity .1s}.note-pip.active{opacity:1;background:#e2c97e}`;
+  html += `.progress{width:100%;height:3px;background:#2a2515;border-radius:2px;margin-top:12px;overflow:hidden}.progress-bar{height:100%;background:#c5a356;width:0%;transition:width .1s linear}`;
+  html += `</style></head><body>`;
+  html += `<div class="header"><button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button><div class="info"><b>${tempo} BPM</b> · ${d.tracks.length} 轨 · ${d.tracks.reduce((s,t)=>s+(t.notes?.length||0),0)} 音符</div></div>`;
+  html += `<div class="progress"><div class="progress-bar" id="prog"></div></div>`;
+  d.tracks.forEach((t, ti) => {
+    const gmNames = ['钢琴','','','','','','','','','','','','','','','','','','','','','','','','吉他','','','','','','','','贝斯','','','','','','','','小提琴','','','','','','','','','','','','','','','','小号','','','','','','','','','','','','','长笛'];
+    const inst = t.instrument !== undefined ? (gmNames[t.instrument] || `音色 ${t.instrument}`) : '钢琴';
+    html += `<div class="track"><div class="t-name">${t.name || ('轨道 '+(ti+1))} · ${inst}</div><div class="notes-bar" id="nb${ti}">`;
+    (t.notes || []).forEach((n, ni) => {
+      const v = n.pitch === 'rest' ? 0 : (n.velocity || 80);
+      const h = Math.max(4, Math.round(v / 127 * 24));
+      html += `<div class="note-pip" id="n${ti}_${ni}" style="height:${h}px;width:${Math.max(2,Math.round(100/(t.notes.length||1)))}px"></div>`;
+    });
+    html += '</div></div>';
+  });
+  // Web Audio playback script
+  html += `<script>
+let actx, playing=false, stopFlag=false;
+const tempo=${tempo}, tracks=${JSON.stringify(d.tracks)};
+const durMap={'1':4,'2':2,'d2':3,'4':1,'d4':1.5,'8':.5,'d8':.75,'16':.25,'32':.125,'T4':2/3,'T8':1/3};
+function midiToFreq(note){const m=note.match(/^([A-G])(#|b)?(-?\\d)$/);if(!m)return 0;const semi={C:0,D:2,E:4,F:5,G:7,A:9,B:11}[m[1]];const acc=m[2]==='#'?1:m[2]==='b'?-1:0;return 440*Math.pow(2,((parseInt(m[3])-4)*12+semi+acc-9)/12);}
+function getDurSec(d){return (durMap[d]||1)*(60/tempo);}
+async function togglePlay(){
+  if(playing){stopFlag=true;return;}
+  if(!actx)actx=new AudioContext();
+  playing=true;stopFlag=false;
+  document.getElementById('playBtn').textContent='⏸';
+  // Calculate total duration
+  let maxDur=0;
+  tracks.forEach(t=>{let d=0;(t.notes||[]).forEach(n=>{d+=getDurSec(n.duration||'4');});if(d>maxDur)maxDur=d;});
+  const startT=actx.currentTime+0.05;
+  // Schedule all notes
+  tracks.forEach((t,ti)=>{let time=startT;(t.notes||[]).forEach((n,ni)=>{const dur=getDurSec(n.duration||'4');if(n.pitch!=='rest'){const pitches=Array.isArray(n.pitch)?n.pitch:[n.pitch];pitches.forEach(p=>{const freq=midiToFreq(p);if(!freq)return;const osc=actx.createOscillator();const gain=actx.createGain();osc.type='triangle';osc.frequency.value=freq;gain.gain.setValueAtTime((n.velocity||80)/127*0.3,time);gain.gain.exponentialRampToValueAtTime(0.001,time+dur*0.9);osc.connect(gain);gain.connect(actx.destination);osc.start(time);osc.stop(time+dur);});}
+  // Highlight pip
+  setTimeout(()=>{const el=document.getElementById('n'+ti+'_'+ni);if(el)el.classList.add('active');setTimeout(()=>{if(el)el.classList.remove('active');},dur*1000);},(time-startT)*1000);
+  time+=dur;});});
+  // Progress bar
+  const progEl=document.getElementById('prog');
+  const intv=setInterval(()=>{if(stopFlag||!playing){clearInterval(intv);progEl.style.width='0%';playing=false;stopFlag=false;document.getElementById('playBtn').textContent='▶';return;}
+  const elapsed=actx.currentTime-startT;const pct=Math.min(100,elapsed/maxDur*100);progEl.style.width=pct+'%';
+  if(elapsed>=maxDur){clearInterval(intv);playing=false;document.getElementById('playBtn').textContent='▶';progEl.style.width='100%';}},50);
+}
+<\/script>`;
+  html += '</body></html>';
+  iframe.srcdoc = html;
+}
 
 function fileCardHtml(fileId, filename, meta) {
   const ext = filename.split('.').pop().toLowerCase();
@@ -1695,8 +1817,9 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
       const xlsxData = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
       const xlsxBlob = new Blob([xlsxData], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
       const totalRows = input.sheets.reduce((s, sh) => s + sh.data.length, 0);
-      const fileId = registerFile(xlsxBlob, fname + '.xlsx', 'xlsx');
+      const fileId = registerFile(xlsxBlob, fname + '.xlsx', 'xlsx', {sheets: input.sheets});
       downloadFile(fileId);
+      previewFile(fileId);
       return `__FILECARD:${fileId}:${fname}.xlsx:${input.sheets.length} 个工作表 · ${totalRows} 行__`;
     }
     if (name === 'generate_pptx') {
@@ -1737,8 +1860,9 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
         }
       }
       const pptxData = await pptx.write({ outputType: 'blob' });
-      const pptxFileId = registerFile(pptxData, fname + '.pptx', 'pptx');
+      const pptxFileId = registerFile(pptxData, fname + '.pptx', 'pptx', {slides: input.slides});
       downloadFile(pptxFileId);
+      previewFile(pptxFileId);
       return `__FILECARD:${pptxFileId}:${fname}.pptx:${input.slides.length} 页幻灯片__`;
     }
     if (name === 'generate_image') {
@@ -1767,6 +1891,8 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
             const fid = registerFile(blob, fname + '.png', 'png');
             downloadFile(fid);
             previewFile(fid);
+            const imgUrl = URL.createObjectURL(blob);
+            appendDelta(`\n\n![${fname}](${imgUrl})\n\n`);
             resolve(`__FILECARD:${fid}:${fname}.png:${w * scale}×${h * scale}px__`);
           }, 'image/png');
         };
@@ -1828,6 +1954,8 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
           const fid = registerFile(blob, fname + '.png', 'png');
           downloadFile(fid);
           previewFile(fid);
+          const imgUrl = URL.createObjectURL(blob);
+          appendDelta(`\n\n![${fname}](${imgUrl})\n\n`);
           resolve(`__FILECARD:${fid}:${fname}.png:${input.type} 图表 · ${w * 2}×${h * 2}px__`);
         }, 'image/png');
       });
@@ -1942,8 +2070,9 @@ blockquote{border-left:3px solid #c5a356;padding-left:12px;color:#666;margin:8px
       const writer = new MidiWriter.Writer(tracks);
       const blob = new Blob([writer.buildFile()], { type: 'audio/midi' });
       const totalNotes = input.tracks.reduce((s, t) => s + (t.notes?.length || 0), 0);
-      const fileId = registerFile(blob, fname + '.mid', 'mid');
+      const fileId = registerFile(blob, fname + '.mid', 'mid', {tracks: input.tracks, tempo: input.tempo || 120});
       downloadFile(fileId);
+      previewFile(fileId);
       return `__FILECARD:${fileId}:${fname}.mid:${input.tracks.length} 轨 · ${totalNotes} 音符 · ${input.tempo || 120} BPM__`;
     }
     if (name === 'ai_image') {
