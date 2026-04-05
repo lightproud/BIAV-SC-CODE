@@ -79,9 +79,11 @@
 
 ### 运营数据（分析社区动态时查这里）
 
+> **⚠️ 时效规则**：数据文件包含历史数据和近期数据的混合。分析时**必须**检查每条数据的 `time` 字段（ISO 8601 发布时间），根据分析需求自行判断时效窗口。例如"今日热点"只应包含 24h 内的数据，"本周趋势"取 7 天内，以此类推。**绝不能**将旧数据当作新事件报告。
+
 | 文件 | 内容 |
 |------|------|
-| `projects/news/output/all-latest.json` | 全平台最新社区数据（合并） |
+| `projects/news/output/all-latest.json` | 全平台社区数据（合并，含历史+近期） |
 | `projects/news/output/steam-latest.json` | Steam 评论 |
 | `projects/news/output/bilibili-latest.json` | B站视频/动态 |
 | `projects/news/output/discord-latest.json` | Discord 社区摘要 |
