@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-05
 
-> 采集时间：2026-04-05 03:48 UTC+8
+> 采集时间：2026-04-05 13:59 UTC+8
 
 ## 🔥 联动动态
 
@@ -13,7 +13,7 @@
 
 | 平台 | 数据条数 |
 |------|----------|
-| App Store | 0（24h内无新内容）|
+| App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 8 |
@@ -30,7 +30,7 @@
 | 灰机Wiki | 0（沉默）|
 | Instagram | 0（沉默）|
 | Lofter | 0（沉默）|
-| Miraheze Wiki | 0（24h内无新内容）|
+| Miraheze Wiki | 0（沉默）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
@@ -40,7 +40,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 0（沉默）|
 | Ruliweb | 0（沉默）|
-| Steam | 2 |
+| Steam | 3 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -60,7 +60,7 @@
 
 ## Discord
 
-今日 10,253 条消息，192 位活跃用户，1,118 次反应。热门频道：🔸morimens-game-chat(6110)、🔸綜合討論(1159)、🔸general-chat(768)、🔸game-question(751)、🔸phòng-chat-tiếng-việt(495)
+今日 14,034 条消息，192 位活跃用户，1,489 次反应。热门频道：🔸morimens-game-chat(8912)、🔸綜合討論(1467)、🔸game-question(1024)、🔸general-chat(847)、🔸phòng-chat-tiếng-việt(517)
 
 ### 热门话题
 
@@ -69,25 +69,26 @@
 2. [DC热门] morimensstaff02@English Language Setting Abnormality  — engagement: 10
 3. [DC热门] sunstopshining@William says lock in: — engagement: 8
 4. [DC热门] nikolazuli@🔸morimens-game-chat: nah im just a bbit ju — engagement: 7
-5. [DC热门] arisuu0604@🔸morimens-game-chat:  — engagement: 6
+5. [DC热门] chinkeeyong@🔸morimens-game-chat: — engagement: 6
 
 ## Steam 评论
 
-- 好评 2 / 差评 0 / 好评率 100%
-- 语言分布：english 2
+- 好评 3 / 差评 0 / 好评率 100%
+- 语言分布：english 3
 
 ### 热门好评
 
-1. [正面] worth checking out if you like sts or pmoon games — engagement: 0
-2. [正面] kathi my mommy 10/10 — engagement: 0
+1. [正面] Just sitting in my hideout menu hits me hard in th... — engagement: 0
+2. [正面] worth checking out if you like sts or pmoon games — engagement: 0
+3. [正面] kathi my mommy 10/10 — engagement: 0
 
 ## Bilibili
 
-1. 三启塔罗向众神求助，回应她的只有死扛 — engagement: 455
-2. gmod沙耶 甩葱歌 — engagement: 278
-3. 船长蛋筒图鲁 — engagement: 247
-4. 吃馍片吃香辣牛肉（鸭肉）左臂太疼我醒来 晚上帮寄寄子倒垃圾 — engagement: 225
-5. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 203
+1. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 431
+2. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 431
+3. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 309
+4. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 309
+5. 我喜欢你们每个人 — engagement: 186
 
 ## Gamerch Wiki
 

@@ -1,8 +1,8 @@
 {
   "date": "2026-04-05",
-  "archived_at": "2026-04-04T19:48:46.413563+00:00",
+  "archived_at": "2026-04-05T05:59:40.088645+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -78,6 +78,21 @@
       "review": "worth checking out if you like sts or pmoon games",
       "timestamp_created": 1775317354,
       "playtime_forever": 35148
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-04T18:39:13+00:00",
+      "lang": "english",
+      "title": "[正面] Just sitting in my hideout menu hits me hard in th...",
+      "summary": "Just sitting in my hideout menu hits me hard in the nostalgia melancholy feels with that absolutely gorgeous music..\n\nAs I start the next mission a new soul-crushingly beautiful little tune plays and",
+      "url": "https://steamcommunity.com/profiles/76561198147284913/recommended/3052450",
+      "author": "76561198147284913",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Just sitting in my hideout menu hits me hard in the nostalgia melancholy feels with that absolutely gorgeous music..\n\nAs I start the next mission a new soul-crushingly beautiful little tune plays and",
+      "timestamp_created": 1775327953,
+      "playtime_forever": 1831
     }
   ]
 }
