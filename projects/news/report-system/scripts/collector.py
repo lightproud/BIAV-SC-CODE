@@ -2398,15 +2398,8 @@ RSSHUB_ROUTES = [
 
 
 def fetch_rsshub():
-    """通过自部署 RSSHub 实例采集多个平台（微博/知乎/小红书/抖音/Pixiv/TikTok）。
-
-    需要设置环境变量 RSSHUB_URL，指向你的 RSSHub 实例地址。
-    例如: RSSHUB_URL=https://rsshub.example.com
-    """
-    rsshub_url = os.environ.get("RSSHUB_URL", "").rstrip("/")
-    if not rsshub_url:
-        logger.info("RSSHub: RSSHUB_URL not set, skipping (deploy RSSHub and set this env var)")
-        return []
+    """通过自部署 RSSHub 实例采集多个平台（微博/知乎/小红书/抖音/Pixiv/TikTok）。"""
+    rsshub_url = os.environ.get("RSSHUB_URL", "https://biav-rsshub.vercel.app").rstrip("/")
 
     items = []
     import re as _re
