@@ -1,28 +1,30 @@
 {
   "date": "2026-04-05",
-  "messages": 10071,
+  "messages": 12039,
   "unique_authors": 212,
-  "reactions_total": 937,
-  "attachments": 440,
+  "reactions_total": 1190,
+  "attachments": 552,
   "channel_activity": {
-    "🔸綜合討論": 1122,
+    "🔸綜合討論": 1334,
+    "🔸morimens-game-chat": 5098,
+    "🔸日本語チャンネル": 15,
+    "🔸русский-канал": 494,
+    "🔸phòng-chat-tiếng-việt": 1612,
+    "🔸canal-español": 57,
+    "🔸canal-português": 1891,
+    "🔸traphase": 16,
+    "🔸lore-chat": 119,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 233,
+    "🔸general-chat": 100,
+    "🔸game-question": 767,
+    "🔸机器人命令┊bot-commands": 33,
+    "Leigh wip!!!!": 2,
     "🔸阵容构建": 2,
-    "🔸morimens-game-chat": 4043,
     "🔸晒卡分享": 2,
-    "🔸日本語チャンネル": 1,
-    "🔸русский-канал": 434,
-    "🔸phòng-chat-tiếng-việt": 1476,
-    "🔸canal-español": 49,
-    "🔸canal-português": 1721,
     "🔸ruang-obrolan-indonesia": 136,
-    "🔸traphase": 15,
-    "🔸lore-chat": 109,
-    "🔸team-building": 208,
-    "🔸general-chat": 54,
     "🔸邀请码互助┊swap-invitation-codes": 20,
-    "🔸game-question": 544,
     "🔸游戏问题": 3,
-    "🔸机器人命令┊bot-commands": 29,
     "今夜不做，更待何時 || 第二篇 第三章": 5,
     "媽媽孩子抱着我不肯放手": 2,
     "Bands Art thread (I should’ve made one first before doing all my stuff)": 7,
@@ -44,11 +46,13 @@
     "Team Building and Progression advice.": 14
   },
   "hourly_activity": {
+    "16": 1149,
+    "17": 848,
+    "18": 17,
     "11": 788,
     "12": 802,
     "13": 1245,
     "15": 1144,
-    "16": 46,
     "14": 1748,
     "10": 421,
     "0": 110,
@@ -63,8 +67,8 @@
     "9": 305
   },
   "message_types": {
-    "0": 3593,
-    "19": 1459,
+    "0": 1285,
+    "19": 682,
     "20": 1
   },
   "top_reacted_messages": [
@@ -75,6 +79,14 @@
       "author": "that_one_chippy",
       "reactions": 8,
       "channel": "Tonight or Never || Arc 2 Chapter 3"
+    },
+    {
+      "id": "1490383221945274428",
+      "channel_id": "1170692781216378960",
+      "content": "oh yeah uh guys remind me to not pick awakeners based off beauty",
+      "author": ".angellveil",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1490323779979841567",
@@ -141,6 +153,54 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1490400956746174474",
+      "channel_id": "1131839817982947429",
+      "content": "超她",
+      "author": "void_1546.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1490382524416004117",
+      "channel_id": "1170692781216378960",
+      "content": "it's him, my beloved ||Herbert|| 😍",
+      "author": "tortelliniharbingerno.11",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490392608453951670",
+      "channel_id": "1170692781216378960",
+      "content": "~~she makes me feel funny~~",
+      "author": "tortelliniharbingerno.11",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490392850456641606",
+      "channel_id": "1170692781216378960",
+      "content": "caraboo will need blade don't worry",
+      "author": "arandomflamev2",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490397221026267207",
+      "channel_id": "1170692781216378960",
+      "content": "It's such a nice gif right",
+      "author": "snorlax01",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490408809229975792",
+      "channel_id": "1170692781216378960",
+      "content": "I dknt have a cat",
+      "author": "guava3442",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1490322452775964773",
       "channel_id": "1170692781216378960",
       "content": "https://fixupx.com/magenta_pengin4/status/2040461768926101678",
@@ -171,62 +231,6 @@
       "author": "snorlax01",
       "reactions": 4,
       "channel": "🔸team-building"
-    },
-    {
-      "id": "1490372950061486270",
-      "channel_id": "1400749543288475770",
-      "content": "Nice and grats 🔥",
-      "author": "angbak",
-      "reactions": 4,
-      "channel": "🔸team-building"
-    },
-    {
-      "id": "1490285707871260783",
-      "channel_id": "1131839817982947429",
-      "content": "樂音和胚胎通通被擠掉",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490270319796293793",
-      "channel_id": "1131839874132090890",
-      "content": "帶帶萌新打融災<:takenotes:1357186646294138890>",
-      "author": "universe.dark",
-      "reactions": 4,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1490156411886501959",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "asterios20_09",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490179374975160391",
-      "channel_id": "1170692781216378960",
-      "content": "hey hey people! How is it going?",
-      "author": "iceweaver",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490242787646378074",
-      "channel_id": "1170692781216378960",
-      "content": "on exactly turn 200 he hits 1k counter",
-      "author": "fishhazardthewizard",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490248033374441553",
-      "channel_id": "1170692781216378960",
-      "content": "guys i think he might be healing",
-      "author": "fishhazardthewizard",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
