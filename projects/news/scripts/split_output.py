@@ -39,7 +39,7 @@ split_output.py — 按数据源分割 projects/news/output/news.json
 
 import json
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 # ── 路径 ──────────────────────────────────────────────────────────────────────
@@ -107,6 +107,22 @@ KNOWN_SOURCES = [
     'huiji_wiki',
     'weixin',
 ]
+
+
+MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 48
+
+
+def _is_recent(time_str: str, max_hours: int = MAX_AGE_HOURS) -> bool:
+    """Check if a timestamp is within max_hours of now."""
+    if not time_str:
+        return False
+    try:
+        dt = datetime.fromisoformat(time_str)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return (datetime.now(timezone.utc) - dt) < timedelta(hours=max_hours)
+    except (ValueError, TypeError):
+        return False
 
 
 def normalize_source(raw: str) -> str:
@@ -184,12 +200,18 @@ def main() -> None:
     collected_at = data.get('updated_at', datetime.now(timezone.utc).isoformat())
     raw_items: list[dict] = data.get('news', [])
 
-    # 按规范化后的 source 分组
+    # 按规范化后的 source 分组，过滤超时数据
     by_source: dict[str, list[dict]] = {}
+    skipped_old = 0
     for raw in raw_items:
         src = normalize_source(raw.get('source', 'unknown'))
         item = extract_steam_item(raw) if src == 'steam' else extract_item(raw)
+        if not _is_recent(item.get('time', '')):
+            skipped_old += 1
+            continue
         by_source.setdefault(src, []).append(item)
+    if skipped_old:
+        print(f'  Filtered out {skipped_old} items older than {MAX_AGE_HOURS}h')
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f'Writing to {OUTPUT_DIR}/')
