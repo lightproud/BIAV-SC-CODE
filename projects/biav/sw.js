@@ -1,5 +1,5 @@
 // Version must be updated alongside APP_VERSION in index.html
-const SW_VERSION = '0.12.0';
+const SW_VERSION = '0.13.0';
 const CACHE_NAME = 'biav-v' + SW_VERSION;
 const ASSETS = [
   'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap',
