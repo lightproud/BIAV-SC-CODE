@@ -39,18 +39,26 @@ _REPO_ROOT = Path(__file__).parent.parent.parent.parent
 DISCORD_DATA_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord'
 STATE_PATH = DISCORD_DATA_DIR / 'state.json'
 
-REQUEST_DELAY = 1.2           # seconds between API calls (conservative, well under 50 req/s)
+REQUEST_DELAY = 0.25          # seconds between API calls (Discord allows 50 req/s per bot)
 MAX_RUNTIME_SECONDS = 45 * 60         # 45-minute limit (GitHub Actions safe margin)
 MAX_MESSAGES_PER_CHANNEL = 5000     # incremental cap per channel per run
 
 
 # ── Snowflake helpers ────────────────────────────────────────────────────────
 
+DISCORD_EPOCH_MS = 1420070400000
+
+
 def _sf_from_dt(dt: datetime) -> str:
     """Minimum Discord snowflake string for a given UTC datetime."""
-    discord_epoch_ms = 1420070400000
-    ms = int(dt.timestamp() * 1000) - discord_epoch_ms
+    ms = int(dt.timestamp() * 1000) - DISCORD_EPOCH_MS
     return str(max(ms, 0) << 22)
+
+
+def _dt_from_sf(snowflake: str | int) -> datetime:
+    """Extract UTC datetime from a Discord snowflake ID."""
+    ts_ms = (int(snowflake) >> 22) + DISCORD_EPOCH_MS
+    return datetime.fromtimestamp(ts_ms / 1000, tz=timezone.utc)
 
 
 def _month_bounds(year: int, month: int):
@@ -386,9 +394,7 @@ class DiscordArchiver:
     def _guild_start_month(self):
         """Derive guild creation year/month from its Snowflake ID (no extra API call)."""
         try:
-            guild_id = int(self.guild_id)
-            ts_ms = (guild_id >> 22) + 1420070400000
-            dt = datetime.fromtimestamp(ts_ms / 1000, tz=timezone.utc)
+            dt = _dt_from_sf(self.guild_id)
             return dt.year, dt.month
         except (ValueError, TypeError):
             return 2023, 1
@@ -401,6 +407,15 @@ class DiscordArchiver:
             self.state['historical_month'] = _mstr(y, m)
             self._save_state()
 
+    @staticmethod
+    def _channel_created_month(channel_id) -> tuple[int, int]:
+        """Derive channel creation year/month from its Snowflake ID."""
+        try:
+            dt = _dt_from_sf(channel_id)
+            return dt.year, dt.month
+        except (ValueError, TypeError):
+            return 2023, 1
+
     def fetch_channel_history_month(
         self, channel_id, channel_name: str, year: int, month: int
     ) -> int:
@@ -408,12 +423,29 @@ class DiscordArchiver:
         Fetch all messages for a channel in a specific calendar month (historical backfill).
         Saves state after completion for断点续传 (resume from breakpoint).
         Returns count of newly archived messages.
+        Returns -1 if channel was skipped (created after target month).
         """
         ch_key = str(channel_id)
         month_str = _mstr(year, month)
         after_sf, before_sf = _month_bounds(year, month)
 
+        # ── Optimisation 1: skip channels created after this month (no API call) ──
+        ch_created_y, ch_created_m = self._channel_created_month(channel_id)
+        if (ch_created_y, ch_created_m) > (year, month):
+            ch_st = self._ch_state(ch_key)
+            ch_st['last_historical_message_id'] = before_sf
+            ch_st['last_historical_month'] = month_str
+            return -1  # skip — channel didn't exist yet
+
         ch_st = self._ch_state(ch_key)
+
+        # ── Optimisation 2: check empty-months set (skip without API call) ──
+        empty_months = set(ch_st.get('empty_months', []))
+        if month_str in empty_months:
+            ch_st['last_historical_message_id'] = before_sf
+            ch_st['last_historical_month'] = month_str
+            return 0
+
         # Resume from per-channel cursor if it belongs to this month
         if ch_st.get('last_historical_month') == month_str:
             cursor = ch_st.get('last_historical_message_id', after_sf)
@@ -422,7 +454,6 @@ class DiscordArchiver:
 
         # Already complete for this month?
         if int(cursor) >= int(before_sf):
-            logger.debug(f'History {channel_name}({channel_id}) {month_str}: already done')
             return 0
 
         total = 0
@@ -465,12 +496,18 @@ class DiscordArchiver:
 
             time.sleep(REQUEST_DELAY)
 
+        # ── Optimisation 2b: remember empty months to skip in future ──
+        if total == 0 and int(after) >= int(before_sf):
+            empty_months.add(month_str)
+            ch_st['empty_months'] = sorted(empty_months)
+
         # Persist cursor — every channel's month completion triggers a state save (断点续传)
         ch_st['last_historical_message_id'] = after
         ch_st['last_historical_month'] = month_str
         self._save_state()
 
-        logger.info(f'History {channel_name}({channel_id}) {month_str}: {total} messages')
+        if total > 0:
+            logger.info(f'History {channel_name}({channel_id}) {month_str}: {total} messages')
         return total
 
     def _all_channels_done_for_month(
@@ -912,16 +949,22 @@ class DiscordArchiver:
                 break
             self.fetch_forum_threads(ch['id'], ch.get('name', ''))
 
-        # ── Track 2: Historical backfill ──
+        # ── Track 2: Historical backfill (multi-month per run) ──
         self._init_historical_month()
-        hist_month_str = self.state.get('historical_month')
         guild_start_y, guild_start_m = self._guild_start_month()
+        ch_ids = [ch['id'] for ch in text_channels]
 
-        if hist_month_str:
+        months_completed = 0
+        while not self._is_time_up():
+            hist_month_str = self.state.get('historical_month')
+            if not hist_month_str:
+                break
+
             hist_y = int(hist_month_str[:4])
             hist_m = int(hist_month_str[5:7])
             _, before_sf = _month_bounds(hist_y, hist_m)
             total_historical = 0
+            skipped = 0
 
             for ch in text_channels:
                 if self._is_time_up():
@@ -930,22 +973,33 @@ class DiscordArchiver:
                 count = self.fetch_channel_history_month(
                     ch['id'], ch.get('name', ''), hist_y, hist_m
                 )
-                total_historical += count
+                if count == -1:
+                    skipped += 1
+                else:
+                    total_historical += count
 
-            logger.info(f'Historical {hist_month_str}: {total_historical} messages backfilled')
+            logger.info(
+                f'Historical {hist_month_str}: {total_historical} msgs, '
+                f'{skipped} channels skipped (not yet created)'
+            )
 
             # Advance to previous month if all channels completed this one
-            ch_ids = [ch['id'] for ch in text_channels]
             if self._all_channels_done_for_month(ch_ids, hist_month_str, before_sf):
+                months_completed += 1
                 prev_y, prev_m = _prev_month(hist_y, hist_m)
                 if (prev_y, prev_m) < (guild_start_y, guild_start_m):
                     logger.info('Historical backfill complete: reached guild creation date')
                     self.state['historical_month'] = None
                 else:
                     new_month = _mstr(prev_y, prev_m)
-                    logger.info(f'Historical month complete → advancing to {new_month}')
+                    logger.info(f'Historical month complete → advancing to {new_month} (#{months_completed})')
                     self.state['historical_month'] = new_month
                 self._save_state()
+            else:
+                break  # month not yet complete, continue next run
+
+        if months_completed:
+            logger.info(f'Completed {months_completed} historical months this run')
 
         # ── Deferred threads from incremental track ──
         if self._pending_threads and not self._is_time_up():
@@ -967,6 +1021,74 @@ class DiscordArchiver:
         )
 
 
+    def run_history_only(self):
+        """
+        History-only mode: skip incremental, dedicate full runtime to historical backfill.
+        Used by the dedicated history-backfill workflow for maximum throughput.
+        """
+        run_start = time.time()
+        logger.info(f'Discord archiver HISTORY-ONLY mode (guild {self.guild_id})...')
+
+        channels = self.fetch_guild_meta()
+        readable_types = {0, 5}
+        text_channels = [ch for ch in channels if ch.get('type', 0) in readable_types]
+        ch_ids = [ch['id'] for ch in text_channels]
+
+        self._init_historical_month()
+        guild_start_y, guild_start_m = self._guild_start_month()
+
+        months_completed = 0
+        while not self._is_time_up():
+            hist_month_str = self.state.get('historical_month')
+            if not hist_month_str:
+                logger.info('All historical months complete!')
+                break
+
+            hist_y = int(hist_month_str[:4])
+            hist_m = int(hist_month_str[5:7])
+            _, before_sf = _month_bounds(hist_y, hist_m)
+            total_historical = 0
+            skipped = 0
+
+            for ch in text_channels:
+                if self._is_time_up():
+                    break
+                count = self.fetch_channel_history_month(
+                    ch['id'], ch.get('name', ''), hist_y, hist_m
+                )
+                if count == -1:
+                    skipped += 1
+                else:
+                    total_historical += count
+
+            logger.info(
+                f'Historical {hist_month_str}: {total_historical} msgs, '
+                f'{skipped} skipped'
+            )
+
+            if self._all_channels_done_for_month(ch_ids, hist_month_str, before_sf):
+                months_completed += 1
+                prev_y, prev_m = _prev_month(hist_y, hist_m)
+                if (prev_y, prev_m) < (guild_start_y, guild_start_m):
+                    logger.info('Historical backfill complete: reached guild creation date')
+                    self.state['historical_month'] = None
+                else:
+                    new_month = _mstr(prev_y, prev_m)
+                    logger.info(f'Month done → {new_month} (#{months_completed})')
+                    self.state['historical_month'] = new_month
+                self._save_state()
+            else:
+                break
+
+        self._save_daily_stats()
+        self._save_state()
+        elapsed = int(time.time() - run_start)
+        logger.info(
+            f'History-only complete: {months_completed} months, '
+            f'{len(text_channels)} channels, {elapsed}s'
+        )
+
+
 def main():
     parser = argparse.ArgumentParser(description='Discord data archiver v2')
     parser.add_argument(
@@ -977,6 +1099,10 @@ def main():
         '--generate-report', metavar='YYYY-MM',
         help='(Re)generate monthly report for a specific month (use after API key restored)'
     )
+    parser.add_argument(
+        '--history-only', action='store_true',
+        help='Skip incremental, dedicate full runtime to historical backfill'
+    )
     args = parser.parse_args()
 
     archiver = DiscordArchiver()
@@ -984,6 +1110,8 @@ def main():
         archiver.run_monthly_archive()
     elif args.generate_report:
         archiver._generate_monthly_report(args.generate_report)
+    elif args.history_only:
+        archiver.run_history_only()
     else:
         archiver.run()
 

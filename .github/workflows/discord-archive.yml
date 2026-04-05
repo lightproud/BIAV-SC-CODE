@@ -2,8 +2,8 @@ name: Discord Archive
 
 on:
   schedule:
-    # Incremental: every 3 hours
-    - cron: '0 */3 * * *'
+    # Incremental: every hour at :00
+    - cron: '0 * * * *'
     # Monthly cleanup: 1st of each month at 06:00 UTC
     - cron: '0 6 1 * *'
   workflow_dispatch:
