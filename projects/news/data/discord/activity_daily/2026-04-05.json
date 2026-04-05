@@ -1,29 +1,29 @@
 {
   "date": "2026-04-05",
-  "messages": 13242,
+  "messages": 14105,
   "unique_authors": 212,
-  "reactions_total": 1308,
-  "attachments": 621,
+  "reactions_total": 1365,
+  "attachments": 650,
   "channel_activity": {
-    "🔸綜合討論": 1352,
-    "🔸morimens-game-chat": 5771,
+    "🔸綜合討論": 1354,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 6307,
+    "🔸canal-português": 2154,
+    "🔸team-building": 293,
+    "🔸general-chat": 191,
+    "🔸game-question": 1113,
+    "🔸机器人命令┊bot-commands": 48,
     "🔸日本語チャンネル": 20,
     "🔸русский-канал": 495,
     "🔸canal-español": 87,
-    "🔸canal-português": 1992,
     "🔸lore-chat": 133,
     "🔸频道建议┊server-suggestions": 8,
-    "🔸team-building": 268,
-    "🔸general-chat": 175,
     "🔸邀请码互助┊swap-invitation-codes": 21,
-    "🔸game-question": 1001,
-    "🔸机器人命令┊bot-commands": 39,
     "關於莫絲": 3,
     "喚醒體設計 烏爾托斯": 1,
     "🔸phòng-chat-tiếng-việt": 1612,
     "🔸traphase": 16,
     "Leigh wip!!!!": 2,
-    "🔸阵容构建": 2,
     "🔸晒卡分享": 2,
     "🔸ruang-obrolan-indonesia": 136,
     "🔸游戏问题": 3,
@@ -48,8 +48,10 @@
     "Team Building and Progression advice.": 14
   },
   "hourly_activity": {
+    "20": 787,
+    "19": 506,
+    "21": 61,
     "18": 729,
-    "19": 491,
     "16": 1149,
     "17": 848,
     "11": 788,
@@ -70,9 +72,9 @@
     "9": 305
   },
   "message_types": {
-    "0": 811,
-    "19": 389,
-    "20": 3
+    "19": 359,
+    "0": 502,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -90,6 +92,14 @@
       "author": "that_one_chippy",
       "reactions": 8,
       "channel": "Tonight or Never || Arc 2 Chapter 3"
+    },
+    {
+      "id": "1490443116854116543",
+      "channel_id": "1170692781216378960",
+      "content": "Even the Queen trash talks Caecus",
+      "author": "climbkaly",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1490383221945274428",
@@ -224,14 +234,6 @@
       "channel_id": "1170692781216378960",
       "content": "It's such a nice gif right",
       "author": "snorlax01",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490408809229975792",
-      "channel_id": "1170692781216378960",
-      "content": "I dknt have a cat",
-      "author": "guava3442",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
