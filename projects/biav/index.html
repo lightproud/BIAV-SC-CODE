@@ -594,9 +594,12 @@ const S = {
   model: 'claude-sonnet-4-6',
   convId: null,
   conversations: [],  // [{id, title, provider, model, messages:[{role,content}]}]
-  streaming: false,
-  abortCtrl: null,
+  streamingConvs: new Set(),   // conv IDs currently streaming
+  abortCtrls: {},              // convId → AbortController
 };
+// Helpers for per-conv streaming
+function isStreaming(convId) { return S.streamingConvs.has(convId || S.convId); }
+function isCurrentStreaming() { return isStreaming(S.convId); }
 
 const MODELS = {
   claude: [
@@ -834,6 +837,17 @@ customRenderer.code = function(token) {
 };
 marked.use({ renderer: customRenderer });
 
+function renderMsgHtml(msg) {
+  let html = '';
+  if (msg._thinking && msg._thinking.length) {
+    msg._thinking.forEach(t => {
+      html += `<div class="thinking-block"><button class="thinking-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>Thinking...</button><div class="thinking-content">${esc(t)}</div></div>`;
+    });
+  }
+  html += renderMd(msg.content);
+  return html;
+}
+
 function renderMd(text) {
   // Process LaTeX before markdown: $$ block $$ and $ inline $
   text = text.replace(/\$\$([\s\S]+?)\$\$/g, (_, tex) => {
@@ -888,7 +902,8 @@ function renderSidebar() {
 function makeConvItem(c) {
   const div = document.createElement('div');
   div.className = 'conv-item' + (c.id === S.convId ? ' active' : '');
-  div.innerHTML = `<button class="conv-star${c.starred ? ' starred' : ''}" title="Star">★</button><span>${esc(c.title)}</span><button class="conv-del" title="Delete">&#x2715;</button>`;
+  const streamDot = isStreaming(c.id) ? '<span style="width:6px;height:6px;border-radius:50%;background:#7aad5a;display:inline-block;flex-shrink:0;animation:dotPulse 1.2s ease-in-out infinite" title="Streaming..."></span>' : '';
+  div.innerHTML = `<button class="conv-star${c.starred ? ' starred' : ''}" title="Star">★</button>${streamDot}<span>${esc(c.title)}</span><button class="conv-del" title="Delete">&#x2715;</button>`;
   div.querySelector('span').onclick = () => loadConv(c.id);
   div.querySelector('span').ondblclick = (e) => { e.stopPropagation(); startRenameConv(c.id, div); };
   div.querySelector('.conv-star').onclick = (e) => { e.stopPropagation(); toggleStar(c.id); };
@@ -928,13 +943,20 @@ function newChat() {
 }
 
 function loadConv(id) {
-  if (S.streaming) return; // prevent switching during streaming
   S.convId = id;
   const c = S.conversations.find(x => x.id === id);
   if (c) { S.provider = c.provider; S.model = c.model; updateModelBtn() }
   renderMessages();
   renderSidebar();
+  updateStreamingUI();
   if (isMobile()) { sidebar.classList.add('hidden'); sidebarOverlay.classList.remove('open'); }
+}
+
+function updateStreamingUI() {
+  const streaming = isCurrentStreaming();
+  stopBtn.style.display = streaming ? 'flex' : 'none';
+  sendBtn.style.display = streaming ? 'none' : 'flex';
+  sendBtn.disabled = (!inputEl.value.trim() && pendingFiles.length === 0) || streaming;
 }
 
 function deleteConv(id) {
@@ -973,10 +995,11 @@ function renderMessages() {
       div.querySelector('.msg-edit-btn').onclick = () => startEditMsg(i);
     } else {
       const isLast = i === conv.messages.length - 1;
-      const isStreaming = isLast && S.streaming;
-      const isLastAssistant = i === conv.messages.length - 1 && !S.streaming;
+      const convStreaming = isStreaming(conv.id);
+      const isStreamingMsg = isLast && convStreaming;
+      const isLastAssistant = i === conv.messages.length - 1 && !convStreaming;
       let actionsHtml = '';
-      if (!S.streaming) {
+      if (!convStreaming) {
         actionsHtml = `<div class="msg-actions">
           <button class="msg-act-btn copy-msg-btn" data-idx="${i}" title="复制"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>Copy</button>`;
         if (isLastAssistant) {
@@ -985,17 +1008,17 @@ function renderMessages() {
         actionsHtml += '</div>';
       }
       let tokenHtml = '';
-      if (m._usage && !S.streaming) {
+      if (m._usage && !convStreaming) {
         tokenHtml = `<div class="token-usage">↑${m._usage.input} ↓${m._usage.output} tokens</div>`;
       }
-      div.innerHTML = `<div class="msg-content${isStreaming ? ' typing' : ''}">${renderMd(m.content)}</div>${actionsHtml}${tokenHtml}`;
+      div.innerHTML = `<div class="msg-content${isStreamingMsg ? ' typing' : ''}">${renderMsgHtml(m)}</div>${actionsHtml}${tokenHtml}`;
     }
     container.appendChild(div);
   });
   messagesEl.innerHTML = '';
   messagesEl.appendChild(container);
   // Use instant scroll for full re-renders (history load), smooth for streaming
-  if (S.streaming) {
+  if (isStreaming(conv?.id)) {
     messagesEl.scrollTo({ top: messagesEl.scrollHeight, behavior: 'smooth' });
   } else {
     messagesEl.scrollTop = messagesEl.scrollHeight;
@@ -1024,39 +1047,24 @@ function bindMsgActions() {
   document.querySelectorAll('.retry-btn').forEach(btn => {
     btn.onclick = () => {
       const conv = currentConv();
-      if (!conv || S.streaming) return;
-      // Find last user message
+      if (!conv || isStreaming(conv.id)) return;
       let lastUserIdx = -1;
       for (let i = conv.messages.length - 1; i >= 0; i--) {
         if (conv.messages[i].role === 'user') { lastUserIdx = i; break; }
       }
       if (lastUserIdx < 0) return;
       const userText = conv.messages[lastUserIdx].content;
-      // Truncate from last user message
       conv.messages = conv.messages.slice(0, lastUserIdx);
       conv.messages.push({ role: 'user', content: userText });
       conv.messages.push({ role: 'assistant', content: '' });
-      S.streaming = true;
-      _firstDeltaReceived = false;
-      renderMessages();
-      showThinkingDots();
-      stopBtn.style.display = 'flex';
-      sendBtn.style.display = 'none';
-      const ctrl = new AbortController();
-      S.abortCtrl = ctrl;
-      streamClaude(conv, ctrl.signal).catch(err => {
-        if (err.name !== 'AbortError') {
-          const last = conv.messages[conv.messages.length - 1];
-          if (last.role === 'assistant' && !last.content) { last.content = 'Error: ' + err.message; renderMessages(); }
-        }
-      }).finally(() => finishStream());
+      startStreaming(conv);
     };
   });
 }
 
 function startEditMsg(idx) {
   const conv = currentConv();
-  if (!conv || S.streaming) return;
+  if (!conv || isStreaming(conv.id)) return;
   const m = conv.messages[idx];
   if (m.role !== 'user') return;
   const msgEl = messagesEl.querySelectorAll('#msg-container .msg')[idx];
@@ -1073,27 +1081,13 @@ function startEditMsg(idx) {
 }
 
 function submitEditMsg(idx, newText) {
-  if (!newText || S.streaming) return;
+  if (!newText) return;
   const conv = currentConv();
-  if (!conv) return;
-  // Truncate conversation from edit point (branch)
+  if (!conv || isStreaming(conv.id)) return;
   conv.messages = conv.messages.slice(0, idx);
   conv.messages.push({ role: 'user', content: newText });
   conv.messages.push({ role: 'assistant', content: '' });
-  S.streaming = true;
-  _firstDeltaReceived = false;
-  renderMessages();
-  showThinkingDots();
-  stopBtn.style.display = 'flex';
-  sendBtn.style.display = 'none';
-  const ctrl = new AbortController();
-  S.abortCtrl = ctrl;
-  streamClaude(conv, ctrl.signal).catch(err => {
-    if (err.name !== 'AbortError') {
-      const last = conv.messages[conv.messages.length - 1];
-      if (last.role === 'assistant' && !last.content) { last.content = 'Error: ' + err.message; renderMessages(); }
-    }
-  }).finally(() => finishStream());
+  startStreaming(conv);
 }
 
 /* ===== Debounced streaming render ===== */
@@ -1154,7 +1148,7 @@ function appendDelta(text, targetConv) {
       _renderRAF = requestAnimationFrame(() => {
         const contentEl = messagesEl.querySelector('#msg-container .msg:last-child .msg-content');
         if (contentEl) {
-          contentEl.innerHTML = renderMd(last.content);
+          contentEl.innerHTML = renderMsgHtml(last);
           contentEl.classList.add('typing');
           smoothScrollToBottom();
         }
@@ -1163,33 +1157,50 @@ function appendDelta(text, targetConv) {
   }
 }
 
-function finishStream() {
-  S.streaming = false;
-  S.abortCtrl = null;
+function startStreaming(conv) {
+  S.streamingConvs.add(conv.id);
+  _firstDeltaReceived = false;
+  renderMessages();
+  showThinkingDots();
+  updateStreamingUI();
+  renderSidebar();
+  const ctrl = new AbortController();
+  S.abortCtrls[conv.id] = ctrl;
+  streamClaude(conv, ctrl.signal).catch(err => {
+    if (err.name !== 'AbortError') {
+      const last = conv.messages[conv.messages.length - 1];
+      if (last.role === 'assistant' && !last.content) { last.content = 'Error: ' + err.message; }
+    }
+  }).finally(() => finishStream(conv.id));
+}
+
+function finishStream(convId) {
+  S.streamingConvs.delete(convId || S.convId);
+  delete S.abortCtrls[convId || S.convId];
   _firstDeltaReceived = false;
   removeThinkingDots();
-  // Cancel any pending debounced render and do a final full render
   if (_renderRAF) cancelAnimationFrame(_renderRAF);
   clearTimeout(_renderTimeout);
-  const conv = currentConv();
-  const contentEl = messagesEl.querySelector('#msg-container .msg:last-child .msg-content');
-  if (contentEl) {
-    const last = conv && conv.messages[conv.messages.length - 1];
-    if (last && last.role === 'assistant') contentEl.innerHTML = renderMd(last.content);
-    contentEl.classList.remove('typing');
+  // Only update DOM if finished conv is the active one
+  if ((convId || S.convId) === S.convId) {
+    const conv = currentConv();
+    const contentEl = messagesEl.querySelector('#msg-container .msg:last-child .msg-content');
+    if (contentEl) {
+      const last = conv && conv.messages[conv.messages.length - 1];
+      if (last && last.role === 'assistant') contentEl.innerHTML = renderMsgHtml(last);
+      contentEl.classList.remove('typing');
+    }
+    addArtifactButtons();
+    bindMsgActions();
   }
-  stopBtn.style.display = 'none';
-  sendBtn.style.display = 'flex';
-  sendBtn.disabled = (!inputEl.value.trim() && pendingFiles.length === 0);
+  updateStreamingUI();
   userScrolledUp = false;
   saveConversations();
-  addArtifactButtons();
+  renderSidebar();
 }
 
 /* ===== LLM Streaming ===== */
 async function sendMessage(text) {
-  if (S.streaming) return;
-
   // Collect attached files
   const files = [...pendingFiles];
   pendingFiles.length = 0;
@@ -1208,41 +1219,20 @@ async function sendMessage(text) {
     S.conversations.unshift(conv);
   }
 
-  // Build display content (text + image indicators)
+  const conv = currentConv();
+  if (!conv || isStreaming(conv.id)) return;
+
+  // Build display content
   let displayContent = text;
-  const imageHtml = files.filter(f => f.type.startsWith('image/')).map(f => `\n![${f.name}](${f.dataUrl})`).join('');
   const textFiles = files.filter(f => !f.type.startsWith('image/'));
   const textFileContent = textFiles.map(f => `\n\n**[${f.name}]:**\n\`\`\`\n${atob(f.base64)}\n\`\`\``).join('');
   displayContent += textFileContent;
 
-  const conv = currentConv();
   conv.messages.push({ role: 'user', content: displayContent, _files: files });
   conv.messages.push({ role: 'assistant', content: '' });
   conv.provider = S.provider;
   conv.model = S.model;
-  S.streaming = true;
-  _firstDeltaReceived = false;
-  renderMessages();
-  renderSidebar();
-  showThinkingDots();
-
-  stopBtn.style.display = 'flex';
-  sendBtn.style.display = 'none';
-  const ctrl = new AbortController();
-  S.abortCtrl = ctrl;
-
-  try {
-    await streamClaude(conv, ctrl.signal);
-  } catch (err) {
-    if (err.name !== 'AbortError') {
-      const last = conv.messages[conv.messages.length - 1];
-      if (last.role === 'assistant' && !last.content) {
-        last.content = 'Error: ' + err.message;
-        renderMessages();
-      }
-    }
-  }
-  finishStream();
+  startStreaming(conv);
 }
 
 /* ===== Tool Use: GitHub Repo Access ===== */
@@ -2073,7 +2063,12 @@ async function streamClaude(conv, signal) {
             if (inThinking && thinkingText) {
               // Insert thinking block as collapsible before text
               const thinkId = 'think-' + Math.random().toString(36).slice(2, 8);
-              appendDelta(`<div class="thinking-block"><button class="thinking-toggle" onclick="this.classList.toggle('open');this.nextElementSibling.classList.toggle('open')"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l8 7-8 7z"/></svg>Thinking...</button><div class="thinking-content">${esc(thinkingText)}</div></div>\n\n`, conv);
+              // Store thinking in message metadata, not in content
+              const lastMsg = conv.messages[conv.messages.length - 1];
+              if (lastMsg && lastMsg.role === 'assistant') {
+                if (!lastMsg._thinking) lastMsg._thinking = [];
+                lastMsg._thinking.push(thinkingText);
+              }
               inThinking = false;
               thinkingText = '';
             }
@@ -2228,7 +2223,7 @@ const selectedMsgs = new Set();
 
 function enterSelectMode() {
   const conv = currentConv();
-  if (!conv || conv.messages.length === 0 || S.streaming) return;
+  if (!conv || conv.messages.length === 0 || isCurrentStreaming()) return;
   selectMode = true;
   selectedMsgs.clear();
   const container = messagesEl.querySelector('#msg-container');
@@ -2462,7 +2457,7 @@ function renderFileChips() {
     }
     container.appendChild(chip);
   });
-  sendBtn.disabled = (!inputEl.value.trim() && pendingFiles.length === 0) || S.streaming;
+  sendBtn.disabled = (!inputEl.value.trim() && pendingFiles.length === 0) || isCurrentStreaming();
 }
 
 function removeFile(i) {
@@ -2515,7 +2510,7 @@ async function execToolWithMemory(name, input) {
 function adjustInput() {
   inputEl.style.height = 'auto';
   inputEl.style.height = Math.min(inputEl.scrollHeight, 200) + 'px';
-  sendBtn.disabled = (!inputEl.value.trim() && pendingFiles.length === 0) || S.streaming;
+  sendBtn.disabled = (!inputEl.value.trim() && pendingFiles.length === 0) || isCurrentStreaming();
 }
 
 /* ===== Escape HTML ===== */
@@ -2800,7 +2795,7 @@ inputEl.addEventListener('keydown', e => {
   if (e.key === 'Enter' && !e.shiftKey) {
     e.preventDefault();
     const text = inputEl.value.trim();
-    if (text && !S.streaming) {
+    if (text && !isCurrentStreaming()) {
       inputEl.value = '';
       adjustInput();
       sendMessage(text);
@@ -2810,7 +2805,7 @@ inputEl.addEventListener('keydown', e => {
 
 sendBtn.onclick = () => {
   const text = inputEl.value.trim();
-  if (text && !S.streaming) {
+  if (text && !isCurrentStreaming()) {
     sendBtn.classList.add('send-pop');
     setTimeout(() => sendBtn.classList.remove('send-pop'), 200);
     inputEl.value = '';
@@ -2819,7 +2814,7 @@ sendBtn.onclick = () => {
   }
 };
 
-stopBtn.onclick = () => { if (S.abortCtrl) S.abortCtrl.abort() };
+stopBtn.onclick = () => { const ctrl = S.abortCtrls[S.convId]; if (ctrl) ctrl.abort(); };
 
 // Artifacts
 $('#art-close').onclick = closeArtifact;
@@ -2867,7 +2862,7 @@ if (isMobile()) sidebar.classList.add('hidden');
 document.querySelectorAll('.quick-chip').forEach(chip => {
   chip.onclick = () => {
     const msg = chip.dataset.msg;
-    if (msg && !S.streaming) {
+    if (msg && !isCurrentStreaming()) {
       inputEl.value = '';
       adjustInput();
       sendMessage(msg);
@@ -2959,7 +2954,7 @@ if ('serviceWorker' in navigator) {
       newSW.addEventListener('statechange', () => {
         if (newSW.state === 'activated' && navigator.serviceWorker.controller) {
           // New SW activated — reload to get fresh content
-          if (!S.streaming) location.reload();
+          if (S.streamingConvs.size === 0) location.reload();
         }
       });
     });
@@ -2969,7 +2964,7 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.addEventListener('controllerchange', () => {
     if (refreshing) return;
     refreshing = true;
-    if (!S.streaming) location.reload();
+    if (S.streamingConvs.size === 0) location.reload();
   });
 }
 
