@@ -2371,14 +2371,26 @@ def deduplicate(items):
 
 # RSSHub routes: (route, source_name, platform_region, lang)
 RSSHUB_ROUTES = [
+    # ── 中文平台 ──
     ("/weibo/keyword/忘却前夜", "weibo", "cn", "zh"),
     ("/weibo/keyword/Morimens", "weibo", "cn", "zh"),
     ("/zhihu/search/忘却前夜", "zhihu", "cn", "zh"),
     ("/xiaohongshu/keyword/忘却前夜", "xiaohongshu", "cn", "zh"),
     ("/douyin/keyword/忘却前夜", "douyin", "cn", "zh"),
+    ("/bilibili/search/忘却前夜", "bilibili", "cn", "zh"),
+    ("/tieba/forum/忘却前夜", "tieba", "cn", "zh"),
+    ("/nga/search/忘却前夜", "nga", "cn", "zh"),
+    ("/lofter/tag/忘却前夜", "lofter", "cn", "zh"),
+    # ── 日本平台 ──
     ("/pixiv/search/忘却前夜", "pixiv", "jp", "ja"),
     ("/pixiv/search/モリメンス", "pixiv", "jp", "ja"),
+    ("/5ch/search/忘却前夜", "fivech", "jp", "ja"),
+    # ── 韩国平台 ──
+    ("/dcinside/board/morimens", "dcinside", "kr", "ko"),
+    # ── 全球平台 ──
     ("/tiktok/keyword/Morimens", "tiktok", "global", "en"),
+    ("/reddit/search/Morimens", "reddit", "global", "en"),
+    ("/telegram/channel/Morimens", "telegram", "global", "en"),
 ]
 
 
