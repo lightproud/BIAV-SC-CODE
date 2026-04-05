@@ -4,7 +4,7 @@ backfill_platforms.py — 多平台历史数据回溯采集
 
 类似 Discord 归档器的双轨制：
   Track 1: 增量采集（由 collect_global.py 处理，每 6 小时）
-  Track 2: 历史回溯（本脚本，每日一次，每次往前翻几页）
+  Track 2: 历史回溯（本脚本，每小时一次，每平台独立 agent，30 分钟限时）
 
 状态文件: projects/news/data/backfill/state.json
   {
@@ -19,7 +19,7 @@ backfill_platforms.py — 多平台历史数据回溯采集
 运行方式:
   python backfill_platforms.py                    # 所有平台各翻几页
   python backfill_platforms.py --platform bilibili  # 仅指定平台
-  python backfill_platforms.py --pages 10           # 每平台翻10页（默认3）
+  python backfill_platforms.py --pages 10           # 每平台翻10页（默认5）
   python backfill_platforms.py --status             # 显示回溯进度
 """
 
@@ -42,8 +42,8 @@ REPORT_SCRIPTS = _REPO_ROOT / 'projects' / 'news' / 'report-system' / 'scripts'
 
 sys.path.insert(0, str(REPORT_SCRIPTS))
 
-# Max runtime per invocation (8 minutes, leaves buffer for workflow)
-MAX_RUNTIME_SECONDS = 480
+# Max runtime per invocation (30 minutes, leaves buffer for workflow)
+MAX_RUNTIME_SECONDS = 1800
 _start_time = time.time()
 
 REQUEST_DELAY = 1.5  # seconds between requests to avoid rate limits
@@ -749,7 +749,7 @@ def show_status(state: dict):
 def main():
     parser = argparse.ArgumentParser(description='多平台历史数据回溯采集')
     parser.add_argument('--platform', type=str, default=None, help='仅回溯指定平台')
-    parser.add_argument('--pages', type=int, default=3, help='每平台翻几页（默认3）')
+    parser.add_argument('--pages', type=int, default=5, help='每平台翻几页（默认5）')
     parser.add_argument('--status', action='store_true', help='显示回溯进度')
     args = parser.parse_args()
 
