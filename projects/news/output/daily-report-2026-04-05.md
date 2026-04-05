@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-05
 
-> 采集时间：2026-04-05 13:59 UTC+8
+> 采集时间：2026-04-05 16:07 UTC+8
 
 ## 🔥 联动动态
 
@@ -26,7 +26,7 @@
 | GACHAREVENUE | 0（沉默）|
 | GameKee Wiki | 0（沉默）|
 | Gamerch Wiki | 35 |
-| Google Play | 0（沉默）|
+| Google Play | 0（24h内无新内容）|
 | 灰机Wiki | 0（沉默）|
 | Instagram | 0（沉默）|
 | Lofter | 0（沉默）|
@@ -40,7 +40,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 0（沉默）|
 | Ruliweb | 0（沉默）|
-| Steam | 3 |
+| Steam | 2 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -73,22 +73,21 @@
 
 ## Steam 评论
 
-- 好评 3 / 差评 0 / 好评率 100%
-- 语言分布：english 3
+- 好评 2 / 差评 0 / 好评率 100%
+- 语言分布：english 2
 
 ### 热门好评
 
 1. [正面] Just sitting in my hideout menu hits me hard in th... — engagement: 0
 2. [正面] worth checking out if you like sts or pmoon games — engagement: 0
-3. [正面] kathi my mommy 10/10 — engagement: 0
 
 ## Bilibili
 
-1. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 431
-2. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 431
-3. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 309
-4. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 309
-5. 我喜欢你们每个人 — engagement: 186
+1. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 487
+2. ［相位］一回合灭队，鸟弟神力！（塔薇杯特辑） — engagement: 487
+3. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 356
+4. 羊妈妈c4-5，不用kks外援出手，血肉叛乱肚饿自己解决。 — engagement: 356
+5. 我喜欢你们每个人 — engagement: 196
 
 ## Gamerch Wiki
 
