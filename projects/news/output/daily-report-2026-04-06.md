@@ -1,16 +1,13 @@
 # 忘却前夜 社区日报 2026-04-06
 
-> 采集时间：2026-04-06 02:05 UTC+8
+> 采集时间：2026-04-06 04:01 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 被血肉包裹的&quot;纯爱&quot;神话！《沙耶之歌》凭什么成为20年不破的畸形神作？ — engagement: 10223
-2. [Bilibili] 【量级评定】沙耶之歌量级评定 — engagement: 384
-3. [Bilibili] 【电吉他】沙耶之歌ED - ガラスのくつ (玻璃鞋) solo — engagement: 92
-4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
-6. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-7. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+1. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+2. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 
 ## 总览
 
@@ -19,7 +16,7 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 10 |
+| Bilibili | 6 |
 | DCInside | 0（沉默）|
 | Discord | 6 |
 | 抖音 | 0（沉默）|
@@ -43,7 +40,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 0（沉默）|
 | Ruliweb | 0（沉默）|
-| Steam | 8 |
+| Steam | 7 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -63,20 +60,20 @@
 
 ## Discord
 
-今日 10,071 条消息，212 位活跃用户，937 次反应。热门频道：🔸morimens-game-chat(4043)、🔸canal-português(1721)、🔸phòng-chat-tiếng-việt(1476)、🔸綜合討論(1122)、🔸game-question(544)
+今日 12,039 条消息，212 位活跃用户，1,190 次反应。热门频道：🔸morimens-game-chat(5098)、🔸canal-português(1891)、🔸phòng-chat-tiếng-việt(1612)、🔸綜合討論(1334)、🔸game-question(767)
 
 ### 热门话题
 
 1. [DC热门] that_one_chippy@Tonight or Never || Arc 2 Chapter 3:  — engagement: 8
-2. [DC热门] arandomflamev2@🔸morimens-game-chat: YEAHHH — engagement: 6
-3. [DC热门] ponponnyaru@🔸綜合討論: 我停服公告呢 — engagement: 6
-4. [DC热门] water_heart@🔸綜合討論: — engagement: 6
-5. [DC热门] l8989c@🔸morimens-game-chat: Holy shit I did it with t — engagement: 6
+2. [DC热门] .angellveil@🔸morimens-game-chat: oh yeah uh guys remi — engagement: 6
+3. [DC热门] arandomflamev2@🔸morimens-game-chat: YEAHHH — engagement: 6
+4. [DC热门] ponponnyaru@🔸綜合討論: 我停服公告呢 — engagement: 6
+5. [DC热门] water_heart@🔸綜合討論: — engagement: 6
 
 ## Steam 评论
 
-- 好评 8 / 差评 0 / 好评率 100%
-- 语言分布：english 4, schinese 2, koreana 1, russian 1
+- 好评 7 / 差评 0 / 好评率 100%
+- 语言分布：english 3, schinese 2, koreana 1, russian 1
 
 ### 热门好评
 
@@ -90,11 +87,11 @@ ai 번역이 단점이지만, 번역 이슈가 있음에... — engagement: 0
 
 ## Bilibili
 
-1. 被血肉包裹的&quot;纯爱&quot;神话！《沙耶之歌》凭什么成为20年不破的畸形神作？ — engagement: 10223
-2. [忘却前夜]最艺术的一集 — engagement: 479
-3. [忘却前夜]最艺术的一集 — engagement: 479
-4. 【量级评定】沙耶之歌量级评定 — engagement: 384
-5. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 173
+1. [忘却前夜]最艺术的一集 — engagement: 516
+2. [忘却前夜]最艺术的一集 — engagement: 516
+3. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 187
+4. 攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了 — engagement: 187
+5. 第四届塔薇杯-第十二日录播 — engagement: 14
 
 ## Gamerch Wiki
 
