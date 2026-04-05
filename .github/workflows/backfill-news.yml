@@ -1,0 +1,60 @@
+name: Backfill Historical News
+
+on:
+  schedule:
+    # Run daily at 06:00 UTC (avoid overlap with update-news)
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Platform to backfill (leave empty for all)'
+        required: false
+        type: string
+      pages:
+        description: 'Pages to fetch per platform (default 3)'
+        required: false
+        default: '3'
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r projects/news/requirements.txt
+
+      - name: Run historical backfill
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.platform }}" ]; then
+            ARGS="--platform ${{ github.event.inputs.platform }}"
+          fi
+          PAGES="${{ github.event.inputs.pages || '3' }}"
+          python projects/news/scripts/backfill_platforms.py $ARGS --pages $PAGES
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add projects/news/data/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: backfill historical news data [skip ci]"
+            for i in 1 2 3 4; do
+              git pull --rebase origin main && git push origin main && exit 0
+              echo "Push attempt $i failed, retrying in ${i}s..."
+              sleep $i
+            done
+            echo "All push attempts failed"
+            exit 1
+          fi
