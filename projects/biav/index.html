@@ -195,6 +195,9 @@ html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);fon
 .msg-content tr:nth-child(even) td{background:rgba(197,163,86,.04)}
 .msg-content a{color:#c5a356;text-decoration:none}
 .msg-content a:hover{color:var(--gold-bright);text-decoration:underline}
+.msg-content .table-wrap{overflow-x:auto;margin:.8em 0}
+.mermaid-block{background:var(--bg-card);border:1px solid var(--border);border-radius:6px;padding:16px;margin:.8em 0;text-align:center;overflow-x:auto}
+.mermaid-rendered svg{max-width:100%;height:auto}
 .msg-content strong{color:var(--gold-bright);font-weight:700}
 .msg-content hr{border:none;border-top:1px solid var(--border);margin:1em 0}
 
@@ -457,7 +460,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
     <div class="sb-panel" id="panel-memory"></div>
     <!-- Tools panel -->
     <div class="sb-panel" id="panel-tools"></div>
-    <div id="sidebar-footer">v0.15.0</div>
+    <div id="sidebar-footer">v0.16.0</div>
   </nav>
 
   <!-- Main -->
@@ -661,7 +664,7 @@ body{height:100%;height:-webkit-fill-available;overflow:hidden}
 <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/highlight.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script>
-const APP_VERSION = '0.15.0';
+const APP_VERSION = '0.16.0';
 
 /* ===== State ===== */
 const S = {
@@ -1124,8 +1127,55 @@ marked.setOptions({
 
 const defaultRenderer = new marked.Renderer();
 const customRenderer = new marked.Renderer();
+
+// Mermaid lazy-loader
+let _mermaidLoaded = false;
+let _mermaidQueue = [];
+async function ensureMermaid() {
+  if (_mermaidLoaded) return;
+  if (window.mermaid) { _mermaidLoaded = true; return; }
+  await new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js';
+    s.onload = resolve; s.onerror = reject;
+    document.head.appendChild(s);
+  });
+  const isDark = !document.documentElement.classList.contains('light');
+  mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'default', securityLevel: 'loose' });
+  _mermaidLoaded = true;
+}
+async function renderMermaidBlocks() {
+  const els = document.querySelectorAll('.mermaid-pending');
+  if (!els.length) return;
+  await ensureMermaid();
+  for (const el of els) {
+    el.classList.remove('mermaid-pending');
+    try {
+      const id = 'mmd-' + Math.random().toString(36).slice(2, 8);
+      const { svg } = await mermaid.render(id, el.textContent);
+      el.innerHTML = svg;
+      el.classList.add('mermaid-rendered');
+    } catch (e) {
+      el.innerHTML = `<pre style="color:#c25a4a;font-size:12px">Mermaid 渲染失败: ${e.message}</pre><pre style="color:var(--text-dim);font-size:12px">${esc(el.textContent)}</pre>`;
+    }
+  }
+}
+
 customRenderer.code = function(token) {
   const lang = (token.lang || '').split(' ')[0] || '';
+
+  // Mermaid diagrams
+  if (lang === 'mermaid') {
+    return `<div class="mermaid-pending mermaid-block">${esc(token.text)}</div>`;
+  }
+
+  // HTML blocks — add preview button
+  if (lang === 'html') {
+    const id = 'cb-' + Math.random().toString(36).slice(2, 8);
+    const highlighted = hljs.highlight(token.text, { language: 'html' }).value;
+    return `<pre><div class="code-header"><span class="code-lang">HTML</span><div style="display:flex;gap:6px"><button class="copy-btn" onclick="previewHtml('${id}')" title="在 Artifacts 面板中预览">预览</button><button class="copy-btn" onclick="copyCode('${id}')">复制</button></div></div><code id="${id}" class="hljs">${highlighted}</code></pre>`;
+  }
+
   let highlighted;
   if (lang && hljs.getLanguage(lang)) {
     highlighted = hljs.highlight(token.text, { language: lang }).value;
@@ -1135,6 +1185,20 @@ customRenderer.code = function(token) {
   const id = 'cb-' + Math.random().toString(36).slice(2, 8);
   return `<pre><div class="code-header"><span class="code-lang">${esc(lang || 'code')}</span><button class="copy-btn" onclick="copyCode('${id}')">复制</button></div><code id="${id}" class="hljs">${highlighted}</code></pre>`;
 };
+// Table renderer — wrap in scrollable container
+customRenderer.table = function(token) {
+  const html = defaultRenderer.table.call(this, token);
+  return `<div class="table-wrap">${html}</div>`;
+};
+
+// Image renderer — click to fullscreen, error fallback
+customRenderer.image = function(token) {
+  const href = token.href || '';
+  const alt = esc(token.text || '');
+  const title = token.title ? ` title="${esc(token.title)}"` : '';
+  return `<img src="${esc(href)}" alt="${alt}"${title} loading="lazy" onclick="zoomImage(this)" onerror="this.onerror=null;this.style.display='none';this.insertAdjacentHTML('afterend','<span style=\\'color:var(--text-dim);font-size:12px\\'>⚠ 图片加载失败: ${alt || href}</span>')">`;
+};
+
 marked.use({ renderer: customRenderer });
 
 function renderMsgHtml(msg) {
@@ -1171,6 +1235,38 @@ function copyCode(id) {
     const btn = el.previousElementSibling?.querySelector('.copy-btn');
     if (btn) { btn.textContent = '已复制'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = '复制'; btn.classList.remove('copied') }, 1500) }
   });
+}
+
+// Preview HTML code block in Artifacts panel
+function previewHtml(codeId) {
+  const el = document.getElementById(codeId);
+  if (!el) return;
+  const html = el.textContent;
+  $('#artifacts').classList.add('open');
+  $('#art-tab-code').style.display = 'none';
+  $('#art-tab-preview').style.display = '';
+  $('#art-tab-preview').classList.add('active');
+  $('#art-code-view').style.display = 'none';
+  $('#art-preview-view').style.display = '';
+  $('#art-copy').style.display = 'none';
+  $('#art-title').textContent = 'HTML 预览';
+  $('#art-lang').textContent = 'HTML';
+  const iframe = $('#art-iframe');
+  iframe.removeAttribute('src');
+  iframe.srcdoc = html;
+}
+
+// Image zoom overlay
+function zoomImage(img) {
+  const overlay = document.createElement('div');
+  overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:flex;align-items:center;justify-content:center;cursor:zoom-out;padding:20px';
+  overlay.onclick = () => overlay.remove();
+  const clone = document.createElement('img');
+  clone.src = img.src;
+  clone.style.cssText = 'max-width:95vw;max-height:95vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,.5)';
+  overlay.appendChild(clone);
+  document.body.appendChild(overlay);
+  document.addEventListener('keydown', function esc(e) { if (e.key === 'Escape') { overlay.remove(); document.removeEventListener('keydown', esc); } });
 }
 
 /* ===== Sidebar ===== */
@@ -1329,6 +1425,7 @@ function renderMessages() {
   setTimeout(() => {
     addArtifactButtons();
     bindMsgActions();
+    renderMermaidBlocks();
   }, 0);
 }
 
@@ -1504,6 +1601,7 @@ function finishStream(convId) {
     }
     addArtifactButtons();
     bindMsgActions();
+    renderMermaidBlocks();
     generateSuggestions(id);
   }
   updateStreamingUI();
@@ -3392,6 +3490,7 @@ function applyTheme(theme) {
 $('#theme-btn').onclick = () => {
   const isLight = document.documentElement.classList.contains('light');
   applyTheme(isLight ? 'dark' : 'light');
+  if (_mermaidLoaded && window.mermaid) { mermaid.initialize({ startOnLoad: false, theme: isLight ? 'dark' : 'default', securityLevel: 'loose' }); }
 };
 applyTheme(localStorage.getItem('biav-theme') || 'dark');
 _safeMode = !!loadConfig().safeMode;
