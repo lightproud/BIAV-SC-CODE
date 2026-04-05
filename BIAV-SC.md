@@ -148,7 +148,8 @@
 
 1. **`APP_VERSION` 常量**（`const APP_VERSION = 'x.y.z'`）— 递增 patch（修复）或 minor（新功能）
 2. **侧边栏 HTML**（`<div id="sidebar-footer">vx.y.z</div>`）— 与 APP_VERSION 一致
-3. **`projects/biav/CHANGELOG.md`**— 在顶部添加新版本条目，格式参考已有条目
+3. **`projects/biav/sw.js` 的 `SW_VERSION`**（`const SW_VERSION = 'x.y.z'`）— 与 APP_VERSION 一致，触发 Service Worker 更新清缓存
+4. **`projects/biav/CHANGELOG.md`**— 在顶部添加新版本条目，格式参考已有条目
 
 版本号规则：
 - 修复/优化/微调 → patch +1（如 0.12.0 → 0.12.1）

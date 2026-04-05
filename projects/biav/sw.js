@@ -1,6 +1,6 @@
-// Cache name derived from ?v= param passed during registration
-const VERSION = new URL(self.location).searchParams.get('v') || '0';
-const CACHE_NAME = 'biav-v' + VERSION;
+// Version must be updated alongside APP_VERSION in index.html
+const SW_VERSION = '0.12.0';
+const CACHE_NAME = 'biav-v' + SW_VERSION;
 const ASSETS = [
   'https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&display=swap',
   'https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js',
