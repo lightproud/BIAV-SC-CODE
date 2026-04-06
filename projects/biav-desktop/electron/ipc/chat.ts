@@ -6,6 +6,7 @@ import { MCPManager } from '../mcp/manager'
 import { BUILTIN_TOOLS, BUILTIN_TOOL_NAMES, executeBuiltinTool } from '../tools/builtin'
 import { fireHook } from '../tools/hooks'
 import { taskManager } from '../tools/tasks'
+import { getAgentSystemPrompt } from '../tools/system-prompt'
 import Store from 'electron-store'
 import { isWindowFocused, getMainWindow } from '../window-state'
 
@@ -133,18 +134,18 @@ export function registerChatHandlers(mcpManager: MCPManager) {
       }
     }
 
-    // Prepend system prompt if set, combining with style prompt if active
+    // Build system prompt: agent instructions + user style + conversation prompt
     const conv = db.prepare('SELECT system_prompt FROM conversations WHERE id = ?').get(conversationId) as { system_prompt: string | null } | undefined
     const systemParts: string[] = []
+    // Agent tool instructions (always present)
+    systemParts.push(getAgentSystemPrompt())
     if (req.stylePrompt) {
       systemParts.push(req.stylePrompt)
     }
     if (conv?.system_prompt) {
       systemParts.push(conv.system_prompt)
     }
-    if (systemParts.length > 0) {
-      history.unshift({ role: 'system', content: systemParts.join('\n\n') })
-    }
+    history.unshift({ role: 'system', content: systemParts.join('\n\n') })
 
     // For Claude with image attachments, modify the last user message to use content blocks
     if (req.provider === 'claude' && imageAttachments.length > 0) {
@@ -341,6 +342,13 @@ export function registerChatHandlers(mcpManager: MCPManager) {
                   ? await executeBuiltinTool(tc.name, tc.input)
                   : await mcpManager.callTool(serverName, tc.name, tc.input)
 
+                const resultText = typeof result === 'string' ? result : JSON.stringify(result)
+
+                // Persist tool call to database
+                db.prepare(
+                  'INSERT INTO tool_calls (id, conversation_id, tool_name, server_name, input_json, result_text, is_error, approved) VALUES (?, ?, ?, ?, ?, ?, 0, 1)'
+                ).run(tc.id, conversationId, tc.name, serverName, JSON.stringify(tc.input), resultText)
+
                 win.webContents.send('chat:stream', {
                   type: 'tool_result',
                   toolUseId: tc.id,
@@ -351,9 +359,16 @@ export function registerChatHandlers(mcpManager: MCPManager) {
                 toolResults.push({
                   type: 'tool_result',
                   tool_use_id: tc.id,
-                  content: typeof result === 'string' ? result : JSON.stringify(result),
+                  content: resultText,
                 })
               } catch (err: any) {
+                const errorText = `Error: ${err.message}`
+
+                // Persist failed tool call
+                db.prepare(
+                  'INSERT INTO tool_calls (id, conversation_id, tool_name, server_name, input_json, result_text, is_error, approved) VALUES (?, ?, ?, ?, ?, ?, 1, 1)'
+                ).run(tc.id, conversationId, tc.name, serverName, JSON.stringify(tc.input), errorText)
+
                 win.webContents.send('chat:stream', {
                   type: 'tool_result',
                   toolUseId: tc.id,
@@ -364,12 +379,16 @@ export function registerChatHandlers(mcpManager: MCPManager) {
                 toolResults.push({
                   type: 'tool_result',
                   tool_use_id: tc.id,
-                  content: `Error: ${err.message}`,
+                  content: errorText,
                   is_error: true,
                 })
               }
             } else {
-              // User denied the tool call
+              // User denied — persist as denied
+              db.prepare(
+                'INSERT INTO tool_calls (id, conversation_id, tool_name, server_name, input_json, result_text, is_error, approved) VALUES (?, ?, ?, ?, ?, ?, 1, 0)'
+              ).run(tc.id, conversationId, tc.name, serverName, JSON.stringify(tc.input), 'Denied by user')
+
               win.webContents.send('chat:stream', {
                 type: 'tool_result',
                 toolUseId: tc.id,
@@ -485,6 +504,14 @@ export function registerChatHandlers(mcpManager: MCPManager) {
   // Get status of all running tasks
   ipcMain.handle('chat:tasks', () => {
     return taskManager.getStatus()
+  })
+
+  // Get tool call history for a conversation
+  ipcMain.handle('chat:tool-history', (_event, conversationId: string) => {
+    const db = getDb()
+    return db.prepare(
+      'SELECT id, tool_name, server_name, input_json, result_text, is_error, approved, created_at FROM tool_calls WHERE conversation_id = ? ORDER BY created_at ASC'
+    ).all(conversationId)
   })
 
   ipcMain.handle('chat:edit', async (_event, req: {

@@ -6,8 +6,6 @@
  * Tasks notify the renderer via IPC events when they complete.
  */
 
-import { BrowserWindow } from 'electron'
-
 export interface Task {
   conversationId: string
   abortController: AbortController
