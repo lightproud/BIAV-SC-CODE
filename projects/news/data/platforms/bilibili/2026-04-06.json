@@ -1,8 +1,8 @@
 {
   "date": "2026-04-06",
-  "archived_at": "2026-04-05T23:07:05.638317+00:00",
+  "archived_at": "2026-04-06T06:21:35.430101+00:00",
   "source": "bilibili",
-  "item_count": 21,
+  "item_count": 22,
   "items": [
     {
       "source": "bilibili",
@@ -179,6 +179,16 @@
       "url": "https://www.bilibili.com/video/av116346452973317",
       "author": "God7777",
       "engagement": 154
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-06T02:16:53+00:00",
+      "lang": "",
+      "title": "沙耶郁纪比舞",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/av116355344895113",
+      "author": "沙耶郁纪",
+      "engagement": 140
     },
     {
       "source": "bilibili",
