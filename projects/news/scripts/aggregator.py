@@ -571,12 +571,9 @@ def fetch_steam_reviews():
             review_url = f'https://steamcommunity.com/profiles/{steamid}/recommended/{app_id}'
             votes_up = review.get('votes_up', 0)
 
-            # Negative reviews: full text (decision-critical). Positive: cap at 500.
-            summary = review_text if not voted_up else review_text[:500]
-
             items.append({
                 'title': title,
-                'summary': summary,
+                'summary': review_text,
                 'source': 'steam_review',
                 'time': created.isoformat(),
                 'url': review_url,
