@@ -599,12 +599,21 @@ def fetch_nga():
     headers = {
         'User-Agent': 'NGA/9.9.9 (Android 14; Pixel 8)',
         'Accept': 'application/json, text/plain, */*',
+        'Referer': 'https://bbs.nga.cn/thread.php?fid=' + nga_fid,
     }
+
+    # Try cloudscraper first if available (handles Cloudflare challenges)
+    try:
+        import cloudscraper
+        session = cloudscraper.create_scraper()
+        logger.info('NGA: using cloudscraper session')
+    except ImportError:
+        session = requests.Session()
 
     data = None
     for url in [mobile_url, web_url]:
         try:
-            resp = requests.get(url, headers=headers, timeout=15)
+            resp = session.get(url, headers=headers, timeout=15)
             resp.raise_for_status()
             text = resp.text.strip()
             # NGA sometimes wraps JSON in JS: window.script_muti_get_var_store=...
@@ -614,6 +623,34 @@ def fetch_nga():
             break
         except Exception as e:
             logger.warning(f'NGA {url.split("/")[2]} failed: {e}')
+
+    # Fallback: NGA search API with mobile User-Agent
+    if not data:
+        search_url = 'https://bbs.nga.cn/nuke.php'
+        search_params = {
+            'func': 'search',
+            'key': '忘却前夜',
+            'orderby': 'lastpost',
+            'limit': '20',
+        }
+        search_headers = {
+            'User-Agent': 'Mozilla/5.0 (Linux; Android 14; Pixel 8) '
+                          'AppleWebKit/537.36 (KHTML, like Gecko) '
+                          'Chrome/124.0.0.0 Mobile Safari/537.36',
+            'Accept': 'application/json, text/plain, */*',
+            'Referer': 'https://bbs.nga.cn/',
+        }
+        try:
+            resp = session.get(search_url, params=search_params,
+                               headers=search_headers, timeout=15)
+            resp.raise_for_status()
+            text = resp.text.strip()
+            if text.startswith('window.'):
+                text = text.split('=', 1)[1].rstrip(';')
+            data = json.loads(text)
+            logger.info('NGA: search API fallback succeeded')
+        except Exception as e:
+            logger.warning(f'NGA search API fallback failed: {e}')
 
     if not data:
         return items
@@ -686,34 +723,72 @@ def fetch_taptap():
             logger.warning(f'TapTap {url.split("/")[2]} failed: {e}')
 
     if not data_list:
-        # Final fallback: scrape review page
-        try:
-            review_url = f'https://api.taptap.cn/app/v2/app/{app_id}/review/list/recent'
-            resp = requests.get(review_url, params={'limit': 20}, headers=headers, timeout=15)
-            resp.raise_for_status()
-            reviews = resp.json().get('data', {}).get('list', [])
-            for review in reviews:
-                ts = review.get('created_time', 0)
-                if not ts:
-                    continue
-                created = datetime.fromtimestamp(ts, tz=timezone.utc)
-                if created < cutoff:
-                    continue
-                score = review.get('score', 0)
-                sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
-                items.append({
-                    'title': f'[TapTap {sentiment}] {review.get("contents", {}).get("text", "")[:60]}',
-                    'summary': review.get('contents', {}).get('text', ''),
-                    'source': 'taptap',
-                    'time': created.isoformat(),
-                    'url': f'https://www.taptap.cn/app/{app_id}/review',
-                    'engagement': review.get('like_count', 0),
-                    'author': review.get('user', {}).get('name', ''),
-                    'tags': [sentiment],
-                })
-            logger.info(f'TapTap reviews fallback: {len(items)} items')
-        except Exception as e:
-            logger.warning(f'TapTap review fallback failed: {e}')
+        # Fallback 1: review API (CN + global)
+        for review_domain in ['api.taptap.cn', 'api.taptap.io']:
+            try:
+                review_url = f'https://{review_domain}/app/v2/app/{app_id}/review/list/recent'
+                resp = requests.get(review_url, params={'limit': 20}, headers=headers, timeout=15)
+                resp.raise_for_status()
+                reviews = resp.json().get('data', {}).get('list', [])
+                for review in reviews:
+                    ts = review.get('created_time', 0)
+                    if not ts:
+                        continue
+                    created = datetime.fromtimestamp(ts, tz=timezone.utc)
+                    if created < cutoff:
+                        continue
+                    score = review.get('score', 0)
+                    sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
+                    items.append({
+                        'title': f'[TapTap {sentiment}] {review.get("contents", {}).get("text", "")[:60]}',
+                        'summary': review.get('contents', {}).get('text', ''),
+                        'source': 'taptap',
+                        'time': created.isoformat(),
+                        'url': f'https://www.taptap.cn/app/{app_id}/review',
+                        'engagement': review.get('like_count', 0),
+                        'author': review.get('user', {}).get('name', ''),
+                        'tags': [sentiment],
+                    })
+                if items:
+                    logger.info(f'TapTap reviews fallback ({review_domain}): {len(items)} items')
+                    break
+            except Exception as e:
+                logger.warning(f'TapTap review fallback ({review_domain}) failed: {e}')
+
+        # Fallback 2: scrape TapTap global web page
+        if not items:
+            try:
+                web_url = f'https://www.taptap.io/app/{app_id}/review'
+                web_resp = requests.get(web_url, headers={
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+                }, timeout=15)
+                if web_resp.ok:
+                    import re
+                    # TapTap.io embeds JSON data in script tags
+                    json_match = re.search(r'window\.__INITIAL_STATE__\s*=\s*({.+?})\s*;?\s*</script>', web_resp.text, re.DOTALL)
+                    if json_match:
+                        try:
+                            state = json.loads(json_match.group(1))
+                            reviews = state.get('review', {}).get('list', []) or []
+                            for review in reviews[:20]:
+                                text = review.get('contents', {}).get('text', '') if isinstance(review.get('contents'), dict) else ''
+                                score = review.get('score', 0)
+                                sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
+                                items.append({
+                                    'title': f'[TapTap {sentiment}] {text[:60]}',
+                                    'summary': text,
+                                    'source': 'taptap',
+                                    'time': datetime.now(timezone.utc).isoformat(),
+                                    'url': web_url,
+                                    'engagement': review.get('like_count', 0) or 0,
+                                    'author': review.get('user', {}).get('name', '') if isinstance(review.get('user'), dict) else '',
+                                    'tags': [sentiment],
+                                })
+                            logger.info(f'TapTap web scrape: {len(items)} reviews')
+                        except (json.JSONDecodeError, KeyError):
+                            pass
+            except Exception as e:
+                logger.warning(f'TapTap web scrape failed: {e}')
         return items
 
     for topic in data_list:
@@ -935,11 +1010,197 @@ def fetch_steam_discussions():
     return items
 
 
+def _fetch_youtube_web_search():
+    """Scrape YouTube search results page when no API key is available.
+
+    Fetches the YouTube search page for Morimens-related keywords, extracts
+    the embedded ytInitialData JSON, and parses video results from it.
+    Returns a list of item dicts compatible with the aggregator format.
+    """
+    items = []
+    seen_ids = set()
+    yt_headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                      '(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36',
+        'Accept-Language': 'en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7',
+    }
+
+    for keyword in ['Morimens', '忘却前夜']:
+        search_url = f'https://www.youtube.com/results?search_query={requests.utils.quote(keyword)}'
+        try:
+            resp = requests.get(search_url, timeout=20, headers=yt_headers)
+            resp.raise_for_status()
+            html = resp.text
+
+            # Extract ytInitialData JSON blob from the page
+            yt_data_match = re.search(
+                r'var\s+ytInitialData\s*=\s*(\{.*?\});\s*</script>', html, re.DOTALL)
+            if not yt_data_match:
+                # Alternative pattern: some pages use a different assignment
+                yt_data_match = re.search(
+                    r'window\["ytInitialData"\]\s*=\s*(\{.*?\});\s*', html, re.DOTALL)
+            if not yt_data_match:
+                logger.warning(f'YouTube scrape "{keyword}": could not find ytInitialData')
+                continue
+
+            try:
+                yt_data = json.loads(yt_data_match.group(1))
+            except (json.JSONDecodeError, ValueError):
+                logger.warning(f'YouTube scrape "{keyword}": failed to parse ytInitialData JSON')
+                continue
+
+            # Navigate the nested structure to find video renderers
+            # Path: contents.twoColumnSearchResultsRenderer.primaryContents
+            #        .sectionListRenderer.contents[].itemSectionRenderer
+            #        .contents[].videoRenderer
+            video_renderers = []
+            try:
+                sections = (yt_data.get('contents', {})
+                            .get('twoColumnSearchResultsRenderer', {})
+                            .get('primaryContents', {})
+                            .get('sectionListRenderer', {})
+                            .get('contents', []))
+                for section in sections:
+                    section_contents = (section.get('itemSectionRenderer', {})
+                                        .get('contents', []))
+                    for item in section_contents:
+                        if 'videoRenderer' in item:
+                            video_renderers.append(item['videoRenderer'])
+            except (AttributeError, TypeError, KeyError):
+                pass
+
+            # Fallback: extract via regex if structured navigation fails
+            if not video_renderers:
+                video_ids_raw = re.findall(r'"videoId"\s*:\s*"([a-zA-Z0-9_-]{11})"', html)
+                titles_raw = re.findall(
+                    r'"title"\s*:\s*\{\s*"runs"\s*:\s*\[\s*\{\s*"text"\s*:\s*"([^"]*)"',
+                    html,
+                )
+                for i, vid in enumerate(video_ids_raw):
+                    if vid in seen_ids:
+                        continue
+                    seen_ids.add(vid)
+                    title = titles_raw[i] if i < len(titles_raw) else ''
+                    if not title:
+                        continue
+                    yt_item = {
+                        'title': title,
+                        'summary': '',
+                        'source': 'youtube',
+                        'time': datetime.now(timezone.utc).isoformat(),
+                        'url': f'https://www.youtube.com/watch?v={vid}',
+                        'engagement': 0,
+                        'author': '',
+                        'tags': ['youtube', 'scrape'],
+                    }
+                    yt_item['media_url'] = f'https://i.ytimg.com/vi/{vid}/hqdefault.jpg'
+                    yt_item['content_type'] = 'image'
+                    items.append(yt_item)
+                logger.info(f'YouTube scrape "{keyword}" (regex fallback): {len(items)} videos')
+                continue
+
+            # Process structured video renderers
+            for vr in video_renderers:
+                try:
+                    vid = vr.get('videoId', '')
+                    if not vid or vid in seen_ids:
+                        continue
+                    seen_ids.add(vid)
+
+                    # Title
+                    title = ''
+                    title_runs = vr.get('title', {}).get('runs', [])
+                    if title_runs:
+                        title = title_runs[0].get('text', '')
+                    if not title:
+                        title = vr.get('title', {}).get('simpleText', '')
+                    if not title:
+                        continue
+
+                    # Channel name
+                    author = ''
+                    try:
+                        channel_runs = vr.get('ownerText', {}).get('runs', [])
+                        if channel_runs:
+                            author = channel_runs[0].get('text', '')
+                    except (AttributeError, TypeError, IndexError):
+                        pass
+
+                    # View count for rough engagement
+                    engagement = 0
+                    try:
+                        view_text = vr.get('viewCountText', {}).get('simpleText', '')
+                        view_match = re.search(r'([\d,]+)', view_text.replace(',', ''))
+                        if view_match:
+                            engagement = int(view_match.group(1))
+                    except (ValueError, AttributeError, TypeError):
+                        pass
+
+                    # Published time text (relative, e.g. "2 days ago")
+                    published_text = ''
+                    try:
+                        published_text = vr.get('publishedTimeText', {}).get('simpleText', '')
+                    except (AttributeError, TypeError):
+                        pass
+
+                    # Description snippet
+                    desc = ''
+                    try:
+                        desc_snippets = vr.get('detailedMetadataSnippets', [])
+                        if desc_snippets:
+                            snippet_runs = desc_snippets[0].get('snippetText', {}).get('runs', [])
+                            desc = ''.join(r.get('text', '') for r in snippet_runs)
+                    except (AttributeError, TypeError, IndexError, KeyError):
+                        pass
+
+                    # Thumbnail
+                    thumb = ''
+                    try:
+                        thumbs = vr.get('thumbnail', {}).get('thumbnails', [])
+                        thumb = thumbs[-1].get('url', '') if thumbs else ''
+                    except (AttributeError, TypeError, IndexError):
+                        pass
+                    if not thumb:
+                        thumb = f'https://i.ytimg.com/vi/{vid}/hqdefault.jpg'
+
+                    summary = desc
+                    if published_text:
+                        summary = f'[{published_text}] {desc}' if desc else published_text
+
+                    yt_item = {
+                        'title': title,
+                        'summary': summary,
+                        'source': 'youtube',
+                        'time': datetime.now(timezone.utc).isoformat(),
+                        'url': f'https://www.youtube.com/watch?v={vid}',
+                        'engagement': engagement,
+                        'is_hot': engagement > 5000,
+                        'author': author,
+                        'tags': ['youtube', 'scrape'],
+                    }
+                    if thumb:
+                        yt_item['media_url'] = thumb
+                        yt_item['content_type'] = 'image'
+                    items.append(yt_item)
+                except Exception:
+                    # Skip individual video renderers that fail to parse
+                    continue
+
+            logger.info(
+                f'YouTube scrape "{keyword}" (structured): '
+                f'{len(video_renderers)} renderers, {len(items)} total videos')
+        except Exception as e:
+            logger.warning(f'YouTube scrape "{keyword}" failed: {e}')
+
+    return items
+
+
 def fetch_youtube():
     """Fetch Morimens-related YouTube videos.
 
     Uses YouTube Data API v3 if YOUTUBE_API_KEY is set.
-    Falls back to free RSS feeds for known channels (no API key needed).
+    Falls back to free RSS feeds for known channels (no API key needed),
+    then to web search scraping as a last resort.
     """
     api_key = os.environ.get('YOUTUBE_API_KEY')
     items = []
@@ -1013,55 +1274,54 @@ def fetch_youtube():
     else:
         logger.info('YouTube: no API key, trying RSS fallback for known channels')
 
-    # RSS fallback: free, no API key, works for specific channels
-    # YouTube RSS format: https://www.youtube.com/feeds/videos.xml?channel_id=...
-    if not items and MORIMENS_CHANNELS:
-        import xml.etree.ElementTree as ET
-        for ch_id, ch_name in MORIMENS_CHANNELS.items():
-            rss_url = f'https://www.youtube.com/feeds/videos.xml?channel_id={ch_id}'
-            try:
-                resp = requests.get(rss_url, timeout=15, headers={'User-Agent': 'MorimensAggregator/1.0'})
-                resp.raise_for_status()
-                root = ET.fromstring(resp.text)
-                ns = {'atom': 'http://www.w3.org/2005/Atom', 'media': 'http://search.yahoo.com/mrss/'}
-                for entry in root.findall('atom:entry', ns):
-                    published = entry.findtext('atom:published', '', ns)
-                    try:
-                        pub_dt = datetime.fromisoformat(published.replace('Z', '+00:00'))
-                    except (ValueError, TypeError):
-                        continue
-                    if pub_dt < cutoff:
-                        continue
-                    title = entry.findtext('atom:title', '', ns)
-                    link_el = entry.find('atom:link', ns)
-                    link = link_el.get('href', '') if link_el is not None else ''
-                    author = entry.findtext('atom:author/atom:name', ch_name, ns)
-                    # Media thumbnail
-                    media_group = entry.find('media:group', ns)
-                    thumb = ''
-                    desc = ''
-                    if media_group is not None:
-                        thumb_el = media_group.find('media:thumbnail', ns)
-                        if thumb_el is not None:
-                            thumb = thumb_el.get('url', '')
-                        desc = media_group.findtext('media:description', '', ns)
-                    yt_item = {
-                        'title': title,
-                        'summary': desc,
-                        'source': 'youtube',
-                        'time': pub_dt.isoformat(),
-                        'url': link,
-                        'engagement': 0,
-                        'author': author,
-                        'tags': ['youtube', 'rss'],
-                    }
-                    if thumb:
-                        yt_item['media_url'] = thumb
-                        yt_item['content_type'] = 'image'
-                    items.append(yt_item)
-                logger.info(f'YouTube RSS {ch_name}({ch_id}): {len(items)} videos')
-            except Exception as e:
-                logger.warning(f'YouTube RSS {ch_name}({ch_id}) failed: {e}')
+        # RSS fallback: free, no API key, works for specific channels
+        # YouTube RSS format: https://www.youtube.com/feeds/videos.xml?channel_id=...
+        if MORIMENS_CHANNELS:
+            import xml.etree.ElementTree as ET
+            for ch_id, ch_name in MORIMENS_CHANNELS.items():
+                rss_url = f'https://www.youtube.com/feeds/videos.xml?channel_id={ch_id}'
+                try:
+                    resp = requests.get(rss_url, timeout=15, headers={'User-Agent': 'MorimensAggregator/1.0'})
+                    resp.raise_for_status()
+                    root = ET.fromstring(resp.text)
+                    ns = {'atom': 'http://www.w3.org/2005/Atom', 'media': 'http://search.yahoo.com/mrss/'}
+                    for entry in root.findall('atom:entry', ns):
+                        published = entry.findtext('atom:published', '', ns)
+                        try:
+                            pub_dt = datetime.fromisoformat(published.replace('Z', '+00:00'))
+                        except (ValueError, TypeError):
+                            continue
+                        if pub_dt < cutoff:
+                            continue
+                        title = entry.findtext('atom:title', '', ns)
+                        link_el = entry.find('atom:link', ns)
+                        link = link_el.get('href', '') if link_el is not None else ''
+                        author = entry.findtext('atom:author/atom:name', ch_name, ns)
+                        media_group = entry.find('media:group', ns)
+                        thumb = ''
+                        desc = ''
+                        if media_group is not None:
+                            thumb_el = media_group.find('media:thumbnail', ns)
+                            if thumb_el is not None:
+                                thumb = thumb_el.get('url', '')
+                            desc = media_group.findtext('media:description', '', ns)
+                        yt_item = {
+                            'title': title,
+                            'summary': desc,
+                            'source': 'youtube',
+                            'time': pub_dt.isoformat(),
+                            'url': link,
+                            'engagement': 0,
+                            'author': author,
+                            'tags': ['youtube', 'rss'],
+                        }
+                        if thumb:
+                            yt_item['media_url'] = thumb
+                            yt_item['content_type'] = 'image'
+                        items.append(yt_item)
+                    logger.info(f'YouTube RSS {ch_name}({ch_id}): {len(items)} videos')
+                except Exception as e:
+                    logger.warning(f'YouTube RSS {ch_name}({ch_id}) failed: {e}')
 
     # Web scraping fallback: search YouTube directly when no API key and
     # RSS returned nothing (empty MORIMENS_CHANNELS or no recent videos).
