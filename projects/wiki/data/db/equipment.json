@@ -425,7 +425,9 @@
         "name": "心之壁垒",
         "name_en": "Heart's Bastion",
         "effect": "适合高防角色如法洛思或珊。",
-        "effect_en": "Suited for high-DEF characters like Pharos or Shan."
+        "effect_en": "If the enemy's intention is to attack, temporarily reduce its Power by 4 points after dealing damage; otherwhise, add Bleeding equal to 25% of the damage, triggering up to 6 times per turn.|image1=Alien heart relic.png}}",
+        "_wiki_source": "https://forget-last-night-morimens.fandom.com",
+        "_wiki_page": "Alien Heart relic"
       }
     ],
     "notes": [

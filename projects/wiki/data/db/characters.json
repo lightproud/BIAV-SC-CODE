@@ -1629,7 +1629,12 @@
       "name_en": "24",
       "rarity": "SSR",
       "realm": "all",
-      "realms": ["chaos", "aequor", "caro", "ultra"],
+      "realms": [
+        "chaos",
+        "aequor",
+        "caro",
+        "ultra"
+      ],
       "realm_note": "four-realm adaptation (四领域适性) — works across all four realms",
       "role": "attack",
       "is_limited": true,
