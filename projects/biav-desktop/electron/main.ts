@@ -16,18 +16,11 @@ import { registerProjectHandlers } from './ipc/projects'
 import { registerMCPHandlers } from './ipc/mcp'
 import { MCPManager } from './mcp/manager'
 import { initUpdater, checkForUpdate, downloadUpdate, installUpdate } from './updater'
+import { setMainWindow, getMainWindow } from './window-state'
 
 const mcpManager = new MCPManager()
 
 let mainWindow: BrowserWindow | null = null
-
-export function isWindowFocused(): boolean {
-  return mainWindow?.isFocused() ?? false
-}
-
-export function getMainWindow(): BrowserWindow | null {
-  return mainWindow
-}
 
 let quickEntryWindow: BrowserWindow | null = null
 let tray: Tray | null = null
@@ -98,6 +91,7 @@ function createWindow() {
     },
     show: false,
   })
+  setMainWindow(mainWindow)
 
   if (isMaximized) {
     mainWindow.maximize()
