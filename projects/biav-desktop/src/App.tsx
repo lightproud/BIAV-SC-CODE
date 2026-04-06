@@ -30,6 +30,7 @@ export default function App() {
     conversationId,
     isStreaming,
     streamingContent,
+    streamingThinking,
     streamingTokens,
     streamingDuration,
     sendMessage,
@@ -43,7 +44,7 @@ export default function App() {
     titleUpdateCounter,
   } = useChat()
 
-  const { theme, toggleTheme } = useTheme()
+  const { theme, mode, setMode } = useTheme()
 
   const [conversations, setConversations] = useState<Conversation[]>([])
   const [projects, setProjects] = useState<Project[]>([])
@@ -61,6 +62,7 @@ export default function App() {
   const [systemPrompt, setSystemPrompt] = useState('')
   const [attachments, setAttachments] = useState<Attachment[]>([])
   const [modelParams, setModelParams] = useState<ModelParams>({ temperature: 1.0, maxTokens: 8192 })
+  const [enableThinking, setEnableThinking] = useState(false)
   const virtuosoRef = useRef<VirtuosoHandle>(null)
 
   // Global keyboard shortcuts
@@ -85,7 +87,7 @@ export default function App() {
       type: 'message' as const,
       data: msg,
     }))
-    if (isStreaming && streamingContent) {
+    if (isStreaming && (streamingContent || streamingThinking)) {
       items.push({
         type: 'streaming',
         data: {
@@ -101,7 +103,7 @@ export default function App() {
       items.push({ type: 'usage', data: lastUsage })
     }
     return items
-  }, [messages, isStreaming, streamingContent, lastUsage])
+  }, [messages, isStreaming, streamingContent, streamingThinking, lastUsage])
 
   // Parse artifacts from messages
   useEffect(() => {
@@ -198,7 +200,7 @@ export default function App() {
   }
 
   function handleSend(content: string, sendAttachments: Attachment[]) {
-    sendMessage(content, provider, model, sendAttachments.length > 0 ? sendAttachments : undefined, systemPrompt || undefined, modelParams)
+    sendMessage(content, provider, model, sendAttachments.length > 0 ? sendAttachments : undefined, systemPrompt || undefined, modelParams, enableThinking)
   }
 
   async function handleSystemPromptChange(prompt: string) {
@@ -248,7 +250,8 @@ export default function App() {
             }
           }}
           theme={theme}
-          onToggleTheme={toggleTheme}
+          themeMode={mode}
+          onSetThemeMode={setMode}
         />
       )}
 
@@ -287,6 +290,20 @@ export default function App() {
             onSystemPromptChange={handleSystemPromptChange}
           />
           <ExportMenu conversationId={conversationId} />
+          {/* Thinking toggle - only show for Claude models */}
+          {provider === 'claude' && (
+            <button
+              className={`titlebar-no-drag p-1 rounded hover:bg-biav-border transition-colors ${enableThinking ? 'text-biav-gold' : 'text-biav-muted'}`}
+              onClick={() => setEnableThinking(!enableThinking)}
+              title={enableThinking ? '深度思考已开启' : '深度思考已关闭'}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2a7 7 0 0 0-7 7c0 3 2 5.5 4 7.5.5.5 1 1.5 1 2.5h4c0-1 .5-2 1-2.5 2-2 4-4.5 4-7.5a7 7 0 0 0-7-7z" />
+                <path d="M9 22h6" />
+                <path d="M10 19h4" />
+              </svg>
+            </button>
+          )}
           <ModelParamsPanel
             params={modelParams}
             onChange={setModelParams}
@@ -327,6 +344,8 @@ export default function App() {
                       <ChatMessage
                         message={item.data}
                         isStreaming
+                        streamingThinking={streamingThinking}
+                        thinkingDuration={streamingDuration}
                       />
                     )
                   }
