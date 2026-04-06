@@ -1,8 +1,9 @@
 import { useState, useCallback, useEffect } from 'react'
-import type { Conversation } from '../types'
+import type { Conversation, Project } from '../types'
 
 interface Props {
   conversations: Conversation[]
+  projects: Project[]
   activeId: string | null
   onSelect: (id: string) => void
   onDelete: (id: string) => void
@@ -10,13 +11,35 @@ interface Props {
   onExport?: (id: string) => void
   onNewChat: () => void
   onOpenSettings: () => void
+  onNewProject: () => void
+  onEditProject: (project: Project) => void
+  onDeleteProject: (id: string) => void
+  onMoveToProject: (conversationId: string, projectId: string | null) => void
   theme: 'dark' | 'light'
   onToggleTheme: () => void
 }
 
-export default function Sidebar({ conversations, activeId, onSelect, onDelete, onRename, onExport, onNewChat, onOpenSettings, theme, onToggleTheme }: Props) {
+export default function Sidebar({
+  conversations,
+  projects,
+  activeId,
+  onSelect,
+  onDelete,
+  onRename,
+  onExport,
+  onNewChat,
+  onOpenSettings,
+  onNewProject,
+  onEditProject,
+  onDeleteProject,
+  onMoveToProject,
+  theme,
+  onToggleTheme,
+}: Props) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [collapsedProjects, setCollapsedProjects] = useState<Set<string>>(new Set())
+  const [moveMenuConvId, setMoveMenuConvId] = useState<string | null>(null)
 
   const handleConversationContextMenu = useCallback(
     (e: React.MouseEvent, convId: string) => {
@@ -47,6 +70,107 @@ export default function Sidebar({ conversations, activeId, onSelect, onDelete, o
   const filteredConversations = searchQuery
     ? conversations.filter((c) => c.title.toLowerCase().includes(searchQuery.toLowerCase()))
     : conversations
+
+  const toggleProject = (projectId: string) => {
+    setCollapsedProjects((prev) => {
+      const next = new Set(prev)
+      if (next.has(projectId)) next.delete(projectId)
+      else next.add(projectId)
+      return next
+    })
+  }
+
+  // Group conversations by project
+  const projectConvMap = new Map<string | null, Conversation[]>()
+  for (const conv of filteredConversations) {
+    const key = conv.project_id ?? null
+    if (!projectConvMap.has(key)) projectConvMap.set(key, [])
+    projectConvMap.get(key)!.push(conv)
+  }
+
+  const uncategorized = projectConvMap.get(null) ?? []
+
+  function renderConversationItem(conv: Conversation) {
+    return (
+      <div
+        key={conv.id}
+        className={`group flex items-center gap-1 px-3 py-2 rounded-lg cursor-pointer text-sm mb-0.5 transition-colors ${
+          conv.id === activeId
+            ? 'bg-biav-border text-biav-gold'
+            : 'text-biav-muted hover:bg-biav-border/50 hover:text-biav-text'
+        }`}
+        onClick={() => onSelect(conv.id)}
+        onContextMenu={(e) => handleConversationContextMenu(e, conv.id)}
+        onMouseEnter={() => setHoveredId(conv.id)}
+        onMouseLeave={() => { setHoveredId(null); setMoveMenuConvId(null) }}
+      >
+        <span className="flex-1 truncate">{conv.title}</span>
+        {hoveredId === conv.id && (
+          <div className="flex items-center gap-0.5 shrink-0">
+            {/* Move to project */}
+            <div className="relative">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setMoveMenuConvId(moveMenuConvId === conv.id ? null : conv.id)
+                }}
+                className="text-biav-muted hover:text-biav-gold p-0.5"
+                title="移动到项目"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
+                </svg>
+              </button>
+              {moveMenuConvId === conv.id && (
+                <div className="absolute right-0 top-6 z-50 bg-biav-surface border border-biav-border rounded-lg shadow-lg py-1 min-w-[140px]">
+                  {conv.project_id && (
+                    <button
+                      className="w-full text-left px-3 py-1.5 text-xs text-biav-muted hover:bg-biav-border/50 hover:text-biav-text"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onMoveToProject(conv.id, null)
+                        setMoveMenuConvId(null)
+                      }}
+                    >
+                      移除分类
+                    </button>
+                  )}
+                  {projects.map((p) => (
+                    <button
+                      key={p.id}
+                      className={`w-full text-left px-3 py-1.5 text-xs hover:bg-biav-border/50 ${
+                        conv.project_id === p.id ? 'text-biav-gold' : 'text-biav-muted hover:text-biav-text'
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onMoveToProject(conv.id, p.id)
+                        setMoveMenuConvId(null)
+                      }}
+                    >
+                      {p.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/* Delete */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                onDelete(conv.id)
+              }}
+              className="shrink-0 text-biav-muted hover:text-biav-danger p-0.5"
+              title="删除"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        )}
+      </div>
+    )
+  }
 
   return (
     <div className="w-64 shrink-0 flex flex-col border-r border-biav-border bg-biav-surface h-full">
@@ -92,41 +216,99 @@ export default function Sidebar({ conversations, activeId, onSelect, onDelete, o
         </div>
       </div>
 
-      {/* Conversation List */}
+      {/* Project & Conversation List */}
       <div className="flex-1 overflow-y-auto px-2">
+        {/* Projects Section Header */}
+        <div className="flex items-center justify-between px-2 py-1.5 mt-1">
+          <span className="text-xs font-medium text-biav-muted uppercase tracking-wider">项目</span>
+          <button
+            onClick={onNewProject}
+            className="text-biav-muted hover:text-biav-gold text-xs transition-colors"
+            title="新建项目"
+          >
+            + 新项目
+          </button>
+        </div>
+
+        {/* Project Groups */}
+        {projects.map((project) => {
+          const convs = projectConvMap.get(project.id) ?? []
+          const isCollapsed = collapsedProjects.has(project.id)
+          return (
+            <div key={project.id} className="mb-1">
+              <div
+                className="group flex items-center gap-1 px-2 py-1.5 rounded-lg cursor-pointer text-sm text-biav-text hover:bg-biav-border/30 transition-colors"
+                onClick={() => toggleProject(project.id)}
+              >
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className={`shrink-0 transition-transform ${isCollapsed ? '' : 'rotate-90'}`}
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-biav-gold">
+                  <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
+                </svg>
+                <span className="flex-1 truncate font-medium">{project.name}</span>
+                <span className="text-xs text-biav-muted">{convs.length}</span>
+                <div className="hidden group-hover:flex items-center gap-0.5">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onEditProject(project)
+                    }}
+                    className="text-biav-muted hover:text-biav-gold p-0.5"
+                    title="编辑项目"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+                      <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onDeleteProject(project.id)
+                    }}
+                    className="text-biav-muted hover:text-biav-danger p-0.5"
+                    title="删除项目"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              {!isCollapsed && (
+                <div className="ml-3">
+                  {convs.length === 0 && (
+                    <p className="text-xs text-biav-muted px-3 py-1">暂无对话</p>
+                  )}
+                  {convs.map(renderConversationItem)}
+                </div>
+              )}
+            </div>
+          )
+        })}
+
+        {/* Uncategorized */}
+        {uncategorized.length > 0 && (
+          <div className="mt-2">
+            <div className="px-2 py-1.5">
+              <span className="text-xs font-medium text-biav-muted uppercase tracking-wider">未分类</span>
+            </div>
+            {uncategorized.map(renderConversationItem)}
+          </div>
+        )}
+
         {filteredConversations.length === 0 && searchQuery ? (
           <p className="text-center text-sm text-biav-muted py-4">无匹配对话</p>
         ) : null}
-        {filteredConversations.map((conv) => (
-          <div
-            key={conv.id}
-            className={`group flex items-center gap-1 px-3 py-2 rounded-lg cursor-pointer text-sm mb-0.5 transition-colors ${
-              conv.id === activeId
-                ? 'bg-biav-border text-biav-gold'
-                : 'text-biav-muted hover:bg-biav-border/50 hover:text-biav-text'
-            }`}
-            onClick={() => onSelect(conv.id)}
-            onContextMenu={(e) => handleConversationContextMenu(e, conv.id)}
-            onMouseEnter={() => setHoveredId(conv.id)}
-            onMouseLeave={() => setHoveredId(null)}
-          >
-            <span className="flex-1 truncate">{conv.title}</span>
-            {hoveredId === conv.id && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation()
-                  onDelete(conv.id)
-                }}
-                className="shrink-0 text-biav-muted hover:text-biav-danger p-0.5"
-                title="删除"
-              >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M18 6L6 18M6 6l12 12" />
-                </svg>
-              </button>
-            )}
-          </div>
-        ))}
       </div>
 
       {/* Footer */}

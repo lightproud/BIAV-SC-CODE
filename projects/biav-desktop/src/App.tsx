@@ -15,6 +15,7 @@ import ArtifactsPanel from './components/ArtifactsPanel'
 import SystemPromptEditor from './components/SystemPromptEditor'
 import { parseArtifacts } from './lib/parseArtifacts'
 import ProjectEditor from './components/ProjectEditor'
+import UsageBar, { SessionUsageBar } from './components/UsageBar'
 import type { Conversation, Project, ProviderStatus, Attachment, Artifact } from './types'
 
 export default function App() {
@@ -29,6 +30,8 @@ export default function App() {
     resetChat,
     editAndResend,
     regenerate,
+    lastUsage,
+    sessionUsage,
   } = useChat()
 
   const { theme, toggleTheme } = useTheme()
@@ -115,6 +118,28 @@ export default function App() {
     refreshConversations()
   }
 
+  async function handleCreateOrUpdateProject(data: { name: string; description: string; system_prompt: string }) {
+    if (editingProject) {
+      await window.biav.updateProject(editingProject.id, data)
+    } else {
+      await window.biav.createProject(data)
+    }
+    setShowProjectEditor(false)
+    setEditingProject(null)
+    refreshProjects()
+  }
+
+  async function handleDeleteProject(id: string) {
+    await window.biav.deleteProject(id)
+    refreshProjects()
+    refreshConversations()
+  }
+
+  async function handleMoveToProject(convId: string, projectId: string | null) {
+    await window.biav.moveConversationToProject(convId, projectId)
+    refreshConversations()
+  }
+
   function handleSelectModel(p: string, m: string) {
     setProvider(p)
     setModel(m)
@@ -143,11 +168,16 @@ export default function App() {
       {sidebarOpen && (
         <Sidebar
           conversations={conversations}
+          projects={projects}
           activeId={conversationId}
           onSelect={loadConversation}
           onDelete={handleDeleteConversation}
           onNewChat={resetChat}
           onOpenSettings={() => setShowSettings(true)}
+          onNewProject={() => { setEditingProject(null); setShowProjectEditor(true) }}
+          onEditProject={(p) => { setEditingProject(p); setShowProjectEditor(true) }}
+          onDeleteProject={handleDeleteProject}
+          onMoveToProject={handleMoveToProject}
           theme={theme}
           onToggleTheme={toggleTheme}
         />
@@ -202,12 +232,12 @@ export default function App() {
             )}
             <div className="max-w-3xl mx-auto space-y-4">
               {messages.map((msg) => (
-                  onFork={handleFork}
                 <ChatMessage
                   key={msg.id}
                   message={msg}
                   onEdit={(id, content) => editAndResend(id, content, provider, model)}
                   onRegenerate={() => regenerate(provider, model)}
+                  onFork={handleFork}
                 />
               ))}
               {isStreaming && streamingContent && (
@@ -262,6 +292,15 @@ export default function App() {
       {/* Shortcuts Modal */}
       {showShortcuts && (
         <ShortcutsModal onClose={() => setShowShortcuts(false)} />
+      )}
+
+      {/* Project Editor Modal */}
+      {showProjectEditor && (
+        <ProjectEditor
+          project={editingProject}
+          onSave={handleCreateOrUpdateProject}
+          onClose={() => { setShowProjectEditor(false); setEditingProject(null) }}
+        />
       )}
     </div>
   )
