@@ -45,6 +45,13 @@ function CodeBlock({ className, children }: { className?: string; children: stri
 export default function ChatMessage({ message, isStreaming, onEdit, onRegenerate, onFork }: Props) {
   const [isEditing, setIsEditing] = useState(false)
   const [editContent, setEditContent] = useState(message.content)
+  const [msgCopied, setMsgCopied] = useState(false)
+
+  const handleCopyMessage = useCallback(() => {
+    navigator.clipboard.writeText(message.content)
+    setMsgCopied(true)
+    setTimeout(() => setMsgCopied(false), 2000)
+  }, [message.content])
 
   useEffect(() => {
     const cleanup = window.biav.onContextMenuAction((_event, { action, data }) => {
@@ -190,6 +197,16 @@ export default function ChatMessage({ message, isStreaming, onEdit, onRegenerate
         </div>
         {!isStreaming && (
           <div className="flex gap-2 mt-1">
+            <button
+              className="text-xs text-biav-muted hover:text-biav-gold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-0.5"
+              onClick={handleCopyMessage}
+              title="复制消息内容"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+              </svg>
+              {msgCopied ? '已复制✓' : '复制'}
+            </button>
             {onRegenerate && (
               <button
                 className="text-xs text-biav-muted hover:text-biav-gold opacity-0 group-hover:opacity-100 transition-opacity"
