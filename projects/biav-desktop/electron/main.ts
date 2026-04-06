@@ -10,6 +10,7 @@ import { registerExportHandlers } from './ipc/export'
 import { registerFileHandlers } from './ipc/files'
 import { registerContextMenuHandlers } from './ipc/context-menu'
 import { registerNotificationHandlers } from './ipc/notifications'
+import { registerClipboardHandlers } from './ipc/clipboard'
 import { registerProjectHandlers } from './ipc/projects'
 import { registerMCPHandlers } from './ipc/mcp'
 import { MCPManager } from './mcp/manager'
@@ -232,6 +233,7 @@ app.whenReady().then(() => {
   registerContextMenuHandlers()
   registerMCPHandlers(mcpManager)
   registerNotificationHandlers()
+  registerClipboardHandlers()
 
   createWindow()
   createQuickEntry()

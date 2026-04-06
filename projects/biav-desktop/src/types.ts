@@ -129,6 +129,7 @@ declare global {
       pinConversation: (id: string, pinned: boolean) => Promise<{ ok: boolean }>
       forkConversation: (conversationId: string, messageId: string) => Promise<{ conversationId: string }>
       exportConversation: (id: string, format: 'md' | 'json') => Promise<{ ok: boolean; path?: string; error?: string }>
+      importConversation: () => Promise<{ ok: boolean; conversationId?: string; error?: string }>
       listModels: () => Promise<ProviderStatus[]>
       getSettings: () => Promise<Settings>
       setSettings: (settings: Partial<Settings>) => Promise<void>
@@ -145,6 +146,10 @@ declare global {
       deleteProject: (id: string) => Promise<{ ok: boolean }>
       listProjectConversations: (projectId: string) => Promise<Conversation[]>
       moveConversationToProject: (conversationId: string, projectId: string | null) => Promise<{ ok: boolean }>
+
+      // Notifications
+      showNotification: (title: string, body: string) => Promise<void>
+      setNotificationsEnabled: (enabled: boolean) => Promise<void>
 
       // Usage
       getSessionUsage: (conversationId: string) => Promise<SessionUsage>

@@ -104,6 +104,9 @@ export function useChat() {
       setMessages((prev) => [...prev, userMsg])
       setIsStreaming(true)
       setStreamingContent('')
+      setStreamingTokens(0)
+      setStreamingDuration(0)
+      streamingStartRef.current = null
 
       await window.biav.sendMessage({
         conversationId,

@@ -25,6 +25,7 @@ contextBridge.exposeInMainWorld('biav', {
   pinConversation: (id: string, pinned: boolean) => ipcRenderer.invoke('conversations:pin', id, pinned),
   forkConversation: (conversationId: string, messageId: string) => ipcRenderer.invoke('conversations:fork', conversationId, messageId),
   exportConversation: (id: string, format: 'md' | 'json') => ipcRenderer.invoke('conversations:export', id, format),
+  importConversation: () => ipcRenderer.invoke('conversations:import'),
 
   // Edit & Regenerate
   editMessage: (req: { conversationId: string; messageId: string; content: string }) =>
@@ -83,6 +84,16 @@ contextBridge.exposeInMainWorld('biav', {
 
   // Platform
   platform: process.platform,
+
+  // Process versions (Electron, Chrome, Node)
+  versions: {
+    electron: process.versions.electron ?? '',
+    chrome: process.versions.chrome ?? '',
+    node: process.versions.node ?? '',
+  },
+
+  // Shell
+  openExternal: (url: string) => ipcRenderer.invoke('shell:openExternal', url),
 
   // Updater
   checkForUpdate: () => ipcRenderer.invoke('updater:check'),
