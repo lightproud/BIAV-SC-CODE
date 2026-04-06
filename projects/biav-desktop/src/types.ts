@@ -1,5 +1,12 @@
 export type LLMProvider = 'claude' | 'openai'
 
+export interface Attachment {
+  name: string
+  path: string
+  type: string
+  content: string
+}
+
 export interface Message {
   id: string
   conversation_id: string
@@ -40,6 +47,7 @@ declare global {
         message: string
         provider: string
         model: string
+        attachments?: Attachment[]
       }) => Promise<void>
       onChatStream: (callback: (event: any, data: any) => void) => () => void
       stopStreaming: () => Promise<void>
@@ -48,9 +56,11 @@ declare global {
       listConversations: () => Promise<Conversation[]>
       getMessages: (conversationId: string) => Promise<Message[]>
       deleteConversation: (id: string) => Promise<void>
+      exportConversation: (id: string, format: 'md' | 'json') => Promise<{ ok: boolean; path?: string; error?: string }>
       listModels: () => Promise<ProviderStatus[]>
       getSettings: () => Promise<Settings>
       setSettings: (settings: Partial<Settings>) => Promise<void>
+      readFile: (path: string) => Promise<{ name: string; content: string; mimeType: string }>
       platform: string
     }
   }

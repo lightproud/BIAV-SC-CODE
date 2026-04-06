@@ -5,6 +5,7 @@ import ChatMessage from './components/ChatMessage'
 import ChatInput from './components/ChatInput'
 import ModelSelector from './components/ModelSelector'
 import SettingsModal from './components/SettingsModal'
+import ExportMenu from './components/ExportMenu'
 import type { Conversation, ProviderStatus } from './types'
 
 export default function App() {
@@ -98,6 +99,7 @@ export default function App() {
             </svg>
           </button>
           <div className="flex-1" />
+          <ExportMenu conversationId={conversationId} />
           <ModelSelector
             providers={providers}
             provider={provider}
