@@ -206,7 +206,7 @@ def fetch_reddit(subreddits=None):
                     continue
                 items.append({
                     'title': d['title'],
-                    'summary': (d.get('selftext', '') or '')[:200],
+                    'summary': (d.get('selftext', '') or ''),
                     'source': 'reddit',
                     'time': created.isoformat(),
                     'url': f"https://reddit.com{d['permalink']}",
