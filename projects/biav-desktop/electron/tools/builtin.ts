@@ -198,8 +198,13 @@ export async function executeBuiltinTool(
 // ============================================================
 
 function resolvePath(p: string): string {
-  if (path.isAbsolute(p)) return p
-  return path.resolve(workingDirectory, p)
+  const resolved = path.isAbsolute(p) ? p : path.resolve(workingDirectory, p)
+  // Security: prevent path traversal outside working directory
+  // Allow absolute paths (user explicitly requested), but block relative traversal
+  if (!path.isAbsolute(p) && !resolved.startsWith(workingDirectory)) {
+    throw new Error(`Path traversal blocked: ${p} resolves outside working directory`)
+  }
+  return resolved
 }
 
 function executeShell(command: string, timeout?: number): Promise<string> {
