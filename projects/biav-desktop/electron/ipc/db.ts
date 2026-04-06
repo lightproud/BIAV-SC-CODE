@@ -85,4 +85,47 @@ export function initDatabase() {
   if (!cols.some((c) => c.name === 'is_pinned')) {
     db.exec("ALTER TABLE conversations ADD COLUMN is_pinned INTEGER DEFAULT 0")
   }
+
+  // FTS5 virtual table for full-text search on message content
+  db.exec(`
+    CREATE VIRTUAL TABLE IF NOT EXISTS messages_fts USING fts5(
+      content,
+      conversation_id UNINDEXED,
+      message_id UNINDEXED
+    );
+  `)
+
+  // Triggers to keep FTS in sync with messages table
+  db.exec(`
+    CREATE TRIGGER IF NOT EXISTS messages_fts_insert
+    AFTER INSERT ON messages
+    BEGIN
+      INSERT INTO messages_fts(content, conversation_id, message_id)
+      VALUES (NEW.content, NEW.conversation_id, NEW.id);
+    END;
+
+    CREATE TRIGGER IF NOT EXISTS messages_fts_delete
+    AFTER DELETE ON messages
+    BEGIN
+      DELETE FROM messages_fts WHERE message_id = OLD.id;
+    END;
+
+    CREATE TRIGGER IF NOT EXISTS messages_fts_update
+    AFTER UPDATE OF content ON messages
+    BEGIN
+      DELETE FROM messages_fts WHERE message_id = OLD.id;
+      INSERT INTO messages_fts(content, conversation_id, message_id)
+      VALUES (NEW.content, NEW.conversation_id, NEW.id);
+    END;
+  `)
+
+  // Migrate: populate FTS from existing messages not yet indexed
+  const ftsCount = (db.prepare('SELECT COUNT(*) as cnt FROM messages_fts').get() as { cnt: number }).cnt
+  const msgCount = (db.prepare('SELECT COUNT(*) as cnt FROM messages').get() as { cnt: number }).cnt
+  if (ftsCount === 0 && msgCount > 0) {
+    db.exec(`
+      INSERT INTO messages_fts(content, conversation_id, message_id)
+      SELECT content, conversation_id, id FROM messages;
+    `)
+  }
 }
