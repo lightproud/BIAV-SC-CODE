@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import type { Message } from '../types'
+import type { Message, Attachment } from '../types'
 
 export function useChat() {
   const [messages, setMessages] = useState<Message[]>([])
@@ -56,7 +56,7 @@ export function useChat() {
   }, [])
 
   const sendMessage = useCallback(
-    async (content: string, provider: string, model: string) => {
+    async (content: string, provider: string, model: string, attachments?: Attachment[]) => {
       const userMsg: Message = {
         id: 'user-' + Date.now(),
         conversation_id: conversationId || '',
@@ -73,6 +73,7 @@ export function useChat() {
         message: content,
         provider,
         model,
+        attachments,
       })
     },
     [conversationId]

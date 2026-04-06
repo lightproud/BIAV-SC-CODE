@@ -13,6 +13,7 @@ export function registerChatHandlers() {
     message: string
     provider: string
     model: string
+    systemPrompt?: string
     attachments?: { name: string; path: string; type: string; content: string }[]
   }) => {
     const db = getDb()
@@ -25,8 +26,11 @@ export function registerChatHandlers() {
       conversationId = uuidv4()
       const title = req.message.slice(0, 50) + (req.message.length > 50 ? '…' : '')
       db.prepare(
-        'INSERT INTO conversations (id, title, provider, model) VALUES (?, ?, ?, ?)'
-      ).run(conversationId, title, req.provider, req.model)
+        'INSERT INTO conversations (id, title, provider, model, system_prompt) VALUES (?, ?, ?, ?, ?)'
+      ).run(conversationId, title, req.provider, req.model, req.systemPrompt || null)
+    } else if (req.systemPrompt !== undefined) {
+      // Update system_prompt if provided on an existing conversation
+      db.prepare('UPDATE conversations SET system_prompt = ? WHERE id = ?').run(req.systemPrompt || null, conversationId)
     }
 
     // Build message content with attachments
@@ -59,6 +63,12 @@ export function registerChatHandlers() {
     const history = db
       .prepare('SELECT role, content FROM messages WHERE conversation_id = ? ORDER BY created_at ASC')
       .all(conversationId) as { role: string; content: string }[]
+
+    // Prepend system prompt if set
+    const conv = db.prepare('SELECT system_prompt FROM conversations WHERE id = ?').get(conversationId) as { system_prompt: string | null } | undefined
+    if (conv?.system_prompt) {
+      history.unshift({ role: 'system', content: conv.system_prompt })
+    }
 
     // For Claude with image attachments, modify the last user message to use content blocks
     if (req.provider === 'claude' && imageAttachments.length > 0) {

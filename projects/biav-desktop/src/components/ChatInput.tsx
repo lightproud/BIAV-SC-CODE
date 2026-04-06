@@ -1,7 +1,10 @@
 import { useState, useRef, useCallback } from 'react'
+import type { Attachment } from '../types'
+
+const ACCEPTED_TYPES = '.txt,.md,.json,.py,.js,.ts,.csv,.png,.jpg,.jpeg,.pdf'
 
 interface Props {
-  onSend: (content: string) => void
+  onSend: (content: string, attachments: Attachment[]) => void
   onStop: () => void
   isStreaming: boolean
   disabled: boolean
@@ -9,7 +12,9 @@ interface Props {
 
 export default function ChatInput({ onSend, onStop, isStreaming, disabled }: Props) {
   const [text, setText] = useState('')
+  const [attachments, setAttachments] = useState<Attachment[]>([])
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const adjustHeight = useCallback(() => {
     const el = textareaRef.current
@@ -20,9 +25,10 @@ export default function ChatInput({ onSend, onStop, isStreaming, disabled }: Pro
 
   function handleSubmit() {
     const trimmed = text.trim()
-    if (!trimmed || isStreaming || disabled) return
-    onSend(trimmed)
+    if ((!trimmed && attachments.length === 0) || isStreaming || disabled) return
+    onSend(trimmed, attachments)
     setText('')
+    setAttachments([])
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto'
     }
@@ -35,44 +41,120 @@ export default function ChatInput({ onSend, onStop, isStreaming, disabled }: Pro
     }
   }
 
+  async function handleFileSelect(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = e.target.files
+    if (!files) return
+
+    for (const file of Array.from(files)) {
+      try {
+        const result = await window.biav.readFile(file.path)
+        setAttachments((prev) => [
+          ...prev,
+          {
+            name: result.name,
+            path: file.path,
+            type: result.mimeType,
+            content: result.content,
+          },
+        ])
+      } catch (err) {
+        console.error('Failed to read file:', file.path, err)
+      }
+    }
+
+    // Reset input so same file can be selected again
+    if (fileInputRef.current) {
+      fileInputRef.current.value = ''
+    }
+  }
+
+  function removeAttachment(index: number) {
+    setAttachments((prev) => prev.filter((_, i) => i !== index))
+  }
+
   return (
     <div className="border-t border-biav-border px-4 py-3">
-      <div className="max-w-3xl mx-auto flex items-end gap-2">
-        <textarea
-          ref={textareaRef}
-          value={text}
-          onChange={(e) => {
-            setText(e.target.value)
-            adjustHeight()
-          }}
-          onKeyDown={handleKeyDown}
-          placeholder="输入消息..."
-          rows={1}
-          disabled={disabled}
-          className="flex-1 resize-none bg-biav-surface border border-biav-border rounded-xl px-4 py-2.5 text-sm text-biav-text placeholder-biav-muted focus:outline-none focus:border-biav-gold-dim transition-colors"
-        />
-        {isStreaming ? (
-          <button
-            onClick={onStop}
-            className="shrink-0 w-10 h-10 rounded-xl bg-biav-danger/20 text-biav-danger flex items-center justify-center hover:bg-biav-danger/30 transition-colors"
-            title="停止"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <rect x="6" y="6" width="12" height="12" rx="2" />
-            </svg>
-          </button>
-        ) : (
-          <button
-            onClick={handleSubmit}
-            disabled={!text.trim() || disabled}
-            className="shrink-0 w-10 h-10 rounded-xl bg-biav-gold/20 text-biav-gold flex items-center justify-center hover:bg-biav-gold/30 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-            title="发送"
-          >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-            </svg>
-          </button>
+      <div className="max-w-3xl mx-auto">
+        {/* Attachment pills */}
+        {attachments.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 mb-2">
+            {attachments.map((att, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-biav-surface border border-biav-border text-xs text-biav-text"
+              >
+                <span className="truncate max-w-[150px]">{att.name}</span>
+                <button
+                  onClick={() => removeAttachment(i)}
+                  className="text-biav-muted hover:text-biav-text ml-0.5"
+                  title="移除"
+                >
+                  &times;
+                </button>
+              </span>
+            ))}
+          </div>
         )}
+
+        <div className="flex items-end gap-2">
+          {/* Hidden file input */}
+          <input
+            ref={fileInputRef}
+            type="file"
+            multiple
+            accept={ACCEPTED_TYPES}
+            onChange={handleFileSelect}
+            className="hidden"
+          />
+
+          {/* Attachment button */}
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            disabled={disabled || isStreaming}
+            className="shrink-0 w-10 h-10 rounded-xl bg-biav-surface border border-biav-border text-biav-muted flex items-center justify-center hover:text-biav-text hover:border-biav-gold-dim disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            title="添加附件"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+            </svg>
+          </button>
+
+          <textarea
+            ref={textareaRef}
+            value={text}
+            onChange={(e) => {
+              setText(e.target.value)
+              adjustHeight()
+            }}
+            onKeyDown={handleKeyDown}
+            placeholder="输入消息..."
+            rows={1}
+            disabled={disabled}
+            className="flex-1 resize-none bg-biav-surface border border-biav-border rounded-xl px-4 py-2.5 text-sm text-biav-text placeholder-biav-muted focus:outline-none focus:border-biav-gold-dim transition-colors"
+          />
+          {isStreaming ? (
+            <button
+              onClick={onStop}
+              className="shrink-0 w-10 h-10 rounded-xl bg-biav-danger/20 text-biav-danger flex items-center justify-center hover:bg-biav-danger/30 transition-colors"
+              title="停止"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="6" y="6" width="12" height="12" rx="2" />
+              </svg>
+            </button>
+          ) : (
+            <button
+              onClick={handleSubmit}
+              disabled={(!text.trim() && attachments.length === 0) || disabled}
+              className="shrink-0 w-10 h-10 rounded-xl bg-biav-gold/20 text-biav-gold flex items-center justify-center hover:bg-biav-gold/30 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              title="发送"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+            </button>
+          )}
+        </div>
       </div>
     </div>
   )

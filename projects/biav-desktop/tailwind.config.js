@@ -1,15 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './quick-entry.html', './src/**/*.{js,ts,jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         biav: {
-          bg: '#0a0b10',
-          surface: '#12131a',
-          border: '#1e1f2a',
-          text: '#d4c9a8',
-          muted: '#8a8070',
+          bg: 'var(--biav-bg)',
+          surface: 'var(--biav-surface)',
+          border: 'var(--biav-border)',
+          text: 'var(--biav-text)',
+          muted: 'var(--biav-muted)',
           gold: '#c5a356',
           'gold-bright': '#e2c97e',
           'gold-dim': '#8a7a40',
