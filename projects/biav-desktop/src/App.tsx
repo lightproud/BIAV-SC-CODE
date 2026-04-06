@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useChat } from './hooks/useChat'
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
+import { useTheme } from './hooks/useTheme'
 import Sidebar from './components/Sidebar'
 import ChatMessage from './components/ChatMessage'
 import ChatInput from './components/ChatInput'
@@ -10,6 +11,7 @@ import ShortcutsModal from './components/ShortcutsModal'
 import ExportMenu from './components/ExportMenu'
 import UpdateNotice from './components/UpdateNotice'
 import ArtifactsPanel from './components/ArtifactsPanel'
+import SystemPromptEditor from './components/SystemPromptEditor'
 import { parseArtifacts } from './lib/parseArtifacts'
 import type { Conversation, ProviderStatus, Attachment, Artifact } from './types'
 
@@ -27,6 +29,8 @@ export default function App() {
     regenerate,
   } = useChat()
 
+  const { theme, toggleTheme } = useTheme()
+
   const [conversations, setConversations] = useState<Conversation[]>([])
   const [providers, setProviders] = useState<ProviderStatus[]>([])
   const [provider, setProvider] = useState('claude')
@@ -34,6 +38,9 @@ export default function App() {
   const [showSettings, setShowSettings] = useState(false)
   const [showShortcuts, setShowShortcuts] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(true)
+  const [artifacts, setArtifacts] = useState<Artifact[]>([])
+  const [showArtifacts, setShowArtifacts] = useState(false)
+  const [systemPrompt, setSystemPrompt] = useState('')
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   // Global keyboard shortcuts
@@ -56,9 +63,33 @@ export default function App() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages, streamingContent])
 
-  // Refresh conversation list when a new conversation is created
+  // Parse artifacts from messages
   useEffect(() => {
-    if (conversationId) refreshConversations()
+    const allMessages = [...messages]
+    if (isStreaming && streamingContent) {
+      allMessages.push({
+        id: 'streaming',
+        conversation_id: '',
+        role: 'assistant',
+        content: streamingContent,
+        created_at: '',
+      })
+    }
+    const parsed = parseArtifacts(allMessages)
+    setArtifacts(parsed)
+    if (parsed.length > 0 && !showArtifacts) {
+      setShowArtifacts(true)
+    }
+  }, [messages, streamingContent, isStreaming])
+
+  // Load system prompt when conversation changes
+  useEffect(() => {
+    if (conversationId) {
+      refreshConversations()
+      window.biav.getSystemPrompt(conversationId).then((p) => setSystemPrompt(p || ''))
+    } else {
+      setSystemPrompt('')
+    }
   }, [conversationId])
 
   async function refreshConversations() {
@@ -83,7 +114,14 @@ export default function App() {
   }
 
   function handleSend(content: string, attachments: Attachment[]) {
-    sendMessage(content, provider, model, attachments.length > 0 ? attachments : undefined)
+    sendMessage(content, provider, model, attachments.length > 0 ? attachments : undefined, systemPrompt || undefined)
+  }
+
+  async function handleSystemPromptChange(prompt: string) {
+    setSystemPrompt(prompt)
+    if (conversationId) {
+      await window.biav.setSystemPrompt(conversationId, prompt)
+    }
   }
 
   const isMac = window.biav.platform === 'darwin'
@@ -99,6 +137,8 @@ export default function App() {
           onDelete={handleDeleteConversation}
           onNewChat={resetChat}
           onOpenSettings={() => setShowSettings(true)}
+          theme={theme}
+          onToggleTheme={toggleTheme}
         />
       )}
 
