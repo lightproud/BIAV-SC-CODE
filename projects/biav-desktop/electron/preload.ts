@@ -20,6 +20,7 @@ contextBridge.exposeInMainWorld('biav', {
   listConversations: () => ipcRenderer.invoke('conversations:list'),
   getMessages: (conversationId: string) => ipcRenderer.invoke('conversations:messages', conversationId),
   deleteConversation: (id: string) => ipcRenderer.invoke('conversations:delete', id),
+  exportConversation: (id: string, format: 'md' | 'json') => ipcRenderer.invoke('conversations:export', id, format),
 
   // Edit & Regenerate
   editMessage: (req: { conversationId: string; messageId: string; content: string }) =>
@@ -33,6 +34,9 @@ contextBridge.exposeInMainWorld('biav', {
   // Settings
   getSettings: () => ipcRenderer.invoke('settings:get'),
   setSettings: (settings: Record<string, any>) => ipcRenderer.invoke('settings:set', settings),
+
+  // Files
+  readFile: (path: string) => ipcRenderer.invoke('file:read', path),
 
   // Platform
   platform: process.platform,

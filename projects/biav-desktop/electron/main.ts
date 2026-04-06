@@ -1,12 +1,14 @@
-import { app, BrowserWindow, globalShortcut, Menu, Tray, nativeImage, ipcMain, shell } from 'electron'
+import { app, BrowserWindow, globalShortcut, Menu, Tray, nativeImage, ipcMain, shell, screen } from 'electron'
 import path from 'path'
 import { initDatabase } from './ipc/db'
 import { registerChatHandlers } from './ipc/chat'
 import { registerConversationHandlers } from './ipc/conversations'
 import { registerModelHandlers } from './ipc/models'
 import { registerSettingsHandlers } from './ipc/settings'
+import { registerExportHandlers } from './ipc/export'
 
 let mainWindow: BrowserWindow | null = null
+let quickEntryWindow: BrowserWindow | null = null
 let tray: Tray | null = null
 
 const VITE_DEV_SERVER_URL = process.env.VITE_DEV_SERVER_URL
@@ -78,6 +80,57 @@ function createTray() {
   tray.on('click', () => mainWindow?.show())
 }
 
+function createQuickEntry() {
+  const { width: screenWidth, height: screenHeight } = screen.getPrimaryDisplay().workAreaSize
+
+  quickEntryWindow = new BrowserWindow({
+    width: 600,
+    height: 80,
+    x: Math.round((screenWidth - 600) / 2),
+    y: Math.round((screenHeight - 80) / 3),
+    frame: false,
+    transparent: true,
+    alwaysOnTop: true,
+    resizable: false,
+    skipTaskbar: true,
+    show: false,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: true,
+      nodeIntegration: false,
+    },
+  })
+
+  if (VITE_DEV_SERVER_URL) {
+    quickEntryWindow.loadURL(`${VITE_DEV_SERVER_URL}quick-entry.html`)
+  } else {
+    quickEntryWindow.loadFile(path.join(__dirname, '../dist/quick-entry.html'))
+  }
+
+  quickEntryWindow.on('blur', () => {
+    quickEntryWindow?.hide()
+  })
+
+  quickEntryWindow.on('closed', () => {
+    quickEntryWindow = null
+  })
+}
+
+function registerQuickEntryIPC() {
+  ipcMain.handle('quick-entry:submit', (_event, text: string) => {
+    if (mainWindow) {
+      mainWindow.webContents.send('quick-entry:received', text)
+      mainWindow.show()
+      mainWindow.focus()
+    }
+    quickEntryWindow?.hide()
+  })
+
+  ipcMain.handle('quick-entry:hide', () => {
+    quickEntryWindow?.hide()
+  })
+}
+
 function registerGlobalShortcut() {
   globalShortcut.register('CommandOrControl+Shift+B', () => {
     if (mainWindow?.isVisible()) {
@@ -85,6 +138,15 @@ function registerGlobalShortcut() {
     } else {
       mainWindow?.show()
       mainWindow?.focus()
+    }
+  })
+
+  globalShortcut.register('Alt+Space', () => {
+    if (quickEntryWindow?.isVisible()) {
+      quickEntryWindow.hide()
+    } else {
+      quickEntryWindow?.show()
+      quickEntryWindow?.focus()
     }
   })
 }
@@ -95,9 +157,12 @@ app.whenReady().then(() => {
   registerConversationHandlers()
   registerModelHandlers()
   registerSettingsHandlers()
+  registerExportHandlers()
 
   createWindow()
+  createQuickEntry()
   createTray()
+  registerQuickEntryIPC()
   registerGlobalShortcut()
 
   app.on('activate', () => {
