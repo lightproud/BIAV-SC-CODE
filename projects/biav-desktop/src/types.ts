@@ -24,6 +24,7 @@ export interface Conversation {
   model: string
   system_prompt?: string | null
   project_id?: string | null
+  is_pinned?: number
   created_at: string
   updated_at: string
 }
@@ -91,6 +92,7 @@ declare global {
       listConversations: () => Promise<Conversation[]>
       getMessages: (conversationId: string) => Promise<Message[]>
       deleteConversation: (id: string) => Promise<void>
+      pinConversation: (id: string, pinned: boolean) => Promise<{ ok: boolean }>
       forkConversation: (conversationId: string, messageId: string) => Promise<{ conversationId: string }>
       exportConversation: (id: string, format: 'md' | 'json') => Promise<{ ok: boolean; path?: string; error?: string }>
       listModels: () => Promise<ProviderStatus[]>

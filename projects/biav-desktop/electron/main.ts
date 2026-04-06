@@ -10,7 +10,11 @@ import { registerExportHandlers } from './ipc/export'
 import { registerFileHandlers } from './ipc/files'
 import { registerContextMenuHandlers } from './ipc/context-menu'
 import { registerProjectHandlers } from './ipc/projects'
+import { registerMCPHandlers } from './ipc/mcp'
+import { MCPManager } from './mcp/manager'
 import { initUpdater, checkForUpdate, downloadUpdate, installUpdate } from './updater'
+
+const mcpManager = new MCPManager()
 
 let mainWindow: BrowserWindow | null = null
 let quickEntryWindow: BrowserWindow | null = null
@@ -217,6 +221,7 @@ app.whenReady().then(() => {
   registerFileHandlers()
   registerProjectHandlers()
   registerContextMenuHandlers()
+  registerMCPHandlers(mcpManager)
 
   createWindow()
   createQuickEntry()
@@ -245,4 +250,5 @@ app.on('window-all-closed', () => {
 
 app.on('will-quit', () => {
   globalShortcut.unregisterAll()
+  mcpManager.stopAll()
 })

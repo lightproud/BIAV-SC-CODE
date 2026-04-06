@@ -181,6 +181,16 @@ export function registerChatHandlers() {
         })
       }
 
+      // Generate smart title for new conversations based on user's first message
+      if (isNewConversation && conversationId) {
+        const firstSentence = req.message.replace(/\n/g, ' ').replace(/[.!?。！？].*$/, '').trim()
+        const smartTitle = firstSentence.length > 40
+          ? firstSentence.slice(0, 39) + '…'
+          : firstSentence || req.message.slice(0, 40)
+        db.prepare('UPDATE conversations SET title = ? WHERE id = ?').run(smartTitle, conversationId)
+        win.webContents.send('chat:stream', { type: 'titleUpdate', title: smartTitle })
+      }
+
       // Update conversation timestamp
       db.prepare('UPDATE conversations SET updated_at = datetime("now") WHERE id = ?').run(conversationId)
 
