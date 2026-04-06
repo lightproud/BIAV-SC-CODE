@@ -64,6 +64,7 @@ export function registerChatHandlers(mcpManager: MCPManager) {
     provider: string
     model: string
     systemPrompt?: string
+    stylePrompt?: string
     attachments?: { name: string; path: string; type: string; content: string }[]
     temperature?: number
     maxTokens?: number
@@ -119,10 +120,17 @@ export function registerChatHandlers(mcpManager: MCPManager) {
       .prepare('SELECT role, content FROM messages WHERE conversation_id = ? ORDER BY created_at ASC')
       .all(conversationId) as { role: string; content: any }[]
 
-    // Prepend system prompt if set
+    // Prepend system prompt if set, combining with style prompt if active
     const conv = db.prepare('SELECT system_prompt FROM conversations WHERE id = ?').get(conversationId) as { system_prompt: string | null } | undefined
+    const systemParts: string[] = []
+    if (req.stylePrompt) {
+      systemParts.push(req.stylePrompt)
+    }
     if (conv?.system_prompt) {
-      history.unshift({ role: 'system', content: conv.system_prompt })
+      systemParts.push(conv.system_prompt)
+    }
+    if (systemParts.length > 0) {
+      history.unshift({ role: 'system', content: systemParts.join('\n\n') })
     }
 
     // For Claude with image attachments, modify the last user message to use content blocks

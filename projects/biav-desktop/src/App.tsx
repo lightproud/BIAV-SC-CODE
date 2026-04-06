@@ -22,6 +22,8 @@ import UsageBar, { SessionUsageBar } from './components/UsageBar'
 import StreamingStatus from './components/StreamingStatus'
 import ClipboardHistory from './components/ClipboardHistory'
 import ModelParamsPanel from './components/ModelParams'
+import ToolApproval from './components/ToolApproval'
+import ToolResult from './components/ToolResult'
 import type { Conversation, Project, ProviderStatus, Attachment, Artifact, ModelParams } from './types'
 
 export default function App() {
@@ -42,6 +44,8 @@ export default function App() {
     lastUsage,
     sessionUsage,
     titleUpdateCounter,
+    pendingTools,
+    approveToolUse,
   } = useChat()
 
   const { theme, mode, setMode } = useTheme()
@@ -81,9 +85,9 @@ export default function App() {
     refreshModels()
   }, [])
 
-  // Build the virtual list items: messages + optional streaming message + optional usage bar
+  // Build the virtual list items: messages + tool events + optional streaming message + optional usage bar
   const virtualItems = useMemo(() => {
-    const items: Array<{ type: 'message' | 'streaming' | 'usage'; data?: any }> = messages.map((msg) => ({
+    const items: Array<{ type: 'message' | 'streaming' | 'usage' | 'tool_approval' | 'tool_result'; data?: any }> = messages.map((msg) => ({
       type: 'message' as const,
       data: msg,
     }))
@@ -99,11 +103,19 @@ export default function App() {
         },
       })
     }
+    // Add pending tool items
+    for (const tool of pendingTools) {
+      if (tool.status === 'done') {
+        items.push({ type: 'tool_result', data: tool })
+      } else {
+        items.push({ type: 'tool_approval', data: tool })
+      }
+    }
     if (!isStreaming && lastUsage) {
       items.push({ type: 'usage', data: lastUsage })
     }
     return items
-  }, [messages, isStreaming, streamingContent, streamingThinking, lastUsage])
+  }, [messages, isStreaming, streamingContent, streamingThinking, lastUsage, pendingTools])
 
   // Parse artifacts from messages
   useEffect(() => {
@@ -338,6 +350,12 @@ export default function App() {
                 const inner = (() => {
                   if (item.type === 'usage') {
                     return <UsageBar usage={item.data} />
+                  }
+                  if (item.type === 'tool_approval') {
+                    return <ToolApproval tool={item.data} onApprove={approveToolUse} />
+                  }
+                  if (item.type === 'tool_result') {
+                    return <ToolResult tool={item.data} />
                   }
                   if (item.type === 'streaming') {
                     return (

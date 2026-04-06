@@ -13,22 +13,39 @@ function getExtension(name: string): string {
   return i >= 0 ? name.slice(i).toLowerCase() : ''
 }
 
-function formatSize(bytes: number): string {
-  if (bytes < 1024) return `${bytes} B`
-  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
-  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
-}
-
 async function readFileAsAttachment(file: File): Promise<Attachment | null> {
   const ext = getExtension(file.name)
   if (!ACCEPTED_EXTENSIONS.has(ext)) return null
 
   if (ext === '.pdf') {
-    return {
-      name: file.name,
-      path: '',
-      type: file.type || 'application/pdf',
-      content: `[PDF: ${file.name} (${formatSize(file.size)})]`,
+    try {
+      const arrayBuffer = await file.arrayBuffer()
+      const base64 = btoa(
+        new Uint8Array(arrayBuffer).reduce((data, byte) => data + String.fromCharCode(byte), '')
+      )
+      const result = await window.biav.parsePdf(base64, file.name)
+      if (result.ok && result.content) {
+        return {
+          name: file.name,
+          path: '',
+          type: file.type || 'application/pdf',
+          content: result.content,
+        }
+      }
+      // Parsing failed — show error as content
+      return {
+        name: file.name,
+        path: '',
+        type: file.type || 'application/pdf',
+        content: result.error || `[PDF 解析失败: ${file.name}]`,
+      }
+    } catch {
+      return {
+        name: file.name,
+        path: '',
+        type: file.type || 'application/pdf',
+        content: `[PDF 解析失败: ${file.name}]`,
+      }
     }
   }
 
