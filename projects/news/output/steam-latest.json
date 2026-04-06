@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-06T06:21:35.129830+00:00",
+  "collected_at": "2026-04-06T10:43:54.984041+00:00",
   "source": "steam",
   "item_count": 12,
   "items": [
@@ -16,7 +16,7 @@
       "voted_up": true,
       "review": "上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好 \nPVE 算力构筑 对的上xp的 一玩就是天亮了系列\n送的和活动给的资源非常多， 主线做做 活动玩玩 ，不氪金游戏自带送的4小只强度很高 搭配很灵活配队不死绑，自由度非常高 ，0氪就能全破 能体验到游戏所有内容，有点追求的 氪完双倍就能爽玩\nPVP 对战 纯公平 良心卡牌竞技 ，现在这样的二游卡牌 PVP",
       "timestamp_created": 1775380027,
-      "playtime_forever": 3688
+      "playtime_forever": 3889
     },
     {
       "source": "steam",
@@ -31,7 +31,22 @@
       "voted_up": true,
       "review": "Just sitting in my hideout menu hits me hard in the nostalgia melancholy feels with that absolutely gorgeous music..\n\nAs I start the next mission a new soul-crushingly beautiful little tune plays and",
       "timestamp_created": 1775327953,
-      "playtime_forever": 2403
+      "playtime_forever": 2621
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T01:29:29+00:00",
+      "lang": "english",
+      "title": "[正面] Who made this game?",
+      "summary": "Who made this game?",
+      "url": "https://steamcommunity.com/profiles/76561198878671133/recommended/3052450",
+      "author": "76561198878671133",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Who made this game?",
+      "timestamp_created": 1775438969,
+      "playtime_forever": 2590
     },
     {
       "source": "steam",
@@ -61,7 +76,7 @@
       "voted_up": true,
       "review": "windows系统steam平台运行越运行越卡。肉鸽地图加角色养成，角色配队就是流派，启灵需要反复抽中才行，1到3启只需要4个同角色，但3启到4启满激活需要12个同角色。二次元抽卡游戏的弊病学了个十成十。",
       "timestamp_created": 1775415055,
-      "playtime_forever": 2443
+      "playtime_forever": 2688
     },
     {
       "source": "steam",
@@ -136,7 +151,7 @@
       "voted_up": true,
       "review": "Slay the Spire gameplay + Reverse 1999-like story but lovecraftian, story has been cool so far\nMorimens is also generous with pulls, so there's no issue w/ progressing w/o spending money",
       "timestamp_created": 1775387899,
-      "playtime_forever": 960
+      "playtime_forever": 1048
     },
     {
       "source": "steam",
@@ -166,22 +181,7 @@
       "voted_up": true,
       "review": "worth checking out if you like sts or pmoon games",
       "timestamp_created": 1775317354,
-      "playtime_forever": 35151
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-04T06:42:08+00:00",
-      "lang": "english",
-      "title": "[正面] kathi my mommy 10/10",
-      "summary": "kathi my mommy 10/10",
-      "url": "https://steamcommunity.com/profiles/76561199072766739/recommended/3052450",
-      "author": "76561199072766739",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "kathi my mommy 10/10",
-      "timestamp_created": 1775284928,
-      "playtime_forever": 3345
+      "playtime_forever": 35315
     }
   ]
 }

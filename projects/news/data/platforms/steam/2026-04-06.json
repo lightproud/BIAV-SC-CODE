@@ -1,8 +1,8 @@
 {
   "date": "2026-04-06",
-  "archived_at": "2026-04-06T06:21:35.429406+00:00",
+  "archived_at": "2026-04-06T10:43:56.191614+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -198,6 +198,21 @@
       "review": "windows系统steam平台运行越运行越卡。肉鸽地图加角色养成，角色配队就是流派，启灵需要反复抽中才行，1到3启只需要4个同角色，但3启到4启满激活需要12个同角色。二次元抽卡游戏的弊病学了个十成十。",
       "timestamp_created": 1775415055,
       "playtime_forever": 2443
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T01:29:29+00:00",
+      "lang": "english",
+      "title": "[正面] Who made this game?",
+      "summary": "Who made this game?",
+      "url": "https://steamcommunity.com/profiles/76561198878671133/recommended/3052450",
+      "author": "76561198878671133",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Who made this game?",
+      "timestamp_created": 1775438969,
+      "playtime_forever": 2590
     }
   ]
 }

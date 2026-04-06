@@ -1,14 +1,13 @@
 # 忘却前夜 社区日报 2026-04-06
 
-> 采集时间：2026-04-06 14:21 UTC+8
+> 采集时间：2026-04-06 18:43 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【电吉他】沙耶之歌ED - ガラスのくつ (玻璃鞋) solo — engagement: 171
-2. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-3. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
-4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+1. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+2. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 
 ## 总览
 
@@ -17,7 +16,7 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 3 |
+| Bilibili | 10 |
 | DCInside | 0（沉默）|
 | Discord | 6 |
 | 抖音 | 0（沉默）|
@@ -41,7 +40,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 0（沉默）|
 | Ruliweb | 0（沉默）|
-| Steam | 9 |
+| Steam | 8 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -73,13 +72,12 @@
 
 ## Steam 评论
 
-- 好评 9 / 差评 0 / 好评率 100%
-- 语言分布：english 4, schinese 3, koreana 1, russian 1
+- 好评 8 / 差评 0 / 好评率 100%
+- 语言分布：english 4, schinese 2, koreana 1, russian 1
 
 ### 热门好评
 
-1. [正面] 上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好 
-PV... — engagement: 3
+1. [正面] Who made this game? — engagement: 0
 2. [正面] Very engaging gameplay, I find myself stuck playin... — engagement: 0
 3. [正面] windows系统steam平台运行越运行越卡。肉鸽地图加角色养成，角色配队就是流派，启灵需要反复抽... — engagement: 0
 4. [正面] 아름다운 스토리와 그래픽, 게임성이 훌륭함.
@@ -88,9 +86,11 @@ ai 번역이 단점이지만, 번역 이슈가 있음에... — engagement: 0
 
 ## Bilibili
 
-1. 生活不易肉块卖艺（简介有鬼） — engagement: 198
-2. 【电吉他】沙耶之歌ED - ガラスのくつ (玻璃鞋) solo — engagement: 171
-3. 沙耶郁纪比舞 — engagement: 140
+1. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 3344
+2. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 3344
+3. [忘却前夜]最艺术的一集 — engagement: 1058
+4. [忘却前夜]最艺术的一集 — engagement: 1058
+5. 【忘却前夜】自建号补超限绒朵！ — engagement: 262
 
 ## Gamerch Wiki
 
