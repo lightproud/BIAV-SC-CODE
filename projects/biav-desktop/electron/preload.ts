@@ -95,4 +95,14 @@ contextBridge.exposeInMainWorld('biav', {
     ipcRenderer.on('updater:update-downloaded', handler)
     return () => ipcRenderer.removeListener('updater:update-downloaded', handler)
   },
+
+  // MCP
+  mcpListServers: () => ipcRenderer.invoke('mcp:list-servers'),
+  mcpStartServer: (name: string) => ipcRenderer.invoke('mcp:start', name),
+  mcpStopServer: (name: string) => ipcRenderer.invoke('mcp:stop', name),
+  mcpListTools: (serverName: string) => ipcRenderer.invoke('mcp:list-tools', serverName),
+  mcpCallTool: (serverName: string, toolName: string, args: Record<string, unknown>) =>
+    ipcRenderer.invoke('mcp:call-tool', serverName, toolName, args),
+  mcpGetConfig: () => ipcRenderer.invoke('mcp:get-config'),
+  mcpSaveConfig: (config: any) => ipcRenderer.invoke('mcp:save-config', config),
 })
