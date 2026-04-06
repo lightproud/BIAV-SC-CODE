@@ -12,6 +12,11 @@ interface Props {
 
 export default function Sidebar({ conversations, activeId, onSelect, onDelete, onNewChat, onOpenSettings }: Props) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
+  const [searchQuery, setSearchQuery] = useState('')
+
+  const filteredConversations = searchQuery
+    ? conversations.filter((c) => c.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    : conversations
 
   return (
     <div className="w-64 shrink-0 flex flex-col border-r border-biav-border bg-biav-surface h-full">
@@ -32,9 +37,37 @@ export default function Sidebar({ conversations, activeId, onSelect, onDelete, o
         </button>
       </div>
 
+      {/* Search */}
+      <div className="px-3 pb-2">
+        <div className="relative">
+          <svg
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 text-biav-muted"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="搜索对话..."
+            className="w-full bg-biav-bg border border-biav-border rounded-lg pl-8 pr-3 py-1.5 text-sm text-biav-text placeholder:text-biav-muted focus:outline-none focus:border-biav-gold transition-colors"
+          />
+        </div>
+      </div>
+
       {/* Conversation List */}
       <div className="flex-1 overflow-y-auto px-2">
-        {conversations.map((conv) => (
+        {filteredConversations.length === 0 && searchQuery ? (
+          <p className="text-center text-sm text-biav-muted py-4">无匹配对话</p>
+        ) : null}
+        {filteredConversations.map((conv) => (
           <div
             key={conv.id}
             className={`group flex items-center gap-1 px-3 py-2 rounded-lg cursor-pointer text-sm mb-0.5 transition-colors ${
