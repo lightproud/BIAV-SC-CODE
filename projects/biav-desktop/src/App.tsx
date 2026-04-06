@@ -9,7 +9,7 @@ import SettingsModal from './components/SettingsModal'
 import ShortcutsModal from './components/ShortcutsModal'
 import ExportMenu from './components/ExportMenu'
 import UpdateNotice from './components/UpdateNotice'
-import type { Conversation, ProviderStatus } from './types'
+import type { Conversation, ProviderStatus, Attachment } from './types'
 
 export default function App() {
   const {
