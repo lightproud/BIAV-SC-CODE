@@ -43,6 +43,8 @@ declare global {
       }) => Promise<void>
       onChatStream: (callback: (event: any, data: any) => void) => () => void
       stopStreaming: () => Promise<void>
+      editMessage: (req: { conversationId: string; messageId: string; content: string }) => Promise<void>
+      regenerateMessage: (req: { conversationId: string; afterMessageId: string }) => Promise<void>
       listConversations: () => Promise<Conversation[]>
       getMessages: (conversationId: string) => Promise<Message[]>
       deleteConversation: (id: string) => Promise<void>

@@ -21,6 +21,12 @@ contextBridge.exposeInMainWorld('biav', {
   getMessages: (conversationId: string) => ipcRenderer.invoke('conversations:messages', conversationId),
   deleteConversation: (id: string) => ipcRenderer.invoke('conversations:delete', id),
 
+  // Edit & Regenerate
+  editMessage: (req: { conversationId: string; messageId: string; content: string }) =>
+    ipcRenderer.invoke('chat:edit', req),
+  regenerateMessage: (req: { conversationId: string; afterMessageId: string }) =>
+    ipcRenderer.invoke('chat:regenerate', req),
+
   // Models
   listModels: () => ipcRenderer.invoke('models:list'),
 

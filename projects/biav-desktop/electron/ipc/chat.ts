@@ -104,4 +104,35 @@ export function registerChatHandlers() {
     abortController?.abort()
     return { ok: true }
   })
+
+  ipcMain.handle('chat:edit', async (_event, req: {
+    conversationId: string
+    messageId: string
+    content: string
+  }) => {
+    const db = getDb()
+    // Delete all messages after the given message
+    const msg = db.prepare('SELECT created_at FROM messages WHERE id = ?').get(req.messageId) as { created_at: string } | undefined
+    if (msg) {
+      db.prepare(
+        'DELETE FROM messages WHERE conversation_id = ? AND created_at > ?'
+      ).run(req.conversationId, msg.created_at)
+      // Update the message content
+      db.prepare('UPDATE messages SET content = ? WHERE id = ?').run(req.content, req.messageId)
+    }
+  })
+
+  ipcMain.handle('chat:regenerate', async (_event, req: {
+    conversationId: string
+    afterMessageId: string
+  }) => {
+    const db = getDb()
+    // Delete all messages after the given message ID
+    const msg = db.prepare('SELECT created_at FROM messages WHERE id = ?').get(req.afterMessageId) as { created_at: string } | undefined
+    if (msg) {
+      db.prepare(
+        'DELETE FROM messages WHERE conversation_id = ? AND created_at > ?'
+      ).run(req.conversationId, msg.created_at)
+    }
+  })
 }

@@ -112,6 +112,37 @@
   background: rgba(30, 26, 16, 0.3);
 }
 
+/* highlight.js BIAV theme */
+.hljs {
+  background: #1e1a10;
+  color: #d4c9a8;
+  border: 1px solid #2a2520;
+  border-radius: 6px;
+  padding: 1em;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-built_in,
+.hljs-type { color: #c5a356; }
+.hljs-string,
+.hljs-attr { color: #7a9a50; }
+.hljs-comment,
+.hljs-quote { color: #6a6050; font-style: italic; }
+.hljs-number,
+.hljs-literal { color: #c0785a; }
+.hljs-title,
+.hljs-section,
+.hljs-function { color: #e2c97e; }
+.hljs-variable,
+.hljs-template-variable { color: #d4c9a8; }
+.hljs-params { color: #b0a890; }
+.hljs-regexp { color: #c5a356; }
+.hljs-meta { color: #8a8070; }
+.hljs-deletion { color: #c0785a; }
+.hljs-addition { color: #7a9a50; }
+
 /* Typing cursor */
 @keyframes blink {
   0%, 100% { opacity: 1; }
