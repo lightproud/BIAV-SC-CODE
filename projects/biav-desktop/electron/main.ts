@@ -88,7 +88,13 @@ function createWindow() {
     minHeight: 500,
     title: 'Brain in a Vat',
     backgroundColor: '#0a0b10',
+    frame: false,
     titleBarStyle: 'hiddenInset',
+    titleBarOverlay: process.platform === 'win32' ? {
+      color: '#0a0b10',
+      symbolColor: '#e8d5b5',
+      height: 40,
+    } : undefined,
     trafficLightPosition: { x: 16, y: 16 },
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
