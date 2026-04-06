@@ -86,6 +86,26 @@ export function initDatabase() {
     db.exec("ALTER TABLE conversations ADD COLUMN is_pinned INTEGER DEFAULT 0")
   }
 
+  // Tool calls table — persists tool invocations and results
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS tool_calls (
+      id TEXT PRIMARY KEY,
+      conversation_id TEXT NOT NULL,
+      message_id TEXT,
+      tool_name TEXT NOT NULL,
+      server_name TEXT NOT NULL DEFAULT 'built-in',
+      input_json TEXT NOT NULL DEFAULT '{}',
+      result_text TEXT,
+      is_error INTEGER NOT NULL DEFAULT 0,
+      approved INTEGER NOT NULL DEFAULT 0,
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      FOREIGN KEY (conversation_id) REFERENCES conversations(id) ON DELETE CASCADE
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_tool_calls_conv
+      ON tool_calls(conversation_id, created_at);
+  `)
+
   // FTS5 virtual table for full-text search on message content
   db.exec(`
     CREATE VIRTUAL TABLE IF NOT EXISTS messages_fts USING fts5(

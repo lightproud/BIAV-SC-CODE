@@ -20,6 +20,7 @@ contextBridge.exposeInMainWorld('biav', {
 
   stopStreaming: (conversationId?: string) => ipcRenderer.invoke('chat:stop', conversationId),
   getTasks: () => ipcRenderer.invoke('chat:tasks'),
+  getToolHistory: (conversationId: string) => ipcRenderer.invoke('chat:tool-history', conversationId),
 
   // Conversations
   listConversations: () => ipcRenderer.invoke('conversations:list'),
