@@ -125,7 +125,7 @@ def _parse_topic_api_body(body: dict) -> list[dict]:
 
         results.append({
             "title": str(title).strip(),
-            "summary": str(item.get("summary") or item.get("intro") or "")[:300].strip(),
+            "summary": str(item.get("summary") or item.get("intro") or "").strip(),
             "like_count": like_count,
             "comment_count": comment_count,
             "created": created.isoformat(),
@@ -323,7 +323,7 @@ def _parse_review_api_body(body: dict) -> list[dict]:
 
         results.append({
             "title": title,
-            "summary": str(content)[:300].strip(),
+            "summary": str(content).strip(),
             "like_count": like_count,
             "comment_count": 0,
             "created": created.isoformat(),
@@ -434,7 +434,7 @@ async def _extract_reviews_dom(page) -> list[dict]:
             continue
         items.append({
             "title": content_text[:60],
-            "summary": content_text[:300],
+            "summary": content_text,
             "like_count": _parse_num(r.get("likes")),
             "comment_count": 0,
             "created": datetime.now(timezone.utc).isoformat(),
