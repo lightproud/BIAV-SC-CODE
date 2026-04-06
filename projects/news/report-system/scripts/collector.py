@@ -410,16 +410,30 @@ def fetch_nga():
         return items
 
     try:
-        data = _get(
+        import re as _re
+        resp = _get(
             f"https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1",
             headers={
                 "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
                 "Cookie": "nga_read_toma=1",
                 "Accept": "application/json",
             },
-        ).json()
+        )
+        try:
+            data = resp.json()
+        except (ValueError, json.JSONDecodeError):
+            # NGA sometimes returns HTML or JSONP instead of JSON
+            text = resp.text.strip()
+            json_match = _re.search(r'\{.*\}', text, _re.DOTALL)
+            if json_match:
+                data = json.loads(json_match.group())
+            else:
+                logger.warning(f"NGA fid={nga_fid}: received non-JSON response")
+                return items
 
         threads = data.get("data", {}).get("__T", {})
+        if not isinstance(threads, dict):
+            threads = {}
         for tid, thread in threads.items():
             postdate = thread.get("postdate", 0)
             if not isinstance(postdate, (int, float)):
@@ -644,7 +658,18 @@ def fetch_naver_cafe():
                 headers={"Referer": "https://cafe.naver.com"},
             ).json()
 
-            for article in data.get("message", {}).get("result", {}).get("articleList", []) or []:
+            message = data.get("message", {})
+            if not isinstance(message, dict):
+                message = {}
+            result = message.get("result", {})
+            if not isinstance(result, dict):
+                result = {}
+            article_list = result.get("articleList", [])
+            if not isinstance(article_list, list):
+                article_list = []
+            for article in article_list:
+                if not isinstance(article, dict):
+                    continue
                 items.append(_make_item(
                     title=article.get("subject", ""),
                     summary=article.get("summary", ""),
@@ -961,7 +986,18 @@ def fetch_pixiv():
                 headers={"Referer": "https://www.pixiv.net"},
             ).json()
 
-            for illust in (data.get("body", {}).get("illustManga", {}).get("data", []) or [])[:20]:
+            body = data.get("body", {})
+            if not isinstance(body, dict):
+                body = {}
+            illust_manga = body.get("illustManga", {})
+            if not isinstance(illust_manga, dict):
+                illust_manga = {}
+            illust_data = illust_manga.get("data", [])
+            if not isinstance(illust_data, list):
+                illust_data = []
+            for illust in illust_data[:20]:
+                if not isinstance(illust, dict):
+                    continue
                 illust_id = illust.get("id", "")
                 bookmark = illust.get("bookmarkCount", 0)
                 like = illust.get("likeCount", 0)
@@ -1875,17 +1911,23 @@ def fetch_weixin():
             html = resp.text
             import re as _re
 
-            # Parse search results
+            # Parse search results — capture snippet text between <p> after title
             for match in _re.finditer(
                 r'<h3>.*?<a[^>]*href="([^"]+)"[^>]*>(.+?)</a>.*?'
+                r'(?:class="txt-info"[^>]*>(.+?)</p>)?.*?'
                 r'class="s-p"[^>]*>([^<]*)',
                 html, _re.DOTALL
             ):
-                url, title_html, meta = match.groups()
+                url, title_html, snippet_html, meta = match.groups()
                 # Clean HTML tags from title
                 title = _re.sub(r'<[^>]+>', '', title_html).strip()
                 if not title:
                     continue
+
+                # Extract summary from snippet
+                summary = ""
+                if snippet_html:
+                    summary = _re.sub(r'<[^>]+>', '', snippet_html).strip()[:300]
 
                 # Extract author from meta
                 author_match = _re.search(r'微信公众号\s*[:：]\s*([^\s<]+)', meta)
@@ -1893,7 +1935,7 @@ def fetch_weixin():
 
                 items.append(_make_item(
                     title=f"[微信] {title}",
-                    summary="",
+                    summary=summary,
                     source="weixin",
                     platform_region="cn",
                     time_str=datetime.now(timezone.utc).isoformat(),
@@ -1925,23 +1967,35 @@ def fetch_gamerch():
         import re as _re
 
         # Extract recent updates / article links from the wiki
+        # Try to capture surrounding text as summary and any view/PV counts
         for match in _re.finditer(
-            r'<a[^>]*href="(https://gamerch\.com/morimens/\d+)"[^>]*>\s*([^<]+?)\s*</a>',
-            html
+            r'<a[^>]*href="(https://gamerch\.com/morimens/\d+)"[^>]*>\s*([^<]+?)\s*</a>'
+            r'(.*?(?=<a[^>]*href="https://gamerch\.com/morimens/\d+"|</(?:div|ul|section)>))',
+            html, _re.DOTALL
         ):
-            url, title = match.groups()
+            url, title, trailing = match.groups()
             title = title.strip()
             if not title or len(title) < 5:
                 continue
+
+            # Extract summary from trailing text
+            summary = _re.sub(r'<[^>]+>', ' ', trailing).strip()[:200].strip()
+
+            # Try to extract PV/view count from nearby context
+            engagement = 0
+            pv_match = _re.search(r'(\d[\d,]*)\s*(?:PV|view|閲覧|pv)', trailing, _re.IGNORECASE)
+            if pv_match:
+                engagement = int(pv_match.group(1).replace(',', ''))
+
             items.append(_make_item(
                 title=f"[Gamerch] {title}",
-                summary="",
+                summary=summary,
                 source="gamerch",
                 platform_region="jp",
                 time_str=datetime.now(timezone.utc).isoformat(),
                 url=url,
-                engagement=0,
-                is_hot=False,
+                engagement=engagement,
+                is_hot=engagement > 1000,
                 author="Gamerch Wiki",
                 lang="ja",
             ))
@@ -2128,12 +2182,24 @@ def fetch_stopgame():
         rating_match = _re.search(r'class="[^"]*rating[^"]*"[^>]*>(\d+\.?\d*)', html)
         review_count_match = _re.search(r'(\d+)\s*(?:отзыв|оцен)', html)
 
+        # Try to extract a description/summary from the page
+        desc_match = _re.search(
+            r'class="[^"]*(?:game-?desc|description|about)[^"]*"[^>]*>\s*(?:<[^>]*>)*\s*([^<]{10,500})',
+            html, _re.DOTALL | _re.IGNORECASE
+        )
+        page_summary = desc_match.group(1).strip()[:300] if desc_match else ""
+        # Fallback: try meta description
+        if not page_summary:
+            meta_match = _re.search(r'<meta[^>]*name=["\']description["\'][^>]*content=["\']([^"\']+)', html, _re.IGNORECASE)
+            if meta_match:
+                page_summary = meta_match.group(1).strip()[:300]
+
         if rating_match:
             rating = float(rating_match.group(1))
             count = int(review_count_match.group(1)) if review_count_match else 0
             items.append(_make_item(
                 title=f"[StopGame] Morimens — {rating}/10 ({count} оценок)",
-                summary="",
+                summary=page_summary or f"Рейтинг игры Morimens на StopGame: {rating}/10 на основе {count} оценок",
                 source="stopgame",
                 platform_region="ru",
                 time_str=datetime.now(timezone.utc).isoformat(),
@@ -2270,7 +2336,13 @@ def fetch_gamekee():
         if resp.status_code == 200:
             try:
                 data = resp.json()
-                for item in data.get("data", {}).get("list", []) or []:
+                data_inner = data.get("data")
+                if not isinstance(data_inner, dict):
+                    data_inner = {}
+                content_list = data_inner.get("list", [])
+                if not isinstance(content_list, list):
+                    content_list = []
+                for item in content_list:
                     items.append(_make_item(
                         title=item.get("title", ""),
                         summary=item.get("summary", ""),
