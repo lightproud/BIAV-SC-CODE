@@ -8,8 +8,9 @@
 import { app } from 'electron'
 import path from 'path'
 import fs from 'fs'
+// Use the asm.js build (pure JS, no .wasm file needed, CJS compatible)
 // @ts-ignore — sql.js ships no type declarations
-import initSqlJs from 'sql.js'
+import initSqlJs from 'sql.js/dist/sql-asm.js'
 type SqlJsDatabase = any
 
 // ---------------------------------------------------------------------------
