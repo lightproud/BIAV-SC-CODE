@@ -1,6 +1,6 @@
 import { ipcMain, Notification } from 'electron'
 import Store from 'electron-store'
-import { getMainWindow } from '../main'
+import { getMainWindow } from '../window-state'
 
 const store = new Store()
 

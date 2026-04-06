@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { getDb } from './db'
 import { streamChat, type LLMUsage } from '../llm'
 import Store from 'electron-store'
-import { isWindowFocused, getMainWindow } from '../main'
+import { isWindowFocused, getMainWindow } from '../window-state'
 
 // Per-million-token pricing: [input, output]
 const MODEL_PRICING: Record<string, [number, number]> = {
