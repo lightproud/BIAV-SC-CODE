@@ -170,6 +170,31 @@ export class MCPManager {
     }
   }
 
+  /** Get all tools from all running servers, with server name prefix info */
+  getAllTools(): { serverName: string; tool: MCPToolDefinition }[] {
+    const result: { serverName: string; tool: MCPToolDefinition }[] = []
+    for (const [name, entry] of this.servers) {
+      if (entry.status === 'running' && entry.tools.length > 0) {
+        for (const tool of entry.tools) {
+          result.push({ serverName: name, tool })
+        }
+      }
+    }
+    return result
+  }
+
+  /** Find which server owns a tool by name */
+  findToolServer(toolName: string): string | null {
+    for (const [name, entry] of this.servers) {
+      if (entry.status === 'running') {
+        if (entry.tools.some((t) => t.name === toolName)) {
+          return name
+        }
+      }
+    }
+    return null
+  }
+
   async listTools(name: string): Promise<MCPToolDefinition[]> {
     const entry = this.servers.get(name)
     if (!entry || !entry.client || entry.status !== 'running') {

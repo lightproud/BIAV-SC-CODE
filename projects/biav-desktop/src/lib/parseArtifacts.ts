@@ -1,8 +1,17 @@
-import type { Artifact } from '../types'
+import type { Artifact, ArtifactVersion } from '../types'
 
 let counter = 0
 function nextId(): string {
   return `artifact-${++counter}`
+}
+
+interface RawArtifact {
+  type: Artifact['type']
+  title: string
+  content: string
+  language?: string
+  messageId: string
+  timestamp: number
 }
 
 /**
@@ -12,13 +21,20 @@ function nextId(): string {
  * 1. XML-style:  <artifact type="code" title="hello.py" language="python">...</artifact>
  * 2. Fenced with marker:  ```artifact:type:title\n...\n```
  * 3. Standard fenced code blocks are treated as implicit code artifacts
+ *
+ * Artifacts with the same title (or same language + type for implicit snippets)
+ * across different messages are merged as versions of a single artifact.
  */
-export function parseArtifacts(messages: { role: string; content: string }[]): Artifact[] {
-  const artifacts: Artifact[] = []
+export function parseArtifacts(messages: { id?: string; role: string; content: string; created_at?: string }[]): Artifact[] {
+  const raw: RawArtifact[] = []
   counter = 0
 
-  for (const msg of messages) {
+  for (let msgIdx = 0; msgIdx < messages.length; msgIdx++) {
+    const msg = messages[msgIdx]
     if (msg.role !== 'assistant') continue
+
+    const messageId = msg.id || `msg-${msgIdx}`
+    const timestamp = msg.created_at ? new Date(msg.created_at).getTime() : msgIdx
 
     // 1. XML-style artifacts
     const xmlRe = /<artifact\s+([^>]+)>([\s\S]*?)<\/artifact>/g
@@ -29,12 +45,13 @@ export function parseArtifacts(messages: { role: string; content: string }[]): A
       const type = extractAttr(attrs, 'type') || inferType(content)
       const title = extractAttr(attrs, 'title') || `Artifact`
       const language = extractAttr(attrs, 'language') || undefined
-      artifacts.push({
-        id: nextId(),
+      raw.push({
         type: normalizeType(type),
         title,
         content,
         language,
+        messageId,
+        timestamp,
       })
     }
 
@@ -44,12 +61,12 @@ export function parseArtifacts(messages: { role: string; content: string }[]): A
       const type = m[1]
       const title = m[2].trim() || 'Artifact'
       const content = m[3].trim()
-      artifacts.push({
-        id: nextId(),
+      raw.push({
         type: normalizeType(type),
         title,
         content,
-        language: type === 'code' ? undefined : undefined,
+        messageId,
+        timestamp,
       })
     }
 
@@ -76,13 +93,58 @@ export function parseArtifacts(messages: { role: string; content: string }[]): A
       else if (lang === 'markdown' || lang === 'md') type = 'markdown'
 
       const title = lang ? `${lang} snippet` : 'Code snippet'
-      artifacts.push({
-        id: nextId(),
+      raw.push({
         type,
         title,
         content,
         language: lang || undefined,
+        messageId,
+        timestamp,
       })
+    }
+  }
+
+  // Merge raw artifacts into versioned artifacts.
+  // Match by: exact title, or same type+language for implicit snippets.
+  const artifacts: Artifact[] = []
+  const titleMap = new Map<string, number>() // title -> index in artifacts[]
+
+  for (const r of raw) {
+    const key = r.title.toLowerCase()
+    const existingIdx = titleMap.get(key)
+
+    if (existingIdx !== undefined) {
+      // Same title — add as new version
+      const existing = artifacts[existingIdx]
+      // Only add if content actually changed
+      if (existing.versions[existing.versions.length - 1].content !== r.content) {
+        existing.versions.push({
+          content: r.content,
+          timestamp: r.timestamp,
+          messageId: r.messageId,
+        })
+        // Update current to latest
+        existing.currentVersion = existing.versions.length - 1
+        existing.content = r.content
+      }
+    } else {
+      // New artifact
+      const version: ArtifactVersion = {
+        content: r.content,
+        timestamp: r.timestamp,
+        messageId: r.messageId,
+      }
+      const artifact: Artifact = {
+        id: nextId(),
+        type: r.type,
+        title: r.title,
+        content: r.content,
+        language: r.language,
+        versions: [version],
+        currentVersion: 0,
+      }
+      titleMap.set(key, artifacts.length)
+      artifacts.push(artifact)
     }
   }
 

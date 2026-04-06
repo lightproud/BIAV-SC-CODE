@@ -1,7 +1,8 @@
 import { ipcMain, BrowserWindow, Notification } from 'electron'
 import { v4 as uuidv4 } from 'uuid'
 import { getDb } from './db'
-import { streamChat, type LLMUsage } from '../llm'
+import { streamChat, type LLMUsage, type AnthropicTool, type ToolCall } from '../llm'
+import { MCPManager } from '../mcp/manager'
 import Store from 'electron-store'
 import { isWindowFocused, getMainWindow } from '../window-state'
 
@@ -32,7 +33,31 @@ function estimateCost(usage: LLMUsage): number {
 const store = new Store()
 let abortController: AbortController | null = null
 
-export function registerChatHandlers() {
+// Pending tool approval system
+const pendingApprovals = new Map<string, {
+  resolve: (approved: boolean) => void
+  alwaysAllow?: boolean
+}>()
+// Tools that the user has chosen to always allow
+const alwaysAllowedTools = new Set<string>()
+
+let mcpManagerRef: MCPManager | null = null
+
+export function registerChatHandlers(mcpManager: MCPManager) {
+  mcpManagerRef = mcpManager
+
+  // Tool approval handler
+  ipcMain.handle('chat:tool-approve', (_event, toolUseId: string, approved: boolean, alwaysAllow?: boolean) => {
+    const pending = pendingApprovals.get(toolUseId)
+    if (pending) {
+      if (alwaysAllow) {
+        pending.alwaysAllow = true
+      }
+      pending.resolve(approved)
+      pendingApprovals.delete(toolUseId)
+    }
+  })
+
   ipcMain.handle('chat:send', async (event, req: {
     conversationId: string | null
     message: string
@@ -42,6 +67,7 @@ export function registerChatHandlers() {
     attachments?: { name: string; path: string; type: string; content: string }[]
     temperature?: number
     maxTokens?: number
+    enableThinking?: boolean
   }) => {
     const db = getDb()
     const win = BrowserWindow.fromWebContents(event.sender)
@@ -91,7 +117,7 @@ export function registerChatHandlers() {
     // Get full history
     const history = db
       .prepare('SELECT role, content FROM messages WHERE conversation_id = ? ORDER BY created_at ASC')
-      .all(conversationId) as { role: string; content: string }[]
+      .all(conversationId) as { role: string; content: any }[]
 
     // Prepend system prompt if set
     const conv = db.prepare('SELECT system_prompt FROM conversations WHERE id = ?').get(conversationId) as { system_prompt: string | null } | undefined
@@ -134,57 +160,219 @@ export function registerChatHandlers() {
       return
     }
 
-    // Stream response
+    // Gather MCP tools from all running servers
+    const mcpTools = mcpManager.getAllTools()
+    const anthropicTools: AnthropicTool[] = mcpTools.map(({ tool }) => ({
+      name: tool.name,
+      description: tool.description,
+      input_schema: tool.inputSchema || { type: 'object', properties: {} },
+    }))
+
+    // Build a lookup: toolName -> serverName
+    const toolServerMap = new Map<string, string>()
+    for (const { serverName, tool } of mcpTools) {
+      toolServerMap.set(tool.name, serverName)
+    }
+
+    // Stream response with tool use loop
     abortController = new AbortController()
     let fullContent = ''
+    let thinkingContent = ''
+
+    // Messages for the ongoing conversation (may include tool results)
+    let conversationMessages = [...history]
 
     try {
-      const stream = streamChat({
-        provider: req.provider as 'claude' | 'openai',
-        model: req.model,
-        messages: history,
-        apiKey,
-        baseUrl,
-        signal: abortController.signal,
-        temperature: req.temperature,
-        maxTokens: req.maxTokens,
-      })
+      let continueLoop = true
+      while (continueLoop) {
+        continueLoop = false
 
-      let usageData: LLMUsage | null = null
+        const stream = streamChat({
+          provider: req.provider as 'claude' | 'openai',
+          model: req.model,
+          messages: conversationMessages,
+          apiKey,
+          baseUrl,
+          signal: abortController.signal,
+          temperature: req.temperature,
+          maxTokens: req.maxTokens,
+          enableThinking: req.enableThinking,
+          tools: anthropicTools.length > 0 ? anthropicTools : undefined,
+        })
 
-      for await (const chunk of stream) {
-        if (chunk.type === 'text' && chunk.text) {
-          fullContent += chunk.text
-          win.webContents.send('chat:stream', { type: 'delta', content: chunk.text })
-        } else if (chunk.type === 'usage' && chunk.usage) {
-          usageData = chunk.usage
+        let usageData: LLMUsage | null = null
+        const toolCalls: ToolCall[] = []
+        let turnContent = ''
+
+        for await (const chunk of stream) {
+          if (chunk.type === 'thinking' && chunk.text) {
+            thinkingContent += chunk.text
+            win.webContents.send('chat:stream', { type: 'thinking', text: chunk.text })
+          } else if (chunk.type === 'text' && chunk.text) {
+            fullContent += chunk.text
+            turnContent += chunk.text
+            win.webContents.send('chat:stream', { type: 'delta', content: chunk.text })
+          } else if (chunk.type === 'tool_use' && chunk.toolCall) {
+            toolCalls.push(chunk.toolCall)
+          } else if (chunk.type === 'usage' && chunk.usage) {
+            usageData = chunk.usage
+          }
+        }
+
+        // Save usage data for this turn
+        if (usageData && conversationId) {
+          const cost = estimateCost(usageData)
+          const usageId = uuidv4()
+          db.prepare(
+            'INSERT INTO usage (id, conversation_id, model, input_tokens, output_tokens, estimated_cost) VALUES (?, ?, ?, ?, ?, ?)'
+          ).run(usageId, conversationId, usageData.model, usageData.inputTokens, usageData.outputTokens, cost)
+
+          win.webContents.send('chat:stream', {
+            type: 'usage',
+            usage: {
+              inputTokens: usageData.inputTokens,
+              outputTokens: usageData.outputTokens,
+              model: usageData.model,
+              estimatedCost: cost,
+            },
+          })
+        }
+
+        // Handle tool calls
+        if (toolCalls.length > 0) {
+          // Build the assistant message with text + tool_use blocks for Claude format
+          const assistantContent: any[] = []
+          if (turnContent) {
+            assistantContent.push({ type: 'text', text: turnContent })
+          }
+          for (const tc of toolCalls) {
+            assistantContent.push({
+              type: 'tool_use',
+              id: tc.id,
+              name: tc.name,
+              input: tc.input,
+            })
+          }
+
+          // Add assistant message with tool_use to conversation
+          conversationMessages.push({
+            role: 'assistant',
+            content: req.provider === 'claude' ? assistantContent : turnContent,
+          })
+
+          // Process each tool call
+          const toolResults: any[] = []
+          for (const tc of toolCalls) {
+            const serverName = toolServerMap.get(tc.name) || mcpManager.findToolServer(tc.name) || 'unknown'
+
+            // Send tool_use event to renderer
+            win.webContents.send('chat:stream', {
+              type: 'tool_use',
+              toolName: tc.name,
+              serverName,
+              toolArgs: tc.input,
+              toolUseId: tc.id,
+            })
+
+            // Check if this tool is always allowed
+            let approved = alwaysAllowedTools.has(tc.name)
+
+            if (!approved) {
+              // Wait for user approval
+              approved = await new Promise<boolean>((resolve) => {
+                pendingApprovals.set(tc.id, { resolve })
+              })
+
+              // Check if user selected "always allow"
+              const pending = pendingApprovals.get(tc.id)
+              if (pending?.alwaysAllow) {
+                alwaysAllowedTools.add(tc.name)
+              }
+            }
+
+            if (approved) {
+              // Execute the tool
+              win.webContents.send('chat:stream', {
+                type: 'tool_executing',
+                toolUseId: tc.id,
+              })
+
+              try {
+                const result = await mcpManager.callTool(serverName, tc.name, tc.input)
+                win.webContents.send('chat:stream', {
+                  type: 'tool_result',
+                  toolUseId: tc.id,
+                  toolName: tc.name,
+                  result,
+                  isError: false,
+                })
+                toolResults.push({
+                  type: 'tool_result',
+                  tool_use_id: tc.id,
+                  content: typeof result === 'string' ? result : JSON.stringify(result),
+                })
+              } catch (err: any) {
+                win.webContents.send('chat:stream', {
+                  type: 'tool_result',
+                  toolUseId: tc.id,
+                  toolName: tc.name,
+                  error: err.message,
+                  isError: true,
+                })
+                toolResults.push({
+                  type: 'tool_result',
+                  tool_use_id: tc.id,
+                  content: `Error: ${err.message}`,
+                  is_error: true,
+                })
+              }
+            } else {
+              // User denied the tool call
+              win.webContents.send('chat:stream', {
+                type: 'tool_result',
+                toolUseId: tc.id,
+                toolName: tc.name,
+                error: '用户拒绝了此工具调用',
+                isError: true,
+              })
+              toolResults.push({
+                type: 'tool_result',
+                tool_use_id: tc.id,
+                content: 'The user denied this tool call.',
+                is_error: true,
+              })
+            }
+          }
+
+          // Add tool results to conversation and continue the loop
+          if (req.provider === 'claude') {
+            // Claude expects tool_result messages as a user message
+            conversationMessages.push({
+              role: 'user',
+              content: toolResults,
+            })
+          } else {
+            // OpenAI expects tool results as separate messages
+            for (const tr of toolResults) {
+              conversationMessages.push({
+                role: 'tool',
+                content: tr.content,
+                // OpenAI needs tool_call_id
+                ...(tr.tool_use_id ? { tool_call_id: tr.tool_use_id } : {}),
+              } as any)
+            }
+          }
+
+          // Continue the conversation loop so the LLM can process tool results
+          continueLoop = true
         }
       }
 
-      // Save assistant message
+      // Save assistant message (full accumulated content)
       const assistantMsgId = uuidv4()
       db.prepare(
         'INSERT INTO messages (id, conversation_id, role, content, provider, model) VALUES (?, ?, ?, ?, ?, ?)'
       ).run(assistantMsgId, conversationId, 'assistant', fullContent, req.provider, req.model)
-
-      // Save usage data
-      if (usageData && conversationId) {
-        const cost = estimateCost(usageData)
-        const usageId = uuidv4()
-        db.prepare(
-          'INSERT INTO usage (id, conversation_id, model, input_tokens, output_tokens, estimated_cost) VALUES (?, ?, ?, ?, ?, ?)'
-        ).run(usageId, conversationId, usageData.model, usageData.inputTokens, usageData.outputTokens, cost)
-
-        win.webContents.send('chat:stream', {
-          type: 'usage',
-          usage: {
-            inputTokens: usageData.inputTokens,
-            outputTokens: usageData.outputTokens,
-            model: usageData.model,
-            estimatedCost: cost,
-          },
-        })
-      }
 
       // Generate smart title for new conversations based on user's first message
       if (isNewConversation && conversationId) {
@@ -231,6 +419,11 @@ export function registerChatHandlers() {
 
   ipcMain.handle('chat:stop', () => {
     abortController?.abort()
+    // Also reject any pending approvals
+    for (const [id, pending] of pendingApprovals) {
+      pending.resolve(false)
+      pendingApprovals.delete(id)
+    }
     return { ok: true }
   })
 

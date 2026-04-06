@@ -45,6 +45,40 @@ export function registerConversationHandlers() {
     return { ok: true }
   })
 
+  ipcMain.handle('conversations:search', (_e, query: string) => {
+    const db = getDb()
+    if (!query || !query.trim()) return []
+
+    // Escape FTS5 special characters and build a prefix query
+    const sanitized = query.trim().replace(/["*^(){}[\]:]/g, '')
+    if (!sanitized) return []
+
+    const ftsQuery = sanitized
+      .split(/\s+/)
+      .filter(Boolean)
+      .map((term) => `"${term}"*`)
+      .join(' ')
+
+    const results = db
+      .prepare(
+        `SELECT
+          f.conversation_id AS conversationId,
+          c.title AS conversationTitle,
+          highlight(messages_fts, 0, '<mark>', '</mark>') AS snippet,
+          m.role AS messageRole,
+          m.created_at AS messageDate
+        FROM messages_fts f
+        JOIN conversations c ON c.id = f.conversation_id
+        JOIN messages m ON m.id = f.message_id
+        WHERE messages_fts MATCH ?
+        ORDER BY rank
+        LIMIT 50`
+      )
+      .all(ftsQuery)
+
+    return results
+  })
+
   ipcMain.handle('conversations:fork', (_e, conversationId: string, messageId: string) => {
     const db = getDb()
 
