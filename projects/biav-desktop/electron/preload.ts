@@ -28,6 +28,10 @@ contextBridge.exposeInMainWorld('biav', {
   regenerateMessage: (req: { conversationId: string; afterMessageId: string }) =>
     ipcRenderer.invoke('chat:regenerate', req),
 
+  // System Prompt
+  getSystemPrompt: (conversationId: string) => ipcRenderer.invoke('conversations:getSystemPrompt', conversationId),
+  setSystemPrompt: (conversationId: string, prompt: string) => ipcRenderer.invoke('conversations:setSystemPrompt', conversationId, prompt),
+
   // Models
   listModels: () => ipcRenderer.invoke('models:list'),
 

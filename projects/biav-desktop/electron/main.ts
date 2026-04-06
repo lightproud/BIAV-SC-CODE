@@ -7,6 +7,7 @@ import { registerModelHandlers } from './ipc/models'
 import { registerSettingsHandlers } from './ipc/settings'
 import { registerExportHandlers } from './ipc/export'
 import { registerFileHandlers } from './ipc/files'
+import { registerContextMenuHandlers } from './ipc/context-menu'
 import { initUpdater, checkForUpdate, downloadUpdate, installUpdate } from './updater'
 
 let mainWindow: BrowserWindow | null = null
@@ -161,6 +162,7 @@ app.whenReady().then(() => {
   registerSettingsHandlers()
   registerExportHandlers()
   registerFileHandlers()
+  registerContextMenuHandlers()
 
   createWindow()
   createQuickEntry()
