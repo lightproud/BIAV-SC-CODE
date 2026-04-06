@@ -1,6 +1,12 @@
-import { ipcMain, Menu, BrowserWindow } from 'electron'
+import { ipcMain, Menu, BrowserWindow, BaseWindow } from 'electron'
 
 type MenuAction = { action: string; data?: any }
+
+function send(win: BaseWindow | undefined, payload: MenuAction) {
+  if (win && 'webContents' in win) {
+    (win as BrowserWindow).webContents.send('context-menu:action', payload)
+  }
+}
 
 function buildMessageMenu(role: 'user' | 'assistant', data: any): Electron.MenuItemConstructorOptions[] {
   if (role === 'user') {
@@ -12,7 +18,6 @@ function buildMessageMenu(role: 'user' | 'assistant', data: any): Electron.MenuI
     ]
   }
 
-  // assistant
   return [
     { label: '复制', click: (_, win) => send(win, { action: 'copy-message', data }) },
     { label: '复制为 Markdown', click: (_, win) => send(win, { action: 'copy-message-markdown', data }) },
@@ -28,10 +33,6 @@ function buildConversationMenu(data: any): Electron.MenuItemConstructorOptions[]
     { type: 'separator' },
     { label: '删除', click: (_, win) => send(win, { action: 'delete-conversation', data }) },
   ]
-}
-
-function send(win: BrowserWindow | undefined, payload: MenuAction) {
-  win?.webContents.send('context-menu:action', payload)
 }
 
 export function registerContextMenuHandlers() {
