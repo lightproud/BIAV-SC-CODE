@@ -17,6 +17,7 @@ interface Props {
   onDeleteProject: (id: string) => void
   onMoveToProject: (conversationId: string, projectId: string | null) => void
   onPin: (id: string, pinned: boolean) => void
+  onAbout?: () => void
   theme: 'dark' | 'light'
   onToggleTheme: () => void
 }
@@ -37,6 +38,7 @@ export default function Sidebar({
   onDeleteProject,
   onMoveToProject,
   onPin,
+  onAbout,
   theme,
   onToggleTheme,
 }: Props) {
@@ -415,8 +417,25 @@ export default function Sidebar({
 
       {/* Footer */}
       <div className="p-3 border-t border-biav-border flex items-center justify-between">
-        <span className="text-xs text-biav-muted">v0.1.0</span>
+        <button
+          onClick={onAbout}
+          className="text-xs text-biav-muted hover:text-biav-gold transition-colors"
+          title="关于"
+        >
+          v0.1.0
+        </button>
         <div className="flex items-center gap-2">
+          <button
+            onClick={onAbout}
+            className="text-biav-muted hover:text-biav-gold transition-colors"
+            title="关于"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+          </button>
           <button
             onClick={onToggleTheme}
             className="text-biav-muted hover:text-biav-gold transition-colors"
