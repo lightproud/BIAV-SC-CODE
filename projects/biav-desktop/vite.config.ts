@@ -22,7 +22,10 @@ export default defineConfig({
           build: {
             outDir: 'dist-electron',
             rollupOptions: {
-              external: ['electron-store'],
+              // Only externalize Node built-ins and electron itself.
+              // All npm packages (electron-store, sql.js, etc.) get bundled
+              // to avoid ESM/CJS incompatibility at runtime.
+              external: ['electron'],
             },
           },
         },
