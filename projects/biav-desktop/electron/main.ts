@@ -239,7 +239,7 @@ const CSP = [
   "worker-src 'self' blob:",
 ].join('; ')
 
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
   // Content Security Policy — enforce via response headers
   session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
     callback({
@@ -250,7 +250,7 @@ app.whenReady().then(() => {
     })
   })
 
-  initDatabase()
+  await initDatabase()
   registerChatHandlers(mcpManager)
   registerConversationHandlers()
   registerModelHandlers()
