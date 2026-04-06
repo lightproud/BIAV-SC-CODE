@@ -80,4 +80,9 @@ export function initDatabase() {
   if (!cols.some((c) => c.name === 'project_id')) {
     db.exec("ALTER TABLE conversations ADD COLUMN project_id TEXT DEFAULT NULL REFERENCES projects(id) ON DELETE SET NULL")
   }
+
+  // Migrate: add is_pinned column if missing
+  if (!cols.some((c) => c.name === 'is_pinned')) {
+    db.exec("ALTER TABLE conversations ADD COLUMN is_pinned INTEGER DEFAULT 0")
+  }
 }

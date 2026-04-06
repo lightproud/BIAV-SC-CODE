@@ -46,8 +46,10 @@ export function registerChatHandlers() {
 
     // Create or reuse conversation
     let conversationId = req.conversationId
+    let isNewConversation = false
     if (!conversationId) {
       conversationId = uuidv4()
+      isNewConversation = true
       const title = req.message.slice(0, 50) + (req.message.length > 50 ? '…' : '')
       db.prepare(
         'INSERT INTO conversations (id, title, provider, model, system_prompt) VALUES (?, ?, ?, ?, ?)'
