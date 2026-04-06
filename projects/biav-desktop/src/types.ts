@@ -145,6 +145,8 @@ declare global {
       hideQuickEntry: () => Promise<void>
       onQuickEntryReceived: (callback: (event: any, text: string) => void) => () => void
       platform: string
+      versions: { electron: string; chrome: string; node: string }
+      openExternal: (url: string) => Promise<void>
 
       // Projects
       listProjects: () => Promise<Project[]>
