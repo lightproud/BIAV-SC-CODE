@@ -1,5 +1,10 @@
 export type LLMProvider = 'claude' | 'openai'
 
+export interface ModelParams {
+  temperature: number
+  maxTokens: number
+}
+
 export interface Attachment {
   name: string
   path: string
@@ -108,6 +113,8 @@ declare global {
         model: string
         systemPrompt?: string
         attachments?: Attachment[]
+        temperature?: number
+        maxTokens?: number
       }) => Promise<void>
       onChatStream: (callback: (event: any, data: any) => void) => () => void
       stopStreaming: () => Promise<void>

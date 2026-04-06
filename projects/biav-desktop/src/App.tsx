@@ -11,6 +11,7 @@ import SettingsModal from './components/SettingsModal'
 import ShortcutsModal from './components/ShortcutsModal'
 import ExportMenu from './components/ExportMenu'
 import UpdateNotice from './components/UpdateNotice'
+import WelcomeScreen from './components/WelcomeScreen'
 import ArtifactsPanel from './components/ArtifactsPanel'
 import SystemPromptEditor from './components/SystemPromptEditor'
 import { parseArtifacts } from './lib/parseArtifacts'
@@ -32,6 +33,7 @@ export default function App() {
     regenerate,
     lastUsage,
     sessionUsage,
+    titleUpdateCounter,
   } = useChat()
 
   const { theme, toggleTheme } = useTheme()
@@ -101,6 +103,13 @@ export default function App() {
       setSystemPrompt('')
     }
   }, [conversationId])
+
+  // Refresh sidebar when a smart title is generated for a new conversation
+  useEffect(() => {
+    if (titleUpdateCounter > 0) {
+      refreshConversations()
+    }
+  }, [titleUpdateCounter])
 
   async function refreshConversations() {
     const list = await window.biav.listConversations()
@@ -254,10 +263,11 @@ export default function App() {
           {/* Messages */}
           <div className="flex-1 overflow-y-auto px-4 py-6">
             {messages.length === 0 && !isStreaming && (
-              <div className="flex flex-col items-center justify-center h-full text-biav-muted">
-                <div className="text-4xl mb-4 font-serif text-biav-gold-bright">缸中之脑</div>
-                <div className="text-sm">Brain in a Vat · Desktop</div>
-              </div>
+              <WelcomeScreen
+                providers={providers}
+                onOpenSettings={() => setShowSettings(true)}
+                onSuggestion={(text) => handleSend(text, [])}
+              />
             )}
             <div className="max-w-3xl mx-auto space-y-4">
               {messages.map((msg) => (

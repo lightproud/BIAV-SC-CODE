@@ -1,8 +1,9 @@
-import { ipcMain, BrowserWindow } from 'electron'
+import { ipcMain, BrowserWindow, Notification } from 'electron'
 import { v4 as uuidv4 } from 'uuid'
 import { getDb } from './db'
 import { streamChat, type LLMUsage } from '../llm'
 import Store from 'electron-store'
+import { isWindowFocused, getMainWindow } from '../main'
 
 // Per-million-token pricing: [input, output]
 const MODEL_PRICING: Record<string, [number, number]> = {
@@ -195,6 +196,23 @@ export function registerChatHandlers() {
       db.prepare('UPDATE conversations SET updated_at = datetime("now") WHERE id = ?').run(conversationId)
 
       win.webContents.send('chat:stream', { type: 'done' })
+
+      // Show native notification if window is not focused
+      if (!isWindowFocused() && fullContent.length > 0) {
+        const body = fullContent.length > 100 ? fullContent.slice(0, 100) + '…' : fullContent
+        const notification = new Notification({
+          title: 'Brain in a Vat',
+          body,
+        })
+        notification.on('click', () => {
+          const mw = getMainWindow()
+          if (mw) {
+            mw.show()
+            mw.focus()
+          }
+        })
+        notification.show()
+      }
     } catch (err: any) {
       if (err.name !== 'AbortError') {
         win.webContents.send('chat:stream', {

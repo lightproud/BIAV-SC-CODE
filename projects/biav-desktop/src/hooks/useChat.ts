@@ -6,6 +6,10 @@ export function useChat() {
   const [conversationId, setConversationId] = useState<string | null>(null)
   const [isStreaming, setIsStreaming] = useState(false)
   const [streamingContent, setStreamingContent] = useState('')
+  const [streamingTokens, setStreamingTokens] = useState(0)
+  const [streamingDuration, setStreamingDuration] = useState(0)
+  const streamingStartRef = useRef<number | null>(null)
+  const durationTimerRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const [lastUsage, setLastUsage] = useState<UsageData | null>(null)
   const [sessionUsage, setSessionUsage] = useState<SessionUsage>({ totalInput: 0, totalOutput: 0, totalCost: 0 })
   const [titleUpdateCounter, setTitleUpdateCounter] = useState(0)
@@ -18,7 +22,20 @@ export function useChat() {
           setConversationId(data.conversationId)
           break
         case 'delta':
-          setStreamingContent((prev) => prev + data.content)
+          if (!streamingStartRef.current) {
+            streamingStartRef.current = Date.now()
+            setStreamingDuration(0)
+            durationTimerRef.current = setInterval(() => {
+              if (streamingStartRef.current) {
+                setStreamingDuration(Math.round((Date.now() - streamingStartRef.current) / 1000))
+              }
+            }, 200)
+          }
+          setStreamingContent((prev) => {
+            const updated = prev + data.content
+            setStreamingTokens(Math.round(updated.length / 4))
+            return updated
+          })
           break
         case 'error':
           setIsStreaming(false)

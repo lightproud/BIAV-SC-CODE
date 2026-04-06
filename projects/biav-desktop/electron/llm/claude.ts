@@ -18,6 +18,8 @@ interface ClaudeOptions {
   apiKey: string
   systemPrompt?: string
   signal?: AbortSignal
+  temperature?: number
+  maxTokens?: number
 }
 
 export async function* streamClaude(opts: ClaudeOptions): AsyncGenerator<StreamChunk> {
@@ -25,7 +27,8 @@ export async function* streamClaude(opts: ClaudeOptions): AsyncGenerator<StreamC
 
   const stream = client.messages.stream({
     model: opts.model,
-    max_tokens: 8192,
+    max_tokens: opts.maxTokens ?? 8192,
+    temperature: opts.temperature,
     system: opts.systemPrompt || undefined,
     messages: opts.messages.map((m) => ({
       role: m.role as 'user' | 'assistant',

@@ -77,11 +77,16 @@ export default function Sidebar({
     return cleanup
   }, [onDelete, onRename, onExport, conversations])
 
+  // Auto-focus the edit input when editingId changes
+  useEffect(() => {
+    if (editingId) {
+      setTimeout(() => editInputRef.current?.select(), 0)
+    }
+  }, [editingId])
+
   const startEditing = useCallback((conv: Conversation) => {
     setEditingId(conv.id)
     setEditingTitle(conv.title)
-    // Focus the input after it renders
-    setTimeout(() => editInputRef.current?.focus(), 0)
   }, [])
 
   const commitRename = useCallback(() => {
