@@ -1,18 +1,18 @@
 import { useState, useRef, useCallback } from 'react'
 import type { Attachment } from '../types'
-
-const ACCEPTED_TYPES = '.txt,.md,.json,.py,.js,.ts,.csv,.png,.jpg,.jpeg,.pdf'
+import { ACCEPTED_EXTENSIONS, readFileAsAttachment } from './DropZone'
 
 interface Props {
   onSend: (content: string, attachments: Attachment[]) => void
   onStop: () => void
   isStreaming: boolean
   disabled: boolean
+  attachments: Attachment[]
+  onAttachmentsChange: (attachments: Attachment[]) => void
 }
 
-export default function ChatInput({ onSend, onStop, isStreaming, disabled }: Props) {
+export default function ChatInput({ onSend, onStop, isStreaming, disabled, attachments, onAttachmentsChange }: Props) {
   const [text, setText] = useState('')
-  const [attachments, setAttachments] = useState<Attachment[]>([])
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -28,7 +28,7 @@ export default function ChatInput({ onSend, onStop, isStreaming, disabled }: Pro
     if ((!trimmed && attachments.length === 0) || isStreaming || disabled) return
     onSend(trimmed, attachments)
     setText('')
-    setAttachments([])
+    onAttachmentsChange([])
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto'
     }
@@ -42,26 +42,12 @@ export default function ChatInput({ onSend, onStop, isStreaming, disabled }: Pro
   }
 
   async function handleFileSelect(e: React.ChangeEvent<HTMLInputElement>) {
-    const files = e.target.files
-    if (!files) return
-
-    for (const file of Array.from(files)) {
-      try {
-        const result = await window.biav.readFile(file.path)
-        setAttachments((prev) => [
-          ...prev,
-          {
-            name: result.name,
-            path: file.path,
-            type: result.mimeType,
-            content: result.content,
-          },
-        ])
-      } catch (err) {
-        console.error('Failed to read file:', file.path, err)
-      }
+    const files = Array.from(e.target.files || [])
+    const results = await Promise.all(files.map(readFileAsAttachment))
+    const valid = results.filter((a): a is Attachment => a !== null)
+    if (valid.length > 0) {
+      onAttachmentsChange([...attachments, ...valid])
     }
-
     // Reset input so same file can be selected again
     if (fileInputRef.current) {
       fileInputRef.current.value = ''
@@ -69,7 +55,7 @@ export default function ChatInput({ onSend, onStop, isStreaming, disabled }: Pro
   }
 
   function removeAttachment(index: number) {
-    setAttachments((prev) => prev.filter((_, i) => i !== index))
+    onAttachmentsChange(attachments.filter((_, i) => i !== index))
   }
 
   return (
@@ -102,7 +88,7 @@ export default function ChatInput({ onSend, onStop, isStreaming, disabled }: Pro
             ref={fileInputRef}
             type="file"
             multiple
-            accept={ACCEPTED_TYPES}
+            accept={Array.from(ACCEPTED_EXTENSIONS).join(',')}
             onChange={handleFileSelect}
             className="hidden"
           />

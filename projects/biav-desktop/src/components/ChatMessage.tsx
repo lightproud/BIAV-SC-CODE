@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import hljs from 'highlight.js'
@@ -9,6 +9,7 @@ interface Props {
   isStreaming?: boolean
   onEdit?: (id: string, content: string) => void
   onRegenerate?: (id: string) => void
+  onFork?: (messageId: string) => void
 }
 
 function CodeBlock({ className, children }: { className?: string; children: string }) {
@@ -41,9 +42,46 @@ function CodeBlock({ className, children }: { className?: string; children: stri
   )
 }
 
-export default function ChatMessage({ message, isStreaming, onEdit, onRegenerate }: Props) {
+export default function ChatMessage({ message, isStreaming, onEdit, onRegenerate, onFork }: Props) {
   const [isEditing, setIsEditing] = useState(false)
   const [editContent, setEditContent] = useState(message.content)
+
+  useEffect(() => {
+    const cleanup = window.biav.onContextMenuAction((_event, { action, data }) => {
+      if (data?.messageId !== message.id) return
+      switch (action) {
+        case 'edit-message':
+          setEditContent(message.content)
+          setIsEditing(true)
+          break
+        case 'copy-message':
+          navigator.clipboard.writeText(message.content)
+          break
+        case 'copy-message-markdown':
+          navigator.clipboard.writeText(message.content)
+          break
+        case 'delete-message':
+          // Delete by editing to empty — handled by parent if needed
+          break
+        case 'regenerate-message':
+          onRegenerate?.(message.id)
+          break
+      }
+    })
+    return cleanup
+  }, [message.id, message.content, onRegenerate])
+
+  const handleContextMenu = useCallback(
+    (e: React.MouseEvent) => {
+      e.preventDefault()
+      const type = message.role === 'user' ? 'user-message' : 'assistant-message'
+      window.biav.showContextMenu(type, {
+        messageId: message.id,
+        conversationId: message.conversation_id,
+      })
+    },
+    [message.id, message.role, message.conversation_id],
+  )
 
   if (message.role === 'user') {
     if (isEditing) {
@@ -83,29 +121,44 @@ export default function ChatMessage({ message, isStreaming, onEdit, onRegenerate
     }
 
     return (
-      <div className="group flex justify-end">
+      <div className="group flex justify-end" onContextMenu={handleContextMenu}>
         <div className="max-w-[80%] flex flex-col items-end gap-1">
           <div className="bg-biav-border rounded-2xl rounded-br-sm px-4 py-2.5 text-sm leading-relaxed">
             {message.content}
           </div>
-          {onEdit && (
-            <button
-              className="text-xs text-biav-muted hover:text-biav-gold opacity-0 group-hover:opacity-100 transition-opacity"
-              onClick={() => {
-                setEditContent(message.content)
-                setIsEditing(true)
-              }}
-            >
-              编辑
-            </button>
-          )}
+          <div className="flex gap-2">
+            {onEdit && (
+              <button
+                className="text-xs text-biav-muted hover:text-biav-gold opacity-0 group-hover:opacity-100 transition-opacity"
+                onClick={() => {
+                  setEditContent(message.content)
+                  setIsEditing(true)
+                }}
+              >
+                编辑
+              </button>
+            )}
+            {onFork && (
+              <button
+                className="text-xs text-biav-muted hover:text-biav-gold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-0.5"
+                onClick={() => onFork(message.id)}
+                title="从此消息分支对话"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="18" r="3" /><circle cx="6" cy="6" r="3" /><circle cx="18" cy="6" r="3" />
+                  <path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9" /><path d="M12 12v3" />
+                </svg>
+                从此分支
+              </button>
+            )}
+          </div>
         </div>
       </div>
     )
   }
 
   return (
-    <div className="group flex gap-3">
+    <div className="group flex gap-3" onContextMenu={handleContextMenu}>
       <div className="shrink-0 w-7 h-7 rounded-full bg-biav-gold/20 flex items-center justify-center text-biav-gold text-xs font-bold mt-0.5">
         B
       </div>
@@ -135,13 +188,30 @@ export default function ChatMessage({ message, isStreaming, onEdit, onRegenerate
             {message.content}
           </ReactMarkdown>
         </div>
-        {onRegenerate && !isStreaming && (
-          <button
-            className="text-xs text-biav-muted hover:text-biav-gold opacity-0 group-hover:opacity-100 transition-opacity mt-1"
-            onClick={() => onRegenerate(message.id)}
-          >
-            重新生成
-          </button>
+        {!isStreaming && (
+          <div className="flex gap-2 mt-1">
+            {onRegenerate && (
+              <button
+                className="text-xs text-biav-muted hover:text-biav-gold opacity-0 group-hover:opacity-100 transition-opacity"
+                onClick={() => onRegenerate(message.id)}
+              >
+                重新生成
+              </button>
+            )}
+            {onFork && (
+              <button
+                className="text-xs text-biav-muted hover:text-biav-gold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-0.5"
+                onClick={() => onFork(message.id)}
+                title="从此消息分支对话"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="18" r="3" /><circle cx="6" cy="6" r="3" /><circle cx="18" cy="6" r="3" />
+                  <path d="M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9" /><path d="M12 12v3" />
+                </svg>
+                从此分支
+              </button>
+            )}
+          </div>
         )}
       </div>
     </div>

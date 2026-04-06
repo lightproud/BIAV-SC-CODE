@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import type { Conversation } from '../types'
 
 interface Props {
@@ -6,15 +6,43 @@ interface Props {
   activeId: string | null
   onSelect: (id: string) => void
   onDelete: (id: string) => void
+  onRename?: (id: string) => void
+  onExport?: (id: string) => void
   onNewChat: () => void
   onOpenSettings: () => void
   theme: 'dark' | 'light'
   onToggleTheme: () => void
 }
 
-export default function Sidebar({ conversations, activeId, onSelect, onDelete, onNewChat, onOpenSettings, theme, onToggleTheme }: Props) {
+export default function Sidebar({ conversations, activeId, onSelect, onDelete, onRename, onExport, onNewChat, onOpenSettings, theme, onToggleTheme }: Props) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+
+  const handleConversationContextMenu = useCallback(
+    (e: React.MouseEvent, convId: string) => {
+      e.preventDefault()
+      window.biav.showContextMenu('conversation', { conversationId: convId })
+    },
+    [],
+  )
+
+  useEffect(() => {
+    const cleanup = window.biav.onContextMenuAction((_event, { action, data }) => {
+      if (!data?.conversationId) return
+      switch (action) {
+        case 'rename-conversation':
+          onRename?.(data.conversationId)
+          break
+        case 'export-conversation':
+          onExport?.(data.conversationId)
+          break
+        case 'delete-conversation':
+          onDelete(data.conversationId)
+          break
+      }
+    })
+    return cleanup
+  }, [onDelete, onRename, onExport])
 
   const filteredConversations = searchQuery
     ? conversations.filter((c) => c.title.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -78,6 +106,7 @@ export default function Sidebar({ conversations, activeId, onSelect, onDelete, o
                 : 'text-biav-muted hover:bg-biav-border/50 hover:text-biav-text'
             }`}
             onClick={() => onSelect(conv.id)}
+            onContextMenu={(e) => handleConversationContextMenu(e, conv.id)}
             onMouseEnter={() => setHoveredId(conv.id)}
             onMouseLeave={() => setHoveredId(null)}
           >
@@ -103,16 +132,41 @@ export default function Sidebar({ conversations, activeId, onSelect, onDelete, o
       {/* Footer */}
       <div className="p-3 border-t border-biav-border flex items-center justify-between">
         <span className="text-xs text-biav-muted">v0.1.0</span>
-        <button
-          onClick={onOpenSettings}
-          className="text-biav-muted hover:text-biav-gold transition-colors"
-          title="设置"
-        >
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="3" />
-            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
-          </svg>
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={onToggleTheme}
+            className="text-biav-muted hover:text-biav-gold transition-colors"
+            title={theme === 'dark' ? '切换到浅色模式' : '切换到深色模式'}
+          >
+            {theme === 'dark' ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            ) : (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+              </svg>
+            )}
+          </button>
+          <button
+            onClick={onOpenSettings}
+            className="text-biav-muted hover:text-biav-gold transition-colors"
+            title="设置"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   )

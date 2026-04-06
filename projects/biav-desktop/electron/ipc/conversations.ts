@@ -1,4 +1,5 @@
 import { ipcMain } from 'electron'
+import { v4 as uuidv4 } from 'uuid'
 import { getDb } from './db'
 
 export function registerConversationHandlers() {
@@ -30,5 +31,38 @@ export function registerConversationHandlers() {
     const db = getDb()
     db.prepare('UPDATE conversations SET system_prompt = ? WHERE id = ?').run(prompt || null, conversationId)
     return { ok: true }
+  })
+
+  ipcMain.handle('conversations:fork', (_e, conversationId: string, messageId: string) => {
+    const db = getDb()
+
+    // Get original conversation
+    const conv = db.prepare('SELECT * FROM conversations WHERE id = ?').get(conversationId) as any
+    if (!conv) throw new Error('Conversation not found')
+
+    // Get the fork-point message to determine its created_at
+    const forkMsg = db.prepare('SELECT * FROM messages WHERE id = ? AND conversation_id = ?').get(messageId, conversationId) as any
+    if (!forkMsg) throw new Error('Message not found')
+
+    // Get all messages up to and including the fork point
+    const messages = db.prepare(
+      'SELECT * FROM messages WHERE conversation_id = ? AND created_at <= ? ORDER BY created_at ASC'
+    ).all(conversationId, forkMsg.created_at) as any[]
+
+    // Create new conversation
+    const newConvId = uuidv4()
+    db.prepare(
+      "INSERT INTO conversations (id, title, provider, model, project_id, created_at, updated_at) VALUES (?, ?, ?, ?, ?, datetime('now'), datetime('now'))"
+    ).run(newConvId, conv.title + ' (分支)', conv.provider, conv.model, conv.project_id)
+
+    // Copy messages
+    const insertMsg = db.prepare(
+      'INSERT INTO messages (id, conversation_id, role, content, model, provider, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)'
+    )
+    for (const msg of messages) {
+      insertMsg.run(uuidv4(), newConvId, msg.role, msg.content, msg.model, msg.provider, msg.created_at)
+    }
+
+    return { conversationId: newConvId }
   })
 }

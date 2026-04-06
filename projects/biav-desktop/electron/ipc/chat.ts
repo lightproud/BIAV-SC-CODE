@@ -1,8 +1,32 @@
 import { ipcMain, BrowserWindow } from 'electron'
 import { v4 as uuidv4 } from 'uuid'
 import { getDb } from './db'
-import { streamChat } from '../llm'
+import { streamChat, type LLMUsage } from '../llm'
 import Store from 'electron-store'
+
+// Per-million-token pricing: [input, output]
+const MODEL_PRICING: Record<string, [number, number]> = {
+  'claude-sonnet-4-20250514': [3, 15],
+  'claude-3-5-sonnet-20241022': [3, 15],
+  'claude-3-5-haiku-20241022': [1, 5],
+  'claude-3-opus-20240229': [15, 75],
+  'claude-3-haiku-20240307': [0.25, 1.25],
+  'gpt-4o': [2.5, 10],
+  'gpt-4o-mini': [0.15, 0.6],
+  'gpt-4-turbo': [10, 30],
+  'gpt-4': [30, 60],
+  'gpt-3.5-turbo': [0.5, 1.5],
+  'o1': [15, 60],
+  'o1-mini': [3, 12],
+  'o3-mini': [1.1, 4.4],
+}
+
+function estimateCost(usage: LLMUsage): number {
+  const pricing = MODEL_PRICING[usage.model]
+  if (!pricing) return 0
+  const [inputRate, outputRate] = pricing
+  return (usage.inputTokens * inputRate + usage.outputTokens * outputRate) / 1_000_000
+}
 
 const store = new Store()
 let abortController: AbortController | null = null
@@ -119,9 +143,15 @@ export function registerChatHandlers() {
         signal: abortController.signal,
       })
 
+      let usageData: LLMUsage | null = null
+
       for await (const chunk of stream) {
-        fullContent += chunk
-        win.webContents.send('chat:stream', { type: 'delta', content: chunk })
+        if (chunk.type === 'text' && chunk.text) {
+          fullContent += chunk.text
+          win.webContents.send('chat:stream', { type: 'delta', content: chunk.text })
+        } else if (chunk.type === 'usage' && chunk.usage) {
+          usageData = chunk.usage
+        }
       }
 
       // Save assistant message
@@ -129,6 +159,25 @@ export function registerChatHandlers() {
       db.prepare(
         'INSERT INTO messages (id, conversation_id, role, content, provider, model) VALUES (?, ?, ?, ?, ?, ?)'
       ).run(assistantMsgId, conversationId, 'assistant', fullContent, req.provider, req.model)
+
+      // Save usage data
+      if (usageData && conversationId) {
+        const cost = estimateCost(usageData)
+        const usageId = uuidv4()
+        db.prepare(
+          'INSERT INTO usage (id, conversation_id, model, input_tokens, output_tokens, estimated_cost) VALUES (?, ?, ?, ?, ?, ?)'
+        ).run(usageId, conversationId, usageData.model, usageData.inputTokens, usageData.outputTokens, cost)
+
+        win.webContents.send('chat:stream', {
+          type: 'usage',
+          usage: {
+            inputTokens: usageData.inputTokens,
+            outputTokens: usageData.outputTokens,
+            model: usageData.model,
+            estimatedCost: cost,
+          },
+        })
+      }
 
       // Update conversation timestamp
       db.prepare('UPDATE conversations SET updated_at = datetime("now") WHERE id = ?').run(conversationId)
@@ -180,5 +229,13 @@ export function registerChatHandlers() {
         'DELETE FROM messages WHERE conversation_id = ? AND created_at > ?'
       ).run(req.conversationId, msg.created_at)
     }
+  })
+
+  ipcMain.handle('usage:session', async (_event, conversationId: string) => {
+    const db = getDb()
+    const row = db.prepare(
+      'SELECT COALESCE(SUM(input_tokens), 0) as totalInput, COALESCE(SUM(output_tokens), 0) as totalOutput, COALESCE(SUM(estimated_cost), 0) as totalCost FROM usage WHERE conversation_id = ?'
+    ).get(conversationId) as { totalInput: number; totalOutput: number; totalCost: number }
+    return row
   })
 }

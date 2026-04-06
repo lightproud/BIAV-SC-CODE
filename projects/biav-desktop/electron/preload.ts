@@ -20,6 +20,7 @@ contextBridge.exposeInMainWorld('biav', {
   listConversations: () => ipcRenderer.invoke('conversations:list'),
   getMessages: (conversationId: string) => ipcRenderer.invoke('conversations:messages', conversationId),
   deleteConversation: (id: string) => ipcRenderer.invoke('conversations:delete', id),
+  forkConversation: (conversationId: string, messageId: string) => ipcRenderer.invoke('conversations:fork', conversationId, messageId),
   exportConversation: (id: string, format: 'md' | 'json') => ipcRenderer.invoke('conversations:export', id, format),
 
   // Edit & Regenerate
@@ -50,6 +51,25 @@ contextBridge.exposeInMainWorld('biav', {
     ipcRenderer.on('quick-entry:received', callback)
     return () => ipcRenderer.removeListener('quick-entry:received', callback)
   },
+
+  // Context Menu
+  showContextMenu: (type: string, data?: any) => ipcRenderer.invoke('context-menu:show', type, data),
+
+  onContextMenuAction: (callback: (event: any, payload: { action: string; data?: any }) => void) => {
+    ipcRenderer.on('context-menu:action', callback)
+    return () => ipcRenderer.removeListener('context-menu:action', callback)
+  },
+
+  // Projects
+  listProjects: () => ipcRenderer.invoke('projects:list'),
+  createProject: (data: { name: string; description?: string; system_prompt?: string }) =>
+    ipcRenderer.invoke('projects:create', data),
+  updateProject: (id: string, data: { name?: string; description?: string; system_prompt?: string }) =>
+    ipcRenderer.invoke('projects:update', id, data),
+  deleteProject: (id: string) => ipcRenderer.invoke('projects:delete', id),
+  listProjectConversations: (projectId: string) => ipcRenderer.invoke('projects:conversations', projectId),
+  moveConversationToProject: (conversationId: string, projectId: string | null) =>
+    ipcRenderer.invoke('projects:move', conversationId, projectId),
 
   // Platform
   platform: process.platform,
