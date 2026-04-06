@@ -174,6 +174,7 @@ declare global {
         provider: string
         model: string
         systemPrompt?: string
+        stylePrompt?: string
         attachments?: Attachment[]
         temperature?: number
         maxTokens?: number
