@@ -17,6 +17,7 @@ import SystemPromptEditor from './components/SystemPromptEditor'
 import { parseArtifacts } from './lib/parseArtifacts'
 import ProjectEditor from './components/ProjectEditor'
 import UsageBar, { SessionUsageBar } from './components/UsageBar'
+import StreamingStatus from './components/StreamingStatus'
 import type { Conversation, Project, ProviderStatus, Attachment, Artifact } from './types'
 
 export default function App() {
@@ -25,6 +26,8 @@ export default function App() {
     conversationId,
     isStreaming,
     streamingContent,
+    streamingTokens,
+    streamingDuration,
     sendMessage,
     stopStreaming,
     loadConversation,

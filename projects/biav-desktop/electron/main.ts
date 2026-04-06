@@ -7,6 +7,7 @@ import { registerConversationHandlers } from './ipc/conversations'
 import { registerModelHandlers } from './ipc/models'
 import { registerSettingsHandlers } from './ipc/settings'
 import { registerExportHandlers } from './ipc/export'
+import { registerImportHandlers } from './ipc/import'
 import { registerFileHandlers } from './ipc/files'
 import { registerContextMenuHandlers } from './ipc/context-menu'
 import { registerNotificationHandlers } from './ipc/notifications'
@@ -228,6 +229,7 @@ app.whenReady().then(() => {
   registerModelHandlers()
   registerSettingsHandlers()
   registerExportHandlers()
+  registerImportHandlers()
   registerFileHandlers()
   registerProjectHandlers()
   registerContextMenuHandlers()
@@ -249,6 +251,8 @@ app.whenReady().then(() => {
   ipcMain.handle('updater:check', () => checkForUpdate())
   ipcMain.handle('updater:download', () => downloadUpdate())
   ipcMain.handle('updater:install', () => installUpdate())
+
+  ipcMain.handle('shell:openExternal', (_event, url: string) => shell.openExternal(url))
 
   app.on('activate', () => {
     if (!mainWindow) createWindow()

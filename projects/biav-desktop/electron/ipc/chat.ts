@@ -146,6 +146,8 @@ export function registerChatHandlers() {
         apiKey,
         baseUrl,
         signal: abortController.signal,
+        temperature: req.temperature,
+        maxTokens: req.maxTokens,
       })
 
       let usageData: LLMUsage | null = null

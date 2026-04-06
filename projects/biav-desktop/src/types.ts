@@ -76,6 +76,13 @@ export interface Settings {
   openai_base_url: string
 }
 
+// Clipboard types
+export interface ClipboardEntry {
+  text: string
+  timestamp: number
+  source: 'code' | 'message'
+}
+
 // MCP types
 export type MCPServerStatus = 'stopped' | 'starting' | 'running' | 'error'
 
@@ -157,6 +164,11 @@ declare global {
       // Context Menu
       showContextMenu: (type: string, data?: any) => Promise<void>
       onContextMenuAction: (callback: (event: any, payload: { action: string; data?: any }) => void) => () => void
+
+      // Clipboard
+      clipboardHistory: () => Promise<ClipboardEntry[]>
+      clipboardAdd: (entry: { text: string; source: 'code' | 'message' }) => Promise<{ ok: boolean }>
+      clipboardClear: () => Promise<{ ok: boolean }>
 
       // Updater
       checkForUpdate: () => Promise<void>

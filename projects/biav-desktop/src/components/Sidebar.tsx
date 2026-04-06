@@ -9,6 +9,7 @@ interface Props {
   onDelete: (id: string) => void
   onRename?: (id: string, title: string) => void
   onExport?: (id: string) => void
+  onImport?: () => void
   onNewChat: () => void
   onOpenSettings: () => void
   onNewProject: () => void
@@ -28,6 +29,7 @@ export default function Sidebar({
   onDelete,
   onRename,
   onExport,
+  onImport,
   onNewChat,
   onOpenSettings,
   onNewProject,
