@@ -125,6 +125,7 @@ export default function Sidebar({
   const unpinnedUncategorized = uncategorized.filter((c) => !c.is_pinned)
 
   function renderConversationItem(conv: Conversation) {
+    const isEditing = editingId === conv.id
     return (
       <div
         key={conv.id}
@@ -133,12 +134,30 @@ export default function Sidebar({
             ? 'bg-biav-border text-biav-gold'
             : 'text-biav-muted hover:bg-biav-border/50 hover:text-biav-text'
         }`}
-        onClick={() => onSelect(conv.id)}
+        onClick={() => { if (!isEditing) onSelect(conv.id) }}
+        onDoubleClick={(e) => { e.stopPropagation(); startEditing(conv) }}
         onContextMenu={(e) => handleConversationContextMenu(e, conv.id)}
         onMouseEnter={() => setHoveredId(conv.id)}
         onMouseLeave={() => { setHoveredId(null); setMoveMenuConvId(null) }}
       >
-        <span className="flex-1 truncate">{conv.title}</span>
+        {isEditing ? (
+          <input
+            ref={editInputRef}
+            type="text"
+            value={editingTitle}
+            onChange={(e) => setEditingTitle(e.target.value)}
+            onBlur={commitRename}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') commitRename()
+              else if (e.key === 'Escape') cancelEditing()
+            }}
+            onClick={(e) => e.stopPropagation()}
+            className="flex-1 bg-biav-bg border border-biav-gold rounded px-1 py-0 text-sm text-biav-text focus:outline-none min-w-0"
+            autoFocus
+          />
+        ) : (
+          <span className="flex-1 truncate">{conv.title}</span>
+        )}
         {hoveredId === conv.id && (
           <div className="flex items-center gap-0.5 shrink-0">
             {/* Pin */}
