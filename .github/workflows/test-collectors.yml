@@ -2,6 +2,9 @@ name: Test All Data Collectors
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - claude/data-collector-ykOhM
 
 permissions:
   contents: read
