@@ -24,7 +24,8 @@ import ClipboardHistory from './components/ClipboardHistory'
 import ModelParamsPanel from './components/ModelParams'
 import ToolApproval from './components/ToolApproval'
 import ToolResult from './components/ToolResult'
-import type { Conversation, Project, ProviderStatus, Attachment, Artifact, ModelParams } from './types'
+import StyleSelector from './components/StyleSelector'
+import type { Conversation, Project, ProviderStatus, Attachment, Artifact, ModelParams, Style } from './types'
 
 export default function App() {
   const {
@@ -67,6 +68,8 @@ export default function App() {
   const [attachments, setAttachments] = useState<Attachment[]>([])
   const [modelParams, setModelParams] = useState<ModelParams>({ temperature: 1.0, maxTokens: 8192 })
   const [enableThinking, setEnableThinking] = useState(false)
+  const [styles, setStyles] = useState<Style[]>([])
+  const [activeStyleId, setActiveStyleId] = useState<string | null>(null)
   const virtuosoRef = useRef<VirtuosoHandle>(null)
 
   // Global keyboard shortcuts
@@ -83,6 +86,7 @@ export default function App() {
     refreshConversations()
     refreshProjects()
     refreshModels()
+    refreshStyles()
   }, [])
 
   // Build the virtual list items: messages + tool events + optional streaming message + optional usage bar
