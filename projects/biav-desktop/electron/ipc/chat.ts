@@ -3,10 +3,11 @@ import { v4 as uuidv4 } from 'uuid'
 import { getDb } from './db'
 import { streamChat, type LLMUsage, type AnthropicTool, type ToolCall } from '../llm'
 import { MCPManager } from '../mcp/manager'
-import { BUILTIN_TOOLS, BUILTIN_TOOL_NAMES, executeBuiltinTool } from '../tools/builtin'
+import { BUILTIN_TOOLS, BUILTIN_TOOL_NAMES, executeBuiltinTool, getApprovalTier } from '../tools/builtin'
 import { fireHook } from '../tools/hooks'
 import { taskManager } from '../tools/tasks'
 import { getAgentSystemPrompt } from '../tools/system-prompt'
+import { compressHistory } from '../tools/context-compression'
 import Store from 'electron-store'
 import { isWindowFocused, getMainWindow } from '../window-state'
 
@@ -214,7 +215,10 @@ export function registerChatHandlers(mcpManager: MCPManager) {
     let thinkingContent = ''
 
     // Messages for the ongoing conversation (may include tool results)
-    let conversationMessages = [...history]
+    // Compress history to fit within token budget (reserve space for tools + response)
+    const modelMaxTokens = req.model.includes('opus') ? 200000 : req.model.includes('gpt-4') ? 128000 : 100000
+    const tokenBudget = Math.floor(modelMaxTokens * 0.75) // Leave 25% for response + tools
+    let conversationMessages = compressHistory(history, tokenBudget)
 
     try {
       let continueLoop = true
@@ -311,11 +315,19 @@ export function registerChatHandlers(mcpManager: MCPManager) {
               toolUseId: tc.id,
             })
 
-            // Check if this tool is always allowed (per-conversation scope)
+            // Determine approval tier
+            const tier = isBuiltin ? getApprovalTier(tc.name) : 'confirm'
             const allowedSet = conversationAllowedTools.get(conversationId!) || new Set()
-            let approved = allowedSet.has(tc.name)
+            let approved = tier === 'auto' || allowedSet.has(tc.name)
 
             if (!approved) {
+              // Send tier info to renderer for UI styling
+              win.webContents.send('chat:stream', {
+                type: 'tool_approval_tier',
+                toolUseId: tc.id,
+                tier,
+              })
+
               // Wait for user approval
               approved = await new Promise<boolean>((resolve) => {
                 pendingApprovals.set(tc.id, { resolve, conversationId: conversationId! })
