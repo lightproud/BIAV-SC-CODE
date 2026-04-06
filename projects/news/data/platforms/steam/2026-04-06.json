@@ -1,8 +1,8 @@
 {
   "date": "2026-04-06",
-  "archived_at": "2026-04-06T10:43:56.191614+00:00",
+  "archived_at": "2026-04-06T14:19:43.660021+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -213,6 +213,66 @@
       "review": "Who made this game?",
       "timestamp_created": 1775438969,
       "playtime_forever": 2590
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T10:11:17+00:00",
+      "lang": "english",
+      "title": "[正面] I am really liking the game so far!\r\n\r\nThe art is...",
+      "summary": "I am really liking the game so far!\r\n\r\nThe art is beautiful, the story is interesting and the characters are just <3\r\nThe gacha isnt bad at all and I dont feel the need to throw money to get a charact",
+      "url": "https://steamcommunity.com/profiles/76561199030158080/recommended/3052450",
+      "author": "76561199030158080",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I am really liking the game so far!\r\n\r\nThe art is beautiful, the story is interesting and the characters are just <3\r\nThe gacha isnt bad at all and I dont feel the need to throw money to get a charact",
+      "timestamp_created": 1775470277,
+      "playtime_forever": 455
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T10:06:32+00:00",
+      "lang": "english",
+      "title": "[正面] Play this if you like slay the spire XD",
+      "summary": "Play this if you like slay the spire XD",
+      "url": "https://steamcommunity.com/profiles/76561198151339443/recommended/3052450",
+      "author": "76561198151339443",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Play this if you like slay the spire XD",
+      "timestamp_created": 1775469992,
+      "playtime_forever": 21788
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T08:46:15+00:00",
+      "lang": "schinese",
+      "title": "[正面] 小玩了一下，立绘美味，小人儿也很有表现力，然后试玩了一下强力角色，发现后期单纯无意义叠数值，7000...",
+      "summary": "小玩了一下，立绘美味，小人儿也很有表现力，然后试玩了一下强力角色，发现后期单纯无意义叠数值，7000血都来了，有种仿杀戮尖塔但是做成了堆数值的二游让人氪金的感觉。而且搜了一下好像主美也被挖走了...？总之因为免费吃到了美味的图片，给个中等评价吧。",
+      "url": "https://steamcommunity.com/profiles/76561198819141685/recommended/3052450",
+      "author": "76561198819141685",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "小玩了一下，立绘美味，小人儿也很有表现力，然后试玩了一下强力角色，发现后期单纯无意义叠数值，7000血都来了，有种仿杀戮尖塔但是做成了堆数值的二游让人氪金的感觉。而且搜了一下好像主美也被挖走了...？总之因为免费吃到了美味的图片，给个中等评价吧。",
+      "timestamp_created": 1775465175,
+      "playtime_forever": 104
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T06:23:26+00:00",
+      "lang": "english",
+      "title": "[正面] This game is good, but Oblivion was better. Guilds...",
+      "summary": "This game is good, but Oblivion was better. Guilds: in morimens - 1-hour crappy dull quests, in Oblivion - those quests are large and interesting(i love the final quest of the Thieves Guild). Main Que",
+      "url": "https://steamcommunity.com/profiles/76561199085177607/recommended/3052450",
+      "author": "76561199085177607",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "This game is good, but Oblivion was better. Guilds: in morimens - 1-hour crappy dull quests, in Oblivion - those quests are large and interesting(i love the final quest of the Thieves Guild). Main Que",
+      "timestamp_created": 1775456606,
+      "playtime_forever": 3479
     }
   ]
 }

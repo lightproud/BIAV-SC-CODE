@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-06
 
-> 采集时间：2026-04-06 18:43 UTC+8
+> 采集时间：2026-04-06 22:19 UTC+8
 
 ## 🔥 联动动态
 
@@ -40,7 +40,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 0（沉默）|
 | Ruliweb | 0（沉默）|
-| Steam | 8 |
+| Steam | 9 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -60,37 +60,39 @@
 
 ## Discord
 
-今日 15,041 条消息，212 位活跃用户，1,441 次反应。热门频道：🔸morimens-game-chat(7066)、🔸canal-português(2176)、🔸phòng-chat-tiếng-việt(1612)、🔸綜合討論(1355)、🔸game-question(1239)
+今日 6,502 条消息，269 位活跃用户，753 次反应。热门频道：🔸morimens-game-chat(3952)、🔸綜合討論(530)、🔸canal-português(521)、🔸ruang-obrolan-indonesia(428)、🔸game-question(336)
 
 ### 热门话题
 
-1. [DC热门] climbkaly@🔸morimens-game-chat: E1 sexy people. 1 more — engagement: 8
-2. [DC热门] that_one_chippy@Tonight or Never || Arc 2 Chapter 3:  — engagement: 8
-3. [DC热门] climbkaly@🔸morimens-game-chat: Even the Queen trash t — engagement: 6
-4. [DC热门] .angellveil@🔸morimens-game-chat: oh yeah uh guys remi — engagement: 6
-5. [DC热门] arandomflamev2@🔸morimens-game-chat: YEAHHH — engagement: 6
+1. [DC热门] megidola.@🔸morimens-game-chat: Today, 64 days after I — engagement: 14
+2. [DC热门] angbak@🔸阵容构建: 99 回合 — engagement: 10
+3. [DC热门] bluepomander@pickmin: pickmin 👍 — engagement: 9
+4. [DC热门] aurora3981@P Dive Karen Boss Cheating: Karen gains 51 — engagement: 8
+5. [DC热门] princess.goth@🔸morimens-game-chat:  i got rly unlucky — engagement: 7
 
 ## Steam 评论
 
-- 好评 8 / 差评 0 / 好评率 100%
-- 语言分布：english 4, schinese 2, koreana 1, russian 1
+- 好评 9 / 差评 0 / 好评率 100%
+- 语言分布：english 6, schinese 2, koreana 1
 
 ### 热门好评
 
-1. [正面] Who made this game? — engagement: 0
-2. [正面] Very engaging gameplay, I find myself stuck playin... — engagement: 0
-3. [正面] windows系统steam平台运行越运行越卡。肉鸽地图加角色养成，角色配队就是流派，启灵需要反复抽... — engagement: 0
-4. [正面] 아름다운 스토리와 그래픽, 게임성이 훌륭함.
-ai 번역이 단점이지만, 번역 이슈가 있음에... — engagement: 0
-5. [正面] Love the game, especially the story. The lovecraft... — engagement: 0
+1. [正面] 아름다운 스토리와 그래픽, 게임성이 훌륭함.
+ai 번역이 단점이지만, 번역 이슈가 있음에... — engagement: 1
+2. [正面] I am really liking the game so far!
+
+The art is... — engagement: 0
+3. [正面] Play this if you like slay the spire XD — engagement: 0
+4. [正面] 小玩了一下，立绘美味，小人儿也很有表现力，然后试玩了一下强力角色，发现后期单纯无意义叠数值，7000... — engagement: 0
+5. [正面] This game is good, but Oblivion was better. Guilds... — engagement: 0
 
 ## Bilibili
 
-1. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 3344
-2. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 3344
-3. [忘却前夜]最艺术的一集 — engagement: 1058
-4. [忘却前夜]最艺术的一集 — engagement: 1058
-5. 【忘却前夜】自建号补超限绒朵！ — engagement: 262
+1. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 3927
+2. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 3927
+3. 【忘却前夜】自建号补超限绒朵！ — engagement: 281
+4. 【忘却前夜】自建号补超限绒朵！ — engagement: 281
+5. 【忘却前夜 Morimens_动态壁纸】希洛_泰旖丝_杜勒赛因_萨尔瓦多=血肉界域1期_Wallpaper Engine — engagement: 90
 
 ## Gamerch Wiki
 
