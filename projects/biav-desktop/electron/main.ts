@@ -9,6 +9,7 @@ import { registerSettingsHandlers } from './ipc/settings'
 import { registerExportHandlers } from './ipc/export'
 import { registerFileHandlers } from './ipc/files'
 import { registerContextMenuHandlers } from './ipc/context-menu'
+import { registerNotificationHandlers } from './ipc/notifications'
 import { registerProjectHandlers } from './ipc/projects'
 import { registerMCPHandlers } from './ipc/mcp'
 import { MCPManager } from './mcp/manager'
@@ -17,6 +18,14 @@ import { initUpdater, checkForUpdate, downloadUpdate, installUpdate } from './up
 const mcpManager = new MCPManager()
 
 let mainWindow: BrowserWindow | null = null
+
+export function isWindowFocused(): boolean {
+  return mainWindow?.isFocused() ?? false
+}
+
+export function getMainWindow(): BrowserWindow | null {
+  return mainWindow
+}
 let quickEntryWindow: BrowserWindow | null = null
 let tray: Tray | null = null
 
@@ -222,6 +231,7 @@ app.whenReady().then(() => {
   registerProjectHandlers()
   registerContextMenuHandlers()
   registerMCPHandlers(mcpManager)
+  registerNotificationHandlers()
 
   createWindow()
   createQuickEntry()
