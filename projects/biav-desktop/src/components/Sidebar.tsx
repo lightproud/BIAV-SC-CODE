@@ -92,6 +92,10 @@ export default function Sidebar({
 
   const uncategorized = projectConvMap.get(null) ?? []
 
+  // Separate pinned conversations across all groups
+  const pinnedConversations = filteredConversations.filter((c) => c.is_pinned)
+  const unpinnedUncategorized = uncategorized.filter((c) => !c.is_pinned)
+
   function renderConversationItem(conv: Conversation) {
     return (
       <div
@@ -239,6 +243,16 @@ export default function Sidebar({
 
       {/* Project & Conversation List */}
       <div className="flex-1 overflow-y-auto px-2">
+        {/* Pinned Section */}
+        {pinnedConversations.length > 0 && (
+          <div className="mb-1">
+            <div className="px-2 py-1.5 mt-1">
+              <span className="text-xs font-medium text-biav-gold uppercase tracking-wider">已置顶</span>
+            </div>
+            {pinnedConversations.map(renderConversationItem)}
+          </div>
+        )}
+
         {/* Projects Section Header */}
         <div className="flex items-center justify-between px-2 py-1.5 mt-1">
           <span className="text-xs font-medium text-biav-muted uppercase tracking-wider">项目</span>
@@ -253,7 +267,7 @@ export default function Sidebar({
 
         {/* Project Groups */}
         {projects.map((project) => {
-          const convs = projectConvMap.get(project.id) ?? []
+          const convs = (projectConvMap.get(project.id) ?? []).filter((c) => !c.is_pinned)
           const isCollapsed = collapsedProjects.has(project.id)
           return (
             <div key={project.id} className="mb-1">
@@ -318,12 +332,12 @@ export default function Sidebar({
         })}
 
         {/* Uncategorized */}
-        {uncategorized.length > 0 && (
+        {unpinnedUncategorized.length > 0 && (
           <div className="mt-2">
             <div className="px-2 py-1.5">
               <span className="text-xs font-medium text-biav-muted uppercase tracking-wider">未分类</span>
             </div>
-            {uncategorized.map(renderConversationItem)}
+            {unpinnedUncategorized.map(renderConversationItem)}
           </div>
         )}
 

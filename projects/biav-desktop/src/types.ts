@@ -118,6 +118,7 @@ declare global {
       listConversations: () => Promise<Conversation[]>
       getMessages: (conversationId: string) => Promise<Message[]>
       deleteConversation: (id: string) => Promise<void>
+      renameConversation: (id: string, title: string) => Promise<{ ok: boolean }>
       pinConversation: (id: string, pinned: boolean) => Promise<{ ok: boolean }>
       forkConversation: (conversationId: string, messageId: string) => Promise<{ conversationId: string }>
       exportConversation: (id: string, format: 'md' | 'json') => Promise<{ ok: boolean; path?: string; error?: string }>
@@ -151,6 +152,15 @@ declare global {
       installUpdate: () => Promise<void>
       onUpdateAvailable: (callback: (info: { version: string; releaseDate?: string }) => void) => () => void
       onUpdateDownloaded: (callback: (info: { version: string }) => void) => () => void
+
+      // MCP
+      mcpListServers: () => Promise<MCPServerInfo[]>
+      mcpStartServer: (name: string) => Promise<{ ok: boolean; error?: string }>
+      mcpStopServer: (name: string) => Promise<{ ok: boolean }>
+      mcpListTools: (serverName: string) => Promise<MCPTool[]>
+      mcpCallTool: (serverName: string, toolName: string, args: Record<string, unknown>) => Promise<{ ok: boolean; result?: any; error?: string }>
+      mcpGetConfig: () => Promise<MCPConfig>
+      mcpSaveConfig: (config: MCPConfig) => Promise<{ ok: boolean }>
     }
   }
 }
