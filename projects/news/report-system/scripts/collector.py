@@ -1689,7 +1689,7 @@ def fetch_bahamut():
                             title=thread.get("title", ""),
                             summary="",
                             source="bahamut",
-                            platform_region="cn",
+                            platform_region="tw",
                             time_str=thread.get("ctime", datetime.now(timezone.utc).isoformat()),
                             url=f"https://forum.gamer.com.tw/C.php?bsn={baha_bsn}&snA={thread.get('snA', '')}",
                             engagement=gp + reply,
@@ -1703,17 +1703,23 @@ def fetch_bahamut():
         except Exception as e:
             logger.warning(f"Bahamut bsn={baha_bsn} failed: {e}")
 
-    # 方式2: 关键词搜索
+    # 方式2: 关键词搜索 (HTML scraping — 巴哈搜索不返回可靠的 JSON)
+    import re as _re
     for keyword in KEYWORDS["zh"]:
         try:
-            data = _get(
+            resp = _get(
                 "https://forum.gamer.com.tw/search.php",
-                params={"q": keyword, "bsn": "0", "ajax": "1"},
-                headers={"Referer": "https://forum.gamer.com.tw"},
+                params={"q": keyword, "bsn": "0"},
+                headers={
+                    "Referer": "https://forum.gamer.com.tw",
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+                },
             )
-            if data and data.status_code == 200:
+            if resp and resp.status_code == 200:
+                html = resp.text
+                # Try JSON first (in case ajax works)
                 try:
-                    result = data.json()
+                    result = resp.json()
                     for thread in result.get("data", {}).get("list", []) or []:
                         gp = int(thread.get("gp", 0))
                         reply = int(thread.get("reply", 0))
@@ -1721,7 +1727,7 @@ def fetch_bahamut():
                             title=thread.get("title", ""),
                             summary="",
                             source="bahamut",
-                            platform_region="cn",
+                            platform_region="tw",
                             time_str=thread.get("ctime", datetime.now(timezone.utc).isoformat()),
                             url=thread.get("url", ""),
                             engagement=gp + reply,
@@ -1730,8 +1736,34 @@ def fetch_bahamut():
                             lang="zh",
                         ))
                 except (ValueError, KeyError):
-                    pass
-            logger.info(f'Bahamut search "{keyword}": {len(items)} results')
+                    # HTML fallback: parse search result page
+                    # Bahamut search results have: <p class="b-list__main__title">
+                    #   <a href="C.php?bsn=...&snA=...">TITLE</a>
+                    for match in _re.finditer(
+                        r'<a[^>]*href="((?:C|Co)\.php\?bsn=\d+[^"]*)"[^>]*>\s*'
+                        r'(.+?)\s*</a>',
+                        html, _re.DOTALL,
+                    ):
+                        url_path, title_html = match.groups()
+                        title = _re.sub(r'<[^>]+>', '', title_html).strip()
+                        if not title:
+                            continue
+                        full_url = f"https://forum.gamer.com.tw/{url_path}"
+                        # Try to extract GP and reply count nearby
+                        items.append(_make_item(
+                            title=title,
+                            summary="",
+                            source="bahamut",
+                            platform_region="tw",
+                            time_str=datetime.now(timezone.utc).isoformat(),
+                            url=full_url,
+                            engagement=0,
+                            is_hot=False,
+                            author="",
+                            lang="zh",
+                        ))
+            count = len(items)
+            logger.info(f'Bahamut search "{keyword}": {count} results')
         except Exception as e:
             logger.warning(f'Bahamut search "{keyword}" failed: {e}')
 
