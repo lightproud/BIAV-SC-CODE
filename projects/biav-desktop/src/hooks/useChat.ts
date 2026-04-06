@@ -8,6 +8,7 @@ export function useChat() {
   const [streamingContent, setStreamingContent] = useState('')
   const [lastUsage, setLastUsage] = useState<UsageData | null>(null)
   const [sessionUsage, setSessionUsage] = useState<SessionUsage>({ totalInput: 0, totalOutput: 0, totalCost: 0 })
+  const [titleUpdateCounter, setTitleUpdateCounter] = useState(0)
   const cleanupRef = useRef<(() => void) | null>(null)
 
   useEffect(() => {
@@ -40,6 +41,9 @@ export function useChat() {
             totalOutput: prev.totalOutput + data.usage.outputTokens,
             totalCost: prev.totalCost + data.usage.estimatedCost,
           }))
+          break
+        case 'titleUpdate':
+          setTitleUpdateCounter((c) => c + 1)
           break
         case 'done':
           setIsStreaming(false)
@@ -193,6 +197,7 @@ export function useChat() {
     streamingContent,
     lastUsage,
     sessionUsage,
+    titleUpdateCounter,
     sendMessage,
     stopStreaming,
     loadConversation,

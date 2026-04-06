@@ -30,7 +30,7 @@ export default class ErrorBoundary extends React.Component<ErrorBoundaryProps, E
   render() {
     if (this.state.hasError) {
       const { error } = this.state
-      const isDev = import.meta.env.DEV
+      const isDev = (import.meta as any).env?.DEV
 
       return (
         <div className="flex h-screen w-screen items-center justify-center bg-biav-surface p-8">
