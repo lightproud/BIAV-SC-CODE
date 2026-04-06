@@ -1,5 +1,6 @@
 import { app, BrowserWindow, globalShortcut, Menu, Tray, nativeImage, ipcMain, shell, screen } from 'electron'
 import path from 'path'
+import Store from 'electron-store'
 import { initDatabase } from './ipc/db'
 import { registerChatHandlers } from './ipc/chat'
 import { registerConversationHandlers } from './ipc/conversations'
@@ -15,13 +16,59 @@ let mainWindow: BrowserWindow | null = null
 let quickEntryWindow: BrowserWindow | null = null
 let tray: Tray | null = null
 
+const store = new Store<{ windowBounds: WindowBounds }>()
+
+interface WindowBounds {
+  x: number
+  y: number
+  width: number
+  height: number
+  isMaximized: boolean
+}
+
 const VITE_DEV_SERVER_URL = process.env.VITE_DEV_SERVER_URL
 const isDev = !!VITE_DEV_SERVER_URL
 
+function isPositionOnScreen(x: number, y: number, width: number, height: number): boolean {
+  const displays = screen.getAllDisplays()
+  return displays.some((display) => {
+    const { x: dx, y: dy, width: dw, height: dh } = display.bounds
+    // Check that at least part of the window overlaps a display
+    return x + width > dx && x < dx + dw && y + height > dy && y < dy + dh
+  })
+}
+
+function getWindowBounds(): Partial<WindowBounds> {
+  const saved = store.get('windowBounds') as WindowBounds | undefined
+  if (saved && isPositionOnScreen(saved.x, saved.y, saved.width, saved.height)) {
+    return saved
+  }
+  return { width: 1100, height: 750 }
+}
+
+function saveWindowBounds() {
+  if (!mainWindow) return
+  const isMaximized = mainWindow.isMaximized()
+  // Save the restored (non-maximized) bounds so we can restore properly
+  const bounds = isMaximized
+    ? (store.get('windowBounds') as WindowBounds | undefined) ?? mainWindow.getBounds()
+    : mainWindow.getBounds()
+  store.set('windowBounds', {
+    x: bounds.x,
+    y: bounds.y,
+    width: bounds.width,
+    height: bounds.height,
+    isMaximized,
+  })
+}
+
 function createWindow() {
+  const { x, y, width, height, isMaximized } = getWindowBounds() as WindowBounds
+
   mainWindow = new BrowserWindow({
-    width: 1100,
-    height: 750,
+    width,
+    height,
+    ...(x !== undefined && y !== undefined ? { x, y } : {}),
     minWidth: 800,
     minHeight: 500,
     title: 'Brain in a Vat',
@@ -35,6 +82,10 @@ function createWindow() {
     },
     show: false,
   })
+
+  if (isMaximized) {
+    mainWindow.maximize()
+  }
 
   mainWindow.once('ready-to-show', () => {
     mainWindow?.show()
@@ -53,6 +104,7 @@ function createWindow() {
   })
 
   mainWindow.on('close', (e) => {
+    saveWindowBounds()
     if (process.platform === 'darwin') {
       e.preventDefault()
       mainWindow?.hide()
