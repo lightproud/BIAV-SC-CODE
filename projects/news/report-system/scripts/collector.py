@@ -25,6 +25,8 @@ import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
+import xml.etree.ElementTree as ET
+
 import requests
 
 logging.basicConfig(
@@ -141,8 +143,67 @@ def _make_item(
 
 # ─── 数据源采集器 ──────────────────────────────────────────
 
+def _strip_html_tags(html: str) -> str:
+    """Remove HTML tags and return plain text."""
+    return re.sub(r"<[^>]+>", "", html).strip()
+
+
+def _parse_reddit_rss(xml_text: str, sub: str) -> list:
+    """Parse Reddit Atom RSS feed and return list of items."""
+    ns = {"atom": "http://www.w3.org/2005/Atom"}
+    root = ET.fromstring(xml_text)
+    items = []
+
+    for entry in root.findall("atom:entry", ns):
+        title_el = entry.find("atom:title", ns)
+        link_el = entry.find("atom:link", ns)
+        updated_el = entry.find("atom:updated", ns)
+        author_el = entry.find("atom:author/atom:name", ns)
+        content_el = entry.find("atom:content", ns)
+
+        title = title_el.text if title_el is not None else ""
+        link = link_el.get("href", "") if link_el is not None else ""
+        updated_str = updated_el.text if updated_el is not None else ""
+        author = author_el.text if author_el is not None else ""
+        content_html = content_el.text if content_el is not None else ""
+
+        # Parse ISO timestamp
+        if not updated_str:
+            continue
+        try:
+            created = datetime.fromisoformat(updated_str.replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if created < CUTOFF:
+            continue
+
+        # Filter non-dedicated subreddits by keyword
+        if sub.lower() not in ("morimens", "morimensgame"):
+            title_lower = (title or "").lower()
+            if not any(kw.lower() in title_lower for kw in ALL_KEYWORDS):
+                continue
+
+        summary = _strip_html_tags(content_html) if content_html else ""
+
+        items.append(_make_item(
+            title=title,
+            summary=summary,
+            source="reddit",
+            platform_region="global",
+            time_str=created.isoformat(),
+            url=link,
+            engagement=0,
+            is_hot=False,
+            author=f"u/{author}" if author else "",
+            tags=[],
+            lang="en",
+        ))
+
+    return items
+
+
 def fetch_reddit(subreddits=None):
-    """从 Reddit 获取热门帖子（公开 JSON API，无需认证）。"""
+    """从 Reddit 获取热门帖子（公开 JSON API，无需认证；失败时回退到 RSS）。"""
     subreddits = subreddits or ["Morimens", "MorimensGame", "gachagaming"]
     items = []
 
@@ -180,9 +241,17 @@ def fetch_reddit(subreddits=None):
                     lang="en",
                 ))
 
-            logger.info(f"Reddit r/{sub}: {len(items)} items collected")
+            logger.info(f"Reddit r/{sub}: {len(items)} items collected (JSON)")
         except Exception as e:
-            logger.warning(f"Reddit r/{sub} failed: {e}")
+            logger.warning(f"Reddit r/{sub} JSON API failed: {e}, trying RSS fallback")
+            try:
+                rss_url = f"https://www.reddit.com/r/{sub}/.rss"
+                rss_resp = _get(rss_url)
+                rss_items = _parse_reddit_rss(rss_resp.text, sub)
+                items.extend(rss_items)
+                logger.info(f"Reddit r/{sub}: {len(rss_items)} items collected (RSS fallback)")
+            except Exception as rss_e:
+                logger.warning(f"Reddit r/{sub} RSS fallback also failed: {rss_e}")
 
     return items
 
