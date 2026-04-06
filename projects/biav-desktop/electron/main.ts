@@ -1,4 +1,4 @@
-import { app, BrowserWindow, globalShortcut, Menu, Tray, nativeImage, ipcMain, shell, screen } from 'electron'
+import { app, BrowserWindow, globalShortcut, Menu, Tray, nativeImage, ipcMain, shell, screen, session } from 'electron'
 import path from 'path'
 import Store from 'electron-store'
 import { initDatabase } from './ipc/db'
@@ -88,6 +88,8 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
+      sandbox: true,
+      webSecurity: true,
     },
     show: false,
   })
@@ -165,6 +167,8 @@ function createQuickEntry() {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
+      sandbox: true,
+      webSecurity: true,
     },
   })
 
@@ -218,7 +222,28 @@ function registerGlobalShortcut() {
   })
 }
 
+const CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+  "img-src 'self' data: https:",
+  "connect-src 'self' https://api.anthropic.com https://api.openai.com",
+  "font-src 'self' data: https://fonts.gstatic.com",
+  "frame-src 'self' blob:",
+  "worker-src 'self' blob:",
+].join('; ')
+
 app.whenReady().then(() => {
+  // Content Security Policy — enforce via response headers
+  session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+    callback({
+      responseHeaders: {
+        ...details.responseHeaders,
+        'Content-Security-Policy': [CSP],
+      },
+    })
+  })
+
   initDatabase()
   registerChatHandlers()
   registerConversationHandlers()
