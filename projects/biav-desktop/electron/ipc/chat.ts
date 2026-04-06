@@ -3,6 +3,8 @@ import { v4 as uuidv4 } from 'uuid'
 import { getDb } from './db'
 import { streamChat, type LLMUsage, type AnthropicTool, type ToolCall } from '../llm'
 import { MCPManager } from '../mcp/manager'
+import { BUILTIN_TOOLS, BUILTIN_TOOL_NAMES, executeBuiltinTool } from '../tools/builtin'
+import { fireHook } from '../tools/hooks'
 import Store from 'electron-store'
 import { isWindowFocused, getMainWindow } from '../window-state'
 
@@ -120,6 +122,15 @@ export function registerChatHandlers(mcpManager: MCPManager) {
       .prepare('SELECT role, content FROM messages WHERE conversation_id = ? ORDER BY created_at ASC')
       .all(conversationId) as { role: string; content: any }[]
 
+    // Fire SessionStart hook for new conversations — inject output as context
+    if (isNewConversation) {
+      const hookOutput = await fireHook('SessionStart')
+      if (hookOutput) {
+        // Inject hook output as the first system context
+        history.unshift({ role: 'system', content: `[Project Context]\n${hookOutput}` })
+      }
+    }
+
     // Prepend system prompt if set, combining with style prompt if active
     const conv = db.prepare('SELECT system_prompt FROM conversations WHERE id = ?').get(conversationId) as { system_prompt: string | null } | undefined
     const systemParts: string[] = []
@@ -168,15 +179,20 @@ export function registerChatHandlers(mcpManager: MCPManager) {
       return
     }
 
-    // Gather MCP tools from all running servers
+    // Gather all tools: built-in + MCP
     const mcpTools = mcpManager.getAllTools()
-    const anthropicTools: AnthropicTool[] = mcpTools.map(({ tool }) => ({
-      name: tool.name,
-      description: tool.description,
-      input_schema: tool.inputSchema || { type: 'object', properties: {} },
-    }))
+    const anthropicTools: AnthropicTool[] = [
+      // Built-in tools first (always available)
+      ...BUILTIN_TOOLS,
+      // MCP tools (available when servers are running)
+      ...mcpTools.map(({ tool }) => ({
+        name: tool.name,
+        description: tool.description,
+        input_schema: tool.inputSchema || { type: 'object', properties: {} },
+      })),
+    ]
 
-    // Build a lookup: toolName -> serverName
+    // Build a lookup: toolName -> serverName (for MCP tools only)
     const toolServerMap = new Map<string, string>()
     for (const { serverName, tool } of mcpTools) {
       toolServerMap.set(tool.name, serverName)
@@ -271,7 +287,10 @@ export function registerChatHandlers(mcpManager: MCPManager) {
           // Process each tool call
           const toolResults: any[] = []
           for (const tc of toolCalls) {
-            const serverName = toolServerMap.get(tc.name) || mcpManager.findToolServer(tc.name) || 'unknown'
+            const isBuiltin = BUILTIN_TOOL_NAMES.has(tc.name)
+            const serverName = isBuiltin
+              ? 'built-in'
+              : toolServerMap.get(tc.name) || mcpManager.findToolServer(tc.name) || 'unknown'
 
             // Send tool_use event to renderer
             win.webContents.send('chat:stream', {
@@ -306,7 +325,11 @@ export function registerChatHandlers(mcpManager: MCPManager) {
               })
 
               try {
-                const result = await mcpManager.callTool(serverName, tc.name, tc.input)
+                // Route to built-in or MCP
+                const result = isBuiltin
+                  ? await executeBuiltinTool(tc.name, tc.input)
+                  : await mcpManager.callTool(serverName, tc.name, tc.input)
+
                 win.webContents.send('chat:stream', {
                   type: 'tool_result',
                   toolUseId: tc.id,

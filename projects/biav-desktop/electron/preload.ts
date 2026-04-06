@@ -148,4 +148,9 @@ contextBridge.exposeInMainWorld('biav', {
   listStyles: () => ipcRenderer.invoke('styles:list'),
   saveStyle: (style: any) => ipcRenderer.invoke('styles:save', style),
   deleteStyle: (id: string) => ipcRenderer.invoke('styles:delete', id),
+
+  // Hooks
+  getHooks: () => ipcRenderer.invoke('hooks:get'),
+  saveHooks: (config: any) => ipcRenderer.invoke('hooks:save', config),
+  fireHook: (event: string) => ipcRenderer.invoke('hooks:fire', event),
 })
