@@ -172,6 +172,11 @@ export default function App() {
     setProviders(list)
   }
 
+  async function refreshStyles() {
+    const list = await window.biav.listStyles()
+    setStyles(list)
+  }
+
   async function handleDeleteConversation(id: string) {
     await window.biav.deleteConversation(id)
     if (conversationId === id) resetChat()
