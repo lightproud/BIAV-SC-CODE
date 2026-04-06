@@ -9,7 +9,9 @@ import SettingsModal from './components/SettingsModal'
 import ShortcutsModal from './components/ShortcutsModal'
 import ExportMenu from './components/ExportMenu'
 import UpdateNotice from './components/UpdateNotice'
-import type { Conversation, ProviderStatus, Attachment } from './types'
+import ArtifactsPanel from './components/ArtifactsPanel'
+import { parseArtifacts } from './lib/parseArtifacts'
+import type { Conversation, ProviderStatus, Attachment, Artifact } from './types'
 
 export default function App() {
   const {
@@ -80,8 +82,8 @@ export default function App() {
     setModel(m)
   }
 
-  function handleSend(content: string) {
-    sendMessage(content, provider, model)
+  function handleSend(content: string, attachments: Attachment[]) {
+    sendMessage(content, provider, model, attachments.length > 0 ? attachments : undefined)
   }
 
   const isMac = window.biav.platform === 'darwin'

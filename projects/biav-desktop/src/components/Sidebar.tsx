@@ -8,9 +8,11 @@ interface Props {
   onDelete: (id: string) => void
   onNewChat: () => void
   onOpenSettings: () => void
+  theme: 'dark' | 'light'
+  onToggleTheme: () => void
 }
 
-export default function Sidebar({ conversations, activeId, onSelect, onDelete, onNewChat, onOpenSettings }: Props) {
+export default function Sidebar({ conversations, activeId, onSelect, onDelete, onNewChat, onOpenSettings, theme, onToggleTheme }: Props) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
 

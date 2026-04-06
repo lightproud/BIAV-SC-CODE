@@ -60,4 +60,9 @@ export function initDatabase() {
   if (!cols.some((c) => c.name === 'system_prompt')) {
     db.exec("ALTER TABLE conversations ADD COLUMN system_prompt TEXT DEFAULT NULL")
   }
+
+  // Migrate: add project_id column if missing
+  if (!cols.some((c) => c.name === 'project_id')) {
+    db.exec("ALTER TABLE conversations ADD COLUMN project_id TEXT DEFAULT NULL REFERENCES projects(id) ON DELETE SET NULL")
+  }
 }
