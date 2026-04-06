@@ -45,6 +45,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-06T14:19:43.601631+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/1f1820f514ee28d21da377f6251287f2e1dcabc0.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-06T17:36:00.730916+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/dfce85551d29625b67dfcc000c97245bf79d431c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-06T17:36:01.031678+00:00"
     }
   },
   "archived": []
