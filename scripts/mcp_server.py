@@ -276,5 +276,31 @@ def rebuild_indexes() -> str:
     return json.dumps(results, ensure_ascii=False, indent=2)
 
 
+# ============================================================
+# Tool 8: Memory Write-back
+# ============================================================
+
+@mcp.tool()
+def memory_writeback(dry_run: bool = False) -> str:
+    """将当前会话产生的新知识写回知识库。
+
+    检测会话期间的文件变更，提取知识事实，更新知识图谱，
+    生成会话摘要，并触发增量重索引。
+
+    Args:
+        dry_run: 仅预览，不实际写入。默认 False
+    """
+    if dry_run:
+        sys.argv.append("--dry-run")
+
+    from memory_writeback import run_writeback
+    result = run_writeback()
+
+    if dry_run and "--dry-run" in sys.argv:
+        sys.argv.remove("--dry-run")
+
+    return json.dumps(result, ensure_ascii=False, indent=2)
+
+
 if __name__ == "__main__":
     mcp.run(transport="stdio")

@@ -38,12 +38,21 @@ python scripts/context_manager.py --query "你的问题" --role "当前角色"
 ```
 返回 4 层推荐：核心上下文 → 角色上下文 → 语义上下文 → 图谱上下文。
 
+### 记忆写回（会话结束自动触发）
+
+会话结束时，Stop hook 自动执行：
+1. **记忆写回**（`memory_writeback.py`）：检测 git 变更 → 提取知识事实 → 写入图谱 → 生成会话摘要 → 增量重索引
+2. **反思扫描**（`session_reflexion.py`）：扫描失败信号 → 分析模式 → 提炼经验写入 lessons-learned.md
+
+手动触发写回：`python scripts/memory_writeback.py --verbose`
+
 ### 其他银芯工具
 
 - 查看预计算缓存：`python scripts/dream.py --check-cache`
 - 查看文件效用排名：`python scripts/memrl.py --top 10`
 - 查看历史教训：`Read memory/lessons-learned.md`
 - 重建全部索引：`python scripts/dream.py --rebuild`
+- 手动写回记忆：`python scripts/memory_writeback.py --verbose`
 
 ### 使用场景指引
 
@@ -55,3 +64,4 @@ python scripts/context_manager.py --query "你的问题" --role "当前角色"
 | 回答社区动态相关问题 | 先 `dream.py --check-cache`，无缓存再读 `projects/news/output/` |
 | 了解项目当前状态 | `Read memory/boot-snapshot.md` |
 | 避免重复犯错 | `Read memory/lessons-learned.md` |
+| 手动写回会话知识 | `memory_writeback.py --verbose` |
