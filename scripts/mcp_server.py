@@ -276,5 +276,78 @@ def rebuild_indexes() -> str:
     return json.dumps(results, ensure_ascii=False, indent=2)
 
 
+# ============================================================
+# Tool 8: Store Facts (AI-driven knowledge write-back)
+# ============================================================
+
+@mcp.tool()
+def store_facts(facts: str) -> str:
+    """存储本次对话中发现的重要知识事实。
+
+    当你在对话中遇到以下情况时，主动调用此工具：
+    - 做出了技术/架构决策（如"选择 X 替代 Y，因为..."）
+    - 发现了 bug 的根本原因
+    - 了解到用户偏好或项目惯例
+    - 获得了重要的背景知识
+
+    自动去重：相似度 >75% 的事实会合并而非重复存储。
+
+    Args:
+        facts: JSON 数组字符串，每项含 content（必填）、category（可选：decision/discovery/preference/convention/context/lesson）、source（可选：来源文件路径）
+              示例：[{"content": "FTS5 换成 MeiliSearch，中文分词更好", "category": "decision"}]
+    """
+    from fact_store import store_multiple_facts
+
+    try:
+        items = json.loads(facts)
+        if isinstance(items, str):
+            items = [{"content": items, "category": "discovery"}]
+        elif isinstance(items, dict):
+            items = [items]
+    except json.JSONDecodeError:
+        # Plain text — treat as single fact
+        items = [{"content": facts, "category": "discovery"}]
+
+    results = store_multiple_facts(items)
+
+    summary = {"added": 0, "merged": 0, "duplicate": 0, "details": []}
+    for r in results:
+        action = r.get("action", "unknown")
+        summary[action] = summary.get(action, 0) + 1
+        summary["details"].append({
+            "action": action,
+            "content": r.get("fact", {}).get("content", r.get("existing", ""))[:80],
+            "similarity": r.get("similarity"),
+        })
+
+    return json.dumps(summary, ensure_ascii=False, indent=2)
+
+
+# ============================================================
+# Tool 9: Memory Write-back (auto, git-based)
+# ============================================================
+
+@mcp.tool()
+def memory_writeback(dry_run: bool = False) -> str:
+    """将当前会话产生的新知识写回知识库。
+
+    检测会话期间的文件变更，提取知识事实，更新知识图谱，
+    生成会话摘要，并触发增量重索引。
+
+    Args:
+        dry_run: 仅预览，不实际写入。默认 False
+    """
+    if dry_run:
+        sys.argv.append("--dry-run")
+
+    from memory_writeback import run_writeback
+    result = run_writeback()
+
+    if dry_run and "--dry-run" in sys.argv:
+        sys.argv.remove("--dry-run")
+
+    return json.dumps(result, ensure_ascii=False, indent=2)
+
+
 if __name__ == "__main__":
     mcp.run(transport="stdio")
