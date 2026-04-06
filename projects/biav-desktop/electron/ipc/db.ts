@@ -245,46 +245,7 @@ export async function initDatabase() {
       ON tool_calls(conversation_id, created_at);
   `)
 
-  // FTS5 virtual table for full-text search
-  db.exec(`
-    CREATE VIRTUAL TABLE IF NOT EXISTS messages_fts USING fts5(
-      content,
-      conversation_id UNINDEXED,
-      message_id UNINDEXED
-    );
-  `)
-
-  // Triggers for FTS sync
-  db.exec(`
-    CREATE TRIGGER IF NOT EXISTS messages_fts_insert
-    AFTER INSERT ON messages
-    BEGIN
-      INSERT INTO messages_fts(content, conversation_id, message_id)
-      VALUES (NEW.content, NEW.conversation_id, NEW.id);
-    END;
-
-    CREATE TRIGGER IF NOT EXISTS messages_fts_delete
-    AFTER DELETE ON messages
-    BEGIN
-      DELETE FROM messages_fts WHERE message_id = OLD.id;
-    END;
-
-    CREATE TRIGGER IF NOT EXISTS messages_fts_update
-    AFTER UPDATE OF content ON messages
-    BEGIN
-      DELETE FROM messages_fts WHERE message_id = OLD.id;
-      INSERT INTO messages_fts(content, conversation_id, message_id)
-      VALUES (NEW.content, NEW.conversation_id, NEW.id);
-    END;
-  `)
-
-  // Migrate: populate FTS from existing messages
-  const ftsCount = (db.prepare('SELECT COUNT(*) as cnt FROM messages_fts').get() as { cnt: number }).cnt
-  const msgCount = (db.prepare('SELECT COUNT(*) as cnt FROM messages').get() as { cnt: number }).cnt
-  if (ftsCount === 0 && msgCount > 0) {
-    db.exec(`
-      INSERT INTO messages_fts(content, conversation_id, message_id)
-      SELECT content, conversation_id, id FROM messages;
-    `)
-  }
+  // Note: FTS5 is not available in sql.js asm build.
+  // Full-text search can be implemented with LIKE queries for now.
+  // If needed later, switch to sql.js WASM build which includes FTS5.
 }
