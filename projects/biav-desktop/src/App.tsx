@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback, type ReactElement } from 'react'
 import { useChat } from './hooks/useChat'
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
 import { useTheme } from './hooks/useTheme'
@@ -15,6 +15,7 @@ import UpdateNotice from './components/UpdateNotice'
 import WelcomeScreen from './components/WelcomeScreen'
 import ArtifactsPanel from './components/ArtifactsPanel'
 import SystemPromptEditor from './components/SystemPromptEditor'
+import { Virtuoso, type VirtuosoHandle } from 'react-virtuoso'
 import { parseArtifacts } from './lib/parseArtifacts'
 import ProjectEditor from './components/ProjectEditor'
 import UsageBar, { SessionUsageBar } from './components/UsageBar'
@@ -60,7 +61,7 @@ export default function App() {
   const [systemPrompt, setSystemPrompt] = useState('')
   const [attachments, setAttachments] = useState<Attachment[]>([])
   const [modelParams, setModelParams] = useState<ModelParams>({ temperature: 1.0, maxTokens: 8192 })
-  const messagesEndRef = useRef<HTMLDivElement>(null)
+  const virtuosoRef = useRef<VirtuosoHandle>(null)
 
   // Global keyboard shortcuts
   const shortcuts = useMemo(() => ({
@@ -78,10 +79,29 @@ export default function App() {
     refreshModels()
   }, [])
 
-  // Auto-scroll
-  useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages, streamingContent])
+  // Build the virtual list items: messages + optional streaming message + optional usage bar
+  const virtualItems = useMemo(() => {
+    const items: Array<{ type: 'message' | 'streaming' | 'usage'; data?: any }> = messages.map((msg) => ({
+      type: 'message' as const,
+      data: msg,
+    }))
+    if (isStreaming && streamingContent) {
+      items.push({
+        type: 'streaming',
+        data: {
+          id: 'streaming',
+          conversation_id: '',
+          role: 'assistant',
+          content: streamingContent,
+          created_at: '',
+        },
+      })
+    }
+    if (!isStreaming && lastUsage) {
+      items.push({ type: 'usage', data: lastUsage })
+    }
+    return items
+  }, [messages, isStreaming, streamingContent, lastUsage])
 
   // Parse artifacts from messages
   useEffect(() => {
@@ -282,42 +302,51 @@ export default function App() {
         {/* Chat area wrapped with DropZone */}
         <DropZone onFilesDropped={handleFilesDropped}>
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto px-4 py-6">
-            {messages.length === 0 && !isStreaming && (
+          {messages.length === 0 && !isStreaming ? (
+            <div className="flex-1 overflow-y-auto px-4 py-6">
               <WelcomeScreen
                 providers={providers}
                 onOpenSettings={() => setShowSettings(true)}
                 onSuggestion={(text) => handleSend(text, [])}
               />
-            )}
-            <div className="max-w-3xl mx-auto space-y-4">
-              {messages.map((msg) => (
-                <ChatMessage
-                  key={msg.id}
-                  message={msg}
-                  onEdit={(id, content) => editAndResend(id, content, provider, model)}
-                  onRegenerate={() => regenerate(provider, model)}
-                  onFork={handleFork}
-                />
-              ))}
-              {isStreaming && streamingContent && (
-                <ChatMessage
-                  message={{
-                    id: 'streaming',
-                    conversation_id: '',
-                    role: 'assistant',
-                    content: streamingContent,
-                    created_at: '',
-                  }}
-                  isStreaming
-                />
-              )}
-              {!isStreaming && lastUsage && (
-                <UsageBar usage={lastUsage} />
-              )}
-              <div ref={messagesEndRef} />
             </div>
-          </div>
+          ) : (
+            <Virtuoso
+              ref={virtuosoRef}
+              className="flex-1"
+              data={virtualItems}
+              followOutput="smooth"
+              initialTopMostItemIndex={virtualItems.length - 1}
+              itemContent={(index, item) => {
+                const inner = (() => {
+                  if (item.type === 'usage') {
+                    return <UsageBar usage={item.data} />
+                  }
+                  if (item.type === 'streaming') {
+                    return (
+                      <ChatMessage
+                        message={item.data}
+                        isStreaming
+                      />
+                    )
+                  }
+                  return (
+                    <ChatMessage
+                      message={item.data}
+                      onEdit={(id, content) => editAndResend(id, content, provider, model)}
+                      onRegenerate={() => regenerate(provider, model)}
+                      onFork={handleFork}
+                    />
+                  )
+                })()
+                return (
+                  <div className="max-w-3xl mx-auto px-4 pt-4">
+                    {inner}
+                  </div>
+                )
+              }}
+            />
+          )}
 
           {/* Session usage summary */}
           {(sessionUsage.totalInput > 0 || sessionUsage.totalOutput > 0) && (
