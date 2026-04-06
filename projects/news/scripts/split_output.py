@@ -157,7 +157,7 @@ def extract_steam_item(raw: dict) -> dict:
     保留标准字段（time, title, source, engagement 等）供 generate_daily.py 使用，
     同时附带 Steam 特有字段（language, voted_up, playtime_forever）。
 
-    差评保留全文（决策关键），好评截 500 字。
+    好评差评均保留全文，不截断。
     """
     meta = raw.get('metadata', {})
     timestamp_created = meta.get('timestamp_created', 0)
@@ -169,10 +169,6 @@ def extract_steam_item(raw: dict) -> dict:
             pass
     voted_up = meta.get('voted_up', False)
     summary_text = raw.get('summary', '')
-    # Negative reviews: preserve full text for decision-making.
-    # Positive reviews: cap at 500 chars to keep output size manageable.
-    if voted_up:
-        summary_text = summary_text[:500]
     return {
         # 标准字段（与 extract_item 一致）
         'source': 'steam',
