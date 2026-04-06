@@ -92,9 +92,14 @@ export default function App() {
     }
   }, [messages, streamingContent, isStreaming])
 
-  // Refresh conversation list when a new conversation is created
+  // Load system prompt and refresh conversation list when conversation changes
   useEffect(() => {
-    if (conversationId) refreshConversations()
+    if (conversationId) {
+      refreshConversations()
+      window.biav.getSystemPrompt(conversationId).then((p) => setSystemPrompt(p || ''))
+    } else {
+      setSystemPrompt('')
+    }
   }, [conversationId])
 
   async function refreshConversations() {
@@ -146,7 +151,14 @@ export default function App() {
   }
 
   function handleSend(content: string, sendAttachments: Attachment[]) {
-    sendMessage(content, provider, model, sendAttachments.length > 0 ? sendAttachments : undefined)
+    sendMessage(content, provider, model, sendAttachments.length > 0 ? sendAttachments : undefined, systemPrompt || undefined)
+  }
+
+  async function handleSystemPromptChange(prompt: string) {
+    setSystemPrompt(prompt)
+    if (conversationId) {
+      await window.biav.setSystemPrompt(conversationId, prompt)
+    }
   }
 
   const handleFilesDropped = useCallback((dropped: Attachment[]) => {
@@ -211,6 +223,11 @@ export default function App() {
               </svg>
             </button>
           )}
+          <SystemPromptEditor
+            conversationId={conversationId}
+            systemPrompt={systemPrompt}
+            onSystemPromptChange={handleSystemPromptChange}
+          />
           <ExportMenu conversationId={conversationId} />
           <ModelSelector
             providers={providers}
@@ -252,9 +269,23 @@ export default function App() {
                   isStreaming
                 />
               )}
+              {!isStreaming && lastUsage && (
+                <UsageBar usage={lastUsage} />
+              )}
               <div ref={messagesEndRef} />
             </div>
           </div>
+
+          {/* Session usage summary */}
+          {(sessionUsage.totalInput > 0 || sessionUsage.totalOutput > 0) && (
+            <div className="max-w-3xl mx-auto px-4">
+              <SessionUsageBar
+                totalInput={sessionUsage.totalInput}
+                totalOutput={sessionUsage.totalOutput}
+                totalCost={sessionUsage.totalCost}
+              />
+            </div>
+          )}
 
           {/* Input */}
           <ChatInput
