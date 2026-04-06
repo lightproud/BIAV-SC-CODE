@@ -98,6 +98,72 @@ export function useChat() {
     setIsStreaming(false)
   }, [])
 
+  const editAndResend = useCallback(
+    async (messageId: string, newContent: string, provider: string, model: string) => {
+      const idx = messages.findIndex((m) => m.id === messageId)
+      if (idx === -1) return
+
+      // Truncate messages after the edited one and update content
+      const truncated = messages.slice(0, idx)
+      setMessages(truncated)
+
+      // Persist the edit in the database
+      if (conversationId) {
+        await window.biav.editMessage({ conversationId, messageId, content: newContent })
+      }
+
+      // Re-send with updated content
+      const userMsg: Message = {
+        id: 'user-' + Date.now(),
+        conversation_id: conversationId || '',
+        role: 'user',
+        content: newContent,
+        created_at: new Date().toISOString(),
+      }
+      setMessages((prev) => [...prev, userMsg])
+      setIsStreaming(true)
+      setStreamingContent('')
+
+      await window.biav.sendMessage({
+        conversationId,
+        message: newContent,
+        provider,
+        model,
+      })
+    },
+    [conversationId, messages]
+  )
+
+  const regenerate = useCallback(
+    async (provider: string, model: string) => {
+      // Find last user message
+      const lastUserIdx = messages.map((m) => m.role).lastIndexOf('user')
+      if (lastUserIdx === -1) return
+
+      const lastUserMsg = messages[lastUserIdx]
+
+      // Remove everything after the last user message (the assistant response)
+      setMessages(messages.slice(0, lastUserIdx + 1))
+
+      // Delete the assistant message from DB
+      if (conversationId) {
+        await window.biav.regenerateMessage({ conversationId, afterMessageId: lastUserMsg.id })
+      }
+
+      // Re-send the last user message
+      setIsStreaming(true)
+      setStreamingContent('')
+
+      await window.biav.sendMessage({
+        conversationId,
+        message: lastUserMsg.content,
+        provider,
+        model,
+      })
+    },
+    [conversationId, messages]
+  )
+
   return {
     messages,
     conversationId,
@@ -107,5 +173,7 @@ export function useChat() {
     stopStreaming,
     loadConversation,
     resetChat,
+    editAndResend,
+    regenerate,
   }
 }
