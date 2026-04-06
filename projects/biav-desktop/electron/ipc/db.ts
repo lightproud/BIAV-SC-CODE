@@ -43,4 +43,10 @@ export function initDatabase() {
     CREATE INDEX IF NOT EXISTS idx_messages_conv
       ON messages(conversation_id, created_at);
   `)
+
+  // Migrate: add system_prompt column if missing
+  const cols = db.prepare("PRAGMA table_info(conversations)").all() as { name: string }[]
+  if (!cols.some((c) => c.name === 'system_prompt')) {
+    db.exec("ALTER TABLE conversations ADD COLUMN system_prompt TEXT DEFAULT NULL")
+  }
 }
