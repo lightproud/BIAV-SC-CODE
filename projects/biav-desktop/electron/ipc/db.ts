@@ -8,9 +8,10 @@
 import { app } from 'electron'
 import path from 'path'
 import fs from 'fs'
-// Use the asm.js build (pure JS, no .wasm file needed, CJS compatible)
-// @ts-ignore — sql.js ships no type declarations
-import initSqlJs from 'sql.js/dist/sql-asm.js'
+// sql-asm.js is CJS — use runtime require to bypass Rollup bundling
+// (Rollup strips module.exports context when bundling, breaking sql.js)
+// eslint-disable-next-line no-eval
+const nodeRequire = eval('require')
 type SqlJsDatabase = any
 
 // ---------------------------------------------------------------------------
@@ -144,6 +145,7 @@ export async function initDatabase() {
   const dbPath = path.join(dbDir, 'biav.db')
 
   // Initialize sql.js
+  const initSqlJs = nodeRequire('sql.js/dist/sql-asm.js')
   const SQL = await initSqlJs()
 
   // Load existing database or create new one
