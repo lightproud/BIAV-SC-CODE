@@ -52,7 +52,7 @@ BILIBILI_MORIMENS_CREATORS = {
 }
 
 # Valid source identifiers
-VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion'}
+VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion', 'steam'}
 
 # Required fields for each news item
 REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
@@ -485,7 +485,7 @@ def fetch_twitter():
             engagement = metrics.get('like_count', 0) + metrics.get('reply_count', 0) + metrics.get('retweet_count', 0)
             items.append({
                 'title': tweet['text'][:100],
-                'summary': tweet['text'][:200],
+                'summary': tweet['text'],
                 'source': 'twitter',
                 'time': tweet['created_at'],
                 'url': f"https://twitter.com/i/status/{tweet['id']}",
@@ -623,7 +623,7 @@ def fetch_taptap():
                 sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
                 items.append({
                     'title': f'[TapTap {sentiment}] {review.get("contents", {}).get("text", "")[:60]}',
-                    'summary': review.get('contents', {}).get('text', '')[:200],
+                    'summary': review.get('contents', {}).get('text', ''),
                     'source': 'taptap',
                     'time': created.isoformat(),
                     'url': f'https://www.taptap.cn/app/{app_id}/review',
@@ -645,7 +645,7 @@ def fetch_taptap():
             continue
         items.append({
             'title': topic.get('title', ''),
-            'summary': (topic.get('summary', '') or topic.get('intro', ''))[:200],
+            'summary': (topic.get('summary', '') or topic.get('intro', '')),
             'source': 'taptap',
             'time': created.isoformat(),
             'url': topic.get('share_url', ''),
@@ -750,7 +750,7 @@ def fetch_steam_news():
 
             items.append({
                 'title': f'[Steam{feed_label}] {strip_html_tags(n.get("title", ""))}',
-                'summary': strip_html_tags(n.get('contents', ''))[:200],
+                'summary': strip_html_tags(n.get('contents', '')),
                 'source': 'official',
                 'time': created.isoformat(),
                 'url': n.get('url', ''),
@@ -852,6 +852,139 @@ def fetch_steam_discussions():
     except Exception as e:
         logger.warning(f'Steam Discussions failed: {e}')
 
+    return items
+
+
+def fetch_youtube():
+    """Fetch Morimens-related YouTube videos.
+
+    Uses YouTube Data API v3 if YOUTUBE_API_KEY is set.
+    Falls back to free RSS feeds for known channels (no API key needed).
+    """
+    api_key = os.environ.get('YOUTUBE_API_KEY')
+    items = []
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+
+    # Known Morimens-related YouTube channels (add more as discovered)
+    MORIMENS_CHANNELS = {
+        # Channel ID → display name
+        # Official channel (if exists) and known content creators
+    }
+    channel_id = os.environ.get('YOUTUBE_CHANNEL_ID', '')
+    if channel_id:
+        MORIMENS_CHANNELS[channel_id] = 'Official'
+
+    if api_key:
+        # Full API path: search + statistics
+        for keyword in ['Morimens', '忘却前夜']:
+            try:
+                published_after = cutoff.strftime('%Y-%m-%dT%H:%M:%SZ')
+                resp = requests.get(
+                    'https://www.googleapis.com/youtube/v3/search',
+                    params={
+                        'part': 'snippet', 'q': keyword, 'type': 'video',
+                        'order': 'date', 'publishedAfter': published_after,
+                        'maxResults': 15, 'key': api_key,
+                    },
+                    timeout=15,
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                video_ids = [i['id']['videoId'] for i in data.get('items', []) if i.get('id', {}).get('videoId')]
+
+                # Fetch stats in batch
+                stats = {}
+                if video_ids:
+                    stats_resp = requests.get(
+                        'https://www.googleapis.com/youtube/v3/videos',
+                        params={'part': 'statistics', 'id': ','.join(video_ids), 'key': api_key},
+                        timeout=15,
+                    )
+                    if stats_resp.ok:
+                        for v in stats_resp.json().get('items', []):
+                            s = v.get('statistics', {})
+                            stats[v['id']] = int(s.get('viewCount', 0)) + int(s.get('likeCount', 0))
+
+                for item in data.get('items', []):
+                    vid = item.get('id', {}).get('videoId')
+                    if not vid:
+                        continue
+                    snippet = item.get('snippet', {})
+                    engagement = stats.get(vid, 0)
+                    thumb = snippet.get('thumbnails', {}).get('high', {}).get('url', '')
+                    yt_item = {
+                        'title': snippet.get('title', ''),
+                        'summary': snippet.get('description', ''),
+                        'source': 'youtube',
+                        'time': snippet.get('publishedAt', ''),
+                        'url': f'https://www.youtube.com/watch?v={vid}',
+                        'engagement': engagement,
+                        'is_hot': engagement > 5000,
+                        'author': snippet.get('channelTitle', ''),
+                        'tags': [],
+                    }
+                    if thumb:
+                        yt_item['media_url'] = thumb
+                        yt_item['content_type'] = 'image'
+                    items.append(yt_item)
+                logger.info(f'YouTube API "{keyword}": {len(items)} videos')
+            except Exception as e:
+                logger.warning(f'YouTube API "{keyword}" failed: {e}')
+    else:
+        logger.info('YouTube: no API key, trying RSS fallback for known channels')
+
+    # RSS fallback: free, no API key, works for specific channels
+    # YouTube RSS format: https://www.youtube.com/feeds/videos.xml?channel_id=...
+    if not items and MORIMENS_CHANNELS:
+        import xml.etree.ElementTree as ET
+        for ch_id, ch_name in MORIMENS_CHANNELS.items():
+            rss_url = f'https://www.youtube.com/feeds/videos.xml?channel_id={ch_id}'
+            try:
+                resp = requests.get(rss_url, timeout=15, headers={'User-Agent': 'MorimensAggregator/1.0'})
+                resp.raise_for_status()
+                root = ET.fromstring(resp.text)
+                ns = {'atom': 'http://www.w3.org/2005/Atom', 'media': 'http://search.yahoo.com/mrss/'}
+                for entry in root.findall('atom:entry', ns):
+                    published = entry.findtext('atom:published', '', ns)
+                    try:
+                        pub_dt = datetime.fromisoformat(published.replace('Z', '+00:00'))
+                    except (ValueError, TypeError):
+                        continue
+                    if pub_dt < cutoff:
+                        continue
+                    title = entry.findtext('atom:title', '', ns)
+                    link_el = entry.find('atom:link', ns)
+                    link = link_el.get('href', '') if link_el is not None else ''
+                    author = entry.findtext('atom:author/atom:name', ch_name, ns)
+                    # Media thumbnail
+                    media_group = entry.find('media:group', ns)
+                    thumb = ''
+                    desc = ''
+                    if media_group is not None:
+                        thumb_el = media_group.find('media:thumbnail', ns)
+                        if thumb_el is not None:
+                            thumb = thumb_el.get('url', '')
+                        desc = media_group.findtext('media:description', '', ns)
+                    yt_item = {
+                        'title': title,
+                        'summary': desc,
+                        'source': 'youtube',
+                        'time': pub_dt.isoformat(),
+                        'url': link,
+                        'engagement': 0,
+                        'author': author,
+                        'tags': ['youtube', 'rss'],
+                    }
+                    if thumb:
+                        yt_item['media_url'] = thumb
+                        yt_item['content_type'] = 'image'
+                    items.append(yt_item)
+                logger.info(f'YouTube RSS {ch_name}({ch_id}): {len(items)} videos')
+            except Exception as e:
+                logger.warning(f'YouTube RSS {ch_name}({ch_id}) failed: {e}')
+
+    if not items:
+        logger.info('YouTube: 0 items (no API key and no known channels configured)')
     return items
 
 
@@ -1190,6 +1323,7 @@ def run():
         ('SteamReviews', fetch_steam_reviews),
         ('SteamNews', fetch_steam_news),
         ('SteamDiscussions', fetch_steam_discussions),
+        ('YouTube', fetch_youtube),
         ('FandomWiki', fetch_fandom_wiki),
         ('DiscordLocal', fetch_discord_local),
     ]
