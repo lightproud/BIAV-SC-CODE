@@ -75,7 +75,27 @@ export default function Sidebar({
       }
     })
     return cleanup
-  }, [onDelete, onRename, onExport])
+  }, [onDelete, onRename, onExport, conversations])
+
+  const startEditing = useCallback((conv: Conversation) => {
+    setEditingId(conv.id)
+    setEditingTitle(conv.title)
+    // Focus the input after it renders
+    setTimeout(() => editInputRef.current?.focus(), 0)
+  }, [])
+
+  const commitRename = useCallback(() => {
+    if (editingId && editingTitle.trim()) {
+      onRename?.(editingId, editingTitle.trim())
+    }
+    setEditingId(null)
+    setEditingTitle('')
+  }, [editingId, editingTitle, onRename])
+
+  const cancelEditing = useCallback(() => {
+    setEditingId(null)
+    setEditingTitle('')
+  }, [])
 
   const filteredConversations = searchQuery
     ? conversations.filter((c) => c.title.toLowerCase().includes(searchQuery.toLowerCase()))
