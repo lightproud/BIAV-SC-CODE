@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import type { Conversation, Project } from '../types'
 
 interface Props {
@@ -7,7 +7,7 @@ interface Props {
   activeId: string | null
   onSelect: (id: string) => void
   onDelete: (id: string) => void
-  onRename?: (id: string) => void
+  onRename?: (id: string, title: string) => void
   onExport?: (id: string) => void
   onNewChat: () => void
   onOpenSettings: () => void
@@ -42,6 +42,9 @@ export default function Sidebar({
   const [searchQuery, setSearchQuery] = useState('')
   const [collapsedProjects, setCollapsedProjects] = useState<Set<string>>(new Set())
   const [moveMenuConvId, setMoveMenuConvId] = useState<string | null>(null)
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editingTitle, setEditingTitle] = useState('')
+  const editInputRef = useRef<HTMLInputElement>(null)
 
   const handleConversationContextMenu = useCallback(
     (e: React.MouseEvent, convId: string) => {
@@ -55,9 +58,14 @@ export default function Sidebar({
     const cleanup = window.biav.onContextMenuAction((_event, { action, data }) => {
       if (!data?.conversationId) return
       switch (action) {
-        case 'rename-conversation':
-          onRename?.(data.conversationId)
+        case 'rename-conversation': {
+          const conv = conversations.find((c) => c.id === data.conversationId)
+          if (conv) {
+            setEditingId(conv.id)
+            setEditingTitle(conv.title)
+          }
           break
+        }
         case 'export-conversation':
           onExport?.(data.conversationId)
           break
