@@ -123,6 +123,11 @@ export default function App() {
     refreshConversations()
   }
 
+  async function handleRenameConversation(id: string, title: string) {
+    await window.biav.renameConversation(id, title)
+    refreshConversations()
+  }
+
   async function handleCreateOrUpdateProject(data: { name: string; description: string; system_prompt: string }) {
     if (editingProject) {
       await window.biav.updateProject(editingProject.id, data)
@@ -189,6 +194,7 @@ export default function App() {
           activeId={conversationId}
           onSelect={loadConversation}
           onDelete={handleDeleteConversation}
+          onRename={handleRenameConversation}
           onNewChat={resetChat}
           onOpenSettings={() => setShowSettings(true)}
           onNewProject={() => { setEditingProject(null); setShowProjectEditor(true) }}
