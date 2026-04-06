@@ -1,28 +1,28 @@
 {
   "date": "2026-04-05",
-  "messages": 15041,
+  "messages": 15229,
   "unique_authors": 212,
-  "reactions_total": 1441,
-  "attachments": 695,
+  "reactions_total": 1461,
+  "attachments": 702,
   "channel_activity": {
-    "🔸綜合討論": 1355,
-    "🔸morimens-game-chat": 7066,
+    "🔸綜合討論": 1357,
+    "🔸morimens-game-chat": 7224,
+    "🔸phòng-chat-tiếng-việt": 1614,
+    "🔸canal-español": 94,
+    "🔸canal-português": 2180,
+    "🔸lore-chat": 139,
+    "🔸team-building": 298,
+    "🔸general-chat": 202,
+    "🔸game-question": 1248,
+    "關於莫絲": 4,
     "🔸русский-канал": 499,
-    "🔸canal-español": 91,
-    "🔸canal-português": 2176,
-    "🔸lore-chat": 136,
     "🔸频道建议┊server-suggestions": 9,
-    "🔸team-building": 297,
-    "🔸general-chat": 197,
     "🔸邀请码互助┊swap-invitation-codes": 24,
-    "🔸game-question": 1239,
     "🔸机器人命令┊bot-commands": 50,
     "Levels + enlightenment regulation option": 1,
     "🔸阵容构建": 3,
     "🔸日本語チャンネル": 20,
-    "關於莫絲": 3,
     "喚醒體設計 烏爾托斯": 1,
-    "🔸phòng-chat-tiếng-việt": 1612,
     "🔸traphase": 16,
     "Leigh wip!!!!": 2,
     "🔸晒卡分享": 2,
@@ -49,9 +49,9 @@
     "Team Building and Progression advice.": 14
   },
   "hourly_activity": {
+    "23": 210,
     "22": 265,
     "21": 710,
-    "23": 22,
     "20": 787,
     "19": 506,
     "18": 729,
@@ -75,8 +75,8 @@
     "9": 305
   },
   "message_types": {
-    "0": 630,
-    "19": 306
+    "0": 131,
+    "19": 57
   },
   "top_reacted_messages": [
     {
