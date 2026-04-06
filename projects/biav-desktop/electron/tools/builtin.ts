@@ -167,6 +167,28 @@ export const BUILTIN_TOOLS: AnthropicTool[] = [
 export const BUILTIN_TOOL_NAMES = new Set(BUILTIN_TOOLS.map(t => t.name))
 
 /**
+ * Approval tiers for built-in tools.
+ *   'auto'    — execute immediately, no user prompt (read-only operations)
+ *   'confirm' — show in UI, require one click to approve
+ *   'danger'  — highlighted warning, require explicit confirmation
+ */
+export type ApprovalTier = 'auto' | 'confirm' | 'danger'
+
+export const TOOL_APPROVAL_TIERS: Record<string, ApprovalTier> = {
+  read_file: 'auto',
+  list_directory: 'auto',
+  search_files: 'auto',
+  search_content: 'auto',
+  write_file: 'confirm',
+  edit_file: 'confirm',
+  shell: 'danger',
+}
+
+export function getApprovalTier(toolName: string): ApprovalTier {
+  return TOOL_APPROVAL_TIERS[toolName] || 'confirm'
+}
+
+/**
  * Execute a built-in tool. Returns the result as a string.
  */
 export async function executeBuiltinTool(
