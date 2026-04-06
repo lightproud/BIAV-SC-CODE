@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { useChat } from './hooks/useChat'
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
 import { useTheme } from './hooks/useTheme'
 import Sidebar from './components/Sidebar'
 import ChatMessage from './components/ChatMessage'
 import ChatInput from './components/ChatInput'
+import DropZone from './components/DropZone'
 import ModelSelector from './components/ModelSelector'
 import SettingsModal from './components/SettingsModal'
 import ShortcutsModal from './components/ShortcutsModal'
@@ -41,6 +42,7 @@ export default function App() {
   const [artifacts, setArtifacts] = useState<Artifact[]>([])
   const [showArtifacts, setShowArtifacts] = useState(false)
   const [systemPrompt, setSystemPrompt] = useState('')
+  const [attachments, setAttachments] = useState<Attachment[]>([])
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   // Global keyboard shortcuts
@@ -82,14 +84,9 @@ export default function App() {
     }
   }, [messages, streamingContent, isStreaming])
 
-  // Load system prompt when conversation changes
+  // Refresh conversation list when a new conversation is created
   useEffect(() => {
-    if (conversationId) {
-      refreshConversations()
-      window.biav.getSystemPrompt(conversationId).then((p) => setSystemPrompt(p || ''))
-    } else {
-      setSystemPrompt('')
-    }
+    if (conversationId) refreshConversations()
   }, [conversationId])
 
   async function refreshConversations() {
@@ -113,16 +110,13 @@ export default function App() {
     setModel(m)
   }
 
-  function handleSend(content: string, attachments: Attachment[]) {
-    sendMessage(content, provider, model, attachments.length > 0 ? attachments : undefined, systemPrompt || undefined)
+  function handleSend(content: string, sendAttachments: Attachment[]) {
+    sendMessage(content, provider, model, sendAttachments.length > 0 ? sendAttachments : undefined)
   }
 
-  async function handleSystemPromptChange(prompt: string) {
-    setSystemPrompt(prompt)
-    if (conversationId) {
-      await window.biav.setSystemPrompt(conversationId, prompt)
-    }
-  }
+  const handleFilesDropped = useCallback((dropped: Attachment[]) => {
+    setAttachments((prev) => [...prev, ...dropped])
+  }, [])
 
   const isMac = window.biav.platform === 'darwin'
 
@@ -165,46 +159,51 @@ export default function App() {
           />
         </div>
 
-        {/* Messages */}
-        <div className="flex-1 overflow-y-auto px-4 py-6">
-          {messages.length === 0 && !isStreaming && (
-            <div className="flex flex-col items-center justify-center h-full text-biav-muted">
-              <div className="text-4xl mb-4 font-serif text-biav-gold-bright">缸中之脑</div>
-              <div className="text-sm">Brain in a Vat · Desktop</div>
-            </div>
-          )}
-          <div className="max-w-3xl mx-auto space-y-4">
-            {messages.map((msg) => (
-              <ChatMessage
-                key={msg.id}
-                message={msg}
-                onEdit={(id, content) => editAndResend(id, content, provider, model)}
-                onRegenerate={() => regenerate(provider, model)}
-              />
-            ))}
-            {isStreaming && streamingContent && (
-              <ChatMessage
-                message={{
-                  id: 'streaming',
-                  conversation_id: '',
-                  role: 'assistant',
-                  content: streamingContent,
-                  created_at: '',
-                }}
-                isStreaming
-              />
+        {/* Chat area wrapped with DropZone */}
+        <DropZone onFilesDropped={handleFilesDropped}>
+          {/* Messages */}
+          <div className="flex-1 overflow-y-auto px-4 py-6">
+            {messages.length === 0 && !isStreaming && (
+              <div className="flex flex-col items-center justify-center h-full text-biav-muted">
+                <div className="text-4xl mb-4 font-serif text-biav-gold-bright">缸中之脑</div>
+                <div className="text-sm">Brain in a Vat · Desktop</div>
+              </div>
             )}
-            <div ref={messagesEndRef} />
+            <div className="max-w-3xl mx-auto space-y-4">
+              {messages.map((msg) => (
+                <ChatMessage
+                  key={msg.id}
+                  message={msg}
+                  onEdit={(id, content) => editAndResend(id, content, provider, model)}
+                  onRegenerate={() => regenerate(provider, model)}
+                />
+              ))}
+              {isStreaming && streamingContent && (
+                <ChatMessage
+                  message={{
+                    id: 'streaming',
+                    conversation_id: '',
+                    role: 'assistant',
+                    content: streamingContent,
+                    created_at: '',
+                  }}
+                  isStreaming
+                />
+              )}
+              <div ref={messagesEndRef} />
+            </div>
           </div>
-        </div>
 
-        {/* Input */}
-        <ChatInput
-          onSend={handleSend}
-          onStop={stopStreaming}
-          isStreaming={isStreaming}
-          disabled={false}
-        />
+          {/* Input */}
+          <ChatInput
+            onSend={handleSend}
+            onStop={stopStreaming}
+            isStreaming={isStreaming}
+            disabled={false}
+            attachments={attachments}
+            onAttachmentsChange={setAttachments}
+          />
+        </DropZone>
       </div>
 
       {/* Update Notice */}
