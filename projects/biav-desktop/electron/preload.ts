@@ -18,7 +18,8 @@ contextBridge.exposeInMainWorld('biav', {
     return () => ipcRenderer.removeListener('chat:stream', callback)
   },
 
-  stopStreaming: () => ipcRenderer.invoke('chat:stop'),
+  stopStreaming: (conversationId?: string) => ipcRenderer.invoke('chat:stop', conversationId),
+  getTasks: () => ipcRenderer.invoke('chat:tasks'),
 
   // Conversations
   listConversations: () => ipcRenderer.invoke('conversations:list'),

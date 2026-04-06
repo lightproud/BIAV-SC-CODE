@@ -5,6 +5,7 @@ import { streamChat, type LLMUsage, type AnthropicTool, type ToolCall } from '..
 import { MCPManager } from '../mcp/manager'
 import { BUILTIN_TOOLS, BUILTIN_TOOL_NAMES, executeBuiltinTool } from '../tools/builtin'
 import { fireHook } from '../tools/hooks'
+import { taskManager } from '../tools/tasks'
 import Store from 'electron-store'
 import { isWindowFocused, getMainWindow } from '../window-state'
 
@@ -33,7 +34,6 @@ function estimateCost(usage: LLMUsage): number {
 }
 
 const store = new Store()
-let abortController: AbortController | null = null
 
 // Pending tool approval system
 const pendingApprovals = new Map<string, {
@@ -199,7 +199,8 @@ export function registerChatHandlers(mcpManager: MCPManager) {
     }
 
     // Stream response with tool use loop
-    abortController = new AbortController()
+    const taskLabel = req.message.slice(0, 50)
+    const abortController = taskManager.start(conversationId!, taskLabel)
     let fullContent = ''
     let thinkingContent = ''
 
@@ -442,20 +443,31 @@ export function registerChatHandlers(mcpManager: MCPManager) {
           type: 'error',
           error: err.message || '未知错误',
         })
+        taskManager.fail(conversationId!)
       }
     } finally {
-      abortController = null
+      taskManager.complete(conversationId!)
     }
   })
 
-  ipcMain.handle('chat:stop', () => {
-    abortController?.abort()
-    // Also reject any pending approvals
+  // Stop a specific conversation, or all if no ID given
+  ipcMain.handle('chat:stop', (_event, conversationId?: string) => {
+    if (conversationId) {
+      taskManager.abort(conversationId)
+    } else {
+      taskManager.abortAll()
+    }
+    // Reject any pending approvals
     for (const [id, pending] of pendingApprovals) {
       pending.resolve(false)
       pendingApprovals.delete(id)
     }
     return { ok: true }
+  })
+
+  // Get status of all running tasks
+  ipcMain.handle('chat:tasks', () => {
+    return taskManager.getStatus()
   })
 
   ipcMain.handle('chat:edit', async (_event, req: {
