@@ -145,6 +145,11 @@ export default function App() {
     refreshConversations()
   }
 
+  async function handlePinConversation(id: string, pinned: boolean) {
+    await window.biav.pinConversation(id, pinned)
+    refreshConversations()
+  }
+
   function handleSelectModel(p: string, m: string) {
     setProvider(p)
     setModel(m)
@@ -190,6 +195,7 @@ export default function App() {
           onEditProject={(p) => { setEditingProject(p); setShowProjectEditor(true) }}
           onDeleteProject={handleDeleteProject}
           onMoveToProject={handleMoveToProject}
+          onPin={handlePinConversation}
           theme={theme}
           onToggleTheme={toggleTheme}
         />

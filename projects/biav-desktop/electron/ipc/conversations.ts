@@ -5,7 +5,13 @@ import { getDb } from './db'
 export function registerConversationHandlers() {
   ipcMain.handle('conversations:list', () => {
     const db = getDb()
-    return db.prepare('SELECT * FROM conversations ORDER BY updated_at DESC').all()
+    return db.prepare('SELECT * FROM conversations ORDER BY is_pinned DESC, updated_at DESC').all()
+  })
+
+  ipcMain.handle('conversations:pin', (_e, id: string, pinned: boolean) => {
+    const db = getDb()
+    db.prepare('UPDATE conversations SET is_pinned = ? WHERE id = ?').run(pinned ? 1 : 0, id)
+    return { ok: true }
   })
 
   ipcMain.handle('conversations:messages', (_e, conversationId: string) => {

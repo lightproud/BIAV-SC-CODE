@@ -21,6 +21,7 @@ contextBridge.exposeInMainWorld('biav', {
   listConversations: () => ipcRenderer.invoke('conversations:list'),
   getMessages: (conversationId: string) => ipcRenderer.invoke('conversations:messages', conversationId),
   deleteConversation: (id: string) => ipcRenderer.invoke('conversations:delete', id),
+  pinConversation: (id: string, pinned: boolean) => ipcRenderer.invoke('conversations:pin', id, pinned),
   forkConversation: (conversationId: string, messageId: string) => ipcRenderer.invoke('conversations:fork', conversationId, messageId),
   exportConversation: (id: string, format: 'md' | 'json') => ipcRenderer.invoke('conversations:export', id, format),
 
