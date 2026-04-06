@@ -40,6 +40,8 @@ export function registerChatHandlers() {
     model: string
     systemPrompt?: string
     attachments?: { name: string; path: string; type: string; content: string }[]
+    temperature?: number
+    maxTokens?: number
   }) => {
     const db = getDb()
     const win = BrowserWindow.fromWebContents(event.sender)
