@@ -39,6 +39,12 @@ export function registerConversationHandlers() {
     return { ok: true }
   })
 
+  ipcMain.handle('conversations:rename', (_e, id: string, title: string) => {
+    const db = getDb()
+    db.prepare('UPDATE conversations SET title = ?, updated_at = datetime("now") WHERE id = ?').run(title, id)
+    return { ok: true }
+  })
+
   ipcMain.handle('conversations:fork', (_e, conversationId: string, messageId: string) => {
     const db = getDb()
 

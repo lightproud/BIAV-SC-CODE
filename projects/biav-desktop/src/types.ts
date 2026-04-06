@@ -71,6 +71,32 @@ export interface Settings {
   openai_base_url: string
 }
 
+// MCP types
+export type MCPServerStatus = 'stopped' | 'starting' | 'running' | 'error'
+
+export interface MCPServerConfig {
+  command: string
+  args?: string[]
+  env?: Record<string, string>
+}
+
+export interface MCPConfig {
+  mcpServers: Record<string, MCPServerConfig>
+}
+
+export interface MCPServerInfo {
+  name: string
+  status: MCPServerStatus
+  error?: string
+  toolCount: number
+}
+
+export interface MCPTool {
+  name: string
+  description?: string
+  inputSchema?: Record<string, unknown>
+}
+
 // Electron IPC bridge type
 declare global {
   interface Window {

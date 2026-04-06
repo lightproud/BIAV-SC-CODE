@@ -15,6 +15,7 @@ interface Props {
   onEditProject: (project: Project) => void
   onDeleteProject: (id: string) => void
   onMoveToProject: (conversationId: string, projectId: string | null) => void
+  onPin: (id: string, pinned: boolean) => void
   theme: 'dark' | 'light'
   onToggleTheme: () => void
 }
@@ -33,6 +34,7 @@ export default function Sidebar({
   onEditProject,
   onDeleteProject,
   onMoveToProject,
+  onPin,
   theme,
   onToggleTheme,
 }: Props) {
@@ -107,6 +109,25 @@ export default function Sidebar({
         <span className="flex-1 truncate">{conv.title}</span>
         {hoveredId === conv.id && (
           <div className="flex items-center gap-0.5 shrink-0">
+            {/* Pin */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                onPin(conv.id, !conv.is_pinned)
+              }}
+              className="text-biav-muted hover:text-biav-gold p-0.5"
+              title={conv.is_pinned ? '取消置顶' : '置顶'}
+            >
+              {conv.is_pinned ? (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1">
+                  <path d="M16 2L14.5 3.5 18 7l-5.5 5.5-5-5L3 12l1.5 1.5L3 15l3 3 1.5-1.5L9 18l4.5-4.5-5-5L14 3l4.5 4.5L20 6l-4-4z" />
+                </svg>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M16 2L14.5 3.5 18 7l-5.5 5.5-5-5L3 12l1.5 1.5L3 15l3 3 1.5-1.5L9 18l4.5-4.5-5-5L14 3l4.5 4.5L20 6l-4-4z" />
+                </svg>
+              )}
+            </button>
             {/* Move to project */}
             <div className="relative">
               <button
