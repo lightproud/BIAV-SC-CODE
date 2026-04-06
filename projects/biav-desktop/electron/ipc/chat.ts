@@ -35,13 +35,15 @@ function estimateCost(usage: LLMUsage): number {
 
 const store = new Store()
 
-// Pending tool approval system
+// Pending tool approval system (global — keyed by unique toolUseId, safe for parallel tasks)
 const pendingApprovals = new Map<string, {
   resolve: (approved: boolean) => void
   alwaysAllow?: boolean
+  conversationId?: string
 }>()
-// Tools that the user has chosen to always allow
-const alwaysAllowedTools = new Set<string>()
+// Per-conversation "always allow" sets — scoped so one conversation's
+// permission doesn't bleed into another's background task
+const conversationAllowedTools = new Map<string, Set<string>>()
 
 let mcpManagerRef: MCPManager | null = null
 
@@ -308,19 +310,21 @@ export function registerChatHandlers(mcpManager: MCPManager) {
               toolUseId: tc.id,
             })
 
-            // Check if this tool is always allowed
-            let approved = alwaysAllowedTools.has(tc.name)
+            // Check if this tool is always allowed (per-conversation scope)
+            const allowedSet = conversationAllowedTools.get(conversationId!) || new Set()
+            let approved = allowedSet.has(tc.name)
 
             if (!approved) {
               // Wait for user approval
               approved = await new Promise<boolean>((resolve) => {
-                pendingApprovals.set(tc.id, { resolve })
+                pendingApprovals.set(tc.id, { resolve, conversationId: conversationId! })
               })
 
-              // Check if user selected "always allow"
+              // Check if user selected "always allow" — scoped to this conversation
               const pending = pendingApprovals.get(tc.id)
               if (pending?.alwaysAllow) {
-                alwaysAllowedTools.add(tc.name)
+                allowedSet.add(tc.name)
+                conversationAllowedTools.set(conversationId!, allowedSet)
               }
             }
 
@@ -457,16 +461,23 @@ export function registerChatHandlers(mcpManager: MCPManager) {
   })
 
   // Stop a specific conversation, or all if no ID given
-  ipcMain.handle('chat:stop', (_event, conversationId?: string) => {
-    if (conversationId) {
-      taskManager.abort(conversationId)
+  ipcMain.handle('chat:stop', (_event, stopConvId?: string) => {
+    if (stopConvId) {
+      taskManager.abort(stopConvId)
+      // Only reject approvals for this conversation
+      for (const [id, pending] of pendingApprovals) {
+        if (pending.conversationId === stopConvId) {
+          pending.resolve(false)
+          pendingApprovals.delete(id)
+        }
+      }
     } else {
       taskManager.abortAll()
-    }
-    // Reject any pending approvals
-    for (const [id, pending] of pendingApprovals) {
-      pending.resolve(false)
-      pendingApprovals.delete(id)
+      // Reject all pending approvals
+      for (const [id, pending] of pendingApprovals) {
+        pending.resolve(false)
+        pendingApprovals.delete(id)
+      }
     }
     return { ok: true }
   })
