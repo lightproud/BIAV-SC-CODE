@@ -44,11 +44,11 @@ class TaskManager {
   }
 
   /**
-   * Mark a task as completed.
+   * Mark a task as completed (only if still running).
    */
   complete(conversationId: string): void {
     const task = this.tasks.get(conversationId)
-    if (task) {
+    if (task && task.status === 'running') {
       task.status = 'completed'
     }
   }
@@ -58,7 +58,7 @@ class TaskManager {
    */
   fail(conversationId: string): void {
     const task = this.tasks.get(conversationId)
-    if (task) {
+    if (task && task.status === 'running') {
       task.status = 'failed'
     }
   }

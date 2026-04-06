@@ -179,22 +179,28 @@ export function registerChatHandlers(mcpManager: MCPManager) {
       return
     }
 
-    // Gather all tools: built-in + MCP
+    // Gather all tools: built-in + MCP (deduplicating by name)
     const mcpTools = mcpManager.getAllTools()
-    const anthropicTools: AnthropicTool[] = [
-      // Built-in tools first (always available)
-      ...BUILTIN_TOOLS,
-      // MCP tools (available when servers are running)
-      ...mcpTools.map(({ tool }) => ({
-        name: tool.name,
-        description: tool.description,
-        input_schema: tool.inputSchema || { type: 'object', properties: {} },
-      })),
-    ]
+    const seenToolNames = new Set<string>()
+    const anthropicTools: AnthropicTool[] = []
 
-    // Build a lookup: toolName -> serverName (for MCP tools only)
+    // Built-in tools first (always available, take priority)
+    for (const tool of BUILTIN_TOOLS) {
+      anthropicTools.push(tool)
+      seenToolNames.add(tool.name)
+    }
+
+    // MCP tools (skip if name conflicts with built-in)
     const toolServerMap = new Map<string, string>()
     for (const { serverName, tool } of mcpTools) {
+      if (!seenToolNames.has(tool.name)) {
+        anthropicTools.push({
+          name: tool.name,
+          description: tool.description,
+          input_schema: tool.inputSchema || { type: 'object', properties: {} },
+        })
+        seenToolNames.add(tool.name)
+      }
       toolServerMap.set(tool.name, serverName)
     }
 
