@@ -1,14 +1,17 @@
 # 忘却前夜 社区日报 2026-04-07
 
-> 采集时间：2026-04-07 01:36 UTC+8
+> 采集时间：2026-04-07 04:06 UTC+8
 
 ## 🔥 联动动态
 
-1. [Steam] [负面] 玩之前看到评论区有沙耶。因为我玩沙耶时，感觉沙耶之歌愧对神作的评价，完全就是小孩子写的“感天动地伟大... — engagement: 0
-2. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-3. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
-4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+1. [Bilibili] 【沙耶之歌】二手果冻 — engagement: 184
+2. [Bilibili] 小米手环也能玩沙耶之歌 — engagement: 90
+3. [Bilibili] Saya no uta edit — engagement: 7
+4. [Steam] [负面] 玩之前看到评论区有沙耶。因为我玩沙耶时，感觉沙耶之歌愧对神作的评价，完全就是小孩子写的“感天动地伟大... — engagement: 0
+5. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+6. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+7. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+8. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 
 ## 总览
 
@@ -17,7 +20,7 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 12 |
+| Bilibili | 16 |
 | DCInside | 0（沉默）|
 | Discord | 6 |
 | 抖音 | 0（沉默）|
@@ -41,7 +44,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 0（沉默）|
 | Ruliweb | 0（沉默）|
-| Steam | 9 |
+| Steam | 10 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -61,7 +64,7 @@
 
 ## Discord
 
-今日 8,969 条消息，269 位活跃用户，1,058 次反应。热门频道：🔸morimens-game-chat(5000)、🔸game-question(835)、🔸綜合討論(689)、🔸phòng-chat-tiếng-việt(641)、🔸canal-português(598)
+今日 11,619 条消息，269 位活跃用户，1,278 次反应。热门频道：🔸morimens-game-chat(5755)、🔸phòng-chat-tiếng-việt(1197)、🔸綜合討論(1137)、🔸game-question(950)、🔸canal-português(601)
 
 ### 热门话题
 
@@ -73,22 +76,22 @@
 
 ## Steam 评论
 
-- 好评 8 / 差评 1 / 好评率 89%
-- 语言分布：english 5, schinese 3, koreana 1
+- 好评 9 / 差评 1 / 好评率 90%
+- 语言分布：english 5, koreana 2, schinese 2, russian 1
 
 ### 热门好评
 
-1. [正面] 장점
+1. [正面] Игра хорошая и затягивающая) Моментами даже хоррор... — engagement: 0
+2. [正面] "했어.. 정말 내가 했어.." — engagement: 0
+3. [正面] Probably the best lovecraftian game of all time in... — engagement: 0
+4. [正面] 장점
 매력적인 캐릭터
 흡인력 있는 스토리
 번역체를 뚫고 나오는 필력
 개성 있는 고퀄리티 아... — engagement: 0
-2. [正面] I am really liking the game so far!
+5. [正面] I am really liking the game so far!
 
 The art is... — engagement: 0
-3. [正面] Play this if you like slay the spire XD — engagement: 0
-4. [正面] 小玩了一下，立绘美味，小人儿也很有表现力，然后试玩了一下强力角色，发现后期单纯无意义叠数值，7000... — engagement: 0
-5. [正面] This game is good, but Oblivion was better. Guilds... — engagement: 0
 
 ### ⚠️ 差评
 
@@ -96,11 +99,11 @@ The art is... — engagement: 0
 
 ## Bilibili
 
-1. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 4370
-2. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 4370
-3. 【忘却前夜】自建号补超限绒朵！ — engagement: 287
-4. 【忘却前夜】自建号补超限绒朵！ — engagement: 287
-5. 【忘却前夜 Morimens_动态壁纸】希洛_泰旖丝_杜勒赛因_萨尔瓦多=血肉界域1期_Wallpaper Engine — engagement: 138
+1. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 4473
+2. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 4473
+3. 沙耶郁纪比舞 — engagement: 433
+4. 【忘却前夜】自建号补超限绒朵！ — engagement: 292
+5. 【忘却前夜】自建号补超限绒朵！ — engagement: 292
 
 ## Gamerch Wiki
 
