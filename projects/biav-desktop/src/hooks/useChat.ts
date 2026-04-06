@@ -158,7 +158,7 @@ export function useChat() {
   }, [])
 
   const sendMessage = useCallback(
-    async (content: string, provider: string, model: string, attachments?: Attachment[], systemPrompt?: string, modelParams?: ModelParams, enableThinking?: boolean) => {
+    async (content: string, provider: string, model: string, attachments?: Attachment[], systemPrompt?: string, modelParams?: ModelParams, enableThinking?: boolean, stylePrompt?: string) => {
       const userMsg: Message = {
         id: 'user-' + Date.now(),
         conversation_id: conversationId || '',
@@ -181,6 +181,7 @@ export function useChat() {
         provider,
         model,
         systemPrompt,
+        stylePrompt,
         attachments,
         temperature: modelParams?.temperature,
         maxTokens: modelParams?.maxTokens,
