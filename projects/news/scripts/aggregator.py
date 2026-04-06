@@ -1205,13 +1205,18 @@ def run():
     # Validate and sanitize all items
     all_news = validate_all_news(all_news)
 
-    # Deduplicate by title similarity (simple approach)
-    seen_titles = set()
+    # Deduplicate by URL (normalized) + title similarity
+    seen_keys = set()
     unique_news = []
     for item in all_news:
+        # Normalize URL for dedup (http→https, trailing slash)
+        url = (item.get('url') or '').replace('http://', 'https://').rstrip('/')
         title_key = item['title'].lower().strip()[:50]
-        if title_key not in seen_titles:
-            seen_titles.add(title_key)
+        dedup_key = url if url else title_key
+        if dedup_key not in seen_keys:
+            seen_keys.add(dedup_key)
+            # Also add title key to catch same content with different URLs
+            seen_keys.add(title_key)
             unique_news.append(item)
 
     # Sort by engagement
