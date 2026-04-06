@@ -185,16 +185,65 @@ def validate_all_news(items):
 # Source Fetchers - each returns a list of news item dicts
 # ============================================================
 
-def fetch_reddit(subreddits=None):
-    """Fetch hot posts from Reddit using the public JSON API (no auth needed)."""
-    import subprocess as _sp
+def _fetch_reddit_comments(permalink: str, headers: dict, max_comments: int = 10) -> list[dict]:
+    """Fetch top comments for a Reddit post. Returns list of {author, text, score}."""
+    comments_url = f'https://www.reddit.com{permalink}.json?limit={max_comments}&sort=top'
+    try:
+        resp = requests.get(comments_url, headers=headers, timeout=15)
+        resp.raise_for_status()
+        data = resp.json()
+        if len(data) < 2:
+            return []
+        comment_listing = data[1].get('data', {}).get('children', [])
+        results = []
+        for c in comment_listing:
+            if c.get('kind') != 't1':
+                continue
+            cd = c['data']
+            body = cd.get('body', '')
+            if not body or body == '[deleted]' or body == '[removed]':
+                continue
+            results.append({
+                'author': f"u/{cd.get('author', '?')}",
+                'text': body,
+                'score': cd.get('score', 0),
+            })
+        return results[:max_comments]
+    except Exception:
+        return []
 
+
+def _extract_reddit_media(post_data: dict) -> str:
+    """Extract the best image URL from a Reddit post."""
+    # Direct image link
+    url = post_data.get('url', '')
+    if url and any(url.lower().endswith(ext) for ext in ('.jpg', '.jpeg', '.png', '.gif', '.webp')):
+        return url
+    # Reddit preview images
+    preview = post_data.get('preview', {})
+    images = preview.get('images', [])
+    if images:
+        source = images[0].get('source', {})
+        if source.get('url'):
+            return source['url'].replace('&amp;', '&')
+    # Reddit-hosted image
+    if post_data.get('post_hint') == 'image' and url:
+        return url
+    # Thumbnail as last resort (skip default thumbnails)
+    thumb = post_data.get('thumbnail', '')
+    if thumb and thumb.startswith('http') and thumb not in ('self', 'default', 'nsfw', 'spoiler'):
+        return thumb
+    return ''
+
+
+def fetch_reddit(subreddits=None):
+    """Fetch hot posts from Reddit with full text, comments, and images."""
     subreddits = subreddits or ['Morimens', 'MorimensGame']
     items = []
+    headers = {'User-Agent': 'MorimensAggregator/1.0'}
 
     for sub in subreddits:
         url = f'https://www.reddit.com/r/{sub}/hot.json?limit=25'
-        headers = {'User-Agent': 'MorimensAggregator/1.0'}
         try:
             resp = requests.get(url, headers=headers, timeout=15)
             resp.raise_for_status()
@@ -204,22 +253,121 @@ def fetch_reddit(subreddits=None):
                 created = datetime.fromtimestamp(d['created_utc'], tz=timezone.utc)
                 if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
                     continue
-                items.append({
+
+                permalink = d.get('permalink', '')
+                # Fetch comments for posts with discussion
+                comments = []
+                num_comments = d.get('num_comments', 0)
+                if num_comments > 0 and permalink:
+                    comments = _fetch_reddit_comments(permalink, headers)
+                    time.sleep(0.5)  # Rate limit
+
+                # Extract media URL
+                media_url = _extract_reddit_media(d)
+
+                # Build comment text for summary
+                comment_text = ''
+                if comments:
+                    lines = [f'  └ {c["author"]} ({c["score"]}pt): {c["text"]}' for c in comments]
+                    comment_text = '\n' + '\n'.join(lines)
+
+                item = {
                     'title': d['title'],
-                    'summary': (d.get('selftext', '') or ''),
+                    'summary': (d.get('selftext', '') or '') + comment_text,
                     'source': 'reddit',
                     'time': created.isoformat(),
-                    'url': f"https://reddit.com{d['permalink']}",
-                    'engagement': d.get('score', 0) + d.get('num_comments', 0),
+                    'url': f"https://reddit.com{permalink}",
+                    'engagement': d.get('score', 0) + num_comments,
                     'is_hot': d.get('score', 0) > 100,
                     'author': f"u/{d.get('author', 'unknown')}",
                     'tags': list({f.get('text', '') for f in d.get('link_flair_richtext', []) if f.get('text')}),
-                })
-            logger.info(f'Reddit r/{sub}: fetched {len(items)} posts')
+                    'metadata': {
+                        'score': d.get('score', 0),
+                        'num_comments': num_comments,
+                        'comment_count_fetched': len(comments),
+                    },
+                }
+                if media_url:
+                    item['media_url'] = media_url
+                    item['content_type'] = 'image'
+                items.append(item)
+            logger.info(f'Reddit r/{sub}: fetched {len(items)} posts ({sum(1 for i in items if i.get("media_url"))} with media)')
         except Exception as e:
             logger.warning(f'Reddit r/{sub} failed: {e}')
 
     return items
+
+
+def _fetch_bilibili_comments(aid: int, headers: dict, max_comments: int = 10) -> list[dict]:
+    """Fetch top comments for a Bilibili video. Returns list of {author, text, likes}."""
+    url = 'https://api.bilibili.com/x/v2/reply'
+    params = {'type': 1, 'oid': aid, 'sort': 2, 'ps': max_comments}  # sort=2: by likes
+    try:
+        resp = requests.get(url, params=params, headers=headers, timeout=10)
+        resp.raise_for_status()
+        replies = resp.json().get('data', {}).get('replies', []) or []
+        results = []
+        for r in replies[:max_comments]:
+            member = r.get('member', {})
+            content = r.get('content', {})
+            text = content.get('message', '')
+            if not text:
+                continue
+            results.append({
+                'author': member.get('uname', '?'),
+                'text': text,
+                'likes': r.get('like', 0),
+            })
+        return results
+    except Exception:
+        return []
+
+
+def _bilibili_item(v: dict, created: datetime, author: str, headers: dict, source_tag: str = '') -> dict:
+    """Build a Bilibili news item with full text, comments, and cover image."""
+    bvid = v.get('bvid', '')
+    aid = v.get('aid', 0) or v.get('id', 0)
+    description = v.get('description', '') or v.get('desc', '') or ''
+
+    # Fetch comments
+    comments = []
+    comment_count = v.get('comment', 0) or v.get('review', 0) or 0
+    if aid and comment_count > 0:
+        comments = _fetch_bilibili_comments(aid, headers)
+        time.sleep(0.3)
+
+    comment_text = ''
+    if comments:
+        lines = [f'  └ {c["author"]} ({c["likes"]}赞): {c["text"]}' for c in comments]
+        comment_text = '\n' + '\n'.join(lines)
+
+    # Cover image
+    pic = v.get('pic', '')
+    if pic and not pic.startswith('http'):
+        pic = f'https:{pic}'
+
+    play = v.get('play', 0) or v.get('view', 0) or 0
+    item = {
+        'title': strip_html_tags(v.get('title', '')),
+        'summary': description + comment_text,
+        'source': 'bilibili',
+        'time': created.isoformat(),
+        'url': f'https://www.bilibili.com/video/{bvid}' if bvid else v.get('arcurl', ''),
+        'engagement': play + comment_count,
+        'is_hot': play > 10000,
+        'author': author,
+        'tags': [v.get('typename', '') or str(v.get('typeid', ''))] if v.get('typename') or v.get('typeid') else [],
+        'metadata': {
+            'play': play,
+            'comment_count': comment_count,
+            'comments_fetched': len(comments),
+            'danmaku': v.get('danmaku', 0) or v.get('video_review', 0) or 0,
+        },
+    }
+    if pic:
+        item['media_url'] = pic
+        item['content_type'] = 'image'
+    return item
 
 
 def _fetch_bilibili_space():
@@ -249,18 +397,7 @@ def _fetch_bilibili_space():
                 created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
                 if not created or created < cutoff:
                     continue
-                bvid = v.get('bvid', '')
-                items.append({
-                    'title': strip_html_tags(v.get('title', '')),
-                    'summary': v.get('description', '')[:200],
-                    'source': 'bilibili',
-                    'time': created.isoformat(),
-                    'url': f'https://www.bilibili.com/video/{bvid}' if bvid else '',
-                    'engagement': v.get('play', 0) + v.get('comment', 0),
-                    'is_hot': v.get('play', 0) > 10000,
-                    'author': v.get('author', creator_name),
-                    'tags': [v.get('typeid', '')] if v.get('typeid') else [],
-                })
+                items.append(_bilibili_item(v, created, v.get('author', creator_name), headers))
                 count += 1
             logger.info(f'Bilibili space {creator_name}({mid}): {count} videos in {HOURS_LOOKBACK}h')
         except Exception as e:
@@ -297,17 +434,7 @@ def _fetch_bilibili_search():
                 created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
                 if not created or created < cutoff:
                     continue
-                items.append({
-                    'title': strip_html_tags(v.get('title', '')),
-                    'summary': v.get('description', '')[:200],
-                    'source': 'bilibili',
-                    'time': created.isoformat(),
-                    'url': v.get('arcurl', ''),
-                    'engagement': v.get('play', 0) + v.get('danmaku', 0),
-                    'is_hot': v.get('play', 0) > 10000,
-                    'author': v.get('author', ''),
-                    'tags': [v.get('typename', '')] if v.get('typename') else [],
-                })
+                items.append(_bilibili_item(v, created, v.get('author', ''), headers))
             logger.info(f'Bilibili search "{keyword}": fetched {len(results)} videos')
         except Exception as e:
             logger.warning(f'Bilibili search "{keyword}" failed: {e}')
@@ -966,7 +1093,7 @@ def fetch_discord_local():
 
         msg_url = f'https://discord.com/channels/{guild_id}/{channel_id}/{msg_id}' if channel_id and msg_id else ''
         title_preview = content[:80].replace('\n', ' ') if content else '(附件/嵌入)'
-        items.append({
+        item = {
             'title': f'[DC] {author}@{channel}: {title_preview}',
             'summary': full_summary,
             'source': 'discord',
@@ -980,9 +1107,19 @@ def fetch_discord_local():
                 'reactions': react_str,
                 'reply_count': len(replies),
                 'attachment_count': len(attachments),
+                'attachment_urls': [a.get('url', '') for a in attachments if a.get('url')],
                 'channel': channel,
             },
-        })
+        }
+        # First image attachment as media_url for download_media.py
+        for a in attachments:
+            ct = a.get('content_type', '')
+            aurl = a.get('url', '')
+            if aurl and (ct.startswith('image/') or any(aurl.lower().endswith(e) for e in ('.png', '.jpg', '.jpeg', '.gif', '.webp'))):
+                item['media_url'] = aurl
+                item['content_type'] = 'image'
+                break
+        items.append(item)
 
     logger.info(f'Discord local: {len(items)} items ({len(top_msgs)} full-text) from {data_date} JSONL ({len(all_msgs)} total messages)')
     return items
