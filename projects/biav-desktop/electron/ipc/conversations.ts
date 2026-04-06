@@ -49,32 +49,25 @@ export function registerConversationHandlers() {
     const db = getDb()
     if (!query || !query.trim()) return []
 
-    // Escape FTS5 special characters and build a prefix query
-    const sanitized = query.trim().replace(/["*^(){}[\]:]/g, '')
+    const sanitized = query.trim()
     if (!sanitized) return []
 
-    const ftsQuery = sanitized
-      .split(/\s+/)
-      .filter(Boolean)
-      .map((term) => `"${term}"*`)
-      .join(' ')
-
+    const likePattern = `%${sanitized}%`
     const results = db
       .prepare(
         `SELECT
-          f.conversation_id AS conversationId,
+          m.conversation_id AS conversationId,
           c.title AS conversationTitle,
-          highlight(messages_fts, 0, '<mark>', '</mark>') AS snippet,
+          substr(m.content, max(1, instr(lower(m.content), lower(?)) - 40), 120) AS snippet,
           m.role AS messageRole,
           m.created_at AS messageDate
-        FROM messages_fts f
-        JOIN conversations c ON c.id = f.conversation_id
-        JOIN messages m ON m.id = f.message_id
-        WHERE messages_fts MATCH ?
-        ORDER BY rank
+        FROM messages m
+        JOIN conversations c ON c.id = m.conversation_id
+        WHERE m.content LIKE ?
+        ORDER BY m.created_at DESC
         LIMIT 50`
       )
-      .all(ftsQuery)
+      .all(sanitized, likePattern)
 
     return results
   })
