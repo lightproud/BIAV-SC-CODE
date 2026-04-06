@@ -1,6 +1,8 @@
 import { useState, useCallback, useEffect } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 import hljs from 'highlight.js'
 import type { Message } from '../types'
 
@@ -172,7 +174,8 @@ export default function ChatMessage({ message, isStreaming, onEdit, onRegenerate
       <div className="flex-1 min-w-0">
         <div className={`text-sm leading-relaxed markdown-content ${isStreaming ? 'typing-cursor' : ''}`}>
           <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
+            remarkPlugins={[remarkGfm, remarkMath]}
+            rehypePlugins={[rehypeKatex]}
             components={{
               code({ className, children, ...props }) {
                 const isBlock = /language-/.test(className || '') ||
