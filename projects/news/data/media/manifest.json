@@ -25,6 +25,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-05T15:00:03.265539+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/07e551a23a66a20b6e3d2596e8761aea36dc583d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-06T10:43:55.532755+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/46b1d5165f23f976094c33a5056312dcd9cc1352.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-06T10:43:55.833576+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/a1cc50a738664a9484f92a3464f040f9ae810e60.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-06T10:43:56.134449+00:00"
     }
   },
   "archived": []
