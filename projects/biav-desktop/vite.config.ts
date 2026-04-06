@@ -5,6 +5,14 @@ import renderer from 'vite-plugin-electron-renderer'
 import path from 'path'
 
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+        'quick-entry': path.resolve(__dirname, 'quick-entry.html'),
+      },
+    },
+  },
   plugins: [
     react(),
     electron([

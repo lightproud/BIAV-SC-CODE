@@ -1,11 +1,14 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { useChat } from './hooks/useChat'
+import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
 import Sidebar from './components/Sidebar'
 import ChatMessage from './components/ChatMessage'
 import ChatInput from './components/ChatInput'
 import ModelSelector from './components/ModelSelector'
 import SettingsModal from './components/SettingsModal'
+import ShortcutsModal from './components/ShortcutsModal'
 import ExportMenu from './components/ExportMenu'
+import UpdateNotice from './components/UpdateNotice'
 import type { Conversation, ProviderStatus } from './types'
 
 export default function App() {
@@ -18,6 +21,8 @@ export default function App() {
     stopStreaming,
     loadConversation,
     resetChat,
+    editAndResend,
+    regenerate,
   } = useChat()
 
   const [conversations, setConversations] = useState<Conversation[]>([])
@@ -25,8 +30,18 @@ export default function App() {
   const [provider, setProvider] = useState('claude')
   const [model, setModel] = useState('claude-sonnet-4-20250514')
   const [showSettings, setShowSettings] = useState(false)
+  const [showShortcuts, setShowShortcuts] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+
+  // Global keyboard shortcuts
+  const shortcuts = useMemo(() => ({
+    'mod+n': () => resetChat(),
+    'mod+,': () => setShowSettings(true),
+    'mod+/': () => setShowShortcuts((v) => !v),
+  }), [resetChat])
+
+  useKeyboardShortcuts(shortcuts)
 
   // Load conversations and models on mount
   useEffect(() => {
@@ -118,7 +133,12 @@ export default function App() {
           )}
           <div className="max-w-3xl mx-auto space-y-4">
             {messages.map((msg) => (
-              <ChatMessage key={msg.id} message={msg} />
+              <ChatMessage
+                key={msg.id}
+                message={msg}
+                onEdit={(id, content) => editAndResend(id, content, provider, model)}
+                onRegenerate={() => regenerate(provider, model)}
+              />
             ))}
             {isStreaming && streamingContent && (
               <ChatMessage
@@ -145,6 +165,9 @@ export default function App() {
         />
       </div>
 
+      {/* Update Notice */}
+      <UpdateNotice />
+
       {/* Settings Modal */}
       {showSettings && (
         <SettingsModal
@@ -153,6 +176,11 @@ export default function App() {
             refreshModels()
           }}
         />
+      )}
+
+      {/* Shortcuts Modal */}
+      {showShortcuts && (
+        <ShortcutsModal onClose={() => setShowShortcuts(false)} />
       )}
     </div>
   )

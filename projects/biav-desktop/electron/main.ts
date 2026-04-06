@@ -6,6 +6,8 @@ import { registerConversationHandlers } from './ipc/conversations'
 import { registerModelHandlers } from './ipc/models'
 import { registerSettingsHandlers } from './ipc/settings'
 import { registerExportHandlers } from './ipc/export'
+import { registerFileHandlers } from './ipc/files'
+import { initUpdater, checkForUpdate, downloadUpdate, installUpdate } from './updater'
 
 let mainWindow: BrowserWindow | null = null
 let quickEntryWindow: BrowserWindow | null = null
@@ -158,12 +160,22 @@ app.whenReady().then(() => {
   registerModelHandlers()
   registerSettingsHandlers()
   registerExportHandlers()
+  registerFileHandlers()
 
   createWindow()
   createQuickEntry()
   createTray()
   registerQuickEntryIPC()
   registerGlobalShortcut()
+
+  // Auto-update (production only)
+  if (!isDev) {
+    initUpdater()
+  }
+
+  ipcMain.handle('updater:check', () => checkForUpdate())
+  ipcMain.handle('updater:download', () => downloadUpdate())
+  ipcMain.handle('updater:install', () => installUpdate())
 
   app.on('activate', () => {
     if (!mainWindow) createWindow()
