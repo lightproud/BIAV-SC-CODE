@@ -77,6 +77,10 @@ contextBridge.exposeInMainWorld('biav', {
   moveConversationToProject: (conversationId: string, projectId: string | null) =>
     ipcRenderer.invoke('projects:move', conversationId, projectId),
 
+  // Notifications
+  showNotification: (title: string, body: string) => ipcRenderer.invoke('notifications:show', { title, body }),
+  setNotificationsEnabled: (enabled: boolean) => ipcRenderer.invoke('notifications:setEnabled', enabled),
+
   // Platform
   platform: process.platform,
 

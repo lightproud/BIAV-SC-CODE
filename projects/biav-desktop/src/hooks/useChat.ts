@@ -40,6 +40,10 @@ export function useChat() {
         case 'error':
           setIsStreaming(false)
           setStreamingContent('')
+          setStreamingTokens(0)
+          setStreamingDuration(0)
+          streamingStartRef.current = null
+          if (durationTimerRef.current) { clearInterval(durationTimerRef.current); durationTimerRef.current = null }
           setMessages((prev) => [
             ...prev,
             {
@@ -64,6 +68,8 @@ export function useChat() {
           break
         case 'done':
           setIsStreaming(false)
+          streamingStartRef.current = null
+          if (durationTimerRef.current) { clearInterval(durationTimerRef.current); durationTimerRef.current = null }
           setStreamingContent((content) => {
             if (content) {
               setMessages((prev) => [
@@ -212,6 +218,8 @@ export function useChat() {
     conversationId,
     isStreaming,
     streamingContent,
+    streamingTokens,
+    streamingDuration,
     lastUsage,
     sessionUsage,
     titleUpdateCounter,
