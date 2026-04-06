@@ -5,10 +5,13 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import hljs from 'highlight.js'
 import type { Message } from '../types'
+import ThinkingBlock from './ThinkingBlock'
 
 interface Props {
   message: Message
   isStreaming?: boolean
+  streamingThinking?: string
+  thinkingDuration?: number
   onEdit?: (id: string, content: string) => void
   onRegenerate?: (id: string) => void
   onFork?: (messageId: string) => void
@@ -44,7 +47,7 @@ function CodeBlock({ className, children }: { className?: string; children: stri
   )
 }
 
-export default function ChatMessage({ message, isStreaming, onEdit, onRegenerate, onFork }: Props) {
+export default function ChatMessage({ message, isStreaming, streamingThinking, thinkingDuration, onEdit, onRegenerate, onFork }: Props) {
   const [isEditing, setIsEditing] = useState(false)
   const [editContent, setEditContent] = useState(message.content)
   const [msgCopied, setMsgCopied] = useState(false)
@@ -172,6 +175,14 @@ export default function ChatMessage({ message, isStreaming, onEdit, onRegenerate
         B
       </div>
       <div className="flex-1 min-w-0">
+        {/* Thinking block for extended thinking */}
+        {(message.thinking || (isStreaming && streamingThinking)) && (
+          <ThinkingBlock
+            thinking={message.thinking || streamingThinking || ''}
+            isStreaming={isStreaming && !message.thinking}
+            duration={thinkingDuration}
+          />
+        )}
         <div className={`text-sm leading-relaxed markdown-content ${isStreaming ? 'typing-cursor' : ''}`}>
           <ReactMarkdown
             remarkPlugins={[remarkGfm, remarkMath]}

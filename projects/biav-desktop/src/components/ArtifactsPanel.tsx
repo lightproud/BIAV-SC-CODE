@@ -3,6 +3,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import hljs from 'highlight.js'
 import type { Artifact } from '../types'
+import ArtifactDiff from './ArtifactDiff'
 
 interface Props {
   artifacts: Artifact[]
@@ -136,21 +137,166 @@ function ArtifactRenderer({ artifact }: { artifact: Artifact }) {
   }
 }
 
-export default function ArtifactsPanel({ artifacts, onClose }: Props) {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const current = artifacts[Math.min(activeIndex, artifacts.length - 1)]
+function formatTimestamp(ts: number): string {
+  if (ts < 1000) return '' // index-based timestamp from streaming
+  const d = new Date(ts)
+  return d.toLocaleString('zh-CN', { month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' })
+}
 
-  if (!current) return null
+function VersionControls({
+  artifact,
+  onVersionChange,
+  onShowDiff,
+}: {
+  artifact: Artifact
+  onVersionChange: (index: number) => void
+  onShowDiff: () => void
+}) {
+  const { versions, currentVersion } = artifact
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const isLatest = currentVersion === versions.length - 1
+  const hasMultipleVersions = versions.length > 1
+
+  if (!hasMultipleVersions) return null
 
   return (
-    <div className="flex flex-col h-full bg-biav-surface border-l border-biav-border" style={{ width: '40%', minWidth: 320 }}>
+    <div className="flex items-center gap-1.5 px-3 py-1.5 border-b border-biav-border">
+      {/* Non-latest indicator */}
+      {!isLatest && (
+        <span className="px-1.5 py-0.5 text-[10px] rounded bg-yellow-500/20 text-yellow-400 font-medium">
+          旧版本
+        </span>
+      )}
+
+      {/* Left arrow */}
+      <button
+        onClick={() => onVersionChange(Math.max(0, currentVersion - 1))}
+        disabled={currentVersion === 0}
+        className="p-0.5 rounded hover:bg-biav-border text-biav-muted hover:text-biav-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+        title="上一版本"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
+      </button>
+
+      {/* Version indicator / dropdown trigger */}
+      <div className="relative">
+        <button
+          onClick={() => setDropdownOpen(!dropdownOpen)}
+          className="px-1.5 py-0.5 text-xs rounded hover:bg-biav-border text-biav-muted hover:text-biav-text transition-colors"
+        >
+          v{currentVersion + 1} / {versions.length}
+        </button>
+        {dropdownOpen && (
+          <>
+            <div className="fixed inset-0 z-10" onClick={() => setDropdownOpen(false)} />
+            <div className="absolute top-full left-0 mt-1 z-20 bg-biav-surface border border-biav-border rounded shadow-lg min-w-[160px] py-1">
+              {versions.map((v, i) => (
+                <button
+                  key={i}
+                  onClick={() => {
+                    onVersionChange(i)
+                    setDropdownOpen(false)
+                  }}
+                  className={`w-full text-left px-3 py-1 text-xs hover:bg-biav-border transition-colors flex items-center gap-2 ${
+                    i === currentVersion ? 'text-biav-gold' : 'text-biav-text'
+                  }`}
+                >
+                  <span>v{i + 1}</span>
+                  <span className="text-biav-muted">{formatTimestamp(v.timestamp)}</span>
+                  {i === versions.length - 1 && (
+                    <span className="text-[10px] text-biav-muted ml-auto">最新</span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* Right arrow */}
+      <button
+        onClick={() => onVersionChange(Math.min(versions.length - 1, currentVersion + 1))}
+        disabled={isLatest}
+        className="p-0.5 rounded hover:bg-biav-border text-biav-muted hover:text-biav-text disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+        title="下一版本"
+      >
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
+      </button>
+
+      {/* Diff button */}
+      {currentVersion > 0 && (
+        <button
+          onClick={onShowDiff}
+          className="ml-1 px-1.5 py-0.5 text-[10px] rounded bg-biav-border text-biav-muted hover:text-biav-gold transition-colors"
+          title="与上一版本对比"
+        >
+          Diff
+        </button>
+      )}
+    </div>
+  )
+}
+
+export default function ArtifactsPanel({ artifacts, onClose }: Props) {
+  const [activeIndex, setActiveIndex] = useState(0)
+  // Track per-artifact version overrides (artifact id -> version index)
+  const [versionOverrides, setVersionOverrides] = useState<Record<string, number>>({})
+  const [showDiff, setShowDiff] = useState(false)
+
+  const current = artifacts[Math.min(activeIndex, artifacts.length - 1)]
+
+  // Apply version override to get the displayed artifact
+  const displayArtifact = useMemo(() => {
+    if (!current) return null
+    const overrideVersion = versionOverrides[current.id]
+    if (overrideVersion !== undefined && overrideVersion !== current.currentVersion) {
+      return {
+        ...current,
+        content: current.versions[overrideVersion].content,
+        currentVersion: overrideVersion,
+      }
+    }
+    return current
+  }, [current, versionOverrides])
+
+  const handleVersionChange = useCallback(
+    (index: number) => {
+      if (!current) return
+      setVersionOverrides((prev) => ({ ...prev, [current.id]: index }))
+      setShowDiff(false)
+    },
+    [current],
+  )
+
+  if (!displayArtifact) return null
+
+  const isNotLatest =
+    displayArtifact.versions.length > 1 &&
+    displayArtifact.currentVersion < displayArtifact.versions.length - 1
+
+  return (
+    <div
+      className={`flex flex-col h-full bg-biav-surface border-l transition-colors ${
+        isNotLatest ? 'border-yellow-500/50' : 'border-biav-border'
+      }`}
+      style={{ width: '40%', minWidth: 320 }}
+    >
       {/* Header */}
       <div className="flex items-center gap-2 px-4 h-12 shrink-0 border-b border-biav-border">
         <div className="flex-1 min-w-0 flex items-center gap-2">
-          <span className="text-sm font-medium text-biav-text truncate">{current.title}</span>
-          <span className={`px-1.5 py-0.5 text-[10px] rounded font-medium ${TYPE_COLORS[current.type]}`}>
-            {TYPE_LABELS[current.type]}
+          <span className="text-sm font-medium text-biav-text truncate">{displayArtifact.title}</span>
+          <span className={`px-1.5 py-0.5 text-[10px] rounded font-medium ${TYPE_COLORS[displayArtifact.type]}`}>
+            {TYPE_LABELS[displayArtifact.type]}
           </span>
+          {displayArtifact.versions.length > 1 && (
+            <span className="px-1.5 py-0.5 text-[10px] rounded bg-biav-border text-biav-muted">
+              {displayArtifact.versions.length} 版本
+            </span>
+          )}
         </div>
         <button
           onClick={onClose}
@@ -169,7 +315,10 @@ export default function ArtifactsPanel({ artifacts, onClose }: Props) {
           {artifacts.map((art, i) => (
             <button
               key={art.id}
-              onClick={() => setActiveIndex(i)}
+              onClick={() => {
+                setActiveIndex(i)
+                setShowDiff(false)
+              }}
               className={`px-3 py-1.5 text-xs whitespace-nowrap border-b-2 transition-colors ${
                 i === Math.min(activeIndex, artifacts.length - 1)
                   ? 'border-biav-gold text-biav-gold'
@@ -177,14 +326,32 @@ export default function ArtifactsPanel({ artifacts, onClose }: Props) {
               }`}
             >
               {art.title}
+              {art.versions.length > 1 && (
+                <span className="ml-1 text-[10px] text-biav-muted">v{art.versions.length}</span>
+              )}
             </button>
           ))}
         </div>
       )}
 
+      {/* Version controls */}
+      <VersionControls
+        artifact={displayArtifact}
+        onVersionChange={handleVersionChange}
+        onShowDiff={() => setShowDiff(!showDiff)}
+      />
+
       {/* Content */}
       <div className="flex-1 min-h-0">
-        <ArtifactRenderer artifact={current} />
+        {showDiff && displayArtifact.currentVersion > 0 ? (
+          <ArtifactDiff
+            oldContent={displayArtifact.versions[displayArtifact.currentVersion - 1].content}
+            newContent={displayArtifact.versions[displayArtifact.currentVersion].content}
+            onClose={() => setShowDiff(false)}
+          />
+        ) : (
+          <ArtifactRenderer artifact={displayArtifact} />
+        )}
       </div>
     </div>
   )
