@@ -1,5 +1,8 @@
 import { streamClaude } from './claude'
 import { streamOpenAI } from './openai'
+import type { StreamChunk } from './claude'
+
+export type { StreamChunk, LLMUsage } from './claude'
 
 export interface StreamChatOptions {
   provider: 'claude' | 'openai'
@@ -10,7 +13,7 @@ export interface StreamChatOptions {
   signal?: AbortSignal
 }
 
-export async function* streamChat(opts: StreamChatOptions): AsyncGenerator<string> {
+export async function* streamChat(opts: StreamChatOptions): AsyncGenerator<StreamChunk> {
   const { provider, messages, ...rest } = opts
 
   // Extract system message if present
