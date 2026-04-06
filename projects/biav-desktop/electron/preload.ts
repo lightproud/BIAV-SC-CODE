@@ -8,6 +8,8 @@ contextBridge.exposeInMainWorld('biav', {
     provider: string
     model: string
     systemPrompt?: string
+    temperature?: number
+    maxTokens?: number
   }) => ipcRenderer.invoke('chat:send', req),
 
   onChatStream: (callback: (event: any, data: any) => void) => {
@@ -111,6 +113,12 @@ contextBridge.exposeInMainWorld('biav', {
     ipcRenderer.on('updater:update-downloaded', handler)
     return () => ipcRenderer.removeListener('updater:update-downloaded', handler)
   },
+
+  // Clipboard
+  clipboardHistory: () => ipcRenderer.invoke('clipboard:history'),
+  clipboardAdd: (entry: { text: string; source: 'code' | 'message' }) =>
+    ipcRenderer.invoke('clipboard:add', entry),
+  clipboardClear: () => ipcRenderer.invoke('clipboard:clear'),
 
   // MCP
   mcpListServers: () => ipcRenderer.invoke('mcp:list-servers'),
