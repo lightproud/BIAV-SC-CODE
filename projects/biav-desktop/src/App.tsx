@@ -279,7 +279,7 @@ export default function App() {
       {/* Main */}
       <div className="flex flex-1 flex-col min-w-0">
         {/* Titlebar */}
-        <div className={`titlebar-drag flex items-center gap-2 border-b border-biav-border px-4 h-12 shrink-0 ${isMac ? 'pl-20' : ''}`}>
+        <div className={`titlebar-drag flex items-center gap-2 border-b border-biav-border px-4 h-12 shrink-0 ${isMac ? 'pl-20' : 'pr-36'}`}>
           <button
             className="titlebar-no-drag p-1 rounded hover:bg-biav-border text-biav-muted"
             onClick={() => setSidebarOpen(!sidebarOpen)}
