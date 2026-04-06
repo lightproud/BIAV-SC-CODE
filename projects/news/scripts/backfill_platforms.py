@@ -157,7 +157,7 @@ def backfill_bilibili(state: dict, max_pages: int) -> int:
                 for v in results:
                     items.append(_make_item(
                         title=v.get("title", "").replace('<em class="keyword">', '').replace('</em>', ''),
-                        summary=v.get("description", "")[:300],
+                        summary=v.get("description", ""),
                         source="bilibili",
                         platform_region="cn",
                         time_str=datetime.fromtimestamp(v.get("pubdate", 0), tz=timezone.utc).isoformat()
@@ -225,7 +225,7 @@ def backfill_appstore(state: dict, max_pages: int) -> int:
                     sentiment = '好评' if rating >= 4 else ('中评' if rating == 3 else '差评')
                     items.append(_make_item(
                         title=title or f"[{sentiment}] ★{rating}",
-                        summary=content[:300],
+                        summary=content,
                         source="appstore",
                         platform_region=country,
                         time_str=entry.get("updated", {}).get("label", "")
@@ -441,7 +441,7 @@ def backfill_steam_reviews(state: dict, max_pages: int) -> int:
                 items.append(_make_item(
                     title=f'[{sentiment}] {review_text[:50]}...' if len(review_text) > 50
                           else f'[{sentiment}] {review_text}',
-                    summary=review_text[:300],
+                    summary=review_text,
                     source="steam_review",
                     platform_region="global",
                     time_str=created.isoformat(),
@@ -561,7 +561,7 @@ def backfill_pixiv(state: dict, max_pages: int) -> int:
                 for work in works:
                     items.append(_make_item(
                         title=work.get("title", ""),
-                        summary=work.get("description", "")[:300],
+                        summary=work.get("description", ""),
                         source="pixiv",
                         platform_region="jp",
                         time_str=work.get("createDate", ""),

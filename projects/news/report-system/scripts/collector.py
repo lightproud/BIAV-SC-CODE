@@ -124,7 +124,7 @@ def _make_item(
     """创建标准化的信息条目。"""
     return {
         "title": _strip_html(title or "").strip(),
-        "summary": _strip_html(summary or "").strip()[:300],
+        "summary": _strip_html(summary or "").strip(),
         "source": source,
         "platform_region": platform_region,
         "lang": lang,
@@ -168,7 +168,7 @@ def fetch_reddit(subreddits=None):
                 comments = d.get("num_comments", 0)
                 items.append(_make_item(
                     title=d["title"],
-                    summary=(d.get("selftext") or "")[:300],
+                    summary=(d.get("selftext") or ""),
                     source="reddit",
                     platform_region="global",
                     time_str=created.isoformat(),
@@ -263,7 +263,7 @@ def fetch_twitter():
             engagement = m.get("like_count", 0) + m.get("reply_count", 0) + m.get("retweet_count", 0)
             items.append(_make_item(
                 title=tweet["text"][:120],
-                summary=tweet["text"][:300],
+                summary=tweet["text"],
                 source="twitter",
                 platform_region="global",
                 time_str=tweet["created_at"],
@@ -501,7 +501,7 @@ def fetch_weibo():
 
                 items.append(_make_item(
                     title=text_clean[:100],
-                    summary=text_clean[:300],
+                    summary=text_clean,
                     source="weibo",
                     platform_region="cn",
                     time_str=datetime.now(timezone.utc).isoformat(),
@@ -532,9 +532,11 @@ def fetch_xiaohongshu():
 
             for note in data.get("data", {}).get("items", []) or []:
                 note_item = note.get("note_card", {})
+                # Try to get description/content from note_card
+                summary = note_item.get("desc", "") or note_item.get("description", "") or note_item.get("display_title", "")
                 items.append(_make_item(
                     title=note_item.get("display_title", ""),
-                    summary="",
+                    summary=summary,
                     source="xiaohongshu",
                     platform_region="cn",
                     time_str=datetime.now(timezone.utc).isoformat(),
@@ -565,14 +567,21 @@ def fetch_douyin():
             ).json()
 
             for aweme in data.get("data", []) or []:
-                desc = aweme.get("aweme_info", {}).get("desc", "")
-                stats = aweme.get("aweme_info", {}).get("statistics", {})
+                info = aweme.get("aweme_info", {})
+                desc = info.get("desc", "")
+                stats = info.get("statistics", {})
+                # Extract actual post timestamp (create_time is Unix epoch)
+                create_time = info.get("create_time", 0)
+                if create_time:
+                    time_str = datetime.fromtimestamp(create_time, tz=timezone.utc).isoformat()
+                else:
+                    time_str = datetime.now(timezone.utc).isoformat()
                 items.append(_make_item(
                     title=desc[:100],
-                    summary=desc[:300],
+                    summary=desc,
                     source="douyin",
                     platform_region="cn",
-                    time_str=datetime.now(timezone.utc).isoformat(),
+                    time_str=time_str,
                     url=f"https://www.douyin.com/video/{aweme.get('aweme_info', {}).get('aweme_id', '')}",
                     engagement=stats.get("digg_count", 0) + stats.get("comment_count", 0),
                     is_hot=stats.get("digg_count", 0) > 5000,
@@ -782,7 +791,7 @@ def fetch_discord():
                 created = msg.get("timestamp", "")
                 items.append(_make_item(
                     title=msg.get("content", "")[:100],
-                    summary=msg.get("content", "")[:300],
+                    summary=msg.get("content", ""),
                     source="discord",
                     platform_region="global",
                     time_str=created,
@@ -828,7 +837,7 @@ def fetch_facebook():
                 shares = post.get("shares", {}).get("count", 0)
                 items.append(_make_item(
                     title=msg[:100],
-                    summary=msg[:300],
+                    summary=msg,
                     source="facebook",
                     platform_region="sea",
                     time_str=post.get("created_time", ""),
@@ -921,7 +930,7 @@ def fetch_qq():
                     qq_url = f"https://qun.qq.com/qqweb/qunpro/share?channelId={channel_id}&msgSeq={msg_id}" if msg_id else ""
                     items.append(_make_item(
                         title=content[:100],
-                        summary=content[:300],
+                        summary=content,
                         source="qq",
                         platform_region="cn",
                         time_str=msg.get("timestamp", datetime.now(timezone.utc).isoformat()),
@@ -958,7 +967,7 @@ def fetch_pixiv():
                 like = illust.get("likeCount", 0)
                 items.append(_make_item(
                     title=illust.get("title", ""),
-                    summary=illust.get("description", "")[:300] if illust.get("description") else "",
+                    summary=illust.get("description", "") if illust.get("description") else "",
                     source="pixiv",
                     platform_region="global",
                     time_str=illust.get("createDate", datetime.now(timezone.utc).isoformat()),
@@ -1242,7 +1251,7 @@ def fetch_google_play():
                 sentiment = '好评' if rating >= 4 else ('中评' if rating == 3 else '差评')
                 items.append(_make_item(
                     title=f"[Google Play {sentiment}] ★{rating} {text[:40]}",
-                    summary=text[:300],
+                    summary=text,
                     source="google_play",
                     platform_region=region,
                     time_str=review["at"].isoformat() if review.get("at") else datetime.now(timezone.utc).isoformat(),
@@ -1297,7 +1306,7 @@ def fetch_qooapp():
                 sentiment = '好评' if rating >= 4 else ('中评' if rating == 3 else '差评')
                 items.append(_make_item(
                     title=f"[QooApp {sentiment}] {text[:40]}",
-                    summary=text[:300],
+                    summary=text,
                     source="qooapp",
                     platform_region=region,
                     time_str=date_str.strip(),
@@ -1330,7 +1339,7 @@ def fetch_qooapp():
                     sentiment = '好评' if rating >= 4 else ('中评' if rating == 3 else '差评')
                     items.append(_make_item(
                         title=f"[QooApp {sentiment}] {text[:40]}",
-                        summary=text[:300],
+                        summary=text,
                         source="qooapp",
                         platform_region=region,
                         time_str=date_str.strip(),
@@ -1378,7 +1387,7 @@ def fetch_epic_store():
                     desc = product.get("description", "")
                     items.append(_make_item(
                         title=f"[Epic Store] {title}",
-                        summary=desc[:300],
+                        summary=desc,
                         source="epic",
                         platform_region="global",
                         time_str=product.get("effectiveDate", datetime.now(timezone.utc).isoformat()),
@@ -1432,7 +1441,7 @@ def fetch_epic_store():
             sentiment = '好评' if rating >= 4 else '差评'
             items.append(_make_item(
                 title=f"[Epic {sentiment}] {text[:40]}",
-                summary=text[:300],
+                summary=text,
                 source="epic",
                 platform_region="global",
                 time_str=datetime.now(timezone.utc).isoformat(),
@@ -1472,7 +1481,7 @@ def fetch_tiktok():
                         digg_count = stats.get("diggCount", 0)
                         items.append(_make_item(
                             title=video.get("desc", "")[:100],
-                            summary=video.get("desc", "")[:300],
+                            summary=video.get("desc", ""),
                             source="tiktok",
                             platform_region="global",
                             time_str=datetime.fromtimestamp(
@@ -1517,7 +1526,7 @@ def fetch_zhihu():
                             target = obj.get("object", {})
 
                         title = target.get("title", target.get("question", {}).get("title", ""))
-                        excerpt = target.get("excerpt", target.get("content", ""))[:300]
+                        excerpt = target.get("excerpt", target.get("content", ""))
                         voteup = target.get("voteup_count", 0) or 0
                         comment = target.get("comment_count", 0) or 0
 
@@ -1678,7 +1687,7 @@ def fetch_telegram():
 
                     items.append(_make_item(
                         title=text[:100],
-                        summary=text[:300],
+                        summary=text,
                         source="telegram",
                         platform_region="global",
                         time_str=msg_dates[i] if i < len(msg_dates) else datetime.now(timezone.utc).isoformat(),
@@ -1762,7 +1771,7 @@ def fetch_twitch():
                     views = vod.get("view_count", 0)
                     items.append(_make_item(
                         title=vod.get("title", ""),
-                        summary=vod.get("description", "")[:300],
+                        summary=vod.get("description", ""),
                         source="twitch",
                         platform_region="global",
                         time_str=vod.get("created_at", ""),
@@ -1819,7 +1828,7 @@ def fetch_instagram():
                 comments = post.get("comments_count", 0)
                 items.append(_make_item(
                     title=caption[:100] if caption else f"#{hashtag}",
-                    summary=caption[:300] if caption else "",
+                    summary=caption if caption else "",
                     source="instagram",
                     platform_region="global",
                     time_str=post.get("timestamp", ""),
@@ -1964,7 +1973,7 @@ def fetch_note_com():
                 for note in contents or []:
                     items.append(_make_item(
                         title=note.get("name", ""),
-                        summary=note.get("body", "")[:300],
+                        summary=note.get("body", ""),
                         source="note_com",
                         platform_region="jp",
                         time_str=note.get("publishAt", datetime.now(timezone.utc).isoformat()),
@@ -2054,7 +2063,7 @@ def fetch_vkplay():
             if rating:
                 items.append(_make_item(
                     title=f"[VK Play] {title_name} — рейтинг {rating}",
-                    summary=data.get("description", "")[:300],
+                    summary=data.get("description", ""),
                     source="vkplay",
                     platform_region="ru",
                     time_str=datetime.now(timezone.utc).isoformat(),
@@ -2087,7 +2096,7 @@ def fetch_vkplay():
                     continue
                 items.append(_make_item(
                     title=f"[VK Play] {text[:60]}",
-                    summary=text[:300],
+                    summary=text,
                     source="vkplay",
                     platform_region="ru",
                     time_str=review.get("created_at", datetime.now(timezone.utc).isoformat()),
@@ -2143,7 +2152,7 @@ def fetch_stopgame():
             text = match.group(1).strip()
             items.append(_make_item(
                 title=f"[StopGame] {text[:60]}",
-                summary=text[:300],
+                summary=text,
                 source="stopgame",
                 platform_region="ru",
                 time_str=datetime.now(timezone.utc).isoformat(),
@@ -2264,7 +2273,7 @@ def fetch_gamekee():
                 for item in data.get("data", {}).get("list", []) or []:
                     items.append(_make_item(
                         title=item.get("title", ""),
-                        summary=item.get("summary", "")[:300],
+                        summary=item.get("summary", ""),
                         source="gamekee",
                         platform_region="cn",
                         time_str=item.get("created_at", datetime.now(timezone.utc).isoformat()),
@@ -2429,7 +2438,7 @@ def fetch_rsshub():
                 # Clean HTML from title/content
                 title = _re.sub(r'<[^>]+>', '', title).strip()
                 content = entry.get("content_text", "") or entry.get("content_html", "")
-                content = _re.sub(r'<[^>]+>', '', content).strip()[:300]
+                content = _re.sub(r'<[^>]+>', '', content).strip()
 
                 url = entry.get("url", "") or entry.get("id", "")
                 time_str = entry.get("date_published", "") or entry.get("date_modified", "")
