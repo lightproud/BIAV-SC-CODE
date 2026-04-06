@@ -15,11 +15,16 @@ import { registerClipboardHandlers } from './ipc/clipboard'
 import { registerProjectHandlers } from './ipc/projects'
 import { registerMCPHandlers } from './ipc/mcp'
 import { registerStyleHandlers } from './ipc/styles'
+import { registerHookHandlers } from './ipc/hooks'
 import { MCPManager } from './mcp/manager'
+import { loadHooks } from './tools/hooks'
 import { initUpdater, checkForUpdate, downloadUpdate, installUpdate } from './updater'
 import { setMainWindow, getMainWindow } from './window-state'
 
 const mcpManager = new MCPManager()
+
+// Initialize hook engine
+loadHooks()
 
 let mainWindow: BrowserWindow | null = null
 
@@ -259,6 +264,7 @@ app.whenReady().then(() => {
   registerNotificationHandlers()
   registerClipboardHandlers()
   registerStyleHandlers()
+  registerHookHandlers()
 
   createWindow()
   createQuickEntry()
