@@ -93,7 +93,7 @@ export function useChat() {
   }, [])
 
   const sendMessage = useCallback(
-    async (content: string, provider: string, model: string, attachments?: Attachment[], systemPrompt?: string) => {
+    async (content: string, provider: string, model: string, attachments?: Attachment[], systemPrompt?: string, modelParams?: ModelParams) => {
       const userMsg: Message = {
         id: 'user-' + Date.now(),
         conversation_id: conversationId || '',
@@ -115,6 +115,8 @@ export function useChat() {
         model,
         systemPrompt,
         attachments,
+        temperature: modelParams?.temperature,
+        maxTokens: modelParams?.maxTokens,
       })
     },
     [conversationId]
@@ -146,6 +148,10 @@ export function useChat() {
     setConversationId(null)
     setStreamingContent('')
     setIsStreaming(false)
+    setStreamingTokens(0)
+    setStreamingDuration(0)
+    streamingStartRef.current = null
+    if (durationTimerRef.current) { clearInterval(durationTimerRef.current); durationTimerRef.current = null }
     setLastUsage(null)
     setSessionUsage({ totalInput: 0, totalOutput: 0, totalCost: 0 })
   }, [])

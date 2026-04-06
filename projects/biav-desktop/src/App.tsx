@@ -8,6 +8,7 @@ import ChatInput from './components/ChatInput'
 import DropZone from './components/DropZone'
 import ModelSelector from './components/ModelSelector'
 import SettingsModal from './components/SettingsModal'
+import AboutModal from './components/AboutModal'
 import ShortcutsModal from './components/ShortcutsModal'
 import ExportMenu from './components/ExportMenu'
 import UpdateNotice from './components/UpdateNotice'
@@ -18,6 +19,7 @@ import { parseArtifacts } from './lib/parseArtifacts'
 import ProjectEditor from './components/ProjectEditor'
 import UsageBar, { SessionUsageBar } from './components/UsageBar'
 import StreamingStatus from './components/StreamingStatus'
+import ClipboardHistory from './components/ClipboardHistory'
 import type { Conversation, Project, ProviderStatus, Attachment, Artifact } from './types'
 
 export default function App() {
@@ -50,6 +52,7 @@ export default function App() {
   const [model, setModel] = useState('claude-sonnet-4-20250514')
   const [showSettings, setShowSettings] = useState(false)
   const [showShortcuts, setShowShortcuts] = useState(false)
+  const [showAbout, setShowAbout] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [artifacts, setArtifacts] = useState<Artifact[]>([])
   const [showArtifacts, setShowArtifacts] = useState(false)
@@ -209,6 +212,7 @@ export default function App() {
           onRename={handleRenameConversation}
           onNewChat={resetChat}
           onOpenSettings={() => setShowSettings(true)}
+          onAbout={() => setShowAbout(true)}
           onNewProject={() => { setEditingProject(null); setShowProjectEditor(true) }}
           onEditProject={(p) => { setEditingProject(p); setShowProjectEditor(true) }}
           onDeleteProject={handleDeleteProject}
@@ -247,6 +251,7 @@ export default function App() {
               </svg>
             </button>
           )}
+          <ClipboardHistory />
           <SystemPromptEditor
             conversationId={conversationId}
             systemPrompt={systemPrompt}
@@ -353,6 +358,11 @@ export default function App() {
       {/* Shortcuts Modal */}
       {showShortcuts && (
         <ShortcutsModal onClose={() => setShowShortcuts(false)} />
+      )}
+
+      {/* About Modal */}
+      {showAbout && (
+        <AboutModal onClose={() => setShowAbout(false)} />
       )}
 
       {/* Project Editor Modal */}
