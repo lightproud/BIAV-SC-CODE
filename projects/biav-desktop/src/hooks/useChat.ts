@@ -1,11 +1,13 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import type { Message, Attachment } from '../types'
+import type { Message, Attachment, UsageData, SessionUsage } from '../types'
 
 export function useChat() {
   const [messages, setMessages] = useState<Message[]>([])
   const [conversationId, setConversationId] = useState<string | null>(null)
   const [isStreaming, setIsStreaming] = useState(false)
   const [streamingContent, setStreamingContent] = useState('')
+  const [lastUsage, setLastUsage] = useState<UsageData | null>(null)
+  const [sessionUsage, setSessionUsage] = useState<SessionUsage>({ totalInput: 0, totalOutput: 0, totalCost: 0 })
   const cleanupRef = useRef<(() => void) | null>(null)
 
   useEffect(() => {
@@ -30,6 +32,14 @@ export function useChat() {
               created_at: new Date().toISOString(),
             },
           ])
+          break
+        case 'usage':
+          setLastUsage(data.usage)
+          setSessionUsage((prev) => ({
+            totalInput: prev.totalInput + data.usage.inputTokens,
+            totalOutput: prev.totalOutput + data.usage.outputTokens,
+            totalCost: prev.totalCost + data.usage.estimatedCost,
+          }))
           break
         case 'done':
           setIsStreaming(false)
@@ -56,7 +66,7 @@ export function useChat() {
   }, [])
 
   const sendMessage = useCallback(
-    async (content: string, provider: string, model: string, attachments?: Attachment[]) => {
+    async (content: string, provider: string, model: string, attachments?: Attachment[], systemPrompt?: string) => {
       const userMsg: Message = {
         id: 'user-' + Date.now(),
         conversation_id: conversationId || '',
@@ -73,6 +83,7 @@ export function useChat() {
         message: content,
         provider,
         model,
+        systemPrompt,
         attachments,
       })
     },
@@ -90,6 +101,14 @@ export function useChat() {
     setConversationId(id)
     setStreamingContent('')
     setIsStreaming(false)
+    setLastUsage(null)
+    // Load session usage totals from DB
+    try {
+      const usage = await window.biav.getSessionUsage(id)
+      setSessionUsage(usage)
+    } catch {
+      setSessionUsage({ totalInput: 0, totalOutput: 0, totalCost: 0 })
+    }
   }, [])
 
   const resetChat = useCallback(() => {
@@ -97,6 +116,8 @@ export function useChat() {
     setConversationId(null)
     setStreamingContent('')
     setIsStreaming(false)
+    setLastUsage(null)
+    setSessionUsage({ totalInput: 0, totalOutput: 0, totalCost: 0 })
   }, [])
 
   const editAndResend = useCallback(
@@ -170,6 +191,8 @@ export function useChat() {
     conversationId,
     isStreaming,
     streamingContent,
+    lastUsage,
+    sessionUsage,
     sendMessage,
     stopStreaming,
     loadConversation,
