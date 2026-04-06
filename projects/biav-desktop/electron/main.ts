@@ -228,7 +228,9 @@ function registerGlobalShortcut() {
   })
 }
 
-const CSP = [
+// In dev mode, disable CSP so Vite's inline scripts/HMR work.
+// In production, enforce strict CSP.
+const CSP = isDev ? '' : [
   "default-src 'self'",
   "script-src 'self'",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
@@ -240,15 +242,17 @@ const CSP = [
 ].join('; ')
 
 app.whenReady().then(async () => {
-  // Content Security Policy — enforce via response headers
-  session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
-    callback({
-      responseHeaders: {
-        ...details.responseHeaders,
-        'Content-Security-Policy': [CSP],
-      },
+  // Content Security Policy — enforce via response headers (skip in dev)
+  if (CSP) {
+    session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+      callback({
+        responseHeaders: {
+          ...details.responseHeaders,
+          'Content-Security-Policy': [CSP],
+        },
+      })
     })
-  })
+  }
 
   await initDatabase()
   registerChatHandlers(mcpManager)
