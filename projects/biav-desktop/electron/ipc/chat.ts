@@ -7,7 +7,7 @@ import { BUILTIN_TOOLS, BUILTIN_TOOL_NAMES, executeBuiltinTool, getApprovalTier 
 import { fireHook } from '../tools/hooks'
 import { taskManager } from '../tools/tasks'
 import { getAgentSystemPrompt } from '../tools/system-prompt'
-import { compressHistory } from '../tools/context-compression'
+import { compressHistory, type CompressionConfig } from '../tools/context-compression'
 import Store from 'electron-store'
 import { isWindowFocused, getMainWindow } from '../window-state'
 
@@ -46,6 +46,9 @@ const pendingApprovals = new Map<string, {
 // Per-conversation "always allow" sets — scoped so one conversation's
 // permission doesn't bleed into another's background task
 const conversationAllowedTools = new Map<string, Set<string>>()
+
+// Per-conversation LLM summary cache — avoids re-summarizing on every turn
+const summaryCache = new Map<string, { upToIndex: number; text: string }>()
 
 let mcpManagerRef: MCPManager | null = null
 
@@ -218,7 +221,17 @@ export function registerChatHandlers(mcpManager: MCPManager) {
     // Compress history to fit within token budget (reserve space for tools + response)
     const modelMaxTokens = req.model.includes('opus') ? 200000 : req.model.includes('gpt-4') ? 128000 : 100000
     const tokenBudget = Math.floor(modelMaxTokens * 0.75) // Leave 25% for response + tools
-    let conversationMessages = compressHistory(history, tokenBudget)
+
+    // Two-layer compression: LLM summary (if API key available) + rule-based fallback
+    const compressionConfig: CompressionConfig = {
+      apiKey: req.provider === 'claude' ? apiKey : undefined, // Only use Anthropic for summary
+      summaryModel: 'claude-3-5-haiku-20241022', // Cheapest model for summarization
+      cachedSummary: summaryCache.get(conversationId!),
+      onSummaryGenerated: (summary) => {
+        summaryCache.set(conversationId!, summary)
+      },
+    }
+    let conversationMessages = await compressHistory(history, tokenBudget, compressionConfig)
 
     try {
       let continueLoop = true
