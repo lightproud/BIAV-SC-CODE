@@ -123,6 +123,7 @@ function createWindow() {
 
   mainWindow.on('closed', () => {
     mainWindow = null
+    setMainWindow(null)
   })
 }
 
