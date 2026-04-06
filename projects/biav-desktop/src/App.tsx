@@ -20,7 +20,8 @@ import ProjectEditor from './components/ProjectEditor'
 import UsageBar, { SessionUsageBar } from './components/UsageBar'
 import StreamingStatus from './components/StreamingStatus'
 import ClipboardHistory from './components/ClipboardHistory'
-import type { Conversation, Project, ProviderStatus, Attachment, Artifact } from './types'
+import ModelParamsPanel from './components/ModelParams'
+import type { Conversation, Project, ProviderStatus, Attachment, Artifact, ModelParams } from './types'
 
 export default function App() {
   const {
@@ -58,6 +59,7 @@ export default function App() {
   const [showArtifacts, setShowArtifacts] = useState(false)
   const [systemPrompt, setSystemPrompt] = useState('')
   const [attachments, setAttachments] = useState<Attachment[]>([])
+  const [modelParams, setModelParams] = useState<ModelParams>({ temperature: 1.0, maxTokens: 8192 })
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   // Global keyboard shortcuts
@@ -176,7 +178,7 @@ export default function App() {
   }
 
   function handleSend(content: string, sendAttachments: Attachment[]) {
-    sendMessage(content, provider, model, sendAttachments.length > 0 ? sendAttachments : undefined, systemPrompt || undefined)
+    sendMessage(content, provider, model, sendAttachments.length > 0 ? sendAttachments : undefined, systemPrompt || undefined, modelParams)
   }
 
   async function handleSystemPromptChange(prompt: string) {
@@ -218,6 +220,13 @@ export default function App() {
           onDeleteProject={handleDeleteProject}
           onMoveToProject={handleMoveToProject}
           onPin={handlePinConversation}
+          onImport={async () => {
+            const result = await window.biav.importConversation()
+            if (result.ok && result.conversationId) {
+              await refreshConversations()
+              loadConversation(result.conversationId)
+            }
+          }}
           theme={theme}
           onToggleTheme={toggleTheme}
         />
