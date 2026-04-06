@@ -1,4 +1,4 @@
-import { app, BrowserWindow, globalShortcut, Menu, Tray, nativeImage, ipcMain, shell, screen, session } from 'electron'
+import { app, BrowserWindow, globalShortcut, Menu, Tray, nativeImage, ipcMain, shell, screen, session, nativeTheme } from 'electron'
 import path from 'path'
 import Store from 'electron-store'
 import { initDatabase } from './ipc/db'
@@ -14,6 +14,7 @@ import { registerNotificationHandlers } from './ipc/notifications'
 import { registerClipboardHandlers } from './ipc/clipboard'
 import { registerProjectHandlers } from './ipc/projects'
 import { registerMCPHandlers } from './ipc/mcp'
+import { registerStyleHandlers } from './ipc/styles'
 import { MCPManager } from './mcp/manager'
 import { initUpdater, checkForUpdate, downloadUpdate, installUpdate } from './updater'
 import { setMainWindow, getMainWindow } from './window-state'
@@ -245,7 +246,7 @@ app.whenReady().then(() => {
   })
 
   initDatabase()
-  registerChatHandlers()
+  registerChatHandlers(mcpManager)
   registerConversationHandlers()
   registerModelHandlers()
   registerSettingsHandlers()
@@ -257,12 +258,18 @@ app.whenReady().then(() => {
   registerMCPHandlers(mcpManager)
   registerNotificationHandlers()
   registerClipboardHandlers()
+  registerStyleHandlers()
 
   createWindow()
   createQuickEntry()
   createTray()
   registerQuickEntryIPC()
   registerGlobalShortcut()
+
+  // Forward system theme changes to renderer
+  nativeTheme.on('updated', () => {
+    mainWindow?.webContents.send('theme:system-changed', nativeTheme.shouldUseDarkColors)
+  })
 
   // Auto-update (production only)
   if (!isDev) {

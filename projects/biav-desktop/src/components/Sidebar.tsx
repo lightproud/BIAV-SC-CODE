@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
-import type { Conversation, Project } from '../types'
+import type { Conversation, Project, SearchResult } from '../types'
 
 interface Props {
   conversations: Conversation[]
@@ -19,7 +19,8 @@ interface Props {
   onPin: (id: string, pinned: boolean) => void
   onAbout?: () => void
   theme: 'dark' | 'light'
-  onToggleTheme: () => void
+  themeMode: 'light' | 'dark' | 'system'
+  onSetThemeMode: (mode: 'light' | 'dark' | 'system') => void
 }
 
 export default function Sidebar({
@@ -40,10 +41,14 @@ export default function Sidebar({
   onPin,
   onAbout,
   theme,
-  onToggleTheme,
+  themeMode,
+  onSetThemeMode,
 }: Props) {
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([])
+  const [isSearching, setIsSearching] = useState(false)
+  const searchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const [collapsedProjects, setCollapsedProjects] = useState<Set<string>>(new Set())
   const [moveMenuConvId, setMoveMenuConvId] = useState<string | null>(null)
   const [editingId, setEditingId] = useState<string | null>(null)
@@ -81,6 +86,33 @@ export default function Sidebar({
     return cleanup
   }, [onDelete, onRename, onExport, conversations])
 
+  // Debounced full-text search
+  useEffect(() => {
+    if (searchTimerRef.current) clearTimeout(searchTimerRef.current)
+
+    if (!searchQuery.trim()) {
+      setSearchResults([])
+      setIsSearching(false)
+      return
+    }
+
+    setIsSearching(true)
+    searchTimerRef.current = setTimeout(async () => {
+      try {
+        const results = await window.biav.searchConversations(searchQuery.trim())
+        setSearchResults(results)
+      } catch {
+        setSearchResults([])
+      } finally {
+        setIsSearching(false)
+      }
+    }, 300)
+
+    return () => {
+      if (searchTimerRef.current) clearTimeout(searchTimerRef.current)
+    }
+  }, [searchQuery])
+
   // Auto-focus the edit input when editingId changes
   useEffect(() => {
     if (editingId) {
@@ -106,9 +138,8 @@ export default function Sidebar({
     setEditingTitle('')
   }, [])
 
-  const filteredConversations = searchQuery
-    ? conversations.filter((c) => c.title.toLowerCase().includes(searchQuery.toLowerCase()))
-    : conversations
+  // When not in search mode, show all conversations as-is
+  const filteredConversations = conversations
 
   const toggleProject = (projectId: string) => {
     setCollapsedProjects((prev) => {
@@ -304,14 +335,57 @@ export default function Sidebar({
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="搜索对话..."
-            className="w-full bg-biav-bg border border-biav-border rounded-lg pl-8 pr-3 py-1.5 text-sm text-biav-text placeholder:text-biav-muted focus:outline-none focus:border-biav-gold transition-colors"
+            placeholder="搜索消息内容..."
+            className="w-full bg-biav-bg border border-biav-border rounded-lg pl-8 pr-8 py-1.5 text-sm text-biav-text placeholder:text-biav-muted focus:outline-none focus:border-biav-gold transition-colors"
           />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-biav-muted hover:text-biav-text"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          )}
         </div>
       </div>
 
       {/* Project & Conversation List */}
       <div className="flex-1 overflow-y-auto px-2">
+        {searchQuery.trim() ? (
+          /* Search Results Mode */
+          <div>
+            <div className="px-2 py-1.5 mt-1">
+              <span className="text-xs font-medium text-biav-muted uppercase tracking-wider">
+                {isSearching ? '搜索中...' : `搜索结果 (${searchResults.length})`}
+              </span>
+            </div>
+            {searchResults.length === 0 && !isSearching && (
+              <p className="text-center text-sm text-biav-muted py-4">无匹配结果</p>
+            )}
+            {searchResults.map((result, idx) => (
+              <div
+                key={`${result.conversationId}-${idx}`}
+                className="px-3 py-2 rounded-lg cursor-pointer text-sm mb-0.5 transition-colors text-biav-muted hover:bg-biav-border/50 hover:text-biav-text"
+                onClick={() => { onSelect(result.conversationId); setSearchQuery('') }}
+              >
+                <div className="font-medium text-biav-text truncate">{result.conversationTitle}</div>
+                <div
+                  className="text-xs text-biav-muted mt-0.5 line-clamp-2 [&_mark]:bg-biav-gold/30 [&_mark]:text-biav-text [&_mark]:rounded-sm [&_mark]:px-0.5"
+                  dangerouslySetInnerHTML={{ __html: result.snippet }}
+                />
+                <div className="text-xs text-biav-muted/60 mt-0.5">
+                  {result.messageRole === 'user' ? '用户' : result.messageRole === 'assistant' ? '助手' : '系统'}
+                  {' · '}
+                  {result.messageDate}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          /* Normal Conversation List Mode */
+          <>
         {/* Pinned Section */}
         {pinnedConversations.length > 0 && (
           <div className="mb-1">
@@ -410,9 +484,11 @@ export default function Sidebar({
           </div>
         )}
 
-        {filteredConversations.length === 0 && searchQuery ? (
-          <p className="text-center text-sm text-biav-muted py-4">无匹配对话</p>
-        ) : null}
+        {filteredConversations.length === 0 && (
+          <p className="text-center text-sm text-biav-muted py-4">暂无对话</p>
+        )}
+          </>
+        )}
       </div>
 
       {/* Footer */}
@@ -437,11 +513,24 @@ export default function Sidebar({
             </svg>
           </button>
           <button
-            onClick={onToggleTheme}
+            onClick={() => {
+              const next = themeMode === 'system' ? 'light' : themeMode === 'light' ? 'dark' : 'system'
+              onSetThemeMode(next)
+            }}
             className="text-biav-muted hover:text-biav-gold transition-colors"
-            title={theme === 'dark' ? '切换到浅色模式' : '切换到深色模式'}
+            title={
+              themeMode === 'system' ? '跟随系统 (点击切换到浅色)' :
+              themeMode === 'light' ? '浅色模式 (点击切换到深色)' :
+              '深色模式 (点击切换到跟随系统)'
+            }
           >
-            {theme === 'dark' ? (
+            {themeMode === 'system' ? (
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            ) : themeMode === 'light' ? (
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="12" cy="12" r="5" />
                 <line x1="12" y1="1" x2="12" y2="3" />

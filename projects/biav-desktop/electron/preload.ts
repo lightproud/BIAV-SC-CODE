@@ -10,6 +10,7 @@ contextBridge.exposeInMainWorld('biav', {
     systemPrompt?: string
     temperature?: number
     maxTokens?: number
+    enableThinking?: boolean
   }) => ipcRenderer.invoke('chat:send', req),
 
   onChatStream: (callback: (event: any, data: any) => void) => {
@@ -26,6 +27,7 @@ contextBridge.exposeInMainWorld('biav', {
   renameConversation: (id: string, title: string) => ipcRenderer.invoke('conversations:rename', id, title),
   pinConversation: (id: string, pinned: boolean) => ipcRenderer.invoke('conversations:pin', id, pinned),
   forkConversation: (conversationId: string, messageId: string) => ipcRenderer.invoke('conversations:fork', conversationId, messageId),
+  searchConversations: (query: string) => ipcRenderer.invoke('conversations:search', query),
   exportConversation: (id: string, format: 'md' | 'json') => ipcRenderer.invoke('conversations:export', id, format),
   importConversation: () => ipcRenderer.invoke('conversations:import'),
 
@@ -48,6 +50,7 @@ contextBridge.exposeInMainWorld('biav', {
 
   // Files
   readFile: (path: string) => ipcRenderer.invoke('file:read', path),
+  parsePdf: (base64Data: string, fileName: string) => ipcRenderer.invoke('file:parse-pdf', base64Data, fileName),
 
   // Quick Entry
   submitQuickEntry: (text: string) => ipcRenderer.invoke('quick-entry:submit', text),
@@ -83,6 +86,13 @@ contextBridge.exposeInMainWorld('biav', {
   // Notifications
   showNotification: (title: string, body: string) => ipcRenderer.invoke('notifications:show', { title, body }),
   setNotificationsEnabled: (enabled: boolean) => ipcRenderer.invoke('notifications:setEnabled', enabled),
+
+  // Theme
+  onSystemThemeChange: (callback: (isDark: boolean) => void) => {
+    const handler = (_event: any, isDark: boolean) => callback(isDark)
+    ipcRenderer.on('theme:system-changed', handler)
+    return () => ipcRenderer.removeListener('theme:system-changed', handler)
+  },
 
   // Platform
   platform: process.platform,
@@ -120,6 +130,10 @@ contextBridge.exposeInMainWorld('biav', {
     ipcRenderer.invoke('clipboard:add', entry),
   clipboardClear: () => ipcRenderer.invoke('clipboard:clear'),
 
+  // Tool approval
+  approveToolUse: (toolUseId: string, approved: boolean, alwaysAllow?: boolean) =>
+    ipcRenderer.invoke('chat:tool-approve', toolUseId, approved, alwaysAllow),
+
   // MCP
   mcpListServers: () => ipcRenderer.invoke('mcp:list-servers'),
   mcpStartServer: (name: string) => ipcRenderer.invoke('mcp:start', name),
@@ -129,4 +143,9 @@ contextBridge.exposeInMainWorld('biav', {
     ipcRenderer.invoke('mcp:call-tool', serverName, toolName, args),
   mcpGetConfig: () => ipcRenderer.invoke('mcp:get-config'),
   mcpSaveConfig: (config: any) => ipcRenderer.invoke('mcp:save-config', config),
+
+  // Styles
+  listStyles: () => ipcRenderer.invoke('styles:list'),
+  saveStyle: (style: any) => ipcRenderer.invoke('styles:save', style),
+  deleteStyle: (id: string) => ipcRenderer.invoke('styles:delete', id),
 })

@@ -17,6 +17,7 @@ export interface Message {
   conversation_id: string
   role: 'user' | 'assistant' | 'system'
   content: string
+  thinking?: string
   model?: string
   provider?: string
   created_at: string
@@ -49,12 +50,20 @@ export interface ProviderStatus {
   models: { id: string; name: string }[]
 }
 
+export interface ArtifactVersion {
+  content: string
+  timestamp: number
+  messageId: string
+}
+
 export interface Artifact {
   id: string
   type: 'code' | 'html' | 'markdown' | 'svg'
   title: string
   content: string
   language?: string
+  versions: ArtifactVersion[]
+  currentVersion: number
 }
 
 export interface UsageData {
@@ -76,11 +85,49 @@ export interface Settings {
   openai_base_url: string
 }
 
+// Style types
+export interface Style {
+  id: string
+  name: string
+  description: string
+  prompt: string  // injected as system-level instruction
+  isBuiltin: boolean
+  icon?: string  // emoji
+}
+
 // Clipboard types
 export interface ClipboardEntry {
   text: string
   timestamp: number
   source: 'code' | 'message'
+}
+
+// Tool use types
+export interface ToolUseEvent {
+  toolName: string
+  serverName: string
+  toolArgs: Record<string, unknown>
+  toolUseId: string
+}
+
+export interface ToolResultEvent {
+  toolUseId: string
+  toolName: string
+  result?: any
+  error?: string
+  isError: boolean
+}
+
+export type ToolApprovalStatus = 'pending' | 'approved' | 'denied' | 'executing' | 'done'
+
+export interface PendingToolUse {
+  toolUseId: string
+  toolName: string
+  serverName: string
+  toolArgs: Record<string, unknown>
+  status: ToolApprovalStatus
+  result?: any
+  error?: string
 }
 
 // MCP types
@@ -109,6 +156,14 @@ export interface MCPTool {
   inputSchema?: Record<string, unknown>
 }
 
+export interface SearchResult {
+  conversationId: string
+  conversationTitle: string
+  snippet: string
+  messageRole: 'user' | 'assistant' | 'system'
+  messageDate: string
+}
+
 // Electron IPC bridge type
 declare global {
   interface Window {
@@ -122,6 +177,7 @@ declare global {
         attachments?: Attachment[]
         temperature?: number
         maxTokens?: number
+        enableThinking?: boolean
       }) => Promise<void>
       onChatStream: (callback: (event: any, data: any) => void) => () => void
       stopStreaming: () => Promise<void>
@@ -135,15 +191,20 @@ declare global {
       renameConversation: (id: string, title: string) => Promise<{ ok: boolean }>
       pinConversation: (id: string, pinned: boolean) => Promise<{ ok: boolean }>
       forkConversation: (conversationId: string, messageId: string) => Promise<{ conversationId: string }>
+      searchConversations: (query: string) => Promise<SearchResult[]>
       exportConversation: (id: string, format: 'md' | 'json') => Promise<{ ok: boolean; path?: string; error?: string }>
       importConversation: () => Promise<{ ok: boolean; conversationId?: string; error?: string }>
       listModels: () => Promise<ProviderStatus[]>
       getSettings: () => Promise<Settings>
       setSettings: (settings: Partial<Settings>) => Promise<void>
       readFile: (path: string) => Promise<{ name: string; content: string; mimeType: string }>
+      parsePdf: (base64Data: string, fileName: string) => Promise<{ ok: boolean; content?: string; error?: string }>
       submitQuickEntry: (text: string) => Promise<void>
       hideQuickEntry: () => Promise<void>
       onQuickEntryReceived: (callback: (event: any, text: string) => void) => () => void
+      // Theme
+      onSystemThemeChange: (callback: (isDark: boolean) => void) => () => void
+
       platform: string
       versions: { electron: string; chrome: string; node: string }
       openExternal: (url: string) => Promise<void>
@@ -179,6 +240,9 @@ declare global {
       onUpdateAvailable: (callback: (info: { version: string; releaseDate?: string }) => void) => () => void
       onUpdateDownloaded: (callback: (info: { version: string }) => void) => () => void
 
+      // Tool approval
+      approveToolUse: (toolUseId: string, approved: boolean, alwaysAllow?: boolean) => Promise<void>
+
       // MCP
       mcpListServers: () => Promise<MCPServerInfo[]>
       mcpStartServer: (name: string) => Promise<{ ok: boolean; error?: string }>
@@ -187,6 +251,11 @@ declare global {
       mcpCallTool: (serverName: string, toolName: string, args: Record<string, unknown>) => Promise<{ ok: boolean; result?: any; error?: string }>
       mcpGetConfig: () => Promise<MCPConfig>
       mcpSaveConfig: (config: MCPConfig) => Promise<{ ok: boolean }>
+
+      // Styles
+      listStyles: () => Promise<Style[]>
+      saveStyle: (style: Omit<Style, 'isBuiltin'>) => Promise<Style>
+      deleteStyle: (id: string) => Promise<{ ok: boolean }>
     }
   }
 }
