@@ -1,48 +1,52 @@
 {
   "date": "2026-04-06",
-  "messages": 8969,
+  "messages": 11619,
   "unique_authors": 269,
-  "reactions_total": 1058,
-  "attachments": 463,
+  "reactions_total": 1278,
+  "attachments": 612,
   "channel_activity": {
-    "🔸綜合討論": 689,
-    "🔸morimens-game-chat": 5000,
-    "🔸晒卡分享": 10,
+    "🔸綜合討論": 1137,
+    "🔸阵容构建": 7,
+    "🔸morimens-game-chat": 5755,
+    "🔸晒卡分享": 11,
+    "🔸chaîne-française": 8,
+    "🔸русский-канал": 69,
+    "🔸phòng-chat-tiếng-việt": 1197,
+    "🔸canal-español": 48,
+    "🔸canal-português": 601,
+    "🔸ห้องสนทนาภาษาไทย": 17,
+    "🔸traphase": 26,
+    "🔸lore-chat": 79,
+    "🔸team-building": 449,
+    "🔸general-chat": 446,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 950,
+    "🔸机器人命令┊bot-commands": 26,
+    "🔸erica-playground": 16,
+    "建个图楼": 13,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 5,
+    "P Dive Karen Boss Cheating": 10,
+    "Inactive code on Ads": 16,
+    "求老师们帮配队ww": 2,
+    "想求個組隊建議": 2,
+    "team building for 8-13": 2,
     "🔸课间休息闲聊": 7,
     "🔸日本語チャンネル": 6,
     "🔸한국어-채팅방": 96,
     "🔸deutscher-chatraum": 9,
-    "🔸chaîne-française": 4,
-    "🔸русский-канал": 45,
-    "🔸phòng-chat-tiếng-việt": 641,
-    "🔸canal-español": 34,
-    "🔸canal-português": 598,
     "🔸ruang-obrolan-indonesia": 508,
-    "🔸ห้องสนทนาภาษาไทย": 14,
-    "🔸traphase": 9,
-    "🔸lore-chat": 69,
-    "🔸team-building": 188,
-    "🔸general-chat": 62,
-    "🔸邀请码互助┊swap-invitation-codes": 10,
-    "🔸game-question": 835,
     "🔸忘却前夜┊morimens-tv": 1,
     "🔸游戏问题": 2,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
-    "🔸机器人命令┊bot-commands": 19,
-    "🔸erica-playground": 9,
     "Levels + enlightenment regulation option": 6,
     "💭「Processing」Leigh STR gain possible bug": 2,
     "morimens sybau 💔": 2,
     "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 2,
-    "team building for 8-13": 1,
     "1490699711227756574": 1,
-    "🔸阵容构建": 1,
     "🔸相位对弈": 5,
     "關於莫絲": 2,
     "今夜不做，更待何時 || 第二篇 第三章": 3,
     "游戏内开个阿拉克涅的立绘投票吧": 6,
-    "P Dive Karen Boss Cheating": 7,
-    "Inactive code on Ads": 11,
     "\"Temporary Realm Mastery\" effect from Vortice's Wheel of Destiny is useless for her": 3,
     "💭「处理中」错字": 1,
     "把阿拉克涅的立绘改回去": 32,
@@ -52,15 +56,17 @@
     "Tonight or Never || Arc 2 Chapter 3": 2,
     "Leigh wip!!!!": 1,
     "24 wip part 2": 2,
-    "V2.4.3.5 一星幻衣「旺达·钩吻葬盛」限时免费获取┊Claim the New Wanda Skin: \"With Spikenard And Myrrh\" for Free": 4,
-    "想求個組隊建議": 1
+    "V2.4.3.5 一星幻衣「旺达·钩吻葬盛」限时免费获取┊Claim the New Wanda Skin: \"With Spikenard And Myrrh\" for Free": 4
   },
   "hourly_activity": {
+    "14": 661,
+    "15": 720,
+    "16": 848,
+    "17": 588,
     "10": 514,
     "11": 740,
     "12": 673,
     "13": 742,
-    "14": 167,
     "0": 214,
     "1": 787,
     "2": 817,
@@ -73,10 +79,10 @@
     "9": 849
   },
   "message_types": {
-    "0": 1600,
-    "19": 865,
-    "20": 1,
-    "21": 1
+    "0": 1920,
+    "19": 726,
+    "20": 3,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -136,6 +142,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1490757924283486438",
+      "channel_id": "1170692781216378960",
+      "content": "GHelot, apparently",
+      "author": "sirtealot",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1490686401937932411",
       "channel_id": "1170692781216378960",
       "content": "okay i did a real quick achievement run",
@@ -166,6 +180,14 @@
       "author": "lazarusstokeri.",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490721123606728724",
+      "channel_id": "1300659603993923644",
+      "content": "How crazy?",
+      "author": "iamminhphuc",
+      "reactions": 5,
+      "channel": "🔸phòng-chat-tiếng-việt"
     },
     {
       "id": "1490683942007869632",
@@ -222,22 +244,6 @@
       "author": "_djee",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490535418976927755",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1490648986787385535",
-      "channel_id": "1433513650299076780",
-      "content": "first time doing D-tide I got lucky with death resistance",
-      "author": "im_just_a_reader",
-      "reactions": 5,
-      "channel": "🔸game-question"
     }
   ]
 }
