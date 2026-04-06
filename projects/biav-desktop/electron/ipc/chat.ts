@@ -13,6 +13,7 @@ export function registerChatHandlers() {
     message: string
     provider: string
     model: string
+    attachments?: { name: string; path: string; type: string; content: string }[]
   }) => {
     const db = getDb()
     const win = BrowserWindow.fromWebContents(event.sender)
@@ -28,11 +29,28 @@ export function registerChatHandlers() {
       ).run(conversationId, title, req.provider, req.model)
     }
 
+    // Build message content with attachments
+    const attachments = req.attachments || []
+    let messageForDb = req.message
+    let messageForLLM = req.message
+
+    // Separate image attachments from text attachments
+    const imageAttachments = attachments.filter((a) => a.type.startsWith('image/'))
+    const textAttachments = attachments.filter((a) => !a.type.startsWith('image/'))
+
+    if (textAttachments.length > 0) {
+      const attachmentText = textAttachments
+        .map((a) => '```' + a.name + '\n' + a.content + '\n```')
+        .join('\n\n')
+      messageForDb = attachmentText + '\n\n' + req.message
+      messageForLLM = messageForDb
+    }
+
     // Save user message
     const userMsgId = uuidv4()
     db.prepare(
       'INSERT INTO messages (id, conversation_id, role, content, provider, model) VALUES (?, ?, ?, ?, ?, ?)'
-    ).run(userMsgId, conversationId, 'user', req.message, req.provider, req.model)
+    ).run(userMsgId, conversationId, 'user', messageForDb, req.provider, req.model)
 
     // Send metadata
     win.webContents.send('chat:stream', { type: 'meta', conversationId })
@@ -41,6 +59,24 @@ export function registerChatHandlers() {
     const history = db
       .prepare('SELECT role, content FROM messages WHERE conversation_id = ? ORDER BY created_at ASC')
       .all(conversationId) as { role: string; content: string }[]
+
+    // For Claude with image attachments, modify the last user message to use content blocks
+    if (req.provider === 'claude' && imageAttachments.length > 0) {
+      const lastMsg = history[history.length - 1]
+      if (lastMsg && lastMsg.role === 'user') {
+        const contentBlocks: any[] = imageAttachments.map((img) => {
+          // content is a data URL like "data:image/png;base64,..."
+          const base64Data = img.content.replace(/^data:[^;]+;base64,/, '')
+          const mediaType = img.type as 'image/png' | 'image/jpeg' | 'image/gif' | 'image/webp'
+          return {
+            type: 'image',
+            source: { type: 'base64', media_type: mediaType, data: base64Data },
+          }
+        })
+        contentBlocks.push({ type: 'text', text: lastMsg.content })
+        ;(lastMsg as any).content = contentBlocks
+      }
+    }
 
     // Resolve API keys
     const apiKey = req.provider === 'claude'
