@@ -571,9 +571,12 @@ def fetch_steam_reviews():
             review_url = f'https://steamcommunity.com/profiles/{steamid}/recommended/{app_id}'
             votes_up = review.get('votes_up', 0)
 
+            # Negative reviews: full text (decision-critical). Positive: cap at 500.
+            summary = review_text if not voted_up else review_text[:500]
+
             items.append({
                 'title': title,
-                'summary': review_text[:200],
+                'summary': summary,
                 'source': 'steam_review',
                 'time': created.isoformat(),
                 'url': review_url,
@@ -784,80 +787,207 @@ def fetch_fandom_wiki():
     return items
 
 
+def _load_discord_channel_index():
+    """Load channel_index.json and build channel_id→name + dir→channel_id maps."""
+    index_path = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'channel_index.json'
+    ch_names: dict[str, str] = {}   # channel_id → channel_name
+    dir_to_id: dict[str, str] = {}  # dir_suffix → channel_id
+    if index_path.exists():
+        try:
+            with open(index_path, 'r', encoding='utf-8') as f:
+                index = json.load(f)
+            for cid, info in index.items():
+                ch_names[cid] = info.get('name', cid)
+                dir_to_id[info.get('dir', '')] = cid
+        except Exception:
+            pass
+    return ch_names, dir_to_id
+
+
+def _read_discord_jsonl(date_str: str):
+    """Read all JSONL archives for a given date across all channels.
+    Returns list of message dicts with channel_name annotated."""
+    channels_dir = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'channels'
+    ch_names, dir_to_id = _load_discord_channel_index()
+    messages = []
+    if not channels_dir.exists():
+        return messages
+    for ch_dir in channels_dir.iterdir():
+        if not ch_dir.is_dir():
+            continue
+        jsonl_path = ch_dir / f'{date_str}.jsonl'
+        if not jsonl_path.exists():
+            continue
+        dir_suffix = ch_dir.name
+        channel_id = dir_to_id.get(dir_suffix, '')
+        channel_name = ch_names.get(channel_id, dir_suffix)
+        try:
+            with open(jsonl_path, 'r', encoding='utf-8') as f:
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    msg = json.loads(line)
+                    msg['_channel_name'] = channel_name
+                    messages.append(msg)
+        except Exception as e:
+            logger.warning(f'Discord JSONL read error {jsonl_path}: {e}')
+    return messages
+
+
+def _build_reply_chains(messages: list[dict], target_ids: set[str], max_depth: int = 5):
+    """Build reply chains for target messages. Returns {msg_id: [reply_msgs]}."""
+    by_id = {m['id']: m for m in messages}
+    # Find direct replies to target messages
+    replies_to: dict[str, list[dict]] = {}
+    for msg in messages:
+        parent_id = msg.get('reply_to')
+        if parent_id and parent_id in target_ids:
+            replies_to.setdefault(parent_id, []).append(msg)
+    # Sort each chain by timestamp and limit
+    for mid in replies_to:
+        replies_to[mid] = sorted(
+            replies_to[mid], key=lambda m: m.get('timestamp', '')
+        )[:max_depth]
+    return replies_to
+
+
 def fetch_discord_local():
     """
-    Read today's Discord archive data from projects/news/data/discord/ and produce
-    news items: one summary item + top-reacted messages as individual items.
+    Read today's Discord JSONL archives for full-text community intelligence.
+    Produces: 1 summary item + top-engagement messages with full content,
+    reply chains (up to 5 replies), and attachment info.
     No API calls — purely local file reads from the archiver's output.
     """
     discord_dir = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord'
     today_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     yesterday_str = (datetime.now(timezone.utc) - timedelta(days=1)).strftime('%Y-%m-%d')
     items = []
+    guild_id = os.environ.get('DISCORD_GUILD_ID', '1131791637933199470')
 
-    # Try today first, fall back to yesterday (archiver may not have run yet today)
+    # ── 1. Daily stats summary (unchanged) ───────────────────────────────────
     stats_path = discord_dir / 'activity_daily' / f'{today_str}.json'
+    data_date = today_str
     if not stats_path.exists():
         stats_path = discord_dir / 'activity_daily' / f'{yesterday_str}.json'
-        today_str = yesterday_str
-    if not stats_path.exists():
-        logger.info('Discord local: no recent daily stats found')
-        return []
+        data_date = yesterday_str
+    if stats_path.exists():
+        try:
+            with open(stats_path, 'r', encoding='utf-8') as f:
+                stats = json.load(f)
+            msg_count = stats.get('messages', 0)
+            authors = stats.get('unique_authors', 0)
+            reactions = stats.get('reactions_total', 0)
+            ch_activity = stats.get('channel_activity', {})
+            top_channels = sorted(ch_activity.items(), key=lambda x: x[1], reverse=True)[:5]
+            ch_summary = '、'.join(f'{ch}({cnt})' for ch, cnt in top_channels)
+            items.append({
+                'title': f'Discord 社区日报 ({data_date})',
+                'summary': f'今日 {msg_count:,} 条消息，{authors} 位活跃用户，{reactions:,} 次反应。热门频道：{ch_summary}',
+                'source': 'discord',
+                'time': datetime.now(timezone.utc).isoformat(),
+                'url': f'https://discord.com/channels/{guild_id}',
+                'engagement': msg_count,
+                'author': 'Discord Archiver',
+                'tags': ['discord', 'daily-summary'],
+            })
+        except Exception as e:
+            logger.warning(f'Discord local: failed to read stats: {e}')
 
-    try:
-        with open(stats_path, 'r', encoding='utf-8') as f:
-            stats = json.load(f)
-    except Exception as e:
-        logger.warning(f'Discord local: failed to read stats: {e}')
-        return []
+    # ── 2. Full-text extraction from JSONL archives ──────────────────────────
+    all_msgs = _read_discord_jsonl(data_date)
+    if not all_msgs:
+        logger.info(f'Discord local: no JSONL data for {data_date}')
+        return items
 
-    msg_count = stats.get('messages', 0)
-    authors = stats.get('unique_authors', 0)
-    reactions = stats.get('reactions_total', 0)
+    # Skip bot messages for ranking
+    human_msgs = [m for m in all_msgs if not m.get('author_bot', False)]
 
-    # Top active channels
-    ch_activity = stats.get('channel_activity', {})
-    top_channels = sorted(ch_activity.items(), key=lambda x: x[1], reverse=True)[:5]
-    ch_summary = '、'.join(f'{ch}({cnt})' for ch, cnt in top_channels)
+    # Score each message: reactions + reply_count (as proxy for engagement)
+    reply_counts: dict[str, int] = {}
+    for m in human_msgs:
+        parent = m.get('reply_to')
+        if parent:
+            reply_counts[parent] = reply_counts.get(parent, 0) + 1
 
-    # Summary item
-    guild_id = os.environ.get('DISCORD_GUILD_ID', '1131791637933199470')
-    items.append({
-        'title': f'Discord 社区日报 ({today_str})',
-        'summary': f'今日 {msg_count:,} 条消息，{authors} 位活跃用户，{reactions:,} 次反应。热门频道：{ch_summary}',
-        'source': 'discord',
-        'time': datetime.now(timezone.utc).isoformat(),
-        'url': f'https://discord.com/channels/{guild_id}',
-        'engagement': msg_count,
-        'author': 'Discord Archiver',
-        'tags': ['discord', 'daily-summary'],
-    })
+    scored: list[tuple[int, dict]] = []
+    for m in human_msgs:
+        react_total = sum(r.get('count', 0) for r in m.get('reactions', []))
+        replies = reply_counts.get(m['id'], 0)
+        score = react_total * 3 + replies * 2 + len(m.get('attachments', []))
+        if score >= 3 or react_total >= 2:
+            scored.append((score, m))
 
-    # Top reacted messages as individual items
-    top_reacted = stats.get('top_reacted_messages', [])
-    for msg in sorted(top_reacted, key=lambda x: x.get('reactions', 0), reverse=True)[:5]:
-        content = msg.get('content', '')[:150]
-        author = msg.get('author', '?')
-        channel = msg.get('channel', '')
+    scored.sort(key=lambda x: x[0], reverse=True)
+    top_msgs = scored[:15]  # Top 15 messages by engagement
+
+    if not top_msgs:
+        logger.info(f'Discord local: {len(items)} items (no high-engagement messages)')
+        return items
+
+    # Build reply chains for top messages
+    target_ids = {m['id'] for _, m in top_msgs}
+    reply_chains = _build_reply_chains(all_msgs, target_ids)
+
+    for score, msg in top_msgs:
+        content = msg.get('content', '')
+        author = msg.get('author_name', '?')
+        channel = msg.get('_channel_name', '')
         channel_id = msg.get('channel_id', '')
         msg_id = msg.get('id', '')
-        react_count = msg.get('reactions', 0)
-        if react_count < 5:
-            continue
-        # Construct Discord message permalink
+        msg_time = msg.get('timestamp', datetime.now(timezone.utc).isoformat())
+        react_total = sum(r.get('count', 0) for r in msg.get('reactions', []))
+
+        # Format attachment info
+        attachments = msg.get('attachments', [])
+        attach_info = ''
+        if attachments:
+            attach_names = [a.get('filename', '?') for a in attachments]
+            attach_info = f'\n[附件: {", ".join(attach_names)}]'
+
+        # Format reply chain
+        replies = reply_chains.get(msg_id, [])
+        reply_text = ''
+        if replies:
+            reply_lines = []
+            for r in replies:
+                r_author = r.get('author_name', '?')
+                r_content = r.get('content', '')
+                r_attachments = r.get('attachments', [])
+                line = f'  └ {r_author}: {r_content}'
+                if r_attachments:
+                    line += f' [附件: {", ".join(a.get("filename", "?") for a in r_attachments)}]'
+                reply_lines.append(line)
+            reply_text = '\n' + '\n'.join(reply_lines)
+
+        # Build full summary with context
+        full_summary = content + attach_info + reply_text
+
+        # Reaction breakdown
+        reaction_tags = [f'{r["emoji"]}×{r["count"]}' for r in msg.get('reactions', []) if r.get('count', 0) > 0]
+        react_str = ' '.join(reaction_tags)
+
         msg_url = f'https://discord.com/channels/{guild_id}/{channel_id}/{msg_id}' if channel_id and msg_id else ''
+        title_preview = content[:80].replace('\n', ' ') if content else '(附件/嵌入)'
         items.append({
-            'title': f'[DC热门] {author}@{channel}: {content[:60]}',
-            'summary': content,
+            'title': f'[DC] {author}@{channel}: {title_preview}',
+            'summary': full_summary,
             'source': 'discord',
-            'time': datetime.now(timezone.utc).isoformat(),
+            'time': msg_time,
             'url': msg_url,
-            'engagement': react_count,
+            'engagement': score,
             'author': author,
-            'tags': ['discord', 'hot-message'],
+            'tags': ['discord', 'full-text'],
+            'lang': '',
+            'metadata': {
+                'reactions': react_str,
+                'reply_count': len(replies),
+                'attachment_count': len(attachments),
+                'channel': channel,
+            },
         })
 
-    logger.info(f'Discord local: {len(items)} items from {today_str} stats')
+    logger.info(f'Discord local: {len(items)} items ({len(top_msgs)} full-text) from {data_date} JSONL ({len(all_msgs)} total messages)')
     return items
 
 

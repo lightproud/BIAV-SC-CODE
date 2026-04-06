@@ -145,6 +145,9 @@ def extract_item(raw: dict) -> dict:
     if raw.get('media_url'):
         item['media_url'] = raw['media_url']
         item['content_type'] = raw.get('content_type', 'image')
+    # Preserve metadata (Discord reply chains, reactions, etc.)
+    if raw.get('metadata') and isinstance(raw['metadata'], dict):
+        item['metadata'] = raw['metadata']
     return item
 
 
@@ -153,6 +156,8 @@ def extract_steam_item(raw: dict) -> dict:
 
     保留标准字段（time, title, source, engagement 等）供 generate_daily.py 使用，
     同时附带 Steam 特有字段（language, voted_up, playtime_forever）。
+
+    差评保留全文（决策关键），好评截 500 字。
     """
     meta = raw.get('metadata', {})
     timestamp_created = meta.get('timestamp_created', 0)
@@ -162,20 +167,26 @@ def extract_steam_item(raw: dict) -> dict:
             timestamp_created = int(dt.timestamp())
         except (ValueError, TypeError):
             pass
+    voted_up = meta.get('voted_up', False)
+    summary_text = raw.get('summary', '')
+    # Negative reviews: preserve full text for decision-making.
+    # Positive reviews: cap at 500 chars to keep output size manageable.
+    if voted_up:
+        summary_text = summary_text[:500]
     return {
         # 标准字段（与 extract_item 一致）
         'source': 'steam',
         'time': raw.get('time', ''),
         'lang': raw.get('language', ''),
         'title': raw.get('title', ''),
-        'summary': raw.get('summary', '')[:200],
+        'summary': summary_text,
         'url': raw.get('url', ''),
         'author': raw.get('author', ''),
         'engagement': raw.get('engagement', 0),
         # Steam 特有字段
         'language': raw.get('language', ''),
-        'voted_up': meta.get('voted_up', False),
-        'review': raw.get('summary', '')[:200],
+        'voted_up': voted_up,
+        'review': summary_text,
         'timestamp_created': timestamp_created,
         'playtime_forever': meta.get('playtime_forever', 0),
     }
