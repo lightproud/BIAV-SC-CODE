@@ -7,6 +7,7 @@ contextBridge.exposeInMainWorld('biav', {
     message: string
     provider: string
     model: string
+    systemPrompt?: string
   }) => ipcRenderer.invoke('chat:send', req),
 
   onChatStream: (callback: (event: any, data: any) => void) => {
@@ -51,6 +52,9 @@ contextBridge.exposeInMainWorld('biav', {
     ipcRenderer.on('quick-entry:received', callback)
     return () => ipcRenderer.removeListener('quick-entry:received', callback)
   },
+
+  // Usage
+  getSessionUsage: (conversationId: string) => ipcRenderer.invoke('usage:session', conversationId),
 
   // Context Menu
   showContextMenu: (type: string, data?: any) => ipcRenderer.invoke('context-menu:show', type, data),

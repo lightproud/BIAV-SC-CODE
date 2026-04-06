@@ -14,7 +14,8 @@ import UpdateNotice from './components/UpdateNotice'
 import ArtifactsPanel from './components/ArtifactsPanel'
 import SystemPromptEditor from './components/SystemPromptEditor'
 import { parseArtifacts } from './lib/parseArtifacts'
-import type { Conversation, ProviderStatus, Attachment, Artifact } from './types'
+import ProjectEditor from './components/ProjectEditor'
+import type { Conversation, Project, ProviderStatus, Attachment, Artifact } from './types'
 
 export default function App() {
   const {
@@ -33,7 +34,10 @@ export default function App() {
   const { theme, toggleTheme } = useTheme()
 
   const [conversations, setConversations] = useState<Conversation[]>([])
+  const [projects, setProjects] = useState<Project[]>([])
   const [providers, setProviders] = useState<ProviderStatus[]>([])
+  const [showProjectEditor, setShowProjectEditor] = useState(false)
+  const [editingProject, setEditingProject] = useState<Project | null>(null)
   const [provider, setProvider] = useState('claude')
   const [model, setModel] = useState('claude-sonnet-4-20250514')
   const [showSettings, setShowSettings] = useState(false)
@@ -54,9 +58,10 @@ export default function App() {
 
   useKeyboardShortcuts(shortcuts)
 
-  // Load conversations and models on mount
+  // Load conversations, projects, and models on mount
   useEffect(() => {
     refreshConversations()
+    refreshProjects()
     refreshModels()
   }, [])
 
@@ -94,6 +99,11 @@ export default function App() {
     setConversations(list)
   }
 
+  async function refreshProjects() {
+    const list = await window.biav.listProjects()
+    setProjects(list)
+  }
+
   async function refreshModels() {
     const list = await window.biav.listModels()
     setProviders(list)
@@ -117,6 +127,13 @@ export default function App() {
   const handleFilesDropped = useCallback((dropped: Attachment[]) => {
     setAttachments((prev) => [...prev, ...dropped])
   }, [])
+
+  async function handleFork(messageId: string) {
+    if (!conversationId) return
+    const result = await window.biav.forkConversation(conversationId, messageId)
+    await refreshConversations()
+    loadConversation(result.conversationId)
+  }
 
   const isMac = window.biav.platform === 'darwin'
 
@@ -150,6 +167,20 @@ export default function App() {
             </svg>
           </button>
           <div className="flex-1" />
+          {artifacts.length > 0 && (
+            <button
+              className={`titlebar-no-drag p-1 rounded hover:bg-biav-border transition-colors ${showArtifacts ? 'text-biav-gold' : 'text-biav-muted'}`}
+              onClick={() => setShowArtifacts(!showArtifacts)}
+              title="切换 Artifacts 面板"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+              </svg>
+            </button>
+          )}
           <ExportMenu conversationId={conversationId} />
           <ModelSelector
             providers={providers}
@@ -171,6 +202,7 @@ export default function App() {
             )}
             <div className="max-w-3xl mx-auto space-y-4">
               {messages.map((msg) => (
+                  onFork={handleFork}
                 <ChatMessage
                   key={msg.id}
                   message={msg}
@@ -205,6 +237,14 @@ export default function App() {
           />
         </DropZone>
       </div>
+
+      {/* Artifacts Panel */}
+      {showArtifacts && artifacts.length > 0 && (
+        <ArtifactsPanel
+          artifacts={artifacts}
+          onClose={() => setShowArtifacts(false)}
+        />
+      )}
 
       {/* Update Notice */}
       <UpdateNotice />
