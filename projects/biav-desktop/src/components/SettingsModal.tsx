@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import type { Settings } from '../types'
+import { useLocale } from '../hooks/useLocale'
 
 interface Props {
   onClose: () => void
@@ -12,6 +13,7 @@ export default function SettingsModal({ onClose }: Props) {
     openai_base_url: '',
   })
   const [saving, setSaving] = useState(false)
+  const { locale, setLocale, supportedLocales } = useLocale()
 
   useEffect(() => {
     window.biav.getSettings().then(setSettings)
@@ -46,6 +48,22 @@ export default function SettingsModal({ onClose }: Props) {
 
         {/* Body */}
         <div className="px-6 py-5 space-y-5">
+          {/* Language selector */}
+          <div>
+            <label className="block text-xs text-biav-muted mb-1.5">语言 / Language</label>
+            <select
+              value={locale}
+              onChange={(e) => setLocale(e.target.value)}
+              className="w-full bg-biav-bg border border-biav-border rounded-lg px-3 py-2 text-sm text-biav-text focus:outline-none focus:border-biav-gold-dim transition-colors"
+            >
+              {supportedLocales.map((l) => (
+                <option key={l.code} value={l.code}>
+                  {l.label}
+                </option>
+              ))}
+            </select>
+          </div>
+
           <Field
             label="Anthropic API Key"
             value={settings.anthropic_api_key}
