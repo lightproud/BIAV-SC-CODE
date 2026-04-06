@@ -267,6 +267,10 @@ export default function App() {
             onSystemPromptChange={handleSystemPromptChange}
           />
           <ExportMenu conversationId={conversationId} />
+          <ModelParamsPanel
+            params={modelParams}
+            onChange={setModelParams}
+          />
           <ModelSelector
             providers={providers}
             provider={provider}
