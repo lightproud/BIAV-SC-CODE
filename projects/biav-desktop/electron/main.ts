@@ -28,6 +28,7 @@ export function isWindowFocused(): boolean {
 export function getMainWindow(): BrowserWindow | null {
   return mainWindow
 }
+
 let quickEntryWindow: BrowserWindow | null = null
 let tray: Tray | null = null
 

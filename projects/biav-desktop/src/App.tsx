@@ -312,6 +312,11 @@ export default function App() {
             </div>
           )}
 
+          {/* Streaming status */}
+          {isStreaming && (
+            <StreamingStatus tokens={streamingTokens} duration={streamingDuration} />
+          )}
+
           {/* Input */}
           <ChatInput
             onSend={handleSend}

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
-import type { Message, Attachment, UsageData, SessionUsage } from '../types'
+import type { Message, Attachment, UsageData, SessionUsage, ModelParams } from '../types'
 
 export function useChat() {
   const [messages, setMessages] = useState<Message[]>([])
