@@ -7,6 +7,8 @@ interface OpenAIOptions {
   apiKey: string
   baseUrl?: string
   signal?: AbortSignal
+  temperature?: number
+  maxTokens?: number
 }
 
 export async function* streamOpenAI(opts: OpenAIOptions): AsyncGenerator<StreamChunk> {
@@ -19,6 +21,8 @@ export async function* streamOpenAI(opts: OpenAIOptions): AsyncGenerator<StreamC
     model: opts.model,
     stream: true,
     stream_options: { include_usage: true },
+    temperature: opts.temperature,
+    max_tokens: opts.maxTokens,
     messages: opts.messages.map((m) => ({
       role: m.role as 'user' | 'assistant' | 'system',
       content: m.content,

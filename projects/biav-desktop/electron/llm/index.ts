@@ -11,6 +11,8 @@ export interface StreamChatOptions {
   apiKey: string
   baseUrl?: string
   signal?: AbortSignal
+  temperature?: number
+  maxTokens?: number
 }
 
 export async function* streamChat(opts: StreamChatOptions): AsyncGenerator<StreamChunk> {
@@ -27,6 +29,8 @@ export async function* streamChat(opts: StreamChatOptions): AsyncGenerator<Strea
       apiKey: rest.apiKey,
       systemPrompt: systemMsg?.content,
       signal: rest.signal,
+      temperature: rest.temperature,
+      maxTokens: rest.maxTokens,
     })
   } else {
     yield* streamOpenAI({
@@ -35,6 +39,8 @@ export async function* streamChat(opts: StreamChatOptions): AsyncGenerator<Strea
       apiKey: rest.apiKey,
       baseUrl: rest.baseUrl,
       signal: rest.signal,
+      temperature: rest.temperature,
+      maxTokens: rest.maxTokens,
     })
   }
 }
