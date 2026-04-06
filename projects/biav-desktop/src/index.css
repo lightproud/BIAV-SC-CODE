@@ -1,3 +1,5 @@
+@import 'katex/dist/katex.min.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -165,6 +167,17 @@
 .hljs-meta { color: var(--biav-muted); }
 .hljs-deletion { color: #c0785a; }
 .hljs-addition { color: #7a9a50; }
+
+/* KaTeX overrides */
+.katex {
+  color: var(--biav-text);
+  font-size: 1.05em;
+}
+.markdown-content .katex-display {
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 
 /* Skeleton shimmer */
 @keyframes shimmer {
