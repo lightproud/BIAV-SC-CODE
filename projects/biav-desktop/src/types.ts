@@ -32,6 +32,14 @@ export interface ProviderStatus {
   models: { id: string; name: string }[]
 }
 
+export interface Artifact {
+  id: string
+  type: 'code' | 'html' | 'markdown' | 'svg'
+  title: string
+  content: string
+  language?: string
+}
+
 export interface Settings {
   anthropic_api_key: string
   openai_api_key: string
@@ -61,7 +69,17 @@ declare global {
       getSettings: () => Promise<Settings>
       setSettings: (settings: Partial<Settings>) => Promise<void>
       readFile: (path: string) => Promise<{ name: string; content: string; mimeType: string }>
+      submitQuickEntry: (text: string) => Promise<void>
+      hideQuickEntry: () => Promise<void>
+      onQuickEntryReceived: (callback: (event: any, text: string) => void) => () => void
       platform: string
+
+      // Updater
+      checkForUpdate: () => Promise<void>
+      downloadUpdate: () => Promise<void>
+      installUpdate: () => Promise<void>
+      onUpdateAvailable: (callback: (info: { version: string; releaseDate?: string }) => void) => () => void
+      onUpdateDownloaded: (callback: (info: { version: string }) => void) => () => void
     }
   }
 }
