@@ -28,6 +28,7 @@ import requests
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urlparse
+from uuid import uuid4
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -236,11 +237,72 @@ def _extract_reddit_media(post_data: dict) -> str:
     return ''
 
 
+def _fetch_reddit_rss(sub, headers, cutoff):
+    """Fetch posts from Reddit RSS feed (more reliable than JSON API)."""
+    import xml.etree.ElementTree as ET
+    items = []
+    url = f'https://www.reddit.com/r/{sub}/.rss'
+    try:
+        resp = requests.get(url, headers=headers, timeout=15)
+        resp.raise_for_status()
+        root = ET.fromstring(resp.text)
+        ns = {'atom': 'http://www.w3.org/2005/Atom'}
+        for entry in root.findall('atom:entry', ns):
+            title = entry.findtext('atom:title', '', ns).strip()
+            link_el = entry.find('atom:link', ns)
+            link = link_el.get('href', '') if link_el is not None else ''
+            updated = entry.findtext('atom:updated', '', ns)
+            author_el = entry.find('atom:author', ns)
+            author = author_el.findtext('atom:name', '', ns) if author_el is not None else ''
+            content_html = entry.findtext('atom:content', '', ns)
+
+            # Parse time
+            try:
+                post_time = datetime.fromisoformat(updated.replace('Z', '+00:00'))
+            except (ValueError, TypeError):
+                continue
+            if post_time < cutoff:
+                continue
+
+            # Extract text from HTML content
+            summary = strip_html_tags(content_html).strip()[:2000] if content_html else ''
+
+            # Extract image from content HTML
+            media_url = ''
+            import re
+            img_match = re.search(r'<img[^>]+src="([^"]+)"', content_html or '')
+            if img_match:
+                media_url = img_match.group(1)
+
+            item = {
+                'title': title,
+                'summary': summary,
+                'source': 'reddit',
+                'time': post_time.isoformat(),
+                'url': link,
+                'engagement': 0,
+                'is_hot': False,
+                'author': author,
+                'tags': [],
+                'metadata': {'via': 'rss'},
+            }
+            if media_url:
+                item['media_url'] = media_url
+                item['content_type'] = 'image'
+            items.append(item)
+        logger.info(f'Reddit r/{sub} (RSS): fetched {len(items)} posts')
+    except Exception as e:
+        logger.warning(f'Reddit r/{sub} RSS failed: {e}')
+    return items
+
+
 def fetch_reddit(subreddits=None):
-    """Fetch hot posts from Reddit with full text, comments, and images."""
+    """Fetch hot posts from Reddit with full text, comments, and images.
+    Tries JSON API first, falls back to RSS feed if blocked (403)."""
     subreddits = subreddits or ['Morimens', 'MorimensGame']
     items = []
     headers = {'User-Agent': 'MorimensAggregator/1.0'}
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
     for sub in subreddits:
         url = f'https://www.reddit.com/r/{sub}/hot.json?limit=25'
@@ -251,7 +313,7 @@ def fetch_reddit(subreddits=None):
             for post in posts:
                 d = post['data']
                 created = datetime.fromtimestamp(d['created_utc'], tz=timezone.utc)
-                if datetime.now(timezone.utc) - created > timedelta(hours=HOURS_LOOKBACK):
+                if created < cutoff:
                     continue
 
                 permalink = d.get('permalink', '')
@@ -293,7 +355,9 @@ def fetch_reddit(subreddits=None):
                 items.append(item)
             logger.info(f'Reddit r/{sub}: fetched {len(items)} posts ({sum(1 for i in items if i.get("media_url"))} with media)')
         except Exception as e:
-            logger.warning(f'Reddit r/{sub} failed: {e}')
+            logger.warning(f'Reddit r/{sub} JSON API failed: {e}, trying RSS fallback')
+            rss_items = _fetch_reddit_rss(sub, headers, cutoff)
+            items.extend(rss_items)
 
     return items
 
@@ -373,13 +437,17 @@ def _bilibili_item(v: dict, created: datetime, author: str, headers: dict, sourc
 def _fetch_bilibili_space():
     """Fetch videos from known Morimens creators via space API (primary path)."""
     items = []
+    buvid3 = f'{uuid4()}infoc'
     headers = {
         'User-Agent': 'Mozilla/5.0',
         'Referer': 'https://www.bilibili.com',
+        'Cookie': f'buvid3={buvid3}',
     }
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
-    for mid, creator_name in BILIBILI_MORIMENS_CREATORS.items():
+    for idx, (mid, creator_name) in enumerate(BILIBILI_MORIMENS_CREATORS.items()):
+        if idx > 0:
+            time.sleep(0.6)
         url = 'https://api.bilibili.com/x/space/arc/search'
         params = {
             'mid': mid,
@@ -389,6 +457,10 @@ def _fetch_bilibili_space():
         }
         try:
             resp = requests.get(url, params=params, headers=headers, timeout=15)
+            if resp.status_code == 412:
+                logger.warning(f'Bilibili space {creator_name}({mid}): 412 rate-limited, retrying after 2s')
+                time.sleep(2)
+                resp = requests.get(url, params=params, headers=headers, timeout=15)
             resp.raise_for_status()
             vlist = resp.json().get('data', {}).get('list', {}).get('vlist', []) or []
             count = 0
@@ -409,14 +481,18 @@ def _fetch_bilibili_space():
 def _fetch_bilibili_search():
     """Fetch Bilibili search results for Morimens keywords (fallback path)."""
     items = []
+    buvid3 = f'{uuid4()}infoc'
     headers = {
         'User-Agent': 'Mozilla/5.0',
         'Referer': 'https://www.bilibili.com',
+        'Cookie': f'buvid3={buvid3}',
     }
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
     search_keywords = ['忘却前夜', '忘卻前夜'] + [k for k in COLLAB_KEYWORDS if k.strip()]
-    for keyword in search_keywords:
+    for idx, keyword in enumerate(search_keywords):
+        if idx > 0:
+            time.sleep(0.6)
         url = 'https://api.bilibili.com/x/web-interface/search/type'
         params = {
             'search_type': 'video',
@@ -427,6 +503,10 @@ def _fetch_bilibili_search():
         }
         try:
             resp = requests.get(url, params=params, headers=headers, timeout=15)
+            if resp.status_code == 412:
+                logger.warning(f'Bilibili search "{keyword}": 412 rate-limited, retrying after 2s')
+                time.sleep(2)
+                resp = requests.get(url, params=params, headers=headers, timeout=15)
             resp.raise_for_status()
             results = resp.json().get('data', {}).get('result', []) or []
             for v in results[:20]:
@@ -983,8 +1063,146 @@ def fetch_youtube():
             except Exception as e:
                 logger.warning(f'YouTube RSS {ch_name}({ch_id}) failed: {e}')
 
+    # Web scraping fallback: search YouTube directly when no API key and
+    # RSS returned nothing (empty MORIMENS_CHANNELS or no recent videos).
+    if not items and not api_key:
+        logger.info('YouTube: trying web scraping fallback via search page')
+        seen_ids = set()
+        yt_headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+                          '(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept-Language': 'en-US,en;q=0.9',
+        }
+        for keyword in ['Morimens', '忘却前夜']:
+            search_url = f'https://www.youtube.com/results?search_query={requests.utils.quote(keyword)}'
+            try:
+                resp = requests.get(search_url, timeout=20, headers=yt_headers)
+                resp.raise_for_status()
+                html = resp.text
+
+                # Extract ytInitialData JSON blob from the page
+                yt_data_match = re.search(r'var\s+ytInitialData\s*=\s*(\{.*?\});\s*</script>', html, re.DOTALL)
+                if not yt_data_match:
+                    # Alternative pattern: some pages use a different assignment
+                    yt_data_match = re.search(r'window\["ytInitialData"\]\s*=\s*(\{.*?\});\s*', html, re.DOTALL)
+                if not yt_data_match:
+                    logger.warning(f'YouTube scrape "{keyword}": could not find ytInitialData')
+                    continue
+
+                try:
+                    yt_data = json.loads(yt_data_match.group(1))
+                except json.JSONDecodeError:
+                    logger.warning(f'YouTube scrape "{keyword}": failed to parse ytInitialData JSON')
+                    continue
+
+                # Navigate the nested structure to find video renderers
+                # Path: contents.twoColumnSearchResultsRenderer.primaryContents
+                #        .sectionListRenderer.contents[].itemSectionRenderer
+                #        .contents[].videoRenderer
+                video_renderers = []
+                try:
+                    sections = (yt_data.get('contents', {})
+                                .get('twoColumnSearchResultsRenderer', {})
+                                .get('primaryContents', {})
+                                .get('sectionListRenderer', {})
+                                .get('contents', []))
+                    for section in sections:
+                        section_contents = (section.get('itemSectionRenderer', {})
+                                            .get('contents', []))
+                        for item in section_contents:
+                            if 'videoRenderer' in item:
+                                video_renderers.append(item['videoRenderer'])
+                except (AttributeError, TypeError):
+                    pass
+
+                # Fallback: extract via regex if structured navigation fails
+                if not video_renderers:
+                    video_ids_raw = re.findall(r'"videoId"\s*:\s*"([a-zA-Z0-9_-]{11})"', html)
+                    titles_raw = re.findall(
+                        r'"title"\s*:\s*\{\s*"runs"\s*:\s*\[\s*\{\s*"text"\s*:\s*"([^"]*)"',
+                        html,
+                    )
+                    for i, vid in enumerate(video_ids_raw):
+                        if vid in seen_ids:
+                            continue
+                        seen_ids.add(vid)
+                        title = titles_raw[i] if i < len(titles_raw) else ''
+                        if not title:
+                            continue
+                        yt_item = {
+                            'title': title,
+                            'summary': '',
+                            'source': 'youtube',
+                            'time': datetime.now(timezone.utc).isoformat(),
+                            'url': f'https://www.youtube.com/watch?v={vid}',
+                            'engagement': 0,
+                            'author': '',
+                            'tags': ['youtube', 'scrape'],
+                        }
+                        yt_item['media_url'] = f'https://i.ytimg.com/vi/{vid}/hqdefault.jpg'
+                        yt_item['content_type'] = 'image'
+                        items.append(yt_item)
+                    logger.info(f'YouTube scrape "{keyword}" (regex): {len(items)} videos')
+                    continue
+
+                # Process structured video renderers
+                for vr in video_renderers:
+                    vid = vr.get('videoId', '')
+                    if not vid or vid in seen_ids:
+                        continue
+                    seen_ids.add(vid)
+                    title = ''
+                    title_runs = vr.get('title', {}).get('runs', [])
+                    if title_runs:
+                        title = title_runs[0].get('text', '')
+                    if not title:
+                        title = vr.get('title', {}).get('simpleText', '')
+                    if not title:
+                        continue
+                    # Channel name
+                    author = ''
+                    channel_runs = vr.get('ownerText', {}).get('runs', [])
+                    if channel_runs:
+                        author = channel_runs[0].get('text', '')
+                    # View count for rough engagement
+                    view_text = vr.get('viewCountText', {}).get('simpleText', '')
+                    engagement = 0
+                    view_match = re.search(r'([\d,]+)', view_text.replace(',', ''))
+                    if view_match:
+                        try:
+                            engagement = int(view_match.group(1))
+                        except ValueError:
+                            pass
+                    # Description snippet
+                    desc_snippets = vr.get('detailedMetadataSnippets', [])
+                    desc = ''
+                    if desc_snippets:
+                        snippet_runs = desc_snippets[0].get('snippetText', {}).get('runs', [])
+                        desc = ''.join(r.get('text', '') for r in snippet_runs)
+                    # Thumbnail
+                    thumbs = vr.get('thumbnail', {}).get('thumbnails', [])
+                    thumb = thumbs[-1].get('url', '') if thumbs else f'https://i.ytimg.com/vi/{vid}/hqdefault.jpg'
+                    yt_item = {
+                        'title': title,
+                        'summary': desc,
+                        'source': 'youtube',
+                        'time': datetime.now(timezone.utc).isoformat(),
+                        'url': f'https://www.youtube.com/watch?v={vid}',
+                        'engagement': engagement,
+                        'is_hot': engagement > 5000,
+                        'author': author,
+                        'tags': ['youtube', 'scrape'],
+                    }
+                    if thumb:
+                        yt_item['media_url'] = thumb
+                        yt_item['content_type'] = 'image'
+                    items.append(yt_item)
+                logger.info(f'YouTube scrape "{keyword}" (structured): {len(video_renderers)} renderers, {len(items)} total videos')
+            except Exception as e:
+                logger.warning(f'YouTube scrape "{keyword}" failed: {e}')
+
     if not items:
-        logger.info('YouTube: 0 items (no API key and no known channels configured)')
+        logger.info('YouTube: 0 items (no API key, no known channels, scraping returned nothing)')
     return items
 
 
