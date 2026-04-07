@@ -1,8 +1,8 @@
 {
   "date": "2026-04-07",
-  "archived_at": "2026-04-07T06:13:28.610421+00:00",
+  "archived_at": "2026-04-07T10:40:41.563891+00:00",
   "source": "bilibili",
-  "item_count": 22,
+  "item_count": 27,
   "items": [
     {
       "source": "bilibili",
@@ -118,6 +118,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-07T08:20:29+00:00",
+      "lang": "",
+      "title": "［相位］养 成 系 大 女 主",
+      "summary": "-\n  └ 给阿尔吉侬的氯雷他定 (1赞): @[来古弥新_期待桃]",
+      "url": "https://www.bilibili.com/video/BV13mDaBME1w",
+      "author": "莱星Ligh",
+      "engagement": 162,
+      "media_url": "https://i1.hdslb.com/bfs/archive/f0b85cc443ba85bb1527bfb18bc50e24b4afe140.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 161,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-07T08:20:29+00:00",
+      "lang": "zh",
+      "title": "［相位］养 成 系 大 女 主",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116362441656093",
+      "author": "莱星Ligh",
+      "engagement": 161,
+      "media_url": "//i1.hdslb.com/bfs/archive/f0b85cc443ba85bb1527bfb18bc50e24b4afe140.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-06T10:22:52+00:00",
       "lang": "",
       "title": "【忘却前夜 Morimens_动态壁纸】希洛_泰旖丝_杜勒赛因_萨尔瓦多=血肉界域1期_Wallpaper Engine",
@@ -159,6 +189,24 @@
       "engagement": 136,
       "media_url": "//i1.hdslb.com/bfs/archive/1f1820f514ee28d21da377f6251287f2e1dcabc0.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-07T09:00:00+00:00",
+      "lang": "",
+      "title": "锐评令我印象最深刻的9部galgame",
+      "summary": "视频内容仅代表个人观点与体验\n  └ Ogiso幻月 (2赞): 不是菲奥奈嘛[doge][笑哭][秽翼的尤斯蒂娅_不行]\n  └ 玄关の战斗 (1赞): [秽翼的尤斯蒂娅_提案不错][星光咖啡馆与死神之蝶表情包_嗯嗯]\n  └ 幽晓林 (0赞): [星光咖啡馆与死神之蝶表情包_哇][星光咖啡馆与死神之蝶表情包_恶心][星光咖啡馆与死神之蝶表情包_喝茶][星光咖啡馆与死神之蝶表情包_盯][星光咖啡馆与死神之蝶表情包_害羞]",
+      "url": "https://www.bilibili.com/video/BV1EaDaBEEfd",
+      "author": "永远の玛多卡",
+      "engagement": 133,
+      "media_url": "https://i2.hdslb.com/bfs/archive/52f6acd8026d02dc13aa892d589ba85f6370dee8.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 124,
+        "comment_count": 9,
+        "comments_fetched": 3,
+        "danmaku": 3
+      }
     },
     {
       "source": "bilibili",
@@ -207,6 +255,42 @@
         "play": 22,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-07T09:40:28+00:00",
+      "lang": "",
+      "title": "SAYA可爱捏（emotelab制作表情包）",
+      "summary": "aqa让我想想怎么搞下载链接\n  └ 本子大磨王7N31 (1赞): 曲奇🍪[哈基蜜集_铸币大头]\n  └ -昆扬 (1赞): [魔法少女的魔女审判表情包_哦吼吼]\n  └ 是苏K啦 (1赞): ht[doge]tps://wwaql.lanzouu.[doge]com/i2EEP3mol3nc理论上这样就可以了吧aqa",
+      "url": "https://www.bilibili.com/video/BV1NNDvBeEMn",
+      "author": "是苏K啦",
+      "engagement": 21,
+      "media_url": "https://i1.hdslb.com/bfs/archive/067d60d14d6a9b90d90fd3f13faada3472fdbf66.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 16,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-07T08:38:52+00:00",
+      "lang": "",
+      "title": "【粗燥音/remix】舒适噪音实验-沙耶の唄",
+      "summary": "今年一月底偶然刷到 天鹅司令之实验这位up的粗燥音，发现很有趣。遂学习，大多使用waves插件模拟噪音，第一次制作，水平很低喵。\n  └ 苍色守墓人 (0赞): 我靠了，这是啥",
+      "url": "https://www.bilibili.com/video/BV1DYDvB5EdN",
+      "author": "Saber_Gu",
+      "engagement": 18,
+      "media_url": "https://i0.hdslb.com/bfs/archive/748bdbd5c739852e962ee0c512ad4d18e4268351.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 17,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
