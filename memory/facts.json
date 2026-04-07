@@ -1,0 +1,59 @@
+[
+  {
+    "id": "f-0001",
+    "content": "桌面应用使用 Electron 而不是 Tauri，原因是 MCP 需要 stdio 管道和 Node 生态",
+    "category": "decision",
+    "confidence": 0.9500000000000001,
+    "sources": [],
+    "created": "2026-04-06",
+    "updated": "2026-04-06",
+    "merge_count": 1,
+    "obsolete": false
+  },
+  {
+    "id": "f-0002",
+    "content": "用户偏好深色主题",
+    "category": "preference",
+    "confidence": 0.9,
+    "sources": [],
+    "created": "2026-04-06",
+    "updated": "2026-04-06",
+    "merge_count": 0,
+    "obsolete": false
+  },
+  {
+    "id": "f-0003",
+    "content": "Silver Core 知识图谱包含 220 节点 481 边",
+    "category": "discovery",
+    "confidence": 0.9,
+    "sources": [],
+    "created": "2026-04-06",
+    "updated": "2026-04-06",
+    "merge_count": 0,
+    "obsolete": false
+  },
+  {
+    "id": "f-0004",
+    "content": "会话间知识传递依赖 CLAUDE.md 和 MCP 工具，不依赖 Issue",
+    "category": "convention",
+    "confidence": 0.9,
+    "sources": [],
+    "created": "2026-04-06",
+    "updated": "2026-04-06",
+    "merge_count": 0,
+    "obsolete": false
+  },
+  {
+    "id": "f-0005",
+    "content": "知识图谱 nodes 是 dict 格式不是 list，key 为 node id",
+    "category": "discovery",
+    "confidence": 0.9,
+    "sources": [
+      "scripts/knowledge_graph.py"
+    ],
+    "created": "2026-04-06",
+    "updated": "2026-04-06",
+    "merge_count": 0,
+    "obsolete": false
+  }
+]

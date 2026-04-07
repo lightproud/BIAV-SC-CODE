@@ -1,8 +1,8 @@
 {
   "date": "2026-04-07",
-  "archived_at": "2026-04-06T17:36:01.089615+00:00",
+  "archived_at": "2026-04-07T00:07:47.618449+00:00",
   "source": "steam",
-  "item_count": 17,
+  "item_count": 19,
   "items": [
     {
       "source": "steam",
@@ -258,6 +258,36 @@
       "review": "Gorgeous game with an amazing story direction. Have been playing it almost nonstop for some months now on steam and my phone and couldn't be happier with it! I play a lot of games with the gacha eleme",
       "timestamp_created": 1775384826,
       "playtime_forever": 4451
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T18:43:31+00:00",
+      "lang": "russian",
+      "title": "[正面] Игра хорошая и затягивающая) Моментами даже хоррор...",
+      "summary": "Игра хорошая и затягивающая) Моментами даже хоррорец есть из-за фоновой музыки и звуковых эффектов пх",
+      "url": "https://steamcommunity.com/profiles/76561199525324685/recommended/3052450",
+      "author": "76561199525324685",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Игра хорошая и затягивающая) Моментами даже хоррорец есть из-за фоновой музыки и звуковых эффектов пх",
+      "timestamp_created": 1775501011,
+      "playtime_forever": 703
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T17:08:51+00:00",
+      "lang": "koreana",
+      "title": "[正面] \"했어.. 정말 내가 했어..\"",
+      "summary": "\"했어.. 정말 내가 했어..\"",
+      "url": "https://steamcommunity.com/profiles/76561198346795851/recommended/3052450",
+      "author": "76561198346795851",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "\"했어.. 정말 내가 했어..\"",
+      "timestamp_created": 1775495331,
+      "playtime_forever": 3898
     }
   ]
 }

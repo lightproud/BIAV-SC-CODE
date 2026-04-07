@@ -1,45 +1,58 @@
 {
   "date": "2026-04-06",
-  "messages": 11619,
+  "messages": 16082,
   "unique_authors": 269,
-  "reactions_total": 1278,
-  "attachments": 612,
+  "reactions_total": 1926,
+  "attachments": 829,
   "channel_activity": {
-    "🔸綜合討論": 1137,
-    "🔸阵容构建": 7,
-    "🔸morimens-game-chat": 5755,
+    "🔸綜合討論": 1246,
+    "🔸morimens-game-chat": 8711,
+    "🔸剧情交流": 3,
+    "🔸chaîne-française": 13,
+    "🔸русский-канал": 130,
+    "🔸canal-español": 215,
+    "🔸canal-português": 610,
+    "🔸traphase": 110,
+    "🔸lore-chat": 90,
+    "🔸team-building": 633,
+    "🔸邀请码互助┊swap-invitation-codes": 22,
+    "🔸game-question": 1503,
+    "🔸机器人命令┊bot-commands": 37,
+    "建个图楼": 18,
+    "打算開一個圖樓可能圖之後就丟這裡了": 2,
+    "我昨天卡bug了": 2,
+    "💭「Processing」Leigh STR gain possible bug": 3,
+    "Thais fan art by me": 1,
+    "BOSS COMPENDIUM": 1,
+    "V2.4.3.5 一星幻衣「旺达·钩吻葬盛」限时免费获取┊Claim the New Wanda Skin: \"With Spikenard And Myrrh\" for Free": 6,
+    "🔸阵容构建": 99,
+    "🔸한국어-채팅방": 98,
+    "🔸phòng-chat-tiếng-việt": 1264,
+    "🔸general-chat": 509,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸erica-playground": 18,
+    "很不幸地，我今天是來迫害各位眼睛而不是大腦的": 14,
+    "P Dive Karen Boss Cheating": 11,
+    "把阿拉克涅的立绘改回去": 34,
+    "✅「Resolved」\"Temporary Realm Mastery\" effect from Vortice's Wheel of Destiny is useless for her": 7,
+    "Winkle!": 1,
+    "pickmin": 7,
+    "Bands Art thread (I should’ve made one first before doing all my stuff)": 1,
+    "求老师们帮配队ww": 36,
+    "1490796114968973393": 1,
     "🔸晒卡分享": 11,
-    "🔸chaîne-française": 8,
-    "🔸русский-канал": 69,
-    "🔸phòng-chat-tiếng-việt": 1197,
-    "🔸canal-español": 48,
-    "🔸canal-português": 601,
     "🔸ห้องสนทนาภาษาไทย": 17,
-    "🔸traphase": 26,
-    "🔸lore-chat": 79,
-    "🔸team-building": 449,
-    "🔸general-chat": 446,
-    "🔸邀请码互助┊swap-invitation-codes": 15,
-    "🔸game-question": 950,
-    "🔸机器人命令┊bot-commands": 26,
-    "🔸erica-playground": 16,
-    "建个图楼": 13,
     "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 5,
-    "P Dive Karen Boss Cheating": 10,
     "Inactive code on Ads": 16,
-    "求老师们帮配队ww": 2,
     "想求個組隊建議": 2,
     "team building for 8-13": 2,
     "🔸课间休息闲聊": 7,
     "🔸日本語チャンネル": 6,
-    "🔸한국어-채팅방": 96,
     "🔸deutscher-chatraum": 9,
     "🔸ruang-obrolan-indonesia": 508,
-    "🔸忘却前夜┊morimens-tv": 1,
     "🔸游戏问题": 2,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "Levels + enlightenment regulation option": 6,
-    "💭「Processing」Leigh STR gain possible bug": 2,
     "morimens sybau 💔": 2,
     "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 2,
     "1490699711227756574": 1,
@@ -49,20 +62,23 @@
     "游戏内开个阿拉克涅的立绘投票吧": 6,
     "\"Temporary Realm Mastery\" effect from Vortice's Wheel of Destiny is useless for her": 3,
     "💭「处理中」错字": 1,
-    "把阿拉克涅的立绘改回去": 32,
     "\"24\" lives matter": 1,
     "English Language Setting Abnormality Issue Notice": 1,
-    "pickmin": 6,
     "Tonight or Never || Arc 2 Chapter 3": 2,
     "Leigh wip!!!!": 1,
-    "24 wip part 2": 2,
-    "V2.4.3.5 一星幻衣「旺达·钩吻葬盛」限时免费获取┊Claim the New Wanda Skin: \"With Spikenard And Myrrh\" for Free": 4
+    "24 wip part 2": 2
   },
   "hourly_activity": {
+    "22": 729,
+    "23": 650,
+    "17": 873,
+    "18": 665,
+    "19": 707,
+    "20": 848,
+    "21": 579,
     "14": 661,
     "15": 720,
     "16": 848,
-    "17": 588,
     "10": 514,
     "11": 740,
     "12": 673,
@@ -79,10 +95,8 @@
     "9": 849
   },
   "message_types": {
-    "0": 1920,
-    "19": 726,
-    "20": 3,
-    "23": 1
+    "19": 480,
+    "0": 836
   },
   "top_reacted_messages": [
     {
@@ -110,6 +124,14 @@
       "channel": "🔸阵容构建"
     },
     {
+      "id": "1490862453192654969",
+      "channel_id": "1300659662311526512",
+      "content": "que no me atrae mirian",
+      "author": "zulsoma",
+      "reactions": 9,
+      "channel": "🔸canal-español"
+    },
+    {
       "id": "1490531819098210334",
       "channel_id": "1490531819098210334",
       "content": "pickmin 👍",
@@ -118,12 +140,44 @@
       "channel": "pickmin"
     },
     {
+      "id": "1490789846418198731",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "frosthief",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490797395062161448",
+      "channel_id": "1170692781216378960",
+      "content": "<@88644018673582080> <:ryker_pray:1468258632205340820> 1 turn",
+      "author": "blecnes.",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1490590955303211128",
       "channel_id": "1490590955303211128",
       "content": "Karen gains 51 str when I use arithmetica.\n0 arithmetica cost cards shouldn't co",
       "author": "aurora3981",
       "reactions": 8,
       "channel": "P Dive Karen Boss Cheating"
+    },
+    {
+      "id": "1490798114016329852",
+      "channel_id": "1170692781216378960",
+      "content": "can you do any one turn without +12s (not counting horse)",
+      "author": "bagels5899",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490800770528837652",
+      "channel_id": "1170692781216378960",
+      "content": "<@452731110556696596> youre lowkey the goat for the pdive maps",
+      "author": "princess.goth",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1490694516150239422",
@@ -139,6 +193,22 @@
       "content": "<@212031841786527764> i got rly unlucky with gdoll and am completely broke after",
       "author": "princess.goth",
       "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490798864066679006",
+      "channel_id": "1170692781216378960",
+      "content": "the twins are prob higher, but i like kath more than pollux",
+      "author": "blecnes.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490800107732598936",
+      "channel_id": "1170692781216378960",
+      "content": "tawil rng hater monchi promoting pickman rng????",
+      "author": "arkaether",
+      "reactions": 6,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -182,66 +252,10 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1490721123606728724",
-      "channel_id": "1300659603993923644",
-      "content": "How crazy?",
-      "author": "iamminhphuc",
-      "reactions": 5,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1490683942007869632",
-      "channel_id": "1131839817982947429",
-      "content": "傷害會自己變出來",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490700215127376012",
+      "id": "1490838913919615146",
       "channel_id": "1170692781216378960",
-      "content": "Redz changes his opinion more than his underwear",
-      "author": "spooky_penguin_",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490702981308616788",
-      "channel_id": "1170692781216378960",
-      "content": "I mean\nIt's not that complicated to understand\nWould you use Pickman with Ghelot",
-      "author": "legendaryredz",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490536987361542204",
-      "channel_id": "1170692781216378960",
-      "content": "Wait no this is just the arc2 pv",
+      "content": "i'm going to fricking kill ghelot and strangle her in a sewer",
       "author": "fishhazardthewizard",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490546022177575146",
-      "channel_id": "1170692781216378960",
-      "content": "https://tenor.com/view/nilou-genshin-genshin-impact-nilou-eating-paimon-nilou-ea",
-      "author": "monchi3524",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490606411296538664",
-      "channel_id": "1170692781216378960",
-      "content": "<:Helot_slack_off:1459092159465521184> missed",
-      "author": "._.aahh",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490654001484533862",
-      "channel_id": "1170692781216378960",
-      "content": "BRO SAME",
-      "author": "_djee",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

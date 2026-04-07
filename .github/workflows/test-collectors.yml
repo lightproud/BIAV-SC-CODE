@@ -2,6 +2,12 @@ name: Test All Data Collectors
 
 on:
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to test (default: claude/data-collector-ykOhM)'
+        required: false
+        default: 'claude/data-collector-ykOhM'
+        type: string
 
 permissions:
   contents: read
@@ -13,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: claude/data-collector-ykOhM
+          ref: ${{ inputs.branch || 'claude/data-collector-ykOhM' }}
 
       - uses: actions/setup-python@v5
         with:
@@ -117,7 +123,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: claude/data-collector-ykOhM
+          ref: ${{ inputs.branch || 'claude/data-collector-ykOhM' }}
 
       - uses: actions/setup-python@v5
         with:
@@ -150,7 +156,6 @@ jobs:
           sys.path.insert(0, 'projects/news/report-system/scripts')
           import collector as c
 
-          # All fetch functions in collector.py
           fetchers = [
               ('Reddit', c.fetch_reddit),
               ('Twitter', c.fetch_twitter),
