@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-08
 
-> 采集时间：2026-04-08 05:34 UTC+8
+> 采集时间：2026-04-08 07:59 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【粗燥音/remix】舒适噪音实验-沙耶の唄 — engagement: 162
+1. [Bilibili] 【粗燥音/remix】舒适噪音实验-沙耶の唄 — engagement: 170
 2. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 3. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
@@ -17,7 +17,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 7 |
+| Bilibili | 9 |
 | DCInside | 0（沉默）|
 | Discord | 16 |
 | 抖音 | 0（沉默）|
@@ -39,7 +39,7 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 19 |
+| Reddit | 18 |
 | Ruliweb | 0（沉默）|
 | Steam | 6 |
 | Steam 论坛 | 0（沉默）|
@@ -61,12 +61,12 @@
 
 ## Discord
 
-今日 11,559 条消息，191 位活跃用户，1,746 次反应。热门频道：🔸morimens-game-chat(5671)、🔸綜合討論(2223)、🔸game-question(1620)、🔸general-chat(448)、🔸phòng-chat-tiếng-việt(322)
+今日 16,671 条消息，191 位活跃用户，2,216 次反应。热门频道：🔸morimens-game-chat(8758)、🔸game-question(2277)、🔸綜合討論(2249)、🔸canal-português(612)、🔸general-chat(551)
 
 ### 热门话题
 
-1. [DC] morimensstaff06@🔸礼包码┊gift-codes: 🎁 DC 39000守密人达成礼 / DC  — engagement: 1309
-2. [DC] morimensstaff06@🔸礼包码┊gift-codes: 为了让更多新入学的守密人们能领取到这份奖励， — engagement: 127
+1. [DC] morimensstaff06@🔸礼包码┊gift-codes: 🎁 DC 39000守密人达成礼 / DC  — engagement: 1311
+2. [DC] morimensstaff06@🔸礼包码┊gift-codes: 为了让更多新入学的守密人们能领取到这份奖励， — engagement: 129
 3. [DC] megidola.@🔸morimens-game-chat: When I saw this CG I fol — engagement: 55
 4. [DC] shio2311@🔸art-and-memes: stinky — engagement: 39
 5. [DC] zzumaso@🔸art-and-memes: i yarn for him i love him i wha — engagement: 37
@@ -90,11 +90,11 @@
 
 ## Bilibili
 
-1. 锐评令我印象最深刻的9部galgame — engagement: 1204
-2. ［相位］养 成 系 大 女 主 — engagement: 544
-3. ［相位］养 成 系 大 女 主 — engagement: 540
-4. 其实你已经看了一分钟了⚠⚠⚠⚠ — engagement: 366
-5. SAYA可爱捏（emotelab制作表情包） — engagement: 210
+1. 锐评令我印象最深刻的9部galgame — engagement: 1250
+2. ［相位］养 成 系 大 女 主 — engagement: 593
+3. ［相位］养 成 系 大 女 主 — engagement: 588
+4. 其实你已经看了一分钟了⚠⚠⚠⚠ — engagement: 373
+5. SAYA可爱捏（emotelab制作表情包） — engagement: 223
 
 ## Gamerch Wiki
 
@@ -106,11 +106,11 @@
 
 ## Reddit
 
-1. Who designed this stage bruh😭😭😭 — engagement: 0
-2. New code: RCSV-DPLV-KQPP — engagement: 0
-3. YouSavedMorimens- again — engagement: 0
-4. Arachne will be poison — engagement: 0
-5. Aequor Symbiosis mistranslated - actually increases base Ten — engagement: 0
+1. Smol Doll by me — engagement: 0
+2. Who designed this stage bruh😭😭😭 — engagement: 0
+3. Arachne - Conjugated Fates — engagement: 0
+4. New code: RCSV-DPLV-KQPP — engagement: 0
+5. YouSavedMorimens- again — engagement: 0
 
 ## StopGame.ru
 
@@ -130,11 +130,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 280526
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40382
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38283
-4. 【忘卻前夜】重返未來1999？不對！是忘卻前夜！禮包碼兌換！T0角色隊伍組合！超少見克蘇魯策略卡牌遊戲！ — engagement: 16221
-5. Morimens Gameplay Is FUN — engagement: 15912
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 280578
+2. Why I fell in love with this card-based gacha game — engagement: 135243
+3. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40383
+4. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38283
+5. Morimens Gameplay Is FUN — engagement: 15933
 
 ## 沉默平台
 
