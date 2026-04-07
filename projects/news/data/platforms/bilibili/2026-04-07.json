@@ -1,8 +1,8 @@
 {
   "date": "2026-04-07",
-  "archived_at": "2026-04-07T00:07:47.619347+00:00",
+  "archived_at": "2026-04-07T06:13:28.610421+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 22,
   "items": [
     {
       "source": "bilibili",
@@ -38,6 +38,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-06T19:27:03+00:00",
+      "lang": "",
+      "title": "【忘却前夜】总回合107解决容灾425……，谁是内鬼……谁是阴间……",
+      "summary": "-\n  └ 1236小凯子 (1赞): 强强强[打call]\n  └ 野生多多良 (1赞): 太强了",
+      "url": "https://www.bilibili.com/video/BV13mD8B8ETK",
+      "author": "路过的耄耋",
+      "engagement": 329,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9949bc4d175333bd5119fb18101f76818cce23e9.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 327,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-05T05:51:50+00:00",
       "lang": "",
       "title": "攻杀队最高的山，福袋24队满血通关融灾2-5狗子，这狗子不是克制多段吗？启个盾怎么永久隐身了",
@@ -66,6 +84,36 @@
       "author": "野生多多良",
       "engagement": 287,
       "media_url": "//i0.hdslb.com/bfs/archive/46b1d5165f23f976094c33a5056312dcd9cc1352.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-06T18:08:09+00:00",
+      "lang": "",
+      "title": "萌新第一次400达成",
+      "summary": "-\n  └ 子夜微雪 (2赞): 怎么有吃奥汀借90最后还要打到光锥的，地瓜劝退片[笑哭]\n大致阅览了一下，满狂吃3火打防，空开0火枪声，挤掉专造3火卡，7t就开始开普大了。医生从不吃跃迁，打两张绵音不输出，可以说两个汀都在当混子\n  └ 伤春客 (1赞): 大佬[给心心]\n  └ 风凤_WP (0赞): 大佬 下次能帮我打400吗",
+      "url": "https://www.bilibili.com/video/BV1p4DFBaE5P",
+      "author": "寂榕",
+      "engagement": 179,
+      "media_url": "https://i0.hdslb.com/bfs/archive/752af71536ec90e29a3464cea23372ad1a20148d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 165,
+        "comment_count": 14,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-06T18:08:09+00:00",
+      "lang": "zh",
+      "title": "萌新第一次400达成",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116359052658523",
+      "author": "寂榕",
+      "engagement": 165,
+      "media_url": "//i0.hdslb.com/bfs/archive/752af71536ec90e29a3464cea23372ad1a20148d.jpg",
       "content_type": "video"
     },
     {
@@ -143,6 +191,24 @@
       "engagement": 42,
       "media_url": "//i1.hdslb.com/bfs/archive/dfce85551d29625b67dfcc000c97245bf79d431c.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-06T17:18:14+00:00",
+      "lang": "",
+      "title": "Saya no uta edit",
+      "summary": "YouTube\nBRUXO FANTASMA (SUPER SLOWED)\nLXNGVX\nBRUXO FANTASMA\n\nhttps://youtu.be/PS0f6m25E6o?si=gGBJtV6qABMPETME",
+      "url": "https://www.bilibili.com/video/BV1HVDcBcEH9",
+      "author": "自害",
+      "engagement": 22,
+      "media_url": "https://i2.hdslb.com/bfs/archive/df96f716001cdca0e1b3b97acbd496ae5135c1af.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 22,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
