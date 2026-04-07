@@ -1,28 +1,45 @@
 {
   "date": "2026-04-07",
-  "messages": 7807,
+  "messages": 11559,
   "unique_authors": 191,
-  "reactions_total": 1217,
-  "attachments": 358,
+  "reactions_total": 1746,
+  "attachments": 555,
   "channel_activity": {
-    "🔸綜合討論": 1862,
-    "🔸morimens-game-chat": 3628,
-    "🔸剧情交流": 78,
-    "🔸한국어-채팅방": 186,
-    "🔸русский-канал": 12,
-    "🔸phòng-chat-tiếng-việt": 272,
-    "🔸canal-português": 54,
-    "🔸ห้องสนทนาภาษาไทย": 18,
-    "🔸traphase": 6,
-    "🔸lore-chat": 46,
+    "🔸綜合討論": 2223,
+    "🔸阵容构建": 63,
+    "🔸morimens-game-chat": 5671,
+    "🔸剧情交流": 90,
+    "🔸晒卡分享": 4,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 188,
+    "🔸русский-канал": 26,
+    "🔸phòng-chat-tiếng-việt": 322,
+    "🔸canal-español": 54,
+    "🔸canal-português": 89,
+    "🔸ruang-obrolan-indonesia": 42,
+    "🔸ห้องสนทนาภาษาไทย": 23,
+    "🔸traphase": 9,
+    "🔸lore-chat": 57,
+    "🔸team-building": 219,
+    "🔸general-chat": 448,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸game-question": 1620,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 28,
+    "一言不發在角落裡畫著女鬼": 1,
+    "建个图楼": 1,
+    "【代发】uw生日快乐！": 1,
+    "Add ex-limited units and wheels to the loss pool?": 2,
+    "我昨天卡bug了": 3,
+    "Get auto battle back! 恢复自动战斗": 1,
+    "Arachne fanart": 1,
+    "Horla wip": 1,
+    "sewer princess": 7,
+    "求大佬們幫配隊🙏": 1,
+    "想求個組隊建議": 173,
+    "1491080021094174731": 1,
     "🔸礼包码┊gift-codes": 2,
-    "🔸team-building": 100,
-    "🔸general-chat": 194,
-    "🔸邀请码互助┊swap-invitation-codes": 11,
-    "🔸game-question": 962,
-    "🔸机器人命令┊bot-commands": 20,
     "✅「已回复」这两个头像会上国际服吗": 3,
-    "我昨天卡bug了": 1,
     "✅「已回答」媽媽孩子抱着我不肯放手": 1,
     "✅「已回复」韩语字幕显示不全/下方显示缺失": 3,
     "✅「Resolved」I need help everything in the game is in another language even tho I have it onEnglish": 2,
@@ -37,15 +54,10 @@
     "PICKMAN!!!!": 5,
     "morimens sybau 💔": 14,
     "莫非强度怎么样？": 11,
-    "想求個組隊建議": 120,
     "New player don't really know what to pull or focus on": 7,
     "New player - account progress direction": 5,
     "team building for 8-13": 9,
-    "🔸阵容构建": 11,
-    "🔸晒卡分享": 2,
     "🔸日本語チャンネル": 1,
-    "🔸canal-español": 47,
-    "🔸ruang-obrolan-indonesia": 5,
     "🔸游戏问题": 14,
     "今夜不做，更待何時 || 第二篇 第三章": 1,
     "这两个头像会上国际服吗": 3,
@@ -74,11 +86,16 @@
     "🔸chaîne-française": 1
   },
   "hourly_activity": {
+    "10": 760,
+    "11": 786,
+    "12": 706,
+    "13": 927,
+    "14": 1098,
+    "15": 1,
     "6": 979,
     "7": 514,
     "8": 646,
     "9": 793,
-    "10": 526,
     "0": 686,
     "1": 539,
     "2": 862,
@@ -87,10 +104,9 @@
     "5": 882
   },
   "message_types": {
-    "19": 962,
-    "0": 2321,
-    "20": 1,
-    "4": 14
+    "19": 1243,
+    "0": 2508,
+    "21": 1
   },
   "top_reacted_messages": [
     {
@@ -110,12 +126,36 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1491043140449075320",
+      "channel_id": "1170692781216378960",
+      "content": "When I saw this CG I folded instanstly",
+      "author": "megidola.",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491027705783652482",
+      "channel_id": "1491027705783652482",
+      "content": "stinky",
+      "author": "shio2311",
+      "reactions": 12,
+      "channel": "sewer princess"
+    },
+    {
       "id": "1490964083753750580",
       "channel_id": "1490964083753750580",
       "content": "i yarn for him i love him i whale him my boy!!",
       "author": "zzumaso",
       "reactions": 12,
       "channel": "PICKMAN!!!!"
+    },
+    {
+      "id": "1491052952063053905",
+      "channel_id": "1170692781216378960",
+      "content": "Omg it was my morimens anniversary yesterday\n\nBeen playing this game for a year ",
+      "author": "willsalvador",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1490967109801476117",
@@ -126,12 +166,68 @@
       "channel": "morimens sybau 💔"
     },
     {
+      "id": "1491043957881176276",
+      "channel_id": "1170692781216378960",
+      "content": "My tier list looks very different from monchers",
+      "author": "monchi3524",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491065665308852406",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "fairlysadpanda",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1490908455614025830",
       "channel_id": "1131839817982947429",
       "content": "🍪 🧑‍🍳 我先去做餅了、大概需要兩週",
       "author": "morimensstaff06",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1491038157922238585",
+      "channel_id": "1170692781216378960",
+      "content": "She ruined my life",
+      "author": "lighteveningdawn",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491042564244111482",
+      "channel_id": "1170692781216378960",
+      "content": "I just think Gdoll's hot <:GDoll_Inferno_serenity:1468257540809822302>",
+      "author": "megidola.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491043019346935919",
+      "channel_id": "1170692781216378960",
+      "content": "<:GDoll_Inferno_serenity:1468257540809822302>",
+      "author": "sirtealot",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491043055162359849",
+      "channel_id": "1170692781216378960",
+      "content": "<:GDoll_Inferno_serenity:1468257540809822302>",
+      "author": "chinkeeyong",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491070803477925918",
+      "channel_id": "1491070803477925918",
+      "content": "又熬夜於是被老天懲罰畫女鬼",
+      "author": "yolo_mode",
+      "reactions": 6,
+      "channel": "一言不發在角落裡畫著女鬼"
     },
     {
       "id": "1491021286967738530",
@@ -150,107 +246,27 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1490965812683739189",
+      "id": "1491026092105011371",
       "channel_id": "1131839817982947429",
-      "content": "眼球打完了",
-      "author": "danny7766",
+      "content": "超模圖魯",
+      "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1490896340476231831",
+      "id": "1491050460780695692",
       "channel_id": "1131839817982947429",
       "content": "",
-      "author": "yy42974466",
+      "author": "luck004027",
       "reactions": 5,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1490864973507854408",
+      "id": "1491043038389342238",
       "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "arkaether",
+      "content": "<:GDoll_Inferno_serenity:1468257540809822302>",
+      "author": "blecnes.",
       "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491006139742294097",
-      "channel_id": "1170692781216378960",
-      "content": "You forgot the devs love edging their player",
-      "author": "moyashi0672",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491021681500749855",
-      "channel_id": "1170692781216378960",
-      "content": "Ok, so I should just do Blade/Land of Nonexistence?",
-      "author": "masiakasaurusofwar",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490884574253682738",
-      "channel_id": "1131839817982947429",
-      "content": "進步了<:Helot_slack_off:1459092159465521184>",
-      "author": "kevin.yienwenst",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490899582283157574",
-      "channel_id": "1131839817982947429",
-      "content": "喔喔感謝佬!那我來搞一下...我皮想抽滿，想給他用好一點",
-      "author": "soft_whisper",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490939523574665326",
-      "channel_id": "1131839817982947429",
-      "content": "<:love:1356053099931897977>",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490878910957879499",
-      "channel_id": "1170692781216378960",
-      "content": "Reddit agrees with me.",
-      "author": "mengluo",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490894688440418416",
-      "channel_id": "1170692781216378960",
-      "content": "“Wait does she force my retains my cards…Is that just for this turn?…”\n-An anony",
-      "author": "frosthief",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490916060650668143",
-      "channel_id": "1170692781216378960",
-      "content": "<@296679098703544321> and <@88644018673582080> cause of you, I am out of wheel j",
-      "author": "climbkaly",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490961370999558174",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "arkaether",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490966689641398293",
-      "channel_id": "1170692781216378960",
-      "content": "Damn the game really is growing huh",
-      "author": "megidola.",
-      "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }
   ]
