@@ -32,21 +32,21 @@ export default function ModelSelector({ providers, provider, model, onSelect }: 
   const displayName = currentModel?.name || model
 
   return (
-    <div ref={ref} className="relative titlebar-no-drag">
+    <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs text-biav-muted hover:text-biav-text hover:bg-biav-border transition-colors"
+        className="flex items-center gap-1 px-1.5 py-0.5 rounded text-[11px] text-biav-muted hover:text-biav-text hover:bg-biav-border/60 transition-colors"
       >
-        <span className="text-biav-gold">{PROVIDER_LABELS[provider] || provider}</span>
-        <span>/</span>
+        <span className="text-biav-gold font-medium">{PROVIDER_LABELS[provider] || provider}</span>
+        <span className="text-biav-border">/</span>
         <span>{displayName}</span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M6 9l6 6 6-6" />
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <path d="M6 15l6-6 6 6" />
         </svg>
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 w-56 bg-biav-surface border border-biav-border rounded-xl shadow-xl z-50 py-1 overflow-hidden">
+        <div className="absolute right-0 bottom-full mb-1 w-56 bg-biav-surface border border-biav-border rounded-lg shadow-xl z-50 py-1 overflow-hidden">
           {providers.map((p) => (
             <div key={p.provider}>
               <div className="px-3 py-1.5 text-xs text-biav-muted flex items-center gap-2">

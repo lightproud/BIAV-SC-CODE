@@ -55,6 +55,31 @@
   -webkit-app-region: no-drag;
 }
 
+/* Smooth sidebar transition */
+.sidebar-transition {
+  transition: width 200ms ease, opacity 150ms ease;
+}
+
+/* Better focus ring for all interactive elements */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid rgba(197, 163, 86, 0.4);
+  outline-offset: 1px;
+}
+
+/* Subtle hover lift for toolbar buttons */
+.toolbar-btn {
+  transition: all 150ms ease;
+}
+.toolbar-btn:hover {
+  transform: translateY(-0.5px);
+}
+.toolbar-btn:active {
+  transform: translateY(0px);
+}
+
 /* Markdown content styling */
 .markdown-content h1,
 .markdown-content h2,

@@ -284,45 +284,48 @@ export default function Sidebar({
     )
   }
 
+  const isMac = window.biav.platform === 'darwin'
+
   return (
     <div className="w-64 shrink-0 flex flex-col border-r border-biav-border bg-biav-surface h-full">
-      {/* Header */}
-      <div className="titlebar-drag px-4 h-12 flex items-center border-b border-biav-border">
-        <span className="titlebar-no-drag font-serif text-biav-gold font-semibold tracking-wide">
+      {/* Header with drag region */}
+      <div className={`titlebar-drag px-3 h-11 flex items-center shrink-0 ${isMac ? 'pl-[72px]' : ''}`}>
+        <span className="titlebar-no-drag font-serif text-biav-gold font-semibold tracking-wide text-sm">
           B.I.A.V.
         </span>
       </div>
 
-      {/* New Chat */}
-      <div className="p-3">
-        <div className="flex gap-2">
+      {/* New Chat + Search */}
+      <div className="px-3 pb-2 space-y-2">
+        <div className="flex gap-1.5">
           <button
             onClick={onNewChat}
-            className="flex-1 py-2 px-3 rounded-lg border border-biav-border text-sm text-biav-text hover:border-biav-gold hover:text-biav-gold transition-colors"
+            className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-md bg-biav-border/40 text-sm text-biav-text hover:bg-biav-border/70 hover:text-biav-gold transition-colors"
           >
-            + 新对话
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            <span>新对话</span>
           </button>
           <button
             onClick={onImport}
-            className="py-2 px-3 rounded-lg border border-biav-border text-sm text-biav-text hover:border-biav-gold hover:text-biav-gold transition-colors"
+            className="p-1.5 rounded-md bg-biav-border/40 text-biav-muted hover:bg-biav-border/70 hover:text-biav-text transition-colors"
             title="导入对话"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
           </button>
         </div>
-      </div>
 
-      {/* Search */}
-      <div className="px-3 pb-2">
+        {/* Search */}
         <div className="relative">
           <svg
-            className="absolute left-2.5 top-1/2 -translate-y-1/2 text-biav-muted"
-            width="14"
-            height="14"
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 text-biav-muted pointer-events-none"
+            width="13"
+            height="13"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -335,15 +338,15 @@ export default function Sidebar({
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="搜索消息内容..."
-            className="w-full bg-biav-bg border border-biav-border rounded-lg pl-8 pr-8 py-1.5 text-sm text-biav-text placeholder:text-biav-muted focus:outline-none focus:border-biav-gold transition-colors"
+            placeholder="搜索..."
+            className="w-full bg-biav-bg/60 border border-biav-border rounded-md pl-8 pr-8 py-1.5 text-sm text-biav-text placeholder:text-biav-muted focus:outline-none focus:border-biav-gold/50 focus:bg-biav-bg transition-all"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery('')}
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-biav-muted hover:text-biav-text"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-biav-muted hover:text-biav-text transition-colors"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M18 6L6 18M6 6l12 12" />
               </svg>
             </button>
@@ -492,46 +495,35 @@ export default function Sidebar({
       </div>
 
       {/* Footer */}
-      <div className="p-3 border-t border-biav-border flex items-center justify-between">
+      <div className="px-3 py-2 border-t border-biav-border flex items-center justify-between">
         <button
           onClick={onAbout}
-          className="text-xs text-biav-muted hover:text-biav-gold transition-colors"
+          className="text-[11px] text-biav-muted hover:text-biav-gold transition-colors"
           title="关于"
         >
           v0.1.0
         </button>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={onAbout}
-            className="text-biav-muted hover:text-biav-gold transition-colors"
-            title="关于"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="16" x2="12" y2="12" />
-              <line x1="12" y1="8" x2="12.01" y2="8" />
-            </svg>
-          </button>
+        <div className="flex items-center gap-1">
           <button
             onClick={() => {
               const next = themeMode === 'system' ? 'light' : themeMode === 'light' ? 'dark' : 'system'
               onSetThemeMode(next)
             }}
-            className="text-biav-muted hover:text-biav-gold transition-colors"
+            className="p-1 rounded-md text-biav-muted hover:text-biav-gold hover:bg-biav-border/40 transition-colors"
             title={
-              themeMode === 'system' ? '跟随系统 (点击切换到浅色)' :
-              themeMode === 'light' ? '浅色模式 (点击切换到深色)' :
-              '深色模式 (点击切换到跟随系统)'
+              themeMode === 'system' ? '跟随系统' :
+              themeMode === 'light' ? '浅色模式' :
+              '深色模式'
             }
           >
             {themeMode === 'system' ? (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
                 <line x1="8" y1="21" x2="16" y2="21" />
                 <line x1="12" y1="17" x2="12" y2="21" />
               </svg>
             ) : themeMode === 'light' ? (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="12" cy="12" r="5" />
                 <line x1="12" y1="1" x2="12" y2="3" />
                 <line x1="12" y1="21" x2="12" y2="23" />
@@ -543,17 +535,17 @@ export default function Sidebar({
                 <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
               </svg>
             ) : (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
               </svg>
             )}
           </button>
           <button
             onClick={onOpenSettings}
-            className="text-biav-muted hover:text-biav-gold transition-colors"
+            className="p-1 rounded-md text-biav-muted hover:text-biav-gold hover:bg-biav-border/40 transition-colors"
             title="设置"
           >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <circle cx="12" cy="12" r="3" />
               <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
             </svg>

@@ -24,10 +24,10 @@ export default function ModelParams({ params, onChange }: Props) {
     <div ref={ref} className="relative titlebar-no-drag">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-xs text-biav-muted hover:text-biav-text hover:bg-biav-border transition-colors"
+        className="flex items-center gap-1 px-1.5 py-0.5 rounded text-xs text-biav-muted hover:text-biav-text hover:bg-biav-border/60 transition-colors"
         title="模型参数"
       >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <line x1="4" y1="21" x2="4" y2="14" />
           <line x1="4" y1="10" x2="4" y2="3" />
           <line x1="12" y1="21" x2="12" y2="12" />
@@ -38,13 +38,13 @@ export default function ModelParams({ params, onChange }: Props) {
           <line x1="9" y1="8" x2="15" y2="8" />
           <line x1="17" y1="16" x2="23" y2="16" />
         </svg>
-        <span className="tabular-nums">
-          T:{params.temperature.toFixed(1)} / {params.maxTokens}
+        <span className="tabular-nums text-[11px]">
+          T:{params.temperature.toFixed(1)}
         </span>
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 w-64 bg-biav-surface border border-biav-border rounded-xl shadow-xl z-50 p-4 space-y-4">
+        <div className="absolute right-0 bottom-full mb-1 w-64 bg-biav-surface border border-biav-border rounded-lg shadow-xl z-50 p-4 space-y-4">
           {/* Temperature */}
           <div>
             <div className="flex items-center justify-between mb-1.5">

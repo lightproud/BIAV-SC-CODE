@@ -169,19 +169,14 @@ export function registerChatHandlers(mcpManager: MCPManager) {
       }
     }
 
-    // Resolve API keys
-    const apiKey = req.provider === 'claude'
-      ? (store.get('anthropic_api_key', '') as string)
-      : (store.get('openai_api_key', '') as string)
-
-    const baseUrl = req.provider === 'openai'
-      ? (store.get('openai_base_url', '') as string) || undefined
-      : undefined
+    // Resolve API key and base URL from settings
+    const apiKey = store.get('api_key', '') as string
+    const baseUrl = (store.get('api_base_url', '') as string) || undefined
 
     if (!apiKey) {
       win.webContents.send('chat:stream', {
         type: 'error',
-        error: `请先在设置中配置 ${req.provider === 'claude' ? 'Anthropic' : 'OpenAI'} API Key`,
+        error: '请先在设置中配置 API Key',
       })
       return
     }
@@ -224,7 +219,7 @@ export function registerChatHandlers(mcpManager: MCPManager) {
 
     // Two-layer compression: LLM summary (if API key available) + rule-based fallback
     const compressionConfig: CompressionConfig = {
-      apiKey: req.provider === 'claude' ? apiKey : undefined, // Only use Anthropic for summary
+      apiKey, // Use configured API key for summarization
       summaryModel: 'claude-3-5-haiku-20241022', // Cheapest model for summarization
       cachedSummary: summaryCache.get(conversationId!),
       onSummaryGenerated: (summary) => {
@@ -239,7 +234,7 @@ export function registerChatHandlers(mcpManager: MCPManager) {
         continueLoop = false
 
         const stream = streamChat({
-          provider: req.provider as 'claude' | 'openai',
+          provider: 'claude' as const,
           model: req.model,
           messages: conversationMessages,
           apiKey,
@@ -308,7 +303,7 @@ export function registerChatHandlers(mcpManager: MCPManager) {
           // Add assistant message with tool_use to conversation
           conversationMessages.push({
             role: 'assistant',
-            content: req.provider === 'claude' ? assistantContent : turnContent,
+            content: assistantContent,
           })
 
           // Process each tool call
@@ -431,23 +426,11 @@ export function registerChatHandlers(mcpManager: MCPManager) {
           }
 
           // Add tool results to conversation and continue the loop
-          if (req.provider === 'claude') {
-            // Claude expects tool_result messages as a user message
-            conversationMessages.push({
-              role: 'user',
-              content: toolResults,
-            })
-          } else {
-            // OpenAI expects tool results as separate messages
-            for (const tr of toolResults) {
-              conversationMessages.push({
-                role: 'tool',
-                content: tr.content,
-                // OpenAI needs tool_call_id
-                ...(tr.tool_use_id ? { tool_call_id: tr.tool_use_id } : {}),
-              } as any)
-            }
-          }
+          // Claude expects tool_result messages as a user message
+          conversationMessages.push({
+            role: 'user',
+            content: toolResults,
+          })
 
           // Continue the conversation loop so the LLM can process tool results
           continueLoop = true

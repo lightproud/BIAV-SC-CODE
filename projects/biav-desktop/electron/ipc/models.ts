@@ -9,32 +9,37 @@ interface ProviderStatus {
   models: { id: string; name: string }[]
 }
 
+// Generate a human-friendly name from a model ID
+function modelIdToName(id: string): string {
+  // Try common patterns: "claude-sonnet-4-20250514" -> "Claude Sonnet 4"
+  const cleaned = id
+    .replace(/-\d{8}$/, '')    // remove date suffix
+    .replace(/-/g, ' ')        // dashes to spaces
+    .replace(/\b\w/g, (c) => c.toUpperCase()) // capitalize words
+  return cleaned
+}
+
 export function registerModelHandlers() {
   ipcMain.handle('models:list', (): ProviderStatus[] => {
-    const claudeKey = store.get('anthropic_api_key', '') as string
-    const openaiKey = store.get('openai_api_key', '') as string
+    const apiKey = store.get('api_key', '') as string
+    const modelListRaw = store.get('model_list', 'claude-sonnet-4-20250514,claude-opus-4-20250514,claude-haiku-4-20250506') as string
 
-    const providers: ProviderStatus[] = [
+    const modelIds = modelListRaw
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean)
+
+    const models = modelIds.map((id) => ({
+      id,
+      name: modelIdToName(id),
+    }))
+
+    return [
       {
         provider: 'claude',
-        available: !!claudeKey,
-        models: [
-          { id: 'claude-opus-4-20250514', name: 'Claude Opus 4' },
-          { id: 'claude-sonnet-4-20250514', name: 'Claude Sonnet 4' },
-          { id: 'claude-haiku-4-20250506', name: 'Claude Haiku 4' },
-        ],
-      },
-      {
-        provider: 'openai',
-        available: !!openaiKey,
-        models: [
-          { id: 'gpt-4o', name: 'GPT-4o' },
-          { id: 'gpt-4o-mini', name: 'GPT-4o Mini' },
-          { id: 'o3-mini', name: 'o3-mini' },
-        ],
+        available: !!apiKey,
+        models,
       },
     ]
-
-    return providers
   })
 }
