@@ -1,0 +1,70 @@
+{
+  "date": "2026-04-07",
+  "messages": 53,
+  "unique_authors": 12,
+  "reactions_total": 10,
+  "attachments": 0,
+  "channel_activity": {
+    "🔸綜合討論": 5,
+    "🔸morimens-game-chat": 46,
+    "🔸chaîne-française": 1,
+    "🔸game-question": 1
+  },
+  "hourly_activity": {
+    "0": 53
+  },
+  "message_types": {
+    "0": 37,
+    "19": 16
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1490864490265317496",
+      "channel_id": "1170692781216378960",
+      "content": "damn wtf, toxic elitist angbak flexing on poor redditors",
+      "author": "arkaether",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490864265236578464",
+      "channel_id": "1170692781216378960",
+      "content": "True\nMeta players are important for non meta players\nSo we can avoid dangerous p",
+      "author": "legendaryredz",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490864741294407680",
+      "channel_id": "1170692781216378960",
+      "content": "Now I need to get 425 each tide <:cry3:1356082134447558748>",
+      "author": "angbak",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490863908825858059",
+      "channel_id": "1170692781216378960",
+      "content": "NO BRIGADE",
+      "author": "angbak",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490864113575006390",
+      "channel_id": "1170692781216378960",
+      "content": "You are meaner than me. I notice the comment too but i didnt brigade on him like",
+      "author": "2ndselna",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490864245208780932",
+      "channel_id": "1170692781216378960",
+      "content": "I new i should have dm instead of posting on discord <:dead:1356082627509092372>",
+      "author": "angbak",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}

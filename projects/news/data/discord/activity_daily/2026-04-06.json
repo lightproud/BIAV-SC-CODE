@@ -1,31 +1,37 @@
 {
   "date": "2026-04-06",
-  "messages": 14766,
+  "messages": 16082,
   "unique_authors": 269,
-  "reactions_total": 1717,
-  "attachments": 779,
+  "reactions_total": 1926,
+  "attachments": 829,
   "channel_activity": {
-    "🔸綜合討論": 1231,
+    "🔸綜合討論": 1246,
+    "🔸morimens-game-chat": 8711,
+    "🔸剧情交流": 3,
+    "🔸chaîne-française": 13,
+    "🔸русский-канал": 130,
+    "🔸canal-español": 215,
+    "🔸canal-português": 610,
+    "🔸traphase": 110,
+    "🔸lore-chat": 90,
+    "🔸team-building": 633,
+    "🔸邀请码互助┊swap-invitation-codes": 22,
+    "🔸game-question": 1503,
+    "🔸机器人命令┊bot-commands": 37,
+    "建个图楼": 18,
+    "打算開一個圖樓可能圖之後就丟這裡了": 2,
+    "我昨天卡bug了": 2,
+    "💭「Processing」Leigh STR gain possible bug": 3,
+    "Thais fan art by me": 1,
+    "BOSS COMPENDIUM": 1,
+    "V2.4.3.5 一星幻衣「旺达·钩吻葬盛」限时免费获取┊Claim the New Wanda Skin: \"With Spikenard And Myrrh\" for Free": 6,
     "🔸阵容构建": 99,
-    "🔸morimens-game-chat": 7805,
-    "🔸剧情交流": 2,
     "🔸한국어-채팅방": 98,
-    "🔸chaîne-française": 10,
-    "🔸русский-канал": 108,
     "🔸phòng-chat-tiếng-việt": 1264,
-    "🔸canal-español": 114,
-    "🔸canal-português": 605,
-    "🔸traphase": 100,
-    "🔸lore-chat": 86,
-    "🔸team-building": 616,
     "🔸general-chat": 509,
-    "🔸邀请码互助┊swap-invitation-codes": 21,
-    "🔸game-question": 1284,
     "🔸忘却前夜┊morimens-tv": 2,
-    "🔸机器人命令┊bot-commands": 35,
     "🔸erica-playground": 18,
     "很不幸地，我今天是來迫害各位眼睛而不是大腦的": 14,
-    "建个图楼": 17,
     "P Dive Karen Boss Cheating": 11,
     "把阿拉克涅的立绘改回去": 34,
     "✅「Resolved」\"Temporary Realm Mastery\" effect from Vortice's Wheel of Destiny is useless for her": 7,
@@ -47,7 +53,6 @@
     "🔸游戏问题": 2,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "Levels + enlightenment regulation option": 6,
-    "💭「Processing」Leigh STR gain possible bug": 2,
     "morimens sybau 💔": 2,
     "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 2,
     "1490699711227756574": 1,
@@ -61,16 +66,16 @@
     "English Language Setting Abnormality Issue Notice": 1,
     "Tonight or Never || Arc 2 Chapter 3": 2,
     "Leigh wip!!!!": 1,
-    "24 wip part 2": 2,
-    "V2.4.3.5 一星幻衣「旺达·钩吻葬盛」限时免费获取┊Claim the New Wanda Skin: \"With Spikenard And Myrrh\" for Free": 4
+    "24 wip part 2": 2
   },
   "hourly_activity": {
+    "22": 729,
+    "23": 650,
     "17": 873,
     "18": 665,
     "19": 707,
     "20": 848,
     "21": 579,
-    "22": 63,
     "14": 661,
     "15": 720,
     "16": 848,
@@ -90,11 +95,8 @@
     "9": 849
   },
   "message_types": {
-    "0": 2112,
-    "19": 1032,
-    "20": 1,
-    "4": 1,
-    "21": 1
+    "19": 480,
+    "0": 836
   },
   "top_reacted_messages": [
     {
@@ -120,6 +122,14 @@
       "author": "angbak",
       "reactions": 10,
       "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1490862453192654969",
+      "channel_id": "1300659662311526512",
+      "content": "que no me atrae mirian",
+      "author": "zulsoma",
+      "reactions": 9,
+      "channel": "🔸canal-español"
     },
     {
       "id": "1490531819098210334",
@@ -242,20 +252,12 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1490798527691886755",
+      "id": "1490838913919615146",
       "channel_id": "1170692781216378960",
-      "content": "i hate tank kath now",
-      "author": "monchi3524",
+      "content": "i'm going to fricking kill ghelot and strangle her in a sewer",
+      "author": "fishhazardthewizard",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490805675884941502",
-      "channel_id": "1490805675884941502",
-      "content": "drew winkle cause after i learned her lore i fell in love : D",
-      "author": "pissfaggot",
-      "reactions": 5,
-      "channel": "Winkle!"
     }
   ]
 }
