@@ -1,8 +1,8 @@
 {
   "date": "2026-04-08",
-  "archived_at": "2026-04-07T18:14:05.317941+00:00",
+  "archived_at": "2026-04-07T21:34:26.734092+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -243,6 +243,36 @@
       "review": "windows系统steam平台运行越运行越卡。肉鸽地图加角色养成，角色配队就是流派，启灵需要反复抽中才行，1到3启只需要4个同角色，但3启到4启满激活需要12个同角色。二次元抽卡游戏的弊病学了个十成十。",
       "timestamp_created": 1775415055,
       "playtime_forever": 3258
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-07T18:24:46+00:00",
+      "lang": "spanish",
+      "title": "[正面] cartas + gacha + waifus lovecraftianas bastante f2...",
+      "summary": "cartas + gacha + waifus lovecraftianas bastante f2p friendly en lo que llevo jugando",
+      "url": "https://steamcommunity.com/profiles/76561199343835410/recommended/3052450",
+      "author": "76561199343835410",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "cartas + gacha + waifus lovecraftianas bastante f2p friendly en lo que llevo jugando",
+      "timestamp_created": 1775586286,
+      "playtime_forever": 7179
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-07T17:17:25+00:00",
+      "lang": "schinese",
+      "title": "[正面] 窝趣，依托史",
+      "summary": "窝趣，依托史",
+      "url": "https://steamcommunity.com/profiles/76561199706346146/recommended/3052450",
+      "author": "76561199706346146",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "窝趣，依托史",
+      "timestamp_created": 1775582245,
+      "playtime_forever": 73196
     }
   ]
 }
