@@ -1,32 +1,52 @@
 {
   "date": "2026-04-07",
-  "messages": 4509,
+  "messages": 7807,
   "unique_authors": 191,
-  "reactions_total": 475,
-  "attachments": 214,
+  "reactions_total": 1217,
+  "attachments": 358,
   "channel_activity": {
-    "🔸綜合討論": 1547,
+    "🔸綜合討論": 1862,
+    "🔸morimens-game-chat": 3628,
+    "🔸剧情交流": 78,
+    "🔸한국어-채팅방": 186,
+    "🔸русский-канал": 12,
+    "🔸phòng-chat-tiếng-việt": 272,
+    "🔸canal-português": 54,
+    "🔸ห้องสนทนาภาษาไทย": 18,
+    "🔸traphase": 6,
+    "🔸lore-chat": 46,
+    "🔸礼包码┊gift-codes": 2,
+    "🔸team-building": 100,
+    "🔸general-chat": 194,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 962,
+    "🔸机器人命令┊bot-commands": 20,
+    "✅「已回复」这两个头像会上国际服吗": 3,
+    "我昨天卡bug了": 1,
+    "✅「已回答」媽媽孩子抱着我不肯放手": 1,
+    "✅「已回复」韩语字幕显示不全/下方显示缺失": 3,
+    "✅「Resolved」I need help everything in the game is in another language even tho I have it onEnglish": 2,
+    "💭「Processing」Miryam Revelate Devotion str/tentacle dmg gain": 2,
+    "✅「Answered」Visibility of damage effects in Traphase": 2,
+    "💭「處理中」融災紅寶石胸針數值不符": 2,
+    "✅「Answered」Prismatic Lens Caps and Ultra Turn Interaction": 3,
+    "✅「已回答」關於喚醒改動補償": 4,
+    "✅「已回答」魔術師磚造降低的力量不符文本描述": 2,
+    "💭「处理中」为啥突然改剧情名字那栏的字体啊": 2,
+    "\"24\" lives matter": 1,
+    "PICKMAN!!!!": 5,
+    "morimens sybau 💔": 14,
+    "莫非强度怎么样？": 11,
+    "想求個組隊建議": 120,
+    "New player don't really know what to pull or focus on": 7,
+    "New player - account progress direction": 5,
+    "team building for 8-13": 9,
     "🔸阵容构建": 11,
-    "🔸morimens-game-chat": 2018,
-    "🔸剧情交流": 69,
     "🔸晒卡分享": 2,
     "🔸日本語チャンネル": 1,
-    "🔸한국어-채팅방": 3,
-    "🔸русский-канал": 2,
-    "🔸phòng-chat-tiếng-việt": 210,
     "🔸canal-español": 47,
-    "🔸canal-português": 35,
     "🔸ruang-obrolan-indonesia": 5,
-    "🔸ห้องสนทนาภาษาไทย": 6,
-    "🔸traphase": 5,
-    "🔸lore-chat": 7,
-    "🔸礼包码┊gift-codes": 1,
-    "🔸team-building": 65,
-    "🔸general-chat": 121,
-    "🔸邀请码互助┊swap-invitation-codes": 9,
-    "🔸game-question": 242,
     "🔸游戏问题": 14,
-    "🔸机器人命令┊bot-commands": 8,
     "今夜不做，更待何時 || 第二篇 第三章": 1,
     "这两个头像会上国际服吗": 3,
     "游戏内开个阿拉克涅的立绘投票吧": 7,
@@ -47,29 +67,40 @@
     ":man_detective: 相位對弈：對戰表情": 2,
     "Thais fan art by me": 1,
     "Tonight or Never || Arc 2 Chapter 3": 1,
-    "morimens sybau 💔": 3,
     "V2.4.3.5 一星幻衣「旺达·钩吻葬盛」限时免费获取┊Claim the New Wanda Skin: \"With Spikenard And Myrrh\" for Free": 1,
     "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 2,
     "大佬们，图鲁怎么样？": 9,
     "求老师们帮配队ww": 10,
-    "想求個組隊建議": 1,
     "🔸chaîne-française": 1
   },
   "hourly_activity": {
+    "6": 979,
+    "7": 514,
+    "8": 646,
+    "9": 793,
+    "10": 526,
     "0": 686,
     "1": 539,
     "2": 862,
     "3": 655,
     "4": 725,
-    "5": 882,
-    "6": 160
+    "5": 882
   },
   "message_types": {
-    "0": 3263,
-    "19": 1183,
-    "4": 10
+    "19": 962,
+    "0": 2321,
+    "20": 1,
+    "4": 14
   },
   "top_reacted_messages": [
+    {
+      "id": "1490966533953028127",
+      "channel_id": "1355094251775459399",
+      "content": "🎁 DC 39000守密人达成礼 / DC 39000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码",
+      "author": "morimensstaff06",
+      "reactions": 435,
+      "channel": "🔸礼包码┊gift-codes"
+    },
     {
       "id": "1490916045228343296",
       "channel_id": "1355094251775459399",
@@ -79,11 +110,51 @@
       "channel": "🔸礼包码┊gift-codes"
     },
     {
+      "id": "1490964083753750580",
+      "channel_id": "1490964083753750580",
+      "content": "i yarn for him i love him i whale him my boy!!",
+      "author": "zzumaso",
+      "reactions": 12,
+      "channel": "PICKMAN!!!!"
+    },
+    {
+      "id": "1490967109801476117",
+      "channel_id": "1487111853652840448",
+      "content": "EVERYONE gets a piece of the ramona stocks !!! <:ramona_tuff_:144142663042046775",
+      "author": "glitzy_x",
+      "reactions": 8,
+      "channel": "morimens sybau 💔"
+    },
+    {
       "id": "1490908455614025830",
       "channel_id": "1131839817982947429",
       "content": "🍪 🧑‍🍳 我先去做餅了、大概需要兩週",
       "author": "morimensstaff06",
       "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1491021286967738530",
+      "channel_id": "1170692781216378960",
+      "content": "Pretty big \"if\" if you ask me, especially for a new player <:karen_Feelguilty:14",
+      "author": "legendaryredz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491023670104166410",
+      "channel_id": "1170692781216378960",
+      "content": "84 days 425",
+      "author": "yy42974466",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1490965812683739189",
+      "channel_id": "1131839817982947429",
+      "content": "眼球打完了",
+      "author": "danny7766",
+      "reactions": 5,
       "channel": "🔸綜合討論"
     },
     {
@@ -100,6 +171,22 @@
       "content": "",
       "author": "arkaether",
       "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491006139742294097",
+      "channel_id": "1170692781216378960",
+      "content": "You forgot the devs love edging their player",
+      "author": "moyashi0672",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491021681500749855",
+      "channel_id": "1170692781216378960",
+      "content": "Ok, so I should just do Blade/Land of Nonexistence?",
+      "author": "masiakasaurusofwar",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -151,82 +238,18 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1490885602961264710",
-      "channel_id": "1131839817982947429",
+      "id": "1490961370999558174",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "akalanden",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490890997599830157",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490898894681542666",
-      "channel_id": "1131839817982947429",
-      "content": "我們直接人偶專武雙持",
-      "author": "navirecorbeau",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490933834995204136",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1490868129331413012",
-      "channel_id": "1170692781216378960",
-      "content": "why do they let you do 50? i want this thing to be off my account",
-      "author": "monchi3524",
+      "author": "arkaether",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1490868649928425724",
+      "id": "1490966689641398293",
       "channel_id": "1170692781216378960",
-      "content": "for the record guys. Frost didnt use caecus either",
-      "author": "monchi3524",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490883789600325632",
-      "channel_id": "1170692781216378960",
-      "content": "Lens too whale can’t recognize F2P posse",
-      "author": "frosthief",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490907805396373504",
-      "channel_id": "1170692781216378960",
-      "content": "Morning chat",
-      "author": "husontang",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490908234553495663",
-      "channel_id": "1170692781216378960",
-      "content": "I wasn't expecting to pull a gripper today",
-      "author": "lighteveningdawn",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1490915999552376832",
-      "channel_id": "1170692781216378960",
-      "content": "No, it's actually\n\nISavedMorimens",
-      "author": "enumaellis",
+      "content": "Damn the game really is growing huh",
+      "author": "megidola.",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }
