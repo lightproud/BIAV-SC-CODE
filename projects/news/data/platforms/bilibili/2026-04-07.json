@@ -1,8 +1,8 @@
 {
   "date": "2026-04-07",
-  "archived_at": "2026-04-07T10:40:41.563891+00:00",
+  "archived_at": "2026-04-07T15:02:14.275249+00:00",
   "source": "bilibili",
-  "item_count": 27,
+  "item_count": 28,
   "items": [
     {
       "source": "bilibili",
@@ -85,6 +85,24 @@
       "engagement": 287,
       "media_url": "//i0.hdslb.com/bfs/archive/46b1d5165f23f976094c33a5056312dcd9cc1352.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-07T13:07:20+00:00",
+      "lang": "",
+      "title": "其实你已经看了一分钟了⚠⚠⚠⚠",
+      "summary": "-\n  └ Aki映秋 (2赞): 好看喵韩老师\n  └ 星辉闪曜 (1赞): 第一位[喜欢]\n  └ 宅无止境丶 (0赞): [打call][打call]好看好看",
+      "url": "https://www.bilibili.com/video/BV1xMDqBgEcD",
+      "author": "韩瑜瑾",
+      "engagement": 266,
+      "media_url": "https://i0.hdslb.com/bfs/archive/15ced49e526b1b37e8dd09f9da0390cb3459c1bc.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 261,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",

@@ -1,16 +1,15 @@
 # 忘却前夜 社区日报 2026-04-07
 
-> 采集时间：2026-04-07 18:40 UTC+8
+> 采集时间：2026-04-07 23:02 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] Saya no uta edit — engagement: 30
-2. [Bilibili] 【粗燥音/remix】舒适噪音实验-沙耶の唄 — engagement: 18
-3. [Steam] [负面] 玩之前看到评论区有沙耶。因为我玩沙耶时，感觉沙耶之歌愧对神作的评价，完全就是小孩子写的“感天动地伟大... — engagement: 0
-4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
-6. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-7. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+1. [Bilibili] 【粗燥音/remix】舒适噪音实验-沙耶の唄 — engagement: 74
+2. [Bilibili] Saya no uta edit — engagement: 40
+3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+5. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+6. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 
 ## 总览
 
@@ -19,7 +18,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 16 |
+| Bilibili | 11 |
 | DCInside | 0（沉默）|
 | Discord | 16 |
 | 抖音 | 0（沉默）|
@@ -41,9 +40,9 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 18 |
+| Reddit | 20 |
 | Ruliweb | 0（沉默）|
-| Steam | 6 |
+| Steam | 4 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -61,50 +60,40 @@
 | YouTube | 36 |
 | 知乎 | 0（沉默）|
 
-## ⚠️ 需要关注
-
-- ⚠️ Steam好评率异常：67%
-
 ## Discord
 
-今日 4,509 条消息，191 位活跃用户，475 次反应。热门频道：🔸morimens-game-chat(2018)、🔸綜合討論(1547)、🔸game-question(242)、🔸phòng-chat-tiếng-việt(210)、🔸general-chat(121)
+今日 7,807 条消息，191 位活跃用户，1,217 次反应。热门频道：🔸morimens-game-chat(3628)、🔸綜合討論(1862)、🔸game-question(962)、🔸phòng-chat-tiếng-việt(272)、🔸general-chat(194)
 
 ### 热门话题
 
-1. [DC] morimensstaff06@🔸礼包码┊gift-codes: 为了让更多新入学的守密人们能领取到这份奖励， — engagement: 125
-2. [DC] yy42974466@🔸綜合討論: (附件/嵌入) — engagement: 22
-3. [DC] morimensstaff06@🔸綜合討論: 🍪 🧑‍🍳 我先去做餅了、大概需要兩週 — engagement: 21
-4. [DC] arkaether@🔸morimens-game-chat: (附件/嵌入) — engagement: 18
-5. [DC] frosthief@🔸morimens-game-chat: “Wait does she force my  — engagement: 18
+1. [DC] morimensstaff06@🔸礼包码┊gift-codes: 🎁 DC 39000守密人达成礼 / DC  — engagement: 1309
+2. [DC] morimensstaff06@🔸礼包码┊gift-codes: 为了让更多新入学的守密人们能领取到这份奖励， — engagement: 127
+3. [DC] zzumaso@🔸art-and-memes: i yarn for him i love him i wha — engagement: 37
+4. [DC] glitzy_x@🔸art-and-memes: EVERYONE gets a piece of the r — engagement: 26
+5. [DC] yy42974466@🔸綜合討論: (附件/嵌入) — engagement: 22
 
 ## Steam 评论
 
-- 好评 4 / 差评 2 / 好评率 67%
-- 语言分布：schinese 2, koreana 2, russian 1, english 1
+- 好评 3 / 差评 1 / 好评率 75%
+- 语言分布：koreana 2, schinese 1, russian 1
 
 ### 热门好评
 
-1. [正面] Игра хорошая и затягивающая) Моментами даже хоррор... — engagement: 0
-2. [正面] "했어.. 정말 내가 했어.." — engagement: 0
-3. [正面] Probably the best lovecraftian game of all time in... — engagement: 0
-4. [正面] 장점
-매력적인 캐릭터
-흡인력 있는 스토리
-번역체를 뚫고 나오는 필력
-개성 있는 고퀄리티 아... — engagement: 0
+1. [正面] 갓겜입니다 — engagement: 0
+2. [正面] Игра хорошая и затягивающая) Моментами даже хоррор... — engagement: 0
+3. [正面] "했어.. 정말 내가 했어.." — engagement: 0
 
 ### ⚠️ 差评
 
 - ⚠️ [schinese] 打一关主线才给一抽 还是常驻池的 原神扣扣嗖嗖的起码还给点原石 这体力也是回的死慢 别的二游睡一觉差不多快回满了这游戏才差不多一半 也就周年庆能入入了 — engagement: 0
-- ⚠️ [schinese] 玩之前看到评论区有沙耶。因为我玩沙耶时，感觉沙耶之歌愧对神作的评价，完全就是小孩子写的“感天动地伟大爱情故事”，所以对这款游戏期望值不高。没想到玩起来居然还能失 — engagement: 0
 
 ## Bilibili
 
-1. 【忘却前夜】总回合107解决容灾425……，谁是内鬼……谁是阴间…… — engagement: 418
-2. 【忘却前夜】总回合107解决容灾425……，谁是内鬼……谁是阴间…… — engagement: 414
-3. 萌新第一次400达成 — engagement: 263
-4. 萌新第一次400达成 — engagement: 245
-5. [忘却前夜]这集拉了 — engagement: 187
+1. 锐评令我印象最深刻的9部galgame — engagement: 848
+2. 【忘却前夜】总回合107解决容灾425……，谁是内鬼……谁是阴间…… — engagement: 460
+3. 【忘却前夜】总回合107解决容灾425……，谁是内鬼……谁是阴间…… — engagement: 456
+4. ［相位］养 成 系 大 女 主 — engagement: 428
+5. ［相位］养 成 系 大 女 主 — engagement: 426
 
 ## Gamerch Wiki
 
@@ -118,9 +107,9 @@
 
 1. New code: RCSV-DPLV-KQPP — engagement: 0
 2. YouSavedMorimens- again — engagement: 0
-3. Almost out of wheel jail — engagement: 0
-4. Thais, merciful mother [by me] — engagement: 0
-5. New code from Discord — engagement: 0
+3. Aequor Symbiosis mistranslated - actually increases base Ten — engagement: 0
+4. Arachne will be poison — engagement: 0
+5. Almost out of wheel jail — engagement: 0
 
 ## StopGame.ru
 
@@ -140,11 +129,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 280124
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40353
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38279
-4. Morimens Basic Mechanics and Account Progression Guide — engagement: 31145
-5. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18615
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 280261
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40362
+3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38281
+4. Morimens Basic Mechanics and Account Progression Guide — engagement: 31153
+5. This Gacha Game Is a Nightmare You Can’t Wake Up From — engagement: 24555
 
 ## 沉默平台
 
