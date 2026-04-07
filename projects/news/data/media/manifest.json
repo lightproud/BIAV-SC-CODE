@@ -671,6 +671,34 @@
       "title": "saya",
       "time": "2026-04-07T16:27:17+00:00",
       "downloaded_at": "2026-04-07T21:34:26.678065+00:00"
+    },
+    "https://i.ytimg.com/vi/9iwsS5TOvmg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCAOdXUUiNe-yCWNuwXaUIpGof0zg": {
+      "filename": "youtube_5facfe37c5499a9c.jpg",
+      "source": "youtube",
+      "title": "Why I fell in love with this card-based gacha game",
+      "time": "2026-04-07T23:56:33.901794+00:00",
+      "downloaded_at": "2026-04-07T23:59:29.188762+00:00"
+    },
+    "https://i.ytimg.com/vi/5bo7iFeZSfE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACqjIIndKN1b3IEf0RZ2_DwAewPw": {
+      "filename": "youtube_8ae02d3a0e780580.jpg",
+      "source": "youtube",
+      "title": "【忘卻前夜】隊伍太多了！多給恆燐幾分鐘 我們來好好聊聊羊媽的隊伍推薦",
+      "time": "2026-04-07T23:56:34.464653+00:00",
+      "downloaded_at": "2026-04-07T23:59:29.594828+00:00"
+    },
+    "https://i.ytimg.com/vi/Ox20uoC5Rlo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnwdYDinb9-epertCk_PkUZW9DxA": {
+      "filename": "youtube_eade74cab06690a8.jpg",
+      "source": "youtube",
+      "title": "【忘卻前夜】神國彌一刀 Arc2.H3-10葬骸之主 三星 Lemuria Miryam one punch #morimens",
+      "time": "2026-04-07T23:56:34.464577+00:00",
+      "downloaded_at": "2026-04-07T23:59:30.101903+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/cf588c28bb4eea697c20c43c3a672b7585bd4db0.jpg": {
+      "filename": "bilibili_a0149df32f3afc3f.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 据说是图鲁C 癫狂深潜",
+      "time": "2026-04-07T12:27:09+00:00",
+      "downloaded_at": "2026-04-07T23:59:31.239271+00:00"
     }
   },
   "failed": {
@@ -868,6 +896,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-07T18:14:05.264736+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/cf588c28bb4eea697c20c43c3a672b7585bd4db0.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-07T23:59:31.540065+00:00"
+    },
+    "https://preview.redd.it/by5jcccdsutg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=3be8d3afd236e3b4e5797fd2ba17c1d0766039bc": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-07T23:59:31.947360+00:00"
+    },
+    "https://preview.redd.it/zcg88n0ysutg1.png?width=140&amp;height=98&amp;auto=webp&amp;s=104813027fc79959400ed77218b1d9c2fb68992d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-07T23:59:32.279287+00:00"
+    },
+    "https://preview.redd.it/0jvvpc5fdutg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=b4785c16cbdae2f225b6197ec0c652d15ec93a7c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-07T23:59:32.610703+00:00"
     }
   },
   "archived": []
