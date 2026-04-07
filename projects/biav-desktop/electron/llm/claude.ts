@@ -40,6 +40,7 @@ interface ClaudeOptions {
   messages: { role: string; content: any }[]
   model: string
   apiKey: string
+  baseUrl?: string
   systemPrompt?: string
   signal?: AbortSignal
   temperature?: number
@@ -49,7 +50,11 @@ interface ClaudeOptions {
 }
 
 export async function* streamClaude(opts: ClaudeOptions): AsyncGenerator<StreamChunk> {
-  const client = new Anthropic({ apiKey: opts.apiKey })
+  const clientOpts: { apiKey: string; baseURL?: string } = { apiKey: opts.apiKey }
+  if (opts.baseUrl) {
+    clientOpts.baseURL = opts.baseUrl
+  }
+  const client = new Anthropic(clientOpts)
 
   const useThinking = opts.enableThinking && supportsThinking(opts.model)
 

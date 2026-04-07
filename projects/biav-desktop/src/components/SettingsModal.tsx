@@ -8,9 +8,9 @@ interface Props {
 
 export default function SettingsModal({ onClose }: Props) {
   const [settings, setSettings] = useState<Settings>({
-    anthropic_api_key: '',
-    openai_api_key: '',
-    openai_base_url: '',
+    api_key: '',
+    api_base_url: '',
+    model_list: '',
   })
   const [saving, setSaving] = useState(false)
   const { locale, setLocale, supportedLocales } = useLocale()
@@ -31,16 +31,16 @@ export default function SettingsModal({ onClose }: Props) {
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={onClose}>
       <div
-        className="w-[480px] bg-biav-surface border border-biav-border rounded-2xl shadow-2xl"
+        className="w-[500px] bg-biav-surface border border-biav-border rounded-xl shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-biav-border">
           <h2 className="font-serif text-biav-gold-bright text-lg">设置</h2>
-          <button onClick={onClose} className="text-biav-muted hover:text-biav-text">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <button onClick={onClose} className="p-1 rounded-md text-biav-muted hover:text-biav-text hover:bg-biav-border/40 transition-colors">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
           </button>
@@ -64,26 +64,50 @@ export default function SettingsModal({ onClose }: Props) {
             </select>
           </div>
 
-          <Field
-            label="Anthropic API Key"
-            value={settings.anthropic_api_key}
-            onChange={(v) => handleChange('anthropic_api_key', v)}
-            placeholder="sk-ant-..."
-            secret
-          />
-          <Field
-            label="OpenAI API Key"
-            value={settings.openai_api_key}
-            onChange={(v) => handleChange('openai_api_key', v)}
-            placeholder="sk-..."
-            secret
-          />
-          <Field
-            label="OpenAI Base URL (可选)"
-            value={settings.openai_base_url}
-            onChange={(v) => handleChange('openai_base_url', v)}
-            placeholder="https://api.openai.com/v1"
-          />
+          {/* API Key */}
+          <div>
+            <label className="block text-xs text-biav-muted mb-1.5">API Key</label>
+            <input
+              type="password"
+              value={settings.api_key}
+              onChange={(e) => handleChange('api_key', e.target.value)}
+              placeholder="sk-ant-..."
+              className="w-full bg-biav-bg border border-biav-border rounded-lg px-3 py-2 text-sm text-biav-text placeholder-biav-muted/50 focus:outline-none focus:border-biav-gold-dim transition-colors font-mono"
+            />
+          </div>
+
+          {/* API Base URL */}
+          <div>
+            <label className="block text-xs text-biav-muted mb-1.5">
+              API 地址
+              <span className="text-biav-muted/60 ml-1">（留空使用默认）</span>
+            </label>
+            <input
+              type="text"
+              value={settings.api_base_url}
+              onChange={(e) => handleChange('api_base_url', e.target.value)}
+              placeholder="https://api.anthropic.com"
+              className="w-full bg-biav-bg border border-biav-border rounded-lg px-3 py-2 text-sm text-biav-text placeholder-biav-muted/50 focus:outline-none focus:border-biav-gold-dim transition-colors font-mono"
+            />
+          </div>
+
+          {/* Model List */}
+          <div>
+            <label className="block text-xs text-biav-muted mb-1.5">
+              模型列表
+              <span className="text-biav-muted/60 ml-1">（逗号分隔）</span>
+            </label>
+            <textarea
+              value={settings.model_list}
+              onChange={(e) => handleChange('model_list', e.target.value)}
+              placeholder="claude-sonnet-4-20250514, claude-opus-4-20250514, claude-haiku-4-20250506"
+              rows={3}
+              className="w-full bg-biav-bg border border-biav-border rounded-lg px-3 py-2 text-sm text-biav-text placeholder-biav-muted/50 focus:outline-none focus:border-biav-gold-dim transition-colors font-mono resize-none"
+            />
+            <p className="text-[10px] text-biav-muted mt-1">
+              输入模型 ID，用逗号分隔。保存后模型选择器会自动更新。
+            </p>
+          </div>
         </div>
 
         {/* Footer */}
@@ -103,33 +127,6 @@ export default function SettingsModal({ onClose }: Props) {
           </button>
         </div>
       </div>
-    </div>
-  )
-}
-
-function Field({
-  label,
-  value,
-  onChange,
-  placeholder,
-  secret,
-}: {
-  label: string
-  value: string
-  onChange: (v: string) => void
-  placeholder?: string
-  secret?: boolean
-}) {
-  return (
-    <div>
-      <label className="block text-xs text-biav-muted mb-1.5">{label}</label>
-      <input
-        type={secret ? 'password' : 'text'}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="w-full bg-biav-bg border border-biav-border rounded-lg px-3 py-2 text-sm text-biav-text placeholder-biav-muted/50 focus:outline-none focus:border-biav-gold-dim transition-colors"
-      />
     </div>
   )
 }

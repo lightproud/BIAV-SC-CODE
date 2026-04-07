@@ -1,4 +1,4 @@
-export type LLMProvider = 'claude' | 'openai'
+export type LLMProvider = 'claude'
 
 export interface ModelParams {
   temperature: number
@@ -80,9 +80,9 @@ export interface SessionUsage {
 }
 
 export interface Settings {
-  anthropic_api_key: string
-  openai_api_key: string
-  openai_base_url: string
+  api_key: string
+  api_base_url: string
+  model_list: string  // comma-separated model IDs, e.g. "claude-sonnet-4-20250514,claude-opus-4-20250514"
 }
 
 // Style types

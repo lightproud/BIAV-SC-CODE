@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useMemo, useCallback, type ReactElement } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { useChat } from './hooks/useChat'
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts'
 import { useTheme } from './hooks/useTheme'
@@ -10,22 +10,20 @@ import ModelSelector from './components/ModelSelector'
 import SettingsModal from './components/SettingsModal'
 import AboutModal from './components/AboutModal'
 import ShortcutsModal from './components/ShortcutsModal'
-import ExportMenu from './components/ExportMenu'
 import UpdateNotice from './components/UpdateNotice'
 import WelcomeScreen from './components/WelcomeScreen'
 import ArtifactsPanel from './components/ArtifactsPanel'
-import SystemPromptEditor from './components/SystemPromptEditor'
 import { Virtuoso, type VirtuosoHandle } from 'react-virtuoso'
 import { parseArtifacts } from './lib/parseArtifacts'
 import ProjectEditor from './components/ProjectEditor'
 import UsageBar, { SessionUsageBar } from './components/UsageBar'
 import StreamingStatus from './components/StreamingStatus'
-import ClipboardHistory from './components/ClipboardHistory'
 import ModelParamsPanel from './components/ModelParams'
 import ToolApproval from './components/ToolApproval'
 import ToolResult from './components/ToolResult'
-import StyleSelector from './components/StyleSelector'
-import type { Conversation, Project, ProviderStatus, Attachment, Artifact, ModelParams, Style } from './types'
+import ToolbarOverflowMenu from './components/ToolbarOverflowMenu'
+import ClipboardHistory from './components/ClipboardHistory'
+import type { Conversation, Project, ProviderStatus, Attachment, Artifact, ModelParams } from './types'
 
 export default function App() {
   const {
@@ -56,11 +54,12 @@ export default function App() {
   const [providers, setProviders] = useState<ProviderStatus[]>([])
   const [showProjectEditor, setShowProjectEditor] = useState(false)
   const [editingProject, setEditingProject] = useState<Project | null>(null)
-  const [provider, setProvider] = useState('claude')
+  const [provider] = useState('claude')
   const [model, setModel] = useState('claude-sonnet-4-20250514')
   const [showSettings, setShowSettings] = useState(false)
   const [showShortcuts, setShowShortcuts] = useState(false)
   const [showAbout, setShowAbout] = useState(false)
+  const [showClipboard, setShowClipboard] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [artifacts, setArtifacts] = useState<Artifact[]>([])
   const [showArtifacts, setShowArtifacts] = useState(false)
@@ -68,8 +67,6 @@ export default function App() {
   const [attachments, setAttachments] = useState<Attachment[]>([])
   const [modelParams, setModelParams] = useState<ModelParams>({ temperature: 1.0, maxTokens: 8192 })
   const [enableThinking, setEnableThinking] = useState(false)
-  const [styles, setStyles] = useState<Style[]>([])
-  const [activeStyleId, setActiveStyleId] = useState<string | null>(null)
   const virtuosoRef = useRef<VirtuosoHandle>(null)
 
   // Global keyboard shortcuts
@@ -86,7 +83,6 @@ export default function App() {
     refreshConversations()
     refreshProjects()
     refreshModels()
-    refreshStyles()
   }, [])
 
   // Build the virtual list items: messages + tool events + optional streaming message + optional usage bar
@@ -172,11 +168,6 @@ export default function App() {
     setProviders(list)
   }
 
-  async function refreshStyles() {
-    const list = await window.biav.listStyles()
-    setStyles(list)
-  }
-
   async function handleDeleteConversation(id: string) {
     await window.biav.deleteConversation(id)
     if (conversationId === id) resetChat()
@@ -215,8 +206,7 @@ export default function App() {
     refreshConversations()
   }
 
-  function handleSelectModel(p: string, m: string) {
-    setProvider(p)
+  function handleSelectModel(_p: string, m: string) {
     setModel(m)
   }
 
@@ -278,62 +268,53 @@ export default function App() {
 
       {/* Main */}
       <div className="flex flex-1 flex-col min-w-0">
-        {/* Titlebar */}
-        <div className={`titlebar-drag flex items-center gap-2 border-b border-biav-border px-4 h-12 shrink-0 ${isMac ? 'pl-20' : 'pr-36'}`}>
+        {/* Titlebar - thin, clean toolbar */}
+        <div className={`titlebar-drag flex items-center gap-1 border-b border-biav-border px-3 h-11 shrink-0 ${isMac ? 'pl-20' : ''} ${!isMac ? 'pr-[140px]' : ''}`}>
+          {/* Sidebar toggle */}
           <button
-            className="titlebar-no-drag p-1 rounded hover:bg-biav-border text-biav-muted"
+            className="titlebar-no-drag p-1.5 rounded-md hover:bg-biav-border/60 text-biav-muted hover:text-biav-text transition-colors"
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            title="切换侧边栏"
+            title="切换侧边�?
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M3 12h18M3 6h18M3 18h18" />
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {sidebarOpen ? (
+                <><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18" /></>
+              ) : (
+                <path d="M3 12h18M3 6h18M3 18h18" />
+              )}
             </svg>
           </button>
-          <div className="flex-1" />
+
+          {/* Center spacer - this is the main drag area */}
+          <div className="flex-1 min-w-0" />
+
+          {/* Right side - only essential actions */}
           {artifacts.length > 0 && (
             <button
-              className={`titlebar-no-drag p-1 rounded hover:bg-biav-border transition-colors ${showArtifacts ? 'text-biav-gold' : 'text-biav-muted'}`}
+              className={`titlebar-no-drag p-1.5 rounded-md transition-colors ${showArtifacts ? 'text-biav-gold bg-biav-gold/10' : 'text-biav-muted hover:text-biav-text hover:bg-biav-border/60'}`}
               onClick={() => setShowArtifacts(!showArtifacts)}
-              title="切换 Artifacts 面板"
+              title="Artifacts"
             >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <rect x="3" y="3" width="7" height="7" rx="1" />
                 <rect x="14" y="3" width="7" height="7" rx="1" />
                 <rect x="3" y="14" width="7" height="7" rx="1" />
                 <rect x="14" y="14" width="7" height="7" rx="1" />
               </svg>
+              {artifacts.length > 1 && (
+                <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 rounded-full bg-biav-gold text-[9px] text-biav-bg flex items-center justify-center font-medium">
+                  {artifacts.length}
+                </span>
+              )}
             </button>
           )}
-          <ClipboardHistory />
-          <SystemPromptEditor
+
+          {/* Overflow menu for secondary tools */}
+          <ToolbarOverflowMenu
             conversationId={conversationId}
             systemPrompt={systemPrompt}
             onSystemPromptChange={handleSystemPromptChange}
-          />
-          <ExportMenu conversationId={conversationId} />
-          {/* Thinking toggle - only show for Claude models */}
-          {provider === 'claude' && (
-            <button
-              className={`titlebar-no-drag p-1 rounded hover:bg-biav-border transition-colors ${enableThinking ? 'text-biav-gold' : 'text-biav-muted'}`}
-              onClick={() => setEnableThinking(!enableThinking)}
-              title={enableThinking ? '深度思考已开启' : '深度思考已关闭'}
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2a7 7 0 0 0-7 7c0 3 2 5.5 4 7.5.5.5 1 1.5 1 2.5h4c0-1 .5-2 1-2.5 2-2 4-4.5 4-7.5a7 7 0 0 0-7-7z" />
-                <path d="M9 22h6" />
-                <path d="M10 19h4" />
-              </svg>
-            </button>
-          )}
-          <ModelParamsPanel
-            params={modelParams}
-            onChange={setModelParams}
-          />
-          <ModelSelector
-            providers={providers}
-            provider={provider}
-            model={model}
-            onSelect={handleSelectModel}
+            onOpenClipboard={() => setShowClipboard(true)}
           />
         </div>
 
@@ -420,6 +401,40 @@ export default function App() {
             onAttachmentsChange={setAttachments}
           />
         </DropZone>
+
+        {/* Bottom status bar */}
+        <div className="flex items-center gap-2 border-t border-biav-border px-3 h-8 shrink-0 text-xs select-none">
+          {/* Left: thinking toggle + model params */}
+          <div className="flex items-center gap-1">
+            {provider === 'claude' && (
+              <button
+                className={`flex items-center gap-1 px-1.5 py-0.5 rounded transition-colors ${enableThinking ? 'text-biav-gold bg-biav-gold/10' : 'text-biav-muted hover:text-biav-text hover:bg-biav-border/60'}`}
+                onClick={() => setEnableThinking(!enableThinking)}
+                title={enableThinking ? '深度思考已开�? : '深度思考已关闭'}
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2a7 7 0 0 0-7 7c0 3 2 5.5 4 7.5.5.5 1 1.5 1 2.5h4c0-1 .5-2 1-2.5 2-2 4-4.5 4-7.5a7 7 0 0 0-7-7z" />
+                  <path d="M9 22h6" />
+                </svg>
+                <span>思�?/span>
+              </button>
+            )}
+            <ModelParamsPanel
+              params={modelParams}
+              onChange={setModelParams}
+            />
+          </div>
+
+          <div className="flex-1" />
+
+          {/* Right: model selector */}
+          <ModelSelector
+            providers={providers}
+            provider={provider}
+            model={model}
+            onSelect={handleSelectModel}
+          />
+        </div>
       </div>
 
       {/* Artifacts Panel */}
@@ -451,6 +466,11 @@ export default function App() {
       {/* About Modal */}
       {showAbout && (
         <AboutModal onClose={() => setShowAbout(false)} />
+      )}
+
+      {/* Clipboard History Modal */}
+      {showClipboard && (
+        <ClipboardHistory onClose={() => setShowClipboard(false)} />
       )}
 
       {/* Project Editor Modal */}
