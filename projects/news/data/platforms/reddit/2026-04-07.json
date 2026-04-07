@@ -1,8 +1,8 @@
 {
   "date": "2026-04-07",
-  "archived_at": "2026-04-07T10:40:41.564831+00:00",
+  "archived_at": "2026-04-07T15:02:14.276230+00:00",
   "source": "reddit",
-  "item_count": 18,
+  "item_count": 20,
   "items": [
     {
       "source": "reddit",
@@ -260,6 +260,34 @@
       "url": "https://www.reddit.com/r/gachagaming/comments/1semmfa/morimens_devs_made_an_oopsie_with_100_free/",
       "author": "u//u/Angbak94",
       "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-07T12:20:31+00:00",
+      "lang": "",
+      "title": "Aequor Symbiosis mistranslated - actually increases base Tentacle Damage by 1% maxHP per chaos awakener, not .01%",
+      "summary": "&#32; submitted by &#32;  /u/parmreggiano   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1seud74/aequor_symbiosis_mistranslated_actually_increases/",
+      "author": "/u/parmreggiano",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/l2u1yq6igrtg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=16722ec2514b050d3e9d0d14d3492b90c7a63bb9",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-07T12:35:16+00:00",
+      "lang": "",
+      "title": "Arachne will be poison",
+      "summary": "here&#39;s why   Gdoll, Daff, Miryam, Lilly got reruns back to back and they spell out every limited poison comp. A sign that these comps will be power crept by Arachne therefore biav is rerunning them whilst they still have rerun value (minus Miryam) Arachne is from greek mythology about a spider and spiders are poisonous  Xu  take this speculation with some salt though.  &#32; submitted by &#32;  /u/HlLlGHT   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1seuphc/arachne_will_be_poison/",
+      "author": "/u/HlLlGHT",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
     }
   ]
 }
