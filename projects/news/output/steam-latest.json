@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-04-06T17:36:00.167669+00:00",
+  "collected_at": "2026-04-07T00:07:47.318523+00:00",
   "source": "steam",
-  "item_count": 17,
+  "item_count": 19,
   "items": [
     {
       "source": "steam",
@@ -16,7 +16,7 @@
       "voted_up": true,
       "review": "上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好 \nPVE 算力构筑 对的上xp的 一玩就是天亮了系列\n送的和活动给的资源非常多， 主线做做 活动玩玩 ，不氪金游戏自带送的4小只强度很高 搭配很灵活配队不死绑，自由度非常高 ，0氪就能全破 能体验到游戏所有内容，有点追求的 氪完双倍就能爽玩\nPVP 对战 纯公平 良心卡牌竞技 ，现在这样的二游卡牌 PVP",
       "timestamp_created": 1775380027,
-      "playtime_forever": 4140
+      "playtime_forever": 4170
     },
     {
       "source": "steam",
@@ -35,18 +35,48 @@
     },
     {
       "source": "steam",
-      "time": "2026-04-04T18:39:13+00:00",
+      "time": "2026-04-06T18:43:31+00:00",
+      "lang": "russian",
+      "title": "[正面] Игра хорошая и затягивающая) Моментами даже хоррор...",
+      "summary": "Игра хорошая и затягивающая) Моментами даже хоррорец есть из-за фоновой музыки и звуковых эффектов пх",
+      "url": "https://steamcommunity.com/profiles/76561199525324685/recommended/3052450",
+      "author": "76561199525324685",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Игра хорошая и затягивающая) Моментами даже хоррорец есть из-за фоновой музыки и звуковых эффектов пх",
+      "timestamp_created": 1775501011,
+      "playtime_forever": 777
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T17:08:51+00:00",
+      "lang": "koreana",
+      "title": "[正面] \"했어.. 정말 내가 했어..\"",
+      "summary": "\"했어.. 정말 내가 했어..\"",
+      "url": "https://steamcommunity.com/profiles/76561198346795851/recommended/3052450",
+      "author": "76561198346795851",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "\"했어.. 정말 내가 했어..\"",
+      "timestamp_created": 1775495331,
+      "playtime_forever": 3898
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-06T14:16:41+00:00",
       "lang": "english",
-      "title": "[正面] Just sitting in my hideout menu hits me hard in th...",
-      "summary": "Just sitting in my hideout menu hits me hard in the nostalgia melancholy feels with that absolutely gorgeous music..\n\nAs I start the next mission a new soul-crushingly beautiful little tune plays and",
-      "url": "https://steamcommunity.com/profiles/76561198147284913/recommended/3052450",
-      "author": "76561198147284913",
-      "engagement": 1,
+      "title": "[正面] Probably the best lovecraftian game of all time in...",
+      "summary": "Probably the best lovecraftian game of all time in terms of story and art. And the gatcha system didn't really get in the way at all. The only major flaw is probably the lack of CV for story modes. Hi",
+      "url": "https://steamcommunity.com/profiles/76561199864530344/recommended/3052450",
+      "author": "76561199864530344",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "Just sitting in my hideout menu hits me hard in the nostalgia melancholy feels with that absolutely gorgeous music..\n\nAs I start the next mission a new soul-crushingly beautiful little tune plays and",
-      "timestamp_created": 1775327953,
-      "playtime_forever": 2696
+      "review": "Probably the best lovecraftian game of all time in terms of story and art. And the gatcha system didn't really get in the way at all. The only major flaw is probably the lack of CV for story modes. Hi",
+      "timestamp_created": 1775485001,
+      "playtime_forever": 527
     },
     {
       "source": "steam",
@@ -91,7 +121,7 @@
       "voted_up": true,
       "review": "I am really liking the game so far!\r\n\r\nThe art is beautiful, the story is interesting and the characters are just <3\r\nThe gacha isnt bad at all and I dont feel the need to throw money to get a charact",
       "timestamp_created": 1775470277,
-      "playtime_forever": 623
+      "playtime_forever": 805
     },
     {
       "source": "steam",
@@ -151,7 +181,7 @@
       "voted_up": true,
       "review": "Who made this game?",
       "timestamp_created": 1775438969,
-      "playtime_forever": 2590
+      "playtime_forever": 2710
     },
     {
       "source": "steam",
@@ -256,7 +286,7 @@
       "voted_up": true,
       "review": "Gorgeous game with an amazing story direction. Have been playing it almost nonstop for some months now on steam and my phone and couldn't be happier with it! I play a lot of games with the gacha eleme",
       "timestamp_created": 1775384826,
-      "playtime_forever": 4451
+      "playtime_forever": 4585
     }
   ]
 }

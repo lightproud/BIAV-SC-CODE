@@ -37,6 +37,7 @@ TODAY = date.today()
 
 KNOWLEDGE_GLOBS = [
     "memory/*.md",
+    "memory/*.json",
     "assets/data/*.json",
     "assets/data/*.md",
     "projects/*/CONTEXT.md",

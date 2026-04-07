@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-07
 
-> 采集时间：2026-04-07 01:36 UTC+8
+> 采集时间：2026-04-07 08:07 UTC+8
 
 ## 🔥 联动动态
 
@@ -41,7 +41,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 0（沉默）|
 | Ruliweb | 0（沉默）|
-| Steam | 9 |
+| Steam | 10 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -61,7 +61,7 @@
 
 ## Discord
 
-今日 8,969 条消息，269 位活跃用户，1,058 次反应。热门频道：🔸morimens-game-chat(5000)、🔸game-question(835)、🔸綜合討論(689)、🔸phòng-chat-tiếng-việt(641)、🔸canal-português(598)
+今日 14,766 条消息，269 位活跃用户，1,717 次反应。热门频道：🔸morimens-game-chat(7805)、🔸game-question(1284)、🔸phòng-chat-tiếng-việt(1264)、🔸綜合討論(1231)、🔸team-building(616)
 
 ### 热门话题
 
@@ -69,26 +69,26 @@
 2. [DC热门] megidola.@🔸morimens-game-chat: Today, 64 days after I — engagement: 14
 3. [DC热门] angbak@🔸阵容构建: 99 回合 — engagement: 10
 4. [DC热门] bluepomander@pickmin: pickmin 👍 — engagement: 9
-5. [DC热门] aurora3981@P Dive Karen Boss Cheating: Karen gains 51 — engagement: 8
+5. [DC热门] frosthief@🔸morimens-game-chat: — engagement: 8
 
 ## Steam 评论
 
-- 好评 8 / 差评 1 / 好评率 89%
-- 语言分布：english 5, schinese 3, koreana 1
+- 好评 9 / 差评 1 / 好评率 90%
+- 语言分布：english 5, koreana 2, schinese 2, russian 1
 
 ### 热门好评
 
-1. [正面] 장점
+1. [正面] Игра хорошая и затягивающая) Моментами даже хоррор... — engagement: 0
+2. [正面] "했어.. 정말 내가 했어.." — engagement: 0
+3. [正面] Probably the best lovecraftian game of all time in... — engagement: 0
+4. [正面] 장점
 매력적인 캐릭터
 흡인력 있는 스토리
 번역체를 뚫고 나오는 필력
 개성 있는 고퀄리티 아... — engagement: 0
-2. [正面] I am really liking the game so far!
+5. [正面] I am really liking the game so far!
 
 The art is... — engagement: 0
-3. [正面] Play this if you like slay the spire XD — engagement: 0
-4. [正面] 小玩了一下，立绘美味，小人儿也很有表现力，然后试玩了一下强力角色，发现后期单纯无意义叠数值，7000... — engagement: 0
-5. [正面] This game is good, but Oblivion was better. Guilds... — engagement: 0
 
 ### ⚠️ 差评
 
@@ -96,11 +96,11 @@ The art is... — engagement: 0
 
 ## Bilibili
 
-1. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 4370
-2. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 4370
-3. 【忘却前夜】自建号补超限绒朵！ — engagement: 287
-4. 【忘却前夜】自建号补超限绒朵！ — engagement: 287
-5. 【忘却前夜 Morimens_动态壁纸】希洛_泰旖丝_杜勒赛因_萨尔瓦多=血肉界域1期_Wallpaper Engine — engagement: 138
+1. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 4581
+2. 【忘却前夜】三合一池子抽取建议(4.6-5.4) — engagement: 4581
+3. 【忘却前夜】自建号补超限绒朵！ — engagement: 294
+4. 【忘却前夜】自建号补超限绒朵！ — engagement: 294
+5. 【忘却前夜 Morimens_动态壁纸】希洛_泰旖丝_杜勒赛因_萨尔瓦多=血肉界域1期_Wallpaper Engine — engagement: 157
 
 ## Gamerch Wiki
 
