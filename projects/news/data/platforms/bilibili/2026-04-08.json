@@ -1,8 +1,8 @@
 {
   "date": "2026-04-08",
-  "archived_at": "2026-04-07T18:14:05.318475+00:00",
+  "archived_at": "2026-04-07T21:34:26.734933+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "source": "bilibili",
@@ -45,6 +45,24 @@
       "engagement": 506,
       "media_url": "//i0.hdslb.com/bfs/archive/9949bc4d175333bd5119fb18101f76818cce23e9.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-07T16:27:17+00:00",
+      "lang": "",
+      "title": "saya",
+      "summary": "-\n  └ 奥涯沙耶 (0赞): 我滴妈耶，嚎看！！！[喜欢]\n  └ 好勝波加曼 (0赞): [大王不高兴_比心]\n  └ 电次君が (0赞): kiss",
+      "url": "https://www.bilibili.com/video/BV1kRDvBFEw7",
+      "author": "迁咒咒咒咒",
+      "engagement": 98,
+      "media_url": "https://i1.hdslb.com/bfs/archive/a609a7bfd6432804c98c7e797d168f05bbca8fe2.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 94,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
     }
   ]
 }

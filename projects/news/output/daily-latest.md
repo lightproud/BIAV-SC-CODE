@@ -1,13 +1,14 @@
 # 忘却前夜 社区日报 2026-04-08
 
-> 采集时间：2026-04-08 02:13 UTC+8
+> 采集时间：2026-04-08 05:34 UTC+8
 
 ## 🔥 联动动态
 
-1. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-2. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
-3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+1. [Bilibili] 【粗燥音/remix】舒适噪音实验-沙耶の唄 — engagement: 162
+2. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+3. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 
 ## 总览
 
@@ -16,7 +17,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 2 |
+| Bilibili | 7 |
 | DCInside | 0（沉默）|
 | Discord | 16 |
 | 抖音 | 0（沉默）|
@@ -38,9 +39,9 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 20 |
+| Reddit | 19 |
 | Ruliweb | 0（沉默）|
-| Steam | 5 |
+| Steam | 6 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -55,7 +56,7 @@
 | 微信公众号 | 20 |
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 35 |
+| YouTube | 36 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -72,15 +73,16 @@
 
 ## Steam 评论
 
-- 好评 4 / 差评 1 / 好评率 80%
-- 语言分布：schinese 2, english 1, koreana 1, russian 1
+- 好评 5 / 差评 1 / 好评率 83%
+- 语言分布：schinese 3, spanish 1, english 1, koreana 1
 
 ### 热门好评
 
-1. [正面] cool visual design and story — engagement: 0
-2. [正面] 夯爆了 — engagement: 0
-3. [正面] 갓겜입니다 — engagement: 0
-4. [正面] Игра хорошая и затягивающая) Моментами даже хоррор... — engagement: 0
+1. [正面] cartas + gacha + waifus lovecraftianas bastante f2... — engagement: 0
+2. [正面] 窝趣，依托史 — engagement: 0
+3. [正面] cool visual design and story — engagement: 0
+4. [正面] 夯爆了 — engagement: 0
+5. [正面] 갓겜입니다 — engagement: 0
 
 ### ⚠️ 差评
 
@@ -88,8 +90,11 @@
 
 ## Bilibili
 
-1. ［相位］养 成 系 大 女 主 — engagement: 513
-2. 【忘却前夜】总回合107解决容灾425……，谁是内鬼……谁是阴间…… — engagement: 506
+1. 锐评令我印象最深刻的9部galgame — engagement: 1204
+2. ［相位］养 成 系 大 女 主 — engagement: 544
+3. ［相位］养 成 系 大 女 主 — engagement: 540
+4. 其实你已经看了一分钟了⚠⚠⚠⚠ — engagement: 366
+5. SAYA可爱捏（emotelab制作表情包） — engagement: 210
 
 ## Gamerch Wiki
 
@@ -125,11 +130,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 280373
-2. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38282
-3. 【忘卻前夜】重返未來1999？不對！是忘卻前夜！禮包碼兌換！T0角色隊伍組合！超少見克蘇魯策略卡牌遊戲！ — engagement: 16219
-4. Morimens Gameplay Is FUN — engagement: 15896
-5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 15729
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 280526
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40382
+3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38283
+4. 【忘卻前夜】重返未來1999？不對！是忘卻前夜！禮包碼兌換！T0角色隊伍組合！超少見克蘇魯策略卡牌遊戲！ — engagement: 16221
+5. Morimens Gameplay Is FUN — engagement: 15912
 
 ## 沉默平台
 
