@@ -965,6 +965,27 @@
       "title": "[DC] bagels5899@🔸morimens-game-chat: look at this random idiot lmao",
       "time": "2026-04-08T15:45:57.334000+00:00",
       "downloaded_at": "2026-04-08T21:33:43.470914+00:00"
+    },
+    "https://i.ytimg.com/vi/riY45CnKRRE/hq720_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAArgIigIMCAAQARhZIGUoTzAP&rs=AOn4CLCoIyaHMJliiARrVLq5MS1PJ5_CRw": {
+      "filename": "youtube_0300ead442f86a8e.jpg",
+      "source": "youtube",
+      "title": "Clementine edit | Forget last night: Morimens",
+      "time": "2026-04-08T23:55:25.768218+00:00",
+      "downloaded_at": "2026-04-08T23:58:18.613260+00:00"
+    },
+    "https://i.ytimg.com/vi/txI9d9P1nxE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBHSsKrk4l_dd2jT5Lv7Iq0bc113g": {
+      "filename": "youtube_9315fb701a73fe06.jpg",
+      "source": "youtube",
+      "title": "An Overly Detailed Analysis of Mouchette in Morimens",
+      "time": "2026-04-08T23:55:25.768244+00:00",
+      "downloaded_at": "2026-04-08T23:58:18.987271+00:00"
+    },
+    "https://i.ytimg.com/vi/UuHaqOvwUOo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDdGl9Ss2Hady23e4E_tqVav-7yHA": {
+      "filename": "youtube_923373c0bc6f0cb1.jpg",
+      "source": "youtube",
+      "title": "忘卻前夜角色介紹（抽取建議）超維篇",
+      "time": "2026-04-08T23:55:26.326176+00:00",
+      "downloaded_at": "2026-04-08T23:58:19.506185+00:00"
     }
   },
   "failed": {
@@ -1267,6 +1288,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-08T21:33:44.247090+00:00"
+    },
+    "https://preview.redd.it/pp9gqfp7o1ug1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c6f464e4c4e715f59be74621b07042be088ff857": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T23:58:19.877527+00:00"
+    },
+    "https://external-preview.redd.it/cGVyOGNyeTdnMXVnMdZQkuu3-8iuLp0EsmqZ8iK_9rZHIs9aJq9KXPANEb6c.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=adc6b4d935da040ccb32d6f9c4c8804cd1d17c2f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T23:58:20.236196+00:00"
+    },
+    "https://preview.redd.it/b1c2mjx6u1ug1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=84f8589ecec61e4de9d1bd715a20c0b94d535520": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T23:58:20.590465+00:00"
     }
   },
   "archived": []
