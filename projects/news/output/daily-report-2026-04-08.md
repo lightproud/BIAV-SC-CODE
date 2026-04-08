@@ -1,14 +1,17 @@
 # 忘却前夜 社区日报 2026-04-08
 
-> 采集时间：2026-04-08 14:04 UTC+8
+> 采集时间：2026-04-08 18:44 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【粗燥音/remix】舒适噪音实验-沙耶の唄 — engagement: 190
-2. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-3. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
-4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+1. [YouTube] 忘却前夜×沙耶之歌 联动预告 — engagement: 1914
+2. [Bilibili] 清唱《沙耶の唄》 — engagement: 23
+3. [Bilibili] 重温沙耶之歌，我觉得有很多不对劲的地方（二）……经典老牌，理解有限，如有思考不到位，欢迎老玩家指正！ — engagement: 4
+4. [Bilibili] 沙耶之歌第一期 — engagement: 0
+5. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+6. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+7. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+8. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 
 ## 总览
 
@@ -17,9 +20,9 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 13 |
+| Bilibili | 17 |
 | DCInside | 0（沉默）|
-| Discord | 13 |
+| Discord | 16 |
 | 抖音 | 0（沉默）|
 | Epic Games Store | 0（沉默）|
 | Facebook | 0（沉默）|
@@ -39,14 +42,14 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 20 |
+| Reddit | 10 |
 | Ruliweb | 0（沉默）|
-| Steam | 5 |
+| Steam | 4 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
 | TapTap | 0（沉默）|
-| Telegram | 1 |
+| Telegram | 0（24h内无新内容）|
 | 百度贴吧 | 0（沉默）|
 | TikTok | 0（沉默）|
 | Twitch | 0（沉默）|
@@ -56,25 +59,25 @@
 | 微信公众号 | 20 |
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 37 |
+| YouTube | 35 |
 | 知乎 | 0（沉默）|
 
 ## Discord
 
-今日 18,058 条消息，191 位活跃用户，2,350 次反应。热门频道：🔸morimens-game-chat(9396)、🔸game-question(2387)、🔸綜合討論(2251)、🔸canal-português(977)、🔸general-chat(759)
+今日 2,758 条消息，162 位活跃用户，325 次反应。热门频道：🔸morimens-game-chat(1761)、🔸game-question(355)、🔸阵容构建(224)、🔸綜合討論(85)、🔸team-building(76)
 
 ### 热门话题
 
-1. [DC] morimensstaff06@🔸礼包码┊gift-codes: 🎁 DC 39000守密人达成礼 / DC  — engagement: 1311
-2. [DC] megidola.@🔸morimens-game-chat: When I saw this CG I fol — engagement: 55
-3. [DC] shio2311@🔸art-and-memes: stinky — engagement: 39
-4. [DC] zzumaso@🔸art-and-memes: i yarn for him i love him i wha — engagement: 37
-5. [DC] willsalvador@🔸morimens-game-chat: Omg it was my morimen — engagement: 29
+1. [DC] gwenisleirah@🔸art-and-memes: (附件/嵌入) — engagement: 31
+2. [DC] water_heart@🔸綜合討論: (附件/嵌入) — engagement: 25
+3. [DC] climbkaly@🔸morimens-game-chat: On my main account - Moo — engagement: 19
+4. [DC] ap0ll08045@🔸morimens-game-chat: no vertin is just a guy — engagement: 18
+5. [DC] _venush@🔸lore-chat: vagueposting and told people  the n — engagement: 18
 
 ## Steam 评论
 
-- 好评 5 / 差评 0 / 好评率 100%
-- 语言分布：schinese 2, spanish 1, english 1, koreana 1
+- 好评 4 / 差评 0 / 好评率 100%
+- 语言分布：schinese 2, spanish 1, english 1
 
 ### 热门好评
 
@@ -82,15 +85,14 @@
 2. [正面] 窝趣，依托史 — engagement: 0
 3. [正面] cool visual design and story — engagement: 0
 4. [正面] 夯爆了 — engagement: 0
-5. [正面] 갓겜입니다 — engagement: 0
 
 ## Bilibili
 
-1. 锐评令我印象最深刻的9部galgame — engagement: 1441
-2. ［相位］养 成 系 大 女 主 — engagement: 770
-3. ［相位］养 成 系 大 女 主 — engagement: 762
-4. 其实你已经看了一分钟了⚠⚠⚠⚠ — engagement: 424
-5. SAYA可爱捏（emotelab制作表情包） — engagement: 284
+1. 【忘却前夜】4月阿拉克涅版本入坑攻略 — engagement: 1597
+2. 【忘却前夜】4月阿拉克涅版本入坑攻略 — engagement: 1593
+3. 其实你已经看了一分钟了⚠⚠⚠⚠ — engagement: 439
+4. 忘却前夜 据说是图鲁C 癫狂深潜 — engagement: 316
+5. 忘却前夜 据说是图鲁C 癫狂深潜 — engagement: 314
 
 ## Gamerch Wiki
 
@@ -103,18 +105,14 @@
 ## Reddit
 
 1. Smol Doll by me — engagement: 0
-2. Arachne - Conjugated Fates — engagement: 0
-3. Thanks for invitation code :) — engagement: 0
+2. What team should I do with this selector ? — engagement: 0
+3. Arachne - Conjugated Fates — engagement: 0
 4. Who designed this stage bruh😭😭😭 — engagement: 0
-5. Chapter 9-12 survival — engagement: 0
+5. Iprovement — engagement: 0
 
 ## StopGame.ru
 
 1. [StopGame] Morimens — 3.9/10 (0 оценок) — engagement: 0
-
-## Telegram
-
-1. 🖼 ✧: Подарочный код в честь 39 000 участников на глобальном  — engagement: 0
 
 ## 微信公众号
 
@@ -126,12 +124,12 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 280777
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40401
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38283
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18661
-5. 【忘卻前夜】重返未來1999？不對！是忘卻前夜！禮包碼兌換！T0角色隊伍組合！超少見克蘇魯策略卡牌遊戲！ — engagement: 16222
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 280907
+2. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38284
+3. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18662
+4. Morimens Beginner Progression Guide (2026 Edition) — engagement: 15954
+5. MORIMENS IS A FREAKIN MASTERPIECE! — engagement: 13580
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, DCInside, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, GameKee Wiki, Google Play, 灰机Wiki, Instagram, Lofter, Miraheze Wiki, Naver Cafe, NGA, Note.com, Official, Pixiv, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微博, 闲鱼, 小红书, 知乎
+App Store, Arca.live, 巴哈姆特, DCInside, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, GameKee Wiki, Google Play, 灰机Wiki, Instagram, Lofter, Miraheze Wiki, Naver Cafe, NGA, Note.com, Official, Pixiv, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, Telegram, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微博, 闲鱼, 小红书, 知乎
