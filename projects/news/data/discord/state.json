@@ -25,7 +25,7 @@
       "last_historical_month": "2026-02"
     },
     "1131839817982947429": {
-      "last_message_id": "1491150318568996936",
+      "last_message_id": "1491223799796858880",
       "name": "🔸綜合討論",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -65,7 +65,7 @@
       "last_historical_month": "2026-02"
     },
     "1170692781216378960": {
-      "last_message_id": "1491188617081782332",
+      "last_message_id": "1491224869935906876",
       "name": "🔸morimens-game-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -209,19 +209,19 @@
       "last_historical_month": "2026-02"
     },
     "1300659603993923644": {
-      "last_message_id": "1491120220201291817",
+      "last_message_id": "1491223089738944784",
       "name": "🔸phòng-chat-tiếng-việt",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1300659662311526512": {
-      "last_message_id": "1491182174081253558",
+      "last_message_id": "1491220437332529203",
       "name": "🔸canal-español",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1300659718653476925": {
-      "last_message_id": "1491187362376712284",
+      "last_message_id": "1491219736074260652",
       "name": "🔸canal-português",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -255,7 +255,7 @@
       "last_historical_month": "2026-02"
     },
     "1326453763355185215": {
-      "last_message_id": "1491174288861040651",
+      "last_message_id": "1491201042149412874",
       "name": "🔸lore-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -483,19 +483,19 @@
       "last_historical_month": "2026-02"
     },
     "1400749543288475770": {
-      "last_message_id": "1491187672272867430",
+      "last_message_id": "1491216843841732708",
       "name": "🔸team-building",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1400750050208125010": {
-      "last_message_id": "1491164795658043552",
+      "last_message_id": "1491225008461185114",
       "name": "🔸general-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1405837769212821554": {
-      "last_message_id": "1491179210717532201",
+      "last_message_id": "1491223441142059099",
       "name": "🔸邀请码互助┊swap-invitation-codes",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -511,7 +511,7 @@
       "last_historical_month": "2026-02"
     },
     "1433513650299076780": {
-      "last_message_id": "1491187619038761084",
+      "last_message_id": "1491224548299898984",
       "name": "🔸game-question",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -549,7 +549,7 @@
       "last_historical_month": "2026-02"
     },
     "1436913827571695898": {
-      "last_message_id": "1491176908044636293",
+      "last_message_id": "1491218198358655108",
       "name": "🔸机器人命令┊bot-commands",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -28956,7 +28956,7 @@
       "last_message_id": "1490949552868560946"
     },
     "thread:1490964083753750580": {
-      "last_message_id": "1490981236401901629"
+      "last_message_id": "1491222671076233311"
     },
     "thread:1490977604029644830": {
       "last_message_id": "1490995259818381374"
@@ -28990,8 +28990,11 @@
     },
     "thread:1491118470924865596": {
       "last_message_id": "1491118470924865596"
+    },
+    "thread:1491194430110044340": {
+      "last_message_id": "1491194430110044340"
     }
   },
   "historical_month": "2026-02",
-  "last_run": "2026-04-07T22:24:54.749863+00:00"
+  "last_run": "2026-04-08T00:01:08.389032+00:00"
 }
