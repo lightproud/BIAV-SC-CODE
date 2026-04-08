@@ -1,8 +1,8 @@
 {
   "date": "2026-04-08",
-  "archived_at": "2026-04-08T10:44:54.572535+00:00",
+  "archived_at": "2026-04-08T15:03:53.461914+00:00",
   "source": "bilibili",
-  "item_count": 17,
+  "item_count": 19,
   "items": [
     {
       "source": "bilibili",
@@ -134,6 +134,36 @@
       "author": "莱星Ligh",
       "engagement": 128,
       "media_url": "//i1.hdslb.com/bfs/archive/df36c5a8d19b530928f26b751641f995e51e3568.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-08T04:41:05+00:00",
+      "lang": "",
+      "title": "忘却前夜攻略",
+      "summary": "感谢各位大佬给予的帮助，我下次融灾一定会努力上400的。\n游戏愉快！\n  └ 半醒的鱼yyy (1赞): 好详细的攻略[打call]\n  └ 蜗牛叁叁 (1赞): [doge_金箍]\n  └ 柚之宝宝 (0赞): 游戏账号界面的彩色介绍原理：\n&lt;color=#16进制颜色代码&gt;这里写字&lt;/color&gt;【/cp】\n0\n【【忘却前夜×沙耶之歌】V2.4.3 限定角色&amp;全命轮节奏榜】 https://www.bilibili.com/video/BV1n1XRBRET4/?share_source=copy_web&amp;vd_source=9a6a6cc1ff93c137888074e333e5ba96\n0.1\n【一分钟就能看懂的全角色攻略(已更新31个唤醒体)】 https://www.bilibili.com/video/BV1xZffBREnp/?p=8&amp;share_source=copy_web&amp;vd_source=9a6a6cc1ff93c137888074e333e5ba96\n0.2\nhttp://morimens.qookkagames.com/\n1.3港服下载\n【星辰篇密契属性抉择】 https://www.bilibili.com/video/BV1dPieB5EQc/?share_source=copy_web&amp;vd_source=9a6a6cc1ff93c137888074e333e5ba96\n3.4  \n【【忘却前夜进阶攻略】五集，密契，界域机制，伤害计算，融灾】 https://www.bilibili.com/video/BV1LRqYBLECe/?share_source=copy_web&amp;vd_source=9a6a6cc1ff93c137888074e333e5ba96\n3.5\n【命轮小巧思&amp;黑科技】 https://www.bilibili.com/video/BV1EeiuBmEqR/?share_source=copy_web&amp;vd_source=9a6a6cc1ff93c137888074e333e5ba96",
+      "url": "https://www.bilibili.com/video/BV1VyDrBwEPj",
+      "author": "柚之宝宝",
+      "engagement": 123,
+      "media_url": "https://i0.hdslb.com/bfs/archive/559ad8620899905ce7bf78bcf5b66a16b71d7c44.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 116,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-08T04:41:05+00:00",
+      "lang": "zh",
+      "title": "忘却前夜攻略",
+      "summary": "感谢各位大佬给予的帮助，我下次融灾一定会努力上400的。\n游戏愉快！",
+      "url": "http://www.bilibili.com/video/av116367240009559",
+      "author": "柚之宝宝",
+      "engagement": 116,
+      "media_url": "//i0.hdslb.com/bfs/archive/559ad8620899905ce7bf78bcf5b66a16b71d7c44.jpg",
       "content_type": "video"
     },
     {
