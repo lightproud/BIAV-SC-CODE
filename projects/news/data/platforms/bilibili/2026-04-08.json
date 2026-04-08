@@ -1,8 +1,8 @@
 {
   "date": "2026-04-08",
-  "archived_at": "2026-04-07T23:59:32.674059+00:00",
+  "archived_at": "2026-04-08T06:04:52.704641+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 8,
   "items": [
     {
       "source": "bilibili",
@@ -48,6 +48,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-08T03:55:38+00:00",
+      "lang": "",
+      "title": "［相位/轮选］你的牌不错，现在是我的了",
+      "summary": "-\n  └ 活过一乔 (1赞): 原来这个技能是偷啊，我以为是复制\n  └ 莱星Ligh (0赞): 没看爽？来看环娜1v4！https://b23.tv/BV1uUDrBbEyj\n  └ 一般杂鱼 (1赞): 严肃学习[doge]",
+      "url": "https://www.bilibili.com/video/BV1RiDrBiEog",
+      "author": "莱星Ligh",
+      "engagement": 133,
+      "media_url": "https://i1.hdslb.com/bfs/archive/df36c5a8d19b530928f26b751641f995e51e3568.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 127,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-08T03:55:38+00:00",
+      "lang": "zh",
+      "title": "［相位/轮选］你的牌不错，现在是我的了",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116367055390599",
+      "author": "莱星Ligh",
+      "engagement": 128,
+      "media_url": "//i1.hdslb.com/bfs/archive/df36c5a8d19b530928f26b751641f995e51e3568.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-07T16:27:17+00:00",
       "lang": "",
       "title": "saya",
@@ -63,6 +93,36 @@
         "comments_fetched": 3,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-08T04:31:44+00:00",
+      "lang": "",
+      "title": "［相位/轮选］环娜只打奇迹局！",
+      "summary": "话太多，实在懒得配表情包了\n  └ 炸药一桶 (1赞): 这里打杜勒3费秒了船妹之后，给徐挂钥令麻痹后面不会打得这么极限。。\n  └ 炸药一桶 (1赞): 这句话是什么意思呀\n  └ 凌厉彼岸 (1赞): 这下真的是穿梭无数时间线只为了找到“你”还活着的时间线了",
+      "url": "https://www.bilibili.com/video/BV1uUDrBbEyj",
+      "author": "莱星Ligh",
+      "engagement": 65,
+      "media_url": "https://i1.hdslb.com/bfs/archive/80b82b7366e17502ad2109785931c60641c8d47e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 59,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-08T04:31:44+00:00",
+      "lang": "zh",
+      "title": "［相位/轮选］环娜只打奇迹局！",
+      "summary": "话太多，实在懒得配表情包了",
+      "url": "http://www.bilibili.com/video/av116367189672185",
+      "author": "莱星Ligh",
+      "engagement": 59,
+      "media_url": "//i1.hdslb.com/bfs/archive/80b82b7366e17502ad2109785931c60641c8d47e.jpg",
+      "content_type": "video"
     }
   ]
 }

@@ -699,6 +699,27 @@
       "title": "忘却前夜 据说是图鲁C 癫狂深潜",
       "time": "2026-04-07T12:27:09+00:00",
       "downloaded_at": "2026-04-07T23:59:31.239271+00:00"
+    },
+    "https://i.ytimg.com/vi/r7-oLbHqDEA/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBKmCXvJEnsuDBbRzvYdeD4uhqt1A": {
+      "filename": "youtube_491288ee65446fe2.jpg",
+      "source": "youtube",
+      "title": "【永遠の奏者】ハムリン　実装！【忘却前夜/ローグライクで遊ぼうの会】",
+      "time": "2026-04-08T06:01:51.609646+00:00",
+      "downloaded_at": "2026-04-08T06:04:48.158278+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/df36c5a8d19b530928f26b751641f995e51e3568.jpg": {
+      "filename": "bilibili_41ae2d85d3f0d0f4.jpg",
+      "source": "bilibili",
+      "title": "［相位/轮选］你的牌不错，现在是我的了",
+      "time": "2026-04-08T03:55:38+00:00",
+      "downloaded_at": "2026-04-08T06:04:49.993498+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/80b82b7366e17502ad2109785931c60641c8d47e.jpg": {
+      "filename": "bilibili_15ceca9d0ec766b3.jpg",
+      "source": "bilibili",
+      "title": "［相位/轮选］环娜只打奇迹局！",
+      "time": "2026-04-08T04:31:44+00:00",
+      "downloaded_at": "2026-04-08T06:04:51.473875+00:00"
     }
   },
   "failed": {
@@ -916,6 +937,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-07T23:59:32.610703+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/df36c5a8d19b530928f26b751641f995e51e3568.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T06:04:50.294365+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/80b82b7366e17502ad2109785931c60641c8d47e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T06:04:51.774677+00:00"
+    },
+    "https://preview.redd.it/ggtpls6tfvtg1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=5a0f9efc4431888e3b6afb15ce9eb67491378ba4": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T06:04:52.289851+00:00"
+    },
+    "https://preview.redd.it/cajbt6cl2vtg1.png?width=140&amp;height=73&amp;auto=webp&amp;s=9f77710803287afdfff87e2a7bd7bf1d4e9ead24": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T06:04:52.635604+00:00"
     }
   },
   "archived": []
