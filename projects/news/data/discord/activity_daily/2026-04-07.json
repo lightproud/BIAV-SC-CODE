@@ -1,17 +1,17 @@
 {
   "date": "2026-04-07",
-  "messages": 18058,
+  "messages": 18070,
   "unique_authors": 191,
   "reactions_total": 2350,
   "attachments": 809,
   "channel_activity": {
+    "🔸morimens-game-chat": 9397,
+    "🔸lore-chat": 68,
+    "🔸team-building": 374,
     "🔸綜合討論": 2251,
-    "🔸morimens-game-chat": 9396,
     "🔸phòng-chat-tiếng-việt": 491,
     "🔸canal-español": 391,
     "🔸canal-português": 977,
-    "🔸lore-chat": 66,
-    "🔸team-building": 365,
     "🔸general-chat": 759,
     "🔸邀请码互助┊swap-invitation-codes": 23,
     "🔸game-question": 2387,
@@ -91,7 +91,7 @@
     "🔸chaîne-française": 1
   },
   "hourly_activity": {
-    "23": 442,
+    "23": 454,
     "21": 561,
     "22": 686,
     "15": 436,
@@ -117,9 +117,8 @@
     "5": 882
   },
   "message_types": {
-    "0": 905,
-    "19": 481,
-    "46": 1
+    "0": 11,
+    "19": 1
   },
   "top_reacted_messages": [
     {
