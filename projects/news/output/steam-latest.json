@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-04-08T18:59:41.017118+00:00",
+  "collected_at": "2026-04-08T21:33:42.081919+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-08T16:34:11+00:00",
+      "lang": "koreana",
+      "title": "[正面] 아트가 마음에 듬",
+      "summary": "아트가 마음에 듬",
+      "url": "https://steamcommunity.com/profiles/76561198119850068/recommended/3052450",
+      "author": "76561198119850068",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "아트가 마음에 듬",
+      "timestamp_created": 1775666051,
+      "playtime_forever": 440
+    },
     {
       "source": "steam",
       "time": "2026-04-08T12:00:17+00:00",
@@ -46,7 +61,7 @@
       "voted_up": true,
       "review": "Great game, very good mechanic, dupe reliant but F2P friendly",
       "timestamp_created": 1775636609,
-      "playtime_forever": 8703
+      "playtime_forever": 8713
     },
     {
       "source": "steam",
