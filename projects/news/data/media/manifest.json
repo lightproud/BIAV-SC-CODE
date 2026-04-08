@@ -909,6 +909,48 @@
       "title": "[DC] 0.0._.0_0.@🔸阵容构建: (附件/嵌入)",
       "time": "2026-04-08T07:57:44.326000+00:00",
       "downloaded_at": "2026-04-08T15:03:51.825582+00:00"
+    },
+    "http://i1.hdslb.com/bfs/archive/bfd26f96c021c1892387b5a43d2e95600d2d1c99.jpg": {
+      "filename": "bilibili_896320320f9dbc47.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】4月阿拉克涅版本入坑攻略",
+      "time": "2026-04-08T06:26:07+00:00",
+      "downloaded_at": "2026-04-08T18:59:41.831657+00:00"
+    },
+    "https://i.ytimg.com/vi/Sbzi2sXv0b0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAG4oVqjpIKdfF_qgnHf1wPNE1bzw": {
+      "filename": "youtube_008ad30e920f3da8.jpg",
+      "source": "youtube",
+      "title": "忘卻前夜 Morimens Cat Event Caro/Aequor with Goliath Helot",
+      "time": "2026-04-08T18:56:46.092838+00:00",
+      "downloaded_at": "2026-04-08T18:59:42.388411+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1491408271704326275/image.png?ex=69d795b1&is=69d64431&hm=085f19da7f2e7d39965a94fdc441dee02259720c7bf7c2b716b33e6dd6361630&": {
+      "filename": "discord_c9d520111491c910.png",
+      "source": "discord",
+      "title": "[DC] chinkeeyong@🔸morimens-game-chat: good opening hand",
+      "time": "2026-04-08T12:04:01.032000+00:00",
+      "downloaded_at": "2026-04-08T18:59:43.064405+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1491442836829245642/1491442837227835422/8c878d934b23b0365fd224608368f5ae.png?ex=69d7b5e2&is=69d66462&hm=a4ba5e7de67e272e7076ca97e597ef4b5e504c0ba59e94d0896d5cc6922450a2&": {
+      "filename": "discord_8a61328907c9518a.png",
+      "source": "discord",
+      "title": "[DC] resazur1n@🔸同人创作: 代投二创活动 问朋友你还有想说的吗，朋友说无话可说",
+      "time": "2026-04-08T14:21:21.968000+00:00",
+      "downloaded_at": "2026-04-08T18:59:43.812775+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1491414022057230366/image.png?ex=69d79b0b&is=69d6498b&hm=ffc73b46b6cf69350566434c66a2677ede02269491c6e578f7dcf83f9c46826b&": {
+      "filename": "discord_d474c4946ee663ab.png",
+      "source": "discord",
+      "title": "[DC] chinkeeyong@🔸morimens-game-chat:    ",
+      "time": "2026-04-08T12:26:52.243000+00:00",
+      "downloaded_at": "2026-04-08T18:59:44.521865+00:00"
+    },
+    "https://i.ytimg.com/vi/Ym3eQvqbJrc/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAI2xXwtGAIdObsjjxFKLt1L5p7-w": {
+      "filename": "youtube_0df8a15741518c3c.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】ソレールLevel90ダメージ出すぎやな　気持ちよ！",
+      "time": "2026-04-08T18:56:46.092882+00:00",
+      "downloaded_at": "2026-04-08T18:59:45.043238+00:00"
     }
   },
   "failed": {
@@ -1196,6 +1238,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-08T15:03:53.402282+00:00"
+    },
+    "https://preview.redd.it/5azo3ld6rztg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=e20149ef28457c562c2feae14e567cc22f6d83a6": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T18:59:45.465077+00:00"
     }
   },
   "archived": []
