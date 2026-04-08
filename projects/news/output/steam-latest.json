@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-04-07T23:59:28.569294+00:00",
+  "collected_at": "2026-04-08T06:04:47.446205+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -136,7 +136,7 @@
       "voted_up": true,
       "review": "Игра хорошая и затягивающая) Моментами даже хоррорец есть из-за фоновой музыки и звуковых эффектов пх",
       "timestamp_created": 1775501011,
-      "playtime_forever": 1584
+      "playtime_forever": 1614
     },
     {
       "source": "steam",
@@ -226,22 +226,7 @@
       "voted_up": true,
       "review": "This game is good, but Oblivion was better. Guilds: in morimens - 1-hour crappy dull quests, in Oblivion - those quests are large and interesting(i love the final quest of the Thieves Guild). Main Quest - dull in both games. Gameplay - well, in mormimens your weapon and armor are unbreakable, but auto-leveling are better, BUT. Dragons are too weak, and why the hell you can't block with dual weapons? World: in mormens there are big pretty world... without any quests. Just ugly caves.\r\nmorimens is a good game, but a **** sequel.",
       "timestamp_created": 1775456606,
-      "playtime_forever": 3539
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-06T01:29:29+00:00",
-      "lang": "english",
-      "title": "[正面] Who made this game?",
-      "summary": "Who made this game?",
-      "url": "https://steamcommunity.com/profiles/76561198878671133/recommended/3052450",
-      "author": "76561198878671133",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Who made this game?",
-      "timestamp_created": 1775438969,
-      "playtime_forever": 3423
+      "playtime_forever": 3571
     }
   ]
 }
