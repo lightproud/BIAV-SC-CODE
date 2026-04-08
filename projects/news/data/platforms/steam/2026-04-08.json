@@ -1,8 +1,8 @@
 {
   "date": "2026-04-08",
-  "archived_at": "2026-04-08T10:44:54.571431+00:00",
+  "archived_at": "2026-04-08T15:03:53.460803+00:00",
   "source": "steam",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "source": "steam",
@@ -273,6 +273,21 @@
       "review": "窝趣，依托史",
       "timestamp_created": 1775582245,
       "playtime_forever": 73196
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-08T08:23:29+00:00",
+      "lang": "english",
+      "title": "[正面] Great game, very good mechanic, dupe reliant but F...",
+      "summary": "Great game, very good mechanic, dupe reliant but F2P friendly",
+      "url": "https://steamcommunity.com/profiles/76561198379331930/recommended/3052450",
+      "author": "76561198379331930",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Great game, very good mechanic, dupe reliant but F2P friendly",
+      "timestamp_created": 1775636609,
+      "playtime_forever": 8575
     }
   ]
 }
