@@ -1,8 +1,8 @@
 {
   "date": "2026-04-09",
-  "archived_at": "2026-04-08T18:59:45.525198+00:00",
+  "archived_at": "2026-04-08T21:33:44.304944+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -138,6 +138,21 @@
       "review": "打一关主线才给一抽 还是常驻池的 原神扣扣嗖嗖的起码还给点原石 这体力也是回的死慢 别的二游睡一觉差不多快回满了这游戏才差不多一半 也就周年庆能入入了",
       "timestamp_created": 1775531011,
       "playtime_forever": 1106
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-08T16:34:11+00:00",
+      "lang": "koreana",
+      "title": "[正面] 아트가 마음에 듬",
+      "summary": "아트가 마음에 듬",
+      "url": "https://steamcommunity.com/profiles/76561198119850068/recommended/3052450",
+      "author": "76561198119850068",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "아트가 마음에 듬",
+      "timestamp_created": 1775666051,
+      "playtime_forever": 440
     }
   ]
 }

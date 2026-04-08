@@ -951,6 +951,20 @@
       "title": "【忘却前夜】ソレールLevel90ダメージ出すぎやな　気持ちよ！",
       "time": "2026-04-08T18:56:46.092882+00:00",
       "downloaded_at": "2026-04-08T18:59:45.043238+00:00"
+    },
+    "https://i.ytimg.com/vi/hFkVz12KqDY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBi2Lduk__Yo7DLlapM8RZQWh0lQA": {
+      "filename": "youtube_a69470cf25d30ed0.jpg",
+      "source": "youtube",
+      "title": "忘卻前夜 | Morimens OST I - Through the Silver Gate",
+      "time": "2026-04-08T21:30:45.058645+00:00",
+      "downloaded_at": "2026-04-08T21:33:42.917624+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1491464124130136105/image.png?ex=69d7c9b5&is=69d67835&hm=766dc4f76bc1287c47046e2100af9e3210ea3e2b9fe5496be7cbd57f84b35d57&": {
+      "filename": "discord_97964d90054d0004.png",
+      "source": "discord",
+      "title": "[DC] bagels5899@🔸morimens-game-chat: look at this random idiot lmao",
+      "time": "2026-04-08T15:45:57.334000+00:00",
+      "downloaded_at": "2026-04-08T21:33:43.470914+00:00"
     }
   },
   "failed": {
@@ -1243,6 +1257,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-08T18:59:45.465077+00:00"
+    },
+    "https://preview.redd.it/f041cdt4y0ug1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=72653bcf70920dc38500d46b5f9f8ab670267cac": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T21:33:43.879847+00:00"
+    },
+    "https://preview.redd.it/38zetqmes0ug1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=7e295f9d3650555b1f02bcbf119f173bda949cf7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-08T21:33:44.247090+00:00"
     }
   },
   "archived": []
