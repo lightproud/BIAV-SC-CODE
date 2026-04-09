@@ -1077,6 +1077,41 @@
       "title": "沙耶之歌第二期",
       "time": "2026-04-09T10:00:00+00:00",
       "downloaded_at": "2026-04-09T10:24:13.893918+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/4844a837b72955536d73c98b31183bf6f2ee3199.jpg": {
+      "filename": "bilibili_6c656f81da4b4bd1.jpg",
+      "source": "bilibili",
+      "title": "用同一张梗图总结下入坑两年来的部分GAL",
+      "time": "2026-04-09T15:54:00+00:00",
+      "downloaded_at": "2026-04-09T16:11:03.758332+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1400750050208125010/1491693275151728690/20260409_131653.jpg?ex=69d89f1f&is=69d74d9f&hm=84bb6a2dfc57bcb6a60544d2d6f7e65f5816d1e72a21038aa4bcd4b43f988cbd&": {
+      "filename": "discord_1470a4de140c15b8.jpg",
+      "source": "discord",
+      "title": "[DC] jmjmjm6667@🔸general-chat: (附件/嵌入)",
+      "time": "2026-04-09T06:56:31.181000+00:00",
+      "downloaded_at": "2026-04-09T16:11:04.374454+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1491692135395622912/1491692135874039960/42EFC185-5F5B-47F1-9521-E22AC8C5C978.jpg?ex=69d89e0f&is=69d74c8f&hm=bccd6280f9198e898e186768d175a9b127b89839523ca9d63010974d95ac2c9d&": {
+      "filename": "discord_9ca9856a326d1cf1.jpg",
+      "source": "discord",
+      "title": "[DC] chuolel0@🔸art-and-memes: (附件/嵌入)",
+      "time": "2026-04-09T06:51:59.378000+00:00",
+      "downloaded_at": "2026-04-09T16:11:04.807921+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1491725803396923403/IMG_5153.jpg?ex=69d8bd6a&is=69d76bea&hm=9f8fc32ae7ad787193f234b65d393d8d88095cacdd5e16cc39fb4331ca24f82d&": {
+      "filename": "discord_e98be75b4dfc5561.jpg",
+      "source": "discord",
+      "title": "[DC] melwyn7591@🔸morimens-game-chat: Lmao  Giant wall of text vs wheel with this attribute",
+      "time": "2026-04-09T09:05:46.616000+00:00",
+      "downloaded_at": "2026-04-09T16:11:05.248177+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1491692758170079262/Screenshot_20260409_025424_Discord.jpg?ex=69d89ea3&is=69d74d23&hm=1c46125d880ee0fee6fb2091733ef151c7e379c517d60023745c0d04dd836619&": {
+      "filename": "discord_f087f6c9c66065c3.jpg",
+      "source": "discord",
+      "title": "[DC] dracozion@🔸morimens-game-chat: (附件/嵌入)",
+      "time": "2026-04-09T06:54:27.938000+00:00",
+      "downloaded_at": "2026-04-09T16:11:05.783479+00:00"
     }
   },
   "failed": {
@@ -1424,6 +1459,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-09T10:24:10.619235+00:00"
+    },
+    "https://preview.redd.it/em606vfc85ug1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=2698876fe6cdd7026a5b2a94d6e7d3b0e07d999f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-09T16:11:06.115849+00:00"
+    },
+    "https://preview.redd.it/o0xuj217l6ug1.jpg?width=140&amp;height=70&amp;auto=webp&amp;s=07f1912fc0b7ee8b4e4ac75961e3692fd455ac4a": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-09T16:11:06.446120+00:00"
     }
   },
   "archived": []
