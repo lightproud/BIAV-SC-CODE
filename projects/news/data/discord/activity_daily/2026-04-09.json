@@ -1,31 +1,42 @@
 {
   "date": "2026-04-09",
-  "messages": 15328,
+  "messages": 16903,
   "unique_authors": 251,
-  "reactions_total": 1730,
-  "attachments": 694,
+  "reactions_total": 1905,
+  "attachments": 778,
   "channel_activity": {
-    "🔸綜合討論": 798,
+    "🔸綜合討論": 911,
+    "🔸morimens-game-chat": 8821,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 1,
+    "🔸deutscher-chatraum": 9,
+    "🔸chaîne-française": 24,
+    "🔸русский-канал": 259,
+    "🔸canal-español": 353,
+    "🔸canal-português": 1427,
+    "🔸traphase": 25,
+    "🔸lore-chat": 72,
+    "🔸频道建议┊server-suggestions": 2,
+    "🔸team-building": 794,
+    "🔸general-chat": 332,
+    "🔸邀请码互助┊swap-invitation-codes": 29,
+    "🔸game-question": 1881,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
+    "🔸机器人命令┊bot-commands": 40,
+    "女鬼和狗偷貼貼": 3,
+    "More Mods for this Discord please": 3,
+    "\"24\" lives matter": 4,
+    "Captain Alva": 1,
+    "问一下新人能怎么组队": 54,
+    "家人们，新人刚入坑该怎么配队哇QwQ": 2,
     "🔸阵容构建": 427,
-    "🔸morimens-game-chat": 8065,
     "🔸剧情交流": 51,
     "🔸欢乐梗图": 34,
     "🔸课间休息闲聊": 48,
-    "🔸chaîne-française": 8,
-    "🔸русский-канал": 238,
     "🔸phòng-chat-tiếng-việt": 817,
-    "🔸canal-español": 344,
-    "🔸canal-português": 1165,
     "🔸ruang-obrolan-indonesia": 391,
     "🔸ห้องสนทนาภาษาไทย": 14,
-    "🔸traphase": 22,
-    "🔸lore-chat": 70,
-    "🔸team-building": 745,
-    "🔸general-chat": 284,
-    "🔸邀请码互助┊swap-invitation-codes": 27,
-    "🔸game-question": 1620,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 33,
     "🔸erica-playground": 1,
     "dollie": 1,
     "小杜大厨": 1,
@@ -35,8 +46,6 @@
     "建議 14 天課題的學期任務的完成條件應當按天數比例降低": 6,
     "Get auto battle back! 恢复自动战斗": 2,
     "✅「Answered」Aurita simple yet effective buff": 11,
-    "\"24\" lives matter": 3,
-    "问一下新人能怎么组队": 47,
     "Team Building for D-Tide !": 1,
     "1491788058809471078": 1,
     "猜猜我是誰（不是": 2,
@@ -49,7 +58,6 @@
     "Morimens Fanarts": 1,
     "William posting": 5,
     "大佬们凯蒂古拉强度怎么样？": 4,
-    "🔸deutscher-chatraum": 5,
     "【代发】uw生日快乐！": 1,
     "450 - dtide": 3,
     "✅「Answered」Steam achievements cannot be unlocked for old accounts": 3,
@@ -58,6 +66,10 @@
     "Dzone mechanics guides post links": 1
   },
   "hourly_activity": {
+    "20": 678,
+    "22": 312,
+    "23": 55,
+    "21": 642,
     "10": 471,
     "11": 626,
     "12": 549,
@@ -68,7 +80,6 @@
     "17": 1120,
     "18": 1020,
     "19": 778,
-    "20": 112,
     "6": 968,
     "7": 1076,
     "8": 548,
@@ -81,12 +92,8 @@
     "5": 1211
   },
   "message_types": {
-    "0": 4803,
-    "19": 2310,
-    "23": 1,
-    "20": 1,
-    "4": 2,
-    "21": 1
+    "0": 1072,
+    "19": 503
   },
   "top_reacted_messages": [
     {
@@ -128,6 +135,14 @@
       "author": "zzio_",
       "reactions": 8,
       "channel": "William posting"
+    },
+    {
+      "id": "1491918883647393964",
+      "channel_id": "1170692781216378960",
+      "content": "-ban <@757618162723192954>",
+      "author": "mimikyu12300",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1491801943973298307",
@@ -218,36 +233,28 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1491927686770069717",
+      "channel_id": "1170692781216378960",
+      "content": "Frosty's cute",
+      "author": "necronomikkon",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491930624854982810",
+      "channel_id": "1170692781216378960",
+      "content": "Redz has a secret deal with the devs where every time he posts something nice ab",
+      "author": "kinbote.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1491748165794140160",
       "channel_id": "1170692781216378960",
       "content": "Normal reaction to pulling Uvhash",
       "author": "sirtealot",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491801982820679881",
-      "channel_id": "1170692781216378960",
-      "content": "fire react means you say smth cool",
-      "author": "bagels5899",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491805039298089142",
-      "channel_id": "1433513650299076780",
-      "content": "did 315",
-      "author": "t0ms0",
-      "reactions": 5,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1491862863848144986",
-      "channel_id": "1491862863848144986",
-      "content": "uid：100368860",
-      "author": "solisimperium.",
-      "reactions": 5,
-      "channel": "汀"
     }
   ]
 }
