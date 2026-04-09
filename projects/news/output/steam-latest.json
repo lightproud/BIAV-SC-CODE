@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-04-09T20:12:14.962292+00:00",
+  "collected_at": "2026-04-09T23:15:14.183930+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-09T19:50:24+00:00",
+      "lang": "russian",
+      "title": "[正面] голі тьотки",
+      "summary": "голі тьотки",
+      "url": "https://steamcommunity.com/profiles/76561199243170071/recommended/3052450",
+      "author": "76561199243170071",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "голі тьотки",
+      "timestamp_created": 1775764224,
+      "playtime_forever": 31068
+    },
     {
       "source": "steam",
       "time": "2026-04-09T14:35:01+00:00",
