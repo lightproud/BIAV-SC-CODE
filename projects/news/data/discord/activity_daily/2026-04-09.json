@@ -1,57 +1,103 @@
 {
   "date": "2026-04-09",
-  "messages": 4925,
+  "messages": 8210,
   "unique_authors": 169,
-  "reactions_total": 471,
-  "attachments": 209,
+  "reactions_total": 958,
+  "attachments": 334,
   "channel_activity": {
-    "🔸綜合討論": 509,
-    "🔸阵容构建": 127,
-    "🔸morimens-game-chat": 3104,
-    "🔸剧情交流": 8,
-    "🔸欢乐梗图": 1,
+    "🔸綜合討論": 567,
+    "🔸阵容构建": 423,
+    "🔸morimens-game-chat": 4959,
+    "🔸剧情交流": 14,
+    "🔸欢乐梗图": 27,
+    "🔸chaîne-française": 1,
+    "🔸русский-канал": 15,
+    "🔸phòng-chat-tiếng-việt": 464,
+    "🔸canal-português": 326,
+    "🔸ruang-obrolan-indonesia": 157,
+    "🔸ห้องสนทนาภาษาไทย": 4,
+    "🔸traphase": 18,
+    "🔸lore-chat": 62,
+    "🔸team-building": 326,
+    "🔸general-chat": 202,
+    "🔸邀请码互助┊swap-invitation-codes": 12,
+    "🔸game-question": 478,
+    "🔸机器人命令┊bot-commands": 19,
+    "最鯨幻想": 1,
+    "猜猜我是誰（不是": 2,
+    "download stuck": 2,
+    "Levels + enlightenment regulation option": 10,
+    "✅「Answered」Aurita simple yet effective buff": 3,
+    "💭「Processing」Please, lower the requirement for +12 Ramona": 2,
+    "\"24\" lives matter": 1,
+    "✅「Answered」Aurita possible Soulforge buff": 2,
+    "Xu fanart": 1,
+    "Is non-morimens content even allowed to be posted": 1,
+    "Morimens Fanarts": 1,
+    "William posting": 5,
+    "大佬们凯蒂古拉强度怎么样？": 4,
+    "问一下新人能怎么组队": 45,
     "🔸课间休息闲聊": 35,
     "🔸deutscher-chatraum": 5,
-    "🔸русский-канал": 10,
-    "🔸phòng-chat-tiếng-việt": 77,
     "🔸canal-español": 6,
-    "🔸canal-português": 322,
-    "🔸ruang-obrolan-indonesia": 133,
-    "🔸ห้องสนทนาภาษาไทย": 1,
-    "🔸traphase": 2,
-    "🔸lore-chat": 6,
-    "🔸team-building": 113,
-    "🔸general-chat": 134,
-    "🔸邀请码互助┊swap-invitation-codes": 7,
-    "🔸game-question": 288,
-    "🔸机器人命令┊bot-commands": 12,
     "【代发】uw生日快乐！": 1,
     "450 - dtide": 3,
     "✅「Answered」Steam achievements cannot be unlocked for old accounts": 3,
     "Tonight or Never || Arc 2 Chapter 3": 1,
     "continual arachneposting": 1,
-    "William posting": 4,
-    "Dzone mechanics guides post links": 1,
-    "问一下新人能怎么组队": 11
+    "Dzone mechanics guides post links": 1
   },
   "hourly_activity": {
+    "6": 968,
+    "7": 1076,
+    "8": 548,
+    "9": 561,
+    "10": 146,
     "0": 714,
     "1": 776,
     "2": 646,
     "3": 556,
     "4": 1008,
-    "5": 1211,
-    "6": 14
+    "5": 1211
   },
   "message_types": {
-    "19": 1379,
-    "0": 3541,
-    "46": 1,
-    "20": 2,
-    "4": 1,
-    "6": 1
+    "0": 2318,
+    "19": 964,
+    "4": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1491692135395622912",
+      "channel_id": "1491692135395622912",
+      "content": "",
+      "author": "chuolel0",
+      "reactions": 11,
+      "channel": "Xu fanart"
+    },
+    {
+      "id": "1491714384756473896",
+      "channel_id": "1170692781216378960",
+      "content": "there's only so many times angbak can hear the sound of WRENCH JACKSON in his mu",
+      "author": "jyeusu",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491693275420033164",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "jmjmjm6667",
+      "reactions": 10,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1491687316798963843",
+      "channel_id": "1170692781216378960",
+      "content": "~~I am writing on phone so there may be some grammatical errors~~\n\n<@19921025275",
+      "author": "megidola.",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1491647903817535708",
       "channel_id": "1445556242381672559",
@@ -61,11 +107,59 @@
       "channel": "William posting"
     },
     {
+      "id": "1491687139887415429",
+      "channel_id": "1170692781216378960",
+      "content": "my little pollux",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491687174968578150",
+      "channel_id": "1170692781216378960",
+      "content": "my little pandia",
+      "author": "_venush",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491692758501425202",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "dracozion",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1491602012125790359",
       "channel_id": "1170692781216378960",
       "content": "https://tenor.com/view/nilou-genshin-genshin-impact-nilou-eating-paimon-nilou-ea",
       "author": "monchi3524",
       "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491692412148650024",
+      "channel_id": "1131839874132090890",
+      "content": "~~還在上學~~",
+      "author": "corposant_1003",
+      "reactions": 5,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1491705683769294853",
+      "channel_id": "1170692781216378960",
+      "content": "maybe the issue is about you Lens 🥹",
+      "author": "_venush",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491725804072341626",
+      "channel_id": "1170692781216378960",
+      "content": "Lmao \nGiant wall of text vs wheel with this attribute",
+      "author": "melwyn7591",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -93,123 +187,43 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1491625803312529550",
-      "channel_id": "1131839817982947429",
-      "content": "【闲者映天：如何一个视频把自己赶出社区？（补档）-哔哩哔哩】 https://b23.tv/6AYIkyq",
-      "author": "yy42974466",
+      "id": "1491692622857638009",
+      "channel_id": "1131839874132090890",
+      "content": "我剛畢業",
+      "author": "ilikeloliii",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸阵容构建"
     },
     {
-      "id": "1491596238074810538",
+      "id": "1491692678700863568",
       "channel_id": "1170692781216378960",
-      "content": "Make sure to add that a \"well respected and masculine CC is in support\"",
-      "author": "frosthief",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491596240796778506",
-      "channel_id": "1170692781216378960",
-      "content": "ive tried killing myself over less",
-      "author": "princess.goth",
+      "content": "the hit blockbuster movie directed by james cameron known as avat-",
+      "author": "arkaether",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1491600894897295451",
+      "id": "1491705834239955075",
       "channel_id": "1170692781216378960",
-      "content": "IN MY COUNTRY",
+      "content": "||AO3 Flares Elite||",
       "author": "angbak",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1491606090813542430",
+      "id": "1491714178006913044",
       "channel_id": "1170692781216378960",
-      "content": "feels close",
-      "author": "monchi3524",
+      "content": "how can she be good for something she never showed up in?",
+      "author": "jyeusu",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1491588623055720590",
-      "channel_id": "1300659662311526512",
-      "content": "https://tenor.com/view/silly-altright-pepe-rekt-frog-hammer-anime-gif-15946863",
-      "author": "yaoshidoppa",
+      "id": "1491723592323436594",
+      "channel_id": "1170692781216378960",
+      "content": "Bro I’m dead💀😭 (biologically speaking I am, in fact, alive. However, to emphasiz",
+      "author": "djawaits",
       "reactions": 4,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1491632784471490570",
-      "channel_id": "1491383941620432956",
-      "content": "We’ve noticed this confusion. In fact, we are currently testing the feature, and",
-      "author": "morimensstaff03",
-      "reactions": 4,
-      "channel": "✅「Answered」Steam achievements cannot be unlocked for old accounts"
-    },
-    {
-      "id": "1491615719581024276",
-      "channel_id": "1131839874132090890",
-      "content": "",
-      "author": "yy42974466",
-      "reactions": 3,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1491589095552450631",
-      "channel_id": "1170692781216378960",
-      "content": "thanks for the tips rain!  Dont think this fight could have been any more hair-r",
-      "author": "badmoon_rising",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491594164729680082",
-      "channel_id": "1170692781216378960",
-      "content": "I do love the whole idea is just here and gain traction from frost just to count",
-      "author": "2ndselna",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491598838048227338",
-      "channel_id": "1170692781216378960",
-      "content": "I'm rating everything 6/7",
-      "author": "bagels5899",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491601036195135508",
-      "channel_id": "1170692781216378960",
-      "content": "i mean how could i not be broke. i spend money into stupid things like gacha",
-      "author": "monchi3524",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491601394459873371",
-      "channel_id": "1170692781216378960",
-      "content": "so wheel jail makes people have OE 😄",
-      "author": "monchi3524",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491601605383032985",
-      "channel_id": "1170692781216378960",
-      "content": "https://gif.fxtwitter.com/tweet_video/HFERvvfaIAAWkkY.webp",
-      "author": "lichkin",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491602118359121950",
-      "channel_id": "1170692781216378960",
-      "content": "alrgiht i gotta get outta here I'll talk to yall in a bit",
-      "author": "mega252",
-      "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }
   ]
