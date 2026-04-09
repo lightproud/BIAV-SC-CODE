@@ -1,8 +1,8 @@
 {
   "date": "2026-04-09",
-  "archived_at": "2026-04-08T23:58:20.653929+00:00",
+  "archived_at": "2026-04-09T06:03:47.173281+00:00",
   "source": "bilibili",
-  "item_count": 22,
+  "item_count": 25,
   "items": [
     {
       "source": "bilibili",
@@ -288,6 +288,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-08T12:39:49+00:00",
+      "lang": "",
+      "title": "这期是我定制的i塔TV【融灾5-V混沌塔微】",
+      "summary": "初见在王关门口拿了诅咒造物结果卡了一整局的手，手牌上限和降低力量两个机制对于塔微来说太阴了，好在除了第一波外生存压力不算大，反而呢，打起来比平时要轻松，道中无压力随便做状态\n嗯哈姆林其实不应该觉醒的，也会卡手牌，最后的输出也是溢出的\n  └ 卡组大发明家 (0赞): 玩过这个配队，为啥我一顿操作伤害就一点？",
+      "url": "https://www.bilibili.com/video/BV1gPDEBcEox",
+      "author": "芒亡了",
+      "engagement": 228,
+      "media_url": "https://i1.hdslb.com/bfs/archive/47a6262bc6e76bd0ec0f2a7124c77b0037e08237.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 222,
+        "comment_count": 6,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-08T09:11:22+00:00",
       "lang": "zh",
       "title": "读环行拉蒙娜意识潜游剧情，我来到人工密境只为3件事，活着，活着，还是tmd活着，守密人大人活着，青天就有啦",
@@ -296,6 +314,18 @@
       "author": "林雎Lingee",
       "engagement": 222,
       "media_url": "//i2.hdslb.com/bfs/archive/f838f9728cf5ca017e9af0c17f5b394686ddebe4.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-08T12:39:49+00:00",
+      "lang": "zh",
+      "title": "这期是我定制的i塔TV【融灾5-V混沌塔微】",
+      "summary": "初见在王关门口拿了诅咒造物结果卡了一整局的手，手牌上限和降低力量两个机制对于塔微来说太阴了，好在除了第一波外生存压力不算大，反而呢，打起来比平时要轻松，道中无压力随便做状态\n嗯哈姆林其实不应该觉醒的，也会卡手牌，最后的输出也是溢出的",
+      "url": "http://www.bilibili.com/video/av116369035165828",
+      "author": "芒亡了",
+      "engagement": 222,
+      "media_url": "//i1.hdslb.com/bfs/archive/47a6262bc6e76bd0ec0f2a7124c77b0037e08237.jpg",
       "content_type": "video"
     },
     {
@@ -343,6 +373,24 @@
         "play": 109,
         "comment_count": 12,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-08T03:43:20+00:00",
+      "lang": "",
+      "title": "血希+无限吞噬+妙手空空魅力时刻",
+      "summary": "血希+无限吞噬+妙手空空\n一回合叠1K+力量\n秘典星象仪+哈德森灵药+深渊通信+美学原理\n提供额外双暴\n一回合打出二十万伤害",
+      "url": "https://www.bilibili.com/video/BV1zMDkByEQX",
+      "author": "安澜涑水",
+      "engagement": 103,
+      "media_url": "https://i1.hdslb.com/bfs/archive/a9cae4590040aa998c31f424d4ed68be4517608f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 103,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },

@@ -1,8 +1,8 @@
 {
   "date": "2026-04-09",
-  "archived_at": "2026-04-08T23:58:20.652797+00:00",
+  "archived_at": "2026-04-09T06:03:47.172267+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -153,6 +153,21 @@
       "review": "아트가 마음에 듬",
       "timestamp_created": 1775666051,
       "playtime_forever": 440
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-08T21:35:39+00:00",
+      "lang": "english",
+      "title": "[正面] Ramona is very Paus",
+      "summary": "Ramona is very Paus",
+      "url": "https://steamcommunity.com/profiles/76561199865249707/recommended/3052450",
+      "author": "76561199865249707",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Ramona is very Paus",
+      "timestamp_created": 1775684139,
+      "playtime_forever": 4036
     }
   ]
 }
