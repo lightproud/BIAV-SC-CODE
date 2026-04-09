@@ -1,8 +1,53 @@
 {
-  "collected_at": "2026-04-09T16:11:02.243671+00:00",
+  "collected_at": "2026-04-09T20:12:14.962292+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-09T14:35:01+00:00",
+      "lang": "russian",
+      "title": "[正面] Просто супер",
+      "summary": "Просто супер",
+      "url": "https://steamcommunity.com/profiles/76561198161744086/recommended/3052450",
+      "author": "76561198161744086",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Просто супер",
+      "timestamp_created": 1775745301,
+      "playtime_forever": 23719
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-09T14:12:40+00:00",
+      "lang": "tchinese",
+      "title": "[正面] nice",
+      "summary": "nice",
+      "url": "https://steamcommunity.com/profiles/76561199875000424/recommended/3052450",
+      "author": "76561199875000424",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "nice",
+      "timestamp_created": 1775743960,
+      "playtime_forever": 1218
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-09T10:32:38+00:00",
+      "lang": "english",
+      "title": "[正面] yippe",
+      "summary": "yippe",
+      "url": "https://steamcommunity.com/profiles/76561198880968246/recommended/3052450",
+      "author": "76561198880968246",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "yippe",
+      "timestamp_created": 1775730758,
+      "playtime_forever": 2546
+    },
     {
       "source": "steam",
       "time": "2026-04-08T21:35:39+00:00",
@@ -76,37 +121,7 @@
       "voted_up": true,
       "review": "Great game, very good mechanic, dupe reliant but F2P friendly",
       "timestamp_created": 1775636609,
-      "playtime_forever": 8769
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-07T18:24:46+00:00",
-      "lang": "spanish",
-      "title": "[正面] cartas + gacha + waifus lovecraftianas bastante f2...",
-      "summary": "cartas + gacha + waifus lovecraftianas bastante f2p friendly en lo que llevo jugando",
-      "url": "https://steamcommunity.com/profiles/76561199343835410/recommended/3052450",
-      "author": "76561199343835410",
-      "engagement": 0,
-      "language": "spanish",
-      "voted_up": true,
-      "review": "cartas + gacha + waifus lovecraftianas bastante f2p friendly en lo que llevo jugando",
-      "timestamp_created": 1775586286,
-      "playtime_forever": 7179
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-07T17:17:25+00:00",
-      "lang": "schinese",
-      "title": "[正面] 窝趣，依托史",
-      "summary": "窝趣，依托史",
-      "url": "https://steamcommunity.com/profiles/76561199706346146/recommended/3052450",
-      "author": "76561199706346146",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "窝趣，依托史",
-      "timestamp_created": 1775582245,
-      "playtime_forever": 73527
+      "playtime_forever": 8951
     }
   ]
 }
