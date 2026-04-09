@@ -1,8 +1,8 @@
 {
   "date": "2026-04-09",
-  "archived_at": "2026-04-09T06:03:47.173281+00:00",
+  "archived_at": "2026-04-09T10:24:13.952844+00:00",
   "source": "bilibili",
-  "item_count": 25,
+  "item_count": 30,
   "items": [
     {
       "source": "bilibili",
@@ -270,6 +270,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-09T05:44:38+00:00",
+      "lang": "",
+      "title": "玩了一年忘却前夜我才知道的事",
+      "summary": "└ 自墨花 (1赞): 😱那我每个截屏算什么",
+      "url": "https://www.bilibili.com/video/BV1FRDHBXEwW",
+      "author": "今天也在抓飞鼠",
+      "engagement": 245,
+      "media_url": "https://i0.hdslb.com/bfs/archive/56b727be74883eddaa7392d8e0e204d8af212a1b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 243,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-09T05:44:38+00:00",
+      "lang": "zh",
+      "title": "玩了一年忘却前夜我才知道的事",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116373145523560",
+      "author": "今天也在抓飞鼠",
+      "engagement": 243,
+      "media_url": "//i0.hdslb.com/bfs/archive/56b727be74883eddaa7392d8e0e204d8af212a1b.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-07T16:27:17+00:00",
       "lang": "",
       "title": "saya",
@@ -360,6 +390,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-09T08:32:57+00:00",
+      "lang": "",
+      "title": "谁敢质疑我们打击女（靠运气）",
+      "summary": "打击女子不会输！",
+      "url": "https://www.bilibili.com/video/BV1k9DWBwEUh",
+      "author": "Black_water_",
+      "engagement": 151,
+      "media_url": "https://i0.hdslb.com/bfs/archive/f43daff4430b97714f952442203fa4bb5f885a14.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 151,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-09T08:32:57+00:00",
+      "lang": "zh",
+      "title": "谁敢质疑我们打击女（靠运气）",
+      "summary": "打击女子不会输！",
+      "url": "http://www.bilibili.com/video/av116373799966691",
+      "author": "Black_water_",
+      "engagement": 151,
+      "media_url": "//i0.hdslb.com/bfs/archive/f43daff4430b97714f952442203fa4bb5f885a14.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-08T07:25:00+00:00",
       "lang": "",
       "title": "清唱《沙耶の唄》",
@@ -407,6 +467,24 @@
       "content_type": "image",
       "metadata": {
         "play": 34,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-09T10:00:00+00:00",
+      "lang": "",
+      "title": "沙耶之歌第二期",
+      "summary": "在充满绝望的血肉世界中，一位白衣女孩点亮了郁纪“生”的希望。",
+      "url": "https://www.bilibili.com/video/BV17iDaB1Eve",
+      "author": "KiKi君Smith",
+      "engagement": 2,
+      "media_url": "https://i0.hdslb.com/bfs/archive/4b662dbd82c0369abcda42ebf95aa4e2e26b0a20.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 2,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
