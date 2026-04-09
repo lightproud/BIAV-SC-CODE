@@ -1,8 +1,8 @@
 {
   "date": "2026-04-09",
-  "archived_at": "2026-04-08T23:58:20.654930+00:00",
+  "archived_at": "2026-04-09T06:03:47.174293+00:00",
   "source": "reddit",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
     {
       "source": "reddit",
@@ -128,6 +128,36 @@
       "author": "/u/Iggy_DB",
       "engagement": 0,
       "media_url": "https://preview.redd.it/b1c2mjx6u1ug1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=84f8589ecec61e4de9d1bd715a20c0b94d535520",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-09T03:41:54+00:00",
+      "lang": "",
+      "title": "Apparently, an achievement system has been implemented in Morimens on Steam. It doesn't seem to work yet, but it's possible to see it.",
+      "summary": "I never cared about trophies or achievements on games. But for those who like them, it&#39;s a really cool addition to the game!  &#32; submitted by &#32;  /u/Altruistic_Image_726   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sgenej/apparently_an_achievement_system_has_been/",
+      "author": "/u/Altruistic_Image_726",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/6i8zfy2j53ug1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=3e2f4e48bf238350774b17855f8179927a067ef3",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-09T03:25:33+00:00",
+      "lang": "",
+      "title": "its a little late but, is negative damage a common thing here?",
+      "summary": "i have no idea how i did it either, it would be cool if its replicatable  &#32; submitted by &#32;  /u/konsanlulu   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sgeb9e/its_a_little_late_but_is_negative_damage_a_common/",
+      "author": "/u/konsanlulu",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/2att4vln23ug1.jpg?width=140&amp;height=87&amp;auto=webp&amp;s=3452d6fd73ca1a7c44435d672bd640027b9cae64",
       "content_type": "image",
       "metadata": {
         "via": "rss"

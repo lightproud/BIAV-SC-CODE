@@ -986,6 +986,27 @@
       "title": "忘卻前夜角色介紹（抽取建議）超維篇",
       "time": "2026-04-08T23:55:26.326176+00:00",
       "downloaded_at": "2026-04-08T23:58:19.506185+00:00"
+    },
+    "https://i.ytimg.com/vi/zutKkjaOUSs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBXWEDS_shgXRSV_bZPmibvVj1rQg": {
+      "filename": "youtube_68aa16083a750216.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Flares' Awakener Review : GMurphy - S Tier everything. Most powerful unit ever released.",
+      "time": "2026-04-09T06:00:46.269551+00:00",
+      "downloaded_at": "2026-04-09T06:03:44.117681+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/47a6262bc6e76bd0ec0f2a7124c77b0037e08237.jpg": {
+      "filename": "bilibili_c5f0810958981567.jpg",
+      "source": "bilibili",
+      "title": "这期是我定制的i塔TV【融灾5-V混沌塔微】",
+      "time": "2026-04-08T12:39:49+00:00",
+      "downloaded_at": "2026-04-09T06:03:45.146777+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/a9cae4590040aa998c31f424d4ed68be4517608f.jpg": {
+      "filename": "bilibili_8c0b3afc5787902e.jpg",
+      "source": "bilibili",
+      "title": "血希+无限吞噬+妙手空空魅力时刻",
+      "time": "2026-04-08T03:43:20+00:00",
+      "downloaded_at": "2026-04-09T06:03:46.315837+00:00"
     }
   },
   "failed": {
@@ -1303,6 +1324,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-08T23:58:20.590465+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/47a6262bc6e76bd0ec0f2a7124c77b0037e08237.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-09T06:03:45.447663+00:00"
+    },
+    "https://preview.redd.it/6i8zfy2j53ug1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=3e2f4e48bf238350774b17855f8179927a067ef3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-09T06:03:46.763656+00:00"
+    },
+    "https://preview.redd.it/2att4vln23ug1.jpg?width=140&amp;height=87&amp;auto=webp&amp;s=3452d6fd73ca1a7c44435d672bd640027b9cae64": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-09T06:03:47.100242+00:00"
     }
   },
   "archived": []
