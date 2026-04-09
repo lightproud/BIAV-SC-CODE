@@ -1,8 +1,8 @@
 {
   "date": "2026-04-10",
-  "archived_at": "2026-04-09T16:11:06.509136+00:00",
+  "archived_at": "2026-04-09T20:12:16.176945+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -108,6 +108,51 @@
       "review": "窝趣，依托史",
       "timestamp_created": 1775582245,
       "playtime_forever": 73527
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-09T14:35:01+00:00",
+      "lang": "russian",
+      "title": "[正面] Просто супер",
+      "summary": "Просто супер",
+      "url": "https://steamcommunity.com/profiles/76561198161744086/recommended/3052450",
+      "author": "76561198161744086",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Просто супер",
+      "timestamp_created": 1775745301,
+      "playtime_forever": 23719
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-09T14:12:40+00:00",
+      "lang": "tchinese",
+      "title": "[正面] nice",
+      "summary": "nice",
+      "url": "https://steamcommunity.com/profiles/76561199875000424/recommended/3052450",
+      "author": "76561199875000424",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "nice",
+      "timestamp_created": 1775743960,
+      "playtime_forever": 1218
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-09T10:32:38+00:00",
+      "lang": "english",
+      "title": "[正面] yippe",
+      "summary": "yippe",
+      "url": "https://steamcommunity.com/profiles/76561198880968246/recommended/3052450",
+      "author": "76561198880968246",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "yippe",
+      "timestamp_created": 1775730758,
+      "playtime_forever": 2546
     }
   ]
 }

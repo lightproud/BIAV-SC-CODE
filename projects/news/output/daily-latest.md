@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-10
 
-> 采集时间：2026-04-10 00:11 UTC+8
+> 采集时间：2026-04-10 04:12 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌第二期 — engagement: 40
+1. [Bilibili] 沙耶之歌第二期 — engagement: 106
 2. [Reddit] Any news on the saya no uta collabs release date? — engagement: 0
 3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
@@ -42,7 +42,7 @@
 | QQ频道 | 0（沉默）|
 | Reddit | 14 |
 | Ruliweb | 0（沉默）|
-| Steam | 2 |
+| Steam | 4 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -57,7 +57,7 @@
 | 微信公众号 | 20 |
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 34 |
+| YouTube | 35 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -74,21 +74,23 @@
 
 ## Steam 评论
 
-- 好评 2 / 差评 0 / 好评率 100%
-- 语言分布：english 1, koreana 1
+- 好评 4 / 差评 0 / 好评率 100%
+- 语言分布：english 2, russian 1, tchinese 1
 
 ### 热门好评
 
-1. [正面] Ramona is very Paus — engagement: 0
-2. [正面] 아트가 마음에 듬 — engagement: 0
+1. [正面] Просто супер — engagement: 0
+2. [正面] nice — engagement: 0
+3. [正面] yippe — engagement: 0
+4. [正面] Ramona is very Paus — engagement: 0
 
 ## Bilibili
 
-1. 玩了一年忘却前夜我才知道的事 — engagement: 401
-2. 玩了一年忘却前夜我才知道的事 — engagement: 398
-3. 谁敢质疑我们打击女（靠运气） — engagement: 220
-4. 谁敢质疑我们打击女（靠运气） — engagement: 220
-5. 用同一张梗图总结下入坑两年来的部分GAL — engagement: 46
+1. 玩了一年忘却前夜我才知道的事 — engagement: 458
+2. 玩了一年忘却前夜我才知道的事 — engagement: 454
+3. 谁敢质疑我们打击女（靠运气） — engagement: 232
+4. 谁敢质疑我们打击女（靠运气） — engagement: 231
+5. 用同一张梗图总结下入坑两年来的部分GAL — engagement: 223
 
 ## Gamerch Wiki
 
@@ -100,11 +102,11 @@
 
 ## Reddit
 
-1. New player here. HOW is this character considered ass/low-ti — engagement: 0
-2. Holy RNGsus what is this luck tho!! 😍😅 — engagement: 0
-3. got 1st skin (～￣▽￣)～ — engagement: 0
-4. Apparently, an achievement system has been implemented in Mo — engagement: 0
-5. Was listening through Wanda's lines bc I like her voice and. — engagement: 0
+1. Holding it in until then — engagement: 0
+2. New player here. HOW is this character considered ass/low-ti — engagement: 0
+3. Holy RNGsus what is this luck tho!! 😍😅 — engagement: 0
+4. Story progress gifts. — engagement: 0
+5. got 1st skin (～￣▽￣)～ — engagement: 0
 
 ## StopGame.ru
 
@@ -120,11 +122,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 281965
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40662
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38290
-4. Morimens Basic Mechanics and Account Progression Guide — engagement: 31198
-5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 16529
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282107
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40687
+3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38293
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18724
+5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 16631
 
 ## 沉默平台
 
