@@ -1,45 +1,55 @@
 {
   "date": "2026-04-09",
-  "messages": 8210,
-  "unique_authors": 169,
-  "reactions_total": 958,
-  "attachments": 334,
+  "messages": 15328,
+  "unique_authors": 251,
+  "reactions_total": 1730,
+  "attachments": 694,
   "channel_activity": {
-    "🔸綜合討論": 567,
-    "🔸阵容构建": 423,
-    "🔸morimens-game-chat": 4959,
-    "🔸剧情交流": 14,
-    "🔸欢乐梗图": 27,
-    "🔸chaîne-française": 1,
-    "🔸русский-канал": 15,
-    "🔸phòng-chat-tiếng-việt": 464,
-    "🔸canal-português": 326,
-    "🔸ruang-obrolan-indonesia": 157,
-    "🔸ห้องสนทนาภาษาไทย": 4,
-    "🔸traphase": 18,
-    "🔸lore-chat": 62,
-    "🔸team-building": 326,
-    "🔸general-chat": 202,
-    "🔸邀请码互助┊swap-invitation-codes": 12,
-    "🔸game-question": 478,
-    "🔸机器人命令┊bot-commands": 19,
-    "最鯨幻想": 1,
+    "🔸綜合討論": 798,
+    "🔸阵容构建": 427,
+    "🔸morimens-game-chat": 8065,
+    "🔸剧情交流": 51,
+    "🔸欢乐梗图": 34,
+    "🔸课间休息闲聊": 48,
+    "🔸chaîne-française": 8,
+    "🔸русский-канал": 238,
+    "🔸phòng-chat-tiếng-việt": 817,
+    "🔸canal-español": 344,
+    "🔸canal-português": 1165,
+    "🔸ruang-obrolan-indonesia": 391,
+    "🔸ห้องสนทนาภาษาไทย": 14,
+    "🔸traphase": 22,
+    "🔸lore-chat": 70,
+    "🔸team-building": 745,
+    "🔸general-chat": 284,
+    "🔸邀请码互助┊swap-invitation-codes": 27,
+    "🔸game-question": 1620,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 33,
+    "🔸erica-playground": 1,
+    "dollie": 1,
+    "小杜大厨": 1,
+    "汀": 1,
+    "最鯨幻想": 2,
+    "✅「Answered」download stuck": 4,
+    "建議 14 天課題的學期任務的完成條件應當按天數比例降低": 6,
+    "Get auto battle back! 恢复自动战斗": 2,
+    "✅「Answered」Aurita simple yet effective buff": 11,
+    "\"24\" lives matter": 3,
+    "问一下新人能怎么组队": 47,
+    "Team Building for D-Tide !": 1,
+    "1491788058809471078": 1,
     "猜猜我是誰（不是": 2,
     "download stuck": 2,
     "Levels + enlightenment regulation option": 10,
-    "✅「Answered」Aurita simple yet effective buff": 3,
     "💭「Processing」Please, lower the requirement for +12 Ramona": 2,
-    "\"24\" lives matter": 1,
     "✅「Answered」Aurita possible Soulforge buff": 2,
     "Xu fanart": 1,
     "Is non-morimens content even allowed to be posted": 1,
     "Morimens Fanarts": 1,
     "William posting": 5,
     "大佬们凯蒂古拉强度怎么样？": 4,
-    "问一下新人能怎么组队": 45,
-    "🔸课间休息闲聊": 35,
     "🔸deutscher-chatraum": 5,
-    "🔸canal-español": 6,
     "【代发】uw生日快乐！": 1,
     "450 - dtide": 3,
     "✅「Answered」Steam achievements cannot be unlocked for old accounts": 3,
@@ -48,11 +58,21 @@
     "Dzone mechanics guides post links": 1
   },
   "hourly_activity": {
+    "10": 471,
+    "11": 626,
+    "12": 549,
+    "13": 574,
+    "14": 693,
+    "15": 465,
+    "16": 856,
+    "17": 1120,
+    "18": 1020,
+    "19": 778,
+    "20": 112,
     "6": 968,
     "7": 1076,
     "8": 548,
     "9": 561,
-    "10": 146,
     "0": 714,
     "1": 776,
     "2": 646,
@@ -61,9 +81,12 @@
     "5": 1211
   },
   "message_types": {
-    "0": 2318,
-    "19": 964,
-    "4": 3
+    "0": 4803,
+    "19": 2310,
+    "23": 1,
+    "20": 1,
+    "4": 2,
+    "21": 1
   },
   "top_reacted_messages": [
     {
@@ -107,6 +130,62 @@
       "channel": "William posting"
     },
     {
+      "id": "1491801943973298307",
+      "channel_id": "1170692781216378960",
+      "content": "Just need to farm script before chapter 9 now",
+      "author": "climbkaly",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491855080813760723",
+      "channel_id": "1170692781216378960",
+      "content": "when gdoll said that existence was meaningless, its because she didnt look in th",
+      "author": "chinkeeyong",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491842801195941958",
+      "channel_id": "1131839817982947429",
+      "content": "据某位不愿意透露姓名的记者透露\n纯混界域一直都是猫的心头恨\n但这其实是有原因的\n因为即便塔薇在游戏即将关服的危机时刻下力挽狂澜 拯救了5771\n但是在那之后猫只",
+      "author": "be_queitplease",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1491746207473860689",
+      "channel_id": "1170692781216378960",
+      "content": "I am just realizing that \nI am **too good** with Discard\nThe comp is just too co",
+      "author": "legendaryredz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491802116497346751",
+      "channel_id": "1170692781216378960",
+      "content": "smth cool",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491855452382953593",
+      "channel_id": "1170692781216378960",
+      "content": "<@113374123798859776> named a pokemon after you... sort of",
+      "author": "zyocuh",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1491861882515230781",
+      "channel_id": "1170692781216378960",
+      "content": "Double Kathi <:kath_cool:1447714576413233315>",
+      "author": "not_kathigu_ra",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1491687139887415429",
       "channel_id": "1170692781216378960",
       "content": "my little pollux",
@@ -139,92 +218,36 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1491692412148650024",
-      "channel_id": "1131839874132090890",
-      "content": "~~還在上學~~",
-      "author": "corposant_1003",
-      "reactions": 5,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1491705683769294853",
+      "id": "1491748165794140160",
       "channel_id": "1170692781216378960",
-      "content": "maybe the issue is about you Lens 🥹",
-      "author": "_venush",
+      "content": "Normal reaction to pulling Uvhash",
+      "author": "sirtealot",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1491725804072341626",
+      "id": "1491801982820679881",
       "channel_id": "1170692781216378960",
-      "content": "Lmao \nGiant wall of text vs wheel with this attribute",
-      "author": "melwyn7591",
+      "content": "fire react means you say smth cool",
+      "author": "bagels5899",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1491632170895278081",
-      "channel_id": "1131839817982947429",
-      "content": "最近几个融灾我都做了机制解释和推荐队伍，不过是发到reddit上的所以是英文，有兴趣的可以大概看看（",
-      "author": "polkarain",
+      "id": "1491805039298089142",
+      "channel_id": "1433513650299076780",
+      "content": "did 315",
+      "author": "t0ms0",
       "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸game-question"
     },
     {
-      "id": "1491597135962046678",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "dracozion",
+      "id": "1491862863848144986",
+      "channel_id": "1491862863848144986",
+      "content": "uid：100368860",
+      "author": "solisimperium.",
       "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491600810294116352",
-      "channel_id": "1170692781216378960",
-      "content": "ok what about this brilliant idea. we let the rich players decide what is low in",
-      "author": "monchi3524",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491692622857638009",
-      "channel_id": "1131839874132090890",
-      "content": "我剛畢業",
-      "author": "ilikeloliii",
-      "reactions": 4,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1491692678700863568",
-      "channel_id": "1170692781216378960",
-      "content": "the hit blockbuster movie directed by james cameron known as avat-",
-      "author": "arkaether",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491705834239955075",
-      "channel_id": "1170692781216378960",
-      "content": "||AO3 Flares Elite||",
-      "author": "angbak",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491714178006913044",
-      "channel_id": "1170692781216378960",
-      "content": "how can she be good for something she never showed up in?",
-      "author": "jyeusu",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491723592323436594",
-      "channel_id": "1170692781216378960",
-      "content": "Bro I’m dead💀😭 (biologically speaking I am, in fact, alive. However, to emphasiz",
-      "author": "djawaits",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
+      "channel": "汀"
     }
   ]
 }
