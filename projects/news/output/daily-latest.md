@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-10
 
-> 采集时间：2026-04-10 04:12 UTC+8
+> 采集时间：2026-04-10 07:15 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌第二期 — engagement: 106
+1. [Bilibili] 沙耶之歌第二期 — engagement: 139
 2. [Reddit] Any news on the saya no uta collabs release date? — engagement: 0
 3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
@@ -15,7 +15,7 @@
 
 | 平台 | 数据条数 |
 |------|----------|
-| App Store | 0（沉默）|
+| App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 6 |
@@ -40,7 +40,7 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 14 |
+| Reddit | 9 |
 | Ruliweb | 0（沉默）|
 | Steam | 4 |
 | Steam 论坛 | 0（沉默）|
@@ -57,12 +57,12 @@
 | 微信公众号 | 20 |
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 35 |
+| YouTube | 34 |
 | 知乎 | 0（沉默）|
 
 ## Discord
 
-今日 8,210 条消息，169 位活跃用户，958 次反应。热门频道：🔸morimens-game-chat(4959)、🔸綜合討論(567)、🔸game-question(478)、🔸phòng-chat-tiếng-việt(464)、🔸阵容构建(423)
+今日 15,328 条消息，251 位活跃用户，1,730 次反应。热门频道：🔸morimens-game-chat(8065)、🔸game-question(1620)、🔸canal-português(1165)、🔸phòng-chat-tiếng-việt(817)、🔸綜合討論(798)
 
 ### 热门话题
 
@@ -70,27 +70,27 @@
 2. [DC] chuolel0@🔸art-and-memes: (附件/嵌入) — engagement: 34
 3. [DC] megidola.@🔸morimens-game-chat: ~~I am writing on phone  — engagement: 32
 4. [DC] jyeusu@🔸morimens-game-chat: there's only so many times  — engagement: 32
-5. [DC] zzio_@🔸art-and-memes: ... sometime later  — engagement: 25
+5. [DC] climbkaly@🔸morimens-game-chat: Just need to farm script — engagement: 26
 
 ## Steam 评论
 
 - 好评 4 / 差评 0 / 好评率 100%
-- 语言分布：english 2, russian 1, tchinese 1
+- 语言分布：russian 2, tchinese 1, english 1
 
 ### 热门好评
 
-1. [正面] Просто супер — engagement: 0
-2. [正面] nice — engagement: 0
-3. [正面] yippe — engagement: 0
-4. [正面] Ramona is very Paus — engagement: 0
+1. [正面] голі тьотки — engagement: 0
+2. [正面] Просто супер — engagement: 0
+3. [正面] nice — engagement: 0
+4. [正面] yippe — engagement: 0
 
 ## Bilibili
 
-1. 玩了一年忘却前夜我才知道的事 — engagement: 458
-2. 玩了一年忘却前夜我才知道的事 — engagement: 454
-3. 谁敢质疑我们打击女（靠运气） — engagement: 232
-4. 谁敢质疑我们打击女（靠运气） — engagement: 231
-5. 用同一张梗图总结下入坑两年来的部分GAL — engagement: 223
+1. 玩了一年忘却前夜我才知道的事 — engagement: 484
+2. 玩了一年忘却前夜我才知道的事 — engagement: 480
+3. 用同一张梗图总结下入坑两年来的部分GAL — engagement: 291
+4. 谁敢质疑我们打击女（靠运气） — engagement: 236
+5. 谁敢质疑我们打击女（靠运气） — engagement: 236
 
 ## Gamerch Wiki
 
@@ -122,11 +122,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282107
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40687
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38293
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18724
-5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 16631
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282141
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40704
+3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38294
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18729
+5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 16675
 
 ## 沉默平台
 
