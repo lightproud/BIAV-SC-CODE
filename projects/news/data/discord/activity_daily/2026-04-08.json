@@ -1,20 +1,20 @@
 {
   "date": "2026-04-08",
-  "messages": 14505,
+  "messages": 14569,
   "unique_authors": 171,
-  "reactions_total": 1793,
-  "attachments": 605,
+  "reactions_total": 1804,
+  "attachments": 608,
   "channel_activity": {
-    "🔸綜合討論": 1347,
-    "🔸morimens-game-chat": 9010,
+    "🔸綜合討論": 1361,
+    "🔸morimens-game-chat": 9052,
+    "🔸general-chat": 332,
+    "🔸game-question": 1593,
     "🔸русский-канал": 235,
     "🔸canal-português": 195,
     "🔸ruang-obrolan-indonesia": 88,
     "🔸lore-chat": 30,
     "🔸team-building": 294,
-    "🔸general-chat": 331,
     "🔸邀请码互助┊swap-invitation-codes": 34,
-    "🔸game-question": 1586,
     "🔸机器人命令┊bot-commands": 41,
     "Levels + enlightenment regulation option": 4,
     "continual arachneposting": 6,
@@ -58,8 +58,8 @@
     "D-Tide Alert 1 Sample team comp": 1
   },
   "hourly_activity": {
+    "23": 357,
     "22": 400,
-    "23": 293,
     "21": 328,
     "18": 659,
     "19": 401,
@@ -84,9 +84,8 @@
     "5": 468
   },
   "message_types": {
-    "19": 248,
-    "0": 605,
-    "23": 1
+    "0": 43,
+    "19": 21
   },
   "top_reacted_messages": [
     {
