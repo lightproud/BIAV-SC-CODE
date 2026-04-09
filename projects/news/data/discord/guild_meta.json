@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-04-09T10:42:28.193969+00:00",
+  "updated_at": "2026-04-09T16:08:50.786587+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -383,7 +383,7 @@
       "name": "🔸日本語チャンネル",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 66,
+      "position": 44,
       "topic": null
     },
     {
@@ -391,7 +391,7 @@
       "name": "🔸한국어-채팅방",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 67,
+      "position": 45,
       "topic": null
     },
     {
@@ -399,7 +399,7 @@
       "name": "🔸deutscher-chatraum",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 68,
+      "position": 46,
       "topic": "📢 Hinweis: Damit Sie Ihre sprachspezifischen Kanäle nicht verpassen, gehen Sie bitte so schnell wie möglich zu <id:customize> und wählen Sie Ihre Sprachrolle aus. Wir werden zukünftig die Kanalausblendung implementieren. Sie sehen dann nur noch die Kanäle, die den von Ihnen ausgewählten Rollen entsprechen."
     },
     {
@@ -407,7 +407,7 @@
       "name": "🔸chaîne-française",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 69,
+      "position": 47,
       "topic": null
     },
     {
@@ -415,7 +415,7 @@
       "name": "🔸русский-канал",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 70,
+      "position": 48,
       "topic": null
     },
     {
@@ -423,7 +423,7 @@
       "name": "🔸phòng-chat-tiếng-việt",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 71,
+      "position": 49,
       "topic": null
     },
     {
@@ -431,7 +431,7 @@
       "name": "🔸canal-español",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 74,
+      "position": 52,
       "topic": null
     },
     {
@@ -439,7 +439,7 @@
       "name": "🔸canal-português",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 72,
+      "position": 50,
       "topic": null
     },
     {
@@ -447,7 +447,7 @@
       "name": "🔸ruang-obrolan-indonesia",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 73,
+      "position": 51,
       "topic": null
     },
     {
@@ -455,7 +455,7 @@
       "name": "🔸ห้องสนทนาภาษาไทย",
       "type": 0,
       "parent_id": "1131839770545365072",
-      "position": 75,
+      "position": 53,
       "topic": null
     },
     {
