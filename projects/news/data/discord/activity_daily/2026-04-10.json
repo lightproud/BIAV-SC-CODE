@@ -1,26 +1,30 @@
 {
   "date": "2026-04-10",
-  "messages": 11974,
+  "messages": 12540,
   "unique_authors": 159,
-  "reactions_total": 1427,
-  "attachments": 623,
+  "reactions_total": 1505,
+  "attachments": 657,
   "channel_activity": {
-    "🔸綜合討論": 978,
-    "🔸morimens-game-chat": 7137,
-    "🔸한국어-채팅방": 10,
-    "🔸canal-español": 127,
-    "🔸canal-português": 628,
-    "🔸team-building": 400,
-    "🔸general-chat": 280,
-    "🔸邀请码互助┊swap-invitation-codes": 26,
-    "🔸game-question": 1127,
-    "🔸机器人命令┊bot-commands": 40,
+    "🔸綜合討論": 983,
+    "🔸morimens-game-chat": 7591,
+    "🔸한국어-채팅방": 11,
+    "🔸русский-канал": 105,
+    "🔸canal-español": 138,
+    "🔸canal-português": 656,
+    "🔸ruang-obrolan-indonesia": 361,
+    "🔸team-building": 405,
+    "🔸general-chat": 296,
+    "🔸邀请码互助┊swap-invitation-codes": 27,
+    "🔸game-question": 1145,
+    "🔸机器人命令┊bot-commands": 42,
+    "✅「Answered」Aurita simple yet effective buff": 16,
+    "English Language Setting Abnormality Issue Notice": 1,
+    "守密人頭像": 2,
+    "【English Translation】Opinions Collection": 4,
     "✅「已回答」台服dc的詐騙帳號": 20,
     "Get Auto enable for dtide": 6,
-    "【English Translation】Opinions Collection": 3,
     "1 Week Account Pulling Advice?": 6,
     "🔸deutscher-chatraum": 10,
-    "🔸русский-канал": 91,
     "🔸phòng-chat-tiếng-việt": 471,
     "🔸ห้องสนทนาภาษาไทย": 19,
     "🔸traphase": 21,
@@ -33,7 +37,6 @@
     "🔸剧情交流": 5,
     "🔸晒卡分享": 4,
     "🔸课间休息闲聊": 41,
-    "🔸ruang-obrolan-indonesia": 358,
     "🔸忘却前夜┊morimens-tv": 2,
     "Captain Alva": 2,
     "morimens sybau 💔": 3,
@@ -41,9 +44,7 @@
     "1492190601045868565": 1,
     "🔸lore-chat": 22,
     "🔸erica-playground": 1,
-    "✅「Answered」Aurita simple yet effective buff": 11,
     "忘却前夜OST：莫丝EP·涡心暗潮": 4,
-    "守密人頭像": 1,
     "Horla wip": 1,
     "continual arachneposting": 1,
     "How to clear lvl 60 event at level 1": 1,
@@ -64,7 +65,9 @@
     "1492017307789164564": 1
   },
   "hourly_activity": {
-    "21": 655,
+    "22": 195,
+    "21": 691,
+    "23": 335,
     "19": 813,
     "20": 803,
     "18": 583,
@@ -88,9 +91,8 @@
     "5": 326
   },
   "message_types": {
-    "19": 573,
-    "0": 894,
-    "20": 1
+    "0": 356,
+    "19": 210
   },
   "top_reacted_messages": [
     {
@@ -100,6 +102,14 @@
       "author": "water_heart",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492289039942942971",
+      "channel_id": "1170692781216378960",
+      "content": "I like the designs in this game a lot",
+      "author": "xiii_c",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492258123933552670",
@@ -190,6 +200,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492310678688501771",
+      "channel_id": "1170692781216378960",
+      "content": "holy shit youre so rich maybe buy some manners",
+      "author": "princess.goth",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492257369135124622",
       "channel_id": "1170692781216378960",
       "content": "Less than 10 days until Arachne!!!!",
@@ -234,22 +252,6 @@
       "channel_id": "1170692781216378960",
       "content": "Move to <#1400750050208125010> please, we are trying to help someone here",
       "author": "melwyn7591",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492209782088667146",
-      "channel_id": "1170692781216378960",
-      "content": "ill draw clem for you",
-      "author": "annaxxe_",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492150417528848414",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "arandomflamev2",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
