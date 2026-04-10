@@ -1,11 +1,11 @@
 # 忘却前夜 社区日报 2026-04-11
 
-> 采集时间：2026-04-11 04:01 UTC+8
+> 采集时间：2026-04-11 06:00 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌 - ガラスのくつ bass cover — engagement: 484
-2. [Bilibili] ⁣ — engagement: 41
+1. [Bilibili] 沙耶之歌 - ガラスのくつ bass cover — engagement: 488
+2. [Bilibili] ⁣ — engagement: 55
 3. [Bilibili] 沙耶之歌第三期 — engagement: 8
 4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
@@ -58,12 +58,12 @@
 | 微信公众号 | 20 |
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 36 |
+| YouTube | 34 |
 | 知乎 | 0（沉默）|
 
 ## Discord
 
-今日 9,003 条消息，159 位活跃用户，1,095 次反应。热门频道：🔸morimens-game-chat(5247)、🔸綜合討論(922)、🔸game-question(797)、🔸phòng-chat-tiếng-việt(470)、🔸ruang-obrolan-indonesia(358)
+今日 10,506 条消息，159 位活跃用户，1,239 次反应。热门频道：🔸morimens-game-chat(6158)、🔸綜合討論(960)、🔸game-question(853)、🔸canal-português(616)、🔸phòng-chat-tiếng-việt(471)
 
 ### 热门话题
 
@@ -76,15 +76,15 @@
 ## Steam 评论
 
 - 好评 7 / 差评 1 / 好评率 88%
-- 语言分布：schinese 3, english 2, russian 1, japanese 1, koreana 1
+- 语言分布：schinese 3, french 1, russian 1, english 1, japanese 1, koreana 1
 
 ### 热门好评
 
-1. [正面] скучно под пивом нечего не заметил как уже на 100%... — engagement: 0
-2. [正面] I like Bloodborne and I like Slay the Spire — engagement: 0
-3. [正面] こんなにメインストーリーが面白くて先が読めない展開は今までなかった。 — engagement: 0
-4. [正面] 好玩 — engagement: 0
-5. [正面] 갓-겜 — engagement: 0
+1. [正面] This is an amazing game, with a breathtaking artwo... — engagement: 0
+2. [正面] скучно под пивом нечего не заметил как уже на 100%... — engagement: 0
+3. [正面] I like Bloodborne and I like Slay the Spire — engagement: 0
+4. [正面] こんなにメインストーリーが面白くて先が読めない展開は今までなかった。 — engagement: 0
+5. [正面] 好玩 — engagement: 0
 
 ### ⚠️ 差评
 
@@ -92,9 +92,9 @@
 
 ## Bilibili
 
-1. 暴躁小伙惩治照骗 （沙耶，微恐） — engagement: 1539
-2. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 691
-3. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 681
+1. 暴躁小伙惩治照骗 （沙耶，微恐） — engagement: 1586
+2. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 695
+3. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 685
 4. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 645
 5. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 639
 
@@ -110,8 +110,8 @@
 
 1. GDoll aka Doll: Inferno - Should you Pull? — engagement: 0
 2. How to clear event lvl 60 stages at level 1 — engagement: 0
-3. i love lily but,,, — engagement: 0
-4. Does anyone have an idea when Castor may have a rerun? — engagement: 0
+3. Uvash teams? — engagement: 0
+4. i love lily but,,, — engagement: 0
 5. Need advice to improve mi team. — engagement: 0
 
 ## StopGame.ru
@@ -128,11 +128,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282659
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40849
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282739
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40844
 3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38302
-4. Clementine edit | Forget last night: Morimens — engagement: 32538
-5. [Morimens] 2025 Anni Tier List Update - Going over EVERY Uni — engagement: 20800
+4. This Gacha Game Is a Nightmare You Can’t Wake Up From — engagement: 24722
+5. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18757
 
 ## 沉默平台
 
