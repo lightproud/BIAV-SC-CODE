@@ -1,8 +1,38 @@
 {
-  "collected_at": "2026-04-10T06:22:24.033681+00:00",
+  "collected_at": "2026-04-10T10:39:10.136826+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-10T05:19:01+00:00",
+      "lang": "schinese",
+      "title": "[正面] 抽卡资源给的很多，很大方，卡也是卡体力，剧情尚好",
+      "summary": "抽卡资源给的很多，很大方，卡也是卡体力，剧情尚好",
+      "url": "https://steamcommunity.com/profiles/76561199616082619/recommended/3052450",
+      "author": "76561199616082619",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "抽卡资源给的很多，很大方，卡也是卡体力，剧情尚好",
+      "timestamp_created": 1775798341,
+      "playtime_forever": 2557
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-10T02:51:23+00:00",
+      "lang": "schinese",
+      "title": "[负面] 之前打完的关卡居然不能解锁成就？反正我是不会全部再打一遍的啦，直接差评吧",
+      "summary": "之前打完的关卡居然不能解锁成就？反正我是不会全部再打一遍的啦，直接差评吧",
+      "url": "https://steamcommunity.com/profiles/76561198165966110/recommended/3052450",
+      "author": "76561198165966110",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "之前打完的关卡居然不能解锁成就？反正我是不会全部再打一遍的啦，直接差评吧",
+      "timestamp_created": 1775789483,
+      "playtime_forever": 25386
+    },
     {
       "source": "steam",
       "time": "2026-04-09T21:07:40+00:00",
@@ -137,21 +167,6 @@
       "review": "真不赖好吧",
       "timestamp_created": 1775647493,
       "playtime_forever": 1814
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-08T08:23:29+00:00",
-      "lang": "english",
-      "title": "[正面] Great game, very good mechanic, dupe reliant but F...",
-      "summary": "Great game, very good mechanic, dupe reliant but F2P friendly",
-      "url": "https://steamcommunity.com/profiles/76561198379331930/recommended/3052450",
-      "author": "76561198379331930",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Great game, very good mechanic, dupe reliant but F2P friendly",
-      "timestamp_created": 1775636609,
-      "playtime_forever": 8974
     }
   ]
 }
