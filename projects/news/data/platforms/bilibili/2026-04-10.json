@@ -1,8 +1,8 @@
 {
   "date": "2026-04-10",
-  "archived_at": "2026-04-10T10:39:15.416994+00:00",
+  "archived_at": "2026-04-10T14:39:13.806209+00:00",
   "source": "bilibili",
-  "item_count": 29,
+  "item_count": 31,
   "items": [
     {
       "source": "bilibili",
@@ -38,6 +38,24 @@
         "comment_count": 51,
         "comments_fetched": 3,
         "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-10T11:25:00+00:00",
+      "lang": "",
+      "title": "暴躁小伙惩治照骗 （沙耶，微恐）",
+      "summary": "今天的沙耶感觉凉凉的\n  └ 沙耶郁纪 (11赞): [吃瓜]\n  └ 狩龙人-拉格纳 (2赞): 笑死[笑哭]完了，视神经出了问题了\n  └ ai马银飞 (2赞): 拿个猎枪瞬间毁灭战士[doge]",
+      "url": "https://www.bilibili.com/video/BV1mTQFBuExC",
+      "author": "耶树SayaTree",
+      "engagement": 874,
+      "media_url": "https://i2.hdslb.com/bfs/archive/4a5705c380271caf2f32449004cc3422d13dc4e3.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 860,
+        "comment_count": 14,
+        "comments_fetched": 3,
+        "danmaku": 2
       }
     },
     {
@@ -469,6 +487,24 @@
         "play": 38,
         "comment_count": 2,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-10T12:39:33+00:00",
+      "lang": "",
+      "title": "如果我开沙耶fumo有人想要吗",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1YfQcBpEbU",
+      "author": "臭水沟里的豆腐",
+      "engagement": 9,
+      "media_url": "https://i2.hdslb.com/bfs/archive/e6e0e963713f55b7fc8a5c6c25b15ea9d5e336ad.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 9,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },

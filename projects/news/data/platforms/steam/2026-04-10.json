@@ -1,8 +1,8 @@
 {
   "date": "2026-04-10",
-  "archived_at": "2026-04-10T10:39:15.415890+00:00",
+  "archived_at": "2026-04-10T14:39:13.805023+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "source": "steam",
@@ -213,6 +213,36 @@
       "review": "之前打完的关卡居然不能解锁成就？反正我是不会全部再打一遍的啦，直接差评吧",
       "timestamp_created": 1775789483,
       "playtime_forever": 25386
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-10T10:14:21+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561199590277384/recommended/3052450",
+      "author": "76561199590277384",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1775816061,
+      "playtime_forever": 317
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-10T07:47:22+00:00",
+      "lang": "koreana",
+      "title": "[正面] 갓-겜",
+      "summary": "갓-겜",
+      "url": "https://steamcommunity.com/profiles/76561198049509204/recommended/3052450",
+      "author": "76561198049509204",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "갓-겜",
+      "timestamp_created": 1775807242,
+      "playtime_forever": 18974
     }
   ]
 }

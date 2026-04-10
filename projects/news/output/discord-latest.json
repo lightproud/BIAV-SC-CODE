@@ -1,17 +1,59 @@
 {
-  "collected_at": "2026-04-10T10:39:10.136826+00:00",
+  "collected_at": "2026-04-10T14:39:06.983049+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-04-10T10:36:21.476909+00:00",
+      "time": "2026-04-10T14:36:11.717385+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-10)",
-      "summary": "今日 2,541 条消息，159 位活跃用户，351 次反应。热门频道：🔸morimens-game-chat(1565)、🔸phòng-chat-tiếng-việt(329)、🔸綜合討論(148)、🔸general-chat(93)、🔸game-question(89)",
+      "summary": "今日 4,552 条消息，159 位活跃用户，589 次反应。热门频道：🔸morimens-game-chat(2577)、🔸綜合討論(720)、🔸phòng-chat-tiếng-việt(358)、🔸game-question(240)、🔸general-chat(197)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 2541
+      "engagement": 4552
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-10T07:12:05.056000+00:00",
+      "lang": "",
+      "title": "[DC] water_heart@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: export202601041247308920.png]\n  └ quackdayo: ~~頭髮顏色正確~~",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492059580241281086",
+      "author": "water_heart",
+      "engagement": 36,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1492059579943747605/export202601041247308920.png?ex=69d9f444&is=69d8a2c4&hm=d70b0d9b2831ee0977bbe11b078d6281451347e6e2a103b63d5458fc2d9622ef&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🌿×11",
+        "reply_count": 1,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1492059579943747605/export202601041247308920.png?ex=69d9f444&is=69d8a2c4&hm=d70b0d9b2831ee0977bbe11b078d6281451347e6e2a103b63d5458fc2d9622ef&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-10T10:21:47.720000+00:00",
+      "lang": "",
+      "title": "[DC] chinkeeyong@🔸morimens-game-chat: (附件/嵌入)",
+      "summary": "[附件: sanga-vs-corposant.jpg]\n  └ legendaryredz:  [附件: 0b6ea21b-3614-43df-8b23-0f995094093f.png]\n  └ willsalvador: Corpo rizzless???",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492107322594426990",
+      "author": "chinkeeyong",
+      "engagement": 20,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492107321927663616/sanga-vs-corposant.jpg?ex=69da20bb&is=69d8cf3b&hm=c23603c0ede2822e97b90e9e0039f35d8496efa0f3f013967d9977f391a575ad&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "😭×1 🔥×4",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492107321927663616/sanga-vs-corposant.jpg?ex=69da20bb&is=69d8cf3b&hm=c23603c0ede2822e97b90e9e0039f35d8496efa0f3f013967d9977f391a575ad&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
     },
     {
       "source": "discord",
@@ -44,6 +86,65 @@
         "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-10T10:30:09.882000+00:00",
+      "lang": "",
+      "title": "[DC] sirtealot@🔸morimens-game-chat: I'd sell his exalt if I could too",
+      "summary": "I'd sell his exalt if I could too\n  └ idotly: Get infinite money",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492109428814643390",
+      "author": "sirtealot",
+      "engagement": 17,
+      "metadata": {
+        "reactions": "🔥×3 🥀×1 😭×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-10T10:18:20.561000+00:00",
+      "lang": "",
+      "title": "[DC] legendaryredz@🔸morimens-game-chat: (附件/嵌入)",
+      "summary": "[附件: Corpo_but_ship_1.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492106453706608680",
+      "author": "legendaryredz",
+      "engagement": 16,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492106453182316644/Corpo_but_ship_1.png?ex=69da1fec&is=69d8ce6c&hm=12c66d18bbeb2975689e1b4643cf415d93eb04e1689f50dda246b121a28ef8b8&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "pray×1 ❤️×1 Corpo_advance×3",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492106453182316644/Corpo_but_ship_1.png?ex=69da1fec&is=69d8ce6c&hm=12c66d18bbeb2975689e1b4643cf415d93eb04e1689f50dda246b121a28ef8b8&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-10T10:23:09+00:00",
+      "lang": "",
+      "title": "[DC] heightsflingplane@🔸morimens-game-chat: Not so divine now, baby",
+      "summary": "Not so divine now, baby\n[附件: Screenshot_2026-04-10-13-22-23-162_com.qookkagames.z1.gp.hk.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492107663507591302",
+      "author": "heightsflingplane",
+      "engagement": 16,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492107662928908329/Screenshot_2026-04-10-13-22-23-162_com.qookkagames.z1.gp.hk.jpg?ex=69da210c&is=69d8cf8c&hm=3e2b17d9476646773321176e86018770ceaf4967698b73e7333844101b19f977&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🔥×2 Pandia_love×3",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492107662928908329/Screenshot_2026-04-10-13-22-23-162_com.qookkagames.z1.gp.hk.jpg?ex=69da210c&is=69d8cf8c&hm=3e2b17d9476646773321176e86018770ceaf4967698b73e7333844101b19f977&"
+        ],
         "channel": "🔸morimens-game-chat"
       }
     },
@@ -125,6 +226,27 @@
     },
     {
       "source": "discord",
+      "time": "2026-04-10T10:05:33.615000+00:00",
+      "lang": "",
+      "title": "[DC] sirtealot@🔸morimens-game-chat: (附件/嵌入)",
+      "summary": "[附件: image.png]\n  └ arintal_s: kek he will see after he reaches hp inflation\n  └ null.pointer_exception: i think they got it wrong, lotan is *showing* *ss\n  └ legendaryredz: I am not familiar enough with Helot to know what is her expected damage output versus amount of setup it requires\nI know that Goliath needs 2 Exalt to deal ~300k damage with 1k STR at level 90 SF10 with an optimized build and that is borderline insufficient for A5 bosses\n  └ princess.goth: incredible bait\n  └ fibrinogen: is the controversy worth reading",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492103236902060084",
+      "author": "sirtealot",
+      "engagement": 14,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492103236927094955/image.png?ex=69da1ced&is=69d8cb6d&hm=f2e8c7068daf38b41840cac873def2705fc8ed0fb22ee0f262e9390b632b7261&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "takenotes×1",
+        "reply_count": 5,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492103236927094955/image.png?ex=69da1ced&is=69d8cb6d&hm=f2e8c7068daf38b41840cac873def2705fc8ed0fb22ee0f262e9390b632b7261&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
       "time": "2026-04-10T02:42:52.372000+00:00",
       "lang": "",
       "title": "[DC] void_1546.@🔸綜合討論: 真．裸體過",
@@ -184,108 +306,6 @@
           "https://cdn.discordapp.com/attachments/1181152750319456266/1491984081943138464/Screenshot_20260410_080346_Wuthering_Waves.jpg?ex=69d9adf4&is=69d85c74&hm=a55072ca6f39acb5d2ae2e67c5f1aa697c4ae83f087773c71889998edf634034&"
         ],
         "channel": "🔸课间休息闲聊"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T03:12:06.776000+00:00",
-      "lang": "",
-      "title": "[DC] reya.li@🔸morimens-game-chat: most high keeper level players are still amazingly skilled but that one change f",
-      "summary": "most high keeper level players are still amazingly skilled but that one change fundamentally warped how you can/ should play the game at very high keeper levels compared to the same things being borderline unviable at much lower keeper levels\n  └ angbak: Isit scaling past 70? Or 60\n  └ chinkeeyong:  [附件: image.png]\n  └ arkaether: unfortunately I hate to say it but i'm fairly sure this is intended",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1491999189477883926",
-      "author": "reya.li",
-      "engagement": 12,
-      "metadata": {
-        "reactions": "💯×2",
-        "reply_count": 3,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T04:56:27.794000+00:00",
-      "lang": "",
-      "title": "[DC] halcyon0732@🔸team-building: Sure of course I am trying, this run has taken me 30 minutes so far",
-      "summary": "Sure of course I am trying, this run has taken me 30 minutes so far\n  └ mega252: don't feel bad it took me an hour for a sorel run lmao",
-      "url": "https://discord.com/channels/1131791637933199470/1400749543288475770/1492025450090987652",
-      "author": "halcyon0732",
-      "engagement": 11,
-      "metadata": {
-        "reactions": "goodjob2×3",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸team-building"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T02:08:06.585000+00:00",
-      "lang": "",
-      "title": "[DC] arkaether@🔸morimens-game-chat: corpo has always been bad",
-      "summary": "corpo has always been bad\n  └ angbak: Good skey\n  └ nikolazuli: lens ur making me said shes the only char ive ever used horizons on\n  └ monchi3524: Lvl 90 has ok scaling and shielding\n  └ frosthief: I've always said she's awkward",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1491983082549411850",
-      "author": "arkaether",
-      "engagement": 11,
-      "metadata": {
-        "reactions": "Helot_slack_off×1",
-        "reply_count": 4,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T03:54:22.108000+00:00",
-      "lang": "",
-      "title": "[DC] reya.li@🔸morimens-game-chat: i really liked the more arabic alva concepts",
-      "summary": "i really liked the more arabic alva concepts\n  └ arisuu0604: can i see it ",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492009823431299182",
-      "author": "reya.li",
-      "engagement": 11,
-      "metadata": {
-        "reactions": "💯×3",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T02:10:26.890000+00:00",
-      "lang": "",
-      "title": "[DC] morimensstaff06@🔸有問必答┊official-q-a: Perhaps it's a translation issue, so I'll revise the wording: Some awakened unit",
-      "summary": "Perhaps it's a translation issue, so I'll revise the wording: Some awakened units are positioned to need or be suited to cooperate with others in battle, but Orita is not like that—her strength lies in being effective even without coordination.\n  └ vxvendetta97: Ok, but what we say is that she is not strong by herself or with a dedicated team, and she absolutely need a dedicated team to be at least usable.\nShe and Corposant are the only team that really use the discard mechanic, and have a lot of synergy, but even together they perform worse than others.\n  └ vxvendetta97: If the team doesn't want to buff her because she is a welfare unit, or because they don't like to receive direct suggestions on discord, we must accept it, but if they want to effectively discuss why they think she or others are in a good balance state, and don't want to make even minor changes, we would appreciate it.\nIf there are translation difficulties, I can enlist the help of a translator.",
-      "url": "https://discord.com/channels/1131791637933199470/1483461060185817318/1491983671031369758",
-      "author": "morimensstaff06",
-      "engagement": 10,
-      "metadata": {
-        "reactions": "dizzy2×2",
-        "reply_count": 2,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T01:53:51.394000+00:00",
-      "lang": "",
-      "title": "[DC] underplayer5794@🔸morimens-game-chat: Yall i have a question, last time I asked who the worst character was. Now who i",
-      "summary": "Yall i have a question, last time I asked who the worst character was. Now who is the SECOND worst character in the game?\n  └ underplayer5794: ~~please say Pandia I hate her so much~~\n  └ frosthief: Sanga is bottom 3\nI forget who the other is but Uvhash is indisputably the worst while the next 2 are arguable\n  └ angbak: Tldr all charavyers have some usage.\n\nUvhash if you really hyper invest into him kinda works too\n  └ frosthief: So I scrolled throught the list and yeah its Pandia\n  └ monchi3524: Usually people think uhvash or pandia or caecus",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1491979495618379786",
-      "author": "underplayer5794",
-      "engagement": 10,
-      "metadata": {
-        "reactions": "",
-        "reply_count": 5,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
       }
     }
   ]
