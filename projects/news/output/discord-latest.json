@@ -1,17 +1,17 @@
 {
-  "collected_at": "2026-04-09T23:15:14.183930+00:00",
+  "collected_at": "2026-04-10T06:22:24.033681+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-04-09T23:12:24.880778+00:00",
+      "time": "2026-04-10T06:19:41.761511+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-09)",
-      "summary": "今日 15,328 条消息，251 位活跃用户，1,730 次反应。热门频道：🔸morimens-game-chat(8065)、🔸game-question(1620)、🔸canal-português(1165)、🔸phòng-chat-tiếng-việt(817)、🔸綜合討論(798)",
+      "summary": "今日 16,903 条消息，251 位活跃用户，1,905 次反应。热门频道：🔸morimens-game-chat(8821)、🔸game-question(1881)、🔸canal-português(1427)、🔸綜合討論(911)、🔸phòng-chat-tiếng-việt(817)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 15328
+      "engagement": 16903
     },
     {
       "source": "discord",
@@ -150,6 +150,23 @@
     },
     {
       "source": "discord",
+      "time": "2026-04-09T21:53:00.374000+00:00",
+      "lang": "",
+      "title": "[DC] mimikyu12300@🔸morimens-game-chat: -ban ",
+      "summary": "-ban \n  └ bagels5899: https://tenor.com/view/owned-werewolf-literally-me-emo-edgy-gif-10779143800157672386\n  └ not_kathigu_ra: I thought I witnessed a live execution",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1491918883647393964",
+      "author": "mimikyu12300",
+      "engagement": 25,
+      "metadata": {
+        "reactions": "ramona_tuff_×5 🥀×2",
+        "reply_count": 2,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
       "time": "2026-04-09T10:26:51.166000+00:00",
       "lang": "",
       "title": "[DC] legendaryredz@🔸morimens-game-chat: I am just realizing that  I am **too good** with Discard The comp is just too co",
@@ -278,23 +295,6 @@
         "attachment_count": 0,
         "attachment_urls": [],
         "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-09T00:49:05.777000+00:00",
-      "lang": "",
-      "title": "[DC] monchi3524@🔸morimens-game-chat: ok what about this brilliant idea. we let the rich players decide what is low in",
-      "summary": "ok what about this brilliant idea. we let the rich players decide what is low investment and broke players (like me) decide what is high investment.\n  └ snorlax01: Monchers again being humble\n  └ angbak: IN MY COUNTRY",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1491600810294116352",
-      "author": "monchi3524",
-      "engagement": 19,
-      "metadata": {
-        "reactions": "🔥×5",
-        "reply_count": 2,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
       }
     }
   ]
