@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-04-10T00:06:21.336405+00:00",
+  "updated_at": "2026-04-10T06:19:03.826137+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1259,14 +1259,6 @@
       "topic": null
     },
     {
-      "id": "1481951682421330063",
-      "name": "korean-community-tournament",
-      "type": 0,
-      "parent_id": null,
-      "position": 8,
-      "topic": null
-    },
-    {
       "id": "1482839341402427463",
       "name": "breeead",
       "type": 0,
@@ -1320,7 +1312,7 @@
       "type": 0,
       "parent_id": null,
       "position": 147,
-      "topic": "「弥萨格课题组」是专为《忘却前夜》优质内容创作者而设立的社群组织，目前分为「攻略课题组」与「同人课题组」，致力于为每一位组员的创作提供长期性的支持<:agree:1400771815076528258> ，期待与您一同营造弥萨格大学友好热烈的交流氛围<:pray:1356053116260454534>  ~\n——✦——✦—— ✦✦✦ ——✦——✦——\nThe \"Mythag Research Group\" is a community built for outstanding content creators of Morimens. We have two sections to choose from: the \"Game Guide Unit\" and the \"Fan Content Unit\". We're committed to supporting your creative journey every step of the way<:agree:1400771815076528258> . We can't wait to see what we'll create together at Mythag University<:pray:1356053116260454534> ~"
+      "topic": null
     }
   ]
 }
