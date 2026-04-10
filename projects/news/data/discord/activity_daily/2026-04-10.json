@@ -1,58 +1,74 @@
 {
   "date": "2026-04-10",
-  "messages": 2541,
+  "messages": 4552,
   "unique_authors": 159,
-  "reactions_total": 351,
-  "attachments": 135,
+  "reactions_total": 589,
+  "attachments": 240,
   "channel_activity": {
-    "🔸綜合討論": 148,
-    "🔸阵容构建": 2,
-    "🔸morimens-game-chat": 1565,
+    "🔸綜合討論": 720,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 2577,
+    "🔸剧情交流": 1,
+    "🔸课间休息闲聊": 34,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 84,
+    "🔸phòng-chat-tiếng-việt": 358,
+    "🔸canal-español": 42,
+    "🔸canal-português": 43,
+    "🔸ruang-obrolan-indonesia": 40,
+    "🔸ห้องสนทนาภาษาไทย": 17,
+    "🔸traphase": 11,
+    "🔸team-building": 77,
+    "🔸general-chat": 197,
+    "🔸邀请码互助┊swap-invitation-codes": 7,
+    "🔸game-question": 240,
+    "🔸机器人命令┊bot-commands": 8,
+    "✅「已回答」台服dc的詐騙帳號": 18,
+    "✅「Answered」Aurita simple yet effective buff": 7,
+    "\"24\" lives matter": 2,
+    "忘却前夜OST：莫丝EP·涡心暗潮": 3,
     "🔸晒卡分享": 3,
     "🔸欢乐梗图": 4,
-    "🔸课间休息闲聊": 8,
     "🔸交友频道": 2,
     "🔸日本語チャンネル": 2,
-    "🔸chaîne-française": 1,
-    "🔸русский-канал": 73,
-    "🔸phòng-chat-tiếng-việt": 329,
-    "🔸canal-español": 36,
-    "🔸canal-português": 41,
-    "🔸ruang-obrolan-indonesia": 29,
-    "🔸traphase": 3,
     "🔸lore-chat": 15,
-    "🔸team-building": 52,
-    "🔸general-chat": 93,
-    "🔸邀请码互助┊swap-invitation-codes": 5,
-    "🔸game-question": 89,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 2,
     "女鬼和狗偷貼貼": 10,
     "最鯨幻想": 1,
     "建个图楼": 1,
     "Get Auto enable for dtide": 2,
     "建議 14 天課題的學期任務的完成條件應當按天數比例降低": 3,
-    "✅「Answered」Aurita simple yet effective buff": 4,
-    "\"24\" lives matter": 1,
     "问一下新人能怎么组队": 6,
     "家人们，新人刚入坑该怎么配队哇QwQ": 9,
     "1492017307789164564": 1
   },
   "hourly_activity": {
+    "6": 381,
+    "7": 626,
+    "8": 495,
+    "9": 318,
+    "10": 307,
     "0": 243,
     "1": 245,
     "2": 434,
     "3": 791,
     "4": 386,
-    "5": 326,
-    "6": 116
+    "5": 326
   },
   "message_types": {
-    "0": 1911,
-    "19": 629,
-    "21": 1
+    "19": 521,
+    "0": 1488,
+    "4": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1492059580241281086",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1492001442725105707",
       "channel_id": "1492001442725105707",
@@ -60,6 +76,38 @@
       "author": "far0w1",
       "reactions": 6,
       "channel": "Get Auto enable for dtide"
+    },
+    {
+      "id": "1492106453706608680",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492107322594426990",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "chinkeeyong",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492107663507591302",
+      "channel_id": "1170692781216378960",
+      "content": "Not so divine now, baby",
+      "author": "heightsflingplane",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492109428814643390",
+      "channel_id": "1170692781216378960",
+      "content": "I'd sell his exalt if I could too",
+      "author": "sirtealot",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492000021170880563",
@@ -110,108 +158,68 @@
       "channel": "🔸课间休息闲聊"
     },
     {
+      "id": "1492088069594284144",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492088050199695420",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/BQR-3OFb_Cc\n\nreal vortice ost",
+      "author": "kylo_ren._",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492089222130040864",
+      "channel_id": "1170692781216378960",
+      "content": "Just like u left mom",
+      "author": "._.aahh",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492102210618658846",
+      "channel_id": "1170692781216378960",
+      "content": "COMMON RAIN W",
+      "author": "princess.goth",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492107023972700392",
+      "channel_id": "1170692781216378960",
+      "content": "The lie becomes the truth, continued into another string of lies to which will b",
+      "author": "lighteveningdawn",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492109754854543471",
+      "channel_id": "1170692781216378960",
+      "content": "Wanda is right there",
+      "author": "sirtealot",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492078808004689961",
+      "channel_id": "1492078808004689961",
+      "content": "感谢各位守密人的支持！\n《忘却前夜》新OST已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，OST内容请勿商",
+      "author": "morimensstaff06",
+      "reactions": 3,
+      "channel": "忘却前夜OST：莫丝EP·涡心暗潮"
+    },
+    {
       "id": "1492024540807692368",
       "channel_id": "1131839817982947429",
       "content": "~~拼劲全力也只能打315了~~",
       "author": "be_queitplease",
       "reactions": 3,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492037701459902507",
-      "channel_id": "1131839817982947429",
-      "content": "~~我以為是我今天把體能訓練翹掉，我太壞了~~",
-      "author": "gs2202",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492038548063518742",
-      "channel_id": "1131839817982947429",
-      "content": "你遊拐可以讓C失業",
-      "author": "heikwok",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1491983184588570785",
-      "channel_id": "1170692781216378960",
-      "content": "lens ur making me said shes the only char ive ever used horizons on",
-      "author": "nikolazuli",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491985717755383919",
-      "channel_id": "1170692781216378960",
-      "content": "Light might get hack in the process but it's a necessary sacrifice",
-      "author": "aurora3981",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491988703646715965",
-      "channel_id": "1170692781216378960",
-      "content": "But thankfully im getting paid tomorrow so i can survive <:please:13560531103757",
-      "author": "monchi3524",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491990066279743649",
-      "channel_id": "1170692781216378960",
-      "content": "she didnt crit...",
-      "author": "arisuu0604",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491993250674774117",
-      "channel_id": "1170692781216378960",
-      "content": "it takes so long lol",
-      "author": "arisuu0604",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492003490564804669",
-      "channel_id": "1170692781216378960",
-      "content": "Yeah basically, they made a series of shortsighted decisions that will likely en",
-      "author": "frosthief",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492009823431299182",
-      "channel_id": "1170692781216378960",
-      "content": "i really liked the more arabic alva concepts",
-      "author": "reya.li",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492027142521880777",
-      "channel_id": "1170692781216378960",
-      "content": "just menu and cards?",
-      "author": "arintal_s",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491957327698460722",
-      "channel_id": "1300659662311526512",
-      "content": "",
-      "author": "rendezvoushr",
-      "reactions": 3,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1492025450090987652",
-      "channel_id": "1400749543288475770",
-      "content": "Sure of course I am trying, this run has taken me 30 minutes so far",
-      "author": "halcyon0732",
-      "reactions": 3,
-      "channel": "🔸team-building"
     }
   ]
 }
