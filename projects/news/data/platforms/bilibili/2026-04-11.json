@@ -1,9 +1,39 @@
 {
   "date": "2026-04-11",
-  "archived_at": "2026-04-10T22:00:29.434564+00:00",
+  "archived_at": "2026-04-10T23:57:23.239645+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-10T22:09:00+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】避坑指引",
+      "summary": "时间节点在评论区置顶",
+      "url": "http://www.bilibili.com/video/av116382674978508",
+      "author": "萨摩_不耶",
+      "engagement": 318,
+      "media_url": "//i1.hdslb.com/bfs/archive/162d06ee8aa45086ffc57a8dfaa7b470b52d8086.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-10T22:09:00+00:00",
+      "lang": "",
+      "title": "【忘却前夜】避坑指引",
+      "summary": "时间节点在评论区置顶\n  └ 萨摩_不耶 (0赞): 日常&amp;活动的选择  00：48\n现实起点  04：18\n密契  05：40\n活动助战  08：10\n各个界域的功能  10：30\n  └ 晟天天天想上天 (0赞): 支持\n  └ 星星圣堂 (0赞): 很好的攻略，你币有了[支持]",
+      "url": "https://www.bilibili.com/video/BV1LqQPBNEbt",
+      "author": "萨摩_不耶",
+      "engagement": 316,
+      "media_url": "https://i1.hdslb.com/bfs/archive/162d06ee8aa45086ffc57a8dfaa7b470b52d8086.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 312,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
     {
       "source": "bilibili",
       "time": "2026-04-10T18:11:02+00:00",

@@ -1,17 +1,17 @@
 {
-  "collected_at": "2026-04-10T22:00:27.674307+00:00",
+  "collected_at": "2026-04-10T23:57:20.292700+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-04-10T21:57:43.708806+00:00",
+      "time": "2026-04-10T23:54:28.427493+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-10)",
-      "summary": "今日 10,506 条消息，159 位活跃用户，1,239 次反应。热门频道：🔸morimens-game-chat(6158)、🔸綜合討論(960)、🔸game-question(853)、🔸canal-português(616)、🔸phòng-chat-tiếng-việt(471)",
+      "summary": "今日 11,974 条消息，159 位活跃用户，1,427 次反应。热门频道：🔸morimens-game-chat(7137)、🔸game-question(1127)、🔸綜合討論(978)、🔸canal-português(628)、🔸phòng-chat-tiếng-việt(471)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 10506
+      "engagement": 11974
     },
     {
       "source": "discord",
@@ -57,6 +57,23 @@
     },
     {
       "source": "discord",
+      "time": "2026-04-10T20:21:01.561000+00:00",
+      "lang": "",
+      "title": "[DC] cerixxix@🔸morimens-game-chat: Tawil is *so* pretty...",
+      "summary": "Tawil is *so* pretty...",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492258123933552670",
+      "author": "cerixxix",
+      "engagement": 21,
+      "metadata": {
+        "reactions": "🔥×4 ✅×2 peakfiction×1",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
       "time": "2026-04-10T10:21:47.720000+00:00",
       "lang": "",
       "title": "[DC] chinkeeyong@🔸morimens-game-chat: (附件/嵌入)",
@@ -90,6 +107,31 @@
         "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-10T21:51:22.482000+00:00",
+      "lang": "",
+      "title": "[DC] bagels5899@🔸morimens-game-chat:    thoughts?",
+      "summary": "   thoughts?\n[附件: image.png, image.png, image.png, image.png, image.png]\n  └ blecnes.: whats that agrippa doing there?\n  └ legendaryredz: Those teams are a bit awkward\nBut they should be fine I think\n  └ blecnes.: good luck bagels, it looks like shit \n  └ fishhazardthewizard: Goodluckk\n  └ spooky_penguin_: No spooky ping?",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492280860924448869",
+      "author": "bagels5899",
+      "engagement": 19,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492280858793476347/image.png?ex=69dac259&is=69d970d9&hm=dd7c2738d0124d3551f8ea7e60dffee67c505dade712759cfa35ccbb1ea32f02&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "",
+        "reply_count": 5,
+        "attachment_count": 5,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492280858793476347/image.png?ex=69dac259&is=69d970d9&hm=dd7c2738d0124d3551f8ea7e60dffee67c505dade712759cfa35ccbb1ea32f02&",
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492280859418689736/image.png?ex=69dac25a&is=69d970da&hm=c7805d3cb6b48d98862c30d7cffa2370208b0ea6060bbba3fd77645d2dd5e40d&",
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492280859829735514/image.png?ex=69dac25a&is=69d970da&hm=29c2ff0c83fe83cd507236f1cfa8128306ab56757d84ef2bd8c32bc2f8f8e083&",
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492280860265677052/image.png?ex=69dac25a&is=69d970da&hm=4aa8d22af6209dc30951cc183862f68df055003d39cd9f48eebc8dd30ed14282&",
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492280860676980777/image.png?ex=69dac25a&is=69d970da&hm=a0c239827f922ae02631beed9285c1b1d4d16ab6cae31c173e289e548b565c9f&"
+        ],
         "channel": "🔸morimens-game-chat"
       }
     },
@@ -187,6 +229,27 @@
     },
     {
       "source": "discord",
+      "time": "2026-04-10T20:21:36.988000+00:00",
+      "lang": "",
+      "title": "[DC] legendaryredz@🔸morimens-game-chat: This is the state of the bingo currently  Anything you might want to add ?",
+      "summary": "This is the state of the bingo currently \nAnything you might want to add ?\n[附件: image.png]\n  └ fishhazardthewizard: I had a bunch of things… idk if you took them or discarded them\n  └ climbkaly: healer\nskey\nleap\nchange enemies intentions\n  └ mega252: would divine ultra just be Jp ultra?\n  └ mega252: oh i got one Alert spam\n  └ bagels5899: N2 Skey",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492258272525291560",
+      "author": "legendaryredz",
+      "engagement": 17,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492258271959191614/image.png?ex=69daad50&is=69d95bd0&hm=6010821cf6a0057261a2b1e63241343d480d7df27b3ad07d7ad8ca43d3ea3e9a&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "",
+        "reply_count": 5,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1492258271959191614/image.png?ex=69daad50&is=69d95bd0&hm=6010821cf6a0057261a2b1e63241343d480d7df27b3ad07d7ad8ca43d3ea3e9a&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
       "time": "2026-04-10T10:18:20.561000+00:00",
       "lang": "",
       "title": "[DC] legendaryredz@🔸morimens-game-chat: (附件/嵌入)",
@@ -241,69 +304,6 @@
         "reply_count": 2,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T02:41:34.950000+00:00",
-      "lang": "",
-      "title": "[DC] frosthief@🔸morimens-game-chat:   FUCK U GUYS",
-      "summary": "  FUCK U GUYS\n[附件: image.png]\n  └ arkaether: omg...",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1491991506243026944",
-      "author": "frosthief",
-      "engagement": 15,
-      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1491991505978658957/image.png?ex=69d9b4de&is=69d8635e&hm=d0d4ceb4782677901dad491ba3fc1035972f4c60b42d45d9c1b76bd074c5eab4&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "😭×3 Winkle_frustrated×1",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1170692781216378960/1491991505978658957/image.png?ex=69d9b4de&is=69d8635e&hm=d0d4ceb4782677901dad491ba3fc1035972f4c60b42d45d9c1b76bd074c5eab4&"
-        ],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T13:13:02.353000+00:00",
-      "lang": "",
-      "title": "[DC] arandomflamev2@🔸morimens-game-chat: (附件/嵌入)",
-      "summary": "[附件: maxresdefault.png]\n  └ megidola.: I ALWAYS wondered why Doll looked like a crab",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492150417528848414",
-      "author": "arandomflamev2",
-      "engagement": 15,
-      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492150417230925894/maxresdefault.png?ex=69da48de&is=69d8f75e&hm=6319194079889cdc6bda43d01e11c2d4fbb2ba236dd11d7c30c224434cc4cb87&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×3 😆×1",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1170692781216378960/1492150417230925894/maxresdefault.png?ex=69da48de&is=69d8f75e&hm=6319194079889cdc6bda43d01e11c2d4fbb2ba236dd11d7c30c224434cc4cb87&"
-        ],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T18:30:54.149000+00:00",
-      "lang": "",
-      "title": "[DC] climbkaly@🔸morimens-game-chat: I decided - since I'm on vacation, to suck it up and do a madness train run.",
-      "summary": "I decided - since I'm on vacation, to suck it up and do a madness train run.\n[附件: Untitled.png]\n  └ megidola.: Daff = Theoretical infinite hyperscaler 🗣️",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492230410439102495",
-      "author": "climbkaly",
-      "engagement": 15,
-      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492230409952690437/Untitled.png?ex=69da935e&is=69d941de&hm=c6573956c5f53cdd7bc030e14ea23b901bed3a9215a46f07387e9a1745453f8a&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×4",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1170692781216378960/1492230409952690437/Untitled.png?ex=69da935e&is=69d941de&hm=c6573956c5f53cdd7bc030e14ea23b901bed3a9215a46f07387e9a1745453f8a&"
-        ],
         "channel": "🔸morimens-game-chat"
       }
     }

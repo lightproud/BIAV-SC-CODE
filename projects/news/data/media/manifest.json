@@ -1385,6 +1385,34 @@
       "title": "[DC] climbkaly@🔸morimens-game-chat: I decided - since I'm on vacation, to suck it up and do a madnes",
       "time": "2026-04-10T18:30:54.149000+00:00",
       "downloaded_at": "2026-04-10T22:00:29.375899+00:00"
+    },
+    "https://i.ytimg.com/vi/1FfHWYAoeug/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJh0d7RJ6Il35ZFonuIRKv3TpHxQ": {
+      "filename": "youtube_90d160595bd9322d.jpg",
+      "source": "youtube",
+      "title": "Mist Sequence × Morimens: COLLAB COMING SOON!",
+      "time": "2026-04-10T23:54:27.573021+00:00",
+      "downloaded_at": "2026-04-10T23:57:20.994550+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/162d06ee8aa45086ffc57a8dfaa7b470b52d8086.jpg": {
+      "filename": "bilibili_d13208298cb67d55.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】避坑指引",
+      "time": "2026-04-10T22:09:00+00:00",
+      "downloaded_at": "2026-04-10T23:57:22.202025+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492280858793476347/image.png?ex=69dac259&is=69d970d9&hm=dd7c2738d0124d3551f8ea7e60dffee67c505dade712759cfa35ccbb1ea32f02&": {
+      "filename": "discord_ffcac9d8c93aa05d.png",
+      "source": "discord",
+      "title": "[DC] bagels5899@🔸morimens-game-chat:    thoughts?",
+      "time": "2026-04-10T21:51:22.482000+00:00",
+      "downloaded_at": "2026-04-10T23:57:22.740858+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492258271959191614/image.png?ex=69daad50&is=69d95bd0&hm=6010821cf6a0057261a2b1e63241343d480d7df27b3ad07d7ad8ca43d3ea3e9a&": {
+      "filename": "discord_824e6577f28e0031.png",
+      "source": "discord",
+      "title": "[DC] legendaryredz@🔸morimens-game-chat: This is the state of the bingo currently  Anything you might",
+      "time": "2026-04-10T20:21:36.988000+00:00",
+      "downloaded_at": "2026-04-10T23:57:23.180571+00:00"
     }
   },
   "failed": {
@@ -1827,6 +1855,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-10T20:01:59.631626+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/162d06ee8aa45086ffc57a8dfaa7b470b52d8086.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-10T23:57:21.295496+00:00"
     }
   },
   "archived": []
