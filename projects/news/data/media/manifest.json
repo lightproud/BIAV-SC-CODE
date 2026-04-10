@@ -1266,6 +1266,55 @@
       "title": "沙耶之歌第三期",
       "time": "2026-04-10T10:00:00+00:00",
       "downloaded_at": "2026-04-10T10:39:15.353423+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/4a5705c380271caf2f32449004cc3422d13dc4e3.jpg": {
+      "filename": "bilibili_b0f1528b0eb0a5e9.jpg",
+      "source": "bilibili",
+      "title": "暴躁小伙惩治照骗 （沙耶，微恐）",
+      "time": "2026-04-10T11:25:00+00:00",
+      "downloaded_at": "2026-04-10T14:39:09.456177+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1131839817982947429/1492059579943747605/export202601041247308920.png?ex=69d9f444&is=69d8a2c4&hm=d70b0d9b2831ee0977bbe11b078d6281451347e6e2a103b63d5458fc2d9622ef&": {
+      "filename": "discord_0afaffb1c3caaad3.png",
+      "source": "discord",
+      "title": "[DC] water_heart@🔸綜合討論: (附件/嵌入)",
+      "time": "2026-04-10T07:12:05.056000+00:00",
+      "downloaded_at": "2026-04-10T14:39:09.968968+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492107321927663616/sanga-vs-corposant.jpg?ex=69da20bb&is=69d8cf3b&hm=c23603c0ede2822e97b90e9e0039f35d8496efa0f3f013967d9977f391a575ad&": {
+      "filename": "discord_46fa872ba44e6d65.jpg",
+      "source": "discord",
+      "title": "[DC] chinkeeyong@🔸morimens-game-chat: (附件/嵌入)",
+      "time": "2026-04-10T10:21:47.720000+00:00",
+      "downloaded_at": "2026-04-10T14:39:10.390100+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492106453182316644/Corpo_but_ship_1.png?ex=69da1fec&is=69d8ce6c&hm=12c66d18bbeb2975689e1b4643cf415d93eb04e1689f50dda246b121a28ef8b8&": {
+      "filename": "discord_bb8302feb7c8bcba.png",
+      "source": "discord",
+      "title": "[DC] legendaryredz@🔸morimens-game-chat: (附件/嵌入)",
+      "time": "2026-04-10T10:18:20.561000+00:00",
+      "downloaded_at": "2026-04-10T14:39:10.804041+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492107662928908329/Screenshot_2026-04-10-13-22-23-162_com.qookkagames.z1.gp.hk.jpg?ex=69da210c&is=69d8cf8c&hm=3e2b17d9476646773321176e86018770ceaf4967698b73e7333844101b19f977&": {
+      "filename": "discord_2f239bad6d30babb.jpg",
+      "source": "discord",
+      "title": "[DC] heightsflingplane@🔸morimens-game-chat: Not so divine now, baby",
+      "time": "2026-04-10T10:23:09+00:00",
+      "downloaded_at": "2026-04-10T14:39:11.334001+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492103236927094955/image.png?ex=69da1ced&is=69d8cb6d&hm=f2e8c7068daf38b41840cac873def2705fc8ed0fb22ee0f262e9390b632b7261&": {
+      "filename": "discord_434397416764d651.png",
+      "source": "discord",
+      "title": "[DC] sirtealot@🔸morimens-game-chat: (附件/嵌入)",
+      "time": "2026-04-10T10:05:33.615000+00:00",
+      "downloaded_at": "2026-04-10T14:39:11.768731+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/e6e0e963713f55b7fc8a5c6c25b15ea9d5e336ad.jpg": {
+      "filename": "bilibili_09161af6d40be201.jpg",
+      "source": "bilibili",
+      "title": "如果我开沙耶fumo有人想要吗",
+      "time": "2026-04-10T12:39:33+00:00",
+      "downloaded_at": "2026-04-10T14:39:12.965906+00:00"
     }
   },
   "failed": {
@@ -1673,6 +1722,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-10T10:39:12.047714+00:00"
+    },
+    "https://external-preview.redd.it/YmlzcmZsaWo2ZHVnMYRytTRWcp6ar36LIagYwgXvEQTQYFyMdlKWL3S4PNzy.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=453c809b1335ead4b47c6dd7c8c236310fad88e2": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-10T14:39:13.353175+00:00"
+    },
+    "https://preview.redd.it/dzpx2mjwwcug1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=9027b5f6a260d1171f23f6d3b8c2fbe307f7a309": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-10T14:39:13.740596+00:00"
     }
   },
   "archived": []
