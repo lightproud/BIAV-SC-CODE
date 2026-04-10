@@ -1,8 +1,8 @@
 {
   "date": "2026-04-10",
-  "archived_at": "2026-04-10T06:22:35.699452+00:00",
+  "archived_at": "2026-04-10T10:39:15.416994+00:00",
   "source": "bilibili",
-  "item_count": 26,
+  "item_count": 29,
   "items": [
     {
       "source": "bilibili",
@@ -408,6 +408,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-10T08:08:51+00:00",
+      "lang": "",
+      "title": "[忘却前夜]尤乌癫狂幻梦",
+      "summary": "无聊凹着玩的（）\n伏笔一大堆，没开大月卡不能sl，能看就行（）\n忘却无融灾环境的循环还是很舒服的，1-2回合稳定一个超限大，力量成长够看了\n再发融灾估计就是无聊了\n  └ 论多厨到底有几种死法 (0赞): 吓哭了[笑哭]",
+      "url": "https://www.bilibili.com/video/BV16nQFB8ES8",
+      "author": "陶醉2333",
+      "engagement": 65,
+      "media_url": "https://i1.hdslb.com/bfs/archive/eeaccb3372c31b444773fb1e2c549ec4c09ecd05.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 64,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-10T08:08:51+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]尤乌癫狂幻梦",
+      "summary": "无聊凹着玩的（）\n伏笔一大堆，没开大月卡不能sl，能看就行（）\n忘却无融灾环境的循环还是很舒服的，1-2回合稳定一个超限大，力量成长够看了\n再发融灾估计就是无聊了",
+      "url": "http://www.bilibili.com/video/av116379369937562",
+      "author": "陶醉2333",
+      "engagement": 64,
+      "media_url": "//i1.hdslb.com/bfs/archive/eeaccb3372c31b444773fb1e2c549ec4c09ecd05.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-09T15:54:00+00:00",
       "lang": "",
       "title": "用同一张梗图总结下入坑两年来的部分GAL",
@@ -439,6 +469,24 @@
         "play": 38,
         "comment_count": 2,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-10T10:00:00+00:00",
+      "lang": "",
+      "title": "沙耶之歌第三期",
+      "summary": "对于既熟悉又陌生的昔日挚友，郁纪选择了一刀两断",
+      "url": "https://www.bilibili.com/video/BV1tkDvBuE7N",
+      "author": "KiKi君Smith",
+      "engagement": 0,
+      "media_url": "https://i1.hdslb.com/bfs/archive/33ffab9e725f5b1a8087500edce41ad31f3a4c3e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 0,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     }

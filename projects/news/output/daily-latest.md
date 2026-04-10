@@ -1,27 +1,26 @@
 # 忘却前夜 社区日报 2026-04-10
 
-> 采集时间：2026-04-10 14:22 UTC+8
+> 采集时间：2026-04-10 18:39 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌第二期 — engagement: 346
-2. [Bilibili] 沙耶之歌 - ガラスのくつ bass cover — engagement: 111
-3. [Reddit] Any news on the saya no uta collabs release date? — engagement: 0
-4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
-6. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-7. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+1. [Bilibili] 沙耶之歌 - ガラスのくつ bass cover — engagement: 277
+2. [Bilibili] 沙耶之歌第三期 — engagement: 0
+3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+5. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+6. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 
 ## 总览
 
 | 平台 | 数据条数 |
 |------|----------|
-| App Store | 0（沉默）|
+| App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 13 |
 | DCInside | 0（沉默）|
-| Discord | 13 |
+| Discord | 16 |
 | 抖音 | 0（沉默）|
 | Epic Games Store | 0（沉默）|
 | Facebook | 0（沉默）|
@@ -41,9 +40,9 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 11 |
+| Reddit | 10 |
 | Ruliweb | 0（沉默）|
-| Steam | 5 |
+| Steam | 6 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -58,41 +57,45 @@
 | 微信公众号 | 20 |
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 38 |
+| YouTube | 35 |
 | 知乎 | 0（沉默）|
 
 ## Discord
 
-今日 16,903 条消息，251 位活跃用户，1,905 次反应。热门频道：🔸morimens-game-chat(8821)、🔸game-question(1881)、🔸canal-português(1427)、🔸綜合討論(911)、🔸phòng-chat-tiếng-việt(817)
+今日 2,541 条消息，159 位活跃用户，351 次反应。热门频道：🔸morimens-game-chat(1565)、🔸phòng-chat-tiếng-việt(329)、🔸綜合討論(148)、🔸general-chat(93)、🔸game-question(89)
 
 ### 热门话题
 
-1. [DC] jmjmjm6667@🔸general-chat: (附件/嵌入) — engagement: 39
-2. [DC] chuolel0@🔸art-and-memes: (附件/嵌入) — engagement: 34
-3. [DC] megidola.@🔸morimens-game-chat: ~~I am writing on phone  — engagement: 32
-4. [DC] jyeusu@🔸morimens-game-chat: there's only so many times  — engagement: 32
-5. [DC] climbkaly@🔸morimens-game-chat: Just need to farm script — engagement: 26
+1. [DC] far0w1@🔸有問必答┊official-q-a: As a slay the spire player t — engagement: 18
+2. [DC] frosthief@🔸morimens-game-chat: Do you watch their gamep — engagement: 17
+3. [DC] frosthief@🔸morimens-game-chat:   FUCK U GUYS — engagement: 15
+4. [DC] a4485@🔸綜合討論: 這周我恐怕打不到350了 — engagement: 14
+5. [DC] be_queitplease@🔸綜合討論: ~~拼劲全力也只能打315了~~ — engagement: 14
 
 ## Steam 评论
 
-- 好评 5 / 差评 0 / 好评率 100%
-- 语言分布：english 2, russian 2, tchinese 1
+- 好评 5 / 差评 1 / 好评率 83%
+- 语言分布：schinese 2, russian 2, english 1, tchinese 1
 
 ### 热门好评
 
-1. [正面] a bit like slay the spire, but with actually good... — engagement: 0
-2. [正面] голі тьотки — engagement: 0
-3. [正面] Просто супер — engagement: 0
-4. [正面] nice — engagement: 0
-5. [正面] yippe — engagement: 0
+1. [正面] 抽卡资源给的很多，很大方，卡也是卡体力，剧情尚好 — engagement: 0
+2. [正面] a bit like slay the spire, but with actually good... — engagement: 0
+3. [正面] голі тьотки — engagement: 0
+4. [正面] Просто супер — engagement: 0
+5. [正面] nice — engagement: 0
+
+### ⚠️ 差评
+
+- ⚠️ [schinese] 之前打完的关卡居然不能解锁成就？反正我是不会全部再打一遍的啦，直接差评吧 — engagement: 0
 
 ## Bilibili
 
-1. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 441
-2. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 437
-3. 用同一张梗图总结下入坑两年来的部分GAL — engagement: 431
-4. 谁敢质疑我们打击女（靠运气） — engagement: 377
-5. 谁敢质疑我们打击女（靠运气） — engagement: 373
+1. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 540
+2. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 533
+3. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 533
+4. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 528
+5. 用同一张梗图总结下入坑两年来的部分GAL — engagement: 460
 
 ## Gamerch Wiki
 
@@ -104,11 +107,11 @@
 
 ## Reddit
 
-1. Holding it in until then — engagement: 0
-2. Reccomendations again please — engagement: 0
+1. Does anyone have an idea when Castor may have a rerun? — engagement: 0
+2. Holding it in until then — engagement: 0
 3. Is Liz secretly an "Ultra" Limited Awakener? — engagement: 0
-4. New player here. HOW is this character considered ass/low-ti — engagement: 0
-5. Holy RNGsus what is this luck tho!! 😍😅 — engagement: 0
+4. Reccomendations again please — engagement: 0
+5. Why are auto disabled in dtide? — engagement: 0
 
 ## StopGame.ru
 
@@ -124,11 +127,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282268
-2. Why I fell in love with this card-based gacha game — engagement: 135450
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38296
-4. Morimens Basic Mechanics and Account Progression Guide — engagement: 31204
-5. Morimens Comprehensive Guide for Beginners and Experts with  — engagement: 25894
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282397
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40765
+3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38297
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18736
+5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 16767
 
 ## 沉默平台
 
