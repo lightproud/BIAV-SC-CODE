@@ -1,38 +1,44 @@
 {
   "date": "2026-04-10",
-  "messages": 9003,
+  "messages": 10506,
   "unique_authors": 159,
-  "reactions_total": 1095,
-  "attachments": 477,
+  "reactions_total": 1239,
+  "attachments": 534,
   "channel_activity": {
-    "🔸綜合討論": 922,
-    "🔸morimens-game-chat": 5247,
+    "🔸綜合討論": 960,
+    "🔸morimens-game-chat": 6158,
+    "🔸deutscher-chatraum": 10,
+    "🔸русский-канал": 91,
+    "🔸phòng-chat-tiếng-việt": 471,
+    "🔸canal-español": 70,
+    "🔸canal-português": 616,
+    "🔸ห้องสนทนาภาษาไทย": 19,
+    "🔸traphase": 21,
+    "🔸频道建议┊server-suggestions": 1,
+    "🔸team-building": 304,
+    "🔸general-chat": 267,
+    "🔸邀请码互助┊swap-invitation-codes": 23,
+    "🔸game-question": 853,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
+    "🔸机器人命令┊bot-commands": 33,
+    "請問豪賭的智慧等命輪會複刻嗎": 2,
+    "Game stops responding on update/crashes to desktop on login": 3,
+    "Get Auto enable for dtide": 5,
+    "More Mods for this Discord please": 4,
+    "潘狄婭得命輪應該裝什麼": 3,
     "🔸剧情交流": 5,
     "🔸晒卡分享": 4,
     "🔸课间休息闲聊": 41,
     "🔸한국어-채팅방": 7,
-    "🔸deutscher-chatraum": 1,
-    "🔸русский-канал": 90,
-    "🔸phòng-chat-tiếng-việt": 470,
-    "🔸canal-español": 47,
-    "🔸canal-português": 207,
     "🔸ruang-obrolan-indonesia": 358,
-    "🔸traphase": 18,
-    "🔸team-building": 299,
-    "🔸general-chat": 247,
-    "🔸邀请码互助┊swap-invitation-codes": 18,
-    "🔸game-question": 797,
     "🔸忘却前夜┊morimens-tv": 2,
-    "🔸机器人命令┊bot-commands": 29,
     "Captain Alva": 2,
     "morimens sybau 💔": 3,
     "【English Translation】Opinions Collection": 2,
     "融災": 19,
     "1 Week Account Pulling Advice?": 3,
     "1492190601045868565": 1,
-    "🔸ห้องสนทนาภาษาไทย": 18,
     "🔸lore-chat": 22,
-    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
     "🔸erica-playground": 1,
     "✅「已回答」台服dc的詐騙帳號": 19,
     "✅「Answered」Aurita simple yet effective buff": 11,
@@ -53,16 +59,18 @@
     "女鬼和狗偷貼貼": 10,
     "最鯨幻想": 1,
     "建个图楼": 1,
-    "Get Auto enable for dtide": 2,
     "建議 14 天課題的學期任務的完成條件應當按天數比例降低": 3,
     "家人们，新人刚入坑该怎么配队哇QwQ": 9,
     "1492017307789164564": 1
   },
   "hourly_activity": {
+    "18": 583,
+    "19": 802,
+    "17": 350,
+    "20": 1,
     "14": 740,
     "15": 874,
     "16": 705,
-    "17": 233,
     "10": 452,
     "11": 719,
     "12": 450,
@@ -79,11 +87,8 @@
     "5": 326
   },
   "message_types": {
-    "0": 1452,
-    "19": 664,
-    "20": 3,
-    "23": 1,
-    "21": 1
+    "19": 408,
+    "0": 1095
   },
   "top_reacted_messages": [
     {
@@ -117,6 +122,14 @@
       "author": "far0w1",
       "reactions": 6,
       "channel": "Get Auto enable for dtide"
+    },
+    {
+      "id": "1492227020589891666",
+      "channel_id": "1170692781216378960",
+      "content": "Sub 50",
+      "author": "monchi3524",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492106453706608680",
@@ -156,6 +169,22 @@
       "content": "Do you watch their gameplay?!\nThey spend a minute on their turns Lens!\nA whole m",
       "author": "frosthief",
       "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492230410439102495",
+      "channel_id": "1170692781216378960",
+      "content": "I decided - since I'm on vacation, to suck it up and do a madness train run.",
+      "author": "climbkaly",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492244725871280238",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -220,30 +249,6 @@
       "content": "<@157679037240573953> <@88644018673582080> FUCK U GUYS",
       "author": "frosthief",
       "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491992949393719306",
-      "channel_id": "1170692781216378960",
-      "content": "https://x.com/i/status/2042189535740830106",
-      "author": "willsalvador",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491984082224025781",
-      "channel_id": "1181152750319456266",
-      "content": "玩了這麼久終於",
-      "author": "annabelle0868",
-      "reactions": 4,
-      "channel": "🔸课间休息闲聊"
-    },
-    {
-      "id": "1492174988827033680",
-      "channel_id": "1170692781216378960",
-      "content": "u can dr 3 times on turn 1",
-      "author": "chinkeeyong",
-      "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }
   ]
