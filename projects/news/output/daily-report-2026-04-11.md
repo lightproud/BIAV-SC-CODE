@@ -1,11 +1,11 @@
 # 忘却前夜 社区日报 2026-04-11
 
-> 采集时间：2026-04-11 06:00 UTC+8
+> 采集时间：2026-04-11 07:57 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌 - ガラスのくつ bass cover — engagement: 488
-2. [Bilibili] ⁣ — engagement: 55
+1. [Bilibili] 沙耶之歌 - ガラスのくつ bass cover — engagement: 494
+2. [Bilibili] ⁣ — engagement: 88
 3. [Bilibili] 沙耶之歌第三期 — engagement: 8
 4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
@@ -19,7 +19,7 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 15 |
+| Bilibili | 17 |
 | DCInside | 0（沉默）|
 | Discord | 16 |
 | 抖音 | 0（沉默）|
@@ -41,7 +41,7 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 12 |
+| Reddit | 11 |
 | Ruliweb | 0（沉默）|
 | Steam | 8 |
 | Steam 论坛 | 0（沉默）|
@@ -58,20 +58,20 @@
 | 微信公众号 | 20 |
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 34 |
+| YouTube | 36 |
 | 知乎 | 0（沉默）|
 
 ## Discord
 
-今日 10,506 条消息，159 位活跃用户，1,239 次反应。热门频道：🔸morimens-game-chat(6158)、🔸綜合討論(960)、🔸game-question(853)、🔸canal-português(616)、🔸phòng-chat-tiếng-việt(471)
+今日 11,974 条消息，159 位活跃用户，1,427 次反应。热门频道：🔸morimens-game-chat(7137)、🔸game-question(1127)、🔸綜合討論(978)、🔸canal-português(628)、🔸phòng-chat-tiếng-việt(471)
 
 ### 热门话题
 
 1. [DC] water_heart@🔸綜合討論: (附件/嵌入) — engagement: 36
 2. [DC] jasonbs_@🔸team-building: Finally cleared 325 just wante — engagement: 22
-3. [DC] chinkeeyong@🔸morimens-game-chat: (附件/嵌入) — engagement: 20
-4. [DC] megidola.@🔸morimens-game-chat: I will soon have 700 hou — engagement: 20
-5. [DC] far0w1@🔸有問必答┊official-q-a: As a slay the spire player t — engagement: 18
+3. [DC] cerixxix@🔸morimens-game-chat: Tawil is *so* pretty... — engagement: 21
+4. [DC] chinkeeyong@🔸morimens-game-chat: (附件/嵌入) — engagement: 20
+5. [DC] megidola.@🔸morimens-game-chat: I will soon have 700 hou — engagement: 20
 
 ## Steam 评论
 
@@ -92,11 +92,11 @@
 
 ## Bilibili
 
-1. 暴躁小伙惩治照骗 （沙耶，微恐） — engagement: 1586
-2. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 695
-3. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 685
-4. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 645
-5. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 639
+1. 暴躁小伙惩治照骗 （沙耶，微恐） — engagement: 1680
+2. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 702
+3. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 692
+4. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 651
+5. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 645
 
 ## Gamerch Wiki
 
@@ -110,8 +110,8 @@
 
 1. GDoll aka Doll: Inferno - Should you Pull? — engagement: 0
 2. How to clear event lvl 60 stages at level 1 — engagement: 0
-3. Uvash teams? — engagement: 0
-4. i love lily but,,, — engagement: 0
+3. i love lily but,,, — engagement: 0
+4. Uvash teams? — engagement: 0
 5. Need advice to improve mi team. — engagement: 0
 
 ## StopGame.ru
@@ -128,11 +128,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282739
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40844
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282805
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40866
 3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38302
-4. This Gacha Game Is a Nightmare You Can’t Wake Up From — engagement: 24722
-5. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18757
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18759
+5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 16969
 
 ## 沉默平台
 
