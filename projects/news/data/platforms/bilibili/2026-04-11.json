@@ -1,9 +1,27 @@
 {
   "date": "2026-04-11",
-  "archived_at": "2026-04-10T17:40:44.607987+00:00",
+  "archived_at": "2026-04-10T20:01:59.690160+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-10T18:11:02+00:00",
+      "lang": "",
+      "title": "⁣",
+      "summary": "@yoka_fatale\n#沙耶之歌\n  └ 李田所258 (0赞): saya可爱捏",
+      "url": "https://www.bilibili.com/video/BV1f3QABAEFu",
+      "author": "SuicidalPlan",
+      "engagement": 41,
+      "media_url": "https://i1.hdslb.com/bfs/archive/6c01a478fe96c9447131321cfbe744d69764e5c5.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 40,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
     {
       "source": "bilibili",
       "time": "2026-04-10T16:34:38+00:00",

@@ -1,15 +1,16 @@
 # 忘却前夜 社区日报 2026-04-11
 
-> 采集时间：2026-04-11 01:40 UTC+8
+> 采集时间：2026-04-11 04:01 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌 - ガラスのくつ bass cover — engagement: 469
-2. [Bilibili] 沙耶之歌第三期 — engagement: 8
-3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
-5. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-6. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+1. [Bilibili] 沙耶之歌 - ガラスのくつ bass cover — engagement: 484
+2. [Bilibili] ⁣ — engagement: 41
+3. [Bilibili] 沙耶之歌第三期 — engagement: 8
+4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+6. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+7. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 
 ## 总览
 
@@ -18,7 +19,7 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 16 |
+| Bilibili | 15 |
 | DCInside | 0（沉默）|
 | Discord | 16 |
 | 抖音 | 0（沉默）|
@@ -40,9 +41,9 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 11 |
+| Reddit | 12 |
 | Ruliweb | 0（沉默）|
-| Steam | 7 |
+| Steam | 8 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -62,7 +63,7 @@
 
 ## Discord
 
-今日 6,882 条消息，159 位活跃用户，911 次反应。热门频道：🔸morimens-game-chat(4055)、🔸綜合討論(836)、🔸game-question(611)、🔸phòng-chat-tiếng-việt(383)、🔸general-chat(223)
+今日 9,003 条消息，159 位活跃用户，1,095 次反应。热门频道：🔸morimens-game-chat(5247)、🔸綜合討論(922)、🔸game-question(797)、🔸phòng-chat-tiếng-việt(470)、🔸ruang-obrolan-indonesia(358)
 
 ### 热门话题
 
@@ -74,16 +75,16 @@
 
 ## Steam 评论
 
-- 好评 6 / 差评 1 / 好评率 86%
-- 语言分布：schinese 3, japanese 1, koreana 1, english 1, russian 1
+- 好评 7 / 差评 1 / 好评率 88%
+- 语言分布：schinese 3, english 2, russian 1, japanese 1, koreana 1
 
 ### 热门好评
 
-1. [正面] こんなにメインストーリーが面白くて先が読めない展開は今までなかった。 — engagement: 0
-2. [正面] 好玩 — engagement: 0
-3. [正面] 갓-겜 — engagement: 0
-4. [正面] 抽卡资源给的很多，很大方，卡也是卡体力，剧情尚好 — engagement: 0
-5. [正面] a bit like slay the spire, but with actually good... — engagement: 0
+1. [正面] скучно под пивом нечего не заметил как уже на 100%... — engagement: 0
+2. [正面] I like Bloodborne and I like Slay the Spire — engagement: 0
+3. [正面] こんなにメインストーリーが面白くて先が読めない展開は今までなかった。 — engagement: 0
+4. [正面] 好玩 — engagement: 0
+5. [正面] 갓-겜 — engagement: 0
 
 ### ⚠️ 差评
 
@@ -91,11 +92,11 @@
 
 ## Bilibili
 
-1. 暴躁小伙惩治照骗 （沙耶，微恐） — engagement: 1421
-2. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 678
-3. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 669
-4. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 637
-5. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 631
+1. 暴躁小伙惩治照骗 （沙耶，微恐） — engagement: 1539
+2. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 691
+3. 忘却前夜OST：莫丝EP·涡心暗潮 | 02 沉没-Sinking — engagement: 681
+4. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 645
+5. 忘却前夜OST：莫丝EP·涡心暗潮 | 01 蓝与更深的蓝-Blue and Deeper Blue — engagement: 639
 
 ## Gamerch Wiki
 
@@ -107,11 +108,11 @@
 
 ## Reddit
 
-1. How to clear event lvl 60 stages at level 1 — engagement: 0
-2. GDoll aka Doll: Inferno - Should you Pull? — engagement: 0
+1. GDoll aka Doll: Inferno - Should you Pull? — engagement: 0
+2. How to clear event lvl 60 stages at level 1 — engagement: 0
 3. i love lily but,,, — engagement: 0
 4. Does anyone have an idea when Castor may have a rerun? — engagement: 0
-5. Is Liz secretly an "Ultra" Limited Awakener? — engagement: 0
+5. Need advice to improve mi team. — engagement: 0
 
 ## StopGame.ru
 
@@ -127,11 +128,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282591
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40822
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38301
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18755
-5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 16885
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 282659
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40849
+3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38302
+4. Clementine edit | Forget last night: Morimens — engagement: 32538
+5. [Morimens] 2025 Anni Tier List Update - Going over EVERY Uni — engagement: 20800
 
 ## 沉默平台
 

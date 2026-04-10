@@ -1,17 +1,17 @@
 {
-  "collected_at": "2026-04-10T17:40:37.487935+00:00",
+  "collected_at": "2026-04-10T20:01:55.792005+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-04-10T17:37:44.156092+00:00",
+      "time": "2026-04-10T19:59:02.343074+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-10)",
-      "summary": "今日 6,882 条消息，159 位活跃用户，911 次反应。热门频道：🔸morimens-game-chat(4055)、🔸綜合討論(836)、🔸game-question(611)、🔸phòng-chat-tiếng-việt(383)、🔸general-chat(223)",
+      "summary": "今日 9,003 条消息，159 位活跃用户，1,095 次反应。热门频道：🔸morimens-game-chat(5247)、🔸綜合討論(922)、🔸game-question(797)、🔸phòng-chat-tiếng-việt(470)、🔸ruang-obrolan-indonesia(358)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 6882
+      "engagement": 9003
     },
     {
       "source": "discord",
@@ -208,6 +208,23 @@
     },
     {
       "source": "discord",
+      "time": "2026-04-10T15:02:34.455000+00:00",
+      "lang": "",
+      "title": "[DC] sirtealot@🔸morimens-game-chat: The answer is simple, the kit is finished only 2 days before the character's rel",
+      "summary": "The answer is simple, the kit is finished only 2 days before the character's release\n  └ arandomflamev2: optional\n  └ deathdealer0000: That can be true",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492177982922428416",
+      "author": "sirtealot",
+      "engagement": 16,
+      "metadata": {
+        "reactions": "😂×2 cry3×1 agree×1",
+        "reply_count": 2,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
       "time": "2026-04-10T02:41:34.950000+00:00",
       "lang": "",
       "title": "[DC] frosthief@🔸morimens-game-chat:   FUCK U GUYS",
@@ -284,23 +301,6 @@
           "https://cdn.discordapp.com/attachments/1131839817982947429/1492024540535197836/image.png?ex=69d9d3a2&is=69d88222&hm=47d50b1bf6b6a7e4a1b900198d73b13cbcabae704eae7199b3c35dbc07ba5491&"
         ],
         "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T02:47:19.024000+00:00",
-      "lang": "",
-      "title": "[DC] willsalvador@🔸morimens-game-chat: https://x.com/i/status/2042189535740830106",
-      "summary": "https://x.com/i/status/2042189535740830106\n  └ arisuu0604: that looks so nice",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1491992949393719306",
-      "author": "willsalvador",
-      "engagement": 14,
-      "metadata": {
-        "reactions": "🔥×3 🩷×1",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
       }
     }
   ]

@@ -1350,6 +1350,27 @@
       "title": "[DC] arandomflamev2@🔸morimens-game-chat: (附件/嵌入)",
       "time": "2026-04-10T13:13:02.353000+00:00",
       "downloaded_at": "2026-04-10T17:40:43.844385+00:00"
+    },
+    "https://i.ytimg.com/vi/g4IVn8qcTQI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBWxgKTFPG2aYccfSC724b3jPa_yw": {
+      "filename": "youtube_71978df7fac126b9.jpg",
+      "source": "youtube",
+      "title": "[Morimens] 2025 Anni Tier List Update - Going over EVERY Unit on the tier list with gameplay footage",
+      "time": "2026-04-10T19:59:01.359609+00:00",
+      "downloaded_at": "2026-04-10T20:01:56.669669+00:00"
+    },
+    "https://i.ytimg.com/vi/ArGNulXbHuo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGTvyJvVNGRgdY0e6b2EHHrvlkQA": {
+      "filename": "youtube_61e24261a0f1eb63.jpg",
+      "source": "youtube",
+      "title": "忘卻前夜 幻夢深潛_43200 「沉淵者」_「移湧」 地瓜醫生 混沌超維 #忘卻前夜 #morimens",
+      "time": "2026-04-10T19:59:01.933018+00:00",
+      "downloaded_at": "2026-04-10T20:01:57.321771+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/6c01a478fe96c9447131321cfbe744d69764e5c5.jpg": {
+      "filename": "bilibili_5b2cc9d8957ed580.jpg",
+      "source": "bilibili",
+      "title": "⁣",
+      "time": "2026-04-10T18:11:02+00:00",
+      "downloaded_at": "2026-04-10T20:01:58.695625+00:00"
     }
   },
   "failed": {
@@ -1782,6 +1803,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-10T17:40:44.549616+00:00"
+    },
+    "https://preview.redd.it/eyojvxwsleug1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=78c5879b7b2ac1834d4c881585bd26211fc453da": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-10T20:01:59.251361+00:00"
+    },
+    "https://preview.redd.it/80bh0ovw1fug1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=64d2c11d38a34e24fc0c5ea5af92fbcea0b614e8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-10T20:01:59.631626+00:00"
     }
   },
   "archived": []
