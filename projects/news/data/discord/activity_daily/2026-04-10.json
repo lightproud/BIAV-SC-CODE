@@ -1,46 +1,46 @@
 {
   "date": "2026-04-10",
-  "messages": 10506,
+  "messages": 11974,
   "unique_authors": 159,
-  "reactions_total": 1239,
-  "attachments": 534,
+  "reactions_total": 1427,
+  "attachments": 623,
   "channel_activity": {
-    "🔸綜合討論": 960,
-    "🔸morimens-game-chat": 6158,
+    "🔸綜合討論": 978,
+    "🔸morimens-game-chat": 7137,
+    "🔸한국어-채팅방": 10,
+    "🔸canal-español": 127,
+    "🔸canal-português": 628,
+    "🔸team-building": 400,
+    "🔸general-chat": 280,
+    "🔸邀请码互助┊swap-invitation-codes": 26,
+    "🔸game-question": 1127,
+    "🔸机器人命令┊bot-commands": 40,
+    "✅「已回答」台服dc的詐騙帳號": 20,
+    "Get Auto enable for dtide": 6,
+    "【English Translation】Opinions Collection": 3,
+    "1 Week Account Pulling Advice?": 6,
     "🔸deutscher-chatraum": 10,
     "🔸русский-канал": 91,
     "🔸phòng-chat-tiếng-việt": 471,
-    "🔸canal-español": 70,
-    "🔸canal-português": 616,
     "🔸ห้องสนทนาภาษาไทย": 19,
     "🔸traphase": 21,
     "🔸频道建议┊server-suggestions": 1,
-    "🔸team-building": 304,
-    "🔸general-chat": 267,
-    "🔸邀请码互助┊swap-invitation-codes": 23,
-    "🔸game-question": 853,
     "🔸两周年纪念反馈┊2yr-anniv-feedback": 2,
-    "🔸机器人命令┊bot-commands": 33,
     "請問豪賭的智慧等命輪會複刻嗎": 2,
     "Game stops responding on update/crashes to desktop on login": 3,
-    "Get Auto enable for dtide": 5,
     "More Mods for this Discord please": 4,
     "潘狄婭得命輪應該裝什麼": 3,
     "🔸剧情交流": 5,
     "🔸晒卡分享": 4,
     "🔸课间休息闲聊": 41,
-    "🔸한국어-채팅방": 7,
     "🔸ruang-obrolan-indonesia": 358,
     "🔸忘却前夜┊morimens-tv": 2,
     "Captain Alva": 2,
     "morimens sybau 💔": 3,
-    "【English Translation】Opinions Collection": 2,
     "融災": 19,
-    "1 Week Account Pulling Advice?": 3,
     "1492190601045868565": 1,
     "🔸lore-chat": 22,
     "🔸erica-playground": 1,
-    "✅「已回答」台服dc的詐騙帳號": 19,
     "✅「Answered」Aurita simple yet effective buff": 11,
     "忘却前夜OST：莫丝EP·涡心暗潮": 4,
     "守密人頭像": 1,
@@ -64,10 +64,11 @@
     "1492017307789164564": 1
   },
   "hourly_activity": {
+    "21": 655,
+    "19": 813,
+    "20": 803,
     "18": 583,
-    "19": 802,
     "17": 350,
-    "20": 1,
     "14": 740,
     "15": 874,
     "16": 705,
@@ -87,8 +88,9 @@
     "5": 326
   },
   "message_types": {
-    "19": 408,
-    "0": 1095
+    "19": 573,
+    "0": 894,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -98,6 +100,14 @@
       "author": "water_heart",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492258123933552670",
+      "channel_id": "1170692781216378960",
+      "content": "Tawil is *so* pretty...",
+      "author": "cerixxix",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492156123468267713",
@@ -122,6 +132,14 @@
       "author": "far0w1",
       "reactions": 6,
       "channel": "Get Auto enable for dtide"
+    },
+    {
+      "id": "1492273915056230570",
+      "channel_id": "1170692781216378960",
+      "content": "Or you can.......traphase....<:GDoll_Inferno_serenity:1468257540809822302>",
+      "author": "2ndselna",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492227020589891666",
@@ -169,6 +187,14 @@
       "content": "Do you watch their gameplay?!\nThey spend a minute on their turns Lens!\nA whole m",
       "author": "frosthief",
       "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492257369135124622",
+      "channel_id": "1170692781216378960",
+      "content": "Less than 10 days until Arachne!!!!",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -224,30 +250,6 @@
       "channel_id": "1170692781216378960",
       "content": "",
       "author": "arandomflamev2",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1491991830974300190",
-      "channel_id": "1131839817982947429",
-      "content": "真．裸體過",
-      "author": "void_1546.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492013431178526885",
-      "channel_id": "1131839817982947429",
-      "content": "這周我恐怕打不到350了",
-      "author": "a4485",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1491991506243026944",
-      "channel_id": "1170692781216378960",
-      "content": "<@157679037240573953> <@88644018673582080> FUCK U GUYS",
-      "author": "frosthief",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
