@@ -1,53 +1,68 @@
 {
   "date": "2026-04-10",
-  "messages": 4552,
+  "messages": 6882,
   "unique_authors": 159,
-  "reactions_total": 589,
-  "attachments": 240,
+  "reactions_total": 911,
+  "attachments": 393,
   "channel_activity": {
-    "🔸綜合討論": 720,
+    "🔸綜合討論": 836,
+    "🔸morimens-game-chat": 4055,
+    "🔸课间休息闲聊": 36,
+    "🔸русский-канал": 88,
+    "🔸phòng-chat-tiếng-việt": 383,
+    "🔸canal-español": 45,
+    "🔸canal-português": 84,
+    "🔸ruang-obrolan-indonesia": 146,
+    "🔸ห้องสนทนาภาษาไทย": 18,
+    "🔸traphase": 14,
+    "🔸lore-chat": 22,
+    "🔸team-building": 142,
+    "🔸general-chat": 223,
+    "🔸邀请码互助┊swap-invitation-codes": 12,
+    "🔸game-question": 611,
+    "🔸两周年纪念反馈┊2yr-anniv-feedback": 1,
+    "🔸机器人命令┊bot-commands": 21,
+    "🔸erica-playground": 1,
+    "✅「已回答」台服dc的詐騙帳號": 19,
+    "✅「Answered」Aurita simple yet effective buff": 11,
+    "忘却前夜OST：莫丝EP·涡心暗潮": 4,
+    "守密人頭像": 1,
+    "Captain Alva": 1,
+    "Horla wip": 1,
+    "morimens sybau 💔": 2,
+    "continual arachneposting": 1,
+    "How to clear lvl 60 event at level 1": 1,
+    "P Dive Map Analysis": 1,
+    "回歸玩家求助": 1,
+    "融災": 14,
+    "问一下新人能怎么组队": 39,
     "🔸阵容构建": 3,
-    "🔸morimens-game-chat": 2577,
     "🔸剧情交流": 1,
-    "🔸课间休息闲聊": 34,
     "🔸chaîne-française": 3,
-    "🔸русский-канал": 84,
-    "🔸phòng-chat-tiếng-việt": 358,
-    "🔸canal-español": 42,
-    "🔸canal-português": 43,
-    "🔸ruang-obrolan-indonesia": 40,
-    "🔸ห้องสนทนาภาษาไทย": 17,
-    "🔸traphase": 11,
-    "🔸team-building": 77,
-    "🔸general-chat": 197,
-    "🔸邀请码互助┊swap-invitation-codes": 7,
-    "🔸game-question": 240,
-    "🔸机器人命令┊bot-commands": 8,
-    "✅「已回答」台服dc的詐騙帳號": 18,
-    "✅「Answered」Aurita simple yet effective buff": 7,
     "\"24\" lives matter": 2,
-    "忘却前夜OST：莫丝EP·涡心暗潮": 3,
     "🔸晒卡分享": 3,
     "🔸欢乐梗图": 4,
     "🔸交友频道": 2,
     "🔸日本語チャンネル": 2,
-    "🔸lore-chat": 15,
     "🔸忘却前夜┊morimens-tv": 1,
     "女鬼和狗偷貼貼": 10,
     "最鯨幻想": 1,
     "建个图楼": 1,
     "Get Auto enable for dtide": 2,
     "建議 14 天課題的學期任務的完成條件應當按天數比例降低": 3,
-    "问一下新人能怎么组队": 6,
     "家人们，新人刚入坑该怎么配队哇QwQ": 9,
     "1492017307789164564": 1
   },
   "hourly_activity": {
+    "10": 452,
+    "11": 719,
+    "12": 450,
+    "13": 585,
+    "14": 431,
     "6": 381,
     "7": 626,
     "8": 495,
     "9": 318,
-    "10": 307,
     "0": 243,
     "1": 245,
     "2": 434,
@@ -56,9 +71,8 @@
     "5": 326
   },
   "message_types": {
-    "19": 521,
-    "0": 1488,
-    "4": 2
+    "19": 836,
+    "0": 1494
   },
   "top_reacted_messages": [
     {
@@ -68,6 +82,22 @@
       "author": "water_heart",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492156123468267713",
+      "channel_id": "1400749543288475770",
+      "content": "Finally cleared 325 just wanted to say the guides are amazing<:pray:135605311626",
+      "author": "jasonbs_",
+      "reactions": 7,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1492139125355315311",
+      "channel_id": "1170692781216378960",
+      "content": "I will soon have 700 hours in more men",
+      "author": "megidola.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492001442725105707",
@@ -118,6 +148,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492150417528848414",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arandomflamev2",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1491991830974300190",
       "channel_id": "1131839817982947429",
       "content": "真．裸體過",
@@ -158,68 +196,44 @@
       "channel": "🔸课间休息闲聊"
     },
     {
-      "id": "1492088069594284144",
-      "channel_id": "1131839817982947429",
+      "id": "1492121225290453116",
+      "channel_id": "1170692781216378960",
       "content": "",
-      "author": "water_heart",
+      "author": "not_blueberry",
       "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1492088050199695420",
+      "id": "1492123876077862952",
       "channel_id": "1170692781216378960",
-      "content": "https://youtu.be/BQR-3OFb_Cc\n\nreal vortice ost",
+      "content": "https://tenor.com/view/nerd-nerd-emoji-gif-1712163874519931175",
+      "author": "shagaru0802",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492128227282649211",
+      "channel_id": "1170692781216378960",
+      "content": "I'm Miss Info Spreader <:Doll_Wait:1468259092459032606>",
+      "author": "chinkeeyong",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492138194345660596",
+      "channel_id": "1170692781216378960",
+      "content": "",
       "author": "kylo_ren._",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1492089222130040864",
+      "id": "1492145320061042750",
       "channel_id": "1170692781216378960",
-      "content": "Just like u left mom",
-      "author": "._.aahh",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492102210618658846",
-      "channel_id": "1170692781216378960",
-      "content": "COMMON RAIN W",
+      "content": "",
       "author": "princess.goth",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492107023972700392",
-      "channel_id": "1170692781216378960",
-      "content": "The lie becomes the truth, continued into another string of lies to which will b",
-      "author": "lighteveningdawn",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492109754854543471",
-      "channel_id": "1170692781216378960",
-      "content": "Wanda is right there",
-      "author": "sirtealot",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492078808004689961",
-      "channel_id": "1492078808004689961",
-      "content": "感谢各位守密人的支持！\n《忘却前夜》新OST已发布，欢迎收听、下载及分享。\n如果有基于OST的二次创作，也欢迎分享给我们！（二创请遵照同人规则，OST内容请勿商",
-      "author": "morimensstaff06",
-      "reactions": 3,
-      "channel": "忘却前夜OST：莫丝EP·涡心暗潮"
-    },
-    {
-      "id": "1492024540807692368",
-      "channel_id": "1131839817982947429",
-      "content": "~~拼劲全力也只能打315了~~",
-      "author": "be_queitplease",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
     }
   ]
 }
