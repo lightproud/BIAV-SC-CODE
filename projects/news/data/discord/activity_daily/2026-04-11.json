@@ -1,28 +1,29 @@
 {
   "date": "2026-04-11",
-  "messages": 12206,
+  "messages": 12839,
   "unique_authors": 133,
-  "reactions_total": 1249,
-  "attachments": 457,
+  "reactions_total": 1308,
+  "attachments": 485,
   "channel_activity": {
-    "🔸綜合討論": 884,
-    "🔸morimens-game-chat": 8562,
+    "🔸綜合討論": 887,
+    "🔸morimens-game-chat": 9081,
+    "🔸русский-канал": 107,
+    "🔸phòng-chat-tiếng-việt": 327,
+    "🔸canal-español": 21,
+    "🔸team-building": 329,
+    "🔸general-chat": 404,
+    "🔸game-question": 1178,
+    "🔸机器人命令┊bot-commands": 34,
+    "新帳號求培養+抽卡建議": 30,
     "🔸欢乐梗图": 7,
-    "🔸русский-канал": 87,
-    "🔸phòng-chat-tiếng-việt": 322,
     "🔸canal-português": 105,
-    "🔸team-building": 328,
-    "🔸general-chat": 387,
     "🔸邀请码互助┊swap-invitation-codes": 36,
-    "🔸game-question": 1132,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 32,
     "Who Ryker's Designer pls come talk ?": 2,
     "7 times 7 equality 49": 1,
     "Titor: Ultra OC because i cant wait for Arachne graaahhh": 11,
     "some doodles": 2,
     "求求配对和抽卡建议，谢谢☺️": 34,
-    "新帳號求培養+抽卡建議": 12,
     "1492593627459879126": 1,
     "🔸chaîne-française": 10,
     "🔸ห้องสนทนาภาษาไทย": 23,
@@ -49,7 +50,6 @@
     "✅「Answered」Possibilities of Doresain kit rework": 1,
     "continual arachneposting": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
-    "🔸canal-español": 19,
     "🔸游戏问题": 1,
     "More Mods for this Discord please": 2,
     "Captain Alva": 1,
@@ -58,8 +58,10 @@
     "融災": 24
   },
   "hourly_activity": {
+    "20": 578,
+    "19": 653,
+    "21": 53,
     "18": 379,
-    "19": 651,
     "16": 443,
     "17": 490,
     "14": 886,
@@ -80,9 +82,8 @@
     "0": 620
   },
   "message_types": {
-    "0": 732,
-    "19": 293,
-    "21": 1
+    "19": 226,
+    "0": 407
   },
   "top_reacted_messages": [
     {
@@ -115,6 +116,14 @@
       "content": "Who names their kid flame 💀",
       "author": "willsalvador",
       "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492618048476024853",
+      "channel_id": "1170692781216378960",
+      "content": "<@113374123798859776> probably what you were expecting.",
+      "author": "climbkaly",
+      "reactions": 6,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -190,6 +199,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492617164169941012",
+      "channel_id": "1170692781216378960",
+      "content": "Chaos is caro too if you squint",
+      "author": "xiii_c",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492618497493176411",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arandomflamev2",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492574200861425745",
       "channel_id": "1170692781216378960",
       "content": "Only tier 3 stages hard to go with tier 5 im just give up with tier 5 😭🙏🙏🙏",
@@ -218,30 +243,6 @@
       "channel_id": "1170692781216378960",
       "content": "I also quit genshin",
       "author": "spooky_penguin_",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492471791598174319",
-      "channel_id": "1131839817982947429",
-      "content": "塔薇有超限的話我要@某人了",
-      "author": "hon_ey0",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492473880592257046",
-      "channel_id": "1170692781216378960",
-      "content": "anyway i got a bunch of friends into morimens around kath release and i just tol",
-      "author": "arkaether",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492476100822171649",
-      "channel_id": "1170692781216378960",
-      "content": "<@88644018673582080> I'm just gonna do e3 kath gameplay.\n\nE0 for next time",
-      "author": "angbak",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
