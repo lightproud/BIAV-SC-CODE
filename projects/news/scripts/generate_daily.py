@@ -8,8 +8,8 @@
   python projects/news/scripts/generate_daily.py
 
 输出:
-  projects/news/output/daily-report-YYYY-MM-DD.md  — 当天日报
-  projects/news/output/daily-latest.md             — 最新一期固定入口
+  projects/news/data/archive/daily-reports/daily-report-YYYY-MM-DD.md  — 当天日报（归档）
+  projects/news/output/daily-latest.md                                 — 最新一期固定入口
 """
 
 import json
@@ -19,6 +19,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_DIR = REPO_ROOT / 'projects' / 'news' / 'output'
+ARCHIVE_DIR = REPO_ROOT / 'projects' / 'news' / 'data' / 'archive' / 'daily-reports'
 
 # 联动关键词（与 aggregator.py 保持同步）
 COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ.get('COLLAB_KEYWORDS') else [
@@ -371,7 +372,8 @@ def main():
 
     report = generate_report(all_data, now_utc8)
 
-    dated_path = OUTPUT_DIR / f'daily-report-{date_str}.md'
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    dated_path = ARCHIVE_DIR / f'daily-report-{date_str}.md'
     latest_path = OUTPUT_DIR / 'daily-latest.md'
 
     dated_path.write_text(report, encoding='utf-8')

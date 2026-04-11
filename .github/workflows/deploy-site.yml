@@ -42,7 +42,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          mkdir -p dist/wiki dist/news dist/shared
+          mkdir -p dist/wiki dist/news
 
           cp projects/site/public/index.html dist/
           [ -f projects/site/public/404.html ] && cp projects/site/public/404.html dist/404.html
@@ -81,7 +81,6 @@ jobs:
           [ -f assets/data/design-decisions.json ] && cp assets/data/design-decisions.json dist/bpt-web/data/design-decisions.json
           [ -f assets/data/interview-2026-04.json ] && cp assets/data/interview-2026-04.json dist/bpt-web/data/interview-2026-04.json
           [ -f assets/data/narrative-structure.json ] && cp assets/data/narrative-structure.json dist/bpt-web/data/narrative-structure.json
-          [ -d assets/styles ] && cp -r assets/styles/* dist/shared/
           mkdir -p dist/docs
           [ -f "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" ] && cp "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" dist/docs/brain-in-a-vat-project.html
           [ -f "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.pdf" ] && cp "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.pdf" dist/docs/brain-in-a-vat-project.pdf

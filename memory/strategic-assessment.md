@@ -118,7 +118,7 @@
 
 ### P3（技术卫生）
 
-10. **两套采集系统**：`aggregator.py` vs `report-system/` 功能重叠，待合并或明确分工
+10. ~~**两套采集系统**：`aggregator.py` vs `report-system/` 功能重叠~~ → 已合并（2026-04-11）：`report-system/` 下线，活脚本迁入 `projects/news/scripts/global_collectors.py`
 
 ---
 
@@ -140,8 +140,7 @@
 
 7. **Wiki 热门角色页人工校对**：至少 top 10 角色页经过制作人确认
 8. **Google Search Console 接入**：监测 Wiki SEO 表现
-9. **决策两套采集系统取舍**：aggregator.py vs report-system
-10. **记忆系统洞察关联**：给 insights.json 加 `related_to` 字段，REM 层自动发现反复模式
+9. **记忆系统洞察关联**：给 insights.json 加 `related_to` 字段，REM 层自动发现反复模式
 
 ### 暂缓
 

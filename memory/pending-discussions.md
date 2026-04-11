@@ -11,7 +11,7 @@
 - [ ] **Twitter/X 接入** — 需 TWITTER_BEARER_TOKEN
 - [ ] **NGA 接入** — 需 NGA_FORUM_ID
 - [ ] **TapTap 接入** — 需 TAPTAP_APP_ID
-- [ ] **两套采集系统合并** — 当前方案：aggregator.py 为主线，report-system 暂冻结。aggregator 已覆盖 Bilibili/Steam/Discord/Reddit/YouTube/Fandom，report-system 待 aggregator 稳定后决定去留
+- [x] ~~**两套采集系统合并** — 当前方案：aggregator.py 为主线，report-system 暂冻结~~ **已解决（2026-04-11）**：`report-system/` 子目录下线；`collector.py` / `taptap_collector.py` 迁至 `projects/news/scripts/global_collectors.py` / `taptap_collector.py`，其余死代码（analyst/reporter/notifier/scheduler）删除，`generate-report.yml` workflow 也一并清理
 
 ## 日报流程
 
