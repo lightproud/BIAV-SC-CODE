@@ -1,29 +1,33 @@
 {
   "date": "2026-04-11",
-  "messages": 5110,
+  "messages": 6435,
   "unique_authors": 133,
-  "reactions_total": 481,
-  "attachments": 187,
+  "reactions_total": 614,
+  "attachments": 245,
   "channel_activity": {
-    "🔸綜合討論": 124,
-    "🔸morimens-game-chat": 3850,
-    "🔸한국어-채팅방": 2,
-    "🔸русский-канал": 2,
-    "🔸phòng-chat-tiếng-việt": 127,
-    "🔸ruang-obrolan-indonesia": 5,
-    "🔸traphase": 2,
-    "🔸lore-chat": 1,
-    "🔸team-building": 129,
-    "🔸general-chat": 323,
-    "🔸邀请码互助┊swap-invitation-codes": 13,
-    "🔸game-question": 408,
-    "🔸机器人命令┊bot-commands": 20,
+    "🔸綜合討論": 342,
+    "🔸morimens-game-chat": 4439,
+    "🔸剧情交流": 4,
+    "🔸课间休息闲聊": 10,
+    "🔸한국어-채팅방": 5,
+    "🔸русский-канал": 6,
+    "🔸phòng-chat-tiếng-việt": 133,
+    "🔸ruang-obrolan-indonesia": 20,
+    "🔸ห้องสนทนาภาษาไทย": 1,
+    "🔸traphase": 3,
+    "🔸lore-chat": 2,
+    "🔸team-building": 202,
+    "🔸general-chat": 344,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 786,
+    "🔸机器人命令┊bot-commands": 21,
+    "✅「已回答」台服dc的詐騙帳號": 1,
+    "\"24\" lives matter": 1,
     "🔸erica-playground": 4,
     "Get Auto enable for dtide": 5,
     "✅「Answered」Possibilities of Doresain kit rework": 1,
     "continual arachneposting": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
-    "🔸课间休息闲聊": 4,
     "🔸canal-español": 19,
     "🔸canal-português": 15,
     "🔸游戏问题": 1,
@@ -36,10 +40,12 @@
     "1 Week Account Pulling Advice?": 2
   },
   "hourly_activity": {
+    "8": 736,
+    "9": 551,
+    "10": 87,
     "5": 592,
     "6": 479,
     "7": 1057,
-    "8": 49,
     "1": 764,
     "2": 786,
     "3": 400,
@@ -47,10 +53,8 @@
     "0": 620
   },
   "message_types": {
-    "19": 862,
-    "0": 1219,
-    "46": 1,
-    "20": 2
+    "0": 955,
+    "19": 370
   },
   "top_reacted_messages": [
     {
@@ -118,6 +122,30 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492468914918264833",
+      "channel_id": "1131839817982947429",
+      "content": "可惜黑印不是667",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492453066715430983",
+      "channel_id": "1170692781216378960",
+      "content": "<@113374123798859776> <@480803690140270592> <@214749389632176129> <@267888098732",
+      "author": "chinkeeyong",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492453248710348881",
+      "channel_id": "1170692781216378960",
+      "content": "dps Cheri is real. she did 144 dmg even",
+      "author": "jyeusu",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492394728904200283",
       "channel_id": "1170692781216378960",
       "content": "arachne in 9 days",
@@ -166,50 +194,26 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1492395561423470592",
+      "id": "1492438878089642045",
       "channel_id": "1170692781216378960",
-      "content": "caro genesis no thank you",
-      "author": "annaxxe_",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492409386226811000",
-      "channel_id": "1170692781216378960",
-      "content": "",
+      "content": "I lost keyflare by reading your message 😔",
       "author": "legendaryredz",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1492419204492558527",
+      "id": "1492451291186856138",
       "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "jyeusu",
+      "content": "I love building 0% crit chance on Vortice and still effectivelly having 100% <:M",
+      "author": "megidola.",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1492422548208619561",
+      "id": "1492453938916622427",
       "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "legendaryredz",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492424604617150576",
-      "channel_id": "1170692781216378960",
-      "content": "I love her so much",
-      "author": "_venush",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492316588282744965",
-      "channel_id": "1170692781216378960",
-      "content": "Oh thays me",
-      "author": "angbak",
+      "content": "is this shit good enough",
+      "author": "l8989c",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }
