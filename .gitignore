@@ -42,3 +42,6 @@ assets/data/memory-utility.json
 assets/data/precomputed-cache.json
 assets/data/sentinel-baseline.json
 projects/news/output/alerts.json
+
+# session digests (runtime output from SessionEnd distiller)
+memory/session-digests/*.json
