@@ -1,34 +1,36 @@
 {
   "date": "2026-04-11",
-  "messages": 10279,
+  "messages": 11180,
   "unique_authors": 133,
-  "reactions_total": 1087,
-  "attachments": 378,
+  "reactions_total": 1205,
+  "attachments": 422,
   "channel_activity": {
-    "🔸綜合討論": 863,
-    "🔸morimens-game-chat": 6998,
-    "🔸欢乐梗图": 2,
+    "🔸綜合討論": 872,
+    "🔸morimens-game-chat": 7744,
+    "🔸欢乐梗图": 4,
+    "🔸chaîne-française": 10,
+    "🔸русский-канал": 21,
+    "🔸phòng-chat-tiếng-việt": 320,
+    "🔸canal-português": 36,
+    "🔸ห้องสนทนาภาษาไทย": 23,
+    "🔸lore-chat": 21,
+    "🔸team-building": 322,
+    "🔸general-chat": 372,
+    "🔸邀请码互助┊swap-invitation-codes": 33,
+    "🔸game-question": 1112,
+    "🔸机器人命令┊bot-commands": 30,
+    "Titor: Ultra OC because i cant wait for Arachne graaahhh": 10,
+    "求求配对和抽卡建议，谢谢☺️": 32,
+    "What to spend luminous cores into": 24,
+    "1 Week Account Pulling Advice?": 3,
     "🔸한국어-채팅방": 15,
-    "🔸chaîne-française": 9,
-    "🔸русский-канал": 18,
-    "🔸phòng-chat-tiếng-việt": 319,
     "🔸traphase": 24,
-    "🔸lore-chat": 12,
-    "🔸team-building": 319,
-    "🔸general-chat": 365,
-    "🔸邀请码互助┊swap-invitation-codes": 26,
-    "🔸game-question": 1058,
     "Train mode - sucks for exalt based teams": 1,
     "請問豪賭的智慧等命輪會複刻嗎": 1,
     "Get Auto enable for dtide": 11,
     "Who Ryker's Designer pls come talk ?": 1,
-    "Titor: Ultra OC because i cant wait for Arachne graaahhh": 8,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 4,
-    "What to spend luminous cores into": 6,
     "🔸课间休息闲聊": 11,
-    "🔸canal-português": 35,
-    "🔸ห้องสนทนาภาษาไทย": 19,
-    "🔸机器人命令┊bot-commands": 29,
     "🔸erica-playground": 6,
     "打算開一個圖樓可能圖之後就丟這裡了": 8,
     "✅「已回答」台服dc的詐騙帳號": 2,
@@ -49,13 +51,14 @@
     "morimens sybau 💔": 4,
     "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 1,
     "新帳號求培養+抽卡建議": 11,
-    "融災": 24,
-    "1 Week Account Pulling Advice?": 2
+    "融災": 24
   },
   "hourly_activity": {
+    "16": 443,
+    "17": 490,
+    "18": 4,
     "14": 886,
     "15": 699,
-    "16": 36,
     "11": 772,
     "12": 460,
     "13": 544,
@@ -72,8 +75,10 @@
     "0": 620
   },
   "message_types": {
-    "0": 909,
-    "19": 644
+    "19": 370,
+    "0": 529,
+    "20": 1,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -114,6 +119,22 @@
       "content": "Sigh I'll just.. go and consider making a YouTube video i guess",
       "author": "angbak",
       "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492562093566726366",
+      "channel_id": "1170692781216378960",
+      "content": "Since I'm one of the CC's in CC program...I decided to update my YouTube banner ",
+      "author": "climbkaly",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492576248331763843",
+      "channel_id": "1170692781216378960",
+      "content": "too old for this",
+      "author": "princess.goth",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -165,6 +186,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492574200861425745",
+      "channel_id": "1170692781216378960",
+      "content": "Only tier 3 stages hard to go with tier 5 im just give up with tier 5 😭🙏🙏🙏",
+      "author": "josh09489",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492541092124430356",
       "channel_id": "1170692781216378960",
       "content": "67",
@@ -209,30 +238,6 @@
       "channel_id": "1170692781216378960",
       "content": "<@88644018673582080> I'm just gonna do e3 kath gameplay.\n\nE0 for next time",
       "author": "angbak",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492484912505421976",
-      "channel_id": "1170692781216378960",
-      "content": "Yes im very rude now, especially to Frenchies like you",
-      "author": "spooky_penguin_",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492468914918264833",
-      "channel_id": "1131839817982947429",
-      "content": "可惜黑印不是667",
-      "author": "foxcatfurry",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492453066715430983",
-      "channel_id": "1170692781216378960",
-      "content": "<@113374123798859776> <@480803690140270592> <@214749389632176129> <@267888098732",
-      "author": "chinkeeyong",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
