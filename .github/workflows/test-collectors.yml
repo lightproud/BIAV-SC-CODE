@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r projects/news/requirements.txt
 
+      - name: Install Playwright browsers
+        run: playwright install chromium
+
       - name: Test each aggregator collector
         env:
           TWITTER_BEARER_TOKEN: ${{ secrets.TWITTER_BEARER_TOKEN }}
@@ -45,6 +48,20 @@ jobs:
               fetch_steam_discussions, fetch_youtube, fetch_fandom_wiki,
               fetch_discord_local,
           )
+          # Playwright collectors (fallback for API-limited platforms)
+          try:
+              from playwright_collectors import (
+                  fetch_taptap_playwright, fetch_nga_playwright,
+                  fetch_xiaohongshu_playwright, fetch_weibo_playwright,
+              )
+              pw_fetchers = [
+                  ('TapTap (Playwright)', fetch_taptap_playwright),
+                  ('NGA (Playwright)', fetch_nga_playwright),
+                  ('Xiaohongshu', fetch_xiaohongshu_playwright),
+                  ('Weibo', fetch_weibo_playwright),
+              ]
+          except ImportError:
+              pw_fetchers = []
 
           fetchers = [
               ('Reddit', fetch_reddit),
@@ -58,7 +75,7 @@ jobs:
               ('YouTube', fetch_youtube),
               ('FandomWiki', fetch_fandom_wiki),
               ('DiscordLocal', fetch_discord_local),
-          ]
+          ] + pw_fetchers
 
           print('=' * 80)
           print('AGGREGATOR COLLECTOR DIAGNOSTIC REPORT')
