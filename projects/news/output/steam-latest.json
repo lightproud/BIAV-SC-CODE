@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-04-11T20:04:20.465228+00:00",
+  "collected_at": "2026-04-11T21:10:28.339169+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -46,7 +46,7 @@
       "voted_up": true,
       "review": "こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
       "timestamp_created": 1775817416,
-      "playtime_forever": 10671
+      "playtime_forever": 10811
     },
     {
       "source": "steam",
@@ -212,21 +212,6 @@
       "review": "之前打完的关卡居然不能解锁成就？反正我是不会全部再打一遍的啦，直接差评吧",
       "timestamp_created": 1775789483,
       "playtime_forever": 25481
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-09T21:07:40+00:00",
-      "lang": "english",
-      "title": "[正面] a bit like slay the spire, but with actually good...",
-      "summary": "a bit like slay the spire, but with actually good looking art",
-      "url": "https://steamcommunity.com/profiles/76561198093773302/recommended/3052450",
-      "author": "76561198093773302",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "a bit like slay the spire, but with actually good looking art",
-      "timestamp_created": 1775768860,
-      "playtime_forever": 352
     }
   ]
 }
