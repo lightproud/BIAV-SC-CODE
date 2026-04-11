@@ -1,0 +1,557 @@
+import { useState, useCallback, useEffect, useRef } from 'react'
+import type { Conversation, Project, SearchResult } from '../types'
+
+interface Props {
+  conversations: Conversation[]
+  projects: Project[]
+  activeId: string | null
+  onSelect: (id: string) => void
+  onDelete: (id: string) => void
+  onRename?: (id: string, title: string) => void
+  onExport?: (id: string) => void
+  onImport?: () => void
+  onNewChat: () => void
+  onOpenSettings: () => void
+  onNewProject: () => void
+  onEditProject: (project: Project) => void
+  onDeleteProject: (id: string) => void
+  onMoveToProject: (conversationId: string, projectId: string | null) => void
+  onPin: (id: string, pinned: boolean) => void
+  onAbout?: () => void
+  theme: 'dark' | 'light'
+  themeMode: 'light' | 'dark' | 'system'
+  onSetThemeMode: (mode: 'light' | 'dark' | 'system') => void
+}
+
+export default function Sidebar({
+  conversations,
+  projects,
+  activeId,
+  onSelect,
+  onDelete,
+  onRename,
+  onExport,
+  onImport,
+  onNewChat,
+  onOpenSettings,
+  onNewProject,
+  onEditProject,
+  onDeleteProject,
+  onMoveToProject,
+  onPin,
+  onAbout,
+  theme,
+  themeMode,
+  onSetThemeMode,
+}: Props) {
+  const [hoveredId, setHoveredId] = useState<string | null>(null)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([])
+  const [isSearching, setIsSearching] = useState(false)
+  const searchTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [collapsedProjects, setCollapsedProjects] = useState<Set<string>>(new Set())
+  const [moveMenuConvId, setMoveMenuConvId] = useState<string | null>(null)
+  const [editingId, setEditingId] = useState<string | null>(null)
+  const [editingTitle, setEditingTitle] = useState('')
+  const editInputRef = useRef<HTMLInputElement>(null)
+
+  const handleConversationContextMenu = useCallback(
+    (e: React.MouseEvent, convId: string) => {
+      e.preventDefault()
+      window.bpt.showContextMenu('conversation', { conversationId: convId })
+    },
+    [],
+  )
+
+  useEffect(() => {
+    const cleanup = window.bpt.onContextMenuAction((_event, { action, data }) => {
+      if (!data?.conversationId) return
+      switch (action) {
+        case 'rename-conversation': {
+          const conv = conversations.find((c) => c.id === data.conversationId)
+          if (conv) {
+            setEditingId(conv.id)
+            setEditingTitle(conv.title)
+          }
+          break
+        }
+        case 'export-conversation':
+          onExport?.(data.conversationId)
+          break
+        case 'delete-conversation':
+          onDelete(data.conversationId)
+          break
+      }
+    })
+    return cleanup
+  }, [onDelete, onRename, onExport, conversations])
+
+  // Debounced full-text search
+  useEffect(() => {
+    if (searchTimerRef.current) clearTimeout(searchTimerRef.current)
+
+    if (!searchQuery.trim()) {
+      setSearchResults([])
+      setIsSearching(false)
+      return
+    }
+
+    setIsSearching(true)
+    searchTimerRef.current = setTimeout(async () => {
+      try {
+        const results = await window.bpt.searchConversations(searchQuery.trim())
+        setSearchResults(results)
+      } catch {
+        setSearchResults([])
+      } finally {
+        setIsSearching(false)
+      }
+    }, 300)
+
+    return () => {
+      if (searchTimerRef.current) clearTimeout(searchTimerRef.current)
+    }
+  }, [searchQuery])
+
+  // Auto-focus the edit input when editingId changes
+  useEffect(() => {
+    if (editingId) {
+      setTimeout(() => editInputRef.current?.select(), 0)
+    }
+  }, [editingId])
+
+  const startEditing = useCallback((conv: Conversation) => {
+    setEditingId(conv.id)
+    setEditingTitle(conv.title)
+  }, [])
+
+  const commitRename = useCallback(() => {
+    if (editingId && editingTitle.trim()) {
+      onRename?.(editingId, editingTitle.trim())
+    }
+    setEditingId(null)
+    setEditingTitle('')
+  }, [editingId, editingTitle, onRename])
+
+  const cancelEditing = useCallback(() => {
+    setEditingId(null)
+    setEditingTitle('')
+  }, [])
+
+  // When not in search mode, show all conversations as-is
+  const filteredConversations = conversations
+
+  const toggleProject = (projectId: string) => {
+    setCollapsedProjects((prev) => {
+      const next = new Set(prev)
+      if (next.has(projectId)) next.delete(projectId)
+      else next.add(projectId)
+      return next
+    })
+  }
+
+  // Group conversations by project
+  const projectConvMap = new Map<string | null, Conversation[]>()
+  for (const conv of filteredConversations) {
+    const key = conv.project_id ?? null
+    if (!projectConvMap.has(key)) projectConvMap.set(key, [])
+    projectConvMap.get(key)!.push(conv)
+  }
+
+  const uncategorized = projectConvMap.get(null) ?? []
+
+  // Separate pinned conversations across all groups
+  const pinnedConversations = filteredConversations.filter((c) => c.is_pinned)
+  const unpinnedUncategorized = uncategorized.filter((c) => !c.is_pinned)
+
+  function renderConversationItem(conv: Conversation) {
+    const isEditing = editingId === conv.id
+    return (
+      <div
+        key={conv.id}
+        className={`group flex items-center gap-1 px-3 py-2 rounded-lg cursor-pointer text-sm mb-0.5 transition-colors ${
+          conv.id === activeId
+            ? 'bg-bpt-border text-bpt-gold'
+            : 'text-bpt-muted hover:bg-bpt-border/50 hover:text-bpt-text'
+        }`}
+        onClick={() => { if (!isEditing) onSelect(conv.id) }}
+        onDoubleClick={(e) => { e.stopPropagation(); startEditing(conv) }}
+        onContextMenu={(e) => handleConversationContextMenu(e, conv.id)}
+        onMouseEnter={() => setHoveredId(conv.id)}
+        onMouseLeave={() => { setHoveredId(null); setMoveMenuConvId(null) }}
+      >
+        {isEditing ? (
+          <input
+            ref={editInputRef}
+            type="text"
+            value={editingTitle}
+            onChange={(e) => setEditingTitle(e.target.value)}
+            onBlur={commitRename}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') commitRename()
+              else if (e.key === 'Escape') cancelEditing()
+            }}
+            onClick={(e) => e.stopPropagation()}
+            className="flex-1 bg-bpt-bg border border-bpt-gold rounded px-1 py-0 text-sm text-bpt-text focus:outline-none min-w-0"
+            autoFocus
+          />
+        ) : (
+          <span className="flex-1 truncate">{conv.title}</span>
+        )}
+        {hoveredId === conv.id && (
+          <div className="flex items-center gap-0.5 shrink-0">
+            {/* Pin */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                onPin(conv.id, !conv.is_pinned)
+              }}
+              className="text-bpt-muted hover:text-bpt-gold p-0.5"
+              title={conv.is_pinned ? '取消置顶' : '置顶'}
+            >
+              {conv.is_pinned ? (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1">
+                  <path d="M16 2L14.5 3.5 18 7l-5.5 5.5-5-5L3 12l1.5 1.5L3 15l3 3 1.5-1.5L9 18l4.5-4.5-5-5L14 3l4.5 4.5L20 6l-4-4z" />
+                </svg>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M16 2L14.5 3.5 18 7l-5.5 5.5-5-5L3 12l1.5 1.5L3 15l3 3 1.5-1.5L9 18l4.5-4.5-5-5L14 3l4.5 4.5L20 6l-4-4z" />
+                </svg>
+              )}
+            </button>
+            {/* Move to project */}
+            <div className="relative">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setMoveMenuConvId(moveMenuConvId === conv.id ? null : conv.id)
+                }}
+                className="text-bpt-muted hover:text-bpt-gold p-0.5"
+                title="移动到项目"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
+                </svg>
+              </button>
+              {moveMenuConvId === conv.id && (
+                <div className="absolute right-0 top-6 z-50 bg-bpt-surface border border-bpt-border rounded-lg shadow-lg py-1 min-w-[140px]">
+                  {conv.project_id && (
+                    <button
+                      className="w-full text-left px-3 py-1.5 text-xs text-bpt-muted hover:bg-bpt-border/50 hover:text-bpt-text"
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onMoveToProject(conv.id, null)
+                        setMoveMenuConvId(null)
+                      }}
+                    >
+                      移除分类
+                    </button>
+                  )}
+                  {projects.map((p) => (
+                    <button
+                      key={p.id}
+                      className={`w-full text-left px-3 py-1.5 text-xs hover:bg-bpt-border/50 ${
+                        conv.project_id === p.id ? 'text-bpt-gold' : 'text-bpt-muted hover:text-bpt-text'
+                      }`}
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onMoveToProject(conv.id, p.id)
+                        setMoveMenuConvId(null)
+                      }}
+                    >
+                      {p.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            {/* Delete */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                onDelete(conv.id)
+              }}
+              className="shrink-0 text-bpt-muted hover:text-bpt-danger p-0.5"
+              title="删除"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        )}
+      </div>
+    )
+  }
+
+  const isMac = window.bpt.platform === 'darwin'
+
+  return (
+    <div className="w-64 shrink-0 flex flex-col border-r border-bpt-border bg-bpt-surface h-full">
+      {/* Header with drag region */}
+      <div className={`titlebar-drag px-3 h-11 flex items-center shrink-0 ${isMac ? 'pl-[72px]' : ''}`}>
+        <span className="titlebar-no-drag font-serif text-bpt-gold font-semibold tracking-wide text-sm">
+          B.I.A.V.
+        </span>
+      </div>
+
+      {/* New Chat + Search */}
+      <div className="px-3 pb-2 space-y-2">
+        <div className="flex gap-1.5">
+          <button
+            onClick={onNewChat}
+            className="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded-md bg-bpt-border/40 text-sm text-bpt-text hover:bg-bpt-border/70 hover:text-bpt-gold transition-colors"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            <span>新对话</span>
+          </button>
+          <button
+            onClick={onImport}
+            className="p-1.5 rounded-md bg-bpt-border/40 text-bpt-muted hover:bg-bpt-border/70 hover:text-bpt-text transition-colors"
+            title="导入对话"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+          </button>
+        </div>
+
+        {/* Search */}
+        <div className="relative">
+          <svg
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 text-bpt-muted pointer-events-none"
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+          <input
+            type="text"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="搜索..."
+            className="w-full bg-bpt-bg/60 border border-bpt-border rounded-md pl-8 pr-8 py-1.5 text-sm text-bpt-text placeholder:text-bpt-muted focus:outline-none focus:border-bpt-gold/50 focus:bg-bpt-bg transition-all"
+          />
+          {searchQuery && (
+            <button
+              onClick={() => setSearchQuery('')}
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 text-bpt-muted hover:text-bpt-text transition-colors"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* Project & Conversation List */}
+      <div className="flex-1 overflow-y-auto px-2">
+        {searchQuery.trim() ? (
+          /* Search Results Mode */
+          <div>
+            <div className="px-2 py-1.5 mt-1">
+              <span className="text-xs font-medium text-bpt-muted uppercase tracking-wider">
+                {isSearching ? '搜索中...' : `搜索结果 (${searchResults.length})`}
+              </span>
+            </div>
+            {searchResults.length === 0 && !isSearching && (
+              <p className="text-center text-sm text-bpt-muted py-4">无匹配结果</p>
+            )}
+            {searchResults.map((result, idx) => (
+              <div
+                key={`${result.conversationId}-${idx}`}
+                className="px-3 py-2 rounded-lg cursor-pointer text-sm mb-0.5 transition-colors text-bpt-muted hover:bg-bpt-border/50 hover:text-bpt-text"
+                onClick={() => { onSelect(result.conversationId); setSearchQuery('') }}
+              >
+                <div className="font-medium text-bpt-text truncate">{result.conversationTitle}</div>
+                <div
+                  className="text-xs text-bpt-muted mt-0.5 line-clamp-2 [&_mark]:bg-bpt-gold/30 [&_mark]:text-bpt-text [&_mark]:rounded-sm [&_mark]:px-0.5"
+                  dangerouslySetInnerHTML={{ __html: result.snippet }}
+                />
+                <div className="text-xs text-bpt-muted/60 mt-0.5">
+                  {result.messageRole === 'user' ? '用户' : result.messageRole === 'assistant' ? '助手' : '系统'}
+                  {' · '}
+                  {result.messageDate}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          /* Normal Conversation List Mode */
+          <>
+        {/* Pinned Section */}
+        {pinnedConversations.length > 0 && (
+          <div className="mb-1">
+            <div className="px-2 py-1.5 mt-1">
+              <span className="text-xs font-medium text-bpt-gold uppercase tracking-wider">已置顶</span>
+            </div>
+            {pinnedConversations.map(renderConversationItem)}
+          </div>
+        )}
+
+        {/* Projects Section Header */}
+        <div className="flex items-center justify-between px-2 py-1.5 mt-1">
+          <span className="text-xs font-medium text-bpt-muted uppercase tracking-wider">项目</span>
+          <button
+            onClick={onNewProject}
+            className="text-bpt-muted hover:text-bpt-gold text-xs transition-colors"
+            title="新建项目"
+          >
+            + 新项目
+          </button>
+        </div>
+
+        {/* Project Groups */}
+        {projects.map((project) => {
+          const convs = (projectConvMap.get(project.id) ?? []).filter((c) => !c.is_pinned)
+          const isCollapsed = collapsedProjects.has(project.id)
+          return (
+            <div key={project.id} className="mb-1">
+              <div
+                className="group flex items-center gap-1 px-2 py-1.5 rounded-lg cursor-pointer text-sm text-bpt-text hover:bg-bpt-border/30 transition-colors"
+                onClick={() => toggleProject(project.id)}
+              >
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className={`shrink-0 transition-transform ${isCollapsed ? '' : 'rotate-90'}`}
+                >
+                  <path d="M9 18l6-6-6-6" />
+                </svg>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-bpt-gold">
+                  <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z" />
+                </svg>
+                <span className="flex-1 truncate font-medium">{project.name}</span>
+                <span className="text-xs text-bpt-muted">{convs.length}</span>
+                <div className="hidden group-hover:flex items-center gap-0.5">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onEditProject(project)
+                    }}
+                    className="text-bpt-muted hover:text-bpt-gold p-0.5"
+                    title="编辑项目"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+                      <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onDeleteProject(project.id)
+                    }}
+                    className="text-bpt-muted hover:text-bpt-danger p-0.5"
+                    title="删除项目"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              {!isCollapsed && (
+                <div className="ml-3">
+                  {convs.length === 0 && (
+                    <p className="text-xs text-bpt-muted px-3 py-1">暂无对话</p>
+                  )}
+                  {convs.map(renderConversationItem)}
+                </div>
+              )}
+            </div>
+          )
+        })}
+
+        {/* Uncategorized */}
+        {unpinnedUncategorized.length > 0 && (
+          <div className="mt-2">
+            <div className="px-2 py-1.5">
+              <span className="text-xs font-medium text-bpt-muted uppercase tracking-wider">未分类</span>
+            </div>
+            {unpinnedUncategorized.map(renderConversationItem)}
+          </div>
+        )}
+
+        {filteredConversations.length === 0 && (
+          <p className="text-center text-sm text-bpt-muted py-4">暂无对话</p>
+        )}
+          </>
+        )}
+      </div>
+
+      {/* Footer */}
+      <div className="px-3 py-2 border-t border-bpt-border flex items-center justify-between">
+        <button
+          onClick={onAbout}
+          className="text-[11px] text-bpt-muted hover:text-bpt-gold transition-colors"
+          title="关于"
+        >
+          v0.1.0
+        </button>
+        <div className="flex items-center gap-1">
+          <button
+            onClick={() => {
+              const next = themeMode === 'system' ? 'light' : themeMode === 'light' ? 'dark' : 'system'
+              onSetThemeMode(next)
+            }}
+            className="p-1 rounded-md text-bpt-muted hover:text-bpt-gold hover:bg-bpt-border/40 transition-colors"
+            title={
+              themeMode === 'system' ? '跟随系统' :
+              themeMode === 'light' ? '浅色模式' :
+              '深色模式'
+            }
+          >
+            {themeMode === 'system' ? (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            ) : themeMode === 'light' ? (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            ) : (
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+              </svg>
+            )}
+          </button>
+          <button
+            onClick={onOpenSettings}
+            className="p-1 rounded-md text-bpt-muted hover:text-bpt-gold hover:bg-bpt-border/40 transition-colors"
+            title="设置"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
