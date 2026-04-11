@@ -1,5 +1,5 @@
-# Auto-deploy BIAV site + wiki + news + biva to GitHub Pages
-# Last trigger: 2026-04-04 v0.10.0
+# Auto-deploy site + wiki + news + bpt-web to GitHub Pages
+# Last trigger: 2026-04-11 BPT-WEB v0.1.0
 name: Deploy Site
 
 on:
@@ -10,7 +10,7 @@ on:
       - 'projects/wiki/docs/**'
       - 'projects/wiki/package.json'
       - 'projects/news/index.html'
-      - 'projects/biav/**'
+      - 'projects/bpt-web/**'
       - 'deliverables/**'
       - '.github/workflows/deploy-site.yml'
   workflow_dispatch:
@@ -49,15 +49,15 @@ jobs:
           [ -d projects/site/design ] && cp -r projects/site/design dist/design
           cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/
           cp projects/news/index.html dist/news/index.html
-          mkdir -p dist/biav
-          if [ -f projects/biav/index.html ]; then
+          mkdir -p dist/bpt-web
+          if [ -f projects/bpt-web/index.html ]; then
             python3 -c "
           import os
           key = os.environ.get('ANTHROPIC_API_KEY', '')
-          with open('projects/biav/index.html', 'r') as f:
+          with open('projects/bpt-web/index.html', 'r') as f:
               content = f.read()
           content = content.replace('%%ANTHROPIC_API_KEY%%', key)
-          with open('dist/biav/index.html', 'w') as f:
+          with open('dist/bpt-web/index.html', 'w') as f:
               f.write(content)
           if key:
               print('Key injected: ' + str(len(key)) + ' chars')
@@ -65,22 +65,22 @@ jobs:
               print('WARNING: No key found')
           "
           fi
-          [ -f projects/biav/manifest.json ] && cp projects/biav/manifest.json dist/biav/manifest.json
-          [ -f projects/biav/sw.js ] && cp projects/biav/sw.js dist/biav/sw.js
-          mkdir -p dist/news/data dist/biav/data
+          [ -f projects/bpt-web/manifest.json ] && cp projects/bpt-web/manifest.json dist/bpt-web/manifest.json
+          [ -f projects/bpt-web/sw.js ] && cp projects/bpt-web/sw.js dist/bpt-web/sw.js
+          mkdir -p dist/news/data dist/bpt-web/data
           [ -f projects/news/output/news.json ] && cp projects/news/output/news.json dist/news/data/news.json
-          # BIVA live context: deploy all key data files
+          # BPT live context: deploy all key data files
           for f in memory/boot-snapshot.md memory/project-status.md memory/strategic-assessment.md \
                    memory/morimens-context.md memory/methodology.md memory/decisions.md \
                    memory/lessons-learned.md memory/strategic-plan-2026.md; do
-            [ -f "$f" ] && cp "$f" "dist/biav/data/$(basename $f)"
+            [ -f "$f" ] && cp "$f" "dist/bpt-web/data/$(basename $f)"
           done
-          [ -f BIAV-SC.md ] && cp BIAV-SC.md dist/biav/data/BIAV-SC.md
-          [ -f projects/news/output/daily-latest.md ] && cp projects/news/output/daily-latest.md dist/biav/data/daily-latest.md
-          [ -f projects/news/output/all-latest.json ] && cp projects/news/output/all-latest.json dist/biav/data/all-latest.json
-          [ -f assets/data/design-decisions.json ] && cp assets/data/design-decisions.json dist/biav/data/design-decisions.json
-          [ -f assets/data/interview-2026-04.json ] && cp assets/data/interview-2026-04.json dist/biav/data/interview-2026-04.json
-          [ -f assets/data/narrative-structure.json ] && cp assets/data/narrative-structure.json dist/biav/data/narrative-structure.json
+          [ -f BIAV-SC.md ] && cp BIAV-SC.md dist/bpt-web/data/BIAV-SC.md
+          [ -f projects/news/output/daily-latest.md ] && cp projects/news/output/daily-latest.md dist/bpt-web/data/daily-latest.md
+          [ -f projects/news/output/all-latest.json ] && cp projects/news/output/all-latest.json dist/bpt-web/data/all-latest.json
+          [ -f assets/data/design-decisions.json ] && cp assets/data/design-decisions.json dist/bpt-web/data/design-decisions.json
+          [ -f assets/data/interview-2026-04.json ] && cp assets/data/interview-2026-04.json dist/bpt-web/data/interview-2026-04.json
+          [ -f assets/data/narrative-structure.json ] && cp assets/data/narrative-structure.json dist/bpt-web/data/narrative-structure.json
           [ -d assets/styles ] && cp -r assets/styles/* dist/shared/
           mkdir -p dist/docs
           [ -f "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" ] && cp "deliverables/2026-03/缸中之脑计划 Brain in a Vat Project.html" dist/docs/brain-in-a-vat-project.html
@@ -95,7 +95,7 @@ jobs:
           echo "=== index.html title ==="
           grep '<title>' dist/index.html
           echo ""
-          for f in dist/index.html dist/wiki/index.html dist/news/index.html dist/biav/index.html; do
+          for f in dist/index.html dist/wiki/index.html dist/news/index.html dist/bpt-web/index.html; do
             if [ ! -f "$f" ]; then
               echo "MISSING: $f" && exit 1
             fi
@@ -144,7 +144,7 @@ jobs:
           sleep 30
           BASE="https://lightproud.github.io/brain-in-a-vat"
           # zh content is at /wiki/ root (via VitePress rewrites), not /wiki/zh/
-          for url in "$BASE/" "$BASE/wiki/" "$BASE/wiki/en/" "$BASE/news/" "$BASE/biav/"; do
+          for url in "$BASE/" "$BASE/wiki/" "$BASE/wiki/en/" "$BASE/news/" "$BASE/bpt-web/"; do
             status=$(curl -s -o /dev/null -w "%{http_code}" "$url" || echo "000")
             if [ "$status" = "200" ]; then
               echo "OK: $url → $status"

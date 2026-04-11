@@ -28,7 +28,9 @@ brain-in-a-vat/
 │   ├── site/                # 主站导航页 + 设计系统
 │   ├── news/                # 社区新闻聚合 + 报告系统
 │   ├── wiki/                # 游戏数据集 + 多语言 Wiki 站点
-│   └── game/                # 衍生游戏（规划中）
+│   ├── game/                # 衍生游戏（规划中）
+│   ├── bpt-web/             # 黑池终端 Web 版（BPT-WEB，单文件 PWA）
+│   └── bpt-desktop/         # 黑池终端 桌面版（BPT-DESKTOP，Electron）
 └── deliverables/            # 已交付成品存档
 ```
 
@@ -40,6 +42,8 @@ brain-in-a-vat/
 | 新闻聚合 + 报告系统 | `projects/news/` | 多平台热点抓取（Bilibili/Steam/Discord）、AI 分析 | 3 源运行中 |
 | 数据集 + Wiki | `projects/wiki/` | 20 个 JSON 数据文件 + VitePress 三语言站点，63 角色 | 数据就绪，准确性待提升 |
 | 衍生游戏 | `projects/game/` | 同人游戏开发 | 规划中（Phase 4） |
+| 黑池终端 Web | `projects/bpt-web/` | BPT-WEB — 单文件 PWA 对话终端，部署到 `/bpt-web/` | v0.1.0 已部署 |
+| 黑池终端 桌面 | `projects/bpt-desktop/` | BPT-DESKTOP — Electron 33 + React + Vite 桌面对话终端 | v0.1.0 开发中 |
 
 ## 快速开始
 

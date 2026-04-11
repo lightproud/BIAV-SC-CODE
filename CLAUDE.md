@@ -42,8 +42,8 @@ brain-in-a-vat/
 │   ├── news/                  # 多平台社区新闻聚合 + 报告系统
 │   ├── wiki/                  # VitePress 三语 Wiki + 游戏数据集
 │   ├── game/                  # 衍生同人游戏（规划中）
-│   ├── biav/                  # Web 版 AI 对话应用（Next.js）
-│   └── biav-desktop/          # 桌面版 AI 对话应用（Electron + Vite）
+│   ├── bpt-web/               # 黑池终端 Web 版（单文件 PWA，BPT-WEB）
+│   └── bpt-desktop/           # 黑池终端 桌面版（Electron + Vite，BPT-DESKTOP）
 ├── scripts/                   # 银芯记忆系统与 MCP 服务器（Python）
 ├── deliverables/              # 已交付成品存档
 └── .github/workflows/         # GitHub Actions 自动化流水线
@@ -57,8 +57,8 @@ brain-in-a-vat/
 | 社区新闻聚合 | `projects/news/` | Code-news | Python 3.11+ / 纯 HTML | 收缩夯实，3 源运行中 |
 | Wiki + 数据集 | `projects/wiki/` | Code-wiki | VitePress 1.6.4 + Vue 3.5.13 | 数据补全中（~83%） |
 | 衍生游戏 | `projects/game/` | Code-game（未启用） | 待决策 | 暂缓，Phase 4 启动 |
-| BIAV Web Terminal | `projects/biav/` | 主控台 | Next.js 14 + Tailwind + SQLite | MVP 已部署 |
-| BIAV Desktop | `projects/biav-desktop/` | Code-site | Electron 33 + React 18 + Vite 6 | 开发中 |
+| 黑池终端 Web (BPT-WEB) | `projects/bpt-web/` | 主控台 | 单文件 PWA（HTML + 内联 CSS/JS + SW） | v0.1.0 已部署 |
+| 黑池终端 桌面 (BPT-DESKTOP) | `projects/bpt-desktop/` | Code-site | Electron 33 + React 18 + Vite 6 + sql.js | v0.1.0 开发中 |
 
 每个子项目根目录都有 `CONTEXT.md`，新会话启动时必须先读。
 
@@ -154,14 +154,15 @@ Stop hook 自动执行：
 - 凭据绝不写入仓库文件。
 - 禁止 `-i` 交互式 git 命令（rebase -i / add -i）。
 
-### BIAV Web Terminal 版本管理（严格执行）
+### 黑池终端 BPT-WEB 版本管理（严格执行）
 
-每次修改 `projects/biav/index.html` 并提交时，**必须**同步更新 4 处版本号：
+每次修改 `projects/bpt-web/index.html` 并提交时，**必须**同步更新 5 处版本号：
 
 1. `const APP_VERSION = 'x.y.z'`（JS 常量）
 2. `<div id="sidebar-footer">vx.y.z</div>`（侧边栏 HTML）
-3. `projects/biav/sw.js` 的 `const SW_VERSION = 'x.y.z'`（触发 SW 更新清缓存）
-4. `projects/biav/CHANGELOG.md`（顶部添加新版本条目）
+3. `projects/bpt-web/sw.js` 的 `const SW_VERSION = 'x.y.z'`（触发 SW 更新清缓存）
+4. `projects/bpt-web/manifest.json`（如涉及 description 等版本相关字段）
+5. `projects/bpt-web/CHANGELOG.md`（顶部添加新版本条目）
 
 版本规则：修复 → patch +1；新功能 → minor +1；重大变更 → major +1。
 
@@ -205,11 +206,11 @@ python projects/news/scripts/aggregator.py
 cd projects/wiki && npm install && npm run docs:dev
 cd projects/wiki && npm run build     # 构建（注意：package.json 脚本名是 build，不是 docs:build）
 
-# BIAV Web Terminal
-cd projects/biav && cp .env.example .env && npm install && npm run dev
+# 黑池终端 Web（BPT-WEB，单文件 PWA，无构建）
+cd projects/bpt-web && python -m http.server 8000
 
-# BIAV Desktop
-cd projects/biav-desktop && npm install && npm run electron:dev
+# 黑池终端 桌面（BPT-DESKTOP）
+cd projects/bpt-desktop && npm install && npm run electron:dev
 
 # 事实圣经校验
 python assets/data/validate.py
@@ -286,8 +287,8 @@ AI 会话最易踩的坑：
 - 各子项目按需选型，不强制统一
 - 后端：Python 3.11+
 - Wiki：VitePress 1.6.4 + Vue 3.5.13，三语（EN/JA/ZH，ZH 为 root locale）
-- BIAV Web：Next.js 14 App Router + Tailwind + SQLite
-- BIAV Desktop：Electron 33 + React 18 + Vite 6 + SQLite
+- BPT-WEB：单文件 PWA（原生 HTML + 内联 CSS/JS + Service Worker），无构建
+- BPT-DESKTOP：Electron 33 + React 18 + Vite 6 + sql.js + MCP + electron-updater
 - 部署：GitHub Pages + GitHub Actions（peaceiris/actions-gh-pages@v4 推 gh-pages 分支）
 
 ---
