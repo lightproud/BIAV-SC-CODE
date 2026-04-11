@@ -123,13 +123,6 @@ API Key 通过 `electron-store` 加密存储在用户数据目录，不进入 gi
 - [ ] 如涉及 IPC 桥：`electron/preload.ts` 与 `src/types.ts` 的 `window.bpt` 类型保持同步
 - [ ] 如涉及 Tailwind 色板：`tailwind.config.js` 的 `colors.bpt` 与 `src/index.css` 的 `--bpt-*` 变量保持同步
 
-## 已知待修
-
-- `electron/main.ts` 历史遗留：第 96 行 `titleBarStyle` 条件语句含有 `` `r`n `` 字面量（PowerShell 转义未解开），以及后续行的 GBK mojibake（`退�?`、`关�?`）需要重新用正确 UTF-8 补回
-- `electron/main.ts` 顶部 `import './tools/self-evolve'` 引用不存在的模块（`tools/` 目录下没有 `self-evolve.ts`），会在 `npm run build`（`tsc`）时失败
-
-以上问题超出本次重命名范围，需单独处理。
-
 ## 历史沿革
 
 - 项目原名「缸中之脑」(Brain in a Vat)，目录 `projects/biav-desktop/`，`productName: "Brain in a Vat"`
