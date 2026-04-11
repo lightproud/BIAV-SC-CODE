@@ -1,26 +1,27 @@
 {
   "date": "2026-04-11",
-  "messages": 12839,
+  "messages": 13624,
   "unique_authors": 133,
-  "reactions_total": 1308,
-  "attachments": 485,
+  "reactions_total": 1384,
+  "attachments": 528,
   "channel_activity": {
-    "🔸綜合討論": 887,
-    "🔸morimens-game-chat": 9081,
-    "🔸русский-канал": 107,
+    "🔸綜合討論": 890,
+    "🔸morimens-game-chat": 9622,
+    "🔸русский-канал": 185,
+    "🔸canal-español": 23,
+    "🔸canal-português": 109,
+    "🔸general-chat": 431,
+    "🔸邀请码互助┊swap-invitation-codes": 37,
+    "🔸game-question": 1303,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 35,
+    "7 times 7 equality 49": 2,
+    "1492633193139142686": 1,
     "🔸phòng-chat-tiếng-việt": 327,
-    "🔸canal-español": 21,
     "🔸team-building": 329,
-    "🔸general-chat": 404,
-    "🔸game-question": 1178,
-    "🔸机器人命令┊bot-commands": 34,
     "新帳號求培養+抽卡建議": 30,
     "🔸欢乐梗图": 7,
-    "🔸canal-português": 105,
-    "🔸邀请码互助┊swap-invitation-codes": 36,
-    "🔸忘却前夜┊morimens-tv": 1,
     "Who Ryker's Designer pls come talk ?": 2,
-    "7 times 7 equality 49": 1,
     "Titor: Ultra OC because i cant wait for Arachne graaahhh": 11,
     "some doodles": 2,
     "求求配对和抽卡建议，谢谢☺️": 34,
@@ -58,9 +59,11 @@
     "融災": 24
   },
   "hourly_activity": {
+    "21": 468,
+    "22": 330,
+    "23": 40,
     "20": 578,
     "19": 653,
-    "21": 53,
     "18": 379,
     "16": 443,
     "17": 490,
@@ -82,8 +85,9 @@
     "0": 620
   },
   "message_types": {
-    "19": 226,
-    "0": 407
+    "0": 490,
+    "19": 294,
+    "21": 1
   },
   "top_reacted_messages": [
     {
@@ -132,6 +136,22 @@
       "content": "Sigh I'll just.. go and consider making a YouTube video i guess",
       "author": "angbak",
       "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492633268028444794",
+      "channel_id": "1170692781216378960",
+      "content": "do 🫃 not 🫃 sleep 🫃 on🫃  this 🫃 game🫃🫄  , i've 🫃 played 🫃 so🫃  many🫃 gacha 🫃 game",
+      "author": "moyashi0672",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492634601288630313",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "monchi3524",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -199,6 +219,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492647581531115651",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "melwyn7591",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492617164169941012",
       "channel_id": "1170692781216378960",
       "content": "Chaos is caro too if you squint",
@@ -219,30 +247,6 @@
       "channel_id": "1170692781216378960",
       "content": "Only tier 3 stages hard to go with tier 5 im just give up with tier 5 😭🙏🙏🙏",
       "author": "josh09489",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492541092124430356",
-      "channel_id": "1170692781216378960",
-      "content": "67",
-      "author": "angbak",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492545966774157312",
-      "channel_id": "1170692781216378960",
-      "content": "Mathing it up",
-      "author": "not_blueberry",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492522478348668989",
-      "channel_id": "1170692781216378960",
-      "content": "I also quit genshin",
-      "author": "spooky_penguin_",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
