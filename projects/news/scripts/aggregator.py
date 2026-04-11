@@ -33,6 +33,25 @@ from uuid import uuid4
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
 
+# Playwright fallback collectors (imported lazily to avoid startup cost)
+_playwright_collectors = None
+
+def _get_playwright_collectors():
+    """Lazy import of playwright collectors to avoid startup cost."""
+    global _playwright_collectors
+    if _playwright_collectors is None:
+        try:
+            from scripts import playwright_collectors as pc
+            _playwright_collectors = pc
+        except ImportError:
+            try:
+                import playwright_collectors as pc
+                _playwright_collectors = pc
+            except ImportError:
+                logger.warning('playwright_collectors module not found, Playwright fallback disabled')
+                _playwright_collectors = None
+    return _playwright_collectors
+
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_PATH = REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
 SEARCH_KEYWORDS = ['忘却前夜', '忘卻前夜', 'Morimens', 'morimens']
@@ -53,7 +72,7 @@ BILIBILI_MORIMENS_CREATORS = {
 }
 
 # Valid source identifiers
-VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion', 'steam'}
+VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion', 'steam', 'weibo', 'xiaohongshu'}
 
 # Required fields for each news item
 REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
@@ -1653,6 +1672,19 @@ def generate_summary(news_items):
         return f"今日热门话题：{titles}。"
 
 
+# ============================================================
+# Data Quality Integration
+# ============================================================
+
+def _get_quality_tracker():
+    """Lazy import of data quality tracker to avoid startup overhead."""
+    try:
+        from scripts.data_quality import SilentPlatformTracker
+        return SilentPlatformTracker()
+    except ImportError:
+        return None
+
+
 def run():
     """Main aggregation pipeline."""
     logger.info('Starting Morimens community news aggregation...')
@@ -1674,13 +1706,79 @@ def run():
         ('DiscordLocal', fetch_discord_local),
     ]
 
+    # Initialize quality tracker for platform health monitoring
+    quality_tracker = _get_quality_tracker()
+
     for name, fetcher in fetchers:
+        # Map display name to source identifier
+        source_id = name.lower().replace('steamreviews', 'steam_review').replace('steamnews', 'steam').replace('steamdiscussions', 'steam_discussion').replace('discordlocal', 'discord')
+
+        # Check if platform is dormant (skip to save resources)
+        if quality_tracker and quality_tracker.should_skip_platform(source_id):
+            logger.info(f'{name}: skipping dormant platform')
+            continue
+
         try:
             items = fetcher()
             all_news.extend(items)
             logger.info(f'{name}: {len(items)} items')
+
+            # Track platform status
+            if quality_tracker:
+                quality_tracker.update_platform_status(source_id, len(items))
+
+            # Playwright fallback for specific sources when API returns empty or fails
+            if name in ('TapTap', 'NGA') and len(items) == 0:
+                pc = _get_playwright_collectors()
+                if pc:
+                    pw_fetcher = {
+                        'TapTap': pc.fetch_taptap_playwright,
+                        'NGA': pc.fetch_nga_playwright,
+                    }.get(name)
+                    if pw_fetcher:
+                        try:
+                            pw_items = pw_fetcher()
+                            all_news.extend(pw_items)
+                            logger.info(f'{name} Playwright fallback: {len(pw_items)} items')
+                        except Exception as e:
+                            logger.warning(f'{name} Playwright fallback failed: {e}')
+
         except Exception as e:
             logger.error(f'{name} fetcher crashed: {e}')
+
+            # Track platform error
+            if quality_tracker:
+                quality_tracker.update_platform_status(source_id, 0, error=str(e))
+            # Try Playwright fallback for TapTap and NGA on crash
+            if name in ('TapTap', 'NGA'):
+                pc = _get_playwright_collectors()
+                if pc:
+                    pw_fetcher = {
+                        'TapTap': pc.fetch_taptap_playwright,
+                        'NGA': pc.fetch_nga_playwright,
+                    }.get(name)
+                    if pw_fetcher:
+                        try:
+                            pw_items = pw_fetcher()
+                            all_news.extend(pw_items)
+                            logger.info(f'{name} Playwright fallback (after crash): {len(pw_items)} items')
+                        except Exception as pw_e:
+                            logger.warning(f'{name} Playwright fallback failed: {pw_e}')
+
+    # Additional Playwright-only sources (no API equivalent)
+    pc = _get_playwright_collectors()
+    if pc:
+        pw_sources = [
+            ('Xiaohongshu', pc.fetch_xiaohongshu_playwright),
+            ('Weibo', pc.fetch_weibo_playwright),
+        ]
+        for name, pw_fetcher in pw_sources:
+            try:
+                pw_items = pw_fetcher()
+                all_news.extend(pw_items)
+                logger.info(f'{name} Playwright: {len(pw_items)} items')
+            except Exception as e:
+                logger.warning(f'{name} Playwright failed: {e}')
 
     # Validate and sanitize all items
     all_news = validate_all_news(all_news)
