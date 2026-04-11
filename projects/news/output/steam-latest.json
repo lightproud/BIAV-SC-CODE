@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-04-11T18:06:12.985076+00:00",
+  "collected_at": "2026-04-11T20:04:20.465228+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -227,21 +227,6 @@
       "review": "a bit like slay the spire, but with actually good looking art",
       "timestamp_created": 1775768860,
       "playtime_forever": 352
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-09T19:50:24+00:00",
-      "lang": "russian",
-      "title": "[正面] голі тьотки",
-      "summary": "голі тьотки",
-      "url": "https://steamcommunity.com/profiles/76561199243170071/recommended/3052450",
-      "author": "76561199243170071",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": true,
-      "review": "голі тьотки",
-      "timestamp_created": 1775764224,
-      "playtime_forever": 31127
     }
   ]
 }
