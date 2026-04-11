@@ -1,49 +1,56 @@
 {
   "date": "2026-04-11",
-  "messages": 3026,
+  "messages": 5110,
   "unique_authors": 133,
-  "reactions_total": 318,
-  "attachments": 105,
+  "reactions_total": 481,
+  "attachments": 187,
   "channel_activity": {
-    "🔸綜合討論": 43,
-    "🔸morimens-game-chat": 2431,
+    "🔸綜合討論": 124,
+    "🔸morimens-game-chat": 3850,
+    "🔸한국어-채팅방": 2,
+    "🔸русский-канал": 2,
+    "🔸phòng-chat-tiếng-việt": 127,
+    "🔸ruang-obrolan-indonesia": 5,
+    "🔸traphase": 2,
+    "🔸lore-chat": 1,
+    "🔸team-building": 129,
+    "🔸general-chat": 323,
+    "🔸邀请码互助┊swap-invitation-codes": 13,
+    "🔸game-question": 408,
+    "🔸机器人命令┊bot-commands": 20,
+    "🔸erica-playground": 4,
+    "Get Auto enable for dtide": 5,
+    "✅「Answered」Possibilities of Doresain kit rework": 1,
+    "continual arachneposting": 4,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
     "🔸课间休息闲聊": 4,
-    "🔸русский-канал": 1,
-    "🔸phòng-chat-tiếng-việt": 35,
     "🔸canal-español": 19,
     "🔸canal-português": 15,
-    "🔸ruang-obrolan-indonesia": 2,
-    "🔸traphase": 1,
-    "🔸team-building": 48,
-    "🔸general-chat": 217,
-    "🔸邀请码互助┊swap-invitation-codes": 5,
-    "🔸game-question": 141,
     "🔸游戏问题": 1,
-    "🔸机器人命令┊bot-commands": 12,
-    "Get Auto enable for dtide": 2,
     "More Mods for this Discord please": 2,
     "Captain Alva": 1,
     "morimens sybau 💔": 4,
-    "continual arachneposting": 2,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 2,
     "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 1,
     "新帳號求培養+抽卡建議": 11,
     "融災": 24,
     "1 Week Account Pulling Advice?": 2
   },
   "hourly_activity": {
+    "5": 592,
+    "6": 479,
+    "7": 1057,
+    "8": 49,
     "1": 764,
     "2": 786,
     "3": 400,
     "4": 363,
-    "5": 93,
     "0": 620
   },
   "message_types": {
-    "0": 1862,
-    "19": 1162,
-    "23": 1,
-    "4": 1
+    "19": 862,
+    "0": 1219,
+    "46": 1,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -111,6 +118,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492394728904200283",
+      "channel_id": "1170692781216378960",
+      "content": "arachne in 9 days",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492403740106293350",
+      "channel_id": "1170692781216378960",
+      "content": "Watching this auto pollux gameplay makes me want to send replay to lens for revi",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492369891301392594",
       "channel_id": "1131839817982947429",
       "content": "什麼?剎那佬要生了?",
@@ -143,67 +166,51 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492395561423470592",
+      "channel_id": "1170692781216378960",
+      "content": "caro genesis no thank you",
+      "author": "annaxxe_",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492409386226811000",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492419204492558527",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "jyeusu",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492422548208619561",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492424604617150576",
+      "channel_id": "1170692781216378960",
+      "content": "I love her so much",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492316588282744965",
       "channel_id": "1170692781216378960",
       "content": "Oh thays me",
       "author": "angbak",
       "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492360037807689820",
-      "channel_id": "1170692781216378960",
-      "content": "Arachne in 9 days",
-      "author": "fishhazardthewizard",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492368179530301542",
-      "channel_id": "1170692781216378960",
-      "content": "im gonna work on the video now",
-      "author": "princess.goth",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492347689877377205",
-      "channel_id": "1131839817982947429",
-      "content": "餐餐吃泡麵",
-      "author": "xingxiu_0209",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492314274087833640",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "monchi3524",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492315096091856936",
-      "channel_id": "1170692781216378960",
-      "content": "Should I use a protoparadise on Tinct? She’s the only standard unit I don’t have",
-      "author": "minmin_winwin",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492318195317477616",
-      "channel_id": "1170692781216378960",
-      "content": "I hope Arachne is fun",
-      "author": "xiii_c",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492318299617234966",
-      "channel_id": "1170692781216378960",
-      "content": "Forming your own opinion imo is much more valuable",
-      "author": "shortcombos",
-      "reactions": 2,
       "channel": "🔸morimens-game-chat"
     }
   ]
