@@ -18,7 +18,6 @@ import { registerStyleHandlers } from './ipc/styles'
 import { registerHookHandlers } from './ipc/hooks'
 import { MCPManager } from './mcp/manager'
 import { loadHooks } from './tools/hooks'
-import { initPluginSystem } from './tools/self-evolve'
 import { initUpdater, checkForUpdate, downloadUpdate, installUpdate } from './updater'
 import { setMainWindow, getMainWindow } from './window-state'
 
@@ -26,7 +25,6 @@ const mcpManager = new MCPManager()
 
 // Initialize hook engine
 loadHooks()
-initPluginSystem()
 
 let mainWindow: BrowserWindow | null = null
 
@@ -93,7 +91,21 @@ function createWindow() {
     minHeight: 500,
     title: '黑池终端',
     backgroundColor: '#0a0b10',
-    // macOS: hidden inset gives us space for traffic lights`r`n    // Windows: use titleBarOverlay for native window controls`r`n    ...(isMac`r`n      ? { titleBarStyle: 'hiddenInset', trafficLightPosition: { x: 16, y: 14 } }`r`n      : isWin`r`n        ? {`r`n            titleBarStyle: 'hidden',`r`n            titleBarOverlay: {`r`n              color: '#0a0b10',`r`n              symbolColor: '#d4c9a8',`r`n              height: 44,`r`n            },`r`n          }`r`n        : { titleBarStyle: 'hidden' }`r`n    ),
+    // macOS: hidden inset gives us space for traffic lights
+    // Windows: use titleBarOverlay for native window controls
+    ...(isMac
+      ? { titleBarStyle: 'hiddenInset', trafficLightPosition: { x: 16, y: 14 } }
+      : isWin
+        ? {
+            titleBarStyle: 'hidden',
+            titleBarOverlay: {
+              color: '#0a0b10',
+              symbolColor: '#d4c9a8',
+              height: 44,
+            },
+          }
+        : { titleBarStyle: 'hidden' }
+    ),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
@@ -148,7 +160,7 @@ function createTray() {
     { label: '显示窗口', click: () => mainWindow?.show() },
     { type: 'separator' },
     {
-      label: '退�?,
+      label: '退出',
       click: () => {
         mainWindow?.destroy()
         app.quit()
@@ -246,7 +258,7 @@ const CSP = isDev ? '' : [
 ].join('; ')
 
 app.whenReady().then(async () => {
-  // Content Security Policy �?enforce via response headers (skip in dev)
+  // Content Security Policy - enforce via response headers (skip in dev)
   if (CSP) {
     session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
       callback({

@@ -274,7 +274,7 @@ export default function App() {
           <button
             className="titlebar-no-drag p-1.5 rounded-md hover:bg-bpt-border/60 text-bpt-muted hover:text-bpt-text transition-colors"
             onClick={() => setSidebarOpen(!sidebarOpen)}
-            title="切换侧边�?
+            title="切换侧边栏"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               {sidebarOpen ? (
@@ -410,13 +410,13 @@ export default function App() {
               <button
                 className={`flex items-center gap-1 px-1.5 py-0.5 rounded transition-colors ${enableThinking ? 'text-bpt-gold bg-bpt-gold/10' : 'text-bpt-muted hover:text-bpt-text hover:bg-bpt-border/60'}`}
                 onClick={() => setEnableThinking(!enableThinking)}
-                title={enableThinking ? '深度思考已开�? : '深度思考已关闭'}
+                title={enableThinking ? '深度思考已开启' : '深度思考已关闭'}
               >
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 2a7 7 0 0 0-7 7c0 3 2 5.5 4 7.5.5.5 1 1.5 1 2.5h4c0-1 .5-2 1-2.5 2-2 4-4.5 4-7.5a7 7 0 0 0-7-7z" />
                   <path d="M9 22h6" />
                 </svg>
-                <span>思�?/span>
+                <span>思考</span>
               </button>
             )}
             <ModelParamsPanel
