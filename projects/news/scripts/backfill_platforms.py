@@ -38,9 +38,9 @@ logger = logging.getLogger(__name__)
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 STATE_PATH = _REPO_ROOT / 'projects' / 'news' / 'data' / 'backfill' / 'state.json'
 ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
-REPORT_SCRIPTS = _REPO_ROOT / 'projects' / 'news' / 'report-system' / 'scripts'
 
-sys.path.insert(0, str(REPORT_SCRIPTS))
+# Sibling scripts dir — global_collectors lives here
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 # Max runtime per invocation (30 minutes, leaves buffer for workflow)
 MAX_RUNTIME_SECONDS = 1800
@@ -129,7 +129,7 @@ def _archive_items(source: str, items: list[dict]):
 
 def backfill_bilibili(state: dict, max_pages: int) -> int:
     """Backfill Bilibili search results page by page."""
-    from collector import _get, _make_item, KEYWORDS
+    from global_collectors import _get, _make_item, KEYWORDS
     ps = _platform_state(state, 'bilibili')
     if ps['done']:
         return 0
@@ -187,7 +187,7 @@ def backfill_bilibili(state: dict, max_pages: int) -> int:
 
 def backfill_appstore(state: dict, max_pages: int) -> int:
     """Backfill App Store reviews across all regions and pages."""
-    from collector import _get, _make_item
+    from global_collectors import _get, _make_item
     ps = _platform_state(state, 'appstore')
     if ps['done']:
         return 0
@@ -256,7 +256,7 @@ def backfill_appstore(state: dict, max_pages: int) -> int:
 
 def backfill_arca_live(state: dict, max_pages: int) -> int:
     """Backfill Arca.live forgettingeve channel page by page."""
-    from collector import _get, _make_item
+    from global_collectors import _get, _make_item
     import re as _re
     ps = _platform_state(state, 'arca_live')
     if ps['done']:
@@ -323,7 +323,7 @@ def backfill_arca_live(state: dict, max_pages: int) -> int:
 
 def backfill_dcinside(state: dict, max_pages: int) -> int:
     """Backfill DCInside morimens gallery page by page."""
-    from collector import _get, _make_item
+    from global_collectors import _get, _make_item
     import re as _re
     ps = _platform_state(state, 'dcinside')
     if ps['done']:
@@ -391,7 +391,7 @@ def backfill_dcinside(state: dict, max_pages: int) -> int:
 def backfill_steam_reviews(state: dict, max_pages: int) -> int:
     """Backfill all Steam reviews using cursor pagination."""
     import subprocess as _sp
-    from collector import _make_item
+    from global_collectors import _make_item
     ps = _platform_state(state, 'steam_review')
     if ps['done']:
         return 0
@@ -472,7 +472,7 @@ def backfill_steam_reviews(state: dict, max_pages: int) -> int:
 
 def backfill_naver_cafe(state: dict, max_pages: int) -> int:
     """Backfill Naver Cafe search results."""
-    from collector import _get, _make_item, KEYWORDS
+    from global_collectors import _get, _make_item, KEYWORDS
     ps = _platform_state(state, 'naver_cafe')
     if ps['done']:
         return 0
@@ -530,7 +530,7 @@ def backfill_naver_cafe(state: dict, max_pages: int) -> int:
 
 def backfill_pixiv(state: dict, max_pages: int) -> int:
     """Backfill Pixiv search results page by page."""
-    from collector import _get, _make_item, KEYWORDS
+    from global_collectors import _get, _make_item, KEYWORDS
     ps = _platform_state(state, 'pixiv')
     if ps['done']:
         return 0
@@ -590,7 +590,7 @@ def backfill_pixiv(state: dict, max_pages: int) -> int:
 
 def backfill_ruliweb(state: dict, max_pages: int) -> int:
     """Backfill Ruliweb search results page by page."""
-    from collector import _get, _make_item, KEYWORDS
+    from global_collectors import _get, _make_item, KEYWORDS
     import re as _re
     ps = _platform_state(state, 'ruliweb')
     if ps['done']:
@@ -657,7 +657,7 @@ def backfill_ruliweb(state: dict, max_pages: int) -> int:
 
 def backfill_weixin(state: dict, max_pages: int) -> int:
     """Backfill Sogou WeChat search results page by page."""
-    from collector import _get, _make_item, KEYWORDS
+    from global_collectors import _get, _make_item, KEYWORDS
     import re as _re
     ps = _platform_state(state, 'weixin')
     if ps['done']:

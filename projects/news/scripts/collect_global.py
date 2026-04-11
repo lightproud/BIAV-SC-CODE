@@ -2,14 +2,14 @@
 """
 collect_global.py — 全球社区采集桥接脚本
 
-将 report-system/collector.py 的 29 个采集器接入主管线，
+调用 global_collectors.py 的 29 个采集器，
 合并 aggregator.py 的输出，生成统一的 news.json。
 
 运行方式:
   python projects/news/scripts/collect_global.py
 
 工作流程:
-  1. 运行 report-system 的零成本采集器（不需要 API Key 的那些）
+  1. 运行零成本采集器（不需要 API Key 的那些）
   2. 读取 aggregator.py 已有的 news.json（如果存在）
   3. 合并、去重、排序
   4. 写回 news.json
@@ -17,7 +17,6 @@ collect_global.py — 全球社区采集桥接脚本
 
 import json
 import sys
-import os
 import logging
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -28,9 +27,8 @@ logger = logging.getLogger(__name__)
 _REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
 OUTPUT_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'news.json'
 
-# Add report-system to path so we can import collector
-REPORT_SYSTEM_DIR = _REPO_ROOT / 'projects' / 'news' / 'report-system' / 'scripts'
-sys.path.insert(0, str(REPORT_SYSTEM_DIR))
+# Ensure sibling scripts dir is importable (works both as script and module)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 
 # ── Source mapping: collector source names → aggregator source names ──
@@ -117,10 +115,10 @@ def run_zero_cost_collectors() -> list[dict]:
     items = []
 
     try:
-        import collector as c
+        import global_collectors as c
         c._refresh_cutoff()
     except ImportError as e:
-        logger.error(f"Cannot import collector module: {e}")
+        logger.error(f"Cannot import global_collectors module: {e}")
         return items
 
     # Zero-cost collectors (no API key required)

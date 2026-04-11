@@ -16,13 +16,8 @@ htmlcov/
 .claude/
 !.claude/commands/
 
-# report-system runtime data (auto-generated, do not commit)
-projects/news/report-system/data/collected_raw.json
-projects/news/report-system/data/analysis.json
-projects/news/report-system/data/report.json
-projects/news/report-system/data/report.html
-projects/news/report-system/data/feed.xml
-projects/news/report-system/data/memory.json
+# global_collectors runtime output (if run standalone)
+projects/news/data/collected_raw.json
 projects/news/data/discord/archives/
 assets/data/discord/
 morimens_extract.zip

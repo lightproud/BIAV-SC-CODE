@@ -26,7 +26,6 @@ Code-wiki
 - `scripts/` — 数据查询模块（Python）
 - `docs/` — VitePress 源文件（Markdown 页面）
 - `docs/.vitepress/` — VitePress 配置和主题
-- `exports/` — 导出的文档副本（docx/md）
 
 ## 开发命令
 ```bash
