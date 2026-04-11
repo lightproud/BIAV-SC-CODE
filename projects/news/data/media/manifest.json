@@ -1679,6 +1679,20 @@
       "title": "【忘却前夜】パーティ紹介／001（ニムフィーア、リリー、カレン、アグリッパ）【初投稿】",
       "time": "2026-04-11T21:06:24.976810+00:00",
       "downloaded_at": "2026-04-11T21:10:30.567822+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/aebc26c98fd2711a7fa45e518e401e240ad61c8d.jpg": {
+      "filename": "bilibili_82dc6cc07bfa1f55.jpg",
+      "source": "bilibili",
+      "title": "如果忧郁是一种天赋...",
+      "time": "2026-04-10T14:15:13+00:00",
+      "downloaded_at": "2026-04-11T23:10:20.465159+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492618048488869942/Untitled.jpg?ex=69dbfc62&is=69daaae2&hm=40be3bd5c5e611c27533d7abe9af2a6b36a7de712fa625cecf93434bd7ef6758&": {
+      "filename": "discord_1771cd04f0b2a51f.jpg",
+      "source": "discord",
+      "title": "[DC] climbkaly@🔸morimens-game-chat:  probably what you were expecting.",
+      "time": "2026-04-11T20:11:14.259000+00:00",
+      "downloaded_at": "2026-04-11T23:10:20.903847+00:00"
     }
   },
   "failed": {
@@ -2216,6 +2230,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-11T20:04:29.266003+00:00"
+    },
+    "https://preview.redd.it/rthy18f7wmug1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=089a68a03d7473a09e8c731e0da572fa00850f35": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T23:10:21.358285+00:00"
+    },
+    "https://preview.redd.it/zekvuzs3wmug1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=2e4776cb1bdbe57ef04373bb298038861984540d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T23:10:21.705844+00:00"
     }
   },
   "archived": []
