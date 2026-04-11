@@ -1,33 +1,39 @@
 {
   "date": "2026-04-11",
-  "messages": 7617,
+  "messages": 8726,
   "unique_authors": 133,
-  "reactions_total": 756,
-  "attachments": 270,
+  "reactions_total": 897,
+  "attachments": 323,
   "channel_activity": {
-    "🔸綜合討論": 635,
-    "🔸morimens-game-chat": 5144,
+    "🔸綜合討論": 713,
+    "🔸morimens-game-chat": 5847,
+    "🔸课间休息闲聊": 11,
+    "🔸한국어-채팅방": 7,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 17,
+    "🔸phòng-chat-tiếng-việt": 280,
+    "🔸canal-português": 35,
+    "🔸ห้องสนทนาภาษาไทย": 19,
+    "🔸traphase": 23,
+    "🔸team-building": 271,
+    "🔸general-chat": 356,
+    "🔸邀请码互助┊swap-invitation-codes": 19,
+    "🔸game-question": 947,
+    "🔸机器人命令┊bot-commands": 29,
+    "🔸erica-playground": 6,
+    "打算開一個圖樓可能圖之後就丟這裡了": 8,
+    "✅「已回答」台服dc的詐騙帳號": 2,
+    "\"24\" lives matter": 2,
+    "Titor: Ultra OC because i cant wait for Arachne graaahhh": 7,
+    "New Account VIDEO Playthrough Guide": 1,
+    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 1,
+    "【English Translation】Opinions Collection": 1,
     "🔸剧情交流": 6,
-    "🔸한국어-채팅방": 6,
-    "🔸русский-канал": 9,
-    "🔸phòng-chat-tiếng-việt": 154,
-    "🔸canal-português": 16,
-    "🔸ห้องสนทนาภาษาไทย": 11,
-    "🔸traphase": 19,
     "🔸lore-chat": 11,
-    "🔸team-building": 232,
-    "🔸general-chat": 348,
-    "🔸邀请码互助┊swap-invitation-codes": 17,
-    "🔸game-question": 862,
-    "🔸机器人命令┊bot-commands": 26,
     "Get Auto enable for dtide": 6,
     "✅「Answered」Aurita simple yet effective buff": 1,
     "Bands Art thread (I should’ve made one first before doing all my stuff)": 2,
-    "🔸课间休息闲聊": 10,
     "🔸ruang-obrolan-indonesia": 20,
-    "✅「已回答」台服dc的詐騙帳號": 1,
-    "\"24\" lives matter": 1,
-    "🔸erica-playground": 4,
     "✅「Answered」Possibilities of Doresain kit rework": 1,
     "continual arachneposting": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
@@ -42,8 +48,11 @@
     "1 Week Account Pulling Advice?": 2
   },
   "hourly_activity": {
+    "11": 772,
+    "12": 460,
+    "13": 544,
+    "14": 68,
     "10": 534,
-    "11": 735,
     "8": 736,
     "9": 551,
     "5": 592,
@@ -56,8 +65,8 @@
     "0": 620
   },
   "message_types": {
-    "0": 845,
-    "19": 337
+    "0": 721,
+    "19": 388
   },
   "top_reacted_messages": [
     {
@@ -91,6 +100,14 @@
       "author": "angbak",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492509065887350884",
+      "channel_id": "1300659603993923644",
+      "content": "Tày nên mới iu e❤",
+      "author": "thuanlatao38",
+      "reactions": 5,
+      "channel": "🔸phòng-chat-tiếng-việt"
     },
     {
       "id": "1492482921477705848",
@@ -130,6 +147,14 @@
       "content": "",
       "author": "bugabago",
       "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492522478348668989",
+      "channel_id": "1170692781216378960",
+      "content": "I also quit genshin",
+      "author": "spooky_penguin_",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -201,22 +226,6 @@
       "channel_id": "1170692781216378960",
       "content": "Watching this auto pollux gameplay makes me want to send replay to lens for revi",
       "author": "aurora3981",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492369891301392594",
-      "channel_id": "1131839817982947429",
-      "content": "什麼?剎那佬要生了?",
-      "author": "corposant_1003",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492318449756541070",
-      "channel_id": "1170692781216378960",
-      "content": "https://x.com/i/status/2042189535740830106",
-      "author": "kurotamavii",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
