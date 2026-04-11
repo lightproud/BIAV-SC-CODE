@@ -52,6 +52,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r projects/news/requirements.txt
 
+      - name: Install Playwright browsers
+        run: playwright install chromium || true
+
       - name: Pull latest backfill state
         run: |
           git pull --rebase origin main || true
