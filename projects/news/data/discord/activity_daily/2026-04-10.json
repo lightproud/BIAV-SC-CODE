@@ -1,12 +1,13 @@
 {
   "date": "2026-04-10",
-  "messages": 12540,
+  "messages": 12591,
   "unique_authors": 159,
-  "reactions_total": 1505,
-  "attachments": 657,
+  "reactions_total": 1517,
+  "attachments": 658,
   "channel_activity": {
+    "🔸morimens-game-chat": 7640,
+    "🔸机器人命令┊bot-commands": 44,
     "🔸綜合討論": 983,
-    "🔸morimens-game-chat": 7591,
     "🔸한국어-채팅방": 11,
     "🔸русский-канал": 105,
     "🔸canal-español": 138,
@@ -16,7 +17,6 @@
     "🔸general-chat": 296,
     "🔸邀请码互助┊swap-invitation-codes": 27,
     "🔸game-question": 1145,
-    "🔸机器人命令┊bot-commands": 42,
     "✅「Answered」Aurita simple yet effective buff": 16,
     "English Language Setting Abnormality Issue Notice": 1,
     "守密人頭像": 2,
@@ -65,9 +65,9 @@
     "1492017307789164564": 1
   },
   "hourly_activity": {
+    "23": 386,
     "22": 195,
     "21": 691,
-    "23": 335,
     "19": 813,
     "20": 803,
     "18": 583,
@@ -91,8 +91,8 @@
     "5": 326
   },
   "message_types": {
-    "0": 356,
-    "19": 210
+    "19": 26,
+    "0": 25
   },
   "top_reacted_messages": [
     {
