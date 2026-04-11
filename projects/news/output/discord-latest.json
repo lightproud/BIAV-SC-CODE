@@ -1,17 +1,17 @@
 {
-  "collected_at": "2026-04-10T23:57:20.292700+00:00",
+  "collected_at": "2026-04-11T05:22:50.271080+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-04-10T23:54:28.427493+00:00",
+      "time": "2026-04-11T05:20:00.228610+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-10)",
-      "summary": "今日 11,974 条消息，159 位活跃用户，1,427 次反应。热门频道：🔸morimens-game-chat(7137)、🔸game-question(1127)、🔸綜合討論(978)、🔸canal-português(628)、🔸phòng-chat-tiếng-việt(471)",
+      "summary": "今日 12,540 条消息，159 位活跃用户，1,505 次反应。热门频道：🔸morimens-game-chat(7591)、🔸game-question(1145)、🔸綜合討論(983)、🔸canal-português(656)、🔸phòng-chat-tiếng-việt(471)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 11974
+      "engagement": 12540
     },
     {
       "source": "discord",
@@ -32,6 +32,23 @@
           "https://cdn.discordapp.com/attachments/1131839817982947429/1492059579943747605/export202601041247308920.png?ex=69d9f444&is=69d8a2c4&hm=d70b0d9b2831ee0977bbe11b078d6281451347e6e2a103b63d5458fc2d9622ef&"
         ],
         "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-10T22:23:52.512000+00:00",
+      "lang": "",
+      "title": "[DC] xiii_c@🔸morimens-game-chat: I like the designs in this game a lot",
+      "summary": "I like the designs in this game a lot",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492289039942942971",
+      "author": "xiii_c",
+      "engagement": 27,
+      "metadata": {
+        "reactions": "agree×3 Daffodil_Calm×3 🔥×3",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
       }
     },
     {
@@ -287,23 +304,6 @@
         "attachment_urls": [
           "https://cdn.discordapp.com/attachments/1170692781216378960/1492107662928908329/Screenshot_2026-04-10-13-22-23-162_com.qookkagames.z1.gp.hk.jpg?ex=69da210c&is=69d8cf8c&hm=3e2b17d9476646773321176e86018770ceaf4967698b73e7333844101b19f977&"
         ],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-10T15:02:34.455000+00:00",
-      "lang": "",
-      "title": "[DC] sirtealot@🔸morimens-game-chat: The answer is simple, the kit is finished only 2 days before the character's rel",
-      "summary": "The answer is simple, the kit is finished only 2 days before the character's release\n  └ arandomflamev2: optional\n  └ deathdealer0000: That can be true",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492177982922428416",
-      "author": "sirtealot",
-      "engagement": 16,
-      "metadata": {
-        "reactions": "😂×2 cry3×1 agree×1",
-        "reply_count": 2,
-        "attachment_count": 0,
-        "attachment_urls": [],
         "channel": "🔸morimens-game-chat"
       }
     }
