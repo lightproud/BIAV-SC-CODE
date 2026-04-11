@@ -82,6 +82,9 @@ COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ
 ]
 ALL_KEYWORDS = SEARCH_KEYWORDS + [k.strip() for k in COLLAB_KEYWORDS if k.strip()]
 HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 48))
+# 分页采集的安全上限（单个 fetcher 最多拿多少条），防止窗口边界模糊或 API 返回错乱
+# 时采到无穷多。默认 500 够 48h 窗口用；环境变量 MAX_ITEMS_PER_FETCHER 可覆盖。
+MAX_ITEMS_PER_FETCHER = int(os.environ.get('MAX_ITEMS_PER_FETCHER', 500))
 
 # Bilibili creator MIDs known to produce Morimens content
 # Format: mid (int) -> display name (str). Add more as confirmed.
@@ -359,16 +362,36 @@ def fetch_reddit(subreddits=None):
 
     for sub in subreddits:
         # old.reddit.com 对非登录流量的封禁比 www 更宽松
-        url = f'https://old.reddit.com/r/{sub}/hot.json?limit=25'
-        try:
-            resp = requests.get(url, headers=headers, timeout=15)
-            resp.raise_for_status()
-            posts = resp.json().get('data', {}).get('children', [])
+        # 分页策略：?limit=100&after=X 一页一页翻，直到看到比 cutoff 更早的帖子就停。
+        sub_before_count = len(items)
+        after: str | None = None
+        page_num = 0
+        fatal_error: Exception | None = None
+        stopped_by_cutoff = False
+
+        while len(items) - sub_before_count < MAX_ITEMS_PER_FETCHER:
+            page_num += 1
+            url = f'https://old.reddit.com/r/{sub}/new.json?limit=100'
+            if after:
+                url += f'&after={after}'
+            try:
+                resp = requests.get(url, headers=headers, timeout=15)
+                resp.raise_for_status()
+            except Exception as e:
+                fatal_error = e
+                break
+
+            data = resp.json().get('data', {})
+            posts = data.get('children', []) or []
+            if not posts:
+                break
+
             for post in posts:
                 d = post['data']
                 created = datetime.fromtimestamp(d['created_utc'], tz=timezone.utc)
                 if created < cutoff:
-                    continue
+                    stopped_by_cutoff = True
+                    break
 
                 permalink = d.get('permalink', '')
                 # Fetch comments for posts with discussion
@@ -407,11 +430,25 @@ def fetch_reddit(subreddits=None):
                     item['media_url'] = media_url
                     item['content_type'] = 'image'
                 items.append(item)
-            logger.info(f'Reddit r/{sub}: fetched {len(items)} posts ({sum(1 for i in items if i.get("media_url"))} with media)')
-        except Exception as e:
-            logger.warning(f'Reddit r/{sub} JSON API failed: {e}, trying RSS fallback')
+
+            if stopped_by_cutoff:
+                break
+            after = data.get('after')
+            if not after:
+                break
+            time.sleep(0.5)  # Rate limit between pages
+
+        sub_added = len(items) - sub_before_count
+        if fatal_error is not None and sub_added == 0:
+            logger.warning(f'Reddit r/{sub} JSON API failed: {fatal_error}, trying RSS fallback')
             rss_items = _fetch_reddit_rss(sub, headers, cutoff)
             items.extend(rss_items)
+        else:
+            media_count = sum(1 for i in items[sub_before_count:] if i.get('media_url'))
+            logger.info(
+                f'Reddit r/{sub}: fetched {sub_added} posts across {page_num} page(s) '
+                f'({media_count} with media)'
+            )
 
     return items
 
@@ -502,33 +539,57 @@ def _fetch_bilibili_space():
     for idx, (mid, creator_name) in enumerate(BILIBILI_MORIMENS_CREATORS.items()):
         if idx > 0:
             time.sleep(0.6)
-        url = 'https://api.bilibili.com/x/space/arc/search'
-        params = {
-            'mid': mid,
-            'pn': 1,
-            'ps': 20,
-            'order': 'pubdate',
-        }
-        try:
-            resp = requests.get(url, params=params, headers=headers, timeout=15)
-            # 412 由 B 站 2024 年起的 wbi 签名风控触发，重试同样头部无效。
-            # 直接跳过，依靠下游 search API fallback 获取内容。
-            if resp.status_code == 412:
-                logger.debug(f'Bilibili space {creator_name}({mid}): 412 (wbi signature required), skipping')
-                continue
-            resp.raise_for_status()
+        # 分页抓取：ps=50 一页，按 pubdate 倒序，遇到早于 cutoff 或空页即停
+        creator_before_count = len(items)
+        page = 0
+        stopped_by_cutoff = False
+        fatal_error = None
+
+        while len(items) - creator_before_count < MAX_ITEMS_PER_FETCHER:
+            page += 1
+            url = 'https://api.bilibili.com/x/space/arc/search'
+            params = {
+                'mid': mid,
+                'pn': page,
+                'ps': 50,
+                'order': 'pubdate',
+            }
+            try:
+                resp = requests.get(url, params=params, headers=headers, timeout=15)
+                if resp.status_code == 412:
+                    logger.debug(f'Bilibili space {creator_name}({mid}): 412 (wbi signature required), skipping')
+                    fatal_error = 'wbi-412'
+                    break
+                resp.raise_for_status()
+            except Exception as e:
+                fatal_error = e
+                logger.debug(f'Bilibili space {creator_name}({mid}) page {page} failed: {e}')
+                break
+
             vlist = resp.json().get('data', {}).get('list', {}).get('vlist', []) or []
-            count = 0
+            if not vlist:
+                break
+
             for v in vlist:
                 pubdate = v.get('created', 0)
                 created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
-                if not created or created < cutoff:
+                if not created:
                     continue
+                if created < cutoff:
+                    stopped_by_cutoff = True
+                    break
                 items.append(_bilibili_item(v, created, v.get('author', creator_name), headers))
-                count += 1
-            logger.info(f'Bilibili space {creator_name}({mid}): {count} videos in {HOURS_LOOKBACK}h')
-        except Exception as e:
-            logger.debug(f'Bilibili space {creator_name}({mid}) failed: {e}')
+
+            if stopped_by_cutoff or len(vlist) < 50:
+                break
+            time.sleep(0.6)
+
+        added = len(items) - creator_before_count
+        if fatal_error is None or added > 0:
+            logger.info(
+                f'Bilibili space {creator_name}({mid}): {added} videos in {HOURS_LOOKBACK}h '
+                f'across {page} page(s)'
+            )
 
     return items
 
@@ -548,32 +609,54 @@ def _fetch_bilibili_search():
     for idx, keyword in enumerate(search_keywords):
         if idx > 0:
             time.sleep(0.6)
-        url = 'https://api.bilibili.com/x/web-interface/search/type'
-        params = {
-            'search_type': 'video',
-            'keyword': keyword,
-            'order': 'pubdate',
-            'duration': 0,
-            'page': 1,
-        }
-        try:
-            resp = requests.get(url, params=params, headers=headers, timeout=15)
-            if resp.status_code == 412:
-                # 搜索 API 偶发 412，重试一次但不刷屏
-                logger.debug(f'Bilibili search "{keyword}": 412, retrying after 2s')
-                time.sleep(2)
+        # 分页抓取：按 pubdate 排序，翻到越过 cutoff 或空页为止
+        kw_before_count = len(items)
+        page = 0
+        pages_fetched = 0
+        stopped_by_cutoff = False
+
+        while len(items) - kw_before_count < MAX_ITEMS_PER_FETCHER:
+            page += 1
+            url = 'https://api.bilibili.com/x/web-interface/search/type'
+            params = {
+                'search_type': 'video',
+                'keyword': keyword,
+                'order': 'pubdate',
+                'duration': 0,
+                'page': page,
+            }
+            try:
                 resp = requests.get(url, params=params, headers=headers, timeout=15)
-            resp.raise_for_status()
+                if resp.status_code == 412:
+                    logger.debug(f'Bilibili search "{keyword}" page {page}: 412, retrying after 2s')
+                    time.sleep(2)
+                    resp = requests.get(url, params=params, headers=headers, timeout=15)
+                resp.raise_for_status()
+            except Exception as e:
+                logger.warning(f'Bilibili search "{keyword}" page {page} failed: {e}')
+                break
+
             results = resp.json().get('data', {}).get('result', []) or []
-            for v in results[:20]:
+            if not results:
+                break
+            pages_fetched += 1
+
+            for v in results:
                 pubdate = v.get('pubdate', 0)
                 created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
-                if not created or created < cutoff:
+                if not created:
                     continue
+                if created < cutoff:
+                    stopped_by_cutoff = True
+                    break
                 items.append(_bilibili_item(v, created, v.get('author', ''), headers))
-            logger.info(f'Bilibili search "{keyword}": fetched {len(results)} videos')
-        except Exception as e:
-            logger.warning(f'Bilibili search "{keyword}" failed: {e}')
+
+            if stopped_by_cutoff:
+                break
+            time.sleep(0.6)
+
+        added = len(items) - kw_before_count
+        logger.info(f'Bilibili search "{keyword}": fetched {added} videos across {pages_fetched} page(s)')
 
     return items
 
@@ -891,68 +974,92 @@ def fetch_taptap():
 
 
 def fetch_steam_reviews():
-    """Fetch recent Steam reviews for Morimens (App ID: 3052450)."""
+    """Fetch recent Steam reviews for Morimens (App ID: 3052450).
+
+    使用 cursor=* 分页一直翻到时间窗口外为止。Steam 按 recent 排序，
+    一旦看到早于 cutoff 的 review 就可以停。
+    """
     import subprocess as _sp
+    from urllib.parse import quote
 
     app_id = 3052450
-    url = f'https://store.steampowered.com/appreviews/{app_id}?json=1&filter=recent&num_per_page=30&language=all&purchase_type=all'
-
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
     items = []
+    cursor = '*'
+    page = 0
+    stopped_by_cutoff = False
 
     try:
-        result = _sp.run(
-            ['curl', '-s', '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)', url],
-            capture_output=True, text=True, timeout=30,
-        )
-        if result.returncode != 0:
-            logger.warning(f'Steam curl failed: {result.stderr[:200]}')
-            return items
-        data = json.loads(result.stdout)
+        while len(items) < MAX_ITEMS_PER_FETCHER:
+            page += 1
+            url = (
+                f'https://store.steampowered.com/appreviews/{app_id}'
+                f'?json=1&filter=recent&num_per_page=100&language=all&purchase_type=all'
+                f'&cursor={quote(cursor, safe="")}'
+            )
+            result = _sp.run(
+                ['curl', '-s', '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)', url],
+                capture_output=True, text=True, timeout=30,
+            )
+            if result.returncode != 0:
+                logger.warning(f'Steam curl failed on page {page}: {result.stderr[:200]}')
+                break
+            data = json.loads(result.stdout)
+            reviews = data.get('reviews', []) or []
+            if not reviews:
+                break
 
-        reviews = data.get('reviews', [])
-        for review in reviews:
-            ts = review.get('timestamp_created', 0)
-            created = datetime.fromtimestamp(ts, tz=timezone.utc)
-            if created < cutoff:
-                continue
+            for review in reviews:
+                ts = review.get('timestamp_created', 0)
+                created = datetime.fromtimestamp(ts, tz=timezone.utc)
+                if created < cutoff:
+                    stopped_by_cutoff = True
+                    break
 
-            language = review.get('language', 'unknown')
+                language = review.get('language', 'unknown')
+                voted_up = review.get('voted_up', False)
+                sentiment = '正面' if voted_up else '负面'
+                review_text = review.get('review', '')
+                summary_text = review_text[:50].strip()
+                title = f'[{sentiment}] {summary_text}...' if len(review_text) > 50 else f'[{sentiment}] {summary_text}'
 
-            voted_up = review.get('voted_up', False)
-            sentiment = '正面' if voted_up else '负面'
-            review_text = review.get('review', '')
-            summary_text = review_text[:50].strip()
-            title = f'[{sentiment}] {summary_text}...' if len(review_text) > 50 else f'[{sentiment}] {summary_text}'
+                author_info = review.get('author', {})
+                steamid = author_info.get('steamid', '')
+                review_url = f'https://steamcommunity.com/profiles/{steamid}/recommended/{app_id}'
+                votes_up = review.get('votes_up', 0)
 
-            author_info = review.get('author', {})
-            steamid = author_info.get('steamid', '')
-            review_url = f'https://steamcommunity.com/profiles/{steamid}/recommended/{app_id}'
-            votes_up = review.get('votes_up', 0)
+                items.append({
+                    'title': title,
+                    'summary': review_text,
+                    'source': 'steam_review',
+                    'time': created.isoformat(),
+                    'url': review_url,
+                    'engagement': votes_up,
+                    'is_hot': votes_up > 10,
+                    'author': steamid,
+                    'tags': [language],
+                    'language': language,
+                    'metadata': {
+                        'voted_up': voted_up,
+                        'playtime_forever': author_info.get('playtime_forever', 0),
+                        'votes_up': votes_up,
+                        'timestamp_created': ts,
+                    },
+                })
 
-            items.append({
-                'title': title,
-                'summary': review_text,
-                'source': 'steam_review',
-                'time': created.isoformat(),
-                'url': review_url,
-                'engagement': votes_up,
-                'is_hot': votes_up > 10,
-                'author': steamid,
-                'tags': [language],
-                'language': language,
-                'metadata': {
-                    'voted_up': voted_up,
-                    'playtime_forever': author_info.get('playtime_forever', 0),
-                    'votes_up': votes_up,
-                    'timestamp_created': ts,
-                },
-            })
+            if stopped_by_cutoff:
+                break
+            next_cursor = data.get('cursor')
+            # cursor 不变或缺失 → 已到末尾
+            if not next_cursor or next_cursor == cursor:
+                break
+            cursor = next_cursor
+            time.sleep(0.5)
 
         if len(items) == 0:
-            logger.warning('Steam Reviews: 0 reviews found in last 24h (data source not blocked)')
+            logger.warning(f'Steam Reviews: 0 reviews found in last {HOURS_LOOKBACK}h (data source not blocked)')
         else:
-            logger.info(f'Steam Reviews: fetched {len(items)} reviews in last {HOURS_LOOKBACK}h')
+            logger.info(f'Steam Reviews: fetched {len(items)} reviews in last {HOURS_LOOKBACK}h across {page} page(s)')
     except Exception as e:
         logger.warning(f'Steam Reviews failed: {e}')
 
@@ -966,7 +1073,8 @@ def fetch_steam_news():
     使用更宽的 OFFICIAL_HOURS_LOOKBACK（默认 30 天）以保证日报至少能看到近期官方动态。
     """
     app_id = 3052450
-    url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=20&maxlength=500'
+    # Steam News 单次 API 调用即可拿足 30 天窗口；count=100 保证不截断。
+    url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=100&maxlength=500'
     official_hours = int(os.environ.get('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24)))
     cutoff = datetime.now(timezone.utc) - timedelta(hours=official_hours)
     items = []
