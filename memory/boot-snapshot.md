@@ -1,6 +1,6 @@
 # 银芯启动快照 / BIAV-SC Boot Snapshot
 
-> Auto-generated: 2026-04-06 17:52 UTC
+> Auto-generated: 2026-04-11 16:59 UTC
 > 新会话读完此文件即可就绪，无需逐个加载 memory 文件。
 > 完整定义见 `BIAV-SC.md`，本文件是压缩启动包。
 
@@ -32,18 +32,17 @@ OK: wiki data
 
 ## 最新社区情报
 
-# 忘却前夜 社区日报 2026-04-06
-> 采集时间：2026-04-06 05:07 UTC+8
-1. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+# 忘却前夜 社区日报 2026-04-11
+> 采集时间：2026-04-11 13:22 UTC+8
+1. [Bilibili] ⁣ — engagement: 384
 | 平台 | 数据条数 |
 |------|----------|
-| Bilibili | 6 |
-| Discord | 6 |
-| Steam | 9 |
+| Bilibili | 21 |
+| Discord | 14 |
+| Steam | 8 |
 | Steam 论坛 | 0（沉默）|
-1. [DC热门] climbkaly@🔸morimens-game-chat: E1 sexy people. 1 more — engagement: 8
-1. [正面] 上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好 
-1. [忘却前夜]最艺术的一集 — engagement: 534
+1. [DC] water_heart@🔸綜合討論: (附件/嵌入) — engagement: 36
+1. [正面] Havent played much but its rlly fun — engagement: 1
 1. [Gamerch] 最強キャラ/Tier — engagement: 0
 1. [StopGame] Morimens — 3.9/10 (0 оценок) — engagement: 0
 1. [微信] 制作人长文复盘:数次濒临解散,二游《忘却前夜》如何艰难续命的? — engagement: 0
