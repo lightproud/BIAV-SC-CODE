@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-12
 
-> 采集时间：2026-04-12 04:04 UTC+8
+> 采集时间：2026-04-12 05:10 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【绘画过程】买一盒肉回家吧「沙耶の唄」 — engagement: 230
+1. [Bilibili] 【绘画过程】买一盒肉回家吧「沙耶の唄」 — engagement: 240
 2. [Bilibili] 沙耶之歌第四期 — engagement: 21
 3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
@@ -40,7 +40,7 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 15 |
+| Reddit | 14 |
 | Ruliweb | 0（沉默）|
 | Steam | 6 |
 | Steam 论坛 | 0（沉默）|
@@ -63,7 +63,7 @@
 
 ## Discord
 
-今日 11,180 条消息，133 位活跃用户，1,205 次反应。热门频道：🔸morimens-game-chat(7744)、🔸game-question(1112)、🔸綜合討論(872)、🔸general-chat(372)、🔸team-building(322)
+今日 12,206 条消息，133 位活跃用户，1,249 次反应。热门频道：🔸morimens-game-chat(8562)、🔸game-question(1132)、🔸綜合討論(884)、🔸general-chat(387)、🔸team-building(328)
 
 ### 热门话题
 
@@ -88,11 +88,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】避坑指引 — engagement: 2611
-2. 【忘却前夜】避坑指引 — engagement: 2546
-3. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 817
-4. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 789
-5. 2026了你甚至还能看到沙耶 — engagement: 668
+1. 【忘却前夜】避坑指引 — engagement: 2623
+2. 【忘却前夜】避坑指引 — engagement: 2558
+3. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 834
+4. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 806
+5. 2026了你甚至还能看到沙耶 — engagement: 675
 
 ## Gamerch Wiki
 
@@ -127,26 +127,19 @@
 
 ## 微博
 
-1. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
-
-忘却前夜 — engagement: 0
-2. 忘却前夜#忘却前夜#
+1. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
+2. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
+
+忘却前夜 — engagement: 0
 3. 🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌
 
 ✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨
 
 🧠 — engagement: 0
-4. 忘却前夜
-🌹当我们再次相见，我会带上花束🌹
-
-今日🧠为大家带来亿些超清大图～
-请多多支持我们奥尔拉☺️✨✨✨
-#脑缸视觉 — engagement: 0
-5. 忘却前夜 喔？我上来了吗
-这里果然有更标致的种子——就是在说你，哎呀，真是可爱♥
-来吗~准备好，加入我，融入我，我已经… — engagement: 0
+4. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+5. 【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所 — engagement: 0
 
 ## 微信公众号
 
@@ -158,10 +151,10 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 283475
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 41003
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 283513
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 41012
 3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38311
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18797
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18801
 5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 17260
 
 ## 沉默平台
