@@ -35,21 +35,43 @@ logger = logging.getLogger(__name__)
 
 # Playwright fallback collectors (imported lazily to avoid startup cost)
 _playwright_collectors = None
+_playwright_import_attempted = False
+_playwright_runtime_available = None  # None=unknown, True/False=cached probe result
 
 def _get_playwright_collectors():
-    """Lazy import of playwright collectors to avoid startup cost."""
-    global _playwright_collectors
-    if _playwright_collectors is None:
+    """Lazy import of playwright collectors to avoid startup cost.
+
+    Also probes whether the actual `playwright` runtime package is installed —
+    if not, returns None so callers skip the fallback quietly instead of
+    spamming warnings on every source.
+    """
+    global _playwright_collectors, _playwright_import_attempted, _playwright_runtime_available
+    if _playwright_import_attempted:
+        return _playwright_collectors
+    _playwright_import_attempted = True
+
+    # Probe playwright runtime first — collectors module still imports even
+    # without it, but every call would then fail with the same ImportError.
+    try:
+        import importlib
+        importlib.import_module('playwright.sync_api')
+        _playwright_runtime_available = True
+    except ImportError:
+        _playwright_runtime_available = False
+        logger.info('playwright runtime not installed, Playwright fallbacks disabled (set up playwright to enable NGA/Weibo/TapTap fallback)')
+        _playwright_collectors = None
+        return None
+
+    try:
+        from scripts import playwright_collectors as pc
+        _playwright_collectors = pc
+    except ImportError:
         try:
-            from scripts import playwright_collectors as pc
+            import playwright_collectors as pc
             _playwright_collectors = pc
         except ImportError:
-            try:
-                import playwright_collectors as pc
-                _playwright_collectors = pc
-            except ImportError:
-                logger.warning('playwright_collectors module not found, Playwright fallback disabled')
-                _playwright_collectors = None
+            logger.warning('playwright_collectors module not found, Playwright fallback disabled')
+            _playwright_collectors = None
     return _playwright_collectors
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
@@ -260,7 +282,8 @@ def _fetch_reddit_rss(sub, headers, cutoff):
     """Fetch posts from Reddit RSS feed (more reliable than JSON API)."""
     import xml.etree.ElementTree as ET
     items = []
-    url = f'https://www.reddit.com/r/{sub}/.rss'
+    # old.reddit.com RSS 比 www.reddit.com 更稳定
+    url = f'https://old.reddit.com/r/{sub}/.rss'
     try:
         resp = requests.get(url, headers=headers, timeout=15)
         resp.raise_for_status()
@@ -320,11 +343,23 @@ def fetch_reddit(subreddits=None):
     Tries JSON API first, falls back to RSS feed if blocked (403)."""
     subreddits = subreddits or ['Morimens', 'MorimensGame']
     items = []
-    headers = {'User-Agent': 'MorimensAggregator/1.0'}
+    # Reddit 已屏蔽通用 bot User-Agent，必须使用浏览器 UA。
+    # 可通过环境变量 REDDIT_USER_AGENT 覆盖（建议填写「platform:app:version (by /u/username)」格式）。
+    default_ua = (
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+        'AppleWebKit/537.36 (KHTML, like Gecko) '
+        'Chrome/124.0.0.0 Safari/537.36'
+    )
+    headers = {
+        'User-Agent': os.environ.get('REDDIT_USER_AGENT', default_ua),
+        'Accept': 'application/json, text/html;q=0.9, */*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+    }
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
     for sub in subreddits:
-        url = f'https://www.reddit.com/r/{sub}/hot.json?limit=25'
+        # old.reddit.com 对非登录流量的封禁比 www 更宽松
+        url = f'https://old.reddit.com/r/{sub}/hot.json?limit=25'
         try:
             resp = requests.get(url, headers=headers, timeout=15)
             resp.raise_for_status()
@@ -476,10 +511,11 @@ def _fetch_bilibili_space():
         }
         try:
             resp = requests.get(url, params=params, headers=headers, timeout=15)
+            # 412 由 B 站 2024 年起的 wbi 签名风控触发，重试同样头部无效。
+            # 直接跳过，依靠下游 search API fallback 获取内容。
             if resp.status_code == 412:
-                logger.warning(f'Bilibili space {creator_name}({mid}): 412 rate-limited, retrying after 2s')
-                time.sleep(2)
-                resp = requests.get(url, params=params, headers=headers, timeout=15)
+                logger.debug(f'Bilibili space {creator_name}({mid}): 412 (wbi signature required), skipping')
+                continue
             resp.raise_for_status()
             vlist = resp.json().get('data', {}).get('list', {}).get('vlist', []) or []
             count = 0
@@ -492,7 +528,7 @@ def _fetch_bilibili_space():
                 count += 1
             logger.info(f'Bilibili space {creator_name}({mid}): {count} videos in {HOURS_LOOKBACK}h')
         except Exception as e:
-            logger.warning(f'Bilibili space {creator_name}({mid}) failed: {e}')
+            logger.debug(f'Bilibili space {creator_name}({mid}) failed: {e}')
 
     return items
 
@@ -523,7 +559,8 @@ def _fetch_bilibili_search():
         try:
             resp = requests.get(url, params=params, headers=headers, timeout=15)
             if resp.status_code == 412:
-                logger.warning(f'Bilibili search "{keyword}": 412 rate-limited, retrying after 2s')
+                # 搜索 API 偶发 412，重试一次但不刷屏
+                logger.debug(f'Bilibili search "{keyword}": 412, retrying after 2s')
                 time.sleep(2)
                 resp = requests.get(url, params=params, headers=headers, timeout=15)
             resp.raise_for_status()
@@ -605,9 +642,13 @@ def fetch_nga():
     Fetch NGA forum posts for Morimens.
     Uses mobile API (ngabbs.com) which is more reliable than web API.
     Falls back to web API if mobile fails.
+
+    Note: NGA 对未登录请求返回 403。设置 NGA_COOKIE 环境变量
+    （形如 "ngaPassportUid=xxx; ngaPassportCid=xxx"）可获得已登录会话权限。
     """
     items = []
     nga_fid = os.environ.get('NGA_FORUM_ID') or '-447601'
+    nga_cookie = os.environ.get('NGA_COOKIE', '').strip()
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
     # Mobile API (more reliable, no cookie needed)
@@ -616,18 +657,30 @@ def fetch_nga():
     web_url = f'https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1'
 
     headers = {
-        'User-Agent': 'NGA/9.9.9 (Android 14; Pixel 8)',
+        'User-Agent': (
+            'Mozilla/5.0 (Linux; Android 14; Pixel 8) '
+            'AppleWebKit/537.36 (KHTML, like Gecko) '
+            'Chrome/124.0.0.0 Mobile Safari/537.36'
+        ),
         'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
         'Referer': 'https://bbs.nga.cn/thread.php?fid=' + nga_fid,
     }
+    if nga_cookie:
+        headers['Cookie'] = nga_cookie
 
     # Try cloudscraper first if available (handles Cloudflare challenges)
     try:
         import cloudscraper
         session = cloudscraper.create_scraper()
-        logger.info('NGA: using cloudscraper session')
+        logger.debug('NGA: using cloudscraper session')
     except ImportError:
         session = requests.Session()
+
+    if not nga_cookie:
+        # 无 Cookie 环境下静默跳过主 API，避免连续 403 刷屏，直接尝试 Playwright fallback。
+        logger.info('NGA: NGA_COOKIE not set, skipping JSON API (will rely on Playwright fallback if available)')
+        return items
 
     data = None
     for url in [mobile_url, web_url]:
@@ -738,6 +791,9 @@ def fetch_taptap():
             data_list = resp.json().get('data', {}).get('list', [])
             if data_list:
                 break
+        except requests.exceptions.ProxyError as e:
+            # 沙箱/企业代理对 taptap 域常 403，属于环境问题非代码 bug
+            logger.debug(f'TapTap {url.split("/")[2]} proxy blocked: {e}')
         except Exception as e:
             logger.warning(f'TapTap {url.split("/")[2]} failed: {e}')
 
@@ -771,6 +827,8 @@ def fetch_taptap():
                 if items:
                     logger.info(f'TapTap reviews fallback ({review_domain}): {len(items)} items')
                     break
+            except requests.exceptions.ProxyError as e:
+                logger.debug(f'TapTap review fallback ({review_domain}) proxy blocked: {e}')
             except Exception as e:
                 logger.warning(f'TapTap review fallback ({review_domain}) failed: {e}')
 
@@ -902,10 +960,15 @@ def fetch_steam_reviews():
 
 
 def fetch_steam_news():
-    """Fetch official Steam news/announcements for Morimens (App ID: 3052450)."""
+    """Fetch official Steam news/announcements for Morimens (App ID: 3052450).
+
+    官方公告本身频率较低，通用 HOURS_LOOKBACK（48h）会经常过滤掉全部内容。
+    使用更宽的 OFFICIAL_HOURS_LOOKBACK（默认 30 天）以保证日报至少能看到近期官方动态。
+    """
     app_id = 3052450
     url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=20&maxlength=500'
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    official_hours = int(os.environ.get('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24)))
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=official_hours)
     items = []
 
     try:
@@ -1353,62 +1416,6 @@ def fetch_youtube():
     return items
 
 
-def fetch_fandom_wiki():
-    """Fetch recent changes from Morimens Fandom wiki."""
-    url = 'https://morimens.fandom.com/api.php'
-    params = {
-        'action': 'query',
-        'list': 'recentchanges',
-        'rcnamespace': '0',  # Main namespace only
-        'rclimit': '20',
-        'rcprop': 'title|timestamp|user|comment|sizes',
-        'rctype': 'edit|new',
-        'format': 'json',
-    }
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
-    items = []
-
-    try:
-        resp = requests.get(url, params=params, timeout=15,
-                            headers={'User-Agent': 'MorimensNewsBot/1.0'})
-        resp.raise_for_status()
-        changes = resp.json().get('query', {}).get('recentchanges', [])
-
-        for rc in changes:
-            ts_str = rc.get('timestamp', '')
-            try:
-                created = datetime.fromisoformat(ts_str.replace('Z', '+00:00'))
-            except (ValueError, TypeError):
-                continue
-            if created < cutoff:
-                continue
-
-            page_title = rc.get('title', '')
-            user = rc.get('user', '')
-            comment = rc.get('comment', '')
-            size_diff = rc.get('newlen', 0) - rc.get('oldlen', 0)
-            rc_type = rc.get('type', 'edit')
-            action = '新建' if rc_type == 'new' else '编辑'
-
-            items.append({
-                'title': f'[Fandom Wiki {action}] {page_title}',
-                'summary': f'{user}: {comment}' if comment else f'{user} {action}了页面',
-                'source': 'official',
-                'time': created.isoformat(),
-                'url': f'https://morimens.fandom.com/wiki/{page_title.replace(" ", "_")}',
-                'engagement': abs(size_diff),
-                'is_hot': abs(size_diff) > 1000 or rc_type == 'new',
-                'author': user,
-                'tags': ['wiki', 'fandom'],
-            })
-
-        logger.info(f'Fandom Wiki: fetched {len(items)} recent changes')
-    except Exception as e:
-        logger.warning(f'Fandom Wiki failed: {e}')
-
-    return items
-
-
 def _load_discord_channel_index():
     """Load channel_index.json and build channel_id→name + dir→channel_id maps."""
     index_path = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'channel_index.json'
@@ -1702,7 +1709,6 @@ def run():
         ('SteamNews', fetch_steam_news),
         ('SteamDiscussions', fetch_steam_discussions),
         ('YouTube', fetch_youtube),
-        ('FandomWiki', fetch_fandom_wiki),
         ('DiscordLocal', fetch_discord_local),
     ]
 

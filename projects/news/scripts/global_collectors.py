@@ -2056,58 +2056,6 @@ def fetch_weixin():
 
 # ─── 日本語プラットフォーム ────────────────────────────────
 
-def fetch_gamerch():
-    """从 Gamerch Wiki 获取忘却前夜攻略更新。"""
-    items = []
-    try:
-        resp = _get(
-            "https://gamerch.com/morimens/",
-            headers={"User-Agent": "Mozilla/5.0"},
-        )
-        html = resp.text
-        import re as _re
-
-        # Extract recent updates / article links from the wiki
-        # Try to capture surrounding text as summary and any view/PV counts
-        for match in _re.finditer(
-            r'<a[^>]*href="(https://gamerch\.com/morimens/\d+)"[^>]*>\s*([^<]+?)\s*</a>'
-            r'(.*?(?=<a[^>]*href="https://gamerch\.com/morimens/\d+"|</(?:div|ul|section)>))',
-            html, _re.DOTALL
-        ):
-            url, title, trailing = match.groups()
-            title = title.strip()
-            if not title or len(title) < 5:
-                continue
-
-            # Extract summary from trailing text
-            summary = _re.sub(r'<[^>]+>', ' ', trailing).strip()[:200].strip()
-
-            # Try to extract PV/view count from nearby context
-            engagement = 0
-            pv_match = _re.search(r'(\d[\d,]*)\s*(?:PV|view|閲覧|pv)', trailing, _re.IGNORECASE)
-            if pv_match:
-                engagement = int(pv_match.group(1).replace(',', ''))
-
-            items.append(_make_item(
-                title=f"[Gamerch] {title}",
-                summary=summary,
-                source="gamerch",
-                platform_region="jp",
-                time_str=datetime.now(timezone.utc).isoformat(),
-                url=url,
-                engagement=engagement,
-                is_hot=engagement > 1000,
-                author="Gamerch Wiki",
-                lang="ja",
-            ))
-
-        logger.info(f"Gamerch Wiki: {len(items)} articles")
-    except Exception as e:
-        logger.warning(f"Gamerch Wiki failed: {e}")
-
-    return items
-
-
 def fetch_note_com():
     """从 Note.com 搜索忘却前夜/モリメンス 攻略文章（API v3）。"""
     items = []
@@ -2337,7 +2285,7 @@ def fetch_stopgame():
     return items
 
 
-# ─── Global English wiki/guide platforms ───────────────────
+# ─── 收入/数据平台 ─────────────────────────────────────────
 
 def fetch_gacharevenue():
     """从 GACHAREVENUE 获取忘却前夜收入数据。"""
@@ -2370,176 +2318,6 @@ def fetch_gacharevenue():
         logger.info(f"GACHAREVENUE: {len(items)} items")
     except Exception as e:
         logger.warning(f"GACHAREVENUE failed: {e}")
-
-    return items
-
-
-def fetch_miraheze_wiki():
-    """从 Miraheze Wiki 获取忘却前夜最近更改。"""
-    items = []
-    try:
-        resp = _get(
-            "https://morimenseveofoblivion.miraheze.org/w/api.php",
-            params={
-                "action": "query",
-                "list": "recentchanges",
-                "rcnamespace": "0",
-                "rclimit": "20",
-                "rcprop": "title|timestamp|user|comment|sizes",
-                "rctype": "edit|new",
-                "format": "json",
-            },
-            headers={"User-Agent": "MorimensNewsBot/1.0"},
-        )
-        data = resp.json()
-        changes = data.get("query", {}).get("recentchanges", [])
-
-        for change in changes:
-            title = change.get("title", "")
-            user = change.get("user", "")
-            comment = change.get("comment", "")
-            ts = change.get("timestamp", "")
-            diff = abs(change.get("newlen", 0) - change.get("oldlen", 0))
-
-            items.append(_make_item(
-                title=f"[Miraheze Wiki] {title}",
-                summary=comment[:200] if comment else f"Edited by {user} (+{diff} bytes)",
-                source="miraheze_wiki",
-                platform_region="global",
-                time_str=ts,
-                url=f"https://morimenseveofoblivion.miraheze.org/wiki/{title.replace(' ', '_')}",
-                engagement=diff,
-                is_hot=diff > 500,
-                author=user,
-                lang="en",
-            ))
-
-        logger.info(f"Miraheze Wiki: {len(items)} recent changes")
-    except Exception as e:
-        logger.warning(f"Miraheze Wiki failed: {e}")
-
-    return items
-
-
-# ─── 东南亚 & 中文补充 ─────────────────────────────────────
-
-def fetch_gamekee():
-    """从 GameKee Wiki 获取忘却前夜论坛和攻略更新。"""
-    items = []
-
-    # GameKee 论坛社区 API
-    try:
-        resp = _get(
-            "https://morimens.gamekee.com/v1/content/lists",
-            params={"page": 1, "size": 20, "order": "new"},
-            headers={"User-Agent": "Mozilla/5.0", "Referer": "https://www.gamekee.com/morimens/"},
-        )
-        if resp.status_code == 200:
-            try:
-                data = resp.json()
-                data_inner = data.get("data")
-                if not isinstance(data_inner, dict):
-                    data_inner = {}
-                content_list = data_inner.get("list", [])
-                if not isinstance(content_list, list):
-                    content_list = []
-                for item in content_list:
-                    items.append(_make_item(
-                        title=item.get("title", ""),
-                        summary=item.get("summary", ""),
-                        source="gamekee",
-                        platform_region="cn",
-                        time_str=item.get("created_at", datetime.now(timezone.utc).isoformat()),
-                        url=f"https://www.gamekee.com/morimens/{item.get('content_id', '')}",
-                        engagement=item.get("view_num", 0),
-                        is_hot=item.get("view_num", 0) > 1000,
-                        author=item.get("user", {}).get("nickname", ""),
-                        lang="zh",
-                    ))
-            except (ValueError, KeyError):
-                pass
-    except Exception as e:
-        logger.warning(f"GameKee API failed: {e}")
-
-    # Fallback: scrape main wiki page for recent articles
-    if not items:
-        try:
-            resp = _get(
-                "https://www.gamekee.com/morimens/",
-                headers={"User-Agent": "Mozilla/5.0"},
-            )
-            html = resp.text
-            import re as _re
-            for match in _re.finditer(
-                r'href="(/morimens/(\d+)\.html)"[^>]*>\s*([^<]+?)\s*</a>',
-                html
-            ):
-                path, article_id, title = match.groups()
-                title = title.strip()
-                if not title or len(title) < 5:
-                    continue
-                items.append(_make_item(
-                    title=f"[GameKee] {title}",
-                    summary="",
-                    source="gamekee",
-                    platform_region="cn",
-                    time_str=datetime.now(timezone.utc).isoformat(),
-                    url=f"https://www.gamekee.com{path}",
-                    engagement=0,
-                    is_hot=False,
-                    author="GameKee Wiki",
-                    lang="zh",
-                ))
-        except Exception as e:
-            logger.warning(f"GameKee scrape failed: {e}")
-
-    logger.info(f"GameKee: {len(items)} items")
-    return items
-
-
-def fetch_huiji_wiki():
-    """从灰机 Wiki 获取忘却前夜最近更改。"""
-    items = []
-    try:
-        resp = _get(
-            "https://morimens.huijiwiki.com/api.php",
-            params={
-                "action": "query",
-                "list": "recentchanges",
-                "rcnamespace": "0",
-                "rclimit": "20",
-                "rcprop": "title|timestamp|user|comment|sizes",
-                "rctype": "edit|new",
-                "format": "json",
-            },
-            headers={"User-Agent": "MorimensNewsBot/1.0"},
-        )
-        data = resp.json()
-        changes = data.get("query", {}).get("recentchanges", [])
-
-        for change in changes:
-            title = change.get("title", "")
-            user = change.get("user", "")
-            comment = change.get("comment", "")
-            ts = change.get("timestamp", "")
-            diff = abs(change.get("newlen", 0) - change.get("oldlen", 0))
-
-            items.append(_make_item(
-                title=f"[灰机Wiki] {title}",
-                summary=comment[:200] if comment else f"{user} 编辑 (+{diff} 字节)",
-                source="huiji_wiki",
-                platform_region="cn",
-                time_str=ts,
-                url=f"https://morimens.huijiwiki.com/wiki/{title.replace(' ', '_')}",
-                engagement=diff,
-                is_hot=diff > 500,
-                author=user,
-                lang="zh",
-            ))
-
-        logger.info(f"Huiji Wiki: {len(items)} recent changes")
-    except Exception as e:
-        logger.warning(f"Huiji Wiki failed: {e}")
 
     return items
 
@@ -2689,15 +2467,11 @@ def collect_all():
         # 以下平台此前漏注册
         ("QooApp", fetch_qooapp),
         ("Epic Store", fetch_epic_store),
-        ("Gamerch Wiki", fetch_gamerch),
         ("Note.com", fetch_note_com),
         ("Ruliweb", fetch_ruliweb),
         ("VK Play", fetch_vkplay),
         ("StopGame", fetch_stopgame),
         ("GACHAREVENUE", fetch_gacharevenue),
-        ("Miraheze Wiki", fetch_miraheze_wiki),
-        ("GameKee", fetch_gamekee),
-        ("Huiji Wiki", fetch_huiji_wiki),
         ("搜狗微信", fetch_weixin),
         # RSSHub 代理采集（微博/知乎/小红书/抖音/Pixiv/TikTok）
         ("RSSHub", fetch_rsshub),
