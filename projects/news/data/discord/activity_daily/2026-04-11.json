@@ -1,35 +1,37 @@
 {
   "date": "2026-04-11",
-  "messages": 6435,
+  "messages": 7617,
   "unique_authors": 133,
-  "reactions_total": 614,
-  "attachments": 245,
+  "reactions_total": 756,
+  "attachments": 270,
   "channel_activity": {
-    "🔸綜合討論": 342,
-    "🔸morimens-game-chat": 4439,
-    "🔸剧情交流": 4,
+    "🔸綜合討論": 635,
+    "🔸morimens-game-chat": 5144,
+    "🔸剧情交流": 6,
+    "🔸한국어-채팅방": 6,
+    "🔸русский-канал": 9,
+    "🔸phòng-chat-tiếng-việt": 154,
+    "🔸canal-português": 16,
+    "🔸ห้องสนทนาภาษาไทย": 11,
+    "🔸traphase": 19,
+    "🔸lore-chat": 11,
+    "🔸team-building": 232,
+    "🔸general-chat": 348,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸game-question": 862,
+    "🔸机器人命令┊bot-commands": 26,
+    "Get Auto enable for dtide": 6,
+    "✅「Answered」Aurita simple yet effective buff": 1,
+    "Bands Art thread (I should’ve made one first before doing all my stuff)": 2,
     "🔸课间休息闲聊": 10,
-    "🔸한국어-채팅방": 5,
-    "🔸русский-канал": 6,
-    "🔸phòng-chat-tiếng-việt": 133,
     "🔸ruang-obrolan-indonesia": 20,
-    "🔸ห้องสนทนาภาษาไทย": 1,
-    "🔸traphase": 3,
-    "🔸lore-chat": 2,
-    "🔸team-building": 202,
-    "🔸general-chat": 344,
-    "🔸邀请码互助┊swap-invitation-codes": 15,
-    "🔸game-question": 786,
-    "🔸机器人命令┊bot-commands": 21,
     "✅「已回答」台服dc的詐騙帳號": 1,
     "\"24\" lives matter": 1,
     "🔸erica-playground": 4,
-    "Get Auto enable for dtide": 5,
     "✅「Answered」Possibilities of Doresain kit rework": 1,
     "continual arachneposting": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
     "🔸canal-español": 19,
-    "🔸canal-português": 15,
     "🔸游戏问题": 1,
     "More Mods for this Discord please": 2,
     "Captain Alva": 1,
@@ -40,9 +42,10 @@
     "1 Week Account Pulling Advice?": 2
   },
   "hourly_activity": {
+    "10": 534,
+    "11": 735,
     "8": 736,
     "9": 551,
-    "10": 87,
     "5": 592,
     "6": 479,
     "7": 1057,
@@ -53,8 +56,8 @@
     "0": 620
   },
   "message_types": {
-    "0": 955,
-    "19": 370
+    "0": 845,
+    "19": 337
   },
   "top_reacted_messages": [
     {
@@ -90,6 +93,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492482921477705848",
+      "channel_id": "1170692781216378960",
+      "content": "It's hinting at g tulu kit. G tulu buffs tentacle damage so high that if aurita ",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492339913553739948",
       "channel_id": "1170692781216378960",
       "content": "\"AWAKENER LILY EXPOSED: NOT A GOOD INVESTMENT AFTER ALL??? THE MORIMENS DISCORD ",
@@ -119,6 +130,38 @@
       "content": "",
       "author": "bugabago",
       "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492471791598174319",
+      "channel_id": "1131839817982947429",
+      "content": "塔薇有超限的話我要@某人了",
+      "author": "hon_ey0",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492473880592257046",
+      "channel_id": "1170692781216378960",
+      "content": "anyway i got a bunch of friends into morimens around kath release and i just tol",
+      "author": "arkaether",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492476100822171649",
+      "channel_id": "1170692781216378960",
+      "content": "<@88644018673582080> I'm just gonna do e3 kath gameplay.\n\nE0 for next time",
+      "author": "angbak",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492484912505421976",
+      "channel_id": "1170692781216378960",
+      "content": "Yes im very rude now, especially to Frenchies like you",
+      "author": "spooky_penguin_",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -175,46 +218,6 @@
       "content": "https://x.com/i/status/2042189535740830106",
       "author": "kurotamavii",
       "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492319592083882185",
-      "channel_id": "1170692781216378960",
-      "content": "Kath is very fun",
-      "author": "xiii_c",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492346468529340619",
-      "channel_id": "1170692781216378960",
-      "content": "sorry Craux, just read their message history, I think you're getting played",
-      "author": "dyssayah",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492438878089642045",
-      "channel_id": "1170692781216378960",
-      "content": "I lost keyflare by reading your message 😔",
-      "author": "legendaryredz",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492451291186856138",
-      "channel_id": "1170692781216378960",
-      "content": "I love building 0% crit chance on Vortice and still effectivelly having 100% <:M",
-      "author": "megidola.",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492453938916622427",
-      "channel_id": "1170692781216378960",
-      "content": "is this shit good enough",
-      "author": "l8989c",
-      "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }
   ]
