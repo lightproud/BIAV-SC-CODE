@@ -1,11 +1,11 @@
 # 忘却前夜 社区日报 2026-04-12
 
-> 采集时间：2026-04-12 05:10 UTC+8
+> 采集时间：2026-04-12 07:10 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【绘画过程】买一盒肉回家吧「沙耶の唄」 — engagement: 240
-2. [Bilibili] 沙耶之歌第四期 — engagement: 21
+1. [Bilibili] 【绘画过程】买一盒肉回家吧「沙耶の唄」 — engagement: 249
+2. [Bilibili] 沙耶之歌第四期 — engagement: 25
 3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 5. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
@@ -18,7 +18,7 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 22 |
+| Bilibili | 20 |
 | DCInside | 0（沉默）|
 | Discord | 16 |
 | 抖音 | 0（沉默）|
@@ -40,7 +40,7 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 14 |
+| Reddit | 17 |
 | Ruliweb | 0（沉默）|
 | Steam | 6 |
 | Steam 论坛 | 0（沉默）|
@@ -63,7 +63,7 @@
 
 ## Discord
 
-今日 12,206 条消息，133 位活跃用户，1,249 次反应。热门频道：🔸morimens-game-chat(8562)、🔸game-question(1132)、🔸綜合討論(884)、🔸general-chat(387)、🔸team-building(328)
+今日 12,839 条消息，133 位活跃用户，1,308 次反应。热门频道：🔸morimens-game-chat(9081)、🔸game-question(1178)、🔸綜合討論(887)、🔸general-chat(404)、🔸team-building(329)
 
 ### 热门话题
 
@@ -88,11 +88,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】避坑指引 — engagement: 2623
-2. 【忘却前夜】避坑指引 — engagement: 2558
-3. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 834
-4. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 806
-5. 2026了你甚至还能看到沙耶 — engagement: 675
+1. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 863
+2. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 836
+3. 2026了你甚至还能看到沙耶 — engagement: 679
+4. 坠落 — engagement: 574
+5. 【忘却前夜】3.30-4.13融灾个人记录3-5低配豪赌茉夏 — engagement: 515
 
 ## Gamerch Wiki
 
@@ -104,11 +104,11 @@
 
 ## Reddit
 
-1. Cherry Blossom Kimono — engagement: 0
-2. Kathigu-Ra [FAQ + Video guide] — engagement: 0
-3. Around a week ago I convinced my friend to try Morimens in a — engagement: 0
-4. Why is Ultra considered the most difficult realm? — engagement: 0
-5. Hello everyone, i am new here and what does each of this rea — engagement: 0
+1. Wow. I didn't think I'd unlocked that "Reproduction Frenzy"  — engagement: 0
+2. I drew Doll ! — engagement: 0
+3. Cherry Blossom Kimono — engagement: 0
+4. Kathigu-Ra [FAQ + Video guide] — engagement: 0
+5. Around a week ago I convinced my friend to try Morimens in a — engagement: 0
 
 ## StopGame.ru
 
@@ -151,11 +151,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 283513
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 41012
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38311
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18801
-5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 17260
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 283583
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 41014
+3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38312
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18807
+5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 17286
 
 ## 沉默平台
 
