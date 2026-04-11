@@ -13,8 +13,9 @@ htmlcov/
 .idea/
 .vscode/
 .DS_Store
-.claude/
+.claude/*
 !.claude/commands/
+!.claude/settings.json
 
 # global_collectors runtime output (if run standalone)
 projects/news/data/collected_raw.json
