@@ -8,10 +8,12 @@
 
 本仓库包含两套社区数据采集系统：
 
-| 系统 | 文件 | 数据源数 | 运行方式 | 用途 |
+| 系统 | 入口 | 数据源数 | 运行方式 | 用途 |
 |------|------|----------|----------|------|
-| **生产管线** | `scripts/aggregator.py` | 11+ | GitHub Actions 自动 | 日报、实时监控 |
-| **扩展采集** | `report-system/scripts/collector.py` | 29 | 手动/按需 | 周报、月报、深度分析 |
+| **生产管线** | `scripts/aggregator.py` | 10 核心 + TapTap/NGA/微博/小红书 Playwright fallback | GitHub Actions 自动（每小时） | 日报、实时监控 |
+| **扩展采集** | `scripts/collect_global.py` → `report-system/scripts/collector.py` | 29 | GitHub Actions 自动（紧跟主管线） | 覆盖全球社区、同人、商店 |
+
+两套系统都由 `.github/workflows/update-news.yml` 每小时触发：先跑 `aggregator.py`，再跑 `collect_global.py`，然后 `split_output.py` → `generate_daily.py` → `archive_platforms.py`。本地复现扩展采集需手动 `python projects/news/scripts/collect_global.py`，且多数平台需 API Key 或 Playwright runtime。
 
 ## 生产管线（aggregator.py）
 
@@ -47,8 +49,9 @@ python scripts/collect.py --production
 
 ### GitHub Actions
 
-- **频率**: 每日 2 次（06:00/16:00 UTC）
+- **频率**: 每小时（`cron: '0 * * * *'`）
 - **Workflow**: `.github/workflows/update-news.yml`
+- **执行链**: `aggregator.py` → `collect_global.py` → `split_output.py` → `generate_daily.py` → `download_media.py` → `archive_platforms.py`
 - **输出**: `projects/news/output/news.json` + 各平台独立文件
 
 ## 扩展采集（collector.py）
@@ -78,9 +81,9 @@ python scripts/collect.py --extended
 
 ### 注意事项
 
-- 部分平台需要浏览器环境（Playwright）
-- 部分平台需要认证（API Key）
-- 建议本地运行或定时任务
+- 部分平台需要浏览器环境（Playwright）；GH Actions 已在 workflow 中 `playwright install chromium`
+- 部分平台需要认证（API Key / Cookie），通过 GitHub Secrets 注入
+- 本地复现需手动执行 `python projects/news/scripts/collect_global.py`，且多数 API-Key 平台会返 0
 
 ## 数据质量增强
 
