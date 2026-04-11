@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-11T18:06:29.546423+00:00",
+  "archived_at": "2026-04-11T20:04:29.321237+00:00",
   "source": "bilibili",
-  "item_count": 33,
+  "item_count": 38,
   "items": [
     {
       "source": "bilibili",
@@ -565,6 +565,96 @@
         "play": 10,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-11T19:28:04+00:00",
+      "lang": "",
+      "title": "反转变装～沙耶哦!",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1yMD2BcEUz",
+      "author": "白橘24",
+      "engagement": 3,
+      "media_url": "https://i2.hdslb.com/bfs/archive/9bbf8a2b5d603217fb80d60b6749e77a8d7269a9.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 3,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-11T19:34:36+00:00",
+      "lang": "",
+      "title": "喵喵喵喵喵",
+      "summary": "-\n  └ 白橘24 (0赞): 其实跟本人跟视频里的肉块长得一点关系都没有，只是p图p的比较狠[吃瓜]",
+      "url": "https://www.bilibili.com/video/BV1A3D2BFEok",
+      "author": "白橘24",
+      "engagement": 2,
+      "media_url": "https://i2.hdslb.com/bfs/archive/d0de753a137a5eed95d211d43d2a07fc6e516222.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-11T19:32:23+00:00",
+      "lang": "",
+      "title": "在座的各位都要说我美",
+      "summary": "本人在公园里面拍了十几个小时的照片，喝了酒晕的不行，回来还得剪视频P图，p了整整十几个小时，如果这都不能让我小火一下，或者这都不能让我开心一下，我直接把手机吃了",
+      "url": "https://www.bilibili.com/video/BV11KD2BaEV1",
+      "author": "白橘24",
+      "engagement": 1,
+      "media_url": "https://i2.hdslb.com/bfs/archive/7e4a802b82cd8118aff2c9927c298d28f07bda04.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-11T19:30:59+00:00",
+      "lang": "",
+      "title": "喵喵喵",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV11KD2BaEmU",
+      "author": "白橘24",
+      "engagement": 1,
+      "media_url": "https://i0.hdslb.com/bfs/archive/c8d8a9d9390593e16607f5f8ad069829a261d63f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-11T19:29:24+00:00",
+      "lang": "",
+      "title": "和刚刚那个一样",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV11KD2BaELk",
+      "author": "白橘24",
+      "engagement": 1,
+      "media_url": "https://i2.hdslb.com/bfs/archive/4c46dcbd63620be3272fbfbf4999e69c3d1dc34c.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     }

@@ -1602,6 +1602,55 @@
       "title": "[Morimens] Light coaching / \"Short\" stream",
       "time": "2026-04-11T18:02:57.524719+00:00",
       "downloaded_at": "2026-04-11T18:06:29.482697+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492562093537235135/Banner.jpg?ex=69dbc845&is=69da76c5&hm=3a9355e9ee9dfa4a8bfd5bcaab10f3f2b74b0cb0c707f6d6ceb7782eb7a03ce5&": {
+      "filename": "discord_b33af187aebadad3.jpg",
+      "source": "discord",
+      "title": "[DC] climbkaly@🔸morimens-game-chat: Since I'm one of the CC's in CC program...I decided to update my",
+      "time": "2026-04-11T16:28:53.569000+00:00",
+      "downloaded_at": "2026-04-11T20:04:21.304014+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492574200324559010/Screenshot_2026-04-12-01-14-55-121_com.qookkagames.z1.gp.hk.jpg?ex=69dbd38c&is=69da820c&hm=dcef8f3dcabc17b1a4b8b153a5376233046dcad52d85c06ebdadffb66017d2fc&": {
+      "filename": "discord_190b12a1636883fb.jpg",
+      "source": "discord",
+      "title": "[DC] josh09489@🔸morimens-game-chat: Only tier 3 stages hard to go with tier 5 im just give up with t",
+      "time": "2026-04-11T17:17:00.173000+00:00",
+      "downloaded_at": "2026-04-11T20:04:21.764549+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/9bbf8a2b5d603217fb80d60b6749e77a8d7269a9.jpg": {
+      "filename": "bilibili_0f30ad984c0cc5aa.jpg",
+      "source": "bilibili",
+      "title": "反转变装～沙耶哦!",
+      "time": "2026-04-11T19:28:04+00:00",
+      "downloaded_at": "2026-04-11T20:04:23.730853+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/d0de753a137a5eed95d211d43d2a07fc6e516222.jpg": {
+      "filename": "bilibili_f32841d2e52f133e.jpg",
+      "source": "bilibili",
+      "title": "喵喵喵喵喵",
+      "time": "2026-04-11T19:34:36+00:00",
+      "downloaded_at": "2026-04-11T20:04:24.762928+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/7e4a802b82cd8118aff2c9927c298d28f07bda04.jpg": {
+      "filename": "bilibili_3279dbff8bdf59ec.jpg",
+      "source": "bilibili",
+      "title": "在座的各位都要说我美",
+      "time": "2026-04-11T19:32:23+00:00",
+      "downloaded_at": "2026-04-11T20:04:25.718919+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/c8d8a9d9390593e16607f5f8ad069829a261d63f.jpg": {
+      "filename": "bilibili_020b3503715dd609.jpg",
+      "source": "bilibili",
+      "title": "喵喵喵",
+      "time": "2026-04-11T19:30:59+00:00",
+      "downloaded_at": "2026-04-11T20:04:27.522944+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/4c46dcbd63620be3272fbfbf4999e69c3d1dc34c.jpg": {
+      "filename": "bilibili_40e1caa6096e9cc4.jpg",
+      "source": "bilibili",
+      "title": "和刚刚那个一样",
+      "time": "2026-04-11T19:29:24+00:00",
+      "downloaded_at": "2026-04-11T20:04:28.769649+00:00"
     }
   },
   "failed": {
@@ -2134,6 +2183,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-11T18:06:29.067423+00:00"
+    },
+    "https://external-preview.redd.it/MGZ2OGNpNGw2bXVnMW5wjk7DoguTyCni_Yi_TfLETYSI1R5VQWDLrZ8IqgoU.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=b1c2cf2841eb08e88d3c3abbcf2f2aa759a72e72": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T20:04:29.266003+00:00"
     }
   },
   "archived": []

@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-11T18:06:29.547441+00:00",
+  "archived_at": "2026-04-11T20:04:29.322296+00:00",
   "source": "reddit",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
     {
       "source": "reddit",
@@ -28,6 +28,34 @@
       "url": "https://www.reddit.com/r/Morimens/comments/1sipxb1/i_just_started_today_and_have_no_idea_on_which/",
       "author": "/u/parakayb614",
       "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-11T18:32:14+00:00",
+      "lang": "",
+      "title": "Quick questions before starting",
+      "summary": "Does this game require daily game time if yes how long? I am kinda a noob when it comes to these sort of card games as I’ve never played something similar is it hard to grasp? Is it fairly f2p friendly as in most characters/teams clear most content or is it more of a skill check from the player? Thanks in advance!   &#32; submitted by &#32;  /u/xbiju   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1siqy7b/quick_questions_before_starting/",
+      "author": "/u/xbiju",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-11T19:42:14+00:00",
+      "lang": "",
+      "title": "Doresain Showcase",
+      "summary": "&#32; submitted by &#32;  /u/monchers   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sist47/doresain_showcase/",
+      "author": "/u/monchers",
+      "engagement": 0,
+      "media_url": "https://external-preview.redd.it/MGZ2OGNpNGw2bXVnMW5wjk7DoguTyCni_Yi_TfLETYSI1R5VQWDLrZ8IqgoU.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=b1c2cf2841eb08e88d3c3abbcf2f2aa759a72e72",
+      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
