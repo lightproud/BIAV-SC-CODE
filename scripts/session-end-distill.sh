@@ -1,0 +1,87 @@
+#!/bin/bash
+# session-end-distill.sh — Claude Code SessionEnd hook entry point.
+#
+# Invoked by .claude/settings.json when SessionEnd fires. Reads the hook
+# payload from stdin, extracts transcript_path + session_id, then runs
+# scripts/session_distiller.py to write a structured digest into
+# memory/session-digests/.
+#
+# Safe to run in any session: if cwd isn't under brain-in-a-vat the hook
+# short-circuits silently. CLAUDE_DISTILL_MODE=1 guards against recursion
+# if the distiller (or anything it spawns) ever triggers another Claude
+# Code session.
+#
+# Output/exit code are ignored by Claude Code for SessionEnd hooks, so all
+# logs go to /tmp/session-distill.log for later inspection.
+
+set -eo pipefail
+
+LOG_FILE="/tmp/session-distill.log"
+exec >>"$LOG_FILE" 2>&1
+echo "[$(date -u +%FT%TZ)] hook invoked pid=$$"
+
+# Recursion guard — skip if we're already inside a distill-triggered child
+if [[ "${CLAUDE_DISTILL_MODE:-}" = "1" ]]; then
+    echo "  skip: CLAUDE_DISTILL_MODE=1 (recursion guard)"
+    exit 0
+fi
+
+# Read JSON payload from stdin
+input=$(cat)
+
+transcript_path=$(printf '%s' "$input" | jq -r '.transcript_path // empty')
+session_id=$(printf '%s' "$input"      | jq -r '.session_id      // empty')
+cwd=$(printf '%s' "$input"             | jq -r '.cwd             // empty')
+hook_event=$(printf '%s' "$input"      | jq -r '.hook_event_name // empty')
+
+echo "  event=$hook_event session=$session_id cwd=$cwd"
+
+# Scope filter: only distill brain-in-a-vat sessions
+case "$cwd" in
+    */brain-in-a-vat|*/brain-in-a-vat/*) ;;
+    *)
+        echo "  skip: cwd not under brain-in-a-vat"
+        exit 0
+        ;;
+esac
+
+# Required fields
+if [[ -z "$transcript_path" || -z "$session_id" ]]; then
+    echo "  skip: missing transcript_path or session_id"
+    exit 0
+fi
+
+if [[ ! -f "$transcript_path" ]]; then
+    echo "  skip: transcript file not found: $transcript_path"
+    exit 0
+fi
+
+# Find the project root (distiller and digest dir are relative to it)
+# Prefer cwd when it points at the repo, else walk up
+REPO_ROOT="$cwd"
+while [[ "$REPO_ROOT" != "/" && ! -f "$REPO_ROOT/CLAUDE.md" ]]; do
+    REPO_ROOT=$(dirname "$REPO_ROOT")
+done
+if [[ ! -f "$REPO_ROOT/CLAUDE.md" ]]; then
+    echo "  skip: could not locate repo root from cwd=$cwd"
+    exit 0
+fi
+
+DISTILLER="$REPO_ROOT/scripts/session_distiller.py"
+DIGEST_DIR="$REPO_ROOT/memory/session-digests"
+
+if [[ ! -f "$DISTILLER" ]]; then
+    echo "  skip: distiller not found at $DISTILLER"
+    exit 0
+fi
+
+echo "  running distiller: $DISTILLER"
+CLAUDE_DISTILL_MODE=1 python3 "$DISTILLER" \
+    --transcript "$transcript_path" \
+    --session-id "$session_id" \
+    --digest-dir "$DIGEST_DIR" \
+    --cwd "$REPO_ROOT" \
+    || echo "  distiller exited non-zero: $?"
+
+echo "[$(date -u +%FT%TZ)] hook done"
+exit 0

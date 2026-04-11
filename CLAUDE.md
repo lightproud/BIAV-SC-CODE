@@ -133,11 +133,12 @@ python scripts/dream.py --rebuild
 
 ### 记忆写回（会话结束自动触发）
 
-Stop hook 自动执行：
-1. `scripts/memory_writeback.py` — 检测 git 变更 → 提取知识 → 写入图谱 → 生成摘要 → 增量重索引
-2. `scripts/session_reflexion.py` — 扫描失败信号 → 分析模式 → 写入 `lessons-learned.md`
+**SessionEnd hook**（`.claude/settings.json` 注册）在会话真正结束时执行：
+- `scripts/session-end-distill.sh` → `scripts/session_distiller.py` — 读取 Claude Code transcript JSONL，结构化解析出 turns / 工具调用 / 文件访问 / bash 描述 / 用户 prompt 样本，写入 `memory/session-digests/{YYYYMMDD-HHMMSS}-{session_id[:8]}.json`。v0.1 纯结构化解析，不调 LLM。日志落在 `/tmp/session-distill.log`。
 
-手动触发：`python scripts/memory_writeback.py --verbose`
+手动写回（按需触发，Stop hook 未自动挂载）：
+- `python scripts/memory_writeback.py --verbose` — 检测 git 变更 → 提取知识 → 写入图谱 → 增量重索引
+- `python scripts/session_reflexion.py` — 扫描失败信号 → 写入 `lessons-learned.md`
 
 ### MCP 服务器
 
