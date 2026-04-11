@@ -1,36 +1,41 @@
 {
   "date": "2026-04-11",
-  "messages": 8726,
+  "messages": 10279,
   "unique_authors": 133,
-  "reactions_total": 897,
-  "attachments": 323,
+  "reactions_total": 1087,
+  "attachments": 378,
   "channel_activity": {
-    "🔸綜合討論": 713,
-    "🔸morimens-game-chat": 5847,
+    "🔸綜合討論": 863,
+    "🔸morimens-game-chat": 6998,
+    "🔸欢乐梗图": 2,
+    "🔸한국어-채팅방": 15,
+    "🔸chaîne-française": 9,
+    "🔸русский-канал": 18,
+    "🔸phòng-chat-tiếng-việt": 319,
+    "🔸traphase": 24,
+    "🔸lore-chat": 12,
+    "🔸team-building": 319,
+    "🔸general-chat": 365,
+    "🔸邀请码互助┊swap-invitation-codes": 26,
+    "🔸game-question": 1058,
+    "Train mode - sucks for exalt based teams": 1,
+    "請問豪賭的智慧等命輪會複刻嗎": 1,
+    "Get Auto enable for dtide": 11,
+    "Who Ryker's Designer pls come talk ?": 1,
+    "Titor: Ultra OC because i cant wait for Arachne graaahhh": 8,
+    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 4,
+    "What to spend luminous cores into": 6,
     "🔸课间休息闲聊": 11,
-    "🔸한국어-채팅방": 7,
-    "🔸chaîne-française": 2,
-    "🔸русский-канал": 17,
-    "🔸phòng-chat-tiếng-việt": 280,
     "🔸canal-português": 35,
     "🔸ห้องสนทนาภาษาไทย": 19,
-    "🔸traphase": 23,
-    "🔸team-building": 271,
-    "🔸general-chat": 356,
-    "🔸邀请码互助┊swap-invitation-codes": 19,
-    "🔸game-question": 947,
     "🔸机器人命令┊bot-commands": 29,
     "🔸erica-playground": 6,
     "打算開一個圖樓可能圖之後就丟這裡了": 8,
     "✅「已回答」台服dc的詐騙帳號": 2,
     "\"24\" lives matter": 2,
-    "Titor: Ultra OC because i cant wait for Arachne graaahhh": 7,
     "New Account VIDEO Playthrough Guide": 1,
-    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 1,
     "【English Translation】Opinions Collection": 1,
     "🔸剧情交流": 6,
-    "🔸lore-chat": 11,
-    "Get Auto enable for dtide": 6,
     "✅「Answered」Aurita simple yet effective buff": 1,
     "Bands Art thread (I should’ve made one first before doing all my stuff)": 2,
     "🔸ruang-obrolan-indonesia": 20,
@@ -48,10 +53,12 @@
     "1 Week Account Pulling Advice?": 2
   },
   "hourly_activity": {
+    "14": 886,
+    "15": 699,
+    "16": 36,
     "11": 772,
     "12": 460,
     "13": 544,
-    "14": 68,
     "10": 534,
     "8": 736,
     "9": 551,
@@ -65,10 +72,18 @@
     "0": 620
   },
   "message_types": {
-    "0": 721,
-    "19": 388
+    "0": 909,
+    "19": 644
   },
   "top_reacted_messages": [
+    {
+      "id": "1492544060953727086",
+      "channel_id": "1170692781216378960",
+      "content": "Redz doesn't even try to justify his questionable takes anymore.\n\nHe just looks ",
+      "author": "megidola.",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1492321484478087248",
       "channel_id": "1170692781216378960",
@@ -150,6 +165,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492541092124430356",
+      "channel_id": "1170692781216378960",
+      "content": "67",
+      "author": "angbak",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492545966774157312",
+      "channel_id": "1170692781216378960",
+      "content": "Mathing it up",
+      "author": "not_blueberry",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492522478348668989",
       "channel_id": "1170692781216378960",
       "content": "I also quit genshin",
@@ -202,30 +233,6 @@
       "channel_id": "1170692781216378960",
       "content": "<@113374123798859776> <@480803690140270592> <@214749389632176129> <@267888098732",
       "author": "chinkeeyong",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492453248710348881",
-      "channel_id": "1170692781216378960",
-      "content": "dps Cheri is real. she did 144 dmg even",
-      "author": "jyeusu",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492394728904200283",
-      "channel_id": "1170692781216378960",
-      "content": "arachne in 9 days",
-      "author": "fishhazardthewizard",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492403740106293350",
-      "channel_id": "1170692781216378960",
-      "content": "Watching this auto pollux gameplay makes me want to send replay to lens for revi",
-      "author": "aurora3981",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
