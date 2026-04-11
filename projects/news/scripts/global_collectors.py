@@ -2391,7 +2391,18 @@ RSSHUB_ROUTES = [
 
 def fetch_rsshub():
     """通过自部署 RSSHub 实例采集多个平台（微博/知乎/小红书/抖音/Pixiv/TikTok）。"""
-    rsshub_url = os.environ.get("RSSHUB_URL", "https://biav-rsshub.vercel.app").rstrip("/")
+    _DEFAULT_BROKEN_URL = "https://biav-rsshub.vercel.app"
+    rsshub_url = os.environ.get("RSSHUB_URL", _DEFAULT_BROKEN_URL).rstrip("/")
+
+    # 已知问题：Vercel 的 serverless 环境跑不了 Puppeteer，16 条路由里 15 条会 503。
+    # 只有 /telegram/channel/* 能返回内容。想解锁其余路由必须换宿主（Fly.io 推荐）。
+    # 完整部署步骤见 projects/news/rsshub-deploy/README.md
+    if rsshub_url.rstrip("/") == _DEFAULT_BROKEN_URL:
+        logger.warning(
+            "RSSHUB_URL 仍指向已知失效的 %s（Vercel 不能跑 Puppeteer，16 条路由里 15 条会 503）。"
+            "请部署自建实例并把 RSSHUB_URL 改掉 —— 详见 projects/news/rsshub-deploy/README.md",
+            _DEFAULT_BROKEN_URL,
+        )
 
     items = []
     import re as _re
