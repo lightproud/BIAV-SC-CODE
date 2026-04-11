@@ -117,6 +117,15 @@ def run_zero_cost_collectors() -> list[dict]:
         logger.error(f"Cannot import global_collectors module: {e}")
         return items
 
+    # 数据质量追踪器：更新各源状态，长期沉默的源自动 dormant 跳过
+    tracker = None
+    try:
+        sys.path.insert(0, str(_REPO_ROOT / 'projects' / 'news' / 'scripts'))
+        from data_quality import SilentPlatformTracker
+        tracker = SilentPlatformTracker()
+    except Exception as e:
+        logger.debug(f'SilentPlatformTracker not available: {e}')
+
     # Zero-cost collectors (no API key required)
     zero_cost_fetchers = [
         ('Bilibili', c.fetch_bilibili),
@@ -165,11 +174,34 @@ def run_zero_cost_collectors() -> list[dict]:
 
     all_fetchers = zero_cost_fetchers + api_fetchers
 
+    # 显示名 → source_id（与 archive/split 对齐）
+    NAME_TO_SOURCE_ID = {
+        'Bilibili': 'bilibili', 'Reddit': 'reddit', 'NGA': 'nga', 'TapTap': 'taptap',
+        'Weibo': 'weibo', 'Xiaohongshu': 'xiaohongshu', 'Douyin': 'douyin',
+        'Tieba': 'tieba', 'Zhihu': 'zhihu', 'Naver Cafe': 'naver_cafe',
+        '5ch': 'fivech', 'App Store': 'appstore', 'TikTok': 'tiktok',
+        'Pixiv': 'pixiv', 'Lofter': 'lofter', 'Xianyu': 'xianyu',
+        'Taobao Merch': 'taobao', 'QooApp': 'qooapp', 'Epic Store': 'epic',
+        'Note.com': 'note_com', 'Ruliweb': 'ruliweb', 'VK Play': 'vkplay',
+        'StopGame': 'stopgame', 'GACHAREVENUE': 'gacharevenue',
+        '搜狗微信': 'weixin', 'RSSHub': 'rsshub',
+        'Twitter/X': 'twitter', 'YouTube': 'youtube', 'Discord API': 'discord',
+        'Facebook': 'facebook', 'Twitch': 'twitch', 'Instagram': 'instagram',
+        'QQ': 'qq', 'Telegram': 'telegram', 'Bahamut': 'bahamut',
+        'DCInside': 'dcinside', 'Arca.live': 'arca_live', 'Google Play': 'google_play',
+    }
+
     succeeded = []
     failed = []
     empty = []
 
     for name, fn in all_fetchers:
+        source_id = NAME_TO_SOURCE_ID.get(name, name.lower())
+        # dormant 源直接跳过，节约 CI 时间
+        if tracker and tracker.should_skip_platform(source_id):
+            logger.info(f"  ⏭  {name}: dormant, skipping")
+            continue
+
         try:
             result = fn()
             if result:
@@ -179,9 +211,13 @@ def run_zero_cost_collectors() -> list[dict]:
             else:
                 empty.append(name)
                 logger.info(f"  · {name}: 0 items")
+            if tracker:
+                tracker.update_platform_status(source_id, len(result) if result else 0)
         except Exception as e:
             failed.append((name, str(e)[:120]))
             logger.warning(f"  ✗ {name} FAILED: {e}")
+            if tracker:
+                tracker.update_platform_status(source_id, 0, error=str(e))
 
     # Diagnostic summary
     logger.info("=== 采集诊断 ===")
