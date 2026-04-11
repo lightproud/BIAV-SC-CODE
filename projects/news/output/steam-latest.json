@@ -1,8 +1,68 @@
 {
-  "collected_at": "2026-04-10T23:57:20.292700+00:00",
+  "collected_at": "2026-04-11T05:22:50.271080+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-11T01:06:10+00:00",
+      "lang": "english",
+      "title": "[正面] Havent played much but its rlly fun",
+      "summary": "Havent played much but its rlly fun",
+      "url": "https://steamcommunity.com/profiles/76561199555865386/recommended/3052450",
+      "author": "76561199555865386",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "Havent played much but its rlly fun",
+      "timestamp_created": 1775869570,
+      "playtime_forever": 277
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-10T16:18:21+00:00",
+      "lang": "english",
+      "title": "[正面] I like Bloodborne and I like Slay the Spire",
+      "summary": "I like Bloodborne and I like Slay the Spire",
+      "url": "https://steamcommunity.com/profiles/76561199052404944/recommended/3052450",
+      "author": "76561199052404944",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "I like Bloodborne and I like Slay the Spire",
+      "timestamp_created": 1775837901,
+      "playtime_forever": 20437
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-10T10:36:56+00:00",
+      "lang": "japanese",
+      "title": "[正面] こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
+      "summary": "こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
+      "url": "https://steamcommunity.com/profiles/76561198355817923/recommended/3052450",
+      "author": "76561198355817923",
+      "engagement": 1,
+      "language": "japanese",
+      "voted_up": true,
+      "review": "こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
+      "timestamp_created": 1775817416,
+      "playtime_forever": 10270
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-11T00:55:47+00:00",
+      "lang": "brazilian",
+      "title": "[正面] gente, incrível, baixem e sintam a magia acontecer",
+      "summary": "gente, incrível, baixem e sintam a magia acontecer",
+      "url": "https://steamcommunity.com/profiles/76561199562964473/recommended/3052450",
+      "author": "76561199562964473",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "gente, incrível, baixem e sintam a magia acontecer",
+      "timestamp_created": 1775868947,
+      "playtime_forever": 389
+    },
     {
       "source": "steam",
       "time": "2026-04-10T19:16:03+00:00",
@@ -16,7 +76,7 @@
       "voted_up": true,
       "review": "This is an amazing game, with a breathtaking artwork, as well as a very interesting and original story. One of my favorite games so far.",
       "timestamp_created": 1775848563,
-      "playtime_forever": 678
+      "playtime_forever": 829
     },
     {
       "source": "steam",
@@ -32,36 +92,6 @@
       "review": "скучно под пивом нечего не заметил как уже на 100% ачивок прошёл",
       "timestamp_created": 1775841895,
       "playtime_forever": 13
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-10T16:18:21+00:00",
-      "lang": "english",
-      "title": "[正面] I like Bloodborne and I like Slay the Spire",
-      "summary": "I like Bloodborne and I like Slay the Spire",
-      "url": "https://steamcommunity.com/profiles/76561199052404944/recommended/3052450",
-      "author": "76561199052404944",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I like Bloodborne and I like Slay the Spire",
-      "timestamp_created": 1775837901,
-      "playtime_forever": 20433
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-10T10:36:56+00:00",
-      "lang": "japanese",
-      "title": "[正面] こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
-      "summary": "こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
-      "url": "https://steamcommunity.com/profiles/76561198355817923/recommended/3052450",
-      "author": "76561198355817923",
-      "engagement": 0,
-      "language": "japanese",
-      "voted_up": true,
-      "review": "こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
-      "timestamp_created": 1775817416,
-      "playtime_forever": 10233
     },
     {
       "source": "steam",
@@ -91,7 +121,7 @@
       "voted_up": true,
       "review": "갓-겜",
       "timestamp_created": 1775807242,
-      "playtime_forever": 19037
+      "playtime_forever": 19225
     },
     {
       "source": "steam",
@@ -196,7 +226,7 @@
       "voted_up": true,
       "review": "yippe",
       "timestamp_created": 1775730758,
-      "playtime_forever": 2575
+      "playtime_forever": 2605
     }
   ]
 }

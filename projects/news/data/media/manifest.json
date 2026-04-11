@@ -1413,6 +1413,55 @@
       "title": "[DC] legendaryredz@🔸morimens-game-chat: This is the state of the bingo currently  Anything you might",
       "time": "2026-04-10T20:21:36.988000+00:00",
       "downloaded_at": "2026-04-10T23:57:23.180571+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/5610e6abdf68b55e3186297bce4ed22b53bae68d.jpg": {
+      "filename": "bilibili_db08b14dc16149e7.jpg",
+      "source": "bilibili",
+      "title": "坠落",
+      "time": "2026-04-11T01:54:20+00:00",
+      "downloaded_at": "2026-04-11T05:22:52.087727+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/57adafc38560aad1e0d5afc6b3a6de2bd846043a.jpg": {
+      "filename": "bilibili_122cc95704e0c16f.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 神秘血肉塔薇 4000力暴打 融灾5-5医生",
+      "time": "2026-04-10T05:28:22+00:00",
+      "downloaded_at": "2026-04-11T05:22:53.020581+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/8364621e982dc1df650925aa74cf75f77928f583.jpg": {
+      "filename": "bilibili_5f6a00a0d16304d0.jpg",
+      "source": "bilibili",
+      "title": "本来想给录个道中视频的，但是95%暴击率连续三次不暴击是什么意思呢",
+      "time": "2026-04-10T12:05:01+00:00",
+      "downloaded_at": "2026-04-11T05:22:55.748213+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/2153b67a680e9d0ce6ee7498e66a663b496b8c66.jpg": {
+      "filename": "bilibili_81937021f4478446.jpg",
+      "source": "bilibili",
+      "title": "融灾2-5血希落地道中",
+      "time": "2026-04-10T15:15:40+00:00",
+      "downloaded_at": "2026-04-11T05:22:57.509392+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/be8c833ad41b54cf293e046d9a74f3274ec55209.jpg": {
+      "filename": "bilibili_a933e7b3857c4f2c.jpg",
+      "source": "bilibili",
+      "title": "沙耶",
+      "time": "2026-04-09T14:06:45+00:00",
+      "downloaded_at": "2026-04-11T05:22:58.693062+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/9d5aa012c8fb982271eb5469b347f7061185df2d.jpg": {
+      "filename": "bilibili_3a367f4cd2db5e74.jpg",
+      "source": "bilibili",
+      "title": "爱来自唤醒体",
+      "time": "2026-04-10T17:37:46+00:00",
+      "downloaded_at": "2026-04-11T05:22:59.444665+00:00"
+    },
+    "https://i.ytimg.com/vi/ypo4HDQBJtE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDxp-Pi7cRwhViXqYTjsiFH_1H-EA": {
+      "filename": "youtube_37801ca16b413826.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Light coaching / \"Short\" stream",
+      "time": "2026-04-11T05:19:59.397687+00:00",
+      "downloaded_at": "2026-04-11T05:23:01.205971+00:00"
     }
   },
   "failed": {
@@ -1860,6 +1909,41 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-10T23:57:21.295496+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/57adafc38560aad1e0d5afc6b3a6de2bd846043a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T05:22:53.321439+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/8364621e982dc1df650925aa74cf75f77928f583.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T05:22:56.049230+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/2153b67a680e9d0ce6ee7498e66a663b496b8c66.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T05:22:57.810144+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/9d5aa012c8fb982271eb5469b347f7061185df2d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T05:22:59.745540+00:00"
+    },
+    "https://preview.redd.it/rtbhczbjqgug1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=253e47b416a28f379038c8a42bb0dcb72015b043": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T05:23:00.194805+00:00"
+    },
+    "https://preview.redd.it/8naz7bg16hug1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6c1bf22efaaea3880ebf5f1753a9b72f0aafbf37": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T05:23:00.526227+00:00"
+    },
+    "https://preview.redd.it/5a1b18ma1hug1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=9b02da9ce2d58106807f153dadda5b1e7455686c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-11T05:23:00.854565+00:00"
     }
   },
   "archived": []

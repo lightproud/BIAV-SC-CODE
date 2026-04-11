@@ -1,8 +1,8 @@
 {
   "date": "2026-04-11",
-  "archived_at": "2026-04-10T23:57:23.239645+00:00",
+  "archived_at": "2026-04-11T05:23:01.269767+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 7,
   "items": [
     {
       "source": "bilibili",
@@ -15,6 +15,24 @@
       "engagement": 318,
       "media_url": "//i1.hdslb.com/bfs/archive/162d06ee8aa45086ffc57a8dfaa7b470b52d8086.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-11T01:54:20+00:00",
+      "lang": "",
+      "title": "坠落",
+      "summary": "谢幕\n  └ ATAMAH_ (0赞): ↓\n  └ 我们的鹅哥 (0赞): 硫克的骨架[doge]\n  └ 鲨皮的嗦嗨未死 (0赞): 辛苦了",
+      "url": "https://www.bilibili.com/video/BV1uoQKBFE32",
+      "author": "智能仿生魂",
+      "engagement": 317,
+      "media_url": "https://i0.hdslb.com/bfs/archive/5610e6abdf68b55e3186297bce4ed22b53bae68d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 302,
+        "comment_count": 15,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
@@ -33,6 +51,36 @@
         "comments_fetched": 3,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-10T17:37:46+00:00",
+      "lang": "",
+      "title": "爱来自唤醒体",
+      "summary": "最近忙着考公就是不咋剪(இωஇ )\n一些刀子\n“在无尽黑暗沉眠之中，我将永远与你在一起”\n  └ 校园百宝箱-分箱2 (0赞): UP主加油！",
+      "url": "https://www.bilibili.com/video/BV1AoQwBCExU",
+      "author": "考公一把过5771",
+      "engagement": 107,
+      "media_url": "https://i2.hdslb.com/bfs/archive/9d5aa012c8fb982271eb5469b347f7061185df2d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 106,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-10T17:37:46+00:00",
+      "lang": "zh",
+      "title": "爱来自唤醒体",
+      "summary": "最近忙着考公就是不咋剪(இωஇ )\n一些刀子\n“在无尽黑暗沉眠之中，我将永远与你在一起”",
+      "url": "http://www.bilibili.com/video/av116381618015326",
+      "author": "考公一把过5771",
+      "engagement": 107,
+      "media_url": "//i2.hdslb.com/bfs/archive/9d5aa012c8fb982271eb5469b347f7061185df2d.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
