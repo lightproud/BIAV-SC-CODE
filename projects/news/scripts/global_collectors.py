@@ -855,12 +855,13 @@ def fetch_naver_cafe():
                     summary=article.get("summary", ""),
                     source="naver_cafe",
                     platform_region="kr",
-                    time_str=article.get("writeDateTimestamp", datetime.now(timezone.utc).isoformat()),
+                    time_str=article.get("writeDateTimestamp") or datetime.now(timezone.utc).isoformat(),
                     url=article.get("articleUrl", ""),
                     engagement=article.get("readCount", 0) + article.get("commentCount", 0),
                     is_hot=article.get("readCount", 0) > 500,
                     author=article.get("writerNickName", ""),
                     lang="ko",
+                    time_is_approximate=not article.get("writeDateTimestamp"),
                 ))
 
             logger.info(f'Naver Cafe "{keyword}": {len(items)} articles')
@@ -1153,12 +1154,13 @@ def fetch_qq():
                         summary=content,
                         source="qq",
                         platform_region="cn",
-                        time_str=msg.get("timestamp", datetime.now(timezone.utc).isoformat()),
+                        time_str=msg.get("timestamp") or datetime.now(timezone.utc).isoformat(),
                         url=qq_url,
                         engagement=reactions,
                         is_hot=reactions > 10,
                         author=msg.get("author", {}).get("username", ""),
                         lang="zh",
+                        time_is_approximate=not msg.get("timestamp"),
                     ))
             except Exception as e:
                 logger.debug(f"QQ channel {channel_name} failed: {e}")
@@ -1213,7 +1215,7 @@ def fetch_pixiv():
                     summary=illust.get("description", "") if illust.get("description") else "",
                     source="pixiv",
                     platform_region="global",
-                    time_str=illust.get("createDate", datetime.now(timezone.utc).isoformat()),
+                    time_str=illust.get("createDate") or datetime.now(timezone.utc).isoformat(),
                     url=f"https://www.pixiv.net/artworks/{illust_id}",
                     engagement=bookmark + like,
                     is_hot=bookmark > 500,
@@ -1222,6 +1224,7 @@ def fetch_pixiv():
                     lang="",
                     content_type="image",
                     media_url=illust.get("url", ""),
+                    time_is_approximate=not illust.get("createDate"),
                 ))
 
             logger.info(f'Pixiv "{keyword}": {len(items)} artworks')
@@ -1516,6 +1519,7 @@ def fetch_google_play():
                     is_hot=False,
                     author=review.get("userName", ""),
                     lang=lang_code[:2],
+                    time_is_approximate=not review.get("at"),
                 ))
 
             logger.info(f"Google Play ({lang_code}): {len(result)} reviews")
@@ -1646,12 +1650,13 @@ def fetch_epic_store():
                         summary=desc,
                         source="epic",
                         platform_region="global",
-                        time_str=product.get("effectiveDate", datetime.now(timezone.utc).isoformat()),
+                        time_str=product.get("effectiveDate") or datetime.now(timezone.utc).isoformat(),
                         url=f"https://store.epicgames.com/en-US/p/{slug}",
                         engagement=0,
                         is_hot=False,
                         author="Epic Games Store",
                         lang="en",
+                        time_is_approximate=not product.get("effectiveDate"),
                     ))
             except (ValueError, KeyError):
                 pass
@@ -1801,18 +1806,19 @@ def fetch_zhihu():
                         else:
                             url = content_url
 
+                        zhihu_time = target.get("created_time") or target.get("updated_time")
                         items.append(_make_item(
                             title=_strip_html(title),
                             summary=_strip_html(excerpt),
                             source="zhihu",
                             platform_region="cn",
-                            time_str=target.get("created_time",
-                                target.get("updated_time", datetime.now(timezone.utc).isoformat())),
+                            time_str=zhihu_time or datetime.now(timezone.utc).isoformat(),
                             url=url,
                             engagement=voteup + comment,
                             is_hot=voteup > 100,
                             author=target.get("author", {}).get("name", ""),
                             lang="zh",
+                            time_is_approximate=not zhihu_time,
                         ))
                 except (ValueError, KeyError):
                     pass
@@ -1847,12 +1853,13 @@ def fetch_bahamut():
                             summary="",
                             source="bahamut",
                             platform_region="tw",
-                            time_str=thread.get("ctime", datetime.now(timezone.utc).isoformat()),
+                            time_str=thread.get("ctime") or datetime.now(timezone.utc).isoformat(),
                             url=f"https://forum.gamer.com.tw/C.php?bsn={baha_bsn}&snA={thread.get('snA', '')}",
                             engagement=gp + reply,
                             is_hot=gp > 50,
                             author=thread.get("nick", ""),
                             lang="zh",
+                            time_is_approximate=not thread.get("ctime"),
                         ))
                 except (ValueError, KeyError):
                     pass
@@ -1885,12 +1892,13 @@ def fetch_bahamut():
                             summary="",
                             source="bahamut",
                             platform_region="tw",
-                            time_str=thread.get("ctime", datetime.now(timezone.utc).isoformat()),
+                            time_str=thread.get("ctime") or datetime.now(timezone.utc).isoformat(),
                             url=thread.get("url", ""),
                             engagement=gp + reply,
                             is_hot=gp > 50,
                             author=thread.get("nick", ""),
                             lang="zh",
+                            time_is_approximate=not thread.get("ctime"),
                         ))
                 except (ValueError, KeyError):
                     # HTML fallback: parse search result page
@@ -1980,17 +1988,19 @@ def fetch_telegram():
                     except ValueError:
                         pass
 
+                    has_date = i < len(msg_dates)
                     items.append(_make_item(
                         title=text[:100],
                         summary=text,
                         source="telegram",
                         platform_region="global",
-                        time_str=msg_dates[i] if i < len(msg_dates) else datetime.now(timezone.utc).isoformat(),
+                        time_str=msg_dates[i] if has_date else datetime.now(timezone.utc).isoformat(),
                         url=f"https://t.me/{channel}",
                         engagement=views,
                         is_hot=views > 1000,
                         author=f"@{channel}",
                         lang="",
+                        time_is_approximate=not has_date,
                     ))
 
             logger.info(f"Telegram @{channel}: {len(items)} messages")
@@ -2029,13 +2039,14 @@ def fetch_twitch():
                     summary=f"Playing: {ch.get('game_name', '')} | {ch.get('display_name', '')}",
                     source="twitch",
                     platform_region="global",
-                    time_str=ch.get("started_at", datetime.now(timezone.utc).isoformat()),
+                    time_str=ch.get("started_at") or datetime.now(timezone.utc).isoformat(),
                     url=f"https://www.twitch.tv/{ch.get('broadcaster_login', '')}",
                     engagement=0,
                     is_hot=ch.get("is_live", False),
                     author=ch.get("display_name", ""),
                     lang=ch.get("broadcaster_language", ""),
                     content_type="stream",
+                    time_is_approximate=not ch.get("started_at"),
                 ))
 
             logger.info(f'Twitch "{keyword}": {len(items)} live channels')
@@ -2278,12 +2289,13 @@ def fetch_note_com():
                         summary=note.get("body", ""),
                         source="note_com",
                         platform_region="jp",
-                        time_str=note.get("publishAt", datetime.now(timezone.utc).isoformat()),
+                        time_str=note.get("publishAt") or datetime.now(timezone.utc).isoformat(),
                         url=note.get("noteUrl", ""),
                         engagement=note.get("likeCount", 0) + note.get("commentCount", 0),
                         is_hot=note.get("likeCount", 0) > 50,
                         author=note.get("user", {}).get("nickname", ""),
                         lang="ja",
+                        time_is_approximate=not note.get("publishAt"),
                     ))
 
             logger.info(f'Note.com "{keyword}": {len(items)} notes')
@@ -2403,12 +2415,13 @@ def fetch_vkplay():
                     summary=text,
                     source="vkplay",
                     platform_region="ru",
-                    time_str=review.get("created_at", datetime.now(timezone.utc).isoformat()),
+                    time_str=review.get("created_at") or datetime.now(timezone.utc).isoformat(),
                     url=f"https://vkplay.ru/play/game/{game_slug}/",
                     engagement=review.get("likes", 0),
                     is_hot=False,
                     author=review.get("user", {}).get("name", "") if isinstance(review.get("user"), dict) else "",
                     lang="ru",
+                    time_is_approximate=not review.get("created_at"),
                 ))
     except Exception as e:
         logger.warning(f"VK Play reviews failed: {e}")

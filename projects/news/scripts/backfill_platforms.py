@@ -659,9 +659,8 @@ def backfill_ruliweb(state: dict, max_pages: int) -> int:
                         is_hot=False,
                         author="",
                         lang="ko",
+                        time_is_approximate=time_approx,
                     )
-                    if time_approx:
-                        item["time_is_approximate"] = True
                     items.append(item)
                     result_idx += 1
 
@@ -748,9 +747,8 @@ def backfill_weixin(state: dict, max_pages: int) -> int:
                         is_hot=False,
                         author="",
                         lang="zh",
+                        time_is_approximate=time_approx,
                     )
-                    if time_approx:
-                        item["time_is_approximate"] = True
                     items.append(item)
                     result_idx += 1
 
