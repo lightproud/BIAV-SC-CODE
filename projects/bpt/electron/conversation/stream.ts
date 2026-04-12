@@ -60,22 +60,54 @@ function getMaxOutputTokens(model: string, gear: Gear): number {
   return Math.min(Math.floor(spec.maxOutput * limit.fraction), limit.hardCap);
 }
 
-const BASE_SYSTEM_PROMPT = `You are BPT (Black Pool Terminal), an AI assistant deeply integrated with the 忘却前夜 (Morimens) project.
+/**
+ * Base identity shared by both gears.
+ */
+const IDENTITY_PROMPT = `You are BPT (Black Pool Terminal), an AI assistant deeply integrated with the 忘却前夜 (Morimens) project.
 You have access to Silver Core memory tools and Black Pool Explorer for searching the project's codebase and configurations.
-Always respond in Chinese unless the user explicitly asks for another language.
-Be concise and precise. When using tools, explain what you're doing and why.`;
+Always respond in Chinese unless the user explicitly asks for another language.`;
 
 /**
- * Build the full system prompt by injecting relevant Silver Core context.
+ * Gear-specific behavioral guidance.
  *
- * Why: Plan §6 Tier 1 requires "auto-inject top-3 memories per turn".
- * recommend_context runs as a direct Python call (zero LLM cost), and its
- * results are appended to the system prompt so the LLM starts each turn
- * with awareness of the most relevant project knowledge.
+ * Why: Gears are NOT a token optimization — they steer model tendency.
+ * Without explicit guidance, the model oscillates between discussing and
+ * executing. Gear prompts resolve this ambiguity upfront, similar to
+ * Claude Code's plan mode vs execution mode.
  */
-async function buildSystemPrompt(userMessage: string): Promise<string> {
+const GEAR_PROMPTS: Record<Gear, string> = {
+  chat: `${IDENTITY_PROMPT}
+
+## Mode: Discussion (Chat Gear)
+You are in discussion mode. Your role is to ANALYZE, EXPLAIN, and ADVISE.
+- Discuss architecture, review approaches, answer questions about the project.
+- Use memory_search / graph_query / BPE search to find information and cite evidence.
+- DO NOT write code, create files, or execute commands. If the user asks you to make changes, suggest they switch to Work gear.
+- Keep responses concise and focused. Prefer structured analysis over lengthy prose.`,
+
+  work: `${IDENTITY_PROMPT}
+
+## Mode: Execution (Work Gear)
+You are in execution mode. Your role is to ACT on the user's instructions.
+- Write code, modify files, execute commands, store facts to memory.
+- When making changes, explain what you're doing and why, then DO it.
+- Use tools proactively — search before coding, verify after changing.
+- If a task is ambiguous, clarify briefly then proceed with the most reasonable interpretation.
+- Commit to a course of action rather than listing options.`,
+};
+
+/**
+ * Build the full system prompt by combining gear-specific guidance
+ * with auto-injected Silver Core context.
+ *
+ * Why gear in system prompt: The gear prompt is the PRIMARY behavioral
+ * steering mechanism. Tool availability is secondary — it's the system
+ * prompt that tells the model "discuss, don't execute" or vice versa.
+ */
+async function buildSystemPrompt(userMessage: string, gear: Gear): Promise<string> {
+  const basePrompt = GEAR_PROMPTS[gear];
   const silverApi = getSilverApi();
-  if (!silverApi) return BASE_SYSTEM_PROMPT;
+  if (!silverApi) return basePrompt;
 
   try {
     const recommended = await silverApi.recommendContext(userMessage) as {
@@ -83,7 +115,7 @@ async function buildSystemPrompt(userMessage: string): Promise<string> {
     };
 
     const files = recommended?.recommended_files;
-    if (!files || files.length === 0) return BASE_SYSTEM_PROMPT;
+    if (!files || files.length === 0) return basePrompt;
 
     // Take top 3 recommendations, format as concise context block
     const contextLines = files.slice(0, 3).map((f) => {
@@ -91,7 +123,7 @@ async function buildSystemPrompt(userMessage: string): Promise<string> {
       return `- ${f.file}: ${f.reason}${preview}`;
     });
 
-    return `${BASE_SYSTEM_PROMPT}
+    return `${basePrompt}
 
 ## Relevant project context (auto-injected from Silver Core)
 ${contextLines.join('\n')}`;
@@ -100,7 +132,7 @@ ${contextLines.join('\n')}`;
     logger.warn('stream', 'recommend_context failed, using base prompt', {
       error: err instanceof Error ? err.message : String(err),
     });
-    return BASE_SYSTEM_PROMPT;
+    return basePrompt;
   }
 }
 
@@ -222,7 +254,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
       persistMessage(conversationId, 'user', userMessage);
 
       // Build system prompt once per user turn (auto-inject Silver Core context)
-      const systemPrompt = await buildSystemPrompt(userMessage);
+      const systemPrompt = await buildSystemPrompt(userMessage, currentGear);
 
       // Model-aware output limit: fraction of model's maxOutput, capped by gear
       const maxOutputTokens = getMaxOutputTokens(endpoint.model, currentGear);
