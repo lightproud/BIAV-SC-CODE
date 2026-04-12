@@ -1554,13 +1554,7 @@ def _suggest_action(pattern: dict) -> str:
 
 
 def _save_insights(new_insights: list[dict]):
-    """Append new insights to insights.json.
-
-    Insights have a lifecycle: active -> resolved -> pruned.
-    No hard count limit — instead, prune insights that are:
-    - Marked resolved (kept for 30 days after resolution, then removed)
-    - Older than 90 days and never acted upon
-    """
+    """Append new insights to insights.json. All insights are kept permanently."""
     insights_file = REPO / "memory" / "dreams" / "insights.json"
     existing = []
     if insights_file.exists():
@@ -1575,23 +1569,8 @@ def _save_insights(new_insights: list[dict]):
 
     existing.extend(new_insights)
 
-    # Lifecycle pruning (not count-based)
-    pruned = []
-    cutoff_90d = (TODAY - __import__('datetime').timedelta(days=90)).isoformat()
-    cutoff_30d = (TODAY - __import__('datetime').timedelta(days=30)).isoformat()
-    for ins in existing:
-        resolved_at = ins.get("resolved_at")
-        created = ins.get("created", "")
-        # Remove: resolved more than 30 days ago
-        if resolved_at and resolved_at < cutoff_30d:
-            continue
-        # Remove: unresolved and older than 90 days
-        if not resolved_at and created < cutoff_90d:
-            continue
-        pruned.append(ins)
-
     insights_file.write_text(
-        json.dumps(pruned, ensure_ascii=False, indent=2),
+        json.dumps(existing, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
