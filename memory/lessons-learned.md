@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-04-02 by 战略中心（Code）
+> 最后更新：2026-04-12 by 主控台（记忆反思管理）
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -131,21 +131,21 @@
 - **Impact**：减少用户操作，新数据源即写即用
 - **原则**：公开 ID → 硬编码；私密凭据 → secrets。不要过度设计
 
-## 18. ~~VitePress cleanUrls: true 与 GitHub Pages 不兼容~~ [已毕业]
+## 19. ~~VitePress cleanUrls: true 与 GitHub Pages 不兼容~~ [已毕业]
 
 - **Context**：VitePress 配置了 `cleanUrls: true`，生成无扩展名链接（如 `/awakeners/tulu`）
 - **Problem**：GitHub Pages 是纯静态托管，不支持服务端 URL 重写。访问 `/awakeners/tulu` 返回 404，因为实际文件是 `tulu.html`。首页和索引页正常（因为有 `index.html` 兜底），但所有详情页全部 404
 - **Fix**：改为 `cleanUrls: false`，链接自动带 `.html` 后缀。只有支持 URL 重写的服务器（Nginx、Vercel、Netlify）才能用 cleanUrls
 - **Impact**：角色详情页、攻略页等 189×3 个页面全部 404，用户可见
 
-## 19. VitePress locale rewrites 改变构建产物目录结构
+## 20. VitePress locale rewrites 改变构建产物目录结构
 
 - **Context**：配置 `rewrites: { 'zh/:rest*': ':rest*' }` 将中文设为 root locale
 - **Problem**：构建后 `/zh/` 目录不再存在——中文内容直接输出到根目录。但部署验证脚本和 smoke test 仍检查 `/wiki/zh/` 目录是否存在，导致误报 WARNING
 - **Fix**：所有引用 locale 路径的地方（workflow 验证、smoke test URL、文档链接）必须与 rewrites 规则保持一致。root locale 的内容在根目录，不在 `/zh/` 子目录
 - **Impact**：部署验证误判、用户访问错误 URL
 
-## 20. 多会话并行修改同一文件时，后合并者需处理数据格式冲突
+## 21. 多会话并行修改同一文件时，后合并者需处理数据格式冲突
 
 - **Context**：Code-wiki 在 characters.json 中用结构化格式（command_cards/rouse/exalt）存储技能；另一个会话向 skills.json 写入了 59 个角色的技能数据，但其中 48 个仍是旧格式（只有描述性文本，无结构化卡牌数据）
 - **Problem**：合并时两份数据格式不一致——11 个有结构化卡牌数据，48 个只有定性描述。简单覆盖会丢失已有的结构化数据，但不合并又浪费了另一个会话的工作
