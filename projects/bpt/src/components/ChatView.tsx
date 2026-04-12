@@ -29,13 +29,29 @@ export default function ChatView({ conversationId, pendingCites, onConsumeCites 
   // Track accumulated tool input JSON during streaming
   const toolInputRef = useRef('');
 
-  // Clear messages when conversation changes
+  // Load persisted messages when conversation changes
   useEffect(() => {
-    setMessages([]);
     setTurnUsage(null);
     setError(null);
     currentTextRef.current = '';
     toolInputRef.current = '';
+
+    if (!conversationId) {
+      setMessages([]);
+      return;
+    }
+
+    // Load history from SQLite via main process
+    getBpt().convLoadMessages(conversationId).then((loaded) => {
+      const msgs = loaded as Message[];
+      if (Array.isArray(msgs) && msgs.length > 0) {
+        setMessages(msgs);
+      } else {
+        setMessages([]);
+      }
+    }).catch(() => {
+      setMessages([]);
+    });
   }, [conversationId]);
 
   // Scroll to bottom on new messages
@@ -401,7 +417,13 @@ function ContentBlockView({ block }: { block: ContentBlock }) {
 function safeParse(json: string): Record<string, unknown> {
   try {
     return JSON.parse(json) as Record<string, unknown>;
-  } catch {
+  } catch (err) {
+    // Log parse failures for debugging — partial JSON during streaming is expected,
+    // but complete failures at tool_use_end indicate a real problem
+    console.warn('[ChatView] Failed to parse tool input JSON:', {
+      preview: json.slice(0, 100),
+      error: err instanceof Error ? err.message : String(err),
+    });
     return {};
   }
 }

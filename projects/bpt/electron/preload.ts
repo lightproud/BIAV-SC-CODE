@@ -28,6 +28,9 @@ const api = {
   convList: () => ipcRenderer.invoke('conv:list'),
   convCreate: (title: string) => ipcRenderer.invoke('conv:create', title),
   convDelete: (id: string) => ipcRenderer.invoke('conv:delete', id),
+  convRename: (id: string, title: string) => ipcRenderer.invoke('conv:rename', id, title),
+  convLoadMessages: (id: string) => ipcRenderer.invoke('conv:loadMessages', id),
+  convClearHistory: (id: string) => ipcRenderer.invoke('conv:clearHistory', id),
 
   // ── Config ────────────────────────────────────────────────
   configGet: (key: string) => ipcRenderer.invoke('config:get', key),

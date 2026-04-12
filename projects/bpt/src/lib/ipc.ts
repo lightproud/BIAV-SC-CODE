@@ -19,6 +19,9 @@ export interface BptApi {
   convList: () => Promise<unknown>;
   convCreate: (title: string) => Promise<unknown>;
   convDelete: (id: string) => Promise<unknown>;
+  convRename: (id: string, title: string) => Promise<unknown>;
+  convLoadMessages: (id: string) => Promise<unknown>;
+  convClearHistory: (id: string) => Promise<unknown>;
 
   configGet: (key: string) => Promise<unknown>;
   configSet: (key: string, value: unknown) => Promise<unknown>;

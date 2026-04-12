@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import Sidebar from './components/Sidebar';
 import ChatView from './components/ChatView';
 import SilverPanel from './components/SilverPanel';
@@ -15,23 +15,30 @@ export default function App() {
   const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
   const [pendingCites, setPendingCites] = useState<CiteBlock[]>([]);
 
+  // Use ref to avoid re-creating the consume callback on every cite change.
+  // This prevents ChatView's stream event listener from being re-registered.
+  const pendingCitesRef = useRef<CiteBlock[]>([]);
+  pendingCitesRef.current = pendingCites;
+
   const togglePanel = (panel: RightPanel) => {
     setRightPanel((prev) => (prev === panel ? 'none' : panel));
   };
 
   /**
    * Handle @Cite injection from BPE panel.
-   * Adds a cite block to pendingCites; ChatView picks it up on next send.
    */
   const handleCite = useCallback((cite: CiteBlock) => {
     setPendingCites((prev) => [...prev, cite]);
   }, []);
 
+  /**
+   * Consume pending cites. Uses ref so this callback is stable (no deps).
+   */
   const consumePendingCites = useCallback((): CiteBlock[] => {
-    const cites = pendingCites;
+    const cites = pendingCitesRef.current;
     setPendingCites([]);
     return cites;
-  }, [pendingCites]);
+  }, []);
 
   return (
     <ErrorBoundary>

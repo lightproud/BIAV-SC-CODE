@@ -13,10 +13,6 @@
  * 5. Collect content blocks; if tool_use blocks present, execute tools
  * 6. Send tool_result to renderer, append to history, loop back to step 3
  * 7. On final message_end (no more tool_use), merge usage and log to SQLite
- *
- * The main process owns conversation history (in-memory Map). This is
- * essential for the tool loop — we need to append assistant + tool_result
- * messages between LLM calls without renderer involvement.
  */
 
 import { ipcMain, BrowserWindow } from 'electron';
@@ -29,10 +25,11 @@ import { getConfig } from '../core/config';
 import { logger } from '../core/logger';
 import { executeTool } from './tool-loop';
 import { compressHistory } from './compressor';
+import { addMessage, getMessages } from './store';
 import type { LlmProvider, LlmStreamEvent, LlmMessage, LlmContentBlock } from '../llm/provider';
 import type { Gear } from '../../src/types';
 
-// ── Conversation history store (in-memory) ──────────────────────
+// ── Conversation history store (in-memory, backed by SQLite) ────
 // Key: conversationId, Value: LlmMessage[] (full history)
 const histories = new Map<string, LlmMessage[]>();
 
@@ -78,21 +75,67 @@ function getProvider(): LlmProvider {
 }
 
 /**
- * Get conversation history, creating empty array if needed.
+ * Get conversation history, loading from SQLite if not in memory.
  */
 function getHistory(conversationId: string): LlmMessage[] {
   if (!histories.has(conversationId)) {
-    histories.set(conversationId, []);
+    // Try to load from SQLite
+    const rows = getMessages(conversationId);
+    const messages: LlmMessage[] = rows.map((row) => ({
+      role: row.role as 'user' | 'assistant' | 'system',
+      content: safeParseContentJson(row.content_json),
+    }));
+    histories.set(conversationId, messages);
   }
   return histories.get(conversationId) as LlmMessage[];
+}
+
+/**
+ * Parse content_json from SQLite. Returns string or LlmContentBlock[].
+ */
+function safeParseContentJson(json: string): string | LlmContentBlock[] {
+  try {
+    const parsed = JSON.parse(json);
+    // If it's an array of content blocks, return as-is
+    if (Array.isArray(parsed)) return parsed as LlmContentBlock[];
+    // If it's a string, return as string
+    if (typeof parsed === 'string') return parsed;
+    return json;
+  } catch {
+    return json;
+  }
+}
+
+/**
+ * Persist a message to SQLite.
+ */
+function persistMessage(conversationId: string, role: string, content: string | LlmContentBlock[]): void {
+  const contentJson = typeof content === 'string'
+    ? JSON.stringify(content)
+    : JSON.stringify(content);
+  const msgId = `msg_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`;
+  try {
+    addMessage(msgId, conversationId, role, contentJson, Date.now());
+  } catch (err) {
+    logger.error('stream', 'Failed to persist message', {
+      error: err instanceof Error ? err.message : String(err),
+    });
+  }
 }
 
 /**
  * Send an event to the renderer window (safely handles destroyed windows).
  */
 function sendToRenderer(win: BrowserWindow, event: Record<string, unknown>): void {
-  if (!win.isDestroyed()) {
-    win.webContents.send('chat:stream', event);
+  try {
+    if (!win.isDestroyed()) {
+      win.webContents.send('chat:stream', event);
+    }
+  } catch (err) {
+    // Window was destroyed between check and send
+    logger.warn('stream', 'Failed to send to renderer', {
+      error: err instanceof Error ? err.message : String(err),
+    });
   }
 }
 
@@ -105,21 +148,27 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
       const currentProvider = getProvider();
       const currentGear = (gear || 'chat') as Gear;
       const tools = getActiveTools(currentGear);
-      const endpoint = getConfig('endpoint') as { model: string };
+      const endpoint = getConfig('endpoint') as { model: string; provider?: string };
 
-      // Append user message to history
+      // Only enable cache_control for Claude provider
+      const useCacheControl = (endpoint.provider ?? 'claude') !== 'openai';
+
+      // Get or load conversation history
       const history = getHistory(conversationId);
-      history.push({ role: 'user', content: userMessage });
 
-      // Tool loop: stream → collect tool_use → execute → re-stream
+      // Append user message to history + persist
+      history.push({ role: 'user', content: userMessage });
+      persistMessage(conversationId, 'user', userMessage);
+
+      // Tool loop: stream -> collect tool_use -> execute -> re-stream
       let totalUsage = emptyUsage();
       let loopCount = 0;
 
       while (loopCount < MAX_TOOL_LOOPS) {
         loopCount++;
 
-        // Apply compression before sending
-        const { messages: messagesToSend, wasCompressed, droppedTurns } = compressHistory(history);
+        // Apply compression before sending (operates on a copy)
+        const { messages: messagesToSend, wasCompressed, droppedTurns } = compressHistory([...history]);
 
         if (wasCompressed) {
           logger.info('stream', `Compressed history: dropped ${droppedTurns} turns`);
@@ -147,7 +196,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
             messages: messagesToSend,
             tools,
             maxTokens: 4096,
-            cacheControl: true,
+            cacheControl: useCacheControl,
           },
           (streamEvent: LlmStreamEvent) => {
             // Forward events to renderer (except message_end — we send our own at the end)
@@ -181,7 +230,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
                   type: 'tool_use',
                   id: currentToolId,
                   name: currentToolName,
-                  input: safeParse(toolInputJson),
+                  input: safeParseToolInput(toolInputJson),
                 });
                 currentToolId = '';
                 currentToolName = '';
@@ -207,11 +256,12 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
           },
         );
 
-        // Append assistant message to history
+        // Append assistant message to history + persist
         const assistantContent = contentBlocks.length > 0
           ? contentBlocks
           : [{ type: 'text' as const, text: currentText }];
         history.push({ role: 'assistant', content: assistantContent });
+        persistMessage(conversationId, 'assistant', assistantContent);
 
         // Check for tool_use blocks
         const toolUseBlocks = contentBlocks.filter(
@@ -220,6 +270,20 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
 
         if (toolUseBlocks.length === 0) {
           // No tool calls — we're done
+          break;
+        }
+
+        // Check if we're about to exceed the loop limit
+        if (loopCount >= MAX_TOOL_LOOPS) {
+          logger.warn('stream', 'Max tool loop iterations reached', {
+            conversationId,
+            loopCount,
+            lastToolNames: toolUseBlocks.map((b) => b.name),
+          });
+          sendToRenderer(win, {
+            type: 'error',
+            error: `Tool loop reached maximum ${MAX_TOOL_LOOPS} iterations. Stopping.`,
+          });
           break;
         }
 
@@ -239,14 +303,15 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
 
           toolResults.push({
             type: 'tool_result',
-            tool_use_id: toolBlock.id,
+            toolUseId: toolBlock.id,
             content: result.content,
-            is_error: result.isError,
+            isError: result.isError,
           });
         }
 
-        // Append tool results as a user message (Anthropic API format)
+        // Append tool results as a user message (Anthropic API format) + persist
         history.push({ role: 'user', content: toolResults });
+        persistMessage(conversationId, 'user', toolResults);
 
         // Signal renderer that LLM will continue after tool results
         sendToRenderer(win, { type: 'assistant_continue' });
@@ -277,6 +342,23 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
     return { success: true };
   });
 
+  // Load conversation history from SQLite into memory
+  ipcMain.handle('conv:loadMessages', (_event, conversationId: string) => {
+    const history = getHistory(conversationId);
+    // Return simplified message format for renderer to display
+    return history.map((msg, i) => {
+      const content = typeof msg.content === 'string'
+        ? [{ type: 'text', text: msg.content }]
+        : msg.content;
+      return {
+        id: `loaded_${i}_${Date.now()}`,
+        role: msg.role,
+        content,
+        timestamp: Date.now() - (history.length - i) * 1000, // Approximate ordering
+      };
+    });
+  });
+
   // Clear conversation history (called when user deletes a conversation)
   ipcMain.handle('conv:clearHistory', (_event, conversationId: string) => {
     histories.delete(conversationId);
@@ -285,12 +367,16 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
 }
 
 /**
- * Safely parse JSON, returning empty object on failure.
+ * Safely parse tool input JSON, logging on failure.
  */
-function safeParse(json: string): Record<string, unknown> {
+function safeParseToolInput(json: string): Record<string, unknown> {
   try {
     return JSON.parse(json) as Record<string, unknown>;
-  } catch {
+  } catch (err) {
+    logger.warn('stream', 'Failed to parse tool input JSON', {
+      json: json.slice(0, 200),
+      error: err instanceof Error ? err.message : String(err),
+    });
     return {};
   }
 }

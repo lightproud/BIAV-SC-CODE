@@ -3,8 +3,12 @@
  *
  * Why an abstraction: BPT must support switching models at runtime
  * (Day-0 差异化 #1: 模型自由). All LLM backends implement this interface.
- * Phase 0 only ships Claude adapter; OpenAI/国产 adapters are future work
+ * Phase 0 ships Claude + OpenAI adapters; others are future work
  * but the interface is designed to accommodate them.
+ *
+ * Naming convention: All TypeScript types use camelCase.
+ * Conversion to wire format (snake_case for Anthropic, etc.) happens
+ * inside each adapter, not here.
  */
 
 import type { ToolDescriptor, TokenUsage } from '../../src/types';
@@ -15,10 +19,14 @@ export interface LlmMessage {
   content: string | LlmContentBlock[];
 }
 
+/**
+ * Content blocks within a message. All fields use camelCase.
+ * Adapters (claude.ts, openai.ts) convert to wire format as needed.
+ */
 export type LlmContentBlock =
   | { type: 'text'; text: string }
   | { type: 'tool_use'; id: string; name: string; input: Record<string, unknown> }
-  | { type: 'tool_result'; tool_use_id: string; content: string; is_error?: boolean };
+  | { type: 'tool_result'; toolUseId: string; content: string; isError?: boolean };
 
 /** Events emitted during streaming. */
 export type LlmStreamEvent =
