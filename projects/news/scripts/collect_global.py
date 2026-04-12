@@ -133,21 +133,21 @@ def run_zero_cost_collectors() -> list[dict]:
     # 键 = fetcher 显示名，值 = 原因 + 修复条件
     # 要恢复某个源：从这里删掉对应行，下面 zero_cost_fetchers 的条目不用改
     SUSPENDED: dict[str, str] = {
-        # 反爬/需登录（无 Playwright 回退）
-        'Xiaohongshu': 'API 404，需 Puppeteer x-s/x-t 签名 → 部署 RSSHub',
-        'Zhihu':       '403，需真实 z_c0 cookie → 部署 RSSHub',
-        'Douyin':      '需 Puppeteer 渲染 → 部署 RSSHub',
+        # 无法通过 cookie/Playwright 解决
         'Lofter':      '503 持续返回',
         'Epic Store':  '403 GraphQL + scrape 均被拦',
-        'Note.com':    '403 被拦',
         'Taobao Merch':'403 被拦',
         'TikTok':      '需 Puppeteer，返回 0 视频',
-        # 内容确实不存在或 API 不可达
         'VK Play':     '游戏页 404',
         'QooApp':      '搜索 0 结果',
         'Xianyu':      '0 商品',
         'GACHAREVENUE':'0 条目',
         'Tieba':       '0 帖子（贴吧搜索已不返回数据）',
+        # cookie 支持已加，有 cookie 自动启用，无 cookie 函数内 skip（不超时）
+        # 'Xiaohongshu': now needs XHS_COOKIE → set in GitHub Secrets
+        # 'Zhihu':       now needs ZHIHU_COOKIE → set in GitHub Secrets
+        # 'Douyin':      now needs DOUYIN_COOKIE → set in GitHub Secrets
+        # 'Note.com':    unsuspended → try HTTP, no cookie needed
     }
 
     # Playwright fallback: platforms where HTTP fails but browser works

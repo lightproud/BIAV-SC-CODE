@@ -49,6 +49,13 @@ jobs:
           TELEGRAM_CHANNELS: ${{ secrets.TELEGRAM_CHANNELS }}
           DC_GALLERY_ID: ${{ secrets.DC_GALLERY_ID }}
           QQ_CHANNEL: ${{ secrets.QQ_CHANNEL }}
+          # Cookie-based auth (set in GitHub Secrets to enable)
+          WEIBO_COOKIE: ${{ secrets.WEIBO_COOKIE }}
+          XHS_COOKIE: ${{ secrets.XHS_COOKIE }}
+          DOUYIN_COOKIE: ${{ secrets.DOUYIN_COOKIE }}
+          ZHIHU_COOKIE: ${{ secrets.ZHIHU_COOKIE }}
+          NGA_COOKIE: ${{ secrets.NGA_COOKIE }}
+          NAVER_COOKIE: ${{ secrets.NAVER_COOKIE }}
         run: python projects/news/scripts/collect_global.py
 
       - name: Split output by platform
