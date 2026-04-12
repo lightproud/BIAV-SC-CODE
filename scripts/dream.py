@@ -1066,10 +1066,10 @@ def rebuild_vector_index():
 
 
 def rebuild_knowledge_graph():
-    """Rebuild knowledge graph via knowledge_graph module."""
+    """Update knowledge graph incrementally (or full rebuild if missing)."""
     try:
-        from knowledge_graph import build_graph
-        graph = build_graph()
+        from knowledge_graph import incremental_update
+        graph = incremental_update(hours_back=24)
         n_nodes = graph["meta"]["node_count"]
         n_edges = graph["meta"]["edge_count"]
         print(f"  - Knowledge graph rebuilt: {n_nodes} nodes, {n_edges} edges")
@@ -1159,10 +1159,208 @@ def run_reflexion():
         print(f"  - Reflexion error: {e}")
 
 
+# ============================================================
+# REM: Weekly Deep Reflection
+# ============================================================
+
+
+def run_rem(client=None) -> dict:
+    """REM sleep: weekly cross-session reflection and memory consolidation.
+
+    1. Collect all session digests from past 7 days
+    2. Extract recurring topics, unresolved issues, behavioral patterns
+    3. Update lessons-learned.md with new insights
+    4. Recalibrate MemRL utility scores based on actual usage
+    5. Produce structured weekly report
+    """
+    from datetime import timedelta
+    cutoff = (TODAY - timedelta(days=7)).isoformat().replace("-", "")
+
+    # 1. Collect session digests from past week
+    digests_dir = REPO / "memory" / "session-digests"
+    weekly_digests = []
+    if digests_dir.exists():
+        for fp in sorted(digests_dir.glob("*.md")):
+            # Filename format: 20260412-083135-a5bb2783.md
+            if fp.stem[:8] >= cutoff:
+                try:
+                    text = fp.read_text(encoding="utf-8")
+                    weekly_digests.append({"file": fp.name, "text": text[:3000]})
+                except (OSError, UnicodeDecodeError):
+                    continue
+
+    print(f"  - {len(weekly_digests)} session digests from past 7 days")
+
+    # 2. Collect search failure patterns
+    search_failures = []
+    sf_file = REPO / "memory" / "dreams" / "search-failures.json"
+    if sf_file.exists():
+        try:
+            search_failures = json.loads(sf_file.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    print(f"  - {len(search_failures)} search failure records")
+
+    # 3. Collect dream journal entries from past week
+    dream_findings = []
+    dreams_dir = REPO / "memory" / "dreams"
+    for fp in sorted(dreams_dir.glob("20*.json")):
+        if fp.stem >= cutoff[:4] + "-" + cutoff[4:6] + "-" + cutoff[6:8]:
+            try:
+                data = json.loads(fp.read_text(encoding="utf-8"))
+                issues = data.get("phase1", {}).get("issues", 0)
+                if issues > 0:
+                    dream_findings.append({"date": fp.stem, "issues": issues})
+            except (json.JSONDecodeError, OSError):
+                continue
+
+    # 4. Extract topic frequency from session digests (zero-cost analysis)
+    topic_counter = defaultdict(int)
+    all_entities = {}
+    try:
+        sys.path.insert(0, str(Path(__file__).parent))
+        from knowledge_graph import _build_entity_dict
+        all_entities = _build_entity_dict()
+    except (ImportError, Exception):
+        pass
+
+    for digest in weekly_digests:
+        text = digest["text"]
+        for entity_name in all_entities:
+            count = text.count(entity_name)
+            if count >= 2:
+                topic_counter[entity_name] += count
+
+    hot_topics = sorted(topic_counter.items(), key=lambda x: x[1], reverse=True)[:15]
+    print(f"  - Top topics: {', '.join(t[0] for t in hot_topics[:5])}")
+
+    # 5. Recalibrate MemRL utility scores from access log
+    try:
+        from memrl import compute_utility
+        utility = compute_utility()
+        print(f"  - MemRL recalibrated: {len(utility)} files")
+    except (ImportError, Exception) as e:
+        print(f"  - MemRL recalibration skipped: {e}")
+
+    # 6. AI-powered weekly reflection (if API available)
+    ai_reflection = {}
+    if client and weekly_digests:
+        digest_summaries = "\n\n".join(
+            f"### {d['file']}\n{d['text'][:800]}" for d in weekly_digests[:10]
+        )
+        search_fail_summary = ""
+        if search_failures:
+            queries = [f.get("query", "") for f in search_failures[-20:]]
+            search_fail_summary = f"\n\nSearch failures (queries with 0 results): {', '.join(queries)}"
+
+        prompt = f"""你是银芯做梦 Agent（REM 层）。基于以下本周会话摘要，进行深度反思。
+
+## 本周会话摘要
+{digest_summaries}
+{search_fail_summary}
+
+## 本周热门话题
+{json.dumps(dict(hot_topics), ensure_ascii=False)}
+
+## 分析要求
+1. 跨会话重复模式：哪些问题/话题反复出现？
+2. 未解决的问题：哪些任务被提及但未完成？
+3. 方法论发现：哪些做法有效，哪些无效？
+4. 知识缺口：搜索失败揭示了哪些缺失的知识？
+5. 改进建议：下周应该优先做什么？
+
+输出 JSON：
+{{
+  "recurring_patterns": [{{"pattern": "描述", "frequency": N, "sessions": ["文件名"]}}],
+  "unresolved_issues": [{{"issue": "描述", "first_seen": "日期"}}],
+  "effective_practices": ["有效做法"],
+  "ineffective_practices": ["无效做法"],
+  "knowledge_gaps": ["缺失知识点"],
+  "new_lessons": [{{"lesson": "经验", "evidence": "来源"}}],
+  "next_week_priorities": ["优先事项"],
+  "weekly_summary": "一段话总结本周"
+}}
+
+只输出 JSON。"""
+
+        try:
+            response = client.messages.create(
+                model="claude-sonnet-4-20250514",
+                max_tokens=4096,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            text = response.content[0].text
+            json_match = re.search(r"\{[\s\S]+\}", text)
+            if json_match:
+                ai_reflection = json.loads(json_match.group())
+                print(f"  - AI reflection complete")
+
+                # Auto-write new lessons to lessons-learned.md
+                new_lessons = ai_reflection.get("new_lessons", [])
+                if new_lessons:
+                    _append_lessons(new_lessons)
+                    print(f"  - {len(new_lessons)} new lessons written to lessons-learned.md")
+        except Exception as e:
+            print(f"  - AI reflection error: {e}")
+
+    # 7. Save weekly report
+    report = {
+        "week": TODAY.isoformat(),
+        "sessions_analyzed": len(weekly_digests),
+        "search_failures": len(search_failures),
+        "dream_findings": dream_findings,
+        "hot_topics": dict(hot_topics),
+        "ai_reflection": ai_reflection,
+    }
+
+    report_file = REPO / "memory" / "dreams" / f"{TODAY.isocalendar()[0]}-W{TODAY.isocalendar()[1]:02d}-weekly.json"
+    report_file.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  - Weekly report saved: {report_file.relative_to(REPO)}")
+
+    return report
+
+
+def _append_lessons(new_lessons: list[dict]):
+    """Append new lessons from REM reflection to lessons-learned.md."""
+    ll_file = REPO / "memory" / "lessons-learned.md"
+    if not ll_file.exists():
+        return
+
+    text = ll_file.read_text(encoding="utf-8")
+
+    # Find the highest lesson number
+    existing_nums = re.findall(r"^(\d+)\.", text, re.MULTILINE)
+    next_num = max((int(n) for n in existing_nums), default=0) + 1
+
+    # Append new lessons
+    additions = []
+    for lesson in new_lessons:
+        content = lesson.get("lesson", "")
+        evidence = lesson.get("evidence", "")
+        if content:
+            entry = f"\n{next_num}. **[REM {TODAY}]** {content}"
+            if evidence:
+                entry += f"\n   - Evidence: {evidence}"
+            additions.append(entry)
+            next_num += 1
+
+    if additions:
+        # Update timestamp
+        text = re.sub(
+            r"(> 最后更新：)\S+( by )\S+",
+            f"\\g<1>{TODAY}\\g<2>dream(rem)",
+            text, count=1,
+        )
+        text += "\n" + "\n".join(additions) + "\n"
+        ll_file.write_text(text, encoding="utf-8")
+
+
 def main():
     args = sys.argv[1:]
     deep = "--deep" in args or "--full" in args
     full = "--full" in args
+    rem = "--rem" in args
     report_mode = "--report" in args
 
     print(f"\U0001F319 Memory Dream Journal -- {TODAY}")
@@ -1203,6 +1401,7 @@ def main():
 
     # Phase 2: Consolidate (AI-powered)
     phase2 = {}
+    client = None
     if deep:
         print(f"\n{'=' * 50}")
         print("Phase 2: Consolidate (AI-powered)")
@@ -1220,6 +1419,14 @@ def main():
         print("Phase 3: Index")
         print("=" * 50)
         run_phase3(phase1.get("keyword_index", {}), phase2)
+
+    # REM: Weekly deep reflection
+    if rem:
+        print(f"\n{'=' * 50}")
+        print("REM: Weekly Reflection")
+        print("=" * 50)
+        rem_client = client if deep and client else get_anthropic_client()
+        run_rem(rem_client)
 
     # Save journal
     journal_path = save_dream_journal(

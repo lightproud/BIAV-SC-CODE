@@ -875,6 +875,73 @@ def search(query: str, top_k: int = 5, use_reranker: bool = True) -> list[dict]:
     return final
 
 
+def synthesize(query: str, results: list[dict]) -> str | None:
+    """Cross-document synthesis: connect findings from multiple sources.
+
+    When results span 2+ different data categories, generates a brief
+    synthesis showing how they relate. Requires ANTHROPIC_API_KEY.
+    Returns a synthesis string, or None if not needed/available.
+    """
+    if len(results) < 2:
+        return None
+
+    # Check if results come from diverse sources
+    categories = set()
+    for r in results:
+        f = r.get("file", "")
+        if "wiki/docs" in f:
+            categories.add("wiki")
+        elif "wiki/data" in f:
+            categories.add("game-data")
+        elif "news/" in f:
+            categories.add("news")
+        elif "discord" in f:
+            categories.add("discord")
+        elif "memory/" in f:
+            categories.add("memory")
+        elif "scripts/" in f or "bpt" in f:
+            categories.add("code")
+        else:
+            categories.add("other")
+
+    # Only synthesize if results span 2+ categories
+    if len(categories) < 2:
+        return None
+
+    try:
+        import anthropic
+        client = anthropic.Anthropic()
+    except (ImportError, Exception):
+        return None
+
+    # Build context from result previews
+    context_parts = []
+    for i, r in enumerate(results[:5]):
+        context_parts.append(f"[{r['file']}]\n{r.get('preview', '')}")
+
+    prompt = f"""用户查询：{query}
+
+以下是来自不同数据源的检索结果：
+
+{"---".join(context_parts)}
+
+请用 2-3 句话综合这些信息，说明它们之间的关联。只输出综合分析，不要重复原始内容。如果信息之间没有有意义的关联，回答"无需综合"。"""
+
+    try:
+        response = client.messages.create(
+            model="claude-sonnet-4-20250514",
+            max_tokens=300,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        result = response.content[0].text.strip()
+        if result and result != "无需综合":
+            return result
+    except Exception:
+        pass
+
+    return None
+
+
 # ============================================================
 # Tier 3: Discord JSONL On-Demand Search
 # ============================================================
@@ -1176,12 +1243,12 @@ def build_index() -> dict:
 
 
 def print_results(results: list[dict], query: str):
-    """Pretty-print search results."""
+    """Pretty-print search results with optional cross-document synthesis."""
     if not results:
         print(f"\n  没有找到与「{query}」相关的结果")
         return
 
-    print(f"\n  🔍 搜索「{query}」— 找到 {len(results)} 个相关知识块\n")
+    print(f"\n  搜索「{query}」- 找到 {len(results)} 个相关知识块\n")
     for i, r in enumerate(results, 1):
         score_str = f"final={r.get('final_score', r['score']):.3f}"
         if "scores" in r:
@@ -1191,6 +1258,13 @@ def print_results(results: list[dict], query: str):
         print(f"      {score_str}")
         preview = r["preview"].replace("\n", " ")[:120]
         print(f"      {preview}...")
+        print()
+
+    # Cross-document synthesis
+    synthesis = synthesize(query, results)
+    if synthesis:
+        print(f"  -- 综合分析 --")
+        print(f"  {synthesis}")
         print()
 
 
