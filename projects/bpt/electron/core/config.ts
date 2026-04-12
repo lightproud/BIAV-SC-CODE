@@ -26,7 +26,6 @@ interface StoreSchema {
   silverMcpPath: string;
   truncateThreshold: number;
   compressionTriggerTurns: number;
-  compressionTriggerTokens: number;
   windowBounds: { x: number; y: number; width: number; height: number } | null;
   /** Plugin whitelist and configuration. */
   plugins: {
@@ -54,7 +53,6 @@ const store = new Store<StoreSchema>({
     silverMcpPath: '',
     truncateThreshold: 2000,
     compressionTriggerTurns: 20,
-    compressionTriggerTokens: 120000,
     windowBounds: null,
     plugins: {
       enabled: {},
