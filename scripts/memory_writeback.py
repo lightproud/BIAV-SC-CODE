@@ -26,7 +26,7 @@ REPO = Path(__file__).resolve().parent.parent
 DREAMS_DIR = REPO / "memory" / "dreams"
 DIGESTS_DIR = REPO / "memory" / "session-digests"
 GRAPH_FILE = REPO / "assets" / "data" / "knowledge-graph.json"
-VECTOR_INDEX = REPO / "assets" / "data" / "vectors.json"
+VECTOR_INDEX = REPO / "assets" / "data" / "vectors.json.gz"
 
 TODAY = date.today()
 VERBOSE = "--verbose" in sys.argv

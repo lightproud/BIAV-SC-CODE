@@ -1090,8 +1090,9 @@ def run_phase3(keyword_index: dict, ai_results: dict = None):
     print(f"  - {len(keyword_index.get('files', {}))} files indexed")
     print(f"  - {len(keyword_index.get('keyword_index', {}))} unique keywords")
 
-    # Vector index: skipped in CI — load_index() auto-rebuilds on first search
-    # (vectors.json is gitignored, rebuilding on ephemeral runners is wasted compute)
+    # Rebuild vector index (TF-IDF) — vectors.json.gz is committed to git
+    print("\n## Vector Index")
+    rebuild_vector_index()
 
     # Rebuild knowledge graph
     print("\n## Knowledge Graph")
