@@ -2,18 +2,17 @@
  * main.ts — BPT Electron main process entry point.
  *
  * This is L0 Shell. It boots in this order:
- * 1. Create window
- * 2. Register IPC trunk (L1)
- * 3. Start Silver Core MCP client (L2)
- * 4. Load BPE index (L2)
- * 5. Register Silver + BPE + Chat IPC handlers
- * 6. Set up tray + hotkey
- * 7. Load renderer URL
+ * 1. Initialize SQLite database
+ * 2. Create window
+ * 3. Register IPC trunk (L1)
+ * 4-6. Register Silver + BPE + Chat IPC handlers
+ * 7. Set up tray + hotkey
+ * 8. Load renderer URL
  *
- * Why this order matters: IPC handlers must be registered BEFORE the renderer
- * tries to call them. Silver/BPE init is async but we register their IPC
- * handlers synchronously with pending-state callbacks, so the renderer can
- * show "connecting..." immediately.
+ * Why this order matters: Database must be ready before IPC handlers.
+ * IPC handlers must be registered BEFORE the renderer tries to call them.
+ * Silver/BPE init is async but we register their IPC handlers synchronously
+ * with pending-state callbacks, so the renderer can show "connecting...".
  */
 
 import { app, BrowserWindow } from 'electron';
@@ -25,8 +24,8 @@ import { registerIpcHandlers } from './core/ipc-trunk';
 import { registerSilverIpc, initSilverCore } from './silver/silver-ipc';
 import { registerBpeIpc, initBpe } from './bpe/bpe-ipc';
 import { registerChatIpc } from './conversation/stream';
+import { initConversationDb, closeConversationDb } from './conversation/store';
 import { logger } from './core/logger';
-import { getConfig } from './core/config';
 
 // Prevent multiple instances
 const gotLock = app.requestSingleInstanceLock();
@@ -44,15 +43,18 @@ app.on('second-instance', () => {
 });
 
 app.whenReady().then(async () => {
-  logger.info('main', 'BPT starting', { version: '0.1.0' });
+  logger.info('main', 'BPT starting', { version: '0.2.0' });
 
-  // 1. Create window
+  // 1. Initialize database
+  initConversationDb();
+
+  // 2. Create window
   const win = createWindow();
 
-  // 2. Register core IPC handlers
+  // 3. Register core IPC handlers
   registerIpcHandlers(() => getMainWindow());
 
-  // 3-5. Init subsystems and register their IPC handlers
+  // 4-6. Init subsystems and register their IPC handlers
   registerSilverIpc();
   registerBpeIpc();
   registerChatIpc(() => getMainWindow());
@@ -65,11 +67,11 @@ app.whenReady().then(async () => {
     logger.error('main', 'BPE init failed', { error: err.message });
   });
 
-  // 6. Tray + hotkey
+  // 7. Tray + hotkey
   createTray();
   registerGlobalHotkeys();
 
-  // 7. Load renderer
+  // 8. Load renderer
   if (process.env.VITE_DEV_SERVER_URL) {
     await win.loadURL(process.env.VITE_DEV_SERVER_URL);
   } else {
@@ -95,4 +97,5 @@ app.on('activate', () => {
 
 app.on('will-quit', () => {
   unregisterGlobalHotkeys();
+  closeConversationDb();
 });
