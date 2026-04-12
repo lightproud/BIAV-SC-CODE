@@ -1,0 +1,67 @@
+/**
+ * bpe-ipc.ts — Register BPE IPC handlers for the renderer.
+ *
+ * Why separate from ipc-trunk: BPE handlers depend on loaded SQLite indexes.
+ * They're registered synchronously (returning "not ready" if indexes aren't
+ * loaded yet), and initBpe() loads them asynchronously.
+ */
+
+import { ipcMain } from 'electron';
+import path from 'node:path';
+import { loadBpeIndexes, closeBpeIndexes, type BpeIndexes } from './index-loader';
+import { searchFts5, lookupSymbol } from './search';
+import { getConfig } from '../core/config';
+import { logger } from '../core/logger';
+
+let indexes: BpeIndexes | null = null;
+
+export function registerBpeIpc(): void {
+  ipcMain.handle('bpe:search', async (_event, query: string, limit?: number) => {
+    if (!indexes) return { results: [], error: 'BPE indexes not loaded' };
+    const results = searchFts5(indexes, query, limit ?? 10);
+    return { query, results };
+  });
+
+  ipcMain.handle('bpe:lookup', async (_event, symbol: string, limit?: number) => {
+    if (!indexes) return { results: [], error: 'BPE indexes not loaded' };
+    const results = lookupSymbol(indexes, symbol, limit ?? 3);
+    return { symbol, results };
+  });
+
+  ipcMain.handle('bpe:status', () => {
+    return {
+      loaded: indexes !== null,
+      hasChunks: indexes?.chunks !== null,
+      hasKeywords: indexes?.keywords !== null,
+      hasVectors: indexes?.vectors !== null,
+    };
+  });
+}
+
+export async function initBpe(): Promise<void> {
+  const repoRoot = (getConfig('repoRoot') as string) || findRepoRoot();
+  const indexDir = path.join(repoRoot, 'projects', 'bpt', '.bpe-index');
+
+  logger.info('bpe', 'Loading BPE indexes', { indexDir });
+
+  indexes = loadBpeIndexes(indexDir);
+
+  const status = {
+    chunks: indexes.chunks !== null,
+    keywords: indexes.keywords !== null,
+    vectors: indexes.vectors !== null,
+  };
+  logger.info('bpe', 'BPE indexes loaded', status);
+}
+
+export function getBpeIndexes(): BpeIndexes | null {
+  return indexes;
+}
+
+function findRepoRoot(): string {
+  let dir = __dirname;
+  for (let i = 0; i < 4; i++) {
+    dir = path.dirname(dir);
+  }
+  return dir;
+}
