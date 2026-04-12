@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-12T06:15:11.443650+00:00",
+  "archived_at": "2026-04-12T09:35:07.931746+00:00",
   "source": "bilibili",
-  "item_count": 39,
+  "item_count": 49,
   "items": [
     {
       "source": "bilibili",
@@ -414,6 +414,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-12T09:19:30+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】角色攻略之波吕克斯",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116390979700314",
+      "author": "萨摩_不耶",
+      "engagement": 177,
+      "media_url": "//i1.hdslb.com/bfs/archive/10a29573fbba1a4a9cb7927fe76667ee3b8a76b5.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-12T09:19:30+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】角色攻略之波吕克斯",
+      "summary": "└ 是日极星 (2赞): 忘却太低产了，攻略都要重制了[笑哭]\n  └ 亚西x (3赞): 今夕是何年\n  └ 大罪司教暴食八奈见 (0赞): 视频里对墨菲的评价跟墨菲几启有关系吗",
+      "url": "https://www.bilibili.com/video/BV1nPDQBuEMf",
+      "author": "萨摩_不耶",
+      "engagement": 176,
+      "media_url": "https://i1.hdslb.com/bfs/archive/10a29573fbba1a4a9cb7927fe76667ee3b8a76b5.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 170,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-10T17:37:46+00:00",
       "lang": "",
       "title": "爱来自唤醒体",
@@ -429,6 +459,36 @@
         "comments_fetched": 1,
         "danmaku": 1
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-11T18:43:21+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】融灾410(4.12)",
+      "summary": "不知道为什么一直上传不了，卡了几天",
+      "url": "https://www.bilibili.com/video/BV1QvD2BkEpR",
+      "author": "菲比又干了",
+      "engagement": 149,
+      "media_url": "https://i2.hdslb.com/bfs/archive/a59816fe7a1af70a5173c10b0dd056ad0c1ee2d1.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 149,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-11T18:43:21+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】融灾410(4.12)",
+      "summary": "不知道为什么一直上传不了，卡了几天",
+      "url": "http://www.bilibili.com/video/av116387473331322",
+      "author": "菲比又干了",
+      "engagement": 149,
+      "media_url": "//i2.hdslb.com/bfs/archive/a59816fe7a1af70a5173c10b0dd056ad0c1ee2d1.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -468,6 +528,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-12T07:44:56+00:00",
+      "lang": "zh",
+      "title": "［相位/轮选］什么叫福袋队里输出最高的是小玫瑰？",
+      "summary": "-\n  └ 不知今世为何 (2赞): 这把鸟弟真打破宿命枷锁了\n  └ HanPi-ProMax (1赞): 魔术师稳定发挥\n  └ bian_loratadine (1赞): 莉莉复活你真得没",
+      "url": "https://www.bilibili.com/video/BV1vdDQBeEer",
+      "author": "莱星Ligh",
+      "engagement": 109,
+      "media_url": "https://i1.hdslb.com/bfs/archive/4f49b869eddf07139aedb28cb1478a630432649a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 104,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-10T12:39:33+00:00",
       "lang": "",
       "title": "如果我开沙耶fumo有人想要吗",
@@ -483,6 +561,18 @@
         "comments_fetched": 3,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-12T07:44:56+00:00",
+      "lang": "zh",
+      "title": "［相位/轮选］什么叫福袋队里输出最高的是小玫瑰？",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116390610732073",
+      "author": "莱星Ligh",
+      "engagement": 105,
+      "media_url": "//i1.hdslb.com/bfs/archive/4f49b869eddf07139aedb28cb1478a630432649a.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -511,6 +601,24 @@
         "play": 97,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-12T06:31:24+00:00",
+      "lang": "zh",
+      "title": "【卡雨虹】大师局 24-2回声拿下沙耶之歌",
+      "summary": "11111\n  └ MarcosChan (1赞): 【【沙耶/守望先锋】单排亚服英杰3第一小锤（国亚国人英杰第一小锤 2026/04/11 22时场 直播回放】 【精准空降到 57:09】 https://www.bilibili.com/video/BV14yD2BiEok/?share_source=copy_web&amp;vd_source=816eac26b62b62268a7bb988af3c620b&amp;t=3429\n  └ G2丶NiKo (0赞): 强大\n  └ 蜜汁自信感vv (0赞): 卡神时代[喜欢][喜欢]",
+      "url": "https://www.bilibili.com/video/BV1jKDSBFEka",
+      "author": "MarcosChan",
+      "engagement": 95,
+      "media_url": "https://i1.hdslb.com/bfs/archive/dbb4070695506c7b8de33b76945c025ace5959f8.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 92,
+        "comment_count": 3,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -549,6 +657,36 @@
         "comments_fetched": 3,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-12T08:46:19+00:00",
+      "lang": "zh",
+      "title": "羊妈c5-5",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1w6DQByE97",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 24,
+      "media_url": "https://i2.hdslb.com/bfs/archive/3327ca4c3e6e8889f3cb53a0aa1e9322aa68b502.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 24,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-12T08:46:19+00:00",
+      "lang": "zh",
+      "title": "羊妈c5-5",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116390845482642",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 24,
+      "media_url": "//i2.hdslb.com/bfs/archive/3327ca4c3e6e8889f3cb53a0aa1e9322aa68b502.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -596,6 +734,24 @@
       "author": "白橘24",
       "engagement": 3,
       "media_url": "https://i2.hdslb.com/bfs/archive/9bbf8a2b5d603217fb80d60b6749e77a8d7269a9.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 3,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-12T06:49:29+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1ZQDQBKEA8",
+      "author": "Naked-_Soul",
+      "engagement": 3,
+      "media_url": "https://i1.hdslb.com/bfs/archive/c1d005d646874245db6caaaee1bced03f5be5f07.jpg",
       "content_type": "image",
       "metadata": {
         "play": 3,
