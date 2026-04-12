@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-11T23:10:21.768682+00:00",
+  "archived_at": "2026-04-12T06:15:11.442187+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -243,6 +243,36 @@
       "review": "голі тьотки",
       "timestamp_created": 1775764224,
       "playtime_forever": 31127
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-11T22:37:48+00:00",
+      "lang": "russian",
+      "title": "[正面] очень крутые женщины спасибо разработчикам за повы...",
+      "summary": "очень крутые женщины спасибо разработчикам за повышение демографии!!!!!",
+      "url": "https://steamcommunity.com/profiles/76561199541665835/recommended/3052450",
+      "author": "76561199541665835",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "очень крутые женщины спасибо разработчикам за повышение демографии!!!!!",
+      "timestamp_created": 1775947068,
+      "playtime_forever": 1310
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-11T21:15:07+00:00",
+      "lang": "schinese",
+      "title": "[正面] 很不错的游戏\n邀请码JJUDL2BJVX求帮",
+      "summary": "很不错的游戏\n邀请码JJUDL2BJVX求帮",
+      "url": "https://steamcommunity.com/profiles/76561199681720933/recommended/3052450",
+      "author": "76561199681720933",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "很不错的游戏\n邀请码JJUDL2BJVX求帮",
+      "timestamp_created": 1775942107,
+      "playtime_forever": 303
     }
   ]
 }

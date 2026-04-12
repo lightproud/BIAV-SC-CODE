@@ -1,11 +1,11 @@
 # 忘却前夜 社区日报 2026-04-12
 
-> 采集时间：2026-04-12 07:10 UTC+8
+> 采集时间：2026-04-12 14:15 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【绘画过程】买一盒肉回家吧「沙耶の唄」 — engagement: 249
-2. [Bilibili] 沙耶之歌第四期 — engagement: 25
+1. [Bilibili] 【绘画过程】买一盒肉回家吧「沙耶の唄」 — engagement: 315
+2. [Bilibili] 沙耶之歌第四期 — engagement: 186
 3. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
 4. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 5. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
@@ -18,9 +18,9 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 20 |
+| Bilibili | 17 |
 | DCInside | 0（沉默）|
-| Discord | 16 |
+| Discord | 10 |
 | 抖音 | 0（沉默）|
 | Epic Games Store | 0（沉默）|
 | Facebook | 0（沉默）|
@@ -63,36 +63,37 @@
 
 ## Discord
 
-今日 12,839 条消息，133 位活跃用户，1,308 次反应。热门频道：🔸morimens-game-chat(9081)、🔸game-question(1178)、🔸綜合討論(887)、🔸general-chat(404)、🔸team-building(329)
+今日 13,624 条消息，133 位活跃用户，1,384 次反应。热门频道：🔸morimens-game-chat(9622)、🔸game-question(1303)、🔸綜合討論(890)、🔸general-chat(431)、🔸team-building(329)
 
 ### 热门话题
 
-1. [DC] angbak@🔸morimens-game-chat:    I got a jumpscare — engagement: 28
-2. [DC] megidola.@🔸morimens-game-chat: Redz doesn't even try to — engagement: 27
-3. [DC] angbak@🔸morimens-game-chat: Sigh I'll just.. go and con — engagement: 26
-4. [DC] willsalvador@🔸morimens-game-chat: Who names their kid f — engagement: 25
-5. [DC] kurotamavii@🔸morimens-game-chat: Angbak, thanks for bei — engagement: 24
+1. [DC] megidola.@🔸morimens-game-chat: Redz doesn't even try to — engagement: 27
+2. [DC] melwyn7591@🔸morimens-game-chat: (附件/嵌入) — engagement: 24
+3. [DC] climbkaly@🔸morimens-game-chat:  probably what you were  — engagement: 23
+4. [DC] climbkaly@🔸morimens-game-chat: Since I'm one of the CC' — engagement: 22
+5. [DC] monchi3524@🔸morimens-game-chat: (附件/嵌入) — engagement: 22
 
 ## Steam 评论
 
 - 好评 6 / 差评 0 / 好评率 100%
-- 语言分布：english 3, russian 2, brazilian 1
+- 语言分布：russian 3, english 2, schinese 1
 
 ### 热门好评
 
-1. [正面] Havent played much but its rlly fun — engagement: 1
-2. [正面] This is a really good game surprisingly at least f... — engagement: 0
-3. [正面] Игра весьма интересна и стоит пробы — engagement: 0
-4. [正面] сюжет прикольный :) — engagement: 0
-5. [正面] 10/10 — engagement: 0
+1. [正面] очень крутые женщины спасибо разработчикам за повы... — engagement: 0
+2. [正面] 很不错的游戏
+邀请码JJUDL2BJVX求帮 — engagement: 0
+3. [正面] This is a really good game surprisingly at least f... — engagement: 0
+4. [正面] Игра весьма интересна и стоит пробы — engagement: 0
+5. [正面] сюжет прикольный :) — engagement: 0
 
 ## Bilibili
 
-1. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 863
-2. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 836
-3. 2026了你甚至还能看到沙耶 — engagement: 679
-4. 坠落 — engagement: 574
-5. 【忘却前夜】3.30-4.13融灾个人记录3-5低配豪赌茉夏 — engagement: 515
+1. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 1169
+2. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 1135
+3. 【忘却前夜】3.30-4.13融灾个人记录3-5低配豪赌茉夏 — engagement: 703
+4. 【忘却前夜】3.30-4.13融灾个人记录3-5低配豪赌茉夏 — engagement: 694
+5. ㅤㅤ — engagement: 541
 
 ## Gamerch Wiki
 
@@ -104,11 +105,11 @@
 
 ## Reddit
 
-1. Wow. I didn't think I'd unlocked that "Reproduction Frenzy"  — engagement: 0
-2. I drew Doll ! — engagement: 0
+1. I drew Doll ! — engagement: 0
+2. Wow. I didn't think I'd unlocked that "Reproduction Frenzy"  — engagement: 0
 3. Cherry Blossom Kimono — engagement: 0
 4. Kathigu-Ra [FAQ + Video guide] — engagement: 0
-5. Around a week ago I convinced my friend to try Morimens in a — engagement: 0
+5. in whole game i hate hate this. what do you mean fate,no way — engagement: 0
 
 ## StopGame.ru
 
@@ -127,19 +128,26 @@
 
 ## 微博
 
-1. 忘却前夜#忘却前夜#
-【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
-「嘴巴...这个？弥 — engagement: 0
-2. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
+1. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
 
 忘却前夜 — engagement: 0
+2. 忘却前夜#忘却前夜#
+【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
+「嘴巴...这个？弥 — engagement: 0
 3. 🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌
 
 ✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨
 
 🧠 — engagement: 0
-4. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-5. 【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所 — engagement: 0
+4. 忘却前夜
+🌹当我们再次相见，我会带上花束🌹
+
+今日🧠为大家带来亿些超清大图～
+请多多支持我们奥尔拉☺️✨✨✨
+#脑缸视觉 — engagement: 0
+5. 忘却前夜 喔？我上来了吗
+这里果然有更标致的种子——就是在说你，哎呀，真是可爱♥
+来吗~准备好，加入我，融入我，我已经… — engagement: 0
 
 ## 微信公众号
 
@@ -151,11 +159,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 283583
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 41014
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38312
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18807
-5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 17286
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 283799
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 40998
+3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38313
+4. 🔥 Top 3 Characters in Morimens – April 2025 🌟 — engagement: 37769
+5. I've never played a gacha game as intense as this. #morimens — engagement: 20244
 
 ## 沉默平台
 
