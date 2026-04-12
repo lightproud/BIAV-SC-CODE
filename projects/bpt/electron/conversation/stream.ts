@@ -20,6 +20,7 @@ import { ClaudeProvider } from '../llm/claude';
 import { OpenAiProvider } from '../llm/openai';
 import { getActiveTools } from '../llm/tool-registry';
 import { estimateRequestTokens, estimateTokens, mergeUsage, accumulateUsage, emptyUsage } from '../llm/token-accounting';
+import { getModelSpec } from '../../src/models';
 import { logTokenUsage } from '../core/logger';
 import { getConfig } from '../core/config';
 import { logger } from '../core/logger';
@@ -38,10 +39,26 @@ let provider: LlmProvider | null = null;
 let lastProviderKey = '';
 
 const MAX_TOOL_LOOPS = 10;
-const MAX_TOKENS_BY_GEAR: Record<Gear, number> = {
-  chat: 4096,
-  work: 8192,
+
+/**
+ * Output token limits by gear, as a fraction of the model's maxOutput.
+ *
+ * Why not use model.maxOutput directly: chat gear doesn't need 64k output
+ * for Q&A — capping saves cost. Work gear needs more for code generation
+ * but still doesn't need the full 128k Opus ceiling every turn.
+ *
+ * The actual value = min(gear fraction * model.maxOutput, gear hard cap).
+ */
+const OUTPUT_LIMITS: Record<Gear, { fraction: number; hardCap: number }> = {
+  chat: { fraction: 0.25, hardCap: 16_384 },
+  work: { fraction: 0.50, hardCap: 32_768 },
 };
+
+function getMaxOutputTokens(model: string, gear: Gear): number {
+  const spec = getModelSpec(model);
+  const limit = OUTPUT_LIMITS[gear];
+  return Math.min(Math.floor(spec.maxOutput * limit.fraction), limit.hardCap);
+}
 
 const BASE_SYSTEM_PROMPT = `You are BPT (Black Pool Terminal), an AI assistant deeply integrated with the 忘却前夜 (Morimens) project.
 You have access to Silver Core memory tools and Black Pool Explorer for searching the project's codebase and configurations.
@@ -207,6 +224,9 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
       // Build system prompt once per user turn (auto-inject Silver Core context)
       const systemPrompt = await buildSystemPrompt(userMessage);
 
+      // Model-aware output limit: fraction of model's maxOutput, capped by gear
+      const maxOutputTokens = getMaxOutputTokens(endpoint.model, currentGear);
+
       // Tool loop: stream -> collect tool_use -> execute -> re-stream
       let totalUsage = emptyUsage();
       let loopCount = 0;
@@ -220,7 +240,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
         const overhead = {
           systemPromptTokens: estimateTokens(systemPrompt),
           toolSchemaTokens: estimateTokens(JSON.stringify(tools)),
-          maxOutputTokens: MAX_TOKENS_BY_GEAR[currentGear],
+          maxOutputTokens: maxOutputTokens,
         };
 
         // Apply compression before sending (operates on a copy)
@@ -251,7 +271,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
             systemPrompt: systemPrompt,
             messages: messagesToSend,
             tools,
-            maxTokens: MAX_TOKENS_BY_GEAR[currentGear],
+            maxTokens: maxOutputTokens,
             cacheControl: useCacheControl,
           },
           (streamEvent: LlmStreamEvent) => {
