@@ -37,7 +37,9 @@ export class ClaudeProvider implements LlmProvider {
     this.currentModel = config.model;
 
     try {
-      const tools = config.tools.map((t) => this.toAnthropicTool(t, config.cacheControl));
+      const tools = config.tools.map((t, i) =>
+        this.toAnthropicTool(t, config.cacheControl && i === config.tools.length - 1),
+      );
       const messages = config.messages.map((m) => this.toAnthropicMessage(m));
 
       // Build system prompt with cache_control if enabled
@@ -150,16 +152,16 @@ export class ClaudeProvider implements LlmProvider {
 
   private toAnthropicTool(
     tool: ToolDescriptor,
-    cacheControl: boolean,
+    isLastAndCacheable: boolean,
   ): Record<string, unknown> {
     const result: Record<string, unknown> = {
       name: tool.name,
       description: tool.description,
       input_schema: tool.inputSchema,
     };
-    // Mark the LAST tool with cache_control so that the entire tools array
-    // (which is prefix-matched) gets cached.
-    if (cacheControl) {
+    // Only mark the LAST tool with cache_control — Anthropic's prompt cache
+    // is prefix-matched, so tagging the final item caches the entire tools array.
+    if (isLastAndCacheable) {
       result.cache_control = { type: 'ephemeral' };
     }
     return result;

@@ -155,6 +155,8 @@ export interface BPEChunk {
 }
 
 // ─── App Config ─────────────────────────────────────────────────
+// Subset of config fields shared between main and renderer.
+// The full schema lives in electron/core/config.ts StoreSchema.
 
 export interface AppConfig {
   endpoint: LLMEndpoint;
@@ -162,6 +164,7 @@ export interface AppConfig {
   repoRoot: string;          // path to brain-in-a-vat root
   truncateThreshold: number; // max tokens for tool result before truncation
   compressionTriggerTurns: number;
+  bpeRerankerEnabled: boolean;
 }
 
 // ─── IPC Channel Names ──────────────────────────────────────────

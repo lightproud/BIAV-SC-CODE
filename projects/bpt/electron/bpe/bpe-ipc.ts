@@ -10,6 +10,8 @@ import { ipcMain } from 'electron';
 import path from 'node:path';
 import { loadBpeIndexes, closeBpeIndexes, type BpeIndexes } from './index-loader';
 import { searchFts5, searchHybrid, lookupSymbol } from './search';
+import { chunkToCiteBlock } from './cite';
+import type { BPEChunk } from '../../src/types';
 import { getConfig } from '../core/config';
 import { logger } from '../core/logger';
 
@@ -28,6 +30,12 @@ export function registerBpeIpc(): void {
     if (!indexes) return { results: [], error: 'BPE indexes not loaded' };
     const results = lookupSymbol(indexes, symbol, limit ?? 3);
     return { symbol, results };
+  });
+
+  // @Cite: convert a BPE chunk into a CiteBlock for conversation injection.
+  // The renderer calls this when the user clicks "Cite" on a search result.
+  ipcMain.handle('cite:inject', (_event, chunk: BPEChunk) => {
+    return chunkToCiteBlock(chunk);
   });
 
   ipcMain.handle('bpe:status', () => {
@@ -58,6 +66,13 @@ export async function initBpe(): Promise<void> {
 
 export function getBpeIndexes(): BpeIndexes | null {
   return indexes;
+}
+
+export function shutdownBpe(): void {
+  if (indexes) {
+    closeBpeIndexes(indexes);
+    indexes = null;
+  }
 }
 
 function findRepoRoot(): string {
