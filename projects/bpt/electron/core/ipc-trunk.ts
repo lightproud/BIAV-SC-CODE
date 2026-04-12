@@ -16,6 +16,7 @@ import {
   deleteConversation,
   updateConversationTitle,
 } from '../conversation/store';
+import { listArtifacts, getArtifact, deleteArtifact } from '../conversation/artifacts';
 
 /**
  * Register all IPC handlers. Call once from main.ts after window creation.
@@ -92,6 +93,19 @@ export function registerIpcHandlers(getWindow: () => BrowserWindow | null): void
   ipcMain.handle('conv:rename', (_event, id: string, title: string) => {
     updateConversationTitle(id, title);
     return true;
+  });
+
+  // ── Artifacts ─────────────────────────────────────────────
+  ipcMain.handle('artifact:list', (_event, conversationId?: string) => {
+    return listArtifacts(conversationId);
+  });
+
+  ipcMain.handle('artifact:get', (_event, id: string) => {
+    return getArtifact(id);
+  });
+
+  ipcMain.handle('artifact:delete', (_event, id: string) => {
+    return deleteArtifact(id);
   });
 
   // ── Window ────────────────────────────────────────────────

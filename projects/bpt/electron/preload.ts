@@ -28,6 +28,9 @@ const api = {
   convList: () => ipcRenderer.invoke('conv:list'),
   convCreate: (title: string) => ipcRenderer.invoke('conv:create', title),
   convDelete: (id: string) => ipcRenderer.invoke('conv:delete', id),
+  convRename: (id: string, title: string) => ipcRenderer.invoke('conv:rename', id, title),
+  convLoadMessages: (id: string) => ipcRenderer.invoke('conv:loadMessages', id),
+  convClearHistory: (id: string) => ipcRenderer.invoke('conv:clearHistory', id),
 
   // ── Config ────────────────────────────────────────────────
   configGet: (key: string) => ipcRenderer.invoke('config:get', key),
@@ -60,9 +63,40 @@ const api = {
   citeInject: (conversationId: string, chunk: unknown) =>
     ipcRenderer.invoke('cite:inject', conversationId, chunk),
 
+  // ── Plugins ───────────────────────────────────────────────
+  pluginList: () => ipcRenderer.invoke('plugin:list'),
+  pluginEnable: (name: string) => ipcRenderer.invoke('plugin:enable', name),
+  pluginDisable: (name: string) => ipcRenderer.invoke('plugin:disable', name),
+  pluginReload: () => ipcRenderer.invoke('plugin:reload'),
+
+  // ── Artifacts ─────────────────────────────────────────────
+  artifactList: (conversationId?: string) =>
+    ipcRenderer.invoke('artifact:list', conversationId),
+  artifactGet: (id: string) =>
+    ipcRenderer.invoke('artifact:get', id),
+  artifactDelete: (id: string) =>
+    ipcRenderer.invoke('artifact:delete', id),
+
   // ── Token Log ─────────────────────────────────────────────
   tokenHistory: (conversationId: string) =>
     ipcRenderer.invoke('token:history', conversationId),
+
+  // ── Dream / Sentinel ─────────────────────────────────────
+  dreamList: () => ipcRenderer.invoke('dream:list'),
+  dreamGet: (date: string) => ipcRenderer.invoke('dream:get', date),
+  dreamLatest: () => ipcRenderer.invoke('dream:latest'),
+  dreamInsights: () => ipcRenderer.invoke('dream:insights'),
+  sentinelAlerts: () => ipcRenderer.invoke('sentinel:alerts'),
+
+  // ── Updater ──────────────────────────────────────────────
+  updaterCheck: () => ipcRenderer.invoke('updater:check'),
+  updaterDownload: () => ipcRenderer.invoke('updater:download'),
+  updaterInstall: () => ipcRenderer.invoke('updater:install'),
+  onUpdaterEvent: (callback: (event: unknown) => void) => {
+    const handler = (_: unknown, data: unknown) => callback(data);
+    ipcRenderer.on('updater:event', handler);
+    return () => ipcRenderer.removeListener('updater:event', handler);
+  },
 
   // ── Shell ─────────────────────────────────────────────────
   windowMinimize: () => ipcRenderer.invoke('window:minimize'),

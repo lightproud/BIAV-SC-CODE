@@ -1,19 +1,29 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import Sidebar from './components/Sidebar';
 import ChatView from './components/ChatView';
 import SilverPanel from './components/SilverPanel';
 import BPEPanel from './components/BPEPanel';
 import SettingsPanel from './components/SettingsPanel';
+import ArtifactsPanel from './components/ArtifactsPanel';
+import PluginsPanel from './components/PluginsPanel';
+import DreamPanel from './components/DreamPanel';
+import SentinelPanel from './components/SentinelPanel';
 import StatusBar from './components/StatusBar';
 import ErrorBoundary from './components/ErrorBoundary';
 import type { CiteBlock } from './types';
 
-type RightPanel = 'none' | 'silver' | 'bpe' | 'settings';
+type RightPanel = 'none' | 'silver' | 'bpe' | 'settings' | 'artifacts' | 'plugins' | 'dream' | 'sentinel';
 
 export default function App() {
   const [rightPanel, setRightPanel] = useState<RightPanel>('none');
   const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
   const [pendingCites, setPendingCites] = useState<CiteBlock[]>([]);
+  const [sidebarRefreshKey, setSidebarRefreshKey] = useState(0);
+
+  // Use ref to avoid re-creating the consume callback on every cite change.
+  // This prevents ChatView's stream event listener from being re-registered.
+  const pendingCitesRef = useRef<CiteBlock[]>([]);
+  pendingCitesRef.current = pendingCites;
 
   const togglePanel = (panel: RightPanel) => {
     setRightPanel((prev) => (prev === panel ? 'none' : panel));
@@ -21,17 +31,33 @@ export default function App() {
 
   /**
    * Handle @Cite injection from BPE panel.
-   * Adds a cite block to pendingCites; ChatView picks it up on next send.
    */
   const handleCite = useCallback((cite: CiteBlock) => {
     setPendingCites((prev) => [...prev, cite]);
   }, []);
 
+  /**
+   * Consume pending cites. Uses ref so this callback is stable (no deps).
+   */
   const consumePendingCites = useCallback((): CiteBlock[] => {
-    const cites = pendingCites;
+    const cites = pendingCitesRef.current;
     setPendingCites([]);
     return cites;
-  }, [pendingCites]);
+  }, []);
+
+  /**
+   * Open the Settings panel (used by ChatView's welcome page).
+   */
+  const openSettings = useCallback(() => {
+    setRightPanel('settings');
+  }, []);
+
+  /**
+   * Trigger Sidebar to refresh its conversation list (used after auto-title).
+   */
+  const refreshSidebar = useCallback(() => {
+    setSidebarRefreshKey((k) => k + 1);
+  }, []);
 
   return (
     <ErrorBoundary>
@@ -41,10 +67,16 @@ export default function App() {
           {/* Sidebar */}
           <Sidebar
             currentId={currentConversationId}
+            refreshKey={sidebarRefreshKey}
+            activePanel={rightPanel}
             onSelect={setCurrentConversationId}
             onToggleSilver={() => togglePanel('silver')}
             onToggleBpe={() => togglePanel('bpe')}
             onToggleSettings={() => togglePanel('settings')}
+            onToggleArtifacts={() => togglePanel('artifacts')}
+            onTogglePlugins={() => togglePanel('plugins')}
+            onToggleDream={() => togglePanel('dream')}
+            onToggleSentinel={() => togglePanel('sentinel')}
           />
 
           {/* Chat */}
@@ -53,12 +85,26 @@ export default function App() {
               conversationId={currentConversationId}
               pendingCites={pendingCites}
               onConsumeCites={consumePendingCites}
+              onOpenSettings={openSettings}
+              onConversationUpdated={refreshSidebar}
             />
           </div>
 
-          {/* Right panel (Silver / BPE / Settings) */}
+          {/* Right panel (Silver / BPE / Settings / etc.) */}
           {rightPanel !== 'none' && (
-            <div className="w-80 border-l border-bpt-border flex flex-col overflow-hidden">
+            <div className="w-80 border-l border-bpt-border flex flex-col overflow-hidden panel-enter">
+              {/* Panel close button */}
+              <div className="flex items-center justify-end px-2 pt-1">
+                <button
+                  onClick={() => setRightPanel('none')}
+                  className="text-bpt-text-dim hover:text-bpt-text text-xs px-1.5 py-0.5
+                             rounded hover:bg-bpt-border/50 transition-colors"
+                  title="Close panel"
+                >
+                  [x]
+                </button>
+              </div>
+
               {rightPanel === 'silver' && <SilverPanel />}
               {rightPanel === 'bpe' && (
                 <BPEPanel
@@ -67,6 +113,12 @@ export default function App() {
                 />
               )}
               {rightPanel === 'settings' && <SettingsPanel />}
+              {rightPanel === 'artifacts' && (
+                <ArtifactsPanel conversationId={currentConversationId} />
+              )}
+              {rightPanel === 'plugins' && <PluginsPanel />}
+              {rightPanel === 'dream' && <DreamPanel />}
+              {rightPanel === 'sentinel' && <SentinelPanel />}
             </div>
           )}
         </div>
