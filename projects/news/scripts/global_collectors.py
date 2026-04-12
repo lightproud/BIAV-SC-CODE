@@ -427,10 +427,11 @@ def fetch_youtube():
 
 
 def fetch_nga():
-    """从 NGA 论坛获取忘却前夜版块帖子。"""
+    """从 NGA 论坛获取忘却前夜版块帖子。支持 NGA_COOKIE 环境变量。"""
     # NGA forum ID for 忘却前夜 — can be overridden via env var
     # Search NGA for the correct FID if this one doesn't work
     nga_fid = os.environ.get("NGA_FORUM_ID", "")
+    nga_cookie = os.environ.get("NGA_COOKIE", "nga_read_toma=1")
 
     items = []
 
@@ -444,7 +445,7 @@ def fetch_nga():
                     params={"key": keyword, "fid": 0, "ajax": 1},
                     headers={
                         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                        "Cookie": "nga_read_toma=1",
+                        "Cookie": nga_cookie,
                         "Accept": "application/json",
                     },
                 )
@@ -569,14 +570,18 @@ def fetch_taptap():
 # ─── 新增数据源 ──────────────────────────────────────────
 
 def fetch_weibo():
-    """从微博搜索忘却前夜相关热帖。"""
+    """从微博搜索忘却前夜相关热帖。支持 WEIBO_COOKIE 环境变量提升成功率。"""
+    cookie = os.environ.get("WEIBO_COOKIE", "")
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
+            headers = {"Referer": "https://m.weibo.cn"}
+            if cookie:
+                headers["Cookie"] = cookie
             data = _get(
                 "https://m.weibo.cn/api/container/getIndex",
                 params={"containerid": f"100103type=1&q={keyword}", "page_type": "searchall"},
-                headers={"Referer": "https://m.weibo.cn"},
+                headers=headers,
             ).json()
 
             for card in data.get("data", {}).get("cards", []):
@@ -609,14 +614,18 @@ def fetch_weibo():
 
 
 def fetch_xiaohongshu():
-    """从小红书搜索忘却前夜内容。"""
+    """从小红书搜索忘却前夜内容。需要 XHS_COOKIE 环境变量（含 a1 + web_session）。"""
+    cookie = os.environ.get("XHS_COOKIE", "")
+    if not cookie:
+        logger.info("Xiaohongshu: XHS_COOKIE not set, skipping")
+        return []
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
             data = _get(
                 "https://edith.xiaohongshu.com/api/sns/web/v1/search/notes",
                 params={"keyword": keyword, "page": 1, "page_size": 20, "sort": "time_descending"},
-                headers={"Referer": "https://www.xiaohongshu.com"},
+                headers={"Referer": "https://www.xiaohongshu.com", "Cookie": cookie},
             ).json()
 
             for note in data.get("data", {}).get("items", []) or []:
@@ -645,14 +654,18 @@ def fetch_xiaohongshu():
 
 
 def fetch_douyin():
-    """从抖音搜索忘却前夜相关视频。"""
+    """从抖音搜索忘却前夜相关视频。需要 DOUYIN_COOKIE 环境变量。"""
+    cookie = os.environ.get("DOUYIN_COOKIE", "")
+    if not cookie:
+        logger.info("Douyin: DOUYIN_COOKIE not set, skipping")
+        return []
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
             data = _get(
                 "https://www.douyin.com/aweme/v1/web/search/item/",
                 params={"keyword": keyword, "count": 20, "sort_type": 0},
-                headers={"Referer": "https://www.douyin.com"},
+                headers={"Referer": "https://www.douyin.com", "Cookie": cookie},
             ).json()
 
             for aweme in data.get("data", []) or []:
@@ -723,14 +736,18 @@ def fetch_tieba():
 
 
 def fetch_naver_cafe():
-    """从 Naver Cafe 搜索韩国忘却前夜社区。"""
+    """从 Naver Cafe 搜索韩国忘却前夜社区。支持 NAVER_COOKIE 环境变量。"""
+    naver_cookie = os.environ.get("NAVER_COOKIE", "")
     items = []
     for keyword in KEYWORDS["ko"]:
         try:
+            headers = {"Referer": "https://cafe.naver.com"}
+            if naver_cookie:
+                headers["Cookie"] = naver_cookie
             data = _get(
                 "https://apis.naver.com/cafe-web/cafe2/ArticleSearchListV2.json",
                 params={"query": keyword, "page": 1, "sortBy": "date"},
-                headers={"Referer": "https://cafe.naver.com"},
+                headers=headers,
             ).json()
 
             message = data.get("message", {})
@@ -1643,14 +1660,18 @@ def fetch_tiktok():
 
 
 def fetch_zhihu():
-    """从知乎搜索忘却前夜相关问答/文章。"""
+    """从知乎搜索忘却前夜相关问答/文章。需要 ZHIHU_COOKIE (z_c0) 环境变量。"""
+    cookie = os.environ.get("ZHIHU_COOKIE", "")
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
+            headers = {"Referer": "https://www.zhihu.com"}
+            if cookie:
+                headers["Cookie"] = f"z_c0={cookie}" if not cookie.startswith("z_c0=") else cookie
             data = _get(
                 "https://www.zhihu.com/api/v4/search_v3",
                 params={"q": keyword, "t": "general", "offset": 0, "limit": 20},
-                headers={"Referer": "https://www.zhihu.com"},
+                headers=headers,
             )
             if data and data.status_code == 200:
                 try:
