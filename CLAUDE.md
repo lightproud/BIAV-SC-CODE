@@ -135,12 +135,9 @@ python scripts/dream.py --rebuild
 
 **主力手段（跨工具通用）**：会话过程中主动写入 `memory/` 文件和 `fact_store.py`。遇到决策、发现、教训时立即写，不要等会话结束。
 
-**SessionEnd hook（Claude Code 自动，v0.2）**：`.claude/settings.json` 注册，会话结束时自动执行：
+**SessionEnd hook（Claude Code 自动，v0.3）**：`.claude/settings.json` 注册，会话结束时自动执行：
 - `scripts/session-end-distill.sh` → `scripts/session_distiller.py`
-- 每次会话产出三份文件到 `memory/session-digests/`：
-  - `{stamp}-{sid}.json` — 结构化元数据索引（gitignored，本地查阅）
-  - `{stamp}-{sid}.md` — 完整对话 Markdown（推进 git，公开成长记录）
-  - `{stamp}-{sid}.jsonl.gz` — 原始 transcript 压缩存档（推进 git）
+- 产出 `memory/session-digests/{stamp}-{sid}.md`（完整对话 Markdown，推进 git，公开成长记录）
 - 纯结构化解析，不调 LLM。日志落在 `/tmp/session-distill.log`
 - 限制：仅 Claude Code 有效；仅在 cwd 为 brain-in-a-vat 时触发
 

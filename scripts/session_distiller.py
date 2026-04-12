@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
 """
-session_distiller.py — Claude Code SessionEnd transcript distiller (v0.2 archive).
+session_distiller.py — Claude Code SessionEnd transcript distiller (v0.3 md-only).
 
-Reads a Claude Code session JSONL transcript and writes three outputs to
-memory/session-digests/:
-
-  1. {stamp}-{sid}.json   — structural metadata index (turns, tools, files)
-  2. {stamp}-{sid}.md     — human-readable Markdown conversation record
-  3. {stamp}-{sid}.jsonl.gz — gzipped verbatim copy of the raw transcript
-
-All three are committed to git as a public growth record. No API calls —
-pure structural parsing + file copy.
+Reads a Claude Code session JSONL transcript and writes a human-readable
+Markdown conversation record to memory/session-digests/{stamp}-{sid}.md.
+Committed to git as a public growth record. No API calls — pure structural
+parsing.
 
 Called by .claude/session-end-distill.sh when SessionEnd fires.
 
@@ -23,9 +18,7 @@ Usage:
 """
 
 import argparse
-import gzip
 import json
-import shutil
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -347,12 +340,6 @@ def render_markdown(transcript_path: Path, session_id: str, metadata: dict) -> s
     return '\n'.join(lines)
 
 
-def copy_transcript_gz(src: Path, dst: Path):
-    """Gzip-copy the raw JSONL transcript for archival."""
-    with open(src, 'rb') as fin, gzip.open(dst, 'wb', compresslevel=6) as fout:
-        shutil.copyfileobj(fin, fout)
-
-
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument('--transcript', required=True, type=Path)
@@ -372,24 +359,12 @@ def main() -> int:
     sid_short = (args.session_id or 'unknown')[:8]
     base = f'{stamp}-{sid_short}'
 
-    # 1. JSON metadata index
-    json_path = args.digest_dir / f'{base}.json'
-    json_path.write_text(
-        json.dumps(metadata, indent=2, ensure_ascii=False),
-        encoding='utf-8',
-    )
-
-    # 2. Markdown conversation record
+    # Markdown conversation record (the only committed output)
     md_path = args.digest_dir / f'{base}.md'
     md_text = render_markdown(args.transcript, args.session_id, metadata)
     md_path.write_text(md_text, encoding='utf-8')
 
-    # 3. Gzipped verbatim transcript copy
-    gz_path = args.digest_dir / f'{base}.jsonl.gz'
-    copy_transcript_gz(args.transcript, gz_path)
-
-    gz_kb = gz_path.stat().st_size / 1024
-    print(f'Wrote: {json_path.name} / {md_path.name} / {gz_path.name} ({gz_kb:.0f} KB)')
+    print(f'Wrote: {md_path.name}')
     print(
         f'  turns: user={metadata["turns"]["user"]} '
         f'assistant={metadata["turns"]["assistant"]} '
