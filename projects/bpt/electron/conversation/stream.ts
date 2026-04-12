@@ -26,6 +26,7 @@ import { logger } from '../core/logger';
 import { executeTool } from './tool-loop';
 import { compressHistory } from './compressor';
 import { addMessage, getMessages, deleteMessages } from './store';
+import { getSilverApi } from '../silver/silver-ipc';
 import type { LlmProvider, LlmStreamEvent, LlmMessage, LlmContentBlock } from '../llm/provider';
 import type { Gear } from '../../src/types';
 
@@ -37,11 +38,54 @@ let provider: LlmProvider | null = null;
 let lastProviderKey = '';
 
 const MAX_TOOL_LOOPS = 10;
+const MAX_TOKENS_BY_GEAR: Record<Gear, number> = {
+  chat: 4096,
+  work: 8192,
+};
 
-const SYSTEM_PROMPT = `You are BPT (Black Pool Terminal), an AI assistant deeply integrated with the 忘却前夜 (Morimens) project.
+const BASE_SYSTEM_PROMPT = `You are BPT (Black Pool Terminal), an AI assistant deeply integrated with the 忘却前夜 (Morimens) project.
 You have access to Silver Core memory tools and Black Pool Explorer for searching the project's codebase and configurations.
 Always respond in Chinese unless the user explicitly asks for another language.
 Be concise and precise. When using tools, explain what you're doing and why.`;
+
+/**
+ * Build the full system prompt by injecting relevant Silver Core context.
+ *
+ * Why: Plan §6 Tier 1 requires "auto-inject top-3 memories per turn".
+ * recommend_context runs as a direct Python call (zero LLM cost), and its
+ * results are appended to the system prompt so the LLM starts each turn
+ * with awareness of the most relevant project knowledge.
+ */
+async function buildSystemPrompt(userMessage: string): Promise<string> {
+  const silverApi = getSilverApi();
+  if (!silverApi) return BASE_SYSTEM_PROMPT;
+
+  try {
+    const recommended = await silverApi.recommendContext(userMessage) as {
+      recommended_files?: Array<{ file: string; reason: string; preview?: string }>;
+    };
+
+    const files = recommended?.recommended_files;
+    if (!files || files.length === 0) return BASE_SYSTEM_PROMPT;
+
+    // Take top 3 recommendations, format as concise context block
+    const contextLines = files.slice(0, 3).map((f) => {
+      const preview = f.preview ? `\n  ${f.preview.slice(0, 200)}` : '';
+      return `- ${f.file}: ${f.reason}${preview}`;
+    });
+
+    return `${BASE_SYSTEM_PROMPT}
+
+## Relevant project context (auto-injected from Silver Core)
+${contextLines.join('\n')}`;
+  } catch (err) {
+    // recommend_context failure must never block the LLM call
+    logger.warn('stream', 'recommend_context failed, using base prompt', {
+      error: err instanceof Error ? err.message : String(err),
+    });
+    return BASE_SYSTEM_PROMPT;
+  }
+}
 
 /**
  * Get or create the LLM provider based on current config.
@@ -160,6 +204,9 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
       history.push({ role: 'user', content: userMessage });
       persistMessage(conversationId, 'user', userMessage);
 
+      // Build system prompt once per user turn (auto-inject Silver Core context)
+      const systemPrompt = await buildSystemPrompt(userMessage);
+
       // Tool loop: stream -> collect tool_use -> execute -> re-stream
       let totalUsage = emptyUsage();
       let loopCount = 0;
@@ -168,7 +215,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
         loopCount++;
 
         // Apply compression before sending (operates on a copy)
-        const { messages: messagesToSend, wasCompressed, droppedTurns } = compressHistory([...history]);
+        const { messages: messagesToSend, wasCompressed, droppedTurns } = await compressHistory([...history]);
 
         if (wasCompressed) {
           logger.info('stream', `Compressed history: dropped ${droppedTurns} turns`);
@@ -176,7 +223,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
 
         // Pre-estimate token breakdown
         const preEstimate = estimateRequestTokens(
-          SYSTEM_PROMPT,
+          systemPrompt,
           tools,
           JSON.stringify(messagesToSend),
         );
@@ -192,10 +239,10 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
         await currentProvider.stream(
           {
             model: endpoint.model,
-            systemPrompt: SYSTEM_PROMPT,
+            systemPrompt: systemPrompt,
             messages: messagesToSend,
             tools,
-            maxTokens: 4096,
+            maxTokens: MAX_TOKENS_BY_GEAR[currentGear],
             cacheControl: useCacheControl,
           },
           (streamEvent: LlmStreamEvent) => {

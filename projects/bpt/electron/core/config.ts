@@ -46,7 +46,7 @@ const store = new Store<StoreSchema>({
       name: 'Claude (Gateway)',
       baseUrl: 'https://api.anthropic.com',
       apiKey: '',
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
     },
     currentGear: 'chat',
     conversations: [],

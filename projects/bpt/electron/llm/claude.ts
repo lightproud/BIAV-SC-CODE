@@ -187,7 +187,7 @@ export class ClaudeProvider implements LlmProvider {
 
   /**
    * Rough cost estimation. Prices are per-million-tokens.
-   * These should be configurable per-model; for now hardcode Sonnet 4 prices.
+   * These should be configurable per-model; for now hardcode Sonnet 4.6 prices.
    */
   private estimateCost(
     input: number,
