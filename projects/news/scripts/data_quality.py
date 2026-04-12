@@ -186,6 +186,7 @@ class SilentPlatformTracker:
             self.health_data['platforms'][platform] = {
                 'level': self.LEVEL_ACTIVE,
                 'last_success_date': None,
+                'last_check_date': None,
                 'consecutive_silent_days': 0,
                 'total_items': 0,
                 'errors': [],
@@ -195,13 +196,15 @@ class SilentPlatformTracker:
 
         if items_count > 0:
             p['last_success_date'] = today
+            p['last_check_date'] = today
             p['consecutive_silent_days'] = 0
             p['total_items'] += items_count
             p['level'] = self.LEVEL_ACTIVE
         else:
-            # 无数据
-            if p['last_success_date'] != today:
+            # 无数据：每天最多累加 1（aggregator 每小时跑一次，不能按次累计）
+            if p.get('last_check_date') != today and p.get('last_success_date') != today:
                 p['consecutive_silent_days'] += 1
+            p['last_check_date'] = today
 
             # 检查是否需要降级
             if p['consecutive_silent_days'] >= self.DORMANT_THRESHOLD:

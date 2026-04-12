@@ -68,7 +68,6 @@ PLATFORM_NAMES = {
     'qooapp': 'QooApp',
     'epic': 'Epic Games Store',
     # 日語
-    'gamerch': 'Gamerch Wiki',
     'note_com': 'Note.com',
     # 韓国語追加
     'ruliweb': 'Ruliweb',
@@ -77,22 +76,31 @@ PLATFORM_NAMES = {
     'stopgame': 'StopGame.ru',
     # Global English
     'gacharevenue': 'GACHAREVENUE',
-    'miraheze_wiki': 'Miraheze Wiki',
     # 中文补充
-    'gamekee': 'GameKee Wiki',
-    'huiji_wiki': '灰机Wiki',
     'weixin': '微信公众号',
 }
 
 CUTOFF_HOURS = 24
+# 官方公告较稀疏，使用更宽的窗口避免 "24h内无新内容" 遮挡真实公告
+OFFICIAL_CUTOFF_HOURS = int(os.environ.get('OFFICIAL_CUTOFF_HOURS', 30 * 24))
+OFFICIAL_SOURCES = {'official'}
+
+# 已废弃的数据源：不再采集、日报不展示。即使 output/ 下残留旧的 *-latest.json 也会被跳过。
+DEPRECATED_SOURCES = {
+    'fandom_wiki', 'gamerch', 'miraheze_wiki', 'gamekee', 'huiji_wiki',
+}
+
+
+def _cutoff_for(source_key: str) -> int:
+    return OFFICIAL_CUTOFF_HOURS if source_key in OFFICIAL_SOURCES else CUTOFF_HOURS
 
 
 def load_all_latest():
-    """读取 output/ 下所有 *-latest.json（排除 all-latest.json 和 daily-latest.json）"""
+    """读取 output/ 下所有 *-latest.json（排除 all-latest.json、daily 以及已废弃源）"""
     results = {}
     for path in sorted(OUTPUT_DIR.glob('*-latest.json')):
         name = path.stem.replace('-latest', '')
-        if name in ('all', 'daily'):
+        if name in ('all', 'daily') or name in DEPRECATED_SOURCES:
             continue
         try:
             data = json.loads(path.read_text(encoding='utf-8'))
@@ -201,7 +209,7 @@ def find_collab_items(all_data):
     results = []
     for key, data in all_data.items():
         items = data.get('items', [])
-        recent = filter_recent(items)
+        recent = filter_recent(items, cutoff_hours=_cutoff_for(key))
         display = PLATFORM_NAMES.get(key, key)
         for item in recent:
             if match_collab_keywords(item):
@@ -244,7 +252,8 @@ def generate_report(all_data, now_utc8):
 
     for key, data in all_data.items():
         items = data.get('items', [])
-        recent = filter_recent(items)
+        cutoff = _cutoff_for(key)
+        recent = filter_recent(items, cutoff_hours=cutoff)
         display = PLATFORM_NAMES.get(key, key)
         if len(recent) > 0:
             active_platforms[key] = (display, recent)
@@ -256,9 +265,8 @@ def generate_report(all_data, now_utc8):
                 silent_platforms.append(display)
                 lines.append(f'| {display} | 0（沉默）|')
             else:
-                # 有数据但24小时内无新内容
                 silent_platforms.append(display)
-                lines.append(f'| {display} | 0（24h内无新内容）|')
+                lines.append(f'| {display} | 0（{cutoff}h内无新内容）|')
 
     lines.append('')
 
