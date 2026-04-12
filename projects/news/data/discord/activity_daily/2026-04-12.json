@@ -1,59 +1,94 @@
 {
   "date": "2026-04-12",
-  "messages": 3502,
+  "messages": 5096,
   "unique_authors": 162,
-  "reactions_total": 309,
-  "attachments": 165,
+  "reactions_total": 471,
+  "attachments": 208,
   "channel_activity": {
-    "🔸綜合討論": 362,
-    "🔸morimens-game-chat": 2117,
-    "🔸课间休息闲聊": 2,
-    "🔸한국어-채팅방": 1,
-    "🔸русский-канал": 175,
-    "🔸phòng-chat-tiếng-việt": 10,
+    "🔸綜合討論": 469,
+    "🔸morimens-game-chat": 3017,
+    "🔸课间休息闲聊": 26,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 10,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 178,
+    "🔸phòng-chat-tiếng-việt": 16,
+    "🔸traphase": 19,
+    "🔸lore-chat": 212,
+    "🔸team-building": 108,
+    "🔸general-chat": 360,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸game-question": 319,
+    "🔸机器人命令┊bot-commands": 11,
+    "我的心，獻給你 || 杜勒赛因x西维斯特": 4,
+    "建个随笔楼": 1,
+    "On kill effects with tentacles and corrosion": 1,
+    "✅「Answered」Possibilities of Doresain kit rework": 4,
+    "My heart for yours || Doresain x Sylvester": 1,
+    "7 times 7 equality 49": 3,
+    "some doodles": 2,
+    "【English Translation】Opinions Collection": 4,
+    "问一下新人能怎么组队": 26,
+    "家人们，新人刚入坑该怎么配队哇QwQ": 13,
+    "問問": 1,
     "🔸canal-español": 12,
     "🔸canal-português": 250,
     "🔸ห้องสนทนาภาษาไทย": 1,
-    "🔸traphase": 16,
-    "🔸lore-chat": 16,
-    "🔸team-building": 85,
-    "🔸general-chat": 264,
-    "🔸邀请码互助┊swap-invitation-codes": 7,
-    "🔸game-question": 130,
-    "🔸机器人命令┊bot-commands": 8,
     "🔸erica-playground": 1,
     "打算開一個圖樓可能圖之後就丟這裡了": 1,
     "Get Auto enable for dtide": 1,
     "守密人頭像": 1,
-    "7 times 7 equality 49": 2,
-    "some doodles": 1,
-    "【English Translation】Opinions Collection": 3,
     "融災請教": 7,
-    "新帳號求培養+抽卡建議": 2,
-    "问一下新人能怎么组队": 19,
-    "家人们，新人刚入坑该怎么配队哇QwQ": 8
+    "新帳號求培養+抽卡建議": 2
   },
   "hourly_activity": {
+    "7": 293,
+    "8": 402,
+    "9": 267,
+    "6": 737,
     "0": 577,
     "1": 397,
     "2": 445,
     "3": 445,
     "4": 780,
-    "5": 753,
-    "6": 105
+    "5": 753
   },
   "message_types": {
-    "19": 1239,
-    "0": 2262,
+    "0": 1066,
+    "19": 527,
     "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1492789324846989362",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/i/status/2011563763795968194",
+      "author": "willsalvador",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1492713522659065996",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "water_heart",
       "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492786951999328338",
+      "channel_id": "1131839817982947429",
+      "content": "现在是延延又延延",
+      "author": "ponponnyaru",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492788632841621584",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "universe.dark",
+      "reactions": 4,
       "channel": "🔸綜合討論"
     },
     {
@@ -79,6 +114,62 @@
       "author": "isu3579",
       "reactions": 4,
       "channel": "🔸canal-español"
+    },
+    {
+      "id": "1492807187427360798",
+      "channel_id": "1131839817982947429",
+      "content": "今天也終於成功了",
+      "author": "andy1123",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492773979881214093",
+      "channel_id": "1170692781216378960",
+      "content": "Outer Wilds",
+      "author": "shortcombos",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492804274101682237",
+      "channel_id": "1170692781216378960",
+      "content": "Me when my camera is a cute girl",
+      "author": "sirtealot",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492811713228312790",
+      "channel_id": "1170692781216378960",
+      "content": "wrong question. \nReal question is \"Who do i like more?\"",
+      "author": "crowlov1",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492812841965588561",
+      "channel_id": "1170692781216378960",
+      "content": "I clreaded with Uvhash story content, im happy enough",
+      "author": "crowlov1",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492810328105549915",
+      "channel_id": "1492810328105549915",
+      "content": "我記得前陣子看過這種藝術風潮。而且我真的很想把它畫出來！我認為這很適合杜勒赛因和西维斯特，除了顯而易見的吃人這一點之外。我認為這是一個既脆弱又有深意的概念。\n\n",
+      "author": "that_one_chippy",
+      "reactions": 3,
+      "channel": "我的心，獻給你 || 杜勒赛因x西维斯特"
+    },
+    {
+      "id": "1492812179387453440",
+      "channel_id": "1492812179387453440",
+      "content": "I saw this trend a while back on the CN side and really wanted to draw it out. I",
+      "author": "that_one_chippy",
+      "reactions": 3,
+      "channel": "My heart for yours || Doresain x Sylvester"
     },
     {
       "id": "1492697014402814162",
@@ -127,86 +218,6 @@
       "author": "aurora3981",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492698216570028094",
-      "channel_id": "1170692781216378960",
-      "content": "i have problem with sleep, but when i download r99, i dont have sleep problem an",
-      "author": "arisuu0604",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492704642469990482",
-      "channel_id": "1170692781216378960",
-      "content": "<:Helot_slack_off:1459092159465521184>",
-      "author": "polkarain",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492739182144258129",
-      "channel_id": "1170692781216378960",
-      "content": "this game isnt generous enough because i lost all my pulls after pulling for e3 ",
-      "author": "shio2311",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492701578010951841",
-      "channel_id": "1300659662311526512",
-      "content": "🫃",
-      "author": "duxadidus",
-      "reactions": 3,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1492689376423968779",
-      "channel_id": "1131839817982947429",
-      "content": "雖然我還沒睡",
-      "author": "xingxiu_0209",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492694056860647625",
-      "channel_id": "1131839817982947429",
-      "content": "大清早的干啥呢😍",
-      "author": "sense25.",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492699670173192304",
-      "channel_id": "1131839817982947429",
-      "content": "# DC前夜",
-      "author": "xingxiu_0209",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492720312461299812",
-      "channel_id": "1131839817982947429",
-      "content": "完全就是個上禮拜才玩的萌新 嗑了兩個復活感覺全輸<:dead:1356082627509092372>",
-      "author": "mishmeria_.",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492721016273768649",
-      "channel_id": "1131839817982947429",
-      "content": "我是真萌新，不用裝<:agree:1400771815076528258>",
-      "author": "universe.dark",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492721586241802350",
-      "channel_id": "1131839817982947429",
-      "content": "要玩血肉要先有羊媽2",
-      "author": "universe.dark",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
     }
   ]
 }
