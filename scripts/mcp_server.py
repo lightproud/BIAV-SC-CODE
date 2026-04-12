@@ -382,7 +382,12 @@ def session_briefing(role: str = "") -> str:
     from session_briefing import generate_briefing, render_markdown as render_brief
 
     briefing = generate_briefing(role=role)
-    return render_brief(briefing)
+    # Return JSON with both structured data and pre-rendered markdown
+    return json.dumps({
+        "briefing_markdown": render_brief(briefing),
+        "sections": briefing.get("sections", {}),
+        "generated_at": briefing.get("generated_at", ""),
+    }, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":
