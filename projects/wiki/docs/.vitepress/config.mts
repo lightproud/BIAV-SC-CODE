@@ -18,10 +18,24 @@ export default defineConfig({
     logo: '/logo.svg',
     nav: [
       { text: '首页', link: '/' },
-      { text: '语音台词', link: '/voice-lines' },
-      { text: '收藏馆', link: '/collection-hall' },
-      { text: 'CG 画廊', link: '/cg-gallery' },
-      { text: '道具故事', link: '/item-stories' },
+      {
+        text: '数据',
+        items: [
+          { text: '语音台词', link: '/voice-lines' },
+          { text: '收藏馆百科', link: '/collection-hall' },
+          { text: '道具背景故事', link: '/item-stories' },
+        ]
+      },
+      {
+        text: '画廊',
+        items: [
+          { text: 'CG 画廊', link: '/cg-gallery' },
+          { text: '角色立绘', link: '/portraits' },
+          { text: '战斗单位', link: '/battle-units' },
+          { text: '图标', link: '/icons' },
+          { text: 'UI 资源', link: '/ui-resources' },
+        ]
+      },
     ],
     sidebar: [
       {
@@ -29,8 +43,17 @@ export default defineConfig({
         items: [
           { text: '语音台词', link: '/voice-lines' },
           { text: '收藏馆百科', link: '/collection-hall' },
-          { text: 'CG 画廊', link: '/cg-gallery' },
           { text: '道具背景故事', link: '/item-stories' },
+        ]
+      },
+      {
+        text: '美术资产画廊',
+        items: [
+          { text: 'CG 画廊', link: '/cg-gallery' },
+          { text: '角色立绘', link: '/portraits' },
+          { text: '战斗单位', link: '/battle-units' },
+          { text: '图标', link: '/icons' },
+          { text: 'UI 资源', link: '/ui-resources' },
         ]
       }
     ],
