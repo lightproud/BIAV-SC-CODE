@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-11T23:10:21.770226+00:00",
+  "archived_at": "2026-04-12T06:15:11.443650+00:00",
   "source": "bilibili",
-  "item_count": 38,
+  "item_count": 39,
   "items": [
     {
       "source": "bilibili",
@@ -509,6 +509,24 @@
       "content_type": "image",
       "metadata": {
         "play": 97,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-12T03:25:51+00:00",
+      "lang": "",
+      "title": "沙耶吃肉",
+      "summary": "cos沙耶吃肉！放纵餐日，难得吃如此诡异的食材，必须录下来整个活\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_哦吼吼]",
+      "url": "https://www.bilibili.com/video/BV1dUDSB8Eee",
+      "author": "哈雷子兮",
+      "engagement": 78,
+      "media_url": "https://i0.hdslb.com/bfs/archive/0900fd6b0b3985ee68808473a41ec05c0fbb4fbb.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 77,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
