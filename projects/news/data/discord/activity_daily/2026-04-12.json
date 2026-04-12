@@ -1,25 +1,31 @@
 {
   "date": "2026-04-12",
-  "messages": 5096,
+  "messages": 6509,
   "unique_authors": 162,
-  "reactions_total": 471,
-  "attachments": 208,
+  "reactions_total": 663,
+  "attachments": 278,
   "channel_activity": {
-    "🔸綜合討論": 469,
-    "🔸morimens-game-chat": 3017,
+    "🔸綜合討論": 679,
+    "🔸morimens-game-chat": 3782,
+    "🔸한국어-채팅방": 13,
+    "🔸русский-канал": 186,
+    "🔸phòng-chat-tiếng-việt": 62,
+    "🔸canal-português": 258,
+    "🔸ruang-obrolan-indonesia": 42,
+    "🔸traphase": 27,
+    "🔸team-building": 109,
+    "🔸general-chat": 376,
+    "🔸邀请码互助┊swap-invitation-codes": 13,
+    "🔸game-question": 544,
+    "🔸机器人命令┊bot-commands": 14,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 14,
+    "Small potential Miryam buff": 1,
+    "Traphase": 3,
+    "融災請教": 64,
     "🔸课间休息闲聊": 26,
     "🔸日本語チャンネル": 3,
-    "🔸한국어-채팅방": 10,
     "🔸chaîne-française": 2,
-    "🔸русский-канал": 178,
-    "🔸phòng-chat-tiếng-việt": 16,
-    "🔸traphase": 19,
     "🔸lore-chat": 212,
-    "🔸team-building": 108,
-    "🔸general-chat": 360,
-    "🔸邀请码互助┊swap-invitation-codes": 10,
-    "🔸game-question": 319,
-    "🔸机器人命令┊bot-commands": 11,
     "我的心，獻給你 || 杜勒赛因x西维斯特": 4,
     "建个随笔楼": 1,
     "On kill effects with tentacles and corrosion": 1,
@@ -32,19 +38,19 @@
     "家人们，新人刚入坑该怎么配队哇QwQ": 13,
     "問問": 1,
     "🔸canal-español": 12,
-    "🔸canal-português": 250,
     "🔸ห้องสนทนาภาษาไทย": 1,
     "🔸erica-playground": 1,
     "打算開一個圖樓可能圖之後就丟這裡了": 1,
     "Get Auto enable for dtide": 1,
     "守密人頭像": 1,
-    "融災請教": 7,
     "新帳號求培養+抽卡建議": 2
   },
   "hourly_activity": {
+    "9": 472,
+    "10": 841,
+    "11": 367,
     "7": 293,
     "8": 402,
-    "9": 267,
     "6": 737,
     "0": 577,
     "1": 397,
@@ -54,9 +60,8 @@
     "5": 753
   },
   "message_types": {
-    "0": 1066,
-    "19": 527,
-    "20": 1
+    "19": 454,
+    "0": 959
   },
   "top_reacted_messages": [
     {
@@ -76,12 +81,68 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1492834372858941470",
+      "channel_id": "1492834372858941470",
+      "content": "Grinded the event with Ryker team. It's an Exodia deck so this idea is just too ",
+      "author": "ellezard",
+      "reactions": 7,
+      "channel": "Traphase"
+    },
+    {
+      "id": "1492834117128290305",
+      "channel_id": "1170692781216378960",
+      "content": "yeah like there is a reason i've been going to bat HARD for vortice the past ent",
+      "author": "arkaether",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492786951999328338",
       "channel_id": "1131839817982947429",
       "content": "现在是延延又延延",
       "author": "ponponnyaru",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492820659074633789",
+      "channel_id": "1131839817982947429",
+      "content": "<:agree:1400771815076528258>",
+      "author": "mishmeria_.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492821372160708730",
+      "channel_id": "1131839817982947429",
+      "content": "燃燒假日的兩天生命在挑戰推完",
+      "author": "mishmeria_.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492821613098434620",
+      "channel_id": "1131839817982947429",
+      "content": "今天剛好第七",
+      "author": "mishmeria_.",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492826070628700272",
+      "channel_id": "1131839817982947429",
+      "content": "你要一份工作",
+      "author": "xingxiu_0209",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492839050850078833",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492788632841621584",
@@ -116,6 +177,30 @@
       "channel": "🔸canal-español"
     },
     {
+      "id": "1492822824849637426",
+      "channel_id": "1131839817982947429",
+      "content": "<:agree:1400771815076528258>",
+      "author": "mishmeria_.",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492840519951192169",
+      "channel_id": "1170692781216378960",
+      "content": "i honestly thought this was high enough already",
+      "author": "l8989c",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492844899417067651",
+      "channel_id": "1170692781216378960",
+      "content": "that was fun one",
+      "author": "ahmedamr30",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492807187427360798",
       "channel_id": "1131839817982947429",
       "content": "今天也終於成功了",
@@ -136,86 +221,6 @@
       "channel_id": "1170692781216378960",
       "content": "Me when my camera is a cute girl",
       "author": "sirtealot",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492811713228312790",
-      "channel_id": "1170692781216378960",
-      "content": "wrong question. \nReal question is \"Who do i like more?\"",
-      "author": "crowlov1",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492812841965588561",
-      "channel_id": "1170692781216378960",
-      "content": "I clreaded with Uvhash story content, im happy enough",
-      "author": "crowlov1",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492810328105549915",
-      "channel_id": "1492810328105549915",
-      "content": "我記得前陣子看過這種藝術風潮。而且我真的很想把它畫出來！我認為這很適合杜勒赛因和西维斯特，除了顯而易見的吃人這一點之外。我認為這是一個既脆弱又有深意的概念。\n\n",
-      "author": "that_one_chippy",
-      "reactions": 3,
-      "channel": "我的心，獻給你 || 杜勒赛因x西维斯特"
-    },
-    {
-      "id": "1492812179387453440",
-      "channel_id": "1492812179387453440",
-      "content": "I saw this trend a while back on the CN side and really wanted to draw it out. I",
-      "author": "that_one_chippy",
-      "reactions": 3,
-      "channel": "My heart for yours || Doresain x Sylvester"
-    },
-    {
-      "id": "1492697014402814162",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "yy42974466",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492699737621663935",
-      "channel_id": "1131839817982947429",
-      "content": "南通前夜還差不多",
-      "author": "yy42974466",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492727163093385396",
-      "channel_id": "1131839817982947429",
-      "content": "玩忘卻的真的很有錢(除了我\n一堆課+12",
-      "author": "universe.dark",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492736583634255923",
-      "channel_id": "1131839817982947429",
-      "content": "我們來試試沒皮沒熔朵的莉茲怎麼樣",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492685238361391124",
-      "channel_id": "1170692781216378960",
-      "content": "meta is irrelevant and you're only bound by meta as long as you care",
-      "author": "fishhazardthewizard",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492695876164911114",
-      "channel_id": "1170692781216378960",
-      "content": "150 bots per day",
-      "author": "aurora3981",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }
