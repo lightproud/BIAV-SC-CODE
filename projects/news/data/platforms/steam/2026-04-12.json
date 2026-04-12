@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-12T06:15:11.442187+00:00",
+  "archived_at": "2026-04-12T09:35:07.930174+00:00",
   "source": "steam",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "source": "steam",
@@ -273,6 +273,21 @@
       "review": "很不错的游戏\n邀请码JJUDL2BJVX求帮",
       "timestamp_created": 1775942107,
       "playtime_forever": 303
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-12T08:13:37+00:00",
+      "lang": "schinese",
+      "title": "[正面] 邀请码：BR2YEFL4PP\n谢谢🙏",
+      "summary": "邀请码：BR2YEFL4PP\n谢谢🙏",
+      "url": "https://steamcommunity.com/profiles/76561199021810901/recommended/3052450",
+      "author": "76561199021810901",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "邀请码：BR2YEFL4PP\n谢谢🙏",
+      "timestamp_created": 1775981617,
+      "playtime_forever": 1489
     }
   ]
 }

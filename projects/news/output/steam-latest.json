@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-04-12T06:15:07.470052+00:00",
+  "collected_at": "2026-04-12T09:34:54.893621+00:00",
   "source": "steam",
   "item_count": 14,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-11T21:15:07+00:00",
+      "lang": "schinese",
+      "title": "[正面] 很不错的游戏\n邀请码JJUDL2BJVX求帮",
+      "summary": "很不错的游戏\n邀请码JJUDL2BJVX求帮",
+      "url": "https://steamcommunity.com/profiles/76561199681720933/recommended/3052450",
+      "author": "76561199681720933",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "很不错的游戏\n邀请码JJUDL2BJVX求帮",
+      "timestamp_created": 1775942107,
+      "playtime_forever": 303
+    },
     {
       "source": "steam",
       "time": "2026-04-11T01:06:10+00:00",
@@ -46,7 +61,22 @@
       "voted_up": true,
       "review": "こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
       "timestamp_created": 1775817416,
-      "playtime_forever": 10811
+      "playtime_forever": 10991
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-12T08:13:37+00:00",
+      "lang": "schinese",
+      "title": "[正面] 邀请码：BR2YEFL4PP\n谢谢🙏",
+      "summary": "邀请码：BR2YEFL4PP\n谢谢🙏",
+      "url": "https://steamcommunity.com/profiles/76561199021810901/recommended/3052450",
+      "author": "76561199021810901",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "邀请码：BR2YEFL4PP\n谢谢🙏",
+      "timestamp_created": 1775981617,
+      "playtime_forever": 1489
     },
     {
       "source": "steam",
@@ -65,21 +95,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-04-11T21:15:07+00:00",
-      "lang": "schinese",
-      "title": "[正面] 很不错的游戏\n邀请码JJUDL2BJVX求帮",
-      "summary": "很不错的游戏\n邀请码JJUDL2BJVX求帮",
-      "url": "https://steamcommunity.com/profiles/76561199681720933/recommended/3052450",
-      "author": "76561199681720933",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "很不错的游戏\n邀请码JJUDL2BJVX求帮",
-      "timestamp_created": 1775942107,
-      "playtime_forever": 303
-    },
-    {
-      "source": "steam",
       "time": "2026-04-11T15:42:01+00:00",
       "lang": "english",
       "title": "[正面] This is a really good game surprisingly at least f...",
@@ -91,7 +106,7 @@
       "voted_up": true,
       "review": "This is a really good game surprisingly at least for me since I am not much a fan of Card games but this one has been enjoyable this far.\n\nI really like the Lovercraftian art direction and inspiration since I am a sucker for lovecraftian stuff.\n\nThe only thing I may have to point out is that progression can be a bit slow in terms of leveling up my characters I don't like having to wait days to get them at a agood enough level,given it may be partially my fault as I try to focus on two teams instead of one to stay versataile.\n\nThe Story may not be a Masterpiece but its actually good at least where I am right now at least which is not something natural in a Gacha game but I am interested in the story..tried switching the languages from English to German which is not that great its servicable but English overall has a bit of a higher translation quality compared to the German one in this game and its all AI translated in which I don't personally take any issues with I rather have this than any activist translators abusing their position to insert political nonsense into the game and the translation is alright for now.",
       "timestamp_created": 1775922121,
-      "playtime_forever": 3584
+      "playtime_forever": 3682
     },
     {
       "source": "steam",
@@ -121,7 +136,7 @@
       "voted_up": true,
       "review": "сюжет прикольный :)",
       "timestamp_created": 1775900688,
-      "playtime_forever": 223
+      "playtime_forever": 237
     },
     {
       "source": "steam",
@@ -197,21 +212,6 @@
       "review": "好玩",
       "timestamp_created": 1775816061,
       "playtime_forever": 317
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-10T07:47:22+00:00",
-      "lang": "koreana",
-      "title": "[正面] 갓-겜",
-      "summary": "갓-겜",
-      "url": "https://steamcommunity.com/profiles/76561198049509204/recommended/3052450",
-      "author": "76561198049509204",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "갓-겜",
-      "timestamp_created": 1775807242,
-      "playtime_forever": 19320
     }
   ]
 }
