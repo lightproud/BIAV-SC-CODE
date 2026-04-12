@@ -29,6 +29,7 @@ import { registerPluginIpc } from './plugin/plugin-ipc';
 import { initPlugins } from './plugin/loader';
 import { registerDreamIpc } from './dream/dream-ipc';
 import { registerUpdaterIpc, initAutoUpdate } from './updater/auto-update-ipc';
+import { BPT_VERSION } from '../src/version';
 import { logger } from './core/logger';
 
 // Prevent multiple instances
@@ -47,7 +48,7 @@ app.on('second-instance', () => {
 });
 
 app.whenReady().then(async () => {
-  logger.info('main', 'BPT starting', { version: '0.4.0' });
+  logger.info('main', 'BPT starting', { version: BPT_VERSION });
 
   // 1. Initialize database
   initConversationDb();

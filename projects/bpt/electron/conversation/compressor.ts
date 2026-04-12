@@ -81,12 +81,21 @@ export function shouldCompress(messages: LlmMessage[]): boolean {
   const turns = countTurns(messages);
   if (turns > maxTurns) return true;
 
-  // Rough token estimate
-  const totalChars = messages.reduce((sum, m) => {
-    const content = typeof m.content === 'string' ? m.content : JSON.stringify(m.content);
-    return sum + content.length;
+  // Rough token estimate (CJK-aware: CJK chars ~2 tokens each, Latin ~4 chars/token)
+  const estimatedTokens = messages.reduce((sum, m) => {
+    const text = typeof m.content === 'string' ? m.content : JSON.stringify(m.content);
+    let cjk = 0;
+    let other = 0;
+    for (let i = 0; i < text.length; i++) {
+      const code = text.charCodeAt(i);
+      if ((code >= 0x3000 && code <= 0x9FFF) || (code >= 0xFF00 && code <= 0xFFEF)) {
+        cjk++;
+      } else {
+        other++;
+      }
+    }
+    return sum + cjk * 2 + other / 4;
   }, 0);
-  const estimatedTokens = totalChars / 4;
 
   return estimatedTokens > maxTokens;
 }

@@ -15,9 +15,34 @@
 
 import type { TokenUsage, ToolDescriptor, Gear } from '../../src/types';
 
-/** Rough token count: ~4 chars per token for mixed CJK/English. */
+/**
+ * Rough token count aware of CJK vs Latin text.
+ *
+ * Why not a simple char/4: BPE tokenizers encode CJK characters as 2-3 tokens
+ * each, while Latin text averages ~4 chars per token. This project mixes
+ * Chinese and English heavily, so uniform char/4 underestimates by ~2x for
+ * Chinese-heavy prompts (which is most of ours).
+ */
 function estimateTokens(text: string): number {
-  return Math.ceil(text.length / 4);
+  let cjkChars = 0;
+  let otherChars = 0;
+  for (let i = 0; i < text.length; i++) {
+    const code = text.charCodeAt(i);
+    if (
+      (code >= 0x4E00 && code <= 0x9FFF) ||   // CJK Unified Ideographs
+      (code >= 0x3400 && code <= 0x4DBF) ||   // CJK Extension A
+      (code >= 0x3000 && code <= 0x303F) ||   // CJK Symbols and Punctuation
+      (code >= 0xFF00 && code <= 0xFFEF) ||   // Fullwidth Forms
+      (code >= 0x3040 && code <= 0x309F) ||   // Hiragana
+      (code >= 0x30A0 && code <= 0x30FF)      // Katakana
+    ) {
+      cjkChars++;
+    } else {
+      otherChars++;
+    }
+  }
+  // CJK: ~2 tokens per character; Latin: ~4 chars per token
+  return Math.ceil(cjkChars * 2 + otherChars / 4);
 }
 
 /**

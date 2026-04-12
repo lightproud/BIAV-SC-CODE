@@ -41,8 +41,12 @@ export default function ChatView({ conversationId, pendingCites, onConsumeCites 
       return;
     }
 
-    // Load history from SQLite via main process
-    getBpt().convLoadMessages(conversationId).then((loaded) => {
+    // Guard against stale responses: if the user switches conversations
+    // before the load completes, the callback must not overwrite messages.
+    let cancelled = false;
+    const loadId = conversationId;
+    getBpt().convLoadMessages(loadId).then((loaded) => {
+      if (cancelled) return;
       const msgs = loaded as Message[];
       if (Array.isArray(msgs) && msgs.length > 0) {
         setMessages(msgs);
@@ -50,8 +54,9 @@ export default function ChatView({ conversationId, pendingCites, onConsumeCites 
         setMessages([]);
       }
     }).catch(() => {
-      setMessages([]);
+      if (!cancelled) setMessages([]);
     });
+    return () => { cancelled = true; };
   }, [conversationId]);
 
   // Scroll to bottom on new messages

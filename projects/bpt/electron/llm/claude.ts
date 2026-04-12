@@ -67,10 +67,25 @@ export class ClaudeProvider implements LlmProvider {
       let currentToolName = '';
       let toolInputJson = '';
 
+      // Track input-side usage from message_start (input_tokens, cache metrics).
+      // Output-side usage comes from message_delta.
+      let inputTokens = 0;
+      let cacheHit = 0;
+      let cacheWrite = 0;
+
       for await (const event of stream) {
         const eventType = event.type as string;
 
-        if (eventType === 'content_block_start') {
+        if (eventType === 'message_start') {
+          // message_start carries the full Message object with input usage
+          const msg = event.message as Record<string, unknown> | undefined;
+          const msgUsage = msg?.usage as Record<string, number> | undefined;
+          if (msgUsage) {
+            inputTokens = msgUsage.input_tokens ?? 0;
+            cacheHit = msgUsage.cache_read_input_tokens ?? 0;
+            cacheWrite = msgUsage.cache_creation_input_tokens ?? 0;
+          }
+        } else if (eventType === 'content_block_start') {
           const block = event.content_block as Record<string, unknown>;
           if (block.type === 'tool_use') {
             currentToolId = block.id as string;
@@ -92,11 +107,20 @@ export class ClaudeProvider implements LlmProvider {
             currentToolId = '';
           }
         } else if (eventType === 'message_delta') {
-          const usage = event.usage as Record<string, number> | undefined;
-          if (usage) {
+          const deltaUsage = event.usage as Record<string, number> | undefined;
+          if (deltaUsage) {
+            const outputTokens = deltaUsage.output_tokens ?? 0;
             onEvent({
               type: 'message_end',
-              usage: this.extractUsage(usage, event),
+              usage: {
+                system: 0,
+                tools: 0,
+                history: 0,
+                generation: outputTokens,
+                cacheHit,
+                cacheWrite,
+                estimatedCostUsd: this.estimateCost(inputTokens, outputTokens, cacheHit, cacheWrite),
+              },
             });
           }
         } else if (eventType === 'message_stop') {
@@ -158,28 +182,6 @@ export class ClaudeProvider implements LlmProvider {
         }
         return block;
       }),
-    };
-  }
-
-  private extractUsage(
-    usage: Record<string, number>,
-    event: Record<string, unknown>,
-  ): TokenUsage {
-    // Anthropic returns: input_tokens, output_tokens, cache_creation_input_tokens, cache_read_input_tokens
-    const msgUsage = (event.message as Record<string, unknown>)?.usage as Record<string, number> | undefined;
-    const inputTokens = msgUsage?.input_tokens ?? 0;
-    const cacheHit = msgUsage?.cache_read_input_tokens ?? 0;
-    const cacheWrite = msgUsage?.cache_creation_input_tokens ?? 0;
-    const outputTokens = usage.output_tokens ?? 0;
-
-    return {
-      system: 0,       // We can't separate system from total input in the API response
-      tools: 0,        // Same — these are approximations computed by token-accounting.ts
-      history: 0,
-      generation: outputTokens,
-      cacheHit,
-      cacheWrite,
-      estimatedCostUsd: this.estimateCost(inputTokens, outputTokens, cacheHit, cacheWrite),
     };
   }
 
