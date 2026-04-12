@@ -1,24 +1,18 @@
 {
   "last_session": {
-    "id": "40db6d3f",
-    "timestamp": "2026-04-12T16:34:13.834000+00:00",
-    "duration_minutes": 127.6,
+    "id": "be2cbf53",
+    "timestamp": "2026-04-12T16:47:21.513000+00:00",
+    "duration_minutes": 40.9,
     "branch": "claude/memory-reflection-management-TEfTh",
-    "topics": [
-      "银芯"
-    ],
+    "topics": [],
     "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/.gitignore",
       "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/memory/dreams/insights.json",
       "/home/user/brain-in-a-vat/memory/session-continuity.json",
       "/home/user/brain-in-a-vat/scripts/dream.py",
-      "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
       "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-      "/home/user/brain-in-a-vat/scripts/memory_search.py",
-      "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
       "/home/user/brain-in-a-vat/scripts/memrl.py",
+      "/home/user/brain-in-a-vat/scripts/reflexion.py",
       "/home/user/brain-in-a-vat/scripts/session_briefing.py",
       "/home/user/brain-in-a-vat/scripts/session_distiller.py",
       "/root/.claude/plans/joyful-skipping-thimble.md"
@@ -26,6 +20,32 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "40db6d3f",
+      "timestamp": "2026-04-12T16:34:13.834000+00:00",
+      "duration_minutes": 127.6,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "银芯"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/dreams/insights.json",
+        "/home/user/brain-in-a-vat/memory/session-continuity.json",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
+        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
+        "/root/.claude/plans/joyful-skipping-thimble.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "d6db07b0",
       "timestamp": "2026-04-12T15:28:30+00:00",
@@ -58,14 +78,23 @@
   ],
   "momentum": {
     "topic_weights": {
-      "记忆系统": 3.2,
-      "银芯": 2.2,
-      "TF-IDF": 1.6,
-      "索引": 1.6,
-      "知识图谱": 1.6
+      "记忆系统": 2.56,
+      "银芯": 1.76,
+      "TF-IDF": 1.28,
+      "索引": 1.28,
+      "知识图谱": 1.28
     },
-    "hot_files": [],
-    "total_sessions": 13
+    "hot_files": [
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/memory/session-continuity.json",
+      "/home/user/brain-in-a-vat/scripts/dream.py",
+      "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+      "/home/user/brain-in-a-vat/scripts/memrl.py",
+      "/home/user/brain-in-a-vat/scripts/session_briefing.py",
+      "/home/user/brain-in-a-vat/scripts/session_distiller.py",
+      "/root/.claude/plans/joyful-skipping-thimble.md"
+    ],
+    "total_sessions": 14
   },
-  "updated_at": "2026-04-12T16:39:10.071421+00:00"
+  "updated_at": "2026-04-12T16:50:42.294052+00:00"
 }
