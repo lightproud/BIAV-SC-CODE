@@ -1,25 +1,71 @@
 {
   "last_session": {
-    "id": "d6db07b0",
-    "timestamp": "2026-04-12T15:28:30+00:00",
-    "duration_minutes": 62,
+    "id": "40db6d3f",
+    "timestamp": "2026-04-12T16:34:13.834000+00:00",
+    "duration_minutes": 127.6,
     "branch": "claude/memory-reflection-management-TEfTh",
-    "topics": ["记忆系统", "TF-IDF", "索引", "知识图谱", "银芯"],
-    "decisions": ["向量索引压缩为gzip并提交git", "知识图谱改为增量更新", "REM周反思完整实现"],
-    "files_changed": ["scripts/memory_search.py", "scripts/dream.py", "scripts/knowledge_graph.py", "scripts/mcp_server.py"],
-    "open_items": ["MemRL扩展跟踪范围", "Reflexion语义分析", "选择性记忆执行遗忘"]
+    "topics": [
+      "银芯"
+    ],
+    "decisions": [],
+    "files_changed": [
+      "/home/user/brain-in-a-vat/.gitignore",
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/memory/dreams/insights.json",
+      "/home/user/brain-in-a-vat/memory/session-continuity.json",
+      "/home/user/brain-in-a-vat/scripts/dream.py",
+      "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+      "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+      "/home/user/brain-in-a-vat/scripts/memory_search.py",
+      "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+      "/home/user/brain-in-a-vat/scripts/memrl.py",
+      "/home/user/brain-in-a-vat/scripts/session_briefing.py",
+      "/home/user/brain-in-a-vat/scripts/session_distiller.py",
+      "/root/.claude/plans/joyful-skipping-thimble.md"
+    ],
+    "open_items": []
   },
-  "recent_sessions": [],
+  "recent_sessions": [
+    {
+      "id": "d6db07b0",
+      "timestamp": "2026-04-12T15:28:30+00:00",
+      "duration_minutes": 62,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "记忆系统",
+        "TF-IDF",
+        "索引",
+        "知识图谱",
+        "银芯"
+      ],
+      "decisions": [
+        "向量索引压缩为gzip并提交git",
+        "知识图谱改为增量更新",
+        "REM周反思完整实现"
+      ],
+      "files_changed": [
+        "scripts/memory_search.py",
+        "scripts/dream.py",
+        "scripts/knowledge_graph.py",
+        "scripts/mcp_server.py"
+      ],
+      "open_items": [
+        "MemRL扩展跟踪范围",
+        "Reflexion语义分析",
+        "选择性记忆执行遗忘"
+      ]
+    }
+  ],
   "momentum": {
     "topic_weights": {
-      "记忆系统": 4.0,
-      "TF-IDF": 2.0,
-      "索引": 2.0,
-      "知识图谱": 2.0,
-      "银芯": 1.5
+      "记忆系统": 3.2,
+      "银芯": 2.2,
+      "TF-IDF": 1.6,
+      "索引": 1.6,
+      "知识图谱": 1.6
     },
-    "hot_files": ["scripts/memory_search.py", "scripts/dream.py"],
-    "total_sessions": 12
+    "hot_files": [],
+    "total_sessions": 13
   },
-  "updated_at": "2026-04-12T16:10:00+00:00"
+  "updated_at": "2026-04-12T16:39:10.071421+00:00"
 }
