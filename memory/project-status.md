@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-04-04 by Code-主控台
+> 最后更新：2026-04-12 by Code-主控台
 >
 > 战略规划详见 `memory/strategic-plan-2026.md`
 
@@ -43,8 +43,8 @@
 ### 游戏数据集（原 database）
 - **已完成**：
   - 18 个 JSON 数据文件（`projects/wiki/data/db/`）
-  - 63 个唤醒体数据（59 SSR + 4 SR）
-  - 63/63 角色有元数据（EN/JA 描述、获取方式翻译完成），11 个有结构化卡牌/技能数据，52 个待 Fandom 抓取补充
+  - 59 个唤醒体数据
+  - 59/59 角色有元数据（EN/JA 描述、获取方式翻译完成），11 个有结构化卡牌/技能数据，48 个待 Fandom 抓取补充
   - 47/59 角色立绘已下载到 `assets/images/portraits/`（12 个缺失，已配置 Bilibili Wiki 备用源）
   - 命轮数据：55 个命轮，31 个有角色归属，39 个有效果文本（EN 翻译完成），16 个缺失待抓取
   - 命轮与密契装备体系
@@ -98,7 +98,7 @@
   - SEO 优化：Schema.org JSON-LD、OG 社交分享图、sitemap、robots.txt
   - RSS/Atom 订阅源
   - 贡献指南 contributing.md
-- **技术栈**：VitePress 1.6.4 + Vue 3.5.13
+- **技术栈**：VitePress 1.6.3 + Vue 3.5.31
 - **部署**：由 Code-site 统一管理（deploy-site.yml），wiki 位于 /wiki/ 子路径
 - **已修复问题**（2026-03-30）：
   - `cleanUrls: false` — GitHub Pages 不支持无扩展名 URL 重写
@@ -118,7 +118,7 @@
 
 - Phase 0（止血）：✅ 完成
 - Stage 1 验证（日报 14 天）：✅ 制作人确认通过
-- 事实圣经 v1.0：✅ 63 角色 + 叙事结构 + 设计决策
+- 事实圣经 v1.0：✅ 59 角色 + 叙事结构 + 设计决策
 - 记忆系统 9 模块：✅ 全部上线（3410 行新代码）
 - 做梦 Agent 三层：✅ 全部启动（浅睡6h + 深睡每日 + REM每周）
 

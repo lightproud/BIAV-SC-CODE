@@ -55,7 +55,7 @@ brain-in-a-vat/
 |--------|------|---------|--------|------|
 | 主站 + 部署 + 视觉 | `projects/site/` | Code-site | 纯 HTML/CSS/JS | 已部署，维护模式 |
 | 社区新闻聚合 | `projects/news/` | Code-news | Python 3.11+ / 纯 HTML | 收缩夯实，3 源运行中 |
-| Wiki + 数据集 | `projects/wiki/` | Code-wiki | VitePress 1.6.4 + Vue 3.5.13 | 数据补全中（~83%） |
+| Wiki + 数据集 | `projects/wiki/` | Code-wiki | VitePress 1.6.3 + Vue 3.5.31 | 数据补全中（~83%） |
 | 衍生游戏 | `projects/game/` | Code-game（未启用） | 待决策 | 暂缓，Phase 4 启动 |
 | 黑池终端 Web (BPT-WEB) | `projects/bpt-web/` | 主控台 | 单文件 PWA（HTML + 内联 CSS/JS + SW） | v0.1.0 已部署 |
 | 黑池终端 桌面 (BPT-DESKTOP) | `projects/bpt-desktop/` | Code-site | Electron 33 + React 18 + Vite 6 + sql.js | v0.1.0 开发中 |
@@ -77,7 +77,7 @@ brain-in-a-vat/
 |-----------|--------|
 | 了解项目当前状态 | `memory/boot-snapshot.md`（优先）+ `memory/project-status.md` |
 | 理解游戏世界观 | `memory/morimens-context.md` |
-| 查角色数据库（63 角色） | `projects/wiki/data/db/characters.json` |
+| 查角色数据库（59 角色） | `projects/wiki/data/db/characters.json` |
 | 查社区动态 | `projects/news/output/daily-latest.md` / `all-latest.json` |
 | 查制作人第一手陈述 | `assets/data/interview-2026-04.json` |
 | 了解被砍机制/设计哲学 | `assets/data/design-decisions.json` |
@@ -210,7 +210,7 @@ python projects/news/scripts/aggregator.py
 
 # Wiki 本地预览
 cd projects/wiki && npm install && npm run docs:dev
-cd projects/wiki && npm run build     # 构建（注意：package.json 脚本名是 build，不是 docs:build）
+cd projects/wiki && npm run build     # 构建（build 和 docs:build 均可用，效果相同）
 
 # 黑池终端 Web（BPT-WEB，单文件 PWA，无构建）
 cd projects/bpt-web && python -m http.server 8000
@@ -292,7 +292,7 @@ AI 会话最易踩的坑：
 
 - 各子项目按需选型，不强制统一
 - 后端：Python 3.11+
-- Wiki：VitePress 1.6.4 + Vue 3.5.13，三语（EN/JA/ZH，ZH 为 root locale）
+- Wiki：VitePress 1.6.3 + Vue 3.5.31，三语（EN/JA/ZH，ZH 为 root locale）
 - BPT-WEB：单文件 PWA（原生 HTML + 内联 CSS/JS + Service Worker），无构建
 - BPT-DESKTOP：Electron 33 + React 18 + Vite 6 + sql.js + MCP + electron-updater
 - 部署：GitHub Pages + GitHub Actions（peaceiris/actions-gh-pages@v4 推 gh-pages 分支）

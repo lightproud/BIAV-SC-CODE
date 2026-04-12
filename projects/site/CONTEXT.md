@@ -1,8 +1,8 @@
 # Code-site 子项目上下文
 
-> 最后更新：2026-04-01 by 战略中心
+> 最后更新：2026-04-12 by Code-主控台
 >
-> **本周无新任务**。站点部署稳定，维护模式。如 Code-news 桥接 Discord 后需要更新 news 页面，届时配合即可。
+> 站点部署稳定，维护模式。
 
 ## 职责范围
 
@@ -62,8 +62,7 @@ push to main 且路径匹配：`site/**`、`projects/site/**`、`projects/wiki/d
 主站源文件已迁移至 `projects/site/public/`（index.html、404.html）。
 设计系统文件位于 `projects/site/design/`。
 
-> **注意**：部署流水线 `.github/workflows/deploy-site.yml` 仍引用旧路径
-> `site/` 和 `design/**`，需要同步更新。
+> 部署流水线路径已与实际文件位置一致，无需额外调整。
 
 ## 视觉规范
 
