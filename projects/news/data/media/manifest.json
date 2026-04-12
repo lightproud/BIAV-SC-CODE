@@ -1812,6 +1812,41 @@
       "title": "忘却前夜ログ",
       "time": "2026-04-12T10:01:17+09:00",
       "downloaded_at": "2026-04-12T09:35:07.869856+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/0272018c1b6ac85f29033c954522ef155bcfac3a.jpg": {
+      "filename": "bilibili_84a274be7251be0b.jpg",
+      "source": "bilibili",
+      "title": "造物很好的血希2-5王关4t",
+      "time": "2026-04-10T13:11:13+00:00",
+      "downloaded_at": "2026-04-12T11:50:51.904043+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1131839817982947429/1492788632606605373/4a035067fa7b1b5c.png?ex=69dc9b40&is=69db49c0&hm=7f1d481c3577b3f72d5cff881ba8db4085f19ab3d400a7b9fc203ba33f0cfe8c&": {
+      "filename": "discord_f2994dbde8952909.png",
+      "source": "discord",
+      "title": "[DC] universe.dark@🔸綜合討論: (附件/嵌入)",
+      "time": "2026-04-12T07:29:04.741000+00:00",
+      "downloaded_at": "2026-04-12T11:50:52.774781+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1131839817982947429/1492807186659676290/image.png?ex=69dcac88&is=69db5b08&hm=f7af95c32008f9cc3dcde708a639e5ea77a4d3e66f0322ed23a1a29530963f84&": {
+      "filename": "discord_5853fe5fad304825.png",
+      "source": "discord",
+      "title": "[DC] andy1123@🔸綜合討論: 今天也終於成功了",
+      "time": "2026-04-12T08:42:48.499000+00:00",
+      "downloaded_at": "2026-04-12T11:50:53.244818+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1131839817982947429/1492811964756394074/image.png?ex=69dcb0fb&is=69db5f7b&hm=5873b5943962b92f0997da3a95d61c0cd304047bf368b82c1cd8fb5dad4040a2&": {
+      "filename": "discord_a599487c5172e99e.png",
+      "source": "discord",
+      "title": "[DC] mishmeria_.@🔸綜合討論: 碰牆了 9-12不管怎麼打都沒辦法走到王前",
+      "time": "2026-04-12T09:01:47.576000+00:00",
+      "downloaded_at": "2026-04-12T11:50:53.832632+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/3b49972d462de375df119f4deb07d5e45175dba3.jpg": {
+      "filename": "bilibili_a265eeb9c543ace2.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌第五期",
+      "time": "2026-04-12T10:00:00+00:00",
+      "downloaded_at": "2026-04-12T11:50:54.971757+00:00"
     }
   },
   "failed": {
@@ -2384,6 +2419,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-12T09:35:01.987526+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/0272018c1b6ac85f29033c954522ef155bcfac3a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-12T11:50:52.204864+00:00"
     }
   },
   "archived": []

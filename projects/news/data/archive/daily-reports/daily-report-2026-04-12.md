@@ -1,16 +1,22 @@
 # 忘却前夜 社区日报 2026-04-12
 
-> 采集时间：2026-04-12 17:34 UTC+8
+> 采集时间：2026-04-12 19:50 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌第四期 — engagement: 186
-2. [Bilibili] 【卡雨虹】大师局 24-2回声拿下沙耶之歌 — engagement: 95
-3. [Bilibili] 沙耶之歌 — engagement: 3
-4. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-5. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
-6. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
-7. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+1. [Bilibili] 【卡雨虹】大师局 24-2回声拿下沙耶之歌 — engagement: 216
+2. [Bilibili] 沙耶之歌 — engagement: 13
+3. [Bilibili] 沙耶之歌第五期 — engagement: 0
+4. [微博] 忘却前夜×沙耶之歌 联动预告
+
+梦的碎片 随风而至
+
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
+5. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+6. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
+7. [微信公众号] [微信] 【短讯】《Fate/EXTRA Record》终止销售计划丨《忘却前夜》联动《沙耶之歌》丨科幻MMO《棱镜20 — engagement: 0
+8. [微信公众号] [微信] 克苏鲁题材肉鸽卡牌二次元游戏《忘却前夜》公布与《沙耶之歌》联动预告 — engagement: 0
 
 ## 总览
 
@@ -19,8 +25,8 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 25 |
-| DCInside | 82 |
+| Bilibili | 22 |
+| DCInside | 81 |
 | Discord | 16 |
 | 抖音 | 0（沉默）|
 | Epic Games Store | 0（沉默）|
@@ -34,12 +40,12 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 0（沉默）|
-| Pixiv | 1 |
+| Pixiv | 2 |
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
 | Reddit | 17 |
 | Ruliweb | 0（沉默）|
-| Steam | 6 |
+| Steam | 4 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -51,7 +57,7 @@
 | Twitch | 0（沉默）|
 | Twitter/X | 0（沉默）|
 | VK Play | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 14 |
 | 微信公众号 | 20 |
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
@@ -60,20 +66,20 @@
 
 ## Discord
 
-今日 3,502 条消息，162 位活跃用户，309 次反应。热门频道：🔸morimens-game-chat(2117)、🔸綜合討論(362)、🔸general-chat(264)、🔸canal-português(250)、🔸русский-канал(175)
+今日 5,096 条消息，162 位活跃用户，471 次反应。热门频道：🔸morimens-game-chat(3017)、🔸綜合討論(469)、🔸general-chat(360)、🔸game-question(319)、🔸canal-português(250)
 
 ### 热门话题
 
-1. [DC] water_heart@🔸綜合討論: (附件/嵌入) — engagement: 25
-2. [DC] arkaether@🔸morimens-game-chat: (附件/嵌入) — engagement: 15
-3. [DC] shio2311@🔸morimens-game-chat: this game isnt generous e — engagement: 13
-4. [DC] xingxiu_0209@🔸綜合討論: 圖魯是意外 — engagement: 12
-5. [DC] duxadidus@🔸canal-español: 🫃 — engagement: 12
+1. [DC] willsalvador@🔸morimens-game-chat: https://x.com/i/statu — engagement: 37
+2. [DC] water_heart@🔸綜合討論: (附件/嵌入) — engagement: 25
+3. [DC] undeterredhomo@🔸morimens-game-chat: Erm future cantos i — engagement: 16
+4. [DC] ponponnyaru@🔸綜合討論: 现在是延延又延延 — engagement: 15
+5. [DC] arkaether@🔸morimens-game-chat: (附件/嵌入) — engagement: 15
 
 ## Steam 评论
 
-- 好评 6 / 差评 0 / 好评率 100%
-- 语言分布：russian 3, schinese 2, english 1
+- 好评 4 / 差评 0 / 好评率 100%
+- 语言分布：schinese 2, russian 1, english 1
 
 ### 热门好评
 
@@ -83,15 +89,14 @@
 谢谢🙏 — engagement: 0
 3. [正面] очень крутые женщины спасибо разработчикам за повы... — engagement: 0
 4. [正面] This is a really good game surprisingly at least f... — engagement: 0
-5. [正面] Игра весьма интересна и стоит пробы — engagement: 0
 
 ## Bilibili
 
-1. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 1246
-2. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 1210
-3. 【忘却前夜】3.30-4.13融灾个人记录3-5低配豪赌茉夏 — engagement: 742
-4. 【忘却前夜】3.30-4.13融灾个人记录3-5低配豪赌茉夏 — engagement: 733
-5. ㅤㅤ — engagement: 626
+1. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 1275
+2. 【忘却潘夜】伤转反？反转伤？潘神的理论小课堂！ — engagement: 1238
+3. 【忘却前夜】角色攻略之波吕克斯 — engagement: 937
+4. 【忘却前夜】角色攻略之波吕克斯 — engagement: 902
+5. ㅤㅤ — engagement: 678
 
 ## DCInside
 
@@ -104,14 +109,15 @@
 ## Pixiv
 
 1. 忘却前夜ログ — engagement: 0
+2.  — engagement: 0
 
 ## Reddit
 
-1. I drew Doll ! — engagement: 0
-2. Wow. I didn't think I'd unlocked that "Reproduction Frenzy"  — engagement: 0
-3. in whole game i hate hate this. what do you mean fate,no way — engagement: 0
-4. Cherry Blossom Kimono — engagement: 0
-5. Please I need some help to build a functional Kathigura team — engagement: 0
+1. Traphase — engagement: 0
+2. I drew Doll ! — engagement: 0
+3. Wow. I didn't think I'd unlocked that "Reproduction Frenzy"  — engagement: 0
+4. in whole game i hate hate this. what do you mean fate,no way — engagement: 0
+5. Hey guys, new player here i have a question on who to get fr — engagement: 0
 
 ## StopGame.ru
 
@@ -130,23 +136,19 @@
 
 ## 微博
 
-1. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
-
-忘却前夜 — engagement: 0
-2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-3. 忘却前夜#忘却前夜#
+1. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-4. 🙌🙌 当!当!当! 说好的惊喜来噜🙌🙌
+2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+3. 忘却前夜×沙耶之歌 联动预告
 
-✨🧠听到大家的呼唤啦，你们想看的通通安排！在此送上特别🎁感谢大家的支持✨
+梦的碎片 随风而至
 
-🧠 — engagement: 0
-5. 忘却前夜#忘却前夜#
-《忘却前夜》概念PV——「银芯」
-那是自融蚀降临后，人类最后的希望。
-◆◆◆◆◆◆
-官方玩家交流群 — engagement: 0
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
+4. 忘却前夜 瓜条整理。以下是。关于前段时间期忘却前夜和白荆回廊游戏社区内关于抄袭角色的争议，本人没有对面空口造谣睁眼说瞎话 — engagement: 0
+5. 【投稿】忘却前夜24（梅森）一款震撼美味的多重人格水仙。。。
+1552 — engagement: 0
 
 ## 微信公众号
 
@@ -158,11 +160,11 @@
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 283922
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 41027
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38315
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18818
-5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 17451
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 284031
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 41028
+3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38316
+4. Morimens Basic Mechanics and Account Progression Guide — engagement: 31251
+5. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 18821
 
 ## 沉默平台
 

@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-04-12T09:34:54.893621+00:00",
+  "collected_at": "2026-04-12T11:50:49.349537+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -47,21 +47,6 @@
       "review": "I like Bloodborne and I like Slay the Spire",
       "timestamp_created": 1775837901,
       "playtime_forever": 20443
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-10T10:36:56+00:00",
-      "lang": "japanese",
-      "title": "[正面] こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
-      "summary": "こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
-      "url": "https://steamcommunity.com/profiles/76561198355817923/recommended/3052450",
-      "author": "76561198355817923",
-      "engagement": 1,
-      "language": "japanese",
-      "voted_up": true,
-      "review": "こんなにメインストーリーが面白くて先が読めない展開は今までなかった。",
-      "timestamp_created": 1775817416,
-      "playtime_forever": 10991
     },
     {
       "source": "steam",
@@ -197,21 +182,6 @@
       "review": "скучно под пивом нечего не заметил как уже на 100% ачивок прошёл",
       "timestamp_created": 1775841895,
       "playtime_forever": 13
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-10T10:14:21+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩",
-      "summary": "好玩",
-      "url": "https://steamcommunity.com/profiles/76561199590277384/recommended/3052450",
-      "author": "76561199590277384",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩",
-      "timestamp_created": 1775816061,
-      "playtime_forever": 317
     }
   ]
 }
