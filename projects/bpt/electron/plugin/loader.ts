@@ -21,7 +21,7 @@ import { validateManifest } from './types';
 import { createPluginSandbox } from './sandbox';
 import type { PluginManifest, PluginInstance, PluginInfo, PluginConfig } from './types';
 
-const BPT_VERSION = '0.3.0';
+const BPT_VERSION = '0.4.0';
 
 /** All known plugin instances, keyed by name. */
 const plugins = new Map<string, PluginInstance>();

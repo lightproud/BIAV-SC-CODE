@@ -113,10 +113,16 @@ export function listArtifacts(conversationId?: string): ArtifactMeta[] {
   }
 }
 
+/** Validate artifact ID format to prevent path traversal. */
+function isValidArtifactId(id: string): boolean {
+  return /^art_\d+_[a-z0-9]+$/.test(id);
+}
+
 /**
  * Get the full content of an artifact by ID.
  */
 export function getArtifact(id: string): ArtifactFull | null {
+  if (!isValidArtifactId(id)) return null;
   const dir = getArtifactsDir();
   const filePath = path.join(dir, `${id}.json`);
 
@@ -133,6 +139,7 @@ export function getArtifact(id: string): ArtifactFull | null {
  * Delete an artifact by ID.
  */
 export function deleteArtifact(id: string): boolean {
+  if (!isValidArtifactId(id)) return false;
   const dir = getArtifactsDir();
   const filePath = path.join(dir, `${id}.json`);
 

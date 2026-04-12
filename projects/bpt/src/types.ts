@@ -179,6 +179,9 @@ export const IPC = {
   CONV_LIST: 'conv:list',
   CONV_CREATE: 'conv:create',
   CONV_DELETE: 'conv:delete',
+  CONV_RENAME: 'conv:rename',
+  CONV_LOAD_MESSAGES: 'conv:loadMessages',
+  CONV_CLEAR_HISTORY: 'conv:clearHistory',
 
   // Config
   CONFIG_GET: 'config:get',
@@ -206,6 +209,12 @@ export const IPC = {
 
   // Cite
   CITE_INJECT: 'cite:inject',
+
+  // Plugins
+  PLUGIN_LIST: 'plugin:list',
+  PLUGIN_ENABLE: 'plugin:enable',
+  PLUGIN_DISABLE: 'plugin:disable',
+  PLUGIN_RELOAD: 'plugin:reload',
 
   // Artifacts
   ARTIFACT_LIST: 'artifact:list',

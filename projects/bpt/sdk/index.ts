@@ -48,11 +48,23 @@ export type {
 
 // ── Token Accounting ────────────────────────────────────────────
 
-export { createTokenAccounting } from '../electron/llm/token-accounting';
+export {
+  estimateRequestTokens,
+  mergeUsage,
+  accumulateUsage,
+  emptyUsage,
+  isCacheHealthy,
+} from '../electron/llm/token-accounting';
 
 // ── Tool Registry ───────────────────────────────────────────────
+// Exported as individual functions — no class wrapper.
 
-export { ToolRegistry } from '../electron/llm/tool-registry';
+export {
+  registerTool,
+  getActiveTools,
+  getAllTools,
+  unregisterTool,
+} from '../electron/llm/tool-registry';
 
 // ── Plugin System Types ─────────────────────────────────────────
 // Types only — plugin loader/sandbox depend on Electron runtime.

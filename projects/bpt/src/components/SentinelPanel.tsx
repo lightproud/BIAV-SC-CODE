@@ -10,7 +10,7 @@
  * on the monitoring use case.
  */
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { getBpt } from '../lib/ipc';
 
 interface SentinelAlert {
@@ -45,22 +45,27 @@ export default function SentinelPanel() {
   const [latestAlerts, setLatestAlerts] = useState<SentinelAlert[]>([]);
   const [history, setHistory] = useState<Array<{ date: string; alerts: SentinelAlert[] }>>([]);
   const [loading, setLoading] = useState(true);
+  const cancelledRef = useRef(false);
 
   const loadData = useCallback(async () => {
+    cancelledRef.current = false;
     setLoading(true);
     try {
       // Get latest alerts
       const alerts = await getBpt().sentinelAlerts() as SentinelAlert[];
+      if (cancelledRef.current) return;
       setLatestAlerts(Array.isArray(alerts) ? alerts : []);
 
       // Get report list to build alert history
       const reports = await getBpt().dreamList() as DreamReportEntry[];
+      if (cancelledRef.current) return;
       const reportsWithAlerts = (Array.isArray(reports) ? reports : [])
         .filter((r) => r.alertCount > 0)
         .slice(0, 10); // Last 10 reports with alerts
 
       const historyEntries: Array<{ date: string; alerts: SentinelAlert[] }> = [];
       for (const entry of reportsWithAlerts) {
+        if (cancelledRef.current) return;
         const report = await getBpt().dreamGet(entry.date) as DreamReport | null;
         if (report?.phase1.sentinel?.alerts) {
           historyEntries.push({
@@ -69,8 +74,10 @@ export default function SentinelPanel() {
           });
         }
       }
+      if (cancelledRef.current) return;
       setHistory(historyEntries);
     } catch {
+      if (cancelledRef.current) return;
       setLatestAlerts([]);
       setHistory([]);
     }
@@ -79,6 +86,7 @@ export default function SentinelPanel() {
 
   useEffect(() => {
     loadData();
+    return () => { cancelledRef.current = true; };
   }, [loadData]);
 
   const levelStyle = (level: string): { dot: string; text: string; bg: string } => {
