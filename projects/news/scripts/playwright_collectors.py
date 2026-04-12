@@ -19,7 +19,7 @@ from typing import Optional, List, Dict
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
 
-HOURS_LOOKBACK = 48
+HOURS_LOOKBACK = 24
 TIMEOUT_MS = 30000
 
 

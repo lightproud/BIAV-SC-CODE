@@ -82,9 +82,9 @@ COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ
     '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
 ]
 ALL_KEYWORDS = SEARCH_KEYWORDS + [k.strip() for k in COLLAB_KEYWORDS if k.strip()]
-HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 48))
+HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
 # 分页采集的安全上限（单个 fetcher 最多拿多少条），防止窗口边界模糊或 API 返回错乱
-# 时采到无穷多。默认 500 够 48h 窗口用；环境变量 MAX_ITEMS_PER_FETCHER 可覆盖。
+# 时采到无穷多。默认 500 够 24h 窗口用；环境变量 MAX_ITEMS_PER_FETCHER 可覆盖。
 MAX_ITEMS_PER_FETCHER = int(os.environ.get('MAX_ITEMS_PER_FETCHER', 500))
 
 # Bilibili creator MIDs known to produce Morimens content
@@ -1185,7 +1185,7 @@ def fetch_steam_reviews():
 def fetch_steam_news():
     """Fetch official Steam news/announcements for Morimens (App ID: 3052450).
 
-    官方公告本身频率较低，通用 HOURS_LOOKBACK（48h）会经常过滤掉全部内容。
+    官方公告本身频率较低，通用 HOURS_LOOKBACK（24h）会经常过滤掉全部内容。
     使用更宽的 OFFICIAL_HOURS_LOOKBACK（默认 30 天）以保证日报至少能看到近期官方动态。
     """
     app_id = 3052450
