@@ -1,6 +1,6 @@
 # 银芯启动快照 / BIAV-SC Boot Snapshot
 
-> Auto-generated: 2026-04-11 16:59 UTC
+> Auto-generated: 2026-04-11 14:18 UTC
 > 新会话读完此文件即可就绪，无需逐个加载 memory 文件。
 > 完整定义见 `BIAV-SC.md`，本文件是压缩启动包。
 
