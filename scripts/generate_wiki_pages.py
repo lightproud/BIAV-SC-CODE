@@ -253,9 +253,246 @@ def generate_item_stories():
     print(f'Item stories page: {len(lines)} lines')
 
 
+def _gallery_from_dir(public_subdir, title, desc, sections_config):
+    """Generic gallery page generator that scans a public/ subdirectory.
+
+    sections_config: list of (subdir_name, section_title) or None for flat.
+    """
+    public_dir = os.path.join(DOCS_DIR, 'public', public_subdir)
+    lines = []
+    lines.append(f'# {title}')
+    lines.append('')
+    lines.append(f'> {desc}')
+    lines.append('')
+
+    total = 0
+    base_url = public_subdir
+
+    if sections_config:
+        for subdir, section_title in sections_config:
+            section_dir = os.path.join(public_dir, subdir)
+            if not os.path.isdir(section_dir):
+                continue
+            images = sorted([f for f in os.listdir(section_dir) if f.endswith('.png')])
+            if not images:
+                # Check subdirs
+                for sub2 in sorted(os.listdir(section_dir)):
+                    sub2_path = os.path.join(section_dir, sub2)
+                    if os.path.isdir(sub2_path):
+                        imgs = sorted([f for f in os.listdir(sub2_path) if f.endswith('.png')])
+                        if imgs:
+                            images.extend([(sub2, f) for f in imgs])
+                if not images:
+                    continue
+
+            lines.append(f'## {section_title}（{len(images)} 张）')
+            lines.append('')
+            lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
+            for img in images:
+                if isinstance(img, tuple):
+                    sub2, fname = img
+                    src = f'/{base_url}/{subdir}/{sub2}/{fname}'
+                    name = os.path.splitext(fname)[0]
+                else:
+                    src = f'/{base_url}/{subdir}/{img}'
+                    name = os.path.splitext(img)[0]
+                lines.append(f'<div style="flex: 0 1 200px; text-align: center;">')
+                lines.append(f'<img src="{src}" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
+                lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">{name}</div>')
+                lines.append(f'</div>')
+                total += 1
+            lines.append('</div>')
+            lines.append('')
+    else:
+        # Flat directory
+        images = sorted([f for f in os.listdir(public_dir) if f.endswith('.png')])
+        lines.append(f'共 {len(images)} 张')
+        lines.append('')
+        lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
+        for img in images:
+            src = f'/{base_url}/{img}'
+            name = os.path.splitext(img)[0]
+            lines.append(f'<div style="flex: 0 1 200px; text-align: center;">')
+            lines.append(f'<img src="{src}" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
+            lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px;">{name}</div>')
+            lines.append(f'</div>')
+            total += 1
+        lines.append('</div>')
+        lines.append('')
+
+    return lines, total
+
+
+def generate_portraits_gallery():
+    """Generate character portraits gallery."""
+    sections = [
+        ('full', '全身立绘'),
+        ('middle', '半身立绘'),
+        ('circularhead', '圆形头像'),
+        ('fullhead', '全身头像'),
+        ('middleface', '半身面部'),
+        ('minihead', '迷你头像'),
+        ('miniface', '迷你面部'),
+    ]
+    lines, total = _gallery_from_dir(
+        'portraits',
+        '角色立绘画廊',
+        f'数据来源：art-assets-v1 Release（UnityPy 解包） | 478 张角色立绘，7 种规格',
+        sections,
+    )
+    with open(f'{DOCS_DIR}/portraits.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Portraits gallery: {total} images')
+
+
+def generate_bunit_gallery():
+    """Generate battle unit gallery."""
+    sections = [
+        ('awaker', '唤醒体'),
+        ('keeper', '守护者'),
+        ('monster', '怪物'),
+    ]
+    lines, total = _gallery_from_dir(
+        'bunit',
+        '战斗单位画廊',
+        f'数据来源：art-assets-v1 Release（UnityPy 解包） | 317 张战斗单位贴图',
+        sections,
+    )
+    with open(f'{DOCS_DIR}/battle-units.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Battle units gallery: {total} images')
+
+
+def generate_icons_gallery():
+    """Generate icons gallery."""
+    # Scan subdirs dynamically
+    icon_dir = os.path.join(DOCS_DIR, 'public', 'icon')
+    section_labels = {
+        'career': '职业图标',
+        'copytitle': '副本标题',
+        'emoji': '表情',
+        'gift': '礼物',
+        'keytoken_crystal': '钥令结晶',
+        'keytoken_props': '钥令道具',
+        'keytoken_skill': '钥令技能',
+        'material': '材料',
+        'relic': '遗物',
+        'resonance': '共鸣',
+        'skingift': '皮肤礼物',
+        'topbaritem': '顶栏道具',
+        'weapon_full': '命轮全图',
+        'weapon_small': '命轮小图',
+    }
+    sections = []
+    for d in sorted(os.listdir(icon_dir)):
+        if os.path.isdir(os.path.join(icon_dir, d)):
+            label = section_labels.get(d, d)
+            sections.append((d, label))
+
+    lines, total = _gallery_from_dir(
+        'icon',
+        '图标画廊',
+        f'数据来源：art-assets-v1 Release（UnityPy 解包） | 169 个图标',
+        sections,
+    )
+    with open(f'{DOCS_DIR}/icons.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Icons gallery: {total} images')
+
+
+def generate_ui_gallery():
+    """Generate UI resources gallery."""
+    ui_dir = os.path.join(DOCS_DIR, 'public', 'uiresources', 'uibigimages')
+    section_labels = {
+        'ui_alchemy': '炼金',
+        'ui_awaker': '唤醒体',
+        'ui_battle': '战斗',
+        'ui_card': '卡牌',
+        'ui_chapter': '章节',
+        'ui_collection': '收藏馆',
+        'ui_collection_image': '收藏馆图片',
+        'ui_common': '通用',
+        'ui_dbgcopy': '调试副本',
+        'ui_dungeous': '地下城',
+        'ui_events': '活动',
+        'ui_guide': '引导',
+        'ui_keytoken': '钥令',
+        'ui_large': '大图',
+        'ui_mail': '邮件',
+        'ui_mask': '遮罩',
+        'ui_passport': '通行证',
+        'ui_pvp': 'PvP',
+        'ui_research': '研究',
+        'ui_story_texture': '剧情贴图',
+        'ui_summon': '召唤',
+    }
+
+    lines = []
+    lines.append('# UI 资源画廊')
+    lines.append('')
+    lines.append('> 数据来源：art-assets-v1 Release（UnityPy 解包）')
+    lines.append('')
+
+    total = 0
+
+    # Card portraits
+    card_dir = os.path.join(DOCS_DIR, 'public', 'portrait-card', 'card')
+    if os.path.isdir(card_dir):
+        images = sorted([f for f in os.listdir(card_dir) if f.endswith('.png')])
+        if images:
+            lines.append(f'## 卡面立绘（{len(images)} 张）')
+            lines.append('')
+            lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
+            for img in images:
+                name = os.path.splitext(img)[0]
+                lines.append(f'<div style="flex: 0 1 200px; text-align: center;">')
+                lines.append(f'<img src="/portrait-card/card/{img}" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
+                lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px;">{name}</div>')
+                lines.append(f'</div>')
+                total += 1
+            lines.append('</div>')
+            lines.append('')
+
+    # UI big images by category
+    if os.path.isdir(ui_dir):
+        for d in sorted(os.listdir(ui_dir)):
+            dpath = os.path.join(ui_dir, d)
+            if not os.path.isdir(dpath):
+                continue
+            label = section_labels.get(d, d)
+            # Collect images recursively
+            imgs = []
+            for root, dirs, files in os.walk(dpath):
+                for f in sorted(files):
+                    if f.endswith('.png'):
+                        rel = os.path.relpath(os.path.join(root, f), os.path.join(DOCS_DIR, 'public'))
+                        imgs.append((rel, os.path.splitext(f)[0]))
+            if not imgs:
+                continue
+            lines.append(f'## {label}（{len(imgs)} 张）')
+            lines.append('')
+            lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
+            for rel, name in imgs:
+                lines.append(f'<div style="flex: 0 1 280px; text-align: center;">')
+                lines.append(f'<img src="/{rel}" alt="{name}" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />')
+                lines.append(f'<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">{name}</div>')
+                lines.append(f'</div>')
+                total += 1
+            lines.append('</div>')
+            lines.append('')
+
+    with open(f'{DOCS_DIR}/ui-resources.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'UI resources gallery: {total} images')
+
+
 if __name__ == '__main__':
     generate_voice_lines()
     generate_collection_hall()
     generate_cg_gallery()
     generate_item_stories()
+    generate_portraits_gallery()
+    generate_bunit_gallery()
+    generate_icons_gallery()
+    generate_ui_gallery()
     print('All wiki pages generated.')
