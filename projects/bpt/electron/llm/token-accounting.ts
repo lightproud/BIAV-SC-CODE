@@ -25,17 +25,19 @@ import { getContextWindow as getContextWindowFromRegistry } from '../../src/mode
 /**
  * Compression ratio: compress when history exceeds this fraction of context window.
  *
- * Why 12%: At Sonnet $3/MTok, 120k history = $0.36/turn in history alone.
- * That's a reasonable cost ceiling. Tighter-window models (128k GPT-4o,
- * 64k DeepSeek) get proportionally tighter thresholds automatically.
+ * Why 90%: Same strategy as Claude Code — maximize context usage, compress
+ * only when approaching the limit. Preserves more conversation history,
+ * trades cost for quality. At Sonnet $3/MTok with 1M window, 900k history
+ * = $2.70/turn — acceptable for teams that value context continuity.
  */
-const COMPRESSION_RATIO = 0.12;
+const COMPRESSION_RATIO = 0.90;
 
 /**
  * Safety ceiling: never let total input exceed this fraction of context window.
- * Reserves the remaining 20% for output generation.
+ * Reserves the remaining 5% as hard safety margin for system prompt, tools,
+ * and API overhead that could cause request rejection.
  */
-const SAFETY_CEILING_RATIO = 0.80;
+const SAFETY_CEILING_RATIO = 0.95;
 
 /** Reserved tokens for system prompt + tool schema + safety margin. */
 const RESERVED_OVERHEAD = 10_000;
