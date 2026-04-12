@@ -25,6 +25,8 @@ import { registerSilverIpc, initSilverCore } from './silver/silver-ipc';
 import { registerBpeIpc, initBpe } from './bpe/bpe-ipc';
 import { registerChatIpc } from './conversation/stream';
 import { initConversationDb, closeConversationDb } from './conversation/store';
+import { registerPluginIpc } from './plugin/plugin-ipc';
+import { initPlugins } from './plugin/loader';
 import { logger } from './core/logger';
 
 // Prevent multiple instances
@@ -43,7 +45,7 @@ app.on('second-instance', () => {
 });
 
 app.whenReady().then(async () => {
-  logger.info('main', 'BPT starting', { version: '0.2.0' });
+  logger.info('main', 'BPT starting', { version: '0.3.0' });
 
   // 1. Initialize database
   initConversationDb();
@@ -54,10 +56,11 @@ app.whenReady().then(async () => {
   // 3. Register core IPC handlers
   registerIpcHandlers(() => getMainWindow());
 
-  // 4-6. Init subsystems and register their IPC handlers
+  // 4-7. Init subsystems and register their IPC handlers
   registerSilverIpc();
   registerBpeIpc();
   registerChatIpc(() => getMainWindow());
+  registerPluginIpc();
 
   // Start async initialization (non-blocking — renderer shows "connecting...")
   initSilverCore().catch((err: Error) => {
@@ -65,6 +68,9 @@ app.whenReady().then(async () => {
   });
   initBpe().catch((err: Error) => {
     logger.error('main', 'BPE init failed', { error: err.message });
+  });
+  initPlugins().catch((err: Error) => {
+    logger.error('main', 'Plugin init failed', { error: err.message });
   });
 
   // 7. Tray + hotkey
