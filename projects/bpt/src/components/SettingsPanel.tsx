@@ -19,9 +19,9 @@ interface EndpointConfig {
 }
 
 const DEFAULT_MODELS = [
-  { label: 'Claude Sonnet 4', value: 'claude-sonnet-4-20250514', provider: 'claude' },
-  { label: 'Claude Opus 4', value: 'claude-opus-4-20250514', provider: 'claude' },
-  { label: 'Claude Haiku 3.5', value: 'claude-3-5-haiku-20241022', provider: 'claude' },
+  { label: 'Claude Sonnet 4.6', value: 'claude-sonnet-4-6', provider: 'claude' },
+  { label: 'Claude Opus 4.6', value: 'claude-opus-4-6', provider: 'claude' },
+  { label: 'Claude Haiku 4.5', value: 'claude-haiku-4-5-20251001', provider: 'claude' },
   { label: 'GPT-4o', value: 'gpt-4o', provider: 'openai' },
   { label: 'GPT-4o-mini', value: 'gpt-4o-mini', provider: 'openai' },
   { label: 'DeepSeek V3', value: 'deepseek-chat', provider: 'openai' },
@@ -34,7 +34,7 @@ export default function SettingsPanel() {
     name: 'Claude (Gateway)',
     baseUrl: 'https://api.anthropic.com',
     apiKey: '',
-    model: 'claude-sonnet-4-20250514',
+    model: 'claude-sonnet-4-6',
     provider: 'claude',
   });
   const [saved, setSaved] = useState(false);

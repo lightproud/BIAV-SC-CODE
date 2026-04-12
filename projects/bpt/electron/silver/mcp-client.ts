@@ -12,6 +12,7 @@
  */
 
 import { spawn, ChildProcess } from 'node:child_process';
+import { BPT_VERSION } from '../../src/version';
 import { logger } from '../core/logger';
 
 /** MCP JSON-RPC message structure. */
@@ -82,7 +83,7 @@ export class McpClient {
       this.sendRequest('initialize', {
         protocolVersion: '2024-11-05',
         capabilities: {},
-        clientInfo: { name: 'bpt', version: '0.1.0' },
+        clientInfo: { name: 'bpt', version: BPT_VERSION },
       })
         .then(() => {
           this.connected = true;
