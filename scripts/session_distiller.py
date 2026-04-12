@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-session_distiller.py — Claude Code SessionEnd transcript distiller (v0.2 archive).
+session_distiller.py — Claude Code SessionEnd transcript distiller (v0.2).
 
-Reads a Claude Code session JSONL transcript and writes three outputs to
-memory/session-digests/:
+Reads a Claude Code session JSONL transcript and writes a structural
+metadata index to memory/session-digests/{stamp}-{sid}.json (gitignored).
 
-  1. {stamp}-{sid}.json   — structural metadata index (turns, tools, files)
-  2. {stamp}-{sid}.md     — human-readable Markdown conversation record
-  3. {stamp}-{sid}.jsonl.gz — gzipped verbatim copy of the raw transcript
+This is the foundation layer for future LLM-based summarization (v0.3):
+the JSON contains enough signal (user prompts, bash descriptions, tool
+calls, files touched) for a downstream pass to extract key decisions,
+lessons learned, and session summaries without re-parsing the transcript.
 
-All three are committed to git as a public growth record. No API calls —
-pure structural parsing + file copy.
+No API calls — pure structural parsing.
 
 Called by .claude/session-end-distill.sh when SessionEnd fires.
 
@@ -23,9 +23,7 @@ Usage:
 """
 
 import argparse
-import gzip
 import json
-import shutil
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -150,7 +148,7 @@ def distill(transcript_path: Path, session_id: str, cwd: str) -> dict:
 
     return {
         'schema_version': 2,
-        'distiller_version': 'v0.2-archive',
+        'distiller_version': 'v0.2-structural',
         'session_id': session_id,
         'cwd': cwd,
         'transcript_path': str(transcript_path),
@@ -185,174 +183,6 @@ def distill(transcript_path: Path, session_id: str, cwd: str) -> dict:
     }
 
 
-def _tool_summary(name: str, tinput: dict) -> str:
-    """One-line summary of a tool_use call for the Markdown record."""
-    if name == 'Bash':
-        desc = tinput.get('description', '')
-        cmd = tinput.get('command', '')
-        if len(cmd) > 300:
-            cmd = cmd[:300] + '...'
-        parts = [f'`{desc}`'] if desc else []
-        if cmd:
-            parts.append(f'\n```bash\n{cmd}\n```')
-        return ' '.join(parts) if not cmd else (parts[0] + parts[1] if desc else f'```bash\n{cmd}\n```')
-    if name == 'Read':
-        fp = tinput.get('file_path', '?')
-        extra = []
-        if tinput.get('offset') is not None:
-            extra.append(f'offset={tinput["offset"]}')
-        if tinput.get('limit') is not None:
-            extra.append(f'limit={tinput["limit"]}')
-        suffix = f' ({", ".join(extra)})' if extra else ''
-        return f'`{fp}`{suffix}'
-    if name in ('Edit', 'Write'):
-        fp = tinput.get('file_path', '?')
-        return f'`{fp}`'
-    if name == 'Grep':
-        return f'pattern=`{tinput.get("pattern", "")[:100]}`'
-    if name == 'Glob':
-        return f'pattern=`{tinput.get("pattern", "")[:100]}`'
-    if name == 'TodoWrite':
-        todos = tinput.get('todos', [])
-        return f'{len(todos)} items'
-    if name == 'Agent':
-        return tinput.get('description', '') or tinput.get('prompt', '')[:120]
-    # Generic fallback
-    keys = list(tinput.keys())[:5]
-    return f'({", ".join(keys)})' if keys else ''
-
-
-def render_markdown(transcript_path: Path, session_id: str, metadata: dict) -> str:
-    """Second pass over the JSONL: render a human-readable Markdown record."""
-    lines: list[str] = []
-    sid8 = session_id[:8]
-    earliest = metadata.get('earliest_ts', '')
-    latest = metadata.get('latest_ts', '')
-    dur = metadata.get('duration_seconds')
-    turns = metadata.get('turns', {})
-    tools_total = sum(metadata.get('tool_calls', {}).values())
-
-    lines.append(f'# Session `{sid8}` — {earliest[:10] if earliest else "unknown"}')
-    lines.append('')
-    lines.append(f'- **session_id**: `{session_id}`')
-    lines.append(f'- **cwd**: `{metadata.get("cwd", "")}`')
-    lines.append(f'- **time**: {earliest} .. {latest}')
-    if dur is not None:
-        m, s = divmod(dur, 60)
-        lines.append(f'- **duration**: {m}m {s}s')
-    lines.append(f'- **turns**: user={turns.get("user", 0)} / assistant={turns.get("assistant", 0)}')
-    lines.append(f'- **tool calls**: {tools_total}')
-    lines.append(f'- **compact events**: {metadata.get("compact_events", 0)}')
-    lines.append('')
-    lines.append('---')
-    lines.append('')
-
-    user_idx = 0
-    asst_idx = 0
-
-    with open(transcript_path, encoding='utf-8') as f:
-        for raw_line in f:
-            try:
-                entry = json.loads(raw_line)
-            except json.JSONDecodeError:
-                continue
-
-            etype = entry.get('type')
-            ts_raw = entry.get('timestamp', '')
-            ts_short = ts_raw[11:19] if len(ts_raw) >= 19 else ts_raw
-
-            # --- system ---
-            if etype == 'system':
-                if entry.get('subtype') == 'compact_boundary':
-                    lines.append('---')
-                    lines.append('')
-                    lines.append(f'*[compact boundary at {ts_short}]*')
-                    lines.append('')
-                    lines.append('---')
-                    lines.append('')
-                continue
-
-            # --- user ---
-            if etype == 'user':
-                msg = entry.get('message', {}) or {}
-                content = msg.get('content')
-                text_blocks: list[str] = []
-                if isinstance(content, str):
-                    t = content.strip()
-                    if t and not t.startswith('<'):
-                        text_blocks.append(t)
-                elif isinstance(content, list):
-                    for item in content:
-                        if isinstance(item, dict) and item.get('type') == 'text':
-                            t = (item.get('text') or '').strip()
-                            if t and not t.startswith('<'):
-                                text_blocks.append(t)
-                if text_blocks:
-                    user_idx += 1
-                    lines.append(f'## User [{user_idx}] {ts_short}')
-                    lines.append('')
-                    for t in text_blocks:
-                        lines.append(t)
-                        lines.append('')
-                continue
-
-            # --- assistant ---
-            if etype == 'assistant':
-                msg = entry.get('message', {}) or {}
-                content = msg.get('content', [])
-                if not isinstance(content, list):
-                    continue
-                has_renderable = any(
-                    isinstance(it, dict) and it.get('type') in ('text', 'thinking', 'tool_use')
-                    for it in content
-                )
-                if not has_renderable:
-                    continue
-
-                asst_idx += 1
-                lines.append(f'## Assistant [{asst_idx}] {ts_short}')
-                lines.append('')
-
-                for item in content:
-                    if not isinstance(item, dict):
-                        continue
-                    itype = item.get('type', '')
-
-                    if itype == 'thinking':
-                        t = (item.get('thinking') or '').strip()
-                        if t:
-                            lines.append('<details><summary>thinking</summary>')
-                            lines.append('')
-                            lines.append(t)
-                            lines.append('')
-                            lines.append('</details>')
-                            lines.append('')
-
-                    elif itype == 'text':
-                        t = (item.get('text') or '').strip()
-                        if t:
-                            lines.append(t)
-                            lines.append('')
-
-                    elif itype == 'tool_use':
-                        name = item.get('name', '?')
-                        tinput = item.get('input') or {}
-                        if not isinstance(tinput, dict):
-                            tinput = {}
-                        summary = _tool_summary(name, tinput)
-                        lines.append(f'> **{name}** {summary}')
-                        lines.append('')
-                continue
-
-    return '\n'.join(lines)
-
-
-def copy_transcript_gz(src: Path, dst: Path):
-    """Gzip-copy the raw JSONL transcript for archival."""
-    with open(src, 'rb') as fin, gzip.open(dst, 'wb', compresslevel=6) as fout:
-        shutil.copyfileobj(fin, fout)
-
-
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument('--transcript', required=True, type=Path)
@@ -370,26 +200,13 @@ def main() -> int:
     args.digest_dir.mkdir(parents=True, exist_ok=True)
     stamp = datetime.now(timezone.utc).strftime('%Y%m%d-%H%M%S')
     sid_short = (args.session_id or 'unknown')[:8]
-    base = f'{stamp}-{sid_short}'
 
-    # 1. JSON metadata index
-    json_path = args.digest_dir / f'{base}.json'
+    json_path = args.digest_dir / f'{stamp}-{sid_short}.json'
     json_path.write_text(
         json.dumps(metadata, indent=2, ensure_ascii=False),
         encoding='utf-8',
     )
-
-    # 2. Markdown conversation record
-    md_path = args.digest_dir / f'{base}.md'
-    md_text = render_markdown(args.transcript, args.session_id, metadata)
-    md_path.write_text(md_text, encoding='utf-8')
-
-    # 3. Gzipped verbatim transcript copy
-    gz_path = args.digest_dir / f'{base}.jsonl.gz'
-    copy_transcript_gz(args.transcript, gz_path)
-
-    gz_kb = gz_path.stat().st_size / 1024
-    print(f'Wrote: {json_path.name} / {md_path.name} / {gz_path.name} ({gz_kb:.0f} KB)')
+    print(f'Wrote digest: {json_path}')
     print(
         f'  turns: user={metadata["turns"]["user"]} '
         f'assistant={metadata["turns"]["assistant"]} '

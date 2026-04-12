@@ -43,7 +43,6 @@ assets/data/precomputed-cache.json
 assets/data/sentinel-baseline.json
 projects/news/output/alerts.json
 
-# session digests — only the JSON metadata index is gitignored (rebuildable);
-# .md (conversation record) and .jsonl.gz (raw archive) are committed as
-# public growth record.
-memory/session-digests/*.json
+# session digests (local structural index, gitignored; v0.3 will add
+# LLM-extracted summaries/decisions/lessons as the committed output)
+memory/session-digests/
