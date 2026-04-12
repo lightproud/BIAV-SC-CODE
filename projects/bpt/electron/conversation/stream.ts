@@ -280,6 +280,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
 
         if (wasCompressed) {
           logger.info('stream', `Compressed history: dropped ${droppedTurns} turns`);
+          sendToRenderer(win, { type: 'compression_notice', droppedTurns });
         }
 
         // Pre-estimate token breakdown

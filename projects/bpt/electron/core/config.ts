@@ -34,6 +34,8 @@ interface StoreSchema {
   };
   /** Reranker toggle for BPE. */
   bpeRerankerEnabled: boolean;
+  /** Whether the gear switch confirmation dialog has been shown at least once. */
+  gearConfirmSeen: boolean;
   /** Auto-update server URL (generic provider). Empty = disabled. */
   updateServerUrl: string;
 }
@@ -59,6 +61,7 @@ const store = new Store<StoreSchema>({
       extraDirs: [],
     },
     bpeRerankerEnabled: false,
+    gearConfirmSeen: false,
     updateServerUrl: '',
   },
 });
