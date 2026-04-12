@@ -1,10 +1,10 @@
 /**
  * compressor.ts — Conversation history compression.
  *
- * Why: Prime Directive T3 — history that exceeds turn count or token
- * thresholds must be compressed. The token threshold is model-aware:
- * it scales with the model's context window so a 200k model compresses
- * much earlier than a 1M model.
+ * Why: Prime Directive T3 — history must be compressed when it exceeds
+ * the dynamic budget. The budget is NOT a fixed percentage — it's
+ * calculated by subtracting system prompt, tool schemas, and output
+ * reserve from the model's context window (Aider-style split budget).
  *
  * Phase 1 strategy: Use Haiku to generate a summary of dropped turns,
  * preserving key decisions, facts, and user preferences. Falls back to
@@ -13,7 +13,7 @@
 
 import type { LlmMessage } from '../llm/provider';
 import { getConfig } from '../core/config';
-import { getCompressionThreshold } from '../llm/token-accounting';
+import { getHistoryBudget, getCompressionThreshold } from '../llm/token-accounting';
 import { logger } from '../core/logger';
 
 interface CompressionResult {
@@ -23,26 +23,45 @@ interface CompressionResult {
 }
 
 /**
- * Compress conversation history if it exceeds configured thresholds.
+ * Overhead context that competes with history for the context window.
+ * Passed by the orchestrator (stream.ts) which knows the actual values.
+ */
+export interface ContextOverhead {
+  systemPromptTokens: number;
+  toolSchemaTokens: number;
+  maxOutputTokens: number;
+}
+
+/**
+ * Compress conversation history if it exceeds the dynamic budget.
  *
  * Two independent triggers (either one fires compression):
  * 1. Turn count exceeds compressionTriggerTurns (default 20)
- * 2. Estimated history tokens exceed model-aware threshold
- *    (= contextWindow * 12%, capped by safety ceiling)
+ * 2. Estimated history tokens exceed the dynamic budget
+ *    (= contextWindow * 95% - system - tools - output reserve)
+ *
+ * When overhead is provided, the budget is precise: history gets
+ * whatever space is left after system, tools, and output. When overhead
+ * is null (legacy path), falls back to 90% of context window.
  *
  * Strategy once triggered:
  * 1. Keep the last `keepTurns` message pairs (user+assistant) verbatim.
  * 2. Summarize everything before that into a condensed context block
- *    using Haiku (cheap, fast). The summary preserves key decisions,
- *    facts discovered, user preferences, and tool results.
- * 3. If Haiku call fails, fall back to a plain placeholder noting
- *    how many turns were dropped.
+ *    using Haiku (cheap, fast).
+ * 3. If Haiku call fails, fall back to a plain placeholder.
  */
-export async function compressHistory(messages: LlmMessage[], model: string): Promise<CompressionResult> {
+export async function compressHistory(
+  messages: LlmMessage[],
+  model: string,
+  overhead?: ContextOverhead | null,
+): Promise<CompressionResult> {
   const maxTurns = (getConfig('compressionTriggerTurns') as number) ?? 20;
-  const configTokenOverride = getConfig('compressionTriggerTokens') as number | undefined;
-  const maxTokens = getCompressionThreshold(model, configTokenOverride ?? null);
   const keepTurns = 10; // Keep the last 10 user+assistant pairs
+
+  // Calculate history budget: dynamic (precise) or fallback (percentage)
+  const historyBudget = overhead
+    ? getHistoryBudget(model, overhead.systemPromptTokens, overhead.toolSchemaTokens, overhead.maxOutputTokens)
+    : getCompressionThreshold(model);
 
   // Count turns (a turn = one user message)
   const turns = countTurns(messages);
@@ -50,14 +69,18 @@ export async function compressHistory(messages: LlmMessage[], model: string): Pr
 
   // Trigger on whichever threshold is hit first
   const turnTriggered = turns > maxTurns;
-  const tokenTriggered = estimatedTokens > maxTokens;
+  const tokenTriggered = estimatedTokens > historyBudget;
 
   if (!turnTriggered && !tokenTriggered) {
     return { messages, wasCompressed: false, droppedTurns: 0 };
   }
 
   if (tokenTriggered) {
-    logger.info('compressor', `Token threshold triggered: ~${estimatedTokens} tokens > ${maxTokens} limit (model: ${model})`);
+    const budgetSource = overhead ? 'dynamic' : 'fallback';
+    logger.info('compressor',
+      `Token threshold triggered (${budgetSource}): ~${Math.round(estimatedTokens)} history tokens > ${historyBudget} budget` +
+      (overhead ? ` (sys:${overhead.systemPromptTokens} tools:${overhead.toolSchemaTokens} out:${overhead.maxOutputTokens})` : ''),
+    );
   }
 
   // Find the cut point: keep the last `keepTurns * 2` messages
@@ -231,15 +254,18 @@ function estimateHistoryTokens(messages: LlmMessage[]): number {
 }
 
 /**
- * Check if compression should be triggered (model-aware).
+ * Check if compression should be triggered.
+ * Accepts optional overhead for precise budget; falls back to percentage threshold.
  */
-export function shouldCompress(messages: LlmMessage[], model: string): boolean {
+export function shouldCompress(messages: LlmMessage[], model: string, overhead?: ContextOverhead | null): boolean {
   const maxTurns = (getConfig('compressionTriggerTurns') as number) ?? 20;
-  const configTokenOverride = getConfig('compressionTriggerTokens') as number | undefined;
-  const maxTokens = getCompressionThreshold(model, configTokenOverride ?? null);
 
   const turns = countTurns(messages);
   if (turns > maxTurns) return true;
 
-  return estimateHistoryTokens(messages) > maxTokens;
+  const budget = overhead
+    ? getHistoryBudget(model, overhead.systemPromptTokens, overhead.toolSchemaTokens, overhead.maxOutputTokens)
+    : getCompressionThreshold(model);
+
+  return estimateHistoryTokens(messages) > budget;
 }

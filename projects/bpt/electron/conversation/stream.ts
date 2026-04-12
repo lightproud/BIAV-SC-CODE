@@ -19,7 +19,7 @@ import { ipcMain, BrowserWindow } from 'electron';
 import { ClaudeProvider } from '../llm/claude';
 import { OpenAiProvider } from '../llm/openai';
 import { getActiveTools } from '../llm/tool-registry';
-import { estimateRequestTokens, mergeUsage, accumulateUsage, emptyUsage } from '../llm/token-accounting';
+import { estimateRequestTokens, estimateTokens, mergeUsage, accumulateUsage, emptyUsage } from '../llm/token-accounting';
 import { logTokenUsage } from '../core/logger';
 import { getConfig } from '../core/config';
 import { logger } from '../core/logger';
@@ -214,8 +214,17 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
       while (loopCount < MAX_TOOL_LOOPS) {
         loopCount++;
 
+        // Calculate overhead so compressor knows the precise history budget.
+        // System prompt + tool schemas + output reserve compete with history
+        // for the context window. History gets whatever space is left.
+        const overhead = {
+          systemPromptTokens: estimateTokens(systemPrompt),
+          toolSchemaTokens: estimateTokens(JSON.stringify(tools)),
+          maxOutputTokens: MAX_TOKENS_BY_GEAR[currentGear],
+        };
+
         // Apply compression before sending (operates on a copy)
-        const { messages: messagesToSend, wasCompressed, droppedTurns } = await compressHistory([...history], endpoint.model);
+        const { messages: messagesToSend, wasCompressed, droppedTurns } = await compressHistory([...history], endpoint.model, overhead);
 
         if (wasCompressed) {
           logger.info('stream', `Compressed history: dropped ${droppedTurns} turns`);

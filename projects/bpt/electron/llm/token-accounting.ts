@@ -23,59 +23,60 @@ import { getContextWindow as getContextWindowFromRegistry } from '../../src/mode
 // thresholds and estimation heuristics.
 
 /**
- * Compression ratio: compress when history exceeds this fraction of context window.
- *
- * Why 90%: Same strategy as Claude Code — maximize context usage, compress
- * only when approaching the limit. Preserves more conversation history,
- * trades cost for quality. At Sonnet $3/MTok with 1M window, 900k history
- * = $2.70/turn — acceptable for teams that value context continuity.
+ * Safety margin: 5% of context window is reserved as hard buffer
+ * for API overhead, token-counting imprecision, and response framing.
  */
-const COMPRESSION_RATIO = 0.90;
-
-/**
- * Safety ceiling: never let total input exceed this fraction of context window.
- * Reserves the remaining 5% as hard safety margin for system prompt, tools,
- * and API overhead that could cause request rejection.
- */
-const SAFETY_CEILING_RATIO = 0.95;
-
-/** Reserved tokens for system prompt + tool schema + safety margin. */
-const RESERVED_OVERHEAD = 10_000;
+const SAFETY_MARGIN_RATIO = 0.05;
 
 /** Re-export for convenience — callers don't need to import models.ts directly. */
 export const getContextWindow = getContextWindowFromRegistry;
 
 /**
- * Calculate the effective compression threshold for a given model.
+ * Calculate the dynamic history budget for compression decisions.
  *
- * Why model-aware: A fixed 120k threshold is 12% of a 1M window (fine)
- * but 60% of a 200k window (dangerous) and 94% of a 128k window (fatal).
- * The threshold must scale with the model's actual capacity.
+ * Aider-inspired split budget: instead of "compress at X% of window",
+ * we calculate how much space history ACTUALLY has after accounting for
+ * system prompt, tool schemas, and output reserve. History gets the rest.
  *
- * Returns the token count at which history compression should trigger.
- * The threshold is the smallest of:
- * 1. contextWindow * COMPRESSION_RATIO  — cost control
- * 2. contextWindow * SAFETY_CEILING_RATIO - reserved  — hard ceiling
- * 3. configOverride (if user set one, respect it but cap at safety ceiling)
+ * Budget = contextWindow - safetyMargin - systemTokens - toolTokens - outputReserve
+ *
+ * This automatically adapts to:
+ * - Models with different context windows (1M vs 200k vs 64k)
+ * - Gears with different tool counts (chat: 5 tools vs work: 6+)
+ * - Silver Core context injection (bigger system prompt = less history room)
+ * - @Cite injections (counted as history, so they reduce remaining budget)
+ */
+export function getHistoryBudget(
+  model: string,
+  systemPromptTokens: number,
+  toolSchemaTokens: number,
+  maxOutputTokens: number,
+): number {
+  const contextWindow = getContextWindow(model);
+  const safetyMargin = Math.floor(contextWindow * SAFETY_MARGIN_RATIO);
+
+  const budget = contextWindow - safetyMargin - systemPromptTokens - toolSchemaTokens - maxOutputTokens;
+  // Never return negative — means the model is too small for this config
+  return Math.max(0, budget);
+}
+
+/**
+ * Legacy threshold for when overhead is unknown (e.g. shouldCompress called
+ * before system prompt is built). Falls back to 90% of context window
+ * minus a generous flat reserve.
  */
 export function getCompressionThreshold(model: string, configOverride?: number | null): number {
   const contextWindow = getContextWindow(model);
+  const safetyCeiling = Math.floor(contextWindow * (1 - SAFETY_MARGIN_RATIO));
 
-  // Cost-based: compress proactively to control per-turn cost
-  const costThreshold = Math.floor(contextWindow * COMPRESSION_RATIO);
+  // Default: 90% of window
+  const defaultThreshold = Math.floor(contextWindow * 0.90);
 
-  // Safety: leave room for system prompt, tools, and output
-  const safetyCeiling = Math.floor(contextWindow * SAFETY_CEILING_RATIO) - RESERVED_OVERHEAD;
-
-  // Model-aware default = the tighter of cost and safety
-  const modelThreshold = Math.min(costThreshold, safetyCeiling);
-
-  // If user configured an override, use it but never exceed safety ceiling
   if (configOverride != null && configOverride > 0) {
     return Math.min(configOverride, safetyCeiling);
   }
 
-  return modelThreshold;
+  return Math.min(defaultThreshold, safetyCeiling);
 }
 
 // ── Token estimation ───────────────────────────────────────────
@@ -87,8 +88,10 @@ export function getCompressionThreshold(model: string, configOverride?: number |
  * each, while Latin text averages ~4 chars per token. This project mixes
  * Chinese and English heavily, so uniform char/4 underestimates by ~2x for
  * Chinese-heavy prompts (which is most of ours).
+ *
+ * Exported for use by compressor (overhead calculation) and other consumers.
  */
-function estimateTokens(text: string): number {
+export function estimateTokens(text: string): number {
   let cjkChars = 0;
   let otherChars = 0;
   for (let i = 0; i < text.length; i++) {
