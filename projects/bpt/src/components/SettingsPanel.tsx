@@ -8,6 +8,7 @@
 
 import { useState, useEffect } from 'react';
 import { getBpt } from '../lib/ipc';
+import { getSelectorModels } from '../models';
 
 interface EndpointConfig {
   id: string;
@@ -18,15 +19,7 @@ interface EndpointConfig {
   provider?: string;
 }
 
-const DEFAULT_MODELS = [
-  { label: 'Claude Sonnet 4.6', value: 'claude-sonnet-4-6', provider: 'claude' },
-  { label: 'Claude Opus 4.6', value: 'claude-opus-4-6', provider: 'claude' },
-  { label: 'Claude Haiku 4.5', value: 'claude-haiku-4-5-20251001', provider: 'claude' },
-  { label: 'GPT-4o', value: 'gpt-4o', provider: 'openai' },
-  { label: 'GPT-4o-mini', value: 'gpt-4o-mini', provider: 'openai' },
-  { label: 'DeepSeek V3', value: 'deepseek-chat', provider: 'openai' },
-  { label: 'Custom', value: '', provider: '' },
-];
+const DEFAULT_MODELS = getSelectorModels();
 
 export default function SettingsPanel() {
   const [config, setConfig] = useState<EndpointConfig>({

@@ -13,41 +13,8 @@
 import Anthropic from '@anthropic-ai/sdk';
 import type { LlmProvider, LlmRequestConfig, LlmStreamEvent, LlmMessage, LlmContentBlock } from './provider';
 import type { ToolDescriptor, TokenUsage } from '../../src/types';
+import { getModelPricing } from '../../src/models';
 import { logger } from '../core/logger';
-
-/**
- * Per-model pricing from https://docs.anthropic.com/en/docs/about-claude/pricing
- * Prices are per million tokens. Cache hit = 0.1x base input, cache write (5min) = 1.25x base input.
- */
-interface ModelPricing {
-  input: number;
-  output: number;
-  cacheHit: number;
-  cacheWrite: number;
-}
-
-const MODEL_PRICING: Record<string, ModelPricing> = {
-  // Opus 4.6
-  'claude-opus-4-6':            { input: 5,  output: 25, cacheHit: 0.50, cacheWrite: 6.25 },
-  // Opus 4.5
-  'claude-opus-4-5':            { input: 5,  output: 25, cacheHit: 0.50, cacheWrite: 6.25 },
-  'claude-opus-4-5-20251101':   { input: 5,  output: 25, cacheHit: 0.50, cacheWrite: 6.25 },
-  // Sonnet 4.6
-  'claude-sonnet-4-6':          { input: 3,  output: 15, cacheHit: 0.30, cacheWrite: 3.75 },
-  // Sonnet 4.5
-  'claude-sonnet-4-5':          { input: 3,  output: 15, cacheHit: 0.30, cacheWrite: 3.75 },
-  'claude-sonnet-4-5-20250929': { input: 3,  output: 15, cacheHit: 0.30, cacheWrite: 3.75 },
-  // Sonnet 4
-  'claude-sonnet-4-20250514':   { input: 3,  output: 15, cacheHit: 0.30, cacheWrite: 3.75 },
-  // Haiku 4.5
-  'claude-haiku-4-5':           { input: 1,  output: 5,  cacheHit: 0.10, cacheWrite: 1.25 },
-  'claude-haiku-4-5-20251001':  { input: 1,  output: 5,  cacheHit: 0.10, cacheWrite: 1.25 },
-  // Haiku 3.5
-  'claude-3-5-haiku-20241022':  { input: 0.8, output: 4, cacheHit: 0.08, cacheWrite: 1.00 },
-};
-
-// Default to Sonnet 4.6 pricing for unknown models
-const DEFAULT_PRICING: ModelPricing = { input: 3, output: 15, cacheHit: 0.30, cacheWrite: 3.75 };
 
 export class ClaudeProvider implements LlmProvider {
   readonly name = 'claude';
@@ -231,7 +198,7 @@ export class ClaudeProvider implements LlmProvider {
     cacheHit: number,
     cacheWrite: number,
   ): number {
-    const p = MODEL_PRICING[this.currentModel] ?? DEFAULT_PRICING;
+    const p = getModelPricing(this.currentModel);
     const M = 1_000_000;
     const nonCachedInput = Math.max(0, input - cacheHit - cacheWrite);
     return (
