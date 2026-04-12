@@ -11,6 +11,9 @@ interface TokenMeterProps {
  * Why layered: Day-0 requirement #2 (额度透明). Full 6-dimension display
  * overwhelms non-technical users. Compact mode shows what matters at a glance
  * (total, cache health, cost). Click to expand for full breakdown.
+ *
+ * The expand/collapse uses a CSS grid-template-rows transition for smooth
+ * height animation without JavaScript measurement.
  */
 export default function TokenMeter({ usage }: TokenMeterProps) {
   const [expanded, setExpanded] = useState(false);
@@ -58,17 +61,19 @@ export default function TokenMeter({ usage }: TokenMeterProps) {
         </span>
       </div>
 
-      {/* Expanded: 6-dimensional breakdown */}
-      {expanded && (
-        <div className="flex gap-3 items-center mt-0.5 flex-wrap">
-          <TokenItem label="sys" value={usage.system} color="text-bpt-accent" />
-          <TokenItem label="tools" value={usage.tools} color="text-bpt-warning" />
-          <TokenItem label="hist" value={usage.history} color="text-bpt-text-dim" />
-          <TokenItem label="gen" value={usage.generation} color="text-bpt-success" />
-          <TokenItem label="cache-hit" value={usage.cacheHit} color="text-bpt-gold" />
-          <TokenItem label="cache-write" value={usage.cacheWrite} color="text-bpt-gold-dim" />
+      {/* Expanded: 6-dimensional breakdown with smooth height transition */}
+      <div className={`expand-transition ${expanded ? 'expanded' : ''}`}>
+        <div>
+          <div className="flex gap-3 items-center mt-0.5 flex-wrap">
+            <TokenItem label="sys" value={usage.system} color="text-bpt-accent" />
+            <TokenItem label="tools" value={usage.tools} color="text-bpt-warning" />
+            <TokenItem label="hist" value={usage.history} color="text-bpt-text-dim" />
+            <TokenItem label="gen" value={usage.generation} color="text-bpt-success" />
+            <TokenItem label="cache-hit" value={usage.cacheHit} color="text-bpt-gold" />
+            <TokenItem label="cache-write" value={usage.cacheWrite} color="text-bpt-gold-dim" />
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 }

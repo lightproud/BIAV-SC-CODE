@@ -68,6 +68,7 @@ export default function App() {
           <Sidebar
             currentId={currentConversationId}
             refreshKey={sidebarRefreshKey}
+            activePanel={rightPanel}
             onSelect={setCurrentConversationId}
             onToggleSilver={() => togglePanel('silver')}
             onToggleBpe={() => togglePanel('bpe')}
@@ -89,9 +90,21 @@ export default function App() {
             />
           </div>
 
-          {/* Right panel (Silver / BPE / Settings) */}
+          {/* Right panel (Silver / BPE / Settings / etc.) */}
           {rightPanel !== 'none' && (
-            <div className="w-80 border-l border-bpt-border flex flex-col overflow-hidden">
+            <div className="w-80 border-l border-bpt-border flex flex-col overflow-hidden panel-enter">
+              {/* Panel close button */}
+              <div className="flex items-center justify-end px-2 pt-1">
+                <button
+                  onClick={() => setRightPanel('none')}
+                  className="text-bpt-text-dim hover:text-bpt-text text-xs px-1.5 py-0.5
+                             rounded hover:bg-bpt-border/50 transition-colors"
+                  title="Close panel"
+                >
+                  [x]
+                </button>
+              </div>
+
               {rightPanel === 'silver' && <SilverPanel />}
               {rightPanel === 'bpe' && (
                 <BPEPanel
