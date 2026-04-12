@@ -131,12 +131,25 @@ python scripts/dream.py --rebuild
 
 **不要写入**：临时调试信息、显而易见的代码结构、已在 CLAUDE.md 明确记录的规则。
 
-### 记忆写回（会话结束自动触发）
+### 记忆写回
 
-**SessionEnd hook**（`.claude/settings.json` 注册）在会话真正结束时执行：
-- `scripts/session-end-distill.sh` → `scripts/session_distiller.py` — 读取 Claude Code transcript JSONL，结构化解析出 turns / 工具调用 / 文件访问 / bash 描述 / 用户 prompt 样本，写入 `memory/session-digests/{YYYYMMDD-HHMMSS}-{session_id[:8]}.json`。v0.1 纯结构化解析，不调 LLM。日志落在 `/tmp/session-distill.log`。
+**主力手段（跨工具通用）**：会话过程中主动写入 `memory/` 文件和 `fact_store.py`。这是当前唯一覆盖所有会话类型（Code + chat）的知识捕获方式。遇到决策、发现、教训时立即写，不要等会话结束。
 
-手动写回（按需触发，Stop hook 未自动挂载）：
+**SessionEnd hook（Claude Code 自动）**：`.claude/settings.json` 注册，会话结束时自动执行：
+- `scripts/session-end-distill.sh` → `scripts/session_distiller.py`
+- 读取 transcript JSONL，结构化解析出 turns / 工具调用 / 文件访问 / bash 描述 / 用户 prompt 样本
+- 写入 `memory/session-digests/{YYYYMMDD-HHMMSS}-{session_id[:8]}.json`（gitignored，本地索引）
+- v0.2 纯结构化解析，不调 LLM。日志落在 `/tmp/session-distill.log`
+- 限制：仅 Claude Code 有效，claude.ai chat 无此机制；仅在 cwd 为 brain-in-a-vat 时触发
+
+**v0.3 LLM 提炼（规划中，待本地 ANTHROPIC_API_KEY 就绪）**：
+- 在 SessionEnd hook 链路末尾检测 `ANTHROPIC_API_KEY`，有则调 Claude API
+- 输入：JSON digest 中的 user_prompts + assistant_texts + bash_descriptions + files
+- 输出：`memory/session-summaries/{date}.md`（脱敏摘要：做了什么 / 关键决策 / 教训）
+- 仅摘要推进 git，不含原始对话（公开仓库安全）
+- 无 key 时静默降级，只写本地 JSON
+
+手动写回（按需触发）：
 - `python scripts/memory_writeback.py --verbose` — 检测 git 变更 → 提取知识 → 写入图谱 → 增量重索引
 - `python scripts/session_reflexion.py` — 扫描失败信号 → 写入 `lessons-learned.md`
 
