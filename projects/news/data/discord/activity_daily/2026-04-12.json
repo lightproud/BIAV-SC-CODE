@@ -1,29 +1,36 @@
 {
   "date": "2026-04-12",
-  "messages": 11347,
+  "messages": 13054,
   "unique_authors": 162,
-  "reactions_total": 1111,
-  "attachments": 457,
+  "reactions_total": 1240,
+  "attachments": 549,
   "channel_activity": {
-    "🔸綜合討論": 920,
-    "🔸morimens-game-chat": 6579,
+    "🔸綜合討論": 957,
+    "🔸morimens-game-chat": 7378,
+    "🔸欢乐梗图": 1,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 33,
+    "🔸русский-канал": 489,
+    "🔸phòng-chat-tiếng-việt": 627,
+    "🔸canal-español": 60,
+    "🔸canal-português": 293,
+    "🔸ruang-obrolan-indonesia": 205,
+    "🔸traphase": 28,
+    "🔸team-building": 364,
+    "🔸general-chat": 559,
+    "🔸邀请码互助┊swap-invitation-codes": 36,
+    "🔸game-question": 1486,
+    "🔸机器人命令┊bot-commands": 34,
+    "創完眼睛我來創腦子了，但沒人說我不能兩個一起創啊": 3,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 23,
+    "Small potential Miryam buff": 3,
+    "融災請教": 72,
+    "Returner looking for advice": 26,
     "🔸晒卡分享": 1,
     "🔸课间休息闲聊": 28,
     "🔸한국어-채팅방": 23,
-    "🔸chaîne-française": 24,
-    "🔸русский-канал": 305,
-    "🔸phòng-chat-tiếng-việt": 601,
-    "🔸canal-español": 43,
-    "🔸canal-português": 268,
-    "🔸ruang-obrolan-indonesia": 204,
     "🔸ห้องสนทนาภาษาไทย": 4,
-    "🔸team-building": 210,
-    "🔸general-chat": 459,
-    "🔸邀请码互助┊swap-invitation-codes": 30,
-    "🔸game-question": 1186,
-    "🔸机器人命令┊bot-commands": 23,
     "🔸erica-playground": 2,
-    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 20,
     "只是堆点摸鱼": 2,
     "Trouble recovering account": 1,
     "✅「已回答」台服dc的詐騙帳號": 2,
@@ -32,14 +39,11 @@
     "some doodles": 3,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 8,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
-    "融災請教": 70,
-    "Small potential Miryam buff": 2,
     "✅「Answered」Possibilities of Doresain kit rework": 6,
     "horlaposting!!!!!!!": 1,
     "V2.4.3 fanart submission": 1,
     "问一下新人能怎么组队": 32,
     "問問": 8,
-    "🔸traphase": 27,
     "Traphase": 3,
     "🔸日本語チャンネル": 3,
     "🔸lore-chat": 212,
@@ -56,10 +60,12 @@
     "新帳號求培養+抽卡建議": 2
   },
   "hourly_activity": {
+    "17": 753,
+    "18": 661,
+    "19": 340,
     "14": 952,
     "15": 843,
     "16": 943,
-    "17": 47,
     "11": 458,
     "12": 689,
     "13": 1273,
@@ -76,10 +82,8 @@
     "5": 753
   },
   "message_types": {
-    "0": 1596,
-    "19": 953,
-    "20": 11,
-    "23": 1
+    "0": 1230,
+    "19": 477
   },
   "top_reacted_messages": [
     {
@@ -121,6 +125,14 @@
       "author": "ellezard",
       "reactions": 7,
       "channel": "Traphase"
+    },
+    {
+      "id": "1492964527959183642",
+      "channel_id": "1170692781216378960",
+      "content": "bro this takes so much work fuck my chungus life",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492922507806642250",
@@ -203,6 +215,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1492946019049017436",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "monchi3524",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492905226997596312",
       "channel_id": "1170692781216378960",
       "content": "old man cant kidnap whales",
@@ -223,22 +243,6 @@
       "channel_id": "1170692781216378960",
       "content": "this is all i can put together for now",
       "author": "moderndadweeb",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492854826315415562",
-      "channel_id": "1131839817982947429",
-      "content": "燃盡了",
-      "author": "mishmeria_.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492863409392451625",
-      "channel_id": "1170692781216378960",
-      "content": "easy fight <:ramona_tuff_:1441426630420467753>",
-      "author": "blecnes.",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
