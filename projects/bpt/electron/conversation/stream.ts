@@ -19,7 +19,7 @@ import { ipcMain, BrowserWindow } from 'electron';
 import { ClaudeProvider } from '../llm/claude';
 import { OpenAiProvider } from '../llm/openai';
 import { getActiveTools } from '../llm/tool-registry';
-import { estimateRequestTokens, estimateTokens, mergeUsage, accumulateUsage, emptyUsage } from '../llm/token-accounting';
+import { estimateTokens, mergeUsage, accumulateUsage, emptyUsage } from '../llm/token-accounting';
 import { getModelSpec } from '../../src/models';
 import { logTokenUsage } from '../core/logger';
 import { getConfig } from '../core/config';
@@ -263,6 +263,13 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
       let totalUsage = emptyUsage();
       let loopCount = 0;
 
+      // Pre-compute overhead tokens ONCE outside the loop.
+      // System prompt and tools don't change within a single handleSend call,
+      // so re-computing per iteration wastes CPU (especially for CJK scanning).
+      const toolsJson = JSON.stringify(tools);
+      const systemPromptTokens = estimateTokens(systemPrompt);
+      const toolSchemaTokens = estimateTokens(toolsJson);
+
       while (loopCount < MAX_TOOL_LOOPS) {
         loopCount++;
 
@@ -270,25 +277,41 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
         // System prompt + tool schemas + output reserve compete with history
         // for the context window. History gets whatever space is left.
         const overhead = {
-          systemPromptTokens: estimateTokens(systemPrompt),
-          toolSchemaTokens: estimateTokens(JSON.stringify(tools)),
+          systemPromptTokens,
+          toolSchemaTokens,
           maxOutputTokens: maxOutputTokens,
         };
 
-        // Apply compression before sending (operates on a copy)
+        // Apply compression. If compression fires, write back to in-memory
+        // history so subsequent loop iterations don't re-compress the same turns.
+        // This prevents: (a) repeated Haiku summarization calls within one tool loop,
+        // (b) unbounded memory growth of the in-memory history array.
         const { messages: messagesToSend, wasCompressed, droppedTurns } = await compressHistory([...history], endpoint.model, overhead);
 
         if (wasCompressed) {
-          logger.info('stream', `Compressed history: dropped ${droppedTurns} turns`);
+          // Write compressed result back to the authoritative in-memory store.
+          // The compressed summary replaces dropped turns — future iterations
+          // start from the already-compressed state instead of re-processing.
+          history.length = 0;
+          history.push(...messagesToSend);
+          // Persist: clear old messages and re-persist the compressed set
+          deleteMessages(conversationId);
+          for (const msg of messagesToSend) {
+            persistMessage(conversationId, msg.role, msg.content);
+          }
+          logger.info('stream', `Compressed history: dropped ${droppedTurns} turns, wrote back ${messagesToSend.length} messages`);
           sendToRenderer(win, { type: 'compression_notice', droppedTurns });
         }
 
-        // Pre-estimate token breakdown
-        const preEstimate = estimateRequestTokens(
-          systemPrompt,
-          tools,
-          JSON.stringify(messagesToSend),
-        );
+        // Pre-estimate token breakdown.
+        // system and tools tokens are pre-computed above (loop-invariant);
+        // only history varies per iteration.
+        const historyTokens = estimateTokens(JSON.stringify(messagesToSend));
+        const preEstimate = {
+          system: systemPromptTokens,
+          tools: toolSchemaTokens,
+          history: historyTokens,
+        };
 
         // Collect content blocks from this LLM call
         const contentBlocks: LlmContentBlock[] = [];
