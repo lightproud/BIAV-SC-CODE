@@ -19,6 +19,7 @@
   4. 输出: projects/news/output/news.json
 """
 
+import hashlib
 import json
 import os
 import re
@@ -341,6 +342,45 @@ def _fetch_reddit_rss(sub, headers, cutoff):
     return items
 
 
+def _fetch_reddit_search(sub, headers, cutoff):
+    """Last-resort fallback: use Reddit search to find posts about the subreddit topic."""
+    items = []
+    try:
+        url = f'https://www.reddit.com/search.json'
+        params = {
+            'q': f'subreddit:{sub} OR {sub}',
+            'sort': 'new',
+            'limit': 50,
+            't': 'week',
+        }
+        resp = requests.get(url, headers=headers, params=params, timeout=15)
+        resp.raise_for_status()
+        posts = resp.json().get('data', {}).get('children', []) or []
+        for post in posts:
+            d = post.get('data', {})
+            created = datetime.fromtimestamp(d.get('created_utc', 0), tz=timezone.utc)
+            if created < cutoff:
+                continue
+            permalink = d.get('permalink', '')
+            items.append({
+                'title': d.get('title', ''),
+                'summary': (d.get('selftext', '') or '')[:2000],
+                'source': 'reddit',
+                'time': created.isoformat(),
+                'url': f"https://reddit.com{permalink}",
+                'engagement': d.get('score', 0) + d.get('num_comments', 0),
+                'is_hot': d.get('score', 0) > 100,
+                'author': f"u/{d.get('author', 'unknown')}",
+                'tags': [],
+                'metadata': {'via': 'search'},
+            })
+        if items:
+            logger.info(f'Reddit search fallback for r/{sub}: {len(items)} posts')
+    except Exception as e:
+        logger.warning(f'Reddit search fallback for r/{sub} failed: {e}')
+    return items
+
+
 def fetch_reddit(subreddits=None):
     """Fetch hot posts from Reddit with full text, comments, and images.
     Tries JSON API first, falls back to RSS feed if blocked (403)."""
@@ -351,7 +391,7 @@ def fetch_reddit(subreddits=None):
     default_ua = (
         'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
         'AppleWebKit/537.36 (KHTML, like Gecko) '
-        'Chrome/124.0.0.0 Safari/537.36'
+        'Chrome/131.0.0.0 Safari/537.36'
     )
     headers = {
         'User-Agent': os.environ.get('REDDIT_USER_AGENT', default_ua),
@@ -443,6 +483,11 @@ def fetch_reddit(subreddits=None):
             logger.warning(f'Reddit r/{sub} JSON API failed: {fatal_error}, trying RSS fallback')
             rss_items = _fetch_reddit_rss(sub, headers, cutoff)
             items.extend(rss_items)
+            if not rss_items:
+                # Last resort: Reddit search endpoint (doesn't require subreddit access)
+                logger.warning(f'Reddit r/{sub} RSS also failed, trying search API')
+                search_items = _fetch_reddit_search(sub, headers, cutoff)
+                items.extend(search_items)
         else:
             media_count = sum(1 for i in items[sub_before_count:] if i.get('media_url'))
             logger.info(
@@ -525,16 +570,63 @@ def _bilibili_item(v: dict, created: datetime, author: str, headers: dict, sourc
     return item
 
 
+# ── Bilibili wbi 签名 ──────────────────────────────────────────────────────────
+# B 站 space API 从 2023 年起要求 wbi 签名，否则返回 412。
+# 算法：从 /x/web-interface/nav 拿 img_key + sub_key → 按固定混淆表重排 → 取前 32 位
+# → 对排序后的 query string + mixin_key 做 MD5 → 得到 w_rid。
+_WBI_MIXIN_KEY_ENC_TAB = [
+    46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35,
+    27, 43, 5, 49, 33, 9, 42, 19, 29, 28, 14, 39, 12, 38, 41, 13,
+    37, 48, 7, 16, 24, 55, 40, 61, 26, 17, 0, 1, 60, 51, 30, 4,
+    22, 25, 54, 21, 56, 59, 6, 63, 57, 62, 11, 36, 20, 34, 44, 52,
+]
+_wbi_cache: dict = {}  # {'mixin_key': str, 'ts': float}
+
+
+def _get_wbi_mixin_key(headers: dict) -> str | None:
+    """Fetch and cache the wbi mixin key (refreshed every 30 min)."""
+    now = time.time()
+    if _wbi_cache.get('mixin_key') and now - _wbi_cache.get('ts', 0) < 1800:
+        return _wbi_cache['mixin_key']
+    try:
+        resp = requests.get(
+            'https://api.bilibili.com/x/web-interface/nav',
+            headers=headers, timeout=10,
+        )
+        wbi = resp.json().get('data', {}).get('wbi_img', {})
+        img_key = wbi['img_url'].rsplit('/', 1)[1].split('.')[0]
+        sub_key = wbi['sub_url'].rsplit('/', 1)[1].split('.')[0]
+        raw = img_key + sub_key
+        mixin_key = ''.join(raw[i] for i in _WBI_MIXIN_KEY_ENC_TAB)[:32]
+        _wbi_cache['mixin_key'] = mixin_key
+        _wbi_cache['ts'] = now
+        return mixin_key
+    except Exception as e:
+        logger.warning(f'Bilibili wbi key fetch failed: {e}')
+        return _wbi_cache.get('mixin_key')  # use stale cache if available
+
+
+def _sign_wbi_params(params: dict, mixin_key: str) -> dict:
+    """Add wts + w_rid to params dict using wbi signing."""
+    import urllib.parse
+    params = dict(params)
+    params['wts'] = int(time.time())
+    query = urllib.parse.urlencode(sorted(params.items()))
+    params['w_rid'] = hashlib.md5((query + mixin_key).encode()).hexdigest()
+    return params
+
+
 def _fetch_bilibili_space():
     """Fetch videos from known Morimens creators via space API (primary path)."""
     items = []
     buvid3 = f'{uuid4()}infoc'
     headers = {
-        'User-Agent': 'Mozilla/5.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         'Referer': 'https://www.bilibili.com',
         'Cookie': f'buvid3={buvid3}',
     }
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    mixin_key = _get_wbi_mixin_key(headers)
 
     for idx, (mid, creator_name) in enumerate(BILIBILI_MORIMENS_CREATORS.items()):
         if idx > 0:
@@ -547,17 +639,19 @@ def _fetch_bilibili_space():
 
         while len(items) - creator_before_count < MAX_ITEMS_PER_FETCHER:
             page += 1
-            url = 'https://api.bilibili.com/x/space/arc/search'
+            url = 'https://api.bilibili.com/x/space/wbi/arc/search'
             params = {
                 'mid': mid,
                 'pn': page,
                 'ps': 50,
                 'order': 'pubdate',
             }
+            if mixin_key:
+                params = _sign_wbi_params(params, mixin_key)
             try:
                 resp = requests.get(url, params=params, headers=headers, timeout=15)
                 if resp.status_code == 412:
-                    logger.debug(f'Bilibili space {creator_name}({mid}): 412 (wbi signature required), skipping')
+                    logger.warning(f'Bilibili space {creator_name}({mid}): 412 even with wbi sign, falling back to search')
                     fatal_error = 'wbi-412'
                     break
                 resp.raise_for_status()

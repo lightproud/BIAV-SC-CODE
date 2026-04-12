@@ -126,6 +126,34 @@ def run_zero_cost_collectors() -> list[dict]:
     except Exception as e:
         logger.debug(f'SilentPlatformTracker not available: {e}')
 
+    # ── 已知不可用的源：跳过以节约 CI 时间（每条省 5-25 秒超时等待）──
+    # 键 = fetcher 显示名，值 = 原因 + 修复条件
+    # 要恢复某个源：从这里删掉对应行，下面 zero_cost_fetchers 的条目不用改
+    SUSPENDED: dict[str, str] = {
+        # 反爬/需登录（需 RSSHub + cookie 或 Puppeteer）
+        'Weibo':       '游客流已死，需真实 WEIBO_COOKIE → 部署 RSSHub',
+        'Xiaohongshu': 'API 404，需 Puppeteer x-s/x-t 签名 → 部署 RSSHub',
+        'Zhihu':       '403，需真实 z_c0 cookie → 部署 RSSHub',
+        'Douyin':      '需 Puppeteer 渲染 → 部署 RSSHub',
+        'Naver Cafe':  '403，需 NAVER 登录 session',
+        'Arca.live':   '403 Cloudflare，cloudscraper 不稳',
+        'Lofter':      '503 持续返回',
+        '5ch':         '503 持续返回',
+        'Epic Store':  '403 GraphQL + scrape 均被拦',
+        'Note.com':    '403 被拦',
+        'Taobao Merch':'403 被拦',
+        'TikTok':      '需 Puppeteer，返回 0 视频',
+        # 内容确实不存在或 API 不可达
+        'TapTap':      'API 被 proxy 403，审计窗口内 0 产出',
+        'VK Play':     '游戏页 404',
+        'QooApp':      '搜索 0 结果',
+        'Xianyu':      '0 商品',
+        'Ruliweb':     '0 帖子',
+        'GACHAREVENUE':'0 条目',
+        'Tieba':       '0 帖子（贴吧搜索已不返回数据）',
+        'Bahamut':     '0 结果',
+    }
+
     # Zero-cost collectors (no API key required)
     zero_cost_fetchers = [
         ('Bilibili', c.fetch_bilibili),
@@ -197,8 +225,15 @@ def run_zero_cost_collectors() -> list[dict]:
     failed = []
     empty = []
 
+    suspended_count = 0
     for name, fn in all_fetchers:
         source_id = NAME_TO_SOURCE_ID.get(name, name.lower())
+
+        # 已知不可用的源：跳过并记录原因
+        if name in SUSPENDED:
+            suspended_count += 1
+            continue
+
         # dormant 源直接跳过，节约 CI 时间
         if tracker and tracker.should_skip_platform(source_id):
             logger.info(f"  ⏭  {name}: dormant, skipping")
@@ -230,6 +265,8 @@ def run_zero_cost_collectors() -> list[dict]:
         logger.warning(f"失败 ({len(failed)}):")
         for name, err in failed:
             logger.warning(f"  {name}: {err}")
+    if suspended_count:
+        logger.info(f"已暂停 ({suspended_count}): {', '.join(SUSPENDED.keys())}")
 
     return items
 
