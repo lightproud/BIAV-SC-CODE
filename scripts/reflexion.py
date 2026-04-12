@@ -262,22 +262,8 @@ def save_failure_insights(patterns: list[dict]):
             "created": TODAY.isoformat(),
         })
 
-    # Lifecycle pruning: remove resolved (>30d) and stale unresolved (>90d)
-    from datetime import timedelta
-    cutoff_90d = (TODAY - timedelta(days=90)).isoformat()
-    cutoff_30d = (TODAY - timedelta(days=30)).isoformat()
-    pruned = []
-    for ins in existing:
-        resolved_at = ins.get("resolved_at")
-        created = ins.get("created", "")
-        if resolved_at and resolved_at < cutoff_30d:
-            continue
-        if not resolved_at and created < cutoff_90d:
-            continue
-        pruned.append(ins)
-
     INSIGHTS_FILE.write_text(
-        json.dumps(pruned, ensure_ascii=False, indent=2),
+        json.dumps(existing, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
