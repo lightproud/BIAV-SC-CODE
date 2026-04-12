@@ -97,7 +97,7 @@ jobs:
 
       - name: Check workflow health
         id: workflow-check
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const monitored = [
@@ -192,7 +192,7 @@ jobs:
           steps.workflow-check.outputs.has_failures == 'true' ||
           steps.path-check.outputs.has_broken == 'true' ||
           steps.memory-check.outputs.has_stale == 'true'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const owner = context.repo.owner;
@@ -431,7 +431,7 @@ jobs:
 
       - name: Post weekly summary
         if: success()
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
