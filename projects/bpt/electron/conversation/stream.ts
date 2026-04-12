@@ -25,7 +25,7 @@ import { getConfig } from '../core/config';
 import { logger } from '../core/logger';
 import { executeTool } from './tool-loop';
 import { compressHistory } from './compressor';
-import { addMessage, getMessages } from './store';
+import { addMessage, getMessages, deleteMessages } from './store';
 import type { LlmProvider, LlmStreamEvent, LlmMessage, LlmContentBlock } from '../llm/provider';
 import type { Gear } from '../../src/types';
 
@@ -363,6 +363,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
   // Clear conversation history (called when user deletes a conversation)
   ipcMain.handle('conv:clearHistory', (_event, conversationId: string) => {
     histories.delete(conversationId);
+    deleteMessages(conversationId);
     return { success: true };
   });
 }
