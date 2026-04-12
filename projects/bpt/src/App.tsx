@@ -6,11 +6,13 @@ import BPEPanel from './components/BPEPanel';
 import SettingsPanel from './components/SettingsPanel';
 import ArtifactsPanel from './components/ArtifactsPanel';
 import PluginsPanel from './components/PluginsPanel';
+import DreamPanel from './components/DreamPanel';
+import SentinelPanel from './components/SentinelPanel';
 import StatusBar from './components/StatusBar';
 import ErrorBoundary from './components/ErrorBoundary';
 import type { CiteBlock } from './types';
 
-type RightPanel = 'none' | 'silver' | 'bpe' | 'settings' | 'artifacts' | 'plugins';
+type RightPanel = 'none' | 'silver' | 'bpe' | 'settings' | 'artifacts' | 'plugins' | 'dream' | 'sentinel';
 
 export default function App() {
   const [rightPanel, setRightPanel] = useState<RightPanel>('none');
@@ -56,6 +58,8 @@ export default function App() {
             onToggleSettings={() => togglePanel('settings')}
             onToggleArtifacts={() => togglePanel('artifacts')}
             onTogglePlugins={() => togglePanel('plugins')}
+            onToggleDream={() => togglePanel('dream')}
+            onToggleSentinel={() => togglePanel('sentinel')}
           />
 
           {/* Chat */}
@@ -82,6 +86,8 @@ export default function App() {
                 <ArtifactsPanel conversationId={currentConversationId} />
               )}
               {rightPanel === 'plugins' && <PluginsPanel />}
+              {rightPanel === 'dream' && <DreamPanel />}
+              {rightPanel === 'sentinel' && <SentinelPanel />}
             </div>
           )}
         </div>

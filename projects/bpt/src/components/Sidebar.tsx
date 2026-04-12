@@ -16,9 +16,11 @@ interface SidebarProps {
   onToggleSettings: () => void;
   onToggleArtifacts: () => void;
   onTogglePlugins: () => void;
+  onToggleDream: () => void;
+  onToggleSentinel: () => void;
 }
 
-export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleBpe, onToggleSettings, onToggleArtifacts, onTogglePlugins }: SidebarProps) {
+export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleBpe, onToggleSettings, onToggleArtifacts, onTogglePlugins, onToggleDream, onToggleSentinel }: SidebarProps) {
   const [conversations, setConversations] = useState<ConvEntry[]>([]);
 
   const loadConversations = async () => {
@@ -117,6 +119,18 @@ export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleB
           className="w-full px-2 py-1 text-xs text-left text-bpt-gold-dim hover:text-bpt-gold transition-colors"
         >
           Plugins
+        </button>
+        <button
+          onClick={onToggleDream}
+          className="w-full px-2 py-1 text-xs text-left text-bpt-gold-dim hover:text-bpt-gold transition-colors"
+        >
+          Dream Agent
+        </button>
+        <button
+          onClick={onToggleSentinel}
+          className="w-full px-2 py-1 text-xs text-left text-bpt-gold-dim hover:text-bpt-gold transition-colors"
+        >
+          Sentinel
         </button>
         <button
           onClick={onToggleSettings}

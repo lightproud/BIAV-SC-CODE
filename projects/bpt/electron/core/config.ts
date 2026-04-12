@@ -35,6 +35,8 @@ interface StoreSchema {
   };
   /** Reranker toggle for BPE. */
   bpeRerankerEnabled: boolean;
+  /** Auto-update server URL (generic provider). Empty = disabled. */
+  updateServerUrl: string;
 }
 
 const store = new Store<StoreSchema>({
@@ -59,6 +61,7 @@ const store = new Store<StoreSchema>({
       extraDirs: [],
     },
     bpeRerankerEnabled: false,
+    updateServerUrl: '',
   },
 });
 

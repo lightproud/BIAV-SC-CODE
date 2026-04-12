@@ -81,6 +81,23 @@ const api = {
   tokenHistory: (conversationId: string) =>
     ipcRenderer.invoke('token:history', conversationId),
 
+  // ── Dream / Sentinel ─────────────────────────────────────
+  dreamList: () => ipcRenderer.invoke('dream:list'),
+  dreamGet: (date: string) => ipcRenderer.invoke('dream:get', date),
+  dreamLatest: () => ipcRenderer.invoke('dream:latest'),
+  dreamInsights: () => ipcRenderer.invoke('dream:insights'),
+  sentinelAlerts: () => ipcRenderer.invoke('sentinel:alerts'),
+
+  // ── Updater ──────────────────────────────────────────────
+  updaterCheck: () => ipcRenderer.invoke('updater:check'),
+  updaterDownload: () => ipcRenderer.invoke('updater:download'),
+  updaterInstall: () => ipcRenderer.invoke('updater:install'),
+  onUpdaterEvent: (callback: (event: unknown) => void) => {
+    const handler = (_: unknown, data: unknown) => callback(data);
+    ipcRenderer.on('updater:event', handler);
+    return () => ipcRenderer.removeListener('updater:event', handler);
+  },
+
   // ── Shell ─────────────────────────────────────────────────
   windowMinimize: () => ipcRenderer.invoke('window:minimize'),
   windowToggle: () => ipcRenderer.invoke('window:toggle'),

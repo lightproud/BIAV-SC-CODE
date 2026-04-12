@@ -52,6 +52,17 @@ export interface BptApi {
 
   tokenHistory: (conversationId: string) => Promise<unknown>;
 
+  dreamList: () => Promise<unknown>;
+  dreamGet: (date: string) => Promise<unknown>;
+  dreamLatest: () => Promise<unknown>;
+  dreamInsights: () => Promise<unknown>;
+  sentinelAlerts: () => Promise<unknown>;
+
+  updaterCheck: () => Promise<unknown>;
+  updaterDownload: () => Promise<unknown>;
+  updaterInstall: () => Promise<unknown>;
+  onUpdaterEvent: (callback: (event: unknown) => void) => () => void;
+
   windowMinimize: () => Promise<unknown>;
   windowToggle: () => Promise<unknown>;
 }
