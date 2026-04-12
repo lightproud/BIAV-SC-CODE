@@ -15,6 +15,7 @@ Usage:
   python scripts/memory_search.py --stats                 # 索引统计
 """
 
+import gzip
 import json
 import math
 import os
@@ -26,7 +27,7 @@ from hashlib import md5
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
-VECTORS_FILE = REPO / "assets" / "data" / "vectors.json"
+VECTORS_FILE = REPO / "assets" / "data" / "vectors.json.gz"
 ACCESS_LOG = REPO / "memory" / "dreams" / "access-log.json"
 UTILITY_FILE = REPO / "assets" / "data" / "memory-utility.json"
 TODAY = date.today()
@@ -95,7 +96,7 @@ KNOWLEDGE_GLOBS = [
 ]
 
 SKIP_FILES = {
-    "assets/data/vectors.json",
+    "assets/data/vectors.json.gz",
     "assets/data/semantic-index.json",
     "assets/data/knowledge-graph.json",
     "assets/data/memory-utility.json",
@@ -769,7 +770,8 @@ def load_index() -> dict | None:
                 return None
 
     try:
-        return json.loads(VECTORS_FILE.read_text(encoding="utf-8"))
+        with gzip.open(VECTORS_FILE, "rt", encoding="utf-8") as f:
+            return json.load(f)
     except (json.JSONDecodeError, OSError):
         return None
 
@@ -1138,12 +1140,10 @@ def build_index() -> dict:
         "discord_jsonl_available": (REPO / DISCORD_CHANNELS_DIR).exists(),
     }
 
-    # Save
+    # Save as gzip-compressed JSON (compact, no indent)
     VECTORS_FILE.parent.mkdir(parents=True, exist_ok=True)
-    VECTORS_FILE.write_text(
-        json.dumps(index, ensure_ascii=False, indent=2),
-        encoding="utf-8",
-    )
+    with gzip.open(VECTORS_FILE, "wt", encoding="utf-8", compresslevel=6) as f:
+        json.dump(index, f, ensure_ascii=False, separators=(",", ":"))
 
     size_kb = VECTORS_FILE.stat().st_size / 1024
     print(f"  词汇表：{len(index['vocabulary'])} 个词")
