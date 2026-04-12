@@ -243,26 +243,327 @@ def fetch_xiaohongshu_playwright() -> List[Dict]:
     return []
 
 
+# ── Korean platforms ──────────────────────────────────────────────────────
+
+def fetch_dcinside_playwright() -> List[Dict]:
+    """
+    Fetch DCInside search results via Playwright (bypasses WAF).
+    DCInside returns content-length: 0 to HTTP clients but loads fine in browsers.
+    """
+    items = []
+    keywords = ["Morimens", "모리멘스", "망각전야"]
+    seen_urls: set = set()
+
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            page.set_default_timeout(TIMEOUT_MS)
+
+            for keyword in keywords:
+                try:
+                    url = f'https://search.dcinside.com/combine/q/{keyword}'
+                    page.goto(url, wait_until='networkidle')
+                    page.wait_for_timeout(2000)
+
+                    links = page.query_selector_all('a[href*="gall.dcinside.com"][href*="/view/"]')
+                    for link in links:
+                        href = link.get_attribute('href') or ''
+                        title = link.inner_text().strip()
+                        if not title or len(title) < 5 or href in seen_urls:
+                            continue
+                        if title.endswith('갤러리'):
+                            continue
+                        seen_urls.add(href)
+                        items.append({
+                            'title': title[:100],
+                            'summary': '',
+                            'source': 'dcinside',
+                            'time': datetime.now(timezone.utc).isoformat(),
+                            'url': href,
+                            'engagement': 0,
+                            'is_hot': False,
+                            'author': '',
+                            'tags': ['dcinside'],
+                            'lang': 'ko',
+                            'platform_region': 'kr',
+                        })
+                    logger.info(f'DCInside PW "{keyword}": {len(items)} total')
+                except Exception as e:
+                    logger.warning(f'DCInside PW "{keyword}" failed: {e}')
+
+            browser.close()
+    except Exception as e:
+        logger.warning(f'DCInside Playwright failed: {e}')
+
+    logger.info(f'DCInside Playwright: fetched {len(items)} items')
+    return items
+
+
+def fetch_arca_live_playwright() -> List[Dict]:
+    """
+    Fetch Arca.live forgettingeve channel via Playwright (bypasses Cloudflare).
+    """
+    items = []
+
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            page.set_default_timeout(TIMEOUT_MS)
+
+            for mode in ['', 'best']:
+                try:
+                    url = 'https://arca.live/b/forgettingeve'
+                    if mode:
+                        url += f'?mode={mode}'
+                    page.goto(url, wait_until='networkidle')
+                    page.wait_for_timeout(3000)
+
+                    rows = page.query_selector_all('.vrow:not(.notice)')
+                    for row in rows[:30]:
+                        title_el = row.query_selector('.title')
+                        time_el = row.query_selector('.col-time')
+                        link_el = row.query_selector('a.vrow-top')
+                        if not title_el:
+                            continue
+
+                        title = title_el.inner_text().strip()
+                        href = link_el.get_attribute('href') if link_el else ''
+                        time_text = time_el.inner_text().strip() if time_el else ''
+
+                        if not title:
+                            continue
+                        if href and not href.startswith('http'):
+                            href = f'https://arca.live{href}'
+
+                        items.append({
+                            'title': title[:100],
+                            'summary': '',
+                            'source': 'arca_live',
+                            'time': time_text or datetime.now(timezone.utc).isoformat(),
+                            'url': href,
+                            'engagement': 0,
+                            'is_hot': (mode == 'best'),
+                            'author': '',
+                            'tags': ['arca_live'],
+                            'lang': 'ko',
+                            'platform_region': 'kr',
+                        })
+                    logger.info(f'Arca.live PW mode={mode or "latest"}: {len(items)} total')
+                except Exception as e:
+                    logger.warning(f'Arca.live PW mode={mode or "latest"} failed: {e}')
+
+            browser.close()
+    except Exception as e:
+        logger.warning(f'Arca.live Playwright failed: {e}')
+
+    logger.info(f'Arca.live Playwright: fetched {len(items)} items')
+    return items
+
+
+def fetch_ruliweb_playwright() -> List[Dict]:
+    """
+    Fetch Ruliweb search results via Playwright.
+    """
+    items = []
+    keywords = ["망각전야", "모리멘스", "Morimens"]
+
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            page.set_default_timeout(TIMEOUT_MS)
+
+            for keyword in keywords:
+                try:
+                    page.goto(
+                        f'https://bbs.ruliweb.com/search?q={keyword}',
+                        wait_until='networkidle',
+                    )
+                    page.wait_for_timeout(2000)
+
+                    links = page.query_selector_all('a.subject_link')
+                    for link in links:
+                        title = link.inner_text().strip()
+                        href = link.get_attribute('href') or ''
+                        if not title:
+                            continue
+                        if not href.startswith('http'):
+                            href = f'https://bbs.ruliweb.com{href}'
+
+                        items.append({
+                            'title': title[:100],
+                            'summary': '',
+                            'source': 'ruliweb',
+                            'time': datetime.now(timezone.utc).isoformat(),
+                            'url': href,
+                            'engagement': 0,
+                            'is_hot': False,
+                            'author': '',
+                            'tags': ['ruliweb'],
+                            'lang': 'ko',
+                            'platform_region': 'kr',
+                        })
+                    logger.info(f'Ruliweb PW "{keyword}": {len(items)} total')
+                except Exception as e:
+                    logger.warning(f'Ruliweb PW "{keyword}" failed: {e}')
+
+            browser.close()
+    except Exception as e:
+        logger.warning(f'Ruliweb Playwright failed: {e}')
+
+    logger.info(f'Ruliweb Playwright: fetched {len(items)} items')
+    return items
+
+
+# ── Japanese platforms ────────────────────────────────────────────────────
+
+def fetch_fivech_playwright() -> List[Dict]:
+    """
+    Fetch 5ch search results via Playwright (bypasses 503).
+    """
+    items = []
+    keywords = ["忘却前夜", "モリメンス"]
+
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            page.set_default_timeout(TIMEOUT_MS)
+
+            for keyword in keywords:
+                try:
+                    page.goto(
+                        f'https://find.5ch.net/search?q={keyword}',
+                        wait_until='networkidle',
+                    )
+                    page.wait_for_timeout(2000)
+
+                    links = page.query_selector_all('a[href*="5ch.net/test/read.cgi"]')
+                    for link in links:
+                        title = link.inner_text().strip()
+                        href = link.get_attribute('href') or ''
+                        if not title or len(title) < 3:
+                            continue
+
+                        items.append({
+                            'title': title[:100],
+                            'summary': '',
+                            'source': 'fivech',
+                            'time': datetime.now(timezone.utc).isoformat(),
+                            'url': href,
+                            'engagement': 0,
+                            'is_hot': False,
+                            'author': '',
+                            'tags': ['5ch'],
+                            'lang': 'ja',
+                            'platform_region': 'jp',
+                        })
+                    logger.info(f'5ch PW "{keyword}": {len(items)} total')
+                except Exception as e:
+                    logger.warning(f'5ch PW "{keyword}" failed: {e}')
+
+            browser.close()
+    except Exception as e:
+        logger.warning(f'5ch Playwright failed: {e}')
+
+    logger.info(f'5ch Playwright: fetched {len(items)} items')
+    return items
+
+
+def fetch_bahamut_playwright() -> List[Dict]:
+    """
+    Fetch Bahamut (gamer.com.tw) search results via Playwright.
+    """
+    items = []
+    keywords = ["忘却前夜", "忘卻前夜", "Morimens"]
+
+    try:
+        from playwright.sync_api import sync_playwright
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            page.set_default_timeout(TIMEOUT_MS)
+
+            for keyword in keywords:
+                try:
+                    page.goto(
+                        f'https://forum.gamer.com.tw/search.php?q={keyword}',
+                        wait_until='networkidle',
+                    )
+                    page.wait_for_timeout(2000)
+
+                    rows = page.query_selector_all('.b-list__row, .FM-blist3A')
+                    for row in rows[:20]:
+                        title_el = row.query_selector('.b-list__main__title, a[href*="C.php"]')
+                        if not title_el:
+                            continue
+                        title = title_el.inner_text().strip()
+                        href = title_el.get_attribute('href') or ''
+                        if not title:
+                            continue
+                        if href and not href.startswith('http'):
+                            href = f'https://forum.gamer.com.tw/{href}'
+
+                        items.append({
+                            'title': title[:100],
+                            'summary': '',
+                            'source': 'bahamut',
+                            'time': datetime.now(timezone.utc).isoformat(),
+                            'url': href,
+                            'engagement': 0,
+                            'is_hot': False,
+                            'author': '',
+                            'tags': ['bahamut'],
+                            'lang': 'zh',
+                            'platform_region': 'tw',
+                        })
+                    logger.info(f'Bahamut PW "{keyword}": {len(items)} total')
+                except Exception as e:
+                    logger.warning(f'Bahamut PW "{keyword}" failed: {e}')
+
+            browser.close()
+    except Exception as e:
+        logger.warning(f'Bahamut Playwright failed: {e}')
+
+    logger.info(f'Bahamut Playwright: fetched {len(items)} items')
+    return items
+
+
 def main():
     """Test all Playwright collectors."""
-    print("测试 Playwright 采集器 (修复版)")
+    print("Playwright collectors test")
     print("=" * 60)
-    
+
     results = {
         'nga': fetch_nga_playwright(),
         'weibo': fetch_weibo_playwright(),
         'taptap': fetch_taptap_playwright(),
-        'xiaohongshu': fetch_xiaohongshu_playwright(),
+        'dcinside': fetch_dcinside_playwright(),
+        'arca_live': fetch_arca_live_playwright(),
+        'ruliweb': fetch_ruliweb_playwright(),
+        'fivech': fetch_fivech_playwright(),
+        'bahamut': fetch_bahamut_playwright(),
     }
-    
+
     for source, items in results.items():
-        status = '✅' if items else '⚠️'
-        print(f"\n{status} {source}: {len(items)} items")
+        status = 'OK' if items else 'EMPTY'
+        print(f"\n[{status}] {source}: {len(items)} items")
         if items:
-            print(f"  示例: {items[0]['title'][:50]}...")
-    
+            print(f"  example: {items[0]['title'][:50]}...")
+
     total = sum(len(v) for v in results.values())
-    print(f"\n总计: {total} items")
+    print(f"\ntotal: {total} items")
 
 
 if __name__ == '__main__':
