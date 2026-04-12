@@ -1,8 +1,10 @@
 /**
  * GearSwitch — 档位切换器 (Chat / Work).
  *
- * Sits next to the input box. Switching gear changes the active tool set.
- * Work gear shows a cost warning before activating.
+ * Sits next to the input box. Switching gear changes model behavior:
+ * Chat = discuss/analyze/advise mode, Work = execute/write/modify mode.
+ * This is behavioral steering (like Claude Code's plan mode), not just
+ * a tool set toggle.
  */
 
 interface GearSwitchProps {
@@ -13,11 +15,12 @@ interface GearSwitchProps {
 export default function GearSwitch({ gear, onSwitch }: GearSwitchProps) {
   const handleClick = () => {
     if (gear === 'chat') {
-      // Switching to work gear — show cost implication
+      // Switching to work gear — confirm mode change
       const confirmed = window.confirm(
         'Switch to Work gear?\n\n' +
-        'Work gear loads additional tools (~2.5k extra tokens/turn).\n' +
-        'Use it for writing code, modifying files, and executing commands.',
+        'Work gear enables execution mode: the model will write code, ' +
+        'modify files, and execute commands.\n' +
+        'Chat gear is discussion mode: analyze, explain, advise only.',
       );
       if (confirmed) {
         onSwitch('work');
@@ -36,8 +39,8 @@ export default function GearSwitch({ gear, onSwitch }: GearSwitchProps) {
           : 'bg-bpt-warning/20 text-bpt-warning'
       }`}
       title={gear === 'chat'
-        ? 'Chat mode: lightweight tools (~1.5k tokens/turn)'
-        : 'Work mode: full tools (~4k tokens/turn)'}
+        ? 'Chat mode: discuss, analyze, advise'
+        : 'Work mode: write code, modify files, execute'}
     >
       {gear === 'chat' ? 'Chat' : 'Work'}
     </button>

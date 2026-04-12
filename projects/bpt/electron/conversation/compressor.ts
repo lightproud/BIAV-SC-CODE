@@ -13,7 +13,7 @@
 
 import type { LlmMessage } from '../llm/provider';
 import { getConfig } from '../core/config';
-import { getHistoryBudget, getCompressionThreshold } from '../llm/token-accounting';
+import { getHistoryBudget, getCompressionThreshold, estimateTokens } from '../llm/token-accounting';
 import { logger } from '../core/logger';
 
 interface CompressionResult {
@@ -164,7 +164,7 @@ ${cappedTranscript}
 Write ONLY the summary, no preamble:`;
 
     const isOpenAi = endpoint.provider === 'openai';
-    const model = isOpenAi ? 'gpt-4o-mini' : 'claude-haiku-4-5-20251001';
+    const summarizerModel = isOpenAi ? 'gpt-4o-mini' : 'claude-haiku-4-5-20251001';
     const baseUrl = (endpoint.baseUrl || '').replace(/\/+$/, '');
 
     const url = isOpenAi
@@ -172,8 +172,8 @@ Write ONLY the summary, no preamble:`;
       : `${baseUrl || 'https://api.anthropic.com'}/v1/messages`;
 
     const body = isOpenAi
-      ? { model, messages: [{ role: 'user', content: prompt }], max_tokens: 800 }
-      : { model, max_tokens: 800, messages: [{ role: 'user', content: prompt }] };
+      ? { model: summarizerModel, messages: [{ role: 'user', content: prompt }], max_tokens: 800 }
+      : { model: summarizerModel, max_tokens: 800, messages: [{ role: 'user', content: prompt }] };
 
     const headers: Record<string, string> = { 'Content-Type': 'application/json' };
     if (isOpenAi) {
@@ -229,27 +229,12 @@ function countTurns(messages: LlmMessage[]): number {
 
 /**
  * Estimate total tokens in conversation history.
- * CJK-aware: CJK chars ~2 tokens each, Latin ~4 chars/token.
+ * Delegates to token-accounting.estimateTokens() for consistent CJK-aware counting.
  */
 function estimateHistoryTokens(messages: LlmMessage[]): number {
   return messages.reduce((sum, m) => {
     const text = typeof m.content === 'string' ? m.content : JSON.stringify(m.content);
-    let cjk = 0;
-    let other = 0;
-    for (let i = 0; i < text.length; i++) {
-      const code = text.charCodeAt(i);
-      if (
-        (code >= 0x3000 && code <= 0x9FFF) ||
-        (code >= 0xFF00 && code <= 0xFFEF) ||
-        (code >= 0x3040 && code <= 0x309F) ||  // Hiragana
-        (code >= 0x30A0 && code <= 0x30FF)     // Katakana
-      ) {
-        cjk++;
-      } else {
-        other++;
-      }
-    }
-    return sum + cjk * 2 + other / 4;
+    return sum + estimateTokens(text);
   }, 0);
 }
 

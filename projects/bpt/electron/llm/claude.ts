@@ -189,8 +189,8 @@ export class ClaudeProvider implements LlmProvider {
   }
 
   /**
-   * Model-aware cost estimation using official Anthropic pricing.
-   * Looks up the current model in MODEL_PRICING; falls back to Sonnet 4.6 rates.
+   * Model-aware cost estimation via getModelPricing() from the unified
+   * MODEL_REGISTRY. Falls back to Sonnet 4.6 rates for unknown models.
    */
   private estimateCost(
     input: number,

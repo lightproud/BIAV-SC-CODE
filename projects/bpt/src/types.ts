@@ -162,7 +162,6 @@ export interface AppConfig {
   repoRoot: string;          // path to brain-in-a-vat root
   truncateThreshold: number; // max tokens for tool result before truncation
   compressionTriggerTurns: number;
-  compressionTriggerTokens: number;
 }
 
 // ─── IPC Channel Names ──────────────────────────────────────────
