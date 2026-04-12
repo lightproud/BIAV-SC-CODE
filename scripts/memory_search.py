@@ -742,10 +742,32 @@ def rerank(candidates: list[dict], query: str, weights: dict = None) -> list[dic
 # ============================================================
 
 
+# Maximum index age before auto-rebuild (hours)
+INDEX_MAX_AGE_HOURS = 24
+
+
 def load_index() -> dict | None:
-    """Load the vector index from disk."""
+    """Load the vector index from disk. Auto-rebuild if missing or stale."""
+    needs_build = False
+
     if not VECTORS_FILE.exists():
-        return None
+        needs_build = True
+    else:
+        # Check staleness: rebuild if older than INDEX_MAX_AGE_HOURS
+        mtime = datetime.fromtimestamp(VECTORS_FILE.stat().st_mtime)
+        age_hours = (datetime.now() - mtime).total_seconds() / 3600
+        if age_hours > INDEX_MAX_AGE_HOURS:
+            needs_build = True
+
+    if needs_build:
+        print(f"  索引{'不存在' if not VECTORS_FILE.exists() else '已过期'}，自动重建...")
+        try:
+            build_index()
+        except Exception as e:
+            print(f"  自动重建失败: {e}")
+            if not VECTORS_FILE.exists():
+                return None
+
     try:
         return json.loads(VECTORS_FILE.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
