@@ -38,7 +38,7 @@ logger = logging.getLogger("collector")
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
 
-HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "48"))
+HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
 
