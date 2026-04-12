@@ -60,15 +60,11 @@ SOURCE_MAP = {
     'taobao': 'taobao',
     'qooapp': 'qooapp',
     'epic': 'epic',
-    'gamerch': 'gamerch',
     'note_com': 'note_com',
     'ruliweb': 'ruliweb',
     'vkplay': 'vkplay',
     'stopgame': 'stopgame',
     'gacharevenue': 'gacharevenue',
-    'miraheze_wiki': 'miraheze_wiki',
-    'gamekee': 'gamekee',
-    'huiji_wiki': 'huiji_wiki',
     'weixin': 'weixin',
 'discord': 'discord',
     'facebook': 'facebook',
@@ -99,12 +95,15 @@ def convert_item(item: dict) -> dict:
     if item.get('media_url'):
         converted['media_url'] = item['media_url']
         converted['content_type'] = item.get('content_type', 'image')
+    # Preserve metadata (comments, play counts, reactions, etc.)
+    if item.get('metadata') and isinstance(item['metadata'], dict):
+        converted['metadata'] = item['metadata']
     return converted
 
 
 def dedup_key(item: dict) -> str:
-    """Generate dedup key for an item."""
-    url = item.get('url', '').strip()
+    """Generate dedup key for an item. URL-first, title fallback — aligned with aggregator."""
+    url = (item.get('url', '') or '').replace('http://', 'https://').rstrip('/').strip()
     if url:
         return url
     return f"{item.get('title', '')[:60]}|{item.get('source', '')}|{item.get('author', '')}"
@@ -120,6 +119,43 @@ def run_zero_cost_collectors() -> list[dict]:
     except ImportError as e:
         logger.error(f"Cannot import global_collectors module: {e}")
         return items
+
+    # 数据质量追踪器：更新各源状态，长期沉默的源自动 dormant 跳过
+    tracker = None
+    try:
+        sys.path.insert(0, str(_REPO_ROOT / 'projects' / 'news' / 'scripts'))
+        from data_quality import SilentPlatformTracker
+        tracker = SilentPlatformTracker()
+    except Exception as e:
+        logger.debug(f'SilentPlatformTracker not available: {e}')
+
+    # ── 已知不可用的源：跳过以节约 CI 时间（每条省 5-25 秒超时等待）──
+    # 键 = fetcher 显示名，值 = 原因 + 修复条件
+    # 要恢复某个源：从这里删掉对应行，下面 zero_cost_fetchers 的条目不用改
+    SUSPENDED: dict[str, str] = {
+        # 反爬/需登录（需 RSSHub + cookie 或 Puppeteer）
+        'Weibo':       '游客流已死，需真实 WEIBO_COOKIE → 部署 RSSHub',
+        'Xiaohongshu': 'API 404，需 Puppeteer x-s/x-t 签名 → 部署 RSSHub',
+        'Zhihu':       '403，需真实 z_c0 cookie → 部署 RSSHub',
+        'Douyin':      '需 Puppeteer 渲染 → 部署 RSSHub',
+        'Naver Cafe':  '403，需 NAVER 登录 session',
+        'Arca.live':   '403 Cloudflare，cloudscraper 不稳',
+        'Lofter':      '503 持续返回',
+        '5ch':         '503 持续返回',
+        'Epic Store':  '403 GraphQL + scrape 均被拦',
+        'Note.com':    '403 被拦',
+        'Taobao Merch':'403 被拦',
+        'TikTok':      '需 Puppeteer，返回 0 视频',
+        # 内容确实不存在或 API 不可达
+        'TapTap':      'API 被 proxy 403，审计窗口内 0 产出',
+        'VK Play':     '游戏页 404',
+        'QooApp':      '搜索 0 结果',
+        'Xianyu':      '0 商品',
+        'Ruliweb':     '0 帖子',
+        'GACHAREVENUE':'0 条目',
+        'Tieba':       '0 帖子（贴吧搜索已不返回数据）',
+        'Bahamut':     '0 结果',
+    }
 
     # Zero-cost collectors (no API key required)
     zero_cost_fetchers = [
@@ -142,17 +178,15 @@ def run_zero_cost_collectors() -> list[dict]:
         ('Taobao Merch', c.fetch_taobao_merch),
         ('QooApp', c.fetch_qooapp),
         ('Epic Store', c.fetch_epic_store),
-        ('Gamerch Wiki', c.fetch_gamerch),
         ('Note.com', c.fetch_note_com),
         ('Ruliweb', c.fetch_ruliweb),
         ('VK Play', c.fetch_vkplay),
         ('StopGame', c.fetch_stopgame),
         ('GACHAREVENUE', c.fetch_gacharevenue),
-        ('Miraheze Wiki', c.fetch_miraheze_wiki),
-        ('GameKee', c.fetch_gamekee),
-        ('Huiji Wiki', c.fetch_huiji_wiki),
         ('搜狗微信', c.fetch_weixin),
-        ('RSSHub', c.fetch_rsshub),
+        # ('RSSHub', c.fetch_rsshub),  # 已停用：Vercel 实例已删，未部署自建实例
+        # 启用方法：部署 Fly.io（见 projects/news/rsshub-deploy/README.md），
+        # 在 GitHub Secrets 设 RSSHUB_URL，然后把上面这行注释取消。
     ]
 
     # Also run API-key collectors if keys are available
@@ -173,11 +207,41 @@ def run_zero_cost_collectors() -> list[dict]:
 
     all_fetchers = zero_cost_fetchers + api_fetchers
 
+    # 显示名 → source_id（与 archive/split 对齐）
+    NAME_TO_SOURCE_ID = {
+        'Bilibili': 'bilibili', 'Reddit': 'reddit', 'NGA': 'nga', 'TapTap': 'taptap',
+        'Weibo': 'weibo', 'Xiaohongshu': 'xiaohongshu', 'Douyin': 'douyin',
+        'Tieba': 'tieba', 'Zhihu': 'zhihu', 'Naver Cafe': 'naver_cafe',
+        '5ch': 'fivech', 'App Store': 'appstore', 'TikTok': 'tiktok',
+        'Pixiv': 'pixiv', 'Lofter': 'lofter', 'Xianyu': 'xianyu',
+        'Taobao Merch': 'taobao', 'QooApp': 'qooapp', 'Epic Store': 'epic',
+        'Note.com': 'note_com', 'Ruliweb': 'ruliweb', 'VK Play': 'vkplay',
+        'StopGame': 'stopgame', 'GACHAREVENUE': 'gacharevenue',
+        '搜狗微信': 'weixin', 'RSSHub': 'rsshub',
+        'Twitter/X': 'twitter', 'YouTube': 'youtube', 'Discord API': 'discord',
+        'Facebook': 'facebook', 'Twitch': 'twitch', 'Instagram': 'instagram',
+        'QQ': 'qq', 'Telegram': 'telegram', 'Bahamut': 'bahamut',
+        'DCInside': 'dcinside', 'Arca.live': 'arca_live', 'Google Play': 'google_play',
+    }
+
     succeeded = []
     failed = []
     empty = []
 
+    suspended_count = 0
     for name, fn in all_fetchers:
+        source_id = NAME_TO_SOURCE_ID.get(name, name.lower())
+
+        # 已知不可用的源：跳过并记录原因
+        if name in SUSPENDED:
+            suspended_count += 1
+            continue
+
+        # dormant 源直接跳过，节约 CI 时间
+        if tracker and tracker.should_skip_platform(source_id):
+            logger.info(f"  ⏭  {name}: dormant, skipping")
+            continue
+
         try:
             result = fn()
             if result:
@@ -187,9 +251,13 @@ def run_zero_cost_collectors() -> list[dict]:
             else:
                 empty.append(name)
                 logger.info(f"  · {name}: 0 items")
+            if tracker:
+                tracker.update_platform_status(source_id, len(result) if result else 0)
         except Exception as e:
             failed.append((name, str(e)[:120]))
             logger.warning(f"  ✗ {name} FAILED: {e}")
+            if tracker:
+                tracker.update_platform_status(source_id, 0, error=str(e))
 
     # Diagnostic summary
     logger.info("=== 采集诊断 ===")
@@ -200,6 +268,8 @@ def run_zero_cost_collectors() -> list[dict]:
         logger.warning(f"失败 ({len(failed)}):")
         for name, err in failed:
             logger.warning(f"  {name}: {err}")
+    if suspended_count:
+        logger.info(f"已暂停 ({suspended_count}): {', '.join(SUSPENDED.keys())}")
 
     return items
 
