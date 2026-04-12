@@ -290,7 +290,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
         // Execute each tool and collect results
         const toolResults: LlmContentBlock[] = [];
         for (const toolBlock of toolUseBlocks) {
-          const result = await executeTool(toolBlock.name, toolBlock.input);
+          const result = await executeTool(toolBlock.name, toolBlock.input, conversationId);
 
           // Send tool_result event to renderer for display
           sendToRenderer(win, {
@@ -299,6 +299,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
             name: toolBlock.name,
             content: result.content,
             isError: result.isError,
+            artifactId: result.artifactId,
           });
 
           toolResults.push({

@@ -41,6 +41,10 @@ export interface BptApi {
 
   citeInject: (conversationId: string, chunk: unknown) => Promise<unknown>;
 
+  artifactList: (conversationId?: string) => Promise<unknown>;
+  artifactGet: (id: string) => Promise<unknown>;
+  artifactDelete: (id: string) => Promise<unknown>;
+
   tokenHistory: (conversationId: string) => Promise<unknown>;
 
   windowMinimize: () => Promise<unknown>;

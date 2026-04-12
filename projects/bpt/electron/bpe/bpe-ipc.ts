@@ -9,16 +9,18 @@
 import { ipcMain } from 'electron';
 import path from 'node:path';
 import { loadBpeIndexes, closeBpeIndexes, type BpeIndexes } from './index-loader';
-import { searchFts5, lookupSymbol } from './search';
+import { searchFts5, searchHybrid, lookupSymbol } from './search';
 import { getConfig } from '../core/config';
 import { logger } from '../core/logger';
 
 let indexes: BpeIndexes | null = null;
 
 export function registerBpeIpc(): void {
+  // Use hybrid search (vector + FTS5 + optional rerank). Falls back to
+  // FTS5-only if vectors.db or bge-m3 model is unavailable.
   ipcMain.handle('bpe:search', async (_event, query: string, limit?: number) => {
     if (!indexes) return { results: [], error: 'BPE indexes not loaded' };
-    const results = searchFts5(indexes, query, limit ?? 10);
+    const results = await searchHybrid(indexes, query, limit ?? 5);
     return { query, results };
   });
 

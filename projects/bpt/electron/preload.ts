@@ -63,6 +63,14 @@ const api = {
   citeInject: (conversationId: string, chunk: unknown) =>
     ipcRenderer.invoke('cite:inject', conversationId, chunk),
 
+  // ── Artifacts ─────────────────────────────────────────────
+  artifactList: (conversationId?: string) =>
+    ipcRenderer.invoke('artifact:list', conversationId),
+  artifactGet: (id: string) =>
+    ipcRenderer.invoke('artifact:get', id),
+  artifactDelete: (id: string) =>
+    ipcRenderer.invoke('artifact:delete', id),
+
   // ── Token Log ─────────────────────────────────────────────
   tokenHistory: (conversationId: string) =>
     ipcRenderer.invoke('token:history', conversationId),
