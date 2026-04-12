@@ -241,7 +241,7 @@ export function lookupSymbol(
       file: c.file,
       lineStart: c.line_start,
       lineEnd: c.line_end,
-      text: c.text.slice(0, 600),
+      text: c.text.slice(0, 1500),
       language: c.language,
       score: 1,
     }));

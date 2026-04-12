@@ -26,6 +26,13 @@ interface ToolCallResult {
 }
 
 /**
+ * BPE tools return pre-chunked results (each slice already ≤500 tokens).
+ * They deserve a higher truncation ceiling than generic tools.
+ */
+const PRE_CHUNKED_TOOLS = new Set(['bpe_semantic_search', 'bpe_lookup_symbol']);
+const PRE_CHUNKED_MULTIPLIER = 3; // 3x the base threshold
+
+/**
  * Execute a single tool call and return the result.
  */
 export async function executeTool(
@@ -37,8 +44,13 @@ export async function executeTool(
     const result = await dispatchTool(toolName, toolInput);
     const resultStr = typeof result === 'string' ? result : JSON.stringify(result, null, 2);
 
-    // Prime Directive T2: Truncate if over threshold, save full result as artifact
-    const threshold = (getConfig('truncateThreshold') as number) ?? 2000;
+    // Prime Directive T2: Truncate if over threshold, save full result as artifact.
+    // BPE tools return pre-chunked slices — give them a higher ceiling so LLM
+    // sees the full set of carefully-selected code/config snippets.
+    const baseThreshold = (getConfig('truncateThreshold') as number) ?? 2000;
+    const threshold = PRE_CHUNKED_TOOLS.has(toolName)
+      ? baseThreshold * PRE_CHUNKED_MULTIPLIER
+      : baseThreshold;
     const charLimit = threshold * 4;
 
     if (resultStr.length > charLimit) {
