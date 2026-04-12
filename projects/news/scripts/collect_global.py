@@ -286,7 +286,12 @@ def load_existing_news() -> list[dict]:
         return []
 
 
-MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 24))
+# Adaptive: match the lookback window used by collectors
+try:
+    from collection_state import get_lookback_hours
+    MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 0)) or get_lookback_hours()
+except ImportError:
+    MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 24))
 
 
 def _is_recent(time_str: str) -> bool:

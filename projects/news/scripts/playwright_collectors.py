@@ -19,7 +19,11 @@ from typing import Optional, List, Dict
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
 
-HOURS_LOOKBACK = 24
+try:
+    from collection_state import get_lookback_hours
+    HOURS_LOOKBACK = get_lookback_hours()
+except ImportError:
+    HOURS_LOOKBACK = 24
 TIMEOUT_MS = 30000
 
 

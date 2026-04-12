@@ -106,7 +106,13 @@ KNOWN_SOURCES = [
 ]
 
 
-MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 24
+# Adaptive: match the lookback window used by collectors
+try:
+    from collection_state import get_lookback_hours
+    _default_hours = get_lookback_hours()
+except ImportError:
+    _default_hours = 24
+MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else _default_hours
 
 # 官方公告较稀疏，保留更宽时间窗口
 OFFICIAL_MAX_AGE_HOURS = int(os.environ.get('OFFICIAL_MAX_AGE_HOURS', 30 * 24))

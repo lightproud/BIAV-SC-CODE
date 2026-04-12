@@ -38,7 +38,13 @@ logger = logging.getLogger("collector")
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
 
-HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
+# Adaptive lookback: expands automatically if CI was down
+try:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from collection_state import get_lookback_hours
+    HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "0")) or get_lookback_hours()
+except ImportError:
+    HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
 

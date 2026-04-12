@@ -63,6 +63,9 @@ jobs:
       - name: Archive platform data by date
         run: python projects/news/scripts/archive_platforms.py
 
+      - name: Repair archive date gaps
+        run: python projects/news/scripts/repair_gaps.py
+
       - name: Refresh silent-source health report
         run: python projects/news/scripts/silent_sources_audit.py --write
 
