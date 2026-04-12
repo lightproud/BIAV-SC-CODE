@@ -104,9 +104,23 @@ def generate_collection_hall():
 
 
 def generate_cg_gallery():
-    """Generate CG gallery page from cg_gallery.json."""
+    """Generate CG gallery page from cg_gallery.json with inline images."""
     with open(f'{PROCESSED_DIR}/cg_gallery.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
+
+    # Build set of available local images (relative to docs/public/)
+    available = set()
+    public_dir = os.path.join(DOCS_DIR, 'public')
+    for root, dirs, files in os.walk(os.path.join(public_dir, 'cg')):
+        for fn in files:
+            if fn.endswith('.png'):
+                rel = os.path.relpath(os.path.join(root, fn), public_dir)
+                available.add(rel)
+    for root, dirs, files in os.walk(os.path.join(public_dir, 'scenebg')):
+        for fn in files:
+            if fn.endswith('.png'):
+                rel = os.path.relpath(os.path.join(root, fn), public_dir)
+                available.add(rel)
 
     meta = data['_meta']
     lines = []
@@ -114,54 +128,86 @@ def generate_cg_gallery():
     lines.append('')
     lines.append(f'> 数据来源：美术资产 manifest.json（UnityPy 解包） | 共 {meta["total_cg"]} 张 CG，{meta["story_chapters"]} 个章节')
     lines.append('')
-    lines.append('::: info 说明')
-    lines.append('CG 原始 PNG 文件（共约 701 MB）存储在本地，不包含在 git 仓库中。此处列出文件名和路径索引。')
-    lines.append(':::')
-    lines.append('')
+
+    displayed = 0
+    listed = 0
+
+    def render_images(images, lines):
+        nonlocal displayed, listed
+        has_img = []
+        no_img = []
+        for img in images:
+            # Check if image exists in public/
+            if img['path'] in available:
+                has_img.append(img)
+            else:
+                no_img.append(img)
+
+        if has_img:
+            # Use a flex grid via raw HTML for image gallery
+            lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
+            for img in has_img:
+                src = f'/{img["path"]}'
+                lines.append(f'<div style="flex: 1 1 300px; max-width: 480px;">')
+                lines.append(f'<img src="{src}" alt="{img["name"]}" style="width: 100%; border-radius: 8px; border: 1px solid #2a2a2a;" loading="lazy" />')
+                lines.append(f'<div style="text-align: center; font-size: 0.85em; color: #888; margin-top: 4px;">{img["name"]}</div>')
+                lines.append(f'</div>')
+                displayed += 1
+            lines.append('</div>')
+            lines.append('')
+
+        if no_img:
+            lines.append('<details>')
+            lines.append(f'<summary>其余 {len(no_img)} 张（本地未包含图片文件）</summary>')
+            lines.append('')
+            lines.append('| 文件名 | 路径 |')
+            lines.append('|--------|------|')
+            for img in no_img:
+                lines.append(f'| {img["name"]} | `{img["path"]}` |')
+                listed += 1
+            lines.append('')
+            lines.append('</details>')
+            lines.append('')
 
     # Story chapters
     lines.append('## 主线章节 CG')
     lines.append('')
 
     for ch in data['chapters']:
-        lines.append(f'### {ch["chapter_name"]}')
+        lines.append(f'### {ch["chapter_name"]}（{ch["image_count"]} 张）')
         lines.append('')
-        lines.append(f'共 {ch["image_count"]} 张')
-        lines.append('')
-        lines.append('| 文件名 | 路径 | 大小 |')
-        lines.append('|--------|------|------|')
-        for img in ch['images']:
-            size_kb = img['size'] / 1024
-            if size_kb > 1024:
-                size_str = f'{size_kb/1024:.1f} MB'
-            else:
-                size_str = f'{size_kb:.0f} KB'
-            lines.append(f'| {img["name"]} | `{img["path"]}` | {size_str} |')
-        lines.append('')
+        render_images(ch['images'], lines)
 
     # Special groups
     if data.get('special'):
         lines.append('## 特殊 CG')
         lines.append('')
         for sg in data['special']:
-            lines.append(f'### {sg["group_name"]}')
+            lines.append(f'### {sg["group_name"]}（{sg["image_count"]} 张）')
             lines.append('')
-            lines.append(f'共 {sg["image_count"]} 张')
-            lines.append('')
-            lines.append('| 文件名 | 路径 | 大小 |')
-            lines.append('|--------|------|------|')
-            for img in sg['images']:
-                size_kb = img['size'] / 1024
-                if size_kb > 1024:
-                    size_str = f'{size_kb/1024:.1f} MB'
-                else:
-                    size_str = f'{size_kb:.0f} KB'
-                lines.append(f'| {img["name"]} | `{img["path"]}` | {size_str} |')
-            lines.append('')
+            render_images(sg['images'], lines)
+
+    # Scene backgrounds
+    scenebg_files = sorted([f for f in available if f.startswith('scenebg/')])
+    if scenebg_files:
+        lines.append('## 场景背景')
+        lines.append('')
+        lines.append(f'共 {len(scenebg_files)} 张')
+        lines.append('')
+        lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
+        for f in scenebg_files:
+            name = os.path.splitext(os.path.basename(f))[0]
+            lines.append(f'<div style="flex: 1 1 300px; max-width: 480px;">')
+            lines.append(f'<img src="/{f}" alt="{name}" style="width: 100%; border-radius: 8px; border: 1px solid #2a2a2a;" loading="lazy" />')
+            lines.append(f'<div style="text-align: center; font-size: 0.85em; color: #888; margin-top: 4px;">{name}</div>')
+            lines.append(f'</div>')
+            displayed += 1
+        lines.append('</div>')
+        lines.append('')
 
     with open(f'{DOCS_DIR}/cg-gallery.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
-    print(f'CG gallery page: {len(lines)} lines')
+    print(f'CG gallery page: {displayed} images displayed, {listed} listed as text')
 
 
 def generate_item_stories():
