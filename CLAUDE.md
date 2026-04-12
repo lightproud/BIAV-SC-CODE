@@ -34,7 +34,7 @@ brain-in-a-vat/
 │   ├── dreams/                # 做梦 Agent 产出（日志/周报/洞察）
 │   └── session-digests/       # 会话摘要
 ├── assets/                    # 共享资产（事实圣经 + 图片 + 样式）
-│   ├── data/                  # 事实圣经（interview/narrative/design-decisions JSON + 校验器）
+│   ├── data/                  # 事实圣经 + 角色人格数据（character-personas/）
 │   ├── images/                # 立绘和图片素材
 │   └── styles/                # 共享样式
 ├── projects/                  # 子项目工作区（见下方速查表）
@@ -121,6 +121,11 @@ python scripts/memrl.py --top 10
 
 # 重建全部索引
 python scripts/dream.py --rebuild
+
+# 角色人格模式（以游戏角色语气对话）
+python scripts/character_persona.py --character erica           # 生成系统提示词
+python scripts/character_persona.py --character erica --export bpt-web  # BPT-WEB 导出
+python scripts/character_persona.py --list                      # 列出可用角色
 ```
 
 ### 知识写入（对话中主动调用）
@@ -154,7 +159,7 @@ python scripts/dream.py --rebuild
 
 ### MCP 服务器
 
-`scripts/mcp_server.py` 暴露 10 个工具给任意 MCP 客户端：search / graph / graph_related_files / utility / cache / context / rebuild / store_facts / writeback / session_briefing。`.mcp.json` 已配置为默认加载。
+`scripts/mcp_server.py` 暴露 11 个工具给任意 MCP 客户端：search / graph / graph_related_files / utility / cache / context / rebuild / store_facts / writeback / session_briefing / character_persona。`.mcp.json` 已配置为默认加载。
 
 ---
 
