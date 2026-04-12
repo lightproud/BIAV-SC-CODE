@@ -87,6 +87,9 @@ def get_insight_signals() -> dict[str, dict]:
             if isinstance(insights, list):
                 for insight in insights:
                     for fp in insight.get("evidence", []):
+                        # Skip non-path strings (e.g. reflexion error messages)
+                        if fp.startswith("- ") or " -- " in fp or "NOT FOUND" in fp:
+                            continue
                         signals[fp]["cited_count"] += 1
                         created = insight.get("created", "")
                         if created and (not signals[fp]["last_cited"] or created > signals[fp]["last_cited"]):

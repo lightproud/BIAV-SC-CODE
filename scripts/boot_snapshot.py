@@ -124,7 +124,7 @@ def generate_snapshot() -> str:
 
     snapshot = f"""# 银芯启动快照 / BIAV-SC Boot Snapshot
 
-> Auto-generated: {now}
+> 最后更新：{now[:10]} by boot_snapshot.py (auto-generated)
 > 新会话读完此文件即可就绪，无需逐个加载 memory 文件。
 > 完整定义见 `BIAV-SC.md`，本文件是压缩启动包。
 
@@ -191,7 +191,9 @@ def generate_snapshot() -> str:
 | 主站 | `projects/site/` | 维护模式 |
 | 新闻聚合 | `projects/news/` | 运行中 |
 | Wiki | `projects/wiki/` | 数据补全中 |
-| 碧瓦 AI Chat | `projects/biva/` | MVP 已部署 |
+| BPT-WEB | `projects/bpt-web/` | v0.1.0 已部署 |
+| BPT-DESKTOP | `projects/bpt-desktop/` | v0.1.0 开发中 |
+| BPT 母版 | `projects/bpt/` | 重建计划制定中 |
 | 衍生游戏 | `projects/game/` | 暂缓 |
 
 ## 按需加载索引

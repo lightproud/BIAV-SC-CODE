@@ -419,10 +419,10 @@ def update_cache_hits(cache_id: str):
 | `scripts/knowledge_graph.py` | 新建 | 知识图谱构建与查询 |
 | `scripts/memrl.py` | 新建 | MemRL-lite 效用追踪 |
 | `scripts/dream.py` | 修改 | Phase 3 集成图谱/向量/缓存重建 |
-| `assets/data/vectors.json` | 生成 | TF-IDF 向量索引 |
-| `assets/data/knowledge-graph.json` | 待生成 | 知识图谱 |
-| `assets/data/memory-utility.json` | 待生成 | 效用分数 |
-| `assets/data/precomputed-cache.json` | 待生成 | 预计算缓存 |
+| `assets/data/vectors.json` | 运行时生成 | TF-IDF 向量索引 |
+| `assets/data/knowledge-graph.json` | 运行时生成 | 知识图谱 |
+| `assets/data/memory-utility.json` | 运行时生成 | 效用分数 |
+| `assets/data/precomputed-cache.json` | 运行时生成 | 预计算缓存 |
 | `BIAV-SC.md` | 修改 | 新增语义检索能力声明 |
 | `.github/workflows/dream.yml` | 修改 | 深睡集成新模块 |
 | `memory/dreaming-agent-design.md` | 修改 | 更新架构说明 |

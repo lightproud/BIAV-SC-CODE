@@ -125,5 +125,5 @@ API Key 通过 `electron-store` 加密存储在用户数据目录，不进入 gi
 
 ## 历史沿革
 
-- 项目原名「缸中之脑」(Brain in a Vat)，目录 `projects/biav-desktop/`，`productName: "Brain in a Vat"`
+- 项目原名「缸中之脑」(Brain in a Vat)，目录 `projects/biav-desktop/`（已废，仅作参考），`productName: "Brain in a Vat"`
 - **v0.1.0（当前）**：更名「黑池终端 BPT-DESKTOP」，目录迁移至 `projects/bpt-desktop/`，`window.biav` → `window.bpt`，`biav-*` Tailwind 色板 → `bpt-*`，版本重置到 v0.1.0

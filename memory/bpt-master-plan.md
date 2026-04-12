@@ -1,5 +1,7 @@
 # BPT — Black Pool Terminal 母版重建计划 v2
 
+> 最后更新：2026-04-12 by 主控台（记忆反思管理）
+
 ## 1. Context
 
 ### 背景
@@ -393,10 +395,10 @@ scripts/
 
 ### 从 biav-desktop 继承什么
 
-**可参考（读，不复制粘贴）**：
-- `projects/biav-desktop/electron/mcp/manager.ts` — MCP stdio spawn 模式（127 行）
-- `projects/biav-desktop/electron/main.ts` — IPC 注册模式（但要避免它的 16 路全注册反模式）
-- `projects/biav-desktop/CONTEXT.md` — 技术栈版本参考
+**可参考（已废目录，仅作参考，不复制粘贴）**：
+- `projects/biav-desktop/electron/mcp/manager.ts` — MCP stdio spawn 模式（127 行，仅作参考）
+- `projects/biav-desktop/electron/main.ts` — IPC 注册模式（仅作参考，避免它的 16 路全注册反模式）
+- `projects/biav-desktop/CONTEXT.md` — 技术栈版本（仅作参考）
 
 **明确不继承**：
 - `self-evolve` 插件系统 — 有毒模式
@@ -484,10 +486,10 @@ Phase 0 写完后逐条验证：
 
 ---
 
-## 参考文件（只读）
+## 参考文件（只读，已废目录仅作参考）
 
-- `projects/biav-desktop/electron/mcp/manager.ts` — MCP spawn 模式
-- `projects/biav-desktop/electron/main.ts` — IPC 注册模式（反面教材）
-- `projects/biav-desktop/CONTEXT.md` — 技术栈版本
+- `projects/biav-desktop/electron/mcp/manager.ts` — MCP spawn 模式（仅作参考）
+- `projects/biav-desktop/electron/main.ts` — IPC 注册模式（仅作参考，反面教材）
+- `projects/biav-desktop/CONTEXT.md` — 技术栈版本（仅作参考）
 - `scripts/mcp_server.py` — 银芯 9 工具签名
 - `memory/boot-snapshot.md` — 银芯启动快照

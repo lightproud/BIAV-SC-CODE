@@ -321,17 +321,44 @@ def extract_file_refs(text: str) -> list[str]:
     """Find file path references in markdown text."""
     refs = set()
     top_dirs = {"memory", "assets", "projects"}
-    skip_markers = {"待生成", "待创建", "TODO", "todo", "planned"}
+    skip_markers = {"待生成", "待创建", "TODO", "todo", "planned",
+                     "已废", "已废弃", "不动", "仅作参考", "死于",
+                     "运行时生成", "gitignored", "生成 |", "| 生成", "存入"}
+    # Pre-compute code block ranges to skip refs inside ```...``` blocks
+    code_ranges = []
+    for cm in re.finditer(r"```.*?```", text, re.DOTALL):
+        code_ranges.append((cm.start(), cm.end()))
     for m in re.finditer(r"(?:memory/[\w./-]+|assets/[\w./-]+|projects/[\w./-]+)", text):
+        if any(start <= m.start() < end for start, end in code_ranges):
+            continue
         ref = m.group(0).rstrip(".,;:!?)")
         if "xxx" in ref or "你的" in ref or "YYYY" in ref:
             continue
         parts = Path(ref).parts
         if len(parts) >= 2 and parts[0] in top_dirs and parts[1] in top_dirs:
             continue
-        ctx_start = max(0, m.start() - 20)
-        ctx_end = min(len(text), m.end() + 20)
-        context = text[ctx_start:ctx_end]
+        # Check the full line + nearest section header above
+        line_start = text.rfind("\n", 0, m.start()) + 1
+        line_end = text.find("\n", m.end())
+        if line_end == -1:
+            line_end = len(text)
+        current_line = text[line_start:line_end]
+        # Find nearest markdown heading (##) above current position
+        heading_match = None
+        search_pos = line_start
+        while search_pos > 0:
+            prev_nl = text.rfind("\n", 0, search_pos - 1)
+            if prev_nl == -1:
+                prev_line = text[:search_pos]
+                if prev_line.lstrip().startswith("#"):
+                    heading_match = prev_line
+                break
+            prev_line = text[prev_nl + 1:search_pos - 1]
+            if prev_line.lstrip().startswith("#"):
+                heading_match = prev_line
+                break
+            search_pos = prev_nl
+        context = current_line + (" " + heading_match if heading_match else "")
         if any(marker in context for marker in skip_markers):
             continue
         refs.add(ref)

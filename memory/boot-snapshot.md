@@ -1,6 +1,6 @@
 # 银芯启动快照 / BIAV-SC Boot Snapshot
 
-> Auto-generated: 2026-04-11 14:18 UTC
+> 最后更新：2026-04-12 by boot_snapshot.py (auto-generated)
 > 新会话读完此文件即可就绪，无需逐个加载 memory 文件。
 > 完整定义见 `BIAV-SC.md`，本文件是压缩启动包。
 
@@ -32,24 +32,23 @@ OK: wiki data
 
 ## 最新社区情报
 
-# 忘却前夜 社区日报 2026-04-11
-> 采集时间：2026-04-11 13:22 UTC+8
-1. [Bilibili] ⁣ — engagement: 384
+# 忘却前夜 社区日报 2026-04-12
+> 采集时间：2026-04-12 19:50 UTC+8
+1. [Bilibili] 【卡雨虹】大师局 24-2回声拿下沙耶之歌 — engagement: 216
 | 平台 | 数据条数 |
 |------|----------|
-| Bilibili | 21 |
-| Discord | 14 |
-| Steam | 8 |
+| Bilibili | 22 |
+| Discord | 16 |
+| Steam | 4 |
 | Steam 论坛 | 0（沉默）|
-1. [DC] water_heart@🔸綜合討論: (附件/嵌入) — engagement: 36
-1. [正面] Havent played much but its rlly fun — engagement: 1
-1. [Gamerch] 最強キャラ/Tier — engagement: 0
+1. [DC] willsalvador@🔸morimens-game-chat: https://x.com/i/statu — engagement: 37
+1. [正面] 很不错的游戏
 1. [StopGame] Morimens — 3.9/10 (0 оценок) — engagement: 0
 1. [微信] 制作人长文复盘:数次濒临解散,二游《忘却前夜》如何艰难续命的? — engagement: 0
 
 ## 做梦系统
 
-Latest dream: 2026-04-04
+Latest dream: 2026-04-12
 
 ## 记忆系统 9 模块
 
@@ -84,7 +83,9 @@ Latest dream: 2026-04-04
 | 主站 | `projects/site/` | 维护模式 |
 | 新闻聚合 | `projects/news/` | 运行中 |
 | Wiki | `projects/wiki/` | 数据补全中 |
-| 碧瓦 AI Chat | `projects/biva/` | MVP 已部署 |
+| BPT-WEB | `projects/bpt-web/` | v0.1.0 已部署 |
+| BPT-DESKTOP | `projects/bpt-desktop/` | v0.1.0 开发中 |
+| BPT 母版 | `projects/bpt/` | 重建计划制定中 |
 | 衍生游戏 | `projects/game/` | 暂缓 |
 
 ## 按需加载索引
