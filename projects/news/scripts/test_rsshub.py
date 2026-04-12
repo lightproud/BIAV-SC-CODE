@@ -105,7 +105,14 @@ def main():
     base_url = sys.argv[1] if len(sys.argv) > 1 else None
     if not base_url:
         import os
-        base_url = os.environ.get("RSSHUB_URL", "https://biav-rsshub.vercel.app")
+        base_url = os.environ.get("RSSHUB_URL", "")
+    if not base_url:
+        print("ERROR: 没提供 RSSHub URL。")
+        print("  用法： python test_rsshub.py https://biav-rsshub.fly.dev")
+        print("  或设置环境变量： export RSSHUB_URL=https://biav-rsshub.fly.dev")
+        print("\n当前状态：RSSHub 已停用（原 Vercel 实例已删），如需启用见")
+        print("  projects/news/rsshub-deploy/README.md")
+        sys.exit(2)
     base_url = base_url.rstrip("/")
 
     print(f"=== Probing RSSHub instance: {base_url} ===\n")

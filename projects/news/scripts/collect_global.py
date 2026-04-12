@@ -153,7 +153,9 @@ def run_zero_cost_collectors() -> list[dict]:
         ('StopGame', c.fetch_stopgame),
         ('GACHAREVENUE', c.fetch_gacharevenue),
         ('搜狗微信', c.fetch_weixin),
-        ('RSSHub', c.fetch_rsshub),
+        # ('RSSHub', c.fetch_rsshub),  # 已停用：Vercel 实例已删，未部署自建实例
+        # 启用方法：部署 Fly.io（见 projects/news/rsshub-deploy/README.md），
+        # 在 GitHub Secrets 设 RSSHUB_URL，然后把上面这行注释取消。
     ]
 
     # Also run API-key collectors if keys are available
