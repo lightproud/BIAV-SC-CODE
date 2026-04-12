@@ -746,19 +746,34 @@ def rerank(candidates: list[dict], query: str, weights: dict = None) -> list[dic
 # Maximum index age before auto-rebuild (hours)
 INDEX_MAX_AGE_HOURS = 24
 
+# In-process index cache (avoids re-reading 4.7MB gzip on every search)
+_index_cache = None
+_index_cache_mtime = 0
+
 
 def load_index() -> dict | None:
-    """Load the vector index from disk. Auto-rebuild if missing or stale."""
+    """Load the vector index with in-process caching.
+
+    First call: decompress from disk (~1-2s).
+    Subsequent calls in same process: instant from memory.
+    Auto-rebuilds if file is missing or older than 24h.
+    """
+    global _index_cache, _index_cache_mtime
+
     needs_build = False
 
     if not VECTORS_FILE.exists():
         needs_build = True
     else:
-        # Check staleness: rebuild if older than INDEX_MAX_AGE_HOURS
-        mtime = datetime.fromtimestamp(VECTORS_FILE.stat().st_mtime)
-        age_hours = (datetime.now() - mtime).total_seconds() / 3600
+        file_mtime = VECTORS_FILE.stat().st_mtime
+        # Check staleness
+        age_hours = (datetime.now() - datetime.fromtimestamp(file_mtime)).total_seconds() / 3600
         if age_hours > INDEX_MAX_AGE_HOURS:
             needs_build = True
+
+        # Return cached if file hasn't changed
+        if _index_cache is not None and file_mtime == _index_cache_mtime:
+            return _index_cache
 
     if needs_build:
         print(f"  索引{'不存在' if not VECTORS_FILE.exists() else '已过期'}，自动重建...")
@@ -771,7 +786,9 @@ def load_index() -> dict | None:
 
     try:
         with gzip.open(VECTORS_FILE, "rt", encoding="utf-8") as f:
-            return json.load(f)
+            _index_cache = json.load(f)
+        _index_cache_mtime = VECTORS_FILE.stat().st_mtime
+        return _index_cache
     except (json.JSONDecodeError, OSError):
         return None
 
