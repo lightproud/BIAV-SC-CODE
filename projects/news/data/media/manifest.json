@@ -1693,6 +1693,41 @@
       "title": "[DC] climbkaly@🔸morimens-game-chat:  probably what you were expecting.",
       "time": "2026-04-11T20:11:14.259000+00:00",
       "downloaded_at": "2026-04-11T23:10:20.903847+00:00"
+    },
+    "https://i.ytimg.com/vi/WABk11MvIEc/hq720_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhyIEcoPzAP&rs=AOn4CLCLpA8PjgKWHMa20NqL20fen0vvKw": {
+      "filename": "youtube_7f07614d0b567562.jpg",
+      "source": "youtube",
+      "title": "🔥 Top 3 Characters in Morimens – April 2025 🌟",
+      "time": "2026-04-12T06:11:49.309097+00:00",
+      "downloaded_at": "2026-04-12T06:15:08.155704+00:00"
+    },
+    "https://i.ytimg.com/vi/V4T0Plpaw7Q/hq720_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhlIGMoTDAP&rs=AOn4CLDzlWenUQkoMyvrwXmBPf-euiNJvg": {
+      "filename": "youtube_1599efa5c7830a45.jpg",
+      "source": "youtube",
+      "title": "I've never played a gacha game as intense as this. #morimens",
+      "time": "2026-04-12T06:11:49.309087+00:00",
+      "downloaded_at": "2026-04-12T06:15:08.602038+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/0900fd6b0b3985ee68808473a41ec05c0fbb4fbb.jpg": {
+      "filename": "bilibili_391c70ca35ed5cde.jpg",
+      "source": "bilibili",
+      "title": "沙耶吃肉",
+      "time": "2026-04-12T03:25:51+00:00",
+      "downloaded_at": "2026-04-12T06:15:10.215363+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492647578687373383/image.png?ex=69dc17e2&is=69dac662&hm=6bb5dabbaa2e31f3fd37c863ac917a8ba0c637cfcaeb24b7a8315e8b3bacfc18&": {
+      "filename": "discord_0891641d0e97b2cf.png",
+      "source": "discord",
+      "title": "[DC] melwyn7591@🔸morimens-game-chat: (附件/嵌入)",
+      "time": "2026-04-11T22:08:35.488000+00:00",
+      "downloaded_at": "2026-04-12T06:15:10.626071+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1492634601024393286/image.png?ex=69dc0bcc&is=69daba4c&hm=2b67057e330c546e2834390a198879de402b7b80a37b5f33224e22fccfddfdca&": {
+      "filename": "discord_75dafd7428346160.png",
+      "source": "discord",
+      "title": "[DC] monchi3524@🔸morimens-game-chat: (附件/嵌入)",
+      "time": "2026-04-11T21:17:00.757000+00:00",
+      "downloaded_at": "2026-04-12T06:15:11.026799+00:00"
     }
   },
   "failed": {
@@ -2240,6 +2275,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-11T23:10:21.705844+00:00"
+    },
+    "https://preview.redd.it/q7ji2cj8apug1.png?width=140&amp;height=78&amp;auto=webp&amp;s=2ad4996fd4fc238776235035effac4c99ed3f7ce": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-12T06:15:11.383053+00:00"
     }
   },
   "archived": []
