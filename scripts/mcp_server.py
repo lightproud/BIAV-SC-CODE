@@ -61,7 +61,7 @@ def memory_search(query: str, top_k: int = 5) -> str:
         query: 搜索查询（自然语言）
         top_k: 返回结果数量，默认 5
     """
-    from memory_search import search
+    from memory_search import search, synthesize
     results = search(query, top_k=top_k)
     if not results:
         return json.dumps({"results": [], "message": f"未找到与「{query}」相关的结果"}, ensure_ascii=False)
@@ -74,7 +74,14 @@ def memory_search(query: str, top_k: int = 5) -> str:
             "preview": r.get("preview", "")[:200],
             "scores": r.get("scores", {}),
         })
-    return json.dumps({"query": query, "results": output}, ensure_ascii=False, indent=2)
+
+    # Cross-document synthesis when results span multiple data categories
+    synthesis = synthesize(query, results)
+
+    response = {"query": query, "results": output}
+    if synthesis:
+        response["synthesis"] = synthesis
+    return json.dumps(response, ensure_ascii=False, indent=2)
 
 
 # ============================================================

@@ -1,0 +1,19 @@
+{
+  "week": "2026-04-12",
+  "sessions_analyzed": 11,
+  "search_failures": 0,
+  "dream_findings": [
+    {
+      "date": "2026-04-11",
+      "issues": 10
+    }
+  ],
+  "hot_topics": {
+    "24": 51,
+    "银芯": 16,
+    "BPT": 4,
+    "TF-IDF": 2,
+    "BIAV-SC": 2
+  },
+  "ai_reflection": {}
+}
