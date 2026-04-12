@@ -92,4 +92,4 @@ export type {
 
 // ── Version ─────────────────────────────────────────────────────
 
-export const BPT_VERSION = '0.4.0';
+export { BPT_VERSION } from '../src/version';

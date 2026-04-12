@@ -1,4 +1,5 @@
 import { useSilverStatus, useBpeStatus, useGear } from '../lib/hooks';
+import { BPT_VERSION } from '../version';
 
 export default function StatusBar() {
   const silverStatus = useSilverStatus();
@@ -35,7 +36,7 @@ export default function StatusBar() {
         </span>
       </div>
 
-      <span className="text-bpt-gold-dim">BPT v0.4.0</span>
+      <span className="text-bpt-gold-dim">BPT v{BPT_VERSION}</span>
     </div>
   );
 }

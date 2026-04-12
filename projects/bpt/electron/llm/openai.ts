@@ -244,17 +244,16 @@ export class OpenAiProvider implements LlmProvider {
       };
 
       if (toolUseParts.length > 0) {
-        assistantMsg.tool_calls = toolUseParts.map((tc) => {
-          if (tc.type !== 'tool_use') return {};
-          return {
+        assistantMsg.tool_calls = toolUseParts
+          .filter((tc): tc is Extract<typeof tc, { type: 'tool_use' }> => tc.type === 'tool_use')
+          .map((tc) => ({
             id: tc.id,
             type: 'function',
             function: {
               name: tc.name,
               arguments: JSON.stringify(tc.input),
             },
-          };
-        });
+          }));
       }
 
       result.push(assistantMsg);
