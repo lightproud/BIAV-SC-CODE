@@ -48,7 +48,7 @@ OK: wiki data
 
 ## 做梦系统
 
-Latest dream: 2026-04-12
+Latest dream: 2026-W15-weekly
 
 ## 记忆系统 9 模块
 
