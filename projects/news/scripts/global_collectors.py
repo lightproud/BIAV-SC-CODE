@@ -38,7 +38,7 @@ logger = logging.getLogger("collector")
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
 
-HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
+HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "48"))
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
 
@@ -760,49 +760,63 @@ def fetch_naver_cafe():
 
 
 def fetch_dcinside():
-    """从 DCInside 搜索韩国忘却前夜 Gallery + 搜索。"""
-    dc_gallery_id = os.environ.get("DC_GALLERY_ID", "morimens")
+    """从 DCInside 搜索 Morimens 相关帖子。
+
+    历史实现尝试抓 mgallery/board/lists?id=morimens，但 DCInside 对 list 页面
+    返回 content-length: 0（无论有没有该画廊，均被 WAF 拦截），而 search.dcinside.com
+    的搜索接口仍开放。改用搜索后跨画廊聚合 Morimens/모리멘스 相关帖子。
+    """
+    import re as _re
+
     items = []
+    keywords = ["Morimens", "모리멘스", "망각전야"]
+    seen_urls: set[str] = set()
 
-    try:
-        resp = _get_cf(
-            f"https://gall.dcinside.com/mgallery/board/lists/",
-            params={"id": dc_gallery_id, "page": 1},
-            headers={
-                "Referer": "https://gall.dcinside.com",
-                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            },
-        )
-        html = resp.text
+    for keyword in keywords:
+        try:
+            resp = _get_cf(
+                f"https://search.dcinside.com/combine/q/{keyword}",
+                headers={
+                    "Referer": "https://www.dcinside.com/",
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
+                },
+                timeout=20,
+            )
+            html = resp.text
 
-        # Parse article list from HTML
-        import re as _re
-        for match in _re.finditer(
-            r'data-no="(\d+)".*?'
-            r'class="gall_tit[^"]*"[^>]*>.*?<a[^>]*>([^<]+)</a>.*?'
-            r'class="gall_date"[^>]*title="([^"]*)"',
-            html, _re.DOTALL
-        ):
-            article_no, title, date_str = match.groups()
-            title = title.strip()
-            if not title or title in ('공지', '설문'):
-                continue
-            items.append(_make_item(
-                title=title,
-                summary="",
-                source="dcinside",
-                platform_region="kr",
-                time_str=date_str.strip(),
-                url=f"https://gall.dcinside.com/mgallery/board/view/?id={dc_gallery_id}&no={article_no}",
-                engagement=0,
-                is_hot=False,
-                author="",
-                lang="ko",
-            ))
+            # 搜索结果结构：<a href="view URL">标题</a>，每个帖子会出现两次
+            # （一次带标题，一次带画廊名），按 URL 去重。
+            matches = _re.findall(
+                r'<a\s+href="(https://gall\.dcinside\.com/[^/]+/view/\?id=[^"]+&no=\d+[^"]*)"[^>]*>\s*([^<]{3,200}?)\s*</a>',
+                html,
+                _re.DOTALL,
+            )
+            count = 0
+            for url, raw_title in matches:
+                if url in seen_urls:
+                    continue
+                title = _re.sub(r"\s+", " ", raw_title).strip()
+                # 过滤掉画廊名（如 "판타지 갤러리"）和太短的 anchor
+                if not title or len(title) < 5 or title.endswith("갤러리"):
+                    continue
+                seen_urls.add(url)
+                items.append(_make_item(
+                    title=title,
+                    summary="",
+                    source="dcinside",
+                    platform_region="kr",
+                    time_str=datetime.now(timezone.utc).isoformat(),
+                    url=url,
+                    engagement=0,
+                    is_hot=False,
+                    author="",
+                    lang="ko",
+                ))
+                count += 1
 
-        logger.info(f'DCInside "{dc_gallery_id}": {len(items)} articles')
-    except Exception as e:
-        logger.warning(f'DCInside "{dc_gallery_id}" failed: {e}')
+            logger.info(f'DCInside search "{keyword}": {count} new articles')
+        except Exception as e:
+            logger.warning(f'DCInside search "{keyword}" failed: {e}')
 
     return items
 
@@ -1070,6 +1084,18 @@ def fetch_pixiv():
                 illust_id = illust.get("id", "")
                 bookmark = illust.get("bookmarkCount", 0)
                 like = illust.get("likeCount", 0)
+                # search_artworks 返回 tags 为 ["tag1", "tag2"]（字符串列表），
+                # 而单个 illust ajax 返回 tags 为 [{"tag": "..."}, ...]，两者都要兼容。
+                raw_tags = illust.get("tags", []) or []
+                if isinstance(raw_tags, list):
+                    tag_list = []
+                    for t in raw_tags[:5]:
+                        if isinstance(t, dict):
+                            tag_list.append(t.get("tag", ""))
+                        elif isinstance(t, str):
+                            tag_list.append(t)
+                else:
+                    tag_list = []
                 items.append(_make_item(
                     title=illust.get("title", ""),
                     summary=illust.get("description", "") if illust.get("description") else "",
@@ -1080,7 +1106,7 @@ def fetch_pixiv():
                     engagement=bookmark + like,
                     is_hot=bookmark > 500,
                     author=illust.get("userName", ""),
-                    tags=[t.get("tag", "") for t in illust.get("tags", [])[:5]] if isinstance(illust.get("tags"), list) else [],
+                    tags=tag_list,
                     lang="",
                     content_type="image",
                     media_url=illust.get("url", ""),
@@ -2056,58 +2082,6 @@ def fetch_weixin():
 
 # ─── 日本語プラットフォーム ────────────────────────────────
 
-def fetch_gamerch():
-    """从 Gamerch Wiki 获取忘却前夜攻略更新。"""
-    items = []
-    try:
-        resp = _get(
-            "https://gamerch.com/morimens/",
-            headers={"User-Agent": "Mozilla/5.0"},
-        )
-        html = resp.text
-        import re as _re
-
-        # Extract recent updates / article links from the wiki
-        # Try to capture surrounding text as summary and any view/PV counts
-        for match in _re.finditer(
-            r'<a[^>]*href="(https://gamerch\.com/morimens/\d+)"[^>]*>\s*([^<]+?)\s*</a>'
-            r'(.*?(?=<a[^>]*href="https://gamerch\.com/morimens/\d+"|</(?:div|ul|section)>))',
-            html, _re.DOTALL
-        ):
-            url, title, trailing = match.groups()
-            title = title.strip()
-            if not title or len(title) < 5:
-                continue
-
-            # Extract summary from trailing text
-            summary = _re.sub(r'<[^>]+>', ' ', trailing).strip()[:200].strip()
-
-            # Try to extract PV/view count from nearby context
-            engagement = 0
-            pv_match = _re.search(r'(\d[\d,]*)\s*(?:PV|view|閲覧|pv)', trailing, _re.IGNORECASE)
-            if pv_match:
-                engagement = int(pv_match.group(1).replace(',', ''))
-
-            items.append(_make_item(
-                title=f"[Gamerch] {title}",
-                summary=summary,
-                source="gamerch",
-                platform_region="jp",
-                time_str=datetime.now(timezone.utc).isoformat(),
-                url=url,
-                engagement=engagement,
-                is_hot=engagement > 1000,
-                author="Gamerch Wiki",
-                lang="ja",
-            ))
-
-        logger.info(f"Gamerch Wiki: {len(items)} articles")
-    except Exception as e:
-        logger.warning(f"Gamerch Wiki failed: {e}")
-
-    return items
-
-
 def fetch_note_com():
     """从 Note.com 搜索忘却前夜/モリメンス 攻略文章（API v3）。"""
     items = []
@@ -2337,7 +2311,7 @@ def fetch_stopgame():
     return items
 
 
-# ─── Global English wiki/guide platforms ───────────────────
+# ─── 收入/数据平台 ─────────────────────────────────────────
 
 def fetch_gacharevenue():
     """从 GACHAREVENUE 获取忘却前夜收入数据。"""
@@ -2374,186 +2348,20 @@ def fetch_gacharevenue():
     return items
 
 
-def fetch_miraheze_wiki():
-    """从 Miraheze Wiki 获取忘却前夜最近更改。"""
-    items = []
-    try:
-        resp = _get(
-            "https://morimenseveofoblivion.miraheze.org/w/api.php",
-            params={
-                "action": "query",
-                "list": "recentchanges",
-                "rcnamespace": "0",
-                "rclimit": "20",
-                "rcprop": "title|timestamp|user|comment|sizes",
-                "rctype": "edit|new",
-                "format": "json",
-            },
-            headers={"User-Agent": "MorimensNewsBot/1.0"},
-        )
-        data = resp.json()
-        changes = data.get("query", {}).get("recentchanges", [])
-
-        for change in changes:
-            title = change.get("title", "")
-            user = change.get("user", "")
-            comment = change.get("comment", "")
-            ts = change.get("timestamp", "")
-            diff = abs(change.get("newlen", 0) - change.get("oldlen", 0))
-
-            items.append(_make_item(
-                title=f"[Miraheze Wiki] {title}",
-                summary=comment[:200] if comment else f"Edited by {user} (+{diff} bytes)",
-                source="miraheze_wiki",
-                platform_region="global",
-                time_str=ts,
-                url=f"https://morimenseveofoblivion.miraheze.org/wiki/{title.replace(' ', '_')}",
-                engagement=diff,
-                is_hot=diff > 500,
-                author=user,
-                lang="en",
-            ))
-
-        logger.info(f"Miraheze Wiki: {len(items)} recent changes")
-    except Exception as e:
-        logger.warning(f"Miraheze Wiki failed: {e}")
-
-    return items
-
-
-# ─── 东南亚 & 中文补充 ─────────────────────────────────────
-
-def fetch_gamekee():
-    """从 GameKee Wiki 获取忘却前夜论坛和攻略更新。"""
-    items = []
-
-    # GameKee 论坛社区 API
-    try:
-        resp = _get(
-            "https://morimens.gamekee.com/v1/content/lists",
-            params={"page": 1, "size": 20, "order": "new"},
-            headers={"User-Agent": "Mozilla/5.0", "Referer": "https://www.gamekee.com/morimens/"},
-        )
-        if resp.status_code == 200:
-            try:
-                data = resp.json()
-                data_inner = data.get("data")
-                if not isinstance(data_inner, dict):
-                    data_inner = {}
-                content_list = data_inner.get("list", [])
-                if not isinstance(content_list, list):
-                    content_list = []
-                for item in content_list:
-                    items.append(_make_item(
-                        title=item.get("title", ""),
-                        summary=item.get("summary", ""),
-                        source="gamekee",
-                        platform_region="cn",
-                        time_str=item.get("created_at", datetime.now(timezone.utc).isoformat()),
-                        url=f"https://www.gamekee.com/morimens/{item.get('content_id', '')}",
-                        engagement=item.get("view_num", 0),
-                        is_hot=item.get("view_num", 0) > 1000,
-                        author=item.get("user", {}).get("nickname", ""),
-                        lang="zh",
-                    ))
-            except (ValueError, KeyError):
-                pass
-    except Exception as e:
-        logger.warning(f"GameKee API failed: {e}")
-
-    # Fallback: scrape main wiki page for recent articles
-    if not items:
-        try:
-            resp = _get(
-                "https://www.gamekee.com/morimens/",
-                headers={"User-Agent": "Mozilla/5.0"},
-            )
-            html = resp.text
-            import re as _re
-            for match in _re.finditer(
-                r'href="(/morimens/(\d+)\.html)"[^>]*>\s*([^<]+?)\s*</a>',
-                html
-            ):
-                path, article_id, title = match.groups()
-                title = title.strip()
-                if not title or len(title) < 5:
-                    continue
-                items.append(_make_item(
-                    title=f"[GameKee] {title}",
-                    summary="",
-                    source="gamekee",
-                    platform_region="cn",
-                    time_str=datetime.now(timezone.utc).isoformat(),
-                    url=f"https://www.gamekee.com{path}",
-                    engagement=0,
-                    is_hot=False,
-                    author="GameKee Wiki",
-                    lang="zh",
-                ))
-        except Exception as e:
-            logger.warning(f"GameKee scrape failed: {e}")
-
-    logger.info(f"GameKee: {len(items)} items")
-    return items
-
-
-def fetch_huiji_wiki():
-    """从灰机 Wiki 获取忘却前夜最近更改。"""
-    items = []
-    try:
-        resp = _get(
-            "https://morimens.huijiwiki.com/api.php",
-            params={
-                "action": "query",
-                "list": "recentchanges",
-                "rcnamespace": "0",
-                "rclimit": "20",
-                "rcprop": "title|timestamp|user|comment|sizes",
-                "rctype": "edit|new",
-                "format": "json",
-            },
-            headers={"User-Agent": "MorimensNewsBot/1.0"},
-        )
-        data = resp.json()
-        changes = data.get("query", {}).get("recentchanges", [])
-
-        for change in changes:
-            title = change.get("title", "")
-            user = change.get("user", "")
-            comment = change.get("comment", "")
-            ts = change.get("timestamp", "")
-            diff = abs(change.get("newlen", 0) - change.get("oldlen", 0))
-
-            items.append(_make_item(
-                title=f"[灰机Wiki] {title}",
-                summary=comment[:200] if comment else f"{user} 编辑 (+{diff} 字节)",
-                source="huiji_wiki",
-                platform_region="cn",
-                time_str=ts,
-                url=f"https://morimens.huijiwiki.com/wiki/{title.replace(' ', '_')}",
-                engagement=diff,
-                is_hot=diff > 500,
-                author=user,
-                lang="zh",
-            ))
-
-        logger.info(f"Huiji Wiki: {len(items)} recent changes")
-    except Exception as e:
-        logger.warning(f"Huiji Wiki failed: {e}")
-
-    return items
-
-
 # ─── 去重 & 输出 ──────────────────────────────────────────
 
 def deduplicate(items):
-    """基于标题相似度的简单去重。"""
+    """URL 优先 + title 回退的去重。与 aggregator / collect_global 策略对齐。"""
     seen = set()
     unique = []
     for item in items:
-        key = item["title"].lower().strip()[:60]
+        url = (item.get("url") or "").replace("http://", "https://").rstrip("/")
+        title_key = item.get("title", "").lower().strip()[:60]
+        key = url if url else title_key
         if key and key not in seen:
             seen.add(key)
+            if title_key:
+                seen.add(title_key)  # 同时记录 title 防止同内容不同 URL
             unique.append(item)
     return unique
 
@@ -2586,8 +2394,24 @@ RSSHUB_ROUTES = [
 
 
 def fetch_rsshub():
-    """通过自部署 RSSHub 实例采集多个平台（微博/知乎/小红书/抖音/Pixiv/TikTok）。"""
-    rsshub_url = os.environ.get("RSSHUB_URL", "https://biav-rsshub.vercel.app").rstrip("/")
+    """通过自部署 RSSHub 实例采集多个平台（微博/知乎/小红书/抖音/Pixiv/TikTok）。
+
+    ⚠️  当前状态：已停用。
+        - 原 Vercel 实例 (biav-rsshub.vercel.app) 已删除（Vercel serverless
+          跑不了 Puppeteer，16 条路由里 15 条常年 503）
+        - 未部署自建实例；RSSHUB_URL env 未设置时此函数直接 no-op 返回
+        - 该函数已从 collect_global.py 的 fetcher 列表里注释掉，不会被 CI 调用
+        - Pixiv / DCInside / Bilibili / Reddit / Telegram 已改为直连，不依赖 RSSHub
+
+    重新启用路径：
+      1. 部署 Fly.io 实例（见 projects/news/rsshub-deploy/README.md）
+      2. GitHub Secrets 设 RSSHUB_URL=https://biav-rsshub.fly.dev
+      3. 取消 collect_global.py 里 ('RSSHub', c.fetch_rsshub) 这一行的注释
+    """
+    rsshub_url = os.environ.get("RSSHUB_URL", "").rstrip("/")
+    if not rsshub_url:
+        logger.info("RSSHub 已停用（未设 RSSHUB_URL）；如需启用见 projects/news/rsshub-deploy/README.md")
+        return []
 
     items = []
     import re as _re
@@ -2689,15 +2513,11 @@ def collect_all():
         # 以下平台此前漏注册
         ("QooApp", fetch_qooapp),
         ("Epic Store", fetch_epic_store),
-        ("Gamerch Wiki", fetch_gamerch),
         ("Note.com", fetch_note_com),
         ("Ruliweb", fetch_ruliweb),
         ("VK Play", fetch_vkplay),
         ("StopGame", fetch_stopgame),
         ("GACHAREVENUE", fetch_gacharevenue),
-        ("Miraheze Wiki", fetch_miraheze_wiki),
-        ("GameKee", fetch_gamekee),
-        ("Huiji Wiki", fetch_huiji_wiki),
         ("搜狗微信", fetch_weixin),
         # RSSHub 代理采集（微博/知乎/小红书/抖音/Pixiv/TikTok）
         ("RSSHub", fetch_rsshub),
