@@ -381,7 +381,7 @@ export default function ChatView({ conversationId, pendingCites, onConsumeCites,
           </div>
         )}
         {messages.map((msg) => (
-          <MessageBubble key={msg.id} message={msg} />
+          <MessageBubble key={msg.id} message={msg} streaming={streaming} />
         ))}
         <div ref={messagesEndRef} />
       </div>
@@ -423,8 +423,9 @@ export default function ChatView({ conversationId, pendingCites, onConsumeCites,
             disabled={streaming}
             rows={1}
             className="flex-1 bg-bpt-surface border border-bpt-border rounded-lg px-3 py-2 text-sm
-                       resize-none focus:outline-none focus:border-bpt-gold-dim
-                       disabled:opacity-50 placeholder:text-bpt-text-dim"
+                       auto-resize focus:outline-none focus:border-bpt-gold-dim
+                       disabled:opacity-50 placeholder:text-bpt-text-dim
+                       transition-colors"
           />
           <button
             onClick={streaming ? () => getBpt().chatAbort() : handleSend}
@@ -444,16 +445,19 @@ export default function ChatView({ conversationId, pendingCites, onConsumeCites,
 
 // ── Message rendering ──────────────────────────────────────────────
 
-function MessageBubble({ message }: { message: Message }) {
+function MessageBubble({ message, streaming }: { message: Message; streaming: boolean }) {
   const isUser = message.role === 'user';
   const isSystem = message.role === 'system';
 
+  // Determine if this is the last assistant message (for streaming cursor)
+  const isLastAssistant = !isUser && !isSystem;
+
   if (isSystem) {
     return (
-      <div className="flex justify-center">
+      <div className="flex justify-center animate-fade-slide-in">
         <div className="px-3 py-1 rounded bg-bpt-surface/50 border border-bpt-border text-[11px] text-bpt-text-dim italic">
           {message.content.map((block, i) => (
-            <ContentBlockView key={i} block={block} />
+            <ContentBlockView key={i} block={block} allContent={message.content} isStreaming={false} isLastBlock={false} />
           ))}
         </div>
       </div>
@@ -461,7 +465,7 @@ function MessageBubble({ message }: { message: Message }) {
   }
 
   return (
-    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}>
+    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} animate-fade-slide-in`}>
       <div
         className={`max-w-[80%] rounded-lg px-4 py-2 text-sm ${
           isUser
@@ -469,25 +473,41 @@ function MessageBubble({ message }: { message: Message }) {
             : 'bg-bpt-surface text-bpt-text'
         }`}
       >
-        {message.content.map((block, i) => (
-          <ContentBlockView key={i} block={block} />
-        ))}
+        {message.content.map((block, i) => {
+          const isLastBlock = i === message.content.length - 1;
+          return (
+            <ContentBlockView
+              key={i}
+              block={block}
+              allContent={message.content}
+              isStreaming={isLastAssistant && streaming}
+              isLastBlock={isLastBlock}
+            />
+          );
+        })}
       </div>
     </div>
   );
 }
 
-function ContentBlockView({ block }: { block: ContentBlock }) {
+function ContentBlockView({ block, allContent, isStreaming, isLastBlock }: {
+  block: ContentBlock;
+  allContent: ContentBlock[];
+  isStreaming: boolean;
+  isLastBlock: boolean;
+}) {
   if (block.type === 'text') {
     if (!block.text) return null;
+    // Show streaming cursor on the last text block while streaming
+    const showCursor = isStreaming && isLastBlock;
     return (
-      <div className="prose prose-invert prose-sm max-w-none break-words">
+      <div className={`prose prose-sm max-w-none break-words ${showCursor ? 'streaming-cursor' : ''}`}>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{block.text}</ReactMarkdown>
       </div>
     );
   }
   if (block.type === 'tool_use') {
-    return <ToolUseView block={block} />;
+    return <ToolUseView block={block} allContent={allContent} />;
   }
   if (block.type === 'tool_result') {
     return (
@@ -609,16 +629,27 @@ function summarizeToolInput(input: Record<string, unknown>): string {
   return '';
 }
 
-function ToolUseView({ block }: { block: ToolUseBlock }) {
+/**
+ * Check if a tool_use block has a matching tool_result in the same message.
+ * If yes, the tool call is complete and the pulse should stop.
+ */
+function isToolComplete(toolId: string, allContent: ContentBlock[]): boolean {
+  return allContent.some(
+    (b) => b.type === 'tool_result' && (b as ToolResultBlock).toolUseId === toolId
+  );
+}
+
+function ToolUseView({ block, allContent }: { block: ToolUseBlock; allContent: ContentBlock[] }) {
   const [showRaw, setShowRaw] = useState(false);
   const displayName = getToolDisplayName(block.name);
   const hasInput = Object.keys(block.input).length > 0;
   const summary = hasInput ? summarizeToolInput(block.input) : '';
+  const done = isToolComplete(block.id, allContent);
 
   return (
     <div className="my-2 p-2 bg-bpt-bg rounded border border-bpt-border text-xs">
       <div className="flex items-center gap-1.5">
-        <span className="w-1.5 h-1.5 rounded-full bg-bpt-accent animate-pulse" />
+        <span className={`w-1.5 h-1.5 rounded-full bg-bpt-accent ${done ? 'tool-done' : 'tool-pulse'}`} />
         <span className="text-bpt-accent font-medium">{displayName}</span>
         {displayName !== block.name && (
           <span className="text-bpt-text-dim text-[10px]">({block.name})</span>
