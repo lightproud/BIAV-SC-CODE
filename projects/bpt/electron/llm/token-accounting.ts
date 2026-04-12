@@ -13,7 +13,98 @@
  * numbers are exact.
  */
 
-import type { TokenUsage, ToolDescriptor, Gear } from '../../src/types';
+import type { TokenUsage, ToolDescriptor } from '../../src/types';
+
+// ── Model context windows ──────────────────────────────────────
+//
+// Why here: compression threshold = f(context window). This map is the
+// single source of truth for "how much room does each model give us",
+// consumed by getCompressionThreshold() below and potentially by UI
+// components that want to show a capacity gauge.
+
+export const MODEL_CONTEXT_WINDOWS: Record<string, number> = {
+  // Claude 4.6
+  'claude-opus-4-6':            1_000_000,
+  'claude-sonnet-4-6':          1_000_000,
+  // Claude 4.5
+  'claude-opus-4-5':            1_000_000,
+  'claude-opus-4-5-20251101':   1_000_000,
+  'claude-sonnet-4-5':          1_000_000,
+  'claude-sonnet-4-5-20250929': 1_000_000,
+  // Claude 4
+  'claude-sonnet-4-20250514':   200_000,
+  // Claude Haiku
+  'claude-haiku-4-5':           200_000,
+  'claude-haiku-4-5-20251001':  200_000,
+  'claude-3-5-haiku-20241022':  200_000,
+  // OpenAI
+  'gpt-4o':                     128_000,
+  'gpt-4o-mini':                128_000,
+  // DeepSeek
+  'deepseek-chat':              64_000,
+};
+
+const DEFAULT_CONTEXT_WINDOW = 200_000;
+
+/**
+ * Compression ratio: compress when history exceeds this fraction of context window.
+ *
+ * Why 12%: At Sonnet $3/MTok, 120k history = $0.36/turn in history alone.
+ * That's a reasonable cost ceiling. Tighter-window models (128k GPT-4o,
+ * 64k DeepSeek) get proportionally tighter thresholds automatically.
+ */
+const COMPRESSION_RATIO = 0.12;
+
+/**
+ * Safety ceiling: never let total input exceed this fraction of context window.
+ * Reserves the remaining 20% for output generation.
+ */
+const SAFETY_CEILING_RATIO = 0.80;
+
+/** Reserved tokens for system prompt + tool schema + safety margin. */
+const RESERVED_OVERHEAD = 10_000;
+
+/**
+ * Get the context window size for a model.
+ */
+export function getContextWindow(model: string): number {
+  return MODEL_CONTEXT_WINDOWS[model] ?? DEFAULT_CONTEXT_WINDOW;
+}
+
+/**
+ * Calculate the effective compression threshold for a given model.
+ *
+ * Why model-aware: A fixed 120k threshold is 12% of a 1M window (fine)
+ * but 60% of a 200k window (dangerous) and 94% of a 128k window (fatal).
+ * The threshold must scale with the model's actual capacity.
+ *
+ * Returns the token count at which history compression should trigger.
+ * The threshold is the smallest of:
+ * 1. contextWindow * COMPRESSION_RATIO  — cost control
+ * 2. contextWindow * SAFETY_CEILING_RATIO - reserved  — hard ceiling
+ * 3. configOverride (if user set one, respect it but cap at safety ceiling)
+ */
+export function getCompressionThreshold(model: string, configOverride?: number | null): number {
+  const contextWindow = getContextWindow(model);
+
+  // Cost-based: compress proactively to control per-turn cost
+  const costThreshold = Math.floor(contextWindow * COMPRESSION_RATIO);
+
+  // Safety: leave room for system prompt, tools, and output
+  const safetyCeiling = Math.floor(contextWindow * SAFETY_CEILING_RATIO) - RESERVED_OVERHEAD;
+
+  // Model-aware default = the tighter of cost and safety
+  const modelThreshold = Math.min(costThreshold, safetyCeiling);
+
+  // If user configured an override, use it but never exceed safety ceiling
+  if (configOverride != null && configOverride > 0) {
+    return Math.min(configOverride, safetyCeiling);
+  }
+
+  return modelThreshold;
+}
+
+// ── Token estimation ───────────────────────────────────────────
 
 /**
  * Rough token count aware of CJK vs Latin text.
