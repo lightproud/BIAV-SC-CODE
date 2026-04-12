@@ -54,7 +54,7 @@ const store = new Store<StoreSchema>({
     silverMcpPath: '',
     truncateThreshold: 2000,
     compressionTriggerTurns: 20,
-    compressionTriggerTokens: 60000,
+    compressionTriggerTokens: 120000,
     windowBounds: null,
     plugins: {
       enabled: {},

@@ -15,10 +15,45 @@ import type { LlmProvider, LlmRequestConfig, LlmStreamEvent, LlmMessage, LlmCont
 import type { ToolDescriptor, TokenUsage } from '../../src/types';
 import { logger } from '../core/logger';
 
+/**
+ * Per-model pricing from https://docs.anthropic.com/en/docs/about-claude/pricing
+ * Prices are per million tokens. Cache hit = 0.1x base input, cache write (5min) = 1.25x base input.
+ */
+interface ModelPricing {
+  input: number;
+  output: number;
+  cacheHit: number;
+  cacheWrite: number;
+}
+
+const MODEL_PRICING: Record<string, ModelPricing> = {
+  // Opus 4.6
+  'claude-opus-4-6':            { input: 5,  output: 25, cacheHit: 0.50, cacheWrite: 6.25 },
+  // Opus 4.5
+  'claude-opus-4-5':            { input: 5,  output: 25, cacheHit: 0.50, cacheWrite: 6.25 },
+  'claude-opus-4-5-20251101':   { input: 5,  output: 25, cacheHit: 0.50, cacheWrite: 6.25 },
+  // Sonnet 4.6
+  'claude-sonnet-4-6':          { input: 3,  output: 15, cacheHit: 0.30, cacheWrite: 3.75 },
+  // Sonnet 4.5
+  'claude-sonnet-4-5':          { input: 3,  output: 15, cacheHit: 0.30, cacheWrite: 3.75 },
+  'claude-sonnet-4-5-20250929': { input: 3,  output: 15, cacheHit: 0.30, cacheWrite: 3.75 },
+  // Sonnet 4
+  'claude-sonnet-4-20250514':   { input: 3,  output: 15, cacheHit: 0.30, cacheWrite: 3.75 },
+  // Haiku 4.5
+  'claude-haiku-4-5':           { input: 1,  output: 5,  cacheHit: 0.10, cacheWrite: 1.25 },
+  'claude-haiku-4-5-20251001':  { input: 1,  output: 5,  cacheHit: 0.10, cacheWrite: 1.25 },
+  // Haiku 3.5
+  'claude-3-5-haiku-20241022':  { input: 0.8, output: 4, cacheHit: 0.08, cacheWrite: 1.00 },
+};
+
+// Default to Sonnet 4.6 pricing for unknown models
+const DEFAULT_PRICING: ModelPricing = { input: 3, output: 15, cacheHit: 0.30, cacheWrite: 3.75 };
+
 export class ClaudeProvider implements LlmProvider {
   readonly name = 'claude';
   private client: Anthropic;
   private abortController: AbortController | null = null;
+  private currentModel = '';
 
   constructor(baseUrl: string, apiKey: string) {
     this.client = new Anthropic({
@@ -32,6 +67,7 @@ export class ClaudeProvider implements LlmProvider {
     onEvent: (event: LlmStreamEvent) => void,
   ): Promise<void> {
     this.abortController = new AbortController();
+    this.currentModel = config.model;
 
     try {
       const tools = config.tools.map((t) => this.toAnthropicTool(t, config.cacheControl));
@@ -186,8 +222,8 @@ export class ClaudeProvider implements LlmProvider {
   }
 
   /**
-   * Rough cost estimation. Prices are per-million-tokens.
-   * These should be configurable per-model; for now hardcode Sonnet 4.6 prices.
+   * Model-aware cost estimation using official Anthropic pricing.
+   * Looks up the current model in MODEL_PRICING; falls back to Sonnet 4.6 rates.
    */
   private estimateCost(
     input: number,
@@ -195,18 +231,14 @@ export class ClaudeProvider implements LlmProvider {
     cacheHit: number,
     cacheWrite: number,
   ): number {
-    const inputPrice = 3.0;     // $3/M input
-    const outputPrice = 15.0;   // $15/M output
-    const cacheHitPrice = 0.3;  // $0.30/M cache read
-    const cacheWritePrice = 3.75; // $3.75/M cache write
-
+    const p = MODEL_PRICING[this.currentModel] ?? DEFAULT_PRICING;
     const M = 1_000_000;
     const nonCachedInput = Math.max(0, input - cacheHit - cacheWrite);
     return (
-      (nonCachedInput / M) * inputPrice +
-      (output / M) * outputPrice +
-      (cacheHit / M) * cacheHitPrice +
-      (cacheWrite / M) * cacheWritePrice
+      (nonCachedInput / M) * p.input +
+      (output / M) * p.output +
+      (cacheHit / M) * p.cacheHit +
+      (cacheWrite / M) * p.cacheWrite
     );
   }
 }
