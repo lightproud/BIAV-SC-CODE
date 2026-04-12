@@ -118,6 +118,7 @@ export class ClaudeProvider implements LlmProvider {
 
   abort(): void {
     this.abortController?.abort();
+    this.abortController = null;
   }
 
   private toAnthropicTool(
@@ -137,6 +138,9 @@ export class ClaudeProvider implements LlmProvider {
     return result;
   }
 
+  /**
+   * Convert LlmMessage (camelCase) to Anthropic API format (snake_case).
+   */
   private toAnthropicMessage(msg: LlmMessage): Record<string, unknown> {
     if (typeof msg.content === 'string') {
       return { role: msg.role, content: msg.content };
@@ -147,9 +151,9 @@ export class ClaudeProvider implements LlmProvider {
         if (block.type === 'tool_result') {
           return {
             type: 'tool_result',
-            tool_use_id: block.tool_use_id,
+            tool_use_id: block.toolUseId,
             content: block.content,
-            is_error: block.is_error,
+            is_error: block.isError ?? false,
           };
         }
         return block;

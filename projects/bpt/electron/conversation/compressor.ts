@@ -48,12 +48,14 @@ export function compressHistory(messages: LlmMessage[]): CompressionResult {
 
   const droppedTurns = Math.floor(dropCount / 2);
 
-  // Phase 0: Simple drop with placeholder
+  // Phase 0: Simple drop with placeholder.
+  // Use 'user' role, not 'system' — Anthropic API has special handling for
+  // system role and it should only appear as the systemPrompt parameter.
   const compressed: LlmMessage[] = [
     {
-      role: 'system',
-      content: `[Earlier conversation compressed: ${droppedTurns} turns omitted. ` +
-        `This conversation has been ongoing — the user may reference earlier context.]`,
+      role: 'user',
+      content: `[Context note: Earlier conversation compressed — ${droppedTurns} turns omitted. ` +
+        `This conversation has been ongoing. The user may reference earlier context.]`,
     },
     ...messages.slice(dropCount),
   ];
