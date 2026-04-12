@@ -187,8 +187,8 @@ def distill(transcript_path: Path, session_id: str, cwd: str) -> dict:
 
 # Decision-related patterns (Chinese + English)
 _DECISION_PATTERNS = [
-    re.compile(r'(?:选择|采用|改为|替代|决定|选用|换成|迁移到)\s*(.{5,80})'),
-    re.compile(r'(?:chose|selected|switched to|replaced .{2,30} with|decided to)\s+(.{5,80})', re.I),
+    re.compile(r'(?:选择|采用|改为|替代|决定|选用|换成|换用|改用|选了|迁移到|升级到)\s*(.{2,100})'),
+    re.compile(r'(?:chose|selected|switched to|replaced .{2,30} with|decided to|upgraded to)\s+(.{2,100})', re.I),
 ]
 
 # Open item patterns
@@ -270,13 +270,16 @@ def extract_structured_metadata(raw_metadata: dict) -> dict:
     edited_set = set(files_data.get('edited', []))
     written_set = set(files_data.get('written', []))
 
-    # Infer committed files from git-related bash commands
-    committed_set = set()
-    for desc in raw_metadata.get('bash_descriptions', []):
-        if 'commit' in desc.lower() or 'git add' in desc.lower():
-            # Files that were edited AND there was a commit are likely committed
-            committed_set = edited_set.copy()
-            break
+    # Infer committed files: if session had any git commit, files that were
+    # both edited AND written (via Edit/Write tools) are likely committed.
+    # This is a heuristic — we can't perfectly track which files were in
+    # which commit from bash descriptions alone.
+    has_commit = any(
+        'commit' in desc.lower()
+        for desc in raw_metadata.get('bash_descriptions', [])
+    )
+    # Only mark files committed if they were actively edited (not just read)
+    committed_set = (edited_set | written_set) if has_commit else set()
 
     engagement = {}
     all_files = read_set | edited_set | written_set

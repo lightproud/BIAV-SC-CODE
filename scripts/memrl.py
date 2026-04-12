@@ -162,10 +162,14 @@ def get_engagement_signals() -> dict[str, dict]:
 
         files_eng = meta.get("files_engagement", {})
         for fp, level in files_eng.items():
-            # Normalize paths to be relative to repo
+            # Normalize all paths to relative form
             rel_fp = fp
-            if fp.startswith(str(REPO)):
-                rel_fp = str(Path(fp).relative_to(REPO))
+            repo_str = str(REPO)
+            if fp.startswith(repo_str):
+                rel_fp = fp[len(repo_str):].lstrip("/")
+            elif fp.startswith("/"):
+                # Absolute path not under repo — use basename as fallback
+                rel_fp = fp.rsplit("/", 1)[-1] if "/" in fp else fp
 
             weight = engagement_weights.get(level, 0.3)
             signals[rel_fp]["scores"].append(weight)
