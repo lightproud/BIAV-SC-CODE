@@ -1,9 +1,10 @@
 /**
  * compressor.ts — Conversation history compression.
  *
- * Why: Prime Directive T3 — history > 20 turns or > 60k tokens must be
- * compressed. We keep the most recent K turns verbatim and summarize
- * everything before that into a single "compressed context" block.
+ * Why: Prime Directive T3 — history that exceeds turn count or token
+ * thresholds must be compressed. The token threshold is model-aware:
+ * it scales with the model's context window so a 200k model compresses
+ * much earlier than a 1M model.
  *
  * Phase 1 strategy: Use Haiku to generate a summary of dropped turns,
  * preserving key decisions, facts, and user preferences. Falls back to
@@ -12,6 +13,7 @@
 
 import type { LlmMessage } from '../llm/provider';
 import { getConfig } from '../core/config';
+import { getCompressionThreshold } from '../llm/token-accounting';
 import { logger } from '../core/logger';
 
 interface CompressionResult {
@@ -23,7 +25,12 @@ interface CompressionResult {
 /**
  * Compress conversation history if it exceeds configured thresholds.
  *
- * Strategy:
+ * Two independent triggers (either one fires compression):
+ * 1. Turn count exceeds compressionTriggerTurns (default 20)
+ * 2. Estimated history tokens exceed model-aware threshold
+ *    (= contextWindow * 12%, capped by safety ceiling)
+ *
+ * Strategy once triggered:
  * 1. Keep the last `keepTurns` message pairs (user+assistant) verbatim.
  * 2. Summarize everything before that into a condensed context block
  *    using Haiku (cheap, fast). The summary preserves key decisions,
@@ -31,15 +38,26 @@ interface CompressionResult {
  * 3. If Haiku call fails, fall back to a plain placeholder noting
  *    how many turns were dropped.
  */
-export async function compressHistory(messages: LlmMessage[]): Promise<CompressionResult> {
+export async function compressHistory(messages: LlmMessage[], model: string): Promise<CompressionResult> {
   const maxTurns = (getConfig('compressionTriggerTurns') as number) ?? 20;
+  const configTokenOverride = getConfig('compressionTriggerTokens') as number | undefined;
+  const maxTokens = getCompressionThreshold(model, configTokenOverride ?? null);
   const keepTurns = 10; // Keep the last 10 user+assistant pairs
 
   // Count turns (a turn = one user message)
   const turns = countTurns(messages);
+  const estimatedTokens = estimateHistoryTokens(messages);
 
-  if (turns <= maxTurns) {
+  // Trigger on whichever threshold is hit first
+  const turnTriggered = turns > maxTurns;
+  const tokenTriggered = estimatedTokens > maxTokens;
+
+  if (!turnTriggered && !tokenTriggered) {
     return { messages, wasCompressed: false, droppedTurns: 0 };
+  }
+
+  if (tokenTriggered) {
+    logger.info('compressor', `Token threshold triggered: ~${estimatedTokens} tokens > ${maxTokens} limit (model: ${model})`);
   }
 
   // Find the cut point: keep the last `keepTurns * 2` messages
@@ -187,23 +205,22 @@ function countTurns(messages: LlmMessage[]): number {
 }
 
 /**
- * Check if compression should be triggered based on estimated token count.
+ * Estimate total tokens in conversation history.
+ * CJK-aware: CJK chars ~2 tokens each, Latin ~4 chars/token.
  */
-export function shouldCompress(messages: LlmMessage[]): boolean {
-  const maxTurns = (getConfig('compressionTriggerTurns') as number) ?? 20;
-  const maxTokens = (getConfig('compressionTriggerTokens') as number) ?? 60000;
-
-  const turns = countTurns(messages);
-  if (turns > maxTurns) return true;
-
-  // Rough token estimate (CJK-aware: CJK chars ~2 tokens each, Latin ~4 chars/token)
-  const estimatedTokens = messages.reduce((sum, m) => {
+function estimateHistoryTokens(messages: LlmMessage[]): number {
+  return messages.reduce((sum, m) => {
     const text = typeof m.content === 'string' ? m.content : JSON.stringify(m.content);
     let cjk = 0;
     let other = 0;
     for (let i = 0; i < text.length; i++) {
       const code = text.charCodeAt(i);
-      if ((code >= 0x3000 && code <= 0x9FFF) || (code >= 0xFF00 && code <= 0xFFEF)) {
+      if (
+        (code >= 0x3000 && code <= 0x9FFF) ||
+        (code >= 0xFF00 && code <= 0xFFEF) ||
+        (code >= 0x3040 && code <= 0x309F) ||  // Hiragana
+        (code >= 0x30A0 && code <= 0x30FF)     // Katakana
+      ) {
         cjk++;
       } else {
         other++;
@@ -211,6 +228,18 @@ export function shouldCompress(messages: LlmMessage[]): boolean {
     }
     return sum + cjk * 2 + other / 4;
   }, 0);
+}
 
-  return estimatedTokens > maxTokens;
+/**
+ * Check if compression should be triggered (model-aware).
+ */
+export function shouldCompress(messages: LlmMessage[], model: string): boolean {
+  const maxTurns = (getConfig('compressionTriggerTurns') as number) ?? 20;
+  const configTokenOverride = getConfig('compressionTriggerTokens') as number | undefined;
+  const maxTokens = getCompressionThreshold(model, configTokenOverride ?? null);
+
+  const turns = countTurns(messages);
+  if (turns > maxTurns) return true;
+
+  return estimateHistoryTokens(messages) > maxTokens;
 }

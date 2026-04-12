@@ -215,7 +215,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
         loopCount++;
 
         // Apply compression before sending (operates on a copy)
-        const { messages: messagesToSend, wasCompressed, droppedTurns } = await compressHistory([...history]);
+        const { messages: messagesToSend, wasCompressed, droppedTurns } = await compressHistory([...history], endpoint.model);
 
         if (wasCompressed) {
           logger.info('stream', `Compressed history: dropped ${droppedTurns} turns`);
