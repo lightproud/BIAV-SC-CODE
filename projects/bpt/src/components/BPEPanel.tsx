@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import { useBpeSearch, useBpeStatus } from '../lib/hooks';
-import type { BPEChunk } from '../types';
+import type { BPEChunk, CiteBlock } from '../types';
 
-export default function BPEPanel() {
+interface BPEPanelProps {
+  conversationId: string | null;
+  onCite: (cite: CiteBlock) => void;
+}
+
+export default function BPEPanel({ conversationId, onCite }: BPEPanelProps) {
   const [query, setQuery] = useState('');
   const { results, loading, error, search } = useBpeSearch();
   const status = useBpeStatus();
@@ -19,10 +24,18 @@ export default function BPEPanel() {
     }
   };
 
-  const handleCite = (_chunk: BPEChunk) => {
-    // TODO Phase 0.5: inject @Cite block into active conversation
-    // For now, just log to console to prove the flow works
-    console.log('Cite chunk:', _chunk);
+  const handleCite = (chunk: BPEChunk) => {
+    if (!conversationId) return;
+
+    const cite: CiteBlock = {
+      type: 'cite',
+      source: chunk.file,
+      lineStart: chunk.lineStart,
+      lineEnd: chunk.lineEnd,
+      text: chunk.text.slice(0, 3000), // Cap cite size
+    };
+
+    onCite(cite);
   };
 
   return (
@@ -81,7 +94,9 @@ export default function BPEPanel() {
                 <span className="text-bpt-text-dim text-[10px]">{chunk.language}</span>
                 <button
                   onClick={() => handleCite(chunk)}
-                  className="px-1.5 py-0.5 bg-bpt-gold/20 text-bpt-gold rounded text-[10px] hover:bg-bpt-gold/30"
+                  disabled={!conversationId}
+                  className="px-1.5 py-0.5 bg-bpt-gold/20 text-bpt-gold rounded text-[10px]
+                             hover:bg-bpt-gold/30 disabled:opacity-30 disabled:cursor-not-allowed"
                 >
                   @Cite
                 </button>
@@ -90,6 +105,9 @@ export default function BPEPanel() {
             <pre className="text-bpt-text-dim whitespace-pre-wrap overflow-hidden max-h-20 text-[11px] leading-tight">
               {chunk.text.slice(0, 300)}
             </pre>
+            {chunk.summary && (
+              <p className="mt-1 text-bpt-text-dim italic text-[10px]">{chunk.summary}</p>
+            )}
           </div>
         ))}
         {results.length === 0 && !loading && !error && (

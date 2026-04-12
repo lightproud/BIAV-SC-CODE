@@ -13,9 +13,10 @@ interface SidebarProps {
   onSelect: (id: string) => void;
   onToggleSilver: () => void;
   onToggleBpe: () => void;
+  onToggleSettings: () => void;
 }
 
-export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleBpe }: SidebarProps) {
+export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleBpe, onToggleSettings }: SidebarProps) {
   const [conversations, setConversations] = useState<ConvEntry[]>([]);
 
   const loadConversations = async () => {
@@ -102,6 +103,12 @@ export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleB
           className="w-full px-2 py-1 text-xs text-left text-bpt-gold-dim hover:text-bpt-gold transition-colors"
         >
           Black Pool Explorer
+        </button>
+        <button
+          onClick={onToggleSettings}
+          className="w-full px-2 py-1 text-xs text-left text-bpt-text-dim hover:text-bpt-text transition-colors"
+        >
+          Settings
         </button>
       </div>
     </div>

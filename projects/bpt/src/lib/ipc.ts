@@ -36,6 +36,8 @@ export interface BptApi {
   bpeLookup: (symbol: string, limit?: number) => Promise<unknown>;
   bpeStatus: () => Promise<unknown>;
 
+  citeInject: (conversationId: string, chunk: unknown) => Promise<unknown>;
+
   tokenHistory: (conversationId: string) => Promise<unknown>;
 
   windowMinimize: () => Promise<unknown>;

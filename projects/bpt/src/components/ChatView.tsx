@@ -3,20 +3,40 @@ import { getBpt } from '../lib/ipc';
 import { useGear } from '../lib/hooks';
 import GearSwitch from './GearSwitch';
 import TokenMeter from './TokenMeter';
-import type { Message, ContentBlock, TextBlock, ToolUseBlock, TokenUsage } from '../types';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import type { Message, ContentBlock, ToolUseBlock, ToolResultBlock, CiteBlock, TokenUsage } from '../types';
 
 interface ChatViewProps {
   conversationId: string | null;
+  pendingCites?: CiteBlock[];
+  onConsumeCites?: () => CiteBlock[];
 }
 
-export default function ChatView({ conversationId }: ChatViewProps) {
+export default function ChatView({ conversationId, pendingCites, onConsumeCites }: ChatViewProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [streaming, setStreaming] = useState(false);
   const [turnUsage, setTurnUsage] = useState<TokenUsage | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const { gear, switchGear } = useGear();
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+
+  // Track current text accumulation across stream events.
+  // Stored as ref so stream callback always sees latest value.
+  const currentTextRef = useRef('');
+  // Track accumulated tool input JSON during streaming
+  const toolInputRef = useRef('');
+
+  // Clear messages when conversation changes
+  useEffect(() => {
+    setMessages([]);
+    setTurnUsage(null);
+    setError(null);
+    currentTextRef.current = '';
+    toolInputRef.current = '';
+  }, [conversationId]);
 
   // Scroll to bottom on new messages
   useEffect(() => {
@@ -25,26 +45,31 @@ export default function ChatView({ conversationId }: ChatViewProps) {
 
   // Listen to chat stream events
   useEffect(() => {
-    let currentText = '';
-
     const cleanup = getBpt().onChatStream((event: unknown) => {
       const e = event as Record<string, unknown>;
+      const eventType = e.type as string;
 
-      if (e.type === 'text_delta') {
-        currentText += e.text as string;
+      if (eventType === 'text_delta') {
+        currentTextRef.current += e.text as string;
+        const textSnapshot = currentTextRef.current;
         setMessages((prev) => {
           const updated = [...prev];
           const last = updated[updated.length - 1];
           if (last?.role === 'assistant') {
-            const textBlock = last.content.find((b): b is TextBlock => b.type === 'text');
-            if (textBlock) {
-              textBlock.text = currentText;
+            // Update the LAST text block in the assistant message
+            const lastContent = [...last.content];
+            for (let i = lastContent.length - 1; i >= 0; i--) {
+              if (lastContent[i].type === 'text') {
+                lastContent[i] = { type: 'text', text: textSnapshot };
+                break;
+              }
             }
-            return [...updated];
+            return [...updated.slice(0, -1), { ...last, content: lastContent }];
           }
           return updated;
         });
-      } else if (e.type === 'tool_use_start') {
+      } else if (eventType === 'tool_use_start') {
+        toolInputRef.current = '';
         const toolBlock: ToolUseBlock = {
           type: 'tool_use',
           id: e.id as string,
@@ -55,22 +80,104 @@ export default function ChatView({ conversationId }: ChatViewProps) {
           const updated = [...prev];
           const last = updated[updated.length - 1];
           if (last?.role === 'assistant') {
-            last.content.push(toolBlock);
-            return [...updated];
+            return [...updated.slice(0, -1), {
+              ...last,
+              content: [...last.content, toolBlock],
+            }];
           }
           return updated;
         });
-      } else if (e.type === 'message_end') {
+      } else if (eventType === 'tool_use_delta') {
+        toolInputRef.current += e.text as string;
+        const inputSnapshot = toolInputRef.current;
+        setMessages((prev) => {
+          const updated = [...prev];
+          const last = updated[updated.length - 1];
+          if (last?.role === 'assistant') {
+            const lastContent = [...last.content];
+            // Find the last tool_use block and update its input
+            for (let i = lastContent.length - 1; i >= 0; i--) {
+              if (lastContent[i].type === 'tool_use') {
+                const tool = lastContent[i] as ToolUseBlock;
+                lastContent[i] = {
+                  ...tool,
+                  input: safeParse(inputSnapshot),
+                };
+                break;
+              }
+            }
+            return [...updated.slice(0, -1), { ...last, content: lastContent }];
+          }
+          return updated;
+        });
+      } else if (eventType === 'tool_use_end') {
+        // Final parse of tool input
+        const finalInput = toolInputRef.current;
+        toolInputRef.current = '';
+        setMessages((prev) => {
+          const updated = [...prev];
+          const last = updated[updated.length - 1];
+          if (last?.role === 'assistant') {
+            const lastContent = [...last.content];
+            for (let i = lastContent.length - 1; i >= 0; i--) {
+              if (lastContent[i].type === 'tool_use') {
+                const tool = lastContent[i] as ToolUseBlock;
+                lastContent[i] = {
+                  ...tool,
+                  input: safeParse(finalInput),
+                };
+                break;
+              }
+            }
+            return [...updated.slice(0, -1), { ...last, content: lastContent }];
+          }
+          return updated;
+        });
+      } else if (eventType === 'tool_result') {
+        // Tool execution completed — add result block to current assistant message
+        const resultBlock: ToolResultBlock = {
+          type: 'tool_result',
+          toolUseId: e.toolUseId as string,
+          content: e.content as string,
+          isError: e.isError as boolean,
+        };
+        setMessages((prev) => {
+          const updated = [...prev];
+          const last = updated[updated.length - 1];
+          if (last?.role === 'assistant') {
+            return [...updated.slice(0, -1), {
+              ...last,
+              content: [...last.content, resultBlock],
+            }];
+          }
+          return updated;
+        });
+      } else if (eventType === 'assistant_continue') {
+        // LLM is continuing after tool results — add a new text block
+        currentTextRef.current = '';
+        setMessages((prev) => {
+          const updated = [...prev];
+          const last = updated[updated.length - 1];
+          if (last?.role === 'assistant') {
+            return [...updated.slice(0, -1), {
+              ...last,
+              content: [...last.content, { type: 'text' as const, text: '' }],
+            }];
+          }
+          return updated;
+        });
+      } else if (eventType === 'message_end') {
         setStreaming(false);
         setTurnUsage(e.usage as TokenUsage);
-      } else if (e.type === 'error') {
+      } else if (eventType === 'error') {
         setStreaming(false);
+        setError(e.error as string);
         setMessages((prev) => [
           ...prev,
           {
             id: `err_${Date.now()}`,
-            role: 'assistant',
-            content: [{ type: 'text', text: `Error: ${e.error as string}` }],
+            role: 'assistant' as const,
+            content: [{ type: 'text' as const, text: `Error: ${e.error as string}` }],
             timestamp: Date.now(),
           },
         ]);
@@ -84,10 +191,23 @@ export default function ChatView({ conversationId }: ChatViewProps) {
     const text = input.trim();
     if (!text || streaming) return;
 
+    setError(null);
+    currentTextRef.current = '';
+    toolInputRef.current = '';
+
+    // Collect any pending @Cite blocks
+    const cites: CiteBlock[] = onConsumeCites ? onConsumeCites() : [];
+
+    // Build user message content: cites first, then text
+    const userContent: ContentBlock[] = [
+      ...cites,
+      { type: 'text', text },
+    ];
+
     const userMsg: Message = {
       id: `msg_${Date.now()}`,
       role: 'user',
-      content: [{ type: 'text', text }],
+      content: userContent,
       timestamp: Date.now(),
     };
 
@@ -104,8 +224,20 @@ export default function ChatView({ conversationId }: ChatViewProps) {
     setTurnUsage(null);
 
     const convId = conversationId ?? `temp_${Date.now()}`;
-    await getBpt().chatSend(convId, text, gear);
-  }, [input, streaming, conversationId, gear]);
+
+    // Build the text to send to main process.
+    // If there are cites, prepend them as context.
+    let messageForLlm = text;
+    if (cites.length > 0) {
+      const citeTexts = cites.map((c) => {
+        const loc = c.lineStart != null ? `:${c.lineStart}-${c.lineEnd}` : '';
+        return `@Cite ${c.source}${loc}\n\`\`\`\n${c.text}\n\`\`\``;
+      });
+      messageForLlm = citeTexts.join('\n\n') + '\n\n' + text;
+    }
+
+    await getBpt().chatSend(convId, messageForLlm, gear);
+  }, [input, streaming, conversationId, gear, onConsumeCites]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
@@ -126,6 +258,9 @@ export default function ChatView({ conversationId }: ChatViewProps) {
             <div className="text-center">
               <p className="text-lg text-bpt-gold">BPT</p>
               <p className="text-sm mt-1">Black Pool Terminal — ready</p>
+              <p className="text-xs mt-3 text-bpt-text-dim max-w-sm">
+                Configure your API endpoint in Settings (sidebar) to start chatting.
+              </p>
             </div>
           </div>
         )}
@@ -134,6 +269,26 @@ export default function ChatView({ conversationId }: ChatViewProps) {
         ))}
         <div ref={messagesEndRef} />
       </div>
+
+      {/* Error banner */}
+      {error && (
+        <div className="mx-4 mb-2 p-2 bg-bpt-error/10 border border-bpt-error/30 rounded text-xs text-bpt-error">
+          {error}
+          <button onClick={() => setError(null)} className="ml-2 underline">dismiss</button>
+        </div>
+      )}
+
+      {/* Pending cites */}
+      {pendingCites && pendingCites.length > 0 && (
+        <div className="mx-4 mb-1 flex flex-wrap gap-1">
+          {pendingCites.map((cite, i) => (
+            <span key={i} className="inline-flex items-center gap-1 px-2 py-0.5 bg-bpt-gold/10 border border-bpt-gold-dim/30 rounded text-[10px] text-bpt-gold">
+              @{cite.source.split('/').pop()}
+              {cite.lineStart != null && `:${cite.lineStart}`}
+            </span>
+          ))}
+        </div>
+      )}
 
       {/* Input area */}
       <div className="border-t border-bpt-border p-3">
@@ -167,6 +322,8 @@ export default function ChatView({ conversationId }: ChatViewProps) {
   );
 }
 
+// ── Message rendering ──────────────────────────────────────────────
+
 function MessageBubble({ message }: { message: Message }) {
   const isUser = message.role === 'user';
 
@@ -189,25 +346,37 @@ function MessageBubble({ message }: { message: Message }) {
 
 function ContentBlockView({ block }: { block: ContentBlock }) {
   if (block.type === 'text') {
-    return <div className="whitespace-pre-wrap">{block.text}</div>;
+    if (!block.text) return null;
+    return (
+      <div className="prose prose-invert prose-sm max-w-none break-words">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{block.text}</ReactMarkdown>
+      </div>
+    );
   }
   if (block.type === 'tool_use') {
     return (
       <div className="my-2 p-2 bg-bpt-bg rounded border border-bpt-border text-xs">
-        <span className="text-bpt-accent">Tool: {block.name}</span>
-        <pre className="mt-1 text-bpt-text-dim overflow-x-auto">
-          {JSON.stringify(block.input, null, 2)}
-        </pre>
+        <div className="flex items-center gap-1.5 mb-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-bpt-accent animate-pulse" />
+          <span className="text-bpt-accent font-medium">{block.name}</span>
+        </div>
+        {Object.keys(block.input).length > 0 && (
+          <pre className="mt-1 text-bpt-text-dim overflow-x-auto whitespace-pre-wrap text-[11px]">
+            {JSON.stringify(block.input, null, 2)}
+          </pre>
+        )}
       </div>
     );
   }
   if (block.type === 'tool_result') {
     return (
-      <div className="my-2 p-2 bg-bpt-bg rounded border border-bpt-border text-xs">
+      <div className={`my-2 p-2 bg-bpt-bg rounded border text-xs ${
+        block.isError ? 'border-bpt-error/30' : 'border-bpt-success/30'
+      }`}>
         <span className={block.isError ? 'text-bpt-error' : 'text-bpt-success'}>
-          Tool Result {block.isError ? '(error)' : ''}
+          {block.isError ? 'Tool Error' : 'Tool Result'}
         </span>
-        <pre className="mt-1 text-bpt-text-dim overflow-x-auto whitespace-pre-wrap">
+        <pre className="mt-1 text-bpt-text-dim overflow-x-auto whitespace-pre-wrap text-[11px] max-h-40 overflow-y-auto">
           {block.content}
         </pre>
       </div>
@@ -217,12 +386,22 @@ function ContentBlockView({ block }: { block: ContentBlock }) {
     return (
       <div className="my-2 p-2 bg-bpt-bg rounded border border-bpt-gold-dim/30 text-xs">
         <span className="text-bpt-gold">@Cite: {block.source}</span>
-        {block.lineStart && <span className="text-bpt-text-dim">:{block.lineStart}-{block.lineEnd}</span>}
-        <pre className="mt-1 text-bpt-text overflow-x-auto whitespace-pre-wrap">
+        {block.lineStart != null && (
+          <span className="text-bpt-text-dim">:{block.lineStart}-{block.lineEnd}</span>
+        )}
+        <pre className="mt-1 text-bpt-text overflow-x-auto whitespace-pre-wrap text-[11px] max-h-40 overflow-y-auto">
           {block.text}
         </pre>
       </div>
     );
   }
   return null;
+}
+
+function safeParse(json: string): Record<string, unknown> {
+  try {
+    return JSON.parse(json) as Record<string, unknown>;
+  } catch {
+    return {};
+  }
 }

@@ -56,6 +56,10 @@ const api = {
     ipcRenderer.invoke('bpe:lookup', symbol, limit),
   bpeStatus: () => ipcRenderer.invoke('bpe:status'),
 
+  // ── Cite ───────────────────────────────────────────────────
+  citeInject: (conversationId: string, chunk: unknown) =>
+    ipcRenderer.invoke('cite:inject', conversationId, chunk),
+
   // ── Token Log ─────────────────────────────────────────────
   tokenHistory: (conversationId: string) =>
     ipcRenderer.invoke('token:history', conversationId),
