@@ -10,6 +10,12 @@
 import { ipcMain, BrowserWindow } from 'electron';
 import { getConfig, setConfig } from './config';
 import { logTokenUsage, getTokenHistory } from './logger';
+import {
+  listConversations,
+  createConversation,
+  deleteConversation,
+  updateConversationTitle,
+} from '../conversation/store';
 
 /**
  * Register all IPC handlers. Call once from main.ts after window creation.
@@ -54,26 +60,37 @@ export function registerIpcHandlers(getWindow: () => BrowserWindow | null): void
     return getTokenHistory(conversationId);
   });
 
-  // ── Conversations (in-memory for Phase 0) ─────────────────
-  // Why in-memory: Phase 0 skips SQLite conversation persistence.
-  // electron-store keeps the conversation list across restarts (just titles + IDs).
-  // Full message history lives in renderer state during the session.
+  // ── Conversations (SQLite persistence) ────────────────────
   ipcMain.handle('conv:list', () => {
-    return getConfig('conversations') ?? [];
+    return listConversations().map((row) => ({
+      id: row.id,
+      title: row.title,
+      gear: row.gear,
+      createdAt: row.created_at,
+      updatedAt: row.updated_at,
+    }));
   });
 
   ipcMain.handle('conv:create', (_event, title: string) => {
-    const conversations = (getConfig('conversations') ?? []) as Array<Record<string, unknown>>;
     const id = `conv_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
-    const entry = { id, title, createdAt: Date.now(), updatedAt: Date.now() };
-    conversations.unshift(entry);
-    setConfig('conversations', conversations);
-    return entry;
+    const gear = (getConfig('currentGear') as string) ?? 'chat';
+    const row = createConversation(id, title, gear);
+    return {
+      id: row.id,
+      title: row.title,
+      gear: row.gear,
+      createdAt: row.created_at,
+      updatedAt: row.updated_at,
+    };
   });
 
   ipcMain.handle('conv:delete', (_event, id: string) => {
-    const conversations = (getConfig('conversations') ?? []) as Array<Record<string, string>>;
-    setConfig('conversations', conversations.filter((c) => c.id !== id));
+    deleteConversation(id);
+    return true;
+  });
+
+  ipcMain.handle('conv:rename', (_event, id: string, title: string) => {
+    updateConversationTitle(id, title);
     return true;
   });
 

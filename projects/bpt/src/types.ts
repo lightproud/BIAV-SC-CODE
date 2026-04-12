@@ -90,13 +90,19 @@ export interface LLMEndpoint {
   model: string;
 }
 
-export interface StreamEvent {
-  type: 'text_delta' | 'tool_use_start' | 'tool_use_delta' | 'tool_use_end' | 'message_end' | 'error';
-  text?: string;
-  toolUse?: { id: string; name: string; input: string };
-  usage?: TokenUsage;
-  error?: string;
-}
+/**
+ * Events streamed from main process to renderer during a chat turn.
+ * Includes both LLM-originated events and orchestrator events (tool_result, assistant_continue).
+ */
+export type StreamEvent =
+  | { type: 'text_delta'; text: string }
+  | { type: 'tool_use_start'; id: string; name: string }
+  | { type: 'tool_use_delta'; text: string }
+  | { type: 'tool_use_end' }
+  | { type: 'tool_result'; toolUseId: string; name: string; content: string; isError: boolean }
+  | { type: 'assistant_continue' }
+  | { type: 'message_end'; usage: TokenUsage }
+  | { type: 'error'; error: string };
 
 // ─── Tool Registry ──────────────────────────────────────────────
 
@@ -197,6 +203,9 @@ export const IPC = {
   // Token log
   TOKEN_LOG: 'token:log',
   TOKEN_HISTORY: 'token:history',
+
+  // Cite
+  CITE_INJECT: 'cite:inject',
 
   // Shell
   WINDOW_MINIMIZE: 'window:minimize',
