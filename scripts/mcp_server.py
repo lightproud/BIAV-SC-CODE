@@ -6,7 +6,7 @@ accessible by any AI tool (Claude Code, Qoder, Cursor, etc.).
 
 Tools: memory_search, graph_query, graph_related_files,
        memory_utility, check_cache, recommend_context, rebuild_indexes,
-       store_facts, memory_writeback, session_briefing
+       store_facts, memory_writeback, session_briefing, character_persona
 
 Usage:
   python scripts/mcp_server.py              # Start server (stdio transport)
@@ -387,6 +387,63 @@ def session_briefing(role: str = "") -> str:
         "briefing_markdown": render_brief(briefing),
         "sections": briefing.get("sections", {}),
         "generated_at": briefing.get("generated_at", ""),
+    }, ensure_ascii=False, indent=2)
+
+
+# ============================================================
+# Tool 11: Character Persona
+# ============================================================
+
+@mcp.tool()
+def character_persona(character: str = "erica", context: str = "", action: str = "prompt") -> str:
+    """激活角色人格模式，让AI以游戏角色的语气进行对话。
+
+    当前可用角色：艾瑞卡（erica）——弥萨格大学自动人偶，数据库终端。
+    她也是个机器人，与银芯系统的身份完美契合。
+
+    三种操作模式：
+    - prompt: 生成角色扮演系统提示词（默认）
+    - greeting: 生成角色开场白
+    - list: 列出所有可用角色
+
+    跨平台支持：银芯（MCP）、黑池终端（BPT-WEB/DESKTOP）、黑池系统。
+
+    Args:
+        character: 角色ID（默认 erica）
+        context: 当前对话上下文，用于定制提示词（可选）
+        action: 操作类型 prompt/greeting/list（默认 prompt）
+    """
+    from character_persona import load_persona, list_personas, build_system_prompt, build_greeting
+
+    if action == "list":
+        personas = list_personas()
+        return json.dumps({
+            "available_personas": personas,
+            "total": len(personas),
+        }, ensure_ascii=False, indent=2)
+
+    persona = load_persona(character)
+    if not persona:
+        available = list_personas()
+        return json.dumps({
+            "error": f"未找到角色: {character}",
+            "available": [p["id"] for p in available],
+        }, ensure_ascii=False, indent=2)
+
+    if action == "greeting":
+        return json.dumps({
+            "character": character,
+            "name": persona["name"],
+            "greeting": build_greeting(persona, platform="silver_core"),
+        }, ensure_ascii=False, indent=2)
+
+    # Default: generate system prompt
+    prompt = build_system_prompt(persona, context=context, platform="silver_core")
+    return json.dumps({
+        "character": character,
+        "name": persona["name"],
+        "system_prompt": prompt,
+        "usage": "将 system_prompt 内容作为系统提示词注入对话，AI 将以该角色语气回复",
     }, ensure_ascii=False, indent=2)
 
 
