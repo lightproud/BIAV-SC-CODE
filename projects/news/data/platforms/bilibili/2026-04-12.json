@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-12T11:50:55.032077+00:00",
+  "archived_at": "2026-04-12T14:12:22.132574+00:00",
   "source": "bilibili",
-  "item_count": 50,
+  "item_count": 51,
   "items": [
     {
       "source": "bilibili",
@@ -206,6 +206,24 @@
         "comment_count": 23,
         "comments_fetched": 3,
         "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-12T12:47:52+00:00",
+      "lang": "zh",
+      "title": "我竟然用哀鸿破城十日记对标沙耶之歌，我有罪",
+      "summary": "-\n  └ 薛定谔的猫呜 (3赞): 这边转发一下当年鲁迅和现在的贴吧对热衷于这裤裆文学的文青病作者的评价\n  └ 雪獒随行万里 (3赞): 我来推荐 \n《再见断刀》《聊斋:画皮鬼》\n这俩都是国产，热度和名气都比较小。\n已上架steam，特别好评哦。\n  └ 妇友小青山 (2赞): 说实话，作为米游玩家，玩这个游戏我是很出戏的，林翩翩说话的时候我满脑子都是花火，生怕她趁你不小心就给你“我就是欢愉”",
+      "url": "https://www.bilibili.com/video/BV1NfDXBHEnU",
+      "author": "妇友小青山",
+      "engagement": 519,
+      "media_url": "https://i0.hdslb.com/bfs/archive/8c4cfb8b78ae53f50bed3a11b2912ef7e288a98f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 502,
+        "comment_count": 17,
+        "comments_fetched": 3,
+        "danmaku": 1
       }
     },
     {
