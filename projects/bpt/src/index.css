@@ -2,32 +2,168 @@
 @tailwind components;
 @tailwind utilities;
 
-/* BIAV dark-gold theme base */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  -webkit-font-smoothing: antialiased;
+/*
+ * index.css — BPT theme system.
+ *
+ * All colors are CSS custom properties using RGB triplets so Tailwind
+ * opacity modifiers (bg-bpt-gold/20) work via the <alpha-value> pattern
+ * defined in tailwind.config.js.
+ *
+ * Light mode = :root (default).
+ * Dark mode  = .dark class on <html>.
+ * The flash-prevention script in index.html applies .dark synchronously
+ * before first paint based on localStorage('bpt-theme').
+ */
+
+/* ── Light Mode (warm parchment) ──────────────────────────────── */
+:root {
+  --bpt-bg: 245 240 232;
+  --bpt-surface: 237 229 213;
+  --bpt-border: 213 203 181;
+  --bpt-gold: 138 117 53;
+  --bpt-gold-bright: 197 163 86;
+  --bpt-gold-dim: 168 144 80;
+  --bpt-text: 42 32 16;
+  --bpt-text-dim: 122 112 96;
+  --bpt-accent: 58 106 138;
+  --bpt-error: 176 64 48;
+  --bpt-success: 90 138 64;
+  --bpt-warning: 176 128 32;
 }
 
-/* Scrollbar styling for the dark theme */
+/* ── Dark Mode (style-guide canonical) ────────────────────────── */
+.dark {
+  --bpt-bg: 10 11 16;
+  --bpt-surface: 30 26 16;
+  --bpt-border: 42 37 21;
+  --bpt-gold: 197 163 86;
+  --bpt-gold-bright: 226 201 126;
+  --bpt-gold-dim: 138 122 72;
+  --bpt-text: 212 201 168;
+  --bpt-text-dim: 107 96 64;
+  --bpt-accent: 90 138 173;
+  --bpt-error: 194 90 74;
+  --bpt-success: 122 173 90;
+  --bpt-warning: 212 160 60;
+}
+
+/* ── Base ─────────────────────────────────────────────────────── */
+body {
+  margin: 0;
+  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Noto Serif SC', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', serif;
+  font-weight: 700;
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0f;
+  background: rgb(var(--bpt-bg));
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2a3a;
+  background: rgb(var(--bpt-border));
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3a3a4a;
+  background: rgb(var(--bpt-gold-dim));
 }
 
-/* Code block styling */
+/* ── Code blocks ──────────────────────────────────────────────── */
 pre code {
   font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
   font-size: 13px;
   line-height: 1.5;
+}
+
+/* ── Prose overrides (react-markdown) ─────────────────────────── */
+/* Override Tailwind Typography defaults to follow our CSS variables
+   instead of hardcoded colors. This makes prose content respect
+   both light and dark mode automatically. */
+.prose {
+  --tw-prose-body: rgb(var(--bpt-text));
+  --tw-prose-headings: rgb(var(--bpt-gold));
+  --tw-prose-lead: rgb(var(--bpt-text-dim));
+  --tw-prose-links: rgb(var(--bpt-gold-bright));
+  --tw-prose-bold: rgb(var(--bpt-text));
+  --tw-prose-counters: rgb(var(--bpt-gold-dim));
+  --tw-prose-bullets: rgb(var(--bpt-gold-dim));
+  --tw-prose-hr: rgb(var(--bpt-border));
+  --tw-prose-quotes: rgb(var(--bpt-text-dim));
+  --tw-prose-quote-borders: rgb(var(--bpt-gold-dim));
+  --tw-prose-captions: rgb(var(--bpt-text-dim));
+  --tw-prose-code: rgb(var(--bpt-gold-bright));
+  --tw-prose-pre-code: rgb(var(--bpt-text));
+  --tw-prose-pre-bg: rgb(var(--bpt-bg));
+  --tw-prose-th-borders: rgb(var(--bpt-border));
+  --tw-prose-td-borders: rgb(var(--bpt-border));
+}
+
+/* ── Streaming cursor ─────────────────────────────────────────── */
+.streaming-cursor::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background-color: rgb(var(--bpt-gold));
+  animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── Textarea auto-resize ─────────────────────────────────────── */
+/* Electron 33 (Chromium 130+) supports field-sizing natively. */
+textarea.auto-resize {
+  field-sizing: content;
+  min-height: 2.5rem;
+  max-height: 12rem;
+}
+
+/* ── Panel slide animation utility class ──────────────────────── */
+.panel-enter {
+  animation: slideInRight 200ms ease-out both;
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* ── Smooth expand transition (TokenMeter, panels) ────────────── */
+.expand-transition {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms ease-out;
+}
+.expand-transition.expanded {
+  grid-template-rows: 1fr;
+}
+.expand-transition > * {
+  overflow: hidden;
+}
+
+/* ── Tool pulse: only animate when tool has no result yet ──────── */
+.tool-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.tool-done {
+  animation: none;
+  opacity: 1;
 }

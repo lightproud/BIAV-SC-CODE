@@ -10,8 +10,10 @@
  * - Different usage reporting fields
  */
 
-import type { LlmProvider, LlmRequestConfig, LlmStreamEvent, LlmMessage, LlmContentBlock } from './provider';
-import type { ToolDescriptor, TokenUsage } from '../../src/types';
+import type { LlmProvider, LlmRequestConfig, LlmStreamEvent, LlmMessage } from './provider';
+import type { LlmContentBlock } from './provider';
+import type { ToolDescriptor } from '../../src/types';
+import { getModelPricing } from '../../src/models';
 import { logger } from '../core/logger';
 
 export class OpenAiProvider implements LlmProvider {
@@ -19,6 +21,7 @@ export class OpenAiProvider implements LlmProvider {
   private baseUrl: string;
   private apiKey: string;
   private abortController: AbortController | null = null;
+  private currentModel = '';
 
   constructor(baseUrl: string, apiKey: string) {
     this.baseUrl = baseUrl.replace(/\/+$/, '');
@@ -30,6 +33,7 @@ export class OpenAiProvider implements LlmProvider {
     onEvent: (event: LlmStreamEvent) => void,
   ): Promise<void> {
     this.abortController = new AbortController();
+    this.currentModel = config.model;
 
     try {
       const tools = config.tools.map((t) => this.toOpenAiTool(t));
@@ -72,10 +76,9 @@ export class OpenAiProvider implements LlmProvider {
       let totalOutputTokens = 0;
       let totalInputTokens = 0;
 
-      // Track function call state
-      let currentToolCallId = '';
-      let currentToolCallName = '';
-      let toolCallArgs = '';
+      // Track function call state per tool index
+      // OpenAI can stream multiple tool calls concurrently, identified by index
+      const activeToolCalls = new Map<number, { id: string; name: string; args: string }>();
 
       while (true) {
         const { done, value } = await reader.read();
@@ -94,6 +97,7 @@ export class OpenAiProvider implements LlmProvider {
           try {
             chunk = JSON.parse(data) as Record<string, unknown>;
           } catch {
+            logger.warn('openai', 'Malformed SSE chunk', { data: data.slice(0, 100) });
             continue;
           }
 
@@ -109,27 +113,27 @@ export class OpenAiProvider implements LlmProvider {
           }
 
           // Tool calls (OpenAI function calling format)
+          // Each tool call is identified by an index in the array
           const toolCalls = delta.tool_calls as Array<Record<string, unknown>> | undefined;
           if (toolCalls) {
             for (const tc of toolCalls) {
+              const idx = (tc.index as number) ?? 0;
               const fn = tc.function as Record<string, unknown> | undefined;
               if (!fn) continue;
 
               if (fn.name) {
-                // New tool call starting
-                if (currentToolCallId) {
-                  // End previous tool call
-                  onEvent({ type: 'tool_use_end' });
-                }
-                currentToolCallId = (tc.id as string) || `tool_${Date.now()}`;
-                currentToolCallName = fn.name as string;
-                toolCallArgs = '';
-                onEvent({ type: 'tool_use_start', id: currentToolCallId, name: currentToolCallName });
+                // New tool call starting at this index
+                const id = (tc.id as string) || `tool_${Date.now()}_${idx}`;
+                activeToolCalls.set(idx, { id, name: fn.name as string, args: '' });
+                onEvent({ type: 'tool_use_start', id, name: fn.name as string });
               }
 
               if (fn.arguments) {
-                toolCallArgs += fn.arguments as string;
-                onEvent({ type: 'tool_use_delta', text: fn.arguments as string });
+                const active = activeToolCalls.get(idx);
+                if (active) {
+                  active.args += fn.arguments as string;
+                  onEvent({ type: 'tool_use_delta', text: fn.arguments as string });
+                }
               }
             }
           }
@@ -137,9 +141,10 @@ export class OpenAiProvider implements LlmProvider {
           // Check finish reason
           const finishReason = choices[0].finish_reason as string | null;
           if (finishReason) {
-            if (currentToolCallId) {
+            // End all active tool calls
+            for (const [idx] of activeToolCalls) {
               onEvent({ type: 'tool_use_end' });
-              currentToolCallId = '';
+              activeToolCalls.delete(idx);
             }
           }
 
@@ -180,6 +185,7 @@ export class OpenAiProvider implements LlmProvider {
 
   abort(): void {
     this.abortController?.abort();
+    this.abortController = null;
   }
 
   private toOpenAiTool(tool: ToolDescriptor): Record<string, unknown> {
@@ -221,7 +227,7 @@ export class OpenAiProvider implements LlmProvider {
           if (tr.type === 'tool_result') {
             result.push({
               role: 'tool',
-              tool_call_id: tr.tool_use_id,
+              tool_call_id: tr.toolUseId,
               content: tr.content,
             });
           }
@@ -241,17 +247,16 @@ export class OpenAiProvider implements LlmProvider {
       };
 
       if (toolUseParts.length > 0) {
-        assistantMsg.tool_calls = toolUseParts.map((tc) => {
-          if (tc.type !== 'tool_use') return {};
-          return {
+        assistantMsg.tool_calls = toolUseParts
+          .filter((tc): tc is Extract<typeof tc, { type: 'tool_use' }> => tc.type === 'tool_use')
+          .map((tc) => ({
             id: tc.id,
             type: 'function',
             function: {
               name: tc.name,
               arguments: JSON.stringify(tc.input),
             },
-          };
-        });
+          }));
       }
 
       result.push(assistantMsg);
@@ -261,13 +266,12 @@ export class OpenAiProvider implements LlmProvider {
   }
 
   /**
-   * Rough cost estimation for OpenAI-compatible models.
-   * Default to GPT-4o-mini pricing; actual cost depends on the model.
+   * Model-aware cost estimation via getModelPricing() from the unified
+   * MODEL_REGISTRY. Falls back to GPT-4o-mini rates for unknown models.
    */
   private estimateCost(input: number, output: number): number {
-    const inputPrice = 0.15;   // $0.15/M input (GPT-4o-mini)
-    const outputPrice = 0.60;  // $0.60/M output
+    const p = getModelPricing(this.currentModel);
     const M = 1_000_000;
-    return (input / M) * inputPrice + (output / M) * outputPrice;
+    return (input / M) * p.input + (output / M) * p.output;
   }
 }

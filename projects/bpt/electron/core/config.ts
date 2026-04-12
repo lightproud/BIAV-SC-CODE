@@ -14,6 +14,8 @@ interface StoreSchema {
     baseUrl: string;
     apiKey: string;
     model: string;
+    /** 'claude' (default) or 'openai'. Determines SDK and API format. */
+    provider?: string;
   };
   currentGear: 'chat' | 'work';
   conversations: Array<{
@@ -26,8 +28,18 @@ interface StoreSchema {
   silverMcpPath: string;
   truncateThreshold: number;
   compressionTriggerTurns: number;
-  compressionTriggerTokens: number;
   windowBounds: { x: number; y: number; width: number; height: number } | null;
+  /** Plugin whitelist and configuration. */
+  plugins: {
+    enabled: Record<string, boolean>;
+    extraDirs: string[];
+  };
+  /** Reranker toggle for BPE. */
+  bpeRerankerEnabled: boolean;
+  /** Whether the gear switch confirmation dialog has been shown at least once. */
+  gearConfirmSeen: boolean;
+  /** Auto-update server URL (generic provider). Empty = disabled. */
+  updateServerUrl: string;
 }
 
 const store = new Store<StoreSchema>({
@@ -37,7 +49,7 @@ const store = new Store<StoreSchema>({
       name: 'Claude (Gateway)',
       baseUrl: 'https://api.anthropic.com',
       apiKey: '',
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-sonnet-4-6',
     },
     currentGear: 'chat',
     conversations: [],
@@ -45,8 +57,14 @@ const store = new Store<StoreSchema>({
     silverMcpPath: '',
     truncateThreshold: 2000,
     compressionTriggerTurns: 20,
-    compressionTriggerTokens: 60000,
     windowBounds: null,
+    plugins: {
+      enabled: {},
+      extraDirs: [],
+    },
+    bpeRerankerEnabled: false,
+    gearConfirmSeen: false,
+    updateServerUrl: '',
   },
 });
 

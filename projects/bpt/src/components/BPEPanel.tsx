@@ -82,33 +82,12 @@ export default function BPEPanel({ conversationId, onCite }: BPEPanelProps) {
       {/* Results */}
       <div className="flex-1 overflow-y-auto p-2 space-y-2">
         {results.map((chunk) => (
-          <div
+          <BPEChunkCard
             key={chunk.id}
-            className="p-2 bg-bpt-bg border border-bpt-border rounded text-xs hover:border-bpt-gold-dim transition-colors"
-          >
-            <div className="flex justify-between items-center mb-1">
-              <span className="text-bpt-accent truncate max-w-[60%]">
-                {chunk.file}:{chunk.lineStart}
-              </span>
-              <div className="flex gap-1 items-center">
-                <span className="text-bpt-text-dim text-[10px]">{chunk.language}</span>
-                <button
-                  onClick={() => handleCite(chunk)}
-                  disabled={!conversationId}
-                  className="px-1.5 py-0.5 bg-bpt-gold/20 text-bpt-gold rounded text-[10px]
-                             hover:bg-bpt-gold/30 disabled:opacity-30 disabled:cursor-not-allowed"
-                >
-                  @Cite
-                </button>
-              </div>
-            </div>
-            <pre className="text-bpt-text-dim whitespace-pre-wrap overflow-hidden max-h-20 text-[11px] leading-tight">
-              {chunk.text.slice(0, 300)}
-            </pre>
-            {chunk.summary && (
-              <p className="mt-1 text-bpt-text-dim italic text-[10px]">{chunk.summary}</p>
-            )}
-          </div>
+            chunk={chunk}
+            canCite={!!conversationId}
+            onCite={() => handleCite(chunk)}
+          />
         ))}
         {results.length === 0 && !loading && !error && (
           <p className="text-center text-bpt-text-dim text-xs mt-4">
@@ -116,6 +95,59 @@ export default function BPEPanel({ conversationId, onCite }: BPEPanelProps) {
           </p>
         )}
       </div>
+    </div>
+  );
+}
+
+/**
+ * BPE result chunk card with expandable preview.
+ * Click the code area to expand/collapse full text.
+ */
+function BPEChunkCard({ chunk, canCite, onCite }: {
+  chunk: BPEChunk;
+  canCite: boolean;
+  onCite: () => void;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const isLong = chunk.text.length > 300;
+
+  return (
+    <div className="p-2 bg-bpt-bg border border-bpt-border rounded text-xs hover:border-bpt-gold-dim transition-colors">
+      <div className="flex justify-between items-center mb-1">
+        <span className="text-bpt-accent truncate max-w-[60%]">
+          {chunk.file}:{chunk.lineStart}
+        </span>
+        <div className="flex gap-1 items-center">
+          <span className="text-bpt-text-dim text-[10px]">{chunk.language}</span>
+          <button
+            onClick={onCite}
+            disabled={!canCite}
+            className="px-1.5 py-0.5 bg-bpt-gold/20 text-bpt-gold rounded text-[10px]
+                       hover:bg-bpt-gold/30 disabled:opacity-30 disabled:cursor-not-allowed"
+          >
+            @Cite
+          </button>
+        </div>
+      </div>
+      <pre
+        className={`text-bpt-text-dim whitespace-pre-wrap overflow-hidden text-[11px] leading-tight
+                    ${expanded ? 'max-h-96 overflow-y-auto' : 'max-h-20'}
+                    ${isLong ? 'cursor-pointer' : ''}`}
+        onClick={isLong ? () => setExpanded(!expanded) : undefined}
+      >
+        {expanded ? chunk.text : chunk.text.slice(0, 300)}
+      </pre>
+      {isLong && (
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="mt-0.5 text-[10px] text-bpt-text-dim hover:text-bpt-text transition-colors"
+        >
+          {expanded ? '[-] collapse' : `[+] show full (${chunk.text.length} chars)`}
+        </button>
+      )}
+      {chunk.summary && (
+        <p className="mt-1 text-bpt-text-dim italic text-[10px]">{chunk.summary}</p>
+      )}
     </div>
   );
 }
