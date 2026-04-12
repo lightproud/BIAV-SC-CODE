@@ -28,6 +28,13 @@ interface StoreSchema {
   compressionTriggerTurns: number;
   compressionTriggerTokens: number;
   windowBounds: { x: number; y: number; width: number; height: number } | null;
+  /** Plugin whitelist and configuration. */
+  plugins: {
+    enabled: Record<string, boolean>;
+    extraDirs: string[];
+  };
+  /** Reranker toggle for BPE. */
+  bpeRerankerEnabled: boolean;
 }
 
 const store = new Store<StoreSchema>({
@@ -47,6 +54,11 @@ const store = new Store<StoreSchema>({
     compressionTriggerTurns: 20,
     compressionTriggerTokens: 60000,
     windowBounds: null,
+    plugins: {
+      enabled: {},
+      extraDirs: [],
+    },
+    bpeRerankerEnabled: false,
   },
 });
 

@@ -15,9 +15,10 @@ interface SidebarProps {
   onToggleBpe: () => void;
   onToggleSettings: () => void;
   onToggleArtifacts: () => void;
+  onTogglePlugins: () => void;
 }
 
-export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleBpe, onToggleSettings, onToggleArtifacts }: SidebarProps) {
+export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleBpe, onToggleSettings, onToggleArtifacts, onTogglePlugins }: SidebarProps) {
   const [conversations, setConversations] = useState<ConvEntry[]>([]);
 
   const loadConversations = async () => {
@@ -110,6 +111,12 @@ export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleB
           className="w-full px-2 py-1 text-xs text-left text-bpt-gold-dim hover:text-bpt-gold transition-colors"
         >
           Artifacts
+        </button>
+        <button
+          onClick={onTogglePlugins}
+          className="w-full px-2 py-1 text-xs text-left text-bpt-gold-dim hover:text-bpt-gold transition-colors"
+        >
+          Plugins
         </button>
         <button
           onClick={onToggleSettings}

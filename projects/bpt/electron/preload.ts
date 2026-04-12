@@ -63,6 +63,12 @@ const api = {
   citeInject: (conversationId: string, chunk: unknown) =>
     ipcRenderer.invoke('cite:inject', conversationId, chunk),
 
+  // ── Plugins ───────────────────────────────────────────────
+  pluginList: () => ipcRenderer.invoke('plugin:list'),
+  pluginEnable: (name: string) => ipcRenderer.invoke('plugin:enable', name),
+  pluginDisable: (name: string) => ipcRenderer.invoke('plugin:disable', name),
+  pluginReload: () => ipcRenderer.invoke('plugin:reload'),
+
   // ── Artifacts ─────────────────────────────────────────────
   artifactList: (conversationId?: string) =>
     ipcRenderer.invoke('artifact:list', conversationId),

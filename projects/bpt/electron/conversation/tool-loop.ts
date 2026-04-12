@@ -13,6 +13,7 @@
 import { getSilverApi } from '../silver/silver-ipc';
 import { getBpeIndexes } from '../bpe/bpe-ipc';
 import { searchHybrid, lookupSymbol } from '../bpe/search';
+import { findPluginForTool } from '../plugin/loader';
 import { saveArtifact } from './artifacts';
 import { getConfig } from '../core/config';
 import { logger } from '../core/logger';
@@ -90,8 +91,14 @@ async function dispatchTool(name: string, input: Record<string, unknown>): Promi
       return lookupSymbol(indexes, input.name as string, (input.limit as number) ?? 3);
     }
 
-    default:
+    default: {
+      // Check if it's a plugin tool (namespaced: "plugin-name.tool-name")
+      const pluginInstance = findPluginForTool(name);
+      if (pluginInstance?.execute) {
+        return pluginInstance.execute(name, input);
+      }
       throw new Error(`Unknown tool: ${name}`);
+    }
   }
 }
 
