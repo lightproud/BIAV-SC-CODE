@@ -82,7 +82,12 @@ COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ
     '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
 ]
 ALL_KEYWORDS = SEARCH_KEYWORDS + [k.strip() for k in COLLAB_KEYWORDS if k.strip()]
-HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
+# Adaptive lookback: expands automatically if CI was down
+try:
+    from collection_state import get_lookback_hours
+    HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 0)) or get_lookback_hours()
+except ImportError:
+    HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
 # 分页采集的安全上限（单个 fetcher 最多拿多少条），防止窗口边界模糊或 API 返回错乱
 # 时采到无穷多。默认 500 够 24h 窗口用；环境变量 MAX_ITEMS_PER_FETCHER 可覆盖。
 MAX_ITEMS_PER_FETCHER = int(os.environ.get('MAX_ITEMS_PER_FETCHER', 500))
@@ -2092,6 +2097,13 @@ def run():
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     logger.info(f'Done! {len(unique_news)} items written to {OUTPUT_PATH}')
+
+    # Record successful run for adaptive lookback
+    try:
+        from collection_state import mark_collection_done
+        mark_collection_done(item_count=len(unique_news))
+    except ImportError:
+        pass
 
 
 if __name__ == '__main__':
