@@ -10,6 +10,7 @@ interface ConvEntry {
 
 interface SidebarProps {
   currentId: string | null;
+  refreshKey?: number;
   onSelect: (id: string) => void;
   onToggleSilver: () => void;
   onToggleBpe: () => void;
@@ -20,7 +21,7 @@ interface SidebarProps {
   onToggleSentinel: () => void;
 }
 
-export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleBpe, onToggleSettings, onToggleArtifacts, onTogglePlugins, onToggleDream, onToggleSentinel }: SidebarProps) {
+export default function Sidebar({ currentId, refreshKey, onSelect, onToggleSilver, onToggleBpe, onToggleSettings, onToggleArtifacts, onTogglePlugins, onToggleDream, onToggleSentinel }: SidebarProps) {
   const [conversations, setConversations] = useState<ConvEntry[]>([]);
 
   const loadConversations = async () => {
@@ -34,7 +35,7 @@ export default function Sidebar({ currentId, onSelect, onToggleSilver, onToggleB
 
   useEffect(() => {
     loadConversations();
-  }, []);
+  }, [refreshKey]);
 
   const handleNew = async () => {
     try {

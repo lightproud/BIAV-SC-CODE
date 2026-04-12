@@ -18,6 +18,7 @@ export default function App() {
   const [rightPanel, setRightPanel] = useState<RightPanel>('none');
   const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
   const [pendingCites, setPendingCites] = useState<CiteBlock[]>([]);
+  const [sidebarRefreshKey, setSidebarRefreshKey] = useState(0);
 
   // Use ref to avoid re-creating the consume callback on every cite change.
   // This prevents ChatView's stream event listener from being re-registered.
@@ -44,6 +45,20 @@ export default function App() {
     return cites;
   }, []);
 
+  /**
+   * Open the Settings panel (used by ChatView's welcome page).
+   */
+  const openSettings = useCallback(() => {
+    setRightPanel('settings');
+  }, []);
+
+  /**
+   * Trigger Sidebar to refresh its conversation list (used after auto-title).
+   */
+  const refreshSidebar = useCallback(() => {
+    setSidebarRefreshKey((k) => k + 1);
+  }, []);
+
   return (
     <ErrorBoundary>
       <div className="flex flex-col h-screen bg-bpt-bg text-bpt-text">
@@ -52,6 +67,7 @@ export default function App() {
           {/* Sidebar */}
           <Sidebar
             currentId={currentConversationId}
+            refreshKey={sidebarRefreshKey}
             onSelect={setCurrentConversationId}
             onToggleSilver={() => togglePanel('silver')}
             onToggleBpe={() => togglePanel('bpe')}
@@ -68,6 +84,8 @@ export default function App() {
               conversationId={currentConversationId}
               pendingCites={pendingCites}
               onConsumeCites={consumePendingCites}
+              onOpenSettings={openSettings}
+              onConversationUpdated={refreshSidebar}
             />
           </div>
 

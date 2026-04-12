@@ -101,6 +101,7 @@ export type StreamEvent =
   | { type: 'tool_use_end' }
   | { type: 'tool_result'; toolUseId: string; name: string; content: string; isError: boolean; artifactId?: string }
   | { type: 'assistant_continue' }
+  | { type: 'compression_notice'; droppedTurns: number }
   | { type: 'message_end'; usage: TokenUsage }
   | { type: 'error'; error: string };
 
