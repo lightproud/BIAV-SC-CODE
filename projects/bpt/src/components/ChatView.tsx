@@ -34,13 +34,15 @@ export default function ChatView({ conversationId, pendingCites, onConsumeCites,
   // Track accumulated tool input JSON during streaming
   const toolInputRef = useRef('');
 
-  // Check if API key is configured (for welcome page)
+  // Check if API key is configured (for welcome page).
+  // Re-checks when conversationId changes so the status is fresh when
+  // the user returns to the welcome page after configuring Settings.
   useEffect(() => {
     getBpt().configGet('endpoint').then((ep: unknown) => {
       const endpoint = ep as { apiKey?: string } | null;
       setApiKeySet(!!endpoint?.apiKey);
     }).catch(() => {});
-  }, []);
+  }, [conversationId]);
 
   // Load persisted messages when conversation changes
   useEffect(() => {
@@ -296,7 +298,7 @@ export default function ChatView({ conversationId, pendingCites, onConsumeCites,
     }
 
     await getBpt().chatSend(convId, messageForLlm, gear);
-  }, [input, streaming, conversationId, gear, onConsumeCites]);
+  }, [input, streaming, conversationId, gear, onConsumeCites, onConversationUpdated]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
