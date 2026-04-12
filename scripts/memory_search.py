@@ -36,12 +36,62 @@ TODAY = date.today()
 # ============================================================
 
 KNOWLEDGE_GLOBS = [
+    # === Tier 0: Core memory & facts (always indexed) ===
     "memory/*.md",
     "memory/*.json",
+    "memory/dreams/*.json",
+    "memory/dreams/*.md",
+    "memory/session-digests/*.md",
     "assets/data/*.json",
     "assets/data/*.md",
-    "projects/*/CONTEXT.md",
     "BIAV-SC.md",
+    "CLAUDE.md",
+
+    # === Tier 1a: Game data (wiki db + config) ===
+    "projects/wiki/data/*.json",
+    "projects/wiki/data/db/*.json",
+    "projects/wiki/data/schemas/*.json",
+    "projects/wiki/data/extracted/categorized/*.txt",
+    "projects/wiki/data/extracted/lua_tables/*.lua",
+
+    # === Tier 1b: Wiki documentation (3 languages) ===
+    "projects/wiki/docs/zh/**/*.md",
+    "projects/wiki/docs/en/**/*.md",
+    "projects/wiki/docs/ja/**/*.md",
+
+    # === Tier 1c: News output & platform data ===
+    "projects/news/output/*.json",
+    "projects/news/output/*.md",
+    "projects/news/output/*.jsonl",
+    "projects/news/data/platforms/*/*.json",
+    "projects/news/data/archive/daily-reports/*.md",
+
+    # === Tier 2: Discord (summaries, not per-message) ===
+    "projects/news/data/discord/channel_index.json",
+    "projects/news/data/discord/guild_meta.json",
+    "projects/news/data/discord/activity_daily/*.json",
+
+    # === Tier 1d: Project context & source code ===
+    "projects/*/CONTEXT.md",
+    "projects/bpt-desktop/src/**/*.ts",
+    "projects/bpt-desktop/src/**/*.tsx",
+    "projects/bpt-desktop/electron/**/*.ts",
+    "projects/bpt/src/**/*.ts",
+    "projects/bpt/src/**/*.tsx",
+    "projects/bpt/electron/**/*.ts",
+    "projects/bpt-web/*.md",
+    "projects/bpt-web/*.js",
+    "projects/site/*.html",
+    "projects/site/*.css",
+    "scripts/*.py",
+
+    # === Tier 1e: Config & CI/CD ===
+    ".github/workflows/*.yml",
+    "projects/*/package.json",
+
+    # === Tier 1f: Deliverables ===
+    "deliverables/**/*.md",
+    "deliverables/**/*.html",
 ]
 
 SKIP_FILES = {
@@ -50,7 +100,15 @@ SKIP_FILES = {
     "assets/data/knowledge-graph.json",
     "assets/data/memory-utility.json",
     "assets/data/precomputed-cache.json",
+    # Large auto-generated files that add noise
+    "projects/news/output/news.json",
+    # Noise files from game memory extraction (binary/system data, not game content)
+    "projects/wiki/data/extracted/categorized/numeric_config.txt",
+    "projects/wiki/data/extracted/categorized/asset_references.txt",
 }
+
+# Discord JSONL directories for on-demand message search (Tier 3)
+DISCORD_CHANNELS_DIR = "projects/news/data/discord/channels"
 
 
 def discover_files() -> list[Path]:
@@ -65,7 +123,7 @@ def discover_files() -> list[Path]:
 
 
 def chunk_file(fp: Path, chunk_size: int = 500, overlap: int = 100) -> list[dict]:
-    """Split a file into overlapping text chunks."""
+    """Split a file into overlapping text chunks with format-aware extraction."""
     try:
         text = fp.read_text(encoding="utf-8")
     except (OSError, UnicodeDecodeError):
@@ -73,13 +131,40 @@ def chunk_file(fp: Path, chunk_size: int = 500, overlap: int = 100) -> list[dict
 
     rel = str(fp.relative_to(REPO))
 
-    # For JSON files, try to extract meaningful text
+    # Format-specific text extraction before generic chunking
     if fp.suffix == ".json":
         text = _json_to_text(text, rel)
+    elif fp.suffix == ".jsonl":
+        text = _jsonl_to_text(text, rel)
+    elif fp.suffix == ".lua":
+        text = _lua_to_text(text, rel)
+    elif fp.suffix == ".yml" or fp.suffix == ".yaml":
+        text = _yaml_to_text(text, rel)
+    elif fp.suffix == ".txt" and "categorized" in rel:
+        text = _categorized_txt_to_text(text, rel)
+    elif fp.suffix in (".html", ".css"):
+        # Strip HTML tags for indexing, keep text content
+        text = re.sub(r"<[^>]+>", " ", text)
+        text = f"File: {rel}\n{text}"
+    elif fp.suffix in (".ts", ".tsx", ".py", ".js"):
+        text = _code_to_text(text, rel)
 
     if not text.strip():
         return []
 
+    # Adaptive chunk size: larger for data-heavy files, smaller for docs
+    if "discord/activity_daily" in rel or "platforms/" in rel:
+        chunk_size = 800  # Aggregated data, keep more context
+    elif fp.suffix == ".lua":
+        chunk_size = 1000  # Lua entries are self-contained blocks
+    elif "wiki/docs/" in rel:
+        chunk_size = 600  # Wiki pages are structured markdown
+
+    return _split_into_chunks(text, rel, chunk_size, overlap)
+
+
+def _split_into_chunks(text: str, rel: str, chunk_size: int, overlap: int) -> list[dict]:
+    """Generic overlapping text chunker."""
     chunks = []
     lines = text.splitlines()
     current = []
@@ -125,12 +210,22 @@ def chunk_file(fp: Path, chunk_size: int = 500, overlap: int = 100) -> list[dict
     return chunks
 
 
+# ---- Format-specific text extractors ----
+
 def _json_to_text(raw: str, rel: str) -> str:
     """Convert JSON content to searchable text."""
     try:
         data = json.loads(raw)
     except json.JSONDecodeError:
         return raw
+
+    # Discord activity_daily: extract channel names + stats
+    if "activity_daily" in rel:
+        return _discord_daily_to_text(data, rel)
+
+    # News platform data: extract titles + summaries
+    if "platforms/" in rel:
+        return _platform_json_to_text(data, rel)
 
     parts = [f"File: {rel}"]
     _extract_text_values(data, parts, depth=0)
@@ -152,6 +247,165 @@ def _extract_text_values(obj, parts: list, depth: int):
     elif isinstance(obj, list):
         for item in obj:
             _extract_text_values(item, parts, depth + 1)
+
+
+def _jsonl_to_text(raw: str, rel: str) -> str:
+    """Convert JSONL (news feed) to searchable text."""
+    parts = [f"File: {rel}"]
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        # Extract key searchable fields
+        title = obj.get("title", "")
+        summary = obj.get("summary", "")
+        author = obj.get("author", "")
+        source = obj.get("source", "")
+        if title:
+            parts.append(f"title: {title}")
+        if summary:
+            parts.append(f"summary: {summary}")
+        if author:
+            parts.append(f"author: {author}")
+        if source and not title and not summary:
+            # Fallback: dump all string values
+            _extract_text_values(obj, parts, depth=0)
+    return "\n".join(parts)
+
+
+def _lua_to_text(raw: str, rel: str) -> str:
+    """Convert Lua table config to searchable text.
+
+    Extracts key-value pairs from Lua table syntax:
+      Name = "xxx", Introduction = "yyy", ...
+    """
+    parts = [f"File: {rel}"]
+    fname = Path(rel).stem  # e.g. "AwakerConfig"
+    parts.append(f"Config: {fname}")
+
+    # Extract string assignments: Key = "Value"
+    for m in re.finditer(r'(\w+)\s*=\s*"([^"]*)"', raw):
+        key, value = m.group(1), m.group(2)
+        if len(value) > 3:
+            # Strip inline markup tags like <BleedingIconKeywords:xxx>
+            clean = re.sub(r"<\w+:([^>]+)>", r"\1", value)
+            parts.append(f"{key}: {clean}")
+
+    # Extract numeric table keys as entity boundaries
+    for m in re.finditer(r"\[(\d+)\]\s*=\s*\{", raw):
+        parts.append(f"--- entry {m.group(1)} ---")
+
+    return "\n".join(parts)
+
+
+def _categorized_txt_to_text(raw: str, rel: str) -> str:
+    """Convert pipe-delimited categorized text to searchable text.
+
+    Format: ConfigKey_ID_Field|Value
+    """
+    parts = [f"File: {rel}"]
+    fname = Path(rel).stem  # e.g. "character_data"
+    parts.append(f"Category: {fname}")
+
+    for line in raw.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        # Split on first pipe: key|value
+        if "|" in line:
+            key, _, value = line.partition("|")
+            # Extract the field name from key like "AwakerConfig_15560_Name"
+            key_parts = key.rsplit("_", 1)
+            field = key_parts[-1] if len(key_parts) > 1 else key
+            if len(value) > 2:
+                clean = re.sub(r"<\w+:([^>]+)>", r"\1", value)
+                parts.append(f"{field}: {clean}")
+        elif len(line) > 5:
+            parts.append(line)
+
+    return "\n".join(parts)
+
+
+def _yaml_to_text(raw: str, rel: str) -> str:
+    """Convert YAML (workflow config) to searchable text."""
+    parts = [f"File: {rel}"]
+    fname = Path(rel).stem
+    parts.append(f"Workflow: {fname}")
+    # Extract key-value pairs and comments
+    for line in raw.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("#"):
+            parts.append(stripped.lstrip("# "))
+        elif ":" in stripped and not stripped.startswith("-"):
+            parts.append(stripped)
+    return "\n".join(parts)
+
+
+def _code_to_text(raw: str, rel: str) -> str:
+    """Extract meaningful text from source code files."""
+    parts = [f"File: {rel}"]
+    lang = Path(rel).suffix
+
+    for line in raw.splitlines():
+        stripped = line.strip()
+        # Keep comments
+        if stripped.startswith("//") or stripped.startswith("#"):
+            comment = stripped.lstrip("/#").strip()
+            if len(comment) > 5:
+                parts.append(comment)
+        # Keep function/class/interface declarations
+        elif lang in (".ts", ".tsx", ".js"):
+            if re.match(r"(export\s+)?(function|class|interface|type|const|enum)\s+\w+", stripped):
+                parts.append(stripped[:200])
+        elif lang == ".py":
+            if re.match(r"(def |class |async def )", stripped):
+                parts.append(stripped[:200])
+            elif stripped.startswith('"""') or stripped.startswith("'''"):
+                parts.append(stripped.strip("\"'"))
+    return "\n".join(parts)
+
+
+def _discord_daily_to_text(data: dict, rel: str) -> str:
+    """Convert Discord daily activity JSON to searchable text."""
+    parts = [f"File: {rel}"]
+    date_str = data.get("date", "")
+    messages = data.get("messages", 0)
+    authors = data.get("unique_authors", 0)
+    parts.append(f"Discord daily: {date_str} messages={messages} authors={authors}")
+
+    # Channel activity breakdown
+    channel_activity = data.get("channel_activity", {})
+    for channel, count in sorted(channel_activity.items(), key=lambda x: x[1], reverse=True):
+        if count > 5:  # Skip near-empty channels
+            parts.append(f"channel: {channel} messages={count}")
+
+    return "\n".join(parts)
+
+
+def _platform_json_to_text(data: dict, rel: str) -> str:
+    """Convert news platform JSON to searchable text."""
+    parts = [f"File: {rel}"]
+    source = data.get("source", "")
+    date_str = data.get("date", "")
+    parts.append(f"Platform: {source} date: {date_str}")
+
+    for item in data.get("items", []):
+        title = item.get("title", "")
+        summary = item.get("summary", "")
+        author = item.get("author", "")
+        engagement = item.get("engagement", 0)
+        if title:
+            parts.append(f"title: {title}")
+        if summary and len(summary) > 10:
+            parts.append(f"summary: {summary[:300]}")
+        if author:
+            parts.append(f"author: {author}")
+
+    return "\n".join(parts)
 
 
 # ============================================================
@@ -225,8 +479,13 @@ def build_tfidf_index(chunks: list[dict]) -> dict:
         for token in unique_tokens:
             doc_freq[token] += 1
 
-    # Step 2: Build vocabulary (top 2000 terms by document frequency)
-    vocab_items = sorted(doc_freq.items(), key=lambda x: x[1], reverse=True)[:2000]
+    # Step 2: Build vocabulary (dynamic sizing based on corpus)
+    # Keep terms appearing in >= 2 docs, cap at 15000 to bound index size
+    # Filter out ultra-rare terms (df=1) which add noise without recall benefit
+    min_df = 2
+    filtered = [(w, f) for w, f in doc_freq.items() if f >= min_df]
+    vocab_cap = min(15000, len(filtered))
+    vocab_items = sorted(filtered, key=lambda x: x[1], reverse=True)[:vocab_cap]
     vocabulary = {word: idx for idx, (word, _) in enumerate(vocab_items)}
 
     # Step 3: IDF
@@ -255,16 +514,22 @@ def build_tfidf_index(chunks: list[dict]) -> dict:
                 vec[word] = tf_score * idf[word]
 
         if vec:
+            # Keep only top-50 dimensions per vector to bound index size
+            # This preserves >95% of cosine similarity for sparse TF-IDF
+            if len(vec) > 50:
+                top_items = sorted(vec.items(), key=lambda x: x[1], reverse=True)[:50]
+                vec = dict(top_items)
+
             # L2 normalize
             norm = math.sqrt(sum(v * v for v in vec.values()))
             if norm > 0:
-                vec = {k: v / norm for k, v in vec.items()}
+                vec = {k: round(v / norm, 4) for k, v in vec.items()}
 
             vectors[cid] = vec
 
         chunk_meta[cid] = {
             "file": chunk["file"],
-            "preview": chunk["text"][:200],
+            "preview": chunk["text"][:150],
             "offset": chunk["offset"],
         }
 
@@ -570,6 +835,108 @@ def search(query: str, top_k: int = 5, use_reranker: bool = True) -> list[dict]:
 
 
 # ============================================================
+# Tier 3: Discord JSONL On-Demand Search
+# ============================================================
+
+
+def search_discord_messages(query: str, max_results: int = 10,
+                            days_back: int = 30) -> list[dict]:
+    """Search Discord JSONL archives directly for specific messages.
+
+    This is the Tier 3 search: only called when TF-IDF results suggest
+    Discord relevance or when explicitly searching community discussions.
+    Scans JSONL files from recent days first.
+    """
+    channels_dir = REPO / DISCORD_CHANNELS_DIR
+    if not channels_dir.exists():
+        return []
+
+    query_lower = query.lower()
+    query_tokens = set(tokenize(query))
+    cutoff = date.today().isoformat()
+    # Calculate cutoff date
+    from datetime import timedelta
+    cutoff_date = (date.today() - timedelta(days=days_back)).isoformat()
+
+    results = []
+    files_scanned = 0
+
+    # Iterate channel directories
+    for channel_dir in sorted(channels_dir.iterdir()):
+        if not channel_dir.is_dir():
+            continue
+        # Scan JSONL files (named by date), newest first
+        jsonl_files = sorted(channel_dir.glob("*.jsonl"), reverse=True)
+        for jf in jsonl_files:
+            # Date filter from filename
+            date_str = jf.stem  # e.g. "2026-04-12"
+            if date_str < cutoff_date:
+                break  # Older files, skip rest of channel
+
+            files_scanned += 1
+            try:
+                for line in jf.read_text(encoding="utf-8").splitlines():
+                    if not line.strip():
+                        continue
+                    try:
+                        msg = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    content = msg.get("content", "")
+                    if not content:
+                        continue
+                    # Quick keyword match
+                    content_lower = content.lower()
+                    if query_lower in content_lower or any(
+                        t in content_lower for t in query_tokens if len(t) > 2
+                    ):
+                        results.append({
+                            "file": str(jf.relative_to(REPO)),
+                            "author": msg.get("author_name", "?"),
+                            "content": content[:300],
+                            "timestamp": msg.get("timestamp", ""),
+                            "channel_id": msg.get("channel_id", ""),
+                            "reactions": sum(
+                                r.get("count", 0)
+                                for r in msg.get("reactions", [])
+                            ),
+                        })
+            except (OSError, UnicodeDecodeError):
+                continue
+
+    # Sort by timestamp (newest first), then by reactions
+    results.sort(key=lambda x: (x.get("timestamp", ""), x.get("reactions", 0)),
+                 reverse=True)
+    return results[:max_results]
+
+
+# ============================================================
+# Art Asset Metadata Indexing
+# ============================================================
+
+
+def discover_art_assets() -> list[dict]:
+    """Generate searchable chunks from art asset filenames and metadata."""
+    chunks = []
+    portraits_dir = REPO / "assets" / "images" / "portraits"
+    if portraits_dir.exists():
+        names = sorted(f.stem for f in portraits_dir.glob("*.png"))
+        if names:
+            text = "Art assets: character portraits\n"
+            text += "Characters with portraits: " + ", ".join(names)
+            chunks.append({
+                "file": "assets/images/portraits/",
+                "chunk_id": "assets/images/portraits/#metadata",
+                "text": text,
+                "offset": 0,
+            })
+
+    # Also index art_assets.json if it exists (already covered by KNOWLEDGE_GLOBS
+    # via projects/wiki/data/db/*.json, but the portrait dir itself is binary)
+    return chunks
+
+
+# ============================================================
 # Index Building
 # ============================================================
 
@@ -625,7 +992,7 @@ def build_embedding_index(chunks: list[dict]) -> dict:
         vectors[cid] = emb
         chunk_meta[cid] = {
             "file": chunk["file"],
-            "preview": chunk["text"][:200],
+            "preview": chunk["text"][:150],
             "offset": chunk["offset"],
         }
 
@@ -666,19 +1033,69 @@ def build_index() -> dict:
     otherwise falls back to Layer 1 (TF-IDF).
     """
     files = discover_files()
+    # Deduplicate (multiple globs can match same file)
+    seen = set()
+    unique_files = []
+    for fp in files:
+        if fp not in seen:
+            seen.add(fp)
+            unique_files.append(fp)
+    files = unique_files
     print(f"  发现 {len(files)} 个知识文件")
 
-    all_chunks = []
+    # Categorize files for reporting
+    categories = defaultdict(int)
     for fp in files:
-        chunks = chunk_file(fp)
-        all_chunks.extend(chunks)
+        rel = str(fp.relative_to(REPO))
+        if rel.startswith("memory/"):
+            categories["memory"] += 1
+        elif rel.startswith("projects/wiki/data/"):
+            categories["wiki-data"] += 1
+        elif rel.startswith("projects/wiki/docs/"):
+            categories["wiki-docs"] += 1
+        elif rel.startswith("projects/news/data/discord/"):
+            categories["discord"] += 1
+        elif rel.startswith("projects/news/"):
+            categories["news"] += 1
+        elif rel.startswith("projects/bpt"):
+            categories["bpt"] += 1
+        elif rel.startswith("assets/"):
+            categories["assets"] += 1
+        elif rel.startswith("scripts/"):
+            categories["scripts"] += 1
+        elif rel.startswith(".github/"):
+            categories["ci"] += 1
+        else:
+            categories["other"] += 1
+
+    for cat, count in sorted(categories.items(), key=lambda x: x[1], reverse=True):
+        print(f"    {cat}: {count} 文件")
+
+    all_chunks = []
+    errors = 0
+    for fp in files:
+        try:
+            chunks = chunk_file(fp)
+            all_chunks.extend(chunks)
+        except Exception as e:
+            errors += 1
+            if errors <= 5:
+                print(f"    跳过 {fp.name}: {e}")
+
+    # Add art asset metadata chunks
+    art_chunks = discover_art_assets()
+    all_chunks.extend(art_chunks)
+    if art_chunks:
+        print(f"  + {len(art_chunks)} 个美术资产元数据块")
 
     print(f"  切分为 {len(all_chunks)} 个文本块")
+    if errors:
+        print(f"  ({errors} 个文件跳过)")
 
     # Try Layer 2 first
     layer = "tfidf"
     if os.environ.get("VOYAGE_API_KEY"):
-        print("  检测到 VOYAGE_API_KEY → 使用 Layer 2 (API Embedding)")
+        print("  检测到 VOYAGE_API_KEY -> 使用 Layer 2 (API Embedding)")
         index = build_embedding_index(all_chunks)
         if index and index.get("vectors"):
             layer = "voyage-3"
@@ -690,11 +1107,13 @@ def build_index() -> dict:
 
     index["meta"] = {
         "generated": TODAY.isoformat(),
-        "generator": "memory_search.py",
+        "generator": "memory_search.py v2 (full coverage)",
         "files_count": len(files),
         "chunks_count": len(all_chunks),
         "vocab_size": len(index.get("vocabulary", {})),
         "layer": layer,
+        "categories": dict(categories),
+        "discord_jsonl_available": (REPO / DISCORD_CHANNELS_DIR).exists(),
     }
 
     # Save
@@ -744,13 +1163,25 @@ def print_stats():
         return
 
     meta = index.get("meta", {})
-    print(f"\n  📊 向量索引统计")
+    print(f"\n  向量索引统计")
     print(f"  生成时间：{meta.get('generated', '?')}")
+    print(f"  生成器：{meta.get('generator', '?')}")
     print(f"  索引层级：{meta.get('layer', '?')}")
     print(f"  文件数量：{meta.get('files_count', '?')}")
     print(f"  文本块数：{meta.get('chunks_count', '?')}")
     print(f"  词汇表大小：{meta.get('vocab_size', '?')}")
     print(f"  向量数量：{len(index.get('vectors', {}))}")
+
+    # Category breakdown
+    categories = meta.get("categories", {})
+    if categories:
+        print(f"\n  数据类别分布：")
+        for cat, count in sorted(categories.items(), key=lambda x: x[1], reverse=True):
+            print(f"    {cat}: {count} 文件")
+
+    # Discord JSONL availability
+    if meta.get("discord_jsonl_available"):
+        print(f"\n  Discord JSONL 按需搜索：可用 (--discord 模式)")
 
     # File distribution
     files = defaultdict(int)
@@ -758,9 +1189,26 @@ def print_stats():
         chunk_meta = index["chunks"].get(cid, {})
         files[chunk_meta.get("file", "?")] += 1
 
-    print(f"\n  文件分布（按块数）：")
-    for f, count in sorted(files.items(), key=lambda x: x[1], reverse=True)[:10]:
-        print(f"    {count:3d} 块 — {f}")
+    print(f"\n  文件分布 TOP 15（按块数）：")
+    for f, count in sorted(files.items(), key=lambda x: x[1], reverse=True)[:15]:
+        print(f"    {count:3d} 块 - {f}")
+
+
+def print_discord_results(results: list[dict], query: str):
+    """Pretty-print Discord message search results."""
+    if not results:
+        print(f"\n  Discord 消息中没有找到与「{query}」相关的结果")
+        return
+
+    print(f"\n  Discord 消息搜索「{query}」- 找到 {len(results)} 条\n")
+    for i, r in enumerate(results, 1):
+        ts = r.get("timestamp", "?")[:16]
+        author = r.get("author", "?")
+        reactions = r.get("reactions", 0)
+        content = r["content"].replace("\n", " ")[:150]
+        print(f"  [{i}] {ts} @{author} (reactions: {reactions})")
+        print(f"      {content}")
+        print()
 
 
 def main():
@@ -768,18 +1216,23 @@ def main():
 
     do_build = "--build" in args
     do_stats = "--stats" in args
+    do_discord = "--discord" in args
     query_args = [a for a in args if not a.startswith("--")]
     query = " ".join(query_args) if query_args else None
 
     if do_build:
-        print(f"🔨 构建向量索引 — {TODAY}")
+        print(f"构建向量索引 - {TODAY}")
         build_index()
-        print("  ✅ 索引构建完成")
+        print("  索引构建完成")
 
     if do_stats:
         print_stats()
 
-    if query:
+    if query and do_discord:
+        # Discord-specific message search
+        results = search_discord_messages(query)
+        print_discord_results(results, query)
+    elif query:
         results = search(query)
         print_results(results, query)
     elif not do_build and not do_stats:
@@ -787,6 +1240,7 @@ def main():
         print('  python scripts/memory_search.py "查询内容"')
         print("  python scripts/memory_search.py --build")
         print("  python scripts/memory_search.py --stats")
+        print('  python scripts/memory_search.py --discord "Discord消息搜索"')
 
 
 if __name__ == "__main__":
