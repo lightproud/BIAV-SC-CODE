@@ -154,4 +154,20 @@
 
 ---
 
+## 21. 大文件一次性写入容易超时
+
+- **Context**：分析游戏数据后尝试将完整报告（6 个章节）写入单个 Markdown 文件
+- **Problem**：单次 Write/Edit 操作内容过长，执行超时导致工作丢失，需要反复重写
+- **Fix**：长报告拆分为多个独立文件（如 `01-data-overview.md`、`02-characters.md`），每个文件控制在合理篇幅内逐个写入。或者分多次 Edit 追加内容，每次只追加一个章节
+- **Impact**：工作效率、会话稳定性
+
+## 22. Wiki 人工整理层数据不可靠
+
+- **Context**：`projects/wiki/data/db/` 中的 JSON 是人工整理的 Wiki 展示数据
+- **Problem**：约 58% 角色标注"待补充"，部分数据为推测而非客户端实际数值，不适合作为分析引用来源
+- **Fix**：分析游戏数据时以 Lua 解包层（`projects/wiki/data/extracted/lua_tables/`）和事实圣经层（`assets/data/`）为唯一可靠来源。Wiki JSON 仅作为前端展示用途，不作为事实依据
+- **Impact**：分析可信度
+
+---
+
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。
