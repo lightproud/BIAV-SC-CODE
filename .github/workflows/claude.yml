@@ -66,7 +66,7 @@ jobs:
         continue-on-error: true
       - name: Clean up feature branch
         if: steps.merge.outputs.merged == 'true' && steps.merge.outputs.branch != ''
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const branch = '${{ steps.merge.outputs.branch }}';
@@ -83,7 +83,7 @@ jobs:
             }
       - name: Comment merge failure
         if: steps.merge.outcome == 'failure'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const issue_number = context.issue?.number;
@@ -98,7 +98,7 @@ jobs:
             });
       - name: Close issue on success
         if: steps.claude.outcome == 'success'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const issue_number = context.issue?.number;
@@ -112,7 +112,7 @@ jobs:
             });
       - name: Label blocked issues on failure
         if: steps.claude.outcome == 'failure'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const issue_number = context.issue?.number;
