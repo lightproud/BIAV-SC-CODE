@@ -222,12 +222,14 @@ export function lookupSymbol(
   if (!indexes.chunks) return [];
 
   try {
+    // Escape LIKE wildcards (% and _) to prevent query complexity DoS
+    const escapedName = name.replace(/[%_]/g, '\\$&');
     const results = indexes.chunks.prepare(`
       SELECT id, file, line_start, line_end, text, language
       FROM chunks
-      WHERE text LIKE ? COLLATE NOCASE
+      WHERE text LIKE ? ESCAPE '\\' COLLATE NOCASE
       LIMIT ?
-    `).all(`%${name}%`, limit) as Array<{
+    `).all(`%${escapedName}%`, limit) as Array<{
       id: number;
       file: string;
       line_start: number;

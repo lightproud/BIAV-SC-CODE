@@ -13,6 +13,7 @@
 import type { LlmProvider, LlmRequestConfig, LlmStreamEvent, LlmMessage } from './provider';
 import type { LlmContentBlock } from './provider';
 import type { ToolDescriptor } from '../../src/types';
+import { getModelPricing } from '../../src/models';
 import { logger } from '../core/logger';
 
 export class OpenAiProvider implements LlmProvider {
@@ -20,6 +21,7 @@ export class OpenAiProvider implements LlmProvider {
   private baseUrl: string;
   private apiKey: string;
   private abortController: AbortController | null = null;
+  private currentModel = '';
 
   constructor(baseUrl: string, apiKey: string) {
     this.baseUrl = baseUrl.replace(/\/+$/, '');
@@ -31,6 +33,7 @@ export class OpenAiProvider implements LlmProvider {
     onEvent: (event: LlmStreamEvent) => void,
   ): Promise<void> {
     this.abortController = new AbortController();
+    this.currentModel = config.model;
 
     try {
       const tools = config.tools.map((t) => this.toOpenAiTool(t));
@@ -263,13 +266,12 @@ export class OpenAiProvider implements LlmProvider {
   }
 
   /**
-   * Rough cost estimation for OpenAI-compatible models.
-   * Default to GPT-4o-mini pricing; actual cost depends on the model.
+   * Model-aware cost estimation via getModelPricing() from the unified
+   * MODEL_REGISTRY. Falls back to GPT-4o-mini rates for unknown models.
    */
   private estimateCost(input: number, output: number): number {
-    const inputPrice = 0.15;   // $0.15/M input (GPT-4o-mini)
-    const outputPrice = 0.60;  // $0.60/M output
+    const p = getModelPricing(this.currentModel);
     const M = 1_000_000;
-    return (input / M) * inputPrice + (output / M) * outputPrice;
+    return (input / M) * p.input + (output / M) * p.output;
   }
 }

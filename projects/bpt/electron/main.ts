@@ -21,8 +21,8 @@ import { createWindow, getMainWindow } from './shell/window';
 import { createTray } from './shell/tray';
 import { registerGlobalHotkeys, unregisterGlobalHotkeys } from './shell/hotkey';
 import { registerIpcHandlers } from './core/ipc-trunk';
-import { registerSilverIpc, initSilverCore } from './silver/silver-ipc';
-import { registerBpeIpc, initBpe } from './bpe/bpe-ipc';
+import { registerSilverIpc, initSilverCore, getMcpClient } from './silver/silver-ipc';
+import { registerBpeIpc, initBpe, shutdownBpe } from './bpe/bpe-ipc';
 import { registerChatIpc } from './conversation/stream';
 import { initConversationDb, closeConversationDb } from './conversation/store';
 import { registerPluginIpc } from './plugin/plugin-ipc';
@@ -111,5 +111,7 @@ app.on('activate', () => {
 
 app.on('will-quit', () => {
   unregisterGlobalHotkeys();
+  getMcpClient()?.stop();
+  shutdownBpe();
   closeConversationDb();
 });

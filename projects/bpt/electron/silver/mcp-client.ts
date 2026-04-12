@@ -77,6 +77,11 @@ export class McpClient {
       this.process.on('exit', (code: number | null) => {
         logger.info('mcp-client', `MCP process exited with code ${code}`);
         this.connected = false;
+        // Reject all pending requests — callers shouldn't hang forever
+        for (const [id, { reject }] of this.pending) {
+          reject(new Error(`MCP process exited (code ${code}) with request ${id} pending`));
+        }
+        this.pending.clear();
       });
 
       // Initialize the MCP session
