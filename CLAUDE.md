@@ -158,7 +158,7 @@ python scripts/dream.py --rebuild
 
 ### Git 规则
 
-- **所有会话直接推 main**，不用 feature 分支。冲突时 `git pull` 重试。
+- **所有会话推 feature 分支**，完成后合并 main。分支命名：`claude/{简短描述}-{随机后缀}`。GitHub Actions 会话由 `claude.yml` merge step 自动合并并清理分支；Web Code 交互式会话在会话末尾手动合并或由制作人确认后合并。
 - 修改 `memory/` 文件时更新头部时间戳：`最后更新：YYYY-MM-DD by 会话角色`
 - 凭据绝不写入仓库文件。
 - 禁止 `-i` 交互式 git 命令（rebase -i / add -i）。
