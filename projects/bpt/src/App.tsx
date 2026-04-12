@@ -4,11 +4,12 @@ import ChatView from './components/ChatView';
 import SilverPanel from './components/SilverPanel';
 import BPEPanel from './components/BPEPanel';
 import SettingsPanel from './components/SettingsPanel';
+import ArtifactsPanel from './components/ArtifactsPanel';
 import StatusBar from './components/StatusBar';
 import ErrorBoundary from './components/ErrorBoundary';
 import type { CiteBlock } from './types';
 
-type RightPanel = 'none' | 'silver' | 'bpe' | 'settings';
+type RightPanel = 'none' | 'silver' | 'bpe' | 'settings' | 'artifacts';
 
 export default function App() {
   const [rightPanel, setRightPanel] = useState<RightPanel>('none');
@@ -52,6 +53,7 @@ export default function App() {
             onToggleSilver={() => togglePanel('silver')}
             onToggleBpe={() => togglePanel('bpe')}
             onToggleSettings={() => togglePanel('settings')}
+            onToggleArtifacts={() => togglePanel('artifacts')}
           />
 
           {/* Chat */}
@@ -74,6 +76,9 @@ export default function App() {
                 />
               )}
               {rightPanel === 'settings' && <SettingsPanel />}
+              {rightPanel === 'artifacts' && (
+                <ArtifactsPanel conversationId={currentConversationId} />
+              )}
             </div>
           )}
         </div>

@@ -156,6 +156,7 @@ export default function ChatView({ conversationId, pendingCites, onConsumeCites 
           toolUseId: e.toolUseId as string,
           content: e.content as string,
           isError: e.isError as boolean,
+          fullArtifactPath: e.artifactId as string | undefined,
         };
         setMessages((prev) => {
           const updated = [...prev];
@@ -386,16 +387,7 @@ function ContentBlockView({ block }: { block: ContentBlock }) {
   }
   if (block.type === 'tool_result') {
     return (
-      <div className={`my-2 p-2 bg-bpt-bg rounded border text-xs ${
-        block.isError ? 'border-bpt-error/30' : 'border-bpt-success/30'
-      }`}>
-        <span className={block.isError ? 'text-bpt-error' : 'text-bpt-success'}>
-          {block.isError ? 'Tool Error' : 'Tool Result'}
-        </span>
-        <pre className="mt-1 text-bpt-text-dim overflow-x-auto whitespace-pre-wrap text-[11px] max-h-40 overflow-y-auto">
-          {block.content}
-        </pre>
-      </div>
+      <ToolResultView block={block} />
     );
   }
   if (block.type === 'cite') {
@@ -412,6 +404,57 @@ function ContentBlockView({ block }: { block: ContentBlock }) {
     );
   }
   return null;
+}
+
+/**
+ * Tool result view with optional "View Full" button for truncated results.
+ * When an artifact ID is present, the user can expand to see the full content.
+ */
+function ToolResultView({ block }: { block: ToolResultBlock }) {
+  const [expanded, setExpanded] = useState(false);
+  const [fullContent, setFullContent] = useState<string | null>(null);
+
+  const handleExpand = async () => {
+    if (fullContent) {
+      setExpanded(!expanded);
+      return;
+    }
+    if (!block.fullArtifactPath) return;
+    try {
+      const artifact = await getBpt().artifactGet(block.fullArtifactPath) as { content: string } | null;
+      if (artifact) {
+        setFullContent(artifact.content);
+        setExpanded(true);
+      }
+    } catch {
+      // Artifact loading failed silently
+    }
+  };
+
+  return (
+    <div className={`my-2 p-2 bg-bpt-bg rounded border text-xs ${
+      block.isError ? 'border-bpt-error/30' : 'border-bpt-success/30'
+    }`}>
+      <div className="flex items-center justify-between">
+        <span className={block.isError ? 'text-bpt-error' : 'text-bpt-success'}>
+          {block.isError ? 'Tool Error' : 'Tool Result'}
+        </span>
+        {block.fullArtifactPath && (
+          <button
+            onClick={handleExpand}
+            className="text-[10px] text-bpt-gold hover:underline"
+          >
+            {expanded ? 'Collapse' : 'View Full'}
+          </button>
+        )}
+      </div>
+      <pre className={`mt-1 text-bpt-text-dim overflow-x-auto whitespace-pre-wrap text-[11px] overflow-y-auto ${
+        expanded ? 'max-h-96' : 'max-h-40'
+      }`}>
+        {expanded && fullContent ? fullContent : block.content}
+      </pre>
+    </div>
+  );
 }
 
 function safeParse(json: string): Record<string, unknown> {

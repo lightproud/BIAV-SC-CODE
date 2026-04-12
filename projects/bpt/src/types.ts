@@ -99,7 +99,7 @@ export type StreamEvent =
   | { type: 'tool_use_start'; id: string; name: string }
   | { type: 'tool_use_delta'; text: string }
   | { type: 'tool_use_end' }
-  | { type: 'tool_result'; toolUseId: string; name: string; content: string; isError: boolean }
+  | { type: 'tool_result'; toolUseId: string; name: string; content: string; isError: boolean; artifactId?: string }
   | { type: 'assistant_continue' }
   | { type: 'message_end'; usage: TokenUsage }
   | { type: 'error'; error: string };
@@ -206,6 +206,11 @@ export const IPC = {
 
   // Cite
   CITE_INJECT: 'cite:inject',
+
+  // Artifacts
+  ARTIFACT_LIST: 'artifact:list',
+  ARTIFACT_GET: 'artifact:get',
+  ARTIFACT_DELETE: 'artifact:delete',
 
   // Shell
   WINDOW_MINIMIZE: 'window:minimize',
