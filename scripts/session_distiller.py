@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
-session_distiller.py — Claude Code SessionEnd transcript distiller (v0.3 md-only).
+session_distiller.py — Claude Code SessionEnd transcript distiller (v0.4 md+meta).
 
-Reads a Claude Code session JSONL transcript and writes a human-readable
-Markdown conversation record to memory/session-digests/{stamp}-{sid}.md.
-Committed to git as a public growth record. No API calls — pure structural
-parsing.
+Reads a Claude Code session JSONL transcript and writes:
+1. A human-readable Markdown conversation record (.md)
+2. A structured metadata file (.meta.json) for machine consumption
+
+The .meta.json enables the Memory Flywheel: session continuity chain,
+MemRL engagement tracking, and REM cross-session intelligence.
 
 Called by .claude/session-end-distill.sh when SessionEnd fires.
 
@@ -19,6 +21,7 @@ Usage:
 
 import argparse
 import json
+import re
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -175,6 +178,149 @@ def distill(transcript_path: Path, session_id: str, cwd: str) -> dict:
             'total_lines': total_lines,
             'parse_errors': parse_errors,
         },
+    }
+
+
+# ============================================================
+# Structured metadata extraction (P0: Memory Flywheel)
+# ============================================================
+
+# Decision-related patterns (Chinese + English)
+_DECISION_PATTERNS = [
+    re.compile(r'(?:选择|采用|改为|替代|决定|选用|换成|迁移到)\s*(.{5,80})'),
+    re.compile(r'(?:chose|selected|switched to|replaced .{2,30} with|decided to)\s+(.{5,80})', re.I),
+]
+
+# Open item patterns
+_OPEN_ITEM_PATTERNS = [
+    re.compile(r'(?:还需要|待完成|遗留|TODO|未完成|下一步|后续)\s*[:：]?\s*(.{5,100})'),
+    re.compile(r'(?:still need|remaining|TODO|left to do|next step)\s*[:：]?\s*(.{5,100})', re.I),
+]
+
+
+def _load_entity_dict() -> dict[str, str]:
+    """Load entity dictionary from knowledge graph for topic extraction.
+
+    Returns {surface_form: entity_id} mapping.
+    Falls back to a minimal built-in dict if knowledge_graph is unavailable.
+    """
+    try:
+        scripts_dir = Path(__file__).resolve().parent
+        sys.path.insert(0, str(scripts_dir))
+        from knowledge_graph import _build_entity_dict
+        return _build_entity_dict()
+    except Exception:
+        # Minimal fallback — most important concepts
+        return {
+            "银芯": "system:银芯", "BIAV-SC": "system:银芯",
+            "黑池": "system:黑池", "Wiki": "system:Wiki",
+            "BPT": "concept:BPT", "MCP": "concept:MCP",
+            "TF-IDF": "concept:TF-IDF", "记忆系统": "concept:记忆系统",
+            "知识图谱": "concept:知识图谱", "索引": "concept:索引",
+            "做梦": "system:做梦Agent", "日报": "system:日报",
+        }
+
+
+def extract_structured_metadata(raw_metadata: dict) -> dict:
+    """Extract structured metadata from raw distill() output.
+
+    Produces machine-readable session summary for:
+    - Session continuity chain (P1)
+    - MemRL engagement tracking (P3)
+    - REM cross-session intelligence (P4)
+    """
+    # --- Topic extraction ---
+    entity_dict = _load_entity_dict()
+    topic_counts: Counter = Counter()
+
+    # Scan user prompts + assistant texts for entity mentions
+    all_text = ' '.join(raw_metadata.get('user_prompts_sample', []))
+    all_text += ' ' + ' '.join(raw_metadata.get('assistant_texts_sample', []))
+    # Also scan bash descriptions for context
+    all_text += ' ' + ' '.join(raw_metadata.get('bash_descriptions', []))
+
+    for surface, eid in entity_dict.items():
+        if len(surface) < 2:
+            continue
+        count = all_text.count(surface)
+        if count > 0:
+            # Use entity_id as canonical topic name, strip type prefix
+            topic_name = eid.split(':', 1)[-1] if ':' in eid else eid
+            topic_counts[topic_name] += count
+
+    # Top topics (filter noise: only keep topics mentioned 2+ times)
+    topics = [t for t, c in topic_counts.most_common(15) if c >= 2]
+
+    # --- Decision extraction ---
+    decisions = []
+    user_texts = raw_metadata.get('user_prompts_sample', [])
+    asst_texts = raw_metadata.get('assistant_texts_sample', [])
+    for text in user_texts + asst_texts:
+        for pat in _DECISION_PATTERNS:
+            for m in pat.finditer(text):
+                content = m.group(1).strip().rstrip('。.，,')
+                if len(content) >= 5 and content not in [d['content'] for d in decisions]:
+                    decisions.append({'content': content[:120], 'source': 'conversation'})
+                    if len(decisions) >= 10:
+                        break
+
+    # --- Files engagement ladder ---
+    files_data = raw_metadata.get('files', {})
+    read_set = set(files_data.get('read', []))
+    edited_set = set(files_data.get('edited', []))
+    written_set = set(files_data.get('written', []))
+
+    # Infer committed files from git-related bash commands
+    committed_set = set()
+    for desc in raw_metadata.get('bash_descriptions', []):
+        if 'commit' in desc.lower() or 'git add' in desc.lower():
+            # Files that were edited AND there was a commit are likely committed
+            committed_set = edited_set.copy()
+            break
+
+    engagement = {}
+    all_files = read_set | edited_set | written_set
+    for fp in all_files:
+        level = 'read_only'
+        if fp in written_set or fp in edited_set:
+            level = 'read_and_edited'
+            if fp in committed_set:
+                level = 'read_edit_commit'
+        engagement[fp] = level
+
+    # --- Open items extraction ---
+    open_items = []
+    # Check last few assistant texts for unfinished items
+    last_texts = asst_texts[-5:] if len(asst_texts) > 5 else asst_texts
+    for text in last_texts:
+        for pat in _OPEN_ITEM_PATTERNS:
+            for m in pat.finditer(text):
+                item = m.group(1).strip().rstrip('。.，,')
+                if len(item) >= 5 and item not in open_items:
+                    open_items.append(item[:150])
+                    if len(open_items) >= 5:
+                        break
+
+    # --- Build structured metadata ---
+    duration_s = raw_metadata.get('duration_seconds')
+    return {
+        'schema_version': 1,
+        'session_id': raw_metadata['session_id'],
+        'timestamp_range': [
+            raw_metadata.get('earliest_ts'),
+            raw_metadata.get('latest_ts'),
+        ],
+        'duration_minutes': round(duration_s / 60, 1) if duration_s else None,
+        'git_branches': raw_metadata.get('git_branches', []),
+        'topics': topics,
+        'decisions': decisions,
+        'open_items': open_items,
+        'files_engagement': engagement,
+        'key_files': sorted(edited_set | written_set)[:20],
+        'search_queries': [],  # Populated if search tool calls detected
+        'turns': raw_metadata.get('turns', {}),
+        'tool_calls': raw_metadata.get('tool_calls', {}),
+        'user_prompts_digest': [p[:200] for p in raw_metadata.get('user_prompts_sample', [])[:20]],
     }
 
 
@@ -340,6 +486,81 @@ def render_markdown(transcript_path: Path, session_id: str, metadata: dict) -> s
     return '\n'.join(lines)
 
 
+def update_session_continuity(structured_meta: dict, cwd: str):
+    """Update memory/session-continuity.json with latest session info.
+
+    Maintains a rolling window of recent sessions + accumulated momentum.
+    """
+    repo = Path(cwd)
+    continuity_file = repo / 'memory' / 'session-continuity.json'
+
+    existing = {'last_session': None, 'recent_sessions': [], 'momentum': {
+        'topic_weights': {}, 'hot_files': [], 'total_sessions': 0,
+    }}
+    if continuity_file.exists():
+        try:
+            existing = json.loads(continuity_file.read_text(encoding='utf-8'))
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # Build session summary
+    session_summary = {
+        'id': structured_meta.get('session_id', '')[:8],
+        'timestamp': structured_meta.get('timestamp_range', [None, None])[1],
+        'duration_minutes': structured_meta.get('duration_minutes'),
+        'branch': (structured_meta.get('git_branches') or [''])[0],
+        'topics': structured_meta.get('topics', []),
+        'decisions': [d['content'] for d in structured_meta.get('decisions', [])],
+        'files_changed': structured_meta.get('key_files', []),
+        'open_items': structured_meta.get('open_items', []),
+    }
+
+    # Shift previous last_session into recent_sessions
+    recent = existing.get('recent_sessions', [])
+    if existing.get('last_session'):
+        recent.insert(0, existing['last_session'])
+    recent = recent[:9]  # Keep last 10 (including new last_session)
+
+    # Update momentum
+    momentum = existing.get('momentum', {'topic_weights': {}, 'hot_files': [], 'total_sessions': 0})
+    topic_weights = momentum.get('topic_weights', {})
+
+    # Decay all existing weights by 0.8
+    for k in list(topic_weights.keys()):
+        topic_weights[k] = round(topic_weights[k] * 0.8, 2)
+        if topic_weights[k] < 0.1:
+            del topic_weights[k]
+
+    # Add current session topics
+    for topic in structured_meta.get('topics', []):
+        topic_weights[topic] = round(topic_weights.get(topic, 0) + 1.0, 2)
+
+    # Hot files: files changed in recent sessions (frequency-based)
+    file_counter: Counter = Counter()
+    for s in [session_summary] + recent[:4]:
+        for f in s.get('files_changed', []):
+            file_counter[f] += 1
+    hot_files = [f for f, _ in file_counter.most_common(10) if _ >= 2]
+
+    updated = {
+        'last_session': session_summary,
+        'recent_sessions': recent,
+        'momentum': {
+            'topic_weights': dict(sorted(topic_weights.items(), key=lambda x: x[1], reverse=True)[:20]),
+            'hot_files': hot_files,
+            'total_sessions': momentum.get('total_sessions', 0) + 1,
+        },
+        'updated_at': datetime.now(timezone.utc).isoformat(),
+    }
+
+    continuity_file.parent.mkdir(parents=True, exist_ok=True)
+    continuity_file.write_text(
+        json.dumps(updated, ensure_ascii=False, indent=2),
+        encoding='utf-8',
+    )
+    return continuity_file
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument('--transcript', required=True, type=Path)
@@ -359,12 +580,27 @@ def main() -> int:
     sid_short = (args.session_id or 'unknown')[:8]
     base = f'{stamp}-{sid_short}'
 
-    # Markdown conversation record (the only committed output)
+    # 1. Markdown conversation record
     md_path = args.digest_dir / f'{base}.md'
     md_text = render_markdown(args.transcript, args.session_id, metadata)
     md_path.write_text(md_text, encoding='utf-8')
 
-    print(f'Wrote: {md_path.name}')
+    # 2. Structured metadata (P0: Memory Flywheel)
+    structured = extract_structured_metadata(metadata)
+    meta_path = args.digest_dir / f'{base}.meta.json'
+    meta_path.write_text(
+        json.dumps(structured, ensure_ascii=False, indent=2),
+        encoding='utf-8',
+    )
+
+    # 3. Update session continuity chain (P1)
+    try:
+        cont_path = update_session_continuity(structured, args.cwd)
+        print(f'Updated: {cont_path.name}')
+    except Exception as e:
+        print(f'WARNING: continuity update failed: {e}', file=sys.stderr)
+
+    print(f'Wrote: {md_path.name} + {meta_path.name}')
     print(
         f'  turns: user={metadata["turns"]["user"]} '
         f'assistant={metadata["turns"]["assistant"]} '
@@ -373,6 +609,9 @@ def main() -> int:
         f'edit={metadata["files"]["edited_count"]} '
         f'write={metadata["files"]["written_count"]}'
     )
+    print(f'  topics: {", ".join(structured["topics"][:5]) or "(none detected)"}')
+    print(f'  decisions: {len(structured["decisions"])}')
+    print(f'  open items: {len(structured["open_items"])}')
     return 0
 
 

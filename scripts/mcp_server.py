@@ -5,7 +5,8 @@ Exposes the Silver Core memory system as MCP tools,
 accessible by any AI tool (Claude Code, Qoder, Cursor, etc.).
 
 Tools: memory_search, graph_query, graph_related_files,
-       memory_utility, check_cache, recommend_context, rebuild_indexes
+       memory_utility, check_cache, recommend_context, rebuild_indexes,
+       store_facts, memory_writeback, session_briefing
 
 Usage:
   python scripts/mcp_server.py              # Start server (stdio transport)
@@ -39,6 +40,7 @@ except ImportError:
         {"name": "check_cache", "description": "查询预计算缓存"},
         {"name": "recommend_context", "description": "推荐上下文文件"},
         {"name": "rebuild_indexes", "description": "重建所有索引"},
+        {"name": "session_briefing", "description": "新会话智能简报"},
     ]
     print(json.dumps(tools, ensure_ascii=False, indent=2))
     sys.exit(0)
@@ -354,6 +356,33 @@ def memory_writeback(dry_run: bool = False) -> str:
         sys.argv.remove("--dry-run")
 
     return json.dumps(result, ensure_ascii=False, indent=2)
+
+
+# ============================================================
+# Tool 10: Session Briefing (Memory Flywheel)
+# ============================================================
+
+@mcp.tool()
+def session_briefing(role: str = "") -> str:
+    """新会话启动时调用，获取智能 briefing。
+
+    综合 6 个数据源生成动态简报：
+    - 上次会话回顾（做了什么、决策、遗留事项）
+    - 自上次以来的 git 变更
+    - 做梦系统发现（异常、趋势）
+    - 话题动量（最近焦点方向）
+    - 效用趋势（哪些文件正在升温/降温）
+    - 推荐上下文（基于动量的智能推荐）
+
+    替代被动读取 boot-snapshot.md，提供主动、上下文感知的会话初始化。
+
+    Args:
+        role: 会话角色（如 Code-wiki, Code-news），可选
+    """
+    from session_briefing import generate_briefing, render_markdown as render_brief
+
+    briefing = generate_briefing(role=role)
+    return render_brief(briefing)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,25 @@
+{
+  "last_session": {
+    "id": "d6db07b0",
+    "timestamp": "2026-04-12T15:28:30+00:00",
+    "duration_minutes": 62,
+    "branch": "claude/memory-reflection-management-TEfTh",
+    "topics": ["记忆系统", "TF-IDF", "索引", "知识图谱", "银芯"],
+    "decisions": ["向量索引压缩为gzip并提交git", "知识图谱改为增量更新", "REM周反思完整实现"],
+    "files_changed": ["scripts/memory_search.py", "scripts/dream.py", "scripts/knowledge_graph.py", "scripts/mcp_server.py"],
+    "open_items": ["MemRL扩展跟踪范围", "Reflexion语义分析", "选择性记忆执行遗忘"]
+  },
+  "recent_sessions": [],
+  "momentum": {
+    "topic_weights": {
+      "记忆系统": 4.0,
+      "TF-IDF": 2.0,
+      "索引": 2.0,
+      "知识图谱": 2.0,
+      "银芯": 1.5
+    },
+    "hot_files": ["scripts/memory_search.py", "scripts/dream.py"],
+    "total_sessions": 12
+  },
+  "updated_at": "2026-04-12T16:10:00+00:00"
+}
