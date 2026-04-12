@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-12T09:35:07.931746+00:00",
+  "archived_at": "2026-04-12T11:50:55.032077+00:00",
   "source": "bilibili",
-  "item_count": 49,
+  "item_count": 50,
   "items": [
     {
       "source": "bilibili",
@@ -827,6 +827,24 @@
       "content_type": "image",
       "metadata": {
         "play": 1,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-12T10:00:00+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌第五期",
+      "summary": "耕司尾随郁纪进到了间房子，在那里，耕司愈发接近真相",
+      "url": "https://www.bilibili.com/video/BV121DvBKEB5",
+      "author": "KiKi君Smith",
+      "engagement": 0,
+      "media_url": "https://i1.hdslb.com/bfs/archive/3b49972d462de375df119f4deb07d5e45175dba3.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 0,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
