@@ -498,19 +498,23 @@ def backfill_naver_cafe(state: dict, max_pages: int) -> int:
 
                 items = []
                 for article in articles:
-                    items.append(_make_item(
+                    real_time = article.get("writeDateTimestamp", "")
+                    time_str = real_time or datetime.now(timezone.utc).isoformat()
+                    item = _make_item(
                         title=article.get("subject", ""),
                         summary=article.get("summary", ""),
                         source="naver_cafe",
                         platform_region="kr",
-                        time_str=article.get("writeDateTimestamp",
-                                             datetime.now(timezone.utc).isoformat()),
+                        time_str=time_str,
                         url=article.get("articleUrl", ""),
                         engagement=article.get("readCount", 0) + article.get("commentCount", 0),
                         is_hot=article.get("readCount", 0) > 500,
                         author=article.get("writerNickName", ""),
                         lang="ko",
-                    ))
+                    )
+                    if not real_time:
+                        item["time_is_approximate"] = True
+                    items.append(item)
 
                 _archive_items('naver_cafe', items)
                 total += len(items)
@@ -612,6 +616,13 @@ def backfill_ruliweb(state: dict, max_pages: int) -> int:
                 html = resp.text
 
                 items = []
+                # Extract dates near each search result (Ruliweb shows dates like "YYYY.MM.DD")
+                result_dates = _re.findall(
+                    r'class="[^"]*date[^"]*"[^>]*>([^<]+)<',
+                    html,
+                )
+
+                result_idx = 0
                 for match in _re.finditer(
                     r'class="subject_link"[^>]*href="([^"]+)"[^>]*>\s*([^<]+?)\s*</a>',
                     html
@@ -622,18 +633,37 @@ def backfill_ruliweb(state: dict, max_pages: int) -> int:
                         continue
                     if not url.startswith("http"):
                         url = f"https://bbs.ruliweb.com{url}"
-                    items.append(_make_item(
+
+                    time_str = datetime.now(timezone.utc).isoformat()
+                    time_approx = True
+                    if result_idx < len(result_dates):
+                        date_text = result_dates[result_idx].strip()
+                        date_m = _re.match(r'(\d{4})\.(\d{1,2})\.(\d{1,2})', date_text)
+                        if date_m:
+                            try:
+                                dt = datetime(int(date_m.group(1)), int(date_m.group(2)),
+                                              int(date_m.group(3)), tzinfo=timezone.utc)
+                                time_str = dt.isoformat()
+                                time_approx = False
+                            except ValueError:
+                                pass
+
+                    item = _make_item(
                         title=title,
                         summary="",
                         source="ruliweb",
                         platform_region="kr",
-                        time_str=datetime.now(timezone.utc).isoformat(),
+                        time_str=time_str,
                         url=url,
                         engagement=0,
                         is_hot=False,
                         author="",
                         lang="ko",
-                    ))
+                    )
+                    if time_approx:
+                        item["time_is_approximate"] = True
+                    items.append(item)
+                    result_idx += 1
 
                 if not items:
                     ps['done'] = True
@@ -678,7 +708,16 @@ def backfill_weixin(state: dict, max_pages: int) -> int:
                 )
                 html = resp.text
 
+                # Extract Sogou timestamps (timeConvert('EPOCH') or data-t="EPOCH")
+                sogou_timestamps = _re.findall(
+                    r"(?:timeConvert\(['\"](\d{10})['\"]|data-t=['\"](\d{10})['\"]"
+                    r"|lastModified['\"]?\s*[:=]\s*['\"]?(\d{10}))",
+                    html,
+                )
+                ts_list = [int(t1 or t2 or t3) for t1, t2, t3 in sogou_timestamps]
+
                 items = []
+                result_idx = 0
                 for match in _re.finditer(
                     r'<h3>.*?<a[^>]*href="([^"]+)"[^>]*>(.+?)</a>',
                     html, _re.DOTALL
@@ -687,18 +726,33 @@ def backfill_weixin(state: dict, max_pages: int) -> int:
                     title = _re.sub(r'<[^>]+>', '', title_html).strip()
                     if not title:
                         continue
-                    items.append(_make_item(
+
+                    time_str = datetime.now(timezone.utc).isoformat()
+                    time_approx = True
+                    if result_idx < len(ts_list):
+                        try:
+                            dt = datetime.fromtimestamp(ts_list[result_idx], tz=timezone.utc)
+                            time_str = dt.isoformat()
+                            time_approx = False
+                        except (ValueError, OSError):
+                            pass
+
+                    item = _make_item(
                         title=f"[微信] {title}",
                         summary="",
                         source="weixin",
                         platform_region="cn",
-                        time_str=datetime.now(timezone.utc).isoformat(),
+                        time_str=time_str,
                         url=url,
                         engagement=0,
                         is_hot=False,
                         author="",
                         lang="zh",
-                    ))
+                    )
+                    if time_approx:
+                        item["time_is_approximate"] = True
+                    items.append(item)
+                    result_idx += 1
 
                 if not items:
                     ps['done'] = True

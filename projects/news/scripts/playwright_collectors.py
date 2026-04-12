@@ -27,6 +27,144 @@ except ImportError:
 TIMEOUT_MS = 30000
 
 
+def _parse_relative_time(text: str) -> tuple[str, bool]:
+    """Parse relative/absolute time strings from various platforms into ISO datetime.
+
+    Handles:
+    - Chinese: "x分钟前", "x小时前", "x天前", "刚刚", "昨天", "前天"
+    - Korean: "x분 전", "x시간 전", "x일 전"
+    - Japanese: "x分前", "x時間前", "x日前"
+    - English: "x minutes ago", "x hours ago", "x days ago"
+    - Absolute: "YYYY-MM-DD", "YYYY/MM/DD", "MM-DD", "MM/DD"
+    - Arca.live format: "HH:MM", "MM.DD", "YYYY.MM.DD"
+
+    Returns (iso_string, is_approximate). is_approximate=True only when
+    the text is empty or completely unparseable.
+    """
+    now = datetime.now(timezone.utc)
+    if not text or not text.strip():
+        return now.isoformat(), True
+
+    s = text.strip()
+
+    # Try ISO format first
+    try:
+        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return dt.isoformat(), False
+    except (ValueError, TypeError):
+        pass
+
+    # Chinese relative: "刚刚"
+    if s == "刚刚":
+        return now.isoformat(), False
+
+    # Chinese: "x分钟前", "x小时前", "x天前"
+    m = re.match(r"(\d+)\s*分钟前", s)
+    if m:
+        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*小时前", s)
+    if m:
+        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*天前", s)
+    if m:
+        return (now - timedelta(days=int(m.group(1)))).isoformat(), False
+
+    # Korean: "x분 전", "x시간 전", "x일 전"
+    m = re.match(r"(\d+)\s*분\s*전", s)
+    if m:
+        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*시간\s*전", s)
+    if m:
+        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*일\s*전", s)
+    if m:
+        return (now - timedelta(days=int(m.group(1)))).isoformat(), False
+
+    # Japanese: "x分前", "x時間前", "x日前"
+    m = re.match(r"(\d+)\s*分前", s)
+    if m:
+        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*時間前", s)
+    if m:
+        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
+    m = re.match(r"(\d+)\s*日前", s)
+    if m:
+        return (now - timedelta(days=int(m.group(1)))).isoformat(), False
+
+    # English: "x minutes/hours/days/weeks ago", "Streamed x ago"
+    m = re.match(r"(?:streamed\s+)?(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago", s, re.IGNORECASE)
+    if m:
+        num = int(m.group(1))
+        unit = m.group(2).lower()
+        delta_map = {
+            "second": timedelta(seconds=num), "minute": timedelta(minutes=num),
+            "hour": timedelta(hours=num), "day": timedelta(days=num),
+            "week": timedelta(weeks=num), "month": timedelta(days=num * 30),
+            "year": timedelta(days=num * 365),
+        }
+        return (now - delta_map.get(unit, timedelta())).isoformat(), False
+
+    # "昨天" / "前天"
+    if "昨天" in s:
+        return (now - timedelta(days=1)).isoformat(), False
+    if "前天" in s:
+        return (now - timedelta(days=2)).isoformat(), False
+
+    # Arca.live style: "YYYY.MM.DD" or "MM.DD"
+    m = re.match(r"(\d{4})\.(\d{1,2})\.(\d{1,2})", s)
+    if m:
+        try:
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+    m = re.match(r"(\d{1,2})\.(\d{1,2})\s*$", s)
+    if m:
+        try:
+            dt = now.replace(month=int(m.group(1)), day=int(m.group(2)),
+                             hour=0, minute=0, second=0, microsecond=0)
+            if dt > now:
+                dt = dt.replace(year=dt.year - 1)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    # "YYYY-MM-DD" or "YYYY/MM/DD"
+    m = re.match(r"(\d{4})[-/](\d{1,2})[-/](\d{1,2})", s)
+    if m:
+        try:
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    # "MM-DD" or "MM/DD" (current year)
+    m = re.match(r"(\d{1,2})[-/](\d{1,2})\s*$", s)
+    if m:
+        try:
+            dt = now.replace(month=int(m.group(1)), day=int(m.group(2)),
+                             hour=0, minute=0, second=0, microsecond=0)
+            if dt > now:
+                dt = dt.replace(year=dt.year - 1)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    # Arca.live time-only: "HH:MM" (today)
+    m = re.match(r"(\d{1,2}):(\d{2})\s*$", s)
+    if m:
+        try:
+            dt = now.replace(hour=int(m.group(1)), minute=int(m.group(2)),
+                             second=0, microsecond=0)
+            if dt > now:
+                dt -= timedelta(days=1)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    return now.isoformat(), True
+
+
 def fetch_nga_playwright() -> List[Dict]:
     """
     Fetch NGA forum posts for Morimens.
@@ -76,27 +214,34 @@ def fetch_nga_playwright() -> List[Dict]:
                     if href and not href.startswith('http'):
                         href = f'https://bbs.nga.cn{href}'
                     
+                    # TD 2: 发帖时间
+                    post_time_text = tds[2].inner_text().strip() if len(tds) > 2 else ''
+                    parsed_time, time_approx = _parse_relative_time(post_time_text)
+
                     # TD 3: 作者
                     author = ''
                     author_text = tds[3].inner_text()
                     lines = author_text.split('\n')
                     if len(lines) > 1:
                         author = lines[-1].strip()
-                    
+
                     if len(title) < 3:
                         continue
-                    
-                    items.append({
+
+                    item = {
                         'title': title[:100],
                         'summary': '',
                         'source': 'nga',
-                        'time': datetime.now(timezone.utc).isoformat(),
+                        'time': parsed_time,
                         'url': href,
                         'engagement': reply_count,
                         'is_hot': reply_count > 50,
                         'author': author,
                         'tags': ['nga'],
-                    })
+                    }
+                    if time_approx:
+                        item['time_is_approximate'] = True
+                    items.append(item)
                 except Exception as e:
                     logger.debug(f'NGA 解析失败: {e}')
                     continue
@@ -144,6 +289,13 @@ def fetch_weibo_playwright() -> List[Dict]:
                     if len(text) < 10:
                         continue
                     
+                    # 时间
+                    time_el = article.query_selector('time, [class*="time"], [class*="date"]')
+                    time_text = ''
+                    if time_el:
+                        time_text = time_el.get_attribute('datetime') or time_el.inner_text().strip()
+                    parsed_time, time_approx = _parse_relative_time(time_text)
+
                     # 链接
                     link_el = article.query_selector('a[href*="status"]')
                     href = ''
@@ -151,18 +303,21 @@ def fetch_weibo_playwright() -> List[Dict]:
                         href = link_el.get_attribute('href') or ''
                         if href and not href.startswith('http'):
                             href = f'https://m.weibo.cn{href}'
-                    
-                    items.append({
+
+                    item = {
                         'title': text[:80],
                         'summary': text[:500],
                         'source': 'weibo',
-                        'time': datetime.now(timezone.utc).isoformat(),
+                        'time': parsed_time,
                         'url': href,
                         'engagement': 0,
                         'is_hot': False,
                         'author': '',
                         'tags': ['weibo'],
-                    })
+                    }
+                    if time_approx:
+                        item['time_is_approximate'] = True
+                    items.append(item)
                 except:
                     continue
             
@@ -210,12 +365,13 @@ def fetch_taptap_playwright() -> List[Dict]:
                     if href and '/app/' in href:
                         if not href.startswith('http'):
                             href = f'https://www.taptap.cn{href}'
-                        
+
                         items.append({
                             'title': f'[TapTap] {title or "忘却前夜"}',
                             'summary': '',
                             'source': 'taptap',
                             'time': datetime.now(timezone.utc).isoformat(),
+                            'time_is_approximate': True,
                             'url': href,
                             'engagement': 0,
                             'is_hot': False,
@@ -282,6 +438,7 @@ def fetch_dcinside_playwright() -> List[Dict]:
                             'summary': '',
                             'source': 'dcinside',
                             'time': datetime.now(timezone.utc).isoformat(),
+                            'time_is_approximate': True,
                             'url': href,
                             'engagement': 0,
                             'is_hot': False,
@@ -341,11 +498,12 @@ def fetch_arca_live_playwright() -> List[Dict]:
                         if href and not href.startswith('http'):
                             href = f'https://arca.live{href}'
 
-                        items.append({
+                        parsed_time, time_approx = _parse_relative_time(time_text)
+                        item = {
                             'title': title[:100],
                             'summary': '',
                             'source': 'arca_live',
-                            'time': time_text or datetime.now(timezone.utc).isoformat(),
+                            'time': parsed_time,
                             'url': href,
                             'engagement': 0,
                             'is_hot': (mode == 'best'),
@@ -353,7 +511,10 @@ def fetch_arca_live_playwright() -> List[Dict]:
                             'tags': ['arca_live'],
                             'lang': 'ko',
                             'platform_region': 'kr',
-                        })
+                        }
+                        if time_approx:
+                            item['time_is_approximate'] = True
+                        items.append(item)
                     logger.info(f'Arca.live PW mode={mode or "latest"}: {len(items)} total')
                 except Exception as e:
                     logger.warning(f'Arca.live PW mode={mode or "latest"} failed: {e}')
@@ -403,6 +564,7 @@ def fetch_ruliweb_playwright() -> List[Dict]:
                             'summary': '',
                             'source': 'ruliweb',
                             'time': datetime.now(timezone.utc).isoformat(),
+                            'time_is_approximate': True,
                             'url': href,
                             'engagement': 0,
                             'is_hot': False,
@@ -460,6 +622,7 @@ def fetch_fivech_playwright() -> List[Dict]:
                             'summary': '',
                             'source': 'fivech',
                             'time': datetime.now(timezone.utc).isoformat(),
+                            'time_is_approximate': True,
                             'url': href,
                             'engagement': 0,
                             'is_hot': False,
@@ -520,6 +683,7 @@ def fetch_bahamut_playwright() -> List[Dict]:
                             'summary': '',
                             'source': 'bahamut',
                             'time': datetime.now(timezone.utc).isoformat(),
+                            'time_is_approximate': True,
                             'url': href,
                             'engagement': 0,
                             'is_hot': False,
