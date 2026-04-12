@@ -14,6 +14,8 @@ interface StoreSchema {
     baseUrl: string;
     apiKey: string;
     model: string;
+    /** 'claude' (default) or 'openai'. Determines SDK and API format. */
+    provider?: string;
   };
   currentGear: 'chat' | 'work';
   conversations: Array<{
