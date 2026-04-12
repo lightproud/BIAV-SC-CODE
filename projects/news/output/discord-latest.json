@@ -1,17 +1,34 @@
 {
-  "collected_at": "2026-04-12T09:34:54.893621+00:00",
+  "collected_at": "2026-04-12T11:50:49.349537+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-04-12T09:34:14.682093+00:00",
+      "time": "2026-04-12T11:50:02.466613+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-12)",
-      "summary": "今日 3,502 条消息，162 位活跃用户，309 次反应。热门频道：🔸morimens-game-chat(2117)、🔸綜合討論(362)、🔸general-chat(264)、🔸canal-português(250)、🔸русский-канал(175)",
+      "summary": "今日 5,096 条消息，162 位活跃用户，471 次反应。热门频道：🔸morimens-game-chat(3017)、🔸綜合討論(469)、🔸general-chat(360)、🔸game-question(319)、🔸canal-português(250)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 3502
+      "engagement": 5096
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-12T07:31:49.728000+00:00",
+      "lang": "",
+      "title": "[DC] willsalvador@🔸morimens-game-chat: https://x.com/i/status/2011563763795968194",
+      "summary": "https://x.com/i/status/2011563763795968194\n  └ arisuu0604: yes i see\n-Gramona\n  └ crowlov1: damn, the helot image is messed up",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492789324846989362",
+      "author": "willsalvador",
+      "engagement": 37,
+      "metadata": {
+        "reactions": "🔥×8 Aurita_pinch×3",
+        "reply_count": 2,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
     },
     {
       "source": "discord",
@@ -31,6 +48,40 @@
         "attachment_urls": [
           "https://cdn.discordapp.com/attachments/1131839817982947429/1492713522411470949/Screenshot_2026-04-12-10-29-56-338_com.qookkagames.z1.gp.hk.jpg?ex=69dc554d&is=69db03cd&hm=d9de49c093a93a42ff10ab0d2a663626580985638a245217b15d33f71190cd34&"
         ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-12T06:18:21.538000+00:00",
+      "lang": "",
+      "title": "[DC] undeterredhomo@🔸morimens-game-chat: Erm future cantos is literally dante and virgilius making out tf u mean",
+      "summary": "Erm future cantos is literally dante and virgilius making out tf u mean\n  └ sr_sector7: Whatever you say bro\n  └ masian131: insider info over here\n  └ xiii_c: Scandalous\n  └ not_kathigu_ra: The April Fools event was foreshadowing\n  └ cqteiie: Dante pls make out with Sinclair or yisang next",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492770835558039675",
+      "author": "undeterredhomo",
+      "engagement": 16,
+      "metadata": {
+        "reactions": "🔥×2",
+        "reply_count": 5,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-12T07:22:23.997000+00:00",
+      "lang": "",
+      "title": "[DC] ponponnyaru@🔸綜合討論: 现在是延延又延延",
+      "summary": "现在是延延又延延",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492786951999328338",
+      "author": "ponponnyaru",
+      "engagement": 15,
+      "metadata": {
+        "reactions": "🌿×5",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
         "channel": "🔸綜合討論"
       }
     },
@@ -57,6 +108,27 @@
     },
     {
       "source": "discord",
+      "time": "2026-04-12T07:29:04.741000+00:00",
+      "lang": "",
+      "title": "[DC] universe.dark@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: 4a035067fa7b1b5c.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492788632841621584",
+      "author": "universe.dark",
+      "engagement": 13,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1492788632606605373/4a035067fa7b1b5c.png?ex=69dc9b40&is=69db49c0&hm=7f1d481c3577b3f72d5cff881ba8db4085f19ab3d400a7b9fc203ba33f0cfe8c&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🙄×2 ❓×2",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1492788632606605373/4a035067fa7b1b5c.png?ex=69dc9b40&is=69db49c0&hm=7f1d481c3577b3f72d5cff881ba8db4085f19ab3d400a7b9fc203ba33f0cfe8c&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
       "time": "2026-04-12T04:12:34.776000+00:00",
       "lang": "",
       "title": "[DC] shio2311@🔸morimens-game-chat: this game isnt generous enough because i lost all my pulls after pulling for e3",
@@ -66,6 +138,23 @@
       "engagement": 13,
       "metadata": {
         "reactions": "Winkle_frustrated×3",
+        "reply_count": 2,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-12T06:30:51.203000+00:00",
+      "lang": "",
+      "title": "[DC] shortcombos@🔸morimens-game-chat: Outer Wilds",
+      "summary": "Outer Wilds\n  └ xiii_c: One of the best games ever made\n  └ not_kathigu_ra: OUTER WILDS RAAAAHHH",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492773979881214093",
+      "author": "shortcombos",
+      "engagement": 13,
+      "metadata": {
+        "reactions": "🔥×3",
         "reply_count": 2,
         "attachment_count": 0,
         "attachment_urls": [],
@@ -163,128 +252,44 @@
     },
     {
       "source": "discord",
-      "time": "2026-04-12T01:29:47.822000+00:00",
+      "time": "2026-04-12T08:42:48.499000+00:00",
       "lang": "",
-      "title": "[DC] arisuu0604@🔸morimens-game-chat: i have problem with sleep, but when i download r99, i dont have sleep problem an",
-      "summary": "i have problem with sleep, but when i download r99, i dont have sleep problem anymore\n  └ crowlov1: Haha",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492698216570028094",
-      "author": "arisuu0604",
+      "title": "[DC] andy1123@🔸綜合討論: 今天也終於成功了",
+      "summary": "今天也終於成功了\n[附件: image.png, image.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492807187427360798",
+      "author": "andy1123",
       "engagement": 11,
-      "metadata": {
-        "reactions": "🗣️×2 😭×1",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T01:24:11.023000+00:00",
-      "lang": "",
-      "title": "[DC] pxld_6.1@🔸綜合討論: 還在觀望 ~~這遊戲有沒有可能活不過三週年~~",
-      "summary": "還在觀望\n~~這遊戲有沒有可能活不過三週年~~\n  └ xingxiu_0209: 不至於\n看起來聯動還是蠻有說法的\n  └ yy42974466: 額 姑且相信可以吧\n  └ sense25.: 不可能，这个制作成本已经很低了\n  └ fool6692: 現在營收好像還行\n聯動出來肯定又爆拉一波營收\n撐一年應該唔沒問題\n看貓畫不畫餅\n  └ ponponnyaru: 萨摩说投资已经能撑到四周年了",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492696803932639403",
-      "author": "pxld_6.1",
-      "engagement": 10,
-      "metadata": {
-        "reactions": "",
-        "reply_count": 5,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T01:25:01.203000+00:00",
-      "lang": "",
-      "title": "[DC] yy42974466@🔸綜合討論: (附件/嵌入)",
-      "summary": "[附件: image.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492697014402814162",
-      "author": "yy42974466",
-      "engagement": 10,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1492697014062940330/image.png?ex=69dc45ed&is=69daf46d&hm=fdea6280dff28380420f3390981a0559f5957b921490083055203263d83e3064&",
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1492807186659676290/image.png?ex=69dcac88&is=69db5b08&hm=f7af95c32008f9cc3dcde708a639e5ea77a4d3e66f0322ed23a1a29530963f84&",
       "content_type": "image",
       "metadata": {
         "reactions": "🛐×3",
         "reply_count": 0,
-        "attachment_count": 1,
+        "attachment_count": 2,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1492697014062940330/image.png?ex=69dc45ed&is=69daf46d&hm=fdea6280dff28380420f3390981a0559f5957b921490083055203263d83e3064&"
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1492807186659676290/image.png?ex=69dcac88&is=69db5b08&hm=f7af95c32008f9cc3dcde708a639e5ea77a4d3e66f0322ed23a1a29530963f84&",
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1492807187117117491/image.png?ex=69dcac88&is=69db5b08&hm=9ca369ab9bc2bb87a34f7debb10b52a445139756dc164f639f64936c5851724a&"
         ],
         "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-04-12T00:38:45.395000+00:00",
+      "time": "2026-04-12T09:01:47.576000+00:00",
       "lang": "",
-      "title": "[DC] yoobee.@🔸morimens-game-chat: (附件/嵌入)",
-      "summary": "[附件: image.png]\n  └ blecnes.: good breakpoint \n  └ angbak: Oh HAHA\n  └ aurora3981: I see gelot horla thais aigis. This will clear the whole game if you get 2 more enlightenment on gelot and thais",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492685371820212377",
-      "author": "yoobee.",
-      "engagement": 10,
-      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492685371559907609/image.png?ex=69dc3b15&is=69dae995&hm=7dc6e755cf4f3cc91d76dac5a9349074498ca43e05b458698b01ba00d7f5a041&",
+      "title": "[DC] mishmeria_.@🔸綜合討論: 碰牆了 9-12不管怎麼打都沒辦法走到王前",
+      "summary": "碰牆了 9-12不管怎麼打都沒辦法走到王前\n[附件: image.png]\n  └ theal8893: 帶R卡\n  └ 0.0._.0_0.: 還是說你刻印刻哪幾張？",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492811965062447176",
+      "author": "mishmeria_.",
+      "engagement": 11,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1492811964756394074/image.png?ex=69dcb0fb&is=69db5f7b&hm=5873b5943962b92f0997da3a95d61c0cd304047bf368b82c1cd8fb5dad4040a2&",
       "content_type": "image",
       "metadata": {
-        "reactions": "🔥×1",
-        "reply_count": 3,
+        "reactions": "🛐×2",
+        "reply_count": 2,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1170692781216378960/1492685371559907609/image.png?ex=69dc3b15&is=69dae995&hm=7dc6e755cf4f3cc91d76dac5a9349074498ca43e05b458698b01ba00d7f5a041&"
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1492811964756394074/image.png?ex=69dcb0fb&is=69db5f7b&hm=5873b5943962b92f0997da3a95d61c0cd304047bf368b82c1cd8fb5dad4040a2&"
         ],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T01:35:50.469000+00:00",
-      "lang": "",
-      "title": "[DC] yy42974466@🔸綜合討論: 南通前夜還差不多",
-      "summary": "南通前夜還差不多",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492699737621663935",
-      "author": "yy42974466",
-      "engagement": 9,
-      "metadata": {
-        "reactions": "🌿×2 ✅×1",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T03:24:49.211000+00:00",
-      "lang": "",
-      "title": "[DC] universe.dark@🔸綜合討論: 玩忘卻的真的很有錢(除了我 一堆課+12",
-      "summary": "玩忘卻的真的很有錢(除了我\n一堆課+12",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492727163093385396",
-      "author": "universe.dark",
-      "engagement": 9,
-      "metadata": {
-        "reactions": "🛐×1 ❓×2",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T04:02:15.243000+00:00",
-      "lang": "",
-      "title": "[DC] water_heart@🔸綜合討論: 我們來試試沒皮沒熔朵的莉茲怎麼樣",
-      "summary": "我們來試試沒皮沒熔朵的莉茲怎麼樣",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492736583634255923",
-      "author": "water_heart",
-      "engagement": 9,
-      "metadata": {
-        "reactions": "jenkins_processing×1 🛐×2",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
         "channel": "🔸綜合討論"
       }
     }
