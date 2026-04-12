@@ -105,6 +105,28 @@ REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
 
 
 # ============================================================
+# HTTP retry helper
+# ============================================================
+
+def _get_with_retry(url, retries=2, backoff=1.0, **kwargs):
+    """GET with simple retry on transient failures (5xx, timeout, connection error)."""
+    kwargs.setdefault('timeout', 15)
+    last_exc = None
+    for attempt in range(retries + 1):
+        try:
+            resp = requests.get(url, **kwargs)
+            if resp.status_code < 500 or attempt == retries:
+                return resp
+            last_exc = Exception(f'HTTP {resp.status_code}')
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+            last_exc = e
+            if attempt == retries:
+                raise
+        time.sleep(backoff * (attempt + 1))
+    raise last_exc  # unreachable but satisfies type checker
+
+
+# ============================================================
 # Data Validation & Sanitization
 # ============================================================
 
@@ -1990,6 +2012,30 @@ def run():
 
     # Validate and sanitize all items
     all_news = validate_all_news(all_news)
+
+    # ── 补齐 lang / platform_region（aggregator 早期未设这两个字段）──
+    _SOURCE_META = {
+        'reddit':           ('en', 'global'),
+        'bilibili':         ('zh', 'cn'),
+        'twitter':          ('',   'global'),   # lang from tweet API if available
+        'nga':              ('zh', 'cn'),
+        'taptap':           ('zh', 'cn'),
+        'steam_review':     ('',   'global'),   # lang from review.language
+        'steam':            ('',   'global'),
+        'official':         ('en', 'global'),
+        'steam_discussion': ('en', 'global'),
+        'youtube':          ('',   'global'),
+        'discord':          ('',   'global'),
+        'weibo':            ('zh', 'cn'),
+        'xiaohongshu':      ('zh', 'cn'),
+    }
+    for item in all_news:
+        src = item.get('source', '')
+        default_lang, default_region = _SOURCE_META.get(src, ('', 'global'))
+        if not item.get('lang'):
+            item['lang'] = default_lang
+        if not item.get('platform_region'):
+            item['platform_region'] = default_region
 
     # Deduplicate by URL (normalized) + title similarity
     seen_keys = set()

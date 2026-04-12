@@ -95,12 +95,15 @@ def convert_item(item: dict) -> dict:
     if item.get('media_url'):
         converted['media_url'] = item['media_url']
         converted['content_type'] = item.get('content_type', 'image')
+    # Preserve metadata (comments, play counts, reactions, etc.)
+    if item.get('metadata') and isinstance(item['metadata'], dict):
+        converted['metadata'] = item['metadata']
     return converted
 
 
 def dedup_key(item: dict) -> str:
-    """Generate dedup key for an item."""
-    url = item.get('url', '').strip()
+    """Generate dedup key for an item. URL-first, title fallback — aligned with aggregator."""
+    url = (item.get('url', '') or '').replace('http://', 'https://').rstrip('/').strip()
     if url:
         return url
     return f"{item.get('title', '')[:60]}|{item.get('source', '')}|{item.get('author', '')}"

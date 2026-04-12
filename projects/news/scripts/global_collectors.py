@@ -38,7 +38,7 @@ logger = logging.getLogger("collector")
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
 
-HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
+HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "48"))
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
 
@@ -2351,13 +2351,17 @@ def fetch_gacharevenue():
 # ─── 去重 & 输出 ──────────────────────────────────────────
 
 def deduplicate(items):
-    """基于标题相似度的简单去重。"""
+    """URL 优先 + title 回退的去重。与 aggregator / collect_global 策略对齐。"""
     seen = set()
     unique = []
     for item in items:
-        key = item["title"].lower().strip()[:60]
+        url = (item.get("url") or "").replace("http://", "https://").rstrip("/")
+        title_key = item.get("title", "").lower().strip()[:60]
+        key = url if url else title_key
         if key and key not in seen:
             seen.add(key)
+            if title_key:
+                seen.add(title_key)  # 同时记录 title 防止同内容不同 URL
             unique.append(item)
     return unique
 
