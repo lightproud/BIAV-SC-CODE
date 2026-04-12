@@ -1,36 +1,46 @@
 {
   "date": "2026-04-12",
-  "messages": 8786,
+  "messages": 11347,
   "unique_authors": 162,
-  "reactions_total": 886,
-  "attachments": 354,
+  "reactions_total": 1111,
+  "attachments": 457,
   "channel_activity": {
-    "🔸綜合討論": 902,
-    "🔸morimens-game-chat": 4819,
-    "🔸한국어-채팅방": 17,
-    "🔸chaîne-française": 22,
-    "🔸русский-канал": 191,
-    "🔸phòng-chat-tiếng-việt": 356,
-    "🔸canal-español": 34,
-    "🔸canal-português": 267,
-    "🔸ruang-obrolan-indonesia": 163,
-    "🔸team-building": 185,
-    "🔸general-chat": 423,
-    "🔸邀请码互助┊swap-invitation-codes": 20,
-    "🔸game-question": 922,
-    "🔸机器人命令┊bot-commands": 19,
-    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 18,
+    "🔸綜合討論": 920,
+    "🔸morimens-game-chat": 6579,
+    "🔸晒卡分享": 1,
+    "🔸课间休息闲聊": 28,
+    "🔸한국어-채팅방": 23,
+    "🔸chaîne-française": 24,
+    "🔸русский-канал": 305,
+    "🔸phòng-chat-tiếng-việt": 601,
+    "🔸canal-español": 43,
+    "🔸canal-português": 268,
+    "🔸ruang-obrolan-indonesia": 204,
+    "🔸ห้องสนทนาภาษาไทย": 4,
+    "🔸team-building": 210,
+    "🔸general-chat": 459,
+    "🔸邀请码互助┊swap-invitation-codes": 30,
+    "🔸game-question": 1186,
+    "🔸机器人命令┊bot-commands": 23,
+    "🔸erica-playground": 2,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 20,
+    "只是堆点摸鱼": 2,
+    "Trouble recovering account": 1,
+    "✅「已回答」台服dc的詐騙帳號": 2,
+    "忘却前夜OST：莫丝EP·涡心暗潮": 1,
+    "Morimens Fanarts": 1,
+    "some doodles": 3,
+    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 8,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 2,
+    "融災請教": 70,
     "Small potential Miryam buff": 2,
     "✅「Answered」Possibilities of Doresain kit rework": 6,
     "horlaposting!!!!!!!": 1,
     "V2.4.3 fanart submission": 1,
-    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 3,
-    "融災請教": 68,
     "问一下新人能怎么组队": 32,
     "問問": 8,
     "🔸traphase": 27,
     "Traphase": 3,
-    "🔸课间休息闲聊": 26,
     "🔸日本語チャンネル": 3,
     "🔸lore-chat": 212,
     "我的心，獻給你 || 杜勒赛因x西维斯特": 4,
@@ -38,21 +48,21 @@
     "On kill effects with tentacles and corrosion": 1,
     "My heart for yours || Doresain x Sylvester": 1,
     "7 times 7 equality 49": 3,
-    "some doodles": 2,
     "【English Translation】Opinions Collection": 4,
     "家人们，新人刚入坑该怎么配队哇QwQ": 13,
-    "🔸ห้องสนทนาภาษาไทย": 1,
-    "🔸erica-playground": 1,
     "打算開一個圖樓可能圖之後就丟這裡了": 1,
     "Get Auto enable for dtide": 1,
     "守密人頭像": 1,
     "新帳號求培養+抽卡建議": 2
   },
   "hourly_activity": {
+    "14": 952,
+    "15": 843,
+    "16": 943,
+    "17": 47,
     "11": 458,
     "12": 689,
     "13": 1273,
-    "14": 224,
     "9": 472,
     "10": 841,
     "7": 293,
@@ -66,8 +76,10 @@
     "5": 753
   },
   "message_types": {
-    "0": 1572,
-    "19": 705
+    "0": 1596,
+    "19": 953,
+    "20": 11,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -79,12 +91,28 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1492905722428526633",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "annaxxe_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492713522659065996",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "water_heart",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492902900324634695",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "melwyn7591",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492834372858941470",
@@ -95,12 +123,44 @@
       "channel": "Traphase"
     },
     {
+      "id": "1492922507806642250",
+      "channel_id": "1170692781216378960",
+      "content": "got her in first 5 pull hm",
+      "author": "moderndadweeb",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492854152181846139",
       "channel_id": "1131839817982947429",
       "content": "感謝各位大佬給的建議 終於過了<:agree:1400771815076528258>",
       "author": "mishmeria_.",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1492904524329910494",
+      "channel_id": "1170692781216378960",
+      "content": "he's the only attachment i have left in this server",
+      "author": "melwyn7591",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492907342289961050",
+      "channel_id": "1170692781216378960",
+      "content": "𝒽ℯ𝓁𝓁ℴ 𝒸𝒽𝒶𝓉",
+      "author": "zier.0",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492921421272322130",
+      "channel_id": "1170692781216378960",
+      "content": "Got it i've selected this",
+      "author": "moderndadweeb",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1492870320661594203",
@@ -143,6 +203,30 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1492905226997596312",
+      "channel_id": "1170692781216378960",
+      "content": "old man cant kidnap whales",
+      "author": "princess.goth",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492917076749451385",
+      "channel_id": "1170692781216378960",
+      "content": "gdoll is bait fr",
+      "author": "zier.0",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1492925864134967467",
+      "channel_id": "1170692781216378960",
+      "content": "this is all i can put together for now",
+      "author": "moderndadweeb",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1492854826315415562",
       "channel_id": "1131839817982947429",
       "content": "燃盡了",
@@ -155,78 +239,6 @@
       "channel_id": "1170692781216378960",
       "content": "easy fight <:ramona_tuff_:1441426630420467753>",
       "author": "blecnes.",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492882558059282623",
-      "channel_id": "1170692781216378960",
-      "content": "I can't wait for her kit !",
-      "author": "legendaryredz",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492879629093175411",
-      "channel_id": "1428784257534529586",
-      "content": "在沙漠邊緣的城市中，我和A在旅館裡，一面望著母樹的方向，一面思考我們該怎麼做才能靠近母樹。\n\n事到如今，我們前往母樹的目的，除了要解決繁衍狂熱的問題外，還多了阻",
-      "author": "undecember_news",
-      "reactions": 4,
-      "channel": "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】"
-    },
-    {
-      "id": "1492866643120885821",
-      "channel_id": "1492866643120885821",
-      "content": "",
-      "author": "peanutgod_ofsaturn",
-      "reactions": 4,
-      "channel": "horlaposting!!!!!!!"
-    },
-    {
-      "id": "1492858911936610405",
-      "channel_id": "1492858911936610405",
-      "content": "Zzzz",
-      "author": "celrxn",
-      "reactions": 4,
-      "channel": "V2.4.3 fanart submission"
-    },
-    {
-      "id": "1492820659074633789",
-      "channel_id": "1131839817982947429",
-      "content": "<:agree:1400771815076528258>",
-      "author": "mishmeria_.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492821372160708730",
-      "channel_id": "1131839817982947429",
-      "content": "燃燒假日的兩天生命在挑戰推完",
-      "author": "mishmeria_.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492821613098434620",
-      "channel_id": "1131839817982947429",
-      "content": "今天剛好第七",
-      "author": "mishmeria_.",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492826070628700272",
-      "channel_id": "1131839817982947429",
-      "content": "你要一份工作",
-      "author": "xingxiu_0209",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1492839050850078833",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "spooky_penguin_",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
