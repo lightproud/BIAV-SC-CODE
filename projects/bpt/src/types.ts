@@ -212,6 +212,19 @@ export const IPC = {
   ARTIFACT_GET: 'artifact:get',
   ARTIFACT_DELETE: 'artifact:delete',
 
+  // Dream / Sentinel
+  DREAM_LIST: 'dream:list',
+  DREAM_GET: 'dream:get',
+  DREAM_LATEST: 'dream:latest',
+  DREAM_INSIGHTS: 'dream:insights',
+  SENTINEL_ALERTS: 'sentinel:alerts',
+
+  // Updater
+  UPDATER_CHECK: 'updater:check',
+  UPDATER_DOWNLOAD: 'updater:download',
+  UPDATER_INSTALL: 'updater:install',
+  UPDATER_EVENT: 'updater:event',
+
   // Shell
   WINDOW_MINIMIZE: 'window:minimize',
   WINDOW_TOGGLE: 'window:toggle',

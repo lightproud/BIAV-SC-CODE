@@ -35,7 +35,7 @@ export default function StatusBar() {
         </span>
       </div>
 
-      <span className="text-bpt-gold-dim">BPT v0.2.0</span>
+      <span className="text-bpt-gold-dim">BPT v0.4.0</span>
     </div>
   );
 }

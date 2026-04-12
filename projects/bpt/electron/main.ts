@@ -27,6 +27,8 @@ import { registerChatIpc } from './conversation/stream';
 import { initConversationDb, closeConversationDb } from './conversation/store';
 import { registerPluginIpc } from './plugin/plugin-ipc';
 import { initPlugins } from './plugin/loader';
+import { registerDreamIpc } from './dream/dream-ipc';
+import { registerUpdaterIpc, initAutoUpdate } from './updater/auto-update-ipc';
 import { logger } from './core/logger';
 
 // Prevent multiple instances
@@ -45,7 +47,7 @@ app.on('second-instance', () => {
 });
 
 app.whenReady().then(async () => {
-  logger.info('main', 'BPT starting', { version: '0.3.0' });
+  logger.info('main', 'BPT starting', { version: '0.4.0' });
 
   // 1. Initialize database
   initConversationDb();
@@ -61,6 +63,8 @@ app.whenReady().then(async () => {
   registerBpeIpc();
   registerChatIpc(() => getMainWindow());
   registerPluginIpc();
+  registerDreamIpc();
+  registerUpdaterIpc();
 
   // Start async initialization (non-blocking — renderer shows "connecting...")
   initSilverCore().catch((err: Error) => {
@@ -71,6 +75,9 @@ app.whenReady().then(async () => {
   });
   initPlugins().catch((err: Error) => {
     logger.error('main', 'Plugin init failed', { error: err.message });
+  });
+  initAutoUpdate(() => getMainWindow()).catch((err: Error) => {
+    logger.error('main', 'Auto-update init failed', { error: err.message });
   });
 
   // 7. Tray + hotkey
