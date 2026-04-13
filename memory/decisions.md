@@ -1,6 +1,6 @@
 # 决策日志
 
-> 最后更新：2026-04-03 by 战略中心（Code）
+> 最后更新：2026-04-13 by 主控台
 >
 > **新会话只需要读「当前有效决策」。历史归档仅供追溯。**
 
@@ -70,6 +70,11 @@
 | Discord 数据分级存储架构（git 保留 60 天 JSONL + 月归档至 Releases） | news/discord |
 | Discord 归档系统 4 项技术决策（断点续传、月报容错、论坛增量、无成员 Intent） | news/discord |
 | 联动关键词确认：沙耶之歌 (Saya no Uta)，日报系统已配置监控 | news |
+| BPT 用 sql.js 替代 better-sqlite3（消除 Windows C++ 编译依赖） | bpt |
+| BPT 自带独立 MCP Server（同构复刻银芯 11 工具，零 git 依赖，多格式解析） | bpt |
+| BPT Server 变更检测用文件 mtime 扫描替代 git diff/log | bpt |
+| BPT 不依赖 brain-in-a-vat 仓库，独立部署于内网 SVN | bpt |
+| 银芯社区数据单向同步到 BPT（银芯 -> 脱敏 -> BPT），不反向 | bpt |
 
 ---
 
