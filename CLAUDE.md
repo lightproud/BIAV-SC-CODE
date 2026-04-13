@@ -34,7 +34,7 @@ brain-in-a-vat/
 │   ├── dreams/                # 做梦 Agent 产出（日志/周报/洞察）
 │   └── session-digests/       # 会话摘要
 ├── assets/                    # 共享资产（事实圣经 + 图片 + 样式）
-│   ├── data/                  # 事实圣经（interview/narrative/design-decisions JSON + 校验器）
+│   ├── data/                  # 事实圣经 + 角色人格数据（character-personas/）
 │   ├── images/                # 立绘和图片素材
 │   └── styles/                # 共享样式
 ├── projects/                  # 子项目工作区（见下方速查表）
@@ -67,9 +67,10 @@ brain-in-a-vat/
 ## 新会话启动流程
 
 1. **读启动快照**：`Read memory/boot-snapshot.md`（压缩启动包，一步就绪）。
-2. **按需扩展**：根据任务读取相应文件，详见下方"按需加载索引"。
-3. **读所属子项目的 CONTEXT.md**：了解该子项目当前任务、职责边界、验证清单。
-4. **首次回复**：主动告诉用户你能做什么 + 3~5 个基于真实数据的建议。
+2. **调用会话 Briefing**：`python scripts/session_briefing.py`（或 MCP `session_briefing` 工具）。获取：上次会话回顾、期间变更、话题动量、推荐上下文。
+3. **按需扩展**：根据 Briefing 推荐 + 任务读取相应文件。
+4. **读所属子项目的 CONTEXT.md**：了解该子项目当前任务、职责边界、验证清单。
+5. **首次回复**：主动告诉用户你能做什么 + 3~5 个基于真实数据的建议。
 
 ### 按需加载索引（避免全量读文件）
 
@@ -99,6 +100,10 @@ brain-in-a-vat/
 ### 搜索与查询（日常使用）
 
 ```bash
+# 新会话智能 Briefing（上次回顾 + 变更 + 动量 + 推荐）
+python scripts/session_briefing.py
+python scripts/session_briefing.py --role Code-wiki  # 角色定制
+
 # 语义搜索知识库（TF-IDF + 4 维重排序，替代手动 grep）
 python scripts/memory_search.py "查询关键词"
 
@@ -111,11 +116,16 @@ python scripts/context_manager.py --query "你的问题" --role "当前角色"
 # 检查预计算缓存（做梦 Agent 产出）
 python scripts/dream.py --check-cache
 
-# 查看文件效用排名（MemRL-lite EMA 评分）
+# 查看文件效用排名（MemRL-lite EMA + 参与度评分）
 python scripts/memrl.py --top 10
 
 # 重建全部索引
 python scripts/dream.py --rebuild
+
+# 角色人格模式（以游戏角色语气对话）
+python scripts/character_persona.py --character erica           # 生成系统提示词
+python scripts/character_persona.py --character erica --export bpt-web  # BPT-WEB 导出
+python scripts/character_persona.py --list                      # 列出可用角色
 ```
 
 ### 知识写入（对话中主动调用）
@@ -135,9 +145,11 @@ python scripts/dream.py --rebuild
 
 **主力手段（跨工具通用）**：会话过程中主动写入 `memory/` 文件和 `fact_store.py`。遇到决策、发现、教训时立即写，不要等会话结束。
 
-**SessionEnd hook（Claude Code 自动，v0.3）**：`.claude/settings.json` 注册，会话结束时自动执行：
+**SessionEnd hook（Claude Code 自动，v0.4）**：`.claude/settings.json` 注册，会话结束时自动执行：
 - `scripts/session-end-distill.sh` → `scripts/session_distiller.py`
 - 产出 `memory/session-digests/{stamp}-{sid}.md`（完整对话 Markdown，推进 git，公开成长记录）
+- 产出 `memory/session-digests/{stamp}-{sid}.meta.json`（结构化元数据：主题、决策、参与度、遗留事项）
+- 自动更新 `memory/session-continuity.json`（会话连续性链：上次会话摘要 + 话题动量）
 - 纯结构化解析，不调 LLM。日志落在 `/tmp/session-distill.log`
 - 限制：仅 Claude Code 有效；仅在 cwd 为 brain-in-a-vat 时触发
 
@@ -147,7 +159,7 @@ python scripts/dream.py --rebuild
 
 ### MCP 服务器
 
-`scripts/mcp_server.py` 暴露 7 个工具给任意 MCP 客户端：search / graph / utility / cache / context / rebuild / store_facts。`.mcp.json` 已配置为默认加载。
+`scripts/mcp_server.py` 暴露 11 个工具给任意 MCP 客户端：search / graph / graph_related_files / utility / cache / context / rebuild / store_facts / writeback / session_briefing / character_persona。`.mcp.json` 已配置为默认加载。
 
 ---
 

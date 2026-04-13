@@ -1,0 +1,219 @@
+{
+  "last_session": {
+    "id": "226a25ca",
+    "timestamp": "2026-04-13T01:16:24.297000+00:00",
+    "duration_minutes": 316.5,
+    "branch": "claude/memory-reflection-management-TEfTh",
+    "topics": [
+      "BPT",
+      "MCP"
+    ],
+    "decisions": [],
+    "files_changed": [
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+      "/home/user/brain-in-a-vat/scripts/character_persona.py",
+      "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+      "/home/user/brain-in-a-vat/scripts/session_briefing.py"
+    ],
+    "open_items": []
+  },
+  "recent_sessions": [
+    {
+      "id": "70ac3a86",
+      "timestamp": "2026-04-13T01:10:08.115000+00:00",
+      "duration_minutes": 310.3,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "MCP"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "24bed928",
+      "timestamp": "2026-04-13T01:01:14.820000+00:00",
+      "duration_minutes": 301.4,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "MCP"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "b3d6f1a4",
+      "timestamp": "2026-04-12T20:21:33.670000+00:00",
+      "duration_minutes": 21.7,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "MCP"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "32a46a5b",
+      "timestamp": "2026-04-12T20:10:07.015000+00:00",
+      "duration_minutes": 243.7,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "银芯",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/memory/session-continuity.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/reflexion.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
+        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
+        "/root/.claude/plans/joyful-skipping-thimble.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "66f6f9a6",
+      "timestamp": "2026-04-12T19:41:53.679000+00:00",
+      "duration_minutes": 215.4,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/session-continuity.json",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/reflexion.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
+        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
+        "/root/.claude/plans/joyful-skipping-thimble.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "be2cbf53",
+      "timestamp": "2026-04-12T16:47:21.513000+00:00",
+      "duration_minutes": 40.9,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/session-continuity.json",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/reflexion.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
+        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
+        "/root/.claude/plans/joyful-skipping-thimble.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "40db6d3f",
+      "timestamp": "2026-04-12T16:34:13.834000+00:00",
+      "duration_minutes": 127.6,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "银芯"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/dreams/insights.json",
+        "/home/user/brain-in-a-vat/memory/session-continuity.json",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
+        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
+        "/root/.claude/plans/joyful-skipping-thimble.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "d6db07b0",
+      "timestamp": "2026-04-12T15:28:30+00:00",
+      "duration_minutes": 62,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "记忆系统",
+        "TF-IDF",
+        "索引",
+        "知识图谱",
+        "银芯"
+      ],
+      "decisions": [
+        "向量索引压缩为gzip并提交git",
+        "知识图谱改为增量更新",
+        "REM周反思完整实现"
+      ],
+      "files_changed": [
+        "scripts/memory_search.py",
+        "scripts/dream.py",
+        "scripts/knowledge_graph.py",
+        "scripts/mcp_server.py"
+      ],
+      "open_items": [
+        "MemRL扩展跟踪范围",
+        "Reflexion语义分析",
+        "选择性记忆执行遗忘"
+      ]
+    }
+  ],
+  "momentum": {
+    "topic_weights": {
+      "BPT": 2.95,
+      "MCP": 2.95,
+      "银芯": 0.87,
+      "记忆系统": 0.67,
+      "黑池": 0.41,
+      "TF-IDF": 0.34,
+      "索引": 0.34,
+      "知识图谱": 0.34
+    },
+    "hot_files": [
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+      "/home/user/brain-in-a-vat/scripts/character_persona.py",
+      "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+      "/home/user/brain-in-a-vat/scripts/session_briefing.py"
+    ],
+    "total_sessions": 20
+  },
+  "updated_at": "2026-04-13T01:20:46.048401+00:00"
+}
