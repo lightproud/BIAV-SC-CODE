@@ -28,18 +28,18 @@ OK: news aggregator
 OK: daily report
 OK: discord archive
 OK: dream journals
-OK: wiki data
+MISSING: wiki data
 
 ## 最新社区情报
 
 # 忘却前夜 社区日报 2026-04-12
-> 采集时间：2026-04-12 19:50 UTC+8
-1. [Bilibili] 【卡雨虹】大师局 24-2回声拿下沙耶之歌 — engagement: 216
+> 采集时间：2026-04-12 22:12 UTC+8
+1. [Bilibili] 我竟然用哀鸿破城十日记对标沙耶之歌，我有罪 — engagement: 519
 | 平台 | 数据条数 |
 |------|----------|
-| Bilibili | 22 |
+| Bilibili | 21 |
 | Discord | 16 |
-| Steam | 4 |
+| Steam | 5 |
 | Steam 论坛 | 0（沉默）|
 1. [DC] willsalvador@🔸morimens-game-chat: https://x.com/i/statu — engagement: 37
 1. [正面] 很不错的游戏
