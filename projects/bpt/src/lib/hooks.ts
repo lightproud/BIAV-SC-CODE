@@ -92,14 +92,12 @@ export function useSilverSearch(): SilverSearchState {
 interface SilverStatus {
   mcpConnected: boolean;
   mcpTools: string[];
-  directAvailable: boolean;
 }
 
 export function useSilverStatus(): SilverStatus {
   const [status, setStatus] = useState<SilverStatus>({
     mcpConnected: false,
     mcpTools: [],
-    directAvailable: false,
   });
 
   useEffect(() => {

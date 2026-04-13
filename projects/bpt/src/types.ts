@@ -161,8 +161,8 @@ export interface BPEChunk {
 
 export interface AppConfig {
   endpoint: LLMEndpoint;
-  silverMcpPath: string;     // path to scripts/mcp_server.py
-  repoRoot: string;          // path to brain-in-a-vat root
+  silverMcpPath: string;     // path to MCP server (auto-resolved if empty)
+  repoRoot: string;          // path to data root for indexing
   truncateThreshold: number; // max tokens for tool result before truncation
   compressionTriggerTurns: number;
   bpeRerankerEnabled: boolean;
