@@ -1,0 +1,239 @@
+{
+  "last_session": {
+    "id": "35a924c6",
+    "timestamp": "2026-04-13T04:56:37.606000+00:00",
+    "duration_minutes": 160.5,
+    "branch": "main",
+    "topics": [
+      "银芯",
+      "BPT"
+    ],
+    "decisions": [],
+    "files_changed": [
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/projects/bpt/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/bpt/docs/BPT-SERVER-DESIGN.md",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts"
+    ],
+    "open_items": []
+  },
+  "recent_sessions": [
+    {
+      "id": "6eb46ce1",
+      "timestamp": "2026-04-13T04:38:45.989000+00:00",
+      "duration_minutes": 142.7,
+      "branch": "main",
+      "topics": [
+        "银芯",
+        "BPT"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/bpt/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "bf7f7aba",
+      "timestamp": "2026-04-13T02:37:50.366000+00:00",
+      "duration_minutes": 21.8,
+      "branch": "main",
+      "topics": [
+        "BPT",
+        "银芯"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/bpt/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "2b4c1160",
+      "timestamp": "2026-04-13T02:24:23.612000+00:00",
+      "duration_minutes": 616.4,
+      "branch": "claude/desktop-app-exploration-lJpQN",
+      "topics": [
+        "Electron"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/bpt/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/conversation/store.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/conversation/stream.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/index.html",
+        "/home/user/brain-in-a-vat/projects/bpt/package.json",
+        "/home/user/brain-in-a-vat/projects/bpt/src/App.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/components/ChatView.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/components/Sidebar.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/components/StatusBar.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/components/TokenMeter.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/index.css",
+        "/home/user/brain-in-a-vat/projects/bpt/src/lib/hooks.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/vite.config.ts"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "226a25ca",
+      "timestamp": "2026-04-13T01:16:24.297000+00:00",
+      "duration_minutes": 316.5,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "MCP"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "70ac3a86",
+      "timestamp": "2026-04-13T01:10:08.115000+00:00",
+      "duration_minutes": 310.3,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "MCP"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "24bed928",
+      "timestamp": "2026-04-13T01:01:14.820000+00:00",
+      "duration_minutes": 301.4,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "MCP"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "b3d6f1a4",
+      "timestamp": "2026-04-12T20:21:33.670000+00:00",
+      "duration_minutes": 21.7,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "MCP"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "32a46a5b",
+      "timestamp": "2026-04-12T20:10:07.015000+00:00",
+      "duration_minutes": 243.7,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "银芯",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/memory/session-continuity.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/reflexion.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
+        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
+        "/root/.claude/plans/joyful-skipping-thimble.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "66f6f9a6",
+      "timestamp": "2026-04-12T19:41:53.679000+00:00",
+      "duration_minutes": 215.4,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/session-continuity.json",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py",
+        "/home/user/brain-in-a-vat/scripts/reflexion.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
+        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
+        "/root/.claude/plans/joyful-skipping-thimble.md"
+      ],
+      "open_items": []
+    }
+  ],
+  "momentum": {
+    "topic_weights": {
+      "BPT": 3.65,
+      "银芯": 2.8,
+      "MCP": 1.21,
+      "Electron": 0.51,
+      "记忆系统": 0.27,
+      "黑池": 0.17,
+      "TF-IDF": 0.14,
+      "索引": 0.14,
+      "知识图谱": 0.14
+    },
+    "hot_files": [
+      "/home/user/brain-in-a-vat/projects/bpt/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts"
+    ],
+    "total_sessions": 24
+  },
+  "updated_at": "2026-04-13T05:00:37.112971+00:00"
+}

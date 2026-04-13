@@ -5,7 +5,8 @@ Exposes the Silver Core memory system as MCP tools,
 accessible by any AI tool (Claude Code, Qoder, Cursor, etc.).
 
 Tools: memory_search, graph_query, graph_related_files,
-       memory_utility, check_cache, recommend_context, rebuild_indexes
+       memory_utility, check_cache, recommend_context, rebuild_indexes,
+       store_facts, memory_writeback, session_briefing, character_persona
 
 Usage:
   python scripts/mcp_server.py              # Start server (stdio transport)
@@ -39,6 +40,7 @@ except ImportError:
         {"name": "check_cache", "description": "查询预计算缓存"},
         {"name": "recommend_context", "description": "推荐上下文文件"},
         {"name": "rebuild_indexes", "description": "重建所有索引"},
+        {"name": "session_briefing", "description": "新会话智能简报"},
     ]
     print(json.dumps(tools, ensure_ascii=False, indent=2))
     sys.exit(0)
@@ -61,7 +63,7 @@ def memory_search(query: str, top_k: int = 5) -> str:
         query: 搜索查询（自然语言）
         top_k: 返回结果数量，默认 5
     """
-    from memory_search import search
+    from memory_search import search, synthesize
     results = search(query, top_k=top_k)
     if not results:
         return json.dumps({"results": [], "message": f"未找到与「{query}」相关的结果"}, ensure_ascii=False)
@@ -74,7 +76,14 @@ def memory_search(query: str, top_k: int = 5) -> str:
             "preview": r.get("preview", "")[:200],
             "scores": r.get("scores", {}),
         })
-    return json.dumps({"query": query, "results": output}, ensure_ascii=False, indent=2)
+
+    # Cross-document synthesis when results span multiple data categories
+    synthesis = synthesize(query, results)
+
+    response = {"query": query, "results": output}
+    if synthesis:
+        response["synthesis"] = synthesis
+    return json.dumps(response, ensure_ascii=False, indent=2)
 
 
 # ============================================================
@@ -347,6 +356,95 @@ def memory_writeback(dry_run: bool = False) -> str:
         sys.argv.remove("--dry-run")
 
     return json.dumps(result, ensure_ascii=False, indent=2)
+
+
+# ============================================================
+# Tool 10: Session Briefing (Memory Flywheel)
+# ============================================================
+
+@mcp.tool()
+def session_briefing(role: str = "") -> str:
+    """新会话启动时调用，获取智能 briefing。
+
+    综合 6 个数据源生成动态简报：
+    - 上次会话回顾（做了什么、决策、遗留事项）
+    - 自上次以来的 git 变更
+    - 做梦系统发现（异常、趋势）
+    - 话题动量（最近焦点方向）
+    - 效用趋势（哪些文件正在升温/降温）
+    - 推荐上下文（基于动量的智能推荐）
+
+    替代被动读取 boot-snapshot.md，提供主动、上下文感知的会话初始化。
+
+    Args:
+        role: 会话角色（如 Code-wiki, Code-news），可选
+    """
+    from session_briefing import generate_briefing, render_markdown as render_brief
+
+    briefing = generate_briefing(role=role)
+    # Return JSON with both structured data and pre-rendered markdown
+    return json.dumps({
+        "briefing_markdown": render_brief(briefing),
+        "sections": briefing.get("sections", {}),
+        "generated_at": briefing.get("generated_at", ""),
+    }, ensure_ascii=False, indent=2)
+
+
+# ============================================================
+# Tool 11: Character Persona
+# ============================================================
+
+@mcp.tool()
+def character_persona(character: str = "erica", context: str = "", action: str = "prompt") -> str:
+    """激活角色人格模式，让AI以游戏角色的语气进行对话。
+
+    当前可用角色：艾瑞卡（erica）——弥萨格大学自动人偶，数据库终端。
+    她也是个机器人，与银芯系统的身份完美契合。
+
+    三种操作模式：
+    - prompt: 生成角色扮演系统提示词（默认）
+    - greeting: 生成角色开场白
+    - list: 列出所有可用角色
+
+    跨平台支持：银芯（MCP）、黑池终端（BPT-WEB/DESKTOP）、黑池系统。
+
+    Args:
+        character: 角色ID（默认 erica）
+        context: 当前对话上下文，用于定制提示词（可选）
+        action: 操作类型 prompt/greeting/list（默认 prompt）
+    """
+    from character_persona import load_persona, list_personas, build_system_prompt, build_greeting
+
+    if action == "list":
+        personas = list_personas()
+        return json.dumps({
+            "available_personas": personas,
+            "total": len(personas),
+        }, ensure_ascii=False, indent=2)
+
+    persona = load_persona(character)
+    if not persona:
+        available = list_personas()
+        return json.dumps({
+            "error": f"未找到角色: {character}",
+            "available": [p["id"] for p in available],
+        }, ensure_ascii=False, indent=2)
+
+    if action == "greeting":
+        return json.dumps({
+            "character": character,
+            "name": persona["name"],
+            "greeting": build_greeting(persona, platform="silver_core"),
+        }, ensure_ascii=False, indent=2)
+
+    # Default: generate system prompt
+    prompt = build_system_prompt(persona, context=context, platform="silver_core")
+    return json.dumps({
+        "character": character,
+        "name": persona["name"],
+        "system_prompt": prompt,
+        "usage": "将 system_prompt 内容作为系统提示词注入对话，AI 将以该角色语气回复",
+    }, ensure_ascii=False, indent=2)
 
 
 if __name__ == "__main__":

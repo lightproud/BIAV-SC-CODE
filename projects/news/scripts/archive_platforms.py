@@ -60,10 +60,9 @@ PLATFORMS = [
     'pixiv', 'lofter', 'xianyu', 'taobao',
     'qq', 'facebook', 'telegram', 'twitch', 'instagram',
     'qooapp', 'epic',
-    'gamerch', 'note_com', 'ruliweb',
+    'note_com', 'ruliweb',
     'vkplay', 'stopgame',
-    'gacharevenue', 'miraheze_wiki',
-    'gamekee', 'huiji_wiki', 'weixin',
+    'gacharevenue', 'weixin',
 ]
 
 

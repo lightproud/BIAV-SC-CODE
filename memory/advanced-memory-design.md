@@ -42,7 +42,7 @@ Layer 2 (可选):   API Embedding → Voyage AI / OpenAI，更高精度
 
 - 纯 Python 实现，无需 numpy/sklearn
 - 每个文件切成 ~500 字符 chunk（重叠 100 字符）
-- 计算 TF-IDF 向量，存入 `assets/data/vectors.json`
+- 计算 TF-IDF 向量，存入 `assets/data/vectors.json.gz`
 - 查询时计算余弦相似度，返回 top-K
 - 622KB 语料约 200 个 chunk，向量文件 < 500KB
 
@@ -62,14 +62,14 @@ def search(query: str, top_k=5) -> list[dict]:
     """语义搜索：返回 [{file, chunk, score, context}]"""
 
 def build_index():
-    """全量构建索引 → assets/data/vectors.json"""
+    """全量构建索引 → assets/data/vectors.json.gz"""
 ```
 
 **Layer 2: API Embedding（可选升级）**
 
 - 在 Layer 1 基础上，如果检测到 VOYAGE_API_KEY 或 OPENAI_API_KEY
 - 替换 TF-IDF 向量为真正的 embedding 向量
-- 向量维度 1024，同样存入 `vectors.json`
+- 向量维度 1024，同样存入 `vectors.json.gz`
 - 查询精度显著提升，适合跨语言检索（中英日）
 
 **集成点**：
@@ -419,10 +419,10 @@ def update_cache_hits(cache_id: str):
 | `scripts/knowledge_graph.py` | 新建 | 知识图谱构建与查询 |
 | `scripts/memrl.py` | 新建 | MemRL-lite 效用追踪 |
 | `scripts/dream.py` | 修改 | Phase 3 集成图谱/向量/缓存重建 |
-| `assets/data/vectors.json` | 生成 | TF-IDF 向量索引 |
-| `assets/data/knowledge-graph.json` | 待生成 | 知识图谱 |
-| `assets/data/memory-utility.json` | 待生成 | 效用分数 |
-| `assets/data/precomputed-cache.json` | 待生成 | 预计算缓存 |
+| `assets/data/vectors.json.gz` | 运行时生成 | TF-IDF 向量索引（gzip 压缩）|
+| `assets/data/knowledge-graph.json` | 运行时生成 | 知识图谱 |
+| `assets/data/memory-utility.json` | 运行时生成 | 效用分数 |
+| `assets/data/precomputed-cache.json` | 运行时生成 | 预计算缓存 |
 | `BIAV-SC.md` | 修改 | 新增语义检索能力声明 |
 | `.github/workflows/dream.yml` | 修改 | 深睡集成新模块 |
 | `memory/dreaming-agent-design.md` | 修改 | 更新架构说明 |

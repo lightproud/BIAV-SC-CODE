@@ -1,5 +1,6 @@
 # BPT — Black Pool Terminal 子项目上下文
 
+> 最后更新：2026-04-12 by 主控台（记忆反思管理）
 > 给未来 AI 会话的断档补救文件。新会话请先读这份。
 
 ## 这是什么
@@ -20,7 +21,7 @@ BPT (Black Pool Terminal) 是 B.I.A.V. Studio 的母版 AI 终端，用来替代
 - Electron 33 + React 18 + Vite 6 + TypeScript 5 (strict)
 - Tailwind CSS (BIAV 暗金主题)
 - electron-store (配置持久化)
-- better-sqlite3 (token 日志 + BPE 索引)
+- sql.js (token 日志 + 会话持久化 + BPE 索引，纯 WASM 无原生编译依赖)
 - @anthropic-ai/sdk (LLM 通信)
 - MCP stdio 协议 (银芯工具)
 

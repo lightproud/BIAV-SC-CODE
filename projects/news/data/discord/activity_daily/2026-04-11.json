@@ -1,27 +1,28 @@
 {
   "date": "2026-04-11",
-  "messages": 13624,
+  "messages": 13907,
   "unique_authors": 133,
-  "reactions_total": 1384,
-  "attachments": 528,
+  "reactions_total": 1428,
+  "attachments": 543,
   "channel_activity": {
+    "🔸morimens-game-chat": 9859,
+    "🔸русский-канал": 192,
+    "🔸canal-español": 31,
+    "🔸canal-português": 113,
+    "🔸team-building": 330,
+    "🔸邀请码互助┊swap-invitation-codes": 40,
+    "🔸game-question": 1322,
+    "🔸机器人命令┊bot-commands": 37,
+    "Who Ryker's Designer pls come talk ?": 3,
+    "融災請教": 1,
     "🔸綜合討論": 890,
-    "🔸morimens-game-chat": 9622,
-    "🔸русский-канал": 185,
-    "🔸canal-español": 23,
-    "🔸canal-português": 109,
     "🔸general-chat": 431,
-    "🔸邀请码互助┊swap-invitation-codes": 37,
-    "🔸game-question": 1303,
     "🔸忘却前夜┊morimens-tv": 2,
-    "🔸机器人命令┊bot-commands": 35,
     "7 times 7 equality 49": 2,
     "1492633193139142686": 1,
     "🔸phòng-chat-tiếng-việt": 327,
-    "🔸team-building": 329,
     "新帳號求培養+抽卡建議": 30,
     "🔸欢乐梗图": 7,
-    "Who Ryker's Designer pls come talk ?": 2,
     "Titor: Ultra OC because i cant wait for Arachne graaahhh": 11,
     "some doodles": 2,
     "求求配对和抽卡建议，谢谢☺️": 34,
@@ -59,9 +60,9 @@
     "融災": 24
   },
   "hourly_activity": {
+    "23": 323,
     "21": 468,
     "22": 330,
-    "23": 40,
     "20": 578,
     "19": 653,
     "18": 379,
@@ -85,11 +86,18 @@
     "0": 620
   },
   "message_types": {
-    "0": 490,
-    "19": 294,
-    "21": 1
+    "19": 112,
+    "0": 171
   },
   "top_reacted_messages": [
+    {
+      "id": "1492674374162055228",
+      "channel_id": "1300659662311526512",
+      "content": "toy ready",
+      "author": "blecnes.",
+      "reactions": 11,
+      "channel": "🔸canal-español"
+    },
     {
       "id": "1492544060953727086",
       "channel_id": "1170692781216378960",
@@ -239,14 +247,6 @@
       "channel_id": "1170692781216378960",
       "content": "",
       "author": "arandomflamev2",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492574200861425745",
-      "channel_id": "1170692781216378960",
-      "content": "Only tier 3 stages hard to go with tier 5 im just give up with tier 5 😭🙏🙏🙏",
-      "author": "josh09489",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }

@@ -5,10 +5,8 @@
  * 9 tools via FastMCP. One long-lived subprocess is cheaper than spawning
  * a Python process per tool call. The MCP JSON-RPC protocol is standard.
  *
- * Why only 4 tools via MCP: Token economy discipline (plan §3 T4).
- * memory_search / graph_query / graph_related_files / store_facts are the
- * only tools where LLM agency adds value. The other 5 are direct-only
- * (see direct-client.ts).
+ * BPT Server exposes all 11 tools via MCP. The LLM's active tool set
+ * is controlled by gear (chat/work), not by the transport layer.
  */
 
 import { spawn, ChildProcess } from 'node:child_process';
