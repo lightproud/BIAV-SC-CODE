@@ -262,9 +262,6 @@ def save_failure_insights(patterns: list[dict]):
             "created": TODAY.isoformat(),
         })
 
-    # Keep last 100
-    existing = existing[-100:]
-
     INSIGHTS_FILE.write_text(
         json.dumps(existing, ensure_ascii=False, indent=2),
         encoding="utf-8",

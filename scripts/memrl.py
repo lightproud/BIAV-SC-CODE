@@ -26,6 +26,8 @@ UTILITY_FILE = REPO / "assets" / "data" / "memory-utility.json"
 ACCESS_LOG = REPO / "memory" / "dreams" / "access-log.json"
 INSIGHTS_FILE = REPO / "memory" / "dreams" / "insights.json"
 DREAMS_DIR = REPO / "memory" / "dreams"
+DIGESTS_DIR = REPO / "memory" / "session-digests"
+CONTINUITY_FILE = REPO / "memory" / "session-continuity.json"
 TODAY = date.today()
 
 # EMA smoothing factor: 0.3 = responsive to new signals, retains history
@@ -129,6 +131,91 @@ def get_staleness_signals() -> dict[str, float]:
     return signals
 
 
+def get_engagement_signals() -> dict[str, dict]:
+    """Extract session engagement signals from .meta.json files.
+
+    Tracks how files were actually used in sessions (not just scanned):
+    - read_only: 0.3 (read but not modified)
+    - read_and_edited: 0.7 (read and modified)
+    - read_edit_commit: 1.0 (read, modified, and committed)
+
+    Returns {file_path: {engagement_score, session_count, last_session}}
+    """
+    signals = defaultdict(lambda: {"scores": [], "session_count": 0, "last_session": None})
+
+    engagement_weights = {
+        "read_only": 0.3,
+        "read_and_edited": 0.7,
+        "read_edit_commit": 1.0,
+    }
+
+    # Scan .meta.json files from session digests
+    for meta_fp in sorted(DIGESTS_DIR.glob("*.meta.json"), reverse=True)[:30]:
+        try:
+            meta = json.loads(meta_fp.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+
+        session_date = (meta.get("timestamp_range") or [None, None])[0]
+        if session_date:
+            session_date = session_date[:10]
+
+        files_eng = meta.get("files_engagement", {})
+        for fp, level in files_eng.items():
+            # Normalize all paths to relative form
+            rel_fp = fp
+            repo_str = str(REPO)
+            if fp.startswith(repo_str):
+                rel_fp = fp[len(repo_str):].lstrip("/")
+            elif fp.startswith("/"):
+                # Absolute path not under repo — use basename as fallback
+                rel_fp = fp.rsplit("/", 1)[-1] if "/" in fp else fp
+
+            weight = engagement_weights.get(level, 0.3)
+            signals[rel_fp]["scores"].append(weight)
+            signals[rel_fp]["session_count"] += 1
+            if session_date and (not signals[rel_fp]["last_session"] or session_date > signals[rel_fp]["last_session"]):
+                signals[rel_fp]["last_session"] = session_date
+
+    # Compute average engagement per file
+    result = {}
+    for fp, data in signals.items():
+        scores = data["scores"]
+        result[fp] = {
+            "engagement_score": sum(scores) / len(scores) if scores else 0,
+            "session_count": data["session_count"],
+            "last_session": data["last_session"],
+        }
+
+    return result
+
+
+def get_momentum_signals() -> dict[str, float]:
+    """Extract topic momentum from session continuity chain.
+
+    Files related to high-momentum topics get a boost.
+    Returns {file_path: momentum_score [0, 1]}
+    """
+    if not CONTINUITY_FILE.exists():
+        return {}
+
+    try:
+        cont = json.loads(CONTINUITY_FILE.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+    hot_files = cont.get("momentum", {}).get("hot_files", [])
+    if not hot_files:
+        return {}
+
+    # Hot files get decreasing momentum scores based on rank
+    signals = {}
+    for i, fp in enumerate(hot_files[:10]):
+        signals[fp] = max(1.0 - i * 0.1, 0.2)
+
+    return signals
+
+
 # ============================================================
 # Utility computation
 # ============================================================
@@ -138,14 +225,16 @@ def compute_utility() -> dict:
     """Compute utility scores for all memory files.
 
     Combines multiple signals into a single EMA utility score:
-    - Access frequency (how often scanned)
+    - Engagement (how deeply files were used in sessions)
     - Insight citations (did it generate insights)
     - Recency (how recently modified)
-    - File size health (not too bloated)
+    - Momentum (current topic focus from continuity chain)
     """
     access = get_access_signals()
     insights = get_insight_signals()
     staleness = get_staleness_signals()
+    engagement = get_engagement_signals()
+    momentum = get_momentum_signals()
 
     # Load existing utility for EMA
     existing = {}
@@ -160,23 +249,37 @@ def compute_utility() -> dict:
     all_files.update(access.keys())
     all_files.update(insights.keys())
     all_files.update(staleness.keys())
+    all_files.update(engagement.keys())
     # Also include existing tracked files
     all_files.update(existing.keys())
 
     utility = {}
     for fp in sorted(all_files):
-        # Raw signals → normalized scores [0, 1]
-        freq = access.get(fp, {}).get("frequency", 0)
-        access_score = min(freq * 2, 1.0)  # freq=0.5 → score=1.0
+        # Raw signals -> normalized scores [0, 1]
+
+        # Engagement: prefer session engagement data, fall back to access frequency
+        eng_data = engagement.get(fp, {})
+        eng_score = eng_data.get("engagement_score", 0)
+        if eng_score > 0:
+            engagement_score = min(eng_score, 1.0)
+        else:
+            # Fallback to access frequency for files without session metadata
+            freq = access.get(fp, {}).get("frequency", 0)
+            engagement_score = min(freq * 2, 1.0)
 
         cited = insights.get(fp, {}).get("cited_count", 0)
-        insight_score = min(cited / 3, 1.0)  # 3+ citations → score=1.0
+        insight_score = min(cited / 3, 1.0)  # 3+ citations -> score=1.0
 
         days_old = staleness.get(fp, 30)
         recency_score = math.exp(-0.05 * days_old)  # half-life ~14 days
 
-        # Combine into raw utility
-        raw = 0.4 * access_score + 0.3 * insight_score + 0.3 * recency_score
+        momentum_score = momentum.get(fp, 0)
+
+        # Combine into raw utility (updated weights with engagement + momentum)
+        raw = (0.30 * engagement_score
+               + 0.25 * insight_score
+               + 0.25 * recency_score
+               + 0.20 * momentum_score)
 
         # Apply EMA with existing utility
         old_utility = existing.get(fp, {}).get("utility", 0.5)
@@ -192,11 +295,13 @@ def compute_utility() -> dict:
         utility[fp] = {
             "utility": round(new_utility, 4),
             "raw_signals": {
-                "access_score": round(access_score, 3),
+                "engagement_score": round(engagement_score, 3),
                 "insight_score": round(insight_score, 3),
                 "recency_score": round(recency_score, 3),
+                "momentum_score": round(momentum_score, 3),
             },
             "access_count": access.get(fp, {}).get("count", 0),
+            "session_engagement": eng_data.get("session_count", 0),
             "last_accessed": access.get(fp, {}).get("last_accessed"),
             "insight_citations": insights.get(fp, {}).get("cited_count", 0),
             "last_cited": insights.get(fp, {}).get("last_cited"),
@@ -251,12 +356,13 @@ def calibrate_reranker_weights(utility: dict) -> dict:
         return {"status": "insufficient_data", "weights": None}
 
     # Simple heuristic: which signal has the most variance?
-    signals = {"access": [], "insight": [], "recency": []}
+    signals = {"engagement": [], "insight": [], "recency": [], "momentum": []}
     for data in utility.values():
         raw = data.get("raw_signals", {})
-        signals["access"].append(raw.get("access_score", 0))
+        signals["engagement"].append(raw.get("engagement_score", raw.get("access_score", 0)))
         signals["insight"].append(raw.get("insight_score", 0))
         signals["recency"].append(raw.get("recency_score", 0))
+        signals["momentum"].append(raw.get("momentum_score", 0))
 
     def variance(vals):
         if not vals:
@@ -267,11 +373,11 @@ def calibrate_reranker_weights(utility: dict) -> dict:
     variances = {k: variance(v) for k, v in signals.items()}
     total_var = sum(variances.values()) or 1
 
-    # Higher variance signals are more discriminative → deserve more weight
+    # Higher variance signals are more discriminative -> deserve more weight
     suggested = {
         "semantic": 0.40,  # Keep semantic constant
         "recency": round(0.60 * variances.get("recency", 0.1) / total_var, 2),
-        "access": round(0.60 * variances.get("access", 0.1) / total_var, 2),
+        "engagement": round(0.60 * variances.get("engagement", 0.1) / total_var, 2),
         "graph": 0.15,  # Keep graph constant
     }
 
@@ -313,7 +419,7 @@ def print_stats(utility: dict):
         trend_icon = {"rising": "↑", "declining": "↓", "stable": "→"}.get(data["trend"], "?")
         print(f"    {data['utility']:.3f} {trend_icon} {fp}")
         raw = data.get("raw_signals", {})
-        print(f"         access={raw.get('access_score', 0):.2f} insight={raw.get('insight_score', 0):.2f} recency={raw.get('recency_score', 0):.2f}")
+        print(f"         eng={raw.get('engagement_score', raw.get('access_score', 0)):.2f} insight={raw.get('insight_score', 0):.2f} recency={raw.get('recency_score', 0):.2f} momentum={raw.get('momentum_score', 0):.2f}")
 
     # Bottom files
     if len(items) > 8:
