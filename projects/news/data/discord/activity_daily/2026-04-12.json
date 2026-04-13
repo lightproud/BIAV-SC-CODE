@@ -1,12 +1,14 @@
 {
   "date": "2026-04-12",
-  "messages": 14017,
+  "messages": 14051,
   "unique_authors": 162,
-  "reactions_total": 1326,
-  "attachments": 605,
+  "reactions_total": 1335,
+  "attachments": 606,
   "channel_activity": {
+    "🔸morimens-game-chat": 7949,
+    "🔸game-question": 1741,
+    "融災請教": 76,
     "🔸綜合討論": 972,
-    "🔸morimens-game-chat": 7917,
     "🔸русский-канал": 518,
     "🔸phòng-chat-tiếng-việt": 655,
     "🔸canal-português": 326,
@@ -17,12 +19,10 @@
     "🔸team-building": 376,
     "🔸general-chat": 576,
     "🔸邀请码互助┊swap-invitation-codes": 42,
-    "🔸game-question": 1740,
     "🔸机器人命令┊bot-commands": 36,
     "Guides for complete Beginners": 1,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 9,
     "萌新剛玩 求健檢": 3,
-    "融災請教": 75,
     "【English Translation】Opinions Collection": 5,
     "🔸欢乐梗图": 1,
     "🔸deutscher-chatraum": 1,
@@ -62,7 +62,7 @@
     "新帳號求培養+抽卡建議": 2
   },
   "hourly_activity": {
-    "23": 176,
+    "23": 210,
     "21": 217,
     "22": 266,
     "20": 292,
@@ -88,8 +88,8 @@
     "5": 753
   },
   "message_types": {
-    "0": 347,
-    "19": 108
+    "0": 26,
+    "19": 8
   },
   "top_reacted_messages": [
     {
@@ -155,6 +155,14 @@
       "author": "mishmeria_.",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1493037012566151218",
+      "channel_id": "1170692781216378960",
+      "content": "https://youtu.be/5AN8-9vmXI0",
+      "author": "princess.goth",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1493034474995191939",
@@ -241,14 +249,6 @@
       "channel_id": "1170692781216378960",
       "content": "old man cant kidnap whales",
       "author": "princess.goth",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1492917076749451385",
-      "channel_id": "1170692781216378960",
-      "content": "gdoll is bait fr",
-      "author": "zier.0",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
