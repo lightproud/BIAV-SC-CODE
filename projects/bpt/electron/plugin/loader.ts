@@ -14,7 +14,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { getConfig, setConfig } from '../core/config';
+import { getConfig, setConfig, findAppRoot } from '../core/config';
 import { registerTool, unregisterTool } from '../llm/tool-registry';
 import { logger } from '../core/logger';
 import { validateManifest } from './types';
@@ -227,8 +227,8 @@ export function findPluginForTool(toolName: string): PluginInstance | undefined 
 
 function getPluginDirs(): string[] {
   const config = getPluginConfig();
-  const repoRoot = (getConfig('repoRoot') as string) || findRepoRoot();
-  const defaultDir = path.join(repoRoot, 'projects', 'bpt', 'plugins');
+  const appRoot = findAppRoot();
+  const defaultDir = path.join(appRoot, 'plugins');
   return [defaultDir, ...config.extraDirs];
 }
 
@@ -255,10 +255,3 @@ function isVersionCompatible(required: string, current: string): boolean {
   return true; // Equal
 }
 
-function findRepoRoot(): string {
-  let dir = __dirname;
-  for (let i = 0; i < 4; i++) {
-    dir = path.dirname(dir);
-  }
-  return dir;
-}

@@ -64,9 +64,9 @@ export class ClaudeProvider implements LlmProvider {
         { signal: this.abortController.signal },
       );
 
-      // Handle streaming response
-      // The SDK returns an async iterable for stream: true
-      const stream = response as unknown as AsyncIterable<Record<string, unknown>>;
+      // Handle streaming response.
+      // The Anthropic SDK with stream: true returns an AsyncIterable of events.
+      const stream: AsyncIterable<Record<string, unknown>> = response;
 
       let currentToolId = '';
       let currentToolName = '';

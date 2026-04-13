@@ -219,7 +219,7 @@ function persistMessage(conversationId: string, role: string, content: string | 
 /**
  * Send an event to the renderer window (safely handles destroyed windows).
  */
-function sendToRenderer(win: BrowserWindow, event: Record<string, unknown>): void {
+function sendToRenderer(win: BrowserWindow, event: LlmStreamEvent | Record<string, unknown>): void {
   try {
     if (!win.isDestroyed()) {
       win.webContents.send('chat:stream', event);
@@ -333,7 +333,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
           (streamEvent: LlmStreamEvent) => {
             // Forward events to renderer (except message_end — we send our own at the end)
             if (streamEvent.type !== 'message_end') {
-              sendToRenderer(win, streamEvent as unknown as Record<string, unknown>);
+              sendToRenderer(win, streamEvent);
             }
 
             // Collect content blocks for tool loop decision
