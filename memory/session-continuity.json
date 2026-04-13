@@ -1,12 +1,12 @@
 {
   "last_session": {
-    "id": "bf7f7aba",
-    "timestamp": "2026-04-13T02:37:50.366000+00:00",
-    "duration_minutes": 21.8,
+    "id": "6eb46ce1",
+    "timestamp": "2026-04-13T04:38:45.989000+00:00",
+    "duration_minutes": 142.7,
     "branch": "main",
     "topics": [
-      "BPT",
-      "银芯"
+      "银芯",
+      "BPT"
     ],
     "decisions": [],
     "files_changed": [
@@ -20,6 +20,26 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "bf7f7aba",
+      "timestamp": "2026-04-13T02:37:50.366000+00:00",
+      "duration_minutes": 21.8,
+      "branch": "main",
+      "topics": [
+        "BPT",
+        "银芯"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/bpt/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts"
+      ],
+      "open_items": []
+    },
     {
       "id": "2b4c1160",
       "timestamp": "2026-04-13T02:24:23.612000+00:00",
@@ -189,59 +209,33 @@
         "/root/.claude/plans/joyful-skipping-thimble.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "40db6d3f",
-      "timestamp": "2026-04-12T16:34:13.834000+00:00",
-      "duration_minutes": 127.6,
-      "branch": "claude/memory-reflection-management-TEfTh",
-      "topics": [
-        "银芯"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/dreams/insights.json",
-        "/home/user/brain-in-a-vat/memory/session-continuity.json",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
-        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
-        "/root/.claude/plans/joyful-skipping-thimble.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.89,
-      "MCP": 1.89,
-      "银芯": 1.56,
-      "Electron": 0.8,
-      "记忆系统": 0.43,
-      "黑池": 0.26,
-      "TF-IDF": 0.22,
-      "索引": 0.22,
-      "知识图谱": 0.22
+      "BPT": 3.31,
+      "银芯": 2.25,
+      "MCP": 1.51,
+      "Electron": 0.64,
+      "记忆系统": 0.34,
+      "黑池": 0.21,
+      "TF-IDF": 0.18,
+      "索引": 0.18,
+      "知识图谱": 0.18
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
-      "/home/user/brain-in-a-vat/scripts/character_persona.py",
-      "/home/user/brain-in-a-vat/scripts/mcp_server.py",
       "/home/user/brain-in-a-vat/projects/bpt/CONTEXT.md",
       "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
       "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
       "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
       "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
-      "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts"
+      "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts",
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+      "/home/user/brain-in-a-vat/scripts/character_persona.py",
+      "/home/user/brain-in-a-vat/scripts/mcp_server.py"
     ],
-    "total_sessions": 22
+    "total_sessions": 23
   },
-  "updated_at": "2026-04-13T02:41:13.242336+00:00"
+  "updated_at": "2026-04-13T04:44:23.912751+00:00"
 }
