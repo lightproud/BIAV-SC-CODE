@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "reflexion-2026-04-13-001",
+    "type": "failure_pattern",
+    "summary": "references: 修复断裂的文件引用路径，或删除指向已移除文件的引用",
+    "evidence": [
+      "- x memory/advanced-memory-design.md references 'assets/data/vectors.json' -- NOT FOUND",
+      "- x memory/boot-snapshot.md references 'projects/biva/' -- NOT FOUND",
+      "- x memory/project-status.md references 'assets/data/knowledge-graph.json' -- NOT FOUND"
+    ],
+    "suggested_action": "修复断裂的文件引用路径，或删除指向已移除文件的引用",
+    "auto_actionable": true,
+    "created": "2026-04-13"
+  }
+]
