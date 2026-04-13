@@ -1,5 +1,12 @@
 /**
- * logger.ts — Structured logger + token usage SQLite.
+ * logger.ts — Structured logger + token usage SQLite via sql.js (pure WASM).
+ *
+ * Why sql.js instead of better-sqlite3: better-sqlite3 requires native C++
+ * compilation (Visual Studio Build Tools on Windows). sql.js is pure WASM,
+ * zero native dependencies, works everywhere Electron runs.
+ *
+ * Trade-off: sql.js runs in-memory and must be explicitly flushed to disk.
+ * Token log is append-only so flush after every write is acceptable.
  *
  * Why SQLite for token logs: token usage data is append-only, query-heavy
  * (sum by conversation, sum by day, export to CSV), and must survive app
@@ -11,8 +18,9 @@
  */
 
 import path from 'node:path';
+import fs from 'node:fs';
 import { app } from 'electron';
-import Database from 'better-sqlite3';
+import initSqlJs, { type Database as SqlJsDatabase } from 'sql.js';
 
 // ── General Logger ──────────────────────────────────────────────
 
@@ -45,15 +53,48 @@ export const logger = {
 
 // ── Token Usage SQLite ──────────────────────────────────────────
 
-let db: Database.Database | null = null;
+let db: SqlJsDatabase | null = null;
+let dbPath = '';
 
-function getDb(): Database.Database {
-  if (db) return db;
+/**
+ * Flush the in-memory token log database to disk.
+ */
+function flush(): void {
+  if (!db || !dbPath) return;
+  try {
+    const data = db.export();
+    fs.writeFileSync(dbPath, Buffer.from(data));
+  } catch (err) {
+    logger.error('token-log', 'Failed to flush token log to disk', {
+      error: err instanceof Error ? err.message : String(err),
+    });
+  }
+}
 
-  const dbPath = path.join(app.getPath('userData'), 'token-log.sqlite');
-  db = new Database(dbPath);
+/**
+ * Initialize the token log database.
+ * Must be called (and awaited) before logTokenUsage / getTokenHistory.
+ */
+export async function initTokenLogDb(): Promise<void> {
+  dbPath = path.join(app.getPath('userData'), 'token-log.sqlite');
 
-  db.exec(`
+  const SQL = await initSqlJs();
+
+  if (fs.existsSync(dbPath)) {
+    try {
+      const fileBuffer = fs.readFileSync(dbPath);
+      db = new SQL.Database(fileBuffer);
+    } catch (err) {
+      logger.warn('token-log', 'Failed to load existing token log, creating new', {
+        error: err instanceof Error ? err.message : String(err),
+      });
+      db = new SQL.Database();
+    }
+  } else {
+    db = new SQL.Database();
+  }
+
+  db.run(`
     CREATE TABLE IF NOT EXISTS token_log (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       conversation_id TEXT NOT NULL,
@@ -67,40 +108,61 @@ function getDb(): Database.Database {
       estimated_cost_usd REAL DEFAULT 0,
       tools_used TEXT DEFAULT '[]',
       gear TEXT DEFAULT 'chat'
-    );
-    CREATE INDEX IF NOT EXISTS idx_token_log_conv ON token_log(conversation_id);
+    )
   `);
+  db.run('CREATE INDEX IF NOT EXISTS idx_token_log_conv ON token_log(conversation_id)');
 
-  return db;
+  flush();
+}
+
+/**
+ * Close the token log database.
+ */
+export function closeTokenLogDb(): void {
+  if (db) {
+    flush();
+    db.close();
+    db = null;
+  }
 }
 
 export function logTokenUsage(entry: Record<string, unknown>): void {
-  const d = getDb();
-  const stmt = d.prepare(`
-    INSERT INTO token_log (conversation_id, timestamp, system_tokens, tools_tokens,
+  if (!db) return;
+
+  db.run(
+    `INSERT INTO token_log (conversation_id, timestamp, system_tokens, tools_tokens,
       history_tokens, generation_tokens, cache_hit_tokens, cache_write_tokens,
       estimated_cost_usd, tools_used, gear)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  `);
-  stmt.run(
-    entry.conversationId ?? '',
-    Date.now(),
-    entry.system ?? 0,
-    entry.tools ?? 0,
-    entry.history ?? 0,
-    entry.generation ?? 0,
-    entry.cacheHit ?? 0,
-    entry.cacheWrite ?? 0,
-    entry.estimatedCostUsd ?? 0,
-    JSON.stringify(entry.toolsUsed ?? []),
-    entry.gear ?? 'chat',
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+    [
+      String(entry.conversationId ?? ''),
+      Date.now(),
+      Number(entry.system ?? 0),
+      Number(entry.tools ?? 0),
+      Number(entry.history ?? 0),
+      Number(entry.generation ?? 0),
+      Number(entry.cacheHit ?? 0),
+      Number(entry.cacheWrite ?? 0),
+      Number(entry.estimatedCostUsd ?? 0),
+      JSON.stringify(entry.toolsUsed ?? []),
+      String(entry.gear ?? 'chat'),
+    ],
   );
+  flush();
 }
 
 export function getTokenHistory(conversationId: string): unknown[] {
-  const d = getDb();
-  const stmt = d.prepare(
+  if (!db) return [];
+
+  const stmt = db.prepare(
     'SELECT * FROM token_log WHERE conversation_id = ? ORDER BY timestamp DESC LIMIT 100',
   );
-  return stmt.all(conversationId);
+  stmt.bind([conversationId]);
+
+  const rows: unknown[] = [];
+  while (stmt.step()) {
+    rows.push(stmt.getAsObject());
+  }
+  stmt.free();
+  return rows;
 }

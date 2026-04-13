@@ -38,6 +38,7 @@ split_output.py — 按数据源分割 projects/news/output/news.json
 """
 
 import json
+import os
 import sys
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
@@ -92,7 +93,6 @@ KNOWN_SOURCES = [
     'qooapp',
     'epic',
     # 日语扩展
-    'gamerch',
     'note_com',
     # 韩语扩展
     'ruliweb',
@@ -101,15 +101,22 @@ KNOWN_SOURCES = [
     'stopgame',
     # 全球英语
     'gacharevenue',
-    'miraheze_wiki',
     # 中文补充
-    'gamekee',
-    'huiji_wiki',
     'weixin',
 ]
 
 
-MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 48
+# Adaptive: match the lookback window used by collectors
+try:
+    from collection_state import get_lookback_hours
+    _default_hours = get_lookback_hours()
+except ImportError:
+    _default_hours = 24
+MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else _default_hours
+
+# 官方公告较稀疏，保留更宽时间窗口
+OFFICIAL_MAX_AGE_HOURS = int(os.environ.get('OFFICIAL_MAX_AGE_HOURS', 30 * 24))
+OFFICIAL_SOURCES = {'official'}
 
 
 def _is_recent(time_str: str, max_hours: int = MAX_AGE_HOURS) -> bool:
@@ -218,12 +225,14 @@ def main() -> None:
     for raw in raw_items:
         src = normalize_source(raw.get('source', 'unknown'))
         item = extract_steam_item(raw) if src == 'steam' else extract_item(raw)
-        if not _is_recent(item.get('time', '')):
+        # 官方公告使用更宽窗口，其他源沿用 MAX_AGE_HOURS
+        max_age = OFFICIAL_MAX_AGE_HOURS if src in OFFICIAL_SOURCES else MAX_AGE_HOURS
+        if not _is_recent(item.get('time', ''), max_age):
             skipped_old += 1
             continue
         by_source.setdefault(src, []).append(item)
     if skipped_old:
-        print(f'  Filtered out {skipped_old} items older than {MAX_AGE_HOURS}h')
+        print(f'  Filtered out {skipped_old} items (official>{OFFICIAL_MAX_AGE_HOURS}h, others>{MAX_AGE_HOURS}h)')
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f'Writing to {OUTPUT_DIR}/')

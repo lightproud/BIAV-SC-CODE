@@ -35,6 +35,7 @@ projects/news/data/media/*.webm
 projects/news/data/media/*.tar.gz
 
 # auto-generated indexes (rebuilt by dream.py / memory_search.py)
+# vectors.json.gz is committed (compressed, ~3MB) so new sessions have instant search
 assets/data/vectors.json
 assets/data/semantic-index.json
 assets/data/knowledge-graph.json
@@ -43,7 +44,6 @@ assets/data/precomputed-cache.json
 assets/data/sentinel-baseline.json
 projects/news/output/alerts.json
 
-# session digests — .json metadata is local-only (rebuildable);
-# .md (conversation record) and .jsonl.gz (raw archive) are committed
-# as public growth record
+# session digests — only .md conversation records are committed;
+# .json metadata stays local (no longer generated in v0.3)
 memory/session-digests/*.json

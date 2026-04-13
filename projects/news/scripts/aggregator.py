@@ -19,6 +19,7 @@
   4. 输出: projects/news/output/news.json
 """
 
+import hashlib
 import json
 import os
 import re
@@ -35,21 +36,43 @@ logger = logging.getLogger(__name__)
 
 # Playwright fallback collectors (imported lazily to avoid startup cost)
 _playwright_collectors = None
+_playwright_import_attempted = False
+_playwright_runtime_available = None  # None=unknown, True/False=cached probe result
 
 def _get_playwright_collectors():
-    """Lazy import of playwright collectors to avoid startup cost."""
-    global _playwright_collectors
-    if _playwright_collectors is None:
+    """Lazy import of playwright collectors to avoid startup cost.
+
+    Also probes whether the actual `playwright` runtime package is installed —
+    if not, returns None so callers skip the fallback quietly instead of
+    spamming warnings on every source.
+    """
+    global _playwright_collectors, _playwright_import_attempted, _playwright_runtime_available
+    if _playwright_import_attempted:
+        return _playwright_collectors
+    _playwright_import_attempted = True
+
+    # Probe playwright runtime first — collectors module still imports even
+    # without it, but every call would then fail with the same ImportError.
+    try:
+        import importlib
+        importlib.import_module('playwright.sync_api')
+        _playwright_runtime_available = True
+    except ImportError:
+        _playwright_runtime_available = False
+        logger.info('playwright runtime not installed, Playwright fallbacks disabled (set up playwright to enable NGA/Weibo/TapTap fallback)')
+        _playwright_collectors = None
+        return None
+
+    try:
+        from scripts import playwright_collectors as pc
+        _playwright_collectors = pc
+    except ImportError:
         try:
-            from scripts import playwright_collectors as pc
+            import playwright_collectors as pc
             _playwright_collectors = pc
         except ImportError:
-            try:
-                import playwright_collectors as pc
-                _playwright_collectors = pc
-            except ImportError:
-                logger.warning('playwright_collectors module not found, Playwright fallback disabled')
-                _playwright_collectors = None
+            logger.warning('playwright_collectors module not found, Playwright fallback disabled')
+            _playwright_collectors = None
     return _playwright_collectors
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent.parent
@@ -59,7 +82,15 @@ COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ
     '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
 ]
 ALL_KEYWORDS = SEARCH_KEYWORDS + [k.strip() for k in COLLAB_KEYWORDS if k.strip()]
-HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 48))
+# Adaptive lookback: expands automatically if CI was down
+try:
+    from collection_state import get_lookback_hours
+    HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 0)) or get_lookback_hours()
+except ImportError:
+    HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
+# 分页采集的安全上限（单个 fetcher 最多拿多少条），防止窗口边界模糊或 API 返回错乱
+# 时采到无穷多。默认 500 够 24h 窗口用；环境变量 MAX_ITEMS_PER_FETCHER 可覆盖。
+MAX_ITEMS_PER_FETCHER = int(os.environ.get('MAX_ITEMS_PER_FETCHER', 500))
 
 # Bilibili creator MIDs known to produce Morimens content
 # Format: mid (int) -> display name (str). Add more as confirmed.
@@ -76,6 +107,28 @@ VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'y
 
 # Required fields for each news item
 REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
+
+
+# ============================================================
+# HTTP retry helper
+# ============================================================
+
+def _get_with_retry(url, retries=2, backoff=1.0, **kwargs):
+    """GET with simple retry on transient failures (5xx, timeout, connection error)."""
+    kwargs.setdefault('timeout', 15)
+    last_exc = None
+    for attempt in range(retries + 1):
+        try:
+            resp = requests.get(url, **kwargs)
+            if resp.status_code < 500 or attempt == retries:
+                return resp
+            last_exc = Exception(f'HTTP {resp.status_code}')
+        except (requests.exceptions.Timeout, requests.exceptions.ConnectionError) as e:
+            last_exc = e
+            if attempt == retries:
+                raise
+        time.sleep(backoff * (attempt + 1))
+    raise last_exc  # unreachable but satisfies type checker
 
 
 # ============================================================
@@ -260,7 +313,8 @@ def _fetch_reddit_rss(sub, headers, cutoff):
     """Fetch posts from Reddit RSS feed (more reliable than JSON API)."""
     import xml.etree.ElementTree as ET
     items = []
-    url = f'https://www.reddit.com/r/{sub}/.rss'
+    # old.reddit.com RSS 比 www.reddit.com 更稳定
+    url = f'https://old.reddit.com/r/{sub}/.rss'
     try:
         resp = requests.get(url, headers=headers, timeout=15)
         resp.raise_for_status()
@@ -315,25 +369,96 @@ def _fetch_reddit_rss(sub, headers, cutoff):
     return items
 
 
+def _fetch_reddit_search(sub, headers, cutoff):
+    """Last-resort fallback: use Reddit search to find posts about the subreddit topic."""
+    items = []
+    try:
+        url = f'https://www.reddit.com/search.json'
+        params = {
+            'q': f'subreddit:{sub} OR {sub}',
+            'sort': 'new',
+            'limit': 50,
+            't': 'week',
+        }
+        resp = requests.get(url, headers=headers, params=params, timeout=15)
+        resp.raise_for_status()
+        posts = resp.json().get('data', {}).get('children', []) or []
+        for post in posts:
+            d = post.get('data', {})
+            created = datetime.fromtimestamp(d.get('created_utc', 0), tz=timezone.utc)
+            if created < cutoff:
+                continue
+            permalink = d.get('permalink', '')
+            items.append({
+                'title': d.get('title', ''),
+                'summary': (d.get('selftext', '') or '')[:2000],
+                'source': 'reddit',
+                'time': created.isoformat(),
+                'url': f"https://reddit.com{permalink}",
+                'engagement': d.get('score', 0) + d.get('num_comments', 0),
+                'is_hot': d.get('score', 0) > 100,
+                'author': f"u/{d.get('author', 'unknown')}",
+                'tags': [],
+                'metadata': {'via': 'search'},
+            })
+        if items:
+            logger.info(f'Reddit search fallback for r/{sub}: {len(items)} posts')
+    except Exception as e:
+        logger.warning(f'Reddit search fallback for r/{sub} failed: {e}')
+    return items
+
+
 def fetch_reddit(subreddits=None):
     """Fetch hot posts from Reddit with full text, comments, and images.
     Tries JSON API first, falls back to RSS feed if blocked (403)."""
     subreddits = subreddits or ['Morimens', 'MorimensGame']
     items = []
-    headers = {'User-Agent': 'MorimensAggregator/1.0'}
+    # Reddit 已屏蔽通用 bot User-Agent，必须使用浏览器 UA。
+    # 可通过环境变量 REDDIT_USER_AGENT 覆盖（建议填写「platform:app:version (by /u/username)」格式）。
+    default_ua = (
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+        'AppleWebKit/537.36 (KHTML, like Gecko) '
+        'Chrome/131.0.0.0 Safari/537.36'
+    )
+    headers = {
+        'User-Agent': os.environ.get('REDDIT_USER_AGENT', default_ua),
+        'Accept': 'application/json, text/html;q=0.9, */*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+    }
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
     for sub in subreddits:
-        url = f'https://www.reddit.com/r/{sub}/hot.json?limit=25'
-        try:
-            resp = requests.get(url, headers=headers, timeout=15)
-            resp.raise_for_status()
-            posts = resp.json().get('data', {}).get('children', [])
+        # old.reddit.com 对非登录流量的封禁比 www 更宽松
+        # 分页策略：?limit=100&after=X 一页一页翻，直到看到比 cutoff 更早的帖子就停。
+        sub_before_count = len(items)
+        after: str | None = None
+        page_num = 0
+        fatal_error: Exception | None = None
+        stopped_by_cutoff = False
+
+        while len(items) - sub_before_count < MAX_ITEMS_PER_FETCHER:
+            page_num += 1
+            url = f'https://old.reddit.com/r/{sub}/new.json?limit=100'
+            if after:
+                url += f'&after={after}'
+            try:
+                resp = requests.get(url, headers=headers, timeout=15)
+                resp.raise_for_status()
+            except Exception as e:
+                fatal_error = e
+                break
+
+            data = resp.json().get('data', {})
+            posts = data.get('children', []) or []
+            if not posts:
+                break
+
             for post in posts:
                 d = post['data']
                 created = datetime.fromtimestamp(d['created_utc'], tz=timezone.utc)
                 if created < cutoff:
-                    continue
+                    stopped_by_cutoff = True
+                    break
 
                 permalink = d.get('permalink', '')
                 # Fetch comments for posts with discussion
@@ -372,11 +497,30 @@ def fetch_reddit(subreddits=None):
                     item['media_url'] = media_url
                     item['content_type'] = 'image'
                 items.append(item)
-            logger.info(f'Reddit r/{sub}: fetched {len(items)} posts ({sum(1 for i in items if i.get("media_url"))} with media)')
-        except Exception as e:
-            logger.warning(f'Reddit r/{sub} JSON API failed: {e}, trying RSS fallback')
+
+            if stopped_by_cutoff:
+                break
+            after = data.get('after')
+            if not after:
+                break
+            time.sleep(0.5)  # Rate limit between pages
+
+        sub_added = len(items) - sub_before_count
+        if fatal_error is not None and sub_added == 0:
+            logger.warning(f'Reddit r/{sub} JSON API failed: {fatal_error}, trying RSS fallback')
             rss_items = _fetch_reddit_rss(sub, headers, cutoff)
             items.extend(rss_items)
+            if not rss_items:
+                # Last resort: Reddit search endpoint (doesn't require subreddit access)
+                logger.warning(f'Reddit r/{sub} RSS also failed, trying search API')
+                search_items = _fetch_reddit_search(sub, headers, cutoff)
+                items.extend(search_items)
+        else:
+            media_count = sum(1 for i in items[sub_before_count:] if i.get('media_url'))
+            logger.info(
+                f'Reddit r/{sub}: fetched {sub_added} posts across {page_num} page(s) '
+                f'({media_count} with media)'
+            )
 
     return items
 
@@ -453,46 +597,120 @@ def _bilibili_item(v: dict, created: datetime, author: str, headers: dict, sourc
     return item
 
 
+# ── Bilibili wbi 签名 ──────────────────────────────────────────────────────────
+# B 站 space API 从 2023 年起要求 wbi 签名，否则返回 412。
+# 算法：从 /x/web-interface/nav 拿 img_key + sub_key → 按固定混淆表重排 → 取前 32 位
+# → 对排序后的 query string + mixin_key 做 MD5 → 得到 w_rid。
+_WBI_MIXIN_KEY_ENC_TAB = [
+    46, 47, 18, 2, 53, 8, 23, 32, 15, 50, 10, 31, 58, 3, 45, 35,
+    27, 43, 5, 49, 33, 9, 42, 19, 29, 28, 14, 39, 12, 38, 41, 13,
+    37, 48, 7, 16, 24, 55, 40, 61, 26, 17, 0, 1, 60, 51, 30, 4,
+    22, 25, 54, 21, 56, 59, 6, 63, 57, 62, 11, 36, 20, 34, 44, 52,
+]
+_wbi_cache: dict = {}  # {'mixin_key': str, 'ts': float}
+
+
+def _get_wbi_mixin_key(headers: dict) -> str | None:
+    """Fetch and cache the wbi mixin key (refreshed every 30 min)."""
+    now = time.time()
+    if _wbi_cache.get('mixin_key') and now - _wbi_cache.get('ts', 0) < 1800:
+        return _wbi_cache['mixin_key']
+    try:
+        resp = requests.get(
+            'https://api.bilibili.com/x/web-interface/nav',
+            headers=headers, timeout=10,
+        )
+        wbi = resp.json().get('data', {}).get('wbi_img', {})
+        img_key = wbi['img_url'].rsplit('/', 1)[1].split('.')[0]
+        sub_key = wbi['sub_url'].rsplit('/', 1)[1].split('.')[0]
+        raw = img_key + sub_key
+        mixin_key = ''.join(raw[i] for i in _WBI_MIXIN_KEY_ENC_TAB)[:32]
+        _wbi_cache['mixin_key'] = mixin_key
+        _wbi_cache['ts'] = now
+        return mixin_key
+    except Exception as e:
+        logger.warning(f'Bilibili wbi key fetch failed: {e}')
+        return _wbi_cache.get('mixin_key')  # use stale cache if available
+
+
+def _sign_wbi_params(params: dict, mixin_key: str) -> dict:
+    """Add wts + w_rid to params dict using wbi signing."""
+    import urllib.parse
+    params = dict(params)
+    params['wts'] = int(time.time())
+    query = urllib.parse.urlencode(sorted(params.items()))
+    params['w_rid'] = hashlib.md5((query + mixin_key).encode()).hexdigest()
+    return params
+
+
 def _fetch_bilibili_space():
     """Fetch videos from known Morimens creators via space API (primary path)."""
     items = []
     buvid3 = f'{uuid4()}infoc'
     headers = {
-        'User-Agent': 'Mozilla/5.0',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
         'Referer': 'https://www.bilibili.com',
         'Cookie': f'buvid3={buvid3}',
     }
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    mixin_key = _get_wbi_mixin_key(headers)
 
     for idx, (mid, creator_name) in enumerate(BILIBILI_MORIMENS_CREATORS.items()):
         if idx > 0:
             time.sleep(0.6)
-        url = 'https://api.bilibili.com/x/space/arc/search'
-        params = {
-            'mid': mid,
-            'pn': 1,
-            'ps': 20,
-            'order': 'pubdate',
-        }
-        try:
-            resp = requests.get(url, params=params, headers=headers, timeout=15)
-            if resp.status_code == 412:
-                logger.warning(f'Bilibili space {creator_name}({mid}): 412 rate-limited, retrying after 2s')
-                time.sleep(2)
+        # 分页抓取：ps=50 一页，按 pubdate 倒序，遇到早于 cutoff 或空页即停
+        creator_before_count = len(items)
+        page = 0
+        stopped_by_cutoff = False
+        fatal_error = None
+
+        while len(items) - creator_before_count < MAX_ITEMS_PER_FETCHER:
+            page += 1
+            url = 'https://api.bilibili.com/x/space/wbi/arc/search'
+            params = {
+                'mid': mid,
+                'pn': page,
+                'ps': 50,
+                'order': 'pubdate',
+            }
+            if mixin_key:
+                params = _sign_wbi_params(params, mixin_key)
+            try:
                 resp = requests.get(url, params=params, headers=headers, timeout=15)
-            resp.raise_for_status()
+                if resp.status_code == 412:
+                    logger.warning(f'Bilibili space {creator_name}({mid}): 412 even with wbi sign, falling back to search')
+                    fatal_error = 'wbi-412'
+                    break
+                resp.raise_for_status()
+            except Exception as e:
+                fatal_error = e
+                logger.debug(f'Bilibili space {creator_name}({mid}) page {page} failed: {e}')
+                break
+
             vlist = resp.json().get('data', {}).get('list', {}).get('vlist', []) or []
-            count = 0
+            if not vlist:
+                break
+
             for v in vlist:
                 pubdate = v.get('created', 0)
                 created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
-                if not created or created < cutoff:
+                if not created:
                     continue
+                if created < cutoff:
+                    stopped_by_cutoff = True
+                    break
                 items.append(_bilibili_item(v, created, v.get('author', creator_name), headers))
-                count += 1
-            logger.info(f'Bilibili space {creator_name}({mid}): {count} videos in {HOURS_LOOKBACK}h')
-        except Exception as e:
-            logger.warning(f'Bilibili space {creator_name}({mid}) failed: {e}')
+
+            if stopped_by_cutoff or len(vlist) < 50:
+                break
+            time.sleep(0.6)
+
+        added = len(items) - creator_before_count
+        if fatal_error is None or added > 0:
+            logger.info(
+                f'Bilibili space {creator_name}({mid}): {added} videos in {HOURS_LOOKBACK}h '
+                f'across {page} page(s)'
+            )
 
     return items
 
@@ -512,31 +730,54 @@ def _fetch_bilibili_search():
     for idx, keyword in enumerate(search_keywords):
         if idx > 0:
             time.sleep(0.6)
-        url = 'https://api.bilibili.com/x/web-interface/search/type'
-        params = {
-            'search_type': 'video',
-            'keyword': keyword,
-            'order': 'pubdate',
-            'duration': 0,
-            'page': 1,
-        }
-        try:
-            resp = requests.get(url, params=params, headers=headers, timeout=15)
-            if resp.status_code == 412:
-                logger.warning(f'Bilibili search "{keyword}": 412 rate-limited, retrying after 2s')
-                time.sleep(2)
+        # 分页抓取：按 pubdate 排序，翻到越过 cutoff 或空页为止
+        kw_before_count = len(items)
+        page = 0
+        pages_fetched = 0
+        stopped_by_cutoff = False
+
+        while len(items) - kw_before_count < MAX_ITEMS_PER_FETCHER:
+            page += 1
+            url = 'https://api.bilibili.com/x/web-interface/search/type'
+            params = {
+                'search_type': 'video',
+                'keyword': keyword,
+                'order': 'pubdate',
+                'duration': 0,
+                'page': page,
+            }
+            try:
                 resp = requests.get(url, params=params, headers=headers, timeout=15)
-            resp.raise_for_status()
+                if resp.status_code == 412:
+                    logger.debug(f'Bilibili search "{keyword}" page {page}: 412, retrying after 2s')
+                    time.sleep(2)
+                    resp = requests.get(url, params=params, headers=headers, timeout=15)
+                resp.raise_for_status()
+            except Exception as e:
+                logger.warning(f'Bilibili search "{keyword}" page {page} failed: {e}')
+                break
+
             results = resp.json().get('data', {}).get('result', []) or []
-            for v in results[:20]:
+            if not results:
+                break
+            pages_fetched += 1
+
+            for v in results:
                 pubdate = v.get('pubdate', 0)
                 created = datetime.fromtimestamp(pubdate, tz=timezone.utc) if pubdate else None
-                if not created or created < cutoff:
+                if not created:
                     continue
+                if created < cutoff:
+                    stopped_by_cutoff = True
+                    break
                 items.append(_bilibili_item(v, created, v.get('author', ''), headers))
-            logger.info(f'Bilibili search "{keyword}": fetched {len(results)} videos')
-        except Exception as e:
-            logger.warning(f'Bilibili search "{keyword}" failed: {e}')
+
+            if stopped_by_cutoff:
+                break
+            time.sleep(0.6)
+
+        added = len(items) - kw_before_count
+        logger.info(f'Bilibili search "{keyword}": fetched {added} videos across {pages_fetched} page(s)')
 
     return items
 
@@ -605,9 +846,13 @@ def fetch_nga():
     Fetch NGA forum posts for Morimens.
     Uses mobile API (ngabbs.com) which is more reliable than web API.
     Falls back to web API if mobile fails.
+
+    Note: NGA 对未登录请求返回 403。设置 NGA_COOKIE 环境变量
+    （形如 "ngaPassportUid=xxx; ngaPassportCid=xxx"）可获得已登录会话权限。
     """
     items = []
     nga_fid = os.environ.get('NGA_FORUM_ID') or '-447601'
+    nga_cookie = os.environ.get('NGA_COOKIE', '').strip()
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
     # Mobile API (more reliable, no cookie needed)
@@ -616,18 +861,30 @@ def fetch_nga():
     web_url = f'https://bbs.nga.cn/thread.php?fid={nga_fid}&ajax=1'
 
     headers = {
-        'User-Agent': 'NGA/9.9.9 (Android 14; Pixel 8)',
+        'User-Agent': (
+            'Mozilla/5.0 (Linux; Android 14; Pixel 8) '
+            'AppleWebKit/537.36 (KHTML, like Gecko) '
+            'Chrome/124.0.0.0 Mobile Safari/537.36'
+        ),
         'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
         'Referer': 'https://bbs.nga.cn/thread.php?fid=' + nga_fid,
     }
+    if nga_cookie:
+        headers['Cookie'] = nga_cookie
 
     # Try cloudscraper first if available (handles Cloudflare challenges)
     try:
         import cloudscraper
         session = cloudscraper.create_scraper()
-        logger.info('NGA: using cloudscraper session')
+        logger.debug('NGA: using cloudscraper session')
     except ImportError:
         session = requests.Session()
+
+    if not nga_cookie:
+        # 无 Cookie 环境下静默跳过主 API，避免连续 403 刷屏，直接尝试 Playwright fallback。
+        logger.info('NGA: NGA_COOKIE not set, skipping JSON API (will rely on Playwright fallback if available)')
+        return items
 
     data = None
     for url in [mobile_url, web_url]:
@@ -738,6 +995,9 @@ def fetch_taptap():
             data_list = resp.json().get('data', {}).get('list', [])
             if data_list:
                 break
+        except requests.exceptions.ProxyError as e:
+            # 沙箱/企业代理对 taptap 域常 403，属于环境问题非代码 bug
+            logger.debug(f'TapTap {url.split("/")[2]} proxy blocked: {e}')
         except Exception as e:
             logger.warning(f'TapTap {url.split("/")[2]} failed: {e}')
 
@@ -771,6 +1031,8 @@ def fetch_taptap():
                 if items:
                     logger.info(f'TapTap reviews fallback ({review_domain}): {len(items)} items')
                     break
+            except requests.exceptions.ProxyError as e:
+                logger.debug(f'TapTap review fallback ({review_domain}) proxy blocked: {e}')
             except Exception as e:
                 logger.warning(f'TapTap review fallback ({review_domain}) failed: {e}')
 
@@ -793,16 +1055,31 @@ def fetch_taptap():
                                 text = review.get('contents', {}).get('text', '') if isinstance(review.get('contents'), dict) else ''
                                 score = review.get('score', 0)
                                 sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
-                                items.append({
+                                # Extract real timestamp from review
+                                review_ts = review.get('created_time', 0) or review.get('created_at', 0)
+                                if isinstance(review_ts, str) and review_ts.isdigit():
+                                    review_ts = int(review_ts)
+                                if isinstance(review_ts, (int, float)) and review_ts > 0:
+                                    if review_ts > 1e12:
+                                        review_ts = review_ts // 1000
+                                    review_time = datetime.fromtimestamp(review_ts, tz=timezone.utc).isoformat()
+                                    review_approx = False
+                                else:
+                                    review_time = datetime.now(timezone.utc).isoformat()
+                                    review_approx = True
+                                review_item = {
                                     'title': f'[TapTap {sentiment}] {text[:60]}',
                                     'summary': text,
                                     'source': 'taptap',
-                                    'time': datetime.now(timezone.utc).isoformat(),
+                                    'time': review_time,
                                     'url': web_url,
                                     'engagement': review.get('like_count', 0) or 0,
                                     'author': review.get('user', {}).get('name', '') if isinstance(review.get('user'), dict) else '',
                                     'tags': [sentiment],
-                                })
+                                }
+                                if review_approx:
+                                    review_item['time_is_approximate'] = True
+                                items.append(review_item)
                             logger.info(f'TapTap web scrape: {len(items)} reviews')
                         except (json.JSONDecodeError, KeyError):
                             pass
@@ -833,68 +1110,92 @@ def fetch_taptap():
 
 
 def fetch_steam_reviews():
-    """Fetch recent Steam reviews for Morimens (App ID: 3052450)."""
+    """Fetch recent Steam reviews for Morimens (App ID: 3052450).
+
+    使用 cursor=* 分页一直翻到时间窗口外为止。Steam 按 recent 排序，
+    一旦看到早于 cutoff 的 review 就可以停。
+    """
     import subprocess as _sp
+    from urllib.parse import quote
 
     app_id = 3052450
-    url = f'https://store.steampowered.com/appreviews/{app_id}?json=1&filter=recent&num_per_page=30&language=all&purchase_type=all'
-
     cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
     items = []
+    cursor = '*'
+    page = 0
+    stopped_by_cutoff = False
 
     try:
-        result = _sp.run(
-            ['curl', '-s', '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)', url],
-            capture_output=True, text=True, timeout=30,
-        )
-        if result.returncode != 0:
-            logger.warning(f'Steam curl failed: {result.stderr[:200]}')
-            return items
-        data = json.loads(result.stdout)
+        while len(items) < MAX_ITEMS_PER_FETCHER:
+            page += 1
+            url = (
+                f'https://store.steampowered.com/appreviews/{app_id}'
+                f'?json=1&filter=recent&num_per_page=100&language=all&purchase_type=all'
+                f'&cursor={quote(cursor, safe="")}'
+            )
+            result = _sp.run(
+                ['curl', '-s', '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)', url],
+                capture_output=True, text=True, timeout=30,
+            )
+            if result.returncode != 0:
+                logger.warning(f'Steam curl failed on page {page}: {result.stderr[:200]}')
+                break
+            data = json.loads(result.stdout)
+            reviews = data.get('reviews', []) or []
+            if not reviews:
+                break
 
-        reviews = data.get('reviews', [])
-        for review in reviews:
-            ts = review.get('timestamp_created', 0)
-            created = datetime.fromtimestamp(ts, tz=timezone.utc)
-            if created < cutoff:
-                continue
+            for review in reviews:
+                ts = review.get('timestamp_created', 0)
+                created = datetime.fromtimestamp(ts, tz=timezone.utc)
+                if created < cutoff:
+                    stopped_by_cutoff = True
+                    break
 
-            language = review.get('language', 'unknown')
+                language = review.get('language', 'unknown')
+                voted_up = review.get('voted_up', False)
+                sentiment = '正面' if voted_up else '负面'
+                review_text = review.get('review', '')
+                summary_text = review_text[:50].strip()
+                title = f'[{sentiment}] {summary_text}...' if len(review_text) > 50 else f'[{sentiment}] {summary_text}'
 
-            voted_up = review.get('voted_up', False)
-            sentiment = '正面' if voted_up else '负面'
-            review_text = review.get('review', '')
-            summary_text = review_text[:50].strip()
-            title = f'[{sentiment}] {summary_text}...' if len(review_text) > 50 else f'[{sentiment}] {summary_text}'
+                author_info = review.get('author', {})
+                steamid = author_info.get('steamid', '')
+                review_url = f'https://steamcommunity.com/profiles/{steamid}/recommended/{app_id}'
+                votes_up = review.get('votes_up', 0)
 
-            author_info = review.get('author', {})
-            steamid = author_info.get('steamid', '')
-            review_url = f'https://steamcommunity.com/profiles/{steamid}/recommended/{app_id}'
-            votes_up = review.get('votes_up', 0)
+                items.append({
+                    'title': title,
+                    'summary': review_text,
+                    'source': 'steam_review',
+                    'time': created.isoformat(),
+                    'url': review_url,
+                    'engagement': votes_up,
+                    'is_hot': votes_up > 10,
+                    'author': steamid,
+                    'tags': [language],
+                    'language': language,
+                    'metadata': {
+                        'voted_up': voted_up,
+                        'playtime_forever': author_info.get('playtime_forever', 0),
+                        'votes_up': votes_up,
+                        'timestamp_created': ts,
+                    },
+                })
 
-            items.append({
-                'title': title,
-                'summary': review_text,
-                'source': 'steam_review',
-                'time': created.isoformat(),
-                'url': review_url,
-                'engagement': votes_up,
-                'is_hot': votes_up > 10,
-                'author': steamid,
-                'tags': [language],
-                'language': language,
-                'metadata': {
-                    'voted_up': voted_up,
-                    'playtime_forever': author_info.get('playtime_forever', 0),
-                    'votes_up': votes_up,
-                    'timestamp_created': ts,
-                },
-            })
+            if stopped_by_cutoff:
+                break
+            next_cursor = data.get('cursor')
+            # cursor 不变或缺失 → 已到末尾
+            if not next_cursor or next_cursor == cursor:
+                break
+            cursor = next_cursor
+            time.sleep(0.5)
 
         if len(items) == 0:
-            logger.warning('Steam Reviews: 0 reviews found in last 24h (data source not blocked)')
+            logger.warning(f'Steam Reviews: 0 reviews found in last {HOURS_LOOKBACK}h (data source not blocked)')
         else:
-            logger.info(f'Steam Reviews: fetched {len(items)} reviews in last {HOURS_LOOKBACK}h')
+            logger.info(f'Steam Reviews: fetched {len(items)} reviews in last {HOURS_LOOKBACK}h across {page} page(s)')
     except Exception as e:
         logger.warning(f'Steam Reviews failed: {e}')
 
@@ -902,10 +1203,16 @@ def fetch_steam_reviews():
 
 
 def fetch_steam_news():
-    """Fetch official Steam news/announcements for Morimens (App ID: 3052450)."""
+    """Fetch official Steam news/announcements for Morimens (App ID: 3052450).
+
+    官方公告本身频率较低，通用 HOURS_LOOKBACK（24h）会经常过滤掉全部内容。
+    使用更宽的 OFFICIAL_HOURS_LOOKBACK（默认 30 天）以保证日报至少能看到近期官方动态。
+    """
     app_id = 3052450
-    url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=20&maxlength=500'
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
+    # Steam News 单次 API 调用即可拿足 30 天窗口；count=100 保证不截断。
+    url = f'https://api.steampowered.com/ISteamNews/GetNewsForApp/v2/?appid={app_id}&count=100&maxlength=500'
+    official_hours = int(os.environ.get('OFFICIAL_HOURS_LOOKBACK', max(HOURS_LOOKBACK, 30 * 24)))
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=official_hours)
     items = []
 
     try:
@@ -988,6 +1295,7 @@ def fetch_steam_discussions():
                 'summary': '',
                 'source': 'steam_discussion',
                 'time': datetime.now(timezone.utc).isoformat(),
+                'time_is_approximate': True,
                 'url': url,
                 'engagement': replies,
                 'is_hot': replies >= 10,
@@ -1015,6 +1323,7 @@ def fetch_steam_discussions():
                     'summary': '',
                     'source': 'steam_discussion',
                     'time': datetime.now(timezone.utc).isoformat(),
+                    'time_is_approximate': True,
                     'url': url,
                     'engagement': replies,
                     'is_hot': replies >= 10,
@@ -1027,6 +1336,51 @@ def fetch_steam_discussions():
         logger.warning(f'Steam Discussions failed: {e}')
 
     return items
+
+
+def _parse_yt_relative_time(text):
+    """Parse YouTube relative time strings like '2 days ago' into ISO datetime.
+
+    Returns (iso_string, is_approximate) tuple. The time is approximate because
+    it's derived from relative text. Returns (now_iso, True) if parsing fails.
+    """
+    now = datetime.now(timezone.utc)
+    if not text:
+        return now.isoformat(), True
+    text_lower = text.lower().strip()
+    # Match patterns like "2 days ago", "1 hour ago", "3 weeks ago", etc.
+    m = re.match(r'(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago', text_lower)
+    if m:
+        num = int(m.group(1))
+        unit = m.group(2)
+        delta_map = {
+            'second': timedelta(seconds=num),
+            'minute': timedelta(minutes=num),
+            'hour': timedelta(hours=num),
+            'day': timedelta(days=num),
+            'week': timedelta(weeks=num),
+            'month': timedelta(days=num * 30),
+            'year': timedelta(days=num * 365),
+        }
+        delta = delta_map.get(unit, timedelta())
+        return (now - delta).isoformat(), True
+    # "Streamed X ago" variant
+    m = re.match(r'streamed\s+(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago', text_lower)
+    if m:
+        num = int(m.group(1))
+        unit = m.group(2)
+        delta_map = {
+            'second': timedelta(seconds=num),
+            'minute': timedelta(minutes=num),
+            'hour': timedelta(hours=num),
+            'day': timedelta(days=num),
+            'week': timedelta(weeks=num),
+            'month': timedelta(days=num * 30),
+            'year': timedelta(days=num * 365),
+        }
+        delta = delta_map.get(unit, timedelta())
+        return (now - delta).isoformat(), True
+    return now.isoformat(), True
 
 
 def _fetch_youtube_web_search():
@@ -1107,6 +1461,7 @@ def _fetch_youtube_web_search():
                         'summary': '',
                         'source': 'youtube',
                         'time': datetime.now(timezone.utc).isoformat(),
+                        'time_is_approximate': True,
                         'url': f'https://www.youtube.com/watch?v={vid}',
                         'engagement': 0,
                         'author': '',
@@ -1186,11 +1541,13 @@ def _fetch_youtube_web_search():
                     if published_text:
                         summary = f'[{published_text}] {desc}' if desc else published_text
 
+                    parsed_time, time_approx = _parse_yt_relative_time(published_text)
                     yt_item = {
                         'title': title,
                         'summary': summary,
                         'source': 'youtube',
-                        'time': datetime.now(timezone.utc).isoformat(),
+                        'time': parsed_time,
+                        'time_is_approximate': time_approx,
                         'url': f'https://www.youtube.com/watch?v={vid}',
                         'engagement': engagement,
                         'is_hot': engagement > 5000,
@@ -1353,62 +1710,6 @@ def fetch_youtube():
     return items
 
 
-def fetch_fandom_wiki():
-    """Fetch recent changes from Morimens Fandom wiki."""
-    url = 'https://morimens.fandom.com/api.php'
-    params = {
-        'action': 'query',
-        'list': 'recentchanges',
-        'rcnamespace': '0',  # Main namespace only
-        'rclimit': '20',
-        'rcprop': 'title|timestamp|user|comment|sizes',
-        'rctype': 'edit|new',
-        'format': 'json',
-    }
-    cutoff = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
-    items = []
-
-    try:
-        resp = requests.get(url, params=params, timeout=15,
-                            headers={'User-Agent': 'MorimensNewsBot/1.0'})
-        resp.raise_for_status()
-        changes = resp.json().get('query', {}).get('recentchanges', [])
-
-        for rc in changes:
-            ts_str = rc.get('timestamp', '')
-            try:
-                created = datetime.fromisoformat(ts_str.replace('Z', '+00:00'))
-            except (ValueError, TypeError):
-                continue
-            if created < cutoff:
-                continue
-
-            page_title = rc.get('title', '')
-            user = rc.get('user', '')
-            comment = rc.get('comment', '')
-            size_diff = rc.get('newlen', 0) - rc.get('oldlen', 0)
-            rc_type = rc.get('type', 'edit')
-            action = '新建' if rc_type == 'new' else '编辑'
-
-            items.append({
-                'title': f'[Fandom Wiki {action}] {page_title}',
-                'summary': f'{user}: {comment}' if comment else f'{user} {action}了页面',
-                'source': 'official',
-                'time': created.isoformat(),
-                'url': f'https://morimens.fandom.com/wiki/{page_title.replace(" ", "_")}',
-                'engagement': abs(size_diff),
-                'is_hot': abs(size_diff) > 1000 or rc_type == 'new',
-                'author': user,
-                'tags': ['wiki', 'fandom'],
-            })
-
-        logger.info(f'Fandom Wiki: fetched {len(items)} recent changes')
-    except Exception as e:
-        logger.warning(f'Fandom Wiki failed: {e}')
-
-    return items
-
-
 def _load_discord_channel_index():
     """Load channel_index.json and build channel_id→name + dir→channel_id maps."""
     index_path = REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'channel_index.json'
@@ -1507,7 +1808,7 @@ def fetch_discord_local():
                 'title': f'Discord 社区日报 ({data_date})',
                 'summary': f'今日 {msg_count:,} 条消息，{authors} 位活跃用户，{reactions:,} 次反应。热门频道：{ch_summary}',
                 'source': 'discord',
-                'time': datetime.now(timezone.utc).isoformat(),
+                'time': f'{data_date}T00:00:00+00:00',
                 'url': f'https://discord.com/channels/{guild_id}',
                 'engagement': msg_count,
                 'author': 'Discord Archiver',
@@ -1702,7 +2003,6 @@ def run():
         ('SteamNews', fetch_steam_news),
         ('SteamDiscussions', fetch_steam_discussions),
         ('YouTube', fetch_youtube),
-        ('FandomWiki', fetch_fandom_wiki),
         ('DiscordLocal', fetch_discord_local),
     ]
 
@@ -1783,6 +2083,30 @@ def run():
     # Validate and sanitize all items
     all_news = validate_all_news(all_news)
 
+    # ── 补齐 lang / platform_region（aggregator 早期未设这两个字段）──
+    _SOURCE_META = {
+        'reddit':           ('en', 'global'),
+        'bilibili':         ('zh', 'cn'),
+        'twitter':          ('',   'global'),   # lang from tweet API if available
+        'nga':              ('zh', 'cn'),
+        'taptap':           ('zh', 'cn'),
+        'steam_review':     ('',   'global'),   # lang from review.language
+        'steam':            ('',   'global'),
+        'official':         ('en', 'global'),
+        'steam_discussion': ('en', 'global'),
+        'youtube':          ('',   'global'),
+        'discord':          ('',   'global'),
+        'weibo':            ('zh', 'cn'),
+        'xiaohongshu':      ('zh', 'cn'),
+    }
+    for item in all_news:
+        src = item.get('source', '')
+        default_lang, default_region = _SOURCE_META.get(src, ('', 'global'))
+        if not item.get('lang'):
+            item['lang'] = default_lang
+        if not item.get('platform_region'):
+            item['platform_region'] = default_region
+
     # Deduplicate by URL (normalized) + title similarity
     seen_keys = set()
     unique_news = []
@@ -1838,6 +2162,13 @@ def run():
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     logger.info(f'Done! {len(unique_news)} items written to {OUTPUT_PATH}')
+
+    # Record successful run for adaptive lookback
+    try:
+        from collection_state import mark_collection_done
+        mark_collection_done(item_count=len(unique_news))
+    except ImportError:
+        pass
 
 
 if __name__ == '__main__':

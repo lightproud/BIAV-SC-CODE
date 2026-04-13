@@ -1,26 +1,23 @@
 /**
- * memory-api.ts — Unified Silver Core API (strongly-typed TS wrapper).
+ * memory-api.ts — Unified knowledge engine API (strongly-typed TS wrapper).
  *
- * Why unify: The renderer doesn't need to know whether a silver core call
- * goes through MCP or direct Python. This module provides a single interface
- * that routes internally based on tool type.
+ * Architecture change (2026-04-13): BPT Server runs locally, so all 11 tools
+ * route through MCP. No more split between MCP (Tier 2) and direct Python
+ * calls (Tier 1). The SilverDirectClient is no longer used.
  *
- * Routing:
- *   MCP (Tier 2): memory_search, graph_query, graph_related_files, store_facts
- *   Direct (Tier 1): check_cache, memory_utility, recommend_context, rebuild_indexes, memory_writeback
+ * Why keep this wrapper: The renderer and tool-loop call typed methods here
+ * instead of raw MCP callTool(). This isolates them from wire format changes.
  */
 
 import type { McpClient } from './mcp-client';
-import type { SilverDirectClient } from './direct-client';
 import type { SilverSearchResult, SilverGraphNode, SilverGraphNeighbor } from '../../src/types';
 
 export class SilverCoreApi {
   constructor(
     private mcp: McpClient | null,
-    private direct: SilverDirectClient | null,
   ) {}
 
-  // ── MCP-routed tools (Tier 2) ─────────────────────────────
+  // ── Search & Query ────────────────────────────────────────
 
   async memorySearch(query: string, topK: number = 5): Promise<{
     query: string;
@@ -72,45 +69,56 @@ export class SilverCoreApi {
     return this.mcp.callTool('store_facts', { facts: JSON.stringify(facts) });
   }
 
-  // ── Direct-routed tools (Tier 1) ──────────────────────────
+  // ── Management & Utility ──────────────────────────────────
 
   async checkCache(query: string): Promise<unknown> {
-    if (!this.direct) return { hit: false };
-    const result = await this.direct.checkCache(query);
-    return result.data;
+    if (!this.mcp?.isConnected()) return { hit: false };
+    const raw = await this.mcp.callTool('check_cache', { query });
+    return this.parseToolResult(raw);
   }
 
   async memoryUtility(topN: number = 10): Promise<unknown> {
-    if (!this.direct) return { rankings: [] };
-    const result = await this.direct.memoryUtility(topN);
-    return result.data;
+    if (!this.mcp?.isConnected()) return { rankings: [] };
+    const raw = await this.mcp.callTool('memory_utility', { top_n: topN });
+    return this.parseToolResult(raw);
   }
 
   async recommendContext(query: string, role: string = ''): Promise<unknown> {
-    if (!this.direct) return { recommended_files: [] };
-    const result = await this.direct.recommendContext(query, role);
-    return result.data;
+    if (!this.mcp?.isConnected()) return { recommended_files: [] };
+    const raw = await this.mcp.callTool('recommend_context', { query, role });
+    return this.parseToolResult(raw);
   }
 
   async rebuildIndexes(): Promise<unknown> {
-    if (!this.direct) return { error: 'Direct client not initialized' };
-    const result = await this.direct.rebuildIndexes();
-    return result.data;
+    if (!this.mcp?.isConnected()) return { error: 'MCP not connected' };
+    const raw = await this.mcp.callTool('rebuild_indexes', {});
+    return this.parseToolResult(raw);
   }
 
   async memoryWriteback(dryRun: boolean = false): Promise<unknown> {
-    if (!this.direct) return { error: 'Direct client not initialized' };
-    const result = await this.direct.memoryWriteback(dryRun);
-    return result.data;
+    if (!this.mcp?.isConnected()) return { error: 'MCP not connected' };
+    const raw = await this.mcp.callTool('memory_writeback', { dry_run: dryRun });
+    return this.parseToolResult(raw);
+  }
+
+  async sessionBriefing(role: string = ''): Promise<unknown> {
+    if (!this.mcp?.isConnected()) return { error: 'MCP not connected' };
+    const raw = await this.mcp.callTool('session_briefing', { role });
+    return this.parseToolResult(raw);
+  }
+
+  async characterPersona(character: string = 'erica', action: string = 'prompt'): Promise<unknown> {
+    if (!this.mcp?.isConnected()) return { error: 'MCP not connected' };
+    const raw = await this.mcp.callTool('character_persona', { character, action });
+    return this.parseToolResult(raw);
   }
 
   // ── Status ────────────────────────────────────────────────
 
-  getStatus(): { mcpConnected: boolean; mcpTools: string[]; directAvailable: boolean } {
+  getStatus(): { mcpConnected: boolean; mcpTools: string[] } {
     return {
       mcpConnected: this.mcp?.isConnected() ?? false,
       mcpTools: this.mcp?.getTools().map((t) => t.name) ?? [],
-      directAvailable: this.direct !== null,
     };
   }
 
@@ -118,7 +126,7 @@ export class SilverCoreApi {
 
   /**
    * MCP tool results come as { content: [{ type: 'text', text: '...' }] }.
-   * The inner text is JSON from our Python tools. Parse it out.
+   * The inner text is JSON from the Python server. Parse it out.
    */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   private parseToolResult(raw: unknown): any {

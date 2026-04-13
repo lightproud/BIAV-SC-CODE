@@ -458,6 +458,196 @@ def _count_types(items, key) -> dict:
 
 
 # ============================================================
+# Incremental update (delta since last build)
+# ============================================================
+
+
+def incremental_update(hours_back: int = 24) -> dict:
+    """Update graph incrementally by scanning only recently changed files.
+
+    Detects new entities, new mention edges, and new file dependencies
+    without full rebuild. Merges into existing graph.
+    """
+    graph = load_graph()
+    if not graph:
+        print("  No existing graph, doing full build")
+        return build_graph()
+
+    import time
+    cutoff = time.time() - hours_back * 3600
+    existing_nodes = graph["nodes"]
+    existing_edge_set = {
+        (e["source"], e["target"], e["type"]) for e in graph["edges"]
+    }
+    new_nodes = 0
+    new_edges = 0
+
+    # 1. Scan recently modified memory files for new entity mentions
+    scan_patterns = ["memory/*.md", "memory/session-digests/*.md",
+                     "projects/*/CONTEXT.md", "BIAV-SC.md"]
+    changed_files = []
+    for pattern in scan_patterns:
+        for fp in REPO.glob(pattern):
+            if fp.is_file() and fp.stat().st_mtime > cutoff:
+                changed_files.append(fp)
+
+    if not changed_files:
+        print("  No files changed in last {hours_back}h, graph is current")
+        return graph
+
+    print(f"  {len(changed_files)} files changed, scanning for new entities...")
+
+    # Build entity dictionary (same as extract_concepts_from_text)
+    all_entities = _build_entity_dict()
+
+    for fp in changed_files:
+        try:
+            text = fp.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+
+        rel = str(fp.relative_to(REPO))
+        file_id = make_node_id("file", rel)
+
+        # Ensure file node exists
+        if file_id not in existing_nodes:
+            existing_nodes[file_id] = {
+                "id": file_id, "type": "File", "name": rel,
+                "properties": {"category": "memory", "lines": len(text.splitlines())},
+            }
+            new_nodes += 1
+
+        # Scan for entity mentions
+        for entity_name, entity_id in all_entities.items():
+            count = text.count(entity_name)
+            if count >= 2:
+                edge_key = (file_id, entity_id, "mentions")
+                if edge_key not in existing_edge_set:
+                    graph["edges"].append({
+                        "source": file_id, "target": entity_id,
+                        "type": "mentions", "properties": {"count": count},
+                    })
+                    existing_edge_set.add(edge_key)
+                    new_edges += 1
+
+        # Scan for file cross-references
+        ref_pattern = re.compile(r"(?:memory/[\w./-]+|assets/[\w./-]+|projects/[\w./-]+)")
+        for m in ref_pattern.finditer(text):
+            ref = m.group(0).rstrip(".,;:!?)")
+            target = REPO / ref
+            if target.exists():
+                tgt_id = make_node_id("file", ref)
+                edge_key = (file_id, tgt_id, "depends_on")
+                if edge_key not in existing_edge_set:
+                    graph["edges"].append({
+                        "source": file_id, "target": tgt_id, "type": "depends_on",
+                    })
+                    existing_edge_set.add(edge_key)
+                    new_edges += 1
+
+    # 2. Check for new characters in characters.json
+    chars_fp = REPO / "projects" / "wiki" / "data" / "db" / "characters.json"
+    if chars_fp.exists() and chars_fp.stat().st_mtime > cutoff:
+        try:
+            chars_data = json.loads(chars_fp.read_text(encoding="utf-8"))
+            for c in chars_data.get("characters", []):
+                char_id = make_node_id("character", c.get("name", ""))
+                if char_id and char_id not in existing_nodes:
+                    existing_nodes[char_id] = {
+                        "id": char_id, "type": "Character", "name": c.get("name", ""),
+                        "properties": {
+                            "id": c.get("id", ""), "name_en": c.get("name_en", ""),
+                            "rarity": c.get("rarity", ""), "realm": c.get("realm", ""),
+                            "role": c.get("role", ""),
+                        },
+                    }
+                    new_nodes += 1
+                    # Character → belongs_to → Realm
+                    if c.get("realm"):
+                        realm_id = make_node_id("realm", c["realm"])
+                        edge_key = (char_id, realm_id, "belongs_to")
+                        if edge_key not in existing_edge_set:
+                            graph["edges"].append({
+                                "source": char_id, "target": realm_id, "type": "belongs_to",
+                            })
+                            existing_edge_set.add(edge_key)
+                            new_edges += 1
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # 3. Re-scan decisions.md if changed
+    decisions_fp = REPO / "memory" / "decisions.md"
+    if decisions_fp in changed_files:
+        dec_nodes, dec_edges = extract_decisions()
+        for n in dec_nodes:
+            if n["id"] not in existing_nodes:
+                existing_nodes[n["id"]] = n
+                new_nodes += 1
+        for e in dec_edges:
+            edge_key = (e["source"], e["target"], e["type"])
+            if edge_key not in existing_edge_set:
+                graph["edges"].append(e)
+                existing_edge_set.add(edge_key)
+                new_edges += 1
+
+    # Update meta
+    graph["meta"]["generated"] = TODAY.isoformat()
+    graph["meta"]["node_count"] = len(existing_nodes)
+    graph["meta"]["edge_count"] = len(graph["edges"])
+    graph["meta"]["last_incremental"] = TODAY.isoformat()
+    graph["meta"]["node_types"] = dict(_count_types(existing_nodes.values(), "type"))
+    graph["meta"]["edge_types"] = dict(_count_types(graph["edges"], "type"))
+
+    # Save
+    GRAPH_FILE.write_text(
+        json.dumps(graph, ensure_ascii=False, indent=2), encoding="utf-8",
+    )
+
+    print(f"  +{new_nodes} nodes, +{new_edges} edges")
+    print(f"  Total: {graph['meta']['node_count']} nodes, {graph['meta']['edge_count']} edges")
+    return graph
+
+
+def _build_entity_dict() -> dict:
+    """Build merged entity dictionary for scanning."""
+    concept_dict = {
+        "联动": "concept:联动", "沙耶之歌": "concept:沙耶之歌",
+        "Steam": "concept:Steam", "Bilibili": "concept:Bilibili",
+        "GitHub": "concept:GitHub", "VitePress": "concept:VitePress",
+        "Phase 0": "concept:Phase0", "Phase 1": "concept:Phase1",
+        "Phase 2": "concept:Phase2", "Phase 3": "concept:Phase3",
+        "Phase 4": "concept:Phase4", "方法论": "concept:方法论",
+        "记忆宫殿": "concept:记忆宫殿", "技术债": "concept:技术债",
+        "BPT": "concept:BPT", "MCP": "concept:MCP",
+        "Electron": "concept:Electron", "TF-IDF": "concept:TF-IDF",
+    }
+    system_aliases = {
+        "银芯": "system:银芯", "BIAV-SC": "system:银芯",
+        "黑池": "system:黑池", "BIAV-BP": "system:黑池",
+        "Wiki": "system:Wiki", "日报": "system:日报",
+        "做梦": "system:做梦Agent", "AutoDream": "system:做梦Agent",
+        "Discord归档": "system:Discord归档",
+    }
+    all_entities = {}
+    all_entities.update(concept_dict)
+    all_entities.update(system_aliases)
+
+    # Character names
+    chars_fp = REPO / "projects" / "wiki" / "data" / "db" / "characters.json"
+    if chars_fp.exists():
+        try:
+            chars_data = json.loads(chars_fp.read_text(encoding="utf-8"))
+            for c in chars_data.get("characters", []):
+                name = c.get("name", "")
+                if name and len(name) >= 2:
+                    all_entities[name] = make_node_id("character", name)
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    return all_entities
+
+
+# ============================================================
 # Graph query
 # ============================================================
 
