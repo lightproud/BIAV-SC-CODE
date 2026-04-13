@@ -23,7 +23,8 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 UTILITY_FILE = REPO / "assets" / "data" / "memory-utility.json"
-ACCESS_LOG = REPO / "memory" / "dreams" / "access-log.json"
+ACCESS_LOG_DIR = REPO / "memory" / "dreams" / "access-log"
+ACCESS_LOG_LEGACY = REPO / "memory" / "dreams" / "access-log.json"
 INSIGHTS_FILE = REPO / "memory" / "dreams" / "insights.json"
 DREAMS_DIR = REPO / "memory" / "dreams"
 DIGESTS_DIR = REPO / "memory" / "session-digests"
@@ -42,17 +43,30 @@ MIN_DAYS_FOR_ARCHIVAL = 30
 # ============================================================
 
 
+def _load_access_log() -> list[dict]:
+    """Load access log from per-day files (with legacy single-file fallback)."""
+    entries = []
+    if ACCESS_LOG_DIR.exists():
+        for f in sorted(ACCESS_LOG_DIR.glob("*.json")):
+            try:
+                entries.append(json.loads(f.read_text(encoding="utf-8")))
+            except (json.JSONDecodeError, OSError):
+                pass
+    if not entries and ACCESS_LOG_LEGACY.exists():
+        try:
+            entries = json.loads(ACCESS_LOG_LEGACY.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+    return entries
+
+
 def get_access_signals() -> dict[str, dict]:
-    """Extract access frequency signals from access-log.json.
+    """Extract access frequency signals from access log.
 
     Returns {file_path: {count, last_accessed, sessions}}
     """
-    if not ACCESS_LOG.exists():
-        return {}
-
-    try:
-        logs = json.loads(ACCESS_LOG.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
+    logs = _load_access_log()
+    if not logs:
         return {}
 
     signals = defaultdict(lambda: {"count": 0, "last_accessed": None, "sessions": 0})

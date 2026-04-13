@@ -30,7 +30,8 @@ TODAY = date.today()
 STALE_DAYS = 14
 DREAMS_DIR = REPO / "memory" / "dreams"
 INSIGHTS_FILE = DREAMS_DIR / "insights.json"
-ACCESS_LOG = DREAMS_DIR / "access-log.json"
+ACCESS_LOG_DIR = DREAMS_DIR / "access-log"
+ACCESS_LOG_LEGACY = DREAMS_DIR / "access-log.json"
 SEMANTIC_INDEX = REPO / "assets" / "data" / "semantic-index.json"
 SENTINEL_BASELINE = REPO / "assets" / "data" / "sentinel-baseline.json"
 ALERTS_FILE = REPO / "projects" / "news" / "output" / "alerts.json"
@@ -700,19 +701,18 @@ def identify_hot_topics() -> list[str]:
     topics = []
 
     # From access-log: most frequently scanned files → their topics
-    if ACCESS_LOG.exists():
-        try:
-            logs = json.loads(ACCESS_LOG.read_text(encoding="utf-8"))
-            file_counts = Counter()
-            for entry in logs[-7:]:  # Last 7 entries
-                for fp in entry.get("files_scanned", []):
-                    file_counts[fp] += 1
-            # Top 5 files → extract topic from filename
-            for fp, _ in file_counts.most_common(5):
-                name = Path(fp).stem.replace("-", " ").replace("_", " ")
-                topics.append(name)
-        except (json.JSONDecodeError, OSError):
-            pass
+    try:
+        logs = load_access_log(last_n=7)
+        file_counts = Counter()
+        for entry in logs:
+            for fp in entry.get("files_scanned", []):
+                file_counts[fp] += 1
+        # Top 5 files → extract topic from filename
+        for fp, _ in file_counts.most_common(5):
+            name = Path(fp).stem.replace("-", " ").replace("_", " ")
+            topics.append(name)
+    except Exception:
+        pass
 
     # Fixed high-value topics for this project
     core_topics = [
@@ -924,32 +924,54 @@ def save_insights(new_insights: list):
     )
 
 
-def log_access(files_accessed: list[str]):
-    """Log which files were accessed during this dream run (feedback loop)."""
-    DREAMS_DIR.mkdir(parents=True, exist_ok=True)
+def load_access_log(last_n: int = 30) -> list[dict]:
+    """Load access log entries from per-day files (with legacy fallback).
 
-    log = []
-    if ACCESS_LOG.exists():
+    Returns a sorted list of entry dicts, newest last.
+    """
+    entries = []
+
+    # New format: one file per day in access-log/ directory
+    if ACCESS_LOG_DIR.exists():
+        for f in sorted(ACCESS_LOG_DIR.glob("*.json")):
+            try:
+                entries.append(json.loads(f.read_text(encoding="utf-8")))
+            except (json.JSONDecodeError, OSError):
+                pass
+
+    # Legacy fallback: single access-log.json array
+    if not entries and ACCESS_LOG_LEGACY.exists():
         try:
-            log = json.loads(ACCESS_LOG.read_text(encoding="utf-8"))
+            entries = json.loads(ACCESS_LOG_LEGACY.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
             pass
 
-    log.append({
+    entries.sort(key=lambda e: e.get("date", ""))
+    return entries[-last_n:]
+
+
+def log_access(files_accessed: list[str]):
+    """Log which files were accessed during this dream run (feedback loop)."""
+    ACCESS_LOG_DIR.mkdir(parents=True, exist_ok=True)
+
+    entry = {
         "date": TODAY.isoformat(),
         "timestamp": datetime.now().isoformat(),
         "branch": _get_branch(),
         "files_scanned": files_accessed,
         "count": len(files_accessed),
-    })
+    }
 
-    # Keep last 30 days
-    log = log[-30:]
-
-    ACCESS_LOG.write_text(
-        json.dumps(log, ensure_ascii=False, indent=2),
+    entry_file = ACCESS_LOG_DIR / f"{TODAY.isoformat()}.json"
+    entry_file.write_text(
+        json.dumps(entry, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
+
+    # Cleanup: keep last 30 days of files
+    all_files = sorted(ACCESS_LOG_DIR.glob("*.json"))
+    for old_file in all_files[:-30]:
+        old_file.unlink()
 
 
 # ============================================================
