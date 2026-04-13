@@ -208,6 +208,19 @@ def generate_briefing(role: str = "") -> dict:
     except Exception:
         sections["recommended_context"] = []
 
+    # --- Section 9: Character persona ---
+    try:
+        from character_persona import load_persona, build_system_prompt
+        persona = load_persona("erica")
+        if persona:
+            sections["persona"] = {
+                "character": "erica",
+                "name": persona["name"],
+                "prompt": build_system_prompt(persona, platform="silver_core"),
+            }
+    except Exception:
+        pass
+
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "role": role,
@@ -318,6 +331,13 @@ def render_markdown(briefing: dict) -> str:
         for r in reco[:5]:
             lines.append(f"- [{r.get('score', 0):.3f}] {r['file']} ({r.get('reason', '')})")
         lines.append("")
+
+    # Persona
+    persona = sections.get("persona")
+    if persona:
+        lines.append("---")
+        lines.append("")
+        lines.append(persona["prompt"])
 
     return "\n".join(lines)
 
