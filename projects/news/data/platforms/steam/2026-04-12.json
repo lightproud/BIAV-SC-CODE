@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-12T11:50:55.030376+00:00",
+  "archived_at": "2026-04-12T14:12:22.130819+00:00",
   "source": "steam",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "source": "steam",
@@ -288,6 +288,21 @@
       "review": "邀请码：BR2YEFL4PP\n谢谢🙏",
       "timestamp_created": 1775981617,
       "playtime_forever": 1489
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-12T10:51:32+00:00",
+      "lang": "japanese",
+      "title": "[正面] とても面白いです",
+      "summary": "とても面白いです",
+      "url": "https://steamcommunity.com/profiles/76561199654383929/recommended/3052450",
+      "author": "76561199654383929",
+      "engagement": 0,
+      "language": "japanese",
+      "voted_up": true,
+      "review": "とても面白いです",
+      "timestamp_created": 1775991092,
+      "playtime_forever": 776
     }
   ]
 }

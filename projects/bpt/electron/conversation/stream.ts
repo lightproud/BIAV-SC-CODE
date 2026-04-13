@@ -13,26 +13,25 @@
  * 5. Collect content blocks; if tool_use blocks present, execute tools
  * 6. Send tool_result to renderer, append to history, loop back to step 3
  * 7. On final message_end (no more tool_use), merge usage and log to SQLite
- *
- * The main process owns conversation history (in-memory Map). This is
- * essential for the tool loop — we need to append assistant + tool_result
- * messages between LLM calls without renderer involvement.
  */
 
 import { ipcMain, BrowserWindow } from 'electron';
 import { ClaudeProvider } from '../llm/claude';
 import { OpenAiProvider } from '../llm/openai';
 import { getActiveTools } from '../llm/tool-registry';
-import { estimateRequestTokens, mergeUsage, accumulateUsage, emptyUsage } from '../llm/token-accounting';
+import { estimateTokens, mergeUsage, accumulateUsage, emptyUsage } from '../llm/token-accounting';
+import { getModelSpec } from '../../src/models';
 import { logTokenUsage } from '../core/logger';
 import { getConfig } from '../core/config';
 import { logger } from '../core/logger';
 import { executeTool } from './tool-loop';
 import { compressHistory } from './compressor';
+import { addMessage, getMessages, deleteMessages } from './store';
+import { getSilverApi } from '../silver/silver-ipc';
 import type { LlmProvider, LlmStreamEvent, LlmMessage, LlmContentBlock } from '../llm/provider';
 import type { Gear } from '../../src/types';
 
-// ── Conversation history store (in-memory) ──────────────────────
+// ── Conversation history store (in-memory, backed by SQLite) ────
 // Key: conversationId, Value: LlmMessage[] (full history)
 const histories = new Map<string, LlmMessage[]>();
 
@@ -41,10 +40,101 @@ let lastProviderKey = '';
 
 const MAX_TOOL_LOOPS = 10;
 
-const SYSTEM_PROMPT = `You are BPT (Black Pool Terminal), an AI assistant deeply integrated with the 忘却前夜 (Morimens) project.
+/**
+ * Output token limits by gear, as a fraction of the model's maxOutput.
+ *
+ * Why not use model.maxOutput directly: chat gear doesn't need 64k output
+ * for Q&A — capping saves cost. Work gear needs more for code generation
+ * but still doesn't need the full 128k Opus ceiling every turn.
+ *
+ * The actual value = min(gear fraction * model.maxOutput, gear hard cap).
+ */
+const OUTPUT_LIMITS: Record<Gear, { fraction: number; hardCap: number }> = {
+  chat: { fraction: 0.25, hardCap: 16_384 },
+  work: { fraction: 0.50, hardCap: 32_768 },
+};
+
+function getMaxOutputTokens(model: string, gear: Gear): number {
+  const spec = getModelSpec(model);
+  const limit = OUTPUT_LIMITS[gear];
+  return Math.min(Math.floor(spec.maxOutput * limit.fraction), limit.hardCap);
+}
+
+/**
+ * Base identity shared by both gears.
+ */
+const IDENTITY_PROMPT = `You are BPT (Black Pool Terminal), an AI assistant deeply integrated with the 忘却前夜 (Morimens) project.
 You have access to Silver Core memory tools and Black Pool Explorer for searching the project's codebase and configurations.
-Always respond in Chinese unless the user explicitly asks for another language.
-Be concise and precise. When using tools, explain what you're doing and why.`;
+Always respond in Chinese unless the user explicitly asks for another language.`;
+
+/**
+ * Gear-specific behavioral guidance.
+ *
+ * Why: Gears are NOT a token optimization — they steer model tendency.
+ * Without explicit guidance, the model oscillates between discussing and
+ * executing. Gear prompts resolve this ambiguity upfront, similar to
+ * Claude Code's plan mode vs execution mode.
+ */
+const GEAR_PROMPTS: Record<Gear, string> = {
+  chat: `${IDENTITY_PROMPT}
+
+## Mode: Discussion (Chat Gear)
+You are in discussion mode. Your role is to ANALYZE, EXPLAIN, and ADVISE.
+- Discuss architecture, review approaches, answer questions about the project.
+- Use memory_search / graph_query / BPE search to find information and cite evidence.
+- DO NOT write code, create files, or execute commands. If the user asks you to make changes, suggest they switch to Work gear.
+- Keep responses concise and focused. Prefer structured analysis over lengthy prose.`,
+
+  work: `${IDENTITY_PROMPT}
+
+## Mode: Execution (Work Gear)
+You are in execution mode. Your role is to ACT on the user's instructions.
+- Write code, modify files, execute commands, store facts to memory.
+- When making changes, explain what you're doing and why, then DO it.
+- Use tools proactively — search before coding, verify after changing.
+- If a task is ambiguous, clarify briefly then proceed with the most reasonable interpretation.
+- Commit to a course of action rather than listing options.`,
+};
+
+/**
+ * Build the full system prompt by combining gear-specific guidance
+ * with auto-injected Silver Core context.
+ *
+ * Why gear in system prompt: The gear prompt is the PRIMARY behavioral
+ * steering mechanism. Tool availability is secondary — it's the system
+ * prompt that tells the model "discuss, don't execute" or vice versa.
+ */
+async function buildSystemPrompt(userMessage: string, gear: Gear): Promise<string> {
+  const basePrompt = GEAR_PROMPTS[gear];
+  const silverApi = getSilverApi();
+  if (!silverApi) return basePrompt;
+
+  try {
+    const recommended = await silverApi.recommendContext(userMessage) as {
+      recommended_files?: Array<{ file: string; reason: string; preview?: string }>;
+    };
+
+    const files = recommended?.recommended_files;
+    if (!files || files.length === 0) return basePrompt;
+
+    // Take top 3 recommendations, format as concise context block
+    const contextLines = files.slice(0, 3).map((f) => {
+      const preview = f.preview ? `\n  ${f.preview.slice(0, 200)}` : '';
+      return `- ${f.file}: ${f.reason}${preview}`;
+    });
+
+    return `${basePrompt}
+
+## Relevant project context (auto-injected from Silver Core)
+${contextLines.join('\n')}`;
+  } catch (err) {
+    // recommend_context failure must never block the LLM call
+    logger.warn('stream', 'recommend_context failed, using base prompt', {
+      error: err instanceof Error ? err.message : String(err),
+    });
+    return basePrompt;
+  }
+}
 
 /**
  * Get or create the LLM provider based on current config.
@@ -78,21 +168,67 @@ function getProvider(): LlmProvider {
 }
 
 /**
- * Get conversation history, creating empty array if needed.
+ * Get conversation history, loading from SQLite if not in memory.
  */
 function getHistory(conversationId: string): LlmMessage[] {
   if (!histories.has(conversationId)) {
-    histories.set(conversationId, []);
+    // Try to load from SQLite
+    const rows = getMessages(conversationId);
+    const messages: LlmMessage[] = rows.map((row) => ({
+      role: row.role as 'user' | 'assistant' | 'system',
+      content: safeParseContentJson(row.content_json),
+    }));
+    histories.set(conversationId, messages);
   }
   return histories.get(conversationId) as LlmMessage[];
+}
+
+/**
+ * Parse content_json from SQLite. Returns string or LlmContentBlock[].
+ */
+function safeParseContentJson(json: string): string | LlmContentBlock[] {
+  try {
+    const parsed = JSON.parse(json);
+    // If it's an array of content blocks, return as-is
+    if (Array.isArray(parsed)) return parsed as LlmContentBlock[];
+    // If it's a string, return as string
+    if (typeof parsed === 'string') return parsed;
+    return json;
+  } catch {
+    return json;
+  }
+}
+
+/**
+ * Persist a message to SQLite.
+ */
+function persistMessage(conversationId: string, role: string, content: string | LlmContentBlock[]): void {
+  const contentJson = typeof content === 'string'
+    ? JSON.stringify(content)
+    : JSON.stringify(content);
+  const msgId = `msg_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`;
+  try {
+    addMessage(msgId, conversationId, role, contentJson, Date.now());
+  } catch (err) {
+    logger.error('stream', 'Failed to persist message', {
+      error: err instanceof Error ? err.message : String(err),
+    });
+  }
 }
 
 /**
  * Send an event to the renderer window (safely handles destroyed windows).
  */
 function sendToRenderer(win: BrowserWindow, event: Record<string, unknown>): void {
-  if (!win.isDestroyed()) {
-    win.webContents.send('chat:stream', event);
+  try {
+    if (!win.isDestroyed()) {
+      win.webContents.send('chat:stream', event);
+    }
+  } catch (err) {
+    // Window was destroyed between check and send
+    logger.warn('stream', 'Failed to send to renderer', {
+      error: err instanceof Error ? err.message : String(err),
+    });
   }
 }
 
@@ -105,32 +241,77 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
       const currentProvider = getProvider();
       const currentGear = (gear || 'chat') as Gear;
       const tools = getActiveTools(currentGear);
-      const endpoint = getConfig('endpoint') as { model: string };
+      const endpoint = getConfig('endpoint') as { model: string; provider?: string };
 
-      // Append user message to history
+      // Only enable cache_control for Claude provider
+      const useCacheControl = (endpoint.provider ?? 'claude') !== 'openai';
+
+      // Get or load conversation history
       const history = getHistory(conversationId);
-      history.push({ role: 'user', content: userMessage });
 
-      // Tool loop: stream → collect tool_use → execute → re-stream
+      // Append user message to history + persist
+      history.push({ role: 'user', content: userMessage });
+      persistMessage(conversationId, 'user', userMessage);
+
+      // Build system prompt once per user turn (auto-inject Silver Core context)
+      const systemPrompt = await buildSystemPrompt(userMessage, currentGear);
+
+      // Model-aware output limit: fraction of model's maxOutput, capped by gear
+      const maxOutputTokens = getMaxOutputTokens(endpoint.model, currentGear);
+
+      // Tool loop: stream -> collect tool_use -> execute -> re-stream
       let totalUsage = emptyUsage();
       let loopCount = 0;
+
+      // Pre-compute overhead tokens ONCE outside the loop.
+      // System prompt and tools don't change within a single handleSend call,
+      // so re-computing per iteration wastes CPU (especially for CJK scanning).
+      const toolsJson = JSON.stringify(tools);
+      const systemPromptTokens = estimateTokens(systemPrompt);
+      const toolSchemaTokens = estimateTokens(toolsJson);
 
       while (loopCount < MAX_TOOL_LOOPS) {
         loopCount++;
 
-        // Apply compression before sending
-        const { messages: messagesToSend, wasCompressed, droppedTurns } = compressHistory(history);
+        // Calculate overhead so compressor knows the precise history budget.
+        // System prompt + tool schemas + output reserve compete with history
+        // for the context window. History gets whatever space is left.
+        const overhead = {
+          systemPromptTokens,
+          toolSchemaTokens,
+          maxOutputTokens: maxOutputTokens,
+        };
+
+        // Apply compression. If compression fires, write back to in-memory
+        // history so subsequent loop iterations don't re-compress the same turns.
+        // This prevents: (a) repeated Haiku summarization calls within one tool loop,
+        // (b) unbounded memory growth of the in-memory history array.
+        const { messages: messagesToSend, wasCompressed, droppedTurns } = await compressHistory([...history], endpoint.model, overhead);
 
         if (wasCompressed) {
-          logger.info('stream', `Compressed history: dropped ${droppedTurns} turns`);
+          // Write compressed result back to the authoritative in-memory store.
+          // The compressed summary replaces dropped turns — future iterations
+          // start from the already-compressed state instead of re-processing.
+          history.length = 0;
+          history.push(...messagesToSend);
+          // Persist: clear old messages and re-persist the compressed set
+          deleteMessages(conversationId);
+          for (const msg of messagesToSend) {
+            persistMessage(conversationId, msg.role, msg.content);
+          }
+          logger.info('stream', `Compressed history: dropped ${droppedTurns} turns, wrote back ${messagesToSend.length} messages`);
+          sendToRenderer(win, { type: 'compression_notice', droppedTurns });
         }
 
-        // Pre-estimate token breakdown
-        const preEstimate = estimateRequestTokens(
-          SYSTEM_PROMPT,
-          tools,
-          JSON.stringify(messagesToSend),
-        );
+        // Pre-estimate token breakdown.
+        // system and tools tokens are pre-computed above (loop-invariant);
+        // only history varies per iteration.
+        const historyTokens = estimateTokens(JSON.stringify(messagesToSend));
+        const preEstimate = {
+          system: systemPromptTokens,
+          tools: toolSchemaTokens,
+          history: historyTokens,
+        };
 
         // Collect content blocks from this LLM call
         const contentBlocks: LlmContentBlock[] = [];
@@ -143,11 +324,11 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
         await currentProvider.stream(
           {
             model: endpoint.model,
-            systemPrompt: SYSTEM_PROMPT,
+            systemPrompt: systemPrompt,
             messages: messagesToSend,
             tools,
-            maxTokens: 4096,
-            cacheControl: true,
+            maxTokens: maxOutputTokens,
+            cacheControl: useCacheControl,
           },
           (streamEvent: LlmStreamEvent) => {
             // Forward events to renderer (except message_end — we send our own at the end)
@@ -181,7 +362,7 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
                   type: 'tool_use',
                   id: currentToolId,
                   name: currentToolName,
-                  input: safeParse(toolInputJson),
+                  input: safeParseToolInput(toolInputJson),
                 });
                 currentToolId = '';
                 currentToolName = '';
@@ -207,11 +388,12 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
           },
         );
 
-        // Append assistant message to history
+        // Append assistant message to history + persist
         const assistantContent = contentBlocks.length > 0
           ? contentBlocks
           : [{ type: 'text' as const, text: currentText }];
         history.push({ role: 'assistant', content: assistantContent });
+        persistMessage(conversationId, 'assistant', assistantContent);
 
         // Check for tool_use blocks
         const toolUseBlocks = contentBlocks.filter(
@@ -223,10 +405,24 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
           break;
         }
 
+        // Check if we're about to exceed the loop limit
+        if (loopCount >= MAX_TOOL_LOOPS) {
+          logger.warn('stream', 'Max tool loop iterations reached', {
+            conversationId,
+            loopCount,
+            lastToolNames: toolUseBlocks.map((b) => b.name),
+          });
+          sendToRenderer(win, {
+            type: 'error',
+            error: `Tool loop reached maximum ${MAX_TOOL_LOOPS} iterations. Stopping.`,
+          });
+          break;
+        }
+
         // Execute each tool and collect results
         const toolResults: LlmContentBlock[] = [];
         for (const toolBlock of toolUseBlocks) {
-          const result = await executeTool(toolBlock.name, toolBlock.input);
+          const result = await executeTool(toolBlock.name, toolBlock.input, conversationId);
 
           // Send tool_result event to renderer for display
           sendToRenderer(win, {
@@ -235,18 +431,20 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
             name: toolBlock.name,
             content: result.content,
             isError: result.isError,
+            artifactId: result.artifactId,
           });
 
           toolResults.push({
             type: 'tool_result',
-            tool_use_id: toolBlock.id,
+            toolUseId: toolBlock.id,
             content: result.content,
-            is_error: result.isError,
+            isError: result.isError,
           });
         }
 
-        // Append tool results as a user message (Anthropic API format)
+        // Append tool results as a user message (Anthropic API format) + persist
         history.push({ role: 'user', content: toolResults });
+        persistMessage(conversationId, 'user', toolResults);
 
         // Signal renderer that LLM will continue after tool results
         sendToRenderer(win, { type: 'assistant_continue' });
@@ -277,20 +475,42 @@ export function registerChatIpc(getWindow: () => BrowserWindow | null): void {
     return { success: true };
   });
 
+  // Load conversation history from SQLite into memory
+  ipcMain.handle('conv:loadMessages', (_event, conversationId: string) => {
+    const history = getHistory(conversationId);
+    // Return simplified message format for renderer to display
+    return history.map((msg, i) => {
+      const content = typeof msg.content === 'string'
+        ? [{ type: 'text', text: msg.content }]
+        : msg.content;
+      return {
+        id: `loaded_${i}_${Date.now()}`,
+        role: msg.role,
+        content,
+        timestamp: Date.now() - (history.length - i) * 1000, // Approximate ordering
+      };
+    });
+  });
+
   // Clear conversation history (called when user deletes a conversation)
   ipcMain.handle('conv:clearHistory', (_event, conversationId: string) => {
     histories.delete(conversationId);
+    deleteMessages(conversationId);
     return { success: true };
   });
 }
 
 /**
- * Safely parse JSON, returning empty object on failure.
+ * Safely parse tool input JSON, logging on failure.
  */
-function safeParse(json: string): Record<string, unknown> {
+function safeParseToolInput(json: string): Record<string, unknown> {
   try {
     return JSON.parse(json) as Record<string, unknown>;
-  } catch {
+  } catch (err) {
+    logger.warn('stream', 'Failed to parse tool input JSON', {
+      json: json.slice(0, 200),
+      error: err instanceof Error ? err.message : String(err),
+    });
     return {};
   }
 }

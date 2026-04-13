@@ -1,13 +1,15 @@
-import { useSilverStatus, useBpeStatus, useGear } from '../lib/hooks';
+import { useSilverStatus, useBpeStatus, useGear, useTheme } from '../lib/hooks';
+import { BPT_VERSION } from '../version';
 
 export default function StatusBar() {
   const silverStatus = useSilverStatus();
   const bpeStatus = useBpeStatus();
   const { gear } = useGear();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div className="flex items-center justify-between px-3 py-1 border-t border-bpt-border
-                    bg-bpt-surface text-[10px] text-bpt-text-dim">
+                    bg-bpt-surface text-[10px] text-bpt-text-dim select-none">
       <div className="flex gap-3">
         {/* Silver Core status */}
         <span className="flex items-center gap-1">
@@ -35,7 +37,18 @@ export default function StatusBar() {
         </span>
       </div>
 
-      <span className="text-bpt-gold-dim">BPT v0.2.0</span>
+      <div className="flex items-center gap-3">
+        {/* Theme toggle */}
+        <button
+          onClick={toggleTheme}
+          className="text-bpt-text-dim hover:text-bpt-gold transition-colors"
+          title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          {theme === 'dark' ? '[Light]' : '[Dark]'}
+        </button>
+
+        <span className="text-bpt-gold-dim">BPT v{BPT_VERSION}</span>
+      </div>
     </div>
   );
 }
