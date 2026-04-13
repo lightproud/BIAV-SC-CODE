@@ -20,10 +20,7 @@ from mcp.server.fastmcp import FastMCP
 
 # -- Server instance ---------------------------------------------------------
 
-mcp = FastMCP(
-    "BPT Server",
-    version="0.1.0",
-)
+mcp = FastMCP("BPT Server")
 
 # -- Tool definitions (Phase A stubs) ----------------------------------------
 
