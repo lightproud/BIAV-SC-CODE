@@ -19,6 +19,9 @@ export interface BptApi {
   convList: () => Promise<unknown>;
   convCreate: (title: string) => Promise<unknown>;
   convDelete: (id: string) => Promise<unknown>;
+  convRename: (id: string, title: string) => Promise<unknown>;
+  convLoadMessages: (id: string) => Promise<unknown>;
+  convClearHistory: (id: string) => Promise<unknown>;
 
   configGet: (key: string) => Promise<unknown>;
   configSet: (key: string, value: unknown) => Promise<unknown>;
@@ -38,7 +41,27 @@ export interface BptApi {
 
   citeInject: (conversationId: string, chunk: unknown) => Promise<unknown>;
 
+  pluginList: () => Promise<unknown>;
+  pluginEnable: (name: string) => Promise<unknown>;
+  pluginDisable: (name: string) => Promise<unknown>;
+  pluginReload: () => Promise<unknown>;
+
+  artifactList: (conversationId?: string) => Promise<unknown>;
+  artifactGet: (id: string) => Promise<unknown>;
+  artifactDelete: (id: string) => Promise<unknown>;
+
   tokenHistory: (conversationId: string) => Promise<unknown>;
+
+  dreamList: () => Promise<unknown>;
+  dreamGet: (date: string) => Promise<unknown>;
+  dreamLatest: () => Promise<unknown>;
+  dreamInsights: () => Promise<unknown>;
+  sentinelAlerts: () => Promise<unknown>;
+
+  updaterCheck: () => Promise<unknown>;
+  updaterDownload: () => Promise<unknown>;
+  updaterInstall: () => Promise<unknown>;
+  onUpdaterEvent: (callback: (event: unknown) => void) => () => void;
 
   windowMinimize: () => Promise<unknown>;
   windowToggle: () => Promise<unknown>;

@@ -12,14 +12,25 @@
 
 import { getSilverApi } from '../silver/silver-ipc';
 import { getBpeIndexes } from '../bpe/bpe-ipc';
-import { searchFts5, lookupSymbol } from '../bpe/search';
+import { searchHybrid, lookupSymbol } from '../bpe/search';
+import { findPluginForTool } from '../plugin/loader';
+import { saveArtifact } from './artifacts';
 import { getConfig } from '../core/config';
 import { logger } from '../core/logger';
 
 interface ToolCallResult {
   content: string;
   isError: boolean;
+  /** Set when the result was truncated and full content saved as artifact. */
+  artifactId?: string;
 }
+
+/**
+ * BPE tools return pre-chunked results (each slice already ≤500 tokens).
+ * They deserve a higher truncation ceiling than generic tools.
+ */
+const PRE_CHUNKED_TOOLS = new Set(['bpe_semantic_search', 'bpe_lookup_symbol']);
+const PRE_CHUNKED_MULTIPLIER = 3; // 3x the base threshold
 
 /**
  * Execute a single tool call and return the result.
@@ -27,16 +38,36 @@ interface ToolCallResult {
 export async function executeTool(
   toolName: string,
   toolInput: Record<string, unknown>,
+  conversationId?: string,
 ): Promise<ToolCallResult> {
   try {
     const result = await dispatchTool(toolName, toolInput);
     const resultStr = typeof result === 'string' ? result : JSON.stringify(result, null, 2);
 
-    // Prime Directive T2: Truncate if over threshold
-    const threshold = (getConfig('truncateThreshold') as number) ?? 2000;
-    const truncated = truncateResult(resultStr, threshold);
+    // Prime Directive T2: Truncate if over threshold, save full result as artifact.
+    // BPE tools return pre-chunked slices — give them a higher ceiling so LLM
+    // sees the full set of carefully-selected code/config snippets.
+    const baseThreshold = (getConfig('truncateThreshold') as number) ?? 2000;
+    const threshold = PRE_CHUNKED_TOOLS.has(toolName)
+      ? baseThreshold * PRE_CHUNKED_MULTIPLIER
+      : baseThreshold;
+    const charLimit = threshold * 4;
 
-    return { content: truncated, isError: false };
+    if (resultStr.length > charLimit) {
+      // Save full result as artifact before truncating
+      const { id: artifactId } = saveArtifact(
+        toolName,
+        conversationId ?? 'unknown',
+        resultStr,
+      );
+
+      const truncated = resultStr.slice(0, charLimit) +
+        `\n\n[... result truncated at ${threshold} tokens. Full result saved as artifact ${artifactId}.]`;
+
+      return { content: truncated, isError: false, artifactId };
+    }
+
+    return { content: resultStr, isError: false };
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     logger.error('tool-loop', `Tool ${toolName} failed`, { error: message });
@@ -64,7 +95,7 @@ async function dispatchTool(name: string, input: Record<string, unknown>): Promi
     case 'bpe_semantic_search': {
       const indexes = getBpeIndexes();
       if (!indexes) return { results: [], error: 'BPE not loaded' };
-      return searchFts5(indexes, input.query as string, (input.limit as number) ?? 5);
+      return searchHybrid(indexes, input.query as string, (input.limit as number) ?? 5);
     }
     case 'bpe_lookup_symbol': {
       const indexes = getBpeIndexes();
@@ -72,22 +103,16 @@ async function dispatchTool(name: string, input: Record<string, unknown>): Promi
       return lookupSymbol(indexes, input.name as string, (input.limit as number) ?? 3);
     }
 
-    default:
+    default: {
+      // Check if it's a plugin tool (namespaced: "plugin-name.tool-name")
+      const pluginInstance = findPluginForTool(name);
+      if (pluginInstance?.execute) {
+        return pluginInstance.execute(name, input);
+      }
       throw new Error(`Unknown tool: ${name}`);
+    }
   }
 }
 
-/**
- * Truncate a tool result to fit within the token budget.
- * The full result should be saved as a local artifact (Phase 1).
- */
-function truncateResult(text: string, maxChars: number): string {
-  // Rough: 4 chars ≈ 1 token, so maxChars = threshold * 4
-  const charLimit = maxChars * 4;
-  if (text.length <= charLimit) return text;
-
-  return (
-    text.slice(0, charLimit) +
-    `\n\n[... result truncated at ${maxChars} tokens. Full result saved locally.]`
-  );
-}
+// truncateResult removed — truncation + artifact saving now handled
+// directly in executeTool() above.

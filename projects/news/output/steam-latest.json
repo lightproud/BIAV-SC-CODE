@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-04-12T11:50:49.349537+00:00",
+  "collected_at": "2026-04-12T14:12:17.783610+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -50,6 +50,21 @@
     },
     {
       "source": "steam",
+      "time": "2026-04-12T10:51:32+00:00",
+      "lang": "japanese",
+      "title": "[正面] とても面白いです",
+      "summary": "とても面白いです",
+      "url": "https://steamcommunity.com/profiles/76561199654383929/recommended/3052450",
+      "author": "76561199654383929",
+      "engagement": 0,
+      "language": "japanese",
+      "voted_up": true,
+      "review": "とても面白いです",
+      "timestamp_created": 1775991092,
+      "playtime_forever": 776
+    },
+    {
+      "source": "steam",
       "time": "2026-04-12T08:13:37+00:00",
       "lang": "schinese",
       "title": "[正面] 邀请码：BR2YEFL4PP\n谢谢🙏",
@@ -61,7 +76,7 @@
       "voted_up": true,
       "review": "邀请码：BR2YEFL4PP\n谢谢🙏",
       "timestamp_created": 1775981617,
-      "playtime_forever": 1489
+      "playtime_forever": 1609
     },
     {
       "source": "steam",
@@ -76,7 +91,7 @@
       "voted_up": true,
       "review": "очень крутые женщины спасибо разработчикам за повышение демографии!!!!!",
       "timestamp_created": 1775947068,
-      "playtime_forever": 1310
+      "playtime_forever": 1438
     },
     {
       "source": "steam",
@@ -121,7 +136,7 @@
       "voted_up": true,
       "review": "сюжет прикольный :)",
       "timestamp_created": 1775900688,
-      "playtime_forever": 237
+      "playtime_forever": 272
     },
     {
       "source": "steam",

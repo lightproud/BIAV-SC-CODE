@@ -82,9 +82,14 @@ COLLAB_KEYWORDS = os.environ.get('COLLAB_KEYWORDS', '').split(',') if os.environ
     '沙耶之歌', '沙耶の唄', 'Saya no Uta', 'saya no uta',
 ]
 ALL_KEYWORDS = SEARCH_KEYWORDS + [k.strip() for k in COLLAB_KEYWORDS if k.strip()]
-HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 48))
+# Adaptive lookback: expands automatically if CI was down
+try:
+    from collection_state import get_lookback_hours
+    HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 0)) or get_lookback_hours()
+except ImportError:
+    HOURS_LOOKBACK = int(os.environ.get('HOURS_LOOKBACK', 24))
 # 分页采集的安全上限（单个 fetcher 最多拿多少条），防止窗口边界模糊或 API 返回错乱
-# 时采到无穷多。默认 500 够 48h 窗口用；环境变量 MAX_ITEMS_PER_FETCHER 可覆盖。
+# 时采到无穷多。默认 500 够 24h 窗口用；环境变量 MAX_ITEMS_PER_FETCHER 可覆盖。
 MAX_ITEMS_PER_FETCHER = int(os.environ.get('MAX_ITEMS_PER_FETCHER', 500))
 
 # Bilibili creator MIDs known to produce Morimens content
@@ -1050,16 +1055,31 @@ def fetch_taptap():
                                 text = review.get('contents', {}).get('text', '') if isinstance(review.get('contents'), dict) else ''
                                 score = review.get('score', 0)
                                 sentiment = '好评' if score >= 4 else '差评' if score <= 2 else '中评'
-                                items.append({
+                                # Extract real timestamp from review
+                                review_ts = review.get('created_time', 0) or review.get('created_at', 0)
+                                if isinstance(review_ts, str) and review_ts.isdigit():
+                                    review_ts = int(review_ts)
+                                if isinstance(review_ts, (int, float)) and review_ts > 0:
+                                    if review_ts > 1e12:
+                                        review_ts = review_ts // 1000
+                                    review_time = datetime.fromtimestamp(review_ts, tz=timezone.utc).isoformat()
+                                    review_approx = False
+                                else:
+                                    review_time = datetime.now(timezone.utc).isoformat()
+                                    review_approx = True
+                                review_item = {
                                     'title': f'[TapTap {sentiment}] {text[:60]}',
                                     'summary': text,
                                     'source': 'taptap',
-                                    'time': datetime.now(timezone.utc).isoformat(),
+                                    'time': review_time,
                                     'url': web_url,
                                     'engagement': review.get('like_count', 0) or 0,
                                     'author': review.get('user', {}).get('name', '') if isinstance(review.get('user'), dict) else '',
                                     'tags': [sentiment],
-                                })
+                                }
+                                if review_approx:
+                                    review_item['time_is_approximate'] = True
+                                items.append(review_item)
                             logger.info(f'TapTap web scrape: {len(items)} reviews')
                         except (json.JSONDecodeError, KeyError):
                             pass
@@ -1185,7 +1205,7 @@ def fetch_steam_reviews():
 def fetch_steam_news():
     """Fetch official Steam news/announcements for Morimens (App ID: 3052450).
 
-    官方公告本身频率较低，通用 HOURS_LOOKBACK（48h）会经常过滤掉全部内容。
+    官方公告本身频率较低，通用 HOURS_LOOKBACK（24h）会经常过滤掉全部内容。
     使用更宽的 OFFICIAL_HOURS_LOOKBACK（默认 30 天）以保证日报至少能看到近期官方动态。
     """
     app_id = 3052450
@@ -1275,6 +1295,7 @@ def fetch_steam_discussions():
                 'summary': '',
                 'source': 'steam_discussion',
                 'time': datetime.now(timezone.utc).isoformat(),
+                'time_is_approximate': True,
                 'url': url,
                 'engagement': replies,
                 'is_hot': replies >= 10,
@@ -1302,6 +1323,7 @@ def fetch_steam_discussions():
                     'summary': '',
                     'source': 'steam_discussion',
                     'time': datetime.now(timezone.utc).isoformat(),
+                    'time_is_approximate': True,
                     'url': url,
                     'engagement': replies,
                     'is_hot': replies >= 10,
@@ -1314,6 +1336,51 @@ def fetch_steam_discussions():
         logger.warning(f'Steam Discussions failed: {e}')
 
     return items
+
+
+def _parse_yt_relative_time(text):
+    """Parse YouTube relative time strings like '2 days ago' into ISO datetime.
+
+    Returns (iso_string, is_approximate) tuple. The time is approximate because
+    it's derived from relative text. Returns (now_iso, True) if parsing fails.
+    """
+    now = datetime.now(timezone.utc)
+    if not text:
+        return now.isoformat(), True
+    text_lower = text.lower().strip()
+    # Match patterns like "2 days ago", "1 hour ago", "3 weeks ago", etc.
+    m = re.match(r'(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago', text_lower)
+    if m:
+        num = int(m.group(1))
+        unit = m.group(2)
+        delta_map = {
+            'second': timedelta(seconds=num),
+            'minute': timedelta(minutes=num),
+            'hour': timedelta(hours=num),
+            'day': timedelta(days=num),
+            'week': timedelta(weeks=num),
+            'month': timedelta(days=num * 30),
+            'year': timedelta(days=num * 365),
+        }
+        delta = delta_map.get(unit, timedelta())
+        return (now - delta).isoformat(), True
+    # "Streamed X ago" variant
+    m = re.match(r'streamed\s+(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago', text_lower)
+    if m:
+        num = int(m.group(1))
+        unit = m.group(2)
+        delta_map = {
+            'second': timedelta(seconds=num),
+            'minute': timedelta(minutes=num),
+            'hour': timedelta(hours=num),
+            'day': timedelta(days=num),
+            'week': timedelta(weeks=num),
+            'month': timedelta(days=num * 30),
+            'year': timedelta(days=num * 365),
+        }
+        delta = delta_map.get(unit, timedelta())
+        return (now - delta).isoformat(), True
+    return now.isoformat(), True
 
 
 def _fetch_youtube_web_search():
@@ -1394,6 +1461,7 @@ def _fetch_youtube_web_search():
                         'summary': '',
                         'source': 'youtube',
                         'time': datetime.now(timezone.utc).isoformat(),
+                        'time_is_approximate': True,
                         'url': f'https://www.youtube.com/watch?v={vid}',
                         'engagement': 0,
                         'author': '',
@@ -1473,11 +1541,13 @@ def _fetch_youtube_web_search():
                     if published_text:
                         summary = f'[{published_text}] {desc}' if desc else published_text
 
+                    parsed_time, time_approx = _parse_yt_relative_time(published_text)
                     yt_item = {
                         'title': title,
                         'summary': summary,
                         'source': 'youtube',
-                        'time': datetime.now(timezone.utc).isoformat(),
+                        'time': parsed_time,
+                        'time_is_approximate': time_approx,
                         'url': f'https://www.youtube.com/watch?v={vid}',
                         'engagement': engagement,
                         'is_hot': engagement > 5000,
@@ -1738,7 +1808,7 @@ def fetch_discord_local():
                 'title': f'Discord 社区日报 ({data_date})',
                 'summary': f'今日 {msg_count:,} 条消息，{authors} 位活跃用户，{reactions:,} 次反应。热门频道：{ch_summary}',
                 'source': 'discord',
-                'time': datetime.now(timezone.utc).isoformat(),
+                'time': f'{data_date}T00:00:00+00:00',
                 'url': f'https://discord.com/channels/{guild_id}',
                 'engagement': msg_count,
                 'author': 'Discord Archiver',
@@ -2092,6 +2162,13 @@ def run():
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     logger.info(f'Done! {len(unique_news)} items written to {OUTPUT_PATH}')
+
+    # Record successful run for adaptive lookback
+    try:
+        from collection_state import mark_collection_done
+        mark_collection_done(item_count=len(unique_news))
+    except ImportError:
+        pass
 
 
 if __name__ == '__main__':

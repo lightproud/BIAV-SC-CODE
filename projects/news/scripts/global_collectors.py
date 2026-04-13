@@ -38,7 +38,13 @@ logger = logging.getLogger("collector")
 BASE_DIR = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = BASE_DIR / "data" / "collected_raw.json"
 
-HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "48"))
+# Adaptive lookback: expands automatically if CI was down
+try:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from collection_state import get_lookback_hours
+    HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "0")) or get_lookback_hours()
+except ImportError:
+    HOURS_LOOKBACK = int(os.environ.get("HOURS_LOOKBACK", "24"))
 CUTOFF = datetime.now(timezone.utc) - timedelta(hours=HOURS_LOOKBACK)
 
 
@@ -121,10 +127,10 @@ def _strip_html(text):
 def _make_item(
     title, summary, source, platform_region, time_str, url,
     engagement=0, is_hot=False, author="", tags=None, lang="",
-    content_type="text", media_url="",
+    content_type="text", media_url="", time_is_approximate=False,
 ):
     """创建标准化的信息条目。"""
-    return {
+    item = {
         "title": _strip_html(title or "").strip(),
         "summary": _strip_html(summary or "").strip(),
         "source": source,
@@ -139,6 +145,9 @@ def _make_item(
         "content_type": content_type,
         "media_url": media_url,
     }
+    if time_is_approximate:
+        item["time_is_approximate"] = True
+    return item
 
 
 # ─── 数据源采集器 ──────────────────────────────────────────
@@ -421,10 +430,11 @@ def fetch_youtube():
 
 
 def fetch_nga():
-    """从 NGA 论坛获取忘却前夜版块帖子。"""
+    """从 NGA 论坛获取忘却前夜版块帖子。支持 NGA_COOKIE 环境变量。"""
     # NGA forum ID for 忘却前夜 — can be overridden via env var
     # Search NGA for the correct FID if this one doesn't work
     nga_fid = os.environ.get("NGA_FORUM_ID", "")
+    nga_cookie = os.environ.get("NGA_COOKIE", "nga_read_toma=1")
 
     items = []
 
@@ -438,7 +448,7 @@ def fetch_nga():
                     params={"key": keyword, "fid": 0, "ajax": 1},
                     headers={
                         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                        "Cookie": "nga_read_toma=1",
+                        "Cookie": nga_cookie,
                         "Accept": "application/json",
                     },
                 )
@@ -562,15 +572,91 @@ def fetch_taptap():
 
 # ─── 新增数据源 ──────────────────────────────────────────
 
+def _parse_weibo_time(created_str):
+    """Parse Weibo's created_at field into ISO datetime string.
+
+    Weibo mobile API returns times in various formats:
+    - "刚刚" (just now)
+    - "x分钟前" (x minutes ago)
+    - "x小时前" (x hours ago)
+    - "昨天 HH:MM" (yesterday HH:MM)
+    - "MM-DD" (month-day, current year)
+    - "Wed Jan 01 00:00:00 +0800 2025" (full date, rare)
+    - "yyyy-MM-DD" (standard date)
+
+    Returns (iso_string, is_approximate) tuple.
+    """
+    now = datetime.now(timezone.utc)
+    if not created_str or not created_str.strip():
+        return now.isoformat(), True
+
+    s = created_str.strip()
+
+    # "刚刚" = just now
+    if s == "刚刚":
+        return now.isoformat(), False
+
+    # "x分钟前" = x minutes ago
+    m = re.match(r"(\d+)\s*分钟前", s)
+    if m:
+        return (now - timedelta(minutes=int(m.group(1)))).isoformat(), False
+
+    # "x小时前" = x hours ago
+    m = re.match(r"(\d+)\s*小时前", s)
+    if m:
+        return (now - timedelta(hours=int(m.group(1)))).isoformat(), False
+
+    # "昨天 HH:MM" = yesterday HH:MM
+    m = re.match(r"昨天\s*(\d{1,2}):(\d{2})", s)
+    if m:
+        yesterday = now - timedelta(days=1)
+        dt = yesterday.replace(hour=int(m.group(1)), minute=int(m.group(2)), second=0, microsecond=0)
+        return dt.isoformat(), False
+
+    # "MM-DD" = month-day, assume current year
+    m = re.match(r"(\d{1,2})-(\d{1,2})$", s)
+    if m:
+        month, day = int(m.group(1)), int(m.group(2))
+        try:
+            dt = now.replace(month=month, day=day, hour=0, minute=0, second=0, microsecond=0)
+            if dt > now:
+                dt = dt.replace(year=dt.year - 1)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    # Full date format: "Wed Jan 01 00:00:00 +0800 2025"
+    try:
+        dt = datetime.strptime(s, "%a %b %d %H:%M:%S %z %Y")
+        return dt.isoformat(), False
+    except ValueError:
+        pass
+
+    # "yyyy-MM-DD" standard date
+    m = re.match(r"(\d{4})-(\d{1,2})-(\d{1,2})", s)
+    if m:
+        try:
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
+            return dt.isoformat(), False
+        except ValueError:
+            pass
+
+    return now.isoformat(), True
+
+
 def fetch_weibo():
-    """从微博搜索忘却前夜相关热帖。"""
+    """从微博搜索忘却前夜相关热帖。支持 WEIBO_COOKIE 环境变量提升成功率。"""
+    cookie = os.environ.get("WEIBO_COOKIE", "")
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
+            headers = {"Referer": "https://m.weibo.cn"}
+            if cookie:
+                headers["Cookie"] = cookie
             data = _get(
                 "https://m.weibo.cn/api/container/getIndex",
                 params={"containerid": f"100103type=1&q={keyword}", "page_type": "searchall"},
-                headers={"Referer": "https://m.weibo.cn"},
+                headers=headers,
             ).json()
 
             for card in data.get("data", {}).get("cards", []):
@@ -578,22 +664,25 @@ def fetch_weibo():
                     continue
                 mblog = card.get("mblog", {})
                 created_str = mblog.get("created_at", "")
-                # 微博时间格式复杂，简化处理
+                parsed_time, time_approx = _parse_weibo_time(created_str)
                 text = mblog.get("text", "")
                 text_clean = re.sub(r"<[^>]+>", "", text)
 
-                items.append(_make_item(
+                item = _make_item(
                     title=text_clean[:100],
                     summary=text_clean,
                     source="weibo",
                     platform_region="cn",
-                    time_str=datetime.now(timezone.utc).isoformat(),
+                    time_str=parsed_time,
                     url=f"https://m.weibo.cn/detail/{mblog.get('id', '')}",
                     engagement=mblog.get("reposts_count", 0) + mblog.get("comments_count", 0) + mblog.get("attitudes_count", 0),
                     is_hot=mblog.get("attitudes_count", 0) > 500,
                     author=mblog.get("user", {}).get("screen_name", ""),
                     lang="zh",
-                ))
+                )
+                if time_approx:
+                    item["time_is_approximate"] = True
+                items.append(item)
 
             logger.info(f'Weibo "{keyword}": {len(items)} posts')
         except Exception as e:
@@ -603,32 +692,38 @@ def fetch_weibo():
 
 
 def fetch_xiaohongshu():
-    """从小红书搜索忘却前夜内容。"""
+    """从小红书搜索忘却前夜内容。需要 XHS_COOKIE 环境变量（含 a1 + web_session）。"""
+    cookie = os.environ.get("XHS_COOKIE", "")
+    if not cookie:
+        logger.info("Xiaohongshu: XHS_COOKIE not set, skipping")
+        return []
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
             data = _get(
                 "https://edith.xiaohongshu.com/api/sns/web/v1/search/notes",
                 params={"keyword": keyword, "page": 1, "page_size": 20, "sort": "time_descending"},
-                headers={"Referer": "https://www.xiaohongshu.com"},
+                headers={"Referer": "https://www.xiaohongshu.com", "Cookie": cookie},
             ).json()
 
             for note in data.get("data", {}).get("items", []) or []:
                 note_item = note.get("note_card", {})
                 # Try to get description/content from note_card
                 summary = note_item.get("desc", "") or note_item.get("description", "") or note_item.get("display_title", "")
+                xhs_time = note_item.get("publishAt", "") or note.get("time", "")
                 items.append(_make_item(
                     title=note_item.get("display_title", ""),
                     summary=summary,
                     source="xiaohongshu",
                     platform_region="cn",
-                    time_str=datetime.now(timezone.utc).isoformat(),
+                    time_str=xhs_time or datetime.now(timezone.utc).isoformat(),
                     url=f"https://www.xiaohongshu.com/explore/{note.get('id', '')}",
                     engagement=note_item.get("liked_count", 0),
                     is_hot=note_item.get("liked_count", 0) > 200,
                     author=note_item.get("user", {}).get("nickname", ""),
                     lang="zh",
                     content_type=note_item.get("type", "text"),
+                    time_is_approximate=not xhs_time,
                 ))
 
             logger.info(f'Xiaohongshu "{keyword}": {len(items)} notes')
@@ -639,14 +734,18 @@ def fetch_xiaohongshu():
 
 
 def fetch_douyin():
-    """从抖音搜索忘却前夜相关视频。"""
+    """从抖音搜索忘却前夜相关视频。需要 DOUYIN_COOKIE 环境变量。"""
+    cookie = os.environ.get("DOUYIN_COOKIE", "")
+    if not cookie:
+        logger.info("Douyin: DOUYIN_COOKIE not set, skipping")
+        return []
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
             data = _get(
                 "https://www.douyin.com/aweme/v1/web/search/item/",
                 params={"keyword": keyword, "count": 20, "sort_type": 0},
-                headers={"Referer": "https://www.douyin.com"},
+                headers={"Referer": "https://www.douyin.com", "Cookie": cookie},
             ).json()
 
             for aweme in data.get("data", []) or []:
@@ -657,8 +756,10 @@ def fetch_douyin():
                 create_time = info.get("create_time", 0)
                 if create_time:
                     time_str = datetime.fromtimestamp(create_time, tz=timezone.utc).isoformat()
+                    time_approx = False
                 else:
                     time_str = datetime.now(timezone.utc).isoformat()
+                    time_approx = True
                 items.append(_make_item(
                     title=desc[:100],
                     summary=desc,
@@ -671,6 +772,7 @@ def fetch_douyin():
                     author=aweme.get("aweme_info", {}).get("author", {}).get("nickname", ""),
                     lang="zh",
                     content_type="video",
+                    time_is_approximate=time_approx,
                 ))
 
             logger.info(f'Douyin "{keyword}": {len(items)} videos')
@@ -694,8 +796,12 @@ def fetch_tieba():
             tid = thread.get("tid", "") or thread.get("id", "")
             reply_num = int(thread.get("reply_num", 0))
             last_time = thread.get("last_time_int", 0)
-            time_str = (datetime.fromtimestamp(int(last_time), tz=timezone.utc).isoformat()
-                        if last_time else datetime.now(timezone.utc).isoformat())
+            if last_time:
+                time_str = datetime.fromtimestamp(int(last_time), tz=timezone.utc).isoformat()
+                time_approx = False
+            else:
+                time_str = datetime.now(timezone.utc).isoformat()
+                time_approx = True
             items.append(_make_item(
                 title=thread.get("title", ""),
                 summary=thread.get("abstract", [""])[0] if isinstance(thread.get("abstract"), list) else thread.get("abstract", ""),
@@ -707,6 +813,7 @@ def fetch_tieba():
                 is_hot=reply_num > 50,
                 author=thread.get("author", {}).get("name_show", "") if isinstance(thread.get("author"), dict) else "",
                 lang="zh",
+                time_is_approximate=time_approx,
             ))
 
         logger.info(f"Tieba: {len(items)} threads")
@@ -717,14 +824,18 @@ def fetch_tieba():
 
 
 def fetch_naver_cafe():
-    """从 Naver Cafe 搜索韩国忘却前夜社区。"""
+    """从 Naver Cafe 搜索韩国忘却前夜社区。支持 NAVER_COOKIE 环境变量。"""
+    naver_cookie = os.environ.get("NAVER_COOKIE", "")
     items = []
     for keyword in KEYWORDS["ko"]:
         try:
+            headers = {"Referer": "https://cafe.naver.com"}
+            if naver_cookie:
+                headers["Cookie"] = naver_cookie
             data = _get(
                 "https://apis.naver.com/cafe-web/cafe2/ArticleSearchListV2.json",
                 params={"query": keyword, "page": 1, "sortBy": "date"},
-                headers={"Referer": "https://cafe.naver.com"},
+                headers=headers,
             ).json()
 
             message = data.get("message", {})
@@ -744,12 +855,13 @@ def fetch_naver_cafe():
                     summary=article.get("summary", ""),
                     source="naver_cafe",
                     platform_region="kr",
-                    time_str=article.get("writeDateTimestamp", datetime.now(timezone.utc).isoformat()),
+                    time_str=article.get("writeDateTimestamp") or datetime.now(timezone.utc).isoformat(),
                     url=article.get("articleUrl", ""),
                     engagement=article.get("readCount", 0) + article.get("commentCount", 0),
                     is_hot=article.get("readCount", 0) > 500,
                     author=article.get("writerNickName", ""),
                     lang="ko",
+                    time_is_approximate=not article.get("writeDateTimestamp"),
                 ))
 
             logger.info(f'Naver Cafe "{keyword}": {len(items)} articles')
@@ -811,6 +923,7 @@ def fetch_dcinside():
                     is_hot=False,
                     author="",
                     lang="ko",
+                    time_is_approximate=True,
                 ))
                 count += 1
 
@@ -1041,12 +1154,13 @@ def fetch_qq():
                         summary=content,
                         source="qq",
                         platform_region="cn",
-                        time_str=msg.get("timestamp", datetime.now(timezone.utc).isoformat()),
+                        time_str=msg.get("timestamp") or datetime.now(timezone.utc).isoformat(),
                         url=qq_url,
                         engagement=reactions,
                         is_hot=reactions > 10,
                         author=msg.get("author", {}).get("username", ""),
                         lang="zh",
+                        time_is_approximate=not msg.get("timestamp"),
                     ))
             except Exception as e:
                 logger.debug(f"QQ channel {channel_name} failed: {e}")
@@ -1101,7 +1215,7 @@ def fetch_pixiv():
                     summary=illust.get("description", "") if illust.get("description") else "",
                     source="pixiv",
                     platform_region="global",
-                    time_str=illust.get("createDate", datetime.now(timezone.utc).isoformat()),
+                    time_str=illust.get("createDate") or datetime.now(timezone.utc).isoformat(),
                     url=f"https://www.pixiv.net/artworks/{illust_id}",
                     engagement=bookmark + like,
                     is_hot=bookmark > 500,
@@ -1110,6 +1224,7 @@ def fetch_pixiv():
                     lang="",
                     content_type="image",
                     media_url=illust.get("url", ""),
+                    time_is_approximate=not illust.get("createDate"),
                 ))
 
             logger.info(f'Pixiv "{keyword}": {len(items)} artworks')
@@ -1155,6 +1270,7 @@ def fetch_lofter():
                     author="",
                     lang="zh",
                     content_type="image",
+                    time_is_approximate=True,
                 ))
 
             # Fallback: try to find post items via data-id pattern
@@ -1178,6 +1294,7 @@ def fetch_lofter():
                         is_hot=False,
                         author="",
                         lang="zh",
+                        time_is_approximate=True,
                     ))
 
             logger.info(f'Lofter "{keyword}": {len(items)} posts')
@@ -1219,6 +1336,7 @@ def fetch_xianyu():
                             lang="zh",
                             content_type="marketplace",
                             media_url=item_info.get("picUrl", ""),
+                            time_is_approximate=True,
                         ))
                 except ValueError:
                     pass
@@ -1261,6 +1379,7 @@ def fetch_taobao_merch():
                             lang="zh",
                             content_type="marketplace",
                             media_url=item_data.get("pic", ""),
+                            time_is_approximate=True,
                         ))
                 except ValueError:
                     pass
@@ -1300,17 +1419,25 @@ def fetch_fivech():
                 match = _re.match(r'(\d+)\.dat<>(.+)\((\d+)\)', line)
                 if match:
                     tid, title, replies = match.groups()
+                    # tid is a Unix timestamp (thread creation time)
+                    try:
+                        thread_time = datetime.fromtimestamp(int(tid), tz=timezone.utc).isoformat()
+                        thread_approx = False
+                    except (ValueError, OSError):
+                        thread_time = datetime.now(timezone.utc).isoformat()
+                        thread_approx = True
                     items.append(_make_item(
                         title=title.strip(),
                         summary="",
                         source="fivech",
                         platform_region="jp",
-                        time_str=datetime.now(timezone.utc).isoformat(),
+                        time_str=thread_time,
                         url=f"https://{server}.5ch.net/test/read.cgi/{board}/{tid}/",
                         engagement=int(replies),
                         is_hot=int(replies) > 100,
                         author="",
                         lang="ja",
+                        time_is_approximate=thread_approx,
                     ))
         except Exception as e:
             logger.warning(f"5ch {server}/{board} failed: {e}")
@@ -1346,6 +1473,7 @@ def fetch_fivech():
                     is_hot=False,
                     author="",
                     lang="ja",
+                    time_is_approximate=True,
                 ))
         except Exception as e:
             logger.warning(f'5ch search "{keyword}" failed: {e}')
@@ -1391,6 +1519,7 @@ def fetch_google_play():
                     is_hot=False,
                     author=review.get("userName", ""),
                     lang=lang_code[:2],
+                    time_is_approximate=not review.get("at"),
                 ))
 
             logger.info(f"Google Play ({lang_code}): {len(result)} reviews")
@@ -1521,12 +1650,13 @@ def fetch_epic_store():
                         summary=desc,
                         source="epic",
                         platform_region="global",
-                        time_str=product.get("effectiveDate", datetime.now(timezone.utc).isoformat()),
+                        time_str=product.get("effectiveDate") or datetime.now(timezone.utc).isoformat(),
                         url=f"https://store.epicgames.com/en-US/p/{slug}",
                         engagement=0,
                         is_hot=False,
                         author="Epic Games Store",
                         lang="en",
+                        time_is_approximate=not product.get("effectiveDate"),
                     ))
             except (ValueError, KeyError):
                 pass
@@ -1560,6 +1690,7 @@ def fetch_epic_store():
                 is_hot=rating_count > 100,
                 author="Epic Games Store",
                 lang="en",
+                time_is_approximate=True,
             ))
 
         # Extract individual review snippets if visible
@@ -1581,6 +1712,7 @@ def fetch_epic_store():
                 is_hot=False,
                 author="",
                 lang="en",
+                time_is_approximate=True,
             ))
 
         logger.info(f"Epic Store: {len(items)} items")
@@ -1637,14 +1769,18 @@ def fetch_tiktok():
 
 
 def fetch_zhihu():
-    """从知乎搜索忘却前夜相关问答/文章。"""
+    """从知乎搜索忘却前夜相关问答/文章。需要 ZHIHU_COOKIE (z_c0) 环境变量。"""
+    cookie = os.environ.get("ZHIHU_COOKIE", "")
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
+            headers = {"Referer": "https://www.zhihu.com"}
+            if cookie:
+                headers["Cookie"] = f"z_c0={cookie}" if not cookie.startswith("z_c0=") else cookie
             data = _get(
                 "https://www.zhihu.com/api/v4/search_v3",
                 params={"q": keyword, "t": "general", "offset": 0, "limit": 20},
-                headers={"Referer": "https://www.zhihu.com"},
+                headers=headers,
             )
             if data and data.status_code == 200:
                 try:
@@ -1670,18 +1806,19 @@ def fetch_zhihu():
                         else:
                             url = content_url
 
+                        zhihu_time = target.get("created_time") or target.get("updated_time")
                         items.append(_make_item(
                             title=_strip_html(title),
                             summary=_strip_html(excerpt),
                             source="zhihu",
                             platform_region="cn",
-                            time_str=target.get("created_time",
-                                target.get("updated_time", datetime.now(timezone.utc).isoformat())),
+                            time_str=zhihu_time or datetime.now(timezone.utc).isoformat(),
                             url=url,
                             engagement=voteup + comment,
                             is_hot=voteup > 100,
                             author=target.get("author", {}).get("name", ""),
                             lang="zh",
+                            time_is_approximate=not zhihu_time,
                         ))
                 except (ValueError, KeyError):
                     pass
@@ -1716,12 +1853,13 @@ def fetch_bahamut():
                             summary="",
                             source="bahamut",
                             platform_region="tw",
-                            time_str=thread.get("ctime", datetime.now(timezone.utc).isoformat()),
+                            time_str=thread.get("ctime") or datetime.now(timezone.utc).isoformat(),
                             url=f"https://forum.gamer.com.tw/C.php?bsn={baha_bsn}&snA={thread.get('snA', '')}",
                             engagement=gp + reply,
                             is_hot=gp > 50,
                             author=thread.get("nick", ""),
                             lang="zh",
+                            time_is_approximate=not thread.get("ctime"),
                         ))
                 except (ValueError, KeyError):
                     pass
@@ -1754,12 +1892,13 @@ def fetch_bahamut():
                             summary="",
                             source="bahamut",
                             platform_region="tw",
-                            time_str=thread.get("ctime", datetime.now(timezone.utc).isoformat()),
+                            time_str=thread.get("ctime") or datetime.now(timezone.utc).isoformat(),
                             url=thread.get("url", ""),
                             engagement=gp + reply,
                             is_hot=gp > 50,
                             author=thread.get("nick", ""),
                             lang="zh",
+                            time_is_approximate=not thread.get("ctime"),
                         ))
                 except (ValueError, KeyError):
                     # HTML fallback: parse search result page
@@ -1787,6 +1926,7 @@ def fetch_bahamut():
                             is_hot=False,
                             author="",
                             lang="zh",
+                            time_is_approximate=True,
                         ))
             count = len(items)
             logger.info(f'Bahamut search "{keyword}": {count} results')
@@ -1848,17 +1988,19 @@ def fetch_telegram():
                     except ValueError:
                         pass
 
+                    has_date = i < len(msg_dates)
                     items.append(_make_item(
                         title=text[:100],
                         summary=text,
                         source="telegram",
                         platform_region="global",
-                        time_str=msg_dates[i] if i < len(msg_dates) else datetime.now(timezone.utc).isoformat(),
+                        time_str=msg_dates[i] if has_date else datetime.now(timezone.utc).isoformat(),
                         url=f"https://t.me/{channel}",
                         engagement=views,
                         is_hot=views > 1000,
                         author=f"@{channel}",
                         lang="",
+                        time_is_approximate=not has_date,
                     ))
 
             logger.info(f"Telegram @{channel}: {len(items)} messages")
@@ -1897,13 +2039,14 @@ def fetch_twitch():
                     summary=f"Playing: {ch.get('game_name', '')} | {ch.get('display_name', '')}",
                     source="twitch",
                     platform_region="global",
-                    time_str=ch.get("started_at", datetime.now(timezone.utc).isoformat()),
+                    time_str=ch.get("started_at") or datetime.now(timezone.utc).isoformat(),
                     url=f"https://www.twitch.tv/{ch.get('broadcaster_login', '')}",
                     engagement=0,
                     is_hot=ch.get("is_live", False),
                     author=ch.get("display_name", ""),
                     lang=ch.get("broadcaster_language", ""),
                     content_type="stream",
+                    time_is_approximate=not ch.get("started_at"),
                 ))
 
             logger.info(f'Twitch "{keyword}": {len(items)} live channels')
@@ -2038,7 +2181,18 @@ def fetch_weixin():
             html = resp.text
             import re as _re
 
+            # Sogou WeChat embeds Unix timestamps via timeConvert('EPOCH')
+            # or data-t="EPOCH" attributes near each result. Collect them
+            # so we can correlate with result order.
+            sogou_timestamps = _re.findall(
+                r"(?:timeConvert\(['\"](\d{10})['\"]|data-t=['\"](\d{10})['\"]"
+                r"|lastModified['\"]?\s*[:=]\s*['\"]?(\d{10}))",
+                html,
+            )
+            ts_list = [int(t1 or t2 or t3) for t1, t2, t3 in sogou_timestamps]
+
             # Parse search results — capture snippet text between <p> after title
+            result_idx = 0
             for match in _re.finditer(
                 r'<h3>.*?<a[^>]*href="([^"]+)"[^>]*>(.+?)</a>.*?'
                 r'(?:class="txt-info"[^>]*>(.+?)</p>)?.*?'
@@ -2060,18 +2214,48 @@ def fetch_weixin():
                 author_match = _re.search(r'微信公众号\s*[:：]\s*([^\s<]+)', meta)
                 author = author_match.group(1) if author_match else ""
 
-                items.append(_make_item(
+                # Extract publish time from Sogou timestamps or meta text
+                time_str = ""
+                time_approx = True
+                if result_idx < len(ts_list):
+                    try:
+                        dt = datetime.fromtimestamp(ts_list[result_idx], tz=timezone.utc)
+                        time_str = dt.isoformat()
+                        time_approx = False
+                    except (ValueError, OSError):
+                        pass
+
+                # Fallback: look for date patterns in meta text (e.g. "2025-03-15", "2025年3月15日")
+                if not time_str and meta:
+                    date_m = _re.search(r'(\d{4})[-/年](\d{1,2})[-/月](\d{1,2})', meta)
+                    if date_m:
+                        try:
+                            dt = datetime(int(date_m.group(1)), int(date_m.group(2)), int(date_m.group(3)), tzinfo=timezone.utc)
+                            time_str = dt.isoformat()
+                            time_approx = False
+                        except ValueError:
+                            pass
+
+                if not time_str:
+                    time_str = datetime.now(timezone.utc).isoformat()
+                    time_approx = True
+
+                item = _make_item(
                     title=f"[微信] {title}",
                     summary=summary,
                     source="weixin",
                     platform_region="cn",
-                    time_str=datetime.now(timezone.utc).isoformat(),
+                    time_str=time_str,
                     url=url,
                     engagement=0,
                     is_hot=False,
                     author=author,
                     lang="zh",
-                ))
+                )
+                if time_approx:
+                    item["time_is_approximate"] = True
+                items.append(item)
+                result_idx += 1
 
             logger.info(f'搜狗微信 "{keyword}": {len(items)} articles')
         except Exception as e:
@@ -2105,12 +2289,13 @@ def fetch_note_com():
                         summary=note.get("body", ""),
                         source="note_com",
                         platform_region="jp",
-                        time_str=note.get("publishAt", datetime.now(timezone.utc).isoformat()),
+                        time_str=note.get("publishAt") or datetime.now(timezone.utc).isoformat(),
                         url=note.get("noteUrl", ""),
                         engagement=note.get("likeCount", 0) + note.get("commentCount", 0),
                         is_hot=note.get("likeCount", 0) > 50,
                         author=note.get("user", {}).get("nickname", ""),
                         lang="ja",
+                        time_is_approximate=not note.get("publishAt"),
                     ))
 
             logger.info(f'Note.com "{keyword}": {len(items)} notes')
@@ -2160,6 +2345,7 @@ def fetch_ruliweb():
                     is_hot=likes_count > 10,
                     author="",
                     lang="ko",
+                    time_is_approximate=True,
                 ))
 
             logger.info(f'Ruliweb "{keyword}": {len(items)} posts')
@@ -2201,6 +2387,7 @@ def fetch_vkplay():
                     is_hot=False,
                     author="VK Play",
                     lang="ru",
+                    time_is_approximate=True,
                 ))
     except Exception as e:
         logger.warning(f"VK Play game info failed: {e}")
@@ -2228,12 +2415,13 @@ def fetch_vkplay():
                     summary=text,
                     source="vkplay",
                     platform_region="ru",
-                    time_str=review.get("created_at", datetime.now(timezone.utc).isoformat()),
+                    time_str=review.get("created_at") or datetime.now(timezone.utc).isoformat(),
                     url=f"https://vkplay.ru/play/game/{game_slug}/",
                     engagement=review.get("likes", 0),
                     is_hot=False,
                     author=review.get("user", {}).get("name", "") if isinstance(review.get("user"), dict) else "",
                     lang="ru",
+                    time_is_approximate=not review.get("created_at"),
                 ))
     except Exception as e:
         logger.warning(f"VK Play reviews failed: {e}")
@@ -2269,40 +2457,104 @@ def fetch_stopgame():
             if meta_match:
                 page_summary = meta_match.group(1).strip()[:300]
 
+        # Try to extract a page-level date from <time> elements or date patterns
+        page_time_str = ""
+        page_time_approx = True
+        time_tag = _re.search(r'<time[^>]*datetime=["\']([^"\']+)["\']', html)
+        if time_tag:
+            page_time_str = time_tag.group(1)
+            page_time_approx = False
+        else:
+            # Look for date patterns like "DD.MM.YYYY" (Russian format) or "YYYY-MM-DD"
+            date_ru = _re.search(r'(\d{1,2})\.(\d{1,2})\.(\d{4})', html)
+            date_iso = _re.search(r'(\d{4})-(\d{1,2})-(\d{1,2})', html)
+            if date_ru:
+                try:
+                    dt = datetime(int(date_ru.group(3)), int(date_ru.group(2)), int(date_ru.group(1)), tzinfo=timezone.utc)
+                    page_time_str = dt.isoformat()
+                    page_time_approx = False
+                except ValueError:
+                    pass
+            elif date_iso:
+                try:
+                    dt = datetime(int(date_iso.group(1)), int(date_iso.group(2)), int(date_iso.group(3)), tzinfo=timezone.utc)
+                    page_time_str = dt.isoformat()
+                    page_time_approx = False
+                except ValueError:
+                    pass
+
+        if not page_time_str:
+            page_time_str = datetime.now(timezone.utc).isoformat()
+            page_time_approx = True
+
         if rating_match:
             rating = float(rating_match.group(1))
             count = int(review_count_match.group(1)) if review_count_match else 0
-            items.append(_make_item(
+            item = _make_item(
                 title=f"[StopGame] Morimens — {rating}/10 ({count} оценок)",
                 summary=page_summary or f"Рейтинг игры Morimens на StopGame: {rating}/10 на основе {count} оценок",
                 source="stopgame",
                 platform_region="ru",
-                time_str=datetime.now(timezone.utc).isoformat(),
+                time_str=page_time_str,
                 url="https://stopgame.ru/game/morimens",
                 engagement=count,
                 is_hot=count > 50,
                 author="StopGame.ru",
                 lang="ru",
-            ))
+            )
+            if page_time_approx:
+                item["time_is_approximate"] = True
+            items.append(item)
 
         # Extract user reviews
+        # Collect per-review dates from nearby <time> or date elements
+        review_dates = _re.findall(
+            r'class="[^"]*review[^"]*"[^>]*>.*?'
+            r'(?:<time[^>]*datetime=["\']([^"\']+)["\']|(\d{1,2}\.\d{1,2}\.\d{4}))',
+            html, _re.DOTALL
+        )
+
+        review_idx = 0
         for match in _re.finditer(
             r'class="[^"]*review-text[^"]*"[^>]*>([^<]{10,300})',
             html, _re.DOTALL
         ):
             text = match.group(1).strip()
-            items.append(_make_item(
+            review_time = ""
+            review_approx = True
+            if review_idx < len(review_dates):
+                rd_iso, rd_ru = review_dates[review_idx]
+                if rd_iso:
+                    review_time = rd_iso
+                    review_approx = False
+                elif rd_ru:
+                    parts = rd_ru.split(".")
+                    try:
+                        dt = datetime(int(parts[2]), int(parts[1]), int(parts[0]), tzinfo=timezone.utc)
+                        review_time = dt.isoformat()
+                        review_approx = False
+                    except (ValueError, IndexError):
+                        pass
+            if not review_time:
+                review_time = page_time_str
+                review_approx = page_time_approx
+
+            item = _make_item(
                 title=f"[StopGame] {text[:60]}",
                 summary=text,
                 source="stopgame",
                 platform_region="ru",
-                time_str=datetime.now(timezone.utc).isoformat(),
+                time_str=review_time,
                 url="https://stopgame.ru/game/morimens",
                 engagement=0,
                 is_hot=False,
                 author="",
                 lang="ru",
-            ))
+            )
+            if review_approx:
+                item["time_is_approximate"] = True
+            items.append(item)
+            review_idx += 1
 
         logger.info(f"StopGame: {len(items)} items")
     except Exception as e:
@@ -2339,6 +2591,7 @@ def fetch_gacharevenue():
                 is_hot=False,
                 author="GACHAREVENUE",
                 lang="en",
+                time_is_approximate=True,
             ))
 
         logger.info(f"GACHAREVENUE: {len(items)} items")
@@ -2455,6 +2708,7 @@ def fetch_rsshub():
                     is_hot=False,
                     author=author,
                     lang=lang,
+                    time_is_approximate=not time_str,
                 ))
 
             if feed_items:

@@ -1,0 +1,2152 @@
+{
+  "_meta": {
+    "source": "art_assets/manifest.json (UnityPy extraction)",
+    "total_cg": 404,
+    "story_chapters": 15,
+    "special_groups": 2,
+    "generated": "2026-04-12"
+  },
+  "chapters": [
+    {
+      "chapter_id": "00",
+      "chapter_name": "Arc 1 - Prologue (序章)",
+      "images": [
+        {
+          "name": "CGDynamic_C00_001Bj",
+          "path": "cg/c00/dynamic/CGDynamic_C00_001Bj.png",
+          "size": 221497
+        },
+        {
+          "name": "CGDynamic_C00_001Boy",
+          "path": "cg/c00/dynamic/CGDynamic_C00_001Boy.png",
+          "size": 1124212
+        },
+        {
+          "name": "CGDynamic_C00_001Girl",
+          "path": "cg/c00/dynamic/CGDynamic_C00_001Girl.png",
+          "size": 1136083
+        },
+        {
+          "name": "CG_C00_001",
+          "path": "cg/c00/static/CG_C00_001.png",
+          "size": 2033927
+        },
+        {
+          "name": "CG_C00_004",
+          "path": "cg/c00/static/CG_C00_004.png",
+          "size": 2119905
+        },
+        {
+          "name": "CG_C00_007",
+          "path": "cg/c00/static/CG_C00_007.png",
+          "size": 1879375
+        },
+        {
+          "name": "CG_C00_008",
+          "path": "cg/c00/static/CG_C00_008.png",
+          "size": 2065526
+        },
+        {
+          "name": "CG_C00_009",
+          "path": "cg/c00/static/CG_C00_009.png",
+          "size": 1848868
+        },
+        {
+          "name": "CG_C00_010",
+          "path": "cg/c00/static/CG_C00_010.png",
+          "size": 1941821
+        },
+        {
+          "name": "CG_C00_011",
+          "path": "cg/c00/static/CG_C00_011.png",
+          "size": 1203194
+        },
+        {
+          "name": "CG_C00_012",
+          "path": "cg/c00/static/CG_C00_012.png",
+          "size": 1230595
+        },
+        {
+          "name": "CG_C00_013",
+          "path": "cg/c00/static/CG_C00_013.png",
+          "size": 2397006
+        },
+        {
+          "name": "CG_C00_014",
+          "path": "cg/c00/static/CG_C00_014.png",
+          "size": 2141162
+        }
+      ],
+      "image_count": 13
+    },
+    {
+      "chapter_id": "01",
+      "chapter_name": "Arc 1 - Ch.1 东区秘事",
+      "images": [
+        {
+          "name": "CGDynamic_C01_001_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_001_A.png",
+          "size": 994073
+        },
+        {
+          "name": "CGDynamic_C01_001_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_001_B.png",
+          "size": 992284
+        },
+        {
+          "name": "CGDynamic_C01_001_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_001_C.png",
+          "size": 969166
+        },
+        {
+          "name": "CGDynamic_C01_002_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_002_A.png",
+          "size": 1053996
+        },
+        {
+          "name": "CGDynamic_C01_002_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_002_B.png",
+          "size": 1060869
+        },
+        {
+          "name": "CGDynamic_C01_002_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_002_C.png",
+          "size": 1049522
+        },
+        {
+          "name": "CGDynamic_C01_003_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_003_A.png",
+          "size": 291238
+        },
+        {
+          "name": "CGDynamic_C01_003_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_003_B.png",
+          "size": 330141
+        },
+        {
+          "name": "CGDynamic_C01_003_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_003_C.png",
+          "size": 429959
+        },
+        {
+          "name": "CGDynamic_C01_003_D",
+          "path": "cg/c01/dynamic/CGDynamic_C01_003_D.png",
+          "size": 108
+        },
+        {
+          "name": "CGDynamic_C01_004_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_004_A.png",
+          "size": 671472
+        },
+        {
+          "name": "CGDynamic_C01_004_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_004_B.png",
+          "size": 693257
+        },
+        {
+          "name": "CGDynamic_C01_004_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_004_C.png",
+          "size": 703408
+        },
+        {
+          "name": "CGDynamic_C01_005_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_005_A.png",
+          "size": 565154
+        },
+        {
+          "name": "CGDynamic_C01_005_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_005_B.png",
+          "size": 564568
+        },
+        {
+          "name": "CGDynamic_C01_005_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_005_C.png",
+          "size": 567957
+        },
+        {
+          "name": "CGDynamic_C01_006Mask",
+          "path": "cg/c01/static/CGDynamic_C01_006Mask.png",
+          "size": 222913
+        },
+        {
+          "name": "CGDynamic_C01_006MaskB",
+          "path": "cg/c01/static/CGDynamic_C01_006MaskB.png",
+          "size": 301303
+        },
+        {
+          "name": "CGDynamic_C01_006_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_006_A.png",
+          "size": 51210
+        },
+        {
+          "name": "CGDynamic_C01_006_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_006_B.png",
+          "size": 45396
+        },
+        {
+          "name": "CGDynamic_C01_006_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_006_C.png",
+          "size": 44843
+        },
+        {
+          "name": "CGDynamic_C01_007_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_007_A.png",
+          "size": 26764
+        },
+        {
+          "name": "CGDynamic_C01_007_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_007_B.png",
+          "size": 20570
+        },
+        {
+          "name": "CGDynamic_C01_007_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_007_C.png",
+          "size": 18778
+        },
+        {
+          "name": "CGDynamic_C01_008_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_008_A.png",
+          "size": 1087641
+        },
+        {
+          "name": "CGDynamic_C01_008_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_008_B.png",
+          "size": 1111663
+        },
+        {
+          "name": "CGDynamic_C01_008_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_008_C.png",
+          "size": 1139796
+        },
+        {
+          "name": "CGDynamic_C01_009_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_009_A.png",
+          "size": 583192
+        },
+        {
+          "name": "CGDynamic_C01_009_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_009_B.png",
+          "size": 583489
+        },
+        {
+          "name": "CGDynamic_C01_009_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_009_C.png",
+          "size": 591504
+        },
+        {
+          "name": "CGDynamic_C01_010_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_010_A.png",
+          "size": 1016852
+        },
+        {
+          "name": "CGDynamic_C01_010_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_010_B.png",
+          "size": 1025924
+        },
+        {
+          "name": "CGDynamic_C01_010_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_010_C.png",
+          "size": 1018387
+        },
+        {
+          "name": "CGDynamic_C01_011_A",
+          "path": "cg/c01/dynamic/CGDynamic_C01_011_A.png",
+          "size": 3041528
+        },
+        {
+          "name": "CGDynamic_C01_011_B",
+          "path": "cg/c01/dynamic/CGDynamic_C01_011_B.png",
+          "size": 3039128
+        },
+        {
+          "name": "CGDynamic_C01_011_C",
+          "path": "cg/c01/dynamic/CGDynamic_C01_011_C.png",
+          "size": 3035085
+        },
+        {
+          "name": "CGDynamic_C01_012Dark",
+          "path": "cg/c01/static/CGDynamic_C01_012Dark.png",
+          "size": 181
+        },
+        {
+          "name": "CG_C01_001",
+          "path": "cg/c01/static/CG_C01_001.png",
+          "size": 2196612
+        },
+        {
+          "name": "CG_C01_002",
+          "path": "cg/c01/static/CG_C01_002.png",
+          "size": 3436682
+        },
+        {
+          "name": "CG_C01_003",
+          "path": "cg/c01/static/CG_C01_003.png",
+          "size": 2617361
+        },
+        {
+          "name": "CG_C01_004",
+          "path": "cg/c01/static/CG_C01_004.png",
+          "size": 2688307
+        }
+      ],
+      "image_count": 41
+    },
+    {
+      "chapter_id": "02",
+      "chapter_name": "Arc 1 - Ch.2 以蜡像之名",
+      "images": [
+        {
+          "name": "CG_C02_001",
+          "path": "cg/c02/static/CG_C02_001.png",
+          "size": 2180803
+        },
+        {
+          "name": "CG_C02_002",
+          "path": "cg/c02/static/CG_C02_002.png",
+          "size": 2237590
+        },
+        {
+          "name": "CG_C02_003",
+          "path": "cg/c02/static/CG_C02_003.png",
+          "size": 2362595
+        },
+        {
+          "name": "CG_C02_004",
+          "path": "cg/c02/static/CG_C02_004.png",
+          "size": 1808438
+        },
+        {
+          "name": "CG_C02_005",
+          "path": "cg/c02/static/CG_C02_005.png",
+          "size": 2149819
+        },
+        {
+          "name": "CG_C02_006",
+          "path": "cg/c02/static/CG_C02_006.png",
+          "size": 2335419
+        }
+      ],
+      "image_count": 6
+    },
+    {
+      "chapter_id": "03",
+      "chapter_name": "Arc 1 - Ch.3",
+      "images": [
+        {
+          "name": "CG_C03_001",
+          "path": "cg/c03/static/CG_C03_001.png",
+          "size": 1773022
+        },
+        {
+          "name": "CG_C03_002",
+          "path": "cg/c03/static/CG_C03_002.png",
+          "size": 1685245
+        },
+        {
+          "name": "CG_C03_003",
+          "path": "cg/c03/static/CG_C03_003.png",
+          "size": 1769550
+        },
+        {
+          "name": "CG_C03_004",
+          "path": "cg/c03/static/CG_C03_004.png",
+          "size": 2195232
+        },
+        {
+          "name": "CG_C03_005",
+          "path": "cg/c03/static/CG_C03_005.png",
+          "size": 2321594
+        },
+        {
+          "name": "CG_C03_006",
+          "path": "cg/c03/static/CG_C03_006.png",
+          "size": 1415433
+        },
+        {
+          "name": "CG_C03_007",
+          "path": "cg/c03/static/CG_C03_007.png",
+          "size": 1079728
+        }
+      ],
+      "image_count": 7
+    },
+    {
+      "chapter_id": "04",
+      "chapter_name": "Arc 1 - Ch.4",
+      "images": [
+        {
+          "name": "CG_C04_001",
+          "path": "cg/c04/static/CG_C04_001.png",
+          "size": 1746662
+        },
+        {
+          "name": "CG_C04_002",
+          "path": "cg/c04/static/CG_C04_002.png",
+          "size": 2328666
+        },
+        {
+          "name": "CG_C04_003",
+          "path": "cg/c04/static/CG_C04_003.png",
+          "size": 2241790
+        },
+        {
+          "name": "CG_C04_004",
+          "path": "cg/c04/static/CG_C04_004.png",
+          "size": 1953433
+        },
+        {
+          "name": "CG_C04_005",
+          "path": "cg/c04/static/CG_C04_005.png",
+          "size": 2363539
+        },
+        {
+          "name": "CG_C04_006",
+          "path": "cg/c04/static/CG_C04_006.png",
+          "size": 1911931
+        },
+        {
+          "name": "CG_C04_007",
+          "path": "cg/c04/static/CG_C04_007.png",
+          "size": 2102678
+        },
+        {
+          "name": "CG_C04_008",
+          "path": "cg/c04/static/CG_C04_008.png",
+          "size": 1686991
+        },
+        {
+          "name": "CG_C04_009",
+          "path": "cg/c04/static/CG_C04_009.png",
+          "size": 1864121
+        }
+      ],
+      "image_count": 9
+    },
+    {
+      "chapter_id": "05",
+      "chapter_name": "Arc 1 - Ch.5",
+      "images": [
+        {
+          "name": "CG_C05_002",
+          "path": "cg/c05/static/CG_C05_002.png",
+          "size": 2105298
+        },
+        {
+          "name": "CG_C05_003",
+          "path": "cg/c05/static/CG_C05_003.png",
+          "size": 2070189
+        },
+        {
+          "name": "CG_C05_004",
+          "path": "cg/c05/static/CG_C05_004.png",
+          "size": 1386607
+        },
+        {
+          "name": "CG_C05_005",
+          "path": "cg/c05/static/CG_C05_005.png",
+          "size": 1838185
+        },
+        {
+          "name": "CG_C05_006",
+          "path": "cg/c05/static/CG_C05_006.png",
+          "size": 2004154
+        }
+      ],
+      "image_count": 5
+    },
+    {
+      "chapter_id": "06",
+      "chapter_name": "Arc 1 - Ch.6",
+      "images": [
+        {
+          "name": "CG_C06_001",
+          "path": "cg/c06/static/CG_C06_001.png",
+          "size": 1770635
+        },
+        {
+          "name": "CG_C06_002",
+          "path": "cg/c06/static/CG_C06_002.png",
+          "size": 2214237
+        },
+        {
+          "name": "CG_C06_003",
+          "path": "cg/c06/static/CG_C06_003.png",
+          "size": 2220541
+        },
+        {
+          "name": "CG_C06_004",
+          "path": "cg/c06/static/CG_C06_004.png",
+          "size": 1878451
+        },
+        {
+          "name": "CG_C06_005",
+          "path": "cg/c06/static/CG_C06_005.png",
+          "size": 2069580
+        },
+        {
+          "name": "CG_C06_006",
+          "path": "cg/c06/static/CG_C06_006.png",
+          "size": 2343753
+        },
+        {
+          "name": "CG_C06_007",
+          "path": "cg/c06/static/CG_C06_007.png",
+          "size": 2170925
+        },
+        {
+          "name": "CG_C06_008",
+          "path": "cg/c06/static/CG_C06_008.png",
+          "size": 1847174
+        },
+        {
+          "name": "CG_C06_009",
+          "path": "cg/c06/static/CG_C06_009.png",
+          "size": 2065561
+        },
+        {
+          "name": "CG_C06_010",
+          "path": "cg/c06/static/CG_C06_010.png",
+          "size": 2279638
+        },
+        {
+          "name": "CG_C06_011",
+          "path": "cg/c06/static/CG_C06_011.png",
+          "size": 244863
+        },
+        {
+          "name": "CG_C06_012",
+          "path": "cg/c06/static/CG_C06_012.png",
+          "size": 1401738
+        },
+        {
+          "name": "CG_C06_015",
+          "path": "cg/c06/static/CG_C06_015.png",
+          "size": 1351065
+        },
+        {
+          "name": "CG_C06_017",
+          "path": "cg/c06/static/CG_C06_017.png",
+          "size": 2069358
+        },
+        {
+          "name": "CG_C06_018",
+          "path": "cg/c06/static/CG_C06_018.png",
+          "size": 143688
+        }
+      ],
+      "image_count": 15
+    },
+    {
+      "chapter_id": "07",
+      "chapter_name": "Arc 1 - Ch.7",
+      "images": [
+        {
+          "name": "CG_C07_001",
+          "path": "cg/c07/static/CG_C07_001.png",
+          "size": 2644487
+        },
+        {
+          "name": "CG_C07_002",
+          "path": "cg/c07/static/CG_C07_002.png",
+          "size": 2275657
+        },
+        {
+          "name": "CG_C07_003",
+          "path": "cg/c07/static/CG_C07_003.png",
+          "size": 2238426
+        },
+        {
+          "name": "CG_C07_004",
+          "path": "cg/c07/static/CG_C07_004.png",
+          "size": 1297324
+        },
+        {
+          "name": "CG_C07_005",
+          "path": "cg/c07/static/CG_C07_005.png",
+          "size": 3006834
+        },
+        {
+          "name": "CG_C07_006",
+          "path": "cg/c07/static/CG_C07_006.png",
+          "size": 2791268
+        },
+        {
+          "name": "CG_C07_007",
+          "path": "cg/c07/static/CG_C07_007.png",
+          "size": 2401797
+        },
+        {
+          "name": "CG_C07_008",
+          "path": "cg/c07/static/CG_C07_008.png",
+          "size": 2123652
+        },
+        {
+          "name": "CG_C07_009",
+          "path": "cg/c07/static/CG_C07_009.png",
+          "size": 427756
+        },
+        {
+          "name": "CG_C07_010",
+          "path": "cg/c07/static/CG_C07_010.png",
+          "size": 1904364
+        },
+        {
+          "name": "CG_C07_011",
+          "path": "cg/c07/static/CG_C07_011.png",
+          "size": 3515441
+        },
+        {
+          "name": "CG_C07_012",
+          "path": "cg/c07/static/CG_C07_012.png",
+          "size": 1844494
+        },
+        {
+          "name": "CG_C07_013",
+          "path": "cg/c07/static/CG_C07_013.png",
+          "size": 321925
+        },
+        {
+          "name": "CG_C07_014",
+          "path": "cg/c07/static/CG_C07_014.png",
+          "size": 1312053
+        },
+        {
+          "name": "CG_C07_015",
+          "path": "cg/c07/static/CG_C07_015.png",
+          "size": 2546537
+        },
+        {
+          "name": "CG_C07_016",
+          "path": "cg/c07/static/CG_C07_016.png",
+          "size": 704674
+        },
+        {
+          "name": "CG_C07_017",
+          "path": "cg/c07/static/CG_C07_017.png",
+          "size": 1963475
+        },
+        {
+          "name": "CG_C07_018",
+          "path": "cg/c07/static/CG_C07_018.png",
+          "size": 1311031
+        },
+        {
+          "name": "CG_C07_019",
+          "path": "cg/c07/static/CG_C07_019.png",
+          "size": 2507294
+        },
+        {
+          "name": "CG_C07_020",
+          "path": "cg/c07/static/CG_C07_020.png",
+          "size": 297427
+        },
+        {
+          "name": "CG_C07_021",
+          "path": "cg/c07/static/CG_C07_021.png",
+          "size": 1965405
+        },
+        {
+          "name": "CG_C07_022",
+          "path": "cg/c07/static/CG_C07_022.png",
+          "size": 1201383
+        }
+      ],
+      "image_count": 22
+    },
+    {
+      "chapter_id": "08",
+      "chapter_name": "Arc 1 - Ch.8 (终章)",
+      "images": [
+        {
+          "name": "CG_C08_001",
+          "path": "cg/c08/static/CG_C08_001.png",
+          "size": 814612
+        },
+        {
+          "name": "CG_C08_002",
+          "path": "cg/c08/static/CG_C08_002.png",
+          "size": 1149015
+        },
+        {
+          "name": "CG_C08_003",
+          "path": "cg/c08/static/CG_C08_003.png",
+          "size": 730943
+        },
+        {
+          "name": "CG_C08_004",
+          "path": "cg/c08/static/CG_C08_004.png",
+          "size": 1870004
+        },
+        {
+          "name": "CG_C08_005",
+          "path": "cg/c08/static/CG_C08_005.png",
+          "size": 1533265
+        },
+        {
+          "name": "CG_C08_006",
+          "path": "cg/c08/static/CG_C08_006.png",
+          "size": 2260511
+        },
+        {
+          "name": "CG_C08_007",
+          "path": "cg/c08/static/CG_C08_007.png",
+          "size": 3154466
+        },
+        {
+          "name": "CG_C08_008",
+          "path": "cg/c08/static/CG_C08_008.png",
+          "size": 2315619
+        },
+        {
+          "name": "CG_C08_009",
+          "path": "cg/c08/static/CG_C08_009.png",
+          "size": 2299576
+        },
+        {
+          "name": "CG_C08_010",
+          "path": "cg/c08/static/CG_C08_010.png",
+          "size": 1701782
+        },
+        {
+          "name": "CG_C08_011",
+          "path": "cg/c08/static/CG_C08_011.png",
+          "size": 567155
+        },
+        {
+          "name": "CG_C08_012",
+          "path": "cg/c08/static/CG_C08_012.png",
+          "size": 740473
+        }
+      ],
+      "image_count": 12
+    },
+    {
+      "chapter_id": "09",
+      "chapter_name": "Arc 1 - Interlude (幕间)",
+      "images": [
+        {
+          "name": "CG_C09_001",
+          "path": "cg/c09/static/CG_C09_001.png",
+          "size": 592363
+        },
+        {
+          "name": "CG_C09_002",
+          "path": "cg/c09/static/CG_C09_002.png",
+          "size": 464275
+        },
+        {
+          "name": "CG_C09_003",
+          "path": "cg/c09/static/CG_C09_003.png",
+          "size": 2214578
+        },
+        {
+          "name": "CG_C09_004_1_F",
+          "path": "cg/c09/static/CG_C09_004_1_F.png",
+          "size": 1650555
+        },
+        {
+          "name": "CG_C09_004_1_M",
+          "path": "cg/c09/static/CG_C09_004_1_M.png",
+          "size": 1439742
+        },
+        {
+          "name": "CG_C09_004_F",
+          "path": "cg/c09/static/CG_C09_004_F.png",
+          "size": 2300840
+        },
+        {
+          "name": "CG_C09_004_M",
+          "path": "cg/c09/static/CG_C09_004_M.png",
+          "size": 2263054
+        },
+        {
+          "name": "CG_C09_005_F",
+          "path": "cg/c09/static/CG_C09_005_F.png",
+          "size": 1712045
+        },
+        {
+          "name": "CG_C09_005_M",
+          "path": "cg/c09/static/CG_C09_005_M.png",
+          "size": 1546989
+        },
+        {
+          "name": "CG_C09_006_F",
+          "path": "cg/c09/static/CG_C09_006_F.png",
+          "size": 224808
+        },
+        {
+          "name": "CG_C09_006_M",
+          "path": "cg/c09/static/CG_C09_006_M.png",
+          "size": 224092
+        },
+        {
+          "name": "CG_C09_007",
+          "path": "cg/c09/static/CG_C09_007.png",
+          "size": 1458476
+        },
+        {
+          "name": "CG_C09_008",
+          "path": "cg/c09/static/CG_C09_008.png",
+          "size": 1476340
+        },
+        {
+          "name": "CG_C09_009",
+          "path": "cg/c09/static/CG_C09_009.png",
+          "size": 1474074
+        },
+        {
+          "name": "CG_C09_010",
+          "path": "cg/c09/static/CG_C09_010.png",
+          "size": 1773213
+        },
+        {
+          "name": "CG_C09_011_F",
+          "path": "cg/c09/static/CG_C09_011_F.png",
+          "size": 2080607
+        },
+        {
+          "name": "CG_C09_011_M",
+          "path": "cg/c09/static/CG_C09_011_M.png",
+          "size": 2077343
+        },
+        {
+          "name": "CG_C09_012",
+          "path": "cg/c09/static/CG_C09_012.png",
+          "size": 1467675
+        },
+        {
+          "name": "CG_C09_013",
+          "path": "cg/c09/static/CG_C09_013.png",
+          "size": 1181365
+        },
+        {
+          "name": "CG_C09_014",
+          "path": "cg/c09/static/CG_C09_014.png",
+          "size": 596332
+        },
+        {
+          "name": "CG_C09_015",
+          "path": "cg/c09/static/CG_C09_015.png",
+          "size": 1136228
+        },
+        {
+          "name": "CG_C09_016",
+          "path": "cg/c09/static/CG_C09_016.png",
+          "size": 1147340
+        },
+        {
+          "name": "CG_C09_017",
+          "path": "cg/c09/static/CG_C09_017.png",
+          "size": 572223
+        }
+      ],
+      "image_count": 23
+    },
+    {
+      "chapter_id": "201",
+      "chapter_name": "Arc 2 - Prologue (序章)",
+      "images": [
+        {
+          "name": "CG_C201_001",
+          "path": "cg/c201/static/CG_C201_001.png",
+          "size": 3621086
+        },
+        {
+          "name": "CG_C201_002",
+          "path": "cg/c201/static/CG_C201_002.png",
+          "size": 3460105
+        },
+        {
+          "name": "CG_C201_003",
+          "path": "cg/c201/static/CG_C201_003.png",
+          "size": 1935980
+        },
+        {
+          "name": "CG_C201_004",
+          "path": "cg/c201/static/CG_C201_004.png",
+          "size": 3414954
+        },
+        {
+          "name": "CG_C201_005",
+          "path": "cg/c201/static/CG_C201_005.png",
+          "size": 3201098
+        },
+        {
+          "name": "CG_C201_006",
+          "path": "cg/c201/static/CG_C201_006.png",
+          "size": 1661762
+        },
+        {
+          "name": "CG_C201_007",
+          "path": "cg/c201/static/CG_C201_007.png",
+          "size": 1753737
+        },
+        {
+          "name": "CG_C201_008",
+          "path": "cg/c201/static/CG_C201_008.png",
+          "size": 1783358
+        },
+        {
+          "name": "CG_C201_009",
+          "path": "cg/c201/static/CG_C201_009.png",
+          "size": 1854311
+        },
+        {
+          "name": "CG_C201_010",
+          "path": "cg/c201/static/CG_C201_010.png",
+          "size": 4489631
+        }
+      ],
+      "image_count": 10
+    },
+    {
+      "chapter_id": "202",
+      "chapter_name": "Arc 2 - Ch.1",
+      "images": [
+        {
+          "name": "CG_C202_001",
+          "path": "cg/c202/static/CG_C202_001.png",
+          "size": 1668938
+        },
+        {
+          "name": "CG_C202_002",
+          "path": "cg/c202/static/CG_C202_002.png",
+          "size": 1417194
+        },
+        {
+          "name": "CG_C202_003",
+          "path": "cg/c202/static/CG_C202_003.png",
+          "size": 1375011
+        },
+        {
+          "name": "CG_C202_004",
+          "path": "cg/c202/static/CG_C202_004.png",
+          "size": 860575
+        },
+        {
+          "name": "CG_C202_005",
+          "path": "cg/c202/static/CG_C202_005.png",
+          "size": 1889869
+        },
+        {
+          "name": "CG_C202_006",
+          "path": "cg/c202/static/CG_C202_006.png",
+          "size": 1486914
+        },
+        {
+          "name": "CG_C202_007",
+          "path": "cg/c202/static/CG_C202_007.png",
+          "size": 1523632
+        },
+        {
+          "name": "CG_C202_008",
+          "path": "cg/c202/static/CG_C202_008.png",
+          "size": 1881689
+        },
+        {
+          "name": "CG_C202_009",
+          "path": "cg/c202/static/CG_C202_009.png",
+          "size": 1059743
+        },
+        {
+          "name": "CG_C202_010",
+          "path": "cg/c202/static/CG_C202_010.png",
+          "size": 1188064
+        },
+        {
+          "name": "CG_C202_011",
+          "path": "cg/c202/static/CG_C202_011.png",
+          "size": 1218957
+        },
+        {
+          "name": "CG_C202_012",
+          "path": "cg/c202/static/CG_C202_012.png",
+          "size": 1388945
+        },
+        {
+          "name": "CG_C202_013",
+          "path": "cg/c202/static/CG_C202_013.png",
+          "size": 1993593
+        },
+        {
+          "name": "CG_C202_014",
+          "path": "cg/c202/static/CG_C202_014.png",
+          "size": 1220020
+        },
+        {
+          "name": "CG_C202_015",
+          "path": "cg/c202/static/CG_C202_015.png",
+          "size": 1120635
+        }
+      ],
+      "image_count": 15
+    },
+    {
+      "chapter_id": "203",
+      "chapter_name": "Arc 2 - Ch.2",
+      "images": [
+        {
+          "name": "CG_C203_001",
+          "path": "cg/c203/static/CG_C203_001.png",
+          "size": 2023236
+        },
+        {
+          "name": "CG_C203_002",
+          "path": "cg/c203/static/CG_C203_002.png",
+          "size": 1897119
+        },
+        {
+          "name": "CG_C203_003",
+          "path": "cg/c203/static/CG_C203_003.png",
+          "size": 2020629
+        },
+        {
+          "name": "CG_C203_004",
+          "path": "cg/c203/static/CG_C203_004.png",
+          "size": 1814232
+        },
+        {
+          "name": "CG_C203_005",
+          "path": "cg/c203/static/CG_C203_005.png",
+          "size": 1925750
+        },
+        {
+          "name": "CG_C203_006",
+          "path": "cg/c203/static/CG_C203_006.png",
+          "size": 2001106
+        },
+        {
+          "name": "CG_C203_007",
+          "path": "cg/c203/static/CG_C203_007.png",
+          "size": 1742035
+        },
+        {
+          "name": "CG_C203_008",
+          "path": "cg/c203/static/CG_C203_008.png",
+          "size": 1852458
+        },
+        {
+          "name": "CG_C203_009",
+          "path": "cg/c203/static/CG_C203_009.png",
+          "size": 3679144
+        },
+        {
+          "name": "CG_C203_010",
+          "path": "cg/c203/static/CG_C203_010.png",
+          "size": 1633314
+        }
+      ],
+      "image_count": 10
+    },
+    {
+      "chapter_id": "204",
+      "chapter_name": "Arc 2 - Ch.3",
+      "images": [
+        {
+          "name": "CG_C204_001",
+          "path": "cg/c204/static/CG_C204_001.png",
+          "size": 2025717
+        },
+        {
+          "name": "CG_C204_002",
+          "path": "cg/c204/static/CG_C204_002.png",
+          "size": 2675987
+        },
+        {
+          "name": "CG_C204_003",
+          "path": "cg/c204/static/CG_C204_003.png",
+          "size": 1659520
+        },
+        {
+          "name": "CG_C204_004",
+          "path": "cg/c204/static/CG_C204_004.png",
+          "size": 2746393
+        },
+        {
+          "name": "CG_C204_005",
+          "path": "cg/c204/static/CG_C204_005.png",
+          "size": 1820302
+        },
+        {
+          "name": "CG_C204_006",
+          "path": "cg/c204/static/CG_C204_006.png",
+          "size": 1026780
+        },
+        {
+          "name": "CG_C204_007",
+          "path": "cg/c204/static/CG_C204_007.png",
+          "size": 1022540
+        },
+        {
+          "name": "CG_C204_008",
+          "path": "cg/c204/static/CG_C204_008.png",
+          "size": 383787
+        },
+        {
+          "name": "CG_C204_009",
+          "path": "cg/c204/static/CG_C204_009.png",
+          "size": 2355547
+        },
+        {
+          "name": "CG_C204_010",
+          "path": "cg/c204/static/CG_C204_010.png",
+          "size": 1188017
+        },
+        {
+          "name": "CG_C204_011",
+          "path": "cg/c204/static/CG_C204_011.png",
+          "size": 2025277
+        },
+        {
+          "name": "CG_C204_012",
+          "path": "cg/c204/static/CG_C204_012.png",
+          "size": 2025843
+        }
+      ],
+      "image_count": 12
+    },
+    {
+      "chapter_id": "205",
+      "chapter_name": "Arc 2 - Ch.4",
+      "images": [
+        {
+          "name": "CG_C205_001",
+          "path": "cg/c205/static/CG_C205_001.png",
+          "size": 1829509
+        },
+        {
+          "name": "CG_C205_002",
+          "path": "cg/c205/static/CG_C205_002.png",
+          "size": 1829530
+        },
+        {
+          "name": "CG_C205_003",
+          "path": "cg/c205/static/CG_C205_003.png",
+          "size": 1431181
+        },
+        {
+          "name": "CG_C205_004",
+          "path": "cg/c205/static/CG_C205_004.png",
+          "size": 1597826
+        },
+        {
+          "name": "CG_C205_005",
+          "path": "cg/c205/static/CG_C205_005.png",
+          "size": 1846400
+        },
+        {
+          "name": "CG_C205_006",
+          "path": "cg/c205/static/CG_C205_006.png",
+          "size": 1827151
+        },
+        {
+          "name": "CG_C205_007",
+          "path": "cg/c205/static/CG_C205_007.png",
+          "size": 3415065
+        }
+      ],
+      "image_count": 7
+    }
+  ],
+  "special": [
+    {
+      "group_id": "cg_coll",
+      "group_name": "Collection CG (收藏CG)",
+      "images": [
+        {
+          "name": "CG_Coll_Entry_01",
+          "path": "cg/cg_coll/CG_Coll_Entry_01.png",
+          "size": 2158275
+        },
+        {
+          "name": "CG_Coll_Entry_02",
+          "path": "cg/cg_coll/CG_Coll_Entry_02.png",
+          "size": 1954623
+        },
+        {
+          "name": "CG_Coll_Entry_03",
+          "path": "cg/cg_coll/CG_Coll_Entry_03.png",
+          "size": 1384368
+        },
+        {
+          "name": "CG_Coll_Entry_04",
+          "path": "cg/cg_coll/CG_Coll_Entry_04.png",
+          "size": 2365206
+        },
+        {
+          "name": "CG_Coll_Entry_05",
+          "path": "cg/cg_coll/CG_Coll_Entry_05.png",
+          "size": 1978944
+        },
+        {
+          "name": "CG_Coll_Entry_06",
+          "path": "cg/cg_coll/CG_Coll_Entry_06.png",
+          "size": 1392782
+        },
+        {
+          "name": "CG_Coll_Entry_07",
+          "path": "cg/cg_coll/CG_Coll_Entry_07.png",
+          "size": 1306535
+        },
+        {
+          "name": "CG_Coll_Entry_08",
+          "path": "cg/cg_coll/CG_Coll_Entry_08.png",
+          "size": 1469700
+        },
+        {
+          "name": "CG_Coll_Entry_09",
+          "path": "cg/cg_coll/CG_Coll_Entry_09.png",
+          "size": 1358066
+        },
+        {
+          "name": "CG_Coll_Entry_10",
+          "path": "cg/cg_coll/CG_Coll_Entry_10.png",
+          "size": 1196707
+        },
+        {
+          "name": "CG_Coll_Entry_11",
+          "path": "cg/cg_coll/CG_Coll_Entry_11.png",
+          "size": 1674210
+        },
+        {
+          "name": "CG_Coll_Entry_12",
+          "path": "cg/cg_coll/CG_Coll_Entry_12.png",
+          "size": 1809871
+        }
+      ],
+      "image_count": 12
+    },
+    {
+      "group_id": "cg_sd",
+      "group_name": "SD / Chibi CG (Q版CG)",
+      "images": [
+        {
+          "name": "CG_SD_L_B02_1",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_1.png",
+          "size": 2121674
+        },
+        {
+          "name": "CG_SD_L_B02_2",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_2.png",
+          "size": 2091674
+        },
+        {
+          "name": "CG_SD_L_B02_3",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_3.png",
+          "size": 3236908
+        },
+        {
+          "name": "CG_SD_L_B02_4",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_4.png",
+          "size": 2296327
+        },
+        {
+          "name": "CG_SD_L_B02_6",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_6.png",
+          "size": 2954767
+        },
+        {
+          "name": "CG_SD_L_B02_6_A",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_6_A.png",
+          "size": 118968
+        },
+        {
+          "name": "CG_SD_L_B02_7_A",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_7_A.png",
+          "size": 583792
+        },
+        {
+          "name": "CG_SD_L_B02_7_B",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_7_B.png",
+          "size": 722116
+        },
+        {
+          "name": "CG_SD_L_B02_7_C",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_7_C.png",
+          "size": 815291
+        },
+        {
+          "name": "CG_SD_L_B02_8",
+          "path": "cg/cg_sd/static/CG_SD_L_B02_8.png",
+          "size": 1742465
+        },
+        {
+          "name": "CG_SD_L_B04_1",
+          "path": "cg/cg_sd/static/CG_SD_L_B04_1.png",
+          "size": 2295639
+        },
+        {
+          "name": "CG_SD_L_B04_2",
+          "path": "cg/cg_sd/static/CG_SD_L_B04_2.png",
+          "size": 1369523
+        },
+        {
+          "name": "CG_SD_L_B04_3",
+          "path": "cg/cg_sd/static/CG_SD_L_B04_3.png",
+          "size": 1971352
+        },
+        {
+          "name": "CG_SD_L_B04_4",
+          "path": "cg/cg_sd/static/CG_SD_L_B04_4.png",
+          "size": 1661135
+        },
+        {
+          "name": "CG_SD_L_B05EX_1",
+          "path": "cg/cg_sd/static/CG_SD_L_B05EX_1.png",
+          "size": 1720058
+        },
+        {
+          "name": "CG_SD_L_B05EX_2",
+          "path": "cg/cg_sd/static/CG_SD_L_B05EX_2.png",
+          "size": 3171998
+        },
+        {
+          "name": "CG_SD_L_B05EX_3",
+          "path": "cg/cg_sd/static/CG_SD_L_B05EX_3.png",
+          "size": 929775
+        },
+        {
+          "name": "CG_SD_L_B05EX_4",
+          "path": "cg/cg_sd/static/CG_SD_L_B05EX_4.png",
+          "size": 2270498
+        },
+        {
+          "name": "CG_SD_L_B05EX_5",
+          "path": "cg/cg_sd/static/CG_SD_L_B05EX_5.png",
+          "size": 2983514
+        },
+        {
+          "name": "CG_SD_L_B05EX_6",
+          "path": "cg/cg_sd/static/CG_SD_L_B05EX_6.png",
+          "size": 2568895
+        },
+        {
+          "name": "CG_SD_L_B05EX_7",
+          "path": "cg/cg_sd/static/CG_SD_L_B05EX_7.png",
+          "size": 2642396
+        },
+        {
+          "name": "CG_SD_L_B05EX_8",
+          "path": "cg/cg_sd/static/CG_SD_L_B05EX_8.png",
+          "size": 1779813
+        },
+        {
+          "name": "CG_SD_L_C10_1",
+          "path": "cg/cg_sd/static/CG_SD_L_C10_1.png",
+          "size": 3383904
+        },
+        {
+          "name": "CG_SD_L_C10_2",
+          "path": "cg/cg_sd/static/CG_SD_L_C10_2.png",
+          "size": 1556072
+        },
+        {
+          "name": "CG_SD_L_C10_3",
+          "path": "cg/cg_sd/static/CG_SD_L_C10_3.png",
+          "size": 2018428
+        },
+        {
+          "name": "CG_SD_L_C10_4",
+          "path": "cg/cg_sd/static/CG_SD_L_C10_4.png",
+          "size": 2856645
+        },
+        {
+          "name": "CG_SD_L_C10_5",
+          "path": "cg/cg_sd/static/CG_SD_L_C10_5.png",
+          "size": 1283943
+        },
+        {
+          "name": "CG_SD_L_C10_6",
+          "path": "cg/cg_sd/static/CG_SD_L_C10_6.png",
+          "size": 1443927
+        },
+        {
+          "name": "CG_SD_L_C10_7",
+          "path": "cg/cg_sd/static/CG_SD_L_C10_7.png",
+          "size": 4547964
+        },
+        {
+          "name": "CG_SD_L_D02_1",
+          "path": "cg/cg_sd/static/CG_SD_L_D02_1.png",
+          "size": 1811463
+        },
+        {
+          "name": "CG_SD_L_D02_2",
+          "path": "cg/cg_sd/static/CG_SD_L_D02_2.png",
+          "size": 1826630
+        },
+        {
+          "name": "CG_SD_L_D02_3",
+          "path": "cg/cg_sd/static/CG_SD_L_D02_3.png",
+          "size": 1797200
+        },
+        {
+          "name": "CG_SD_L_D02_4",
+          "path": "cg/cg_sd/static/CG_SD_L_D02_4.png",
+          "size": 2099354
+        },
+        {
+          "name": "CG_SD_L_D06_1",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_1.png",
+          "size": 2194709
+        },
+        {
+          "name": "CG_SD_L_D06_10",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_10.png",
+          "size": 2176998
+        },
+        {
+          "name": "CG_SD_L_D06_11",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_11.png",
+          "size": 3790989
+        },
+        {
+          "name": "CG_SD_L_D06_12",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_12.png",
+          "size": 3084704
+        },
+        {
+          "name": "CG_SD_L_D06_13",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_13.png",
+          "size": 4109651
+        },
+        {
+          "name": "CG_SD_L_D06_14",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_14.png",
+          "size": 3903120
+        },
+        {
+          "name": "CG_SD_L_D06_15",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_15.png",
+          "size": 2665658
+        },
+        {
+          "name": "CG_SD_L_D06_16",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_16.png",
+          "size": 3762266
+        },
+        {
+          "name": "CG_SD_L_D06_17",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_17.png",
+          "size": 2666877
+        },
+        {
+          "name": "CG_SD_L_D06_18",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_18.png",
+          "size": 1577741
+        },
+        {
+          "name": "CG_SD_L_D06_2",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_2.png",
+          "size": 3006045
+        },
+        {
+          "name": "CG_SD_L_D06_3",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_3.png",
+          "size": 1381099
+        },
+        {
+          "name": "CG_SD_L_D06_3-2",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_3-2.png",
+          "size": 1703614
+        },
+        {
+          "name": "CG_SD_L_D06_3-3",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_3-3.png",
+          "size": 684598
+        },
+        {
+          "name": "CG_SD_L_D06_4",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_4.png",
+          "size": 2006309
+        },
+        {
+          "name": "CG_SD_L_D06_4-1",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_4-1.png",
+          "size": 2643349
+        },
+        {
+          "name": "CG_SD_L_D06_5",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_5.png",
+          "size": 1663932
+        },
+        {
+          "name": "CG_SD_L_D06_5-1",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_5-1.png",
+          "size": 2097242
+        },
+        {
+          "name": "CG_SD_L_D06_6",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_6.png",
+          "size": 3045540
+        },
+        {
+          "name": "CG_SD_L_D06_7-1",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_7-1.png",
+          "size": 3348293
+        },
+        {
+          "name": "CG_SD_L_D06_7-2",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_7-2.png",
+          "size": 2917519
+        },
+        {
+          "name": "CG_SD_L_D06_7-3",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_7-3.png",
+          "size": 2676621
+        },
+        {
+          "name": "CG_SD_L_D06_7-4",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_7-4.png",
+          "size": 3243984
+        },
+        {
+          "name": "CG_SD_L_D06_7-5",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_7-5.png",
+          "size": 1014727
+        },
+        {
+          "name": "CG_SD_L_D06_8",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_8.png",
+          "size": 1976170
+        },
+        {
+          "name": "CG_SD_L_D06_9",
+          "path": "cg/cg_sd/static/CG_SD_L_D06_9.png",
+          "size": 4020766
+        },
+        {
+          "name": "CG_SD_L_D11_1",
+          "path": "cg/cg_sd/static/CG_SD_L_D11_1.png",
+          "size": 2754702
+        },
+        {
+          "name": "CG_SD_L_D14_1",
+          "path": "cg/cg_sd/static/CG_SD_L_D14_1.png",
+          "size": 2111024
+        },
+        {
+          "name": "CG_SD_L_FarewellNeverland_1",
+          "path": "cg/cg_sd/static/CG_SD_L_FarewellNeverland_1.png",
+          "size": 2252822
+        },
+        {
+          "name": "CG_SD_L_FarewellNeverland_2",
+          "path": "cg/cg_sd/static/CG_SD_L_FarewellNeverland_2.png",
+          "size": 2361791
+        },
+        {
+          "name": "CG_SD_L_FarewellNeverland_3",
+          "path": "cg/cg_sd/static/CG_SD_L_FarewellNeverland_3.png",
+          "size": 2377150
+        },
+        {
+          "name": "CG_SD_L_O07_1",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_1.png",
+          "size": 1746665
+        },
+        {
+          "name": "CG_SD_L_O07_10",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_10.png",
+          "size": 3138428
+        },
+        {
+          "name": "CG_SD_L_O07_11",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_11.png",
+          "size": 2116127
+        },
+        {
+          "name": "CG_SD_L_O07_12",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_12.png",
+          "size": 3395093
+        },
+        {
+          "name": "CG_SD_L_O07_2",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_2.png",
+          "size": 1102481
+        },
+        {
+          "name": "CG_SD_L_O07_3",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_3.png",
+          "size": 2587837
+        },
+        {
+          "name": "CG_SD_L_O07_4",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_4.png",
+          "size": 1451524
+        },
+        {
+          "name": "CG_SD_L_O07_5",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_5.png",
+          "size": 1155727
+        },
+        {
+          "name": "CG_SD_L_O07_6",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_6.png",
+          "size": 1947659
+        },
+        {
+          "name": "CG_SD_L_O07_7",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_7.png",
+          "size": 1936529
+        },
+        {
+          "name": "CG_SD_L_O07_8",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_8.png",
+          "size": 2166326
+        },
+        {
+          "name": "CG_SD_L_O07_9",
+          "path": "cg/cg_sd/static/CG_SD_L_O07_9.png",
+          "size": 2933325
+        },
+        {
+          "name": "CG_SD_L_O10_1",
+          "path": "cg/cg_sd/static/CG_SD_L_O10_1.png",
+          "size": 2822460
+        },
+        {
+          "name": "CG_SD_L_O10_2",
+          "path": "cg/cg_sd/static/CG_SD_L_O10_2.png",
+          "size": 2991514
+        },
+        {
+          "name": "CG_SD_L_O10_3",
+          "path": "cg/cg_sd/static/CG_SD_L_O10_3.png",
+          "size": 3044503
+        },
+        {
+          "name": "CG_SD_L_SF1_01",
+          "path": "cg/cg_sd/static/CG_SD_L_SF1_01.png",
+          "size": 544717
+        },
+        {
+          "name": "CG_SD_L_SF1_02",
+          "path": "cg/cg_sd/static/CG_SD_L_SF1_02.png",
+          "size": 700775
+        },
+        {
+          "name": "CG_SD_L_SF1_03",
+          "path": "cg/cg_sd/static/CG_SD_L_SF1_03.png",
+          "size": 1743829
+        },
+        {
+          "name": "CG_SD_MyTurn_01",
+          "path": "cg/cg_sd/static/CG_SD_MyTurn_01.png",
+          "size": 2778749
+        },
+        {
+          "name": "CG_SD_S_B06_1",
+          "path": "cg/cg_sd/static/CG_SD_S_B06_1.png",
+          "size": 2145456
+        },
+        {
+          "name": "CG_SD_S_B06_2",
+          "path": "cg/cg_sd/static/CG_SD_S_B06_2.png",
+          "size": 2027315
+        },
+        {
+          "name": "CG_SD_S_B07_1",
+          "path": "cg/cg_sd/static/CG_SD_S_B07_1.png",
+          "size": 1832843
+        },
+        {
+          "name": "CG_SD_S_B07_2",
+          "path": "cg/cg_sd/static/CG_SD_S_B07_2.png",
+          "size": 1740378
+        },
+        {
+          "name": "CG_SD_S_B07_3",
+          "path": "cg/cg_sd/static/CG_SD_S_B07_3.png",
+          "size": 1619365
+        },
+        {
+          "name": "CG_SD_S_B07_4",
+          "path": "cg/cg_sd/static/CG_SD_S_B07_4.png",
+          "size": 1759634
+        },
+        {
+          "name": "CG_SD_S_B12_1",
+          "path": "cg/cg_sd/static/CG_SD_S_B12_1.png",
+          "size": 3440384
+        },
+        {
+          "name": "CG_SD_S_B14_1",
+          "path": "cg/cg_sd/static/CG_SD_S_B14_1.png",
+          "size": 2031180
+        },
+        {
+          "name": "CG_SD_S_B14_2",
+          "path": "cg/cg_sd/static/CG_SD_S_B14_2.png",
+          "size": 2033499
+        },
+        {
+          "name": "CG_SD_S_B14_3",
+          "path": "cg/cg_sd/static/CG_SD_S_B14_3.png",
+          "size": 2032524
+        },
+        {
+          "name": "CG_SD_S_B14_4",
+          "path": "cg/cg_sd/static/CG_SD_S_B14_4.png",
+          "size": 2026119
+        },
+        {
+          "name": "CG_SD_S_C01EX_1",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_1.png",
+          "size": 1404968
+        },
+        {
+          "name": "CG_SD_S_C01EX_10",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_10.png",
+          "size": 996453
+        },
+        {
+          "name": "CG_SD_S_C01EX_11",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_11.png",
+          "size": 790012
+        },
+        {
+          "name": "CG_SD_S_C01EX_12",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_12.png",
+          "size": 2144443
+        },
+        {
+          "name": "CG_SD_S_C01EX_13",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_13.png",
+          "size": 2599020
+        },
+        {
+          "name": "CG_SD_S_C01EX_14",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_14.png",
+          "size": 125364
+        },
+        {
+          "name": "CG_SD_S_C01EX_14_1",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_14_1.png",
+          "size": 2218
+        },
+        {
+          "name": "CG_SD_S_C01EX_14_2",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_14_2.png",
+          "size": 2390
+        },
+        {
+          "name": "CG_SD_S_C01EX_2",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_2.png",
+          "size": 933568
+        },
+        {
+          "name": "CG_SD_S_C01EX_3",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_3.png",
+          "size": 1835484
+        },
+        {
+          "name": "CG_SD_S_C01EX_4",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_4.png",
+          "size": 1793425
+        },
+        {
+          "name": "CG_SD_S_C01EX_5",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_5.png",
+          "size": 2318868
+        },
+        {
+          "name": "CG_SD_S_C01EX_6",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_6.png",
+          "size": 1362800
+        },
+        {
+          "name": "CG_SD_S_C01EX_7",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_7.png",
+          "size": 2788767
+        },
+        {
+          "name": "CG_SD_S_C01EX_8",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_8.png",
+          "size": 89635
+        },
+        {
+          "name": "CG_SD_S_C01EX_9",
+          "path": "cg/cg_sd/static/CG_SD_S_C01EX_9.png",
+          "size": 178087
+        },
+        {
+          "name": "CG_SD_S_C02EX_1",
+          "path": "cg/cg_sd/static/CG_SD_S_C02EX_1.png",
+          "size": 1649974
+        },
+        {
+          "name": "CG_SD_S_C02EX_10",
+          "path": "cg/cg_sd/static/CG_SD_S_C02EX_10.png",
+          "size": 1405257
+        },
+        {
+          "name": "CG_SD_S_C02EX_7",
+          "path": "cg/cg_sd/static/CG_SD_S_C02EX_7.png",
+          "size": 1217610
+        },
+        {
+          "name": "CG_SD_S_C02EX_8",
+          "path": "cg/cg_sd/static/CG_SD_S_C02EX_8.png",
+          "size": 2804970
+        },
+        {
+          "name": "CG_SD_S_C02EX_9",
+          "path": "cg/cg_sd/static/CG_SD_S_C02EX_9.png",
+          "size": 480775
+        },
+        {
+          "name": "CG_SD_S_C03_1",
+          "path": "cg/cg_sd/static/CG_SD_S_C03_1.png",
+          "size": 2511268
+        },
+        {
+          "name": "CG_SD_S_C03_2",
+          "path": "cg/cg_sd/static/CG_SD_S_C03_2.png",
+          "size": 2522801
+        },
+        {
+          "name": "CG_SD_S_C05_1",
+          "path": "cg/cg_sd/static/CG_SD_S_C05_1.png",
+          "size": 1778887
+        },
+        {
+          "name": "CG_SD_S_C05_2",
+          "path": "cg/cg_sd/static/CG_SD_S_C05_2.png",
+          "size": 2713453
+        },
+        {
+          "name": "CG_SD_S_C05_3",
+          "path": "cg/cg_sd/static/CG_SD_S_C05_3.png",
+          "size": 1908854
+        },
+        {
+          "name": "CG_SD_S_C05_4",
+          "path": "cg/cg_sd/static/CG_SD_S_C05_4.png",
+          "size": 233581
+        },
+        {
+          "name": "CG_SD_S_C05_5",
+          "path": "cg/cg_sd/static/CG_SD_S_C05_5.png",
+          "size": 2876738
+        },
+        {
+          "name": "CG_SD_S_C05_6",
+          "path": "cg/cg_sd/static/CG_SD_S_C05_6.png",
+          "size": 1802161
+        },
+        {
+          "name": "CG_SD_S_C05_7",
+          "path": "cg/cg_sd/static/CG_SD_S_C05_7.png",
+          "size": 2213256
+        },
+        {
+          "name": "CG_SD_S_C05_8",
+          "path": "cg/cg_sd/static/CG_SD_S_C05_8.png",
+          "size": 2601768
+        },
+        {
+          "name": "CG_SD_S_C05_9",
+          "path": "cg/cg_sd/static/CG_SD_S_C05_9.png",
+          "size": 2017020
+        },
+        {
+          "name": "CG_SD_S_C06_1",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_1.png",
+          "size": 1958901
+        },
+        {
+          "name": "CG_SD_S_C06_10",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_10.png",
+          "size": 5171203
+        },
+        {
+          "name": "CG_SD_S_C06_11",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_11.png",
+          "size": 2405020
+        },
+        {
+          "name": "CG_SD_S_C06_14",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_14.png",
+          "size": 2758170
+        },
+        {
+          "name": "CG_SD_S_C06_15",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_15.png",
+          "size": 1002212
+        },
+        {
+          "name": "CG_SD_S_C06_16",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_16.png",
+          "size": 1447010
+        },
+        {
+          "name": "CG_SD_S_C06_17",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_17.png",
+          "size": 1160813
+        },
+        {
+          "name": "CG_SD_S_C06_2",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_2.png",
+          "size": 1955129
+        },
+        {
+          "name": "CG_SD_S_C06_3",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_3.png",
+          "size": 1330278
+        },
+        {
+          "name": "CG_SD_S_C06_4",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_4.png",
+          "size": 509808
+        },
+        {
+          "name": "CG_SD_S_C06_5",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_5.png",
+          "size": 619211
+        },
+        {
+          "name": "CG_SD_S_C06_6",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_6.png",
+          "size": 486148
+        },
+        {
+          "name": "CG_SD_S_C06_7",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_7.png",
+          "size": 1523761
+        },
+        {
+          "name": "CG_SD_S_C06_8",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_8.png",
+          "size": 531403
+        },
+        {
+          "name": "CG_SD_S_C06_9",
+          "path": "cg/cg_sd/static/CG_SD_S_C06_9.png",
+          "size": 1463319
+        },
+        {
+          "name": "CG_SD_S_C16_1",
+          "path": "cg/cg_sd/static/CG_SD_S_C16_1.png",
+          "size": 3126845
+        },
+        {
+          "name": "CG_SD_S_C16_2",
+          "path": "cg/cg_sd/static/CG_SD_S_C16_2.png",
+          "size": 1853262
+        },
+        {
+          "name": "CG_SD_S_C17_01",
+          "path": "cg/cg_sd/static/CG_SD_S_C17_01.png",
+          "size": 2287249
+        },
+        {
+          "name": "CG_SD_S_C17_01_2",
+          "path": "cg/cg_sd/static/CG_SD_S_C17_01_2.png",
+          "size": 2634408
+        },
+        {
+          "name": "CG_SD_S_C17_01_3",
+          "path": "cg/cg_sd/static/CG_SD_S_C17_01_3.png",
+          "size": 2603237
+        },
+        {
+          "name": "CG_SD_S_C17_02",
+          "path": "cg/cg_sd/static/CG_SD_S_C17_02.png",
+          "size": 2263858
+        },
+        {
+          "name": "CG_SD_S_C17_02_2",
+          "path": "cg/cg_sd/static/CG_SD_S_C17_02_2.png",
+          "size": 2156878
+        },
+        {
+          "name": "CG_SD_S_D01_1",
+          "path": "cg/cg_sd/static/CG_SD_S_D01_1.png",
+          "size": 1988842
+        },
+        {
+          "name": "CG_SD_S_D04_1",
+          "path": "cg/cg_sd/static/CG_SD_S_D04_1.png",
+          "size": 2695416
+        },
+        {
+          "name": "CG_SD_S_D04_2",
+          "path": "cg/cg_sd/static/CG_SD_S_D04_2.png",
+          "size": 3280120
+        },
+        {
+          "name": "CG_SD_S_D04_3",
+          "path": "cg/cg_sd/static/CG_SD_S_D04_3.png",
+          "size": 3209620
+        },
+        {
+          "name": "CG_SD_S_D04_4",
+          "path": "cg/cg_sd/static/CG_SD_S_D04_4.png",
+          "size": 3039947
+        },
+        {
+          "name": "CG_SD_S_D08_1",
+          "path": "cg/cg_sd/static/CG_SD_S_D08_1.png",
+          "size": 2727000
+        },
+        {
+          "name": "CG_SD_S_D08_2",
+          "path": "cg/cg_sd/static/CG_SD_S_D08_2.png",
+          "size": 2823297
+        },
+        {
+          "name": "CG_SD_S_D08_3",
+          "path": "cg/cg_sd/static/CG_SD_S_D08_3.png",
+          "size": 2542401
+        },
+        {
+          "name": "CG_SD_S_D08_4",
+          "path": "cg/cg_sd/static/CG_SD_S_D08_4.png",
+          "size": 1738422
+        },
+        {
+          "name": "CG_SD_S_D08_5",
+          "path": "cg/cg_sd/static/CG_SD_S_D08_5.png",
+          "size": 2196423
+        },
+        {
+          "name": "CG_SD_S_D14_1",
+          "path": "cg/cg_sd/static/CG_SD_S_D14_1.png",
+          "size": 1815131
+        },
+        {
+          "name": "CG_SD_S_Fool",
+          "path": "cg/cg_sd/static/CG_SD_S_Fool.png",
+          "size": 679833
+        },
+        {
+          "name": "CG_SD_S_O01_1",
+          "path": "cg/cg_sd/static/CG_SD_S_O01_1.png",
+          "size": 2307490
+        },
+        {
+          "name": "CG_SD_S_O01_2",
+          "path": "cg/cg_sd/static/CG_SD_S_O01_2.png",
+          "size": 2163454
+        },
+        {
+          "name": "CG_SD_S_O01_3",
+          "path": "cg/cg_sd/static/CG_SD_S_O01_3.png",
+          "size": 2040949
+        },
+        {
+          "name": "CG_SD_S_O01_4",
+          "path": "cg/cg_sd/static/CG_SD_S_O01_4.png",
+          "size": 2766358
+        },
+        {
+          "name": "CG_SD_S_O01_5",
+          "path": "cg/cg_sd/static/CG_SD_S_O01_5.png",
+          "size": 3347905
+        },
+        {
+          "name": "CG_SD_S_O01_6",
+          "path": "cg/cg_sd/static/CG_SD_S_O01_6.png",
+          "size": 2310284
+        },
+        {
+          "name": "CG_SD_S_O05_1",
+          "path": "cg/cg_sd/static/CG_SD_S_O05_1.png",
+          "size": 1610165
+        },
+        {
+          "name": "CG_SD_S_O05_2",
+          "path": "cg/cg_sd/static/CG_SD_S_O05_2.png",
+          "size": 1478399
+        },
+        {
+          "name": "CG_SD_S_O06_1",
+          "path": "cg/cg_sd/static/CG_SD_S_O06_1.png",
+          "size": 2088016
+        },
+        {
+          "name": "CG_SD_S_O06_2",
+          "path": "cg/cg_sd/static/CG_SD_S_O06_2.png",
+          "size": 2360967
+        },
+        {
+          "name": "CG_SD_S_O06_3",
+          "path": "cg/cg_sd/static/CG_SD_S_O06_3.png",
+          "size": 639846
+        },
+        {
+          "name": "CG_SD_S_O06_4",
+          "path": "cg/cg_sd/static/CG_SD_S_O06_4.png",
+          "size": 239919
+        },
+        {
+          "name": "CG_SD_S_O06_6",
+          "path": "cg/cg_sd/static/CG_SD_S_O06_6.png",
+          "size": 1361879
+        },
+        {
+          "name": "CG_SD_S_O06_7",
+          "path": "cg/cg_sd/static/CG_SD_S_O06_7.png",
+          "size": 712085
+        },
+        {
+          "name": "CG_SD_S_O06_8",
+          "path": "cg/cg_sd/static/CG_SD_S_O06_8.png",
+          "size": 2247810
+        },
+        {
+          "name": "CG_SD_S_O06_9",
+          "path": "cg/cg_sd/static/CG_SD_S_O06_9.png",
+          "size": 365617
+        },
+        {
+          "name": "CG_SD_S_O08_1",
+          "path": "cg/cg_sd/static/CG_SD_S_O08_1.png",
+          "size": 2442348
+        },
+        {
+          "name": "CG_SD_S_O08_2",
+          "path": "cg/cg_sd/static/CG_SD_S_O08_2.png",
+          "size": 2396443
+        },
+        {
+          "name": "CG_SD_S_O11_01",
+          "path": "cg/cg_sd/static/CG_SD_S_O11_01.png",
+          "size": 2091953
+        },
+        {
+          "name": "CG_SD_S_O11_02",
+          "path": "cg/cg_sd/static/CG_SD_S_O11_02.png",
+          "size": 2238427
+        },
+        {
+          "name": "CG_SD_S_WB2_1",
+          "path": "cg/cg_sd/static/CG_SD_S_WB2_1.png",
+          "size": 2393000
+        },
+        {
+          "name": "CG_SD_S_WB2_1_2",
+          "path": "cg/cg_sd/static/CG_SD_S_WB2_1_2.png",
+          "size": 2423721
+        },
+        {
+          "name": "CG_SD_S_WB2_2",
+          "path": "cg/cg_sd/static/CG_SD_S_WB2_2.png",
+          "size": 2610696
+        },
+        {
+          "name": "CG_SD_S_WB2_2_2",
+          "path": "cg/cg_sd/static/CG_SD_S_WB2_2_2.png",
+          "size": 2619188
+        },
+        {
+          "name": "CG_SD_S_WB2_3",
+          "path": "cg/cg_sd/static/CG_SD_S_WB2_3.png",
+          "size": 3895198
+        }
+      ],
+      "image_count": 185
+    }
+  ]
+}

@@ -5,9 +5,10 @@
  * be filtered by the current gear (chat/work). The registry is the single
  * place that answers "what tools should be in the next LLM request?"
  *
- * Why gear filtering matters: Prime Directive T4 — active tool set must
- * be minimal. Chat gear exposes ~4 tools, work gear ~10. Sending all
- * tools every turn wastes 2-5k tokens on unused schema.
+ * Why gear filtering matters: Behavioral steering. Chat gear is discussion
+ * mode — the model should analyze and advise, not execute. Work gear is
+ * execution mode. Removing write tools in chat reinforces the system prompt
+ * guidance and prevents the model from acting when it should be thinking.
  */
 
 import type { ToolDescriptor, Gear } from '../../src/types';

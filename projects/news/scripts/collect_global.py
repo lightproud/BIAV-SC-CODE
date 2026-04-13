@@ -133,29 +133,41 @@ def run_zero_cost_collectors() -> list[dict]:
     # 键 = fetcher 显示名，值 = 原因 + 修复条件
     # 要恢复某个源：从这里删掉对应行，下面 zero_cost_fetchers 的条目不用改
     SUSPENDED: dict[str, str] = {
-        # 反爬/需登录（需 RSSHub + cookie 或 Puppeteer）
-        'Weibo':       '游客流已死，需真实 WEIBO_COOKIE → 部署 RSSHub',
-        'Xiaohongshu': 'API 404，需 Puppeteer x-s/x-t 签名 → 部署 RSSHub',
-        'Zhihu':       '403，需真实 z_c0 cookie → 部署 RSSHub',
-        'Douyin':      '需 Puppeteer 渲染 → 部署 RSSHub',
-        'Naver Cafe':  '403，需 NAVER 登录 session',
-        'Arca.live':   '403 Cloudflare，cloudscraper 不稳',
+        # 无法通过 cookie/Playwright 解决
         'Lofter':      '503 持续返回',
-        '5ch':         '503 持续返回',
         'Epic Store':  '403 GraphQL + scrape 均被拦',
-        'Note.com':    '403 被拦',
         'Taobao Merch':'403 被拦',
         'TikTok':      '需 Puppeteer，返回 0 视频',
-        # 内容确实不存在或 API 不可达
-        'TapTap':      'API 被 proxy 403，审计窗口内 0 产出',
         'VK Play':     '游戏页 404',
         'QooApp':      '搜索 0 结果',
         'Xianyu':      '0 商品',
-        'Ruliweb':     '0 帖子',
         'GACHAREVENUE':'0 条目',
         'Tieba':       '0 帖子（贴吧搜索已不返回数据）',
-        'Bahamut':     '0 结果',
+        # cookie 支持已加，有 cookie 自动启用，无 cookie 函数内 skip（不超时）
+        # 'Xiaohongshu': now needs XHS_COOKIE → set in GitHub Secrets
+        # 'Zhihu':       now needs ZHIHU_COOKIE → set in GitHub Secrets
+        # 'Douyin':      now needs DOUYIN_COOKIE → set in GitHub Secrets
+        # 'Note.com':    unsuspended → try HTTP, no cookie needed
     }
+
+    # Playwright fallback: platforms where HTTP fails but browser works
+    PW_FALLBACK: dict[str, str] = {
+        # name → playwright_collectors function name
+        'Arca.live':   'fetch_arca_live_playwright',
+        '5ch':         'fetch_fivech_playwright',
+        'Ruliweb':     'fetch_ruliweb_playwright',
+        'Bahamut':     'fetch_bahamut_playwright',
+        'Naver Cafe':  None,  # no PW yet, but unsuspended to try HTTP first
+        'TapTap':      'fetch_taptap_playwright',
+        'Weibo':       'fetch_weibo_playwright',
+    }
+
+    # Load playwright_collectors module once
+    pw_mod = None
+    try:
+        import playwright_collectors as pw_mod
+    except ImportError:
+        logger.debug('playwright_collectors not available')
 
     # Zero-cost collectors (no API key required)
     zero_cost_fetchers = [
@@ -244,6 +256,13 @@ def run_zero_cost_collectors() -> list[dict]:
 
         try:
             result = fn()
+            # Playwright fallback: if HTTP returned 0/empty and we have a PW fallback
+            if not result and name in PW_FALLBACK and PW_FALLBACK[name] and pw_mod:
+                pw_fn_name = PW_FALLBACK[name]
+                pw_fn = getattr(pw_mod, pw_fn_name, None)
+                if pw_fn:
+                    logger.info(f"  ↻ {name}: HTTP empty, trying Playwright fallback...")
+                    result = pw_fn()
             if result:
                 items.extend(result)
                 succeeded.append((name, len(result)))
@@ -254,6 +273,23 @@ def run_zero_cost_collectors() -> list[dict]:
             if tracker:
                 tracker.update_platform_status(source_id, len(result) if result else 0)
         except Exception as e:
+            # Playwright fallback on exception too
+            if name in PW_FALLBACK and PW_FALLBACK[name] and pw_mod:
+                pw_fn_name = PW_FALLBACK[name]
+                pw_fn = getattr(pw_mod, pw_fn_name, None)
+                if pw_fn:
+                    logger.info(f"  ↻ {name}: HTTP crashed, trying Playwright fallback...")
+                    try:
+                        result = pw_fn()
+                        if result:
+                            items.extend(result)
+                            succeeded.append((name, len(result)))
+                            logger.info(f"  ✓ {name} (PW): +{len(result)} items")
+                            if tracker:
+                                tracker.update_platform_status(source_id, len(result))
+                            continue
+                    except Exception as pw_e:
+                        logger.warning(f"  ✗ {name} Playwright also failed: {pw_e}")
             failed.append((name, str(e)[:120]))
             logger.warning(f"  ✗ {name} FAILED: {e}")
             if tracker:
@@ -286,7 +322,12 @@ def load_existing_news() -> list[dict]:
         return []
 
 
-MAX_AGE_HOURS = 48
+# Adaptive: match the lookback window used by collectors
+try:
+    from collection_state import get_lookback_hours
+    MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 0)) or get_lookback_hours()
+except ImportError:
+    MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 24))
 
 
 def _is_recent(time_str: str) -> bool:

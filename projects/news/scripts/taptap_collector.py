@@ -64,6 +64,97 @@ def _parse_num(s: Any) -> int:
     return int(m.group()) if m else 0
 
 
+def _parse_taptap_dom_time(time_str):
+    """Parse TapTap DOM time strings into ISO datetime.
+
+    TapTap DOM time elements may contain:
+    - ISO datetime string (from datetime attribute)
+    - "x分钟前", "x小时前", "x天前" (relative Chinese)
+    - "刚刚" (just now)
+    - "昨天", "前天"
+    - "MM-DD" or "YYYY-MM-DD" date strings
+    - "x minutes ago", "x hours ago" (English)
+
+    Returns ISO datetime string. Falls back to now if unparseable.
+    """
+    now = datetime.now(timezone.utc)
+    if not time_str or not time_str.strip():
+        return now.isoformat()
+
+    s = time_str.strip()
+
+    # Try ISO format first (from datetime attribute)
+    try:
+        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return dt.isoformat()
+    except (ValueError, TypeError):
+        pass
+
+    # "刚刚" = just now
+    if s == "刚刚":
+        return now.isoformat()
+
+    # "x分钟前"
+    m = re.match(r"(\d+)\s*分钟前", s)
+    if m:
+        return (now - timedelta(minutes=int(m.group(1)))).isoformat()
+
+    # "x小时前"
+    m = re.match(r"(\d+)\s*小时前", s)
+    if m:
+        return (now - timedelta(hours=int(m.group(1)))).isoformat()
+
+    # "x天前"
+    m = re.match(r"(\d+)\s*天前", s)
+    if m:
+        return (now - timedelta(days=int(m.group(1)))).isoformat()
+
+    # "昨天"
+    if "昨天" in s:
+        return (now - timedelta(days=1)).isoformat()
+
+    # "前天"
+    if "前天" in s:
+        return (now - timedelta(days=2)).isoformat()
+
+    # English relative: "x minutes/hours/days ago"
+    m = re.match(r"(\d+)\s+(minute|hour|day|week|month)s?\s+ago", s, re.IGNORECASE)
+    if m:
+        num = int(m.group(1))
+        unit = m.group(2).lower()
+        delta_map = {
+            "minute": timedelta(minutes=num),
+            "hour": timedelta(hours=num),
+            "day": timedelta(days=num),
+            "week": timedelta(weeks=num),
+            "month": timedelta(days=num * 30),
+        }
+        return (now - delta_map.get(unit, timedelta())).isoformat()
+
+    # "YYYY-MM-DD" or "YYYY/MM/DD"
+    m = re.match(r"(\d{4})[-/](\d{1,2})[-/](\d{1,2})", s)
+    if m:
+        try:
+            dt = datetime(int(m.group(1)), int(m.group(2)), int(m.group(3)), tzinfo=timezone.utc)
+            return dt.isoformat()
+        except ValueError:
+            pass
+
+    # "MM-DD" (current year)
+    m = re.match(r"(\d{1,2})[-/](\d{1,2})$", s)
+    if m:
+        try:
+            dt = now.replace(month=int(m.group(1)), day=int(m.group(2)),
+                             hour=0, minute=0, second=0, microsecond=0)
+            if dt > now:
+                dt = dt.replace(year=dt.year - 1)
+            return dt.isoformat()
+        except ValueError:
+            pass
+
+    return now.isoformat()
+
+
 # ─── 帖子页 ───────────────────────────────────────────────────
 
 def _parse_topic_api_body(body: dict) -> list[dict]:
@@ -241,16 +332,20 @@ async def _extract_topics_dom(page) -> list[dict]:
     for r in result or []:
         if not r.get("title"):
             continue
-        items.append({
+        created_str = _parse_taptap_dom_time(r.get("time_str", ""))
+        item = {
             "title": r["title"],
             "summary": "",
             "like_count": _parse_num(r.get("likes")),
             "comment_count": _parse_num(r.get("comments")),
-            "created": datetime.now(timezone.utc).isoformat(),
+            "created": created_str,
             "url": r.get("url", ""),
             "author": r.get("author", ""),
             "item_id": "",
-        })
+        }
+        if not r.get("time_str"):
+            item["time_is_approximate"] = True
+        items.append(item)
 
     if not items:
         logger.warning("TapTap: DOM extraction found no topic elements")
@@ -432,16 +527,20 @@ async def _extract_reviews_dom(page) -> list[dict]:
         content_text = r.get("content", "").strip()
         if not content_text:
             continue
-        items.append({
+        created_str = _parse_taptap_dom_time(r.get("time_str", ""))
+        item = {
             "title": content_text[:60],
             "summary": content_text,
             "like_count": _parse_num(r.get("likes")),
             "comment_count": 0,
-            "created": datetime.now(timezone.utc).isoformat(),
+            "created": created_str,
             "url": r.get("url", ""),
             "author": r.get("author", ""),
             "item_id": "",
-        })
+        }
+        if not r.get("time_str"):
+            item["time_is_approximate"] = True
+        items.append(item)
 
     if not items:
         logger.warning("TapTap: DOM extraction found no review elements")

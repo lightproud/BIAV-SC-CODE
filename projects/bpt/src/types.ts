@@ -99,8 +99,9 @@ export type StreamEvent =
   | { type: 'tool_use_start'; id: string; name: string }
   | { type: 'tool_use_delta'; text: string }
   | { type: 'tool_use_end' }
-  | { type: 'tool_result'; toolUseId: string; name: string; content: string; isError: boolean }
+  | { type: 'tool_result'; toolUseId: string; name: string; content: string; isError: boolean; artifactId?: string }
   | { type: 'assistant_continue' }
+  | { type: 'compression_notice'; droppedTurns: number }
   | { type: 'message_end'; usage: TokenUsage }
   | { type: 'error'; error: string };
 
@@ -155,6 +156,8 @@ export interface BPEChunk {
 }
 
 // ─── App Config ─────────────────────────────────────────────────
+// Subset of config fields shared between main and renderer.
+// The full schema lives in electron/core/config.ts StoreSchema.
 
 export interface AppConfig {
   endpoint: LLMEndpoint;
@@ -162,7 +165,7 @@ export interface AppConfig {
   repoRoot: string;          // path to brain-in-a-vat root
   truncateThreshold: number; // max tokens for tool result before truncation
   compressionTriggerTurns: number;
-  compressionTriggerTokens: number;
+  bpeRerankerEnabled: boolean;
 }
 
 // ─── IPC Channel Names ──────────────────────────────────────────
@@ -179,6 +182,9 @@ export const IPC = {
   CONV_LIST: 'conv:list',
   CONV_CREATE: 'conv:create',
   CONV_DELETE: 'conv:delete',
+  CONV_RENAME: 'conv:rename',
+  CONV_LOAD_MESSAGES: 'conv:loadMessages',
+  CONV_CLEAR_HISTORY: 'conv:clearHistory',
 
   // Config
   CONFIG_GET: 'config:get',
@@ -206,6 +212,30 @@ export const IPC = {
 
   // Cite
   CITE_INJECT: 'cite:inject',
+
+  // Plugins
+  PLUGIN_LIST: 'plugin:list',
+  PLUGIN_ENABLE: 'plugin:enable',
+  PLUGIN_DISABLE: 'plugin:disable',
+  PLUGIN_RELOAD: 'plugin:reload',
+
+  // Artifacts
+  ARTIFACT_LIST: 'artifact:list',
+  ARTIFACT_GET: 'artifact:get',
+  ARTIFACT_DELETE: 'artifact:delete',
+
+  // Dream / Sentinel
+  DREAM_LIST: 'dream:list',
+  DREAM_GET: 'dream:get',
+  DREAM_LATEST: 'dream:latest',
+  DREAM_INSIGHTS: 'dream:insights',
+  SENTINEL_ALERTS: 'sentinel:alerts',
+
+  // Updater
+  UPDATER_CHECK: 'updater:check',
+  UPDATER_DOWNLOAD: 'updater:download',
+  UPDATER_INSTALL: 'updater:install',
+  UPDATER_EVENT: 'updater:event',
 
   // Shell
   WINDOW_MINIMIZE: 'window:minimize',

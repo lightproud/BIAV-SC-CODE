@@ -6,9 +6,48 @@
  * hooks keeps components focused on rendering.
  */
 
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useSyncExternalStore } from 'react';
 import { getBpt } from './ipc';
 import type { SilverSearchResult, BPEChunk } from '../types';
+
+// ── Theme ──────────────────────────────────────────────────────
+
+type Theme = 'dark' | 'light';
+
+/**
+ * Persistent theme state backed by localStorage + <html> class.
+ *
+ * Why useSyncExternalStore: the theme lives in the DOM (classList) and
+ * localStorage, not React state. This hook subscribes to changes so
+ * multiple components (StatusBar, App) stay in sync without prop drilling
+ * or context overhead.
+ */
+function getThemeSnapshot(): Theme {
+  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+}
+
+function subscribeTheme(callback: () => void): () => void {
+  // MutationObserver watches for class changes on <html>
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+  return () => observer.disconnect();
+}
+
+export function useTheme(): { theme: Theme; toggleTheme: () => void } {
+  const theme = useSyncExternalStore(subscribeTheme, getThemeSnapshot);
+
+  const toggleTheme = useCallback(() => {
+    const next: Theme = theme === 'dark' ? 'light' : 'dark';
+    if (next === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('bpt-theme', next);
+  }, [theme]);
+
+  return { theme, toggleTheme };
+}
 
 // ── Silver Core ─────────────────────────────────────────────────
 
