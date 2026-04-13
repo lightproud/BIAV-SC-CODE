@@ -1,32 +1,43 @@
 {
   "date": "2026-04-13",
-  "messages": 6825,
+  "messages": 11650,
   "unique_authors": 300,
-  "reactions_total": 1012,
-  "attachments": 394,
+  "reactions_total": 1508,
+  "attachments": 625,
   "channel_activity": {
-    "🔸綜合討論": 939,
-    "🔸morimens-game-chat": 4004,
+    "🔸綜合討論": 1976,
+    "🔸阵容构建": 117,
+    "🔸morimens-game-chat": 6194,
+    "🔸剧情交流": 5,
+    "🔸한국어-채팅방": 30,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 511,
+    "🔸phòng-chat-tiếng-việt": 312,
+    "🔸canal-español": 97,
+    "🔸canal-português": 557,
+    "🔸ruang-obrolan-indonesia": 131,
+    "🔸ห้องสนทนาภาษาไทย": 72,
+    "🔸lore-chat": 95,
+    "🔸team-building": 219,
+    "🔸general-chat": 235,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸game-question": 742,
+    "🔸机器人命令┊bot-commands": 31,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 4,
+    "💭「Processing」I can't enter the game": 1,
+    "✅「Answered」Possibilities of Doresain kit rework": 6,
+    "【重要】Discord台湾社区状态变更通知 | [Important] Notice Regarding Status Change of the Discord Taiwan Community": 36,
+    "English Language Setting Abnormality Issue Notice": 13,
+    "V2.5.0 全新唤醒体✦阿拉克涅┊New Awakener✦Arachne": 97,
+    "大家好，希望各位前輩協助檢視目前我的箱內能夠大概組怎樣的隊伍打融災": 2,
+    "求求配对和抽卡建议，谢谢☺️": 14,
     "🔸晒卡分享": 4,
     "🔸课间休息闲聊": 15,
     "🔸日本語チャンネル": 1,
-    "🔸한국어-채팅방": 11,
-    "🔸русский-канал": 28,
-    "🔸phòng-chat-tiếng-việt": 193,
-    "🔸canal-español": 31,
-    "🔸canal-português": 161,
-    "🔸ruang-obrolan-indonesia": 44,
-    "🔸ห้องสนทนาภาษาไทย": 55,
     "🔸traphase": 15,
-    "🔸lore-chat": 81,
     "🔸服务器公告┊server-announcement": 2,
     "🔸频道建议┊server-suggestions": 1,
-    "🔸team-building": 154,
-    "🔸general-chat": 169,
-    "🔸邀请码互助┊swap-invitation-codes": 12,
-    "🔸game-question": 672,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 17,
     "由三常駐作為核心組成的融災逃課隊伍": 13,
     "【V3.6.2全新唤醒体✦浮士德】": 2,
     "創完眼睛我來創腦子了，但沒人說我不能兩個一起創啊": 2,
@@ -45,8 +56,6 @@
     "✅「已解决」相位命輪bug": 1,
     "✅「已解决」誕妄墨菲語音文字": 1,
     "\"24\" lives matter": 1,
-    "✅「Answered」Possibilities of Doresain kit rework": 4,
-    "【重要】Discord台湾社区状态变更通知 | [Important] Notice Regarding Status Change of the Discord Taiwan Community": 22,
     "忘却前夜OST：莫丝EP·涡心暗潮": 1,
     ":man_detective: 相位對弈：對戰表情": 2,
     "some doodles": 2,
@@ -56,11 +65,16 @@
     "BOSS COMPENDIUM": 6,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 18,
     "【English Translation】Opinions Collection": 8,
-    "V2.5.0 全新唤醒体✦阿拉克涅┊New Awakener✦Arachne": 94,
     "融災請教": 4,
     "1493191016222556180": 1
   },
   "hourly_activity": {
+    "11": 657,
+    "12": 864,
+    "13": 1136,
+    "14": 1370,
+    "15": 1065,
+    "16": 374,
     "0": 632,
     "1": 434,
     "2": 549,
@@ -71,15 +85,13 @@
     "7": 1053,
     "8": 691,
     "9": 542,
-    "10": 468,
-    "11": 641
+    "10": 468
   },
   "message_types": {
-    "0": 4752,
-    "19": 2060,
-    "20": 3,
-    "4": 9,
-    "21": 1
+    "0": 3176,
+    "19": 1647,
+    "23": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -91,6 +103,22 @@
       "channel": "V2.5.0 全新唤醒体✦阿拉克涅┊New Awakener✦Arachne"
     },
     {
+      "id": "1493244211690995845",
+      "channel_id": "1131839817982947429",
+      "content": "~~這個寶藏嗎~~",
+      "author": "shostakovich524",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1493251223942332570",
+      "channel_id": "1131839817982947429",
+      "content": "就在這坨裡面了自己挖吧",
+      "author": "hon_ey0",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1493175497922969721",
       "channel_id": "1493145735200247899",
       "content": "",
@@ -99,12 +127,52 @@
       "channel": "V2.5.0 全新唤醒体✦阿拉克涅┊New Awakener✦Arachne"
     },
     {
+      "id": "1493244473130614904",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "kevin.yienwenst",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1493065096543604786",
       "channel_id": "1326453691527594035",
       "content": "Bruhh this is straight up bullying",
       "author": "grimm0732",
       "reactions": 7,
       "channel": "🔸traphase"
+    },
+    {
+      "id": "1493243674065244352",
+      "channel_id": "1131839817982947429",
+      "content": "~~新世界的後門~~",
+      "author": "cpu7954",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1493258259031920821",
+      "channel_id": "1131839817982947429",
+      "content": "納豆 花椰菜 地瓜葉",
+      "author": "xingxiu_0209",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1493258905709711380",
+      "channel_id": "1131839817982947429",
+      "content": "角色+12命論2疊的大學生？",
+      "author": "kevin.yienwenst",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1493221544988774491",
+      "channel_id": "1170692781216378960",
+      "content": "this is my kath and I use her sig",
+      "author": "blecnes.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1493156206020399178",
@@ -147,99 +215,43 @@
       "channel": "V2.5.0 全新唤醒体✦阿拉克涅┊New Awakener✦Arachne"
     },
     {
-      "id": "1493157009195794482",
+      "id": "1493246350928904193",
       "channel_id": "1131839817982947429",
-      "content": "我覺得主要是遊戲產能真的低得靠背，沒有東西玩只能赤石",
-      "author": "ena04564",
+      "content": "講開穴",
+      "author": "cpu7954",
       "reactions": 5,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1493146845629775903",
-      "channel_id": "1170692781216378960",
-      "content": "https://discord.com/channels/1131791637933199470/1493145735200247899\nHoly news, ",
-      "author": "aurora3981",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493154338137313372",
-      "channel_id": "1170692781216378960",
-      "content": "Hoard update to go with the art/va drop",
-      "author": "fishhazardthewizard",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493163121424994335",
-      "channel_id": "1170692781216378960",
-      "content": "new meta build",
-      "author": "blecnes.",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493187575190392983",
-      "channel_id": "1300659718653476925",
-      "content": "Ultra PRECISA de um suporte de keyflare bom",
-      "author": "nhaege",
-      "reactions": 5,
-      "channel": "🔸canal-português"
-    },
-    {
-      "id": "1493185414247485501",
-      "channel_id": "1493185414247485501",
-      "content": "「如果你在寻求掌握大部分答案的人，浮士德是一个值得记住的名字。」\n「……不，请准许我再说一遍。」\n「不是大部分。」\n「是所有。」\n——✦——✦—— ✦✦✦ ——",
-      "author": "dhskdbsksbd",
-      "reactions": 5,
-      "channel": "【V3.6.2全新唤醒体✦浮士德】"
-    },
-    {
-      "id": "1493200096941047978",
-      "channel_id": "1493199098365607956",
-      "content": "有沒有可能那裡無法登入通知<:Helot_slack_off:1459092159465521184>",
-      "author": "luckyinitial",
-      "reactions": 5,
-      "channel": "【重要】Discord台湾社区状态变更通知 | [Important] Notice Regarding Status Change of the Discord Taiwan Community"
-    },
-    {
-      "id": "1493146418746101850",
-      "channel_id": "1493145735200247899",
-      "content": "time to WHALE",
-      "author": "null.pointer_exception",
-      "reactions": 5,
-      "channel": "V2.5.0 全新唤醒体✦阿拉克涅┊New Awakener✦Arachne"
-    },
-    {
-      "id": "1493147293778579527",
-      "channel_id": "1493145735200247899",
-      "content": "🅱️ 🇴 🇲 🇧 🅰️ 💣 🔥",
-      "author": "hemancient",
-      "reactions": 5,
-      "channel": "V2.5.0 全新唤醒体✦阿拉克涅┊New Awakener✦Arachne"
-    },
-    {
-      "id": "1493074526689427536",
+      "id": "1493247722931622031",
       "channel_id": "1131839817982947429",
-      "content": "今天會有相關的通知<:dishes:1356083313063759922>",
-      "author": "morimensstaff06",
-      "reactions": 4,
+      "content": "好想寫點什麼嬤校貓",
+      "author": "shostakovich524",
+      "reactions": 5,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1493143118273318962",
+      "id": "1493249448875266209",
       "channel_id": "1131839817982947429",
-      "content": "打完了",
-      "author": "0.0._.0_0.",
-      "reactions": 4,
+      "content": "||自从我知道3p是什么意思后我就对1080p陷入了深深的恐惧||",
+      "author": "be_queitplease",
+      "reactions": 5,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1493156332440916009",
+      "id": "1493249528361390204",
       "channel_id": "1131839817982947429",
-      "content": "英文开头就是m",
-      "author": "navirecorbeau",
-      "reactions": 4,
+      "content": "根據英國研究\n看很多A片的人記憶力都不好",
+      "author": "lai532143",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1493250816302387301",
+      "channel_id": "1131839817982947429",
+      "content": "||還有拉珠武士||",
+      "author": "shostakovich524",
+      "reactions": 5,
       "channel": "🔸綜合討論"
     }
   ]
