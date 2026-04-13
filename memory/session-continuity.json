@@ -1,11 +1,12 @@
 {
   "last_session": {
-    "id": "2b4c1160",
-    "timestamp": "2026-04-13T02:24:23.612000+00:00",
-    "duration_minutes": 616.4,
-    "branch": "claude/desktop-app-exploration-lJpQN",
+    "id": "bf7f7aba",
+    "timestamp": "2026-04-13T02:37:50.366000+00:00",
+    "duration_minutes": 21.8,
+    "branch": "main",
     "topics": [
-      "Electron"
+      "BPT",
+      "银芯"
     ],
     "decisions": [],
     "files_changed": [
@@ -13,24 +14,43 @@
       "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
       "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
       "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
-      "/home/user/brain-in-a-vat/projects/bpt/electron/conversation/store.ts",
-      "/home/user/brain-in-a-vat/projects/bpt/electron/conversation/stream.ts",
       "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
-      "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts",
-      "/home/user/brain-in-a-vat/projects/bpt/index.html",
-      "/home/user/brain-in-a-vat/projects/bpt/package.json",
-      "/home/user/brain-in-a-vat/projects/bpt/src/App.tsx",
-      "/home/user/brain-in-a-vat/projects/bpt/src/components/ChatView.tsx",
-      "/home/user/brain-in-a-vat/projects/bpt/src/components/Sidebar.tsx",
-      "/home/user/brain-in-a-vat/projects/bpt/src/components/StatusBar.tsx",
-      "/home/user/brain-in-a-vat/projects/bpt/src/components/TokenMeter.tsx",
-      "/home/user/brain-in-a-vat/projects/bpt/src/index.css",
-      "/home/user/brain-in-a-vat/projects/bpt/src/lib/hooks.ts",
-      "/home/user/brain-in-a-vat/projects/bpt/vite.config.ts"
+      "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "2b4c1160",
+      "timestamp": "2026-04-13T02:24:23.612000+00:00",
+      "duration_minutes": 616.4,
+      "branch": "claude/desktop-app-exploration-lJpQN",
+      "topics": [
+        "Electron"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/bpt/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/conversation/store.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/conversation/stream.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/index.html",
+        "/home/user/brain-in-a-vat/projects/bpt/package.json",
+        "/home/user/brain-in-a-vat/projects/bpt/src/App.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/components/ChatView.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/components/Sidebar.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/components/StatusBar.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/components/TokenMeter.tsx",
+        "/home/user/brain-in-a-vat/projects/bpt/src/index.css",
+        "/home/user/brain-in-a-vat/projects/bpt/src/lib/hooks.ts",
+        "/home/user/brain-in-a-vat/projects/bpt/vite.config.ts"
+      ],
+      "open_items": []
+    },
     {
       "id": "226a25ca",
       "timestamp": "2026-04-13T01:16:24.297000+00:00",
@@ -195,57 +215,33 @@
         "/root/.claude/plans/joyful-skipping-thimble.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "d6db07b0",
-      "timestamp": "2026-04-12T15:28:30+00:00",
-      "duration_minutes": 62,
-      "branch": "claude/memory-reflection-management-TEfTh",
-      "topics": [
-        "记忆系统",
-        "TF-IDF",
-        "索引",
-        "知识图谱",
-        "银芯"
-      ],
-      "decisions": [
-        "向量索引压缩为gzip并提交git",
-        "知识图谱改为增量更新",
-        "REM周反思完整实现"
-      ],
-      "files_changed": [
-        "scripts/memory_search.py",
-        "scripts/dream.py",
-        "scripts/knowledge_graph.py",
-        "scripts/mcp_server.py"
-      ],
-      "open_items": [
-        "MemRL扩展跟踪范围",
-        "Reflexion语义分析",
-        "选择性记忆执行遗忘"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.36,
-      "MCP": 2.36,
-      "Electron": 1.0,
-      "银芯": 0.7,
-      "记忆系统": 0.54,
-      "黑池": 0.33,
-      "TF-IDF": 0.27,
-      "索引": 0.27,
-      "知识图谱": 0.27
+      "BPT": 2.89,
+      "MCP": 1.89,
+      "银芯": 1.56,
+      "Electron": 0.8,
+      "记忆系统": 0.43,
+      "黑池": 0.26,
+      "TF-IDF": 0.22,
+      "索引": 0.22,
+      "知识图谱": 0.22
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
       "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
       "/home/user/brain-in-a-vat/scripts/character_persona.py",
       "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-      "/home/user/brain-in-a-vat/scripts/session_briefing.py"
+      "/home/user/brain-in-a-vat/projects/bpt/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/bpe-ipc.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/index-loader.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/bpe/search.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/core/logger.ts",
+      "/home/user/brain-in-a-vat/projects/bpt/electron/main.ts"
     ],
-    "total_sessions": 21
+    "total_sessions": 22
   },
-  "updated_at": "2026-04-13T02:29:45.195024+00:00"
+  "updated_at": "2026-04-13T02:41:13.242336+00:00"
 }
