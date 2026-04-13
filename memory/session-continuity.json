@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "226a25ca",
-    "timestamp": "2026-04-13T01:16:24.297000+00:00",
-    "duration_minutes": 316.5,
+    "id": "454d824f",
+    "timestamp": "2026-04-13T01:51:18.231000+00:00",
+    "duration_minutes": 351.4,
     "branch": "claude/memory-reflection-management-TEfTh",
     "topics": [
       "BPT",
@@ -12,13 +12,38 @@
     "files_changed": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
       "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+      "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
+      "/home/user/brain-in-a-vat/memory/dreams/2026-04-12.json",
+      "/home/user/brain-in-a-vat/memory/dreams/access-log.json",
+      "/home/user/brain-in-a-vat/memory/project-status.md",
+      "/home/user/brain-in-a-vat/projects/bpt-desktop/CONTEXT.md",
       "/home/user/brain-in-a-vat/scripts/character_persona.py",
+      "/home/user/brain-in-a-vat/scripts/dream.py",
       "/home/user/brain-in-a-vat/scripts/mcp_server.py",
       "/home/user/brain-in-a-vat/scripts/session_briefing.py"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "226a25ca",
+      "timestamp": "2026-04-13T01:16:24.297000+00:00",
+      "duration_minutes": 316.5,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "MCP"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
+        "/home/user/brain-in-a-vat/scripts/character_persona.py",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/home/user/brain-in-a-vat/scripts/session_briefing.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "70ac3a86",
       "timestamp": "2026-04-13T01:10:08.115000+00:00",
@@ -197,14 +222,14 @@
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.95,
-      "MCP": 2.95,
-      "银芯": 0.87,
-      "记忆系统": 0.67,
-      "黑池": 0.41,
-      "TF-IDF": 0.34,
-      "索引": 0.34,
-      "知识图谱": 0.34
+      "BPT": 3.36,
+      "MCP": 3.36,
+      "银芯": 0.7,
+      "记忆系统": 0.54,
+      "黑池": 0.33,
+      "TF-IDF": 0.27,
+      "索引": 0.27,
+      "知识图谱": 0.27
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
@@ -213,7 +238,7 @@
       "/home/user/brain-in-a-vat/scripts/mcp_server.py",
       "/home/user/brain-in-a-vat/scripts/session_briefing.py"
     ],
-    "total_sessions": 20
+    "total_sessions": 21
   },
-  "updated_at": "2026-04-13T01:20:46.048401+00:00"
+  "updated_at": "2026-04-13T01:54:54.149024+00:00"
 }
