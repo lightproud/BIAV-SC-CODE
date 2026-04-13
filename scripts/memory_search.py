@@ -28,7 +28,8 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 VECTORS_FILE = REPO / "assets" / "data" / "vectors.json.gz"
-ACCESS_LOG = REPO / "memory" / "dreams" / "access-log.json"
+ACCESS_LOG_DIR = REPO / "memory" / "dreams" / "access-log"
+ACCESS_LOG_LEGACY = REPO / "memory" / "dreams" / "access-log.json"
 UTILITY_FILE = REPO / "assets" / "data" / "memory-utility.json"
 TODAY = date.today()
 
@@ -597,25 +598,34 @@ def recency_score(file_path: str) -> float:
     return math.exp(-0.693 * days / 7)
 
 
+def _load_access_log() -> list[dict]:
+    """Load access log from per-day files (with legacy single-file fallback)."""
+    entries = []
+    if ACCESS_LOG_DIR.exists():
+        for f in sorted(ACCESS_LOG_DIR.glob("*.json")):
+            try:
+                entries.append(json.loads(f.read_text(encoding="utf-8")))
+            except (json.JSONDecodeError, OSError):
+                pass
+    if not entries and ACCESS_LOG_LEGACY.exists():
+        try:
+            entries = json.loads(ACCESS_LOG_LEGACY.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+    return entries
+
+
 def access_frequency_score(file_path: str) -> float:
     """Score based on how often a file appears in access logs."""
-    if not ACCESS_LOG.exists():
+    logs = _load_access_log()
+    if not logs:
         return 0.5  # neutral default
-
-    try:
-        logs = json.loads(ACCESS_LOG.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return 0.5
-
-    total_sessions = len(logs)
-    if total_sessions == 0:
-        return 0.5
 
     access_count = sum(
         1 for entry in logs if file_path in entry.get("files_scanned", [])
     )
     # Normalize: 0.5 baseline + 0.5 * frequency
-    return 0.5 + 0.5 * (access_count / total_sessions)
+    return 0.5 + 0.5 * (access_count / len(logs))
 
 
 def utility_score(file_path: str) -> float:
