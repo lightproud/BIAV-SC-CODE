@@ -18,6 +18,7 @@ Usage:
 import json
 import os
 import re
+import subprocess
 import sys
 from collections import Counter, defaultdict
 from datetime import date, datetime
@@ -34,6 +35,21 @@ SEMANTIC_INDEX = REPO / "assets" / "data" / "semantic-index.json"
 SENTINEL_BASELINE = REPO / "assets" / "data" / "sentinel-baseline.json"
 ALERTS_FILE = REPO / "projects" / "news" / "output" / "alerts.json"
 NEWS_OUTPUT = REPO / "projects" / "news" / "output"
+
+
+def _get_branch() -> str:
+    """Get current git branch name for provenance tagging."""
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True, text=True, timeout=5, cwd=str(REPO),
+        )
+        if result.returncode == 0:
+            return result.stdout.strip()
+    except Exception:
+        pass
+    return "unknown"
+
 
 # ============================================================
 # Sentinel Layer — proactive anomaly detection (zero API cost)
@@ -267,6 +283,7 @@ def sentinel_scan() -> list[dict]:
         alert_record = {
             "date": TODAY.isoformat(),
             "timestamp": datetime.now().isoformat(),
+            "branch": _get_branch(),
             "alerts": alerts,
         }
         # Load existing alerts, append, keep last 30 days
@@ -863,6 +880,7 @@ def save_dream_journal(phase1_results: dict, phase2_results: dict = None):
     journal = {
         "date": TODAY.isoformat(),
         "timestamp": datetime.now().isoformat(),
+        "branch": _get_branch(),
         "phase1": phase1_results,
     }
     if phase2_results:
@@ -920,6 +938,7 @@ def log_access(files_accessed: list[str]):
     log.append({
         "date": TODAY.isoformat(),
         "timestamp": datetime.now().isoformat(),
+        "branch": _get_branch(),
         "files_scanned": files_accessed,
         "count": len(files_accessed),
     })
@@ -1363,6 +1382,7 @@ def run_rem(client=None) -> dict:
     # 9. Save weekly report
     report = {
         "week": TODAY.isoformat(),
+        "branch": _get_branch(),
         "sessions_analyzed": len(weekly_digests),
         "structured_metas": len(weekly_metas),
         "search_failures": len(search_failures),
