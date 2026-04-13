@@ -54,7 +54,7 @@ export async function initBpe(): Promise<void> {
 
   logger.info('bpe', 'Loading BPE indexes', { indexDir });
 
-  indexes = loadBpeIndexes(indexDir);
+  indexes = await loadBpeIndexes(indexDir);
 
   const status = {
     chunks: indexes.chunks !== null,

@@ -2,7 +2,7 @@
  * search.ts -- BPE search engine (FTS5 keyword + vector + hybrid).
  *
  * Why FTS5 first: Zero extra dependencies, works out of the box with
- * better-sqlite3. Phase 0 proved the BPE panel end-to-end.
+ * sql.js. Phase 0 proved the BPE panel end-to-end.
  *
  * Why brute-force cosine: sqlite-vss has cross-platform compilation risks.
  * For ~100k vectors at 1024 dims, brute-force scan takes <500ms on modern
@@ -16,6 +16,44 @@ import type { BPEChunk } from '../../src/types';
 import { embedQuery } from './embed';
 import { rerankWithHaiku } from './reranker';
 import { logger } from '../core/logger';
+
+// ── sql.js query helpers ──────────────────────────────────────────
+
+interface FtsRow {
+  rowid: number;
+  rank: number;
+}
+
+interface ChunkRow {
+  id: number;
+  file: string;
+  line_start: number;
+  line_end: number;
+  text: string;
+  language: string;
+}
+
+interface VectorRow {
+  chunk_id: number;
+  embedding: Uint8Array;
+}
+
+/**
+ * Execute a sql.js prepared statement and return all rows as typed objects.
+ * Handles bind / step / getAsObject / free lifecycle.
+ */
+function queryAll<T>(db: import('sql.js').Database, sql: string, params: unknown[] = []): T[] {
+  const stmt = db.prepare(sql);
+  if (params.length > 0) {
+    stmt.bind(params);
+  }
+  const rows: T[] = [];
+  while (stmt.step()) {
+    rows.push(stmt.getAsObject() as unknown as T);
+  }
+  stmt.free();
+  return rows;
+}
 
 // ── FTS5 Keyword Search ────────────────────────────────────────
 
@@ -34,13 +72,15 @@ export function searchFts5(
   }
 
   try {
-    const ftsResults = indexes.keywords.prepare(`
-      SELECT rowid, rank
-      FROM keywords_fts
-      WHERE keywords_fts MATCH ?
-      ORDER BY rank
-      LIMIT ?
-    `).all(escapeQuery(query), limit) as Array<{ rowid: number; rank: number }>;
+    const ftsResults = queryAll<FtsRow>(
+      indexes.keywords,
+      `SELECT rowid, rank
+       FROM keywords_fts
+       WHERE keywords_fts MATCH ?
+       ORDER BY rank
+       LIMIT ?`,
+      [escapeQuery(query), limit],
+    );
 
     if (ftsResults.length === 0) return [];
 
@@ -80,9 +120,10 @@ export async function searchVector(
 
   try {
     // Read all stored embeddings
-    const rows = indexes.vectors.prepare(
+    const rows = queryAll<VectorRow>(
+      indexes.vectors,
       'SELECT chunk_id, embedding FROM vectors',
-    ).all() as Array<{ chunk_id: number; embedding: Buffer }>;
+    );
 
     if (rows.length === 0) return [];
 
@@ -91,6 +132,7 @@ export async function searchVector(
     const scored: Array<{ chunkId: number; score: number }> = [];
 
     for (const row of rows) {
+      // sql.js returns BLOB columns as Uint8Array
       const stored = new Float32Array(row.embedding.buffer, row.embedding.byteOffset, dimension);
       const sim = cosineSimilarity(queryVec, stored);
       scored.push({ chunkId: row.chunk_id, score: sim });
@@ -102,18 +144,13 @@ export async function searchVector(
 
     // Fetch full chunk data
     const placeholders = topIds.map(() => '?').join(',');
-    const chunks = indexes.chunks.prepare(`
-      SELECT id, file, line_start, line_end, text, language
-      FROM chunks
-      WHERE id IN (${placeholders})
-    `).all(...topIds.map((r) => r.chunkId)) as Array<{
-      id: number;
-      file: string;
-      line_start: number;
-      line_end: number;
-      text: string;
-      language: string;
-    }>;
+    const chunks = queryAll<ChunkRow>(
+      indexes.chunks,
+      `SELECT id, file, line_start, line_end, text, language
+       FROM chunks
+       WHERE id IN (${placeholders})`,
+      topIds.map((r) => r.chunkId),
+    );
 
     const scoreMap = new Map(topIds.map((r) => [r.chunkId, r.score]));
 
@@ -147,9 +184,9 @@ export async function searchVector(
  * 5. Return top `limit` results
  *
  * Falls back gracefully:
- * - No vectors.db or model → FTS5 only
- * - No keywords.db → vector only
- * - Both unavailable → empty
+ * - No vectors.db or model -> FTS5 only
+ * - No keywords.db -> vector only
+ * - Both unavailable -> empty
  */
 export async function searchHybrid(
   indexes: BpeIndexes,
@@ -224,19 +261,14 @@ export function lookupSymbol(
   try {
     // Escape LIKE wildcards (% and _) to prevent query complexity DoS
     const escapedName = name.replace(/[%_]/g, '\\$&');
-    const results = indexes.chunks.prepare(`
-      SELECT id, file, line_start, line_end, text, language
-      FROM chunks
-      WHERE text LIKE ? ESCAPE '\\' COLLATE NOCASE
-      LIMIT ?
-    `).all(`%${escapedName}%`, limit) as Array<{
-      id: number;
-      file: string;
-      line_start: number;
-      line_end: number;
-      text: string;
-      language: string;
-    }>;
+    const results = queryAll<ChunkRow>(
+      indexes.chunks,
+      `SELECT id, file, line_start, line_end, text, language
+       FROM chunks
+       WHERE text LIKE ? ESCAPE '\\' COLLATE NOCASE
+       LIMIT ?`,
+      [`%${escapedName}%`, limit],
+    );
 
     return results.map((c) => ({
       id: c.id,
@@ -259,7 +291,7 @@ export function lookupSymbol(
 
 function fetchChunks(
   indexes: BpeIndexes,
-  ftsResults: Array<{ rowid: number; rank: number }>,
+  ftsResults: FtsRow[],
 ): BPEChunk[] {
   if (!indexes.chunks) return [];
 
@@ -267,18 +299,13 @@ function fetchChunks(
   const rankMap = new Map(ftsResults.map((r) => [r.rowid, r.rank]));
 
   const placeholders = rowIds.map(() => '?').join(',');
-  const chunks = indexes.chunks.prepare(`
-    SELECT id, file, line_start, line_end, text, language
-    FROM chunks
-    WHERE id IN (${placeholders})
-  `).all(...rowIds) as Array<{
-    id: number;
-    file: string;
-    line_start: number;
-    line_end: number;
-    text: string;
-    language: string;
-  }>;
+  const chunks = queryAll<ChunkRow>(
+    indexes.chunks,
+    `SELECT id, file, line_start, line_end, text, language
+     FROM chunks
+     WHERE id IN (${placeholders})`,
+    rowIds,
+  );
 
   return chunks.map((c) => ({
     id: c.id,

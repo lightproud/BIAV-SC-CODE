@@ -30,7 +30,7 @@ import { initPlugins } from './plugin/loader';
 import { registerDreamIpc } from './dream/dream-ipc';
 import { registerUpdaterIpc, initAutoUpdate } from './updater/auto-update-ipc';
 import { BPT_VERSION } from '../src/version';
-import { logger } from './core/logger';
+import { logger, initTokenLogDb, closeTokenLogDb } from './core/logger';
 
 // Prevent multiple instances
 const gotLock = app.requestSingleInstanceLock();
@@ -50,8 +50,9 @@ app.on('second-instance', () => {
 app.whenReady().then(async () => {
   logger.info('main', 'BPT starting', { version: BPT_VERSION });
 
-  // 1. Initialize database
-  initConversationDb();
+  // 1. Initialize databases (sql.js requires async WASM init)
+  await initConversationDb();
+  await initTokenLogDb();
 
   // 2. Create window
   const win = createWindow();
@@ -114,4 +115,5 @@ app.on('will-quit', () => {
   getMcpClient()?.stop();
   shutdownBpe();
   closeConversationDb();
+  closeTokenLogDb();
 });
