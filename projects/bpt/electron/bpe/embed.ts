@@ -8,7 +8,7 @@
 
 import { spawn } from 'node:child_process';
 import path from 'node:path';
-import { getConfig } from '../core/config';
+import { getConfig, findAppRoot } from '../core/config';
 import { logger } from '../core/logger';
 
 interface EmbedResult {
@@ -21,9 +21,9 @@ interface EmbedResult {
  * Returns null if the model is unavailable or any error occurs.
  */
 export async function embedQuery(query: string): Promise<Float32Array | null> {
-  const repoRoot = (getConfig('repoRoot') as string) || findRepoRoot();
-  const modelPath = path.join(repoRoot, 'projects', 'bpt', 'models', 'bge-m3');
-  const scriptPath = path.join(repoRoot, 'scripts', 'embed_query.py');
+  const appRoot = findAppRoot();
+  const modelPath = path.join(appRoot, 'models', 'bge-m3');
+  const scriptPath = path.join(appRoot, 'server', 'embed_query.py');
 
   return new Promise((resolve) => {
     const proc = spawn('python3', [
@@ -78,13 +78,4 @@ export async function embedQuery(query: string): Promise<Float32Array | null> {
       resolve(null);
     });
   });
-}
-
-function findRepoRoot(): string {
-  // Walk up from __dirname (electron/bpe/) to find repo root
-  let dir = __dirname;
-  for (let i = 0; i < 4; i++) {
-    dir = path.dirname(dir);
-  }
-  return dir;
 }

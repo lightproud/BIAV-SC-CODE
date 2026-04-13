@@ -169,11 +169,13 @@ export function emptyUsage(): TokenUsage {
 }
 
 /**
- * Check if cache hit rate is below the T1 red-line threshold (80%).
+ * Check if cache hit rate meets the verification baseline (70%).
+ * Plan V12 specifies cache hit > 70% as the pass threshold.
+ * StatusBar shows red when this returns false.
  */
 export function isCacheHealthy(usage: TokenUsage): boolean {
   const totalInput = usage.system + usage.tools + usage.history;
   if (totalInput === 0) return true;
   const hitRate = usage.cacheHit / totalInput;
-  return hitRate >= 0.8;
+  return hitRate >= 0.7;
 }

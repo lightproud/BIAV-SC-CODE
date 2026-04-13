@@ -79,3 +79,15 @@ export function setConfig(key: string, value: unknown): void {
 export function getAllConfig(): StoreSchema {
   return store.store;
 }
+
+/**
+ * Find the BPT app root directory.
+ * Shared utility — use this instead of duplicating findRepoRoot() in each module.
+ */
+export function findAppRoot(): string {
+  // In dev: __dirname is dist-electron/ when running via vite-plugin-electron
+  // In prod: __dirname is inside the asar/resources
+  // Either way, go up one level from dist-electron to projects/bpt/
+  const path = require('node:path');
+  return path.dirname(__dirname);
+}

@@ -12,7 +12,7 @@ import { loadBpeIndexes, closeBpeIndexes, type BpeIndexes } from './index-loader
 import { searchFts5, searchHybrid, lookupSymbol } from './search';
 import { chunkToCiteBlock } from './cite';
 import type { BPEChunk } from '../../src/types';
-import { getConfig } from '../core/config';
+import { getConfig, findAppRoot } from '../core/config';
 import { logger } from '../core/logger';
 
 let indexes: BpeIndexes | null = null;
@@ -34,7 +34,7 @@ export function registerBpeIpc(): void {
 
   // @Cite: convert a BPE chunk into a CiteBlock for conversation injection.
   // The renderer calls this when the user clicks "Cite" on a search result.
-  ipcMain.handle('cite:inject', (_event, chunk: BPEChunk) => {
+  ipcMain.handle('cite:inject', (_event, _conversationId: string, chunk: BPEChunk) => {
     return chunkToCiteBlock(chunk);
   });
 
@@ -49,8 +49,8 @@ export function registerBpeIpc(): void {
 }
 
 export async function initBpe(): Promise<void> {
-  const repoRoot = (getConfig('repoRoot') as string) || findRepoRoot();
-  const indexDir = path.join(repoRoot, 'projects', 'bpt', '.bpe-index');
+  const appRoot = findAppRoot();
+  const indexDir = path.join(appRoot, '.bpe-index');
 
   logger.info('bpe', 'Loading BPE indexes', { indexDir });
 
@@ -75,10 +75,3 @@ export function shutdownBpe(): void {
   }
 }
 
-function findRepoRoot(): string {
-  let dir = __dirname;
-  for (let i = 0; i < 4; i++) {
-    dir = path.dirname(dir);
-  }
-  return dir;
-}
