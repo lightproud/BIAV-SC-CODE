@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "c64cd1fc",
-    "timestamp": "2026-04-14T02:51:33.993000+00:00",
-    "duration_minutes": 171.8,
+    "id": "7bda5a39",
+    "timestamp": "2026-04-14T03:00:42.319000+00:00",
+    "duration_minutes": 180.9,
     "branch": "claude/bpt-next-bootstrap-Q41x3",
     "topics": [],
     "decisions": [],
@@ -23,11 +23,40 @@
       "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
       "/home/user/brain-in-a-vat/projects/occ-local/NOTICE",
       "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+      "/home/user/brain-in-a-vat/scripts/silver-mem-install.sh",
       "/root/.claude/plans/shiny-roaming-eclipse.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "c64cd1fc",
+      "timestamp": "2026-04-14T02:51:33.993000+00:00",
+      "duration_minutes": 171.8,
+      "branch": "claude/bpt-next-bootstrap-Q41x3",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.claude/settings.json",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
+        "/home/user/brain-in-a-vat/projects/graphify-ext/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/graphify-ext/NOTICE",
+        "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/occ-local/NOTICE",
+        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+        "/root/.claude/plans/shiny-roaming-eclipse.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "78063bc9",
       "timestamp": "2026-04-14T01:50:11.741000+00:00",
@@ -194,44 +223,16 @@
         "/home/user/brain-in-a-vat/scripts/mcp_server.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "32a46a5b",
-      "timestamp": "2026-04-12T20:10:07.015000+00:00",
-      "duration_minutes": 243.7,
-      "branch": "claude/memory-reflection-management-TEfTh",
-      "topics": [
-        "银芯",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
-        "/home/user/brain-in-a-vat/memory/session-continuity.json",
-        "/home/user/brain-in-a-vat/scripts/character_persona.py",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/reflexion.py",
-        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
-        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
-        "/root/.claude/plans/joyful-skipping-thimble.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 0.97,
-      "MCP": 0.97,
-      "Electron": 0.41,
-      "银芯": 0.29,
-      "记忆系统": 0.22,
-      "黑池": 0.14,
-      "TF-IDF": 0.11,
-      "索引": 0.11,
-      "知识图谱": 0.11
+      "BPT": 0.78,
+      "MCP": 0.78,
+      "Electron": 0.33,
+      "银芯": 0.23,
+      "记忆系统": 0.18,
+      "黑池": 0.11
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
@@ -245,7 +246,7 @@
       "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
       "/home/user/brain-in-a-vat/projects/occ-local/NOTICE"
     ],
-    "total_sessions": 25
+    "total_sessions": 26
   },
-  "updated_at": "2026-04-14T02:51:34.317009+00:00"
+  "updated_at": "2026-04-14T03:05:35.000266+00:00"
 }
