@@ -14,7 +14,7 @@
 | game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
 | occ-local（本地 Claude Code CLI，MIT） | **研究归档**（2026-04-14 降级） | - | 仅保留源码供架构参考；不再主动推进 |
 | bpt-next（新一代 BPT 主线，基于 claw-code Rust MIT） | 已引入 3.8M + 银芯环境构建验证通过（claw v0.1.0） | 主控台 | Phase A：graphify vendor + 银芯记忆增强设计 + 守密人本地对接；Phase B：SVN 会话同步 + 用户识别 + decisions→wiki + 能力注册表 |
-| graphify-ext（黑池索引工具原型，MIT） | 待 vendor | 主控台 | Phase A P2：vendor safishamsi/graphify 到 projects/graphify-ext/；写银芯 MCP 桥接 |
+| graphify-ext（黑池索引工具原型，MIT） | **已 vendor v0.4.12（1.7M）** | 主控台 | Phase A P3：scripts/graphify_bridge.py 银芯 MCP 桥接；本地 pip install -e . 验证 |
 
 ## News 新闻聚合 + 报告系统
 
