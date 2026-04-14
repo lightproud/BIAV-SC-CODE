@@ -1,38 +1,52 @@
 {
   "date": "2026-04-14",
-  "messages": 6553,
+  "messages": 12841,
   "unique_authors": 265,
-  "reactions_total": 899,
-  "attachments": 299,
+  "reactions_total": 1689,
+  "attachments": 642,
   "channel_activity": {
-    "🔸綜合討論": 1312,
-    "🔸阵容构建": 46,
-    "🔸morimens-game-chat": 3983,
-    "🔸相位对弈": 1,
+    "🔸綜合討論": 1658,
+    "🔸阵容构建": 56,
+    "🔸morimens-game-chat": 7787,
+    "🔸晒卡分享": 3,
+    "🔸相位对弈": 3,
+    "🔸课间休息闲聊": 4,
+    "🔸한국어-채팅방": 14,
+    "🔸chaîne-française": 29,
+    "🔸русский-канал": 429,
+    "🔸phòng-chat-tiếng-việt": 108,
+    "🔸canal-español": 396,
+    "🔸canal-português": 380,
+    "🔸ruang-obrolan-indonesia": 91,
+    "🔸ห้องสนทนาภาษาไทย": 28,
+    "🔸traphase": 17,
+    "🔸lore-chat": 87,
+    "🔸频道建议┊server-suggestions": 6,
+    "🔸team-building": 454,
+    "🔸general-chat": 247,
+    "🔸邀请码互助┊swap-invitation-codes": 18,
+    "🔸game-question": 636,
+    "🔸机器人命令┊bot-commands": 31,
+    "🔸erica-playground": 4,
+    "改编曲": 6,
+    "Anti-AI Policy": 3,
+    "Bug: Error code 7004006": 1,
+    "所以阿拉克涅的胳膊是三折叠吗？": 4,
+    "✅「已解决」有人在发奇怪的东西": 6,
+    "✅「Answered」Bug on train mode": 8,
+    "[Producer's Letter] You Saved Morimens — Here's Our Promise for the Future Finale": 1,
+    "more leigh": 2,
+    "continual arachneposting": 4,
+    "Alert 1 guide -13th April": 1,
+    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 41,
+    "V2.5.0 无期囚徒┊Perpetual Thrall": 162,
+    "Prototype use and team comp": 14,
+    "Banner help please!": 8,
     "🔸交友频道": 2,
     "🔸日本語チャンネル": 3,
-    "🔸한국어-채팅방": 5,
     "🔸deutscher-chatraum": 1,
-    "🔸chaîne-française": 1,
-    "🔸русский-канал": 2,
-    "🔸phòng-chat-tiếng-việt": 43,
-    "🔸canal-español": 33,
-    "🔸canal-português": 66,
-    "🔸ruang-obrolan-indonesia": 70,
-    "🔸ห้องสนทนาภาษาไทย": 5,
-    "🔸traphase": 10,
-    "🔸lore-chat": 54,
     "🔸服务器公告┊server-announcement": 2,
-    "🔸频道建议┊server-suggestions": 3,
-    "🔸team-building": 324,
-    "🔸general-chat": 116,
-    "🔸邀请码互助┊swap-invitation-codes": 6,
-    "🔸game-question": 291,
-    "🔸机器人命令┊bot-commands": 20,
-    "🔸erica-playground": 2,
     "我的心，獻給你 || 杜勒赛因x西维斯特": 3,
-    "✅「已解决」有人在发奇怪的东西": 5,
-    "✅「Answered」Bug on train mode": 7,
     "✅「已回答」优化扫荡": 18,
     "💭「Processing」Freezing in Battles": 2,
     "✅「Resolved」Game stops responding on update/crashes to desktop on login": 2,
@@ -44,20 +58,26 @@
     "\"24\" lives matter": 1,
     "【重要】Discord台湾社区状态变更通知 | [Important] Notice Regarding Status Change of the Discord Taiwan Community": 9,
     "English Language Setting Abnormality Issue Notice": 13,
-    "more leigh": 1,
     "My heart for yours || Doresain x Sylvester": 1,
     "some doodles": 1,
-    "continual arachneposting": 1,
     "P2W guide": 2,
-    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 1,
     "【English Translation】Opinions Collection": 1,
-    "V2.5.0 无期囚徒┊Perpetual Thrall": 51,
     "V2.5.0 全新唤醒体✦阿拉克涅┊New Awakener✦Arachne": 16,
     "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 1,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 4,
     "4/13融災": 3
   },
   "hourly_activity": {
+    "10": 379,
+    "11": 612,
+    "12": 522,
+    "13": 738,
+    "14": 859,
+    "15": 668,
+    "16": 861,
+    "17": 576,
+    "18": 658,
+    "19": 768,
     "0": 615,
     "1": 328,
     "2": 455,
@@ -67,14 +87,13 @@
     "6": 993,
     "7": 924,
     "8": 888,
-    "9": 517,
-    "10": 353
+    "9": 517
   },
   "message_types": {
-    "19": 2109,
-    "0": 4428,
-    "20": 6,
-    "4": 10
+    "0": 4456,
+    "19": 1829,
+    "20": 2,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -83,6 +102,14 @@
       "content": "谁将葬身异处？谁又将长眠故土？\n命运落下了熟悉的判决，是黑底白字的讣告。\n预知，照见了结局，却照不明灰蒙蒙的命途。\n选择此刻的崩解，还是尽头的毁灭？\n\n命运的主",
       "author": "morimensstaff06",
       "reactions": 57,
+      "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
+    },
+    {
+      "id": "1493608206726074469",
+      "channel_id": "1493507096577183815",
+      "content": "",
+      "author": "marshadow0398",
+      "reactions": 17,
       "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
     },
     {
@@ -102,6 +129,30 @@
       "channel": "more leigh"
     },
     {
+      "id": "1493605723551043695",
+      "channel_id": "1433513650299076780",
+      "content": "minimun kath investment <:ramona_tuff_:1441426630420467753>",
+      "author": "blecnes.",
+      "reactions": 13,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1493694075986120704",
+      "channel_id": "1170692781216378960",
+      "content": "you can only communicate through emotes?",
+      "author": "yoobee.",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1493651559567855717",
+      "channel_id": "1493507096577183815",
+      "content": "Generally speaking, a big reason that fanart is so appreciated is because it sho",
+      "author": "arkaether",
+      "reactions": 12,
+      "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
+    },
+    {
       "id": "1493534709718843474",
       "channel_id": "1493507096577183815",
       "content": "don't you know every art piece of the game is AI ?",
@@ -110,12 +161,44 @@
       "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
     },
     {
+      "id": "1493696987269300234",
+      "channel_id": "1493696987269300234",
+      "content": "Could we get a server rule prohibiting AI Artwork or other AI Content?\n\nJust rec",
+      "author": "princess.goth",
+      "reactions": 9,
+      "channel": "Anti-AI Policy"
+    },
+    {
       "id": "1493515540734545960",
       "channel_id": "1493507096577183815",
       "content": "I need kit",
       "author": "_venush",
       "reactions": 8,
       "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
+    },
+    {
+      "id": "1493571536169340988",
+      "channel_id": "1170692781216378960",
+      "content": "true wisdom is\n\n>work as a morimens dev\n>earn a salary\n>use your salary to whale",
+      "author": "boppyboi",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1493647498114236516",
+      "channel_id": "1170692781216378960",
+      "content": "we should do a life drain documentary and anybody with less skey on their life d",
+      "author": "2ndselna",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1493648548263235715",
+      "channel_id": "1170692781216378960",
+      "content": "also spooky i edited my lifedrain its got 42 keyflare now",
+      "author": "annaxxe_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1493510570173792378",
@@ -142,99 +225,35 @@
       "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
     },
     {
+      "id": "1493569815154135081",
+      "channel_id": "1170692781216378960",
+      "content": "bro's pinging me as if im the game dev 😭",
+      "author": "craux.",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1493647975417909398",
+      "channel_id": "1170692781216378960",
+      "content": "redz: 40 keyflare on burial set\nmelwyn: 40 dr on life drain set",
+      "author": "arkaether",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1493662911388844083",
+      "channel_id": "1493507096577183815",
+      "content": "In UGC fanart program, that have clearly stated that AI cannot be used.I think t",
+      "author": "huahua4855",
+      "reactions": 6,
+      "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
+    },
+    {
       "id": "1493495184586047498",
       "channel_id": "1131839817982947429",
       "content": "🐱 : 給你100普抽，希望你能熬過這個周年",
       "author": "heikwok",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1493550922188460082",
-      "channel_id": "1170692781216378960",
-      "content": "Because tbh I don't think it'd be possible to make a 100% completely unbiased an",
-      "author": "fishhazardthewizard",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493515583000674344",
-      "channel_id": "1493507096577183815",
-      "content": "I need PV",
-      "author": "_venush",
-      "reactions": 6,
-      "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
-    },
-    {
-      "id": "1493521397874556988",
-      "channel_id": "1131839817982947429",
-      "content": "何意味",
-      "author": "xingkongzhiyao_",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1493452350654775406",
-      "channel_id": "1170692781216378960",
-      "content": "<@1164303137293729792> <@296679098703544321> <@212031841786527764> <@88644018673",
-      "author": "princess.goth",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493490852226400369",
-      "channel_id": "1170692781216378960",
-      "content": "Not spending is okay",
-      "author": "angbak",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493550043700138004",
-      "channel_id": "1170692781216378960",
-      "content": "It was just too stressful and too much work. There is so much division in the co",
-      "author": "zyocuh",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493479192321462302",
-      "channel_id": "1300659603993923644",
-      "content": "16U18RZ18R giúp vs ạ mn",
-      "author": "phuongvn_49218",
-      "reactions": 5,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1493493412534681610",
-      "channel_id": "1493493412534681610",
-      "content": "每次打通活动癫狂就不能快速扫荡，希望快速优化一下，打通活动癫狂就隐藏，或者别把上次通关设置到癫狂关卡",
-      "author": "sense25.",
-      "reactions": 5,
-      "channel": "✅「已回答」优化扫荡"
-    },
-    {
-      "id": "1493525517134200842",
-      "channel_id": "1492812179387453440",
-      "content": "My heart (?) for yours || Mini panel",
-      "author": "that_one_chippy",
-      "reactions": 5,
-      "channel": "My heart for yours || Doresain x Sylvester"
-    },
-    {
-      "id": "1493426090977263778",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1493492594360193164",
-      "channel_id": "1131839817982947429",
-      "content": "~~薩摩太短了~~",
-      "author": "yy42974466",
-      "reactions": 4,
       "channel": "🔸綜合討論"
     }
   ]
