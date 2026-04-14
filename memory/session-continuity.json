@@ -1,28 +1,56 @@
 {
   "last_session": {
-    "id": "78063bc9",
-    "timestamp": "2026-04-14T01:50:11.741000+00:00",
-    "duration_minutes": 110.4,
+    "id": "c64cd1fc",
+    "timestamp": "2026-04-14T02:51:33.993000+00:00",
+    "duration_minutes": 171.8,
     "branch": "claude/bpt-next-bootstrap-Q41x3",
     "topics": [],
     "decisions": [],
     "files_changed": [
+      "/home/user/brain-in-a-vat/.claude/settings.json",
       "/home/user/brain-in-a-vat/CLAUDE.md",
       "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
       "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
       "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
       "/home/user/brain-in-a-vat/memory/decisions.md",
       "/home/user/brain-in-a-vat/memory/project-status.md",
+      "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
       "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
       "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
       "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
+      "/home/user/brain-in-a-vat/projects/graphify-ext/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/graphify-ext/NOTICE",
       "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
       "/home/user/brain-in-a-vat/projects/occ-local/NOTICE",
+      "/home/user/brain-in-a-vat/scripts/mcp_server.py",
       "/root/.claude/plans/shiny-roaming-eclipse.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "78063bc9",
+      "timestamp": "2026-04-14T01:50:11.741000+00:00",
+      "duration_minutes": 110.4,
+      "branch": "claude/bpt-next-bootstrap-Q41x3",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
+        "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/occ-local/NOTICE",
+        "/root/.claude/plans/shiny-roaming-eclipse.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "105b16ff",
       "timestamp": "2026-04-14T01:23:32.014000+00:00",
@@ -191,39 +219,19 @@
         "/root/.claude/plans/joyful-skipping-thimble.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "66f6f9a6",
-      "timestamp": "2026-04-12T19:41:53.679000+00:00",
-      "duration_minutes": 215.4,
-      "branch": "claude/memory-reflection-management-TEfTh",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/session-continuity.json",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/reflexion.py",
-        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
-        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
-        "/root/.claude/plans/joyful-skipping-thimble.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 1.21,
-      "MCP": 1.21,
-      "Electron": 0.51,
-      "银芯": 0.36,
-      "记忆系统": 0.27,
-      "黑池": 0.17,
-      "TF-IDF": 0.14,
-      "索引": 0.14,
-      "知识图谱": 0.14
+      "BPT": 0.97,
+      "MCP": 0.97,
+      "Electron": 0.41,
+      "银芯": 0.29,
+      "记忆系统": 0.22,
+      "黑池": 0.14,
+      "TF-IDF": 0.11,
+      "索引": 0.11,
+      "知识图谱": 0.11
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
@@ -237,7 +245,7 @@
       "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
       "/home/user/brain-in-a-vat/projects/occ-local/NOTICE"
     ],
-    "total_sessions": 24
+    "total_sessions": 25
   },
-  "updated_at": "2026-04-14T01:53:27.647705+00:00"
+  "updated_at": "2026-04-14T02:51:34.317009+00:00"
 }
