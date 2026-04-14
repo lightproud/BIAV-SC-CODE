@@ -1,5 +1,14 @@
-# BPT-NEXT 架构蓝图
+# BPT-NEXT 架构蓝图（旧版 - 已封存）
 
+> **状态：已封存（2026-04-14 当日作废）**
+> 封存原因：守密人深入调研 `instructkr/claw-code` 后改变方向，决定基于 claw-code（Rust，无 LICENSE）打造 bpt-next，接受版权风险。本文档原基于 `ruvnet/open-claude-code`（JS，MIT）+ BPT 融合的方案已不适用。
+> 保留原因：未来若 claw-code 上游 LICENSE 明确化失败、或因其他原因需要切回 occ-local 路径，本文档可作备选方案快速启用。
+> 当前实施方案：见 `projects/bpt-next/CONTEXT.md` + `projects/bpt-next/NOTICE`
+>
+> ---
+>
+> 以下为封存前的原始内容（历史归档，勿据此决策）：
+>
 > 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
 >
 > 决策依据：`memory/decisions.md`（2026-04-14 条目）
