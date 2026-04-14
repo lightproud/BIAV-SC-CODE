@@ -43,6 +43,11 @@
 | **改道决策**（2026-04-14 当日作废上一条）：深入核实 claw-code（instructkr/claw-code）后发现其本地模型 + 多 provider 能力超 occ-local（Ollama 开箱即用 / 5 层配置链 / 模型前缀路由 / proxy 原生 / xAI+DashScope+OpenRouter），故 bpt-next 改基于 claw-code 打造（Rust 48K 行）。**守密人明示接受版权风险**：上游无 LICENSE 文件，默认 All Rights Reserved；仅限 BIAV 内部使用，禁止外部推广。occ-local 保留作为 MIT 合规备选。旧设计文档 memory/bpt-next-design.md 已加封存头注。引入实施见 projects/bpt-next/NOTICE 与 CONTEXT.md | 全局 / bpt-next |
 | **许可证评估修正**（2026-04-14 当日修正上一条的"无 LICENSE"假设）：构建验证时核查发现 rust/Cargo.toml `[workspace.package] license = "MIT"`，9 crate 全部 `license.workspace = true` 继承，rust/README 有 License 节。Rust 生态共识：Cargo.toml SPDX license 字段是法律认可的授权声明（crates.io / cargo-about / cargo-deny 均依赖此字段）。**主运行时 claw CLI = 明确 MIT 授权**。src/（Python 镜像）上游已声明"非主运行时"，无独立 LICENSE 但不影响 claw 主使用。风险等级从"致命"下调为"低"。建议上游加 LICENSE 文件仍作为友好建议。NOTICE 与 CONTEXT 已同步修正 | 全局 / bpt-next |
 | **构建与诊断验证**（2026-04-14）：`cargo build --workspace` 成功，耗时 51.71 秒，产物 claw CLI 148M。`claw doctor` 5 OK / 1 Warn (auth 未设 key) / 0 Fail；sandbox workspace-only + 无网络；自动识别 BIAV 3 个 skill（daily-news / sync-memory / validate-data）表明 claw ↔ Claude Code skill 发现机制兼容。E2E 网络调用受容器 sandbox 限制未跑通（不影响守密人本地）。完整报告见 memory/bpt-next-build-verification.md | 全局 / bpt-next |
+| **occ-local 降级为研究归档**（2026-04-14）：守密人原话"occ 这件事就忘了吧，我们现在基于 claw-codes"。bpt-next（claw-code）是唯一主线；occ-local 保留源码但不再作为"MIT 合规备选"维护，仅作架构参考。废弃之前的 biav-occ wrapper 方案（~120 行 plan 已清理） | 全局 / occ-local |
+| **Phase B 4 答案锁死**（2026-04-14）：(1) 无账号用户识别 = 与 SVN 账号名一致，可支持外显名；(2) SVN 仓库 = 基于本地 SVN 工作副本；(3) 事实边界 = memory/decisions.md 全部入 wiki 不做审核筛选；(4) 能力共享粒度 = BIAV Studio 团队内 | 全局 / 黑池建设 |
+| **双系统亚哈格分**（2026-04-14）：银芯 = 孵化器 + 开源子项目 + 公开资料；黑池（内网 SVN）= 五大需求的数据与代码主体。解除"能力团队内共享"与"银芯公开层"的潜在矛盾——能力放黑池内网，银芯只保留接口声明与可公开能力。详见 memory/blackpool-architecture.md 第零节 | 全局 / 双系统分工 |
+| **黑池记忆走银芯自建+母版迁移**（2026-04-14）：守密人原话"完善银芯自建，使其拥有 claude-mem 的能力，然后作为母版迁移到黑池"。不引入 claude-mem（AGPL-3.0），通过扩展银芯现有 Python 记忆栈实现等价能力，验证后克隆部署到黑池内网。废弃原"claude-mem 中文外挂指南"计划。详见 memory/silver-memory-enhancement-plan.md | 全局 / 记忆系统 |
+| **外部工具方针锁定**（2026-04-14）：graphify（MIT）Phase A vendor 到 projects/graphify-ext/ 作黑池索引工具原型；claude-mem（AGPL-3.0）完全不引入，仅作架构参考 | 全局 / 外部工具 |
 | 银芯事实圣经边界：仅收录公开可查阅信息 | 全局 |
 | 战略规划 2026：四阶段计划，详见 strategic-plan-2026.md | 全局 |
 | 黑池已上线（2026-04-03），内网 SVN + Qoder，全员使用，核心痛点：知识结构化传承 | 全局 |

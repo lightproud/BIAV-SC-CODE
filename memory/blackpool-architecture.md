@@ -8,6 +8,47 @@
 
 ---
 
+## 零、核心架构决策（守密人 2026-04-14 连环拍板）
+
+### 0.1 亚哈格分 — 双系统分工
+**银芯 = 孵化器 + 开源子项目 + 公开资料；黑池 = 五大需求的数据/代码主体（内网 SVN）**
+
+- 银芯（本仓库，公开层）承担：
+  - 黑池架构的设计文档
+  - 供黑池复用的脚本模板 / 工具原型
+  - 开源子项目（`projects/bpt-next/` MIT、`projects/graphify-ext/` MIT）
+  - 公开资料（`projects/wiki/` / `projects/news/` / `assets/data/` 公开部分）
+  - 允许黑池 AI 读取
+
+- 黑池（内网，私有层）承担：
+  - 需求 1 主体：用户档案（SVN 存对话）
+  - 需求 2 主体：团队决策 wiki（黑池内部 wiki）
+  - 需求 3 主体：商业数据索引（graphify 在黑池内部署）
+  - 需求 4 主体：内部记忆（黑池的 `memory/`）
+  - 需求 5 主体：私有技能/代理/MCP
+
+**矛盾解除**：守密人"能力共享粒度 = BIAV Studio 团队内"与银芯公开层的潜在矛盾——能力**放黑池内网**，银芯只留接口声明与可公开能力。
+
+### 0.2 黑池记忆走银芯自建 + 母版迁移
+原话："完善银芯自建，使其拥有 claude-mem 的能力，然后作为母版迁移到黑池。"
+
+- **不引入 claude-mem**（即使黑池内网也不引入）
+- 扩展银芯现有 Python 记忆栈（`session_distiller` / `dream` / `memory_writeback` / `session_reflexion` / `memrl` / `knowledge_graph` / `memory_search`），学习 claude-mem 能力，自己实现
+- 银芯验证完整后，作为母版克隆部署到黑池内网
+- 维持 MIT 纯粹，无 AGPL 顾虑
+- 详细增强计划见 `memory/silver-memory-enhancement-plan.md`
+
+### 0.3 occ-local 降级为研究归档
+- `projects/occ-local/` 保留但**不再作为"MIT 合规备选"维护**
+- 定位改为"研究参考归档，不活跃"
+- bpt-next（claw-code）是**唯一主线**
+
+### 0.4 外部工具方针更新
+- **graphify（MIT）**：Phase A vendor 到 `projects/graphify-ext/`，作为黑池索引（需求 3）工具原型
+- **claude-mem（AGPL-3.0）**：**全面不引入**（废弃原"中文外挂指南"计划），其能力由银芯自建等价物覆盖
+
+---
+
 ## 一、背景
 
 ### 黑池定位
@@ -133,13 +174,13 @@
 
 ---
 
-## 四、外部工具引入策略
+## 四、外部工具引入策略（2026-04-14 更新）
 
 ### graphify（MIT）
 
 - **状态**：可 vendor 进 BIAV 仓库
 - **建议路径**：`projects/graphify-ext/`（参照 occ-local / bpt-next 模式）
-- **定位**：需求 3（黑池索引）主力
+- **定位**：需求 3（黑池索引）工具原型，银芯 vendor 后供黑池复用
 - **集成方式**：
   1. vendor 源码到 `projects/graphify-ext/`
   2. 写 `scripts/graphify_bridge.py` 封装为银芯 MCP 工具
@@ -149,14 +190,10 @@
 
 ### claude-mem（AGPL-3.0）
 
-- **状态**：**禁止 vendor**（copyleft 传染）
-- **建议路径**：外部工具，守密人本地独立安装
-- **定位**：需求 4（黑池记忆）可选加强，**非必需**
-- **集成方式**：
-  1. 写 `memory/claude-mem-setup.md` 中文安装指南 + 审计清单
-  2. 守密人在 bpt-next / claude-code 会话中手动装
-  3. BIAV 仓库不含任何 claude-mem 源码
-- **优先级**：Phase B 之后再议
+- **状态**：**全面不引入**（守密人 2026-04-14 决定走银芯自建路线）
+- **处置**：仅作架构参考，不 vendor 也不写外挂指南
+- **其能力由银芯等价物覆盖**：见 `memory/silver-memory-enhancement-plan.md`
+- **历史**：艾瑞卡曾考虑过"AGPL 外挂 + 中文指南"方案，已废弃
 
 ---
 
@@ -199,7 +236,13 @@
 | claude-mem 不进 BIAV 仓库 | AGPL-3.0 copyleft 传染，不兼容 BIAV MIT 许可 | 2026-04-14 |
 | 银芯 `knowledge_graph.py` 保留 | 与 graphify 职责分工（世界观 vs 代码），非替代关系 | 2026-04-14 |
 | 会话存储用 SVN 而非 Git | 守密人指示；SVN 已有内网基础设施；每对话一文件适合 SVN 线性提交模型 | 2026-04-14 |
-| 无账号用户识别方案待定 | Phase B P5 产出专项设计文档 | 2026-04-14 |
+| **亚哈格分**：银芯=孵化器/开源/公开；黑池=五大需求数据主体 | 解决"能力团队内共享"与"银芯公开层"的矛盾 | 2026-04-14 |
+| **黑池记忆走银芯自建+母版迁移**（不引入 claude-mem） | 保 MIT 纯粹 + 延续银芯已有投资 + 亚哈格分下无需 AGPL | 2026-04-14 |
+| **occ-local 降级为研究归档** | bpt-next 作为唯一主线，occ-local 不再维护 | 2026-04-14 |
+| **无账号用户识别 = SVN 账号名 + 可配外显名** | Phase B P5 锁死 | 2026-04-14 |
+| **SVN 仓库 = 基于本地 SVN 工作副本** | Phase B P6 锁死 | 2026-04-14 |
+| **事实数据 = memory/decisions.md 全部入 wiki** | Phase B P7 锁死（不做审核筛选） | 2026-04-14 |
+| **能力共享粒度 = BIAV Studio 团队内（实际落黑池内网）** | Phase B P8 锁死 | 2026-04-14 |
 
 ---
 
@@ -229,19 +272,31 @@
 - `memory/capability-registry.json` —— Phase B P8 产出目标
 
 ### 外部参考
-- [safishamsi/graphify](https://github.com/safishamsi/graphify)（MIT）
-- [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)（AGPL-3.0）
-- [instructkr/claw-code](https://github.com/instructkr/claw-code)（MIT via Cargo.toml）
-- [ruvnet/open-claude-code](https://github.com/ruvnet/open-claude-code)（MIT）
+- [safishamsi/graphify](https://github.com/safishamsi/graphify)（MIT，Phase A vendor）
+- [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)（AGPL-3.0，**仅作架构参考，不引入**）
+- [instructkr/claw-code](https://github.com/instructkr/claw-code)（MIT via Cargo.toml，已引入 projects/bpt-next/）
+- [ruvnet/open-claude-code](https://github.com/ruvnet/open-claude-code)（MIT，已降级为研究归档）
 - Karpathy LLM Knowledge Base workflow
+
+### 银芯记忆增强专项
+- `memory/silver-memory-enhancement-plan.md`（对标 claude-mem 能力的银芯扩展清单）
 
 ---
 
-## 八、待守密人进一步确认的开放项
+## 八、已解决的开放项（守密人 2026-04-14 裁定）
 
-1. **无账号用户识别**：倾向机器名 / SSH key / 手动 profile？
-2. **SVN 仓库地址**：黑池内网 SVN 的 URL / 凭据管理方式如何对接 BIAV？
-3. **团队决策的"事实"定义边界**：memory/decisions.md 的所有条目都入 wiki？还是有一个审核标记？
-4. **能力注册表的共享粒度**：仅 BIAV Studio 内部团队？还是开源社区的 skill 也纳入？
+| # | 问题 | 决议 | 含义 |
+|---|------|------|------|
+| 1 | 无账号用户识别 | **与 SVN 账号名一致，可支持外显名** | 系统读取 SVN 账号（`svn auth` / `~/.subversion/auth/` / `svn info`）作为唯一身份；附加配置支持 `display_name` 用于人类可读场景（UI / Wiki / 报告） |
+| 2 | SVN 仓库地址 | **基于本地 SVN 进行工作** | 不走远程 URL，使用本地 working copy；可能是 `file://` 协议或本地 server；无需处理网络错误 / 代理 / 认证链 |
+| 3 | "事实"边界 | **`memory/decisions.md` 全部入 wiki** | 不做人工审核筛选；导出脚本逻辑简化为纯搬运 + 格式转换；wiki 视图按时间线 / 领域双向索引 |
+| 4 | 能力共享粒度 | **BIAV Studio 团队内** | Registry 不开源；能力代码与元数据放黑池（SVN）；银芯仅保留接口声明或占位 |
 
-以上问题暂不阻塞 Phase A，留给 Phase B 解决。
+**影响的模块设计调整**：
+
+- **用户识别模块**（Phase B P5）：从"方案对比"简化为"SVN 账号读取器 + 外显名映射 JSON"，实现约 50-80 行 Python
+- **SVN 同步器**（Phase B P6）：从"远程 SVN 客户端"简化为"本地 working copy 操作"，用 `svn add / svn commit -m` 即可；无需 `svn checkout` / 代理 / SSL 配置
+- **决策→wiki 导出器**（Phase B P7）：从"审核筛选"简化为"全量 Markdown 转 VitePress 页面"，~100 行
+- **能力注册表**（Phase B P8）：从"公开/私有分层"简化为"纯团队内 JSON"；未来若需开源部分能力，再加 `visibility: "public"` 字段
+
+---
