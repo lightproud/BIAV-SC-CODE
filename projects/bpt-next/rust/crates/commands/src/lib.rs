@@ -1049,6 +1049,21 @@ const SLASH_COMMAND_SPECS: &[SlashCommandSpec] = &[
         argument_hint: Some("<target> [--from <ref>]"),
         resume_supported: true,
     },
+    // BPT-NEXT Phase D extensions — Black Pool needs 3 (index) & 1 (vault)
+    SlashCommandSpec {
+        name: "index",
+        aliases: &[],
+        summary: "Query the code graph index (powered by graphify)",
+        argument_hint: Some("<question> | status"),
+        resume_supported: true,
+    },
+    SlashCommandSpec {
+        name: "vault",
+        aliases: &[],
+        summary: "Encrypt / decrypt session archives with age (x25519 / ChaCha20-Poly1305)",
+        argument_hint: Some("[encrypt <file> | decrypt <file> | status]"),
+        resume_supported: true,
+    },
 ];
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -1202,6 +1217,14 @@ pub enum SlashCommand {
         target: Option<String>,
         from: Option<String>,
     },
+    // BPT-NEXT Phase D extensions — Black Pool needs 3 & 1-hardening
+    Index {
+        query: Option<String>,
+    },
+    Vault {
+        action: Option<String>,
+        target: Option<String>,
+    },
     Unknown(String),
 }
 
@@ -1306,6 +1329,9 @@ impl SlashCommand {
             // BPT-NEXT fork extensions
             Self::Sync { .. } => "/sync",
             Self::Fork { .. } => "/fork",
+            // BPT-NEXT Phase D extensions
+            Self::Index { .. } => "/index",
+            Self::Vault { .. } => "/vault",
             #[allow(unreachable_patterns)]
             _ => "/unknown",
         }
@@ -1522,6 +1548,19 @@ pub fn validate_slash_command_input(
             mode: optional_single_arg(command, &args, "[--rebase|--merge|--dry-run]")?,
         },
         "fork" => parse_fork_command(command, &args)?,
+        // BPT-NEXT Phase D extensions — Black Pool needs 3 & 1 hardening
+        "index" => SlashCommand::Index {
+            // `/index <anything after the command name>` — pass the raw
+            // remainder to the handler, which decides sub-command vs query.
+            query: if remainder.is_some() {
+                remainder
+            } else if args.is_empty() {
+                None
+            } else {
+                Some(args.join(" "))
+            },
+        },
+        "vault" => parse_vault_command(command, &args)?,
         other => SlashCommand::Unknown(other.to_string()),
     }))
 }
@@ -1552,6 +1591,51 @@ fn parse_fork_command(
         }
     }
     Ok(SlashCommand::Fork { target, from })
+}
+
+/// Parse `/vault [encrypt <file> | decrypt <file> | status]` into a
+/// [`SlashCommand::Vault`].
+///
+/// Accepted shapes:
+///   /vault                           — action=None, target=None (→ status)
+///   /vault status                    — action=Some("status"), target=None
+///   /vault encrypt session.json      — action=Some("encrypt"), target=Some(path)
+///   /vault decrypt session.json.age  — action=Some("decrypt"), target=Some(path)
+fn parse_vault_command(
+    command: &str,
+    args: &[&str],
+) -> Result<SlashCommand, SlashCommandParseError> {
+    const HINT: &str = "[encrypt <file> | decrypt <file> | status]";
+    match args {
+        [] => Ok(SlashCommand::Vault {
+            action: None,
+            target: None,
+        }),
+        [single] => {
+            let action = (*single).to_string();
+            if action == "encrypt" || action == "decrypt" {
+                // Missing file path.
+                return Err(usage_error(command, HINT));
+            }
+            Ok(SlashCommand::Vault {
+                action: Some(action),
+                target: None,
+            })
+        }
+        [head, rest @ ..] => {
+            let action = (*head).to_string();
+            if !(action == "encrypt" || action == "decrypt") {
+                return Err(usage_error(command, HINT));
+            }
+            if rest.len() != 1 {
+                return Err(usage_error(command, HINT));
+            }
+            Ok(SlashCommand::Vault {
+                action: Some(action),
+                target: Some(rest[0].to_string()),
+            })
+        }
+    }
 }
 fn validate_no_args(command: &str, args: &[&str]) -> Result<(), SlashCommandParseError> {
     if args.is_empty() {
@@ -4171,6 +4255,8 @@ pub fn handle_slash_command(
         | SlashCommand::History { .. }
         | SlashCommand::Sync { .. }
         | SlashCommand::Fork { .. }
+        | SlashCommand::Index { .. }
+        | SlashCommand::Vault { .. }
         | SlashCommand::Unknown(_) => None,
     }
 }
@@ -4458,6 +4544,279 @@ fn summarize_vcs_output(raw: &str) -> String {
     } else {
         format!("{}\n... ({} more bytes)", &raw[..400], raw.len() - 400)
     }
+}
+
+// ---------------------------------------------------------------------------
+// Phase D.1 — /index handler (Black Pool need 3: knowledge graph)
+// ---------------------------------------------------------------------------
+
+/// Real handler for `/index`.
+///
+/// Shape:
+///   /index                  → status (availability + graph presence)
+///   /index status           → same as above
+///   /index <question>       → `graphify query "<question>"` subprocess
+///
+/// Phase D strategy: subprocess invocation. Future optimisations (persistent
+/// MCP connection, in-process PyO3) are recorded in memory/phase-d-plan.md.
+pub fn handle_index_slash_command(query: Option<&str>) -> Result<String, String> {
+    let cwd = std::env::current_dir()
+        .map_err(|e| format!("cannot resolve current working directory: {e}"))?;
+
+    let q = match query.map(str::trim).filter(|s| !s.is_empty()) {
+        None => return Ok(render_index_status(&cwd)),
+        Some("status") => return Ok(render_index_status(&cwd)),
+        Some(s) => s,
+    };
+
+    if !graphify_available() {
+        return Err(
+            "graphify binary not found on PATH. Install with: \
+             pip install -e projects/graphify-ext/"
+                .into(),
+        );
+    }
+
+    let graph = cwd.join("graphify-out").join("graph.json");
+    if !graph.exists() {
+        return Err(format!(
+            "no knowledge graph at {} — run `graphify` in this working copy first",
+            graph.display()
+        ));
+    }
+
+    let out = run_vcs_cmd("graphify", &["query", q], &cwd)?;
+    Ok(format!(
+        "graphify query {q:?}:\n{}",
+        summarize_vcs_output(&out)
+    ))
+}
+
+fn graphify_available() -> bool {
+    std::process::Command::new("graphify")
+        .arg("--help")
+        .output()
+        .map(|o| o.status.success())
+        .unwrap_or(false)
+}
+
+fn render_index_status(cwd: &std::path::Path) -> String {
+    let available = graphify_available();
+    let graph = cwd.join("graphify-out").join("graph.json");
+    let graph_exists = graph.exists();
+
+    let mut lines = vec!["Index status".to_string()];
+    lines.push(format!(
+        "  graphify binary    {}",
+        if available { "available" } else { "NOT FOUND" }
+    ));
+    lines.push(format!(
+        "  graph file         {}",
+        if graph_exists {
+            graph.display().to_string()
+        } else {
+            "not indexed".to_string()
+        }
+    ));
+    if !available {
+        lines.push(String::new());
+        lines.push("Install: pip install -e projects/graphify-ext/".to_string());
+    } else if !graph_exists {
+        lines.push(String::new());
+        lines.push("Build index: run `graphify` in this working copy".to_string());
+    }
+    lines.join("\n")
+}
+
+// ---------------------------------------------------------------------------
+// Phase D.3 — /vault handler (Black Pool need 1 hardening: archive encryption)
+// ---------------------------------------------------------------------------
+
+/// Real handler for `/vault`.
+///
+/// Shape:
+///   /vault                       → status (keypair presence)
+///   /vault status                → same as above
+///   /vault encrypt <file>        → write `<file>.age`
+///   /vault decrypt <file.age>    → write `<file>`
+///
+/// Uses age (x25519 / ChaCha20-Poly1305). Keys live at:
+///   ~/.biav/vault.age-public   (single `age1...` line, tracked with repo ok)
+///   ~/.biav/vault.age-secret   (single `AGE-SECRET-KEY-1...` line, secret!)
+///
+/// CI-visible environments (without a secret key) can still encrypt.
+pub fn handle_vault_slash_command(
+    action: Option<&str>,
+    target: Option<&str>,
+) -> Result<String, String> {
+    match action {
+        None | Some("status") => Ok(render_vault_status()),
+        Some("encrypt") => {
+            let path = target.ok_or_else(|| "vault encrypt: target file required".to_string())?;
+            vault_encrypt(path)
+        }
+        Some("decrypt") => {
+            let path = target.ok_or_else(|| "vault decrypt: target file required".to_string())?;
+            vault_decrypt(path)
+        }
+        Some(other) => Err(format!(
+            "unknown vault action: {other} (expected encrypt, decrypt, or status)"
+        )),
+    }
+}
+
+fn vault_home() -> Result<std::path::PathBuf, String> {
+    let home = std::env::var("HOME")
+        .or_else(|_| std::env::var("USERPROFILE"))
+        .map_err(|_| "HOME / USERPROFILE not set".to_string())?;
+    if home.is_empty() {
+        return Err("HOME / USERPROFILE is empty".to_string());
+    }
+    Ok(std::path::PathBuf::from(home).join(".biav"))
+}
+
+fn read_first_non_empty_line(path: &std::path::Path) -> Result<String, String> {
+    let raw =
+        std::fs::read_to_string(path).map_err(|e| format!("cannot read {}: {e}", path.display()))?;
+    raw.lines()
+        .map(str::trim)
+        .find(|l| !l.is_empty() && !l.starts_with('#'))
+        .map(str::to_string)
+        .ok_or_else(|| format!("{} contains no key data", path.display()))
+}
+
+fn read_public_recipient() -> Result<age::x25519::Recipient, String> {
+    use std::str::FromStr;
+    let path = vault_home()?.join("vault.age-public");
+    let line = read_first_non_empty_line(&path)?;
+    age::x25519::Recipient::from_str(&line).map_err(|e| format!("invalid age public key: {e}"))
+}
+
+fn read_secret_identity() -> Result<age::x25519::Identity, String> {
+    use std::str::FromStr;
+    let path = vault_home()?.join("vault.age-secret");
+    let line = read_first_non_empty_line(&path)?;
+    age::x25519::Identity::from_str(&line).map_err(|e| format!("invalid age secret key: {e}"))
+}
+
+fn vault_encrypt(path: &str) -> Result<String, String> {
+    use std::io::Write;
+    let input_path = std::path::Path::new(path);
+    if !input_path.exists() {
+        return Err(format!("input file not found: {path}"));
+    }
+    let recipient = read_public_recipient()?;
+    let input =
+        std::fs::read(input_path).map_err(|e| format!("cannot read {path}: {e}"))?;
+
+    let output_path = std::path::PathBuf::from(format!("{path}.age"));
+    let output_file = std::fs::File::create(&output_path)
+        .map_err(|e| format!("cannot create {}: {e}", output_path.display()))?;
+
+    let encryptor = age::Encryptor::with_recipients(vec![
+        Box::new(recipient) as Box<dyn age::Recipient + Send>,
+    ])
+    .ok_or_else(|| "age encryptor init: no recipients accepted".to_string())?;
+    let mut writer = encryptor
+        .wrap_output(output_file)
+        .map_err(|e| format!("age wrap: {e}"))?;
+    writer
+        .write_all(&input)
+        .map_err(|e| format!("age write: {e}"))?;
+    writer.finish().map_err(|e| format!("age finish: {e}"))?;
+
+    let out_bytes = std::fs::metadata(&output_path).map(|m| m.len()).unwrap_or(0);
+    Ok(format!(
+        "encrypted: {path} -> {} ({} bytes -> {} bytes)",
+        output_path.display(),
+        input.len(),
+        out_bytes,
+    ))
+}
+
+fn vault_decrypt(path: &str) -> Result<String, String> {
+    use std::io::Read;
+    let input_path = std::path::Path::new(path);
+    if !input_path.exists() {
+        return Err(format!("input file not found: {path}"));
+    }
+    let identity = read_secret_identity()?;
+    let input =
+        std::fs::read(input_path).map_err(|e| format!("cannot read {path}: {e}"))?;
+
+    let decryptor = match age::Decryptor::new(&input[..])
+        .map_err(|e| format!("age decryptor init: {e}"))?
+    {
+        age::Decryptor::Recipients(d) => d,
+        age::Decryptor::Passphrase(_) => {
+            return Err("vault expected x25519-encrypted input, got passphrase-encrypted".into())
+        }
+    };
+    let mut reader = decryptor
+        .decrypt(std::iter::once(&identity as &dyn age::Identity))
+        .map_err(|e| format!("age decrypt: {e}"))?;
+    let mut plaintext = Vec::new();
+    reader
+        .read_to_end(&mut plaintext)
+        .map_err(|e| format!("age read: {e}"))?;
+
+    let output_path = if let Some(stripped) = path.strip_suffix(".age") {
+        std::path::PathBuf::from(stripped)
+    } else {
+        std::path::PathBuf::from(format!("{path}.decrypted"))
+    };
+    std::fs::write(&output_path, &plaintext)
+        .map_err(|e| format!("cannot write {}: {e}", output_path.display()))?;
+
+    Ok(format!(
+        "decrypted: {path} -> {} ({} bytes)",
+        output_path.display(),
+        plaintext.len()
+    ))
+}
+
+fn render_vault_status() -> String {
+    let mut lines = vec!["Vault status".to_string()];
+    match vault_home() {
+        Ok(dir) => {
+            let public = dir.join("vault.age-public");
+            let secret = dir.join("vault.age-secret");
+            lines.push(format!(
+                "  public key      {}",
+                if public.exists() {
+                    public.display().to_string()
+                } else {
+                    "not found".to_string()
+                }
+            ));
+            lines.push(format!(
+                "  secret key      {}",
+                if secret.exists() {
+                    "present (owner-readable)".to_string()
+                } else {
+                    "not found".to_string()
+                }
+            ));
+            if !public.exists() || !secret.exists() {
+                lines.push(String::new());
+                lines.push("Generate a keypair (one-time):".to_string());
+                lines.push("  age-keygen -o ~/.biav/vault.age-secret".to_string());
+                lines.push(
+                    "  chmod 600 ~/.biav/vault.age-secret".to_string(),
+                );
+                lines.push(
+                    "  grep '# public key:' ~/.biav/vault.age-secret \\".to_string(),
+                );
+                lines.push(
+                    "      | cut -d: -f2 | tr -d ' ' > ~/.biav/vault.age-public".to_string(),
+                );
+            }
+        }
+        Err(e) => {
+            lines.push(format!("  error: {e}"));
+        }
+    }
+    lines.join("\n")
 }
 
 #[cfg(test)]
@@ -5207,8 +5566,9 @@ mod tests {
         assert!(help.contains("aliases: /skill"));
         assert!(!help.contains("/login"));
         assert!(!help.contains("/logout"));
-        // BPT-NEXT fork: 139 upstream specs + 2 BPT extensions (/sync, /fork) = 141
-        assert_eq!(slash_command_specs().len(), 141);
+        // BPT-NEXT: 139 upstream specs + 4 BPT extensions
+        // (/sync /fork from Phase C.1, /index /vault from Phase D) = 143
+        assert_eq!(slash_command_specs().len(), 143);
         assert!(resume_supported_slash_commands().len() >= 39);
     }
 
@@ -6191,5 +6551,71 @@ mod tests {
 
         let _ = fs::remove_dir_all(config_home);
         let _ = fs::remove_dir_all(bundled_root);
+    }
+
+    // -----------------------------------------------------------------------
+    // Phase D: /index and /vault parsing spot-checks.
+    // -----------------------------------------------------------------------
+
+    #[test]
+    fn parses_index_slash_command_shapes() {
+        assert_eq!(
+            SlashCommand::parse("/index"),
+            Ok(Some(SlashCommand::Index { query: None }))
+        );
+        assert_eq!(
+            SlashCommand::parse("/index status"),
+            Ok(Some(SlashCommand::Index {
+                query: Some("status".to_string())
+            }))
+        );
+        assert_eq!(
+            SlashCommand::parse("/index what calls VcsContext::detect"),
+            Ok(Some(SlashCommand::Index {
+                query: Some("what calls VcsContext::detect".to_string())
+            }))
+        );
+    }
+
+    #[test]
+    fn parses_vault_slash_command_shapes() {
+        assert_eq!(
+            SlashCommand::parse("/vault"),
+            Ok(Some(SlashCommand::Vault {
+                action: None,
+                target: None
+            }))
+        );
+        assert_eq!(
+            SlashCommand::parse("/vault status"),
+            Ok(Some(SlashCommand::Vault {
+                action: Some("status".to_string()),
+                target: None
+            }))
+        );
+        assert_eq!(
+            SlashCommand::parse("/vault encrypt session.json.gz"),
+            Ok(Some(SlashCommand::Vault {
+                action: Some("encrypt".to_string()),
+                target: Some("session.json.gz".to_string())
+            }))
+        );
+        assert_eq!(
+            SlashCommand::parse("/vault decrypt session.json.gz.age"),
+            Ok(Some(SlashCommand::Vault {
+                action: Some("decrypt".to_string()),
+                target: Some("session.json.gz.age".to_string())
+            }))
+        );
+        // encrypt without target path is a usage error
+        assert!(SlashCommand::parse("/vault encrypt").is_err());
+    }
+
+    #[test]
+    fn vault_status_surface_is_rendered_without_keypair() {
+        use super::render_vault_status;
+        // Status output starts with a known prefix regardless of keypair state.
+        let out = render_vault_status();
+        assert!(out.starts_with("Vault status"), "{out}");
     }
 }

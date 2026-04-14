@@ -12,3 +12,5 @@ workspace = true
 plugins = { path = "../plugins" }
 runtime = { path = "../runtime" }
 serde_json.workspace = true
+# BPT-NEXT Phase D: /vault session archive encryption
+age = { version = "0.10", default-features = false, features = ["armor"] }

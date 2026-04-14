@@ -2978,6 +2978,37 @@ fn run_resume_command(
                 Err(e) => Err(format!("/fork failed: {e}").into()),
             }
         }
+        // BPT-NEXT Phase D: /index and /vault also act outside conversation
+        // state — safe to resume against a saved session snapshot.
+        SlashCommand::Index { query } => {
+            match commands::handle_index_slash_command(query.as_deref()) {
+                Ok(output) => Ok(ResumeCommandOutcome {
+                    session: session.clone(),
+                    message: Some(output.clone()),
+                    json: Some(serde_json::json!({
+                        "kind": "index",
+                        "query": query,
+                        "output": output,
+                    })),
+                }),
+                Err(e) => Err(format!("/index failed: {e}").into()),
+            }
+        }
+        SlashCommand::Vault { action, target } => {
+            match commands::handle_vault_slash_command(action.as_deref(), target.as_deref()) {
+                Ok(output) => Ok(ResumeCommandOutcome {
+                    session: session.clone(),
+                    message: Some(output.clone()),
+                    json: Some(serde_json::json!({
+                        "kind": "vault",
+                        "action": action,
+                        "target": target,
+                        "output": output,
+                    })),
+                }),
+                Err(e) => Err(format!("/vault failed: {e}").into()),
+            }
+        }
         SlashCommand::Unknown(name) => Err(format_unknown_slash_command(name).into()),
         // /session list can be served from the sessions directory without a live session.
         SlashCommand::Session {
@@ -4124,6 +4155,24 @@ impl LiveCli {
                 ) {
                     Ok(out) => println!("{out}"),
                     Err(e) => eprintln!("/fork failed: {e}"),
+                }
+                false
+            }
+            // BPT-NEXT Phase D extensions — real handlers
+            SlashCommand::Index { query } => {
+                match commands::handle_index_slash_command(query.as_deref()) {
+                    Ok(out) => println!("{out}"),
+                    Err(e) => eprintln!("/index failed: {e}"),
+                }
+                false
+            }
+            SlashCommand::Vault { action, target } => {
+                match commands::handle_vault_slash_command(
+                    action.as_deref(),
+                    target.as_deref(),
+                ) {
+                    Ok(out) => println!("{out}"),
+                    Err(e) => eprintln!("/vault failed: {e}"),
                 }
                 false
             }
