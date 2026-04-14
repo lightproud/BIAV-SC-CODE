@@ -1,13 +1,14 @@
 {
   "last_session": {
-    "id": "105b16ff",
-    "timestamp": "2026-04-14T01:23:32.014000+00:00",
-    "duration_minutes": 83.8,
+    "id": "78063bc9",
+    "timestamp": "2026-04-14T01:50:11.741000+00:00",
+    "duration_minutes": 110.4,
     "branch": "claude/bpt-next-bootstrap-Q41x3",
     "topics": [],
     "decisions": [],
     "files_changed": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
       "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
       "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
       "/home/user/brain-in-a-vat/memory/decisions.md",
@@ -22,6 +23,28 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "105b16ff",
+      "timestamp": "2026-04-14T01:23:32.014000+00:00",
+      "duration_minutes": 83.8,
+      "branch": "claude/bpt-next-bootstrap-Q41x3",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
+        "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/occ-local/NOTICE",
+        "/root/.claude/plans/shiny-roaming-eclipse.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "04f792cd",
       "timestamp": "2026-04-13T02:49:58.262000+00:00",
@@ -188,48 +211,33 @@
         "/root/.claude/plans/joyful-skipping-thimble.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "be2cbf53",
-      "timestamp": "2026-04-12T16:47:21.513000+00:00",
-      "duration_minutes": 40.9,
-      "branch": "claude/memory-reflection-management-TEfTh",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/session-continuity.json",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/reflexion.py",
-        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
-        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
-        "/root/.claude/plans/joyful-skipping-thimble.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 1.51,
-      "MCP": 1.51,
-      "Electron": 0.64,
-      "银芯": 0.45,
-      "记忆系统": 0.34,
-      "黑池": 0.21,
-      "TF-IDF": 0.18,
-      "索引": 0.18,
-      "知识图谱": 0.18
+      "BPT": 1.21,
+      "MCP": 1.21,
+      "Electron": 0.51,
+      "银芯": 0.36,
+      "记忆系统": 0.27,
+      "黑池": 0.17,
+      "TF-IDF": 0.14,
+      "索引": 0.14,
+      "知识图谱": 0.14
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
-      "/home/user/brain-in-a-vat/scripts/character_persona.py",
-      "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-      "/home/user/brain-in-a-vat/scripts/session_briefing.py"
+      "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/memory/project-status.md",
+      "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
+      "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
+      "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/occ-local/NOTICE"
     ],
-    "total_sessions": 23
+    "total_sessions": 24
   },
-  "updated_at": "2026-04-14T01:28:42.355865+00:00"
+  "updated_at": "2026-04-14T01:53:27.647705+00:00"
 }
