@@ -95,11 +95,19 @@ impl ProjectContext {
         current_date: impl Into<String>,
     ) -> std::io::Result<Self> {
         let mut context = Self::discover(cwd, current_date)?;
-        context.git_status = read_git_status(&context.cwd);
-        context.git_diff = read_git_diff(&context.cwd);
         context.git_context = GitContext::detect(&context.cwd);
         // BPT-NEXT Phase C.2: populate VCS abstraction + operator identity.
         context.vcs_context = VcsContext::detect(&context.cwd);
+        // BPT-NEXT Phase C.3: prefer VCS-aware status/diff so SVN working
+        // copies populate these fields too; fallback to the git-only probes
+        // when the backend cannot be identified (non-VCS tmp dirs, etc.).
+        if let Some(ref vcs) = context.vcs_context {
+            context.git_status = vcs.status(&context.cwd);
+            context.git_diff = vcs.diff(&context.cwd);
+        } else {
+            context.git_status = read_git_status(&context.cwd);
+            context.git_diff = read_git_diff(&context.cwd);
+        }
         context.identity = Some(identity::get_identity());
         Ok(context)
     }

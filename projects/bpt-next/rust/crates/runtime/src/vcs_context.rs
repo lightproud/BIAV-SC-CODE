@@ -103,6 +103,43 @@ impl VcsContext {
         })
     }
 
+    /// Backend-agnostic working-copy status summary (`git status --short
+    /// --branch` / `svn status`).
+    ///
+    /// Returns `None` when the probe fails or the working copy is clean —
+    /// matching the semantics of the legacy git-only probe that previously
+    /// lived in [`crate::prompt`].
+    ///
+    /// BPT-NEXT Phase C.3: introduced so prompt assembly can populate the
+    /// `git_status` field for SVN working copies too (previously SVN silently
+    /// returned `None`).
+    #[must_use]
+    pub fn status(&self, cwd: &Path) -> Option<String> {
+        match self.backend {
+            VcsBackend::Git => read_git_status(cwd),
+            VcsBackend::Svn => read_svn_status_summary(cwd),
+        }
+    }
+
+    /// Backend-agnostic uncommitted-diff summary.
+    ///
+    /// For Git this combines staged (`git diff --cached`) and unstaged
+    /// (`git diff`) changes into a single rendered string, preserving the
+    /// labels used by the legacy prompt probe.
+    ///
+    /// For SVN this returns `svn diff` output (SVN has no staging area so
+    /// there is no separate section).
+    ///
+    /// Returns `None` when the probe fails or the working copy has no
+    /// changes.
+    #[must_use]
+    pub fn diff(&self, cwd: &Path) -> Option<String> {
+        match self.backend {
+            VcsBackend::Git => read_git_diff(cwd),
+            VcsBackend::Svn => read_svn_diff(cwd),
+        }
+    }
+
     /// Human-readable summary for system-prompt injection; shape matches
     /// [`crate::git_context::GitContext::render`] so downstream
     /// consumers cannot tell the difference.
@@ -268,6 +305,77 @@ pub fn parse_svn_status(text: &str) -> Vec<String> {
 }
 
 // ---------------------------------------------------------------------------
+// Status / diff probes (Phase C.3)
+// ---------------------------------------------------------------------------
+
+fn run_git(cwd: &Path, args: &[&str]) -> Option<String> {
+    let output = Command::new("git")
+        .args(args)
+        .current_dir(cwd)
+        .output()
+        .ok()?;
+    if !output.status.success() {
+        return None;
+    }
+    String::from_utf8(output.stdout).ok()
+}
+
+fn read_git_status(cwd: &Path) -> Option<String> {
+    let raw = run_git(
+        cwd,
+        &["--no-optional-locks", "status", "--short", "--branch"],
+    )?;
+    let trimmed = raw.trim();
+    if trimmed.is_empty() {
+        None
+    } else {
+        Some(trimmed.to_string())
+    }
+}
+
+fn read_git_diff(cwd: &Path) -> Option<String> {
+    let mut sections: Vec<String> = Vec::new();
+
+    if let Some(staged) = run_git(cwd, &["diff", "--cached"]) {
+        if !staged.trim().is_empty() {
+            sections.push(format!("Staged changes:\n{}", staged.trim_end()));
+        }
+    }
+
+    if let Some(unstaged) = run_git(cwd, &["diff"]) {
+        if !unstaged.trim().is_empty() {
+            sections.push(format!("Unstaged changes:\n{}", unstaged.trim_end()));
+        }
+    }
+
+    if sections.is_empty() {
+        None
+    } else {
+        Some(sections.join("\n\n"))
+    }
+}
+
+fn read_svn_status_summary(cwd: &Path) -> Option<String> {
+    let raw = run_svn(cwd, &["status"])?;
+    let trimmed = raw.trim();
+    if trimmed.is_empty() {
+        None
+    } else {
+        Some(trimmed.to_string())
+    }
+}
+
+fn read_svn_diff(cwd: &Path) -> Option<String> {
+    let raw = run_svn(cwd, &["diff"])?;
+    let trimmed = raw.trim();
+    if trimmed.is_empty() {
+        None
+    } else {
+        Some(trimmed.to_string())
+    }
+}
+
+// ---------------------------------------------------------------------------
 // Tests
 // ---------------------------------------------------------------------------
 
@@ -374,5 +482,91 @@ R       replaced.rs
         assert!(out.contains("svn branch: trunk"));
         assert!(out.contains("r1234 Fix bug"));
         assert!(out.contains("src/lib.rs"));
+    }
+
+    // -----------------------------------------------------------------------
+    // Phase C.3: VcsContext::status() / diff() — backend-agnostic probes.
+    // -----------------------------------------------------------------------
+
+    use std::fs;
+    use std::time::{SystemTime, UNIX_EPOCH};
+
+    fn status_diff_temp_dir(tag: &str) -> std::path::PathBuf {
+        let nanos = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .expect("time should be after epoch")
+            .as_nanos();
+        std::env::temp_dir().join(format!("vcs-ctx-{tag}-{nanos}"))
+    }
+
+    fn git_available() -> bool {
+        Command::new("git")
+            .arg("--version")
+            .output()
+            .map(|o| o.status.success())
+            .unwrap_or(false)
+    }
+
+    fn init_git_repo(path: &std::path::Path) {
+        fs::create_dir_all(path).expect("create temp dir");
+        Command::new("git")
+            .args(["init", "--quiet"])
+            .current_dir(path)
+            .output()
+            .expect("git init");
+        Command::new("git")
+            .args(["config", "user.email", "erica@biav.test"])
+            .current_dir(path)
+            .output()
+            .expect("git config email");
+        Command::new("git")
+            .args(["config", "user.name", "Erica"])
+            .current_dir(path)
+            .output()
+            .expect("git config name");
+        Command::new("git")
+            .args(["commit", "--allow-empty", "-m", "init", "--quiet"])
+            .current_dir(path)
+            .output()
+            .expect("initial commit");
+    }
+
+    #[test]
+    fn status_and_diff_return_some_on_dirty_git_repo() {
+        if !git_available() {
+            eprintln!("skipping: git not available in sandbox");
+            return;
+        }
+        let root = status_diff_temp_dir("dirty-git");
+        init_git_repo(&root);
+        fs::write(root.join("added.txt"), "fresh content\n").expect("write file");
+        // Stage the file so diff has both cached and working-tree sides.
+        Command::new("git")
+            .args(["add", "added.txt"])
+            .current_dir(&root)
+            .output()
+            .expect("git add");
+        fs::write(root.join("added.txt"), "fresh content\nmore\n").expect("modify file");
+
+        let ctx = VcsContext {
+            backend: VcsBackend::Git,
+            branch: None,
+            recent_commits: Vec::new(),
+            staged_files: Vec::new(),
+        };
+
+        let status = ctx.status(&root).expect("dirty repo should yield status");
+        assert!(
+            status.contains("added.txt"),
+            "status should mention modified file, got: {status}"
+        );
+
+        let diff = ctx.diff(&root).expect("dirty repo should yield diff");
+        assert!(
+            diff.contains("Staged changes:") && diff.contains("Unstaged changes:"),
+            "diff should label both sections, got: {diff}"
+        );
+
+        fs::remove_dir_all(&root).ok();
     }
 }

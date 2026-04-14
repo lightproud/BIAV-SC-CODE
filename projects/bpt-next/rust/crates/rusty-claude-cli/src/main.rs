@@ -2880,6 +2880,36 @@ fn run_resume_command(
                 })),
             })
         }
+        // BPT-NEXT Phase C.3: /sync and /fork are safe to run against a
+        // captured session snapshot — they act on the working copy, not on
+        // conversation state, so `session` is cloned through unchanged.
+        SlashCommand::Sync { mode } => match commands::handle_sync_slash_command(mode.as_deref()) {
+            Ok(output) => Ok(ResumeCommandOutcome {
+                session: session.clone(),
+                message: Some(output.clone()),
+                json: Some(serde_json::json!({
+                    "kind": "sync",
+                    "mode": mode,
+                    "output": output,
+                })),
+            }),
+            Err(e) => Err(format!("/sync failed: {e}").into()),
+        },
+        SlashCommand::Fork { target, from } => {
+            match commands::handle_fork_slash_command(target.as_deref(), from.as_deref()) {
+                Ok(output) => Ok(ResumeCommandOutcome {
+                    session: session.clone(),
+                    message: Some(output.clone()),
+                    json: Some(serde_json::json!({
+                        "kind": "fork",
+                        "target": target,
+                        "from": from,
+                        "output": output,
+                    })),
+                }),
+                Err(e) => Err(format!("/fork failed: {e}").into()),
+            }
+        }
         SlashCommand::Unknown(name) => Err(format_unknown_slash_command(name).into()),
         // /session list can be served from the sessions directory without a live session.
         SlashCommand::Session {
@@ -2949,9 +2979,7 @@ fn run_resume_command(
         | SlashCommand::Ide { .. }
         | SlashCommand::Tag { .. }
         | SlashCommand::OutputStyle { .. }
-        | SlashCommand::AddDir { .. }
-        | SlashCommand::Sync { .. }
-        | SlashCommand::Fork { .. } => Err("unsupported resumed slash command".into()),
+        | SlashCommand::AddDir { .. } => Err("unsupported resumed slash command".into()),
     }
 }
 
