@@ -20,7 +20,7 @@ Phase D 要闭合的剩余 3 项：
 | 需求 | 现状 | Phase D 要补的 |
 |------|------|---------------|
 | 需求 3 — 黑池索引 | graphify-ext（Python / MIT）已 vendor 到 `projects/graphify-ext/`，银芯 MCP 桥接三工具就位 | bpt-next 新增 `/index` slash command，通过 MCP 或子进程调 graphify，把代码图谱查询直接暴露给 REPL |
-| 需求 4 — 黑池记忆 | 银芯自建 `scripts/silver_memory_tools.py` + 9 模块已投产 | 新增 `scripts/silver-mem-install.sh` 一键把银芯母版（MCP server + briefing + writeback + dream）装到黑池内网工作副本，验证黑池运行时无外网依赖 |
+| 需求 4 — 黑池记忆 | 银芯自建 `scripts/silver_memory_tools.py` + 9 模块已投产 | 新增 `scripts/silver-mem-deploy.sh` 一键把银芯母版（MCP server + briefing + writeback + dream）装到黑池内网工作副本，验证黑池运行时无外网依赖 |
 | 需求 1 加强 — 对话加密 | SVN 归档未加密，商业对话明文暴露 | 新增 `/vault` slash command，对会话归档加一层 age/x25519 加密层（守密人持私钥，黑池容灾时只需要私钥即可解档） |
 
 Phase D 完工后，黑池内网具备：
@@ -86,11 +86,11 @@ SlashCommand::Index { query: Option<String>, depth: Option<String>, format: Opti
 
 ---
 
-## D.2 附属：`scripts/silver-mem-install.sh` 银芯母版部署
+## D.2 附属：`scripts/silver-mem-deploy.sh` 银芯母版部署
 
 ### 设计
 
-**落点**：`scripts/silver-mem-install.sh`（新增）
+**落点**：`scripts/silver-mem-deploy.sh`（新增）
 
 **功能**：一键把以下资产从银芯仓库拷贝到黑池内网工作副本：
 - `scripts/mcp_server.py` + `scripts/silver_memory_tools.py` + `scripts/memory_search.py`
@@ -107,7 +107,7 @@ set -euo pipefail
 
 TARGET="${1:-}"
 if [[ -z "$TARGET" ]]; then
-    echo "usage: silver-mem-install.sh <black-pool-wc-path>" >&2
+    echo "usage: silver-mem-deploy.sh <black-pool-wc-path>" >&2
     exit 2
 fi
 
@@ -124,7 +124,7 @@ echo "Silver core installed to $TARGET"
 
 ### 工作量
 
-- `silver-mem-install.sh`：~80 行
+- `silver-mem-deploy.sh`：~80 行
 - 脚本自身测试（dry-run 模式）：~40 行
 - `BIAV-SC.md` 加"黑池继承说明"节：~60 行 markdown
 
@@ -187,7 +187,7 @@ SlashCommandSpec {
 | 阶段 | 估算 | 主要文件 |
 |------|------|---------|
 | D.1 /index | ~210 行 + 80 行测试 | commands/lib.rs, main.rs, spec 节 |
-| D.2 silver-mem-install.sh | ~80 行 bash + 60 行 md | scripts/, BIAV-SC.md |
+| D.2 silver-mem-deploy.sh | ~80 行 bash + 60 行 md | scripts/, BIAV-SC.md |
 | D.3 /vault | ~240 行 | commands/lib.rs, Cargo.toml |
 | **合计** | **~670 行** | 5 个修改文件 + 2 个新文件 |
 
@@ -206,11 +206,11 @@ cd /path/to/graphify-indexed-repo
 # 应看到 graphify 返回的引用列表
 ```
 
-### Step 3：`silver-mem-install.sh` 黑池内网演练
+### Step 3：`silver-mem-deploy.sh` 黑池内网演练
 ```bash
 ssh blackpool-srv
 cd ~/black-pool-wc
-/path/to/brain-in-a-vat/scripts/silver-mem-install.sh .
+/path/to/brain-in-a-vat/scripts/silver-mem-deploy.sh .
 python scripts/session_briefing.py   # 应有 briefing 输出
 ```
 
