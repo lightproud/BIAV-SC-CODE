@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "7d514e0d",
-    "timestamp": "2026-04-14T18:52:47.865000+00:00",
-    "duration_minutes": 5.4,
+    "id": "0e833855",
+    "timestamp": "2026-04-14T19:54:58.167000+00:00",
+    "duration_minutes": 67.6,
     "branch": "claude/review-ai-app-architecture-4eNiu",
     "topics": [
       "BPT",
@@ -10,9 +10,24 @@
     ],
     "decisions": [],
     "files_changed": [],
-    "open_items": []
+    "open_items": [
+      "改动的风险差异巨大"
+    ]
   },
   "recent_sessions": [
+    {
+      "id": "7d514e0d",
+      "timestamp": "2026-04-14T18:52:47.865000+00:00",
+      "duration_minutes": 5.4,
+      "branch": "claude/review-ai-app-architecture-4eNiu",
+      "topics": [
+        "BPT",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "e98ab7a1",
       "timestamp": "2026-04-14T08:03:47.667000+00:00",
@@ -260,41 +275,12 @@
         "/home/user/brain-in-a-vat/projects/graphify-ext/NOTICE"
       ],
       "open_items": []
-    },
-    {
-      "id": "dc9fe194",
-      "timestamp": "2026-04-14T03:57:07.909000+00:00",
-      "duration_minutes": 237.3,
-      "branch": "claude/bpt-next-bootstrap-Q41x3",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/settings.json",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
-        "/home/user/brain-in-a-vat/projects/graphify-ext/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/graphify-ext/NOTICE",
-        "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/occ-local/NOTICE",
-        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-        "/home/user/brain-in-a-vat/scripts/silver-mem-install.sh",
-        "/root/.claude/plans/shiny-roaming-eclipse.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 1.0,
-      "黑池": 1.0
+      "BPT": 1.8,
+      "黑池": 1.8
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.claude/settings.json",
@@ -308,7 +294,7 @@
       "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
       "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md"
     ],
-    "total_sessions": 36
+    "total_sessions": 37
   },
-  "updated_at": "2026-04-14T18:57:46.161245+00:00"
+  "updated_at": "2026-04-14T19:58:23.587038+00:00"
 }
