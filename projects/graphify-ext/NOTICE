@@ -1,0 +1,59 @@
+GRAPHIFY-EXT — Origin and Attribution Notice
+=============================================
+
+## Source
+
+This subproject contains source code derived from:
+
+    graphify
+    Copyright (c) 2026 Safi Shamsi
+    Licensed under the MIT License
+    https://github.com/safishamsi/graphify
+
+Official PyPI package: graphifyy (install with `pip install graphifyy`)
+
+## License
+
+Upstream LICENSE is preserved verbatim at `projects/graphify-ext/LICENSE`.
+
+This subproject remains under the MIT License. Redistribution and
+derivative works must retain this NOTICE and the LICENSE file.
+
+## Import details
+
+- Imported at: 2026-04-14
+- Imported version: 0.4.12 (upstream pyproject.toml)
+- Imported by: Code-主控台 subagent (Erica session, B.I.A.V. Studio)
+- Total size: 1.7M
+- Excluded: `.git/` (full history)
+
+## Purpose within BIAV
+
+Graphify fills the "黑池索引" (Black Pool Index) pillar of BIAV's
+Black Pool system — the AI-readable index layer that produces a
+queryable knowledge graph from code, docs, papers, and multimodal
+corpora. See `memory/blackpool-architecture.md` requirement #3.
+
+## Relationship to Silver Core knowledge_graph.py
+
+The two systems are complementary, not replacements:
+
+- Silver Core's `scripts/knowledge_graph.py` owns
+  curated game lore, decisions history, and human-maintained graphs.
+- graphify-ext owns
+  automated extraction from code and documentation with Tree-sitter AST
+  (23 languages including Lua, relevant for Morimens game scripts) and
+  Leiden community detection (no embeddings required).
+
+Both will expose tools via the Silver Core MCP server
+(`scripts/mcp_server.py`); consumers need not distinguish sources.
+
+## Not affiliated
+
+Not affiliated with Anthropic, OpenAI, or other AI assistant vendors
+graphify supports. Claude and Claude Code are trademarks of Anthropic,
+PBC.
+
+## Change log
+
+2026-04-14  Initial vendor. Upstream version 0.4.12 / MIT, unmodified.

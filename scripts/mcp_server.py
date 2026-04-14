@@ -447,5 +447,144 @@ def character_persona(character: str = "erica", context: str = "", action: str =
     }, ensure_ascii=False, indent=2)
 
 
+# ---------------------------------------------------------------------------
+# Graphify 桥接工具（2026-04-14 新增，面向黑池需求 3 黑池索引）
+# ---------------------------------------------------------------------------
+
+
+@mcp.tool()
+def graphify_index(path: str, output_dir: str = "") -> str:
+    """对指定目录构建代码/文档知识图谱（tree-sitter + Leiden 社区检测）。
+
+    Args:
+        path: 要索引的目录（代码/文档/多模态资产）
+        output_dir: 可选输出目录（默认 <path>/graphify-out）
+
+    Returns:
+        JSON: {"status": "ok|error", "graph_json", "report_md", "html", "stdout", "stderr"}
+    """
+    from graphify_bridge import graphify_index as _index
+
+    result = _index(path, output_dir or None)
+    return json.dumps(result, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def graphify_query(graph_json_path: str, query: str, limit: int = 10) -> str:
+    """在已有 graphify 图谱（graph.json）中按关键词检索节点。
+
+    Args:
+        graph_json_path: 图谱 JSON 路径
+        query: 查询关键词
+        limit: 返回上限（默认 10）
+
+    Returns:
+        JSON: {"status": "ok|error", "matches": [{"node","kind","score","context"}]}
+    """
+    from graphify_bridge import graphify_query as _query
+
+    result = _query(graph_json_path, query, limit)
+    return json.dumps(result, ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def graphify_report(graph_out_dir: str) -> str:
+    """读取 GRAPH_REPORT.md 提取 god nodes 与建议问题。
+
+    Args:
+        graph_out_dir: graphify 输出目录（含 GRAPH_REPORT.md）
+
+    Returns:
+        JSON: {"status":"ok|error","report","god_nodes":[...],"suggested_questions":[...]}
+    """
+    from graphify_bridge import graphify_report as _report
+
+    result = _report(graph_out_dir)
+    return json.dumps(result, ensure_ascii=False, indent=2)
+
+
+# ---------------------------------------------------------------------------
+# 银芯记忆增强工具（2026-04-14 新增，面向黑池需求 4 黑池记忆）
+# 对标 claude-mem 能力但纯 MIT 自建
+# 详见 memory/silver-memory-enhancement-plan.md
+# ---------------------------------------------------------------------------
+
+
+@mcp.tool()
+def recall_session(query: str, k: int = 5) -> str:
+    """在历史 session digest 中语义搜索相关 session（TF-IDF + 4 维重排）。
+
+    Args:
+        query: 搜索关键词
+        k: 返回数量（默认 5）
+
+    Returns:
+        JSON: {"matches": [{"session_id","digest_path","score","excerpt"}]}
+    """
+    from silver_memory_tools import recall_session as _recall
+
+    return json.dumps(_recall(query, k), ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def current_continuity() -> str:
+    """读取 session 连续性链（上次 session 快照 + topics_hint）。
+
+    Returns:
+        JSON: session-continuity.json 内容 + last_session_file + topics_hint
+    """
+    from silver_memory_tools import current_continuity as _cc
+
+    return json.dumps(_cc(), ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def record_decision(summary: str, scope: str, rationale: str = "") -> str:
+    """追加决策条目到 memory/decisions.md 的当前有效决策表格末尾。
+
+    Args:
+        summary: 决策摘要（一句话）
+        scope: 影响范围（"全局" / "子项目名" / 等）
+        rationale: 理由（可选）
+
+    Returns:
+        JSON: {"status": "ok|error", "line_added": "..."}
+    """
+    from silver_memory_tools import record_decision as _rd
+
+    return json.dumps(_rd(summary, scope, rationale), ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def record_lesson(summary: str, context: str = "") -> str:
+    """追加教训条目到 memory/lessons-learned.md 末尾。
+
+    Args:
+        summary: 教训摘要
+        context: 触发场景（可选）
+
+    Returns:
+        JSON: {"status": "ok|error", "lesson_id": "..."}
+    """
+    from silver_memory_tools import record_lesson as _rl
+
+    return json.dumps(_rl(summary, context), ensure_ascii=False, indent=2)
+
+
+@mcp.tool()
+def session_progress(session_id: str) -> str:
+    """读取指定 session 的 progress.jsonl 增量事件列表（由 session_watch hook 记录）。
+
+    Args:
+        session_id: session ID
+
+    Returns:
+        JSON: {"events": [...]} 或 {"error": "..."}
+    """
+    from silver_memory_tools import session_progress as _sp
+
+    return json.dumps(_sp(session_id), ensure_ascii=False, indent=2)
+
+
 if __name__ == "__main__":
     mcp.run(transport="stdio")
