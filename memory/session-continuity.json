@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "30c559e6",
-    "timestamp": "2026-04-13T17:53:08.248000+00:00",
-    "duration_minutes": 964.0,
+    "id": "07510a4d",
+    "timestamp": "2026-04-14T00:28:03.512000+00:00",
+    "duration_minutes": 1359.0,
     "branch": "claude/memory-reflection-management-TEfTh",
     "topics": [
       "BPT",
@@ -18,6 +18,24 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "30c559e6",
+      "timestamp": "2026-04-13T17:53:08.248000+00:00",
+      "duration_minutes": 964.0,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "04f792cd",
       "timestamp": "2026-04-13T02:49:58.262000+00:00",
@@ -184,48 +202,27 @@
         "/root/.claude/plans/joyful-skipping-thimble.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "be2cbf53",
-      "timestamp": "2026-04-12T16:47:21.513000+00:00",
-      "duration_minutes": 40.9,
-      "branch": "claude/memory-reflection-management-TEfTh",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/session-continuity.json",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/reflexion.py",
-        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
-        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
-        "/root/.claude/plans/joyful-skipping-thimble.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.51,
-      "MCP": 1.51,
-      "黑池": 1.21,
-      "Electron": 0.64,
-      "银芯": 0.45,
-      "记忆系统": 0.34,
-      "TF-IDF": 0.18,
-      "索引": 0.18,
-      "知识图谱": 0.18
+      "BPT": 3.01,
+      "黑池": 1.97,
+      "MCP": 1.21,
+      "Electron": 0.51,
+      "银芯": 0.36,
+      "记忆系统": 0.27,
+      "TF-IDF": 0.14,
+      "索引": 0.14,
+      "知识图谱": 0.14
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/assets/data/character-personas/erica.json",
-      "/home/user/brain-in-a-vat/scripts/character_persona.py",
-      "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-      "/home/user/brain-in-a-vat/scripts/session_briefing.py"
+      "/home/user/brain-in-a-vat/scripts/dream.py",
+      "/home/user/brain-in-a-vat/scripts/memory_search.py",
+      "/home/user/brain-in-a-vat/scripts/memrl.py"
     ],
-    "total_sessions": 23
+    "total_sessions": 24
   },
-  "updated_at": "2026-04-13T17:56:49.779772+00:00"
+  "updated_at": "2026-04-14T00:32:41.793426+00:00"
 }
