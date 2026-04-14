@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-04-14T10:50:42.990297+00:00",
+  "updated_at": "2026-04-14T15:55:38.464524+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1211,30 +1211,6 @@
       "topic": null
     },
     {
-      "id": "1469428901682872536",
-      "name": "kleinod",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 9,
-      "topic": "ModMail Channel 903912304826007564 1469363445781495932 (Please do not change this)"
-    },
-    {
-      "id": "1474112230432837793",
-      "name": "kahunamina1628003",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 10,
-      "topic": "ModMail Channel 1270761054053601324 1474109202866765895 (Please do not change this)"
-    },
-    {
-      "id": "1475487816363544597",
-      "name": "lamb1302",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 11,
-      "topic": "ModMail Channel 1093147333102948403 1475486723688632380 (Please do not change this)"
-    },
-    {
       "id": "1476476637125021776",
       "name": "zier0",
       "type": 0,
@@ -1257,14 +1233,6 @@
       "parent_id": "1131791637933199471",
       "position": 26,
       "topic": null
-    },
-    {
-      "id": "1482839341402427463",
-      "name": "breeead",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 14,
-      "topic": "ModMail Channel 1258007330251866157 1482838950480576702 (Please do not change this)"
     },
     {
       "id": "1483891888653336807",
