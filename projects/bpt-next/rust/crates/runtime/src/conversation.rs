@@ -929,6 +929,8 @@ mod tests {
                 git_status: None,
                 git_diff: None,
                 git_context: None,
+                vcs_context: None,
+                identity: None,
                 instruction_files: Vec::new(),
             })
             .with_os("linux", "6.8")

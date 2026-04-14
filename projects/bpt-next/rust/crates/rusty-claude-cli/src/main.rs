@@ -4013,22 +4013,22 @@ impl LiveCli {
                 eprintln!("{cmd_name} is not yet implemented in this build.");
                 false
             }
-            // BPT-NEXT fork extensions — stubbed handlers from commands crate
+            // BPT-NEXT fork extensions — real handlers (Phase C.2)
             SlashCommand::Sync { mode } => {
-                println!(
-                    "{}",
-                    commands::handle_sync_slash_command_stub(mode.as_deref())
-                );
+                match commands::handle_sync_slash_command(mode.as_deref()) {
+                    Ok(out) => println!("{out}"),
+                    Err(e) => eprintln!("/sync failed: {e}"),
+                }
                 false
             }
             SlashCommand::Fork { target, from } => {
-                println!(
-                    "{}",
-                    commands::handle_fork_slash_command_stub(
-                        target.as_deref(),
-                        from.as_deref(),
-                    )
-                );
+                match commands::handle_fork_slash_command(
+                    target.as_deref(),
+                    from.as_deref(),
+                ) {
+                    Ok(out) => println!("{out}"),
+                    Err(e) => eprintln!("/fork failed: {e}"),
+                }
                 false
             }
             SlashCommand::Unknown(name) => {

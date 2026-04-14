@@ -4176,32 +4176,283 @@ pub fn handle_slash_command(
 }
 
 // ---------------------------------------------------------------------------
-// BPT-NEXT fork handlers — Black Pool needs 1 & 2 stubs
+// BPT-NEXT fork handlers — Black Pool needs 1 & 2
 // ---------------------------------------------------------------------------
 
-/// Stub handler for `/sync`. Returns a user-facing notice that the command
-/// is recognized but the backing sync pipeline has not yet been wired to
-/// a `VcsContext` backend. Used by REPL dispatch until Phase C.2 lands.
-#[must_use]
-pub fn handle_sync_slash_command_stub(mode: Option<&str>) -> String {
-    let mode_label = mode.unwrap_or("(default)");
-    format!(
-        "/sync recognized (mode={mode_label}). Sync pipeline is a BPT-NEXT \
-         fork extension and will be wired to the VCS abstraction layer in \
-         the next phase. No working copy was modified."
-    )
+use runtime::{VcsBackend, VcsContext};
+
+/// Run a VCS child process (git / svn) and return stdout on success, or a
+/// formatted error string on failure. Mirrors the error-shape of
+/// `rusty-claude-cli::git_output` without taking a dependency on the
+/// binary crate.
+fn run_vcs_cmd(
+    program: &str,
+    args: &[&str],
+    cwd: &std::path::Path,
+) -> Result<String, String> {
+    let output = std::process::Command::new(program)
+        .args(args)
+        .current_dir(cwd)
+        .output()
+        .map_err(|e| format!("failed to spawn `{program}`: {e}"))?;
+
+    if !output.status.success() {
+        let stderr = String::from_utf8_lossy(&output.stderr);
+        let exit = output
+            .status
+            .code()
+            .map_or_else(|| "signal".to_string(), |c| c.to_string());
+        return Err(format!(
+            "`{program} {}` failed (exit={exit}): {}",
+            args.join(" "),
+            stderr.trim()
+        ));
+    }
+
+    let stdout = String::from_utf8_lossy(&output.stdout).trim().to_string();
+    if stdout.is_empty() {
+        // Some VCS commands report progress on stderr even on success.
+        let stderr = String::from_utf8_lossy(&output.stderr).trim().to_string();
+        Ok(stderr)
+    } else {
+        Ok(stdout)
+    }
 }
 
-/// Stub handler for `/fork`. See [`handle_sync_slash_command_stub`].
-#[must_use]
-pub fn handle_fork_slash_command_stub(target: Option<&str>, from: Option<&str>) -> String {
-    let target_label = target.unwrap_or("(unset)");
-    let from_label = from.unwrap_or("HEAD");
-    format!(
-        "/fork recognized (target={target_label}, from={from_label}). Fork \
-         pipeline is a BPT-NEXT fork extension and is not yet wired to a \
-         VCS backend. No working copy was created."
-    )
+/// Real handler for `/sync`.
+///
+/// Detects Git vs SVN via `VcsContext::detect`, then dispatches:
+///   Git: `git pull [--rebase|--no-rebase|--dry-run]`
+///   Svn: `svn update [--dry-run?]` (merge/rebase ignored — no semantic analog)
+///
+/// Returns a human-readable report on success, or an error string describing
+/// what went wrong (command failure, non-VCS cwd, unknown mode, etc.).
+pub fn handle_sync_slash_command(mode: Option<&str>) -> Result<String, String> {
+    let cwd = std::env::current_dir()
+        .map_err(|e| format!("cannot resolve current working directory: {e}"))?;
+    let vcs = VcsContext::detect(&cwd)
+        .ok_or_else(|| "not in a git or svn repository".to_string())?;
+
+    match vcs.backend {
+        VcsBackend::Git => {
+            let args: Vec<&str> = match mode {
+                Some("rebase") => vec!["pull", "--rebase"],
+                Some("merge") | None => vec!["pull", "--no-rebase"],
+                Some("dry-run") => vec!["pull", "--dry-run"],
+                Some(other) => {
+                    return Err(format!(
+                        "unknown sync mode: {other} (expected --rebase, --merge, or --dry-run)"
+                    ));
+                }
+            };
+            let out = run_vcs_cmd("git", &args, &cwd)?;
+            Ok(format!("git {}: {}", args.join(" "), summarize_vcs_output(&out)))
+        }
+        VcsBackend::Svn => {
+            let args: Vec<&str> = match mode {
+                Some("dry-run") => vec!["update", "--dry-run"],
+                _ => vec!["update"],
+            };
+            let out = run_vcs_cmd("svn", &args, &cwd)?;
+            Ok(format!("svn {}: {}", args.join(" "), summarize_vcs_output(&out)))
+        }
+    }
+}
+
+/// Real handler for `/fork`.
+///
+/// Git: `git worktree add <target> [<from>]`.
+/// Svn: not implemented in Phase C.2 — returns a placeholder message.
+pub fn handle_fork_slash_command(
+    target: Option<&str>,
+    from: Option<&str>,
+) -> Result<String, String> {
+    let target = target.ok_or_else(|| "fork: target path required".to_string())?;
+    let cwd = std::env::current_dir()
+        .map_err(|e| format!("cannot resolve current working directory: {e}"))?;
+    let vcs = VcsContext::detect(&cwd)
+        .ok_or_else(|| "not in a git or svn repository".to_string())?;
+
+    match vcs.backend {
+        VcsBackend::Git => {
+            let mut args: Vec<&str> = vec!["worktree", "add", target];
+            if let Some(ref_name) = from {
+                args.push(ref_name);
+            }
+            let out = run_vcs_cmd("git", &args, &cwd)?;
+            Ok(format!(
+                "git {}: {}",
+                args.join(" "),
+                summarize_vcs_output(&out)
+            ))
+        }
+        VcsBackend::Svn => Ok(format!(
+            "SVN /fork for target={target} is not yet implemented (deferred to Phase C.3)."
+        )),
+    }
+}
+
+fn summarize_vcs_output(raw: &str) -> String {
+    if raw.is_empty() {
+        "ok (no output)".to_string()
+    } else if raw.len() <= 400 {
+        raw.to_string()
+    } else {
+        format!("{}\n... ({} more bytes)", &raw[..400], raw.len() - 400)
+    }
+}
+
+#[cfg(test)]
+mod vcs_handler_tests {
+    //! Integration-style tests for `/sync` and `/fork` real handlers.
+    //!
+    //! These spawn real `git` subprocesses against temporary repositories.
+    //! The global `env_lock` is not strictly required because each test
+    //! uses its own cwd, but we do serialize the `current_dir` probe to
+    //! avoid cross-test interference.
+
+    use super::{handle_fork_slash_command, handle_sync_slash_command};
+    use std::fs;
+    use std::path::PathBuf;
+    use std::process::Command;
+    use std::sync::{Mutex, MutexGuard, OnceLock};
+    use std::time::{SystemTime, UNIX_EPOCH};
+
+    fn cwd_lock() -> MutexGuard<'static, ()> {
+        static LOCK: OnceLock<Mutex<()>> = OnceLock::new();
+        LOCK.get_or_init(|| Mutex::new(()))
+            .lock()
+            .unwrap_or_else(|poisoned| poisoned.into_inner())
+    }
+
+    fn temp_dir(label: &str) -> PathBuf {
+        let nanos = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .expect("time after epoch")
+            .as_nanos();
+        std::env::temp_dir().join(format!("commands-vcs-{label}-{nanos}"))
+    }
+
+    fn init_git_repo(root: &PathBuf) {
+        fs::create_dir_all(root).expect("create repo root");
+        for args in [
+            &["init", "--quiet", "-b", "main"][..],
+            &["config", "user.email", "tests@biav.local"][..],
+            &["config", "user.name", "BPT-NEXT VCS Handler Tests"][..],
+        ] {
+            assert!(Command::new("git")
+                .args(args)
+                .current_dir(root)
+                .status()
+                .expect("git command available")
+                .success());
+        }
+        // A single commit is required before `git worktree add` can succeed.
+        fs::write(root.join("README.md"), "seed\n").expect("write seed file");
+        for args in [
+            &["add", "README.md"][..],
+            &["commit", "-m", "seed", "--quiet"][..],
+        ] {
+            assert!(Command::new("git")
+                .args(args)
+                .current_dir(root)
+                .status()
+                .expect("git command available")
+                .success());
+        }
+    }
+
+    #[test]
+    fn sync_outside_vcs_returns_error() {
+        let _guard = cwd_lock();
+        let root = temp_dir("sync-no-vcs");
+        fs::create_dir_all(&root).expect("create dir");
+        let prev = std::env::current_dir().ok();
+        std::env::set_current_dir(&root).expect("cd");
+
+        let result = handle_sync_slash_command(None);
+
+        if let Some(prev) = prev {
+            let _ = std::env::set_current_dir(prev);
+        }
+        let _ = fs::remove_dir_all(&root);
+
+        assert!(result.is_err(), "expected error outside a repo");
+        let msg = result.unwrap_err();
+        assert!(
+            msg.contains("not in a git or svn repository"),
+            "unexpected error: {msg}"
+        );
+    }
+
+    // Requires a real-world git environment (sandbox-hostile subprocess).
+    // Matches the upstream policy for git-dependent tests — `cargo test -- --ignored`
+    // will include them when run locally on a workstation.
+    #[test]
+    #[ignore]
+    fn sync_rejects_unknown_mode_in_git_repo() {
+        let _guard = cwd_lock();
+        let root = temp_dir("sync-unknown-mode");
+        init_git_repo(&root);
+        let prev = std::env::current_dir().ok();
+        std::env::set_current_dir(&root).expect("cd");
+
+        let result = handle_sync_slash_command(Some("warp-drive"));
+
+        if let Some(prev) = prev {
+            let _ = std::env::set_current_dir(prev);
+        }
+        let _ = fs::remove_dir_all(&root);
+
+        let err = result.expect_err("unknown mode must be an error");
+        assert!(err.contains("unknown sync mode: warp-drive"), "{err}");
+    }
+
+    #[test]
+    fn fork_without_target_returns_error() {
+        let _guard = cwd_lock();
+        let result = handle_fork_slash_command(None, None);
+        let err = result.expect_err("missing target must be an error");
+        assert!(err.contains("target path required"), "{err}");
+    }
+
+    #[test]
+    #[ignore] // Same reason as sync_rejects_unknown_mode_in_git_repo above.
+    fn fork_git_worktree_creates_target_dir() {
+        let _guard = cwd_lock();
+        let root = temp_dir("fork-target");
+        init_git_repo(&root);
+        let target = temp_dir("fork-worktree");
+        let prev = std::env::current_dir().ok();
+        std::env::set_current_dir(&root).expect("cd");
+
+        // Create a named branch so `git worktree add` has a non-current ref
+        // to attach to (avoids the "already checked out" guard).
+        let branch_ok = Command::new("git")
+            .args(["branch", "feature-x"])
+            .current_dir(&root)
+            .status()
+            .expect("git branch")
+            .success();
+        assert!(branch_ok);
+
+        let result = handle_fork_slash_command(
+            Some(target.to_str().expect("utf-8 temp path")),
+            Some("feature-x"),
+        );
+
+        let created = target.exists();
+
+        if let Some(prev) = prev {
+            let _ = std::env::set_current_dir(prev);
+        }
+        let _ = fs::remove_dir_all(&target);
+        let _ = fs::remove_dir_all(&root);
+
+        let out = result.expect("worktree add should succeed");
+        assert!(out.contains("git worktree add"), "{out}");
+        assert!(created, "worktree target should have been created");
+    }
 }
 
 #[cfg(test)]
