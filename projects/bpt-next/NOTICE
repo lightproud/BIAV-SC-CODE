@@ -1,0 +1,99 @@
+BPT-NEXT — Origin, Attribution, and Legal Risk Notice
+======================================================
+
+## Source
+
+This subproject (projects/bpt-next/) contains source code derived from:
+
+    claw-code (upstream repo: instructkr/claw-code, canonical: ultraworkers/claw-code)
+    Maintainers: UltraWorkers / Sigrid Jin et al.
+    https://github.com/instructkr/claw-code
+    https://github.com/ultraworkers/claw-code
+
+Imported at: 2026-04-14
+Imported via: shallow clone of https://github.com/instructkr/claw-code (main branch)
+Imported by: Code-主控台 (Erica session, B.I.A.V. Studio - Brain in a Vat)
+
+## What was imported
+
+    - rust/                  (canonical Rust workspace — 9 crates, ~48K LOC)
+    - src/                   (Python mirror / reference workspace)
+    - tests/                 (validation surfaces)
+    - docs/                  (container workflow docs)
+    - README.md              (upstream)
+    - USAGE.md               (upstream, 366-line operational guide)
+    - PHILOSOPHY.md          (upstream intent doc)
+    - PARITY.md              (upstream port parity)
+    - ROADMAP.md             (upstream roadmap)
+    - UPSTREAM-CLAUDE.md     (renamed from upstream CLAUDE.md to avoid BIAV conflict)
+    - install.sh             (upstream installer)
+    - Containerfile          (upstream container recipe)
+    - .claude.json, .gitignore, .clawd-todos.json (upstream metadata)
+
+## What was NOT imported
+
+    - .git/                  (full git history)
+    - assets/                (5MB of branding imagery; not needed at runtime)
+    - .github/               (upstream CI workflows; BIAV has its own pipelines)
+
+## CRITICAL LEGAL NOTICE — LICENSE STATUS UNCLEAR
+
+    THE UPSTREAM REPOSITORY DOES NOT CONTAIN A LICENSE FILE.
+
+    Under US copyright law and most jurisdictions' default rules, software
+    without an explicit license is "All Rights Reserved" — the copyright
+    holder retains exclusive right to copy, modify, distribute, and create
+    derivative works.
+
+    This means:
+    - We have NO explicit permission from the upstream maintainers to
+      redistribute, modify, or create derivative works.
+    - Strictly interpreted, hosting this code in the BIAV repository
+      (which is itself MIT-licensed and publicly mirrored) may infringe
+      upstream's default copyright.
+    - The upstream README explicitly states it does NOT claim ownership
+      of the original Claude Code source material and is NOT affiliated
+      with Anthropic. This does not grant us any rights over upstream's
+      code either.
+
+## Risk Acceptance
+
+    The BIAV producer (Light / 守密人 / lightproud on GitHub) has
+    explicitly and knowingly accepted this legal risk on 2026-04-14
+    as part of the BPT (Black Pool Terminal) strategic direction.
+
+    Rationale recorded in memory/decisions.md:
+    - claw-code's multi-provider routing, Ollama support, proxy support,
+      and 5-layer config chain are substantially more capable than any
+      legally clean alternative (e.g. ruvnet/open-claude-code / MIT).
+    - This subproject is for internal BIAV Studio use and research.
+    - No public distribution, resale, or commercial derivative work is
+      planned until upstream licensing is clarified.
+
+## Mitigation Steps (to be pursued)
+
+    [ ] Open a GitHub issue on instructkr/claw-code requesting explicit
+        LICENSE clarification (MIT / Apache / etc.). If upstream declines
+        or does not respond, the producer will revisit this decision.
+    [ ] Keep projects/bpt-next/ internal-facing only — avoid promoting
+        it externally until licensing is resolved.
+    [ ] Maintain NOTICE and this risk section in every derivative artifact.
+    [ ] If upstream adds a LICENSE, update this file to reflect it and
+        remove the "risk accepted" clause.
+
+## Anthropic Trademark Notice
+
+    Claude and Claude Code are trademarks of Anthropic, PBC.
+    This subproject is not affiliated with, endorsed by, or maintained
+    by Anthropic. No upstream or downstream party claims ownership of
+    the original Claude Code source material.
+
+## Relationship to projects/occ-local/
+
+    projects/occ-local/ (ruvnet/open-claude-code, MIT) remains imported
+    as an alternative implementation and architectural reference. It is
+    NOT replaced by bpt-next. Producer may use either or both as needed.
+
+## Change log for this NOTICE
+
+    2026-04-14  Initial import with risk acceptance. License unclear.
