@@ -12,6 +12,7 @@
 | news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 桥接 Discord → 聚合器、月度归档清理 |
 | wiki（数据集 + Wiki 站点） | 数据补全中 | Code-wiki | 触发 fetch-wiki-data workflow 抓取 47 个角色技能数据 + 12 个缺失立绘 |
 | game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
+| occ-local（本地 Claude Code CLI） | 新引入，未适配 | 主控台 | 编写 detect-provider-local-prefix.patch + LOCAL-SETUP.md；本地 Ollama 连通性验证 |
 
 ## News 新闻聚合 + 报告系统
 
