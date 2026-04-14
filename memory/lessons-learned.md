@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-04-12 by 主控台（记忆反思管理）
+> 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -167,6 +167,22 @@
 - **Problem**：约 58% 角色标注"待补充"，部分数据为推测而非客户端实际数值，不适合作为分析引用来源
 - **Fix**：分析游戏数据时以 Lua 解包层（`projects/wiki/data/extracted/lua_tables/`）和事实圣经层（`assets/data/`）为唯一可靠来源。Wiki JSON 仅作为前端展示用途，不作为事实依据
 - **Impact**：分析可信度
+
+---
+
+## 23. idealab 两个入口语义不等价：/code/ 需 SSO，API key 消费方必须用 /api/anthropic/
+
+- **Context**：bpt-next 对接阿里内部 idealab 网关，文档列出 `/api/anthropic/v1/messages` 与 `/code/v1/messages` 两个端点并标注"两种 url 都可以使用"
+- **Problem**：初步推测 `/code/` 是代码场景专用入口、适合 coding agent，但实测 `/code/` 路径需浏览器 SSO 登录，不支持 API key 直调——`claw` / `bpt-next` 用 `x-api-key` 调 `/code/` 会 401
+- **Fix**：API key 消费方（bpt-next / 后端服务 / CI）必须锁定 `/api/anthropic/v1/messages`；`/code/` 仅供 Web IDE / 浏览器 SSO 场景。档案同步固化到 `projects/bpt-next/LOCAL-SETUP-ZH.md` 情境八，防止未来会话重新评估时踩坑
+- **Impact**：接入方案、API 调用可用性
+
+## 24. idealab 模型命名不一致：Sonnet/Opus 连字符 vs Haiku 下划线
+
+- **Context**：idealab 支持三个 Claude 模型——`claude-sonnet-4-6`、`claude-opus-4-6`、`claude-haiku-4_5`
+- **Problem**：三个命名**不统一**——Sonnet/Opus 用连字符分隔版本号（`4-6`），Haiku 单独用下划线（`4_5`）。`claw` 内置别名表 `haiku` → `claude-haiku-4-5-20251213`（连字符 + 日期后缀）与 idealab 的 `claude-haiku-4_5`（下划线、无后缀）不匹配。直接执行 `--model haiku` 会把错误名透传给 idealab，返回 404 / InvalidModel
+- **Fix**：在 `projects/bpt-next/.claw/settings.json` 用户别名表覆盖 `haiku → claude-haiku-4_5`；Sonnet/Opus 恰好匹配 claw 内置别名无需改动。命名约定说明同步到 `LOCAL-SETUP-ZH.md` 情境八
+- **Impact**：配置可用性、别名系统兼容
 
 ---
 

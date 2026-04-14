@@ -44,7 +44,8 @@
 | `.claude.json` / `.gitignore` / `.clawd-todos.json` | 上游原样 | 上游元数据 |
 | `NOTICE` | BIAV 新增 | **版权风险声明（必读）** |
 | `CONTEXT.md` | BIAV 新增 | 本文件 |
-| `LOCAL-SETUP-ZH.md` | BIAV 新增 | 艾瑞卡语气中文启动指南 |
+| `LOCAL-SETUP-ZH.md` | BIAV 新增 | 艾瑞卡语气中文启动指南（含情境八 idealab 网关） |
+| `.claw/settings.json` | BIAV 新增 | 项目级 claw 配置（haiku 别名覆盖，无凭据） |
 
 **未引入**：`.git/`（完整历史）、`assets/`（5M 品牌图片）、`.github/`（上游 CI）
 
@@ -101,9 +102,39 @@ unset OPENAI_API_KEY
 ## 当前状态
 
 - **引入状态**：初始引入完成（2026-04-14），上游源码未修改
-- **构建状态**：**未验证**（Rust toolchain 尚未在银芯环境测试过 `cargo build`）
-- **BIAV 定制**：未开始
+- **构建状态**：银芯环境 `cargo build` 验证通过（2026-04-14，耗时 51.71 秒）
+- **接入方案**：**已锁定 idealab `/api/anthropic/v1/messages`**（2026-04-14，详见下方章节）
+- **BIAV 定制**：项目级 `.claw/settings.json` 已建（含 haiku 别名覆盖）
 - **与 BPT 其他变体的关系**：bpt-web / bpt-desktop / bpt 母版暂时共存，不归档；待 bpt-next 成熟后再讨论收敛
+
+## 接入端点与模型（BIAV 生产配置）
+
+### 锁定端点
+
+- **唯一可用**：`https://idealab.alibaba-inc.com/api/anthropic/v1/messages`（`x-api-key` 头鉴权）
+- **不可用**：`/code/v1/messages`——需浏览器 SSO 登录，API key 直调会 401
+
+### 支持模型
+
+| 入参名 | 定位 | claw 别名 |
+|--------|------|----------|
+| `claude-sonnet-4-6` | 默认 | `sonnet` |
+| `claude-opus-4-6` | 高性能 | `opus` |
+| `claude-haiku-4_5` | 低成本 | `haiku`（需项目级 `.claw/settings.json` 别名覆盖） |
+| `qwen3-coder-plus` | Qwen 代码模型 | 传完整名 |
+
+### 命名陷阱（严格）
+
+idealab 三个 Claude 模型命名**不一致**：Sonnet / Opus 用连字符（`4-6`），Haiku 单独用下划线（`4_5`）。`claw` 内置 `haiku` 别名展开为 `claude-haiku-4-5-20251213`，与 idealab 不兼容——必须通过本项目 `.claw/settings.json` 覆盖。
+
+### 协议完整性
+
+idealab 是 **Anthropic-compatible 网关**，零能力损失：
+- prompt caching（`cache_creation_input_tokens` / `cache_read_input_tokens`）保留
+- tool_use content blocks 原生支持
+- 流式 `content_block_delta` 高保真
+
+详细操作指南见 `LOCAL-SETUP-ZH.md` 情境八。
 
 ## 验证清单
 
