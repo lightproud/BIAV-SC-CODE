@@ -12,8 +12,9 @@
 | news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 桥接 Discord → 聚合器、月度归档清理 |
 | wiki（数据集 + Wiki 站点） | 数据补全中 | Code-wiki | 触发 fetch-wiki-data workflow 抓取 47 个角色技能数据 + 12 个缺失立绘 |
 | game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
-| occ-local（本地 Claude Code CLI，MIT） | 已引入，作为 claw-code 的合规备选 | 主控台 | 待机状态；若 claw-code LICENSE 问题恶化可切换为主力 |
-| bpt-next（新一代 BPT，基于 claw-code Rust） | 已引入上游 3.8M（守密人接受版权风险） | 主控台 | 守密人本地 `cargo build --workspace` 验证可编译；写 BIAV 项目级 .claw/settings.json 模板；整理 ROADMAP 中文摘要 |
+| occ-local（本地 Claude Code CLI，MIT） | **研究归档**（2026-04-14 降级） | - | 仅保留源码供架构参考；不再主动推进 |
+| bpt-next（新一代 BPT 主线，基于 claw-code Rust MIT） | 已引入 3.8M + 银芯环境构建验证通过（claw v0.1.0） | 主控台 | Phase A：graphify vendor + 银芯记忆增强设计 + 守密人本地对接；Phase B：SVN 会话同步 + 用户识别 + decisions→wiki + 能力注册表 |
+| graphify-ext（黑池索引工具原型，MIT） | 待 vendor | 主控台 | Phase A P2：vendor safishamsi/graphify 到 projects/graphify-ext/；写银芯 MCP 桥接 |
 
 ## News 新闻聚合 + 报告系统
 
