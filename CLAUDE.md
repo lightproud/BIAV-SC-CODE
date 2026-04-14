@@ -67,7 +67,8 @@ brain-in-a-vat/
 │   ├── game/                  # 衍生同人游戏（规划中）
 │   ├── bpt-web/               # 黑池终端 Web 版（单文件 PWA，BPT-WEB）
 │   ├── bpt-desktop/           # 黑池终端 桌面版（Electron + Vite，BPT-DESKTOP）
-│   └── occ-local/             # 本地无账号 Claude Code CLI（来自 ruvnet/open-claude-code，MIT）
+│   ├── occ-local/             # 本地无账号 Claude Code CLI（来自 ruvnet/open-claude-code，MIT）
+│   └── bpt-next/              # 新一代黑池终端（来自 instructkr/claw-code，Rust，无 LICENSE 风险自担）
 ├── scripts/                   # 银芯记忆系统与 MCP 服务器（Python）
 ├── deliverables/              # 已交付成品存档
 └── .github/workflows/         # GitHub Actions 自动化流水线
@@ -83,7 +84,8 @@ brain-in-a-vat/
 | 衍生游戏 | `projects/game/` | Code-game（未启用） | 待决策 | 暂缓，Phase 4 启动 |
 | 黑池终端 Web (BPT-WEB) | `projects/bpt-web/` | 主控台 | 单文件 PWA（HTML + 内联 CSS/JS + SW） | v0.1.0 已部署 |
 | 黑池终端 桌面 (BPT-DESKTOP) | `projects/bpt-desktop/` | Code-site | Electron 33 + React 18 + Vite 6 + sql.js | v0.1.0 开发中 |
-| 本地 Claude Code CLI (OCC-LOCAL) | `projects/occ-local/` | 主控台 | Node 18+ / Ink React TUI（上游 MIT） | v2.0.0 刚引入，未适配 |
+| 本地 Claude Code CLI (OCC-LOCAL) | `projects/occ-local/` | 主控台 | Node 18+ / Ink React TUI（上游 MIT） | v2.0.0 刚引入，作为 claw-code 合规备选 |
+| 新一代黑池终端 (BPT-NEXT) | `projects/bpt-next/` | 主控台 | Rust（cargo + 9 crates，上游无 LICENSE 风险自担） | 已引入 3.8M，未验证构建 |
 
 每个子项目根目录都有 `CONTEXT.md`，新会话启动时必须先读。
 
