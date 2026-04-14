@@ -1,22 +1,44 @@
 {
   "last_session": {
-    "id": "04f792cd",
-    "timestamp": "2026-04-13T02:49:58.262000+00:00",
-    "duration_minutes": 834.5,
-    "branch": "claude/fix-community-collector-MFNhF",
+    "id": "105b16ff",
+    "timestamp": "2026-04-14T01:23:32.014000+00:00",
+    "duration_minutes": 83.8,
+    "branch": "claude/bpt-next-bootstrap-Q41x3",
     "topics": [],
     "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_platforms.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/playwright_collectors.py"
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/memory/project-status.md",
+      "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
+      "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
+      "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/occ-local/NOTICE",
+      "/root/.claude/plans/shiny-roaming-eclipse.md"
     ],
-    "open_items": [
-      "work and fix the files"
-    ]
+    "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "04f792cd",
+      "timestamp": "2026-04-13T02:49:58.262000+00:00",
+      "duration_minutes": 834.5,
+      "branch": "claude/fix-community-collector-MFNhF",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_platforms.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/playwright_collectors.py"
+      ],
+      "open_items": [
+        "work and fix the files"
+      ]
+    },
     {
       "id": "2b4c1160",
       "timestamp": "2026-04-13T02:24:23.612000+00:00",
@@ -186,45 +208,19 @@
         "/root/.claude/plans/joyful-skipping-thimble.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "40db6d3f",
-      "timestamp": "2026-04-12T16:34:13.834000+00:00",
-      "duration_minutes": 127.6,
-      "branch": "claude/memory-reflection-management-TEfTh",
-      "topics": [
-        "银芯"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/dreams/insights.json",
-        "/home/user/brain-in-a-vat/memory/session-continuity.json",
-        "/home/user/brain-in-a-vat/scripts/dream.py",
-        "/home/user/brain-in-a-vat/scripts/knowledge_graph.py",
-        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-        "/home/user/brain-in-a-vat/scripts/memory_search.py",
-        "/home/user/brain-in-a-vat/scripts/memory_writeback.py",
-        "/home/user/brain-in-a-vat/scripts/memrl.py",
-        "/home/user/brain-in-a-vat/scripts/session_briefing.py",
-        "/home/user/brain-in-a-vat/scripts/session_distiller.py",
-        "/root/.claude/plans/joyful-skipping-thimble.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 1.89,
-      "MCP": 1.89,
-      "Electron": 0.8,
-      "银芯": 0.56,
-      "记忆系统": 0.43,
-      "黑池": 0.26,
-      "TF-IDF": 0.22,
-      "索引": 0.22,
-      "知识图谱": 0.22
+      "BPT": 1.51,
+      "MCP": 1.51,
+      "Electron": 0.64,
+      "银芯": 0.45,
+      "记忆系统": 0.34,
+      "黑池": 0.21,
+      "TF-IDF": 0.18,
+      "索引": 0.18,
+      "知识图谱": 0.18
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
@@ -233,7 +229,7 @@
       "/home/user/brain-in-a-vat/scripts/mcp_server.py",
       "/home/user/brain-in-a-vat/scripts/session_briefing.py"
     ],
-    "total_sessions": 22
+    "total_sessions": 23
   },
-  "updated_at": "2026-04-13T02:54:07.439510+00:00"
+  "updated_at": "2026-04-14T01:28:42.355865+00:00"
 }
