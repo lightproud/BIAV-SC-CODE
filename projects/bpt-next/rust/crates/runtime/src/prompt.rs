@@ -5,6 +5,8 @@ use std::process::Command;
 
 use crate::config::{ConfigError, ConfigLoader, RuntimeConfig};
 use crate::git_context::GitContext;
+use crate::vcs_context::VcsContext;
+use identity::Identity;
 
 /// Errors raised while assembling the final system prompt.
 #[derive(Debug)]
@@ -51,6 +53,10 @@ pub struct ContextFile {
 }
 
 /// Project-local context injected into the rendered system prompt.
+///
+/// BPT-NEXT Phase C.2: `vcs_context` (Git/SVN abstraction) and `identity`
+/// (operator attribution) were added alongside the legacy `git_context`
+/// field. Legacy callers remain correct; new renderers prefer vcs_context.
 #[derive(Debug, Clone, Default, PartialEq, Eq)]
 pub struct ProjectContext {
     pub cwd: PathBuf,
@@ -58,6 +64,10 @@ pub struct ProjectContext {
     pub git_status: Option<String>,
     pub git_diff: Option<String>,
     pub git_context: Option<GitContext>,
+    /// BPT-NEXT extension: backend-agnostic VCS view (Git or SVN).
+    pub vcs_context: Option<VcsContext>,
+    /// BPT-NEXT extension: resolved operator identity for attribution.
+    pub identity: Option<Identity>,
     pub instruction_files: Vec<ContextFile>,
 }
 
@@ -74,6 +84,8 @@ impl ProjectContext {
             git_status: None,
             git_diff: None,
             git_context: None,
+            vcs_context: None,
+            identity: None,
             instruction_files,
         })
     }
@@ -86,6 +98,9 @@ impl ProjectContext {
         context.git_status = read_git_status(&context.cwd);
         context.git_diff = read_git_diff(&context.cwd);
         context.git_context = GitContext::detect(&context.cwd);
+        // BPT-NEXT Phase C.2: populate VCS abstraction + operator identity.
+        context.vcs_context = VcsContext::detect(&context.cwd);
+        context.identity = Some(identity::get_identity());
         Ok(context)
     }
 }
@@ -298,6 +313,18 @@ fn render_project_context(project_context: &ProjectContext) -> String {
         ));
     }
     lines.extend(prepend_bullets(bullets));
+
+    // BPT-NEXT Phase C.2: operator attribution block.
+    if let Some(identity) = &project_context.identity {
+        lines.push(String::new());
+        lines.push(format!(
+            "Operator: {} ({} via {})",
+            identity.display_name,
+            identity.account,
+            identity.source.as_str(),
+        ));
+    }
+
     if let Some(status) = &project_context.git_status {
         lines.push(String::new());
         lines.push("Git status snapshot:".to_string());
@@ -317,12 +344,22 @@ fn render_project_context(project_context: &ProjectContext) -> String {
         lines.push("Git diff snapshot:".to_string());
         lines.push(diff.clone());
     }
-    if let Some(git_context) = &project_context.git_context {
-        let rendered = git_context.render();
-        if !rendered.is_empty() {
-            lines.push(String::new());
-            lines.push(rendered);
-        }
+    // BPT-NEXT Phase C.2: prefer VcsContext (Git/SVN unified) over GitContext.
+    let rendered = project_context
+        .vcs_context
+        .as_ref()
+        .map(VcsContext::render)
+        .filter(|s| !s.is_empty())
+        .or_else(|| {
+            project_context
+                .git_context
+                .as_ref()
+                .map(GitContext::render)
+                .filter(|s| !s.is_empty())
+        });
+    if let Some(rendered) = rendered {
+        lines.push(String::new());
+        lines.push(rendered);
     }
     lines.join("\n")
 }
@@ -521,10 +558,13 @@ fn get_actions_section() -> String {
 mod tests {
     use super::{
         collapse_blank_lines, display_context_path, normalize_instruction_content,
-        render_instruction_content, render_instruction_files, truncate_instruction_content,
-        ContextFile, ProjectContext, SystemPromptBuilder, SYSTEM_PROMPT_DYNAMIC_BOUNDARY,
+        render_instruction_content, render_instruction_files, render_project_context,
+        truncate_instruction_content, ContextFile, ProjectContext, SystemPromptBuilder,
+        SYSTEM_PROMPT_DYNAMIC_BOUNDARY,
     };
     use crate::config::ConfigLoader;
+    use identity::{Identity, IdentitySource};
+    use std::collections::BTreeMap;
     use std::fs;
     use std::path::{Path, PathBuf};
     use std::time::{SystemTime, UNIX_EPOCH};
@@ -901,5 +941,80 @@ mod tests {
         assert!(rendered.contains("# Claude instructions"));
         assert!(rendered.contains("scope: /tmp/project"));
         assert!(rendered.contains("Project rules"));
+    }
+
+    // -------------------------------------------------------------------
+    // BPT-NEXT Phase C.2: identity + vcs_context injection into prompt
+    // -------------------------------------------------------------------
+
+    fn identity_for_test(display: &str, account: &str, src: IdentitySource) -> Identity {
+        Identity {
+            account: account.to_string(),
+            display_name: display.to_string(),
+            source: src,
+            email: String::new(),
+            extra: BTreeMap::new(),
+        }
+    }
+
+    #[test]
+    fn project_context_has_default_identity_and_vcs_fields_empty() {
+        let ctx = ProjectContext {
+            cwd: PathBuf::from("/tmp/project"),
+            current_date: "2026-04-14".to_string(),
+            ..Default::default()
+        };
+        assert!(ctx.identity.is_none());
+        assert!(ctx.vcs_context.is_none());
+        // Rendering with no identity must not emit an Operator line.
+        let rendered = render_project_context(&ctx);
+        assert!(!rendered.contains("Operator:"), "unexpected: {rendered}");
+    }
+
+    #[test]
+    fn render_project_context_emits_operator_line_when_identity_present() {
+        let ctx = ProjectContext {
+            cwd: PathBuf::from("/tmp/project"),
+            current_date: "2026-04-14".to_string(),
+            identity: Some(identity_for_test(
+                "艾瑞卡",
+                "erica-a10",
+                IdentitySource::SvnInfo,
+            )),
+            ..Default::default()
+        };
+        let rendered = render_project_context(&ctx);
+        assert!(
+            rendered.contains("Operator: 艾瑞卡 (erica-a10 via svn_info)"),
+            "rendered prompt missing operator line; got:\n{rendered}"
+        );
+    }
+
+    #[test]
+    fn render_project_context_prefers_vcs_context_over_git_context() {
+        use crate::vcs_context::{VcsBackend, VcsCommitEntry, VcsContext};
+        let ctx = ProjectContext {
+            cwd: PathBuf::from("/tmp/project"),
+            current_date: "2026-04-14".to_string(),
+            vcs_context: Some(VcsContext {
+                backend: VcsBackend::Svn,
+                branch: Some("trunk".to_string()),
+                recent_commits: vec![VcsCommitEntry {
+                    hash: "r42".to_string(),
+                    subject: "trunk commit".to_string(),
+                }],
+                staged_files: Vec::new(),
+            }),
+            ..Default::default()
+        };
+        let rendered = render_project_context(&ctx);
+        assert!(
+            rendered.contains("svn branch: trunk"),
+            "expected svn branch label; got:\n{rendered}"
+        );
+        assert!(
+            rendered.contains("r42 trunk commit"),
+            "expected svn commit entry; got:\n{rendered}"
+        );
     }
 }

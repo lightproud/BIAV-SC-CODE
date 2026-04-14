@@ -80,6 +80,7 @@ pub use file_ops::{
     WriteFileOutput,
 };
 pub use git_context::{GitCommitEntry, GitContext};
+pub use identity::{Identity, IdentityEntry, IdentitySource};
 pub use vcs_context::{VcsBackend, VcsCommitEntry, VcsContext};
 pub use hooks::{
     HookAbortSignal, HookEvent, HookProgressEvent, HookProgressReporter, HookRunResult, HookRunner,
