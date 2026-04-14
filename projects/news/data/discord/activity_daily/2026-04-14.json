@@ -1,42 +1,45 @@
 {
   "date": "2026-04-14",
-  "messages": 12841,
+  "messages": 14893,
   "unique_authors": 265,
-  "reactions_total": 1689,
-  "attachments": 642,
+  "reactions_total": 1933,
+  "attachments": 715,
   "channel_activity": {
+    "🔸morimens-game-chat": 8951,
+    "🔸한국어-채팅방": 17,
+    "🔸русский-канал": 925,
+    "🔸canal-español": 404,
+    "🔸canal-português": 410,
+    "🔸ruang-obrolan-indonesia": 92,
+    "🔸traphase": 32,
+    "🔸频道建议┊server-suggestions": 7,
+    "🔸team-building": 472,
+    "🔸general-chat": 251,
+    "🔸邀请码互助┊swap-invitation-codes": 20,
+    "🔸game-question": 896,
+    "🔸机器人命令┊bot-commands": 40,
+    "Anti-AI Policy": 39,
+    "Confused spooder": 1,
+    "Leigh wip!!!!": 1,
+    "continual arachneposting": 6,
+    "Started 2 days ago and not sure what to try to pull for/ focus on for team": 1,
     "🔸綜合討論": 1658,
     "🔸阵容构建": 56,
-    "🔸morimens-game-chat": 7787,
     "🔸晒卡分享": 3,
     "🔸相位对弈": 3,
     "🔸课间休息闲聊": 4,
-    "🔸한국어-채팅방": 14,
     "🔸chaîne-française": 29,
-    "🔸русский-канал": 429,
     "🔸phòng-chat-tiếng-việt": 108,
-    "🔸canal-español": 396,
-    "🔸canal-português": 380,
-    "🔸ruang-obrolan-indonesia": 91,
     "🔸ห้องสนทนาภาษาไทย": 28,
-    "🔸traphase": 17,
     "🔸lore-chat": 87,
-    "🔸频道建议┊server-suggestions": 6,
-    "🔸team-building": 454,
-    "🔸general-chat": 247,
-    "🔸邀请码互助┊swap-invitation-codes": 18,
-    "🔸game-question": 636,
-    "🔸机器人命令┊bot-commands": 31,
     "🔸erica-playground": 4,
     "改编曲": 6,
-    "Anti-AI Policy": 3,
     "Bug: Error code 7004006": 1,
     "所以阿拉克涅的胳膊是三折叠吗？": 4,
     "✅「已解决」有人在发奇怪的东西": 6,
     "✅「Answered」Bug on train mode": 8,
     "[Producer's Letter] You Saved Morimens — Here's Our Promise for the Future Finale": 1,
     "more leigh": 2,
-    "continual arachneposting": 4,
     "Alert 1 guide -13th April": 1,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 41,
     "V2.5.0 无期囚徒┊Perpetual Thrall": 162,
@@ -68,6 +71,10 @@
     "4/13融災": 3
   },
   "hourly_activity": {
+    "19": 821,
+    "20": 874,
+    "21": 641,
+    "22": 484,
     "10": 379,
     "11": 612,
     "12": 522,
@@ -77,7 +84,6 @@
     "16": 861,
     "17": 576,
     "18": 658,
-    "19": 768,
     "0": 615,
     "1": 328,
     "2": 455,
@@ -90,10 +96,9 @@
     "9": 517
   },
   "message_types": {
-    "0": 4456,
-    "19": 1829,
-    "20": 2,
-    "23": 1
+    "0": 1277,
+    "19": 772,
+    "20": 3
   },
   "top_reacted_messages": [
     {
@@ -225,6 +230,14 @@
       "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
     },
     {
+      "id": "1493736973033279509",
+      "channel_id": "1493736973033279509",
+      "content": "Quick chibi because i'm supposed to draw something else rn<:thinking1:1356068128",
+      "author": "zzio_",
+      "reactions": 6,
+      "channel": "Confused spooder"
+    },
+    {
       "id": "1493569815154135081",
       "channel_id": "1170692781216378960",
       "content": "bro's pinging me as if im the game dev 😭",
@@ -247,14 +260,6 @@
       "author": "huahua4855",
       "reactions": 6,
       "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
-    },
-    {
-      "id": "1493495184586047498",
-      "channel_id": "1131839817982947429",
-      "content": "🐱 : 給你100普抽，希望你能熬過這個周年",
-      "author": "heikwok",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }
