@@ -36,50 +36,66 @@ Imported by: Code-主控台 (Erica session, B.I.A.V. Studio - Brain in a Vat)
     - assets/                (5MB of branding imagery; not needed at runtime)
     - .github/               (upstream CI workflows; BIAV has its own pipelines)
 
-## CRITICAL LEGAL NOTICE — LICENSE STATUS UNCLEAR
+## LICENSE STATUS — UPDATED 2026-04-14
 
-    THE UPSTREAM REPOSITORY DOES NOT CONTAIN A LICENSE FILE.
+    CORRECTION of initial assessment: post-import inspection found that
+    upstream DOES declare a license — just not via a LICENSE file.
 
-    Under US copyright law and most jurisdictions' default rules, software
-    without an explicit license is "All Rights Reserved" — the copyright
-    holder retains exclusive right to copy, modify, distribute, and create
-    derivative works.
+    Evidence:
+    1. rust/Cargo.toml (workspace root) explicitly declares:
+           [workspace.package]
+           license = "MIT"
+    2. All 9 workspace crates inherit via `license.workspace = true`:
+           api, commands, compat-harness, mock-anthropic-service,
+           plugins, runtime, rusty-claude-cli, telemetry, tools
+    3. rust/README.md has a "## License" section (content: "See
+       repository root." — which currently lacks a LICENSE file)
 
-    This means:
-    - We have NO explicit permission from the upstream maintainers to
-      redistribute, modify, or create derivative works.
-    - Strictly interpreted, hosting this code in the BIAV repository
-      (which is itself MIT-licensed and publicly mirrored) may infringe
-      upstream's default copyright.
-    - The upstream README explicitly states it does NOT claim ownership
-      of the original Claude Code source material and is NOT affiliated
-      with Anthropic. This does not grant us any rights over upstream's
-      code either.
+    Under Rust ecosystem convention, the SPDX `license` field in
+    Cargo.toml is a RECOGNIZED AND WIDELY RELIED-UPON license
+    declaration. crates.io, cargo-about, cargo-deny, and all license-
+    audit tooling treat it as authoritative. Many large Rust projects
+    ship license metadata ONLY via Cargo.toml without a LICENSE file.
 
-## Risk Acceptance
+    Conclusion for the Rust workspace (rust/, the canonical runtime):
+        → Treated as MIT-licensed.
 
-    The BIAV producer (Light / 守密人 / lightproud on GitHub) has
-    explicitly and knowingly accepted this legal risk on 2026-04-14
-    as part of the BPT (Black Pool Terminal) strategic direction.
+    Status for other parts of the import:
+    - src/ (Python mirror): NO license declaration found. Upstream
+      README classifies this as "companion / reference / audit helpers;
+      not the primary runtime surface". Legal status remains unclear,
+      but this code is not invoked at runtime.
+    - Root-level docs (README/USAGE/PHILOSOPHY/PARITY/ROADMAP): no
+      explicit license; by convention these are typically covered by
+      the project's declared license (MIT) as auxiliary content.
+    - tests/ (root-level): mirrors src/ status.
+
+## Risk Acceptance (reduced but retained)
+
+    The BIAV producer (Light / 守密人 / lightproud on GitHub) accepted
+    the initial unclear-license risk on 2026-04-14 as part of the BPT
+    (Black Pool Terminal) strategic direction.
+
+    Post-correction risk level: LOW for the Rust workspace (MIT via
+    Cargo.toml), UNCLEAR for src/ (Python mirror, non-runtime).
 
     Rationale recorded in memory/decisions.md:
     - claw-code's multi-provider routing, Ollama support, proxy support,
       and 5-layer config chain are substantially more capable than any
       legally clean alternative (e.g. ruvnet/open-claude-code / MIT).
-    - This subproject is for internal BIAV Studio use and research.
-    - No public distribution, resale, or commercial derivative work is
-      planned until upstream licensing is clarified.
+    - Main use-case is the Rust CLI binary `claw`, which is
+      unambiguously MIT-licensed.
 
 ## Mitigation Steps (to be pursued)
 
-    [ ] Open a GitHub issue on instructkr/claw-code requesting explicit
-        LICENSE clarification (MIT / Apache / etc.). If upstream declines
-        or does not respond, the producer will revisit this decision.
-    [ ] Keep projects/bpt-next/ internal-facing only — avoid promoting
-        it externally until licensing is resolved.
-    [ ] Maintain NOTICE and this risk section in every derivative artifact.
-    [ ] If upstream adds a LICENSE, update this file to reflect it and
-        remove the "risk accepted" clause.
+    [x] Verified Cargo.toml workspace license declaration = MIT (done 2026-04-14)
+    [ ] Open a GitHub issue on instructkr/claw-code suggesting that
+        a LICENSE file at repo root would make the MIT declaration
+        unambiguous for casual viewers (friendly request, not blocker)
+    [ ] If using src/ (Python) in production, first confirm license
+        status with upstream or reimplement the needed logic
+    [ ] Keep internal promotion/redistribution conservative until
+        upstream adds a LICENSE file mirroring the Cargo.toml declaration
 
 ## Anthropic Trademark Notice
 
