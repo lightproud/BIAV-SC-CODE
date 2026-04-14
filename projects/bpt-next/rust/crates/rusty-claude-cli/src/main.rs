@@ -2949,7 +2949,9 @@ fn run_resume_command(
         | SlashCommand::Ide { .. }
         | SlashCommand::Tag { .. }
         | SlashCommand::OutputStyle { .. }
-        | SlashCommand::AddDir { .. } => Err("unsupported resumed slash command".into()),
+        | SlashCommand::AddDir { .. }
+        | SlashCommand::Sync { .. }
+        | SlashCommand::Fork { .. } => Err("unsupported resumed slash command".into()),
     }
 }
 
@@ -4009,6 +4011,24 @@ impl LiveCli {
             | SlashCommand::AddDir { .. } => {
                 let cmd_name = command.slash_name();
                 eprintln!("{cmd_name} is not yet implemented in this build.");
+                false
+            }
+            // BPT-NEXT fork extensions — stubbed handlers from commands crate
+            SlashCommand::Sync { mode } => {
+                println!(
+                    "{}",
+                    commands::handle_sync_slash_command_stub(mode.as_deref())
+                );
+                false
+            }
+            SlashCommand::Fork { target, from } => {
+                println!(
+                    "{}",
+                    commands::handle_fork_slash_command_stub(
+                        target.as_deref(),
+                        from.as_deref(),
+                    )
+                );
                 false
             }
             SlashCommand::Unknown(name) => {

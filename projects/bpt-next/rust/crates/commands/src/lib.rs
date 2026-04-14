@@ -1034,6 +1034,21 @@ const SLASH_COMMAND_SPECS: &[SlashCommandSpec] = &[
         argument_hint: None,
         resume_supported: true,
     },
+    // BPT-NEXT fork extensions — Black Pool needs 1 & 2
+    SlashCommandSpec {
+        name: "sync",
+        aliases: &[],
+        summary: "Sync working copy with upstream (VCS-aware: git pull / svn update)",
+        argument_hint: Some("[--rebase|--merge|--dry-run]"),
+        resume_supported: false,
+    },
+    SlashCommandSpec {
+        name: "fork",
+        aliases: &[],
+        summary: "Create a divergent working copy pointing at a new branch / path",
+        argument_hint: Some("<target> [--from <ref>]"),
+        resume_supported: false,
+    },
 ];
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -1179,6 +1194,14 @@ pub enum SlashCommand {
     History {
         count: Option<String>,
     },
+    // BPT-NEXT fork extensions — Black Pool needs 1 & 2
+    Sync {
+        mode: Option<String>,
+    },
+    Fork {
+        target: Option<String>,
+        from: Option<String>,
+    },
     Unknown(String),
 }
 
@@ -1280,6 +1303,9 @@ impl SlashCommand {
             Self::Sandbox => "/sandbox",
             Self::Mcp { .. } => "/mcp",
             Self::Export { .. } => "/export",
+            // BPT-NEXT fork extensions
+            Self::Sync { .. } => "/sync",
+            Self::Fork { .. } => "/fork",
             #[allow(unreachable_patterns)]
             _ => "/unknown",
         }
@@ -1491,8 +1517,41 @@ pub fn validate_slash_command_input(
         "history" => SlashCommand::History {
             count: optional_single_arg(command, &args, "[count]")?,
         },
+        // BPT-NEXT fork extensions — Black Pool needs 1 & 2
+        "sync" => SlashCommand::Sync {
+            mode: optional_single_arg(command, &args, "[--rebase|--merge|--dry-run]")?,
+        },
+        "fork" => parse_fork_command(command, &args)?,
         other => SlashCommand::Unknown(other.to_string()),
     }))
+}
+
+/// Parse `/fork <target> [--from <ref>]` into a [`SlashCommand::Fork`].
+///
+/// Accepted shapes:
+///   /fork                           — target=None, from=None
+///   /fork my-branch                 — target=Some("my-branch")
+///   /fork my-branch --from main     — target=Some("my-branch"), from=Some("main")
+fn parse_fork_command(
+    command: &str,
+    args: &[&str],
+) -> Result<SlashCommand, SlashCommandParseError> {
+    let mut target: Option<String> = None;
+    let mut from: Option<String> = None;
+    let mut iter = args.iter();
+    while let Some(arg) = iter.next() {
+        if *arg == "--from" {
+            let Some(value) = iter.next() else {
+                return Err(usage_error(command, "<target> [--from <ref>]"));
+            };
+            from = Some((*value).to_string());
+        } else if target.is_none() {
+            target = Some((*arg).to_string());
+        } else {
+            return Err(usage_error(command, "<target> [--from <ref>]"));
+        }
+    }
+    Ok(SlashCommand::Fork { target, from })
 }
 fn validate_no_args(command: &str, args: &[&str]) -> Result<(), SlashCommandParseError> {
     if args.is_empty() {
@@ -4110,8 +4169,39 @@ pub fn handle_slash_command(
         | SlashCommand::OutputStyle { .. }
         | SlashCommand::AddDir { .. }
         | SlashCommand::History { .. }
+        | SlashCommand::Sync { .. }
+        | SlashCommand::Fork { .. }
         | SlashCommand::Unknown(_) => None,
     }
+}
+
+// ---------------------------------------------------------------------------
+// BPT-NEXT fork handlers — Black Pool needs 1 & 2 stubs
+// ---------------------------------------------------------------------------
+
+/// Stub handler for `/sync`. Returns a user-facing notice that the command
+/// is recognized but the backing sync pipeline has not yet been wired to
+/// a `VcsContext` backend. Used by REPL dispatch until Phase C.2 lands.
+#[must_use]
+pub fn handle_sync_slash_command_stub(mode: Option<&str>) -> String {
+    let mode_label = mode.unwrap_or("(default)");
+    format!(
+        "/sync recognized (mode={mode_label}). Sync pipeline is a BPT-NEXT \
+         fork extension and will be wired to the VCS abstraction layer in \
+         the next phase. No working copy was modified."
+    )
+}
+
+/// Stub handler for `/fork`. See [`handle_sync_slash_command_stub`].
+#[must_use]
+pub fn handle_fork_slash_command_stub(target: Option<&str>, from: Option<&str>) -> String {
+    let target_label = target.unwrap_or("(unset)");
+    let from_label = from.unwrap_or("HEAD");
+    format!(
+        "/fork recognized (target={target_label}, from={from_label}). Fork \
+         pipeline is a BPT-NEXT fork extension and is not yet wired to a \
+         VCS backend. No working copy was created."
+    )
 }
 
 #[cfg(test)]
@@ -4647,7 +4737,8 @@ mod tests {
         assert!(help.contains("aliases: /skill"));
         assert!(!help.contains("/login"));
         assert!(!help.contains("/logout"));
-        assert_eq!(slash_command_specs().len(), 139);
+        // BPT-NEXT fork: 139 upstream specs + 2 BPT extensions (/sync, /fork) = 141
+        assert_eq!(slash_command_specs().len(), 141);
         assert!(resume_supported_slash_commands().len() >= 39);
     }
 

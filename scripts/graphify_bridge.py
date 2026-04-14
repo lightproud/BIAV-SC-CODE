@@ -150,6 +150,24 @@ def graphify_index(path: str, output_dir: str | None = None) -> dict:
                     "stderr": stderr_buf,
                 }
 
+        # Guard: subprocess may report exit=0 but skip rebuild silently
+        # (e.g. missing optional dep like networkx / tree-sitter), leaving
+        # out_dir non-existent. Surface a clear error instead of crashing
+        # on iterdir() below.
+        if not out_dir.exists():
+            return {
+                "status": "error",
+                "error": (
+                    f"graphify produced no output directory at {out_dir}. "
+                    "This usually means graphify's rebuild step failed "
+                    "silently (e.g. missing Python dependency). Inspect "
+                    "stdout/stderr below and ensure "
+                    "`pip install -e projects/graphify-ext/` has run."
+                ),
+                "stdout": stdout_buf,
+                "stderr": stderr_buf,
+            }
+
         # Optional relocate to caller-supplied output_dir.
         final_out = out_dir
         if output_dir:

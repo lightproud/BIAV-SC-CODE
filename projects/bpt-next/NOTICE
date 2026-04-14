@@ -110,6 +110,43 @@ Imported by: Code-主控台 (Erica session, B.I.A.V. Studio - Brain in a Vat)
     as an alternative implementation and architectural reference. It is
     NOT replaced by bpt-next. Producer may use either or both as needed.
 
+## Hard Fork Declaration — 2026-04-14
+
+    Per producer decision 2026-04-14 (Option C in architecture triage
+    "invasive vs isolated crate vs hard fork"), BPT-NEXT is declared a
+    PERMANENT HARD FORK of instructkr/claw-code.
+
+    Implications:
+    1. BPT-NEXT will NOT pursue upstream contribution for its divergent
+       features (Black Pool 5-need alignment: SVN adaptation, /sync and
+       /fork commands, self-built indexing bridge, identity tracking,
+       memory-writeback hooks). These features are BPT-specific and do
+       not match claw-code's multi-provider CLI focus.
+    2. Upstream patches MAY be cherry-picked into BPT-NEXT at producer's
+       discretion, but there is NO commitment to track upstream main.
+    3. Any code we add is licensed MIT to match the upstream workspace
+       declaration (rust/Cargo.toml `license = "MIT"`) and remain
+       compatible with downstream reuse.
+    4. Upstream attribution (this NOTICE, the "Source" and "License
+       Status" sections above) MUST be preserved indefinitely regardless
+       of how far BPT-NEXT diverges.
+    5. If the divergence becomes so large that the origin claim becomes
+       misleading, BPT-NEXT will be renamed or re-annotated rather than
+       erasing the attribution trail.
+
+    Scope of fork-authorized modifications (effective immediately):
+      - rust/crates/runtime/        — may add new modules, refactor
+                                      existing ones (e.g. git_context.rs
+                                      → vcs_context.rs abstraction)
+      - rust/crates/commands/       — may add new SlashCommand variants
+                                      and specs (e.g. Sync, Fork)
+      - rust/crates/rusty-claude-cli/ — may extend CliAction dispatch
+      - rust/crates/                — may add new crates (e.g. identity)
+      - All other upstream files    — unchanged unless required
+
 ## Change log for this NOTICE
 
     2026-04-14  Initial import with risk acceptance. License unclear.
+    2026-04-14  License status corrected (Cargo.toml MIT verified).
+    2026-04-14  Hard fork declared per producer decision; scope of
+                authorized modifications enumerated above.
