@@ -148,13 +148,17 @@ diff -r --brief \
 - 原计划（已废止）：`memory/bpt-next-design.md`（基于 occ-local 的旧方案，已封存）
 - 研究档案：`/root/.claude/plans/shiny-roaming-eclipse.md`
 
-## 合规与风险
+## 合规与风险（2026-04-14 更新，艾瑞卡核查后修正）
 
 | 项 | 状态 |
 |----|------|
-| 上游 LICENSE | **缺失** |
-| 默认版权归属 | **All Rights Reserved（上游作者）** |
-| 守密人风险接受 | 已明示（2026-04-14） |
-| 对外发布许可 | **禁止**（至上游 LICENSE 明确前） |
-| 内部 BIAV 使用 | 允许（守密人自担风险） |
+| **Rust 工作区（rust/）许可证** | **MIT**（rust/Cargo.toml `[workspace.package] license = "MIT"`；9 crate 全部继承 `license.workspace = true`） |
+| **Python 镜像（src/）许可证** | 仍无声明；上游 README 明确该目录"非主运行时"，仅作参考 |
+| 上游根目录 LICENSE 文件 | 缺失（建议上游补齐，但不影响 Cargo.toml 声明的法律效力） |
+| 主运行时（`claw` CLI） | **MIT 授权，可合法使用** |
+| 守密人风险接受 | 已明示（2026-04-14，初始评估基于"无 LICENSE"悲观假设） |
+| 对外发布许可 | 保守（Rust 部分 MIT 可用；等上游补 LICENSE 文件后可放宽） |
+| 内部 BIAV 使用 | 允许 |
 | Anthropic 商标 | Claude / Claude Code 为 Anthropic PBC 商标，本项目非官方 |
+
+**NOTICE 文件**已同步更新此修正，含完整证据链。
