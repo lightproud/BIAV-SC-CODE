@@ -4245,8 +4245,17 @@ pub fn handle_sync_slash_command(mode: Option<&str>) -> Result<String, String> {
                     ));
                 }
             };
-            let out = run_vcs_cmd("git", &args, &cwd)?;
-            Ok(format!("git {}: {}", args.join(" "), summarize_vcs_output(&out)))
+            match run_vcs_cmd("git", &args, &cwd) {
+                Ok(out) => Ok(format!(
+                    "git {}: {}",
+                    args.join(" "),
+                    summarize_vcs_output(&out)
+                )),
+                Err(err) if looks_like_git_conflict(&err) => {
+                    Err(render_git_conflict_guide(&cwd, &err))
+                }
+                Err(err) => Err(err),
+            }
         }
         VcsBackend::Svn => {
             let args: Vec<&str> = match mode {
@@ -4254,9 +4263,142 @@ pub fn handle_sync_slash_command(mode: Option<&str>) -> Result<String, String> {
                 _ => vec!["update"],
             };
             let out = run_vcs_cmd("svn", &args, &cwd)?;
-            Ok(format!("svn {}: {}", args.join(" "), summarize_vcs_output(&out)))
+            // `svn update` returns exit 0 even on conflicts; inspect the
+            // per-path status prefix for `C` before declaring success.
+            if let Some(guide) = render_svn_conflict_guide_if_any(&out) {
+                return Err(guide);
+            }
+            Ok(format!(
+                "svn {}: {}",
+                args.join(" "),
+                summarize_vcs_output(&out)
+            ))
         }
     }
+}
+
+// ---------------------------------------------------------------------------
+// Phase C.4 (B): /sync conflict guidance
+//
+// These helpers detect the two canonical failure modes and emit a
+// structured, read-only "next steps" report. We deliberately do NOT run
+// interactive prompts — `claw` is primarily a non-interactive CLI surface,
+// and scripted callers need a deterministic Result shape.
+// ---------------------------------------------------------------------------
+
+/// Does the git error output look like a merge / rebase conflict?
+fn looks_like_git_conflict(err: &str) -> bool {
+    let lower = err.to_ascii_lowercase();
+    lower.contains("conflict")
+        || lower.contains("would be overwritten")
+        || lower.contains("automatic merge failed")
+        || lower.contains("needs merge")
+}
+
+/// Shell out to `git status --porcelain` to enumerate unmerged paths.
+/// Returns an empty vec when the probe fails or nothing is conflicted.
+fn conflicted_files_git(cwd: &std::path::Path) -> Vec<String> {
+    let Ok(out) = run_vcs_cmd("git", &["status", "--porcelain"], cwd) else {
+        return Vec::new();
+    };
+    out.lines()
+        .filter_map(|line| {
+            if line.len() < 4 {
+                return None;
+            }
+            let flags: String = line.chars().take(2).collect();
+            // Git's unmerged ("xy") flag pairs — see git-status(1):
+            //   DD unmerged, both deleted
+            //   AU unmerged, added by us
+            //   UD unmerged, deleted by them
+            //   UA unmerged, added by them
+            //   DU unmerged, deleted by us
+            //   AA unmerged, both added
+            //   UU unmerged, both modified
+            const UNMERGED: &[&str] = &["DD", "AU", "UD", "UA", "DU", "AA", "UU"];
+            if UNMERGED.contains(&flags.as_str()) {
+                Some(line[3..].trim().to_string())
+            } else {
+                None
+            }
+        })
+        .collect()
+}
+
+fn render_git_conflict_guide(cwd: &std::path::Path, original_err: &str) -> String {
+    let files = conflicted_files_git(cwd);
+    let mut lines = vec![
+        "/sync detected a Git merge/rebase conflict.".to_string(),
+        String::new(),
+        format!(
+            "Original git error:\n  {}",
+            original_err.lines().next().unwrap_or("unknown")
+        ),
+        String::new(),
+    ];
+    if files.is_empty() {
+        lines.push(
+            "No unmerged entries visible yet — the pull may have halted before touching the index.".to_string(),
+        );
+        lines.push("Inspect with: git status".to_string());
+    } else {
+        lines.push(format!("Conflicted files ({}):", files.len()));
+        for f in &files {
+            lines.push(format!("  - {f}"));
+        }
+    }
+    lines.push(String::new());
+    lines.push("Suggested next steps:".to_string());
+    lines.push("  1. git status                        # confirm conflict list".to_string());
+    lines.push("  2. edit each file above, resolve <<<< ==== >>>> markers".to_string());
+    lines.push("  3. git add <resolved-files>".to_string());
+    lines.push("  4. git merge --continue  (or)  git rebase --continue".to_string());
+    lines.push("  5. Abort instead: git merge --abort  (or)  git rebase --abort".to_string());
+    lines.join("\n")
+}
+
+fn render_svn_conflict_guide_if_any(output: &str) -> Option<String> {
+    // `svn update` streams per-path progress lines. A conflict starts with
+    // `C` in column 1. `!` (missing) and `?` (untracked) are not conflicts.
+    let mut conflicts: Vec<String> = Vec::new();
+    for line in output.lines() {
+        let trimmed = line.trim_end();
+        let Some(first) = trimmed.chars().next() else {
+            continue;
+        };
+        if first != 'C' {
+            continue;
+        }
+        // Skip `Conflict discovered in ...` diagnostic lines from svn itself —
+        // only whole-line flag 'C' followed by whitespace then a path counts.
+        let rest: String = trimmed.chars().skip(1).collect();
+        if !rest.starts_with(' ') && !rest.starts_with('\t') {
+            continue;
+        }
+        let path = rest.trim();
+        if !path.is_empty() {
+            conflicts.push(path.to_string());
+        }
+    }
+    if conflicts.is_empty() {
+        return None;
+    }
+    let mut lines = vec![
+        "/sync detected SVN conflict(s) after `svn update`.".to_string(),
+        String::new(),
+        format!("Conflicted paths ({}):", conflicts.len()),
+    ];
+    for p in &conflicts {
+        lines.push(format!("  - {p}"));
+    }
+    lines.push(String::new());
+    lines.push("Suggested next steps:".to_string());
+    lines.push("  1. svn status                        # review conflict list".to_string());
+    lines.push("  2. Resolve each file (edit in-place, or pick a side)".to_string());
+    lines.push("  3. svn resolve --accept=working <file>".to_string());
+    lines.push("     (or --accept=mine-full / theirs-full for whole-file choices)".to_string());
+    lines.push("  4. Abort instead: svn revert -R .    # discard local changes".to_string());
+    Some(lines.join("\n"))
 }
 
 /// Real handler for `/fork`.
@@ -4327,7 +4469,10 @@ mod vcs_handler_tests {
     //! uses its own cwd, but we do serialize the `current_dir` probe to
     //! avoid cross-test interference.
 
-    use super::{handle_fork_slash_command, handle_sync_slash_command};
+    use super::{
+        handle_fork_slash_command, handle_sync_slash_command, looks_like_git_conflict,
+        render_svn_conflict_guide_if_any,
+    };
     use std::fs;
     use std::path::PathBuf;
     use std::process::Command;
@@ -4468,6 +4613,64 @@ mod vcs_handler_tests {
         let out = result.expect("worktree add should succeed");
         assert!(out.contains("git worktree add"), "{out}");
         assert!(created, "worktree target should have been created");
+    }
+
+    // -----------------------------------------------------------------------
+    // Phase C.4 (B): /sync conflict guidance — pure-string tests.
+    // -----------------------------------------------------------------------
+
+    #[test]
+    fn looks_like_git_conflict_matches_canonical_markers() {
+        assert!(looks_like_git_conflict(
+            "CONFLICT (content): Merge conflict in foo.rs"
+        ));
+        assert!(looks_like_git_conflict(
+            "error: Your local changes to the following files would be overwritten by merge"
+        ));
+        assert!(looks_like_git_conflict(
+            "Automatic merge failed; fix conflicts and then commit the result."
+        ));
+        assert!(looks_like_git_conflict(
+            "error: Entry 'foo.rs' needs merge before checkout"
+        ));
+    }
+
+    #[test]
+    fn looks_like_git_conflict_rejects_unrelated_errors() {
+        assert!(!looks_like_git_conflict("fatal: not a git repository"));
+        assert!(!looks_like_git_conflict(
+            "fatal: Authentication failed for 'https://...'"
+        ));
+        assert!(!looks_like_git_conflict("Already up to date."));
+    }
+
+    #[test]
+    fn render_svn_conflict_guide_parses_c_prefix_paths() {
+        let sample = "\
+U    src/updated.rs
+A    src/added.rs
+C    src/conflicted.rs
+C    src/another.rs
+Updated to revision 1234.
+";
+        let guide = render_svn_conflict_guide_if_any(sample)
+            .expect("conflicts should be detected");
+        assert!(guide.contains("Conflicted paths (2):"));
+        assert!(guide.contains("src/conflicted.rs"));
+        assert!(guide.contains("src/another.rs"));
+        assert!(!guide.contains("src/updated.rs"));
+        assert!(guide.contains("svn resolve --accept="));
+    }
+
+    #[test]
+    fn render_svn_conflict_guide_returns_none_when_clean() {
+        let sample = "\
+U    src/updated.rs
+A    src/added.rs
+Updated to revision 1234.
+";
+        assert!(render_svn_conflict_guide_if_any(sample).is_none());
+        assert!(render_svn_conflict_guide_if_any("").is_none());
     }
 }
 

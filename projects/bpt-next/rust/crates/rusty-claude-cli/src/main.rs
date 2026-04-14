@@ -1457,9 +1457,8 @@ fn render_doctor_report() -> Result<DoctorReport, Box<dyn std::error::Error>> {
     let config = config_loader.load();
     let discovered_config = config_loader.discover();
     let project_context = ProjectContext::discover_with_git(&cwd, DEFAULT_DATE)?;
-    let (project_root, git_branch) =
-        parse_git_status_metadata(project_context.git_status.as_deref());
-    let git_summary = parse_git_workspace_summary(project_context.git_status.as_deref());
+    let (project_root, git_branch, git_summary) =
+        vcs_aware_status_metadata(&cwd, &project_context);
     let empty_config = runtime::RuntimeConfig::empty();
     let sandbox_config = config.as_ref().ok().unwrap_or(&empty_config);
     let context = StatusContext {
@@ -2507,6 +2506,75 @@ fn parse_git_status_metadata(status: Option<&str>) -> (Option<PathBuf>, Option<S
         &env::current_dir().unwrap_or_else(|_| PathBuf::from(".")),
         status,
     )
+}
+
+/// VCS-aware status metadata for doctor / status reporting.
+///
+/// Phase C.4 (A): layers [`runtime::VcsContext`] on top of the legacy
+/// git-specific probes so SVN working copies populate the same
+/// `(project_root, branch, summary)` triple that Git ones do.
+///
+/// Field names in [`StatusContext`] (`git_branch`, `git_summary`) are
+/// retained for backwards-compatibility with the doctor JSON schema;
+/// the semantics here widen to "whichever backend governs `cwd`".
+fn vcs_aware_status_metadata(
+    cwd: &Path,
+    project_context: &ProjectContext,
+) -> (Option<PathBuf>, Option<String>, GitWorkspaceSummary) {
+    let vcs = runtime::VcsContext::detect(cwd);
+    let (project_root, git_branch_from_git) =
+        parse_git_status_metadata(project_context.git_status.as_deref());
+
+    // Prefer a fresh VcsContext probe so SVN working copies (where the
+    // git-only probes return None) surface their branch correctly. Git
+    // repos keep their existing behaviour because `git_branch_from_git`
+    // succeeds first and the fallback chain short-circuits.
+    let branch = git_branch_from_git
+        .or_else(|| vcs.as_ref().and_then(|v| v.branch.clone()));
+
+    let summary = match vcs.as_ref().map(|v| v.backend) {
+        Some(runtime::VcsBackend::Svn) => {
+            svn_workspace_summary(project_context.git_status.as_deref())
+        }
+        _ => parse_git_workspace_summary(project_context.git_status.as_deref()),
+    };
+
+    (project_root, branch, summary)
+}
+
+/// Map `svn status` output onto the [`GitWorkspaceSummary`] shape so the
+/// doctor / status commands can render SVN working copies without a
+/// schema fork. SVN has no real staging area — pending changes (`A`,
+/// `M`, `D`, `R`) are reported under `staged_files` so the caller sees
+/// a non-empty "Staged" count for anything that will be committed on
+/// the next `svn commit`.
+fn svn_workspace_summary(status: Option<&str>) -> GitWorkspaceSummary {
+    let mut summary = GitWorkspaceSummary::default();
+    let Some(text) = status else {
+        return summary;
+    };
+    for line in text.lines() {
+        if line.trim().is_empty() {
+            continue;
+        }
+        let flag = line.chars().next().unwrap_or(' ');
+        match flag {
+            'A' | 'M' | 'D' | 'R' => {
+                summary.changed_files += 1;
+                summary.staged_files += 1;
+            }
+            '?' => {
+                summary.changed_files += 1;
+                summary.untracked_files += 1;
+            }
+            'C' => {
+                summary.changed_files += 1;
+                summary.conflicted_files += 1;
+            }
+            _ => {}
+        }
+    }
+    summary
 }
 
 fn parse_git_status_branch(status: Option<&str>) -> Option<String> {
@@ -5013,9 +5081,8 @@ fn status_context(
     let discovered_config_files = loader.discover().len();
     let runtime_config = loader.load()?;
     let project_context = ProjectContext::discover_with_git(&cwd, DEFAULT_DATE)?;
-    let (project_root, git_branch) =
-        parse_git_status_metadata(project_context.git_status.as_deref());
-    let git_summary = parse_git_workspace_summary(project_context.git_status.as_deref());
+    let (project_root, git_branch, git_summary) =
+        vcs_aware_status_metadata(&cwd, &project_context);
     let sandbox_status = resolve_sandbox_status(runtime_config.sandbox(), &cwd);
     Ok(StatusContext {
         cwd,
@@ -8333,6 +8400,7 @@ mod tests {
         format_unknown_slash_command_message, format_user_visible_api_error,
         merge_prompt_with_stdin, normalize_permission_mode, parse_args, parse_export_args,
         parse_git_status_branch, parse_git_status_metadata_for, parse_git_workspace_summary,
+        svn_workspace_summary,
         parse_history_count, permission_policy, print_help_to, push_output_block,
         render_config_report, render_diff_report, render_diff_report_for, render_memory_report,
         render_prompt_history_report, render_repl_help, render_resume_usage,
@@ -10399,6 +10467,43 @@ UU conflicted.rs",
         assert_eq!(
             summary.headline(),
             "dirty · 4 files · 2 staged, 2 unstaged, 1 untracked, 1 conflicted"
+        );
+    }
+
+    #[test]
+    fn svn_workspace_summary_maps_pending_changes_and_untracked_and_conflicts() {
+        // Phase C.4 (A): SVN status output onto GitWorkspaceSummary shape.
+        let sample = "\
+A       src/new_file.rs
+M       src/lib.rs
+D       old.rs
+R       replaced.rs
+?       untracked.tmp
+C       conflicted.rs
+!       missing.rs
+";
+        let summary = svn_workspace_summary(Some(sample));
+        assert_eq!(
+            summary,
+            GitWorkspaceSummary {
+                // A + M + D + R + ? + C (all accounted, `!` ignored as not
+                // committable)
+                changed_files: 6,
+                // SVN has no staging — pending changes reported as staged
+                staged_files: 4,
+                unstaged_files: 0,
+                untracked_files: 1,
+                conflicted_files: 1,
+            }
+        );
+    }
+
+    #[test]
+    fn svn_workspace_summary_returns_default_on_none_or_empty() {
+        assert_eq!(svn_workspace_summary(None), GitWorkspaceSummary::default());
+        assert_eq!(
+            svn_workspace_summary(Some("")),
+            GitWorkspaceSummary::default()
         );
     }
 
