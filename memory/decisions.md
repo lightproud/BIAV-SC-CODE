@@ -39,6 +39,7 @@
 | main 分支添加 Ruleset 保护规则（禁止删除） | 全局 |
 | 双系统架构：银芯（公开层）+ 黑池（内部层），数据隔离，架构共享 | 全局 |
 | 引入 occ-local 子项目：基于 ruvnet/open-claude-code (MIT) 的本地 Claude Code CLI，供脱离 Anthropic 账号的研究/内部场景使用；仅拷贝 v2/ 核心 547K，排除 archive/assets/submodule；定制以 patch 形式管理不污染上游骨架 | 全局 / occ-local |
+| BPT 新一代基于 occ-local 重建：采用路径 B（平行新建 projects/bpt-next/）+ Electron + React UI（继承 bpt/bpt-desktop）+ 最终收敛为单一 BPT（bpt / bpt-web / bpt-desktop 归档 archive/）；occ-local 通过相对路径 import 不 fork 不 copy；设计蓝图见 memory/bpt-next-design.md；Phase 0-5 路线图 | 全局 / bpt-next |
 | 银芯事实圣经边界：仅收录公开可查阅信息 | 全局 |
 | 战略规划 2026：四阶段计划，详见 strategic-plan-2026.md | 全局 |
 | 黑池已上线（2026-04-03），内网 SVN + Qoder，全员使用，核心痛点：知识结构化传承 | 全局 |

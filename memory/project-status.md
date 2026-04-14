@@ -12,7 +12,8 @@
 | news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 桥接 Discord → 聚合器、月度归档清理 |
 | wiki（数据集 + Wiki 站点） | 数据补全中 | Code-wiki | 触发 fetch-wiki-data workflow 抓取 47 个角色技能数据 + 12 个缺失立绘 |
 | game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
-| occ-local（本地 Claude Code CLI） | 新引入，未适配 | 主控台 | 编写 detect-provider-local-prefix.patch + LOCAL-SETUP.md；本地 Ollama 连通性验证 |
+| occ-local（本地 Claude Code CLI） | 新引入，作为 bpt-next 内核 | 主控台 | 作为 bpt-next 的 electron/occ-core/ 引用源，不直接适配 |
+| bpt-next（新一代 BPT，基于 occ-local + Electron） | 设计阶段，等待搭建批准 | 主控台 | Phase 0 骨架：切分支 + 创建 projects/bpt-next/ + Electron/Vite/React 最小启动 |
 
 ## News 新闻聚合 + 报告系统
 
