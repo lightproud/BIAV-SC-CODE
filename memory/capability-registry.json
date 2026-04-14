@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "generated_at": "2026-04-14",
+    "generated_by": "Code-主控台 subagent (艾瑞卡扫描任务)",
+    "scope": "BIAV Studio team-internal (silver side inventory)",
+    "note": "v1 初版能力清单，对应黑池架构需求 5（团队共享技能/代理/MCP）。后续由艾瑞卡 review 扩展。扫描范围：.claude/commands, .claude/skills, .claude/agents, scripts/mcp_server.py, assets/data/character-personas/",
+    "source_paths_scanned": [
+      ".claude/commands/",
+      ".claude/skills/ (不存在)",
+      ".claude/agents/ (不存在)",
+      "scripts/mcp_server.py",
+      "assets/data/character-personas/"
+    ]
+  },
+  "skills": [
+    {
+      "name": "daily-news",
+      "path": ".claude/commands/daily-news.md",
+      "summary": "Run the news aggregator and verify output"
+    },
+    {
+      "name": "sync-memory",
+      "path": ".claude/commands/sync-memory.md",
+      "summary": "Check all sub-project actual file states and sync shared memory files"
+    },
+    {
+      "name": "validate-data",
+      "path": ".claude/commands/validate-data.md",
+      "summary": "Validate all JSON data files in the wiki database"
+    }
+  ],
+  "agents": [],
+  "mcp_tools": [
+    {
+      "name": "memory_search",
+      "module": "scripts/mcp_server.py",
+      "summary": "搜索银芯知识库，基于 TF-IDF 向量检索 + 4 维重排序（语义/新鲜度/访问频率/图谱距离），返回最相关的知识块"
+    },
+    {
+      "name": "graph_query",
+      "module": "scripts/mcp_server.py",
+      "summary": "查询知识图谱中的实体及其关联，支持角色名、系统名、概念名"
+    },
+    {
+      "name": "graph_related_files",
+      "module": "scripts/mcp_server.py",
+      "summary": "查找与实体相关的文件，按图谱距离排序"
+    },
+    {
+      "name": "memory_utility",
+      "module": "scripts/mcp_server.py",
+      "summary": "查看记忆文件效用排名（MemRL-lite EMA 追踪），识别高价值/待归档文件"
+    },
+    {
+      "name": "check_cache",
+      "module": "scripts/mcp_server.py",
+      "summary": "查询 Sleep-Time Compute 预计算缓存（深睡时预生成的常见问题答案）"
+    },
+    {
+      "name": "recommend_context",
+      "module": "scripts/mcp_server.py",
+      "summary": "根据当前话题推荐应加载的知识文件（向量检索 + 图谱 + 效用综合）"
+    },
+    {
+      "name": "rebuild_indexes",
+      "module": "scripts/mcp_server.py",
+      "summary": "重建所有索引：向量索引 + 知识图谱 + 效用分数"
+    },
+    {
+      "name": "store_facts",
+      "module": "scripts/mcp_server.py",
+      "summary": "存储本次对话中发现的重要知识事实，支持自动去重（相似度 >75% 合并）"
+    },
+    {
+      "name": "memory_writeback",
+      "module": "scripts/mcp_server.py",
+      "summary": "将当前会话产生的新知识写回知识库，自动检测 git 变更并增量重索引"
+    },
+    {
+      "name": "session_briefing",
+      "module": "scripts/mcp_server.py",
+      "summary": "新会话启动智能简报，综合 6 个数据源（上次回顾/git 变更/做梦发现/话题动量/效用趋势/推荐上下文）"
+    },
+    {
+      "name": "character_persona",
+      "module": "scripts/mcp_server.py",
+      "summary": "激活角色人格模式，让 AI 以游戏角色语气进行对话，跨平台支持银芯/黑池终端/黑池系统"
+    }
+  ],
+  "character_personas": [
+    {
+      "name": "erica",
+      "display_name": "艾瑞卡",
+      "display_name_en": "Erica",
+      "path": "assets/data/character-personas/erica.json",
+      "affiliation": "弥萨格大学",
+      "role_in_silver_core": "数据库终端 / 自动人偶，默认会话角色人格"
+    }
+  ]
+}

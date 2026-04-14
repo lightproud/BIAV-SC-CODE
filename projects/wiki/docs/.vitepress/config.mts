@@ -1,4 +1,7 @@
 import { defineConfig } from 'vitepress'
+import { buildTeamDecisionsSidebar } from './sidebars/team-decisions.auto.mts'
+
+const teamDecisionsSidebar = buildTeamDecisionsSidebar()
 
 export default defineConfig({
   title: '忘却前夜 Wiki',
@@ -36,27 +39,32 @@ export default defineConfig({
           { text: 'UI 资源', link: '/ui-resources' },
         ]
       },
+      { text: '团队决策', link: '/zh/team-decisions/' },
     ],
-    sidebar: [
-      {
-        text: '客户端数据',
-        items: [
-          { text: '语音台词', link: '/voice-lines' },
-          { text: '收藏馆百科', link: '/collection-hall' },
-          { text: '道具背景故事', link: '/item-stories' },
-        ]
-      },
-      {
-        text: '美术资产画廊',
-        items: [
-          { text: 'CG 画廊', link: '/cg-gallery' },
-          { text: '角色立绘', link: '/portraits' },
-          { text: '战斗单位', link: '/battle-units' },
-          { text: '图标', link: '/icons' },
-          { text: 'UI 资源', link: '/ui-resources' },
-        ]
-      }
-    ],
+    sidebar: {
+      '/zh/team-decisions/': [teamDecisionsSidebar],
+      '/': [
+        {
+          text: '客户端数据',
+          items: [
+            { text: '语音台词', link: '/voice-lines' },
+            { text: '收藏馆百科', link: '/collection-hall' },
+            { text: '道具背景故事', link: '/item-stories' },
+          ]
+        },
+        {
+          text: '美术资产画廊',
+          items: [
+            { text: 'CG 画廊', link: '/cg-gallery' },
+            { text: '角色立绘', link: '/portraits' },
+            { text: '战斗单位', link: '/battle-units' },
+            { text: '图标', link: '/icons' },
+            { text: 'UI 资源', link: '/ui-resources' },
+          ]
+        },
+        teamDecisionsSidebar,
+      ],
+    },
     outline: { label: '本页目录' },
     docFooter: { prev: '上一篇', next: '下一篇' },
     lastUpdated: { text: '最后更新' },
