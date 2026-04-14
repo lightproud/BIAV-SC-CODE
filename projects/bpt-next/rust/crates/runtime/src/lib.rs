@@ -13,7 +13,8 @@ mod config;
 pub mod config_validate;
 mod conversation;
 mod file_ops;
-mod git_context;
+pub mod git_context;
+pub mod vcs_context;
 pub mod green_contract;
 mod hooks;
 mod json;
@@ -79,6 +80,7 @@ pub use file_ops::{
     WriteFileOutput,
 };
 pub use git_context::{GitCommitEntry, GitContext};
+pub use vcs_context::{VcsBackend, VcsCommitEntry, VcsContext};
 pub use hooks::{
     HookAbortSignal, HookEvent, HookProgressEvent, HookProgressReporter, HookRunResult, HookRunner,
 };
