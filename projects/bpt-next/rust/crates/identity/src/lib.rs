@@ -22,6 +22,7 @@ use std::fs;
 use std::io;
 use std::path::{Path, PathBuf};
 use std::process::Command;
+use std::sync::OnceLock;
 use std::time::Duration;
 
 use serde::{Deserialize, Serialize};
@@ -281,10 +282,32 @@ fn write_home_config(config: &ConfigFile) -> io::Result<()> {
 // Public API
 // ---------------------------------------------------------------------------
 
-/// Resolve the operator identity by probing each source in priority order.
-/// Guaranteed to return a value: worst case `source == IdentitySource::Os`.
+/// Cached operator identity.
+///
+/// BPT-NEXT Phase C.3: the full probe chain can spawn an `svn info` child
+/// process that blocks for up to 5 seconds when SVN is unavailable. Caching
+/// the result collapses the N calls per prompt pipeline assembly into a
+/// single probe per process lifetime.
+///
+/// Tests that need to exercise the probe chain itself must call
+/// [`resolve_identity`] directly, which bypasses the cache.
+static CACHED_IDENTITY: OnceLock<Identity> = OnceLock::new();
+
+/// Resolve the operator identity (cached per process lifetime).
+///
+/// First call probes the sources in priority order (see [`resolve_identity`]);
+/// subsequent calls return a clone of the cached value with zero probe cost.
 #[must_use]
 pub fn get_identity() -> Identity {
+    CACHED_IDENTITY.get_or_init(resolve_identity).clone()
+}
+
+/// Resolve the operator identity by probing each source in priority order,
+/// bypassing the [`get_identity`] cache.
+///
+/// Guaranteed to return a value: worst case `source == IdentitySource::Os`.
+#[must_use]
+pub fn resolve_identity() -> Identity {
     let probes: [(IdentitySource, fn() -> Option<String>); 4] = [
         (IdentitySource::SvnInfo, probe_svn_info),
         (IdentitySource::SvnCache, probe_svn_cache),
@@ -450,10 +473,23 @@ mod tests {
     }
 
     #[test]
-    fn get_identity_never_returns_empty_account() {
-        let id = get_identity();
+    fn resolve_identity_never_returns_empty_account() {
+        // Exercises the probe chain directly (bypasses the OnceLock cache so
+        // the guarantee is tested independently of whatever other test ran
+        // first and seeded the cache).
+        let id = resolve_identity();
         assert!(!id.account.is_empty());
         assert!(!id.display_name.is_empty());
+    }
+
+    #[test]
+    fn cached_identity_returns_same_value_on_repeat() {
+        // OnceLock guarantees identical values; this test also documents that
+        // `get_identity` is a cheap cloneable API that callers can hit
+        // liberally in prompt assembly.
+        let first = get_identity();
+        let second = get_identity();
+        assert_eq!(first, second);
     }
 
     #[test]

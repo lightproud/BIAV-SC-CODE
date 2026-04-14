@@ -1040,14 +1040,14 @@ const SLASH_COMMAND_SPECS: &[SlashCommandSpec] = &[
         aliases: &[],
         summary: "Sync working copy with upstream (VCS-aware: git pull / svn update)",
         argument_hint: Some("[--rebase|--merge|--dry-run]"),
-        resume_supported: false,
+        resume_supported: true,
     },
     SlashCommandSpec {
         name: "fork",
         aliases: &[],
         summary: "Create a divergent working copy pointing at a new branch / path",
         argument_hint: Some("<target> [--from <ref>]"),
-        resume_supported: false,
+        resume_supported: true,
     },
 ];
 
@@ -4262,7 +4262,12 @@ pub fn handle_sync_slash_command(mode: Option<&str>) -> Result<String, String> {
 /// Real handler for `/fork`.
 ///
 /// Git: `git worktree add <target> [<from>]`.
-/// Svn: not implemented in Phase C.2 — returns a placeholder message.
+/// Svn (Phase C.3): `svn info --show-item url` to discover the repo URL,
+/// then `svn checkout <url> <target>` to create a second working copy of
+/// the same repository. SVN has no worktree primitive — creating a parallel
+/// checkout is the closest semantic. The `from` argument is accepted for
+/// call-site symmetry with Git but ignored on SVN because branch-refs have
+/// no matching concept.
 pub fn handle_fork_slash_command(
     target: Option<&str>,
     from: Option<&str>,
@@ -4286,9 +4291,20 @@ pub fn handle_fork_slash_command(
                 summarize_vcs_output(&out)
             ))
         }
-        VcsBackend::Svn => Ok(format!(
-            "SVN /fork for target={target} is not yet implemented (deferred to Phase C.3)."
-        )),
+        VcsBackend::Svn => {
+            // `from` is accepted but ignored — SVN has no ref-to-URL mapping.
+            let _ = from;
+            let url_raw = run_vcs_cmd("svn", &["info", "--show-item", "url"], &cwd)?;
+            let url = url_raw.trim();
+            if url.is_empty() {
+                return Err("svn info returned empty url for current working copy".into());
+            }
+            let out = run_vcs_cmd("svn", &["checkout", url, target], &cwd)?;
+            Ok(format!(
+                "svn checkout {url} {target}: {}",
+                summarize_vcs_output(&out)
+            ))
+        }
     }
 }
 
