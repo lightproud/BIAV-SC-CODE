@@ -1,20 +1,38 @@
 {
   "last_session": {
-    "id": "d84da5ac",
-    "timestamp": "2026-04-15T03:16:50.500000+00:00",
-    "duration_minutes": 509.4,
+    "id": "6b527255",
+    "timestamp": "2026-04-15T05:22:54.577000+00:00",
+    "duration_minutes": 635.5,
     "branch": "claude/review-ai-app-architecture-4eNiu",
     "topics": [
       "BPT",
       "黑池"
     ],
     "decisions": [],
-    "files_changed": [],
+    "files_changed": [
+      "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
+      "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
+    ],
     "open_items": [
       "改动的风险差异巨大"
     ]
   },
   "recent_sessions": [
+    {
+      "id": "d84da5ac",
+      "timestamp": "2026-04-15T03:16:50.500000+00:00",
+      "duration_minutes": 509.4,
+      "branch": "claude/review-ai-app-architecture-4eNiu",
+      "topics": [
+        "BPT",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": [
+        "改动的风险差异巨大"
+      ]
+    },
     {
       "id": "a99bf454",
       "timestamp": "2026-04-15T03:09:52.567000+00:00",
@@ -148,46 +166,15 @@
         "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/prompt.rs"
       ],
       "open_items": []
-    },
-    {
-      "id": "e00a4d4e",
-      "timestamp": "2026-04-14T08:03:47.667000+00:00",
-      "duration_minutes": 484.0,
-      "branch": "claude/bpt-next-bootstrap-Q41x3",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/settings.json",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
-        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/commands/src/lib.rs",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/identity/Cargo.toml",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/identity/src/lib.rs",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/Cargo.toml",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/conversation.rs",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/lib.rs",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/prompt.rs"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 4.16,
-      "黑池": 4.16
+      "BPT": 4.33,
+      "黑池": 4.33
     },
     "hot_files": [],
-    "total_sessions": 43
+    "total_sessions": 44
   },
-  "updated_at": "2026-04-15T03:20:59.420123+00:00"
+  "updated_at": "2026-04-15T05:27:39.398991+00:00"
 }
