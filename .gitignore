@@ -45,5 +45,6 @@ assets/data/sentinel-baseline.json
 projects/news/output/alerts.json
 
 # session digests — only .md conversation records are committed;
-# .json metadata stays local (no longer generated in v0.3)
+# .json metadata and .jsonl progress logs stay local (no longer generated in v0.3)
 memory/session-digests/*.json
+memory/session-digests/*.jsonl
