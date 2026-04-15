@@ -1,32 +1,51 @@
 {
   "date": "2026-04-15",
-  "messages": 10388,
+  "messages": 13593,
   "unique_authors": 424,
-  "reactions_total": 1581,
-  "attachments": 545,
+  "reactions_total": 1965,
+  "attachments": 727,
   "channel_activity": {
-    "🔸綜合討論": 985,
-    "🔸阵容构建": 120,
-    "🔸morimens-game-chat": 4598,
+    "🔸綜合討論": 1241,
+    "🔸阵容构建": 121,
+    "🔸morimens-game-chat": 6555,
+    "🔸欢乐梗图": 1,
+    "🔸한국어-채팅방": 24,
+    "🔸deutscher-chatraum": 4,
+    "🔸русский-канал": 302,
+    "🔸phòng-chat-tiếng-việt": 308,
+    "🔸canal-español": 113,
+    "🔸canal-português": 1596,
+    "🔸ruang-obrolan-indonesia": 426,
+    "🔸ห้องสนทนาภาษาไทย": 26,
+    "🔸traphase": 22,
+    "🔸lore-chat": 169,
+    "🔸频道建议┊server-suggestions": 15,
+    "🔸team-building": 426,
+    "🔸general-chat": 1156,
+    "🔸邀请码互助┊swap-invitation-codes": 12,
+    "🔸game-question": 487,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 40,
+    "约稿分享": 2,
+    "Slay the Spire Morimens Modding Log": 3,
+    "Choose An Awakener/Wheel": 45,
+    "Get Auto enable for dtide": 1,
+    "doodles and sketches !! (art thread)": 6,
+    "Morimens Fanarts": 1,
+    "MOUCHETTE BEST GIRL (mimi unhinged ramble + art sometimes)": 1,
+    "continual arachneposting": 5,
+    "🎬 V2.5.0 概念PV「命途罗织之网」┊PV - Web of the Moirai": 104,
+    "V2.5.0 命运剧院┊Theater of Fate": 112,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 5,
+    "大佬們好,有沒有紅花的配隊建議,感激不盡": 1,
+    "回鍋玩家健檢 求抽卡&組隊建議": 9,
+    "大家好，希望各位前輩協助檢視目前我的箱內能夠大概組怎樣的隊伍打融災": 10,
+    "求求配对和抽卡建议，谢谢☺️": 7,
+    "Please help with teambuilding and who to pull": 6,
+    "1494035453412904971": 1,
     "🔸晒卡分享": 3,
     "🔸课间休息闲聊": 69,
-    "🔸한국어-채팅방": 22,
-    "🔸deutscher-chatraum": 2,
-    "🔸русский-канал": 296,
-    "🔸phòng-chat-tiếng-việt": 278,
-    "🔸canal-español": 70,
-    "🔸canal-português": 1493,
-    "🔸ruang-obrolan-indonesia": 411,
-    "🔸ห้องสนทนาภาษาไทย": 25,
-    "🔸traphase": 3,
-    "🔸lore-chat": 124,
     "🔸礼包码┊gift-codes": 1,
-    "🔸频道建议┊server-suggestions": 7,
-    "🔸team-building": 136,
-    "🔸general-chat": 939,
-    "🔸邀请码互助┊swap-invitation-codes": 6,
-    "🔸game-question": 393,
-    "🔸机器人命令┊bot-commands": 29,
     "改编曲": 1,
     "給你遊拉磨😋": 2,
     "My game is being dissoluted": 1,
@@ -41,27 +60,25 @@
     "Covenant Rework Suggestion": 1,
     "\"24\" lives matter": 1,
     "Aurita fanart": 1,
-    "doodles and sketches !! (art thread)": 3,
     "Arachne wip": 1,
     "\"welcome\" back": 2,
     "The reason I love Morimens": 1,
     "Confused spooder": 2,
     "Leigh wip!!!!": 1,
-    "continual arachneposting": 4,
     "William posting": 1,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 6,
-    "🎬 V2.5.0 概念PV「命途罗织之网」┊PV - Web of the Moirai": 100,
-    "V2.5.0 命运剧院┊Theater of Fate": 100,
     "V2.5.0 无期囚徒┊Perpetual Thrall": 15,
-    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 3,
-    "回鍋玩家健檢 求抽卡&組隊建議": 8,
     "刚回坑，能帮忙看看阵容和后面要抽谁": 56,
-    "求求配对和抽卡建议，谢谢☺️": 4,
     "What banners to pull on": 9,
     "Started 2 days ago and not sure what to try to pull for/ focus on for team": 5,
     "1 Week Account Pulling Advice?": 1
   },
   "hourly_activity": {
+    "14": 819,
+    "15": 1149,
+    "16": 689,
+    "18": 602,
+    "17": 588,
     "0": 841,
     "1": 856,
     "2": 621,
@@ -75,14 +92,14 @@
     "10": 546,
     "11": 800,
     "12": 644,
-    "13": 900,
-    "14": 639,
-    "15": 3
+    "13": 900
   },
   "message_types": {
-    "19": 3256,
-    "0": 7131,
-    "20": 1
+    "19": 1079,
+    "0": 2123,
+    "23": 1,
+    "20": 1,
+    "21": 1
   },
   "top_reacted_messages": [
     {
@@ -110,12 +127,36 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1494045144242978957",
+      "channel_id": "1170692781216378960",
+      "content": "My normal vortice team has 400 hp no whaling",
+      "author": "bruhlucifer",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1493817562666893364",
       "channel_id": "1493507096577183815",
       "content": "💀love to see original artists struggle and get accused of ai nowadays so often w",
       "author": "kalpiko.",
       "reactions": 8,
       "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
+    },
+    {
+      "id": "1493989415800799465",
+      "channel_id": "1170692781216378960",
+      "content": "Aurita fanart! man i love Aurita, we need more positivity in our life (hope i ca",
+      "author": "theomegafish",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494000432983445564",
+      "channel_id": "1170692781216378960",
+      "content": "yippie!",
+      "author": "happy_boi_hilaal",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1493847163925430312",
@@ -166,6 +207,22 @@
       "channel": "🎬 V2.5.0 概念PV「命途罗织之网」┊PV - Web of the Moirai"
     },
     {
+      "id": "1493998825772154960",
+      "channel_id": "1131839817982947429",
+      "content": "意外的好",
+      "author": "heikwok",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1494007187746459709",
+      "channel_id": "1170692781216378960",
+      "content": "What if arachne sucks",
+      "author": "monchi3524",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1493845831214698516",
       "channel_id": "1131839817982947429",
       "content": "肯定是石油危機的錯",
@@ -204,46 +261,6 @@
       "author": "astravaig",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493929465292652596",
-      "channel_id": "1170692781216378960",
-      "content": "I wouldn't mind 2 thais tier support",
-      "author": "aurora3981",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493972751311048884",
-      "channel_id": "1170692781216378960",
-      "content": "Yes to stat check w1",
-      "author": "aurora3981",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493818873202610217",
-      "channel_id": "1493818873202610217",
-      "content": "Part of the reason I started playing morimens is because I couldn't believe that",
-      "author": "apophiseyes",
-      "reactions": 6,
-      "channel": "The reason I love Morimens"
-    },
-    {
-      "id": "1493846457286131855",
-      "channel_id": "1131839817982947429",
-      "content": "||現在再問真的還有意義嘛bug都拖幾個月了||",
-      "author": "ahuahuahua",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1493846666548347041",
-      "channel_id": "1131839817982947429",
-      "content": "再問紀行內容倒扣石頭",
-      "author": "hon_ey0",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }
