@@ -1,37 +1,38 @@
 {
   "date": "2026-04-14",
-  "messages": 14893,
+  "messages": 15777,
   "unique_authors": 265,
-  "reactions_total": 1933,
-  "attachments": 715,
+  "reactions_total": 2018,
+  "attachments": 758,
   "channel_activity": {
-    "🔸morimens-game-chat": 8951,
+    "🔸綜合討論": 1659,
+    "🔸阵容构建": 57,
+    "🔸morimens-game-chat": 9353,
+    "🔸晒卡分享": 4,
+    "🔸русский-канал": 1037,
+    "🔸phòng-chat-tiếng-việt": 109,
+    "🔸canal-español": 431,
+    "🔸canal-português": 504,
+    "🔸ruang-obrolan-indonesia": 93,
+    "🔸traphase": 38,
+    "🔸lore-chat": 102,
+    "🔸general-chat": 254,
+    "🔸邀请码互助┊swap-invitation-codes": 21,
+    "🔸game-question": 1111,
+    "continual arachneposting": 9,
+    "刚回坑，能帮忙看看阵容和后面要抽谁": 1,
     "🔸한국어-채팅방": 17,
-    "🔸русский-канал": 925,
-    "🔸canal-español": 404,
-    "🔸canal-português": 410,
-    "🔸ruang-obrolan-indonesia": 92,
-    "🔸traphase": 32,
     "🔸频道建议┊server-suggestions": 7,
     "🔸team-building": 472,
-    "🔸general-chat": 251,
-    "🔸邀请码互助┊swap-invitation-codes": 20,
-    "🔸game-question": 896,
     "🔸机器人命令┊bot-commands": 40,
     "Anti-AI Policy": 39,
     "Confused spooder": 1,
     "Leigh wip!!!!": 1,
-    "continual arachneposting": 6,
     "Started 2 days ago and not sure what to try to pull for/ focus on for team": 1,
-    "🔸綜合討論": 1658,
-    "🔸阵容构建": 56,
-    "🔸晒卡分享": 3,
     "🔸相位对弈": 3,
     "🔸课间休息闲聊": 4,
     "🔸chaîne-française": 29,
-    "🔸phòng-chat-tiếng-việt": 108,
     "🔸ห้องสนทนาภาษาไทย": 28,
-    "🔸lore-chat": 87,
     "🔸erica-playground": 4,
     "改编曲": 6,
     "Bug: Error code 7004006": 1,
@@ -71,10 +72,11 @@
     "4/13融災": 3
   },
   "hourly_activity": {
+    "23": 479,
+    "22": 889,
     "19": 821,
     "20": 874,
     "21": 641,
-    "22": 484,
     "10": 379,
     "11": 612,
     "12": 522,
@@ -96,9 +98,8 @@
     "9": 517
   },
   "message_types": {
-    "0": 1277,
-    "19": 772,
-    "20": 3
+    "19": 268,
+    "0": 616
   },
   "top_reacted_messages": [
     {
@@ -174,6 +175,14 @@
       "channel": "Anti-AI Policy"
     },
     {
+      "id": "1493748552159985796",
+      "channel_id": "1170692781216378960",
+      "content": "Anna drew it",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1493515540734545960",
       "channel_id": "1493507096577183815",
       "content": "I need kit",
@@ -230,6 +239,14 @@
       "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
     },
     {
+      "id": "1493759020928991242",
+      "channel_id": "1131839817982947429",
+      "content": "~~感觉好神经~~  \n刮痧一不小心把N一阶段刮死了没能穿两条血",
+      "author": "sweet_25367",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1493736973033279509",
       "channel_id": "1493736973033279509",
       "content": "Quick chibi because i'm supposed to draw something else rn<:thinking1:1356068128",
@@ -244,22 +261,6 @@
       "author": "craux.",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493647975417909398",
-      "channel_id": "1170692781216378960",
-      "content": "redz: 40 keyflare on burial set\nmelwyn: 40 dr on life drain set",
-      "author": "arkaether",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493662911388844083",
-      "channel_id": "1493507096577183815",
-      "content": "In UGC fanart program, that have clearly stated that AI cannot be used.I think t",
-      "author": "huahua4855",
-      "reactions": 6,
-      "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
     }
   ]
 }
