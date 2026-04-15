@@ -1,36 +1,62 @@
 {
   "last_session": {
-    "id": "e98ab7a1",
-    "timestamp": "2026-04-14T08:03:47.667000+00:00",
-    "duration_minutes": 484.0,
-    "branch": "claude/bpt-next-bootstrap-Q41x3",
+    "id": "f4620e58",
+    "timestamp": "2026-04-15T17:24:22.913000+00:00",
+    "duration_minutes": 4401.2,
+    "branch": "claude/add-claude-documentation-X4zRQ",
     "topics": [],
-    "decisions": [],
+    "decisions": [
+      "v6 | `.github/workflows/extract-game-data.yml` |"
+    ],
     "files_changed": [
-      "/home/user/brain-in-a-vat/.claude/settings.json",
+      "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/check-version.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/discord-archive.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/discord-history-backfill.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/extract-game-data.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/fetch-wiki-data.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+      "/home/user/brain-in-a-vat/.gitignore",
       "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
-      "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
-      "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
-      "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
-      "/home/user/brain-in-a-vat/memory/decisions.md",
-      "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
       "/home/user/brain-in-a-vat/memory/project-status.md",
-      "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-      "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
-      "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
-      "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
-      "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/commands/src/lib.rs",
-      "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/identity/Cargo.toml",
-      "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/identity/src/lib.rs",
-      "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/Cargo.toml",
-      "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/conversation.rs",
-      "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/lib.rs",
-      "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/prompt.rs"
+      "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "e98ab7a1",
+      "timestamp": "2026-04-14T08:03:47.667000+00:00",
+      "duration_minutes": 484.0,
+      "branch": "claude/bpt-next-bootstrap-Q41x3",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.claude/settings.json",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
+        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/commands/src/lib.rs",
+        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/identity/Cargo.toml",
+        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/identity/src/lib.rs",
+        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/Cargo.toml",
+        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/conversation.rs",
+        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/lib.rs",
+        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/prompt.rs"
+      ],
+      "open_items": []
+    },
     {
       "id": "e00a4d4e",
       "timestamp": "2026-04-14T08:03:47.667000+00:00",
@@ -276,55 +302,23 @@
         "/root/.claude/plans/shiny-roaming-eclipse.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "7bda5a39",
-      "timestamp": "2026-04-14T03:00:42.319000+00:00",
-      "duration_minutes": 180.9,
-      "branch": "claude/bpt-next-bootstrap-Q41x3",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/settings.json",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
-        "/home/user/brain-in-a-vat/projects/graphify-ext/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/graphify-ext/NOTICE",
-        "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/occ-local/NOTICE",
-        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-        "/home/user/brain-in-a-vat/scripts/silver-mem-install.sh",
-        "/root/.claude/plans/shiny-roaming-eclipse.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
-    "topic_weights": {
-      "BPT": 0.11,
-      "MCP": 0.11
-    },
+    "topic_weights": {},
     "hot_files": [
-      "/home/user/brain-in-a-vat/.claude/settings.json",
       "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/memory/project-status.md",
+      "/home/user/brain-in-a-vat/.claude/settings.json",
       "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
       "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
       "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
       "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
       "/home/user/brain-in-a-vat/memory/decisions.md",
-      "/home/user/brain-in-a-vat/memory/project-status.md",
       "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
       "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md"
     ],
-    "total_sessions": 35
+    "total_sessions": 36
   },
-  "updated_at": "2026-04-14T08:16:17.346988+00:00"
+  "updated_at": "2026-04-15T17:29:01.822157+00:00"
 }
