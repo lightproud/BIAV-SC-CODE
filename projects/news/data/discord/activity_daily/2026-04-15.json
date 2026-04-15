@@ -1,31 +1,38 @@
 {
   "date": "2026-04-15",
-  "messages": 13593,
+  "messages": 15731,
   "unique_authors": 424,
-  "reactions_total": 1965,
-  "attachments": 727,
+  "reactions_total": 2223,
+  "attachments": 808,
   "channel_activity": {
+    "🔸morimens-game-chat": 7853,
+    "🔸deutscher-chatraum": 8,
+    "🔸русский-канал": 389,
+    "🔸canal-español": 142,
+    "🔸canal-português": 1965,
+    "🔸ruang-obrolan-indonesia": 428,
+    "🔸traphase": 149,
+    "🔸lore-chat": 182,
+    "🔸team-building": 454,
+    "🔸general-chat": 1237,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 559,
+    "🔸机器人命令┊bot-commands": 44,
+    "✅「Answered」Possibilities of Doresain kit rework": 1,
+    "continual arachneposting": 9,
+    "🎬 V2.5.0 概念PV「命途罗织之网」┊PV - Web of the Moirai": 105,
+    "V2.5.0 命运剧院┊Theater of Fate": 115,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
+    "大佬們好,有沒有紅花的配隊建議,感激不盡": 6,
+    "Started 2 days ago and not sure what to try to pull for/ focus on for team": 8,
     "🔸綜合討論": 1241,
     "🔸阵容构建": 121,
-    "🔸morimens-game-chat": 6555,
     "🔸欢乐梗图": 1,
     "🔸한국어-채팅방": 24,
-    "🔸deutscher-chatraum": 4,
-    "🔸русский-канал": 302,
     "🔸phòng-chat-tiếng-việt": 308,
-    "🔸canal-español": 113,
-    "🔸canal-português": 1596,
-    "🔸ruang-obrolan-indonesia": 426,
     "🔸ห้องสนทนาภาษาไทย": 26,
-    "🔸traphase": 22,
-    "🔸lore-chat": 169,
     "🔸频道建议┊server-suggestions": 15,
-    "🔸team-building": 426,
-    "🔸general-chat": 1156,
-    "🔸邀请码互助┊swap-invitation-codes": 12,
-    "🔸game-question": 487,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 40,
     "约稿分享": 2,
     "Slay the Spire Morimens Modding Log": 3,
     "Choose An Awakener/Wheel": 45,
@@ -33,11 +40,7 @@
     "doodles and sketches !! (art thread)": 6,
     "Morimens Fanarts": 1,
     "MOUCHETTE BEST GIRL (mimi unhinged ramble + art sometimes)": 1,
-    "continual arachneposting": 5,
-    "🎬 V2.5.0 概念PV「命途罗织之网」┊PV - Web of the Moirai": 104,
-    "V2.5.0 命运剧院┊Theater of Fate": 112,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 5,
-    "大佬們好,有沒有紅花的配隊建議,感激不盡": 1,
     "回鍋玩家健檢 求抽卡&組隊建議": 9,
     "大家好，希望各位前輩協助檢視目前我的箱內能夠大概組怎樣的隊伍打融災": 10,
     "求求配对和抽卡建议，谢谢☺️": 7,
@@ -70,14 +73,16 @@
     "V2.5.0 无期囚徒┊Perpetual Thrall": 15,
     "刚回坑，能帮忙看看阵容和后面要抽谁": 56,
     "What banners to pull on": 9,
-    "Started 2 days ago and not sure what to try to pull for/ focus on for team": 5,
     "1 Week Account Pulling Advice?": 1
   },
   "hourly_activity": {
+    "18": 802,
+    "19": 874,
+    "20": 639,
+    "21": 425,
     "14": 819,
     "15": 1149,
     "16": 689,
-    "18": 602,
     "17": 588,
     "0": 841,
     "1": 856,
@@ -95,11 +100,8 @@
     "13": 900
   },
   "message_types": {
-    "19": 1079,
-    "0": 2123,
-    "23": 1,
-    "20": 1,
-    "21": 1
+    "19": 801,
+    "0": 1337
   },
   "top_reacted_messages": [
     {
@@ -127,6 +129,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1494082119528480969",
+      "channel_id": "1170692781216378960",
+      "content": "What Awakeners could beat 1 Billion Lions? (for fun) (mix of gameplay and lore, ",
+      "author": "megidola.",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1494045144242978957",
       "channel_id": "1170692781216378960",
       "content": "My normal vortice team has 400 hp no whaling",
@@ -141,6 +151,14 @@
       "author": "kalpiko.",
       "reactions": 8,
       "channel": "V2.5.0 无期囚徒┊Perpetual Thrall"
+    },
+    {
+      "id": "1494071822671413418",
+      "channel_id": "1170692781216378960",
+      "content": "Lions cannot swim so the Aequors I guess\nLions are not interdimensional creature",
+      "author": "megidola.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1493989415800799465",
@@ -243,22 +261,6 @@
       "channel_id": "1170692781216378960",
       "content": "what should i use this for?",
       "author": ".korotsu",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493905040543584379",
-      "channel_id": "1170692781216378960",
-      "content": "Guys. I got hurt too emotionally... I need a break.",
-      "author": "estherxavy5436",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1493919738571653220",
-      "channel_id": "1170692781216378960",
-      "content": "https://www.youtube.com/watch?v=NLLf3DhYbws",
-      "author": "astravaig",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }
