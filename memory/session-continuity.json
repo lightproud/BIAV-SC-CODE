@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "294d1075",
-    "timestamp": "2026-04-15T07:51:49.855000+00:00",
-    "duration_minutes": 784.4,
+    "id": "59d4acf6",
+    "timestamp": "2026-04-15T08:03:02.315000+00:00",
+    "duration_minutes": 795.6,
     "branch": "claude/review-ai-app-architecture-4eNiu",
     "topics": [
       "BPT",
@@ -18,6 +18,42 @@
     ]
   },
   "recent_sessions": [
+    {
+      "id": "b42b431d",
+      "timestamp": "2026-04-15T08:03:02.315000+00:00",
+      "duration_minutes": 795.6,
+      "branch": "claude/review-ai-app-architecture-4eNiu",
+      "topics": [
+        "BPT",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
+        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
+      ],
+      "open_items": [
+        "改动的风险差异巨大"
+      ]
+    },
+    {
+      "id": "294d1075",
+      "timestamp": "2026-04-15T07:51:49.855000+00:00",
+      "duration_minutes": 784.4,
+      "branch": "claude/review-ai-app-architecture-4eNiu",
+      "topics": [
+        "BPT",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
+        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
+      ],
+      "open_items": [
+        "改动的风险差异巨大"
+      ]
+    },
     {
       "id": "5b95b944",
       "timestamp": "2026-04-15T07:42:05.649000+00:00",
@@ -140,48 +176,18 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "a99bf454",
-      "timestamp": "2026-04-15T03:09:52.567000+00:00",
-      "duration_minutes": 502.5,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
-    },
-    {
-      "id": "ad45da05",
-      "timestamp": "2026-04-15T02:14:30.201000+00:00",
-      "duration_minutes": 447.1,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 4.82,
-      "黑池": 4.82
+      "BPT": 4.89,
+      "黑池": 4.89
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
       "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
     ],
-    "total_sessions": 50
+    "total_sessions": 52
   },
-  "updated_at": "2026-04-15T07:55:12.654132+00:00"
+  "updated_at": "2026-04-15T09:13:02.603690+00:00"
 }
