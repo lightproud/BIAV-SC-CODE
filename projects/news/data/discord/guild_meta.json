@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-04-16T20:09:04.091159+00:00",
+  "updated_at": "2026-04-16T22:26:38.550235+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1305,6 +1305,14 @@
       "parent_id": "1440851754311749733",
       "position": 148,
       "topic": "ModMail Channel 790998281622650952 1494303379017568276 (Please do not change this)"
+    },
+    {
+      "id": "1494436552699285576",
+      "name": "cvappela",
+      "type": 0,
+      "parent_id": "1440851754311749733",
+      "position": 149,
+      "topic": "ModMail Channel 356095277318406155 1494436080756195440 (Please do not change this)"
     }
   ]
 }
