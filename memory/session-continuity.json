@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "e45159cd",
-    "timestamp": "2026-04-16T05:18:25.870000+00:00",
-    "duration_minutes": 2071.0,
+    "id": "fcc9eafd",
+    "timestamp": "2026-04-16T05:36:56.156000+00:00",
+    "duration_minutes": 2089.5,
     "branch": "claude/review-ai-app-architecture-4eNiu",
     "topics": [
       "BPT",
@@ -18,6 +18,24 @@
     ]
   },
   "recent_sessions": [
+    {
+      "id": "e45159cd",
+      "timestamp": "2026-04-16T05:18:25.870000+00:00",
+      "duration_minutes": 2071.0,
+      "branch": "claude/review-ai-app-architecture-4eNiu",
+      "topics": [
+        "BPT",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
+        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
+      ],
+      "open_items": [
+        "改动的风险差异巨大"
+      ]
+    },
     {
       "id": "d1808dce",
       "timestamp": "2026-04-15T12:34:17.497000+00:00",
@@ -161,36 +179,18 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "79feb343",
-      "timestamp": "2026-04-15T07:06:45.305000+00:00",
-      "duration_minutes": 739.4,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 4.96,
-      "黑池": 4.96
+      "BPT": 4.97,
+      "黑池": 4.97
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
       "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
     ],
-    "total_sessions": 57
+    "total_sessions": 58
   },
-  "updated_at": "2026-04-16T05:21:40.063714+00:00"
+  "updated_at": "2026-04-16T05:39:44.479443+00:00"
 }
