@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "1964b96f",
-    "timestamp": "2026-04-16T06:48:12.125000+00:00",
-    "duration_minutes": 2160.8,
+    "id": "925b6747",
+    "timestamp": "2026-04-16T07:03:23.581000+00:00",
+    "duration_minutes": 2176.0,
     "branch": "claude/review-ai-app-architecture-4eNiu",
     "topics": [
       "BPT",
@@ -18,6 +18,24 @@
     ]
   },
   "recent_sessions": [
+    {
+      "id": "1964b96f",
+      "timestamp": "2026-04-16T06:48:12.125000+00:00",
+      "duration_minutes": 2160.8,
+      "branch": "claude/review-ai-app-architecture-4eNiu",
+      "topics": [
+        "BPT",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
+        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
+      ],
+      "open_items": [
+        "改动的风险差异巨大"
+      ]
+    },
     {
       "id": "1e3d79bc",
       "timestamp": "2026-04-16T06:26:09.173000+00:00",
@@ -161,24 +179,6 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "59d4acf6",
-      "timestamp": "2026-04-15T08:03:02.315000+00:00",
-      "duration_minutes": 795.6,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
@@ -190,7 +190,7 @@
       "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
       "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
     ],
-    "total_sessions": 61
+    "total_sessions": 62
   },
-  "updated_at": "2026-04-16T06:52:54.515613+00:00"
+  "updated_at": "2026-04-16T07:07:45.782574+00:00"
 }
