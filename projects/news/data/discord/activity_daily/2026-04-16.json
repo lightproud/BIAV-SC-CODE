@@ -1,42 +1,61 @@
 {
   "date": "2026-04-16",
-  "messages": 8011,
-  "unique_authors": 194,
-  "reactions_total": 1038,
-  "attachments": 378,
+  "messages": 18697,
+  "unique_authors": 313,
+  "reactions_total": 2907,
+  "attachments": 760,
   "channel_activity": {
-    "🔸綜合討論": 1330,
-    "🔸morimens-game-chat": 4646,
+    "🔸綜合討論": 4008,
+    "🔸morimens-game-chat": 8899,
+    "🔸剧情交流": 11,
+    "🔸欢乐梗图": 1,
+    "🔸课间休息闲聊": 9,
+    "🔸日本語チャンネル": 10,
+    "🔸한국어-채팅방": 10,
+    "🔸deutscher-chatraum": 2,
+    "🔸русский-канал": 411,
+    "🔸phòng-chat-tiếng-việt": 372,
+    "🔸canal-español": 421,
+    "🔸canal-português": 1553,
+    "🔸ruang-obrolan-indonesia": 469,
+    "🔸ห้องสนทนาภาษาไทย": 124,
+    "🔸traphase": 224,
+    "🔸lore-chat": 154,
+    "🔸team-building": 446,
+    "🔸general-chat": 308,
+    "🔸邀请码互助┊swap-invitation-codes": 25,
+    "🔸game-question": 797,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 46,
+    "🔸erica-playground": 1,
+    "力竭了": 6,
+    "改编曲": 2,
+    "角色幻衣敷衍": 2,
+    "Ream mastery awakener": 13,
+    "空幻之芯想幹嘛 阻斷存錢之路嗎": 28,
+    "Explaination for Ethereal Cores and why Arachne and future events won’t have Luminous Cores anymore?": 21,
+    "为什么诺缔拉幻衣这么敷衍": 28,
+    "✅「Resolved」Choose An Awakener/Wheel": 2,
+    "\"24\" lives matter": 4,
+    "✅「Answered」Possibilities of Doresain kit rework": 8,
+    "Angbak random FAQ Guide": 7,
+    "📜 V2.5.0 版本前瞻·上┊Version Outlook - Part Ⅰ": 100,
+    "🎬 V2.5.0 概念PV「命途罗织之网」┊PV - Web of the Moirai": 12,
+    "V2.5.0 命运剧院┊Theater of Fate": 46,
+    "再次求配隊": 5,
+    "1494326272791285901": 1,
     "🔸晒卡分享": 1,
-    "🔸课间休息闲聊": 4,
-    "🔸日本語チャンネル": 1,
-    "🔸한국어-채팅방": 8,
-    "🔸русский-канал": 15,
-    "🔸phòng-chat-tiếng-việt": 95,
-    "🔸canal-español": 32,
-    "🔸canal-português": 146,
-    "🔸ruang-obrolan-indonesia": 280,
-    "🔸ห้องสนทนาภาษาไทย": 11,
-    "🔸traphase": 191,
-    "🔸lore-chat": 35,
-    "🔸team-building": 192,
-    "🔸general-chat": 240,
-    "🔸邀请码互助┊swap-invitation-codes": 17,
-    "🔸game-question": 588,
-    "🔸机器人命令┊bot-commands": 17,
     "Choose An Awakener/Wheel": 2,
     "💭「Processing」My game is being dissoluted": 4,
     "💭「处理中」【伤痛之鳍】对索蕾尔的1费不起作用": 6,
     "✅「Resolved」What do you think about DC 40000 Keepers Achievement Gift this time?": 6,
     "✅「已回答」下禮拜星辰篇的造物數值能不能修好": 2,
     "所以阿拉克涅的胳膊是三折叠吗？": 1,
-    "\"24\" lives matter": 1,
     "Arachneposting": 1,
     "Confused spooder": 4,
     "William posting": 1,
     "Angbak Char guides": 4,
     "【English Translation】Opinions Collection": 11,
-    "V2.5.0 命运剧院┊Theater of Fate": 43,
     "有沒有人有全角色的密契適用圖": 6,
     "原型视界个不知道要给谁": 9,
     "🔸阵容构建": 6,
@@ -46,18 +65,21 @@
     "💭「Processing」Bug: Error code 7004006": 2,
     "hi karen 😁😁😁 ur cute;;": 1,
     "continual arachneposting": 1,
-    "Angbak random FAQ Guide": 5,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 3,
-    "🎬 V2.5.0 概念PV「命途罗织之网」┊PV - Web of the Moirai": 4,
     "请问抽卡建议": 28,
     "大佬們好,有沒有紅花的配隊建議,感激不盡": 5
   },
   "hourly_activity": {
+    "11": 1072,
+    "12": 1917,
+    "13": 3006,
+    "14": 1945,
+    "15": 1873,
+    "16": 1545,
     "7": 681,
     "8": 781,
     "9": 1063,
     "10": 972,
-    "11": 672,
     "0": 472,
     "1": 623,
     "2": 612,
@@ -67,12 +89,52 @@
     "6": 734
   },
   "message_types": {
-    "0": 2818,
-    "19": 1265,
-    "4": 3,
-    "6": 2
+    "0": 7426,
+    "19": 3257,
+    "4": 2,
+    "21": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1494374139195031615",
+      "channel_id": "1131839817982947429",
+      "content": "我一回就被Ban",
+      "author": "morimensstaff06",
+      "reactions": 18,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1494374043703578799",
+      "channel_id": "1131839817982947429",
+      "content": "来了",
+      "author": "morimensstaff06",
+      "reactions": 15,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1494321940113129512",
+      "channel_id": "1494321940113129512",
+      "content": "不只新活動的流明之芯改成了空幻之芯\n復刻活動的也一樣沒有流明之芯了\n目前推測空幻的作用可能是當期限定抽\n過了期限就不給用\n但這樣也變相說明了能儲存的抽卡資源大大",
+      "author": "water_heart",
+      "reactions": 14,
+      "channel": "空幻之芯想幹嘛 阻斷存錢之路嗎"
+    },
+    {
+      "id": "1494374192760754246",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "monchi3524",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494319482313904179",
+      "channel_id": "1494314976058540262",
+      "content": "冲个钱为什么要分平台",
+      "author": "navirecorbeau",
+      "reactions": 12,
+      "channel": "为什么诺缔拉幻衣这么敷衍"
+    },
     {
       "id": "1494236242336944158",
       "channel_id": "1131839817982947429",
@@ -80,6 +142,22 @@
       "author": "morimensstaff06",
       "reactions": 12,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1494319604099584111",
+      "channel_id": "1494319604099584111",
+      "content": "In the new “Bound Weaver” event next week and the “The Great Conquering” rerun e",
+      "author": "_venush",
+      "reactions": 11,
+      "channel": "Explaination for Ethereal Cores and why Arachne and future events won’t have Luminous Cores anymore?"
+    },
+    {
+      "id": "1494375360773750878",
+      "channel_id": "1494319604099584111",
+      "content": "We sincerely apologize for the delay in providing this information. This version",
+      "author": "morimensstaff06",
+      "reactions": 11,
+      "channel": "Explaination for Ethereal Cores and why Arachne and future events won’t have Luminous Cores anymore?"
     },
     {
       "id": "1494236406283898911",
@@ -98,140 +176,84 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1494175851464622201",
+      "id": "1494348391109497027",
       "channel_id": "1131839817982947429",
-      "content": "7 OE",
-      "author": "angbak",
+      "content": "校猫正在高强度视奸来决定空幻限不限时",
+      "author": "sense25.",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1494374332808302784",
+      "channel_id": "1131839817982947429",
+      "content": "我将离开此地去看看帖子☝️ 🤓",
+      "author": "morimensstaff06",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1494371436075421718",
+      "channel_id": "1170692781216378960",
+      "content": "isn't flare that one dude who got banned for beign toxic",
+      "author": "happy_boi_hilaal",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494345957796741140",
+      "channel_id": "1494319604099584111",
+      "content": "I would also like to know what these are, since throwing a new currency in at us",
+      "author": "fishhazardthewizard",
+      "reactions": 9,
+      "channel": "Explaination for Ethereal Cores and why Arachne and future events won’t have Luminous Cores anymore?"
+    },
+    {
+      "id": "1494361290972598384",
+      "channel_id": "1494311551619043339",
+      "content": "this is somehow frying me",
+      "author": "_venush",
+      "reactions": 9,
+      "channel": "📜 V2.5.0 版本前瞻·上┊Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1494325783865331833",
+      "channel_id": "1131839817982947429",
+      "content": "校貓其實是敏感抑鬱小男孩來的，本嬤王最愛這種男孩子了",
+      "author": "shostakovich524",
       "reactions": 8,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1494266839084175422",
-      "channel_id": "1170692781216378960",
-      "content": "Best mode. It’s the reason why ppl play this game",
-      "author": "l8989c",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494239131142721616",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "chinkeeyong",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494241961853456484",
-      "channel_id": "1174983699935277147",
-      "content": "謝謝",
-      "author": "ena04564",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1494248168706015233",
-      "channel_id": "1493868497812455586",
-      "content": "<:Brown_think:1459080117308620996>",
-      "author": "syruponstrawberrycake",
-      "reactions": 6,
-      "channel": "V2.5.0 命运剧院┊Theater of Fate"
-    },
-    {
-      "id": "1494237191038177330",
+      "id": "1494327112176238813",
       "channel_id": "1131839817982947429",
-      "content": "給個12個萬能啟之類的",
-      "author": "universe.dark",
-      "reactions": 5,
+      "content": "你知道嗎\n空幻什麼的還沒確定我先不噴\n\n\nPc手機送不同真的是沒馮了",
+      "author": "xingxiu_0209",
+      "reactions": 8,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1494248453906235413",
-      "channel_id": "1170692781216378960",
-      "content": "Light said their favourite character was GRamona\nAnd yet she is not even +12 on ",
-      "author": "legendaryredz",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494257680968319006",
-      "channel_id": "1170692781216378960",
-      "content": "<:Murphy_satisfy:1468258389850193960>",
-      "author": "annaxxe_",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494289643657756672",
-      "channel_id": "1170692781216378960",
-      "content": "Wow the enemy Kath has a tank build",
-      "author": "spooky_penguin_",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494247873020432507",
-      "channel_id": "1300659802455674972",
-      "content": "เค้าไม่ได้เข้ามาในนี้นานเลย สวัสดีตอนบ่ายทุกคนนะคะ <:Ramona_love:145907754182954",
-      "author": "90angels",
-      "reactions": 5,
-      "channel": "🔸ห้องสนทนาภาษาไทย"
-    },
-    {
-      "id": "1494157531734343812",
-      "channel_id": "1493893688722591794",
-      "content": "The wrong reward was sent this time! I'm applying for a replacement.",
-      "author": "morimensstaff06",
-      "reactions": 5,
-      "channel": "What do you think about DC 40000 Keepers Achievement Gift this time?"
-    },
-    {
-      "id": "1494271062551035986",
+      "id": "1494353657750228992",
       "channel_id": "1131839817982947429",
-      "content": "羨慕小騎士",
-      "author": "yy42974466",
-      "reactions": 4,
+      "content": "第一次发版本预告的莱拉：\n\n“这跟说好的不一样啊？？”\n\n戈雅：“第一次？”",
+      "author": "polkarain",
+      "reactions": 8,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1494248503747149904",
-      "channel_id": "1170692781216378960",
-      "content": "lol",
-      "author": "masian131",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
+      "id": "1494354747061305354",
+      "channel_id": "1131839817982947429",
+      "content": "別提萌新\n等等剎那就來",
+      "author": "fool6692",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1494270907756187698",
-      "channel_id": "1170692781216378960",
+      "id": "1494357860157751437",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "oct3000",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494297342172467250",
-      "channel_id": "1170692781216378960",
-      "content": "i usually cook for dates",
-      "author": "princess.goth",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494267100850688071",
-      "channel_id": "1493868497812455586",
-      "content": "More people would sit in the \"Thais jorks you while N watches\" chair (2)\n\nThen t",
-      "author": "thpdom",
-      "reactions": 4,
-      "channel": "V2.5.0 命运剧院┊Theater of Fate"
-    },
-    {
-      "id": "1494140048315121754",
-      "channel_id": "1170692781216378960",
-      "content": "why do you think i do lore guides instead of dtide guides",
-      "author": "nikolazuli",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
+      "author": "arthasiv",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     }
   ]
 }
