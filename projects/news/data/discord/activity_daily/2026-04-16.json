@@ -1,54 +1,219 @@
 {
   "date": "2026-04-16",
-  "messages": 35,
-  "unique_authors": 12,
-  "reactions_total": 4,
-  "attachments": 1,
+  "messages": 3923,
+  "unique_authors": 191,
+  "reactions_total": 422,
+  "attachments": 198,
   "channel_activity": {
-    "🔸阵容构建": 2,
-    "🔸morimens-game-chat": 22,
-    "🔸canal-español": 10,
-    "V2.5.0 命运剧院┊Theater of Fate": 1
+    "🔸綜合討論": 613,
+    "🔸阵容构建": 6,
+    "🔸morimens-game-chat": 2299,
+    "🔸相位对弈": 1,
+    "🔸한국어-채팅방": 4,
+    "🔸phòng-chat-tiếng-việt": 66,
+    "🔸canal-español": 30,
+    "🔸canal-português": 76,
+    "🔸ruang-obrolan-indonesia": 241,
+    "🔸ห้องสนทนาภาษาไทย": 2,
+    "🔸traphase": 130,
+    "🔸lore-chat": 17,
+    "🔸team-building": 46,
+    "🔸general-chat": 120,
+    "🔸邀请码互助┊swap-invitation-codes": 6,
+    "🔸game-question": 183,
+    "🔸机器人命令┊bot-commands": 12,
+    "💭「Processing」My game is being dissoluted": 2,
+    "💭「處理中」文本錯誤？": 2,
+    "What do you think about DC 40000 Keepers Achievement Gift this time?": 3,
+    "💭「Processing」Bug: Error code 7004006": 2,
+    "hi karen 😁😁😁 ur cute;;": 1,
+    "Confused spooder": 1,
+    "continual arachneposting": 1,
+    "Angbak random FAQ Guide": 5,
+    "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 3,
+    "【English Translation】Opinions Collection": 1,
+    "🎬 V2.5.0 概念PV「命途罗织之网」┊PV - Web of the Moirai": 4,
+    "V2.5.0 命运剧院┊Theater of Fate": 13,
+    "请问抽卡建议": 28,
+    "大佬們好,有沒有紅花的配隊建議,感激不盡": 5
   },
   "hourly_activity": {
-    "0": 35
+    "0": 472,
+    "1": 623,
+    "2": 612,
+    "3": 369,
+    "4": 477,
+    "5": 555,
+    "6": 734,
+    "7": 81
   },
   "message_types": {
-    "0": 21,
-    "19": 14
+    "0": 2834,
+    "19": 1049,
+    "20": 1,
+    "4": 3,
+    "6": 1
   },
   "top_reacted_messages": [
     {
-      "id": "1494125953721303101",
-      "channel_id": "1170692781216378960",
-      "content": "so yea",
-      "author": "monchi3524",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494126112198889482",
-      "channel_id": "1170692781216378960",
-      "content": "As long as they're happy <:pray:1356053116260454534>",
+      "id": "1494175851464622201",
+      "channel_id": "1131839817982947429",
+      "content": "7 OE",
       "author": "angbak",
-      "reactions": 1,
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1494157531734343812",
+      "channel_id": "1493893688722591794",
+      "content": "The wrong reward was sent this time! I'm applying for a replacement.",
+      "author": "morimensstaff06",
+      "reactions": 5,
+      "channel": "What do you think about DC 40000 Keepers Achievement Gift this time?"
+    },
+    {
+      "id": "1494140048315121754",
+      "channel_id": "1170692781216378960",
+      "content": "why do you think i do lore guides instead of dtide guides",
+      "author": "nikolazuli",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1494126201986351244",
+      "id": "1494140926958768288",
       "channel_id": "1170692781216378960",
-      "content": "Yeah female",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494126240121094144",
-      "channel_id": "1170692781216378960",
-      "content": "sorel post buff",
+      "content": "Lily image truly op",
       "author": "monchi3524",
-      "reactions": 1,
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494148443172765841",
+      "channel_id": "1170692781216378960",
+      "content": "0",
+      "author": "boppyboi",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494152399772844112",
+      "channel_id": "1170692781216378960",
+      "content": "Jk I'm waiting for details to write my morimens employment guide",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494185994902179892",
+      "channel_id": "1170692781216378960",
+      "content": "And hii frost kaly idot",
+      "author": "2ndselna",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494193409433276536",
+      "channel_id": "1170692781216378960",
+      "content": "the thing they should have done is rewrite some of the standards to say \"leap or",
+      "author": "climbkaly",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494213603547676692",
+      "channel_id": "1170692781216378960",
+      "content": "i fucking died",
+      "author": "idiota__",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494204364716244992",
+      "channel_id": "1131839817982947429",
+      "content": "这回挺简单的",
+      "author": "ponponnyaru",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1494205768352792716",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1494134373698769066",
+      "channel_id": "1170692781216378960",
+      "content": "<@595414429957619725> <@157679037240573953> <@1471414323883540501> just OE Lotan",
+      "author": "angbak",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494135863335063723",
+      "channel_id": "1170692781216378960",
+      "content": "agrippa useless",
+      "author": "monchi3524",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494137310051045408",
+      "channel_id": "1170692781216378960",
+      "content": "i summon the monchiphobia",
+      "author": "arisuu0604",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494166081986760724",
+      "channel_id": "1170692781216378960",
+      "content": "Too formal for someone like kath to say.. she keeps like the type to call a litt",
+      "author": "cqteiie",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494196551546048582",
+      "channel_id": "1170692781216378960",
+      "content": "Just found the game on Saturday. Figured id pop in discord too",
+      "author": "apollodelian",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494205562798342245",
+      "channel_id": "1170692781216378960",
+      "content": "What's the point of DR if you don't use it right?",
+      "author": "shagaru0802",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494221798714114188",
+      "channel_id": "1170692781216378960",
+      "content": "Trash units <:angry2:1356053025034338505>",
+      "author": "angbak",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494139692273238016",
+      "channel_id": "1433513650299076780",
+      "content": "its okay e3 kath can carry me for a good while through the story",
+      "author": "simjito",
+      "reactions": 3,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1494211181278269471",
+      "channel_id": "1131839817982947429",
+      "content": "测完了，转轮叠满5层是503",
+      "author": "ponponnyaru",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }
