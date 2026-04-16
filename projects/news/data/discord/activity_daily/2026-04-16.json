@@ -1,0 +1,54 @@
+{
+  "date": "2026-04-16",
+  "messages": 35,
+  "unique_authors": 12,
+  "reactions_total": 4,
+  "attachments": 1,
+  "channel_activity": {
+    "🔸阵容构建": 2,
+    "🔸morimens-game-chat": 22,
+    "🔸canal-español": 10,
+    "V2.5.0 命运剧院┊Theater of Fate": 1
+  },
+  "hourly_activity": {
+    "0": 35
+  },
+  "message_types": {
+    "0": 21,
+    "19": 14
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1494125953721303101",
+      "channel_id": "1170692781216378960",
+      "content": "so yea",
+      "author": "monchi3524",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494126112198889482",
+      "channel_id": "1170692781216378960",
+      "content": "As long as they're happy <:pray:1356053116260454534>",
+      "author": "angbak",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494126201986351244",
+      "channel_id": "1170692781216378960",
+      "content": "Yeah female",
+      "author": "aurora3981",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494126240121094144",
+      "channel_id": "1170692781216378960",
+      "content": "sorel post buff",
+      "author": "monchi3524",
+      "reactions": 1,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}
