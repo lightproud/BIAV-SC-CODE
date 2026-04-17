@@ -1,63 +1,82 @@
 {
   "date": "2026-04-17",
-  "messages": 8073,
+  "messages": 13954,
   "unique_authors": 396,
-  "reactions_total": 1357,
-  "attachments": 260,
+  "reactions_total": 1959,
+  "attachments": 488,
   "channel_activity": {
-    "🔸綜合討論": 1501,
-    "🔸morimens-game-chat": 3642,
-    "🔸剧情交流": 5,
+    "🔸綜合討論": 4355,
+    "🔸阵容构建": 15,
+    "🔸morimens-game-chat": 5441,
+    "🔸剧情交流": 14,
+    "🔸欢乐梗图": 1,
+    "🔸日本語チャンネル": 2,
+    "🔸한국어-채팅방": 159,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 3,
+    "🔸русский-канал": 175,
+    "🔸phòng-chat-tiếng-việt": 342,
+    "🔸canal-español": 34,
+    "🔸canal-português": 154,
+    "🔸ruang-obrolan-indonesia": 373,
+    "🔸ห้องสนทนาภาษาไทย": 74,
+    "🔸lore-chat": 395,
+    "🔸team-building": 602,
+    "🔸general-chat": 450,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🔸game-question": 695,
+    "🔸机器人命令┊bot-commands": 30,
+    "命运的丝线": 3,
+    "Slay the Spire Morimens Modding Log": 4,
+    "Unable to get past main menu screen - Gen 9 iPad": 1,
+    "Proposal for a Korea–China Phase Chess Friendly Match & Community Collaboration": 5,
+    "【娱乐帖】统计一下你游素材复用": 34,
+    "✅「已回答」角色幻衣敷衍": 2,
+    "空幻之芯想幹嘛 阻斷存錢之路嗎": 2,
+    "Explaination for Ethereal Cores and why Arachne and future events won’t have Luminous Cores anymore?": 3,
+    "✅「已回答」为什么诺缔拉幻衣这么敷衍": 6,
+    "✅「已回答」所以阿拉克涅的胳膊是三折叠吗？": 3,
+    "\"24\" lives matter": 1,
+    "致歉：V2.5.0 「空幻之芯」奖励调整和未来计划 Apology: V2.5.0 Ethereal Core Reward Adjustments and Future Plans": 220,
+    "morimens sybau 💔": 1,
+    "📜 V2.5.0 版本前瞻·上┊Version Outlook - Part Ⅰ": 235,
+    "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
+    "想问下萌新怎么攒资源最快": 7,
+    "再次求配隊": 29,
+    "求求配对和抽卡建议，谢谢☺️": 6,
     "🔸课间休息闲聊": 2,
-    "🔸한국어-채팅방": 15,
-    "🔸русский-канал": 168,
-    "🔸phòng-chat-tiếng-việt": 275,
-    "🔸canal-español": 12,
-    "🔸canal-português": 42,
-    "🔸ruang-obrolan-indonesia": 222,
-    "🔸ห้องสนทนาภาษาไทย": 51,
     "🔸traphase": 10,
-    "🔸lore-chat": 380,
-    "🔸team-building": 515,
-    "🔸general-chat": 380,
-    "🔸邀请码互助┊swap-invitation-codes": 9,
-    "🔸game-question": 384,
-    "🔸机器人命令┊bot-commands": 15,
-    "Slay the Spire Morimens Modding Log": 1,
     "關於空幻的建議": 4,
-    "Proposal for a Korea–China Phase Chess Friendly Match & Community Collaboration": 4,
-    "【娱乐帖】统计一下你游素材复用": 29,
     "可不可以把自己的回放設定成不公開": 2,
-    "Explaination for Ethereal Cores and why Arachne and future events won’t have Luminous Cores anymore?": 1,
     "为什么诺缔拉幻衣这么敷衍": 13,
     "💭「Processing」My game is being dissoluted": 1,
     "所以阿拉克涅的胳膊是三折叠吗？": 1,
     "✅「Answered」Possibilities of Doresain kit rework": 3,
-    "致歉：V2.5.0 「空幻之芯」奖励调整和未来计划 Apology: V2.5.0 Ethereal Core Reward Adjustments and Future Plans": 100,
     "Arachneposting": 1,
     "Angbak Char guides": 1,
-    "📜 V2.5.0 版本前瞻·上┊Version Outlook - Part Ⅰ": 228,
     "🎬 V2.5.0 概念PV「命途罗织之网」┊PV - Web of the Moirai": 19,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
-    "想问下萌新怎么攒资源最快": 5,
-    "再次求配隊": 25,
-    "求求配对和抽卡建议，谢谢☺️": 2,
     "team building for 8-13": 1
   },
   "hourly_activity": {
+    "6": 1821,
+    "7": 1625,
+    "8": 1377,
+    "9": 1190,
+    "10": 637,
     "0": 1345,
     "1": 1122,
     "2": 997,
     "3": 857,
     "4": 780,
-    "5": 2203,
-    "6": 769
+    "5": 2203
   },
   "message_types": {
-    "0": 5373,
-    "19": 2690,
-    "20": 1,
-    "6": 9
+    "19": 1419,
+    "0": 4455,
+    "20": 2,
+    "4": 3,
+    "6": 2
   },
   "top_reacted_messages": [
     {
@@ -101,6 +120,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1494623259294044271",
+      "channel_id": "1494623259294044271",
+      "content": "uid：100368860",
+      "author": "solisimperium.",
+      "reactions": 12,
+      "channel": "命运的丝线"
+    },
+    {
       "id": "1494565751657599178",
       "channel_id": "1131839817982947429",
       "content": "67?",
@@ -117,11 +144,27 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1494617565085962280",
+      "channel_id": "1131839817982947429",
+      "content": "先等我叠好护盾再放饭（",
+      "author": "morimensstaff06",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1494578932543000656",
       "channel_id": "1170692781216378960",
       "content": "",
       "author": "galacticgpt",
       "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494621366958166046",
+      "channel_id": "1170692781216378960",
+      "content": "I want to be upfront about Aigis: some of the adjustments I'm making are going t",
+      "author": "fishhazardthewizard",
+      "reactions": 9,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -147,6 +190,14 @@
       "author": "lightproud",
       "reactions": 9,
       "channel": "📜 V2.5.0 版本前瞻·上┊Version Outlook - Part Ⅰ"
+    },
+    {
+      "id": "1494596247309516830",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "eddy10051115",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
     },
     {
       "id": "1494570966360129729",
@@ -181,43 +232,11 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1494565543733104650",
+      "id": "1494612556336070728",
       "channel_id": "1131839817982947429",
       "content": "",
-      "author": "lightproud",
+      "author": "wushengchi7012",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494573405033332736",
-      "channel_id": "1494565344407322654",
-      "content": "<@1487626955791663208> 考慮過給空幻另外搞一個常駐專屬池嗎，比如現在要更新第5章，專屬池可以抽取第4章及以前的角色，讓玩家選擇哪隻up角色",
-      "author": "heikwok",
-      "reactions": 7,
-      "channel": "致歉：V2.5.0 「空幻之芯」奖励调整和未来计划 Apology: V2.5.0 Ethereal Core Reward Adjustments and Future Plans"
-    },
-    {
-      "id": "1494529546157031455",
-      "channel_id": "1494311551619043339",
-      "content": "提供一点反馈供参考：\n\n部分玩家，例如我的习惯是，在能够确定投入的情况下，第一时间把角色/命轮抽满或抽到一个理想情况。\n而显然，部分随时间周期发放的空幻抽，会晚",
-      "author": "qingming6054",
-      "reactions": 7,
-      "channel": "📜 V2.5.0 版本前瞻·上┊Version Outlook - Part Ⅰ"
-    },
-    {
-      "id": "1494536978925097093",
-      "channel_id": "1494311551619043339",
-      "content": "忘卻是個好遊戲，可惜經營它的是個短視近利且不接受他人意見的獨裁者，沒必要再為這遊戲花任何一毛錢了，畢竟誰會為死期將近的遊戲花錢呢？",
-      "author": "wangyuan4880",
-      "reactions": 7,
-      "channel": "📜 V2.5.0 版本前瞻·上┊Version Outlook - Part Ⅰ"
-    },
-    {
-      "id": "1494566764531679303",
-      "channel_id": "1131839817982947429",
-      "content": "會有很多大佬要帶你",
-      "author": "ahuahuahua",
-      "reactions": 6,
       "channel": "🔸綜合討論"
     }
   ]
