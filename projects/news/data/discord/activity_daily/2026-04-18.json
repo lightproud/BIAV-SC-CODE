@@ -1,41 +1,52 @@
 {
   "date": "2026-04-18",
-  "messages": 21808,
-  "unique_authors": 245,
-  "reactions_total": 2831,
-  "attachments": 728,
+  "messages": 26993,
+  "unique_authors": 329,
+  "reactions_total": 3926,
+  "attachments": 915,
   "channel_activity": {
-    "🔸綜合討論": 6317,
-    "🔸morimens-game-chat": 9546,
+    "🔸綜合討論": 7542,
+    "🔸阵容构建": 3,
+    "🔸morimens-game-chat": 11670,
+    "🔸剧情交流": 24,
+    "🔸日本語チャンネル": 8,
+    "🔸한국어-채팅방": 143,
+    "🔸deutscher-chatraum": 38,
+    "🔸русский-канал": 324,
+    "🔸phòng-chat-tiếng-việt": 1363,
+    "🔸canal-español": 221,
+    "🔸canal-português": 1622,
+    "🔸ruang-obrolan-indonesia": 756,
+    "🔸ห้องสนทนาภาษาไทย": 328,
+    "🔸traphase": 74,
+    "🔸lore-chat": 124,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸team-building": 191,
+    "🔸general-chat": 864,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸game-question": 572,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 64,
+    "增加补启灵手段": 36,
+    "[Producer's Letter] We Will Not Fail You": 100,
+    "Idk... Sorel": 1,
+    "Catulu Cosplay": 55,
+    "👀👀 pspsps maheln posting(?)": 2,
+    "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction": 173,
+    "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ": 515,
+    "V2.5.0 命运剧院┊Theater of Fate": 3,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
+    "求求配对和抽卡建议，谢谢☺️": 2,
+    "Team Building for D-Tide !": 2,
+    "1495084191333744791": 1,
     "🔸相位对弈": 6,
-    "🔸日本語チャンネル": 7,
-    "🔸한국어-채팅방": 24,
-    "🔸deutscher-chatraum": 8,
-    "🔸русский-канал": 189,
-    "🔸phòng-chat-tiếng-việt": 1110,
-    "🔸canal-español": 163,
-    "🔸canal-português": 1036,
-    "🔸ruang-obrolan-indonesia": 701,
-    "🔸ห้องสนทนาภาษาไทย": 189,
-    "🔸traphase": 73,
-    "🔸lore-chat": 106,
-    "🔸team-building": 116,
-    "🔸general-chat": 786,
-    "🔸邀请码互助┊swap-invitation-codes": 15,
-    "🔸game-question": 509,
-    "🔸机器人命令┊bot-commands": 38,
     "Traphase bug: Aberrant Blood unaffected by heal reduction": 1,
     "refund on unused silver prime": 4,
     "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 5,
     "Cat Tulu Cosplay": 3,
-    "👀👀 pspsps maheln posting(?)": 1,
     "Spider and Moth :>": 23,
     "morimens sybau 💔": 10,
-    "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction": 166,
-    "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ": 514,
     "Please Help with Team Building": 19,
-    "🔸剧情交流": 8,
-    "增加补启灵手段": 35,
     "溢出奖励更换后是否通过其他渠道增加原初灵核获取": 1,
     "最终法则相关": 6,
     "\"24\" lives matter": 3,
@@ -45,8 +56,6 @@
     "刚回坑，能帮忙看看阵容和后面要抽谁": 3,
     "🔸课间休息闲聊": 15,
     "📜 V2.5.0 版本前瞻·中┊Version Outlook - Part Ⅱ": 3,
-    "求求配对和抽卡建议，谢谢☺️": 1,
-    "🔸频道建议┊server-suggestions": 2,
     "鯨乙己": 3,
     "All in!": 1,
     "建个随笔楼": 1,
@@ -59,10 +68,13 @@
     "V2.4.2 版本前瞻 ┊ Version Outlook": 5
   },
   "hourly_activity": {
+    "14": 1116,
+    "15": 1472,
+    "16": 2628,
+    "17": 191,
     "11": 1219,
     "12": 1382,
     "13": 1356,
-    "14": 222,
     "8": 1721,
     "9": 1738,
     "10": 1346,
@@ -76,11 +88,29 @@
     "4": 1857
   },
   "message_types": {
-    "0": 2798,
-    "19": 1227,
-    "4": 1
+    "19": 1876,
+    "0": 3306,
+    "46": 1,
+    "4": 1,
+    "21": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1495090670694826136",
+      "channel_id": "1170692781216378960",
+      "content": "https://discord.com/channels/1131791637933199470/1495085832493596753\n@everyone",
+      "author": "lightproud",
+      "reactions": 160,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495095010889171086",
+      "channel_id": "1170692781216378960",
+      "content": "a thief came into my house... luckily i was doing md and he fell asleep",
+      "author": "sooneruzuki",
+      "reactions": 30,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1494979734805680129",
       "channel_id": "1494955533382455316",
@@ -88,6 +118,22 @@
       "author": "lightproud",
       "reactions": 23,
       "channel": "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction"
+    },
+    {
+      "id": "1495092461461180506",
+      "channel_id": "1170692781216378960",
+      "content": "On the other hand ye i believe redz isnt human\nHes french",
+      "author": "2ndselna",
+      "reactions": 20,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495093520048979999",
+      "channel_id": "1170692781216378960",
+      "content": "COLLAB WITH PROJECT MOON!!!",
+      "author": "fleurdelyiss",
+      "reactions": 16,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1495050324266975283",
@@ -114,6 +160,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1495094421417627748",
+      "channel_id": "1170692781216378960",
+      "content": "If everyone fails I'll just stream mukbang to earn money\n-Kim Jihoon",
+      "author": "blitzg",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1495044074833575948",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -138,6 +192,54 @@
       "channel": "Summary of Korean Community Feedback Regarding the 12-Level Breakthrough System"
     },
     {
+      "id": "1495089563889045654",
+      "channel_id": "1170692781216378960",
+      "content": "water is wet",
+      "author": "stunninghorse",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495089817346642102",
+      "channel_id": "1170692781216378960",
+      "content": "If I complain that Corpo AA is garbage\nIt will get buffed ?\nOkay I have a gamepl",
+      "author": "legendaryredz",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495094630855872691",
+      "channel_id": "1170692781216378960",
+      "content": "Limbus Company gameplay still sucks.",
+      "author": "kirboexists",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495099000196694066",
+      "channel_id": "1170692781216378960",
+      "content": "Regarding the sex toy incident from about a year ago, I've seen that some people",
+      "author": "dyssayah",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495077394141417634",
+      "channel_id": "1173463482503536711",
+      "content": "~~然後誰會用這個當主畫面~~",
+      "author": "pxld_6.1",
+      "reactions": 10,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1495106486475559102",
+      "channel_id": "1495085832493596753",
+      "content": "They are literally most generous and friendly  in communicating-wise devs ive ev",
+      "author": "plaguehierarch",
+      "reactions": 10,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
       "id": "1495061945319948418",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -152,94 +254,6 @@
       "author": "xingxiu_0209",
       "reactions": 10,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494983881751924858",
-      "channel_id": "1131839817982947429",
-      "content": "星期一我負責直播抽卡，各位負責找配隊☝️🤓",
-      "author": "ena04564",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494978234398412810",
-      "channel_id": "1494955533382455316",
-      "content": "吃相都这样了能不能给个+12试用",
-      "author": "galagalaguo",
-      "reactions": 10,
-      "channel": "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction"
-    },
-    {
-      "id": "1494959397519102113",
-      "channel_id": "1170692781216378960",
-      "content": "Can you not fucking gpt translation this shit? There's 0 wording consistency, th",
-      "author": "aurora3981",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494940063295995965",
-      "channel_id": "1494691248794112181",
-      "content": "Final Codex is full of filler characters, unworthy Awakenings, garbage buffs for",
-      "author": "chen1.chen2",
-      "reactions": 10,
-      "channel": "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ"
-    },
-    {
-      "id": "1495030384830976101",
-      "channel_id": "1170692781216378960",
-      "content": "Seeing Morimens drama in r/gatchagaming is like seeing your small town be on nat",
-      "author": "happy_boi_hilaal",
-      "reactions": 9,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495049897294954577",
-      "channel_id": "1170692781216378960",
-      "content": "Lol hell yeah girl",
-      "author": "not_arachne",
-      "reactions": 9,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494982732776996904",
-      "channel_id": "1170692781216378960",
-      "content": "is farosrita poison comp",
-      "author": "arkaether",
-      "reactions": 9,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494890714612498642",
-      "channel_id": "1131839817982947429",
-      "content": "我玩三个月已经充一万多了",
-      "author": "ponponnyaru",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494900442205913231",
-      "channel_id": "1131839817982947429",
-      "content": "我覺得這遊戲最認真設計的皮膚是頭像",
-      "author": "ire9060",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494908024937119925",
-      "channel_id": "1180850818509971466",
-      "content": "96.969%勝率",
-      "author": "planetes0415",
-      "reactions": 9,
-      "channel": "🔸相位对弈"
-    },
-    {
-      "id": "1495045661874196633",
-      "channel_id": "1170692781216378960",
-      "content": "Yeah I hope your gacha game is dead too so BIAV can make collabs with it",
-      "author": "necronomikkon",
-      "reactions": 8,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
