@@ -1,36 +1,40 @@
 {
   "date": "2026-04-18",
-  "messages": 34809,
+  "messages": 37739,
   "unique_authors": 329,
-  "reactions_total": 6451,
-  "attachments": 1149,
+  "reactions_total": 7293,
+  "attachments": 1250,
   "channel_activity": {
-    "🔸綜合討論": 8990,
-    "🔸morimens-game-chat": 13964,
-    "🔸课间休息闲聊": 16,
+    "🔸綜合討論": 9724,
+    "🔸morimens-game-chat": 15493,
+    "🔸课间休息闲聊": 33,
+    "🔸deutscher-chatraum": 43,
+    "🔸русский-канал": 1218,
+    "🔸canal-español": 416,
+    "🔸canal-português": 2345,
+    "🔸traphase": 87,
+    "🔸lore-chat": 167,
+    "🔸team-building": 369,
+    "🔸general-chat": 1102,
+    "🔸game-question": 1022,
+    "🔸机器人命令┊bot-commands": 110,
+    "Leigh Absolute Axiom suggestion": 2,
+    "[Producer's Letter] We Will Not Fail You": 1185,
+    "Catulu Cosplay": 58,
+    "Video Guide to Xu and her Teambuilding": 1,
+    "V2.5.0 无期囚徒┊Perpetual Thrall": 2,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 29,
+    "回鍋求融災禁區配置": 2,
     "🔸日本語チャンネル": 9,
     "🔸한국어-채팅방": 825,
-    "🔸deutscher-chatraum": 40,
-    "🔸русский-канал": 1099,
     "🔸phòng-chat-tiếng-việt": 1457,
-    "🔸canal-español": 337,
-    "🔸canal-português": 2176,
     "🔸ruang-obrolan-indonesia": 759,
     "🔸ห้องสนทนาภาษาไทย": 329,
-    "🔸traphase": 84,
-    "🔸lore-chat": 166,
-    "🔸team-building": 309,
-    "🔸general-chat": 1045,
     "🔸邀请码互助┊swap-invitation-codes": 29,
-    "🔸game-question": 977,
     "🔸忘却前夜┊morimens-tv": 2,
-    "🔸机器人命令┊bot-commands": 98,
     "✅「Answered」Possibilities of Doresain kit rework": 4,
-    "[Producer's Letter] We Will Not Fail You": 1106,
-    "Catulu Cosplay": 57,
     "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction": 179,
     "V2.5.0 命运剧院┊Theater of Fate": 8,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 14,
     "融災怎麼打 有大佬帶帶我嗎": 1,
     "想问下萌新怎么攒资源最快": 1,
     "Please Help with Team Building": 24,
@@ -72,9 +76,11 @@
     "V2.4.2 版本前瞻 ┊ Version Outlook": 5
   },
   "hourly_activity": {
+    "19": 2391,
+    "20": 1611,
+    "21": 1165,
     "17": 3272,
     "18": 2498,
-    "19": 2237,
     "14": 1116,
     "15": 1472,
     "16": 2628,
@@ -94,10 +100,9 @@
     "4": 1857
   },
   "message_types": {
-    "0": 5110,
-    "19": 2701,
-    "20": 4,
-    "21": 1
+    "19": 1211,
+    "0": 1718,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -149,6 +154,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1495161017733349396",
+      "channel_id": "1495085832493596753",
+      "content": "i love u all",
+      "author": "risend",
+      "reactions": 28,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
       "id": "1495110166389985472",
       "channel_id": "1495085832493596753",
       "content": "What trust??  BIAV DIDNT GET YOUR FUCKING TRUST AFTER ALL THAT??\n\nBIAV??\n\nTHE ON",
@@ -194,6 +207,14 @@
       "content": "PR manager would help, but being more honest and open about what they're doing w",
       "author": "mightythor",
       "reactions": 22,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495164027096141956",
+      "channel_id": "1495085832493596753",
+      "content": "According to Freud’s theory, the way you blindly act like a devoted follower to ",
+      "author": "undecember_news",
+      "reactions": 21,
       "channel": "[Producer's Letter] We Will Not Fail You"
     },
     {
@@ -243,22 +264,6 @@
       "author": "greentea367",
       "reactions": 17,
       "channel": "[Producer's Letter] We Will Not Fail You"
-    },
-    {
-      "id": "1495141310544482558",
-      "channel_id": "1495085832493596753",
-      "content": "With the amount of doomposting some of yall do, I'd have thought Light came to y",
-      "author": "john_darksouls2",
-      "reactions": 16,
-      "channel": "[Producer's Letter] We Will Not Fail You"
-    },
-    {
-      "id": "1495093520048979999",
-      "channel_id": "1170692781216378960",
-      "content": "COLLAB WITH PROJECT MOON!!!",
-      "author": "fleurdelyiss",
-      "reactions": 16,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
