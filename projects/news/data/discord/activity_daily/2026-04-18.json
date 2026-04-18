@@ -1,41 +1,47 @@
 {
   "date": "2026-04-18",
-  "messages": 26993,
+  "messages": 34809,
   "unique_authors": 329,
-  "reactions_total": 3926,
-  "attachments": 915,
+  "reactions_total": 6451,
+  "attachments": 1149,
   "channel_activity": {
-    "🔸綜合討論": 7542,
+    "🔸綜合討論": 8990,
+    "🔸morimens-game-chat": 13964,
+    "🔸课间休息闲聊": 16,
+    "🔸日本語チャンネル": 9,
+    "🔸한국어-채팅방": 825,
+    "🔸deutscher-chatraum": 40,
+    "🔸русский-канал": 1099,
+    "🔸phòng-chat-tiếng-việt": 1457,
+    "🔸canal-español": 337,
+    "🔸canal-português": 2176,
+    "🔸ruang-obrolan-indonesia": 759,
+    "🔸ห้องสนทนาภาษาไทย": 329,
+    "🔸traphase": 84,
+    "🔸lore-chat": 166,
+    "🔸team-building": 309,
+    "🔸general-chat": 1045,
+    "🔸邀请码互助┊swap-invitation-codes": 29,
+    "🔸game-question": 977,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 98,
+    "✅「Answered」Possibilities of Doresain kit rework": 4,
+    "[Producer's Letter] We Will Not Fail You": 1106,
+    "Catulu Cosplay": 57,
+    "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction": 179,
+    "V2.5.0 命运剧院┊Theater of Fate": 8,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 14,
+    "融災怎麼打 有大佬帶帶我嗎": 1,
+    "想问下萌新怎么攒资源最快": 1,
+    "Please Help with Team Building": 24,
+    "1495145252548509766": 1,
     "🔸阵容构建": 3,
-    "🔸morimens-game-chat": 11670,
     "🔸剧情交流": 24,
-    "🔸日本語チャンネル": 8,
-    "🔸한국어-채팅방": 143,
-    "🔸deutscher-chatraum": 38,
-    "🔸русский-канал": 324,
-    "🔸phòng-chat-tiếng-việt": 1363,
-    "🔸canal-español": 221,
-    "🔸canal-português": 1622,
-    "🔸ruang-obrolan-indonesia": 756,
-    "🔸ห้องสนทนาภาษาไทย": 328,
-    "🔸traphase": 74,
-    "🔸lore-chat": 124,
     "🔸频道建议┊server-suggestions": 3,
-    "🔸team-building": 191,
-    "🔸general-chat": 864,
-    "🔸邀请码互助┊swap-invitation-codes": 16,
-    "🔸game-question": 572,
-    "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 64,
     "增加补启灵手段": 36,
-    "[Producer's Letter] We Will Not Fail You": 100,
     "Idk... Sorel": 1,
-    "Catulu Cosplay": 55,
     "👀👀 pspsps maheln posting(?)": 2,
-    "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction": 173,
     "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ": 515,
-    "V2.5.0 命运剧院┊Theater of Fate": 3,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
     "求求配对和抽卡建议，谢谢☺️": 2,
     "Team Building for D-Tide !": 2,
     "1495084191333744791": 1,
@@ -46,7 +52,6 @@
     "Cat Tulu Cosplay": 3,
     "Spider and Moth :>": 23,
     "morimens sybau 💔": 10,
-    "Please Help with Team Building": 19,
     "溢出奖励更换后是否通过其他渠道增加原初灵核获取": 1,
     "最终法则相关": 6,
     "\"24\" lives matter": 3,
@@ -54,7 +59,6 @@
     "👀👀 pspsps maheln WIP": 1,
     "📜 V2.5.0 版本前瞻·上┊Version Outlook - Part Ⅰ": 1,
     "刚回坑，能帮忙看看阵容和后面要抽谁": 3,
-    "🔸课间休息闲聊": 15,
     "📜 V2.5.0 版本前瞻·中┊Version Outlook - Part Ⅱ": 3,
     "鯨乙己": 3,
     "All in!": 1,
@@ -68,10 +72,12 @@
     "V2.4.2 版本前瞻 ┊ Version Outlook": 5
   },
   "hourly_activity": {
+    "17": 3272,
+    "18": 2498,
+    "19": 2237,
     "14": 1116,
     "15": 1472,
     "16": 2628,
-    "17": 191,
     "11": 1219,
     "12": 1382,
     "13": 1356,
@@ -88,10 +94,9 @@
     "4": 1857
   },
   "message_types": {
-    "19": 1876,
-    "0": 3306,
-    "46": 1,
-    "4": 1,
+    "0": 5110,
+    "19": 2701,
+    "20": 4,
     "21": 1
   },
   "top_reacted_messages": [
@@ -104,12 +109,76 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1495146065706352780",
+      "channel_id": "1495085832493596753",
+      "content": "this ☝️ . \n\nJust get the fu\\ck off if you dont trust BIAV , Light or dont care a",
+      "author": "veilmourne",
+      "reactions": 46,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495116821840527582",
+      "channel_id": "1495085832493596753",
+      "content": "@everyone \n\nUpdate: I want to share where we’ve landed on Absolute Axiom and the",
+      "author": "lightproud",
+      "reactions": 42,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495135130895777993",
+      "channel_id": "1495085832493596753",
+      "content": "<@1487626955791663208> these people can never be happy. The same 20ish people ha",
+      "author": "apophiseyes",
+      "reactions": 41,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495131580891398255",
+      "channel_id": "1495085832493596753",
+      "content": "we all support you <@1487626955791663208> thank you for the beautiful game you g",
+      "author": "veilmourne",
+      "reactions": 39,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
       "id": "1495095010889171086",
       "channel_id": "1170692781216378960",
       "content": "a thief came into my house... luckily i was doing md and he fell asleep",
       "author": "sooneruzuki",
       "reactions": 30,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495110166389985472",
+      "channel_id": "1495085832493596753",
+      "content": "What trust??  BIAV DIDNT GET YOUR FUCKING TRUST AFTER ALL THAT??\n\nBIAV??\n\nTHE ON",
+      "author": "veilmourne",
+      "reactions": 26,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495136793555636334",
+      "channel_id": "1495085832493596753",
+      "content": "not acting genuine? is that light talking about here? or you crybabies?\n\nlight d",
+      "author": "veilmourne",
+      "reactions": 25,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495140234373894295",
+      "channel_id": "1495085832493596753",
+      "content": "thats a really good idea! \n\nExcept ! they dont have enough money to support that",
+      "author": "veilmourne",
+      "reactions": 24,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495137570357776494",
+      "channel_id": "1495085832493596753",
+      "content": "Thank you for the care. What I need to do from here is stay clear-headed — so th",
+      "author": "lightproud",
+      "reactions": 23,
+      "channel": "[Producer's Letter] We Will Not Fail You"
     },
     {
       "id": "1494979734805680129",
@@ -120,6 +189,38 @@
       "channel": "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction"
     },
     {
+      "id": "1495140916237701271",
+      "channel_id": "1495085832493596753",
+      "content": "PR manager would help, but being more honest and open about what they're doing w",
+      "author": "mightythor",
+      "reactions": 22,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495136295750729809",
+      "channel_id": "1495085832493596753",
+      "content": "Or they could be trying to make a game they play better, and don't want to see i",
+      "author": "greentea367",
+      "reactions": 21,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495111110167363715",
+      "channel_id": "1495085832493596753",
+      "content": "Yeah I trusted the team before, and then they proceed to make overhauls on bigge",
+      "author": "kiseki9",
+      "reactions": 20,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495143903236718693",
+      "channel_id": "1495085832493596753",
+      "content": "Bro are u new here?  u r incredibly pathetic. This is the only explanation for a",
+      "author": "ahong0727",
+      "reactions": 20,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
       "id": "1495092461461180506",
       "channel_id": "1170692781216378960",
       "content": "On the other hand ye i believe redz isnt human\nHes french",
@@ -128,132 +229,36 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1495131707924418721",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "shostakovich524",
+      "reactions": 17,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1495132167251038321",
+      "channel_id": "1495085832493596753",
+      "content": "This has to be ragebait... this cannot be real💀 guys I think bros the spy bros t",
+      "author": "greentea367",
+      "reactions": 17,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495141310544482558",
+      "channel_id": "1495085832493596753",
+      "content": "With the amount of doomposting some of yall do, I'd have thought Light came to y",
+      "author": "john_darksouls2",
+      "reactions": 16,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
       "id": "1495093520048979999",
       "channel_id": "1170692781216378960",
       "content": "COLLAB WITH PROJECT MOON!!!",
       "author": "fleurdelyiss",
       "reactions": 16,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495050324266975283",
-      "channel_id": "1170692781216378960",
-      "content": "Finished the Boss and cleared Chapter 3.",
-      "author": "estherxavy5436",
-      "reactions": 14,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495007687094698075",
-      "channel_id": "1131839817982947429",
-      "content": "||还是说界域精通萝坦||",
-      "author": "sweet_25367",
-      "reactions": 13,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1495024902774718584",
-      "channel_id": "1131839817982947429",
-      "content": "家人們，我去嬤校貓了，等我好消息",
-      "author": "shostakovich524",
-      "reactions": 12,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1495094421417627748",
-      "channel_id": "1170692781216378960",
-      "content": "If everyone fails I'll just stream mukbang to earn money\n-Kim Jihoon",
-      "author": "blitzg",
-      "reactions": 11,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495044074833575948",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "spooky_penguin_",
-      "reactions": 11,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494975928692904048",
-      "channel_id": "1170692781216378960",
-      "content": "heres my oc character for morimens: kills everything and buffs your team to kill",
-      "author": "lichkin",
-      "reactions": 11,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494889009107828826",
-      "channel_id": "1494889009107828826",
-      "content": "Hello,\n\nI was concerned that feedback from the Korean community might not be ful",
-      "author": "gacha_ping",
-      "reactions": 11,
-      "channel": "Summary of Korean Community Feedback Regarding the 12-Level Breakthrough System"
-    },
-    {
-      "id": "1495089563889045654",
-      "channel_id": "1170692781216378960",
-      "content": "water is wet",
-      "author": "stunninghorse",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495089817346642102",
-      "channel_id": "1170692781216378960",
-      "content": "If I complain that Corpo AA is garbage\nIt will get buffed ?\nOkay I have a gamepl",
-      "author": "legendaryredz",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495094630855872691",
-      "channel_id": "1170692781216378960",
-      "content": "Limbus Company gameplay still sucks.",
-      "author": "kirboexists",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495099000196694066",
-      "channel_id": "1170692781216378960",
-      "content": "Regarding the sex toy incident from about a year ago, I've seen that some people",
-      "author": "dyssayah",
-      "reactions": 10,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495077394141417634",
-      "channel_id": "1173463482503536711",
-      "content": "~~然後誰會用這個當主畫面~~",
-      "author": "pxld_6.1",
-      "reactions": 10,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1495106486475559102",
-      "channel_id": "1495085832493596753",
-      "content": "They are literally most generous and friendly  in communicating-wise devs ive ev",
-      "author": "plaguehierarch",
-      "reactions": 10,
-      "channel": "[Producer's Letter] We Will Not Fail You"
-    },
-    {
-      "id": "1495061945319948418",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "danwangmofei",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1495063571791347845",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xingxiu_0209",
-      "reactions": 10,
-      "channel": "🔸綜合討論"
     }
   ]
 }
