@@ -1,28 +1,39 @@
 {
   "date": "2026-04-18",
-  "messages": 8402,
+  "messages": 13118,
   "unique_authors": 245,
-  "reactions_total": 1076,
-  "attachments": 280,
+  "reactions_total": 1572,
+  "attachments": 429,
   "channel_activity": {
-    "🔸綜合討論": 2936,
-    "🔸morimens-game-chat": 3682,
-    "🔸剧情交流": 5,
+    "🔸綜合討論": 4211,
+    "🔸morimens-game-chat": 5532,
+    "🔸剧情交流": 7,
+    "🔸课间休息闲聊": 15,
+    "🔸日本語チャンネル": 3,
+    "🔸한국어-채팅방": 12,
+    "🔸deutscher-chatraum": 7,
+    "🔸русский-канал": 3,
+    "🔸phòng-chat-tiếng-việt": 833,
+    "🔸canal-español": 149,
+    "🔸ruang-obrolan-indonesia": 622,
+    "🔸ห้องสนทนาภาษาไทย": 157,
+    "🔸lore-chat": 81,
+    "🔸team-building": 60,
+    "🔸general-chat": 536,
+    "🔸game-question": 226,
+    "🔸机器人命令┊bot-commands": 22,
+    "最终法则相关": 1,
+    "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 4,
+    "Spider and Moth :>": 5,
+    "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction": 100,
+    "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ": 144,
+    "📜 V2.5.0 版本前瞻·中┊Version Outlook - Part Ⅱ": 3,
+    "求求配对和抽卡建议，谢谢☺️": 1,
     "🔸相位对弈": 3,
-    "🔸课间休息闲聊": 14,
-    "🔸phòng-chat-tiếng-việt": 412,
-    "🔸canal-español": 134,
     "🔸canal-português": 303,
-    "🔸ruang-obrolan-indonesia": 55,
-    "🔸ห้องสนทนาภาษาไทย": 19,
     "🔸traphase": 7,
-    "🔸lore-chat": 79,
     "🔸频道建议┊server-suggestions": 2,
-    "🔸team-building": 42,
-    "🔸general-chat": 406,
     "🔸邀请码互助┊swap-invitation-codes": 5,
-    "🔸game-question": 95,
-    "🔸机器人命令┊bot-commands": 19,
     "鯨乙己": 3,
     "All in!": 1,
     "建个随笔楼": 1,
@@ -35,24 +46,25 @@
     "Regarding Absolute axiom (+12) on limited characters": 4,
     "Who Ryker's Designer pls come talk ?": 1,
     "致歉：V2.5.0 「空幻之芯」奖励调整和未来计划 Apology: V2.5.0 Ethereal Core Reward Adjustments and Future Plans": 4,
-    "问&答：关于最终法则与未来规划 Q&A: Regarding Absolute Axiom and the Future Plan": 2,
     "morimens sybau 💔": 4,
-    "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ": 118,
     "V2.4.2 版本前瞻 ┊ Version Outlook": 5,
     "Please Help with Team Building": 17
   },
   "hourly_activity": {
+    "5": 1895,
+    "6": 2048,
+    "7": 2134,
+    "8": 294,
     "0": 929,
     "1": 705,
     "2": 1350,
     "3": 1906,
-    "4": 1857,
-    "5": 1655
+    "4": 1857
   },
   "message_types": {
-    "0": 5769,
-    "19": 2629,
-    "20": 4
+    "0": 3234,
+    "19": 1478,
+    "6": 4
   },
   "top_reacted_messages": [
     {
@@ -62,6 +74,22 @@
       "author": "gacha_ping",
       "reactions": 11,
       "channel": "Summary of Korean Community Feedback Regarding the 12-Level Breakthrough System"
+    },
+    {
+      "id": "1494959397519102113",
+      "channel_id": "1170692781216378960",
+      "content": "Can you not fucking gpt translation this shit? There's 0 wording consistency, th",
+      "author": "aurora3981",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494940063295995965",
+      "channel_id": "1494691248794112181",
+      "content": "Final Codex is full of filler characters, unworthy Awakenings, garbage buffs for",
+      "author": "chen1.chen2",
+      "reactions": 10,
+      "channel": "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ"
     },
     {
       "id": "1494890714612498642",
@@ -88,6 +116,22 @@
       "channel": "🔸相位对弈"
     },
     {
+      "id": "1494944111650672750",
+      "channel_id": "1170692781216378960",
+      "content": "Hi everyone, hope you all have a wonderful day!",
+      "author": "yy42974466",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494945914161205348",
+      "channel_id": "1170692781216378960",
+      "content": "Got my first ever double.",
+      "author": "estherxavy5436",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1494931218867683439",
       "channel_id": "1170692781216378960",
       "content": "Hot take here but, I consider 425 to be the standard difficulty. That all player",
@@ -102,6 +146,38 @@
       "author": "zier.0",
       "reactions": 8,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494959505446801408",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arkaether",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494964404180221992",
+      "channel_id": "1170692781216378960",
+      "content": "Struggling to read with EN chat.\nI want to give up and hand in an empty exam pap",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494968525763121232",
+      "channel_id": "1170692781216378960",
+      "content": "i'm going to reserve all judgement until she comes out",
+      "author": "arkaether",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494959829041807433",
+      "channel_id": "1494955533382455316",
+      "content": "🚮",
+      "author": "aurora3981",
+      "reactions": 7,
+      "channel": "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction"
     },
     {
       "id": "1494890289767256065",
@@ -120,100 +196,36 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1494939140494594118",
+      "channel_id": "1170692781216378960",
+      "content": "Someone post Arachne trailer to r/ gacha gaming\nNah too lazy\n> New drama\nR/ gach",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494970214519935107",
+      "channel_id": "1170692781216378960",
+      "content": "every ultra awaker from now should have at least this many gimmicks",
+      "author": "exo_2360",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1494948381464989746",
+      "channel_id": "1494691248794112181",
+      "content": "",
+      "author": "dyssayah",
+      "reactions": 6,
+      "channel": "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ"
+    },
+    {
       "id": "1494894093518770376",
       "channel_id": "1131839817982947429",
       "content": "有大佬可以帶帶我嗎",
       "author": "ahuahuahua",
       "reactions": 6,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494894401976008786",
-      "channel_id": "1131839817982947429",
-      "content": "设计废案细化一下拿出来卖你68",
-      "author": "lynn_0719",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494895443262570597",
-      "channel_id": "1131839817982947429",
-      "content": "停不下来",
-      "author": "cs001092",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494854184867074169",
-      "channel_id": "1170692781216378960",
-      "content": "We talking about acc progression to 400? You just need 1 anni",
-      "author": "aurora3981",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494859607384920194",
-      "channel_id": "1170692781216378960",
-      "content": "wtf, all this just to raise lvl by 2 ?",
-      "author": "boppyboi",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494907933262090270",
-      "channel_id": "1170692781216378960",
-      "content": "you can be mad at BIAV but deaththreat and vulgarities cross the line",
-      "author": "_venush",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1494893291458527242",
-      "channel_id": "1131839817982947429",
-      "content": "80等送你一隻+12拉蒙娜",
-      "author": "quackdayo",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494895195274350633",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "carme.0588",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494898417283895389",
-      "channel_id": "1131839817982947429",
-      "content": "我都被踢18个了",
-      "author": "carme.0588",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494903890179526686",
-      "channel_id": "1131839817982947429",
-      "content": "第二条想被鲨鱼🍵",
-      "author": "carme.0588",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494910850371289240",
-      "channel_id": "1131839817982947429",
-      "content": "我很害怕有一天突然發現有玩忘卻的大馬人是和我一個地區的",
-      "author": "ahong0727",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1494859082795057302",
-      "channel_id": "1170692781216378960",
-      "content": "Guess who just found out that the max hp reduction from gdolls self destruct in ",
-      "author": "simjito",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
