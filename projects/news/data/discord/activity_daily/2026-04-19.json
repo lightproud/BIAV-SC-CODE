@@ -1,46 +1,57 @@
 {
   "date": "2026-04-19",
-  "messages": 10953,
+  "messages": 15207,
   "unique_authors": 358,
-  "reactions_total": 1592,
-  "attachments": 434,
+  "reactions_total": 2377,
+  "attachments": 596,
   "channel_activity": {
-    "🔸綜合討論": 3624,
+    "🔸綜合討論": 5214,
+    "🔸morimens-game-chat": 5691,
+    "🔸剧情交流": 4,
+    "🔸课间休息闲聊": 3,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 57,
+    "🔸phòng-chat-tiếng-việt": 873,
+    "🔸canal-español": 98,
+    "🔸canal-português": 527,
+    "🔸ruang-obrolan-indonesia": 207,
+    "🔸ห้องสนทนาภาษาไทย": 20,
+    "🔸lore-chat": 52,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸team-building": 278,
+    "🔸general-chat": 983,
+    "🔸game-question": 486,
+    "🔸机器人命令┊bot-commands": 34,
+    "🔸erica-playground": 2,
+    "去讀書吧，守門員們 || 员威廉": 4,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 100,
+    "@身份組": 3,
+    "Personally tried to accept Traphase as part of the game. It's not working.": 31,
+    "一些建議": 9,
+    "原液返还相关问题": 14,
+    "Proper moderation": 72,
+    "\"24\" lives matter": 1,
+    "✅「Answered」Possibilities of Doresain kit rework": 11,
+    "V2.5.0.0 停服维护公告": 96,
+    "[Producer's Letter] We Will Not Fail You": 104,
+    "After reading Seasonal Mission requirements": 3,
+    "Go and study, Keepers || William": 3,
+    "Catulu Cosplay": 12,
+    "👀👀 pspsps hameln posting(?)": 3,
+    "融災怎麼打 有大佬帶帶我嗎": 18,
     "🔸阵容构建": 1,
-    "🔸morimens-game-chat": 4335,
     "🔸晒卡分享": 4,
     "🔸相位对弈": 4,
     "🔸한국어-채팅방": 12,
-    "🔸русский-канал": 35,
-    "🔸phòng-chat-tiếng-việt": 547,
-    "🔸canal-español": 79,
-    "🔸canal-português": 525,
-    "🔸ruang-obrolan-indonesia": 180,
-    "🔸ห้องสนทนาภาษาไทย": 13,
     "🔸traphase": 39,
-    "🔸lore-chat": 51,
-    "🔸team-building": 174,
-    "🔸general-chat": 617,
     "🔸邀请码互助┊swap-invitation-codes": 9,
-    "🔸game-question": 338,
-    "🔸机器人命令┊bot-commands": 25,
-    "去讀書吧，守門員們 || 员威廉": 2,
     "建个随笔楼": 1,
     "融災小關卡不能自動": 1,
     "Is there no character rerun banner in this patch?": 2,
-    "一些建議": 4,
     "Regional pricing": 5,
     "Give Max SF mats for Veteran- Ranking": 2,
     "Ramona's mirror says 3th instead of 3rd": 1,
-    "原液返还相关问题": 13,
-    "Proper moderation": 14,
-    "✅「Answered」Possibilities of Doresain kit rework": 3,
-    "V2.5.0.0 停服维护公告": 91,
-    "[Producer's Letter] We Will Not Fail You": 80,
-    "Go and study, Keepers || William": 1,
     "This is Mori, short for Morimens": 1,
-    "Catulu Cosplay": 6,
-    "👀👀 pspsps hameln posting(?)": 2,
     "Arachneposting": 1,
     "【English Translation】Opinions Collection": 1,
     "V2.5.0 阿拉克涅✦唤醒体&命轮介绍┊ Arachne✦Awakener & Wheel of Destiny Introduction": 1,
@@ -51,11 +62,13 @@
     "求配隊+抽卡推薦": 18,
     "求潘好友": 8,
     "回鍋求融災禁區配置": 56,
-    "融災怎麼打 有大佬帶帶我嗎": 3,
     "刚回坑，能帮忙看看阵容和后面要抽谁": 2,
     "Arc 2 Team and Pulls Advice": 8
   },
   "hourly_activity": {
+    "9": 1836,
+    "10": 1808,
+    "11": 1602,
     "0": 1113,
     "1": 889,
     "2": 535,
@@ -64,16 +77,30 @@
     "5": 1674,
     "6": 1556,
     "7": 1205,
-    "8": 1140,
-    "9": 992
+    "8": 1140
   },
   "message_types": {
-    "19": 3241,
-    "0": 7708,
-    "20": 3,
-    "4": 1
+    "0": 2918,
+    "19": 1334,
+    "20": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1495358004625670174",
+      "channel_id": "1354754985119846581",
+      "content": "**Statement Regarding the Disciplinary Action Against User 清清梓燃 and Reaffirmatio",
+      "author": "morimensstaff03",
+      "reactions": 103,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1495357796668014662",
+      "channel_id": "1354754985119846581",
+      "content": "<@&1440133908661534790> \n*** 关于用户 清清梓燃 违规处理及社区规范重申的声明***\n\u0001\n致各位守密人：\n\n《忘却前夜》Discor",
+      "author": "morimensstaff03",
+      "reactions": 55,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
     {
       "id": "1495218048385421373",
       "channel_id": "1495085832493596753",
@@ -99,11 +126,43 @@
       "channel": "[Producer's Letter] We Will Not Fail You"
     },
     {
+      "id": "1495378000709943296",
+      "channel_id": "1131839817982947429",
+      "content": "@\n*** 关于用户 清清梓燃 违规处理及社区规范重申的声明***\n\u0001\n致各位守密人：\n\n《忘却前夜》Discord社区是大家共同交流、分享游戏体验的空间。我们",
+      "author": "bartmann_3212",
+      "reactions": 12,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1495224186627555469",
       "channel_id": "1495085832493596753",
       "content": "we should have hoyoverse buy out biav so it can turn into a 3d open world game a",
       "author": "46982105",
       "reactions": 12,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495388169825157263",
+      "channel_id": "1131839817982947429",
+      "content": "||要是當年真出了羊媽杯子然後彎道超車成為男女客群通吃的第一克系黃油就太平萬歲了||",
+      "author": "ernest_heart",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1495388661754232912",
+      "channel_id": "1131839817982947429",
+      "content": "拿來插花",
+      "author": "yusi4172",
+      "reactions": 11,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1495377937195597854",
+      "channel_id": "1495085832493596753",
+      "content": "I don't understand how players wanting better communication about huge changes l",
+      "author": "aimyr",
+      "reactions": 11,
       "channel": "[Producer's Letter] We Will Not Fail You"
     },
     {
@@ -120,6 +179,14 @@
       "content": "Am tired, just Google translate it yourself if you want to understand, I'll try ",
       "author": "shostakovich524",
       "reactions": 11,
+      "channel": "[Producer's Letter] We Will Not Fail You"
+    },
+    {
+      "id": "1495382280745652375",
+      "channel_id": "1495085832493596753",
+      "content": "我們需要的是確切的改動而不是一堆吃不到的餅\n說好的觀察社區呢❓究竟有沒有在觀察和做出改動一目了然\n該加強的不加強，硬要弄一個只會讓角色強弱差距更明顯的，腦是被貓",
+      "author": "akkom730",
+      "reactions": 10,
       "channel": "[Producer's Letter] We Will Not Fail You"
     },
     {
@@ -163,76 +230,20 @@
       "channel": "[Producer's Letter] We Will Not Fail You"
     },
     {
-      "id": "1495324477784068106",
-      "channel_id": "1131839817982947429",
-      "content": "习近🐱",
-      "author": "carme.0588",
-      "reactions": 9,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1495257311839522836",
+      "id": "1495365590905262241",
       "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "chinkeeyong",
+      "content": "My account now has 3 OE Limited Awakeners <:Ramona_love:1459077541829546007>",
+      "author": "megidola.",
       "reactions": 9,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1495318108389511249",
-      "channel_id": "1495307722646749225",
-      "content": "我们现在要打4个榜了喔<:dead:1356082627509092372>",
-      "author": "sweet_25367",
-      "reactions": 9,
-      "channel": "V2.5.0.0 停服维护公告"
-    },
-    {
-      "id": "1495325377256755363",
-      "channel_id": "1131839817982947429",
-      "content": "猫到底在英区卖了多少屁眼才能养出来这么纯的孝子我们还未可知",
-      "author": "lynn_0719",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1495327934125183077",
-      "channel_id": "1131839817982947429",
-      "content": "有大佬可以帶帶我嗎",
-      "author": "ahuahuahua",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1495337602314670180",
-      "channel_id": "1131839817982947429",
-      "content": "CN玩家提出不足之處並建議校貓修改：",
-      "author": "ice_storys",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1495334295101898782",
+      "id": "1495376174866501632",
       "channel_id": "1170692781216378960",
-      "content": "The copy pasta originated from this btw, it's the response of the devs in one of",
-      "author": "moyashi0672",
-      "reactions": 8,
+      "content": "watch i get banned instead",
+      "author": "polkarain",
+      "reactions": 9,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495251610895515802",
-      "channel_id": "1495085832493596753",
-      "content": "项目有很多玩家看不到的地方要付出大量心血，可以理解，我过去1年为这个游戏投入了远超其他游戏的金钱（我玩了14年三国杀冲的都没有给这个游戏多），很大程度上是我认同",
-      "author": "luqia_29222_90947",
-      "reactions": 8,
-      "channel": "[Producer's Letter] We Will Not Fail You"
-    },
-    {
-      "id": "1495298704410677311",
-      "channel_id": "1495085832493596753",
-      "content": "bro is no.1 light glazer💀 🙏",
-      "author": "ponponnyaru",
-      "reactions": 8,
-      "channel": "[Producer's Letter] We Will Not Fail You"
     }
   ]
 }
