@@ -1,17 +1,33 @@
 {
   "last_session": {
-    "id": "c1db494a",
-    "timestamp": "2026-04-19T17:46:42.879000+00:00",
-    "duration_minutes": 2.0,
+    "id": "142194c5",
+    "timestamp": "2026-04-19T17:59:29.089000+00:00",
+    "duration_minutes": 14.8,
     "branch": "claude/project-strategy-review-1AH5Z",
     "topics": [
-      "银芯"
+      "银芯",
+      "Phase1",
+      "Phase2",
+      "记忆宫殿",
+      "Wiki"
     ],
     "decisions": [],
     "files_changed": [],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "c1db494a",
+      "timestamp": "2026-04-19T17:46:42.879000+00:00",
+      "duration_minutes": 2.0,
+      "branch": "claude/project-strategy-review-1AH5Z",
+      "topics": [
+        "银芯"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "6bfb5ee6",
       "timestamp": "2026-04-16T14:34:01.896000+00:00",
@@ -155,37 +171,23 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "e45159cd",
-      "timestamp": "2026-04-16T05:18:25.870000+00:00",
-      "duration_minutes": 2071.0,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 3.98,
-      "黑池": 3.98,
-      "银芯": 1.0
+      "BPT": 3.18,
+      "黑池": 3.18,
+      "银芯": 1.8,
+      "Phase1": 1.0,
+      "Phase2": 1.0,
+      "记忆宫殿": 1.0,
+      "Wiki": 1.0
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
       "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
     ],
-    "total_sessions": 66
+    "total_sessions": 67
   },
-  "updated_at": "2026-04-19T17:52:22.909734+00:00"
+  "updated_at": "2026-04-19T18:04:36.970706+00:00"
 }
