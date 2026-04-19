@@ -1,23 +1,35 @@
 {
   "last_session": {
-    "id": "6bfb5ee6",
-    "timestamp": "2026-04-16T14:34:01.896000+00:00",
-    "duration_minutes": 2626.6,
-    "branch": "claude/review-ai-app-architecture-4eNiu",
+    "id": "c1db494a",
+    "timestamp": "2026-04-19T17:46:42.879000+00:00",
+    "duration_minutes": 2.0,
+    "branch": "claude/project-strategy-review-1AH5Z",
     "topics": [
-      "BPT",
-      "黑池"
+      "银芯"
     ],
     "decisions": [],
-    "files_changed": [
-      "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-      "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-    ],
-    "open_items": [
-      "改动的风险差异巨大"
-    ]
+    "files_changed": [],
+    "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "6bfb5ee6",
+      "timestamp": "2026-04-16T14:34:01.896000+00:00",
+      "duration_minutes": 2626.6,
+      "branch": "claude/review-ai-app-architecture-4eNiu",
+      "topics": [
+        "BPT",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
+        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
+      ],
+      "open_items": [
+        "改动的风险差异巨大"
+      ]
+    },
     {
       "id": "b7ea77f2",
       "timestamp": "2026-04-16T08:58:58.071000+00:00",
@@ -161,36 +173,19 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "d1808dce",
-      "timestamp": "2026-04-15T12:34:17.497000+00:00",
-      "duration_minutes": 1066.9,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 4.98,
-      "黑池": 4.98
+      "BPT": 3.98,
+      "黑池": 3.98,
+      "银芯": 1.0
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
       "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
     ],
-    "total_sessions": 65
+    "total_sessions": 66
   },
-  "updated_at": "2026-04-16T14:39:31.715836+00:00"
+  "updated_at": "2026-04-19T17:52:22.909734+00:00"
 }
