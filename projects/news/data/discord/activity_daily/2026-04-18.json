@@ -1,27 +1,27 @@
 {
   "date": "2026-04-18",
-  "messages": 40439,
+  "messages": 40603,
   "unique_authors": 329,
-  "reactions_total": 7641,
-  "attachments": 1346,
+  "reactions_total": 7647,
+  "attachments": 1354,
   "channel_activity": {
-    "🔸綜合討論": 10313,
-    "🔸morimens-game-chat": 16787,
+    "🔸綜合討論": 10361,
+    "🔸morimens-game-chat": 16856,
+    "🔸canal-português": 2875,
+    "🔸ruang-obrolan-indonesia": 802,
+    "🔸traphase": 91,
+    "🔸team-building": 372,
+    "🔸game-question": 1094,
+    "🔸机器人命令┊bot-commands": 117,
+    "[Producer's Letter] We Will Not Fail You": 1230,
     "🔸русский-канал": 1302,
     "🔸canal-español": 450,
-    "🔸canal-português": 2847,
-    "🔸ruang-obrolan-indonesia": 798,
-    "🔸traphase": 89,
     "🔸lore-chat": 170,
     "🔸频道建议┊server-suggestions": 4,
-    "🔸team-building": 371,
     "🔸general-chat": 1114,
-    "🔸game-question": 1084,
     "🔸忘却前夜┊morimens-tv": 3,
     "🔸游戏问题": 3,
-    "🔸机器人命令┊bot-commands": 116,
     "Proper moderation": 3,
-    "[Producer's Letter] We Will Not Fail You": 1229,
     "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ": 517,
     "V2.5.0 命运剧院┊Theater of Fate": 9,
     "V2.5.0 无期囚徒┊Perpetual Thrall": 6,
@@ -81,9 +81,9 @@
     "V2.4.2 版本前瞻 ┊ Version Outlook": 5
   },
   "hourly_activity": {
+    "23": 1455,
     "21": 1349,
     "22": 1225,
-    "23": 1291,
     "19": 2391,
     "20": 1611,
     "17": 3272,
@@ -107,9 +107,8 @@
     "4": 1857
   },
   "message_types": {
-    "0": 1676,
-    "19": 1022,
-    "21": 2
+    "19": 62,
+    "0": 102
   },
   "top_reacted_messages": [
     {
