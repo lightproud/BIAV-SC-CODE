@@ -2,16 +2,20 @@ name: Discord Archive
 
 on:
   schedule:
-    # Incremental: every hour at :00
-    - cron: '0 * * * *'
+    # Incremental: daily at 18:00 UTC (per news/CONTEXT.md 2026-04-11 policy)
+    - cron: '0 18 * * *'
     # Monthly cleanup: 1st of each month at 06:00 UTC
     - cron: '0 6 1 * *'
   workflow_dispatch:
     inputs:
       mode:
-        description: 'Run mode: incremental (default) or monthly-cleanup'
+        description: 'Run mode: incremental (default) / monthly-cleanup / force-month'
         required: false
         default: 'incremental'
+      force_month:
+        description: 'When mode=force-month: YYYY-MM to archive (bypasses 60-day cutoff). Comma-separated for multiple.'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -32,7 +36,9 @@ jobs:
       - name: Determine run mode
         id: mode
         run: |
-          if [ "${{ github.event.schedule }}" = "0 6 1 * *" ] || [ "${{ github.event.inputs.mode }}" = "monthly-cleanup" ]; then
+          if [ "${{ github.event.inputs.mode }}" = "force-month" ]; then
+            echo "mode=force" >> $GITHUB_OUTPUT
+          elif [ "${{ github.event.schedule }}" = "0 6 1 * *" ] || [ "${{ github.event.inputs.mode }}" = "monthly-cleanup" ]; then
             echo "mode=monthly" >> $GITHUB_OUTPUT
           else
             echo "mode=incremental" >> $GITHUB_OUTPUT
@@ -51,6 +57,26 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python projects/news/scripts/archive_discord.py
 
+      - name: Run force-month archive (manual stop-bleed)
+        if: steps.mode.outputs.mode == 'force'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          FORCE_MONTH_INPUT: ${{ github.event.inputs.force_month }}
+        run: |
+          if [ -z "$FORCE_MONTH_INPUT" ]; then
+            echo "ERROR: mode=force-month requires force_month input (e.g. 2026-03)"
+            exit 1
+          fi
+          FLAGS=""
+          IFS=',' read -ra MONTHS <<< "$FORCE_MONTH_INPUT"
+          for m in "${MONTHS[@]}"; do
+            m_trimmed="$(echo "$m" | tr -d '[:space:]')"
+            [ -n "$m_trimmed" ] && FLAGS="$FLAGS --force-month $m_trimmed"
+          done
+          echo "Running: python projects/news/scripts/archive_discord.py $FLAGS"
+          python projects/news/scripts/archive_discord.py $FLAGS
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
@@ -62,6 +88,8 @@ jobs:
             MSG="chore: archive Discord data [skip ci]"
             if [ "${{ steps.mode.outputs.mode }}" = "monthly" ]; then
               MSG="chore: monthly Discord cleanup — old JSONL moved to Releases [skip ci]"
+            elif [ "${{ steps.mode.outputs.mode }}" = "force" ]; then
+              MSG="chore: force-month Discord cleanup — JSONL moved to Releases [skip ci]"
             fi
             git commit -m "$MSG"
             for i in 1 2 3 4; do
