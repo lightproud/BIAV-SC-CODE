@@ -1,6 +1,6 @@
 # Wiki 子项目上下文
 
-> 最后更新：2026-04-02 by 战略中心（Code）
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话）
 
 ## 负责会话
 Code-wiki
@@ -11,7 +11,7 @@ Code-wiki
 ## 项目包含两部分
 
 ### 1. 游戏数据集（原 database 子项目）
-- **数据文件**：`data/db/` 下 16 个模块化 JSON（角色、技能、装备、战斗、世界观等）
+- **数据文件**：`data/db/characters.json` 尚未建立，Phase 2 开工需先自举（参考 `assets/data/character_data.txt` 解析）。真实角色总数 72（含皮肤/联动/彩蛋）
 - **查询模块**：`scripts/content_db.py`，Python 接口
 - **数据来源**：GameKee wiki、Fandom Sialia、Gamerch JP
 - **存储格式**：JSON
@@ -56,7 +56,7 @@ python scripts/content_db.py
 
 ## 验证清单
 - [ ] data/db/*.json 全部 JSON 格式有效
-- [ ] characters.json 角色数量 > 50
+- [ ] characters.json 角色数量 = 72（Phase 2 自举后）
 - [ ] VitePress 能本地启动无报错
 - [ ] 三语目录结构一致（zh/en/ja 页面数量相近）
 
@@ -77,3 +77,16 @@ python scripts/content_db.py
 - [ ] 检查 `memory/morimens-context.md` 了解游戏背景知识
 - [ ] 确认你要修改的文件不属于其他子项目
 - [ ] 完成任务后更新本文件"下一步"部分和 `memory/project-status.md`
+
+## Phase 2 权威路线图
+
+Phase 2 启动会话必读：`memory/wiki-phase-2-gap-inventory.md`
+
+该文档为 B3 Wiki 调研子代理于 2026-04-20 产出的权威缺口清单，包含：
+- 72 角色真实名单（含 AwakerConfig ID 映射）
+- 按难度分组的补全建议（易补 11 / 中补 9 / 难补 5）
+- fetch-wiki-data workflow 安全触发评估
+- 基线自举建议顺序（Week 1-5）
+- 预估耗时（悲观 28-35 天，含 3-5 天基线自举）
+
+**开工第一优先级**：澄清 `projects/wiki/data/db/characters.json` 基线来源（从 `character_data.txt` 自举），而非直接跑 fetch 脚本。

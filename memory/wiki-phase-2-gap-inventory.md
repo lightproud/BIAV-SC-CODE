@@ -130,6 +130,8 @@
 | 78840 | 熟悉的黑猫 | 弥萨格校猫 | **Y** | **Y** | 剧情文本 | 彩蛋 NPC |
 | 78841 | 熟悉的黑猫 | 弥萨格校猫 | **Y** | **Y** | 剧情文本 | 与 78840 同名不同 ID，疑似不同形态 |
 
+> **守密人裁定（2026-04-20）**：两个"詹金"（15578/15593）与两个"熟悉的黑猫"（78840/78841）**确认为数据 bug**，非游戏异卡同名。Phase 2 开工路线图需加入"角色 ID 去重修复"步骤作为基线自举的一部分。
+
 ### 2.4 新联动/皮肤 (94450-130901)，共 9 个
 
 | AwakerConfig ID | 中文名 | 缺技能文本 | 缺背景故事 | 建议来源 | 备注 |
@@ -224,8 +226,9 @@
 **Week 1（04-27 ~ 05-03）：基线修复**
 1. 澄清 characters.json 的消失原因，修复 `memory/project-status.md` 与 `CONTEXT.md`
 2. 用 character_data.txt 自举生成最小 `projects/wiki/data/db/characters.json`（72 ID + Name/Title/Age/Painter/VoiceActor/Gender）
-3. 创建 `realms.json`、`role_types` 基础骨架，让 schema 校验能跑通
-4. 跑一次 `validate-data.yml` 确认基线干净
+3. **角色 ID 去重修复**（守密人 2026-04-20 裁定）：15578/15593 詹金、78840/78841 黑猫均为数据 bug，自举时必须合并 ID 消除重复
+4. 创建 `realms.json`、`role_types` 基础骨架，让 schema 校验能跑通
+5. 跑一次 `validate-data.yml` 确认基线干净
 
 **Week 2（05-04 ~ 05-10）：易补 11 角色**
 1. 主干常驻的 11 个缺技能角色（环行·拉蒙娜、萝坦、朵尔等）

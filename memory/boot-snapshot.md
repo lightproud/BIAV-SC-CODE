@@ -1,6 +1,6 @@
 # 银芯启动快照 / BIAV-SC Boot Snapshot
 
-> 最后更新：2026-04-13 by boot_snapshot.py (auto-generated)
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话）
 > 新会话读完此文件即可就绪，无需逐个加载 memory 文件。
 > 完整定义见 `BIAV-SC.md`，本文件是压缩启动包。
 
@@ -16,9 +16,9 @@
 **Phase 1（记忆宫殿）✅ 已验证 → Phase 2（内容权威）准备中**
 
 三条主线：
-1. 事实圣经 — 63 角色 + 叙事结构 + 设计决策 ✅
+1. 事实圣经 — 72 角色（含皮肤/联动/彩蛋）+ 叙事结构 + 设计决策 ✅
 2. 自动情报循环 — 日报 3 源 + 哨兵 + 做梦三层 ✅
-3. 权威知识站点 — Wiki 83% 完成，52 角色技能待补
+3. 权威知识站点 — Wiki 基线缺失（characters.json 未建立），Phase 2 首要任务是自举，真实缺口见 `memory/wiki-phase-2-gap-inventory.md`
 
 阻塞项：YouTube/Twitter/NGA/TapTap API 未配（不阻塞核心）
 
@@ -93,7 +93,7 @@ Latest dream: 2026-W15-weekly
 - 项目详细状态 → `memory/project-status.md`
 - 战略评估 → `memory/strategic-assessment.md`
 - 游戏世界观 → `memory/morimens-context.md`
-- 角色数据库 → `projects/wiki/data/db/characters.json`
+- 角色数据库 → `projects/wiki/data/db/characters.json` ⚠ 尚未建立，Phase 2 首要任务（72 角色真实名单见 `memory/wiki-phase-2-gap-inventory.md`）
 - 最新日报 → `projects/news/output/daily-latest.md`
 - 全平台数据 → `projects/news/output/all-latest.json`
 - 设计决策 → `assets/data/design-decisions.json`

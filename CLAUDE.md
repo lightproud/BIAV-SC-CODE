@@ -76,7 +76,7 @@ brain-in-a-vat/
 |--------|------|---------|--------|------|
 | 主站 + 部署 + 视觉 | `projects/site/` | Code-site | 纯 HTML/CSS/JS | 已部署，维护模式 |
 | 社区新闻聚合 | `projects/news/` | Code-news | Python 3.11+ / 纯 HTML | 收缩夯实，3 源运行中 |
-| Wiki + 数据集 | `projects/wiki/` | Code-wiki | VitePress 1.6.4 + Vue 3.5.13 | 数据补全中（~83%） |
+| Wiki + 数据集 | `projects/wiki/` | Code-wiki | VitePress 1.6.4 + Vue 3.5.13 | 基线缺失，Phase 2 待自举 |
 | 衍生游戏 | `projects/game/` | Code-game（未启用） | 待决策 | 暂缓，Phase 4 启动 |
 
 > BPT（黑池终端）整条战线已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 的指导者，协议见 `memory/bpt-guidance-protocol.md`。
@@ -99,7 +99,7 @@ brain-in-a-vat/
 |-----------|--------|
 | 了解项目当前状态 | `memory/boot-snapshot.md`（优先）+ `memory/project-status.md` |
 | 理解游戏世界观 | `memory/morimens-context.md` |
-| 查角色数据库（63 角色） | `projects/wiki/data/db/characters.json` |
+| 查角色数据库（72 角色） | `projects/wiki/data/db/characters.json` ⚠ 尚未建立，Phase 2 首要任务 |
 | 查社区动态 | `projects/news/output/daily-latest.md` / `all-latest.json` |
 | 查制作人第一手陈述 | `assets/data/interview-2026-04.json` |
 | 了解被砍机制/设计哲学 | `assets/data/design-decisions.json` |
