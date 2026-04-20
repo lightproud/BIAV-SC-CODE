@@ -76,7 +76,7 @@ brain-in-a-vat/
 |--------|------|---------|--------|------|
 | 主站 + 部署 + 视觉 | `projects/site/` | Code-site | 纯 HTML/CSS/JS | 已部署，维护模式 |
 | 社区新闻聚合 | `projects/news/` | Code-news | Python 3.11+ / 纯 HTML | 收缩夯实，3 源运行中 |
-| Wiki + 数据集 | `projects/wiki/` | Code-wiki | VitePress 1.6.4 + Vue 3.5.13 | 基线缺失，Phase 2 待自举 |
+| Wiki + 数据集 | `projects/wiki/` | Code-wiki | VitePress 1.6.3 + Vue 3.5.13 | 基线缺失，Phase 2 待自举 |
 | 衍生游戏 | `projects/game/` | Code-game（未启用） | 待决策 | 暂缓，Phase 4 启动 |
 
 > BPT（黑池终端）整条战线已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 的指导者，协议见 `memory/bpt-guidance-protocol.md`。
@@ -306,7 +306,7 @@ AI 会话最易踩的坑：
 
 - 各子项目按需选型，不强制统一
 - 后端：Python 3.11+
-- Wiki：VitePress 1.6.4 + Vue 3.5.13，三语（EN/JA/ZH，ZH 为 root locale）
+- Wiki：VitePress 1.6.3 + Vue 3.5.13，三语（EN/JA/ZH，ZH 为 root locale）
 - 部署：GitHub Pages + GitHub Actions（peaceiris/actions-gh-pages@v4 推 gh-pages 分支）
 
 ---

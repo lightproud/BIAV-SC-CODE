@@ -1,7 +1,7 @@
 # News 聚合器 — 会话上下文
 
 > 启动时请先阅读根目录 `CLAUDE.md` 了解全局。
-> 最后更新：2026-04-11 by Code-news
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话，sync-memory 修正 Discord 体量）
 
 ## 当前状态：收缩夯实阶段
 
@@ -10,7 +10,7 @@
 > 来源：战略中心 Phase 0 行动方案。优先级从高到低。
 
 1. **桥接 Discord 归档数据到聚合器**：让 `aggregator.py` 读取 `projects/news/data/discord/` 当日 JSONL 数据，提取摘要进入 `news.json`。这样日报能覆盖 Discord 平台
-2. **实现 Discord 归档月度清理**：按 `memory/decisions.md` 2026-03-29 决策，每月 1 日将上月数据打包推 GitHub Releases，从 git 删除。当前归档已 299MB，必须尽快
+2. **Discord 归档月度清理已落地（2026-04-20 B2 调研修正）**：`scripts/archive_discord.py --force-month YYYY-MM` 参数已实装，workflow `discord-archive.yml` 新增 `force_month` 手动输入。**当前实测归档 193 MB**（非先前档案声称的 299 MB），首次月度清理触发等待守密人 GitHub Actions UI 操作（`force_month=2026-03`）
 3. **验证日报质量**：Steam 数据标准化 bug 已修复（split_output.py），下次 workflow 运行后确认日报正确显示 Steam + Bilibili + Discord 三个数据源
 
 ### 注意事项

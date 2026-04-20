@@ -18,13 +18,16 @@ Code-wiki
 
 ### 2. Wiki 站点
 - **框架**：VitePress 1.6.3 + Vue 3.5.13
-- **语言**：英语、日语、中文
-- **页面**：EN/JA 各 64 页，ZH 62 页（部分为模板待填充）
+- **语言**：英语、日语、中文（ZH 为 root locale）
+- **页面**：基于早期假数据生成，Phase 2 基线自举后需重跑 `generate_pages.py`
 
 ## 目录说明
-- `data/` — 游戏数据集（JSON）
-- `scripts/` — 数据查询模块（Python）
-- `docs/` — VitePress 源文件（Markdown 页面）
+- `data/extracted/` — 客户端解包原始数据（Lua 表、角色字段、美术清单）
+- `data/processed/` — 加工过的 JSON 数据（CG 画廊 / 物品故事 / 语音台词 / 世界观）
+- `data/schemas/` — 数据 schema 定义（characters / meta / realms）
+- `data/db/` — ⚠ **尚未建立**，Phase 2 W1 待自举 `characters.json`
+- `scripts/` — 数据抓取与处理脚本（Python）
+- `docs/` — VitePress 源文件（Markdown 页面，含 zh/en/ja 子目录）
 - `docs/.vitepress/` — VitePress 配置和主题
 
 ## 开发命令
@@ -40,29 +43,32 @@ npm run docs:preview # 预览构建结果
 python scripts/content_db.py
 ```
 
-## 本周任务（2026-04-01 ~ 04-07）
+## 本期任务（Phase 1.5 → Phase 2 启动窗口，2026-04-19 ~ 04-26）
 
-> 来源：战略中心 Phase 0 行动方案。Wiki 当前处于维护模式，不加新功能。
+> 来源：2026-04-19 战略转向（BPT 从银芯删除，整体战略压缩至 3 个月）。
+> Wiki 子项目进入 Phase 2 准备期，**开工第一优先级是基线自举，而非 fetch-wiki-data 抓取**。
 
-1. **数据质量基线**：对 `data/db/` 的 21 个 JSON 做一次完整人工抽查，标记数据覆盖率和准确性。输出一份简要报告到 `projects/wiki/output/data-quality-report.md`（待生成）
-2. **确认 fetch-wiki-data workflow 健康**：检查最近几次运行结果，确认 7 个抓取脚本是否正常。注意所有步骤都是 continue-on-error，需要手动看日志
+1. **schema 草案审核**：`memory/wiki-characters-schema-draft.md` v0.1 已落盘，待守密人裁决 6 项遗留问题后锁定 v1.0
+2. **基线自举准备**：待 schema v1.0 锁定后派发 P2W1W1 批量自举会话（72 角色 → `data/db/characters.json`）。建议按 24 角色 / 批拆 3 批，规避 lesson #26 的 Write timeout 风险
+3. **不要在基线建立前跑 fetch-wiki-data workflow**：fetch_skills.py 等脚本依赖 `data/db/characters.json`，该文件不存在时必然失败
 
-## 后续待做（非本周）
-- [ ] 数据准确性校验（与 wiki 源对比）
-- [ ] 接入 Fandom/Gamerch wiki 自动更新
-- [ ] 补充缺失数据（消耗品、活动等）
-- [ ] 填充 Wiki 模板页面
-- [ ] 站点已部署，持续优化
+## 后续待做（Phase 2 正式窗口 2026-04-27 → 06-05）
+- [ ] 基线自举完成后触发 fetch-wiki-data 补技能/命轮/立绘
+- [ ] 命轮 29 条 Name 的 Effect/Condition 字段补全（从 AwakerPotency.lua 或 Fandom）
+- [ ] 立绘缺口补齐（47/72 → 72/72）
+- [ ] 填充 Wiki 模板页面（基线建立后重跑 generate_pages.py）
+- [ ] 三语目录结构一致性校验
 
 ## 验证清单
-- [ ] data/db/*.json 全部 JSON 格式有效
+- [ ] `data/db/characters.json` 通过 `data/schemas/characters.schema.json`（或 v1.0 新 schema）校验
 - [ ] characters.json 角色数量 = 72（Phase 2 自举后）
 - [ ] VitePress 能本地启动无报错
 - [ ] 三语目录结构一致（zh/en/ja 页面数量相近）
 
 ## 给 Code 会话的指令
 - 工作目录：`projects/wiki/`
-- 数据文件在：`projects/wiki/data/db/`
+- 数据文件最终归宿：`projects/wiki/data/db/`（⚠ 目前未建立）
+- 原始数据源：`projects/wiki/data/extracted/categorized/character_data.txt`
 - 新数据文件添加后更新本文件和 `assets/index.md`
 - 角色/系统信息同步更新 `memory/morimens-context.md`
 
@@ -72,11 +78,12 @@ python scripts/content_db.py
 
 - [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
 - [ ] 阅读 `memory/project-status.md` 确认 wiki 子项目当前状态
-- [ ] 检查 `projects/wiki/data/db/` 目录确认数据文件完整性
+- [ ] `ls projects/wiki/data/db/` 校验 characters.json 是否已自举（缺失则回到 Phase 2 路线图）
+- [ ] 读 `memory/wiki-phase-2-gap-inventory.md` 与 `memory/wiki-characters-schema-draft.md` 了解自举现状
 - [ ] 确认 GitHub Pages 部署状态（最新 Actions 是否成功）
 - [ ] 检查 `memory/morimens-context.md` 了解游戏背景知识
 - [ ] 确认你要修改的文件不属于其他子项目
-- [ ] 完成任务后更新本文件"下一步"部分和 `memory/project-status.md`
+- [ ] 完成任务后更新本文件"本期任务"部分和 `memory/project-status.md`
 
 ## Phase 2 权威路线图
 
