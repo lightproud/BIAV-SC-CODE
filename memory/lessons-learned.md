@@ -4,6 +4,16 @@
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
+## 26. 后台子代理 Write 大文档的超时阈值低于主控台
+
+- **Context**：2026-04-20 派发 P2W1D1 / P2W1D1-retry 两个后台子代理（`run_in_background=true`）起草 `memory/wiki-characters-schema-draft.md`（~14 KB / 414 行）
+- **Problem**：两次都在完成全部调研后、`Write` 工具调用的当刻触发 `API Error: Stream idle timeout - partial response received`，产出文件未落盘。失败位置完全一致（见子代理 jsonl 最后一个 assistant event），排除随机性。主控台直接 Write 同一文档则一次成功。推断：后台 agent 的 output streaming 超时阈值更严格
+- **Fix**：
+  1. 后台子代理产出**大于 300 行 / 10 KB** 的单文档时，主控台在 prompt 中强制要求**分段写入**（先 Write 骨架 200 行以内，再分多次 Edit 追加）
+  2. 如子代理调研属性强、产出属性弱，可在 prompt 里要求返回"结构化要点 + 建议字段"而非完整文档，由主控台自行组装落盘
+  3. 连续两次 timeout 后不再盲目重试，主控台直接接手起草（schema/方法论/协议类文档本属战略锚点产出，非代码）
+- **Impact**：派发策略、时间预算、档案交付可靠性
+
 ## 1. sed 批量替换破坏 HTML 结构
 
 - **Context**：用 sed 删除 HTML 文件中的特定标签
