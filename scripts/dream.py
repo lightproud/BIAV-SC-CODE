@@ -36,6 +36,63 @@ SEMANTIC_INDEX = REPO / "assets" / "data" / "semantic-index.json"
 SENTINEL_BASELINE = REPO / "assets" / "data" / "sentinel-baseline.json"
 ALERTS_FILE = REPO / "projects" / "news" / "output" / "alerts.json"
 NEWS_OUTPUT = REPO / "projects" / "news" / "output"
+ARCHIVE_INTEGRITY_FILE = REPO / "assets" / "data" / "archive-integrity.json"
+
+# Archive integrity scan — whitelist and rules
+ARCHIVE_INTEGRITY_ROOT_FILES = [
+    "CLAUDE.md",
+    "BIAV-SC.md",
+    "README.md",
+    "assets/index.md",
+]
+ARCHIVE_INTEGRITY_GLOBS = [
+    "memory/*.md",
+    "projects/*/CONTEXT.md",
+]
+# Paths or glob patterns whose content is NOT scanned AND whose existence is NOT
+# validated when referenced elsewhere (treated as archived/frozen).
+# Rationale:
+#   - session-digests / deliverables — historical snapshots
+#   - task-wiki-data-audit / bpt-master-plan — historical diagnostic docs
+#   - blackpool-* / bpt-* / silver-to-blackpool — cross-system (BPT) design
+#     documents whose `projects/bpt-*/` references intentionally point to the
+#     Black Pool repo, not Silver Core (see CLAUDE.md: BPT removed 2026-04-19).
+ARCHIVE_INTEGRITY_SKIP_PATTERNS = [
+    "memory/session-digests/",
+    "deliverables/",
+    "memory/task-wiki-data-audit-2026-04.md",
+    "memory/bpt-master-plan.md",
+    "memory/blackpool-architecture.md",
+    "memory/bpt-next-design.md",
+    "memory/bpt-next-build-verification.md",
+    "memory/bpt-desktop-design-spec-ref.md",
+    "memory/bpt-guidance-protocol.md",
+    "memory/silver-to-blackpool-migration.md",
+    "memory/black-pool-design.md",
+    "memory/phase-d-plan.md",
+]
+# Placeholder tokens in docs — references containing any are docs/templates,
+# not real path references.
+ARCHIVE_INTEGRITY_PLACEHOLDER_TOKENS = (
+    "<", ">", "你的", "xxx", "XXX", "YYYY", "yyyy", "{", "}",
+)
+# Reference prefixes that the extractor treats as repo-relative paths.
+ARCHIVE_INTEGRITY_PATH_PREFIXES = (
+    "projects/", "memory/", "assets/", ".github/", "scripts/", "deliverables/",
+)
+# Single-file root whitelist (references like `CLAUDE.md` without a directory).
+ARCHIVE_INTEGRITY_ROOT_WHITELIST = {
+    "CLAUDE.md", "BIAV-SC.md", "README.md", "LICENSE",
+}
+# Pending markers — references in lines containing any of these tokens (or the
+# ⚠ symbol) are treated as intentionally pending, not broken.
+ARCHIVE_INTEGRITY_PENDING_MARKERS = (
+    "⚠", "尚未建立", "待自举", "phase 2 w1", "self-bootstrap",
+)
+# Backtick-wrapped path reference — allow anything except backticks/whitespace.
+# Intentionally permissive so malformed inputs (e.g. paths with spaces) are
+# extracted then filtered by the prefix check rather than crashing the regex.
+ARCHIVE_INTEGRITY_REF_RE = re.compile(r"`([^`\n]+?)`")
 
 
 def _get_branch() -> str:
@@ -136,6 +193,200 @@ def compute_deviation(current: float, baseline: float) -> float:
     if baseline <= 0:
         return 0.0
     return current / baseline
+
+
+def _archive_should_skip(rel_path: str) -> bool:
+    """Return True if a repo-relative path is in the archive skip list."""
+    norm = rel_path.replace("\\", "/")
+    for pat in ARCHIVE_INTEGRITY_SKIP_PATTERNS:
+        if pat.endswith("/"):
+            if norm.startswith(pat):
+                return True
+        elif norm == pat:
+            return True
+    return False
+
+
+def _archive_collect_sources() -> list[Path]:
+    """Resolve the archive scan source set (files whose content gets parsed)."""
+    sources: list[Path] = []
+    for name in ARCHIVE_INTEGRITY_ROOT_FILES:
+        fp = REPO / name
+        if fp.exists() and fp.is_file():
+            sources.append(fp)
+    for glob_pat in ARCHIVE_INTEGRITY_GLOBS:
+        for fp in sorted(REPO.glob(glob_pat)):
+            if not fp.is_file():
+                continue
+            rel = str(fp.relative_to(REPO)).replace("\\", "/")
+            if _archive_should_skip(rel):
+                continue
+            sources.append(fp)
+    # Deduplicate while preserving order.
+    seen: set[str] = set()
+    uniq: list[Path] = []
+    for fp in sources:
+        key = str(fp.resolve())
+        if key in seen:
+            continue
+        seen.add(key)
+        uniq.append(fp)
+    return uniq
+
+
+def _extract_path_refs(text: str) -> list[tuple[str, int, str]]:
+    """Extract (ref_path, line_no, line_text) triples from markdown text.
+
+    Only backtick-wrapped tokens that look like repo-relative paths are kept.
+    Line numbers are 1-based. Tolerates malformed backtick groups by falling
+    back to regex-level isolation; never raises.
+    """
+    results: list[tuple[str, int, str]] = []
+    lines = text.splitlines()
+    for idx, line in enumerate(lines, start=1):
+        for m in ARCHIVE_INTEGRITY_REF_RE.finditer(line):
+            raw = m.group(1).strip()
+            if not raw:
+                continue
+            # Trim common trailing punctuation attached to the path.
+            ref = raw.rstrip(".,;:!?)")
+            if " " in ref:
+                # Backtick-wrapped phrases with spaces are prose, not paths.
+                continue
+            if any(tok in ref for tok in ARCHIVE_INTEGRITY_PLACEHOLDER_TOKENS):
+                # Template/doc placeholders like `projects/<子项目>/...`.
+                continue
+            if ref.startswith(ARCHIVE_INTEGRITY_PATH_PREFIXES):
+                results.append((ref, idx, line))
+            elif ref in ARCHIVE_INTEGRITY_ROOT_WHITELIST:
+                results.append((ref, idx, line))
+    return results
+
+
+def _archive_is_pending(lines: list[str], line_idx: int) -> bool:
+    """Return True if the reference line (or its neighbours) is pending-marked.
+
+    line_idx is 0-based here. Checks current line plus +/-1 neighbours for any
+    pending marker (case-insensitive for latin markers).
+    """
+    lo = max(0, line_idx - 1)
+    hi = min(len(lines), line_idx + 2)
+    window = " ".join(lines[lo:hi]).lower()
+    for marker in ARCHIVE_INTEGRITY_PENDING_MARKERS:
+        if marker.lower() in window:
+            return True
+    return False
+
+
+def _archive_ref_exists(ref: str) -> bool:
+    """Check whether a reference resolves to an existing path inside the repo."""
+    target = REPO / ref
+    if target.exists():
+        return True
+    # Fallback: allow glob-style patterns (e.g. `memory/*.md`).
+    try:
+        return any(REPO.glob(ref))
+    except (OSError, ValueError):
+        return False
+
+
+def archive_integrity_scan() -> list[dict]:
+    """Scan repo archives for broken path references.
+
+    Emits yellow alerts for any backticked `projects/...`, `memory/...`, etc.
+    reference that fails to resolve. Pending whitelisted references (lines with
+    ⚠ / 尚未建立 / 待自举 / Phase 2 W1 / self-bootstrap) are recorded but not
+    flagged as broken. Writes a standalone report to
+    `assets/data/archive-integrity.json` regardless of alert count.
+    """
+    alerts: list[dict] = []
+    broken: list[dict] = []
+    pending: list[dict] = []
+    total_refs = 0
+    sources = _archive_collect_sources()
+
+    for fp in sources:
+        rel_src = str(fp.relative_to(REPO)).replace("\\", "/")
+        try:
+            text = fp.read_text(encoding="utf-8")
+        except (OSError, UnicodeDecodeError):
+            continue
+        text_lines = text.splitlines()
+        seen_in_file: set[tuple[str, int]] = set()
+        for ref, line_no, line_text in _extract_path_refs(text):
+            key = (ref, line_no)
+            if key in seen_in_file:
+                continue
+            seen_in_file.add(key)
+            total_refs += 1
+
+            # Skip references pointing to archived/frozen regions entirely —
+            # neither flag as broken nor as pending.
+            if _archive_should_skip(ref):
+                continue
+
+            if _archive_ref_exists(ref):
+                continue
+
+            if _archive_is_pending(text_lines, line_no - 1):
+                pending.append({
+                    "ref_path": ref,
+                    "source_file": rel_src,
+                    "line_no": line_no,
+                    "line_text": line_text.strip()[:200],
+                })
+                continue
+
+            record = {
+                "ref_path": ref,
+                "source_file": rel_src,
+                "line_no": line_no,
+                "line_text": line_text.strip()[:200],
+            }
+            broken.append(record)
+            alerts.append({
+                "level": "yellow",
+                "source": "archive_integrity",
+                "metric": "broken_reference",
+                "message": f"断裂引用：{ref}（在 {rel_src}:{line_no}）",
+                "ref_path": ref,
+                "source_file": rel_src,
+                "line_no": line_no,
+            })
+
+    if len(pending) > 20:
+        alerts.append({
+            "level": "yellow",
+            "source": "archive_integrity",
+            "metric": "pending_backlog",
+            "message": (
+                f"Phase 2 自举待办堆积：{len(pending)} 条 pending 白名单引用"
+                "（超过 20 条阈值）"
+            ),
+            "pending_count": len(pending),
+        })
+
+    # Always write the standalone report, even when everything is clean.
+    report = {
+        "scanned_at": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "total_references": total_refs,
+        "broken": broken,
+        "pending_whitelisted": pending,
+        "summary": {
+            "broken_count": len(broken),
+            "pending_count": len(pending),
+            "scanned_files": len(sources),
+        },
+    }
+    try:
+        ARCHIVE_INTEGRITY_FILE.parent.mkdir(parents=True, exist_ok=True)
+        ARCHIVE_INTEGRITY_FILE.write_text(
+            json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
+    except OSError:
+        pass
+
+    return alerts
 
 
 def sentinel_scan() -> list[dict]:
@@ -278,6 +529,15 @@ def sentinel_scan() -> list[dict]:
     baseline_data["last_scan"] = datetime.now().isoformat()
     baseline_data["baseline"] = baselines
     save_sentinel_baseline(baseline_data)
+
+    # Archive integrity — always runs regardless of news data availability.
+    try:
+        archive_alerts = archive_integrity_scan()
+    except Exception as exc:  # pragma: no cover - defensive guard
+        archive_alerts = []
+        print(f"  [archive_integrity] scan failed: {exc}")
+    if archive_alerts:
+        alerts.extend(archive_alerts)
 
     # Write alerts.json
     if alerts:
