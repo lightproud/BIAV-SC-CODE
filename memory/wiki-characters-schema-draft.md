@@ -382,7 +382,7 @@ Phase 2 之后数据源会扩展（官方公告 / 社区贡献 / 制作人采访
    - 建议：采用 A（保真于游戏数据，便于未来数据修复后拆分）
 
 2. **`name_en` / `name_ja` 翻译来源**：
-   - 官方 localization 文件是否可提取？（待 Phase 2 W2 评估 `assets/data/extracted/` 中的 text table 文件）
+   - 官方 localization 文件是否可提取？（待 Phase 2 W2 评估 `projects/wiki/data/extracted/` 中的 text table 文件）
    - 社区译名 vs 官方译名的优先级
 
 3. **立绘文件存储路径规范**：
@@ -402,7 +402,7 @@ Phase 2 之后数据源会扩展（官方公告 / 社区贡献 / 制作人采访
 
 1. **主控台审阅**：本草案以覆盖 B3 全部缺口为目标，字段完整度优先于字段繁多
 2. **守密人裁决**：对第五节 6 项遗留问题给出方向
-3. **锁定 schema v1.0**：将裁决写入 `memory/decisions.md`，本文档更名为 `memory/wiki-characters-schema-v1.md` 或升级元数据
+3. **锁定 schema v1.0**：将裁决写入 `memory/decisions.md`，本文档更名为 `memory/wiki-characters-schema-v1.md` ⚠（待升级）或升级元数据
 4. **派发 P2W1W1 正式批量自举会话**：
    - 输入：schema v1.0 + `character_data.txt`（72 条原始数据）
    - 产出：`projects/wiki/data/db/characters.json` ⚠（72 条 `status: partial` 记录骨架，Phase 2 W1 自举目标）

@@ -40,13 +40,13 @@
 
 ## 文件说明
 - `index.html` — 前端展示页面（纯 HTML/CSS/JS，深色主题）
-- `scripts/aggregator.py` — 主采集管线（每小时自动运行）
-- `scripts/global_collectors.py` — 全球 29 个平台零成本采集器集合（被 `collect_global.py` 和 `backfill_platforms.py` 引用）
-- `scripts/taptap_collector.py` — TapTap Playwright 采集器（`global_collectors.py` 的依赖）
-- `scripts/collect_global.py` — 全球采集桥接脚本，合并 aggregator 输出
-- `scripts/backfill_platforms.py` — 多平台历史回溯采集
-- `scripts/generate_daily.py` — 日报生成（写入 `data/archive/daily-reports/` 和 `output/daily-latest.md`）
-- `scripts/split_output.py` / `archive_platforms.py` / `download_media.py` — 后处理管线
+- `projects/news/scripts/aggregator.py` — 主采集管线（每小时自动运行）
+- `projects/news/scripts/global_collectors.py` — 全球 29 个平台零成本采集器集合（被 `collect_global.py` 和 `backfill_platforms.py` 引用）
+- `projects/news/scripts/taptap_collector.py` — TapTap Playwright 采集器（`global_collectors.py` 的依赖）
+- `projects/news/scripts/collect_global.py` — 全球采集桥接脚本，合并 aggregator 输出
+- `projects/news/scripts/backfill_platforms.py` — 多平台历史回溯采集
+- `projects/news/scripts/generate_daily.py` — 日报生成（写入 `data/archive/daily-reports/` 和 `output/daily-latest.md`）
+- `projects/news/scripts/split_output.py` / `archive_platforms.py` / `download_media.py` — 后处理管线
 - `requirements.txt` — Python 依赖
 - `.env.example` — 环境变量配置模板
 

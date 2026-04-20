@@ -29,7 +29,7 @@ Phase 1 记忆宫殿提前于 2026-04-04 验证通过（原计划 5 月底），
 
 ### 关键决策（与下方"三、资源分配"及"四、风险与对策"合并阅读）
 
-1. **BPT 从银芯删除**：`projects/bpt-web` / `bpt-desktop` / `bpt-next` / `graphify-ext` / `occ-local` 五目录全部删除，不迁仓库不归档分支。
+1. **BPT 从银芯删除**：`projects/bpt-web` ⚠（已删除）/ `bpt-desktop` / `bpt-next` / `graphify-ext` / `occ-local` 五目录全部删除，不迁仓库不归档分支。
 2. **Phase 2 验收改为日报稳定 14 天**：取消"真实热度事件"硬指标，验收口径从外部事件依赖改为内部稳定性。
 3. **指导 BPT 协议 = 人工对话搬运**：守密人从银芯对话中学习概念，手动搬到 BPT 会话，无自动化层。详见 `memory/bpt-guidance-protocol.md`。
 4. **主控台长期锚点**：本战略评估会话（分支 `claude/project-strategy-review-1AH5Z`）存续至 2026-07-19，不写业务代码，仅派发新会话 + 认知教学。
