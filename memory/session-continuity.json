@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "145e1ed4",
-    "timestamp": "2026-04-19T18:24:29.914000+00:00",
-    "duration_minutes": 39.8,
+    "id": "0a2de251",
+    "timestamp": "2026-04-20T13:55:02.742000+00:00",
+    "duration_minutes": 1210.4,
     "branch": "claude/project-strategy-review-1AH5Z",
     "topics": [
       "银芯",
@@ -12,10 +12,30 @@
       "Wiki"
     ],
     "decisions": [],
-    "files_changed": [],
+    "files_changed": [
+      "/home/user/brain-in-a-vat/memory/bpt-guidance-protocol.md",
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md"
+    ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "145e1ed4",
+      "timestamp": "2026-04-19T18:24:29.914000+00:00",
+      "duration_minutes": 39.8,
+      "branch": "claude/project-strategy-review-1AH5Z",
+      "topics": [
+        "银芯",
+        "Phase1",
+        "Phase2",
+        "记忆宫殿",
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "142194c5",
       "timestamp": "2026-04-19T17:59:29.089000+00:00",
@@ -151,41 +171,20 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "1ddffa4d",
-      "timestamp": "2026-04-16T05:47:27.056000+00:00",
-      "duration_minutes": 2100.1,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.54,
-      "黑池": 2.54,
-      "银芯": 2.44,
-      "Phase1": 1.8,
-      "Phase2": 1.8,
-      "记忆宫殿": 1.8,
-      "Wiki": 1.8
+      "银芯": 2.95,
+      "Phase1": 2.44,
+      "Phase2": 2.44,
+      "记忆宫殿": 2.44,
+      "Wiki": 2.44,
+      "BPT": 2.03,
+      "黑池": 2.03
     },
-    "hot_files": [
-      "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-      "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-    ],
-    "total_sessions": 68
+    "hot_files": [],
+    "total_sessions": 69
   },
-  "updated_at": "2026-04-19T18:27:46.181018+00:00"
+  "updated_at": "2026-04-20T13:58:51.029598+00:00"
 }
