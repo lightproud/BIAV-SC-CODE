@@ -1,11 +1,12 @@
 {
   "last_session": {
-    "id": "0a2de251",
-    "timestamp": "2026-04-20T13:55:02.742000+00:00",
-    "duration_minutes": 1210.4,
+    "id": "3b47e88c",
+    "timestamp": "2026-04-20T14:52:18.602000+00:00",
+    "duration_minutes": 1267.6,
     "branch": "claude/project-strategy-review-1AH5Z",
     "topics": [
       "银芯",
+      "BPT",
       "Phase1",
       "Phase2",
       "记忆宫殿",
@@ -13,13 +14,70 @@
     ],
     "decisions": [],
     "files_changed": [
+      "/home/user/brain-in-a-vat/BIAV-SC.md",
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/README.md",
+      "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+      "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+      "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
       "/home/user/brain-in-a-vat/memory/bpt-guidance-protocol.md",
+      "/home/user/brain-in-a-vat/memory/bpt-master-plan.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
       "/home/user/brain-in-a-vat/memory/decisions.md",
-      "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md"
+      "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
+      "/home/user/brain-in-a-vat/memory/project-status.md",
+      "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
+      "/home/user/brain-in-a-vat/scripts/boot_snapshot.py",
+      "/home/user/brain-in-a-vat/scripts/bpe_indexer.py",
+      "/home/user/brain-in-a-vat/scripts/character_persona.py",
+      "/home/user/brain-in-a-vat/scripts/mcp_server.py",
+      "/home/user/brain-in-a-vat/scripts/memory_search.py",
+      "/home/user/brain-in-a-vat/scripts/session_inject.py",
+      "/home/user/brain-in-a-vat/scripts/session_watch.py"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "fc4bc496",
+      "timestamp": "2026-04-20T14:24:16.618000+00:00",
+      "duration_minutes": 1239.6,
+      "branch": "claude/project-strategy-review-1AH5Z",
+      "topics": [
+        "银芯",
+        "Phase1",
+        "Phase2",
+        "记忆宫殿",
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/bpt-guidance-protocol.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "0a2de251",
+      "timestamp": "2026-04-20T13:55:02.742000+00:00",
+      "duration_minutes": 1210.4,
+      "branch": "claude/project-strategy-review-1AH5Z",
+      "topics": [
+        "银芯",
+        "Phase1",
+        "Phase2",
+        "记忆宫殿",
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/bpt-guidance-protocol.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "145e1ed4",
       "timestamp": "2026-04-19T18:24:29.914000+00:00",
@@ -135,56 +193,24 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "1964b96f",
-      "timestamp": "2026-04-16T06:48:12.125000+00:00",
-      "duration_minutes": 2160.8,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
-    },
-    {
-      "id": "1e3d79bc",
-      "timestamp": "2026-04-16T06:26:09.173000+00:00",
-      "duration_minutes": 2138.8,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 2.95,
-      "Phase1": 2.44,
-      "Phase2": 2.44,
-      "记忆宫殿": 2.44,
-      "Wiki": 2.44,
-      "BPT": 2.03,
-      "黑池": 2.03
+      "银芯": 3.69,
+      "Phase1": 3.36,
+      "Phase2": 3.36,
+      "记忆宫殿": 3.36,
+      "Wiki": 3.36,
+      "BPT": 2.3,
+      "黑池": 1.3
     },
-    "hot_files": [],
-    "total_sessions": 69
+    "hot_files": [
+      "/home/user/brain-in-a-vat/memory/bpt-guidance-protocol.md",
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md"
+    ],
+    "total_sessions": 71
   },
-  "updated_at": "2026-04-20T13:58:51.029598+00:00"
+  "updated_at": "2026-04-20T14:57:12.293357+00:00"
 }
