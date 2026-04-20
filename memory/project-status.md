@@ -12,9 +12,8 @@
 | news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 桥接 Discord → 聚合器、月度归档清理 |
 | wiki（数据集 + Wiki 站点） | 数据补全中 | Code-wiki | 触发 fetch-wiki-data workflow 抓取 47 个角色技能数据 + 12 个缺失立绘 |
 | game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
-| occ-local（本地 Claude Code CLI，MIT） | **研究归档**（2026-04-14 降级） | - | 仅保留源码供架构参考；不再主动推进 |
-| bpt-next（新一代 BPT 主线，基于 claw-code Rust MIT） | 已引入 3.8M + 银芯环境构建验证通过（claw v0.1.0）+ **接入方案已锁定（idealab `/api/anthropic/` + sonnet/opus/haiku 三模型，2026-04-14）** | 主控台 | 守密人本地执行 `cargo build` + idealab 连通实测；Phase A：graphify vendor + 银芯记忆增强设计；Phase B：SVN 会话同步 + 用户识别 + decisions→wiki + 能力注册表 |
-| graphify-ext（黑池索引工具原型，MIT） | **已 vendor v0.4.12（1.7M）** | 主控台 | Phase A P3：scripts/graphify_bridge.py 银芯 MCP 桥接；本地 pip install -e . 验证 |
+
+> BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
 
 ## News 新闻聚合 + 报告系统
 

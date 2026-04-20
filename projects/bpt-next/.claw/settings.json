@@ -1,9 +1,0 @@
-{
-  "_comment": "BIAV 项目级 claw 配置。守密人凭据放 .claw/settings.local.json（已 .gitignore）。内部网关详情见 LOCAL-SETUP-ZH.md 情境八。",
-  "aliases": {
-    "haiku": "claude-haiku-4_5",
-    "idea-haiku": "claude-haiku-4_5",
-    "idea-sonnet": "claude-sonnet-4-6",
-    "idea-opus": "claude-opus-4-6"
-  }
-}

@@ -7,13 +7,13 @@ Scans a repository, chunks code and config files, builds FTS5 keyword indexes
 
 Usage:
     # Full rebuild (FTS5 only, no model needed)
-    python scripts/bpe_indexer.py --repo /path/to/black-pool --output projects/bpt/.bpe-index
+    python scripts/bpe_indexer.py --repo /path/to/black-pool --output /path/to/.bpe-index
 
     # Incremental update (only changed files)
-    python scripts/bpe_indexer.py --repo /path/to/black-pool --output projects/bpt/.bpe-index --incremental
+    python scripts/bpe_indexer.py --repo /path/to/black-pool --output /path/to/.bpe-index --incremental
 
     # With vector embeddings (requires bge-m3 model)
-    python scripts/bpe_indexer.py --repo /path/to/black-pool --output projects/bpt/.bpe-index --embed --model-path models/bge-m3
+    python scripts/bpe_indexer.py --repo /path/to/black-pool --output /path/to/.bpe-index --embed --model-path models/bge-m3
 
 Output:
     chunks.db    — chunk text + metadata (file, line range, language)
