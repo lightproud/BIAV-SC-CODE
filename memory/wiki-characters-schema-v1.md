@@ -52,8 +52,8 @@
     "properties": {
       "id": {
         "type": "string",
-        "pattern": "^15[0-9]{3}$",
-        "description": "游戏内数字 ID（字符串形态，5 位数，前缀 15）"
+        "pattern": "^[0-9]{5,6}$",
+        "description": "游戏内 AwakerConfig ID（字符串形态，5-6 位）。实际范围：主干 15560-15604 / CoC 54116-54117 + 77911-77928 / 彩蛋 78754/78840/78841 / 联动皮肤 94450-130901（含 6 位）"
       },
       "slug": {
         "type": "string",
@@ -201,7 +201,7 @@
             "type": "object",
             "required": ["duplicate_of", "note"],
             "properties": {
-              "duplicate_of": { "type": "string", "pattern": "^15[0-9]{3}$" },
+              "duplicate_of": { "type": "string", "pattern": "^[0-9]{5,6}$" },
               "note": { "type": "string" },
               "ruled_by": { "type": "string", "description": "裁定人 + 日期" }
             }
