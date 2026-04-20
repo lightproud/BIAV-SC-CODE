@@ -1,6 +1,6 @@
 # 待讨论事项
 
-> 最后更新：2026-04-01 by Code-主控台
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话，sync-memory 作废已失效条目）
 >
 > 跨会话的待决策事项追踪。已决策的条目移入 decisions.md，已落地的条目删除。
 > 所有会话启动时应阅读本文件。
@@ -20,7 +20,7 @@
 
 ## 数据校验
 
-- [ ] **Wiki JSON 数据抽查** — projects/wiki/data/db/ 下 18 个 JSON 的准确性，运营官负责抽查报告，制作人决定是否派 Issue 修正。尚未启动
+- [x] **Wiki JSON 数据抽查（2026-04-20 B3 修正后作废）**：原任务基于假设"projects/wiki/data/db/ 下有 18 个 JSON"，B3 调研揭露该目录从未存在。Phase 2 W1 以 `memory/wiki-characters-schema-draft.md` 为基线重新规划，此条旧任务不再适用
 
 ## 事实圣经
 

@@ -38,7 +38,7 @@ brain-in-a-vat/
 |--------|------|------|------|
 | 主站 + 设计系统 | `projects/site/` | 项目入口导航页 + 设计规范 | 已上线，维护模式 |
 | 新闻聚合 + 报告系统 | `projects/news/` | 多平台热点抓取（Bilibili/Steam/Discord）、AI 分析 | 3 源运行中 |
-| 数据集 + Wiki | `projects/wiki/` | 20 个 JSON 数据文件 + VitePress 三语言站点，63 角色 | 数据就绪，准确性待提升 |
+| 数据集 + Wiki | `projects/wiki/` | VitePress 三语言站点 + 72 角色基线数据集（Phase 2 W1 自举中） | 基线缺失，Phase 2 准备中 |
 | 衍生游戏 | `projects/game/` | 同人游戏开发 | 规划中（Phase 4） |
 
 > BPT（黑池终端）整条战线已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 的指导者，协议见 `memory/bpt-guidance-protocol.md`。

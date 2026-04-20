@@ -1,6 +1,6 @@
 # 先进记忆系统设计方案
 
-> 最后更新：2026-04-04 by Code-主控台
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话，sync-memory 修正 data/db 基线陈述）
 > 状态：方案设计中，待制作人确认后实现
 
 ## 一、背景
@@ -15,7 +15,8 @@
 | 数据类型 | 文件数 | 大小 | 说明 |
 |---------|--------|------|------|
 | memory/*.md | 17 | 188KB | 项目记忆、决策、经验 |
-| wiki/data/db/*.json | 22 | 400KB | 游戏结构化数据 |
+| wiki/data/db/*.json | 0 (⚠ 基线未建立) | — | Phase 2 W1 自举中，见 `wiki-phase-2-gap-inventory.md` |
+| wiki/data/extracted/ + processed/ | 10+ | ~数 MB | 客户端解包原始 + 加工 JSON |
 | assets/data/*.json | 3 | 27KB | 采访、叙事、设计决策 |
 | BIAV-SC.md | 1 | 7KB | 插件定义 |
 | **合计** | ~43 | ~622KB | 约 100 个知识块 |
