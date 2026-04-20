@@ -1,6 +1,6 @@
 {
-  "scanned_at": "2026-04-20T17:44:10Z",
-  "total_references": 365,
+  "scanned_at": "2026-04-20T17:53:55Z",
+  "total_references": 366,
   "broken": [],
   "pending_whitelisted": [
     {
@@ -197,21 +197,15 @@
     },
     {
       "ref_path": "projects/wiki/data/db/characters.schema.json",
-      "source_file": "memory/wiki-characters-schema-draft.md",
-      "line_no": 20,
+      "source_file": "memory/wiki-characters-schema-v1.md",
+      "line_no": 24,
       "line_text": "5. Schema 为 draft-07，可直接落盘 `projects/wiki/data/db/characters.schema.json` ⚠（目标路径，Phase 2 W1 自举时建立），供 CI validate-data.yml 校验"
     },
     {
-      "ref_path": "memory/wiki-characters-schema-v1.md",
-      "source_file": "memory/wiki-characters-schema-draft.md",
-      "line_no": 405,
-      "line_text": "3. **锁定 schema v1.0**：将裁决写入 `memory/decisions.md`，本文档更名为 `memory/wiki-characters-schema-v1.md` ⚠（待升级）或升级元数据"
-    },
-    {
       "ref_path": "projects/wiki/data/db/characters.json",
-      "source_file": "memory/wiki-characters-schema-draft.md",
-      "line_no": 408,
-      "line_text": "- 产出：`projects/wiki/data/db/characters.json` ⚠（72 条 `status: partial` 记录骨架，Phase 2 W1 自举目标）"
+      "source_file": "memory/wiki-characters-schema-v1.md",
+      "line_no": 436,
+      "line_text": "- 产出：`projects/wiki/data/db/characters.json` ⚠（72 条 `status: partial` 记录骨架）"
     },
     {
       "ref_path": "projects/wiki/data/db/characters.json",
@@ -276,7 +270,7 @@
   ],
   "summary": {
     "broken_count": 0,
-    "pending_count": 45,
+    "pending_count": 44,
     "scanned_files": 28
   }
 }

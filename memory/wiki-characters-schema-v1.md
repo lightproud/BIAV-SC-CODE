@@ -1,12 +1,16 @@
-# Wiki characters.json Schema 草案 v0.1
+# Wiki characters.json Schema v1.0
 
-> 最后更新：2026-04-20 by 主控台（艾瑞卡会话，P2W1D1/P2W1D1-retry 子代理两次 Write timeout 后由主控台直接起草）
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话，守密人「全部采纳」裁决 6 项遗留问题后锁定 v1.0）
 >
-> 状态：**草案**，待主控台 + 守密人审核通过后方能派发正式 72 角色批量自举会话。
+> 状态：**正式锁定**。Phase 2 W1 自举会话以此版本为输入。
+>
+> 版本沿革：
+> - v0.1（2026-04-20）：主控台 P2W1D1/P2W1D1-retry 子代理两次 Write timeout 后由主控台直接起草
+> - **v1.0（2026-04-20）**：守密人裁决 6 项遗留问题，全部采纳艾瑞卡建议。详见第五节「裁决记录」
 >
 > 上游依据：
 > - `memory/wiki-phase-2-gap-inventory.md`（B3 权威清单：72 角色、29/29 命轮全缺、立绘/背景故事/技能引导缺口）
-> - `memory/decisions.md`（界域/职能/slug 标准化历史决策）
+> - `memory/decisions.md`（界域/职能/slug 标准化历史决策 + 2026-04-20 v1.0 锁定条目）
 > - `projects/wiki/data/extracted/categorized/character_data.txt`（运行时内存扫描 + AssetBundle 解密产物；Tuanjie Engine 2022.3.61t8；LuaT0 字节码）
 
 ---
@@ -29,9 +33,21 @@
   "items": {
     "type": "object",
     "additionalProperties": false,
-    "required": [
-      "id", "slug", "name_zh", "realm", "role",
-      "status", "source", "last_verified"
+    "allOf": [
+      {
+        "description": "Q6 裁决：严格模式 + stub 放宽 realm/role 为 null",
+        "if": { "properties": { "status": { "const": "stub" } }, "required": ["status"] },
+        "then": {
+          "required": ["id", "slug", "name_zh", "status", "source", "last_verified"],
+          "properties": {
+            "realm": { "type": ["string", "null"], "enum": ["aequor", "caro", "ultra", null] },
+            "role": { "type": ["string", "null"], "enum": ["attack", "sub_attack", "defense", "support", "chorus", null] }
+          }
+        },
+        "else": {
+          "required": ["id", "slug", "name_zh", "realm", "role", "status", "source", "last_verified"]
+        }
+      }
     ],
     "properties": {
       "id": {
@@ -46,7 +62,17 @@
       },
       "name_zh": { "type": "string", "minLength": 1 },
       "name_en": { "type": ["string", "null"] },
+      "name_en_source": {
+        "type": ["string", "null"],
+        "enum": ["official", "community", null],
+        "description": "Q2 裁决：官方 > 社区；无官方时社区补位并标此字段"
+      },
       "name_ja": { "type": ["string", "null"] },
+      "name_ja_source": {
+        "type": ["string", "null"],
+        "enum": ["official", "community", null],
+        "description": "Q2 裁决：官方 > 社区"
+      },
       "title_zh": { "type": ["string", "null"] },
       "realm": {
         "type": "string",
@@ -128,7 +154,7 @@
                   "type": "object",
                   "required": ["tier", "name"],
                   "properties": {
-                    "tier": { "type": "integer", "minimum": 1, "maximum": 6 },
+                    "tier": { "type": "integer", "minimum": 1, "maximum": 10, "description": "Q4 裁决：自举阶段放宽 1–10；Phase 2 W3 UI 实装时按游戏内 node 层数回收上限" },
                     "name": { "type": "string" },
                     "effect": { "type": ["string", "null"] }
                   }
@@ -150,9 +176,10 @@
       "portraits": {
         "type": "object",
         "additionalProperties": false,
+        "description": "Q3 裁决：路径键锁 slug，约定 assets/images/portraits/{slug}/default.png / .../awaker.png / .../skins/{skin_id}.png",
         "properties": {
-          "default": { "type": ["string", "null"], "description": "相对于 assets/images/portraits/ 的路径" },
-          "awaker": { "type": ["string", "null"] },
+          "default": { "type": ["string", "null"], "pattern": "^assets/images/portraits/[a-z][a-z0-9_]*/default\\.(png|jpg|webp)$|^$", "description": "约定格式 assets/images/portraits/{slug}/default.{ext}" },
+          "awaker": { "type": ["string", "null"], "pattern": "^assets/images/portraits/[a-z][a-z0-9_]*/awaker\\.(png|jpg|webp)$|^$" },
           "skins": {
             "type": "array",
             "items": {
@@ -161,7 +188,7 @@
               "properties": {
                 "id": { "type": "string" },
                 "name": { "type": ["string", "null"] },
-                "path": { "type": "string" }
+                "path": { "type": "string", "pattern": "^assets/images/portraits/[a-z][a-z0-9_]*/skins/[a-z0-9_]+\\.(png|jpg|webp)$" }
               }
             }
           }
@@ -374,41 +401,51 @@ Phase 2 之后数据源会扩展（官方公告 / 社区贡献 / 制作人采访
 - 优点：单次 fetch 即得多语，VitePress 多语路由按 locale 取字段简单
 - 缺点：翻译工作流耦合主数据；Phase 2 可能需要专人翻译，届时再评估是否分离
 
-## 五、遗留问题（交主控台 / 守密人决议）
+## 五、守密人裁决记录（2026-04-20，v1.0 锁定依据）
 
-1. **詹金 15578 vs 15593 的记录策略**：
-   - 方案 A（已采用）：保留两条独立记录，用 `duplicate_bug` 互指
-   - 方案 B：合并为一条，额外用 `alternate_ids: []` 字段
-   - 建议：采用 A（保真于游戏数据，便于未来数据修复后拆分）
+守密人对 v0.1 第五节 6 项遗留问题批示「全部采纳」。艾瑞卡建议即为 v1.0 锁定方案。
 
-2. **`name_en` / `name_ja` 翻译来源**：
-   - 官方 localization 文件是否可提取？（待 Phase 2 W2 评估 `projects/wiki/data/extracted/` 中的 text table 文件）
-   - 社区译名 vs 官方译名的优先级
+| # | 议题 | 裁决 | Schema 落地位置 |
+|---|------|------|---------------|
+| Q1 | 重复 ID（詹金 15578/15593、黑猫 78840/78841）处理 | **方案 A**：保留两条独立记录，`duplicate_bug` 字段互指；保真游戏数据，便于未来修复后无损拆分 | `duplicate_bug` 对象（已存在） |
+| Q2 | `name_en` / `name_ja` 翻译来源 | **官方 > 社区**；无官方时社区补位并标 `translation_source: "community"` | 新增 `name_en_source` / `name_ja_source` 字段，enum = `official` / `community` / null |
+| Q3 | 立绘文件路径规范 | **键锁 `slug`**：`assets/images/portraits/{slug}/default.{ext}` / `.../awaker.{ext}` / `.../skins/{skin_id}.{ext}`；ID 改动不触发批量重命名 | `portraits` 对象新增 `pattern` 正则强约束 |
+| Q4 | 命轮 `tier` 上限 | **放宽至 1–10**；Phase 2 W3 UI 实装时根据游戏内真实 node 层数回收上限 | `commune.nodes.items.tier.maximum` 从 6 → 10 |
+| Q5 | `gi` 字段是否额外 `gi_numeric` 供排序 | **v1.0 不纳入**；Phase 2 UI 实装需排序时再加，避免过早引入增加自举会话校验负担 | 无（保持原 `gi` string 字段） |
+| Q6 | `status: stub` 严格模式放宽 | **v1.0 保持严格模式 + stub 状态下允许 `realm: null` / `role: null`** | 顶层 `allOf` 条件约束：if `status=stub` then 6 项 required（去掉 realm/role），`realm`/`role` enum 追加 null |
 
-3. **立绘文件存储路径规范**：
-   - 建议：`assets/images/portraits/{slug}/default.png` / `assets/images/portraits/{slug}/awaker.png` / `assets/images/portraits/{slug}/skins/{skin_id}.png`
-   - 命名键与 `slug` 字段锁定，避免 ID 改动时整体重命名
+### 5.1 裁决对 v0.1 → v1.0 的增量
 
-4. **命轮（commune）的 tier 上限**：
-   - 当前写的是 1–6；B3 清单未明确，需交叉游戏内实际 node 层数
+- 新增 2 个 properties：`name_en_source` / `name_ja_source`
+- 修改 `commune.tier.maximum`：6 → 10
+- 加强 `portraits.*.path` 的 pattern 约束（slug 锁定）
+- 新增顶层 `allOf` 条件分支（stub 放宽）
+- 字段总数：25 → **27**
+- required 项仍为 8 项（非 stub 时）；stub 时降为 6 项
 
-5. **`gi` 字段的规整化**：
-   - 原始数据混用 `"23.67"` / `"？"` / `"无法估测"` 等；是否需额外 `gi_numeric` 字段供排序？本版暂未纳入，Phase 2 UI 实装时再评估
+## 六、下一步（v1.0 锁定后）
 
-6. **`status` 字段 stub 的使用场景**：
-   - 当前三条示例均为 `partial`；新增角色（Phase 2 后期版本更新）可能仅有 ID + 名字，此时用 `stub`；需在 CI validator 中允许 stub 状态下跳过多个 required 字段吗？本版暂按严格模式（8 项 required 永远必填），stub 状态下其他字段填最低骨架（`realm: null` / `role: null` 需放宽 schema enum）——**此为遗留问题，v0.2 决议**
+1. **已完成**（2026-04-20）：
+   - ✓ 主控台审阅通过
+   - ✓ 守密人「全部采纳」裁决
+   - ✓ schema 升级至 v1.0（本文件）
+   - ✓ 裁决写入 `memory/decisions.md`
 
-## 六、下一步
-
-1. **主控台审阅**：本草案以覆盖 B3 全部缺口为目标，字段完整度优先于字段繁多
-2. **守密人裁决**：对第五节 6 项遗留问题给出方向
-3. **锁定 schema v1.0**：将裁决写入 `memory/decisions.md`，本文档更名为 `memory/wiki-characters-schema-v1.md` ⚠（待升级）或升级元数据
-4. **派发 P2W1W1 正式批量自举会话**：
-   - 输入：schema v1.0 + `character_data.txt`（72 条原始数据）
-   - 产出：`projects/wiki/data/db/characters.json` ⚠（72 条 `status: partial` 记录骨架，Phase 2 W1 自举目标）
+2. **Phase 2 W1 自举会话派发**（窗口 2026-04-27 → 05-03）：
+   - 输入：本 schema v1.0 + `projects/wiki/data/extracted/categorized/character_data.txt`（72 条原始数据）
+   - 产出：`projects/wiki/data/db/characters.json` ⚠（72 条 `status: partial` 记录骨架）
    - 工作量预估：**4–6 小时子代理会话**（含 Lua 源二次交叉校验 + 72 条 slug 命名 + 3 条 bug 标记 + CI schema 校验通过）
-   - 建议拆分为 3 批（每批 24 角色），规避单次 Write timeout 风险（结合 P2W1D1 两次 timeout 教训）
+   - **拆分策略**：3 批 × 24 角色（规避单次 Write timeout，结合 P2W1D1 两次 timeout 教训，见 `lessons-learned.md` #26）
+   - **3 批建议分组**（按界域平衡工作量）：
+     - 批 1（24 角色）：Aequor 主干 + 跨界 1 期
+     - 批 2（24 角色）：Caro 主干 + 跨界 2 期
+     - 批 3（24 角色）：Ultra 主干 + 皮肤/联动/彩蛋残余
+   - **每批验收**：子代理产出后本会话校验 schema + 去重 ID → 通过后合并到 characters.json
+
+3. **Phase 2 W2（05-04 → 05-10）**：填充 11 个易补角色的技能 / 背景故事，评估 `projects/wiki/data/extracted/` 中 localization 文件（Q2 承接）
+
+4. **Phase 2 W3（05-11 → 05-17）**：UI 实装时回收 `commune.tier` 上限（Q4 承接）
 
 ---
 
-> 本草案为 v0.1。Phase 2 Week 1 窗口内（2026-04-27 → 05-03）完成审核与 v1.0 锁定后启动正式批量自举。
+> v1.0 为 Phase 2 W1 自举会话的权威输入。v0.1 历史版本见本文件版本沿革节。

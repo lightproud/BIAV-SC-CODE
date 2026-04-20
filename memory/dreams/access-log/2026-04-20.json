@@ -1,6 +1,6 @@
 {
   "date": "2026-04-20",
-  "timestamp": "2026-04-20T17:44:10.119094",
+  "timestamp": "2026-04-20T17:53:55.290576",
   "branch": "claude/project-strategy-review-1AH5Z",
   "files_scanned": [
     "memory/advanced-memory-design.md",
@@ -28,8 +28,8 @@
     "memory/strategic-plan-2026.md",
     "memory/style-guide.md",
     "memory/task-wiki-data-audit-2026-04.md",
+    "memory/wiki-characters-schema-v1.md",
     "memory/workflow-api-key-audit.md",
-    "memory/wiki-characters-schema-draft.md",
     "memory/bpt-guidance-protocol.md",
     "memory/wiki-phase-2-gap-inventory.md"
   ],

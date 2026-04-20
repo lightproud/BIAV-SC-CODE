@@ -4,7 +4,7 @@ Validate all JSON data files in the wiki database:
    - If the directory is missing, the Phase 2 baseline has not been
      bootstrapped yet. Halt, and report: "data/db/ not yet established,
      see memory/wiki-phase-2-gap-inventory.md and
-     memory/wiki-characters-schema-draft.md for the bootstrap plan."
+     memory/wiki-characters-schema-v1.md for the bootstrap plan."
 1. For each file in `projects/wiki/data/db/*.json` (and `projects/wiki/data/processed/*.json`):
    - Verify JSON is valid (parseable)
    - Check key fields are non-empty
@@ -16,5 +16,5 @@ Validate all JSON data files in the wiki database:
    (真实总数，含皮肤/联动/彩蛋；见 memory/wiki-phase-2-gap-inventory.md)
 5. Check all JSON files are consistent (cross-reference IDs where applicable)
 6. Cross-validate against `projects/wiki/data/schemas/*.schema.json`
-   (characters / meta / realms) and the draft v0.1 schema in
-   `memory/wiki-characters-schema-draft.md` when applicable.
+   (characters / meta / realms) and the locked v1.0 schema in
+   `memory/wiki-characters-schema-v1.md` when applicable.

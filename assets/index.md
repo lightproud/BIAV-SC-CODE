@@ -28,7 +28,7 @@
 
 > **基线状态（2026-04-20 B3 调研修正）**：
 > `projects/wiki/data/db/` ⚠ 目录在 git 历史中**从未存在**，Phase 2 首要任务是自举 `characters.json` ⚠（72 角色基线）。
-> 完整缺口清单见 `memory/wiki-phase-2-gap-inventory.md`，schema 草案见 `memory/wiki-characters-schema-draft.md`。
+> 完整缺口清单见 `memory/wiki-phase-2-gap-inventory.md`，schema v1.0 见 `memory/wiki-characters-schema-v1.md`（2026-04-20 守密人裁决锁定）。
 >
 > **真实角色总数为 72**（含皮肤/联动/彩蛋），不是 63。
 
