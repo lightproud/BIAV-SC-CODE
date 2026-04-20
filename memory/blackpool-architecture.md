@@ -1,5 +1,10 @@
 # 黑池系统架构（Black Pool System Architecture）
 
+> **状态：已封存（2026-04-19）**
+> 封存原因：2026-04-19 战略转向——BPT 战线不再在银芯内部开发，`projects/bpt-web/` / `bpt-desktop/` / `bpt-next/` / `graphify-ext/` / `occ-local/` 已从仓库删除。文中引用的子项目路径与 Phase A-D 路线图全部作废；银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。本文档作为历史架构设计审计材料保留。
+>
+> ---
+>
 > 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
 >
 > 守密人于 2026-04-14 确立的黑池系统五大需求架构。本文件沉淀需求定义、现有资产映射、缺口识别、外部工具引入策略、分阶段路线图。

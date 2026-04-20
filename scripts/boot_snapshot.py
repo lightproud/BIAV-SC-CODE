@@ -191,10 +191,9 @@ def generate_snapshot() -> str:
 | 主站 | `projects/site/` | 维护模式 |
 | 新闻聚合 | `projects/news/` | 运行中 |
 | Wiki | `projects/wiki/` | 数据补全中 |
-| BPT-WEB | `projects/bpt-web/` | v0.1.0 已部署 |
-| BPT-DESKTOP | `projects/bpt-desktop/` | v0.1.0 开发中 |
-| BPT 母版 | `projects/bpt/` | 重建计划制定中 |
 | 衍生游戏 | `projects/game/` | 暂缓 |
+
+> BPT 战线已于 2026-04-19 战略转向中从银芯仓库删除，银芯转为 BPT 指导者（协议见 `memory/bpt-guidance-protocol.md`）。
 
 ## 按需加载索引
 
