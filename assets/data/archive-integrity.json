@@ -1,30 +1,12 @@
 {
-  "scanned_at": "2026-04-20T17:28:57Z",
-  "total_references": 360,
+  "scanned_at": "2026-04-20T17:39:39Z",
+  "total_references": 359,
   "broken": [
     {
-      "ref_path": "projects/wiki/data/db/",
-      "source_file": "assets/index.md",
-      "line_no": 30,
-      "line_text": "> `projects/wiki/data/db/` 目录在 git 历史中**从未存在**，Phase 2 首要任务是自举 `characters.json`（72 角色基线）。"
-    },
-    {
-      "ref_path": "assets/data/knowledge-graph.json",
-      "source_file": "memory/advanced-memory-design.md",
-      "line_no": 424,
-      "line_text": "| `assets/data/knowledge-graph.json` | 运行时生成 | 知识图谱 |"
-    },
-    {
-      "ref_path": "assets/data/memory-utility.json",
-      "source_file": "memory/advanced-memory-design.md",
-      "line_no": 425,
-      "line_text": "| `assets/data/memory-utility.json` | 运行时生成 | 效用分数 |"
-    },
-    {
-      "ref_path": "assets/data/precomputed-cache.json",
-      "source_file": "memory/advanced-memory-design.md",
-      "line_no": 426,
-      "line_text": "| `assets/data/precomputed-cache.json` | 运行时生成 | 预计算缓存 |"
+      "ref_path": "projects/wiki/data/db/characters.json",
+      "source_file": "memory/boot-snapshot.md",
+      "line_no": 96,
+      "line_text": "- 角色数据库 → `projects/wiki/data/db/characters.json`"
     },
     {
       "ref_path": "projects/bpt-next/.claw/settings.json",
@@ -39,46 +21,16 @@
       "line_text": "| **bpt-next 接入 idealab 网关锁定**（2026-04-14）：守密人明示确认 idealab（`https://idealab.alibaba-inc.com`）完整支持 Anthropic-compatible 协议（prompt caching / tool_use / 流式全保留）。锁定端点为 `/api/anthropic/v1/messages`（`/code/`"
     },
     {
-      "ref_path": "projects/wiki/data/db/",
-      "source_file": "memory/lessons-learned.md",
-      "line_no": 176,
-      "line_text": "- **Context**：`projects/wiki/data/db/` 中的 JSON 是人工整理的 Wiki 展示数据"
-    },
-    {
       "ref_path": "projects/bpt-next/LOCAL-SETUP-ZH.md",
       "source_file": "memory/lessons-learned.md",
-      "line_no": 187,
+      "line_no": 189,
       "line_text": "- **Fix**：API key 消费方（bpt-next / 后端服务 / CI）必须锁定 `/api/anthropic/v1/messages`；`/code/` 仅供 Web IDE / 浏览器 SSO 场景。档案同步固化到 `projects/bpt-next/LOCAL-SETUP-ZH.md` 情境八，防止未来会话重新评估时踩坑"
     },
     {
       "ref_path": "projects/bpt-next/.claw/settings.json",
       "source_file": "memory/lessons-learned.md",
-      "line_no": 194,
+      "line_no": 196,
       "line_text": "- **Fix**：在 `projects/bpt-next/.claw/settings.json` 用户别名表覆盖 `haiku → claude-haiku-4_5`；Sonnet/Opus 恰好匹配 claw 内置别名无需改动。命名约定说明同步到 `LOCAL-SETUP-ZH.md` 情境八"
-    },
-    {
-      "ref_path": "projects/wiki/data/db/",
-      "source_file": "memory/lessons-learned.md",
-      "line_no": 201,
-      "line_text": "- **Context**：2026-04-20 B3 Wiki 缺口调研子代理在扫描仓库时发现，`projects/wiki/data/db/` 目录在 git 历史中**从未存在过**，但多处档案声称其存在："
-    },
-    {
-      "ref_path": "projects/wiki/data/db/characters.json",
-      "source_file": "memory/lessons-learned.md",
-      "line_no": 204,
-      "line_text": "- `CLAUDE.md` 按需加载索引指向 `projects/wiki/data/db/characters.json`"
-    },
-    {
-      "ref_path": "assets/data/knowledge-graph.json",
-      "source_file": "memory/project-status.md",
-      "line_no": 181,
-      "line_text": "| `assets/data/knowledge-graph.json` | 知识图谱 |"
-    },
-    {
-      "ref_path": "assets/data/memory-utility.json",
-      "source_file": "memory/project-status.md",
-      "line_no": 182,
-      "line_text": "| `assets/data/memory-utility.json` | 效用评分 |"
     },
     {
       "ref_path": "scripts/session_svn_sync.py",
@@ -99,12 +51,6 @@
       "line_text": "1. **BPT 从银芯删除**：`projects/bpt-web` / `bpt-desktop` / `bpt-next` / `graphify-ext` / `occ-local` 五目录全部删除，不迁仓库不归档分支。"
     },
     {
-      "ref_path": "projects/wiki/data/db/characters.schema.json",
-      "source_file": "memory/wiki-characters-schema-draft.md",
-      "line_no": 20,
-      "line_text": "5. Schema 为 draft-07，可直接落盘 `projects/wiki/data/db/characters.schema.json`，供 CI validate-data.yml 校验"
-    },
-    {
       "ref_path": "assets/data/extracted/",
       "source_file": "memory/wiki-characters-schema-draft.md",
       "line_no": 385,
@@ -115,30 +61,6 @@
       "source_file": "memory/wiki-characters-schema-draft.md",
       "line_no": 405,
       "line_text": "3. **锁定 schema v1.0**：将裁决写入 `memory/decisions.md`，本文档更名为 `memory/wiki-characters-schema-v1.md` 或升级元数据"
-    },
-    {
-      "ref_path": "projects/wiki/data/db/characters.json",
-      "source_file": "memory/wiki-characters-schema-draft.md",
-      "line_no": 408,
-      "line_text": "- 产出：`projects/wiki/data/db/characters.json`（72 条 `status: partial` 记录骨架）"
-    },
-    {
-      "ref_path": "projects/wiki/data/db/characters.json",
-      "source_file": "memory/wiki-phase-2-gap-inventory.md",
-      "line_no": 14,
-      "line_text": "1. **`projects/wiki/data/db/characters.json` 不存在**，且 git 历史中**从未存在过**。"
-    },
-    {
-      "ref_path": "projects/wiki/data/db/",
-      "source_file": "memory/wiki-phase-2-gap-inventory.md",
-      "line_no": 16,
-      "line_text": "- `projects/wiki/data/db/` 整个目录不存在"
-    },
-    {
-      "ref_path": "projects/wiki/data/db/characters.json",
-      "source_file": "memory/wiki-phase-2-gap-inventory.md",
-      "line_no": 228,
-      "line_text": "2. 用 character_data.txt 自举生成最小 `projects/wiki/data/db/characters.json`（72 ID + Name/Title/Age/Painter/VoiceActor/Gender）"
     },
     {
       "ref_path": "scripts/aggregator.py",
@@ -181,12 +103,6 @@
       "source_file": "projects/news/CONTEXT.md",
       "line_no": 49,
       "line_text": "- `scripts/split_output.py` / `archive_platforms.py` / `download_media.py` — 后处理管线"
-    },
-    {
-      "ref_path": "projects/wiki/data/db/characters.json",
-      "source_file": "projects/wiki/CONTEXT.md",
-      "line_no": 99,
-      "line_text": "**开工第一优先级**：澄清 `projects/wiki/data/db/characters.json` 基线来源（从 `character_data.txt` 自举），而非直接跑 fetch 脚本。"
     }
   ],
   "pending_whitelisted": [
@@ -215,16 +131,58 @@
       "line_text": "- 角色数据库：`projects/wiki/data/db/characters.json` ⚠ Phase 2 W1 自举中，原始源 `projects/wiki/data/extracted/categorized/character_data.txt`"
     },
     {
+      "ref_path": "projects/wiki/data/db/",
+      "source_file": "assets/index.md",
+      "line_no": 30,
+      "line_text": "> `projects/wiki/data/db/` ⚠ 目录在 git 历史中**从未存在**，Phase 2 首要任务是自举 `characters.json` ⚠（72 角色基线）。"
+    },
+    {
       "ref_path": "projects/wiki/data/db/characters.json",
       "source_file": "assets/index.md",
       "line_no": 54,
       "line_text": "| `projects/wiki/data/db/characters.json` | ⚠ 尚未建立，Phase 2 W1 首要任务 | 2026-04-27 ~ 05-03 |"
     },
     {
+      "ref_path": "assets/data/knowledge-graph.json",
+      "source_file": "memory/advanced-memory-design.md",
+      "line_no": 424,
+      "line_text": "| `assets/data/knowledge-graph.json` | 运行时生成 | 知识图谱 |"
+    },
+    {
+      "ref_path": "assets/data/memory-utility.json",
+      "source_file": "memory/advanced-memory-design.md",
+      "line_no": 425,
+      "line_text": "| `assets/data/memory-utility.json` | 运行时生成 | 效用分数 |"
+    },
+    {
+      "ref_path": "assets/data/precomputed-cache.json",
+      "source_file": "memory/advanced-memory-design.md",
+      "line_no": 426,
+      "line_text": "| `assets/data/precomputed-cache.json` | 运行时生成 | 预计算缓存 |"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/",
+      "source_file": "memory/lessons-learned.md",
+      "line_no": 176,
+      "line_text": "> ⚠ 本条所引用的 `projects/wiki/data/db/` 路径在 2026-04-20 B3 调研揭露从未建立（详见 #25）。本条历史陈述保留，路径标注为 pending。"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/",
+      "source_file": "memory/lessons-learned.md",
+      "line_no": 178,
+      "line_text": "- **Context**：`projects/wiki/data/db/` ⚠ 中的 JSON 是人工整理的 Wiki 展示数据"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/",
+      "source_file": "memory/lessons-learned.md",
+      "line_no": 203,
+      "line_text": "- **Context**：2026-04-20 B3 Wiki 缺口调研子代理在扫描仓库时发现，`projects/wiki/data/db/` ⚠ 目录在 git 历史中**从未存在过**，但多处档案声称其存在："
+    },
+    {
       "ref_path": "projects/wiki/data/db/characters.json",
-      "source_file": "memory/boot-snapshot.md",
-      "line_no": 96,
-      "line_text": "- 角色数据库 → `projects/wiki/data/db/characters.json` ⚠ 尚未建立，Phase 2 首要任务（72 角色真实名单见 `memory/wiki-phase-2-gap-inventory.md`）"
+      "source_file": "memory/lessons-learned.md",
+      "line_no": 206,
+      "line_text": "- `CLAUDE.md` 按需加载索引指向 `projects/wiki/data/db/characters.json` ⚠"
     },
     {
       "ref_path": "projects/wiki/data/db/",
@@ -249,6 +207,48 @@
       "source_file": "memory/project-status.md",
       "line_no": 47,
       "line_text": "- **`projects/wiki/data/db/characters.json` 基线尚未建立**（git 历史中无此文件），Phase 2 首要任务是自举基线"
+    },
+    {
+      "ref_path": "assets/data/knowledge-graph.json",
+      "source_file": "memory/project-status.md",
+      "line_no": 181,
+      "line_text": "| `assets/data/knowledge-graph.json` | 知识图谱（运行时生成） |"
+    },
+    {
+      "ref_path": "assets/data/memory-utility.json",
+      "source_file": "memory/project-status.md",
+      "line_no": 182,
+      "line_text": "| `assets/data/memory-utility.json` | 效用评分（运行时生成） |"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/characters.schema.json",
+      "source_file": "memory/wiki-characters-schema-draft.md",
+      "line_no": 20,
+      "line_text": "5. Schema 为 draft-07，可直接落盘 `projects/wiki/data/db/characters.schema.json` ⚠（目标路径，Phase 2 W1 自举时建立），供 CI validate-data.yml 校验"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/characters.json",
+      "source_file": "memory/wiki-characters-schema-draft.md",
+      "line_no": 408,
+      "line_text": "- 产出：`projects/wiki/data/db/characters.json` ⚠（72 条 `status: partial` 记录骨架，Phase 2 W1 自举目标）"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/characters.json",
+      "source_file": "memory/wiki-phase-2-gap-inventory.md",
+      "line_no": 14,
+      "line_text": "1. **`projects/wiki/data/db/characters.json` ⚠ 不存在**，且 git 历史中**从未存在过**。"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/",
+      "source_file": "memory/wiki-phase-2-gap-inventory.md",
+      "line_no": 16,
+      "line_text": "- `projects/wiki/data/db/` ⚠ 整个目录不存在"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/characters.json",
+      "source_file": "memory/wiki-phase-2-gap-inventory.md",
+      "line_no": 228,
+      "line_text": "2. 用 character_data.txt 自举生成最小 `projects/wiki/data/db/characters.json` ⚠（72 ID + Name/Title/Age/Painter/VoiceActor/Gender）"
     },
     {
       "ref_path": "projects/wiki/data/db/characters.json",
@@ -285,11 +285,17 @@
       "source_file": "projects/wiki/CONTEXT.md",
       "line_no": 70,
       "line_text": "- 数据文件最终归宿：`projects/wiki/data/db/`（⚠ 目前未建立）"
+    },
+    {
+      "ref_path": "projects/wiki/data/db/characters.json",
+      "source_file": "projects/wiki/CONTEXT.md",
+      "line_no": 99,
+      "line_text": "**开工第一优先级**：澄清 `projects/wiki/data/db/characters.json` ⚠ 基线来源（从 `character_data.txt` 自举），而非直接跑 fetch 脚本。"
     }
   ],
   "summary": {
-    "broken_count": 31,
-    "pending_count": 16,
+    "broken_count": 17,
+    "pending_count": 31,
     "scanned_files": 28
   }
 }

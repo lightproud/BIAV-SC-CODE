@@ -173,7 +173,9 @@
 
 ## 22. Wiki 人工整理层数据不可靠
 
-- **Context**：`projects/wiki/data/db/` 中的 JSON 是人工整理的 Wiki 展示数据
+> ⚠ 本条所引用的 `projects/wiki/data/db/` 路径在 2026-04-20 B3 调研揭露从未建立（详见 #25）。本条历史陈述保留，路径标注为 pending。
+
+- **Context**：`projects/wiki/data/db/` ⚠ 中的 JSON 是人工整理的 Wiki 展示数据
 - **Problem**：约 58% 角色标注"待补充"，部分数据为推测而非客户端实际数值，不适合作为分析引用来源
 - **Fix**：分析游戏数据时以 Lua 解包层（`projects/wiki/data/extracted/lua_tables/`）和事实圣经层（`assets/data/`）为唯一可靠来源。Wiki JSON 仅作为前端展示用途，不作为事实依据
 - **Impact**：分析可信度
@@ -198,10 +200,10 @@
 
 ## 25. 档案声明 vs 实际文件交叉校验
 
-- **Context**：2026-04-20 B3 Wiki 缺口调研子代理在扫描仓库时发现，`projects/wiki/data/db/` 目录在 git 历史中**从未存在过**，但多处档案声称其存在：
+- **Context**：2026-04-20 B3 Wiki 缺口调研子代理在扫描仓库时发现，`projects/wiki/data/db/` ⚠ 目录在 git 历史中**从未存在过**，但多处档案声称其存在：
   - `memory/project-status.md` 第 46-51 行声称"18 个 JSON 数据文件 / 63 唤醒体数据 / 加权完成度 83%"
   - `projects/wiki/CONTEXT.md` 第 14 行声称"`data/db/` 下 16 个模块化 JSON"
-  - `CLAUDE.md` 按需加载索引指向 `projects/wiki/data/db/characters.json`
+  - `CLAUDE.md` 按需加载索引指向 `projects/wiki/data/db/characters.json` ⚠
   - 角色真实总数为 72（含皮肤/联动/彩蛋），不是 63
 - **Problem**：档案更新与实际文件操作脱节，无校验机制。新会话读到错误信息后按"数据已存在"假设工作，导致 fetch_skills.py 等脚本依赖不存在的 characters.json 必然失败；Phase 2 预算严重低估真实工作量（缺 3-5 天基线自举）。本条违反 lessons-learned #3「CONTEXT.md 必须同步实际状态」的根本原因是：第 3 条只要求"状态变更后同步"，未建立"周期性交叉校验"机制
 - **Fix**（三条防范机制）：

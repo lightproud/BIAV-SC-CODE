@@ -1,6 +1,6 @@
 {
   "date": "2026-04-20",
-  "timestamp": "2026-04-20T17:28:57.806899",
+  "timestamp": "2026-04-20T17:39:39.583172",
   "branch": "claude/project-strategy-review-1AH5Z",
   "phase1": {
     "issues": 75,
@@ -142,37 +142,10 @@
           "level": "yellow",
           "source": "archive_integrity",
           "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/（在 assets/index.md:30）",
-          "ref_path": "projects/wiki/data/db/",
-          "source_file": "assets/index.md",
-          "line_no": 30
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：assets/data/knowledge-graph.json（在 memory/advanced-memory-design.md:424）",
-          "ref_path": "assets/data/knowledge-graph.json",
-          "source_file": "memory/advanced-memory-design.md",
-          "line_no": 424
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：assets/data/memory-utility.json（在 memory/advanced-memory-design.md:425）",
-          "ref_path": "assets/data/memory-utility.json",
-          "source_file": "memory/advanced-memory-design.md",
-          "line_no": 425
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：assets/data/precomputed-cache.json（在 memory/advanced-memory-design.md:426）",
-          "ref_path": "assets/data/precomputed-cache.json",
-          "source_file": "memory/advanced-memory-design.md",
-          "line_no": 426
+          "message": "断裂引用：projects/wiki/data/db/characters.json（在 memory/boot-snapshot.md:96）",
+          "ref_path": "projects/wiki/data/db/characters.json",
+          "source_file": "memory/boot-snapshot.md",
+          "line_no": 96
         },
         {
           "level": "yellow",
@@ -196,64 +169,19 @@
           "level": "yellow",
           "source": "archive_integrity",
           "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/（在 memory/lessons-learned.md:176）",
-          "ref_path": "projects/wiki/data/db/",
-          "source_file": "memory/lessons-learned.md",
-          "line_no": 176
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/bpt-next/LOCAL-SETUP-ZH.md（在 memory/lessons-learned.md:187）",
+          "message": "断裂引用：projects/bpt-next/LOCAL-SETUP-ZH.md（在 memory/lessons-learned.md:189）",
           "ref_path": "projects/bpt-next/LOCAL-SETUP-ZH.md",
           "source_file": "memory/lessons-learned.md",
-          "line_no": 187
+          "line_no": 189
         },
         {
           "level": "yellow",
           "source": "archive_integrity",
           "metric": "broken_reference",
-          "message": "断裂引用：projects/bpt-next/.claw/settings.json（在 memory/lessons-learned.md:194）",
+          "message": "断裂引用：projects/bpt-next/.claw/settings.json（在 memory/lessons-learned.md:196）",
           "ref_path": "projects/bpt-next/.claw/settings.json",
           "source_file": "memory/lessons-learned.md",
-          "line_no": 194
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/（在 memory/lessons-learned.md:201）",
-          "ref_path": "projects/wiki/data/db/",
-          "source_file": "memory/lessons-learned.md",
-          "line_no": 201
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/characters.json（在 memory/lessons-learned.md:204）",
-          "ref_path": "projects/wiki/data/db/characters.json",
-          "source_file": "memory/lessons-learned.md",
-          "line_no": 204
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：assets/data/knowledge-graph.json（在 memory/project-status.md:181）",
-          "ref_path": "assets/data/knowledge-graph.json",
-          "source_file": "memory/project-status.md",
-          "line_no": 181
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：assets/data/memory-utility.json（在 memory/project-status.md:182）",
-          "ref_path": "assets/data/memory-utility.json",
-          "source_file": "memory/project-status.md",
-          "line_no": 182
+          "line_no": 196
         },
         {
           "level": "yellow",
@@ -286,15 +214,6 @@
           "level": "yellow",
           "source": "archive_integrity",
           "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/characters.schema.json（在 memory/wiki-characters-schema-draft.md:20）",
-          "ref_path": "projects/wiki/data/db/characters.schema.json",
-          "source_file": "memory/wiki-characters-schema-draft.md",
-          "line_no": 20
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
           "message": "断裂引用：assets/data/extracted/（在 memory/wiki-characters-schema-draft.md:385）",
           "ref_path": "assets/data/extracted/",
           "source_file": "memory/wiki-characters-schema-draft.md",
@@ -308,42 +227,6 @@
           "ref_path": "memory/wiki-characters-schema-v1.md",
           "source_file": "memory/wiki-characters-schema-draft.md",
           "line_no": 405
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/characters.json（在 memory/wiki-characters-schema-draft.md:408）",
-          "ref_path": "projects/wiki/data/db/characters.json",
-          "source_file": "memory/wiki-characters-schema-draft.md",
-          "line_no": 408
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/characters.json（在 memory/wiki-phase-2-gap-inventory.md:14）",
-          "ref_path": "projects/wiki/data/db/characters.json",
-          "source_file": "memory/wiki-phase-2-gap-inventory.md",
-          "line_no": 14
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/（在 memory/wiki-phase-2-gap-inventory.md:16）",
-          "ref_path": "projects/wiki/data/db/",
-          "source_file": "memory/wiki-phase-2-gap-inventory.md",
-          "line_no": 16
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/characters.json（在 memory/wiki-phase-2-gap-inventory.md:228）",
-          "ref_path": "projects/wiki/data/db/characters.json",
-          "source_file": "memory/wiki-phase-2-gap-inventory.md",
-          "line_no": 228
         },
         {
           "level": "yellow",
@@ -411,14 +294,12 @@
         {
           "level": "yellow",
           "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/characters.json（在 projects/wiki/CONTEXT.md:99）",
-          "ref_path": "projects/wiki/data/db/characters.json",
-          "source_file": "projects/wiki/CONTEXT.md",
-          "line_no": 99
+          "metric": "pending_backlog",
+          "message": "Phase 2 自举待办堆积：31 条 pending 白名单引用（超过 20 条阈值）",
+          "pending_count": 31
         }
       ],
-      "alert_count": 31
+      "alert_count": 18
     }
   }
 }

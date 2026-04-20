@@ -96,4 +96,4 @@ Phase 2 启动会话必读：`memory/wiki-phase-2-gap-inventory.md`
 - 基线自举建议顺序（Week 1-5）
 - 预估耗时（悲观 28-35 天，含 3-5 天基线自举）
 
-**开工第一优先级**：澄清 `projects/wiki/data/db/characters.json` 基线来源（从 `character_data.txt` 自举），而非直接跑 fetch 脚本。
+**开工第一优先级**：澄清 `projects/wiki/data/db/characters.json` ⚠ 基线来源（从 `character_data.txt` 自举），而非直接跑 fetch 脚本。
