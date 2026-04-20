@@ -1,19 +1,19 @@
 {
   "date": "2026-04-19",
-  "messages": 31095,
+  "messages": 31161,
   "unique_authors": 358,
-  "reactions_total": 4385,
-  "attachments": 1098,
+  "reactions_total": 4389,
+  "attachments": 1103,
   "channel_activity": {
-    "🔸綜合討論": 7443,
-    "🔸morimens-game-chat": 13294,
-    "🔸русский-канал": 562,
+    "🔸綜合討論": 7448,
+    "🔸morimens-game-chat": 13325,
+    "🔸русский-канал": 578,
+    "🔸canal-português": 1405,
+    "🔸team-building": 520,
     "🔸canal-español": 487,
-    "🔸canal-português": 1392,
     "🔸ห้องสนทนาภาษาไทย": 143,
     "🔸traphase": 60,
     "🔸lore-chat": 88,
-    "🔸team-building": 519,
     "🔸general-chat": 2144,
     "🔸邀请码互助┊swap-invitation-codes": 23,
     "🔸game-question": 1177,
@@ -86,8 +86,8 @@
     "Arc 2 Team and Pulls Advice": 8
   },
   "hourly_activity": {
+    "23": 907,
     "22": 823,
-    "23": 841,
     "21": 924,
     "19": 1213,
     "20": 919,
@@ -112,8 +112,8 @@
     "8": 1140
   },
   "message_types": {
-    "0": 1215,
-    "19": 560
+    "0": 51,
+    "19": 15
   },
   "top_reacted_messages": [
     {
