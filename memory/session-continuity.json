@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "142194c5",
-    "timestamp": "2026-04-19T17:59:29.089000+00:00",
-    "duration_minutes": 14.8,
+    "id": "145e1ed4",
+    "timestamp": "2026-04-19T18:24:29.914000+00:00",
+    "duration_minutes": 39.8,
     "branch": "claude/project-strategy-review-1AH5Z",
     "topics": [
       "银芯",
@@ -16,6 +16,22 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "142194c5",
+      "timestamp": "2026-04-19T17:59:29.089000+00:00",
+      "duration_minutes": 14.8,
+      "branch": "claude/project-strategy-review-1AH5Z",
+      "topics": [
+        "银芯",
+        "Phase1",
+        "Phase2",
+        "记忆宫殿",
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "c1db494a",
       "timestamp": "2026-04-19T17:46:42.879000+00:00",
@@ -153,41 +169,23 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "fcc9eafd",
-      "timestamp": "2026-04-16T05:36:56.156000+00:00",
-      "duration_minutes": 2089.5,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 3.18,
-      "黑池": 3.18,
-      "银芯": 1.8,
-      "Phase1": 1.0,
-      "Phase2": 1.0,
-      "记忆宫殿": 1.0,
-      "Wiki": 1.0
+      "BPT": 2.54,
+      "黑池": 2.54,
+      "银芯": 2.44,
+      "Phase1": 1.8,
+      "Phase2": 1.8,
+      "记忆宫殿": 1.8,
+      "Wiki": 1.8
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
       "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
     ],
-    "total_sessions": 67
+    "total_sessions": 68
   },
-  "updated_at": "2026-04-19T18:04:36.970706+00:00"
+  "updated_at": "2026-04-19T18:27:46.181018+00:00"
 }
