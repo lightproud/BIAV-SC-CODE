@@ -6,7 +6,7 @@
 
 ## 26. 后台子代理 Write 大文档的超时阈值低于主控台
 
-- **Context**：2026-04-20 派发 P2W1D1 / P2W1D1-retry 两个后台子代理（`run_in_background=true`）起草 `memory/wiki-characters-schema-draft.md`（~14 KB / 414 行）
+- **Context**：2026-04-20 派发 P2W1D1 / P2W1D1-retry 两个后台子代理（`run_in_background=true`）起草 `memory/wiki-characters-schema-v1.md`（~14 KB / 414 行，2026-04-20 已从 v0.1 草案升级到 v1.0）
 - **Problem**：两次都在完成全部调研后、`Write` 工具调用的当刻触发 `API Error: Stream idle timeout - partial response received`，产出文件未落盘。失败位置完全一致（见子代理 jsonl 最后一个 assistant event），排除随机性。主控台直接 Write 同一文档则一次成功。推断：后台 agent 的 output streaming 超时阈值更严格
 - **Fix**：
   1. 后台子代理产出**大于 300 行 / 10 KB** 的单文档时，主控台在 prompt 中强制要求**分段写入**（先 Write 骨架 200 行以内，再分多次 Edit 追加）

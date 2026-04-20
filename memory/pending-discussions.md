@@ -20,7 +20,7 @@
 
 ## 数据校验
 
-- [x] **Wiki JSON 数据抽查（2026-04-20 B3 修正后作废）**：原任务基于假设"projects/wiki/data/db/ 下有 18 个 JSON"，B3 调研揭露该目录从未存在。Phase 2 W1 以 `memory/wiki-characters-schema-draft.md` 为基线重新规划，此条旧任务不再适用
+- [x] **Wiki JSON 数据抽查（2026-04-20 B3 修正后作废）**：原任务基于假设"projects/wiki/data/db/ 下有 18 个 JSON"，B3 调研揭露该目录从未存在。Phase 2 W1 以 `memory/wiki-characters-schema-v1.md`（守密人 2026-04-20 裁决锁定）为基线重新规划，此条旧任务不再适用
 
 ## 事实圣经
 

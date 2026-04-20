@@ -48,7 +48,7 @@ python scripts/content_db.py
 > 来源：2026-04-19 战略转向（BPT 从银芯删除，整体战略压缩至 3 个月）。
 > Wiki 子项目进入 Phase 2 准备期，**开工第一优先级是基线自举，而非 fetch-wiki-data 抓取**。
 
-1. **schema 草案审核**：`memory/wiki-characters-schema-draft.md` v0.1 已落盘，待守密人裁决 6 项遗留问题后锁定 v1.0
+1. **schema v1.0 已锁定**（2026-04-20）：`memory/wiki-characters-schema-v1.md`，守密人「全部采纳」6 项遗留问题裁决
 2. **基线自举准备**：待 schema v1.0 锁定后派发 P2W1W1 批量自举会话（72 角色 → `data/db/characters.json`）。建议按 24 角色 / 批拆 3 批，规避 lesson #26 的 Write timeout 风险
 3. **不要在基线建立前跑 fetch-wiki-data workflow**：fetch_skills.py 等脚本依赖 `data/db/characters.json`，该文件不存在时必然失败
 
@@ -79,7 +79,7 @@ python scripts/content_db.py
 - [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
 - [ ] 阅读 `memory/project-status.md` 确认 wiki 子项目当前状态
 - [ ] `ls projects/wiki/data/db/` 校验 characters.json 是否已自举（缺失则回到 Phase 2 路线图）
-- [ ] 读 `memory/wiki-phase-2-gap-inventory.md` 与 `memory/wiki-characters-schema-draft.md` 了解自举现状
+- [ ] 读 `memory/wiki-phase-2-gap-inventory.md` 与 `memory/wiki-characters-schema-v1.md` 了解自举现状
 - [ ] 确认 GitHub Pages 部署状态（最新 Actions 是否成功）
 - [ ] 检查 `memory/morimens-context.md` 了解游戏背景知识
 - [ ] 确认你要修改的文件不属于其他子项目
