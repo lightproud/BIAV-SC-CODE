@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话）
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -183,6 +183,22 @@
 - **Problem**：三个命名**不统一**——Sonnet/Opus 用连字符分隔版本号（`4-6`），Haiku 单独用下划线（`4_5`）。`claw` 内置别名表 `haiku` → `claude-haiku-4-5-20251213`（连字符 + 日期后缀）与 idealab 的 `claude-haiku-4_5`（下划线、无后缀）不匹配。直接执行 `--model haiku` 会把错误名透传给 idealab，返回 404 / InvalidModel
 - **Fix**：在 `projects/bpt-next/.claw/settings.json` 用户别名表覆盖 `haiku → claude-haiku-4_5`；Sonnet/Opus 恰好匹配 claw 内置别名无需改动。命名约定说明同步到 `LOCAL-SETUP-ZH.md` 情境八
 - **Impact**：配置可用性、别名系统兼容
+
+---
+
+## 25. 档案声明 vs 实际文件交叉校验
+
+- **Context**：2026-04-20 B3 Wiki 缺口调研子代理在扫描仓库时发现，`projects/wiki/data/db/` 目录在 git 历史中**从未存在过**，但多处档案声称其存在：
+  - `memory/project-status.md` 第 46-51 行声称"18 个 JSON 数据文件 / 63 唤醒体数据 / 加权完成度 83%"
+  - `projects/wiki/CONTEXT.md` 第 14 行声称"`data/db/` 下 16 个模块化 JSON"
+  - `CLAUDE.md` 按需加载索引指向 `projects/wiki/data/db/characters.json`
+  - 角色真实总数为 72（含皮肤/联动/彩蛋），不是 63
+- **Problem**：档案更新与实际文件操作脱节，无校验机制。新会话读到错误信息后按"数据已存在"假设工作，导致 fetch_skills.py 等脚本依赖不存在的 characters.json 必然失败；Phase 2 预算严重低估真实工作量（缺 3-5 天基线自举）。本条违反 lessons-learned #3「CONTEXT.md 必须同步实际状态」的根本原因是：第 3 条只要求"状态变更后同步"，未建立"周期性交叉校验"机制
+- **Fix**（三条防范机制）：
+  1. **新会话启动时校验关键文件路径**：CONTEXT.md 中引用的核心数据文件路径（如 `data/db/characters.json`），启动脚本应做一次 `ls` 校验，缺失则告警
+  2. **档案陈述附最后验证时间戳**：涉及文件存在性的陈述（"已完成 X 文件"）应带 `[last-verified: YYYY-MM-DD]` 字段，超过 30 天自动标脏
+  3. **做梦 Agent 哨兵层加交叉扫描**：浅睡层（每 6 小时）新增一条"档案声明 vs 实际文件存在性"扫描规则，提取 memory/ 与 CONTEXT.md 中的文件路径引用，核对仓库实际状态，不一致则写 sentinel 告警
+- **Impact**：跨会话协作可信度、Phase 2 工期估算准确性、档案诚信
 
 ---
 

@@ -1,6 +1,6 @@
 # 项目状态一览
 
-> 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话）
 >
 > 战略规划详见 `memory/strategic-plan-2026.md`
 
@@ -10,7 +10,7 @@
 |--------|------|---------|--------|
 | site（主站 + 部署 + 视觉） | 已部署，维护模式 | Code-site | 无新任务 |
 | news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 桥接 Discord → 聚合器、月度归档清理 |
-| wiki（数据集 + Wiki 站点） | 数据补全中 | Code-wiki | 触发 fetch-wiki-data workflow 抓取 47 个角色技能数据 + 12 个缺失立绘 |
+| wiki（数据集 + Wiki 站点） | 基线缺失，待自举 | Code-wiki | Phase 2 首要任务：先自举 characters.json 基线（72 角色），再触发 fetch-wiki-data workflow |
 | game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。
@@ -43,12 +43,13 @@
 ## Wiki 数据集 + 站点
 
 ### 游戏数据集（原 database）
-- **已完成**：
-  - 18 个 JSON 数据文件（`projects/wiki/data/db/`）
-  - 63 个唤醒体数据（59 SSR + 4 SR）
-  - 63/63 角色有元数据（EN/JA 描述、获取方式翻译完成），11 个有结构化卡牌/技能数据，52 个待 Fandom 抓取补充
-  - 47/59 角色立绘已下载到 `assets/images/portraits/`（12 个缺失，已配置 Bilibili Wiki 备用源）
-  - 命轮数据：55 个命轮，31 个有角色归属，39 个有效果文本（EN 翻译完成），16 个缺失待抓取
+- **当前状态**（2026-04-20 B3 调研修正）：
+  - **`projects/wiki/data/db/characters.json` 基线尚未建立**（git 历史中无此文件），Phase 2 首要任务是自举基线
+  - 角色真实总数为 **72 角色**（含皮肤/联动/彩蛋），不是 63。来源：`projects/wiki/data/extracted/categorized/character_data.txt`（客户端逆向提取）
+  - 数据覆盖度**基线缺失，真实缺口详见 `memory/wiki-phase-2-gap-inventory.md`**
+  - 72/72 角色有元数据（EN/JA 描述、获取方式翻译完成），结构化卡牌/技能数据待 Phase 2 从 Fandom 抓取补充
+  - 47 个立绘 PNG 已下载到 `assets/images/portraits/`（蛇形命名，约 65% 覆盖，对 72 角色仍缺约 25 个）
+  - 命轮数据：29 条 Name（TrinketSuitEffect.lua），**全部缺 Effect/Condition 字段**，待 Phase 2 从 AwakerPotency.lua 或 Fandom 提取
   - 命轮与密契装备体系
   - 四大界域体系（Chaos、Aequor、Caro、Ultra）
   - 版本线 v1.0→v2.5（含 3 个联动记录）
@@ -80,11 +81,11 @@
 ### Wiki 站点
 - **已完成**：
   - VitePress 站点框架、三语言结构（ZH/EN/JA）
-  - 189 个角色详情页 + 165 个命轮详情页 + 3 个命轮列表页（全部自动生成）
-  - 约 580+ 页 Markdown 内容（ZH 193 + EN 198 + JA 197 页）
-  - 内容完成度：系统页 100%，命轮页 71%（39/55 有效果数据），角色元数据 100%（EN/JA 描述均完成），角色技能 17%（11/63 有结构化数据）
-  - 加权总完成度约 83%（系统30%×100% + 角色元数据40%×100% + 技能15%×17% + 命轮15%×71%）
-  - 达到 90% 需要：fetch-wiki-data workflow 抓取 52 个角色技能 + 16 个命轮效果
+  - 模板页面脚手架（数量随 Phase 2 基线自举后重新生成）
+  - 约 580+ 页 Markdown 内容（ZH 193 + EN 198 + JA 197 页，基于早期假数据生成，Phase 2 需重跑 generate_pages.py）
+  - 内容完成度：**基线缺失，真实缺口详见 `memory/wiki-phase-2-gap-inventory.md`**
+  - 加权总完成度原声称 83%，B3 调研（2026-04-20）揭露：characters.json 从未存在，该数据不可信
+  - Phase 2 达到 90% 需要：先自举 characters.json（72 角色最小骨架）→ 再触发 fetch-wiki-data workflow 抓取技能/命轮/立绘
   - 11 个 Vue 交互组件（全部已注册到 theme）：
     - CharacterGrid（角色筛选/排序）— 已嵌入唤醒体索引页
     - CharacterCompare（角色对比）
@@ -120,7 +121,7 @@
 
 - Phase 0（止血）：✅ 完成
 - Stage 1 验证（日报 14 天）：✅ 制作人确认通过
-- 事实圣经 v1.0：✅ 63 角色 + 叙事结构 + 设计决策
+- 事实圣经 v1.0：✅ 72 角色（含皮肤/联动/彩蛋）+ 叙事结构 + 设计决策
 - 记忆系统 9 模块：✅ 全部上线（3410 行新代码）
 - 做梦 Agent 三层：✅ 全部启动（浅睡6h + 深睡每日 + REM每周）
 
