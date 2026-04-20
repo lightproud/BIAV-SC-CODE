@@ -11,9 +11,9 @@
 
 艾瑞卡在扫描仓库时检测到**严重的记忆-现实脱节**：
 
-1. **`projects/wiki/data/db/characters.json` 不存在**，且 git 历史中**从未存在过**。
+1. **`projects/wiki/data/db/characters.json` ⚠ 不存在**，且 git 历史中**从未存在过**。
    - `memory/project-status.md` 第 46-51 行声称"63 个唤醒体数据、18 个 JSON 数据文件"，但实际仓库中：
-     - `projects/wiki/data/db/` 整个目录不存在
+     - `projects/wiki/data/db/` ⚠ 整个目录不存在
      - tracked files 只有 `projects/wiki/data/extracted/`（逆向数据）+ `processed/`（4 个 JSON，无角色技能） + `schemas/`（3 个校验模板，无实际数据）
    - 建议：Phase 2 启动时必须先澄清"63 角色"的真实状态——是**待从 extracted 数据构建**，还是**某分支/归档中有未合并的 characters.json**。
 2. **`projects/wiki/CONTEXT.md` 第 14 行**声称"`data/db/` 下 16 个模块化 JSON"，与实际不符，需同步修正。
@@ -225,7 +225,7 @@
 
 **Week 1（04-27 ~ 05-03）：基线修复**
 1. 澄清 characters.json 的消失原因，修复 `memory/project-status.md` 与 `CONTEXT.md`
-2. 用 character_data.txt 自举生成最小 `projects/wiki/data/db/characters.json`（72 ID + Name/Title/Age/Painter/VoiceActor/Gender）
+2. 用 character_data.txt 自举生成最小 `projects/wiki/data/db/characters.json` ⚠（72 ID + Name/Title/Age/Painter/VoiceActor/Gender）
 3. **角色 ID 去重修复**（守密人 2026-04-20 裁定）：15578/15593 詹金、78840/78841 黑猫均为数据 bug，自举时必须合并 ID 消除重复
 4. 创建 `realms.json`、`role_types` 基础骨架，让 schema 校验能跑通
 5. 跑一次 `validate-data.yml` 确认基线干净

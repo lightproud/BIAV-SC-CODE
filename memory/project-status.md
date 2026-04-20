@@ -177,10 +177,10 @@
 
 | 文件 | 用途 |
 |------|------|
-| `assets/data/vectors.json.gz` | TF-IDF 向量索引（gzip 压缩） |
-| `assets/data/knowledge-graph.json` | 知识图谱 |
-| `assets/data/memory-utility.json` | 效用评分 |
-| `assets/data/sentinel-baseline.json` | 哨兵基线数据 |
+| `assets/data/vectors.json.gz` | TF-IDF 向量索引（gzip 压缩，运行时生成） |
+| `assets/data/knowledge-graph.json` | 知识图谱（运行时生成） |
+| `assets/data/memory-utility.json` | 效用评分（运行时生成） |
+| `assets/data/sentinel-baseline.json` | 哨兵基线数据（运行时生成） |
 
 ## 做梦 Agent 三层架构
 

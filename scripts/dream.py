@@ -88,6 +88,7 @@ ARCHIVE_INTEGRITY_ROOT_WHITELIST = {
 # ⚠ symbol) are treated as intentionally pending, not broken.
 ARCHIVE_INTEGRITY_PENDING_MARKERS = (
     "⚠", "尚未建立", "待自举", "phase 2 w1", "self-bootstrap",
+    "运行时生成", "运行时产出", "gitignored", "runtime-generated",
 )
 # Backtick-wrapped path reference — allow anything except backticks/whitespace.
 # Intentionally permissive so malformed inputs (e.g. paths with spaces) are

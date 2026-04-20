@@ -17,7 +17,7 @@
 2. 为「暂缺」状态提供明确的 null / `"pending"` 规约，避免 Phase 2 中期因数据未到位而无法表达记录
 3. 为数据 bug（詹金 15578 vs 15593 / 黑猫 x2）预留 `duplicate_bug` 标记字段
 4. 字段命名遵循已有约定：英文 slug、`lowercase_snake_case`
-5. Schema 为 draft-07，可直接落盘 `projects/wiki/data/db/characters.schema.json`，供 CI validate-data.yml 校验
+5. Schema 为 draft-07，可直接落盘 `projects/wiki/data/db/characters.schema.json` ⚠（目标路径，Phase 2 W1 自举时建立），供 CI validate-data.yml 校验
 
 ## 二、JSON Schema（draft-07）
 
@@ -405,7 +405,7 @@ Phase 2 之后数据源会扩展（官方公告 / 社区贡献 / 制作人采访
 3. **锁定 schema v1.0**：将裁决写入 `memory/decisions.md`，本文档更名为 `memory/wiki-characters-schema-v1.md` 或升级元数据
 4. **派发 P2W1W1 正式批量自举会话**：
    - 输入：schema v1.0 + `character_data.txt`（72 条原始数据）
-   - 产出：`projects/wiki/data/db/characters.json`（72 条 `status: partial` 记录骨架）
+   - 产出：`projects/wiki/data/db/characters.json` ⚠（72 条 `status: partial` 记录骨架，Phase 2 W1 自举目标）
    - 工作量预估：**4–6 小时子代理会话**（含 Lua 源二次交叉校验 + 72 条 slug 命名 + 3 条 bug 标记 + CI schema 校验通过）
    - 建议拆分为 3 批（每批 24 角色），规避单次 Write timeout 风险（结合 P2W1D1 两次 timeout 教训）
 
