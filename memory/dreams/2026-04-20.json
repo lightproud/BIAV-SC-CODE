@@ -1,9 +1,9 @@
 {
   "date": "2026-04-20",
-  "timestamp": "2026-04-20T17:39:39.583172",
+  "timestamp": "2026-04-20T17:44:10.132250",
   "branch": "claude/project-strategy-review-1AH5Z",
   "phase1": {
-    "issues": 75,
+    "issues": 77,
     "checks": {
       "staleness": {
         "lines": [
@@ -76,11 +76,14 @@
           "  - x memory/bpt-next-design.md references 'projects/occ-local/v2/' -- NOT FOUND",
           "  - x memory/bpt-next-design.md references 'projects/occ-local/v2/src/' -- NOT FOUND",
           "  - x memory/decisions.md references 'assets/submodule' -- NOT FOUND",
+          "  - x memory/decisions.md references 'projects/bpt-desktop/' -- NOT FOUND",
           "  - x memory/decisions.md references 'projects/bpt-next/' -- NOT FOUND",
           "  - x memory/decisions.md references 'projects/bpt-next/.claw/settings.json' -- NOT FOUND",
           "  - x memory/decisions.md references 'projects/bpt-next/LOCAL-SETUP-ZH.md' -- NOT FOUND",
           "  - x memory/decisions.md references 'projects/bpt-next/NOTICE' -- NOT FOUND",
+          "  - x memory/decisions.md references 'projects/bpt-web/' -- NOT FOUND",
           "  - x memory/decisions.md references 'projects/graphify-ext/' -- NOT FOUND",
+          "  - x memory/decisions.md references 'projects/occ-local/' -- NOT FOUND",
           "  - x memory/lessons-learned.md references 'projects/bpt-next/.claw/settings.json' -- NOT FOUND",
           "  - x memory/lessons-learned.md references 'projects/bpt-next/LOCAL-SETUP-ZH.md' -- NOT FOUND",
           "  - x memory/lessons-learned.md references 'projects/wiki/data/db/' -- NOT FOUND",
@@ -95,7 +98,6 @@
           "  - x memory/silver-memory-enhancement-plan.md references 'memory/silver-to-blackpool-migration.md' -- NOT FOUND",
           "  - x memory/strategic-plan-2026.md references 'projects/bpt-web' -- NOT FOUND",
           "  - x memory/task-wiki-data-audit-2026-04.md references 'projects/wiki/data/db/characters.json' -- NOT FOUND",
-          "  - x memory/wiki-characters-schema-draft.md references 'assets/data/extracted/' -- NOT FOUND",
           "  - x memory/wiki-characters-schema-draft.md references 'memory/wiki-characters-schema-v1.md' -- NOT FOUND",
           "  - x memory/wiki-characters-schema-draft.md references 'projects/wiki/data/db/characters.json' -- NOT FOUND",
           "  - x memory/wiki-characters-schema-draft.md references 'projects/wiki/data/db/characters.schema.json' -- NOT FOUND",
@@ -110,7 +112,7 @@
           "  - x projects/wiki/CONTEXT.md references 'projects/wiki/data/db/' -- NOT FOUND",
           "  - x projects/wiki/CONTEXT.md references 'projects/wiki/data/db/characters.json' -- NOT FOUND"
         ],
-        "issues": 64
+        "issues": 66
       },
       "decisions": {
         "lines": [
@@ -141,165 +143,12 @@
         {
           "level": "yellow",
           "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/wiki/data/db/characters.json（在 memory/boot-snapshot.md:96）",
-          "ref_path": "projects/wiki/data/db/characters.json",
-          "source_file": "memory/boot-snapshot.md",
-          "line_no": 96
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/bpt-next/.claw/settings.json（在 memory/decisions.md:51）",
-          "ref_path": "projects/bpt-next/.claw/settings.json",
-          "source_file": "memory/decisions.md",
-          "line_no": 51
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/bpt-next/LOCAL-SETUP-ZH.md（在 memory/decisions.md:51）",
-          "ref_path": "projects/bpt-next/LOCAL-SETUP-ZH.md",
-          "source_file": "memory/decisions.md",
-          "line_no": 51
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/bpt-next/LOCAL-SETUP-ZH.md（在 memory/lessons-learned.md:189）",
-          "ref_path": "projects/bpt-next/LOCAL-SETUP-ZH.md",
-          "source_file": "memory/lessons-learned.md",
-          "line_no": 189
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/bpt-next/.claw/settings.json（在 memory/lessons-learned.md:196）",
-          "ref_path": "projects/bpt-next/.claw/settings.json",
-          "source_file": "memory/lessons-learned.md",
-          "line_no": 196
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：scripts/session_svn_sync.py（在 memory/silver-memory-enhancement-plan.md:108）",
-          "ref_path": "scripts/session_svn_sync.py",
-          "source_file": "memory/silver-memory-enhancement-plan.md",
-          "line_no": 108
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：scripts/session_svn_sync.py（在 memory/silver-memory-enhancement-plan.md:141）",
-          "ref_path": "scripts/session_svn_sync.py",
-          "source_file": "memory/silver-memory-enhancement-plan.md",
-          "line_no": 141
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：projects/bpt-web（在 memory/strategic-plan-2026.md:32）",
-          "ref_path": "projects/bpt-web",
-          "source_file": "memory/strategic-plan-2026.md",
-          "line_no": 32
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：assets/data/extracted/（在 memory/wiki-characters-schema-draft.md:385）",
-          "ref_path": "assets/data/extracted/",
-          "source_file": "memory/wiki-characters-schema-draft.md",
-          "line_no": 385
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：memory/wiki-characters-schema-v1.md（在 memory/wiki-characters-schema-draft.md:405）",
-          "ref_path": "memory/wiki-characters-schema-v1.md",
-          "source_file": "memory/wiki-characters-schema-draft.md",
-          "line_no": 405
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：scripts/aggregator.py（在 projects/news/CONTEXT.md:43）",
-          "ref_path": "scripts/aggregator.py",
-          "source_file": "projects/news/CONTEXT.md",
-          "line_no": 43
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：scripts/global_collectors.py（在 projects/news/CONTEXT.md:44）",
-          "ref_path": "scripts/global_collectors.py",
-          "source_file": "projects/news/CONTEXT.md",
-          "line_no": 44
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：scripts/taptap_collector.py（在 projects/news/CONTEXT.md:45）",
-          "ref_path": "scripts/taptap_collector.py",
-          "source_file": "projects/news/CONTEXT.md",
-          "line_no": 45
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：scripts/collect_global.py（在 projects/news/CONTEXT.md:46）",
-          "ref_path": "scripts/collect_global.py",
-          "source_file": "projects/news/CONTEXT.md",
-          "line_no": 46
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：scripts/backfill_platforms.py（在 projects/news/CONTEXT.md:47）",
-          "ref_path": "scripts/backfill_platforms.py",
-          "source_file": "projects/news/CONTEXT.md",
-          "line_no": 47
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：scripts/generate_daily.py（在 projects/news/CONTEXT.md:48）",
-          "ref_path": "scripts/generate_daily.py",
-          "source_file": "projects/news/CONTEXT.md",
-          "line_no": 48
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
-          "metric": "broken_reference",
-          "message": "断裂引用：scripts/split_output.py（在 projects/news/CONTEXT.md:49）",
-          "ref_path": "scripts/split_output.py",
-          "source_file": "projects/news/CONTEXT.md",
-          "line_no": 49
-        },
-        {
-          "level": "yellow",
-          "source": "archive_integrity",
           "metric": "pending_backlog",
-          "message": "Phase 2 自举待办堆积：31 条 pending 白名单引用（超过 20 条阈值）",
-          "pending_count": 31
+          "message": "Phase 2 自举待办堆积：45 条 pending 白名单引用（超过 20 条阈值）",
+          "pending_count": 45
         }
       ],
-      "alert_count": 18
+      "alert_count": 1
     }
   }
 }

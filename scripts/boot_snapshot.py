@@ -201,7 +201,7 @@ def generate_snapshot() -> str:
 - 项目详细状态 → `memory/project-status.md`
 - 战略评估 → `memory/strategic-assessment.md`
 - 游戏世界观 → `memory/morimens-context.md`
-- 角色数据库 → `projects/wiki/data/db/characters.json`
+- 角色数据库 → `projects/wiki/data/db/characters.json` ⚠（Phase 2 W1 待自举）
 - 最新日报 → `projects/news/output/daily-latest.md`
 - 全平台数据 → `projects/news/output/all-latest.json`
 - 设计决策 → `assets/data/design-decisions.json`

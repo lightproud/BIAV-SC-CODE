@@ -3,6 +3,8 @@
 > 最后更新：2026-04-20 by 主控台（艾瑞卡会话）
 >
 > **新会话只需要读「当前有效决策」。历史归档仅供追溯。**
+>
+> ⚠ **BPT 战线已删除（2026-04-19）**：以下所有包含 `projects/bpt-next/`、`projects/bpt-web/`、`projects/bpt-desktop/`、`projects/graphify-ext/`、`projects/occ-local/` 路径的历史条目均为已移除子系统的追溯记录，路径本身不再存在于仓库。详见 `memory/strategic-plan-2026.md` 2026-04-19 战略转向。
 
 ---
 
@@ -48,7 +50,7 @@
 | **双系统亚哈格分**（2026-04-14）：银芯 = 孵化器 + 开源子项目 + 公开资料；黑池（内网 SVN）= 五大需求的数据与代码主体。解除"能力团队内共享"与"银芯公开层"的潜在矛盾——能力放黑池内网，银芯只保留接口声明与可公开能力。详见 memory/blackpool-architecture.md 第零节 | 全局 / 双系统分工 |
 | **黑池记忆走银芯自建+母版迁移**（2026-04-14）：守密人原话"完善银芯自建，使其拥有 claude-mem 的能力，然后作为母版迁移到黑池"。不引入 claude-mem（AGPL-3.0），通过扩展银芯现有 Python 记忆栈实现等价能力，验证后克隆部署到黑池内网。废弃原"claude-mem 中文外挂指南"计划。详见 memory/silver-memory-enhancement-plan.md | 全局 / 记忆系统 |
 | **外部工具方针锁定**（2026-04-14）：graphify（MIT）Phase A vendor 到 projects/graphify-ext/ 作黑池索引工具原型；claude-mem（AGPL-3.0）完全不引入，仅作架构参考 | 全局 / 外部工具 |
-| **bpt-next 接入 idealab 网关锁定**（2026-04-14）：守密人明示确认 idealab（`https://idealab.alibaba-inc.com`）完整支持 Anthropic-compatible 协议（prompt caching / tool_use / 流式全保留）。锁定端点为 `/api/anthropic/v1/messages`（`/code/` 需浏览器 SSO，API key 直调不可用）。支持三个 Claude 模型：`claude-sonnet-4-6`（默认）/ `claude-opus-4-6` / `claude-haiku-4_5`（注意 Haiku 用下划线），另含 `qwen3-coder-plus`。凭据与接入档案落盘到 `projects/bpt-next/.claw/settings.json`（别名表）+ `projects/bpt-next/LOCAL-SETUP-ZH.md` 情境八。前期关于"内部应走 OpenAI-compat"的讨论作废——idealab 既然统一协议为 Anthropic，走原生协议可零能力损失保留 Claude 原生特性 | 全局 / bpt-next |
+| **bpt-next 接入 idealab 网关锁定**（2026-04-14）：守密人明示确认 idealab（`https://idealab.alibaba-inc.com`）完整支持 Anthropic-compatible 协议（prompt caching / tool_use / 流式全保留）。锁定端点为 `/api/anthropic/v1/messages`（`/code/` 需浏览器 SSO，API key 直调不可用）。支持三个 Claude 模型：`claude-sonnet-4-6`（默认）/ `claude-opus-4-6` / `claude-haiku-4_5`（注意 Haiku 用下划线），另含 `qwen3-coder-plus`。凭据与接入档案落盘到 `projects/bpt-next/.claw/settings.json` ⚠（已删除）+ `projects/bpt-next/LOCAL-SETUP-ZH.md` ⚠（已删除）情境八。前期关于"内部应走 OpenAI-compat"的讨论作废——idealab 既然统一协议为 Anthropic，走原生协议可零能力损失保留 Claude 原生特性 | 全局 / bpt-next |
 | 银芯事实圣经边界：仅收录公开可查阅信息 | 全局 |
 | 战略规划 2026：四阶段计划，详见 strategic-plan-2026.md | 全局 |
 | 黑池已上线（2026-04-03），内网 SVN + Qoder，全员使用，核心痛点：知识结构化传承 | 全局 |
