@@ -1,43 +1,45 @@
 {
   "date": "2026-04-20",
-  "messages": 36139,
+  "messages": 37946,
   "unique_authors": 630,
-  "reactions_total": 3924,
-  "attachments": 2346,
+  "reactions_total": 4079,
+  "attachments": 2428,
   "channel_activity": {
-    "🔸綜合討論": 7719,
-    "🔸阵容构建": 110,
-    "🔸morimens-game-chat": 14709,
+    "🔸綜合討論": 7737,
+    "🔸阵容构建": 111,
+    "🔸morimens-game-chat": 15957,
+    "🔸русский-канал": 667,
+    "🔸phòng-chat-tiếng-việt": 2270,
+    "🔸canal-español": 556,
+    "🔸canal-português": 3458,
+    "🔸ruang-obrolan-indonesia": 1316,
+    "🔸ห้องสนทนาภาษาไทย": 545,
+    "🔸traphase": 139,
+    "🔸lore-chat": 473,
+    "🔸team-building": 730,
+    "🔸general-chat": 333,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸game-question": 2174,
+    "🔸机器人命令┊bot-commands": 102,
+    "[Producer's Letter] We Will Not Fail You": 20,
+    "VORTICE": 1,
+    "Shld I get arache?": 4,
     "🔸剧情交流": 95,
     "🔸相位对弈": 34,
     "🔸deutscher-chatraum": 46,
-    "🔸русский-канал": 652,
-    "🔸canal-español": 466,
-    "🔸canal-português": 3270,
-    "🔸ruang-obrolan-indonesia": 1302,
-    "🔸ห้องสนทนาภาษาไทย": 542,
-    "🔸traphase": 97,
-    "🔸lore-chat": 472,
     "🔸频道建议┊server-suggestions": 18,
-    "🔸team-building": 696,
-    "🔸general-chat": 304,
-    "🔸邀请码互助┊swap-invitation-codes": 16,
-    "🔸game-question": 2061,
     "🔸忘却前夜┊morimens-tv": 2,
     "🔸游戏问题": 1,
-    "🔸机器人命令┊bot-commands": 98,
     "🔸erica-playground": 1,
     "Bug: Pollux AA effects are not working correctly": 10,
     "Bug: Corposant AA Rouse not working for STR/Tentacledamage during the turn where the Rouse is played": 1,
     "Final Verse not triggering on Singularity Ultra Round.": 4,
     "Nefrea": 5,
     "I think it was a bad idea to add season rewards to chess.": 7,
-    "[Producer's Letter] We Will Not Fail You": 19,
     "continual arachneposting": 6,
     "1495902514611224746": 1,
     "🔸晒卡分享": 63,
     "🔸한국어-채팅방": 381,
-    "🔸phòng-chat-tiếng-việt": 2267,
     "ugly": 1,
     "繁體主線文本錯字": 4,
     "Bug:  Final Verdict did not trigger despite being over boss health": 2,
@@ -152,13 +154,13 @@
     "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ": 1,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 7,
     "想问下萌新怎么攒资源最快": 1,
-    "Shld I get arache?": 3,
     "1495665298097836072": 1
   },
   "hourly_activity": {
+    "22": 1166,
+    "23": 877,
     "20": 771,
     "21": 723,
-    "22": 236,
     "19": 776,
     "15": 1837,
     "16": 1203,
@@ -181,10 +183,8 @@
     "4": 2526
   },
   "message_types": {
-    "0": 1234,
-    "19": 648,
-    "20": 2,
-    "21": 1
+    "0": 1176,
+    "19": 631
   },
   "top_reacted_messages": [
     {
@@ -250,6 +250,14 @@
       "author": "yi000607",
       "reactions": 14,
       "channel": "✅「已回答」回朔相關"
+    },
+    {
+      "id": "1495926521066557471",
+      "channel_id": "1495926521066557471",
+      "content": "<33",
+      "author": "kaisopod",
+      "reactions": 13,
+      "channel": "VORTICE"
     },
     {
       "id": "1495623791009595412",
@@ -338,14 +346,6 @@
       "author": "l8989c",
       "reactions": 10,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1495716835444920431",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "bartmann_3212",
-      "reactions": 10,
-      "channel": "🔸晒卡分享"
     }
   ]
 }

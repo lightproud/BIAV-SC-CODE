@@ -1,0 +1,238 @@
+{
+  "date": "2026-04-21",
+  "messages": 7220,
+  "unique_authors": 321,
+  "reactions_total": 603,
+  "attachments": 390,
+  "channel_activity": {
+    "🔸綜合討論": 2170,
+    "🔸morimens-game-chat": 3000,
+    "🔸剧情交流": 5,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 7,
+    "🔸deutscher-chatraum": 7,
+    "🔸русский-канал": 19,
+    "🔸phòng-chat-tiếng-việt": 64,
+    "🔸canal-español": 116,
+    "🔸canal-português": 755,
+    "🔸ruang-obrolan-indonesia": 100,
+    "🔸ห้องสนทนาภาษาไทย": 41,
+    "🔸traphase": 29,
+    "🔸lore-chat": 6,
+    "🔸team-building": 243,
+    "🔸general-chat": 108,
+    "🔸邀请码互助┊swap-invitation-codes": 2,
+    "🔸game-question": 395,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 21,
+    "一些摸鱼": 3,
+    "去讀書吧，守門員們 || 员威廉": 1,
+    "主線劇情翻譯問題？": 1,
+    "回溯鎖住的命輪 退出解鎖后會讓所有命輪叠位/回溯界面消失 很多人反饋了的bug到底什麽時候才能修": 1,
+    "可以把字體改回去嗎": 5,
+    "💭「处理中」突然卡死": 4,
+    "莉莉專造失效": 4,
+    "✅「已回答」Please, we need a claim all button for dailies": 10,
+    "蜘蛛专造空间不生效": 1,
+    "✅「已回答」繁體主線文本錯字": 4,
+    "Charging Primes in steam with Korean client": 1,
+    "Steam client can't shut down properly": 1,
+    "I think it was a bad idea to add season rewards to chess.": 40,
+    "💭「Processing」Singularity Ultra Round affecting Wheel effects?": 5,
+    "最终法则相关": 1,
+    "關於索蕾雅最終法則 這強度真的沒問題嗎？": 3,
+    "Get Auto enable for dtide": 1,
+    "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
+    "V2.5.0.0 停服维护公告": 1,
+    "[Producer's Letter] We Will Not Fail You": 2,
+    "im leighinf it. im leighing it": 1,
+    "VORTICE": 1,
+    "Go and study, Keepers || William": 1,
+    "continual arachneposting (ended)": 3,
+    "Angbak random FAQ Guide": 1,
+    "【English Translation】Opinions Collection": 4,
+    "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ": 14,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 3,
+    "刚回坑，能帮忙看看阵容和后面要抽谁": 4,
+    "1495959229851242526": 1,
+    "1495976479681548380": 1
+  },
+  "hourly_activity": {
+    "0": 899,
+    "1": 1552,
+    "2": 1221,
+    "3": 862,
+    "4": 843,
+    "5": 1352,
+    "6": 491
+  },
+  "message_types": {
+    "0": 5236,
+    "19": 1978,
+    "4": 4,
+    "21": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1495955239239553175",
+      "channel_id": "1495955239239553175",
+      "content": "We desperately need a claim all button instead of clicking the dailies one by on",
+      "author": "monchi3524",
+      "reactions": 15,
+      "channel": "✅「已回答」Please, we need a claim all button for dailies"
+    },
+    {
+      "id": "1495982292290633880",
+      "channel_id": "1495955239239553175",
+      "content": "It's really tiring to have to click every time, and I'm sorry for that. We’re al",
+      "author": "morimensstaff03",
+      "reactions": 7,
+      "channel": "✅「已回答」Please, we need a claim all button for dailies"
+    },
+    {
+      "id": "1495964725295714597",
+      "channel_id": "1495964725295714597",
+      "content": "i um. i felt so maternal towards leigh i had to draw her. i am not very confiden",
+      "author": "kizamitai",
+      "reactions": 6,
+      "channel": "im leighinf it. im leighing it"
+    },
+    {
+      "id": "1496022213071994961",
+      "channel_id": "1131839817982947429",
+      "content": ".....",
+      "author": "kemomimi_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1495975736736088224",
+      "channel_id": "1170692781216378960",
+      "content": "THAIS ASS",
+      "author": "necronomikkon",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496028746396729375",
+      "channel_id": "1170692781216378960",
+      "content": "Celeste is so beautiful I can’t even make a horny joke about her she’s just so s",
+      "author": "cqteiie",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496029759375802398",
+      "channel_id": "1170692781216378960",
+      "content": "TIL I can change the lobby screen with any CG in the game. \n\nArc1 Ch4 spoilers.",
+      "author": "anivia_blackfrost",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495969157546639473",
+      "channel_id": "1131839817982947429",
+      "content": "不然就是I 聽 you 在叭餔",
+      "author": "quackdayo",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1495993927264764067",
+      "channel_id": "1131839817982947429",
+      "content": "我想看阿涅把自家高傲的姊妹按著草",
+      "author": "eddy10051115",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1495999648819712112",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1496029374477242451",
+      "channel_id": "1131839817982947429",
+      "content": "🐱 : 這dc名字越紅說話越尖銳",
+      "author": "heikwok",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1495945500963242115",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "aegisx",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495971031305949206",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495971227385462835",
+      "channel_id": "1170692781216378960",
+      "content": "holy moonless guide pulls im bouta busssss",
+      "author": "kearz1",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495984554186375238",
+      "channel_id": "1170692781216378960",
+      "content": "Bruh...",
+      "author": "psychefu",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496030560601116753",
+      "channel_id": "1170692781216378960",
+      "content": "Sometimes I look in the mirror and wish I was born a twink so I could do gay stu",
+      "author": "cqteiie",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1495971685453660223",
+      "channel_id": "1174983699935277147",
+      "content": "常駐??",
+      "author": "chenboakai",
+      "reactions": 4,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1495970899214467253",
+      "channel_id": "1300659662311526512",
+      "content": "Maldita seas Alva.",
+      "author": "sayokolefay",
+      "reactions": 4,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1495961500244770877",
+      "channel_id": "1495961500244770877",
+      "content": "開狂沒有額外回血\n丟報償打擊也沒有回血",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "莉莉專造失效"
+    },
+    {
+      "id": "1495945780794757231",
+      "channel_id": "1131839817982947429",
+      "content": "1啟必要 2啟不卡手 3啟發力",
+      "author": "forg30215",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}
