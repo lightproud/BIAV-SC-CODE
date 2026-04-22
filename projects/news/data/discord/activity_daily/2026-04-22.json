@@ -1,0 +1,233 @@
+{
+  "date": "2026-04-22",
+  "messages": 5103,
+  "unique_authors": 272,
+  "reactions_total": 418,
+  "attachments": 329,
+  "channel_activity": {
+    "🔸綜合討論": 910,
+    "🔸morimens-game-chat": 2554,
+    "🔸剧情交流": 1,
+    "🔸晒卡分享": 3,
+    "🔸相位对弈": 1,
+    "🔸课间休息闲聊": 4,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 10,
+    "🔸русский-канал": 50,
+    "🔸phòng-chat-tiếng-việt": 270,
+    "🔸canal-español": 60,
+    "🔸canal-português": 63,
+    "🔸ruang-obrolan-indonesia": 84,
+    "🔸ห้องสนทนาภาษาไทย": 99,
+    "🔸traphase": 28,
+    "🔸lore-chat": 124,
+    "🔸team-building": 292,
+    "🔸general-chat": 193,
+    "🔸邀请码互助┊swap-invitation-codes": 6,
+    "🔸game-question": 248,
+    "🔸机器人命令┊bot-commands": 17,
+    "一些摸鱼": 1,
+    "Fouette WOD and clementine's passive not working in divine ultra round": 2,
+    "密境課室 銀輝之路 第六章歸檔問題": 1,
+    "Renaming team name causes all wheels and covenants to be lost": 6,
+    "Liz Wheel - Foutte not triggering after singularity ultra turn": 1,
+    "report option?": 3,
+    "final dmg bugged. Doesn’t work with Arachne’s": 5,
+    "Temporary Ultra Spaces don't go away when Singularity: Ultra is triggered?": 1,
+    "I think it was a bad idea to add season rewards to chess.": 2,
+    "Give Max SF mats for Veteran- Ranking": 4,
+    "關於索蕾雅最終法則 這強度真的沒問題嗎？": 2,
+    "\"24\" lives matter": 6,
+    "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
+    "[Producer's Letter] We Will Not Fail You": 1,
+    "Mori-dachi brainrot 💔🥀": 1,
+    "👀👀 pspsps hameln posting(?)": 3,
+    "Angbak random FAQ Guide": 1,
+    "P Dive Map Analysis": 1,
+    "【English Translation】Opinions Collection": 9,
+    "回坑玩家推薦隊伍": 4,
+    "萌新求建議": 8,
+    "求潘好友": 2,
+    "刚回坑，能帮忙看看阵容和后面要抽谁": 10,
+    "Been playing for a week now and kinda wanna know where I could go on from here": 7,
+    "Need help with team building pls": 3
+  },
+  "hourly_activity": {
+    "0": 508,
+    "1": 696,
+    "2": 996,
+    "3": 926,
+    "4": 631,
+    "5": 1017,
+    "6": 329
+  },
+  "message_types": {
+    "0": 3606,
+    "19": 1489,
+    "46": 1,
+    "20": 5,
+    "4": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1496318093864079540",
+      "channel_id": "1174983699935277147",
+      "content": "虽然不知道有什么用但是",
+      "author": "sweet_25367",
+      "reactions": 9,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1496364902938443777",
+      "channel_id": "1131839817982947429",
+      "content": "那那個賤人意志補12收益怎麼樣",
+      "author": "iamnotbunny",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1496334816478761010",
+      "channel_id": "1170692781216378960",
+      "content": "frost quit",
+      "author": "galacticgpt",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496315978210873535",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1496387951674789919",
+      "channel_id": "1131839817982947429",
+      "content": "你根本薩摩",
+      "author": "yy42974466",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1496320424915636274",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "not_blueberry",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496321252925767812",
+      "channel_id": "1170692781216378960",
+      "content": "Same, I like women",
+      "author": "angbak",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496338922194866317",
+      "channel_id": "1170692781216378960",
+      "content": "Yay, finally broke 400 🙂",
+      "author": "badmoon_rising",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496370571250765975",
+      "channel_id": "1326453763355185215",
+      "content": "Arachne Tawil yuri going stronk",
+      "author": "junakaru4ever",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1496321486246641825",
+      "channel_id": "1170692781216378960",
+      "content": "<@296679098703544321> i sent rain a funny chinese pickup line and he said \"its s",
+      "author": "princess.goth",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496333478906826853",
+      "channel_id": "1170692781216378960",
+      "content": "huh",
+      "author": "noire_2",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496352937817935983",
+      "channel_id": "1170692781216378960",
+      "content": "wait\n\nit's 1k silver PER DAY FOR  10 DAYS???",
+      "author": "thebluestlime",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496321337143328929",
+      "channel_id": "1170692781216378960",
+      "content": "<@1471414323883540501> chinese rizzes you",
+      "author": "princess.goth",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496322962532597761",
+      "channel_id": "1170692781216378960",
+      "content": "im afraid naut",
+      "author": "dyssayah",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496329421458509855",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "noire_2",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496347220444712960",
+      "channel_id": "1170692781216378960",
+      "content": "Go do your math in <#1357184174485671966> not here",
+      "author": "tnimreppep",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496349271459495987",
+      "channel_id": "1170692781216378960",
+      "content": "arachne self proc dr",
+      "author": "fibrinogen",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496353636287250523",
+      "channel_id": "1170692781216378960",
+      "content": "????",
+      "author": "fibrinogen",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496353700015243374",
+      "channel_id": "1170692781216378960",
+      "content": "You play so much more Dive than I thought wtf\nStrawberry you’re so low key somet",
+      "author": "frosthief",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496388748949065758",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "iTranslator",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    }
+  ]
+}
