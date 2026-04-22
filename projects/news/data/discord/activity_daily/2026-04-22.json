@@ -1,74 +1,102 @@
 {
   "date": "2026-04-22",
-  "messages": 5103,
+  "messages": 11550,
   "unique_authors": 272,
-  "reactions_total": 418,
-  "attachments": 329,
+  "reactions_total": 983,
+  "attachments": 520,
   "channel_activity": {
-    "🔸綜合討論": 910,
-    "🔸morimens-game-chat": 2554,
-    "🔸剧情交流": 1,
-    "🔸晒卡分享": 3,
-    "🔸相位对弈": 1,
-    "🔸课间休息闲聊": 4,
-    "🔸日本語チャンネル": 1,
-    "🔸한국어-채팅방": 10,
-    "🔸русский-канал": 50,
-    "🔸phòng-chat-tiếng-việt": 270,
+    "🔸綜合討論": 3428,
+    "🔸阵容构建": 45,
+    "🔸morimens-game-chat": 4624,
+    "🔸剧情交流": 16,
+    "🔸晒卡分享": 22,
+    "🔸相位对弈": 4,
+    "🔸课间休息闲聊": 46,
+    "🔸日本語チャンネル": 5,
+    "🔸한국어-채팅방": 73,
+    "🔸deutscher-chatraum": 3,
+    "🔸русский-канал": 96,
+    "🔸phòng-chat-tiếng-việt": 822,
+    "🔸canal-português": 69,
+    "🔸ruang-obrolan-indonesia": 331,
+    "🔸ห้องสนทนาภาษาไทย": 136,
+    "🔸traphase": 41,
+    "🔸lore-chat": 139,
+    "🔸服务器公告┊server-announcement": 2,
+    "🔸team-building": 399,
+    "🔸general-chat": 682,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🔸game-question": 340,
+    "🔸机器人命令┊bot-commands": 22,
+    "一些摸鱼": 3,
+    "打算開一個圖樓可能圖之後就丟這裡了": 7,
+    "奧爾拉最終法則描述錯誤": 1,
+    "bug in PvP": 1,
+    "Fouette WOD and clementine's passive not working in divine ultra round": 3,
+    "final dmg bugged. Doesn’t work with Arachne’s": 7,
+    "Temporary Ultra Spaces don't go away when Singularity: Ultra is triggered?": 4,
+    "✅「已解决」可不可以把自己的回放設定成不公開": 1,
+    "\"24\" lives matter": 9,
+    "[Producer's Letter] We Will Not Fail You": 2,
+    "rkgk": 1,
+    "Arachneed her": 3,
+    "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！": 1,
+    "萌新求建議": 15,
+    "Been playing for a week now and kinda wanna know where I could go on from here": 24,
     "🔸canal-español": 60,
-    "🔸canal-português": 63,
-    "🔸ruang-obrolan-indonesia": 84,
-    "🔸ห้องสนทนาภาษาไทย": 99,
-    "🔸traphase": 28,
-    "🔸lore-chat": 124,
-    "🔸team-building": 292,
-    "🔸general-chat": 193,
-    "🔸邀请码互助┊swap-invitation-codes": 6,
-    "🔸game-question": 248,
-    "🔸机器人命令┊bot-commands": 17,
-    "一些摸鱼": 1,
-    "Fouette WOD and clementine's passive not working in divine ultra round": 2,
     "密境課室 銀輝之路 第六章歸檔問題": 1,
     "Renaming team name causes all wheels and covenants to be lost": 6,
     "Liz Wheel - Foutte not triggering after singularity ultra turn": 1,
     "report option?": 3,
-    "final dmg bugged. Doesn’t work with Arachne’s": 5,
-    "Temporary Ultra Spaces don't go away when Singularity: Ultra is triggered?": 1,
     "I think it was a bad idea to add season rewards to chess.": 2,
     "Give Max SF mats for Veteran- Ranking": 4,
     "關於索蕾雅最終法則 這強度真的沒問題嗎？": 2,
-    "\"24\" lives matter": 6,
     "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
-    "[Producer's Letter] We Will Not Fail You": 1,
     "Mori-dachi brainrot 💔🥀": 1,
     "👀👀 pspsps hameln posting(?)": 3,
     "Angbak random FAQ Guide": 1,
     "P Dive Map Analysis": 1,
     "【English Translation】Opinions Collection": 9,
     "回坑玩家推薦隊伍": 4,
-    "萌新求建議": 8,
     "求潘好友": 2,
     "刚回坑，能帮忙看看阵容和后面要抽谁": 10,
-    "Been playing for a week now and kinda wanna know where I could go on from here": 7,
     "Need help with team building pls": 3
   },
   "hourly_activity": {
+    "6": 1181,
+    "7": 1180,
+    "8": 996,
+    "9": 1870,
+    "10": 1549,
     "0": 508,
     "1": 696,
     "2": 996,
     "3": 926,
     "4": 631,
-    "5": 1017,
-    "6": 329
+    "5": 1017
   },
   "message_types": {
-    "0": 3606,
-    "19": 1489,
-    "46": 1,
-    "20": 5,
-    "4": 2
+    "19": 1940,
+    "0": 4506,
+    "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1496416600671387749",
+      "channel_id": "1170692781216378960",
+      "content": "new material to get awakers to lvl 100",
+      "author": "blecnes.",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496421452356911185",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "YAGPDB.xyz",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1496318093864079540",
       "channel_id": "1174983699935277147",
@@ -76,6 +104,30 @@
       "author": "sweet_25367",
       "reactions": 9,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1496406846460919949",
+      "channel_id": "1354754985119846581",
+      "content": "***Statement Regarding the Disciplinary Action Against User LION and Reaffirmati",
+      "author": "morimensstaff03",
+      "reactions": 8,
+      "channel": "🔸服务器公告┊server-announcement"
+    },
+    {
+      "id": "1496403914235449354",
+      "channel_id": "1131839817982947429",
+      "content": "再問刪了",
+      "author": "hon_ey0",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1496410992052142171",
+      "channel_id": "1170692781216378960",
+      "content": "I have no tawil after getting 425. I can confirm you do not need tawil",
+      "author": "angbak",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1496364902938443777",
@@ -92,6 +144,38 @@
       "author": "galacticgpt",
       "reactions": 7,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496405297487413289",
+      "channel_id": "1131839817982947429",
+      "content": "打爆屌<:emoji_33:1449267013926125588>",
+      "author": "xingxiu_0209",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1496419579348647976",
+      "channel_id": "1131839817982947429",
+      "content": "去 濁濁 攻击<@774991750996951050>  使用滋水||奖励他||",
+      "author": "kemomimi_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1496410617018454037",
+      "channel_id": "1170692781216378960",
+      "content": "...YOU CAN GET HORLA FROM STANDARD???",
+      "author": "estherxavy5436",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496434383123513364",
+      "channel_id": "1496434383123513364",
+      "content": "Thank you",
+      "author": "asecana",
+      "reactions": 5,
+      "channel": "rkgk"
     },
     {
       "id": "1496315978210873535",
@@ -142,92 +226,20 @@
       "channel": "🔸lore-chat"
     },
     {
-      "id": "1496321486246641825",
-      "channel_id": "1170692781216378960",
-      "content": "<@296679098703544321> i sent rain a funny chinese pickup line and he said \"its s",
-      "author": "princess.goth",
+      "id": "1496404631386062949",
+      "channel_id": "1131839817982947429",
+      "content": "好色喔 一堆黃圖",
+      "author": "quackdayo",
       "reactions": 4,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1496333478906826853",
-      "channel_id": "1170692781216378960",
-      "content": "huh",
-      "author": "noire_2",
+      "id": "1496413772636623038",
+      "channel_id": "1131839817982947429",
+      "content": "有大佬可以灌灌我嗎",
+      "author": "ahuahuahua",
       "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496352937817935983",
-      "channel_id": "1170692781216378960",
-      "content": "wait\n\nit's 1k silver PER DAY FOR  10 DAYS???",
-      "author": "thebluestlime",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496321337143328929",
-      "channel_id": "1170692781216378960",
-      "content": "<@1471414323883540501> chinese rizzes you",
-      "author": "princess.goth",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496322962532597761",
-      "channel_id": "1170692781216378960",
-      "content": "im afraid naut",
-      "author": "dyssayah",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496329421458509855",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "noire_2",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496347220444712960",
-      "channel_id": "1170692781216378960",
-      "content": "Go do your math in <#1357184174485671966> not here",
-      "author": "tnimreppep",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496349271459495987",
-      "channel_id": "1170692781216378960",
-      "content": "arachne self proc dr",
-      "author": "fibrinogen",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496353636287250523",
-      "channel_id": "1170692781216378960",
-      "content": "????",
-      "author": "fibrinogen",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496353700015243374",
-      "channel_id": "1170692781216378960",
-      "content": "You play so much more Dive than I thought wtf\nStrawberry you’re so low key somet",
-      "author": "frosthief",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496388748949065758",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "iTranslator",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸綜合討論"
     }
   ]
 }
