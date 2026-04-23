@@ -1,26 +1,27 @@
 {
   "date": "2026-04-23",
-  "messages": 19321,
+  "messages": 19622,
   "unique_authors": 238,
-  "reactions_total": 1760,
-  "attachments": 979,
+  "reactions_total": 1793,
+  "attachments": 1004,
   "channel_activity": {
+    "🔸morimens-game-chat": 8095,
+    "🔸русский-канал": 679,
+    "🔸canal-español": 148,
+    "🔸canal-português": 725,
+    "🔸lore-chat": 192,
+    "🔸team-building": 1031,
+    "🔸general-chat": 2167,
+    "🔸game-question": 1887,
+    "Been playing for a week now and kinda wanna know where I could go on from here": 4,
     "🔸綜合討論": 2836,
-    "🔸morimens-game-chat": 7863,
     "🔸交友频道": 1,
-    "🔸русский-канал": 641,
-    "🔸canal-português": 718,
     "🔸traphase": 63,
-    "🔸lore-chat": 190,
-    "🔸general-chat": 2166,
-    "🔸game-question": 1883,
     "Leigh Absolute Axiom suggestion": 3,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 12,
     "🔸阵容构建": 18,
     "🔸phòng-chat-tiếng-việt": 669,
-    "🔸canal-español": 140,
     "🔸频道建议┊server-suggestions": 2,
-    "🔸team-building": 1026,
     "🔸邀请码互助┊swap-invitation-codes": 5,
     "🔸机器人命令┊bot-commands": 37,
     "珊的最終法則與靈塑之錯誤": 3,
@@ -87,7 +88,8 @@
     "(Helpme!)Team building for Liz": 1
   },
   "hourly_activity": {
-    "20": 244,
+    "20": 297,
+    "21": 248,
     "19": 507,
     "18": 783,
     "17": 925,
@@ -110,8 +112,8 @@
     "5": 1069
   },
   "message_types": {
-    "0": 159,
-    "19": 85
+    "19": 83,
+    "0": 218
   },
   "top_reacted_messages": [
     {
