@@ -1,35 +1,41 @@
 {
   "date": "2026-04-23",
-  "messages": 11455,
+  "messages": 13766,
   "unique_authors": 238,
-  "reactions_total": 945,
-  "attachments": 573,
+  "reactions_total": 1285,
+  "attachments": 685,
   "channel_activity": {
-    "🔸綜合討論": 1802,
-    "🔸morimens-game-chat": 4367,
-    "🔸课间休息闲聊": 79,
-    "🔸한국어-채팅방": 30,
-    "🔸русский-канал": 468,
-    "🔸phòng-chat-tiếng-việt": 109,
-    "🔸canal-español": 79,
-    "🔸canal-português": 269,
-    "🔸ruang-obrolan-indonesia": 509,
-    "🔸ห้องสนทนาภาษาไทย": 66,
-    "🔸lore-chat": 106,
-    "🔸team-building": 657,
-    "🔸general-chat": 1434,
-    "🔸game-question": 1243,
+    "🔸綜合討論": 2175,
+    "🔸morimens-game-chat": 5305,
+    "🔸剧情交流": 53,
+    "🔸课间休息闲聊": 80,
+    "🔸한국어-채팅방": 34,
+    "🔸русский-канал": 593,
+    "🔸phòng-chat-tiếng-việt": 136,
+    "🔸canal-español": 84,
+    "🔸canal-português": 364,
+    "🔸ruang-obrolan-indonesia": 516,
+    "🔸ห้องสนทนาภาษาไทย": 72,
+    "🔸traphase": 51,
+    "🔸lore-chat": 183,
+    "🔸team-building": 768,
+    "🔸general-chat": 1761,
+    "🔸邀请码互助┊swap-invitation-codes": 3,
+    "🔸game-question": 1410,
+    "🔸机器人命令┊bot-commands": 30,
+    "堆图ing": 1,
+    "Missing Resonance Rewards?": 1,
+    "典藏馆事件能不能加个指引……": 3,
+    "I think it was a bad idea to add season rewards to chess.": 3,
+    "some doodles": 1,
+    "【English Translation】Opinions Collection": 11,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
     "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 2,
     "Personally tried to accept Traphase as part of the game. It's not working.": 3,
     "\"24\" lives matter": 3,
-    "【English Translation】Opinions Collection": 8,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
     "What does the \"Origin of Time\" pyramid do?": 6,
-    "🔸机器人命令┊bot-commands": 26,
-    "典藏馆事件能不能加个指引……": 2,
     "✅「Answered」 Arachnee self damage clarity": 1,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 1,
-    "I think it was a bad idea to add season rewards to chess.": 1,
     "Possible changes to the Taboo quests": 1,
     "PVE players don't want Traphase": 1,
     "Traphase: two small features that would help it inside the monthly seasons": 1,
@@ -37,11 +43,8 @@
     "🎧 V2.5.0 广播剧《背弃的慈恩》┊Radio Drama - Grace of Forsaken": 8,
     "谁有安息烟斗满配莱克借萌新打一下列车": 1,
     "🔸阵容构建": 7,
-    "🔸剧情交流": 22,
-    "🔸traphase": 50,
     "sundress corpo": 4,
     "Русский Перевод — Сбор Отзывов": 1,
-    "🔸邀请码互助┊swap-invitation-codes": 2,
     "💭「Processing」Bug Radix Sediment when max WoD": 5,
     "关于剧情的问题：威廉不是在勒姆瓦西篇中死透了吗？乐园篇章中怎么又说碰到的威廉是原先世界的威廉呢？": 2,
     "Renaming team name causes all wheels and covenants to be lost": 2,
@@ -77,8 +80,11 @@
     "(Helpme!)Team building for Liz": 1
   },
   "hourly_activity": {
+    "12": 981,
+    "13": 1210,
+    "14": 855,
+    "15": 156,
     "11": 974,
-    "12": 891,
     "10": 1359,
     "8": 1132,
     "9": 1250,
@@ -92,9 +98,8 @@
     "5": 1069
   },
   "message_types": {
-    "0": 713,
-    "19": 284,
-    "23": 1
+    "19": 676,
+    "0": 1635
   },
   "top_reacted_messages": [
     {
@@ -130,6 +135,14 @@
       "channel": "sundress corpo"
     },
     {
+      "id": "1496861873013002250",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1496853224852951131",
       "channel_id": "1170692781216378960",
       "content": "it doesnt work anymore",
@@ -146,11 +159,59 @@
       "channel": "🔸lore-chat"
     },
     {
+      "id": "1496867518382346472",
+      "channel_id": "1131839817982947429",
+      "content": "但是我主线快打完了就剩困难星辰三四章了",
+      "author": "zhuilan_",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1496860545901531348",
+      "channel_id": "1170692781216378960",
+      "content": "allegedly",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496863767244574900",
+      "channel_id": "1173463482503536711",
+      "content": "中間被穿插一個",
+      "author": "sayo.0320",
+      "reactions": 6,
+      "channel": "🔸剧情交流"
+    },
+    {
       "id": "1496792590937231451",
       "channel_id": "1170692781216378960",
       "content": "I'm debating if I should buy the sorel wheel",
       "author": "sparkling_moose_59074",
       "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496867328695205929",
+      "channel_id": "1170692781216378960",
+      "content": "I thought Chaos was a whale realm cause of Lotan <:Brown_think:14590801173086209",
+      "author": "unreallightz",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496867729871863842",
+      "channel_id": "1170692781216378960",
+      "content": "goodbye jenkin you were fun while you were in my main team",
+      "author": "nikolazuli",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496875784470794251",
+      "channel_id": "1170692781216378960",
+      "content": "finally",
+      "author": "sooneruzuki",
+      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -186,74 +247,18 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1496834631251787890",
-      "channel_id": "1170692781216378960",
-      "content": "uh, scripted?",
-      "author": "zapffuchino",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496822155286155454",
-      "channel_id": "1300659580446969918",
-      "content": "",
-      "author": "somethingno1fan",
-      "reactions": 4,
-      "channel": "🔸русский-канал"
-    },
-    {
-      "id": "1496818776908501104",
-      "channel_id": "1300659603993923644",
-      "content": "",
-      "author": "bluehuong",
-      "reactions": 4,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1496769540506386453",
+      "id": "1496858598976917695",
       "channel_id": "1131839817982947429",
-      "content": "",
+      "content": "<@484622919943716864> <@985933785340186704>",
       "author": "kemomimi_",
       "reactions": 4,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1496690580644692140",
-      "channel_id": "1131839817982947429",
-      "content": "非了那么久终于转运了<:please:1356053110375714817>",
-      "author": "ponponnyaru",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1496663182859567196",
+      "id": "1496857906686070895",
       "channel_id": "1170692781216378960",
-      "content": "eepiness striking me",
-      "author": "sooneruzuki",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496676798904406117",
-      "channel_id": "1170692781216378960",
-      "content": "Omg im becoming more and more like flares",
-      "author": "angbak",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496693269403271278",
-      "channel_id": "1170692781216378960",
-      "content": "Horla Joy = Carol Psalm stance?",
-      "author": "kurotamavii",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496744548070850640",
-      "channel_id": "1170692781216378960",
-      "content": "So many legendary pdivers in chat <:scared2:1356085635374383145>",
-      "author": "2ndselna",
+      "content": "im gonna cry",
+      "author": "princess.goth",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
