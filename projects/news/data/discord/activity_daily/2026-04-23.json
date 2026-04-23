@@ -1,29 +1,31 @@
 {
   "date": "2026-04-23",
-  "messages": 19622,
+  "messages": 20273,
   "unique_authors": 238,
-  "reactions_total": 1793,
-  "attachments": 1004,
+  "reactions_total": 1850,
+  "attachments": 1038,
   "channel_activity": {
-    "🔸morimens-game-chat": 8095,
+    "🔸綜合討論": 2839,
+    "🔸morimens-game-chat": 8651,
+    "🔸canal-português": 756,
+    "🔸traphase": 75,
+    "🔸lore-chat": 213,
+    "🔸team-building": 1045,
+    "🔸general-chat": 2168,
+    "🔸邀请码互助┊swap-invitation-codes": 6,
+    "🔸game-question": 1895,
+    "🔸机器人命令┊bot-commands": 38,
+    "Wanda's AA": 1,
+    "💭「Processing」Singularity Ultra Round affecting Wheel effects?": 2,
     "🔸русский-канал": 679,
     "🔸canal-español": 148,
-    "🔸canal-português": 725,
-    "🔸lore-chat": 192,
-    "🔸team-building": 1031,
-    "🔸general-chat": 2167,
-    "🔸game-question": 1887,
     "Been playing for a week now and kinda wanna know where I could go on from here": 4,
-    "🔸綜合討論": 2836,
     "🔸交友频道": 1,
-    "🔸traphase": 63,
     "Leigh Absolute Axiom suggestion": 3,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 12,
     "🔸阵容构建": 18,
     "🔸phòng-chat-tiếng-việt": 669,
     "🔸频道建议┊server-suggestions": 2,
-    "🔸邀请码互助┊swap-invitation-codes": 5,
-    "🔸机器人命令┊bot-commands": 37,
     "珊的最終法則與靈塑之錯誤": 3,
     "Any guide on ultra mechanics and Arachne?": 5,
     "🔸晒卡分享": 12,
@@ -88,8 +90,9 @@
     "(Helpme!)Team building for Liz": 1
   },
   "hourly_activity": {
+    "22": 416,
+    "21": 483,
     "20": 297,
-    "21": 248,
     "19": 507,
     "18": 783,
     "17": 925,
@@ -112,8 +115,8 @@
     "5": 1069
   },
   "message_types": {
-    "19": 83,
-    "0": 218
+    "0": 391,
+    "19": 260
   },
   "top_reacted_messages": [
     {
@@ -229,6 +232,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1496999454929322004",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "blecnes.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1496959415100903576",
       "channel_id": "1170692781216378960",
       "content": "Anyway im hydrated so back to grab a few more hours of sleep goodnight folks",
@@ -265,14 +276,6 @@
       "channel_id": "1170692781216378960",
       "content": "dont regret pulling her before reading anything in her kit",
       "author": "zapffuchino",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496689104811983019",
-      "channel_id": "1170692781216378960",
-      "content": "HAHAHAHAHAHAHAHAHA\n# HAHAHAHAHA",
-      "author": "arisuu0604",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }

@@ -25,7 +25,7 @@
       "last_historical_month": "2026-02"
     },
     "1131839817982947429": {
-      "last_message_id": "1496966346112503838",
+      "last_message_id": "1496998923384913950",
       "name": "🔸綜合討論",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -65,7 +65,7 @@
       "last_historical_month": "2026-02"
     },
     "1170692781216378960": {
-      "last_message_id": "1496987929715802334",
+      "last_message_id": "1497002106735825067",
       "name": "🔸morimens-game-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -221,7 +221,7 @@
       "last_historical_month": "2026-02"
     },
     "1300659718653476925": {
-      "last_message_id": "1496988020316967062",
+      "last_message_id": "1497001393427583016",
       "name": "🔸canal-português",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -249,13 +249,13 @@
       "last_historical_month": "2026-02"
     },
     "1326453691527594035": {
-      "last_message_id": "1496976110716715018",
+      "last_message_id": "1496997779980156979",
       "name": "🔸traphase",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1326453763355185215": {
-      "last_message_id": "1496987518862884994",
+      "last_message_id": "1497002021683986533",
       "name": "🔸lore-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -483,19 +483,19 @@
       "last_historical_month": "2026-02"
     },
     "1400749543288475770": {
-      "last_message_id": "1496986285125144636",
+      "last_message_id": "1497000643263594516",
       "name": "🔸team-building",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1400750050208125010": {
-      "last_message_id": "1496981380536467516",
+      "last_message_id": "1496995923690000677",
       "name": "🔸general-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1405837769212821554": {
-      "last_message_id": "1496956899667611838",
+      "last_message_id": "1496994839856943154",
       "name": "🔸邀请码互助┊swap-invitation-codes",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -511,7 +511,7 @@
       "last_historical_month": "2026-02"
     },
     "1433513650299076780": {
-      "last_message_id": "1496988095764238587",
+      "last_message_id": "1496997723055063300",
       "name": "🔸game-question",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -549,7 +549,7 @@
       "last_historical_month": "2026-02"
     },
     "1436913827571695898": {
-      "last_message_id": "1496948347804713142",
+      "last_message_id": "1496994841496911973",
       "name": "🔸机器人命令┊bot-commands",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -29676,7 +29676,7 @@
       "last_message_id": "1495702174653747330"
     },
     "thread:1495657016801230919": {
-      "last_message_id": "1496028607171264572"
+      "last_message_id": "1496993697881915503"
     },
     "thread:1495655205239394324": {
       "last_message_id": "1495737103726678106"
@@ -30068,8 +30068,11 @@
     },
     "thread:1496894465665929356": {
       "last_message_id": "1496894465665929356"
+    },
+    "thread:1496999970354761890": {
+      "last_message_id": "1496999970354761890"
     }
   },
   "historical_month": "2026-02",
-  "last_run": "2026-04-23T22:10:21.472655+00:00"
+  "last_run": "2026-04-23T22:36:12.909664+00:00"
 }
