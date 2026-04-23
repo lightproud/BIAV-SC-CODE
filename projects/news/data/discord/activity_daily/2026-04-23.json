@@ -1,33 +1,43 @@
 {
   "date": "2026-04-23",
-  "messages": 8539,
+  "messages": 10457,
   "unique_authors": 238,
-  "reactions_total": 732,
-  "attachments": 460,
+  "reactions_total": 872,
+  "attachments": 532,
   "channel_activity": {
-    "🔸綜合討論": 1423,
+    "🔸綜合討論": 1656,
+    "🔸morimens-game-chat": 3938,
+    "🔸课间休息闲聊": 66,
+    "🔸한국어-채팅방": 27,
+    "🔸русский-канал": 463,
+    "🔸phòng-chat-tiếng-việt": 82,
+    "🔸canal-español": 77,
+    "🔸canal-português": 185,
+    "🔸ruang-obrolan-indonesia": 504,
+    "🔸ห้องสนทนาภาษาไทย": 61,
+    "🔸team-building": 652,
+    "🔸general-chat": 1378,
+    "🔸game-question": 1043,
+    "🔸机器人命令┊bot-commands": 26,
+    "典藏馆事件能不能加个指引……": 2,
+    "✅「Answered」 Arachnee self damage clarity": 1,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 1,
+    "I think it was a bad idea to add season rewards to chess.": 1,
+    "Possible changes to the Taboo quests": 1,
+    "PVE players don't want Traphase": 1,
+    "Traphase: two small features that would help it inside the monthly seasons": 1,
+    "Personally tried to accept Traphase as part of the game. It's not working.": 1,
+    "doreposting / unserious doodles": 2,
+    "🎧 V2.5.0 广播剧《背弃的慈恩》┊Radio Drama - Grace of Forsaken": 8,
+    "谁有安息烟斗满配莱克借萌新打一下列车": 1,
     "🔸阵容构建": 7,
-    "🔸morimens-game-chat": 3143,
     "🔸剧情交流": 22,
-    "🔸课间休息闲聊": 53,
-    "🔸한국어-채팅방": 24,
-    "🔸русский-канал": 281,
-    "🔸phòng-chat-tiếng-việt": 67,
-    "🔸canal-español": 74,
-    "🔸canal-português": 155,
-    "🔸ruang-obrolan-indonesia": 308,
-    "🔸ห้องสนทนาภาษาไทย": 41,
     "🔸traphase": 50,
     "🔸lore-chat": 100,
-    "🔸team-building": 639,
-    "🔸general-chat": 1197,
-    "🔸game-question": 825,
-    "🔸机器人命令┊bot-commands": 23,
     "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 1,
     "\"24\" lives matter": 1,
     "sundress corpo": 4,
     "Русский Перевод — Сбор Отзывов": 1,
-    "🎧 V2.5.0 广播剧《背弃的慈恩》┊Radio Drama - Grace of Forsaken": 7,
     "What does the \"Origin of Time\" pyramid do?": 4,
     "🔸邀请码互助┊swap-invitation-codes": 2,
     "💭「Processing」Bug Radix Sediment when max WoD": 5,
@@ -66,9 +76,10 @@
     "(Helpme!)Team building for Liz": 1
   },
   "hourly_activity": {
+    "10": 1359,
+    "11": 867,
     "8": 1132,
     "9": 1250,
-    "10": 308,
     "6": 983,
     "7": 661,
     "0": 483,
@@ -79,9 +90,9 @@
     "5": 1069
   },
   "message_types": {
-    "0": 1689,
-    "19": 555,
-    "20": 1
+    "0": 1275,
+    "19": 642,
+    "4": 1
   },
   "top_reacted_messages": [
     {
@@ -165,6 +176,30 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1496834631251787890",
+      "channel_id": "1170692781216378960",
+      "content": "uh, scripted?",
+      "author": "zapffuchino",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1496822155286155454",
+      "channel_id": "1300659580446969918",
+      "content": "",
+      "author": "somethingno1fan",
+      "reactions": 4,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1496818776908501104",
+      "channel_id": "1300659603993923644",
+      "content": "",
+      "author": "bluehuong",
+      "reactions": 4,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
       "id": "1496769540506386453",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -219,30 +254,6 @@
       "author": "aurora3981",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496673717118570577",
-      "channel_id": "1174983699935277147",
-      "content": "普池出的好開心",
-      "author": "universe.dark",
-      "reactions": 4,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1496668726768959488",
-      "channel_id": "1385040039448412170",
-      "content": "At least they post in here to let the admins know who they are",
-      "author": "hitsu4",
-      "reactions": 4,
-      "channel": "🔸频道建议┊server-suggestions"
-    },
-    {
-      "id": "1496752098237354114",
-      "channel_id": "1433513650299076780",
-      "content": "the brainrot cannot penetrate his unc mind",
-      "author": "chinkeeyong",
-      "reactions": 4,
-      "channel": "🔸game-question"
     }
   ]
 }
