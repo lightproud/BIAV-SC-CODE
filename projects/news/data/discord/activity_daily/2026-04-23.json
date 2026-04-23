@@ -1,32 +1,34 @@
 {
   "date": "2026-04-23",
-  "messages": 19077,
+  "messages": 19321,
   "unique_authors": 238,
-  "reactions_total": 1736,
-  "attachments": 968,
+  "reactions_total": 1760,
+  "attachments": 979,
   "channel_activity": {
-    "🔸綜合討論": 2834,
+    "🔸綜合討論": 2836,
+    "🔸morimens-game-chat": 7863,
+    "🔸交友频道": 1,
+    "🔸русский-канал": 641,
+    "🔸canal-português": 718,
+    "🔸traphase": 63,
+    "🔸lore-chat": 190,
+    "🔸general-chat": 2166,
+    "🔸game-question": 1883,
+    "Leigh Absolute Axiom suggestion": 3,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 12,
     "🔸阵容构建": 18,
-    "🔸morimens-game-chat": 7651,
-    "🔸русский-канал": 636,
     "🔸phòng-chat-tiếng-việt": 669,
     "🔸canal-español": 140,
-    "🔸canal-português": 714,
-    "🔸traphase": 60,
     "🔸频道建议┊server-suggestions": 2,
     "🔸team-building": 1026,
-    "🔸general-chat": 2160,
     "🔸邀请码互助┊swap-invitation-codes": 5,
-    "🔸game-question": 1878,
     "🔸机器人命令┊bot-commands": 37,
     "珊的最終法則與靈塑之錯誤": 3,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 10,
     "Any guide on ultra mechanics and Arachne?": 5,
     "🔸晒卡分享": 12,
     "🔸相位对弈": 6,
     "🔸한국어-채팅방": 58,
     "🔸ห้องสนทนาภาษาไทย": 89,
-    "🔸lore-chat": 189,
     "Comms Shifting event not giving out rewards": 4,
     "I think it was a bad idea to add season rewards to chess.": 73,
     "🔸课间休息闲聊": 84,
@@ -85,6 +87,7 @@
     "(Helpme!)Team building for Liz": 1
   },
   "hourly_activity": {
+    "20": 244,
     "19": 507,
     "18": 783,
     "17": 925,
@@ -107,8 +110,8 @@
     "5": 1069
   },
   "message_types": {
-    "0": 407,
-    "19": 227
+    "0": 159,
+    "19": 85
   },
   "top_reacted_messages": [
     {
