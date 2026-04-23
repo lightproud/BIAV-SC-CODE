@@ -1,41 +1,44 @@
 {
   "date": "2026-04-23",
-  "messages": 20273,
+  "messages": 20783,
   "unique_authors": 238,
-  "reactions_total": 1850,
-  "attachments": 1038,
+  "reactions_total": 1891,
+  "attachments": 1055,
   "channel_activity": {
-    "🔸綜合討論": 2839,
-    "🔸morimens-game-chat": 8651,
-    "🔸canal-português": 756,
-    "🔸traphase": 75,
-    "🔸lore-chat": 213,
-    "🔸team-building": 1045,
-    "🔸general-chat": 2168,
+    "🔸綜合討論": 2841,
+    "🔸morimens-game-chat": 8947,
+    "🔸课间休息闲聊": 87,
+    "🔸한국어-채팅방": 60,
+    "🔸русский-канал": 686,
+    "🔸phòng-chat-tiếng-việt": 671,
+    "🔸canal-español": 149,
+    "🔸canal-português": 771,
+    "🔸ruang-obrolan-indonesia": 530,
+    "🔸traphase": 81,
+    "🔸lore-chat": 215,
+    "🔸team-building": 1060,
+    "🔸general-chat": 2176,
+    "🔸game-question": 2039,
+    "🔸机器人命令┊bot-commands": 39,
+    "First Elite in W4 not changing intent correctly": 1,
+    "Arachne Combat Voice Line Blocking Annihilate": 2,
+    "Wanda's AA": 2,
+    "🎧 V2.5.0 广播剧《背弃的慈恩》┊Radio Drama - Grace of Forsaken": 11,
     "🔸邀请码互助┊swap-invitation-codes": 6,
-    "🔸game-question": 1895,
-    "🔸机器人命令┊bot-commands": 38,
-    "Wanda's AA": 1,
     "💭「Processing」Singularity Ultra Round affecting Wheel effects?": 2,
-    "🔸русский-канал": 679,
-    "🔸canal-español": 148,
     "Been playing for a week now and kinda wanna know where I could go on from here": 4,
     "🔸交友频道": 1,
     "Leigh Absolute Axiom suggestion": 3,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 12,
     "🔸阵容构建": 18,
-    "🔸phòng-chat-tiếng-việt": 669,
     "🔸频道建议┊server-suggestions": 2,
     "珊的最終法則與靈塑之錯誤": 3,
     "Any guide on ultra mechanics and Arachne?": 5,
     "🔸晒卡分享": 12,
     "🔸相位对弈": 6,
-    "🔸한국어-채팅방": 58,
     "🔸ห้องสนทนาภาษาไทย": 89,
     "Comms Shifting event not giving out rewards": 4,
     "I think it was a bad idea to add season rewards to chess.": 73,
-    "🔸课间休息闲聊": 84,
-    "🔸ruang-obrolan-indonesia": 529,
     "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 4,
     "Ridiculous rewards in PVP after 2.5 patch": 1,
     "塔薇最终法则/Tawil's Absolute Axiom BUG": 2,
@@ -44,7 +47,6 @@
     "银钥觉醒时能不能增加一个返回按钮？": 8,
     "✅「Answered」生涯成就的歷史數值不見了": 5,
     "doreposting / unserious doodles": 3,
-    "🎧 V2.5.0 广播剧《背弃的慈恩》┊Radio Drama - Grace of Forsaken": 10,
     "🔸剧情交流": 53,
     "堆图ing": 1,
     "Missing Resonance Rewards?": 1,
@@ -90,7 +92,8 @@
     "(Helpme!)Team building for Liz": 1
   },
   "hourly_activity": {
-    "22": 416,
+    "23": 148,
+    "22": 778,
     "21": 483,
     "20": 297,
     "19": 507,
@@ -115,8 +118,8 @@
     "5": 1069
   },
   "message_types": {
-    "0": 391,
-    "19": 260
+    "0": 357,
+    "19": 153
   },
   "top_reacted_messages": [
     {
@@ -232,6 +235,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1497004748379783198",
+      "channel_id": "1170692781216378960",
+      "content": "I am done with traphase",
+      "author": "syruponstrawberrycake",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1496999454929322004",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -268,14 +279,6 @@
       "channel_id": "1170692781216378960",
       "content": "finally",
       "author": "sooneruzuki",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1496810491752747180",
-      "channel_id": "1170692781216378960",
-      "content": "dont regret pulling her before reading anything in her kit",
-      "author": "zapffuchino",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }
