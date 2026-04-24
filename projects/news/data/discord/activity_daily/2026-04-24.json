@@ -1,59 +1,93 @@
 {
   "date": "2026-04-24",
-  "messages": 6371,
+  "messages": 8300,
   "unique_authors": 147,
-  "reactions_total": 498,
-  "attachments": 273,
+  "reactions_total": 597,
+  "attachments": 359,
   "channel_activity": {
-    "🔸綜合討論": 1783,
-    "🔸morimens-game-chat": 2832,
-    "🔸晒卡分享": 2,
-    "🔸相位对弈": 14,
-    "🔸交友频道": 11,
-    "🔸한국어-채팅방": 35,
-    "🔸русский-канал": 6,
-    "🔸phòng-chat-tiếng-việt": 29,
+    "🔸綜合討論": 2193,
+    "🔸morimens-game-chat": 3326,
+    "🔸晒卡分享": 3,
+    "🔸欢乐梗图": 1,
+    "🔸相位对弈": 18,
+    "🔸交友频道": 14,
+    "🔸한국어-채팅방": 63,
+    "🔸русский-канал": 39,
+    "🔸phòng-chat-tiếng-việt": 33,
+    "🔸ruang-obrolan-indonesia": 472,
+    "🔸ห้องสนทนาภาษาไทย": 46,
+    "🔸traphase": 9,
+    "🔸lore-chat": 77,
+    "🔸team-building": 543,
+    "🔸general-chat": 339,
+    "🔸邀请码互助┊swap-invitation-codes": 8,
+    "🔸game-question": 622,
+    "🔸机器人命令┊bot-commands": 19,
+    "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 10,
+    "最討厭的傢伙被嬤王纏上了（連載中）": 7,
+    "堆图ing": 1,
+    "Question about Arachnes E1 scaling calcs": 29,
+    "💭「Processing」Fouette WOD and clementine's passive not working in divine ultra round": 9,
+    "More clarity for Dimension Shuffle effect": 1,
+    "Nefrea": 1,
+    "💭「Processing」Alva exalt bug": 1,
+    "\"24\" lives matter": 4,
+    "萌新求建議": 34,
+    "Been playing for a week now and kinda wanna know where I could go on from here": 5,
     "🔸canal-español": 50,
     "🔸canal-português": 259,
-    "🔸ruang-obrolan-indonesia": 61,
-    "🔸ห้องสนทนาภาษาไทย": 15,
-    "🔸traphase": 5,
-    "🔸team-building": 316,
-    "🔸general-chat": 294,
-    "🔸game-question": 461,
-    "🔸机器人命令┊bot-commands": 14,
     "Do not display Shop-Reset Warning if it no longer applies": 1,
-    "Question about Arachnes E1 scaling calcs": 28,
     "【English Translation】Opinions Collection": 2,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 1,
-    "萌新求建議": 3,
-    "🔸lore-chat": 72,
-    "🔸邀请码互助┊swap-invitation-codes": 7,
-    "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 6,
     "Reality Verges": 9,
     "I think it was a bad idea to add season rewards to chess.": 3,
     "Get Auto enable for dtide": 1,
     "✅「Answered」Auritas ability text missing info?": 1,
-    "Been playing for a week now and kinda wanna know where I could go on from here": 4,
     "🔸课间休息闲聊": 44,
     "🔸忘却前夜┊morimens-tv": 1,
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "6": 1143,
+    "7": 774,
+    "8": 1074,
     "4": 1130,
     "5": 1111,
-    "6": 1062,
     "1": 702,
     "2": 943,
     "3": 795,
     "0": 628
   },
   "message_types": {
-    "19": 566,
-    "0": 1839,
+    "19": 537,
+    "0": 1391,
     "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1497157398400335943",
+      "channel_id": "1131839817982947429",
+      "content": "忘却前夜管理纵容爱丽丝粉丝各平台造谣嫖娼，三天了还不删。已报案，挂着国内地址的几个等着叔叔，艳红出具大头吧。\n不解决游戏问题，先拿反馈玩家的私德捂嘴可以啊。那不",
+      "author": "ahor0917",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497149518251032607",
+      "channel_id": "1131839817982947429",
+      "content": "突然看到之前不小心捐了400 操<:dingdi24:990588880711462972>",
+      "author": "iulargerthan3",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497154010577371277",
+      "channel_id": "1170692781216378960",
+      "content": "Bruh",
+      "author": "samusrektimus",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497098166422732891",
       "channel_id": "1170692781216378960",
@@ -69,6 +103,14 @@
       "author": "bagels5899",
       "reactions": 6,
       "channel": "Reality Verges"
+    },
+    {
+      "id": "1497136562725453894",
+      "channel_id": "1170692781216378960",
+      "content": "is shield limited by ur max hp ??",
+      "author": "boppyboi",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497125289648455680",
@@ -127,6 +169,14 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1497149565588078682",
+      "channel_id": "1497149565588078682",
+      "content": "【溫馨提示：這不是夢向文，作者也不是校車激推，只是把人當oc寫然後寫嗨了的產物。會繼續更新校車嬤文的🛐】\n\n加急寫這個，這個比我手上任何一篇還在囤的同人文重要多",
+      "author": "shostakovich524",
+      "reactions": 4,
+      "channel": "最討厭的傢伙被嬤王纏上了（連載中）"
+    },
+    {
       "id": "1497056877392040097",
       "channel_id": "1131839817982947429",
       "content": "<@1479827578842775573> 但是我感觉阿拉在邀请我(？",
@@ -167,52 +217,12 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497101237026427020",
+      "id": "1497129362661834844",
       "channel_id": "1131839817982947429",
-      "content": "我會想念你們的",
-      "author": "yusi4172",
+      "content": "有點想買 150USD + 200USD 會剛好去到54000<:Brown_think:1459080117308620996>",
+      "author": "iulargerthan3",
       "reactions": 3,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497119457989103776",
-      "channel_id": "1131839817982947429",
-      "content": "这样()",
-      "author": "kemomimi_",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497110714421084251",
-      "channel_id": "1170692781216378960",
-      "content": "once, i told my acquaintances that i were 3rd year unit student, they thought i ",
-      "author": "arisuu0604",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497113221708910764",
-      "channel_id": "1170692781216378960",
-      "content": "https://tenor.com/view/yui-yuigahama-yahallo-gif-18724491",
-      "author": "moyashi0672",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497115276825595985",
-      "channel_id": "1170692781216378960",
-      "content": "I was wondering why mob was taking so long but it was the boss",
-      "author": "syruponstrawberrycake",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497119356457582602",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "tnimreppep",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
