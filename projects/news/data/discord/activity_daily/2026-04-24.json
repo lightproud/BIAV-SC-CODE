@@ -1,28 +1,30 @@
 {
   "date": "2026-04-24",
-  "messages": 8300,
+  "messages": 9527,
   "unique_authors": 147,
-  "reactions_total": 597,
-  "attachments": 359,
+  "reactions_total": 694,
+  "attachments": 425,
   "channel_activity": {
-    "🔸綜合討論": 2193,
-    "🔸morimens-game-chat": 3326,
+    "🔸綜合討論": 2375,
+    "🔸morimens-game-chat": 3802,
+    "🔸한국어-채팅방": 72,
+    "🔸русский-канал": 234,
+    "🔸phòng-chat-tiếng-việt": 48,
+    "🔸canal-português": 271,
+    "🔸ruang-obrolan-indonesia": 545,
+    "🔸ห้องสนทนาภาษาไทย": 53,
+    "🔸traphase": 10,
+    "🔸lore-chat": 111,
+    "🔸team-building": 554,
+    "🔸general-chat": 377,
+    "🔸邀请码互助┊swap-invitation-codes": 9,
+    "🔸game-question": 789,
+    "🔸机器人命令┊bot-commands": 23,
+    "Been playing for a week now and kinda wanna know where I could go on from here": 7,
     "🔸晒卡分享": 3,
     "🔸欢乐梗图": 1,
     "🔸相位对弈": 18,
     "🔸交友频道": 14,
-    "🔸한국어-채팅방": 63,
-    "🔸русский-канал": 39,
-    "🔸phòng-chat-tiếng-việt": 33,
-    "🔸ruang-obrolan-indonesia": 472,
-    "🔸ห้องสนทนาภาษาไทย": 46,
-    "🔸traphase": 9,
-    "🔸lore-chat": 77,
-    "🔸team-building": 543,
-    "🔸general-chat": 339,
-    "🔸邀请码互助┊swap-invitation-codes": 8,
-    "🔸game-question": 622,
-    "🔸机器人命令┊bot-commands": 19,
     "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 10,
     "最討厭的傢伙被嬤王纏上了（連載中）": 7,
     "堆图ing": 1,
@@ -33,9 +35,7 @@
     "💭「Processing」Alva exalt bug": 1,
     "\"24\" lives matter": 4,
     "萌新求建議": 34,
-    "Been playing for a week now and kinda wanna know where I could go on from here": 5,
     "🔸canal-español": 50,
-    "🔸canal-português": 259,
     "Do not display Shop-Reset Warning if it no longer applies": 1,
     "【English Translation】Opinions Collection": 2,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 1,
@@ -48,9 +48,11 @@
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "8": 1137,
+    "9": 807,
+    "10": 357,
     "6": 1143,
     "7": 774,
-    "8": 1074,
     "4": 1130,
     "5": 1111,
     "1": 702,
@@ -59,9 +61,8 @@
     "0": 628
   },
   "message_types": {
-    "19": 537,
-    "0": 1391,
-    "20": 1
+    "0": 879,
+    "19": 348
   },
   "top_reacted_messages": [
     {
@@ -169,6 +170,14 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1497167595642552471",
+      "channel_id": "1400749543288475770",
+      "content": "Liz really want me to play her...",
+      "author": "moonheart",
+      "reactions": 4,
+      "channel": "🔸team-building"
+    },
+    {
       "id": "1497149565588078682",
       "channel_id": "1497149565588078682",
       "content": "【溫馨提示：這不是夢向文，作者也不是校車激推，只是把人當oc寫然後寫嗨了的產物。會繼續更新校車嬤文的🛐】\n\n加急寫這個，這個比我手上任何一篇還在囤的同人文重要多",
@@ -215,14 +224,6 @@
       "author": "cqteiie",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497129362661834844",
-      "channel_id": "1131839817982947429",
-      "content": "有點想買 150USD + 200USD 會剛好去到54000<:Brown_think:1459080117308620996>",
-      "author": "iulargerthan3",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
     }
   ]
 }
