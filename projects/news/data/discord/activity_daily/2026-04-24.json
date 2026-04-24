@@ -1,33 +1,37 @@
 {
   "date": "2026-04-24",
-  "messages": 14575,
+  "messages": 16961,
   "unique_authors": 147,
-  "reactions_total": 1155,
-  "attachments": 672,
+  "reactions_total": 1297,
+  "attachments": 740,
   "channel_activity": {
-    "🔸綜合討論": 3340,
-    "🔸morimens-game-chat": 6246,
+    "🔸綜合討論": 3433,
+    "🔸morimens-game-chat": 6851,
+    "🔸课间休息闲聊": 67,
+    "🔸chaîne-française": 6,
+    "🔸русский-канал": 887,
+    "🔸phòng-chat-tiếng-việt": 738,
+    "🔸canal-español": 99,
+    "🔸canal-português": 776,
+    "🔸ruang-obrolan-indonesia": 871,
+    "🔸ห้องสนทนาภาษาไทย": 73,
+    "🔸traphase": 20,
+    "🔸lore-chat": 129,
+    "🔸team-building": 766,
+    "🔸general-chat": 643,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🔸game-question": 1266,
+    "🔸机器人命令┊bot-commands": 34,
+    "发现几个小bug": 14,
+    "Proper moderation": 1,
+    "\"24\" lives matter": 5,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 3,
     "🔸剧情交流": 3,
     "🔸晒卡分享": 5,
-    "🔸课间休息闲聊": 59,
     "🔸한국어-채팅방": 88,
-    "🔸русский-канал": 424,
-    "🔸phòng-chat-tiếng-việt": 199,
-    "🔸canal-español": 91,
-    "🔸canal-português": 354,
-    "🔸ruang-obrolan-indonesia": 856,
-    "🔸ห้องสนทนาภาษาไทย": 72,
-    "🔸traphase": 19,
-    "🔸lore-chat": 119,
-    "🔸team-building": 731,
-    "🔸general-chat": 510,
-    "🔸game-question": 1232,
-    "🔸机器人命令┊bot-commands": 30,
     "Arachne": 7,
     "Angbak Char guides": 2,
     "萌新求配队和抽卡建议": 2,
-    "🔸邀请码互助┊swap-invitation-codes": 10,
-    "发现几个小bug": 13,
     "Suggestion about the Events": 2,
     "Inquiry about the home-screen music": 1,
     "Reality Verges": 10,
@@ -45,11 +49,9 @@
     "More clarity for Dimension Shuffle effect": 1,
     "Nefrea": 1,
     "💭「Processing」Alva exalt bug": 1,
-    "\"24\" lives matter": 4,
     "萌新求建議": 34,
     "Do not display Shop-Reset Warning if it no longer applies": 1,
     "【English Translation】Opinions Collection": 2,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 1,
     "I think it was a bad idea to add season rewards to chess.": 3,
     "Get Auto enable for dtide": 1,
     "✅「Answered」Auritas ability text missing info?": 1,
@@ -57,9 +59,10 @@
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "14": 1537,
+    "15": 1369,
     "12": 982,
     "13": 1077,
-    "14": 520,
     "11": 1463,
     "10": 1363,
     "8": 1137,
@@ -74,8 +77,8 @@
     "0": 628
   },
   "message_types": {
-    "0": 1079,
-    "19": 604,
+    "0": 1714,
+    "19": 671,
     "20": 1
   },
   "top_reacted_messages": [
@@ -85,6 +88,22 @@
       "content": "But im still f2p",
       "author": "spooky_penguin_",
       "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497256495719383170",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497258649473650879",
+      "channel_id": "1170692781216378960",
+      "content": "What about kath",
+      "author": "idotly",
+      "reactions": 8,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -222,22 +241,6 @@
       "author": "frosthief",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497070887084495028",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "z8567657",
-      "reactions": 5,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1497230634970644501",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "angbak",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }
