@@ -1,34 +1,35 @@
 {
   "date": "2026-04-24",
-  "messages": 11781,
+  "messages": 12891,
   "unique_authors": 147,
-  "reactions_total": 880,
-  "attachments": 552,
+  "reactions_total": 1000,
+  "attachments": 611,
   "channel_activity": {
-    "🔸綜合討論": 2866,
-    "🔸morimens-game-chat": 4730,
-    "🔸课间休息闲聊": 46,
-    "🔸한국어-채팅방": 80,
-    "🔸русский-канал": 390,
-    "🔸phòng-chat-tiếng-việt": 121,
-    "🔸canal-español": 57,
-    "🔸ruang-obrolan-indonesia": 587,
-    "🔸ห้องสนทนาภาษาไทย": 55,
-    "🔸traphase": 15,
+    "🔸綜合討論": 3190,
+    "🔸morimens-game-chat": 5192,
+    "🔸课间休息闲聊": 58,
+    "🔸한국어-채팅방": 85,
+    "🔸русский-канал": 399,
+    "🔸phòng-chat-tiếng-việt": 128,
+    "🔸canal-español": 65,
+    "🔸canal-português": 287,
+    "🔸ruang-obrolan-indonesia": 718,
+    "🔸ห้องสนทนาภาษาไทย": 62,
+    "🔸traphase": 16,
+    "🔸team-building": 703,
+    "🔸general-chat": 487,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸game-question": 1164,
+    "🔸机器人命令┊bot-commands": 29,
+    "发现几个小bug": 13,
+    "Arachne": 6,
     "🔸lore-chat": 112,
-    "🔸team-building": 689,
-    "🔸general-chat": 480,
-    "🔸game-question": 1066,
-    "🔸机器人命令┊bot-commands": 28,
     "Suggestion about the Events": 2,
     "Inquiry about the home-screen music": 1,
-    "发现几个小bug": 12,
     "Reality Verges": 10,
     "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
     "67 levels": 1,
     "Angbak Char guides": 1,
-    "🔸canal-português": 271,
-    "🔸邀请码互助┊swap-invitation-codes": 9,
     "Been playing for a week now and kinda wanna know where I could go on from here": 7,
     "🔸晒卡分享": 3,
     "🔸欢乐梗图": 1,
@@ -54,8 +55,9 @@
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "11": 1463,
+    "12": 895,
     "10": 1363,
-    "11": 1248,
     "8": 1137,
     "9": 807,
     "6": 1143,
@@ -68,10 +70,18 @@
     "0": 628
   },
   "message_types": {
-    "0": 1528,
-    "19": 726
+    "0": 787,
+    "19": 323
   },
   "top_reacted_messages": [
+    {
+      "id": "1497203351954391111",
+      "channel_id": "1170692781216378960",
+      "content": "But im still f2p",
+      "author": "spooky_penguin_",
+      "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497157398400335943",
       "channel_id": "1131839817982947429",
@@ -119,6 +129,22 @@
       "author": "bagels5899",
       "reactions": 6,
       "channel": "Reality Verges"
+    },
+    {
+      "id": "1497205276485353625",
+      "channel_id": "1170692781216378960",
+      "content": "5.2.0 experience so far",
+      "author": "fairlysadpanda",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497215240008630284",
+      "channel_id": "1497214111166107728",
+      "content": "3 hours",
+      "author": "rocketmacaron_",
+      "reactions": 5,
+      "channel": "Arachne"
     },
     {
       "id": "1497136562725453894",
@@ -207,30 +233,6 @@
       "author": "gs2202",
       "reactions": 4,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497198917207462128",
-      "channel_id": "1131839817982947429",
-      "content": "凹……凹過去ㄌ……（吐血",
-      "author": "yitesi",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497185015027601530",
-      "channel_id": "1170692781216378960",
-      "content": "https://static.wikia.nocookie.net/reverse1999/images/5/54/Semmelweis_Garment3_Li",
-      "author": "boppyboi",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497167595642552471",
-      "channel_id": "1400749543288475770",
-      "content": "Liz really want me to play her...",
-      "author": "moonheart",
-      "reactions": 4,
-      "channel": "🔸team-building"
     }
   ]
 }
