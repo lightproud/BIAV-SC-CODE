@@ -1,27 +1,34 @@
 {
   "date": "2026-04-24",
-  "messages": 3965,
+  "messages": 6371,
   "unique_authors": 147,
-  "reactions_total": 327,
-  "attachments": 179,
+  "reactions_total": 498,
+  "attachments": 273,
   "channel_activity": {
-    "🔸綜合討論": 1282,
-    "🔸morimens-game-chat": 1993,
-    "🔸晒卡分享": 1,
-    "🔸相位对弈": 5,
-    "🔸한국어-채팅방": 10,
-    "🔸phòng-chat-tiếng-việt": 22,
-    "🔸canal-español": 37,
-    "🔸canal-português": 47,
-    "🔸ruang-obrolan-indonesia": 23,
-    "🔸ห้องสนทนาภาษาไทย": 7,
-    "🔸traphase": 2,
+    "🔸綜合討論": 1783,
+    "🔸morimens-game-chat": 2832,
+    "🔸晒卡分享": 2,
+    "🔸相位对弈": 14,
+    "🔸交友频道": 11,
+    "🔸한국어-채팅방": 35,
+    "🔸русский-канал": 6,
+    "🔸phòng-chat-tiếng-việt": 29,
+    "🔸canal-español": 50,
+    "🔸canal-português": 259,
+    "🔸ruang-obrolan-indonesia": 61,
+    "🔸ห้องสนทนาภาษาไทย": 15,
+    "🔸traphase": 5,
+    "🔸team-building": 316,
+    "🔸general-chat": 294,
+    "🔸game-question": 461,
+    "🔸机器人命令┊bot-commands": 14,
+    "Do not display Shop-Reset Warning if it no longer applies": 1,
+    "Question about Arachnes E1 scaling calcs": 28,
+    "【English Translation】Opinions Collection": 2,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 1,
+    "萌新求建議": 3,
     "🔸lore-chat": 72,
-    "🔸team-building": 45,
-    "🔸general-chat": 149,
     "🔸邀请码互助┊swap-invitation-codes": 7,
-    "🔸game-question": 180,
-    "🔸机器人命令┊bot-commands": 8,
     "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 6,
     "Reality Verges": 9,
     "I think it was a bad idea to add season rewards to chess.": 3,
@@ -29,26 +36,32 @@
     "✅「Answered」Auritas ability text missing info?": 1,
     "Been playing for a week now and kinda wanna know where I could go on from here": 4,
     "🔸课间休息闲聊": 44,
-    "🔸русский-канал": 3,
     "🔸忘却前夜┊morimens-tv": 1,
-    "Question about Arachnes E1 scaling calcs": 1,
-    "【English Translation】Opinions Collection": 1,
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "4": 1130,
+    "5": 1111,
+    "6": 1062,
     "1": 702,
     "2": 943,
     "3": 795,
-    "4": 897,
     "0": 628
   },
   "message_types": {
-    "0": 2220,
-    "19": 914,
-    "46": 1,
+    "19": 566,
+    "0": 1839,
     "20": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1497098166422732891",
+      "channel_id": "1170692781216378960",
+      "content": "my first double in any gacha game 🥹🙏 dupes tho..",
+      "author": "_nk_00",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497031596434260119",
       "channel_id": "1497031596434260119",
@@ -56,6 +69,30 @@
       "author": "bagels5899",
       "reactions": 6,
       "channel": "Reality Verges"
+    },
+    {
+      "id": "1497125289648455680",
+      "channel_id": "1131839817982947429",
+      "content": "雙管齊下直接升到90吧",
+      "author": "iulargerthan3",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497126111275122789",
+      "channel_id": "1131839817982947429",
+      "content": "他現在就是強迫你打融災",
+      "author": "yusi4172",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497099835587690537",
+      "channel_id": "1174983699935277147",
+      "content": "+2了",
+      "author": "pxld_6.1",
+      "reactions": 5,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1497082785851117572",
@@ -130,84 +167,52 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497058387538612445",
+      "id": "1497101237026427020",
       "channel_id": "1131839817982947429",
-      "content": "恭喜你發現了",
-      "author": "eddy10051115",
+      "content": "我會想念你們的",
+      "author": "yusi4172",
       "reactions": 3,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1497049888016306258",
+      "id": "1497119457989103776",
+      "channel_id": "1131839817982947429",
+      "content": "这样()",
+      "author": "kemomimi_",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497110714421084251",
       "channel_id": "1170692781216378960",
-      "content": "<@296679098703544321>",
+      "content": "once, i told my acquaintances that i were 3rd year unit student, they thought i ",
       "author": "arisuu0604",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497058333277032458",
+      "id": "1497113221708910764",
       "channel_id": "1170692781216378960",
-      "content": "almost like kade was still here..",
-      "author": "hitsu4",
+      "content": "https://tenor.com/view/yui-yuigahama-yahallo-gif-18724491",
+      "author": "moyashi0672",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497059229432025210",
+      "id": "1497115276825595985",
       "channel_id": "1170692781216378960",
-      "content": "i would never agree to this until I met <@296679098703544321>",
-      "author": "l8989c",
+      "content": "I was wondering why mob was taking so long but it was the boss",
+      "author": "syruponstrawberrycake",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497075677810135171",
+      "id": "1497119356457582602",
       "channel_id": "1170692781216378960",
-      "content": "i liek",
-      "author": "dyssayah",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497036824219091104",
-      "channel_id": "1170692781216378960",
-      "content": "Yippie!",
-      "author": "happy_boi_hilaal",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497035676070449274",
-      "channel_id": "1300659662311526512",
-      "content": "https://x.com/avisitingfish/status/2046412778290958578?s=20",
-      "author": "etzel0009",
-      "reactions": 3,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1497055718786859058",
-      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "eddy10051115",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497058909230202970",
-      "channel_id": "1131839817982947429",
-      "content": "身體還快熬沒了",
-      "author": "eddy10051115",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497070024010104883",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
+      "author": "tnimreppep",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
