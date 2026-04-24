@@ -1,37 +1,39 @@
 {
   "date": "2026-04-24",
-  "messages": 12891,
+  "messages": 14575,
   "unique_authors": 147,
-  "reactions_total": 1000,
-  "attachments": 611,
+  "reactions_total": 1155,
+  "attachments": 672,
   "channel_activity": {
-    "🔸綜合討論": 3190,
-    "🔸morimens-game-chat": 5192,
-    "🔸课间休息闲聊": 58,
-    "🔸한국어-채팅방": 85,
-    "🔸русский-канал": 399,
-    "🔸phòng-chat-tiếng-việt": 128,
-    "🔸canal-español": 65,
-    "🔸canal-português": 287,
-    "🔸ruang-obrolan-indonesia": 718,
-    "🔸ห้องสนทนาภาษาไทย": 62,
-    "🔸traphase": 16,
-    "🔸team-building": 703,
-    "🔸general-chat": 487,
+    "🔸綜合討論": 3340,
+    "🔸morimens-game-chat": 6246,
+    "🔸剧情交流": 3,
+    "🔸晒卡分享": 5,
+    "🔸课间休息闲聊": 59,
+    "🔸한국어-채팅방": 88,
+    "🔸русский-канал": 424,
+    "🔸phòng-chat-tiếng-việt": 199,
+    "🔸canal-español": 91,
+    "🔸canal-português": 354,
+    "🔸ruang-obrolan-indonesia": 856,
+    "🔸ห้องสนทนาภาษาไทย": 72,
+    "🔸traphase": 19,
+    "🔸lore-chat": 119,
+    "🔸team-building": 731,
+    "🔸general-chat": 510,
+    "🔸game-question": 1232,
+    "🔸机器人命令┊bot-commands": 30,
+    "Arachne": 7,
+    "Angbak Char guides": 2,
+    "萌新求配队和抽卡建议": 2,
     "🔸邀请码互助┊swap-invitation-codes": 10,
-    "🔸game-question": 1164,
-    "🔸机器人命令┊bot-commands": 29,
     "发现几个小bug": 13,
-    "Arachne": 6,
-    "🔸lore-chat": 112,
     "Suggestion about the Events": 2,
     "Inquiry about the home-screen music": 1,
     "Reality Verges": 10,
     "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
     "67 levels": 1,
-    "Angbak Char guides": 1,
     "Been playing for a week now and kinda wanna know where I could go on from here": 7,
-    "🔸晒卡分享": 3,
     "🔸欢乐梗图": 1,
     "🔸相位对弈": 18,
     "🔸交友频道": 14,
@@ -55,8 +57,10 @@
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "12": 982,
+    "13": 1077,
+    "14": 520,
     "11": 1463,
-    "12": 895,
     "10": 1363,
     "8": 1137,
     "9": 807,
@@ -70,8 +74,9 @@
     "0": 628
   },
   "message_types": {
-    "0": 787,
-    "19": 323
+    "0": 1079,
+    "19": 604,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -89,6 +94,14 @@
       "author": "ahor0917",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497228287393534032",
+      "channel_id": "1170692781216378960",
+      "content": "||I get roused by thais||",
+      "author": "angbak",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497198634192605346",
@@ -129,6 +142,14 @@
       "author": "bagels5899",
       "reactions": 6,
       "channel": "Reality Verges"
+    },
+    {
+      "id": "1497230017271431358",
+      "channel_id": "1170692781216378960",
+      "content": "...but child support...I need... My dad angbak..",
+      "author": "._.aahh",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497205276485353625",
@@ -211,26 +232,10 @@
       "channel": "🔸晒卡分享"
     },
     {
-      "id": "1497190844493729833",
+      "id": "1497230634970644501",
       "channel_id": "1131839817982947429",
-      "content": "我目前+9而已",
-      "author": "yusi4172",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497197195735077016",
-      "channel_id": "1131839817982947429",
-      "content": "有大佬可以帶帶我嗎",
-      "author": "ahuahuahua",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497197841909809294",
-      "channel_id": "1131839817982947429",
-      "content": "總之就蠻多問題的樣子，自己爆典說勞動所得然後自己的也沒有比較好，然後因為有武器池所以等效抽比終末地還少，接著就是戰鬥不行，劇情又唐又長",
-      "author": "gs2202",
+      "content": "",
+      "author": "angbak",
       "reactions": 4,
       "channel": "🔸綜合討論"
     }
