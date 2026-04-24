@@ -1,26 +1,26 @@
 {
   "date": "2026-04-24",
-  "messages": 21828,
+  "messages": 22541,
   "unique_authors": 147,
-  "reactions_total": 1779,
-  "attachments": 987,
+  "reactions_total": 1848,
+  "attachments": 1014,
   "channel_activity": {
+    "🔸morimens-game-chat": 9385,
+    "🔸한국어-채팅방": 97,
+    "🔸русский-канал": 1338,
+    "🔸canal-português": 1335,
+    "🔸traphase": 276,
+    "🔸lore-chat": 144,
+    "🔸team-building": 858,
+    "🔸game-question": 1509,
+    "🔸机器人命令┊bot-commands": 50,
+    "\"24\" lives matter": 28,
     "🔸阵容构建": 9,
-    "🔸morimens-game-chat": 9025,
     "🔸chaîne-française": 22,
-    "🔸русский-канал": 1237,
     "🔸canal-español": 171,
-    "🔸canal-português": 1267,
-    "🔸traphase": 133,
-    "🔸lore-chat": 142,
-    "🔸team-building": 842,
     "🔸general-chat": 688,
     "🔸邀请码互助┊swap-invitation-codes": 16,
-    "🔸game-question": 1492,
-    "🔸机器人命令┊bot-commands": 47,
-    "\"24\" lives matter": 26,
     "67 levels": 3,
-    "🔸한국어-채팅방": 96,
     "🔸ห้องสนทนาภาษาไทย": 100,
     "Ridiculous rewards in PVP after 2.5 patch": 13,
     "🔸綜合討論": 3715,
@@ -68,7 +68,8 @@
     "1497041529204773057": 1
   },
   "hourly_activity": {
-    "22": 278,
+    "22": 603,
+    "23": 388,
     "21": 736,
     "20": 478,
     "19": 354,
@@ -93,8 +94,9 @@
     "0": 628
   },
   "message_types": {
-    "19": 217,
-    "0": 340
+    "19": 203,
+    "0": 508,
+    "20": 2
   },
   "top_reacted_messages": [
     {
