@@ -31,7 +31,7 @@
       "last_historical_month": "2026-02"
     },
     "1131839874132090890": {
-      "last_message_id": "1497317621522235422",
+      "last_message_id": "1497360061079752716",
       "name": "🔸阵容构建",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -65,7 +65,7 @@
       "last_historical_month": "2026-02"
     },
     "1170692781216378960": {
-      "last_message_id": "1497350740505661480",
+      "last_message_id": "1497363932875325521",
       "name": "🔸morimens-game-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -197,13 +197,13 @@
       "last_historical_month": "2026-02"
     },
     "1300659552701648960": {
-      "last_message_id": "1497350100660256768",
+      "last_message_id": "1497352272416604261",
       "name": "🔸chaîne-française",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1300659580446969918": {
-      "last_message_id": "1497333414536417403",
+      "last_message_id": "1497363687361744956",
       "name": "🔸русский-канал",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -215,13 +215,13 @@
       "last_historical_month": "2026-02"
     },
     "1300659662311526512": {
-      "last_message_id": "1497345996978389060",
+      "last_message_id": "1497360563993575505",
       "name": "🔸canal-español",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1300659718653476925": {
-      "last_message_id": "1497350771405226117",
+      "last_message_id": "1497364007797915688",
       "name": "🔸canal-português",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -249,13 +249,13 @@
       "last_historical_month": "2026-02"
     },
     "1326453691527594035": {
-      "last_message_id": "1497350462590947488",
+      "last_message_id": "1497363960335437874",
       "name": "🔸traphase",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1326453763355185215": {
-      "last_message_id": "1497317444124147793",
+      "last_message_id": "1497351772854030510",
       "name": "🔸lore-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -483,19 +483,19 @@
       "last_historical_month": "2026-02"
     },
     "1400749543288475770": {
-      "last_message_id": "1497349356339335219",
+      "last_message_id": "1497362980596093000",
       "name": "🔸team-building",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1400750050208125010": {
-      "last_message_id": "1497348850724376596",
+      "last_message_id": "1497356262957121666",
       "name": "🔸general-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1405837769212821554": {
-      "last_message_id": "1497346768617209876",
+      "last_message_id": "1497360738728018001",
       "name": "🔸邀请码互助┊swap-invitation-codes",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -511,7 +511,7 @@
       "last_historical_month": "2026-02"
     },
     "1433513650299076780": {
-      "last_message_id": "1497345656115691622",
+      "last_message_id": "1497363296804798604",
       "name": "🔸game-question",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -549,7 +549,7 @@
       "last_historical_month": "2026-02"
     },
     "1436913827571695898": {
-      "last_message_id": "1497349414438699132",
+      "last_message_id": "1497360921759318086",
       "name": "🔸机器人命令┊bot-commands",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -30119,5 +30119,5 @@
     }
   },
   "historical_month": "2026-02",
-  "last_run": "2026-04-24T22:11:09.331771+00:00"
+  "last_run": "2026-04-24T22:34:10.171314+00:00"
 }

@@ -1,30 +1,30 @@
 {
   "date": "2026-04-24",
-  "messages": 21271,
+  "messages": 21828,
   "unique_authors": 147,
-  "reactions_total": 1709,
-  "attachments": 966,
+  "reactions_total": 1779,
+  "attachments": 987,
   "channel_activity": {
-    "🔸morimens-game-chat": 8633,
-    "🔸chaîne-française": 20,
-    "🔸canal-español": 170,
-    "🔸canal-português": 1211,
-    "🔸traphase": 103,
-    "🔸team-building": 840,
-    "🔸general-chat": 686,
-    "🔸邀请码互助┊swap-invitation-codes": 15,
-    "🔸game-question": 1448,
-    "🔸机器人命令┊bot-commands": 45,
+    "🔸阵容构建": 9,
+    "🔸morimens-game-chat": 9025,
+    "🔸chaîne-française": 22,
+    "🔸русский-канал": 1237,
+    "🔸canal-español": 171,
+    "🔸canal-português": 1267,
+    "🔸traphase": 133,
+    "🔸lore-chat": 142,
+    "🔸team-building": 842,
+    "🔸general-chat": 688,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸game-question": 1492,
+    "🔸机器人命令┊bot-commands": 47,
     "\"24\" lives matter": 26,
     "67 levels": 3,
     "🔸한국어-채팅방": 96,
-    "🔸русский-канал": 1215,
     "🔸ห้องสนทนาภาษาไทย": 100,
     "Ridiculous rewards in PVP after 2.5 patch": 13,
     "🔸綜合討論": 3715,
-    "🔸阵容构建": 7,
     "🔸日本語チャンネル": 4,
-    "🔸lore-chat": 141,
     "Reality Verges": 26,
     "Nefrea": 2,
     "Poison review": 2,
@@ -68,8 +68,9 @@
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "22": 278,
+    "21": 736,
     "20": 478,
-    "21": 457,
     "19": 354,
     "18": 821,
     "17": 1012,
@@ -92,9 +93,8 @@
     "0": 628
   },
   "message_types": {
-    "19": 241,
-    "0": 454,
-    "20": 3
+    "19": 217,
+    "0": 340
   },
   "top_reacted_messages": [
     {
@@ -111,6 +111,22 @@
       "content": "But im still f2p",
       "author": "spooky_penguin_",
       "reactions": 21,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497350759748997120",
+      "channel_id": "1170692781216378960",
+      "content": "I think that as a community we give top players too much of a voice because “hey",
+      "author": "fishhazardthewizard",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497360883481972766",
+      "channel_id": "1170692781216378960",
+      "content": "i got e1 arachne :D",
+      "author": "nofiuwu",
+      "reactions": 8,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -194,6 +210,14 @@
       "channel": "Reality Verges"
     },
     {
+      "id": "1497357479753810112",
+      "channel_id": "1170692781216378960",
+      "content": "okay did frost show up because someone say femboy",
+      "author": "2ndselna",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497267231275618506",
       "channel_id": "1170692781216378960",
       "content": "I see a lot of crit potential right there",
@@ -232,30 +256,6 @@
       "author": "rocketmacaron_",
       "reactions": 5,
       "channel": "Arachne"
-    },
-    {
-      "id": "1497136562725453894",
-      "channel_id": "1170692781216378960",
-      "content": "is shield limited by ur max hp ??",
-      "author": "boppyboi",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497125289648455680",
-      "channel_id": "1131839817982947429",
-      "content": "雙管齊下直接升到90吧",
-      "author": "iulargerthan3",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497126111275122789",
-      "channel_id": "1131839817982947429",
-      "content": "他現在就是強迫你打融災",
-      "author": "yusi4172",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }
