@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-04-24T17:41:45.799553+00:00",
+  "updated_at": "2026-04-24T18:06:52.321466+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1289,30 +1289,6 @@
       "parent_id": null,
       "position": 12,
       "topic": ""
-    },
-    {
-      "id": "1493958940332134592",
-      "name": "lighteveningdawn",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 15,
-      "topic": "ModMail Channel 525104796974317591 1493958605379211344 (Please do not change this)"
-    },
-    {
-      "id": "1494304968432160769",
-      "name": "finkle",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 16,
-      "topic": "ModMail Channel 790998281622650952 1494303379017568276 (Please do not change this)"
-    },
-    {
-      "id": "1494436552699285576",
-      "name": "cvappela",
-      "type": 0,
-      "parent_id": "1440851754311749733",
-      "position": 17,
-      "topic": "ModMail Channel 356095277318406155 1494436080756195440 (Please do not change this)"
     },
     {
       "id": "1494708193597587488",
