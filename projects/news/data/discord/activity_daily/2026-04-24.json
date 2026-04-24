@@ -1,25 +1,34 @@
 {
   "date": "2026-04-24",
-  "messages": 9527,
+  "messages": 11781,
   "unique_authors": 147,
-  "reactions_total": 694,
-  "attachments": 425,
+  "reactions_total": 880,
+  "attachments": 552,
   "channel_activity": {
-    "🔸綜合討論": 2375,
-    "🔸morimens-game-chat": 3802,
-    "🔸한국어-채팅방": 72,
-    "🔸русский-канал": 234,
-    "🔸phòng-chat-tiếng-việt": 48,
+    "🔸綜合討論": 2866,
+    "🔸morimens-game-chat": 4730,
+    "🔸课间休息闲聊": 46,
+    "🔸한국어-채팅방": 80,
+    "🔸русский-канал": 390,
+    "🔸phòng-chat-tiếng-việt": 121,
+    "🔸canal-español": 57,
+    "🔸ruang-obrolan-indonesia": 587,
+    "🔸ห้องสนทนาภาษาไทย": 55,
+    "🔸traphase": 15,
+    "🔸lore-chat": 112,
+    "🔸team-building": 689,
+    "🔸general-chat": 480,
+    "🔸game-question": 1066,
+    "🔸机器人命令┊bot-commands": 28,
+    "Suggestion about the Events": 2,
+    "Inquiry about the home-screen music": 1,
+    "发现几个小bug": 12,
+    "Reality Verges": 10,
+    "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
+    "67 levels": 1,
+    "Angbak Char guides": 1,
     "🔸canal-português": 271,
-    "🔸ruang-obrolan-indonesia": 545,
-    "🔸ห้องสนทนาภาษาไทย": 53,
-    "🔸traphase": 10,
-    "🔸lore-chat": 111,
-    "🔸team-building": 554,
-    "🔸general-chat": 377,
     "🔸邀请码互助┊swap-invitation-codes": 9,
-    "🔸game-question": 789,
-    "🔸机器人命令┊bot-commands": 23,
     "Been playing for a week now and kinda wanna know where I could go on from here": 7,
     "🔸晒卡分享": 3,
     "🔸欢乐梗图": 1,
@@ -35,22 +44,20 @@
     "💭「Processing」Alva exalt bug": 1,
     "\"24\" lives matter": 4,
     "萌新求建議": 34,
-    "🔸canal-español": 50,
     "Do not display Shop-Reset Warning if it no longer applies": 1,
     "【English Translation】Opinions Collection": 2,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 1,
-    "Reality Verges": 9,
     "I think it was a bad idea to add season rewards to chess.": 3,
     "Get Auto enable for dtide": 1,
     "✅「Answered」Auritas ability text missing info?": 1,
-    "🔸课间休息闲聊": 44,
     "🔸忘却前夜┊morimens-tv": 1,
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "10": 1363,
+    "11": 1248,
     "8": 1137,
     "9": 807,
-    "10": 357,
     "6": 1143,
     "7": 774,
     "4": 1130,
@@ -61,8 +68,8 @@
     "0": 628
   },
   "message_types": {
-    "0": 879,
-    "19": 348
+    "0": 1528,
+    "19": 726
   },
   "top_reacted_messages": [
     {
@@ -71,6 +78,14 @@
       "content": "忘却前夜管理纵容爱丽丝粉丝各平台造谣嫖娼，三天了还不删。已报案，挂着国内地址的几个等着叔叔，艳红出具大头吧。\n不解决游戏问题，先拿反馈玩家的私德捂嘴可以啊。那不",
       "author": "ahor0917",
       "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497198634192605346",
+      "channel_id": "1131839817982947429",
+      "content": "2778<:thumbsup:1356086340298473574>",
+      "author": "_buqi",
+      "reactions": 6,
       "channel": "🔸綜合討論"
     },
     {
@@ -170,60 +185,52 @@
       "channel": "🔸晒卡分享"
     },
     {
+      "id": "1497190844493729833",
+      "channel_id": "1131839817982947429",
+      "content": "我目前+9而已",
+      "author": "yusi4172",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497197195735077016",
+      "channel_id": "1131839817982947429",
+      "content": "有大佬可以帶帶我嗎",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497197841909809294",
+      "channel_id": "1131839817982947429",
+      "content": "總之就蠻多問題的樣子，自己爆典說勞動所得然後自己的也沒有比較好，然後因為有武器池所以等效抽比終末地還少，接著就是戰鬥不行，劇情又唐又長",
+      "author": "gs2202",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497198917207462128",
+      "channel_id": "1131839817982947429",
+      "content": "凹……凹過去ㄌ……（吐血",
+      "author": "yitesi",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497185015027601530",
+      "channel_id": "1170692781216378960",
+      "content": "https://static.wikia.nocookie.net/reverse1999/images/5/54/Semmelweis_Garment3_Li",
+      "author": "boppyboi",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497167595642552471",
       "channel_id": "1400749543288475770",
       "content": "Liz really want me to play her...",
       "author": "moonheart",
       "reactions": 4,
       "channel": "🔸team-building"
-    },
-    {
-      "id": "1497149565588078682",
-      "channel_id": "1497149565588078682",
-      "content": "【溫馨提示：這不是夢向文，作者也不是校車激推，只是把人當oc寫然後寫嗨了的產物。會繼續更新校車嬤文的🛐】\n\n加急寫這個，這個比我手上任何一篇還在囤的同人文重要多",
-      "author": "shostakovich524",
-      "reactions": 4,
-      "channel": "最討厭的傢伙被嬤王纏上了（連載中）"
-    },
-    {
-      "id": "1497056877392040097",
-      "channel_id": "1131839817982947429",
-      "content": "<@1479827578842775573> 但是我感觉阿拉在邀请我(？",
-      "author": "kemomimi_",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497044574709743767",
-      "channel_id": "1170692781216378960",
-      "content": "🐒",
-      "author": "arisuu0604",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497076950651506849",
-      "channel_id": "1170692781216378960",
-      "content": "I never know what to choose this far in",
-      "author": "dyssayah",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497086322823794690",
-      "channel_id": "1170692781216378960",
-      "content": "Wouldn't it be funny if dev fucked up one day and new awaker was selectable via ",
-      "author": "aurora3981",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497042945591869510",
-      "channel_id": "1170692781216378960",
-      "content": "if hes into guys i want him to cuck me w a guy atleast...",
-      "author": "cqteiie",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
