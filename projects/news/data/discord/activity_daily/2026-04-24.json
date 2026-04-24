@@ -1,28 +1,30 @@
 {
   "date": "2026-04-24",
-  "messages": 20573,
+  "messages": 21271,
   "unique_authors": 147,
-  "reactions_total": 1595,
-  "attachments": 943,
+  "reactions_total": 1709,
+  "attachments": 966,
   "channel_activity": {
-    "🔸morimens-game-chat": 8108,
+    "🔸morimens-game-chat": 8633,
+    "🔸chaîne-française": 20,
+    "🔸canal-español": 170,
+    "🔸canal-português": 1211,
+    "🔸traphase": 103,
+    "🔸team-building": 840,
+    "🔸general-chat": 686,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 1448,
+    "🔸机器人命令┊bot-commands": 45,
+    "\"24\" lives matter": 26,
+    "67 levels": 3,
     "🔸한국어-채팅방": 96,
-    "🔸chaîne-française": 17,
     "🔸русский-канал": 1215,
-    "🔸canal-español": 165,
-    "🔸canal-português": 1169,
     "🔸ห้องสนทนาภาษาไทย": 100,
-    "🔸traphase": 31,
-    "🔸team-building": 831,
-    "🔸general-chat": 678,
-    "🔸game-question": 1427,
     "Ridiculous rewards in PVP after 2.5 patch": 13,
-    "\"24\" lives matter": 21,
     "🔸綜合討論": 3715,
     "🔸阵容构建": 7,
     "🔸日本語チャンネル": 4,
     "🔸lore-chat": 141,
-    "🔸机器人命令┊bot-commands": 39,
     "Reality Verges": 26,
     "Nefrea": 2,
     "Poison review": 2,
@@ -41,8 +43,6 @@
     "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 12,
     "Chapter 5 fervor bug": 1,
     "Arachne": 8,
-    "67 levels": 2,
-    "🔸邀请码互助┊swap-invitation-codes": 14,
     "发现几个小bug": 14,
     "Proper moderation": 1,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 3,
@@ -68,8 +68,9 @@
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "20": 478,
+    "21": 457,
     "19": 354,
-    "20": 237,
     "18": 821,
     "17": 1012,
     "16": 1148,
@@ -91,10 +92,19 @@
     "0": 628
   },
   "message_types": {
-    "0": 269,
-    "19": 75
+    "19": 241,
+    "0": 454,
+    "20": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1497345407293067445",
+      "channel_id": "1170692781216378960",
+      "content": "Friends, for a moment, unrelated to the things about ultra and Arachne,\n\nEveryon",
+      "author": "the_black_butterfly",
+      "reactions": 34,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497203351954391111",
       "channel_id": "1170692781216378960",
@@ -246,14 +256,6 @@
       "author": "yusi4172",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497099835587690537",
-      "channel_id": "1174983699935277147",
-      "content": "+2了",
-      "author": "pxld_6.1",
-      "reactions": 5,
-      "channel": "🔸晒卡分享"
     }
   ]
 }
