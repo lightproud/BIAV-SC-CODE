@@ -1,39 +1,52 @@
 {
   "date": "2026-04-24",
-  "messages": 829,
-  "unique_authors": 77,
-  "reactions_total": 62,
-  "attachments": 42,
+  "messages": 3965,
+  "unique_authors": 147,
+  "reactions_total": 327,
+  "attachments": 179,
   "channel_activity": {
-    "🔸綜合討論": 26,
-    "🔸morimens-game-chat": 469,
+    "🔸綜合討論": 1282,
+    "🔸morimens-game-chat": 1993,
+    "🔸晒卡分享": 1,
+    "🔸相位对弈": 5,
+    "🔸한국어-채팅방": 10,
+    "🔸phòng-chat-tiếng-việt": 22,
+    "🔸canal-español": 37,
+    "🔸canal-português": 47,
+    "🔸ruang-obrolan-indonesia": 23,
+    "🔸ห้องสนทนาภาษาไทย": 7,
+    "🔸traphase": 2,
+    "🔸lore-chat": 72,
+    "🔸team-building": 45,
+    "🔸general-chat": 149,
+    "🔸邀请码互助┊swap-invitation-codes": 7,
+    "🔸game-question": 180,
+    "🔸机器人命令┊bot-commands": 8,
+    "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 6,
+    "Reality Verges": 9,
+    "I think it was a bad idea to add season rewards to chess.": 3,
+    "Get Auto enable for dtide": 1,
+    "✅「Answered」Auritas ability text missing info?": 1,
+    "Been playing for a week now and kinda wanna know where I could go on from here": 4,
     "🔸课间休息闲聊": 44,
     "🔸русский-канал": 3,
-    "🔸canal-español": 22,
-    "🔸canal-português": 4,
-    "🔸ruang-obrolan-indonesia": 13,
-    "🔸ห้องสนทนาภาษาไทย": 1,
-    "🔸lore-chat": 55,
-    "🔸team-building": 35,
-    "🔸general-chat": 66,
-    "🔸game-question": 76,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 1,
-    "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 3,
-    "Reality Verges": 6,
     "Question about Arachnes E1 scaling calcs": 1,
-    "I think it was a bad idea to add season rewards to chess.": 1,
     "【English Translation】Opinions Collection": 1,
     "1497041529204773057": 1
   },
   "hourly_activity": {
-    "0": 628,
-    "1": 201
+    "1": 702,
+    "2": 943,
+    "3": 795,
+    "4": 897,
+    "0": 628
   },
   "message_types": {
-    "0": 571,
-    "19": 257,
-    "21": 1
+    "0": 2220,
+    "19": 914,
+    "46": 1,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -45,11 +58,115 @@
       "channel": "Reality Verges"
     },
     {
+      "id": "1497082785851117572",
+      "channel_id": "1131839817982947429",
+      "content": "||难道还有歪到红夫人给他看更难过的事情？||",
+      "author": "kemomimi_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497045894116151376",
+      "channel_id": "1170692781216378960",
+      "content": "<@157679037240573953> 1st time doing dtide by myself and im proud of it",
+      "author": "arisuu0604",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497052157570977842",
+      "channel_id": "1170692781216378960",
+      "content": "My brother made human food",
+      "author": "frosthief",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497070887084495028",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "z8567657",
+      "reactions": 5,
+      "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1497056877392040097",
+      "channel_id": "1131839817982947429",
+      "content": "<@1479827578842775573> 但是我感觉阿拉在邀请我(？",
+      "author": "kemomimi_",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497044574709743767",
+      "channel_id": "1170692781216378960",
+      "content": "🐒",
+      "author": "arisuu0604",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497076950651506849",
+      "channel_id": "1170692781216378960",
+      "content": "I never know what to choose this far in",
+      "author": "dyssayah",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497086322823794690",
+      "channel_id": "1170692781216378960",
+      "content": "Wouldn't it be funny if dev fucked up one day and new awaker was selectable via ",
+      "author": "aurora3981",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497042945591869510",
       "channel_id": "1170692781216378960",
       "content": "if hes into guys i want him to cuck me w a guy atleast...",
       "author": "cqteiie",
       "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497058387538612445",
+      "channel_id": "1131839817982947429",
+      "content": "恭喜你發現了",
+      "author": "eddy10051115",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497049888016306258",
+      "channel_id": "1170692781216378960",
+      "content": "<@296679098703544321>",
+      "author": "arisuu0604",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497058333277032458",
+      "channel_id": "1170692781216378960",
+      "content": "almost like kade was still here..",
+      "author": "hitsu4",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497059229432025210",
+      "channel_id": "1170692781216378960",
+      "content": "i would never agree to this until I met <@296679098703544321>",
+      "author": "l8989c",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497075677810135171",
+      "channel_id": "1170692781216378960",
+      "content": "i liek",
+      "author": "dyssayah",
+      "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -69,132 +186,28 @@
       "channel": "🔸canal-español"
     },
     {
-      "id": "1497030373123690526",
-      "channel_id": "1170692781216378960",
-      "content": "your dr resets after every phase boss",
-      "author": "zier.0",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497041278179741746",
-      "channel_id": "1170692781216378960",
-      "content": "i use her like once a month",
-      "author": "zier.0",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497042918190350356",
-      "channel_id": "1170692781216378960",
+      "id": "1497055718786859058",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "guava3442",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497043271166202008",
-      "channel_id": "1170692781216378960",
-      "content": "Hi greek",
-      "author": "guava3442",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497043358760173743",
-      "channel_id": "1170692781216378960",
-      "content": "lowk hes been flriting w his guy friend whenever ive gone out w them n stuff so ",
-      "author": "cqteiie",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497024324253777981",
-      "channel_id": "1181152750319456266",
-      "content": "說說看",
-      "author": "luckyinitial",
-      "reactions": 2,
-      "channel": "🔸课间休息闲聊"
-    },
-    {
-      "id": "1497040931457859654",
-      "channel_id": "1326453763355185215",
-      "content": "It’s closer to revision Arachne than original Arachne to me",
-      "author": "fishhazardthewizard",
-      "reactions": 2,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1497036873531392132",
-      "channel_id": "1131839817982947429",
-      "content": "命轮比角色好用",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497042780713648248",
-      "channel_id": "1131839817982947429",
-      "content": "我怎麼跟老師解釋我上課睡過頭的事情",
       "author": "eddy10051115",
-      "reactions": 1,
+      "reactions": 2,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1497024589077811491",
-      "channel_id": "1170692781216378960",
-      "content": "Neither the pursuit nor the exalt gets more damage",
-      "author": "polkarain",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "id": "1497058909230202970",
+      "channel_id": "1131839817982947429",
+      "content": "身體還快熬沒了",
+      "author": "eddy10051115",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497026441840431175",
-      "channel_id": "1170692781216378960",
-      "content": "8 9",
-      "author": "kylo_ren._",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497027543176581120",
-      "channel_id": "1170692781216378960",
-      "content": "<@267888098732539914> i tried doing another madness run with arachne daff this t",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497027843740405770",
-      "channel_id": "1170692781216378960",
-      "content": "celeste is garbage anyway",
-      "author": "kylo_ren._",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497028064776032386",
-      "channel_id": "1170692781216378960",
-      "content": "i had daff arachne and clem img",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497028434256330973",
-      "channel_id": "1170692781216378960",
-      "content": "<@1471414323883540501> i think im gonna make a QA post about madness hsr",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497028697801232485",
-      "channel_id": "1170692781216378960",
-      "content": "not for max soulforge mats",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "id": "1497070024010104883",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }
