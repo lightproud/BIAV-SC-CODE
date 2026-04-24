@@ -1,50 +1,52 @@
 {
   "date": "2026-04-24",
-  "messages": 16961,
+  "messages": 17898,
   "unique_authors": 147,
-  "reactions_total": 1297,
-  "attachments": 740,
+  "reactions_total": 1392,
+  "attachments": 793,
   "channel_activity": {
-    "🔸綜合討論": 3433,
-    "🔸morimens-game-chat": 6851,
-    "🔸课间休息闲聊": 67,
-    "🔸chaîne-française": 6,
-    "🔸русский-канал": 887,
-    "🔸phòng-chat-tiếng-việt": 738,
-    "🔸canal-español": 99,
+    "🔸綜合討論": 3454,
+    "🔸阵容构建": 5,
+    "🔸morimens-game-chat": 7050,
+    "🔸课间休息闲聊": 68,
+    "🔸한국어-채팅방": 89,
+    "🔸chaîne-française": 7,
+    "🔸русский-канал": 1061,
+    "🔸phòng-chat-tiếng-việt": 1191,
+    "🔸canal-español": 122,
+    "🔸ruang-obrolan-indonesia": 873,
+    "🔸ห้องสนทนาภาษาไทย": 82,
+    "🔸team-building": 787,
+    "🔸general-chat": 645,
+    "🔸game-question": 1279,
+    "🔸机器人命令┊bot-commands": 35,
+    "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 12,
+    "Chapter 5 fervor bug": 1,
+    "Reality Verges": 11,
+    "Question about Arachnes E1 scaling calcs": 30,
+    "\"24\" lives matter": 7,
+    "Arachne": 8,
+    "67 levels": 2,
+    "萌新求配队和抽卡建议": 4,
     "🔸canal-português": 776,
-    "🔸ruang-obrolan-indonesia": 871,
-    "🔸ห้องสนทนาภาษาไทย": 73,
     "🔸traphase": 20,
     "🔸lore-chat": 129,
-    "🔸team-building": 766,
-    "🔸general-chat": 643,
     "🔸邀请码互助┊swap-invitation-codes": 14,
-    "🔸game-question": 1266,
-    "🔸机器人命令┊bot-commands": 34,
     "发现几个小bug": 14,
     "Proper moderation": 1,
-    "\"24\" lives matter": 5,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 3,
     "🔸剧情交流": 3,
     "🔸晒卡分享": 5,
-    "🔸한국어-채팅방": 88,
-    "Arachne": 7,
     "Angbak Char guides": 2,
-    "萌新求配队和抽卡建议": 2,
     "Suggestion about the Events": 2,
     "Inquiry about the home-screen music": 1,
-    "Reality Verges": 10,
     "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
-    "67 levels": 1,
     "Been playing for a week now and kinda wanna know where I could go on from here": 7,
     "🔸欢乐梗图": 1,
     "🔸相位对弈": 18,
     "🔸交友频道": 14,
-    "徵求各式困難9-11的佬們通關紀錄，要求：不吃靈芝，無課金命輪，每隻角色不可高於60等。若無通關紀錄請至少告知角色命輪，關鍵造物，關鍵打法，感謝佬們……（想通關想瘋了我 😵‍💫）": 10,
     "最討厭的傢伙被嬤王纏上了（連載中）": 7,
     "堆图ing": 1,
-    "Question about Arachnes E1 scaling calcs": 29,
     "💭「Processing」Fouette WOD and clementine's passive not working in divine ultra round": 9,
     "More clarity for Dimension Shuffle effect": 1,
     "Nefrea": 1,
@@ -59,8 +61,9 @@
     "1497041529204773057": 1
   },
   "hourly_activity": {
+    "15": 1409,
+    "16": 897,
     "14": 1537,
-    "15": 1369,
     "12": 982,
     "13": 1077,
     "11": 1463,
@@ -77,8 +80,8 @@
     "0": 628
   },
   "message_types": {
-    "0": 1714,
-    "19": 671,
+    "0": 608,
+    "19": 328,
     "20": 1
   },
   "top_reacted_messages": [
@@ -113,6 +116,14 @@
       "author": "ahor0917",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497268157147254904",
+      "channel_id": "1170692781216378960",
+      "content": "🤸‍♀️ \n                                    🦽🏌️‍♂️",
+      "author": "sirtealot",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497228287393534032",
@@ -161,6 +172,22 @@
       "author": "bagels5899",
       "reactions": 6,
       "channel": "Reality Verges"
+    },
+    {
+      "id": "1497267231275618506",
+      "channel_id": "1170692781216378960",
+      "content": "I see a lot of crit potential right there",
+      "author": "legendaryredz",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497268516368420926",
+      "channel_id": "1170692781216378960",
+      "content": "FISH! 🐟",
+      "author": "megidola.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497230017271431358",
@@ -217,30 +244,6 @@
       "author": "pxld_6.1",
       "reactions": 5,
       "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1497082785851117572",
-      "channel_id": "1131839817982947429",
-      "content": "||难道还有歪到红夫人给他看更难过的事情？||",
-      "author": "kemomimi_",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497045894116151376",
-      "channel_id": "1170692781216378960",
-      "content": "<@157679037240573953> 1st time doing dtide by myself and im proud of it",
-      "author": "arisuu0604",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497052157570977842",
-      "channel_id": "1170692781216378960",
-      "content": "My brother made human food",
-      "author": "frosthief",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
