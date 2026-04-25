@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-25T19:43:36.655960+00:00",
+  "archived_at": "2026-04-25T20:32:54.458997+00:00",
   "source": "reddit",
-  "item_count": 36,
+  "item_count": 38,
   "items": [
     {
       "source": "reddit",
@@ -438,6 +438,34 @@
       "url": "https://www.reddit.com/r/Morimens/comments/1svlpbe/new_player_looking_for_advice_on_when_to_start/",
       "author": "u//u/vizhawk",
       "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-25T18:40:00+00:00",
+      "lang": "en",
+      "title": "Free Mouchette?",
+      "summary": "I heard you get Mouchette for free upon finishing faded legacy. Is that no longer the case because i can&#39;t seem to find her.  &#32; submitted by &#32;  /u/tryhardenko   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1svk5x3/free_mouchette/",
+      "author": "/u/tryhardenko",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-25T19:38:31+00:00",
+      "lang": "en",
+      "title": "New player, looking for advice on when to start pulling on standard WoD",
+      "summary": "I already did moonless and stopped once I got E2 Thais. Still missing Caecus, Sanga, Helot, Leigh, Tinct, and Winkle.  Should I keep pulling standard character banner until I get some of those missing characters or just use my 3 selectors and start pulling on standard wheels?  &#32; submitted by &#32;  /u/vizhawk   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1svlpbe/new_player_looking_for_advice_on_when_to_start/",
+      "author": "/u/vizhawk",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/g0yudm5b2exg1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=42bd8e5f1e9f7289d7cefa5d06d81af9fcdbf69c",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
     }
   ]
 }

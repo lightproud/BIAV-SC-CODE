@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-25T19:43:36.871879+00:00",
+  "updated_at": "2026-04-25T20:32:54.667954+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2026-04-03",
@@ -11,7 +11,7 @@
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 144,
+      "total_items": 146,
       "errors": []
     },
     "bilibili": {
@@ -74,14 +74,14 @@
       "level": "active",
       "last_success_date": "2026-04-25",
       "consecutive_silent_days": 1,
-      "total_items": 1031996,
+      "total_items": 1032747,
       "errors": []
     },
     "weibo": {
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 130,
+      "total_items": 144,
       "errors": []
     },
     "xiaohongshu": {
@@ -169,10 +169,10 @@
       "errors": []
     },
     "pixiv": {
-      "level": "degraded",
-      "last_success_date": "2026-04-12",
-      "consecutive_silent_days": 14,
-      "total_items": 2,
+      "level": "active",
+      "last_success_date": "2026-04-26",
+      "consecutive_silent_days": 0,
+      "total_items": 3,
       "errors": []
     },
     "lofter": {
