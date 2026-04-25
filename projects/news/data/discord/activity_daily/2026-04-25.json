@@ -1,32 +1,35 @@
 {
   "date": "2026-04-25",
-  "messages": 12120,
+  "messages": 13111,
   "unique_authors": 123,
-  "reactions_total": 888,
-  "attachments": 615,
+  "reactions_total": 959,
+  "attachments": 645,
   "channel_activity": {
-    "🔸綜合討論": 1919,
-    "🔸morimens-game-chat": 5693,
-    "🔸剧情交流": 33,
+    "🔸綜合討論": 2155,
+    "🔸morimens-game-chat": 5974,
+    "🔸剧情交流": 38,
+    "🔸课间休息闲聊": 13,
+    "🔸한국어-채팅방": 9,
+    "🔸русский-канал": 634,
+    "🔸phòng-chat-tiếng-việt": 686,
+    "🔸canal-español": 82,
+    "🔸ห้องสนทนาภาษาไทย": 62,
+    "🔸traphase": 417,
+    "🔸team-building": 214,
+    "🔸general-chat": 1242,
+    "🔸邀请码互助┊swap-invitation-codes": 5,
+    "🔸game-question": 743,
+    "打算開一個圖樓可能圖之後就丟這裡了": 27,
+    "Vortice keeps disappearing": 1,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 16,
+    "【English Translation】Opinions Collection": 3,
     "🔸晒卡分享": 3,
-    "🔸한국어-채팅방": 3,
-    "🔸phòng-chat-tiếng-việt": 681,
     "🔸canal-português": 356,
-    "🔸ห้องสนทนาภาษาไทย": 61,
-    "🔸traphase": 405,
-    "🔸team-building": 208,
-    "🔸general-chat": 921,
-    "🔸game-question": 677,
     "🔸机器人命令┊bot-commands": 20,
-    "打算開一個圖樓可能圖之後就丟這裡了": 5,
     "Inquiry about the home-screen music": 3,
-    "Can we change PvP seasonal rewards condition to *participate* instead?": 11,
     "Been playing for a week now and kinda wanna know where I could go on from here": 3,
-    "🔸canal-español": 70,
     "🔸ruang-obrolan-indonesia": 155,
     "unsure on how to progress the story levels": 22,
-    "🔸课间休息闲聊": 12,
-    "🔸русский-канал": 626,
     "建个随笔楼": 2,
     "Cards from S Ultra Space Deals Less Damage": 2,
     "阿格里帕最終法則相關": 2,
@@ -35,7 +38,6 @@
     "3星期萌新請教融災角色與配隊": 3,
     "萌新求配队和抽卡建议": 25,
     "Any guide on ultra mechanics and Arachne?": 4,
-    "🔸邀请码互助┊swap-invitation-codes": 4,
     "Reality Verges": 3,
     "✅「Answered」Possibilities of Doresain kit rework": 3,
     "🔸阵容构建": 11,
@@ -61,12 +63,12 @@
     "1497468287527817236": 1,
     "Tawil :true:": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
-    "堆图ing": 1,
-    "【English Translation】Opinions Collection": 1
+    "堆图ing": 1
   },
   "hourly_activity": {
+    "15": 1036,
+    "16": 409,
     "14": 937,
-    "15": 454,
     "13": 849,
     "12": 962,
     "11": 822,
@@ -83,8 +85,9 @@
     "0": 807
   },
   "message_types": {
-    "0": 620,
-    "19": 269
+    "0": 667,
+    "19": 323,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -144,6 +147,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1497624599901376594",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1497616386355232930",
       "channel_id": "1131839817982947429",
       "content": "每次你出現的速度都讓我覺得你其實一直在偷看",
@@ -200,6 +211,30 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1497626225684779059",
+      "channel_id": "1170692781216378960",
+      "content": "he just utters them so confidently I can't help but believe everything he says",
+      "author": "ahmedamr30",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497623297846804500",
+      "channel_id": "1400750050208125010",
+      "content": "Doorstain 🥀",
+      "author": "not_arachne",
+      "reactions": 3,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1497623792120500416",
+      "channel_id": "1400750050208125010",
+      "content": "Doraemon",
+      "author": "bruhlucifer",
+      "reactions": 3,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1497607276502974498",
       "channel_id": "1131839817982947429",
       "content": "我想靠賽印1費",
@@ -214,38 +249,6 @@
       "author": "cs001092",
       "reactions": 3,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497606371401662525",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "climbkaly",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497595247755002008",
-      "channel_id": "1170692781216378960",
-      "content": "Doorstain famous S tier DPS <:24_Clown:1468259444423921871> <:ramona_tuff_:14414",
-      "author": "megidola.",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497581664161759345",
-      "channel_id": "1300659580446969918",
-      "content": "я вот тоже думаю что это благо а не пакость",
-      "author": "chiedgaf",
-      "reactions": 3,
-      "channel": "🔸русский-канал"
-    },
-    {
-      "id": "1497585246600827010",
-      "channel_id": "1400750050208125010",
-      "content": "<@523084324724146193> this is so peak",
-      "author": "_venush",
-      "reactions": 3,
-      "channel": "🔸general-chat"
     }
   ]
 }
