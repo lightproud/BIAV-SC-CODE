@@ -45,7 +45,7 @@
 
 ### 游戏数据集（原 database）
 - **已完成**：
-  - 18 个 JSON 数据文件（`projects/wiki/data/db/`）
+  - 数据文件（原 wiki 展示层 data/db/ 已移除，现用 `data/extracted/` + `data/processed/`）
   - 63 个唤醒体数据（59 SSR + 4 SR）
   - 63/63 角色有元数据（EN/JA 描述、获取方式翻译完成），11 个有结构化卡牌/技能数据，52 个待 Fandom 抓取补充
   - 47/59 角色立绘已下载到 `assets/images/portraits/`（12 个缺失，已配置 Bilibili Wiki 备用源）

@@ -1,10 +1,10 @@
 # Morimens 背景知识
 
-> 最后更新：2026-04-01 by 战略中心（Code）
+> 最后更新：2026-04-25 by 艾瑞卡（引用修正）
 >
 > 忘却前夜（忘卻前夜 / Morimens）游戏相关的背景信息和常识。
 > 本文件供所有会话参考，确保 AI 对游戏的理解一致。
-> 数据来源：`projects/wiki/data/db/` 中的 JSON 数据文件 + 2026-04 制作人采访（`assets/data/interview-2026-04.json`）。
+> 数据来源：`projects/wiki/data/extracted/`（游戏提取数据）+ `assets/data/`（事实圣经）+ 2026-04 制作人采访（`assets/data/interview-2026-04.json`）。原 `data/db/` 目录因数据不可靠已移除。
 
 ## 基本信息
 
@@ -119,7 +119,7 @@ Murphy: Fauxborn、Xu
 - **A 级界域**：超维
 - **必抽角色**：24（全界域 S 级）、Murphy（深海 S 级）、Thais（血肉 S 级）
 
-> 完整角色数据见 `projects/wiki/data/db/characters.json`
+> 角色原始数据见 `projects/wiki/data/extracted/categorized/character_data.txt`，事实圣经见 `assets/data/`
 
 ## 战斗系统
 
@@ -199,4 +199,4 @@ Murphy: Fauxborn、Xu
 
 ---
 
-> **维护说明**：此文件由各子项目会话在获得新信息时更新。主控制台负责审核一致性。详细数据请查阅 `projects/wiki/data/db/` 下的 JSON 文件。采访原始提取数据见 `assets/data/interview-2026-04.json`。
+> **维护说明**：此文件由各子项目会话在获得新信息时更新。主控制台负责审核一致性。详细数据请查阅 `projects/wiki/data/extracted/`（游戏提取）和 `assets/data/`（事实圣经）。采访原始提取数据见 `assets/data/interview-2026-04.json`。
