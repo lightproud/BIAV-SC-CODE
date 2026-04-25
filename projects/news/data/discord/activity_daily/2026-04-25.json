@@ -1,40 +1,40 @@
 {
   "date": "2026-04-25",
-  "messages": 11231,
+  "messages": 12120,
   "unique_authors": 123,
-  "reactions_total": 829,
-  "attachments": 579,
+  "reactions_total": 888,
+  "attachments": 615,
   "channel_activity": {
-    "🔸綜合討論": 1752,
-    "🔸morimens-game-chat": 5380,
-    "🔸剧情交流": 21,
-    "🔸晒卡分享": 1,
-    "🔸phòng-chat-tiếng-việt": 674,
+    "🔸綜合討論": 1919,
+    "🔸morimens-game-chat": 5693,
+    "🔸剧情交流": 33,
+    "🔸晒卡分享": 3,
+    "🔸한국어-채팅방": 3,
+    "🔸phòng-chat-tiếng-việt": 681,
+    "🔸canal-português": 356,
+    "🔸ห้องสนทนาภาษาไทย": 61,
+    "🔸traphase": 405,
+    "🔸team-building": 208,
+    "🔸general-chat": 921,
+    "🔸game-question": 677,
+    "🔸机器人命令┊bot-commands": 20,
+    "打算開一個圖樓可能圖之後就丟這裡了": 5,
+    "Inquiry about the home-screen music": 3,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 11,
+    "Been playing for a week now and kinda wanna know where I could go on from here": 3,
     "🔸canal-español": 70,
-    "🔸canal-português": 350,
     "🔸ruang-obrolan-indonesia": 155,
-    "🔸traphase": 392,
-    "🔸team-building": 200,
-    "🔸general-chat": 637,
-    "🔸game-question": 614,
-    "🔸机器人命令┊bot-commands": 18,
-    "Can we change PvP seasonal rewards condition to *participate* instead?": 8,
     "unsure on how to progress the story levels": 22,
-    "Been playing for a week now and kinda wanna know where I could go on from here": 1,
     "🔸课间休息闲聊": 12,
     "🔸русский-канал": 626,
     "建个随笔楼": 2,
-    "打算開一個圖樓可能圖之後就丟這裡了": 2,
     "Cards from S Ultra Space Deals Less Damage": 2,
     "阿格里帕最終法則相關": 2,
-    "Inquiry about the home-screen music": 2,
     "ryker doodle": 5,
     "doreposting / unserious doodles": 1,
     "3星期萌新請教融災角色與配隊": 3,
     "萌新求配队和抽卡建议": 25,
     "Any guide on ultra mechanics and Arachne?": 4,
-    "🔸한국어-채팅방": 2,
-    "🔸ห้องสนทนาภาษาไทย": 59,
     "🔸邀请码互助┊swap-invitation-codes": 4,
     "Reality Verges": 3,
     "✅「Answered」Possibilities of Doresain kit rework": 3,
@@ -65,8 +65,9 @@
     "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
+    "14": 937,
+    "15": 454,
     "13": 849,
-    "14": 502,
     "12": 962,
     "11": 822,
     "10": 987,
@@ -82,10 +83,18 @@
     "0": 807
   },
   "message_types": {
-    "0": 349,
-    "19": 178
+    "0": 620,
+    "19": 269
   },
   "top_reacted_messages": [
+    {
+      "id": "1497609989597171752",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "mezen4181",
+      "reactions": 8,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1497584635826409542",
       "channel_id": "1170692781216378960",
@@ -135,6 +144,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1497616386355232930",
+      "channel_id": "1131839817982947429",
+      "content": "每次你出現的速度都讓我覺得你其實一直在偷看",
+      "author": "xingxiu_0209",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497614267547914340",
+      "channel_id": "1300659603993923644",
+      "content": "<@261839706541522954>",
+      "author": "iamminhphuc",
+      "reactions": 4,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
       "id": "1497578796482691083",
       "channel_id": "1170692781216378960",
       "content": "i can check something, but i don't feel like mating right now, sorry lens",
@@ -175,6 +200,22 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1497607276502974498",
+      "channel_id": "1131839817982947429",
+      "content": "我想靠賽印1費",
+      "author": "theal8893",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497607625028665374",
+      "channel_id": "1131839817982947429",
+      "content": "神王在某一轮5金活动直接抽出3张的我<:24_Clown:1468259444423921871>",
+      "author": "cs001092",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1497606371401662525",
       "channel_id": "1170692781216378960",
       "content": "",
@@ -205,46 +246,6 @@
       "author": "_venush",
       "reactions": 3,
       "channel": "🔸general-chat"
-    },
-    {
-      "id": "1497580022750249101",
-      "channel_id": "1497580022750249101",
-      "content": "這個造成中毒或觸發中毒就提高回合結束的護盾\n戒備吃不到這個加成\n他沒有寫只提高基礎護盾\n我堅信這是bug",
-      "author": "water_heart",
-      "reactions": 3,
-      "channel": "阿格里帕最終法則相關"
-    },
-    {
-      "id": "1497574102985216030",
-      "channel_id": "1170692781216378960",
-      "content": "I just started this game 5 days ago nd i still dont get the gacha system is this",
-      "author": "wishfuiwinter",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497548742314819604",
-      "channel_id": "1170692781216378960",
-      "content": "hope this helps",
-      "author": "fibrinogen",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497555718381895690",
-      "channel_id": "1170692781216378960",
-      "content": "is this miryam's wheel ????",
-      "author": "boppyboi",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497559659748397198",
-      "channel_id": "1170692781216378960",
-      "content": "i want them to introduce w6 instead tbh",
-      "author": "fibrinogen",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
