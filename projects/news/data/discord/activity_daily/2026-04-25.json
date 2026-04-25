@@ -1,31 +1,35 @@
 {
   "date": "2026-04-25",
-  "messages": 13111,
+  "messages": 14314,
   "unique_authors": 123,
-  "reactions_total": 959,
-  "attachments": 645,
+  "reactions_total": 1057,
+  "attachments": 709,
   "channel_activity": {
-    "🔸綜合討論": 2155,
-    "🔸morimens-game-chat": 5974,
-    "🔸剧情交流": 38,
+    "🔸綜合討論": 2426,
+    "🔸morimens-game-chat": 6483,
+    "🔸剧情交流": 77,
+    "🔸русский-канал": 679,
+    "🔸phòng-chat-tiếng-việt": 722,
+    "🔸canal-español": 86,
+    "🔸canal-português": 358,
+    "🔸traphase": 419,
+    "🔸team-building": 251,
+    "🔸general-chat": 1455,
+    "🔸game-question": 775,
+    "🔸机器人命令┊bot-commands": 23,
+    "【鲨粉】贴贴": 2,
+    "堆图ing": 2,
+    "建个图楼": 2,
+    "熔朵 數值錯誤": 3,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 18,
     "🔸课间休息闲聊": 13,
     "🔸한국어-채팅방": 9,
-    "🔸русский-канал": 634,
-    "🔸phòng-chat-tiếng-việt": 686,
-    "🔸canal-español": 82,
     "🔸ห้องสนทนาภาษาไทย": 62,
-    "🔸traphase": 417,
-    "🔸team-building": 214,
-    "🔸general-chat": 1242,
     "🔸邀请码互助┊swap-invitation-codes": 5,
-    "🔸game-question": 743,
     "打算開一個圖樓可能圖之後就丟這裡了": 27,
     "Vortice keeps disappearing": 1,
-    "Can we change PvP seasonal rewards condition to *participate* instead?": 16,
     "【English Translation】Opinions Collection": 3,
     "🔸晒卡分享": 3,
-    "🔸canal-português": 356,
-    "🔸机器人命令┊bot-commands": 20,
     "Inquiry about the home-screen music": 3,
     "Been playing for a week now and kinda wanna know where I could go on from here": 3,
     "🔸ruang-obrolan-indonesia": 155,
@@ -62,12 +66,12 @@
     "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！": 1,
     "1497468287527817236": 1,
     "Tawil :true:": 4,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
-    "堆图ing": 1
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4
   },
   "hourly_activity": {
+    "16": 954,
+    "17": 658,
     "15": 1036,
-    "16": 409,
     "14": 937,
     "13": 849,
     "12": 962,
@@ -85,11 +89,18 @@
     "0": 807
   },
   "message_types": {
-    "0": 667,
-    "19": 323,
-    "23": 1
+    "0": 861,
+    "19": 342
   },
   "top_reacted_messages": [
+    {
+      "id": "1497639548199370903",
+      "channel_id": "1170692781216378960",
+      "content": "This is legit my new favorite team. Just buzzsawing through Act 2 HMs so far.",
+      "author": "sophiechoice",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497609989597171752",
       "channel_id": "1131839817982947429",
@@ -145,6 +156,14 @@
       "author": "craux.",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497641156144660661",
+      "channel_id": "1497641156144660661",
+      "content": "⚠️戈利亚×凯刻斯cp向⚠️\n⚠️Goliath（Top）×Caecus（Bottom）⚠️\n\n约稿的时候画师画的赠图，好萌\n\n仅为约稿展示，以防万一有雷的我标",
+      "author": "_kokawa_",
+      "reactions": 4,
+      "channel": "【鲨粉】贴贴"
     },
     {
       "id": "1497624599901376594",
@@ -211,44 +230,28 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1497626225684779059",
+      "id": "1497636902013243431",
       "channel_id": "1170692781216378960",
-      "content": "he just utters them so confidently I can't help but believe everything he says",
-      "author": "ahmedamr30",
+      "content": "horla doesnt have a 4 step pursuit",
+      "author": "khykken",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497623297846804500",
+      "id": "1497636962750824601",
+      "channel_id": "1173463482503536711",
+      "content": "有些品種的蜘蛛do完我記得會把公的吃掉當儲備熱量喔🤓☝️",
+      "author": "ass191044",
+      "reactions": 3,
+      "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1497643247860846774",
       "channel_id": "1400750050208125010",
-      "content": "Doorstain 🥀",
-      "author": "not_arachne",
+      "content": "Got E1 Gdoll",
+      "author": "alan_budd2",
       "reactions": 3,
       "channel": "🔸general-chat"
-    },
-    {
-      "id": "1497623792120500416",
-      "channel_id": "1400750050208125010",
-      "content": "Doraemon",
-      "author": "bruhlucifer",
-      "reactions": 3,
-      "channel": "🔸general-chat"
-    },
-    {
-      "id": "1497607276502974498",
-      "channel_id": "1131839817982947429",
-      "content": "我想靠賽印1費",
-      "author": "theal8893",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497607625028665374",
-      "channel_id": "1131839817982947429",
-      "content": "神王在某一轮5金活动直接抽出3张的我<:24_Clown:1468259444423921871>",
-      "author": "cs001092",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
     }
   ]
 }
