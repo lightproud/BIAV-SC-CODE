@@ -1,6 +1,6 @@
 # 银芯启动快照 / BIAV-SC Boot Snapshot
 
-> 最后更新：2026-04-13 by boot_snapshot.py (auto-generated)
+> 最后更新：2026-04-25 by boot_snapshot.py (auto-generated)
 > 新会话读完此文件即可就绪，无需逐个加载 memory 文件。
 > 完整定义见 `BIAV-SC.md`，本文件是压缩启动包。
 
