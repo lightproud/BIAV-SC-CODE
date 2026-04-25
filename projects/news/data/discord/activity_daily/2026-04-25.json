@@ -1,22 +1,29 @@
 {
   "date": "2026-04-25",
-  "messages": 6851,
+  "messages": 7662,
   "unique_authors": 123,
-  "reactions_total": 412,
-  "attachments": 351,
+  "reactions_total": 478,
+  "attachments": 384,
   "channel_activity": {
-    "🔸綜合討論": 892,
-    "🔸morimens-game-chat": 3896,
-    "🔸剧情交流": 12,
-    "🔸русский-канал": 37,
-    "🔸phòng-chat-tiếng-việt": 245,
-    "🔸ruang-obrolan-indonesia": 102,
+    "🔸綜合討論": 1027,
+    "🔸morimens-game-chat": 4100,
+    "🔸剧情交流": 13,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 56,
+    "🔸phòng-chat-tiếng-việt": 372,
+    "🔸canal-español": 15,
+    "🔸canal-português": 328,
+    "🔸ruang-obrolan-indonesia": 111,
+    "🔸lore-chat": 95,
+    "🔸team-building": 152,
+    "🔸general-chat": 500,
+    "🔸邀请码互助┊swap-invitation-codes": 3,
+    "🔸game-question": 427,
+    "莉莉專造失效": 1,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 3,
+    "ryker doodle": 3,
     "🔸ห้องสนทนาภาษาไทย": 43,
     "🔸traphase": 292,
-    "🔸lore-chat": 84,
-    "🔸team-building": 151,
-    "🔸general-chat": 274,
-    "🔸game-question": 366,
     "🔸机器人命令┊bot-commands": 14,
     "Arc2 Chapter 2 Gimmick Doesn't Work with S Ultra Space Cards": 1,
     "✅「已解决」總算力消耗是負值": 1,
@@ -25,15 +32,12 @@
     "Suggestion for teambuilding and resource management": 3,
     "🔸한국어-채팅방": 1,
     "🔸课间休息闲聊": 7,
-    "🔸canal-español": 13,
     "Vortice pursuit animation": 6,
     "Question about Arachnes E1 scaling calcs": 5,
     "PVE players don't want Traphase": 18,
     "萌新求配队和抽卡建议": 20,
     "Looking to pull Standard-- should I be doing Wheels or Characters?": 3,
     "🔸阵容构建": 9,
-    "🔸canal-português": 321,
-    "🔸邀请码互助┊swap-invitation-codes": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "关于杭州CP32": 2,
     "这什么情况": 4,
@@ -43,15 +47,15 @@
     "3星期萌新請教融災角色與配隊": 1,
     "1497468287527817236": 1,
     "Inquiry about the home-screen music": 1,
-    "Can we change PvP seasonal rewards condition to *participate* instead?": 1,
     "Tawil :true:": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
     "堆图ing": 1,
     "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
+    "9": 839,
+    "10": 553,
     "8": 513,
-    "9": 581,
     "7": 681,
     "6": 681,
     "4": 939,
@@ -62,8 +66,8 @@
     "0": 807
   },
   "message_types": {
-    "0": 530,
-    "19": 224
+    "0": 594,
+    "19": 217
   },
   "top_reacted_messages": [
     {
@@ -147,6 +151,62 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1497537197849448590",
+      "channel_id": "1131839817982947429",
+      "content": "<:proud1:1356053120651755641> <:Ramona_love:1459077541829546007> <:hello:1356053",
+      "author": "annabelle0868",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497539019523751987",
+      "channel_id": "1170692781216378960",
+      "content": "colour-coded and with dumb useless facts <:24_smile:1459073862544130131>",
+      "author": "fishhazardthewizard",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497539094585151599",
+      "channel_id": "1170692781216378960",
+      "content": "(arachne's there now)",
+      "author": "fishhazardthewizard",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497538077923606619",
+      "channel_id": "1300659603993923644",
+      "content": "dữ dằn",
+      "author": "bluehuong",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1497540533487144961",
+      "channel_id": "1300659603993923644",
+      "content": "vào chứng tỏ ngay đi anh",
+      "author": "reu8090",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1497540576483217459",
+      "channel_id": "1300659603993923644",
+      "content": "để nó nói gì cũng đc à <:Helot_slack_off:1459092159465521184>",
+      "author": "reu8090",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1497541714628313142",
+      "channel_id": "1300659603993923644",
+      "content": "cái bonus 500 daily bushit vl",
+      "author": "reu8090",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
       "id": "1497526559148609567",
       "channel_id": "1131839817982947429",
       "content": "把那些材料钱给上报，不然的话",
@@ -167,62 +227,6 @@
       "channel_id": "1170692781216378960",
       "content": "Yeh, that's also less than 38%",
       "author": "sirtealot",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497524935244120114",
-      "channel_id": "1170692781216378960",
-      "content": "i think i can finally start to dzone 😭 😭 😭",
-      "author": "boppyboi",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497527287011348654",
-      "channel_id": "1170692781216378960",
-      "content": "Also I'm starting to like Deus Ex Machina more, why click the end turn button wh",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497522854940377128",
-      "channel_id": "1300659603993923644",
-      "content": "ko nhầm đâu thầy \ntôi nhớ từng cái tên của thgđb này",
-      "author": "corner_corn",
-      "reactions": 2,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1497523196524499035",
-      "channel_id": "1300659603993923644",
-      "content": "",
-      "author": "bui4nh7u4n",
-      "reactions": 2,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1497522610047815832",
-      "channel_id": "1400750050208125010",
-      "content": "https://tenor.com/view/hamster-meme-gif-23587927",
-      "author": "7w2e",
-      "reactions": 2,
-      "channel": "🔸general-chat"
-    },
-    {
-      "id": "1497513200260747345",
-      "channel_id": "1131839817982947429",
-      "content": "~~轨道炮打浮游生物~~",
-      "author": "kemomimi_",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497510989837369446",
-      "channel_id": "1170692781216378960",
-      "content": "don’t worry I already see people downloading Morimens bc of the ad",
-      "author": "_venush",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
     }
