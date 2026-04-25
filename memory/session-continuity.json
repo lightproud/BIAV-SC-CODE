@@ -1,13 +1,13 @@
 {
   "last_session": {
-    "id": "25de4e5f",
-    "timestamp": "2026-04-21T14:29:50.241000+00:00",
-    "duration_minutes": 1250.8,
+    "id": "2a514461",
+    "timestamp": "2026-04-25T14:57:18.006000+00:00",
+    "duration_minutes": 7038.3,
     "branch": "claude/project-strategy-review-1AH5Z",
     "topics": [
-      "Phase2",
+      "银芯",
       "BPT",
-      "银芯"
+      "索引"
     ],
     "decisions": [
       "绝对 `projects/news/scripts/...`"
@@ -32,6 +32,38 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "25de4e5f",
+      "timestamp": "2026-04-21T14:29:50.241000+00:00",
+      "duration_minutes": 1250.8,
+      "branch": "claude/project-strategy-review-1AH5Z",
+      "topics": [
+        "Phase2",
+        "BPT",
+        "银芯"
+      ],
+      "decisions": [
+        "绝对 `projects/news/scripts/...`"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
+        "/home/user/brain-in-a-vat/assets/index.md",
+        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
+        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
+        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
+        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
+        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
+        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "853d7dce",
       "timestamp": "2026-04-21T14:13:52.042000+00:00",
@@ -275,47 +307,32 @@
         "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "145e1ed4",
-      "timestamp": "2026-04-19T18:24:29.914000+00:00",
-      "duration_minutes": 39.8,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "Phase1",
-        "Phase2",
-        "记忆宫殿",
-        "Wiki"
-      ],
-      "decisions": [],
-      "files_changed": [],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 4.66,
-      "Phase2": 4.57,
-      "BPT": 3.38,
-      "Phase1": 1.21,
-      "记忆宫殿": 1.21,
-      "Wiki": 1.21,
-      "黑池": 0.34
+      "银芯": 4.73,
+      "BPT": 3.7,
+      "Phase2": 3.66,
+      "索引": 1.0,
+      "Phase1": 0.97,
+      "记忆宫殿": 0.97,
+      "Wiki": 0.97,
+      "黑池": 0.27
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
       "/home/user/brain-in-a-vat/assets/index.md",
-      "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-      "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-      "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-      "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-      "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
       "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
       "/home/user/brain-in-a-vat/memory/decisions.md",
-      "/home/user/brain-in-a-vat/memory/project-status.md"
+      "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+      "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+      "/home/user/brain-in-a-vat/memory/project-status.md",
+      "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+      "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
+      "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md"
     ],
-    "total_sessions": 77
+    "total_sessions": 78
   },
-  "updated_at": "2026-04-21T14:33:20.014886+00:00"
+  "updated_at": "2026-04-25T15:01:12.513399+00:00"
 }
