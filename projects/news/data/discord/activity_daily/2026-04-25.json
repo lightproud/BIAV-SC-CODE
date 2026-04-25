@@ -1,31 +1,36 @@
 {
   "date": "2026-04-25",
-  "messages": 14314,
+  "messages": 15660,
   "unique_authors": 123,
-  "reactions_total": 1057,
-  "attachments": 709,
+  "reactions_total": 1171,
+  "attachments": 756,
   "channel_activity": {
-    "🔸綜合討論": 2426,
-    "🔸morimens-game-chat": 6483,
+    "🔸綜合討論": 2692,
+    "🔸morimens-game-chat": 7042,
+    "🔸相位对弈": 1,
+    "🔸русский-канал": 684,
+    "🔸phòng-chat-tiếng-việt": 884,
+    "🔸canal-español": 92,
+    "🔸traphase": 459,
+    "🔸lore-chat": 101,
+    "🔸team-building": 413,
+    "🔸general-chat": 1465,
+    "🔸邀请码互助┊swap-invitation-codes": 6,
+    "🔸game-question": 895,
+    "🔸机器人命令┊bot-commands": 26,
+    "建个图楼": 4,
+    "Cards from S Ultra Space Deals Less Damage": 4,
+    "Reality Verges": 4,
+    "doreposting / unserious doodles": 2,
     "🔸剧情交流": 77,
-    "🔸русский-канал": 679,
-    "🔸phòng-chat-tiếng-việt": 722,
-    "🔸canal-español": 86,
     "🔸canal-português": 358,
-    "🔸traphase": 419,
-    "🔸team-building": 251,
-    "🔸general-chat": 1455,
-    "🔸game-question": 775,
-    "🔸机器人命令┊bot-commands": 23,
     "【鲨粉】贴贴": 2,
     "堆图ing": 2,
-    "建个图楼": 2,
     "熔朵 數值錯誤": 3,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 18,
     "🔸课间休息闲聊": 13,
     "🔸한국어-채팅방": 9,
     "🔸ห้องสนทนาภาษาไทย": 62,
-    "🔸邀请码互助┊swap-invitation-codes": 5,
     "打算開一個圖樓可能圖之後就丟這裡了": 27,
     "Vortice keeps disappearing": 1,
     "【English Translation】Opinions Collection": 3,
@@ -35,17 +40,13 @@
     "🔸ruang-obrolan-indonesia": 155,
     "unsure on how to progress the story levels": 22,
     "建个随笔楼": 2,
-    "Cards from S Ultra Space Deals Less Damage": 2,
     "阿格里帕最終法則相關": 2,
     "ryker doodle": 5,
-    "doreposting / unserious doodles": 1,
     "3星期萌新請教融災角色與配隊": 3,
     "萌新求配队和抽卡建议": 25,
     "Any guide on ultra mechanics and Arachne?": 4,
-    "Reality Verges": 3,
     "✅「Answered」Possibilities of Doresain kit rework": 3,
     "🔸阵容构建": 11,
-    "🔸lore-chat": 96,
     "🔸erica-playground": 3,
     "🔸deutscher-chatraum": 1,
     "莉莉專造失效": 1,
@@ -69,8 +70,9 @@
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4
   },
   "hourly_activity": {
+    "17": 1492,
+    "18": 512,
     "16": 954,
-    "17": 658,
     "15": 1036,
     "14": 937,
     "13": 849,
@@ -89,8 +91,9 @@
     "0": 807
   },
   "message_types": {
-    "0": 861,
-    "19": 342
+    "0": 1007,
+    "19": 338,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -124,6 +127,14 @@
       "author": "heikwok",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497656580123136161",
+      "channel_id": "1170692781216378960",
+      "content": "I am not playing Traphase",
+      "author": "good.th",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497566165734526976",
@@ -230,28 +241,20 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1497636902013243431",
+      "id": "1497657358858322130",
       "channel_id": "1170692781216378960",
-      "content": "horla doesnt have a 4 step pursuit",
-      "author": "khykken",
+      "content": "someone backseated my 5 draft matches and i won them all XD",
+      "author": "monchi3524",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497636962750824601",
-      "channel_id": "1173463482503536711",
-      "content": "有些品種的蜘蛛do完我記得會把公的吃掉當儲備熱量喔🤓☝️",
-      "author": "ass191044",
+      "id": "1497662664669790250",
+      "channel_id": "1170692781216378960",
+      "content": "fuck miryam",
+      "author": "princess.goth",
       "reactions": 3,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1497643247860846774",
-      "channel_id": "1400750050208125010",
-      "content": "Got E1 Gdoll",
-      "author": "alan_budd2",
-      "reactions": 3,
-      "channel": "🔸general-chat"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
