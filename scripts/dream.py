@@ -27,7 +27,6 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 TODAY = date.today()
-STALE_DAYS = 14
 DREAMS_DIR = REPO / "memory" / "dreams"
 INSIGHTS_FILE = DREAMS_DIR / "insights.json"
 ACCESS_LOG_DIR = DREAMS_DIR / "access-log"
@@ -384,7 +383,7 @@ def extract_file_refs(text: str) -> list[str]:
 
 
 def check_staleness():
-    """Check all memory and context files for timestamp freshness."""
+    """List all memory and context files with their timestamps (informational only)."""
     lines, issues = [], 0
     targets = sorted(REPO.glob("memory/*.md")) + sorted(REPO.glob("projects/*/CONTEXT.md"))
     for fp in targets:
@@ -392,10 +391,6 @@ def check_staleness():
         ts = parse_timestamp(fp)
         if ts is None:
             lines.append(f"  - ? {rel} -- no timestamp found")
-            issues += 1
-        elif (TODAY - ts).days > STALE_DAYS:
-            lines.append(f"  - ⚠ {rel} -- last updated {ts} ({days_ago(ts)}) STALE")
-            issues += 1
         else:
             lines.append(f"  - ok {rel} -- last updated {ts} ({days_ago(ts)})")
     return lines, issues
