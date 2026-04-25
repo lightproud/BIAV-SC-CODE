@@ -1,23 +1,57 @@
 {
   "last_session": {
-    "id": "a3743d17",
-    "timestamp": "2026-04-25T14:36:34.842000+00:00",
-    "duration_minutes": 18047.5,
-    "branch": "claude/memory-reflection-management-TEfTh",
+    "id": "1eb8894a",
+    "timestamp": "2026-04-25T14:58:57.250000+00:00",
+    "duration_minutes": 18069.9,
+    "branch": "claude/memory-health-fix-Rk4Xp",
     "topics": [
       "BPT",
       "黑池"
     ],
     "decisions": [],
     "files_changed": [
+      "/home/user/brain-in-a-vat/BIAV-SC.md",
       "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/scripts/dream.py",
-      "/home/user/brain-in-a-vat/scripts/memory_search.py",
-      "/home/user/brain-in-a-vat/scripts/memrl.py"
+      "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+      "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+      "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+      "/home/user/brain-in-a-vat/memory/morimens-context.md",
+      "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+      "/home/user/brain-in-a-vat/memory/project-status.md",
+      "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+      "/home/user/brain-in-a-vat/memory/task-wiki-data-audit-2026-04.md",
+      "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/game/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/graphify-ext/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
+      "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "a3743d17",
+      "timestamp": "2026-04-25T14:36:34.842000+00:00",
+      "duration_minutes": 18047.5,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "6bfb5ee6",
       "timestamp": "2026-04-16T14:34:01.896000+00:00",
@@ -161,24 +195,6 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "e45159cd",
-      "timestamp": "2026-04-16T05:18:25.870000+00:00",
-      "duration_minutes": 2071.0,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
@@ -188,9 +204,10 @@
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-      "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
+      "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl",
+      "/home/user/brain-in-a-vat/CLAUDE.md"
     ],
-    "total_sessions": 66
+    "total_sessions": 67
   },
-  "updated_at": "2026-04-25T14:39:52.861018+00:00"
+  "updated_at": "2026-04-25T15:03:23.989405+00:00"
 }
