@@ -1,39 +1,46 @@
 {
   "date": "2026-04-25",
-  "messages": 9417,
+  "messages": 10704,
   "unique_authors": 123,
-  "reactions_total": 662,
-  "attachments": 462,
+  "reactions_total": 795,
+  "attachments": 548,
   "channel_activity": {
-    "🔸綜合討論": 1377,
-    "🔸morimens-game-chat": 4790,
-    "🔸课间休息闲聊": 10,
+    "🔸綜合討論": 1628,
+    "🔸morimens-game-chat": 5185,
+    "🔸剧情交流": 18,
+    "🔸课间休息闲聊": 12,
+    "🔸русский-канал": 626,
+    "🔸phòng-chat-tiếng-việt": 671,
+    "🔸canal-español": 53,
+    "🔸canal-português": 346,
+    "🔸ruang-obrolan-indonesia": 154,
+    "🔸traphase": 361,
+    "🔸team-building": 180,
+    "🔸general-chat": 631,
+    "🔸game-question": 517,
+    "🔸机器人命令┊bot-commands": 16,
+    "建个随笔楼": 2,
+    "打算開一個圖樓可能圖之後就丟這裡了": 2,
+    "Cards from S Ultra Space Deals Less Damage": 2,
+    "阿格里帕最終法則相關": 2,
+    "Inquiry about the home-screen music": 2,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 7,
+    "ryker doodle": 5,
+    "doreposting / unserious doodles": 1,
+    "3星期萌新請教融災角色與配隊": 3,
+    "萌新求配队和抽卡建议": 25,
+    "unsure on how to progress the story levels": 1,
+    "Any guide on ultra mechanics and Arachne?": 4,
     "🔸한국어-채팅방": 2,
-    "🔸русский-канал": 449,
-    "🔸phòng-chat-tiếng-việt": 451,
-    "🔸canal-español": 39,
-    "🔸canal-português": 336,
-    "🔸ruang-obrolan-indonesia": 152,
     "🔸ห้องสนทนาภาษาไทย": 59,
-    "🔸team-building": 170,
-    "🔸general-chat": 594,
     "🔸邀请码互助┊swap-invitation-codes": 4,
-    "🔸game-question": 445,
-    "建个随笔楼": 1,
     "Reality Verges": 3,
-    "Can we change PvP seasonal rewards condition to *participate* instead?": 5,
     "✅「Answered」Possibilities of Doresain kit rework": 3,
-    "3星期萌新請教融災角色與配隊": 2,
-    "萌新求配队和抽卡建议": 22,
     "🔸阵容构建": 11,
     "🔸lore-chat": 96,
     "🔸erica-playground": 3,
-    "ryker doodle": 4,
-    "🔸剧情交流": 13,
     "🔸deutscher-chatraum": 1,
     "莉莉專造失效": 1,
-    "🔸traphase": 292,
-    "🔸机器人命令┊bot-commands": 14,
     "Arc2 Chapter 2 Gimmick Doesn't Work with S Ultra Space Cards": 1,
     "✅「已解决」總算力消耗是負值": 1,
     "日常一鍵領取": 1,
@@ -50,15 +57,15 @@
     "💭「Processing」Bug Radix Sediment when max WoD": 1,
     "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！": 1,
     "1497468287527817236": 1,
-    "Inquiry about the home-screen music": 1,
     "Tawil :true:": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
     "堆图ing": 1,
     "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
+    "12": 962,
+    "13": 824,
     "11": 822,
-    "12": 499,
     "10": 987,
     "9": 839,
     "8": 513,
@@ -72,10 +79,18 @@
     "0": 807
   },
   "message_types": {
-    "0": 587,
-    "19": 264
+    "0": 895,
+    "19": 392
   },
   "top_reacted_messages": [
+    {
+      "id": "1497584635826409542",
+      "channel_id": "1170692781216378960",
+      "content": "<:ramona_tuff_:1441426630420467753>",
+      "author": "annaxxe_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497567927673684031",
       "channel_id": "1131839817982947429",
@@ -117,6 +132,22 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1497578796482691083",
+      "channel_id": "1170692781216378960",
+      "content": "i can check something, but i don't feel like mating right now, sorry lens",
+      "author": "arandomflamev2",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497586764255334400",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "not_blueberry",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497556992275779655",
       "channel_id": "1131839817982947429",
       "content": "我感覺用起來差不多",
@@ -139,6 +170,38 @@
       "author": "water_heart",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497595247755002008",
+      "channel_id": "1170692781216378960",
+      "content": "Doorstain famous S tier DPS <:24_Clown:1468259444423921871> <:ramona_tuff_:14414",
+      "author": "megidola.",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497581664161759345",
+      "channel_id": "1300659580446969918",
+      "content": "я вот тоже думаю что это благо а не пакость",
+      "author": "chiedgaf",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1497585246600827010",
+      "channel_id": "1400750050208125010",
+      "content": "<@523084324724146193> this is so peak",
+      "author": "_venush",
+      "reactions": 3,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1497580022750249101",
+      "channel_id": "1497580022750249101",
+      "content": "這個造成中毒或觸發中毒就提高回合結束的護盾\n戒備吃不到這個加成\n他沒有寫只提高基礎護盾\n我堅信這是bug",
+      "author": "water_heart",
+      "reactions": 3,
+      "channel": "阿格里帕最終法則相關"
     },
     {
       "id": "1497574102985216030",
@@ -178,62 +241,6 @@
       "content": "дум сбрасывается когда в другую фазу уходят?",
       "author": "reaver2421",
       "reactions": 3,
-      "channel": "🔸русский-канал"
-    },
-    {
-      "id": "1497523307082153996",
-      "channel_id": "1433513650299076780",
-      "content": "<@1035169514620452934> You brought me luck my friend.. 2 days ago we were talkin",
-      "author": "spruzzetto",
-      "reactions": 3,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1497510304303550576",
-      "channel_id": "1170692781216378960",
-      "content": "the numbers are real bc it's playing as an ad 😂 i got the ad too earlier today",
-      "author": "fishhazardthewizard",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497502293556203560",
-      "channel_id": "1170692781216378960",
-      "content": "ch5 resonance is auto propaganda",
-      "author": "zier.0",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497457811360059422",
-      "channel_id": "1170692781216378960",
-      "content": "piss in my mouth",
-      "author": "cqteiie",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497433676512890930",
-      "channel_id": "1170692781216378960",
-      "content": "Both way works, I suggest just playing and refining the team by vibe as you go o",
-      "author": "aurora3981",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497564736492011621",
-      "channel_id": "1131839817982947429",
-      "content": "地瓜就真神",
-      "author": "yy42974466",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497560747910238318",
-      "channel_id": "1300659580446969918",
-      "content": "Вывод: не лезь сука в ен чат",
-      "author": "vlaaadiiikkk",
-      "reactions": 2,
       "channel": "🔸русский-канал"
     }
   ]
