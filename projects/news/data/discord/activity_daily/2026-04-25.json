@@ -1,31 +1,36 @@
 {
   "date": "2026-04-25",
-  "messages": 16900,
+  "messages": 17648,
   "unique_authors": 123,
-  "reactions_total": 1266,
-  "attachments": 823,
+  "reactions_total": 1377,
+  "attachments": 853,
   "channel_activity": {
-    "🔸綜合討論": 2722,
-    "🔸morimens-game-chat": 7841,
+    "🔸綜合討論": 2737,
+    "🔸morimens-game-chat": 8498,
+    "🔸canal-español": 124,
+    "🔸traphase": 618,
+    "🔸lore-chat": 103,
+    "🔸team-building": 504,
+    "🔸general-chat": 1471,
+    "🔸game-question": 1036,
+    "🔸机器人命令┊bot-commands": 29,
+    "塔薇最终法则/Tawil's Absolute Axiom BUG": 1,
+    ":man_detective: 相位對弈：對戰表情": 1,
+    "doreposting / unserious doodles": 3,
+    "【English Translation】Opinions Collection": 4,
+    "V2.5.0 命运剧院┊Theater of Fate": 1,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 5,
     "🔸剧情交流": 82,
     "🔸相位对弈": 4,
     "🔸русский-канал": 701,
-    "🔸canal-español": 107,
     "🔸canal-português": 376,
-    "🔸traphase": 614,
-    "🔸team-building": 495,
-    "🔸general-chat": 1469,
-    "🔸game-question": 1001,
-    "🔸机器人命令┊bot-commands": 28,
     "【鲨粉】贴贴": 3,
     "🔸한국어-채팅방": 10,
     "🔸phòng-chat-tiếng-việt": 886,
-    "🔸lore-chat": 101,
     "🔸邀请码互助┊swap-invitation-codes": 6,
     "建个图楼": 4,
     "Cards from S Ultra Space Deals Less Damage": 4,
     "Reality Verges": 4,
-    "doreposting / unserious doodles": 2,
     "堆图ing": 2,
     "熔朵 數值錯誤": 3,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 18,
@@ -33,7 +38,6 @@
     "🔸ห้องสนทนาภาษาไทย": 62,
     "打算開一個圖樓可能圖之後就丟這裡了": 27,
     "Vortice keeps disappearing": 1,
-    "【English Translation】Opinions Collection": 3,
     "🔸晒卡分享": 3,
     "Inquiry about the home-screen music": 3,
     "Been playing for a week now and kinda wanna know where I could go on from here": 3,
@@ -66,12 +70,12 @@
     "💭「Processing」Bug Radix Sediment when max WoD": 1,
     "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！": 1,
     "1497468287527817236": 1,
-    "Tawil :true:": 4,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4
+    "Tawil :true:": 4
   },
   "hourly_activity": {
+    "20": 714,
+    "21": 358,
     "19": 541,
-    "20": 324,
     "18": 887,
     "17": 1492,
     "16": 954,
@@ -93,8 +97,9 @@
     "0": 807
   },
   "message_types": {
-    "0": 327,
-    "19": 162
+    "19": 303,
+    "0": 444,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -112,6 +117,14 @@
       "author": "mezen4181",
       "reactions": 8,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497705698606317812",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497584635826409542",
@@ -248,14 +261,6 @@
       "author": "water_heart",
       "reactions": 4,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497677349553176716",
-      "channel_id": "1170692781216378960",
-      "content": "any man below 5'4 is put on estrogen, men above will be set nto 1 of the followi",
-      "author": "cqteiie",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
