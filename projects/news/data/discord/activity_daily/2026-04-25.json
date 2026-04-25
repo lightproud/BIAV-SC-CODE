@@ -1,38 +1,147 @@
 {
   "date": "2026-04-25",
-  "messages": 900,
-  "unique_authors": 72,
-  "reactions_total": 56,
-  "attachments": 49,
+  "messages": 2691,
+  "unique_authors": 123,
+  "reactions_total": 175,
+  "attachments": 144,
   "channel_activity": {
-    "🔸綜合討論": 5,
-    "🔸morimens-game-chat": 492,
-    "🔸русский-канал": 19,
-    "🔸phòng-chat-tiếng-việt": 1,
-    "🔸canal-português": 291,
-    "🔸ruang-obrolan-indonesia": 15,
-    "🔸ห้องสนทนาภาษาไทย": 4,
-    "🔸team-building": 16,
-    "🔸general-chat": 8,
+    "🔸綜合討論": 112,
+    "🔸阵容构建": 6,
+    "🔸morimens-game-chat": 1939,
+    "🔸课间休息闲聊": 5,
+    "🔸русский-канал": 22,
+    "🔸phòng-chat-tiếng-việt": 18,
+    "🔸canal-español": 5,
+    "🔸canal-português": 318,
+    "🔸ruang-obrolan-indonesia": 50,
+    "🔸ห้องสนทนาภาษาไทย": 15,
+    "🔸traphase": 13,
+    "🔸lore-chat": 23,
+    "🔸team-building": 30,
+    "🔸general-chat": 38,
+    "🔸game-question": 58,
+    "🔸机器人命令┊bot-commands": 4,
+    "这什么情况": 2,
+    "Inquiry about the home-screen music": 1,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 1,
+    "PVE players don't want Traphase": 9,
+    "Tawil :true:": 4,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
+    "萌新求配队和抽卡建议": 5,
     "🔸邀请码互助┊swap-invitation-codes": 1,
-    "🔸game-question": 36,
-    "🔸机器人命令┊bot-commands": 1,
     "堆图ing": 1,
     "Ridiculous rewards in PVP after 2.5 patch": 1,
     "\"24\" lives matter": 5,
-    "Tawil :true:": 1,
-    "【English Translation】Opinions Collection": 1,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 2
+    "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
-    "0": 807,
-    "1": 93
+    "1": 328,
+    "2": 681,
+    "3": 578,
+    "4": 297,
+    "0": 807
   },
   "message_types": {
-    "19": 299,
-    "0": 601
+    "0": 1177,
+    "19": 614
   },
   "top_reacted_messages": [
+    {
+      "id": "1497428782259245099",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497433676512890930",
+      "channel_id": "1170692781216378960",
+      "content": "Both way works, I suggest just playing and refining the team by vibe as you go o",
+      "author": "aurora3981",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497422176880558182",
+      "channel_id": "1131839874132090890",
+      "content": "乐园帷幕的血条数量对我红还是太不友好了<:dead:1356082627509092372>",
+      "author": "18482683548",
+      "reactions": 2,
+      "channel": "🔸阵容构建"
+    },
+    {
+      "id": "1497414193861623879",
+      "channel_id": "1170692781216378960",
+      "content": "Funny you mention that\nA buddy of mine has been on the same boss fight for the l",
+      "author": "frosthief",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497416818619453564",
+      "channel_id": "1170692781216378960",
+      "content": "yall what are some good partners for aurita (i do not have Corposant or Tulu ;-;",
+      "author": "underplayer5794",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497422445332795402",
+      "channel_id": "1170692781216378960",
+      "content": "FINALYYYY E2 ARACHNEEE",
+      "author": "37_564menhera",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497424550697369680",
+      "channel_id": "1170692781216378960",
+      "content": "eat some delicious food!!!",
+      "author": "arisuu0604",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497427059625168897",
+      "channel_id": "1170692781216378960",
+      "content": "watch this dih in yo mouth",
+      "author": "cqteiie",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497431575124639885",
+      "channel_id": "1170692781216378960",
+      "content": "arachne can do a1 almost by herself",
+      "author": "cornonthemacabre_",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497435403685200002",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "angbak",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497435676247986236",
+      "channel_id": "1170692781216378960",
+      "content": "if she's not +12, that's your problem. not Liz's problem",
+      "author": "sparkling_moose_59074",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497446510269567006",
+      "channel_id": "1170692781216378960",
+      "content": "G tulu 99 miss calls from g Murphy <:Doll_Wait:1468259092459032606>",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497393560394399846",
       "channel_id": "1170692781216378960",
@@ -66,132 +175,36 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497386719841091744",
-      "channel_id": "1170692781216378960",
-      "content": "Omg hello Sophie!",
-      "author": "shagaru0802",
+      "id": "1497420449951256657",
+      "channel_id": "1131839817982947429",
+      "content": "~~不過沒+12玩什麼斷頸~~",
+      "author": "ahuahuahua",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497386723489873960",
-      "channel_id": "1170692781216378960",
-      "content": "Yeah I’m running Arc 2 HM stuff with Wanda, Arachne, Clem and Caecus and loving ",
-      "author": "sophiechoice",
+      "id": "1497426243295907871",
+      "channel_id": "1131839817982947429",
+      "content": "银芯转原液",
+      "author": "akalanden",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497386792016678973",
-      "channel_id": "1170692781216378960",
-      "content": "It's against the 1st ranking btw",
-      "author": "moyashi0672",
+      "id": "1497426728380010526",
+      "channel_id": "1131839817982947429",
+      "content": "那我缺少的源液誰給我補啊",
+      "author": "ahuahuahua",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497386991111901395",
-      "channel_id": "1170692781216378960",
-      "content": "Hi Aurora!",
-      "author": "shagaru0802",
+      "id": "1497446246212964453",
+      "channel_id": "1131839817982947429",
+      "content": "+12之後就不能換了",
+      "author": "ahong0727",
       "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497387100008353883",
-      "channel_id": "1170692781216378960",
-      "content": "I already got lvl 100 on both mode rewards",
-      "author": "moyashi0672",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497387289406341162",
-      "channel_id": "1170692781216378960",
-      "content": "Kade the traphase gatekeeper is back <:Winkle_frustrated:1468257899330539774>",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497387751706988564",
-      "channel_id": "1170692781216378960",
-      "content": "Bug exploit let me skip 80% of the last boss fight in Abyss 2",
-      "author": "moyashi0672",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497389139404914718",
-      "channel_id": "1170692781216378960",
-      "content": "its Đụ Má",
-      "author": "arisuu0604",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497389217016320172",
-      "channel_id": "1170692781216378960",
-      "content": "Liz for arachne should be much better for the poison team.",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497390219060707521",
-      "channel_id": "1170692781216378960",
-      "content": "I would just take out Nymphea and use Liz. But I love ultra so...",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497390619998421032",
-      "channel_id": "1170692781216378960",
-      "content": "did someone say liz",
-      "author": "2ndselna",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497391738090688532",
-      "channel_id": "1170692781216378960",
-      "content": "This is just faint strength down. (AA + 2 3 costs)",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497393081706610692",
-      "channel_id": "1170692781216378960",
-      "content": "everything is mid except for the characters that you play Ellie",
-      "author": "l8989c",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497393578412871811",
-      "channel_id": "1170692781216378960",
-      "content": "so she needs to be at the top",
-      "author": "arkaether",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497393898107179149",
-      "channel_id": "1170692781216378960",
-      "content": "btw in case any spenders are from the usa. if you want to buy the new packs on p",
-      "author": "monchi3524",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497394110527701024",
-      "channel_id": "1170692781216378960",
-      "content": "whales....",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸綜合討論"
     }
   ]
 }
