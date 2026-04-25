@@ -1,31 +1,37 @@
 {
   "date": "2026-04-25",
-  "messages": 8566,
+  "messages": 9417,
   "unique_authors": 123,
-  "reactions_total": 577,
-  "attachments": 434,
+  "reactions_total": 662,
+  "attachments": 462,
   "channel_activity": {
-    "🔸綜合討論": 1140,
+    "🔸綜合討論": 1377,
+    "🔸morimens-game-chat": 4790,
+    "🔸课间休息闲聊": 10,
+    "🔸한국어-채팅방": 2,
+    "🔸русский-канал": 449,
+    "🔸phòng-chat-tiếng-việt": 451,
+    "🔸canal-español": 39,
+    "🔸canal-português": 336,
+    "🔸ruang-obrolan-indonesia": 152,
+    "🔸ห้องสนทนาภาษาไทย": 59,
+    "🔸team-building": 170,
+    "🔸general-chat": 594,
+    "🔸邀请码互助┊swap-invitation-codes": 4,
+    "🔸game-question": 445,
+    "建个随笔楼": 1,
+    "Reality Verges": 3,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 5,
+    "✅「Answered」Possibilities of Doresain kit rework": 3,
+    "3星期萌新請教融災角色與配隊": 2,
+    "萌新求配队和抽卡建议": 22,
     "🔸阵容构建": 11,
-    "🔸morimens-game-chat": 4522,
-    "🔸русский-канал": 270,
-    "🔸phòng-chat-tiếng-việt": 436,
-    "🔸canal-español": 23,
-    "🔸canal-português": 332,
-    "🔸ruang-obrolan-indonesia": 134,
-    "🔸ห้องสนทนาภาษาไทย": 57,
     "🔸lore-chat": 96,
-    "🔸team-building": 158,
-    "🔸general-chat": 514,
-    "🔸game-question": 440,
     "🔸erica-playground": 3,
-    "Reality Verges": 2,
     "ryker doodle": 4,
     "🔸剧情交流": 13,
     "🔸deutscher-chatraum": 1,
-    "🔸邀请码互助┊swap-invitation-codes": 3,
     "莉莉專造失效": 1,
-    "Can we change PvP seasonal rewards condition to *participate* instead?": 3,
     "🔸traphase": 292,
     "🔸机器人命令┊bot-commands": 14,
     "Arc2 Chapter 2 Gimmick Doesn't Work with S Ultra Space Cards": 1,
@@ -33,12 +39,9 @@
     "日常一鍵領取": 1,
     "\"24\" lives matter": 6,
     "Suggestion for teambuilding and resource management": 3,
-    "🔸한국어-채팅방": 1,
-    "🔸课间休息闲聊": 7,
     "Vortice pursuit animation": 6,
     "Question about Arachnes E1 scaling calcs": 5,
     "PVE players don't want Traphase": 18,
-    "萌新求配队和抽卡建议": 20,
     "Looking to pull Standard-- should I be doing Wheels or Characters?": 3,
     "🔸忘却前夜┊morimens-tv": 1,
     "关于杭州CP32": 2,
@@ -46,7 +49,6 @@
     "Ridiculous rewards in PVP after 2.5 patch": 3,
     "💭「Processing」Bug Radix Sediment when max WoD": 1,
     "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！": 1,
-    "3星期萌新請教融災角色與配隊": 1,
     "1497468287527817236": 1,
     "Inquiry about the home-screen music": 1,
     "Tawil :true:": 4,
@@ -55,8 +57,9 @@
     "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
+    "11": 822,
+    "12": 499,
     "10": 987,
-    "11": 470,
     "9": 839,
     "8": 513,
     "7": 681,
@@ -69,10 +72,26 @@
     "0": 807
   },
   "message_types": {
-    "0": 708,
-    "19": 196
+    "0": 587,
+    "19": 264
   },
   "top_reacted_messages": [
+    {
+      "id": "1497567927673684031",
+      "channel_id": "1131839817982947429",
+      "content": "~~放轉轉..~~",
+      "author": "heikwok",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497566165734526976",
+      "channel_id": "1131839817982947429",
+      "content": "但好像還是打不了普朵",
+      "author": "heikwok",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1497528616509116477",
       "channel_id": "1131839817982947429",
@@ -120,6 +139,14 @@
       "author": "water_heart",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497574102985216030",
+      "channel_id": "1170692781216378960",
+      "content": "I just started this game 5 days ago nd i still dont get the gacha system is this",
+      "author": "wishfuiwinter",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497548742314819604",
@@ -194,44 +221,20 @@
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497546007150460968",
-      "channel_id": "1170692781216378960",
-      "content": "story and event",
-      "author": "fibrinogen",
+      "id": "1497564736492011621",
+      "channel_id": "1131839817982947429",
+      "content": "地瓜就真神",
+      "author": "yy42974466",
       "reactions": 2,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497550203907997848",
-      "channel_id": "1170692781216378960",
-      "content": "alva sig",
-      "author": "fibrinogen",
+      "id": "1497560747910238318",
+      "channel_id": "1300659580446969918",
+      "content": "Вывод: не лезь сука в ен чат",
+      "author": "vlaaadiiikkk",
       "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497552902124994681",
-      "channel_id": "1170692781216378960",
-      "content": "Bruh",
-      "author": "not_arachne",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497554579343278121",
-      "channel_id": "1170692781216378960",
-      "content": "i'll just call it a day",
-      "author": "boppyboi",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497555953728618537",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "angbak",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
+      "channel": "🔸русский-канал"
     }
   ]
 }
