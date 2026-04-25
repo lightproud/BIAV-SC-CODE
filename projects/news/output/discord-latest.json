@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-25T18:41:29.122330+00:00",
+  "collected_at": "2026-04-25T19:43:36.275484+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
@@ -8,10 +8,10 @@
       "time": "2026-04-25T00:00:00+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-25)",
-      "summary": "今日 14,314 条消息，123 位活跃用户，1,057 次反应。热门频道：🔸morimens-game-chat(6483)、🔸綜合討論(2426)、🔸general-chat(1455)、🔸game-question(775)、🔸phòng-chat-tiếng-việt(722)",
+      "summary": "今日 15,660 条消息，123 位活跃用户，1,171 次反应。热门频道：🔸morimens-game-chat(7042)、🔸綜合討論(2692)、🔸general-chat(1465)、🔸game-question(895)、🔸phòng-chat-tiếng-việt(884)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 14314
+      "engagement": 15660
     },
     {
       "source": "discord",
@@ -175,6 +175,23 @@
     },
     {
       "source": "discord",
+      "time": "2026-04-25T17:52:33.815000+00:00",
+      "lang": "",
+      "title": "[DC] good.th@🔸morimens-game-chat: I am not playing Traphase",
+      "summary": "I am not playing Traphase\n  └ spooky_penguin_: Your so brave",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497656580123136161",
+      "author": "good.th",
+      "engagement": 17,
+      "metadata": {
+        "reactions": "❤️×2 agree×2 🐳×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
       "time": "2026-04-25T09:06:13.315000+00:00",
       "lang": "",
       "title": "[DC] chinkeeyong@🔸morimens-game-chat: dni if ur a caecus fan!!",
@@ -281,27 +298,6 @@
           "https://cdn.discordapp.com/attachments/1300659603993923644/1497614267250376704/Screenshot_20260425-220147_Facebook.jpg?ex=69ee2979&is=69ecd7f9&hm=f6d27640cc6bc68b3c085b0d350ffe4c5519bd18ad87ec32532605727ca02cd8&"
         ],
         "channel": "🔸phòng-chat-tiếng-việt"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-25T14:33:03.123000+00:00",
-      "lang": "",
-      "title": "[DC] climbkaly@🔸morimens-game-chat: (附件/嵌入)",
-      "summary": "[附件: image.png]\n  └ megidola.: Umm... You know what, at least the comp itself is something KaDe would approve\n  └ tnimreppep: change ogier wod to the sorel event sr wod",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497606371401662525",
-      "author": "climbkaly",
-      "engagement": 14,
-      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497606370894287048/image.png?ex=69ee221f&is=69ecd09f&hm=37308a94af624c543d44c133c904bc9681c99064d2e0dc0e34c6ab0b426dae24&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "Helot_slack_off×3",
-        "reply_count": 2,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1170692781216378960/1497606370894287048/image.png?ex=69ee221f&is=69ecd09f&hm=37308a94af624c543d44c133c904bc9681c99064d2e0dc0e34c6ab0b426dae24&"
-        ],
-        "channel": "🔸morimens-game-chat"
       }
     }
   ]

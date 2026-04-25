@@ -1,11 +1,11 @@
 # 忘却前夜 社区日报 2026-04-26
 
-> 采集时间：2026-04-26 02:41 UTC+8
+> 采集时间：2026-04-26 03:43 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 201
-2. [Bilibili] 沙耶之歌8 — engagement: 104
+1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 224
+2. [Bilibili] 沙耶之歌8 — engagement: 109
 
 ## 总览
 
@@ -15,7 +15,7 @@
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 41 |
-| DCInside | 0（沉默）|
+| DCInside | 44 |
 | Discord | 16 |
 | 抖音 | 0（沉默）|
 | Epic Games Store | 0（沉默）|
@@ -32,7 +32,7 @@
 | Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 16 |
+| Reddit | 17 |
 | Ruliweb | 0（沉默）|
 | Steam | 7 |
 | Steam 论坛 | 0（沉默）|
@@ -55,7 +55,7 @@
 
 ## Discord
 
-今日 14,314 条消息，123 位活跃用户，1,057 次反应。热门频道：🔸morimens-game-chat(6483)、🔸綜合討論(2426)、🔸general-chat(1455)、🔸game-question(775)、🔸phòng-chat-tiếng-việt(722)
+今日 15,660 条消息，123 位活跃用户，1,171 次反应。热门频道：🔸morimens-game-chat(7042)、🔸綜合討論(2692)、🔸general-chat(1465)、🔸game-question(895)、🔸phòng-chat-tiếng-việt(884)
 
 ### 热门话题
 
@@ -85,19 +85,27 @@
 
 ## Bilibili
 
-1. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3281
-2. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3190
-3. ‌ — engagement: 1131
-4. 【忘却前夜】超级大集集集结 — engagement: 1008
-5. 【忘却前夜】超级大集集集结 — engagement: 997
+1. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3347
+2. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3256
+3. ‌ — engagement: 1140
+4. 【忘却前夜】超级大集集集结 — engagement: 1023
+5. 【忘却前夜】超级大集集集结 — engagement: 1012
+
+## DCInside
+
+1. 게임들 밀린 스토리 밀기 왤케 귀찮을까 — engagement: 0
+2. 근데 카제나 &lt; 재밌음? — engagement: 0
+3. 게임이 기대를주는데 큰게 필요없더라 — engagement: 0
+4. 스토리좋다고해서 가챠불완 원칙 깨고 들어갔다가 바로 나온 게임 두개 — engagement: 0
+5. 싱글벙글 선동열의 일본어를 본 일본인들 — engagement: 0
 
 ## Reddit
 
-1. Finally beaten Madness Rail difficulty with zero energy gnos — engagement: 0
-2. Do any of you have any Lovecraft book in your libraries? — engagement: 0
+1. Do any of you have any Lovecraft book in your libraries? — engagement: 0
+2. Finally beaten Madness Rail difficulty with zero energy gnos — engagement: 0
 3. I can't believe it...I love BIAV — engagement: 0
-4. wtf man😫this is bullshit — engagement: 0
-5. 😴 Tulu — engagement: 0
+4. Free Mouchette? — engagement: 0
+5. wtf man😫this is bullshit — engagement: 0
 
 ## StopGame.ru
 
@@ -123,4 +131,4 @@
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, DCInside, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, Google Play, Instagram, Lofter, Naver Cafe, NGA, Note.com, Official, Pixiv, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, taptap_post, Telegram, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微信公众号, 闲鱼, 小红书, 知乎
+App Store, Arca.live, 巴哈姆特, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, Google Play, Instagram, Lofter, Naver Cafe, NGA, Note.com, Official, Pixiv, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, taptap_post, Telegram, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微信公众号, 闲鱼, 小红书, 知乎
