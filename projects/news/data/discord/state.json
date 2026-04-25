@@ -25,7 +25,7 @@
       "last_historical_month": "2026-02"
     },
     "1131839817982947429": {
-      "last_message_id": "1497719901996060692",
+      "last_message_id": "1497739766668595465",
       "name": "🔸綜合討論",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -65,7 +65,7 @@
       "last_historical_month": "2026-02"
     },
     "1170692781216378960": {
-      "last_message_id": "1497724007691321434",
+      "last_message_id": "1497740790183628914",
       "name": "🔸morimens-game-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -203,7 +203,7 @@
       "last_historical_month": "2026-02"
     },
     "1300659580446969918": {
-      "last_message_id": "1497724664846487612",
+      "last_message_id": "1497740502533931173",
       "name": "🔸русский-канал",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -249,7 +249,7 @@
       "last_historical_month": "2026-02"
     },
     "1326453691527594035": {
-      "last_message_id": "1497723342034178209",
+      "last_message_id": "1497730210089406494",
       "name": "🔸traphase",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -483,13 +483,13 @@
       "last_historical_month": "2026-02"
     },
     "1400749543288475770": {
-      "last_message_id": "1497724645065883770",
+      "last_message_id": "1497740862543888434",
       "name": "🔸team-building",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1400750050208125010": {
-      "last_message_id": "1497724734937497691",
+      "last_message_id": "1497740190939349093",
       "name": "🔸general-chat",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -511,13 +511,13 @@
       "last_historical_month": "2026-02"
     },
     "1433513650299076780": {
-      "last_message_id": "1497724496805630123",
+      "last_message_id": "1497740770432516307",
       "name": "🔸game-question",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
     },
     "1435483703114596503": {
-      "last_message_id": "1497468287527817236",
+      "last_message_id": "1497732193332760617",
       "name": "🔸忘却前夜┊morimens-tv",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -549,7 +549,7 @@
       "last_historical_month": "2026-02"
     },
     "1436913827571695898": {
-      "last_message_id": "1497713272110059650",
+      "last_message_id": "1497733731098824956",
       "name": "🔸机器人命令┊bot-commands",
       "last_historical_message_id": "1477455328051200000",
       "last_historical_month": "2026-02"
@@ -1828,7 +1828,7 @@
       "last_message_id": "1497457659941752963"
     },
     "thread:1482997212354187324": {
-      "last_message_id": "1497722681884414193"
+      "last_message_id": "1497732563790463178"
     },
     "thread:1481894447762378813": {
       "last_message_id": "1482633558374875137"
@@ -28929,7 +28929,7 @@
       "last_message_id": "1490699727124041738"
     },
     "thread:1490736830545657957": {
-      "last_message_id": "1497657784651743313"
+      "last_message_id": "1497736834879459470"
     },
     "thread:1490765001693073590": {
       "last_message_id": "1490879718168461544"
@@ -29267,7 +29267,7 @@
       "last_message_id": "1494583982610845696"
     },
     "thread:1493868497812455586": {
-      "last_message_id": "1497698829317701653"
+      "last_message_id": "1497736954555400273"
     },
     "thread:1493977812355514429": {
       "last_message_id": "1493996654574174379"
@@ -30166,12 +30166,15 @@
       "last_message_id": "1497644445154148573"
     },
     "thread:1497724029006778368": {
-      "last_message_id": "1497724029006778368"
+      "last_message_id": "1497731199496622270"
     },
     "thread:1497719376030466069": {
       "last_message_id": "1497720348362408057"
+    },
+    "thread:1497732193332760617": {
+      "last_message_id": "1497732209237430444"
     }
   },
   "historical_month": "2026-02",
-  "last_run": "2026-04-25T23:07:23.905906+00:00"
+  "last_run": "2026-04-25T23:30:58.844128+00:00"
 }
