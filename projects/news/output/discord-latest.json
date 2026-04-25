@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-25T21:33:01.836563+00:00",
+  "collected_at": "2026-04-25T22:31:32.366905+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
@@ -8,10 +8,10 @@
       "time": "2026-04-25T00:00:00+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-25)",
-      "summary": "今日 16,900 条消息，123 位活跃用户，1,266 次反应。热门频道：🔸morimens-game-chat(7841)、🔸綜合討論(2722)、🔸general-chat(1469)、🔸game-question(1001)、🔸phòng-chat-tiếng-việt(886)",
+      "summary": "今日 17,648 条消息，123 位活跃用户，1,377 次反应。热门频道：🔸morimens-game-chat(8498)、🔸綜合討論(2737)、🔸general-chat(1471)、🔸game-question(1036)、🔸phòng-chat-tiếng-việt(886)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 16900
+      "engagement": 17648
     },
     {
       "source": "discord",
@@ -51,6 +51,27 @@
         "attachment_count": 1,
         "attachment_urls": [
           "https://cdn.discordapp.com/attachments/1170692781216378960/1497639547675349164/3F1632D1-CDA2-43A7-9847-6218F3BC90A5.png?ex=69ee4104&is=69ecef84&hm=0cc06a52e96299eab05d2fa8eda042079080daffcd5e1dc2d89c47b83bfffaa4&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-25T21:07:44.574000+00:00",
+      "lang": "",
+      "title": "[DC] legendaryredz@🔸morimens-game-chat: (附件/嵌入)",
+      "summary": "[附件: sanga-vs-corposant.jpg]\n  └ necronomikkon: hence why Sanga reigns supreme\n  └ nofiuwu: is corposant that one enemy that we fight in the newest event node",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497705698606317812",
+      "author": "legendaryredz",
+      "engagement": 26,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497705698341949460/sanga-vs-corposant.jpg?ex=69ee7ea0&is=69ed2d20&hm=27f101db832a53068bc4baa0197a2eb27873712d36b9529a413ac2e51c7ac81a&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "pray×5 agree×1 🔥×1",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497705698341949460/sanga-vs-corposant.jpg?ex=69ee7ea0&is=69ed2d20&hm=27f101db832a53068bc4baa0197a2eb27873712d36b9529a413ac2e51c7ac81a&"
         ],
         "channel": "🔸morimens-game-chat"
       }
@@ -276,27 +297,6 @@
         "reply_count": 3,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-25T18:47:55.563000+00:00",
-      "lang": "",
-      "title": "[DC] megamaws@🔸morimens-game-chat: Wooo I got arachne",
-      "summary": "Wooo I got arachne\n[附件: image0.jpg]\n  └ the_black_butterfly: https://tenor.com/view/azumanga-daioh-azumanga-anime-bravo-applause-gif-17338271",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497670512543793354",
-      "author": "megamaws",
-      "engagement": 15,
-      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497670512149659798/image0.jpg?ex=69ee5ddb&is=69ed0c5b&hm=0fe5b063c77de98eafeb8a7c7d144807bae08066890091004fdb4da458271ee0&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "trexcy300×2 🔥×2",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1170692781216378960/1497670512149659798/image0.jpg?ex=69ee5ddb&is=69ed0c5b&hm=0fe5b063c77de98eafeb8a7c7d144807bae08066890091004fdb4da458271ee0&"
-        ],
         "channel": "🔸morimens-game-chat"
       }
     }
