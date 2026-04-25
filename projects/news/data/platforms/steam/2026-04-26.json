@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-25T17:38:56.661218+00:00",
+  "archived_at": "2026-04-25T18:41:32.795363+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -93,6 +93,21 @@
       "review": "Well... it seems this game is more for the goth and emo people. grey colors, sad looking characters, strange story. Monster Design is also strange. If you mind is on the happy side of life, I don't know why you should play this game.",
       "timestamp_created": 1777065455,
       "playtime_forever": 51
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-25T17:09:42+00:00",
+      "lang": "schinese",
+      "title": "[正面] 非常好忘却前夜，使我时间旋转。",
+      "summary": "非常好忘却前夜，使我时间旋转。",
+      "url": "https://steamcommunity.com/profiles/76561198868090578/recommended/3052450",
+      "author": "76561198868090578",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "非常好忘却前夜，使我时间旋转。",
+      "timestamp_created": 1777136982,
+      "playtime_forever": 347
     }
   ]
 }

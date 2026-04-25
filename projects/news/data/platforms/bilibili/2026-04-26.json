@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-25T17:38:56.661994+00:00",
+  "archived_at": "2026-04-25T18:41:32.796455+00:00",
   "source": "bilibili",
-  "item_count": 41,
+  "item_count": 42,
   "items": [
     {
       "source": "bilibili",
@@ -495,6 +495,24 @@
       "engagement": 106,
       "media_url": "//i1.hdslb.com/bfs/archive/3320c9bc27b3415c6a576f3876b2b62f979303c2.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-25T03:37:35+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌8",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1p1omBjEPE",
+      "author": "黑白魔狼",
+      "engagement": 104,
+      "media_url": "https://i0.hdslb.com/bfs/archive/17e4c3e96e8c3995ba05fbc6c61c4b9b827c39f4.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 104,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 2
+      }
     },
     {
       "source": "bilibili",
