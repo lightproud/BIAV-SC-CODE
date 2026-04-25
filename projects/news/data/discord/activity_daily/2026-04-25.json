@@ -1,20 +1,23 @@
 {
   "date": "2026-04-25",
-  "messages": 5734,
+  "messages": 6097,
   "unique_authors": 123,
-  "reactions_total": 314,
-  "attachments": 270,
+  "reactions_total": 347,
+  "attachments": 295,
   "channel_activity": {
-    "🔸綜合討論": 659,
-    "🔸morimens-game-chat": 3347,
+    "🔸綜合討論": 711,
+    "🔸morimens-game-chat": 3592,
+    "🔸剧情交流": 2,
+    "🔸한국어-채팅방": 1,
+    "🔸phòng-chat-tiếng-việt": 220,
+    "🔸ruang-obrolan-indonesia": 99,
+    "🔸traphase": 287,
+    "🔸lore-chat": 74,
+    "🔸team-building": 100,
+    "🔸general-chat": 167,
+    "🔸game-question": 337,
     "🔸课间休息闲聊": 7,
-    "🔸phòng-chat-tiếng-việt": 214,
     "🔸canal-español": 13,
-    "🔸ruang-obrolan-indonesia": 95,
-    "🔸traphase": 284,
-    "🔸team-building": 94,
-    "🔸general-chat": 148,
-    "🔸game-question": 324,
     "🔸机器人命令┊bot-commands": 12,
     "Vortice pursuit animation": 6,
     "Question about Arachnes E1 scaling calcs": 5,
@@ -25,7 +28,6 @@
     "🔸阵容构建": 9,
     "🔸canal-português": 321,
     "🔸ห้องสนทนาภาษาไทย": 37,
-    "🔸lore-chat": 62,
     "🔸邀请码互助┊swap-invitation-codes": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "关于杭州CP32": 2,
@@ -45,8 +47,9 @@
     "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
+    "8": 340,
+    "7": 681,
     "6": 681,
-    "7": 658,
     "4": 939,
     "5": 1062,
     "1": 328,
@@ -55,9 +58,8 @@
     "0": 807
   },
   "message_types": {
-    "19": 290,
-    "0": 829,
-    "20": 3
+    "0": 266,
+    "19": 97
   },
   "top_reacted_messages": [
     {
@@ -85,6 +87,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1497510304303550576",
+      "channel_id": "1170692781216378960",
+      "content": "the numbers are real bc it's playing as an ad 😂 i got the ad too earlier today",
+      "author": "fishhazardthewizard",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497502293556203560",
       "channel_id": "1170692781216378960",
       "content": "ch5 resonance is auto propaganda",
@@ -106,6 +116,38 @@
       "content": "Both way works, I suggest just playing and refining the team by vibe as you go o",
       "author": "aurora3981",
       "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497513200260747345",
+      "channel_id": "1131839817982947429",
+      "content": "~~轨道炮打浮游生物~~",
+      "author": "kemomimi_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497510989837369446",
+      "channel_id": "1170692781216378960",
+      "content": "don’t worry I already see people downloading Morimens bc of the ad",
+      "author": "_venush",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497511058946916422",
+      "channel_id": "1170692781216378960",
+      "content": "i trust venush friend slightly more than i trust randos",
+      "author": "fishhazardthewizard",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497512116993790023",
+      "channel_id": "1170692781216378960",
+      "content": "and I still disappointed",
+      "author": "_venush",
+      "reactions": 2,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -179,46 +221,6 @@
       "author": "kurotamavii",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497467140129816667",
-      "channel_id": "1170692781216378960",
-      "content": "it's called\n\nVictimweight",
-      "author": "kurotamavii",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497471433574715392",
-      "channel_id": "1170692781216378960",
-      "content": "loserdot.",
-      "author": "cqteiie",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497477101438107648",
-      "channel_id": "1170692781216378960",
-      "content": "Use my guide when playing p dive",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497471192901226526",
-      "channel_id": "1326453763355185215",
-      "content": "its a luxury product because everyone who didnt have it is dead",
-      "author": "nikolazuli",
-      "reactions": 2,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1497471947791925450",
-      "channel_id": "1326453763355185215",
-      "content": "yes but my poison team is also all lv60",
-      "author": "polkarain",
-      "reactions": 2,
-      "channel": "🔸lore-chat"
     }
   ]
 }
