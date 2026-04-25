@@ -16,6 +16,7 @@ collect_global.py — 全球社区采集桥接脚本
 """
 
 import json
+import os
 import sys
 import logging
 from datetime import datetime, timezone, timedelta
