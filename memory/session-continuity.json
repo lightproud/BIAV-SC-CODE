@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "4656679d",
-    "timestamp": "2026-04-25T16:30:03.578000+00:00",
-    "duration_minutes": 14349.0,
+    "id": "6c40ec1c",
+    "timestamp": "2026-04-25T16:37:48.081000+00:00",
+    "duration_minutes": 14356.7,
     "branch": "claude/add-claude-documentation-X4zRQ",
     "topics": [],
     "decisions": [],
@@ -13,6 +13,19 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "4656679d",
+      "timestamp": "2026-04-25T16:30:03.578000+00:00",
+      "duration_minutes": 14349.0,
+      "branch": "claude/add-claude-documentation-X4zRQ",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/projects/wiki/package.json"
+      ],
+      "open_items": []
+    },
     {
       "id": "f7cdb81f",
       "timestamp": "2026-04-25T15:16:51.445000+00:00",
@@ -198,45 +211,15 @@
         "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/vcs_context.rs"
       ],
       "open_items": []
-    },
-    {
-      "id": "9aa3f4b6",
-      "timestamp": "2026-04-14T06:29:48.487000+00:00",
-      "duration_minutes": 390.0,
-      "branch": "claude/bpt-next-bootstrap-Q41x3",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/settings.json",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
-        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/commands/src/lib.rs",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/identity/Cargo.toml",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/identity/src/lib.rs",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/Cargo.toml",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/conversation.rs",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/lib.rs",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/prompt.rs",
-        "/home/user/brain-in-a-vat/projects/bpt-next/rust/crates/runtime/src/vcs_context.rs"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {},
     "hot_files": [
-      "/home/user/brain-in-a-vat/.gitignore"
+      "/home/user/brain-in-a-vat/.gitignore",
+      "/home/user/brain-in-a-vat/projects/wiki/package.json"
     ],
-    "total_sessions": 40
+    "total_sessions": 41
   },
-  "updated_at": "2026-04-25T16:34:43.958815+00:00"
+  "updated_at": "2026-04-25T16:41:32.757935+00:00"
 }
