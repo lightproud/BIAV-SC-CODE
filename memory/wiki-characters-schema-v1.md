@@ -1,12 +1,13 @@
-# Wiki characters.json Schema v1.0
+# Wiki characters.json Schema v1.0.1
 
-> 最后更新：2026-04-20 by 主控台（艾瑞卡会话，守密人「全部采纳」裁决 6 项遗留问题后锁定 v1.0）
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话，批 1 自举管线验证暴露两处工程缺陷，v1.0.1 热修复）
 >
 > 状态：**正式锁定**。Phase 2 W1 自举会话以此版本为输入。
 >
 > 版本沿革：
 > - v0.1（2026-04-20）：主控台 P2W1D1/P2W1D1-retry 子代理两次 Write timeout 后由主控台直接起草
-> - **v1.0（2026-04-20）**：守密人裁决 6 项遗留问题，全部采纳艾瑞卡建议。详见第五节「裁决记录」
+> - v1.0（2026-04-20）：守密人裁决 6 项遗留问题，全部采纳艾瑞卡建议。详见第五节「裁决记录」
+> - v1.0.1（2026-04-20）：批 1（24 角色）管线验证暴露 JSON Schema 语法问题，热修复三处（不改变守密人裁决精神）：(a) id pattern 从 `^15[0-9]{3}$` 放宽至 `^[0-9]{5,6}$` 覆盖 CoC/彩蛋/联动 ID；(b) `realm`/`role` 外层 type/enum 补 null，非 stub 收紧约束下沉至 `allOf.else.properties`；(c) `background_story` 从 `oneOf` 改 `anyOf`，修正 `"pending"` string 与 type:string 的重叠互斥问题
 >
 > 上游依据：
 > - `memory/wiki-phase-2-gap-inventory.md`（B3 权威清单：72 角色、29/29 命轮全缺、立绘/背景故事/技能引导缺口）
@@ -45,7 +46,11 @@
           }
         },
         "else": {
-          "required": ["id", "slug", "name_zh", "realm", "role", "status", "source", "last_verified"]
+          "required": ["id", "slug", "name_zh", "realm", "role", "status", "source", "last_verified"],
+          "properties": {
+            "realm": { "type": "string", "enum": ["aequor", "caro", "ultra"] },
+            "role": { "type": "string", "enum": ["attack", "sub_attack", "defense", "support", "chorus"] }
+          }
         }
       }
     ],
@@ -75,13 +80,13 @@
       },
       "title_zh": { "type": ["string", "null"] },
       "realm": {
-        "type": "string",
-        "enum": ["aequor", "caro", "ultra"],
-        "description": "界域 ID 标准化（决策 2026-03）"
+        "type": ["string", "null"],
+        "enum": ["aequor", "caro", "ultra", null],
+        "description": "界域 ID 标准化（决策 2026-03）。外层放宽至可接受 null；非 stub 状态下由顶层 allOf.else 分支收紧为必填且不可 null。"
       },
       "role": {
-        "type": "string",
-        "enum": ["attack", "sub_attack", "defense", "support", "chorus"],
+        "type": ["string", "null"],
+        "enum": ["attack", "sub_attack", "defense", "support", "chorus", null],
         "description": "职能标准化（决策 2026-03）"
       },
       "gender": {
@@ -166,12 +171,12 @@
         "description": "命轮缺口：B3 揭露 29/29 全缺，Phase 2 W3-W4 填充"
       },
       "background_story": {
-        "oneOf": [
+        "anyOf": [
           { "type": "null" },
           { "const": "pending" },
           { "type": "string" }
         ],
-        "description": "背景故事缺口：Phase 2 W3 填充"
+        "description": "背景故事缺口：Phase 2 W3 填充。anyOf 而非 oneOf，因 `pending` string 字面与 `type: string` 会重叠违反 oneOf 互斥性。"
       },
       "portraits": {
         "type": "object",
