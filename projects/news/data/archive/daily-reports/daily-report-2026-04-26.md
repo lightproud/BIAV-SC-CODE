@@ -1,11 +1,11 @@
 # 忘却前夜 社区日报 2026-04-26
 
-> 采集时间：2026-04-26 03:43 UTC+8
+> 采集时间：2026-04-26 04:32 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 224
-2. [Bilibili] 沙耶之歌8 — engagement: 109
+1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 237
+2. [Bilibili] 沙耶之歌8 — engagement: 113
 
 ## 总览
 
@@ -15,7 +15,7 @@
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 41 |
-| DCInside | 44 |
+| DCInside | 76 |
 | Discord | 16 |
 | 抖音 | 0（沉默）|
 | Epic Games Store | 0（沉默）|
@@ -29,10 +29,10 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 0（沉默）|
-| Pixiv | 0（沉默）|
+| Pixiv | 1 |
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 17 |
+| Reddit | 34 |
 | Ruliweb | 0（沉默）|
 | Steam | 7 |
 | Steam 论坛 | 0（沉默）|
@@ -55,7 +55,7 @@
 
 ## Discord
 
-今日 15,660 条消息，123 位活跃用户，1,171 次反应。热门频道：🔸morimens-game-chat(7042)、🔸綜合討論(2692)、🔸general-chat(1465)、🔸game-question(895)、🔸phòng-chat-tiếng-việt(884)
+今日 16,411 条消息，123 位活跃用户，1,234 次反应。热门频道：🔸morimens-game-chat(7503)、🔸綜合討論(2708)、🔸general-chat(1468)、🔸game-question(957)、🔸phòng-chat-tiếng-việt(886)
 
 ### 热门话题
 
@@ -85,19 +85,23 @@
 
 ## Bilibili
 
-1. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3347
-2. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3256
-3. ‌ — engagement: 1140
-4. 【忘却前夜】超级大集集集结 — engagement: 1023
-5. 【忘却前夜】超级大集集集结 — engagement: 1012
+1. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3389
+2. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3297
+3. ‌ — engagement: 1147
+4. 【忘却前夜】超级大集集集结 — engagement: 1027
+5. 【忘却前夜】超级大集集集结 — engagement: 1016
 
 ## DCInside
 
-1. 게임들 밀린 스토리 밀기 왤케 귀찮을까 — engagement: 0
-2. 근데 카제나 &lt; 재밌음? — engagement: 0
-3. 게임이 기대를주는데 큰게 필요없더라 — engagement: 0
-4. 스토리좋다고해서 가챠불완 원칙 깨고 들어갔다가 바로 나온 게임 두개 — engagement: 0
-5. 싱글벙글 선동열의 일본어를 본 일본인들 — engagement: 0
+1. 게임이 기대를주는데 큰게 필요없더라 — engagement: 0
+2. 메인쿤에게서 가능성을 보았다 — engagement: 0
+3. 슬더스에는 없단 말이다 — engagement: 0
+4. 하지만 이거 보고 더 이상 미룰수 없게됨 — engagement: 0
+5. 나 투하인데 이게 대체 무슨 설정이야 — engagement: 0
+
+## Pixiv
+
+1.  — engagement: 0
 
 ## Reddit
 
@@ -127,8 +131,8 @@
 
 ## YouTube
 
-1. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 0
+1. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 33
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, Google Play, Instagram, Lofter, Naver Cafe, NGA, Note.com, Official, Pixiv, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, taptap_post, Telegram, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微信公众号, 闲鱼, 小红书, 知乎
+App Store, Arca.live, 巴哈姆特, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, Google Play, Instagram, Lofter, Naver Cafe, NGA, Note.com, Official, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, taptap_post, Telegram, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微信公众号, 闲鱼, 小红书, 知乎

@@ -2127,6 +2127,20 @@
       "title": "【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】",
       "time": "2026-04-25T18:37:07.506212+00:00",
       "downloaded_at": "2026-04-25T18:41:32.744905+00:00"
+    },
+    "https://i.ytimg.com/vi/u7UlhHfVdyY/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC02874I2G4D4ewNNrKOWUN85jcKg": {
+      "filename": "youtube_4d1f1e8aa71d2d4c.jpg",
+      "source": "youtube",
+      "title": "【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】",
+      "time": "2026-04-25T20:10:26.888712+00:00",
+      "downloaded_at": "2026-04-25T20:32:53.388648+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1170692781216378960/1497670512149659798/image0.jpg?ex=69ee5ddb&is=69ed0c5b&hm=0fe5b063c77de98eafeb8a7c7d144807bae08066890091004fdb4da458271ee0&": {
+      "filename": "discord_efd73d55d1d67262.jpg",
+      "source": "discord",
+      "title": "[DC] megamaws@🔸morimens-game-chat: Wooo I got arachne",
+      "time": "2026-04-25T18:47:55.563000+00:00",
+      "downloaded_at": "2026-04-25T20:32:53.872325+00:00"
     }
   },
   "failed": {
@@ -2854,6 +2868,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-25T17:38:56.600142+00:00"
+    },
+    "https://preview.redd.it/g0yudm5b2exg1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=42bd8e5f1e9f7289d7cefa5d06d81af9fcdbf69c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-25T20:32:54.392921+00:00"
     }
   },
   "archived": []
