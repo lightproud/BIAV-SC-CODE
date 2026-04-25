@@ -1,28 +1,40 @@
 {
   "last_session": {
-    "id": "e8c89541",
-    "timestamp": "2026-04-25T14:54:26.578000+00:00",
-    "duration_minutes": 18785.0,
-    "branch": "HEAD",
+    "id": "cb9729a5",
+    "timestamp": "2026-04-25T16:21:23.196000+00:00",
+    "duration_minutes": 64.2,
+    "branch": "claude/analyze-game-data-tYQo0",
     "topics": [],
     "decisions": [
-      "`special_groups`"
+      "完整的 404 张"
     ],
-    "files_changed": [
-      "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-      "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/theme/index.ts",
-      "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-      "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-      "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-      "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-      "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-      "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py"
-    ],
-    "open_items": [
-      "更新 result 构建部分，把 `ungrouped` 替换成 `special_groups`"
-    ]
+    "files_changed": [],
+    "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "e8c89541",
+      "timestamp": "2026-04-25T14:54:26.578000+00:00",
+      "duration_minutes": 18785.0,
+      "branch": "HEAD",
+      "topics": [],
+      "decisions": [
+        "`special_groups`"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
+        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/theme/index.ts",
+        "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
+        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
+        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
+        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py"
+      ],
+      "open_items": [
+        "更新 result 构建部分，把 `ungrouped` 替换成 `special_groups`"
+      ]
+    },
     {
       "id": "2b6bfd92",
       "timestamp": "2026-04-25T14:38:19.079000+00:00",
@@ -171,34 +183,14 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "fcc9eafd",
-      "timestamp": "2026-04-16T05:36:56.156000+00:00",
-      "duration_minutes": 2089.5,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 3.18,
-      "黑池": 3.18
+      "BPT": 2.54,
+      "黑池": 2.54
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-      "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl",
       "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
       "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/theme/index.ts",
       "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
@@ -206,9 +198,11 @@
       "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
       "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
       "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-      "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py"
+      "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
+      "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
+      "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
     ],
-    "total_sessions": 67
+    "total_sessions": 68
   },
-  "updated_at": "2026-04-25T14:58:04.804913+00:00"
+  "updated_at": "2026-04-25T16:27:01.186352+00:00"
 }
