@@ -1,37 +1,39 @@
 {
   "date": "2026-04-25",
-  "messages": 4612,
+  "messages": 5734,
   "unique_authors": 123,
-  "reactions_total": 259,
-  "attachments": 228,
+  "reactions_total": 314,
+  "attachments": 270,
   "channel_activity": {
-    "🔸綜合討論": 498,
+    "🔸綜合討論": 659,
+    "🔸morimens-game-chat": 3347,
+    "🔸课间休息闲聊": 7,
+    "🔸phòng-chat-tiếng-việt": 214,
+    "🔸canal-español": 13,
+    "🔸ruang-obrolan-indonesia": 95,
+    "🔸traphase": 284,
+    "🔸team-building": 94,
+    "🔸general-chat": 148,
+    "🔸game-question": 324,
+    "🔸机器人命令┊bot-commands": 12,
+    "Vortice pursuit animation": 6,
+    "Question about Arachnes E1 scaling calcs": 5,
+    "PVE players don't want Traphase": 18,
+    "萌新求配队和抽卡建议": 20,
+    "Suggestion for teambuilding and resource management": 1,
+    "Looking to pull Standard-- should I be doing Wheels or Characters?": 3,
     "🔸阵容构建": 9,
-    "🔸morimens-game-chat": 2761,
-    "🔸课间休息闲聊": 6,
-    "🔸phòng-chat-tiếng-việt": 185,
-    "🔸canal-español": 10,
     "🔸canal-português": 321,
-    "🔸ruang-obrolan-indonesia": 90,
     "🔸ห้องสนทนาภาษาไทย": 37,
-    "🔸traphase": 276,
     "🔸lore-chat": 62,
-    "🔸team-building": 87,
-    "🔸general-chat": 98,
     "🔸邀请码互助┊swap-invitation-codes": 2,
-    "🔸game-question": 72,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 9,
-    "Vortice pursuit animation": 5,
     "关于杭州CP32": 2,
     "这什么情况": 4,
     "Ridiculous rewards in PVP after 2.5 patch": 3,
     "💭「Processing」Bug Radix Sediment when max WoD": 1,
-    "PVE players don't want Traphase": 17,
     "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！": 1,
     "3星期萌新請教融災角色與配隊": 1,
-    "萌新求配队和抽卡建议": 12,
-    "Looking to pull Standard-- should I be doing Wheels or Characters?": 2,
     "1497468287527817236": 1,
     "🔸русский-канал": 22,
     "Inquiry about the home-screen music": 1,
@@ -43,20 +45,29 @@
     "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
+    "6": 681,
+    "7": 658,
     "4": 939,
     "5": 1062,
-    "6": 217,
     "1": 328,
     "2": 681,
     "3": 578,
     "0": 807
   },
   "message_types": {
-    "0": 1416,
-    "19": 504,
-    "21": 1
+    "19": 290,
+    "0": 829,
+    "20": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1497484830571499630",
+      "channel_id": "1170692781216378960",
+      "content": "My ultra is complete again c:",
+      "author": "null.pointer_exception",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497476803714093086",
       "channel_id": "1170692781216378960",
@@ -74,6 +85,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1497502293556203560",
+      "channel_id": "1170692781216378960",
+      "content": "ch5 resonance is auto propaganda",
+      "author": "zier.0",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497457811360059422",
       "channel_id": "1170692781216378960",
       "content": "piss in my mouth",
@@ -88,6 +107,38 @@
       "author": "aurora3981",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497498214046109716",
+      "channel_id": "1131839817982947429",
+      "content": "借我用用",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497498412072046673",
+      "channel_id": "1131839817982947429",
+      "content": "~~旺達福袋~~：",
+      "author": "ahong0727",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497503613768044544",
+      "channel_id": "1170692781216378960",
+      "content": "and horla being the mysterious lady giving info to kath in first part of the mov",
+      "author": "arisuu0604",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497490524884570212",
+      "channel_id": "1300659603993923644",
+      "content": "oi ko lo tay",
+      "author": "reu8090",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
     },
     {
       "id": "1497463598602129478",
@@ -168,54 +219,6 @@
       "author": "polkarain",
       "reactions": 2,
       "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1497459085610848378",
-      "channel_id": "1433513650299076780",
-      "content": "should i get more dupes?",
-      "author": "nagikomae",
-      "reactions": 2,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1497422176880558182",
-      "channel_id": "1131839874132090890",
-      "content": "乐园帷幕的血条数量对我红还是太不友好了<:dead:1356082627509092372>",
-      "author": "18482683548",
-      "reactions": 2,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1497414193861623879",
-      "channel_id": "1170692781216378960",
-      "content": "Funny you mention that\nA buddy of mine has been on the same boss fight for the l",
-      "author": "frosthief",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497416818619453564",
-      "channel_id": "1170692781216378960",
-      "content": "yall what are some good partners for aurita (i do not have Corposant or Tulu ;-;",
-      "author": "underplayer5794",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497422445332795402",
-      "channel_id": "1170692781216378960",
-      "content": "FINALYYYY E2 ARACHNEEE",
-      "author": "37_564menhera",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497424550697369680",
-      "channel_id": "1170692781216378960",
-      "content": "eat some delicious food!!!",
-      "author": "arisuu0604",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
