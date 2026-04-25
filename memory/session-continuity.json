@@ -1,31 +1,43 @@
 {
   "last_session": {
-    "id": "f4620e58",
-    "timestamp": "2026-04-15T17:24:22.913000+00:00",
-    "duration_minutes": 4401.2,
+    "id": "cf4e9b7a",
+    "timestamp": "2026-04-15T19:52:10.405000+00:00",
+    "duration_minutes": 151.1,
     "branch": "claude/add-claude-documentation-X4zRQ",
     "topics": [],
-    "decisions": [
-      "v6 | `.github/workflows/extract-game-data.yml` |"
-    ],
+    "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/check-version.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/discord-archive.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/discord-history-backfill.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/extract-game-data.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/fetch-wiki-data.yml",
-      "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
-      "/home/user/brain-in-a-vat/.gitignore",
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/memory/project-status.md",
-      "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-      "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md"
+      "/home/user/brain-in-a-vat/.gitignore"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "f4620e58",
+      "timestamp": "2026-04-15T17:24:22.913000+00:00",
+      "duration_minutes": 4401.2,
+      "branch": "claude/add-claude-documentation-X4zRQ",
+      "topics": [],
+      "decisions": [
+        "v6 | `.github/workflows/extract-game-data.yml` |"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/check-version.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/discord-archive.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/discord-history-backfill.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/extract-game-data.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/fetch-wiki-data.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "e98ab7a1",
       "timestamp": "2026-04-14T08:03:47.667000+00:00",
@@ -273,35 +285,6 @@
         "/home/user/brain-in-a-vat/projects/graphify-ext/NOTICE"
       ],
       "open_items": []
-    },
-    {
-      "id": "dc9fe194",
-      "timestamp": "2026-04-14T03:57:07.909000+00:00",
-      "duration_minutes": 237.3,
-      "branch": "claude/bpt-next-bootstrap-Q41x3",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/settings.json",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
-        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/LOCAL-SETUP-ZH.md",
-        "/home/user/brain-in-a-vat/projects/bpt-next/NOTICE",
-        "/home/user/brain-in-a-vat/projects/graphify-ext/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/graphify-ext/NOTICE",
-        "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/occ-local/NOTICE",
-        "/home/user/brain-in-a-vat/scripts/mcp_server.py",
-        "/home/user/brain-in-a-vat/scripts/silver-mem-install.sh",
-        "/root/.claude/plans/shiny-roaming-eclipse.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
@@ -318,7 +301,7 @@
       "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
       "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md"
     ],
-    "total_sessions": 36
+    "total_sessions": 37
   },
-  "updated_at": "2026-04-15T17:29:01.822157+00:00"
+  "updated_at": "2026-04-15T19:57:42.437672+00:00"
 }
