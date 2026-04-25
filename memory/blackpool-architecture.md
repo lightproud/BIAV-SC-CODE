@@ -206,13 +206,13 @@
 | **P1** 沉淀本架构文档 | `memory/blackpool-architecture.md`（本文件）| 无 |
 | **P2** graphify 引入 | `projects/graphify-ext/` vendor + NOTICE + CONTEXT.md | P1 |
 | **P3** 银芯 MCP 桥接 graphify | `scripts/graphify_bridge.py` | P2 |
-| **P4** claude-mem 外部指南 | `memory/claude-mem-setup.md`（中文，艾瑞卡语气，含审计清单） | P1 |
+| **P4** claude-mem 外部指南 | memory/claude-mem-setup.md（待创建，中文，艾瑞卡语气，含审计清单） | P1 |
 
 ### Phase B（近期，~1 周）
 
 | 任务 | 产出 | 依赖 |
 |------|------|------|
-| **P5** 无账号用户识别方案 | `memory/user-identity-design.md`（候选方案对比 + 决策）| P1 |
+| **P5** 无账号用户识别方案 | memory/user-identity-design.md（待创建，候选方案对比 + 决策）| P1 |
 | **P6** SVN 会话同步原型 | `scripts/session_svn_sync.py`（单用户版） | P5 + 黑池 SVN 访问 |
 | **P7** 团队决策→wiki 导出 | `scripts/decisions_to_wiki.py` + wiki 新目录 | P1 |
 | **P8** 能力注册表初版 | `memory/capability-registry.json` | P1 |
@@ -265,10 +265,10 @@
 
 ### 本架构文档链接
 - `projects/graphify-ext/` —— Phase A P2 产出目标
-- `memory/claude-mem-setup.md` —— Phase A P4 产出目标
+- memory/claude-mem-setup.md —— Phase A P4 产出目标（待创建）
 - `scripts/session_svn_sync.py` —— Phase B P6 产出目标
 - `scripts/graphify_bridge.py` —— Phase A P3 产出目标
-- `memory/user-identity-design.md` —— Phase B P5 产出目标
+- memory/user-identity-design.md —— Phase B P5 产出目标（待创建）
 - `memory/capability-registry.json` —— Phase B P8 产出目标
 
 ### 外部参考

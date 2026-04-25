@@ -78,7 +78,7 @@ def extract_characters() -> tuple[list[dict], list[dict]]:
             })
 
         # Character → mentions by → source file
-        file_id = make_node_id("file", "projects/wiki/data/db/characters.json")
+        file_id = make_node_id("file", "projects/wiki/data/extracted/categorized/character_data.txt")
         edges.append({
             "source": file_id,
             "target": char_id,

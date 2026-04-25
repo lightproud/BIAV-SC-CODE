@@ -17,7 +17,7 @@
 |------|----------|----------|
 | 回答忘却前夜世界观、角色、叙事结构问题 | `memory/morimens-context.md` | 按需读取 |
 | 引用制作人/主文案的第一手陈述 | `assets/data/interview-2026-04.json` | 按需读取 |
-| 查询 63 个角色的技能、数值、立绘数据 | `projects/wiki/data/db/characters.json` | 按需读取 |
+| 查询角色原始数据（提取自游戏） | `projects/wiki/data/extracted/categorized/character_data.txt` | 按需读取 |
 | 分析社区动态（Steam/Bilibili/Discord） | `projects/news/output/*-latest.json` | 按需读取 |
 | 了解游戏设计哲学和被砍机制的原因 | `assets/data/design-decisions.json` | 按需读取 |
 | 了解三部叙事的原始规划与实际压缩 | `assets/data/narrative-structure.json` | 按需读取 |
@@ -75,7 +75,7 @@
 | `assets/data/interview-2026-04.json` | 53 问制作人深度采访结构化提取（Light + 主文案霁月） | 大 |
 | `assets/data/narrative-structure.json` | 三部叙事结构、各章压缩细节、角色线 | 中 |
 | `assets/data/design-decisions.json` | 设计哲学、被砍机制、平衡理念 | 小 |
-| `projects/wiki/data/db/characters.json` | 63 角色数据库（技能、数值、立绘、界域） | 大 |
+| `projects/wiki/data/extracted/categorized/character_data.txt` | 角色原始数据（游戏提取，`data/db/` 已因数据不可靠被移除） | 中 |
 
 ### 运营数据（分析社区动态时查这里）
 
@@ -213,7 +213,7 @@
    - B站动态：`projects/news/output/bilibili-latest.json`
    - Discord 摘要：`projects/news/output/discord-latest.json`
    - 全平台合并：`projects/news/output/all-latest.json`
-   - 角色数据库：`projects/wiki/data/db/characters.json`
+   - 角色原始数据：`projects/wiki/data/extracted/categorized/character_data.txt`
    - 游戏世界观：`memory/morimens-context.md`
 
 2. **提取知识**而非复制文件 — 将公开信息结构化后写入黑池的 inbox/ 或 silver-core/ 目录
