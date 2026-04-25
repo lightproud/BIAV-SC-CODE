@@ -1,33 +1,38 @@
 {
   "date": "2026-04-25",
-  "messages": 6097,
+  "messages": 6851,
   "unique_authors": 123,
-  "reactions_total": 347,
-  "attachments": 295,
+  "reactions_total": 412,
+  "attachments": 351,
   "channel_activity": {
-    "🔸綜合討論": 711,
-    "🔸morimens-game-chat": 3592,
-    "🔸剧情交流": 2,
+    "🔸綜合討論": 892,
+    "🔸morimens-game-chat": 3896,
+    "🔸剧情交流": 12,
+    "🔸русский-канал": 37,
+    "🔸phòng-chat-tiếng-việt": 245,
+    "🔸ruang-obrolan-indonesia": 102,
+    "🔸ห้องสนทนาภาษาไทย": 43,
+    "🔸traphase": 292,
+    "🔸lore-chat": 84,
+    "🔸team-building": 151,
+    "🔸general-chat": 274,
+    "🔸game-question": 366,
+    "🔸机器人命令┊bot-commands": 14,
+    "Arc2 Chapter 2 Gimmick Doesn't Work with S Ultra Space Cards": 1,
+    "✅「已解决」總算力消耗是負值": 1,
+    "日常一鍵領取": 1,
+    "\"24\" lives matter": 6,
+    "Suggestion for teambuilding and resource management": 3,
     "🔸한국어-채팅방": 1,
-    "🔸phòng-chat-tiếng-việt": 220,
-    "🔸ruang-obrolan-indonesia": 99,
-    "🔸traphase": 287,
-    "🔸lore-chat": 74,
-    "🔸team-building": 100,
-    "🔸general-chat": 167,
-    "🔸game-question": 337,
     "🔸课间休息闲聊": 7,
     "🔸canal-español": 13,
-    "🔸机器人命令┊bot-commands": 12,
     "Vortice pursuit animation": 6,
     "Question about Arachnes E1 scaling calcs": 5,
     "PVE players don't want Traphase": 18,
     "萌新求配队和抽卡建议": 20,
-    "Suggestion for teambuilding and resource management": 1,
     "Looking to pull Standard-- should I be doing Wheels or Characters?": 3,
     "🔸阵容构建": 9,
     "🔸canal-português": 321,
-    "🔸ห้องสนทนาภาษาไทย": 37,
     "🔸邀请码互助┊swap-invitation-codes": 2,
     "🔸忘却前夜┊morimens-tv": 1,
     "关于杭州CP32": 2,
@@ -37,17 +42,16 @@
     "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！": 1,
     "3星期萌新請教融災角色與配隊": 1,
     "1497468287527817236": 1,
-    "🔸русский-канал": 22,
     "Inquiry about the home-screen music": 1,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 1,
     "Tawil :true:": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
     "堆图ing": 1,
-    "\"24\" lives matter": 5,
     "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
-    "8": 340,
+    "8": 513,
+    "9": 581,
     "7": 681,
     "6": 681,
     "4": 939,
@@ -58,10 +62,18 @@
     "0": 807
   },
   "message_types": {
-    "0": 266,
-    "19": 97
+    "0": 530,
+    "19": 224
   },
   "top_reacted_messages": [
+    {
+      "id": "1497528616509116477",
+      "channel_id": "1131839817982947429",
+      "content": "~~然后转头钱钱就变成忘却千夜的原液了~~",
+      "author": "kemomimi_",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
     {
       "id": "1497484830571499630",
       "channel_id": "1170692781216378960",
@@ -79,12 +91,28 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1497524121905664060",
+      "channel_id": "1170692781216378960",
+      "content": "dni if ur a caecus fan!!",
+      "author": "chinkeeyong",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497428782259245099",
       "channel_id": "1131839817982947429",
       "content": "",
       "author": "water_heart",
       "reactions": 4,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497523307082153996",
+      "channel_id": "1433513650299076780",
+      "content": "<@1035169514620452934> You brought me luck my friend.. 2 days ago we were talkin",
+      "author": "spruzzetto",
+      "reactions": 3,
+      "channel": "🔸game-question"
     },
     {
       "id": "1497510304303550576",
@@ -119,6 +147,70 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1497526559148609567",
+      "channel_id": "1131839817982947429",
+      "content": "把那些材料钱给上报，不然的话",
+      "author": "kemomimi_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497526570611642459",
+      "channel_id": "1131839817982947429",
+      "content": "没钱钱了",
+      "author": "kemomimi_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497522347874193458",
+      "channel_id": "1170692781216378960",
+      "content": "Yeh, that's also less than 38%",
+      "author": "sirtealot",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497524935244120114",
+      "channel_id": "1170692781216378960",
+      "content": "i think i can finally start to dzone 😭 😭 😭",
+      "author": "boppyboi",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497527287011348654",
+      "channel_id": "1170692781216378960",
+      "content": "Also I'm starting to like Deus Ex Machina more, why click the end turn button wh",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497522854940377128",
+      "channel_id": "1300659603993923644",
+      "content": "ko nhầm đâu thầy \ntôi nhớ từng cái tên của thgđb này",
+      "author": "corner_corn",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1497523196524499035",
+      "channel_id": "1300659603993923644",
+      "content": "",
+      "author": "bui4nh7u4n",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1497522610047815832",
+      "channel_id": "1400750050208125010",
+      "content": "https://tenor.com/view/hamster-meme-gif-23587927",
+      "author": "7w2e",
+      "reactions": 2,
+      "channel": "🔸general-chat"
+    },
+    {
       "id": "1497513200260747345",
       "channel_id": "1131839817982947429",
       "content": "~~轨道炮打浮游生物~~",
@@ -131,94 +223,6 @@
       "channel_id": "1170692781216378960",
       "content": "don’t worry I already see people downloading Morimens bc of the ad",
       "author": "_venush",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497511058946916422",
-      "channel_id": "1170692781216378960",
-      "content": "i trust venush friend slightly more than i trust randos",
-      "author": "fishhazardthewizard",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497512116993790023",
-      "channel_id": "1170692781216378960",
-      "content": "and I still disappointed",
-      "author": "_venush",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497498214046109716",
-      "channel_id": "1131839817982947429",
-      "content": "借我用用",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497498412072046673",
-      "channel_id": "1131839817982947429",
-      "content": "~~旺達福袋~~：",
-      "author": "ahong0727",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497503613768044544",
-      "channel_id": "1170692781216378960",
-      "content": "and horla being the mysterious lady giving info to kath in first part of the mov",
-      "author": "arisuu0604",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497490524884570212",
-      "channel_id": "1300659603993923644",
-      "content": "oi ko lo tay",
-      "author": "reu8090",
-      "reactions": 2,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1497463598602129478",
-      "channel_id": "1131839817982947429",
-      "content": "你們還沒有追上最新AA現在羊媽是15啟起步",
-      "author": "ahuahuahua",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497456781993967696",
-      "channel_id": "1170692781216378960",
-      "content": "you mean move to JP, because they don't care for outside JP foreigner opinion",
-      "author": "sparkling_moose_59074",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497457279921029212",
-      "channel_id": "1170692781216378960",
-      "content": "out of all your takes this i must disagree with. good yuri is something like thi",
-      "author": "cqteiie",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497458383052214403",
-      "channel_id": "1170692781216378960",
-      "content": "yuri is slop, yaoi is slop, so are straight relationships. It's only not slop wh",
-      "author": "kurohei6400",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497466641666019428",
-      "channel_id": "1170692781216378960",
-      "content": "my Xu Covenant is called Ni Hao Fine Shyt",
-      "author": "kurotamavii",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
     }
