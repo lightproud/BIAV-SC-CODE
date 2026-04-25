@@ -22,6 +22,14 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       {
+        text: '图鉴',
+        items: [
+          { text: '唤醒体图鉴', link: '/characters' },
+          { text: '唤醒系统', link: '/summon' },
+          { text: '关卡导航', link: '/stages' },
+        ]
+      },
+      {
         text: '数据',
         items: [
           { text: '语音台词', link: '/voice-lines' },
@@ -44,6 +52,14 @@ export default defineConfig({
     sidebar: {
       '/zh/team-decisions/': [teamDecisionsSidebar],
       '/': [
+        {
+          text: '角色与系统',
+          items: [
+            { text: '唤醒体图鉴', link: '/characters' },
+            { text: '唤醒系统', link: '/summon' },
+            { text: '关卡导航', link: '/stages' },
+          ]
+        },
         {
           text: '客户端数据',
           items: [

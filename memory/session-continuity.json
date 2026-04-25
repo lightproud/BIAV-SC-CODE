@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "cb9729a5",
-    "timestamp": "2026-04-25T16:21:23.196000+00:00",
-    "duration_minutes": 64.2,
+    "id": "3d1f4933",
+    "timestamp": "2026-04-25T16:39:05.370000+00:00",
+    "duration_minutes": 82.0,
     "branch": "claude/analyze-game-data-tYQo0",
     "topics": [],
     "decisions": [
@@ -12,6 +12,18 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "cb9729a5",
+      "timestamp": "2026-04-25T16:21:23.196000+00:00",
+      "duration_minutes": 64.2,
+      "branch": "claude/analyze-game-data-tYQo0",
+      "topics": [],
+      "decisions": [
+        "完整的 404 张"
+      ],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "e8c89541",
       "timestamp": "2026-04-25T14:54:26.578000+00:00",
@@ -165,30 +177,12 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "1ddffa4d",
-      "timestamp": "2026-04-16T05:47:27.056000+00:00",
-      "duration_minutes": 2100.1,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.54,
-      "黑池": 2.54
+      "BPT": 2.03,
+      "黑池": 2.03
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
@@ -198,11 +192,9 @@
       "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
       "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
       "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-      "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py",
-      "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-      "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
+      "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py"
     ],
-    "total_sessions": 68
+    "total_sessions": 69
   },
-  "updated_at": "2026-04-25T16:27:01.186352+00:00"
+  "updated_at": "2026-04-25T16:42:31.943967+00:00"
 }
