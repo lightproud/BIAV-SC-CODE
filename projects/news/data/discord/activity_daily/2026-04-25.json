@@ -1,35 +1,35 @@
 {
   "date": "2026-04-25",
-  "messages": 15660,
+  "messages": 16411,
   "unique_authors": 123,
-  "reactions_total": 1171,
-  "attachments": 756,
+  "reactions_total": 1234,
+  "attachments": 786,
   "channel_activity": {
-    "🔸綜合討論": 2692,
-    "🔸morimens-game-chat": 7042,
-    "🔸相位对弈": 1,
-    "🔸русский-канал": 684,
-    "🔸phòng-chat-tiếng-việt": 884,
+    "🔸綜合討論": 2708,
+    "🔸morimens-game-chat": 7503,
+    "🔸相位对弈": 2,
+    "🔸한국어-채팅방": 10,
+    "🔸русский-канал": 686,
+    "🔸phòng-chat-tiếng-việt": 886,
+    "🔸canal-português": 370,
+    "🔸traphase": 611,
+    "🔸team-building": 451,
+    "🔸general-chat": 1468,
+    "🔸game-question": 957,
+    "🔸机器人命令┊bot-commands": 27,
     "🔸canal-español": 92,
-    "🔸traphase": 459,
     "🔸lore-chat": 101,
-    "🔸team-building": 413,
-    "🔸general-chat": 1465,
     "🔸邀请码互助┊swap-invitation-codes": 6,
-    "🔸game-question": 895,
-    "🔸机器人命令┊bot-commands": 26,
     "建个图楼": 4,
     "Cards from S Ultra Space Deals Less Damage": 4,
     "Reality Verges": 4,
     "doreposting / unserious doodles": 2,
     "🔸剧情交流": 77,
-    "🔸canal-português": 358,
     "【鲨粉】贴贴": 2,
     "堆图ing": 2,
     "熔朵 數值錯誤": 3,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 18,
     "🔸课间休息闲聊": 13,
-    "🔸한국어-채팅방": 9,
     "🔸ห้องสนทนาภาษาไทย": 62,
     "打算開一個圖樓可能圖之後就丟這裡了": 27,
     "Vortice keeps disappearing": 1,
@@ -70,8 +70,9 @@
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4
   },
   "hourly_activity": {
+    "18": 887,
+    "19": 376,
     "17": 1492,
-    "18": 512,
     "16": 954,
     "15": 1036,
     "14": 937,
@@ -91,9 +92,8 @@
     "0": 807
   },
   "message_types": {
-    "0": 1007,
-    "19": 338,
-    "20": 1
+    "19": 275,
+    "0": 476
   },
   "top_reacted_messages": [
     {
@@ -169,6 +169,14 @@
       "channel": "🔸morimens-game-chat"
     },
     {
+      "id": "1497670512543793354",
+      "channel_id": "1170692781216378960",
+      "content": "Wooo I got arachne",
+      "author": "megamaws",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497641156144660661",
       "channel_id": "1497641156144660661",
       "content": "⚠️戈利亚×凯刻斯cp向⚠️\n⚠️Goliath（Top）×Caecus（Bottom）⚠️\n\n约稿的时候画师画的赠图，好萌\n\n仅为约稿展示，以防万一有雷的我标",
@@ -241,18 +249,10 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1497657358858322130",
+      "id": "1497677349553176716",
       "channel_id": "1170692781216378960",
-      "content": "someone backseated my 5 draft matches and i won them all XD",
-      "author": "monchi3524",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497662664669790250",
-      "channel_id": "1170692781216378960",
-      "content": "fuck miryam",
-      "author": "princess.goth",
+      "content": "any man below 5'4 is put on estrogen, men above will be set nto 1 of the followi",
+      "author": "cqteiie",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
     }
