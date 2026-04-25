@@ -1,51 +1,70 @@
 {
   "date": "2026-04-25",
-  "messages": 2691,
+  "messages": 4612,
   "unique_authors": 123,
-  "reactions_total": 175,
-  "attachments": 144,
+  "reactions_total": 259,
+  "attachments": 228,
   "channel_activity": {
-    "🔸綜合討論": 112,
-    "🔸阵容构建": 6,
-    "🔸morimens-game-chat": 1939,
-    "🔸课间休息闲聊": 5,
+    "🔸綜合討論": 498,
+    "🔸阵容构建": 9,
+    "🔸morimens-game-chat": 2761,
+    "🔸课间休息闲聊": 6,
+    "🔸phòng-chat-tiếng-việt": 185,
+    "🔸canal-español": 10,
+    "🔸canal-português": 321,
+    "🔸ruang-obrolan-indonesia": 90,
+    "🔸ห้องสนทนาภาษาไทย": 37,
+    "🔸traphase": 276,
+    "🔸lore-chat": 62,
+    "🔸team-building": 87,
+    "🔸general-chat": 98,
+    "🔸邀请码互助┊swap-invitation-codes": 2,
+    "🔸game-question": 72,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 9,
+    "Vortice pursuit animation": 5,
+    "关于杭州CP32": 2,
+    "这什么情况": 4,
+    "Ridiculous rewards in PVP after 2.5 patch": 3,
+    "💭「Processing」Bug Radix Sediment when max WoD": 1,
+    "PVE players don't want Traphase": 17,
+    "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！": 1,
+    "3星期萌新請教融災角色與配隊": 1,
+    "萌新求配队和抽卡建议": 12,
+    "Looking to pull Standard-- should I be doing Wheels or Characters?": 2,
+    "1497468287527817236": 1,
     "🔸русский-канал": 22,
-    "🔸phòng-chat-tiếng-việt": 18,
-    "🔸canal-español": 5,
-    "🔸canal-português": 318,
-    "🔸ruang-obrolan-indonesia": 50,
-    "🔸ห้องสนทนาภาษาไทย": 15,
-    "🔸traphase": 13,
-    "🔸lore-chat": 23,
-    "🔸team-building": 30,
-    "🔸general-chat": 38,
-    "🔸game-question": 58,
-    "🔸机器人命令┊bot-commands": 4,
-    "这什么情况": 2,
     "Inquiry about the home-screen music": 1,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 1,
-    "PVE players don't want Traphase": 9,
     "Tawil :true:": 4,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
-    "萌新求配队和抽卡建议": 5,
-    "🔸邀请码互助┊swap-invitation-codes": 1,
     "堆图ing": 1,
-    "Ridiculous rewards in PVP after 2.5 patch": 1,
     "\"24\" lives matter": 5,
     "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
+    "4": 939,
+    "5": 1062,
+    "6": 217,
     "1": 328,
     "2": 681,
     "3": 578,
-    "4": 297,
     "0": 807
   },
   "message_types": {
-    "0": 1177,
-    "19": 614
+    "0": 1416,
+    "19": 504,
+    "21": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1497476803714093086",
+      "channel_id": "1170692781216378960",
+      "content": "guys im actually playing morimens",
+      "author": "craux.",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497428782259245099",
       "channel_id": "1131839817982947429",
@@ -55,12 +74,108 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1497457811360059422",
+      "channel_id": "1170692781216378960",
+      "content": "piss in my mouth",
+      "author": "cqteiie",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497433676512890930",
       "channel_id": "1170692781216378960",
       "content": "Both way works, I suggest just playing and refining the team by vibe as you go o",
       "author": "aurora3981",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497463598602129478",
+      "channel_id": "1131839817982947429",
+      "content": "你們還沒有追上最新AA現在羊媽是15啟起步",
+      "author": "ahuahuahua",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497456781993967696",
+      "channel_id": "1170692781216378960",
+      "content": "you mean move to JP, because they don't care for outside JP foreigner opinion",
+      "author": "sparkling_moose_59074",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497457279921029212",
+      "channel_id": "1170692781216378960",
+      "content": "out of all your takes this i must disagree with. good yuri is something like thi",
+      "author": "cqteiie",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497458383052214403",
+      "channel_id": "1170692781216378960",
+      "content": "yuri is slop, yaoi is slop, so are straight relationships. It's only not slop wh",
+      "author": "kurohei6400",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497466641666019428",
+      "channel_id": "1170692781216378960",
+      "content": "my Xu Covenant is called Ni Hao Fine Shyt",
+      "author": "kurotamavii",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497467140129816667",
+      "channel_id": "1170692781216378960",
+      "content": "it's called\n\nVictimweight",
+      "author": "kurotamavii",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497471433574715392",
+      "channel_id": "1170692781216378960",
+      "content": "loserdot.",
+      "author": "cqteiie",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497477101438107648",
+      "channel_id": "1170692781216378960",
+      "content": "Use my guide when playing p dive",
+      "author": "aurora3981",
+      "reactions": 2,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497471192901226526",
+      "channel_id": "1326453763355185215",
+      "content": "its a luxury product because everyone who didnt have it is dead",
+      "author": "nikolazuli",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1497471947791925450",
+      "channel_id": "1326453763355185215",
+      "content": "yes but my poison team is also all lv60",
+      "author": "polkarain",
+      "reactions": 2,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1497459085610848378",
+      "channel_id": "1433513650299076780",
+      "content": "should i get more dupes?",
+      "author": "nagikomae",
+      "reactions": 2,
+      "channel": "🔸game-question"
     },
     {
       "id": "1497422176880558182",
@@ -101,110 +216,6 @@
       "author": "arisuu0604",
       "reactions": 2,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497427059625168897",
-      "channel_id": "1170692781216378960",
-      "content": "watch this dih in yo mouth",
-      "author": "cqteiie",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497431575124639885",
-      "channel_id": "1170692781216378960",
-      "content": "arachne can do a1 almost by herself",
-      "author": "cornonthemacabre_",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497435403685200002",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "angbak",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497435676247986236",
-      "channel_id": "1170692781216378960",
-      "content": "if she's not +12, that's your problem. not Liz's problem",
-      "author": "sparkling_moose_59074",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497446510269567006",
-      "channel_id": "1170692781216378960",
-      "content": "G tulu 99 miss calls from g Murphy <:Doll_Wait:1468259092459032606>",
-      "author": "aurora3981",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497393560394399846",
-      "channel_id": "1170692781216378960",
-      "content": "because aigis is S tier",
-      "author": "arkaether",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497396597133283479",
-      "channel_id": "1170692781216378960",
-      "content": "https://tenor.com/view/pokemon-gif-9676544444633321095",
-      "author": "boppyboi",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497403398771970048",
-      "channel_id": "1170692781216378960",
-      "content": "I spent way too long on a gif last night, but folks liked it, so figured I'd dro",
-      "author": "nechromicon",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497404384274026536",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "crowlov1",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497420449951256657",
-      "channel_id": "1131839817982947429",
-      "content": "~~不過沒+12玩什麼斷頸~~",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497426243295907871",
-      "channel_id": "1131839817982947429",
-      "content": "银芯转原液",
-      "author": "akalanden",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497426728380010526",
-      "channel_id": "1131839817982947429",
-      "content": "那我缺少的源液誰給我補啊",
-      "author": "ahuahuahua",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497446246212964453",
-      "channel_id": "1131839817982947429",
-      "content": "+12之後就不能換了",
-      "author": "ahong0727",
-      "reactions": 1,
-      "channel": "🔸綜合討論"
     }
   ]
 }
