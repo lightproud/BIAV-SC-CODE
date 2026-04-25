@@ -486,6 +486,170 @@ def generate_ui_gallery():
     print(f'UI resources gallery: {total} images')
 
 
+def generate_characters():
+    """Generate character encyclopedia from characters.json."""
+    with open(f'{PROCESSED_DIR}/characters.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    meta = data['_meta']
+    chars = data['characters']
+    lines = []
+    lines.append('# 唤醒体图鉴')
+    lines.append('')
+    lines.append(f'> 数据来源：AwakerConfig.lua（运行时内存提取） | 共 {meta["total_characters"]} 位唤醒体')
+    lines.append('')
+
+    for ch in chars:
+        lines.append(f'## {ch["name"]}')
+        lines.append('')
+
+        lines.append('<div style="display: flex; gap: 24px; flex-wrap: wrap; margin: 16px 0;">')
+
+        lines.append('<div style="flex: 1 1 320px;">')
+        lines.append('')
+        lines.append(f'| 属性 | 信息 |')
+        lines.append(f'|------|------|')
+        lines.append(f'| 称号 | {ch["title"]} |')
+        lines.append(f'| 性别 | {ch["gender"]} |')
+        lines.append(f'| 生日 | {ch["birthday"]} |')
+        lines.append(f'| 身高 | {ch["height"]} |')
+        lines.append(f'| 体重 | {ch["weight"]} |')
+        lines.append(f'| GI 值 | {ch["gi"]} |')
+        lines.append(f'| 声优 | {ch["voice_actor"]} |')
+        lines.append(f'| 画师 | {ch["painter"]} |')
+        lines.append(f'| 战斗特征 | {ch["characteristic"]} |')
+        lines.append('')
+        lines.append('</div>')
+
+        lines.append('</div>')
+        lines.append('')
+
+        if ch['introduction']:
+            lines.append(f'> {ch["introduction"]}')
+            lines.append('')
+
+        if ch['gameplay_intro']:
+            lines.append(f'**战斗机制：** {ch["gameplay_intro"]}')
+            lines.append('')
+
+        if ch['summon_slogan']:
+            lines.append(f'*「{ch["summon_slogan"]}」*')
+            lines.append('')
+
+        lines.append('---')
+        lines.append('')
+
+    with open(f'{DOCS_DIR}/characters.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Characters page: {len(chars)} character profiles')
+
+
+def generate_summon():
+    """Generate summon/gacha system page from summon.json."""
+    with open(f'{PROCESSED_DIR}/summon.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    meta = data['_meta']
+    banners = data['banners']
+    lines = []
+    lines.append('# 唤醒（召唤）系统')
+    lines.append('')
+    lines.append(f'> 数据来源：Summon.lua（运行时内存提取） | 共 {meta["total_banners"]} 个卡池记录')
+    lines.append('')
+
+    named = [b for b in banners if b.get('title')]
+    unnamed = [b for b in banners if not b.get('title')]
+
+    if named:
+        lines.append('## 命名卡池')
+        lines.append('')
+        for b in named:
+            lines.append(f'### {b["title"]}')
+            lines.append('')
+            lines.append(f'**{b["name"]}**')
+            lines.append('')
+            if b['desc']:
+                lines.append(f'{b["desc"]}')
+                lines.append('')
+            if b['short_desc']:
+                lines.append(f'> {b["short_desc"]}')
+                lines.append('')
+            if b['rate_up']:
+                lines.append(f'UP: {b["rate_up"]}')
+                lines.append('')
+            if b['rate_ssr'] or b['rate_sr'] or b['rate_r']:
+                lines.append('| 稀有度 | 概率 |')
+                lines.append('|--------|------|')
+                if b['rate_ssr']:
+                    lines.append(f'| SSR | {b["rate_ssr"]} |')
+                if b['rate_sr']:
+                    lines.append(f'| SR | {b["rate_sr"]} |')
+                if b['rate_r']:
+                    lines.append(f'| R | {b["rate_r"]} |')
+                lines.append('')
+            lines.append('---')
+            lines.append('')
+
+    if unnamed:
+        lines.append('## 其他卡池')
+        lines.append('')
+        lines.append('| 名称 | 说明 |')
+        lines.append('|------|------|')
+        for b in unnamed:
+            desc = b['desc'] or b['short_desc'] or ''
+            lines.append(f'| {b["name"]} | {desc[:80]} |')
+        lines.append('')
+
+    with open(f'{DOCS_DIR}/summon.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Summon page: {len(named)} named + {len(unnamed)} other banners')
+
+
+def generate_stages():
+    """Generate stage/dungeon navigation page from stages.json."""
+    with open(f'{PROCESSED_DIR}/stages.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    meta = data['_meta']
+    groups = data['groups']
+    lines = []
+    lines.append('# 关卡导航')
+    lines.append('')
+    lines.append(f'> 数据来源：Stage.lua + StageGroup.lua（运行时内存提取） | {meta["total_groups"]} 个关卡组 / {meta["total_stages"]} 个关卡')
+    lines.append('')
+
+    by_type = {}
+    for g in groups:
+        t = g.get('type') or '其他'
+        if t not in by_type:
+            by_type[t] = []
+        by_type[t].append(g)
+
+    sorted_types = sorted(by_type.keys(), key=lambda t: -len(by_type[t]))
+
+    for stage_type in sorted_types:
+        type_groups = by_type[stage_type]
+        seen_names = set()
+        unique = []
+        for g in type_groups:
+            if g['name'] not in seen_names:
+                seen_names.add(g['name'])
+                unique.append(g)
+
+        lines.append(f'## {stage_type}（{len(type_groups)} 组）')
+        lines.append('')
+        lines.append('| 名称 | 说明 | 奖励 |')
+        lines.append('|------|------|------|')
+        for g in unique:
+            reward = g.get('reward_desc', '')
+            lines.append(f'| {g["name"]} | {g["desc"][:60]} | {reward} |')
+        lines.append('')
+
+    with open(f'{DOCS_DIR}/stages.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Stages page: {len(sorted_types)} types, {len(groups)} groups')
+
+
 if __name__ == '__main__':
     generate_voice_lines()
     generate_collection_hall()
@@ -495,4 +659,7 @@ if __name__ == '__main__':
     generate_bunit_gallery()
     generate_icons_gallery()
     generate_ui_gallery()
+    generate_characters()
+    generate_summon()
+    generate_stages()
     print('All wiki pages generated.')
