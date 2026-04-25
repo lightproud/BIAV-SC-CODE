@@ -1,11 +1,17 @@
 # 忘却前夜 社区日报 2026-04-26
 
-> 采集时间：2026-04-26 06:31 UTC+8
+> 采集时间：2026-04-26 07:34 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 265
-2. [Bilibili] 沙耶之歌8 — engagement: 115
+1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 284
+2. [Bilibili] 沙耶之歌8 — engagement: 121
+3. [微博] 忘却前夜×沙耶之歌 联动预告
+
+梦的碎片 随风而至
+
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
 
 ## 总览
 
@@ -55,7 +61,7 @@
 
 ## Discord
 
-今日 17,648 条消息，123 位活跃用户，1,377 次反应。热门频道：🔸morimens-game-chat(8498)、🔸綜合討論(2737)、🔸general-chat(1471)、🔸game-question(1036)、🔸phòng-chat-tiếng-việt(886)
+今日 18,021 条消息，123 位活跃用户，1,405 次反应。热门频道：🔸morimens-game-chat(8719)、🔸綜合討論(2765)、🔸general-chat(1472)、🔸game-question(1054)、🔸phòng-chat-tiếng-việt(886)
 
 ### 热门话题
 
@@ -84,19 +90,19 @@
 
 ## Bilibili
 
-1. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3443
-2. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3352
-3. ‌ — engagement: 1154
-4. 【忘却前夜】超级大集集集结 — engagement: 1040
-5. 【忘却前夜】超级大集集集结 — engagement: 1029
+1. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3495
+2. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3402
+3. ‌ — engagement: 1156
+4. 【忘却前夜】超级大集集集结 — engagement: 1050
+5. 【忘却前夜】超级大集集集结 — engagement: 1039
 
 ## Reddit
 
-1. Do any of you have any Lovecraft book in your libraries? — engagement: 0
-2. Finally beaten Madness Rail difficulty with zero energy gnos — engagement: 0
-3. Free Mouchette? — engagement: 0
+1. Free Mouchette? — engagement: 0
+2. Do any of you have any Lovecraft book in your libraries? — engagement: 0
+3. Finally beaten Madness Rail difficulty with zero energy gnos — engagement: 0
 4. I can't believe it...I love BIAV — engagement: 0
-5. wtf man😫this is bullshit — engagement: 0
+5. I just got arachnide what are her best teams and just build  — engagement: 0
 
 ## StopGame.ru
 
@@ -109,16 +115,21 @@
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
 3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-4. 忘却前夜┊唤醒体展示✦徐
+4. 忘却前夜×沙耶之歌 联动预告
+
+梦的碎片 随风而至
+
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
+5. 忘却前夜┊唤醒体展示✦徐
 妾身乃不梦乡之主，徐。
 若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
 
 ✦ 徐 CV： — engagement: 0
-5. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
 
 ## YouTube
 
-1. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 38
+1. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 39
 
 ## 沉默平台
 

@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-25T22:31:32.366905+00:00",
+  "collected_at": "2026-04-25T23:34:12.490570+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
@@ -8,10 +8,10 @@
       "time": "2026-04-25T00:00:00+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-25)",
-      "summary": "今日 17,648 条消息，123 位活跃用户，1,377 次反应。热门频道：🔸morimens-game-chat(8498)、🔸綜合討論(2737)、🔸general-chat(1471)、🔸game-question(1036)、🔸phòng-chat-tiếng-việt(886)",
+      "summary": "今日 18,021 条消息，123 位活跃用户，1,405 次反应。热门频道：🔸morimens-game-chat(8719)、🔸綜合討論(2765)、🔸general-chat(1472)、🔸game-question(1054)、🔸phòng-chat-tiếng-việt(886)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 17648
+      "engagement": 18021
     },
     {
       "source": "discord",
@@ -268,6 +268,23 @@
     },
     {
       "source": "discord",
+      "time": "2026-04-25T21:41:03.279000+00:00",
+      "lang": "",
+      "title": "[DC] guava3442@🔸game-question: But its x cost so its hyperflare",
+      "summary": "But its x cost so its hyperflare",
+      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1497714081782694080",
+      "author": "guava3442",
+      "engagement": 15,
+      "metadata": {
+        "reactions": "ramona_tuff_×5",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸game-question"
+      }
+    },
+    {
+      "source": "discord",
       "time": "2026-04-25T16:34:36.669000+00:00",
       "lang": "",
       "title": "[DC] ass191044@🔸剧情交流: 有些品種的蜘蛛do完我記得會把公的吃掉當儲備熱量喔🤓☝️",
@@ -281,23 +298,6 @@
         "attachment_count": 0,
         "attachment_urls": [],
         "channel": "🔸剧情交流"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-25T04:42:43.649000+00:00",
-      "lang": "",
-      "title": "[DC] cqteiie@🔸morimens-game-chat: piss in my mouth",
-      "summary": "piss in my mouth\n  └ arisuu0604: woa woa\n  └ sparkling_moose_59074: my wife wouldn't be happy with me if I did so you'll have to ask someone else\n  └ kurotamavii: whoa there, slow down",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497457811360059422",
-      "author": "cqteiie",
-      "engagement": 15,
-      "metadata": {
-        "reactions": "question1×3",
-        "reply_count": 3,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
       }
     }
   ]
