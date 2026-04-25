@@ -1,28 +1,30 @@
 {
   "date": "2026-04-25",
-  "messages": 17648,
+  "messages": 18021,
   "unique_authors": 123,
-  "reactions_total": 1377,
-  "attachments": 853,
+  "reactions_total": 1405,
+  "attachments": 872,
   "channel_activity": {
-    "🔸綜合討論": 2737,
-    "🔸morimens-game-chat": 8498,
+    "🔸綜合討論": 2765,
+    "🔸morimens-game-chat": 8719,
+    "🔸русский-канал": 717,
+    "🔸traphase": 678,
+    "🔸team-building": 528,
+    "🔸general-chat": 1472,
+    "🔸game-question": 1054,
+    "🔸机器人命令┊bot-commands": 30,
+    "dc之前发的高清壁纸都去哪里了": 1,
+    "Daffodil's Thousand Mirage card additional effects loss": 2,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
     "🔸canal-español": 124,
-    "🔸traphase": 618,
     "🔸lore-chat": 103,
-    "🔸team-building": 504,
-    "🔸general-chat": 1471,
-    "🔸game-question": 1036,
-    "🔸机器人命令┊bot-commands": 29,
     "塔薇最终法则/Tawil's Absolute Axiom BUG": 1,
     ":man_detective: 相位對弈：對戰表情": 1,
     "doreposting / unserious doodles": 3,
     "【English Translation】Opinions Collection": 4,
     "V2.5.0 命运剧院┊Theater of Fate": 1,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 5,
     "🔸剧情交流": 82,
     "🔸相位对弈": 4,
-    "🔸русский-канал": 701,
     "🔸canal-português": 376,
     "【鲨粉】贴贴": 3,
     "🔸한국어-채팅방": 10,
@@ -73,8 +75,9 @@
     "Tawil :true:": 4
   },
   "hourly_activity": {
+    "21": 528,
+    "22": 203,
     "20": 714,
-    "21": 358,
     "19": 541,
     "18": 887,
     "17": 1492,
@@ -97,9 +100,9 @@
     "0": 807
   },
   "message_types": {
-    "19": 303,
-    "0": 444,
-    "20": 1
+    "0": 268,
+    "19": 104,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -141,6 +144,14 @@
       "author": "heikwok",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497714081782694080",
+      "channel_id": "1433513650299076780",
+      "content": "But its x cost so its hyperflare",
+      "author": "guava3442",
+      "reactions": 5,
+      "channel": "🔸game-question"
     },
     {
       "id": "1497656580123136161",
@@ -253,14 +264,6 @@
       "author": "chinkeeyong",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497428782259245099",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
     }
   ]
 }
