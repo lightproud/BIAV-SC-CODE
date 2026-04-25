@@ -1,0 +1,46 @@
+OCC-LOCAL — Origin and Attribution Notice
+==========================================
+
+This subproject (projects/occ-local/) contains source code derived from:
+
+    open-claude-code
+    Copyright (c) ruvnet
+    Licensed under the MIT License
+    https://github.com/ruvnet/open-claude-code
+
+The upstream project is a clean-room reverse-engineered reimplementation of
+Anthropic's Claude Code CLI, informed by ruDevolution's AI-powered analysis
+of the published npm package (legal under US DMCA §1201(f),
+EU Software Directive Art. 6, UK CDPA §50B).
+
+Imported at: 2026-04-14
+Imported version: v2.0.0 (package.json) / v2.1.0 (README badge)
+Imported by: Code-主控台 (Erica session, B.I.A.V. Studio - Brain in a Vat)
+Import commit hash (upstream HEAD at import time): see git log
+
+What was imported:
+    - v2/                (core source: src, test, package.json, README)
+    - docs/              (architecture decision records)
+    - scripts/           -> renamed upstream-scripts/
+    - README.md          -> renamed UPSTREAM-README.md
+    - LICENSE            (MIT, preserved verbatim)
+
+What was NOT imported:
+    - archive/           (35MB legacy version history, not needed)
+    - assets/            (12MB marketing screenshots, not needed)
+    - rudevolution/      (git submodule stub, not a dependency)
+    - .github/           (upstream CI/CD, replaced by BIAV-SC workflows)
+
+Modifications:
+    - Initial import is verbatim. No code changes yet.
+    - Future BIAV-SC adaptations will be tracked as patches under
+      v2/patches/ and documented in memory/decisions.md.
+
+License Notice:
+    This subproject remains under the MIT License. The MIT License text
+    is preserved in LICENSE at this directory. Redistribution of this
+    subproject or derivatives must retain this NOTICE file and the
+    LICENSE file.
+
+Not affiliated with Anthropic. Not affiliated with ruvnet. Claude and
+Claude Code are trademarks of Anthropic, PBC.
