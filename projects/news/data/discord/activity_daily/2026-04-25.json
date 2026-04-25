@@ -1,35 +1,37 @@
 {
   "date": "2026-04-25",
-  "messages": 10704,
+  "messages": 11231,
   "unique_authors": 123,
-  "reactions_total": 795,
-  "attachments": 548,
+  "reactions_total": 829,
+  "attachments": 579,
   "channel_activity": {
-    "🔸綜合討論": 1628,
-    "🔸morimens-game-chat": 5185,
-    "🔸剧情交流": 18,
+    "🔸綜合討論": 1752,
+    "🔸morimens-game-chat": 5380,
+    "🔸剧情交流": 21,
+    "🔸晒卡分享": 1,
+    "🔸phòng-chat-tiếng-việt": 674,
+    "🔸canal-español": 70,
+    "🔸canal-português": 350,
+    "🔸ruang-obrolan-indonesia": 155,
+    "🔸traphase": 392,
+    "🔸team-building": 200,
+    "🔸general-chat": 637,
+    "🔸game-question": 614,
+    "🔸机器人命令┊bot-commands": 18,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 8,
+    "unsure on how to progress the story levels": 22,
+    "Been playing for a week now and kinda wanna know where I could go on from here": 1,
     "🔸课间休息闲聊": 12,
     "🔸русский-канал": 626,
-    "🔸phòng-chat-tiếng-việt": 671,
-    "🔸canal-español": 53,
-    "🔸canal-português": 346,
-    "🔸ruang-obrolan-indonesia": 154,
-    "🔸traphase": 361,
-    "🔸team-building": 180,
-    "🔸general-chat": 631,
-    "🔸game-question": 517,
-    "🔸机器人命令┊bot-commands": 16,
     "建个随笔楼": 2,
     "打算開一個圖樓可能圖之後就丟這裡了": 2,
     "Cards from S Ultra Space Deals Less Damage": 2,
     "阿格里帕最終法則相關": 2,
     "Inquiry about the home-screen music": 2,
-    "Can we change PvP seasonal rewards condition to *participate* instead?": 7,
     "ryker doodle": 5,
     "doreposting / unserious doodles": 1,
     "3星期萌新請教融災角色與配隊": 3,
     "萌新求配队和抽卡建议": 25,
-    "unsure on how to progress the story levels": 1,
     "Any guide on ultra mechanics and Arachne?": 4,
     "🔸한국어-채팅방": 2,
     "🔸ห้องสนทนาภาษาไทย": 59,
@@ -63,8 +65,9 @@
     "【English Translation】Opinions Collection": 1
   },
   "hourly_activity": {
+    "13": 849,
+    "14": 502,
     "12": 962,
-    "13": 824,
     "11": 822,
     "10": 987,
     "9": 839,
@@ -79,8 +82,8 @@
     "0": 807
   },
   "message_types": {
-    "0": 895,
-    "19": 392
+    "0": 349,
+    "19": 178
   },
   "top_reacted_messages": [
     {
@@ -172,6 +175,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1497606371401662525",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "climbkaly",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497595247755002008",
       "channel_id": "1170692781216378960",
       "content": "Doorstain famous S tier DPS <:24_Clown:1468259444423921871> <:ramona_tuff_:14414",
@@ -234,14 +245,6 @@
       "author": "fibrinogen",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497556903205802087",
-      "channel_id": "1300659580446969918",
-      "content": "дум сбрасывается когда в другую фазу уходят?",
-      "author": "reaver2421",
-      "reactions": 3,
-      "channel": "🔸русский-канал"
     }
   ]
 }
