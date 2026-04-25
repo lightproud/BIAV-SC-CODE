@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""session_inject.py —— UserPromptSubmit hook：每次用户输入前注入历史会话上下文。
+
+本档案为 Claude Code / claw-code 的 UserPromptSubmit hook 目标脚本，每次
+守密人发送新 prompt 之前由宿主进程调用。脚本：
+
+1. 从 stdin 读取 hook JSON：{"prompt": "...", "session_id": "..."}
+2. 调用 silver_memory_tools.recall_session(prompt, k=3) 搜索相关历史
+3. 渲染成带艾瑞卡语气的 Markdown 块，限制 ≤ 2000 tokens（≈ 8000 字符）
+4. 以 Claude Code 识别的 additionalContext JSON 格式输出到 stdout
+
+艾瑞卡稍后会在 .claude/settings.json 注册：
+
+    {
+      "hooks": {
+        "UserPromptSubmit": [
+          {"command": "python3 scripts/session_inject.py"}
+        ]
+      }
+    }
+
+失败策略：任何异常均输出空 additionalContext，不阻塞用户输入。
+"""
+
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+SCRIPTS_DIR = Path(__file__).resolve().parent
+if str(SCRIPTS_DIR) not in sys.path:
+    sys.path.insert(0, str(SCRIPTS_DIR))
+
+# Token budget: 1 token ≈ 4 chars (conservative Chinese+English mix)
+MAX_CHARS = 2000 * 4  # ≈ 2000 tokens 粗略估算
+HEADER = "## 档案回溯 — 检测到相关历史记忆\n\n艾瑞卡从 memory/session-digests/ 检索到以下可能相关的历史会话片段：\n\n"
+FOOTER = "\n---\n*（此上下文由 session_inject.py 自动注入；若无关请忽略。）*\n"
+
+
+def _emit_empty() -> None:
+    """输出空 additionalContext，不阻塞输入。"""
+    out = {
+        "hookSpecificOutput": {
+            "hookEventName": "UserPromptSubmit",
+            "additionalContext": "",
+        }
+    }
+    sys.stdout.write(json.dumps(out, ensure_ascii=False))
+    sys.stdout.flush()
+
+
+def _emit(text: str) -> None:
+    """输出注入内容（已截断到 token 预算内）。"""
+    if len(text) > MAX_CHARS:
+        text = text[: MAX_CHARS - 60] + "\n\n...(已截断至 2000 tokens 预算上限)"
+    out = {
+        "hookSpecificOutput": {
+            "hookEventName": "UserPromptSubmit",
+            "additionalContext": text,
+        }
+    }
+    sys.stdout.write(json.dumps(out, ensure_ascii=False))
+    sys.stdout.flush()
+
+
+def _render(matches: list[dict]) -> str:
+    """把命中列表渲染成 Markdown。"""
+    lines = [HEADER]
+    for i, m in enumerate(matches, start=1):
+        sid = m.get("session_id") or "?"
+        score = m.get("score", 0.0)
+        excerpt = (m.get("excerpt") or "").strip()
+        path = m.get("digest_path") or ""
+        lines.append(f"### [{i}] session `{sid}` (score={score:.3f})")
+        lines.append(f"- 档案：`{path}`")
+        if excerpt:
+            lines.append("- 片段：")
+            lines.append("  > " + excerpt.replace("\n", "\n  > "))
+        lines.append("")
+    lines.append(FOOTER)
+    return "\n".join(lines)
+
+
+def main() -> int:
+    # 1. 读 stdin
+    try:
+        raw = sys.stdin.read()
+    except Exception:
+        _emit_empty()
+        return 0
+
+    if not raw or not raw.strip():
+        _emit_empty()
+        return 0
+
+    try:
+        payload = json.loads(raw)
+    except json.JSONDecodeError:
+        _emit_empty()
+        return 0
+
+    if not isinstance(payload, dict):
+        _emit_empty()
+        return 0
+
+    prompt = (payload.get("prompt") or "").strip()
+    if not prompt or len(prompt) < 4:
+        _emit_empty()
+        return 0
+
+    # 2. 调用银芯检索
+    try:
+        from silver_memory_tools import recall_session  # type: ignore
+    except Exception:
+        _emit_empty()
+        return 0
+
+    try:
+        result = recall_session(prompt, k=3)
+    except Exception:
+        _emit_empty()
+        return 0
+
+    matches = (result or {}).get("matches") or []
+    if not matches:
+        _emit_empty()
+        return 0
+
+    # 3. 渲染并输出
+    try:
+        text = _render(matches)
+    except Exception:
+        _emit_empty()
+        return 0
+
+    _emit(text)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

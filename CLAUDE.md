@@ -66,7 +66,10 @@ brain-in-a-vat/
 │   ├── wiki/                  # VitePress 三语 Wiki + 游戏数据集
 │   ├── game/                  # 衍生同人游戏（规划中）
 │   ├── bpt-web/               # 黑池终端 Web 版（单文件 PWA，BPT-WEB）
-│   └── bpt-desktop/           # 黑池终端 桌面版（Electron + Vite，BPT-DESKTOP）
+│   ├── bpt-desktop/           # 黑池终端 桌面版（Electron + Vite，BPT-DESKTOP）
+│   ├── occ-local/             # 研究归档（原基于 ruvnet/open-claude-code，MIT，不再活跃）
+│   ├── bpt-next/              # 新一代黑池终端主线（来自 instructkr/claw-code，Rust，rust/Cargo.toml MIT）
+│   └── graphify-ext/          # 黑池索引工具原型（来自 safishamsi/graphify，MIT，Python）
 ├── scripts/                   # 银芯记忆系统与 MCP 服务器（Python）
 ├── deliverables/              # 已交付成品存档
 └── .github/workflows/         # GitHub Actions 自动化流水线
@@ -82,6 +85,9 @@ brain-in-a-vat/
 | 衍生游戏 | `projects/game/` | Code-game（未启用） | 待决策 | 暂缓，Phase 4 启动 |
 | 黑池终端 Web (BPT-WEB) | `projects/bpt-web/` | 主控台 | 单文件 PWA（HTML + 内联 CSS/JS + SW） | v0.1.0 已部署 |
 | 黑池终端 桌面 (BPT-DESKTOP) | `projects/bpt-desktop/` | Code-site | Electron 33 + React 18 + Vite 6 + sql.js | v0.1.0 开发中 |
+| 本地 Claude Code CLI (OCC-LOCAL) | `projects/occ-local/` | - | Node 18+ / Ink React TUI（MIT） | **研究归档**（2026-04-14 降级，不再活跃） |
+| 新一代黑池终端 (BPT-NEXT) | `projects/bpt-next/` | 主控台 | Rust（cargo + 9 crates，rust/Cargo.toml MIT） | v0.1.0 构建验证通过，待守密人本地对接 |
+| 黑池索引工具原型 (GRAPHIFY-EXT) | `projects/graphify-ext/` | 主控台 | Python 3.10+ / tree-sitter / NetworkX / Leiden（MIT） | v0.4.12 刚引入，待 scripts/graphify_bridge.py MCP 桥接 |
 
 每个子项目根目录都有 `CONTEXT.md`，新会话启动时必须先读。
 
