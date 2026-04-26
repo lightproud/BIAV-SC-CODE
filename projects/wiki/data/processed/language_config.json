@@ -873,7 +873,7 @@
     {
       "key": "BPBuyLevelTxt_CN",
       "display_key": "BPBuyLevelTxt",
-      "value": "<size=30>购买后升至</size>%d<size=34>级，可以获得以下奖励"
+      "value": "购买后升至%d级，可以获得以下奖励"
     },
     {
       "key": "BPChargeSuccessfulTips_CN",
@@ -1248,7 +1248,7 @@
     {
       "key": "Battle_Cards_Number_CN",
       "display_key": "Battle_Cards_Number",
-      "value": "{s1}<size=20>    /     {s2}</size>"
+      "value": "{s1}    /     {s2}"
     },
     {
       "key": "Battle_ChooseCardToHand_CN",
@@ -5013,7 +5013,7 @@
     {
       "key": "FriendGameCount_CN",
       "display_key": "FriendGameCount",
-      "value": "友谊赛{s1}<size=24>人邀请</size>"
+      "value": "友谊赛{s1}人邀请"
     },
     {
       "key": "FriendGameInviteTipsDraft_CN",
@@ -8623,17 +8623,17 @@
     {
       "key": "PassportAdvanced_Txt_CN",
       "display_key": "PassportAdvanced_Txt",
-      "value": "解锁立即获得「银芯」× <size=32>680</size>"
+      "value": "解锁立即获得「银芯」× 680"
     },
     {
       "key": "PassportHoistDoubleUpgrade_Txt_CN",
       "display_key": "PassportHoistDoubleUpgrade_Txt",
-      "value": "升级课题立即获得「银芯」× <size=32>390</size>，并提升 <size=32>20</size> 级课题等级"
+      "value": "升级课题立即获得「银芯」× 390，并提升 20 级课题等级"
     },
     {
       "key": "PassportHoistDouble_Txt_CN",
       "display_key": "PassportHoistDouble_Txt",
-      "value": "解锁立即获得「银芯」× <size=32>1070</size>，并提升<size=32>20</size>级课题等级"
+      "value": "解锁立即获得「银芯」× 1070，并提升20级课题等级"
     },
     {
       "key": "PassportHoistPurchased_Txt_CN",
@@ -8643,12 +8643,12 @@
     {
       "key": "PassportHoistUpgrade_Txt_CN",
       "display_key": "PassportHoistUpgrade_Txt",
-      "value": "升级课题立即获得「银芯」×<size=32>780</size>，并提升 <size=32>10</size> 级课题等级"
+      "value": "升级课题立即获得「银芯」×780，并提升 10 级课题等级"
     },
     {
       "key": "PassportHoist_Txt_CN",
       "display_key": "PassportHoist_Txt",
-      "value": "解锁立即获得「银芯」× <size=32>1460</size>，并提升 <size=32>10</size> 级课题等级"
+      "value": "解锁立即获得「银芯」× 1460，并提升 10 级课题等级"
     },
     {
       "key": "PasswordBattle1_CN",
@@ -11683,7 +11683,7 @@
     {
       "key": "Sleep_CN",
       "display_key": "Sleep",
-      "value": "..z<size=40>z</size>Z<size=40>Z</size>"
+      "value": "..zzZZ"
     },
     {
       "key": "SmallPotencyDesc_CN",

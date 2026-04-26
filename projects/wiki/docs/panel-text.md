@@ -33,7 +33,7 @@
 - [调试副本（30）](#dbgcopy)
 - [邀请码（24）](#invitationcode)
 - [登录（24）](#login)
-- [PvP（16）](#pvp)
+- [PvP（16）](#pvp-1)
 - [邮件（15）](#mail)
 - [设置（15）](#setting)
 - [剧情（11）](#story)
@@ -1567,10 +1567,10 @@
 | `Social_Popup_FriendlyInvite_Text_Title_Content` | 友谊赛邀请 |
 | `Social_Popup_Introduction_Text_C_Placeholder_Content` | 请输入个人简介 |
 | `Social_Popup_MatchMode_Text_C_FriendlyMatch_Content` | 选择 |
-| `Social_Popup_MatchMode_Text_C_FriendlyMatch_Desc_Content` | <size=25>相位对弈的基础模式，双方使用预先准备的队伍进行对战。</size> |
+| `Social_Popup_MatchMode_Text_C_FriendlyMatch_Desc_Content` | 相位对弈的基础模式，双方使用预先准备的队伍进行对战。 |
 | `Social_Popup_MatchMode_Text_C_FriendlyMatch_Name_Content` | 预组模式 |
 | `Social_Popup_MatchMode_Text_C_RotationMode_Content` | 选择 |
-| `Social_Popup_MatchMode_Text_C_RotationMode_Desc_Content` | <size=25>相位对弈的进阶模式，双方轮流在随机卡池内选取卡牌，组成卡组进行对战。</size> |
+| `Social_Popup_MatchMode_Text_C_RotationMode_Desc_Content` | 相位对弈的进阶模式，双方轮流在随机卡池内选取卡牌，组成卡组进行对战。 |
 | `Social_Popup_MatchMode_Text_C_RotationMode_Name_Content` | 轮选模式 |
 | `Social_Popup_MatchMode_Text_Title_Content` | 选择模式 |
 | `Social_Popup_Match_Text_C_Waiting_Content` | 正在等待 |
@@ -2278,7 +2278,7 @@
 | `Passport_Money_Item_New_Text_C_Hoist_2_Content` | 10 |
 | `Passport_Money_Item_New_Text_C_Hoist_3_Content` | 级 |
 | `Passport_Money_Item_New_Text_C_Hoist_4_Content` | 课题等级 |
-| `Passport_Money_Item_New_Text_C_Hoist_Content` | 立即提升<size=32>10</size>级课题等级 |
+| `Passport_Money_Item_New_Text_C_Hoist_Content` | 立即提升10级课题等级 |
 | `Passport_Money_Item_New_Text_C_Introduce_Content` | 解锁高阶课题并提升到40级，可在课题礼匣中选一个命轮或「流明之芯」×5作为奖励 |
 | `Passport_Money_Item_New_Text_C_Name_Content` | 训令表彰 |
 | `Passport_Money_Item_New_Text_C_Privilege_1_Content` | 每日试训 |
@@ -3235,7 +3235,7 @@
 | `Login_Text_C_User_Content` | 用户中心 |
 | `Login_Text_C_Ver_Title_Content` | Ver: |
 
-## PvP {#pvp}
+## PvP {#pvp-1}
 
 共 16 条
 

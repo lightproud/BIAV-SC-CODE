@@ -11,6 +11,12 @@ def clean_markup(text):
     """Remove Unity rich text / custom markup tags, keep display text."""
     text = re.sub(r'<color=[^>]+>', '', text)
     text = re.sub(r'</color>', '', text)
+    text = re.sub(r'<size=[^>]+>', '', text)
+    text = re.sub(r'</size>', '', text)
+    text = re.sub(r'<b>', '', text)
+    text = re.sub(r'</b>', '', text)
+    text = re.sub(r'<i>', '', text)
+    text = re.sub(r'</i>', '', text)
     text = re.sub(r'<[A-Za-z_]+:([^>]+)>', r'\1', text)
     return text.strip()
 

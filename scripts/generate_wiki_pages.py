@@ -7,22 +7,241 @@ DOCS_DIR = 'projects/wiki/docs'
 
 
 def generate_voice_lines():
-    """Generate voice lines page from voice_lines.json."""
+    """Generate voice lines page from voice_character_map.json.
+
+    Uses the character-to-voice-line mapping built by text matching on
+    AwakerVoiceTitle (pattern: 关于X) and UnlockDesc (pattern:
+    获得唤醒体「X」后解锁).  Voice lines are grouped by character name
+    where a mapping exists, with unmapped lines in a separate section.
+    """
+    map_path = f'{PROCESSED_DIR}/voice_character_map.json'
+    if not os.path.exists(map_path):
+        # Fallback to legacy voice_lines.json
+        _generate_voice_lines_legacy()
+        return
+
+    with open(map_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    meta = data['_meta']
+    lines = []
+    lines.append('# 角色语音台词')
+    lines.append('')
+    lines.append(
+        f'> 数据来源：Voice.lua + AwakerConfig.lua（运行时内存提取）'
+        f' | 共 {meta["total_voice_entries"]} 条语音'
+        f' / {meta["big_group_clusters"]} 个角色语音组'
+        f' / {meta["about_relation_count"]} 条角色引用'
+    )
+    lines.append('')
+
+    # --- Section 1: Character voice references ---
+    char_voices = data.get('character_voices', {})
+    if char_voices:
+        lines.append('## 角色语音引用')
+        lines.append('')
+        lines.append(
+            '以下语音台词通过标题文本匹配（「关于X」=谈论角色X）'
+            '或解锁条件（「获得唤醒体「X」后解锁」）关联到具体角色。'
+        )
+        lines.append('')
+
+        for char_name, char_data in char_voices.items():
+            vls = char_data['voice_lines']
+            if not vls:
+                continue
+            char_id_str = ', '.join(str(i) for i in char_data['character_ids'])
+            lines.append(
+                f'### {char_name}（ID: {char_id_str},'
+                f' {char_data["voice_line_count"]} 条引用）'
+            )
+            lines.append('')
+
+            for vl in vls:
+                relation_tag = {
+                    'about': '谈及',
+                    'unlock_requires': '解锁需',
+                    'speaker': '说话者',
+                    'speaker_unconfirmed': '疑似说话者',
+                }.get(vl['relation'], vl['relation'])
+
+                lines.append(f'**{vl["title"]}** `[{relation_tag}]`')
+                lines.append('')
+                lines.append(f'> {vl["content"]}')
+                unlock = vl.get('unlock_desc', '')
+                if unlock:
+                    lines.append('>')
+                    lines.append(f'> *{unlock}*')
+                lines.append('')
+
+    # --- Section 2: Voice groups (big group clusters) ---
+    voice_groups = data.get('voice_groups', [])
+    if voice_groups:
+        lines.append('## 角色语音组（主语音库）')
+        lines.append('')
+        lines.append(
+            '::: info 说明\n'
+            '以下 44 个语音组来自主语音库（ID 4908-6765），每组对应一位唤醒体。'
+            '由于角色与语音组的对应关系存储在 Lua 字节码常量表中（未被字符串扫描捕获），'
+            '当前通过排序聚类分组，说话者身份待确认。'
+            '标题中带有「关于X」的台词已标注引用角色。\n'
+            ':::'
+        )
+        lines.append('')
+
+        for vg in voice_groups:
+            # Collect referenced characters in this group
+            referenced = set()
+            for vl in vg['voice_lines']:
+                ac = vl.get('about_character')
+                if ac:
+                    referenced.add(ac)
+
+            ref_str = ''
+            if referenced:
+                ref_str = f'，谈及：{", ".join(sorted(referenced))}'
+
+            lines.append(
+                f'### 语音组 {vg["group_id"] + 1}'
+                f'（ID {vg["id_range"]}，{vg["line_count"]} 条{ref_str}）'
+            )
+            lines.append('')
+
+            # Group voice lines by category
+            categories = {}
+            for vl in vg['voice_lines']:
+                # Extract category from title (part before the dot)
+                title = vl['title']
+                cat = _voice_category(title)
+                if cat not in categories:
+                    categories[cat] = []
+                categories[cat].append(vl)
+
+            for cat_name, cat_lines in categories.items():
+                lines.append(f'#### {cat_name}')
+                lines.append('')
+                for vl in cat_lines:
+                    title = vl['title']
+                    content = vl['content']
+                    unlock = vl.get('unlock_desc', '')
+                    about = vl.get('about_character', '')
+
+                    suffix = f' `[关于{about}]`' if about else ''
+                    lines.append(f'**{title}**{suffix}')
+                    lines.append('')
+                    lines.append(f'> {content}')
+                    if unlock:
+                        lines.append('>')
+                        lines.append(f'> *{unlock}*')
+                    lines.append('')
+
+    # --- Section 3: Small voice groups ---
+    small_groups = data.get('small_voice_groups', [])
+    if small_groups:
+        lines.append('## 追加语音组')
+        lines.append('')
+        lines.append(
+            '以下语音组来自其他 ID 区间，通常为版本更新追加的语音内容。'
+        )
+        lines.append('')
+
+        for sg in small_groups:
+            ref_chars = sg.get('referenced_characters', [])
+            ref_str = ''
+            if ref_chars:
+                ref_str = f'，关联角色：{", ".join(ref_chars)}'
+
+            lines.append(
+                f'### 追加组（ID {sg["id_range"]}，'
+                f'{sg["line_count"]} 条{ref_str}）'
+            )
+            lines.append('')
+
+            for vl in sg['voice_lines']:
+                title = vl['title']
+                content = vl['content']
+                unlock = vl.get('unlock_desc', '')
+                about = vl.get('about_character', '')
+
+                suffix = f' `[关于{about}]`' if about else ''
+                lines.append(f'**{title}**{suffix}')
+                lines.append('')
+                lines.append(f'> {content}')
+                if unlock:
+                    lines.append('>')
+                    lines.append(f'> *{unlock}*')
+                lines.append('')
+
+    # --- Section 4: Unmapped voice lines ---
+    unmapped = data.get('unmapped_voices', [])
+    if unmapped:
+        lines.append('## 未映射语音')
+        lines.append('')
+        lines.append(
+            f'以下 {len(unmapped)} 条语音暂无角色关联，'
+            '标题中未包含可识别的角色名称或解锁条件。'
+        )
+        lines.append('')
+
+        for vl in unmapped:
+            title = vl['title']
+            content = vl['content']
+            unlock = vl.get('unlock_desc', '')
+
+            lines.append(f'**{title}**')
+            lines.append('')
+            lines.append(f'> {content}')
+            if unlock:
+                lines.append('>')
+                lines.append(f'> *{unlock}*')
+            lines.append('')
+
+    with open(f'{DOCS_DIR}/voice-lines.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Voice lines page: {len(lines)} lines written')
+
+
+def _voice_category(title):
+    """Extract a display category from a voice line title."""
+    # Common category prefixes in voice titles
+    prefixes = [
+        '闲话', '同调率', '启灵', '获得提升', '调查', '唤醒',
+        '灵知觉醒', '超限狂气爆发', '狂气爆发',
+        '打击', '防御', '受击', '技能', '特殊技能',
+    ]
+    for p in prefixes:
+        if title.startswith(p):
+            return p
+    return '其他'
+
+
+def _generate_voice_lines_legacy():
+    """Legacy generator using voice_lines.json (no character mapping)."""
     with open(f'{PROCESSED_DIR}/voice_lines.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     lines = []
     lines.append('# 角色语音台词')
     lines.append('')
-    lines.append(f'> 数据来源：Voice.lua（运行时内存提取） | 共 {data["_meta"]["total_lines"]} 条语音 / {data["_meta"]["character_groups"]} 个角色组')
+    lines.append(
+        f'> 数据来源：Voice.lua（运行时内存提取）'
+        f' | 共 {data["_meta"]["total_lines"]} 条语音'
+        f' / {data["_meta"]["character_groups"]} 个角色组'
+    )
     lines.append('')
     lines.append('::: warning 注意')
-    lines.append('由于角色 ID 与角色名的映射关系存储在 Lua 字节码常量表中（未被字符串扫描捕获），当前以 ID 范围标识角色分组。')
+    lines.append(
+        '由于角色 ID 与角色名的映射关系存储在 Lua 字节码常量表中'
+        '（未被字符串扫描捕获），当前以 ID 范围标识角色分组。'
+    )
     lines.append(':::')
     lines.append('')
 
     for i, char in enumerate(data['characters']):
-        lines.append(f'## 角色组 {i+1}（ID {char["id_range"]}，{char["line_count"]} 条）')
+        lines.append(
+            f'## 角色组 {i+1}（ID {char["id_range"]}，'
+            f'{char["line_count"]} 条）'
+        )
         lines.append('')
 
         for cat_name, cat_lines in char['categories'].items():
@@ -38,13 +257,13 @@ def generate_voice_lines():
                 lines.append('')
                 lines.append(f'> {content}')
                 if unlock:
-                    lines.append(f'>')
+                    lines.append('>')
                     lines.append(f'> *{unlock}*')
                 lines.append('')
 
     with open(f'{DOCS_DIR}/voice-lines.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
-    print(f'Voice lines page: {len(lines)} lines')
+    print(f'Voice lines page (legacy): {len(lines)} lines')
 
 
 def generate_collection_hall():
@@ -830,15 +1049,25 @@ def generate_panel_text():
     lines.append('## 分类索引')
     lines.append('')
     sorted_cats = sorted(categories.items(), key=lambda x: -len(x[1]))
+    seen_ids = {}
+    cat_anchors = {}
     for cat, items in sorted_cats:
+        anchor = cat.lower()
+        if anchor in seen_ids:
+            seen_ids[anchor] += 1
+            anchor = f'{anchor}-{seen_ids[anchor]}'
+        else:
+            seen_ids[anchor] = 0
+        cat_anchors[cat] = anchor
         label = cat_labels.get(cat, cat)
-        lines.append(f'- [{label}（{len(items)}）](#{cat.lower()})')
+        lines.append(f'- [{label}（{len(items)}）](#{anchor})')
     lines.append('')
 
     # Each category
     for cat, items in sorted_cats:
         label = cat_labels.get(cat, cat)
-        lines.append(f'## {label} {{#{cat.lower()}}}')
+        anchor = cat_anchors[cat]
+        lines.append(f'## {label} {{#{anchor}}}')
         lines.append('')
         lines.append(f'共 {len(items)} 条')
         lines.append('')
@@ -870,7 +1099,9 @@ def generate_update_notices():
         data = json.load(f)
 
     meta = data['_meta']
-    notices = data['notices']
+    notices = [n for n in data['notices']
+               if not n['text'].lstrip().startswith('{')
+               and len(n['text']) < 50000]
 
     # Classify notices into types for better presentation
     full_notes = []      # Long entries with newlines (complete patch notes)
