@@ -10,15 +10,12 @@ Discord 全量数据归档器 v2 — 双轨并行 + 断点续传 + JSONL 去重
   │   │   └── YYYY-MM-DD.jsonl    # 按自然日分片的消息
   ├── activity_daily/
   │   └── YYYY-MM-DD.json         # 每日纯统计摘要（永久保留）
-  ├── monthly_reports/
-  │   └── YYYY-MM.md              # Claude 生成月报（失败时写 YYYY-MM-SKIPPED.md）
   ├── channel_index.json          # ID → {name, type, dir} 映射（含 emoji 的完整名称在此）
   └── state.json                  # 增量游标 + 历史偿还进度（每频道粒度）
 
 运行模式:
   python discord_archiver.py                         # 常规：今日增量 + 历史偿还一个月
   python discord_archiver.py --archive-monthly       # 月度归档（每月 1 日由 workflow 触发）
-  python discord_archiver.py --generate-report YYYY-MM  # 补生成指定月份月报
 """
 
 import argparse
@@ -821,9 +818,6 @@ class DiscordArchiver:
         finally:
             archive_path.unlink(missing_ok=True)
 
-        # Generate monthly report (failure must NOT abort the archive)
-        self._generate_monthly_report(month_str)
-
         # Remove archived JSONL from git
         removed = 0
         for f in jsonl_files:
@@ -837,83 +831,6 @@ class DiscordArchiver:
                 f.unlink(missing_ok=True)
                 removed += 1
         logger.info(f'Removed {removed} JSONL files from git for {month_str}')
-
-    def _generate_monthly_report(self, month_str: str):
-        """
-        Generate a Claude-powered monthly community report.
-        On ANY failure, write a SKIPPED marker instead of raising.
-        The archive flow is never blocked by report failures.
-        """
-        report_dir = DISCORD_DATA_DIR / 'monthly_reports'
-        report_dir.mkdir(parents=True, exist_ok=True)
-        report_path = report_dir / f'{month_str}.md'
-        skipped_path = report_dir / f'{month_str}-SKIPPED.md'
-
-        # Load daily stats for this month
-        stats_dir = DISCORD_DATA_DIR / 'activity_daily'
-        monthly_stats = []
-        if stats_dir.exists():
-            for f in sorted(stats_dir.glob(f'{month_str}-*.json')):
-                try:
-                    with open(f, 'r', encoding='utf-8') as fp:
-                        monthly_stats.append(json.load(fp))
-                except Exception:
-                    pass
-
-        total_msgs = sum(s.get('messages', 0) for s in monthly_stats)
-        active_days = len(monthly_stats)
-
-        try:
-            import anthropic
-            client = anthropic.Anthropic()
-
-            top_channels: dict = defaultdict(int)
-            for s in monthly_stats:
-                for ch, cnt in s.get('channel_activity', {}).items():
-                    top_channels[ch] += cnt
-            top_5 = sorted(top_channels.items(), key=lambda x: x[1], reverse=True)[:5]
-
-            prompt = (
-                f"你是忘却前夜（Morimens）Discord 社区的月度分析师。\n"
-                f"请根据以下 {month_str} 的活跃数据，生成一份简洁的中文月报（600字以内），包含：\n"
-                f"1. 月度总览（消息量、活跃天数）\n"
-                f"2. 最活跃的频道 Top 5\n"
-                f"3. 社区动态亮点（如有异常峰值请注明）\n\n"
-                f"数据摘要：\n"
-                f"- 月份：{month_str}\n"
-                f"- 总消息数：{total_msgs:,}\n"
-                f"- 活跃天数：{active_days}\n"
-                f"- 最活跃频道（消息数）：{json.dumps(top_5, ensure_ascii=False)}\n"
-            )
-            response = client.messages.create(
-                model='claude-opus-4-6',
-                max_tokens=1500,
-                messages=[{'role': 'user', 'content': prompt}],
-            )
-            content = response.content[0].text
-            report = (
-                f'# 忘却前夜 Discord 月报 {month_str}\n\n'
-                f'> 自动生成于 {datetime.now(timezone.utc).strftime("%Y-%m-%d")} by discord_archiver\n\n'
-                f'{content}\n'
-            )
-            with open(report_path, 'w', encoding='utf-8') as f:
-                f.write(report)
-            logger.info(f'Monthly report generated: {report_path.name}')
-
-        except Exception as e:
-            logger.error(f'Monthly report generation failed (writing SKIPPED marker): {e}')
-            skipped = (
-                f'# Discord 月报 {month_str} — 生成失败，已跳过\n\n'
-                f'**失败原因**: `{e}`\n\n'
-                f'**跳过时间**: {datetime.now(timezone.utc).isoformat()}\n\n'
-                f'**补生成命令**:\n'
-                f'```bash\n'
-                f'python projects/news/scripts/discord_archiver.py --generate-report {month_str}\n'
-                f'```\n'
-            )
-            with open(skipped_path, 'w', encoding='utf-8') as f:
-                f.write(skipped)
-            logger.info(f'SKIPPED marker written: {skipped_path.name}')
 
     # ── Main pipeline ─────────────────────────────────────────────────────────
 
@@ -1094,11 +1011,7 @@ def main():
     parser = argparse.ArgumentParser(description='Discord data archiver v2')
     parser.add_argument(
         '--archive-monthly', action='store_true',
-        help='Run monthly archive: package → GitHub Releases, generate report, remove old JSONL'
-    )
-    parser.add_argument(
-        '--generate-report', metavar='YYYY-MM',
-        help='(Re)generate monthly report for a specific month (use after API key restored)'
+        help='Run monthly archive: package → GitHub Releases, remove old JSONL'
     )
     parser.add_argument(
         '--history-only', action='store_true',
@@ -1109,8 +1022,6 @@ def main():
     archiver = DiscordArchiver()
     if args.archive_monthly:
         archiver.run_monthly_archive()
-    elif args.generate_report:
-        archiver._generate_monthly_report(args.generate_report)
     elif args.history_only:
         archiver.run_history_only()
     else:
