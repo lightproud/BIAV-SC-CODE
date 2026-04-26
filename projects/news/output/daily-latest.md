@@ -1,11 +1,10 @@
 # 忘却前夜 社区日报 2026-04-26
 
-> 采集时间：2026-04-26 22:44 UTC+8
+> 采集时间：2026-04-26 23:38 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1487
-2. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 162
+1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 179
 
 ## 总览
 
@@ -46,11 +45,11 @@
 | Twitch | 0（沉默）|
 | Twitter/X | 0（沉默）|
 | VK Play | 0（沉默）|
-| 微博 | 16 |
+| 微博 | 15 |
 | 微信公众号 | 0（沉默）|
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 2 |
+| YouTube | 1 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -82,11 +81,11 @@
 
 ## Bilibili
 
-1. 我们都是肉做的 — engagement: 3105
-2. 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1487
-3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 393
-4. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 387
-5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 226
+1. 我们都是肉做的 — engagement: 3211
+2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 425
+3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 419
+4. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 293
+5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 284
 
 ## DCInside
 
@@ -99,8 +98,8 @@
 ## Reddit
 
 1. The Keeper and Goliath after unlocking Reproduction Frenzy. — engagement: 0
-2. is this upcoming skin??🫤 — engagement: 0
-3. What do you think about Arc 2 Chapter 5 difficulty? — engagement: 0
+2. What do you think about Arc 2 Chapter 5 difficulty? — engagement: 0
+3. is this upcoming skin??🫤 — engagement: 0
 4. wtf man!! what kind of health bar is this??😫help dawg — engagement: 0
 5. Anyone playing without pulling gacha? — engagement: 0
 
@@ -122,12 +121,15 @@
 4. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
 
 忘却前夜 — engagement: 0
-5. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+5. 忘却前夜#忘却前夜#
+《忘却前夜》概念PV——「银芯」
+那是自融蚀降临后，人类最后的希望。
+◆◆◆◆◆◆
+官方玩家交流群 — engagement: 0
 
 ## YouTube
 
-1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 243
-2. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 95
+1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 248
 
 ## 沉默平台
 
