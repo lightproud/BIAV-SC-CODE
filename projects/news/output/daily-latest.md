@@ -1,16 +1,10 @@
 # 忘却前夜 社区日报 2026-04-27
 
-> 采集时间：2026-04-27 03:42 UTC+8
+> 采集时间：2026-04-27 04:31 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 247
-2. [微博] 忘却前夜×沙耶之歌 联动预告
-
-梦的碎片 随风而至
-
-#忘却前夜# #沙耶之歌#
-忘却前夜 #Morimens# 忘却前 — engagement: 0
+1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 254
 
 ## 总览
 
@@ -19,7 +13,7 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 27 |
+| Bilibili | 29 |
 | Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（沉默）|
@@ -27,7 +21,7 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 0（沉默）|
-| Pixiv | 1 |
+| Pixiv | 0（沉默）|
 | Reddit | 26 |
 | Ruliweb | 1 |
 | Steam | 7 |
@@ -36,9 +30,9 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 17 |
+| 微博 | 15 |
 | 微信公众号 | 0（沉默）|
-| YouTube | 0（沉默）|
+| YouTube | 1 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -70,15 +64,11 @@
 
 ## Bilibili
 
-1. 我们都是肉做的 — engagement: 3369
-2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 482
-3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 476
-4. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 397
-5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 387
-
-## Pixiv
-
-1.  — engagement: 0
+1. 我们都是肉做的 — engagement: 3390
+2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 486
+3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 481
+4. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 402
+5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 392
 
 ## Reddit
 
@@ -98,25 +88,28 @@
 
 ## 微博
 
-1. 忘却前夜#忘却前夜#
+1. 12758【投稿】忘却前夜。我主任 — engagement: 0
+2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-2. 忘却前夜┊唤醒体展示✦徐
+3. 忘却前夜┊唤醒体展示✦徐
 妾身乃不梦乡之主，徐。
 若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
 
 ✦ 徐 CV： — engagement: 0
-3. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
+4. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
 
 忘却前夜 — engagement: 0
-4. 12758【投稿】忘却前夜。我主任 — engagement: 0
-5. 忘却前夜×沙耶之歌 联动预告
+5. 忘却前夜#忘却前夜#
+《忘却前夜》概念PV——「银芯」
+那是自融蚀降临后，人类最后的希望。
+◆◆◆◆◆◆
+官方玩家交流群 — engagement: 0
 
-梦的碎片 随风而至
+## YouTube
 
-#忘却前夜# #沙耶之歌#
-忘却前夜 #Morimens# 忘却前 — engagement: 0
+1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 267
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Pixiv, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎

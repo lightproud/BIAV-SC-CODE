@@ -1,8 +1,8 @@
 {
   "date": "2026-04-27",
-  "archived_at": "2026-04-26T19:42:36.644761+00:00",
+  "archived_at": "2026-04-26T20:31:27.404278+00:00",
   "source": "bilibili",
-  "item_count": 27,
+  "item_count": 29,
   "items": [
     {
       "source": "bilibili",
@@ -392,6 +392,36 @@
       "author": "赛博山头渔夫",
       "engagement": 103,
       "media_url": "//i1.hdslb.com/bfs/archive/08b7cb6ed8dff45fe6b13090c1cba564b1519859.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T12:00:29+00:00",
+      "lang": "zh",
+      "title": "阿拉克涅大人……",
+      "summary": "很神圣的配队",
+      "url": "https://www.bilibili.com/video/BV11JZFBQEC3",
+      "author": "玻璃小几",
+      "engagement": 100,
+      "media_url": "https://i0.hdslb.com/bfs/archive/335d7580099d3d94ee6b36a7d8fd11ddf3500af9.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 100,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T12:00:29+00:00",
+      "lang": "zh",
+      "title": "阿拉克涅大人……",
+      "summary": "很神圣的配队",
+      "url": "http://www.bilibili.com/video/av116470872807652",
+      "author": "玻璃小几",
+      "engagement": 100,
+      "media_url": "//i0.hdslb.com/bfs/archive/335d7580099d3d94ee6b36a7d8fd11ddf3500af9.jpg",
       "content_type": "video"
     },
     {
