@@ -1,19 +1,20 @@
 {
   "date": "2026-04-25",
-  "messages": 18724,
+  "messages": 19064,
   "unique_authors": 123,
-  "reactions_total": 1469,
-  "attachments": 899,
+  "reactions_total": 1483,
+  "attachments": 911,
   "channel_activity": {
-    "🔸綜合討論": 2772,
-    "🔸morimens-game-chat": 9115,
-    "🔸русский-канал": 862,
+    "🔸綜合討論": 2783,
+    "🔸morimens-game-chat": 9348,
+    "🔸русский-канал": 911,
+    "🔸team-building": 562,
+    "🔸general-chat": 1476,
+    "🔸game-question": 1202,
+    "🔸机器人命令┊bot-commands": 33,
+    "Weird Bug": 1,
     "🔸traphase": 684,
-    "🔸team-building": 532,
-    "🔸general-chat": 1474,
-    "🔸game-question": 1190,
     "🔸忘却前夜┊morimens-tv": 2,
-    "🔸机器人命令┊bot-commands": 31,
     "建个图楼": 5,
     "dc之前发的高清壁纸都去哪里了": 2,
     "V2.5.0 命运剧院┊Theater of Fate": 2,
@@ -76,8 +77,8 @@
     "Tawil :true:": 4
   },
   "hourly_activity": {
+    "23": 696,
     "22": 550,
-    "23": 356,
     "21": 528,
     "20": 714,
     "19": 541,
@@ -102,9 +103,9 @@
     "0": 807
   },
   "message_types": {
-    "0": 518,
-    "19": 184,
-    "21": 1
+    "0": 235,
+    "19": 104,
+    "20": 1
   },
   "top_reacted_messages": [
     {
