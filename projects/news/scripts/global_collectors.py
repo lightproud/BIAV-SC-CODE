@@ -1410,8 +1410,14 @@ def fetch_note_com():
 # ─── 韓国追加プラットフォーム ──────────────────────────────
 
 def fetch_ruliweb():
-    """从 Ruliweb 搜索韩国忘却前夜讨论。"""
+    """从 Ruliweb 搜索韩国忘却前夜讨论。
+
+    搜索结果页结构：`<div id="board_search">` 段下含若干 `<li class="search_result_item">`，
+    每条含 `<a class="title text_over">`（标题+链接）、`<span class="time">YYYY.MM.DD</span>`
+    （发布日期）、`<span class="desc">`（摘要）、`<a class="name">[板块名]</a>`。
+    """
     items = []
+    seen_urls: set[str] = set()
     for keyword in KEYWORDS["ko"]:
         try:
             resp = _get_cf(
@@ -1422,35 +1428,83 @@ def fetch_ruliweb():
             html = resp.text
             import re as _re
 
-            for match in _re.finditer(
-                r'class="subject_link"[^>]*href="([^"]+)"[^>]*>\s*([^<]+?)\s*</a>.*?'
-                r'class="recomd"[^>]*>(\d+)?',
-                html, _re.DOTALL
+            # Limit parsing to the actual post-search section to skip game-category
+            # aggregation blocks at the top of the page.
+            board_match = _re.search(
+                r'<div id="board_search"[^>]*>(.+?)(?=<div id=|</body>|$)',
+                html, _re.DOTALL,
+            )
+            if not board_match:
+                logger.info(f'Ruliweb "{keyword}": board_search section missing, skipping')
+                continue
+            board_html = board_match.group(1)
+
+            count = 0
+            for item_match in _re.finditer(
+                r'<li class="search_result_item">(.+?)</li>',
+                board_html, _re.DOTALL,
             ):
-                url, title, likes = match.groups()
-                title = title.strip()
-                if not title:
+                block = item_match.group(1)
+
+                title_m = _re.search(
+                    r'<a class="title[^"]*" href="([^"]+)"[^>]*>([^<]+)</a>',
+                    block,
+                )
+                if not title_m:
                     continue
-                likes_count = int(likes) if likes else 0
+                url, title = title_m.group(1).strip(), title_m.group(2).strip()
+                if not title or url in seen_urls:
+                    continue
+
+                time_m = _re.search(
+                    r'<span class="time">(\d{4}\.\d{2}\.\d{2}(?:\s+\d{2}:\d{2})?)</span>',
+                    block,
+                )
+                time_str = ""
+                time_approx = True
+                if time_m:
+                    raw = time_m.group(1).strip()
+                    # Normalize to ISO 8601 (UTC, since publish times shown are KST date-only —
+                    # interpret as KST 00:00 then convert to UTC for consistency).
+                    try:
+                        if " " in raw:
+                            dt = datetime.strptime(raw, "%Y.%m.%d %H:%M")
+                        else:
+                            dt = datetime.strptime(raw, "%Y.%m.%d")
+                        # KST = UTC+9
+                        dt = dt.replace(tzinfo=timezone(timedelta(hours=9)))
+                        time_str = dt.astimezone(timezone.utc).isoformat()
+                        time_approx = False
+                    except ValueError:
+                        pass
+
+                if not time_str:
+                    time_str = datetime.now(timezone.utc).isoformat()
+                    time_approx = True
+
+                desc_m = _re.search(r'<span class="desc">\s*(.+?)\s*</span>', block, _re.DOTALL)
+                summary = _re.sub(r'\s+', ' ', desc_m.group(1)).strip()[:300] if desc_m else ""
 
                 if not url.startswith("http"):
                     url = f"https://bbs.ruliweb.com{url}"
+                seen_urls.add(url)
 
                 items.append(_make_item(
                     title=title,
-                    summary="",
+                    summary=summary,
                     source="ruliweb",
                     platform_region="kr",
-                    time_str=datetime.now(timezone.utc).isoformat(),
+                    time_str=time_str,
                     url=url,
-                    engagement=likes_count,
-                    is_hot=likes_count > 10,
+                    engagement=0,
+                    is_hot=False,
                     author="",
                     lang="ko",
-                    time_is_approximate=True,
+                    time_is_approximate=time_approx,
                 ))
+                count += 1
 
-            logger.info(f'Ruliweb "{keyword}": {len(items)} posts')
+            logger.info(f'Ruliweb "{keyword}": {count} posts')
         except Exception as e:
             logger.warning(f'Ruliweb "{keyword}" failed: {e}')
 
