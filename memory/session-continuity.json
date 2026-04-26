@@ -1,54 +1,49 @@
 {
   "last_session": {
-    "id": "907a04d9",
-    "timestamp": "2026-04-26T03:11:28.329000+00:00",
-    "duration_minutes": 17849.0,
-    "branch": "HEAD",
-    "topics": [
-      "日报"
-    ],
+    "id": "429be303",
+    "timestamp": "2026-04-25T17:17:37.925000+00:00",
+    "duration_minutes": 120.5,
+    "branch": "claude/analyze-game-data-tYQo0",
+    "topics": [],
     "decisions": [
-      "远程版本。只需保留我们的 session digest 文件"
+      "完整的 404 张"
     ],
     "files_changed": [
-      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py"
+      "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
+      "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
+      "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+      "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py"
     ],
     "open_items": []
   },
   "recent_sessions": [
     {
-      "id": "8507ddbd",
-      "timestamp": "2026-04-25T17:18:35.899000+00:00",
-      "duration_minutes": 17256.2,
-      "branch": "HEAD",
-      "topics": [
-        "日报"
-      ],
+      "id": "5625f26c",
+      "timestamp": "2026-04-25T16:57:38.149000+00:00",
+      "duration_minutes": 100.5,
+      "branch": "claude/analyze-game-data-tYQo0",
+      "topics": [],
       "decisions": [
-        "远程版本。只需保留我们的 session digest 文件"
+        "完整的 404 张"
       ],
       "files_changed": [
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py"
+        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
+        "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py"
       ],
       "open_items": []
     },
     {
-      "id": "d2848314",
-      "timestamp": "2026-04-25T16:47:38.944000+00:00",
-      "duration_minutes": 17225.2,
-      "branch": "HEAD",
-      "topics": [
-        "日报"
-      ],
+      "id": "3d1f4933",
+      "timestamp": "2026-04-25T16:39:05.370000+00:00",
+      "duration_minutes": 82.0,
+      "branch": "claude/analyze-game-data-tYQo0",
+      "topics": [],
       "decisions": [
-        "远程版本。只需保留我们的 session digest 文件"
+        "完整的 404 张"
       ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py"
-      ],
+      "files_changed": [],
       "open_items": []
     },
     {
@@ -184,15 +179,16 @@
   ],
   "momentum": {
     "topic_weights": {
-      "日报": 2.44,
       "BPT": 1.3,
       "黑池": 1.3
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py"
+      "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
+      "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
+      "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+      "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py"
     ],
     "total_sessions": 71
   },
-  "updated_at": "2026-04-26T03:14:48.814077+00:00"
+  "updated_at": "2026-04-25T17:21:05.947188+00:00"
 }
