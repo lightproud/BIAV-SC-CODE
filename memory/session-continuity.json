@@ -1,23 +1,40 @@
 {
   "last_session": {
-    "id": "bb18d9fc",
-    "timestamp": "2026-04-26T04:06:02.489000+00:00",
-    "duration_minutes": 768.9,
-    "branch": "HEAD",
-    "topics": [],
-    "decisions": [
-      "完整的 404 张"
+    "id": "7f53216f",
+    "timestamp": "2026-04-26T04:16:44.118000+00:00",
+    "duration_minutes": 21.1,
+    "branch": "claude/analyze-game-data-tYQo0",
+    "topics": [
+      "Wiki"
     ],
+    "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-      "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
       "/home/user/brain-in-a-vat/projects/wiki/package.json",
       "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-      "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py"
+      "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py",
+      "/tmp/build_voice_map_v2.py"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "bb18d9fc",
+      "timestamp": "2026-04-26T04:06:02.489000+00:00",
+      "duration_minutes": 768.9,
+      "branch": "HEAD",
+      "topics": [],
+      "decisions": [
+        "完整的 404 张"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
+        "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
+        "/home/user/brain-in-a-vat/projects/wiki/package.json",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "055a1e5b",
       "timestamp": "2026-04-26T03:37:03.611000+00:00",
@@ -157,39 +174,23 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "b7ea77f2",
-      "timestamp": "2026-04-16T08:58:58.071000+00:00",
-      "duration_minutes": 2291.6,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 0.83,
-      "黑池": 0.83,
-      "日报": 0.8
+      "Wiki": 1.0,
+      "BPT": 0.66,
+      "黑池": 0.66,
+      "日报": 0.64
     },
     "hot_files": [
+      "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+      "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py",
       "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
       "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-      "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-      "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py"
+      "/home/user/brain-in-a-vat/projects/wiki/package.json"
     ],
-    "total_sessions": 73
+    "total_sessions": 74
   },
-  "updated_at": "2026-04-26T04:11:35.542962+00:00"
+  "updated_at": "2026-04-26T04:20:47.012714+00:00"
 }
