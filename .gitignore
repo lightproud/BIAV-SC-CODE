@@ -19,8 +19,6 @@ htmlcov/
 
 # global_collectors runtime output (if run standalone)
 projects/news/data/collected_raw.json
-projects/news/data/discord/archives/
-assets/data/discord/
 morimens_extract.zip
 
 # media cache (downloaded images/covers, archived to GitHub Releases)
@@ -45,5 +43,6 @@ assets/data/sentinel-baseline.json
 projects/news/output/alerts.json
 
 # session digests — only .md conversation records are committed;
-# .json metadata stays local (no longer generated in v0.3)
+# .json metadata and .jsonl progress logs stay local (no longer generated in v0.3)
 memory/session-digests/*.json
+memory/session-digests/*.jsonl
