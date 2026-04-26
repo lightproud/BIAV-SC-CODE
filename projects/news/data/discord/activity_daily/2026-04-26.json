@@ -1,54 +1,65 @@
 {
   "date": "2026-04-26",
-  "messages": 2987,
+  "messages": 4418,
   "unique_authors": 168,
-  "reactions_total": 268,
-  "attachments": 203,
+  "reactions_total": 357,
+  "attachments": 274,
   "channel_activity": {
-    "🔸綜合討論": 482,
-    "🔸morimens-game-chat": 1715,
-    "🔸剧情交流": 12,
+    "🔸綜合討論": 578,
+    "🔸morimens-game-chat": 2351,
+    "🔸剧情交流": 14,
+    "🔸晒卡分享": 3,
+    "🔸相位对弈": 4,
+    "🔸한국어-채팅방": 4,
+    "🔸русский-канал": 35,
+    "🔸phòng-chat-tiếng-việt": 131,
+    "🔸ruang-obrolan-indonesia": 303,
+    "🔸ห้องสนทนาภาษาไทย": 44,
+    "🔸traphase": 2,
+    "🔸lore-chat": 89,
+    "🔸team-building": 28,
+    "🔸general-chat": 414,
+    "🔸邀请码互助┊swap-invitation-codes": 5,
+    "🔸game-question": 175,
+    "🔸游戏问题": 10,
+    "🔸机器人命令┊bot-commands": 12,
+    "這遊戲會修bug嗎": 2,
+    "Encouraging use of the official PC client": 6,
+    "歸檔呢": 3,
+    "Vortice keeps disappearing": 1,
+    "Cards from S Ultra Space Deals Less Damage": 1,
+    "Inquiry about the home-screen music": 2,
+    "塔薇最终法则/Tawil's Absolute Axiom BUG": 3,
+    "✅「Answered」Possibilities of Doresain kit rework": 5,
+    "3星期萌新請教融災角色與配隊": 5,
     "🔸课间休息闲聊": 4,
     "🔸交友频道": 1,
-    "🔸русский-канал": 21,
-    "🔸phòng-chat-tiếng-việt": 63,
     "🔸canal-español": 11,
     "🔸canal-português": 136,
-    "🔸ruang-obrolan-indonesia": 176,
-    "🔸ห้องสนทนาภาษาไทย": 10,
-    "🔸lore-chat": 74,
-    "🔸team-building": 26,
-    "🔸general-chat": 44,
-    "🔸邀请码互助┊swap-invitation-codes": 3,
-    "🔸game-question": 157,
-    "🔸机器人命令┊bot-commands": 5,
-    "Encouraging use of the official PC client": 1,
-    "歸檔呢": 2,
     "这什么情况": 2,
     "Reality Verges": 3,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 18,
-    "✅「Answered」Possibilities of Doresain kit rework": 4,
     "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
     "V2.5.0.0 停服维护公告": 1,
     "doreposting / unserious doodles": 1,
     "【English Translation】Opinions Collection": 1,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
-    "🔸晒卡分享": 1,
-    "🔸한국어-채팅방": 1,
-    "塔薇最终法则/Tawil's Absolute Axiom BUG": 2,
     "PVE players don't want Traphase": 4,
     "V2.5.0 命运剧院┊Theater of Fate": 1
   },
   "hourly_activity": {
+    "5": 772,
+    "6": 590,
+    "4": 410,
     "1": 549,
     "2": 923,
     "3": 793,
-    "4": 341,
     "0": 381
   },
   "message_types": {
-    "0": 1765,
-    "19": 661
+    "0": 1014,
+    "19": 416,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -76,6 +87,14 @@
       "channel": "🔸lore-chat"
     },
     {
+      "id": "1497851195316764743",
+      "channel_id": "1170692781216378960",
+      "content": "Oh... Thank you Morimens lmao",
+      "author": "not.vile",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497800953171153028",
       "channel_id": "1131839817982947429",
       "content": "守密智商依舊上上下下左左右右baba反覆橫跳嗎",
@@ -90,6 +109,30 @@
       "author": "foxcatfurry",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497831864466145332",
+      "channel_id": "1131839817982947429",
+      "content": "我不會玩超維",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497843034270863484",
+      "channel_id": "1131839817982947429",
+      "content": "不如直接白嫖大佬",
+      "author": "ernest_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497843230232936498",
+      "channel_id": "1300659603993923644",
+      "content": "Kathir:  100004267(Thủ)\nHamlin:  100225305,100346121\nGdoll:  10038953,100389537(",
+      "author": "mrmot347",
+      "reactions": 4,
+      "channel": "🔸phòng-chat-tiếng-việt"
     },
     {
       "id": "1497801372211478618",
@@ -124,6 +167,30 @@
       "channel": "🔸交友频道"
     },
     {
+      "id": "1497835593143554260",
+      "channel_id": "1170692781216378960",
+      "content": "his mom is his daughter what a wack family free",
+      "author": "cqteiie",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497844244843466902",
+      "channel_id": "1400750050208125010",
+      "content": "If i manage to get it and pull silverash",
+      "author": "moyashi0672",
+      "reactions": 3,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1497837843597492255",
+      "channel_id": "1497837843597492255",
+      "content": "還是說其實沒有要修",
+      "author": "ahuahuahua",
+      "reactions": 3,
+      "channel": "這遊戲會修bug嗎"
+    },
+    {
       "id": "1497801711484534866",
       "channel_id": "1131839817982947429",
       "content": "反正就是平推",
@@ -154,62 +221,6 @@
       "author": "necronomikkon",
       "reactions": 3,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497783545110859936",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "cameliia._.",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497784218116161536",
-      "channel_id": "1131839817982947429",
-      "content": "他就怪怪的",
-      "author": "kemomimi_",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497784583998017678",
-      "channel_id": "1131839817982947429",
-      "content": "~~那也比你好，没人爱的家伙~~",
-      "author": "kemomimi_",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497785754812678315",
-      "channel_id": "1131839817982947429",
-      "content": "你变了...",
-      "author": "kemomimi_",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497798504213516308",
-      "channel_id": "1131839817982947429",
-      "content": "0启杜勒吗",
-      "author": "catlan_33586",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497804844797526179",
-      "channel_id": "1131839817982947429",
-      "content": "我今天直接不去了",
-      "author": "sayo.0320",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497808838802538549",
-      "channel_id": "1131839817982947429",
-      "content": "洗的好那得叫爸爸洗不好那叫路邊一條",
-      "author": "hon_ey0",
-      "reactions": 2,
-      "channel": "🔸綜合討論"
     }
   ]
 }
