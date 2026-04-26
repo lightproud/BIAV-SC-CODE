@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r projects/news/requirements.txt
 
-      - name: Run gap backfill (Reddit, YouTube, Bilibili, Weibo)
+      - name: Run gap backfill (Reddit, YouTube, Bilibili, Weibo, Steam)
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           WEIBO_COOKIE: ${{ secrets.WEIBO_COOKIE }}
@@ -29,7 +29,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add projects/news/data/
+          git add -A projects/news/data/
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
