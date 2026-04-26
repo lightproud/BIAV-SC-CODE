@@ -1,10 +1,12 @@
 {
   "last_session": {
-    "id": "ddbb55b8",
-    "timestamp": "2026-04-26T07:51:58.952000+00:00",
-    "duration_minutes": 236.4,
+    "id": "e1e70d96",
+    "timestamp": "2026-04-26T09:44:17.993000+00:00",
+    "duration_minutes": 348.7,
     "branch": "claude/analyze-game-data-tYQo0",
     "topics": [
+      "GitHub",
+      "MCP",
       "Wiki"
     ],
     "decisions": [],
@@ -20,6 +22,26 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "ddbb55b8",
+      "timestamp": "2026-04-26T07:51:58.952000+00:00",
+      "duration_minutes": 236.4,
+      "branch": "claude/analyze-game-data-tYQo0",
+      "topics": [
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
+        "/home/user/brain-in-a-vat/projects/wiki/docs/public/.gitignore",
+        "/home/user/brain-in-a-vat/projects/wiki/package.json",
+        "/home/user/brain-in-a-vat/scripts/download_wiki_assets.sh",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py",
+        "/tmp/build_voice_map_v2.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "cdbde1c0",
       "timestamp": "2026-04-26T07:31:10.834000+00:00",
@@ -147,45 +169,27 @@
       ],
       "files_changed": [],
       "open_items": []
-    },
-    {
-      "id": "e8c89541",
-      "timestamp": "2026-04-25T14:54:26.578000+00:00",
-      "duration_minutes": 18785.0,
-      "branch": "HEAD",
-      "topics": [],
-      "decisions": [
-        "`special_groups`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/theme/index.ts",
-        "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py"
-      ],
-      "open_items": [
-        "更新 result 构建部分，把 `ungrouped` 替换成 `special_groups`"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 2.44,
-      "BPT": 0.42,
-      "黑池": 0.42,
-      "日报": 0.41
+      "Wiki": 2.95,
+      "GitHub": 1.0,
+      "MCP": 1.0,
+      "BPT": 0.34,
+      "黑池": 0.34,
+      "日报": 0.33
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/projects/wiki/package.json",
       "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
       "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py",
-      "/tmp/build_voice_map_v2.py"
+      "/tmp/build_voice_map_v2.py",
+      "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
+      "/home/user/brain-in-a-vat/projects/wiki/docs/public/.gitignore",
+      "/home/user/brain-in-a-vat/scripts/download_wiki_assets.sh"
     ],
-    "total_sessions": 76
+    "total_sessions": 77
   },
-  "updated_at": "2026-04-26T07:57:08.696292+00:00"
+  "updated_at": "2026-04-26T09:49:01.440456+00:00"
 }
