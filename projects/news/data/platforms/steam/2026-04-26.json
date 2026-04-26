@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-26T11:35:20.209429+00:00",
+  "archived_at": "2026-04-26T12:42:02.776279+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -168,6 +168,21 @@
       "review": "Игра чем-то напоминающая геншин, но с более мрачным и тяжелым сеттингом. Одновременно прекрасные и пугающие персонажи, дизайн которых был сделан на совесть, интересный и мрачный сюжет, очень щедрая гача, в которой в первый день можно выкрутить несколько легендарных персонажей. Единственный минус в том, что геймплей не так уж интуитивно понятен, и нужно разобраться прежде чем начинать нормально играть. много разных кнопок, и в начале игры трудно понять, что и где. Нету русского языка, но есть авто-перевод ГПТ (плохой, советую использовать лучше английский, если хотите разбираться в сюжете, а не думать, что именно сказал персонаж).",
       "timestamp_created": 1777198816,
       "playtime_forever": 5960
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-26T10:37:14+00:00",
+      "lang": "english",
+      "title": "[正面] When I close my eyes and pretend like this isn't a...",
+      "summary": "When I close my eyes and pretend like this isn't a gacha it feels so good. This game has so much sauce it is hard to describe. Art Direction and the narrative is truly unique and is able to carry what I've seen of the game on its own.\r\nI have not spent money on this, I do not play gacha games, I don't know what a \"fair\" gacha game is. Despite that, I still adore this game so far",
+      "url": "https://steamcommunity.com/profiles/76561198059690010/recommended/3052450",
+      "author": "76561198059690010",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "When I close my eyes and pretend like this isn't a gacha it feels so good. This game has so much sauce it is hard to describe. Art Direction and the narrative is truly unique and is able to carry what I've seen of the game on its own.\r\nI have not spent money on this, I do not play gacha games, I don't know what a \"fair\" gacha game is. Despite that, I still adore this game so far",
+      "timestamp_created": 1777199834,
+      "playtime_forever": 1677
     }
   ]
 }
