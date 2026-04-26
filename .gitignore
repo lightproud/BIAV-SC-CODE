@@ -47,3 +47,7 @@ projects/news/output/alerts.json
 # session digests — only .md conversation records are committed;
 # .json metadata stays local (no longer generated in v0.3)
 memory/session-digests/*.json
+# .progress.jsonl 实时累积日志，每个 PostToolUse 追加，导致 stop hook
+# 误报循环（守密人 2026-04-26 裁定排除）。保留物理文件作过程追溯，
+# 但不入 git，避免反复 commit 噪音。
+memory/session-digests/*.progress.jsonl
