@@ -194,10 +194,13 @@ def write_health(report: dict) -> None:
     """Seed source-health.json 供 SilentPlatformTracker 使用。"""
     platforms = {}
     for e in report['entries']:
-        # "never" 暂按 degraded 处理，避免在短窗口下误判为 dormant 直接跳过
+        # "never" 永远种子化为 active：archive 缺失常常是因为该源还没在产线跑过，
+        # 直接标 dormant 会让 SilentPlatformTracker 跳过采集，形成
+        # never→dormant→跳过→永远 never 的死循环。让 tracker 基于实时尝试
+        # 结果（update_platform_status）自然降级到 degraded/dormant 才是正确路径。
         if e['level'] == 'never':
-            level = 'degraded' if report['window_days'] < DORMANT_THRESHOLD else 'dormant'
-            silent = report['window_days']
+            level = 'active'
+            silent = 0
         else:
             level = e['level']
             silent = e['silent_days'] if e['silent_days'] < 9999 else report['window_days']
