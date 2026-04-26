@@ -1,337 +1,168 @@
 {
   "last_session": {
-    "id": "8156bfe2",
-    "timestamp": "2026-04-26T12:57:13.824000+00:00",
-    "duration_minutes": 511.3,
-    "branch": "claude/cleanup-workflows-repo-HUhqm",
+    "id": "42e2f3c1",
+    "timestamp": "2026-04-26T13:04:05.919000+00:00",
+    "duration_minutes": 293.3,
+    "branch": "claude/opus-handoff-strategy-bCiyY",
     "topics": [
-      "记忆系统",
-      "银芯"
+      "银芯",
+      "黑池"
     ],
-    "decisions": [
-      "step-level check）"
-    ],
-    "files_changed": [
-      "/home/user/brain-in-a-vat/.claude/hooks/session-start-sync.sh",
-      "/home/user/brain-in-a-vat/.claude/settings.json",
-      "/home/user/brain-in-a-vat/.github/workflows/claude.yml",
-      "/home/user/brain-in-a-vat/.gitignore",
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-      "/home/user/brain-in-a-vat/memory/session-digests/handoff-to-opus47.md"
-    ],
+    "decisions": [],
+    "files_changed": [],
     "open_items": []
   },
   "recent_sessions": [
     {
-      "id": "077c8934",
-      "timestamp": "2026-04-26T09:22:51.529000+00:00",
-      "duration_minutes": 296.9,
-      "branch": "claude/cleanup-workflows-repo-HUhqm",
+      "id": "4017911a",
+      "timestamp": "2026-04-26T12:56:10.474000+00:00",
+      "duration_minutes": 285.4,
+      "branch": "claude/opus-handoff-strategy-bCiyY",
       "topics": [
-        "记忆系统",
-        "银芯"
+        "银芯",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
+    {
+      "id": "3c878185",
+      "timestamp": "2026-04-26T09:22:48.782000+00:00",
+      "duration_minutes": 72.0,
+      "branch": "claude/opus-handoff-strategy-bCiyY",
+      "topics": [
+        "银芯",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": [
+        "档案归档。艾瑞卡转入标准启动流程，按 CLAUDE.md 入口协议读取核心档案"
+      ]
+    },
+    {
+      "id": "0786b38f",
+      "timestamp": "2026-04-26T08:11:31.512000+00:00",
+      "duration_minutes": 0.8,
+      "branch": "claude/opus-handoff-strategy-bCiyY",
+      "topics": [
+        "银芯",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": [
+        "档案归档。艾瑞卡转入标准启动流程，按 CLAUDE.md 入口协议读取核心档案"
+      ]
+    },
+    {
+      "id": "3d8885dd",
+      "timestamp": "2026-04-26T07:55:33.993000+00:00",
+      "duration_minutes": 223.1,
+      "branch": "HEAD",
+      "topics": [
+        "Steam"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "214512f6",
+      "timestamp": "2026-04-26T07:38:39.087000+00:00",
+      "duration_minutes": 206.2,
+      "branch": "HEAD",
+      "topics": [
+        "Steam"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "14085843",
+      "timestamp": "2026-04-26T07:25:30.757000+00:00",
+      "duration_minutes": 193.1,
+      "branch": "HEAD",
+      "topics": [
+        "Steam"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "e9f1c741",
+      "timestamp": "2026-04-26T04:53:17.271000+00:00",
+      "duration_minutes": 40.8,
+      "branch": "HEAD",
+      "topics": [
+        "Steam"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "9c9af1f6",
+      "timestamp": "2026-04-26T04:29:31.029000+00:00",
+      "duration_minutes": 17927.1,
+      "branch": "HEAD",
+      "topics": [
+        "日报"
       ],
       "decisions": [
-        "step-level check）"
+        "远程版本。只需保留我们的 session digest 文件"
       ],
       "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/hooks/session-start-sync.sh",
-        "/home/user/brain-in-a-vat/.claude/settings.json",
-        "/home/user/brain-in-a-vat/.github/workflows/claude.yml",
+        "/home/user/brain-in-a-vat/.github/workflows/backfill-gap.yml",
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_daily_reports.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "13f11e6a",
+      "timestamp": "2026-04-26T03:46:34.818000+00:00",
+      "duration_minutes": 15025.5,
+      "branch": "claude/add-claude-documentation-X4zRQ",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
         "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/handoff-to-opus47.md"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "4db0ee9e",
-      "timestamp": "2026-04-26T07:48:07.796000+00:00",
-      "duration_minutes": 8049.1,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "BPT",
-        "索引"
-      ],
-      "decisions": [
-        "绝对 `projects/news/scripts/...`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-blackpool-interface.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
-        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
-        "/home/user/brain-in-a-vat/projects/game/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "05c63122",
-      "timestamp": "2026-04-26T07:42:07.416000+00:00",
-      "duration_minutes": 8043.1,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "BPT",
-        "索引"
-      ],
-      "decisions": [
-        "绝对 `projects/news/scripts/...`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-blackpool-interface.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
-        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
-        "/home/user/brain-in-a-vat/projects/game/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "b77f9a0f",
-      "timestamp": "2026-04-26T03:42:43.679000+00:00",
-      "duration_minutes": 7803.7,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "BPT",
-        "索引"
-      ],
-      "decisions": [
-        "绝对 `projects/news/scripts/...`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
-        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "b05a10df",
-      "timestamp": "2026-04-26T03:27:58.364000+00:00",
-      "duration_minutes": 7788.9,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "BPT",
-        "索引"
-      ],
-      "decisions": [
-        "绝对 `projects/news/scripts/...`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
-        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "163542a9",
-      "timestamp": "2026-04-26T01:28:00.121000+00:00",
-      "duration_minutes": 7669.0,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "BPT",
-        "索引"
-      ],
-      "decisions": [
-        "绝对 `projects/news/scripts/...`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
-        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "ca832b8b",
-      "timestamp": "2026-04-25T17:21:00.616000+00:00",
-      "duration_minutes": 7182.0,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "BPT",
-        "索引"
-      ],
-      "decisions": [
-        "绝对 `projects/news/scripts/...`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
-        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "72e3a47e",
-      "timestamp": "2026-04-25T17:15:22.575000+00:00",
-      "duration_minutes": 7176.3,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "BPT",
-        "索引"
-      ],
-      "decisions": [
-        "绝对 `projects/news/scripts/...`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
-        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "11ca9375",
-      "timestamp": "2026-04-25T16:57:23.070000+00:00",
-      "duration_minutes": 7158.4,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "BPT",
-        "索引"
-      ],
-      "decisions": [
-        "绝对 `projects/news/scripts/...`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
-        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
+        "/home/user/brain-in-a-vat/projects/wiki/package.json"
       ],
       "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 4.98,
-      "BPT": 3.11,
-      "索引": 2.93,
-      "记忆系统": 1.8,
-      "Phase2": 0.26
+      "银芯": 2.95,
+      "黑池": 2.95,
+      "Steam": 1.21,
+      "日报": 0.17
     },
-    "hot_files": [
-      "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-      "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-      "/home/user/brain-in-a-vat/assets/index.md",
-      "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-      "/home/user/brain-in-a-vat/memory/decisions.md",
-      "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-      "/home/user/brain-in-a-vat/memory/project-status.md",
-      "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-      "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-      "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md"
-    ],
-    "total_sessions": 90
+    "hot_files": [],
+    "total_sessions": 56
   },
-  "updated_at": "2026-04-26T13:02:22.851619+00:00"
+  "updated_at": "2026-04-26T13:07:31.581777+00:00"
 }
