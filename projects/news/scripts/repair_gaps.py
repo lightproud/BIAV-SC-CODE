@@ -1,16 +1,15 @@
 #!/usr/bin/env python3
 """
-repair_gaps.py — Detect and repair date gaps in platform archives.
+repair_gaps.py — Detect and report date gaps in platform archives.
 
 Scans data/platforms/{source}/YYYY-MM-DD.json for missing dates between
 the earliest and latest archive file for each platform.
 
-For platforms with backfill support, triggers targeted backfill.
-For others, creates placeholder files to distinguish "no data that day"
-from "we never collected that day".
+Writes a gap_report.json for monitoring instead of creating empty placeholder
+files (which inflate coverage metrics and mislead backfill scripts).
 
 Usage:
-    python repair_gaps.py              # detect + repair all gaps
+    python repair_gaps.py              # detect + write report
     python repair_gaps.py --dry-run    # detect only, don't write
     python repair_gaps.py --since 2026-04-01  # only check from this date
 """
@@ -66,25 +65,18 @@ def detect_gaps(since: date | None = None) -> dict[str, list[str]]:
     return gaps
 
 
-def create_placeholder(source: str, date_str: str):
-    """Create a placeholder archive file indicating no data was collected."""
-    platform_dir = ARCHIVE_DIR / source
-    platform_dir.mkdir(parents=True, exist_ok=True)
-    path = platform_dir / f'{date_str}.json'
-
-    if path.exists():
-        return  # don't overwrite real data
-
-    placeholder = {
-        'date': date_str,
-        'archived_at': datetime.now(timezone.utc).isoformat(),
-        'source': source,
-        'item_count': 0,
-        'items': [],
-        '_gap_repaired': True,
-        '_note': 'Placeholder created by repair_gaps.py — no data was collected for this date.',
+def write_gap_report(gaps: dict[str, list[str]]):
+    """Write a JSON report of detected gaps for monitoring, without creating placeholder files."""
+    report_path = ARCHIVE_DIR.parent / 'gap_report.json'
+    report = {
+        'generated_at': datetime.now(timezone.utc).isoformat(),
+        'total_gaps': sum(len(v) for v in gaps.values()),
+        'platforms': {
+            source: {'missing_dates': dates, 'count': len(dates)}
+            for source, dates in sorted(gaps.items())
+        },
     }
-    path.write_text(json.dumps(placeholder, ensure_ascii=False, indent=2), encoding='utf-8')
+    report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
 
 
 def main():
@@ -110,14 +102,8 @@ def main():
         logger.info('Dry run — no changes made.')
         return
 
-    # Repair: create placeholder files for missing dates
-    repaired = 0
-    for source, missing_dates in gaps.items():
-        for date_str in missing_dates:
-            create_placeholder(source, date_str)
-            repaired += 1
-
-    logger.info(f'Repaired {repaired} gap(s) with placeholder files.')
+    write_gap_report(gaps)
+    logger.info(f'Gap report written to data/gap_report.json ({total_gaps} gaps across {len(gaps)} platforms).')
 
 
 if __name__ == '__main__':
