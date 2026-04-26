@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-26T08:14:25.049192+00:00",
+  "collected_at": "2026-04-26T09:46:40.274146+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
@@ -8,10 +8,10 @@
       "time": "2026-04-26T00:00:00+00:00",
       "lang": "",
       "title": "Discord 社区日报 (2026-04-26)",
-      "summary": "今日 4,418 条消息，168 位活跃用户，357 次反应。热门频道：🔸morimens-game-chat(2351)、🔸綜合討論(578)、🔸general-chat(414)、🔸ruang-obrolan-indonesia(303)、🔸game-question(175)",
+      "summary": "今日 5,455 条消息，168 位活跃用户，436 次反应。热门频道：🔸morimens-game-chat(2886)、🔸綜合討論(719)、🔸general-chat(447)、🔸ruang-obrolan-indonesia(311)、🔸game-question(220)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 4418
+      "engagement": 5455
     },
     {
       "source": "discord",
@@ -81,6 +81,27 @@
         "attachment_count": 1,
         "attachment_urls": [
           "https://cdn.discordapp.com/attachments/1170692781216378960/1497851195031687208/image.png?ex=69ef0621&is=69edb4a1&hm=4c72f0d79752f156173afc02819ae531e2f8f34a117ae3e99300e4a24a3d3cd1&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T07:39:00.860000+00:00",
+      "lang": "",
+      "title": "[DC] megidola.@🔸morimens-game-chat: DPS Hameln ",
+      "summary": "DPS Hameln \n[附件: image.png]\n  └ fishhazardthewizard: dps ham is certainly something\n  └ guava3442: I set it to that after I realized that people are more likely to friend if I have unique support instead of generic gmurphy that's worse than whales\n  └ cqteiie: Femguava\n  └ guava3442: Oh wait Im still showing off caecus even though I just blackpooled him",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497864563264323664",
+      "author": "megidola.",
+      "engagement": 18,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497864562937036881/image.png?ex=69ef1294&is=69edc114&hm=496445babb1a439ea6210e0ab79acecea970c3613bd725f78b1a46ea614effd6&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🔥×2 😭×1",
+        "reply_count": 4,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497864562937036881/image.png?ex=69ef1294&is=69edc114&hm=496445babb1a439ea6210e0ab79acecea970c3613bd725f78b1a46ea614effd6&"
         ],
         "channel": "🔸morimens-game-chat"
       }
@@ -181,6 +202,48 @@
     },
     {
       "source": "discord",
+      "time": "2026-04-26T07:19:44.093000+00:00",
+      "lang": "",
+      "title": "[DC] stormimi@🔸morimens-game-chat: Who needs to pull +12 dupes when you can just",
+      "summary": "Who needs to pull +12 dupes when you can just\n[附件: image.png]\n  └ crowlov1: holy shit\n  └ crowlov1: also holy shit bro you are here since april wdym you spent 25k silver\n  └ kylo_ren._: 🐳 🐳",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497859711431868518",
+      "author": "stormimi",
+      "engagement": 13,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497859711205249114/image.png?ex=69ef0e10&is=69edbc90&hm=1a5a0f30756f826b962cab0825751cf454e0feb9132408a6fd8dc29e41f9ddeb&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "✅×1 🔥×1",
+        "reply_count": 3,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497859711205249114/image.png?ex=69ef0e10&is=69edbc90&hm=1a5a0f30756f826b962cab0825751cf454e0feb9132408a6fd8dc29e41f9ddeb&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T07:45:38.203000+00:00",
+      "lang": "",
+      "title": "[DC] null.pointer_exception@🔸morimens-game-chat: Train is fun",
+      "summary": "Train is fun\n[附件: Screenshot_2026-04-26-03-32-34-853_com.qookkagames.z1.gp.hk.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497866229841530951",
+      "author": "null.pointer_exception",
+      "engagement": 13,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497866229761966211/Screenshot_2026-04-26-03-32-34-853_com.qookkagames.z1.gp.hk.jpg?ex=69ef1422&is=69edc2a2&hm=c2193fcd9e6dd2678289553783c607953a6d51dbb8b3e9a3fc529a129ee3dcb8&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "agree×2 😭×1 Thais_snicker×1",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497866229761966211/Screenshot_2026-04-26-03-32-34-853_com.qookkagames.z1.gp.hk.jpg?ex=69ef1422&is=69edc2a2&hm=c2193fcd9e6dd2678289553783c607953a6d51dbb8b3e9a3fc529a129ee3dcb8&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
       "time": "2026-04-26T03:27:54.939000+00:00",
       "lang": "",
       "title": "[DC] navirecorbeau@🔸綜合討論: 困難看看",
@@ -232,57 +295,6 @@
         "attachment_count": 0,
         "attachment_urls": [],
         "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-26T03:37:34.009000+00:00",
-      "lang": "",
-      "title": "[DC] foxcatfurry@🔸綜合討論: 至少他是做球不是針對嗎（看看弗蘭",
-      "summary": "至少他是做球不是針對嗎（看看弗蘭",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1497803801006964807",
-      "author": "foxcatfurry",
-      "engagement": 12,
-      "metadata": {
-        "reactions": "🌿×4",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-26T05:29:04.859000+00:00",
-      "lang": "",
-      "title": "[DC] ahuahuahua@🔸綜合討論: 我不會玩超維",
-      "summary": "我不會玩超維",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1497831864466145332",
-      "author": "ahuahuahua",
-      "engagement": 12,
-      "metadata": {
-        "reactions": "🌿×4",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-26T06:14:14.669000+00:00",
-      "lang": "",
-      "title": "[DC] mrmot347@🔸phòng-chat-tiếng-việt: Kathir:  100004267(Thủ) Hamlin:  100225305,100346121 Gdoll:  10038953,100389537(",
-      "summary": "Kathir:  100004267(Thủ)\nHamlin:  100225305,100346121\nGdoll:  10038953,100389537(Dps)\nGdoll:  101046572,100821744(Sp) \nMouche:  100069034,100746185\nOrci:  100680228\nGhelot:  100068321, 100846611,100519191\nSanga:  100366893 \nGmurphy:  100376154,100810864 \nRamona:  101129857\nSoren:  100628037, 101161227\nCasto: 100216202,101009398 (dame)\nCasto: 100115791, 100021927 ,100068223( giáp)\nHorla:  100616389,100806878\nWenkel: 100069133,100397380\nClementine:100106464,100028052,100377735,100367990,100541426 \n24:  100729018,100401461\nHilaster:  100826622, 100402888, 100783902\nTawill: 100690733, 100468753 (dps) \nVortice: 100277099,100473501, 100622219,100956623, 100037260\nLiz:100424712, 100337677,100751445\nTinc:100329257\nSalvador: 100314241, 101642714,100010448\nHamlin: 100472749(dps)\nJenkin:  100794539\nLily: 100607245,100004170,100354833\nPollux: 100525448,100330820,100000296\nXu: 101153061\nHelot: 100405548\nLotan: 100127271\nThais: 100850936,101138809,100846747  \nCauser: 10011381,100639676, 100000287\nKathir  :101029756,100108617(dame) \nRyker: 100028732(dame)\nUvhash:100446951,100744154\nRyker: 100673109,100461012(sp)\nDoresain: 100549106, 100550652, 100866172,101139978 \nOryta: 100461938\nCroposan:101004347(dps)\nOryta: 100223381(dps) \nMiryn:  101094857, 101293690 \nDaff: 101184755,100132555\nGoli: 100364701\nTulu: 100113922,100045342,100075286,100872328,100938315\nPickman: 100723478(Dps) \nMurphi: 100435061,100906703, 100791514\nGramona: 100978157(skin)\nNym: 100785022,100889615\nWanda:100514025,100644233,10014457\nWanda:100069504(Dps)\nPhệt:101060059\nFaros:101341293\nNautila: 101012401\nLeigh: 100899149\nKaren:100386953, 100954667",
-      "url": "https://discord.com/channels/1131791637933199470/1300659603993923644/1497843230232936498",
-      "author": "mrmot347",
-      "engagement": 12,
-      "metadata": {
-        "reactions": "👀×1 shocked×2 🔥×1",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸phòng-chat-tiếng-việt"
       }
     }
   ]
