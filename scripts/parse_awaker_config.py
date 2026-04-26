@@ -170,6 +170,33 @@ def parse_feature_unlock():
     return features
 
 
+def _unescape_lua_string(s):
+    """Unescape a Lua string literal captured by regex from file text.
+
+    The reconstructed Lua files use doubled backslashes for escape sequences
+    (file bytes 5c 5c 6e = ``\\n`` meaning newline).  The regex captures
+    each ``\\.`` pair as two Python chars (backslash + next char), so in
+    the captured group the sequence ``\\n`` appears as *three* Python chars:
+    ``\\`` + ``\\`` + ``n``.  We therefore match ``\\\\(.)`` (two
+    backslashes followed by one char) in a single pass.
+    """
+    def _replace_escape(m):
+        ch = m.group(1)
+        if ch == 'n':
+            return '\n'
+        elif ch == 't':
+            return '\t'
+        elif ch == '"':
+            return '"'
+        elif ch == '/':
+            return '/'
+        elif ch == '\\':
+            return '\\'
+        else:
+            return ch
+    return re.sub(r'\\\\(.)', _replace_escape, s)
+
+
 def parse_lua_string_table(filepath):
     """Parse a Lua table of ["key"] = "value" pairs (no nested blocks)."""
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -178,7 +205,7 @@ def parse_lua_string_table(filepath):
     result = {}
     for m in re.finditer(r'\["([^"]+)"\]\s*=\s*"((?:[^"\\]|\\.)*)"', text):
         key = m.group(1)
-        val = m.group(2).replace('\\n', '\n').replace('\\\\', '\\').replace('\\"', '"')
+        val = _unescape_lua_string(m.group(2))
         result[key] = val
     return result
 
@@ -191,7 +218,7 @@ def parse_lua_indexed_string_table(filepath):
     result = {}
     for m in re.finditer(r'\[(\d+)\]\s*=\s*"((?:[^"\\]|\\.)*)"', text):
         idx = int(m.group(1))
-        val = m.group(2).replace('\\n', '\n').replace('\\\\', '\\').replace('\\"', '"')
+        val = _unescape_lua_string(m.group(2))
         result[idx] = val
     return result
 
