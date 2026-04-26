@@ -153,7 +153,7 @@ idealab 是 **Anthropic-compatible 网关**，零能力损失：
 
 1. 守密人本地执行 `cargo build` 验证可编译
 2. 写 BIAV 项目级 `.claw/settings.json` 模板（常用 provider + 别名）
-3. 整理 `ROADMAP.md`（85K 内容）的中文摘要到 `memory/claw-roadmap-zh.md`
+3. 整理 `ROADMAP.md`（85K 内容）的中文摘要到 memory/claw-roadmap-zh.md（待创建）
 4. 向 `instructkr/claw-code` 提 Issue 请求 LICENSE 明确化
 5. 评估是否将 `projects/bpt/` / `projects/bpt-web/` / `projects/bpt-desktop/` 归档
 

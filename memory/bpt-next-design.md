@@ -1,5 +1,7 @@
 # BPT-NEXT 架构蓝图（旧版 - 已封存）
 
+> 最后更新：2026-04-25 by 艾瑞卡（引用修正）
+>
 > **状态：已封存（2026-04-14 当日作废）**
 > 封存原因：守密人深入调研 `instructkr/claw-code` 后改变方向，决定基于 claw-code（Rust，无 LICENSE）打造 bpt-next，接受版权风险。本文档原基于 `ruvnet/open-claude-code`（JS，MIT）+ BPT 融合的方案已不适用。
 > 保留原因：未来若 claw-code 上游 LICENSE 明确化失败、或因其他原因需要切回 occ-local 路径，本文档可作备选方案快速启用。
@@ -271,7 +273,7 @@ export const bpeSearchTool = {
 ## 五、风险登记
 
 1. **occ-local 上游 breaking change**
-   - 缓解：同步时审阅 diff；`.d.ts` 类型声明作为显式 API 契约；极端时 fork 到 `projects/bpt-next/vendor/occ/`
+   - 缓解：同步时审阅 diff；`.d.ts` 类型声明作为显式 API 契约；极端时 fork 到 bpt-next 子项目下 vendor/occ/（按需创建）
 
 2. **JS ESM 与 TS strict 混用的类型陷阱**
    - 缓解：为所有 occ 入口写 `.d.ts`；`tsconfig.json` 的 `allowJs: false`（只通过 .d.ts 看 occ）

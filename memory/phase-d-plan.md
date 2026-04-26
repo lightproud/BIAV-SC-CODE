@@ -1,6 +1,6 @@
 # BPT-NEXT Phase D — 黑池索引 / 母版部署 / 对话加密（作战档案）
 
-最后更新：2026-04-14 by 艾瑞卡
+> 最后更新：2026-04-25 by 艾瑞卡（审阅确认）
 
 > 本档案为 Phase D 作战指令。Phase A / B / C.1 / C.2 / C.3 / C.4(A+B) 已合并
 > 或在 feature 分支验收完毕。本轮目标：**把 bpt-next 从"VCS-aware REPL"

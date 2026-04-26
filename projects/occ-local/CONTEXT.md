@@ -73,7 +73,7 @@ node src/index.mjs "hello"
 1. **不修改 `v2/src/` 原始源码**，以保持可随时 pull 上游更新的能力。
 2. 银芯定制（模型前缀扩展 / OPENAI 流式补完 / Ollama 别名支持）以 **patch 文件**形式放在 `v2/patches/` 下，commit 时应用。
 3. 若需深度改造，先在 `memory/decisions.md` 记录选项与权衡，守密人确认后再 fork。
-4. **禁止** 在 `v2/` 下新增业务代码（避免污染上游骨架）。银芯业务扩展放在 `projects/occ-local/biav-ext/`（按需创建）。
+4. **禁止** 在 `v2/` 下新增业务代码（避免污染上游骨架）。银芯业务扩展放在本子项目下 biav-ext/ 子目录（按需创建）。
 
 ## 当前状态
 

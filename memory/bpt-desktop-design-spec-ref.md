@@ -62,9 +62,9 @@
 当守密人准备好重贴完整原文时，按以下流程处理：
 
 1. 建立 `projects/bpt-desktop/` 目录（`mkdir -p`）
-2. 守密人完整原文 → `projects/bpt-desktop/DESIGN-SPEC-v0.1.15.md`
+2. 守密人完整原文 → `DESIGN-SPEC-v0.1.15.md`（待创建，放入 bpt-desktop 子项目）
 3. 将本文件（`memory/bpt-desktop-design-spec-ref.md`）改为"已归档"
-   状态并加上 `projects/bpt-desktop/DESIGN-SPEC-v0.1.15.md` 的链接
+   状态并加上设计规范文件的链接
 4. 在 `projects/bpt-desktop/CONTEXT.md` 引用该规范为视觉权威源
 
 ## 不要做的事

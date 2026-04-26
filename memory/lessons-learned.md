@@ -163,7 +163,7 @@
 
 ## 22. Wiki 人工整理层数据不可靠
 
-- **Context**：`projects/wiki/data/db/` 中的 JSON 是人工整理的 Wiki 展示数据
+- **Context**：原 wiki 数据展示层目录 data/db/（已删除）中的 JSON 是人工整理的 Wiki 展示数据
 - **Problem**：约 58% 角色标注"待补充"，部分数据为推测而非客户端实际数值，不适合作为分析引用来源
 - **Fix**：分析游戏数据时以 Lua 解包层（`projects/wiki/data/extracted/lua_tables/`）和事实圣经层（`assets/data/`）为唯一可靠来源。Wiki JSON 仅作为前端展示用途，不作为事实依据
 - **Impact**：分析可信度
