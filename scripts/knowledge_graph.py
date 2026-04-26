@@ -50,7 +50,7 @@ def extract_characters() -> tuple[list[dict], list[dict]]:
         return [], []
 
     data = json.loads(fp.read_text(encoding="utf-8"))
-    characters = data.get("characters", [])
+    characters = data.get("characters", []) if isinstance(data, dict) else data
 
     nodes, edges = [], []
     for c in characters:
@@ -273,7 +273,7 @@ def extract_concepts_from_text() -> tuple[list[dict], list[dict]]:
     if chars_fp.exists():
         try:
             chars_data = json.loads(chars_fp.read_text(encoding="utf-8"))
-            for c in chars_data.get("characters", []):
+            for c in (chars_data.get("characters", []) if isinstance(chars_data, dict) else chars_data):
                 name = c.get("name", "")
                 if name and len(name) >= 2:
                     char_names[name] = make_node_id("character", name)
@@ -550,7 +550,7 @@ def incremental_update(hours_back: int = 24) -> dict:
     if chars_fp.exists() and chars_fp.stat().st_mtime > cutoff:
         try:
             chars_data = json.loads(chars_fp.read_text(encoding="utf-8"))
-            for c in chars_data.get("characters", []):
+            for c in (chars_data.get("characters", []) if isinstance(chars_data, dict) else chars_data):
                 char_id = make_node_id("character", c.get("name", ""))
                 if char_id and char_id not in existing_nodes:
                     existing_nodes[char_id] = {
@@ -637,7 +637,7 @@ def _build_entity_dict() -> dict:
     if chars_fp.exists():
         try:
             chars_data = json.loads(chars_fp.read_text(encoding="utf-8"))
-            for c in chars_data.get("characters", []):
+            for c in (chars_data.get("characters", []) if isinstance(chars_data, dict) else chars_data):
                 name = c.get("name", "")
                 if name and len(name) >= 2:
                     all_entities[name] = make_node_id("character", name)

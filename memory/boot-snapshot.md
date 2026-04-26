@@ -40,8 +40,8 @@ OK: wiki data
 ## 最新社区情报
 
 # 忘却前夜 社区日报 2026-04-26
-> 采集时间：2026-04-26 22:44 UTC+8
-1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1487
+> 采集时间：2026-04-26 23:38 UTC+8
+1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 179
 | 平台 | 数据条数 |
 |------|----------|
 | Bilibili | 27 |
@@ -51,7 +51,7 @@ OK: wiki data
 1. [DC] yusi4172@🔸綜合討論: Btw我終於+12了 — engagement: 27
 1. [正面] 이것저것 퍼주는 게 많다.
 1. [StopGame] Morimens — 3.9/10 (0 оценок) — engagement: 0
-1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 243
+1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 248
 
 ## 做梦系统
 
