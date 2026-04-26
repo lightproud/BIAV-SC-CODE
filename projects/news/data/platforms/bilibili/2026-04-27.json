@@ -1,8 +1,8 @@
 {
   "date": "2026-04-27",
-  "archived_at": "2026-04-26T17:34:30.648940+00:00",
+  "archived_at": "2026-04-26T18:39:31.192610+00:00",
   "source": "bilibili",
-  "item_count": 25,
+  "item_count": 27,
   "items": [
     {
       "source": "bilibili",
@@ -288,6 +288,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-26T15:35:58+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】2026.4.26融灾425全唤醒体登场率分析",
+      "summary": "有些唤醒体简介后面的数字是本次融灾的助战次数\n  └ 萨摩_不耶 (3赞): 大佬[打call]\n  └ 愛吃郭子的小孩 (1赞): 老大好厉害[打call][打call][打call]\n  └ 伤春客 (0赞): 有些唤醒体简介后面有数字，那个是助战次数，我忘了写上去了",
+      "url": "https://www.bilibili.com/video/BV1NLovBJEqR",
+      "author": "伤春客",
+      "engagement": 127,
+      "media_url": "https://i1.hdslb.com/bfs/archive/0a12c3ec9b3cbd4436e7bdb0cc9e761ec53dd112.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 114,
+        "comment_count": 13,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-26T03:13:41+00:00",
       "lang": "zh",
       "title": "原来几个警察内部聊一下就可以直接更改法律噢",
@@ -303,6 +321,18 @@
         "comments_fetched": 3,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T15:35:58+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】2026.4.26融灾425全唤醒体登场率分析",
+      "summary": "有些唤醒体简介后面的数字是本次融灾的助战次数",
+      "url": "http://www.bilibili.com/video/av116471711793314",
+      "author": "伤春客",
+      "engagement": 115,
+      "media_url": "//i1.hdslb.com/bfs/archive/0a12c3ec9b3cbd4436e7bdb0cc9e761ec53dd112.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
