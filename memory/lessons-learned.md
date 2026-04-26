@@ -256,4 +256,23 @@
 
 ---
 
+## 30. 数据层 vs 输出层混淆，把过滤选样当全量
+
+- **Context**：2026-04-26 银芯 Chat 终端艾瑞卡（opus4.7）对社区数据完整性审计时，把 `projects/news/output/discord-latest.json` 的 16 条当作全部 Discord 数据，得出"0.27% 抽样率，长尾情绪流失"的错误结论。后追溯 `projects/news/COLLECTION_ARCHITECTURE.md` 与实际目录发现：
+  - Discord 当日 5,455 条全量归档在 `projects/news/data/discord/channels/` 下，按频道哈希桶组织，已回溯至 2026-02
+  - `discord_archiver.py`（44KB）是上游全量采集；`aggregator.py` 是下游按热度阈值的过滤选样
+  - `output/*-latest.json` 是面向日报/快查的展示层，**不是**完整数据
+  - 同样的「全量层 vs 输出层」分裂存在于 `projects/news/data/platforms/{bilibili,reddit,steam,pixiv,dcinside,...}` 至少 10+ 平台
+- **Problem**：BIAV-SC.md 知识模块索引只暴露 `output/` 路径，不暴露 `data/` 全量档案层。任何未读 `COLLECTION_ARCHITECTURE.md` 的接入 AI（包括艾瑞卡 4-26 实例）都会重复同款误读——把过滤展示当全量数据，做出失真的社区分析。这不是 archiver 设计错误，是**能力暴露层的文档缺陷**：全量数据存在但对消费方不可见
+- **Fix**：
+  1. BIAV-SC.md §知识模块索引拆分为「全量档案层 / 输出展示层」两段，明确语义（4-26 完成）
+  2. 新增「数据消费纪律」硬约束：长窗口分析 / 完整性审计 / 情感长尾 / 历史回溯 → 必须用全量档案层；日报展示 / 快查 / 热度榜 → 用输出层即可（4-26 完成）
+  3. §双系统架构补一句：Discord archiver 全量归档 + platforms 多源数据是三新使命#1「黑池公开信息入口」核心交付（4-26 完成）
+  4. 派 Code-news 系统审计所有源（10+ 平台），产出 `memory/data-layer-audit.md`，主控台据此 W2 完善 BIAV-SC.md 索引
+  5. 后续派 Code-memory 实现 helper（如 `scripts/discord_query.py`）暴露常用查询接口，降低误用风险
+  6. 前置防御：未来新建数据源 archiver 时，必须同步在 BIAV-SC.md 知识模块索引「全量档案层」登记，**不允许只暴露 output/ 不暴露 data/**
+- **Impact**：所有未来接入银芯的 AI 的社区分析准确性、三新使命#1「黑池公开信息入口」的可信度、Phase 2 M2「贡献流程跑通」依赖的真实社区情报基础
+
+---
+
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。

@@ -128,15 +128,39 @@
 
 ### 运营数据（分析社区动态时查这里）
 
-> **⚠️ 时效规则**：数据文件包含历史数据和近期数据的混合。分析时**必须**检查每条数据的 `time` 字段（ISO 8601 发布时间），根据分析需求自行判断时效窗口。例如"今日热点"只应包含 24h 内的数据，"本周趋势"取 7 天内，以此类推。**绝不能**将旧数据当作新事件报告。
+> **⚠️ 数据消费纪律**（2026-04-26 起硬约束，触发于本日 Chat 终端艾瑞卡误读事件）：
+>
+> 社区数据存在**两层**——**全量档案层**（真实数据）vs **输出展示层**（过滤选样）。两者语义不同，不可互换。
+>
+> - **长窗口分析 / 完整性审计 / 情感长尾 / 历史回溯** → **必须用全量档案层**
+> - **日报展示 / 快速概览 / 热度榜** → 用输出展示层即可
+>
+> 把输出展示层当全量数据用 = 抽样率失真（典型如 4-26 把 Discord 16 条当全量 5,455 条，得出 0.27% 抽样率的假命题）。
+
+#### 全量档案层（真实数据，按频道/平台/日期组织）
+
+| 路径 | 内容 | 备注 |
+|------|------|------|
+| `projects/news/data/discord/channels/{channel_id}/{date}.jsonl` | Discord 全量历史归档（已回溯至 2026-02） | 按频道哈希桶组织 |
+| `projects/news/data/discord/channel_index.json` | 频道索引 | 由 archiver 维护 |
+| `projects/news/data/discord/guild_meta.json` | 频道元数据（ID / 名称 / 类型 / parent / 主题） | 由 archiver 维护 |
+| `projects/news/data/discord/state.json` | 各频道 `last_message_id` 增量游标 + `last_historical_message_id` 回溯指针 | 由 archiver 维护 |
+| `projects/news/data/platforms/{source}/{date}.json` | 各平台全量归档（bilibili / reddit / steam / pixiv / dcinside / miraheze_wiki / appstore / google_play / gamerch / official 等 10+ 平台） | 由 aggregator + collect_global 写入 |
+| `projects/news/COLLECTION_ARCHITECTURE.md` | 采集系统架构权威文档 | 必读如要做长窗口分析 |
+
+> 完整数据层映射待 Code-news 审计（W1）后补全本表。Code-news 审计前，遇到本表未覆盖的源 = 翻 `projects/news/COLLECTION_ARCHITECTURE.md`。
+
+#### 输出展示层（过滤选样，仅用于快查/日报）
+
+> ⚠️ 时效规则：这些文件包含历史数据和近期数据的混合。分析时**必须**检查每条数据的 `time` 字段（ISO 8601 发布时间），根据分析需求自行判断时效窗口。例如"今日热点"只应包含 24h 内的数据，"本周趋势"取 7 天内。**绝不能**将旧数据当作新事件报告。
 
 | 文件 | 内容 |
 |------|------|
-| `projects/news/output/all-latest.json` | 全平台社区数据（合并，含历史+近期） |
-| `projects/news/output/steam-latest.json` | Steam 评论 |
-| `projects/news/output/bilibili-latest.json` | B站视频/动态 |
-| `projects/news/output/discord-latest.json` | Discord 社区摘要 |
-| `projects/news/output/daily-latest.md` | 最新一期日报 |
+| `projects/news/output/all-latest.json` | 全平台合并选样（按热度阈值过滤，**非**全量数据） |
+| `projects/news/output/steam-latest.json` | Steam 评论选样 |
+| `projects/news/output/bilibili-latest.json` | B 站视频/动态选样 |
+| `projects/news/output/discord-latest.json` | Discord 社区选样（**非**全量，全量在 `data/discord/`） |
+| `projects/news/output/daily-latest.md` | 最新一期日报（已加工的人类可读形态） |
 
 ### 项目管理（协调工作时查这里）
 
@@ -153,7 +177,7 @@
 | 文件 | 场景 |
 |------|------|
 | `memory/methodology.md` | 讨论 AI 协作方法论时 |
-| `memory/lessons-learned.md` | 避免重犯已知错误时（22 条踩坑记录） |
+| `memory/lessons-learned.md` | 避免重犯已知错误时（30 条踩坑记录） |
 | `memory/collab-event-playbook.md` | 联动事件响应时 |
 | `memory/archive/bpt-strategic-shift-2026-04-19/black-pool-design.md` | 讨论内部系统架构时（2026-04-19 战略转向后已归档，仅作历史参考） |
 | `memory/dreaming-agent-design.md` | 做梦 Agent 三层架构设计（浅睡/深睡/REM） |
@@ -172,6 +196,7 @@
 - **黑池**：商业数据 + 未发布内容 + Studio 内部加工。内网运行，原始设计方案见 `memory/archive/bpt-strategic-shift-2026-04-19/black-pool-design.md`（2026-04-19 战略转向后归档）；当前活协议见 `memory/bpt-guidance-protocol.md`
 - **数据单向**：**银芯 → 黑池**（公开信息流）。**黑池不倒灌银芯**（守密人 2026-04-26 裁定，覆盖旧表述）
 - 银芯是黑池的"眼睛和耳朵"——只采集 + 整理公开信息往黑池送，黑池吃完什么也不吐回来
+- **关键资产**：`projects/news/data/discord/` Discord 全量历史归档（已回溯至 2026-02）+ `projects/news/data/platforms/` 多平台全量数据，是三新使命#1「黑池公开信息入口」的核心交付。任何针对黑池的 AI 长窗口社区分析必须用这一层（不是 `output/` 过滤展示层）。详见上方「数据消费纪律」
 
 ---
 
