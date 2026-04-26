@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "728371b1",
-    "timestamp": "2026-04-25T16:37:19.023000+00:00",
-    "duration_minutes": 108.6,
+    "id": "4889662f",
+    "timestamp": "2026-04-26T03:29:54.814000+00:00",
+    "duration_minutes": 761.1,
     "branch": "claude/memory-health-fix-Rk4Xp",
     "topics": [],
     "decisions": [],
@@ -31,6 +31,37 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "728371b1",
+      "timestamp": "2026-04-25T16:37:19.023000+00:00",
+      "duration_minutes": 108.6,
+      "branch": "claude/memory-health-fix-Rk4Xp",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
+        "/home/user/brain-in-a-vat/memory/black-pool-design.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/collab-event-playbook.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/discord-archiver-design.md",
+        "/home/user/brain-in-a-vat/memory/dreaming-agent-design.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+        "/home/user/brain-in-a-vat/memory/methodology.md",
+        "/home/user/brain-in-a-vat/memory/morimens-context.md",
+        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+        "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/research-best-wiki-features.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/memory/storage-discussion.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "c5a7782e",
       "timestamp": "2026-04-25T16:31:43.919000+00:00",
@@ -216,30 +247,12 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "1964b96f",
-      "timestamp": "2026-04-16T06:48:12.125000+00:00",
-      "duration_minutes": 2160.8,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "BPT": 2.54,
-      "黑池": 2.54
+      "BPT": 2.03,
+      "黑池": 2.03
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
@@ -253,7 +266,7 @@
       "/home/user/brain-in-a-vat/memory/pending-discussions.md",
       "/home/user/brain-in-a-vat/memory/project-status.md"
     ],
-    "total_sessions": 70
+    "total_sessions": 71
   },
-  "updated_at": "2026-04-25T16:40:36.556272+00:00"
+  "updated_at": "2026-04-26T03:34:55.071517+00:00"
 }
