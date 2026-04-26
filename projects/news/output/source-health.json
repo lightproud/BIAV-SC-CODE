@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-26T15:38:09.300357+00:00",
+  "updated_at": "2026-04-26T15:41:50.802281+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -18,20 +18,20 @@
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 616,
+      "total_items": 656,
       "errors": []
     },
     "nga": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
     "taptap": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
@@ -71,23 +71,23 @@
       "errors": []
     },
     "zhihu": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
     "naver_cafe": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
     "bahamut": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
@@ -99,16 +99,16 @@
       "errors": []
     },
     "arca_live": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
     "fivech": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
@@ -141,16 +141,16 @@
       "errors": []
     },
     "note_com": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
     "ruliweb": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
