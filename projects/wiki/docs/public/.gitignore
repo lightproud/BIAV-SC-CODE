@@ -1,0 +1,11 @@
+# Art assets downloaded from GitHub Release at build time
+# See: gh release download art-assets-v2
+# Local dev: run scripts/download_wiki_assets.sh
+cg/
+icon/
+bunit/
+munit/
+portraits/
+uiresources/
+scenebg/
+portrait-card/
