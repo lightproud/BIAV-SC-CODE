@@ -44,7 +44,6 @@ SOURCE_MAP = {
     'zhihu': 'zhihu',
     'naver_cafe': 'naver_cafe',
     'bahamut': 'bahamut',
-    'dcinside': 'dcinside',
     'arca_live': 'arca_live',
     'fivech': 'fivech',
     'appstore': 'appstore',
@@ -156,7 +155,6 @@ def run_zero_cost_collectors() -> list[dict]:
         ('Discord API', c.fetch_discord),
         ('Telegram', c.fetch_telegram),
         ('Bahamut', c.fetch_bahamut),
-        ('DCInside', c.fetch_dcinside),
         ('Arca.live', c.fetch_arca_live),
         ('Google Play', c.fetch_google_play),
     ]
@@ -172,7 +170,7 @@ def run_zero_cost_collectors() -> list[dict]:
         'StopGame': 'stopgame', '搜狗微信': 'weixin',
         'YouTube': 'youtube', 'Discord API': 'discord',
         'Telegram': 'telegram', 'Bahamut': 'bahamut',
-        'DCInside': 'dcinside', 'Arca.live': 'arca_live', 'Google Play': 'google_play',
+        'Arca.live': 'arca_live', 'Google Play': 'google_play',
     }
 
     succeeded = []

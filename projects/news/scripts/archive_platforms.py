@@ -52,7 +52,7 @@ ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 PLATFORMS = [
     'steam', 'steam_discussion', 'bilibili', 'official', 'reddit', 'youtube', 'nga', 'taptap',
     'weibo', 'zhihu', 'bahamut',
-    'naver_cafe', 'dcinside', 'arca_live', 'fivech',
+    'naver_cafe', 'arca_live', 'fivech',
     'appstore', 'google_play',
     'pixiv', 'telegram',
     'note_com', 'ruliweb', 'stopgame', 'weixin',

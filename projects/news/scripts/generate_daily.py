@@ -46,7 +46,6 @@ PLATFORM_NAMES = {
     'bahamut': '巴哈姆特',
     # 韩语社区
     'naver_cafe': 'Naver Cafe',
-    'dcinside': 'DCInside',
     'arca_live': 'Arca.live',
     # 日语社区
     'fivech': '5ch',

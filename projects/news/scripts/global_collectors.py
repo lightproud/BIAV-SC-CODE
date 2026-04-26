@@ -8,7 +8,7 @@
   同人: Pixiv, Lofter
   周边: 闲鱼, 淘宝
   全球: Reddit, Twitter/X, YouTube, Discord, Facebook, TikTok, Telegram, Twitch, Instagram
-  韩国: Naver Cafe, DCInside, Arca.live
+  韩国: Naver Cafe, Arca.live
   日本: 5ch
   商店: App Store, Google Play
 
@@ -683,69 +683,6 @@ def fetch_naver_cafe():
             logger.info(f'Naver Cafe "{keyword}": {len(items)} articles')
         except Exception as e:
             logger.warning(f'Naver Cafe "{keyword}" failed: {e}')
-
-    return items
-
-
-def fetch_dcinside():
-    """从 DCInside 搜索 Morimens 相关帖子。
-
-    历史实现尝试抓 mgallery/board/lists?id=morimens，但 DCInside 对 list 页面
-    返回 content-length: 0（无论有没有该画廊，均被 WAF 拦截），而 search.dcinside.com
-    的搜索接口仍开放。改用搜索后跨画廊聚合 Morimens/모리멘스 相关帖子。
-    """
-    import re as _re
-
-    items = []
-    keywords = ["Morimens", "모리멘스", "망각전야"]
-    seen_urls: set[str] = set()
-
-    for keyword in keywords:
-        try:
-            resp = _get_cf(
-                f"https://search.dcinside.com/combine/q/{keyword}",
-                headers={
-                    "Referer": "https://www.dcinside.com/",
-                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/124.0 Safari/537.36",
-                },
-                timeout=20,
-            )
-            html = resp.text
-
-            # 搜索结果结构：<a href="view URL">标题</a>，每个帖子会出现两次
-            # （一次带标题，一次带画廊名），按 URL 去重。
-            matches = _re.findall(
-                r'<a\s+href="(https://gall\.dcinside\.com/[^/]+/view/\?id=[^"]+&no=\d+[^"]*)"[^>]*>\s*([^<]{3,200}?)\s*</a>',
-                html,
-                _re.DOTALL,
-            )
-            count = 0
-            for url, raw_title in matches:
-                if url in seen_urls:
-                    continue
-                title = _re.sub(r"\s+", " ", raw_title).strip()
-                # 过滤掉画廊名（如 "판타지 갤러리"）和太短的 anchor
-                if not title or len(title) < 5 or title.endswith("갤러리"):
-                    continue
-                seen_urls.add(url)
-                items.append(_make_item(
-                    title=title,
-                    summary="",
-                    source="dcinside",
-                    platform_region="kr",
-                    time_str=datetime.now(timezone.utc).isoformat(),
-                    url=url,
-                    engagement=0,
-                    is_hot=False,
-                    author="",
-                    lang="ko",
-                    time_is_approximate=True,
-                ))
-                count += 1
-
-            logger.info(f'DCInside search "{keyword}": {count} new articles')
-        except Exception as e:
-            logger.warning(f'DCInside search "{keyword}" failed: {e}')
 
     return items
 

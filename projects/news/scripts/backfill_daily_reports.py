@@ -27,7 +27,7 @@ PLATFORM_NAMES = {
     'official': 'Official', 'weibo': '微博', 'xiaohongshu': '小红书',
     'douyin': '抖音', 'tieba': '百度贴吧',
     'zhihu': '知乎', 'bahamut': '巴哈姆特',
-    'naver_cafe': 'Naver Cafe', 'dcinside': 'DCInside', 'arca_live': 'Arca.live',
+    'naver_cafe': 'Naver Cafe', 'arca_live': 'Arca.live',
     'fivech': '5ch', 'appstore': 'App Store', 'google_play': 'Google Play',
     'tiktok': 'TikTok', 'facebook': 'Facebook', 'telegram': 'Telegram',
     'twitch': 'Twitch', 'instagram': 'Instagram', 'pixiv': 'Pixiv',

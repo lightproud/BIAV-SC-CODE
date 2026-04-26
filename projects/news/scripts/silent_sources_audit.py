@@ -41,7 +41,7 @@ ALL_REGISTERED_SOURCES = [
     'steam', 'official', 'youtube', 'discord',
     # 直连采集（collect_global.py）
     'weibo', 'zhihu', 'naver_cafe', 'bahamut',
-    'dcinside', 'arca_live', 'fivech',
+    'arca_live', 'fivech',
     'appstore', 'google_play',
     'pixiv', 'telegram',
     'note_com', 'ruliweb', 'stopgame', 'weixin',

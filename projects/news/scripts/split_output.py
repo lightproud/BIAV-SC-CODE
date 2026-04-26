@@ -71,7 +71,6 @@ KNOWN_SOURCES = [
     'zhihu',
     'bahamut',
     'naver_cafe',
-    'dcinside',
     'arca_live',
     'fivech',
     'appstore',
