@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-04-26T20:31:25.181958+00:00",
+  "collected_at": "2026-04-26T21:32:04.987684+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-26T19:50:10+00:00",
+      "lang": "english",
+      "title": "[正面] the combat is SO fun, the art is breathtaking and...",
+      "summary": "the combat is SO fun, the art is breathtaking and the gacha isn't soul sucking. what more could you want?",
+      "url": "https://steamcommunity.com/profiles/76561199544303692/recommended/3052450",
+      "author": "76561199544303692",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "the combat is SO fun, the art is breathtaking and the gacha isn't soul sucking. what more could you want?",
+      "timestamp_created": 1777233010,
+      "playtime_forever": 1027
+    },
     {
       "source": "steam",
       "time": "2026-04-26T15:08:57+00:00",

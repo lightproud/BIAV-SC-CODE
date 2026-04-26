@@ -3264,6 +3264,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-26T20:31:27.349638+00:00"
+    },
+    "https://preview.redd.it/ztn4z1ipjlxg1.jpg?width=140&amp;height=137&amp;auto=webp&amp;s=e77a337a02ae3fbef4a8b036e88fd9d8fa6ac591": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T21:32:05.728249+00:00"
     }
   },
   "archived": []
