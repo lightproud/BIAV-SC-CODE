@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "build": "vitepress build docs",
+    "docs:build": "node --stack-size=65536 node_modules/.bin/vitepress build docs",
+    "build": "node --stack-size=65536 node_modules/.bin/vitepress build docs",
     "preview": "vitepress preview docs"
   },
   "devDependencies": {

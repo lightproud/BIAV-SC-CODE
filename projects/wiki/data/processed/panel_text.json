@@ -11367,7 +11367,7 @@
       },
       {
         "key": "PanelText_UI_Passport_Money_Item_New_Text_C_Hoist_Content",
-        "value": "立即提升<size=32>10</size>级课题等级",
+        "value": "立即提升10级课题等级",
         "category": "Passport"
       },
       {
@@ -14609,7 +14609,7 @@
       },
       {
         "key": "PanelText_UI_Social_Popup_MatchMode_Text_C_FriendlyMatch_Desc_Content",
-        "value": "<size=25>相位对弈的基础模式，双方使用预先准备的队伍进行对战。</size>",
+        "value": "相位对弈的基础模式，双方使用预先准备的队伍进行对战。",
         "category": "Social"
       },
       {
@@ -14624,7 +14624,7 @@
       },
       {
         "key": "PanelText_UI_Social_Popup_MatchMode_Text_C_RotationMode_Desc_Content",
-        "value": "<size=25>相位对弈的进阶模式，双方轮流在随机卡池内选取卡牌，组成卡组进行对战。</size>",
+        "value": "相位对弈的进阶模式，双方轮流在随机卡池内选取卡牌，组成卡组进行对战。",
         "category": "Social"
       },
       {
