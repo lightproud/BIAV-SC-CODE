@@ -51,10 +51,17 @@ Code-site 会话负责：
 
 ```
 https://lightproud.github.io/brain-in-a-vat/
-├── /        → site/index.html（主站导航页，单文件 HTML，全内联 CSS）
-├── /wiki/   → VitePress 构建产物（Code-wiki 维护内容，base: /brain-in-a-vat/wiki/）
-└── /news/   → projects/news/index.html（Code-news 维护内容）
+├── /         ← projects/site/public/index.html（主站导航页，单文件 HTML，全内联 CSS）
+├── /404.html ← projects/site/public/404.html（GitHub Pages 自动接管错误页）
+├── /design/  ← projects/site/design/（设计系统 Token + 落地指南，对外可访问）
+├── /wiki/    ← projects/wiki/docs/.vitepress/dist/*（Code-wiki 维护，VitePress base: /brain-in-a-vat/wiki/）
+├── /news/    ← projects/news/index.html + 数据（Code-news 维护）
+└── /docs/    ← deliverables/2026-03/缸中之脑计划.{html,pdf}（如存在）
 ```
+
+> design/ 通过 `deploy-site.yml:92` 的 `cp -r projects/site/design dist/design` 部署到外网，
+> 即 `morimens-design-tokens.css` 与 `morimens-design-system-guide.html` 是**对外可见**的开发者文档，
+> 维护时需保证内容时效性（属 P0 级一致性约束）。
 
 ### 部署方法
 

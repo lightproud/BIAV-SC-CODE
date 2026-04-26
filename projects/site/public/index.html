@@ -5,20 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>忘却前夜 Morimens — B.I.A.V. Studio</title>
 <meta name="description" content="忘却前夜 (Morimens) — 洛夫克拉夫特式肉鸽卡牌构建游戏。在认知的边界之外，遗忘是最后的慈悲。">
+<meta name="author" content="B.I.A.V. Studio">
 <meta name="theme-color" content="#c5a356">
+<link rel="canonical" href="https://lightproud.github.io/brain-in-a-vat/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0b10'/%3E%3Ctext x='32' y='46' font-family='Noto Serif SC,serif' font-weight='700' font-size='44' fill='%23c5a356' text-anchor='middle'%3E夜%3C/text%3E%3C/svg%3E">
 <meta property="og:title" content="忘却前夜 Morimens">
-<meta property="og:description" content="洛夫克拉夫特式肉鸽卡牌构建游戏">
+<meta property="og:description" content="洛夫克拉夫特式肉鸽卡牌构建游戏 — 在认知的边界之外，遗忘是最后的慈悲。">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://lightproud.github.io/brain-in-a-vat/">
+<meta property="og:site_name" content="B.I.A.V. Studio">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
   :root {
-    --bg:#0a0b10;--bg2:#0f1018;--bg3:#161722;--bg4:#1a1b28;
+    --bg:#0a0b10;--bg2:#0f1018;
     --gold:#c5a356;--gold-l:#e2c97e;--gold-d:#8a7340;
-    --gold-glow:rgba(197,163,86,0.12);
     --txt:#f0ebe0;--txt-m:#b5aa98;--txt-d:#7a7265;
-    --caro:#8b3a3a;--aequor:#3a6b6b;
     --serif:'Noto Serif SC',serif;--sans:'Noto Sans SC',sans-serif;
     --border:rgba(197,163,86,0.08);
   }
@@ -33,8 +40,13 @@
   .nav-links{display:flex;gap:28px}
   .nav-links a{font-size:13px;color:var(--txt-d);font-weight:500;letter-spacing:0.02em;transition:color 0.3s}
   .nav-links a:hover,.nav-links a.active{color:var(--gold)}
-  .nav-lang{font-size:12px;color:var(--txt-d);border:1px solid var(--border);border-radius:2px;padding:4px 10px;cursor:pointer;background:transparent;transition:border-color 0.3s}
-  .nav-lang:hover{border-color:rgba(197,163,86,0.2)}
+  .nav-lang{position:relative;font-size:12px}
+  .nav-lang summary{list-style:none;color:var(--txt-d);border:1px solid var(--border);border-radius:2px;padding:4px 10px;cursor:pointer;transition:border-color 0.3s;user-select:none}
+  .nav-lang summary::-webkit-details-marker{display:none}
+  .nav-lang[open] summary,.nav-lang summary:hover{border-color:rgba(197,163,86,0.2);color:var(--gold)}
+  .nav-lang-menu{position:absolute;top:calc(100% + 4px);right:0;min-width:120px;background:rgba(10,11,16,0.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:2px;padding:4px 0;list-style:none}
+  .nav-lang-menu a{display:block;padding:6px 14px;font-size:12px;color:var(--txt-d);transition:color 0.3s,background 0.3s}
+  .nav-lang-menu a:hover,.nav-lang-menu a[aria-current="page"]{color:var(--gold);background:rgba(197,163,86,0.06)}
 
   /* ── HERO ── */
   .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:56px 24px 60px;overflow:hidden}
@@ -42,7 +54,7 @@
   .hero-grain{position:absolute;inset:0;opacity:0.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:128px;z-index:1}
   .hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 65% 50% at 50% 40%,transparent 0%,var(--bg) 100%);z-index:2}
   .hero-content{position:relative;z-index:3}
-  .hero-title{font-family:var(--serif);font-weight:700;font-size:42px;color:var(--txt);letter-spacing:0.08em;animation:fadeUp 1.2s ease-out both}
+  .hero-title{font-family:var(--serif);font-weight:700;font-size:42px;color:var(--txt);letter-spacing:0.5em;padding-left:0.5em;animation:fadeUp 1.2s ease-out both}
   .hero-sub{font-family:var(--serif);font-weight:400;font-size:16px;color:var(--gold);letter-spacing:0.2em;text-transform:uppercase;margin-top:4px;animation:fadeUp 1.2s 0.15s ease-out both}
   .hero-div{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-d),transparent);margin:24px auto;animation:fadeUp 1.2s 0.3s ease-out both}
   .hero-tagline{font-size:14px;color:var(--txt-d);max-width:420px;line-height:1.8;margin:0 auto 32px;animation:fadeUp 1.2s 0.45s ease-out both}
@@ -143,11 +155,14 @@
     <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">BIAV</a>
     <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">GitHub</a>
   </div>
-  <select class="nav-lang" onchange="if(this.value)location.href=this.value">
-    <option value="">简体中文</option>
-    <option value="wiki/en/">English</option>
-    <option value="wiki/ja/">日本語</option>
-  </select>
+  <details class="nav-lang">
+    <summary aria-label="切换语言 / Switch language">简体中文</summary>
+    <ul class="nav-lang-menu" role="menu">
+      <li role="none"><a role="menuitem" href="./" aria-current="page">简体中文</a></li>
+      <li role="none"><a role="menuitem" href="wiki/en/">English</a></li>
+      <li role="none"><a role="menuitem" href="wiki/ja/">日本語</a></li>
+    </ul>
+  </details>
 </nav>
 
 <!-- ═══ HERO ═══ -->
@@ -156,7 +171,7 @@
   <div class="hero-grain"></div>
   <div class="hero-vignette"></div>
   <div class="hero-content">
-    <div class="hero-title">忘 却 前 夜</div>
+    <h1 class="hero-title">忘却前夜</h1>
     <div class="hero-sub">Morimens</div>
     <div class="hero-div"></div>
     <div class="hero-tagline">在认知的边界之外，遗忘是最后的慈悲。<br>洛夫克拉夫特式肉鸽卡牌构建游戏。</div>
@@ -239,7 +254,7 @@
 <section>
   <div class="sec-label reveal">Community</div>
   <div class="sec-title reveal">加入社区</div>
-  <div class="sec-desc reveal">忘却前夜的全球玩家社区遍布多个平台。找到属于你的据点。</div>
+  <div class="sec-desc reveal">忘却前夜的玩家社区分布于多个平台。以下入口为银芯长期监控的有效据点。</div>
   <div class="comm-grid reveal">
     <a class="comm-link" href="https://discord.gg/morimens" target="_blank" rel="noopener"><span class="dot"></span>Discord 国际服</a>
     <a class="comm-link" href="https://bbs.nga.cn/thread.php?fid=-447601" target="_blank" rel="noopener"><span class="dot"></span>NGA</a>
