@@ -1,6 +1,6 @@
 # Code-site 子项目上下文
 
-> 最后更新：2026-04-26 by 主控台（艾瑞卡会话，写入 4-26 银芯重新定位 v2.0 site 新使命）
+> 最后更新：2026-04-26 by 艾瑞卡（Code-site 维护会话，D-fix + D-mission 落地后状态同步）
 
 ## v2.0 新使命定位（2026-04-26 起）
 
@@ -15,6 +15,9 @@
 ## Phase 2 任务（M1-M4）
 
 - **M1（4-27 → 5-10）**：评估当前主站导航页的"对外发现入口"齐备度（贡献者怎么找到 wiki / news / 贡献流程）
+  - D-fix ✅（`6cf6b7b`，2026-04-26）：emoji 合规清理 + nav BIAV 死链修复 + Community 区 8 占位真实化（4 真实 URL + 删 4 卡）
+  - D-mission ✅（`6347ad3`，2026-04-26）：hero 与 features 之间新增 Mission 段，三卡片展示银芯三新使命，引导至 news/wiki/GitHub
+  - 待办：D-contribute（贡献者入口段，依赖仓库根 `CONTRIBUTING.md` 落地，跨边界阻塞中）
 - **M2（5-11 → 6-10）**：补对外说明文档（如 README 重写 / 主站 About 加深 / 贡献指南入口）
 - **M3（6-11 → 7-10）**：跨站视觉一致性最终校验 + 三新使命展示
 - **M4（7-11 → 7-19）**：验收：对外发现路径顺畅
@@ -36,7 +39,10 @@ Code-site 会话负责：
 
 ## 当前状态
 
-- **主站导航页**：已上线，深黑金色调，3 卡片（Wiki/News/Game）+ About + 方法论段落
+- **主站导航页**：已上线，深黑金色调
+  - 段落顺序：nav → hero → **mission**（D-mission 新增）→ features → world-strip → community → footer
+  - 合规基线：emoji 全清（D-fix），nav 全部链接可达，community 仅保留 4 真实 URL（Discord 国际服 / NGA / Reddit / TapTap）
+  - 设计系统：`design/morimens-design-tokens.css` 为视觉 Token 真值源，但 `public/index.html` 当前以 `:root` 硬编码 Token 子集（未 import，存在漂移风险，列入 M3 校验范围）
 - **部署流水线**：已上线，使用 `peaceiris/actions-gh-pages@v4` 推送到 gh-pages 分支
 - **GitHub Pages Source**：设为 gh-pages 分支（Settings → Pages）
 - **站点地址**：`https://lightproud.github.io/brain-in-a-vat/`
