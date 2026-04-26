@@ -260,7 +260,46 @@
 
 ## 四、对银芯的启示
 
-（最后总结章节，待前文完成后撰写）
+### 4.1 七家方案的共同主题
+
+所有 7 家（含 Native）都强调**至少一项**银芯当前缺失：
+
+1. **职责分层** — Letta 三层（core/archival/recall）/ Cognee 双层（session/permanent）/ Native 四原语（policy/playbook/role/enforcement）。**银芯的 51 MB memory/ 是平铺的**，没有「这条信息属于哪一层」的结构化标注。
+2. **LLM 介入的事实萃取** — Mem0 / Zep / Cognee / claude-mem 全部依赖 LLM 把原始数据「认知化」成结构化事实。**银芯当前只有 TF-IDF + 人工写入**，没有 LLM 萃取流水线。
+3. **时间维度** — Zep 的 bi-temporal 模型 / Cognee 的节点版本 / Mem0 的 recency 评分。**银芯 565 条图谱边都是「永远成立」**，无法表达决策被覆盖、lesson 被推翻。
+4. **语义切块** — Cursor 按代码语义切（function / class）/ Mem0 按事实三元组切。**银芯按字符滑窗切**（500 字符 + 100 重叠），lua 表 / 长 markdown 文档信息边界被切碎。
+5. **按需加载** — Native 的 Skill body 只在调用时加载 / Letta 的 archival 按需检索。**银芯每次 boot 都要读 boot-snapshot 全部内容**，长参考材料没有 lazy load 机制。
+
+### 4.2 银芯的「错位」最严重三点
+
+按对当前 60% Top-1 准确率影响排序：
+
+1. **session-digest 平铺入索引**（影响 ~30%）—— 252 份 session-digest（中位 1967 行 / p95 1.96 万行）和 wiki/decisions 等高价值档案**同等权重**入向量库，Q3 / Q5 召回失败的直接原因。Cursor 的 `.cursorignore` 概念 + Native 的「按生命周期分原语」是直接对策。
+2. **游戏事实未结构化萃取**（影响 ~25%）—— 64 MB 解包数据（lua 表 + categorized）以**原始字节**入索引，Q5「AwakerConfig」头条命中是 grep 命令片段而非真实 lua 内容。Cognee 的 Cognify 步骤 + Mem0 的 fact extraction 是直接对策。
+3. **角色专属记忆缺失**（影响中长期）—— 艾瑞卡 / Code-wiki / Code-news 当前每次会话**重新加载全部 boot 档案**进入状态，没有 subagent 级持久化。Native 的 subagent memory + Letta 的 persona core memory 是直接对策。
+
+### 4.3 不能直接抄的三条
+
+不是所有先进方案都适合银芯：
+
+1. **Mem0 / Zep / Cognee 的 LLM-driven 流水线**——银芯月预算约 $10（dream + memory），引入 LLM 自动萃取会让月预算翻倍至少。需先评估 ROI。
+2. **claude-mem 的 PostToolUse hook**——AGPL-3.0 + 2026 早期生产可靠性问题（issue #504/#727/#897）。借鉴拓扑而不引入。
+3. **Letta 的 agent 主动 core memory 改写**——银芯 boot-snapshot 是自动生成（`boot_snapshot.py`），不是 agent 改写的。改成 agent 可改写需要重设权限边界，与「凭据绝不写入仓库」「决策需守密人确认」等铁律会冲突。
+
+### 4.4 优先借鉴清单（从易到难）
+
+| 借鉴点 | 来源 | 银芯落地方式 | 难度 |
+|---|---|---|---|
+| `.searchignore` 排除老旧 session-digest | Cursor | 加白名单文件 + `memory_search.py:scan_files()` 读 | 极低 |
+| 语义切块（按 markdown header / JSON key） | Cursor | 改 `memory_search.py:chunk_file()` | 低 |
+| Skill 化长参考材料 | Native | 把 BIAV-SC.md §5 §7 §9 拆成 `.claude/commands/*.md` | 低 |
+| 主题入口页（subject hub） | Letta core memory | 给关键主题写 `memory/strategy/<topic>-hub.md` 索引页 | 低 |
+| 事实卡片化（card-system.json 模式扩展） | Mem0 fact extract（轻量版） | 复用 card-system.json 模式给战略 / 决策 / 角色做 | 中 |
+| bi-temporal 边时间戳 | Zep Graphiti（自建版） | 给 `knowledge_graph.py` 边 schema 加 `t_valid` / `t_invalid` | 中 |
+| Cognify 单点（lua 表 → 事实库） | Cognee | dream 深睡跑 LLM 解析 lua → 写 `assets/data/lua-facts.json` | 中-高 |
+| subagent 级持久化记忆 | Native | 给艾瑞卡 / Code-* 各自专属 `memory/agent-memory/<name>/` | 中-高 |
+
+---
 
 ---
 
@@ -269,3 +308,4 @@
 | 版本 | 日期 | 变更 | 作者 |
 |------|------|------|------|
 | v0.1-skeleton | 2026-04-26 | 骨架落档（七家 + 原生参照） | Code-strategy 艾瑞卡 |
+| v0.1 | 2026-04-26 | 七家纵向档案 + 三维横向矩阵 + 银芯启示完成 | Code-strategy 艾瑞卡 |
