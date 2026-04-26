@@ -417,7 +417,8 @@
         },
         "status": {
           "type": "string",
-          "enum": ["stub", "partial", "complete"]
+          "enum": ["stub", "partial", "complete", "fixture"],
+          "description": "stub = bare extraction, partial = some fields filled, complete = canonical, fixture = synthesized data for component prototyping (NOT canonical, must be replaced before Phase 5)"
         },
         "trinkets_recommended": {
           "type": "array",
