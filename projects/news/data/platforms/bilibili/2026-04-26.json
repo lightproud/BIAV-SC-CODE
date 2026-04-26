@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-26T14:02:13.601266+00:00",
+  "archived_at": "2026-04-26T14:44:24.030985+00:00",
   "source": "bilibili",
-  "item_count": 62,
+  "item_count": 64,
   "items": [
     {
       "source": "bilibili",
@@ -439,6 +439,36 @@
         "play": 155,
         "comment_count": 10,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T10:42:04+00:00",
+      "lang": "zh",
+      "title": "她自杀了。",
+      "summary": "无视加固发力了",
+      "url": "http://www.bilibili.com/video/av116470570879932",
+      "author": "一坨过冬马甲",
+      "engagement": 163,
+      "media_url": "//i1.hdslb.com/bfs/archive/4046f4565debb1eb011c78128650039572ca20e6.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T10:42:04+00:00",
+      "lang": "zh",
+      "title": "她自杀了。",
+      "summary": "无视加固发力了",
+      "url": "https://www.bilibili.com/video/BV1U9ZFBbExc",
+      "author": "一坨过冬马甲",
+      "engagement": 157,
+      "media_url": "https://i1.hdslb.com/bfs/archive/4046f4565debb1eb011c78128650039572ca20e6.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 157,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
