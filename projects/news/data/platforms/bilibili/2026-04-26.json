@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-26T14:44:24.030985+00:00",
+  "archived_at": "2026-04-26T15:38:09.037092+00:00",
   "source": "bilibili",
-  "item_count": 64,
+  "item_count": 65,
   "items": [
     {
       "source": "bilibili",
@@ -499,6 +499,24 @@
         "play": 128,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T09:35:56+00:00",
+      "lang": "zh",
+      "title": "当你成为沙耶的孩子（ooc致歉）（自行避雷）",
+      "summary": "-\n  └ 未注册的基金会员 (0赞): 我成蒲公英了？\n  └ 哈基沙大玉 (0赞): [鸣潮·共鸣与群星_点赞]",
+      "url": "https://www.bilibili.com/video/BV1ngZcBmEpg",
+      "author": "杏仁柚柚",
+      "engagement": 129,
+      "media_url": "https://i2.hdslb.com/bfs/archive/40c5ff80ee65df703aaca3e57602354b64a3ffd7.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 127,
+        "comment_count": 2,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     },
