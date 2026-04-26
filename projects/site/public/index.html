@@ -85,6 +85,14 @@
   .r-caro{background:rgba(139,58,58,0.12);color:#ec7063}
   .r-ultra{background:rgba(107,58,139,0.12);color:#bb8fce}
 
+  /* ── MISSION ── */
+  .mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .mission-card{display:block;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:28px;color:inherit;transition:border-color 0.3s,transform 0.3s}
+  .mission-card:hover{border-color:rgba(197,163,86,0.18);transform:translateY(-2px)}
+  .mission-num{font-family:var(--serif);font-weight:700;font-size:32px;color:var(--gold-d);letter-spacing:0.04em;margin-bottom:12px;line-height:1}
+  .mission-name{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--gold-l);margin-bottom:8px}
+  .mission-desc{font-size:14px;color:var(--txt-m);line-height:1.7}
+
   /* ── COMMUNITY ── */
   .comm-grid{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
   .comm-link{display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;font-size:13px;color:var(--txt-m);font-weight:500;transition:all 0.3s}
@@ -109,6 +117,7 @@
     section{padding:60px 20px}
     .sec-title{font-size:22px}
     .feat-grid{grid-template-columns:1fr}
+    .mission-grid{grid-template-columns:1fr}
     .world-strip{padding:60px 0}
     .world-inner{padding:0 20px}
     .realm-row{flex-wrap:wrap}
@@ -161,6 +170,30 @@
     <small>Scroll</small>
   </div>
 </div>
+
+<!-- ═══ MISSION ═══ -->
+<section>
+  <div class="sec-label reveal">Mission</div>
+  <div class="sec-title reveal">银芯三新使命</div>
+  <div class="sec-desc reveal">缸中之脑（B.I.A.V. Silver Core）自 2026-04 重新定位，由方法论验证场转为承载三条新使命的公开协议层。</div>
+  <div class="mission-grid">
+    <a class="mission-card reveal" href="news/">
+      <div class="mission-num" aria-hidden="true">壹</div>
+      <div class="mission-name">黑池公开信息入口</div>
+      <div class="mission-desc">为内部消费层提供多平台社区情报的统一视野。news 子项目维护，每日两次自动聚合。</div>
+    </a>
+    <a class="mission-card reveal" href="wiki/">
+      <div class="mission-num" aria-hidden="true">贰</div>
+      <div class="mission-name">社区共建知识底座</div>
+      <div class="mission-desc">让外部社区与 Studio 派生内容拥有可贡献的事实底座。wiki 子项目维护，目标 72 角色三语完整。</div>
+    </a>
+    <a class="mission-card reveal" href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">
+      <div class="mission-num" aria-hidden="true">叁</div>
+      <div class="mission-name">Studio 团队 AI 协作训练场</div>
+      <div class="mission-desc">基于公开 AI 信息的协作方法论沉淀场。当前以仓库形式开放思考过程，供 Studio 内成员衍生项目。</div>
+    </a>
+  </div>
+</section>
 
 <!-- ═══ FEATURES ═══ -->
 <section>
