@@ -1,9 +1,83 @@
 {
   "date": "2026-04-25",
-  "archived_at": "2026-04-25T17:38:56.716522+00:00",
+  "archived_at": "2026-04-26T07:25:33.110707+00:00",
   "source": "steam",
-  "item_count": 0,
-  "items": [],
-  "_gap_repaired": true,
-  "_note": "Placeholder created by repair_gaps.py — no data was collected for this date."
+  "item_count": 5,
+  "items": [
+    {
+      "title": "[正面] 非常好忘却前夜，使我时间旋转。",
+      "summary": "非常好忘却前夜，使我时间旋转。",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-04-25T17:09:42+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198868090578/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198868090578",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面] Сырая дичь",
+      "summary": "Сырая дичь",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "polish",
+      "time": "2026-04-25T12:25:14+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199666240111/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199666240111",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] Peak F2P friendliness and also helot catena peak",
+      "summary": "Peak F2P friendliness and also helot catena peak",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2026-04-25T12:11:11+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199860157001/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199860157001",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] very f2p friendly, the devs really care about thei...",
+      "summary": "very f2p friendly, the devs really care about their small fanbase, the game is super good but there are very few place to find team building guide on the internet.",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "vietnamese",
+      "time": "2026-04-25T11:56:12+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199228371480/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199228371480",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 送的好多，一个合格的副游",
+      "summary": "送的好多，一个合格的副游",
+      "source": "steam",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2026-04-25T10:33:03+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199868089777/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561199868089777",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
 }

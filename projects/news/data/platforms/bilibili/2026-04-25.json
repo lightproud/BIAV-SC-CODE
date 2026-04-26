@@ -1,8 +1,8 @@
 {
   "date": "2026-04-25",
-  "archived_at": "2026-04-26T06:55:57.604734+00:00",
+  "archived_at": "2026-04-26T07:25:28.384810+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "title": "【忘却前夜】新神已至！角色攻略之阿拉克涅",
@@ -238,6 +238,21 @@
       "time": "2026-04-25T15:59:38+00:00",
       "url": "http://www.bilibili.com/video/av116466158409903",
       "engagement": 36,
+      "is_hot": false,
+      "author": "卢泓然卢大王",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "忘却前夜又在干什么呢？",
+      "summary": "-",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-25T02:58:33+00:00",
+      "url": "http://www.bilibili.com/video/av116463088243105",
+      "engagement": 70,
       "is_hot": false,
       "author": "卢泓然卢大王",
       "tags": [],
