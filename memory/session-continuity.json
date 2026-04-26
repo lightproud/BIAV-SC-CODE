@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "7f53216f",
-    "timestamp": "2026-04-26T04:16:44.118000+00:00",
-    "duration_minutes": 21.1,
+    "id": "cdbde1c0",
+    "timestamp": "2026-04-26T07:31:10.834000+00:00",
+    "duration_minutes": 215.6,
     "branch": "claude/analyze-game-data-tYQo0",
     "topics": [
       "Wiki"
@@ -17,6 +17,23 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "7f53216f",
+      "timestamp": "2026-04-26T04:16:44.118000+00:00",
+      "duration_minutes": 21.1,
+      "branch": "claude/analyze-game-data-tYQo0",
+      "topics": [
+        "Wiki"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/wiki/package.json",
+        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
+        "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py",
+        "/tmp/build_voice_map_v2.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "bb18d9fc",
       "timestamp": "2026-04-26T04:06:02.489000+00:00",
@@ -156,41 +173,24 @@
       "open_items": [
         "更新 result 构建部分，把 `ungrouped` 替换成 `special_groups`"
       ]
-    },
-    {
-      "id": "6bfb5ee6",
-      "timestamp": "2026-04-16T14:34:01.896000+00:00",
-      "duration_minutes": 2626.6,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Wiki": 1.0,
-      "BPT": 0.66,
-      "黑池": 0.66,
-      "日报": 0.64
+      "Wiki": 1.8,
+      "BPT": 0.53,
+      "黑池": 0.53,
+      "日报": 0.51
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
       "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py",
+      "/home/user/brain-in-a-vat/projects/wiki/package.json",
+      "/tmp/build_voice_map_v2.py",
       "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-      "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-      "/home/user/brain-in-a-vat/projects/wiki/package.json"
+      "/home/user/brain-in-a-vat/projects/wiki/docs/index.md"
     ],
-    "total_sessions": 74
+    "total_sessions": 75
   },
-  "updated_at": "2026-04-26T04:20:47.012714+00:00"
+  "updated_at": "2026-04-26T07:34:57.559991+00:00"
 }
