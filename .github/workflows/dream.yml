@@ -135,7 +135,7 @@ jobs:
         id: path-check
         run: |
           BROKEN=""
-          for path in memory/strategic-plan-2026.md memory/strategic-assessment.md memory/project-status.md memory/decisions.md memory/pending-discussions.md memory/morimens-context.md memory/methodology.md memory/style-guide.md memory/lessons-learned.md memory/collab-event-playbook.md memory/black-pool-design.md memory/dreaming-agent-design.md; do
+          for path in memory/strategic-plan-2026.md memory/strategic-assessment.md memory/project-status.md memory/decisions.md memory/pending-discussions.md memory/morimens-context.md memory/methodology.md memory/style-guide.md memory/lessons-learned.md memory/collab-event-playbook.md memory/bpt-guidance-protocol.md memory/dreaming-agent-design.md; do
             if [ ! -f "$path" ]; then
               BROKEN="${BROKEN}- CLAUDE.md references missing file: \`$path\`\n"
             fi

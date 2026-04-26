@@ -321,7 +321,7 @@ AI 会话最易踩的坑：
 | 查记忆系统设计 | `memory/advanced-memory-design.md` |
 | 查做梦 Agent 三层架构 | `memory/dreaming-agent-design.md` |
 | 查 Discord 归档器设计 | `memory/discord-archiver-design.md` |
-| 查黑池系统设计 | `memory/black-pool-design.md` |
+| 查黑池系统设计（已归档，仅历史参考） | `memory/archive/bpt-strategic-shift-2026-04-19/black-pool-design.md`；当前活协议见 `memory/bpt-guidance-protocol.md` |
 
 ---
 

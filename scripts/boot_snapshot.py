@@ -137,14 +137,21 @@ def generate_snapshot() -> str:
 
 ## 当前阶段
 
-**Phase 1（记忆宫殿）✅ 已验证 → Phase 2（内容权威）准备中**
+**Phase 1（记忆宫殿）✅ 已验证 → Phase 2（内容权威）进行中**
 
 三条主线：
-1. 事实圣经 — 63 角色 + 叙事结构 + 设计决策 ✅
+1. 事实圣经 — 72 角色（含皮肤/联动/彩蛋）+ 叙事结构 + 设计决策 ✅
 2. 自动情报循环 — 日报 3 源 + 哨兵 + 做梦三层 ✅
-3. 权威知识站点 — Wiki 83% 完成，52 角色技能待补
+3. 权威知识站点 — Phase 2 W1 自举完成 24 角色（含完整技能/命轮），剩余 48 角色待批量自举
 
 阻塞项：YouTube/Twitter/NGA/TapTap API 未配（不阻塞核心）
+
+## 协作铁律
+
+- **直接推 main**（2026-04-26 PR #141 落地）— 不用 feature 分支，冲突时 `git pull --rebase` 重试
+- SessionStart hook 自动同步 local main 与 origin/main，防止漂移堵塞推送
+- 凭据绝不写入仓库；架构决策先向制作人提议，等确认再执行
+- 详见 `memory/decisions.md`（2026-03-29 / 2026-04-26 条目）+ `memory/lessons-learned.md` #28 #29
 
 ## 管线健康
 
