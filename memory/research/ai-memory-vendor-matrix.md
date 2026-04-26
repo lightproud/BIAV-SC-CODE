@@ -221,7 +221,40 @@
 
 ## 三、横向对比矩阵
 
-（逐家章节落地后回填）
+### 3.1 架构维度
+
+| 维度 | Letta | Mem0 | Zep | Cognee | Cursor | claude-mem | Native |
+|------|-------|------|-----|--------|--------|-----------|--------|
+| 主要存储 | core(prompt) + 向量 + 磁盘 | 向量 + 可选图 | 时序图 + 向量 | 关系 + 向量 + 图 三合一 | 向量（按代码语义切块） | SQLite + Chroma | 文件 + 平台原语 |
+| 时间维度 | ✗ | 部分（recency） | ✓ bi-temporal | ✓（节点版本） | ✗ | ✗ | ✗ |
+| LLM 自动萃取 | ✓（agent 主动） | ✓（pipeline） | ✓（实体抽取） | ✓（Cognify 步骤） | ✗ | ✓（compress） | ✗ |
+| 主动 vs 被动 | **agent 主动** | 自动 + 可调 | 自动 | 自动 | 被动注入 | 自动 | 被动注入 |
+| 多用户作用域 | persona | user/session/agent | user/group | tenant | user/team | 单用户 | 单项目 |
+| 时间复杂度优化 | OS-style 分页 | hybrid pipeline | 增量图更新 | ECL 流水线 | hash 增量 | hook 实时 | 按需加载 |
+
+### 3.2 工程维度
+
+| 维度 | Letta | Mem0 | Zep | Cognee | Cursor | claude-mem | Native |
+|------|-------|------|-----|--------|--------|-----------|--------|
+| License | Apache 2.0 | Apache 2.0 | Apache 2.0 (Graphiti) | Apache 2.0 | 闭源 | **AGPL-3.0** | 闭源 |
+| 自部署 | ✓ | ✓ | ✓ Graphiti | ✓ | ✗ | ✓ | ✓ |
+| 依赖外部 DB | 可选 PG/SQLite | 19 种向量库可选 | Neo4j | LanceDB / Neo4j | Cursor 云 | Chroma + SQLite | 无 |
+| 学习曲线 | 中 | 低 | 高（图谱概念） | 中 | 极低（IDE 原生） | 极低（hook 自动） | 极低 |
+| 是否需 LLM API | 可选 | **必须**（萃取） | **必须** | **必须**（Cognify） | ✗ | **必须**（压缩） | ✗ |
+
+### 3.3 性能基准（公开数据）
+
+| 系统 | 基准 | 准确率 | 延迟（p95） | Token 消耗 |
+|------|------|--------|-------------|-----------|
+| full-context（baseline） | LongMemEval | — | 29-31 s | 115 K |
+| Letta | DMR | 优于 vector-only | 未公开 | 中 |
+| Mem0 | LOCOMO | -90% tokens vs full-context | 1.44 s | -90% |
+| Mem0g | LOCOMO | < 5 pts gap | 2.59 s | -90% |
+| Zep | LongMemEval | **+18.5%** vs baseline | 2.5-3.2 s | **1600 (-98.6%)** |
+| 银芯（当前） | T2 5 查询 | **Top-1 60%** | 4.95 s（含冷启动） | 5-10 chunks/查询 |
+
+> 银芯基准与上述系统不可直接比较（数据集 / 任务不同），但**Top-1 60% / 冷启动 4.95 s** 与业界先进水平（90%+ / < 3 s）差距明显。
+
 
 ---
 
