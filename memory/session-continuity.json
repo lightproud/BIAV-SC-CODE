@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "214512f6",
-    "timestamp": "2026-04-26T07:38:39.087000+00:00",
-    "duration_minutes": 206.2,
+    "id": "3d8885dd",
+    "timestamp": "2026-04-26T07:55:33.993000+00:00",
+    "duration_minutes": 223.1,
     "branch": "HEAD",
     "topics": [
       "Steam"
@@ -10,11 +10,29 @@
     "decisions": [],
     "files_changed": [
       "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py"
+      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "214512f6",
+      "timestamp": "2026-04-26T07:38:39.087000+00:00",
+      "duration_minutes": 206.2,
+      "branch": "HEAD",
+      "topics": [
+        "Steam"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "14085843",
       "timestamp": "2026-04-26T07:25:30.757000+00:00",
@@ -130,31 +148,20 @@
         "/home/user/brain-in-a-vat/projects/wiki/package.json"
       ],
       "open_items": []
-    },
-    {
-      "id": "c6c1b176",
-      "timestamp": "2026-04-25T16:44:49.592000+00:00",
-      "duration_minutes": 14363.7,
-      "branch": "claude/add-claude-documentation-X4zRQ",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/wiki/package.json"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Steam": 2.44,
-      "日报": 0.51
+      "Steam": 2.95,
+      "日报": 0.41
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py"
+      "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py"
     ],
-    "total_sessions": 51
+    "total_sessions": 52
   },
-  "updated_at": "2026-04-26T07:44:09.633443+00:00"
+  "updated_at": "2026-04-26T07:58:58.253766+00:00"
 }
