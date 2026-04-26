@@ -1,6 +1,7 @@
 """Generate VitePress Markdown pages from processed JSON data."""
 import json
 import os
+import glob
 
 PROCESSED_DIR = 'projects/wiki/data/processed'
 DOCS_DIR = 'projects/wiki/docs'
@@ -870,138 +871,120 @@ def generate_stages():
 
 
 def generate_audio_index():
-    """Generate audio asset index page referencing GitHub Release assets."""
+    """Generate audio page. If OGG files exist locally, embed inline players."""
     RELEASE_URL = 'https://github.com/lightproud/brain-in-a-vat/releases/tag'
+    audio_dir = f'{DOCS_DIR}/public/audio'
+    ogg_files = sorted(glob.glob(f'{audio_dir}/**/*.ogg', recursive=True) +
+                       glob.glob(f'{audio_dir}/*.ogg'))
 
     lines = []
-    lines.append('# 音频资产索引')
-    lines.append('')
-    lines.append('> 数据来源：Wwise 音频银行解包 + 格式转换 | 共 2,325 条 OGG 音轨')
+    lines.append('# 音频资产')
     lines.append('')
 
-    # Extraction process
-    lines.append('## 提取流程')
-    lines.append('')
-    lines.append('游戏音频以 Wwise 格式存储（`.bnk` 音频银行 + `.wem` 编码音频）。')
-    lines.append('提取与转换管线如下：')
-    lines.append('')
-    lines.append('1. 从客户端 `StreamingAssets` 目录提取原始 Wwise 文件（156 个 `.bnk` + 3,302 个 `.wem`）')
-    lines.append('2. 使用 `vgmstream-cli` 将 `.wem` / `.bnk` 内嵌音频解码为 WAV')
-    lines.append('3. 使用 `ffmpeg`（libvorbis q6）将 WAV 编码为 OGG Vorbis')
-    lines.append('4. 最终产出 2,325 条 OGG 音轨（含 61 条从 `.bnk` 派生的音频）')
-    lines.append('')
-
-    # Stats
-    lines.append('## 统计')
-    lines.append('')
-    lines.append('| 项目 | 数量 |')
-    lines.append('|------|------|')
-    lines.append('| OGG 音轨总数 | 2,325 |')
-    lines.append('| 其中 .bnk 派生 | 61 |')
-    lines.append('| 原始 .wem 文件 | 3,302 |')
-    lines.append('| 原始 .bnk 文件 | 156 |')
-    lines.append('')
-
-    # Downloads
-    lines.append('## 下载')
-    lines.append('')
-    lines.append('### OGG 转换版（推荐）')
-    lines.append('')
-    lines.append(f'发布于 [GitHub Releases `audio-assets-v1`]({RELEASE_URL}/audio-assets-v1)，分为两个压缩包：')
-    lines.append('')
-    lines.append('| 文件 | 内容 |')
-    lines.append('|------|------|')
-    lines.append('| `morimens-audio-ogg-part1.tar.gz` | 1,132 条音轨 + 61 条 bnk 派生音频 |')
-    lines.append('| `morimens-audio-ogg-part2.tar.gz` | 1,132 条音轨 |')
-    lines.append('')
-
-    # Raw Wwise
-    lines.append('### 原始 Wwise 文件')
-    lines.append('')
-    lines.append(f'如需原始未转换的 Wwise 文件（156 个 `.bnk` + 3,302 个 `.wem`，共 3,462 个文件），')
-    lines.append(f'请前往 [GitHub Releases `audio-raw-v1`]({RELEASE_URL}/audio-raw-v1)。')
-    lines.append('')
-
-    # Technical notes
-    lines.append('## 技术说明')
-    lines.append('')
-    lines.append('- 转换工具链：`vgmstream-cli` (decode) -> `ffmpeg` (encode)')
-    lines.append('- 输出格式：OGG Vorbis，libvorbis quality 6（约 192 kbps VBR）')
-    lines.append('- `.bnk` 文件为 Wwise SoundBank 容器，内含多段嵌入音频，已拆分为独立 OGG 文件')
-    lines.append('- 文件名保留原始 Wwise ID 以便与游戏数据关联')
-    lines.append('')
+    if ogg_files:
+        lines.append(f'> 共 {len(ogg_files)} 条音轨 | 在线播放')
+        lines.append('')
+        lines.append(f'::: info\n批量下载请前往 [GitHub Releases]({RELEASE_URL}/audio-assets-v1)。\n:::')
+        lines.append('')
+        for ogg in ogg_files:
+            rel = os.path.relpath(ogg, f'{DOCS_DIR}/public')
+            name = os.path.splitext(os.path.basename(ogg))[0]
+            lines.append(f'**{name}**')
+            lines.append('')
+            lines.append(f'<audio controls preload="none" src="/{rel}"></audio>')
+            lines.append('')
+    else:
+        lines.append('> 数据来源：Wwise 音频银行解包 + 格式转换 | 共 2,325 条 OGG 音轨')
+        lines.append('')
+        lines.append(f'全部音轨发布于 [GitHub Releases `audio-assets-v1`]({RELEASE_URL}/audio-assets-v1)，分为两个压缩包：')
+        lines.append('')
+        lines.append('| 文件 | 内容 |')
+        lines.append('|------|------|')
+        lines.append('| `morimens-audio-ogg-part1.tar.gz` | 1,132 条音轨 + 61 条 bnk 派生音频 |')
+        lines.append('| `morimens-audio-ogg-part2.tar.gz` | 1,132 条音轨 |')
+        lines.append('')
+        lines.append(f'原始 Wwise 文件见 [GitHub Releases `audio-raw-v1`]({RELEASE_URL}/audio-raw-v1)。')
+        lines.append('')
 
     with open(f'{DOCS_DIR}/audio.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
-    print(f'Audio index page: {len(lines)} lines')
+    print(f'Audio index page: {len(ogg_files)} tracks ({"inline" if ogg_files else "links only"})')
 
 
 def generate_video_index():
-    """Generate video asset index page referencing GitHub Release assets."""
+    """Generate video page. If MP4 files exist locally, embed inline players."""
     RELEASE_URL = 'https://github.com/lightproud/brain-in-a-vat/releases/tag'
+    video_dir = f'{DOCS_DIR}/public/video'
+    mp4_files = sorted(glob.glob(f'{video_dir}/**/*.mp4', recursive=True) +
+                       glob.glob(f'{video_dir}/*.mp4'))
+
+    # Classify videos by filename prefix
+    def _video_category(name):
+        if name.startswith('C0') or name.startswith('C20'):
+            return '章节过场'
+        if 'CG_SD' in name:
+            return 'CG SD 动画'
+        if 'GN_Switch' in name:
+            return '场景过渡'
+        if name.startswith('RD_'):
+            return 'RD 场景'
+        if name.startswith('Vx_') or name.startswith('VX_'):
+            return '超维视频'
+        if 'Logo' in name:
+            return 'Logo'
+        if 'PV' in name or 'Login' in name:
+            return '登录 PV'
+        if 'AVG' in name:
+            return 'AVG 过渡'
+        return '其他'
 
     lines = []
-    lines.append('# 视频资产索引')
-    lines.append('')
-    lines.append('> 数据来源：Morimens_Data/StreamingAssets/Video/ | 共 201 个 MP4 文件（975 MB）')
+    lines.append('# 视频资产')
     lines.append('')
 
-    # Overview
-    lines.append('## 概述')
-    lines.append('')
-    lines.append('游戏内过场动画、CG 动画及特效视频均以 MP4 格式存储于客户端 `StreamingAssets/Video/` 目录。')
-    lines.append('本索引涵盖完整的 201 个视频文件。')
-    lines.append('')
+    if mp4_files:
+        lines.append(f'> 共 {len(mp4_files)} 个视频 | 在线播放')
+        lines.append('')
+        lines.append(f'::: info\n批量下载请前往 [GitHub Releases]({RELEASE_URL}/video-assets-v1)。\n:::')
+        lines.append('')
 
-    # Categories
-    lines.append('## 视频分类')
-    lines.append('')
+        cats = {}
+        for mp4 in mp4_files:
+            name = os.path.splitext(os.path.basename(mp4))[0]
+            cat = _video_category(name)
+            if cat not in cats:
+                cats[cat] = []
+            cats[cat].append(mp4)
 
-    categories = [
-        ('章节过场（Chapter Cutscenes）', 'C00 - C09, C202 - C203',
-         '主线剧情各章节的过场动画，涵盖序章至第九章及特殊章节 C202、C203。'),
-        ('CG_SD 动画', 'CG_SD_*',
-         'SD（Super Deformed）风格角色动画片段。'),
-        ('战斗特效', 'Battle Effects',
-         '战斗系统中使用的视觉特效动画。'),
-        ('登录 PV', 'Login PV',
-         '游戏启动及登录界面播放的宣传影片。'),
-        ('Logo 动画', 'Logo',
-         '游戏 Logo 展示动画。'),
-        ('GN_Switch 过渡', 'GN_Switch_*',
-         '场景或界面切换过渡动画。'),
-        ('RD 场景', 'RD_*',
-         '研发/演出相关场景视频。'),
-        ('Vx 视频', 'Vx_*',
-         '版本更新相关宣传或演示视频。'),
-        ('AVG UI 过渡', 'AVG UI Transitions',
-         'AVG（文字冒险）模式中界面过渡动画效果。'),
-    ]
-
-    lines.append('| 分类 | 文件名模式 | 说明 |')
-    lines.append('|------|-----------|------|')
-    for cat_name, pattern, desc in categories:
-        lines.append(f'| {cat_name} | `{pattern}` | {desc} |')
-    lines.append('')
-
-    # Download
-    lines.append('## 下载')
-    lines.append('')
-    lines.append(f'全部 201 个 MP4 文件（总计 975 MB）发布于 [GitHub Releases `video-assets-v1`]({RELEASE_URL}/video-assets-v1)。')
-    lines.append('')
-
-    # Technical notes
-    lines.append('## 技术说明')
-    lines.append('')
-    lines.append('- 格式：MP4（H.264 编码）')
-    lines.append('- 来源路径：`Morimens_Data/StreamingAssets/Video/`')
-    lines.append('- 文件为客户端原始资产，未经二次编码')
-    lines.append('- 文件名前缀对应游戏内调用标识，可与 Lua 脚本中的视频播放指令关联')
+        for cat_name, files in cats.items():
+            lines.append(f'## {cat_name}（{len(files)}）')
+            lines.append('')
+            for mp4 in files:
+                rel = os.path.relpath(mp4, f'{DOCS_DIR}/public')
+                name = os.path.splitext(os.path.basename(mp4))[0]
+                lines.append(f'### {name}')
+                lines.append('')
+                lines.append(f'<video controls preload="none" width="100%" src="/{rel}"></video>')
+                lines.append('')
+    else:
+        lines.append('> 共 201 个 MP4 文件（975 MB）')
+        lines.append('')
+        lines.append(f'全部视频发布于 [GitHub Releases `video-assets-v1`]({RELEASE_URL}/video-assets-v1)。')
+        lines.append('')
+        lines.append('| 分类 | 内容 |')
+        lines.append('|------|------|')
+        lines.append('| 章节过场 | C00-C09, C202-C203 主线剧情动画 |')
+        lines.append('| CG SD 动画 | SD 风格角色动画片段 |')
+        lines.append('| 登录 PV | 启动及登录界面宣传影片 |')
+        lines.append('| 场景过渡 | GN_Switch 界面切换动画 |')
+        lines.append('| 超维视频 | 版本更新演示视频 |')
+        lines.append('| AVG 过渡 | 文字冒险模式过渡动画 |')
+        lines.append('')
     lines.append('')
 
     with open(f'{DOCS_DIR}/video.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
-    print(f'Video index page: {len(lines)} lines')
+    print(f'Video index page: {len(mp4_files)} videos ({"inline" if mp4_files else "links only"})')
 
 
 def generate_panel_text():
