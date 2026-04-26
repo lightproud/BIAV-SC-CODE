@@ -2344,6 +2344,27 @@
       "title": "6 MONTHS CELEBRATION! 6 hours of fun! Karaoke, PhaseCraft & more~",
       "time": "2026-04-26T09:44:48.580753+00:00",
       "downloaded_at": "2026-04-26T09:46:42.324572+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/c75586afe3d940bc8acfcdf23b78f1631abfe978.jpg": {
+      "filename": "bilibili_89980d8b880e388f.jpg",
+      "source": "bilibili",
+      "title": "［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近）",
+      "time": "2026-04-26T11:05:20+00:00",
+      "downloaded_at": "2026-04-26T11:35:17.979215+00:00"
+    },
+    "https://i.ytimg.com/vi/8vNWJex44lo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAM3pdFhEAPQ2XsvvfTUX7tFosX7Q": {
+      "filename": "youtube_76dcbe6c7ae51ac4.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】カエクスが強いと思える動画",
+      "time": "2026-04-26T08:32:49.647307+00:00",
+      "downloaded_at": "2026-04-26T11:35:18.739335+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/6bae92291ca560e441879f987d5e2edd9bf85c40.jpg": {
+      "filename": "bilibili_57a51a58fd125f34.jpg",
+      "source": "bilibili",
+      "title": "当耕司来找郁纪时……",
+      "time": "2026-04-26T11:00:00+00:00",
+      "downloaded_at": "2026-04-26T11:35:20.154535+00:00"
     }
   },
   "failed": {
@@ -3131,6 +3152,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-26T08:14:29.693921+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/c75586afe3d940bc8acfcdf23b78f1631abfe978.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T11:35:18.279937+00:00"
     }
   },
   "archived": []
