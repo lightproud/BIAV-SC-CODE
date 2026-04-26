@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-04-26T08:10:16.938746+00:00",
+  "updated_at": "2026-04-26T09:32:31.390773+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1313,6 +1313,14 @@
       "parent_id": "1355607635147362554",
       "position": 4,
       "topic": ""
+    },
+    {
+      "id": "1497879149270794300",
+      "name": "fishhazardthewizard",
+      "type": 0,
+      "parent_id": "1440851754311749733",
+      "position": 146,
+      "topic": "ModMail Channel 693905974750216212 1264105515789844491 (Please do not change this)"
     }
   ]
 }
