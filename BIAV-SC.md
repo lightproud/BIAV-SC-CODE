@@ -198,7 +198,7 @@
 - 只响应 author: lightproud 的 Issue
 - 同一子项目最多 3 个 open Issue
 - 新建前先查重，有重叠则追加 comment
-- 标题带前缀：`[Code-site]` / `[Code-news]` / `[Code-wiki]` / `[主控台]`
+- 标题带前缀：`[Code-site]` / `[Code-news]` / `[Code-wiki]` / `[Code-memory]` / `[主控台]`
 - 未标注执行模式时默认「直接执行」
 
 ---
@@ -212,6 +212,7 @@
 | Code-site | 主站 + 部署流水线 + 跨站视觉一致性 |
 | Code-news | 社区聚合器 + 报告系统 |
 | Code-wiki | 游戏数据集 + 多语言 Wiki |
+| Code-memory | 银芯记忆基础设施（scripts/ 9 模块 + assets/data/ 索引），不动业务数据 |
 | Code-game | 衍生游戏（Phase 4 启动） |
 
 ### 新会话启动流程
