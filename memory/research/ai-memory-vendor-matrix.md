@@ -128,6 +128,31 @@
 **适配难度**：高。引入完整 ECL 流水线 = 重做 9 模块；借鉴「Cognify 步骤」概念给特定数据集（如 lua 表）做单点改造则是中等工作量，可借力 dream.py 深睡层做。
 
 - [§ 2.5 Cursor 项目记忆](#25-cursor-项目记忆)
+
+### 2.5 Cursor 项目记忆
+
+**来源**：Cursor IDE 闭源商业产品（与 Claude Code 同生态位竞品）
+**核心定位**：**IDE 内嵌的代码库记忆**——专为代码场景优化的 RAG + 规则系统
+**两大支柱**：
+- **Codebase indexing**：自动 hash 文件结构 + 语义切块（按 function / class / 逻辑块切，**不是**按字符切）+ embeddings
+- **Rules 系统**：四级规则继承——Project rules（`.cursor/rules/*.mdc` 入仓库）/ User rules（本机全局）/ Team rules（团队仪表盘）/ `.cursorignore`（排除非源码目录）
+
+**关键创新**：
+- **语义切块**而非字符切块——一个函数 / 类作为一个 chunk，避免逻辑被切断
+- **规则分层 + 入仓库** —— `.cursor/rules/*.mdc` 跟代码一起 git 化，团队成员共享规则
+- **增量索引** —— hash 改变才重建相关片段
+
+**银芯映射**：
+- 银芯 `memory_search.py` 当前**按字符切块**（500 字符 + 100 重叠）→ 与 Cursor 的语义切块差距明显
+- 银芯 `CLAUDE.md` ≈ Cursor 的 Project rules（已入仓库 ✓）
+- 银芯无对应 `.cursorignore` 概念—— 51 MB memory/ 全部入索引（含 30.2% Discord 噪音），无法显式排除
+
+**银芯缺失**：
+1. **语义切块**——按 markdown 标题层级 / JSON 顶层 key / Python 函数边界切，而非字符滑窗
+2. **索引排除清单** —— 类似 `.searchignore` 显式排除 session-digest 老旧档案 / Discord 月度归档
+
+**适配难度**：低-中。语义切块改造 `memory_search.py:chunk_file()` 函数即可；排除清单加 `.searchignore` 文件 + 索引器读取，半天工作量。
+
 - [§ 2.6 claude-mem](#26-claude-mem)
 - [§ 2.7 Claude Code 原生（CLAUDE.md / Skills / Subagents / Hooks）](#27-claude-code-原生)
 
