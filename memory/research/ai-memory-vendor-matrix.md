@@ -185,6 +185,38 @@
 
 - [§ 2.7 Claude Code 原生（CLAUDE.md / Skills / Subagents / Hooks）](#27-claude-code-原生)
 
+### 2.7 Claude Code 原生（CLAUDE.md / Skills / Subagents / Hooks）
+
+**来源**：Anthropic Claude Code 平台原语
+**核心定位**：**分层职责 + 按需加载**——把不同生命周期的需求拆成不同原语，避免一份大文档塞所有内容
+**四大原语**：
+- **CLAUDE.md**：稳定政策（policy），所有会话第一份读物。**不放执行细节**——细节多了反而合规率下降。
+- **Skills**（`.claude/commands/`）：执行流程（playbook），**按需加载**——skill body 不被调用时几乎零 token 成本
+- **Subagents**（`.claude/agents/`）：专业角色（reviewer / test-runner / doc-writer），有**独立持久化目录**跨会话保留
+- **Hooks**（`.claude/settings.json` 中 hooks 段）：**自动强制**（enforcement），事件触发执行 shell 脚本
+
+**官方最佳实践**（2026）：
+- "Use subagents for wide search, files for persistent notes, retrospectives for session history, **memory for distilled lessons**, CLAUDE.md for **stable rules**"
+- "Keep policy in CLAUDE.md, execution routines in Skills, automatic enforcement in Hooks"
+- "Skill's body loads only when invoked, so long reference material costs almost nothing until needed"
+
+**银芯映射**（已用 ✓ / 未用 ✗）：
+- ✓ CLAUDE.md（policy）
+- ✓ `.claude/commands/`（daily-news / sync-memory / validate-data 三 skill）
+- ✗ `.claude/agents/` subagents（艾瑞卡 / Code-* 当前是会话级人设，没有用 Claude Code 原生 subagent 机制）
+- ✓ Hooks（SessionStart / SessionEnd 两个）+ ✗ 缺 PostToolUse / UserPromptSubmit / Stop
+
+**银芯当前的「错位」**：
+- BIAV-SC.md（7 KB）+ CLAUDE.md（合并后约 8 KB）实际承载了**很多执行细节**（如 §5 知识写入流程 / §7 常用命令 / §9 教训）——按官方最佳实践，这些应拆到 Skills
+- 9 模块记忆系统 = 自建版 RAG，但**没有** subagent 持久化目录概念——艾瑞卡每次会话都是「读全部档案 → 进入状态」，不是「调取角色专属记忆」
+
+**银芯缺失**：
+1. **职责分层**——policy / playbook / role-memory / enforcement 没有清晰拆分到对应原语
+2. **subagent 独立记忆**——艾瑞卡 / Code-wiki / Code-news 各自的「专业纵深记忆」当前靠会话上下文累积，不持久化
+3. **按需加载的 skill body**——长参考材料（如战略规划详情）当前都在 boot-snapshot 加载链里，不是「需要时才读」
+
+**适配难度**：低-中。CLAUDE.md 拆分 + Skill 化是渐进改造，不破坏现有；subagent 化需要 Claude Code 平台支持验证。
+
 ---
 
 ## 三、横向对比矩阵
