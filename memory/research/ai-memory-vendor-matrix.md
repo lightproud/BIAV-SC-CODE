@@ -154,6 +154,35 @@
 **适配难度**：低-中。语义切块改造 `memory_search.py:chunk_file()` 函数即可；排除清单加 `.searchignore` 文件 + 索引器读取，半天工作量。
 
 - [§ 2.6 claude-mem](#26-claude-mem)
+
+### 2.6 claude-mem
+
+**来源**：thedotmack/claude-mem（Claude Code 插件，AGPL-3.0）
+**核心定位**：**Claude Code 专属记忆插件**——会话事件 → AI 压缩 → 注入下次会话
+**架构**：
+- **5 个生命周期 hook**：SessionStart / UserPromptSubmit / PostToolUse / Stop / SessionEnd
+- **存储双路**：SQLite（`~/.claude-mem/claude-mem.db`，FTS5 全文检索）+ ChromaDB（`~/.claude-mem/vector-db`，向量相似度）
+- **Worker 服务**：本地 port 37777 跑 LLM 压缩流水线
+- **使用 Claude agent-sdk** 做压缩，**注入相关 context** 到下一次会话
+
+**关键创新**：**全 Claude Code 生命周期 hook 覆盖**——PostToolUse 实时捕获每次工具调用。
+
+**生产可靠性问题**（2026 早期）：
+- 2025-11-10 起 PostToolUse / Stop hook 多次故障（GitHub issue #504）
+- 2026 早期 issue #727、#897 报多 hook 异常
+- License **AGPL-3.0**——传染性强，业务应用慎用
+
+**银芯既有判断**：`memory/decisions.md` 2026-04-14「黑池记忆走银芯自建+母版迁移」条目明确**不引入 claude-mem**（AGPL 风险）。`memory/silver-memory-enhancement-plan.md` 已识别 6 项「claude-mem 有而银芯缺」的能力差距，给出银芯自建等价方案。
+
+**银芯映射**：
+- 银芯 SessionStart hook（`session-start-sync.sh`）+ SessionEnd hook（`session-end-distill.sh`）已对应 claude-mem 的两端
+- 银芯**缺** PostToolUse / UserPromptSubmit / Stop 三个 hook
+- 银芯不引入 ChromaDB 向量库，自建 TF-IDF + 知识图谱
+
+**银芯缺失**：实时会话内 hook 链条（PostToolUse / UserPromptSubmit）。`silver-memory-enhancement-plan.md` 已设计 `session_watch.py` + `session_inject.py` 等价方案，待主控台决策启动。
+
+**适配难度**：N/A——**不直接引入**（许可证风险）。借鉴 hook 拓扑设计自建。
+
 - [§ 2.7 Claude Code 原生（CLAUDE.md / Skills / Subagents / Hooks）](#27-claude-code-原生)
 
 ---
