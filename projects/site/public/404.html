@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 - 页面不存在 | 缸中之脑</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a0b10'/%3E%3Ctext x='32' y='46' font-family='Noto Serif SC,serif' font-weight='700' font-size='44' fill='%23c5a356' text-anchor='middle'%3E夜%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       margin: 0;
@@ -16,9 +17,9 @@
 
     body {
       background: #0a0b10;
-      color: #d4c9a8;
+      color: #f0ebe0;
       font-family: 'Noto Sans SC', sans-serif;
-      font-weight: 300;
+      font-weight: 500;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -26,7 +27,8 @@
       justify-content: center;
       padding: 2rem;
       text-align: center;
-      line-height: 2;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
     }
 
     main {
@@ -56,9 +58,8 @@
 
     .message {
       font-size: 1rem;
-      color: #d4c9a8;
+      color: #b5aa98;
       margin-bottom: 3rem;
-      opacity: 0.8;
     }
 
     .nav-links {
@@ -72,19 +73,19 @@
     .nav-links a {
       display: block;
       padding: 0.75rem 2rem;
-      background: #1e1a10;
-      border: 1px solid #2a2515;
+      background: #0f1018;
+      border: 1px solid rgba(197, 163, 86, 0.08);
       border-radius: 6px;
-      color: #d4c9a8;
+      color: #b5aa98;
       text-decoration: none;
       font-size: 0.95rem;
-      font-weight: 400;
-      transition: border-color 0.25s, color 0.25s, background 0.25s;
+      font-weight: 500;
+      transition: border-color 0.3s, color 0.3s, background 0.3s;
       min-width: 120px;
     }
 
     .nav-links a:hover {
-      border-color: #c5a356;
+      border-color: rgba(197, 163, 86, 0.18);
       color: #e2c97e;
       background: rgba(197, 163, 86, 0.06);
     }
@@ -97,7 +98,7 @@
     .nav-links .label-en {
       display: block;
       font-size: 0.75rem;
-      color: #6b6040;
+      color: #7a7265;
       margin-top: 0.15rem;
     }
 
@@ -105,7 +106,7 @@
       margin-top: auto;
       padding-top: 2rem;
       font-size: 0.8rem;
-      color: #5a5540;
+      color: #7a7265;
       letter-spacing: 0.08em;
     }
 
@@ -147,6 +148,10 @@
       <a href="/brain-in-a-vat/news/">
         <span class="label-zh">新闻</span>
         <span class="label-en">News</span>
+      </a>
+      <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">
+        <span class="label-zh">仓库</span>
+        <span class="label-en">Repository</span>
       </a>
     </nav>
   </main>

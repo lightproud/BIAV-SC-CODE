@@ -44,7 +44,7 @@
 
 <div class="header">
   <h1>Design System 落地指南</h1>
-  <span class="meta">v1.0 · 忘却前夜 · 全载体适配</span>
+  <span class="meta">v1.1 · 忘却前夜 · 全载体适配 · 2026-04-26 修订</span>
 </div>
 
 <div class="body">
@@ -62,19 +62,27 @@
     <tr><td>社区情报日报</td><td>HTML → PDF (weasyprint)</td><td>Token CSS 子集内联</td><td><span class="badge badge-keep">微调</span></td></tr>
   </table>
 
-  <h3>文件交付清单</h3>
+  <h3>文件交付清单（2026-04-26 实际路径）</h3>
   <div class="file-tree">
 <span class="dir">brain-in-a-vat/</span>
-├── <span class="new">design/</span>
-│   └── <span class="new">morimens-design-tokens.css</span>    <span class="badge badge-new">新增</span> 共享 Token
-├── <span class="new">index.html</span>                          <span class="badge badge-new">新增</span> 主页（根目录）
+├── <span class="dir">projects/site/</span>
+│   ├── <span class="dir">design/</span>
+│   │   ├── <span class="mod">morimens-design-tokens.css</span>      <span class="badge badge-keep">已落地</span> 共享 Token 真值源
+│   │   └── <span class="mod">morimens-design-system-guide.html</span> <span class="badge badge-keep">本文件</span>
+│   └── <span class="dir">public/</span>
+│       ├── <span class="mod">index.html</span>                       <span class="badge badge-keep">已落地</span> 主站导航页
+│       └── <span class="mod">404.html</span>                          <span class="badge badge-keep">已落地</span> 错误页
 ├── <span class="dir">projects/wiki/docs/.vitepress/theme/</span>
-│   ├── <span class="mod">index.ts</span>                       <span class="badge badge-mod">修改</span> 引入新 CSS
-│   ├── <span class="new">morimens-design-tokens.css</span>     <span class="badge badge-new">新增</span> Token 副本
-│   └── <span class="mod">custom.css → morimens-vitepress-theme.css</span> <span class="badge badge-mod">替换</span>
-└── <span class="dir">projects/news/</span>
-    └── <span class="mod">report-template.html</span>           <span class="badge badge-mod">微调</span> 对齐 Token 命名
+│   ├── <span class="mod">index.ts</span>                       <span class="badge badge-keep">已落地</span> 引入新 CSS
+│   ├── <span class="mod">morimens-design-tokens.css</span>     <span class="badge badge-keep">已落地</span> Token 副本
+│   └── <span class="mod">morimens-vitepress-theme.css</span>   <span class="badge badge-keep">已落地</span> 主题覆盖
+└── <span class="dir">.github/workflows/</span>
+    └── <span class="mod">deploy-site.yml</span>                <span class="badge badge-keep">已落地</span> 组装 dist 推 gh-pages
   </div>
+
+  <div class="note"><strong>部署事实：</strong><code>deploy-site.yml</code> 通过 <code>cp -r projects/site/design dist/design</code>
+  把 design/ 目录整体推送到 <code>gh-pages</code> 分支，因此本文件与 Token CSS 都是**对外可访问的公开文档**，
+  访问路径为 <code>https://lightproud.github.io/brain-in-a-vat/design/</code>。维护时需保持时效性。</div>
 </div>
 
 <!-- ═══ 02 TOKEN SYSTEM ═══ -->
@@ -110,24 +118,27 @@
 <div class="sec">
   <div class="sec-num">03</div>
   <div class="sec-title">载体 A · GitHub Pages 主页</div>
-  <div class="sec-desc">纯静态 HTML，部署在仓库根目录 index.html。是玩家接触项目的第一触点。</div>
+  <div class="sec-desc">纯静态 HTML，源文件在 <code>projects/site/public/index.html</code>。是外部访问者接触项目的第一触点。</div>
 
-  <h3>部署方式</h3>
-  <pre><code># 将 morimens-homepage.html 重命名为 index.html
-# 放置在仓库根目录（或 gh-pages 分支根目录）
-cp morimens-homepage.html index.html
-git add index.html
-git commit -m "feat: add branded homepage"
-git push</code></pre>
+  <h3>部署方式（自动）</h3>
+  <p>不再手动 cp 到根目录。push 到 main 触发 <code>.github/workflows/deploy-site.yml</code>，由 workflow 在 dist/ 中组装 site + wiki + news 后通过 <code>peaceiris/actions-gh-pages@v4</code> 推送至 <code>gh-pages</code> 分支。</p>
 
-  <h3>注意事项</h3>
+  <pre><code># 触发路径（任一匹配即触发部署）
+projects/site/**
+projects/wiki/docs/**
+projects/wiki/package.json
+projects/news/index.html
+.github/workflows/deploy-site.yml</code></pre>
+
+  <h3>当前状态（2026-04-26 修订）</h3>
   <table>
-    <tr><th>项目</th><th>说明</th></tr>
-    <tr><td>Wiki 链接</td><td>导航中 Wiki 链接指向 <code>wiki/</code>，对应 VitePress 的 <code>base: '/brain-in-a-vat/wiki/'</code> 配置</td></tr>
-    <tr><td>社区链接</td><td>Community 区块的 href 需要替换为实际链接（Discord、Bilibili 等）</td></tr>
-    <tr><td>OG Image</td><td>需要补充 <code>og:image</code> meta tag，建议用 Hero 区截图生成 1200×630</td></tr>
-    <tr><td>Favicon</td><td>需要补充 <code>link rel="icon"</code>，建议与 Wiki 共用同一个 logo.svg</td></tr>
-    <tr><td>Pages Source</td><td>确认 GitHub Pages Source 设置为 <code>gh-pages</code> 分支</td></tr>
+    <tr><th>项目</th><th>状态</th><th>说明</th></tr>
+    <tr><td>Wiki 链接</td><td><span class="badge badge-keep">已落地</span></td><td>nav 中 <code>wiki/</code> 对应 VitePress 的 <code>base: '/brain-in-a-vat/wiki/'</code></td></tr>
+    <tr><td>Community 链接</td><td><span class="badge badge-keep">已落地</span></td><td>D-fix（commit <code>6cf6b7b</code>）已替换 4 个真实 URL（Discord 国际服 / NGA / Reddit / TapTap），删除 4 个无可信信号的卡片</td></tr>
+    <tr><td>OG Image</td><td><span class="badge badge-mod">待补</span></td><td>已加 og:url / og:locale / twitter:card meta，但 og:image PNG 资产仍待设计师产出 1200×630</td></tr>
+    <tr><td>Favicon</td><td><span class="badge badge-keep">已落地</span></td><td>inline SVG dataURL，宋体「夜」字 + 主金 + 深渊底，无外部依赖</td></tr>
+    <tr><td>Mission 段</td><td><span class="badge badge-keep">已落地</span></td><td>D-mission（commit <code>6347ad3</code>）在 hero 与 features 之间新增三新使命展示（壹/贰/叁）</td></tr>
+    <tr><td>Pages Source</td><td><span class="badge badge-keep">已落地</span></td><td>GitHub Pages Source = <code>gh-pages</code> 分支</td></tr>
   </table>
 </div>
 
@@ -179,7 +190,7 @@ export default theme</code></pre>
   <p><strong>Step 3：验证构建</strong></p>
   <pre><code>cd projects/wiki
 npm run docs:dev
-# 检查：深渊底色 ✓ 金色链接 ✓ 宋体标题 ✓ 噪点纹理 ✓</code></pre>
+# 检查：深渊底色、金色链接、宋体标题、噪点纹理</code></pre>
 
   <h3>VitePress 变量映射关系</h3>
   <table>
@@ -209,12 +220,12 @@ npm run docs:dev
   <h3>当前状态 vs 目标</h3>
   <table>
     <tr><th>项目</th><th>当前值</th><th>对齐目标</th><th>差异</th></tr>
-    <tr><td>Background</td><td><code>#0a0b10</code></td><td><code>--m-bg-abyss</code></td><td>✓ 一致</td></tr>
-    <tr><td>Gold</td><td><code>#c5a356</code></td><td><code>--m-gold-primary</code></td><td>✓ 一致</td></tr>
-    <tr><td>Text</td><td><code>#d4c4a0</code></td><td><code>#f0ebe0</code></td><td>▲ 需调亮</td></tr>
-    <tr><td>Title font</td><td>Noto Serif SC</td><td><code>--m-font-title</code></td><td>✓ 一致</td></tr>
-    <tr><td>Body font</td><td>Noto Sans SC</td><td><code>--m-font-body</code></td><td>✓ 一致</td></tr>
-    <tr><td>Divider</td><td><code>#2a2520</code></td><td><code>rgba(gold, 0.10)</code></td><td>▲ 需换用金色透明度</td></tr>
+    <tr><td>Background</td><td><code>#0a0b10</code></td><td><code>--m-bg-abyss</code></td><td>一致</td></tr>
+    <tr><td>Gold</td><td><code>#c5a356</code></td><td><code>--m-gold-primary</code></td><td>一致</td></tr>
+    <tr><td>Text</td><td><code>#d4c4a0</code></td><td><code>#f0ebe0</code></td><td>需调亮</td></tr>
+    <tr><td>Title font</td><td>Noto Serif SC</td><td><code>--m-font-title</code></td><td>一致</td></tr>
+    <tr><td>Body font</td><td>Noto Sans SC</td><td><code>--m-font-body</code></td><td>一致</td></tr>
+    <tr><td>Divider</td><td><code>#2a2520</code></td><td><code>rgba(gold, 0.10)</code></td><td>需换用金色透明度</td></tr>
   </table>
 
   <h3>适配方式</h3>
@@ -257,7 +268,7 @@ npm run docs:dev
     <tr><td>一屏一主题</td><td>全幅区块独占至少一个 viewport 高度</td></tr>
     <tr><td>标题必须宋体</td><td>h1–h3 用 <code>--m-font-title</code>，不可用黑体</td></tr>
     <tr><td>所有新颜色必须走 Token</td><td>禁止硬编码色值。新增颜色需先加入 Token 文件</td></tr>
-    <tr><td>对比度 ≥ 4.5:1</td><td>WCAG AA 标准。主文本 on 深渊底 = 11.2:1 ✓</td></tr>
+    <tr><td>对比度 ≥ 4.5:1</td><td>WCAG AA 标准。主文本 on 深渊底 = 11.2:1 (达标)</td></tr>
     <tr><td><code>prefers-reduced-motion</code></td><td>所有动画必须在 reduced-motion 下归零</td></tr>
   </table>
 </div>
@@ -310,17 +321,19 @@ npm run docs:dev
   <div class="sec-desc">逐项完成即视觉统一。</div>
 
   <table>
-    <tr><th>#</th><th>任务</th><th>载体</th><th>复杂度</th></tr>
-    <tr><td>1</td><td>创建 <code>design/morimens-design-tokens.css</code></td><td>仓库</td><td>复制粘贴</td></tr>
-    <tr><td>2</td><td>替换 <code>custom.css</code> → <code>morimens-vitepress-theme.css</code></td><td>Wiki</td><td>替换文件</td></tr>
-    <tr><td>3</td><td>修改 <code>index.ts</code> 引入新 CSS</td><td>Wiki</td><td>改两行</td></tr>
-    <tr><td>4</td><td>本地 <code>npm run docs:dev</code> 验证</td><td>Wiki</td><td>5 min</td></tr>
-    <tr><td>5</td><td>部署主页 <code>index.html</code> 到仓库根/gh-pages</td><td>主页</td><td>复制粘贴</td></tr>
-    <tr><td>6</td><td>确认 GitHub Pages Source = gh-pages</td><td>部署</td><td>Settings 一键</td></tr>
-    <tr><td>7</td><td>日报模板 <code>--txt</code> 从 #d4c4a0 → #f0ebe0</td><td>日报</td><td>改一行</td></tr>
-    <tr><td>8</td><td>日报模板 divider 从 #2a2520 → rgba(gold,0.10)</td><td>日报</td><td>改一行</td></tr>
-    <tr><td>9</td><td>补充主页社区链接实际 URL</td><td>主页</td><td>填链接</td></tr>
-    <tr><td>10</td><td>生成 OG Image + Favicon</td><td>全站</td><td>需设计</td></tr>
+    <tr><th>#</th><th>任务</th><th>载体</th><th>状态</th></tr>
+    <tr><td>1</td><td>创建 <code>projects/site/design/morimens-design-tokens.css</code></td><td>仓库</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>2</td><td>替换 <code>custom.css</code> → <code>morimens-vitepress-theme.css</code></td><td>Wiki</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>3</td><td>修改 <code>index.ts</code> 引入新 CSS</td><td>Wiki</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>4</td><td>本地 <code>npm run docs:dev</code> 验证</td><td>Wiki</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>5</td><td>主页 <code>index.html</code> 通过 deploy-site.yml 自动部署</td><td>主页</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>6</td><td>GitHub Pages Source = gh-pages</td><td>部署</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>7</td><td>主页社区链接真实化（D-fix）</td><td>主页</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>8</td><td>主页 Mission 段（D-mission）</td><td>主页</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>9</td><td>Favicon（inline SVG）+ SEO meta（og:url / canonical / twitter:card）</td><td>主页</td><td><span class="badge badge-keep">已落地</span></td></tr>
+    <tr><td>10</td><td>OG Image PNG 1200×630（待设计师产出）</td><td>全站</td><td><span class="badge badge-mod">待补</span></td></tr>
+    <tr><td>11</td><td>Token 单源化（<code>public/index.html</code> 改 import 而非硬编码）</td><td>主页</td><td><span class="badge badge-mod">待补</span></td></tr>
+    <tr><td>12</td><td>日报模板与 Token 对齐</td><td>日报</td><td><span class="badge badge-mod">待补</span></td></tr>
   </table>
 </div>
 
