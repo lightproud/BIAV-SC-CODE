@@ -650,6 +650,386 @@ def generate_stages():
     print(f'Stages page: {len(sorted_types)} types, {len(groups)} groups')
 
 
+def generate_audio_index():
+    """Generate audio asset index page referencing GitHub Release assets."""
+    RELEASE_URL = 'https://github.com/lightproud/brain-in-a-vat/releases/tag'
+
+    lines = []
+    lines.append('# 音频资产索引')
+    lines.append('')
+    lines.append('> 数据来源：Wwise 音频银行解包 + 格式转换 | 共 2,325 条 OGG 音轨')
+    lines.append('')
+
+    # Extraction process
+    lines.append('## 提取流程')
+    lines.append('')
+    lines.append('游戏音频以 Wwise 格式存储（`.bnk` 音频银行 + `.wem` 编码音频）。')
+    lines.append('提取与转换管线如下：')
+    lines.append('')
+    lines.append('1. 从客户端 `StreamingAssets` 目录提取原始 Wwise 文件（156 个 `.bnk` + 3,302 个 `.wem`）')
+    lines.append('2. 使用 `vgmstream-cli` 将 `.wem` / `.bnk` 内嵌音频解码为 WAV')
+    lines.append('3. 使用 `ffmpeg`（libvorbis q6）将 WAV 编码为 OGG Vorbis')
+    lines.append('4. 最终产出 2,325 条 OGG 音轨（含 61 条从 `.bnk` 派生的音频）')
+    lines.append('')
+
+    # Stats
+    lines.append('## 统计')
+    lines.append('')
+    lines.append('| 项目 | 数量 |')
+    lines.append('|------|------|')
+    lines.append('| OGG 音轨总数 | 2,325 |')
+    lines.append('| 其中 .bnk 派生 | 61 |')
+    lines.append('| 原始 .wem 文件 | 3,302 |')
+    lines.append('| 原始 .bnk 文件 | 156 |')
+    lines.append('')
+
+    # Downloads
+    lines.append('## 下载')
+    lines.append('')
+    lines.append('### OGG 转换版（推荐）')
+    lines.append('')
+    lines.append(f'发布于 [GitHub Releases `audio-assets-v1`]({RELEASE_URL}/audio-assets-v1)，分为两个压缩包：')
+    lines.append('')
+    lines.append('| 文件 | 内容 |')
+    lines.append('|------|------|')
+    lines.append('| `morimens-audio-ogg-part1.tar.gz` | 1,132 条音轨 + 61 条 bnk 派生音频 |')
+    lines.append('| `morimens-audio-ogg-part2.tar.gz` | 1,132 条音轨 |')
+    lines.append('')
+
+    # Raw Wwise
+    lines.append('### 原始 Wwise 文件')
+    lines.append('')
+    lines.append(f'如需原始未转换的 Wwise 文件（156 个 `.bnk` + 3,302 个 `.wem`，共 3,462 个文件），')
+    lines.append(f'请前往 [GitHub Releases `audio-raw-v1`]({RELEASE_URL}/audio-raw-v1)。')
+    lines.append('')
+
+    # Technical notes
+    lines.append('## 技术说明')
+    lines.append('')
+    lines.append('- 转换工具链：`vgmstream-cli` (decode) -> `ffmpeg` (encode)')
+    lines.append('- 输出格式：OGG Vorbis，libvorbis quality 6（约 192 kbps VBR）')
+    lines.append('- `.bnk` 文件为 Wwise SoundBank 容器，内含多段嵌入音频，已拆分为独立 OGG 文件')
+    lines.append('- 文件名保留原始 Wwise ID 以便与游戏数据关联')
+    lines.append('')
+
+    with open(f'{DOCS_DIR}/audio.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Audio index page: {len(lines)} lines')
+
+
+def generate_video_index():
+    """Generate video asset index page referencing GitHub Release assets."""
+    RELEASE_URL = 'https://github.com/lightproud/brain-in-a-vat/releases/tag'
+
+    lines = []
+    lines.append('# 视频资产索引')
+    lines.append('')
+    lines.append('> 数据来源：Morimens_Data/StreamingAssets/Video/ | 共 201 个 MP4 文件（975 MB）')
+    lines.append('')
+
+    # Overview
+    lines.append('## 概述')
+    lines.append('')
+    lines.append('游戏内过场动画、CG 动画及特效视频均以 MP4 格式存储于客户端 `StreamingAssets/Video/` 目录。')
+    lines.append('本索引涵盖完整的 201 个视频文件。')
+    lines.append('')
+
+    # Categories
+    lines.append('## 视频分类')
+    lines.append('')
+
+    categories = [
+        ('章节过场（Chapter Cutscenes）', 'C00 - C09, C202 - C203',
+         '主线剧情各章节的过场动画，涵盖序章至第九章及特殊章节 C202、C203。'),
+        ('CG_SD 动画', 'CG_SD_*',
+         'SD（Super Deformed）风格角色动画片段。'),
+        ('战斗特效', 'Battle Effects',
+         '战斗系统中使用的视觉特效动画。'),
+        ('登录 PV', 'Login PV',
+         '游戏启动及登录界面播放的宣传影片。'),
+        ('Logo 动画', 'Logo',
+         '游戏 Logo 展示动画。'),
+        ('GN_Switch 过渡', 'GN_Switch_*',
+         '场景或界面切换过渡动画。'),
+        ('RD 场景', 'RD_*',
+         '研发/演出相关场景视频。'),
+        ('Vx 视频', 'Vx_*',
+         '版本更新相关宣传或演示视频。'),
+        ('AVG UI 过渡', 'AVG UI Transitions',
+         'AVG（文字冒险）模式中界面过渡动画效果。'),
+    ]
+
+    lines.append('| 分类 | 文件名模式 | 说明 |')
+    lines.append('|------|-----------|------|')
+    for cat_name, pattern, desc in categories:
+        lines.append(f'| {cat_name} | `{pattern}` | {desc} |')
+    lines.append('')
+
+    # Download
+    lines.append('## 下载')
+    lines.append('')
+    lines.append(f'全部 201 个 MP4 文件（总计 975 MB）发布于 [GitHub Releases `video-assets-v1`]({RELEASE_URL}/video-assets-v1)。')
+    lines.append('')
+
+    # Technical notes
+    lines.append('## 技术说明')
+    lines.append('')
+    lines.append('- 格式：MP4（H.264 编码）')
+    lines.append('- 来源路径：`Morimens_Data/StreamingAssets/Video/`')
+    lines.append('- 文件为客户端原始资产，未经二次编码')
+    lines.append('- 文件名前缀对应游戏内调用标识，可与 Lua 脚本中的视频播放指令关联')
+    lines.append('')
+
+    with open(f'{DOCS_DIR}/video.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Video index page: {len(lines)} lines')
+
+
+def generate_panel_text():
+    """Generate panel text reference page from panel_text.json, grouped by UI category."""
+    with open(f'{PROCESSED_DIR}/panel_text.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    meta = data['_meta']
+    categories = data['categories']
+
+    # Human-readable category labels
+    cat_labels = {
+        'Events': '活动系统', 'Awaker': '唤醒体', 'Pvp': 'PvP / 相位对弈',
+        'Social': '社交', 'Dungeons': '地下城', 'Dungeous': '地下城（旧）',
+        'Event': '活动', 'Recharge': '充值商店', 'Summon': '召唤/唤醒',
+        'Passport': '通行证', 'Team': '队伍编成', 'Battle': '战斗',
+        'Shop': '商店', 'Collection': '收藏馆', 'Alchemy': '冶炼室',
+        'Mail': '邮件', 'Card': '卡牌', 'Bag': '背包',
+        'Research': '研究', 'Home': '大厅', 'Homeland': '家园',
+        'Guide': '引导', 'Story': '剧情', 'Chapter': '章节',
+        'Chaper': '章节（旧）', 'Copy': '副本', 'Task': '任务',
+        'Setting': '设置', 'Login': '登录', 'Address': '通讯器',
+        'Weapon': '命轮', 'Keeper': '守护者', 'Item': '道具',
+        'Common': '通用', 'Michi': '密契', 'Protagonist': '守密人',
+        'Community': '社区', 'Course': '教程', 'InvitationCode': '邀请码',
+        'Announcement': '公告', 'Vindicate': '申辩', 'Pocket': '口袋',
+        'Main': '主界面', 'PopMsg': '弹窗消息', 'Popup': '弹窗',
+        'Dbgcopy': '调试副本', 'Vx': '超维', 'PVP': 'PvP',
+        'Suummoon': '召唤（旧）', 'Icon': '图标', 'Btn': '按钮',
+        'Com': '组件', 'Panel': '面板', 'Text': '文本',
+        'Simple': '简易', 'Other': '其他',
+    }
+
+    lines = []
+    lines.append('# UI 面板文本')
+    lines.append('')
+    lines.append(f'> 数据来源：PanelText.lua（运行时内存提取） | 共 {meta["total_entries"]} 条，{meta["total_categories"]} 个分类')
+    lines.append('')
+    lines.append('::: info 说明')
+    lines.append('本页收录游戏客户端中所有 UI 面板的静态文本字符串，按功能模块分类展示。文本键名中的层级结构反映了 UI 组件的嵌套关系。')
+    lines.append(':::')
+    lines.append('')
+
+    # Table of contents
+    lines.append('## 分类索引')
+    lines.append('')
+    sorted_cats = sorted(categories.items(), key=lambda x: -len(x[1]))
+    for cat, items in sorted_cats:
+        label = cat_labels.get(cat, cat)
+        lines.append(f'- [{label}（{len(items)}）](#{cat.lower()})')
+    lines.append('')
+
+    # Each category
+    for cat, items in sorted_cats:
+        label = cat_labels.get(cat, cat)
+        lines.append(f'## {label} {{#{cat.lower()}}}')
+        lines.append('')
+        lines.append(f'共 {len(items)} 条')
+        lines.append('')
+        lines.append('| 键名 | 文本 |')
+        lines.append('|------|------|')
+        for entry in items:
+            # Shorten key for display: remove PanelText_UI_ or PanelText_ prefix
+            display_key = entry['key']
+            if display_key.startswith('PanelText_UI_'):
+                display_key = display_key[13:]
+            elif display_key.startswith('PanelText_'):
+                display_key = display_key[10:]
+            val = entry['value'].replace('|', '/').replace('\n', ' ')
+            if len(val) > 120:
+                val = val[:117] + '...'
+            lines.append(f'| `{display_key}` | {val} |')
+        lines.append('')
+
+    with open(f'{DOCS_DIR}/panel-text.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Panel text page: {meta["total_entries"]} entries in {meta["total_categories"]} categories')
+
+
+def generate_update_notices():
+    """Generate update notices timeline page from update_notices.json."""
+    import re as _re
+
+    with open(f'{PROCESSED_DIR}/update_notices.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    meta = data['_meta']
+    notices = data['notices']
+
+    # Classify notices into types for better presentation
+    full_notes = []      # Long entries with newlines (complete patch notes)
+    maintenance = []     # Maintenance announcements
+    bug_fixes = []       # Individual bug fix lines
+    compensation = []    # Compensation notices
+    feature_notes = []   # Feature/design notes from Light or designers
+    activity_rules = []  # Activity/event rules
+    other = []           # Everything else
+
+    for n in notices:
+        text = n['text']
+        if '\n' in text and len(text) > 400:
+            full_notes.append(n)
+        elif _re.search(r'(设施修复|设施维护|設施修復|設施維護|预计于|將於|将于)', text):
+            maintenance.append(n)
+        elif text.startswith(('● ', '○ ')):
+            bug_fixes.append(n)
+        elif _re.search(r'(补偿|補償|补给物资|補給物資)', text) and len(text) < 200:
+            compensation.append(n)
+        elif _re.search(r'(校猫|校貓|設計師|设计师)', text):
+            feature_notes.append(n)
+        elif _re.search(r'(活动|活動|守密人可|规则|規則)', text) and len(text) > 80:
+            activity_rules.append(n)
+        else:
+            other.append(n)
+
+    lines = []
+    lines.append('# 更新公告')
+    lines.append('')
+    lines.append(f'> 数据来源：UpdateNotices.lua（游戏客户端内嵌更新公告） | 共 {meta["total_entries"]} 条')
+    lines.append('')
+    lines.append('::: info 说明')
+    lines.append('本页收录游戏客户端中内嵌的更新公告、维护通知和补丁说明。内容包含简体中文和繁体中文两个版本的公告文本（游戏同时服务两岸三地玩家）。完整版公告以折叠形式呈现。')
+    lines.append(':::')
+    lines.append('')
+
+    # Summary
+    lines.append('## 内容概览')
+    lines.append('')
+    lines.append(f'| 类别 | 数量 |')
+    lines.append(f'|------|------|')
+    lines.append(f'| 完整版更新公告 | {len(full_notes)} |')
+    lines.append(f'| 维护通知 | {len(maintenance)} |')
+    lines.append(f'| 问题修复记录 | {len(bug_fixes)} |')
+    lines.append(f'| 补偿通知 | {len(compensation)} |')
+    lines.append(f'| 制作人/设计师手记 | {len(feature_notes)} |')
+    lines.append(f'| 活动规则说明 | {len(activity_rules)} |')
+    lines.append(f'| 其他 | {len(other)} |')
+    lines.append('')
+
+    # Full patch notes (most valuable)
+    if full_notes:
+        lines.append('## 完整版更新公告')
+        lines.append('')
+        lines.append(f'共 {len(full_notes)} 篇完整公告（含维护说明、补偿内容和详细更新日志）。')
+        lines.append('')
+        for n in full_notes:
+            text = n['text']
+            # Extract a preview (first line or first 100 chars)
+            first_line = text.split('\n')[0].strip()
+            if len(first_line) > 100:
+                first_line = first_line[:97] + '...'
+            lines.append(f'<details>')
+            lines.append(f'<summary>#{n["id"]} - {first_line}</summary>')
+            lines.append('')
+            # Render the full text with proper line breaks
+            for para in text.split('\n'):
+                para = para.strip()
+                if para:
+                    lines.append(para)
+                    lines.append('')
+            lines.append('</details>')
+            lines.append('')
+
+    # Designer notes
+    if feature_notes:
+        lines.append('## 制作人与设计师手记')
+        lines.append('')
+        lines.append('来自弥萨格校猫 Light 和各位设计师的开发札记与设计思路。')
+        lines.append('')
+        for n in feature_notes:
+            text = n['text'].replace('\n', ' ').strip()
+            if len(text) > 300:
+                lines.append(f'<details>')
+                lines.append(f'<summary>#{n["id"]} - {text[:80]}...</summary>')
+                lines.append('')
+                lines.append(text)
+                lines.append('')
+                lines.append('</details>')
+            else:
+                lines.append(f'> **#{n["id"]}** {text}')
+            lines.append('')
+
+    # Maintenance
+    if maintenance:
+        lines.append('## 维护通知')
+        lines.append('')
+        for n in maintenance:
+            text = n['text'].replace('\n', ' ').strip()
+            if len(text) > 150:
+                text = text[:147] + '...'
+            lines.append(f'- **#{n["id"]}** {text}')
+        lines.append('')
+
+    # Bug fixes
+    if bug_fixes:
+        lines.append('## 问题修复记录')
+        lines.append('')
+        lines.append(f'共 {len(bug_fixes)} 条独立修复/优化记录。')
+        lines.append('')
+        for n in bug_fixes:
+            text = n['text'].replace('\n', ' ').strip()
+            if len(text) > 200:
+                text = text[:197] + '...'
+            lines.append(f'- {text}')
+        lines.append('')
+
+    # Compensation
+    if compensation:
+        lines.append('## 补偿通知')
+        lines.append('')
+        for n in compensation:
+            text = n['text'].replace('\n', ' ').strip()
+            lines.append(f'- **#{n["id"]}** {text}')
+        lines.append('')
+
+    # Activity rules
+    if activity_rules:
+        lines.append('## 活动规则说明')
+        lines.append('')
+        for n in activity_rules:
+            text = n['text'].replace('\n', ' ').strip()
+            if len(text) > 200:
+                text = text[:197] + '...'
+            lines.append(f'- **#{n["id"]}** {text}')
+        lines.append('')
+
+    # Other
+    if other:
+        lines.append('## 其他公告内容')
+        lines.append('')
+        lines.append(f'<details>')
+        lines.append(f'<summary>展开查看其余 {len(other)} 条</summary>')
+        lines.append('')
+        for n in other:
+            text = n['text'].replace('\n', ' ').strip()
+            if len(text) > 200:
+                text = text[:197] + '...'
+            lines.append(f'- **#{n["id"]}** {text}')
+        lines.append('')
+        lines.append('</details>')
+        lines.append('')
+
+    with open(f'{DOCS_DIR}/update-notices.md', 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+    print(f'Update notices page: {len(notices)} entries ({len(full_notes)} full notes, {len(maintenance)} maintenance, {len(bug_fixes)} fixes)')
+
+
 if __name__ == '__main__':
     generate_voice_lines()
     generate_collection_hall()
@@ -662,4 +1042,8 @@ if __name__ == '__main__':
     generate_characters()
     generate_summon()
     generate_stages()
+    generate_audio_index()
+    generate_video_index()
+    generate_panel_text()
+    generate_update_notices()
     print('All wiki pages generated.')

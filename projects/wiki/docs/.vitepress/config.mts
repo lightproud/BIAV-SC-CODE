@@ -35,6 +35,8 @@ export default defineConfig({
           { text: '语音台词', link: '/voice-lines' },
           { text: '收藏馆百科', link: '/collection-hall' },
           { text: '道具背景故事', link: '/item-stories' },
+          { text: 'UI 面板文本', link: '/panel-text' },
+          { text: '更新公告', link: '/update-notices' },
         ]
       },
       {
@@ -45,6 +47,13 @@ export default defineConfig({
           { text: '战斗单位', link: '/battle-units' },
           { text: '图标', link: '/icons' },
           { text: 'UI 资源', link: '/ui-resources' },
+        ]
+      },
+      {
+        text: '媒体',
+        items: [
+          { text: '音频索引', link: '/audio' },
+          { text: '视频索引', link: '/video' },
         ]
       },
       { text: '团队决策', link: '/zh/team-decisions/' },
@@ -66,6 +75,8 @@ export default defineConfig({
             { text: '语音台词', link: '/voice-lines' },
             { text: '收藏馆百科', link: '/collection-hall' },
             { text: '道具背景故事', link: '/item-stories' },
+            { text: 'UI 面板文本', link: '/panel-text' },
+            { text: '更新公告', link: '/update-notices' },
           ]
         },
         {
@@ -76,6 +87,13 @@ export default defineConfig({
             { text: '战斗单位', link: '/battle-units' },
             { text: '图标', link: '/icons' },
             { text: 'UI 资源', link: '/ui-resources' },
+          ]
+        },
+        {
+          text: '媒体资产',
+          items: [
+            { text: '音频索引', link: '/audio' },
+            { text: '视频索引', link: '/video' },
           ]
         },
         teamDecisionsSidebar,

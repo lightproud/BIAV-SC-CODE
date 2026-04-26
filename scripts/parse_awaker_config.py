@@ -170,6 +170,94 @@ def parse_feature_unlock():
     return features
 
 
+def parse_lua_string_table(filepath):
+    """Parse a Lua table of ["key"] = "value" pairs (no nested blocks)."""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        text = f.read()
+
+    result = {}
+    for m in re.finditer(r'\["([^"]+)"\]\s*=\s*"((?:[^"\\]|\\.)*)"', text):
+        key = m.group(1)
+        val = m.group(2).replace('\\n', '\n').replace('\\\\', '\\').replace('\\"', '"')
+        result[key] = val
+    return result
+
+
+def parse_lua_indexed_string_table(filepath):
+    """Parse a Lua table of [n] = "value" pairs (integer-indexed strings)."""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        text = f.read()
+
+    result = {}
+    for m in re.finditer(r'\[(\d+)\]\s*=\s*"((?:[^"\\]|\\.)*)"', text):
+        idx = int(m.group(1))
+        val = m.group(2).replace('\\n', '\n').replace('\\\\', '\\').replace('\\"', '"')
+        result[idx] = val
+    return result
+
+
+def parse_panel_text():
+    data = parse_lua_string_table(os.path.join(LUA_DIR, 'PanelText.lua'))
+
+    entries = []
+    for key in sorted(data.keys()):
+        val = data[key]
+        # Extract UI category from the key pattern:
+        # PanelText_UI_{Category}_... or PanelText_{Category}_...
+        parts = key.split('_')
+        # Remove leading 'PanelText' prefix
+        parts = parts[1:] if parts and parts[0] == 'PanelText' else parts
+        # Determine category
+        if len(parts) >= 2 and parts[0] == 'UI':
+            category = parts[1]
+        elif len(parts) >= 1 and parts[0]:
+            category = parts[0]
+        else:
+            category = 'Other'
+
+        entries.append({
+            'key': key,
+            'value': clean_markup(val),
+            'category': category,
+        })
+
+    return entries
+
+
+def parse_language_config():
+    data = parse_lua_string_table(os.path.join(LUA_DIR, 'LanguageConfig.lua'))
+
+    entries = []
+    for key in sorted(data.keys()):
+        val = data[key]
+        # Strip _CN suffix if present
+        display_key = key
+        if display_key.endswith('_CN'):
+            display_key = display_key[:-3]
+        entries.append({
+            'key': key,
+            'display_key': display_key,
+            'value': clean_markup(val),
+        })
+
+    return entries
+
+
+def parse_update_notices():
+    data = parse_lua_indexed_string_table(
+        os.path.join(LUA_DIR, 'UpdateNotices.lua'))
+
+    entries = []
+    for idx in sorted(data.keys()):
+        val = data[idx]
+        entries.append({
+            'id': idx,
+            'text': clean_markup(val),
+        })
+
+    return entries
+
+
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -252,6 +340,56 @@ def main():
     with open(os.path.join(OUT_DIR, 'feature_unlock.json'), 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     print(f'Feature unlocks: {len(features)} entries')
+
+    # Panel Text
+    panel_entries = parse_panel_text()
+    # Group by category
+    categories = {}
+    for e in panel_entries:
+        cat = e['category']
+        if cat not in categories:
+            categories[cat] = []
+        categories[cat].append(e)
+    output = {
+        '_meta': {
+            'source': 'PanelText.lua (runtime memory extraction)',
+            'total_entries': len(panel_entries),
+            'total_categories': len(categories),
+            'generated': '2026-04-26',
+        },
+        'categories': {cat: items for cat, items in sorted(categories.items())},
+    }
+    with open(os.path.join(OUT_DIR, 'panel_text.json'), 'w', encoding='utf-8') as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+    print(f'Panel text: {len(panel_entries)} entries in {len(categories)} categories')
+
+    # Language Config
+    lang_entries = parse_language_config()
+    output = {
+        '_meta': {
+            'source': 'LanguageConfig.lua (runtime memory extraction)',
+            'total_entries': len(lang_entries),
+            'generated': '2026-04-26',
+        },
+        'entries': lang_entries,
+    }
+    with open(os.path.join(OUT_DIR, 'language_config.json'), 'w', encoding='utf-8') as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+    print(f'Language config: {len(lang_entries)} entries')
+
+    # Update Notices
+    notice_entries = parse_update_notices()
+    output = {
+        '_meta': {
+            'source': 'UpdateNotices.lua (game update/maintenance notices)',
+            'total_entries': len(notice_entries),
+            'generated': '2026-04-26',
+        },
+        'notices': notice_entries,
+    }
+    with open(os.path.join(OUT_DIR, 'update_notices.json'), 'w', encoding='utf-8') as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+    print(f'Update notices: {len(notice_entries)} entries')
 
 
 if __name__ == '__main__':
