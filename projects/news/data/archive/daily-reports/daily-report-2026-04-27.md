@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-27
 
-> 采集时间：2026-04-27 05:32 UTC+8
+> 采集时间：2026-04-27 06:30 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 261
+1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 266
 
 ## 总览
 
@@ -30,7 +30,7 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 21 |
+| 微博 | 20 |
 | 微信公众号 | 0（沉默）|
 | YouTube | 1 |
 | 知乎 | 0（沉默）|
@@ -64,11 +64,11 @@
 
 ## Bilibili
 
-1. 我们都是肉做的 — engagement: 3407
-2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 489
-3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 483
-4. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 413
-5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 403
+1. 我们都是肉做的 — engagement: 3423
+2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 492
+3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 486
+4. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 424
+5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 414
 
 ## Pixiv
 
@@ -79,8 +79,8 @@
 1. Tentacle main doing some light reading on our homeland 😎 — engagement: 0
 2. The Keeper and Goliath after unlocking Reproduction Frenzy. — engagement: 0
 3. What do you think about Arc 2 Chapter 5 difficulty? — engagement: 0
-4. is this upcoming skin??🫤 — engagement: 0
-5. Chapter 1 — engagement: 0
+4. Chapter 1 — engagement: 0
+5. is this upcoming skin??🫤 — engagement: 0
 
 ## Ruliweb
 
