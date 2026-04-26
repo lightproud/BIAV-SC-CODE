@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-25T23:34:12.796266+00:00",
+  "archived_at": "2026-04-26T01:35:56.997041+00:00",
   "source": "bilibili",
-  "item_count": 42,
+  "item_count": 43,
   "items": [
     {
       "source": "bilibili",
@@ -588,6 +588,24 @@
       "metadata": {
         "play": 19,
         "comment_count": 1,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T00:58:18+00:00",
+      "lang": "zh",
+      "title": "我们都是肉做的",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV18sooBQEzB",
+      "author": "霜糖味",
+      "engagement": 7,
+      "media_url": "https://i2.hdslb.com/bfs/archive/ff462d9168f24debbf84d13afbd48520bf08ba09.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 7,
+        "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
       }
