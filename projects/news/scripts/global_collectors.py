@@ -845,35 +845,60 @@ def fetch_discord():
 
     return items
 def fetch_appstore_reviews():
-    """从 App Store / Google Play 获取近期评论趋势。"""
+    """从 App Store 获取近期评论趋势——覆盖 Morimens 主要发行地区。"""
     items = []
-    # Apple App Store RSS
     appstore_id = os.environ.get("APPSTORE_APP_ID", "6447354150")
-    if appstore_id:
-        for country in ["cn", "us", "jp", "kr"]:
-            try:
-                data = _get(
-                    f"https://itunes.apple.com/{country}/rss/customerreviews/id={appstore_id}/sortBy=mostRecent/json",
-                ).json()
-                entries = data.get("feed", {}).get("entry", [])
-                for entry in entries[:10]:
-                    rating = int(entry.get("im:rating", {}).get("label", "0"))
-                    review_url = f"https://apps.apple.com/{country}/app/id{appstore_id}?see-all=reviews"
-                    items.append(_make_item(
-                        title=entry.get("title", {}).get("label", ""),
-                        summary=entry.get("content", {}).get("label", ""),
-                        source="appstore",
-                        platform_region=country,
-                        time_str=entry.get("updated", {}).get("label", ""),
-                        url=review_url,
-                        engagement=rating,
-                        is_hot=False,
-                        author=entry.get("author", {}).get("name", {}).get("label", ""),
-                        lang={"cn": "zh", "us": "en", "jp": "ja", "kr": "ko"}.get(country, ""),
-                    ))
-                logger.info(f"App Store ({country}): {len(entries)} reviews")
-            except Exception as e:
-                logger.warning(f"App Store ({country}) failed: {e}")
+    if not appstore_id:
+        return items
+
+    # 主要中文圈 + 英语圈 + 日韩 + 东南亚 + 欧洲 + 拉美 + 大洋洲（共 24 区）
+    COUNTRIES = [
+        # 中文圈
+        "cn", "tw", "hk",
+        # 英语圈
+        "us", "gb", "ca", "au", "nz", "ie", "sg",
+        # 日韩
+        "jp", "kr",
+        # 东南亚
+        "my", "ph", "th", "id", "vn",
+        # 欧洲（非英）
+        "de", "fr", "es", "it", "ru",
+        # 拉美
+        "br", "mx",
+    ]
+    LANG_MAP = {
+        "cn": "zh", "tw": "zh", "hk": "zh",
+        "us": "en", "gb": "en", "ca": "en", "au": "en", "nz": "en", "ie": "en", "sg": "en",
+        "jp": "ja", "kr": "ko",
+        "my": "ms", "ph": "en", "th": "th", "id": "id", "vn": "vi",
+        "de": "de", "fr": "fr", "es": "es", "it": "it", "ru": "ru",
+        "br": "pt", "mx": "es",
+    }
+
+    for country in COUNTRIES:
+        try:
+            data = _get(
+                f"https://itunes.apple.com/{country}/rss/customerreviews/id={appstore_id}/sortBy=mostRecent/json",
+            ).json()
+            entries = data.get("feed", {}).get("entry", [])
+            review_url = f"https://apps.apple.com/{country}/app/id{appstore_id}?see-all=reviews"
+            for entry in entries:
+                rating = int(entry.get("im:rating", {}).get("label", "0"))
+                items.append(_make_item(
+                    title=entry.get("title", {}).get("label", ""),
+                    summary=entry.get("content", {}).get("label", ""),
+                    source="appstore",
+                    platform_region=country,
+                    time_str=entry.get("updated", {}).get("label", ""),
+                    url=review_url,
+                    engagement=rating,
+                    is_hot=False,
+                    author=entry.get("author", {}).get("name", {}).get("label", ""),
+                    lang=LANG_MAP.get(country, ""),
+                ))
+            logger.info(f"App Store ({country}): {len(entries)} reviews")
+        except Exception as e:
+            logger.debug(f"App Store ({country}) failed: {e}")
 
     return items
 def fetch_pixiv():
@@ -1031,7 +1056,7 @@ def fetch_fivech():
 
 
 def fetch_google_play():
-    """从 Google Play Store 获取忘却前夜评论（使用 google-play-scraper 库）。"""
+    """从 Google Play Store 获取忘却前夜评论——覆盖主要发行地区（使用 google-play-scraper 库）。"""
     gp_package = os.environ.get("GOOGLE_PLAY_PACKAGE", "com.qookkagames.z1.gp.hk")
     items = []
 
@@ -1041,12 +1066,32 @@ def fetch_google_play():
         logger.warning("Google Play: google-play-scraper not installed, skipping")
         return items
 
-    for lang_code, region in [("zh_CN", "cn"), ("en", "global"), ("ja", "jp"), ("ko", "kr")]:
+    # (lang_code, country_code, region_label) — Google Play 同时按 lang+country 隔离评论
+    LOCALES = [
+        # 中文圈
+        ("zh_CN", "cn", "cn"), ("zh_TW", "tw", "tw"), ("zh_HK", "hk", "hk"),
+        # 英语圈
+        ("en", "us", "us"), ("en", "gb", "gb"), ("en", "ca", "ca"),
+        ("en", "au", "au"), ("en", "sg", "sg"), ("en", "ph", "ph"),
+        # 日韩
+        ("ja", "jp", "jp"), ("ko", "kr", "kr"),
+        # 东南亚
+        ("th", "th", "th"), ("id", "id", "id"), ("vi", "vn", "vn"),
+        ("ms", "my", "my"),
+        # 欧洲（非英）
+        ("de", "de", "de"), ("fr", "fr", "fr"), ("es", "es", "es"),
+        ("it", "it", "it"), ("ru", "ru", "ru"),
+        # 拉美
+        ("pt", "br", "br"), ("es", "mx", "mx"),
+    ]
+
+    for lang_code, country, region in LOCALES:
         try:
             result, _ = gp_reviews(
                 gp_package,
                 lang=lang_code,
-                count=20,
+                country=country,
+                count=50,
                 sort=GPSort.NEWEST,
             )
             for review in result:
@@ -1059,17 +1104,17 @@ def fetch_google_play():
                     source="google_play",
                     platform_region=region,
                     time_str=review["at"].isoformat() if review.get("at") else datetime.now(timezone.utc).isoformat(),
-                    url=f"https://play.google.com/store/apps/details?id={gp_package}",
+                    url=f"https://play.google.com/store/apps/details?id={gp_package}&hl={lang_code}",
                     engagement=review.get("thumbsUpCount", 0),
                     is_hot=False,
                     author=review.get("userName", ""),
-                    lang=lang_code[:2],
+                    lang=lang_code.split("_")[0],
                     time_is_approximate=not review.get("at"),
                 ))
 
-            logger.info(f"Google Play ({lang_code}): {len(result)} reviews")
+            logger.info(f"Google Play ({lang_code}/{country}): {len(result)} reviews")
         except Exception as e:
-            logger.warning(f"Google Play ({lang_code}) failed: {e}")
+            logger.debug(f"Google Play ({lang_code}/{country}) failed: {e}")
 
     return items
 def fetch_zhihu():
