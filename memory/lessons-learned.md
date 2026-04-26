@@ -200,4 +200,22 @@
 
 ---
 
+## 26. 决策档案与执行档案脱节，规则改了 CLAUDE.md 没跟上
+
+- **Context**：2026-03-29 主控台决策「废弃分支工作流，全部直接推 main」，写入 `memory/decisions.md` 与 `BIAV-SC.md`。但 `CLAUDE.md` 的 Git 规则章节未同步更新，仍写「所有会话推 feature 分支」
+- **Problem**：CLAUDE.md 是 Claude Code 自动加载入口，新会话读取的是过期规则。结果：
+  - 一个月内累积 35 个 stale `claude/*` feature 分支
+  - 每个会话被分配到 feature 分支工作（系统按 CLAUDE.md 配）
+  - `.github/workflows/claude.yml` 的 auto-merge step 持续执行无意义的 merge
+  - 触发本地 main / 远端 main 漂移 → Cloudflare HTTP 413 推送堵塞（即 lesson #25 的根因）
+  - 与 lesson #11「新规则未传播到已有会话」**同款机制**，但这次范围更大、影响更深
+- **Fix**：
+  1. 任何决策写入 `decisions.md` 后，**同步 grep 全仓库**找出所有可能引用旧规则的位置（CLAUDE.md / BIAV-SC.md / 各 CONTEXT.md / workflow YAML），逐一更新
+  2. 改用工具辅助：在 `scripts/memory_writeback.py` 增加「决策一致性检查」，对比 decisions.md 与 CLAUDE.md/BIAV-SC.md 的关键策略词（"分支"、"main"、"merge"、"commit" 等）出现位置
+  3. 新会话启动时 `session_briefing.py` 应主动检查 CLAUDE.md 与 decisions.md 的最新条目时间戳是否一致——不一致就在 Briefing 里告警
+  4. 重要的「废弃」决策必须在原条目处加 ~~删除线~~ 与 **新决策日期/位置**，而不是只在新条目记录
+- **Impact**：决策可执行性、规则一致性、跨会话信息保真度、所有引用「分支工作流」的下游基础设施可靠性
+
+---
+
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。
