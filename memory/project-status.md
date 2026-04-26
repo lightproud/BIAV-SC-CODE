@@ -1,16 +1,24 @@
 # 项目状态一览
 
-> 最后更新：2026-04-20 by 主控台（艾瑞卡会话）
+> 最后更新：2026-04-26 by 银芯记忆系统（艾瑞卡会话）
 >
 > 战略规划详见 `memory/strategic-plan-2026.md`
+
+## 2026-04-26 仓库整顿状态（重要）
+
+- ✅ **直推 main 政策正式落地**（PR #141 已合并）—— CLAUDE.md / claude.yml / BIAV-SC.md 全部对齐 `decisions.md` 2026-03-29 决策
+- ✅ **SessionStart 同步 hook 上线** — `.claude/hooks/session-start-sync.sh` 自动同步 local main 与 origin/main，根治 Cloudflare HTTP 413 推送堵塞（lesson #28）
+- ✅ **24 个未合并 claude/* 分支审计完成** — 全部决定删除（详见 lesson #29）
+- ⏳ **守密人本地待执行**：批量删除 37 个 stale 分支（含 13 个安全 + 24 个审计后决定删 + 本会话清理分支）
+- ⏳ **5 个 dependabot PR 待批量升级**（#136-140）— 已派任务给 Code-news（参 batch dependency update 文字派单）
 
 ## 子项目状态
 
 | 子项目 | 状态 | 负责会话 | 下一步 |
 |--------|------|---------|--------|
 | site（主站 + 部署 + 视觉） | 已部署，维护模式 | Code-site | 无新任务 |
-| news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 桥接 Discord → 聚合器、月度归档清理 |
-| wiki（数据集 + Wiki 站点） | 基线缺失，待自举 | Code-wiki | Phase 2 首要任务：先自举 characters.json 基线（72 角色），再触发 fetch-wiki-data workflow |
+| news（新闻聚合 + 报告系统） | 收缩夯实中 | Code-news | 批量升级 5 个 dependabot 依赖（#136-140）、桥接 Discord → 聚合器、月度归档清理 |
+| wiki（数据集 + Wiki 站点） | **Phase 2 W1 自举完成 24 角色**，剩余 48 待批量自举 | Code-wiki | Phase 2 W2：批量补齐剩余 48 角色 characters.json 记录，再触发 fetch-wiki-data workflow |
 | game（衍生游戏） | 暂缓 | 待创建 | Stage 1 验证通过前不启动 |
 
 > BPT 战线（bpt-web / bpt-desktop / bpt-next / graphify-ext / occ-local）已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 指导者，协议见 `memory/bpt-guidance-protocol.md`。

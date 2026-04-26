@@ -189,7 +189,7 @@ session_watch     →  session_distiller     →  dream.py
 
 ## 七、相关档案
 
-- 总架构：`memory/blackpool-architecture.md`
+- 总架构：`memory/archive/bpt-strategic-shift-2026-04-19/blackpool-architecture.md`
 - 决策日志：`memory/decisions.md`（2026-04-14 "黑池记忆走银芯自建" 条目）
 - 当前记忆栈盘点：本文件第一节
 - 参考对象（不引入）：[thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)（AGPL-3.0）

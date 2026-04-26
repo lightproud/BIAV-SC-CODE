@@ -124,7 +124,7 @@
 | `memory/methodology.md` | 讨论 AI 协作方法论时 |
 | `memory/lessons-learned.md` | 避免重犯已知错误时（22 条踩坑记录） |
 | `memory/collab-event-playbook.md` | 联动事件响应时 |
-| `memory/black-pool-design.md` | 讨论内部系统架构时 |
+| `memory/archive/bpt-strategic-shift-2026-04-19/black-pool-design.md` | 讨论内部系统架构时（2026-04-19 战略转向后已归档，仅作历史参考） |
 | `memory/dreaming-agent-design.md` | 做梦 Agent 三层架构设计（浅睡/深睡/REM） |
 | `memory/advanced-memory-design.md` | 高级记忆系统设计文档（9模块） |
 | `memory/dreams/` | 做梦 Agent 产出（日志 + 周报 + 洞察库） |
@@ -138,7 +138,7 @@
 本仓库是**缸中之脑·银芯（BIAV-SC）**（公开层）。另有**缸中之脑·黑池（BIAV-BP）**（内部层，内网 SVN + Qoder）。
 
 - **银芯**：公开信息平台 + Studio 团队 AI 训练场 + 社区共建底座。你在这里
-- **黑池**：商业数据 + 未发布内容 + Studio 内部加工。内网运行，设计方案见 `memory/black-pool-design.md`
+- **黑池**：商业数据 + 未发布内容 + Studio 内部加工。内网运行，原始设计方案见 `memory/archive/bpt-strategic-shift-2026-04-19/black-pool-design.md`（2026-04-19 战略转向后归档）；当前活协议见 `memory/bpt-guidance-protocol.md`
 - **数据单向**：**银芯 → 黑池**（公开信息流）。**黑池不倒灌银芯**（守密人 2026-04-26 裁定，覆盖旧表述）
 - 银芯是黑池的"眼睛和耳朵"——只采集 + 整理公开信息往黑池送，黑池吃完什么也不吐回来
 

@@ -247,7 +247,7 @@ python scripts/session_briefing.py   # 应有 briefing 输出
 - `scripts/silver_memory_tools.py` — 9 模块记忆增强（Phase A-P4 产出）
 - `projects/graphify-ext/` — graphify MIT vendor（Phase A-P2 产出）
 - `projects/bpt-next/rust/crates/commands/src/lib.rs` — Phase C 全部 handler 模板
-- `memory/blackpool-architecture.md` — 黑池 5 需求 / 3 分层定义
+- `memory/archive/bpt-strategic-shift-2026-04-19/blackpool-architecture.md` — 黑池 5 需求 / 3 分层定义
 - `memory/advanced-memory-design.md` — 银芯记忆系统设计（母版的蓝图）
 
 ---
