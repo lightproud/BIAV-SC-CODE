@@ -1,13 +1,36 @@
 # Wiki 子项目上下文
 
-> 最后更新：2026-04-26 by Code-wiki（Phase 0 数据底座已落盘，Mooncell 对标启动）
+> 最后更新：2026-04-26 by Code-wiki（Phase 1 垂直切片落盘，Pandia 完整页 + 列表筛选器可访问）
 
 ## 负责会话
 Code-wiki
 
-## Mooncell 对标 Phase 0 已完成（2026-04-26）
+## Mooncell 对标 Phase 1 已完成（2026-04-26）
 
-> 蓝图档案：`/root/.claude/plans/wiki-fgo-wiki-eager-candle.md`（5 阶段路线图）
+> 蓝图档案：`/root/.claude/plans/wiki-fgo-wiki-eager-candle.md`（已修订：放弃「人格卡成熟度」论证，改 fixture-driven）
+
+**本次落盘**：
+- **12 个 Vue 组件**（`docs/.vitepress/theme/components/`）：CharacterSheet（根容器）+ CharacterInfobox / SkillTable / AscensionMaterialBlock / TrinketRecommendationCard / BondRewardList / StatGrowthChart / AffinityTags / VoiceLineList / PortraitGallery / FixtureBadge / CharacterGrid
+- **数据加载层**（`docs/.vitepress/theme/data/characters.ts`）：JSON 类型化导入 + findById/findBySlug 工具 + REALM/ROLE 标签映射
+- **全局注册**：`theme/index.ts` 12 个 enhanceApp.app.component 注入
+- **Pandia fixture 数据**：`data/db/characters.json` 中 id=15560 字段从全 pending 升级为完整 fixture（skills/trinkets_recommended/ascension_materials/bond_rewards/stat_growth_curve/affinities），status=`fixture` 防误读为权威
+- **schema 扩展**：`characters.schema.json` 状态枚举增加 `fixture`（v2 → v3）
+- **首批角色页**：`docs/zh/awakeners/pandia.md`（per-character 路由）+ `docs/zh/awakeners/index.md`（列表筛选）
+- **generate_pages.py 升级**：兼容顶层数组数据 / 改用 slug 作路由 / 加 `--only <id|slug>` 过滤
+
+**关键修复（lesson 触发）**：
+- lesson #7（绝对路径 img src 被 Vite 当 import）：修复 `docs/icons.md` 2097 处 + `docs/battle-units.md` 1 处。Python lambda 替换，非 sed
+- generate_pages.py 之前假设 `data.get("characters", [])`，与现实顶层数组形态不符，已修
+
+**验收**：
+- `npm run build` 通过（24 秒，0 错误，1 个 chunk size 警告来自 icons.md 内嵌大体积资产，非组件问题）
+- Pandia 页面 HTML 渲染所有 11 个组件类（m-infobox 19 / m-skills 54 / m-ascension 52 / m-trinkets 15 / m-bond 18 / m-stats 69 / m-aff 13 / m-gallery 5 / m-voice 3 / m-fixture-badge 1 / m-sheet 5）
+- FIXTURE 警示横幅渲染可见
+- `validate_data.py` exit 0；fixture 数据通过 schema 校验
+
+**本地预览路径**：
+- 唤醒体列表（带筛选器）：`/zh/awakeners/`
+- Pandia 详情页：`/zh/awakeners/pandia`
 
 **本次落盘内容**：
 - **新 schema**（`data/schemas/`）：`trinkets.schema.json`、`banners.schema.json`、`stages.schema.json`、`items.schema.json`

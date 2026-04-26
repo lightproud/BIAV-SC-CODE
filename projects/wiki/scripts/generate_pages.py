@@ -76,8 +76,12 @@ ROLE_NAMES: dict[str, dict[str, str]] = {
 # ---------------------------------------------------------------------------
 
 def load_characters() -> list[dict[str, Any]]:
+    """Load characters.json; handles both top-level array (current) and
+    legacy dict-with-characters-key shape."""
     with open(CHARACTERS_JSON, encoding="utf-8") as f:
         data = json.load(f)
+    if isinstance(data, list):
+        return data
     chars = list(data.get("characters", []))
     chars.extend(data.get("sr_characters", []))
     return chars
@@ -88,13 +92,19 @@ def load_characters() -> list[dict[str, Any]]:
 # ---------------------------------------------------------------------------
 
 def generate_character_page(char: dict, lang: str) -> str:
-    """Generate minimal markdown with frontmatter + CharacterSheet Vue component."""
+    """Generate minimal markdown with frontmatter + CharacterSheet Vue component.
+
+    Pages are routed by slug (SEO-friendly) and the Vue component is bound by
+    characterId so links remain stable even if a slug changes.
+    """
     L = LABELS[lang]
     cid = char["id"]
-    name = char["name"]
-    name_en = char.get("name_en", name)
-    realm_key = char.get("realm", "chaos")
-    role_key = char.get("role", "attack")
+    slug = char.get("slug") or cid
+    # Current data shape uses name_zh; legacy uses name. Support both.
+    name = char.get("name_zh") or char.get("name") or slug
+    name_en = char.get("name_en") or name
+    realm_key = char.get("realm") or "chaos"
+    role_key = char.get("role") or "attack"
 
     realm_display = REALM_NAMES[lang].get(realm_key, realm_key)
     role_display = ROLE_NAMES[lang].get(role_key, role_key)
@@ -106,7 +116,7 @@ def generate_character_page(char: dict, lang: str) -> str:
     title_name = name_en if lang == "en" else name
     title_val = f"{title_name} | {L['title_suffix']}"
 
-    # Quote YAML values containing colons
+    # Quote YAML values containing colons (lessons-learned #6)
     if ':' in title_val:
         title_val = f'"{title_val}"'
     if ':' in desc_text:
@@ -115,7 +125,7 @@ def generate_character_page(char: dict, lang: str) -> str:
     return f"""---
 title: {title_val}
 description: {desc_text}
-portrait: /portraits/{cid}.png
+portrait: /portraits/{slug}.png
 pageClass: character-page
 ---
 
@@ -156,12 +166,25 @@ def main() -> None:
         default="all",
         help="Language to generate (default: all)",
     )
+    parser.add_argument(
+        "--only",
+        action="append",
+        default=None,
+        help="Restrict generation to specific character ids or slugs (repeatable)",
+    )
     args = parser.parse_args()
 
     langs = ["zh", "en", "ja"] if args.lang == "all" else [args.lang]
 
     # Load data
     characters = load_characters()
+
+    if args.only:
+        keys = set(args.only)
+        characters = [c for c in characters if c.get("id") in keys or c.get("slug") in keys]
+        if not characters:
+            print(f"  no characters matched --only filter: {sorted(keys)}")
+            return
 
     print(f"Loaded {len(characters)} characters")
     print(f"Languages: {', '.join(langs)}")
@@ -178,7 +201,8 @@ def main() -> None:
 
         for char in characters:
             cid = char["id"]
-            page_path = out_dir / f"{cid}.md"
+            slug = char.get("slug") or cid
+            page_path = out_dir / f"{slug}.md"
             content = generate_character_page(char, lang)
 
             if args.dry_run:
