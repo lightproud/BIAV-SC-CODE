@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "9aa50f33",
-    "timestamp": "2026-04-26T01:26:09.286000+00:00",
-    "duration_minutes": 14885.0,
+    "id": "345631e3",
+    "timestamp": "2026-04-26T03:28:48.604000+00:00",
+    "duration_minutes": 15007.7,
     "branch": "claude/add-claude-documentation-X4zRQ",
     "topics": [],
     "decisions": [],
@@ -13,6 +13,19 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "9aa50f33",
+      "timestamp": "2026-04-26T01:26:09.286000+00:00",
+      "duration_minutes": 14885.0,
+      "branch": "claude/add-claude-documentation-X4zRQ",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.gitignore",
+        "/home/user/brain-in-a-vat/projects/wiki/package.json"
+      ],
+      "open_items": []
+    },
     {
       "id": "11d22761",
       "timestamp": "2026-04-25T17:32:38.495000+00:00",
@@ -113,32 +126,6 @@
         "/home/user/brain-in-a-vat/.gitignore"
       ],
       "open_items": []
-    },
-    {
-      "id": "f4620e58",
-      "timestamp": "2026-04-15T17:24:22.913000+00:00",
-      "duration_minutes": 4401.2,
-      "branch": "claude/add-claude-documentation-X4zRQ",
-      "topics": [],
-      "decisions": [
-        "v6 | `.github/workflows/extract-game-data.yml` |"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/workflows/backfill-news.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/check-version.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/discord-archive.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/discord-history-backfill.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/dream.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/extract-game-data.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/fetch-wiki-data.yml",
-        "/home/user/brain-in-a-vat/.github/workflows/update-news.yml",
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
@@ -147,7 +134,7 @@
       "/home/user/brain-in-a-vat/.gitignore",
       "/home/user/brain-in-a-vat/projects/wiki/package.json"
     ],
-    "total_sessions": 45
+    "total_sessions": 46
   },
-  "updated_at": "2026-04-26T01:30:19.657251+00:00"
+  "updated_at": "2026-04-26T03:32:57.008985+00:00"
 }
