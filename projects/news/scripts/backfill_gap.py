@@ -12,11 +12,14 @@ Requires env vars: YOUTUBE_API_KEY (optional), WEIBO_COOKIE (optional)
 """
 
 import json
+import re
 import sys
 import os
 import logging
+import time
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from urllib.parse import quote
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')
 logger = logging.getLogger(__name__)
@@ -139,7 +142,6 @@ def backfill_reddit():
                 if not after:
                     break
 
-                import time
                 time.sleep(1)
             except Exception as e:
                 logger.warning(f'Reddit r/{sub} p{page} failed: {e}')
@@ -217,7 +219,6 @@ def backfill_youtube():
 def backfill_bilibili():
     """Bilibili: search with multiple keywords, retry on 412."""
     from global_collectors import _get, _make_item, KEYWORDS
-    import time
 
     items = []
     for keyword in KEYWORDS.get('zh', []) + KEYWORDS.get('en', []):
@@ -316,7 +317,6 @@ def backfill_weibo():
                         continue
 
                     text = mblog.get('text', '')
-                    import re
                     text = re.sub(r'<[^>]+>', '', text)[:200]
                     items.append(_make_item(
                         title=text[:80],
@@ -332,7 +332,6 @@ def backfill_weibo():
                     found += 1
 
                 logger.info(f'Weibo "{keyword}" p{page}: {found} in gap')
-                import time
                 time.sleep(1.5)
             except Exception as e:
                 logger.warning(f'Weibo "{keyword}" p{page}: {e}')
@@ -342,6 +341,114 @@ def backfill_weibo():
         _archive_items('weibo', items)
     logger.info(f'Weibo total: {len(items)} items in gap period')
     return len(items)
+
+
+def backfill_steam_reviews():
+    """Steam: paginate appreviews API backwards to reach gap period."""
+    import subprocess as _sp
+    from global_collectors import _make_item
+
+    app_id = 3052450
+    items = []
+    cursor = '*'
+    page = 0
+
+    try:
+        while page < 50:
+            page += 1
+            url = (
+                f'https://store.steampowered.com/appreviews/{app_id}'
+                f'?json=1&filter=recent&num_per_page=100&language=all&purchase_type=all'
+                f'&cursor={quote(cursor, safe="")}'
+            )
+            result = _sp.run(
+                ['curl', '-s', '-H', 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)', url],
+                capture_output=True, text=True, timeout=30,
+            )
+            if result.returncode != 0:
+                logger.warning(f'Steam p{page}: curl failed')
+                break
+            data = json.loads(result.stdout)
+            reviews = data.get('reviews', []) or []
+            if not reviews:
+                break
+
+            found_in_gap = 0
+            oldest = None
+            for review in reviews:
+                ts = review.get('timestamp_created', 0)
+                created = datetime.fromtimestamp(ts, tz=timezone.utc)
+                oldest = created
+
+                if created < GAP_START:
+                    continue
+                if created > GAP_END:
+                    continue
+
+                language = review.get('language', 'unknown')
+                voted_up = review.get('voted_up', False)
+                sentiment = '正面' if voted_up else '负面'
+                review_text = review.get('review', '')
+                summary_text = review_text[:50].strip()
+                title = f'[{sentiment}] {summary_text}...' if len(review_text) > 50 else f'[{sentiment}] {summary_text}'
+
+                author_info = review.get('author', {})
+                steamid = author_info.get('steamid', '')
+                votes_up = review.get('votes_up', 0)
+
+                items.append(_make_item(
+                    title=title,
+                    summary=review_text[:300],
+                    source='steam',
+                    platform_region='global',
+                    time_str=created.isoformat(),
+                    url=f'https://steamcommunity.com/profiles/{steamid}/recommended/{app_id}',
+                    engagement=votes_up,
+                    is_hot=votes_up > 10,
+                    author=steamid,
+                    lang=language,
+                ))
+                found_in_gap += 1
+
+            logger.info(f'Steam p{page}: {found_in_gap} in gap (oldest: {oldest.date() if oldest else "?"})')
+
+            if oldest and oldest < GAP_START:
+                break
+            next_cursor = data.get('cursor')
+            if not next_cursor or next_cursor == cursor:
+                break
+            cursor = next_cursor
+            time.sleep(0.5)
+
+    except Exception as e:
+        logger.warning(f'Steam reviews backfill failed: {e}')
+
+    if items:
+        _archive_items('steam', items)
+    logger.info(f'Steam total: {len(items)} items in gap period')
+    return len(items)
+
+
+def cleanup_empty_placeholders():
+    """Remove empty placeholder files created by repair_gaps.py for the gap period."""
+    removed = 0
+    for source_dir in sorted(PLATFORMS_DIR.iterdir()):
+        if not source_dir.is_dir():
+            continue
+        for day in range(13, 26):
+            date_str = f'2026-04-{day:02d}'
+            path = source_dir / f'{date_str}.json'
+            if not path.exists():
+                continue
+            try:
+                data = json.loads(path.read_text(encoding='utf-8'))
+                if data.get('_gap_repaired') and not data.get('items'):
+                    path.unlink()
+                    removed += 1
+            except Exception:
+                continue
+    logger.info(f'Cleaned up {removed} empty placeholder files')
+    return removed
 
 
 def regenerate_gap_reports():
@@ -364,11 +471,14 @@ def regenerate_gap_reports():
 def main():
     logger.info('=== Gap Backfill: 2026-04-13 ~ 2026-04-25 ===')
 
+    cleanup_empty_placeholders()
+
     total = 0
     total += backfill_reddit()
     total += backfill_youtube()
     total += backfill_bilibili()
     total += backfill_weibo()
+    total += backfill_steam_reviews()
 
     logger.info(f'=== Gap backfill complete: {total} new items ===')
 
