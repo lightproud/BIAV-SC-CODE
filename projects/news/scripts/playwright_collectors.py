@@ -389,16 +389,6 @@ def fetch_taptap_playwright() -> List[Dict]:
     return items
 
 
-def fetch_xiaohongshu_playwright() -> List[Dict]:
-    """
-    Fetch Xiaohongshu search results.
-    Note: Page requires login or has anti-bot measures.
-    Returns placeholder for now.
-    """
-    logger.warning('小红书需要登录或有反爬措施，暂跳过')
-    return []
-
-
 # ── Korean platforms ──────────────────────────────────────────────────────
 
 def fetch_dcinside_playwright() -> List[Dict]:

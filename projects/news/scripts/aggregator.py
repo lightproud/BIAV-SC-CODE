@@ -103,7 +103,7 @@ BILIBILI_MORIMENS_CREATORS = {
 }
 
 # Valid source identifiers
-VALID_SOURCES = {'reddit', 'bilibili', 'twitter', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion', 'steam', 'weibo', 'xiaohongshu'}
+VALID_SOURCES = {'reddit', 'bilibili', 'taptap', 'nga', 'discord', 'youtube', 'official', 'steam_review', 'steam_discussion', 'steam', 'weibo'}
 
 # Required fields for each news item
 REQUIRED_FIELDS = {'title', 'source', 'time', 'engagement'}
@@ -788,56 +788,6 @@ def fetch_bilibili():
     if not items:
         logger.info('Bilibili: space API returned 0 items, falling back to search API')
         items = _fetch_bilibili_search()
-    return items
-
-
-def fetch_twitter():
-    """
-    Fetch tweets using Twitter/X API v2.
-    Requires TWITTER_BEARER_TOKEN environment variable.
-    """
-    import subprocess as _sp
-
-    bearer = os.environ.get('TWITTER_BEARER_TOKEN')
-    if not bearer:
-        logger.warning('Twitter: TWITTER_BEARER_TOKEN not set, skipping')
-        return []
-
-    items = []
-    query = '(忘却前夜 OR 忘卻前夜 OR Morimens OR モリメンス) -is:retweet'
-    url = 'https://api.twitter.com/2/tweets/search/recent'
-    params = {
-        'query': query,
-        'max_results': 50,
-        'tweet.fields': 'created_at,public_metrics,author_id',
-        'expansions': 'author_id',
-        'user.fields': 'username',
-    }
-    headers = {'Authorization': f'Bearer {bearer}'}
-
-    try:
-        resp = requests.get(url, params=params, headers=headers, timeout=15)
-        resp.raise_for_status()
-        data = resp.json()
-        users = {u['id']: u['username'] for u in data.get('includes', {}).get('users', [])}
-        for tweet in data.get('data', []):
-            metrics = tweet.get('public_metrics', {})
-            engagement = metrics.get('like_count', 0) + metrics.get('reply_count', 0) + metrics.get('retweet_count', 0)
-            items.append({
-                'title': tweet['text'][:100],
-                'summary': tweet['text'],
-                'source': 'twitter',
-                'time': tweet['created_at'],
-                'url': f"https://twitter.com/i/status/{tweet['id']}",
-                'engagement': engagement,
-                'is_hot': engagement > 500,
-                'author': f"@{users.get(tweet['author_id'], 'unknown')}",
-                'tags': [],
-            })
-        logger.info(f'Twitter: fetched {len(items)} tweets')
-    except Exception as e:
-        logger.warning(f'Twitter failed: {e}')
-
     return items
 
 
@@ -1996,7 +1946,6 @@ def run():
     fetchers = [
         ('Reddit', fetch_reddit),
         ('Bilibili', fetch_bilibili),
-        ('Twitter', fetch_twitter),
         ('NGA', fetch_nga),
         ('TapTap', fetch_taptap),
         ('SteamReviews', fetch_steam_reviews),
@@ -2069,7 +2018,6 @@ def run():
     pc = _get_playwright_collectors()
     if pc:
         pw_sources = [
-            ('Xiaohongshu', pc.fetch_xiaohongshu_playwright),
             ('Weibo', pc.fetch_weibo_playwright),
         ]
         for name, pw_fetcher in pw_sources:
@@ -2087,7 +2035,6 @@ def run():
     _SOURCE_META = {
         'reddit':           ('en', 'global'),
         'bilibili':         ('zh', 'cn'),
-        'twitter':          ('',   'global'),   # lang from tweet API if available
         'nga':              ('zh', 'cn'),
         'taptap':           ('zh', 'cn'),
         'steam_review':     ('',   'global'),   # lang from review.language
@@ -2097,7 +2044,6 @@ def run():
         'youtube':          ('',   'global'),
         'discord':          ('',   'global'),
         'weibo':            ('zh', 'cn'),
-        'xiaohongshu':      ('zh', 'cn'),
     }
     for item in all_news:
         src = item.get('source', '')

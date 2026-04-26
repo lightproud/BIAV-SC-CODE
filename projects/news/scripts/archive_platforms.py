@@ -12,8 +12,6 @@
   │   └── YYYY-MM-DD.json
   ├── reddit/
   │   └── YYYY-MM-DD.json
-  ├── twitter/
-  │   └── YYYY-MM-DD.json
   ├── youtube/
   │   └── YYYY-MM-DD.json
   ├── nga/
@@ -52,17 +50,12 @@ ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 
 # Discord has its own archiver — skip it here
 PLATFORMS = [
-    'steam', 'steam_discussion', 'bilibili', 'official', 'reddit', 'twitter', 'youtube', 'nga', 'taptap',
-    # Phase 1 扩展
-    'weibo', 'xiaohongshu', 'douyin', 'tieba', 'zhihu', 'bahamut',
+    'steam', 'steam_discussion', 'bilibili', 'official', 'reddit', 'youtube', 'nga', 'taptap',
+    'weibo', 'zhihu', 'bahamut',
     'naver_cafe', 'dcinside', 'arca_live', 'fivech',
-    'appstore', 'google_play', 'tiktok',
-    'pixiv', 'lofter', 'xianyu', 'taobao',
-    'qq', 'facebook', 'telegram', 'twitch', 'instagram',
-    'qooapp', 'epic',
-    'note_com', 'ruliweb',
-    'vkplay', 'stopgame',
-    'gacharevenue', 'weixin',
+    'appstore', 'google_play',
+    'pixiv', 'telegram',
+    'note_com', 'ruliweb', 'stopgame', 'weixin',
 ]
 
 
