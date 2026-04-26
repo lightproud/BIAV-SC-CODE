@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """session_inject.py —— UserPromptSubmit hook：每次用户输入前注入历史会话上下文。
 
-本档案为 Claude Code / claw-code 的 UserPromptSubmit hook 目标脚本，每次
+本档案为 Claude Code 的 UserPromptSubmit hook 目标脚本，每次
 守密人发送新 prompt 之前由宿主进程调用。脚本：
 
 1. 从 stdin 读取 hook JSON：{"prompt": "...", "session_id": "..."}

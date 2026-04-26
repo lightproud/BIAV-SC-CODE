@@ -28,9 +28,7 @@ brain-in-a-vat/
 │   ├── site/                # 主站导航页 + 设计系统
 │   ├── news/                # 社区新闻聚合 + 报告系统
 │   ├── wiki/                # 游戏数据集 + 多语言 Wiki 站点
-│   ├── game/                # 衍生游戏（规划中）
-│   ├── bpt-web/             # 黑池终端 Web 版（BPT-WEB，单文件 PWA）
-│   └── bpt-desktop/         # 黑池终端 桌面版（BPT-DESKTOP，Electron）
+│   └── game/                # 衍生游戏（规划中）
 └── deliverables/            # 已交付成品存档
 ```
 
@@ -40,10 +38,10 @@ brain-in-a-vat/
 |--------|------|------|------|
 | 主站 + 设计系统 | `projects/site/` | 项目入口导航页 + 设计规范 | 已上线，维护模式 |
 | 新闻聚合 + 报告系统 | `projects/news/` | 多平台热点抓取（Bilibili/Steam/Discord）、AI 分析 | 3 源运行中 |
-| 数据集 + Wiki | `projects/wiki/` | 20 个 JSON 数据文件 + VitePress 三语言站点，63 角色 | 数据就绪，准确性待提升 |
+| 数据集 + Wiki | `projects/wiki/` | VitePress 三语言站点 + 72 角色基线数据集（Phase 2 W1 自举中） | 基线缺失，Phase 2 准备中 |
 | 衍生游戏 | `projects/game/` | 同人游戏开发 | 规划中（Phase 4） |
-| 黑池终端 Web | `projects/bpt-web/` | BPT-WEB — 单文件 PWA 对话终端，部署到 `/bpt-web/` | v0.1.0 已部署 |
-| 黑池终端 桌面 | `projects/bpt-desktop/` | BPT-DESKTOP — Electron 33 + React + Vite 桌面对话终端 | v0.1.0 开发中 |
+
+> BPT（黑池终端）整条战线已于 2026-04-19 战略转向中从银芯仓库删除，不再在银芯内部开发。银芯转为 BPT 的指导者，协议见 `memory/bpt-guidance-protocol.md`。
 
 ## 快速开始
 

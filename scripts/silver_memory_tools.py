@@ -201,7 +201,7 @@ def record_decision(summary: str, scope: str, rationale: str = "") -> dict:
 
     Args:
         summary:   决策正文（简短陈述）
-        scope:     影响范围（如 "全局"、"bpt-next"、"黑池建设"）
+        scope:     影响范围（如 "全局"、"wiki"、"黑池建设"）
         rationale: 决策理由，可选；若给出则附加到 summary 末尾
 
     Returns:

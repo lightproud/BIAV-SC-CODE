@@ -6,14 +6,12 @@ and generates system prompts for AI to roleplay as game characters.
 
 Designed for cross-platform use:
   - Silver Core (MCP server): via character_persona tool
-  - Black Pool Terminal (BPT-WEB / BPT-DESKTOP): via exported prompt
   - Black Pool system (BIAV-BP): via shared persona data
 
 Usage:
   python scripts/character_persona.py --character erica
   python scripts/character_persona.py --character erica --context "search results"
   python scripts/character_persona.py --list
-  python scripts/character_persona.py --character erica --export bpt-web
 """
 
 import json
@@ -71,7 +69,7 @@ def build_system_prompt(persona: dict, context: str = "", platform: str = "silve
     Args:
         persona: Character persona dict (from JSON)
         context: Optional context about current interaction
-        platform: Target platform (silver_core / bpt_web / bpt_desktop / black_pool)
+        platform: Target platform (silver_core / black_pool)
 
     Returns:
         System prompt string for the AI
@@ -145,9 +143,7 @@ def build_system_prompt(persona: dict, context: str = "", platform: str = "silve
         sections.append("")
 
     # --- Platform-specific role mapping ---
-    if platform == "silver_core":
-        role_desc = mapping.get("role_in_silver_core", "")
-    elif platform in ("bpt_web", "bpt_desktop"):
+    if platform == "black_pool":
         role_desc = mapping.get("role_in_black_pool", "")
     else:
         role_desc = mapping.get("role_in_silver_core", "")
@@ -233,57 +229,12 @@ def build_greeting(persona: dict, platform: str = "silver_core") -> str:
 
     greeting = random.choice(greetings)
 
-    if platform in ("bpt_web", "bpt_desktop"):
+    if platform == "black_pool":
         role = mapping.get("role_in_black_pool", "")
         if role:
             greeting += f"\n\n（{role}）"
 
     return greeting
-
-
-# ============================================================
-# BPT export formats
-# ============================================================
-
-
-def export_for_bpt_web(persona: dict) -> dict:
-    """Export persona data in BPT-WEB compatible format.
-
-    Returns a minimal JSON structure that BPT-WEB can embed
-    in its single-file PWA.
-    """
-    return {
-        "id": persona["id"],
-        "name": persona["name"],
-        "name_en": persona.get("name_en", ""),
-        "designation": persona.get("full_designation", ""),
-        "system_prompt": build_system_prompt(persona, platform="bpt_web"),
-        "greeting": build_greeting(persona, platform="bpt_web"),
-        "speech_patterns": persona.get("personality", {}).get("speech_patterns", []),
-        "action_mappings": persona.get("system_persona_mapping", {}).get("action_mappings", {}),
-        "voice_samples": {
-            cat: lines[:2]
-            for cat, lines in persona.get("voice_lines", {}).items()
-        },
-    }
-
-
-def export_for_bpt_desktop(persona: dict) -> dict:
-    """Export persona data in BPT-DESKTOP compatible format.
-
-    Returns a full JSON structure for Electron app integration,
-    including all voice lines and persona metadata.
-    """
-    return {
-        "id": persona["id"],
-        "name": persona["name"],
-        "name_en": persona.get("name_en", ""),
-        "designation": persona.get("full_designation", ""),
-        "affiliation": persona.get("affiliation", ""),
-        "system_prompt": build_system_prompt(persona, platform="bpt_desktop"),
-        "greeting": build_greeting(persona, platform="bpt_desktop"),
-        "persona_full": persona,
-    }
 
 
 # ============================================================
@@ -323,29 +274,15 @@ def main():
             print(f"可用角色：{', '.join(p['id'] for p in available)}")
         return
 
-    # Check for export mode
-    export_target = None
+    # Get context if provided
+    context = ""
     for i, arg in enumerate(args):
-        if arg == "--export" and i + 1 < len(args):
-            export_target = args[i + 1]
+        if arg == "--context" and i + 1 < len(args):
+            context = args[i + 1]
             break
 
-    if export_target == "bpt-web":
-        result = export_for_bpt_web(persona)
-        print(json.dumps(result, ensure_ascii=False, indent=2))
-    elif export_target == "bpt-desktop":
-        result = export_for_bpt_desktop(persona)
-        print(json.dumps(result, ensure_ascii=False, indent=2))
-    else:
-        # Get context if provided
-        context = ""
-        for i, arg in enumerate(args):
-            if arg == "--context" and i + 1 < len(args):
-                context = args[i + 1]
-                break
-
-        prompt = build_system_prompt(persona, context=context)
-        print(prompt)
+    prompt = build_system_prompt(persona, context=context)
+    print(prompt)
 
 
 if __name__ == "__main__":
