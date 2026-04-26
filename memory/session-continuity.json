@@ -1,144 +1,242 @@
 {
   "last_session": {
-    "id": "61e3fddc",
-    "timestamp": "2026-04-26T03:46:35.793000+00:00",
-    "duration_minutes": 17884.2,
-    "branch": "HEAD",
-    "topics": [
-      "日报"
-    ],
-    "decisions": [
-      "远程版本。只需保留我们的 session digest 文件"
-    ],
+    "id": "354dd83a",
+    "timestamp": "2026-04-26T04:12:00.399000+00:00",
+    "duration_minutes": 803.2,
+    "branch": "claude/memory-health-fix-Rk4Xp",
+    "topics": [],
+    "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_daily_reports.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py"
+      "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
+      "/home/user/brain-in-a-vat/memory/black-pool-design.md",
+      "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+      "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+      "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+      "/home/user/brain-in-a-vat/memory/collab-event-playbook.md",
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/memory/discord-archiver-design.md",
+      "/home/user/brain-in-a-vat/memory/dreaming-agent-design.md",
+      "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+      "/home/user/brain-in-a-vat/memory/methodology.md",
+      "/home/user/brain-in-a-vat/memory/morimens-context.md",
+      "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+      "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
+      "/home/user/brain-in-a-vat/memory/project-status.md",
+      "/home/user/brain-in-a-vat/memory/research-best-wiki-features.md",
+      "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+      "/home/user/brain-in-a-vat/memory/storage-discussion.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
     {
-      "id": "055a1e5b",
-      "timestamp": "2026-04-26T03:37:03.611000+00:00",
-      "duration_minutes": 17874.6,
-      "branch": "HEAD",
+      "id": "d7eb12c1",
+      "timestamp": "2026-04-26T03:48:25.150000+00:00",
+      "duration_minutes": 779.7,
+      "branch": "claude/memory-health-fix-Rk4Xp",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
+        "/home/user/brain-in-a-vat/memory/black-pool-design.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/collab-event-playbook.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/discord-archiver-design.md",
+        "/home/user/brain-in-a-vat/memory/dreaming-agent-design.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+        "/home/user/brain-in-a-vat/memory/methodology.md",
+        "/home/user/brain-in-a-vat/memory/morimens-context.md",
+        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+        "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/research-best-wiki-features.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/memory/storage-discussion.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "4889662f",
+      "timestamp": "2026-04-26T03:29:54.814000+00:00",
+      "duration_minutes": 761.1,
+      "branch": "claude/memory-health-fix-Rk4Xp",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
+        "/home/user/brain-in-a-vat/memory/black-pool-design.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/collab-event-playbook.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/discord-archiver-design.md",
+        "/home/user/brain-in-a-vat/memory/dreaming-agent-design.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+        "/home/user/brain-in-a-vat/memory/methodology.md",
+        "/home/user/brain-in-a-vat/memory/morimens-context.md",
+        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+        "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/research-best-wiki-features.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/memory/storage-discussion.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "728371b1",
+      "timestamp": "2026-04-25T16:37:19.023000+00:00",
+      "duration_minutes": 108.6,
+      "branch": "claude/memory-health-fix-Rk4Xp",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
+        "/home/user/brain-in-a-vat/memory/black-pool-design.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/collab-event-playbook.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/discord-archiver-design.md",
+        "/home/user/brain-in-a-vat/memory/dreaming-agent-design.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+        "/home/user/brain-in-a-vat/memory/methodology.md",
+        "/home/user/brain-in-a-vat/memory/morimens-context.md",
+        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+        "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/research-best-wiki-features.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/memory/storage-discussion.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "c5a7782e",
+      "timestamp": "2026-04-25T16:31:43.919000+00:00",
+      "duration_minutes": 103.0,
+      "branch": "claude/memory-health-fix-Rk4Xp",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
+        "/home/user/brain-in-a-vat/memory/black-pool-design.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/collab-event-playbook.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/discord-archiver-design.md",
+        "/home/user/brain-in-a-vat/memory/dreaming-agent-design.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+        "/home/user/brain-in-a-vat/memory/methodology.md",
+        "/home/user/brain-in-a-vat/memory/morimens-context.md",
+        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+        "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/research-best-wiki-features.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/memory/storage-discussion.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "94be2a08",
+      "timestamp": "2026-04-25T16:23:23.211000+00:00",
+      "duration_minutes": 94.6,
+      "branch": "claude/memory-health-fix-Rk4Xp",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
+        "/home/user/brain-in-a-vat/memory/black-pool-design.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/collab-event-playbook.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/discord-archiver-design.md",
+        "/home/user/brain-in-a-vat/memory/dreaming-agent-design.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+        "/home/user/brain-in-a-vat/memory/methodology.md",
+        "/home/user/brain-in-a-vat/memory/morimens-context.md",
+        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+        "/home/user/brain-in-a-vat/memory/phase-d-plan.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/research-best-wiki-features.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/memory/storage-discussion.md"
+      ],
+      "open_items": []
+    },
+    {
+      "id": "1eb8894a",
+      "timestamp": "2026-04-25T14:58:57.250000+00:00",
+      "duration_minutes": 18069.9,
+      "branch": "claude/memory-health-fix-Rk4Xp",
       "topics": [
-        "日报"
+        "BPT",
+        "黑池"
       ],
-      "decisions": [
-        "远程版本。只需保留我们的 session digest 文件"
-      ],
+      "decisions": [],
       "files_changed": [
-        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_daily_reports.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py"
+        "/home/user/brain-in-a-vat/BIAV-SC.md",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+        "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+        "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+        "/home/user/brain-in-a-vat/memory/morimens-context.md",
+        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/memory/task-wiki-data-audit-2026-04.md",
+        "/home/user/brain-in-a-vat/projects/bpt-next/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/game/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/graphify-ext/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/occ-local/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
+        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
       ],
       "open_items": []
     },
     {
-      "id": "429be303",
-      "timestamp": "2026-04-25T17:17:37.925000+00:00",
-      "duration_minutes": 120.5,
-      "branch": "claude/analyze-game-data-tYQo0",
-      "topics": [],
-      "decisions": [
-        "完整的 404 张"
+      "id": "a3743d17",
+      "timestamp": "2026-04-25T14:36:34.842000+00:00",
+      "duration_minutes": 18047.5,
+      "branch": "claude/memory-reflection-management-TEfTh",
+      "topics": [
+        "BPT",
+        "黑池"
       ],
+      "decisions": [],
       "files_changed": [
-        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-        "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py"
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/scripts/dream.py",
+        "/home/user/brain-in-a-vat/scripts/memory_search.py",
+        "/home/user/brain-in-a-vat/scripts/memrl.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "5625f26c",
-      "timestamp": "2026-04-25T16:57:38.149000+00:00",
-      "duration_minutes": 100.5,
-      "branch": "claude/analyze-game-data-tYQo0",
-      "topics": [],
-      "decisions": [
-        "完整的 404 张"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-        "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py"
-      ],
-      "open_items": []
-    },
-    {
-      "id": "3d1f4933",
-      "timestamp": "2026-04-25T16:39:05.370000+00:00",
-      "duration_minutes": 82.0,
-      "branch": "claude/analyze-game-data-tYQo0",
-      "topics": [],
-      "decisions": [
-        "完整的 404 张"
-      ],
-      "files_changed": [],
-      "open_items": []
-    },
-    {
-      "id": "cb9729a5",
-      "timestamp": "2026-04-25T16:21:23.196000+00:00",
-      "duration_minutes": 64.2,
-      "branch": "claude/analyze-game-data-tYQo0",
-      "topics": [],
-      "decisions": [
-        "完整的 404 张"
-      ],
-      "files_changed": [],
-      "open_items": []
-    },
-    {
-      "id": "e8c89541",
-      "timestamp": "2026-04-25T14:54:26.578000+00:00",
-      "duration_minutes": 18785.0,
-      "branch": "HEAD",
-      "topics": [],
-      "decisions": [
-        "`special_groups`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/theme/index.ts",
-        "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py"
-      ],
-      "open_items": [
-        "更新 result 构建部分，把 `ungrouped` 替换成 `special_groups`"
-      ]
-    },
-    {
-      "id": "2b6bfd92",
-      "timestamp": "2026-04-25T14:38:19.079000+00:00",
-      "duration_minutes": 18768.9,
-      "branch": "claude/analyze-game-data-tYQo0",
-      "topics": [],
-      "decisions": [
-        "`special_groups`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-        "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/theme/index.ts",
-        "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-        "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-        "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-        "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-        "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-        "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py"
-      ],
-      "open_items": [
-        "更新 result 构建部分，把 `ungrouped` 替换成 `special_groups`"
-      ]
     },
     {
       "id": "6bfb5ee6",
@@ -179,20 +277,22 @@
   ],
   "momentum": {
     "topic_weights": {
-      "日报": 1.8,
-      "BPT": 0.83,
-      "黑池": 0.83
+      "BPT": 1.3,
+      "黑池": 1.3
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/projects/news/scripts/backfill_daily_reports.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
-      "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-      "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-      "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-      "/home/user/brain-in-a-vat/scripts/parse_awaker_config.py"
+      "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
+      "/home/user/brain-in-a-vat/memory/black-pool-design.md",
+      "/home/user/brain-in-a-vat/memory/blackpool-architecture.md",
+      "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+      "/home/user/brain-in-a-vat/memory/bpt-desktop-design-spec-ref.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-build-verification.md",
+      "/home/user/brain-in-a-vat/memory/bpt-next-design.md",
+      "/home/user/brain-in-a-vat/memory/collab-event-playbook.md",
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/memory/discord-archiver-design.md"
     ],
     "total_sessions": 73
   },
-  "updated_at": "2026-04-26T03:49:50.466909+00:00"
+  "updated_at": "2026-04-26T04:14:53.854050+00:00"
 }

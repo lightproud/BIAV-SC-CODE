@@ -110,7 +110,7 @@ graphify install --platform claw
    - `graphify_query(q)` — 查询图谱
    - `graphify_report(path)` — 获取 GRAPH_REPORT.md
 2. 在本地试运行：`cd projects/graphify-ext && pip install -e . && python -m graphify worked/karpathy-repos`（验证示例 corpus 可索引）
-3. 对 BIAV 自己的 `projects/wiki/data/db/` 构建图谱，评估索引质量
+3. 对 BIAV 自己的 `projects/wiki/data/extracted/` 构建图谱，评估索引质量
 4. 对黑池（未来）的 Lua 游戏代码构建图谱试点
 
 ## 验证清单

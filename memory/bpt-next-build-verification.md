@@ -156,9 +156,9 @@ NOTICE 文件已同步修正，含完整证据链。
 
 ## 产物清单
 
-- `projects/bpt-next/rust/target/debug/claw` — 主 CLI 二进制（148M）
-- `projects/bpt-next/rust/target/debug/mock-anthropic-service` — 确定性 mock 测试服务（79M）
-- `projects/bpt-next/rust/target/debug/deps/` — 依赖目标（大量）
+- `rust/target/debug/claw` — 主 CLI 二进制（148M，本地构建产物，不入仓库）
+- `rust/target/debug/mock-anthropic-service` — 确定性 mock 测试服务（79M，本地构建产物）
+- `rust/target/debug/deps/` — 依赖目标（大量，本地构建产物）
 - 总 `target/` 目录体积：需检查（预计 3-5 GB）
 
 **注意**：`target/` 已在 claw 的 `.gitignore` 里，不会被提交。

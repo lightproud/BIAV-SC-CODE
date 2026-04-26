@@ -1,6 +1,6 @@
 # [Code-wiki] Wiki 数据准确性修正
 
-> 最后更新：2026-04-02 by 战略中心（Code）
+> 最后更新：2026-04-25 by 艾瑞卡（引用修正，历史文档审阅确认）
 > 创建：2026-04-01 by 战略参谋
 > 执行模式：直接执行
 > 优先级：P1
@@ -10,36 +10,36 @@
 
 ## 背景
 
-战略参谋对 `projects/wiki/data/db/characters.json`（59 条角色记录）与制作人采访第一方陈述进行了交叉比对，发现以下 7 个数据问题。
+战略参谋对原 wiki 数据展示层 characters.json（原 data/db/，已删除）（59 条角色记录，该目录已因数据不可靠被移除）与制作人采访第一方陈述进行了交叉比对，发现以下 7 个数据问题。以下修正清单中的文件路径已不存在，仅作历史参考。
 
 ## 修正清单
 
 ### 1. Helot 名称缺少后缀
-- **文件**：`projects/wiki/data/db/characters.json`，id = `helot`
+- **文件**：wiki 数据展示层 characters.json（原 data/db/，已删除），id = `helot`
 - **当前值**：`name: "血链·希洛"` / 英文名未知
 - **正确值**：应为 **Helot: Catena**（或 "希洛: 血链"），采访中明确提到全名包含 ": Catena" 后缀
 - **操作**：确认英文全名格式并更新 `name` 字段
 
 ### 2. 24 的领域标注不完整
-- **文件**：`projects/wiki/data/db/characters.json`，id = `24`
+- **文件**：wiki 数据展示层 characters.json（原 data/db/，已删除），id = `24`
 - **当前值**：`realm: "chaos"`（仅混沌）
 - **正确值**：采访明确说 24 是"四领域适性"角色，即 chaos/order/light/dark 四个领域均适用
 - **操作**：更新 realm 或 realms 字段，标注四领域适性特殊机制
 
 ### 3. Ramona: Timeworn 获取方式标注缺失
-- **文件**：`projects/wiki/data/db/characters.json`，id = `ramona-timeworn`
+- **文件**：wiki 数据展示层 characters.json（原 data/db/，已删除），id = `ramona-timeworn`
 - **当前值**：`acquisition: null`
 - **正确值**：采访明确说 Ramona: Timeworn 是**特殊获取**（非限定池，而是特定条件获取），与普通限定角色不同
 - **操作**：添加 acquisition 信息，标注为特殊获取方式（非标准卡池）
 
 ### 4. Herbert 角色缺失
-- **文件**：`projects/wiki/data/db/characters.json`
+- **文件**：wiki 数据展示层 characters.json（原 data/db/，已删除）
 - **问题**：数据库中不存在 id 含 "herbert" 的角色
 - **采访信息**：Herbert 在采访中被提及为已确认角色
 - **操作**：如有公开信息，添加 Herbert 角色条目；如信息不足，在 `pending-discussions.md` 记录待补充
 
 ### 5. Juliette 角色缺失
-- **文件**：`projects/wiki/data/db/characters.json`
+- **文件**：wiki 数据展示层 characters.json（原 data/db/，已删除）
 - **问题**：数据库中不存在 id 含 "juliette" 的角色
 - **采访信息**：Juliette 在采访中被提及
 - **操作**：同 Herbert
@@ -51,7 +51,7 @@
 - **操作**：与游戏内实际角色列表交叉比对，找出缺失角色并补充
 
 ### 7. Nautila 不在数据库中
-- **文件**：`projects/wiki/data/db/characters.json`
+- **文件**：wiki 数据展示层 characters.json（原 data/db/，已删除）
 - **问题**：采访中提及 Nautila 的个人线剧本已完成，但数据库中无此角色
 - **操作**：确认 Nautila 的公开信息并添加条目（注意：可能是 id 使用了其他拼写，先搜索确认）
 

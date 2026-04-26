@@ -1,6 +1,6 @@
 # Wiki 子项目上下文
 
-> 最后更新：2026-04-02 by 战略中心（Code）
+> 最后更新：2026-04-25 by 艾瑞卡（引用修正）
 
 ## 负责会话
 Code-wiki
@@ -62,7 +62,7 @@ python scripts/content_db.py
 
 ## 给 Code 会话的指令
 - 工作目录：`projects/wiki/`
-- 数据文件在：`projects/wiki/data/db/`
+- 数据文件在：`projects/wiki/data/extracted/`（游戏提取）+ `projects/wiki/data/processed/`（加工后）
 - 新数据文件添加后更新本文件和 `assets/index.md`
 - 角色/系统信息同步更新 `memory/morimens-context.md`
 
@@ -72,7 +72,7 @@ python scripts/content_db.py
 
 - [ ] 阅读根目录 `CLAUDE.md` 了解全局上下文
 - [ ] 阅读 `memory/project-status.md` 确认 wiki 子项目当前状态
-- [ ] 检查 `projects/wiki/data/db/` 目录确认数据文件完整性
+- [ ] 检查 `projects/wiki/data/extracted/` 和 `data/processed/` 目录确认数据文件完整性
 - [ ] 确认 GitHub Pages 部署状态（最新 Actions 是否成功）
 - [ ] 检查 `memory/morimens-context.md` 了解游戏背景知识
 - [ ] 确认你要修改的文件不属于其他子项目

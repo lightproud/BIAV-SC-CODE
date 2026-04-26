@@ -107,7 +107,7 @@ brain-in-a-vat/
 |-----------|--------|
 | 了解项目当前状态 | `memory/boot-snapshot.md`（优先）+ `memory/project-status.md` |
 | 理解游戏世界观 | `memory/morimens-context.md` |
-| 查角色数据库（63 角色） | `projects/wiki/data/db/characters.json` |
+| 查角色原始数据（提取自游戏） | `projects/wiki/data/extracted/categorized/character_data.txt` |
 | 查社区动态 | `projects/news/output/daily-latest.md` / `all-latest.json` |
 | 查制作人第一手陈述 | `assets/data/interview-2026-04.json` |
 | 了解被砍机制/设计哲学 | `assets/data/design-decisions.json` |

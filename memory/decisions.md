@@ -38,7 +38,7 @@
 | 缸中之脑方向确认为方法论验证（交付物必须可用） | 全局 |
 | main 分支添加 Ruleset 保护规则（禁止删除） | 全局 |
 | 双系统架构：银芯（公开层）+ 黑池（内部层），数据隔离，架构共享 | 全局 |
-| 引入 occ-local 子项目：基于 ruvnet/open-claude-code (MIT) 的本地 Claude Code CLI，供脱离 Anthropic 账号的研究/内部场景使用；仅拷贝 v2/ 核心 547K，排除 archive/assets/submodule；定制以 patch 形式管理不污染上游骨架 | 全局 / occ-local |
+| 引入 occ-local 子项目：基于 ruvnet/open-claude-code (MIT) 的本地 Claude Code CLI，供脱离 Anthropic 账号的研究/内部场景使用；仅拷贝 v2/ 核心 547K，排除 archive、assets、submodule 等目录；定制以 patch 形式管理不污染上游骨架 | 全局 / occ-local |
 | BPT 新一代基于 occ-local 重建：采用路径 B（平行新建 projects/bpt-next/）+ Electron + React UI（继承 bpt/bpt-desktop）+ 最终收敛为单一 BPT（bpt / bpt-web / bpt-desktop 归档 archive/）；occ-local 通过相对路径 import 不 fork 不 copy；设计蓝图见 memory/bpt-next-design.md；Phase 0-5 路线图 | 全局 / bpt-next |
 | **改道决策**（2026-04-14 当日作废上一条）：深入核实 claw-code（instructkr/claw-code）后发现其本地模型 + 多 provider 能力超 occ-local（Ollama 开箱即用 / 5 层配置链 / 模型前缀路由 / proxy 原生 / xAI+DashScope+OpenRouter），故 bpt-next 改基于 claw-code 打造（Rust 48K 行）。**守密人明示接受版权风险**：上游无 LICENSE 文件，默认 All Rights Reserved；仅限 BIAV 内部使用，禁止外部推广。occ-local 保留作为 MIT 合规备选。旧设计文档 memory/bpt-next-design.md 已加封存头注。引入实施见 projects/bpt-next/NOTICE 与 CONTEXT.md | 全局 / bpt-next |
 | **许可证评估修正**（2026-04-14 当日修正上一条的"无 LICENSE"假设）：构建验证时核查发现 rust/Cargo.toml `[workspace.package] license = "MIT"`，9 crate 全部 `license.workspace = true` 继承，rust/README 有 License 节。Rust 生态共识：Cargo.toml SPDX license 字段是法律认可的授权声明（crates.io / cargo-about / cargo-deny 均依赖此字段）。**主运行时 claw CLI = 明确 MIT 授权**。src/（Python 镜像）上游已声明"非主运行时"，无独立 LICENSE 但不影响 claw 主使用。风险等级从"致命"下调为"低"。建议上游加 LICENSE 文件仍作为友好建议。NOTICE 与 CONTEXT 已同步修正 | 全局 / bpt-next |
