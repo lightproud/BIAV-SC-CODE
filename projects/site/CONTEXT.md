@@ -19,6 +19,7 @@
   - D-mission ✅（`6347ad3`，2026-04-26）：hero 与 features 之间新增 Mission 段，三卡片展示银芯三新使命，引导至 news/wiki/GitHub
   - 自审清理 ✅（`61d3da6`，2026-04-26）：补 favicon + canonical + og:locale + twitter:card；改 select onchange 反模式为 details/summary 可访问下拉；hero-title 字符空格 → letter-spacing；删 5 死 CSS 变量；404 色彩对齐 + 加仓库入口；同步 design-system-guide
   - D-biav ✅（本批次，2026-04-26）：新建 `public/biav/index.html` 项目说明页（命名缘由 / 银芯系统 / 三新使命 / 仓库结构 / 入口协议）；nav BIAV 链接恢复指向 `biav/`，消除 P1-2 重复；改 deploy-site.yml 为 `cp -r public/. dist/` 递归部署
+  - D-token-unify ✅（本批次，2026-04-26）：`public/index.html` 与 `public/biav/index.html` 通过 `<link rel="stylesheet">` 引入 `design/morimens-design-tokens.css`；`:root` 短名映射至 `--m-*` 长名（含 fallback 硬编码值），design-tokens.css 真正成为视觉真值源，解 P1-5
   - 待办：D-contribute（贡献者入口段，依赖仓库根 `CONTRIBUTING.md` 落地，跨边界阻塞中）
 - **M2（5-11 → 6-10）**：补对外说明文档（如 README 重写 / 主站 About 加深 / 贡献指南入口）
 - **M3（6-11 → 7-10）**：跨站视觉一致性最终校验 + 三新使命展示
@@ -45,7 +46,7 @@ Code-site 会话负责：
   - 段落顺序：nav → hero → **mission**（D-mission 新增）→ features → world-strip → community → footer
   - 合规基线：emoji 全清（D-fix + 自审），nav 全部链接可达且无重复，community 仅保留 4 真实 URL（Discord 国际服 / NGA / Reddit / TapTap）
   - SEO/可访问性基线：favicon（inline SVG 宋体「夜」字）+ canonical + og:locale 三语 + twitter:card；语言切换为可访问 details/summary（替代旧 select onchange 反模式）
-  - 设计系统：`design/morimens-design-tokens.css` 为视觉 Token 真值源，但 `public/index.html` 当前以 `:root` 硬编码 Token 子集（未 import，存在漂移风险，列入 M3 校验范围）
+  - 设计系统：`design/morimens-design-tokens.css` 为视觉 Token 真值源，`public/index.html` 与 `public/biav/index.html` 通过 `<link rel="stylesheet">` 引入并以 `var(--m-*, fallback)` 模式映射；改 design-tokens.css 即全站生效（D-token-unify 已落地）
 - **biav 子页**：已上线（D-biav，`public/biav/index.html`），项目说明页面，含命名缘由 / 银芯系统 / 三新使命 / 仓库结构 / 入口协议五段
 - **404 页**：色彩与字重已对齐主站，含返回主站/Wiki/News/仓库四入口
 - **部署流水线**：使用 `peaceiris/actions-gh-pages@v4` 推送到 gh-pages 分支
