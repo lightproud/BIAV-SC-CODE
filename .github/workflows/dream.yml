@@ -175,14 +175,27 @@ jobs:
             echo "has_stale=false" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Rebuild RAG indexes (vectors + knowledge graph)
+        if: always()
+        run: |
+          # Self-healing: rebuild indexes regardless of dream phase outcome.
+          # Lesson #31 root cause: shallow cron used to skip rebuild, so a
+          # corrupted vectors.json.gz had no auto-recovery path.
+          python scripts/memory_search.py --build || echo "vectors rebuild failed (non-fatal)"
+          python scripts/knowledge_graph.py --build || echo "graph rebuild failed (non-fatal)"
+          # Sanity check — fail loud if vectors.json.gz is unreadable
+          python -c "import gzip,json; json.load(gzip.open('assets/data/vectors.json.gz'))" \
+            && echo "vectors.json.gz integrity OK" \
+            || echo "WARN: vectors.json.gz still unreadable after rebuild"
+
       - name: Commit dream journal
         if: always()
         run: |
           if [ -f "memory/dreams/$(date -u +%Y-%m-%d).json" ]; then
             git config user.name "dream-agent[bot]"
             git config user.email "dream-agent[bot]@users.noreply.github.com"
-            git add memory/dreams/ assets/data/semantic-index.json assets/data/sentinel-baseline.json projects/news/output/alerts.json 2>/dev/null || true
-            git diff --cached --quiet || git commit -m "dream(shallow): Phase 1 structural check $(date -u +%Y-%m-%d)"
+            git add memory/dreams/ assets/data/semantic-index.json assets/data/sentinel-baseline.json assets/data/vectors.json.gz assets/data/archive-integrity.json projects/news/output/alerts.json 2>/dev/null || true
+            git diff --cached --quiet || git commit -m "dream(shallow): Phase 1 structural check + index rebuild $(date -u +%Y-%m-%d)"
             git push origin main || true
           fi
 
