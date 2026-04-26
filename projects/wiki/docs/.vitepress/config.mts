@@ -22,78 +22,89 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       {
-        text: '图鉴',
+        text: '角色',
         items: [
           { text: '唤醒体图鉴', link: '/characters' },
+          { text: '语音台词', link: '/voice-lines' },
+          { text: '角色立绘', link: '/portraits' },
+        ]
+      },
+      {
+        text: '系统',
+        items: [
           { text: '唤醒系统', link: '/summon' },
           { text: '关卡导航', link: '/stages' },
+          { text: '收藏馆', link: '/collection-hall' },
         ]
       },
       {
-        text: '数据',
-        items: [
-          { text: '语音台词', link: '/voice-lines' },
-          { text: '收藏馆百科', link: '/collection-hall' },
-          { text: '道具背景故事', link: '/item-stories' },
-          { text: 'UI 面板文本', link: '/panel-text' },
-          { text: '更新公告', link: '/update-notices' },
-        ]
-      },
-      {
-        text: '画廊',
+        text: '世界观',
         items: [
           { text: 'CG 画廊', link: '/cg-gallery' },
-          { text: '角色立绘', link: '/portraits' },
+          { text: '道具故事', link: '/item-stories' },
+          { text: '过场视频', link: '/video' },
+        ]
+      },
+      {
+        text: '资产库',
+        items: [
           { text: '战斗单位', link: '/battle-units' },
           { text: '图标', link: '/icons' },
           { text: 'UI 资源', link: '/ui-resources' },
+          { text: '音频', link: '/audio' },
         ]
       },
       {
-        text: '媒体',
+        text: '更多',
         items: [
-          { text: '音频索引', link: '/audio' },
-          { text: '视频索引', link: '/video' },
+          { text: '面板文本', link: '/panel-text' },
+          { text: '更新公告', link: '/update-notices' },
+          { text: '团队决策', link: '/zh/team-decisions/' },
         ]
       },
-      { text: '团队决策', link: '/zh/team-decisions/' },
     ],
     sidebar: {
       '/zh/team-decisions/': [teamDecisionsSidebar],
       '/': [
         {
-          text: '角色与系统',
+          text: '角色',
           items: [
             { text: '唤醒体图鉴', link: '/characters' },
+            { text: '语音台词', link: '/voice-lines' },
+            { text: '角色立绘', link: '/portraits' },
+          ]
+        },
+        {
+          text: '系统',
+          items: [
             { text: '唤醒系统', link: '/summon' },
             { text: '关卡导航', link: '/stages' },
+            { text: '收藏馆', link: '/collection-hall' },
           ]
         },
         {
-          text: '客户端数据',
-          items: [
-            { text: '语音台词', link: '/voice-lines' },
-            { text: '收藏馆百科', link: '/collection-hall' },
-            { text: '道具背景故事', link: '/item-stories' },
-            { text: 'UI 面板文本', link: '/panel-text' },
-            { text: '更新公告', link: '/update-notices' },
-          ]
-        },
-        {
-          text: '美术资产画廊',
+          text: '世界观',
           items: [
             { text: 'CG 画廊', link: '/cg-gallery' },
-            { text: '角色立绘', link: '/portraits' },
+            { text: '道具故事', link: '/item-stories' },
+            { text: '过场视频', link: '/video' },
+          ]
+        },
+        {
+          text: '资产库',
+          items: [
             { text: '战斗单位', link: '/battle-units' },
             { text: '图标', link: '/icons' },
             { text: 'UI 资源', link: '/ui-resources' },
+            { text: '音频', link: '/audio' },
           ]
         },
         {
-          text: '媒体资产',
+          text: '更多',
+          collapsed: true,
           items: [
-            { text: '音频索引', link: '/audio' },
-            { text: '视频索引', link: '/video' },
+            { text: '面板文本', link: '/panel-text' },
+            { text: '更新公告', link: '/update-notices' },
           ]
         },
         teamDecisionsSidebar,
