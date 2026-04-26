@@ -34,17 +34,17 @@ ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'platforms'
 DISCORD_ARCHIVE_DIR = _REPO_ROOT / 'projects' / 'news' / 'data' / 'discord' / 'activity_daily'
 HEALTH_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'source-health.json'
 
-# 已注册采集源（生产管线 + 扩展采集），与 archive_platforms.py / collect_global.py 保持同步
+# 已注册采集源（全部直连，无 RSSHub 依赖），与 collect_global.py 保持同步
 ALL_REGISTERED_SOURCES = [
     # 生产主管线（aggregator.py）
-    'reddit', 'bilibili', 'twitter', 'nga', 'taptap',
-    'steam', 'steam_discussion', 'official', 'youtube', 'discord',
-    # 扩展采集（collect_global.py → report-system/collector.py）
-    'weibo', 'xiaohongshu', 'douyin', 'tieba', 'zhihu', 'bahamut',
-    'naver_cafe', 'dcinside', 'arca_live', 'fivech',
-    'appstore', 'google_play', 'tiktok',
-    'pixiv', 'lofter', 'xianyu', 'taobao',
-    'qq', 'facebook', 'telegram', 'twitch', 'instagram',
+    'reddit', 'bilibili', 'nga',
+    'steam', 'official', 'youtube', 'discord',
+    # 直连采集（collect_global.py）
+    'weibo', 'tieba', 'bahamut',
+    'dcinside', 'arca_live', 'fivech',
+    'appstore', 'google_play',
+    'pixiv', 'lofter',
+    'telegram',
     'qooapp', 'epic',
     'note_com', 'ruliweb',
     'vkplay', 'stopgame',
