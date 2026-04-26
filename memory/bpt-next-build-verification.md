@@ -1,5 +1,10 @@
 # BPT-NEXT 构建与诊断验证报告
 
+> **状态：已封存（2026-04-19）**
+> 封存原因：2026-04-19 战略转向——BPT 战线不再在银芯内部开发，`projects/bpt-next/` 已从仓库删除。本文档作为历史验证审计材料保留。
+>
+> ---
+>
 > 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
 > 执行环境：银芯容器（Linux x86_64 / Claude Code on the web）
 > 分支：`claude/bpt-next-bootstrap-Q41x3`
@@ -156,9 +161,9 @@ NOTICE 文件已同步修正，含完整证据链。
 
 ## 产物清单
 
-- `projects/bpt-next/rust/target/debug/claw` — 主 CLI 二进制（148M）
-- `projects/bpt-next/rust/target/debug/mock-anthropic-service` — 确定性 mock 测试服务（79M）
-- `projects/bpt-next/rust/target/debug/deps/` — 依赖目标（大量）
+- `rust/target/debug/claw` — 主 CLI 二进制（148M，本地构建产物，不入仓库）
+- `rust/target/debug/mock-anthropic-service` — 确定性 mock 测试服务（79M，本地构建产物）
+- `rust/target/debug/deps/` — 依赖目标（大量，本地构建产物）
 - 总 `target/` 目录体积：需检查（预计 3-5 GB）
 
 **注意**：`target/` 已在 claw 的 `.gitignore` 里，不会被提交。

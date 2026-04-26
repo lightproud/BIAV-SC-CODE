@@ -1,9 +1,23 @@
 {
   "date": "2026-04-20",
-  "archived_at": "2026-04-25T17:38:56.712897+00:00",
+  "archived_at": "2026-04-26T07:25:28.386927+00:00",
   "source": "bilibili",
-  "item_count": 0,
-  "items": [],
-  "_gap_repaired": true,
-  "_note": "Placeholder created by repair_gaps.py — no data was collected for this date."
+  "item_count": 1,
+  "items": [
+    {
+      "title": "忘却前夜融灾3-5，3启蜘蛛侠（阿拉克涅）即使小登伏笔再多依旧暴揍融灾",
+      "summary": "-",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-20T15:49:53+00:00",
+      "url": "http://www.bilibili.com/video/av116437771356016",
+      "engagement": 331,
+      "is_hot": false,
+      "author": "Dr逐流",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
 }

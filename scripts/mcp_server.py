@@ -406,7 +406,7 @@ def character_persona(character: str = "erica", context: str = "", action: str =
     - greeting: 生成角色开场白
     - list: 列出所有可用角色
 
-    跨平台支持：银芯（MCP）、黑池终端（BPT-WEB/DESKTOP）、黑池系统。
+    跨平台支持：银芯（MCP）、黑池系统。
 
     Args:
         character: 角色ID（默认 erica）
@@ -445,62 +445,6 @@ def character_persona(character: str = "erica", context: str = "", action: str =
         "system_prompt": prompt,
         "usage": "将 system_prompt 内容作为系统提示词注入对话，AI 将以该角色语气回复",
     }, ensure_ascii=False, indent=2)
-
-
-# ---------------------------------------------------------------------------
-# Graphify 桥接工具（2026-04-14 新增，面向黑池需求 3 黑池索引）
-# ---------------------------------------------------------------------------
-
-
-@mcp.tool()
-def graphify_index(path: str, output_dir: str = "") -> str:
-    """对指定目录构建代码/文档知识图谱（tree-sitter + Leiden 社区检测）。
-
-    Args:
-        path: 要索引的目录（代码/文档/多模态资产）
-        output_dir: 可选输出目录（默认 <path>/graphify-out）
-
-    Returns:
-        JSON: {"status": "ok|error", "graph_json", "report_md", "html", "stdout", "stderr"}
-    """
-    from graphify_bridge import graphify_index as _index
-
-    result = _index(path, output_dir or None)
-    return json.dumps(result, ensure_ascii=False, indent=2)
-
-
-@mcp.tool()
-def graphify_query(graph_json_path: str, query: str, limit: int = 10) -> str:
-    """在已有 graphify 图谱（graph.json）中按关键词检索节点。
-
-    Args:
-        graph_json_path: 图谱 JSON 路径
-        query: 查询关键词
-        limit: 返回上限（默认 10）
-
-    Returns:
-        JSON: {"status": "ok|error", "matches": [{"node","kind","score","context"}]}
-    """
-    from graphify_bridge import graphify_query as _query
-
-    result = _query(graph_json_path, query, limit)
-    return json.dumps(result, ensure_ascii=False, indent=2)
-
-
-@mcp.tool()
-def graphify_report(graph_out_dir: str) -> str:
-    """读取 GRAPH_REPORT.md 提取 god nodes 与建议问题。
-
-    Args:
-        graph_out_dir: graphify 输出目录（含 GRAPH_REPORT.md）
-
-    Returns:
-        JSON: {"status":"ok|error","report","god_nodes":[...],"suggested_questions":[...]}
-    """
-    from graphify_bridge import graphify_report as _report
-
-    result = _report(graph_out_dir)
-    return json.dumps(result, ensure_ascii=False, indent=2)
 
 
 # ---------------------------------------------------------------------------

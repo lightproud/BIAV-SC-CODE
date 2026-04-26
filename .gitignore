@@ -15,12 +15,11 @@ htmlcov/
 .DS_Store
 .claude/*
 !.claude/commands/
+!.claude/hooks/
 !.claude/settings.json
 
 # global_collectors runtime output (if run standalone)
 projects/news/data/collected_raw.json
-projects/news/data/discord/archives/
-assets/data/discord/
 morimens_extract.zip
 
 # media cache (downloaded images/covers, archived to GitHub Releases)
@@ -45,5 +44,10 @@ assets/data/sentinel-baseline.json
 projects/news/output/alerts.json
 
 # session digests — only .md conversation records are committed;
-# .json metadata stays local (no longer generated in v0.3)
+# .json metadata and .jsonl progress logs stay local (no longer generated in v0.3)
 memory/session-digests/*.json
+# .progress.jsonl 实时累积日志，每个 PostToolUse 追加，导致 stop hook
+# 误报循环（守密人 2026-04-26 裁定排除）。保留物理文件作过程追溯，
+# 但不入 git，避免反复 commit 噪音。
+memory/session-digests/*.jsonl
+memory/session-digests/*.progress.jsonl

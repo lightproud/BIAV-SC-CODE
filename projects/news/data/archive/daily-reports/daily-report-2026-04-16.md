@@ -7,11 +7,27 @@
 | 平台 | 数据条数 |
 |------|----------|
 | App Store | 1 |
+| Steam | 9 |
 | Steam | 5 |
 
 ## App Store
 
 1. Genuinely Good & Challenging -- engagement: 5
+
+## Steam 评论
+
+- 好评 8 / 差评 1 / 好评率 89%
+
+### 热门好评
+
+1. [正面] dont bother trying to f2p unless you want to go th... -- engagement: 1
+2. [正面] beautiful character, nice gameplay and this game d... -- engagement: 0
+3. [正面] Es un gacha generoso con los jugadores. La traducc... -- engagement: 0
+4. [正面] A gem! -- engagement: 0
+5. [正面] シナリオテキストの文字が大きい 100点
+
+
+誤字がまあまあ多いのはともかく、スキルの未翻訳や表記揺... -- engagement: 0
 
 ## Steam 评论
 

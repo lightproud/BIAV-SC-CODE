@@ -1,9 +1,23 @@
 {
   "date": "2026-04-18",
-  "archived_at": "2026-04-25T17:38:56.712750+00:00",
+  "archived_at": "2026-04-26T07:25:28.387370+00:00",
   "source": "bilibili",
-  "item_count": 0,
-  "items": [],
-  "_gap_repaired": true,
-  "_note": "Placeholder created by repair_gaps.py — no data was collected for this date."
+  "item_count": 1,
+  "items": [
+    {
+      "title": "萌新融灾艰难400纪念",
+      "summary": "没有手法，纯瞎打",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-18T10:17:15+00:00",
+      "url": "http://www.bilibili.com/video/av116425154953423",
+      "engagement": 132,
+      "is_hot": false,
+      "author": "幽缀",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
 }

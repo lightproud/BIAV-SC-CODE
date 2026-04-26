@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """session_watch.py —— PostToolUse hook：实时追加会话工具调用事件到 progress.jsonl。
 
-本档案为 Claude Code / claw-code 的 PostToolUse hook 目标脚本，每次工具调用
+本档案为 Claude Code 的 PostToolUse hook 目标脚本，每次工具调用
 （Read / Edit / Write / Bash / Grep ...）结束后由宿主进程以 stdin 喂入
 hook JSON，再由本脚本解析并追加一行 JSONL 到：
 

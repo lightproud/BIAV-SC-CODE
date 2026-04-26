@@ -6,13 +6,33 @@
 
 | 平台 | 数据条数 |
 |------|----------|
+| Bilibili | 1 |
 | Pixiv | 1 |
+| Steam | 6 |
 | Steam | 5 |
 | 微信公众号 | 4 |
+
+## Bilibili
+
+1. 忘却前夜4K壁纸丨奥尔拉-HORLA-灰烬玫瑰 -- engagement: 796
 
 ## Pixiv
 
 1. 忘却前夜まとめ -- engagement: 0
+
+## Steam 评论
+
+- 好评 5 / 差评 1 / 好评率 83%
+
+### 热门好评
+
+1. [正面] You'll wander through beautiful settings that look... -- engagement: 1
+2. [正面] KATH <3 -- engagement: 0
+3. [正面] good & pulls are generous, f2p friendly
+
+anime sla... -- engagement: 0
+4. [正面] 总体给到人上人水平，画风剧情配音配合的都很好。还有我最喜欢它的前期福利，给的很慷慨啊，玩到现在我抽了... -- engagement: 0
+5. [正面] A stunning lovecraftian horror indie deckbuilder t... -- engagement: 0
 
 ## Steam 评论
 

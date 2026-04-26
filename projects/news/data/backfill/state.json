@@ -1,8 +1,8 @@
 {
   "bilibili": {
-    "page": 2,
+    "page": 4,
     "done": false,
-    "total": 20
+    "total": 100
   },
   "appstore": {
     "page": 21,
@@ -10,19 +10,19 @@
     "total": 210
   },
   "steam_review": {
-    "page": 21,
+    "page": 31,
     "done": false,
-    "total": 2000,
-    "cursor": "AoJw8LKZsJcDeeu57wU="
+    "total": 3000,
+    "cursor": "AoJwtY6JtZMDcoqTrgU="
   },
   "arca_live": {
     "page": 1,
-    "done": true,
+    "done": false,
     "total": 0
   },
   "dcinside": {
     "page": 1,
-    "done": true,
+    "done": false,
     "total": 0
   },
   "naver_cafe": {
@@ -37,7 +37,7 @@
   },
   "ruliweb": {
     "page": 1,
-    "done": true,
+    "done": false,
     "total": 0
   },
   "weixin": {

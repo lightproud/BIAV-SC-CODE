@@ -1,5 +1,10 @@
 # BPT-Desktop 设计规范参考（v0.1.15 逆向）
 
+> **状态：已封存（2026-04-19）**
+> 封存原因：2026-04-19 战略转向——BPT 战线不再在银芯内部开发，`projects/bpt-desktop/` 已从仓库删除。本文档作为历史设计审计材料保留。
+>
+> ---
+>
 > 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
 >
 > 状态：**待完整接收**。本文件是守密人 2026-04-14 会话中提供的
@@ -62,9 +67,9 @@
 当守密人准备好重贴完整原文时，按以下流程处理：
 
 1. 建立 `projects/bpt-desktop/` 目录（`mkdir -p`）
-2. 守密人完整原文 → `projects/bpt-desktop/DESIGN-SPEC-v0.1.15.md`
+2. 守密人完整原文 → `DESIGN-SPEC-v0.1.15.md`（待创建，放入 bpt-desktop 子项目）
 3. 将本文件（`memory/bpt-desktop-design-spec-ref.md`）改为"已归档"
-   状态并加上 `projects/bpt-desktop/DESIGN-SPEC-v0.1.15.md` 的链接
+   状态并加上设计规范文件的链接
 4. 在 `projects/bpt-desktop/CONTEXT.md` 引用该规范为视觉权威源
 
 ## 不要做的事

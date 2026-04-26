@@ -1,9 +1,23 @@
 {
   "date": "2026-04-19",
-  "archived_at": "2026-04-25T17:38:56.712810+00:00",
+  "archived_at": "2026-04-26T07:25:28.387165+00:00",
   "source": "bilibili",
-  "item_count": 0,
-  "items": [],
-  "_gap_repaired": true,
-  "_note": "Placeholder created by repair_gaps.py — no data was collected for this date."
+  "item_count": 1,
+  "items": [
+    {
+      "title": "斯卡伯勒之夏成就-忘却前夜",
+      "summary": "-",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-19T17:49:58+00:00",
+      "url": "http://www.bilibili.com/video/av116432620750524",
+      "engagement": 105,
+      "is_hot": false,
+      "author": "IFAFAFA",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
 }

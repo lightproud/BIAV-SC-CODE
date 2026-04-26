@@ -1,9 +1,23 @@
 {
   "date": "2026-04-14",
-  "archived_at": "2026-04-25T17:38:56.712461+00:00",
+  "archived_at": "2026-04-26T07:25:28.387994+00:00",
   "source": "bilibili",
-  "item_count": 0,
-  "items": [],
-  "_gap_repaired": true,
-  "_note": "Placeholder created by repair_gaps.py — no data was collected for this date."
+  "item_count": 1,
+  "items": [
+    {
+      "title": "[忘卻前夜]融灾2-5 哈莱环塔 环娜主C塔薇副C 单道中",
+      "summary": "就打了一个道中进王关，船长还是很好打的，落地管有点难\n塔薇作为主要生存位，同时开银钥曦光\n很容易爆牌视频中就爆了好几次了\n配置肯定还能再降很多，等待有大月卡回溯的大佬发现",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-14T11:03:23+00:00",
+      "url": "http://www.bilibili.com/video/av116402707039972",
+      "engagement": 240,
+      "is_hot": false,
+      "author": "splendid_scenery",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
 }

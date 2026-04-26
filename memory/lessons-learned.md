@@ -1,8 +1,28 @@
 # 踩坑记录
 
-> 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
+> 最后更新：2026-04-26 by 银芯记忆系统（艾瑞卡会话）
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
+
+## 26. 后台子代理 Write 大文档的超时阈值低于主控台
+
+- **Context**：2026-04-20 派发 P2W1D1 / P2W1D1-retry 两个后台子代理（`run_in_background=true`）起草 `memory/wiki-characters-schema-v1.md`（~14 KB / 414 行，2026-04-20 已从 v0.1 草案升级到 v1.0）
+- **Problem**：两次都在完成全部调研后、`Write` 工具调用的当刻触发 `API Error: Stream idle timeout - partial response received`，产出文件未落盘。失败位置完全一致（见子代理 jsonl 最后一个 assistant event），排除随机性。主控台直接 Write 同一文档则一次成功。推断：后台 agent 的 output streaming 超时阈值更严格
+- **Fix**：
+  1. 后台子代理产出**大于 300 行 / 10 KB** 的单文档时，主控台在 prompt 中强制要求**分段写入**（先 Write 骨架 200 行以内，再分多次 Edit 追加）
+  2. 如子代理调研属性强、产出属性弱，可在 prompt 里要求返回"结构化要点 + 建议字段"而非完整文档，由主控台自行组装落盘
+  3. 连续两次 timeout 后不再盲目重试，主控台直接接手起草（schema/方法论/协议类文档本属战略锚点产出，非代码）
+- **Impact**：派发策略、时间预算、档案交付可靠性
+
+## 27. 主控台越界写业务代码（"派完代办的尾巴"陷阱）
+
+- **Context**：2026-04-21 主控台派发 P2W1B1 子代理填批 1（24 角色）后，子代理通过任务报告返回完整 JSON（避开 lesson #26 的 Write 流式超时）。主控台为接收报告并把 JSON 落盘，亲自完成了：(1) 修 schema v1.0 → v1.0.1（业务代码）；(2) 拆 4 part Python heredoc 写入 `projects/wiki/data/db/characters.json`（业务代码）；(3) 跑 jsonschema 校验（业务工作）。守密人当场指出"这件事不应该主控台做，有另外的对话"
+- **Problem**：违反 strategic-plan-2026.md 决策 #4「主控台长期锚点：本战略评估会话存续至 2026-07-19，**不写业务代码**，仅派发新会话 + 认知教学」。诱因是子代理产出报告后的"派完代办的尾巴"——主控台天然倾向于「我接手到这里就完结了」，但**接手本身就越界**。Wiki 业务工作（schema 修改、JSON 落盘、validator 运行、batch 派发）整条线归 Code-wiki 会话承接，不归主控台
+- **Fix**（三条边界硬约束）：
+  1. **报告→落盘的接力**必须由专职会话（如 Code-wiki）执行，不允许主控台亲自落盘业务数据文件（`projects/<子项目>/`、`assets/data/<事实圣经以外>` 等业务路径）
+  2. **子代理产出业务代码/数据后**，主控台只做两件事：转发产出（写 GitHub Issue / 更新对应 CONTEXT.md / 通知守密人新会话角色），然后停手
+  3. **派发流程模板化**：每次派发前，主控台明确写出「派发对象 → 接收方 → 验收方」三角，三个角色都不能等于主控台本身（除"派发"动作本身）
+- **Impact**：会话职责边界、长期锚点会话的纯净度、跨会话协作可预测性
 
 ## 1. sed 批量替换破坏 HTML 结构
 
@@ -163,7 +183,9 @@
 
 ## 22. Wiki 人工整理层数据不可靠
 
-- **Context**：`projects/wiki/data/db/` 中的 JSON 是人工整理的 Wiki 展示数据
+> ⚠ 本条所引用的 `projects/wiki/data/db/` 路径在 2026-04-20 B3 调研揭露从未建立（详见 #25）。本条历史陈述保留，路径标注为 pending。
+
+- **Context**：`projects/wiki/data/db/` ⚠ 中的 JSON 是人工整理的 Wiki 展示数据
 - **Problem**：约 58% 角色标注"待补充"，部分数据为推测而非客户端实际数值，不适合作为分析引用来源
 - **Fix**：分析游戏数据时以 Lua 解包层（`projects/wiki/data/extracted/lua_tables/`）和事实圣经层（`assets/data/`）为唯一可靠来源。Wiki JSON 仅作为前端展示用途，不作为事实依据
 - **Impact**：分析可信度
@@ -174,15 +196,63 @@
 
 - **Context**：bpt-next 对接阿里内部 idealab 网关，文档列出 `/api/anthropic/v1/messages` 与 `/code/v1/messages` 两个端点并标注"两种 url 都可以使用"
 - **Problem**：初步推测 `/code/` 是代码场景专用入口、适合 coding agent，但实测 `/code/` 路径需浏览器 SSO 登录，不支持 API key 直调——`claw` / `bpt-next` 用 `x-api-key` 调 `/code/` 会 401
-- **Fix**：API key 消费方（bpt-next / 后端服务 / CI）必须锁定 `/api/anthropic/v1/messages`；`/code/` 仅供 Web IDE / 浏览器 SSO 场景。档案同步固化到 `projects/bpt-next/LOCAL-SETUP-ZH.md` 情境八，防止未来会话重新评估时踩坑
+- **Fix**：API key 消费方（bpt-next / 后端服务 / CI）必须锁定 `/api/anthropic/v1/messages`；`/code/` 仅供 Web IDE / 浏览器 SSO 场景。档案同步固化到 `projects/bpt-next/LOCAL-SETUP-ZH.md` ⚠（已删除）情境八，防止未来会话重新评估时踩坑
 - **Impact**：接入方案、API 调用可用性
 
 ## 24. idealab 模型命名不一致：Sonnet/Opus 连字符 vs Haiku 下划线
 
 - **Context**：idealab 支持三个 Claude 模型——`claude-sonnet-4-6`、`claude-opus-4-6`、`claude-haiku-4_5`
 - **Problem**：三个命名**不统一**——Sonnet/Opus 用连字符分隔版本号（`4-6`），Haiku 单独用下划线（`4_5`）。`claw` 内置别名表 `haiku` → `claude-haiku-4-5-20251213`（连字符 + 日期后缀）与 idealab 的 `claude-haiku-4_5`（下划线、无后缀）不匹配。直接执行 `--model haiku` 会把错误名透传给 idealab，返回 404 / InvalidModel
-- **Fix**：在 `projects/bpt-next/.claw/settings.json` 用户别名表覆盖 `haiku → claude-haiku-4_5`；Sonnet/Opus 恰好匹配 claw 内置别名无需改动。命名约定说明同步到 `LOCAL-SETUP-ZH.md` 情境八
+- **Fix**：在 `projects/bpt-next/.claw/settings.json` ⚠（已删除）用户别名表覆盖 `haiku → claude-haiku-4_5`；Sonnet/Opus 恰好匹配 claw 内置别名无需改动。命名约定说明同步到 `LOCAL-SETUP-ZH.md` 情境八
 - **Impact**：配置可用性、别名系统兼容
+
+---
+
+## 25. 档案声明 vs 实际文件交叉校验
+
+- **Context**：2026-04-20 B3 Wiki 缺口调研子代理在扫描仓库时发现，`projects/wiki/data/db/` ⚠ 目录在 git 历史中**从未存在过**，但多处档案声称其存在：
+  - `memory/project-status.md` 第 46-51 行声称"18 个 JSON 数据文件 / 63 唤醒体数据 / 加权完成度 83%"
+  - `projects/wiki/CONTEXT.md` 第 14 行声称"`data/db/` 下 16 个模块化 JSON"
+  - `CLAUDE.md` 按需加载索引指向 `projects/wiki/data/db/characters.json` ⚠
+  - 角色真实总数为 72（含皮肤/联动/彩蛋），不是 63
+- **Problem**：档案更新与实际文件操作脱节，无校验机制。新会话读到错误信息后按"数据已存在"假设工作，导致 fetch_skills.py 等脚本依赖不存在的 characters.json 必然失败；Phase 2 预算严重低估真实工作量（缺 3-5 天基线自举）。本条违反 lessons-learned #3「CONTEXT.md 必须同步实际状态」的根本原因是：第 3 条只要求"状态变更后同步"，未建立"周期性交叉校验"机制
+- **Fix**（三条防范机制）：
+  1. **新会话启动时校验关键文件路径**：CONTEXT.md 中引用的核心数据文件路径（如 `data/db/characters.json`），启动脚本应做一次 `ls` 校验，缺失则告警
+  2. **档案陈述附最后验证时间戳**：涉及文件存在性的陈述（"已完成 X 文件"）应带 `[last-verified: YYYY-MM-DD]` 字段，超过 30 天自动标脏
+  3. **做梦 Agent 哨兵层加交叉扫描**：浅睡层（每 6 小时）新增一条"档案声明 vs 实际文件存在性"扫描规则，提取 memory/ 与 CONTEXT.md 中的文件路径引用，核对仓库实际状态，不一致则写 sentinel 告警
+- **Impact**：跨会话协作可信度、Phase 2 工期估算准确性、档案诚信
+
+---
+
+## 28. 本地 main 与 origin/main 反复失步，触发 Cloudflare HTTP 413 推送堵塞
+
+- **Context**：Web Claude Code 沙箱启动时从快照恢复仓库，快照里常带着上一会话未推送的本地 commit（SessionEnd 自动生成的 session-continuity.json + session digest，以及历史会话遗留的 merge commit）。多个会话来源（本地 Claude Code、GitHub Actions 自动 workflow、其他平台代理）并行向 origin/main 写入，本地 main 持续落后；与此同时，本地 main 的「自家 merge」commit 也持续累积——双向漂移
+- **Problem**：当 local main 累积到一定差异量，`git push origin main` 触发 Cloudflare 代理的 HTTP 413 (Request Entity Too Large)。该限制与实际 pack 大小无关，是代理对 receive-pack endpoint 的硬阈值。一旦堵塞，所有依赖 push 的操作（包括 feature 分支推送、SessionEnd hook 归档、远端分支删除）全部失败。诊断显示：触发临界点时本地 main 通常 ahead ≥50、behind ≥150
+- **Fix**：
+  1. 装 SessionStart hook（`.claude/hooks/session-start-sync.sh`）每次会话启动时自动 `git fetch origin main` 并强制把 local main 同步到 origin/main（hard-reset 或 ref 更新），根除累积
+  2. hook 在重置前把原 local main HEAD 备份到 `refs/backup/main-pre-sync-<timestamp>`，防止丢真实工作
+  3. hook 只在当前不在 main 分支时用 `git update-ref` 更新（避免破坏当前 checkout）
+  4. 配合 lesson #29 的「直推 main」铁律，本地 main 应永远是 origin/main 的镜像
+  5. 排查时先量 `git rev-list origin/main..main --count` 与反向，超过 10 就该警觉
+- **Impact**：基础设施可靠性、推送通道可用性、记忆系统可持久化
+
+---
+
+## 29. 决策档案与执行档案脱节，规则改了 CLAUDE.md 没跟上
+
+- **Context**：2026-03-29 主控台决策「废弃分支工作流，全部直接推 main」，写入 `memory/decisions.md` 与 `BIAV-SC.md`。但 `CLAUDE.md` 的 Git 规则章节未同步更新，仍写「所有会话推 feature 分支」
+- **Problem**：CLAUDE.md 是 Claude Code 自动加载入口，新会话读取的是过期规则。结果：
+  - 一个月内累积 35 个 stale `claude/*` feature 分支
+  - 每个会话被分配到 feature 分支工作（系统按 CLAUDE.md 配）
+  - `.github/workflows/claude.yml` 的 auto-merge step 持续执行无意义的 merge
+  - 触发本地 main / 远端 main 漂移 → Cloudflare HTTP 413 推送堵塞（即 lesson #28 的根因）
+  - 与 lesson #11「新规则未传播到已有会话」**同款机制**，但这次范围更大、影响更深
+- **Fix**：
+  1. 任何决策写入 `decisions.md` 后，**同步 grep 全仓库**找出所有可能引用旧规则的位置（CLAUDE.md / BIAV-SC.md / 各 CONTEXT.md / workflow YAML），逐一更新
+  2. 改用工具辅助：在 `scripts/memory_writeback.py` 增加「决策一致性检查」，对比 decisions.md 与 CLAUDE.md/BIAV-SC.md 的关键策略词（"分支"、"main"、"merge"、"commit" 等）出现位置
+  3. 新会话启动时 `session_briefing.py` 应主动检查 CLAUDE.md 与 decisions.md 的最新条目时间戳是否一致——不一致就在 Briefing 里告警
+  4. 重要的「废弃」决策必须在原条目处加 ~~删除线~~ 与 **新决策日期/位置**，而不是只在新条目记录
+- **Impact**：决策可执行性、规则一致性、跨会话信息保真度、所有引用「分支工作流」的下游基础设施可靠性
 
 ---
 

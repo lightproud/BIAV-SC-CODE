@@ -105,7 +105,7 @@
 
 **等价方案**（Phase B P6 联动）：
 - 银芯侧：git push 即同步
-- 黑池侧：`scripts/session_svn_sync.py` 推到本地 SVN
+- 黑池侧：`scripts/session_svn_sync.py` ⚠（Phase B P6 待自建）推到本地 SVN
 
 ---
 
@@ -119,7 +119,7 @@
 | `scripts/mcp_server.py` | 扩展 | 加 recall_session / current_continuity / record_decision / record_lesson / session_progress 五工具 |
 | `scripts/session_distiller.py` | 扩展 | 读 progress.jsonl 合成完整 digest（此前仅从 transcript 合成） |
 | `.claude/settings.json` | 扩展 | 注册 UserPromptSubmit / PostToolUse hook |
-| `memory/silver-to-blackpool-migration.md` | 新增（Phase C） | 母版迁移指南 |
+| memory/silver-to-blackpool-migration.md | 新增（Phase C，待创建） | 母版迁移指南 |
 
 ---
 
@@ -138,12 +138,12 @@
 
 ### Phase B（~1 周）
 - P5 SVN 账号识别器（`scripts/svn_identity.py`）
-- P6 SVN 会话同步（`scripts/session_svn_sync.py`）
+- P6 SVN 会话同步（`scripts/session_svn_sync.py` ⚠ 待自建）
 - P7 decisions → wiki 导出
 - P8 能力注册表 v1
 
 ### Phase C（~1 月）
-- 母版克隆部署到黑池内网（`memory/silver-to-blackpool-migration.md` 指导）
+- 母版克隆部署到黑池内网（memory/silver-to-blackpool-migration.md 指导，待创建）
 - 黑池侧接入本地 SVN + 本地 graphify 索引
 - 多用户 SVN + 社区事实提炼
 

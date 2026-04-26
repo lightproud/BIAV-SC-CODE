@@ -1,9 +1,23 @@
 {
   "date": "2026-04-17",
-  "archived_at": "2026-04-25T17:38:56.712683+00:00",
+  "archived_at": "2026-04-26T07:25:28.387572+00:00",
   "source": "bilibili",
-  "item_count": 0,
-  "items": [],
-  "_gap_repaired": true,
-  "_note": "Placeholder created by repair_gaps.py — no data was collected for this date."
+  "item_count": 1,
+  "items": [
+    {
+      "title": "这是全世界最悲伤的莫丝，你敢和她对视十秒吗?【难绷相位对弈】",
+      "summary": "感谢莱星老师提供的配队！@莱星Ligh",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-17T00:23:37+00:00",
+      "url": "http://www.bilibili.com/video/av116417185716080",
+      "engagement": 250,
+      "is_hot": false,
+      "author": "碎掉的玻璃小鸟",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
 }
