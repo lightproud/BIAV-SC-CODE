@@ -1326,7 +1326,7 @@ def fetch_weixin():
     items = []
     for keyword in KEYWORDS["zh"]:
         try:
-            resp = _get(
+            resp = _get_cf(
                 "https://weixin.sogou.com/weixin",
                 params={"type": 2, "query": keyword, "ie": "utf8", "s_from": "input", "page": 1},
                 headers={
