@@ -2386,6 +2386,13 @@
       "title": "当你成为沙耶的孩子（ooc致歉）（自行避雷）",
       "time": "2026-04-26T09:35:56+00:00",
       "downloaded_at": "2026-04-26T15:38:08.975958+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/ced4137d524db8541045bd17c463af35692e3ac9.jpg": {
+      "filename": "bilibili_f07fee337736745e.jpg",
+      "source": "bilibili",
+      "title": "第三话 都市暗影",
+      "time": "2026-04-25T20:49:13+00:00",
+      "downloaded_at": "2026-04-26T17:34:30.282934+00:00"
     }
   },
   "failed": {
@@ -3188,6 +3195,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-26T14:44:23.314206+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/ced4137d524db8541045bd17c463af35692e3ac9.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T17:34:30.583879+00:00"
     }
   },
   "archived": []

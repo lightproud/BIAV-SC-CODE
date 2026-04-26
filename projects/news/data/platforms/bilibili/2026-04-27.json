@@ -1,8 +1,8 @@
 {
   "date": "2026-04-27",
-  "archived_at": "2026-04-26T16:35:32.420608+00:00",
+  "archived_at": "2026-04-26T17:34:30.648940+00:00",
   "source": "bilibili",
-  "item_count": 23,
+  "item_count": 25,
   "items": [
     {
       "source": "bilibili",
@@ -303,6 +303,36 @@
         "comments_fetched": 3,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-25T20:49:13+00:00",
+      "lang": "zh",
+      "title": "第三话 都市暗影",
+      "summary": "(此视频不用于商业用途 ai视频制作 只用于休闲娱乐 同人二创 侵权可删)ai理解能力有待改善。。后期我修改了下部分内容 希莱斯特你这原版发型还是很好评的! 最符合人设的一集 等三话播放过100再做新一话doge（其实我是给我一个可以懒的的原因doge） 第四话反派就要登场了\n  └ 卡组大发明家 (0赞): 这是图露，墨菲，小水母和希莱？第一眼把水母认成了原神的芭芭拉[笑哭]墨菲倒是很有存在感，毕竟在我的神国队伍里常驻。",
+      "url": "https://www.bilibili.com/video/BV19ZoRBnEVi",
+      "author": "比较瓜皮",
+      "engagement": 111,
+      "media_url": "https://i2.hdslb.com/bfs/archive/ced4137d524db8541045bd17c463af35692e3ac9.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 105,
+        "comment_count": 6,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-25T20:49:13+00:00",
+      "lang": "zh",
+      "title": "第三话 都市暗影",
+      "summary": "(此视频不用于商业用途 ai视频制作 只用于休闲娱乐 同人二创 侵权可删)ai理解能力有待改善。。后期我修改了下部分内容 希莱斯特你这原版发型还是很好评的! 最符合人设的一集 等三话播放过100再做新一话doge（其实我是给我一个可以懒的的原因doge） 第四话反派就要登场了",
+      "url": "http://www.bilibili.com/video/av116467299258814",
+      "author": "比较瓜皮",
+      "engagement": 105,
+      "media_url": "//i2.hdslb.com/bfs/archive/ced4137d524db8541045bd17c463af35692e3ac9.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
