@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "8507ddbd",
-    "timestamp": "2026-04-25T17:18:35.899000+00:00",
-    "duration_minutes": 17256.2,
+    "id": "907a04d9",
+    "timestamp": "2026-04-26T03:11:28.329000+00:00",
+    "duration_minutes": 17849.0,
     "branch": "HEAD",
     "topics": [
       "日报"
@@ -17,6 +17,23 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "8507ddbd",
+      "timestamp": "2026-04-25T17:18:35.899000+00:00",
+      "duration_minutes": 17256.2,
+      "branch": "HEAD",
+      "topics": [
+        "日报"
+      ],
+      "decisions": [
+        "远程版本。只需保留我们的 session digest 文件"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
+        "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "d2848314",
       "timestamp": "2026-04-25T16:47:38.944000+00:00",
@@ -163,45 +180,19 @@
       "open_items": [
         "改动的风险差异巨大"
       ]
-    },
-    {
-      "id": "1964b96f",
-      "timestamp": "2026-04-16T06:48:12.125000+00:00",
-      "duration_minutes": 2160.8,
-      "branch": "claude/review-ai-app-architecture-4eNiu",
-      "topics": [
-        "BPT",
-        "黑池"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/session-digests/20260415-032059-d84da5ac.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/6b527255-bc1b-43bd-a76d-903fed1c63ba.progress.jsonl"
-      ],
-      "open_items": [
-        "改动的风险差异巨大"
-      ]
     }
   ],
   "momentum": {
     "topic_weights": {
-      "日报": 1.8,
-      "BPT": 1.62,
-      "黑池": 1.62
+      "日报": 2.44,
+      "BPT": 1.3,
+      "黑池": 1.3
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
-      "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/config.mts",
-      "/home/user/brain-in-a-vat/projects/wiki/docs/.vitepress/theme/index.ts",
-      "/home/user/brain-in-a-vat/projects/wiki/docs/index.md",
-      "/home/user/brain-in-a-vat/scripts/generate_wiki_pages.py",
-      "/home/user/brain-in-a-vat/scripts/parse_cg_gallery.py",
-      "/home/user/brain-in-a-vat/scripts/parse_collection_hall.py",
-      "/home/user/brain-in-a-vat/scripts/parse_item_stories.py",
-      "/home/user/brain-in-a-vat/scripts/parse_voice_lines.py"
+      "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py"
     ],
-    "total_sessions": 70
+    "total_sessions": 71
   },
-  "updated_at": "2026-04-25T17:22:19.976400+00:00"
+  "updated_at": "2026-04-26T03:14:48.814077+00:00"
 }
