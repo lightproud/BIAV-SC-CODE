@@ -15,6 +15,7 @@ htmlcov/
 .DS_Store
 .claude/*
 !.claude/commands/
+!.claude/hooks/
 !.claude/settings.json
 
 # global_collectors runtime output (if run standalone)
