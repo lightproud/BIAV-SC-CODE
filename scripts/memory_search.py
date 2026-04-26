@@ -704,6 +704,14 @@ def graph_proximity_score(file_path: str, query: str) -> float:
         return 0.4
 
 
+def doc_class_weight(file_path: str) -> float:
+    """Lower weight for noisy doc classes (session-digests dominate TF-IDF
+    with repeated grep/JSON snippets). 1.0 = neutral, < 1.0 = downscale."""
+    if "/session-digests/" in file_path:
+        return 0.4
+    return 1.0
+
+
 def rerank(candidates: list[dict], query: str, weights: dict = None) -> list[dict]:
     """Multi-dimension reranking.
 
@@ -721,18 +729,22 @@ def rerank(candidates: list[dict], query: str, weights: dict = None) -> list[dic
         rec = recency_score(file_path)
         acc = access_frequency_score(file_path)
         gph = graph_proximity_score(file_path, query)
+        cls = doc_class_weight(file_path)
 
         c["scores"] = {
             "semantic": round(sem, 4),
             "recency": round(rec, 4),
             "access": round(acc, 4),
             "graph": round(gph, 4),
+            "class": round(cls, 4),
         }
         c["final_score"] = round(
-            w["semantic"] * sem
-            + w["recency"] * rec
-            + w["access"] * acc
-            + w["graph"] * gph,
+            cls * (
+                w["semantic"] * sem
+                + w["recency"] * rec
+                + w["access"] * acc
+                + w["graph"] * gph
+            ),
             4,
         )
 
