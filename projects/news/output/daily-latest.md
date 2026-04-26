@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-27
 
-> 采集时间：2026-04-27 01:34 UTC+8
+> 采集时间：2026-04-27 02:39 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 218
+1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 240
 
 ## 总览
 
@@ -13,7 +13,7 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 25 |
+| Bilibili | 27 |
 | Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（沉默）|
@@ -23,7 +23,7 @@
 | Official | 0（沉默）|
 | Pixiv | 1 |
 | Reddit | 26 |
-| Ruliweb | 0（沉默）|
+| Ruliweb | 1 |
 | Steam | 7 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
@@ -32,7 +32,7 @@
 | Telegram | 0（沉默）|
 | 微博 | 15 |
 | 微信公众号 | 0（沉默）|
-| YouTube | 1 |
+| YouTube | 2 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -64,11 +64,11 @@
 
 ## Bilibili
 
-1. 我们都是肉做的 — engagement: 3306
-2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 469
-3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 463
-4. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 359
-5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 350
+1. 我们都是肉做的 — engagement: 3352
+2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 479
+3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 473
+4. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 382
+5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 372
 
 ## Pixiv
 
@@ -82,6 +82,10 @@
 4. wtf man!! what kind of health bar is this??😫help dawg — engagement: 0
 5. Anyone playing without pulling gacha? — engagement: 0
 
+## Ruliweb
+
+1. 여러분 D4DJ아시나요?아리스기어아이기스아시나요?팬텀로즈라고아시나요? — engagement: 0
+
 ## StopGame.ru
 
 1. [StopGame] Morimens — 3.9/10 (0 оценок) — engagement: 0
@@ -92,20 +96,21 @@
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜┊唤醒体展示✦徐
+3. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
+
+忘却前夜 — engagement: 0
+4. 忘却前夜┊唤醒体展示✦徐
 妾身乃不梦乡之主，徐。
 若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
 
 ✦ 徐 CV： — engagement: 0
-4. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
-
-忘却前夜 — engagement: 0
-5. 【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所 — engagement: 0
+5. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
 
 ## YouTube
 
-1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 259
+1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 261
+2. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 104
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎

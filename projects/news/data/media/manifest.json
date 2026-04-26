@@ -2393,6 +2393,13 @@
       "title": "第三话 都市暗影",
       "time": "2026-04-25T20:49:13+00:00",
       "downloaded_at": "2026-04-26T17:34:30.282934+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/0a12c3ec9b3cbd4436e7bdb0cc9e761ec53dd112.jpg": {
+      "filename": "bilibili_2c0c315550fb3970.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】2026.4.26融灾425全唤醒体登场率分析",
+      "time": "2026-04-26T15:35:58+00:00",
+      "downloaded_at": "2026-04-26T18:39:30.830931+00:00"
     }
   },
   "failed": {
@@ -3200,6 +3207,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-26T17:34:30.583879+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/0a12c3ec9b3cbd4436e7bdb0cc9e761ec53dd112.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T18:39:31.131561+00:00"
     }
   },
   "archived": []
