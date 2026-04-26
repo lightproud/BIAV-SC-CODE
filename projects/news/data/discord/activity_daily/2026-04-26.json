@@ -1,199 +1,215 @@
 {
   "date": "2026-04-26",
-  "messages": 561,
-  "unique_authors": 66,
-  "reactions_total": 24,
-  "attachments": 42,
+  "messages": 2987,
+  "unique_authors": 168,
+  "reactions_total": 268,
+  "attachments": 203,
   "channel_activity": {
-    "🔸綜合討論": 17,
-    "🔸morimens-game-chat": 368,
+    "🔸綜合討論": 482,
+    "🔸morimens-game-chat": 1715,
+    "🔸剧情交流": 12,
+    "🔸课间休息闲聊": 4,
+    "🔸交友频道": 1,
+    "🔸русский-канал": 21,
+    "🔸phòng-chat-tiếng-việt": 63,
+    "🔸canal-español": 11,
+    "🔸canal-português": 136,
+    "🔸ruang-obrolan-indonesia": 176,
+    "🔸ห้องสนทนาภาษาไทย": 10,
+    "🔸lore-chat": 74,
+    "🔸team-building": 26,
+    "🔸general-chat": 44,
+    "🔸邀请码互助┊swap-invitation-codes": 3,
+    "🔸game-question": 157,
+    "🔸机器人命令┊bot-commands": 5,
+    "Encouraging use of the official PC client": 1,
+    "歸檔呢": 2,
+    "这什么情况": 2,
+    "Reality Verges": 3,
+    "Can we change PvP seasonal rewards condition to *participate* instead?": 18,
+    "✅「Answered」Possibilities of Doresain kit rework": 4,
+    "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
+    "V2.5.0.0 停服维护公告": 1,
+    "doreposting / unserious doodles": 1,
+    "【English Translation】Opinions Collection": 1,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
     "🔸晒卡分享": 1,
     "🔸한국어-채팅방": 1,
-    "🔸русский-канал": 5,
-    "🔸phòng-chat-tiếng-việt": 8,
-    "🔸canal-español": 5,
-    "🔸canal-português": 114,
-    "🔸ruang-obrolan-indonesia": 2,
-    "🔸lore-chat": 3,
-    "🔸team-building": 3,
-    "🔸general-chat": 4,
-    "🔸邀请码互助┊swap-invitation-codes": 1,
-    "🔸game-question": 7,
-    "🔸机器人命令┊bot-commands": 3,
-    "Reality Verges": 1,
     "塔薇最终法则/Tawil's Absolute Axiom BUG": 2,
-    "Can we change PvP seasonal rewards condition to *participate* instead?": 11,
     "PVE players don't want Traphase": 4,
     "V2.5.0 命运剧院┊Theater of Fate": 1
   },
   "hourly_activity": {
-    "0": 381,
-    "1": 180
+    "1": 549,
+    "2": 923,
+    "3": 793,
+    "4": 341,
+    "0": 381
   },
   "message_types": {
-    "19": 184,
-    "0": 377
+    "0": 1765,
+    "19": 661
   },
   "top_reacted_messages": [
     {
-      "id": "1497761147150008462",
+      "id": "1497814008886067384",
+      "channel_id": "1131839817982947429",
+      "content": "Btw我終於+12了",
+      "author": "yusi4172",
+      "reactions": 9,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497814043937865828",
+      "channel_id": "1131839817982947429",
+      "content": "我恨忘卻前夜",
+      "author": "yusi4172",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497794312866365501",
+      "channel_id": "1326453763355185215",
+      "content": "||Also the writers couldn’t make it more obvious they have no idea what to do wi",
+      "author": "idkmyusername4481",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1497800953171153028",
+      "channel_id": "1131839817982947429",
+      "content": "守密智商依舊上上下下左左右右baba反覆橫跳嗎",
+      "author": "foxcatfurry",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497804686613282816",
+      "channel_id": "1131839817982947429",
+      "content": "~~所以我要每次指責你啊~~",
+      "author": "foxcatfurry",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497801372211478618",
+      "channel_id": "1131839817982947429",
+      "content": "困難看看",
+      "author": "navirecorbeau",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497803181759922358",
+      "channel_id": "1131839817982947429",
+      "content": "我以為維度獵犬呢",
+      "author": "hon_ey0",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497803801006964807",
+      "channel_id": "1131839817982947429",
+      "content": "至少他是做球不是針對嗎（看看弗蘭",
+      "author": "foxcatfurry",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497785468388118601",
+      "channel_id": "1194835209242296410",
+      "content": "我也能助戰角色換著來了<:happy:1356053849894420683>",
+      "author": "cameliia._.",
+      "reactions": 4,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1497801711484534866",
+      "channel_id": "1131839817982947429",
+      "content": "反正就是平推",
+      "author": "navirecorbeau",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497804102351061082",
+      "channel_id": "1131839817982947429",
+      "content": "为了让每个玩家都能享受我们会让这怪物开局自带100加固\n然后每回合减10加固同时生一根触手",
+      "author": "be_queitplease",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497804798752329769",
+      "channel_id": "1131839817982947429",
+      "content": "350蛀蟲已嚴肅剿滅",
+      "author": "hon_ey0",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497771262544580782",
       "channel_id": "1170692781216378960",
-      "content": "if you dont stream im telling nell",
-      "author": "princess.goth",
-      "reactions": 2,
+      "content": "I should drink tonight",
+      "author": "necronomikkon",
+      "reactions": 3,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497766677415198941",
-      "channel_id": "1170692781216378960",
-      "content": "I just...\n\nUffff feels good to whale",
-      "author": "climbkaly",
-      "reactions": 2,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497749239025893568",
-      "channel_id": "1170692781216378960",
+      "id": "1497783545110859936",
+      "channel_id": "1131839817982947429",
       "content": "",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "author": "cameliia._.",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497749274123829268",
-      "channel_id": "1170692781216378960",
-      "content": "Apparently bluewill. \n\nThere was a new player here a few days ago who did all st",
-      "author": "climbkaly",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "id": "1497784218116161536",
+      "channel_id": "1131839817982947429",
+      "content": "他就怪怪的",
+      "author": "kemomimi_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497756995845881927",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "id": "1497784583998017678",
+      "channel_id": "1131839817982947429",
+      "content": "~~那也比你好，没人爱的家伙~~",
+      "author": "kemomimi_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497757631329337456",
-      "channel_id": "1170692781216378960",
-      "content": "running corpo",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "id": "1497785754812678315",
+      "channel_id": "1131839817982947429",
+      "content": "你变了...",
+      "author": "kemomimi_",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497758882229911756",
-      "channel_id": "1170692781216378960",
-      "content": "you went for lvl90 erica????",
-      "author": "princess.goth",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "id": "1497798504213516308",
+      "channel_id": "1131839817982947429",
+      "content": "0启杜勒吗",
+      "author": "catlan_33586",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497759002304708699",
-      "channel_id": "1170692781216378960",
-      "content": "Erica is really fun <:erica_ok:1334005213480095806>",
-      "author": "cornonthemacabre_",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
+      "id": "1497804844797526179",
+      "channel_id": "1131839817982947429",
+      "content": "我今天直接不去了",
+      "author": "sayo.0320",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     },
     {
-      "id": "1497762868546768916",
-      "channel_id": "1170692781216378960",
-      "content": "and thats close",
-      "author": "khykken",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497763478285320282",
-      "channel_id": "1170692781216378960",
-      "content": "mahjong is kinda like chinese balatro",
-      "author": "arisuu0604",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497764390194249880",
-      "channel_id": "1170692781216378960",
-      "content": "bc i was born earlier",
-      "author": "blecnes.",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497766668221546649",
-      "channel_id": "1170692781216378960",
-      "content": "im starting that its cursed. Im very tempted to pyramid my winkle too",
-      "author": "l8989c",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497767271991345304",
-      "channel_id": "1170692781216378960",
-      "content": "Grace through pain isn't displayed right? So thats 48% base +25% with a few 5%s ",
-      "author": "kinbote.",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497767495354810459",
-      "channel_id": "1170692781216378960",
-      "content": "its strike crit though",
-      "author": "cornonthemacabre_",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497768356529442827",
-      "channel_id": "1170692781216378960",
-      "content": "Rolled aigis map, gg blue tawil won p dive",
-      "author": "aurora3981",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497768535512977569",
-      "channel_id": "1170692781216378960",
-      "content": "Guys, I turned on my spotify and I thought I saw arachne",
-      "author": "l8989c",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497768906553557162",
-      "channel_id": "1170692781216378960",
-      "content": "my hand when i play uno with friends <@296679098703544321>",
-      "author": "arisuu0604",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497768969652932629",
-      "channel_id": "1170692781216378960",
-      "content": "ohmygod idk which card is mortal",
-      "author": "arisuu0604",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497769498642616370",
-      "channel_id": "1170692781216378960",
-      "content": "hi kaly",
-      "author": "arisuu0604",
-      "reactions": 1,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497761380038869053",
-      "channel_id": "1300659718653476925",
-      "content": "Tamo aqui pra isso",
-      "author": "lordfelipe0827_59720",
-      "reactions": 1,
-      "channel": "🔸canal-português"
+      "id": "1497808838802538549",
+      "channel_id": "1131839817982947429",
+      "content": "洗的好那得叫爸爸洗不好那叫路邊一條",
+      "author": "hon_ey0",
+      "reactions": 2,
+      "channel": "🔸綜合討論"
     }
   ]
 }
