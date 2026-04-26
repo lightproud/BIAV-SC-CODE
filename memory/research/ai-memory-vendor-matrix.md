@@ -76,6 +76,33 @@
 **适配难度**：中-高。`scripts/memory_writeback.py` 已检测 git 变更并提取知识，扩展为「会话结束触发 LLM 事实萃取」可借鉴 Mem0 的方法，但要求 API 预算。
 
 - [§ 2.3 Zep / Graphiti](#23-zep--graphiti)
+
+### 2.3 Zep / Graphiti
+
+**来源**：Zep 公司商业产品 + 开源核心 Graphiti（arXiv 2501.13956）
+**核心定位**：**时序知识图谱**记忆——信息有「何时为真 / 何时被推翻」的明确时间窗口
+**架构**：
+- **Graphiti 引擎**（OSS）：bi-temporal 图谱，每条边带 `(t_valid, t_invalid)` 双时间戳
+- **Zep 平台**（商业）：在 Graphiti 之上提供托管 + 低延迟检索
+- **Neo4j 后端**为主，可换其他图数据库
+
+**关键创新**：bi-temporal 模型——同时记录「事件何时发生」与「事件何时被纳入图谱」。某条事实被新事实推翻时，老边不删除，只标记 `t_invalid`，**保留历史可追溯**。
+
+**官方 benchmark**（LongMemEval）：
+- 准确率提升 **+18.5%**（vs full-context / vector-only）
+- 平均 context tokens 11.5 万 → **1600**
+- 响应延迟 29-31 s → **2.5-3.2 s**
+- 在 Deep Memory Retrieval（DMR）基准上**超越 MemGPT**
+
+**银芯映射**：
+- 银芯 `decisions.md` 当前用「~~已废除~~」strikethrough + 历史归档**人工**模拟 supersession——Graphiti 这个机制是**结构化的边时间戳**
+- 银芯 `knowledge_graph.py` 节点类型有 Decision (141) / File / Character / Concept，但**没有时间戳维度**
+- v2.0「银芯重新定位」覆盖 v1.1 → 这种「新决策覆盖旧决策」正是 bi-temporal 模型的本职场景
+
+**银芯缺失**：图谱**时间维度**。当前 565 条边都是「永远成立」的，无法表达「这条决策已在 X 日被覆盖」「这条 lesson 已在 Y 日不再适用」。
+
+**适配难度**：高。要么引入 Graphiti（Python，需 Neo4j）当外挂，要么自建 bi-temporal 边模型。引入 Graphiti 是「替代」9 模块图谱的大动作；自建是中等增量改造。
+
 - [§ 2.4 Cognee](#24-cognee)
 - [§ 2.5 Cursor 项目记忆](#25-cursor-项目记忆)
 - [§ 2.6 claude-mem](#26-claude-mem)
