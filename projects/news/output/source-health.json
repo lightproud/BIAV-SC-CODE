@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-26T08:14:30.819072+00:00",
+  "updated_at": "2026-04-26T09:46:42.636682+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -18,7 +18,7 @@
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 342,
+      "total_items": 349,
       "errors": []
     },
     "nga": {
@@ -32,7 +32,7 @@
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 252,
+      "total_items": 253,
       "errors": []
     },
     "official": {
@@ -46,21 +46,21 @@
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 371,
+      "total_items": 372,
       "errors": []
     },
     "discord": {
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 1039818,
+      "total_items": 1040855,
       "errors": []
     },
     "weibo": {
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 220,
+      "total_items": 228,
       "errors": []
     },
     "tieba": {
@@ -81,7 +81,7 @@
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 230,
+      "total_items": 250,
       "errors": []
     },
     "arca_live": {
