@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-04-26T14:44:24.302650+00:00",
-  "seeded_from": "silent_sources_audit",
+  "updated_at": "2026-04-26T15:05:52.876340+00:00",
+  "seeded_from": "manual_reset_2026-04-26",
   "audit_window": {
     "start": "2016-02-03",
     "end": "2026-04-26",
@@ -22,9 +22,9 @@
       "errors": []
     },
     "nga": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
@@ -63,17 +63,10 @@
       "total_items": 291,
       "errors": []
     },
-    "tieba": {
-      "level": "dormant",
-      "last_success_date": null,
-      "consecutive_silent_days": 3736,
-      "total_items": 0,
-      "errors": []
-    },
     "bahamut": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
@@ -85,16 +78,16 @@
       "errors": []
     },
     "arca_live": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
     "fivech": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
@@ -119,13 +112,6 @@
       "total_items": 154,
       "errors": []
     },
-    "lofter": {
-      "level": "dormant",
-      "last_success_date": null,
-      "consecutive_silent_days": 3736,
-      "total_items": 0,
-      "errors": []
-    },
     "telegram": {
       "level": "degraded",
       "last_success_date": "2026-04-09",
@@ -133,38 +119,17 @@
       "total_items": 3,
       "errors": []
     },
-    "qooapp": {
-      "level": "dormant",
-      "last_success_date": null,
-      "consecutive_silent_days": 3736,
-      "total_items": 0,
-      "errors": []
-    },
-    "epic": {
-      "level": "dormant",
-      "last_success_date": null,
-      "consecutive_silent_days": 3736,
-      "total_items": 0,
-      "errors": []
-    },
     "note_com": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
     "ruliweb": {
-      "level": "dormant",
+      "level": "active",
       "last_success_date": null,
-      "consecutive_silent_days": 3736,
-      "total_items": 0,
-      "errors": []
-    },
-    "vkplay": {
-      "level": "dormant",
-      "last_success_date": null,
-      "consecutive_silent_days": 3736,
+      "consecutive_silent_days": 0,
       "total_items": 0,
       "errors": []
     },
@@ -175,18 +140,32 @@
       "total_items": 9,
       "errors": []
     },
-    "gacharevenue": {
-      "level": "dormant",
-      "last_success_date": null,
-      "consecutive_silent_days": 3736,
-      "total_items": 0,
-      "errors": []
-    },
     "weixin": {
       "level": "active",
       "last_success_date": "2026-04-25",
       "consecutive_silent_days": 1,
       "total_items": 1208,
+      "errors": []
+    },
+    "zhihu": {
+      "level": "active",
+      "last_success_date": null,
+      "consecutive_silent_days": 0,
+      "total_items": 0,
+      "errors": []
+    },
+    "naver_cafe": {
+      "level": "active",
+      "last_success_date": null,
+      "consecutive_silent_days": 0,
+      "total_items": 0,
+      "errors": []
+    },
+    "taptap": {
+      "level": "active",
+      "last_success_date": null,
+      "consecutive_silent_days": 0,
+      "total_items": 0,
       "errors": []
     }
   }
