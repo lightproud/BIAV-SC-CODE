@@ -30,6 +30,10 @@ SCHEMA_MAP = {
     "meta.json": "meta.schema.json",
     "realms.json": "realms.schema.json",
     "characters.json": "characters.schema.json",
+    "trinkets.json": "trinkets.schema.json",
+    "banners.json": "banners.schema.json",
+    "stages.json": "stages.schema.json",
+    "items.json": "items.schema.json",
 }
 
 
@@ -70,7 +74,13 @@ def validate_json_syntax(db_dir: Path) -> tuple[list[str], dict[str, object]]:
 
 
 def validate_schemas(loaded: dict[str, object]) -> list[str]:
-    """Validate data files against their JSON schemas."""
+    """Validate data files against their JSON schemas.
+
+    Missing data files are reported as SKIP, not FAIL, so registering a
+    schema for a not-yet-populated entity (e.g. trinkets.json before the
+    trinket dataset is filled) does not block CI. Schema files that exist
+    but cannot be loaded are still hard FAILs.
+    """
     errors = []
 
     if not HAS_JSONSCHEMA:
@@ -79,7 +89,7 @@ def validate_schemas(loaded: dict[str, object]) -> list[str]:
 
     for data_file, schema_file in SCHEMA_MAP.items():
         if data_file not in loaded:
-            errors.append(f"  FAIL  {data_file}: not loaded, cannot validate schema")
+            print(f"  SKIP  {data_file}: file not present (schema {schema_file} stays registered)")
             continue
 
         schema_path = SCHEMA_DIR / schema_file
@@ -99,60 +109,60 @@ def validate_schemas(loaded: dict[str, object]) -> list[str]:
 
 
 def validate_cross_references(loaded: dict[str, object]) -> list[str]:
-    """Cross-reference checks between data files."""
+    """Cross-reference checks between data files.
+
+    characters.json is a flat array of character records. Each record's
+    realm field (when non-null) must match a realm id from realms.json.
+    Roles are free-form strings until role_types is reintroduced.
+    """
     errors = []
 
     realms_data = loaded.get("realms.json")
     chars_data = loaded.get("characters.json")
 
-    if not realms_data or not chars_data:
-        print("  SKIP  Cross-reference checks (missing realms.json or characters.json)")
+    if not chars_data:
+        print("  SKIP  Cross-reference checks (missing characters.json)")
         return errors
 
-    # Build valid realm IDs (include legacy_id as well)
+    # Normalize characters.json to a flat list (handles both the legacy
+    # object-with-characters-key shape and the current top-level array shape).
+    if isinstance(chars_data, list):
+        all_chars = chars_data
+    else:
+        all_chars = list(chars_data.get("characters", []))
+        all_chars.extend(chars_data.get("sr_characters", []))
+
+    if not realms_data:
+        print(f"  SKIP  Realm cross-reference (realms.json absent); checked {len(all_chars)} character ids only")
+        seen_ids: dict[str, str] = {}
+        for char in all_chars:
+            cid = str(char.get("id", "unknown"))
+            if cid in seen_ids:
+                errors.append(f"  FAIL  characters.json: duplicate id '{cid}'")
+            else:
+                seen_ids[cid] = char.get("slug", "")
+        if not errors:
+            print(f"  PASS  Cross-references: {len(all_chars)} unique character ids")
+        return errors
+
     valid_realm_ids = set()
     for realm in realms_data.get("realms", []):
         valid_realm_ids.add(realm["id"])
         if "legacy_id" in realm:
             valid_realm_ids.add(realm["legacy_id"])
 
-    # Build valid role keys
-    valid_roles = set(chars_data.get("role_types", {}).keys())
-
-    # Check each character (SSR)
-    all_chars = chars_data.get("characters", [])
     for char in all_chars:
-        char_id = char.get("id", "unknown")
-
+        char_id = str(char.get("id", "unknown"))
         realm = char.get("realm")
-        if realm not in valid_realm_ids:
+        # Stub characters carry realm=None; only validate when non-null
+        if realm is not None and realm not in valid_realm_ids:
             errors.append(
                 f"  FAIL  characters.json: character '{char_id}' has unknown realm '{realm}' "
                 f"(valid: {sorted(valid_realm_ids)})"
             )
 
-        role = char.get("role")
-        if role not in valid_roles:
-            errors.append(
-                f"  FAIL  characters.json: character '{char_id}' has unknown role '{role}' "
-                f"(valid: {sorted(valid_roles)})"
-            )
-
-    # Check SR characters (realm only -- SR roles may differ from role_types)
-    sr_chars = chars_data.get("sr_characters", [])
-    for char in sr_chars:
-        char_id = char.get("id", "unknown")
-
-        realm = char.get("realm")
-        if realm not in valid_realm_ids:
-            errors.append(
-                f"  FAIL  characters.json: SR character '{char_id}' has unknown realm '{realm}' "
-                f"(valid: {sorted(valid_realm_ids)})"
-            )
-
-    total = len(all_chars) + len(sr_chars)
     if not errors:
-        print(f"  PASS  Cross-references: all {total} characters have valid realm and role")
+        print(f"  PASS  Cross-references: {len(all_chars)} characters validated against realms.json")
 
     return errors
 

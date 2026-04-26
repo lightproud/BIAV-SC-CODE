@@ -1,9 +1,32 @@
 # Wiki 子项目上下文
 
-> 最后更新：2026-04-26 by 主控台（艾瑞卡会话，写入 4-26 银芯重新定位 v2.0 wiki 新使命）
+> 最后更新：2026-04-26 by Code-wiki（Phase 0 数据底座已落盘，Mooncell 对标启动）
 
 ## 负责会话
 Code-wiki
+
+## Mooncell 对标 Phase 0 已完成（2026-04-26）
+
+> 蓝图档案：`/root/.claude/plans/wiki-fgo-wiki-eager-candle.md`（5 阶段路线图）
+
+**本次落盘内容**：
+- **新 schema**（`data/schemas/`）：`trinkets.schema.json`、`banners.schema.json`、`stages.schema.json`、`items.schema.json`
+- **schema 重写**：`characters.schema.json` 旧版与现实数据形态完全脱节（顶层对象 vs 顶层数组），已重写为顶层 array 形态并叠加 Mooncell 目标字段（trinkets_recommended / ascension_materials / bond_rewards / stat_growth_curve / affinities / voice_line_refs / cg_refs），向后兼容 anyOf("pending" | object) 模式
+- **空 stub 数据档**（`data/db/`）：trinkets.json / banners.json / stages.json / items.json 全部以最小必填形态通过 jsonschema 校验
+- **反向索引脚本**（`scripts/`）：
+  - `build_drop_index.py` → 写入 `data/processed/drops_by_item.json`（当前 0 stage 扫描，db/stages.json 待 Phase 3 填）
+  - `build_banner_character_index.py` → 写入 `data/processed/banners_by_character.json`（已匹配 41/366 banner，6/24 角色）
+- **校验升级**：
+  - CI 校验（`scripts/validate_data.py`）：注册 4 份新 schema，缺失文件改 SKIP（修复历史 CI 红：meta.json/realms.json 从未存在）
+  - fact-bible 校验（`assets/data/validate.py`）：从 7 项扩至 13 项（schema 形态一致性 + 神器/卡池/掉落/skills 缺口基线）
+- **CI workflow**：`.github/workflows/validate-data.yml` 路径已覆盖 `projects/wiki/data/**`，无需改动
+
+**当前缺口基线**（fact-bible audit 报表）：
+- 角色总数 24/63（差 39）
+- skills 非 pending 率 0/24
+- 神器 effect / 卡池数值化 / 关卡反向索引 三项均为「空 stub 待填」基线
+
+**下一步阻塞 Phase 1（艾瑞卡垂直切片）**：需先派批 2/3 完成 72 角色基线，并在 `assets/data/character-personas/` 之外为艾瑞卡补 skills/trinkets/ascension_materials 实数据。
 
 ## v2.0 新使命定位（2026-04-26 起）
 
@@ -93,10 +116,15 @@ python scripts/content_db.py
 - [ ] 验收：72 角色完整 + 至少 1 种贡献流程跑通 1 轮
 
 ## 验证清单
-- [ ] `data/db/characters.json` 通过 `data/schemas/characters.schema.json`（或 v1.0 新 schema）校验
+- [x] `data/db/characters.json` 通过 `data/schemas/characters.schema.json` 校验（2026-04-26 Phase 0）
+- [x] CI 校验脚本 `scripts/validate_data.py` 退出码 0（5/5 schemas 校验通过）
 - [ ] characters.json 角色数量 = 72（Phase 2 自举后）
 - [ ] VitePress 能本地启动无报错
 - [ ] 三语目录结构一致（zh/en/ja 页面数量相近）
+- [ ] `db/trinkets.json` 填入 29 条（Phase 3）
+- [ ] `db/stages.json` 填入主线/活动关卡（Phase 3）
+- [ ] `db/items.json` 填入 375+ 物品（Phase 3，从 processed/item_stories.json 整理）
+- [ ] `db/banners.json` 填入 366 卡池（Phase 3，从 processed/summon.json 数值化）
 
 ## 给 Code 会话的指令
 - 工作目录：`projects/wiki/`

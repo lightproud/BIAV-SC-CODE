@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "items.schema.json",
+  "title": "Morimens Items",
+  "description": "Item / material database for Morimens. Curated authoritative item records with categories and reverse drop-source index, distinct from raw extraction in projects/wiki/data/processed/item_stories.json.",
+  "type": "object",
+  "required": ["description", "categories", "items"],
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "categories": {
+      "type": "object",
+      "additionalProperties": { "$ref": "#/$defs/category" },
+      "description": "Item category definitions, keyed by category id"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/item"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "category": {
+      "type": "object",
+      "required": ["name", "description"],
+      "properties": {
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "obtain_source": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["banner", "stage", "exchange", "task", "event", "story", "login", "other"]
+        },
+        "ref_id": {
+          "type": ["string", "integer"],
+          "description": "Foreign key id matching the source type (banner id / stage id / etc)"
+        },
+        "note": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "item": {
+      "type": "object",
+      "required": ["id", "name", "category", "description"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "source_id": {
+          "type": "integer",
+          "description": "Numeric id from extracted Lua tables, when available"
+        },
+        "name": { "type": "string" },
+        "name_en": { "type": "string" },
+        "name_ja": { "type": "string" },
+        "category": {
+          "type": "string",
+          "description": "Foreign key to categories object"
+        },
+        "rarity": {
+          "type": "string",
+          "enum": ["SSR", "SR", "R", "N", "common", "rare", "epic", "legendary"]
+        },
+        "description": { "type": "string" },
+        "usage": {
+          "type": "string",
+          "description": "What the item is used for (ascension / skill upgrade / exchange / etc)"
+        },
+        "obtain_sources": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/obtain_source" }
+        },
+        "drop_stages": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "description": "Reverse-index stage ids that drop this item; populated by build_drop_index.py"
+        },
+        "icon_url": {
+          "type": ["string", "null"]
+        },
+        "lore": { "type": "string" },
+        "story_ref_id": {
+          "type": "integer",
+          "description": "Cross-reference to processed/item_stories.json all_items entry id"
+        },
+        "last_verified": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
