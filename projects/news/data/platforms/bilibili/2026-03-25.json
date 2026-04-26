@@ -1,0 +1,38 @@
+{
+  "date": "2026-03-25",
+  "archived_at": "2026-04-26T13:59:55.882240+00:00",
+  "source": "bilibili",
+  "item_count": 2,
+  "items": [
+    {
+      "title": "100抽4地瓜",
+      "summary": "-",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-03-25T15:34:35+00:00",
+      "url": "http://www.bilibili.com/video/av116290517732295",
+      "engagement": 781,
+      "is_hot": false,
+      "author": "欧_金金",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "【忘却前夜】等神图（3.25）",
+      "summary": "唉，保底！",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-03-25T15:47:59+00:00",
+      "url": "http://www.bilibili.com/video/av116290584905872",
+      "engagement": 108,
+      "is_hot": false,
+      "author": "家有神鸟一只",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
+}
