@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-26T10:38:57.902649+00:00",
-  "total_gaps": 5173,
+  "generated_at": "2026-04-26T11:35:20.266270+00:00",
+  "total_gaps": 5174,
   "platforms": {
     "appstore": {
       "missing_dates": [
@@ -1508,6 +1508,7 @@
     },
     "steam_review": {
       "missing_dates": [
+        "2024-09-02",
         "2025-01-28",
         "2025-01-31",
         "2025-02-03",
@@ -1522,7 +1523,7 @@
         "2025-09-20",
         "2025-10-11"
       ],
-      "count": 13
+      "count": 14
     },
     "stopgame": {
       "missing_dates": [

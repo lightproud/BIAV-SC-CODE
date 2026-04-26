@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-26T10:38:57.831852+00:00",
+  "archived_at": "2026-04-26T11:35:20.210532+00:00",
   "source": "bilibili",
-  "item_count": 57,
+  "item_count": 60,
   "items": [
     {
       "source": "bilibili",
@@ -633,6 +633,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-26T11:05:20+00:00",
+      "lang": "zh",
+      "title": "［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近）",
+      "summary": "-\n  └ 霜樱_ (1赞): 这期不学了伤痛没抽出来[吃瓜]\n  └ 型唯亚 (1赞): 吓哭了\n  └ 西式嫩蛋 (1赞): 这么强吗",
+      "url": "https://www.bilibili.com/video/BV1tVZFBoE65",
+      "author": "莱星Ligh",
+      "engagement": 55,
+      "media_url": "https://i1.hdslb.com/bfs/archive/c75586afe3d940bc8acfcdf23b78f1631abfe978.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 49,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-26T02:57:44+00:00",
       "lang": "zh",
       "title": "【忘却前夜/调查行动】织命剧场Part10 温柔的枷锁",
@@ -648,6 +666,18 @@
         "comments_fetched": 0,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T11:05:20+00:00",
+      "lang": "zh",
+      "title": "［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近）",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116470671606851",
+      "author": "莱星Ligh",
+      "engagement": 49,
+      "media_url": "//i1.hdslb.com/bfs/archive/c75586afe3d940bc8acfcdf23b78f1631abfe978.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -840,6 +870,24 @@
       "engagement": 6,
       "media_url": "//i2.hdslb.com/bfs/archive/7fc8eace68c5822f0fd128006187219b32a4e7fd.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T11:00:00+00:00",
+      "lang": "zh",
+      "title": "当耕司来找郁纪时……",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV12AoJB3EfW",
+      "author": "战斗至最后一刻的Marine",
+      "engagement": 2,
+      "media_url": "https://i2.hdslb.com/bfs/archive/6bae92291ca560e441879f987d5e2edd9bf85c40.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 2,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
