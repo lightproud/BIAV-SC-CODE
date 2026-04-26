@@ -61,17 +61,13 @@ KNOWN_SOURCES = [
     'steam',
     'taptap',
     'discord',
-    'twitter',
     'youtube',
     'reddit',
     'nga',
     'official',
     'steam_discussion',
-    # Phase 1: 全球扩展平台
+    # 全球扩展平台
     'weibo',
-    'xiaohongshu',
-    'douyin',
-    'tieba',
     'zhihu',
     'bahamut',
     'naver_cafe',
@@ -80,27 +76,14 @@ KNOWN_SOURCES = [
     'fivech',
     'appstore',
     'google_play',
-    'tiktok',
     'pixiv',
-    'lofter',
-    'xianyu',
-    'taobao',
-    'qq',
-    'facebook',
     'telegram',
-    'twitch',
-    'instagram',
-    'qooapp',
-    'epic',
     # 日语扩展
     'note_com',
     # 韩语扩展
     'ruliweb',
     # 俄语平台
-    'vkplay',
     'stopgame',
-    # 全球英语
-    'gacharevenue',
     # 中文补充
     'weixin',
 ]
