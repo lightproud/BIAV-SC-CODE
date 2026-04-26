@@ -19,13 +19,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../design/morimens-design-tokens.css">
 <style>
   :root {
-    --bg:#0a0b10;--bg2:#0f1018;
-    --gold:#c5a356;--gold-l:#e2c97e;--gold-d:#8a7340;
-    --txt:#f0ebe0;--txt-m:#b5aa98;--txt-d:#7a7265;
-    --serif:'Noto Serif SC',serif;--sans:'Noto Sans SC',sans-serif;
-    --border:rgba(197,163,86,0.08);
+    --bg:var(--m-bg-abyss,#0a0b10);--bg2:var(--m-bg-surface,#0f1018);
+    --gold:var(--m-gold-primary,#c5a356);--gold-l:var(--m-gold-light,#e2c97e);--gold-d:var(--m-gold-dim,#8a7340);
+    --txt:var(--m-text-primary,#f0ebe0);--txt-m:var(--m-text-muted,#b5aa98);--txt-d:var(--m-text-dim,#7a7265);
+    --serif:var(--m-font-title,'Noto Serif SC',serif);--sans:var(--m-font-body,'Noto Sans SC',sans-serif);
+    --border:var(--m-border-subtle,rgba(197,163,86,0.08));
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
