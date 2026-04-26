@@ -41,9 +41,10 @@ jobs:
     timeout-minutes: 10
     # 每次 cron 都跑浅睡；手动触发时按 input 决定
     if: >-
-      github.event_name == 'schedule' ||
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'schedule' ||
       (github.event_name == 'workflow_dispatch' &&
-       (inputs.layer == 'shallow' || inputs.layer == 'all'))
+       (inputs.layer == 'shallow' || inputs.layer == 'all')))
     steps:
       - uses: actions/checkout@v6
         with:
@@ -234,9 +235,10 @@ jobs:
     needs: shallow-sleep
     # 深睡：每天 19:00 UTC cron 或手动触发
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '0 19 * * *') ||
+      github.ref == 'refs/heads/main' &&
+      ((github.event_name == 'schedule' && github.event.schedule == '0 19 * * *') ||
       (github.event_name == 'workflow_dispatch' &&
-       (inputs.layer == 'deep' || inputs.layer == 'all'))
+       (inputs.layer == 'deep' || inputs.layer == 'all')))
     steps:
       - uses: actions/checkout@v6
 
@@ -338,9 +340,10 @@ jobs:
     needs: shallow-sleep
     # REM：每周一 01:00 UTC cron 或手动触发
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1') ||
+      github.ref == 'refs/heads/main' &&
+      ((github.event_name == 'schedule' && github.event.schedule == '0 1 * * 1') ||
       (github.event_name == 'workflow_dispatch' &&
-       (inputs.layer == 'rem' || inputs.layer == 'all'))
+       (inputs.layer == 'rem' || inputs.layer == 'all')))
     steps:
       - uses: actions/checkout@v6
         with:
