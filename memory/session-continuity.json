@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "2d48d4f3",
-    "timestamp": "2026-04-26T08:07:58.806000+00:00",
-    "duration_minutes": 222.0,
+    "id": "7dfdff3b",
+    "timestamp": "2026-04-26T08:31:07.102000+00:00",
+    "duration_minutes": 245.2,
     "branch": "claude/cleanup-workflows-repo-HUhqm",
     "topics": [
       "GitHub",
@@ -12,11 +12,32 @@
       "step-level check）"
     ],
     "files_changed": [
+      "/home/user/brain-in-a-vat/.claude/hooks/session-start-sync.sh",
+      "/home/user/brain-in-a-vat/.claude/settings.json",
+      "/home/user/brain-in-a-vat/.gitignore",
+      "/home/user/brain-in-a-vat/memory/lessons-learned.md",
       "/home/user/brain-in-a-vat/memory/session-digests/handoff-to-opus47.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "2d48d4f3",
+      "timestamp": "2026-04-26T08:07:58.806000+00:00",
+      "duration_minutes": 222.0,
+      "branch": "claude/cleanup-workflows-repo-HUhqm",
+      "topics": [
+        "GitHub",
+        "银芯"
+      ],
+      "decisions": [
+        "step-level check）"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/session-digests/handoff-to-opus47.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "3d8885dd",
       "timestamp": "2026-04-26T07:55:33.993000+00:00",
@@ -139,33 +160,21 @@
         "/home/user/brain-in-a-vat/projects/wiki/package.json"
       ],
       "open_items": []
-    },
-    {
-      "id": "11d22761",
-      "timestamp": "2026-04-25T17:32:38.495000+00:00",
-      "duration_minutes": 14411.5,
-      "branch": "claude/add-claude-documentation-X4zRQ",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/projects/wiki/package.json"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Steam": 2.36,
-      "GitHub": 1.0,
-      "银芯": 1.0,
-      "日报": 0.33
+      "Steam": 1.89,
+      "GitHub": 1.8,
+      "银芯": 1.8,
+      "日报": 0.26
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/projects/news/scripts/backfill_gap.py",
-      "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py"
+      "/home/user/brain-in-a-vat/projects/news/scripts/repair_gaps.py",
+      "/home/user/brain-in-a-vat/memory/session-digests/handoff-to-opus47.md"
     ],
-    "total_sessions": 53
+    "total_sessions": 54
   },
-  "updated_at": "2026-04-26T08:12:24.986866+00:00"
+  "updated_at": "2026-04-26T08:33:45.218202+00:00"
 }
