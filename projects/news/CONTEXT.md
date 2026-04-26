@@ -1,17 +1,45 @@
 # News 聚合器 — 会话上下文
 
 > 启动时请先阅读根目录 `CLAUDE.md` 了解全局。
-> 最后更新：2026-04-20 by 主控台（艾瑞卡会话，sync-memory 修正 Discord 体量）
+> 最后更新：2026-04-26 by 主控台（艾瑞卡会话，写入 4-26 银芯重新定位 v2.0 news 新使命）
 
-## 当前状态：收缩夯实阶段
+## v2.0 新使命定位（2026-04-26 起）
 
-## 本周任务（2026-04-01 ~ 04-07）
+**news = 银芯三新使命之 #1「黑池公开信息入口」核心载体**
 
-> 来源：战略中心 Phase 0 行动方案。优先级从高到低。
+- **新定位**：GitHub 自动化采集层 / 黑池消费的"眼睛和耳朵" / **银芯→黑池单向输出**
+- **关键约束**：**黑池不倒灌银芯**（守密人 4-26 裁定）。news 输出格式与稳定性是黑池能否依赖银芯的关键
+- **本子项目在 Phase 2（4-27 → 7-19，84 天）的优先级**：核心主线，与 wiki 并列最高
+- **派发关系**：Code-news 接管 Phase 2 全部 news 加固任务，主控台不亲自动 news 业务文件
 
-1. **桥接 Discord 归档数据到聚合器**：让 `aggregator.py` 读取 `projects/news/data/discord/` 当日 JSONL 数据，提取摘要进入 `news.json`。这样日报能覆盖 Discord 平台
-2. **Discord 归档月度清理已落地（2026-04-20 B2 调研修正）**：`scripts/archive_discord.py --force-month YYYY-MM` 参数已实装，workflow `discord-archive.yml` 新增 `force_month` 手动输入。**当前实测归档 193 MB**（非先前档案声称的 299 MB），首次月度清理触发等待守密人 GitHub Actions UI 操作（`force_month=2026-03`）
-3. **验证日报质量**：Steam 数据标准化 bug 已修复（split_output.py），下次 workflow 运行后确认日报正确显示 Steam + Bilibili + Discord 三个数据源
+## 当前状态：Phase 2 加固期（自动化跑稳 + 黑池接口稳定化）
+
+## Phase 2 任务（M1-M4，2026-04-27 → 07-19）
+
+### M1 基础设施加固（4-27 → 5-10，14 天）
+1. **桥接 Discord 归档数据到聚合器**（沿用旧任务）：让 `aggregator.py` 读取 `projects/news/data/discord/` 当日 JSONL，提取摘要进 `news.json`
+2. **Discord 月度清理首次触发**：`scripts/archive_discord.py --force-month YYYY-MM` 参数已实装。当前实测归档 193 MB，待守密人 UI 触发 `force_month=2026-03`
+3. **验证日报质量**：Steam 数据标准化已修复，下次 workflow 后确认日报正确显示 3 源（Steam + Bilibili + Discord）
+4. **黑池接口稳定性评估**：作为黑池的"眼睛和耳朵"，输出格式需稳定。评估 `output/*-latest.json` 的 schema 一致性
+
+### M2 信息齐备（5-11 → 6-10，31 天）
+- [ ] 接通 YouTube（代码已就绪，配置 API Key）
+- [ ] Reddit 子版块名确认（r/Morimens 是否存在）
+- [ ] Twitter / NGA / TapTap 配置密钥（如 Phase 2 优先级允许）
+- [ ] 周报/月报机制（日报之上叠加趋势分析）
+- [ ] 黑池接口规范文档对齐（参考 `memory/silver-blackpool-interface.md`）
+
+### M3 稳定化（6-11 → 7-10，30 天）
+- [ ] 自动化连续 30 天稳定运行验证
+- [ ] 哨兵层异常检测覆盖率提升
+- [ ] 黑池消费场景实战测试（守密人或黑池会话拉取 latest.json 验证）
+
+### M4 开放测试 + 战略验收（7-11 → 7-19，9 天）
+- [ ] 验收：news 自动化连续 30 天稳定运行 + 黑池有可消费的公开信息流（守密人确认）
+
+### 注意事项
+- update-news.yml 已从每小时降到每日 2 次（06:00/16:00 UTC）
+- discord-archive.yml 已从每小时降到每日 1 次（18:00 UTC）
 
 ### 注意事项
 - update-news.yml 已从每小时降到每日 2 次（06:00/16:00 UTC）
