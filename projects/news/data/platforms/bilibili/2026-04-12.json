@@ -1,8 +1,8 @@
 {
   "date": "2026-04-12",
-  "archived_at": "2026-04-12T14:12:22.132574+00:00",
+  "archived_at": "2026-04-26T12:42:19.821297+00:00",
   "source": "bilibili",
-  "item_count": 51,
+  "item_count": 52,
   "items": [
     {
       "source": "bilibili",
@@ -273,6 +273,21 @@
         "comments_fetched": 3,
         "danmaku": 0
       }
+    },
+    {
+      "title": "【忘却前夜】血肉的叛徒 于此自裁吧（羊妈主c融灾禁区4-5 葬骸之主）",
+      "summary": "-",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-12T13:40:58+00:00",
+      "url": "http://www.bilibili.com/video/av116391952783491",
+      "engagement": 382,
+      "is_hot": false,
+      "author": "想成为妈咪的小情人",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     },
     {
       "source": "bilibili",
