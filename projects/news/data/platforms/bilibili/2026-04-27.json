@@ -1,8 +1,8 @@
 {
   "date": "2026-04-27",
-  "archived_at": "2026-04-26T22:30:50.662660+00:00",
+  "archived_at": "2026-04-26T23:33:21.858260+00:00",
   "source": "bilibili",
-  "item_count": 29,
+  "item_count": 31,
   "items": [
     {
       "source": "bilibili",
@@ -441,6 +441,36 @@
         "comments_fetched": 2,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T22:40:03+00:00",
+      "lang": "zh",
+      "title": "【忘却 / 相位 / 轮选】出错最少的一次",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1rQoBBnEu4",
+      "author": "罗维娅",
+      "engagement": 50,
+      "media_url": "https://i2.hdslb.com/bfs/archive/78c13cac48fd80d1ec662e3004fa1a6bb0be856a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 50,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-26T22:40:03+00:00",
+      "lang": "zh",
+      "title": "【忘却 / 相位 / 轮选】出错最少的一次",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116473372613311",
+      "author": "罗维娅",
+      "engagement": 50,
+      "media_url": "//i2.hdslb.com/bfs/archive/78c13cac48fd80d1ec662e3004fa1a6bb0be856a.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
