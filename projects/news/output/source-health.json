@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-26T09:46:42.636682+00:00",
+  "updated_at": "2026-04-26T10:38:58.117686+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
@@ -18,7 +18,7 @@
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 349,
+      "total_items": 426,
       "errors": []
     },
     "nga": {
@@ -60,7 +60,7 @@
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 228,
+      "total_items": 243,
       "errors": []
     },
     "tieba": {
@@ -81,7 +81,7 @@
       "level": "active",
       "last_success_date": "2026-04-26",
       "consecutive_silent_days": 0,
-      "total_items": 250,
+      "total_items": 257,
       "errors": []
     },
     "arca_live": {

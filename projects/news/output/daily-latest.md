@@ -1,11 +1,11 @@
 # 忘却前夜 社区日报 2026-04-26
 
-> 采集时间：2026-04-26 17:46 UTC+8
+> 采集时间：2026-04-26 18:38 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1228
-2. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 61
+1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1267
+2. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 79
 
 ## 总览
 
@@ -14,8 +14,8 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 29 |
-| DCInside | 65 |
+| Bilibili | 25 |
+| DCInside | 74 |
 | Discord | 16 |
 | 抖音 | 0（沉默）|
 | Epic Games Store | 0（沉默）|
@@ -32,9 +32,9 @@
 | Pixiv | 1 |
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 32 |
+| Reddit | 30 |
 | Ruliweb | 0（沉默）|
-| Steam | 8 |
+| Steam | 7 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -46,7 +46,7 @@
 | Twitch | 0（沉默）|
 | Twitter/X | 0（沉默）|
 | VK Play | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 21 |
 | 微信公众号 | 0（沉默）|
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
@@ -67,8 +67,8 @@
 
 ## Steam 评论
 
-- 好评 7 / 差评 1 / 好评率 88%
-- 语言分布：english 3, schinese 3, polish 1, vietnamese 1
+- 好评 6 / 差评 1 / 好评率 86%
+- 语言分布：english 3, schinese 2, polish 1, vietnamese 1
 
 ### 热门好评
 
@@ -84,19 +84,19 @@
 
 ## Bilibili
 
-1. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 4567
-2. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 4453
-3. 我们都是肉做的 — engagement: 2133
-4. 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1228
-5. 神父1t100w — engagement: 910
+1. 我们都是肉做的 — engagement: 2356
+2. 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1267
+3. 神父1t100w — engagement: 915
+4. “我们有98%以上的概率要死在这了”“那剩下不到2%呢”“能赢” — engagement: 900
+5. 神父1t100w — engagement: 898
 
 ## DCInside
 
-1. 라만차 열정은 멋지지만 와따시 도무지 기력이 없다냥 — engagement: 0
-2. 모바게 오프라인 모드 전환해주는거 진짜 드문데 — engagement: 0
-3. 게임이 기대를주는데 큰게 필요없더라 — engagement: 0
-4. 메인쿤에게서 가능성을 보았다 — engagement: 0
-5. 슬더스에는 없단 말이다 — engagement: 0
+1. 게임이 기대를주는데 큰게 필요없더라 — engagement: 0
+2. 메인쿤에게서 가능성을 보았다 — engagement: 0
+3. 슬더스에는 없단 말이다 — engagement: 0
+4. 하지만 이거 보고 더 이상 미룰수 없게됨 — engagement: 0
+5. 나 투하인데 이게 대체 무슨 설정이야 — engagement: 0
 
 ## Pixiv
 
@@ -106,8 +106,8 @@
 
 1. The Keeper and Goliath after unlocking Reproduction Frenzy. — engagement: 0
 2. is this upcoming skin??🫤 — engagement: 0
-3. Is this the order we should read character quests? 🤔 — engagement: 0
-4. Is there something wrong with my banner? — engagement: 0
+3. Is there something wrong with my banner? — engagement: 0
+4. Is this the order we should read character quests? 🤔 — engagement: 0
 5. Beast of causality and tawil — engagement: 0
 
 ## StopGame.ru
@@ -116,24 +116,27 @@
 
 ## 微博
 
-1. 12758【投稿】忘却前夜。我主任 — engagement: 0
-2. 忘却前夜#忘却前夜#
+1. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜┊唤醒体展示✦徐
-妾身乃不梦乡之主，徐。
-若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
-
-✦ 徐 CV： — engagement: 0
-4. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
+2. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
 
 忘却前夜 — engagement: 0
-5. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+3. 忘却前夜
+🌹当我们再次相见，我会带上花束🌹
+
+今日🧠为大家带来亿些超清大图～
+请多多支持我们奥尔拉☺️✨✨✨
+#脑缸视觉 — engagement: 0
+4. 忘却前夜 喔？我上来了吗
+这里果然有更标致的种子——就是在说你，哎呀，真是可爱♥
+来吗~准备好，加入我，融入我，我已经… — engagement: 0
+5. 【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所 — engagement: 0
 
 ## YouTube
 
-1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 168
-2. 6 MONTHS CELEBRATION! 6 hours of fun! Karaoke, PhaseCraft &  — engagement: 0
+1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 220
+2. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 77
 
 ## 沉默平台
 
