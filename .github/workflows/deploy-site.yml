@@ -87,8 +87,7 @@ jobs:
         run: |
           mkdir -p dist/wiki dist/news
 
-          cp projects/site/public/index.html dist/
-          [ -f projects/site/public/404.html ] && cp projects/site/public/404.html dist/404.html
+          cp -r projects/site/public/. dist/
           [ -d projects/site/design ] && cp -r projects/site/design dist/design
           cp -r projects/wiki/docs/.vitepress/dist/* dist/wiki/
           cp projects/news/index.html dist/news/index.html
