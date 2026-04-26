@@ -321,73 +321,6 @@ def backfill_arca_live(state: dict, max_pages: int) -> int:
     return total
 
 
-def backfill_dcinside(state: dict, max_pages: int) -> int:
-    """Backfill DCInside morimens gallery page by page."""
-    from global_collectors import _get, _make_item
-    import re as _re
-    ps = _platform_state(state, 'dcinside')
-    if ps['done']:
-        return 0
-
-    gallery_id = "morimens"
-    total = 0
-    start_page = ps['page']
-
-    for page in range(start_page, start_page + max_pages):
-        if _is_time_up():
-            break
-        try:
-            resp = _get(
-                f"https://gall.dcinside.com/mgallery/board/lists/",
-                params={"id": gallery_id, "page": page},
-                headers={"Referer": "https://gall.dcinside.com", "User-Agent": "Mozilla/5.0"},
-            )
-            html = resp.text
-
-            items = []
-            for match in _re.finditer(
-                r'data-no="(\d+)".*?'
-                r'class="gall_tit[^"]*"[^>]*>.*?<a[^>]*>([^<]+)</a>.*?'
-                r'class="gall_date"[^>]*title="([^"]*)"',
-                html, _re.DOTALL
-            ):
-                article_no, title, date_str = match.groups()
-                title = title.strip()
-                if not title or title in ('공지', '설문'):
-                    continue
-                items.append(_make_item(
-                    title=title,
-                    summary="",
-                    source="dcinside",
-                    platform_region="kr",
-                    time_str=date_str.strip(),
-                    url=f"https://gall.dcinside.com/mgallery/board/view/?id={gallery_id}&no={article_no}",
-                    engagement=0,
-                    is_hot=False,
-                    author="",
-                    lang="ko",
-                ))
-
-            if not items:
-                ps['done'] = True
-                break
-
-            _archive_items('dcinside', items)
-            total += len(items)
-            ps['page'] = page + 1
-            ps['total'] += len(items)
-            _save_state(state)
-
-            logger.info(f'DCInside backfill p{page}: +{len(items)}')
-            time.sleep(REQUEST_DELAY)
-
-        except Exception as e:
-            logger.warning(f'DCInside backfill p{page} failed: {e}')
-            break
-
-    return total
-
-
 def backfill_steam_reviews(state: dict, max_pages: int) -> int:
     """Backfill all Steam reviews using cursor pagination."""
     import subprocess as _sp
@@ -779,7 +712,6 @@ BACKFILL_REGISTRY = {
     'appstore': backfill_appstore,
     'steam_review': backfill_steam_reviews,
     'arca_live': backfill_arca_live,
-    'dcinside': backfill_dcinside,
     'naver_cafe': backfill_naver_cafe,
     'pixiv': backfill_pixiv,
     'ruliweb': backfill_ruliweb,

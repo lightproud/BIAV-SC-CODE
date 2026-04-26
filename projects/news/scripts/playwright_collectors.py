@@ -391,64 +391,6 @@ def fetch_taptap_playwright() -> List[Dict]:
 
 # ── Korean platforms ──────────────────────────────────────────────────────
 
-def fetch_dcinside_playwright() -> List[Dict]:
-    """
-    Fetch DCInside search results via Playwright (bypasses WAF).
-    DCInside returns content-length: 0 to HTTP clients but loads fine in browsers.
-    """
-    items = []
-    keywords = ["Morimens", "모리멘스", "망각전야"]
-    seen_urls: set = set()
-
-    try:
-        from playwright.sync_api import sync_playwright
-
-        with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
-            page.set_default_timeout(TIMEOUT_MS)
-
-            for keyword in keywords:
-                try:
-                    url = f'https://search.dcinside.com/combine/q/{keyword}'
-                    page.goto(url, wait_until='networkidle')
-                    page.wait_for_timeout(2000)
-
-                    links = page.query_selector_all('a[href*="gall.dcinside.com"][href*="/view/"]')
-                    for link in links:
-                        href = link.get_attribute('href') or ''
-                        title = link.inner_text().strip()
-                        if not title or len(title) < 5 or href in seen_urls:
-                            continue
-                        if title.endswith('갤러리'):
-                            continue
-                        seen_urls.add(href)
-                        items.append({
-                            'title': title[:100],
-                            'summary': '',
-                            'source': 'dcinside',
-                            'time': datetime.now(timezone.utc).isoformat(),
-                            'time_is_approximate': True,
-                            'url': href,
-                            'engagement': 0,
-                            'is_hot': False,
-                            'author': '',
-                            'tags': ['dcinside'],
-                            'lang': 'ko',
-                            'platform_region': 'kr',
-                        })
-                    logger.info(f'DCInside PW "{keyword}": {len(items)} total')
-                except Exception as e:
-                    logger.warning(f'DCInside PW "{keyword}" failed: {e}')
-
-            browser.close()
-    except Exception as e:
-        logger.warning(f'DCInside Playwright failed: {e}')
-
-    logger.info(f'DCInside Playwright: fetched {len(items)} items')
-    return items
-
-
 def fetch_arca_live_playwright() -> List[Dict]:
     """
     Fetch Arca.live forgettingeve channel via Playwright (bypasses Cloudflare).
@@ -703,7 +645,6 @@ def main():
         'nga': fetch_nga_playwright(),
         'weibo': fetch_weibo_playwright(),
         'taptap': fetch_taptap_playwright(),
-        'dcinside': fetch_dcinside_playwright(),
         'arca_live': fetch_arca_live_playwright(),
         'ruliweb': fetch_ruliweb_playwright(),
         'fivech': fetch_fivech_playwright(),
