@@ -1,5 +1,5 @@
 # Auto-deploy site + wiki + news + bpt-web to GitHub Pages
-# Last trigger: 2026-04-11 BPT-WEB v0.1.0
+# Art assets downloaded from Release at build time (not stored in git)
 name: Deploy Site
 
 on:
@@ -23,6 +23,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+
+      - name: Download art assets from Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Downloading art assets from art-assets-v2 Release..."
+          cd projects/wiki/docs/public
+          gh release download art-assets-v2 \
+            -p "morimens-cg-full.tar.gz" \
+            -p "morimens-icons-full.tar.gz" \
+            -p "morimens-units.tar.gz" \
+            -p "morimens-portraits-full.tar.gz" \
+            -p "morimens-uiresources.tar.gz"
+          echo "Extracting tarballs..."
+          tar xzf morimens-cg-full.tar.gz && rm morimens-cg-full.tar.gz
+          tar xzf morimens-icons-full.tar.gz && rm morimens-icons-full.tar.gz
+          tar xzf morimens-units.tar.gz && rm morimens-units.tar.gz
+          tar xzf morimens-portraits-full.tar.gz && rm morimens-portraits-full.tar.gz
+          tar xzf morimens-uiresources.tar.gz && rm morimens-uiresources.tar.gz
+          # uiresources tarball also contains portrait/ -> rename to portrait-card/
+          [ -d portrait ] && mv portrait portrait-card
+          echo "Asset directories:"
+          for d in cg icon bunit munit portraits uiresources scenebg portrait-card; do
+            if [ -d "$d" ]; then
+              count=$(find "$d" -type f | wc -l)
+              size=$(du -sh "$d" | cut -f1)
+              echo "  $d: $count files ($size)"
+            fi
+          done
 
       - uses: actions/setup-node@v6
         with:
