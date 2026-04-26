@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-26T04:57:04.781899+00:00",
+  "archived_at": "2026-04-26T06:55:57.603646+00:00",
   "source": "bilibili",
-  "item_count": 53,
+  "item_count": 54,
   "items": [
     {
       "source": "bilibili",
@@ -513,6 +513,21 @@
         "comments_fetched": 0,
         "danmaku": 2
       }
+    },
+    {
+      "title": "【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁",
+      "summary": "-",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-26T05:42:33+00:00",
+      "url": "http://www.bilibili.com/video/av116469396406931",
+      "engagement": 67,
+      "is_hot": false,
+      "author": "嘎啦嘎啦果",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     },
     {
       "source": "bilibili",
