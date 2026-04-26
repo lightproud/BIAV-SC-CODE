@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-04-21 by 主控台（艾瑞卡会话，写入 lesson #27 主控台越界自省）
+> 最后更新：2026-04-26 by 银芯记忆系统（艾瑞卡会话）
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -221,6 +221,38 @@
   2. **档案陈述附最后验证时间戳**：涉及文件存在性的陈述（"已完成 X 文件"）应带 `[last-verified: YYYY-MM-DD]` 字段，超过 30 天自动标脏
   3. **做梦 Agent 哨兵层加交叉扫描**：浅睡层（每 6 小时）新增一条"档案声明 vs 实际文件存在性"扫描规则，提取 memory/ 与 CONTEXT.md 中的文件路径引用，核对仓库实际状态，不一致则写 sentinel 告警
 - **Impact**：跨会话协作可信度、Phase 2 工期估算准确性、档案诚信
+
+---
+
+## 28. 本地 main 与 origin/main 反复失步，触发 Cloudflare HTTP 413 推送堵塞
+
+- **Context**：Web Claude Code 沙箱启动时从快照恢复仓库，快照里常带着上一会话未推送的本地 commit（SessionEnd 自动生成的 session-continuity.json + session digest，以及历史会话遗留的 merge commit）。多个会话来源（本地 Claude Code、GitHub Actions 自动 workflow、其他平台代理）并行向 origin/main 写入，本地 main 持续落后；与此同时，本地 main 的「自家 merge」commit 也持续累积——双向漂移
+- **Problem**：当 local main 累积到一定差异量，`git push origin main` 触发 Cloudflare 代理的 HTTP 413 (Request Entity Too Large)。该限制与实际 pack 大小无关，是代理对 receive-pack endpoint 的硬阈值。一旦堵塞，所有依赖 push 的操作（包括 feature 分支推送、SessionEnd hook 归档、远端分支删除）全部失败。诊断显示：触发临界点时本地 main 通常 ahead ≥50、behind ≥150
+- **Fix**：
+  1. 装 SessionStart hook（`.claude/hooks/session-start-sync.sh`）每次会话启动时自动 `git fetch origin main` 并强制把 local main 同步到 origin/main（hard-reset 或 ref 更新），根除累积
+  2. hook 在重置前把原 local main HEAD 备份到 `refs/backup/main-pre-sync-<timestamp>`，防止丢真实工作
+  3. hook 只在当前不在 main 分支时用 `git update-ref` 更新（避免破坏当前 checkout）
+  4. 配合 lesson #29 的「直推 main」铁律，本地 main 应永远是 origin/main 的镜像
+  5. 排查时先量 `git rev-list origin/main..main --count` 与反向，超过 10 就该警觉
+- **Impact**：基础设施可靠性、推送通道可用性、记忆系统可持久化
+
+---
+
+## 29. 决策档案与执行档案脱节，规则改了 CLAUDE.md 没跟上
+
+- **Context**：2026-03-29 主控台决策「废弃分支工作流，全部直接推 main」，写入 `memory/decisions.md` 与 `BIAV-SC.md`。但 `CLAUDE.md` 的 Git 规则章节未同步更新，仍写「所有会话推 feature 分支」
+- **Problem**：CLAUDE.md 是 Claude Code 自动加载入口，新会话读取的是过期规则。结果：
+  - 一个月内累积 35 个 stale `claude/*` feature 分支
+  - 每个会话被分配到 feature 分支工作（系统按 CLAUDE.md 配）
+  - `.github/workflows/claude.yml` 的 auto-merge step 持续执行无意义的 merge
+  - 触发本地 main / 远端 main 漂移 → Cloudflare HTTP 413 推送堵塞（即 lesson #28 的根因）
+  - 与 lesson #11「新规则未传播到已有会话」**同款机制**，但这次范围更大、影响更深
+- **Fix**：
+  1. 任何决策写入 `decisions.md` 后，**同步 grep 全仓库**找出所有可能引用旧规则的位置（CLAUDE.md / BIAV-SC.md / 各 CONTEXT.md / workflow YAML），逐一更新
+  2. 改用工具辅助：在 `scripts/memory_writeback.py` 增加「决策一致性检查」，对比 decisions.md 与 CLAUDE.md/BIAV-SC.md 的关键策略词（"分支"、"main"、"merge"、"commit" 等）出现位置
+  3. 新会话启动时 `session_briefing.py` 应主动检查 CLAUDE.md 与 decisions.md 的最新条目时间戳是否一致——不一致就在 Briefing 里告警
+  4. 重要的「废弃」决策必须在原条目处加 ~~删除线~~ 与 **新决策日期/位置**，而不是只在新条目记录
+- **Impact**：决策可执行性、规则一致性、跨会话信息保真度、所有引用「分支工作流」的下游基础设施可靠性
 
 ---
 
