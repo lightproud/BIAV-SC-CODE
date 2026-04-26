@@ -2620,106 +2620,6 @@ def deduplicate(items):
     return unique
 
 
-# ─── RSSHub 通用采集器 ────────────────────────────────────────
-
-# RSSHub routes: (route, source_name, platform_region, lang)
-RSSHUB_ROUTES = [
-    # ── 中文平台 ──
-    ("/weibo/keyword/忘却前夜", "weibo", "cn", "zh"),
-    ("/weibo/keyword/Morimens", "weibo", "cn", "zh"),
-    ("/zhihu/search/忘却前夜", "zhihu", "cn", "zh"),
-    ("/xiaohongshu/keyword/忘却前夜", "xiaohongshu", "cn", "zh"),
-    ("/douyin/keyword/忘却前夜", "douyin", "cn", "zh"),
-    ("/bilibili/search/忘却前夜", "bilibili", "cn", "zh"),
-    ("/tieba/forum/忘却前夜", "tieba", "cn", "zh"),
-    ("/nga/search/忘却前夜", "nga", "cn", "zh"),
-    ("/lofter/tag/忘却前夜", "lofter", "cn", "zh"),
-    # ── 日本平台 ──
-    ("/pixiv/search/忘却前夜", "pixiv", "jp", "ja"),
-    ("/pixiv/search/モリメンス", "pixiv", "jp", "ja"),
-    ("/5ch/search/忘却前夜", "fivech", "jp", "ja"),
-    # ── 韩国平台 ──
-    ("/dcinside/board/morimens", "dcinside", "kr", "ko"),
-    # ── 全球平台 ──
-    ("/tiktok/keyword/Morimens", "tiktok", "global", "en"),
-    ("/reddit/search/Morimens", "reddit", "global", "en"),
-    ("/telegram/channel/Morimens", "telegram", "global", "en"),
-]
-
-
-def fetch_rsshub():
-    """通过自部署 RSSHub 实例采集多个平台（微博/知乎/小红书/抖音/Pixiv/TikTok）。
-
-    ⚠️  当前状态：已停用。
-        - 原 Vercel 实例 (biav-rsshub.vercel.app) 已删除（Vercel serverless
-          跑不了 Puppeteer，16 条路由里 15 条常年 503）
-        - 未部署自建实例；RSSHUB_URL env 未设置时此函数直接 no-op 返回
-        - 该函数已从 collect_global.py 的 fetcher 列表里注释掉，不会被 CI 调用
-        - Pixiv / DCInside / Bilibili / Reddit / Telegram 已改为直连，不依赖 RSSHub
-
-    重新启用路径：
-      1. 部署 Fly.io 实例（见 projects/news/rsshub-deploy/README.md）
-      2. GitHub Secrets 设 RSSHUB_URL=https://biav-rsshub.fly.dev
-      3. 取消 collect_global.py 里 ('RSSHub', c.fetch_rsshub) 这一行的注释
-    """
-    rsshub_url = os.environ.get("RSSHUB_URL", "").rstrip("/")
-    if not rsshub_url:
-        logger.info("RSSHub 已停用（未设 RSSHUB_URL）；如需启用见 projects/news/rsshub-deploy/README.md")
-        return []
-
-    items = []
-    import re as _re
-
-    for route, source, region, lang in RSSHUB_ROUTES:
-        try:
-            resp = _get(
-                f"{rsshub_url}{route}",
-                params={"format": "json", "limit": 20},
-                headers={"Accept": "application/json"},
-                timeout=20,
-            )
-
-            data = resp.json()
-            feed_items = data.get("items", [])
-
-            for entry in feed_items:
-                title = entry.get("title", "")
-                if not title:
-                    continue
-                # Clean HTML from title/content
-                title = _re.sub(r'<[^>]+>', '', title).strip()
-                content = entry.get("content_text", "") or entry.get("content_html", "")
-                content = _re.sub(r'<[^>]+>', '', content).strip()
-
-                url = entry.get("url", "") or entry.get("id", "")
-                time_str = entry.get("date_published", "") or entry.get("date_modified", "")
-
-                # Extract author
-                authors = entry.get("authors", [])
-                author = authors[0].get("name", "") if authors else ""
-
-                items.append(_make_item(
-                    title=title,
-                    summary=content,
-                    source=source,
-                    platform_region=region,
-                    time_str=time_str or datetime.now(timezone.utc).isoformat(),
-                    url=url,
-                    engagement=0,
-                    is_hot=False,
-                    author=author,
-                    lang=lang,
-                    time_is_approximate=not time_str,
-                ))
-
-            if feed_items:
-                logger.info(f"RSSHub {route}: +{len(feed_items)} items")
-        except Exception as e:
-            logger.warning(f"RSSHub {route} failed: {e}")
-
-    logger.info(f"RSSHub total: {len(items)} items from {len(RSSHUB_ROUTES)} routes")
-    return items
-
 
 def collect_all():
     """运行所有采集器，合并、去重、排序后输出。"""
@@ -2732,50 +2632,35 @@ def collect_all():
         # 中文社区
         ("Bilibili", fetch_bilibili),
         ("NGA", fetch_nga),
-        ("TapTap", fetch_taptap),
         ("Weibo", fetch_weibo),
-        ("Xiaohongshu", fetch_xiaohongshu),
-        ("Douyin", fetch_douyin),
         ("Tieba", fetch_tieba),
-        ("QQ", fetch_qq),
-        ("Zhihu", fetch_zhihu),
         ("Bahamut", fetch_bahamut),
         # 同人创作
         ("Pixiv", fetch_pixiv),
         ("Lofter", fetch_lofter),
-        # 周边/交易
-        ("Xianyu", fetch_xianyu),
-        ("Taobao Merch", fetch_taobao_merch),
         # 全球社区
         ("Reddit", fetch_reddit),
-        ("Twitter/X", fetch_twitter),
         ("YouTube", fetch_youtube),
         ("Discord", fetch_discord),
-        ("Facebook", fetch_facebook),
-        ("TikTok", fetch_tiktok),
         ("Telegram", fetch_telegram),
-        ("Twitch", fetch_twitch),
-        ("Instagram", fetch_instagram),
         # 韩国社区
-        ("Naver Cafe", fetch_naver_cafe),
         ("DCInside", fetch_dcinside),
         ("Arca.live", fetch_arca_live),
+        ("Ruliweb", fetch_ruliweb),
         # 日本社区
         ("5ch", fetch_fivech),
+        ("Note.com", fetch_note_com),
         # 应用商店
         ("App Store", fetch_appstore_reviews),
         ("Google Play", fetch_google_play),
-        # 以下平台此前漏注册
         ("QooApp", fetch_qooapp),
         ("Epic Store", fetch_epic_store),
-        ("Note.com", fetch_note_com),
-        ("Ruliweb", fetch_ruliweb),
+        # 俄区
         ("VK Play", fetch_vkplay),
         ("StopGame", fetch_stopgame),
+        # 数据平台
         ("GACHAREVENUE", fetch_gacharevenue),
         ("搜狗微信", fetch_weixin),
-        # RSSHub 代理采集（微博/知乎/小红书/抖音/Pixiv/TikTok）
-        ("RSSHub", fetch_rsshub),
     ]
 
     for name, fn in fetchers:
