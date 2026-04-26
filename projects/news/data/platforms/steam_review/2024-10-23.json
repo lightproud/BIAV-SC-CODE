@@ -1,8 +1,8 @@
 {
   "date": "2024-10-23",
-  "archived_at": "2026-04-26T09:44:31.798413+00:00",
+  "archived_at": "2026-04-26T10:37:10.170606+00:00",
   "source": "steam_review",
-  "item_count": 24,
+  "item_count": 28,
   "items": [
     {
       "title": "[正面] 好游戏，在玩了7个小时后，我开始选主角性别并取名，什么？你问我号是不是没了，这怎么可能呢，绝对不可能...",
@@ -65,6 +65,21 @@
       "media_url": ""
     },
     {
+      "title": "[负面] 玩了两个小时突然弹个更新出来，更新完之后号没了😅",
+      "summary": "玩了两个小时突然弹个更新出来，更新完之后号没了😅",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2024-10-23T12:42:24+00:00",
+      "url": "https://steamcommunity.com/profiles/76561199027838509/recommended/3052450",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "76561199027838509",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
       "title": "[正面] 不是哥们，我号呢",
       "summary": "不是哥们，我号呢",
       "source": "steam_review",
@@ -105,6 +120,21 @@
       "engagement": 1,
       "is_hot": false,
       "author": "76561199648797293",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] 我只能说庆幸自己没有加群，基于美术还是给好评吧。。",
+      "summary": "我只能说庆幸自己没有加群，基于美术还是给好评吧。。",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "schinese",
+      "time": "2024-10-22T17:44:43+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198115962852/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198115962852",
       "tags": [],
       "content_type": "text",
       "media_url": ""
@@ -360,6 +390,36 @@
       "engagement": 0,
       "is_hot": false,
       "author": "76561198361717081",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[正面] underrated RPG - Rogue like gacha game\nI wonder wh...",
+      "summary": "underrated RPG - Rogue like gacha game\nI wonder why this not available in global playstore yet",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2024-10-23T02:51:43+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198227832204/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198227832204",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "[负面] Every time I try to start the game I get a \"Silver...",
+      "summary": "Every time I try to start the game I get a \"Silver Core Communication Error, try again later\" message. I've tried several times, putting 12-26 hrs between attempts.",
+      "source": "steam_review",
+      "platform_region": "global",
+      "lang": "english",
+      "time": "2024-10-22T23:48:09+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198097184997/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198097184997",
       "tags": [],
       "content_type": "text",
       "media_url": ""
