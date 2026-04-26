@@ -32,7 +32,7 @@
 - 只响应 `author: lightproud` 的 Issue。
 - 同一子项目最多 3 个 open Issue。
 - 创建前先查重，有重叠则追加 comment 而非新建。
-- 标题前缀：`[Code-site]` / `[Code-news]` / `[Code-wiki]` / `[主控台]`。
+- 标题前缀：`[Code-site]` / `[Code-news]` / `[Code-wiki]` / `[Code-memory]` / `[主控台]`。
 - 未标注执行模式时默认「直接执行」。
 - Issue 不是跨会话通信手段——任务要点必须写进对应 `projects/*/CONTEXT.md`。
 
@@ -46,6 +46,7 @@
 | 社区新闻聚合 | `projects/news/` | Code-news | 聚合器空跑必须非零退出（教训 #2）|
 | Wiki + 数据集 | `projects/wiki/` | Code-wiki | VitePress frontmatter 冒号要加引号（教训 #6）|
 | 衍生游戏 | `projects/game/` | Code-game（未启用） | 暂缓，Phase 4 启动 |
+| 银芯记忆基础设施 | `scripts/` + `assets/data/` 索引 | Code-memory | 维护 9 模块记忆系统与 RAG 链条；不写业务数据（不动 wiki/news/site） |
 
 > 子项目状态、技术栈、当前阶段详见 `BIAV-SC.md` 子项目状态速查表。
 
