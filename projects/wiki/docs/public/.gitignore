@@ -1,5 +1,5 @@
 # Art assets downloaded from GitHub Release at build time
-# See: gh release download art-assets-v2
+# See: gh release download art-assets-v2 / audio-assets-v1 / video-assets-v1
 # Local dev: run scripts/download_wiki_assets.sh
 cg/
 icon/
@@ -9,3 +9,5 @@ portraits/
 uiresources/
 scenebg/
 portrait-card/
+audio/
+video/

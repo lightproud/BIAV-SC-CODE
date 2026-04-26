@@ -36,16 +36,30 @@ jobs:
             -p "morimens-units.tar.gz" \
             -p "morimens-portraits-full.tar.gz" \
             -p "morimens-uiresources.tar.gz"
-          echo "Extracting tarballs..."
+          echo "Extracting art tarballs..."
           tar xzf morimens-cg-full.tar.gz && rm morimens-cg-full.tar.gz
           tar xzf morimens-icons-full.tar.gz && rm morimens-icons-full.tar.gz
           tar xzf morimens-units.tar.gz && rm morimens-units.tar.gz
           tar xzf morimens-portraits-full.tar.gz && rm morimens-portraits-full.tar.gz
           tar xzf morimens-uiresources.tar.gz && rm morimens-uiresources.tar.gz
-          # uiresources tarball also contains portrait/ -> rename to portrait-card/
           [ -d portrait ] && mv portrait portrait-card
+          echo "Downloading audio/video assets..."
+          gh release download audio-assets-v1 \
+            -p "morimens-audio-ogg-part1.tar.gz" \
+            -p "morimens-audio-ogg-part2.tar.gz"
+          gh release download video-assets-v1 \
+            -p "morimens-video.tar.gz"
+          echo "Extracting audio/video tarballs..."
+          mkdir -p audio video
+          tar xzf morimens-audio-ogg-part1.tar.gz && rm morimens-audio-ogg-part1.tar.gz
+          tar xzf morimens-audio-ogg-part2.tar.gz && rm morimens-audio-ogg-part2.tar.gz
+          tar xzf morimens-video.tar.gz && rm morimens-video.tar.gz
+          # Move files to expected directories if tarballs extract differently
+          # (adjust based on actual tarball structure)
+          find . -maxdepth 2 -name "*.ogg" -not -path "./audio/*" -exec mv {} audio/ \; 2>/dev/null || true
+          find . -maxdepth 2 -name "*.mp4" -not -path "./video/*" -exec mv {} video/ \; 2>/dev/null || true
           echo "Asset directories:"
-          for d in cg icon bunit munit portraits uiresources scenebg portrait-card; do
+          for d in cg icon bunit munit portraits uiresources scenebg portrait-card audio video; do
             if [ -d "$d" ]; then
               count=$(find "$d" -type f | wc -l)
               size=$(du -sh "$d" | cut -f1)
@@ -62,6 +76,9 @@ jobs:
       - name: Install wiki dependencies
         working-directory: projects/wiki
         run: npm ci
+
+      - name: Regenerate wiki pages with media assets
+        run: python scripts/generate_wiki_pages.py
 
       - name: Build wiki
         working-directory: projects/wiki
