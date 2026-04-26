@@ -68,7 +68,7 @@
   .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .feat-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:28px;transition:border-color 0.3s}
   .feat-card:hover{border-color:rgba(197,163,86,0.18)}
-  .feat-icon{font-size:28px;margin-bottom:16px;filter:grayscale(0.3)}
+  .feat-icon{font-family:var(--serif);font-size:28px;color:var(--gold);margin-bottom:16px;letter-spacing:0.06em}
   .feat-name{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--gold);margin-bottom:8px}
   .feat-desc{font-size:14px;color:var(--txt-m);line-height:1.7}
 
@@ -131,8 +131,8 @@
     <a href="wiki/">Wiki</a>
     <a href="wiki/zh/awakeners/">唤醒体</a>
     <a href="wiki/zh/guides/">攻略</a>
-    <a href="biav/">BIAV</a>
-    <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank">GitHub</a>
+    <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">BIAV</a>
+    <a href="https://github.com/lightproud/brain-in-a-vat" target="_blank" rel="noopener">GitHub</a>
   </div>
   <select class="nav-lang" onchange="if(this.value)location.href=this.value">
     <option value="">简体中文</option>
@@ -169,17 +169,17 @@
   <div class="sec-desc reveal">卡牌构筑、Roguelite 探索、克苏鲁叙事——在每一局随机生成的深渊中，构建属于你的策略。</div>
   <div class="feat-grid">
     <div class="feat-card reveal">
-      <div class="feat-icon">🃏</div>
+      <div class="feat-icon" aria-hidden="true">◈</div>
       <div class="feat-name">卡牌构筑</div>
       <div class="feat-desc">从初始牌组出发，在每一次选择中打磨策略。指令牌、灵体牌、疯狂牌——三种牌型交织出无穷组合。</div>
     </div>
     <div class="feat-card reveal">
-      <div class="feat-icon">🔄</div>
+      <div class="feat-icon" aria-hidden="true">◯</div>
       <div class="feat-name">Roguelite 探索</div>
       <div class="feat-desc">永续变化的关卡结构。每一次进入都是全新的地图、全新的遭遇、全新的抉择。失败是学习，重来是进化。</div>
     </div>
     <div class="feat-card reveal">
-      <div class="feat-icon">📖</div>
+      <div class="feat-icon" aria-hidden="true">▤</div>
       <div class="feat-name">克苏鲁叙事</div>
       <div class="feat-desc">以不可名状的恐惧为底色，讲述关于认知、遗忘与人性边界的故事。真相未必是你想要的答案。</div>
     </div>
@@ -208,14 +208,10 @@
   <div class="sec-title reveal">加入社区</div>
   <div class="sec-desc reveal">忘却前夜的全球玩家社区遍布多个平台。找到属于你的据点。</div>
   <div class="comm-grid reveal">
-    <a class="comm-link" href="#"><span class="dot"></span>Discord 国际服</a>
-    <a class="comm-link" href="#"><span class="dot"></span>Discord 日服</a>
-    <a class="comm-link" href="#"><span class="dot"></span>Bilibili</a>
-    <a class="comm-link" href="#"><span class="dot"></span>NGA</a>
-    <a class="comm-link" href="#"><span class="dot"></span>小红书</a>
-    <a class="comm-link" href="#"><span class="dot"></span>X (Twitter)</a>
-    <a class="comm-link" href="#"><span class="dot"></span>Reddit</a>
-    <a class="comm-link" href="#"><span class="dot"></span>TapTap</a>
+    <a class="comm-link" href="https://discord.gg/morimens" target="_blank" rel="noopener"><span class="dot"></span>Discord 国际服</a>
+    <a class="comm-link" href="https://bbs.nga.cn/thread.php?fid=-447601" target="_blank" rel="noopener"><span class="dot"></span>NGA</a>
+    <a class="comm-link" href="https://www.reddit.com/r/Morimens" target="_blank" rel="noopener"><span class="dot"></span>Reddit</a>
+    <a class="comm-link" href="https://www.taptap.cn/app/233553" target="_blank" rel="noopener"><span class="dot"></span>TapTap</a>
   </div>
 </section>
 
