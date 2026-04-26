@@ -1,11 +1,11 @@
 # 忘却前夜 社区日报 2026-04-26
 
-> 采集时间：2026-04-26 22:02 UTC+8
+> 采集时间：2026-04-26 22:44 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1453
-2. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 142
+1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1487
+2. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 162
 
 ## 总览
 
@@ -14,8 +14,8 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 26 |
-| DCInside | 0（沉默）|
+| Bilibili | 27 |
+| DCInside | 75 |
 | Discord | 16 |
 | 抖音 | 0（沉默）|
 | Epic Games Store | 0（沉默）|
@@ -29,7 +29,7 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 0（沉默）|
-| Pixiv | 1 |
+| Pixiv | 0（沉默）|
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
 | Reddit | 26 |
@@ -46,11 +46,11 @@
 | Twitch | 0（沉默）|
 | Twitter/X | 0（沉默）|
 | VK Play | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 16 |
 | 微信公众号 | 0（沉默）|
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 1 |
+| YouTube | 2 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -82,15 +82,19 @@
 
 ## Bilibili
 
-1. 我们都是肉做的 — engagement: 2958
-2. 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1453
-3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 367
-4. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 363
-5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 191
+1. 我们都是肉做的 — engagement: 3105
+2. 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 1487
+3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 393
+4. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 387
+5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 226
 
-## Pixiv
+## DCInside
 
-1.  — engagement: 0
+1. 게임이 기대를주는데 큰게 필요없더라 — engagement: 0
+2. 메인쿤에게서 가능성을 보았다 — engagement: 0
+3. 슬더스에는 없단 말이다 — engagement: 0
+4. 하지만 이거 보고 더 이상 미룰수 없게됨 — engagement: 0
+5. 나 투하인데 이게 대체 무슨 설정이야 — engagement: 0
 
 ## Reddit
 
@@ -118,16 +122,13 @@
 4. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
 
 忘却前夜 — engagement: 0
-5. 忘却前夜#忘却前夜#
-《忘却前夜》概念PV——「银芯」
-那是自融蚀降临后，人类最后的希望。
-◆◆◆◆◆◆
-官方玩家交流群 — engagement: 0
+5. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
 
 ## YouTube
 
-1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 237
+1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 243
+2. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 95
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, DCInside, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, Google Play, Instagram, Lofter, Naver Cafe, NGA, Note.com, Official, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, taptap_post, Telegram, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微信公众号, 闲鱼, 小红书, 知乎
+App Store, Arca.live, 巴哈姆特, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, Google Play, Instagram, Lofter, Naver Cafe, NGA, Note.com, Official, Pixiv, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, taptap_post, Telegram, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微信公众号, 闲鱼, 小红书, 知乎
