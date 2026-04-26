@@ -37,18 +37,14 @@ HEALTH_PATH = _REPO_ROOT / 'projects' / 'news' / 'output' / 'source-health.json'
 # 已注册采集源（全部直连，无 RSSHub 依赖），与 collect_global.py 保持同步
 ALL_REGISTERED_SOURCES = [
     # 生产主管线（aggregator.py）
-    'reddit', 'bilibili', 'nga',
+    'reddit', 'bilibili', 'nga', 'taptap',
     'steam', 'official', 'youtube', 'discord',
     # 直连采集（collect_global.py）
-    'weibo', 'tieba', 'bahamut',
+    'weibo', 'zhihu', 'naver_cafe', 'bahamut',
     'dcinside', 'arca_live', 'fivech',
     'appstore', 'google_play',
-    'pixiv', 'lofter',
-    'telegram',
-    'qooapp', 'epic',
-    'note_com', 'ruliweb',
-    'vkplay', 'stopgame',
-    'gacharevenue', 'weixin',
+    'pixiv', 'telegram',
+    'note_com', 'ruliweb', 'stopgame', 'weixin',
 ]
 
 # 与 data_quality.SilentPlatformTracker 保持一致

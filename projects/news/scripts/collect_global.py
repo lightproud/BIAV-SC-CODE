@@ -2,7 +2,7 @@
 """
 collect_global.py — 全球社区采集桥接脚本
 
-调用 global_collectors.py 的 29 个采集器，
+调用 global_collectors.py 的 21 个采集器，
 合并 aggregator.py 的输出，生成统一的 news.json。
 
 运行方式:
@@ -38,9 +38,11 @@ SOURCE_MAP = {
     'reddit': 'reddit',
     'youtube': 'youtube',
     'nga': 'nga',
+    'taptap': 'taptap',
     'steam': 'steam_review',
     'weibo': 'weibo',
-    'tieba': 'tieba',
+    'zhihu': 'zhihu',
+    'naver_cafe': 'naver_cafe',
     'bahamut': 'bahamut',
     'dcinside': 'dcinside',
     'arca_live': 'arca_live',
@@ -48,14 +50,9 @@ SOURCE_MAP = {
     'appstore': 'appstore',
     'google_play': 'google_play',
     'pixiv': 'pixiv',
-    'lofter': 'lofter',
-    'qooapp': 'qooapp',
-    'epic': 'epic',
     'note_com': 'note_com',
     'ruliweb': 'ruliweb',
-    'vkplay': 'vkplay',
     'stopgame': 'stopgame',
-    'gacharevenue': 'gacharevenue',
     'weixin': 'weixin',
     'discord': 'discord',
     'telegram': 'telegram',
@@ -116,27 +113,6 @@ def run_zero_cost_collectors() -> list[dict]:
     except Exception as e:
         logger.debug(f'SilentPlatformTracker not available: {e}')
 
-    # ── 已知不可用的源：跳过以节约 CI 时间（每条省 5-25 秒超时等待）──
-    # 键 = fetcher 显示名，值 = 原因 + 修复条件
-    # 要恢复某个源：从这里删掉对应行，下面 zero_cost_fetchers 的条目不用改
-    SUSPENDED: dict[str, str] = {
-        # 无法通过 cookie/Playwright 解决
-        'Lofter':      '503 持续返回',
-        'Epic Store':  '403 GraphQL + scrape 均被拦',
-        'Taobao Merch':'403 被拦',
-        'TikTok':      '需 Puppeteer，返回 0 视频',
-        'VK Play':     '游戏页 404',
-        'QooApp':      '搜索 0 结果',
-        'Xianyu':      '0 商品',
-        'GACHAREVENUE':'0 条目',
-        'Tieba':       '0 帖子（贴吧搜索已不返回数据）',
-        # cookie 支持已加，有 cookie 自动启用，无 cookie 函数内 skip（不超时）
-        # 'Xiaohongshu': now needs XHS_COOKIE → set in GitHub Secrets
-        # 'Zhihu':       now needs ZHIHU_COOKIE → set in GitHub Secrets
-        # 'Douyin':      now needs DOUYIN_COOKIE → set in GitHub Secrets
-        # 'Note.com':    unsuspended → try HTTP, no cookie needed
-    }
-
     # Playwright fallback: platforms where HTTP fails but browser works
     PW_FALLBACK: dict[str, str] = {
         # name → playwright_collectors function name
@@ -156,47 +132,28 @@ def run_zero_cost_collectors() -> list[dict]:
     except ImportError:
         logger.debug('playwright_collectors not available')
 
-    # Zero-cost collectors (no API key required)
+    # Zero-cost collectors (no API key / no cookie required)
     zero_cost_fetchers = [
         ('Bilibili', c.fetch_bilibili),
         ('Reddit', c.fetch_reddit),
         ('NGA', c.fetch_nga),
         ('TapTap', c.fetch_taptap),
         ('Weibo', c.fetch_weibo),
-        ('Xiaohongshu', c.fetch_xiaohongshu),
-        ('Douyin', c.fetch_douyin),
-        ('Tieba', c.fetch_tieba),
         ('Zhihu', c.fetch_zhihu),
         ('Naver Cafe', c.fetch_naver_cafe),
         ('5ch', c.fetch_fivech),
         ('App Store', c.fetch_appstore_reviews),
-        ('TikTok', c.fetch_tiktok),
         ('Pixiv', c.fetch_pixiv),
-        ('Lofter', c.fetch_lofter),
-        ('Xianyu', c.fetch_xianyu),
-        ('Taobao Merch', c.fetch_taobao_merch),
-        ('QooApp', c.fetch_qooapp),
-        ('Epic Store', c.fetch_epic_store),
         ('Note.com', c.fetch_note_com),
         ('Ruliweb', c.fetch_ruliweb),
-        ('VK Play', c.fetch_vkplay),
         ('StopGame', c.fetch_stopgame),
-        ('GACHAREVENUE', c.fetch_gacharevenue),
         ('搜狗微信', c.fetch_weixin),
-        # ('RSSHub', c.fetch_rsshub),  # 已停用：Vercel 实例已删，未部署自建实例
-        # 启用方法：部署 Fly.io（见 projects/news/rsshub-deploy/README.md），
-        # 在 GitHub Secrets 设 RSSHUB_URL，然后把上面这行注释取消。
     ]
 
-    # Also run API-key collectors if keys are available
+    # Collectors that may use API keys when available, fall back to public endpoints otherwise
     api_fetchers = [
-        ('Twitter/X', c.fetch_twitter),
         ('YouTube', c.fetch_youtube),
         ('Discord API', c.fetch_discord),
-        ('Facebook', c.fetch_facebook),
-        ('Twitch', c.fetch_twitch),
-        ('Instagram', c.fetch_instagram),
-        ('QQ', c.fetch_qq),
         ('Telegram', c.fetch_telegram),
         ('Bahamut', c.fetch_bahamut),
         ('DCInside', c.fetch_dcinside),
@@ -209,17 +166,12 @@ def run_zero_cost_collectors() -> list[dict]:
     # 显示名 → source_id（与 archive/split 对齐）
     NAME_TO_SOURCE_ID = {
         'Bilibili': 'bilibili', 'Reddit': 'reddit', 'NGA': 'nga', 'TapTap': 'taptap',
-        'Weibo': 'weibo', 'Xiaohongshu': 'xiaohongshu', 'Douyin': 'douyin',
-        'Tieba': 'tieba', 'Zhihu': 'zhihu', 'Naver Cafe': 'naver_cafe',
-        '5ch': 'fivech', 'App Store': 'appstore', 'TikTok': 'tiktok',
-        'Pixiv': 'pixiv', 'Lofter': 'lofter', 'Xianyu': 'xianyu',
-        'Taobao Merch': 'taobao', 'QooApp': 'qooapp', 'Epic Store': 'epic',
-        'Note.com': 'note_com', 'Ruliweb': 'ruliweb', 'VK Play': 'vkplay',
-        'StopGame': 'stopgame', 'GACHAREVENUE': 'gacharevenue',
-        '搜狗微信': 'weixin', 'RSSHub': 'rsshub',
-        'Twitter/X': 'twitter', 'YouTube': 'youtube', 'Discord API': 'discord',
-        'Facebook': 'facebook', 'Twitch': 'twitch', 'Instagram': 'instagram',
-        'QQ': 'qq', 'Telegram': 'telegram', 'Bahamut': 'bahamut',
+        'Weibo': 'weibo', 'Zhihu': 'zhihu', 'Naver Cafe': 'naver_cafe',
+        '5ch': 'fivech', 'App Store': 'appstore',
+        'Pixiv': 'pixiv', 'Note.com': 'note_com', 'Ruliweb': 'ruliweb',
+        'StopGame': 'stopgame', '搜狗微信': 'weixin',
+        'YouTube': 'youtube', 'Discord API': 'discord',
+        'Telegram': 'telegram', 'Bahamut': 'bahamut',
         'DCInside': 'dcinside', 'Arca.live': 'arca_live', 'Google Play': 'google_play',
     }
 
@@ -227,14 +179,8 @@ def run_zero_cost_collectors() -> list[dict]:
     failed = []
     empty = []
 
-    suspended_count = 0
     for name, fn in all_fetchers:
         source_id = NAME_TO_SOURCE_ID.get(name, name.lower())
-
-        # 已知不可用的源：跳过并记录原因
-        if name in SUSPENDED:
-            suspended_count += 1
-            continue
 
         # dormant 源直接跳过，节约 CI 时间
         if tracker and tracker.should_skip_platform(source_id):
@@ -291,8 +237,6 @@ def run_zero_cost_collectors() -> list[dict]:
         logger.warning(f"失败 ({len(failed)}):")
         for name, err in failed:
             logger.warning(f"  {name}: {err}")
-    if suspended_count:
-        logger.info(f"已暂停 ({suspended_count}): {', '.join(SUSPENDED.keys())}")
 
     return items
 
