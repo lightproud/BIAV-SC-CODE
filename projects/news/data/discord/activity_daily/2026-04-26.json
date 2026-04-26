@@ -1,59 +1,82 @@
 {
   "date": "2026-04-26",
-  "messages": 5455,
-  "unique_authors": 168,
-  "reactions_total": 436,
-  "attachments": 333,
+  "messages": 15915,
+  "unique_authors": 337,
+  "reactions_total": 1340,
+  "attachments": 788,
   "channel_activity": {
-    "🔸綜合討論": 719,
-    "🔸morimens-game-chat": 2886,
+    "🔸綜合討論": 1508,
+    "🔸morimens-game-chat": 6702,
+    "🔸剧情交流": 44,
+    "🔸晒卡分享": 5,
+    "🔸相位对弈": 5,
+    "🔸课间休息闲聊": 7,
+    "🔸日本語チャンネル": 11,
+    "🔸русский-канал": 902,
+    "🔸phòng-chat-tiếng-việt": 1868,
+    "🔸canal-español": 56,
+    "🔸canal-português": 237,
+    "🔸ruang-obrolan-indonesia": 1157,
+    "🔸ห้องสนทนาภาษาไทย": 102,
+    "🔸traphase": 80,
+    "🔸lore-chat": 227,
+    "🔸team-building": 191,
+    "🔸general-chat": 1758,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸game-question": 816,
+    "🔸机器人命令┊bot-commands": 35,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 22,
+    "加回成就数字显示": 1,
+    "赛季任务相位对弈": 1,
+    "Add Mutant Keyword to Mutant Enemies": 1,
+    "我福袋的效果呢": 3,
+    "Inquiry about the home-screen music": 10,
+    "Reality Verges": 5,
+    "塔薇最终法则/Tawil's Absolute Axiom BUG": 6,
+    "💭「Processing」Bug Radix Sediment when max WoD": 1,
+    "Leigh Absolute Axiom suggestion": 3,
+    "\"24\" lives matter": 1,
+    "✅「Answered」Possibilities of Doresain kit rework": 8,
+    "✅「Answered」Who Ryker's Designer pls come talk ?": 4,
+    "ryker doodle": 1,
+    "doreposting / unserious doodles": 2,
+    "Arachne story rambles (arc2 ch5 spoilers for basically the ENTIRE THING)": 5,
+    "【English Translation】Opinions Collection": 2,
+    "3星期萌新請教融災角色與配隊": 16,
+    "Team to focus/Spend resources on.": 6,
+    "Newbie need Team Building/Pulling help": 10,
+    "What other teams can I make?": 4,
+    "Total newbie need advices": 12,
     "🔸한국어-채팅방": 6,
-    "🔸русский-канал": 185,
-    "🔸phòng-chat-tiếng-việt": 139,
-    "🔸canal-português": 138,
-    "🔸ruang-obrolan-indonesia": 311,
-    "🔸ห้องสนทนาภาษาไทย": 52,
-    "🔸traphase": 8,
-    "🔸lore-chat": 135,
-    "🔸team-building": 59,
-    "🔸general-chat": 447,
-    "🔸邀请码互助┊swap-invitation-codes": 7,
-    "🔸game-question": 220,
-    "🔸机器人命令┊bot-commands": 15,
-    "我福袋的效果呢": 1,
-    "Inquiry about the home-screen music": 9,
     "Arachne Combat Voice Line Blocking Annihilate": 2,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
-    "3星期萌新請教融災角色與配隊": 9,
-    "Total newbie need advices": 1,
-    "🔸剧情交流": 14,
-    "🔸晒卡分享": 3,
-    "🔸相位对弈": 4,
     "🔸游戏问题": 10,
     "這遊戲會修bug嗎": 2,
     "Encouraging use of the official PC client": 6,
     "歸檔呢": 3,
     "Vortice keeps disappearing": 1,
     "Cards from S Ultra Space Deals Less Damage": 1,
-    "塔薇最终法则/Tawil's Absolute Axiom BUG": 3,
-    "✅「Answered」Possibilities of Doresain kit rework": 5,
-    "🔸课间休息闲聊": 4,
     "🔸交友频道": 1,
-    "🔸canal-español": 11,
     "这什么情况": 2,
-    "Reality Verges": 3,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 18,
-    "✅「Answered」Who Ryker's Designer pls come talk ?": 1,
     "V2.5.0.0 停服维护公告": 1,
-    "doreposting / unserious doodles": 1,
-    "【English Translation】Opinions Collection": 1,
     "PVE players don't want Traphase": 4,
     "V2.5.0 命运剧院┊Theater of Fate": 1
   },
   "hourly_activity": {
+    "8": 807,
+    "9": 744,
+    "10": 1046,
+    "11": 872,
+    "12": 1219,
+    "13": 1134,
+    "14": 1294,
+    "15": 1104,
+    "16": 927,
+    "17": 747,
+    "18": 711,
     "6": 686,
     "7": 796,
-    "8": 145,
     "5": 772,
     "4": 410,
     "1": 549,
@@ -62,10 +85,44 @@
     "0": 381
   },
   "message_types": {
-    "0": 717,
-    "19": 320
+    "0": 7204,
+    "19": 3250,
+    "23": 3,
+    "20": 3
   },
   "top_reacted_messages": [
+    {
+      "id": "1497952793728778461",
+      "channel_id": "1400750050208125010",
+      "content": "I saw the original on pintrest and new what I had to do lol <:point:135605311229",
+      "author": "stupid1omor1plush",
+      "reactions": 11,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1498003837032595687",
+      "channel_id": "1131839817982947429",
+      "content": "# 我已经变成你游的M了😭",
+      "author": "be_queitplease",
+      "reactions": 10,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497946879734976562",
+      "channel_id": "1170692781216378960",
+      "content": "??? ch5 won’t be peak until Arachne turns to her sister and their gang and says ",
+      "author": "bagels5899",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497949836295803000",
+      "channel_id": "1170692781216378960",
+      "content": "Yay Chapter 2 HM done. Wanda DPS too strong~",
+      "author": "sophiechoice",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497814008886067384",
       "channel_id": "1131839817982947429",
@@ -73,6 +130,14 @@
       "author": "yusi4172",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497960033386758195",
+      "channel_id": "1174983699935277147",
+      "content": "",
+      "author": "z8567657",
+      "reactions": 7,
+      "channel": "🔸晒卡分享"
     },
     {
       "id": "1497814043937865828",
@@ -83,12 +148,44 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1497943299728605314",
+      "channel_id": "1170692781216378960",
+      "content": "Ngl, elite wrote the best copy pasta. No one can mimic such fire",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497794312866365501",
       "channel_id": "1326453763355185215",
       "content": "||Also the writers couldn’t make it more obvious they have no idea what to do wi",
       "author": "idkmyusername4481",
       "reactions": 6,
       "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1497941818631913556",
+      "channel_id": "1170692781216378960",
+      "content": "horla has vuln?",
+      "author": "nikolazuli",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497943600208806121",
+      "channel_id": "1170692781216378960",
+      "content": "Dont listen this chat.They just poor f2p and hate all ppls who can whale by defa",
+      "author": "sirtealot",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497961919213211728",
+      "channel_id": "1170692781216378960",
+      "content": "I run Deus Ex Machina on everyone <:ramona_tuff_:1441426630420467753>",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497851195316764743",
@@ -115,116 +212,44 @@
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1497866229841530951",
-      "channel_id": "1170692781216378960",
-      "content": "Train is fun",
-      "author": "null.pointer_exception",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497831864466145332",
+      "id": "1497882757051977739",
       "channel_id": "1131839817982947429",
-      "content": "我不會玩超維",
+      "content": "大佬大佬這一隊能不能用來打融災",
       "author": "ahuahuahua",
       "reactions": 4,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1497843034270863484",
+      "id": "1497919469916520539",
       "channel_id": "1131839817982947429",
-      "content": "不如直接白嫖大佬",
-      "author": "ernest_heart",
+      "content": "然后猫咪捂着屁股出来了",
+      "author": "carme.0588",
       "reactions": 4,
       "channel": "🔸綜合討論"
     },
     {
-      "id": "1497843230232936498",
-      "channel_id": "1300659603993923644",
-      "content": "Kathir:  100004267(Thủ)\nHamlin:  100225305,100346121\nGdoll:  10038953,100389537(",
-      "author": "mrmot347",
-      "reactions": 4,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1497801372211478618",
-      "channel_id": "1131839817982947429",
-      "content": "困難看看",
-      "author": "navirecorbeau",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497803181759922358",
-      "channel_id": "1131839817982947429",
-      "content": "我以為維度獵犬呢",
-      "author": "hon_ey0",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497803801006964807",
-      "channel_id": "1131839817982947429",
-      "content": "至少他是做球不是針對嗎（看看弗蘭",
-      "author": "foxcatfurry",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497785468388118601",
-      "channel_id": "1194835209242296410",
-      "content": "我也能助戰角色換著來了<:happy:1356053849894420683>",
-      "author": "cameliia._.",
-      "reactions": 4,
-      "channel": "🔸交友频道"
-    },
-    {
-      "id": "1497864181624602756",
+      "id": "1497877137833857139",
       "channel_id": "1170692781216378960",
-      "content": "you just get yuri action if female ;3",
-      "author": "crowlov1",
-      "reactions": 3,
+      "content": "🫃",
+      "author": "doktor.sex",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497864563264323664",
+      "id": "1497937490240209027",
       "channel_id": "1170692781216378960",
-      "content": "DPS Hameln <:scared1:1356053141816213507>",
-      "author": "megidola.",
-      "reactions": 3,
+      "content": "Very good, sadly I got trash rng and took a extra dr",
+      "author": "spooky_penguin_",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1497835593143554260",
+      "id": "1497942370606645450",
       "channel_id": "1170692781216378960",
-      "content": "his mom is his daughter what a wack family free",
-      "author": "cqteiie",
-      "reactions": 3,
+      "content": "I thought he quit <:FeMC_Jointhefun1:1468258784051859684>",
+      "author": "sirtealot",
+      "reactions": 4,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497844244843466902",
-      "channel_id": "1400750050208125010",
-      "content": "If i manage to get it and pull silverash",
-      "author": "moyashi0672",
-      "reactions": 3,
-      "channel": "🔸general-chat"
-    },
-    {
-      "id": "1497837843597492255",
-      "channel_id": "1497837843597492255",
-      "content": "還是說其實沒有要修",
-      "author": "ahuahuahua",
-      "reactions": 3,
-      "channel": "這遊戲會修bug嗎"
-    },
-    {
-      "id": "1497801711484534866",
-      "channel_id": "1131839817982947429",
-      "content": "反正就是平推",
-      "author": "navirecorbeau",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
     }
   ]
 }
