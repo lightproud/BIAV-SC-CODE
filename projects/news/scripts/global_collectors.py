@@ -1012,42 +1012,6 @@ def fetch_fivech():
         except Exception as e:
             logger.warning(f"5ch {server}/{board} failed: {e}")
 
-    # Method 2: find.5ch.net search with HTML parsing
-    for keyword in KEYWORDS["ja"]:
-        try:
-            resp = _get(
-                "https://find.5ch.net/search",
-                params={"q": keyword, "sort": "created"},
-                headers={"User-Agent": "Mozilla/5.0"},
-            )
-            html = resp.text
-            for match in _re.finditer(
-                r'<a[^>]*href="(https?://[^"]*5ch\.net/test/read\.cgi/[^"]+)"[^>]*>([^<]+)</a>',
-                html
-            ):
-                url, title = match.groups()
-                title = title.strip()
-                if not title or len(title) < 3:
-                    continue
-                # Avoid duplicates from subject.txt
-                if any(i.get("url") == url for i in items):
-                    continue
-                items.append(_make_item(
-                    title=title,
-                    summary="",
-                    source="fivech",
-                    platform_region="jp",
-                    time_str=datetime.now(timezone.utc).isoformat(),
-                    url=url,
-                    engagement=0,
-                    is_hot=False,
-                    author="",
-                    lang="ja",
-                    time_is_approximate=True,
-                ))
-        except Exception as e:
-            logger.warning(f'5ch search "{keyword}" failed: {e}')
-
     logger.info(f"5ch: {len(items)} threads")
     return items
 
