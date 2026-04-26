@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # silver-mem-deploy.sh — 把银芯记忆母版拷贝到黑池内网工作副本
 #
-# BPT-NEXT Phase D.2 — Black Pool need 4 (internal memory) by inheritance.
+# Black Pool need 4 (internal memory) by inheritance.
 #
 # 与 silver-mem-install.sh 的区别：
 #   silver-mem-install.sh 注册银芯自己的 hook（source == target）

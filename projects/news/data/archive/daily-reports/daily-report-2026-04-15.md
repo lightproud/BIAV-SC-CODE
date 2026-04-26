@@ -6,13 +6,33 @@
 
 | 平台 | 数据条数 |
 |------|----------|
+| Bilibili | 2 |
 | Pixiv | 1 |
+| Steam | 4 |
 | Steam | 5 |
 | 微信公众号 | 6 |
+
+## Bilibili
+
+1. 忘却前夜丨概念PV「命途罗织之网」（CV：大西沙织） -- engagement: 675835
+2. 🎬 忘却前夜┊V2.5 PV「命途罗织之网」（CV：大西沙织） -- engagement: 3299
 
 ## Pixiv
 
 1. アグリッパ誕生日おめでとう〜！！！ -- engagement: 0
+
+## Steam 评论
+
+- 好评 4 / 差评 0 / 好评率 100%
+
+### 热门好评
+
+1. [正面] 6，不小心把生活費課掉了 -- engagement: 0
+2. [正面] 好玩爱玩！！ -- engagement: 0
+3. [正面] 畫風好美, 用心的作品 -- engagement: 0
+4. [正面] like card games? like amazing art? play it.
+
+lets... -- engagement: 0
 
 ## Steam 评论
 

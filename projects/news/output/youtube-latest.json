@@ -1,17 +1,29 @@
 {
-  "collected_at": "2026-04-26T01:35:50.016037+00:00",
+  "collected_at": "2026-04-26T08:14:25.049192+00:00",
   "source": "youtube",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "source": "youtube",
-      "time": "2026-04-25T20:31:22.365282+00:00",
+      "time": "2026-04-26T05:12:50.045135+00:00",
+      "lang": "",
+      "title": "[Morimens] Chapter 5 NM then Hardmode Blind Clears - Going until I can't",
+      "summary": "Streamed 3 hours ago",
+      "url": "https://www.youtube.com/watch?v=fNinaxjrIVg",
+      "author": "Flares117",
+      "engagement": 168,
+      "media_url": "https://i.ytimg.com/vi/fNinaxjrIVg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCT-d8mthmvOfcS66bY-Rv7aNcx8Q",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-25T20:12:50.560484+00:00",
       "lang": "",
       "title": "【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】",
-      "summary": "[Streamed 5 hours ago] 忘却前夜 #忘却前夜Steam版 わんちゃん８章おわららなくても許して デクスター卿まじで信じてるぞお前俺はお前を信じてるぞ ...",
+      "summary": "[Streamed 12 hours ago] 忘却前夜 #忘却前夜Steam版 わんちゃん８章おわららなくても許して デクスター卿まじで信じてるぞお前俺はお前を信じてるぞ ...",
       "url": "https://www.youtube.com/watch?v=u7UlhHfVdyY",
       "author": "朝霧@ASGRgames",
-      "engagement": 39,
+      "engagement": 74,
       "media_url": "https://i.ytimg.com/vi/u7UlhHfVdyY/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC02874I2G4D4ewNNrKOWUN85jcKg",
       "content_type": "image"
     }

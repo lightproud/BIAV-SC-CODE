@@ -3,7 +3,9 @@
 > 读完本文件，你将成为忘却前夜（Morimens）领域专家。
 > 制作人：Light（B.I.A.V. Studio）。本仓库仅引用公开可查阅信息。
 >
-> **当前状态：Phase 1 已验证，进入 Phase 2 准备期。记忆系统 9 模块上线，做梦 Agent 三层全启动。**
+> **当前状态（2026-04-26 起）：Phase 1.5 ✅ 完成 → Phase 2 银芯三新使命建设期（4-27 → 7-19，84 天单一阶段）。银芯重新定位 v2.0 已锁定。**
+>
+> **新主控台启动**（如你是接手长期战略锚点的 opus4.7 等会话）：先读 `memory/console-handover-2026-04-26.md`（艾瑞卡 opus4.6 → opus4.7 交接手册），再按其指引读其余文档。
 >
 > 本文件为 AI 增强插件入口，不依赖特定 AI 平台。
 
@@ -17,7 +19,7 @@
 |------|----------|----------|
 | 回答忘却前夜世界观、角色、叙事结构问题 | `memory/morimens-context.md` | 按需读取 |
 | 引用制作人/主文案的第一手陈述 | `assets/data/interview-2026-04.json` | 按需读取 |
-| 查询 63 个角色的技能、数值、立绘数据 | `projects/wiki/data/db/characters.json` | 按需读取 |
+| 查询 72 个角色的技能、数值、立绘数据 | `projects/wiki/data/db/characters.json` ⚠ 基线尚未建立，Phase 2 W1 自举中，原始源 `projects/wiki/data/extracted/categorized/character_data.txt` | 按需读取 |
 | 分析社区动态（Steam/Bilibili/Discord） | `projects/news/output/*-latest.json` | 按需读取 |
 | 了解游戏设计哲学和被砍机制的原因 | `assets/data/design-decisions.json` | 按需读取 |
 | 了解三部叙事的原始规划与实际压缩 | `assets/data/narrative-structure.json` | 按需读取 |
@@ -30,14 +32,29 @@
 
 ## 项目当前状态
 
-**阶段**：Phase 1（记忆宫殿）✅ 已验证 → Phase 2（内容权威）准备中
-**聚焦目标**：Wiki 数据 100% 完整 + 联动内容快速上线能力
+**阶段**：Phase 1.5 ✅ 完成 → **Phase 2 银芯三新使命建设期**（2026-04-27 → 07-19，84 天单一阶段）
+**重要**：2026-04-26 守密人裁定「银芯重新定位 v2.0」— 银芯原三重身份目标已全部达成，进入新使命阶段。详见 `memory/decisions.md` 与 `memory/strategic-plan-2026.md` v2.0 章节。
 
-### 三条主线（按优先级）
+### 银芯三新使命（v2.0，2026-04-26 起）
 
-1. **事实圣经** — 结构化知识库 v1.0，63 角色 + 叙事结构 + 设计决策。校验脚本：`assets/data/validate.py`
-2. **自动情报循环** — ✅ Stage 1 验证通过（2026-04-04）。日报 3 源运行中 + 哨兵层主动异常检测 + 做梦 Agent 三层全启动
-3. **权威知识站点** — Wiki 已部署，63 角色 × 3 语言，完成度 ~83%（技能数据 11/63 待补）
+| # | 新使命 | 主对接子项目 |
+|---|------|------|
+| 1 | **黑池公开信息入口**（GitHub 自动化采集层 / 单向输出） | news（核心） |
+| 2 | **社区共建知识底座**（公开知识共享 / 全语言 Wiki 等派生内容基础） | wiki（核心） |
+| 3 | **Studio 团队 AI 协作训练场**（公开 AI 信息 + 团队成员练手） | game（备扩展位）/ 全局 |
+
+**关键约束**：
+- **信息要全**：贡献底座 ≠ 空骨架。wiki 仍要 72 角色完整
+- **黑池不倒灌银芯**：单向输出，黑池任何形式都不进银芯（修正旧表述）
+- **主控台 = 战略+规划+协调+接口 四合一中枢**（教学层未来锁定，当前不存在但保留思考过程可读性）
+- **银芯主线 = site/news/wiki 三轴**，game 退主线（守密人个人兴趣 + 未来扩展可能）
+
+### 子项目当前状态
+
+1. **news**（黑池公开信息入口 #1）— ✅ 日报 3 源运行中 + 哨兵层 + 做梦 Agent 三层全启动。Phase 2 加固自动化稳定性。
+2. **wiki**（社区共建知识底座）— Phase 2 W1 批 1 已自举 24/72 角色（schema v1.0.1 通过）。批 2/3 派 Code-wiki 接管。
+3. **site**（对外门户）— ✅ 已部署稳定，Phase 2 优化对外发现入口。
+4. **game**（守密人个人兴趣 + 未来扩展位）— 不主线派发，主控台不分配资源。
 
 ### 阻塞项
 
@@ -75,7 +92,8 @@
 | `assets/data/interview-2026-04.json` | 53 问制作人深度采访结构化提取（Light + 主文案霁月） | 大 |
 | `assets/data/narrative-structure.json` | 三部叙事结构、各章压缩细节、角色线 | 中 |
 | `assets/data/design-decisions.json` | 设计哲学、被砍机制、平衡理念 | 小 |
-| `projects/wiki/data/db/characters.json` | 63 角色数据库（技能、数值、立绘、界域） | 大 |
+| `projects/wiki/data/db/characters.json` | ⚠ **尚未建立**（2026-04-20 B3 调研揭露目录从未存在），Phase 2 W1 自举 72 角色基线 | 大（目标态） |
+| `projects/wiki/data/extracted/categorized/character_data.txt` | 72 角色原始字段（客户端解包，自举数据源） | 中 |
 
 ### 运营数据（分析社区动态时查这里）
 
@@ -119,10 +137,10 @@
 
 本仓库是**缸中之脑·银芯（BIAV-SC）**（公开层）。另有**缸中之脑·黑池（BIAV-BP）**（内部层，内网 SVN + Qoder）。
 
-- 银芯：公开信息 + 方法论验证。你在这里
-- 黑池：商业数据 + 未发布内容。内网运行，设计方案见 `memory/black-pool-design.md`
-- 数据单向：黑池 → 脱敏 → 银芯，绝不反向
-- 银芯验证过的模式，黑池直接复用
+- **银芯**：公开信息平台 + Studio 团队 AI 训练场 + 社区共建底座。你在这里
+- **黑池**：商业数据 + 未发布内容 + Studio 内部加工。内网运行，设计方案见 `memory/black-pool-design.md`
+- **数据单向**：**银芯 → 黑池**（公开信息流）。**黑池不倒灌银芯**（守密人 2026-04-26 裁定，覆盖旧表述）
+- 银芯是黑池的"眼睛和耳朵"——只采集 + 整理公开信息往黑池送，黑池吃完什么也不吐回来
 
 ---
 
@@ -143,22 +161,6 @@
 - 冲突时 `git pull` 后重试
 - 修改 `memory/` 文件时更新头部时间戳：`最后更新：YYYY-MM-DD by 会话角色`
 - 凭据绝不写入仓库文件
-
-### 黑池终端 BPT-WEB 版本管理（严格执行）
-
-每次修改 `projects/bpt-web/index.html` 并提交时，**必须**同步更新版本号：
-
-1. **`APP_VERSION` 常量**（`const APP_VERSION = 'x.y.z'`）— 递增 patch（修复）或 minor（新功能）
-2. **侧边栏 HTML**（`<div id="sidebar-footer">vx.y.z</div>`）— 与 APP_VERSION 一致
-3. **`projects/bpt-web/sw.js` 的 `SW_VERSION`**（`const SW_VERSION = 'x.y.z'`）— 与 APP_VERSION 一致，触发 Service Worker 更新清缓存
-4. **`projects/bpt-web/CHANGELOG.md`**— 在顶部添加新版本条目，格式参考已有条目
-
-版本号规则：
-- 修复/优化/微调 → patch +1（如 0.12.0 → 0.12.1）
-- 新功能/新工具 → minor +1（如 0.12.1 → 0.13.0）
-- 重大架构变更 → major +1
-
-**绝对不允许**提交 `index.html` 的功能改动但不更新版本号。如果一次会话中有多次提交，可以只在最终提交时升版，但推送前必须确认版本已更新。
 
 ### Issue 规则
 
@@ -213,7 +215,7 @@
    - B站动态：`projects/news/output/bilibili-latest.json`
    - Discord 摘要：`projects/news/output/discord-latest.json`
    - 全平台合并：`projects/news/output/all-latest.json`
-   - 角色数据库：`projects/wiki/data/db/characters.json`
+   - 角色数据库：`projects/wiki/data/db/characters.json` ⚠ Phase 2 W1 自举中，原始源 `projects/wiki/data/extracted/categorized/character_data.txt`
    - 游戏世界观：`memory/morimens-context.md`
 
 2. **提取知识**而非复制文件 — 将公开信息结构化后写入黑池的 inbox/ 或 silver-core/ 目录

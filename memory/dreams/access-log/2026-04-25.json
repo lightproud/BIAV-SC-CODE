@@ -1,7 +1,7 @@
 {
   "date": "2026-04-25",
-  "timestamp": "2026-04-25T14:35:05.488111",
-  "branch": "main",
+  "timestamp": "2026-04-25T16:36:28.721578",
+  "branch": "claude/memory-health-fix-Rk4Xp",
   "files_scanned": [
     "memory/advanced-memory-design.md",
     "memory/black-pool-design.md",
@@ -21,7 +21,13 @@
     "memory/strategic-plan-2026.md",
     "memory/style-guide.md",
     "memory/task-wiki-data-audit-2026-04.md",
+    "memory/bpt-next-design.md",
+    "memory/bpt-desktop-design-spec-ref.md",
+    "memory/blackpool-architecture.md",
+    "memory/bpt-next-build-verification.md",
+    "memory/phase-d-plan.md",
+    "memory/silver-memory-enhancement-plan.md",
     "memory/bpt-master-plan.md"
   ],
-  "count": 19
+  "count": 25
 }

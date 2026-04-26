@@ -3,9 +3,10 @@
 Discord 月度归档脚本 — 打包超 60 天 JSONL → GitHub Releases → 从 git 删除
 
 用法:
-  python archive_discord.py                  # 实际执行：打包 + 上传 + 删除
-  python archive_discord.py --dry-run        # 仅分析，不做任何修改
-  python archive_discord.py --skip-upload    # 打包 + 删除，跳过 Releases 上传
+  python archive_discord.py                        # 实际执行：打包 + 上传 + 删除（60 天 cutoff）
+  python archive_discord.py --dry-run              # 仅分析，不做任何修改
+  python archive_discord.py --skip-upload          # 打包 + 删除，跳过 Releases 上传
+  python archive_discord.py --force-month YYYY-MM  # 强制归档指定月份（忽略 60 天 cutoff，可多次 --force-month 叠加）
 
 数据目录: projects/news/data/discord/channels/
 归档日志: projects/news/data/discord/archive-log.json
@@ -44,6 +45,22 @@ def find_archivable_files(cutoff_date: str) -> dict[str, list[Path]]:
             date_str = jsonl.stem  # YYYY-MM-DD
             if date_str < cutoff_date:
                 month_key = date_str[:7]  # YYYY-MM
+                by_month[month_key].append(jsonl)
+    return dict(sorted(by_month.items()))
+
+
+def find_files_for_months(months: list[str]) -> dict[str, list[Path]]:
+    """Find all JSONL files for the given YYYY-MM list, regardless of cutoff."""
+    by_month: dict[str, list[Path]] = defaultdict(list)
+    if not CHANNELS_DIR.exists():
+        return by_month
+    wanted = set(months)
+    for ch_dir in CHANNELS_DIR.iterdir():
+        if not ch_dir.is_dir():
+            continue
+        for jsonl in ch_dir.glob('*.jsonl'):
+            month_key = jsonl.stem[:7]
+            if month_key in wanted:
                 by_month[month_key].append(jsonl)
     return dict(sorted(by_month.items()))
 
@@ -141,16 +158,35 @@ def main():
     parser = argparse.ArgumentParser(description='Discord monthly archive cleanup')
     parser.add_argument('--dry-run', action='store_true', help='Analyze only, no changes')
     parser.add_argument('--skip-upload', action='store_true', help='Skip GitHub Releases upload')
+    parser.add_argument(
+        '--force-month', action='append', default=[],
+        metavar='YYYY-MM',
+        help='Force-archive a specific month, bypassing the 60-day cutoff. Repeatable.',
+    )
     args = parser.parse_args()
 
-    cutoff = datetime.now(timezone.utc) - timedelta(days=CUTOFF_DAYS)
-    cutoff_date = cutoff.strftime('%Y-%m-%d')
-    logger.info(f'Cutoff date: {cutoff_date} ({CUTOFF_DAYS} days ago)')
+    if args.force_month:
+        # Validate format
+        for m in args.force_month:
+            try:
+                datetime.strptime(m, '%Y-%m')
+            except ValueError:
+                logger.error(f'Invalid --force-month value: {m} (expected YYYY-MM)')
+                return
+        logger.info(f'Force-archive mode: {args.force_month}')
+        by_month = find_files_for_months(args.force_month)
+        if not by_month:
+            logger.info(f'No JSONL files found for requested months: {args.force_month}')
+            return
+    else:
+        cutoff = datetime.now(timezone.utc) - timedelta(days=CUTOFF_DAYS)
+        cutoff_date = cutoff.strftime('%Y-%m-%d')
+        logger.info(f'Cutoff date: {cutoff_date} ({CUTOFF_DAYS} days ago)')
 
-    by_month = find_archivable_files(cutoff_date)
-    if not by_month:
-        logger.info('No files older than cutoff — nothing to archive')
-        return
+        by_month = find_archivable_files(cutoff_date)
+        if not by_month:
+            logger.info('No files older than cutoff — nothing to archive')
+            return
 
     # Summary
     total_files = sum(len(files) for files in by_month.values())

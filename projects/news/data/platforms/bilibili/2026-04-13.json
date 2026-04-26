@@ -1,9 +1,23 @@
 {
   "date": "2026-04-13",
-  "archived_at": "2026-04-25T17:38:56.712306+00:00",
+  "archived_at": "2026-04-26T07:25:28.388213+00:00",
   "source": "bilibili",
-  "item_count": 0,
-  "items": [],
-  "_gap_repaired": true,
-  "_note": "Placeholder created by repair_gaps.py — no data was collected for this date."
+  "item_count": 1,
+  "items": [
+    {
+      "title": "忘却前夜4K壁纸丨奥尔拉-HORLA-灰烬玫瑰",
+      "summary": "所有的文字都化为灰烬，所有的花瓣都零落成泥。\n呼吸着花园的余焰，让我再为你献上一首诗吧。\n在人们荒寂的心脏里，玫瑰正殷红地栖居。\n\n\n我最最最喜欢的一张壁纸，也是最最最满意的一张壁纸。",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-13T15:00:39+00:00",
+      "url": "http://www.bilibili.com/video/av116397959027308",
+      "engagement": 796,
+      "is_hot": false,
+      "author": "柠檬味星星L",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
 }
