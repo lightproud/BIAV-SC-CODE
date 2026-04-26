@@ -2435,6 +2435,13 @@
       "title": "[DC] z8567657@🔸晒卡分享: (附件/嵌入)",
       "time": "2026-04-26T13:58:22.711000+00:00",
       "downloaded_at": "2026-04-26T19:42:36.062820+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/335d7580099d3d94ee6b36a7d8fd11ddf3500af9.jpg": {
+      "filename": "bilibili_945dfa2ba0b0b5ed.jpg",
+      "source": "bilibili",
+      "title": "阿拉克涅大人……",
+      "time": "2026-04-26T12:00:29+00:00",
+      "downloaded_at": "2026-04-26T20:31:27.048820+00:00"
     }
   },
   "failed": {
@@ -3252,6 +3259,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-26T19:42:36.578336+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/335d7580099d3d94ee6b36a7d8fd11ddf3500af9.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T20:31:27.349638+00:00"
     }
   },
   "archived": []
