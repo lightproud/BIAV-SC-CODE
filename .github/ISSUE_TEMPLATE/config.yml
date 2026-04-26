@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discord 国际服 / International Discord
+    url: https://discord.gg/morimens
+    about: 一般讨论、玩家社区交流（非 bug / 数据缺失）请到 Discord
+  - name: GitHub 仓库 / Repository
+    url: https://github.com/lightproud/brain-in-a-vat
+    about: 浏览源码、阅读 CLAUDE.md / BIAV-SC.md 了解项目协议
