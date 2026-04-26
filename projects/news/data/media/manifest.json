@@ -2442,6 +2442,20 @@
       "title": "阿拉克涅大人……",
       "time": "2026-04-26T12:00:29+00:00",
       "downloaded_at": "2026-04-26T20:31:27.048820+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/34da0c5f65e0db90691456927838c23872c86290.jpg": {
+      "filename": "bilibili_a7e699f72b8bbdb7.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 墨菲最终法则测试 癫狂深潜",
+      "time": "2026-04-26T10:13:05+00:00",
+      "downloaded_at": "2026-04-26T23:33:18.767651+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/78c13cac48fd80d1ec662e3004fa1a6bb0be856a.jpg": {
+      "filename": "bilibili_98ff580ae4a95d83.jpg",
+      "source": "bilibili",
+      "title": "【忘却 / 相位 / 轮选】出错最少的一次",
+      "time": "2026-04-26T22:40:03+00:00",
+      "downloaded_at": "2026-04-26T23:33:21.499782+00:00"
     }
   },
   "failed": {
@@ -3269,6 +3283,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-26T21:32:05.728249+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/34da0c5f65e0db90691456927838c23872c86290.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T23:33:19.068396+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/78c13cac48fd80d1ec662e3004fa1a6bb0be856a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T23:33:21.800615+00:00"
     }
   },
   "archived": []
