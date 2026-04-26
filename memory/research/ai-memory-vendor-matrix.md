@@ -30,6 +30,26 @@
 
 - [§ 2.1 Letta / MemGPT](#21-letta--memgpt)
 - [§ 2.2 Mem0 / Mem0g](#22-mem0--mem0g)
+
+### 2.1 Letta / MemGPT
+
+**来源**：UC Berkeley 起源（arXiv 2310.08560 MemGPT 原论文 → 公司化为 Letta）
+**核心隐喻**：操作系统的虚拟内存管理（OS-inspired）
+**架构三层**：
+- **Core memory**（核心记忆）：固定容量、始终在 system prompt 内，由 agent 主动调用工具读写。类比 RAM。典型用途：用户偏好 / 当前 persona。
+- **Archival memory**（档案记忆）：外部向量库，可索引 + 可搜索，容量无上限。类比硬盘。典型用途：长期事实知识 + 外部数据源（"Data Source"）。
+- **Recall memory**（回溯记忆）：完整对话历史自动归档至磁盘，按需检索。类比 swap 文件。
+
+**关键创新**：agent **主动管理**自己的记忆——不是被动接收注入，而是显式调用 `core_memory_replace` / `archival_memory_insert` / `archival_memory_search` 等函数移动信息。
+
+**银芯映射**：
+- 银芯 `boot-snapshot.md` ≈ Letta 的 core memory（固定容量、始终在 prompt 内）
+- 银芯 `assets/data/vectors.json.gz` ≈ Letta 的 archival memory
+- 银芯 `memory/session-digests/` ≈ Letta 的 recall memory（但银芯无主动管理）
+
+**银芯缺失**：agent **主动写入** core memory 的能力。当前 boot-snapshot 由 `boot_snapshot.py` 自动生成，艾瑞卡不能 mid-session 调整核心记忆条目。
+
+**适配难度**：中。MCP server 已有 `store_facts` 工具，扩展为 `replace_core_block(block_name, new_content)` 可低成本对齐 Letta 模型。
 - [§ 2.3 Zep / Graphiti](#23-zep--graphiti)
 - [§ 2.4 Cognee](#24-cognee)
 - [§ 2.5 Cursor 项目记忆](#25-cursor-项目记忆)
