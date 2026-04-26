@@ -105,7 +105,7 @@
 
 **等价方案**（Phase B P6 联动）：
 - 银芯侧：git push 即同步
-- 黑池侧：`scripts/session_svn_sync.py` 推到本地 SVN
+- 黑池侧：`scripts/session_svn_sync.py` ⚠（Phase B P6 待自建）推到本地 SVN
 
 ---
 
@@ -138,7 +138,7 @@
 
 ### Phase B（~1 周）
 - P5 SVN 账号识别器（`scripts/svn_identity.py`）
-- P6 SVN 会话同步（`scripts/session_svn_sync.py`）
+- P6 SVN 会话同步（`scripts/session_svn_sync.py` ⚠ 待自建）
 - P7 decisions → wiki 导出
 - P8 能力注册表 v1
 

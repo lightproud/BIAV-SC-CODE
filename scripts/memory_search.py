@@ -75,14 +75,6 @@ KNOWLEDGE_GLOBS = [
 
     # === Tier 1d: Project context & source code ===
     "projects/*/CONTEXT.md",
-    "projects/bpt-desktop/src/**/*.ts",
-    "projects/bpt-desktop/src/**/*.tsx",
-    "projects/bpt-desktop/electron/**/*.ts",
-    "projects/bpt/src/**/*.ts",
-    "projects/bpt/src/**/*.tsx",
-    "projects/bpt/electron/**/*.ts",
-    "projects/bpt-web/*.md",
-    "projects/bpt-web/*.js",
     "projects/site/*.html",
     "projects/site/*.css",
     "scripts/*.py",
@@ -909,7 +901,7 @@ def synthesize(query: str, results: list[dict]) -> str | None:
             categories.add("discord")
         elif "memory/" in f:
             categories.add("memory")
-        elif "scripts/" in f or "bpt" in f:
+        elif "scripts/" in f:
             categories.add("code")
         else:
             categories.add("other")
@@ -1175,8 +1167,6 @@ def build_index() -> dict:
             categories["discord"] += 1
         elif rel.startswith("projects/news/"):
             categories["news"] += 1
-        elif rel.startswith("projects/bpt"):
-            categories["bpt"] += 1
         elif rel.startswith("assets/"):
             categories["assets"] += 1
         elif rel.startswith("scripts/"):

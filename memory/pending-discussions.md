@@ -1,6 +1,6 @@
 # 待讨论事项
 
-> 最后更新：2026-04-25 by 艾瑞卡（引用修正）
+> 最后更新：2026-04-20 by 主控台（艾瑞卡会话，sync-memory 作废已失效条目）
 >
 > 跨会话的待决策事项追踪。已决策的条目移入 decisions.md，已落地的条目删除。
 > 所有会话启动时应阅读本文件。
@@ -20,7 +20,7 @@
 
 ## 数据校验
 
-- [x] **Wiki JSON 数据抽查** — 原 wiki 数据展示层 data/db/ 已因数据不可靠被移除（见 lessons-learned #22）。数据来源转为提取层 data/extracted/ + 事实圣经层
+- [x] **Wiki JSON 数据抽查（2026-04-20 B3 修正后作废）**：原任务基于假设"projects/wiki/data/db/ 下有 18 个 JSON"，B3 调研揭露该目录从未存在。Phase 2 W1 以 `memory/wiki-characters-schema-v1.md`（守密人 2026-04-20 裁决锁定）为基线重新规划，此条旧任务不再适用
 
 ## 事实圣经
 
