@@ -1,9 +1,23 @@
 {
   "date": "2026-04-13",
-  "archived_at": "2026-04-25T20:32:54.514379+00:00",
+  "archived_at": "2026-04-26T03:28:19.284994+00:00",
   "source": "pixiv",
-  "item_count": 0,
-  "items": [],
-  "_gap_repaired": true,
-  "_note": "Placeholder created by repair_gaps.py — no data was collected for this date."
+  "item_count": 1,
+  "items": [
+    {
+      "title": "忘却前夜まとめ",
+      "summary": "",
+      "source": "pixiv",
+      "platform_region": "jp",
+      "lang": "ja",
+      "time": "2026-04-13T00:16:35+09:00",
+      "url": "https://www.pixiv.net/artworks/143485485",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "いないよ",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    }
+  ]
 }
