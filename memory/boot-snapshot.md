@@ -1,6 +1,6 @@
 # 银芯启动快照 / BIAV-SC Boot Snapshot
 
-> 最后更新：2026-04-25 by boot_snapshot.py (auto-generated)
+> 最后更新：2026-04-20 by boot_snapshot.py (auto-generated)
 > 新会话读完此文件即可就绪，无需逐个加载 memory 文件。
 > 完整定义见 `BIAV-SC.md`，本文件是压缩启动包。
 
@@ -28,7 +28,7 @@ OK: news aggregator
 OK: daily report
 OK: discord archive
 OK: dream journals
-OK: wiki data
+MISSING: wiki data
 
 ## 最新社区情报
 
@@ -83,10 +83,9 @@ Latest dream: 2026-W15-weekly
 | 主站 | `projects/site/` | 维护模式 |
 | 新闻聚合 | `projects/news/` | 运行中 |
 | Wiki | `projects/wiki/` | 数据补全中 |
-| BPT-WEB | `projects/bpt-web/` | v0.1.0 已部署 |
-| BPT-DESKTOP | `projects/bpt-desktop/` | v0.1.0 开发中 |
-| BPT 母版 | `projects/bpt/` | 重建计划制定中 |
 | 衍生游戏 | `projects/game/` | 暂缓 |
+
+> BPT 战线已于 2026-04-19 战略转向中从银芯仓库删除，银芯转为 BPT 指导者（协议见 `memory/bpt-guidance-protocol.md`）。
 
 ## 按需加载索引
 
@@ -94,7 +93,7 @@ Latest dream: 2026-W15-weekly
 - 项目详细状态 → `memory/project-status.md`
 - 战略评估 → `memory/strategic-assessment.md`
 - 游戏世界观 → `memory/morimens-context.md`
-- 角色数据库 → `projects/wiki/data/extracted/categorized/character_data.txt`
+- 角色数据库 → `projects/wiki/data/db/characters.json` ⚠（Phase 2 W1 待自举）
 - 最新日报 → `projects/news/output/daily-latest.md`
 - 全平台数据 → `projects/news/output/all-latest.json`
 - 设计决策 → `assets/data/design-decisions.json`

@@ -1,41 +1,45 @@
 {
   "date": "2026-04-26",
-  "messages": 4418,
+  "messages": 5455,
   "unique_authors": 168,
-  "reactions_total": 357,
-  "attachments": 274,
+  "reactions_total": 436,
+  "attachments": 333,
   "channel_activity": {
-    "🔸綜合討論": 578,
-    "🔸morimens-game-chat": 2351,
+    "🔸綜合討論": 719,
+    "🔸morimens-game-chat": 2886,
+    "🔸한국어-채팅방": 6,
+    "🔸русский-канал": 185,
+    "🔸phòng-chat-tiếng-việt": 139,
+    "🔸canal-português": 138,
+    "🔸ruang-obrolan-indonesia": 311,
+    "🔸ห้องสนทนาภาษาไทย": 52,
+    "🔸traphase": 8,
+    "🔸lore-chat": 135,
+    "🔸team-building": 59,
+    "🔸general-chat": 447,
+    "🔸邀请码互助┊swap-invitation-codes": 7,
+    "🔸game-question": 220,
+    "🔸机器人命令┊bot-commands": 15,
+    "我福袋的效果呢": 1,
+    "Inquiry about the home-screen music": 9,
+    "Arachne Combat Voice Line Blocking Annihilate": 2,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
+    "3星期萌新請教融災角色與配隊": 9,
+    "Total newbie need advices": 1,
     "🔸剧情交流": 14,
     "🔸晒卡分享": 3,
     "🔸相位对弈": 4,
-    "🔸한국어-채팅방": 4,
-    "🔸русский-канал": 35,
-    "🔸phòng-chat-tiếng-việt": 131,
-    "🔸ruang-obrolan-indonesia": 303,
-    "🔸ห้องสนทนาภาษาไทย": 44,
-    "🔸traphase": 2,
-    "🔸lore-chat": 89,
-    "🔸team-building": 28,
-    "🔸general-chat": 414,
-    "🔸邀请码互助┊swap-invitation-codes": 5,
-    "🔸game-question": 175,
     "🔸游戏问题": 10,
-    "🔸机器人命令┊bot-commands": 12,
     "這遊戲會修bug嗎": 2,
     "Encouraging use of the official PC client": 6,
     "歸檔呢": 3,
     "Vortice keeps disappearing": 1,
     "Cards from S Ultra Space Deals Less Damage": 1,
-    "Inquiry about the home-screen music": 2,
     "塔薇最终法则/Tawil's Absolute Axiom BUG": 3,
     "✅「Answered」Possibilities of Doresain kit rework": 5,
-    "3星期萌新請教融災角色與配隊": 5,
     "🔸课间休息闲聊": 4,
     "🔸交友频道": 1,
     "🔸canal-español": 11,
-    "🔸canal-português": 136,
     "这什么情况": 2,
     "Reality Verges": 3,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 18,
@@ -43,13 +47,14 @@
     "V2.5.0.0 停服维护公告": 1,
     "doreposting / unserious doodles": 1,
     "【English Translation】Opinions Collection": 1,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
     "PVE players don't want Traphase": 4,
     "V2.5.0 命运剧院┊Theater of Fate": 1
   },
   "hourly_activity": {
+    "6": 686,
+    "7": 796,
+    "8": 145,
     "5": 772,
-    "6": 590,
     "4": 410,
     "1": 549,
     "2": 923,
@@ -57,9 +62,8 @@
     "0": 381
   },
   "message_types": {
-    "0": 1014,
-    "19": 416,
-    "20": 1
+    "0": 717,
+    "19": 320
   },
   "top_reacted_messages": [
     {
@@ -109,6 +113,14 @@
       "author": "foxcatfurry",
       "reactions": 5,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1497866229841530951",
+      "channel_id": "1170692781216378960",
+      "content": "Train is fun",
+      "author": "null.pointer_exception",
+      "reactions": 4,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1497831864466145332",
@@ -167,6 +179,22 @@
       "channel": "🔸交友频道"
     },
     {
+      "id": "1497864181624602756",
+      "channel_id": "1170692781216378960",
+      "content": "you just get yuri action if female ;3",
+      "author": "crowlov1",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1497864563264323664",
+      "channel_id": "1170692781216378960",
+      "content": "DPS Hameln <:scared1:1356053141816213507>",
+      "author": "megidola.",
+      "reactions": 3,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497835593143554260",
       "channel_id": "1170692781216378960",
       "content": "his mom is his daughter what a wack family free",
@@ -197,30 +225,6 @@
       "author": "navirecorbeau",
       "reactions": 3,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497804102351061082",
-      "channel_id": "1131839817982947429",
-      "content": "为了让每个玩家都能享受我们会让这怪物开局自带100加固\n然后每回合减10加固同时生一根触手",
-      "author": "be_queitplease",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497804798752329769",
-      "channel_id": "1131839817982947429",
-      "content": "350蛀蟲已嚴肅剿滅",
-      "author": "hon_ey0",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497771262544580782",
-      "channel_id": "1170692781216378960",
-      "content": "I should drink tonight",
-      "author": "necronomikkon",
-      "reactions": 3,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }

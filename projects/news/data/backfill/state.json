@@ -1,8 +1,8 @@
 {
   "bilibili": {
-    "page": 2,
+    "page": 4,
     "done": false,
-    "total": 20
+    "total": 100
   },
   "appstore": {
     "page": 21,
@@ -10,10 +10,10 @@
     "total": 210
   },
   "steam_review": {
-    "page": 26,
+    "page": 31,
     "done": false,
-    "total": 2500,
-    "cursor": "AoJ45477xJQDfsD0xQU="
+    "total": 3000,
+    "cursor": "AoJwtY6JtZMDcoqTrgU="
   },
   "arca_live": {
     "page": 1,

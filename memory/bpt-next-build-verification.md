@@ -1,5 +1,10 @@
 # BPT-NEXT 构建与诊断验证报告
 
+> **状态：已封存（2026-04-19）**
+> 封存原因：2026-04-19 战略转向——BPT 战线不再在银芯内部开发，`projects/bpt-next/` 已从仓库删除。本文档作为历史验证审计材料保留。
+>
+> ---
+>
 > 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
 > 执行环境：银芯容器（Linux x86_64 / Claude Code on the web）
 > 分支：`claude/bpt-next-bootstrap-Q41x3`
