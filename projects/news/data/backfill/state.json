@@ -1,8 +1,8 @@
 {
   "bilibili": {
-    "page": 2,
+    "page": 1,
     "done": false,
-    "total": 20
+    "total": 0
   },
   "appstore": {
     "page": 21,
@@ -17,12 +17,12 @@
   },
   "arca_live": {
     "page": 1,
-    "done": true,
+    "done": false,
     "total": 0
   },
   "dcinside": {
     "page": 1,
-    "done": true,
+    "done": false,
     "total": 0
   },
   "naver_cafe": {
@@ -37,7 +37,7 @@
   },
   "ruliweb": {
     "page": 1,
-    "done": true,
+    "done": false,
     "total": 0
   },
   "weixin": {
