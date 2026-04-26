@@ -2218,6 +2218,55 @@
       "title": "[DC] aurora3981@🔸morimens-game-chat: (附件/嵌入)",
       "time": "2026-04-26T01:05:31.382000+00:00",
       "downloaded_at": "2026-04-26T01:35:56.931262+00:00"
+    },
+    "https://i.ytimg.com/vi/fNinaxjrIVg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCT-d8mthmvOfcS66bY-Rv7aNcx8Q": {
+      "filename": "youtube_27b320bd3d70b33d.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Chapter 5 NM then Hardmode Blind Clears - Going until I can't",
+      "time": "2026-04-26T04:41:54.982261+00:00",
+      "downloaded_at": "2026-04-26T04:56:55.618840+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/5143b570adb6921452bd9e3ad00e0cf9f49bb048.jpg": {
+      "filename": "bilibili_5120ff0fc8e605ab.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜/调查行动】织命剧场Part9 重圆",
+      "time": "2026-04-26T02:46:26+00:00",
+      "downloaded_at": "2026-04-26T04:56:57.102503+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/9a56e4aeb27845864039c83eeaba221f7e78d4fd.jpg": {
+      "filename": "bilibili_adf8f897e4ce8d50.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜/调查行动】织命剧场Part11 判决",
+      "time": "2026-04-26T02:59:59+00:00",
+      "downloaded_at": "2026-04-26T04:56:58.521999+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/08b7cb6ed8dff45fe6b13090c1cba564b1519859.jpg": {
+      "filename": "bilibili_317b40c265a0a61f.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜/调查行动】织命剧场Part8 往日幻影",
+      "time": "2026-04-26T02:32:03+00:00",
+      "downloaded_at": "2026-04-26T04:56:59.667084+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/7ad21c4b9f0df55c1fed3020699ef874bd0674a9.jpg": {
+      "filename": "bilibili_9ca8faaa1949a147.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜/调查行动】织命剧场Part10 温柔的枷锁",
+      "time": "2026-04-26T02:57:44+00:00",
+      "downloaded_at": "2026-04-26T04:57:01.145863+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/4f5d4a6cbdaf254653e730b5b0628a9da9e85272.jpg": {
+      "filename": "bilibili_db0f306586d031d1.jpg",
+      "source": "bilibili",
+      "title": "原来几个警察内部聊一下就可以直接更改法律噢",
+      "time": "2026-04-26T03:13:41+00:00",
+      "downloaded_at": "2026-04-26T04:57:02.187877+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/f5a70e6f0e5bcc6f0a806b2a2f60c015813a3e89.jpg": {
+      "filename": "bilibili_1c93707ca29889c5.jpg",
+      "source": "bilibili",
+      "title": "单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED）",
+      "time": "2026-04-26T04:33:37+00:00",
+      "downloaded_at": "2026-04-26T04:57:03.297599+00:00"
     }
   },
   "failed": {
@@ -2950,6 +2999,46 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-25T20:32:54.392921+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/9a56e4aeb27845864039c83eeaba221f7e78d4fd.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T04:56:57.403587+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/5143b570adb6921452bd9e3ad00e0cf9f49bb048.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T04:56:57.704471+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/08b7cb6ed8dff45fe6b13090c1cba564b1519859.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T04:56:59.967866+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/7ad21c4b9f0df55c1fed3020699ef874bd0674a9.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T04:57:01.446623+00:00"
+    },
+    "https://preview.redd.it/t69swj9xtfxg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=ed382f2e80bf40fef87702a3c7a5903f63f20ef9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T04:57:03.735327+00:00"
+    },
+    "https://preview.redd.it/147v63kz6gxg1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=714f4b6d56cc0c1e77525311edd22d03ce3eb6d4": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T04:57:04.063741+00:00"
+    },
+    "https://preview.redd.it/na6z9ut23gxg1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=6bc38aec6303d8439f4727899ce7217793220792": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T04:57:04.392514+00:00"
+    },
+    "https://preview.redd.it/9p3vl17qkgxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=64f021f1321bfd20d47db4a125d24d3005b869f9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-26T04:57:04.720580+00:00"
     }
   },
   "archived": []

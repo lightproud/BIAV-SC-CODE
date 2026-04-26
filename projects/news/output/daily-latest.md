@@ -1,11 +1,11 @@
 # 忘却前夜 社区日报 2026-04-26
 
-> 采集时间：2026-04-26 09:35 UTC+8
+> 采集时间：2026-04-26 12:56 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 323
-2. [Bilibili] 沙耶之歌8 — engagement: 222
+1. [Bilibili] 瘟腥霉壕，但是治愈？别逗你虚哥笑了！【沙耶之歌吐槽】 — engagement: 575
+2. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 1
 
 ## 总览
 
@@ -14,8 +14,8 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 40 |
-| DCInside | 0（沉默）|
+| Bilibili | 39 |
+| DCInside | 67 |
 | Discord | 16 |
 | 抖音 | 0（沉默）|
 | Epic Games Store | 0（沉默）|
@@ -32,9 +32,9 @@
 | Pixiv | 1 |
 | QooApp | 0（沉默）|
 | QQ频道 | 0（沉默）|
-| Reddit | 17 |
+| Reddit | 34 |
 | Ruliweb | 0（沉默）|
-| Steam | 6 |
+| Steam | 7 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | 淘宝 | 0（沉默）|
@@ -46,11 +46,11 @@
 | Twitch | 0（沉默）|
 | Twitter/X | 0（沉默）|
 | VK Play | 0（沉默）|
-| 微博 | 18 |
+| 微博 | 0（沉默）|
 | 微信公众号 | 0（沉默）|
 | 闲鱼 | 0（沉默）|
 | 小红书 | 0（沉默）|
-| YouTube | 1 |
+| YouTube | 2 |
 | 知乎 | 0（沉默）|
 
 ## ⚠️ 需要关注
@@ -71,16 +71,16 @@
 
 ## Steam 评论
 
-- 好评 5 / 差评 1 / 好评率 83%
-- 语言分布：english 2, schinese 2, polish 1, vietnamese 1
+- 好评 6 / 差评 1 / 好评率 86%
+- 语言分布：schinese 3, english 2, polish 1, vietnamese 1
 
 ### 热门好评
 
-1. [正面] Great lovecraftian deck builder with various ways... — engagement: 0
-2. [正面] 非常好忘却前夜，使我时间旋转。 — engagement: 0
-3. [正面] Peak F2P friendliness and also helot catena peak — engagement: 0
-4. [正面] very f2p friendly, the devs really care about thei... — engagement: 0
-5. [正面] 送的好多，一个合格的副游 — engagement: 0
+1. [正面] 对新手很友好的游戏！ — engagement: 0
+2. [正面] Great lovecraftian deck builder with various ways... — engagement: 0
+3. [正面] 非常好忘却前夜，使我时间旋转。 — engagement: 0
+4. [正面] Peak F2P friendliness and also helot catena peak — engagement: 0
+5. [正面] very f2p friendly, the devs really care about thei... — engagement: 0
 
 ### ⚠️ 差评
 
@@ -88,11 +88,19 @@
 
 ## Bilibili
 
-1. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3657
-2. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3567
-3. ‌ — engagement: 1175
-4. 【忘却前夜】超级大集集集结 — engagement: 1070
-5. 【忘却前夜】超级大集集集结 — engagement: 1060
+1. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 4102
+2. 【忘却前夜】新神已至！角色攻略之阿拉克涅 — engagement: 3997
+3. ‌ — engagement: 1225
+4. 【忘却前夜】超级大集集集结 — engagement: 1113
+5. 【忘却前夜】超级大集集集结 — engagement: 1103
+
+## DCInside
+
+1. 라만차 열정은 멋지지만 와따시 도무지 기력이 없다냥 — engagement: 0
+2. 모바게 오프라인 모드 전환해주는거 진짜 드문데 — engagement: 0
+3. 게임이 기대를주는데 큰게 필요없더라 — engagement: 0
+4. 메인쿤에게서 가능성을 보았다 — engagement: 0
+5. 슬더스에는 없단 말이다 — engagement: 0
 
 ## Pixiv
 
@@ -100,34 +108,21 @@
 
 ## Reddit
 
-1. Free Mouchette? — engagement: 0
-2. Do any of you have any Lovecraft book in your libraries? — engagement: 0
-3. Finally beaten Madness Rail difficulty with zero energy gnos — engagement: 0
-4. I can't believe it...I love BIAV — engagement: 0
-5. I just got arachnide what are her best teams and just build  — engagement: 0
+1. The Keeper and Goliath after unlocking Reproduction Frenzy. — engagement: 0
+2. Is this the order we should read character quests? 🤔 — engagement: 0
+3. Amount of pulls as of Ch1-1 — engagement: 0
+4. Beast of causality and tawil — engagement: 0
+5. What do you recommend? — engagement: 0
 
 ## StopGame.ru
 
 1. [StopGame] Morimens — 3.9/10 (0 оценок) — engagement: 0
 
-## 微博
-
-1. 忘却前夜#忘却前夜#
-【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
-「嘴巴...这个？弥 — engagement: 0
-2. 忘却前夜┊唤醒体展示✦徐
-妾身乃不梦乡之主，徐。
-若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
-
-✦ 徐 CV： — engagement: 0
-3. 12758【投稿】忘却前夜。我主任 — engagement: 0
-4. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
-5. 忘却前夜 葬骸城的居民还要再吃多久的海鲜啊（悲 — engagement: 0
-
 ## YouTube
 
-1. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 39
+1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 120
+2. 【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】 — engagement: 55
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, DCInside, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, Google Play, Instagram, Lofter, Naver Cafe, NGA, Note.com, Official, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, taptap_post, Telegram, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微信公众号, 闲鱼, 小红书, 知乎
+App Store, Arca.live, 巴哈姆特, 抖音, Epic Games Store, Facebook, 5ch, GACHAREVENUE, Google Play, Instagram, Lofter, Naver Cafe, NGA, Note.com, Official, QooApp, QQ频道, Ruliweb, Steam 论坛, 淘宝, TapTap, taptap_post, Telegram, 百度贴吧, TikTok, Twitch, Twitter/X, VK Play, 微博, 微信公众号, 闲鱼, 小红书, 知乎
