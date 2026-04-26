@@ -1,8 +1,8 @@
 {
   "date": "2026-04-26",
-  "archived_at": "2026-04-26T01:35:56.997041+00:00",
+  "archived_at": "2026-04-26T03:26:57.074164+00:00",
   "source": "bilibili",
-  "item_count": 43,
+  "item_count": 47,
   "items": [
     {
       "source": "bilibili",
@@ -575,6 +575,36 @@
       "content_type": "video"
     },
     {
+      "title": "【忘却前夜/调查行动】织命剧场Part8 往日幻影",
+      "summary": "死的死死的死死的死",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-26T02:32:03+00:00",
+      "url": "http://www.bilibili.com/video/av116468641438664",
+      "engagement": 33,
+      "is_hot": false,
+      "author": "赛博山头渔夫",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "【忘却前夜/调查行动】织命剧场Part9 重圆",
+      "summary": "还有恨海情天破镜重圆共犯邀请\n请问提灯在此处的作用是：a.剧情需要，b.放个灯罩姐阴一手，c.放个灯罩姐阴一手，d.放个灯罩姐阴一手",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-26T02:46:26+00:00",
+      "url": "http://www.bilibili.com/video/av116468691768779",
+      "engagement": 29,
+      "is_hot": false,
+      "author": "赛博山头渔夫",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
       "source": "bilibili",
       "time": "2026-04-25T14:27:46+00:00",
       "lang": "zh",
@@ -591,6 +621,36 @@
         "comments_fetched": 0,
         "danmaku": 0
       }
+    },
+    {
+      "title": "【忘却前夜/调查行动】织命剧场Part11 判决",
+      "summary": "是心魔是水仙是妹妹是阴阳分离之术是道家必经之路是无情道断情绝爱是杀妹证道",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-26T02:59:59+00:00",
+      "url": "http://www.bilibili.com/video/av116468759010192",
+      "engagement": 19,
+      "is_hot": false,
+      "author": "赛博山头渔夫",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "【忘却前夜/调查行动】织命剧场Part10 温柔的枷锁",
+      "summary": "主角要登场了*兴奋\n大蜘蛛怎么不灾厄",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-26T02:57:44+00:00",
+      "url": "http://www.bilibili.com/video/av116468742168027",
+      "engagement": 16,
+      "is_hot": false,
+      "author": "赛博山头渔夫",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     },
     {
       "source": "bilibili",
