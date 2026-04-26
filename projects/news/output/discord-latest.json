@@ -1,202 +1,114 @@
 {
-  "collected_at": "2026-04-12T14:12:17.783610+00:00",
+  "collected_at": "2026-04-26T01:35:50.016037+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-04-12T14:11:29.768229+00:00",
+      "time": "2026-04-26T00:00:00+00:00",
       "lang": "",
-      "title": "Discord 社区日报 (2026-04-12)",
-      "summary": "今日 6,509 条消息，162 位活跃用户，663 次反应。热门频道：🔸morimens-game-chat(3782)、🔸綜合討論(679)、🔸game-question(544)、🔸general-chat(376)、🔸canal-português(258)",
+      "title": "Discord 社区日报 (2026-04-26)",
+      "summary": "今日 561 条消息，66 位活跃用户，24 次反应。热门频道：🔸morimens-game-chat(368)、🔸canal-português(114)、🔸綜合討論(17)、Can we change PvP seasonal rewards condition to *participate* instead?(11)、🔸phòng-chat-tiếng-việt(8)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 6509
+      "engagement": 561
     },
     {
       "source": "discord",
-      "time": "2026-04-12T07:31:49.728000+00:00",
+      "time": "2026-04-26T00:31:34.789000+00:00",
       "lang": "",
-      "title": "[DC] willsalvador@🔸morimens-game-chat: https://x.com/i/status/2011563763795968194",
-      "summary": "https://x.com/i/status/2011563763795968194\n  └ arisuu0604: yes i see\n-Gramona\n  └ crowlov1: damn, the helot image is messed up",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492789324846989362",
-      "author": "willsalvador",
-      "engagement": 37,
+      "title": "[DC] princess.goth@🔸morimens-game-chat: (附件/嵌入)",
+      "summary": "[附件: download_23.png, download_20.png]\n  └ dracozion: Tru tho\n  └ arandomflamev2: https://klipy.com/gifs/omni-man-omni-man-are-you-sure--k01KQ3K81PA5W7BYXPN2HTSYXB3",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497756995845881927",
+      "author": "princess.goth",
+      "engagement": 9,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497756995279654972/download_23.png?ex=69eeae66&is=69ed5ce6&hm=106e4da22601b3ce88d655c7150e04df4200f23157daf46c4134e395f2213727&",
+      "content_type": "image",
       "metadata": {
-        "reactions": "🔥×8 Aurita_pinch×3",
+        "reactions": "💀×1",
         "reply_count": 2,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T02:30:37.078000+00:00",
-      "lang": "",
-      "title": "[DC] water_heart@🔸綜合討論: (附件/嵌入)",
-      "summary": "[附件: Screenshot_2026-04-12-10-29-56-338_com.qookkagames.z1.gp.hk.jpg]",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492713522659065996",
-      "author": "water_heart",
-      "engagement": 25,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1492713522411470949/Screenshot_2026-04-12-10-29-56-338_com.qookkagames.z1.gp.hk.jpg?ex=69dc554d&is=69db03cd&hm=d9de49c093a93a42ff10ab0d2a663626580985638a245217b15d33f71190cd34&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🛐×8",
-        "reply_count": 0,
-        "attachment_count": 1,
+        "attachment_count": 2,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1492713522411470949/Screenshot_2026-04-12-10-29-56-338_com.qookkagames.z1.gp.hk.jpg?ex=69dc554d&is=69db03cd&hm=d9de49c093a93a42ff10ab0d2a663626580985638a245217b15d33f71190cd34&"
-        ],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T10:30:50.011000+00:00",
-      "lang": "",
-      "title": "[DC] ellezard@🔸art-and-memes: Grinded the event with Ryker team. It's an Exodia deck so this idea is just too",
-      "summary": "Grinded the event with Ryker team. It's an Exodia deck so this idea is just too funny to pass.\n\nUID: 101197541\n[附件: Ryker_Traphase.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1492834372858941470/1492834372858941470",
-      "author": "ellezard",
-      "engagement": 22,
-      "media_url": "https://cdn.discordapp.com/attachments/1492834372858941470/1492834373915902052/Ryker_Traphase.png?ex=69dcc5da&is=69db745a&hm=794321d5c675ed5f7888784e05e4ed4dc1da2c72d09696962a1693426bf24baa&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×7",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1492834372858941470/1492834373915902052/Ryker_Traphase.png?ex=69dcc5da&is=69db745a&hm=794321d5c675ed5f7888784e05e4ed4dc1da2c72d09696962a1693426bf24baa&"
-        ],
-        "channel": "🔸art-and-memes"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T10:49:25.331000+00:00",
-      "lang": "",
-      "title": "[DC] spooky_penguin_@🔸morimens-game-chat: (附件/嵌入)",
-      "summary": "[附件: Untitled64_20260412124901.png]\n  └ lighteveningdawn: Six...\n  └ l8989c: wtf 67\n  └ l8989c: SIX SEVEN SKEY\n  └ l8989c: OMG",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492839050850078833",
-      "author": "spooky_penguin_",
-      "engagement": 21,
-      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492839050418323527/Untitled64_20260412124901.png?ex=69dcca35&is=69db78b5&hm=0e70e1593ee19bdf84b59b43444a5eaceb83798c2bec4682dd50ab4442a954aa&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×4",
-        "reply_count": 4,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1170692781216378960/1492839050418323527/Untitled64_20260412124901.png?ex=69dcca35&is=69db78b5&hm=0e70e1593ee19bdf84b59b43444a5eaceb83798c2bec4682dd50ab4442a954aa&"
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497756995279654972/download_23.png?ex=69eeae66&is=69ed5ce6&hm=106e4da22601b3ce88d655c7150e04df4200f23157daf46c4134e395f2213727&",
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497756995560800327/download_20.png?ex=69eeae66&is=69ed5ce6&hm=7ed0042298a0d4d9c3f104b769c056f03e252a0779ffb214317dc3af3a429410&"
         ],
         "channel": "🔸morimens-game-chat"
       }
     },
     {
       "source": "discord",
-      "time": "2026-04-12T09:40:07.847000+00:00",
+      "time": "2026-04-26T01:10:03.055000+00:00",
       "lang": "",
-      "title": "[DC] mishmeria_.@🔸綜合討論: 今天剛好第七",
-      "summary": "今天剛好第七\n  └ 0.0._.0_0.: 超猛\n  └ yy42974466: 加油",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492821613098434620",
-      "author": "mishmeria_.",
-      "engagement": 16,
-      "metadata": {
-        "reactions": "🛐×4",
-        "reply_count": 2,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T06:18:21.538000+00:00",
-      "lang": "",
-      "title": "[DC] undeterredhomo@🔸morimens-game-chat: Erm future cantos is literally dante and virgilius making out tf u mean",
-      "summary": "Erm future cantos is literally dante and virgilius making out tf u mean\n  └ sr_sector7: Whatever you say bro\n  └ masian131: insider info over here\n  └ xiii_c: Scandalous\n  └ not_kathigu_ra: The April Fools event was foreshadowing\n  └ cqteiie: Dante pls make out with Sinclair or yisang next",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492770835558039675",
-      "author": "undeterredhomo",
-      "engagement": 16,
+      "title": "[DC] climbkaly@🔸morimens-game-chat: I just...  Uffff feels good to whale",
+      "summary": "I just...\n\nUffff feels good to whale\n[附件: Untitled.png]\n  └ necronomikkon: ",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497766677415198941",
+      "author": "climbkaly",
+      "engagement": 9,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497766676618547242/Untitled.png?ex=69eeb76a&is=69ed65ea&hm=1f750254e48af7295a4d32e187884fca049f6837926d40b1fffd5bb478648438&",
+      "content_type": "image",
       "metadata": {
         "reactions": "🔥×2",
-        "reply_count": 5,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T07:22:23.997000+00:00",
-      "lang": "",
-      "title": "[DC] ponponnyaru@🔸綜合討論: 现在是延延又延延",
-      "summary": "现在是延延又延延",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492786951999328338",
-      "author": "ponponnyaru",
-      "engagement": 15,
-      "metadata": {
-        "reactions": "🌿×5",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T09:36:20.390000+00:00",
-      "lang": "",
-      "title": "[DC] mishmeria_.@🔸綜合討論: ",
-      "summary": "\n[附件: image.png]\n  └ 0.0._.0_0.: 那先睡吧",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492820659074633789",
-      "author": "mishmeria_.",
-      "engagement": 15,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1492820658776969287/image.png?ex=69dcb914&is=69db6794&hm=351a8de2810c9eb297cf3615b0b1c1596918147084b018da3752ec46b2c4e0c0&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "jenkins_processing×4",
         "reply_count": 1,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1492820658776969287/image.png?ex=69dcb914&is=69db6794&hm=351a8de2810c9eb297cf3615b0b1c1596918147084b018da3752ec46b2c4e0c0&"
-        ],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T04:11:56.551000+00:00",
-      "lang": "",
-      "title": "[DC] arkaether@🔸morimens-game-chat: (附件/嵌入)",
-      "summary": "[附件: Beige_and_Black_Modern_Aesthetic_Writers_Novel_Character_Development_Document-2_page-0001.png]\n  └ kobal: is that without monthly?\n  └ kobal: this uses 28 days a month\n  └ kobal: just read all this\n  └ eaglewiz: So on average 1 and a half limiteds per month, and then 1 dupe each for character and wheel from the shop",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492739021816860703",
-      "author": "arkaether",
-      "engagement": 15,
-      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492739021514997781/Beige_and_Black_Modern_Aesthetic_Writers_Novel_Character_Development_Document-2_page-0001.png?ex=69dc6d0c&is=69db1b8c&hm=2ad73b038618e4290d7f926220c22b945ba8e0715b82003e24c841a9c3d8bd68&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "PogPause×2",
-        "reply_count": 4,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1170692781216378960/1492739021514997781/Beige_and_Black_Modern_Aesthetic_Writers_Novel_Character_Development_Document-2_page-0001.png?ex=69dc6d0c&is=69db1b8c&hm=2ad73b038618e4290d7f926220c22b945ba8e0715b82003e24c841a9c3d8bd68&"
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497766676618547242/Untitled.png?ex=69eeb76a&is=69ed65ea&hm=1f750254e48af7295a4d32e187884fca049f6837926d40b1fffd5bb478648438&"
         ],
         "channel": "🔸morimens-game-chat"
       }
     },
     {
       "source": "discord",
-      "time": "2026-04-12T10:29:49.040000+00:00",
+      "time": "2026-04-26T01:17:57.421000+00:00",
       "lang": "",
-      "title": "[DC] arkaether@🔸morimens-game-chat: yeah like there is a reason i've been going to bat HARD for vortice the past ent",
-      "summary": "yeah like there is a reason i've been going to bat HARD for vortice the past entire month cuz e1 viability in a modern dps is honestly insane",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492834117128290305",
-      "author": "arkaether",
-      "engagement": 15,
+      "title": "[DC] sadnekobasu@🔸morimens-game-chat: did this today did i brick",
+      "summary": "did this today did i brick\n[附件: image.png]\n  └ climbkaly: no.\n  └ l8989c: no... unless you are broke and have other more important priorities\n  └ cornonthemacabre_: kinda imo",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497768667050541228",
+      "author": "sadnekobasu",
+      "engagement": 7,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497768666769653871/image.png?ex=69eeb945&is=69ed67c5&hm=46bcfd8c1ca627903f63532e0888a8485ba297b9858a8025ca6e4f8bec1dc82a&",
+      "content_type": "image",
       "metadata": {
-        "reactions": "agree×5",
+        "reactions": "",
+        "reply_count": 3,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497768666769653871/image.png?ex=69eeb945&is=69ed67c5&hm=46bcfd8c1ca627903f63532e0888a8485ba297b9858a8025ca6e4f8bec1dc82a&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T00:00:45.419000+00:00",
+      "lang": "",
+      "title": "[DC] princess.goth@🔸morimens-game-chat: (附件/嵌入)",
+      "summary": "[附件: Screenshot_2026-04-26-02-00-26-77_09a98f8d0fc2b11b1559c9fab3480a92.jpg]\n  └ angbak: Ty",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497749239025893568",
+      "author": "princess.goth",
+      "engagement": 6,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497749238518386738/Screenshot_2026-04-26-02-00-26-77_09a98f8d0fc2b11b1559c9fab3480a92.jpg?ex=69eea72d&is=69ed55ad&hm=97f6c7d2144ef2066f20383a4abdaf5b09c06a2c5a8226ff4b138f10f6f617f2&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🔥×1",
+        "reply_count": 1,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497749238518386738/Screenshot_2026-04-26-02-00-26-77_09a98f8d0fc2b11b1559c9fab3480a92.jpg?ex=69eea72d&is=69ed55ad&hm=97f6c7d2144ef2066f20383a4abdaf5b09c06a2c5a8226ff4b138f10f6f617f2&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T00:48:04.537000+00:00",
+      "lang": "",
+      "title": "[DC] princess.goth@🔸morimens-game-chat: if you dont stream im telling nell",
+      "summary": "if you dont stream im telling nell",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497761147150008462",
+      "author": "princess.goth",
+      "engagement": 6,
+      "metadata": {
+        "reactions": "monkaS×2",
         "reply_count": 0,
         "attachment_count": 0,
         "attachment_urls": [],
@@ -205,75 +117,173 @@
     },
     {
       "source": "discord",
-      "time": "2026-04-12T09:57:50.605000+00:00",
+      "time": "2026-04-26T01:07:13.297000+00:00",
       "lang": "",
-      "title": "[DC] xingxiu_0209@🔸綜合討論: 你要一份工作",
-      "summary": "你要一份工作\n  └ cpu7954: https://www.youtube.com/watch?v=M56NR2uanSM",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492826070628700272",
-      "author": "xingxiu_0209",
-      "engagement": 14,
+      "title": "[DC] arisuu0604@🔸morimens-game-chat: ohmygod crit is poopoo",
+      "summary": "ohmygod crit is poopoo\n[附件: image.png, image.png]\n  └ arisuu0604:  ye i think its pulse cov time\n  └ kinbote.: Grace through pain isn't displayed right? So thats 48% base +25% with a few 5%s from whale?",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497765965398806591",
+      "author": "arisuu0604",
+      "engagement": 6,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497765964681445456/image.png?ex=69eeb6c1&is=69ed6541&hm=9b21539656c508af8d7a356a8c8864e6dda6e82a9d5f55264763002a714b5b8d&",
+      "content_type": "image",
       "metadata": {
-        "reactions": "😆×4",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
+        "reactions": "",
+        "reply_count": 2,
+        "attachment_count": 2,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497765964681445456/image.png?ex=69eeb6c1&is=69ed6541&hm=9b21539656c508af8d7a356a8c8864e6dda6e82a9d5f55264763002a714b5b8d&",
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497765965423710469/image.png?ex=69eeb6c1&is=69ed6541&hm=7755f8d4c2a5f4e2dbf523b641ce14829deb199fc912316401320decdac93763&"
+        ],
+        "channel": "🔸morimens-game-chat"
       }
     },
     {
       "source": "discord",
-      "time": "2026-04-12T10:55:15.592000+00:00",
+      "time": "2026-04-26T00:27:35.329000+00:00",
       "lang": "",
-      "title": "[DC] l8989c@🔸morimens-game-chat: i honestly thought this was high enough already",
-      "summary": "i honestly thought this was high enough already\n[附件: Screenshot_2026-04-12_at_6.55.07_PM.png]\n  └ spooky_penguin_: It's not 67\n  └ legendaryredz: It is\n40+ is already great \n50+ is overkill",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492840519951192169",
+      "title": "[DC] biel09139@🔸canal-português: Rpzd ceis acha q o time ta bom?",
+      "summary": "Rpzd ceis acha q o time ta bom?\n[附件: rn_image_picker_lib_temp_cbcb6fa3-8d24-472d-922a-1170d3c62a89.jpg]\n  └ lordfelipe0827_59720: Não\n  └ papricaapimentada: não, esse time tem varios direcionais mas não foca de vdd em nenhum",
+      "url": "https://discord.com/channels/1131791637933199470/1300659718653476925/1497755991477850182",
+      "author": "biel09139",
+      "engagement": 5,
+      "media_url": "https://cdn.discordapp.com/attachments/1300659718653476925/1497755991075455122/rn_image_picker_lib_temp_cbcb6fa3-8d24-472d-922a-1170d3c62a89.jpg?ex=69eead77&is=69ed5bf7&hm=f7436694c38b494871c185a62c410ecf37c51c4e8047835c5f039b907a9c0706&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1300659718653476925/1497755991075455122/rn_image_picker_lib_temp_cbcb6fa3-8d24-472d-922a-1170d3c62a89.jpg?ex=69eead77&is=69ed5bf7&hm=f7436694c38b494871c185a62c410ecf37c51c4e8047835c5f039b907a9c0706&"
+        ],
+        "channel": "🔸canal-português"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T00:48:05.681000+00:00",
+      "lang": "",
+      "title": "[DC] biel09139@🔸canal-português: Da wanda é essa aq?",
+      "summary": "Da wanda é essa aq?\n[附件: rn_image_picker_lib_temp_c5ac1b4c-30d6-41ee-99d0-0613cb6467fe.jpg]\n  └ lordfelipe0827_59720: Sim\n  └ papricaapimentada: isso",
+      "url": "https://discord.com/channels/1131791637933199470/1300659718653476925/1497761151948292197",
+      "author": "biel09139",
+      "engagement": 5,
+      "media_url": "https://cdn.discordapp.com/attachments/1300659718653476925/1497761151537385472/rn_image_picker_lib_temp_c5ac1b4c-30d6-41ee-99d0-0613cb6467fe.jpg?ex=69eeb245&is=69ed60c5&hm=90ff641691f71138abe448159c05d5d0c83ace9886308a7d9ee86f262193c4f6&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1300659718653476925/1497761151537385472/rn_image_picker_lib_temp_c5ac1b4c-30d6-41ee-99d0-0613cb6467fe.jpg?ex=69eeb245&is=69ed60c5&hm=90ff641691f71138abe448159c05d5d0c83ace9886308a7d9ee86f262193c4f6&"
+        ],
+        "channel": "🔸canal-português"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T00:52:08.533000+00:00",
+      "lang": "",
+      "title": "[DC] papricaapimentada@🔸canal-português: algm aqui já jogou? tó pensando em baixar",
+      "summary": "algm aqui já jogou? tó pensando em baixar\n[附件: image.png]\n  └ lordfelipe0827_59720: Nope\n  └ kdushh: nunca",
+      "url": "https://discord.com/channels/1131791637933199470/1300659718653476925/1497762170543407216",
+      "author": "papricaapimentada",
+      "engagement": 5,
+      "media_url": "https://cdn.discordapp.com/attachments/1300659718653476925/1497762170254004325/image.png?ex=69eeb338&is=69ed61b8&hm=013faefdf3efd4fd6420dda5fbc337db864647dcca9e416b2958e01e9c4922fe&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1300659718653476925/1497762170254004325/image.png?ex=69eeb338&is=69ed61b8&hm=013faefdf3efd4fd6420dda5fbc337db864647dcca9e416b2958e01e9c4922fe&"
+        ],
+        "channel": "🔸canal-português"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T00:00:53.787000+00:00",
+      "lang": "",
+      "title": "[DC] climbkaly@🔸morimens-game-chat: Apparently bluewill.   There was a new player here a few days ago who did all st",
+      "summary": "Apparently bluewill. \n\nThere was a new player here a few days ago who did all story on auto with bluewill.\n  └ monchi3524: i doubt it",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497749274123829268",
+      "author": "climbkaly",
+      "engagement": 5,
+      "metadata": {
+        "reactions": "🔥×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T00:39:33.166000+00:00",
+      "lang": "",
+      "title": "[DC] cornonthemacabre_@🔸morimens-game-chat: Erica is really fun ",
+      "summary": "Erica is really fun \n  └ princess.goth: what about her",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497759002304708699",
+      "author": "cornonthemacabre_",
+      "engagement": 5,
+      "metadata": {
+        "reactions": "scared2×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T01:00:57.739000+00:00",
+      "lang": "",
+      "title": "[DC] blecnes.@🔸morimens-game-chat: bc i was born earlier",
+      "summary": "bc i was born earlier\n  └ spooky_penguin_: Why not later?",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497764390194249880",
+      "author": "blecnes.",
+      "engagement": 5,
+      "metadata": {
+        "reactions": "🔥×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T01:05:31.382000+00:00",
+      "lang": "",
+      "title": "[DC] aurora3981@🔸morimens-game-chat: (附件/嵌入)",
+      "summary": "[附件: Screenshot_20260426_090520_Morimens.jpg]\n  └ blecnes.: I think someone that also had an issue with that had to contant support\n  └ climbkaly: got mine [附件: image.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497765537936179390",
+      "author": "aurora3981",
+      "engagement": 5,
+      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1497765537374015618/Screenshot_20260426_090520_Morimens.jpg?ex=69eeb65b&is=69ed64db&hm=70b31c39a128ce1f4e23767bd9879af1e8540809e622fe4ca0c20f50ccd362fe&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1170692781216378960/1497765537374015618/Screenshot_20260426_090520_Morimens.jpg?ex=69eeb65b&is=69ed64db&hm=70b31c39a128ce1f4e23767bd9879af1e8540809e622fe4ca0c20f50ccd362fe&"
+        ],
+        "channel": "🔸morimens-game-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-26T01:10:00.863000+00:00",
+      "lang": "",
+      "title": "[DC] l8989c@🔸morimens-game-chat: im starting that its cursed. Im very tempted to pyramid my winkle too",
+      "summary": "im starting that its cursed. Im very tempted to pyramid my winkle too\n  └ angbak: Im starting my round 2 speed run with carry arachane",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497766668221546649",
       "author": "l8989c",
-      "engagement": 14,
-      "media_url": "https://cdn.discordapp.com/attachments/1170692781216378960/1492840519561252864/Screenshot_2026-04-12_at_6.55.07_PM.png?ex=69dccb93&is=69db7a13&hm=9c0824d69cb7842f9fdb7c64a1072ecb9cdd9b798ac82ef140253e5fc0538d09&",
-      "content_type": "image",
+      "engagement": 5,
       "metadata": {
-        "reactions": "🔥×3",
-        "reply_count": 2,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1170692781216378960/1492840519561252864/Screenshot_2026-04-12_at_6.55.07_PM.png?ex=69dccb93&is=69db7a13&hm=9c0824d69cb7842f9fdb7c64a1072ecb9cdd9b798ac82ef140253e5fc0538d09&"
-        ],
-        "channel": "🔸morimens-game-chat"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T07:29:04.741000+00:00",
-      "lang": "",
-      "title": "[DC] universe.dark@🔸綜合討論: (附件/嵌入)",
-      "summary": "[附件: 4a035067fa7b1b5c.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1492788632841621584",
-      "author": "universe.dark",
-      "engagement": 13,
-      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1492788632606605373/4a035067fa7b1b5c.png?ex=69dc9b40&is=69db49c0&hm=7f1d481c3577b3f72d5cff881ba8db4085f19ab3d400a7b9fc203ba33f0cfe8c&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🙄×2 ❓×2",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1131839817982947429/1492788632606605373/4a035067fa7b1b5c.png?ex=69dc9b40&is=69db49c0&hm=7f1d481c3577b3f72d5cff881ba8db4085f19ab3d400a7b9fc203ba33f0cfe8c&"
-        ],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-04-12T04:12:34.776000+00:00",
-      "lang": "",
-      "title": "[DC] shio2311@🔸morimens-game-chat: this game isnt generous enough because i lost all my pulls after pulling for e3",
-      "summary": "this game isnt generous enough because i lost all my pulls after pulling for e3 sorel on a whim\n  └ shortcombos: So true.....\n  └ kurotamavii: skill issue, I pulled E3 Sorel for love and I still have 1k pulls",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492739182144258129",
-      "author": "shio2311",
-      "engagement": 13,
-      "metadata": {
-        "reactions": "Winkle_frustrated×3",
-        "reply_count": 2,
+        "reactions": "🔥×1",
+        "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
         "channel": "🔸morimens-game-chat"
@@ -281,16 +291,16 @@
     },
     {
       "source": "discord",
-      "time": "2026-04-12T06:30:51.203000+00:00",
+      "time": "2026-04-26T01:12:24.813000+00:00",
       "lang": "",
-      "title": "[DC] shortcombos@🔸morimens-game-chat: Outer Wilds",
-      "summary": "Outer Wilds\n  └ xiii_c: One of the best games ever made\n  └ not_kathigu_ra: OUTER WILDS RAAAAHHH",
-      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1492773979881214093",
-      "author": "shortcombos",
-      "engagement": 13,
+      "title": "[DC] kinbote.@🔸morimens-game-chat: Grace through pain isn't displayed right? So thats 48% base +25% with a few 5%s",
+      "summary": "Grace through pain isn't displayed right? So thats 48% base +25% with a few 5%s from whale?\n  └ arisuu0604: ",
+      "url": "https://discord.com/channels/1131791637933199470/1170692781216378960/1497767271991345304",
+      "author": "kinbote.",
+      "engagement": 5,
       "metadata": {
-        "reactions": "🔥×3",
-        "reply_count": 2,
+        "reactions": "NODDERS×1",
+        "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
         "channel": "🔸morimens-game-chat"

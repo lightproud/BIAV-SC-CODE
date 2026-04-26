@@ -1132,144 +1132,24 @@
 <div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Summon_D_ImgPanel_BG48</div>
 </div>
 <div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_2ndAnnivWorldBoss01.png" alt="UI_Events_Bg_2ndAnnivWorldBoss01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_2ndAnnivWorldBoss01</div>
+<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Chaos.png" alt="UI_Bg_Subplot_Chaos" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Chaos</div>
 </div>
 <div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_2ndAnnivWorldBoss02.png" alt="UI_Events_Bg_2ndAnnivWorldBoss02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_2ndAnnivWorldBoss02</div>
+<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Linkage.png" alt="UI_Bg_Subplot_Linkage" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Linkage</div>
 </div>
 <div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk01.png" alt="UI_Events_Bg_Mosk01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk01</div>
+<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Ocean.png" alt="UI_Bg_Subplot_Ocean" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Ocean</div>
 </div>
 <div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk02.png" alt="UI_Events_Bg_Mosk02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk02</div>
+<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Railway.png" alt="UI_Bg_Subplot_Railway" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Railway</div>
 </div>
 <div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk03.png" alt="UI_Events_Bg_Mosk03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk03</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk04.png" alt="UI_Events_Bg_Mosk04" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk04</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk05.png" alt="UI_Events_Bg_Mosk05" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk05</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette01.png" alt="UI_Events_Bg_Mouchette01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette01</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette02.png" alt="UI_Events_Bg_Mouchette02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette02</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette03.png" alt="UI_Events_Bg_Mouchette03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette03</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette04.png" alt="UI_Events_Bg_Mouchette04" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette04</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette05.png" alt="UI_Events_Bg_Mouchette05" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette05</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Tulu03.png" alt="UI_Events_Bg_Tulu03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Tulu03</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Tulu04.png" alt="UI_Events_Bg_Tulu04" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Tulu04</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Xu01.png" alt="UI_Events_Bg_Xu01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Xu01</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Xu02.png" alt="UI_Events_Bg_Xu02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Xu02</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Xu03.png" alt="UI_Events_Bg_Xu03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Xu03</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_19.png" alt="UI_Events_Newtip_Bg_19" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_19</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_20.png" alt="UI_Events_Newtip_Bg_20" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_20</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_21.png" alt="UI_Events_Newtip_Bg_21" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_21</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_22.png" alt="UI_Events_Newtip_Bg_22" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_22</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_23.png" alt="UI_Events_Newtip_Bg_23" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_23</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_24.png" alt="UI_Events_Newtip_Bg_24" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_24</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_25.png" alt="UI_Events_Newtip_Bg_25" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_25</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_26.png" alt="UI_Events_Newtip_Bg_26" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_26</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_27.png" alt="UI_Events_Newtip_Bg_27" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_27</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_28.png" alt="UI_Events_Newtip_Bg_28" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_28</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_29.png" alt="UI_Events_Newtip_Bg_29" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_29</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_30.png" alt="UI_Events_Newtip_Bg_30" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_30</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_31.png" alt="UI_Events_Newtip_Bg_31" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_31</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_32.png" alt="UI_Events_Newtip_Bg_32" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_32</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_pvp/UI_Large_Pvp_Image_TaskReward01.png" alt="UI_Large_Pvp_Image_TaskReward01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Large_Pvp_Image_TaskReward01</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_pvp/UI_Large_Pvp_Image_TaskReward02.png" alt="UI_Large_Pvp_Image_TaskReward02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Large_Pvp_Image_TaskReward02</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_pvp/UI_Large_Pvp_Image_TaskReward03.png" alt="UI_Large_Pvp_Image_TaskReward03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Large_Pvp_Image_TaskReward03</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_pvp/UI_Large_Pvp_Image_TaskReward04.png" alt="UI_Large_Pvp_Image_TaskReward04" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Large_Pvp_Image_TaskReward04</div>
+<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Special.png" alt="UI_Bg_Subplot_Special" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Special</div>
 </div>
 <div style="flex: 0 1 280px; text-align: center;">
 <img src="/uiresources/uibigimages/ui_large/ui_large_collection/UI_Collection_AnimBG_14.png" alt="UI_Collection_AnimBG_14" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
@@ -1410,26 +1290,6 @@
 <div style="flex: 0 1 280px; text-align: center;">
 <img src="/uiresources/uibigimages/ui_large/ui_large_course_bg/UI_Large_Course_Bg_99.png" alt="UI_Large_Course_Bg_99" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
 <div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Large_Course_Bg_99</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Chaos.png" alt="UI_Bg_Subplot_Chaos" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Chaos</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Linkage.png" alt="UI_Bg_Subplot_Linkage" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Linkage</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Ocean.png" alt="UI_Bg_Subplot_Ocean" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Ocean</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Railway.png" alt="UI_Bg_Subplot_Railway" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Railway</div>
-</div>
-<div style="flex: 0 1 280px; text-align: center;">
-<img src="/uiresources/uibigimages/ui_large/ui_large_chapter/UI_Bg_Subplot_Special.png" alt="UI_Bg_Subplot_Special" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
-<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Bg_Subplot_Special</div>
 </div>
 <div style="flex: 0 1 280px; text-align: center;">
 <img src="/uiresources/uibigimages/ui_large/ui_large_events/UI_Events_Image_AutumnLeaf01.png" alt="UI_Events_Image_AutumnLeaf01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
@@ -1586,6 +1446,146 @@
 <div style="flex: 0 1 280px; text-align: center;">
 <img src="/uiresources/uibigimages/ui_large/ui_large_events/UI_Events_Image_Xu.png" alt="UI_Events_Image_Xu" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
 <div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Image_Xu</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_2ndAnnivWorldBoss01.png" alt="UI_Events_Bg_2ndAnnivWorldBoss01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_2ndAnnivWorldBoss01</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_2ndAnnivWorldBoss02.png" alt="UI_Events_Bg_2ndAnnivWorldBoss02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_2ndAnnivWorldBoss02</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk01.png" alt="UI_Events_Bg_Mosk01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk01</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk02.png" alt="UI_Events_Bg_Mosk02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk02</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk03.png" alt="UI_Events_Bg_Mosk03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk03</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk04.png" alt="UI_Events_Bg_Mosk04" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk04</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mosk05.png" alt="UI_Events_Bg_Mosk05" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mosk05</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette01.png" alt="UI_Events_Bg_Mouchette01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette01</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette02.png" alt="UI_Events_Bg_Mouchette02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette02</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette03.png" alt="UI_Events_Bg_Mouchette03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette03</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette04.png" alt="UI_Events_Bg_Mouchette04" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette04</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Mouchette05.png" alt="UI_Events_Bg_Mouchette05" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Mouchette05</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Tulu03.png" alt="UI_Events_Bg_Tulu03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Tulu03</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Tulu04.png" alt="UI_Events_Bg_Tulu04" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Tulu04</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Xu01.png" alt="UI_Events_Bg_Xu01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Xu01</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Xu02.png" alt="UI_Events_Bg_Xu02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Xu02</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Bg_Xu03.png" alt="UI_Events_Bg_Xu03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Bg_Xu03</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_19.png" alt="UI_Events_Newtip_Bg_19" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_19</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_20.png" alt="UI_Events_Newtip_Bg_20" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_20</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_21.png" alt="UI_Events_Newtip_Bg_21" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_21</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_22.png" alt="UI_Events_Newtip_Bg_22" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_22</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_23.png" alt="UI_Events_Newtip_Bg_23" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_23</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_24.png" alt="UI_Events_Newtip_Bg_24" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_24</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_25.png" alt="UI_Events_Newtip_Bg_25" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_25</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_26.png" alt="UI_Events_Newtip_Bg_26" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_26</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_27.png" alt="UI_Events_Newtip_Bg_27" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_27</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_28.png" alt="UI_Events_Newtip_Bg_28" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_28</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_29.png" alt="UI_Events_Newtip_Bg_29" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_29</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_30.png" alt="UI_Events_Newtip_Bg_30" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_30</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_31.png" alt="UI_Events_Newtip_Bg_31" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_31</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_events_bg/UI_Events_Newtip_Bg_32.png" alt="UI_Events_Newtip_Bg_32" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Events_Newtip_Bg_32</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_pvp/UI_Large_Pvp_Image_TaskReward01.png" alt="UI_Large_Pvp_Image_TaskReward01" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Large_Pvp_Image_TaskReward01</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_pvp/UI_Large_Pvp_Image_TaskReward02.png" alt="UI_Large_Pvp_Image_TaskReward02" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Large_Pvp_Image_TaskReward02</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_pvp/UI_Large_Pvp_Image_TaskReward03.png" alt="UI_Large_Pvp_Image_TaskReward03" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Large_Pvp_Image_TaskReward03</div>
+</div>
+<div style="flex: 0 1 280px; text-align: center;">
+<img src="/uiresources/uibigimages/ui_large/ui_large_pvp/UI_Large_Pvp_Image_TaskReward04.png" alt="UI_Large_Pvp_Image_TaskReward04" style="width: 100%; border-radius: 6px; border: 1px solid #2a2a2a;" loading="lazy" />
+<div style="font-size: 0.8em; color: #888; margin-top: 2px; word-break: break-all;">UI_Large_Pvp_Image_TaskReward04</div>
 </div>
 </div>
 

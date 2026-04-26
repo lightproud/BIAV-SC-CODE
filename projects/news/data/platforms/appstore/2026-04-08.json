@@ -1,8 +1,8 @@
 {
   "date": "2026-04-08",
-  "archived_at": "2026-04-07T23:59:32.677005+00:00",
+  "archived_at": "2026-04-26T03:27:03.531415+00:00",
   "source": "appstore",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "source": "appstore",
@@ -13,6 +13,21 @@
       "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews",
       "author": "Death_Witch",
       "engagement": 5
+    },
+    {
+      "title": "Amazing",
+      "summary": "This game is absolutely fantastic. I have no idea why it isn’t more popular!! The artstyle is lovely, all of the splasharts look like they could belong in a wallpaper. The gameplay is really fun. For a gacha game you get a lot of pull currency and the rates are surprisingly good!! I would highly recommend checking this game out if you are a fan of Reverse:1999 or Chaos Zero Nightmare already. It’s like the lovechild of those two games.",
+      "source": "appstore",
+      "platform_region": "us",
+      "lang": "",
+      "time": "2026-04-08T10:26:34-07:00",
+      "url": "",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "ScribbleDaDragon",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     }
   ]
 }
