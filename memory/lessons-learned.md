@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-04-14 by Code-主控台（艾瑞卡会话）
+> 最后更新：2026-04-26 by 银芯记忆系统（艾瑞卡会话）
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -183,6 +183,20 @@
 - **Problem**：三个命名**不统一**——Sonnet/Opus 用连字符分隔版本号（`4-6`），Haiku 单独用下划线（`4_5`）。`claw` 内置别名表 `haiku` → `claude-haiku-4-5-20251213`（连字符 + 日期后缀）与 idealab 的 `claude-haiku-4_5`（下划线、无后缀）不匹配。直接执行 `--model haiku` 会把错误名透传给 idealab，返回 404 / InvalidModel
 - **Fix**：在 `projects/bpt-next/.claw/settings.json` 用户别名表覆盖 `haiku → claude-haiku-4_5`；Sonnet/Opus 恰好匹配 claw 内置别名无需改动。命名约定说明同步到 `LOCAL-SETUP-ZH.md` 情境八
 - **Impact**：配置可用性、别名系统兼容
+
+---
+
+## 25. 本地 main 与 origin/main 反复失步，触发 Cloudflare HTTP 413 推送堵塞
+
+- **Context**：Web Claude Code 沙箱启动时从快照恢复仓库，快照里常带着上一会话未推送的本地 commit（SessionEnd 自动生成的 session-continuity.json + session digest，以及历史会话遗留的 merge commit）。多个会话来源（本地 Claude Code、GitHub Actions 自动 workflow、其他平台代理）并行向 origin/main 写入，本地 main 持续落后；与此同时，本地 main 的「自家 merge」commit 也持续累积——双向漂移
+- **Problem**：当 local main 累积到一定差异量，`git push origin main` 触发 Cloudflare 代理的 HTTP 413 (Request Entity Too Large)。该限制与实际 pack 大小无关，是代理对 receive-pack endpoint 的硬阈值。一旦堵塞，所有依赖 push 的操作（包括 feature 分支推送、SessionEnd hook 归档、远端分支删除）全部失败。诊断显示：触发临界点时本地 main 通常 ahead ≥50、behind ≥150
+- **Fix**：
+  1. 装 SessionStart hook（`.claude/hooks/session-start-sync.sh`）每次会话启动时自动 `git fetch origin main` 并强制把 local main 同步到 origin/main（hard-reset 或 ref 更新），根除累积
+  2. hook 在重置前把原 local main HEAD 备份到 `refs/backup/main-pre-sync-<timestamp>`，防止丢真实工作
+  3. hook 只在当前不在 main 分支时用 `git update-ref` 更新（避免破坏当前 checkout）
+  4. 依然遵守「所有会话推 feature 分支」铁律，本地 main 应永远是 origin/main 的镜像
+  5. 排查时先量 `git rev-list origin/main..main --count` 与反向，超过 10 就该警觉
+- **Impact**：基础设施可靠性、推送通道可用性、记忆系统可持久化
 
 ---
 
