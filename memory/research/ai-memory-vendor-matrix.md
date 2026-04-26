@@ -50,6 +50,31 @@
 **银芯缺失**：agent **主动写入** core memory 的能力。当前 boot-snapshot 由 `boot_snapshot.py` 自动生成，艾瑞卡不能 mid-session 调整核心记忆条目。
 
 **适配难度**：中。MCP server 已有 `store_facts` 工具，扩展为 `replace_core_block(block_name, new_content)` 可低成本对齐 Letta 模型。
+
+### 2.2 Mem0 / Mem0g
+
+**来源**：mem0ai/mem0 开源 + 商业云（arXiv 2504.19413 论文）
+**核心定位**：跨框架的「AI 记忆中间件」，专注从对话中**自动萃取事实**并维护跨会话上下文。
+**架构**：
+- **Mem0（向量优先）**：vector search + LLM-driven 事实提取流水线
+- **Mem0g（图增强变体）**：在 vector 之上叠加图谱遍历，覆盖关系推理场景
+- **三级作用域**：user / session / agent，分级隔离记忆所有权
+- **基础设施抽象**：21 框架 + 19 vector store + 3 部署模式（cloud / self-host / local MCP）
+
+**官方 benchmark**（vs full-context）：
+- p95 latency 17.12 s → 1.44 s（**-91%**）
+- token 消耗 **-90%**
+- Mem0g 准确率差距收窄至 < 5 pts（vs full-context），p95 仍维持 2.59 s
+
+**银芯映射**：
+- 银芯 `scripts/memory_search.py` 4 维 rerank ≈ Mem0 reranker
+- 银芯 `scripts/knowledge_graph.py` ≈ Mem0g 的图层（但银芯无 LLM 自动事实萃取）
+- 银芯无对应「user / session / agent 三级作用域」概念——所有 memory 是全局共享的
+
+**银芯缺失**：**LLM-driven fact extraction pipeline**。Mem0 用 LLM 把对话压缩成「事实三元组」（subject-predicate-object）入库；银芯当前 `fact_store.py` 是手动调用，无自动萃取。
+
+**适配难度**：中-高。`scripts/memory_writeback.py` 已检测 git 变更并提取知识，扩展为「会话结束触发 LLM 事实萃取」可借鉴 Mem0 的方法，但要求 API 预算。
+
 - [§ 2.3 Zep / Graphiti](#23-zep--graphiti)
 - [§ 2.4 Cognee](#24-cognee)
 - [§ 2.5 Cursor 项目记忆](#25-cursor-项目记忆)
