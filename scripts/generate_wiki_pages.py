@@ -324,103 +324,113 @@ def generate_collection_hall():
 
 
 def generate_cg_gallery():
-    """Generate CG gallery page from cg_gallery.json with inline images."""
+    """Generate CG gallery page with iOS Photos-style dense grid + lightbox."""
     with open(f'{PROCESSED_DIR}/cg_gallery.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    # Build set of available local images (relative to docs/public/)
     available = set()
     public_dir = os.path.join(DOCS_DIR, 'public')
     for root, dirs, files in os.walk(os.path.join(public_dir, 'cg')):
         for fn in files:
             if fn.endswith('.png'):
-                rel = os.path.relpath(os.path.join(root, fn), public_dir)
-                available.add(rel)
+                available.add(os.path.relpath(os.path.join(root, fn), public_dir))
     for root, dirs, files in os.walk(os.path.join(public_dir, 'scenebg')):
         for fn in files:
             if fn.endswith('.png'):
-                rel = os.path.relpath(os.path.join(root, fn), public_dir)
-                available.add(rel)
+                available.add(os.path.relpath(os.path.join(root, fn), public_dir))
 
     meta = data['_meta']
     lines = []
+
+    # Vue script + style for lightbox
+    lines.append('<script setup>')
+    lines.append('import { ref } from "vue"')
+    lines.append('const show = ref(false)')
+    lines.append('const src = ref("")')
+    lines.append('const alt = ref("")')
+    lines.append('function openCg(e) {')
+    lines.append('  const img = e.target.closest("img")')
+    lines.append('  if (img && img.closest(".cg-grid")) {')
+    lines.append('    src.value = img.src')
+    lines.append('    alt.value = img.alt')
+    lines.append('    show.value = true')
+    lines.append('  }')
+    lines.append('}')
+    lines.append('function closeCg() { show.value = false }')
+    lines.append('</script>')
+    lines.append('')
+    lines.append('<style>')
+    lines.append('.cg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(80px,1fr));gap:2px;margin:8px 0}')
+    lines.append('@media(min-width:768px){.cg-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:3px}}')
+    lines.append('.cg-grid img{width:100%;aspect-ratio:16/9;object-fit:cover;cursor:pointer;border-radius:2px;transition:opacity .15s}')
+    lines.append('.cg-grid img:hover{opacity:.8}')
+    lines.append('.cg-overlay{position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer}')
+    lines.append('.cg-overlay img{max-width:95vw;max-height:90vh;object-fit:contain;border-radius:4px}')
+    lines.append('.cg-overlay span{color:#888;font-size:13px;margin-top:8px}')
+    lines.append('</style>')
+    lines.append('')
+
+    # Overlay component
+    lines.append('<div v-if="show" class="cg-overlay" @click="closeCg">')
+    lines.append('  <img :src="src" :alt="alt" />')
+    lines.append('  <span>{{ alt }}</span>')
+    lines.append('</div>')
+    lines.append('')
+
     lines.append('# CG 画廊')
     lines.append('')
-    lines.append(f'> 数据来源：美术资产 manifest.json（UnityPy 解包） | 共 {meta["total_cg"]} 张 CG，{meta["story_chapters"]} 个章节')
+    lines.append(f'> 共 {meta["total_cg"]} 张 CG，{meta["story_chapters"]} 个章节 | 点击缩略图查看大图')
     lines.append('')
 
     displayed = 0
     listed = 0
 
-    def render_images(images, lines):
+    def render_grid(images, lines):
         nonlocal displayed, listed
-        has_img = []
-        no_img = []
-        for img in images:
-            # Check if image exists in public/
-            if img['path'] in available:
-                has_img.append(img)
-            else:
-                no_img.append(img)
+        has_img = [img for img in images if img['path'] in available]
+        no_img = [img for img in images if img['path'] not in available]
 
         if has_img:
-            # Use a flex grid via raw HTML for image gallery
-            lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
+            lines.append('<div class="cg-grid" @click="openCg">')
             for img in has_img:
-                src = f'/{img["path"]}'
-                lines.append(f'<div style="flex: 1 1 300px; max-width: 480px;">')
-                lines.append(f'<img src="{src}" alt="{img["name"]}" style="width: 100%; border-radius: 8px; border: 1px solid #2a2a2a;" loading="lazy" />')
-                lines.append(f'<div style="text-align: center; font-size: 0.85em; color: #888; margin-top: 4px;">{img["name"]}</div>')
-                lines.append(f'</div>')
+                lines.append(f'<img src="/{img["path"]}" alt="{img["name"]}" loading="lazy" />')
                 displayed += 1
             lines.append('</div>')
             lines.append('')
 
         if no_img:
-            lines.append('<details>')
-            lines.append(f'<summary>其余 {len(no_img)} 张（本地未包含图片文件）</summary>')
+            lines.append(f'<details><summary>{len(no_img)} 张未包含图片文件</summary>')
             lines.append('')
-            lines.append('| 文件名 | 路径 |')
-            lines.append('|--------|------|')
             for img in no_img:
-                lines.append(f'| {img["name"]} | `{img["path"]}` |')
+                lines.append(f'- `{img["name"]}`')
                 listed += 1
             lines.append('')
             lines.append('</details>')
             lines.append('')
 
-    # Story chapters
-    lines.append('## 主线章节 CG')
+    lines.append('## 主线章节')
     lines.append('')
-
     for ch in data['chapters']:
-        lines.append(f'### {ch["chapter_name"]}（{ch["image_count"]} 张）')
+        lines.append(f'### {ch["chapter_name"]}（{ch["image_count"]}）')
         lines.append('')
-        render_images(ch['images'], lines)
+        render_grid(ch['images'], lines)
 
-    # Special groups
     if data.get('special'):
         lines.append('## 特殊 CG')
         lines.append('')
         for sg in data['special']:
-            lines.append(f'### {sg["group_name"]}（{sg["image_count"]} 张）')
+            lines.append(f'### {sg["group_name"]}（{sg["image_count"]}）')
             lines.append('')
-            render_images(sg['images'], lines)
+            render_grid(sg['images'], lines)
 
-    # Scene backgrounds
     scenebg_files = sorted([f for f in available if f.startswith('scenebg/')])
     if scenebg_files:
         lines.append('## 场景背景')
         lines.append('')
-        lines.append(f'共 {len(scenebg_files)} 张')
-        lines.append('')
-        lines.append('<div style="display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0;">')
+        lines.append('<div class="cg-grid" @click="openCg">')
         for f in scenebg_files:
             name = os.path.splitext(os.path.basename(f))[0]
-            lines.append(f'<div style="flex: 1 1 300px; max-width: 480px;">')
-            lines.append(f'<img src="/{f}" alt="{name}" style="width: 100%; border-radius: 8px; border: 1px solid #2a2a2a;" loading="lazy" />')
-            lines.append(f'<div style="text-align: center; font-size: 0.85em; color: #888; margin-top: 4px;">{name}</div>')
-            lines.append(f'</div>')
+            lines.append(f'<img src="/{f}" alt="{name}" loading="lazy" />')
             displayed += 1
         lines.append('</div>')
         lines.append('')
@@ -765,50 +775,87 @@ def generate_characters():
 
 
 def generate_summon():
-    """Generate summon/gacha system page from summon.json."""
+    """Generate summon/gacha page, deduplicated by title."""
     with open(f'{PROCESSED_DIR}/summon.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
 
     meta = data['_meta']
     banners = data['banners']
-    lines = []
-    lines.append('# 唤醒（召唤）系统')
-    lines.append('')
-    lines.append(f'> 数据来源：Summon.lua（运行时内存提取） | 共 {meta["total_banners"]} 个卡池记录')
-    lines.append('')
 
     named = [b for b in banners if b.get('title')]
     unnamed = [b for b in banners if not b.get('title')]
 
-    if named:
-        lines.append('## 命名卡池')
+    # Group named banners by title
+    from collections import OrderedDict
+    groups = OrderedDict()
+    for b in named:
+        title = b['title']
+        if title not in groups:
+            groups[title] = []
+        groups[title].append(b)
+
+    lines = []
+    lines.append('# 唤醒系统')
+    lines.append('')
+    lines.append(f'> Summon.lua | {meta["total_banners"]} 条记录，{len(groups)} 个唯一卡池')
+    lines.append('')
+
+    # Standard rate table (shared by ~95% of banners)
+    std_ssr = 'SSR物品基础出率：3.03%（含保底综合出率：5.02%）'
+
+    for title, group in groups.items():
+        representative = group[0]
+        lines.append(f'### {title}')
         lines.append('')
-        for b in named:
-            lines.append(f'### {b["title"]}')
+        lines.append(f'**{representative["name"]}**')
+        if representative['desc']:
+            lines.append(f' -- {representative["desc"]}')
+        lines.append('')
+        if representative['short_desc']:
+            lines.append(f'> {representative["short_desc"]}')
             lines.append('')
-            lines.append(f'**{b["name"]}**')
+
+        # Rate-up characters/items as compact list
+        rate_ups = []
+        for b in group:
+            if b['rate_up'] and b['rate_up'] not in rate_ups:
+                rate_ups.append(b['rate_up'])
+
+        if rate_ups:
+            if len(rate_ups) == 1:
+                lines.append(f'UP: {rate_ups[0]}')
+            else:
+                lines.append(f'UP 角色/命轮（{len(rate_ups)} 期）：')
+                lines.append('')
+                for ru in rate_ups:
+                    lines.append(f'- {ru}')
             lines.append('')
-            if b['desc']:
-                lines.append(f'{b["desc"]}')
-                lines.append('')
-            if b['short_desc']:
-                lines.append(f'> {b["short_desc"]}')
-                lines.append('')
-            if b['rate_up']:
-                lines.append(f'UP: {b["rate_up"]}')
-                lines.append('')
-            if b['rate_ssr'] or b['rate_sr'] or b['rate_r']:
-                lines.append('| 稀有度 | 概率 |')
-                lines.append('|--------|------|')
-                if b['rate_ssr']:
-                    lines.append(f'| SSR | {b["rate_ssr"]} |')
-                if b['rate_sr']:
-                    lines.append(f'| SR | {b["rate_sr"]} |')
-                if b['rate_r']:
-                    lines.append(f'| R | {b["rate_r"]} |')
-                lines.append('')
-            lines.append('---')
+
+        # Show rate table only if non-standard or first occurrence
+        is_std = representative.get('rate_ssr', '').startswith('SSR物品基础出率：3.03%')
+        if not is_std and (representative['rate_ssr'] or representative['rate_sr'] or representative['rate_r']):
+            lines.append('| 稀有度 | 概率 |')
+            lines.append('|--------|------|')
+            if representative['rate_ssr']:
+                lines.append(f'| SSR | {representative["rate_ssr"]} |')
+            if representative['rate_sr']:
+                lines.append(f'| SR | {representative["rate_sr"]} |')
+            if representative['rate_r']:
+                lines.append(f'| R | {representative["rate_r"]} |')
             lines.append('')
+
+        # Multiple realm variants
+        descs = list(OrderedDict.fromkeys(b['short_desc'] for b in group if b['short_desc']))
+        if len(descs) > 1:
+            lines.append(f'界域变体：{" / ".join(descs)}')
+            lines.append('')
+
+        if len(group) > 1:
+            lines.append(f'*共 {len(group)} 期*')
+            lines.append('')
+
+        lines.append('---')
+        lines.append('')
 
     if unnamed:
         lines.append('## 其他卡池')
@@ -820,9 +867,21 @@ def generate_summon():
             lines.append(f'| {b["name"]} | {desc[:80]} |')
         lines.append('')
 
+    # Appendix: standard rates
+    lines.append('## 标准概率表')
+    lines.append('')
+    lines.append('绝大多数卡池共享以下概率：')
+    lines.append('')
+    lines.append('| 稀有度 | 概率 |')
+    lines.append('|--------|------|')
+    lines.append(f'| SSR | {std_ssr} |')
+    lines.append('| SR | SR物品基础出率：15.85%（含保底综合出率：25.00%） |')
+    lines.append('| R | R物品基础出率：81.12%（含保底综合出率：69.98%） |')
+    lines.append('')
+
     with open(f'{DOCS_DIR}/summon.md', 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines))
-    print(f'Summon page: {len(named)} named + {len(unnamed)} other banners')
+    print(f'Summon page: {len(groups)} unique titles (from {len(named)} records) + {len(unnamed)} other')
 
 
 def generate_stages():
