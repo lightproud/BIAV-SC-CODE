@@ -104,6 +104,29 @@
 **适配难度**：高。要么引入 Graphiti（Python，需 Neo4j）当外挂，要么自建 bi-temporal 边模型。引入 Graphiti 是「替代」9 模块图谱的大动作；自建是中等增量改造。
 
 - [§ 2.4 Cognee](#24-cognee)
+
+### 2.4 Cognee
+
+**来源**：topoteretes/cognee 开源 + 商业云（2025 年从实验项目跑到 70+ 公司生产）
+**核心定位**：**ECL 知识引擎**——把任意来源数据「认知化」成图谱 + 向量混合表示
+**架构（ECL Pipeline）**：
+- **Extract**（抽取）：从 38+ 数据源（PDF / Markdown / API / DB）拉取原始数据
+- **Cognify**（认知化）：LLM 把原始数据结构化为知识图谱节点 + 关系 + embeddings
+- **Load**（加载）：写入「关系 + 向量 + 图谱」三层统一存储
+
+**关键创新**：**短期 + 长期记忆双层**——session memory（runtime 工作记忆）与 permanent memory（长期知识库）分离，类似人类工作记忆 vs 长期记忆。
+
+**生态广度**：原生集成 Claude Agent SDK / OpenAI Agents SDK / LangGraph / Google ADK / n8n / Neo4j / Amazon Neptune / LanceDB。
+
+**银芯映射**：
+- 银芯 `dream.py` 三层（浅睡 / 深睡 / REM）≈ Cognee 的 short-term / long-term 分层思想
+- 银芯当前 **没有「Cognify 步骤」** ——原始 lua 表 / extracted/ 解包数据是直接入 TF-IDF 索引，**没有 LLM 结构化处理**
+- 银芯无统一三层（关系 + 向量 + 图谱）存储——三者分散在不同 JSON 文件
+
+**银芯缺失**：**LLM 介入的 Cognify 步骤**。`projects/wiki/data/extracted/` 64 MB 解包数据当前是「raw bytes 直接入 TF-IDF」，没有 LLM 把 lua key 翻译成可读事实。Q5「AwakerConfig」召回失败正是此问题。
+
+**适配难度**：高。引入完整 ECL 流水线 = 重做 9 模块；借鉴「Cognify 步骤」概念给特定数据集（如 lua 表）做单点改造则是中等工作量，可借力 dream.py 深睡层做。
+
 - [§ 2.5 Cursor 项目记忆](#25-cursor-项目记忆)
 - [§ 2.6 claude-mem](#26-claude-mem)
 - [§ 2.7 Claude Code 原生（CLAUDE.md / Skills / Subagents / Hooks）](#27-claude-code-原生)
