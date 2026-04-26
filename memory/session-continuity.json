@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "72e3a47e",
-    "timestamp": "2026-04-25T17:15:22.575000+00:00",
-    "duration_minutes": 7176.3,
+    "id": "ca832b8b",
+    "timestamp": "2026-04-25T17:21:00.616000+00:00",
+    "duration_minutes": 7182.0,
     "branch": "claude/project-strategy-review-1AH5Z",
     "topics": [
       "银芯",
@@ -32,6 +32,38 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "72e3a47e",
+      "timestamp": "2026-04-25T17:15:22.575000+00:00",
+      "duration_minutes": 7176.3,
+      "branch": "claude/project-strategy-review-1AH5Z",
+      "topics": [
+        "银芯",
+        "BPT",
+        "索引"
+      ],
+      "decisions": [
+        "绝对 `projects/news/scripts/...`"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
+        "/home/user/brain-in-a-vat/assets/index.md",
+        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
+        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
+        "/home/user/brain-in-a-vat/memory/project-status.md",
+        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
+        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
+        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
+        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
+        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
+        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
+        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
+      ],
+      "open_items": []
+    },
     {
       "id": "11ca9375",
       "timestamp": "2026-04-25T16:57:23.070000+00:00",
@@ -289,48 +321,17 @@
         "/home/user/brain-in-a-vat/projects/news/CONTEXT.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "fc31cdb0",
-      "timestamp": "2026-04-20T17:23:02.473000+00:00",
-      "duration_minutes": 27.5,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "Phase2",
-        "银芯"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/README.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/advanced-memory-design.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/morimens-context.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/strategic-assessment.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/projects/game/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 4.89,
-      "BPT": 4.47,
-      "索引": 3.36,
-      "Phase2": 1.5,
-      "Phase1": 0.4,
-      "记忆宫殿": 0.4,
-      "Wiki": 0.4,
-      "黑池": 0.11
+      "银芯": 4.91,
+      "BPT": 4.58,
+      "索引": 3.69,
+      "Phase2": 1.2,
+      "Phase1": 0.32,
+      "记忆宫殿": 0.32,
+      "Wiki": 0.32
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
@@ -344,7 +345,7 @@
       "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
       "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md"
     ],
-    "total_sessions": 82
+    "total_sessions": 83
   },
-  "updated_at": "2026-04-25T17:18:56.624987+00:00"
+  "updated_at": "2026-04-25T17:24:40.054710+00:00"
 }
