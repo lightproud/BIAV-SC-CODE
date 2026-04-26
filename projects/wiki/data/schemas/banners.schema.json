@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "banners.schema.json",
+  "title": "Morimens Banners",
+  "description": "Banner (卡池) database for Morimens. Curated authoritative banner records with numeric rates, distinct from raw extraction in projects/wiki/data/processed/summon.json.",
+  "type": "object",
+  "required": ["description", "banners"],
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "banners": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/banner"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "banner_rates": {
+      "type": "object",
+      "required": [
+        "ssr_base",
+        "ssr_combined",
+        "sr_base",
+        "sr_combined",
+        "r_base",
+        "r_combined"
+      ],
+      "properties": {
+        "ssr_base": { "type": "number", "minimum": 0, "maximum": 100 },
+        "ssr_combined": { "type": "number", "minimum": 0, "maximum": 100 },
+        "sr_base": { "type": "number", "minimum": 0, "maximum": 100 },
+        "sr_combined": { "type": "number", "minimum": 0, "maximum": 100 },
+        "r_base": { "type": "number", "minimum": 0, "maximum": 100 },
+        "r_combined": { "type": "number", "minimum": 0, "maximum": 100 }
+      },
+      "additionalProperties": false
+    },
+    "banner_pity": {
+      "type": "object",
+      "properties": {
+        "soft_pity": { "type": "integer", "minimum": 0 },
+        "hard_pity": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "banner": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "title",
+        "desc",
+        "rate_up_text"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Numeric banner id, mirrors source extraction id when available"
+        },
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "desc": { "type": "string" },
+        "short_desc": { "type": "string" },
+        "category": {
+          "type": "string",
+          "enum": [
+            "limited_character",
+            "limited_trinket",
+            "standard_character",
+            "standard_trinket",
+            "realm_study",
+            "newbie",
+            "collab",
+            "rerun",
+            "other"
+          ],
+          "description": "Banner classification used for filtering and search"
+        },
+        "realm_lock": {
+          "type": "string",
+          "enum": ["chaos", "aequor", "caro", "ultra"],
+          "description": "Realm restriction for realm-study banners"
+        },
+        "rate_up_characters": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Foreign keys to characters.json character ids"
+        },
+        "rate_up_trinkets": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Foreign keys to trinkets.json trinket ids"
+        },
+        "rate_up_text": {
+          "type": "string",
+          "description": "Original rate-up description text from source extraction"
+        },
+        "rates": {
+          "$ref": "#/$defs/banner_rates"
+        },
+        "pity": {
+          "$ref": "#/$defs/banner_pity"
+        },
+        "start_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ]\\d{2}:\\d{2}(:\\d{2})?(Z|[+-]\\d{2}:?\\d{2})?)?$"
+        },
+        "end_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}([T ]\\d{2}:\\d{2}(:\\d{2})?(Z|[+-]\\d{2}:?\\d{2})?)?$"
+        },
+        "version": {
+          "type": "string",
+          "description": "Game version string when the banner first appeared (e.g. 1.0, 1.5)"
+        },
+        "currency": {
+          "type": "string",
+          "description": "Currency required for pulls (e.g. silver_key, gold_key)"
+        },
+        "notes": { "type": "string" },
+        "last_verified": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

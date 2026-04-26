@@ -2,8 +2,8 @@
 """
 事实圣经 (Fact Bible) 数据校验脚本
 
-交叉比对 assets/data/ 与 projects/wiki/data/db/characters.json，
-输出一致性报告。基于 memory/task-wiki-data-audit-2026-04.md 中的 7 项审计发现。
+交叉比对 assets/data/ 与 projects/wiki/data/db/，输出一致性报告。
+v2 扩展为 11 项审计：原 7 项历史校验 + 4 项 Mooncell 对标缺口基线。
 
 用法：
     python assets/data/validate.py
@@ -19,7 +19,13 @@ from pathlib import Path
 
 # 路径基于仓库根目录
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-CHARACTERS_JSON = REPO_ROOT / "projects" / "wiki" / "data" / "db" / "characters.json"
+DB_DIR = REPO_ROOT / "projects" / "wiki" / "data" / "db"
+PROCESSED_DIR = REPO_ROOT / "projects" / "wiki" / "data" / "processed"
+CHARACTERS_JSON = DB_DIR / "characters.json"
+TRINKETS_JSON = DB_DIR / "trinkets.json"
+BANNERS_JSON = DB_DIR / "banners.json"
+SUMMON_JSON = PROCESSED_DIR / "summon.json"
+DROPS_INDEX_JSON = PROCESSED_DIR / "drops_by_item.json"
 INTERVIEW_JSON = REPO_ROOT / "assets" / "data" / "interview-2026-04.json"
 
 # 制作人声明的角色总数（约数）
@@ -30,13 +36,28 @@ KNOWN_MISSING = ["herbert", "juliette", "nautila"]
 
 
 def load_characters():
-    """加载角色数据库，返回 (data_dict, all_characters_list)。"""
+    """加载角色数据库，返回 (data, all_characters_list)。
+
+    现实形态是顶层数组；保留对旧 dict-with-characters-key 形态的回退。
+    """
     with open(CHARACTERS_JSON, encoding="utf-8") as f:
         data = json.load(f)
-    # 合并 SSR (characters) 和 SR (sr_characters) 列表
+    if isinstance(data, list):
+        return data, data
     all_chars = list(data.get("characters", []))
     all_chars.extend(data.get("sr_characters", []))
     return data, all_chars
+
+
+def load_json_safe(path):
+    """加载 JSON，失败返回 None。"""
+    if not path.exists():
+        return None
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return None
 
 
 def find_char(chars, char_id):
@@ -57,8 +78,12 @@ def run_checks():
         sys.exit(2)
 
     data, all_chars = load_characters()
-    ssr_chars = data.get("characters", [])
-    sr_chars = data.get("sr_characters", [])
+    if isinstance(data, list):
+        ssr_chars = [c for c in all_chars if c.get("rarity") in (None, "SSR")]
+        sr_chars = [c for c in all_chars if c.get("rarity") == "SR"]
+    else:
+        ssr_chars = data.get("characters", [])
+        sr_chars = data.get("sr_characters", [])
 
     # --- Check 1: 角色总数 (审计 #6) ---
     total = len(all_chars)
@@ -68,11 +93,15 @@ def run_checks():
         results.append((False, f"角色总数 = {total}（SSR {len(ssr_chars)} + SR {len(sr_chars)}），低于制作人声明的 ~{EXPECTED_TOTAL_APPROX}，差 {EXPECTED_TOTAL_APPROX - total} 个"))
 
     # --- Check 2: 已知缺失角色 (审计 #4, #5, #7) ---
-    all_ids = {c["id"].lower() for c in all_chars}
-    all_names_en = {c.get("name_en", "").lower() for c in all_chars}
+    all_ids = {str(c["id"]).lower() for c in all_chars}
+    all_slugs = {(c.get("slug") or "").lower() for c in all_chars}
+    all_names_en = {(c.get("name_en") or "").lower() for c in all_chars}
     for name in KNOWN_MISSING:
-        # 检查 id 或英文名是否包含该名称
-        found = any(name in cid for cid in all_ids) or any(name in n for n in all_names_en)
+        found = (
+            any(name in cid for cid in all_ids)
+            or any(name in slug for slug in all_slugs)
+            or any(name in n for n in all_names_en)
+        )
         if found:
             results.append((True, f"角色 {name.capitalize()} 已存在于数据库"))
         else:
@@ -131,6 +160,71 @@ def run_checks():
         results.append((True, f"采访数据文件存在：{INTERVIEW_JSON.name}"))
     else:
         results.append((False, f"采访数据文件缺失：{INTERVIEW_JSON.name}（预期路径：assets/data/interview-2026-04.json）"))
+
+    # --- Check 7: characters.schema.json 与实际数据形态一致 ---
+    schema_path = REPO_ROOT / "projects" / "wiki" / "data" / "schemas" / "characters.schema.json"
+    schema = load_json_safe(schema_path)
+    if schema is None:
+        results.append((False, "characters.schema.json 缺失或不可解析"))
+    else:
+        top_type = schema.get("type")
+        if top_type == "array" and isinstance(data, list):
+            results.append((True, f"characters.schema.json 与数据形态一致（顶层 array，{total} 条记录）"))
+        elif top_type == "object" and isinstance(data, dict):
+            results.append((True, "characters.schema.json 与数据形态一致（顶层 object）"))
+        else:
+            results.append((False, f"characters.schema.json (type={top_type}) 与实际数据形态 ({type(data).__name__}) 不匹配"))
+
+    # --- Check 8 (Mooncell 基线): 神器 effect 缺失率 ---
+    trinkets_data = load_json_safe(TRINKETS_JSON)
+    if trinkets_data is None:
+        results.append((False, "trinkets.json 缺失，无法统计神器 effect 缺口"))
+    else:
+        trinkets = trinkets_data.get("trinkets", [])
+        if not trinkets:
+            results.append((True, "神器 effect 缺口基线：trinkets.json 为空 stub（待 Phase 3 填入 29 条）"))
+        else:
+            with_effect = sum(1 for t in trinkets if t.get("effect") and t.get("effect") != "pending")
+            pct = (with_effect / len(trinkets)) * 100
+            verdict = pct >= 50
+            results.append((verdict, f"神器 effect 填充率 = {with_effect}/{len(trinkets)} ({pct:.1f}%)"))
+
+    # --- Check 9 (Mooncell 基线): 卡池数值化率 (curated banners.json) ---
+    banners_data = load_json_safe(BANNERS_JSON)
+    if banners_data is None:
+        results.append((False, "banners.json 缺失，无法统计卡池数值化率"))
+    else:
+        banners = banners_data.get("banners", [])
+        if not banners:
+            summon = load_json_safe(SUMMON_JSON)
+            raw_count = len(summon.get("banners", [])) if summon else 0
+            results.append((True, f"卡池数值化基线：banners.json 为空 stub（待 Phase 3 从 {raw_count} 条 summon.json 整理）"))
+        else:
+            with_rates = sum(1 for b in banners if isinstance(b.get("rates"), dict))
+            pct = (with_rates / len(banners)) * 100
+            verdict = pct >= 80
+            results.append((verdict, f"卡池数值化率 = {with_rates}/{len(banners)} ({pct:.1f}%)"))
+
+    # --- Check 10 (Mooncell 基线): 关卡反向掉落索引完整性 ---
+    drops_index = load_json_safe(DROPS_INDEX_JSON)
+    if drops_index is None:
+        results.append((False, f"反向掉落索引缺失：{DROPS_INDEX_JSON.name}（执行 build_drop_index.py 生成）"))
+    else:
+        meta = drops_index.get("_meta", {})
+        item_count = meta.get("items_with_sources", 0)
+        ref_count = meta.get("total_drop_references", 0)
+        scanned = meta.get("stages_scanned", 0)
+        if scanned == 0:
+            results.append((True, f"反向索引基线：尚未扫描 stage 数据（db/stages.json 为空 stub）"))
+        else:
+            verdict = item_count > 0
+            results.append((verdict, f"反向掉落索引：{item_count} 物品 / {ref_count} 边 / {scanned} stage 扫描"))
+
+    # --- Check 11 (Mooncell 基线): 角色 skills 非 pending 率 ---
+    skills_filled = sum(1 for c in all_chars if c.get("skills") and c.get("skills") != "pending")
+    pct = (skills_filled / total) * 100 if total else 0
+    verdict = pct >= 50
+    results.append((verdict, f"角色 skills 非 pending 率 = {skills_filled}/{total} ({pct:.1f}%)"))
 
     return results
 
