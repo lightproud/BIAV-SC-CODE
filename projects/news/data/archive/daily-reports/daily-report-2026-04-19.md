@@ -6,8 +6,27 @@
 
 | 平台 | 数据条数 |
 |------|----------|
+| Bilibili | 1 |
+| Steam | 7 |
 | Steam | 11 |
 | 微信公众号 | 2 |
+
+## Bilibili
+
+1. 斯卡伯勒之夏成就-忘却前夜 -- engagement: 105
+
+## Steam 评论
+
+- 好评 6 / 差评 1 / 好评率 86%
+
+### 热门好评
+
+1. [正面] 上头的卡牌游戏 克苏鲁风格 roguelite 每局都好玩，1周玩了快60小时。。。福利很好
+PVE... -- engagement: 0
+2. [正面] good -- engagement: 0
+3. [正面] A great game with stunning artwork and addictive g... -- engagement: 0
+4. [正面] 画风真好看呀，不玩这种类型游戏都入坑了，故事也不错 -- engagement: 0
+5. [正面] very interesting and fun, Like magic the gathering... -- engagement: 0
 
 ## Steam 评论
 
