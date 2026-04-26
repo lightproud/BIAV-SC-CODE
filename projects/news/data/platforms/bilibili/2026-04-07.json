@@ -1,8 +1,8 @@
 {
   "date": "2026-04-07",
-  "archived_at": "2026-04-07T15:02:14.275249+00:00",
+  "archived_at": "2026-04-26T12:42:25.334345+00:00",
   "source": "bilibili",
-  "item_count": 28,
+  "item_count": 29,
   "items": [
     {
       "source": "bilibili",
@@ -35,6 +35,21 @@
       "url": "https://www.bilibili.com/video/av116351821742211",
       "author": "密斯卡托尼克的银猫",
       "engagement": 1193
+    },
+    {
+      "title": "忘却前夜 据说是图鲁C 癫狂深潜",
+      "summary": "除了雷娅\n我们最有效率的叠力方式是图鲁觉醒（",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-07T12:27:09+00:00",
+      "url": "http://www.bilibili.com/video/av116363381185441",
+      "engagement": 581,
+      "is_hot": false,
+      "author": "夢遊遊遊遊",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     },
     {
       "source": "bilibili",

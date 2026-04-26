@@ -1,8 +1,8 @@
 {
   "date": "2026-04-09",
-  "archived_at": "2026-04-09T10:24:13.952844+00:00",
+  "archived_at": "2026-04-26T12:42:23.328937+00:00",
   "source": "bilibili",
-  "item_count": 30,
+  "item_count": 31,
   "items": [
     {
       "source": "bilibili",
@@ -81,6 +81,21 @@
         "comments_fetched": 3,
         "danmaku": 14
       }
+    },
+    {
+      "title": "好糊的",
+      "summary": "画质\n没有内存还要开录屏是这样的",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-04-09T12:52:22+00:00",
+      "url": "http://www.bilibili.com/video/av116374823245303",
+      "engagement": 1042,
+      "is_hot": false,
+      "author": "森灵jc",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
     },
     {
       "source": "bilibili",
