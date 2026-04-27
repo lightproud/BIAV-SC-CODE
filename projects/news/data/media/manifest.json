@@ -2610,6 +2610,13 @@
       "title": "2026-4-27融灾375",
       "time": "2026-04-27T16:15:38+00:00",
       "downloaded_at": "2026-04-27T16:24:31.007743+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/141891ff49897953c8f8f86d37146ddfae9aa0cf.jpg": {
+      "filename": "bilibili_5840615ba7d043b8.jpg",
+      "source": "bilibili",
+      "title": "老头千亿核爆，老头难道真的阴到大加强了吗？",
+      "time": "2026-04-27T17:45:19+00:00",
+      "downloaded_at": "2026-04-27T18:03:43.209825+00:00"
     }
   },
   "failed": {
@@ -3552,6 +3559,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-27T16:24:31.308553+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/141891ff49897953c8f8f86d37146ddfae9aa0cf.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T18:03:43.510701+00:00"
+    },
+    "https://preview.redd.it/geds81dyerxg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=66a1e8b12259694aa26ca265e64b5686e3663610": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T18:03:43.906771+00:00"
     }
   },
   "archived": []

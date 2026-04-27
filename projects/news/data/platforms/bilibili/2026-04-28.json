@@ -1,9 +1,39 @@
 {
   "date": "2026-04-28",
-  "archived_at": "2026-04-27T16:24:31.373454+00:00",
+  "archived_at": "2026-04-27T18:03:43.972399+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 4,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T17:45:19+00:00",
+      "lang": "zh",
+      "title": "老头千亿核爆，老头难道真的阴到大加强了吗？",
+      "summary": "-\n  └ 超级无敌至尊大披萨 (1赞): 鼠鼠封面还有人类吗[FGO_干饭]\n  └ 梦依流苏 (0赞): 何封面[星绘·沐春灼华 应援装扮_腹黑]",
+      "url": "https://www.bilibili.com/video/BV1Mbo1BnErR",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 17,
+      "media_url": "https://i2.hdslb.com/bfs/archive/141891ff49897953c8f8f86d37146ddfae9aa0cf.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 12,
+        "comment_count": 5,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T17:45:19+00:00",
+      "lang": "zh",
+      "title": "老头千亿核爆，老头难道真的阴到大加强了吗？",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116477885816286",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 12,
+      "media_url": "//i2.hdslb.com/bfs/archive/141891ff49897953c8f8f86d37146ddfae9aa0cf.jpg",
+      "content_type": "video"
+    },
     {
       "source": "bilibili",
       "time": "2026-04-27T16:15:38+00:00",

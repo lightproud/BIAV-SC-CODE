@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-28
 
-> 采集时间：2026-04-28 00:24 UTC+8
+> 采集时间：2026-04-28 02:03 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌模型（半成品） — engagement: 297
+1. [Bilibili] 沙耶之歌模型（半成品） — engagement: 311
 2. [Steam] [正面] 好玩，期待沙耶之歌联动！ — engagement: 0
 
 ## 总览
@@ -14,8 +14,8 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 26 |
-| Discord | 1 |
+| Bilibili | 28 |
+| Discord | 0（沉默）|
 | 5ch | 0（沉默）|
 | Google Play | 0（沉默）|
 | Naver Cafe | 0（沉默）|
@@ -23,15 +23,15 @@
 | Note.com | 0（沉默）|
 | Official | 0（沉默）|
 | Pixiv | 0（沉默）|
-| Reddit | 26 |
-| Ruliweb | 1 |
+| Reddit | 30 |
+| Ruliweb | 0（沉默）|
 | Steam | 8 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 21 |
+| 微博 | 15 |
 | 微信公众号 | 0（沉默）|
 | YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
@@ -39,12 +39,6 @@
 ## ⚠️ 需要关注
 
 - ⚠️ Steam好评率异常：62%
-
-## Discord
-
-# 我已经变成你游的M了😭
-[附件: Screenshot_2026-04-27_003310.png, Screenshot_2026-04-27_003321.png]
-  └ ena04564: 輸光，剩我一個沒跟融災400玩過sm了
 
 ## Steam 评论
 
@@ -71,23 +65,19 @@
 
 ## Bilibili
 
-1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 2848
-2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 2832
-3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2405
-4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2383
-5. 【忘却前夜】3启阿拉克涅3t融灾3-5 — engagement: 684
+1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 2991
+2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 2976
+3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2634
+4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2610
+5. 杀戮尖塔2-沙耶mod-v1.5 — engagement: 819
 
 ## Reddit
 
 1. Dzone Mechanics Overview, Week of 4/27/26. — engagement: 0
 2. I drew Tinct! — engagement: 0
 3. Get to know the Cthulhu Mythos with Morimens! This time... L — engagement: 0
-4. New changes for Traphase Seasonal Missions — engagement: 0
-5. Is Moonless Guide busted — engagement: 0
-
-## Ruliweb
-
-1. 여러분 D4DJ아시나요?아리스기어아이기스아시나요?팬텀로즈라고아시나요? — engagement: 0
+4. Favorite eldritch designs? — engagement: 0
+5. New changes for Traphase Seasonal Missions — engagement: 0
 
 ## StopGame.ru
 
@@ -95,25 +85,22 @@
 
 ## 微博
 
-1. 忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」
-诗歌是她的语言，玫瑰是她的修辞。花园是一道谜题，春天是她的答案
- — engagement: 0
+1. 12758【投稿】忘却前夜。我主任 — engagement: 0
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
+3. 忘却前夜┊唤醒体展示✦徐
+妾身乃不梦乡之主，徐。
+若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
+
+✦ 徐 CV： — engagement: 0
+4. 忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」
+诗歌是她的语言，玫瑰是她的修辞。花园是一道谜题，春天是她的答案
+ — engagement: 0
+5. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
 
 忘却前夜 — engagement: 0
-4. 忘却前夜
-🌹当我们再次相见，我会带上花束🌹
-
-今日🧠为大家带来亿些超清大图～
-请多多支持我们奥尔拉☺️✨✨✨
-#脑缸视觉 — engagement: 0
-5. 忘却前夜 喔？我上来了吗
-这里果然有更标致的种子——就是在说你，哎呀，真是可爱♥
-来吗~准备好，加入我，融入我，我已经… — engagement: 0
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Pixiv, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
+App Store, Arca.live, 巴哈姆特, Discord, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
