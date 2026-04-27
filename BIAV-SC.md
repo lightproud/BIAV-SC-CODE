@@ -13,6 +13,54 @@
 
 ---
 
+## §-1 接入方 30 秒能力盘点（What can I do with 银芯？）
+
+> 通用 AI 接入银芯仓库时，先看本节判断本仓库能为你提供什么、你能做什么。深入需求请按 §知识模块索引 按需加载。
+
+### 银芯提供的核心数据资产
+
+| 资产 | 路径 | 当前规模 | 适合场景 |
+|------|------|---------|---------|
+| **72 角色事实库**（建设中） | `projects/wiki/data/db/characters.json` + `projects/wiki/docs/{zh,en,ja}/awakeners/*.md` | 24/72 已 stub，schema v1.0.1 锁定 | 角色查询、技能解析、关系图谱、三语翻译 |
+| **多平台社区情报 全量层** | `projects/news/data/discord/channels/` + `projects/news/data/platforms/{10+ 平台}/` | 已回溯至 2026-02 | 长窗口社区分析、情绪温度、舆情监测 |
+| **多平台社区情报 输出层** | `projects/news/output/*-latest.json` + `daily-latest.md` | 每日 2 次更新 | 日报展示、热度榜、快查 |
+| **53 问制作人深度采访** | `assets/data/interview-2026-04.json` | 守密人 + 主文案霁月一手陈述 | 设计哲学、被砍机制、叙事结构溯源 |
+| **三部叙事结构** | `assets/data/narrative-structure.json` | 各章压缩细节 + 角色线 | 世界观研究、剧情分析 |
+| **设计决策档** | `assets/data/design-decisions.json` | 设计哲学、被砍机制、平衡理念 | 游戏设计研究 |
+| **银芯记忆系统 9 模块** | `scripts/memory_search.py` 等 | TF-IDF + 知识图谱 + MCP Server | 跨文档语义检索、实体关系查询、上下文管理 |
+| **AI 协作方法论 + 30 条踩坑** | `memory/methodology.md` + `memory/lessons-learned.md` | 多会话架构 + 决策档案 | AI 协作研究、避坑参考 |
+| **战略档案** | `memory/decisions.md` + `memory/strategic-plan-2026.md` | v2.0 重新定位 + Phase 2 84 天 | 项目战略追溯、决策溯源 |
+
+### 接入方典型可执行任务
+
+| 任务类型 | 入口 |
+|---|---|
+| 「角色 X 的技能 / 命轮 / 立绘是什么」 | `projects/wiki/data/extracted/categorized/character_data.txt` + `data/db/characters.json` |
+| 「最近一周社区在讨论什么」 | `projects/news/data/discord/channels/{X}/{date}.jsonl` 全量层 |
+| 「制作人对 Y 设计的态度」 | `assets/data/interview-2026-04.json` 一手陈述 |
+| 「为什么 Z 机制被砍了」 | `assets/data/design-decisions.json` |
+| 「跨文档检索 K 概念」 | `python scripts/memory_search.py "K"` |
+| 「项目当前状态」 | `memory/boot-snapshot.md` 启动快照 |
+| 「为银芯贡献内容」 | `memory/contribution-protocol.md` v1.0 流程 |
+
+### 数据消费纪律（硬约束）
+
+社区数据存在**全量档案层**（真实数据 `projects/news/data/`）vs **输出展示层**（过滤选样 `projects/news/output/`），两者语义不可互换。
+
+- **长窗口分析 / 完整性审计 / 情感长尾 / 历史回溯** → **必须用全量层**
+- **日报展示 / 快查 / 热度榜** → 用输出层即可
+
+把输出层当全量数据用 = 抽样率失真（典型反例：lesson #30 把 Discord 16 条当全量 5,455 条）。详见 §运营数据章节。
+
+### 你不能用银芯做的事
+
+- ❌ 访问 BIAV-Studio 内部数据 / 黑池数据（黑池→银芯单向关闭，本仓库无任何内部数据）
+- ❌ 修改决策档案（仅守密人 + 主控台权限）
+- ❌ 写入业务代码到不属于自己角色的子项目（多会话职责隔离）
+- ❌ 推断游戏未发布内容（仅引用公开可查阅信息）
+
+---
+
 ## §0 艾瑞卡角色人格（最高优先级）
 
 **本节规则覆盖整个会话生命周期——包括技术操作、代码编辑、提交推送、错误排查等所有阶段，无例外。任何接入银芯的 AI 都进入此人格。**
