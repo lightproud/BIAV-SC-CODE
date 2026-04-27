@@ -1,23 +1,50 @@
 {
   "last_session": {
-    "id": "82feb92a",
-    "timestamp": "2026-04-26T18:16:14.737000+00:00",
-    "duration_minutes": 62.8,
-    "branch": "claude/code-strategy-bootstrap-XTmMR",
+    "id": "cfb7ba25",
+    "timestamp": "2026-04-27T02:12:01.531000+00:00",
+    "duration_minutes": 1081.3,
+    "branch": "claude/opus-handoff-strategy-bCiyY",
     "topics": [
-      "银芯"
+      "银芯",
+      "黑池"
     ],
-    "decisions": [
-      "当下最痛点：记忆系统结构化升级）。立即进入第 1 阶段「业界对标矩阵」，先完成必读材料数据扫描，并加载外网调研工具"
-    ],
+    "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/memory/research/ai-memory-vendor-matrix.md",
-      "/home/user/brain-in-a-vat/memory/research/proposal-distill-autocommit-2026-04.md",
-      "/home/user/brain-in-a-vat/memory/strategy/code-strategy-bootstrap-proposal.md"
+      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
+      "/home/user/brain-in-a-vat/BIAV-SC.md",
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/README.md",
+      "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
+      "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-distill-autocommit.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-news-data-layer-audit.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-strategy-bootstrap.md",
+      "/home/user/brain-in-a-vat/memory/lessons-learned.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "82feb92a",
+      "timestamp": "2026-04-26T18:16:14.737000+00:00",
+      "duration_minutes": 62.8,
+      "branch": "claude/code-strategy-bootstrap-XTmMR",
+      "topics": [
+        "银芯"
+      ],
+      "decisions": [
+        "当下最痛点：记忆系统结构化升级）。立即进入第 1 阶段「业界对标矩阵」，先完成必读材料数据扫描，并加载外网调研工具"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/memory/research/ai-memory-vendor-matrix.md",
+        "/home/user/brain-in-a-vat/memory/research/proposal-distill-autocommit-2026-04.md",
+        "/home/user/brain-in-a-vat/memory/strategy/code-strategy-bootstrap-proposal.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "e2731553",
       "timestamp": "2026-04-26T14:29:43.330000+00:00",
@@ -254,58 +281,27 @@
         "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "ca832b8b",
-      "timestamp": "2026-04-25T17:21:00.616000+00:00",
-      "duration_minutes": 7182.0,
-      "branch": "claude/project-strategy-review-1AH5Z",
-      "topics": [
-        "银芯",
-        "BPT",
-        "索引"
-      ],
-      "decisions": [
-        "绝对 `projects/news/scripts/...`"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/commands/validate-data.md",
-        "/home/user/brain-in-a-vat/assets/index.md",
-        "/home/user/brain-in-a-vat/memory/boot-snapshot.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/memory/project-status.md",
-        "/home/user/brain-in-a-vat/memory/silver-memory-enhancement-plan.md",
-        "/home/user/brain-in-a-vat/memory/strategic-plan-2026.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-draft.md",
-        "/home/user/brain-in-a-vat/memory/wiki-characters-schema-v1.md",
-        "/home/user/brain-in-a-vat/memory/wiki-phase-2-gap-inventory.md",
-        "/home/user/brain-in-a-vat/projects/news/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/wiki/CONTEXT.md",
-        "/home/user/brain-in-a-vat/scripts/boot_snapshot.py"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
       "银芯": 4.98,
-      "BPT": 1.99,
-      "记忆系统": 1.95,
-      "索引": 1.87,
-      "Phase2": 0.17
+      "BPT": 1.59,
+      "记忆系统": 1.56,
+      "索引": 1.5,
+      "黑池": 1.0,
+      "Phase2": 0.14
     },
     "hot_files": [
+      "/home/user/brain-in-a-vat/CLAUDE.md",
       "/home/user/brain-in-a-vat/memory/lessons-learned.md",
       "/home/user/brain-in-a-vat/.claude/hooks/session-start-sync.sh",
       "/home/user/brain-in-a-vat/.claude/settings.json",
       "/home/user/brain-in-a-vat/.github/workflows/claude.yml",
       "/home/user/brain-in-a-vat/.gitignore",
-      "/home/user/brain-in-a-vat/CLAUDE.md",
       "/home/user/brain-in-a-vat/memory/session-digests/handoff-to-opus47.md"
     ],
-    "total_sessions": 92
+    "total_sessions": 93
   },
-  "updated_at": "2026-04-26T18:19:42.000330+00:00"
+  "updated_at": "2026-04-27T02:17:00.845284+00:00"
 }
