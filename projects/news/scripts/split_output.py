@@ -96,9 +96,25 @@ except ImportError:
     _default_hours = 24
 MAX_AGE_HOURS = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else _default_hours
 
-# 官方公告较稀疏，保留更宽时间窗口
+# 稀疏源使用更宽时间窗口（评论流 / 官方公告 / 同人作品天然不会每日产出）
 OFFICIAL_MAX_AGE_HOURS = int(os.environ.get('OFFICIAL_MAX_AGE_HOURS', 30 * 24))
-OFFICIAL_SOURCES = {'official'}
+SPARSE_SOURCES = {
+    # 官方公告（每周到每月一次）
+    'official',
+    # 应用商店评论（24h 内通常 0 条新评论）
+    'appstore', 'google_play',
+    # 微信公众号文章（搜狗索引延迟 + 公众号每周更新）
+    'weixin',
+    # Pixiv 同人作品（日产出 0-3 条）
+    'pixiv',
+    # 长评测站（评测每月级别）
+    'stopgame',
+    # 公开版块的低频讨论平台（评论/帖子稀疏）
+    'note_com', 'ruliweb', 'fivech', 'naver_cafe', 'arca_live',
+    'bahamut', 'taptap',
+}
+# 旧名保留向后兼容
+OFFICIAL_SOURCES = SPARSE_SOURCES
 
 
 def _is_recent(time_str: str, max_hours: int = MAX_AGE_HOURS) -> bool:
@@ -207,14 +223,14 @@ def main() -> None:
     for raw in raw_items:
         src = normalize_source(raw.get('source', 'unknown'))
         item = extract_steam_item(raw) if src == 'steam' else extract_item(raw)
-        # 官方公告使用更宽窗口，其他源沿用 MAX_AGE_HOURS
-        max_age = OFFICIAL_MAX_AGE_HOURS if src in OFFICIAL_SOURCES else MAX_AGE_HOURS
+        # 稀疏源（评论 / 公告 / 同人）使用更宽窗口，高频源沿用 MAX_AGE_HOURS
+        max_age = OFFICIAL_MAX_AGE_HOURS if src in SPARSE_SOURCES else MAX_AGE_HOURS
         if not _is_recent(item.get('time', ''), max_age):
             skipped_old += 1
             continue
         by_source.setdefault(src, []).append(item)
     if skipped_old:
-        print(f'  Filtered out {skipped_old} items (official>{OFFICIAL_MAX_AGE_HOURS}h, others>{MAX_AGE_HOURS}h)')
+        print(f'  Filtered out {skipped_old} items (sparse>{OFFICIAL_MAX_AGE_HOURS}h, others>{MAX_AGE_HOURS}h)')
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     print(f'Writing to {OUTPUT_DIR}/')
