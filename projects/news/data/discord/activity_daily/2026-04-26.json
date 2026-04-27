@@ -1,34 +1,40 @@
 {
   "date": "2026-04-26",
-  "messages": 15915,
+  "messages": 19194,
   "unique_authors": 337,
-  "reactions_total": 1340,
-  "attachments": 788,
+  "reactions_total": 1747,
+  "attachments": 998,
   "channel_activity": {
-    "🔸綜合討論": 1508,
-    "🔸morimens-game-chat": 6702,
+    "🔸綜合討論": 1523,
+    "🔸morimens-game-chat": 7975,
+    "🔸deutscher-chatraum": 1,
+    "🔸русский-канал": 920,
+    "🔸phòng-chat-tiếng-việt": 1876,
+    "🔸canal-español": 475,
+    "🔸canal-português": 704,
+    "🔸ruang-obrolan-indonesia": 1219,
+    "🔸ห้องสนทนาภาษาไทย": 103,
+    "🔸traphase": 81,
+    "🔸lore-chat": 234,
+    "🔸team-building": 289,
+    "🔸general-chat": 2185,
+    "🔸邀请码互助┊swap-invitation-codes": 17,
+    "🔸game-question": 1282,
+    "🔸机器人命令┊bot-commands": 41,
+    "Add Mutant Keyword to Mutant Enemies": 2,
+    "✅「已回答」塔薇最终法则/Tawil's Absolute Axiom BUG": 3,
+    "Arachne story rambles (arc2 ch5 spoilers for basically the ENTIRE THING)": 6,
+    "【English Translation】Opinions Collection": 4,
+    "V2.5.0 命运剧院┊Theater of Fate": 2,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 7,
     "🔸剧情交流": 44,
     "🔸晒卡分享": 5,
     "🔸相位对弈": 5,
     "🔸课间休息闲聊": 7,
     "🔸日本語チャンネル": 11,
-    "🔸русский-канал": 902,
-    "🔸phòng-chat-tiếng-việt": 1868,
-    "🔸canal-español": 56,
-    "🔸canal-português": 237,
-    "🔸ruang-obrolan-indonesia": 1157,
-    "🔸ห้องสนทนาภาษาไทย": 102,
-    "🔸traphase": 80,
-    "🔸lore-chat": 227,
-    "🔸team-building": 191,
-    "🔸general-chat": 1758,
-    "🔸邀请码互助┊swap-invitation-codes": 16,
-    "🔸game-question": 816,
-    "🔸机器人命令┊bot-commands": 35,
     "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 22,
     "加回成就数字显示": 1,
     "赛季任务相位对弈": 1,
-    "Add Mutant Keyword to Mutant Enemies": 1,
     "我福袋的效果呢": 3,
     "Inquiry about the home-screen music": 10,
     "Reality Verges": 5,
@@ -40,8 +46,6 @@
     "✅「Answered」Who Ryker's Designer pls come talk ?": 4,
     "ryker doodle": 1,
     "doreposting / unserious doodles": 2,
-    "Arachne story rambles (arc2 ch5 spoilers for basically the ENTIRE THING)": 5,
-    "【English Translation】Opinions Collection": 2,
     "3星期萌新請教融災角色與配隊": 16,
     "Team to focus/Spend resources on.": 6,
     "Newbie need Team Building/Pulling help": 10,
@@ -49,7 +53,6 @@
     "Total newbie need advices": 12,
     "🔸한국어-채팅방": 6,
     "Arachne Combat Voice Line Blocking Annihilate": 2,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
     "🔸游戏问题": 10,
     "這遊戲會修bug嗎": 2,
     "Encouraging use of the official PC client": 6,
@@ -60,10 +63,15 @@
     "这什么情况": 2,
     "Can we change PvP seasonal rewards condition to *participate* instead?": 18,
     "V2.5.0.0 停服维护公告": 1,
-    "PVE players don't want Traphase": 4,
-    "V2.5.0 命运剧院┊Theater of Fate": 1
+    "PVE players don't want Traphase": 4
   },
   "hourly_activity": {
+    "19": 749,
+    "20": 584,
+    "21": 500,
+    "22": 506,
+    "23": 671,
+    "18": 980,
     "8": 807,
     "9": 744,
     "10": 1046,
@@ -74,7 +82,6 @@
     "15": 1104,
     "16": 927,
     "17": 747,
-    "18": 711,
     "6": 686,
     "7": 796,
     "5": 772,
@@ -85,12 +92,19 @@
     "0": 381
   },
   "message_types": {
-    "0": 7204,
-    "19": 3250,
-    "23": 3,
-    "20": 3
+    "0": 2189,
+    "19": 1089,
+    "46": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1498056712190431282",
+      "channel_id": "1170692781216378960",
+      "content": "At E0, Caecus sucks\nAt E1, Caecus sucks\nAt E2, Caecus sucks\nAt E3, Caecus sucks\n",
+      "author": "arandomflamev2",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
+    },
     {
       "id": "1497952793728778461",
       "channel_id": "1400750050208125010",
@@ -98,6 +112,14 @@
       "author": "stupid1omor1plush",
       "reactions": 11,
       "channel": "🔸general-chat"
+    },
+    {
+      "id": "1498056086333292766",
+      "channel_id": "1170692781216378960",
+      "content": "At E0, Clementine is the best character\nAt E1, Clementine is the best character\n",
+      "author": "spooky_penguin_",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1498003837032595687",
@@ -113,6 +135,14 @@
       "content": "??? ch5 won’t be peak until Arachne turns to her sister and their gang and says ",
       "author": "bagels5899",
       "reactions": 10,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1498055397922177116",
+      "channel_id": "1170692781216378960",
+      "content": "nuh uh",
+      "author": "fishhazardthewizard",
+      "reactions": 9,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -148,6 +178,14 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1498107354225578014",
+      "channel_id": "1170692781216378960",
+      "content": "i dont know who that is since i quit league in season 1 XD",
+      "author": "monchi3524",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1497943299728605314",
       "channel_id": "1170692781216378960",
       "content": "Ngl, elite wrote the best copy pasta. No one can mimic such fire",
@@ -162,6 +200,22 @@
       "author": "idkmyusername4481",
       "reactions": 6,
       "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1498061042994118717",
+      "channel_id": "1300659662311526512",
+      "content": "te juro que yo no soy",
+      "author": "blecnes.",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1498102772615348324",
+      "channel_id": "1400750050208125010",
+      "content": "",
+      "author": "towrpn",
+      "reactions": 5,
+      "channel": "🔸general-chat"
     },
     {
       "id": "1497941818631913556",
@@ -202,54 +256,6 @@
       "author": "foxcatfurry",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497804686613282816",
-      "channel_id": "1131839817982947429",
-      "content": "~~所以我要每次指責你啊~~",
-      "author": "foxcatfurry",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497882757051977739",
-      "channel_id": "1131839817982947429",
-      "content": "大佬大佬這一隊能不能用來打融災",
-      "author": "ahuahuahua",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497919469916520539",
-      "channel_id": "1131839817982947429",
-      "content": "然后猫咪捂着屁股出来了",
-      "author": "carme.0588",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1497877137833857139",
-      "channel_id": "1170692781216378960",
-      "content": "🫃",
-      "author": "doktor.sex",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497937490240209027",
-      "channel_id": "1170692781216378960",
-      "content": "Very good, sadly I got trash rng and took a extra dr",
-      "author": "spooky_penguin_",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1497942370606645450",
-      "channel_id": "1170692781216378960",
-      "content": "I thought he quit <:FeMC_Jointhefun1:1468258784051859684>",
-      "author": "sirtealot",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
