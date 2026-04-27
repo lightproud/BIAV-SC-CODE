@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-28
 
-> 采集时间：2026-04-28 03:26 UTC+8
+> 采集时间：2026-04-28 04:55 UTC+8
 
 ## 🔥 联动动态
 
@@ -22,10 +22,10 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 0（24h内无新内容）|
+| Pixiv | 1 |
 | Reddit | 26 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 8 |
+| Steam | 7 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
@@ -38,7 +38,7 @@
 
 ## ⚠️ 需要关注
 
-- ⚠️ Steam好评率异常：62%
+- ⚠️ Steam好评率异常：57%
 
 ## Discord
 
@@ -54,8 +54,8 @@
 
 ## Steam 评论
 
-- 好评 5 / 差评 3 / 好评率 62%
-- 语言分布：english 5, schinese 2, koreana 1
+- 好评 4 / 差评 3 / 好评率 57%
+- 语言分布：english 4, schinese 2, koreana 1
 
 ### 热门好评
 
@@ -63,7 +63,6 @@
 2. [正面] Slay The Waifu — engagement: 0
 3. [正面] Finished chapter 1. Cried evertim. Have not stoppe... — engagement: 0
 4. [正面] One of the best gacha out there — engagement: 0
-5. [正面] the combat is SO fun, the art is breathtaking and... — engagement: 0
 
 ### ⚠️ 差评
 
@@ -77,11 +76,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3049
-2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3033
-3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2715
-4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2689
-5. 杀戮尖塔2-沙耶mod-v1.5 — engagement: 946
+1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3078
+2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3061
+3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2762
+4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2736
+5. 杀戮尖塔2-沙耶mod-v1.5 — engagement: 985
 
 ## Official
 
@@ -91,12 +90,16 @@
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
+## Pixiv
+
+1.  — engagement: 0
+
 ## Reddit
 
 1. Dzone Mechanics Overview, Week of 4/27/26. — engagement: 0
 2. I drew Tinct! — engagement: 0
-3. Get to know the Cthulhu Mythos with Morimens! This time... L — engagement: 0
-4. Favorite eldritch designs? — engagement: 0
+3. Favorite eldritch designs? — engagement: 0
+4. Get to know the Cthulhu Mythos with Morimens! This time... L — engagement: 0
 5. New changes for Traphase Seasonal Missions — engagement: 0
 
 ## StopGame.ru
@@ -126,4 +129,4 @@
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
