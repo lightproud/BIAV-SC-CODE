@@ -1,6 +1,10 @@
 # 忘却前夜 社区日报 2026-04-27
 
-> 采集时间：2026-04-27 18:08 UTC+8
+> 采集时间：2026-04-27 20:18 UTC+8
+
+## 🔥 联动动态
+
+1. [Bilibili] 沙耶之歌模型（半成品） — engagement: 197
 
 ## 总览
 
@@ -9,7 +13,7 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 23 |
+| Bilibili | 19 |
 | Discord | 10 |
 | 5ch | 0（沉默）|
 | Google Play | 0（沉默）|
@@ -18,18 +22,22 @@
 | Note.com | 0（沉默）|
 | Official | 0（沉默）|
 | Pixiv | 0（沉默）|
-| Reddit | 16 |
+| Reddit | 21 |
 | Ruliweb | 1 |
-| Steam | 8 |
+| Steam | 6 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 20 |
+| 微博 | 21 |
 | 微信公众号 | 0（沉默）|
-| YouTube | 0（沉默）|
+| YouTube | 19 |
 | 知乎 | 0（沉默）|
+
+## ⚠️ 需要关注
+
+- ⚠️ Steam好评率异常：67%
 
 ## Discord
 
@@ -50,8 +58,8 @@
 
 ## Steam 评论
 
-- 好评 6 / 差评 2 / 好评率 75%
-- 语言分布：english 4, koreana 2, schinese 1, russian 1
+- 好评 4 / 差评 2 / 好评率 67%
+- 语言分布：english 3, koreana 2, schinese 1
 
 ### 热门好评
 
@@ -61,7 +69,6 @@
 2. [正面] One of the best gacha out there — engagement: 0
 3. [正面] the combat is SO fun, the art is breathtaking and... — engagement: 0
 4. [正面] fun game — engagement: 0
-5. [正面] When I close my eyes and pretend like this isn't a... — engagement: 0
 
 ### ⚠️ 差评
 
@@ -74,19 +81,19 @@
 
 ## Bilibili
 
-1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 1886
-2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 1881
-3. 【忘却前夜】2026.4.26融灾425全唤醒体登场率分析 — engagement: 1055
-4. 【忘却前夜】2026.4.26融灾425全唤醒体登场率分析 — engagement: 1034
-5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 653
+1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 2266
+2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 2250
+3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 1173
+4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 1162
+5. 【忘却前夜】2026.4.26融灾425全唤醒体登场率分析 — engagement: 1112
 
 ## Reddit
 
-1. Is Moonless Guide busted — engagement: 0
-2. Tentacle main doing some light reading on our homeland 😎 — engagement: 0
-3. Which characters are required by the story? — engagement: 0
-4. 🐴🪽 — engagement: 0
-5. Chapter 1 — engagement: 0
+1. New changes for Traphase Seasonal Missions — engagement: 0
+2. Is Moonless Guide busted — engagement: 0
+3. Tentacle main doing some light reading on our homeland 😎 — engagement: 0
+4. Feedback has been planned, and bugs are fixed very quickly. — engagement: 0
+5. Which characters are required by the story? — engagement: 0
 
 ## Ruliweb
 
@@ -115,6 +122,14 @@
 来吗~准备好，加入我，融入我，我已经… — engagement: 0
 5. 【澄清】我是7882、8173这两条投稿的相关苦主，我所绘制的角色是来自艾尔登法环的血言骑士尤诺霍斯劳（p1），主页中所 — engagement: 0
 
+## YouTube
+
+1. 🎬 Morimens┊V2.5 PV - Web of the Moirai (VA: Ōnishi Saori) — engagement: 571155
+2. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 290500
+3. Morimens Beginner Progression Guide (2026 Edition) — engagement: 21024
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19402
+5. Morimens Gameplay Is FUN — engagement: 17378
+
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Pixiv, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Pixiv, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎

@@ -1,8 +1,8 @@
 {
   "date": "2026-04-27",
-  "archived_at": "2026-04-27T10:08:45.809584+00:00",
+  "archived_at": "2026-04-27T12:19:05.670535+00:00",
   "source": "bilibili",
-  "item_count": 39,
+  "item_count": 46,
   "items": [
     {
       "source": "bilibili",
@@ -21,6 +21,36 @@
         "comments_fetched": 3,
         "danmaku": 2
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T10:11:03+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权",
+      "summary": "└ composite_resin (0赞): 奶门\n  └ 暮知藏 (0赞): 伟大无需多言\n  └ 冰块0901 (0赞): 请问抽数有限，容朵3启跟阿拉克涅3启该怎么选择呢？",
+      "url": "https://www.bilibili.com/video/BV1XGorByEVu",
+      "author": "金发女人丨型",
+      "engagement": 1173,
+      "media_url": "https://i1.hdslb.com/bfs/archive/aff413b6bc9eb7d3eb650915cf39f941e13d9d3c.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1155,
+        "comment_count": 18,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T10:11:03+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116476124142852",
+      "author": "金发女人丨型",
+      "engagement": 1162,
+      "media_url": "//i1.hdslb.com/bfs/archive/aff413b6bc9eb7d3eb650915cf39f941e13d9d3c.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -157,6 +187,24 @@
         "play": 198,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T07:44:45+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌模型（半成品）",
+      "summary": "之前的模型没做好，又做其他的模型了\n  └ 哈基沙大玉 (1赞): [鸣潮·共鸣与群星_点赞]\n  └ 沙耶郁纪 (0赞): [星星眼][星星眼][星星眼]\n  └ 小飞熊5a- (0赞): 很棒啊[微笑][支持]",
+      "url": "https://www.bilibili.com/video/BV12KokBBEfi",
+      "author": "蓝轩澜光",
+      "engagement": 197,
+      "media_url": "https://i1.hdslb.com/bfs/archive/5a7f0fd190b23b87e5c5ad564fba3b192226bce6.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 193,
+        "comment_count": 4,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -372,6 +420,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-27T09:41:46+00:00",
+      "lang": "zh",
+      "title": "十队轮椅的425融灾记录 4.27-5.10",
+      "summary": "终于把低脂毒队踢走了\n  └ 愛吃郭子的小孩 (1赞): 大佬我可以呼吸了吗\n  └ 子夜微雪 (0赞): 阿拉克涅来了以后终于正式凑出10队轮椅了，连录像都接近30分钟内了\n如果末位淘汰的话下一个踢掉的就是血希了，带两个生存位打道中不如茉夏两个人间爆破[心律共鸣动态表情包_你不许玩]\n当然这期拖后腿的是塔萝，又是没有余烬没有单血条怪欺负的一期，虽然塔萝本来打的也很慢",
+      "url": "https://www.bilibili.com/video/BV1q2orBHETU",
+      "author": "子夜唯雪",
+      "engagement": 117,
+      "media_url": "https://i1.hdslb.com/bfs/archive/3576c6199de7bb9cee03e0376b70b68dd017c476.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 115,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T09:41:46+00:00",
+      "lang": "zh",
+      "title": "十队轮椅的425融灾记录 4.27-5.10",
+      "summary": "终于把低脂毒队踢走了",
+      "url": "http://www.bilibili.com/video/av116475956369398",
+      "author": "子夜唯雪",
+      "engagement": 116,
+      "media_url": "//i1.hdslb.com/bfs/archive/3576c6199de7bb9cee03e0376b70b68dd017c476.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-26T15:35:58+00:00",
       "lang": "zh",
       "title": "【忘却前夜】2026.4.26融灾425全唤醒体登场率分析",
@@ -560,6 +638,36 @@
       "author": "罗维娅",
       "engagement": 50,
       "media_url": "//i2.hdslb.com/bfs/archive/78c13cac48fd80d1ec662e3004fa1a6bb0be856a.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T10:38:09+00:00",
+      "lang": "zh",
+      "title": "忘却前夜，4.27融灾(更新中)",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1ChorBaEae",
+      "author": "断裂免罪符",
+      "engagement": 36,
+      "media_url": "https://i2.hdslb.com/bfs/archive/04ae1abb1980d49a513ecde5e758323351f11fe6.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 36,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T10:38:09+00:00",
+      "lang": "zh",
+      "title": "忘却前夜，4.27融灾(更新中)",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116476191251932",
+      "author": "断裂免罪符",
+      "engagement": 36,
+      "media_url": "//i2.hdslb.com/bfs/archive/04ae1abb1980d49a513ecde5e758323351f11fe6.jpg",
       "content_type": "video"
     },
     {
