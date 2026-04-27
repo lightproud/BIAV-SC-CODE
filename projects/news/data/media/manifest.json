@@ -2596,6 +2596,20 @@
       "title": "【忘却前夜】全常驻+借人融灾禁区400",
       "time": "2026-04-27T13:59:15+00:00",
       "downloaded_at": "2026-04-27T15:00:14.492689+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/b7c513f6d690f5603d3d5aac5f2b2ca2c065075b.jpg": {
+      "filename": "bilibili_94c2d745a4700396.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]注意看，有位美女想跳舞，身旁三个保镖拦都拦不住，只能站着看女孩独舞，这时，一位不速之客出现在四人面前…",
+      "time": "2026-04-27T07:22:56+00:00",
+      "downloaded_at": "2026-04-27T16:24:29.589541+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/d24b91f1147cfdbc4ddc77176a0836e66ba5ac11.jpg": {
+      "filename": "bilibili_da0cfcfe3726f5f9.jpg",
+      "source": "bilibili",
+      "title": "2026-4-27融灾375",
+      "time": "2026-04-27T16:15:38+00:00",
+      "downloaded_at": "2026-04-27T16:24:31.007743+00:00"
     }
   },
   "failed": {
@@ -3528,6 +3542,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-27T15:00:16.418509+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/b7c513f6d690f5603d3d5aac5f2b2ca2c065075b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T16:24:29.890412+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/d24b91f1147cfdbc4ddc77176a0836e66ba5ac11.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T16:24:31.308553+00:00"
     }
   },
   "archived": []
