@@ -1,44 +1,56 @@
 # 忘却前夜 社区日报 2026-04-28
 
-> 采集时间：2026-04-28 02:03 UTC+8
+> 采集时间：2026-04-28 03:26 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌模型（半成品） — engagement: 311
+1. [Bilibili] 沙耶之歌模型（半成品） — engagement: 313
 2. [Steam] [正面] 好玩，期待沙耶之歌联动！ — engagement: 0
 
 ## 总览
 
 | 平台 | 数据条数 |
 |------|----------|
-| App Store | 0（沉默）|
+| App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 28 |
-| Discord | 0（沉默）|
+| Discord | 16 |
 | 5ch | 0（沉默）|
-| Google Play | 0（沉默）|
+| Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
-| Official | 0（沉默）|
-| Pixiv | 0（沉默）|
-| Reddit | 30 |
-| Ruliweb | 0（沉默）|
+| Official | 9 |
+| Pixiv | 0（24h内无新内容）|
+| Reddit | 26 |
+| Ruliweb | 0（24h内无新内容）|
 | Steam | 8 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 15 |
-| 微信公众号 | 0（沉默）|
+| 微博 | 21 |
+| 微信公众号 | 0（24h内无新内容）|
 | YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
 
 ## ⚠️ 需要关注
 
 - ⚠️ Steam好评率异常：62%
+
+## Discord
+
+今日 14,203 条消息，435 位活跃用户，1,185 次反应。热门频道：🔸morimens-game-chat(3727)、🔸綜合討論(3176)、🔸general-chat(2046)、🔸canal-português(1136)、🔸phòng-chat-tiếng-việt(906)
+
+### 热门话题
+
+1. [DC] _shimoyo@🔸晒卡分享: (附件/嵌入) — engagement: 32
+2. [DC] papcrawn@🔸art-and-memes: (附件/嵌入) — engagement: 31
+3. [DC] morimensstaff06@🔸活动资讯┊event-information: 来一把紧张刺激的「相位对弈」 — engagement: 29
+4. [DC] morimensstaff02@🔸遊戲公告┊game-announcement: 4. Bug Fixes [ — engagement: 27
+5. [DC] navirecorbeau@🔸剧情交流: ||用银芯抽对面|| — engagement: 27
 
 ## Steam 评论
 
@@ -65,11 +77,19 @@
 
 ## Bilibili
 
-1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 2991
-2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 2976
-3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2634
-4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2610
-5. 杀戮尖塔2-沙耶mod-v1.5 — engagement: 819
+1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3049
+2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3033
+3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2715
+4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2689
+5. 杀戮尖塔2-沙耶mod-v1.5 — engagement: 946
+
+## Official
+
+1. [Steam新闻] 🎧 V2.5.0 Radio Drama - Grace of Forsaken — engagement: 0
+2. [Steam新闻] V2.5.0.0 Maintenance Announcement — engagement: 0
+3. [Steam新闻] V2.5.0 Arachne✦Awakener & Wheel of Destiny Introdu — engagement: 0
+4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
+5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
 ## Reddit
 
@@ -85,22 +105,25 @@
 
 ## 微博
 
-1. 12758【投稿】忘却前夜。我主任 — engagement: 0
+1. 忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」
+诗歌是她的语言，玫瑰是她的修辞。花园是一道谜题，春天是她的答案
+ — engagement: 0
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜┊唤醒体展示✦徐
-妾身乃不梦乡之主，徐。
-若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
-
-✦ 徐 CV： — engagement: 0
-4. 忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」
-诗歌是她的语言，玫瑰是她的修辞。花园是一道谜题，春天是她的答案
- — engagement: 0
-5. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
+3. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
 
 忘却前夜 — engagement: 0
+4. 忘却前夜
+🌹当我们再次相见，我会带上花束🌹
+
+今日🧠为大家带来亿些超清大图～
+请多多支持我们奥尔拉☺️✨✨✨
+#脑缸视觉 — engagement: 0
+5. 忘却前夜 喔？我上来了吗
+这里果然有更标致的种子——就是在说你，哎呀，真是可爱♥
+来吗~准备好，加入我，融入我，我已经… — engagement: 0
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, Discord, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
