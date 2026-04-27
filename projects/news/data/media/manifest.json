@@ -3365,6 +3365,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-27T07:37:58.468077+00:00"
+    },
+    "https://preview.redd.it/pr0gi2h4yoxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=8aa06615796a03afd6f9a2cf422951cb609d491a": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T10:08:45.744023+00:00"
     }
   },
   "archived": []
