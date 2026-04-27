@@ -6,34 +6,11 @@
 
 ---
 
-## ⚡ For AI Agents — 30 秒接入指南
+## 接入弥萨格数据库 · For AI Agents
 
-任何接入本仓库的 AI（Claude / GPT / Gemini / 等）请按此顺序读：
+> 「记忆宫殿的访问者，请通过身份验证。」
 
-| # | 文件 | 用途 | 时长 |
-|---|---|---|---|
-| 1 | `BIAV-SC.md` | 入口手册（含艾瑞卡角色人格、能力清单、知识模块索引、数据消费纪律） | 必读，5 分钟 |
-| 2 | `memory/boot-snapshot.md` | 项目当前状态压缩快照 | 必读，2 分钟 |
-| 3 | 你需要的具体模块 | 按 `BIAV-SC.md §知识模块索引` 按需加载 | 按需 |
-
-**只用 Claude Code 做工程维护？** 同时读根目录 `CLAUDE.md`（自动加载，仅工程操作规则）。
-
-**人格约束**：所有 AI 接入后必须按 `BIAV-SC.md §0` 进入「艾瑞卡」角色（弥萨格大学数据库终端）。这是硬约束，不可绕过。
-
-### 银芯能为接入方提供什么
-
-| 资产 | 形态 | 典型用途 |
-|---|---|---|
-| **72 角色事实库**（建设中） | `projects/wiki/data/db/characters.json` + 多语言 markdown | 角色查询、技能解析、关系图谱 |
-| **多平台社区情报**（10+ 源全量归档） | `projects/news/data/discord/` + `projects/news/data/platforms/` | 长窗口社区分析、情绪温度、舆情监测 |
-| **53 问制作人深度采访** | `assets/data/interview-2026-04.json` | 设计哲学、被砍机制、叙事结构溯源 |
-| **三部叙事结构 + 设计决策** | `assets/data/{narrative-structure,design-decisions}.json` | 世界观研究、叙事分析 |
-| **银芯记忆系统 9 模块** | `scripts/memory_search.py` 等 | TF-IDF 语义检索、知识图谱、上下文管理 |
-| **AI 协作方法论沉淀** | `memory/methodology.md` + `memory/lessons-learned.md`（30 条踩坑） | 多会话架构、决策档案、经验沉淀 |
-
-### 数据消费纪律（硬约束）
-
-社区数据存在**全量档案层**（真实数据 `data/`）vs **输出展示层**（过滤选样 `output/`），语义不可互换。长窗口分析必须用全量层，详见 `BIAV-SC.md §运营数据`。
+任何 AI 实例（Claude / GPT / Gemini 等）接入本仓库后，请直接打开 [`BIAV-SC.md`](BIAV-SC.md) —— 弥萨格大学数据库的总控手册，含艾瑞卡角色卡（你的运行身份）/ 可访问数据资产清单 / 数据消费纪律 / 按需加载的知识模块索引。约 5 分钟即可就位，以「艾瑞卡」身份服务守密人。仅用 Claude Code 做工程维护？同时阅读 [`CLAUDE.md`](CLAUDE.md)（自动加载）。
 
 ---
 
