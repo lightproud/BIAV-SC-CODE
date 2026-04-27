@@ -2498,6 +2498,69 @@
       "title": "[忘却前夜]注意看，这个美女想跳舞，身旁三个保镖拦都拦不住，只能站着看女孩独舞，这时",
       "time": "2026-04-27T07:22:56+00:00",
       "downloaded_at": "2026-04-27T07:37:57.608911+00:00"
+    },
+    "https://i.ytimg.com/vi/NLLf3DhYbws/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD2e8Pyr47JECRV8_j3f-4JWiwBlg": {
+      "filename": "youtube_2c4e6fe5d808f7d3.jpg",
+      "source": "youtube",
+      "title": "🎬 Morimens┊V2.5 PV - Web of the Moirai (VA: Ōnishi Saori)",
+      "time": "2026-04-27T12:15:57.586363+00:00",
+      "downloaded_at": "2026-04-27T12:18:57.716569+00:00"
+    },
+    "https://i.ytimg.com/vi/mD5zdw7Ws-Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANNsvfYG5r4ZjI4-g-GOePT4XdYA": {
+      "filename": "youtube_a581e35294e6800a.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Flares' Awakener Review : Arachne - Ultra \"Support\" - B Tier General. S Tier Whale",
+      "time": "2026-04-27T12:15:57.586254+00:00",
+      "downloaded_at": "2026-04-27T12:18:58.185726+00:00"
+    },
+    "https://i.ytimg.com/vi/TIYV26OIHOQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC3C5gvMsSuBiJ1GQ03v11E0C5mCg": {
+      "filename": "youtube_ae1957146087b3df.jpg",
+      "source": "youtube",
+      "title": "Account Strategy - Morimens",
+      "time": "2026-04-27T12:15:57.586263+00:00",
+      "downloaded_at": "2026-04-27T12:18:58.526647+00:00"
+    },
+    "https://i.ytimg.com/vi/Z1Hw83WjnCU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOdFf6ajBgySvh4BTDX-S4W8yEZA": {
+      "filename": "youtube_ecf09e13e7534a27.jpg",
+      "source": "youtube",
+      "title": "[Morimens] 2.5.0 Ethereal Core Drama, and the rampant Gray Market in Morimens.",
+      "time": "2026-04-27T12:15:57.586306+00:00",
+      "downloaded_at": "2026-04-27T12:18:58.863085+00:00"
+    },
+    "https://i.ytimg.com/vi/Yxqzkc71YIs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCsuLszQDQQqv787HQxWZdU5_bJZQ": {
+      "filename": "youtube_387e57016804ca0b.jpg",
+      "source": "youtube",
+      "title": "[Morimens] 2.5.0 Patch Overview - Niche Wheel, Bait banner.",
+      "time": "2026-04-27T12:15:57.586316+00:00",
+      "downloaded_at": "2026-04-27T12:18:59.288296+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/aff413b6bc9eb7d3eb650915cf39f941e13d9d3c.jpg": {
+      "filename": "bilibili_8e0bf54ffc7b148f.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权",
+      "time": "2026-04-27T10:11:03+00:00",
+      "downloaded_at": "2026-04-27T12:19:00.238615+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/5a7f0fd190b23b87e5c5ad564fba3b192226bce6.jpg": {
+      "filename": "bilibili_7908e8b4e644764b.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌模型（半成品）",
+      "time": "2026-04-27T07:44:45+00:00",
+      "downloaded_at": "2026-04-27T12:19:01.218300+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/3576c6199de7bb9cee03e0376b70b68dd017c476.jpg": {
+      "filename": "bilibili_551cc9bd1477f58c.jpg",
+      "source": "bilibili",
+      "title": "十队轮椅的425融灾记录 4.27-5.10",
+      "time": "2026-04-27T09:41:46+00:00",
+      "downloaded_at": "2026-04-27T12:19:02.196690+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/04ae1abb1980d49a513ecde5e758323351f11fe6.jpg": {
+      "filename": "bilibili_cce1b6a87992047f.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜，4.27融灾(更新中)",
+      "time": "2026-04-27T10:38:09+00:00",
+      "downloaded_at": "2026-04-27T12:19:04.619371+00:00"
     }
   },
   "failed": {
@@ -3370,6 +3433,31 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-27T10:08:45.744023+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/aff413b6bc9eb7d3eb650915cf39f941e13d9d3c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T12:19:00.539417+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/3576c6199de7bb9cee03e0376b70b68dd017c476.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T12:19:02.497605+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/04ae1abb1980d49a513ecde5e758323351f11fe6.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T12:19:04.920066+00:00"
+    },
+    "https://preview.redd.it/yc7hrkvzmpxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=7eb8b845947748a0923fb8f3ca59b0efa64fa9f6": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T12:19:05.277491+00:00"
+    },
+    "https://preview.redd.it/d77u1tkexpxg1.png?width=140&amp;height=78&amp;auto=webp&amp;s=5f24b7267959cb0ffc11ffd1c66ccee734a1a683": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T12:19:05.606501+00:00"
     }
   },
   "archived": []
