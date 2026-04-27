@@ -1,8 +1,8 @@
 {
   "date": "2026-04-27",
-  "archived_at": "2026-04-27T05:03:03.673892+00:00",
+  "archived_at": "2026-04-27T07:37:58.530721+00:00",
   "source": "bilibili",
-  "item_count": 37,
+  "item_count": 39,
   "items": [
     {
       "source": "bilibili",
@@ -560,6 +560,36 @@
       "author": "罗维娅",
       "engagement": 50,
       "media_url": "//i2.hdslb.com/bfs/archive/78c13cac48fd80d1ec662e3004fa1a6bb0be856a.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T07:22:56+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]注意看，这个美女想跳舞，身旁三个保镖拦都拦不住，只能站着看女孩独舞，这时",
+      "summary": "一带三#忘却前夜 #融灾\n  └ 护林犬 (0赞): 单易伤4回合191k毒",
+      "url": "https://www.bilibili.com/video/BV1DBokB1EQ8",
+      "author": "护林犬",
+      "engagement": 14,
+      "media_url": "https://i0.hdslb.com/bfs/archive/b8f36303e43997341185b89a3430cfaba37fd736.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 13,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T07:22:56+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]注意看，这个美女想跳舞，身旁三个保镖拦都拦不住，只能站着看女孩独舞，这时",
+      "summary": "一带三#忘却前夜 #融灾",
+      "url": "http://www.bilibili.com/video/av116475452988094",
+      "author": "护林犬",
+      "engagement": 13,
+      "media_url": "//i0.hdslb.com/bfs/archive/b8f36303e43997341185b89a3430cfaba37fd736.jpg",
       "content_type": "video"
     },
     {
