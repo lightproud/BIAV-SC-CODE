@@ -1,8 +1,8 @@
 {
   "date": "2026-01-27",
-  "archived_at": "2026-04-27T19:39:09.725743+00:00",
+  "archived_at": "2026-04-27T21:45:53.709260+00:00",
   "source": "bilibili",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "title": "【忘却前夜】角色攻略之徐",
@@ -60,6 +60,21 @@
       "engagement": 2626,
       "is_hot": false,
       "author": "闲者映天",
+      "tags": [],
+      "content_type": "text",
+      "media_url": ""
+    },
+    {
+      "title": "零启徐，福袋轻松2t5-5，甚至负面造物",
+      "summary": "-",
+      "source": "bilibili",
+      "platform_region": "cn",
+      "lang": "zh",
+      "time": "2026-01-26T21:32:22+00:00",
+      "url": "http://www.bilibili.com/video/av115963513018349",
+      "engagement": 835,
+      "is_hot": false,
+      "author": "路过的耄耋",
       "tags": [],
       "content_type": "text",
       "media_url": ""
