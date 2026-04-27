@@ -258,28 +258,38 @@ try:
 except ImportError:
     MAX_AGE_HOURS = int(os.environ.get('MAX_AGE_HOURS', 24))
 
+# 稀疏源使用更宽时间窗口（与 split_output.SPARSE_SOURCES 保持同步）
+SPARSE_MAX_AGE_HOURS = int(os.environ.get('SPARSE_MAX_AGE_HOURS', 30 * 24))
+SPARSE_SOURCES = {
+    'official', 'appstore', 'google_play', 'weixin', 'pixiv', 'stopgame',
+    'note_com', 'ruliweb', 'fivech', 'naver_cafe', 'arca_live', 'bahamut',
+    'taptap',
+}
 
-def _is_recent(time_str: str) -> bool:
-    """Check if a timestamp is within MAX_AGE_HOURS of now."""
+
+def _is_recent(time_str: str, source: str = '') -> bool:
+    """Check if a timestamp is within (source-specific) max_hours of now."""
     if not time_str:
         return False
+    max_hours = SPARSE_MAX_AGE_HOURS if source in SPARSE_SOURCES else MAX_AGE_HOURS
     try:
         dt = datetime.fromisoformat(time_str)
         if dt.tzinfo is None:
             dt = dt.replace(tzinfo=timezone.utc)
-        return (datetime.now(timezone.utc) - dt) < timedelta(hours=MAX_AGE_HOURS)
+        return (datetime.now(timezone.utc) - dt) < timedelta(hours=max_hours)
     except (ValueError, TypeError):
         return False
 
 
 def merge_and_dedup(existing: list[dict], new_items: list[dict]) -> list[dict]:
     """Merge and deduplicate items, keeping higher-engagement version.
-    Filters out items older than MAX_AGE_HOURS."""
+    Filters out items older than per-source max_age (sparse sources use 30d,
+    others 24h)."""
     seen: dict[str, dict] = {}
 
     # Existing items first (they're already validated)
     for item in existing:
-        if not _is_recent(item.get('time', '')):
+        if not _is_recent(item.get('time', ''), item.get('source', '')):
             continue
         key = dedup_key(item)
         if key not in seen or item.get('engagement', 0) > seen[key].get('engagement', 0):
@@ -288,7 +298,7 @@ def merge_and_dedup(existing: list[dict], new_items: list[dict]) -> list[dict]:
     # New items (from global collectors)
     for item in new_items:
         converted = convert_item(item)
-        if not _is_recent(converted.get('time', '')):
+        if not _is_recent(converted.get('time', ''), converted.get('source', '')):
             continue
         key = dedup_key(converted)
         if key not in seen or converted.get('engagement', 0) > seen[key].get('engagement', 0):
