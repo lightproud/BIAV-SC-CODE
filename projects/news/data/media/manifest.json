@@ -2456,6 +2456,13 @@
       "title": "【忘却 / 相位 / 轮选】出错最少的一次",
       "time": "2026-04-26T22:40:03+00:00",
       "downloaded_at": "2026-04-26T23:33:21.499782+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/5fbdb28f6b9b255c8186a332fc50c471a60d99de.jpg": {
+      "filename": "bilibili_5d0631be84703cfa.jpg",
+      "source": "bilibili",
+      "title": "蜘蛛姐姐输了。。",
+      "time": "2026-04-26T10:51:43+00:00",
+      "downloaded_at": "2026-04-27T01:34:10.543630+00:00"
     }
   },
   "failed": {
@@ -3293,6 +3300,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-26T23:33:21.800615+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/5fbdb28f6b9b255c8186a332fc50c471a60d99de.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T01:34:10.844450+00:00"
     }
   },
   "archived": []

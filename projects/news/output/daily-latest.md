@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-27
 
-> 采集时间：2026-04-27 07:33 UTC+8
+> 采集时间：2026-04-27 09:34 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 271
+1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 303
 2. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -19,18 +19,18 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 31 |
-| Discord | 16 |
+| Bilibili | 32 |
+| Discord | 15 |
 | 5ch | 0（沉默）|
 | Google Play | 0（沉默）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 0（沉默）|
-| Pixiv | 0（沉默）|
-| Reddit | 26 |
+| Pixiv | 1 |
+| Reddit | 24 |
 | Ruliweb | 1 |
-| Steam | 9 |
+| Steam | 8 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
@@ -43,20 +43,25 @@
 
 ## Discord
 
-今日 15,915 条消息，337 位活跃用户，1,340 次反应。热门频道：🔸morimens-game-chat(6702)、🔸phòng-chat-tiếng-việt(1868)、🔸general-chat(1758)、🔸綜合討論(1508)、🔸ruang-obrolan-indonesia(1157)
+??? ch5 won’t be peak until Arachne turns to her sister and their gang and says “call me Arachne the Fate Weaver and for my freedom you must mori, mens so remember last night. six seven”
+  └ megidola.: https://tenor.com/view/type-and-delete-gif-11909948745836436894
+  └ _venush: maybe there might be a scene like that bc ||Nefraea is Arachne after all||
+  └ krausser: "it's weaving time"
+  └ princess.goth: biav do not hire this guy
+  └ vinsette: We deserve everything BIAV throws at us
 
 ### 热门话题
 
-1. [DC] bagels5899@🔸morimens-game-chat: ??? ch5 won’t be peak u — engagement: 42
-2. [DC] stupid1omor1plush@🔸general-chat: I saw the original on  — engagement: 41
-3. [DC] be_queitplease@🔸綜合討論: # 我已经变成你游的M了😭 — engagement: 34
-4. [DC] sophiechoice@🔸morimens-game-chat: Yay Chapter 2 HM done — engagement: 33
-5. [DC] yusi4172@🔸綜合討論: Btw我終於+12了 — engagement: 27
+1. [DC] stupid1omor1plush@🔸general-chat: I saw the original on  — engagement: 41
+2. [DC] be_queitplease@🔸綜合討論: # 我已经变成你游的M了😭 — engagement: 34
+3. [DC] sophiechoice@🔸morimens-game-chat: Yay Chapter 2 HM done — engagement: 33
+4. [DC] yusi4172@🔸綜合討論: Btw我終於+12了 — engagement: 27
+5. [DC] sirtealot@🔸morimens-game-chat: I thought he quit  — engagement: 23
 
 ## Steam 评论
 
-- 好评 9 / 差评 0 / 好评率 100%
-- 语言分布：english 6, koreana 1, russian 1, schinese 1
+- 好评 8 / 差评 0 / 好评率 100%
+- 语言分布：english 5, koreana 1, russian 1, schinese 1
 
 ### 热门好评
 
@@ -70,19 +75,23 @@
 
 ## Bilibili
 
-1. 我们都是肉做的 — engagement: 3452
-2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 505
-3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 499
-4. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 439
-5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 429
+1. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 527
+2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 521
+3. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 515
+4. 【忘却前夜】2026.4.26融灾425全唤醒体登场率分析 — engagement: 509
+5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 507
+
+## Pixiv
+
+1.  — engagement: 0
 
 ## Reddit
 
 1. Tentacle main doing some light reading on our homeland 😎 — engagement: 0
-2. The Keeper and Goliath after unlocking Reproduction Frenzy. — engagement: 0
-3. 🐴🪽 — engagement: 0
+2. 🐴🪽 — engagement: 0
+3. Chapter 1 — engagement: 0
 4. What do you think about Arc 2 Chapter 5 difficulty? — engagement: 0
-5. Chapter 1 — engagement: 0
+5. The Keeper and Goliath after unlocking Reproduction Frenzy. — engagement: 0
 
 ## Ruliweb
 
@@ -103,7 +112,9 @@
 若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
 
 ✦ 徐 CV： — engagement: 0
-4. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+4. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
+
+忘却前夜 — engagement: 0
 5. 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -117,4 +128,4 @@
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Pixiv, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
