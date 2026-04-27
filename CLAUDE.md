@@ -32,7 +32,7 @@
 - 只响应 `author: lightproud` 的 Issue。
 - 同一子项目最多 3 个 open Issue。
 - 创建前先查重，有重叠则追加 comment 而非新建。
-- 标题前缀：`[Code-site]` / `[Code-news]` / `[Code-wiki]` / `[Code-memory]` / `[Code-strategy]` / `[主控台]`。
+- 标题前缀：`[Code-site]` / `[Code-news]` / `[Code-wiki]` / `[Code-memory]` / `[Code-strategy]` / `[Code-BPT]` / `[主控台]`。
 - 未标注执行模式时默认「直接执行」。
 - Issue 不是跨会话通信手段——任务要点必须写进对应 `projects/*/CONTEXT.md`。
 
@@ -48,6 +48,7 @@
 | 衍生游戏 | `projects/game/` | Code-game（未启用） | 暂缓，Phase 4 启动 |
 | 银芯记忆基础设施 | `scripts/` + `assets/data/` 索引 | Code-memory | 维护 9 模块记忆系统与 RAG 链条；不写业务数据（不动 wiki/news/site） |
 | 长期战略智库 | `memory/strategy/` + `memory/research/` | Code-strategy | 长尺度调研 / 评估 / 选项分析；不写业务代码、不写决策档案、不派发 brief（这些归主控台）|
+| BPT 开发指导 | `memory/bpt-guidance-*.md` + `memory/archive/bpt-strategic-shift-2026-04-19/` | Code-BPT | BPT 不在银芯仓库内；只产出「搬运包」由守密人人工搬运到 BPT 仓库；不写代码到 `projects/`；遵循 `memory/bpt-guidance-protocol.md`；沉淀 lessons/decisions 写回 `memory/` |
 
 > 子项目状态、技术栈、当前阶段详见 `BIAV-SC.md` 子项目状态速查表。
 
