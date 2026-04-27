@@ -1,16 +1,6 @@
 # 忘却前夜 社区日报 2026-04-27
 
-> 采集时间：2026-04-27 09:34 UTC+8
-
-## 🔥 联动动态
-
-1. [Bilibili] 单簧管《沙耶の唄（沙耶之歌）》（游戏《沙耶之歌》ED） — engagement: 303
-2. [微博] 忘却前夜×沙耶之歌 联动预告
-
-梦的碎片 随风而至
-
-#忘却前夜# #沙耶之歌#
-忘却前夜 #Morimens# 忘却前 — engagement: 0
+> 采集时间：2026-04-27 13:02 UTC+8
 
 ## 总览
 
@@ -19,26 +9,26 @@
 | App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 32 |
-| Discord | 15 |
+| Bilibili | 28 |
+| Discord | 12 |
 | 5ch | 0（沉默）|
 | Google Play | 0（沉默）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 0（沉默）|
-| Pixiv | 1 |
-| Reddit | 24 |
+| Pixiv | 0（沉默）|
+| Reddit | 12 |
 | Ruliweb | 1 |
-| Steam | 8 |
+| Steam | 7 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 16 |
+| 微博 | 20 |
 | 微信公众号 | 0（沉默）|
-| YouTube | 1 |
+| YouTube | 18 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -55,13 +45,13 @@
 1. [DC] stupid1omor1plush@🔸general-chat: I saw the original on  — engagement: 41
 2. [DC] be_queitplease@🔸綜合討論: # 我已经变成你游的M了😭 — engagement: 34
 3. [DC] sophiechoice@🔸morimens-game-chat: Yay Chapter 2 HM done — engagement: 33
-4. [DC] yusi4172@🔸綜合討論: Btw我終於+12了 — engagement: 27
-5. [DC] sirtealot@🔸morimens-game-chat: I thought he quit  — engagement: 23
+4. [DC] sirtealot@🔸morimens-game-chat: I thought he quit  — engagement: 23
+5. [DC] z8567657@🔸晒卡分享: (附件/嵌入) — engagement: 22
 
 ## Steam 评论
 
-- 好评 8 / 差评 0 / 好评率 100%
-- 语言分布：english 5, koreana 1, russian 1, schinese 1
+- 好评 7 / 差评 0 / 好评率 100%
+- 语言分布：english 5, koreana 1, russian 1
 
 ### 热门好评
 
@@ -75,23 +65,19 @@
 
 ## Bilibili
 
-1. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 527
-2. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 521
-3. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 515
-4. 【忘却前夜】2026.4.26融灾425全唤醒体登场率分析 — engagement: 509
-5. ［相位］以防你没见过伤痛罗坦一回合砍飞四个满血（接近） — engagement: 507
-
-## Pixiv
-
-1.  — engagement: 0
+1. 【忘却前夜】2026.4.26融灾425全唤醒体登场率分析 — engagement: 861
+2. 【忘却前夜】2026.4.26融灾425全唤醒体登场率分析 — engagement: 846
+3. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 596
+4. 【忘却前夜】欢乐过牌流2t轻取5-10温柔的枷锁 — engagement: 589
+5. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 584
 
 ## Reddit
 
 1. Tentacle main doing some light reading on our homeland 😎 — engagement: 0
-2. 🐴🪽 — engagement: 0
-3. Chapter 1 — engagement: 0
+2. Chapter 1 — engagement: 0
+3. 🐴🪽 — engagement: 0
 4. What do you think about Arc 2 Chapter 5 difficulty? — engagement: 0
-5. The Keeper and Goliath after unlocking Reproduction Frenzy. — engagement: 0
+5. wtf man!! what kind of health bar is this??😫help dawg — engagement: 0
 
 ## Ruliweb
 
@@ -103,29 +89,35 @@
 
 ## 微博
 
-1. 12758【投稿】忘却前夜。我主任 — engagement: 0
+1. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
+
+忘却前夜 — engagement: 0
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜┊唤醒体展示✦徐
-妾身乃不梦乡之主，徐。
-若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
+3. 忘却前夜
+🌹当我们再次相见，我会带上花束🌹
 
-✦ 徐 CV： — engagement: 0
-4. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
-
-忘却前夜 — engagement: 0
-5. 忘却前夜×沙耶之歌 联动预告
-
-梦的碎片 随风而至
-
-#忘却前夜# #沙耶之歌#
-忘却前夜 #Morimens# 忘却前 — engagement: 0
+今日🧠为大家带来亿些超清大图～
+请多多支持我们奥尔拉☺️✨✨✨
+#脑缸视觉 — engagement: 0
+4. 忘却前夜 喔？我上来了吗
+这里果然有更标致的种子——就是在说你，哎呀，真是可爱♥
+来吗~准备好，加入我，融入我，我已经… — engagement: 0
+5. 忘却前夜#忘却前夜#
+《忘却前夜》概念PV——「银芯」
+那是自融蚀降临后，人类最后的希望。
+◆◆◆◆◆◆
+官方玩家交流群 — engagement: 0
 
 ## YouTube
 
-1. [Morimens] Chapter 5 NM then Hardmode Blind Clears - Going u — engagement: 290
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 290418
+2. Clementine edit | Forget last night: Morimens — engagement: 33260
+3. Morimens Beginner Progression Guide (2026 Edition) — engagement: 20948
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19390
+5. Morimens Gameplay Is FUN — engagement: 17352
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Official, Pixiv, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎

@@ -2463,6 +2463,34 @@
       "title": "蜘蛛姐姐输了。。",
       "time": "2026-04-26T10:51:43+00:00",
       "downloaded_at": "2026-04-27T01:34:10.543630+00:00"
+    },
+    "https://i.ytimg.com/vi/iyiUaeezTgE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBWJztCxZb3EorR1tiLAIhsHu9W3w": {
+      "filename": "youtube_a82cefffcabbb4f1.jpg",
+      "source": "youtube",
+      "title": "『 Morimens 』 we're br*tish",
+      "time": "2026-04-27T04:59:55.086588+00:00",
+      "downloaded_at": "2026-04-27T05:02:59.163546+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/e0c3454bdbd73d0869159693063b3e6082961af9.jpg": {
+      "filename": "bilibili_e3848d00322d50a1.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏)",
+      "time": "2026-04-27T03:43:57+00:00",
+      "downloaded_at": "2026-04-27T05:03:00.082511+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/7dfcef12f30ecadcf958fa7382ffe2f942bee387.jpg": {
+      "filename": "bilibili_2abbb8a7038c92bd.jpg",
+      "source": "bilibili",
+      "title": "【超维戒】78分钟容灾第一",
+      "time": "2026-04-27T02:53:49+00:00",
+      "downloaded_at": "2026-04-27T05:03:00.845722+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/5e8e4832d12c57932519d9aafc6155174de06b6b.jpg": {
+      "filename": "bilibili_0ea742eb71a5d16d.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】3启阿拉克涅3t融灾3-5",
+      "time": "2026-04-27T04:14:06+00:00",
+      "downloaded_at": "2026-04-27T05:03:03.002979+00:00"
     }
   },
   "failed": {
@@ -3305,6 +3333,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-27T01:34:10.844450+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/e0c3454bdbd73d0869159693063b3e6082961af9.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T05:02:59.464416+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/7dfcef12f30ecadcf958fa7382ffe2f942bee387.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T05:03:03.303902+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/5e8e4832d12c57932519d9aafc6155174de06b6b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T05:03:03.604671+00:00"
     }
   },
   "archived": []
