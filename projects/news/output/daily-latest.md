@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-28
 
-> 采集时间：2026-04-28 05:48 UTC+8
+> 采集时间：2026-04-28 06:43 UTC+8
 
 ## 🔥 联动动态
 
@@ -14,7 +14,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 28 |
+| Bilibili | 26 |
 | Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
@@ -25,7 +25,7 @@
 | Pixiv | 0（24h内无新内容）|
 | Reddit | 26 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 7 |
+| Steam | 6 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
@@ -33,12 +33,12 @@
 | Telegram | 0（沉默）|
 | 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 36 |
+| YouTube | 19 |
 | 知乎 | 0（沉默）|
 
 ## ⚠️ 需要关注
 
-- ⚠️ Steam好评率异常：57%
+- ⚠️ Steam好评率异常：50%
 
 ## Discord
 
@@ -54,15 +54,14 @@
 
 ## Steam 评论
 
-- 好评 4 / 差评 3 / 好评率 57%
-- 语言分布：english 4, schinese 2, koreana 1
+- 好评 3 / 差评 3 / 好评率 50%
+- 语言分布：english 3, schinese 2, koreana 1
 
 ### 热门好评
 
 1. [正面] 好玩，期待沙耶之歌联动！ — engagement: 0
 2. [正面] Slay The Waifu — engagement: 0
 3. [正面] Finished chapter 1. Cried evertim. Have not stoppe... — engagement: 0
-4. [正面] One of the best gacha out there — engagement: 0
 
 ### ⚠️ 差评
 
@@ -76,11 +75,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3098
-2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3081
-3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2779
-4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2753
-5. 杀戮尖塔2-沙耶mod-v1.5 — engagement: 1008
+1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3122
+2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3105
+3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2805
+4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2778
+5. 杀戮尖塔2-沙耶mod-v1.5 — engagement: 1035
 
 ## Official
 
@@ -122,10 +121,10 @@
 
 ## YouTube
 
-1. 🎬 Morimens┊V2.5 PV - Web of the Moirai (VA: Ōnishi Saori) — engagement: 570522
-2. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 290652
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38412
-4. Morimens Beginner Progression Guide (2026 Edition) — engagement: 21100
+1. 🎬 Morimens┊V2.5 PV - Web of the Moirai (VA: Ōnishi Saori) — engagement: 570538
+2. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 290675
+3. Why I fell in love with this card-based gacha game — engagement: 136941
+4. Morimens Beginner Progression Guide (2026 Edition) — engagement: 21122
 5. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19422
 
 ## 沉默平台
