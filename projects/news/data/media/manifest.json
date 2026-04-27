@@ -2491,6 +2491,13 @@
       "title": "【忘却前夜】3启阿拉克涅3t融灾3-5",
       "time": "2026-04-27T04:14:06+00:00",
       "downloaded_at": "2026-04-27T05:03:03.002979+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/b8f36303e43997341185b89a3430cfaba37fd736.jpg": {
+      "filename": "bilibili_66e5e885a7619399.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]注意看，这个美女想跳舞，身旁三个保镖拦都拦不住，只能站着看女孩独舞，这时",
+      "time": "2026-04-27T07:22:56+00:00",
+      "downloaded_at": "2026-04-27T07:37:57.608911+00:00"
     }
   },
   "failed": {
@@ -3348,6 +3355,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-27T05:03:03.604671+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/b8f36303e43997341185b89a3430cfaba37fd736.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T07:37:57.909580+00:00"
+    },
+    "https://preview.redd.it/qhm533zwmoxg1.jpg?width=140&amp;height=83&amp;auto=webp&amp;s=19569ace6bf4e0e2a1e4f78402f0b68f9c7f7ca3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T07:37:58.468077+00:00"
     }
   },
   "archived": []
