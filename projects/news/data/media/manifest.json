@@ -2561,6 +2561,41 @@
       "title": "忘却前夜，4.27融灾(更新中)",
       "time": "2026-04-27T10:38:09+00:00",
       "downloaded_at": "2026-04-27T12:19:04.619371+00:00"
+    },
+    "https://i.ytimg.com/vi/ouWidkTBoPs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5Afp4Xy_rmD5NjyNvGIzO4CPUrA": {
+      "filename": "youtube_f3f700129fa5dbb8.jpg",
+      "source": "youtube",
+      "title": "《鈴蘭之劍：為這和平的世界》阿加塔‧凜冬極星 | 角色介紹PV",
+      "time": "2026-04-27T10:57:02.252096+00:00",
+      "downloaded_at": "2026-04-27T15:00:06.061289+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/b33af63c94286be87364959250dbba8aa71b5d8d.jpg": {
+      "filename": "bilibili_195bcbda3c80edb5.jpg",
+      "source": "bilibili",
+      "title": "杀戮尖塔2-沙耶mod-v1.5",
+      "time": "2026-04-27T14:03:50+00:00",
+      "downloaded_at": "2026-04-27T15:00:07.747396+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/620868d96b63b37c126f3078d95457e63cf64a43.jpg": {
+      "filename": "bilibili_480bf3f0c650fe38.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】主c阿拉克涅2t融灾3-5",
+      "time": "2026-04-27T13:38:04+00:00",
+      "downloaded_at": "2026-04-27T15:00:11.540126+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/86c6ba0705156fb26c15a24a49b312eed486b83b.jpg": {
+      "filename": "bilibili_e5fe4c8e2c56a6d4.jpg",
+      "source": "bilibili",
+      "title": "4.27-5.10 融灾400",
+      "time": "2026-04-27T06:02:36+00:00",
+      "downloaded_at": "2026-04-27T15:00:13.193498+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/0035ec4d183686127925a19c116ed2dcc8814e7d.jpg": {
+      "filename": "bilibili_662d595af2a7e0e4.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】全常驻+借人融灾禁区400",
+      "time": "2026-04-27T13:59:15+00:00",
+      "downloaded_at": "2026-04-27T15:00:14.492689+00:00"
     }
   },
   "failed": {
@@ -3458,6 +3493,41 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-27T12:19:05.606501+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/620868d96b63b37c126f3078d95457e63cf64a43.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T15:00:13.494284+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/86c6ba0705156fb26c15a24a49b312eed486b83b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T15:00:14.793451+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/0035ec4d183686127925a19c116ed2dcc8814e7d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T15:00:15.094272+00:00"
+    },
+    "https://preview.redd.it/9zhqm51m6qxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=583986ef7e6b8df13ce45f070e1848c9d103f695": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T15:00:15.431852+00:00"
+    },
+    "https://preview.redd.it/n2n2fbs23nxg1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=cae1f7ea427eeacab1792933014d6cee5b45219e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T15:00:15.758825+00:00"
+    },
+    "https://preview.redd.it/qcyh4xjvoqxg1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=8ba4b66761642c01c2722e020a7ec028cdf29b05": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T15:00:16.087573+00:00"
+    },
+    "https://preview.redd.it/wfve8in29qxg1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=b4028ed5ef8438e4e2a422cf3b47212d12738472": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-27T15:00:16.418509+00:00"
     }
   },
   "archived": []
