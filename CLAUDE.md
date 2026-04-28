@@ -135,7 +135,7 @@ python scripts/session_briefing.py
 
 ## §9 关键教训摘要
 
-完整 29 条见 `memory/lessons-learned.md`。AI 会话最易踩的坑：
+完整 32 条见 `memory/lessons-learned.md`。AI 会话最易踩的坑：
 
 1. **不要用 sed 批量替换 HTML/YAML** — 会破坏结构，用精确 Edit 替换。
 2. **聚合器空跑必须非零退出** — 0 条数据不能覆盖历史文件。
@@ -149,6 +149,10 @@ python scripts/session_briefing.py
 10. **Issue 不是跨会话通信手段** — 任务要点必须写进 CONTEXT.md。
 11. **本地 main 与 origin/main 反复失步会触发 Cloudflare 413**（#28）— 用 SessionStart hook 自动同步预防。
 12. **决策档案与执行档案脱节**（#29）— 改了 `decisions.md` 必须同步 `CLAUDE.md` / `claude.yml`。
+13. **事实采信纪律**（#32，**最高优先级，覆盖所有报告/审计/周报场景**）—
+    - **R1**：并行工具任一子调用失败 = 整次失败，**禁止**从剩余成功输出提取数据继续生成
+    - **R2**：commit SHA / 行数 / 时间序列事实**只能**从直接产出该事实的工具引用（`git log` 等），**禁止**从 `grep` 外推
+    - **R3**：「审计建议」≠「代码已实施」，引用必须标注"建议 vs 已落盘"，**禁止**用审计章节编号充当 commit 替身
 
 ---
 
