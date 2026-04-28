@@ -1,8 +1,8 @@
 {
   "date": "2026-04-28",
-  "archived_at": "2026-04-28T10:57:14.077862+00:00",
+  "archived_at": "2026-04-28T12:23:23.797655+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "source": "bilibili",
@@ -92,6 +92,36 @@
       "author": "比较瓜皮",
       "engagement": 119,
       "media_url": "//i2.hdslb.com/bfs/archive/13e60883b41a031c4cf41c23800acdfd4ee83531.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T04:10:22+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 超豪华配队425",
+      "summary": "└ 伊莎玛拉-大群来了 (1赞): 我可以呼吸了吗？\n  └ 抱着狗狗不敢说话 (1赞): 呜呜呜 太强\n  └ 愛吃郭子的小孩 (1赞): 眼里全是对自己手法的欣赏[打call][打call][打call]",
+      "url": "https://www.bilibili.com/video/BV1Tv9BBHEcA",
+      "author": "夢遊遊遊遊",
+      "engagement": 110,
+      "media_url": "https://i2.hdslb.com/bfs/archive/7dbbeb668b74e996e66ce86dc17f17a62e7984c2.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 105,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T04:10:22+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 超豪华配队425",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116480318379418",
+      "author": "夢遊遊遊遊",
+      "engagement": 105,
+      "media_url": "//i2.hdslb.com/bfs/archive/7dbbeb668b74e996e66ce86dc17f17a62e7984c2.jpg",
       "content_type": "video"
     },
     {

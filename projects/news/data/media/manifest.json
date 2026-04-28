@@ -2806,6 +2806,13 @@
       "title": "【忘却前夜】Morimens",
       "time": "2026-04-28T10:54:11.138128+00:00",
       "downloaded_at": "2026-04-28T10:57:14.019487+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/7dbbeb668b74e996e66ce86dc17f17a62e7984c2.jpg": {
+      "filename": "bilibili_01b26deaa01c93ae.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 超豪华配队425",
+      "time": "2026-04-28T04:10:22+00:00",
+      "downloaded_at": "2026-04-28T12:23:22.631342+00:00"
     }
   },
   "failed": {
@@ -3803,6 +3810,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-28T10:57:13.403723+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/7dbbeb668b74e996e66ce86dc17f17a62e7984c2.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T12:23:22.932242+00:00"
+    },
+    "https://preview.redd.it/a9m26bpbqwxg1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=166c405005996527e6c380a7a375781bf6e0e5bb": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T12:23:23.334673+00:00"
+    },
+    "https://external-preview.redd.it/dWVsMmptbTYzd3hnMYy0R0ONSQKv9dXAVYF4U99T1Bn1cR9di_P7ASy1iRYR.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=5f63894f892e6262ab335b57e86303b0fefd3f2c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T12:23:23.739262+00:00"
     }
   },
   "archived": []
