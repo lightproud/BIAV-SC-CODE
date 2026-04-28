@@ -1,8 +1,8 @@
 {
   "date": "2026-04-28",
-  "archived_at": "2026-04-28T12:23:23.796753+00:00",
+  "archived_at": "2026-04-28T15:19:24.244148+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -183,6 +183,21 @@
       "review": "贱猫",
       "timestamp_created": 1777374342,
       "playtime_forever": 2989
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-28T13:57:42+00:00",
+      "lang": "koreana",
+      "title": "[正面] .",
+      "summary": ".",
+      "url": "https://steamcommunity.com/profiles/76561199572245504/recommended/3052450",
+      "author": "76561199572245504",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": ".",
+      "timestamp_created": 1777384662,
+      "playtime_forever": 690
     }
   ]
 }

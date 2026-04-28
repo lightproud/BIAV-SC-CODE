@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-04-28T12:23:19.300806+00:00",
+  "collected_at": "2026-04-28T15:19:21.387465+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 5,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-28T13:57:42+00:00",
+      "lang": "koreana",
+      "title": "[正面] .",
+      "summary": ".",
+      "url": "https://steamcommunity.com/profiles/76561199572245504/recommended/3052450",
+      "author": "76561199572245504",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": ".",
+      "timestamp_created": 1777384662,
+      "playtime_forever": 690
+    },
     {
       "source": "steam",
       "time": "2026-04-28T11:38:01+00:00",
@@ -31,7 +46,7 @@
       "voted_up": false,
       "review": "贱猫",
       "timestamp_created": 1777374342,
-      "playtime_forever": 2989
+      "playtime_forever": 3049
     },
     {
       "source": "steam",
@@ -62,36 +77,6 @@
       "review": "战斗爽",
       "timestamp_created": 1777366276,
       "playtime_forever": 626
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-27T15:10:29+00:00",
-      "lang": "english",
-      "title": "[负面] f2p asian stuff, nein",
-      "summary": "f2p asian stuff, nein",
-      "url": "https://steamcommunity.com/profiles/76561198038032196/recommended/3052450",
-      "author": "76561198038032196",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "f2p asian stuff, nein",
-      "timestamp_created": 1777302629,
-      "playtime_forever": 35
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-27T13:55:43+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩，期待沙耶之歌联动！",
-      "summary": "好玩，期待沙耶之歌联动！",
-      "url": "https://steamcommunity.com/profiles/76561198868456543/recommended/3052450",
-      "author": "76561198868456543",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩，期待沙耶之歌联动！",
-      "timestamp_created": 1777298143,
-      "playtime_forever": 1897
     }
   ]
 }

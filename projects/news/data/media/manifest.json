@@ -2813,6 +2813,13 @@
       "title": "忘却前夜 超豪华配队425",
       "time": "2026-04-28T04:10:22+00:00",
       "downloaded_at": "2026-04-28T12:23:22.631342+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/43ed55f5d729b42b078b0917ebe71e03d4448143.jpg": {
+      "filename": "bilibili_bf8659f28395c423.jpg",
+      "source": "bilibili",
+      "title": "[AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线”",
+      "time": "2026-04-28T13:43:46+00:00",
+      "downloaded_at": "2026-04-28T15:19:22.904303+00:00"
     }
   },
   "failed": {
@@ -3825,6 +3832,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-28T12:23:23.739262+00:00"
+    },
+    "https://preview.redd.it/ongjty77hxxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=598f568781b06dfc2f2a0ec35912885de3ae1540": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T15:19:23.450497+00:00"
+    },
+    "https://preview.redd.it/p5ssyca33yxg1.png?width=140&amp;height=63&amp;auto=webp&amp;s=269a2cf9d4cd74cfc1902920d4712507814a5ee0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T15:19:23.818912+00:00"
+    },
+    "https://preview.redd.it/rx0w8cud1yxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=0a5e5171fef80e59e10e359726f960ac9bd02ae4": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T15:19:24.177539+00:00"
     }
   },
   "archived": []
