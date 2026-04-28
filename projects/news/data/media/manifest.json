@@ -2841,6 +2841,20 @@
       "title": "存",
       "time": "2026-04-28T17:21:16+00:00",
       "downloaded_at": "2026-04-28T17:32:51.597437+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/1779527acf8cf27639cb45d2b310e314d57cee7e.jpg": {
+      "filename": "bilibili_67b43e79ea81b009.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 0启杜勒打 融灾4-5熔朵",
+      "time": "2026-04-28T11:09:32+00:00",
+      "downloaded_at": "2026-04-28T19:21:50.746111+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/5066f16c354467046d7d84614312bcb9d46c57c1.jpg": {
+      "filename": "bilibili_772ef4e8b535be98.jpg",
+      "source": "bilibili",
+      "title": "新神已至！阿拉克涅一拖三融灾1-5游刃有余，孩子们我们蜘蛛真是太有操作性了",
+      "time": "2026-04-28T12:05:18+00:00",
+      "downloaded_at": "2026-04-28T19:21:52.827756+00:00"
     }
   },
   "failed": {
@@ -3888,6 +3902,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-28T17:32:52.656487+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/1779527acf8cf27639cb45d2b310e314d57cee7e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T19:21:51.046959+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/5066f16c354467046d7d84614312bcb9d46c57c1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T19:21:53.128552+00:00"
+    },
+    "https://preview.redd.it/tuyu094v4zxg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=41138eb3bd8af6fde509780979b12f0b777d7413": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T19:21:53.639334+00:00"
+    },
+    "https://preview.redd.it/2b0h5ab54zxg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=ffcf6fa89419941f1a008db14a5f380ccd2b42ea": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T19:21:53.967816+00:00"
     }
   },
   "archived": []

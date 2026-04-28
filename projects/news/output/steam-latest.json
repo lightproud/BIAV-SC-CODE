@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-04-28T17:32:47.780079+00:00",
+  "collected_at": "2026-04-28T19:21:48.881528+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-28T17:04:46+00:00",
+      "lang": "english",
+      "title": "[正面] fish team good",
+      "summary": "fish team good",
+      "url": "https://steamcommunity.com/profiles/76561198880598579/recommended/3052450",
+      "author": "76561198880598579",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "fish team good",
+      "timestamp_created": 1777395886,
+      "playtime_forever": 580
+    },
     {
       "source": "steam",
       "time": "2026-04-28T16:29:09+00:00",

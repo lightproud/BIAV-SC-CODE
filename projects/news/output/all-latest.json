@@ -1,51 +1,21 @@
 {
-  "collected_at": "2026-04-28T17:32:47.780079+00:00",
+  "collected_at": "2026-04-28T19:21:48.881528+00:00",
   "source": "all",
-  "item_count": 127,
+  "item_count": 164,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-04-27T17:45:19+00:00",
-      "lang": "zh",
-      "title": "老头千亿核爆，老头难道真的阴到大加强了吗？",
-      "summary": "-\n  └ 金发女人丨型 (4赞): 我可以呼吸了吗\n  └ 蝶咏玉泉 (2赞): 身上怎么有虚弱，重打🙄\n  └ 路过的耄耋 (4赞): 小心无限爆伤和无限……终伤",
-      "url": "https://www.bilibili.com/video/BV1Mbo1BnErR",
-      "author": "伊莎玛拉-大群来了",
-      "engagement": 602,
-      "media_url": "https://i2.hdslb.com/bfs/archive/141891ff49897953c8f8f86d37146ddfae9aa0cf.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 583,
-        "comment_count": 19,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-04-27T17:45:19+00:00",
-      "lang": "zh",
-      "title": "老头千亿核爆，老头难道真的阴到大加强了吗？",
-      "summary": "-",
-      "url": "http://www.bilibili.com/video/av116477885816286",
-      "author": "伊莎玛拉-大群来了",
-      "engagement": 583,
-      "media_url": "//i2.hdslb.com/bfs/archive/141891ff49897953c8f8f86d37146ddfae9aa0cf.jpg",
-      "content_type": "video"
-    },
     {
       "source": "bilibili",
       "time": "2026-04-28T08:58:51+00:00",
       "lang": "zh",
       "title": "［相位］问他输了赢了，他说忘关了",
-      "summary": "-\n  └ 不知今世为何 (5赞): 为什么我莱克连续15次都是16？[笑哭][笑哭][笑哭]\n  └ 不知今世为何 (2赞): 谨慎学习[星星眼][星星眼][星星眼]\n  └ 阁白尼 (1赞): 看看这个怎么样，otk实在打不过，娱乐阵容打了3000分玩[妙啊]",
+      "summary": "-\n  └ 不知今世为何 (6赞): 为什么我莱克连续15次都是16？[笑哭][笑哭][笑哭]\n  └ 不知今世为何 (2赞): 谨慎学习[星星眼][星星眼][星星眼]\n  └ 阁白尼 (1赞): 看看这个怎么样，otk实在打不过，娱乐阵容打了3000分玩[妙啊]",
       "url": "https://www.bilibili.com/video/BV1Eg96BjEi9",
       "author": "莱星Ligh",
-      "engagement": 445,
+      "engagement": 470,
       "media_url": "https://i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 436,
+        "play": 461,
         "comment_count": 9,
         "comments_fetched": 3,
         "danmaku": 0
@@ -59,8 +29,38 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116481492782193",
       "author": "莱星Ligh",
-      "engagement": 436,
+      "engagement": 461,
       "media_url": "//i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T17:00:16+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号",
+      "summary": "-\n  └ 渔歌伴晚舟 (5赞): EPEG-GXSH-HBSX\n  └ 邓肯船长和他的失乡号 (0赞): @一只很屑の阿蒙\n  └ 临鸾晚妆初罢 (0赞): 太棒啦，主播知不知道图鲁红夫人融朵三池5天后下线会上什么新池子，抽了+12但是没有鸟哥，不知道啥时候复刻，0费保留黑羽触发追击太赚了",
+      "url": "https://www.bilibili.com/video/BV15S9CB7EoG",
+      "author": "渔歌伴晚舟",
+      "engagement": 418,
+      "media_url": "https://i2.hdslb.com/bfs/archive/f01d28dad802fc0f7de74115ab84547771cd8ce6.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 405,
+        "comment_count": 13,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T17:00:16+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116483388741433",
+      "author": "渔歌伴晚舟",
+      "engagement": 405,
+      "media_url": "//i2.hdslb.com/bfs/archive/f01d28dad802fc0f7de74115ab84547771cd8ce6.jpg",
       "content_type": "video"
     },
     {
@@ -71,11 +71,11 @@
       "summary": "似乎有说法，🌰前期叠毒顺便贡献保留手牌给鸟弟叠罪印，叠满毒就转换为鸟弟c#忘却前夜\n  └ 伤春客 (1赞): 我们dot女子不会输[热]\n  └ splendid_scenery (0赞): 卧槽好厉害的想法",
       "url": "https://www.bilibili.com/video/BV1gMo2BXEch",
       "author": "护林犬",
-      "engagement": 365,
+      "engagement": 372,
       "media_url": "https://i0.hdslb.com/bfs/archive/d4296318446236d119c920f7ff5c048596e7c40e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 363,
+        "play": 370,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
@@ -89,7 +89,7 @@
       "summary": "似乎有说法，🌰前期叠毒顺便贡献保留手牌给鸟弟叠罪印，叠满毒就转换为鸟弟c#忘却前夜",
       "url": "http://www.bilibili.com/video/av116479261413699",
       "author": "护林犬",
-      "engagement": 363,
+      "engagement": 371,
       "media_url": "//i0.hdslb.com/bfs/archive/d4296318446236d119c920f7ff5c048596e7c40e.jpg",
       "content_type": "video"
     },
@@ -101,11 +101,11 @@
       "summary": "-\n  └ 看到me请t我去背单词 (1赞): 不接受微信打款等方式啊，咱们还是通过正规平台好嘛？\n  └ 只为走远而为你 (0赞): 想 要 回 关，谈下\n  └ 诚心不朽 (0赞): 兄弟给个价，刚入坑",
       "url": "https://www.bilibili.com/video/BV1QU9zBhEgL",
       "author": "看到me请t我去背单词",
-      "engagement": 326,
+      "engagement": 333,
       "media_url": "https://i1.hdslb.com/bfs/archive/67c3ac90b8fbadf8dfecc636445c3a303893b0eb.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 292,
+        "play": 299,
         "comment_count": 34,
         "comments_fetched": 3,
         "danmaku": 0
@@ -119,7 +119,7 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116479513139168",
       "author": "看到me请t我去背单词",
-      "engagement": 292,
+      "engagement": 299,
       "media_url": "//i1.hdslb.com/bfs/archive/67c3ac90b8fbadf8dfecc636445c3a303893b0eb.jpg",
       "content_type": "video"
     },
@@ -131,30 +131,12 @@
       "summary": "-\n  └ 沙耶郁纪 (0赞): [喜欢][喜欢][喜欢][喜欢]\n  └ okkookko__ (0赞): 美\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
       "url": "https://www.bilibili.com/video/BV14z96B4EgN",
       "author": "纱奈绫香",
-      "engagement": 244,
+      "engagement": 249,
       "media_url": "https://i1.hdslb.com/bfs/archive/51eda402b9a861c0a358befb325a51925cd0bd4f.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 241,
+        "play": 246,
         "comment_count": 3,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-04-28T06:26:26+00:00",
-      "lang": "zh",
-      "title": "4兆核爆...还能...提升",
-      "summary": "-\n  └ 金发女人丨型 (4赞): 奶龙已占领忘却前夜.......\n  └ 路过的耄耋 (1赞): 我了……忧郁……看湖……奶龙\n  └ composite_resin (1赞): 奶鼠…不赖",
-      "url": "https://www.bilibili.com/video/BV1eN9rBzE8Y",
-      "author": "伊莎玛拉-大群来了",
-      "engagement": 211,
-      "media_url": "https://i0.hdslb.com/bfs/archive/9cbb9e547f0c1fe27e77c7619c2465bff5459814.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 199,
-        "comment_count": 12,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -167,12 +149,30 @@
       "summary": "-\n  └ Nautilus114 (1赞): 沙子可爱捏\n  └ 重音艾绘喵 (1赞): 强强[打call]\n  └ 如月最高性能 (0赞): 很好",
       "url": "https://www.bilibili.com/video/BV1nS96BSEcH",
       "author": "孔雀QvQ",
-      "engagement": 209,
+      "engagement": 233,
       "media_url": "https://i0.hdslb.com/bfs/archive/b82d9105a853beeb3f51666f764f9662f102ff0b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 200,
+        "play": 224,
         "comment_count": 9,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T06:26:26+00:00",
+      "lang": "zh",
+      "title": "4兆核爆...还能...提升",
+      "summary": "-\n  └ 金发女人丨型 (4赞): 奶龙已占领忘却前夜.......\n  └ 路过的耄耋 (1赞): 我了……忧郁……看湖……奶龙\n  └ composite_resin (1赞): 奶鼠…不赖",
+      "url": "https://www.bilibili.com/video/BV1eN9rBzE8Y",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 223,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9cbb9e547f0c1fe27e77c7619c2465bff5459814.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 211,
+        "comment_count": 12,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -185,7 +185,7 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116480888935629",
       "author": "伊莎玛拉-大群来了",
-      "engagement": 199,
+      "engagement": 211,
       "media_url": "//i0.hdslb.com/bfs/archive/9cbb9e547f0c1fe27e77c7619c2465bff5459814.jpg",
       "content_type": "video"
     },
@@ -197,11 +197,11 @@
       "summary": "└ 伊莎玛拉-大群来了 (1赞): 我可以呼吸了吗？\n  └ 抱着狗狗不敢说话 (1赞): 呜呜呜 太强\n  └ 愛吃郭子的小孩 (1赞): 眼里全是对自己手法的欣赏[打call][打call][打call]",
       "url": "https://www.bilibili.com/video/BV1Tv9BBHEcA",
       "author": "夢遊遊遊遊",
-      "engagement": 165,
+      "engagement": 184,
       "media_url": "https://i2.hdslb.com/bfs/archive/7dbbeb668b74e996e66ce86dc17f17a62e7984c2.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 159,
+        "play": 178,
         "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 0
@@ -215,53 +215,53 @@
       "summary": "",
       "url": "http://www.bilibili.com/video/av116480318379418",
       "author": "夢遊遊遊遊",
-      "engagement": 159,
+      "engagement": 178,
       "media_url": "//i2.hdslb.com/bfs/archive/7dbbeb668b74e996e66ce86dc17f17a62e7984c2.jpg",
       "content_type": "video"
     },
     {
       "source": "bilibili",
-      "time": "2026-04-28T17:00:16+00:00",
+      "time": "2026-04-28T11:09:32+00:00",
       "lang": "zh",
-      "title": "[忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号",
-      "summary": "-\n  └ 渔歌伴晚舟 (4赞): EPEG-GXSH-HBSX\n  └ 大无语无语了 (0赞): 刚打算睡下[给心心]，还有bgm竟然是星茶会\n  └ 三花喵喵虫 (0赞): 我们喜欢你[Mygo表情包_Love]",
-      "url": "https://www.bilibili.com/video/BV15S9CB7EoG",
-      "author": "渔歌伴晚舟",
-      "engagement": 155,
-      "media_url": "https://i2.hdslb.com/bfs/archive/f01d28dad802fc0f7de74115ab84547771cd8ce6.jpg",
+      "title": "忘却前夜 0启杜勒打 融灾4-5熔朵",
+      "summary": "汀没+12但不知道为什么会触发法则\n发的这张打击也跟正常法则的那张不一样\n这张没有汀觉醒附带的随机效果 +12的会有\n\n背景音乐：Georges Bizet - &quot;L&#x27;Arlésienne-Suite&quot;\n  └ 唬隌洳鄞 (0赞): 被欺骗了喵[大哭]根本不是45喵[大哭]\n  └ 呆呆松OWO (0赞): 大佬大佬我也有0啟杜能帶帶我嗎🥹\n  └ 菲比又干了 (0赞): 标题打错了喵",
+      "url": "https://www.bilibili.com/video/BV1De9kBBEpz",
+      "author": "夢遊遊遊遊",
+      "engagement": 109,
+      "media_url": "https://i2.hdslb.com/bfs/archive/1779527acf8cf27639cb45d2b310e314d57cee7e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 147,
-        "comment_count": 8,
+        "play": 105,
+        "comment_count": 4,
         "comments_fetched": 3,
-        "danmaku": 0
+        "danmaku": 1
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-04-28T17:00:16+00:00",
+      "time": "2026-04-28T11:09:32+00:00",
       "lang": "zh",
-      "title": "[忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号",
-      "summary": "-",
-      "url": "http://www.bilibili.com/video/av116483388741433",
-      "author": "渔歌伴晚舟",
-      "engagement": 152,
-      "media_url": "//i2.hdslb.com/bfs/archive/f01d28dad802fc0f7de74115ab84547771cd8ce6.jpg",
+      "title": "忘却前夜 0启杜勒打 融灾4-5熔朵",
+      "summary": "汀没+12但不知道为什么会触发法则\n发的这张打击也跟正常法则的那张不一样\n这张没有汀觉醒附带的随机效果 +12的会有\n\n背景音乐：Georges Bizet - &quot;L&#x27;Arlésienne-Suite&quot;",
+      "url": "http://www.bilibili.com/video/av116481996234021",
+      "author": "夢遊遊遊遊",
+      "engagement": 106,
+      "media_url": "//i2.hdslb.com/bfs/archive/1779527acf8cf27639cb45d2b310e314d57cee7e.jpg",
       "content_type": "video"
     },
     {
       "source": "bilibili",
-      "time": "2026-04-27T18:22:28+00:00",
+      "time": "2026-04-28T12:05:18+00:00",
       "lang": "zh",
-      "title": "第四话 一触即发",
-      "summary": "(此视频不用于商业用途 ai视频制作 只用于休闲娱乐 同人二创 侵权可删)ai的理解我无力吐槽。。重做了三次!图鲁你咋声线变了!!ai大哥你配音到在干啥!!(这声线其实也可以 有点像鬼头明里?)其他还好 下次更新估计就是战斗篇了 要等下个月了 等播放量过500我再考虑做第五话 战斗篇很烧脑而且素材不容易过审 会有深渊和虫这种因素 我需要大量时间收集素材酝酿下 我要找个理由偷懒下doge",
-      "url": "https://www.bilibili.com/video/BV1Buo1BAESX",
-      "author": "比较瓜皮",
-      "engagement": 146,
-      "media_url": "https://i2.hdslb.com/bfs/archive/13e60883b41a031c4cf41c23800acdfd4ee83531.jpg",
+      "title": "新神已至！阿拉克涅一拖三融灾1-5游刃有余，孩子们我们蜘蛛真是太有操作性了",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1EE9kBUEbY",
+      "author": "祈光破影",
+      "engagement": 101,
+      "media_url": "https://i0.hdslb.com/bfs/archive/5066f16c354467046d7d84614312bcb9d46c57c1.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 146,
+        "play": 101,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -269,14 +269,14 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-04-27T18:22:28+00:00",
+      "time": "2026-04-28T12:05:18+00:00",
       "lang": "zh",
-      "title": "第四话 一触即发",
-      "summary": "(此视频不用于商业用途 ai视频制作 只用于休闲娱乐 同人二创 侵权可删)ai的理解我无力吐槽。。重做了三次!图鲁你咋声线变了!!ai大哥你配音到在干啥!!(这声线其实也可以 有点像鬼头明里?)其他还好 下次更新估计就是战斗篇了 要等下个月了 等播放量过500我再考虑做第五话 战斗篇很烧脑而且素材不容易过审 会有深渊和虫这种因素 我需要大量时间收集素材酝酿下 我要找个理由偷懒下doge",
-      "url": "http://www.bilibili.com/video/av116478036678612",
-      "author": "比较瓜皮",
-      "engagement": 146,
-      "media_url": "//i2.hdslb.com/bfs/archive/13e60883b41a031c4cf41c23800acdfd4ee83531.jpg",
+      "title": "新神已至！阿拉克涅一拖三融灾1-5游刃有余，孩子们我们蜘蛛真是太有操作性了",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116482230980931",
+      "author": "祈光破影",
+      "engagement": 101,
+      "media_url": "//i0.hdslb.com/bfs/archive/5066f16c354467046d7d84614312bcb9d46c57c1.jpg",
       "content_type": "video"
     },
     {
@@ -287,11 +287,11 @@
       "summary": "曲：ガラスのくつ\n唱：AI祥子\n效果不是很好，分离出来的干声不是很干净，就是这种效果了（）\n  └ 蘭玉心和 (1赞): [哦呼]居然是这首[少女乐团派对_开心]（⌒▽⌒）\n  └ 红衣首辅黎塞留 (0赞): [Ave Mujica_美味]\n  └ ninety九姬 (0赞): 我喜欢你",
       "url": "https://www.bilibili.com/video/BV1Nw9kBhEvF",
       "author": "Asedell轩晨",
-      "engagement": 71,
+      "engagement": 98,
       "media_url": "https://i0.hdslb.com/bfs/archive/43ed55f5d729b42b078b0917ebe71e03d4448143.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 68,
+        "play": 95,
         "comment_count": 3,
         "comments_fetched": 3,
         "danmaku": 0
@@ -305,15 +305,30 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1bF9yBzEV2",
       "author": "逆观渊行",
-      "engagement": 1,
+      "engagement": 5,
       "media_url": "https://i1.hdslb.com/bfs/archive/c5d924ba5c804b5039ef5f4640ba8158cf882d82.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1,
+        "play": 5,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
       }
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-28T17:04:46+00:00",
+      "lang": "english",
+      "title": "[正面] fish team good",
+      "summary": "fish team good",
+      "url": "https://steamcommunity.com/profiles/76561198880598579/recommended/3052450",
+      "author": "76561198880598579",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "fish team good",
+      "timestamp_created": 1777395886,
+      "playtime_forever": 580
     },
     {
       "source": "steam",
@@ -421,16 +436,547 @@
       "playtime_forever": 626
     },
     {
-      "source": "youtube",
-      "time": "2026-04-28T16:29:46.360835+00:00",
+      "source": "discord",
+      "time": "2026-04-27T00:00:00+00:00",
       "lang": "",
-      "title": "【忘却前夜】STOP！対人違法編成",
-      "summary": "[1 hour ago] 忘却前夜 #忘却前夜steam版 #㏚ こんにちは、守秘者です。 対人戦っていうゲーム楽しいですね。 カーシアは勘弁してください。",
-      "url": "https://www.youtube.com/watch?v=D97VBY5AmvA",
-      "author": "れちゃんちゃんちゃんねる",
-      "engagement": 3,
-      "media_url": "https://i.ytimg.com/vi/D97VBY5AmvA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCMm1fhU61Zpx3LK7jKsXVQuREgog",
+      "title": "Discord 社区日报 (2026-04-27)",
+      "summary": "今日 14,203 条消息，435 位活跃用户，1,185 次反应。热门频道：🔸morimens-game-chat(3727)、🔸綜合討論(3176)、🔸general-chat(2046)、🔸canal-português(1136)、🔸phòng-chat-tiếng-việt(906)",
+      "url": "https://discord.com/channels/1131791637933199470",
+      "author": "Discord Archiver",
+      "engagement": 14203
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T05:58:50.276000+00:00",
+      "lang": "",
+      "title": "[DC] _shimoyo@🔸晒卡分享: (附件/嵌入)",
+      "summary": "[附件: Screenshot_20260427_135437.jpg, Screenshot_20260427_135711.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1174983699935277147/1498201740913152222",
+      "author": "_shimoyo",
+      "engagement": 32,
+      "media_url": "https://cdn.discordapp.com/attachments/1174983699935277147/1498201740183605388/Screenshot_20260427_135437.jpg?ex=69f0f55a&is=69efa3da&hm=28a164841ff1a16b513611fc583593c5dbdb8082750ab2ecf65044c7a9b122af&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🛐×10",
+        "reply_count": 0,
+        "attachment_count": 2,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1174983699935277147/1498201740183605388/Screenshot_20260427_135437.jpg?ex=69f0f55a&is=69efa3da&hm=28a164841ff1a16b513611fc583593c5dbdb8082750ab2ecf65044c7a9b122af&",
+          "https://cdn.discordapp.com/attachments/1174983699935277147/1498201740816941056/Screenshot_20260427_135711.jpg?ex=69f0f55a&is=69efa3da&hm=89aebef6c6b9803ff678c851742a889a50ffe9959dcbc0e8152d545c4081ce9d&"
+        ],
+        "channel": "🔸晒卡分享"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T12:29:21.920000+00:00",
+      "lang": "",
+      "title": "[DC] papcrawn@🔸art-and-memes: (附件/嵌入)",
+      "summary": "[附件: IMG_0015.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1498300020351570011/1498300020351570011",
+      "author": "papcrawn",
+      "engagement": 31,
+      "media_url": "https://cdn.discordapp.com/attachments/1498300020351570011/1498300020691042525/IMG_0015.jpg?ex=69f0a822&is=69ef56a2&hm=9e3274088905ac332c5c1d0586bfa222e808d100077fb2d9665651179e481288&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🙏×10",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1498300020351570011/1498300020691042525/IMG_0015.jpg?ex=69f0a822&is=69ef56a2&hm=9e3274088905ac332c5c1d0586bfa222e808d100077fb2d9665651179e481288&"
+        ],
+        "channel": "🔸art-and-memes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T10:24:05.914000+00:00",
+      "lang": "",
+      "title": "[DC] morimensstaff06@🔸活动资讯┊event-information: 来一把紧张刺激的「相位对弈」？轮到你出牌了！ 由守密人们自发组成的赛事组竭诚举办的赛事活动「N厨杯」将于5月22日正式开赛，届时Bilibili、Discord",
+      "summary": "来一把紧张刺激的「相位对弈」？轮到你出牌了！\n由守密人们自发组成的赛事组竭诚举办的赛事活动「N厨杯」将于5月22日正式开赛，届时Bilibili、Discord双平台将同步开启直播！本着“输赢不重要，快乐最重要”的宗旨，主办方欢迎所有人报名参赛~\n\n🙌 **赛事流程**\n🔹 报名时间：5月1日-5月15日\n🔹 报名方式：点击链接（https://docs.qq.com/form/page/DSnp6ZnBTU0R1cE1N ）填写报名表\n🔹 比赛时间：自5月22日起 每周五/六/日19:00-22:00（UTC+8）\n🔹 直播链接\nBilibili @God7777：https://space.bilibili.com/22359359\nDiscord语音频道“全球-N厨杯”：https://discord.gg/CbPTHnSAaF\n\n📑 **赛事规则**\n本届赛事将采用“分组积分赛+单败淘汰赛”的赛制。\n🔹 分组积分赛：所有参赛选手随机分组，每组7~8人，组内进行瑞士轮Bo1，胜者积1分，败者不积分。每组的第一名直接出线，第二名与第三名进行Bo3、胜者出线。\n🔹 单败淘汰赛：所有出线选手随机匹配进行Bo3。两名败者额外进行1次Bo3争夺季军。\n每场对局开始之前，主办方将会为对战双方随机3套卡组，每套卡组只展现其中的1个角色、1个命轮。对战双方依次选择1套卡组展开对局，先选的选手在下场对局中将后选。\n\n🎁 **赛事奖励**\n🥇 冠军：50元奖金\n🥈 亚军：30元奖金\n🏅 四强：头像框·维度桂冠\n\n😆 **笑声制造奖**\n所有打出令人捧腹大笑的操作的选手将入选“名人堂”并获得特别奖金，其中1名选手可获得50元奖金与至高称号，另有9名选手可分别获得5元奖金。\n\n👍 **友情赞助奖**\n🔹 感谢来自守密人“killer231x2317”的赞助：伤害结算页出现数字“231”可获得23.1元奖金。\n🔹 感谢来自守密人“弥大墙”的赞助：在单场对局中，使用雷娅击败对手2名角色，或雷娅为伤害第二高的角色可获得8.88元奖金（仅限本届赛事前2次达成该条件时获奖）。\n🔹 感谢来自守密人“弥大墙”的赞助：在本届赛事中第1位击败守密人“维克多”的选手可获得6.23元奖金（如“维克多”夺冠则由“维克多”获得6.23元奖金）。\n🔹 感谢来自守密人“维克多”的赞助：在半决赛与总决赛中击败守密人“维克多”可获得20元奖金，在其他对局中击败守密人“维克多”可获得10元奖金。\n\n在此，感谢每一位积极组织、踊跃参与「N厨杯」的守密人！祝各位玩得开心🍻~\n💡 本届赛事活动「N厨杯」中的所有奖金均由主办方与赞助者提供，主办方拥有本活动的最终解释权。\n[附件: CN.png, EN.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1498268495937278033/1498268495937278033",
+      "author": "morimensstaff06",
+      "engagement": 29,
+      "media_url": "https://cdn.discordapp.com/attachments/1498268495937278033/1498268496302444694/CN.png?ex=69f08ac6&is=69ef3946&hm=ac392712e3d8290068c6e68c5e8de62f6babc685864ad43669b6797cf94ea10f&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🍟×9",
+        "reply_count": 0,
+        "attachment_count": 2,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1498268495937278033/1498268496302444694/CN.png?ex=69f08ac6&is=69ef3946&hm=ac392712e3d8290068c6e68c5e8de62f6babc685864ad43669b6797cf94ea10f&",
+          "https://cdn.discordapp.com/attachments/1498268495937278033/1498268496683860050/EN.png?ex=69f08ac6&is=69ef3946&hm=ca4759d148ef04409f9421b5f8c098b76558c34f39a99b59bdb83fede25e33c5&"
+        ],
+        "channel": "🔸活动资讯┊event-information"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T10:12:39.329000+00:00",
+      "lang": "",
+      "title": "[DC] morimensstaff02@🔸遊戲公告┊game-announcement: 4. Bug Fixes [Event] ● Fixed an issue where the end time in the \"Rules\" section",
+      "summary": "4. Bug Fixes\n[Event]\n● Fixed an issue where the end time in the \"Rules\" section of the \"L'Heure du Thé\" event was incorrect.\n\n[Story]\n● Library\n    ○ Fixed an issue where the unlock hint for \"Innocent Record\" in \"Events\" was incorrect. It should be unlocked in Chapter 6 \"Twisted Stars\" of \"Investigation\".\n● Communicator\n    ○ Fixed an issue where the signature was not displayed in \"Arachne's\" dialogue.\n    ○ Fixed an issue where \"Xu\", \"Vortice\", and \"Arachne\" might trigger dialogue in the wrong order.\n\n[Combat]\n● Awakener\n    ○ Fixed an issue where, after Awakener \"Horla\" activates Absolute Axiom, the Effect and card text description of Rouse \"Prelude Verse\" were incorrect. After the fix, it now reads \"Whenever Horla consumes 3 or more Metaphors, temporarily increase the current emotional aura Effect by 25%,\" which matches the Absolute Axiom description.\n    ○ Fixed an issue where the Awakener \"Sanga\" failed to return Keyflare after playing Gnosis Rouse in Astral Reign Stages.\n    ○ Fixed an issue where the Derived card \"Thousand Mirage\" of the Awakener \"Daffodil\", after being actively played, caused the \"Thousand Mirage\" copies placed into Ultra Space to lose their extra Effects.\n    ○ Fixed an issue where, after the Awakener \"Tawil\" activated Absolute Axiom and unleashed Rouse, the next Buff Card / Symptom Card / State Card played after unleashing Exalt would incorrectly be affected twice.\n    ○ Fixed an issue where Command Cards without the \"Retain\" Affix in the Hand were not being correctly discarded when activating Ultra Space while in the \"Happiness\" emotional State of Horla.\n    ○ Fixed an issue where, when holding more than 1 \"Symptom Card\" or \"State Card\" in hand, the Awakener \"Alva\"'s Aliemus Burst \"Endless Justice\" would only draw 1 extra Card after discarding those Cards.\n    ○ Fixed an issue where, under English language settings, some skill descriptions displayed abnormal numbers and improper punctuation.\n● Wheel of Destiny\n    ○ Fixed an issue where, when holding the Wheel of Destiny \"Fouetté,\" if Ultra Space was activated, the \"Probability to trigger enemy Poison\" Effect would not execute at the end of the turn.\n● Stage\n    ○ Fixed an issue where Pickman's Painted Relic \"Gilded Reverie\" Aliemus gain Effect could trigger multiple times within a single turn.\n    ○ Fixed an issue where, when possessing the Relic \"Dimensional Image·Lily\", Unleashing \"Undying Flower Upon Slime\" and \"Strike to Protect\" failed to recover HP.\n\n[Mission & Rewards]\n● Handbook\n    ○ Fixed an issue in \"Silver Survey\" where the three-star rewards for \"Interludes\" were not being counted toward \"Forbidden Archives\" and \"Dissolution Ruins.\"\n● Records\n    ○ Fixed an issue where \"Career Achievements\" did not display the current mission progress \n\n[Interface & Features]\n● Wheel of Destiny\n    ○ Fixed an issue where the \"Ascension\" button on the Wheel of Destiny disappeared when there were no Ascension materials and Reset was not enabled.\n● Mythag Shop\n    ○ Fixed an issue in \"Exchange Store\" under \"Settled Exchange\" where the \"Silver Prime Donation\" entry on the right side of the currency bar overlapped with the close button.\n● Phantasmal Dive\n    ○ Fixed an issue where sliding the interface could cause a freeze when filtering certain Awakeners in the \"Season Rankings\" of the \"Leaderboard\".\n● Traphase\n    ○ Fixed an issue where the \"All Pick\" and \"Draft Pick\" match title displays were missing in the \"Traphase\" interface after a battle ended.\n    ○ Fixed an issue where some descriptions of point rankings and rewards in the \"Ranking Rules\" of \"Ranking Rewards\" were outdated.\n● Other Details\n    ○ Fixed an issue in \"Battle\" where the card description scroll preview would incorrectly bounce back before reaching the bottom.\n\n[General]\n● Compatibility\n    ○ Fixed an issue in the Korean region where the last two extraction item currencies displayed abnormally in \"Prime Extraction\" when playing on PC.",
+      "url": "https://discord.com/channels/1131791637933199470/1498265489812488302/1498265616191197214",
+      "author": "morimensstaff02",
+      "engagement": 27,
+      "metadata": {
+        "reactions": "other_cheers×5 bow×3 pray×1",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸遊戲公告┊game-announcement"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T09:22:29.166000+00:00",
+      "lang": "",
+      "title": "[DC] navirecorbeau@🔸剧情交流: ||用银芯抽对面||",
+      "summary": "||用银芯抽对面||",
+      "url": "https://discord.com/channels/1131791637933199470/1173463482503536711/1498252990652350515",
+      "author": "navirecorbeau",
+      "engagement": 27,
+      "metadata": {
+        "reactions": "🌿×9",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸剧情交流"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T09:24:14.698000+00:00",
+      "lang": "",
+      "title": "[DC] ass191044@🔸剧情交流: https://tenor.com/view/lightsaber-technique-gif-24177111",
+      "summary": "https://tenor.com/view/lightsaber-technique-gif-24177111",
+      "url": "https://discord.com/channels/1131791637933199470/1173463482503536711/1498253433285771384",
+      "author": "ass191044",
+      "engagement": 27,
+      "metadata": {
+        "reactions": "🌿×9",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸剧情交流"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T13:05:14.885000+00:00",
+      "lang": "",
+      "title": "[DC] wodebaobaoxiaodangaovi@🔸綜合討論: 先390",
+      "summary": "先390\n[附件: IMG_1919.jpg]\n  └ 0.0._.0_0.: 大佬🛐",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1498309050541146173",
+      "author": "wodebaobaoxiaodangaovi",
+      "engagement": 24,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1498309050079645796/IMG_1919.jpg?ex=69f0b08a&is=69ef5f0a&hm=4523a2f88c35166ded03549222eef462d7ac92020e984deb2b6abdad20aa397d&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🛐×7",
+        "reply_count": 1,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1498309050079645796/IMG_1919.jpg?ex=69f0b08a&is=69ef5f0a&hm=4523a2f88c35166ded03549222eef462d7ac92020e984deb2b6abdad20aa397d&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T10:20:45.661000+00:00",
+      "lang": "",
+      "title": "[DC] _venush@🔸遊戲公告┊game-announcement: Ngl play 150 cards is much better than 5 wins",
+      "summary": "Ngl play 150 cards is much better than 5 wins",
+      "url": "https://discord.com/channels/1131791637933199470/1498265489812488302/1498267656015577208",
+      "author": "_venush",
+      "engagement": 24,
+      "metadata": {
+        "reactions": "👍×5 👆×3",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸遊戲公告┊game-announcement"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T12:52:40.747000+00:00",
+      "lang": "",
+      "title": "[DC] maschenny19@🔸general-chat: (附件/嵌入)",
+      "summary": "[附件: 20260426_133856.jpg]\n  └ shl3epy: anhthing for you 😛😛😛😛",
+      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1498305887456989415",
+      "author": "maschenny19",
+      "engagement": 24,
+      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1498305887067050125/20260426_133856.jpg?ex=69f0ad98&is=69ef5c18&hm=8ac775e8134c221ed8baed520647246c794ab8679855baec071d768db02550b5&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "cry2×4 ❌×3",
+        "reply_count": 1,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1400750050208125010/1498305887067050125/20260426_133856.jpg?ex=69f0ad98&is=69ef5c18&hm=8ac775e8134c221ed8baed520647246c794ab8679855baec071d768db02550b5&"
+        ],
+        "channel": "🔸general-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T11:06:22.943000+00:00",
+      "lang": "",
+      "title": "[DC] chinkeeyong@🔸有問必答┊official-q-a: still tedious but its fine",
+      "summary": "still tedious but its fine",
+      "url": "https://discord.com/channels/1131791637933199470/1495670208004882483/1498279137008287754",
+      "author": "chinkeeyong",
+      "engagement": 24,
+      "metadata": {
+        "reactions": "☝️×1 🗣️×2 agree×5",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸有問必答┊official-q-a"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T10:24:52.321000+00:00",
+      "lang": "",
+      "title": "[DC] morimensstaff06@🔸活动资讯┊event-information: 🎁 **Tournament Rewards** 🥇 Champion: 50 RMB 🥈 Runner-up: 30 RMB 🏅 Top 4: Avatar",
+      "summary": "🎁 **Tournament Rewards**\n🥇 Champion: 50 RMB\n🥈 Runner-up: 30 RMB\n🏅 Top 4: Avatar Frame-Dimensional Laurels\n\n😆 **Laughter Maker Award**\nAll players who execute hilarious plays will be inducted into the \"Hall of Fame\" and receive a special bonus. One player will receive 50 RMB and supreme title, and nine other players will each receive 5 RMB.\n\n👍 **Sponsorship Award**\n🔹 Thanks to the Keeper \"killer231x2317\" for sponsoring: A reward of 23.1 RMB will be given for displaying the number \"231\" on the damage calculation page.\n🔹 Thanks to the Keeper \"弥大墙\" for sponsoring: A reward of 8.88 RMB will be given for defeating two opponent characters with Leigh in a single match, or for Leigh being the 2nd highest damage dealer (only awarded for the first two times this condition is met).\n🔹 Thanks to the Keeper \"弥大墙\" for sponsoring: The first player to defeat the patron \"维克多\" in this tournament will receive a prize of 6.23 RMB (if \"维克多\" wins the tournament, \"维克多\" will receive the 6.23 RMB prize).\n🔹 Thanks to the Keeper \"维克多\" for sponsoring: Defeating \"维克多\" in the semifinals and finals will earn you a prize of 20 RMB, and defeating \"维克多\" in other matches will earn you a prize of 10 RMB.\n\nWe would like to thank every Keeper who actively organized and participated in the \"「N」′s Chef Cup\"! Have fun! 🍻~\n💡 All bonus in this \"「N」′s Chef Cup\" event are provided by the organizer and sponsors. The organizer reserves the right to final interpretation of this event.\n  └ morimensstaff06:",
+      "url": "https://discord.com/channels/1131791637933199470/1498268495937278033/1498268690582605895",
+      "author": "morimensstaff06",
+      "engagement": 23,
+      "metadata": {
+        "reactions": "Uvhash_power×4 Murphy_satisfy×1 pray×1 👍×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸活动资讯┊event-information"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T05:23:07.474000+00:00",
+      "lang": "",
+      "title": "[DC] ponponnyaru@🔸綜合討論: 我打完了，你们加油",
+      "summary": "我打完了，你们加油\n[附件: 400.jpg, 08054ce97001fe24.jpg]\n  └ xdk3344: 🐷吧你",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1498192753350148106",
+      "author": "ponponnyaru",
+      "engagement": 22,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1498192752230535188/400.jpg?ex=69f0ecfb&is=69ef9b7b&hm=54f9fde277f4b3f67077eb318fd08c669bc5a68ae259247eeeb1a9c9175d38de&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🛐×6",
+        "reply_count": 1,
+        "attachment_count": 2,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1498192752230535188/400.jpg?ex=69f0ecfb&is=69ef9b7b&hm=54f9fde277f4b3f67077eb318fd08c669bc5a68ae259247eeeb1a9c9175d38de&",
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1498192752817733632/08054ce97001fe24.jpg?ex=69f0ecfb&is=69ef9b7b&hm=56d95078cd8b1c7a90032c24d9970c105ebc2900e8b76ae1126a70d037680cdc&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T07:41:41.715000+00:00",
+      "lang": "",
+      "title": "[DC] lurenjiao@🔸綜合討論: 3-5可以阿拉单带",
+      "summary": "3-5可以阿拉单带",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1498227625804566679",
+      "author": "lurenjiao",
+      "engagement": 21,
+      "metadata": {
+        "reactions": "🛐×7",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T03:44:33.390000+00:00",
+      "lang": "",
+      "title": "[DC] akalanden@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: Screenshot_20260427_114350_com_qookkagames_z1_gp_hk_OverrideActivity_edit_702949121549657.jpg]\n  └ kemomimi_: 喂我吃点\n  └ xingxiu_0209: 佬 菜菜 撈撈",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1498167947884101743",
+      "author": "akalanden",
+      "engagement": 20,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1498167947510943834/Screenshot_20260427_114350_com_qookkagames_z1_gp_hk_OverrideActivity_edit_702949121549657.jpg?ex=69f0d5e1&is=69ef8461&hm=35ce5f725c8e3e87e2331bc192abc6f67c98264096c616e77b735f14303d24de&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🛐×5",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1498167947510943834/Screenshot_20260427_114350_com_qookkagames_z1_gp_hk_OverrideActivity_edit_702949121549657.jpg?ex=69f0d5e1&is=69ef8461&hm=35ce5f725c8e3e87e2331bc192abc6f67c98264096c616e77b735f14303d24de&"
+        ],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-04-27T13:39:37.171000+00:00",
+      "lang": "",
+      "title": "[DC] tnimreppep@🔸phòng-chat-tiếng-việt: (附件/嵌入)",
+      "summary": "[附件: Screenshot_2026-04-27-20-37-12-759_com.qookkagames.z1.qooapp.jpg]\n  └ bluehuong: [Jerry_Ohshit](https://cdn.discordapp.com/emojis/1252249683154173992.webp?size=48&name=Jerry_Ohshit&lossless=true)\n  └ komugi0506: Quá pro",
+      "url": "https://discord.com/channels/1131791637933199470/1300659603993923644/1498317700395569335",
+      "author": "tnimreppep",
+      "engagement": 20,
+      "media_url": "https://cdn.discordapp.com/attachments/1300659603993923644/1498317700089253969/Screenshot_2026-04-27-20-37-12-759_com.qookkagames.z1.qooapp.jpg?ex=69f0b899&is=69ef6719&hm=8e38db13fbf39d7ccfe0406a3dcb95a58d0e3f85b143c58cf130cb8721a7bee2&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🔥×5",
+        "reply_count": 2,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1300659603993923644/1498317700089253969/Screenshot_2026-04-27-20-37-12-759_com.qookkagames.z1.qooapp.jpg?ex=69f0b899&is=69ef6719&hm=8e38db13fbf39d7ccfe0406a3dcb95a58d0e3f85b143c58cf130cb8721a7bee2&"
+        ],
+        "channel": "🔸phòng-chat-tiếng-việt"
+      }
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680213+00:00",
+      "lang": "",
+      "title": "🎬 Morimens┊V2.5 PV - Web of the Moirai (VA: Ōnishi Saori)",
+      "summary": "[13d ago] O Fate...You are my eternal cage.” “As your prisoner, I will meet your judgment—” ✦ Arachne VA: Ōnishi Saori ✦ Nefraea VA: ...",
+      "url": "https://www.youtube.com/watch?v=NLLf3DhYbws",
+      "author": "Morimens",
+      "engagement": 570323,
+      "media_url": "https://i.ytimg.com/vi/NLLf3DhYbws/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD2e8Pyr47JECRV8_j3f-4JWiwBlg",
       "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.679823+00:00",
+      "lang": "",
+      "title": "Morimens | The Greatest Gacha Game You've Never Played (Long Review)",
+      "summary": "[10mo ago] My newest fascination for the last month has got to be one of the most unique gacha games I've seen. Morimens is what I'd ...",
+      "url": "https://www.youtube.com/watch?v=DTCfk_ztxeI",
+      "author": "Pseychie",
+      "engagement": 290931,
+      "media_url": "https://i.ytimg.com/vi/DTCfk_ztxeI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtSFm4kyI_gCqen2KjH6necJ54UA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680236+00:00",
+      "lang": "",
+      "title": "《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」",
+      "summary": "[1y ago] 呼喚我的名字，在被忘卻的黎明之前。 Can you call my name, before the daybreak we're forgotten. Chn Lyrics ：霁月@B.I.A.V. ...",
+      "url": "https://www.youtube.com/watch?v=BkG3QQoqKhQ",
+      "author": "Morimens",
+      "engagement": 42896,
+      "media_url": "https://i.ytimg.com/vi/BkG3QQoqKhQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALYof-HWuORc9b1v7KrpbTjH3E5g",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680183+00:00",
+      "lang": "",
+      "title": "Clementine edit | Forget last night: Morimens",
+      "summary": "[1y ago] clementine #morimens #忘卻前夜.",
+      "url": "https://www.youtube.com/watch?v=riY45CnKRRE",
+      "author": "Mantou³",
+      "engagement": 33343,
+      "media_url": "https://i.ytimg.com/vi/riY45CnKRRE/hq720_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAArgIigIMCAAQARhZIGUoTzAP&rs=AOn4CLCoIyaHMJliiARrVLq5MS1PJ5_CRw",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680157+00:00",
+      "lang": "",
+      "title": "Morimens Beginner Progression Guide (2026 Edition)",
+      "summary": "[4mo ago] Starting Morimens in 2026 and not sure where to begin? This complete beginner progression guide walks you step by step from ...",
+      "url": "https://www.youtube.com/watch?v=NpwMWAy6OLQ",
+      "author": "Mythag Files",
+      "engagement": 21276,
+      "media_url": "https://i.ytimg.com/vi/NpwMWAy6OLQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpDXpEGmN_V9XRebsTCxTkx7Lhdw",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680135+00:00",
+      "lang": "",
+      "title": "The Most FUN Gacha Game You Need To Try | Morimens",
+      "summary": "[8mo ago] Have you ever wanted to play Card games with Lovecraftian creatures?? You can do it right now. It's all below. why are you still ...",
+      "url": "https://www.youtube.com/watch?v=5PDpbrvt43E",
+      "author": "Polarisu",
+      "engagement": 19452,
+      "media_url": "https://i.ytimg.com/vi/5PDpbrvt43E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNqezFWs8g3UicVlQ5c6v-Y7eM1w",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680165+00:00",
+      "lang": "",
+      "title": "Morimens Gameplay Is FUN",
+      "summary": "[8mo ago] Have you ever wanted to play Card games with Lovecraftian creatures?? You can do it right now. It's all below. why are you still ...",
+      "url": "https://www.youtube.com/watch?v=z1A-9C21fZU",
+      "author": "Polarisu",
+      "engagement": 17442,
+      "media_url": "https://i.ytimg.com/vi/z1A-9C21fZU/hq720_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhyIF8oQTAP&rs=AOn4CLArVfmbqUGfjmfc1Rpo_HoZ6lVX_w",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680198+00:00",
+      "lang": "",
+      "title": "[Morimens] 2.4.0 Anni Banners - Pull Priority to get the most Endgame Teams with your pulls",
+      "summary": "[5mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
+      "url": "https://www.youtube.com/watch?v=bFm3N-MXHFQ",
+      "author": "Flares117",
+      "engagement": 11594,
+      "media_url": "https://i.ytimg.com/vi/bFm3N-MXHFQ/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAILIdvFdDQhDwCEgEdvk7M_dWvQQ",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680243+00:00",
+      "lang": "",
+      "title": "[Morimens] Flares' Awakener Review : GMurphy - S Tier everything. Most powerful unit ever released.",
+      "summary": "[5mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
+      "url": "https://www.youtube.com/watch?v=zutKkjaOUSs",
+      "author": "Flares117",
+      "engagement": 11258,
+      "media_url": "https://i.ytimg.com/vi/zutKkjaOUSs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBXWEDS_shgXRSV_bZPmibvVj1rQg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680205+00:00",
+      "lang": "",
+      "title": "[Morimens] Flares' Awakener Review : Mouchette : Chaos DR DPS - C Tier General Use, A Tier Whale.",
+      "summary": "[3mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
+      "url": "https://www.youtube.com/watch?v=e1J3nIclZdQ",
+      "author": "Flares117",
+      "engagement": 5085,
+      "media_url": "https://i.ytimg.com/vi/e1J3nIclZdQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBL5pclDRTqjcebGERKYpLNBPDviA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680148+00:00",
+      "lang": "",
+      "title": "[Morimens] Flares' Awakener Review : Arachne - Ultra \"Support\" - B Tier General. S Tier Whale",
+      "summary": "[8d ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord https://discord.gg/4zvKY8bFKj - Link to ...",
+      "url": "https://www.youtube.com/watch?v=mD5zdw7Ws-Y",
+      "author": "Flares117",
+      "engagement": 4750,
+      "media_url": "https://i.ytimg.com/vi/mD5zdw7Ws-Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANNsvfYG5r4ZjI4-g-GOePT4XdYA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680228+00:00",
+      "lang": "",
+      "title": "[Morimens] 2025 End of Year Updated Realm Overview : Caro (Red Realm) - Primer for Beginners",
+      "summary": "[4mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
+      "url": "https://www.youtube.com/watch?v=5qU0mK0LCYs",
+      "author": "Flares117",
+      "engagement": 3731,
+      "media_url": "https://i.ytimg.com/vi/5qU0mK0LCYs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1OC8jM5hMayOMyZW69xEFGrCw4w",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680263+00:00",
+      "lang": "",
+      "title": "[Morimens] Jan 12 Rerun Guide Overview (Miryam, Daff, Doresain) and Clem gave me a Tumor",
+      "summary": "[3mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
+      "url": "https://www.youtube.com/watch?v=nhAklyMy1Gc",
+      "author": "Flares117",
+      "engagement": 3698,
+      "media_url": "https://i.ytimg.com/vi/nhAklyMy1Gc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDaElqs6HNHP9Fbd0dMeJ1dF4wmzQ",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680173+00:00",
+      "lang": "",
+      "title": "Attack of the Horny Statues | Morimens Ultra Only",
+      "summary": "[4mo ago] A trashcan, a nerd and a child walk into a museum. (this one is weird) GENERAL INFO Discord: marcovinc Account ID (if you want ...",
+      "url": "https://www.youtube.com/watch?v=MviYPJj2y-U",
+      "author": "Trash Keeper",
+      "engagement": 2594,
+      "media_url": "https://i.ytimg.com/vi/MviYPJj2y-U/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJBJ50gCFn9fRC6_sZV4KRIIBBiw",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680123+00:00",
+      "lang": "",
+      "title": "Morimens chap 8 be like",
+      "summary": "[6mo ago] A fan try to join the Fan Art contest but can't draw and have skill issue. UID: 101198315 #MorimensFanArt.",
+      "url": "https://www.youtube.com/watch?v=oCqyBYOE_cw",
+      "author": "Wednesday playlist",
+      "engagement": 2207,
+      "media_url": "https://i.ytimg.com/vi/oCqyBYOE_cw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7Oil9H-1QjARmTbZ5Fz8bKolKKg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680249+00:00",
+      "lang": "",
+      "title": "[Morimens] Pre Release Kit Review : Arachne - Ultra Support (B to Potential S Tier)",
+      "summary": "[10d ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "url": "https://www.youtube.com/watch?v=OUi0wTqRqak",
+      "author": "Flares117",
+      "engagement": 2091,
+      "media_url": "https://i.ytimg.com/vi/OUi0wTqRqak/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCya8Nhb_wi0E0w_S35-njXP02S-w",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680191+00:00",
+      "lang": "",
+      "title": "[Morimens] Rage Rerun Overview/Guide - WATCH THE OLDER VIDEOS - Kath/Salv/Wanda. Livestream",
+      "summary": "[1mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "url": "https://www.youtube.com/watch?v=i7ZEXOpz9DU",
+      "author": "Flares117",
+      "engagement": 1813,
+      "media_url": "https://i.ytimg.com/vi/i7ZEXOpz9DU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbnMHuqF8nzcTEjke5GcSB_Hjd5g",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680219+00:00",
+      "lang": "",
+      "title": "[Morimens] 2.5.0 Ethereal Core Drama, and the rampant Gray Market in Morimens.",
+      "summary": "[11d ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "url": "https://www.youtube.com/watch?v=Z1Hw83WjnCU",
+      "author": "Flares117",
+      "engagement": 1447,
+      "media_url": "https://i.ytimg.com/vi/Z1Hw83WjnCU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDOdFf6ajBgySvh4BTDX-S4W8yEZA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-28T19:18:44.680256+00:00",
+      "lang": "",
+      "title": "[Morimens] +12 Buff Absolute Axiom Outliers : Pre Buff and Post Buff Comparisons.",
+      "summary": "[7d ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord https://discord.gg/4zvKY8bFKj - Link to ...",
+      "url": "https://www.youtube.com/watch?v=XcbhBl877Qc",
+      "author": "Flares117",
+      "engagement": 1061,
+      "media_url": "https://i.ytimg.com/vi/XcbhBl877Qc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAYWuLM6JbUdPOGihSfE9iQvxs7pQ",
+      "content_type": "image"
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T18:25:14+00:00",
+      "lang": "en",
+      "title": "Neco-Kar :3",
+      "summary": "&#32; submitted by &#32;  /u/Maurixioso   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sy9s24/necokar_3/",
+      "author": "/u/Maurixioso",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/tuyu094v4zxg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=41138eb3bd8af6fde509780979b12f0b777d7413",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
     },
     {
       "source": "reddit",
@@ -464,21 +1010,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-04-28T00:41:52+00:00",
-      "lang": "en",
-      "title": "The cosmic horror of Morimens",
-      "summary": "&#32; submitted by &#32;  /u/Maurixioso   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1sxm2tz/the_cosmic_horror_of_morimens/",
-      "author": "/u/Maurixioso",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/40bnghd5vtxg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6d8c3950d2b474466d7f5dc51e2be04e80f475e1",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-04-28T16:43:14+00:00",
       "lang": "en",
       "title": "Arachne + Wanda Strength down",
@@ -487,6 +1018,21 @@
       "author": "/u/Euphoric-Handle2151",
       "engagement": 0,
       "media_url": "https://external-preview.redd.it/dWtrNWIxcXpseXhnMe9xTLdpTFzejEV9bok06nwJXa61DckSZW6FZC62Dq2P.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=2c87788878f9bbb5cf10c6da361ee52e2ba02677",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T00:41:52+00:00",
+      "lang": "en",
+      "title": "The cosmic horror of Morimens",
+      "summary": "&#32; submitted by &#32;  /u/Maurixioso   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sxm2tz/the_cosmic_horror_of_morimens/",
+      "author": "/u/Maurixioso",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/40bnghd5vtxg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6d8c3950d2b474466d7f5dc51e2be04e80f475e1",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -509,21 +1055,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-04-28T12:50:48+00:00",
-      "lang": "en",
-      "title": "How do you make Kath comps more \"durable\"?",
-      "summary": "Recently got my Kath to E3 and **really** enjoying her so far, but my survival rate when I&#39;m playing her just seems dreadful. Even switched from Paradox to Feast, in hope that this&#39;ll better something, but it did so only slightly. Switching from GDoll to Castor *did* fix this a bit but his cards (or more how much they cost) seem more like a hinderance. Also Karen&#39;s exalt fits perfectly so that I don&#39;t want letting her go, but she barely adds enough sustain when the fight goes longer for than just a couple of rounds. Kinda at a bit of an loss (since I don&#39;t wanna always rely on revives) and appreciate every piece of advice you can give me, no matter if playstyle or teamcomp related!  &#32; submitted by &#32;  /u/-Esphir-   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1sy0ian/how_do_you_make_kath_comps_more_durable/",
-      "author": "/u/-Esphir-",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/ongjty77hxxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=598f568781b06dfc2f2a0ec35912885de3ae1540",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-04-28T15:37:37+00:00",
       "lang": "en",
       "title": "New player here what teams can i make?",
@@ -539,13 +1070,15 @@
     },
     {
       "source": "reddit",
-      "time": "2026-04-28T12:27:33+00:00",
+      "time": "2026-04-28T12:50:48+00:00",
       "lang": "en",
-      "title": "finally in the arc 1 finals🍪any suggestion for upcoming bosses (っ °Д °;)っ",
-      "summary": "&#32; submitted by &#32;  /u/ComprehensiveFlow393   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1sxzy2q/finally_in_the_arc_1_finalsany_suggestion_for/",
-      "author": "/u/ComprehensiveFlow393",
+      "title": "How do you make Kath comps more \"durable\"?",
+      "summary": "Recently got my Kath to E3 and **really** enjoying her so far, but my survival rate when I&#39;m playing her just seems dreadful. Even switched from Paradox to Feast, in hope that this&#39;ll better something, but it did so only slightly. Switching from GDoll to Castor *did* fix this a bit but his cards (or more how much they cost) seem more like a hinderance. Also Karen&#39;s exalt fits perfectly so that I don&#39;t want letting her go, but she barely adds enough sustain when the fight goes longer for than just a couple of rounds. Kinda at a bit of an loss (since I don&#39;t wanna always rely on revives) and appreciate every piece of advice you can give me, no matter if playstyle or teamcomp related!  &#32; submitted by &#32;  /u/-Esphir-   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sy0ian/how_do_you_make_kath_comps_more_durable/",
+      "author": "/u/-Esphir-",
       "engagement": 0,
+      "media_url": "https://preview.redd.it/ongjty77hxxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=598f568781b06dfc2f2a0ec35912885de3ae1540",
+      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -567,6 +1100,32 @@
     },
     {
       "source": "reddit",
+      "time": "2026-04-28T16:51:31+00:00",
+      "lang": "en",
+      "title": "I need explaination about how Arachne in Morimens work?",
+      "summary": "As I know about Arachne Exalt. After use it, using other Character Card will consume Weaver and active &quot;Infinitine Threads&quot;. But in some round I use Chaos and Ultra team (Exactly, it is in D-zone wave 2), she activates it after her strike and defence. And she never consume Weaver after Exalt to active it like normal anymore. Did I miss some information about this?   &#32; submitted by &#32;  /u/Ok-Occasion5879   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sy71oo/i_need_explaination_about_how_arachne_in_morimens/",
+      "author": "/u/Ok-Occasion5879",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T12:27:33+00:00",
+      "lang": "en",
+      "title": "finally in the arc 1 finals🍪any suggestion for upcoming bosses (っ °Д °;)っ",
+      "summary": "&#32; submitted by &#32;  /u/ComprehensiveFlow393   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sxzy2q/finally_in_the_arc_1_finalsany_suggestion_for/",
+      "author": "/u/ComprehensiveFlow393",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-04-28T02:15:09+00:00",
       "lang": "en",
       "title": "Absolute Partner",
@@ -575,6 +1134,36 @@
       "author": "/u/HessianQrow",
       "engagement": 0,
       "media_url": "https://preview.redd.it/fx6kxrisbuxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d46ec21875b6472a68f4353bff932c2f49cf2754",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T18:22:28+00:00",
+      "lang": "en",
+      "title": "Team suggestions?",
+      "summary": "I want some team suggestions for d tide and the strongest team that I can use with Arachne for story and HSR, also for H 9-12, this is the only fight in arc 1 that I couldn&#39;t clear without using a gnosis (I actually had to use a couple of them). As for Arachne herself, I am going to OE her in the next couple of days so treat her as such. Thx in advance https://preview.redd.it/2b0h5ab54zxg1.jpg?width=1132&amp;format=pjpg&amp;auto=webp&amp;s=17d5b088838504999ec563a2577f4605d82cfa43  &#32; submitted by &#32;  /u/saltal1   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sy9p8e/team_suggestions/",
+      "author": "/u/saltal1",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/2b0h5ab54zxg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=ffcf6fa89419941f1a008db14a5f380ccd2b42ea",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T15:50:00+00:00",
+      "lang": "en",
+      "title": "Progression Help.",
+      "summary": "I just have a few questions in regards to what I should do next such as:   Should I keep rolling in the Self-Select Banner? I have Thais(e1), Horla, G-Helot(e1) and Tawil(1) there. Should I throw my rolls into Standard Characters or should I throw it into Wheels?  https://preview.redd.it/90vgo8vzbyxg1.png?width=480&amp;format=png&amp;auto=webp&amp;s=b9d0c08e7838f0109f9add53d660c3ab6bdc7d8e https://preview.redd.it/6k1t1951cyxg1.png?width=477&amp;format=png&amp;auto=webp&amp;s=952a95e490de712b75e035ae32889a8e96c5c8d4 https://preview.redd.it/g4j56093cyxg1.png?width=475&amp;format=png&amp;auto=webp&amp;s=54c2c53bc2699cbda6eff1320b4afd520dd911f5 These are the Awakeners that I currently have. My story prog is around Arc 2 Chapter 2 and I think I&#39;m slowly burning through my premium currency source since I&#39;m halfway done with Arc 1 Hard Mode and I&#39;m having doubts as to whether continuing to roll until I hit the breakpoint of one of the characters in my Self-Select banner is a good decision. Another thing is what characters should I pair with Tawil since I really wanna use her but I do not have Hameln and/or Ryker.  &#32; submitted by &#32;  /u/DiligentYoung7706   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sy5awo/progression_help/",
+      "author": "/u/DiligentYoung7706",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/90vgo8vzbyxg1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=43e5a0c4f9be66ab7c50776e932a4a8cc48fd915",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -610,14 +1199,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-04-28T15:50:00+00:00",
+      "time": "2026-04-28T14:53:32+00:00",
       "lang": "en",
-      "title": "Progression Help.",
-      "summary": "I just have a few questions in regards to what I should do next such as:   Should I keep rolling in the Self-Select Banner? I have Thais(e1), Horla, G-Helot(e1) and Tawil(1) there. Should I throw my rolls into Standard Characters or should I throw it into Wheels?  https://preview.redd.it/90vgo8vzbyxg1.png?width=480&amp;format=png&amp;auto=webp&amp;s=b9d0c08e7838f0109f9add53d660c3ab6bdc7d8e https://preview.redd.it/6k1t1951cyxg1.png?width=477&amp;format=png&amp;auto=webp&amp;s=952a95e490de712b75e035ae32889a8e96c5c8d4 https://preview.redd.it/g4j56093cyxg1.png?width=475&amp;format=png&amp;auto=webp&amp;s=54c2c53bc2699cbda6eff1320b4afd520dd911f5 These are the Awakeners that I currently have. My story prog is around Arc 2 Chapter 2 and I think I&#39;m slowly burning through my premium currency source since I&#39;m halfway done with Arc 1 Hard Mode and I&#39;m having doubts as to whether continuing to roll until I hit the breakpoint of one of the characters in my Self-Select banner is a good decision. Another thing is what characters should I pair with Tawil since I really wanna use her but I do not have Hameln and/or Ryker.  &#32; submitted by &#32;  /u/DiligentYoung7706   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1sy5awo/progression_help/",
-      "author": "/u/DiligentYoung7706",
+      "title": "Questions on what to do next",
+      "summary": "Hello! Currently I am level 35, at chapter 5 and would like to seek some advices. My original plan was to save silver and cores for 2.5 anniversary.  But having tried gdoll (via support), is it worthwhile to pull for a copy of gdoll before her banner ends? I read about how good Tawil&#39;s E1 to E3 are. My Moonless guide is set to Tawil, Hameln, Tulu and Miryam. Previously gotten a copy of Tawil and Hameln. Should I try to pull more copies of Tawil? Im kind of stuck cause im using the monthly shop prototype for Kath or is it a better idea to use on Tawil? Trying to set up more teams too.   &#32; submitted by &#32;  /u/Kyoflame07   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sy3ph7/questions_on_what_to_do_next/",
+      "author": "/u/Kyoflame07",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/90vgo8vzbyxg1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=43e5a0c4f9be66ab7c50776e932a4a8cc48fd915",
+      "media_url": "https://preview.redd.it/p5ssyca33yxg1.png?width=140&amp;height=63&amp;auto=webp&amp;s=269a2cf9d4cd74cfc1902920d4712507814a5ee0",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -638,34 +1227,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-04-28T16:51:31+00:00",
-      "lang": "en",
-      "title": "I need explaination about how Arachne in Morimens work?",
-      "summary": "As I know about Arachne Exalt. After use it, using other Character Card will consume Weaver and active &quot;Infinitine Threads&quot;. But in some round I use Chaos and Ultra team (Exactly, it is in D-zone wave 2), she activates it after her strike and defence. And she never consume Weaver after Exalt to active it like normal anymore. Did I miss some information about this?   &#32; submitted by &#32;  /u/Ok-Occasion5879   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1sy71oo/i_need_explaination_about_how_arachne_in_morimens/",
-      "author": "/u/Ok-Occasion5879",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-04-28T14:53:32+00:00",
-      "lang": "en",
-      "title": "Questions on what to do next",
-      "summary": "Hello! Currently I am level 35, at chapter 5 and would like to seek some advices. My original plan was to save silver and cores for 2.5 anniversary.  But having tried gdoll (via support), is it worthwhile to pull for a copy of gdoll before her banner ends? I read about how good Tawil&#39;s E1 to E3 are. My Moonless guide is set to Tawil, Hameln, Tulu and Miryam. Previously gotten a copy of Tawil and Hameln. Should I try to pull more copies of Tawil? Im kind of stuck cause im using the monthly shop prototype for Kath or is it a better idea to use on Tawil? Trying to set up more teams too.   &#32; submitted by &#32;  /u/Kyoflame07   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1sy3ph7/questions_on_what_to_do_next/",
-      "author": "/u/Kyoflame07",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/p5ssyca33yxg1.png?width=140&amp;height=63&amp;auto=webp&amp;s=269a2cf9d4cd74cfc1902920d4712507814a5ee0",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-04-28T10:48:51+00:00",
       "lang": "en",
       "title": "is it possible to change the email linked to my account?",
@@ -676,6 +1237,16 @@
       "metadata": {
         "via": "rss"
       }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T18:25:14+00:00",
+      "lang": "en",
+      "title": "Neco-Kar :3",
+      "summary": "&#32; submitted by &#32;  /u/Maurixioso   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sy9s24/necokar_3/",
+      "author": "u//u/Maurixioso",
+      "engagement": 0
     },
     {
       "source": "reddit",
@@ -699,22 +1270,22 @@
     },
     {
       "source": "reddit",
-      "time": "2026-04-28T00:41:52+00:00",
-      "lang": "en",
-      "title": "The cosmic horror of Morimens",
-      "summary": "&#32; submitted by &#32;  /u/Maurixioso   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1sxm2tz/the_cosmic_horror_of_morimens/",
-      "author": "u//u/Maurixioso",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-04-28T16:43:14+00:00",
       "lang": "en",
       "title": "Arachne + Wanda Strength down",
       "summary": "I love that what Arachne does for Wanda is the same as what gMurphy did for Lemurians. Made under played units viable. Just look at how much strength down Wanda does!!! Goes from taking 1473 damage to safe. Note this is whaled out Arachne - similar unit to gMurphy - a chorus that can be DPS. Needs to be whaled out to use as DPS endgame.  &#32; submitted by &#32;  /u/Euphoric-Handle2151   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1sy6t8w/arachne_wanda_strength_down/",
       "author": "u//u/Euphoric-Handle2151",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T00:41:52+00:00",
+      "lang": "en",
+      "title": "The cosmic horror of Morimens",
+      "summary": "&#32; submitted by &#32;  /u/Maurixioso   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sxm2tz/the_cosmic_horror_of_morimens/",
+      "author": "u//u/Maurixioso",
       "engagement": 0
     },
     {
@@ -729,16 +1300,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-04-28T12:50:48+00:00",
-      "lang": "en",
-      "title": "How do you make Kath comps more \"durable\"?",
-      "summary": "Recently got my Kath to E3 and **really** enjoying her so far, but my survival rate when I&#39;m playing her just seems dreadful. Even switched from Paradox to Feast, in hope that this&#39;ll better something, but it did so only slightly. Switching from GDoll to Castor *did* fix this a bit but his cards (or more how much they cost) seem more like a hinderance. Also Karen&#39;s exalt fits perfectly so that I don&#39;t want letting her go, but she barely adds enough sustain when the fight goes longer for than just a couple of rounds. Kinda at a bit of an loss (since I don&#39;t wanna always rely on revives) and appreciate every piece of advice you can give me, no matter if playstyle or teamcomp related!  &#32; submitted by &#32;  /u/-Esphir-   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1sy0ian/how_do_you_make_kath_comps_more_durable/",
-      "author": "u//u/-Esphir-",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-04-28T15:37:37+00:00",
       "lang": "en",
       "title": "New player here what teams can i make?",
@@ -749,12 +1310,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-04-28T12:27:33+00:00",
+      "time": "2026-04-28T12:50:48+00:00",
       "lang": "en",
-      "title": "finally in the arc 1 finals🍪any suggestion for upcoming bosses (っ °Д °;)っ",
-      "summary": "&#32; submitted by &#32;  /u/ComprehensiveFlow393   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1sxzy2q/finally_in_the_arc_1_finalsany_suggestion_for/",
-      "author": "u//u/ComprehensiveFlow393",
+      "title": "How do you make Kath comps more \"durable\"?",
+      "summary": "Recently got my Kath to E3 and **really** enjoying her so far, but my survival rate when I&#39;m playing her just seems dreadful. Even switched from Paradox to Feast, in hope that this&#39;ll better something, but it did so only slightly. Switching from GDoll to Castor *did* fix this a bit but his cards (or more how much they cost) seem more like a hinderance. Also Karen&#39;s exalt fits perfectly so that I don&#39;t want letting her go, but she barely adds enough sustain when the fight goes longer for than just a couple of rounds. Kinda at a bit of an loss (since I don&#39;t wanna always rely on revives) and appreciate every piece of advice you can give me, no matter if playstyle or teamcomp related!  &#32; submitted by &#32;  /u/-Esphir-   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sy0ian/how_do_you_make_kath_comps_more_durable/",
+      "author": "u//u/-Esphir-",
       "engagement": 0
     },
     {
@@ -769,12 +1330,52 @@
     },
     {
       "source": "reddit",
+      "time": "2026-04-28T16:51:31+00:00",
+      "lang": "en",
+      "title": "I need explaination about how Arachne in Morimens work?",
+      "summary": "As I know about Arachne Exalt. After use it, using other Character Card will consume Weaver and active &quot;Infinitine Threads&quot;. But in some round I use Chaos and Ultra team (Exactly, it is in D-zone wave 2), she activates it after her strike and defence. And she never consume Weaver after Exalt to active it like normal anymore. Did I miss some information about this?   &#32; submitted by &#32;  /u/Ok-Occasion5879   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sy71oo/i_need_explaination_about_how_arachne_in_morimens/",
+      "author": "u//u/Ok-Occasion5879",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T12:27:33+00:00",
+      "lang": "en",
+      "title": "finally in the arc 1 finals🍪any suggestion for upcoming bosses (っ °Д °;)っ",
+      "summary": "&#32; submitted by &#32;  /u/ComprehensiveFlow393   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sxzy2q/finally_in_the_arc_1_finalsany_suggestion_for/",
+      "author": "u//u/ComprehensiveFlow393",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-04-28T02:15:09+00:00",
       "lang": "en",
       "title": "Absolute Partner",
       "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1sxo78e/absolute_partner/",
       "author": "u//u/HessianQrow",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T18:22:28+00:00",
+      "lang": "en",
+      "title": "Team suggestions?",
+      "summary": "I want some team suggestions for d tide and the strongest team that I can use with Arachne for story and HSR, also for H 9-12, this is the only fight in arc 1 that I couldn&#39;t clear without using a gnosis (I actually had to use a couple of them). As for Arachne herself, I am going to OE her in the next couple of days so treat her as such. Thx in advance https://preview.redd.it/2b0h5ab54zxg1.jpg?width=1132&amp;format=pjpg&amp;auto=webp&amp;s=17d5b088838504999ec563a2577f4605d82cfa43  &#32; submitted by &#32;  /u/saltal1   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sy9p8e/team_suggestions/",
+      "author": "u//u/saltal1",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T15:50:00+00:00",
+      "lang": "en",
+      "title": "Progression Help.",
+      "summary": "I just have a few questions in regards to what I should do next such as:   Should I keep rolling in the Self-Select Banner? I have Thais(e1), Horla, G-Helot(e1) and Tawil(1) there. Should I throw my rolls into Standard Characters or should I throw it into Wheels?  https://preview.redd.it/90vgo8vzbyxg1.png?width=480&amp;format=png&amp;auto=webp&amp;s=b9d0c08e7838f0109f9add53d660c3ab6bdc7d8e https://preview.redd.it/6k1t1951cyxg1.png?width=477&amp;format=png&amp;auto=webp&amp;s=952a95e490de712b75e035ae32889a8e96c5c8d4 https://preview.redd.it/g4j56093cyxg1.png?width=475&amp;format=png&amp;auto=webp&amp;s=54c2c53bc2699cbda6eff1320b4afd520dd911f5 These are the Awakeners that I currently have. My story prog is around Arc 2 Chapter 2 and I think I&#39;m slowly burning through my premium currency source since I&#39;m halfway done with Arc 1 Hard Mode and I&#39;m having doubts as to whether continuing to roll until I hit the breakpoint of one of the characters in my Self-Select banner is a good decision. Another thing is what characters should I pair with Tawil since I really wanna use her but I do not have Hameln and/or Ryker.  &#32; submitted by &#32;  /u/DiligentYoung7706   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sy5awo/progression_help/",
+      "author": "u//u/DiligentYoung7706",
       "engagement": 0
     },
     {
@@ -799,12 +1400,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-04-28T15:50:00+00:00",
+      "time": "2026-04-28T14:53:32+00:00",
       "lang": "en",
-      "title": "Progression Help.",
-      "summary": "I just have a few questions in regards to what I should do next such as:   Should I keep rolling in the Self-Select Banner? I have Thais(e1), Horla, G-Helot(e1) and Tawil(1) there. Should I throw my rolls into Standard Characters or should I throw it into Wheels?  https://preview.redd.it/90vgo8vzbyxg1.png?width=480&amp;format=png&amp;auto=webp&amp;s=b9d0c08e7838f0109f9add53d660c3ab6bdc7d8e https://preview.redd.it/6k1t1951cyxg1.png?width=477&amp;format=png&amp;auto=webp&amp;s=952a95e490de712b75e035ae32889a8e96c5c8d4 https://preview.redd.it/g4j56093cyxg1.png?width=475&amp;format=png&amp;auto=webp&amp;s=54c2c53bc2699cbda6eff1320b4afd520dd911f5 These are the Awakeners that I currently have. My story prog is around Arc 2 Chapter 2 and I think I&#39;m slowly burning through my premium currency source since I&#39;m halfway done with Arc 1 Hard Mode and I&#39;m having doubts as to whether continuing to roll until I hit the breakpoint of one of the characters in my Self-Select banner is a good decision. Another thing is what characters should I pair with Tawil since I really wanna use her but I do not have Hameln and/or Ryker.  &#32; submitted by &#32;  /u/DiligentYoung7706   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1sy5awo/progression_help/",
-      "author": "u//u/DiligentYoung7706",
+      "title": "Questions on what to do next",
+      "summary": "Hello! Currently I am level 35, at chapter 5 and would like to seek some advices. My original plan was to save silver and cores for 2.5 anniversary.  But having tried gdoll (via support), is it worthwhile to pull for a copy of gdoll before her banner ends? I read about how good Tawil&#39;s E1 to E3 are. My Moonless guide is set to Tawil, Hameln, Tulu and Miryam. Previously gotten a copy of Tawil and Hameln. Should I try to pull more copies of Tawil? Im kind of stuck cause im using the monthly shop prototype for Kath or is it a better idea to use on Tawil? Trying to set up more teams too.   &#32; submitted by &#32;  /u/Kyoflame07   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1sy3ph7/questions_on_what_to_do_next/",
+      "author": "u//u/Kyoflame07",
       "engagement": 0
     },
     {
@@ -815,26 +1416,6 @@
       "summary": "I’ve been playing the Japanese version of Morimens and really like the game. I already dropped about 10,000 JPY on my account. However, I’ve started seeing a lot of people saying the Japan version isn’t as good as the Global version and that Global is the way to go if you actually want the real experience. I&#39;m feeling like I might have messed up by investing in this version. Is Global actually that much better? Should I just take the L on the 10k JPY and switch now before I get any deeper? I’d appreciate any honest takes before I decide to delete the JP app and start over. Thanks  &#32; submitted by &#32;  /u/Yang_Wenlii   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1sxsjw1/playing_jp_version_but_should_i_switch/",
       "author": "u//u/Yang_Wenlii",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-04-28T16:51:31+00:00",
-      "lang": "en",
-      "title": "I need explaination about how Arachne in Morimens work?",
-      "summary": "As I know about Arachne Exalt. After use it, using other Character Card will consume Weaver and active &quot;Infinitine Threads&quot;. But in some round I use Chaos and Ultra team (Exactly, it is in D-zone wave 2), she activates it after her strike and defence. And she never consume Weaver after Exalt to active it like normal anymore. Did I miss some information about this?   &#32; submitted by &#32;  /u/Ok-Occasion5879   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1sy71oo/i_need_explaination_about_how_arachne_in_morimens/",
-      "author": "u//u/Ok-Occasion5879",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-04-28T14:53:32+00:00",
-      "lang": "en",
-      "title": "Questions on what to do next",
-      "summary": "Hello! Currently I am level 35, at chapter 5 and would like to seek some advices. My original plan was to save silver and cores for 2.5 anniversary.  But having tried gdoll (via support), is it worthwhile to pull for a copy of gdoll before her banner ends? I read about how good Tawil&#39;s E1 to E3 are. My Moonless guide is set to Tawil, Hameln, Tulu and Miryam. Previously gotten a copy of Tawil and Hameln. Should I try to pull more copies of Tawil? Im kind of stuck cause im using the monthly shop prototype for Kath or is it a better idea to use on Tawil? Trying to set up more teams too.   &#32; submitted by &#32;  /u/Kyoflame07   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1sy3ph7/questions_on_what_to_do_next/",
-      "author": "u//u/Kyoflame07",
       "engagement": 0
     },
     {
@@ -939,7 +1520,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.093263+00:00",
+      "time": "2026-04-28T19:18:58.154229+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@eve",
       "summary": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@everyone？抱抱？以前，不可以。现在，可以！」\n✦ 莫丝 CV：松元菜菜海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Mouth... this thing? Mythag, present, ...全文",
@@ -949,17 +1530,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.111301+00:00",
+      "time": "2026-04-28T19:18:58.170874+00:00",
       "lang": "zh",
-      "title": "忘却前夜┊唤醒体展示✦徐\n妾身乃不梦乡之主，徐。\n若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。\n\n✦ 徐 CV：田中理惠\n忘却前夜#忘却前夜##徐##田",
-      "summary": "忘却前夜┊唤醒体展示✦徐\n妾身乃不梦乡之主，徐。\n若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。\n\n✦ 徐 CV：田中理惠\n忘却前夜#忘却前夜##徐##田中理惠#",
-      "url": "",
+      "title": "忘却前夜丨弥萨格调查局CP32行动指南\n\n致全体即将前往新前线的守密人：\n\n新的异常波动已被精确锁定。\n\n观测信号不再模糊，它发出的是清晰的低语：「7 馆 CP",
+      "summary": "忘却前夜丨弥萨格调查局CP32行动指南\n\n致全体即将前往新前线的守密人：\n\n新的异常波动已被精确锁定。\n\n观测信号不再模糊，它发出的是清晰的低语：「7 馆 CPA20 号展位」，一个即将聚集无数意识的坐标点。\n\n这绝非演习。\n\n请记住：每一次深入融蚀腹地的行动，都是对精神阈值的极限校准。\n\n请带着银钥与 ...全文",
+      "url": "https://m.weibo.cn/status/5292312395514070",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.123798+00:00",
+      "time": "2026-04-28T19:18:58.186619+00:00",
       "lang": "zh",
       "title": "12758【投稿】忘却前夜。我主任",
       "summary": "12758【投稿】忘却前夜。我主任",
@@ -969,7 +1550,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.135823+00:00",
+      "time": "2026-04-28T19:18:58.197972+00:00",
       "lang": "zh",
       "title": "忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游",
       "summary": "忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游",
@@ -979,17 +1560,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.148199+00:00",
-      "lang": "zh",
-      "title": "忘却前夜 同步一下之前的\nooc致歉",
-      "summary": "忘却前夜 同步一下之前的\nooc致歉",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-04-28T17:30:01.159822+00:00",
+      "time": "2026-04-28T19:18:58.210263+00:00",
       "lang": "zh",
       "title": "忘却前夜\n问一下大家该怎么配对呀一直在乱玩",
       "summary": "忘却前夜\n问一下大家该怎么配对呀一直在乱玩",
@@ -999,7 +1570,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.171729+00:00",
+      "time": "2026-04-28T19:18:58.221590+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 同步一下之前的\nooc致歉",
+      "summary": "忘却前夜 同步一下之前的\nooc致歉",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-04-28T19:18:58.232603+00:00",
       "lang": "zh",
       "title": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
       "summary": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
@@ -1009,17 +1590,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.183044+00:00",
-      "lang": "zh",
-      "title": "【投稿】忘却前夜24（梅森）一款震撼美味的多重人格水仙。。。\n1552",
-      "summary": "【投稿】忘却前夜24（梅森）一款震撼美味的多重人格水仙。。。\n1552",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-04-28T17:30:01.194481+00:00",
+      "time": "2026-04-28T19:18:58.243436+00:00",
       "lang": "zh",
       "title": "忘却前夜 葬骸城的居民还要再吃多久的海鲜啊（悲",
       "summary": "忘却前夜 葬骸城的居民还要再吃多久的海鲜啊（悲",
@@ -1029,7 +1600,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.206445+00:00",
+      "time": "2026-04-28T19:18:58.254319+00:00",
+      "lang": "zh",
+      "title": "【投稿】忘却前夜24（梅森）一款震撼美味的多重人格水仙。。。\n1552",
+      "summary": "【投稿】忘却前夜24（梅森）一款震撼美味的多重人格水仙。。。\n1552",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-04-28T19:18:58.265434+00:00",
       "lang": "zh",
       "title": "忘却前夜 记录了一下这两天隔壁孝子对你游各种造谣以及煎炒的言论只希望画师认领的那天别偷偷删帖哟。事情起因大概是从红薯管博下面的神秘煎炒开始的。感兴趣可以搜搜看（",
       "summary": "忘却前夜 记录了一下这两天隔壁孝子对你游各种造谣以及煎炒的言论只希望画师认领的那天别偷偷删帖哟。事情起因大概是从红薯管博下面的神秘煎炒开始的。感兴趣可以搜搜看（最后一张是之前给游戏供稿过的画师，这都不信那我也没话可说了）",
@@ -1039,27 +1620,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.217657+00:00",
-      "lang": "zh",
-      "title": "忘却前夜 死爹的校猫 现在连pve玩家最后一条刷相对位奕的路都堵死了 新更新之后的条件已经从胜利五局改成打150张牌了 现在连刷都刷不了 pve玩家撅校猫祖坟了",
-      "summary": "忘却前夜 死爹的校猫 现在连pve玩家最后一条刷相对位奕的路都堵死了 新更新之后的条件已经从胜利五局改成打150张牌了 现在连刷都刷不了 pve玩家撅校猫祖坟了吗这么恨",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-04-28T17:30:01.229096+00:00",
-      "lang": "zh",
-      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-04-28T17:30:01.240434+00:00",
+      "time": "2026-04-28T19:18:58.276480+00:00",
       "lang": "zh",
       "title": "『利莫里亚的残响』\n哀怜的双目在注视着自己唯一的希望。\n\n忘却前夜#忘却前夜##忘却前夜内容征集计划##忘却前夜同人二创活动##morimensfanart#",
       "summary": "『利莫里亚的残响』\n哀怜的双目在注视着自己唯一的希望。\n\n忘却前夜#忘却前夜##忘却前夜内容征集计划##忘却前夜同人二创活动##morimensfanart#",
@@ -1069,7 +1630,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.251893+00:00",
+      "time": "2026-04-28T19:18:58.287342+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-04-28T19:18:58.298578+00:00",
       "lang": "zh",
       "title": "忘却前夜 P1带标记的是常用队，问问要抽命轮吗，以P3这些东西怎么分配，还要继续抽什么吗，暂时想抽波吕克斯，在攒资源\n常驻有几十抽，是抽了还是攒攒换环形拉蒙娜（",
       "summary": "忘却前夜 P1带标记的是常用队，问问要抽命轮吗，以P3这些东西怎么分配，还要继续抽什么吗，暂时想抽波吕克斯，在攒资源\n常驻有几十抽，是抽了还是攒攒换环形拉蒙娜（看起来真的好帅）",
@@ -1079,37 +1650,37 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:01.265228+00:00",
+      "time": "2026-04-28T19:18:58.311752+00:00",
       "lang": "zh",
-      "title": "最近的生活好像没什么大的波澜，等待盲审结束，等待答辩结束，等待学生时代的最后终结，等待通关象牙塔。三个评分是A A B，如果能多一分就是3A了。工作还在慢慢找，",
-      "summary": "最近的生活好像没什么大的波澜，等待盲审结束，等待答辩结束，等待学生时代的最后终结，等待通关象牙塔。三个评分是A A B，如果能多一分就是3A了。工作还在慢慢找，但是机会好像也不多了。\n上周六sky拿到了两张浙音的交响乐会票，邀请我一起去。最后我选择针织短袖白衬衫加一个没那么显眼的领巾，微 ...全文",
-      "url": "https://m.weibo.cn/status/5292823693494957",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-04-28T00:32:00+00:00",
-      "lang": "",
-      "title": "忘却前夜×沙耶之歌 联动预告\n\n梦的碎片 随风而至\n\n#忘却前夜# #沙耶之歌#\n忘却前夜 #Morimens# 忘却前夜的微博视频",
-      "summary": "忘却前夜×沙耶之歌 联动预告\n\n梦的碎片 随风而至\n\n#忘却前夜# #沙耶之歌#\n忘却前夜 #Morimens# 忘却前夜的微博视频",
+      "title": "忘却前夜#囚羽骨#\nθεοῖς εὔχομαι.\n专栏 · 天穹狂想曲\n———————🐦⬛———————\n约稿的专武场景，tag防误食，文案是古希腊语的“我向诸",
+      "summary": "忘却前夜#囚羽骨#\nθεοῖς εὔχομαι.\n专栏 · 天穹狂想曲\n———————🐦⬛———————\n约稿的专武场景，tag防误食，文案是古希腊语的“我向诸神祈祷”。",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:53.780669+00:00",
-      "lang": "",
-      "title": "忘却前夜 瓜条整理。以下是。关于前段时间期忘却前夜和白荆回廊游戏社区内关于抄袭角色的争议，本人没有对面空口造谣睁眼说瞎话的本事，还是倾向于用事实说话。每一条都附",
-      "summary": "忘却前夜 瓜条整理。以下是。关于前段时间期忘却前夜和白荆回廊游戏社区内关于抄袭角色的争议，本人没有对面空口造谣睁眼说瞎话的本事，还是倾向于用事实说话。每一条都附带截图为证\n首先贴泥潭整理的事情大致前因后果\n链接（打不开复制到浏览器）网页链接\n在基本了解事件之后， ...全文",
-      "url": "https://m.weibo.cn/status/5264892340731977",
+      "time": "2026-04-28T19:18:58.323680+00:00",
+      "lang": "zh",
+      "title": "忘却前夜快点复刻鸟哥鸟弟可以不抽了这个新美女等着配队呢。",
+      "summary": "忘却前夜快点复刻鸟哥鸟弟可以不抽了这个新美女等着配队呢。",
+      "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:53.828328+00:00",
+      "time": "2026-04-28T19:19:50.549704+00:00",
+      "lang": "",
+      "title": "忘却前夜┊唤醒体展示✦徐\n妾身乃不梦乡之主，徐。\n若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。\n\n✦ 徐 CV：田中理惠\n忘却前夜#忘却前夜##徐##田",
+      "summary": "忘却前夜┊唤醒体展示✦徐\n妾身乃不梦乡之主，徐。\n若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。\n\n✦ 徐 CV：田中理惠\n忘却前夜#忘却前夜##徐##田中理惠#",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-04-28T19:19:50.631773+00:00",
       "lang": "",
       "title": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
       "summary": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
@@ -1119,7 +1690,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:53.839737+00:00",
+      "time": "2026-04-28T19:19:50.653830+00:00",
       "lang": "",
       "title": "忘却前夜 @易笙君CuO 女明星回应一下",
       "summary": "忘却前夜 @易笙君CuO 女明星回应一下",
@@ -1129,21 +1700,11 @@
     },
     {
       "source": "weibo",
-      "time": "2026-04-28T17:30:53.874188+00:00",
+      "time": "2026-04-28T19:19:50.675512+00:00",
       "lang": "",
-      "title": "之前给忘却前夜画的解禁了！！",
-      "summary": "之前给忘却前夜画的解禁了！！",
+      "title": "忘却前夜 死爹的校猫 现在连pve玩家最后一条刷相对位奕的路都堵死了 新更新之后的条件已经从胜利五局改成打150张牌了 现在连刷都刷不了 pve玩家撅校猫祖坟了",
+      "summary": "忘却前夜 死爹的校猫 现在连pve玩家最后一条刷相对位奕的路都堵死了 新更新之后的条件已经从胜利五局改成打150张牌了 现在连刷都刷不了 pve玩家撅校猫祖坟了吗这么恨",
       "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-04-28T17:30:53.884773+00:00",
-      "lang": "",
-      "title": "❤️贰H47-小叶小乐小打小闹🩷欢迎您来\n\n🌿摊位名-小叶小乐小打小闹\n🌿摊位号-贰H47\n\n🌸专区-蝴蝶蓝的世界\n🌸街道-张佳乐街道\n\n本摊含有：叶乐/张佳乐",
-      "summary": "❤️贰H47-小叶小乐小打小闹🩷欢迎您来\n\n🌿摊位名-小叶小乐小打小闹\n🌿摊位号-贰H47\n\n🌸专区-蝴蝶蓝的世界\n🌸街道-张佳乐街道\n\n本摊含有：叶乐/张佳乐/乔一帆/韩秀英/第七史诗/忘却前夜\n感谢寄售和无料赞助：桉安、区寄、堇\n\n——\n又在决战最晚摊宣（。）怎么就到cp前两天了！\n最后做得十分 ...全文",
-      "url": "https://m.weibo.cn/status/5292758363540030",
       "author": "",
       "engagement": 0
     },
@@ -1481,7 +2042,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-04-28T17:31:28.056766+00:00",
+      "time": "2026-04-28T19:20:31.904711+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
@@ -1495,7 +2056,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜本地化笔记 #3",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57zSDsavJF19q66xd42UX4oFqXa8Fplpd9ivM0XO3tdfMJWc2nUwb5xDqVeufqYdLqDMJ4X986Uc_3DckJXmywsQDa_iYi6B4LiEsHxGsubexoOhUASdmpkb8o8LVen87B4GeZM9uO_-ewLa1XVLGXVwO04P5u2RpXZAnkF2kNMUtCYXfF6fK3uIf7gLS6Tt1AIBoEtBL200Zr1dbZWbKUeQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=2240B553FF06238FCEC89E4757380BBECF63714369F0EEF1",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS1--sCvZzZ_gNfnNQ-jUu3e66xd42UX4oFqXa8Fplpd9ivM0XO3tdfMJWc2nUwb5xDqVeufqYdLqDMJ4X986Uc_3DckJXmywsVmuIG5QXB7HKiXPCu-nJGiwGhoCXBXSHqWkiRetzxTHtKJ9B-DADY0gdV8JrLXCge7-BnoVPGiQeBeJphAQXfefC_wIjhylgXdIXc4jm55t0nljJVbsAADs46dn8Efgxg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=22CAA09CF2572B426B6D3BE04B6BAA236BD10EBA69F10880",
       "author": "",
       "engagement": 0
     },
@@ -1505,7 +2066,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜本地化笔记 #3",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7TbJTv0Lw57SKFpzS_4Hu666xd42UX4oFqXa8Fplpd9ivM0XO3tdfMJWc2nUwb5xDqVeufqYdLqDMJ4X986Uc_3DckJXmywsQDa_iYi6B4LiEsHxGsubexoOhUASdmpkYMXyUPG7FvGf3KFbhWbXocy0Hp7CkF7ENZE4Am7yaSy3QGLwldZTXUPboVi9SvbasuTa7_ptdZRIDaHSSt7ZlnRtmyIGw2VAg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=2240D34443B89E31727422F9EB2458E97223AE3A69F0EEF7",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS1--sCvZzZ_glX3mUzQP3Rq66xd42UX4oFqXa8Fplpd9ivM0XO3tdfMJWc2nUwb5xDqVeufqYdLqDMJ4X986Uc_3DckJXmywsVmuIG5QXB7HKiXPCu-nJGiwGhoCXBXSHg9pATvLyOzdzbT-4VkwjSP_EadOAHbkqWPjt4E8L6TT8URMChJKNgeRiAqpqo_L41Wz2o2H5Q9bYUOl4qFsgLr2CsG6-xMgzQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=22CAA90D79DFA3C9E1E7B26BC2F030AAE2DB627669F10882",
       "author": "",
       "engagement": 0
     }
