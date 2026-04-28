@@ -1,10 +1,16 @@
 # 忘却前夜 社区日报 2026-04-29
 
-> 采集时间：2026-04-29 06:50 UTC+8
+> 采集时间：2026-04-29 07:47 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] [AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线” — engagement: 133
+1. [Bilibili] [AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线” — engagement: 147
+2. [微博] 忘却前夜×沙耶之歌 联动预告
+
+梦的碎片 随风而至
+
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
 
 ## 总览
 
@@ -13,7 +19,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 29 |
+| Bilibili | 27 |
 | Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
@@ -21,10 +27,10 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 0（24h内无新内容）|
-| Reddit | 40 |
+| Pixiv | 1 |
+| Reddit | 19 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 8 |
+| Steam | 9 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
@@ -49,16 +55,16 @@
 
 ## Steam 评论
 
-- 好评 6 / 差评 2 / 好评率 75%
-- 语言分布：english 3, schinese 3, koreana 2
+- 好评 7 / 差评 2 / 好评率 78%
+- 语言分布：english 3, schinese 3, koreana 2, latam 1
 
 ### 热门好评
 
-1. [正面] fish team good — engagement: 0
-2. [正面] 십덕 슬더스 — engagement: 0
-3. [正面] Since the release of StS back in 2019, rouge-like... — engagement: 0
-4. [正面] . — engagement: 0
-5. [正面] — engagement: 0
+1. [正面] buen mecanismo de juego y enamorada completamente... — engagement: 0
+2. [正面] fish team good — engagement: 0
+3. [正面] 십덕 슬더스 — engagement: 0
+4. [正面] Since the release of StS back in 2019, rouge-like... — engagement: 0
+5. [正面] . — engagement: 0
 
 ### ⚠️ 差评
 
@@ -67,11 +73,11 @@
 
 ## Bilibili
 
-1. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 640
-2. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 629
-3. ［相位］问他输了赢了，他说忘关了 — engagement: 496
-4. ［相位］问他输了赢了，他说忘关了 — engagement: 488
-5. [忘却前夜]莉鸟双c融灾5–5 — engagement: 387
+1. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 856
+2. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 841
+3. ［相位］问他输了赢了，他说忘关了 — engagement: 508
+4. ［相位］问他输了赢了，他说忘关了 — engagement: 498
+5. 忘却前夜出号 — engagement: 344
 
 ## Official
 
@@ -81,13 +87,17 @@
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
+## Pixiv
+
+1.  — engagement: 0
+
 ## Reddit
 
 1. Neco-Kar :3 — engagement: 0
 2. New code: EPEG-GXSH-HBSX — engagement: 0
 3. Arachne + Wanda Strength down — engagement: 0
 4. Arachne is nuts, no wonder her setup is like a 5 step proces — engagement: 0
-5. The cosmic horror of Morimens — engagement: 0
+5. What is a seasonal mission? — engagement: 0
 
 ## StopGame.ru
 
@@ -98,15 +108,16 @@
 1. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-2. 忘却前夜┊唤醒体展示✦徐
-妾身乃不梦乡之主，徐。
-若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
+2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+3. 12758【投稿】忘却前夜。我主任 — engagement: 0
+4. 忘却前夜×沙耶之歌 联动预告
 
-✦ 徐 CV： — engagement: 0
-3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-4. 12758【投稿】忘却前夜。我主任 — engagement: 0
-5. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
+梦的碎片 随风而至
+
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
+5. 忘却前夜 记录了一下这两天隔壁孝子对你游各种造谣以及煎炒的言论只希望画师认领的那天别偷偷删帖哟。事情起因大概是从红薯管博 — engagement: 0
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
