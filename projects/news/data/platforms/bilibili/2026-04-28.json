@@ -1,8 +1,8 @@
 {
   "date": "2026-04-28",
-  "archived_at": "2026-04-28T12:23:23.797655+00:00",
+  "archived_at": "2026-04-28T15:19:24.245167+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "source": "bilibili",
@@ -169,6 +169,24 @@
         "play": 61,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T13:43:46+00:00",
+      "lang": "zh",
+      "title": "[AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线”",
+      "summary": "曲：ガラスのくつ\n唱：AI祥子\n效果不是很好，分离出来的干声不是很干净，就是这种效果了（）\n  └ 蘭玉心和 (1赞): [哦呼]居然是这首[少女乐团派对_开心]（⌒▽⌒）",
+      "url": "https://www.bilibili.com/video/BV1Nw9kBhEvF",
+      "author": "Asedell轩晨",
+      "engagement": 20,
+      "media_url": "https://i0.hdslb.com/bfs/archive/43ed55f5d729b42b078b0917ebe71e03d4448143.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 19,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
