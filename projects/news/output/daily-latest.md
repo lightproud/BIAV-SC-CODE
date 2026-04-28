@@ -1,10 +1,16 @@
 # 忘却前夜 社区日报 2026-04-29
 
-> 采集时间：2026-04-29 03:21 UTC+8
+> 采集时间：2026-04-29 05:01 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] [AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线” — engagement: 98
+1. [Bilibili] [AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线” — engagement: 116
+2. [微博] 忘却前夜×沙耶之歌 联动预告
+
+梦的碎片 随风而至
+
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
 
 ## 总览
 
@@ -13,8 +19,8 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 20 |
-| Discord | 0（24h内无新内容）|
+| Bilibili | 25 |
+| Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -30,10 +36,22 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 19 |
+| 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 19 |
+| YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
+
+## Discord
+
+今日 12,878 条消息，378 位活跃用户，1,545 次反应。热门频道：🔸phòng-chat-tiếng-việt(2248)、🔸general-chat(2243)、🔸canal-português(1969)、🔸ruang-obrolan-indonesia(1362)、🔸game-question(1277)
+
+### 热门话题
+
+1. [DC] morimensstaff06@🔸礼包码┊gift-codes: 🎁 DC 41000守密人达成礼 / DC  — engagement: 1262
+2. [DC] angbak@🔸綜合討論: (附件/嵌入) — engagement: 57
+3. [DC] iulargerthan3@🔸晒卡分享: 本來想弄給蜘蛛的 結果變成上貢給墨菲大人了 — engagement: 31
+4. [DC] polkarain@🔸綜合討論: 收工 — engagement: 30
+5. [DC] mega.png@🔸活动资讯┊event-information: she has to be caro 🙏 — engagement: 30
 
 ## Steam 评论
 
@@ -55,11 +73,11 @@
 
 ## Bilibili
 
-1. ［相位］问他输了赢了，他说忘关了 — engagement: 470
-2. ［相位］问他输了赢了，他说忘关了 — engagement: 461
-3. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 418
-4. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 405
-5. [忘却前夜]莉鸟双c融灾5–5 — engagement: 372
+1. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 514
+2. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 501
+3. ［相位］问他输了赢了，他说忘关了 — engagement: 487
+4. ［相位］问他输了赢了，他说忘关了 — engagement: 478
+5. [忘却前夜]莉鸟双c融灾5–5 — engagement: 380
 
 ## Official
 
@@ -86,26 +104,16 @@
 1. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-2. 忘却前夜丨弥萨格调查局CP32行动指南
-
-致全体即将前往新前线的守密人：
-
-新的异常波动已被精确锁定。
-
-观测信号不再模 — engagement: 0
+2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
 3. 12758【投稿】忘却前夜。我主任 — engagement: 0
-4. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
-5. 忘却前夜
-问一下大家该怎么配对呀一直在乱玩 — engagement: 0
+4. 忘却前夜×沙耶之歌 联动预告
 
-## YouTube
+梦的碎片 随风而至
 
-1. 🎬 Morimens┊V2.5 PV - Web of the Moirai (VA: Ōnishi Saori) — engagement: 570323
-2. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 290931
-3. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 42896
-4. Clementine edit | Forget last night: Morimens — engagement: 33343
-5. Morimens Beginner Progression Guide (2026 Edition) — engagement: 21276
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
+5. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, Discord, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎

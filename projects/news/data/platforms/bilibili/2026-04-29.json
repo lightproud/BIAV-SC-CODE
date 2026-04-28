@@ -1,8 +1,8 @@
 {
   "date": "2026-04-29",
-  "archived_at": "2026-04-28T19:21:54.028992+00:00",
+  "archived_at": "2026-04-28T21:01:54.291531+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 8,
   "items": [
     {
       "source": "bilibili",
@@ -33,6 +33,84 @@
       "engagement": 152,
       "media_url": "//i2.hdslb.com/bfs/archive/f01d28dad802fc0f7de74115ab84547771cd8ce6.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T19:35:29+00:00",
+      "lang": "zh",
+      "title": "忘却前夜3+3阿拉克涅主线第七章差点翻车太难了",
+      "summary": "└ 虎牙宣宝 (0赞): https://b23.tv/mall-NG124-73qAF",
+      "url": "https://www.bilibili.com/video/BV1Vv92BWEsa",
+      "author": "虎牙宣宝",
+      "engagement": 19,
+      "media_url": "https://i0.hdslb.com/bfs/archive/73781c610063d64f7c8f9687a8e3f749cc6eea98.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 18,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T19:35:29+00:00",
+      "lang": "zh",
+      "title": "忘却前夜3+3阿拉克涅主线第七章差点翻车太难了",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116483992584800",
+      "author": "虎牙宣宝",
+      "engagement": 18,
+      "media_url": "//i0.hdslb.com/bfs/archive/73781c610063d64f7c8f9687a8e3f749cc6eea98.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T19:56:13+00:00",
+      "lang": "zh",
+      "title": "雪莲一球1t容灾5-5，小心……基伤造物……",
+      "summary": "-\n  └ 伊莎玛拉-大群来了 (0赞): 一球...超人",
+      "url": "https://www.bilibili.com/video/BV1ao91BJEdW",
+      "author": "路过的耄耋",
+      "engagement": 13,
+      "media_url": "https://i1.hdslb.com/bfs/archive/f7be41be4bdc01e3d9ec714e4b2ca86571714d21.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 12,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T19:56:13+00:00",
+      "lang": "zh",
+      "title": "雪莲一球1t容灾5-5，小心……基伤造物……",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116484076477132",
+      "author": "路过的耄耋",
+      "engagement": 12,
+      "media_url": "//i1.hdslb.com/bfs/archive/f7be41be4bdc01e3d9ec714e4b2ca86571714d21.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T20:31:48+00:00",
+      "lang": "zh",
+      "title": "朋友生活两个可爱宝宝",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1xu92B3EiE",
+      "author": "卷毛的猫",
+      "engagement": 2,
+      "media_url": "https://i2.hdslb.com/bfs/archive/f0254ae450b757dd8b074a55d989a5f18c486824.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 2,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
