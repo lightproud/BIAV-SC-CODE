@@ -1,34 +1,41 @@
 {
   "date": "2026-04-27",
-  "messages": 14203,
+  "messages": 21097,
   "unique_authors": 435,
-  "reactions_total": 1185,
-  "attachments": 712,
+  "reactions_total": 1876,
+  "attachments": 1119,
   "channel_activity": {
-    "🔸綜合討論": 3176,
+    "🔸綜合討論": 3219,
+    "🔸morimens-game-chat": 8727,
+    "🔸한국어-채팅방": 17,
+    "🔸русский-канал": 953,
+    "🔸phòng-chat-tiếng-việt": 911,
+    "🔸canal-español": 517,
+    "🔸canal-português": 1324,
+    "🔸ruang-obrolan-indonesia": 769,
+    "🔸traphase": 227,
+    "🔸lore-chat": 53,
+    "🔸team-building": 272,
+    "🔸general-chat": 2452,
+    "🔸邀请码互助┊swap-invitation-codes": 12,
+    "🔸game-question": 981,
+    "🔸机器人命令┊bot-commands": 27,
+    "Normalize ranking rewards to encourage participation": 7,
+    "💭「Processing」New ultra has strange hand size rules": 2,
+    "💭「Processing」Same name but different intentions": 1,
+    "Reality Verges": 6,
+    "V2.5.0 命运剧院┊Theater of Fate": 1,
+    "Recommended lineups and characters?": 1,
+    "New player team and pull recomendations. Please help!!": 1,
     "🔸阵容构建": 107,
-    "🔸morimens-game-chat": 3727,
     "🔸剧情交流": 22,
     "🔸晒卡分享": 3,
     "🔸相位对弈": 23,
     "🔸课间休息闲聊": 13,
     "🔸日本語チャンネル": 1,
-    "🔸한국어-채팅방": 16,
     "🔸deutscher-chatraum": 1,
-    "🔸русский-канал": 290,
-    "🔸phòng-chat-tiếng-việt": 906,
-    "🔸canal-español": 411,
-    "🔸canal-português": 1136,
-    "🔸ruang-obrolan-indonesia": 748,
     "🔸ห้องสนทนาภาษาไทย": 166,
-    "🔸traphase": 139,
-    "🔸lore-chat": 47,
-    "🔸team-building": 248,
-    "🔸general-chat": 2046,
-    "🔸邀请码互助┊swap-invitation-codes": 9,
-    "🔸game-question": 662,
     "🔸忘却前夜┊morimens-tv": 3,
-    "🔸机器人命令┊bot-commands": 20,
     "🔸erica-playground": 4,
     "由三常駐作為核心組成的融災逃課隊伍": 15,
     "因為沒有5771周邊遂自己手搓一個": 3,
@@ -48,7 +55,6 @@
     "阿格里帕最終法則相關": 1,
     "这什么情况": 2,
     "✅「Answered」Chapter 5 fervor bug": 3,
-    "Reality Verges": 5,
     "✅「已回答」塔薇最终法则/Tawil's Absolute Axiom BUG": 6,
     "典藏馆事件能不能加个指引……": 1,
     "珊的最終法則與靈塑之錯誤": 1,
@@ -79,6 +85,22 @@
     "1498351626115879135": 1
   },
   "hourly_activity": {
+    "19": 1071,
+    "20": 379,
+    "21": 241,
+    "22": 436,
+    "23": 268,
+    "8": 1238,
+    "9": 989,
+    "10": 1253,
+    "11": 1244,
+    "12": 1570,
+    "13": 867,
+    "14": 1428,
+    "15": 964,
+    "16": 624,
+    "17": 949,
+    "18": 945,
     "0": 641,
     "1": 450,
     "2": 740,
@@ -86,30 +108,22 @@
     "4": 1100,
     "5": 681,
     "6": 849,
-    "7": 1197,
-    "8": 1097,
-    "9": 455,
-    "10": 586,
-    "11": 689,
-    "12": 1093,
-    "13": 649,
-    "14": 906,
-    "15": 576,
-    "16": 231,
-    "17": 483,
-    "18": 670,
-    "19": 137
+    "7": 1197
   },
   "message_types": {
-    "0": 10527,
-    "19": 3660,
-    "23": 2,
-    "20": 1,
-    "4": 8,
-    "6": 2,
-    "21": 3
+    "0": 4901,
+    "19": 1991,
+    "20": 2
   },
   "top_reacted_messages": [
+    {
+      "id": "1498444697163534416",
+      "channel_id": "1498444697163534416",
+      "content": "One of the main stress points with the new ranking reward system is the weightin",
+      "author": "arkaether",
+      "reactions": 22,
+      "channel": "Normalize ranking rewards to encourage participation"
+    },
     {
       "id": "1498201740913152222",
       "channel_id": "1174983699935277147",
@@ -125,6 +139,14 @@
       "author": "papcrawn",
       "reactions": 10,
       "channel": "My morimens oc yayy"
+    },
+    {
+      "id": "1498449151677956316",
+      "channel_id": "1498444697163534416",
+      "content": "cause it is basically feeding the rich. I dont need sparks but it is easier for ",
+      "author": "monchi3524",
+      "reactions": 9,
+      "channel": "Normalize ranking rewards to encourage participation"
     },
     {
       "id": "1498252990652350515",
@@ -159,6 +181,22 @@
       "channel": "🏆 忘却前夜第4届N厨杯┊The 4th 「N」′s Chef Cup of Morimens"
     },
     {
+      "id": "1498273884632383528",
+      "channel_id": "1170692781216378960",
+      "content": "一緒に行く\n仲間もっともっと\n海遊ぶ\n\nAurita haiku <:please:1356053110375714817>",
+      "author": "chinkeeyong",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1498398336179245167",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "undeterredhomo",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1498279137008287754",
       "channel_id": "1495670208004882483",
       "content": "still tedious but its fine",
@@ -173,6 +211,14 @@
       "author": "_venush",
       "reactions": 8,
       "channel": "V2.5.0.3 在线维护公告"
+    },
+    {
+      "id": "1498275628527648883",
+      "channel_id": "1170692781216378960",
+      "content": "What makes you think Arisu doesn't rawdawg his pets ?",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1498227625804566679",
@@ -228,46 +274,6 @@
       "content": "但是這是事實",
       "author": "eddy10051115",
       "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498272384871043127",
-      "channel_id": "1131839817982947429",
-      "content": "派獎了耶☝️ 🤓",
-      "author": "heikwok",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498343845027385344",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "vgvfvffcc",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498154046920458424",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "tnimreppep",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1498314257400332429",
-      "channel_id": "1498314257400332429",
-      "content": "技術力為零，我甚至沒有把電線藏好",
-      "author": "myth1538",
-      "reactions": 6,
-      "channel": "因為沒有5771周邊遂自己手搓一個"
-    },
-    {
-      "id": "1498167947884101743",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 5,
       "channel": "🔸綜合討論"
     }
   ]
