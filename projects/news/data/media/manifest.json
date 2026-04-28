@@ -2757,6 +2757,13 @@
       "title": "[忘却前夜]莉鸟双c融灾5–5",
       "time": "2026-04-27T23:29:18+00:00",
       "downloaded_at": "2026-04-28T01:55:13.907762+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/67c3ac90b8fbadf8dfecc636445c3a303893b0eb.jpg": {
+      "filename": "bilibili_525cf22ec16b9c41.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜出号",
+      "time": "2026-04-28T00:35:54+00:00",
+      "downloaded_at": "2026-04-28T05:25:46.683101+00:00"
     }
   },
   "failed": {
@@ -3714,6 +3721,31 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-28T01:55:14.208724+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/67c3ac90b8fbadf8dfecc636445c3a303893b0eb.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T05:25:46.984135+00:00"
+    },
+    "https://preview.redd.it/40bnghd5vtxg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=6d8c3950d2b474466d7f5dc51e2be04e80f475e1": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T05:25:47.511852+00:00"
+    },
+    "https://preview.redd.it/5c7cy4qtgtxg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=bc4e79c922be6347beee5d381113d2e9a4e84614": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T05:25:47.877080+00:00"
+    },
+    "https://preview.redd.it/fx6kxrisbuxg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d46ec21875b6472a68f4353bff932c2f49cf2754": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T05:25:48.242095+00:00"
+    },
+    "https://preview.redd.it/s6s8swmw0vxg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=7baadbb05be5865e89f9d517feaf896138ef93a3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T05:25:48.606476+00:00"
     }
   },
   "archived": []
