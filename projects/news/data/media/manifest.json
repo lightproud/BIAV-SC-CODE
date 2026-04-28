@@ -2946,6 +2946,20 @@
       "title": "朋友生活两个可爱宝宝",
       "time": "2026-04-28T20:31:48+00:00",
       "downloaded_at": "2026-04-28T21:01:54.231562+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/c2810d7addce3dae15efc14f7253715a9f1186ac.jpg": {
+      "filename": "bilibili_64e10a3a26545a24.jpg",
+      "source": "bilibili",
+      "title": "容灾一图，雪莲容灾1t1500w，造物和牌序懒得凹了",
+      "time": "2026-04-28T21:02:13+00:00",
+      "downloaded_at": "2026-04-28T21:58:36.443534+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/e24d20f72ac407531ed0ef650e682ae6f263919e.jpg": {
+      "filename": "bilibili_9436c90478411f00.jpg",
+      "source": "bilibili",
+      "title": "一图三道中鸟弟，无造物落地400w……，小心……蜘蛛和最终",
+      "time": "2026-04-28T21:50:39+00:00",
+      "downloaded_at": "2026-04-28T21:58:38.198675+00:00"
     }
   },
   "failed": {
@@ -4023,6 +4037,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-28T21:01:52.222432+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/c2810d7addce3dae15efc14f7253715a9f1186ac.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T21:58:36.744559+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/e24d20f72ac407531ed0ef650e682ae6f263919e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T21:58:38.499407+00:00"
     }
   },
   "archived": []

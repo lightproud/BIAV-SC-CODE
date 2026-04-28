@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-29
 
-> 采集时间：2026-04-29 05:01 UTC+8
+> 采集时间：2026-04-29 05:58 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] [AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线” — engagement: 116
+1. [Bilibili] [AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线” — engagement: 119
 2. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -19,7 +19,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 25 |
+| Bilibili | 29 |
 | Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
@@ -28,7 +28,7 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 0（24h内无新内容）|
-| Reddit | 38 |
+| Reddit | 20 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 8 |
 | Steam 论坛 | 0（沉默）|
@@ -73,11 +73,11 @@
 
 ## Bilibili
 
-1. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 514
-2. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 501
-3. ［相位］问他输了赢了，他说忘关了 — engagement: 487
-4. ［相位］问他输了赢了，他说忘关了 — engagement: 478
-5. [忘却前夜]莉鸟双c融灾5–5 — engagement: 380
+1. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 561
+2. [忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号 — engagement: 551
+3. ［相位］问他输了赢了，他说忘关了 — engagement: 489
+4. ［相位］问他输了赢了，他说忘关了 — engagement: 480
+5. [忘却前夜]莉鸟双c融灾5–5 — engagement: 384
 
 ## Official
 
@@ -91,8 +91,8 @@
 
 1. Neco-Kar :3 — engagement: 0
 2. New code: EPEG-GXSH-HBSX — engagement: 0
-3. Arachne is nuts, no wonder her setup is like a 5 step proces — engagement: 0
-4. Arachne + Wanda Strength down — engagement: 0
+3. Arachne + Wanda Strength down — engagement: 0
+4. Arachne is nuts, no wonder her setup is like a 5 step proces — engagement: 0
 5. The cosmic horror of Morimens — engagement: 0
 
 ## StopGame.ru
@@ -112,7 +112,8 @@
 
 #忘却前夜# #沙耶之歌#
 忘却前夜 #Morimens# 忘却前 — engagement: 0
-5. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
+5. 忘却前夜#波吕克斯#
+意思是不小心对圣子大人犯错误了🥺👉👈 — engagement: 0
 
 ## 沉默平台
 
