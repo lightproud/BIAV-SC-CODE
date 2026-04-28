@@ -2820,6 +2820,27 @@
       "title": "[AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线”",
       "time": "2026-04-28T13:43:46+00:00",
       "downloaded_at": "2026-04-28T15:19:22.904303+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/f01d28dad802fc0f7de74115ab84547771cd8ce6.jpg": {
+      "filename": "bilibili_44e1fde99b7a455a.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]五月最新兑换码 五百银芯外加五个无垢，截止5月12号",
+      "time": "2026-04-28T17:00:16+00:00",
+      "downloaded_at": "2026-04-28T17:32:49.571667+00:00"
+    },
+    "https://i.ytimg.com/vi/D97VBY5AmvA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCMm1fhU61Zpx3LK7jKsXVQuREgog": {
+      "filename": "youtube_6976795ed0170de8.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】STOP！対人違法編成",
+      "time": "2026-04-28T16:29:46.360835+00:00",
+      "downloaded_at": "2026-04-28T17:32:50.545503+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/c5d924ba5c804b5039ef5f4640ba8158cf882d82.jpg": {
+      "filename": "bilibili_e5ccbe06678636ee.jpg",
+      "source": "bilibili",
+      "title": "存",
+      "time": "2026-04-28T17:21:16+00:00",
+      "downloaded_at": "2026-04-28T17:32:51.597437+00:00"
     }
   },
   "failed": {
@@ -3847,6 +3868,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-28T15:19:24.177539+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/f01d28dad802fc0f7de74115ab84547771cd8ce6.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T17:32:49.872424+00:00"
+    },
+    "https://external-preview.redd.it/dWtrNWIxcXpseXhnMe9xTLdpTFzejEV9bok06nwJXa61DckSZW6FZC62Dq2P.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=2c87788878f9bbb5cf10c6da361ee52e2ba02677": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T17:32:51.962008+00:00"
+    },
+    "https://preview.redd.it/azgqseckayxg1.png?width=140&amp;height=78&amp;auto=webp&amp;s=1fbe2d648848ea3dabf7428f51afda0036daeb12": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T17:32:52.325302+00:00"
+    },
+    "https://preview.redd.it/90vgo8vzbyxg1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=43e5a0c4f9be66ab7c50776e932a4a8cc48fd915": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T17:32:52.656487+00:00"
     }
   },
   "archived": []
