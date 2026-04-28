@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-28
 
-> 采集时间：2026-04-28 09:55 UTC+8
+> 采集时间：2026-04-28 13:25 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 沙耶之歌模型（半成品） — engagement: 320
+1. [Bilibili] 沙耶之歌模型（半成品） — engagement: 380
 2. [Steam] [正面] 好玩，期待沙耶之歌联动！ — engagement: 0
 
 ## 总览
@@ -14,16 +14,16 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 28 |
-| Discord | 15 |
+| Bilibili | 24 |
+| Discord | 13 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 0（24h内无新内容）|
-| Reddit | 15 |
+| Pixiv | 1 |
+| Reddit | 36 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 6 |
 | Steam 论坛 | 0（沉默）|
@@ -75,11 +75,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3245
-2. 【忘却前夜】4.27-5.12容灾全图全流程N5攻略(待更新，可收藏) — engagement: 3228
-3. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 3018
-4. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 2991
-5. 杀戮尖塔2-沙耶mod-v1.5 — engagement: 1370
+1. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 3330
+2. 【忘却前夜】别再犹豫，阿拉克涅即将成为未来的人权 — engagement: 3294
+3. 杀戮尖塔2-沙耶mod-v1.5 — engagement: 1801
+4. 【忘却前夜】全常驻+借人融灾禁区400 — engagement: 887
+5. 【忘却前夜】全常驻+借人融灾禁区400 — engagement: 875
 
 ## Official
 
@@ -89,13 +89,17 @@
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
+## Pixiv
+
+1.  — engagement: 0
+
 ## Reddit
 
 1. Dzone Mechanics Overview, Week of 4/27/26. — engagement: 0
-2. Morimens will have an official booth at an upcoming Comic Co — engagement: 0
-3. The cosmic horror of Morimens — engagement: 0
-4. Favorite eldritch designs? — engagement: 0
-5. I drew Tinct! — engagement: 0
+2. The cosmic horror of Morimens — engagement: 0
+3. Morimens will have an official booth at an upcoming Comic Co — engagement: 0
+4. Absolute Partner — engagement: 0
+5. Favorite eldritch designs? — engagement: 0
 
 ## StopGame.ru
 
@@ -103,22 +107,22 @@
 
 ## 微博
 
-1. 忘却前夜#忘却前夜#
+1. 12758【投稿】忘却前夜。我主任 — engagement: 0
+2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-2. 忘却前夜┊唤醒体展示✦徐
+3. 忘却前夜┊唤醒体展示✦徐
 妾身乃不梦乡之主，徐。
 若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。
 
 ✦ 徐 CV： — engagement: 0
-3. 忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」
+4. 忘却前夜 《忘却前夜》丨概念PV——「献给春天的花束」
 诗歌是她的语言，玫瑰是她的修辞。花园是一道谜题，春天是她的答案
  — engagement: 0
-4. 12758【投稿】忘却前夜。我主任 — engagement: 0
 5. 参与演出概念监修的工事图及前期概念🌈感谢组里老师的指导
 
 忘却前夜 — engagement: 0
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎

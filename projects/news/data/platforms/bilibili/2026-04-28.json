@@ -1,9 +1,39 @@
 {
   "date": "2026-04-28",
-  "archived_at": "2026-04-28T01:58:12.298649+00:00",
+  "archived_at": "2026-04-28T05:25:48.673509+00:00",
   "source": "bilibili",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T00:35:54+00:00",
+      "lang": "zh",
+      "title": "忘却前夜出号",
+      "summary": "-\n  └ 看到me请t我去背单词 (1赞): 不接受微信打款等方式啊，咱们还是通过正规平台好嘛？\n  └ 看到me请t我去背单词 (0赞): 小糊游怎么可能我一发就有人买，我是不信的\n  └ 月球上最后的外星人 (0赞): 这个游戏能找回吗？[笑哭]",
+      "url": "https://www.bilibili.com/video/BV1QU9zBhEgL",
+      "author": "看到me请t我去背单词",
+      "engagement": 150,
+      "media_url": "https://i1.hdslb.com/bfs/archive/67c3ac90b8fbadf8dfecc636445c3a303893b0eb.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 142,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T00:35:54+00:00",
+      "lang": "zh",
+      "title": "忘却前夜出号",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116479513139168",
+      "author": "看到me请t我去背单词",
+      "engagement": 142,
+      "media_url": "//i1.hdslb.com/bfs/archive/67c3ac90b8fbadf8dfecc636445c3a303893b0eb.jpg",
+      "content_type": "video"
+    },
     {
       "source": "bilibili",
       "time": "2026-04-27T23:29:18+00:00",
