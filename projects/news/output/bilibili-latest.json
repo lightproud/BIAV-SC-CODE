@@ -1,38 +1,8 @@
 {
-  "collected_at": "2026-04-28T19:21:48.881528+00:00",
+  "collected_at": "2026-04-28T21:01:43.715569+00:00",
   "source": "bilibili",
-  "item_count": 20,
+  "item_count": 25,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-04-28T08:58:51+00:00",
-      "lang": "zh",
-      "title": "［相位］问他输了赢了，他说忘关了",
-      "summary": "-\n  └ 不知今世为何 (6赞): 为什么我莱克连续15次都是16？[笑哭][笑哭][笑哭]\n  └ 不知今世为何 (2赞): 谨慎学习[星星眼][星星眼][星星眼]\n  └ 阁白尼 (1赞): 看看这个怎么样，otk实在打不过，娱乐阵容打了3000分玩[妙啊]",
-      "url": "https://www.bilibili.com/video/BV1Eg96BjEi9",
-      "author": "莱星Ligh",
-      "engagement": 470,
-      "media_url": "https://i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 461,
-        "comment_count": 9,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-04-28T08:58:51+00:00",
-      "lang": "zh",
-      "title": "［相位］问他输了赢了，他说忘关了",
-      "summary": "-",
-      "url": "http://www.bilibili.com/video/av116481492782193",
-      "author": "莱星Ligh",
-      "engagement": 461,
-      "media_url": "//i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg",
-      "content_type": "video"
-    },
     {
       "source": "bilibili",
       "time": "2026-04-28T17:00:16+00:00",
@@ -41,11 +11,11 @@
       "summary": "-\n  └ 渔歌伴晚舟 (5赞): EPEG-GXSH-HBSX\n  └ 邓肯船长和他的失乡号 (0赞): @一只很屑の阿蒙\n  └ 临鸾晚妆初罢 (0赞): 太棒啦，主播知不知道图鲁红夫人融朵三池5天后下线会上什么新池子，抽了+12但是没有鸟哥，不知道啥时候复刻，0费保留黑羽触发追击太赚了",
       "url": "https://www.bilibili.com/video/BV15S9CB7EoG",
       "author": "渔歌伴晚舟",
-      "engagement": 418,
+      "engagement": 514,
       "media_url": "https://i2.hdslb.com/bfs/archive/f01d28dad802fc0f7de74115ab84547771cd8ce6.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 405,
+        "play": 501,
         "comment_count": 13,
         "comments_fetched": 3,
         "danmaku": 0
@@ -59,8 +29,38 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116483388741433",
       "author": "渔歌伴晚舟",
-      "engagement": 405,
+      "engagement": 501,
       "media_url": "//i2.hdslb.com/bfs/archive/f01d28dad802fc0f7de74115ab84547771cd8ce6.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T08:58:51+00:00",
+      "lang": "zh",
+      "title": "［相位］问他输了赢了，他说忘关了",
+      "summary": "-\n  └ 不知今世为何 (6赞): 为什么我莱克连续15次都是16？[笑哭][笑哭][笑哭]\n  └ 不知今世为何 (2赞): 谨慎学习[星星眼][星星眼][星星眼]\n  └ 阁白尼 (1赞): 看看这个怎么样，otk实在打不过，娱乐阵容打了3000分玩[妙啊]",
+      "url": "https://www.bilibili.com/video/BV1Eg96BjEi9",
+      "author": "莱星Ligh",
+      "engagement": 487,
+      "media_url": "https://i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 478,
+        "comment_count": 9,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T08:58:51+00:00",
+      "lang": "zh",
+      "title": "［相位］问他输了赢了，他说忘关了",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116481492782193",
+      "author": "莱星Ligh",
+      "engagement": 478,
+      "media_url": "//i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg",
       "content_type": "video"
     },
     {
@@ -71,11 +71,11 @@
       "summary": "似乎有说法，🌰前期叠毒顺便贡献保留手牌给鸟弟叠罪印，叠满毒就转换为鸟弟c#忘却前夜\n  └ 伤春客 (1赞): 我们dot女子不会输[热]\n  └ splendid_scenery (0赞): 卧槽好厉害的想法",
       "url": "https://www.bilibili.com/video/BV1gMo2BXEch",
       "author": "护林犬",
-      "engagement": 372,
+      "engagement": 380,
       "media_url": "https://i0.hdslb.com/bfs/archive/d4296318446236d119c920f7ff5c048596e7c40e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 370,
+        "play": 378,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
@@ -89,7 +89,7 @@
       "summary": "似乎有说法，🌰前期叠毒顺便贡献保留手牌给鸟弟叠罪印，叠满毒就转换为鸟弟c#忘却前夜",
       "url": "http://www.bilibili.com/video/av116479261413699",
       "author": "护林犬",
-      "engagement": 371,
+      "engagement": 378,
       "media_url": "//i0.hdslb.com/bfs/archive/d4296318446236d119c920f7ff5c048596e7c40e.jpg",
       "content_type": "video"
     },
@@ -101,11 +101,11 @@
       "summary": "-\n  └ 看到me请t我去背单词 (1赞): 不接受微信打款等方式啊，咱们还是通过正规平台好嘛？\n  └ 只为走远而为你 (0赞): 想 要 回 关，谈下\n  └ 诚心不朽 (0赞): 兄弟给个价，刚入坑",
       "url": "https://www.bilibili.com/video/BV1QU9zBhEgL",
       "author": "看到me请t我去背单词",
-      "engagement": 333,
+      "engagement": 338,
       "media_url": "https://i1.hdslb.com/bfs/archive/67c3ac90b8fbadf8dfecc636445c3a303893b0eb.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 299,
+        "play": 304,
         "comment_count": 34,
         "comments_fetched": 3,
         "danmaku": 0
@@ -119,7 +119,7 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116479513139168",
       "author": "看到me请t我去背单词",
-      "engagement": 299,
+      "engagement": 304,
       "media_url": "//i1.hdslb.com/bfs/archive/67c3ac90b8fbadf8dfecc636445c3a303893b0eb.jpg",
       "content_type": "video"
     },
@@ -131,11 +131,11 @@
       "summary": "-\n  └ 沙耶郁纪 (0赞): [喜欢][喜欢][喜欢][喜欢]\n  └ okkookko__ (0赞): 美\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
       "url": "https://www.bilibili.com/video/BV14z96B4EgN",
       "author": "纱奈绫香",
-      "engagement": 249,
+      "engagement": 250,
       "media_url": "https://i1.hdslb.com/bfs/archive/51eda402b9a861c0a358befb325a51925cd0bd4f.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 246,
+        "play": 247,
         "comment_count": 3,
         "comments_fetched": 3,
         "danmaku": 0
@@ -149,11 +149,11 @@
       "summary": "-\n  └ Nautilus114 (1赞): 沙子可爱捏\n  └ 重音艾绘喵 (1赞): 强强[打call]\n  └ 如月最高性能 (0赞): 很好",
       "url": "https://www.bilibili.com/video/BV1nS96BSEcH",
       "author": "孔雀QvQ",
-      "engagement": 233,
+      "engagement": 241,
       "media_url": "https://i0.hdslb.com/bfs/archive/b82d9105a853beeb3f51666f764f9662f102ff0b.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 224,
+        "play": 232,
         "comment_count": 9,
         "comments_fetched": 3,
         "danmaku": 0
@@ -167,11 +167,11 @@
       "summary": "-\n  └ 金发女人丨型 (4赞): 奶龙已占领忘却前夜.......\n  └ 路过的耄耋 (1赞): 我了……忧郁……看湖……奶龙\n  └ composite_resin (1赞): 奶鼠…不赖",
       "url": "https://www.bilibili.com/video/BV1eN9rBzE8Y",
       "author": "伊莎玛拉-大群来了",
-      "engagement": 223,
+      "engagement": 228,
       "media_url": "https://i0.hdslb.com/bfs/archive/9cbb9e547f0c1fe27e77c7619c2465bff5459814.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 211,
+        "play": 216,
         "comment_count": 12,
         "comments_fetched": 3,
         "danmaku": 0
@@ -185,7 +185,7 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116480888935629",
       "author": "伊莎玛拉-大群来了",
-      "engagement": 211,
+      "engagement": 216,
       "media_url": "//i0.hdslb.com/bfs/archive/9cbb9e547f0c1fe27e77c7619c2465bff5459814.jpg",
       "content_type": "video"
     },
@@ -197,11 +197,11 @@
       "summary": "└ 伊莎玛拉-大群来了 (1赞): 我可以呼吸了吗？\n  └ 抱着狗狗不敢说话 (1赞): 呜呜呜 太强\n  └ 愛吃郭子的小孩 (1赞): 眼里全是对自己手法的欣赏[打call][打call][打call]",
       "url": "https://www.bilibili.com/video/BV1Tv9BBHEcA",
       "author": "夢遊遊遊遊",
-      "engagement": 184,
+      "engagement": 190,
       "media_url": "https://i2.hdslb.com/bfs/archive/7dbbeb668b74e996e66ce86dc17f17a62e7984c2.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 178,
+        "play": 184,
         "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 0
@@ -215,9 +215,27 @@
       "summary": "",
       "url": "http://www.bilibili.com/video/av116480318379418",
       "author": "夢遊遊遊遊",
-      "engagement": 178,
+      "engagement": 184,
       "media_url": "//i2.hdslb.com/bfs/archive/7dbbeb668b74e996e66ce86dc17f17a62e7984c2.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T13:43:46+00:00",
+      "lang": "zh",
+      "title": "[AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线”",
+      "summary": "曲：ガラスのくつ\n唱：AI祥子\n效果不是很好，分离出来的干声不是很干净，就是这种效果了（）\n  └ 蘭玉心和 (1赞): [哦呼]居然是这首[少女乐团派对_开心]（⌒▽⌒）\n  └ 红衣首辅黎塞留 (0赞): [Ave Mujica_美味]\n  └ ninety九姬 (0赞): 我喜欢你",
+      "url": "https://www.bilibili.com/video/BV1Nw9kBhEvF",
+      "author": "Asedell轩晨",
+      "engagement": 116,
+      "media_url": "https://i0.hdslb.com/bfs/archive/43ed55f5d729b42b078b0917ebe71e03d4448143.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 112,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
@@ -227,11 +245,11 @@
       "summary": "汀没+12但不知道为什么会触发法则\n发的这张打击也跟正常法则的那张不一样\n这张没有汀觉醒附带的随机效果 +12的会有\n\n背景音乐：Georges Bizet - &quot;L&#x27;Arlésienne-Suite&quot;\n  └ 唬隌洳鄞 (0赞): 被欺骗了喵[大哭]根本不是45喵[大哭]\n  └ 呆呆松OWO (0赞): 大佬大佬我也有0啟杜能帶帶我嗎🥹\n  └ 菲比又干了 (0赞): 标题打错了喵",
       "url": "https://www.bilibili.com/video/BV1De9kBBEpz",
       "author": "夢遊遊遊遊",
-      "engagement": 109,
+      "engagement": 111,
       "media_url": "https://i2.hdslb.com/bfs/archive/1779527acf8cf27639cb45d2b310e314d57cee7e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 105,
+        "play": 107,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 1
@@ -245,7 +263,7 @@
       "summary": "汀没+12但不知道为什么会触发法则\n发的这张打击也跟正常法则的那张不一样\n这张没有汀觉醒附带的随机效果 +12的会有\n\n背景音乐：Georges Bizet - &quot;L&#x27;Arlésienne-Suite&quot;",
       "url": "http://www.bilibili.com/video/av116481996234021",
       "author": "夢遊遊遊遊",
-      "engagement": 106,
+      "engagement": 108,
       "media_url": "//i2.hdslb.com/bfs/archive/1779527acf8cf27639cb45d2b310e314d57cee7e.jpg",
       "content_type": "video"
     },
@@ -257,11 +275,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1EE9kBUEbY",
       "author": "祈光破影",
-      "engagement": 101,
+      "engagement": 103,
       "media_url": "https://i0.hdslb.com/bfs/archive/5066f16c354467046d7d84614312bcb9d46c57c1.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 101,
+        "play": 103,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
@@ -275,27 +293,69 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116482230980931",
       "author": "祈光破影",
-      "engagement": 101,
+      "engagement": 103,
       "media_url": "//i0.hdslb.com/bfs/archive/5066f16c354467046d7d84614312bcb9d46c57c1.jpg",
       "content_type": "video"
     },
     {
       "source": "bilibili",
-      "time": "2026-04-28T13:43:46+00:00",
+      "time": "2026-04-28T19:35:29+00:00",
       "lang": "zh",
-      "title": "[AI祥子/沙耶之歌/玻璃鞋]“春天的花 在呛人的季节里开放了 只有温和的风 安抚移开的视线”",
-      "summary": "曲：ガラスのくつ\n唱：AI祥子\n效果不是很好，分离出来的干声不是很干净，就是这种效果了（）\n  └ 蘭玉心和 (1赞): [哦呼]居然是这首[少女乐团派对_开心]（⌒▽⌒）\n  └ 红衣首辅黎塞留 (0赞): [Ave Mujica_美味]\n  └ ninety九姬 (0赞): 我喜欢你",
-      "url": "https://www.bilibili.com/video/BV1Nw9kBhEvF",
-      "author": "Asedell轩晨",
-      "engagement": 98,
-      "media_url": "https://i0.hdslb.com/bfs/archive/43ed55f5d729b42b078b0917ebe71e03d4448143.jpg",
+      "title": "忘却前夜3+3阿拉克涅主线第七章差点翻车太难了",
+      "summary": "└ 虎牙宣宝 (0赞): https://b23.tv/mall-NG124-73qAF",
+      "url": "https://www.bilibili.com/video/BV1Vv92BWEsa",
+      "author": "虎牙宣宝",
+      "engagement": 19,
+      "media_url": "https://i0.hdslb.com/bfs/archive/73781c610063d64f7c8f9687a8e3f749cc6eea98.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 95,
-        "comment_count": 3,
-        "comments_fetched": 3,
+        "play": 18,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T19:35:29+00:00",
+      "lang": "zh",
+      "title": "忘却前夜3+3阿拉克涅主线第七章差点翻车太难了",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116483992584800",
+      "author": "虎牙宣宝",
+      "engagement": 18,
+      "media_url": "//i0.hdslb.com/bfs/archive/73781c610063d64f7c8f9687a8e3f749cc6eea98.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T19:56:13+00:00",
+      "lang": "zh",
+      "title": "雪莲一球1t容灾5-5，小心……基伤造物……",
+      "summary": "-\n  └ 伊莎玛拉-大群来了 (0赞): 一球...超人",
+      "url": "https://www.bilibili.com/video/BV1ao91BJEdW",
+      "author": "路过的耄耋",
+      "engagement": 13,
+      "media_url": "https://i1.hdslb.com/bfs/archive/f7be41be4bdc01e3d9ec714e4b2ca86571714d21.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 12,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T19:56:13+00:00",
+      "lang": "zh",
+      "title": "雪莲一球1t容灾5-5，小心……基伤造物……",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116484076477132",
+      "author": "路过的耄耋",
+      "engagement": 12,
+      "media_url": "//i1.hdslb.com/bfs/archive/f7be41be4bdc01e3d9ec714e4b2ca86571714d21.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -305,11 +365,29 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1bF9yBzEV2",
       "author": "逆观渊行",
-      "engagement": 5,
+      "engagement": 7,
       "media_url": "https://i1.hdslb.com/bfs/archive/c5d924ba5c804b5039ef5f4640ba8158cf882d82.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 5,
+        "play": 7,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T20:31:48+00:00",
+      "lang": "zh",
+      "title": "朋友生活两个可爱宝宝",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1xu92B3EiE",
+      "author": "卷毛的猫",
+      "engagement": 2,
+      "media_url": "https://i2.hdslb.com/bfs/archive/f0254ae450b757dd8b074a55d989a5f18c486824.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 2,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
