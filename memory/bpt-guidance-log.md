@@ -1,6 +1,6 @@
 # BPT 指导搬运日志
 
-> 最后更新：2026-04-28 by Code-BPT 会话（首条记录）
+> 最后更新：2026-04-28 by Code-BPT 会话（W18 第 3 轮：3 验收答复 + 高幻觉率应对发起）
 >
 > 用途：每轮搬运的主题 / 日期 / 成果概要，**一行一条**，按 ISO 周倒序。Code-BPT 沉淀机制依据 `memory/bpt-guidance-protocol.md` §五。
 >
@@ -18,6 +18,8 @@
 |----|------|------|-----------|--------------|------|
 | W18 | 2026-04-27 | Code-BPT 角色启用 + 协议 v0.2 + 架构基线快照 + 周报模板首版 | 守密人指令「新起 Code-BPT」 | `decisions.md` 角色决策 / `bpt-guidance-protocol.md` v0.2 / `bpt-architecture-snapshot-2026-04-19.md` / `bpt-architecture-summary-template.md` | decisions.md 已写 |
 | W18 | 2026-04-28 | W18 周报反馈包接收（首份真实搬运循环） | r340 / r343 / r344 三 commit + SDK 迁移进度 + 模板缺陷反馈 + decisions.md 归档询问 | 模板 §2.2/§2.2bis/§2.3 补正 / lessons-learned #31（上游 framework high-churn）/ 答疑 decisions.md 边界 / 下周计划无偿建议 | lessons #31 + 本 log + 模板 v0.2 |
+| W18 | 2026-04-28 | 事实采信纪律 3 条硬规则（W18 周报抓包 4 层根因） | 守密人转述 BPT 实例自省 + 协议层落地诉求 | lessons-learned #32 / CLAUDE.md §9 提级第 13 条 R1/R2/R3（**仅银芯端生效**，BPT 内网未搬运） | lesson #32 + CLAUDE.md §9 |
+| W18 | 2026-04-28 | 3 验收问题答复接收 + 高幻觉率系统问题发起 | 守密人复述 BPT 答复：(Q1) 04-23 Q1 = BPT 内部架构决策（不上呈） + 标「接口潜在约束」备注；(Q2) W19 跑 ≥1 次 10 轮 baseline；(Q3) W19 周报 §4.2 加 Hooks 19 种价值评估表 | 接收答复 + 抛出 3 核实问题（模型/场景/CLAUDE.md 存在性）等待回包 | 仅本 log（W19 commitment 待兑现） |
 
 ---
 
@@ -34,3 +36,23 @@
 | 周报里的数值类事实（LOC / cache hit / token 数） | **不沉淀**（避免噪音，仅做趋势观察） | — |
 
 按协议 §六 #3：「BPT 的内部决策不入银芯档案——只有守密人公开认可并搬回银芯的**经验**才沉淀」。这里的关键是**经验**（lesson）vs **决策**（decision）的区分：BPT 内部决策走本 log；从决策中提炼出的通用教训走 lessons-learned.md；只有跨子项目接口或战略级才碰 decisions.md。
+
+---
+
+## 接口潜在约束备注（watch list）
+
+记录虽属 BPT 内部决策、但**可能在未来产生跨边界影响**的项。当任一项的语义发生扩张（从纯内部 → 接口层），立即上呈主控台。
+
+| ID | 起源 | 当前语义（守密人裁定） | 潜在扩张语义（需上呈触发条件） | 状态 |
+|----|------|---------------------|-----------------------------|------|
+| 04-23 Q1 | BPT 否决"外部 MCP 注入 SDK" | BPT 不主动 inject 任何外部 MCP server，仍可走「BPT 自行 spawn 银芯 mcp_server.py 暴露为 tool_use」消费银芯能力 | 若进一步演化为「BPT 完全断绝 MCP 协议消费」（含银芯 mcp_server.py），则影响 silver-blackpool-interface 数据消费层，必须上呈主控台 + 改 `silver-blackpool-interface.md` | 🟢 watching（W18 守密人确认未扩张） |
+
+---
+
+## W19 待兑现 commitments（来自守密人 W18 第 3 轮答复）
+
+| ID | 来源 | 内容 | 截止 | W19 周报核验点 |
+|----|------|------|------|--------------|
+| C1 | W18 验收 Q2 | BPT 跑 ≥ 1 次 10 轮 token 预算 baseline（手动触发 + SDK usage 汇总，不等 P1-A） | W19 周报 | §3 Token 经济实测**不再标「本周不采集」**，至少 1 行实测数据（即使不达标） |
+| C2 | W18 验收 Q3 | Hooks 19 种未接入价值评估表 | W19 周报 | §4.2 新增小节，每条 1 行：是否对 BPT 用户场景有用 / 实现成本 / 优先级 |
+| C3 | W18 lesson #32 衍生 | R1/R2/R3 搬运到 BPT 内网（CLAUDE.md / system prompt / 模板硬约束）—— **本 commitment 待 BPT 答 3 核实问题后由 Code-BPT 产搬运包，再由守密人执行** | W19 中前段 | 守密人确认搬运完成 + BPT 内网 commit SHA |
