@@ -2792,6 +2792,20 @@
       "title": "【绘画过程】一叶障目",
       "time": "2026-04-28T07:59:39+00:00",
       "downloaded_at": "2026-04-28T08:08:39.700670+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg": {
+      "filename": "bilibili_1d85002fcc6a170d.jpg",
+      "source": "bilibili",
+      "title": "［相位］问他输了赢了，他说忘关了",
+      "time": "2026-04-28T08:58:51+00:00",
+      "downloaded_at": "2026-04-28T10:57:13.102779+00:00"
+    },
+    "https://i.ytimg.com/vi/fGrY-ygnDY0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB_wdS3qVno_kloZQAIQ7a2XFJC6w": {
+      "filename": "youtube_6114eea28d7650c4.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】Morimens",
+      "time": "2026-04-28T10:54:11.138128+00:00",
+      "downloaded_at": "2026-04-28T10:57:14.019487+00:00"
     }
   },
   "failed": {
@@ -3784,6 +3798,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-28T08:08:37.324791+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T10:57:13.403723+00:00"
     }
   },
   "archived": []

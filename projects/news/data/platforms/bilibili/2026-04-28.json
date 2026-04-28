@@ -1,9 +1,39 @@
 {
   "date": "2026-04-28",
-  "archived_at": "2026-04-28T08:08:39.765542+00:00",
+  "archived_at": "2026-04-28T10:57:14.077862+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T08:58:51+00:00",
+      "lang": "zh",
+      "title": "［相位］问他输了赢了，他说忘关了",
+      "summary": "-\n  └ 不知今世为何 (3赞): 为什么我莱克连续15次都是16？[笑哭][笑哭][笑哭]\n  └ 不知今世为何 (2赞): 谨慎学习[星星眼][星星眼][星星眼]\n  └ HanPi-ProMax (1赞): 最学不了的一集[藏狐]",
+      "url": "https://www.bilibili.com/video/BV1Eg96BjEi9",
+      "author": "莱星Ligh",
+      "engagement": 157,
+      "media_url": "https://i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 151,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-28T08:58:51+00:00",
+      "lang": "zh",
+      "title": "［相位］问他输了赢了，他说忘关了",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116481492782193",
+      "author": "莱星Ligh",
+      "engagement": 151,
+      "media_url": "//i2.hdslb.com/bfs/archive/bf8d0ac6de7246e3a1a6dfee0736c773cdb5a775.jpg",
+      "content_type": "video"
+    },
     {
       "source": "bilibili",
       "time": "2026-04-28T00:35:54+00:00",
