@@ -1,8 +1,8 @@
 {
   "date": "2026-04-29",
-  "archived_at": "2026-04-28T22:50:07.106930+00:00",
+  "archived_at": "2026-04-28T23:47:43.327204+00:00",
   "source": "steam",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "source": "steam",
@@ -33,6 +33,21 @@
       "review": "fish team good",
       "timestamp_created": 1777395886,
       "playtime_forever": 580
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-28T22:49:36+00:00",
+      "lang": "latam",
+      "title": "[正面] buen mecanismo de juego y enamorada completamente...",
+      "summary": "buen mecanismo de juego y enamorada completamente del arte grafico <3",
+      "url": "https://steamcommunity.com/profiles/76561198849142378/recommended/3052450",
+      "author": "76561198849142378",
+      "engagement": 0,
+      "language": "latam",
+      "voted_up": true,
+      "review": "buen mecanismo de juego y enamorada completamente del arte grafico <3",
+      "timestamp_created": 1777416576,
+      "playtime_forever": 1173
     }
   ]
 }
