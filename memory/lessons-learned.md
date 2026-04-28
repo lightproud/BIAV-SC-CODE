@@ -1,6 +1,6 @@
 # 踩坑记录
 
-> 最后更新：2026-04-26 by 银芯记忆系统（艾瑞卡会话）
+> 最后更新：2026-04-28 by Code-BPT 会话（lesson #31 上游 agent framework high-churn）
 >
 > 记录协作过程中犯过的错误，避免重犯。每条包含 Context、Problem、Fix、Impact。
 
@@ -272,6 +272,24 @@
   5. 后续派 Code-memory 实现 helper（如 `scripts/discord_query.py`）暴露常用查询接口，降低误用风险
   6. 前置防御：未来新建数据源 archiver 时，必须同步在 BIAV-SC.md 知识模块索引「全量档案层」登记，**不允许只暴露 output/ 不暴露 data/**
 - **Impact**：所有未来接入银芯的 AI 的社区分析准确性、三新使命#1「黑池公开信息入口」的可信度、Phase 2 M2「贡献流程跑通」依赖的真实社区情报基础
+
+## 31. 上游 LLM agent framework 是 high-churn 决策点（≥ 3 次/3 月警戒线）
+
+- **Context**：BPT 在 2026-04-08 ~ 2026-04-27 共 20 天内，底层 agent 框架经历 4 次换装：
+  1. 自建（BPT 母版 v0，docs 完成未实施）
+  2. `ruvnet/open-claude-code`（occ-local，4-14 当日作废，2 小时寿命）
+  3. `instructkr/claw-code`（4-14 晚选定，构建验证通过，4-19 随 BPT 删除而封存）
+  4. `@anthropic-ai/claude-agent-sdk` v0.2.116（4-23 起 SDK 接入改造，r329 / r340 / r343 / r344 累计落盘）
+- **Problem**：每次换装都需重写适配层、迁移现有功能（hooks / agents / sessionStore / systemPrompt 切片）、重置 token 经济实测基线。**4 次换装 = 4 次基础设施推倒重来**，前 3 次产出几乎全废。根因：
+  - 上游 LLM agent 生态 2026 Q2 处于剧烈变动期，每个框架都有差异化卖点
+  - 项目方（守密人 + AI 协作）缺乏「冻结期」纪律，每发现新选项就重新评估
+  - 框架切换的真实成本被低估（不仅是引擎本身，还有适配层 / hooks / 子代理协议 / 持久化 schema）
+- **Fix**：
+  1. 设立**框架冻结期**——选定一个 framework 后，最少 4 周不重新评估（除非上游 breaking 或合规问题）
+  2. **新框架评估必须列出迁移成本清单**：适配层 LOC / 现有 hooks 数 / 子代理数 / 持久化 schema 兼容性 / 已落盘对话历史是否可读取，每项给出小时估算
+  3. 周报模板 §2.3 加「框架变更次数（4-19 起累计）」字段，超过 **3 次/3 月** 触发主控台干预（否决新评估直到产出稳定）
+  4. 把「上游 framework 选型」从「常规技术决策」上移到「需要冻结期保护的战略决策」类别——每次切换走 decisions.md 而非 bpt-guidance-log.md
+- **Impact**：BPT 交付速度（每次换装 = 1-2 周净损失）、token 经济实测基线连续性（每次换装 cache hit 数据归零）、其他子项目（如未来 game / 内网 wiki）若引入 agent framework 时的选型纪律
 
 ---
 
