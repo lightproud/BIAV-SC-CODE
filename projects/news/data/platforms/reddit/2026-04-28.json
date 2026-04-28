@@ -1,8 +1,8 @@
 {
   "date": "2026-04-28",
-  "archived_at": "2026-04-28T10:57:14.079315+00:00",
+  "archived_at": "2026-04-28T12:23:23.799255+00:00",
   "source": "reddit",
-  "item_count": 45,
+  "item_count": 48,
   "items": [
     {
       "source": "reddit",
@@ -542,6 +542,49 @@
       "url": "https://www.reddit.com/r/Morimens/comments/1sxxu41/is_it_possible_to_change_the_email_linked_to_my/",
       "author": "u//u/Lumette_The_Baker",
       "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T10:20:10+00:00",
+      "lang": "en",
+      "title": "New code: EPEG-GXSH-HBSX",
+      "summary": "Setting =&gt; Account =&gt; Redemption Code  &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sxxavj/new_code_epeggxshhbsx/",
+      "author": "/u/DrExluxk",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/a9m26bpbqwxg1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=166c405005996527e6c380a7a375781bf6e0e5bb",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T08:10:42+00:00",
+      "lang": "en",
+      "title": "Arachne is nuts, no wonder her setup is like a 5 step process",
+      "summary": "&#32; submitted by &#32;  /u/Navi_King   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sxv2h9/arachne_is_nuts_no_wonder_her_setup_is_like_a_5/",
+      "author": "/u/Navi_King",
+      "engagement": 0,
+      "media_url": "https://external-preview.redd.it/dWVsMmptbTYzd3hnMYy0R0ONSQKv9dXAVYF4U99T1Bn1cR9di_P7ASy1iRYR.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=5f63894f892e6262ab335b57e86303b0fefd3f2c",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-04-28T10:48:51+00:00",
+      "lang": "en",
+      "title": "is it possible to change the email linked to my account?",
+      "summary": "i&#39;m getting a new email, do i have to make a new account?  &#32; submitted by &#32;  /u/Lumette_The_Baker   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1sxxu41/is_it_possible_to_change_the_email_linked_to_my/",
+      "author": "/u/Lumette_The_Baker",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
     }
   ]
 }
