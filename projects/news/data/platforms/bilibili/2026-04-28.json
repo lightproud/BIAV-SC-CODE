@@ -1,9 +1,27 @@
 {
   "date": "2026-04-28",
-  "archived_at": "2026-04-27T23:43:13.688762+00:00",
+  "archived_at": "2026-04-28T01:55:14.270016+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-27T23:29:18+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]莉鸟双c融灾5–5",
+      "summary": "似乎有说法，🌰前期叠毒顺便贡献保留手牌给鸟弟叠罪印，叠满毒就转换为鸟弟c#忘却前夜",
+      "url": "https://www.bilibili.com/video/BV1gMo2BXEch",
+      "author": "护林犬",
+      "engagement": 61,
+      "media_url": "https://i0.hdslb.com/bfs/archive/d4296318446236d119c920f7ff5c048596e7c40e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 61,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
     {
       "source": "bilibili",
       "time": "2026-04-27T17:45:19+00:00",
