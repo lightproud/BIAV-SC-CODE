@@ -20,6 +20,7 @@
 | W18 | 2026-04-28 | W18 周报反馈包接收（首份真实搬运循环） | r340 / r343 / r344 三 commit + SDK 迁移进度 + 模板缺陷反馈 + decisions.md 归档询问 | 模板 §2.2/§2.2bis/§2.3 补正 / lessons-learned #31（上游 framework high-churn）/ 答疑 decisions.md 边界 / 下周计划无偿建议 | lessons #31 + 本 log + 模板 v0.2 |
 | W18 | 2026-04-28 | 事实采信纪律 3 条硬规则（W18 周报抓包 4 层根因） | 守密人转述 BPT 实例自省 + 协议层落地诉求 | lessons-learned #32 / CLAUDE.md §9 提级第 13 条 R1/R2/R3（**仅银芯端生效**，BPT 内网未搬运） | lesson #32 + CLAUDE.md §9 |
 | W18 | 2026-04-28 | 3 验收问题答复接收 + 高幻觉率系统问题发起 | 守密人复述 BPT 答复：(Q1) 04-23 Q1 = BPT 内部架构决策（不上呈） + 标「接口潜在约束」备注；(Q2) W19 跑 ≥1 次 10 轮 baseline；(Q3) W19 周报 §4.2 加 Hooks 19 种价值评估表 | 接收答复 + 抛出 3 核实问题（模型/场景/CLAUDE.md 存在性）等待回包 | 仅本 log（W19 commitment 待兑现） |
+| W18 | 2026-04-28 | 高幻觉率应对搬运包 W18-3（核实回包 → 5 步落地方案） | 守密人转述 BPT 实例：幻觉率 5-10% / opus 4.7 / 内网无 CLAUDE.md | 搬运包 5 步：BPT 内网 CLAUDE.md 首版可粘贴文本（§1 R1/R2/R3 + §2 合法 escape + §3 双列硬约束）/ system prompt 事实采信片段 / 周报模板双列改造 / temperature 锁定 / Code-BPT 接收端核验 SOP | 仅本 log（搬运包待守密人执行） |
 
 ---
 
@@ -55,4 +56,6 @@
 |----|------|------|------|--------------|
 | C1 | W18 验收 Q2 | BPT 跑 ≥ 1 次 10 轮 token 预算 baseline（手动触发 + SDK usage 汇总，不等 P1-A） | W19 周报 | §3 Token 经济实测**不再标「本周不采集」**，至少 1 行实测数据（即使不达标） |
 | C2 | W18 验收 Q3 | Hooks 19 种未接入价值评估表 | W19 周报 | §4.2 新增小节，每条 1 行：是否对 BPT 用户场景有用 / 实现成本 / 优先级 |
-| C3 | W18 lesson #32 衍生 | R1/R2/R3 搬运到 BPT 内网（CLAUDE.md / system prompt / 模板硬约束）—— **本 commitment 待 BPT 答 3 核实问题后由 Code-BPT 产搬运包，再由守密人执行** | W19 中前段 | 守密人确认搬运完成 + BPT 内网 commit SHA |
+| C3 | W18 lesson #32 衍生 | R1/R2/R3 搬运到 BPT 内网 CLAUDE.md（搬运包 W18-3 已交付，5 步方案可粘贴） | W19 前段 | BPT 内网 CLAUDE.md 落地 commit SHA + 至少 1 次跑通 |
+| C4 | 搬运包 W18-3 衍生 | 周报模板双列改造（事实 \| 来源工具调用），未填来源 = ⚠待补不得报数 | W19 周报 | 模板新版 + W19 周报每条 numbered fact 配源 |
+| C5 | 搬运包 W18-3 衍生 | Code-BPT 接收端核验 SOP：W19 周报到达时主动抽样 3-5 条 numbered fact 要求补证据 | W19 周报到达 | 由 Code-BPT 自行执行（不需守密人动作） |
