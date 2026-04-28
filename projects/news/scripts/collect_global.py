@@ -263,7 +263,7 @@ SPARSE_MAX_AGE_HOURS = int(os.environ.get('SPARSE_MAX_AGE_HOURS', 30 * 24))
 SPARSE_SOURCES = {
     'official', 'appstore', 'google_play', 'weixin', 'pixiv', 'stopgame',
     'note_com', 'ruliweb', 'fivech', 'naver_cafe', 'arca_live', 'bahamut',
-    'taptap',
+    'taptap', 'discord',
 }
 
 

@@ -112,6 +112,9 @@ SPARSE_SOURCES = {
     # 公开版块的低频讨论平台（评论/帖子稀疏）
     'note_com', 'ruliweb', 'fivech', 'naver_cafe', 'arca_live',
     'bahamut', 'taptap',
+    # Discord —— fetch_discord_local 总是读 yesterday's JSONL（today 还没归档），
+    # daily summary 时间戳是 yesterday 00:00；24h 时窗会砍光全部
+    'discord',
 }
 # 旧名保留向后兼容
 OFFICIAL_SOURCES = SPARSE_SOURCES
