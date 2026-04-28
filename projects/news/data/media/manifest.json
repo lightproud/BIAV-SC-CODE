@@ -2764,6 +2764,34 @@
       "title": "忘却前夜出号",
       "time": "2026-04-28T00:35:54+00:00",
       "downloaded_at": "2026-04-28T05:25:46.683101+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/13e60883b41a031c4cf41c23800acdfd4ee83531.jpg": {
+      "filename": "bilibili_e70bf5383a5269aa.jpg",
+      "source": "bilibili",
+      "title": "第四话 一触即发",
+      "time": "2026-04-27T18:22:28+00:00",
+      "downloaded_at": "2026-04-28T08:08:34.844671+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/9cbb9e547f0c1fe27e77c7619c2465bff5459814.jpg": {
+      "filename": "bilibili_21dc8c855af925f0.jpg",
+      "source": "bilibili",
+      "title": "4兆核爆...还能...提升",
+      "time": "2026-04-28T06:26:26+00:00",
+      "downloaded_at": "2026-04-28T08:08:37.023997+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/51eda402b9a861c0a358befb325a51925cd0bd4f.jpg": {
+      "filename": "bilibili_94d64653e133c027.jpg",
+      "source": "bilibili",
+      "title": "或许还能再见",
+      "time": "2026-04-28T07:37:09+00:00",
+      "downloaded_at": "2026-04-28T08:08:38.595824+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/b82d9105a853beeb3f51666f764f9662f102ff0b.jpg": {
+      "filename": "bilibili_1757920fcee32ae8.jpg",
+      "source": "bilibili",
+      "title": "【绘画过程】一叶障目",
+      "time": "2026-04-28T07:59:39+00:00",
+      "downloaded_at": "2026-04-28T08:08:39.700670+00:00"
     }
   },
   "failed": {
@@ -3746,6 +3774,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-28T05:25:48.606476+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/13e60883b41a031c4cf41c23800acdfd4ee83531.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T08:08:35.145658+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/9cbb9e547f0c1fe27e77c7619c2465bff5459814.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-28T08:08:37.324791+00:00"
     }
   },
   "archived": []

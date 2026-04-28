@@ -1,8 +1,8 @@
 {
   "date": "2026-04-28",
-  "archived_at": "2026-04-28T05:25:48.678447+00:00",
+  "archived_at": "2026-04-28T08:08:39.771876+00:00",
   "source": "appstore",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
     {
       "source": "appstore",
@@ -33,6 +33,16 @@
       "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews",
       "author": "SeñorTamago",
       "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-04-26T19:42:48-07:00",
+      "lang": "pt",
+      "title": "Linguagem",
+      "summary": "Queremos uma tradução  em português br 🙏🏻 pls",
+      "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews",
+      "author": "happophis",
+      "engagement": 4
     }
   ]
 }
