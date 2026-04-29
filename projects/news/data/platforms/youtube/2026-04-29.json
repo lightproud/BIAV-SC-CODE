@@ -1,8 +1,8 @@
 {
   "date": "2026-04-29",
-  "archived_at": "2026-04-28T19:21:54.030776+00:00",
+  "archived_at": "2026-04-29T01:57:23.953411+00:00",
   "source": "youtube",
-  "item_count": 20,
+  "item_count": 21,
   "items": [
     {
       "source": "youtube",
@@ -242,6 +242,18 @@
       "author": "れちゃんちゃんちゃんねる",
       "engagement": 3,
       "media_url": "https://i.ytimg.com/vi/D97VBY5AmvA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCMm1fhU61Zpx3LK7jKsXVQuREgog",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-29T01:54:13.011841+00:00",
+      "lang": "",
+      "title": "[Morimens] Blind Story then HM of Ch 5 Arc 2",
+      "summary": "",
+      "url": "https://www.youtube.com/watch?v=t_3GDEK0lRY",
+      "author": "Flares117",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/t_3GDEK0lRY/hq720.jpg?v=1f&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCWbDEN3YutUdqFF28aEzYGy8wcQ",
       "content_type": "image"
     }
   ]

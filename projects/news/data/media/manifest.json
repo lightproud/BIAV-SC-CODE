@@ -2960,6 +2960,13 @@
       "title": "一图三道中鸟弟，无造物落地400w……，小心……蜘蛛和最终",
       "time": "2026-04-28T21:50:39+00:00",
       "downloaded_at": "2026-04-28T21:58:38.198675+00:00"
+    },
+    "https://i.ytimg.com/vi/t_3GDEK0lRY/hq720.jpg?v=1f&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCWbDEN3YutUdqFF28aEzYGy8wcQ": {
+      "filename": "youtube_1a4da5456d4c649d.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Blind Story then HM of Ch 5 Arc 2",
+      "time": "2026-04-29T01:54:13.011841+00:00",
+      "downloaded_at": "2026-04-29T01:57:23.891078+00:00"
     }
   },
   "failed": {
@@ -4052,6 +4059,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-28T22:50:07.042498+00:00"
+    },
+    "https://preview.redd.it/jrcp1ex051yg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=45cf27957f0dc67306d0c974411d6a92ff575480": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T01:57:23.083198+00:00"
+    },
+    "https://preview.redd.it/lcfmzdql61yg1.png?width=140&amp;height=63&amp;auto=webp&amp;s=2f4e1edc9b341d7adbb7e4789f6a3e435bcc0409": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T01:57:23.424536+00:00"
     }
   },
   "archived": []
