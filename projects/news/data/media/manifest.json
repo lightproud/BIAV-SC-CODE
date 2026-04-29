@@ -3100,6 +3100,34 @@
       "title": "别看肉块了，点击查看真正的美少女出窑",
       "time": "2026-04-29T11:30:59+00:00",
       "downloaded_at": "2026-04-29T12:14:10.903744+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/060bed7b11eb8008e362abc5cae2ed5a02ec316b.jpg": {
+      "filename": "bilibili_6634a2c1dc043d2d.jpg",
+      "source": "bilibili",
+      "title": "老大我们一定要用葬骸城区h5-11吗",
+      "time": "2026-04-29T12:23:20+00:00",
+      "downloaded_at": "2026-04-29T15:06:58.104413+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/2cd1c335198f10e89a4e53f689e5c6e97c12f4d8.jpg": {
+      "filename": "bilibili_1d30a031f9b5562d.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 60级血希打 2-5少校",
+      "time": "2026-04-29T00:30:36+00:00",
+      "downloaded_at": "2026-04-29T15:06:59.572565+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/d89dc9baef0690341d0969326e4f3bfb0b61de38.jpg": {
+      "filename": "bilibili_d788a7d8e6ed6e21.jpg",
+      "source": "bilibili",
+      "title": "肉块在跳舞",
+      "time": "2026-04-29T12:14:01+00:00",
+      "downloaded_at": "2026-04-29T15:07:01.114480+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/4520e6869831289efffbed5c1d55da53687b7b7b.jpg": {
+      "filename": "bilibili_08cb4aca16c580ad.jpg",
+      "source": "bilibili",
+      "title": "要永远在一起哦",
+      "time": "2026-04-29T12:31:14+00:00",
+      "downloaded_at": "2026-04-29T15:07:02.185845+00:00"
     }
   },
   "failed": {
@@ -4272,6 +4300,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-29T12:14:10.064180+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/060bed7b11eb8008e362abc5cae2ed5a02ec316b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T15:06:58.405334+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/2cd1c335198f10e89a4e53f689e5c6e97c12f4d8.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T15:06:59.873343+00:00"
+    },
+    "https://preview.redd.it/r93btdqt35yg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=495906631efeab8d4e91a2e32ebcede87fb6e351": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T15:07:02.581611+00:00"
     }
   },
   "archived": []
