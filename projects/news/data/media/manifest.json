@@ -3128,6 +3128,34 @@
       "title": "要永远在一起哦",
       "time": "2026-04-29T12:31:14+00:00",
       "downloaded_at": "2026-04-29T15:07:02.185845+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/e61e49ec5e359e71a03c347ad9c01935e355aa00.jpg": {
+      "filename": "bilibili_2078e407ac85ab0c.jpg",
+      "source": "bilibili",
+      "title": "gal人物介绍这一块",
+      "time": "2026-04-29T15:46:03+00:00",
+      "downloaded_at": "2026-04-29T17:20:04.056200+00:00"
+    },
+    "https://i.ytimg.com/vi/K0t62QWfK-k/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5gdgc43bDBEvt4jzvYxsXkVgbPw": {
+      "filename": "youtube_6cb0485da650fcdb.jpg",
+      "source": "youtube",
+      "title": "Stream doesn't end until I finish Arachne's Chapter in Morimens (Blind)",
+      "time": "2026-04-29T16:58:53.552806+00:00",
+      "downloaded_at": "2026-04-29T17:20:04.408492+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/874af45d9777ee984a8e7a8580691f3dd0d0d7f1.jpg": {
+      "filename": "bilibili_7973fed34b94917e.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】4.27融灾4-5鸟蛛魔术师低配逃课攻略（全流程附解说）",
+      "time": "2026-04-29T13:52:44+00:00",
+      "downloaded_at": "2026-04-29T17:20:04.825185+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/8d0becac626de7319be1e3ec3ad0d12b96a4b633.jpg": {
+      "filename": "bilibili_367793c9f9779ba5.jpg",
+      "source": "bilibili",
+      "title": "牢希3星无灵芝H5-11",
+      "time": "2026-04-29T16:40:47+00:00",
+      "downloaded_at": "2026-04-29T17:20:06.168967+00:00"
     }
   },
   "failed": {
@@ -4315,6 +4343,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-29T15:07:02.581611+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/874af45d9777ee984a8e7a8580691f3dd0d0d7f1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T17:20:05.125797+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/8d0becac626de7319be1e3ec3ad0d12b96a4b633.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T17:20:06.469567+00:00"
     }
   },
   "archived": []
