@@ -1,8 +1,8 @@
 {
   "date": "2026-04-29",
-  "archived_at": "2026-04-29T05:22:44.470342+00:00",
+  "archived_at": "2026-04-29T08:02:12.973420+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -93,6 +93,21 @@
       "review": "策略性强   好玩   量大管饱",
       "timestamp_created": 1777426859,
       "playtime_forever": 3183
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-29T07:12:21+00:00",
+      "lang": "english",
+      "title": "[正面] I didn’t expect to come across such a GOOD game  i...",
+      "summary": "I didn’t expect to come across such a GOOD game  it’s a mix of a card game and a”battlegrounds”, strategy. I found out about it using bot $wg command, and I got the character Jenkin, a rat girl. As I love rats, I decided to download it. Let me put it this way:the storyline is FANTASTIC, the atmosphere, the characters, the art style everything is absolutely WONDERFUL this game really has its own unique vibe, and the English translation is good too I don’t know about the Polish version(since impolish) , as I play in English. I recommend it to anyone who wants to try out a new interesting story, n get new characters and cards and discover new aspects of the plot.\n10/10",
+      "url": "https://steamcommunity.com/profiles/76561199056182417/recommended/3052450",
+      "author": "76561199056182417",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I didn’t expect to come across such a GOOD game  it’s a mix of a card game and a”battlegrounds”, strategy. I found out about it using bot $wg command, and I got the character Jenkin, a rat girl. As I love rats, I decided to download it. Let me put it this way:the storyline is FANTASTIC, the atmosphere, the characters, the art style everything is absolutely WONDERFUL this game really has its own unique vibe, and the English translation is good too I don’t know about the Polish version(since impolish) , as I play in English. I recommend it to anyone who wants to try out a new interesting story, n get new characters and cards and discover new aspects of the plot.\n10/10",
+      "timestamp_created": 1777446741,
+      "playtime_forever": 590
     }
   ]
 }
