@@ -3156,6 +3156,34 @@
       "title": "牢希3星无灵芝H5-11",
       "time": "2026-04-29T16:40:47+00:00",
       "downloaded_at": "2026-04-29T17:20:06.168967+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/07b78086e1986134617e3be1ba60f9e4e23f5731.jpg": {
+      "filename": "bilibili_434e6d7a3fb6bdff.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】高配神国h5-11",
+      "time": "2026-04-29T17:31:42+00:00",
+      "downloaded_at": "2026-04-29T19:11:13.751933+00:00"
+    },
+    "https://i.ytimg.com/vi/pwk1PPa9t1U/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhJIDkofzAP&rs=AOn4CLCtKUT3X9fBj-ODBqGrHQ9k_73-PA": {
+      "filename": "youtube_76463eab38469d48.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Arc 2 Chapter 5 First HM Clear - No Ecog, Blind run on stream",
+      "time": "2026-04-29T18:08:12.532510+00:00",
+      "downloaded_at": "2026-04-29T19:11:14.522945+00:00"
+    },
+    "https://i.ytimg.com/vi/nmLg6jCOJbg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD5H-5k6yrCy3198BKPeDR2IzodzQ": {
+      "filename": "youtube_c9a33f749d6f29a8.jpg",
+      "source": "youtube",
+      "title": "Morimens 2.0 - Chapter 5: Fated Theater - Full Story All Cutscene - No Commentary",
+      "time": "2026-04-29T13:08:12.532406+00:00",
+      "downloaded_at": "2026-04-29T19:11:14.991562+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/4d05a6d51754aba8c8880e30acc57b5378407f65.jpg": {
+      "filename": "bilibili_2b12f4ed3194e81c.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】融灾415(4.27)",
+      "time": "2026-04-29T17:48:38+00:00",
+      "downloaded_at": "2026-04-29T19:11:16.015622+00:00"
     }
   },
   "failed": {
@@ -4353,6 +4381,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-29T17:20:06.469567+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/07b78086e1986134617e3be1ba60f9e4e23f5731.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T19:11:14.052779+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/4d05a6d51754aba8c8880e30acc57b5378407f65.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T19:11:16.316422+00:00"
     }
   },
   "archived": []
