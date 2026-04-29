@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-04-29T08:02:12.168505+00:00",
+  "collected_at": "2026-04-29T10:07:13.108304+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 12,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-04-28T11:05:42+00:00",
+      "lang": "schinese",
+      "title": "[负面] 贱猫",
+      "summary": "贱猫",
+      "url": "https://steamcommunity.com/profiles/76561199801214276/recommended/3052450",
+      "author": "76561199801214276",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "贱猫",
+      "timestamp_created": 1777374342,
+      "playtime_forever": 3078
+    },
     {
       "source": "steam",
       "time": "2026-04-29T07:12:21+00:00",
@@ -16,7 +31,7 @@
       "voted_up": true,
       "review": "I didn’t expect to come across such a GOOD game  it’s a mix of a card game and a”battlegrounds”, strategy. I found out about it using bot $wg command, and I got the character Jenkin, a rat girl. As I love rats, I decided to download it. Let me put it this way:the storyline is FANTASTIC, the atmosphere, the characters, the art style everything is absolutely WONDERFUL this game really has its own unique vibe, and the English translation is good too I don’t know about the Polish version(since impolish) , as I play in English. I recommend it to anyone who wants to try out a new interesting story, n get new characters and cards and discover new aspects of the plot.\n10/10",
       "timestamp_created": 1777446741,
-      "playtime_forever": 590
+      "playtime_forever": 605
     },
     {
       "source": "steam",
@@ -106,7 +121,7 @@
       "voted_up": true,
       "review": "십덕 슬더스",
       "timestamp_created": 1777393749,
-      "playtime_forever": 78
+      "playtime_forever": 127
     },
     {
       "source": "steam",
@@ -136,7 +151,7 @@
       "voted_up": true,
       "review": ".",
       "timestamp_created": 1777384662,
-      "playtime_forever": 690
+      "playtime_forever": 729
     },
     {
       "source": "steam",
@@ -155,21 +170,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-04-28T11:05:42+00:00",
-      "lang": "schinese",
-      "title": "[负面] 贱猫",
-      "summary": "贱猫",
-      "url": "https://steamcommunity.com/profiles/76561199801214276/recommended/3052450",
-      "author": "76561199801214276",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "贱猫",
-      "timestamp_created": 1777374342,
-      "playtime_forever": 3078
-    },
-    {
-      "source": "steam",
       "time": "2026-04-28T10:17:26+00:00",
       "lang": "schinese",
       "title": "[正面]",
@@ -182,21 +182,6 @@
       "review": "",
       "timestamp_created": 1777371446,
       "playtime_forever": 13571
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-28T08:51:16+00:00",
-      "lang": "schinese",
-      "title": "[正面] 战斗爽",
-      "summary": "战斗爽",
-      "url": "https://steamcommunity.com/profiles/76561198235397572/recommended/3052450",
-      "author": "76561198235397572",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "战斗爽",
-      "timestamp_created": 1777366276,
-      "playtime_forever": 626
     }
   ]
 }

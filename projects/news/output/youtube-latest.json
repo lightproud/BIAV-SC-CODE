@@ -1,18 +1,30 @@
 {
-  "collected_at": "2026-04-29T08:02:12.168505+00:00",
+  "collected_at": "2026-04-29T10:07:13.108304+00:00",
   "source": "youtube",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "source": "youtube",
-      "time": "2026-04-29T07:59:06.580921+00:00",
+      "time": "2026-04-29T10:03:54.530134+00:00",
       "lang": "",
       "title": "[Morimens] Blind Story then HM of Ch 5 Arc 2",
       "summary": "",
       "url": "https://www.youtube.com/watch?v=t_3GDEK0lRY",
       "author": "Flares117",
       "engagement": 0,
-      "media_url": "https://i.ytimg.com/vi/t_3GDEK0lRY/hq720.jpg?v=f8&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCWbDEN3YutUdqFF28aEzYGy8wcQ",
+      "media_url": "https://i.ytimg.com/vi/t_3GDEK0lRY/hq720.jpg?v=145&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCWbDEN3YutUdqFF28aEzYGy8wcQ",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-04-29T10:03:54.530311+00:00",
+      "lang": "",
+      "title": "Stream doesn't end until I finish Arachne's Chapter in Morimens (Blind)",
+      "summary": "(Spoilers obviously!!!) I'm completely blind going into this, so I hope you enjoy this complete full playthrough with me. I'll be ...",
+      "url": "https://www.youtube.com/watch?v=K0t62QWfK-k",
+      "author": "Rose Guardian Reya",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/K0t62QWfK-k/hq720.jpg?v=69f1c922&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC5gdgc43bDBEvt4jzvYxsXkVgbPw",
       "content_type": "image"
     }
   ]
