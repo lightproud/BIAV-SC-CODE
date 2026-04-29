@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-30
 
-> 采集时间：2026-04-30 05:54 UTC+8
+> 采集时间：2026-04-30 06:48 UTC+8
 
 ## 🔥 联动动态
 
@@ -26,7 +26,7 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 1 |
+| Pixiv | 0（24h内无新内容）|
 | Reddit | 32 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 6 |
@@ -35,7 +35,7 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 19 |
+| 微博 | 20 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 3 |
 | 知乎 | 0（沉默）|
@@ -69,11 +69,11 @@
 
 ## Bilibili
 
-1. gal人物介绍这一块 — engagement: 1833
-2. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 555
-3. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 528
-4. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 508
-5. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 502
+1. gal人物介绍这一块 — engagement: 2323
+2. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 564
+3. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 537
+4. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 513
+5. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 508
 
 ## Official
 
@@ -82,10 +82,6 @@
 3. [Steam新闻] V2.5.0 Arachne✦Awakener & Wheel of Destiny Introdu — engagement: 0
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
-
-## Pixiv
-
-1.  — engagement: 0
 
 ## Reddit
 
@@ -112,15 +108,15 @@
 新的异常波动已被精确锁定。
 
 观测信号不再模 — engagement: 0
-4. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
-5. 12758【投稿】忘却前夜。我主任 — engagement: 0
+4. 12758【投稿】忘却前夜。我主任 — engagement: 0
+5. 忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队 — engagement: 0
 
 ## YouTube
 
 1. Arachne Caecus Beginner Team for Morimens — engagement: 439
 2. [Morimens] Blind Story then HM of Ch 5 Arc 2 — engagement: 383
-3. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 65
+3. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 80
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
