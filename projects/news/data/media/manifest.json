@@ -3268,6 +3268,13 @@
       "title": "[DC] insigible@🔸有問必答┊official-q-a: In this event on the last stage of Arachne's chapter, the top opt",
       "time": "2026-04-29T02:33:50.646000+00:00",
       "downloaded_at": "2026-04-29T20:55:03.155445+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/6d301f2e875b25782206afec5f0e648610040b6b.jpg": {
+      "filename": "bilibili_af22952cb4da8f66.jpg",
+      "source": "bilibili",
+      "title": "拉拉克涅超爽追击一回合出伤200w",
+      "time": "2026-04-29T14:02:52+00:00",
+      "downloaded_at": "2026-04-29T23:46:55.651362+00:00"
     }
   },
   "failed": {
@@ -4485,6 +4492,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-29T20:55:03.843880+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/6d301f2e875b25782206afec5f0e648610040b6b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T23:46:55.952163+00:00"
     }
   },
   "archived": []
