@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-30
 
-> 采集时间：2026-04-30 06:48 UTC+8
+> 采集时间：2026-04-30 07:46 UTC+8
 
 ## 🔥 联动动态
 
@@ -18,7 +18,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 36 |
+| Bilibili | 38 |
 | Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
@@ -35,9 +35,9 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 20 |
+| 微博 | 19 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 3 |
+| YouTube | 2 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -55,25 +55,25 @@
 ## Steam 评论
 
 - 好评 6 / 差评 0 / 好评率 100%
-- 语言分布：brazilian 2, french 1, english 1, schinese 1, latam 1
+- 语言分布：brazilian 2, french 1, russian 1, english 1, schinese 1
 
 ### 热门好评
 
 1. [正面] --{ Graphismes }---
 ☐ 144P
 ☐ Faut pas s'y attarder... — engagement: 1
-2. [正面] I didn’t expect to come across such a GOOD game  i... — engagement: 0
-3. [正面] É um jogo de cartas muito bom, não tão bom no ques... — engagement: 0
-4. [正面] 策略性强   好玩   量大管饱 — engagement: 0
-5. [正面] divertido, da pra jogar suave sem por dinheiro — engagement: 0
+2. [正面] Morimens — инди‑RPG с элементами выживания и откры... — engagement: 0
+3. [正面] I didn’t expect to come across such a GOOD game  i... — engagement: 0
+4. [正面] É um jogo de cartas muito bom, não tão bom no ques... — engagement: 0
+5. [正面] 策略性强   好玩   量大管饱 — engagement: 0
 
 ## Bilibili
 
-1. gal人物介绍这一块 — engagement: 2323
-2. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 564
-3. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 537
-4. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 513
-5. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 508
+1. gal人物介绍这一块 — engagement: 3761
+2. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 579
+3. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 553
+4. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 518
+5. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 512
 
 ## Official
 
@@ -101,21 +101,18 @@
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜丨弥萨格调查局CP32行动指南
+3. 忘却前夜丨弥萨格调查局CP32特别行动
 
-致全体即将前往新前线的守密人：
+致所有仍保有理智的守密人：
 
-新的异常波动已被精确锁定。
-
-观测信号不再模 — engagement: 0
-4. 12758【投稿】忘却前夜。我主任 — engagement: 0
-5. 忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队 — engagement: 0
+人间的假日只是伪造的幻象，黑暗的潮汐从未停歇。新 — engagement: 0
+4. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
+5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## YouTube
 
-1. Arachne Caecus Beginner Team for Morimens — engagement: 439
-2. [Morimens] Blind Story then HM of Ch 5 Arc 2 — engagement: 383
-3. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 80
+1. [Morimens] Blind Story then HM of Ch 5 Arc 2 — engagement: 391
+2. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 80
 
 ## 沉默平台
 
