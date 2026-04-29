@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-30
 
-> 采集时间：2026-04-30 04:54 UTC+8
+> 采集时间：2026-04-30 05:54 UTC+8
 
 ## 🔥 联动动态
 
@@ -18,7 +18,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 40 |
+| Bilibili | 36 |
 | Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
@@ -35,9 +35,9 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 19 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 19 |
+| YouTube | 3 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -69,11 +69,11 @@
 
 ## Bilibili
 
-1. gal人物介绍这一块 — engagement: 1558
-2. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 544
-3. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 520
-4. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 507
-5. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 501
+1. gal人物介绍这一块 — engagement: 1833
+2. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 555
+3. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 528
+4. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 508
+5. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 502
 
 ## Official
 
@@ -89,11 +89,11 @@
 
 ## Reddit
 
-1. tough choice — engagement: 0
-2. I would appreciate any team recommendations for the early st — engagement: 0
-3. Is there any major event that is going on rn /upcoming? — engagement: 0
-4. “Rapture is beyond Fate” CGs — engagement: 0
-5. ill deal with him tommorow any suggestion (●'◡'●) — engagement: 0
+1. Francis :( — engagement: 0
+2. tough choice — engagement: 0
+3. I would appreciate any team recommendations for the early st — engagement: 0
+4. Is there any major event that is going on rn /upcoming? — engagement: 0
+5. “Rapture is beyond Fate” CGs — engagement: 0
 
 ## StopGame.ru
 
@@ -105,22 +105,21 @@
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-4. 忘却前夜×沙耶之歌 联动预告
+3. 忘却前夜丨弥萨格调查局CP32行动指南
 
-梦的碎片 随风而至
+致全体即将前往新前线的守密人：
 
-#忘却前夜# #沙耶之歌#
-忘却前夜 #Morimens# 忘却前 — engagement: 0
+新的异常波动已被精确锁定。
+
+观测信号不再模 — engagement: 0
+4. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
 5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 291304
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 42972
-3. Clementine edit | Forget last night: Morimens — engagement: 33409
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19493
-5. Morimens Gameplay Is FUN — engagement: 17495
+1. Arachne Caecus Beginner Team for Morimens — engagement: 439
+2. [Morimens] Blind Story then HM of Ch 5 Arc 2 — engagement: 383
+3. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 65
 
 ## 沉默平台
 
