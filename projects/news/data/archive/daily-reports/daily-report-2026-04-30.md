@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-04-30
 
-> 采集时间：2026-04-30 03:11 UTC+8
+> 采集时间：2026-04-30 04:54 UTC+8
 
 ## 🔥 联动动态
 
@@ -18,16 +18,16 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 46 |
-| Discord | 0（24h内无新内容）|
+| Bilibili | 40 |
+| Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 0（24h内无新内容）|
-| Reddit | 15 |
+| Pixiv | 1 |
+| Reddit | 32 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 6 |
 | Steam 论坛 | 0（沉默）|
@@ -35,10 +35,22 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 16 |
+| 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 4 |
+| YouTube | 19 |
 | 知乎 | 0（沉默）|
+
+## Discord
+
+今日 9,575 条消息，348 位活跃用户，895 次反应。热门频道：🔸綜合討論(2598)、🔸general-chat(2079)、🔸ruang-obrolan-indonesia(1810)、🔸canal-español(548)、🔸game-question(463)
+
+### 热门话题
+
+1. [DC] asecana@🔸art-and-memes: (附件/嵌入) — engagement: 88
+2. [DC] glitzy_x@🔸art-and-memes: layered paper standee is done  — engagement: 47
+3. [DC] water_heart@🔸綜合討論: 這裡是你們最愛的AAA報償批發夢遊遊 我宣布一下 莉莉血肉毒 0死抗 3 — engagement: 33
+4. [DC] sweet_25367@🔸綜合討論: ~~其实我是哈姆林玩不下去了才跑去玩四小只的~~ — engagement: 30
+5. [DC] sayo.0320@🔸晒卡分享: (附件/嵌入) — engagement: 28
 
 ## Steam 评论
 
@@ -57,11 +69,11 @@
 
 ## Bilibili
 
-1. 忘却前夜3+3阿拉克涅主线第七章差点翻车太难了 — engagement: 998
-2. gal人物介绍这一块 — engagement: 989
-3. 雪莲一球1t容灾5-5，小心……基伤造物…… — engagement: 686
-4. 雪莲一球1t容灾5-5，小心……基伤造物…… — engagement: 675
-5. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 530
+1. gal人物介绍这一块 — engagement: 1558
+2. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 544
+3. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 520
+4. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 507
+5. 【忘却前夜/调查行动】织命剧场Part14 即兴喜剧 — engagement: 501
 
 ## Official
 
@@ -71,13 +83,17 @@
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
+## Pixiv
+
+1.  — engagement: 0
+
 ## Reddit
 
 1. tough choice — engagement: 0
-2. “Rapture is beyond Fate” CGs — engagement: 0
+2. I would appreciate any team recommendations for the early st — engagement: 0
 3. Is there any major event that is going on rn /upcoming? — engagement: 0
-4. ill deal with him tommorow any suggestion (●'◡'●) — engagement: 0
-5. I would appreciate any team recommendations for the early st — engagement: 0
+4. “Rapture is beyond Fate” CGs — engagement: 0
+5. ill deal with him tommorow any suggestion (●'◡'●) — engagement: 0
 
 ## StopGame.ru
 
@@ -100,11 +116,12 @@
 
 ## YouTube
 
-1. [Morimens] Blind Story then HM of Ch 5 Arc 2 — engagement: 382
-2. Stream doesn't end until I finish Arachne's Chapter in Morim — engagement: 246
-3. [Morimens] Arc 2 Chapter 5 First HM Clear - No Ecog, Blind r — engagement: 34
-4. Morimens 2.0 - Chapter 5: Fated Theater - Full Story All Cut — engagement: 33
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 291304
+2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 42972
+3. Clementine edit | Forget last night: Morimens — engagement: 33409
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19493
+5. Morimens Gameplay Is FUN — engagement: 17495
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, Discord, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
