@@ -3058,6 +3058,48 @@
       "title": "Stream doesn't end until I finish Arachne's Chapter in Morimens (Blind)",
       "time": "2026-04-29T10:03:54.530311+00:00",
       "downloaded_at": "2026-04-29T10:07:15.233847+00:00"
+    },
+    "https://i.ytimg.com/vi/8ICVh5xTkas/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBuMhgt7LGCy35HEqz80kVbWRBjHA": {
+      "filename": "youtube_797f3cbee292ebee.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Morimens April 2026 +12 Tierlist Update post buffs.",
+      "time": "2026-04-29T12:11:10.165388+00:00",
+      "downloaded_at": "2026-04-29T12:14:04.105691+00:00"
+    },
+    "https://i.ytimg.com/vi/t_3GDEK0lRY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCWbDEN3YutUdqFF28aEzYGy8wcQ": {
+      "filename": "youtube_752a791be152709f.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Blind Story then HM of Ch 5 Arc 2",
+      "time": "2026-04-29T12:11:10.165346+00:00",
+      "downloaded_at": "2026-04-29T12:14:04.462016+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/57b257c8823ce6165eac7994c5f6fa4d64d63e9a.jpg": {
+      "filename": "bilibili_42f3ce7c79c5fbe6.jpg",
+      "source": "bilibili",
+      "title": "四小只轻松写意拿下H5-11涅芙蕾亚，首次主线定制关，专为四小只准备！",
+      "time": "2026-04-29T08:30:49+00:00",
+      "downloaded_at": "2026-04-29T12:14:05.658267+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/46491e09dbc3791329bb94cb60fd3287e367dd3c.jpg": {
+      "filename": "bilibili_cb0ecee6740a4722.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜星辰篇H5-11逃课",
+      "time": "2026-04-29T07:56:14+00:00",
+      "downloaded_at": "2026-04-29T12:14:07.922421+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/33dab0526d2466e7c420da3d86ab124492a213c5.jpg": {
+      "filename": "bilibili_7393d4ff065a0c3e.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】莉兹首通H5-11",
+      "time": "2026-04-29T11:27:11+00:00",
+      "downloaded_at": "2026-04-29T12:14:09.763410+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/ac991e69287d8f32a883319efb0f0e1f244e9f60.jpg": {
+      "filename": "bilibili_aa27b869246b9059.jpg",
+      "source": "bilibili",
+      "title": "别看肉块了，点击查看真正的美少女出窑",
+      "time": "2026-04-29T11:30:59+00:00",
+      "downloaded_at": "2026-04-29T12:14:10.903744+00:00"
     }
   },
   "failed": {
@@ -4215,6 +4257,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-29T10:07:14.265294+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/57b257c8823ce6165eac7994c5f6fa4d64d63e9a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T12:14:05.959072+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/46491e09dbc3791329bb94cb60fd3287e367dd3c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T12:14:08.223224+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/33dab0526d2466e7c420da3d86ab124492a213c5.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-29T12:14:10.064180+00:00"
     }
   },
   "archived": []

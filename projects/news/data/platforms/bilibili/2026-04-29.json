@@ -1,9 +1,69 @@
 {
   "date": "2026-04-29",
-  "archived_at": "2026-04-29T10:07:15.292690+00:00",
+  "archived_at": "2026-04-29T12:14:10.965896+00:00",
   "source": "bilibili",
-  "item_count": 28,
+  "item_count": 35,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-29T08:30:49+00:00",
+      "lang": "zh",
+      "title": "四小只轻松写意拿下H5-11涅芙蕾亚，首次主线定制关，专为四小只准备！",
+      "summary": "└ old苏归 (1赞): 朱波，想通普通难度的话三小只最低得什么配置\n  └ bian_loratadine (1赞): 强强[星星眼]\n  └ 我是sosorry (1赞): 大佬喵",
+      "url": "https://www.bilibili.com/video/BV1qY9UBYELV",
+      "author": "龢利喵",
+      "engagement": 249,
+      "media_url": "https://i0.hdslb.com/bfs/archive/57b257c8823ce6165eac7994c5f6fa4d64d63e9a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 226,
+        "comment_count": 23,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-29T08:30:49+00:00",
+      "lang": "zh",
+      "title": "四小只轻松写意拿下H5-11涅芙蕾亚，首次主线定制关，专为四小只准备！",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116486995778488",
+      "author": "龢利喵",
+      "engagement": 228,
+      "media_url": "//i0.hdslb.com/bfs/archive/57b257c8823ce6165eac7994c5f6fa4d64d63e9a.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-29T07:56:14+00:00",
+      "lang": "zh",
+      "title": "忘却前夜星辰篇H5-11逃课",
+      "summary": "省流：转阶段小艾石化可跳过二阶段\n  └ -Love7_ (1赞): 饱饱好厉害喵[黎歌表情包_吃桃]\n  └ 跳段木偶舞 (0赞): 饱饱好厉害喵[桃源_欢呼]\n  └ 幽缀 (0赞): 悲，已经被修了好像",
+      "url": "https://www.bilibili.com/video/BV1Lv9UBAEDt",
+      "author": "窝有鱼鱼蒸Orz",
+      "engagement": 166,
+      "media_url": "https://i2.hdslb.com/bfs/archive/46491e09dbc3791329bb94cb60fd3287e367dd3c.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 158,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-29T07:56:14+00:00",
+      "lang": "zh",
+      "title": "忘却前夜星辰篇H5-11逃课",
+      "summary": "省流：转阶段小艾石化可跳过二阶段",
+      "url": "http://www.bilibili.com/video/av116486912016914",
+      "author": "窝有鱼鱼蒸Orz",
+      "engagement": 158,
+      "media_url": "//i2.hdslb.com/bfs/archive/46491e09dbc3791329bb94cb60fd3287e367dd3c.jpg",
+      "content_type": "video"
+    },
     {
       "source": "bilibili",
       "time": "2026-04-28T17:00:16+00:00",
@@ -276,6 +336,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-29T11:27:11+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】莉兹首通H5-11",
+      "summary": "大月卡真好用 虽然最后两次死抗根本没凹就自己爆出来就是了\n  └ 大团子不是团子 (0赞): 我了🌰糕手[喜欢]",
+      "url": "https://www.bilibili.com/video/BV1Yk9DBNEqL",
+      "author": "风凤_WP",
+      "engagement": 20,
+      "media_url": "https://i2.hdslb.com/bfs/archive/33dab0526d2466e7c420da3d86ab124492a213c5.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 19,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-28T19:35:29+00:00",
       "lang": "zh",
       "title": "忘却前夜3+3阿拉克涅主线第七章差点翻车太难了",
@@ -291,6 +369,18 @@
         "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-29T11:27:11+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】莉兹首通H5-11",
+      "summary": "大月卡真好用 虽然最后两次死抗根本没凹就自己爆出来就是了",
+      "url": "http://www.bilibili.com/video/av116487733971700",
+      "author": "风凤_WP",
+      "engagement": 19,
+      "media_url": "//i2.hdslb.com/bfs/archive/33dab0526d2466e7c420da3d86ab124492a213c5.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -363,6 +453,24 @@
       "engagement": 9,
       "media_url": "//i0.hdslb.com/bfs/archive/c2810d7addce3dae15efc14f7253715a9f1186ac.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-29T11:30:59+00:00",
+      "lang": "zh",
+      "title": "别看肉块了，点击查看真正的美少女出窑",
+      "summary": "一个绝美沙耶盘",
+      "url": "https://www.bilibili.com/video/BV1e69DBiEbF",
+      "author": "依盖队大厨",
+      "engagement": 3,
+      "media_url": "https://i1.hdslb.com/bfs/archive/ac991e69287d8f32a883319efb0f0e1f244e9f60.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 3,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",

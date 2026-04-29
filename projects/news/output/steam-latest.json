@@ -1,23 +1,8 @@
 {
-  "collected_at": "2026-04-29T10:07:13.108304+00:00",
+  "collected_at": "2026-04-29T12:14:03.421838+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 9,
   "items": [
-    {
-      "source": "steam",
-      "time": "2026-04-28T11:05:42+00:00",
-      "lang": "schinese",
-      "title": "[负面] 贱猫",
-      "summary": "贱猫",
-      "url": "https://steamcommunity.com/profiles/76561199801214276/recommended/3052450",
-      "author": "76561199801214276",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "贱猫",
-      "timestamp_created": 1777374342,
-      "playtime_forever": 3078
-    },
     {
       "source": "steam",
       "time": "2026-04-29T07:12:21+00:00",
@@ -121,7 +106,7 @@
       "voted_up": true,
       "review": "십덕 슬더스",
       "timestamp_created": 1777393749,
-      "playtime_forever": 127
+      "playtime_forever": 247
     },
     {
       "source": "steam",
@@ -151,37 +136,7 @@
       "voted_up": true,
       "review": ".",
       "timestamp_created": 1777384662,
-      "playtime_forever": 729
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-28T11:38:01+00:00",
-      "lang": "english",
-      "title": "[负面] Another Slay the spire with lots of story and cine...",
-      "summary": "Another Slay the spire with lots of story and cinematic effects that we did not ask. I need 10-15 second to play a card before it finishes all the animations, and same animation for that card again.",
-      "url": "https://steamcommunity.com/profiles/76561198065957886/recommended/3052450",
-      "author": "76561198065957886",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "Another Slay the spire with lots of story and cinematic effects that we did not ask. I need 10-15 second to play a card before it finishes all the animations, and same animation for that card again.",
-      "timestamp_created": 1777376281,
-      "playtime_forever": 15
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-28T10:17:26+00:00",
-      "lang": "schinese",
-      "title": "[正面]",
-      "summary": "",
-      "url": "https://steamcommunity.com/profiles/76561199801641804/recommended/3052450",
-      "author": "76561199801641804",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "",
-      "timestamp_created": 1777371446,
-      "playtime_forever": 13571
+      "playtime_forever": 819
     }
   ]
 }
