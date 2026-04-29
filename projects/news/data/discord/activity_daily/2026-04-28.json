@@ -1,38 +1,42 @@
 {
   "date": "2026-04-28",
-  "messages": 12878,
+  "messages": 18644,
   "unique_authors": 378,
-  "reactions_total": 1545,
-  "attachments": 700,
+  "reactions_total": 2054,
+  "attachments": 960,
   "channel_activity": {
-    "🔸綜合討論": 1200,
+    "🔸綜合討論": 1220,
+    "🔸morimens-game-chat": 4045,
+    "🔸课间休息闲聊": 1,
+    "🔸한국어-채팅방": 72,
+    "🔸deutscher-chatraum": 2,
+    "🔸русский-канал": 562,
+    "🔸canal-español": 512,
+    "🔸canal-português": 2404,
+    "🔸ruang-obrolan-indonesia": 1366,
+    "🔸ห้องสนทนาภาษาไทย": 141,
+    "🔸traphase": 129,
+    "🔸lore-chat": 525,
+    "🔸team-building": 680,
+    "🔸general-chat": 2418,
+    "🔸邀请码互助┊swap-invitation-codes": 11,
+    "🔸game-question": 1773,
+    "🔸机器人命令┊bot-commands": 47,
+    "Etheral Core": 6,
+    "\"24\" lives matter": 8,
+    "teambuilding help": 2,
     "🔸阵容构建": 72,
     "🔸剧情交流": 146,
     "🔸晒卡分享": 3,
     "🔸欢乐梗图": 2,
     "🔸相位对弈": 7,
     "🔸日本語チャンネル": 1,
-    "🔸한국어-채팅방": 71,
-    "🔸deutscher-chatraum": 1,
-    "🔸русский-канал": 262,
     "🔸phòng-chat-tiếng-việt": 2248,
-    "🔸canal-español": 383,
-    "🔸canal-português": 1969,
-    "🔸ruang-obrolan-indonesia": 1362,
-    "🔸ห้องสนทนาภาษาไทย": 135,
-    "🔸traphase": 125,
-    "🔸lore-chat": 522,
     "🔸礼包码┊gift-codes": 1,
     "🔸频道建议┊server-suggestions": 1,
-    "🔸team-building": 543,
-    "🔸general-chat": 2243,
-    "🔸邀请码互助┊swap-invitation-codes": 9,
-    "🔸game-question": 1277,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 45,
     "🔸erica-playground": 1,
     "堆图ing": 2,
-    "Etheral Core": 4,
     "Visual Bug on card \"Assault Thesis\" from Ramona": 1,
     "✅「已回答」精粹靈核核心和碎片開放互換": 3,
     "✅「已回答」每周任务": 5,
@@ -66,7 +70,6 @@
     "✅「已回答」日常一鍵領取": 2,
     "PVE players don't want Traphase": 1,
     "✅「Answered」Is there no character rerun banner in this patch?": 4,
-    "\"24\" lives matter": 7,
     "V2.5.0.4 在线维护公告": 2,
     "守密人頭像": 1,
     ":man_detective: 相位對弈：對戰表情": 1,
@@ -89,15 +92,20 @@
     "1498733331448070235": 1
   },
   "hourly_activity": {
-    "0": 170,
-    "1": 371,
-    "2": 686,
-    "3": 309,
-    "4": 627,
-    "5": 737,
-    "6": 350,
-    "7": 196,
-    "8": 519,
+    "19": 701,
+    "20": 622,
+    "22": 177,
+    "23": 192,
+    "0": 822,
+    "1": 833,
+    "2": 1109,
+    "3": 851,
+    "4": 1083,
+    "5": 1215,
+    "6": 1044,
+    "7": 349,
+    "8": 704,
+    "21": 304,
     "9": 666,
     "10": 567,
     "11": 670,
@@ -107,17 +115,12 @@
     "15": 1103,
     "16": 724,
     "17": 510,
-    "18": 310,
-    "19": 275
+    "18": 310
   },
   "message_types": {
-    "19": 3638,
-    "0": 9197,
-    "20": 10,
-    "23": 1,
-    "4": 29,
-    "6": 2,
-    "21": 1
+    "0": 4037,
+    "19": 1728,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -185,6 +188,22 @@
       "channel": "🔸lore-chat"
     },
     {
+      "id": "1498499880518418442",
+      "channel_id": "1170692781216378960",
+      "content": "ok this should piss on wave 5",
+      "author": "noire_2",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1498595326716547147",
+      "channel_id": "1170692781216378960",
+      "content": "is this the biggest scam of a silver prime buyers' \"deal\" that exists in this ga",
+      "author": "reya.li",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1498558073965645945",
       "channel_id": "1131839874132090890",
       "content": "",
@@ -209,6 +228,14 @@
       "channel": "William posting"
     },
     {
+      "id": "1498530671310803034",
+      "channel_id": "1170692781216378960",
+      "content": "<@1471414323883540501> it cleared i suppose",
+      "author": "princess.goth",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1498647130758447114",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -225,6 +252,22 @@
       "channel": "🔸剧情交流"
     },
     {
+      "id": "1498489639177031711",
+      "channel_id": "1170692781216378960",
+      "content": "<@267888098732539914> <@113374123798859776> <:please:1356053110375714817>",
+      "author": "arisuu0604",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1498559762051108916",
+      "channel_id": "1170692781216378960",
+      "content": "who would ever do math",
+      "author": "syruponstrawberrycake",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1498495601191686215",
       "channel_id": "1131839817982947429",
       "content": "",
@@ -239,46 +282,6 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498625734103797831",
-      "channel_id": "1131839817982947429",
-      "content": "沒辦法我想試試看375",
-      "author": "ahong0727",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498633885280632973",
-      "channel_id": "1131839817982947429",
-      "content": "道中很怕 進王關就好打了",
-      "author": "theal8893",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498693378349469866",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "mezen4181",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498702456295784600",
-      "channel_id": "1131839817982947429",
-      "content": "~~SP阿拉什麼時候出？~~",
-      "author": "arachnids_nacha",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498581559962243114",
-      "channel_id": "1173463482503536711",
-      "content": "貓：沒有產能寫新文案不好意思哈",
-      "author": "ena04564",
-      "reactions": 5,
-      "channel": "🔸剧情交流"
     }
   ]
 }

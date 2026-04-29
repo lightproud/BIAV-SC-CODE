@@ -1,12 +1,12 @@
 {
   "date": "2026-04-27",
-  "messages": 21097,
+  "messages": 22052,
   "unique_authors": 435,
-  "reactions_total": 1876,
-  "attachments": 1119,
+  "reactions_total": 1971,
+  "attachments": 1170,
   "channel_activity": {
+    "🔸morimens-game-chat": 9682,
     "🔸綜合討論": 3219,
-    "🔸morimens-game-chat": 8727,
     "🔸한국어-채팅방": 17,
     "🔸русский-канал": 953,
     "🔸phòng-chat-tiếng-việt": 911,
@@ -85,11 +85,11 @@
     "1498351626115879135": 1
   },
   "hourly_activity": {
+    "20": 556,
+    "21": 451,
+    "22": 687,
+    "23": 585,
     "19": 1071,
-    "20": 379,
-    "21": 241,
-    "22": 436,
-    "23": 268,
     "8": 1238,
     "9": 989,
     "10": 1253,
@@ -111,9 +111,8 @@
     "7": 1197
   },
   "message_types": {
-    "0": 4901,
-    "19": 1991,
-    "20": 2
+    "19": 287,
+    "0": 668
   },
   "top_reacted_messages": [
     {
@@ -253,6 +252,14 @@
       "channel": "🏆 忘却前夜第4届N厨杯┊The 4th 「N」′s Chef Cup of Morimens"
     },
     {
+      "id": "1498437823995580577",
+      "channel_id": "1170692781216378960",
+      "content": "hello chat",
+      "author": "noire_2",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1498123302483529888",
       "channel_id": "1131839817982947429",
       "content": "<:GDoll_Inferno_serenity:1468257540809822302> 还是做不到吗",
@@ -265,14 +272,6 @@
       "channel_id": "1131839817982947429",
       "content": "我打完了，你们加油",
       "author": "ponponnyaru",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498244203648651339",
-      "channel_id": "1131839817982947429",
-      "content": "但是這是事實",
-      "author": "eddy10051115",
       "reactions": 6,
       "channel": "🔸綜合討論"
     }
