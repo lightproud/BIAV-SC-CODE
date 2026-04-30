@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-30
 
-> 采集时间：2026-04-30 18:49 UTC+8
+> 采集时间：2026-04-30 20:12 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] [沙耶之歌]大致剧情   gal推荐 — engagement: 254
+1. [Bilibili] [沙耶之歌]大致剧情   gal推荐 — engagement: 259
 2. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -20,7 +20,7 @@
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 46 |
-| Discord | 4 |
+| Discord | 3 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -28,7 +28,7 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 0（24h内无新内容）|
-| Reddit | 12 |
+| Reddit | 24 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 4 |
 | Steam 论坛 | 0（沉默）|
@@ -36,7 +36,7 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 19 |
+| 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 2 |
 | 知乎 | 0（沉默）|
@@ -52,7 +52,6 @@ legs were hell to make, gonna take a long nap now
 
 1. [DC] water_heart@🔸綜合討論: 這裡是你們最愛的AAA報償批發夢遊遊 我宣布一下 莉莉血肉毒 0死抗 3 — engagement: 33
 2. [DC] jmjmjm6667@🔸art-and-memes: Magical☆Lillymom☆Frances — engagement: 27
-3. [DC] xuanxue007@🔸綜合討論: 除了最后一关以外感觉都是旺达的奴隶 — engagement: 24
 
 ## Steam 评论
 
@@ -74,11 +73,11 @@ This is  — engagement: 0
 
 ## Bilibili
 
-1. gal人物介绍这一块 — engagement: 23666
-2. 老大我们一定要用葬骸城区h5-11吗 — engagement: 633
-3. 别看肉块了，点击查看真正的美少女出窑 — engagement: 626
-4. 老大我们一定要用葬骸城区h5-11吗 — engagement: 620
-5. 【忘却前夜】莉兹首通H5-11 — engagement: 493
+1. gal人物介绍这一块 — engagement: 24373
+2. 老大我们一定要用葬骸城区h5-11吗 — engagement: 655
+3. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 492
+4. 【忘却前夜】高配神国h5-11 — engagement: 490
+5. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 490
 
 ## Official
 
@@ -106,22 +105,18 @@ This is  — engagement: 0
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜┊唤醒体展示✦阿拉克涅
+3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+4. 忘却前夜×沙耶之歌 联动预告
 
-「悲惨吗？绝望吗？行将织就又开始融化的、没有尽头的......网。」
-「让命运之轮每时 — engagement: 0
-4. 忘却前夜丨弥萨格调查局CP32行动指南
+梦的碎片 随风而至
 
-致全体即将前往新前线的守密人：
-
-新的异常波动已被精确锁定。
-
-观测信号不再模 — engagement: 0
-5. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
+5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## YouTube
 
-1. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 202
+1. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 198
 2. [Morimens] Arc 2 Chapter 5 First HM Clear - No Ecog, Blind r — engagement: 155
 
 ## 沉默平台
