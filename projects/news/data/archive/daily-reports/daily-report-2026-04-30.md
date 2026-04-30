@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-04-30
 
-> 采集时间：2026-04-30 13:25 UTC+8
+> 采集时间：2026-04-30 16:06 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] [沙耶之歌]大致剧情   gal推荐 — engagement: 235
+1. [Bilibili] [沙耶之歌]大致剧情   gal推荐 — engagement: 251
 2. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -16,21 +16,21 @@
 
 | 平台 | 数据条数 |
 |------|----------|
-| App Store | 0（沉默）|
+| App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 28 |
-| Discord | 10 |
+| Bilibili | 38 |
+| Discord | 7 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 0（24h内无新内容）|
-| Reddit | 22 |
+| Pixiv | 1 |
+| Reddit | 11 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 5 |
+| Steam | 4 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
@@ -51,15 +51,15 @@ legs were hell to make, gonna take a long nap now
 ### 热门话题
 
 1. [DC] water_heart@🔸綜合討論: 這裡是你們最愛的AAA報償批發夢遊遊 我宣布一下 莉莉血肉毒 0死抗 3 — engagement: 33
-2. [DC] sayo.0320@🔸晒卡分享: (附件/嵌入) — engagement: 28
-3. [DC] jmjmjm6667@🔸art-and-memes: Magical☆Lillymom☆Frances — engagement: 27
-4. [DC] ahong0727@🔸綜合討論: 外國新遊戲欸 — engagement: 25
-5. [DC] heikwok@🔸綜合討論: 抽象 — engagement: 24
+2. [DC] jmjmjm6667@🔸art-and-memes: Magical☆Lillymom☆Frances — engagement: 27
+3. [DC] heikwok@🔸綜合討論: 抽象 — engagement: 24
+4. [DC] xuanxue007@🔸綜合討論: 除了最后一关以外感觉都是旺达的奴隶 — engagement: 24
+5. [DC] carme.0588@🔸綜合討論: (附件/嵌入) — engagement: 22
 
 ## Steam 评论
 
-- 好评 4 / 差评 1 / 好评率 80%
-- 语言分布：english 2, french 1, schinese 1, russian 1
+- 好评 3 / 差评 1 / 好评率 75%
+- 语言分布：french 1, schinese 1, english 1, russian 1
 
 ### 热门好评
 
@@ -68,7 +68,6 @@ legs were hell to make, gonna take a long nap now
 ☐ Faut pas s'y attarder... — engagement: 1
 2. [正面] 这是一款给不看社区玩家的福利 — engagement: 0
 3. [正面] Morimens — инди‑RPG с элементами выживания и откры... — engagement: 0
-4. [正面] I didn’t expect to come across such a GOOD game  i... — engagement: 0
 
 ### ⚠️ 差评
 
@@ -77,11 +76,11 @@ This is  — engagement: 0
 
 ## Bilibili
 
-1. gal人物介绍这一块 — engagement: 19008
-2. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 741
-3. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 710
-4. 老大我们一定要用葬骸城区h5-11吗 — engagement: 567
-5. 老大我们一定要用葬骸城区h5-11吗 — engagement: 554
+1. gal人物介绍这一块 — engagement: 21707
+2. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 762
+3. H5-11四小只首通，轻松写意拿下，专为四小只准备的主线定制关！ — engagement: 731
+4. 老大我们一定要用葬骸城区h5-11吗 — engagement: 599
+5. 老大我们一定要用葬骸城区h5-11吗 — engagement: 586
 
 ## Official
 
@@ -91,13 +90,17 @@ This is  — engagement: 0
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
+## Pixiv
+
+1.  — engagement: 0
+
 ## Reddit
 
 1. Francis :( — engagement: 0
-2. How many pulls does the half anni usually give? — engagement: 0
+2. New player and I'm loving Aequor, who do I use in a team? — engagement: 0
 3. Issues on buying silver prime via credit card — engagement: 0
-4. tough choice — engagement: 0
-5. I would appreciate any team recommendations for the early st — engagement: 0
+4. How many pulls does the half anni usually give? — engagement: 0
+5. hectic skybound rail 3-3/6 help me please im going insane — engagement: 0
 
 ## StopGame.ru
 
@@ -120,9 +123,9 @@ This is  — engagement: 0
 
 ## YouTube
 
-1. [Morimens] Blind Story then HM of Ch 5 Arc 2 — engagement: 393
-2. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 139
+1. [Morimens] Blind Story then HM of Ch 5 Arc 2 — engagement: 398
+2. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 187
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎

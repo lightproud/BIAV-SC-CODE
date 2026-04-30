@@ -3296,6 +3296,55 @@
       "title": "【忘却前夜】阿拉克涅凯克斯过融灾2-5",
       "time": "2026-04-30T02:34:33+00:00",
       "downloaded_at": "2026-04-30T05:25:27.926284+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/32ddb9dd06b8f8062b17c2cb747153d318fe60ba.jpg": {
+      "filename": "bilibili_576e9d5d2c3fd39a.jpg",
+      "source": "bilibili",
+      "title": "可爱的女孩在吃果冻！",
+      "time": "2026-04-30T02:38:04+00:00",
+      "downloaded_at": "2026-04-30T08:06:03.785793+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/b1bcd1bcdfcf5b6e1a3a1d3fe4aae179b492c688.jpg": {
+      "filename": "bilibili_dcba553e6aa9e47b.jpg",
+      "source": "bilibili",
+      "title": "星辰篇最终法则时代首通全常驻400分",
+      "time": "2026-04-30T05:37:18+00:00",
+      "downloaded_at": "2026-04-30T08:06:04.697876+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/7acb0f43cf93db62bfa77e1977e708b36c40f72c.jpg": {
+      "filename": "bilibili_3c7a1d6020569a86.jpg",
+      "source": "bilibili",
+      "title": "神秘打击女暴揍疯狂信教徒",
+      "time": "2026-04-30T06:06:57+00:00",
+      "downloaded_at": "2026-04-30T08:06:07.305091+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/1274285495061c739a912514f000d68bf5e24482.jpg": {
+      "filename": "bilibili_defdc8d66510f6b2.jpg",
+      "source": "bilibili",
+      "title": "爸爸妈妈女儿携手二五仔暴揍斜角阻滞",
+      "time": "2026-04-30T05:46:26+00:00",
+      "downloaded_at": "2026-04-30T08:06:09.681920+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/f64b8b5e10bbbe3c1f0ae4ceedd2cf9dd9cfb960.jpg": {
+      "filename": "bilibili_b1ab70b27ac433d0.jpg",
+      "source": "bilibili",
+      "title": "果体人偶婆灾厄吃到爽",
+      "time": "2026-04-30T05:53:18+00:00",
+      "downloaded_at": "2026-04-30T08:06:11.258380+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/d4e8f1b7dd859fd73fbe7973a5b2ea6dfe30afc7.jpg": {
+      "filename": "bilibili_72c9c443c6583d8f.jpg",
+      "source": "bilibili",
+      "title": "手法队大战霍尼先生，最吃手法的一集",
+      "time": "2026-04-30T05:41:37+00:00",
+      "downloaded_at": "2026-04-30T08:06:12.535842+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/b295933b746c55ff896109293596e1c521d97f45.jpg": {
+      "filename": "bilibili_7c3f72c888fc7ea8.jpg",
+      "source": "bilibili",
+      "title": "海底野人携手准妈妈与心理姿雄师暴揍学院驯兽师",
+      "time": "2026-04-30T06:01:25+00:00",
+      "downloaded_at": "2026-04-30T08:06:14.355939+00:00"
     }
   },
   "failed": {
@@ -4538,6 +4587,36 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-30T05:25:28.861661+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/b1bcd1bcdfcf5b6e1a3a1d3fe4aae179b492c688.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T08:06:04.998669+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/7acb0f43cf93db62bfa77e1977e708b36c40f72c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T08:06:07.606055+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/1274285495061c739a912514f000d68bf5e24482.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T08:06:09.982647+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/f64b8b5e10bbbe3c1f0ae4ceedd2cf9dd9cfb960.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T08:06:11.559326+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/d4e8f1b7dd859fd73fbe7973a5b2ea6dfe30afc7.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T08:06:12.836507+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/b295933b746c55ff896109293596e1c521d97f45.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T08:06:14.656706+00:00"
     }
   },
   "archived": []
