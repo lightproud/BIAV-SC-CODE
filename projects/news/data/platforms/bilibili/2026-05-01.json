@@ -1,8 +1,8 @@
 {
   "date": "2026-05-01",
-  "archived_at": "2026-04-30T16:22:15.899456+00:00",
+  "archived_at": "2026-04-30T18:06:39.188193+00:00",
   "source": "bilibili",
-  "item_count": 37,
+  "item_count": 39,
   "items": [
     {
       "source": "bilibili",
@@ -566,6 +566,36 @@
       "author": "Black_water_",
       "engagement": 76,
       "media_url": "//i1.hdslb.com/bfs/archive/b295933b746c55ff896109293596e1c521d97f45.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T17:20:46+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】达芙黛尔全程3t融灾禁区4-5",
+      "summary": "。。。。。",
+      "url": "https://www.bilibili.com/video/BV1p69iBgEco",
+      "author": "朝星-",
+      "engagement": 24,
+      "media_url": "https://i1.hdslb.com/bfs/archive/c42cf84499ce5fd7547662a12f1ad44f5f400edd.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 24,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T17:20:46+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】达芙黛尔全程3t融灾禁区4-5",
+      "summary": "。。。。。",
+      "url": "http://www.bilibili.com/video/av116494797183026",
+      "author": "朝星-",
+      "engagement": 24,
+      "media_url": "//i1.hdslb.com/bfs/archive/c42cf84499ce5fd7547662a12f1ad44f5f400edd.jpg",
       "content_type": "video"
     }
   ]
