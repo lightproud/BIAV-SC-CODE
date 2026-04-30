@@ -1,12 +1,12 @@
 {
   "date": "2026-04-28",
-  "messages": 18644,
+  "messages": 23644,
   "unique_authors": 378,
-  "reactions_total": 2054,
-  "attachments": 960,
+  "reactions_total": 2588,
+  "attachments": 1186,
   "channel_activity": {
+    "🔸morimens-game-chat": 9045,
     "🔸綜合討論": 1220,
-    "🔸morimens-game-chat": 4045,
     "🔸课间休息闲聊": 1,
     "🔸한국어-채팅방": 72,
     "🔸deutscher-chatraum": 2,
@@ -92,8 +92,20 @@
     "1498733331448070235": 1
   },
   "hourly_activity": {
-    "19": 701,
-    "20": 622,
+    "8": 784,
+    "9": 1211,
+    "10": 982,
+    "11": 975,
+    "12": 1552,
+    "13": 1713,
+    "14": 1904,
+    "15": 1744,
+    "16": 1064,
+    "17": 959,
+    "18": 737,
+    "19": 1147,
+    "20": 887,
+    "21": 310,
     "22": 177,
     "23": 192,
     "0": 822,
@@ -103,24 +115,12 @@
     "4": 1083,
     "5": 1215,
     "6": 1044,
-    "7": 349,
-    "8": 704,
-    "21": 304,
-    "9": 666,
-    "10": 567,
-    "11": 670,
-    "12": 1262,
-    "13": 1323,
-    "14": 1503,
-    "15": 1103,
-    "16": 724,
-    "17": 510,
-    "18": 310
+    "7": 349
   },
   "message_types": {
-    "0": 4037,
-    "19": 1728,
-    "20": 1
+    "0": 3374,
+    "19": 1625,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -138,6 +138,14 @@
       "author": "angbak",
       "reactions": 18,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1498713697194086551",
+      "channel_id": "1170692781216378960",
+      "content": "HOLY SHIT GUYS ALREADY!?!?\n[V2.6.0 全新唤醒体✦阿拉克涅┊New Awakener✦Ricky](https://www.yo",
+      "author": "dyssayah",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1498616928078397440",
@@ -252,36 +260,28 @@
       "channel": "🔸剧情交流"
     },
     {
-      "id": "1498489639177031711",
+      "id": "1498610697423032422",
       "channel_id": "1170692781216378960",
-      "content": "<@267888098732539914> <@113374123798859776> <:please:1356053110375714817>",
-      "author": "arisuu0604",
+      "content": "sorry angbak, your keeper level is too high, invalidated, whale clear",
+      "author": "chinkeeyong",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1498559762051108916",
+      "id": "1498702263647207474",
       "channel_id": "1170692781216378960",
-      "content": "who would ever do math",
-      "author": "syruponstrawberrycake",
+      "content": "Is this good",
+      "author": "heightsflingplane",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1498495601191686215",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
+      "id": "1498736923559198842",
+      "channel_id": "1170692781216378960",
+      "content": "game music is good",
+      "author": "l8989c",
       "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1498495609177378824",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
