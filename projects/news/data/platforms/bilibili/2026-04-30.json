@@ -1,9 +1,39 @@
 {
   "date": "2026-04-30",
-  "archived_at": "2026-04-30T08:06:14.717841+00:00",
+  "archived_at": "2026-04-30T10:49:47.219151+00:00",
   "source": "bilibili",
-  "item_count": 22,
+  "item_count": 32,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T10:25:00+00:00",
+      "lang": "zh",
+      "title": "夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116492045716327",
+      "author": "水色蓝色",
+      "engagement": 393,
+      "media_url": "//i2.hdslb.com/bfs/archive/718373646059ad4fd5bee6400f226473887bcd20.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T10:25:00+00:00",
+      "lang": "zh",
+      "title": "夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰",
+      "summary": "└ 北白川馅子 (1赞): [doge]",
+      "url": "https://www.bilibili.com/video/BV1NA9hBcEcd",
+      "author": "水色蓝色",
+      "engagement": 390,
+      "media_url": "https://i2.hdslb.com/bfs/archive/718373646059ad4fd5bee6400f226473887bcd20.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 388,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 1
+      }
+    },
     {
       "source": "bilibili",
       "time": "2026-04-30T02:38:04+00:00",
@@ -19,6 +49,36 @@
         "play": 272,
         "comment_count": 4,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T10:10:00+00:00",
+      "lang": "zh",
+      "title": "【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116480016390937",
+      "author": "Dan_Ste",
+      "engagement": 213,
+      "media_url": "//i0.hdslb.com/bfs/archive/e04744a4fc52ed786139b0fd2e1f97a4519bcee7.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T10:10:00+00:00",
+      "lang": "zh",
+      "title": "【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1BY9zBrEiY",
+      "author": "Dan_Ste",
+      "engagement": 210,
+      "media_url": "https://i0.hdslb.com/bfs/archive/e04744a4fc52ed786139b0fd2e1f97a4519bcee7.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 210,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
@@ -50,6 +110,66 @@
       "author": "蝶咏玉泉",
       "engagement": 178,
       "media_url": "//i1.hdslb.com/bfs/archive/b1bcd1bcdfcf5b6e1a3a1d3fe4aae179b492c688.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T08:35:27+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】福袋1t融灾禁区3-5「腐坏之脑」",
+      "summary": "小心……千面幻象……\n  └ 烟已归 (1赞): 吓哭了\n  └ CYANjane (0赞): 啊？\n  └ 归于喧嚣海洋吧 (0赞): 帅",
+      "url": "https://www.bilibili.com/video/BV1d19aBJE39",
+      "author": "朝星-",
+      "engagement": 137,
+      "media_url": "https://i0.hdslb.com/bfs/archive/55e3a7ce4273f70b36bfe2d399b4e9191593742e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 132,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T02:12:21+00:00",
+      "lang": "zh",
+      "title": "［忘却前夜］红夫人h5-11",
+      "summary": "有史以来打的最恶心的一次，整个篇章除了珈伦一个纯良其他全是答辩\n  └ 幻灭喵 (2赞): 红夫人很大的奶量\n打完结算有截图吗\n感觉触伤占比应该很高，想看看收米人打了多少伤害，以及我们红夫人多少奶量了hh\n  └ 当铛铛当dd (0赞): 这游戏好玩吗福利怎么样，打算从某游戏退坑了",
+      "url": "https://www.bilibili.com/video/BV1xZ9tBdEQ9",
+      "author": "櫻t",
+      "engagement": 133,
+      "media_url": "https://i1.hdslb.com/bfs/archive/09d9e2a40c40f61ca266a97d231c5ee7e4401abb.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 128,
+        "comment_count": 5,
+        "comments_fetched": 2,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T08:35:27+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】福袋1t融灾禁区3-5「腐坏之脑」",
+      "summary": "小心……千面幻象……",
+      "url": "http://www.bilibili.com/video/av116492733521209",
+      "author": "朝星-",
+      "engagement": 132,
+      "media_url": "//i0.hdslb.com/bfs/archive/55e3a7ce4273f70b36bfe2d399b4e9191593742e.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T02:12:21+00:00",
+      "lang": "zh",
+      "title": "［忘却前夜］红夫人h5-11",
+      "summary": "有史以来打的最恶心的一次，整个篇章除了珈伦一个纯良其他全是答辩",
+      "url": "http://www.bilibili.com/video/av116491190147975",
+      "author": "櫻t",
+      "engagement": 130,
+      "media_url": "//i1.hdslb.com/bfs/archive/09d9e2a40c40f61ca266a97d231c5ee7e4401abb.jpg",
       "content_type": "video"
     },
     {
@@ -261,6 +381,36 @@
       "engagement": 42,
       "media_url": "//i2.hdslb.com/bfs/archive/07b78086e1986134617e3be1ba60f9e4e23f5731.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T10:21:39+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]cos没专环境的羊皮阿莉，转着也很厉害",
+      "summary": "抄的卡芙卡配队，伤害很舒芙。",
+      "url": "http://www.bilibili.com/video/av116493153017381",
+      "author": "护林犬",
+      "engagement": 29,
+      "media_url": "//i0.hdslb.com/bfs/archive/83dee3c8725cacdf5d212d2f43c65df2877410c8.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T10:21:39+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]cos没专环境的羊皮阿莉，转着也很厉害",
+      "summary": "抄的卡芙卡配队，伤害很舒芙。",
+      "url": "https://www.bilibili.com/video/BV1pa9aBFEVq",
+      "author": "护林犬",
+      "engagement": 28,
+      "media_url": "https://i0.hdslb.com/bfs/archive/83dee3c8725cacdf5d212d2f43c65df2877410c8.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 28,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",

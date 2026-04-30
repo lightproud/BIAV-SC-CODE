@@ -3345,6 +3345,41 @@
       "title": "海底野人携手准妈妈与心理姿雄师暴揍学院驯兽师",
       "time": "2026-04-30T06:01:25+00:00",
       "downloaded_at": "2026-04-30T08:06:14.355939+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/718373646059ad4fd5bee6400f226473887bcd20.jpg": {
+      "filename": "bilibili_6fad1310a04953d0.jpg",
+      "source": "bilibili",
+      "title": "夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰",
+      "time": "2026-04-30T10:25:00+00:00",
+      "downloaded_at": "2026-04-30T10:49:39.489948+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/e04744a4fc52ed786139b0fd2e1f97a4519bcee7.jpg": {
+      "filename": "bilibili_04e6c5e55a04f69b.jpg",
+      "source": "bilibili",
+      "title": "【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐",
+      "time": "2026-04-30T10:10:00+00:00",
+      "downloaded_at": "2026-04-30T10:49:41.175111+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/55e3a7ce4273f70b36bfe2d399b4e9191593742e.jpg": {
+      "filename": "bilibili_5746c1cc21cedc18.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】福袋1t融灾禁区3-5「腐坏之脑」",
+      "time": "2026-04-30T08:35:27+00:00",
+      "downloaded_at": "2026-04-30T10:49:43.750608+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/09d9e2a40c40f61ca266a97d231c5ee7e4401abb.jpg": {
+      "filename": "bilibili_48a57ee921deebe6.jpg",
+      "source": "bilibili",
+      "title": "［忘却前夜］红夫人h5-11",
+      "time": "2026-04-30T02:12:21+00:00",
+      "downloaded_at": "2026-04-30T10:49:45.373235+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/83dee3c8725cacdf5d212d2f43c65df2877410c8.jpg": {
+      "filename": "bilibili_2ff4a2b6c4a95fd7.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]cos没专环境的羊皮阿莉，转着也很厉害",
+      "time": "2026-04-30T10:21:39+00:00",
+      "downloaded_at": "2026-04-30T10:49:47.152587+00:00"
     }
   },
   "failed": {
@@ -4617,6 +4652,31 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-30T08:06:14.656706+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/718373646059ad4fd5bee6400f226473887bcd20.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T10:49:37.814494+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/e04744a4fc52ed786139b0fd2e1f97a4519bcee7.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T10:49:39.790767+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/55e3a7ce4273f70b36bfe2d399b4e9191593742e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T10:49:45.674042+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/09d9e2a40c40f61ca266a97d231c5ee7e4401abb.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T10:49:45.974782+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/83dee3c8725cacdf5d212d2f43c65df2877410c8.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T10:49:46.275491+00:00"
     }
   },
   "archived": []
