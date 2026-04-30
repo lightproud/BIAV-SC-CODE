@@ -1,8 +1,8 @@
 {
   "date": "2026-04-30",
-  "archived_at": "2026-04-30T01:56:23.846135+00:00",
+  "archived_at": "2026-04-30T05:25:28.923469+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -123,6 +123,21 @@
       "review": "One thing is impressive about this game - how many good reviews it got.\nThis is p2w gatcha crap with insanely annoying and long animations.\n\nEven tutorial pissed me off with hand-holding \"click this, do this\" ♥♥♥♥ off man, you don't release this nonsense on PC.",
       "timestamp_created": 1777512065,
       "playtime_forever": 28
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-30T02:52:02+00:00",
+      "lang": "schinese",
+      "title": "[正面] 这是一款给不看社区玩家的福利",
+      "summary": "这是一款给不看社区玩家的福利",
+      "url": "https://steamcommunity.com/profiles/76561199659156388/recommended/3052450",
+      "author": "76561199659156388",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "这是一款给不看社区玩家的福利",
+      "timestamp_created": 1777517522,
+      "playtime_forever": 5161
     }
   ]
 }

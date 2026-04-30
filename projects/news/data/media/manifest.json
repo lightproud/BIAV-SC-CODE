@@ -3275,6 +3275,27 @@
       "title": "拉拉克涅超爽追击一回合出伤200w",
       "time": "2026-04-29T14:02:52+00:00",
       "downloaded_at": "2026-04-29T23:46:55.651362+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/6921dab039556fa5687639092700a2433f26b36e.jpg": {
+      "filename": "bilibili_17c5625b1a67711d.jpg",
+      "source": "bilibili",
+      "title": "[沙耶之歌]大致剧情   gal推荐",
+      "time": "2026-04-29T13:11:27+00:00",
+      "downloaded_at": "2026-04-30T05:25:25.932543+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/2ae84e88e371210657983997fef32dfc17388784.jpg": {
+      "filename": "bilibili_fef7e976c0ef9375.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】H5-11 莉莉血肉毒 0死抗",
+      "time": "2026-04-29T15:07:39+00:00",
+      "downloaded_at": "2026-04-30T05:25:27.129190+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/509e898b44f9d5cd6ab0137fb8e1cc9c637bf0fa.jpg": {
+      "filename": "bilibili_7d25c17285aa2c47.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】阿拉克涅凯克斯过融灾2-5",
+      "time": "2026-04-30T02:34:33+00:00",
+      "downloaded_at": "2026-04-30T05:25:27.926284+00:00"
     }
   },
   "failed": {
@@ -4497,6 +4518,26 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-29T23:46:55.952163+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/2ae84e88e371210657983997fef32dfc17388784.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T05:25:27.430056+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/509e898b44f9d5cd6ab0137fb8e1cc9c637bf0fa.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T05:25:28.227228+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/95a18741b12df67b80e8ddfa50bd3765fe81ca3c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T05:25:28.528027+00:00"
+    },
+    "https://preview.redd.it/hx8fx5ew39yg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=fadb2a4b0613489e1ae8b7fdafd86f2b22c9744c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T05:25:28.861661+00:00"
     }
   },
   "archived": []
