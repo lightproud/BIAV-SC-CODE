@@ -3394,6 +3394,34 @@
       "title": "第五话 超维一族",
       "time": "2026-04-30T09:40:29+00:00",
       "downloaded_at": "2026-04-30T12:12:08.476196+00:00"
+    },
+    "https://i.ytimg.com/vi/um8fBYy3Ax0/hq720_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhKIF8oZTAP&rs=AOn4CLBHaNFqXAUqy4qqApHXM9oCjQNeRQ": {
+      "filename": "youtube_090187074f8e7512.jpg",
+      "source": "youtube",
+      "title": "【忘卻前夜】尻到血流滿地20877超舒壓-薩爾瓦多+索雷爾 #忘卻前夜 #血肉",
+      "time": "2026-04-30T14:59:32.809375+00:00",
+      "downloaded_at": "2026-04-30T15:02:37.632467+00:00"
+    },
+    "https://i.ytimg.com/vi/_JKYsyEeSrI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTnUwsAk7qyeyf7cUJOSwgKq0TVg": {
+      "filename": "youtube_6b8d3e72f769670f.jpg",
+      "source": "youtube",
+      "title": "忘卻前夜 Morimens Everbright Nightfall - Age of Innocence Madness",
+      "time": "2026-04-30T14:59:32.809381+00:00",
+      "downloaded_at": "2026-04-30T15:02:38.222389+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/a6eacfd6de0d71e8dac26d2e4aad98c462356c11.jpg": {
+      "filename": "bilibili_132d72e6349e6bed.jpg",
+      "source": "bilibili",
+      "title": "画半天终于画出美少女了😭",
+      "time": "2026-04-30T14:03:30+00:00",
+      "downloaded_at": "2026-04-30T15:02:39.556803+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/4e348827bcbca31f4909fa9c3212fb36994c5c25.jpg": {
+      "filename": "bilibili_47f514649dc38200.jpg",
+      "source": "bilibili",
+      "title": "絶頂讃歌丨村野沙耶香",
+      "time": "2026-04-30T13:28:58+00:00",
+      "downloaded_at": "2026-04-30T15:02:41.408752+00:00"
     }
   },
   "failed": {
@@ -4716,6 +4744,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-30T12:12:09.934011+00:00"
+    },
+    "https://preview.redd.it/5z8hen8vjbyg1.jpg?width=140&amp;height=105&amp;auto=webp&amp;s=6885f3c3940680f9ca0704e7086ec822d258b23a": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T15:02:41.790523+00:00"
     }
   },
   "archived": []
