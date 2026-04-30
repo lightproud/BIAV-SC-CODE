@@ -3380,6 +3380,20 @@
       "title": "[忘却前夜]cos没专环境的羊皮阿莉，转着也很厉害",
       "time": "2026-04-30T10:21:39+00:00",
       "downloaded_at": "2026-04-30T10:49:47.152587+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/d11295aec5d2f9134e4ccc93ee993c013327e314.jpg": {
+      "filename": "bilibili_94fc9450635a4f20.jpg",
+      "source": "bilibili",
+      "title": "那一晚1999和忘却前夜都喝醉了",
+      "time": "2026-04-30T08:47:48+00:00",
+      "downloaded_at": "2026-04-30T12:12:07.516441+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/4b300f5ce6457abd928beb6110f35cfdcbcecba3.jpg": {
+      "filename": "bilibili_b049ce6d240b9f2e.jpg",
+      "source": "bilibili",
+      "title": "第五话 超维一族",
+      "time": "2026-04-30T09:40:29+00:00",
+      "downloaded_at": "2026-04-30T12:12:08.476196+00:00"
     }
   },
   "failed": {
@@ -4677,6 +4691,31 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-04-30T10:49:46.275491+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/d11295aec5d2f9134e4ccc93ee993c013327e314.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T12:12:07.817526+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/4b300f5ce6457abd928beb6110f35cfdcbcecba3.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T12:12:08.777047+00:00"
+    },
+    "https://preview.redd.it/0z3mt3ng1byg1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=39b205e285c453d61cc9bb8362ab951d168cdead": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T12:12:09.268817+00:00"
+    },
+    "https://preview.redd.it/80nv0onm5ayg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=88797745ce5646095677b050186ec02d736ed5a9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T12:12:09.598715+00:00"
+    },
+    "https://preview.redd.it/setjwp9ol9yg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=53e3839c0a9d0ef3c6b46162d5d1db79aacdecd3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T12:12:09.934011+00:00"
     }
   },
   "archived": []
