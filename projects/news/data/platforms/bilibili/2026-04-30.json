@@ -1,8 +1,8 @@
 {
   "date": "2026-04-30",
-  "archived_at": "2026-04-30T12:12:09.996693+00:00",
+  "archived_at": "2026-04-30T15:02:41.853696+00:00",
   "source": "bilibili",
-  "item_count": 36,
+  "item_count": 38,
   "items": [
     {
       "source": "bilibili",
@@ -201,6 +201,42 @@
       "engagement": 130,
       "media_url": "//i1.hdslb.com/bfs/archive/09d9e2a40c40f61ca266a97d231c5ee7e4401abb.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T14:03:30+00:00",
+      "lang": "zh",
+      "title": "画半天终于画出美少女了😭",
+      "summary": "-\n  └ 给刷到的所有视频投币 (2赞): 好棒耶~点赞喵~需要投币请回复本喵~\n  └ 仔仔翔 (1赞): [星空列车与白的旅行表情包_吃糖][星空列车与白的旅行表情包_吃糖][星空列车与白的旅行表情包_吃糖]\n  └ 鸿馍馍 (1赞): 呵，长大了[doge]",
+      "url": "https://www.bilibili.com/video/BV1EA9eBoEJV",
+      "author": "清水不加盐",
+      "engagement": 128,
+      "media_url": "https://i0.hdslb.com/bfs/archive/a6eacfd6de0d71e8dac26d2e4aad98c462356c11.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 125,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T13:28:58+00:00",
+      "lang": "zh",
+      "title": "絶頂讃歌丨村野沙耶香",
+      "summary": "モ一ション\n-yy\n \nカメラ\n-落白Liquor\n  \nモデル\n-Bandai Namco Filmworks/Bandai Namco Music Live/KADOKAWA/Bushiroad/ODD No. Inc.\n \nステージ\n-@Ai/栗ごはん\n \nエフェクト\n-そぼろ/Ikeno/ましまし/角砂糖/swssi/glam/rui/tktk/かき/化身バレッタ様/ARonisc様/三金络合物/あまいなつ/うみ/G_Wuuuuu/桜庭リョウ/呉石/桂花糕配西米露樣",
+      "url": "https://www.bilibili.com/video/BV1Jk9eBcEsQ",
+      "author": "櫻花味大福",
+      "engagement": 110,
+      "media_url": "https://i0.hdslb.com/bfs/archive/4e348827bcbca31f4909fa9c3212fb36994c5c25.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 110,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",

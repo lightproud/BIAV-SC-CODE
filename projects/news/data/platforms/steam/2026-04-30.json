@@ -1,8 +1,8 @@
 {
   "date": "2026-04-30",
-  "archived_at": "2026-04-30T12:12:09.995206+00:00",
+  "archived_at": "2026-04-30T15:02:41.852267+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -138,6 +138,21 @@
       "review": "这是一款给不看社区玩家的福利",
       "timestamp_created": 1777517522,
       "playtime_forever": 5161
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-30T10:36:32+00:00",
+      "lang": "schinese",
+      "title": "[正面] 美工太美丽了。。。。。从1999过来洗眼睛了hhh，，，",
+      "summary": "美工太美丽了。。。。。从1999过来洗眼睛了hhh，，，",
+      "url": "https://steamcommunity.com/profiles/76561199765791473/recommended/3052450",
+      "author": "76561199765791473",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "美工太美丽了。。。。。从1999过来洗眼睛了hhh，，，",
+      "timestamp_created": 1777545392,
+      "playtime_forever": 238
     }
   ]
 }
