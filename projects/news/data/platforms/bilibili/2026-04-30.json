@@ -1,9 +1,39 @@
 {
   "date": "2026-04-30",
-  "archived_at": "2026-04-30T01:56:23.847319+00:00",
+  "archived_at": "2026-04-30T05:25:28.924570+00:00",
   "source": "bilibili",
-  "item_count": 6,
+  "item_count": 9,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T02:34:33+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】阿拉克涅凯克斯过融灾2-5",
+      "summary": "简简单单轻轻松松说是）\n  └ Git122 (0赞): 不是，大家怎么都超限啊[笑哭]",
+      "url": "https://www.bilibili.com/video/BV1m99tBtEiZ",
+      "author": "跳段木偶舞",
+      "engagement": 93,
+      "media_url": "https://i2.hdslb.com/bfs/archive/509e898b44f9d5cd6ab0137fb8e1cc9c637bf0fa.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 87,
+        "comment_count": 6,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T02:34:33+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】阿拉克涅凯克斯过融灾2-5",
+      "summary": "简简单单轻轻松松说是）",
+      "url": "http://www.bilibili.com/video/av116491307457965",
+      "author": "跳段木偶舞",
+      "engagement": 89,
+      "media_url": "//i2.hdslb.com/bfs/archive/509e898b44f9d5cd6ab0137fb8e1cc9c637bf0fa.jpg",
+      "content_type": "video"
+    },
     {
       "source": "bilibili",
       "time": "2026-04-29T17:31:42+00:00",
@@ -92,6 +122,18 @@
       "author": "菲比又干了",
       "engagement": 8,
       "media_url": "//i1.hdslb.com/bfs/archive/4d05a6d51754aba8c8880e30acc57b5378407f65.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T05:22:32+00:00",
+      "lang": "zh",
+      "title": "夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116491961830424",
+      "author": "水色蓝色",
+      "engagement": 1,
+      "media_url": "//i2.hdslb.com/bfs/archive/95a18741b12df67b80e8ddfa50bd3765fe81ca3c.jpg",
       "content_type": "video"
     }
   ]
