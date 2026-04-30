@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-05-01
 
-> 采集时间：2026-05-01 06:44 UTC+8
+> 采集时间：2026-05-01 07:45 UTC+8
 
 ## 🔥 联动动态
 
@@ -26,16 +26,16 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 1 |
-| Reddit | 34 |
+| Pixiv | 2 |
+| Reddit | 36 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 7 |
+| Steam | 6 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 16 |
+| 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 1 |
 | 知乎 | 0（沉默）|
@@ -54,8 +54,8 @@
 
 ## Steam 评论
 
-- 好评 6 / 差评 1 / 好评率 86%
-- 语言分布：schinese 2, english 2, russian 2, japanese 1
+- 好评 5 / 差评 1 / 好评率 83%
+- 语言分布：schinese 2, english 2, japanese 1, russian 1
 
 ### 热门好评
 
@@ -72,11 +72,11 @@ This is  — engagement: 0
 
 ## Bilibili
 
-1. 那一晚1999和忘却前夜都喝醉了 — engagement: 28383
-2. 那一晚1999和忘却前夜都喝醉了 — engagement: 28277
-3. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 4099
-4. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 4081
-5. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 801
+1. 那一晚1999和忘却前夜都喝醉了 — engagement: 29920
+2. 那一晚1999和忘却前夜都喝醉了 — engagement: 29785
+3. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 4351
+4. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 4340
+5. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 807
 
 ## Official
 
@@ -89,6 +89,7 @@ This is  — engagement: 0
 ## Pixiv
 
 1. Kathigu-ra from Morimens — engagement: 0
+2.  — engagement: 0
 
 ## Reddit
 
@@ -96,7 +97,7 @@ This is  — engagement: 0
 2. V2.5.1 Preview: Chaos Awakener Enhancement (From Light) — engagement: 0
 3. V2.5.1 Preview: Aequor Awakener Enhancement — engagement: 0
 4. V2.5.1 Preview: Caro Awakener Enhancement — engagement: 0
-5. V2.5.1 Preview: Ultra Awakener Enhancement — engagement: 0
+5. Poison + Max HP scaling = this nonsense damage (missed this) — engagement: 0
 
 ## StopGame.ru
 
@@ -119,7 +120,7 @@ This is  — engagement: 0
 
 ## YouTube
 
-1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 74
+1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 92
 
 ## 沉默平台
 
