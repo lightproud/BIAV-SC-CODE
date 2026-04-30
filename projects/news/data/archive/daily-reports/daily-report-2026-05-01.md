@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-05-01
 
-> 采集时间：2026-05-01 02:06 UTC+8
+> 采集时间：2026-05-01 04:08 UTC+8
 
 ## 🔥 联动动态
 
@@ -19,7 +19,7 @@
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 33 |
-| Discord | 0（24h内无新内容）|
+| Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -27,7 +27,7 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 2 |
-| Reddit | 28 |
+| Reddit | 32 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 6 |
 | Steam 论坛 | 0（沉默）|
@@ -37,20 +37,30 @@
 | Telegram | 0（沉默）|
 | 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 1 |
+| YouTube | 19 |
 | 知乎 | 0（沉默）|
+
+## Discord
+
+今日 12,225 条消息，379 位活跃用户，1,420 次反应。热门频道：🔸general-chat(4071)、🔸綜合討論(3458)、🔸phòng-chat-tiếng-việt(1165)、🔸game-question(809)、🔸canal-português(789)
+
+### 热门话题
+
+1. [DC] reya.li@🔸校貓日誌┊schoolcat’s-notes: your OC's cutout ruine — engagement: 87
+2. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: # 前瞻：V2.5.1 血肉唤醒体强化 — engagement: 71
+3. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: # 前瞻：V2.5.1  混沌唤醒体强 — engagement: 71
+4. [DC] jmjmjm6667@🔸lore-chat: Leonora sketch — engagement: 63
+5. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: # 前瞻：V2.5.1  深海唤醒体强 — engagement: 53
 
 ## Steam 评论
 
 - 好评 5 / 差评 1 / 好评率 83%
-- 语言分布：schinese 2, russian 2, french 1, english 1
+- 语言分布：schinese 2, russian 2, japanese 1, english 1
 
 ### 热门好评
 
 1. [正面] 这是一款给不看社区玩家的福利 — engagement: 1
-2. [正面] --{ Graphismes }---
-☐ 144P
-☐ Faut pas s'y attarder... — engagement: 1
+2. [正面] The game design is genuinely impressive, with well... — engagement: 0
 3. [正面] klasss — engagement: 0
 4. [正面] 美工太美丽了。。。。。从1999过来洗眼睛了hhh，，， — engagement: 0
 5. [正面] Morimens — инди‑RPG с элементами выживания и откры... — engagement: 0
@@ -62,11 +72,11 @@ This is  — engagement: 0
 
 ## Bilibili
 
-1. 那一晚1999和忘却前夜都喝醉了 — engagement: 23391
-2. 那一晚1999和忘却前夜都喝醉了 — engagement: 23341
-3. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3267
-4. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3260
-5. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 767
+1. 那一晚1999和忘却前夜都喝醉了 — engagement: 26732
+2. 那一晚1999和忘却前夜都喝醉了 — engagement: 26610
+3. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3757
+4. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3741
+5. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 791
 
 ## Official
 
@@ -78,8 +88,8 @@ This is  — engagement: 0
 
 ## Pixiv
 
-1.  — engagement: 0
-2. Kathigu-ra from Morimens — engagement: 0
+1. Kathigu-ra from Morimens — engagement: 0
+2.  — engagement: 0
 
 ## Reddit
 
@@ -110,8 +120,12 @@ This is  — engagement: 0
 
 ## YouTube
 
-1. [Morimens] Arc 2 Chapter 5 Hard Mode Gimmick Guide and Highl — engagement: 246
+1. 🎬 Morimens┊V2.5 PV - Web of the Moirai (VA: Ōnishi Saori) — engagement: 569978
+2. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 291623
+3. Morimens Beginner Progression Guide (2026 Edition) — engagement: 21597
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19518
+5. Morimens Gameplay Is FUN — engagement: 17533
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, Discord, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
