@@ -1,9 +1,87 @@
 {
   "date": "2026-04-30",
-  "archived_at": "2026-04-30T05:25:28.924570+00:00",
+  "archived_at": "2026-04-30T08:06:14.717841+00:00",
   "source": "bilibili",
-  "item_count": 9,
+  "item_count": 22,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T02:38:04+00:00",
+      "lang": "zh",
+      "title": "可爱的女孩在吃果冻！",
+      "summary": "嚼嚼嚼～\n  └ 修茔 (1赞): 青海牌果冻\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ Airstor_ (0赞): @土豆恋语 [千恋万花表情包_心碎]",
+      "url": "https://www.bilibili.com/video/BV1UB9hBKEnc",
+      "author": "最好的互联网id",
+      "engagement": 276,
+      "media_url": "https://i1.hdslb.com/bfs/archive/32ddb9dd06b8f8062b17c2cb747153d318fe60ba.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 272,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T05:37:18+00:00",
+      "lang": "zh",
+      "title": "星辰篇最终法则时代首通全常驻400分",
+      "summary": "└ 听筒ist (0赞): 妈妈...\n  └ 烟已归 (0赞): 王册大人……\n  └ 水中沉浮的貓貓 (0赞): 靜海大人[打call]",
+      "url": "https://www.bilibili.com/video/BV1MF9hBAETL",
+      "author": "蝶咏玉泉",
+      "engagement": 183,
+      "media_url": "https://i1.hdslb.com/bfs/archive/b1bcd1bcdfcf5b6e1a3a1d3fe4aae179b492c688.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 178,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T05:37:18+00:00",
+      "lang": "zh",
+      "title": "星辰篇最终法则时代首通全常驻400分",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116492012163494",
+      "author": "蝶咏玉泉",
+      "engagement": 178,
+      "media_url": "//i1.hdslb.com/bfs/archive/b1bcd1bcdfcf5b6e1a3a1d3fe4aae179b492c688.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T06:06:57+00:00",
+      "lang": "zh",
+      "title": "神秘打击女暴揍疯狂信教徒",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1Np98BtECr",
+      "author": "Black_water_",
+      "engagement": 104,
+      "media_url": "https://i0.hdslb.com/bfs/archive/7acb0f43cf93db62bfa77e1977e708b36c40f72c.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 104,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T06:06:57+00:00",
+      "lang": "zh",
+      "title": "神秘打击女暴揍疯狂信教徒",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116492146317123",
+      "author": "Black_water_",
+      "engagement": 104,
+      "media_url": "//i0.hdslb.com/bfs/archive/7acb0f43cf93db62bfa77e1977e708b36c40f72c.jpg",
+      "content_type": "video"
+    },
     {
       "source": "bilibili",
       "time": "2026-04-30T02:34:33+00:00",
@@ -32,6 +110,126 @@
       "author": "跳段木偶舞",
       "engagement": 89,
       "media_url": "//i2.hdslb.com/bfs/archive/509e898b44f9d5cd6ab0137fb8e1cc9c637bf0fa.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T05:46:26+00:00",
+      "lang": "zh",
+      "title": "爸爸妈妈女儿携手二五仔暴揍斜角阻滞",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV18R98BiEAh",
+      "author": "Black_water_",
+      "engagement": 74,
+      "media_url": "https://i2.hdslb.com/bfs/archive/1274285495061c739a912514f000d68bf5e24482.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 74,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T05:46:26+00:00",
+      "lang": "zh",
+      "title": "爸爸妈妈女儿携手二五仔暴揍斜角阻滞",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116492062562451",
+      "author": "Black_water_",
+      "engagement": 74,
+      "media_url": "//i2.hdslb.com/bfs/archive/1274285495061c739a912514f000d68bf5e24482.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T05:53:18+00:00",
+      "lang": "zh",
+      "title": "果体人偶婆灾厄吃到爽",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1S998BKEBE",
+      "author": "Black_water_",
+      "engagement": 56,
+      "media_url": "https://i1.hdslb.com/bfs/archive/f64b8b5e10bbbe3c1f0ae4ceedd2cf9dd9cfb960.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 56,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T05:53:18+00:00",
+      "lang": "zh",
+      "title": "果体人偶婆灾厄吃到爽",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116492079210207",
+      "author": "Black_water_",
+      "engagement": 56,
+      "media_url": "//i1.hdslb.com/bfs/archive/f64b8b5e10bbbe3c1f0ae4ceedd2cf9dd9cfb960.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T05:41:37+00:00",
+      "lang": "zh",
+      "title": "手法队大战霍尼先生，最吃手法的一集",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV11A9hBFEnD",
+      "author": "Black_water_",
+      "engagement": 55,
+      "media_url": "https://i1.hdslb.com/bfs/archive/d4e8f1b7dd859fd73fbe7973a5b2ea6dfe30afc7.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 55,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T05:41:37+00:00",
+      "lang": "zh",
+      "title": "手法队大战霍尼先生，最吃手法的一集",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116492045655682",
+      "author": "Black_water_",
+      "engagement": 55,
+      "media_url": "//i1.hdslb.com/bfs/archive/d4e8f1b7dd859fd73fbe7973a5b2ea6dfe30afc7.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T06:01:25+00:00",
+      "lang": "zh",
+      "title": "海底野人携手准妈妈与心理姿雄师暴揍学院驯兽师",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1Uo98BPEHA",
+      "author": "Black_water_",
+      "engagement": 49,
+      "media_url": "https://i1.hdslb.com/bfs/archive/b295933b746c55ff896109293596e1c521d97f45.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 49,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T06:01:25+00:00",
+      "lang": "zh",
+      "title": "海底野人携手准妈妈与心理姿雄师暴揍学院驯兽师",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116492112763082",
+      "author": "Black_water_",
+      "engagement": 49,
+      "media_url": "//i1.hdslb.com/bfs/archive/b295933b746c55ff896109293596e1c521d97f45.jpg",
       "content_type": "video"
     },
     {
