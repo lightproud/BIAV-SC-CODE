@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-05-01
 
-> 采集时间：2026-05-01 05:49 UTC+8
+> 采集时间：2026-05-01 06:44 UTC+8
 
 ## 🔥 联动动态
 
@@ -35,7 +35,7 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 20 |
+| 微博 | 16 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 1 |
 | 知乎 | 0（沉默）|
@@ -72,11 +72,11 @@ This is  — engagement: 0
 
 ## Bilibili
 
-1. 那一晚1999和忘却前夜都喝醉了 — engagement: 27615
-2. 那一晚1999和忘却前夜都喝醉了 — engagement: 27498
-3. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3953
-4. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3935
-5. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 799
+1. 那一晚1999和忘却前夜都喝醉了 — engagement: 28383
+2. 那一晚1999和忘却前夜都喝醉了 — engagement: 28277
+3. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 4099
+4. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 4081
+5. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 801
 
 ## Official
 
@@ -108,20 +108,18 @@ This is  — engagement: 0
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜┊唤醒体展示✦阿拉克涅
+3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+4. 12758【投稿】忘却前夜。我主任 — engagement: 0
+5. 忘却前夜×沙耶之歌 联动预告
 
-「悲惨吗？绝望吗？行将织就又开始融化的、没有尽头的......网。」
-「让命运之轮每时 — engagement: 0
-4. 忘却前夜丨弥萨格调查局CP32特别行动
+梦的碎片 随风而至
 
-致所有仍保有理智的守密人：
-
-人间的假日只是伪造的幻象，黑暗的潮汐从未停歇。新 — engagement: 0
-5. 12758【投稿】忘却前夜。我主任 — engagement: 0
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
 
 ## YouTube
 
-1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 0
+1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 74
 
 ## 沉默平台
 
