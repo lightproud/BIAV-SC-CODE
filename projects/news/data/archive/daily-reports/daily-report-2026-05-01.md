@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-05-01
 
-> 采集时间：2026-05-01 04:08 UTC+8
+> 采集时间：2026-05-01 05:49 UTC+8
 
 ## 🔥 联动动态
 
@@ -26,18 +26,18 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 2 |
-| Reddit | 32 |
+| Pixiv | 1 |
+| Reddit | 34 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 6 |
+| Steam | 7 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 20 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 19 |
+| YouTube | 1 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -54,16 +54,16 @@
 
 ## Steam 评论
 
-- 好评 5 / 差评 1 / 好评率 83%
-- 语言分布：schinese 2, russian 2, japanese 1, english 1
+- 好评 6 / 差评 1 / 好评率 86%
+- 语言分布：schinese 2, english 2, russian 2, japanese 1
 
 ### 热门好评
 
 1. [正面] 这是一款给不看社区玩家的福利 — engagement: 1
-2. [正面] The game design is genuinely impressive, with well... — engagement: 0
-3. [正面] klasss — engagement: 0
-4. [正面] 美工太美丽了。。。。。从1999过来洗眼睛了hhh，，， — engagement: 0
-5. [正面] Morimens — инди‑RPG с элементами выживания и откры... — engagement: 0
+2. [正面] rework kathigu into being caro and delete chaos fr... — engagement: 0
+3. [正面] The game design is genuinely impressive, with well... — engagement: 0
+4. [正面] klasss — engagement: 0
+5. [正面] 美工太美丽了。。。。。从1999过来洗眼睛了hhh，，， — engagement: 0
 
 ### ⚠️ 差评
 
@@ -72,11 +72,11 @@ This is  — engagement: 0
 
 ## Bilibili
 
-1. 那一晚1999和忘却前夜都喝醉了 — engagement: 26732
-2. 那一晚1999和忘却前夜都喝醉了 — engagement: 26610
-3. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3757
-4. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3741
-5. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 791
+1. 那一晚1999和忘却前夜都喝醉了 — engagement: 27615
+2. 那一晚1999和忘却前夜都喝醉了 — engagement: 27498
+3. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3953
+4. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 3935
+5. 夯爆了！还有这么香的女角色吗？一定要试试这几款游戏！🥰 — engagement: 799
 
 ## Official
 
@@ -89,7 +89,6 @@ This is  — engagement: 0
 ## Pixiv
 
 1. Kathigu-ra from Morimens — engagement: 0
-2.  — engagement: 0
 
 ## Reddit
 
@@ -97,7 +96,7 @@ This is  — engagement: 0
 2. V2.5.1 Preview: Chaos Awakener Enhancement (From Light) — engagement: 0
 3. V2.5.1 Preview: Aequor Awakener Enhancement — engagement: 0
 4. V2.5.1 Preview: Caro Awakener Enhancement — engagement: 0
-5. She was a fairy — engagement: 0
+5. V2.5.1 Preview: Ultra Awakener Enhancement — engagement: 0
 
 ## StopGame.ru
 
@@ -109,22 +108,20 @@ This is  — engagement: 0
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-4. 忘却前夜×沙耶之歌 联动预告
+3. 忘却前夜┊唤醒体展示✦阿拉克涅
 
-梦的碎片 随风而至
+「悲惨吗？绝望吗？行将织就又开始融化的、没有尽头的......网。」
+「让命运之轮每时 — engagement: 0
+4. 忘却前夜丨弥萨格调查局CP32特别行动
 
-#忘却前夜# #沙耶之歌#
-忘却前夜 #Morimens# 忘却前 — engagement: 0
+致所有仍保有理智的守密人：
+
+人间的假日只是伪造的幻象，黑暗的潮汐从未停歇。新 — engagement: 0
 5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## YouTube
 
-1. 🎬 Morimens┊V2.5 PV - Web of the Moirai (VA: Ōnishi Saori) — engagement: 569978
-2. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 291623
-3. Morimens Beginner Progression Guide (2026 Edition) — engagement: 21597
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19518
-5. Morimens Gameplay Is FUN — engagement: 17533
+1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 0
 
 ## 沉默平台
 

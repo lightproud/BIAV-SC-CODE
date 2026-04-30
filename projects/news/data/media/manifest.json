@@ -3478,6 +3478,13 @@
       "title": "[DC] omenatyyppi@🔸校貓日誌┊schoolcat’s-notes: Hype for Aurita buffs",
       "time": "2026-04-30T14:41:20.824000+00:00",
       "downloaded_at": "2026-04-30T20:08:03.437765+00:00"
+    },
+    "https://i.ytimg.com/vi/UAmA0FVV3eM/hq720.jpg?v=69f3c793&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBLTwfMhUk_aOhLIkN4I4kcdQKIfg": {
+      "filename": "youtube_7cab4ac71daa30ea.jpg",
+      "source": "youtube",
+      "title": "[Morimens] \"Quick\" New Buff Overview and Comparison Stream while I record content.",
+      "time": "2026-04-30T21:46:37.750654+00:00",
+      "downloaded_at": "2026-04-30T21:49:30.987140+00:00"
     }
   },
   "failed": {
@@ -4815,6 +4822,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-04-30T20:08:03.795046+00:00"
+    },
+    "https://external-preview.redd.it/djdlZnE3ZW81ZXlnMV0me5sAUa1pyC_WgzujhxOtIWyIC15UYuIB1mMZ2Xwd.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=23438463d4722b8b137e8d9db27a9df3dc41780a": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T21:49:30.250373+00:00"
+    },
+    "https://preview.redd.it/634f0v517eyg1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=cd13997b27dd312e871cd18052342820ebdd2a98": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-04-30T21:49:30.618359+00:00"
     }
   },
   "archived": []
