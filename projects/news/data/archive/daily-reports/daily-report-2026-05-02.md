@@ -1,13 +1,13 @@
 # 忘却前夜 社区日报 2026-05-02
 
-> 采集时间：2026-05-02 04:04 UTC+8
+> 采集时间：2026-05-02 05:00 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6636
+1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6731
 2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 122
-3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 63
-4. [Bilibili] 沙耶之歌 — engagement: 21
+3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 65
+4. [Bilibili] 沙耶之歌 — engagement: 23
 5. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -22,7 +22,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 26 |
+| Bilibili | 24 |
 | Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
@@ -41,7 +41,7 @@
 | Telegram | 0（沉默）|
 | 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 17 |
+| YouTube | 1 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -74,11 +74,11 @@
 
 ## Bilibili
 
-1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6636
-2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2836
-3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2756
-4. 忘却前夜官摊 — engagement: 815
-5. 忘却前夜官摊 — engagement: 809
+1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6731
+2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2849
+3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2769
+4. 忘却前夜官摊 — engagement: 823
+5. 忘却前夜官摊 — engagement: 817
 
 ## Official
 
@@ -103,25 +103,21 @@
 ## 微博
 
 1. 给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦 — engagement: 0
-2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-3. 12758【投稿】忘却前夜。我主任 — engagement: 0
-4. 忘却前夜#忘却前夜#
+2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-5. 忘却前夜×沙耶之歌 联动预告
+3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+4. 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
 #忘却前夜# #沙耶之歌#
 忘却前夜 #Morimens# 忘却前 — engagement: 0
+5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## YouTube
 
-1. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 43139
-2. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38432
-3. [The Eve of Oblivion] Oh, this one won't sell! [Smartphone G — engagement: 9298
-4. 【忘卻前夜】半週年入坑指南 組隊的基本概念 — engagement: 3573
-5. 【忘卻前夜】塔薇的詳細解析！技能解說/啟靈/抽取建議/命輪推薦/密契推薦！ — engagement: 2506
+1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 260
 
 ## 沉默平台
 
