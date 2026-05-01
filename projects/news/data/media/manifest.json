@@ -3625,6 +3625,20 @@
       "title": "塔薇H5-11道中",
       "time": "2026-05-01T13:46:39+00:00",
       "downloaded_at": "2026-05-01T14:17:11.480696+00:00"
+    },
+    "https://i.ytimg.com/vi/-HN8g7f-XgU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDN7pVUgNw7z0e05NmLdNYBXOv6TA": {
+      "filename": "youtube_a8b66b191ae2e67b.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】守秘者茜ちゃんは異世界知識で無双したい【Morimens】",
+      "time": "2026-05-01T16:44:25.206785+00:00",
+      "downloaded_at": "2026-05-01T16:47:19.858657+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/3d72b3c6e27b18114147fa7aaca8e7fac2007aac.jpg": {
+      "filename": "bilibili_672b148d6ac673f7.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜星辰篇双鸟克羊5-15茧",
+      "time": "2026-05-01T15:48:42+00:00",
+      "downloaded_at": "2026-05-01T16:47:21.927029+00:00"
     }
   },
   "failed": {
@@ -5037,6 +5051,31 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T14:17:11.781425+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/3d72b3c6e27b18114147fa7aaca8e7fac2007aac.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T16:47:22.227927+00:00"
+    },
+    "https://preview.redd.it/ryy08lz7fhyg1.jpg?width=140&amp;height=105&amp;auto=webp&amp;s=42ff5dd53fd7d38096e87d036454f5f4b22f391c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T16:47:22.689853+00:00"
+    },
+    "https://preview.redd.it/oj34dhobnjyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=3ed95cb7cabe39e19d738e2f8bda8fb848bf4d8c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T16:47:23.032204+00:00"
+    },
+    "https://preview.redd.it/5nethlwo9jyg1.png?width=140&amp;height=64&amp;auto=webp&amp;s=a9dc9115e2ca96f6a6a4241f15ad052bc2a65410": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T16:47:23.374643+00:00"
+    },
+    "https://preview.redd.it/sy2d8ie2thyg1.jpg?width=140&amp;height=29&amp;auto=webp&amp;s=591bbb8196f12523496a384d94fd778fd40a5af3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T16:47:23.728658+00:00"
     }
   },
   "archived": []
