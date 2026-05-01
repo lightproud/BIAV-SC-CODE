@@ -1,12 +1,12 @@
 # 忘却前夜 社区日报 2026-05-02
 
-> 采集时间：2026-05-02 02:59 UTC+8
+> 采集时间：2026-05-02 04:04 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6468
-2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 121
-3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 62
+1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6636
+2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 122
+3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 63
 4. [Bilibili] 沙耶之歌 — engagement: 21
 5. [微博] 忘却前夜×沙耶之歌 联动预告
 
@@ -23,7 +23,7 @@
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 26 |
-| Discord | 0（24h内无新内容）|
+| Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -31,23 +31,35 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 0（24h内无新内容）|
-| Reddit | 14 |
+| Reddit | 26 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 6 |
+| Steam | 5 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 16 |
+| 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 1 |
+| YouTube | 17 |
 | 知乎 | 0（沉默）|
+
+## Discord
+
+今日 12,621 条消息，331 位活跃用户，946 次反应。热门频道：🔸general-chat(4791)、🔸綜合討論(2065)、🔸phòng-chat-tiếng-việt(2016)、🔸game-question(752)、🔸canal-português(740)
+
+### 热门话题
+
+1. [DC] junakaru4ever@🔸lore-chat: (附件/嵌入) — engagement: 71
+2. [DC] yusi4172@🔸綜合討論: 終於有了 — engagement: 34
+3. [DC] heikwok@🔸綜合討論: 然後粉魚像是會被深海瘋女人霸凌強制要求女裝那類 — engagement: 28
+4. [DC] reya.li@🔸lore-chat: honestly this is how i've imagined  — engagement: 25
+5. [DC] ahuahuahua@🔸綜合討論: 有大佬可以帶帶我嗎 — engagement: 24
 
 ## Steam 评论
 
-- 好评 5 / 差评 1 / 好评率 83%
-- 语言分布：english 3, schinese 2, tchinese 1
+- 好评 4 / 差评 1 / 好评率 80%
+- 语言分布：english 2, schinese 2, tchinese 1
 
 ### 热门好评
 
@@ -55,7 +67,6 @@
 2. [正面] Great game — engagement: 0
 3. [正面] 好玩 — engagement: 0
 4. [正面] Worth playing for the story alone, and the gacha s... — engagement: 0
-5. [正面] rework kathigu into being caro and delete chaos fr... — engagement: 0
 
 ### ⚠️ 差评
 
@@ -63,11 +74,11 @@
 
 ## Bilibili
 
-1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6468
-2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2809
-3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2729
-4. 忘却前夜官摊 — engagement: 802
-5. 忘却前夜官摊 — engagement: 796
+1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6636
+2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2836
+3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2756
+4. 忘却前夜官摊 — engagement: 815
+5. 忘却前夜官摊 — engagement: 809
 
 ## Official
 
@@ -80,10 +91,10 @@
 ## Reddit
 
 1. I think we can all agree it’s good they’re buffing many old  — engagement: 0
-2. The trusty N is here — engagement: 0
-3. Faint and Aigis (Those pustules on Aigis are very confusing  — engagement: 0
+2. Faint and Aigis (Those pustules on Aigis are very confusing  — engagement: 0
+3. The trusty N is here — engagement: 0
 4. Hot take we need more things to do with thoose — engagement: 0
-5. ULTIMATE ASSEMBLE — engagement: 0
+5. Leigh propaganda in Arc 2 Chapter 5 Boss — engagement: 0
 
 ## StopGame.ru
 
@@ -106,8 +117,12 @@
 
 ## YouTube
 
-1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 253
+1. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 43139
+2. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38432
+3. [The Eve of Oblivion] Oh, this one won't sell! [Smartphone G — engagement: 9298
+4. 【忘卻前夜】半週年入坑指南 組隊的基本概念 — engagement: 3573
+5. 【忘卻前夜】塔薇的詳細解析！技能解說/啟靈/抽取建議/命輪推薦/密契推薦！ — engagement: 2506
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, Discord, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
