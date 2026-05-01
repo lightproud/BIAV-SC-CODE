@@ -1,8 +1,8 @@
 {
   "date": "2026-05-01",
-  "archived_at": "2026-05-01T09:51:33.917848+00:00",
+  "archived_at": "2026-05-01T11:05:00.037962+00:00",
   "source": "bilibili",
-  "item_count": 54,
+  "item_count": 57,
   "items": [
     {
       "source": "bilibili",
@@ -735,6 +735,54 @@
       "engagement": 76,
       "media_url": "//i1.hdslb.com/bfs/archive/b295933b746c55ff896109293596e1c521d97f45.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T10:33:10+00:00",
+      "lang": "zh",
+      "title": "［相位］对面：我记得这把没有潘啊",
+      "summary": "-\n  └ 一般杂鱼 (2赞): 算力：我是赌资。\n  └ 某不知名老法师 (1赞): 依旧天时地利人和具在我也[doge]",
+      "url": "https://www.bilibili.com/video/BV15VRgBdEeY",
+      "author": "莱星Ligh",
+      "engagement": 68,
+      "media_url": "https://i1.hdslb.com/bfs/archive/013a4b79dc853000fff674c1458eae30c128354d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 66,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T10:33:10+00:00",
+      "lang": "zh",
+      "title": "［相位］对面：我记得这把没有潘啊",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116498857200393",
+      "author": "莱星Ligh",
+      "engagement": 66,
+      "media_url": "//i1.hdslb.com/bfs/archive/013a4b79dc853000fff674c1458eae30c128354d.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T10:44:18+00:00",
+      "lang": "zh",
+      "title": "【AI丰川祥子】沙耶の唄(沙耶之歌)",
+      "summary": "点歌请看我的置顶动态喵\n\n你们的支持就是我坚持创作的最大动力,阿里嘎多\n  └ 休言揾泪 (1赞): [Mygo表情包_刚睡醒]",
+      "url": "https://www.bilibili.com/video/BV1VjRgB9EtQ",
+      "author": "沐沐又源源",
+      "engagement": 41,
+      "media_url": "https://i0.hdslb.com/bfs/archive/808aa6a56738ca24efc2b75d1aea320274d808b8.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 40,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",

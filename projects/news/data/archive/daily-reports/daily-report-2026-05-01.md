@@ -1,13 +1,14 @@
 # 忘却前夜 社区日报 2026-05-01
 
-> 采集时间：2026-05-01 17:51 UTC+8
+> 采集时间：2026-05-01 19:04 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 1928
-2. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 39
-3. [Bilibili] 沙耶之歌 — engagement: 6
-4. [微博] 忘却前夜×沙耶之歌 联动预告
+1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 2474
+2. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 48
+3. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 41
+4. [Bilibili] 沙耶之歌 — engagement: 10
+5. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
@@ -21,8 +22,8 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 27 |
-| Discord | 13 |
+| Bilibili | 24 |
+| Discord | 12 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -30,9 +31,9 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 1 |
-| Reddit | 18 |
+| Reddit | 19 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 5 |
+| Steam | 4 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
@@ -40,7 +41,7 @@
 | Telegram | 0（沉默）|
 | 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 1 |
+| YouTube | 2 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -54,12 +55,12 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 2. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: # 前瞻：V2.5.1  混沌唤醒体强 — engagement: 71
 3. [DC] jmjmjm6667@🔸lore-chat: Leonora sketch — engagement: 63
 4. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: # 前瞻：V2.5.1  深海唤醒体强 — engagement: 53
-5. [DC] unwavering_soul@🔸lore-chat: Prettyyyy — engagement: 49
+5. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: ## 莉莉 - **天赋「灵塑适性」* — engagement: 48
 
 ## Steam 评论
 
-- 好评 5 / 差评 0 / 好评率 100%
-- 语言分布：english 2, japanese 1, russian 1, schinese 1
+- 好评 4 / 差评 0 / 好评率 100%
+- 语言分布：english 2, japanese 1, russian 1
 
 ### 热门好评
 
@@ -67,15 +68,14 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 2. [正面] rework kathigu into being caro and delete chaos fr... — engagement: 0
 3. [正面] The game design is genuinely impressive, with well... — engagement: 0
 4. [正面] klasss — engagement: 0
-5. [正面] 美工太美丽了。。。。。从1999过来洗眼睛了hhh，，， — engagement: 0
 
 ## Bilibili
 
-1. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 6783
-2. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 6765
-3. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 1928
-4. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 1815
-5. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 1749
+1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 2474
+2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2013
+3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 1943
+4. 忘却前夜官摊 — engagement: 505
+5. 忘却前夜官摊 — engagement: 501
 
 ## Official
 
@@ -118,7 +118,8 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 
 ## YouTube
 
-1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 201
+1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 219
+2. Morimens Chapter 5 Hard Mode gameplay stream to fall asleep  — engagement: 0
 
 ## 沉默平台
 

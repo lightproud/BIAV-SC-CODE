@@ -1,8 +1,8 @@
 {
   "date": "2026-05-01",
-  "archived_at": "2026-05-01T09:51:33.920773+00:00",
+  "archived_at": "2026-05-01T11:05:00.040955+00:00",
   "source": "youtube",
-  "item_count": 37,
+  "item_count": 38,
   "items": [
     {
       "source": "youtube",
@@ -446,6 +446,18 @@
       "author": "Flares117",
       "engagement": 0,
       "media_url": "https://i.ytimg.com/vi/UAmA0FVV3eM/hq720.jpg?v=69f3c793&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBLTwfMhUk_aOhLIkN4I4kcdQKIfg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-01T11:01:53.574590+00:00",
+      "lang": "",
+      "title": "Morimens Chapter 5 Hard Mode gameplay stream to fall asleep to",
+      "summary": "Casual mostly blind gameplay stream going through about half(? we will see) of the Ch 5 Hardmode~ Thanks everyone, feel free ...",
+      "url": "https://www.youtube.com/watch?v=VK_GCSVsCSw",
+      "author": "Rose Guardian Reya",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/VK_GCSVsCSw/hq720.jpg?v=69f47c4f&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB6K822JOT_uCqPndeGKPjyJNY_vA",
       "content_type": "image"
     }
   ]
