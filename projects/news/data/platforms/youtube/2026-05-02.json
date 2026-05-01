@@ -1,9 +1,21 @@
 {
   "date": "2026-05-02",
-  "archived_at": "2026-05-01T18:59:36.284244+00:00",
+  "archived_at": "2026-05-01T20:04:28.034602+00:00",
   "source": "youtube",
-  "item_count": 19,
+  "item_count": 21,
   "items": [
+    {
+      "source": "youtube",
+      "time": "2026-05-01T20:01:14.755439+00:00",
+      "lang": "",
+      "title": "《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」",
+      "summary": "[1y ago] ... 港澳新馬官網：https://morimens.qookkagames.com ▷台灣官網：https://morimens.sialiagames.com.tw #忘卻前夜#Morimens.",
+      "url": "https://www.youtube.com/watch?v=BkG3QQoqKhQ",
+      "author": "Morimens",
+      "engagement": 43139,
+      "media_url": "https://i.ytimg.com/vi/BkG3QQoqKhQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALYof-HWuORc9b1v7KrpbTjH3E5g",
+      "content_type": "image"
+    },
     {
       "source": "youtube",
       "time": "2026-05-01T16:44:25.206747+00:00",
@@ -26,6 +38,18 @@
       "author": "歐昊",
       "engagement": 16293,
       "media_url": "https://i.ytimg.com/vi/37fhxtEUMIM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCHxBJh287BpFoNLIzuq2ThapmWaw",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-01T20:01:14.755407+00:00",
+      "lang": "",
+      "title": "[The Eve of Oblivion] Oh, this one won't sell! [Smartphone Game Review]",
+      "summary": "[7mo ago] This is a review of \"Eve of Oblivion,\" a combination of a Spire-style deck-building roguelike and a chapter-based smartphone ...",
+      "url": "https://www.youtube.com/watch?v=7yoi1NyxUHo",
+      "author": "あそぶの最新スマホゲームレビュー(中辛)",
+      "engagement": 9298,
+      "media_url": "https://i.ytimg.com/vi/7yoi1NyxUHo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDha4Az8vbq8k5-Ptf8Y8NbUCwOjw",
       "content_type": "image"
     },
     {

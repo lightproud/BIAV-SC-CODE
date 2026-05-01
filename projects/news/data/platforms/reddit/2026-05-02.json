@@ -1,8 +1,8 @@
 {
   "date": "2026-05-02",
-  "archived_at": "2026-05-01T18:59:36.283489+00:00",
+  "archived_at": "2026-05-01T20:04:28.033548+00:00",
   "source": "reddit",
-  "item_count": 31,
+  "item_count": 32,
   "items": [
     {
       "source": "reddit",
@@ -374,6 +374,21 @@
       "url": "https://www.reddit.com/r/Morimens/comments/1t11a1j/faint_and_aigis_those_pustules_on_aigis_are_very/",
       "author": "u//u/Little-Parsley118",
       "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-01T18:13:24+00:00",
+      "lang": "en",
+      "title": "Faint and Aigis (Those pustules on Aigis are very confusing to work with).",
+      "summary": "&#32; submitted by &#32;  /u/Little-Parsley118   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t11a1j/faint_and_aigis_those_pustules_on_aigis_are_very/",
+      "author": "/u/Little-Parsley118",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/z021xzyahkyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=96cb9575140311b5eaf79f2a3478cb4ee6666df4",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
     }
   ]
 }
