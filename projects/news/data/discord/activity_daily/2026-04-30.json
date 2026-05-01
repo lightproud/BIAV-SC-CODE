@@ -1,11 +1,32 @@
 {
   "date": "2026-04-30",
-  "messages": 12225,
+  "messages": 13240,
   "unique_authors": 379,
-  "reactions_total": 1420,
-  "attachments": 592,
+  "reactions_total": 1510,
+  "attachments": 650,
   "channel_activity": {
-    "🔸綜合討論": 3458,
+    "🔸綜合討論": 3533,
+    "🔸chaîne-française": 4,
+    "🔸русский-канал": 219,
+    "🔸canal-español": 262,
+    "🔸canal-português": 969,
+    "🔸ruang-obrolan-indonesia": 339,
+    "🔸traphase": 214,
+    "🔸lore-chat": 173,
+    "🔸team-building": 200,
+    "🔸general-chat": 4280,
+    "🔸game-question": 953,
+    "🔸机器人命令┊bot-commands": 39,
+    "Some passionate feedback on Pandia's 2.5.1 buffs": 3,
+    "Feedback on the  2.5.1 buffs (Specially Wanda)": 2,
+    "阿拉克涅爆牌": 3,
+    "A2CH5 Spoilers Please make it so bottomless scar does not trigger if you heal while being at full hp": 12,
+    "Reality Verges": 1,
+    "\"24\" lives matter": 66,
+    "Preview: V2.5.1 Ultra Awakener Enhancement": 103,
+    "Preview: V2.5.1 Aequor Awakener Enhancement": 35,
+    "Preview: V2.5.1 Chaos Awakener Enhancement": 55,
+    "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 2,
     "🔸阵容构建": 206,
     "🔸剧情交流": 26,
     "🔸晒卡分享": 18,
@@ -16,27 +37,15 @@
     "🔸日本語チャンネル": 5,
     "🔸한국어-채팅방": 28,
     "🔸deutscher-chatraum": 17,
-    "🔸chaîne-française": 2,
-    "🔸русский-канал": 39,
     "🔸phòng-chat-tiếng-việt": 1165,
-    "🔸canal-español": 227,
-    "🔸canal-português": 789,
-    "🔸ruang-obrolan-indonesia": 315,
     "🔸ห้องสนทนาภาษาไทย": 26,
-    "🔸traphase": 155,
-    "🔸lore-chat": 170,
-    "🔸team-building": 129,
-    "🔸general-chat": 4071,
     "🔸邀请码互助┊swap-invitation-codes": 8,
-    "🔸game-question": 809,
     "🔸忘却前夜┊morimens-tv": 2,
-    "🔸机器人命令┊bot-commands": 30,
     "🔸erica-playground": 4,
     "簡單明了阿拉使用說明書": 2,
     "小小的西维斯特": 1,
     "菜雞四小強玩家的抱怨之旅new": 1,
     "再衍化未受到造成的狂氣提高效果加成的問題": 1,
-    "A2CH5 Spoilers Please make it so bottomless scar does not trigger if you heal while being at full hp": 10,
     "IMPORTANT: Unintended card-hand interactions": 5,
     "In boss stage of chapter 5 in node 3/7 i got a bug event.": 6,
     "Cannot log in after 4/29/2026 patch": 1,
@@ -49,13 +58,9 @@
     "Question about Arachnes E1 scaling calcs": 1,
     "💭「處理中」阿拉克涅的命運超維界域": 30,
     "✅「Answered」Aurita simple yet effective buff": 5,
-    "\"24\" lives matter": 62,
     "✅「Answered」Who Ryker's Designer pls come talk ?": 3,
     "時靈擺效果未觸發": 2,
-    "Preview: V2.5.1 Ultra Awakener Enhancement": 100,
     "Preview: V2.5.1 Caro Awakener Enhancement": 55,
-    "Preview: V2.5.1 Aequor Awakener Enhancement": 33,
-    "Preview: V2.5.1 Chaos Awakener Enhancement": 52,
     "Kathigu-Ra fanart": 1,
     "Sylvester cheebs": 1,
     "Morimens Fanarts": 1,
@@ -65,13 +70,17 @@
     "📜 V2.5.0 版本前瞻·下┊Version Outlook - Part  Ⅲ": 1,
     "🔥10000银芯奖励！V2.4.3 UGC创作征集开启！": 8,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 37,
-    "抽奖！「秘银日冕」系列徽章 即将贩售！\"Silver Corona\" Awakener Badges Launching Soon! Share for Merchandise Giveaway!": 1,
     "【新人帮助】论坛介绍": 4,
     "Teambuilding guidance": 2,
     "1499328837215977615": 1,
     "1499482232266428527": 1
   },
   "hourly_activity": {
+    "19": 503,
+    "20": 160,
+    "21": 256,
+    "22": 75,
+    "23": 148,
     "0": 43,
     "1": 103,
     "2": 265,
@@ -90,16 +99,11 @@
     "15": 1389,
     "16": 1375,
     "17": 611,
-    "18": 326,
-    "19": 127
+    "18": 326
   },
   "message_types": {
-    "19": 3107,
-    "0": 9107,
-    "20": 3,
-    "4": 3,
-    "6": 3,
-    "21": 2
+    "19": 234,
+    "0": 781
   },
   "top_reacted_messages": [
     {
@@ -125,6 +129,14 @@
       "author": "lightproud",
       "reactions": 23,
       "channel": "Preview: V2.5.1 Chaos Awakener Enhancement"
+    },
+    {
+      "id": "1499522874107494622",
+      "channel_id": "1499522874107494622",
+      "content": "Hi, I have written another post  here a while ago, asking about a buff for Wanda",
+      "author": "ppmkii",
+      "reactions": 22,
+      "channel": "Feedback on the  2.5.1 buffs (Specially Wanda)"
     },
     {
       "id": "1499460313580306494",
@@ -173,6 +185,14 @@
       "author": "lightproud",
       "reactions": 13,
       "channel": "Preview: V2.5.1 Chaos Awakener Enhancement"
+    },
+    {
+      "id": "1499535182947025076",
+      "channel_id": "1499535182947025076",
+      "content": "While I understand that it's not always feasible due to time and budget limitati",
+      "author": "sirtealot",
+      "reactions": 12,
+      "channel": "Some passionate feedback on Pandia's 2.5.1 buffs"
     },
     {
       "id": "1499409771214934108",
@@ -245,22 +265,6 @@
       "author": "omenatyyppi",
       "reactions": 8,
       "channel": "Preview: V2.5.1 Aequor Awakener Enhancement"
-    },
-    {
-      "id": "1499411857851809864",
-      "channel_id": "1499403563686957067",
-      "content": "Kath got a buff. Her name is Arachne <:kath_cool:1447714576413233315>",
-      "author": "moisesw.",
-      "reactions": 8,
-      "channel": "Preview: V2.5.1 Chaos Awakener Enhancement"
-    },
-    {
-      "id": "1499432906010005796",
-      "channel_id": "1131839817982947429",
-      "content": "往大保底算你就知道了",
-      "author": "axe_proficient",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
     }
   ]
 }

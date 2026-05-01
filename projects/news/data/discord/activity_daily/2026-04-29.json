@@ -1,10 +1,11 @@
 {
   "date": "2026-04-29",
-  "messages": 10169,
+  "messages": 14096,
   "unique_authors": 348,
-  "reactions_total": 941,
-  "attachments": 617,
+  "reactions_total": 1281,
+  "attachments": 810,
   "channel_activity": {
+    "🔸morimens-game-chat": 3927,
     "🔸綜合討論": 2605,
     "🔸晒卡分享": 17,
     "🔸русский-канал": 229,
@@ -65,20 +66,20 @@
     "1498973545726873692": 1
   },
   "hourly_activity": {
+    "0": 708,
+    "1": 750,
+    "2": 736,
+    "3": 1043,
+    "4": 1034,
+    "5": 1157,
+    "6": 1073,
+    "7": 1232,
+    "8": 883,
     "22": 61,
     "23": 142,
     "19": 165,
     "20": 89,
     "21": 148,
-    "0": 148,
-    "1": 239,
-    "2": 337,
-    "3": 554,
-    "4": 368,
-    "5": 643,
-    "6": 648,
-    "7": 1070,
-    "8": 682,
     "9": 421,
     "10": 366,
     "11": 491,
@@ -91,9 +92,8 @@
     "18": 98
   },
   "message_types": {
-    "0": 438,
-    "19": 155,
-    "4": 1
+    "0": 2629,
+    "19": 1298
   },
   "top_reacted_messages": [
     {
@@ -201,6 +201,22 @@
       "channel": "🔸lore-chat"
     },
     {
+      "id": "1498883774618931230",
+      "channel_id": "1170692781216378960",
+      "content": "Aigis you fucking skipped the whole boss. Bruh",
+      "author": "aurora3981",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1498962162322898964",
+      "channel_id": "1170692781216378960",
+      "content": "<@201897606572539904> <@1471414323883540501> 🐳",
+      "author": "angbak",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1498885093945770034",
       "channel_id": "1131839817982947429",
       "content": "<:__:1285511797448900708>",
@@ -239,22 +255,6 @@
       "author": "hon_ey0",
       "reactions": 6,
       "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1498869444842098789",
-      "channel_id": "1326453763355185215",
-      "content": "you can tell leonora is the true protagonist cause holy shit that hair flair",
-      "author": "insigible",
-      "reactions": 6,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1498913368898015282",
-      "channel_id": "1326453763355185215",
-      "content": "Arachne is trying to sell GTulu so bad but Keeper keep “Once William…”",
-      "author": "_venush",
-      "reactions": 6,
-      "channel": "🔸lore-chat"
     }
   ]
 }
