@@ -1,13 +1,13 @@
 # 忘却前夜 社区日报 2026-05-01
 
-> 采集时间：2026-05-01 20:57 UTC+8
+> 采集时间：2026-05-01 22:17 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 3946
-2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 72
-3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 52
-4. [Bilibili] 沙耶之歌 — engagement: 14
+1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 4529
+2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 100
+3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 55
+4. [Bilibili] 沙耶之歌 — engagement: 17
 5. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -23,15 +23,15 @@
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 24 |
-| Discord | 12 |
+| Discord | 3 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 1 |
-| Reddit | 18 |
+| Pixiv | 2 |
+| Reddit | 14 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 5 |
 | Steam 论坛 | 0（沉默）|
@@ -39,23 +39,21 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 19 |
+| 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 35 |
+| YouTube | 17 |
 | 知乎 | 0（沉默）|
 
 ## Discord
 
-your OC's cutout ruined the taste of these delicious candies for me Light, i hope you understand your wrongdoing 
-[附件: image.png, image.png, image.png]
+Leonora sketch
+[附件: 20260430_234915.jpg]
+  └ mckashira: ouhhuhuhohuguohuuuuuuuugh
 
 ### 热门话题
 
-1. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: # 前瞻：V2.5.1 血肉唤醒体强化 — engagement: 71
-2. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: # 前瞻：V2.5.1  混沌唤醒体强 — engagement: 71
-3. [DC] jmjmjm6667@🔸lore-chat: Leonora sketch — engagement: 63
-4. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: # 前瞻：V2.5.1  深海唤醒体强 — engagement: 53
-5. [DC] lightproud@🔸校貓日誌┊schoolcat’s-notes: ## 莉莉 - **天赋「灵塑适性」* — engagement: 48
+1. [DC] legendaryredz@🔸校貓日誌┊schoolcat’s-notes: I love how the b — engagement: 27
+2. [DC] omenatyyppi@🔸校貓日誌┊schoolcat’s-notes: Hype for Aurita bu — engagement: 27
 
 ## Steam 评论
 
@@ -72,11 +70,11 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 
 ## Bilibili
 
-1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 3946
-2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2269
-3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2196
-4. 忘却前夜官摊 — engagement: 630
-5. 忘却前夜官摊 — engagement: 626
+1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 4529
+2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2426
+3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2348
+4. 忘却前夜官摊 — engagement: 681
+5. 忘却前夜官摊 — engagement: 678
 
 ## Official
 
@@ -88,15 +86,16 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 
 ## Pixiv
 
-1. Kathigu-ra from Morimens — engagement: 0
+1.  — engagement: 0
+2. Kathigu-ra from Morimens — engagement: 0
 
 ## Reddit
 
 1. The trusty N is here — engagement: 0
 2. ULTIMATE ASSEMBLE — engagement: 0
-3. Doubt about Murphy faxbourn — engagement: 0
+3. I think we can all agree it’s good they’re buffing many old  — engagement: 0
 4. Feedback on the 2.5.1 Buffs. — engagement: 0
-5. Just started out and need some help! — engagement: 0
+5. finally arc 1 completed 😍 only 1 failure but thats the part  — engagement: 0
 
 ## StopGame.ru
 
@@ -105,24 +104,25 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 ## 微博
 
 1. 给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦 — engagement: 0
-2. 忘却前夜#忘却前夜#
+2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+3. 12758【投稿】忘却前夜。我主任 — engagement: 0
+4. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜丨弥萨格调查局CP32特别行动
+5. 忘却前夜×沙耶之歌 联动预告
 
-致所有仍保有理智的守密人：
+梦的碎片 随风而至
 
-人间的假日只是伪造的幻象，黑暗的潮汐从未停歇。新 — engagement: 0
-4. 忘却前夜的角色设计真是他妈神了 再找不出美术和玩法这么合我胃口的卡牌二游 — engagement: 0
-5. 12758【投稿】忘却前夜。我主任 — engagement: 0
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
 
 ## YouTube
 
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 291895
-2. 《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」 — engagement: 43103
-3. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38431
-4. Morimens Beginner Progression Guide (2026 Edition) — engagement: 21703
-5. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19555
+1. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38431
+2. [The Eve of Oblivion] Oh, this one won't sell! [Smartphone G — engagement: 9294
+3. 【忘卻前夜】半週年入坑指南 組隊的基本概念 — engagement: 3571
+4. 忘却前夜丨V2.4 PV——「永世虚妄巡礼」（CV：能登麻美子） — engagement: 3423
+5. 【忘卻前夜】塔薇的詳細解析！技能解說/啟靈/抽取建議/命輪推薦/密契推薦！ — engagement: 2506
 
 ## 沉默平台
 
