@@ -3562,6 +3562,20 @@
       "title": "沙耶之歌",
       "time": "2026-05-01T07:53:35+00:00",
       "downloaded_at": "2026-05-01T08:04:32.243975+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/6cedf2efb2923caf1984f4db240eb6dfa1357010.jpg": {
+      "filename": "bilibili_90f73f8ecfa9c9e5.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】我交灵芝还不行么真是输给你了。",
+      "time": "2026-05-01T05:57:21+00:00",
+      "downloaded_at": "2026-05-01T09:51:32.127559+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/d8ea49969fbc2eb8d50e75388c48dae42303060d.jpg": {
+      "filename": "bilibili_30ab18d5e492dee6.jpg",
+      "source": "bilibili",
+      "title": "【希洛恐惧症TV】阿拉克涅:献祭我我就要动你的命运了-_-||",
+      "time": "2026-05-01T03:40:36+00:00",
+      "downloaded_at": "2026-05-01T09:51:33.855525+00:00"
     }
   },
   "failed": {
@@ -4949,6 +4963,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T08:04:29.190322+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/6cedf2efb2923caf1984f4db240eb6dfa1357010.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T09:51:32.428562+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/d8ea49969fbc2eb8d50e75388c48dae42303060d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T09:51:32.729425+00:00"
     }
   },
   "archived": []

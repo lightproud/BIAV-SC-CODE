@@ -1,8 +1,8 @@
 {
   "date": "2026-05-01",
-  "archived_at": "2026-05-01T08:04:32.311343+00:00",
+  "archived_at": "2026-05-01T09:51:33.917848+00:00",
   "source": "bilibili",
-  "item_count": 50,
+  "item_count": 54,
   "items": [
     {
       "source": "bilibili",
@@ -462,6 +462,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-01T05:57:21+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】我交灵芝还不行么真是输给你了。",
+      "summary": "我很想说服自己这玩意没有二形态，但是真出来锁血的那刻我居然没有太意外。\n  └ 我還是人 (0赞): 打個普通打得我汗流浹背，不敢打困難了，感覺會被抽飛[热]\n  └ 筱月357 (0赞): 打这玩意我爆了两个灵芝和三个死亡抵抗，最后Boss死亡动画的时候，还给我结算了次流血伤害，吃了我一个灵芝，真服了。😓",
+      "url": "https://www.bilibili.com/video/BV1wqRMBaEd9",
+      "author": "汐萍",
+      "engagement": 146,
+      "media_url": "https://i2.hdslb.com/bfs/archive/6cedf2efb2923caf1984f4db240eb6dfa1357010.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 142,
+        "comment_count": 4,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T05:57:21+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】我交灵芝还不行么真是输给你了。",
+      "summary": "我很想说服自己这玩意没有二形态，但是真出来锁血的那刻我居然没有太意外。",
+      "url": "http://www.bilibili.com/video/av116497766685259",
+      "author": "汐萍",
+      "engagement": 142,
+      "media_url": "//i2.hdslb.com/bfs/archive/6cedf2efb2923caf1984f4db240eb6dfa1357010.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-30T13:28:58+00:00",
       "lang": "zh",
       "title": "絶頂讃歌丨村野沙耶香",
@@ -473,6 +503,36 @@
       "content_type": "image",
       "metadata": {
         "play": 136,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T03:40:36+00:00",
+      "lang": "zh",
+      "title": "【希洛恐惧症TV】阿拉克涅:献祭我我就要动你的命运了-_-||",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116497229813155",
+      "author": "碎掉的玻璃小鸟",
+      "engagement": 115,
+      "media_url": "//i0.hdslb.com/bfs/archive/d8ea49969fbc2eb8d50e75388c48dae42303060d.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T03:40:36+00:00",
+      "lang": "zh",
+      "title": "【希洛恐惧症TV】阿拉克涅:献祭我我就要动你的命运了-_-||",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV15gRKBGEKq",
+      "author": "碎掉的玻璃小鸟",
+      "engagement": 113,
+      "media_url": "https://i0.hdslb.com/bfs/archive/d8ea49969fbc2eb8d50e75388c48dae42303060d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 113,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
