@@ -3576,6 +3576,27 @@
       "title": "【希洛恐惧症TV】阿拉克涅:献祭我我就要动你的命运了-_-||",
       "time": "2026-05-01T03:40:36+00:00",
       "downloaded_at": "2026-05-01T09:51:33.855525+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/013a4b79dc853000fff674c1458eae30c128354d.jpg": {
+      "filename": "bilibili_6c39da4158364222.jpg",
+      "source": "bilibili",
+      "title": "［相位］对面：我记得这把没有潘啊",
+      "time": "2026-05-01T10:33:10+00:00",
+      "downloaded_at": "2026-05-01T11:04:58.383644+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/808aa6a56738ca24efc2b75d1aea320274d808b8.jpg": {
+      "filename": "bilibili_e4c86ccd8960994e.jpg",
+      "source": "bilibili",
+      "title": "【AI丰川祥子】沙耶の唄(沙耶之歌)",
+      "time": "2026-05-01T10:44:18+00:00",
+      "downloaded_at": "2026-05-01T11:04:59.527390+00:00"
+    },
+    "https://i.ytimg.com/vi/VK_GCSVsCSw/hq720.jpg?v=69f47c4f&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB6K822JOT_uCqPndeGKPjyJNY_vA": {
+      "filename": "youtube_e0a1fcabd34078e7.jpg",
+      "source": "youtube",
+      "title": "Morimens Chapter 5 Hard Mode gameplay stream to fall asleep to",
+      "time": "2026-05-01T11:01:53.574590+00:00",
+      "downloaded_at": "2026-05-01T11:04:59.975078+00:00"
     }
   },
   "failed": {
@@ -4973,6 +4994,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T09:51:32.729425+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/013a4b79dc853000fff674c1458eae30c128354d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T11:04:58.684418+00:00"
     }
   },
   "archived": []
