@@ -3506,6 +3506,41 @@
       "title": "牢拉单c  h5-11，初见杀",
       "time": "2026-05-01T01:33:38+00:00",
       "downloaded_at": "2026-05-01T01:59:21.977874+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/414a35d8e9d87f507a031a5d12d991279eebd036.jpg": {
+      "filename": "bilibili_39a5c526ff1ae4a1.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】必抽人权！阿拉克涅最终测评",
+      "time": "2026-05-01T02:17:24+00:00",
+      "downloaded_at": "2026-05-01T05:38:04.157275+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/0e19cc5c5ef156411f04f6d17f369ac0d1db115d.jpg": {
+      "filename": "bilibili_fb3063e35c1e519f.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜官摊",
+      "time": "2026-05-01T00:28:35+00:00",
+      "downloaded_at": "2026-05-01T05:38:05.727939+00:00"
+    },
+    "https://i.ytimg.com/vi/PVqVgcpSr4A/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDYifPbkbt3Mv4gTcRGzZatTXnlrQ": {
+      "filename": "youtube_5bfc3813dfd4ba9d.jpg",
+      "source": "youtube",
+      "title": "【血の鎖ヘロット】やべぇ奴が来た。性能チェックの時間だぁ！！【忘却前夜/ローグライクで遊ぼうの会】",
+      "time": "2026-05-01T05:35:06.305848+00:00",
+      "downloaded_at": "2026-05-01T05:38:06.164159+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/37ab1166b5062f649a4d4da5c3ae8011e0805365.jpg": {
+      "filename": "bilibili_8badddb7d5f01b63.jpg",
+      "source": "bilibili",
+      "title": "地瓜无死扛三星H5-11，什么叫灵感刻印得了mvp？",
+      "time": "2026-04-30T13:28:14+00:00",
+      "downloaded_at": "2026-05-01T05:38:07.314419+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/102af23c3484fdd626fcc6fdc7f675bb90804db4.jpg": {
+      "filename": "bilibili_bdc3ed16e3f2c869.jpg",
+      "source": "bilibili",
+      "title": "克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生",
+      "time": "2026-05-01T03:30:00+00:00",
+      "downloaded_at": "2026-05-01T05:38:09.605538+00:00"
     }
   },
   "failed": {
@@ -4863,6 +4898,31 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T01:59:22.435563+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/414a35d8e9d87f507a031a5d12d991279eebd036.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T05:38:04.458108+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/0e19cc5c5ef156411f04f6d17f369ac0d1db115d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T05:38:07.615422+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/37ab1166b5062f649a4d4da5c3ae8011e0805365.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T05:38:07.916154+00:00"
+    },
+    "https://preview.redd.it/xnka5pi8ofyg1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=e453331a1196b0d133f85f2940eae40d2bbd2704": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T05:38:10.067508+00:00"
+    },
+    "https://external-preview.redd.it/wmGpboCRHv09yk0pMI-mtnBUDrfpffTUFA1MfG0sJ9s.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=ce0ca5a47bbe30a58b392bc9491e87b78a3bfd26": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T05:38:10.453391+00:00"
     }
   },
   "archived": []
