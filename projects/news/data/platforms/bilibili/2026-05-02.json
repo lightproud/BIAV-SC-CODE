@@ -1,8 +1,8 @@
 {
   "date": "2026-05-02",
-  "archived_at": "2026-05-01T21:00:12.993573+00:00",
+  "archived_at": "2026-05-01T21:47:58.565356+00:00",
   "source": "bilibili",
-  "item_count": 28,
+  "item_count": 30,
   "items": [
     {
       "source": "bilibili",
@@ -355,6 +355,36 @@
         "play": 59,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T21:29:41+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】【混沌】角色加强+最终法则杂谈",
+      "summary": "奶茶太稠了，卡喉咙，录制的时候说话感觉怪怪的。",
+      "url": "http://www.bilibili.com/video/av116501440891702",
+      "author": "萨摩_不耶",
+      "engagement": 51,
+      "media_url": "//i1.hdslb.com/bfs/archive/12a0f90dfc6d6c4cd2cd78e76a876133dcacc757.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T21:29:41+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】【混沌】角色加强+最终法则杂谈",
+      "summary": "奶茶太稠了，卡喉咙，录制的时候说话感觉怪怪的。",
+      "url": "https://www.bilibili.com/video/BV1CnRVBmEZN",
+      "author": "萨摩_不耶",
+      "engagement": 48,
+      "media_url": "https://i1.hdslb.com/bfs/archive/12a0f90dfc6d6c4cd2cd78e76a876133dcacc757.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 48,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },

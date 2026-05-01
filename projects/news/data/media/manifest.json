@@ -3723,6 +3723,13 @@
       "title": "[DC] mrmot347@🔸phòng-chat-tiếng-việt: ",
       "time": "2026-05-01T01:07:28.352000+00:00",
       "downloaded_at": "2026-05-01T20:04:27.587688+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/12a0f90dfc6d6c4cd2cd78e76a876133dcacc757.jpg": {
+      "filename": "bilibili_d917d25eb8615ea3.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】【混沌】角色加强+最终法则杂谈",
+      "time": "2026-05-01T21:29:41+00:00",
+      "downloaded_at": "2026-05-01T21:47:58.502015+00:00"
     }
   },
   "failed": {
@@ -5170,6 +5177,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T20:04:27.967643+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/12a0f90dfc6d6c4cd2cd78e76a876133dcacc757.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T21:47:57.404730+00:00"
     }
   },
   "archived": []
