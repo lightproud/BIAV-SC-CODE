@@ -1,13 +1,13 @@
 # 忘却前夜 社区日报 2026-05-01
 
-> 采集时间：2026-05-01 22:17 UTC+8
+> 采集时间：2026-05-01 23:48 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 4529
-2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 100
-3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 55
-4. [Bilibili] 沙耶之歌 — engagement: 17
+1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 5293
+2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 113
+3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 58
+4. [Bilibili] 沙耶之歌 — engagement: 18
 5. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -23,7 +23,7 @@
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 24 |
-| Discord | 3 |
+| Discord | 1 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -31,7 +31,7 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 2 |
-| Reddit | 14 |
+| Reddit | 15 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 5 |
 | Steam 论坛 | 0（沉默）|
@@ -39,9 +39,9 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 16 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 17 |
+| YouTube | 1 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -49,11 +49,6 @@
 Leonora sketch
 [附件: 20260430_234915.jpg]
   └ mckashira: ouhhuhuhohuguohuuuuuuuugh
-
-### 热门话题
-
-1. [DC] legendaryredz@🔸校貓日誌┊schoolcat’s-notes: I love how the b — engagement: 27
-2. [DC] omenatyyppi@🔸校貓日誌┊schoolcat’s-notes: Hype for Aurita bu — engagement: 27
 
 ## Steam 评论
 
@@ -70,11 +65,11 @@ Leonora sketch
 
 ## Bilibili
 
-1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 4529
-2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2426
-3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2348
-4. 忘却前夜官摊 — engagement: 681
-5. 忘却前夜官摊 — engagement: 678
+1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 5293
+2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2572
+3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2494
+4. 忘却前夜官摊 — engagement: 728
+5. 忘却前夜官摊 — engagement: 724
 
 ## Official
 
@@ -86,16 +81,16 @@ Leonora sketch
 
 ## Pixiv
 
-1.  — engagement: 0
-2. Kathigu-ra from Morimens — engagement: 0
+1. Kathigu-ra from Morimens — engagement: 0
+2.  — engagement: 0
 
 ## Reddit
 
-1. The trusty N is here — engagement: 0
-2. ULTIMATE ASSEMBLE — engagement: 0
-3. I think we can all agree it’s good they’re buffing many old  — engagement: 0
+1. I think we can all agree it’s good they’re buffing many old  — engagement: 0
+2. The trusty N is here — engagement: 0
+3. ULTIMATE ASSEMBLE — engagement: 0
 4. Feedback on the 2.5.1 Buffs. — engagement: 0
-5. finally arc 1 completed 😍 only 1 failure but thats the part  — engagement: 0
+5. Leigh propaganda in Arc 2 Chapter 5 Boss — engagement: 0
 
 ## StopGame.ru
 
@@ -104,25 +99,21 @@ Leonora sketch
 ## 微博
 
 1. 给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦 — engagement: 0
-2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-3. 12758【投稿】忘却前夜。我主任 — engagement: 0
-4. 忘却前夜#忘却前夜#
+2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-5. 忘却前夜×沙耶之歌 联动预告
+3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+4. 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
 #忘却前夜# #沙耶之歌#
 忘却前夜 #Morimens# 忘却前 — engagement: 0
+5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## YouTube
 
-1. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38431
-2. [The Eve of Oblivion] Oh, this one won't sell! [Smartphone G — engagement: 9294
-3. 【忘卻前夜】半週年入坑指南 組隊的基本概念 — engagement: 3571
-4. 忘却前夜丨V2.4 PV——「永世虚妄巡礼」（CV：能登麻美子） — engagement: 3423
-5. 【忘卻前夜】塔薇的詳細解析！技能解說/啟靈/抽取建議/命輪推薦/密契推薦！ — engagement: 2506
+1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 232
 
 ## 沉默平台
 
