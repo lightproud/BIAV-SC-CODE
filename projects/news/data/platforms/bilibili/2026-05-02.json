@@ -1,8 +1,8 @@
 {
   "date": "2026-05-02",
-  "archived_at": "2026-05-01T16:47:23.796738+00:00",
+  "archived_at": "2026-05-01T17:52:42.942800+00:00",
   "source": "bilibili",
-  "item_count": 26,
+  "item_count": 28,
   "items": [
     {
       "source": "bilibili",
@@ -404,6 +404,36 @@
       "author": "不正常的BGM",
       "engagement": 7,
       "media_url": "//i0.hdslb.com/bfs/archive/3d72b3c6e27b18114147fa7aaca8e7fac2007aac.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T17:09:40+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】抽一只阿拉克涅",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV19BR3BtEby",
+      "author": "喵老狮",
+      "engagement": 0,
+      "media_url": "https://i0.hdslb.com/bfs/archive/faacee37cb90f7313e2bde4f972cf38251b87046.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 0,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T17:09:40+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】抽一只阿拉克涅",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116500417546784",
+      "author": "喵老狮",
+      "engagement": 0,
+      "media_url": "//i0.hdslb.com/bfs/archive/faacee37cb90f7313e2bde4f972cf38251b87046.jpg",
       "content_type": "video"
     }
   ]

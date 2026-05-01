@@ -1,13 +1,13 @@
 # 忘却前夜 社区日报 2026-05-02
 
-> 采集时间：2026-05-02 00:47 UTC+8
+> 采集时间：2026-05-02 01:52 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 5754
-2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 119
-3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 60
-4. [Bilibili] 沙耶之歌 — engagement: 18
+1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6198
+2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 120
+3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 62
+4. [Bilibili] 沙耶之歌 — engagement: 21
 5. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -23,14 +23,14 @@
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
 | Bilibili | 26 |
-| Discord | 1 |
+| Discord | 0（24h内无新内容）|
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 1 |
+| Pixiv | 0（24h内无新内容）|
 | Reddit | 30 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 4 |
@@ -39,36 +39,33 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 16 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 18 |
+| YouTube | 2 |
 | 知乎 | 0（沉默）|
-
-## Discord
-
-Leonora sketch
-[附件: 20260430_234915.jpg]
-  └ mckashira: ouhhuhuhohuguohuuuuuuuugh
 
 ## Steam 评论
 
-- 好评 4 / 差评 0 / 好评率 100%
-- 语言分布：english 2, schinese 1, japanese 1
+- 好评 3 / 差评 1 / 好评率 75%
+- 语言分布：schinese 2, english 2
 
 ### 热门好评
 
 1. [正面] 好玩 — engagement: 0
 2. [正面] Worth playing for the story alone, and the gacha s... — engagement: 0
 3. [正面] rework kathigu into being caro and delete chaos fr... — engagement: 0
-4. [正面] The game design is genuinely impressive, with well... — engagement: 0
+
+### ⚠️ 差评
+
+- ⚠️ [schinese] Excellent probability design, wonderful collision of mechanics... Morimens is a  — engagement: 0
 
 ## Bilibili
 
-1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 5754
-2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2662
-3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2585
-4. 忘却前夜官摊 — engagement: 756
-5. 忘却前夜官摊 — engagement: 751
+1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6198
+2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2739
+3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2661
+4. 忘却前夜官摊 — engagement: 791
+5. 忘却前夜官摊 — engagement: 786
 
 ## Official
 
@@ -78,17 +75,13 @@ Leonora sketch
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
-## Pixiv
-
-1. Kathigu-ra from Morimens — engagement: 0
-
 ## Reddit
 
 1. I think we can all agree it’s good they’re buffing many old  — engagement: 0
 2. The trusty N is here — engagement: 0
-3. ULTIMATE ASSEMBLE — engagement: 0
-4. Hot take we need more things to do with thoose — engagement: 0
-5. Feedback on the 2.5.1 Buffs. — engagement: 0
+3. Hot take we need more things to do with thoose — engagement: 0
+4. ULTIMATE ASSEMBLE — engagement: 0
+5. Leigh propaganda in Arc 2 Chapter 5 Boss — engagement: 0
 
 ## StopGame.ru
 
@@ -97,26 +90,23 @@ Leonora sketch
 ## 微博
 
 1. 给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦 — engagement: 0
-2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-3. 12758【投稿】忘却前夜。我主任 — engagement: 0
-4. 忘却前夜#忘却前夜#
+2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-5. 忘却前夜×沙耶之歌 联动预告
+3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+4. 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
 #忘却前夜# #沙耶之歌#
 忘却前夜 #Morimens# 忘却前 — engagement: 0
+5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## YouTube
 
-1. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38432
-2. 【忘卻前夜】重返未來1999？不對！是忘卻前夜！禮包碼兌換！T0角色隊伍組合！超少見克蘇魯策略卡牌遊戲！ — engagement: 16293
-3. 【忘卻前夜】半週年入坑指南 組隊的基本概念 — engagement: 3572
-4. 【忘卻前夜】塔薇的詳細解析！技能解說/啟靈/抽取建議/命輪推薦/密契推薦！ — engagement: 2506
-5. 【忘卻前夜】隊伍太多了！多給恆燐幾分鐘 我們來好好聊聊羊媽的隊伍推薦 — engagement: 2305
+1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 253
+2. Morimens Chapter 5 Hard Mode gameplay stream to fall asleep  — engagement: 179
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, Discord, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
