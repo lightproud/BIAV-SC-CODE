@@ -1,8 +1,8 @@
 {
   "date": "2026-05-01",
-  "archived_at": "2026-05-01T11:05:00.036576+00:00",
+  "archived_at": "2026-05-01T12:57:06.987381+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -138,6 +138,21 @@
       "review": "Worth playing for the story alone, and the gacha system basically doesn't exist with how much free stuff they hand out. If you like STS-likes or games with incredible stories, play this game. If you don't, probably play it anyway it's amazing",
       "timestamp_created": 1777590276,
       "playtime_forever": 5659
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-01T11:31:51+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561198843919006/recommended/3052450",
+      "author": "76561198843919006",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1777635111,
+      "playtime_forever": 514
     }
   ]
 }
