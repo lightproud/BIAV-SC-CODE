@@ -1,12 +1,12 @@
 # 忘却前夜 社区日报 2026-05-01
 
-> 采集时间：2026-05-01 16:04 UTC+8
+> 采集时间：2026-05-01 17:51 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 1494
-2. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 19
-3. [Bilibili] 沙耶之歌 — engagement: 1
+1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 1928
+2. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 39
+3. [Bilibili] 沙耶之歌 — engagement: 6
 4. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -18,18 +18,18 @@
 
 | 平台 | 数据条数 |
 |------|----------|
-| App Store | 0（沉默）|
+| App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 29 |
-| Discord | 14 |
+| Bilibili | 27 |
+| Discord | 13 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 2 |
+| Pixiv | 1 |
 | Reddit | 18 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 5 |
@@ -71,11 +71,11 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 
 ## Bilibili
 
-1. 那一晚1999和忘却前夜都喝醉了 — engagement: 47406
-2. 那一晚1999和忘却前夜都喝醉了 — engagement: 47248
-3. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 6367
-4. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 6354
-5. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 1500
+1. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 6783
+2. 【安利】五一假期玩什么？UP亲测，5款海外二游入坑推荐 — engagement: 6765
+3. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 1928
+4. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 1815
+5. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 1749
 
 ## Official
 
@@ -88,13 +88,12 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 ## Pixiv
 
 1. Kathigu-ra from Morimens — engagement: 0
-2.  — engagement: 0
 
 ## Reddit
 
-1. ULTIMATE ASSEMBLE — engagement: 0
-2. Morimens at comic con booth! — engagement: 0
-3. The trusty N is here — engagement: 0
+1. The trusty N is here — engagement: 0
+2. ULTIMATE ASSEMBLE — engagement: 0
+3. Morimens at comic con booth! — engagement: 0
 4. Poison + Max HP scaling = this nonsense damage (missed this) — engagement: 0
 5. H5-11 Liz Xu Arachne Clem 12 turns no revive — engagement: 0
 
@@ -105,10 +104,10 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 ## 微博
 
 1. 给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦 — engagement: 0
-2. 忘却前夜#忘却前夜#
+2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+3. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
 4. 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -119,7 +118,7 @@ your OC's cutout ruined the taste of these delicious candies for me Light, i hop
 
 ## YouTube
 
-1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 189
+1. [Morimens] "Quick" New Buff Overview and Comparison Stream w — engagement: 201
 
 ## 沉默平台
 
