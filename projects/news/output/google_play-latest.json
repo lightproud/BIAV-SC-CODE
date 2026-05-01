@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-30T23:45:30.175995+00:00",
+  "collected_at": "2026-05-01T01:59:18.946550+00:00",
   "source": "google_play",
   "item_count": 14,
   "items": [
@@ -85,6 +85,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-04-14T23:26:59",
+      "lang": "pt",
+      "title": "[Google Play 好评] ★5 e um jogo muito legal a única crítica é",
+      "summary": "e um jogo muito legal a única crítica é a mesma de todos os gachas e muito agoniante quando não vem o personagem que nois que.",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=pt",
+      "author": "Mateus Ribeiro",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
       "time": "2026-04-28T12:20:04",
       "lang": "zh",
       "title": "[Google Play 好评] ★5 prob one of the most kind game towards p",
@@ -131,16 +141,6 @@
       "summary": "Второй день не могу зайти в игру, пишет «сервер занят», я удалял и заново скачивал, но всё равно одно и тоже, игра сама в целом хорошая, и не хочу ставить низкую оценку",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ru",
       "author": "ХУГГИ ВУГГИ",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-04-25T03:14:00",
-      "lang": "pt",
-      "title": "[Google Play 好评] ★5 história interessante, ótimos personagen",
-      "summary": "história interessante, ótimos personagens, ótimo visual e otima gameplay, Com certeza voltarei no futuro!",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=pt",
-      "author": "Gustavo98GTO !",
       "engagement": 0
     }
   ]
