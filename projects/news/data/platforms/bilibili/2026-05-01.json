@@ -1,8 +1,8 @@
 {
   "date": "2026-05-01",
-  "archived_at": "2026-05-01T05:38:10.519409+00:00",
+  "archived_at": "2026-05-01T08:04:32.311343+00:00",
   "source": "bilibili",
-  "item_count": 46,
+  "item_count": 50,
   "items": [
     {
       "source": "bilibili",
@@ -540,6 +540,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-04-30T20:23:29+00:00",
+      "lang": "zh",
+      "title": "融灾拼好队400 (4.27-5.10)",
+      "summary": "-\n  └ 龙鸣虚无 (0赞): 为啥我感觉你这个打的，凹度爆炸啊？\n  └ 子夜微雪 (0赞): 为啥有人超限🥚墨打不过n5[心律共鸣动态表情包_重罪]\n麻烦玩地瓜不要干出 打掉最后一张带火牌 这种亏两火的事好吗[心律共鸣动态表情包_你不许玩]",
+      "url": "https://www.bilibili.com/video/BV1vh9vB4EHA",
+      "author": "寂榕",
+      "engagement": 103,
+      "media_url": "https://i1.hdslb.com/bfs/archive/4313acd9b891f60eb9bc14c362fec6a02487362d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 101,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-04-30T20:23:29+00:00",
+      "lang": "zh",
+      "title": "融灾拼好队400 (4.27-5.10)",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116495484977894",
+      "author": "寂榕",
+      "engagement": 101,
+      "media_url": "//i1.hdslb.com/bfs/archive/4313acd9b891f60eb9bc14c362fec6a02487362d.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-30T05:53:18+00:00",
       "lang": "zh",
       "title": "果体人偶婆灾厄吃到爽",
@@ -690,6 +720,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-01T06:06:34+00:00",
+      "lang": "zh",
+      "title": "我只是没有办法眼睛不看着她",
+      "summary": "#沙耶之歌#素颜试毛",
+      "url": "https://www.bilibili.com/video/BV1r6RMB8EUM",
+      "author": "我有短发癖",
+      "engagement": 19,
+      "media_url": "https://i2.hdslb.com/bfs/archive/e35705d3865850fa3ea6913ddf9fee375d438797.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 19,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-01T01:33:38+00:00",
       "lang": "zh",
       "title": "牢拉单c  h5-11，初见杀",
@@ -701,6 +749,24 @@
       "content_type": "image",
       "metadata": {
         "play": 18,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T07:53:35+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1t4RMBuELG",
+      "author": "设喵萌",
+      "engagement": 1,
+      "media_url": "https://i1.hdslb.com/bfs/archive/16e15bbd8f8d47cc50bac56c50dd0979f2390e98.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0

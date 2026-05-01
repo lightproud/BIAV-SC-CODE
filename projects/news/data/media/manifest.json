@@ -3541,6 +3541,27 @@
       "title": "克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生",
       "time": "2026-05-01T03:30:00+00:00",
       "downloaded_at": "2026-05-01T05:38:09.605538+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/4313acd9b891f60eb9bc14c362fec6a02487362d.jpg": {
+      "filename": "bilibili_c862b69e60fac69e.jpg",
+      "source": "bilibili",
+      "title": "融灾拼好队400 (4.27-5.10)",
+      "time": "2026-04-30T20:23:29+00:00",
+      "downloaded_at": "2026-05-01T08:04:28.889391+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/e35705d3865850fa3ea6913ddf9fee375d438797.jpg": {
+      "filename": "bilibili_ea481e8dc4b24147.jpg",
+      "source": "bilibili",
+      "title": "我只是没有办法眼睛不看着她",
+      "time": "2026-05-01T06:06:34+00:00",
+      "downloaded_at": "2026-05-01T08:04:31.137124+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/16e15bbd8f8d47cc50bac56c50dd0979f2390e98.jpg": {
+      "filename": "bilibili_0919518c9ebb471d.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌",
+      "time": "2026-05-01T07:53:35+00:00",
+      "downloaded_at": "2026-05-01T08:04:32.243975+00:00"
     }
   },
   "failed": {
@@ -4923,6 +4944,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T05:38:10.453391+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/4313acd9b891f60eb9bc14c362fec6a02487362d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T08:04:29.190322+00:00"
     }
   },
   "archived": []
