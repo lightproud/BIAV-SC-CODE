@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-04-30T23:45:30.175995+00:00",
+  "collected_at": "2026-05-01T01:59:18.946550+00:00",
   "source": "steam",
   "item_count": 6,
   "items": [
@@ -17,6 +17,21 @@
       "review": "这是一款给不看社区玩家的福利",
       "timestamp_created": 1777517522,
       "playtime_forever": 5233
+    },
+    {
+      "source": "steam",
+      "time": "2026-04-30T23:04:36+00:00",
+      "lang": "english",
+      "title": "[正面] Worth playing for the story alone, and the gacha s...",
+      "summary": "Worth playing for the story alone, and the gacha system basically doesn't exist with how much free stuff they hand out. If you like STS-likes or games with incredible stories, play this game. If you don't, probably play it anyway it's amazing",
+      "url": "https://steamcommunity.com/profiles/76561199146500400/recommended/3052450",
+      "author": "76561199146500400",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Worth playing for the story alone, and the gacha system basically doesn't exist with how much free stuff they hand out. If you like STS-likes or games with incredible stories, play this game. If you don't, probably play it anyway it's amazing",
+      "timestamp_created": 1777590276,
+      "playtime_forever": 5659
     },
     {
       "source": "steam",
@@ -77,21 +92,6 @@
       "review": "美工太美丽了。。。。。从1999过来洗眼睛了hhh，，，",
       "timestamp_created": 1777545392,
       "playtime_forever": 238
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-30T01:21:05+00:00",
-      "lang": "english",
-      "title": "[负面] One thing is impressive about this game - how many...",
-      "summary": "One thing is impressive about this game - how many good reviews it got.\nThis is p2w gatcha crap with insanely annoying and long animations.\n\nEven tutorial pissed me off with hand-holding \"click this, do this\" ♥♥♥♥ off man, you don't release this nonsense on PC.",
-      "url": "https://steamcommunity.com/profiles/76561198102105086/recommended/3052450",
-      "author": "76561198102105086",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "One thing is impressive about this game - how many good reviews it got.\nThis is p2w gatcha crap with insanely annoying and long animations.\n\nEven tutorial pissed me off with hand-holding \"click this, do this\" ♥♥♥♥ off man, you don't release this nonsense on PC.",
-      "timestamp_created": 1777512065,
-      "playtime_forever": 28
     }
   ]
 }

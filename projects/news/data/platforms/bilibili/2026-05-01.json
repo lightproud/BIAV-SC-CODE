@@ -1,8 +1,8 @@
 {
   "date": "2026-05-01",
-  "archived_at": "2026-04-30T23:45:30.517335+00:00",
+  "archived_at": "2026-05-01T01:59:22.500883+00:00",
   "source": "bilibili",
-  "item_count": 39,
+  "item_count": 41,
   "items": [
     {
       "source": "bilibili",
@@ -597,6 +597,36 @@
       "engagement": 24,
       "media_url": "//i1.hdslb.com/bfs/archive/c42cf84499ce5fd7547662a12f1ad44f5f400edd.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T01:33:38+00:00",
+      "lang": "zh",
+      "title": "牢拉单c  h5-11，初见杀",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116496726494354",
+      "author": "梦依流苏",
+      "engagement": 19,
+      "media_url": "//i0.hdslb.com/bfs/archive/5a2f3d9bcc3130503b7fd0610df6dbef88d2f4fa.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T01:33:38+00:00",
+      "lang": "zh",
+      "title": "牢拉单c  h5-11，初见杀",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV12wRTBiE23",
+      "author": "梦依流苏",
+      "engagement": 18,
+      "media_url": "https://i0.hdslb.com/bfs/archive/5a2f3d9bcc3130503b7fd0610df6dbef88d2f4fa.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 18,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     }
   ]
 }
