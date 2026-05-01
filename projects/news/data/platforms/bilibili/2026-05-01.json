@@ -1,8 +1,8 @@
 {
   "date": "2026-05-01",
-  "archived_at": "2026-05-01T12:57:06.988867+00:00",
+  "archived_at": "2026-05-01T14:17:11.836866+00:00",
   "source": "bilibili",
-  "item_count": 57,
+  "item_count": 61,
   "items": [
     {
       "source": "bilibili",
@@ -786,6 +786,54 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-01T13:30:05+00:00",
+      "lang": "zh",
+      "title": "混沌塔薇16T2灵知H5-11，如果没被锁会赢吗",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116499545130765",
+      "author": "永恒残月",
+      "engagement": 28,
+      "media_url": "//i2.hdslb.com/bfs/archive/0c1d63ba1148e0cac2289ccd3ddf41cb9195fe57.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T13:30:05+00:00",
+      "lang": "zh",
+      "title": "混沌塔薇16T2灵知H5-11，如果没被锁会赢吗",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1DrRuBmExZ",
+      "author": "永恒残月",
+      "engagement": 26,
+      "media_url": "https://i2.hdslb.com/bfs/archive/0c1d63ba1148e0cac2289ccd3ddf41cb9195fe57.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 26,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T13:46:39+00:00",
+      "lang": "zh",
+      "title": "塔薇H5-11道中",
+      "summary": "-\n  └ 那很糟糕了哇 (0赞): 我们王关呢🙄",
+      "url": "https://www.bilibili.com/video/BV1LhRuBxEKs",
+      "author": "永恒残月",
+      "engagement": 25,
+      "media_url": "https://i0.hdslb.com/bfs/archive/6aa30035739d3a22b437d7f918d23ef04370ed66.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 21,
+        "comment_count": 4,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-04-30T17:20:46+00:00",
       "lang": "zh",
       "title": "【忘却前夜】达芙黛尔全程3t融灾禁区4-5",
@@ -812,6 +860,18 @@
       "author": "朝星-",
       "engagement": 24,
       "media_url": "//i1.hdslb.com/bfs/archive/c42cf84499ce5fd7547662a12f1ad44f5f400edd.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T13:46:39+00:00",
+      "lang": "zh",
+      "title": "塔薇H5-11道中",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116499595529315",
+      "author": "永恒残月",
+      "engagement": 22,
+      "media_url": "//i0.hdslb.com/bfs/archive/6aa30035739d3a22b437d7f918d23ef04370ed66.jpg",
       "content_type": "video"
     },
     {
