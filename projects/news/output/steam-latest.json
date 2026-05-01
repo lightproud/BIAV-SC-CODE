@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-01T22:43:21.525454+00:00",
+  "collected_at": "2026-05-01T23:45:25.929223+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 4,
   "items": [
     {
       "source": "steam",
@@ -31,7 +31,7 @@
       "voted_up": true,
       "review": "Great game",
       "timestamp_created": 1777656682,
-      "playtime_forever": 1163
+      "playtime_forever": 1223
     },
     {
       "source": "steam",
@@ -62,21 +62,6 @@
       "review": "好玩",
       "timestamp_created": 1777635111,
       "playtime_forever": 640
-    },
-    {
-      "source": "steam",
-      "time": "2026-04-30T23:04:36+00:00",
-      "lang": "english",
-      "title": "[正面] Worth playing for the story alone, and the gacha s...",
-      "summary": "Worth playing for the story alone, and the gacha system basically doesn't exist with how much free stuff they hand out. If you like STS-likes or games with incredible stories, play this game. If you don't, probably play it anyway it's amazing",
-      "url": "https://steamcommunity.com/profiles/76561199146500400/recommended/3052450",
-      "author": "76561199146500400",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Worth playing for the story alone, and the gacha system basically doesn't exist with how much free stuff they hand out. If you like STS-likes or games with incredible stories, play this game. If you don't, probably play it anyway it's amazing",
-      "timestamp_created": 1777590276,
-      "playtime_forever": 5714
     }
   ]
 }

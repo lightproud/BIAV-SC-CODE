@@ -5206,6 +5206,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T22:43:25.159237+00:00"
+    },
+    "https://preview.redd.it/jejbyffttlyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a001ded71bb1a4cb1fa56d020905090a3185a2f2": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T23:45:26.524553+00:00"
     }
   },
   "archived": []
