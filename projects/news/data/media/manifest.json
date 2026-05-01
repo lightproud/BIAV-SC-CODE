@@ -3639,6 +3639,13 @@
       "title": "忘却前夜星辰篇双鸟克羊5-15茧",
       "time": "2026-05-01T15:48:42+00:00",
       "downloaded_at": "2026-05-01T16:47:21.927029+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/faacee37cb90f7313e2bde4f972cf38251b87046.jpg": {
+      "filename": "bilibili_2fcd24c592f00557.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】抽一只阿拉克涅",
+      "time": "2026-05-01T17:09:40+00:00",
+      "downloaded_at": "2026-05-01T17:52:42.582787+00:00"
     }
   },
   "failed": {
@@ -5076,6 +5083,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T16:47:23.728658+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/faacee37cb90f7313e2bde4f972cf38251b87046.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T17:52:42.883859+00:00"
     }
   },
   "archived": []
