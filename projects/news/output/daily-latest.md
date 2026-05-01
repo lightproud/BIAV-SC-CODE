@@ -1,13 +1,13 @@
 # 忘却前夜 社区日报 2026-05-02
 
-> 采集时间：2026-05-02 06:43 UTC+8
+> 采集时间：2026-05-02 07:45 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6924
-2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 123
+1. [Bilibili] 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 7165
+2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 126
 3. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 66
-4. [Bilibili] 沙耶之歌 — engagement: 23
+4. [Bilibili] 沙耶之歌 — engagement: 24
 5. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -31,15 +31,15 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 0（24h内无新内容）|
-| Reddit | 28 |
+| Reddit | 30 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 5 |
+| Steam | 4 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 20 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
@@ -58,15 +58,14 @@
 
 ## Steam 评论
 
-- 好评 4 / 差评 1 / 好评率 80%
-- 语言分布：english 2, schinese 2, tchinese 1
+- 好评 3 / 差评 1 / 好评率 75%
+- 语言分布：schinese 2, tchinese 1, english 1
 
 ### 热门好评
 
 1. [正面] 沒錢玩library of ruina但可以體驗到難度跟圖書館一樣要動腦的難度 — engagement: 0
 2. [正面] Great game — engagement: 0
 3. [正面] 好玩 — engagement: 0
-4. [正面] Worth playing for the story alone, and the gacha s... — engagement: 0
 
 ### ⚠️ 差评
 
@@ -74,11 +73,11 @@
 
 ## Bilibili
 
-1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 6924
-2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2887
-3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2807
-4. 忘却前夜官摊 — engagement: 833
-5. 忘却前夜官摊 — engagement: 828
+1. 克苏鲁+纯爱：23年前的《沙耶之歌》如何诞生 — engagement: 7165
+2. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2917
+3. 【忘却前夜】必抽人权！阿拉克涅最终测评 — engagement: 2836
+4. 忘却前夜官摊 — engagement: 840
+5. 忘却前夜官摊 — engagement: 834
 
 ## Official
 
@@ -102,18 +101,19 @@
 
 ## 微博
 
-1. 12758【投稿】忘却前夜。我主任 — engagement: 0
+1. 给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦 — engagement: 0
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-4. 给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦 — engagement: 0
-5. 忘却前夜×沙耶之歌 联动预告
+3. 忘却前夜丨弥萨格调查局CP32行动指南
 
-梦的碎片 随风而至
+致全体即将前往新前线的守密人：
 
-#忘却前夜# #沙耶之歌#
-忘却前夜 #Morimens# 忘却前 — engagement: 0
+新的异常波动已被精确锁定。
+
+观测信号不再模 — engagement: 0
+4. 忘却前夜 想问下大佬们，抽了阿拉克涅还要抽下面这个池子吗？还是要给下个联动做准备？有没有企鹅的交流群啊 — engagement: 0
+5. 我现在相信内部大换血了这是哪来的忘却前夜角色 — engagement: 0
 
 ## 沉默平台
 
