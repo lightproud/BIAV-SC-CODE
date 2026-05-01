@@ -3730,6 +3730,20 @@
       "title": "【忘却前夜】【混沌】角色加强+最终法则杂谈",
       "time": "2026-05-01T21:29:41+00:00",
       "downloaded_at": "2026-05-01T21:47:58.502015+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/5aced7e7f92d4495cecb8cdc822d66a2fa9dfef8.jpg": {
+      "filename": "bilibili_723d6639c6122ace.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】【血肉】角色加强+最终法则杂谈",
+      "time": "2026-05-01T22:10:57+00:00",
+      "downloaded_at": "2026-05-01T22:43:23.284739+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/cf153d33ff6b11dd651028a5027b85072b12a9b7.jpg": {
+      "filename": "bilibili_51c099efa762ee09.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】【深海】角色加强+最终法则杂谈",
+      "time": "2026-05-01T22:33:10+00:00",
+      "downloaded_at": "2026-05-01T22:43:24.858369+00:00"
     }
   },
   "failed": {
@@ -5182,6 +5196,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T21:47:57.404730+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/5aced7e7f92d4495cecb8cdc822d66a2fa9dfef8.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T22:43:23.585507+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/cf153d33ff6b11dd651028a5027b85072b12a9b7.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-01T22:43:25.159237+00:00"
     }
   },
   "archived": []
