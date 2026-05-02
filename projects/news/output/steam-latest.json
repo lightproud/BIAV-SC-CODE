@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-02T16:39:33.485765+00:00",
+  "collected_at": "2026-05-02T17:40:41.432292+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 4,
   "items": [
     {
       "source": "steam",
@@ -62,21 +62,6 @@
       "review": "Great storyline, great mechanics, each of the Realms are super different and so they play really differently.  Do recommend.",
       "timestamp_created": 1777677958,
       "playtime_forever": 4752
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-01T17:31:22+00:00",
-      "lang": "english",
-      "title": "[正面] Great game",
-      "summary": "Great game",
-      "url": "https://steamcommunity.com/profiles/76561198849011365/recommended/3052450",
-      "author": "76561198849011365",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Great game",
-      "timestamp_created": 1777656682,
-      "playtime_forever": 1405
     }
   ]
 }
