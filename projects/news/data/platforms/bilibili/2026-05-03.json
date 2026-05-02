@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-02T19:49:50.155780+00:00",
+  "archived_at": "2026-05-02T20:34:20.914141+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 5,
   "items": [
     {
       "source": "bilibili",
@@ -17,6 +17,24 @@
       "content_type": "image",
       "metadata": {
         "play": 29,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T20:11:22+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】打打打打击秒了",
+      "summary": "最终法则:灵知觉醒「界外之音」获得强化，汀克特每回合首次打出「技能」时生成1张算力消耗为0的临时「打击」。\n  └ 步饷罔了 (1赞): 你汀打击这个力度……，你忘什么时候可以把你汀打击基础13都数值加强到40左右🙄，给那么多基伤乘区也耐不住这么低的白值\n  └ 1236小凯子 (0赞): 支持一下up！",
+      "url": "https://www.bilibili.com/video/BV1tp9RBeEG5",
+      "author": "朝星-",
+      "engagement": 8,
+      "media_url": "https://i0.hdslb.com/bfs/archive/1bfeb8cef02df642a40be29a10514e512df18fcc.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 6,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
@@ -39,6 +57,18 @@
         "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T20:11:22+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】打打打打击秒了",
+      "summary": "最终法则:灵知觉醒「界外之音」获得强化，汀克特每回合首次打出「技能」时生成1张算力消耗为0的临时「打击」。",
+      "url": "http://www.bilibili.com/video/av116506792826209",
+      "author": "朝星-",
+      "engagement": 6,
+      "media_url": "//i0.hdslb.com/bfs/archive/1bfeb8cef02df642a40be29a10514e512df18fcc.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
