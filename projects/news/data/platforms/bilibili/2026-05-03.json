@@ -1,9 +1,27 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-02T16:39:36.344359+00:00",
+  "archived_at": "2026-05-02T17:40:43.362110+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T16:41:09+00:00",
+      "lang": "zh",
+      "title": "沙耶",
+      "summary": "/ᐠ ｡‸ ｡ᐟ\\\n  └ Elec-ely (1赞): 老师，不够吃\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_我推赛高]",
+      "url": "https://www.bilibili.com/video/BV1bL9XBhEG4",
+      "author": "魔法少女西塔",
+      "engagement": 31,
+      "media_url": "https://i0.hdslb.com/bfs/archive/0de7d80d32f6d376cdbd1135269879487774f77c.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 29,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
     {
       "source": "bilibili",
       "time": "2026-05-02T16:29:14+00:00",
