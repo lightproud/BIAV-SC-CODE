@@ -3751,6 +3751,13 @@
       "title": "【忘却前夜】【超维】角色加强+最终法则杂谈",
       "time": "2026-05-02T00:09:06+00:00",
       "downloaded_at": "2026-05-02T01:48:00.835335+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/9f9542896ce1523aaea13888fd31b39fd9fc1d11.jpg": {
+      "filename": "bilibili_112a2549bc2f0bd1.jpg",
+      "source": "bilibili",
+      "title": "到底是谁在用惧 真•奥尔拉最终法则测试 忘却前夜 癫狂深潜",
+      "time": "2026-05-01T18:00:48+00:00",
+      "downloaded_at": "2026-05-02T04:56:03.020903+00:00"
     }
   },
   "failed": {
@@ -5223,6 +5230,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T01:48:01.136171+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/9f9542896ce1523aaea13888fd31b39fd9fc1d11.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T04:56:03.321715+00:00"
+    },
+    "https://preview.redd.it/gsilymku6nyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c4ff98dcb489c4e8c8eb3de17d5c55d91f2cf546": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T04:56:03.703003+00:00"
     }
   },
   "archived": []

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-02",
-  "archived_at": "2026-05-02T01:48:01.199566+00:00",
+  "archived_at": "2026-05-02T04:56:03.764883+00:00",
   "source": "bilibili",
-  "item_count": 36,
+  "item_count": 38,
   "items": [
     {
       "source": "bilibili",
@@ -230,6 +230,36 @@
       "author": "梦依流苏",
       "engagement": 286,
       "media_url": "//i0.hdslb.com/bfs/archive/5a2f3d9bcc3130503b7fd0610df6dbef88d2f4fa.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T18:00:48+00:00",
+      "lang": "zh",
+      "title": "到底是谁在用惧 真•奥尔拉最终法则测试 忘却前夜 癫狂深潜",
+      "summary": "背景音乐：Johann Strauss II - &quot;The Blue Danube Waltz&quot;\n  └ 一步长安花 (0赞): 吓哭了",
+      "url": "https://www.bilibili.com/video/BV12LR3BVE4S",
+      "author": "夢遊遊遊遊",
+      "engagement": 167,
+      "media_url": "https://i1.hdslb.com/bfs/archive/9f9542896ce1523aaea13888fd31b39fd9fc1d11.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 166,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-01T18:00:48+00:00",
+      "lang": "zh",
+      "title": "到底是谁在用惧 真•奥尔拉最终法则测试 忘却前夜 癫狂深潜",
+      "summary": "背景音乐：Johann Strauss II - &quot;The Blue Danube Waltz&quot;",
+      "url": "http://www.bilibili.com/video/av116500602032603",
+      "author": "夢遊遊遊遊",
+      "engagement": 166,
+      "media_url": "//i1.hdslb.com/bfs/archive/9f9542896ce1523aaea13888fd31b39fd9fc1d11.jpg",
       "content_type": "video"
     },
     {
