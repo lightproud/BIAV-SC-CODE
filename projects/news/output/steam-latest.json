@@ -1,8 +1,38 @@
 {
-  "collected_at": "2026-05-02T07:00:11.817162+00:00",
+  "collected_at": "2026-05-02T08:22:29.997409+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-01T17:41:13+00:00",
+      "lang": "tchinese",
+      "title": "[正面] 沒錢玩library of ruina但可以體驗到難度跟圖書館一樣要動腦的難度",
+      "summary": "沒錢玩library of ruina但可以體驗到難度跟圖書館一樣要動腦的難度",
+      "url": "https://steamcommunity.com/profiles/76561199026161809/recommended/3052450",
+      "author": "76561199026161809",
+      "engagement": 1,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "沒錢玩library of ruina但可以體驗到難度跟圖書館一樣要動腦的難度",
+      "timestamp_created": 1777657273,
+      "playtime_forever": 1339
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-02T06:15:20+00:00",
+      "lang": "russian",
+      "title": "[正面] Игруха заебись",
+      "summary": "Игруха заебись",
+      "url": "https://steamcommunity.com/profiles/76561198991814396/recommended/3052450",
+      "author": "76561198991814396",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Игруха заебись",
+      "timestamp_created": 1777702520,
+      "playtime_forever": 1262
+    },
     {
       "source": "steam",
       "time": "2026-05-01T23:25:58+00:00",
@@ -16,22 +46,7 @@
       "voted_up": true,
       "review": "Great storyline, great mechanics, each of the Realms are super different and so they play really differently.  Do recommend.",
       "timestamp_created": 1777677958,
-      "playtime_forever": 4713
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-01T17:41:13+00:00",
-      "lang": "tchinese",
-      "title": "[正面] 沒錢玩library of ruina但可以體驗到難度跟圖書館一樣要動腦的難度",
-      "summary": "沒錢玩library of ruina但可以體驗到難度跟圖書館一樣要動腦的難度",
-      "url": "https://steamcommunity.com/profiles/76561199026161809/recommended/3052450",
-      "author": "76561199026161809",
-      "engagement": 0,
-      "language": "tchinese",
-      "voted_up": true,
-      "review": "沒錢玩library of ruina但可以體驗到難度跟圖書館一樣要動腦的難度",
-      "timestamp_created": 1777657273,
-      "playtime_forever": 1339
+      "playtime_forever": 4752
     },
     {
       "source": "steam",
@@ -76,7 +91,7 @@
       "voted_up": true,
       "review": "好玩",
       "timestamp_created": 1777635111,
-      "playtime_forever": 670
+      "playtime_forever": 782
     }
   ]
 }
