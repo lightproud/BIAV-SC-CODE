@@ -1,13 +1,12 @@
 # 忘却前夜 社区日报 2026-05-02
 
-> 采集时间：2026-05-02 12:56 UTC+8
+> 采集时间：2026-05-02 15:00 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 133
-2. [Bilibili] 我只是没有办法眼睛不看着她 — engagement: 71
-3. [Bilibili] 沙耶之歌 — engagement: 26
-4. [微博] 忘却前夜×沙耶之歌 联动预告
+1. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 137
+2. [Bilibili] 沙耶之歌 — engagement: 26
+3. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
@@ -18,11 +17,11 @@
 
 | 平台 | 数据条数 |
 |------|----------|
-| App Store | 0（24h内无新内容）|
+| App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 25 |
-| Discord | 12 |
+| Bilibili | 22 |
+| Discord | 11 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -30,7 +29,7 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 0（24h内无新内容）|
-| Reddit | 38 |
+| Reddit | 20 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 5 |
 | Steam 论坛 | 0（沉默）|
@@ -38,7 +37,7 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 18 |
+| 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
@@ -55,7 +54,7 @@
 2. [DC] heikwok@🔸綜合討論: 然後粉魚像是會被深海瘋女人霸凌強制要求女裝那類 — engagement: 28
 3. [DC] reya.li@🔸lore-chat: honestly this is how i've imagined  — engagement: 25
 4. [DC] ahuahuahua@🔸綜合討論: 有大佬可以帶帶我嗎 — engagement: 24
-5. [DC] heikwok@🔸綜合討論: 愉快的1個月5顆突破🤤 — engagement: 23
+5. [DC] sunstopshining@🔸art-and-memes: (附件/嵌入) — engagement: 22
 
 ## Steam 评论
 
@@ -75,11 +74,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 1776
-2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 1766
-3. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 1638
-4. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 1637
-5. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 1247
+1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2121
+2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2118
+3. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 1973
+4. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 1973
+5. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 1504
 
 ## Official
 
@@ -91,11 +90,11 @@
 
 ## Reddit
 
-1. is this upcoming charecter i screenshoted from login story 🫤 — engagement: 0
-2. Arachne DPS Propaganda — engagement: 0
-3. Faint and Aigis (Those pustules on Aigis are very confusing  — engagement: 0
-4. I think we can all agree it’s good they’re buffing many old  — engagement: 0
-5. Arachne and Kathigura — engagement: 0
+1. Arachne DPS Propaganda — engagement: 0
+2. is this upcoming charecter i screenshoted from login story 🫤 — engagement: 0
+3. Whats special about this — engagement: 0
+4. Faint and Aigis (Those pustules on Aigis are very confusing  — engagement: 0
+5. I think we can all agree it’s good they’re buffing many old  — engagement: 0
 
 ## StopGame.ru
 
@@ -107,14 +106,13 @@
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜丨弥萨格调查局CP32行动指南
+3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+4. 忘却前夜×沙耶之歌 联动预告
 
-致全体即将前往新前线的守密人：
+梦的碎片 随风而至
 
-新的异常波动已被精确锁定。
-
-观测信号不再模 — engagement: 0
-4. 忘却前夜 想问下大佬们，抽了阿拉克涅还要抽下面这个池子吗？还是要给下个联动做准备？有没有企鹅的交流群啊 — engagement: 0
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
 5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## 沉默平台
