@@ -3905,6 +3905,20 @@
       "title": "【忘却前夜】打打打打击秒了",
       "time": "2026-05-02T20:11:22+00:00",
       "downloaded_at": "2026-05-02T20:34:20.551051+00:00"
+    },
+    "https://i.ytimg.com/vi/XW5DLUyYrNs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDjX9b9CdCzEygVGE_7DxcbKAh9KA": {
+      "filename": "youtube_4d29cf498571e9fd.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Filming the \"Advanced Gmurphy Guide\" that my editor will put together.",
+      "time": "2026-05-02T21:31:09.433221+00:00",
+      "downloaded_at": "2026-05-02T21:34:18.592835+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/c87791c6554bd79630cb68d5c29e3ba5a0c2d46c.jpg": {
+      "filename": "bilibili_5740535b1b90ca23.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜3+3阿拉克涅通关最终篇，BOSS能打一小时我是没想到的",
+      "time": "2026-05-02T20:53:29+00:00",
+      "downloaded_at": "2026-05-02T21:34:19.825645+00:00"
     }
   },
   "failed": {
@@ -5447,6 +5461,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T20:34:20.851821+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/c87791c6554bd79630cb68d5c29e3ba5a0c2d46c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T21:34:20.126461+00:00"
     }
   },
   "archived": []

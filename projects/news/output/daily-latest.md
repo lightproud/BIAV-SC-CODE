@@ -1,6 +1,6 @@
 # 忘却前夜 社区日报 2026-05-03
 
-> 采集时间：2026-05-03 04:34 UTC+8
+> 采集时间：2026-05-03 05:34 UTC+8
 
 ## 🔥 联动动态
 
@@ -28,7 +28,7 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 1 |
-| Reddit | 17 |
+| Reddit | 18 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 4 |
 | Steam 论坛 | 0（沉默）|
@@ -38,7 +38,7 @@
 | Telegram | 0（沉默）|
 | 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 16 |
+| YouTube | 19 |
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -67,11 +67,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 3039
-2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 3017
-3. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2626
-4. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2622
-5. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2154
+1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 3044
+2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 3022
+3. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2154
+4. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2122
+5. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1904
 
 ## Official
 
@@ -89,9 +89,9 @@
 
 1. D-Tide Alert 1 guide - Week of 4/27/26. — engagement: 0
 2. Whats special about this — engagement: 0
-3. Question: Can u borrow someone's awakeners for story — engagement: 0
-4. Started Today — engagement: 0
-5. Best users of +12 wheels — engagement: 0
+3. Does anyone have a link for the cg art? — engagement: 0
+4. Question: Can u borrow someone's awakeners for story — engagement: 0
+5. What is rapture supposed to mean? — engagement: 0
 
 ## StopGame.ru
 
@@ -104,21 +104,21 @@
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
 3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-4. 忘却前夜×沙耶之歌 联动预告
+4. 12758【投稿】忘却前夜。我主任 — engagement: 0
+5. 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
 #忘却前夜# #沙耶之歌#
 忘却前夜 #Morimens# 忘却前 — engagement: 0
-5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## YouTube
 
-1. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38438
-2. 忘卻前夜 | Morimens OST I - Through the Silver Gate — engagement: 8922
-3. 【忘卻前夜】半週年入坑指南 組隊的基本概念 — engagement: 3577
-4. 忘却前夜丨V2.4 PV——「永世虚妄巡礼」（CV：能登麻美子） — engagement: 3438
-5. 【忘卻前夜】塔薇的詳細解析！技能解說/啟靈/抽取建議/命輪推薦/密契推薦！ — engagement: 2510
+1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 292394
+2. Clementine edit | Forget last night: Morimens — engagement: 33556
+3. Morimens Beginner Progression Guide (2026 Edition) — engagement: 21914
+4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19609
+5. Morimens Gameplay Is FUN — engagement: 17618
 
 ## 沉默平台
 
