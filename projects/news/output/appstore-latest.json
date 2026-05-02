@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-02T12:48:06.581330+00:00",
+  "collected_at": "2026-05-02T14:08:35.678503+00:00",
   "source": "appstore",
-  "item_count": 3,
+  "item_count": 5,
   "items": [
     {
       "source": "appstore",
@@ -25,6 +25,16 @@
     },
     {
       "source": "appstore",
+      "time": "2026-04-04T21:06:47-07:00",
+      "lang": "ms",
+      "title": "Amazing Game",
+      "summary": "The story and the themes it tackles are phenomenal. The character designs are outlandish and unique, complimenting the general vibe of it all. The combat is pretty similar to slay the spire and the gacha system is forgiving. Give this a try.",
+      "url": "https://apps.apple.com/my/app/id6447354150?see-all=reviews",
+      "author": "EzzoomerReborn",
+      "engagement": 5
+    },
+    {
+      "source": "appstore",
       "time": "2026-04-19T22:17:42-07:00",
       "lang": "th",
       "title": "Best deck building type game you’ll ever play",
@@ -32,6 +42,16 @@
       "url": "https://apps.apple.com/th/app/id6447354150?see-all=reviews",
       "author": "SeñorTamago",
       "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-04-26T19:42:48-07:00",
+      "lang": "pt",
+      "title": "Linguagem",
+      "summary": "Queremos uma tradução  em português br 🙏🏻 pls",
+      "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews",
+      "author": "happophis",
+      "engagement": 4
     }
   ]
 }

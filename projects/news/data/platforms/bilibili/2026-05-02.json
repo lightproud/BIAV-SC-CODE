@@ -1,8 +1,8 @@
 {
   "date": "2026-05-02",
-  "archived_at": "2026-05-02T12:48:08.243270+00:00",
+  "archived_at": "2026-05-02T14:08:38.152105+00:00",
   "source": "bilibili",
-  "item_count": 49,
+  "item_count": 51,
   "items": [
     {
       "source": "bilibili",
@@ -581,6 +581,36 @@
       "content_type": "image",
       "metadata": {
         "play": 48,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T13:15:40+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】不狼狈的莉兹H5-11",
+      "summary": "重打了一次 虽然没有专造但是认真摸轴之后确实好打了很多",
+      "url": "http://www.bilibili.com/video/av116505148656291",
+      "author": "风凤_WP",
+      "engagement": 25,
+      "media_url": "//i1.hdslb.com/bfs/archive/0b72e86bc6706c7e0b128b8cd16e4113f148435a.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T13:15:40+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】不狼狈的莉兹H5-11",
+      "summary": "重打了一次 虽然没有专造但是认真摸轴之后确实好打了很多",
+      "url": "https://www.bilibili.com/video/BV11sR7BhEzb",
+      "author": "风凤_WP",
+      "engagement": 24,
+      "media_url": "https://i1.hdslb.com/bfs/archive/0b72e86bc6706c7e0b128b8cd16e4113f148435a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 24,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
