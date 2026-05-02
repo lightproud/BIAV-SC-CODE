@@ -1,8 +1,8 @@
 {
   "date": "2026-05-02",
-  "archived_at": "2026-05-02T14:08:38.150770+00:00",
+  "archived_at": "2026-05-02T15:45:47.229730+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -138,6 +138,21 @@
       "review": "Игруха заебись",
       "timestamp_created": 1777702520,
       "playtime_forever": 1262
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-02T14:16:58+00:00",
+      "lang": "schinese",
+      "title": "[正面] 可以",
+      "summary": "可以",
+      "url": "https://steamcommunity.com/profiles/76561198749410779/recommended/3052450",
+      "author": "76561198749410779",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "可以",
+      "timestamp_created": 1777731418,
+      "playtime_forever": 4887
     }
   ]
 }
