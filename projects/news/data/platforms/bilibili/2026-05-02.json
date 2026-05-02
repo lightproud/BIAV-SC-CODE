@@ -1,8 +1,8 @@
 {
   "date": "2026-05-02",
-  "archived_at": "2026-05-01T23:45:26.577590+00:00",
+  "archived_at": "2026-05-02T01:48:01.199566+00:00",
   "source": "bilibili",
-  "item_count": 34,
+  "item_count": 36,
   "items": [
     {
       "source": "bilibili",
@@ -80,6 +80,36 @@
       "author": "麻雀天天撸猫",
       "engagement": 751,
       "media_url": "//i1.hdslb.com/bfs/archive/0e19cc5c5ef156411f04f6d17f369ac0d1db115d.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T00:09:06+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】【超维】角色加强+最终法则杂谈",
+      "summary": "└ 大罪司教暴食八奈见 (0赞): 鸟弟圣心打出两次才变成0，第三次就消耗了，所以是不是只赚一费\n  └ 寂榕 (1赞): 辛苦啦\n  └ 翻滚的洋葱圈 (0赞): 对我来说，鸟弟唯一的缺点就是他不是鸟妹[doge]",
+      "url": "https://www.bilibili.com/video/BV1QgRLBAE4r",
+      "author": "萨摩_不耶",
+      "engagement": 470,
+      "media_url": "https://i1.hdslb.com/bfs/archive/f4e15c8123eed3448d6682280122bd9eb9a4e10d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 464,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T00:09:06+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】【超维】角色加强+最终法则杂谈",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116502061646487",
+      "author": "萨摩_不耶",
+      "engagement": 464,
+      "media_url": "//i1.hdslb.com/bfs/archive/f4e15c8123eed3448d6682280122bd9eb9a4e10d.jpg",
       "content_type": "video"
     },
     {
