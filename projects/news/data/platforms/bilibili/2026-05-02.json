@@ -1,8 +1,8 @@
 {
   "date": "2026-05-02",
-  "archived_at": "2026-05-02T07:00:12.170203+00:00",
+  "archived_at": "2026-05-02T08:22:34.362221+00:00",
   "source": "bilibili",
-  "item_count": 38,
+  "item_count": 41,
   "items": [
     {
       "source": "bilibili",
@@ -231,6 +231,24 @@
       "engagement": 286,
       "media_url": "//i0.hdslb.com/bfs/archive/5a2f3d9bcc3130503b7fd0610df6dbef88d2f4fa.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T07:38:32+00:00",
+      "lang": "zh",
+      "title": "【猎奇gal解析】和非人生物的恋爱",
+      "summary": "对不起我太久没玩这个游戏了……是三个结局。一个是恢复一个是殉情一个是转化",
+      "url": "https://www.bilibili.com/video/BV1puRjBXE6K",
+      "author": "盐渍标本",
+      "engagement": 174,
+      "media_url": "https://i1.hdslb.com/bfs/archive/37217c7a333284303caa25cd0d1b0885477f7946.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 174,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
@@ -555,6 +573,36 @@
       "engagement": 7,
       "media_url": "//i0.hdslb.com/bfs/archive/3d72b3c6e27b18114147fa7aaca8e7fac2007aac.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T07:06:27+00:00",
+      "lang": "zh",
+      "title": "忘却前夜",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116503705948518",
+      "author": "爱发呆的猪皮w",
+      "engagement": 5,
+      "media_url": "//i0.hdslb.com/bfs/archive/a66021ab9d23058ae2ae060e3b79d7cfb3a545f2.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T07:06:27+00:00",
+      "lang": "zh",
+      "title": "忘却前夜",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1MwRjBbEgx",
+      "author": "爱发呆的猪皮w",
+      "engagement": 4,
+      "media_url": "https://i0.hdslb.com/bfs/archive/a66021ab9d23058ae2ae060e3b79d7cfb3a545f2.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 4,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",

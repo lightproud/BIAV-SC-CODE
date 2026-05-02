@@ -3758,6 +3758,20 @@
       "title": "到底是谁在用惧 真•奥尔拉最终法则测试 忘却前夜 癫狂深潜",
       "time": "2026-05-01T18:00:48+00:00",
       "downloaded_at": "2026-05-02T04:56:03.020903+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/37217c7a333284303caa25cd0d1b0885477f7946.jpg": {
+      "filename": "bilibili_8bb222df68920426.jpg",
+      "source": "bilibili",
+      "title": "【猎奇gal解析】和非人生物的恋爱",
+      "time": "2026-05-02T07:38:32+00:00",
+      "downloaded_at": "2026-05-02T08:22:32.222129+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/a66021ab9d23058ae2ae060e3b79d7cfb3a545f2.jpg": {
+      "filename": "bilibili_4cf519d98b5d58e0.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜",
+      "time": "2026-05-02T07:06:27+00:00",
+      "downloaded_at": "2026-05-02T08:22:34.295395+00:00"
     }
   },
   "failed": {
@@ -5240,6 +5254,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T04:56:03.703003+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/a66021ab9d23058ae2ae060e3b79d7cfb3a545f2.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T08:22:32.522981+00:00"
     }
   },
   "archived": []
