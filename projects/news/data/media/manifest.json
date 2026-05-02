@@ -3807,6 +3807,20 @@
       "title": "沙耶下的任务罢了",
       "time": "2026-05-02T12:30:20+00:00",
       "downloaded_at": "2026-05-02T12:48:08.188950+00:00"
+    },
+    "https://i.ytimg.com/vi/N0DKh_xJXu0/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAJUt071zcjS69bdGRijEj46KOiw": {
+      "filename": "youtube_5dd52b44e8ef0d08.jpg",
+      "source": "youtube",
+      "title": "[Eve of Oblivion] Honest impressions after clearing Chapter 5 without losing a single beat & a sa...",
+      "time": "2026-05-02T14:05:23.193403+00:00",
+      "downloaded_at": "2026-05-02T14:08:36.614309+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/0b72e86bc6706c7e0b128b8cd16e4113f148435a.jpg": {
+      "filename": "bilibili_56ac1347abb70bce.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】不狼狈的莉兹H5-11",
+      "time": "2026-05-02T13:15:40+00:00",
+      "downloaded_at": "2026-05-02T14:08:38.086038+00:00"
     }
   },
   "failed": {
@@ -5319,6 +5333,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T11:40:29.510970+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/0b72e86bc6706c7e0b128b8cd16e4113f148435a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T14:08:36.915146+00:00"
     }
   },
   "archived": []

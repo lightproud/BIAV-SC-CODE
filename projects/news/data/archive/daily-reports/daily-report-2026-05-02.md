@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-05-02
 
-> 采集时间：2026-05-02 20:48 UTC+8
+> 采集时间：2026-05-02 22:08 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 215
+1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 220
 2. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -19,8 +19,8 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 29 |
-| Discord | 5 |
+| Bilibili | 27 |
+| Discord | 2 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -28,7 +28,7 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 0（24h内无新内容）|
-| Reddit | 36 |
+| Reddit | 16 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 5 |
 | Steam 论坛 | 0（沉默）|
@@ -36,21 +36,19 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 20 |
+| 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 16 |
 | 知乎 | 0（沉默）|
 
 ## Discord
 
-有大佬可以帶帶我嗎
+玩你就好
+  └ ahuahuahua: 有大佬可以玩玩我嗎
 
 ### 热门话题
 
-1. [DC] sunstopshining@🔸art-and-memes: (附件/嵌入) — engagement: 22
-2. [DC] ernest_heart@🔸綜合討論: 玩你就好 — engagement: 20
-3. [DC] arr5721@🔸綜合討論: (附件/嵌入) — engagement: 19
-4. [DC] pxld_6.1@🔸晒卡分享: 靠煙灰缸補滿+4了 — engagement: 19
+1. [DC] pxld_6.1@🔸晒卡分享: 靠煙灰缸補滿+4了 — engagement: 19
 
 ## Steam 评论
 
@@ -70,11 +68,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2741
-2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2721
-3. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2399
-4. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2397
-5. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 1939
+1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2817
+2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2796
+3. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2459
+4. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2457
+5. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 1992
 
 ## Official
 
@@ -87,8 +85,8 @@
 ## Reddit
 
 1. Whats special about this — engagement: 0
-2. Arachne DPS Propaganda — engagement: 0
-3. Started Today — engagement: 0
+2. Started Today — engagement: 0
+3. Arachne DPS Propaganda — engagement: 0
 4. Best users of +12 wheels — engagement: 0
 5. Which is your favorite Arc 2 chapter so far? — engagement: 0
 
@@ -102,22 +100,21 @@
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜丨弥萨格调查局CP32行动指南
-
-致全体即将前往新前线的守密人：
-
-新的异常波动已被精确锁定。
-
-观测信号不再模 — engagement: 0
+3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
 4. 12758【投稿】忘却前夜。我主任 — engagement: 0
-5. 忘却前夜 想问下大佬们，抽了阿拉克涅还要抽下面这个池子吗？还是要给下个联动做准备？有没有企鹅的交流群啊 — engagement: 0
+5. 忘却前夜×沙耶之歌 联动预告
+
+梦的碎片 随风而至
+
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
 
 ## YouTube
 
-1. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38436
-2. 【忘卻前夜】重返未來1999？不對！是忘卻前夜！禮包碼兌換！T0角色隊伍組合！超少見克蘇魯策略卡牌遊戲！ — engagement: 16294
+1. 【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃ — engagement: 38435
+2. [Eve of Oblivion] Honest impressions after clearing Chapter  — engagement: 6213
 3. 【忘卻前夜】半週年入坑指南 組隊的基本概念 — engagement: 3575
-4. 忘却前夜丨V2.4 PV——「永世虚妄巡礼」（CV：能登麻美子） — engagement: 3433
+4. 忘却前夜丨V2.4 PV——「永世虚妄巡礼」（CV：能登麻美子） — engagement: 3434
 5. 【忘卻前夜】塔薇的詳細解析！技能解說/啟靈/抽取建議/命輪推薦/密契推薦！ — engagement: 2507
 
 ## 沉默平台
