@@ -3744,6 +3744,13 @@
       "title": "【忘却前夜】【深海】角色加强+最终法则杂谈",
       "time": "2026-05-01T22:33:10+00:00",
       "downloaded_at": "2026-05-01T22:43:24.858369+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/f4e15c8123eed3448d6682280122bd9eb9a4e10d.jpg": {
+      "filename": "bilibili_6ddeb2df7577809f.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】【超维】角色加强+最终法则杂谈",
+      "time": "2026-05-02T00:09:06+00:00",
+      "downloaded_at": "2026-05-02T01:48:00.835335+00:00"
     }
   },
   "failed": {
@@ -5211,6 +5218,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-01T23:45:26.524553+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/f4e15c8123eed3448d6682280122bd9eb9a4e10d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T01:48:01.136171+00:00"
     }
   },
   "archived": []
