@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-05-03
 
-> 采集时间：2026-05-03 01:40 UTC+8
+> 采集时间：2026-05-03 02:45 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 235
+1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 240
 2. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -19,7 +19,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 27 |
+| Bilibili | 26 |
 | Discord | 0（24h内无新内容）|
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
@@ -27,8 +27,8 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 1 |
-| Reddit | 38 |
+| Pixiv | 0（24h内无新内容）|
+| Reddit | 36 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 4 |
 | Steam 论坛 | 0（沉默）|
@@ -36,7 +36,7 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 20 |
+| 微博 | 21 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
@@ -44,22 +44,22 @@
 ## Steam 评论
 
 - 好评 4 / 差评 0 / 好评率 100%
-- 语言分布：tchinese 1, schinese 1, russian 1, english 1
+- 语言分布：english 2, schinese 1, russian 1
 
 ### 热门好评
 
-1. [正面] 沒錢玩library of ruina但可以體驗到難度跟圖書館一樣要動腦的難度 — engagement: 1
+1. [正面] Took me by surprise. Didn't expect to enjoy this g... — engagement: 0
 2. [正面] 可以 — engagement: 0
 3. [正面] Игруха заебись — engagement: 0
 4. [正面] Great storyline, great mechanics, each of the Real... — engagement: 0
 
 ## Bilibili
 
-1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2986
-2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2965
-3. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2579
-4. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2574
-5. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2116
+1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 3007
+2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2985
+3. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2597
+4. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2593
+5. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2131
 
 ## Official
 
@@ -69,16 +69,12 @@
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
-## Pixiv
-
-1.  — engagement: 0
-
 ## Reddit
 
 1. D-Tide Alert 1 guide - Week of 4/27/26. — engagement: 0
 2. Whats special about this — engagement: 0
 3. who should I use my prototype horizon on? — engagement: 0
-4. Started Today — engagement: 0
+4. Best users of +12 wheels — engagement: 0
 5. Arachne DPS Propaganda — engagement: 0
 
 ## StopGame.ru
@@ -104,4 +100,4 @@
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, Discord, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
+App Store, Arca.live, 巴哈姆特, Discord, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎

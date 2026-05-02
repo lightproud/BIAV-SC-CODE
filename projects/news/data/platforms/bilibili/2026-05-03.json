@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-02T17:40:43.362110+00:00",
+  "archived_at": "2026-05-02T18:45:57.164649+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "source": "bilibili",
@@ -19,6 +19,24 @@
         "play": 29,
         "comment_count": 2,
         "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T18:20:58+00:00",
+      "lang": "zh",
+      "title": "【绘画过程】常春藤",
+      "summary": "一小时速涂练习\n  └ 孔雀QvQ (0赞): 一小时速涂练习，画的很潦草见谅ᗜ𖥦ᗜ",
+      "url": "https://www.bilibili.com/video/BV1Ha9RBtEyg",
+      "author": "孔雀QvQ",
+      "engagement": 6,
+      "media_url": "https://i2.hdslb.com/bfs/archive/e1cbe3eb808bdd9e04cbab13f324883868a199f1.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 4,
+        "comment_count": 2,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
