@@ -5338,6 +5338,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T14:08:36.915146+00:00"
+    },
+    "https://preview.redd.it/lz8zv0eteqyg1.png?width=140&amp;height=88&amp;auto=webp&amp;s=9e11500e36dc3eb83a278b0d8c8e7433130a5c3f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T15:45:46.829092+00:00"
+    },
+    "https://preview.redd.it/m1lmx1ncqqyg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=13f59ead9d9b02efa3267f23172a3da134003734": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T15:45:47.168124+00:00"
     }
   },
   "archived": []
