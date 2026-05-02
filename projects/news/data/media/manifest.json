@@ -3821,6 +3821,20 @@
       "title": "【忘却前夜】不狼狈的莉兹H5-11",
       "time": "2026-05-02T13:15:40+00:00",
       "downloaded_at": "2026-05-02T14:08:38.086038+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/0496bf9caa7f9a0d7fc3f8c9372f0359443579d3.jpg": {
+      "filename": "bilibili_1177aa97d0e4290a.jpg",
+      "source": "bilibili",
+      "title": "【巴黎时钟塔】我的最新作品，快来一睹为快！",
+      "time": "2026-05-02T08:05:57+00:00",
+      "downloaded_at": "2026-05-02T16:39:34.926600+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/3b1e7431835fa8923c4e84f9bf4fe330725fecdf.jpg": {
+      "filename": "bilibili_3777b7d5e1816bab.jpg",
+      "source": "bilibili",
+      "title": "沙耶跳舞2.0  郁纪脸沙耶和超级高的肉块沙耶一起旋转",
+      "time": "2026-05-02T16:29:14+00:00",
+      "downloaded_at": "2026-05-02T16:39:36.278801+00:00"
     }
   },
   "failed": {
@@ -5348,6 +5362,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T15:45:47.168124+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/0496bf9caa7f9a0d7fc3f8c9372f0359443579d3.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T16:39:35.227553+00:00"
     }
   },
   "archived": []
