@@ -3772,6 +3772,34 @@
       "title": "忘却前夜",
       "time": "2026-05-02T07:06:27+00:00",
       "downloaded_at": "2026-05-02T08:22:34.295395+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/3be21070b5704bc15c5cc37e44cb97958458de8e.jpg": {
+      "filename": "bilibili_62f6760ee66186b2.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜｜海洋超级大漩涡！",
+      "time": "2026-05-02T01:48:04+00:00",
+      "downloaded_at": "2026-05-02T09:56:28.125042+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/142aacca9bb984c448db0e8b0a81e4bbc59760c1.jpg": {
+      "filename": "bilibili_3d756753df60fe0c.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]旺蛛超维反击H5-11三星无灵芝",
+      "time": "2026-05-02T06:05:15+00:00",
+      "downloaded_at": "2026-05-02T09:56:30.585283+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/f9a487ea6f5d77087bf53015369afc7363ebb396.jpg": {
+      "filename": "bilibili_23b64b9f9b99fe90.jpg",
+      "source": "bilibili",
+      "title": "#忘却前夜",
+      "time": "2026-05-02T03:03:31+00:00",
+      "downloaded_at": "2026-05-02T09:56:33.627876+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/2ad16d9e655d80809eca077e9046001a63f0a50d.jpg": {
+      "filename": "bilibili_6133f9ca3a7fa49d.jpg",
+      "source": "bilibili",
+      "title": "少女风情",
+      "time": "2026-05-02T08:49:06+00:00",
+      "downloaded_at": "2026-05-02T09:56:35.687977+00:00"
     }
   },
   "failed": {
@@ -5259,6 +5287,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T08:22:32.522981+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/142aacca9bb984c448db0e8b0a81e4bbc59760c1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T09:56:33.928951+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/f9a487ea6f5d77087bf53015369afc7363ebb396.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T09:56:34.229718+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/3be21070b5704bc15c5cc37e44cb97958458de8e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T09:56:34.530479+00:00"
     }
   },
   "archived": []
