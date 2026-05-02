@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-05-03
 
-> 采集时间：2026-05-03 05:34 UTC+8
+> 采集时间：2026-05-03 06:33 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 241
+1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 243
 2. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -19,7 +19,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 28 |
+| Bilibili | 26 |
 | Discord | 16 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
@@ -27,8 +27,8 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 1 |
-| Reddit | 18 |
+| Pixiv | 0（24h内无新内容）|
+| Reddit | 19 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 4 |
 | Steam 论坛 | 0（沉默）|
@@ -38,7 +38,7 @@
 | Telegram | 0（沉默）|
 | 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
-| YouTube | 19 |
+| YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
 
 ## Discord
@@ -67,11 +67,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 3044
-2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 3022
-3. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2154
-4. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2122
-5. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1904
+1. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2164
+2. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2132
+3. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1911
+4. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1898
+5. #忘却前夜 — engagement: 272
 
 ## Official
 
@@ -81,17 +81,13 @@
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
-## Pixiv
-
-1.  — engagement: 0
-
 ## Reddit
 
 1. D-Tide Alert 1 guide - Week of 4/27/26. — engagement: 0
-2. Whats special about this — engagement: 0
-3. Does anyone have a link for the cg art? — engagement: 0
-4. Question: Can u borrow someone's awakeners for story — engagement: 0
-5. What is rapture supposed to mean? — engagement: 0
+2. Mythag's biggest goliath fan finally gets to use him in endg — engagement: 0
+3. Whats special about this — engagement: 0
+4. What is rapture supposed to mean? — engagement: 0
+5. Does anyone have a link for the cg art? — engagement: 0
 
 ## StopGame.ru
 
@@ -104,22 +100,14 @@
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
 3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-4. 12758【投稿】忘却前夜。我主任 — engagement: 0
-5. 忘却前夜×沙耶之歌 联动预告
+4. 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
 #忘却前夜# #沙耶之歌#
 忘却前夜 #Morimens# 忘却前 — engagement: 0
-
-## YouTube
-
-1. Morimens | The Greatest Gacha Game You've Never Played (Long — engagement: 292394
-2. Clementine edit | Forget last night: Morimens — engagement: 33556
-3. Morimens Beginner Progression Guide (2026 Edition) — engagement: 21914
-4. The Most FUN Gacha Game You Need To Try | Morimens — engagement: 19609
-5. Morimens Gameplay Is FUN — engagement: 17618
+5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
