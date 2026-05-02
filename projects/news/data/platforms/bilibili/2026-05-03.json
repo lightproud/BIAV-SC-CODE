@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-02T22:33:05.870407+00:00",
+  "archived_at": "2026-05-02T23:37:21.886577+00:00",
   "source": "bilibili",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
     {
       "source": "bilibili",
@@ -21,6 +21,36 @@
         "comments_fetched": 2,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T22:48:24+00:00",
+      "lang": "zh",
+      "title": "何为史上最强?断绝古今?福袋蜘蛛5分钟容灾5-5，一镜到底……",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV19t99B3Ezr",
+      "author": "路过的耄耋",
+      "engagement": 17,
+      "media_url": "https://i1.hdslb.com/bfs/archive/cc961c6060aeba4ee0113e44e83c5c64192e0ff0.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 17,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T22:48:24+00:00",
+      "lang": "zh",
+      "title": "何为史上最强?断绝古今?福袋蜘蛛5分钟容灾5-5，一镜到底……",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116507396806823",
+      "author": "路过的耄耋",
+      "engagement": 17,
+      "media_url": "//i1.hdslb.com/bfs/archive/cc961c6060aeba4ee0113e44e83c5c64192e0ff0.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",

@@ -3919,6 +3919,13 @@
       "title": "忘却前夜3+3阿拉克涅通关最终篇，BOSS能打一小时我是没想到的",
       "time": "2026-05-02T20:53:29+00:00",
       "downloaded_at": "2026-05-02T21:34:19.825645+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/cc961c6060aeba4ee0113e44e83c5c64192e0ff0.jpg": {
+      "filename": "bilibili_ba3ee7a846dfad09.jpg",
+      "source": "bilibili",
+      "title": "何为史上最强?断绝古今?福袋蜘蛛5分钟容灾5-5，一镜到底……",
+      "time": "2026-05-02T22:48:24+00:00",
+      "downloaded_at": "2026-05-02T23:37:21.518037+00:00"
     }
   },
   "failed": {
@@ -5466,6 +5473,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T21:34:20.126461+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/cc961c6060aeba4ee0113e44e83c5c64192e0ff0.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T23:37:21.818923+00:00"
     }
   },
   "archived": []
