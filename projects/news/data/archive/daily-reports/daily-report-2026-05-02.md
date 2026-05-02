@@ -1,12 +1,11 @@
 # 忘却前夜 社区日报 2026-05-02
 
-> 采集时间：2026-05-02 17:56 UTC+8
+> 采集时间：2026-05-02 18:45 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 192
-2. [Bilibili] 【AI丰川祥子】沙耶の唄(沙耶之歌) — engagement: 138
-3. [微博] 忘却前夜×沙耶之歌 联动预告
+1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 197
+2. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
@@ -20,7 +19,7 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 31 |
+| Bilibili | 28 |
 | Discord | 8 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
@@ -28,8 +27,8 @@
 | NGA | 0（沉默）|
 | Note.com | 0（沉默）|
 | Official | 9 |
-| Pixiv | 1 |
-| Reddit | 18 |
+| Pixiv | 0（24h内无新内容）|
+| Reddit | 17 |
 | Ruliweb | 0（24h内无新内容）|
 | Steam | 6 |
 | Steam 论坛 | 0（沉默）|
@@ -37,7 +36,7 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 14 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
@@ -75,11 +74,11 @@
 
 ## Bilibili
 
-1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2471
-2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2457
-3. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2217
-4. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2213
-5. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 1732
+1. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2554
+2. 【忘却前夜】【血肉】角色加强+最终法则杂谈 — engagement: 2544
+3. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2288
+4. 【忘却前夜】【混沌】角色加强+最终法则杂谈 — engagement: 2286
+5. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 1808
 
 ## Official
 
@@ -89,17 +88,13 @@
 4. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅲ — engagement: 0
 5. [Steam新闻] 📜 V2.5.0 Version Outlook - Part Ⅱ — engagement: 0
 
-## Pixiv
-
-1.  — engagement: 0
-
 ## Reddit
 
 1. Whats special about this — engagement: 0
 2. Arachne DPS Propaganda — engagement: 0
 3. is this upcoming charecter i screenshoted from login story 🫤 — engagement: 0
-4. Which is your favorite Arc 2 chapter so far? — engagement: 0
-5. Faint and Aigis (Those pustules on Aigis are very confusing  — engagement: 0
+4. Best users of +12 wheels — engagement: 0
+5. Which is your favorite Arc 2 chapter so far? — engagement: 0
 
 ## StopGame.ru
 
@@ -112,14 +107,14 @@
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
 3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-4. 12758【投稿】忘却前夜。我主任 — engagement: 0
-5. 忘却前夜×沙耶之歌 联动预告
+4. 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
 #忘却前夜# #沙耶之歌#
 忘却前夜 #Morimens# 忘却前 — engagement: 0
+5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## 沉默平台
 
-App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
+App Store, Arca.live, 巴哈姆特, 5ch, Google Play, Naver Cafe, NGA, Note.com, Pixiv, Ruliweb, Steam 论坛, TapTap, taptap_post, Telegram, 微信公众号, YouTube, 知乎
