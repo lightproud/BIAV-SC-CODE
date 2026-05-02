@@ -3898,6 +3898,13 @@
       "title": "[DC] lurenjiao@🔸綜合討論: 下版本加强以后，鲨鱼+希莱，感觉随便一个回合三百多万了，我灵塑还没点满",
       "time": "2026-05-02T18:24:27.950000+00:00",
       "downloaded_at": "2026-05-02T19:49:50.092275+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/1bfeb8cef02df642a40be29a10514e512df18fcc.jpg": {
+      "filename": "bilibili_b485bf5951189beb.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】打打打打击秒了",
+      "time": "2026-05-02T20:11:22+00:00",
+      "downloaded_at": "2026-05-02T20:34:20.551051+00:00"
     }
   },
   "failed": {
@@ -5435,6 +5442,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T17:40:43.295432+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/1bfeb8cef02df642a40be29a10514e512df18fcc.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-02T20:34:20.851821+00:00"
     }
   },
   "archived": []
