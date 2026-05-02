@@ -1,10 +1,10 @@
 # 忘却前夜 社区日报 2026-05-03
 
-> 采集时间：2026-05-03 06:33 UTC+8
+> 采集时间：2026-05-03 07:37 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 243
+1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 245
 2. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
@@ -28,9 +28,9 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 0（24h内无新内容）|
-| Reddit | 19 |
+| Reddit | 20 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 4 |
+| Steam | 3 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
@@ -55,23 +55,22 @@
 
 ## Steam 评论
 
-- 好评 4 / 差评 0 / 好评率 100%
-- 语言分布：english 2, schinese 1, russian 1
+- 好评 3 / 差评 0 / 好评率 100%
+- 语言分布：english 1, schinese 1, russian 1
 
 ### 热门好评
 
 1. [正面] Took me by surprise. Didn't expect to enjoy this g... — engagement: 0
 2. [正面] 可以 — engagement: 0
 3. [正面] Игруха заебись — engagement: 0
-4. [正面] Great storyline, great mechanics, each of the Real... — engagement: 0
 
 ## Bilibili
 
-1. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2164
-2. 【忘却前夜】【深海】角色加强+最终法则杂谈 — engagement: 2132
-3. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1911
-4. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1898
-5. #忘却前夜 — engagement: 272
+1. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1920
+2. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1908
+3. #忘却前夜 — engagement: 274
+4. #忘却前夜 — engagement: 271
+5. [忘却前夜]旺蛛超维反击H5-11三星无灵芝 — engagement: 259
 
 ## Official
 
@@ -83,11 +82,11 @@
 
 ## Reddit
 
-1. D-Tide Alert 1 guide - Week of 4/27/26. — engagement: 0
+1. 7 months of solo work. I'm free — engagement: 0
 2. Mythag's biggest goliath fan finally gets to use him in endg — engagement: 0
-3. Whats special about this — engagement: 0
-4. What is rapture supposed to mean? — engagement: 0
-5. Does anyone have a link for the cg art? — engagement: 0
+3. Finally completed arc 1!! — engagement: 0
+4. D-Tide Alert 1 guide - Week of 4/27/26. — engagement: 0
+5. Need help looking for the writer — engagement: 0
 
 ## StopGame.ru
 

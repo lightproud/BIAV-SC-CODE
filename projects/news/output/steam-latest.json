@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-02T22:33:05.519275+00:00",
+  "collected_at": "2026-05-02T23:37:19.986455+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 3,
   "items": [
     {
       "source": "steam",
@@ -47,21 +47,6 @@
       "review": "Игруха заебись",
       "timestamp_created": 1777702520,
       "playtime_forever": 1432
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-01T23:25:58+00:00",
-      "lang": "english",
-      "title": "[正面] Great storyline, great mechanics, each of the Real...",
-      "summary": "Great storyline, great mechanics, each of the Realms are super different and so they play really differently.  Do recommend.",
-      "url": "https://steamcommunity.com/profiles/76561197977031316/recommended/3052450",
-      "author": "76561197977031316",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Great storyline, great mechanics, each of the Realms are super different and so they play really differently.  Do recommend.",
-      "timestamp_created": 1777677958,
-      "playtime_forever": 4824
     }
   ]
 }
