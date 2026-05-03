@@ -15,12 +15,14 @@ Usage:
   python scripts/memory_search.py --stats                 # 索引统计
 """
 
+import fnmatch
 import gzip
 import json
 import math
 import os
 import re
 import sys
+import time
 from collections import Counter, defaultdict
 from datetime import date, datetime
 from hashlib import md5
@@ -41,6 +43,7 @@ KNOWLEDGE_GLOBS = [
     # === Tier 0: Core memory & facts (always indexed) ===
     "memory/*.md",
     "memory/*.json",
+    "memory/active/*.md",
     "memory/dreams/*.json",
     "memory/dreams/*.md",
     "memory/session-digests/*.md",
@@ -102,16 +105,23 @@ SKIP_FILES = {
 
 # Discord JSONL directories for on-demand message search (Tier 3)
 DISCORD_CHANNELS_DIR = "projects/news/data/discord/channels"
+SEARCHIGNORE_AGE_DAYS = 30  # files matching .searchignore AND older drop
 
 
 def discover_files() -> list[Path]:
-    """Find all knowledge files to index."""
+    """Find all knowledge files to index, honoring .searchignore."""
+    si = REPO / ".searchignore"
+    patterns = [l.strip() for l in si.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")] if si.exists() else []
+    cutoff = time.time() - SEARCHIGNORE_AGE_DAYS * 86400
     files = []
     for pattern in KNOWLEDGE_GLOBS:
         for fp in sorted(REPO.glob(pattern)):
             rel = str(fp.relative_to(REPO))
-            if rel not in SKIP_FILES and fp.is_file():
-                files.append(fp)
+            if rel in SKIP_FILES or not fp.is_file():
+                continue
+            if fp.stat().st_mtime < cutoff and any(fnmatch.fnmatch(rel, p) for p in patterns):
+                continue
+            files.append(fp)
     return files
 
 
