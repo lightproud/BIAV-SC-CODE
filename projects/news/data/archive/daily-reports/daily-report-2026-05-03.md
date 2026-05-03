@@ -1,13 +1,14 @@
 # 忘却前夜 社区日报 2026-05-03
 
-> 采集时间：2026-05-03 09:51 UTC+8
+> 采集时间：2026-05-03 13:25 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 250
-2. [Bilibili] 沙耶究竟是怎样的一部视觉小说 — engagement: 107
-3. [Bilibili] 沙耶之歌 — engagement: 0
-4. [微博] 忘却前夜×沙耶之歌 联动预告
+1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 642
+2. [Bilibili] 沙耶之歌9 — engagement: 383
+3. [Bilibili] 沙耶究竟是怎样的一部视觉小说 — engagement: 131
+4. [Bilibili] 沙耶之歌 — engagement: 1
+5. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
@@ -18,11 +19,11 @@
 
 | 平台 | 数据条数 |
 |------|----------|
-| App Store | 0（24h内无新内容）|
+| App Store | 0（沉默）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 24 |
-| Discord | 15 |
+| Bilibili | 30 |
+| Discord | 12 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -38,7 +39,7 @@
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 19 |
+| 微博 | 15 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
@@ -50,11 +51,11 @@
 
 ### 热门话题
 
-1. [DC] sweet_25367@🔸綜合討論: 你们超维好吓人 — engagement: 30
-2. [DC] salami_87@🔸canal-español: (附件/嵌入) — engagement: 30
-3. [DC] jjlin0103@🔸綜合討論: (附件/嵌入) — engagement: 29
-4. [DC] ena04564@🔸剧情交流: 官方：其實我沒想這麼多 — engagement: 27
-5. [DC] davebb3369@🔸晒卡分享: (附件/嵌入) — engagement: 25
+1. [DC] salami_87@🔸canal-español: (附件/嵌入) — engagement: 30
+2. [DC] jjlin0103@🔸綜合討論: (附件/嵌入) — engagement: 29
+3. [DC] ena04564@🔸剧情交流: 官方：其實我沒想這麼多 — engagement: 27
+4. [DC] davebb3369@🔸晒卡分享: (附件/嵌入) — engagement: 25
+5. [DC] foxcatfurry@🔸剧情交流: 七章那會快死了啊 — engagement: 24
 
 ## Steam 评论
 
@@ -70,11 +71,11 @@
 
 ## Bilibili
 
-1. #忘却前夜 — engagement: 285
-2. #忘却前夜 — engagement: 282
-3. [忘却前夜]旺蛛超维反击H5-11三星无灵芝 — engagement: 263
-4. [忘却前夜]旺蛛超维反击H5-11三星无灵芝 — engagement: 258
-5. 【猎奇gal解析】和非人生物的恋爱 — engagement: 250
+1. 【猎奇gal解析】和非人生物的恋爱 — engagement: 642
+2. 【忘却前夜】打打打打击秒了 — engagement: 603
+3. 【忘却前夜】打打打打击秒了 — engagement: 596
+4. 忘却前夜3+3阿拉克涅通关最终篇，BOSS能打一小时我是没想到的 — engagement: 477
+5. 忘却前夜3+3阿拉克涅通关最终篇，BOSS能打一小时我是没想到的 — engagement: 473
 
 ## Official
 
@@ -90,7 +91,7 @@
 2. Mythag's biggest goliath fan finally gets to use him in endg — engagement: 0
 3. Finally completed arc 1!! — engagement: 0
 4. Need help looking for the writer — engagement: 0
-5. D-Tide Alert 1 guide - Week of 4/27/26. — engagement: 0
+5. New Player seeks advice for early progression, mistakes or p — engagement: 0
 
 ## StopGame.ru
 
@@ -98,20 +99,18 @@
 
 ## 微博
 
-1. 给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦 — engagement: 0
-2. 忘却前夜#忘却前夜#
+1. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜丨弥萨格调查局CP32行动指南
+2. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
+3. 忘却前夜×沙耶之歌 联动预告
 
-致全体即将前往新前线的守密人：
+梦的碎片 随风而至
 
-新的异常波动已被精确锁定。
-
-观测信号不再模 — engagement: 0
-4. 忘却前夜
-问一下大家该怎么配对呀一直在乱玩 — engagement: 0
-5. 12758【投稿】忘却前夜。我主任 — engagement: 0
+#忘却前夜# #沙耶之歌#
+忘却前夜 #Morimens# 忘却前 — engagement: 0
+4. 给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦 — engagement: 0
+5. 之前给忘却前夜画的解禁了！！ — engagement: 0
 
 ## 沉默平台
 
