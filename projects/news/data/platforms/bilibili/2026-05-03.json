@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-03T12:47:14.055878+00:00",
+  "archived_at": "2026-05-03T14:09:34.782401+00:00",
   "source": "bilibili",
-  "item_count": 27,
+  "item_count": 28,
   "items": [
     {
       "source": "bilibili",
@@ -279,6 +279,24 @@
       "engagement": 17,
       "media_url": "//i1.hdslb.com/bfs/archive/cc961c6060aeba4ee0113e44e83c5c64192e0ff0.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T13:59:04+00:00",
+      "lang": "zh",
+      "title": "哪有肉块，只有你的沙耶",
+      "summary": "-\n  └ 上班算是被连续包月吗 (0赞): 鼓掌\n  └ 婼秧 (0赞): 哇\n  └ JM漫画看板娘 (0赞): [星星眼][星星眼][星星眼][星星眼][星星眼][星星眼]",
+      "url": "https://www.bilibili.com/video/BV1meRcBnE6Y",
+      "author": "金杯就是金杯",
+      "engagement": 9,
+      "media_url": "https://i2.hdslb.com/bfs/archive/80c9bb54212824423d459516d06b3e89927aea4d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 6,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
