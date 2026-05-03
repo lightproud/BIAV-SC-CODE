@@ -2,6 +2,14 @@
 
 最后更新：2026-04-26 by Code-news（艾瑞卡）
 
+> **2026-05-03 增补**：守密人裁定砍掉日报管线（守密人从未消费过 daily-latest.md / daily-reports/）。
+> - `data/archive/daily-reports/` 504 文件已删
+> - `output/daily-latest.md` 已删
+> - `generate_daily.py` + `backfill_daily_reports.py` 已删
+> - `update-news.yml` / `dream.yml` / `backfill_gap.py` 相关步骤已移除
+> - 本报告 §2.3 中 `archive/daily-reports/` 一行 + §四 BIAV-SC 补丁中对应行**已失效**
+> - 长窗口社区分析改用 `data/platforms/{source}/{date}.json` 全量层
+
 > 任务依据：`memory/dispatch-brief-code-news-data-layer-audit.md`（lesson #30 落地 W1）
 > 审计范围：`projects/news/data/` 所有子目录 + 状态文件
 > 边界：不动 archiver 代码、不改 BIAV-SC.md / COLLECTION_ARCHITECTURE.md（提议补丁）、不实现 helper

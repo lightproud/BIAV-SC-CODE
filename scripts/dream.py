@@ -896,49 +896,14 @@ def ai_consolidate(client) -> dict:
 
 
 def ai_trend_analysis(client) -> dict:
-    """Analyze recent daily reports for trends."""
-    reports_dir = REPO / "projects" / "news" / "output"
-    daily_file = reports_dir / "daily-latest.md"
-    if not daily_file.exists():
-        return {}
+    """Trend analysis stub — daily-report based pipeline removed 2026-05-03.
 
-    try:
-        daily_content = daily_file.read_text(encoding="utf-8")[:3000]
-    except (OSError, UnicodeDecodeError):
-        return {}
-
-    prompt = f"""你是银芯（BIAV-SC）的做梦 Agent。分析以下最新日报，提取趋势信号。
-
-{daily_content}
-
-输出 JSON 格式：
-
-{{
-  "sentiment": "positive|neutral|negative",
-  "hot_topics": ["话题1", "话题2"],
-  "anomalies": ["异常信号"],
-  "community_health": {{
-    "steam_trend": "up|stable|down",
-    "discord_trend": "up|stable|down",
-    "bilibili_trend": "up|stable|down"
-  }},
-  "action_items": ["建议制作人关注的事项"]
-}}
-
-只输出 JSON。"""
-
-    try:
-        response = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=2048,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        text = response.content[0].text
-        json_match = re.search(r"\{[\s\S]+\}", text)
-        if json_match:
-            return json.loads(json_match.group())
-    except Exception as e:
-        print(f"  - AI trend analysis error: {e}")
+    Future implementation should read data/platforms/{source}/{date}.json
+    archive layer directly (full data per source per day, weeks-to-years
+    of history) and data/discord/activity_daily/{date}.json, then ask the
+    LLM to synthesize trends. Returns empty for now to keep dream.py
+    callable without crashing the cron.
+    """
     return {}
 
 
