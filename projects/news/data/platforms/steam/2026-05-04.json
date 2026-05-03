@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-03T19:48:53.047406+00:00",
+  "archived_at": "2026-05-03T20:35:41.483328+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -138,6 +138,21 @@
       "review": "Fortzaaaaaaa",
       "timestamp_created": 1777835447,
       "playtime_forever": 376
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-03T19:57:22+00:00",
+      "lang": "english",
+      "title": "[正面] Beautiful animation, well fleshed out characters,...",
+      "summary": "Beautiful animation, well fleshed out characters, and wonderful gameplay. The card game is stimulating and rewarding. \r\nBest of all, Morimens is VERY F2P friendly and allows you many chances to earn characters and other rewards.",
+      "url": "https://steamcommunity.com/profiles/76561198040309583/recommended/3052450",
+      "author": "76561198040309583",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Beautiful animation, well fleshed out characters, and wonderful gameplay. The card game is stimulating and rewarding. \r\nBest of all, Morimens is VERY F2P friendly and allows you many chances to earn characters and other rewards.",
+      "timestamp_created": 1777838242,
+      "playtime_forever": 969
     }
   ]
 }
