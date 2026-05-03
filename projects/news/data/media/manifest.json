@@ -3926,6 +3926,20 @@
       "title": "何为史上最强?断绝古今?福袋蜘蛛5分钟容灾5-5，一镜到底……",
       "time": "2026-05-02T22:48:24+00:00",
       "downloaded_at": "2026-05-02T23:37:21.518037+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/62427b18040bc6b0881e82306aec8de6c83cc999.jpg": {
+      "filename": "bilibili_848800bf7010f096.jpg",
+      "source": "bilibili",
+      "title": "沙耶究竟是怎样的一部视觉小说",
+      "time": "2026-05-02T11:05:39+00:00",
+      "downloaded_at": "2026-05-03T01:51:43.926522+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/e0c8e2ff8964865299840430b2638f2be8ef8ff8.jpg": {
+      "filename": "bilibili_789bb2e7803f6c2b.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌",
+      "time": "2026-05-03T00:47:34+00:00",
+      "downloaded_at": "2026-05-03T01:51:46.485000+00:00"
     }
   },
   "failed": {
@@ -5478,6 +5492,26 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-02T23:37:21.818923+00:00"
+    },
+    "https://preview.redd.it/2gu2d8g4zsyg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=3cfe500000165dc8246f6ac288935c48653c2b0e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T01:51:44.379869+00:00"
+    },
+    "https://preview.redd.it/cn1rd4e4rsyg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=cb4aecf2503ad051fb383af9621180c3d2a4e369": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T01:51:44.708679+00:00"
+    },
+    "https://preview.redd.it/wi2atruoysyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c1e8cd461b8c4a6726f24e28713754a1f1409754": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T01:51:45.041156+00:00"
+    },
+    "https://preview.redd.it/a6pkxc5ljsyg1.jpg?width=140&amp;height=97&amp;auto=webp&amp;s=3903fee488ada33ea0e6fd3e174ccb8122a7fa33": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T01:51:45.372355+00:00"
     }
   },
   "archived": []
