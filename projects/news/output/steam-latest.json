@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-03T05:25:02.975830+00:00",
+  "collected_at": "2026-05-03T07:49:43.424829+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 3,
   "items": [
     {
       "source": "steam",
@@ -16,7 +16,7 @@
       "voted_up": true,
       "review": "除了一些符合克苏鲁系列对应世界观，但相对冷门或者不那么符合大众价值观的内容以外。整体还是不错的。\r\n至于立绘与故事……在这种世界观下追求正经二次元角色的玩家才不太正常吧？",
       "timestamp_created": 1777766431,
-      "playtime_forever": 47018
+      "playtime_forever": 47228
     },
     {
       "source": "steam",
@@ -31,7 +31,7 @@
       "voted_up": true,
       "review": "Took me by surprise. Didn't expect to enjoy this game as much as I do.\r\n\r\nGeneral info:\r\n1. Card roguelike gameplay, similar to Slay the Spire or Monster Train.\r\n2. Setting and aesthetics can be described as lovecraftian horror + anime.\r\n3. Gacha.\r\n4. Starts easy, but ramps up in difficulty.\r\n\r\nPros:\r\n1. Fun, addictive gameplay with complex mechanics.\r\n2. Dark, interesting story. Maybe it's just my experience, but every gacha I played so far turned me off because of its infantile and shallow storytelling, without any stakes. This one seems different.\r\n3. Cool character designs and personalities. Nice to see some actual characters instead of just copy-pasted bland waifus that obsess over MC.\r\n4. Gacha elements seem very lenient. Devs are ok with buffing old units.\r\n5. Really good soundtrack.\r\n\r\nCons:\r\n1. UI is bad. It's clearly a mobile game brought to PC with barely any changes. Worst thing are entire, long essays inside some cards. Would be better to use some tags, icons etc. instead of adding  like \"this card counts also as Strike\" etc.\r\n2. Some text is machine-translated, but they keep working on it.\r\n3. As lenient as it is, it's still a gacha.",
       "timestamp_created": 1777742633,
-      "playtime_forever": 2695
+      "playtime_forever": 2725
     },
     {
       "source": "steam",
@@ -46,22 +46,7 @@
       "voted_up": true,
       "review": "可以",
       "timestamp_created": 1777731418,
-      "playtime_forever": 4917
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-02T06:15:20+00:00",
-      "lang": "russian",
-      "title": "[正面] Игруха заебись",
-      "summary": "Игруха заебись",
-      "url": "https://steamcommunity.com/profiles/76561198991814396/recommended/3052450",
-      "author": "76561198991814396",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": true,
-      "review": "Игруха заебись",
-      "timestamp_created": 1777702520,
-      "playtime_forever": 1432
+      "playtime_forever": 4982
     }
   ]
 }

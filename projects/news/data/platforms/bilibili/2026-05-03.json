@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-03T05:25:10.521973+00:00",
+  "archived_at": "2026-05-03T07:49:52.184919+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "source": "bilibili",
@@ -99,6 +99,42 @@
       "engagement": 147,
       "media_url": "//i1.hdslb.com/bfs/archive/9fa15389a28c53459cf5c29edf4b7f0f9e7741b2.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T05:25:54+00:00",
+      "lang": "zh",
+      "title": "哈基兔与肉块跳舞",
+      "summary": "哈基兔与肉块跳舞\n  └ 黑荆棘女士举世无双 (1赞): 嗯，比起来人型我还是更喜欢让saya酱一肉块形态跳舞  那个兔子弄着玩的[吃瓜][吃瓜][吃瓜][吃瓜]\n  └ -昆扬 (1赞): 这兔子怎么耄里耄气的[思考]\n  └ 黑寰-N (1赞): 嗯",
+      "url": "https://www.bilibili.com/video/BV1d89ZBxExn",
+      "author": "黑荆棘女士举世无双",
+      "engagement": 122,
+      "media_url": "https://i1.hdslb.com/bfs/archive/e1fe2c9c522172701138fd630886a2659fad6633.png",
+      "content_type": "image",
+      "metadata": {
+        "play": 117,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T07:03:44+00:00",
+      "lang": "zh",
+      "title": "Gal资源分享：沙耶之歌！资源分享！安卓直装+电脑版！附带解压教程！自带补丁！",
+      "summary": "-\n  └ 糯叽叽青松 (0赞): 老规矩，三联+关后，点up头像去看消息，已经发给你了，\n如果没有，直接私信 up发个1就行，秒回！\n这是UP给小白整理的一站式整合包。对小白很友好，一个包搞定！再也不用到处找啦[黎明觉醒_比心鸦]",
+      "url": "https://www.bilibili.com/video/BV1pi9oBYEJv",
+      "author": "糯叽叽青松",
+      "engagement": 35,
+      "media_url": "https://i2.hdslb.com/bfs/archive/f1dd3fcb4c4c88d3ada7d22d0855d918d6571644.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 34,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
