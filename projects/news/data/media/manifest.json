@@ -4073,6 +4073,13 @@
       "title": "スケスケゴールデン大学",
       "time": "2026-05-03T23:34:41+09:00",
       "downloaded_at": "2026-05-03T15:41:18.842070+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/67b5099f603e2ac3e3e1ed422bd789baaf4ddc89.jpg": {
+      "filename": "bilibili_2b98db7879b24684.jpg",
+      "source": "bilibili",
+      "title": "全世界最特别的你",
+      "time": "2026-05-03T16:05:00+00:00",
+      "downloaded_at": "2026-05-03T16:40:16.706196+00:00"
     }
   },
   "failed": {
@@ -5700,6 +5707,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-03T15:41:17.811574+00:00"
+    },
+    "https://preview.redd.it/oeqi9rtg4yyg1.jpg?width=140&amp;height=78&amp;auto=webp&amp;s=12ad2d7acdc4b12ed07d62506c59f8a9b78dcf5f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T16:40:17.179673+00:00"
     }
   },
   "archived": []
