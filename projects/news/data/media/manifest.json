@@ -4129,6 +4129,13 @@
       "title": "[DC] rendezvoushr@🔸canal-español: Primer personaje al 70",
       "time": "2026-05-03T12:45:47.894000+00:00",
       "downloaded_at": "2026-05-03T19:48:52.981341+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/ddc35c347d2adbbe4c2642e263d3e821582ca926.jpg": {
+      "filename": "bilibili_60111864cb8da1f2.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】欢乐固伤流莫丝逃课星辰篇主线H5-11",
+      "time": "2026-05-03T21:33:29+00:00",
+      "downloaded_at": "2026-05-03T22:33:40.363683+00:00"
     }
   },
   "failed": {
@@ -5766,6 +5773,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-03T17:42:49.256328+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/ddc35c347d2adbbe4c2642e263d3e821582ca926.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T22:33:40.664455+00:00"
+    },
+    "https://preview.redd.it/gr60kogtvzyg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=aa2a3b3d2d3d88eca842fc4ffefcb4d930a061bc": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T22:33:41.295226+00:00"
     }
   },
   "archived": []

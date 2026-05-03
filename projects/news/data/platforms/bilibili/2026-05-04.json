@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-03T21:36:04.188044+00:00",
+  "archived_at": "2026-05-03T22:33:41.350027+00:00",
   "source": "bilibili",
-  "item_count": 3,
+  "item_count": 5,
   "items": [
     {
       "source": "bilibili",
@@ -51,6 +51,36 @@
         "comments_fetched": 0,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T21:33:29+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】欢乐固伤流莫丝逃课星辰篇主线H5-11",
+      "summary": "-\n  └ 嘎啦嘎啦果 (0赞): 首先这个思路是抄的一位韩国玩家的，不是我原创。\n就是靠莫丝固伤来打，莫丝等级和精通越高越好，其他三个队友疯狂开大就行了。羊皮固定，羊2，皮最好超限，菲茵特可以换成雷娅，但是哪怕雷娅能解易伤，后面该死还得死，所以还是菲茵特最好。\n不想写太多了，很少人能不爆死抗去通关这玩意，策划设计的什么恶心数值。能解1700流血、原地起两千多大盾、还能13回合内打完不爆灵芝的队伍就没几个。\n视频里操作失误的地方很多，主要都是打得太急导致吃了不必要的伤害，看看就好了。\n其实我真没懂二阶段什么时候会触发狂暴六连击，希望好心人能讲讲。\n  └ 嘎啦嘎啦果 (0赞): 抄的这位韩国玩家\n  └ 嘎啦嘎啦果 (0赞): 我的配置，莫丝也可以埋骨地，但是鬼抽的话会非常难受，莫丝队是不太好做状态的，一不注意就打死了。另外我也试了其他几个13回合无灵芝通关的队伍，都没这个好用。\n我没买特大月卡，没有时序逆行，打起来真的巨难受，重开还得看动画，不过我就是不买[呲牙]",
+      "url": "https://www.bilibili.com/video/BV1dBRwBiETs",
+      "author": "嘎啦嘎啦果",
+      "engagement": 14,
+      "media_url": "https://i2.hdslb.com/bfs/archive/ddc35c347d2adbbe4c2642e263d3e821582ca926.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 11,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T21:33:29+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】欢乐固伤流莫丝逃课星辰篇主线H5-11",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116512765511637",
+      "author": "嘎啦嘎啦果",
+      "engagement": 11,
+      "media_url": "//i2.hdslb.com/bfs/archive/ddc35c347d2adbbe4c2642e263d3e821582ca926.jpg",
+      "content_type": "video"
     }
   ]
 }
