@@ -4080,6 +4080,13 @@
       "title": "全世界最特别的你",
       "time": "2026-05-03T16:05:00+00:00",
       "downloaded_at": "2026-05-03T16:40:16.706196+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/b41c4a38146d3c147e6140d083b77ab53c7bc73a.jpg": {
+      "filename": "bilibili_f84c4ba2aa874d5e.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】祖传防反诺蒂拉融灾禁区5-5",
+      "time": "2026-05-03T17:29:11+00:00",
+      "downloaded_at": "2026-05-03T17:42:50.721747+00:00"
     }
   },
   "failed": {
@@ -5712,6 +5719,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-03T16:40:17.179673+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/b41c4a38146d3c147e6140d083b77ab53c7bc73a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T17:42:49.256328+00:00"
     }
   },
   "archived": []

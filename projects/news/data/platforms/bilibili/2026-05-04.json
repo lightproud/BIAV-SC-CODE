@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-03T16:40:17.245228+00:00",
+  "archived_at": "2026-05-03T17:42:50.790903+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "source": "bilibili",
@@ -19,6 +19,36 @@
         "play": 243,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T17:29:11+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】祖传防反诺蒂拉融灾禁区5-5",
+      "summary": "伤痛和伏与夜色可以吃到奇点信标，高防深化精通自带两个反击乘区的诺蒂拉作为驾驶员，会和奇趣蛋擦出怎样的火花……",
+      "url": "http://www.bilibili.com/video/av116511809215194",
+      "author": "朝星-",
+      "engagement": 17,
+      "media_url": "//i2.hdslb.com/bfs/archive/b41c4a38146d3c147e6140d083b77ab53c7bc73a.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T17:29:11+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】祖传防反诺蒂拉融灾禁区5-5",
+      "summary": "伤痛和伏与夜色可以吃到奇点信标，高防深化精通自带两个反击乘区的诺蒂拉作为驾驶员，会和奇趣蛋擦出怎样的火花……",
+      "url": "https://www.bilibili.com/video/BV1bvRABtEp8",
+      "author": "朝星-",
+      "engagement": 15,
+      "media_url": "https://i2.hdslb.com/bfs/archive/b41c4a38146d3c147e6140d083b77ab53c7bc73a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 15,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     }
