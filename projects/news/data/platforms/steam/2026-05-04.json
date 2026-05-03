@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-03T18:46:42.336529+00:00",
+  "archived_at": "2026-05-03T19:48:53.047406+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -123,6 +123,21 @@
       "review": "우와 시간가는줄도 모르고 피폐한 게임에 빨려들어갔다. 진짜 카제나는 갖다 버려도 될 정도네 강추함.",
       "timestamp_created": 1777823595,
       "playtime_forever": 467
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-03T19:10:47+00:00",
+      "lang": "romanian",
+      "title": "[正面] Fortzaaaaaaa",
+      "summary": "Fortzaaaaaaa",
+      "url": "https://steamcommunity.com/profiles/76561198231388856/recommended/3052450",
+      "author": "76561198231388856",
+      "engagement": 0,
+      "language": "romanian",
+      "voted_up": true,
+      "review": "Fortzaaaaaaa",
+      "timestamp_created": 1777835447,
+      "playtime_forever": 376
     }
   ]
 }
