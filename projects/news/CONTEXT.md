@@ -73,8 +73,7 @@
 - `projects/news/scripts/taptap_collector.py` — TapTap Playwright 采集器（`global_collectors.py` 的依赖）
 - `projects/news/scripts/collect_global.py` — 全球采集桥接脚本，合并 aggregator 输出
 - `projects/news/scripts/backfill_platforms.py` — 多平台历史回溯采集
-- `projects/news/scripts/generate_daily.py` — 日报生成（写入 `data/archive/daily-reports/` 和 `output/daily-latest.md`）
-- `projects/news/scripts/split_output.py` / `archive_platforms.py` / `download_media.py` — 后处理管线
+- `projects/news/scripts/split_output.py` / `archive_platforms.py` / `download_media.py` — 后处理管线（split 拆分到 *-latest.json，archive 按日归档到 data/platforms/）
 - `requirements.txt` — Python 依赖
 - `.env.example` — 环境变量配置模板
 

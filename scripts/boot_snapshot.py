@@ -78,35 +78,16 @@ def get_latest_dream() -> str:
 
 
 def get_daily_report_summary() -> str:
-    """Get a condensed version of the latest daily report."""
-    content = read_file("projects/news/output/daily-latest.md")
-    if not content:
-        return "No daily report available."
-
-    lines = content.split("\n")
-    summary_lines = []
-
-    for line in lines:
-        # Keep title, summary table, and top 3 trending items
-        if line.startswith("# "):
-            summary_lines.append(line)
-        elif line.startswith("> 采集时间"):
-            summary_lines.append(line)
-        elif "| 平台" in line or "|---" in line:
-            summary_lines.append(line)
-        elif line.startswith("| ") and ("Bilibili" in line or "Discord" in line or "Steam" in line):
-            summary_lines.append(line)
-        elif line.startswith("1. [") and len(summary_lines) < 20:
-            summary_lines.append(line)
-
-    return "\n".join(summary_lines[:20]) if summary_lines else content[:500]
+    """Daily-report pipeline removed 2026-05-03. No-op stub kept so legacy
+    callers continue to work; long-window community analysis should now use
+    data/platforms/{source}/{date}.json archive layer directly."""
+    return ""
 
 
 def get_workflow_health() -> str:
     """Summarize workflow health based on recent outputs."""
     checks = {
         "news aggregator": (ROOT / "projects/news/output/news.json").exists(),
-        "daily report": (ROOT / "projects/news/output/daily-latest.md").exists(),
         "discord archive": (ROOT / "projects/news/data/discord/state.json").exists(),
         "dream journals": any((ROOT / "memory/dreams").glob("2*.json")) if (ROOT / "memory/dreams").exists() else False,
         "wiki data": (ROOT / "projects/wiki/data/db/characters.json").exists(),
@@ -209,7 +190,7 @@ def generate_snapshot() -> str:
 - 战略评估 → `memory/strategic-assessment.md`
 - 游戏世界观 → `memory/morimens-context.md`
 - 角色数据库 → `projects/wiki/data/db/characters.json` ⚠（Phase 2 W1 自举完成 24/72）
-- 最新日报 → `projects/news/output/daily-latest.md`
+- 最新社区数据 → `projects/news/output/all-latest.json`（输出层选样）+ `projects/news/data/platforms/`（archive 全量）
 - 全平台数据 → `projects/news/output/all-latest.json`
 - 设计决策 → `assets/data/design-decisions.json`
 - 制作人采访 → `assets/data/interview-2026-04.json`

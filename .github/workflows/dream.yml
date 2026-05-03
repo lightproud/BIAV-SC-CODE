@@ -81,12 +81,6 @@ jobs:
             fi
           done
 
-          TODAY=$(date -u +%Y-%m-%d)
-          YESTERDAY=$(date -u -d "yesterday" +%Y-%m-%d 2>/dev/null || date -u -v-1d +%Y-%m-%d 2>/dev/null)
-          if [ ! -f "projects/news/output/daily-report-${TODAY}.md" ] && [ ! -f "projects/news/output/daily-report-${YESTERDAY}.md" ]; then
-            ISSUES="${ISSUES}- No daily report for $TODAY or $YESTERDAY\n"
-          fi
-
           if [ -n "$ISSUES" ]; then
             echo "issues<<EOF" >> "$GITHUB_OUTPUT"
             echo -e "$ISSUES" >> "$GITHUB_OUTPUT"
@@ -285,12 +279,14 @@ jobs:
 
             ## 你要做的事
 
-            ### 1. 日报趋势分析
-            读取 projects/news/output/ 下最近 7 天的 daily-report-*.md（如果不足 7 天就用全部）。
+            ### 1. 平台趋势分析
+            读取 projects/news/data/platforms/{source}/ 下近 7 天的 {date}.json（每个 source
+            一日一文件，含全量条目；最深历史在 weixin/steam_review/appstore，几年到 6 年）和
+            projects/news/data/discord/activity_daily/ 下近 7 天的 {date}.json（Discord 每日统计）。
             分析：
             - 各平台数据量趋势（上升/平稳/下降）
-            - Steam 好评率变化
-            - Discord 活跃度变化
+            - Steam 好评率变化（platforms/steam_review/{date}.json）
+            - Discord 活跃度变化（discord/activity_daily/{date}.json 的 messages / unique_authors）
             - 是否出现新的高频关键词
             - 联动关键词命中情况
 

@@ -451,23 +451,6 @@ def cleanup_empty_placeholders():
     return removed
 
 
-def regenerate_gap_reports():
-    """Regenerate daily reports for gap dates using updated archive data."""
-    import backfill_daily_reports as bdr
-    from datetime import date
-    logger.info('Regenerating gap period daily reports...')
-    count = 0
-    for day in range(13, 26):
-        d = date(2026, 4, day)
-        report, item_count = bdr.generate_report_for_date(d)
-        if item_count > 0:
-            out_path = bdr.ARCHIVE_DIR / f'daily-report-{d.isoformat()}.md'
-            out_path.write_text(report, encoding='utf-8')
-            count += 1
-            logger.info(f'  {d}: {item_count} items')
-    logger.info(f'Regenerated {count} daily reports')
-
-
 def main():
     logger.info('=== Gap Backfill: 2026-04-13 ~ 2026-04-25 ===')
 
@@ -481,8 +464,6 @@ def main():
     total += backfill_steam_reviews()
 
     logger.info(f'=== Gap backfill complete: {total} new items ===')
-
-    regenerate_gap_reports()
 
 
 if __name__ == '__main__':

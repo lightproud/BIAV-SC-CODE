@@ -101,7 +101,7 @@ Latest dream: 2026-W15-weekly
 - 战略评估 → `memory/strategic-assessment.md`
 - 游戏世界观 → `memory/morimens-context.md`
 - 角色数据库 → `projects/wiki/data/db/characters.json` ⚠（Phase 2 W1 自举完成 24/72）
-- 最新日报 → `projects/news/output/daily-latest.md`
+- 最新社区数据 → `projects/news/output/all-latest.json`（输出层选样）+ `projects/news/data/platforms/`（archive 全量）
 - 全平台数据 → `projects/news/output/all-latest.json`
 - 设计决策 → `assets/data/design-decisions.json`
 - 制作人采访 → `assets/data/interview-2026-04.json`

@@ -23,7 +23,7 @@
 |------|------|---------|---------|
 | **72 角色事实库**（建设中） | `projects/wiki/data/db/characters.json` + `projects/wiki/docs/{zh,en,ja}/awakeners/*.md` | 24/72 已 stub，schema v1.0.1 锁定 | 角色查询、技能解析、关系图谱、三语翻译 |
 | **多平台社区情报 全量层** | `projects/news/data/discord/channels/` + `projects/news/data/platforms/{10+ 平台}/` | 已回溯至 2026-02 | 长窗口社区分析、情绪温度、舆情监测 |
-| **多平台社区情报 输出层** | `projects/news/output/*-latest.json` + `daily-latest.md` | 每日 2 次更新 | 日报展示、热度榜、快查 |
+| **多平台社区情报 输出层** | `projects/news/output/*-latest.json` | 每小时更新 | 热度榜、快查、对外 site 渲染 |
 | **53 问制作人深度采访** | `assets/data/interview-2026-04.json` | 守密人 + 主文案霁月一手陈述 | 设计哲学、被砍机制、叙事结构溯源 |
 | **三部叙事结构** | `assets/data/narrative-structure.json` | 各章压缩细节 + 角色线 | 世界观研究、剧情分析 |
 | **设计决策档** | `assets/data/design-decisions.json` | 设计哲学、被砍机制、平衡理念 | 游戏设计研究 |
@@ -222,7 +222,6 @@
 
 | 路径 | 内容 |
 |------|------|
-| `projects/news/data/archive/daily-reports/` | 498+ 篇日报 markdown，**2020-03-21 → 当日**（6+ 年覆盖，前期占位）|
 | `projects/news/data/media/manifest.json` | 媒体下载清单（downloaded/failed/archived） |
 | `projects/news/data/backfill/state.json` | 回溯进度（按 platform 分键） |
 | `projects/news/data/{collection_state,fetch_state,state,gap_report}.json` | 4 个状态文件（运行游标 / bilibili 增量 / taptap 增量 / 缺口诊断） |
@@ -241,7 +240,6 @@
 | `projects/news/output/steam-latest.json` | Steam 评论选样 |
 | `projects/news/output/bilibili-latest.json` | B 站视频/动态选样 |
 | `projects/news/output/discord-latest.json` | Discord 社区选样（**非**全量，全量在 `data/discord/`） |
-| `projects/news/output/daily-latest.md` | 最新一期日报（已加工的人类可读形态） |
 
 ### 项目管理（协调工作时查这里）
 
@@ -350,7 +348,7 @@
 如果你是黑池团队成员的 AI 会话，你正在读取银芯获取外部公开信息。你的任务不是参与银芯开发，而是：
 
 1. **采集最新公开数据**带回黑池：
-   - 社区日报：`projects/news/output/daily-latest.md`
+   - 社区情报输出层：`projects/news/output/*-latest.json`（13 个分源文件）
    - Steam 评论：`projects/news/output/steam-latest.json`
    - B站动态：`projects/news/output/bilibili-latest.json`
    - Discord 摘要：`projects/news/output/discord-latest.json`

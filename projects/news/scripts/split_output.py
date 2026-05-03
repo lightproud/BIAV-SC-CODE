@@ -162,7 +162,7 @@ def extract_item(raw: dict) -> dict:
 def extract_steam_item(raw: dict) -> dict:
     """从 steam_review 原始 item 提取字段。
 
-    保留标准字段（time, title, source, engagement 等）供 generate_daily.py 使用，
+    保留标准字段（time, title, source, engagement 等）供下游消费者使用，
     同时附带 Steam 特有字段（language, voted_up, playtime_forever）。
 
     好评差评均保留全文，不截断。

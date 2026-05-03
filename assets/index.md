@@ -22,7 +22,7 @@
 |------|------|----------|------|
 | `projects/news/output/news.json` | 社区热点聚合数据 | 每小时（Actions） | Code-news |
 | `projects/news/output/all-latest.json` | 全平台最新社区数据（合并） | 每小时 | Code-news |
-| `projects/news/output/daily-latest.md` | 最新一期日报 | 每日 | Code-news |
+| `projects/news/output/{source}-latest.json` | 各源选样（13 个 source 文件，热度阈值 + 时窗过滤） | 每小时 | Code-news |
 
 ## Wiki 数据（projects/wiki/data/）
 

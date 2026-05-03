@@ -66,7 +66,6 @@ KNOWLEDGE_GLOBS = [
     "projects/news/output/*.md",
     "projects/news/output/*.jsonl",
     "projects/news/data/platforms/*/*.json",
-    "projects/news/data/archive/daily-reports/*.md",
 
     # === Tier 2: Discord (summaries, not per-message) ===
     "projects/news/data/discord/channel_index.json",
