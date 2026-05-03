@@ -187,20 +187,53 @@
 
 #### 全量档案层（真实数据，按频道/平台/日期组织）
 
-| 路径 | 内容 | 备注 |
-|------|------|------|
-| `projects/news/data/discord/channels/{channel_id}/{date}.jsonl` | Discord 全量历史归档（已回溯至 2026-02） | 按频道哈希桶组织 |
-| `projects/news/data/discord/channel_index.json` | 频道索引 | 由 archiver 维护 |
-| `projects/news/data/discord/guild_meta.json` | 频道元数据（ID / 名称 / 类型 / parent / 主题） | 由 archiver 维护 |
-| `projects/news/data/discord/state.json` | 各频道 `last_message_id` 增量游标 + `last_historical_message_id` 回溯指针 | 由 archiver 维护 |
-| `projects/news/data/platforms/{source}/{date}.json` | 各平台全量归档（bilibili / reddit / steam / pixiv / dcinside / miraheze_wiki / appstore / google_play / gamerch / official 等 10+ 平台） | 由 aggregator + collect_global 写入 |
-| `projects/news/COLLECTION_ARCHITECTURE.md` | 采集系统架构权威文档 | 必读如要做长窗口分析 |
+##### Discord 全量
 
-> 完整数据层映射待 Code-news 审计（W1）后补全本表。Code-news 审计前，遇到本表未覆盖的源 = 翻 `projects/news/COLLECTION_ARCHITECTURE.md`。
+| 路径 | 内容 | 规模 / 跨度 |
+|------|------|------|
+| `projects/news/data/discord/channels/{id_suffix}/{date}.jsonl` | 全量消息归档（按频道哈希桶组织） | 264 MB / 1946 jsonl / 468 频道目录，已回溯至 2026-02 |
+| `projects/news/data/discord/activity_daily/{date}.json` | 每日纯统计摘要（永久保留） | 913 文件，**2023-07-21 → 当日** |
+| `projects/news/data/discord/channel_index.json` | 频道索引（146 个活跃频道）| 由 `discord_archiver.py` 维护 |
+| `projects/news/data/discord/guild_meta.json` | guild + 163 频道元数据 | 由 `discord_archiver.py` 维护 |
+| `projects/news/data/discord/state.json` | 增量游标 + 历史回溯指针 + last_run | 由 `discord_archiver.py` 维护 |
+
+##### 平台全量（16 目录，由 `archive_platforms.py` 写入除非另注）
+
+| 平台 | 跨度 | 规模 | 上游 archiver |
+|------|------|------|---------------|
+| `data/platforms/steam_review/` | 2024-08-02 → 当日 | **619 文件 / 3.2 MB** | `aggregator.fetch_steam_reviews` + `backfill_steam_reviews`（绕过 archive_platforms） |
+| `data/platforms/appstore/` | 2023-11-30 → 当日 | 166 文件 / 154 KB | `collect_global.fetch_appstore_reviews` |
+| `data/platforms/pixiv/` | 2023-12-07 → 当日 | 129 文件 / 79 KB | `collect_global.fetch_pixiv` |
+| `data/platforms/weixin/` | 2016-02-03 → 当日 | 93 文件 / 882 KB | `collect_global.fetch_weixin` |
+| `data/platforms/bilibili/` | 2026-03-16 → 当日 | 43 文件 / 430 KB | `aggregator.fetch_bilibili` |
+| `data/platforms/steam/` | 2026-04-03 → 当日 | 25 文件 / 202 KB | `aggregator.fetch_steam_news` |
+| `data/platforms/stopgame/` | 2026-04-05 → 当日 | 10 文件 / 6 KB | `collect_global.fetch_stopgame` |
+| `data/platforms/google_play/` | 2026-04-05 → 当日 | 8 文件 / 5 KB | `collect_global.fetch_google_play` |
+| `data/platforms/reddit/` | 2026-04-07 → 当日 | 8 文件 / 160 KB | `aggregator.fetch_reddit` |
+| `data/platforms/youtube/` | 2026-04-07 → 当日 | 8 文件 / 258 KB | `aggregator.fetch_youtube` |
+| `data/platforms/telegram/` | 2026-04-07 → 04-09 | 3 文件 / 2.5 KB | `collect_global.fetch_telegram`（缺 secret 后停） |
+| `data/platforms/weibo/` | 2026-04-12 → 当日 | 3 文件 / 155 KB | `aggregator/collect_global.fetch_weibo` |
+| `data/platforms/official/` | 2026-04-03 → 04-04 | 2 文件 / 3.7 KB | `aggregator.fetch_steam_news` |
+| `data/platforms/dcinside/` | 2026-04-12 → 04-27 | 3 文件 / 106 KB（已下架，历史保留） | — |
+| `data/platforms/gamerch/` | 2026-04-05 → 04-12 | 8 文件 / 83 KB（wiki 已废弃，遗留） | — |
+| `data/platforms/miraheze_wiki/` | 2026-04-05 单点 | 1 文件 / 2 KB（wiki 已废弃，遗留） | — |
+
+##### 衍生档案
+
+| 路径 | 内容 |
+|------|------|
+| `projects/news/data/archive/daily-reports/` | 498+ 篇日报 markdown，**2020-03-21 → 当日**（6+ 年覆盖，前期占位）|
+| `projects/news/data/media/manifest.json` | 媒体下载清单（downloaded/failed/archived） |
+| `projects/news/data/backfill/state.json` | 回溯进度（按 platform 分键） |
+| `projects/news/data/{collection_state,fetch_state,state,gap_report}.json` | 4 个状态文件（运行游标 / bilibili 增量 / taptap 增量 / 缺口诊断） |
+
+> 完整 archiver 映射 + 已知缺陷见 `memory/data-layer-audit.md`（2026-04-26 by Code-news）。`projects/news/COLLECTION_ARCHITECTURE.md` 已严重滞后，待主控台启动重写——日常查询以本表 + audit 报告为权威。
 
 #### 输出展示层（过滤选样，仅用于快查/日报）
 
 > ⚠️ 时效规则：这些文件包含历史数据和近期数据的混合。分析时**必须**检查每条数据的 `time` 字段（ISO 8601 发布时间），根据分析需求自行判断时效窗口。例如"今日热点"只应包含 24h 内的数据，"本周趋势"取 7 天内。**绝不能**将旧数据当作新事件报告。
+
+> ⚠️ **抽样率提醒**：每个 `*-latest.json` 是过滤选样（高频源 24h 窗口 + 稀疏源 30 天窗口 + 热度阈值），数量级远小于 archive 全量。例：weixin 当前 output ~2 条 / cron vs archive 882 KB / 93 文件历史。做长窗口分析或抽样率计算 → **必须用全量档案层**，不要用 output。
 
 | 文件 | 内容 |
 |------|------|
