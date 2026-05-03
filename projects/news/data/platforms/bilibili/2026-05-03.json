@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-02T23:37:21.886577+00:00",
+  "archived_at": "2026-05-03T01:51:46.550070+00:00",
   "source": "bilibili",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "bilibili",
@@ -147,6 +147,24 @@
       "engagement": 3,
       "media_url": "//i0.hdslb.com/bfs/archive/c87791c6554bd79630cb68d5c29e3ba5a0c2d46c.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T00:47:34+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌",
+      "summary": "破100赞出沙耶之歌手机端安装包",
+      "url": "https://www.bilibili.com/video/BV1zf9dBZEAS",
+      "author": "东京街头的尸体nulla",
+      "engagement": 0,
+      "media_url": "https://i1.hdslb.com/bfs/archive/e0c8e2ff8964865299840430b2638f2be8ef8ff8.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 0,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     }
   ]
 }

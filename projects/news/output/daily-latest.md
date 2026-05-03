@@ -1,11 +1,13 @@
 # 忘却前夜 社区日报 2026-05-03
 
-> 采集时间：2026-05-03 07:37 UTC+8
+> 采集时间：2026-05-03 09:51 UTC+8
 
 ## 🔥 联动动态
 
-1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 245
-2. [微博] 忘却前夜×沙耶之歌 联动预告
+1. [Bilibili] 【猎奇gal解析】和非人生物的恋爱 — engagement: 250
+2. [Bilibili] 沙耶究竟是怎样的一部视觉小说 — engagement: 107
+3. [Bilibili] 沙耶之歌 — engagement: 0
+4. [微博] 忘却前夜×沙耶之歌 联动预告
 
 梦的碎片 随风而至
 
@@ -19,8 +21,8 @@
 | App Store | 0（24h内无新内容）|
 | Arca.live | 0（沉默）|
 | 巴哈姆特 | 0（沉默）|
-| Bilibili | 26 |
-| Discord | 16 |
+| Bilibili | 24 |
+| Discord | 15 |
 | 5ch | 0（沉默）|
 | Google Play | 0（24h内无新内容）|
 | Naver Cafe | 0（沉默）|
@@ -28,49 +30,51 @@
 | Note.com | 0（沉默）|
 | Official | 9 |
 | Pixiv | 0（24h内无新内容）|
-| Reddit | 20 |
+| Reddit | 36 |
 | Ruliweb | 0（24h内无新内容）|
-| Steam | 3 |
+| Steam | 4 |
 | Steam 论坛 | 0（沉默）|
 | StopGame.ru | 1 |
 | TapTap | 0（沉默）|
 | taptap_post | 0（24h内无新内容）|
 | Telegram | 0（沉默）|
-| 微博 | 15 |
+| 微博 | 19 |
 | 微信公众号 | 0（24h内无新内容）|
 | YouTube | 0（沉默）|
 | 知乎 | 0（沉默）|
 
 ## Discord
 
-今日 11,968 条消息，304 位活跃用户，845 次反应。热门频道：🔸general-chat(3909)、🔸綜合討論(3472)、🔸phòng-chat-tiếng-việt(1285)、🔸canal-português(571)、🔸русский-канал(543)
+阿？
+[附件: Screenshot_20260502_135142.jpg]
 
 ### 热门话题
 
-1. [DC] .chacha1211@🔸晒卡分享: 阿？ — engagement: 31
-2. [DC] sweet_25367@🔸綜合討論: 你们超维好吓人 — engagement: 30
-3. [DC] salami_87@🔸canal-español: (附件/嵌入) — engagement: 30
-4. [DC] jjlin0103@🔸綜合討論: (附件/嵌入) — engagement: 29
-5. [DC] ena04564@🔸剧情交流: 官方：其實我沒想這麼多 — engagement: 27
+1. [DC] sweet_25367@🔸綜合討論: 你们超维好吓人 — engagement: 30
+2. [DC] salami_87@🔸canal-español: (附件/嵌入) — engagement: 30
+3. [DC] jjlin0103@🔸綜合討論: (附件/嵌入) — engagement: 29
+4. [DC] ena04564@🔸剧情交流: 官方：其實我沒想這麼多 — engagement: 27
+5. [DC] davebb3369@🔸晒卡分享: (附件/嵌入) — engagement: 25
 
 ## Steam 评论
 
-- 好评 3 / 差评 0 / 好评率 100%
-- 语言分布：english 1, schinese 1, russian 1
+- 好评 4 / 差评 0 / 好评率 100%
+- 语言分布：schinese 2, english 1, russian 1
 
 ### 热门好评
 
-1. [正面] Took me by surprise. Didn't expect to enjoy this g... — engagement: 0
-2. [正面] 可以 — engagement: 0
-3. [正面] Игруха заебись — engagement: 0
+1. [正面] 除了一些符合克苏鲁系列对应世界观，但相对冷门或者不那么符合大众价值观的内容以外。整体还是不错的。... — engagement: 0
+2. [正面] Took me by surprise. Didn't expect to enjoy this g... — engagement: 0
+3. [正面] 可以 — engagement: 0
+4. [正面] Игруха заебись — engagement: 0
 
 ## Bilibili
 
-1. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1920
-2. 【忘却前夜】【超维】角色加强+最终法则杂谈 — engagement: 1908
-3. #忘却前夜 — engagement: 274
-4. #忘却前夜 — engagement: 271
-5. [忘却前夜]旺蛛超维反击H5-11三星无灵芝 — engagement: 259
+1. #忘却前夜 — engagement: 285
+2. #忘却前夜 — engagement: 282
+3. [忘却前夜]旺蛛超维反击H5-11三星无灵芝 — engagement: 263
+4. [忘却前夜]旺蛛超维反击H5-11三星无灵芝 — engagement: 258
+5. 【猎奇gal解析】和非人生物的恋爱 — engagement: 250
 
 ## Official
 
@@ -85,8 +89,8 @@
 1. 7 months of solo work. I'm free — engagement: 0
 2. Mythag's biggest goliath fan finally gets to use him in endg — engagement: 0
 3. Finally completed arc 1!! — engagement: 0
-4. D-Tide Alert 1 guide - Week of 4/27/26. — engagement: 0
-5. Need help looking for the writer — engagement: 0
+4. Need help looking for the writer — engagement: 0
+5. D-Tide Alert 1 guide - Week of 4/27/26. — engagement: 0
 
 ## StopGame.ru
 
@@ -98,13 +102,15 @@
 2. 忘却前夜#忘却前夜#
 【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】
 「嘴巴...这个？弥 — engagement: 0
-3. 忘却前夜 之前给忘却前夜周年庆画的图解禁啦！ — engagement: 0
-4. 忘却前夜×沙耶之歌 联动预告
+3. 忘却前夜丨弥萨格调查局CP32行动指南
 
-梦的碎片 随风而至
+致全体即将前往新前线的守密人：
 
-#忘却前夜# #沙耶之歌#
-忘却前夜 #Morimens# 忘却前 — engagement: 0
+新的异常波动已被精确锁定。
+
+观测信号不再模 — engagement: 0
+4. 忘却前夜
+问一下大家该怎么配对呀一直在乱玩 — engagement: 0
 5. 12758【投稿】忘却前夜。我主任 — engagement: 0
 
 ## 沉默平台
