@@ -3996,6 +3996,20 @@
       "title": "Gal资源分享：沙耶之歌！资源分享！安卓直装+电脑版！附带解压教程！自带补丁！",
       "time": "2026-05-03T07:03:44+00:00",
       "downloaded_at": "2026-05-03T07:49:51.192940+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/28a8a84cc9824921aea61ca0811cd2a011784654.jpg": {
+      "filename": "bilibili_f56da91e98e08b77.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】输常驻？最终法则时代血希可能不如……",
+      "time": "2026-05-03T08:48:13+00:00",
+      "downloaded_at": "2026-05-03T09:16:21.906667+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/06de0ab82ab0c14fb4fcf3a430edcf97e77d418c.jpg": {
+      "filename": "bilibili_83a55c2fd52ffe8c.jpg",
+      "source": "bilibili",
+      "title": "我今天去漫展，这是库存",
+      "time": "2026-05-02T23:13:39+00:00",
+      "downloaded_at": "2026-05-03T09:16:22.868323+00:00"
     }
   },
   "failed": {
@@ -5598,6 +5612,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-03T07:49:52.119243+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/28a8a84cc9824921aea61ca0811cd2a011784654.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T09:16:20.954044+00:00"
+    },
+    "https://preview.redd.it/9ppa4akf2wyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=45ffe4a408e4c88132c679c0ee78c69468566ad2": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T09:16:23.254121+00:00"
+    },
+    "https://preview.redd.it/5tppn9ik2wyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=ac99ab4dcdc723607990f3fb6f2f42e99cd4f3a3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T09:16:23.584758+00:00"
     }
   },
   "archived": []

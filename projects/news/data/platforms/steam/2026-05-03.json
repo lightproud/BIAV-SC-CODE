@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-03T07:49:52.183860+00:00",
+  "archived_at": "2026-05-03T09:16:23.645230+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -108,6 +108,36 @@
       "review": "除了一些符合克苏鲁系列对应世界观，但相对冷门或者不那么符合大众价值观的内容以外。整体还是不错的。\r\n至于立绘与故事……在这种世界观下追求正经二次元角色的玩家才不太正常吧？",
       "timestamp_created": 1777766431,
       "playtime_forever": 46838
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-03T08:09:06+00:00",
+      "lang": "english",
+      "title": "[正面] Im not usually into these types of games, but I re...",
+      "summary": "Im not usually into these types of games, but I really enjoy this one. Great imagery, good gameplay, and great character designs. Every time I play, I get more and more into it.",
+      "url": "https://steamcommunity.com/profiles/76561199433561822/recommended/3052450",
+      "author": "76561199433561822",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Im not usually into these types of games, but I really enjoy this one. Great imagery, good gameplay, and great character designs. Every time I play, I get more and more into it.",
+      "timestamp_created": 1777795746,
+      "playtime_forever": 249
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-03T07:54:07+00:00",
+      "lang": "indonesian",
+      "title": "[正面] Gacha + Card game = Banger",
+      "summary": "Gacha + Card game = Banger",
+      "url": "https://steamcommunity.com/profiles/76561199789122643/recommended/3052450",
+      "author": "76561199789122643",
+      "engagement": 0,
+      "language": "indonesian",
+      "voted_up": true,
+      "review": "Gacha + Card game = Banger",
+      "timestamp_created": 1777794847,
+      "playtime_forever": 320
     }
   ]
 }
