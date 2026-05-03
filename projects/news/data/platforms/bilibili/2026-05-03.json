@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-03T07:49:52.184919+00:00",
+  "archived_at": "2026-05-03T09:16:23.646168+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 21,
   "items": [
     {
       "source": "bilibili",
@@ -49,6 +49,36 @@
         "play": 383,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T08:48:13+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】输常驻？最终法则时代血希可能不如……",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116509762393951",
+      "author": "魔龙_D",
+      "engagement": 309,
+      "media_url": "//i1.hdslb.com/bfs/archive/28a8a84cc9824921aea61ca0811cd2a011784654.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T08:48:13+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】输常驻？最终法则时代血希可能不如……",
+      "summary": "└ 满纸墨白 (2赞): 怀念最好的四个主c:血希（已下放）塔薇（已副c）神父（已转盾）24（已转辅）\n  └ 流星雨りゅうせいう (1赞): 我了，上午刚在群里爆完\n  └ 梦依流苏 (0赞): [香奈美·追寻那道光 应援装扮_mvp][香奈美·追寻那道光 应援装扮_mvp][香奈美·追寻那道光 应援装扮_mvp]前来支持",
+      "url": "https://www.bilibili.com/video/BV196RFB4E6h",
+      "author": "魔龙_D",
+      "engagement": 300,
+      "media_url": "https://i1.hdslb.com/bfs/archive/28a8a84cc9824921aea61ca0811cd2a011784654.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 296,
+        "comment_count": 4,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -115,6 +145,24 @@
         "play": 117,
         "comment_count": 5,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T23:13:39+00:00",
+      "lang": "zh",
+      "title": "我今天去漫展，这是库存",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1Bw9oBdEfZ",
+      "author": "用户0-457",
+      "engagement": 110,
+      "media_url": "https://i1.hdslb.com/bfs/archive/06de0ab82ab0c14fb4fcf3a430edcf97e77d418c.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 110,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
