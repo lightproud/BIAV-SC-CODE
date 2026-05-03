@@ -3975,6 +3975,27 @@
       "title": "【忘却前夜/图鲁cos】把心献给吾主",
       "time": "2026-05-02T13:43:35+00:00",
       "downloaded_at": "2026-05-03T05:25:09.445796+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/e1fe2c9c522172701138fd630886a2659fad6633.png": {
+      "filename": "bilibili_229a07cf60deb57a.png",
+      "source": "bilibili",
+      "title": "哈基兔与肉块跳舞",
+      "time": "2026-05-03T05:25:54+00:00",
+      "downloaded_at": "2026-05-03T07:49:45.317876+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/c4ce99f885125afb00f98d382773e4e603c7b34c.jpg": {
+      "filename": "bilibili_c56d7e06fdb26bbb.jpg",
+      "source": "bilibili",
+      "title": "真的没人愿意看看六年级小学生画的画吗？🥴",
+      "time": "2026-05-02T09:09:30+00:00",
+      "downloaded_at": "2026-05-03T07:49:47.714654+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/f1dd3fcb4c4c88d3ada7d22d0855d918d6571644.jpg": {
+      "filename": "bilibili_f9d0d25fed08c3da.jpg",
+      "source": "bilibili",
+      "title": "Gal资源分享：沙耶之歌！资源分享！安卓直装+电脑版！附带解压教程！自带补丁！",
+      "time": "2026-05-03T07:03:44+00:00",
+      "downloaded_at": "2026-05-03T07:49:51.192940+00:00"
     }
   },
   "failed": {
@@ -5567,6 +5588,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-03T05:25:10.462724+00:00"
+    },
+    "https://preview.redd.it/5lrqex93hvyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=aaa2db13a6731460d19af6f18edd950838ce62ff": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T07:49:51.743718+00:00"
+    },
+    "https://preview.redd.it/0bdpyabsxuyg1.png?width=140&amp;height=78&amp;auto=webp&amp;s=354789698be800a8f27b2b3a869bcb8f4f696982": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T07:49:52.119243+00:00"
     }
   },
   "archived": []
