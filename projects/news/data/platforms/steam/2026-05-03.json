@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-03T10:47:38.528125+00:00",
+  "archived_at": "2026-05-03T11:38:40.862297+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -138,6 +138,21 @@
       "review": "Gacha + Card game = Banger",
       "timestamp_created": 1777794847,
       "playtime_forever": 320
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-03T10:16:24+00:00",
+      "lang": "schinese",
+      "title": "[正面] 二次元杀戮尖塔是对的",
+      "summary": "二次元杀戮尖塔是对的",
+      "url": "https://steamcommunity.com/profiles/76561198264319896/recommended/3052450",
+      "author": "76561198264319896",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "二次元杀戮尖塔是对的",
+      "timestamp_created": 1777803384,
+      "playtime_forever": 297
     }
   ]
 }
