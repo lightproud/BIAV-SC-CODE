@@ -4059,6 +4059,20 @@
       "title": "哪有肉块，只有你的沙耶",
       "time": "2026-05-03T13:59:04+00:00",
       "downloaded_at": "2026-05-03T14:09:34.716375+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/346ba74bdb420ddf3b8769b72957b8c3b15887a5.jpg": {
+      "filename": "bilibili_930eaacef5a810e5.jpg",
+      "source": "bilibili",
+      "title": "《柠檬树》原来星期天容易思念｜《沙耶之歌の小曲》",
+      "time": "2026-05-03T04:10:32+00:00",
+      "downloaded_at": "2026-05-03T15:41:17.419166+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/03/23/34/41/144323523_p0_square1200.jpg": {
+      "filename": "pixiv_8a34e2f55a976972.jpg",
+      "source": "pixiv",
+      "title": "スケスケゴールデン大学",
+      "time": "2026-05-03T23:34:41+09:00",
+      "downloaded_at": "2026-05-03T15:41:18.842070+00:00"
     }
   },
   "failed": {
@@ -5681,6 +5695,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-03T10:47:36.495896+00:00"
+    },
+    "https://preview.redd.it/i338e16buxyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=ebcf6bca5a06d3f1af8e5a5159b4565222916f64": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T15:41:17.811574+00:00"
     }
   },
   "archived": []

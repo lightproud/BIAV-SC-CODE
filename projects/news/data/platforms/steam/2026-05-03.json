@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-03T14:09:34.781099+00:00",
+  "archived_at": "2026-05-03T15:41:18.912711+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -153,6 +153,21 @@
       "review": "二次元杀戮尖塔是对的",
       "timestamp_created": 1777803384,
       "playtime_forever": 297
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-03T12:30:23+00:00",
+      "lang": "schinese",
+      "title": "[正面] 很不错的游戏",
+      "summary": "很不错的游戏",
+      "url": "https://steamcommunity.com/profiles/76561199011323070/recommended/3052450",
+      "author": "76561199011323070",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "很不错的游戏",
+      "timestamp_created": 1777811423,
+      "playtime_forever": 5501
     }
   ]
 }
