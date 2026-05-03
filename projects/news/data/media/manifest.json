@@ -4010,6 +4010,20 @@
       "title": "我今天去漫展，这是库存",
       "time": "2026-05-02T23:13:39+00:00",
       "downloaded_at": "2026-05-03T09:16:22.868323+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/98ea668521849a523593523e444910a9e075e26b.jpg": {
+      "filename": "bilibili_874fd633ec90a3b6.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]我们都没错只是两个太年轻的肩膀撑不起永远的重量",
+      "time": "2026-05-03T09:59:25+00:00",
+      "downloaded_at": "2026-05-03T10:47:36.195077+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/a6e358523e87437aff211116dc9d31a50b808240.png": {
+      "filename": "bilibili_fdc846ad676dcc6f.png",
+      "source": "bilibili",
+      "title": "第二种哈基兔与肉块saya酱跳舞",
+      "time": "2026-05-03T09:45:56+00:00",
+      "downloaded_at": "2026-05-03T10:47:38.462532+00:00"
     }
   },
   "failed": {
@@ -5627,6 +5641,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-03T09:16:23.584758+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/98ea668521849a523593523e444910a9e075e26b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T10:47:36.495896+00:00"
     }
   },
   "archived": []

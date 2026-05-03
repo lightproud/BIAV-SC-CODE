@@ -1,8 +1,8 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-03T09:16:23.646168+00:00",
+  "archived_at": "2026-05-03T10:47:38.529344+00:00",
   "source": "bilibili",
-  "item_count": 21,
+  "item_count": 24,
   "items": [
     {
       "source": "bilibili",
@@ -99,6 +99,36 @@
         "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T09:59:25+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]我们都没错只是两个太年轻的肩膀撑不起永远的重量",
+      "summary": "-\n  └ --壹陆-- (0赞): 这照片是你吗[喜欢]\n  └ 一个撑伞 (0赞): 确实好看[以闪亮之名_针不戳]\n  └ 雅思拉 (0赞): 好看(♥∀♥)",
+      "url": "https://www.bilibili.com/video/BV1uMRFBJEPe",
+      "author": "渔歌伴晚舟",
+      "engagement": 184,
+      "media_url": "https://i1.hdslb.com/bfs/archive/98ea668521849a523593523e444910a9e075e26b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 178,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T09:59:25+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]我们都没错只是两个太年轻的肩膀撑不起永远的重量",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116510047608414",
+      "author": "渔歌伴晚舟",
+      "engagement": 184,
+      "media_url": "//i1.hdslb.com/bfs/archive/98ea668521849a523593523e444910a9e075e26b.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -247,6 +277,24 @@
         "play": 6,
         "comment_count": 2,
         "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T09:45:56+00:00",
+      "lang": "zh",
+      "title": "第二种哈基兔与肉块saya酱跳舞",
+      "summary": "闲着没事做着玩的，别喷我   saya酱   我是真的喜欢看她的肉块形态跳舞  至于左边那个兔子，嗯，还是没事加着玩的",
+      "url": "https://www.bilibili.com/video/BV1xGRFB2Emt",
+      "author": "黑荆棘女士举世无双",
+      "engagement": 7,
+      "media_url": "https://i2.hdslb.com/bfs/archive/a6e358523e87437aff211116dc9d31a50b808240.png",
+      "content_type": "image",
+      "metadata": {
+        "play": 7,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
