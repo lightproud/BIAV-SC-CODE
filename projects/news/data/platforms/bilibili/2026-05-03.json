@@ -1,9 +1,105 @@
 {
   "date": "2026-05-03",
-  "archived_at": "2026-05-03T01:51:46.550070+00:00",
+  "archived_at": "2026-05-03T05:25:10.521973+00:00",
   "source": "bilibili",
-  "item_count": 10,
+  "item_count": 16,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T04:12:21+00:00",
+      "lang": "zh",
+      "title": "【忘却金夜】如果尤乌哈希是奶龙......",
+      "summary": "黯神必看\n  └ 金发女人丨型 (7赞): @魂魄魄睡不醒 @伊莎玛拉-大群来了 @轻钰 @龢利喵 @路过的耄耋 @梦依流苏 @立誓0氪吃400 @半醒的鱼yyy 这集必看\n  └ 寒至桎蛭 (3赞): 老大，我们真的是人类吗\n  └ 魂魄魄睡不醒 (2赞): 严肃支持[喜欢][喜欢][喜欢]",
+      "url": "https://www.bilibili.com/video/BV1Hw9fBvE5j",
+      "author": "金发女人丨型",
+      "engagement": 404,
+      "media_url": "https://i2.hdslb.com/bfs/archive/eeb504945a99f7715b36c0a89621dd52a4ce1b31.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 382,
+        "comment_count": 22,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T04:12:21+00:00",
+      "lang": "zh",
+      "title": "【忘却金夜】如果尤乌哈希是奶龙......",
+      "summary": "黯神必看",
+      "url": "http://www.bilibili.com/video/av116508688783899",
+      "author": "金发女人丨型",
+      "engagement": 389,
+      "media_url": "//i2.hdslb.com/bfs/archive/eeb504945a99f7715b36c0a89621dd52a4ce1b31.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T00:10:04+00:00",
+      "lang": "zh",
+      "title": "沙耶之歌9",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1my9dBMEQS",
+      "author": "黑白魔狼",
+      "engagement": 383,
+      "media_url": "https://i0.hdslb.com/bfs/archive/cff4ab1a473bf848d802ae328858a7b9d016c2b4.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 383,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-03T01:54:46+00:00",
+      "lang": "zh",
+      "title": "galgame老资历遇到萌新",
+      "summary": "-\n  └ 哦哦哦贝阿朵莉切 (1赞): UP主加油！",
+      "url": "https://www.bilibili.com/video/BV19a9dBjEQr",
+      "author": "冷信艾维",
+      "engagement": 291,
+      "media_url": "https://i0.hdslb.com/bfs/archive/7dfb08958b89e8a8edc90393e0c2c489db8adf3d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 290,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T18:06:07+00:00",
+      "lang": "zh",
+      "title": "《力量》 忘却前夜 融灾5-5大魔术师",
+      "summary": "背景音乐：Johann Strauss II - &quot;The Blue Danube Waltz&quot;\n  └ 想成为妈咪的小情人 (1赞): 我必须要重新思考一下我是否要抽取12雷亚[星星眼]\n  └ 伊莎玛拉-大群来了 (1赞): 我了...吓哭了\n  └ 朝星- (0赞): [椎名菜羽_震撼]",
+      "url": "https://www.bilibili.com/video/BV1k29QBnERz",
+      "author": "夢遊遊遊遊",
+      "engagement": 152,
+      "media_url": "https://i1.hdslb.com/bfs/archive/9fa15389a28c53459cf5c29edf4b7f0f9e7741b2.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 147,
+        "comment_count": 5,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-02T18:06:07+00:00",
+      "lang": "zh",
+      "title": "《力量》 忘却前夜 融灾5-5大魔术师",
+      "summary": "背景音乐：Johann Strauss II - &quot;The Blue Danube Waltz&quot;",
+      "url": "http://www.bilibili.com/video/av116506289512007",
+      "author": "夢遊遊遊遊",
+      "engagement": 147,
+      "media_url": "//i1.hdslb.com/bfs/archive/9fa15389a28c53459cf5c29edf4b7f0f9e7741b2.jpg",
+      "content_type": "video"
+    },
     {
       "source": "bilibili",
       "time": "2026-05-02T16:41:09+00:00",

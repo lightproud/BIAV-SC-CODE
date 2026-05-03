@@ -3940,6 +3940,41 @@
       "title": "沙耶之歌",
       "time": "2026-05-03T00:47:34+00:00",
       "downloaded_at": "2026-05-03T01:51:46.485000+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/eeb504945a99f7715b36c0a89621dd52a4ce1b31.jpg": {
+      "filename": "bilibili_63e5d6fd73aa5dc9.jpg",
+      "source": "bilibili",
+      "title": "【忘却金夜】如果尤乌哈希是奶龙......",
+      "time": "2026-05-03T04:12:21+00:00",
+      "downloaded_at": "2026-05-03T05:25:04.704896+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/cff4ab1a473bf848d802ae328858a7b9d016c2b4.jpg": {
+      "filename": "bilibili_2cee0f3fc84cf34e.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌9",
+      "time": "2026-05-03T00:10:04+00:00",
+      "downloaded_at": "2026-05-03T05:25:06.296104+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/7dfb08958b89e8a8edc90393e0c2c489db8adf3d.jpg": {
+      "filename": "bilibili_744bb8d62a0c4e37.jpg",
+      "source": "bilibili",
+      "title": "galgame老资历遇到萌新",
+      "time": "2026-05-03T01:54:46+00:00",
+      "downloaded_at": "2026-05-03T05:25:07.374506+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/9fa15389a28c53459cf5c29edf4b7f0f9e7741b2.jpg": {
+      "filename": "bilibili_dd2dc689ae2122b5.jpg",
+      "source": "bilibili",
+      "title": "《力量》 忘却前夜 融灾5-5大魔术师",
+      "time": "2026-05-02T18:06:07+00:00",
+      "downloaded_at": "2026-05-03T05:25:08.042089+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/9dc9e2afb6634cdc52254e70202afeecae0c2c38.jpg": {
+      "filename": "bilibili_9fb9adc93a3b597e.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜/图鲁cos】把心献给吾主",
+      "time": "2026-05-02T13:43:35+00:00",
+      "downloaded_at": "2026-05-03T05:25:09.445796+00:00"
     }
   },
   "failed": {
@@ -5512,6 +5547,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-03T01:51:45.372355+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/eeb504945a99f7715b36c0a89621dd52a4ce1b31.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T05:25:05.005946+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/9fa15389a28c53459cf5c29edf4b7f0f9e7741b2.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T05:25:08.342842+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/9dc9e2afb6634cdc52254e70202afeecae0c2c38.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T05:25:09.746610+00:00"
+    },
+    "https://preview.redd.it/aex6h3f8buyg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6cccc156511e2c2b057bd83943b0dd2148fe381e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-03T05:25:10.462724+00:00"
     }
   },
   "archived": []
