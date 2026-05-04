@@ -1,0 +1,68 @@
+{
+  "date": "2026-05-05",
+  "archived_at": "2026-05-04T17:25:07.043344+00:00",
+  "source": "bilibili",
+  "item_count": 4,
+  "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T16:32:43+00:00",
+      "lang": "zh",
+      "title": "4.27融灾配队推荐",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1r5RzBmE2x",
+      "author": "伤春客",
+      "engagement": 32,
+      "media_url": "https://i1.hdslb.com/bfs/archive/ddef6aedafe8f55c383eff7c9ad824f728819589.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 32,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T16:32:43+00:00",
+      "lang": "zh",
+      "title": "4.27融灾配队推荐",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116517245031840",
+      "author": "伤春客",
+      "engagement": 32,
+      "media_url": "//i1.hdslb.com/bfs/archive/ddef6aedafe8f55c383eff7c9ad824f728819589.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T16:32:26+00:00",
+      "lang": "zh",
+      "title": "4.12与4.27融灾425较常见配队汇总",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1k5RzBmEAA",
+      "author": "伤春客",
+      "engagement": 22,
+      "media_url": "https://i0.hdslb.com/bfs/archive/3dcf4e4056b40efc7e16198d01537b2f12a02365.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 22,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T16:32:26+00:00",
+      "lang": "zh",
+      "title": "4.12与4.27融灾425较常见配队汇总",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116517245030878",
+      "author": "伤春客",
+      "engagement": 22,
+      "media_url": "//i0.hdslb.com/bfs/archive/3dcf4e4056b40efc7e16198d01537b2f12a02365.jpg",
+      "content_type": "video"
+    }
+  ]
+}
