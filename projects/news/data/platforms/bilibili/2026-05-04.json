@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-04T08:20:08.215250+00:00",
+  "archived_at": "2026-05-04T10:58:25.454977+00:00",
   "source": "bilibili",
-  "item_count": 13,
+  "item_count": 17,
   "items": [
     {
       "source": "bilibili",
@@ -84,6 +84,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-04T09:54:25+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】玩了这么久才知道这个排行榜里面可以看别人视频抄作业Σ(°ロ°)",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116515684818625",
+      "author": "墨霞",
+      "engagement": 35,
+      "media_url": "//i0.hdslb.com/bfs/archive/9c7919949d7640da0867bf96b18caaf035e90c56.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T09:54:25+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】玩了这么久才知道这个排行榜里面可以看别人视频抄作业Σ(°ロ°)",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1wNRvBuE1v",
+      "author": "墨霞",
+      "engagement": 33,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9c7919949d7640da0867bf96b18caaf035e90c56.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 33,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-03T17:29:11+00:00",
       "lang": "zh",
       "title": "【忘却前夜】祖传防反诺蒂拉融灾禁区5-5",
@@ -158,6 +188,36 @@
       "author": "嘎啦嘎啦果",
       "engagement": 11,
       "media_url": "//i2.hdslb.com/bfs/archive/ddc35c347d2adbbe4c2642e263d3e821582ca926.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T08:57:12+00:00",
+      "lang": "zh",
+      "title": "忘却前夜",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1ghRvBHEFK",
+      "author": "猫猫虫是液体",
+      "engagement": 4,
+      "media_url": "https://i2.hdslb.com/bfs/archive/c93becb37c27a292379311c1b7fd1296dd2c588d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 4,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T08:57:12+00:00",
+      "lang": "zh",
+      "title": "忘却前夜",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116515466779981",
+      "author": "猫猫虫是液体",
+      "engagement": 4,
+      "media_url": "//i2.hdslb.com/bfs/archive/c93becb37c27a292379311c1b7fd1296dd2c588d.jpg",
       "content_type": "video"
     },
     {
