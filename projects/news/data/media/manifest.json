@@ -4136,6 +4136,34 @@
       "title": "【忘却前夜】欢乐固伤流莫丝逃课星辰篇主线H5-11",
       "time": "2026-05-03T21:33:29+00:00",
       "downloaded_at": "2026-05-03T22:33:40.363683+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/5b97a91780e0c89076f6fd88efa329fda74f1c9d.jpg": {
+      "filename": "bilibili_77aa56419ba0e749.jpg",
+      "source": "bilibili",
+      "title": "神国队看腻了？来看看我的高质神区队 5t5-2强度极其高非常可怕",
+      "time": "2026-05-03T15:58:13+00:00",
+      "downloaded_at": "2026-05-04T05:28:04.226898+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/85a0c57c9bc78347bf19cdc9a994200cb28186cf.jpg": {
+      "filename": "bilibili_0a7d2cab1bfdfcf1.jpg",
+      "source": "bilibili",
+      "title": "【绘画过程】沙耶的泪",
+      "time": "2026-05-03T15:35:06+00:00",
+      "downloaded_at": "2026-05-04T05:28:05.649364+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/9159f30b8f7d61ce8804a1c06e5649b05335bd53.jpg": {
+      "filename": "bilibili_953faec8b4ab31ee.jpg",
+      "source": "bilibili",
+      "title": "老头1t健达奇趣蛋（这集没有奶龙了）",
+      "time": "2026-05-04T04:19:13+00:00",
+      "downloaded_at": "2026-05-04T05:28:06.560501+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/65a6ee9af9fafd88c0b4caa14d1b6fcfbf7a4db5.jpg": {
+      "filename": "bilibili_eec159634c772794.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜",
+      "time": "2026-05-04T04:25:45+00:00",
+      "downloaded_at": "2026-05-04T05:28:09.506371+00:00"
     }
   },
   "failed": {
@@ -5783,6 +5811,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-03T22:33:41.295226+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/5b97a91780e0c89076f6fd88efa329fda74f1c9d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T05:28:04.527721+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/9159f30b8f7d61ce8804a1c06e5649b05335bd53.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T05:28:06.861237+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/65a6ee9af9fafd88c0b4caa14d1b6fcfbf7a4db5.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T05:28:09.807119+00:00"
+    },
+    "https://preview.redd.it/uckb086kv1zg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=714591d36b60eef8639aa2806ff120ad81742cb0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T05:28:10.268602+00:00"
     }
   },
   "archived": []
