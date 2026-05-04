@@ -1,11 +1,33 @@
 {
   "date": "2026-05-03",
-  "messages": 11939,
+  "messages": 14714,
   "unique_authors": 330,
-  "reactions_total": 879,
-  "attachments": 529,
+  "reactions_total": 1127,
+  "attachments": 670,
   "channel_activity": {
-    "🔸綜合討論": 4045,
+    "🔸綜合討論": 4725,
+    "🔸русский-канал": 307,
+    "🔸phòng-chat-tiếng-việt": 935,
+    "🔸canal-español": 258,
+    "🔸canal-português": 553,
+    "🔸ruang-obrolan-indonesia": 589,
+    "🔸ห้องสนทนาภาษาไทย": 38,
+    "🔸traphase": 282,
+    "🔸lore-chat": 99,
+    "🔸频道建议┊server-suggestions": 3,
+    "🔸team-building": 303,
+    "🔸general-chat": 5406,
+    "🔸邀请码互助┊swap-invitation-codes": 15,
+    "🔸game-question": 936,
+    "🔸机器人命令┊bot-commands": 37,
+    "菜雞四小強玩家的抱怨之旅new": 3,
+    "Some passionate feedback on Pandia's 2.5.1 buffs": 2,
+    "✅「Answered」Possibilities of Doresain kit rework": 4,
+    "Preview: V2.5.1 Caro Awakener Enhancement": 4,
+    "Leigh wip!!!!": 1,
+    "【English Translation】Opinions Collection": 2,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 29,
+    "Lvl 14 player here": 12,
     "🔸阵容构建": 3,
     "🔸剧情交流": 13,
     "🔸晒卡分享": 1,
@@ -16,21 +38,7 @@
     "🔸한국어-채팅방": 40,
     "🔸deutscher-chatraum": 1,
     "🔸chaîne-française": 6,
-    "🔸русский-канал": 216,
-    "🔸phòng-chat-tiếng-việt": 933,
-    "🔸canal-español": 211,
-    "🔸canal-português": 463,
-    "🔸ruang-obrolan-indonesia": 572,
-    "🔸ห้องสนทนาภาษาไทย": 36,
-    "🔸traphase": 232,
-    "🔸lore-chat": 97,
-    "🔸频道建议┊server-suggestions": 1,
-    "🔸team-building": 277,
-    "🔸general-chat": 3958,
-    "🔸邀请码互助┊swap-invitation-codes": 14,
-    "🔸game-question": 639,
     "🔸忘却前夜┊morimens-tv": 1,
-    "🔸机器人命令┊bot-commands": 33,
     "🔸erica-playground": 5,
     "簡單明了阿拉使用說明書": 6,
     "混沌OC": 4,
@@ -47,7 +55,6 @@
     "\"24\" lives matter": 2,
     "V2.5.0.4 在线维护公告": 1,
     "Preview: V2.5.1 Ultra Awakener Enhancement": 1,
-    "Preview: V2.5.1 Caro Awakener Enhancement": 2,
     "Preview: V2.5.1 Chaos Awakener Enhancement": 1,
     "Big ahh canvas of multiple fandoms (including morimens)": 2,
     "Spider and Moth :>": 3,
@@ -55,14 +62,18 @@
     "MOUCHETTE BEST GIRL (mimi unhinged ramble + art sometimes)": 2,
     "So that one MS Teams Shark huh": 3,
     "William posting": 2,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 28,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
     "刚玩几天": 9,
     "融災": 5,
-    "Lvl 14 player here": 11,
     "1500512229240606840": 1
   },
   "hourly_activity": {
+    "18": 1076,
+    "19": 1136,
+    "20": 298,
+    "21": 559,
+    "23": 97,
+    "22": 218,
     "0": 287,
     "1": 453,
     "2": 546,
@@ -80,15 +91,13 @@
     "14": 1041,
     "15": 319,
     "16": 428,
-    "17": 909,
-    "18": 609
+    "17": 909
   },
   "message_types": {
-    "19": 2980,
-    "0": 8951,
-    "23": 3,
-    "20": 4,
-    "21": 1
+    "19": 861,
+    "0": 1911,
+    "20": 2,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -148,11 +157,43 @@
       "channel": "做了忘卻前夜給朋友收集的島民玩"
     },
     {
+      "id": "1500586791722287307",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "heikwok",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1500587530876358746",
+      "channel_id": "1131839817982947429",
+      "content": "我先來去睡了  感謝各位給的知識跟建議  除了抽融朵ˊˇˋ",
+      "author": "jjlin0103",
+      "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
       "id": "1500349020613251122",
       "channel_id": "1131839817982947429",
       "content": "如果你沒有天份，我會把你裝進通訊器當電池",
       "author": "ernest_heart",
       "reactions": 7,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1500581580417273856",
+      "channel_id": "1131839817982947429",
+      "content": "他媽的他抽數比我命還長",
+      "author": "hon_ey0",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1500586496065929449",
+      "channel_id": "1131839817982947429",
+      "content": "媽的 越說越生氣\n上回踩過💩 \n這回我提前問了\n他說沒💩 \n過一星期把💩 硬塞我鞋底",
+      "author": "heikwok",
+      "reactions": 6,
       "channel": "🔸綜合討論"
     },
     {
@@ -162,6 +203,46 @@
       "author": "hon_ey0",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1500579247058845696",
+      "channel_id": "1131839817982947429",
+      "content": "這隻是神國的孤兒(X",
+      "author": "theal8893",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1500582320271392901",
+      "channel_id": "1131839817982947429",
+      "content": "大佬都在談融災，剩我一個推主線都推不滿100%😭",
+      "author": "ena04564",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1500605176367812671",
+      "channel_id": "1400750050208125010",
+      "content": "\"Doll raised her gaze from the board. Tawil's eyes were closed again, her hands ",
+      "author": "cerixxix",
+      "reactions": 5,
+      "channel": "🔸general-chat"
+    },
+    {
+      "id": "1500583326673801438",
+      "channel_id": "1433513650299076780",
+      "content": "I like murphy so far‼️",
+      "author": "bleck11",
+      "reactions": 5,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1500594038028374196",
+      "channel_id": "1499535182947025076",
+      "content": "i think shes weird and should stay weak",
+      "author": "princess.goth",
+      "reactions": 5,
+      "channel": "Some passionate feedback on Pandia's 2.5.1 buffs"
     },
     {
       "id": "1500342683288469544",
@@ -176,78 +257,6 @@
       "channel_id": "1131839817982947429",
       "content": "對這群組裡除了我都在惡意課金",
       "author": "xingxiu_0209",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500354283860922368",
-      "channel_id": "1131839817982947429",
-      "content": "對這群組裡除了我都在惡意課金\n大家都好富",
-      "author": "sayo.0320",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500355853948031088",
-      "channel_id": "1131839817982947429",
-      "content": "連狗都不擼",
-      "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500356651964825640",
-      "channel_id": "1131839817982947429",
-      "content": "这就是两只蜘蛛，只不过一个会跳舞，一个会唱歌而已",
-      "author": "kemomimi_",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500448631080222830",
-      "channel_id": "1131839817982947429",
-      "content": "~~水母~~",
-      "author": "bartmann_3212",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500449909952876797",
-      "channel_id": "1131839817982947429",
-      "content": "搞定",
-      "author": "forg30215",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500462771177914398",
-      "channel_id": "1131839817982947429",
-      "content": "其實鯊魚是扶他",
-      "author": "ahong0727",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500475888179871774",
-      "channel_id": "1131839817982947429",
-      "content": "進化路線是 忘卻篇開始 羊希鯨 > 超維固傷鯨 >  星辰篇 補醫生 補疊火女生存位 > 神國鯨 > 阿拉超維鯨\n結果我box逐漸可以打400了",
-      "author": "heikwok",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500476617556885544",
-      "channel_id": "1131839817982947429",
-      "content": "志气远大一点\n+12图鲁+12弥利+12墨菲",
-      "author": "be_queitplease",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500508931880128703",
-      "channel_id": "1131839817982947429",
-      "content": "就像梨子至今仍沒有成功線下抓到我過",
-      "author": "hon_ey0",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

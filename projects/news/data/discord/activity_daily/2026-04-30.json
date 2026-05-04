@@ -1,11 +1,11 @@
 {
   "date": "2026-04-30",
-  "messages": 18098,
+  "messages": 21786,
   "unique_authors": 379,
-  "reactions_total": 2119,
-  "attachments": 790,
+  "reactions_total": 2699,
+  "attachments": 922,
   "channel_activity": {
-    "🔸morimens-game-chat": 4858,
+    "🔸morimens-game-chat": 8546,
     "🔸綜合討論": 3533,
     "🔸chaîne-française": 4,
     "🔸русский-канал": 219,
@@ -77,6 +77,16 @@
     "1499482232266428527": 1
   },
   "hourly_activity": {
+    "14": 2067,
+    "15": 2108,
+    "16": 1903,
+    "17": 991,
+    "18": 825,
+    "19": 1054,
+    "20": 486,
+    "21": 392,
+    "22": 262,
+    "23": 260,
     "0": 289,
     "1": 235,
     "2": 308,
@@ -90,21 +100,11 @@
     "10": 1073,
     "11": 1264,
     "12": 936,
-    "13": 903,
-    "14": 1817,
-    "19": 503,
-    "20": 160,
-    "21": 256,
-    "22": 75,
-    "23": 148,
-    "15": 1389,
-    "16": 1375,
-    "17": 611,
-    "18": 326
+    "13": 903
   },
   "message_types": {
-    "19": 1530,
-    "0": 3328
+    "19": 1506,
+    "0": 2182
   },
   "top_reacted_messages": [
     {
@@ -212,6 +212,14 @@
       "channel": "Sylvester cheebs"
     },
     {
+      "id": "1499460848463253664",
+      "channel_id": "1170692781216378960",
+      "content": "https://tenor.com/view/cooking-fail-on-fire-flame-burn-gif-9814465",
+      "author": "reya.li",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1499409675152789565",
       "channel_id": "1499403563686957067",
       "content": "No Kathi buffs smh. Light has betrayed us meta slaves for the last time 😔",
@@ -226,6 +234,14 @@
       "author": "legendaryredz",
       "reactions": 9,
       "channel": "Preview: V2.5.1 Aequor Awakener Enhancement"
+    },
+    {
+      "id": "1499528990216421547",
+      "channel_id": "1170692781216378960",
+      "content": "C tier.",
+      "author": "mengluo",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1499426770414211194",
@@ -250,22 +266,6 @@
       "author": "_venush",
       "reactions": 8,
       "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1499409849098965163",
-      "channel_id": "1499407251088080996",
-      "content": "## Tulu\n- **Exalt \"When the Stars Are Right\"**: Temporary Tentacle DMG and Stren",
-      "author": "lightproud",
-      "reactions": 8,
-      "channel": "Preview: V2.5.1 Aequor Awakener Enhancement"
-    },
-    {
-      "id": "1499420398238826766",
-      "channel_id": "1499407251088080996",
-      "content": "Hype for Aurita buffs",
-      "author": "omenatyyppi",
-      "reactions": 8,
-      "channel": "Preview: V2.5.1 Aequor Awakener Enhancement"
     }
   ]
 }

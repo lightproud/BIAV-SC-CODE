@@ -1,10 +1,11 @@
 {
   "date": "2026-05-01",
-  "messages": 14398,
+  "messages": 15710,
   "unique_authors": 331,
-  "reactions_total": 1032,
-  "attachments": 703,
+  "reactions_total": 1178,
+  "attachments": 784,
   "channel_activity": {
+    "🔸morimens-game-chat": 1312,
     "🔸綜合討論": 2080,
     "🔸阵容构建": 15,
     "🔸晒卡分享": 6,
@@ -68,6 +69,12 @@
     "1499715490224799825": 1
   },
   "hourly_activity": {
+    "0": 518,
+    "1": 502,
+    "2": 609,
+    "3": 968,
+    "4": 1302,
+    "5": 775,
     "19": 496,
     "20": 235,
     "21": 152,
@@ -76,12 +83,6 @@
     "16": 958,
     "17": 868,
     "18": 857,
-    "0": 181,
-    "1": 351,
-    "2": 382,
-    "3": 739,
-    "4": 1038,
-    "5": 671,
     "6": 916,
     "7": 883,
     "8": 657,
@@ -94,10 +95,8 @@
     "15": 642
   },
   "message_types": {
-    "19": 454,
-    "0": 1321,
-    "23": 1,
-    "20": 1
+    "0": 992,
+    "19": 320
   },
   "top_reacted_messages": [
     {
@@ -155,6 +154,22 @@
       "author": "sunstopshining",
       "reactions": 7,
       "channel": "Lotan🐳"
+    },
+    {
+      "id": "1499613838029488159",
+      "channel_id": "1170692781216378960",
+      "content": "I lost a 50% dr <:GDoll_Inferno_serenity:1468257540809822302>",
+      "author": "syruponstrawberrycake",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1499622258854072474",
+      "channel_id": "1170692781216378960",
+      "content": "At least 67 rm",
+      "author": "syruponstrawberrycake",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1499664406294822994",
@@ -229,36 +244,20 @@
       "channel": "🔸canal-español"
     },
     {
+      "id": "1499623123161714719",
+      "channel_id": "1170692781216378960",
+      "content": "WHAT?!?!?",
+      "author": "velvetmoon71",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1499856350434427012",
       "channel_id": "1499407461122052176",
       "content": "I love these Leigh changes, but she really does need more stats! My Leigh is alm",
       "author": "thunderbrother",
       "reactions": 5,
       "channel": "Preview: V2.5.1 Caro Awakener Enhancement"
-    },
-    {
-      "id": "1499567905157943377",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "xuanxue007",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1499727879896825986",
-      "channel_id": "1131839817982947429",
-      "content": "~~她是不是不知道衣服是用來蔽體的？~~\n這個有用嗎",
-      "author": "arachnids_nacha",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1499777006110244974",
-      "channel_id": "1131839817982947429",
-      "content": "~~||-# 因為懷孕了嗎||~~",
-      "author": "0.0._.0_0.",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
     }
   ]
 }
