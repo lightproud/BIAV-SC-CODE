@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-04T05:28:10.330702+00:00",
+  "archived_at": "2026-05-04T08:20:08.215250+00:00",
   "source": "bilibili",
-  "item_count": 9,
+  "item_count": 13,
   "items": [
     {
       "source": "bilibili",
@@ -21,6 +21,36 @@
         "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T06:34:58+00:00",
+      "lang": "zh",
+      "title": "小心……演员……塔薇…（拉拉扶她借过一下）",
+      "summary": "-\n  └ 幽缀 (0赞): 爱丽丝Ⅱ型……是[doge]\n  └ 永恒残月 (0赞): 福袋低配带巨人陨日，没陨日，骑士诗巨人。道中不用超限，王关也是。可以塔薇凹魔术师0费\n  └ 爱莉厨114514号 (0赞): 原来那个新超维的空间buff还能这么玩，学到了，但是不是只有+12tv和+12福袋能这么搞，而且还要小心被演[崩坏3·光辉矢愿_瞄准][崩坏3·光辉矢愿_策划]",
+      "url": "https://www.bilibili.com/video/BV1kcRYBAEgj",
+      "author": "永恒残月",
+      "engagement": 75,
+      "media_url": "https://i0.hdslb.com/bfs/archive/f356b84b75efebb7d2b312cabc2ad5dd44a52696.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 68,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 1
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T06:34:58+00:00",
+      "lang": "zh",
+      "title": "小心……演员……塔薇…（拉拉扶她借过一下）",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116514896216763",
+      "author": "永恒残月",
+      "engagement": 71,
+      "media_url": "//i0.hdslb.com/bfs/archive/f356b84b75efebb7d2b312cabc2ad5dd44a52696.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -102,6 +132,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-04T08:07:55+00:00",
+      "lang": "zh",
+      "title": "【沙耶之歌】我们都是血肉组成的/僕らは肉でできている",
+      "summary": "原曲https://youtu.be/2W2Vp2gWvxE\n参考BV18TRwBZER3\n软件使用procreate/am/剪映\n额做的很傻鸟不好意思这个翅膀本来会动的但是我被am气毁了\n内田温也是火了前两年很喜欢听\n  └ 绿化锂 (1赞): 今天晚餐吃水煮肉块\n  └ 蟑螂首领小张 (0赞): 原曲https://youtu.be/2W2Vp2gWvxE\n参考BV18TRwBZER3\n软件使用procreate/am/剪映\n额做的很傻鸟不好意思这个翅膀本来会动的但是我被am气毁了\n内田温也是火了前两年很喜欢听[Neuro sama动态表情包_神的上升]",
+      "url": "https://www.bilibili.com/video/BV1asRvBsEb8",
+      "author": "蟑螂首领小张",
+      "engagement": 13,
+      "media_url": "https://i0.hdslb.com/bfs/archive/cead4e86872911676d3402f912b7680af8b7e74c.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 7,
+        "comment_count": 6,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-03T21:33:29+00:00",
       "lang": "zh",
       "title": "【忘却前夜】欢乐固伤流莫丝逃课星辰篇主线H5-11",
@@ -141,6 +189,24 @@
       "engagement": 3,
       "media_url": "//i0.hdslb.com/bfs/archive/65a6ee9af9fafd88c0b4caa14d1b6fcfbf7a4db5.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T08:03:12+00:00",
+      "lang": "zh",
+      "title": "漂泊无依的蒲公英获得了名为归宿的伞",
+      "summary": "答应好沙耶的终于出了！好久没更新了。。。其实昨天出片很少",
+      "url": "https://www.bilibili.com/video/BV1QxRvB9ECS",
+      "author": "小乔不咕咕",
+      "engagement": 3,
+      "media_url": "https://i1.hdslb.com/bfs/archive/845a75fe7f887e368b649e351f85f18b26e2fd45.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 3,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     }
   ]
 }

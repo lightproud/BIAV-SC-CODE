@@ -4164,6 +4164,27 @@
       "title": "忘却前夜",
       "time": "2026-05-04T04:25:45+00:00",
       "downloaded_at": "2026-05-04T05:28:09.506371+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/f356b84b75efebb7d2b312cabc2ad5dd44a52696.jpg": {
+      "filename": "bilibili_53eb0e0c0709e9cc.jpg",
+      "source": "bilibili",
+      "title": "小心……演员……塔薇…（拉拉扶她借过一下）",
+      "time": "2026-05-04T06:34:58+00:00",
+      "downloaded_at": "2026-05-04T08:20:05.134703+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/cead4e86872911676d3402f912b7680af8b7e74c.jpg": {
+      "filename": "bilibili_0869cc262b92dc9b.jpg",
+      "source": "bilibili",
+      "title": "【沙耶之歌】我们都是血肉组成的/僕らは肉でできている",
+      "time": "2026-05-04T08:07:55+00:00",
+      "downloaded_at": "2026-05-04T08:20:06.724598+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/845a75fe7f887e368b649e351f85f18b26e2fd45.jpg": {
+      "filename": "bilibili_250f7e65d4a72240.jpg",
+      "source": "bilibili",
+      "title": "漂泊无依的蒲公英获得了名为归宿的伞",
+      "time": "2026-05-04T08:03:12+00:00",
+      "downloaded_at": "2026-05-04T08:20:08.151740+00:00"
     }
   },
   "failed": {
@@ -5831,6 +5852,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-04T05:28:10.268602+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/f356b84b75efebb7d2b312cabc2ad5dd44a52696.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T08:20:05.435742+00:00"
     }
   },
   "archived": []
