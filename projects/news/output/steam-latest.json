@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-04T17:24:53.238172+00:00",
+  "collected_at": "2026-05-04T19:16:08.311046+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -32,6 +32,36 @@
       "review": "Beautiful animation, well fleshed out characters, and wonderful gameplay. The card game is stimulating and rewarding. \r\nBest of all, Morimens is VERY F2P friendly and allows you many chances to earn characters and other rewards.",
       "timestamp_created": 1777838242,
       "playtime_forever": 1268
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-04T16:23:16+00:00",
+      "lang": "schinese",
+      "title": "[负面] 快跑孩子们，这游戏本质还是二游氪金养成刷数值那一套",
+      "summary": "快跑孩子们，这游戏本质还是二游氪金养成刷数值那一套",
+      "url": "https://steamcommunity.com/profiles/76561199214240909/recommended/3052450",
+      "author": "76561199214240909",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "快跑孩子们，这游戏本质还是二游氪金养成刷数值那一套",
+      "timestamp_created": 1777911796,
+      "playtime_forever": 312
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-04T15:59:28+00:00",
+      "lang": "english",
+      "title": "[正面] love card games like this, and the art is perfecti...",
+      "summary": "love card games like this, and the art is perfection. some story beats weren't to interesting to me but me personally. overall love it.",
+      "url": "https://steamcommunity.com/profiles/76561198399795700/recommended/3052450",
+      "author": "76561198399795700",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "love card games like this, and the art is perfection. some story beats weren't to interesting to me but me personally. overall love it.",
+      "timestamp_created": 1777910368,
+      "playtime_forever": 504
     },
     {
       "source": "steam",
@@ -121,22 +151,7 @@
       "voted_up": true,
       "review": "Ungewöhnlich, das Ismael für sich selbst spricht.",
       "timestamp_created": 1777843848,
-      "playtime_forever": 160
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-03T19:10:47+00:00",
-      "lang": "romanian",
-      "title": "[正面] Fortzaaaaaaa",
-      "summary": "Fortzaaaaaaa",
-      "url": "https://steamcommunity.com/profiles/76561198231388856/recommended/3052450",
-      "author": "76561198231388856",
-      "engagement": 0,
-      "language": "romanian",
-      "voted_up": true,
-      "review": "Fortzaaaaaaa",
-      "timestamp_created": 1777835447,
-      "playtime_forever": 376
+      "playtime_forever": 340
     }
   ]
 }

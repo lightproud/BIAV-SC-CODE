@@ -1,8 +1,8 @@
 {
   "date": "2026-05-05",
-  "archived_at": "2026-05-04T17:25:07.042402+00:00",
+  "archived_at": "2026-05-04T19:16:11.289074+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -138,6 +138,21 @@
       "review": "Fortzaaaaaaa",
       "timestamp_created": 1777835447,
       "playtime_forever": 376
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-04T16:23:16+00:00",
+      "lang": "schinese",
+      "title": "[负面] 快跑孩子们，这游戏本质还是二游氪金养成刷数值那一套",
+      "summary": "快跑孩子们，这游戏本质还是二游氪金养成刷数值那一套",
+      "url": "https://steamcommunity.com/profiles/76561199214240909/recommended/3052450",
+      "author": "76561199214240909",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "快跑孩子们，这游戏本质还是二游氪金养成刷数值那一套",
+      "timestamp_created": 1777911796,
+      "playtime_forever": 312
     }
   ]
 }
