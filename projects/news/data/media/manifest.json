@@ -4185,6 +4185,27 @@
       "title": "漂泊无依的蒲公英获得了名为归宿的伞",
       "time": "2026-05-04T08:03:12+00:00",
       "downloaded_at": "2026-05-04T08:20:08.151740+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/9c7919949d7640da0867bf96b18caaf035e90c56.jpg": {
+      "filename": "bilibili_3f7591dca8ab51f1.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】玩了这么久才知道这个排行榜里面可以看别人视频抄作业Σ(°ロ°)",
+      "time": "2026-05-04T09:54:25+00:00",
+      "downloaded_at": "2026-05-04T10:58:22.713584+00:00"
+    },
+    "https://i.ytimg.com/vi/ZJOml_aMOIA/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBlZ7OBo3JkmrwWomKILJBXlnUqkw": {
+      "filename": "youtube_528b460ca3822d23.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】Ver.1.5「春に捧げる花束」公式PV",
+      "time": "2026-05-04T10:01:27.648483+00:00",
+      "downloaded_at": "2026-05-04T10:58:23.140764+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/c93becb37c27a292379311c1b7fd1296dd2c588d.jpg": {
+      "filename": "bilibili_7f06d5fe60f1821a.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜",
+      "time": "2026-05-04T08:57:12+00:00",
+      "downloaded_at": "2026-05-04T10:58:25.087484+00:00"
     }
   },
   "failed": {
@@ -5857,6 +5878,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-04T08:20:05.435742+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/9c7919949d7640da0867bf96b18caaf035e90c56.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T10:58:21.728464+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/c93becb37c27a292379311c1b7fd1296dd2c588d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T10:58:25.388286+00:00"
     }
   },
   "archived": []

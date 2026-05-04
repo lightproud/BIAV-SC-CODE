@@ -1,6 +1,19 @@
 {
-  "collected_at": "2026-05-04T08:20:01.865682+00:00",
+  "collected_at": "2026-05-04T10:58:21.183786+00:00",
   "source": "youtube",
-  "item_count": 0,
-  "items": []
+  "item_count": 1,
+  "items": [
+    {
+      "source": "youtube",
+      "time": "2026-05-04T10:01:27.648483+00:00",
+      "lang": "",
+      "title": "【忘却前夜】Ver.1.5「春に捧げる花束」公式PV",
+      "summary": "[54 minutes ago] 雨は、雲から空への別れの涙 再び会えたなら 最初に紡いだ詩がほしい—— 雨は、春から庭への別れの涙 再び会えたなら 最後に ...",
+      "url": "https://www.youtube.com/watch?v=ZJOml_aMOIA",
+      "author": "忘却前夜【日本版公式】",
+      "engagement": 22,
+      "media_url": "https://i.ytimg.com/vi/ZJOml_aMOIA/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBlZ7OBo3JkmrwWomKILJBXlnUqkw",
+      "content_type": "image"
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-04T08:20:08.214254+00:00",
+  "archived_at": "2026-05-04T10:58:25.453746+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -198,6 +198,21 @@
       "review": "i need more people to play this game, its just amazing",
       "timestamp_created": 1777863846,
       "playtime_forever": 3282
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-04T10:03:52+00:00",
+      "lang": "schinese",
+      "title": "[正面] 目前感觉还是挺不错的，画风非常精美，福利也不错，很吸引人",
+      "summary": "目前感觉还是挺不错的，画风非常精美，福利也不错，很吸引人",
+      "url": "https://steamcommunity.com/profiles/76561199473376093/recommended/3052450",
+      "author": "76561199473376093",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "目前感觉还是挺不错的，画风非常精美，福利也不错，很吸引人",
+      "timestamp_created": 1777889032,
+      "playtime_forever": 451
     }
   ]
 }
