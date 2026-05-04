@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-04T01:53:02.558255+00:00",
+  "archived_at": "2026-05-04T05:28:10.330702+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 9,
   "items": [
     {
       "source": "bilibili",
@@ -21,6 +21,36 @@
         "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T04:19:13+00:00",
+      "lang": "zh",
+      "title": "老头1t健达奇趣蛋（这集没有奶龙了）",
+      "summary": "没有简介\n  └ 轻钰 (1赞): [花崎表情_天才][花崎表情_天才][花崎表情_天才]\n  └ 菜菜想要带带 (1赞): [小望的梦色瑰迹表情包_盯]\n  └ 幽缀 (1赞): 这集……神了",
+      "url": "https://www.bilibili.com/video/BV1L9RYBoEDe",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 40,
+      "media_url": "https://i1.hdslb.com/bfs/archive/9159f30b8f7d61ce8804a1c06e5649b05335bd53.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 36,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T04:19:13+00:00",
+      "lang": "zh",
+      "title": "老头1t健达奇趣蛋（这集没有奶龙了）",
+      "summary": "没有简介",
+      "url": "http://www.bilibili.com/video/av116514376124212",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 36,
+      "media_url": "//i1.hdslb.com/bfs/archive/9159f30b8f7d61ce8804a1c06e5649b05335bd53.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -80,6 +110,36 @@
       "author": "嘎啦嘎啦果",
       "engagement": 11,
       "media_url": "//i2.hdslb.com/bfs/archive/ddc35c347d2adbbe4c2642e263d3e821582ca926.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T04:25:45+00:00",
+      "lang": "zh",
+      "title": "忘却前夜",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV17XRYBtExd",
+      "author": "吃吃睡睡七言君",
+      "engagement": 3,
+      "media_url": "https://i0.hdslb.com/bfs/archive/65a6ee9af9fafd88c0b4caa14d1b6fcfbf7a4db5.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 3,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T04:25:45+00:00",
+      "lang": "zh",
+      "title": "忘却前夜",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116514392906679",
+      "author": "吃吃睡睡七言君",
+      "engagement": 3,
+      "media_url": "//i0.hdslb.com/bfs/archive/65a6ee9af9fafd88c0b4caa14d1b6fcfbf7a4db5.jpg",
       "content_type": "video"
     }
   ]

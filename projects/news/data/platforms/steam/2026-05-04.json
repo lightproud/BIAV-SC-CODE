@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-04T01:53:02.557297+00:00",
+  "archived_at": "2026-05-04T05:28:10.329767+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -183,6 +183,21 @@
       "review": "Ungewöhnlich, das Ismael für sich selbst spricht.",
       "timestamp_created": 1777843848,
       "playtime_forever": 130
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-04T03:04:06+00:00",
+      "lang": "english",
+      "title": "[正面] i need more people to play this game, its just ama...",
+      "summary": "i need more people to play this game, its just amazing",
+      "url": "https://steamcommunity.com/profiles/76561199076461453/recommended/3052450",
+      "author": "76561199076461453",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "i need more people to play this game, its just amazing",
+      "timestamp_created": 1777863846,
+      "playtime_forever": 3282
     }
   ]
 }
