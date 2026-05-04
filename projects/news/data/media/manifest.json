@@ -4276,6 +4276,13 @@
       "title": "4.12与4.27融灾425较常见配队汇总",
       "time": "2026-05-04T16:32:26+00:00",
       "downloaded_at": "2026-05-04T17:25:06.669517+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/0a42c6e0f7e15063aa5e0c592ff1410f3c0dd5be.jpg": {
+      "filename": "bilibili_5f005d5d077488e0.jpg",
+      "source": "bilibili",
+      "title": "流不完的泪为你",
+      "time": "2026-05-04T17:49:08+00:00",
+      "downloaded_at": "2026-05-04T19:16:10.550224+00:00"
     }
   },
   "failed": {
@@ -5998,6 +6005,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-04T17:25:06.970316+00:00"
+    },
+    "https://preview.redd.it/zsophhi5v5zg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=147d1eea89411a1d86201b901a111fba0f1bee96": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T19:16:10.896543+00:00"
+    },
+    "https://preview.redd.it/3ysh6rjyn5zg1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=f12be5668859cd2736172eb2db300204211b1fba": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T19:16:11.226479+00:00"
     }
   },
   "archived": []

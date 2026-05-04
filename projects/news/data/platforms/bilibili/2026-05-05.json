@@ -1,8 +1,8 @@
 {
   "date": "2026-05-05",
-  "archived_at": "2026-05-04T17:25:07.043344+00:00",
+  "archived_at": "2026-05-04T19:16:11.289990+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
     {
       "source": "bilibili",
@@ -63,6 +63,24 @@
       "engagement": 22,
       "media_url": "//i0.hdslb.com/bfs/archive/3dcf4e4056b40efc7e16198d01537b2f12a02365.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-04T17:49:08+00:00",
+      "lang": "zh",
+      "title": "流不完的泪为你",
+      "summary": "碎碎念",
+      "url": "https://www.bilibili.com/video/BV1L1RBBBEWp",
+      "author": "树吃芒果",
+      "engagement": 4,
+      "media_url": "https://i0.hdslb.com/bfs/archive/0a42c6e0f7e15063aa5e0c592ff1410f3c0dd5be.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 4,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     }
   ]
 }
