@@ -4220,6 +4220,62 @@
       "title": "这是一个一下午推完沙耶之歌的人产生的变化",
       "time": "2026-05-04T13:43:34+00:00",
       "downloaded_at": "2026-05-04T15:06:49.343315+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/a0571f08e863d08bd326f62ee7a47808a45d7313.jpg": {
+      "filename": "bilibili_3c1bc9a0613f395b.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】【女守密人cos】忘孝子のcp32一日游",
+      "time": "2026-05-04T14:33:25+00:00",
+      "downloaded_at": "2026-05-04T17:24:55.851854+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/d6491692d3097cd0b242a5fb71b74217b4f389c5.jpg": {
+      "filename": "bilibili_46109698eef64116.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】星辰篇第5章「织命剧场」剧情",
+      "time": "2026-05-03T22:31:30+00:00",
+      "downloaded_at": "2026-05-04T17:24:58.057557+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/ded531b8c2a2bf0701c6c22f478638da109672fc.jpg": {
+      "filename": "bilibili_59f8d23d980cd9fa.jpg",
+      "source": "bilibili",
+      "title": "出忘却前夜号",
+      "time": "2026-05-04T11:57:46+00:00",
+      "downloaded_at": "2026-05-04T17:24:59.711794+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/cd0560bb2c8cbbf5f90f37ae1836681e6f7bcd7d.jpg": {
+      "filename": "bilibili_1627cea8ec0d457a.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜~没尝试过的游戏风格，被安利到啦",
+      "time": "2026-05-04T05:46:18+00:00",
+      "downloaded_at": "2026-05-04T17:25:02.677549+00:00"
+    },
+    "https://i.ytimg.com/vi/V-o3KUHrwWk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDn1Lo3LK8vqb6-wDKhoyvT1Gtzhw": {
+      "filename": "youtube_e5271952b392725c.jpg",
+      "source": "youtube",
+      "title": "[Morimens] \"short\" story/reading stream of chapter 5.",
+      "time": "2026-05-04T04:21:46.867942+00:00",
+      "downloaded_at": "2026-05-04T17:25:03.656200+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/61349dbafb128cfdcaabef7aa84255997f91d39e.jpg": {
+      "filename": "bilibili_5c9febd67cacc549.jpg",
+      "source": "bilibili",
+      "title": "福塔1T3-5",
+      "time": "2026-05-04T15:46:16+00:00",
+      "downloaded_at": "2026-05-04T17:25:04.017479+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/ddef6aedafe8f55c383eff7c9ad824f728819589.jpg": {
+      "filename": "bilibili_fb40f2a09755c182.jpg",
+      "source": "bilibili",
+      "title": "4.27融灾配队推荐",
+      "time": "2026-05-04T16:32:43+00:00",
+      "downloaded_at": "2026-05-04T17:25:05.499672+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/3dcf4e4056b40efc7e16198d01537b2f12a02365.jpg": {
+      "filename": "bilibili_b486f638b94b8646.jpg",
+      "source": "bilibili",
+      "title": "4.12与4.27融灾425较常见配队汇总",
+      "time": "2026-05-04T16:32:26+00:00",
+      "downloaded_at": "2026-05-04T17:25:06.669517+00:00"
     }
   },
   "failed": {
@@ -5907,6 +5963,41 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-04T15:06:49.675422+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/d6491692d3097cd0b242a5fb71b74217b4f389c5.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T17:24:56.152729+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/a0571f08e863d08bd326f62ee7a47808a45d7313.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T17:24:58.358362+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/ded531b8c2a2bf0701c6c22f478638da109672fc.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T17:25:02.978347+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/cd0560bb2c8cbbf5f90f37ae1836681e6f7bcd7d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T17:25:03.279123+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/61349dbafb128cfdcaabef7aa84255997f91d39e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T17:25:04.318279+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/ddef6aedafe8f55c383eff7c9ad824f728819589.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T17:25:05.800503+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/3dcf4e4056b40efc7e16198d01537b2f12a02365.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T17:25:06.970316+00:00"
     }
   },
   "archived": []
