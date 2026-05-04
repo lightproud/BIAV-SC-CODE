@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-04T19:16:08.311046+00:00",
+  "collected_at": "2026-05-04T21:01:25.236238+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -20,18 +20,48 @@
     },
     {
       "source": "steam",
-      "time": "2026-05-03T19:57:22+00:00",
+      "time": "2026-05-04T19:59:40+00:00",
       "lang": "english",
-      "title": "[正面] Beautiful animation, well fleshed out characters,...",
-      "summary": "Beautiful animation, well fleshed out characters, and wonderful gameplay. The card game is stimulating and rewarding. \r\nBest of all, Morimens is VERY F2P friendly and allows you many chances to earn characters and other rewards.",
-      "url": "https://steamcommunity.com/profiles/76561198040309583/recommended/3052450",
-      "author": "76561198040309583",
-      "engagement": 1,
+      "title": "[正面] TL:DR Great story, nice and unique character desig...",
+      "summary": "TL:DR Great story, nice and unique character designs, good gameplay, aggravating gacha.\n\nAfter being massively disappointed in Chaos Zero Nightmare as it pivoted from a cosmic horror style gacha game, I found out about Morimens and gave it a shot.  As a lover to cosmic horror/Lovecratian Mythos, seeing stories that tie into entities such as The Goat with a Thousand Young, The Thing on the Mount, and The Pale Beast has been an absolute delight.  While some of the nods are a bit on the nose (Tawil and Tulu), for the most part they tend to take inspiration rather then outright take from the mythos.  Overall the story is very much the strong point of this game.\n\nThe game itself is quite good with the mechanics and how each character has a different \"realm\" which has a different playstyle with Chaos being more about enhancing other realms or with a full party enhancing your character the \"Keeper:, Aequor which is about generating tentacles to slowly ramp up damage making them weak at the start and very potent in longer fights, Caro which is about enhancing critical hit and damage making them very feast or famine, and Ultra which is all about stocking up cards so that at 5 cards you enter an \"Ultra\" space for a free turn and is by far the most complex realm to use.  You can combine characters from 2 realms and finding teams that work together can make for some silly combos.\n\nBiggest issue with the game that I have is it is extremely dupe heavy.  While the game is generous in that it pretty much throws pulls at you if you play regularly and much more so if you pay, many characters are iffy to useless until you get 1 or 2 dupes into them and doing so is... quite the task.  You get 1 \"free\" dupe a month to put towards any character you have and for the rest you gotta hope they are either a feature character or that the Standard banner, which lets you select a specific realm to pull from, takes pity on you.",
+      "url": "https://steamcommunity.com/profiles/76561197971334184/recommended/3052450",
+      "author": "76561197971334184",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "Beautiful animation, well fleshed out characters, and wonderful gameplay. The card game is stimulating and rewarding. \r\nBest of all, Morimens is VERY F2P friendly and allows you many chances to earn characters and other rewards.",
-      "timestamp_created": 1777838242,
-      "playtime_forever": 1268
+      "review": "TL:DR Great story, nice and unique character designs, good gameplay, aggravating gacha.\n\nAfter being massively disappointed in Chaos Zero Nightmare as it pivoted from a cosmic horror style gacha game, I found out about Morimens and gave it a shot.  As a lover to cosmic horror/Lovecratian Mythos, seeing stories that tie into entities such as The Goat with a Thousand Young, The Thing on the Mount, and The Pale Beast has been an absolute delight.  While some of the nods are a bit on the nose (Tawil and Tulu), for the most part they tend to take inspiration rather then outright take from the mythos.  Overall the story is very much the strong point of this game.\n\nThe game itself is quite good with the mechanics and how each character has a different \"realm\" which has a different playstyle with Chaos being more about enhancing other realms or with a full party enhancing your character the \"Keeper:, Aequor which is about generating tentacles to slowly ramp up damage making them weak at the start and very potent in longer fights, Caro which is about enhancing critical hit and damage making them very feast or famine, and Ultra which is all about stocking up cards so that at 5 cards you enter an \"Ultra\" space for a free turn and is by far the most complex realm to use.  You can combine characters from 2 realms and finding teams that work together can make for some silly combos.\n\nBiggest issue with the game that I have is it is extremely dupe heavy.  While the game is generous in that it pretty much throws pulls at you if you play regularly and much more so if you pay, many characters are iffy to useless until you get 1 or 2 dupes into them and doing so is... quite the task.  You get 1 \"free\" dupe a month to put towards any character you have and for the rest you gotta hope they are either a feature character or that the Standard banner, which lets you select a specific realm to pull from, takes pity on you.",
+      "timestamp_created": 1777924780,
+      "playtime_forever": 4703
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-04T19:52:53+00:00",
+      "lang": "english",
+      "title": "[正面] Really great story. Better than most GACHA games b...",
+      "summary": "Really great story. Better than most GACHA games by far.",
+      "url": "https://steamcommunity.com/profiles/76561198049088130/recommended/3052450",
+      "author": "76561198049088130",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Really great story. Better than most GACHA games by far.",
+      "timestamp_created": 1777924373,
+      "playtime_forever": 513
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-04T19:39:25+00:00",
+      "lang": "english",
+      "title": "[正面] Cool theme, fun gameplay",
+      "summary": "Cool theme, fun gameplay",
+      "url": "https://steamcommunity.com/profiles/76561198285856042/recommended/3052450",
+      "author": "76561198285856042",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Cool theme, fun gameplay",
+      "timestamp_created": 1777923565,
+      "playtime_forever": 602
     },
     {
       "source": "steam",
@@ -151,7 +181,7 @@
       "voted_up": true,
       "review": "Ungewöhnlich, das Ismael für sich selbst spricht.",
       "timestamp_created": 1777843848,
-      "playtime_forever": 340
+      "playtime_forever": 376
     }
   ]
 }
