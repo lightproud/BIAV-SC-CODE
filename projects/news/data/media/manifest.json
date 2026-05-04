@@ -4346,6 +4346,13 @@
       "title": "[DC] water_heart@🔸綜合討論: (附件/嵌入)",
       "time": "2026-05-04T08:08:58.279000+00:00",
       "downloaded_at": "2026-05-04T21:01:31.038819+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/bd429e6ad48db6ab6d8ceba34d4c2f4a4326fd15.jpg": {
+      "filename": "bilibili_475a8201f5c4237f.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 强大神国 暴打 融灾5-5大魔术师",
+      "time": "2026-05-04T08:53:00+00:00",
+      "downloaded_at": "2026-05-04T22:00:01.637583+00:00"
     }
   },
   "failed": {
@@ -6083,6 +6090,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-04T21:01:31.420534+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/bd429e6ad48db6ab6d8ceba34d4c2f4a4326fd15.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T22:00:01.938406+00:00"
     }
   },
   "archived": []
