@@ -1,8 +1,8 @@
 {
   "date": "2026-05-04",
-  "archived_at": "2026-05-04T12:21:48.651968+00:00",
+  "archived_at": "2026-05-04T15:06:49.740632+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -213,6 +213,21 @@
       "review": "目前感觉还是挺不错的，画风非常精美，福利也不错，很吸引人",
       "timestamp_created": 1777889032,
       "playtime_forever": 451
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-04T13:43:15+00:00",
+      "lang": "english",
+      "title": "[正面] I am so addicted to the atmosphere of Bloodborne t...",
+      "summary": "I am so addicted to the atmosphere of Bloodborne that I just search the \"Lovecraftian\" tag on Steam. And here we are.",
+      "url": "https://steamcommunity.com/profiles/76561199007468103/recommended/3052450",
+      "author": "76561199007468103",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I am so addicted to the atmosphere of Bloodborne that I just search the \"Lovecraftian\" tag on Steam. And here we are.",
+      "timestamp_created": 1777902195,
+      "playtime_forever": 755
     }
   ]
 }

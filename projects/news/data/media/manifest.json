@@ -4206,6 +4206,20 @@
       "title": "忘却前夜",
       "time": "2026-05-04T08:57:12+00:00",
       "downloaded_at": "2026-05-04T10:58:25.087484+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/5b6e99b61ea07ce053882cd4478d2862cb250c9c.jpg": {
+      "filename": "bilibili_7894f2b81637bfa0.jpg",
+      "source": "bilibili",
+      "title": "【个人喜好排名】入坑两年我最喜欢的二十部galgame",
+      "time": "2026-05-04T14:36:39+00:00",
+      "downloaded_at": "2026-05-04T15:06:48.901382+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/deb339d5120103fecb817bb2431c733d84e8ae07.jpg": {
+      "filename": "bilibili_5d490bd39d6bf02d.jpg",
+      "source": "bilibili",
+      "title": "这是一个一下午推完沙耶之歌的人产生的变化",
+      "time": "2026-05-04T13:43:34+00:00",
+      "downloaded_at": "2026-05-04T15:06:49.343315+00:00"
     }
   },
   "failed": {
@@ -5888,6 +5902,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-04T10:58:25.388286+00:00"
+    },
+    "https://preview.redd.it/tkgcb587j3zg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=bd63588db34afd505e4d3c69f1b0bf3b7186ee3e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-04T15:06:49.675422+00:00"
     }
   },
   "archived": []
