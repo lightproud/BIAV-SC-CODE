@@ -1,8 +1,8 @@
 {
   "date": "2026-05-05",
-  "archived_at": "2026-05-05T07:15:05.455757+00:00",
+  "archived_at": "2026-05-05T09:55:32.599767+00:00",
   "source": "bilibili",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "source": "bilibili",
@@ -19,6 +19,24 @@
         "play": 792,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-05T06:29:48+00:00",
+      "lang": "zh",
+      "title": "直到死亡将我们分开…（沙耶cos 微恐有色相反转",
+      "summary": "其实我觉得不恐怖 嗯\n  └ 哈基沙大玉 (1赞): 好堪喵\n  └ 一棵bamboo (1赞): 可爱[雨路同行-表情包_比心][雨路同行-表情包_比心]\n  └ 白足三叶蘑 (1赞): 能看到这样可爱的沙耶确实不恐怖",
+      "url": "https://www.bilibili.com/video/BV1JTRyBZEpE",
+      "author": "小兔初智齿",
+      "engagement": 140,
+      "media_url": "https://i2.hdslb.com/bfs/archive/eb9cde34ff6e035603484161565d2e73e5c2d47a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 134,
+        "comment_count": 6,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
