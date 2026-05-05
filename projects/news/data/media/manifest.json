@@ -4360,6 +4360,48 @@
       "title": "出cos还原角色声线——沙耶",
       "time": "2026-05-05T00:57:04+00:00",
       "downloaded_at": "2026-05-05T01:53:15.073100+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/bc2a81c4950b44d99902b1e11521f7bebc6580d6.jpg": {
+      "filename": "bilibili_7bf230a0a1822136.jpg",
+      "source": "bilibili",
+      "title": "游戏可以冷门，但不能猎奇",
+      "time": "2026-05-05T04:45:45+00:00",
+      "downloaded_at": "2026-05-05T04:56:28.788327+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/29e1b0ee377183b23886a7c7291df22f0f589f3b.jpg": {
+      "filename": "bilibili_1ba034a6e1321ef3.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】最强生存戈利亚？羊皮莫鲨3星0死抗通关星辰篇H5-11",
+      "time": "2026-05-05T03:19:38+00:00",
+      "downloaded_at": "2026-05-05T04:56:30.831055+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/2dc42844b918c2573437e180067e1ff51116bcd5.jpg": {
+      "filename": "bilibili_beeacd33aad7abd5.jpg",
+      "source": "bilibili",
+      "title": "我们都是肉做的",
+      "time": "2026-05-05T02:43:29+00:00",
+      "downloaded_at": "2026-05-05T04:56:32.187274+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/65d7065f4248d3e1c952407f7debf845412ba8ff.jpg": {
+      "filename": "bilibili_2d7ac80e574a181e.jpg",
+      "source": "bilibili",
+      "title": "百日速写day19沙耶之歌很实用",
+      "time": "2026-05-05T03:13:44+00:00",
+      "downloaded_at": "2026-05-05T04:56:33.379575+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/8fac63e8b678ecacc1eab85dcf4d6d5b821900c8.jpg": {
+      "filename": "bilibili_436a084218b9b176.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]部分回合内随机数研究",
+      "time": "2026-05-05T04:07:04+00:00",
+      "downloaded_at": "2026-05-05T04:56:34.533477+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/05/10/19/53/144385361_p0_square1200.jpg": {
+      "filename": "pixiv_7032fd409ae67168.jpg",
+      "source": "pixiv",
+      "title": "Untitled",
+      "time": "2026-05-05T10:19:53+09:00",
+      "downloaded_at": "2026-05-05T04:56:35.868662+00:00"
     }
   },
   "failed": {
@@ -6102,6 +6144,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-04T22:00:01.938406+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/29e1b0ee377183b23886a7c7291df22f0f589f3b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T04:56:31.131942+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/8fac63e8b678ecacc1eab85dcf4d6d5b821900c8.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T04:56:34.834318+00:00"
     }
   },
   "archived": []

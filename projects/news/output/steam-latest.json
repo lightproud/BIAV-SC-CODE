@@ -1,22 +1,37 @@
 {
-  "collected_at": "2026-05-05T01:53:13.407112+00:00",
+  "collected_at": "2026-05-05T04:56:27.022457+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
-      "time": "2026-05-04T03:04:06+00:00",
+      "time": "2026-05-05T03:44:17+00:00",
+      "lang": "schinese",
+      "title": "[正面] 超级好玩，福利又多",
+      "summary": "超级好玩，福利又多",
+      "url": "https://steamcommunity.com/profiles/76561198371287816/recommended/3052450",
+      "author": "76561198371287816",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "超级好玩，福利又多",
+      "timestamp_created": 1777952657,
+      "playtime_forever": 536
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-05T01:13:32+00:00",
       "lang": "english",
-      "title": "[正面] i need more people to play this game, its just ama...",
-      "summary": "i need more people to play this game, its just amazing",
-      "url": "https://steamcommunity.com/profiles/76561199076461453/recommended/3052450",
-      "author": "76561199076461453",
-      "engagement": 1,
+      "title": "[正面] very good yes. very entertaining yes. only if i do...",
+      "summary": "very good yes. very entertaining yes. only if i don't need dozens of dupes for one specific unit to function because biav, among their many other flaws, decide to cut off playtesting to keep costs low. it is what it is",
+      "url": "https://steamcommunity.com/profiles/76561199221728287/recommended/3052450",
+      "author": "76561199221728287",
+      "engagement": 0,
       "language": "english",
       "voted_up": true,
-      "review": "i need more people to play this game, its just amazing",
-      "timestamp_created": 1777863846,
-      "playtime_forever": 3282
+      "review": "very good yes. very entertaining yes. only if i don't need dozens of dupes for one specific unit to function because biav, among their many other flaws, decide to cut off playtesting to keep costs low. it is what it is",
+      "timestamp_created": 1777943612,
+      "playtime_forever": 6513
     },
     {
       "source": "steam",
@@ -46,7 +61,7 @@
       "voted_up": true,
       "review": "Really great story. Better than most GACHA games by far.",
       "timestamp_created": 1777924373,
-      "playtime_forever": 543
+      "playtime_forever": 610
     },
     {
       "source": "steam",
@@ -61,7 +76,7 @@
       "voted_up": true,
       "review": "Cool theme, fun gameplay",
       "timestamp_created": 1777923565,
-      "playtime_forever": 602
+      "playtime_forever": 619
     },
     {
       "source": "steam",
