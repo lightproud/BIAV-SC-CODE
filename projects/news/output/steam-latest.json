@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-05T13:11:53.474103+00:00",
+  "collected_at": "2026-05-05T15:42:51.033273+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 9,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-04T19:52:53+00:00",
+      "lang": "english",
+      "title": "[正面] Really great story. Better than most GACHA games b...",
+      "summary": "Really great story. Better than most GACHA games by far.",
+      "url": "https://steamcommunity.com/profiles/76561198049088130/recommended/3052450",
+      "author": "76561198049088130",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "Really great story. Better than most GACHA games by far.",
+      "timestamp_created": 1777924373,
+      "playtime_forever": 690
+    },
     {
       "source": "steam",
       "time": "2026-05-04T16:23:16+00:00",
@@ -76,7 +91,7 @@
       "voted_up": true,
       "review": "very good yes. very entertaining yes. only if i don't need dozens of dupes for one specific unit to function because biav, among their many other flaws, decide to cut off playtesting to keep costs low. it is what it is",
       "timestamp_created": 1777943612,
-      "playtime_forever": 6513
+      "playtime_forever": 6528
     },
     {
       "source": "steam",
@@ -91,22 +106,7 @@
       "voted_up": true,
       "review": "TL:DR Great story, nice and unique character designs, good gameplay, aggravating gacha.\n\nAfter being massively disappointed in Chaos Zero Nightmare as it pivoted from a cosmic horror style gacha game, I found out about Morimens and gave it a shot.  As a lover to cosmic horror/Lovecratian Mythos, seeing stories that tie into entities such as The Goat with a Thousand Young, The Thing on the Mount, and The Pale Beast has been an absolute delight.  While some of the nods are a bit on the nose (Tawil and Tulu), for the most part they tend to take inspiration rather then outright take from the mythos.  Overall the story is very much the strong point of this game.\n\nThe game itself is quite good with the mechanics and how each character has a different \"realm\" which has a different playstyle with Chaos being more about enhancing other realms or with a full party enhancing your character the \"Keeper:, Aequor which is about generating tentacles to slowly ramp up damage making them weak at the start and very potent in longer fights, Caro which is about enhancing critical hit and damage making them very feast or famine, and Ultra which is all about stocking up cards so that at 5 cards you enter an \"Ultra\" space for a free turn and is by far the most complex realm to use.  You can combine characters from 2 realms and finding teams that work together can make for some silly combos.\n\nBiggest issue with the game that I have is it is extremely dupe heavy.  While the game is generous in that it pretty much throws pulls at you if you play regularly and much more so if you pay, many characters are iffy to useless until you get 1 or 2 dupes into them and doing so is... quite the task.  You get 1 \"free\" dupe a month to put towards any character you have and for the rest you gotta hope they are either a feature character or that the Standard banner, which lets you select a specific realm to pull from, takes pity on you.",
       "timestamp_created": 1777924780,
-      "playtime_forever": 4747
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-04T19:52:53+00:00",
-      "lang": "english",
-      "title": "[正面] Really great story. Better than most GACHA games b...",
-      "summary": "Really great story. Better than most GACHA games by far.",
-      "url": "https://steamcommunity.com/profiles/76561198049088130/recommended/3052450",
-      "author": "76561198049088130",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Really great story. Better than most GACHA games by far.",
-      "timestamp_created": 1777924373,
-      "playtime_forever": 690
+      "playtime_forever": 4789
     },
     {
       "source": "steam",
@@ -137,51 +137,6 @@
       "review": "love card games like this, and the art is perfection. some story beats weren't to interesting to me but me personally. overall love it.",
       "timestamp_created": 1777910368,
       "playtime_forever": 705
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-04T14:10:19+00:00",
-      "lang": "english",
-      "title": "[正面] F2p friendly",
-      "summary": "F2p friendly",
-      "url": "https://steamcommunity.com/profiles/76561199285176132/recommended/3052450",
-      "author": "76561199285176132",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "F2p friendly",
-      "timestamp_created": 1777903819,
-      "playtime_forever": 453
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-04T14:06:18+00:00",
-      "lang": "english",
-      "title": "[正面] finally found the one, the divine gacha to change...",
-      "summary": "finally found the one, the divine gacha to change my mind on gacha games as a whole 😩",
-      "url": "https://steamcommunity.com/profiles/76561198077571870/recommended/3052450",
-      "author": "76561198077571870",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "finally found the one, the divine gacha to change my mind on gacha games as a whole 😩",
-      "timestamp_created": 1777903578,
-      "playtime_forever": 544
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-04T13:43:15+00:00",
-      "lang": "english",
-      "title": "[正面] I am so addicted to the atmosphere of Bloodborne t...",
-      "summary": "I am so addicted to the atmosphere of Bloodborne that I just search the \"Lovecraftian\" tag on Steam. And here we are.",
-      "url": "https://steamcommunity.com/profiles/76561199007468103/recommended/3052450",
-      "author": "76561199007468103",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I am so addicted to the atmosphere of Bloodborne that I just search the \"Lovecraftian\" tag on Steam. And here we are.",
-      "timestamp_created": 1777902195,
-      "playtime_forever": 755
     }
   ]
 }

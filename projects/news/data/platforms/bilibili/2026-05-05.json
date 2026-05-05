@@ -1,8 +1,8 @@
 {
   "date": "2026-05-05",
-  "archived_at": "2026-05-05T13:11:54.531465+00:00",
+  "archived_at": "2026-05-05T15:43:01.962832+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 21,
   "items": [
     {
       "source": "bilibili",
@@ -198,6 +198,72 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-05T15:24:33+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】图墨汀汀融灾禁区4-5一镜到底",
+      "summary": "太久没玩了打得有点糙，空间前没留灵感还没找到算力钥令少个缅因，爆发回合牌序有点问题应该先把逆流打完再刷牌库，演员时计还没回手逆流导致差点伤害\n数值目前还算够用，欺负弱一点的4-5没什么问题",
+      "url": "https://www.bilibili.com/video/BV1pERnBAEWq",
+      "author": "朝星-",
+      "engagement": 16,
+      "media_url": "https://i0.hdslb.com/bfs/archive/b5387ef9ed6a65114d4a89a7973e54243b3432ab.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 16,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-05T15:24:33+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】图墨汀汀融灾禁区4-5一镜到底",
+      "summary": "太久没玩了打得有点糙，空间前没留灵感还没找到算力钥令少个缅因，爆发回合牌序有点问题应该先把逆流打完再刷牌库，演员时计还没回手逆流导致差点伤害\n数值目前还算够用，欺负弱一点的4-5没什么问题",
+      "url": "http://www.bilibili.com/video/av116522647297681",
+      "author": "朝星-",
+      "engagement": 16,
+      "media_url": "//i0.hdslb.com/bfs/archive/b5387ef9ed6a65114d4a89a7973e54243b3432ab.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-05T11:21:39+00:00",
+      "lang": "zh",
+      "title": "刷了一天肉块终于看见美少女了",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV14LR1BGEoX",
+      "author": "咖啡锅盖",
+      "engagement": 15,
+      "media_url": "https://i2.hdslb.com/bfs/archive/92483449b4dd036de91da67e811b693eacfe0675.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 15,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-05T12:13:18+00:00",
+      "lang": "zh",
+      "title": "[沙耶之歌]ぼくらは肉でできている",
+      "summary": "-\n  └ 我是臭香皂 (0赞): 原创BV18TRwBZER3",
+      "url": "https://www.bilibili.com/video/BV1PHR1BMEw9",
+      "author": "我是臭香皂",
+      "engagement": 14,
+      "media_url": "https://i2.hdslb.com/bfs/archive/5c6e3b82915d0b6198101b8bbd0803c381d63545.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 13,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-05T04:07:04+00:00",
       "lang": "zh",
       "title": "[忘却前夜]部分回合内随机数研究",
@@ -236,6 +302,24 @@
       "author": "树吃芒果",
       "engagement": 4,
       "media_url": "https://i0.hdslb.com/bfs/archive/0a42c6e0f7e15063aa5e0c592ff1410f3c0dd5be.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 4,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-05T15:27:33+00:00",
+      "lang": "zh",
+      "title": "【百日绘】day15沙耶之歌",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV14gRnBBEuX",
+      "author": "koUkoo_K5",
+      "engagement": 4,
+      "media_url": "https://i2.hdslb.com/bfs/archive/b841f878b88147b41d042ec073cfeeb54f4bc7ee.jpg",
       "content_type": "image",
       "metadata": {
         "play": 4,
