@@ -572,9 +572,16 @@ class DiscordArchiver:
         Messages are stored in the *forum channel's* directory (not the thread's own dir),
         and each message is annotated with thread metadata (title, forum_channel_id).
         Returns count of newly archived messages.
+
+        Note: Discord's `/channels/{thread_id}/messages` endpoint does NOT include
+        the thread's starter message (the OP that opens the forum post). For forum
+        threads, the starter message ID equals the thread ID itself, and we must
+        explicitly fetch it via `/channels/{thread_id}/messages/{thread_id}` on
+        first pass. This is where Producer's Letter style content lives.
         """
         ch_key = f'thread:{thread_id}'
         stored_last_id = self._ch_state(ch_key).get('last_message_id', '0')
+        is_first_pass = (stored_last_id == '0')
 
         # Skip if the thread's last_message_id hasn't changed since our last fetch
         if api_last_message_id and api_last_message_id != '0' and stored_last_id >= api_last_message_id:
@@ -582,6 +589,30 @@ class DiscordArchiver:
 
         last_id = stored_last_id
         total = 0
+
+        # ── Fetch the starter message (only on first pass) ───────────────────
+        # Discord's normal /messages endpoint omits this; without this block, the
+        # OP of every forum post (Producer's Letter, official announcements,
+        # community-spotlight starters, etc) would never reach the archive.
+        if is_first_pass:
+            try:
+                starter = self._api(f'/channels/{thread_id}/messages/{thread_id}')
+                if isinstance(starter, dict) and starter.get('id'):
+                    slim = self._slim_message(starter)
+                    slim.update(thread_meta)
+                    slim['is_thread_starter'] = True
+                    try:
+                        ts = datetime.fromisoformat(slim['timestamp'].replace('Z', '+00:00'))
+                        date_str = ts.strftime('%Y-%m-%d')
+                    except (ValueError, TypeError):
+                        date_str = datetime.now(timezone.utc).strftime('%Y-%m-%d')
+                    self._write_msg(forum_channel_id, date_str, slim)
+                    self._update_daily_stats(slim, thread_meta.get('thread_title', ''))
+                    total += 1
+                    # Don't advance last_id past the starter — replies use the same
+                    # snowflake range, and `after={thread_id}` would skip them.
+            except Exception as e:
+                logger.debug(f'Forum thread {thread_id} starter fetch failed: {e}')
 
         while True:
             if self._is_time_up():

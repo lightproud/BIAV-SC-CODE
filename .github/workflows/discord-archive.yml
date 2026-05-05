@@ -51,6 +51,17 @@ jobs:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: python projects/news/scripts/discord_archiver.py
 
+      - name: Backfill forum thread starters (catches up legacy gap)
+        if: steps.mode.outputs.mode == 'incremental'
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          RUNTIME_BUDGET: '1500'
+        # Idempotent: tracks progress in state.forum_starter_backfill, skips
+        # already-completed threads, exits when budget hit. Runs once per day
+        # and naturally catches up any threads created before the
+        # _fetch_forum_thread starter-fetch patch landed.
+        run: python projects/news/scripts/backfill_forum_starters.py
+
       - name: Run monthly cleanup (archive old data to Releases)
         if: steps.mode.outputs.mode == 'monthly'
         env:
