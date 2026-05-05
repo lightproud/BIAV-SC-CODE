@@ -1,8 +1,8 @@
 {
   "date": "2026-05-06",
-  "archived_at": "2026-05-05T17:17:07.109958+00:00",
+  "archived_at": "2026-05-05T19:08:37.397043+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "source": "bilibili",
@@ -281,6 +281,24 @@
       "content_type": "image",
       "metadata": {
         "play": 16,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-05T17:52:55+00:00",
+      "lang": "zh",
+      "title": "saya",
+      "summary": "ins",
+      "url": "https://www.bilibili.com/video/BV1msRJBuEzW",
+      "author": "QUC1",
+      "engagement": 2,
+      "media_url": "https://i0.hdslb.com/bfs/archive/22b9939ef04d1775fb1012cb4ce309a5744020c8.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 2,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0

@@ -4479,6 +4479,20 @@
       "title": "Celeste",
       "time": "2026-05-06T01:14:21+09:00",
       "downloaded_at": "2026-05-05T17:17:07.040536+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/37a9bb63e4b50141d8220873c843cdf662652370.jpg": {
+      "filename": "bilibili_fdbcda68ad8310bb.jpg",
+      "source": "bilibili",
+      "title": "詹金1t融灾5-5一亿只鼠群未发射",
+      "time": "2026-05-05T13:27:00+00:00",
+      "downloaded_at": "2026-05-05T19:08:35.944458+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/22b9939ef04d1775fb1012cb4ce309a5744020c8.jpg": {
+      "filename": "bilibili_54fa7fd31e06acc1.jpg",
+      "source": "bilibili",
+      "title": "saya",
+      "time": "2026-05-05T17:52:55+00:00",
+      "downloaded_at": "2026-05-05T19:08:37.338413+00:00"
     }
   },
   "failed": {
@@ -6271,6 +6285,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-05T15:43:00.821743+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/37a9bb63e4b50141d8220873c843cdf662652370.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T19:08:36.245280+00:00"
     }
   },
   "archived": []
