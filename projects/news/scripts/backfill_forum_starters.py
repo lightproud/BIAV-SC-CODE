@@ -54,6 +54,14 @@ DATA_DIR = DISCORD_DATA_DIR
 RUNTIME_BUDGET = int(os.environ.get('RUNTIME_BUDGET', 25 * 60))  # default 25 min
 DRY_RUN = os.environ.get('DRY_RUN', '').lower() in ('1', 'true', 'yes')
 
+# Priority threads — process these first regardless of state.channels iteration order.
+# Defaults to the known-missing Producer's Letter so it lands on the next cron run.
+# Override with comma-separated ids: PRIORITY_THREAD_IDS="123,456,789"
+_DEFAULT_PRIORITY = '1470748188888797306'  # [Producer's Letter] You Saved Morimens (2026-04-14)
+PRIORITY_THREAD_IDS = [
+    s.strip() for s in os.environ.get('PRIORITY_THREAD_IDS', _DEFAULT_PRIORITY).split(',') if s.strip()
+]
+
 
 def load_state() -> dict:
     state_path = DATA_DIR / 'state.json'
@@ -105,6 +113,23 @@ def main():
     channels = state.get('channels', {})
     thread_keys = [k for k in channels.keys() if k.startswith('thread:')]
     pending = [k for k in thread_keys if k not in completed and k not in skipped]
+
+    # Move priority threads to the front of the queue, regardless of source.
+    # Inject any priority id not already in state.channels so we can backfill
+    # threads we know about but haven't seen yet (e.g. Producer's Letter).
+    if PRIORITY_THREAD_IDS:
+        priority_keys = [f'thread:{tid}' for tid in PRIORITY_THREAD_IDS]
+        pending_set = set(pending)
+        for pk in priority_keys:
+            if pk in completed or pk in skipped:
+                continue
+            if pk not in pending_set:
+                pending.insert(0, pk)
+                pending_set.add(pk)
+            else:
+                pending.remove(pk)
+                pending.insert(0, pk)
+        logger.info(f'Priority threads moved to front: {PRIORITY_THREAD_IDS}')
 
     logger.info(
         f'Forum starter backfill: {len(thread_keys)} threads total, '
