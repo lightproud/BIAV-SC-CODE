@@ -1,8 +1,8 @@
 {
   "date": "2026-05-05",
-  "archived_at": "2026-05-04T23:46:13.980463+00:00",
+  "archived_at": "2026-05-05T01:53:15.142565+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "source": "bilibili",
@@ -77,6 +77,24 @@
       "content_type": "image",
       "metadata": {
         "play": 4,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-05T00:57:04+00:00",
+      "lang": "zh",
+      "title": "出cos还原角色声线——沙耶",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1gnRkB3E9P",
+      "author": "ww比巴卜",
+      "engagement": 1,
+      "media_url": "https://i1.hdslb.com/bfs/archive/3d40212e8809e2244f7cf52b866ca6cc78e3bf4a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 0
