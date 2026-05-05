@@ -1,41 +1,44 @@
 {
   "date": "2026-05-04",
-  "messages": 12313,
+  "messages": 13110,
   "unique_authors": 358,
-  "reactions_total": 1074,
-  "attachments": 716,
+  "reactions_total": 1143,
+  "attachments": 787,
   "channel_activity": {
-    "🔸綜合討論": 3027,
-    "🔸阵容构建": 18,
+    "🔸綜合討論": 3058,
+    "🔸阵容构建": 19,
+    "🔸晒卡分享": 7,
+    "🔸日本語チャンネル": 1,
+    "🔸한국어-채팅방": 21,
+    "🔸русский-канал": 262,
+    "🔸canal-español": 327,
+    "🔸canal-português": 251,
+    "🔸ruang-obrolan-indonesia": 1240,
+    "🔸traphase": 243,
+    "🔸lore-chat": 153,
+    "🔸team-building": 215,
+    "🔸general-chat": 3534,
+    "🔸邀请码互助┊swap-invitation-codes": 8,
+    "🔸game-question": 1483,
+    "🔸机器人命令┊bot-commands": 43,
+    "氪金玩家和老玩家是否已经成为游戏前进的阻力？": 2,
+    "Agrippa Bug": 2,
+    "Small Aliemus bug with Xu's Enlighten 3 'Doubles the next \"Resonance\" effect'": 4,
+    "烏托邦帷幕無法解除卡牌封印": 3,
     "🔸剧情交流": 6,
-    "🔸晒卡分享": 4,
     "🔸欢乐梗图": 1,
     "🔸相位对弈": 28,
     "🔸课间休息闲聊": 98,
-    "🔸한국어-채팅방": 19,
     "🔸deutscher-chatraum": 36,
     "🔸chaîne-française": 5,
-    "🔸русский-канал": 48,
     "🔸phòng-chat-tiếng-việt": 1618,
-    "🔸canal-español": 314,
-    "🔸canal-português": 218,
-    "🔸ruang-obrolan-indonesia": 1221,
     "🔸ห้องสนทนาภาษาไทย": 279,
-    "🔸traphase": 212,
-    "🔸lore-chat": 141,
     "🔸频道建议┊server-suggestions": 2,
-    "🔸team-building": 211,
-    "🔸general-chat": 3407,
-    "🔸邀请码互助┊swap-invitation-codes": 6,
-    "🔸game-question": 1191,
-    "🔸机器人命令┊bot-commands": 40,
     "🔸erica-playground": 2,
     "堆图ing": 1,
     "建个随笔楼": 8,
     "【繪圖】放點摸魚": 25,
     "菜雞四小強玩家的抱怨之旅new": 3,
-    "Small Aliemus bug with Xu's Enlighten 3 'Doubles the next \"Resonance\" effect'": 1,
-    "烏托邦帷幕無法解除卡牌封印": 1,
     "相位是打算摆烂吗？": 14,
     "有考慮出其他排行榜嗎": 2,
     "Inconsistencies in the handbook reading order": 3,
@@ -69,6 +72,11 @@
     "Arc 2 team help": 3
   },
   "hourly_activity": {
+    "22": 190,
+    "23": 227,
+    "20": 71,
+    "21": 114,
+    "19": 274,
     "0": 265,
     "1": 422,
     "2": 795,
@@ -87,14 +95,12 @@
     "15": 756,
     "16": 586,
     "17": 325,
-    "19": 79,
     "18": 100
   },
   "message_types": {
-    "0": 8988,
-    "19": 3315,
-    "20": 7,
-    "4": 3
+    "19": 169,
+    "0": 627,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -104,6 +110,14 @@
       "author": "yusz",
       "reactions": 19,
       "channel": "Grand  Keeper Leonora"
+    },
+    {
+      "id": "1500991756257464412",
+      "channel_id": "1500991756257464412",
+      "content": "1，商店现在仅可以购买未溢出的命轮。\n      1）首先是这个改动为什么不在前瞻或者 “ 首次 ” 更新公告里面提及？如果提前告知了，玩家可以酌情考虑提前分解",
+      "author": "lurenjiao",
+      "reactions": 14,
+      "channel": "氪金玩家和老玩家是否已经成为游戏前进的阻力？"
     },
     {
       "id": "1500822132567969912",
@@ -248,14 +262,6 @@
       "author": "jmjmjm6667",
       "reactions": 6,
       "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1500711181231587328",
-      "channel_id": "1400750050208125010",
-      "content": "yes but make him addicted to abortions too so every time i put a baby in him and",
-      "author": "cqteiie",
-      "reactions": 6,
-      "channel": "🔸general-chat"
     }
   ]
 }

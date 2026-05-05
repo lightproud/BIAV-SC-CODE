@@ -1,11 +1,11 @@
 {
   "date": "2026-05-01",
-  "messages": 15710,
+  "messages": 20710,
   "unique_authors": 331,
-  "reactions_total": 1178,
-  "attachments": 784,
+  "reactions_total": 1692,
+  "attachments": 1026,
   "channel_activity": {
-    "🔸morimens-game-chat": 1312,
+    "🔸morimens-game-chat": 6312,
     "🔸綜合討論": 2080,
     "🔸阵容构建": 15,
     "🔸晒卡分享": 6,
@@ -69,34 +69,34 @@
     "1499715490224799825": 1
   },
   "hourly_activity": {
+    "5": 1068,
+    "6": 1061,
+    "7": 1002,
+    "8": 967,
+    "9": 929,
+    "10": 496,
+    "11": 1018,
+    "12": 1113,
+    "13": 1029,
+    "14": 1421,
+    "15": 1292,
+    "16": 1476,
+    "17": 1082,
+    "18": 994,
+    "19": 811,
+    "20": 711,
     "0": 518,
     "1": 502,
     "2": 609,
     "3": 968,
     "4": 1302,
-    "5": 775,
-    "19": 496,
-    "20": 235,
     "21": 152,
     "22": 57,
-    "23": 132,
-    "16": 958,
-    "17": 868,
-    "18": 857,
-    "6": 916,
-    "7": 883,
-    "8": 657,
-    "9": 667,
-    "10": 299,
-    "11": 462,
-    "12": 846,
-    "13": 820,
-    "14": 1089,
-    "15": 642
+    "23": 132
   },
   "message_types": {
-    "0": 992,
-    "19": 320
+    "19": 1771,
+    "0": 3229
   },
   "top_reacted_messages": [
     {
@@ -108,12 +108,52 @@
       "channel": "🔸lore-chat"
     },
     {
+      "id": "1499801122678767746",
+      "channel_id": "1170692781216378960",
+      "content": "Goliath was my first love, but Caecus is not far behind:\n\naqua rulez",
+      "author": "sterminiophoenix",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1499741093674356917",
+      "channel_id": "1170692781216378960",
+      "content": "I did the thingy too",
+      "author": "sparkling_moose_59074",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1499702810671972474",
       "channel_id": "1131839817982947429",
       "content": "終於有了",
       "author": "yusi4172",
       "reactions": 11,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1499740399906984046",
+      "channel_id": "1170692781216378960",
+      "content": "It is in mine",
+      "author": "heightsflingplane",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1499728700701413426",
+      "channel_id": "1170692781216378960",
+      "content": "I haven't been reading story at all",
+      "author": "heightsflingplane",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1499805636014112771",
+      "channel_id": "1170692781216378960",
+      "content": "jumpscare",
+      "author": "megidola.",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1499731243271720960",
@@ -148,12 +188,52 @@
       "channel": "Some passionate feedback on Casiah's 2.5.1 buffs"
     },
     {
+      "id": "1499739947802820628",
+      "channel_id": "1170692781216378960",
+      "content": "not sure if the right channel to post this but wasnt sure where else to share. c",
+      "author": "frozenpizza_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1499799485176611026",
+      "channel_id": "1170692781216378960",
+      "content": "Except for <@756514927870476519>",
+      "author": "._.aahh",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1499805795200794703",
+      "channel_id": "1170692781216378960",
+      "content": "What do you guys think the next unit is",
+      "author": "spooky_penguin_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1499769772093472839",
       "channel_id": "1499769772093472839",
       "content": "",
       "author": "sunstopshining",
       "reactions": 7,
       "channel": "Lotan🐳"
+    },
+    {
+      "id": "1499736806097293454",
+      "channel_id": "1170692781216378960",
+      "content": "<:GDoll_Inferno_serenity:1468257540809822302>",
+      "author": "chinkeeyong",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1499787010863403201",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "hycel0553",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1499613838029488159",
@@ -178,86 +258,6 @@
       "author": "heikwok",
       "reactions": 6,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1499732614280511689",
-      "channel_id": "1131839817982947429",
-      "content": "可以自己這樣穿<:capoo_GoodJob:1006827623298637865>",
-      "author": "nemu_s_t_a_r",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1499741174749991013",
-      "channel_id": "1131839817982947429",
-      "content": "~~栗子廚贏很久了只是不敢說~~",
-      "author": "yusi4172",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1499760022140485783",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "arr5721",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1499780653732859935",
-      "channel_id": "1131839817982947429",
-      "content": "玩你就好",
-      "author": "ernest_heart",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1499740497907028178",
-      "channel_id": "1174983699935277147",
-      "content": "",
-      "author": "elv_juan.carlos",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1499796033453035620",
-      "channel_id": "1174983699935277147",
-      "content": "靠煙灰缸補滿+4了",
-      "author": "pxld_6.1",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1499577967871787242",
-      "channel_id": "1300659603993923644",
-      "content": "<:GDoll_Inferno_serenity:1468257540809822302>",
-      "author": "mrmot347",
-      "reactions": 6,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1499609961528037487",
-      "channel_id": "1300659662311526512",
-      "content": "nice",
-      "author": "drakependragon",
-      "reactions": 6,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1499623123161714719",
-      "channel_id": "1170692781216378960",
-      "content": "WHAT?!?!?",
-      "author": "velvetmoon71",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1499856350434427012",
-      "channel_id": "1499407461122052176",
-      "content": "I love these Leigh changes, but she really does need more stats! My Leigh is alm",
-      "author": "thunderbrother",
-      "reactions": 5,
-      "channel": "Preview: V2.5.1 Caro Awakener Enhancement"
     }
   ]
 }
