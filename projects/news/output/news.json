@@ -1,22 +1,40 @@
 {
-  "updated_at": "2026-05-05T21:56:14.168244+00:00",
-  "summary": "我们都是肉做的；Discord 社区日报 (2026-05-05)；游戏可以冷门，但不能猎奇；【忘却前夜】触手拍拍乐，图鲁单C极其恐怖.......；【忘却前夜】触手拍拍乐，图鲁单C极其恐怖.......。",
-  "sources_run": 1224,
+  "updated_at": "2026-05-05T22:48:26.063599+00:00",
+  "summary": "【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇；我们都是肉做的；【忘卻前夜】重返未來1999？不對！是忘卻前夜！禮包碼兌換！；Discord 社区日报 (2026-05-05)；[The Eve of Oblivion] Oh, this。",
+  "sources_run": 1225,
   "news": [
     {
+      "title": "【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃",
+      "summary": "[2y ago] 遊戲內營造的詭異殘酷的氛圍真的會讓人毛骨悚然呢！   喜歡克蘇魯題材的肉肉不要錯過這款遊戲洛！ 禁忌卡牌構築手遊《忘卻 ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696947+00:00",
+      "url": "https://www.youtube.com/watch?v=BomtFzUb12M",
+      "engagement": 38454,
+      "is_hot": true,
+      "author": "璐洛洛 Ruroro【人造人Vtuber】",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/BomtFzUb12M/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA__vo9XU1i-8SMkKg9IqqRgPAvLQ",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "我们都是肉做的",
-      "summary": "模仿UID:3691008680265814\n  └ 我是稀饭你好 (225赞): 刷了一天肉块终于刷到美少女了[惊喜]\n  └ 名曰鸽子 (126赞): 想问一下是授权了仿吗_(:з」∠)_\n  └ 巴斯考_Oschmann (21赞): 沙耶的造型真的是ACG史上最成功的设计之一[东方红与黑_看看]",
+      "summary": "模仿UID:3691008680265814\n  └ 我是稀饭你好 (230赞): 刷了一天肉块终于刷到美少女了[惊喜]\n  └ 名曰鸽子 (127赞): 想问一下是授权了仿吗_(:з」∠)_\n  └ 巴斯考_Oschmann (25赞): 沙耶的造型真的是ACG史上最成功的设计之一[东方红与黑_看看]",
       "source": "bilibili",
       "time": "2026-05-05T02:43:29+00:00",
       "url": "https://www.bilibili.com/video/BV1BKRkBDESv",
-      "engagement": 23590,
+      "engagement": 23913,
       "is_hot": true,
       "author": "i人出租屋",
       "tags": [
         "同人·手书"
       ],
       "metadata": {
-        "play": 23529,
+        "play": 23852,
         "comment_count": 61,
         "comments_fetched": 3,
         "danmaku": 5
@@ -25,6 +43,24 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "【忘卻前夜】重返未來1999？不對！是忘卻前夜！禮包碼兌換！T0角色隊伍組合！超少見克蘇魯策略卡牌遊戲！",
+      "summary": "[2y ago] 大家好我是歐昊喜歡我的影片可以幫我按喜歡與訂閱我唷有問題也歡迎大家留言感謝大家LDSpace模擬器 ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696931+00:00",
+      "url": "https://www.youtube.com/watch?v=37fhxtEUMIM",
+      "engagement": 16295,
+      "is_hot": true,
+      "author": "歐昊",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/37fhxtEUMIM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCHxBJh287BpFoNLIzuq2ThapmWaw",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "title": "Discord 社区日报 (2026-05-05)",
@@ -43,19 +79,91 @@
       "platform_region": "global"
     },
     {
+      "title": "[The Eve of Oblivion] Oh, this one won't sell! [Smartphone Game Review]",
+      "summary": "[7mo ago] This is a review of \"Eve of Oblivion,\" a combination of a Spire-style deck-building roguelike and a chapter-based smartphone ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696939+00:00",
+      "url": "https://www.youtube.com/watch?v=7yoi1NyxUHo",
+      "engagement": 9369,
+      "is_hot": true,
+      "author": "あそぶの最新スマホゲームレビュー(中辛)",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/7yoi1NyxUHo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDha4Az8vbq8k5-Ptf8Y8NbUCwOjw",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "忘卻前夜 | Morimens OST I - Through the Silver Gate",
+      "summary": "[1y ago] The messenger with six silver wings descend to the Black Pool through the Door of Existence, bringing primordial guidance and ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.697002+00:00",
+      "url": "https://www.youtube.com/watch?v=hFkVz12KqDY",
+      "engagement": 9051,
+      "is_hot": true,
+      "author": "bonito",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/hFkVz12KqDY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBi2Lduk__Yo7DLlapM8RZQWh0lQA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘卻前夜】半週年入坑指南 組隊的基本概念",
+      "summary": "[1y ago] 忘卻前夜#忘卻前夜攻略這是半週年入坑指南的第二期恆燐發現有很多小萌新對組隊有一些小問題所以就出一部短短的影片來說明下一 ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696968+00:00",
+      "url": "https://www.youtube.com/watch?v=d89k4tsh7dM",
+      "engagement": 3581,
+      "is_hot": false,
+      "author": "恆燐",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/d89k4tsh7dM/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBIjMH56dowen-bzxxIsnAlXBFJWA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "忘却前夜丨V2.4 PV——「永世虚妄巡礼」（CV：能登麻美子）",
+      "summary": "[5mo ago] 睡呀睡，海的小宝贝。” “你的摇篮是黑色的月亮，把群星吞进梦乡……” ✦ 诞妄·墨菲CV：能登麻美子#Morimens #忘卻前夜#誕妄墨 ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696995+00:00",
+      "url": "https://www.youtube.com/watch?v=FE1S6a6GPwc",
+      "engagement": 3453,
+      "is_hot": false,
+      "author": "Morimens",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/FE1S6a6GPwc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCGGpRf098cozzvXhR2xfalMFzL7g",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "游戏可以冷门，但不能猎奇",
       "summary": "-\n  └ 偶hi優 (1赞): 不知道該羨慕哪個\n  └ 倾首傀儡-尔雅 (1赞): 不懂就问，沙耶为什么常态是一团肉啊？被击倒才恢复。[思考]\n  └ 我是里维的狗 (0赞): 沙耶不是除了低温都不怕吗",
       "source": "bilibili",
       "time": "2026-05-05T04:45:45+00:00",
       "url": "https://www.bilibili.com/video/BV1DfR6BiERL",
-      "engagement": 2408,
+      "engagement": 2458,
       "is_hot": false,
       "author": "吾剑亦汝之剑",
       "tags": [
         "Mugen"
       ],
       "metadata": {
-        "play": 2404,
+        "play": 2454,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
@@ -66,20 +174,92 @@
       "platform_region": "cn"
     },
     {
+      "title": "忘却前夜×沙耶之歌 联动预告",
+      "summary": "[1mo ago] 梦的碎片随风而至.",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.697023+00:00",
+      "url": "https://www.youtube.com/watch?v=9EiDmvbNaWY",
+      "engagement": 2396,
+      "is_hot": false,
+      "author": "Morimens",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/9EiDmvbNaWY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAgOWV36pfKxCKRFiPOYA4tpZPSxw",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘卻前夜】隊伍太多了！多給恆燐幾分鐘 我們來好好聊聊羊媽的隊伍推薦",
+      "summary": "[1y ago] 忘卻前夜#忘卻前夜攻略繼續來講羊媽的組隊部分這次把隊伍的部分補齊！ 如果有什麼想法都可以在留言區告訴恆燐！ 另外感謝科目 ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.697017+00:00",
+      "url": "https://www.youtube.com/watch?v=5bo7iFeZSfE",
+      "engagement": 2308,
+      "is_hot": false,
+      "author": "恆燐",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/5bo7iFeZSfE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACqjIIndKN1b3IEf0RZ2_DwAewPw",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘卻前夜】彌一刀 Arc2.3-10葬骸之主 Miryam one punch #morimens",
+      "summary": "[9mo ago] 打完才發現這是普通難度，我破防了。 After I finished playing, I realized that this was normal difficulty, I was crushed. 彌利亞姆星天 ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696988+00:00",
+      "url": "https://www.youtube.com/watch?v=KPaSV30cO54",
+      "engagement": 1174,
+      "is_hot": false,
+      "author": "Ernest艾恩斯特",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/KPaSV30cO54/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDM2PJokpesTJh_oaZjUhyPFUXUtA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘卻前夜】杜勒賽因的詳細解析！讓坐在餐桌上的恆燐跟你聊聊！技能解說/啟靈/命輪推薦/密契推薦/組隊攻略！",
+      "summary": "[9mo ago] 忘卻前夜#克蘇魯神話#莫爾迪基安生命靠自相殘食生存正在殘食生命的我某時也會被生命殘食要是我吃起來很美味那真是再好不過了 ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696961+00:00",
+      "url": "https://www.youtube.com/watch?v=K4ibslN8Mus",
+      "engagement": 1105,
+      "is_hot": false,
+      "author": "恆燐",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/K4ibslN8Mus/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDqawrdN-jEbZsYLBgtu1t_WYKVZg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "【忘却前夜】触手拍拍乐，图鲁单C极其恐怖.......",
-      "summary": "└ 暮知藏 (6赞): 冷知识：不是没有其他输出型就可以叫单c[傲娇]\n  └ motantan (1赞): 低配不能玩吧？最少多少能达到这个效果？\n  └ 羽仙璃音 (0赞): tv起码打了一半我说[doge]",
+      "summary": "└ 暮知藏 (6赞): 冷知识：不是没有其他输出型就可以叫单c[傲娇]\n  └ 抱着狗狗不敢说话 (0赞): 没看懂 为啥一个卡会噼里啪啦打那么久 不是秃噜4费 难道是开大就自动送一轮触手攻击？\n  └ motantan (1赞): 低配不能玩吧？最少多少能达到这个效果？",
       "source": "bilibili",
       "time": "2026-05-05T10:52:50+00:00",
       "url": "https://www.bilibili.com/video/BV18DR1B7ENL",
-      "engagement": 836,
+      "engagement": 853,
       "is_hot": false,
       "author": "金发女人丨型",
       "tags": [
         "手机游戏"
       ],
       "metadata": {
-        "play": 822,
-        "comment_count": 14,
+        "play": 838,
+        "comment_count": 15,
         "comments_fetched": 3,
         "danmaku": 0
       },
@@ -94,7 +274,7 @@
       "source": "bilibili",
       "time": "2026-05-05T10:52:50+00:00",
       "url": "http://www.bilibili.com/video/av116521573554406",
-      "engagement": 822,
+      "engagement": 839,
       "is_hot": false,
       "author": "金发女人丨型",
       "tags": [
@@ -106,19 +286,37 @@
       "content_type": "video"
     },
     {
+      "title": "【忘卻前夜】神國打擊隊 Arc2.H3-10葬骸之主 三星 Lemuria Strike team #morimens",
+      "summary": "[5mo ago] 聽我說，基傷才是神國正軌啊Listen, base damage is the right way to go for Lemuria! 誕妄•墨菲安眠隱密榨取戈利亞鎖鏈扭曲荒原彌 ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696920+00:00",
+      "url": "https://www.youtube.com/watch?v=CaW23Ewkjfs",
+      "engagement": 786,
+      "is_hot": false,
+      "author": "Ernest艾恩斯特",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/CaW23Ewkjfs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwZ8rXRcxTuWt7N1whnA34RjCvwg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "【忘却前夜】最强生存戈利亚？羊皮莫鲨3星0死抗通关星辰篇H5-11",
       "summary": "-\n  └ 嘎啦嘎啦果 (1赞): 只是为了凹0死抗成就，最优解应该是入药莫丝，另外三个埋骨地。\n一觉皮克曼二觉羊妈，为了补buff可以三觉莫丝，不觉鲨鱼。\n繁育尽量给到莫丝2和鲨鱼1，智识随便，欢愉是救急（赌特殊牌）用，所以二阶段把它给到随便谁的打防上。\n所有回合都不要贪输出，保证莫丝三个队友每回合尽量开大就好。越贪输出越贪牌打得就越难受，尤其一阶段，牌变红了就停手不要出了。小蜘蛛会给牌库塞垃圾症状卡、给牌上打出就受到几百伤害的debuff、还会给你上毒，如果一回合打不掉的话尽量降力让小蜘蛛上的毒少一点。\n双子黑和双子白是为了应对提线木偶的自动出牌，防止key牌被强制打出，因为关键回合我们还是需要提线木偶来挽救局势。\n莫丝的大不是主要打输出的，一阶段加永久精通顺便提高吞噬盾和静海盾，二阶段清对面50加固再让队友开大。\n羊妈一阶段复制莫丝2费或者鲨鱼开大出的2费来补伤害，2阶段复制自己和皮克曼的2费来给全队补狂气。\n皮克曼尽量拿牌，卡掉胚胎也不要紧，补伤害的时候才拿造物。\n鲨鱼清小怪补伤害，开大一般都选25狂的那个buff，可以刻意爆牌只留一张衍生打击在手上，方便清流血。\n  └ 虚假的白板 (0赞): up我问下，为啥boss上的流血回合结束会消掉啊，有什么机制吗\n  └ 嘎啦嘎啦果 (0赞): 道中伤害是够的，最后留一只小蜘蛛做状态",
       "source": "bilibili",
       "time": "2026-05-05T03:19:38+00:00",
       "url": "https://www.bilibili.com/video/BV1R8RrBLE2s",
-      "engagement": 565,
+      "engagement": 571,
       "is_hot": false,
       "author": "嘎啦嘎啦果",
       "tags": [
         "日常"
       ],
       "metadata": {
-        "play": 558,
+        "play": 564,
         "comment_count": 7,
         "comments_fetched": 3,
         "danmaku": 0
@@ -134,7 +332,7 @@
       "source": "bilibili",
       "time": "2026-05-05T03:19:38+00:00",
       "url": "http://www.bilibili.com/video/av116519795229821",
-      "engagement": 558,
+      "engagement": 564,
       "is_hot": false,
       "author": "嘎啦嘎啦果",
       "tags": [
@@ -151,14 +349,14 @@
       "source": "bilibili",
       "time": "2026-05-05T04:07:04+00:00",
       "url": "https://www.bilibili.com/video/BV1YqRrBrE5H",
-      "engagement": 525,
+      "engagement": 530,
       "is_hot": false,
       "author": "陶醉2333",
       "tags": [
         "校园学习"
       ],
       "metadata": {
-        "play": 522,
+        "play": 527,
         "comment_count": 3,
         "comments_fetched": 2,
         "danmaku": 0
@@ -174,7 +372,7 @@
       "source": "bilibili",
       "time": "2026-05-05T04:07:04+00:00",
       "url": "http://www.bilibili.com/video/av116519979916250",
-      "engagement": 523,
+      "engagement": 527,
       "is_hot": false,
       "author": "陶醉2333",
       "tags": [
@@ -191,14 +389,14 @@
       "source": "bilibili",
       "time": "2026-05-05T03:13:44+00:00",
       "url": "https://www.bilibili.com/video/BV1ehRrByEQS",
-      "engagement": 506,
+      "engagement": 510,
       "is_hot": false,
       "author": "kakaa正圆艺术",
       "tags": [
         "绘画"
       ],
       "metadata": {
-        "play": 502,
+        "play": 506,
         "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
@@ -209,19 +407,37 @@
       "platform_region": "cn"
     },
     {
+      "title": "【忘卻前夜】神國毒隊 Arc2.H4-10永恆面紗 三星 Lemuria poison team #morimens",
+      "summary": "[5mo ago] 誕妄•墨菲黑暗隱密榨取彌利亞姆虔誠隕日荒原法洛思暴雨腐朽荒原熔燬•朵爾虛無演算荒原#忘卻前夜#morimens.",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696975+00:00",
+      "url": "https://www.youtube.com/watch?v=73Rqnv8zpLs",
+      "engagement": 453,
+      "is_hot": false,
+      "author": "Ernest艾恩斯特",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/73Rqnv8zpLs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3bDZe-YRxxphFFKDa-zFVliI-NQ",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "直到死亡将我们分开…（沙耶cos 微恐有色相反转",
       "summary": "其实我觉得不恐怖 嗯\n  └ GSYTOUN (4赞): 可爱，遂赏一币[妙啊]\n  └ 请问真菌要上早八吗 (2赞): 好看[大笑]\n  └ 白足三叶蘑 (2赞): 能看到这样可爱的沙耶确实不恐怖",
       "source": "bilibili",
       "time": "2026-05-05T06:29:48+00:00",
       "url": "https://www.bilibili.com/video/BV1JTRyBZEpE",
-      "engagement": 425,
+      "engagement": 431,
       "is_hot": false,
       "author": "小兔初智齿",
       "tags": [
         "仿妆cos"
       ],
       "metadata": {
-        "play": 411,
+        "play": 417,
         "comment_count": 14,
         "comments_fetched": 3,
         "danmaku": 0
@@ -232,19 +448,91 @@
       "platform_region": "cn"
     },
     {
+      "title": "【忘卻前夜】超海水船 Arc2.H3-10葬骸之主 三星 Ultra-Aequor Corpo-Aurita #morimens",
+      "summary": "[6mo ago] 卡茜亞的靈塑對餘波隊有提升嗎？感覺是有的。 餘波隊需要這個提升嗎？感覺是不需要的。 Dose Casia' shape benefits the ...",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696954+00:00",
+      "url": "https://www.youtube.com/watch?v=9NgWYuP9HEY",
+      "engagement": 408,
+      "is_hot": false,
+      "author": "Ernest艾恩斯特",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/9NgWYuP9HEY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBjIdxC_fA9RXyd6pEHZpXxQxHQsA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘卻前夜】血海男團 第47期融災禁區 5-5 Caro-Aequor Boy Band #Morimens",
+      "summary": "[5mo ago] 戈利亞安息巨刃紅悸薩爾瓦多神言靈魂二律皮克曼極夜悖謬埋骨泰旖絲慈悲痛楚榨取#忘卻前夜#morimens.",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696982+00:00",
+      "url": "https://www.youtube.com/watch?v=3nALcvwdVz4",
+      "engagement": 338,
+      "is_hot": false,
+      "author": "Ernest艾恩斯特",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/3nALcvwdVz4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCHONExDm6woduCtci-1gCXasDHxQ",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "【忘卻前夜/粉絲點名】神國墨主C Arc1.H9-11蚍蜉 三星 Lemuria GMorphy dps #morimens",
+      "summary": "[5mo ago] 誕妄•墨菲黑暗隱密榨取彌利亞姆虔誠演算有機戈利亞巨人暴食紅悸凱刻斯靈魂跨越無垢#忘卻前夜#morimens #fanpick.",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.696891+00:00",
+      "url": "https://www.youtube.com/watch?v=RAzQFyeIzyQ",
+      "engagement": 308,
+      "is_hot": false,
+      "author": "Ernest艾恩斯特",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/RAzQFyeIzyQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvYdbT16vK-8fJIysyBZiCqpnMZw",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "忘卻前夜 幻夢深潛_43200 「沉淵者」_「移湧」 地瓜醫生 混沌超維 #忘卻前夜 #morimens",
+      "summary": "[7mo ago] 幻夢深潛#混沌超維#忘卻前夜#morimens.",
+      "source": "youtube",
+      "time": "2026-05-05T22:45:33.697009+00:00",
+      "url": "https://www.youtube.com/watch?v=ArGNulXbHuo",
+      "engagement": 187,
+      "is_hot": false,
+      "author": "瑪爾",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/ArGNulXbHuo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGTvyJvVNGRgdY0e6b2EHHrvlkQA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "【忘却前夜】图墨汀汀融灾禁区4-5一镜到底",
       "summary": "太久没玩了打得有点糙，空间前没留灵感还没找到算力钥令少个缅因，爆发回合牌序有点问题应该先把逆流打完再刷牌库，演员时计还没回手逆流导致差点伤害\n数值目前还算够用，欺负弱一点的4-5没什么问题\n  └ 梦依流苏 (0赞): 是最爱学习的涂抹亭亭[香奈美·追寻那道光 应援装扮_mvp]\n  └ 烟已归 (0赞): 有点东西！\n  └ 步饷罔了 (0赞): 话说带大蜘蛛双发号令有说法吗",
       "source": "bilibili",
       "time": "2026-05-05T15:24:33+00:00",
       "url": "https://www.bilibili.com/video/BV1pERnBAEWq",
-      "engagement": 138,
+      "engagement": 145,
       "is_hot": false,
       "author": "朝星-",
       "tags": [
         "手机游戏"
       ],
       "metadata": {
-        "play": 135,
+        "play": 142,
         "comment_count": 3,
         "comments_fetched": 3,
         "danmaku": 1
@@ -253,6 +541,23 @@
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "【忘却前夜】图墨汀汀融灾禁区4-5一镜到底",
+      "summary": "太久没玩了打得有点糙，空间前没留灵感还没找到算力钥令少个缅因，爆发回合牌序有点问题应该先把逆流打完再刷牌库，演员时计还没回手逆流导致差点伤害\n数值目前还算够用，欺负弱一点的4-5没什么问题",
+      "source": "bilibili",
+      "time": "2026-05-05T15:24:33+00:00",
+      "url": "http://www.bilibili.com/video/av116522647297681",
+      "engagement": 143,
+      "is_hot": false,
+      "author": "朝星-",
+      "tags": [
+        "手机游戏"
+      ],
+      "lang": "zh",
+      "platform_region": "cn",
+      "media_url": "//i0.hdslb.com/bfs/archive/b5387ef9ed6a65114d4a89a7973e54243b3432ab.jpg",
+      "content_type": "video"
     },
     {
       "title": "出cos还原角色声线——沙耶",
@@ -278,36 +583,19 @@
       "platform_region": "cn"
     },
     {
-      "title": "【忘却前夜】图墨汀汀融灾禁区4-5一镜到底",
-      "summary": "太久没玩了打得有点糙，空间前没留灵感还没找到算力钥令少个缅因，爆发回合牌序有点问题应该先把逆流打完再刷牌库，演员时计还没回手逆流导致差点伤害\n数值目前还算够用，欺负弱一点的4-5没什么问题",
-      "source": "bilibili",
-      "time": "2026-05-05T15:24:33+00:00",
-      "url": "http://www.bilibili.com/video/av116522647297681",
-      "engagement": 136,
-      "is_hot": false,
-      "author": "朝星-",
-      "tags": [
-        "手机游戏"
-      ],
-      "lang": "zh",
-      "platform_region": "cn",
-      "media_url": "//i0.hdslb.com/bfs/archive/b5387ef9ed6a65114d4a89a7973e54243b3432ab.jpg",
-      "content_type": "video"
-    },
-    {
       "title": "詹金1t融灾5-5一亿只鼠群未发射",
       "summary": "道中开大就秒强如怪物\n  └ 合十___ (1赞): 来支持了[FGO_耶]\n  └ 1236小凯子 (0赞): 吓哭了",
       "source": "bilibili",
       "time": "2026-05-05T13:27:00+00:00",
       "url": "https://www.bilibili.com/video/BV1GpRyBmEGy",
-      "engagement": 129,
+      "engagement": 133,
       "is_hot": false,
       "author": "外星昆布鼠",
       "tags": [
         "桌游棋牌"
       ],
       "metadata": {
-        "play": 125,
+        "play": 129,
         "comment_count": 4,
         "comments_fetched": 2,
         "danmaku": 0
@@ -323,7 +611,7 @@
       "source": "bilibili",
       "time": "2026-05-05T13:27:00+00:00",
       "url": "http://www.bilibili.com/video/av116522194311704",
-      "engagement": 125,
+      "engagement": 129,
       "is_hot": false,
       "author": "外星昆布鼠",
       "tags": [
@@ -436,6 +724,29 @@
       "platform_region": "global"
     },
     {
+      "title": "【百日绘】day15沙耶之歌",
+      "summary": "└ You0_ (1赞): 美丽的美少女",
+      "source": "bilibili",
+      "time": "2026-05-05T15:27:33+00:00",
+      "url": "https://www.bilibili.com/video/BV14gRnBBEuX",
+      "engagement": 33,
+      "is_hot": false,
+      "author": "koUkoo_K5",
+      "tags": [
+        "绘画"
+      ],
+      "metadata": {
+        "play": 31,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/b841f878b88147b41d042ec073cfeeb54f4bc7ee.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "[沙耶之歌]ぼくらは肉でできている",
       "summary": "-\n  └ 我是臭香皂 (0赞): 原创BV18TRwBZER3\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]\n  └ 哈基沙大玉 (0赞): 可爱喵",
       "source": "bilibili",
@@ -454,29 +765,6 @@
         "danmaku": 0
       },
       "media_url": "https://i2.hdslb.com/bfs/archive/5c6e3b82915d0b6198101b8bbd0803c381d63545.jpg",
-      "content_type": "image",
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "【百日绘】day15沙耶之歌",
-      "summary": "└ You0_ (1赞): 美丽的美少女",
-      "source": "bilibili",
-      "time": "2026-05-05T15:27:33+00:00",
-      "url": "https://www.bilibili.com/video/BV14gRnBBEuX",
-      "engagement": 30,
-      "is_hot": false,
-      "author": "koUkoo_K5",
-      "tags": [
-        "绘画"
-      ],
-      "metadata": {
-        "play": 28,
-        "comment_count": 2,
-        "comments_fetched": 1,
-        "danmaku": 0
-      },
-      "media_url": "https://i2.hdslb.com/bfs/archive/b841f878b88147b41d042ec073cfeeb54f4bc7ee.jpg",
       "content_type": "image",
       "lang": "zh",
       "platform_region": "cn"
@@ -659,6 +947,29 @@
       "platform_region": "global"
     },
     {
+      "title": "刷了一天肉块终于看见美少女了",
+      "summary": "",
+      "source": "bilibili",
+      "time": "2026-05-05T11:21:39+00:00",
+      "url": "https://www.bilibili.com/video/BV14LR1BGEoX",
+      "engagement": 21,
+      "is_hot": false,
+      "author": "咖啡锅盖",
+      "tags": [
+        "日常"
+      ],
+      "metadata": {
+        "play": 21,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      },
+      "media_url": "https://i2.hdslb.com/bfs/archive/92483449b4dd036de91da67e811b693eacfe0675.jpg",
+      "content_type": "image",
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "[DC] peter191974@🔸綜合討論: 而且我不想看男角色的狂热繁衍剧情",
       "summary": "而且我不想看男角色的狂热繁衍剧情\n  └ sayo.0320:  [附件: IMG_20260505_132244_064.jpg]",
       "source": "discord",
@@ -703,29 +1014,6 @@
       },
       "lang": "",
       "platform_region": "global"
-    },
-    {
-      "title": "刷了一天肉块终于看见美少女了",
-      "summary": "",
-      "source": "bilibili",
-      "time": "2026-05-05T11:21:39+00:00",
-      "url": "https://www.bilibili.com/video/BV14LR1BGEoX",
-      "engagement": 19,
-      "is_hot": false,
-      "author": "咖啡锅盖",
-      "tags": [
-        "日常"
-      ],
-      "metadata": {
-        "play": 19,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      },
-      "media_url": "https://i2.hdslb.com/bfs/archive/92483449b4dd036de91da67e811b693eacfe0675.jpg",
-      "content_type": "image",
-      "lang": "zh",
-      "platform_region": "cn"
     },
     {
       "title": "[DC] nemu_s_t_a_r@🔸綜合討論: 感覺不如問誰被踢最多次",
@@ -998,6 +1286,264 @@
       "platform_region": "br"
     },
     {
+      "title": "One of Thais' thighs is bigger than an entire Caecus",
+      "summary": "&#32; submitted by &#32;  /u/Maurixioso   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T20:26:52+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4re2n/one_of_thais_thighs_is_bigger_than_an_entire/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Maurixioso",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/e2mxcg2yodzg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=a09ff1496993f39d5ea2c95294ec3c7635bf83db",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "N’s sprite",
+      "summary": "Still my favorite boss sprite in the game (although Nefraea boss sprite is sick af too).  &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T15:20:19+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4ik0k/ns_sprite/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/DrExluxk",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "New Aquisition (The Shadow Out of Time)",
+      "summary": "https://preview.redd.it/ym7mocbf8ezg1.png?width=540&amp;format=png&amp;auto=webp&amp;s=6d5de678e603249f1ac64f933f17832313bb6a01 There&#39;s an Awakener based in this story?  &#32; submitted by &#32;  /u/Kosova404   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T22:18:26+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4ubza/new_aquisition_the_shadow_out_of_time/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Kosova404",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/ym7mocbf8ezg1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=8797ff9966996c92cdd23ac4c95710a08434ea3e",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "PSA Kaleido banner",
+      "summary": "Hi, Angbak from Discord here. TLDR. Moonless guide banner is better. Only pull on kaleido if you fulfill ALL the conditions below   You wanna gamble for SSR wheels Your Moonless guide banner ran out You do NOT have the following wheels: Thais, Tawil, Horla You do NOT have the following units: e2 Thais, e1 horla.  Edit: 5. E3 Arachne, e0 Arachne wheel. Or no more Arachne banner Moonless guide is way better at securing the important characters such as E2 Thais and E1 Horla.  Don&#39;t pull kaleido. Or do if you really want to. My personal thoughts   &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T11:14:09+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4cctj/psa_kaleido_banner/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Angbak94",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "A Tale of a Cat and a Whale",
+      "summary": "Inspired by this  &#32; submitted by &#32;  /u/Life-Resolve-1151   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T11:40:55+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4cxdv/a_tale_of_a_cat_and_a_whale/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Life-Resolve-1151",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/snxcuralb9zg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=a527747bbff1e86a3b96094d6212f86604246baf",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Should i pull in Kaleido Recollections",
+      "summary": "Hi, im a very recent player im currently still F2P, i pulled in the last banner, the 4 selector one, this are my current units but i dont know if i should wait for another banner or keep pulling on this new one.  &#32; submitted by &#32;  /u/Gryphus6   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T09:06:00+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t49ypg/should_i_pull_in_kaleido_recollections/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Gryphus6",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/ptf5ln3vaazg1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=2350d7dea5c93148847763d2094867cfc3575578",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "DOES ANY GUYS HERE HAVE ARACHNE AND HAVE THIS KIND OF BUG?",
+      "summary": "I can&#39;t screenshot it so I might describe the situation for you guys. So this bug happened both in my pdive mode and hsr serveral times, and I can&#39;t find any mechanism to actually explain it. And also, my English is kinda suck so pls don&#39;t judge my grammar 😭😭😭 I played a kinda weird teams with tawil, Arachne, castor and Hameln, which made the ultra turn became my nuke turn with the 1 cost Arachne spam for more guiding strings and more weaver stacks. So after using 3 cards from tawil, my handsome is 9/12 (in Pdive) and about 10/16 in her, and when I use the 1 cost card, it showed up a notification that my handsize is full while still showed that my card deck was 9/12. WHAT THE HELL? This bug happened so much that I have to ask you guys, does is really have a mechanism hidden inside it? Cuz this shit just fked my entire rotation so much  &#32; submitted by &#32;  /u/BreadWeekly7885   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T15:16:45+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4igem/does_any_guys_here_have_arachne_and_have_this/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/BreadWeekly7885",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Leigh propaganda update",
+      "summary": "So after a bit of boredom i decided to try the latest stage in the game yet again. This time i managed to get 3 stars along with no revive. This is a kinda f2p setup (i have no p2w wheels and only a 10% exp boost) I wont call this a guide but i&#39;ll mention that vortice and leigh are probably the best characters to use for this stage, might even count as a &quot;cheese&quot;, along with pickman and thais who make getting to the boss through mobs also relatively easy. Defensive Relics also helped and a third DR at 60-65% was the last variable needed to beat this stage in this way. P.S. Pickman is also really good against this boss thanks to his exalt spam and massive str down from his chromapages. Same with thais aliemus fueling everyone else. 1cc 3 star clear  &#32; submitted by &#32;  /u/Arandomflame   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T14:47:20+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4hmk7/leigh_propaganda_update/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Arandomflame",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/mn0s9tv90czg1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=56cbb428c7b06087a638f909c1d78407bdab8ac7",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Let's share Keeper profile!",
+      "summary": "Whether you&#39;re a whale, dolphin, or F2P—show us your Keeper profile and your game progress! Post your favorite and most invested Awakeners! We might already be friends in-game! https://preview.redd.it/456obj1379zg1.png?width=1333&amp;format=png&amp;auto=webp&amp;s=cb78e16ad3c349e2f73ca50d19404cf4559932bd  &#32; submitted by &#32;  /u/ReizeiMako   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T05:21:28+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t463x3/lets_share_keeper_profile/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/ReizeiMako",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/456obj1379zg1.png?width=140&amp;height=73&amp;auto=webp&amp;s=f0ee6cb2c96dbcefbc081078174f22dcb50c449d",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Energy Management",
+      "summary": "Hi, I&#39;m a new player who started last week, and I&#39;m having some trouble managing my energy. So far, I’ve focused on leveling up my team, which I’ve done up to level 40. To unlock the level cap increase to 50, it asks me to complete Chapter 5, which is still a long way off since I’m having trouble with Chapter 4. I’m currently on Chapter 4-6. I just reached level 25 on my account, which unlocked the Verboten Covenants. I understand this is how I get gear. I think equipping my characters can help me complete the story and tackle other content more easily, so I believe this should be my priority. However, I’m limited by energy. I’ve used all the kits I’ve been given, and the only way I can get more is either by spending silver or waiting for it to recharge. Also, I saw that they launched a new event today, but each entry costs 120 energy. My question is, what should I focus on? And is there any other way to get energy that I haven’t seen? Is there any guide that I can check? Thanks in advance  &#32; submitted by &#32;  /u/Draciann   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T14:40:47+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4hg9p/energy_management/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Draciann",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "I have 4 prototype horizon. Wondering if I should use them on Gdoll or Mouchette?",
+      "summary": "Gdoll is E1 currently and Mouchette is E0.  Dorsain would also be another option cuz he&#39;s currently at E0 too, and he&#39;d work great with my E4 Thais and OE Arachne I feel. Basically I&#39;ve realised that alot of my play-style has been revolving around sustaining until I can nuke with a powerful exalt. I wanna invest in a character that actively deals card damage too. And Gdoll is cuz I&#39;m interested in building a poison team too. Thoughts? Edit: Mouchette sweeped the comments haha  &#32; submitted by &#32;  /u/Ostrichslinger   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T13:31:16+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4fkqt/i_have_4_prototype_horizon_wondering_if_i_should/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Ostrichslinger",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Making Morimens OCs (Picrew)",
+      "summary": "https://preview.redd.it/rkwjdzy39ezg1.png?width=600&amp;format=png&amp;auto=webp&amp;s=4ba0bf898f7711639173df815cf75e9306fef54a https://preview.redd.it/t8dx2xy49ezg1.png?width=600&amp;format=png&amp;auto=webp&amp;s=e9841cd8413123831bd19b83f3ae8529a0e06406 https://preview.redd.it/tp79axy49ezg1.png?width=600&amp;format=png&amp;auto=webp&amp;s=07a82fd3de41ea503bd8ddc63082908207fb21f1 https://preview.redd.it/vsk2nxy49ezg1.png?width=600&amp;format=png&amp;auto=webp&amp;s=4caeb215164000bed25b9e074728311baaaf88b9 I made my Keeper Self-Insert and an Awakener inspired by the story of &#39;&#39;The Outsider&#39;&#39;. I don&#39;t know which Realm he will belong: Caos, Ultra or Caro. Soon will be proper drawings 😃 Link: https://picrew.me/en/image_maker/29841  &#32; submitted by &#32;  /u/Kosova404   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T22:26:21+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4uiz5/making_morimens_ocs_picrew/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Kosova404",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://external-preview.redd.it/Azn8YZR4vCXgAlS4fgPtZFLlWuVqjAs5AYAvh6R0CC8.png?width=140&amp;height=140&amp;auto=webp&amp;s=8319d1adc7cb1dcb74b7e9d1692492762d2ebb16",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "First time publishing on reddit | Just started Morimens as a big gacha afficionados what kind of teams would you recommend and any opinion on my actual team (the four in fav)?",
+      "summary": "https://preview.redd.it/2kv9xdp02ezg1.png?width=705&amp;format=png&amp;auto=webp&amp;s=a5c1ebc0a874bcd3d2a99f7ccd8e352e0f9f8f17 https://preview.redd.it/ush93i522ezg1.png?width=703&amp;format=png&amp;auto=webp&amp;s=c02dae1d5a3bfa004505177d5f1ad71750b07e4f https://preview.redd.it/c1hm6cb32ezg1.png?width=705&amp;format=png&amp;auto=webp&amp;s=225d6c0a6a56d56e7bee7ad1c885c5f7c00aba62  &#32; submitted by &#32;  /u/Suspicious_Owl_4097   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T21:41:38+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t4tec1/first_time_publishing_on_reddit_just_started/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Suspicious_Owl_4097",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/2kv9xdp02ezg1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=28d60f830a0a307bb84738a673e225bd399037f5",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Just started this game bc i heard theres a defect-like gameplay in here, any changes you suggest?",
+      "summary": "Rn im at 4-1, just trying to get senior suggestion and a little bit rambling. Man i love tentacle, it scales every turn and flexible in 3 direction, still don&#39;t like how small the shield can generate, like i thought maybe 25% of damage into shield but nope. I started playing this game from psychie top gacha game and now i just stuck at &quot;oh no keeper you only at level 20, should&#39;ve level up first&quot; Bullshit lol. Coming from true roguelike card game slay the spire, this game opening feels lacking in relic and card addition, i thought theres atleast 10 card to be obtained but start with 5, but only making it either get power or selling card make this game still a gacha game lol. So aequor, i always remembered by someone post that said &quot;don&#39;t make mono aequor team, they lack stat&quot; And it make me scared to build them, can i get some inspiring word like &quot;oh don&#39;t worry aequor potential is really good&quot; Or something like that? :) Do you guys know what aequor banner to wait for? For saving up ofc. Also build reccomendation :) ty  &#32; submitted by &#32;  /u/RYVIUS13   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T08:03:07+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t48x8s/just_started_this_game_bc_i_heard_theres_a/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/RYVIUS13",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/12uwkgs80azg1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=43a3971c0426011bc3f395f22908a68a525d7122",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Arachne",
+      "summary": "Hello to yall morimens veterans) Ijust started few days ago and I rly enjoy the game, ive seen many posts abt Arachne and im wondering if I should pull for her (banner is still available for 12more days)  &#32; submitted by &#32;  /u/casualasiangamer   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T02:45:01+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t42wge/arachne/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/casualasiangamer",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "[正面] very nice cards!",
       "summary": "very nice cards!",
       "source": "steam_review",
@@ -1202,7 +1748,7 @@
       "title": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@eve",
       "summary": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@everyone？抱抱？以前，不可以。现在，可以！」\n✦ 莫丝 CV：松元菜菜海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Mouth... this thing? Mythag, present, ...全文",
       "source": "weibo",
-      "time": "2026-05-05T21:53:34.908631+00:00",
+      "time": "2026-05-05T22:45:47.258578+00:00",
       "url": "https://m.weibo.cn/status/5272049669112519",
       "engagement": 0,
       "is_hot": false,
@@ -1217,7 +1763,7 @@
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "source": "weibo",
-      "time": "2026-05-05T21:53:34.926799+00:00",
+      "time": "2026-05-05T22:45:47.282066+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1244,10 +1790,10 @@
       "platform_region": "cn"
     },
     {
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
+      "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
+      "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "source": "weibo",
-      "time": "2026-05-05T21:53:34.973259+00:00",
+      "time": "2026-05-05T22:45:47.333837+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1259,10 +1805,10 @@
       "platform_region": "cn"
     },
     {
-      "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
-      "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
+      "title": "12758【投稿】忘却前夜。我主任",
+      "summary": "12758【投稿】忘却前夜。我主任",
       "source": "weibo",
-      "time": "2026-05-05T21:53:34.984171+00:00",
+      "time": "2026-05-05T22:45:47.347024+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1277,7 +1823,7 @@
       "title": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
       "summary": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
       "source": "weibo",
-      "time": "2026-05-05T21:53:35.008850+00:00",
+      "time": "2026-05-05T22:45:47.359883+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1292,23 +1838,8 @@
       "title": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
       "summary": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
       "source": "weibo",
-      "time": "2026-05-05T21:53:35.020701+00:00",
+      "time": "2026-05-05T22:45:47.372559+00:00",
       "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜 瓜条整理。以下是。关于前段时间期忘却前夜和白荆回廊游戏社区内关于抄袭角色的争议，本人没有对面空口造谣睁眼说瞎话的本事，还是倾向于用事实说话。每一条都附",
-      "summary": "忘却前夜 瓜条整理。以下是。关于前段时间期忘却前夜和白荆回廊游戏社区内关于抄袭角色的争议，本人没有对面空口造谣睁眼说瞎话的本事，还是倾向于用事实说话。每一条都附带截图为证\n首先贴泥潭整理的事情大致前因后果\n链接（打不开复制到浏览器）网页链接\n在基本了解事件之后， ...全文",
-      "source": "weibo",
-      "time": "2026-05-05T21:53:35.032233+00:00",
-      "url": "https://m.weibo.cn/status/5264892340731977",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1322,22 +1853,7 @@
       "title": "忘却前夜\n由+12名称发散的关于卡波原型的想法。\n专栏 · 天穹狂想曲",
       "summary": "忘却前夜\n由+12名称发散的关于卡波原型的想法。\n专栏 · 天穹狂想曲",
       "source": "weibo",
-      "time": "2026-05-05T21:53:35.047024+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜 为什么鼠鼠的等级上限会突然变成74级呀?",
-      "summary": "忘却前夜 为什么鼠鼠的等级上限会突然变成74级呀?",
-      "source": "weibo",
-      "time": "2026-05-05T21:53:35.057780+00:00",
+      "time": "2026-05-05T22:45:47.384874+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1352,7 +1868,7 @@
       "title": "忘却前夜 同步一下之前的\nooc致歉",
       "summary": "忘却前夜 同步一下之前的\nooc致歉",
       "source": "weibo",
-      "time": "2026-05-05T21:53:35.068577+00:00",
+      "time": "2026-05-05T22:45:47.396680+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1364,11 +1880,11 @@
       "platform_region": "cn"
     },
     {
-      "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
-      "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
+      "title": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
+      "summary": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
       "source": "weibo",
-      "time": "2026-05-05T21:53:35.079723+00:00",
-      "url": "https://m.weibo.cn/status/5294895855830265",
+      "time": "2026-05-05T22:45:47.408408+00:00",
+      "url": "",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1397,8 +1913,38 @@
       "title": "之前给忘却前夜画的解禁了！！",
       "summary": "之前给忘却前夜画的解禁了！！",
       "source": "weibo",
-      "time": "2026-05-05T21:53:35.113556+00:00",
+      "time": "2026-05-05T22:45:47.439841+00:00",
       "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "『利莫里亚的残响』\n哀怜的双目在注视着自己唯一的希望。\n\n忘却前夜#忘却前夜##忘却前夜内容征集计划##忘却前夜同人二创活动##morimensfanart#",
+      "summary": "『利莫里亚的残响』\n哀怜的双目在注视着自己唯一的希望。\n\n忘却前夜#忘却前夜##忘却前夜内容征集计划##忘却前夜同人二创活动##morimensfanart#",
+      "source": "weibo",
+      "time": "2026-05-05T22:45:47.451974+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
+      "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
+      "source": "weibo",
+      "time": "2026-05-05T22:45:47.464311+00:00",
+      "url": "https://m.weibo.cn/status/5294895855830265",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1412,7 +1958,7 @@
       "title": "我:哎呀忘却前夜原来二期也有官摊！气死！\nAB:什么是忘却前夜？\n我:……前略中略后略，里面有个非常色的老头！\nAB:想也是，不然你也不会气死",
       "summary": "我:哎呀忘却前夜原来二期也有官摊！气死！\nAB:什么是忘却前夜？\n我:……前略中略后略，里面有个非常色的老头！\nAB:想也是，不然你也不会气死",
       "source": "weibo",
-      "time": "2026-05-05T21:53:35.124373+00:00",
+      "time": "2026-05-05T22:45:47.481155+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1422,6 +1968,19 @@
       ],
       "lang": "zh",
       "platform_region": "cn"
+    },
+    {
+      "title": "One of Thais' thighs is bigger than an entire Caecus",
+      "summary": "&#32; submitted by &#32;  /u/Maurixioso   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T20:26:52+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1t4re2n/one_of_thais_thighs_is_bigger_than_an_entire/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Maurixioso",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
     },
     {
       "title": "N’s sprite",
@@ -1437,14 +1996,14 @@
       "platform_region": "global"
     },
     {
-      "title": "One of Thais' thighs is bigger than an entire Caecus",
-      "summary": "&#32; submitted by &#32;  /u/Maurixioso   [link] &#32; [comments]",
+      "title": "New Aquisition (The Shadow Out of Time)",
+      "summary": "https://preview.redd.it/ym7mocbf8ezg1.png?width=540&amp;format=png&amp;auto=webp&amp;s=6d5de678e603249f1ac64f933f17832313bb6a01 There&#39;s an Awakener based in this story?  &#32; submitted by &#32;  /u/Kosova404   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-05-05T20:26:52+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1t4re2n/one_of_thais_thighs_is_bigger_than_an_entire/",
+      "time": "2026-05-05T22:18:26+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1t4ubza/new_aquisition_the_shadow_out_of_time/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Maurixioso",
+      "author": "u//u/Kosova404",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1502,6 +2061,19 @@
       "platform_region": "global"
     },
     {
+      "title": "Leigh propaganda update",
+      "summary": "So after a bit of boredom i decided to try the latest stage in the game yet again. This time i managed to get 3 stars along with no revive. This is a kinda f2p setup (i have no p2w wheels and only a 10% exp boost) I wont call this a guide but i&#39;ll mention that vortice and leigh are probably the best characters to use for this stage, might even count as a &quot;cheese&quot;, along with pickman and thais who make getting to the boss through mobs also relatively easy. Defensive Relics also helped and a third DR at 60-65% was the last variable needed to beat this stage in this way. P.S. Pickman is also really good against this boss thanks to his exalt spam and massive str down from his chromapages. Same with thais aliemus fueling everyone else. 1cc 3 star clear  &#32; submitted by &#32;  /u/Arandomflame   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-05T14:47:20+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1t4hmk7/leigh_propaganda_update/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Arandomflame",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "Let's share Keeper profile!",
       "summary": "Whether you&#39;re a whale, dolphin, or F2P—show us your Keeper profile and your game progress! Post your favorite and most invested Awakeners! We might already be friends in-game! https://preview.redd.it/456obj1379zg1.png?width=1333&amp;format=png&amp;auto=webp&amp;s=cb78e16ad3c349e2f73ca50d19404cf4559932bd  &#32; submitted by &#32;  /u/ReizeiMako   [link] &#32; [comments]",
       "source": "reddit",
@@ -1515,14 +2087,14 @@
       "platform_region": "global"
     },
     {
-      "title": "Leigh propaganda update",
-      "summary": "So after a bit of boredom i decided to try the latest stage in the game yet again. This time i managed to get 3 stars along with no revive. This is a kinda f2p setup (i have no p2w wheels and only a 10% exp boost) I wont call this a guide but i&#39;ll mention that vortice and leigh are probably the best characters to use for this stage, might even count as a &quot;cheese&quot;, along with pickman and thais who make getting to the boss through mobs also relatively easy. Defensive Relics also helped and a third DR at 60-65% was the last variable needed to beat this stage in this way. P.S. Pickman is also really good against this boss thanks to his exalt spam and massive str down from his chromapages. Same with thais aliemus fueling everyone else. 1cc 3 star clear  &#32; submitted by &#32;  /u/Arandomflame   [link] &#32; [comments]",
+      "title": "Energy Management",
+      "summary": "Hi, I&#39;m a new player who started last week, and I&#39;m having some trouble managing my energy. So far, I’ve focused on leveling up my team, which I’ve done up to level 40. To unlock the level cap increase to 50, it asks me to complete Chapter 5, which is still a long way off since I’m having trouble with Chapter 4. I’m currently on Chapter 4-6. I just reached level 25 on my account, which unlocked the Verboten Covenants. I understand this is how I get gear. I think equipping my characters can help me complete the story and tackle other content more easily, so I believe this should be my priority. However, I’m limited by energy. I’ve used all the kits I’ve been given, and the only way I can get more is either by spending silver or waiting for it to recharge. Also, I saw that they launched a new event today, but each entry costs 120 energy. My question is, what should I focus on? And is there any other way to get energy that I haven’t seen? Is there any guide that I can check? Thanks in advance  &#32; submitted by &#32;  /u/Draciann   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-05-05T14:47:20+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1t4hmk7/leigh_propaganda_update/",
+      "time": "2026-05-05T14:40:47+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1t4hg9p/energy_management/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Arandomflame",
+      "author": "u//u/Draciann",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1541,14 +2113,14 @@
       "platform_region": "global"
     },
     {
-      "title": "Energy Management",
-      "summary": "Hi, I&#39;m a new player who started last week, and I&#39;m having some trouble managing my energy. So far, I’ve focused on leveling up my team, which I’ve done up to level 40. To unlock the level cap increase to 50, it asks me to complete Chapter 5, which is still a long way off since I’m having trouble with Chapter 4. I’m currently on Chapter 4-6. I just reached level 25 on my account, which unlocked the Verboten Covenants. I understand this is how I get gear. I think equipping my characters can help me complete the story and tackle other content more easily, so I believe this should be my priority. However, I’m limited by energy. I’ve used all the kits I’ve been given, and the only way I can get more is either by spending silver or waiting for it to recharge. Also, I saw that they launched a new event today, but each entry costs 120 energy. My question is, what should I focus on? And is there any other way to get energy that I haven’t seen? Is there any guide that I can check? Thanks in advance  &#32; submitted by &#32;  /u/Draciann   [link] &#32; [comments]",
+      "title": "Making Morimens OCs (Picrew)",
+      "summary": "https://preview.redd.it/rkwjdzy39ezg1.png?width=600&amp;format=png&amp;auto=webp&amp;s=4ba0bf898f7711639173df815cf75e9306fef54a https://preview.redd.it/t8dx2xy49ezg1.png?width=600&amp;format=png&amp;auto=webp&amp;s=e9841cd8413123831bd19b83f3ae8529a0e06406 https://preview.redd.it/tp79axy49ezg1.png?width=600&amp;format=png&amp;auto=webp&amp;s=07a82fd3de41ea503bd8ddc63082908207fb21f1 https://preview.redd.it/vsk2nxy49ezg1.png?width=600&amp;format=png&amp;auto=webp&amp;s=4caeb215164000bed25b9e074728311baaaf88b9 I made my Keeper Self-Insert and an Awakener inspired by the story of &#39;&#39;The Outsider&#39;&#39;. I don&#39;t know which Realm he will belong: Caos, Ultra or Caro. Soon will be proper drawings 😃 Link: https://picrew.me/en/image_maker/29841  &#32; submitted by &#32;  /u/Kosova404   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-05-05T14:40:47+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1t4hg9p/energy_management/",
+      "time": "2026-05-05T22:26:21+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1t4uiz5/making_morimens_ocs_picrew/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Draciann",
+      "author": "u//u/Kosova404",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1591,34 +2163,6 @@
       "tags": [],
       "lang": "en",
       "platform_region": "global"
-    },
-    {
-      "title": "Gnosis After Loss?",
-      "summary": "If you lose all your gnosis in a fight and you log out, when the reset comes back - will I be able to spend the gnosis given?   &#32; submitted by &#32;  /u/Responsible_Hair_502   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-05T03:26:42+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1t43t1x/gnosis_after_loss/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/Responsible_Hair_502",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
-      "summary": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
-      "source": "weibo",
-      "time": "2026-05-05T21:54:26.459032+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "",
-      "platform_region": ""
     },
     {
       "title": "Celeste",
@@ -1834,7 +2378,7 @@
       "title": "망각전야)라는 게임을 시작했었어",
       "summary": "슬더스를 좋아하는지라 슬더스2 나오기전에도 슬더스라이크 찾다보니 나온 슬더스라이크 모바게더군중국껀데 AI번역이 되어있네 활협전...",
       "source": "ruliweb",
-      "time": "2026-05-05T21:54:57.438940+00:00",
+      "time": "2026-05-05T22:47:08.194999+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75070806",
       "engagement": 0,
       "is_hot": false,
@@ -1938,7 +2482,7 @@
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
       "source": "stopgame",
-      "time": "2026-05-05T21:55:00.039470+00:00",
+      "time": "2026-05-05T22:47:11.065645+00:00",
       "url": "https://stopgame.ru/game/morimens",
       "engagement": 0,
       "is_hot": false,
@@ -1948,11 +2492,11 @@
       "platform_region": "ru"
     },
     {
-      "title": "[微信] 忘却前夜第4届N厨杯",
+      "title": "[微信] 忘却前夜丨弥萨格调查局CP32行动指南",
       "summary": "",
       "source": "weixin",
       "time": "2026-04-27T15:07:15+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-ivi_tCZifUl04BcMvatyqcaGiSodjmgFqXa8Fplpd9yNJ9iYBpghf8FDASEIXR7rl7ewTcfM_tWsYwW7sFGbgCdXHPq-gEW03gng6KYZ3Z7kFhj8iZ-7UA7qpdJBDVLhSh0KsUYhGkjwcK1gwMg8Y1QD6MOA1thOT3fI2gc7o-tOC07shZZ-rWikV3rtNcByEy4G5J9OEVK6aE_cXjF3fYl_Q5RRZQjg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=56BD2DA9EDA951CECBCD9AD2D39AD6A3CB388F6369FA6734",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-ivi_tCZifUg-_z0z0O_UmcaGiSodjmgFqXa8Fplpd9yNJ9iYBpghf8FDASEIXR7rl7ewTcfM_tWsYwW7sFGbgCdXHPq-gEW6BdA7VomcciADu9cQ0dE__W8Mop0SECBTEA8n882Tl_RQp6y08ZVKJQmtX4zTp5MBCkF3UeK0q8MNTzLNxDthDPipC0LAn7so-Yyfg66pSZtxB6pb7zgjx6VKrzu_4XKA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=5703D00681BADB763631672FE4C5FE7737F9A4DA69FA7370",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1961,11 +2505,11 @@
       "platform_region": "cn"
     },
     {
-      "title": "[微信] 忘却前夜第4届N厨杯",
+      "title": "[微信] 忘却前夜丨弥萨格调查局CP32行动指南",
       "summary": "",
       "source": "weixin",
       "time": "2026-04-27T15:07:15+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-ivi_tCZifUe9xnChTnawKcaGiSodjmgFqXa8Fplpd9yNJ9iYBpghf8FDASEIXR7rl7ewTcfM_tWsYwW7sFGbgCdXHPq-gEW03gng6KYZ3Z7kFhj8iZ-7UA7qpdJBDVLs9StvZYcy8OTfooiXWoeX2rnrWLODvyGS22ljj9-U1SBRAIbjf1X4cDd5hF57WjbRE8RQUJJxYhTO-wEH4brdZFH6In5Ei3zg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=56BD338EFFBA42DDD9DC88C3C0B8FA39DA2E05F669FA6736",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS-ivi_tCZifUx-Z5rRz3SFycaGiSodjmgFqXa8Fplpd9yNJ9iYBpghf8FDASEIXR7rl7ewTcfM_tWsYwW7sFGbgCdXHPq-gEW6BdA7VomcciADu9cQ0dE__W8Mop0SECBdlhDEQCFeuhj5FbmVfvV7KAnFZtsyHPiMkWswQq94JzSYXDT0cFvmF4qbBYxitvqg8BS6mT05Poa5JAhdsBEdbYl_Q5RRZQjg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=5703D81679432390CFC99ED61BD8C140D05110CB69FA7371",
       "engagement": 0,
       "is_hot": false,
       "author": "",
