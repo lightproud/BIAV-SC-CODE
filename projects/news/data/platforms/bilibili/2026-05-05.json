@@ -1,8 +1,8 @@
 {
   "date": "2026-05-05",
-  "archived_at": "2026-05-05T09:55:32.599767+00:00",
+  "archived_at": "2026-05-05T11:13:18.052125+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "source": "bilibili",
@@ -21,6 +21,36 @@
         "comments_fetched": 0,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-05T10:52:50+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】触手拍拍乐，图鲁单C极其恐怖.......",
+      "summary": "└ motantan (0赞): 低配不能玩吧？最少多少能达到这个效果？\n  └ 暮知藏 (0赞): 冷知识：不是没有其他输出型就可以叫单c[傲娇]\n  └ 愛吃郭子的小孩 (0赞): 请求查询配置[星星眼]",
+      "url": "https://www.bilibili.com/video/BV18DR1B7ENL",
+      "author": "金发女人丨型",
+      "engagement": 161,
+      "media_url": "https://i2.hdslb.com/bfs/archive/4da5a66b4f80995962377f5fa3940eaf035477d4.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 153,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-05T10:52:50+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】触手拍拍乐，图鲁单C极其恐怖.......",
+      "summary": "",
+      "url": "http://www.bilibili.com/video/av116521573554406",
+      "author": "金发女人丨型",
+      "engagement": 153,
+      "media_url": "//i2.hdslb.com/bfs/archive/4da5a66b4f80995962377f5fa3940eaf035477d4.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",

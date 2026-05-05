@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-05T09:55:30.039278+00:00",
+  "collected_at": "2026-05-05T11:13:15.769598+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -152,21 +152,6 @@
       "review": "I am so addicted to the atmosphere of Bloodborne that I just search the \"Lovecraftian\" tag on Steam. And here we are.",
       "timestamp_created": 1777902195,
       "playtime_forever": 755
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-04T10:03:52+00:00",
-      "lang": "schinese",
-      "title": "[正面] 目前感觉还是挺不错的，画风非常精美，福利也不错，很吸引人",
-      "summary": "目前感觉还是挺不错的，画风非常精美，福利也不错，很吸引人",
-      "url": "https://steamcommunity.com/profiles/76561199473376093/recommended/3052450",
-      "author": "76561199473376093",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "目前感觉还是挺不错的，画风非常精美，福利也不错，很吸引人",
-      "timestamp_created": 1777889032,
-      "playtime_forever": 551
     }
   ]
 }
