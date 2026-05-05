@@ -4416,6 +4416,13 @@
       "title": "直到死亡将我们分开…（沙耶cos 微恐有色相反转",
       "time": "2026-05-05T06:29:48+00:00",
       "downloaded_at": "2026-05-05T09:55:32.532897+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/4da5a66b4f80995962377f5fa3940eaf035477d4.jpg": {
+      "filename": "bilibili_30faaea064484c4f.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】触手拍拍乐，图鲁单C极其恐怖.......",
+      "time": "2026-05-05T10:52:50+00:00",
+      "downloaded_at": "2026-05-05T11:13:17.686711+00:00"
     }
   },
   "failed": {
@@ -6168,6 +6175,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-05T04:56:34.834318+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/4da5a66b4f80995962377f5fa3940eaf035477d4.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T11:13:17.987496+00:00"
     }
   },
   "archived": []
