@@ -4430,6 +4430,41 @@
       "title": "【忘却前夜】触手拍拍乐，图鲁单C极其恐怖.......",
       "time": "2026-05-05T10:52:50+00:00",
       "downloaded_at": "2026-05-05T13:11:54.464893+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/b5387ef9ed6a65114d4a89a7973e54243b3432ab.jpg": {
+      "filename": "bilibili_2a931f69e0d7f77f.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】图墨汀汀融灾禁区4-5一镜到底",
+      "time": "2026-05-05T15:24:33+00:00",
+      "downloaded_at": "2026-05-05T15:42:53.407827+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/92483449b4dd036de91da67e811b693eacfe0675.jpg": {
+      "filename": "bilibili_3159669e4cf5fd63.jpg",
+      "source": "bilibili",
+      "title": "刷了一天肉块终于看见美少女了",
+      "time": "2026-05-05T11:21:39+00:00",
+      "downloaded_at": "2026-05-05T15:42:56.155298+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/5c6e3b82915d0b6198101b8bbd0803c381d63545.jpg": {
+      "filename": "bilibili_48fa53c59765d262.jpg",
+      "source": "bilibili",
+      "title": "[沙耶之歌]ぼくらは肉でできている",
+      "time": "2026-05-05T12:13:18+00:00",
+      "downloaded_at": "2026-05-05T15:42:57.632697+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/b841f878b88147b41d042ec073cfeeb54f4bc7ee.jpg": {
+      "filename": "bilibili_5f2f06164b1b6736.jpg",
+      "source": "bilibili",
+      "title": "【百日绘】day15沙耶之歌",
+      "time": "2026-05-05T15:27:33+00:00",
+      "downloaded_at": "2026-05-05T15:42:58.714561+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/05/21/11/12/144407798_p0_square1200.jpg": {
+      "filename": "pixiv_d5684cc74a43515b.jpg",
+      "source": "pixiv",
+      "title": "オジール誕生日おめでとう！！！",
+      "time": "2026-05-05T21:11:12+09:00",
+      "downloaded_at": "2026-05-05T15:43:01.898117+00:00"
     }
   },
   "failed": {
@@ -6187,6 +6222,41 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-05T11:13:17.987496+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/b5387ef9ed6a65114d4a89a7973e54243b3432ab.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T15:42:53.708507+00:00"
+    },
+    "https://preview.redd.it/15nqs4596czg1.gif?width=640&amp;crop=smart&amp;s=647b7dc9c9d1e134db9705d94228ef1b8707f210": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T15:42:59.096899+00:00"
+    },
+    "https://preview.redd.it/snxcuralb9zg1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=a527747bbff1e86a3b96094d6212f86604246baf": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T15:42:59.436514+00:00"
+    },
+    "https://preview.redd.it/456obj1379zg1.png?width=140&amp;height=73&amp;auto=webp&amp;s=f0ee6cb2c96dbcefbc081078174f22dcb50c449d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T15:42:59.781180+00:00"
+    },
+    "https://preview.redd.it/ptf5ln3vaazg1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=2350d7dea5c93148847763d2094867cfc3575578": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T15:43:00.141208+00:00"
+    },
+    "https://preview.redd.it/12uwkgs80azg1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=43a3971c0426011bc3f395f22908a68a525d7122": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T15:43:00.481185+00:00"
+    },
+    "https://preview.redd.it/mn0s9tv90czg1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=56cbb428c7b06087a638f909c1d78407bdab8ac7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-05T15:43:00.821743+00:00"
     }
   },
   "archived": []
