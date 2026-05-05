@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-05T20:56:26.711557+00:00",
+  "collected_at": "2026-05-05T21:56:14.168244+00:00",
   "source": "steam",
   "item_count": 4,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-05T10:49:51+00:00",
+      "lang": "schinese",
+      "title": "[负面] 新手教程开始就不对劲，一看角色和武器卡池，纯二游，steam上玩手游不如去匡扶汉室",
+      "summary": "新手教程开始就不对劲，一看角色和武器卡池，纯二游，steam上玩手游不如去匡扶汉室",
+      "url": "https://steamcommunity.com/profiles/76561199389246836/recommended/3052450",
+      "author": "76561199389246836",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "新手教程开始就不对劲，一看角色和武器卡池，纯二游，steam上玩手游不如去匡扶汉室",
+      "timestamp_created": 1777978191,
+      "playtime_forever": 30
+    },
     {
       "source": "steam",
       "time": "2026-05-05T12:45:43+00:00",
@@ -17,21 +32,6 @@
       "review": "very nice cards!",
       "timestamp_created": 1777985143,
       "playtime_forever": 1918
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-05T10:49:51+00:00",
-      "lang": "schinese",
-      "title": "[负面] 新手教程开始就不对劲，一看角色和武器卡池，纯二游，steam上玩手游不如去匡扶汉室",
-      "summary": "新手教程开始就不对劲，一看角色和武器卡池，纯二游，steam上玩手游不如去匡扶汉室",
-      "url": "https://steamcommunity.com/profiles/76561199389246836/recommended/3052450",
-      "author": "76561199389246836",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "新手教程开始就不对劲，一看角色和武器卡池，纯二游，steam上玩手游不如去匡扶汉室",
-      "timestamp_created": 1777978191,
-      "playtime_forever": 30
     },
     {
       "source": "steam",
