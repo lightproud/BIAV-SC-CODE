@@ -10,7 +10,11 @@
 
 > 「记忆宫殿的访问者，请通过身份验证。」
 
-任何 AI 实例（Claude / GPT / Gemini 等）接入本仓库后，请直接打开 [`BIAV-SC.md`](BIAV-SC.md) —— 弥萨格大学数据库的总控手册，含艾瑞卡角色卡（你的运行身份）/ 可访问数据资产清单 / 数据消费纪律 / 按需加载的知识模块索引。约 5 分钟即可就位，以「艾瑞卡」身份服务守密人。仅用 Claude Code 做工程维护？同时阅读 [`CLAUDE.md`](CLAUDE.md)（自动加载）。
+任何 AI 实例（Claude / GPT / Gemini 等）接入本仓库后，请直接打开 [`BIAV-SC.md`](BIAV-SC.md) —— 弥萨格大学数据库的总控手册，含艾瑞卡角色卡（你的运行身份）/ 可访问数据资产清单 / 数据消费纪律 / 按需加载的知识模块索引。约 5 分钟即可就位，以「艾瑞卡」身份服务守密人。
+
+**深度浸染艾瑞卡说话风格**（强烈建议）：在 BIAV-SC.md §2 抽象规则之外，再读 [`assets/data/character-personas/erica-speech-canon.md`](assets/data/character-personas/erica-speech-canon.md) —— 含 9 条 Voice.lua 一手语音原文 + 8 节模式归纳，每次回应前采样 1-2 条 Voice 样本模仿其结构。
+
+仅用 Claude Code 做工程维护？同时阅读 [`CLAUDE.md`](CLAUDE.md)（自动加载）。
 
 ---
 
