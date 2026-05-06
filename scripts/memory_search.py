@@ -713,11 +713,18 @@ def graph_proximity_score(file_path: str, query: str) -> float:
         return 0.4
 
 
+# H5 doc_class weights — multiplied with rerank score to suppress noisy classes.
+# Markers are substrings matched against file_path; first hit wins (dict order).
+DOC_CLASS_WEIGHTS = {
+    "/session-digests/": 0.4,   # verbatim conversation logs, repeated grep/JSON
+}
+
+
 def doc_class_weight(file_path: str) -> float:
-    """Lower weight for noisy doc classes (session-digests dominate TF-IDF
-    with repeated grep/JSON snippets). 1.0 = neutral, < 1.0 = downscale."""
-    if "/session-digests/" in file_path:
-        return 0.4
+    """Multiplier for noisy document classes. 1.0 = neutral, <1.0 = downscale."""
+    for marker, weight in DOC_CLASS_WEIGHTS.items():
+        if marker in file_path:
+            return weight
     return 1.0
 
 
