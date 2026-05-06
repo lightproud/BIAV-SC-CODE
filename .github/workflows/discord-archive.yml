@@ -55,11 +55,13 @@ jobs:
         if: steps.mode.outputs.mode == 'incremental'
         env:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
-          RUNTIME_BUDGET: '1500'
+          RUNTIME_BUDGET: '3600'
+          RATE_LIMIT_SLEEP: '0.2'
         # Idempotent: tracks progress in state.forum_starter_backfill, skips
-        # already-completed threads, exits when budget hit. Runs once per day
-        # and naturally catches up any threads created before the
-        # _fetch_forum_thread starter-fetch patch landed.
+        # already-completed threads, exits when budget hit. 60-min budget +
+        # 0.2s sleep yields ~18000 threads per dispatch, enough for the full
+        # 8420-thread legacy gap to clear in a single workflow run. Falls back
+        # to incremental top-up after the catch-up finishes.
         run: python projects/news/scripts/backfill_forum_starters.py
 
       - name: Run monthly cleanup (archive old data to Releases)
