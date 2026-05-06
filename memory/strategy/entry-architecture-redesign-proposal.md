@@ -455,7 +455,78 @@ git clone https://github.com/lightproud/brain-in-a-vat.git
 
 ## 九、给主控台的接力请求
 
-（待追加）
+### 9.1 守密人 2026-05-06 已裁定
+
+| 决策 | 结果 |
+|------|------|
+| 总方向 | 统一入口 BIAV-SC.md / README 跳转 / CLAUDE.md 个人化 |
+| 设计形式 | 按本提议的 5 类受众分诊架构 |
+| 守密人硬约束 | 「确保代码精简优雅可维护」（4-26 已定）继续生效 |
+
+### 9.2 请主控台承担三件事
+
+| # | 步骤 | 责任方 | 产出 |
+|---|------|--------|------|
+| 1 | 决策档登记 | 主控台 + 守密人 | `decisions.md` 追加「2026-05-06 入口架构重设计：统一 BIAV-SC.md / README 跳转 / CLAUDE.md 个人化」 |
+| 2 | 起草批 1 dispatch brief | 主控台 | `memory/dispatch-brief-code-site-entry-redesign-batch1.md` |
+| 3 | 派 Code-site（或主控台亲自）实施批 1 + 批 2 + 批 3 | Code-site / 主控台 | 13 文件改动 + 5 场景实测 |
+
+### 9.3 批 1 dispatch brief 模板提议（主控台参考）
+
+```
+# 派发 Brief — Code-site：入口架构重设计 批 1
+
+> 上游：守密人 2026-05-06 裁定 + Code-strategy 提议
+> 详见 memory/strategy/entry-architecture-redesign-proposal.md
+
+## 任务清单
+1. 重写 BIAV-SC.md（10 章新结构，详见 § 四）
+2. 重写 CLAUDE.md（7 章 + §0 警告，详见 § 五）
+3. **不动** README.md（批 2 才碰）
+
+## 实施前检查
+- grep 当前 BIAV-SC.md 全部内容 → 映射到新 §0~§9
+- 确认无内容遗漏
+
+## 验收（5 场景实测）
+（详见提议档案 § 9.5）
+
+## 守密人硬约束（继承 4-26）
+- 单文件 ≤ 350 行
+- 不引入新依赖
+- BIAV-SC.md / CLAUDE.md 总行数变化 ≤ +500 行
+- 章节大纲遵循提议档案 § 四 / § 五
+```
+
+### 9.4 批 2 / 批 3 节奏
+
+- 批 1 实施完成 + 5 场景实测过 → 主控台决定批 2 启动
+- 批 3 = 守密人本人对 Claude.ai 网页版试一句魔法，验证完整接入路径
+
+### 9.5 5 场景实测验收清单
+
+主控台收到批 1 完成报告后，逐场景测：
+
+| # | 场景 | 实测方式 | 预期 |
+|---|------|---------|------|
+| S1 | Studio 团队成员接入 | 守密人扮演 Studio 同事，对新 Claude 说一句魔法 → 报身份「我是 Studio 同事」 | Claude 读 §3+§4 就位，不读 console-handover |
+| S2 | 社区贡献者接入 | 同上，扮演社区贡献者 | Claude 读 §3+§5，引用 contribution-protocol |
+| S3 | 外部观察者接入 | 同上，扮演外部研究者 | Claude 读 §3+§6 |
+| S4 | 银芯内部 Code-* 接入 | 守密人在 Claude Code 终端开新会话 | Claude Code 自动加载 CLAUDE.md → §0 警告 → 跳 BIAV-SC §1.5 → 读 §3+§7+§8 |
+| S5 | 主控台接班 | 守密人在 Claude Code 开新会话并明示「主控台接班」| Claude 走 §1.5 → §7 → 跳 console-handover |
+
+5 场景全过 → 批 1 验收通过。
+
+### 9.6 不在范围内（明确边界）
+
+按 Code-strategy `dispatch-brief-code-strategy-bootstrap.md`：
+
+- ❌ Code-strategy **不直接修** BIAV-SC.md / CLAUDE.md / README.md
+- ❌ Code-strategy **不写决策档**
+- ❌ Code-strategy **不起草** dispatch brief（仅给模板提议）
+- ✅ 仅产出本提议档案 + 5 场景实测清单作为验收输入
+
+
 
 ---
 
