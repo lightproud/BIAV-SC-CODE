@@ -1,8 +1,8 @@
 {
   "date": "2026-05-06",
-  "archived_at": "2026-05-06T10:58:54.494515+00:00",
+  "archived_at": "2026-05-06T12:26:47.864071+00:00",
   "source": "bilibili",
-  "item_count": 27,
+  "item_count": 28,
   "items": [
     {
       "source": "bilibili",
@@ -87,6 +87,24 @@
       "engagement": 750,
       "media_url": "//i2.hdslb.com/bfs/archive/4da5a66b4f80995962377f5fa3940eaf035477d4.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T06:03:09+00:00",
+      "lang": "zh",
+      "title": "[沙耶]我们都是肉做的",
+      "summary": "有参考BV18TRwBZER3\n\n剪完了才发现已经有用沙耶剪过这个了\n，但是我口型对了很久，还是发一下。。\n导出来发现很糊但觉得糊的也挺好看的\n  └ 威叔号被封 (2赞): 好好看啊\n  └ 耕司青海瑶 (1赞): 卡哇伊[doge]\n  └ 本浮 (1赞): 加油！",
+      "url": "https://www.bilibili.com/video/BV1G1RsBcESv",
+      "author": "爬电视的贞子",
+      "engagement": 687,
+      "media_url": "https://i2.hdslb.com/bfs/archive/bc65289c172e4a393b912a5a5d3da53ae7fe859a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 680,
+        "comment_count": 7,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
