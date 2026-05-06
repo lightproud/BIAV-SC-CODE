@@ -1,15 +1,44 @@
 {
   "last_session": {
-    "id": "fail-sim",
-    "timestamp": null,
-    "duration_minutes": null,
-    "branch": "",
-    "topics": [],
-    "decisions": [],
-    "files_changed": [],
+    "id": "c5961df4",
+    "timestamp": "2026-05-06T16:19:30.396000+00:00",
+    "duration_minutes": 14456.9,
+    "branch": "claude/fix-site-compliance-oM2P1",
+    "topics": [
+      "Bilibili"
+    ],
+    "decisions": [
+      "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
+    ],
+    "files_changed": [
+      "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
+      "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
+      "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
+      "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
+      "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
+      "/home/user/brain-in-a-vat/BIAV-SC.md",
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
+      "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
+      "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
+      "/home/user/brain-in-a-vat/projects/site/public/404.html",
+      "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
+      "/home/user/brain-in-a-vat/projects/site/public/index.html"
+    ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "fail-sim",
+      "timestamp": null,
+      "duration_minutes": null,
+      "branch": "",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "sim-2",
       "timestamp": null,
@@ -201,35 +230,18 @@
         "/home/user/brain-in-a-vat/memory/lessons-learned.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "82feb92a",
-      "timestamp": "2026-04-26T18:16:14.737000+00:00",
-      "duration_minutes": 62.8,
-      "branch": "claude/code-strategy-bootstrap-XTmMR",
-      "topics": [
-        "银芯"
-      ],
-      "decisions": [
-        "当下最痛点：记忆系统结构化升级）。立即进入第 1 阶段「业界对标矩阵」，先完成必读材料数据扫描，并加载外网调研工具"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/research/ai-memory-vendor-matrix.md",
-        "/home/user/brain-in-a-vat/memory/research/proposal-distill-autocommit-2026-04.md",
-        "/home/user/brain-in-a-vat/memory/strategy/code-strategy-bootstrap-proposal.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 2.45,
-      "GitHub": 0.74,
-      "Phase1": 0.74,
-      "BPT": 0.48,
-      "黑池": 0.43,
-      "记忆系统": 0.26,
-      "索引": 0.26
+      "银芯": 1.96,
+      "Bilibili": 1.0,
+      "GitHub": 0.59,
+      "Phase1": 0.59,
+      "BPT": 0.38,
+      "黑池": 0.34,
+      "记忆系统": 0.21,
+      "索引": 0.21
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/memory/research/ai-memory-restructure-2026-04.md",
@@ -238,7 +250,7 @@
       "/home/user/brain-in-a-vat/memory/strategy/code-strategy-bootstrap-proposal.md",
       "/home/user/brain-in-a-vat/memory/strategy/memory-restructure-options.md"
     ],
-    "total_sessions": 101
+    "total_sessions": 102
   },
-  "updated_at": "2026-05-06T14:40:13.759334+00:00"
+  "updated_at": "2026-05-06T16:24:03.670479+00:00"
 }
