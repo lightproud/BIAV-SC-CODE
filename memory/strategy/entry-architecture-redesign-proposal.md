@@ -421,7 +421,35 @@ git clone https://github.com/lightproud/brain-in-a-vat.git
 
 ## 八、迁移路径与风险
 
-（待追加）
+### 8.1 推荐分批落地（3 批）
+
+| 批 | 动作 | 工作量 | 验收 |
+|---|------|--------|------|
+| **批 1** | 写新 BIAV-SC.md + 新 CLAUDE.md（不改 README）| 1 个会话（~3 小时）| 用 § 9.5 五场景实测 |
+| **批 2** | 改 README.md + 间接引用更新（dispatch-brief / methodology / 各 CONTEXT.md）| 1 个会话（~2 小时）| 全文 grep `CLAUDE.md` / `BIAV-SC.md`，全部引用正确 |
+| **批 3** | 公开通报 + 守密人测试一句魔法 | 30 分钟 | 守密人对 Claude 说一句魔法，对方 Claude 走通到艾瑞卡就位 |
+
+### 8.2 风险登记
+
+| # | 风险 | 缓解 |
+|---|------|------|
+| R1 | Claude Code 启动平台仍读 CLAUDE.md 进入工程模式 | CLAUDE.md §0 警告章 + 跳转 BIAV-SC.md，让 Claude 自己跳 |
+| R2 | dispatch-brief 历史档案的 BIAV-SC §0 引用全部失效 | 批 2 阶段批量 grep + sed 更新 |
+| R3 | session_briefing.py 引用失效 | 该脚本读 boot-snapshot.md，与 BIAV-SC.md 解耦，不受影响 |
+| R4 | 主控台接班会话不知道还要读 console-handover | BIAV-SC §1.5 + §7 明确指引 |
+| R5 | 外人魔法咒语后，Claude 仍走错分支（如自称主控台） | BIAV-SC §1 分诊章必须是显式问句「你是谁？」让接入者主动报身份 |
+| R6 | BIAV-SC.md 重写时把当前内容（如视觉规范）漏掉 | 批 1 实施前，Code-* 必须先 grep 当前 BIAV-SC.md 全部内容 → 映射到新 §0~§9 章节 → 检查映射完备性 |
+
+### 8.3 回滚路径
+
+如果新架构在批 3 实测失败：
+- `git revert` 三个批次的 commit
+- BIAV-SC.md / CLAUDE.md / README.md 回到当前状态
+- 重新评估架构
+
+回滚成本：**1 次 git revert**（直推 main 政策下不需要 merge），约 5 分钟。
+
+
 
 ---
 
