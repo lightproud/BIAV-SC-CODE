@@ -1,8 +1,8 @@
 {
   "date": "2026-05-06",
-  "archived_at": "2026-05-05T23:42:45.085041+00:00",
+  "archived_at": "2026-05-06T01:51:48.349230+00:00",
   "source": "bilibili",
-  "item_count": 19,
+  "item_count": 23,
   "items": [
     {
       "source": "bilibili",
@@ -231,6 +231,66 @@
       "engagement": 81,
       "media_url": "//i0.hdslb.com/bfs/archive/b5387ef9ed6a65114d4a89a7973e54243b3432ab.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T00:08:15+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】中配红花7t过5-5",
+      "summary": "-\n  └ 那很糟糕了哇 (1赞): 这么厉害吗大佬",
+      "url": "https://www.bilibili.com/video/BV1d7RWB8EWg",
+      "author": "跳段木偶舞",
+      "engagement": 42,
+      "media_url": "https://i1.hdslb.com/bfs/archive/f8194e3a17b4e84451bd38b46223281d98e610cd.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 40,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T00:08:15+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】中配红花7t过5-5",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116524710895179",
+      "author": "跳段木偶舞",
+      "engagement": 40,
+      "media_url": "//i1.hdslb.com/bfs/archive/f8194e3a17b4e84451bd38b46223281d98e610cd.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T00:05:58+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】阿拉克涅凯克斯2-5",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116524694117337",
+      "author": "跳段木偶舞",
+      "engagement": 29,
+      "media_url": "//i2.hdslb.com/bfs/archive/3fe336052d49c38052281e1e51beb0d588c74cf9.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T00:05:58+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】阿拉克涅凯克斯2-5",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1ZVRWBAEX1",
+      "author": "跳段木偶舞",
+      "engagement": 27,
+      "media_url": "https://i2.hdslb.com/bfs/archive/3fe336052d49c38052281e1e51beb0d588c74cf9.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 27,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",

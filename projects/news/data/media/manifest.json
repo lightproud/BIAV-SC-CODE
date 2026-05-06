@@ -4549,6 +4549,27 @@
       "title": "[Morimens] Vortice W2A5 Showcase Vortice - Murphy - Corpo - Hameln",
       "time": "2026-05-05T23:39:40.858687+00:00",
       "downloaded_at": "2026-05-05T23:42:45.016187+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/f8194e3a17b4e84451bd38b46223281d98e610cd.jpg": {
+      "filename": "bilibili_eac78b61abac497f.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】中配红花7t过5-5",
+      "time": "2026-05-06T00:08:15+00:00",
+      "downloaded_at": "2026-05-06T01:51:45.212144+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/3fe336052d49c38052281e1e51beb0d588c74cf9.jpg": {
+      "filename": "bilibili_3e44045b51e88db1.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】阿拉克涅凯克斯2-5",
+      "time": "2026-05-06T00:05:58+00:00",
+      "downloaded_at": "2026-05-06T01:51:47.487277+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/06/09/34/34/144429929_p0_square1200.jpg": {
+      "filename": "pixiv_b4a5b2850b1ec894.jpg",
+      "source": "pixiv",
+      "title": "Untitled",
+      "time": "2026-05-06T09:34:34+09:00",
+      "downloaded_at": "2026-05-06T01:51:48.280872+00:00"
     }
   },
   "failed": {
@@ -6366,6 +6387,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-05T22:48:27.695494+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/f8194e3a17b4e84451bd38b46223281d98e610cd.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-06T01:51:45.512989+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/3fe336052d49c38052281e1e51beb0d588c74cf9.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-06T01:51:45.813857+00:00"
     }
   },
   "archived": []
