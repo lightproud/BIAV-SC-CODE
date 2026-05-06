@@ -1,8 +1,8 @@
 {
   "date": "2026-05-06",
-  "archived_at": "2026-05-06T05:23:33.831225+00:00",
+  "archived_at": "2026-05-06T08:08:48.952447+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -108,6 +108,21 @@
       "review": "Cool theme, fun gameplay",
       "timestamp_created": 1777923565,
       "playtime_forever": 619
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-06T04:37:22+00:00",
+      "lang": "russian",
+      "title": "[正面] отличная игра в своем жанре",
+      "summary": "отличная игра в своем жанре",
+      "url": "https://steamcommunity.com/profiles/76561198077151106/recommended/3052450",
+      "author": "76561198077151106",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "отличная игра в своем жанре",
+      "timestamp_created": 1778042242,
+      "playtime_forever": 12372
     }
   ]
 }
