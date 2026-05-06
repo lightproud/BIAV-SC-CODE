@@ -274,7 +274,54 @@
 
 ## 五、CLAUDE.md 新章节大纲（Light 维护备忘）
 
-（待追加）
+### 5.1 顶层结构（7 章）
+
+```
+§0 警告：本文件不是 AI 入口（任何 AI 会话请读 BIAV-SC.md）
+§1 仓库 git 操作快查
+§2 hook 排错速查
+§3 workflow 故障速查
+§4 凭据 / 部署 / Cloudflare 速查
+§5 各子项目维护者备忘
+§6 历史决策快查（按主题）
+§7 变更记录
+```
+
+### 5.2 §0 警告章（约 10 行）
+
+```
+# CLAUDE.md — Light 维护备忘录
+
+> ⚠ **本文件不是 AI 入口**。
+> Claude Code 平台会自动加载本文件，但你（无论是哪一种 Claude）
+> 应该立即跳转读 `BIAV-SC.md`，那里是统一入口。
+>
+> 本文件仅供 Light（项目维护者，人类）做仓库维护时速查使用。
+> 内容偏向工程操作 + 凭据 + 故障排查。
+>
+> Light 之外的人类 / AI 不要依赖本文件做接入。
+```
+
+**关键作用**：让 Claude Code 启动时自动加载到此，立即跳转 BIAV-SC.md，避免新会话陷入「读这文件」→「以为自己是工程角色」的误区。
+
+### 5.3 §1 ~ §6 内容来源
+
+来源是「拆解当前 CLAUDE.md + BIAV-SC.md 中所有面向人类操作者的段落」：
+
+| 章 | 来源 | 内容 |
+|---|------|------|
+| §1 git 速查 | 当前 CLAUDE.md §1 | 直推 main / SessionStart hook / 推送失败重试等 |
+| §2 hook 速查 | 当前 CLAUDE.md §5 + 本会话 distill 调研 | hook 链 / 故障 / 软失败规范 |
+| §3 workflow 速查 | 当前 CLAUDE.md §8 | dream / news / wiki / discord 等故障应对 |
+| §4 凭据速查 | 当前散在 lessons-learned + decisions | secrets 管理 / Cloudflare 413 / 部署故障 |
+| §5 子项目维护备忘 | 当前 CLAUDE.md §4 | 各 CONTEXT.md 入口快查 |
+| §6 历史决策快查 | `decisions.md` 摘要 + lessons-learned 重点 | 按主题分类的速查表 |
+
+### 5.4 CLAUDE.md 总长度估算
+
+§0~§7 约 **200-250 行**（当前约 200 行），改动主要是**重组 + 净化** + 加 §0 警告。
+
+
 
 ---
 
