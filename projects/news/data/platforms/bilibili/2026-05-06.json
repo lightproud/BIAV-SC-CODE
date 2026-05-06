@@ -1,8 +1,8 @@
 {
   "date": "2026-05-06",
-  "archived_at": "2026-05-06T08:08:48.953525+00:00",
+  "archived_at": "2026-05-06T10:58:54.494515+00:00",
   "source": "bilibili",
-  "item_count": 26,
+  "item_count": 27,
   "items": [
     {
       "source": "bilibili",
@@ -373,6 +373,24 @@
         "play": 17,
         "comment_count": 2,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T08:37:52+00:00",
+      "lang": "zh",
+      "title": "【微恐实况】画风神似 沙耶之歌 的国产RPG游戏 |《薨愚虻》p1",
+      "summary": "是一款画风阴间的游戏呀，网上很多人说画风神似沙耶之歌，虽然丸子没玩过沙耶之歌，但是听说过这个游戏也是很阴间呐，未来有机会会玩到的！另外希望阿b可以多多推流~感谢大家(^人^)\n\n游戏名称：《薨愚虻》\n\n游戏简介：一部风格独特的传统RPG游戏，这三个字蕴含着寓意：“薨”代表苦难与伤痛，“愚”象征自负与忧念，“虻”则体现强烈的虚无感。在游戏中玩家将扮演“窦”，通过探索未知与命运。，在迷惘中寻回自我。\n游戏内容包含很多令人不适的内容请注意！\n\n游戏链接：网页版：https://www.mhhf.com/game",
+      "url": "https://www.bilibili.com/video/BV16SRWBBE7H",
+      "author": "丸子_SAMA_",
+      "engagement": 19,
+      "media_url": "https://i2.hdslb.com/bfs/archive/bb7ba900fae08e471fc66a41945b1771959d8b9b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 19,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     },
