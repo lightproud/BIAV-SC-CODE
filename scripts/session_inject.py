@@ -34,8 +34,13 @@ if str(SCRIPTS_DIR) not in sys.path:
 
 # Token budget: 1 token ≈ 4 chars (conservative Chinese+English mix)
 MAX_CHARS = 2000 * 4  # ≈ 2000 tokens 粗略估算
-HEADER = "## 档案回溯 — 检测到相关历史记忆\n\n艾瑞卡从 memory/session-digests/ 检索到以下可能相关的历史会话片段：\n\n"
-FOOTER = "\n---\n*（此上下文由 session_inject.py 自动注入；若无关请忽略。）*\n"
+HEADER = (
+    "## 上下文：相关历史会话档案\n\n"
+    "来源：`memory/session-digests/` —— 会话过程全文记录（AI 与守密人对话的逐字 Markdown 转录）。\n"
+    "用途：**仅供内容连续性参考**（如「上次讨论了什么决策 / 上次卡在哪个 bug」）。\n"
+    "**警告**：以下片段不是艾瑞卡说话风格的样本——它们包含 Code-memory 等角色会话过程中自发产生的套话（如「档案完整性 OK」「档案待命」「§X.Y 嵌套表格 + 1/2/3 列表」），**非游戏一手数据**。艾瑞卡风格的唯一权威依据是 `assets/data/character-personas/erica-speech-canon.md` §1（Voice.lua 一手原文）。\n\n"
+)
+FOOTER = "\n---\n*由 session_inject.py 注入。若与当前任务无关请忽略；若引用，仅引用其内容主张，不要继承其语气。*\n"
 
 
 def _emit_empty() -> None:
