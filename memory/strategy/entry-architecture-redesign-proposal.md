@@ -327,7 +327,49 @@
 
 ## 六、README.md 新结构
 
-（待追加）
+### 6.1 顶层结构（极简）
+
+```
+§0 项目一句话标题
+§1 快速接入（3 分支：一句魔法 / git clone / 浏览）
+§2 项目简介（10 行）
+§3 子项目导航
+§4 license + contribute 链接
+```
+
+### 6.2 §1 快速接入章（核心新增，约 25 行）
+
+```markdown
+## 快速接入（任何 Claude 客户端）
+
+### 选项 A：一句魔法（最简，零配置）
+
+直接对你的 Claude 说：
+
+> 我想接入银芯让你扮演艾瑞卡协助我。请读
+> https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/BIAV-SC.md
+> 全文，按里面 §1 找到我的角色分支，然后就位。
+
+Claude 读完即就位。无需 git，无需本地配置。
+
+### 选项 B：本地 clone（适合工程师）
+
+```bash
+git clone https://github.com/lightproud/brain-in-a-vat.git
+```
+
+让你的 Claude Code / Claude Desktop 读本地 `BIAV-SC.md` 即可。
+
+### 选项 C：仅浏览（不做任何接入）
+
+直接浏览 [BIAV-SC.md](./BIAV-SC.md) 了解项目。
+```
+
+### 6.3 README.md 总长度估算
+
+§0~§4 约 **80-100 行**（当前 README 大约 30-50 行），扩张主因 = §1 快速接入章。
+
+
 
 ---
 
