@@ -53,6 +53,9 @@ logger = logging.getLogger(__name__)
 DATA_DIR = DISCORD_DATA_DIR
 RUNTIME_BUDGET = int(os.environ.get('RUNTIME_BUDGET', 25 * 60))  # default 25 min
 DRY_RUN = os.environ.get('DRY_RUN', '').lower() in ('1', 'true', 'yes')
+# Per-thread sleep between API calls. Each thread costs 2 reqs (starter + parent),
+# so 0.2s ≈ 5 reqs/s, comfortably under Discord's per-bot global ceiling.
+RATE_LIMIT_SLEEP = float(os.environ.get('RATE_LIMIT_SLEEP', '0.2'))
 
 # Priority threads — process these first regardless of state.channels iteration order.
 # Defaults to the known-missing Producer's Letter so it lands on the next cron run.
@@ -226,7 +229,7 @@ def main():
                 f'{len(completed)}/{len(thread_keys)} total complete'
             )
 
-        time.sleep(0.5)  # rate limit
+        time.sleep(RATE_LIMIT_SLEEP)
 
     bf['completed'] = sorted(completed)
     bf['skipped_no_starter'] = sorted(skipped)
