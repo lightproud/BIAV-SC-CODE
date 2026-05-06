@@ -83,5 +83,18 @@ CLAUDE_DISTILL_MODE=1 python3 "$DISTILLER" \
     --cwd "$REPO_ROOT" \
     || echo "  distiller exited non-zero: $?"
 
+# Soft-fail auto-commit untracked session-digests after distiller completes.
+# Pairs with .claude/hooks/session-start-sync.sh (push ↔ pull self-healing).
+# Path-restricted to memory/session-digests/ to avoid touching in-flight files.
+DIGEST_DIR_REL="memory/session-digests"
+if [[ -n "$(cd "$REPO_ROOT" && git ls-files --others --exclude-standard -- "$DIGEST_DIR_REL" 2>/dev/null)" ]]; then
+    cd "$REPO_ROOT"
+    git add -- "$DIGEST_DIR_REL" 2>>"$LOG_FILE" || echo "  add failed (non-fatal)" >>"$LOG_FILE"
+    git commit -m "chore(memory): session digest auto-commit (SessionEnd hook)" \
+        2>>"$LOG_FILE" || echo "  commit failed (non-fatal)" >>"$LOG_FILE"
+    git push origin main 2>>"$LOG_FILE" \
+        || echo "  push failed (non-fatal, will retry next session)" >>"$LOG_FILE"
+fi
+
 echo "[$(date -u +%FT%TZ)] hook done"
 exit 0

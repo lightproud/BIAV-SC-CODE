@@ -1,34 +1,25 @@
 {
   "last_session": {
-    "id": "db8c92fd",
-    "timestamp": "2026-05-06T14:23:43.421000+00:00",
-    "duration_minutes": 14773.0,
-    "branch": "claude/opus-handoff-strategy-bCiyY",
-    "topics": [
-      "银芯",
-      "黑池"
-    ],
+    "id": "fail-sim",
+    "timestamp": null,
+    "duration_minutes": null,
+    "branch": "",
+    "topics": [],
     "decisions": [],
-    "files_changed": [
-      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
-      "/home/user/brain-in-a-vat/BIAV-SC.md",
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/README.md",
-      "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
-      "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-      "/home/user/brain-in-a-vat/memory/decisions.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-distill-autocommit.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-restructure-batch1.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-news-data-layer-audit.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-strategy-bootstrap.md",
-      "/home/user/brain-in-a-vat/memory/lessons-learned.md"
-    ],
+    "files_changed": [],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "sim-2",
+      "timestamp": null,
+      "duration_minutes": null,
+      "branch": "",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "f57e7e06",
       "timestamp": "2026-05-06T00:01:33.852000+00:00",
@@ -228,54 +219,26 @@
         "/home/user/brain-in-a-vat/memory/strategy/code-strategy-bootstrap-proposal.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "e2731553",
-      "timestamp": "2026-04-26T14:29:43.330000+00:00",
-      "duration_minutes": 603.8,
-      "branch": "claude/cleanup-workflows-repo-HUhqm",
-      "topics": [
-        "记忆系统",
-        "银芯"
-      ],
-      "decisions": [
-        "step-level check）"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.claude/hooks/session-start-sync.sh",
-        "/home/user/brain-in-a-vat/.claude/settings.json",
-        "/home/user/brain-in-a-vat/.github/workflows/claude.yml",
-        "/home/user/brain-in-a-vat/.gitignore",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/lessons-learned.md",
-        "/home/user/brain-in-a-vat/memory/session-digests/handoff-to-opus47.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 4.06,
-      "黑池": 1.54,
-      "GitHub": 0.92,
-      "Phase1": 0.92,
-      "BPT": 0.6,
-      "记忆系统": 0.33,
-      "索引": 0.32
+      "银芯": 2.45,
+      "GitHub": 0.74,
+      "Phase1": 0.74,
+      "BPT": 0.48,
+      "黑池": 0.43,
+      "记忆系统": 0.26,
+      "索引": 0.26
     },
     "hot_files": [
-      "/home/user/brain-in-a-vat/BIAV-SC.md",
       "/home/user/brain-in-a-vat/memory/research/ai-memory-restructure-2026-04.md",
       "/home/user/brain-in-a-vat/memory/research/ai-memory-vendor-matrix.md",
       "/home/user/brain-in-a-vat/memory/research/proposal-distill-autocommit-2026-04.md",
       "/home/user/brain-in-a-vat/memory/strategy/code-strategy-bootstrap-proposal.md",
-      "/home/user/brain-in-a-vat/memory/strategy/memory-restructure-options.md",
-      "/home/user/brain-in-a-vat/memory/data-layer-audit.md",
-      "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-      "/home/user/brain-in-a-vat/projects/news/requirements.txt",
-      "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py"
+      "/home/user/brain-in-a-vat/memory/strategy/memory-restructure-options.md"
     ],
-    "total_sessions": 100
+    "total_sessions": 101
   },
-  "updated_at": "2026-05-06T14:27:28.716351+00:00"
+  "updated_at": "2026-05-06T14:40:13.759334+00:00"
 }
