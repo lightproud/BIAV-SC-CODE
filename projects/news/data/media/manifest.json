@@ -6481,6 +6481,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-06T17:25:00.416326+00:00"
+    },
+    "https://preview.redd.it/x330ivf4zkzg1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=e930dafb8b473c33ecfeb96da19d9e7d3b284d8d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-06T21:05:37.654837+00:00"
     }
   },
   "archived": []
