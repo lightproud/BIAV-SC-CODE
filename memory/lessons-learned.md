@@ -308,6 +308,21 @@
   3. **R3「审计建议」≠「代码已实施」，禁止互替**：引用审计文档 / 设计草案 / 改造预案作证据时，必须明确标注"审计 §X.Y **建议**这么做"vs "**实施已落盘**（commit SHA / 文件路径 / 行号）"。**禁止**只引用审计章节编号而不附实施侧证据；**禁止**用审计章节编号充当 commit / PR 的替身
 - **Impact**：所有银芯子会话（主控台 / Code-site / Code-news / Code-wiki / Code-memory / Code-strategy / Code-BPT 7 角色 + 未来扩展）的报告可信度；接入银芯的任何外部 AI 的事实采信纪律；BPT 反馈循环（每周 1 次）的数据真实性；最重要——对齐漂移的**结构性防御**（不依赖 AI 自省承诺，因为自省本身也是结构性模板反应）
 
+## 33. distill hook 软失败 git 推送的取舍
+
+- **Context**：2026-04-26 起守密人多次收到 `~/.claude/stop-hook-git-check.sh` 报警 untracked digest，根因 Claude Code 平台无感切换底层 session（同会话内 session_id 多次切换），每次切换 SessionEnd hook 触发 `session_distiller.py` 写盘新 digest 但**故意不做 git 操作**（设计取舍，避免沉默推送失败），导致 untracked 文件累积在工作树。Code-strategy `memory/research/proposal-distill-autocommit-2026-04.md` 评估 5 个备选方案后推荐方案 A（在 wrapper shell 末尾追加软失败 commit + push 块），主控台审定 + 守密人接受 + 派 Code-memory 实施。
+- **Problem**：原设计取舍为「不在 hook 里做 git push 避免沉默失败」，但代价是长会话期 untracked 累积 + stop-hook 反复报警 + 守密人会话体验下降。完全省略 git 操作让 SessionEnd 与 SessionStart 之间出现「写盘但不归档」的脱节窗口。
+- **Fix**：在 `scripts/session-end-distill.sh` 末尾 distiller 调用之后追加 +13 行 shell 块（实施 2026-05-06 commit），核心逻辑：
+  1. 用 `git ls-files --others --exclude-standard -- memory/session-digests` 直接检查 untracked（**不用 brief 参考实现的 `git diff --quiet`** —— 它不感知 untracked，会把 untracked-only 场景误判为「干净」跳过整块，是 brief 给的参考实现的隐性 bug）
+  2. 仅 `git add memory/session-digests/` 路径限制（避免误提交对话进行中其他文件）
+  3. 每步用 `|| echo "...(non-fatal)" >>"$LOG_FILE"` 兜底（add / commit / push 任一失败均 log 后继续，不阻塞 SessionEnd 主流程）
+  4. 与 `.claude/hooks/session-start-sync.sh` 形成「push（end）↔ pull（start）」自愈循环：本次 push 失败下次会话 SessionStart sync 自动同步主线，未推 commit 在下次 push 时一并带过去
+- **验证方法**（命令行可重现）：
+  - 模拟成功路径：`touch memory/session-digests/test-XXX.md` → `printf '{...}' | bash scripts/session-end-distill.sh` → 验证 commit + push 成功 + `/tmp/session-distill.log` 留痕
+  - 模拟失败路径：`git remote set-url origin http://nonexistent.local/fake` → 同上 → 验证 hook exit 0（非阻塞）+ log 含「push failed (non-fatal, will retry next session)」+ commit 仍落地（仅未 push）
+- **取舍**：放弃「绝对不做 git push」的简洁性，换取 untracked 自动归档；用「软失败 + log 留痕 + 自愈循环」三重保险压制沉默失败风险——push 失败不丢数据（commit 已落地），下次 SessionStart 同步带过去。
+- **Impact**：守密人会话体验、untracked 累积消除、stop-hook 报警频率下降；SessionEnd hook 与 SessionStart hook 自愈循环正式建立；为未来 hook 扩展（如 SessionEnd 触发 dream phase / index rebuild）提供 commit/push 模式参考。**相关教训**：参考实现给的逻辑要先用「我的边界条件能不能命中」校验一遍，brief 模板的 if 条件链不一定覆盖所有 use case（本次 untracked-only 场景被 `git diff --quiet` 误判跳过即典型例）。
+
 ---
 
 > **维护说明**：遇到新的坑时立即追加。格式保持统一。
