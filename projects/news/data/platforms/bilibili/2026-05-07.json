@@ -1,8 +1,8 @@
 {
   "date": "2026-05-07",
-  "archived_at": "2026-05-06T21:05:37.716263+00:00",
+  "archived_at": "2026-05-06T22:42:41.416616+00:00",
   "source": "bilibili",
-  "item_count": 12,
+  "item_count": 14,
   "items": [
     {
       "source": "bilibili",
@@ -147,6 +147,36 @@
         "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T05:09:47+00:00",
+      "lang": "zh",
+      "title": "［忘却前夜⎮相位对弈］珊1v4能赢吗？能的",
+      "summary": "珊你是我妈妈。",
+      "url": "https://www.bilibili.com/video/BV1PARxBUEWb",
+      "author": "_HoshiYukibana_",
+      "engagement": 102,
+      "media_url": "https://i0.hdslb.com/bfs/archive/77cb011917cd51fbdb1638bcd889dea95798e459.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 102,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T05:09:47+00:00",
+      "lang": "zh",
+      "title": "［忘却前夜⎮相位对弈］珊1v4能赢吗？能的",
+      "summary": "珊你是我妈妈。",
+      "url": "http://www.bilibili.com/video/av116525902069777",
+      "author": "_HoshiYukibana_",
+      "engagement": 102,
+      "media_url": "//i0.hdslb.com/bfs/archive/77cb011917cd51fbdb1638bcd889dea95798e459.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",

@@ -4619,6 +4619,13 @@
       "title": "刷了一天肉块终于看见美少女了",
       "time": "2026-05-06T14:27:10+00:00",
       "downloaded_at": "2026-05-06T15:26:02.153272+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/77cb011917cd51fbdb1638bcd889dea95798e459.jpg": {
+      "filename": "bilibili_caab8741afb50c8c.jpg",
+      "source": "bilibili",
+      "title": "［忘却前夜⎮相位对弈］珊1v4能赢吗？能的",
+      "time": "2026-05-06T05:09:47+00:00",
+      "downloaded_at": "2026-05-06T22:42:41.051931+00:00"
     }
   },
   "failed": {
@@ -6486,6 +6493,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-06T21:05:37.654837+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/77cb011917cd51fbdb1638bcd889dea95798e459.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-06T22:42:41.352834+00:00"
     }
   },
   "archived": []
