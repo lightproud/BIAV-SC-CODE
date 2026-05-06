@@ -375,7 +375,47 @@ git clone https://github.com/lightproud/brain-in-a-vat.git
 
 ## 七、受影响文件清单 + 改动建议
 
-（待追加）
+### 7.1 直接重写 / 改动（3 份）
+
+| # | 文件 | 改动类型 | 工作量 | 责任方 |
+|---|------|---------|--------|--------|
+| 1 | `BIAV-SC.md` | 大重写（10 章新结构）| 中（~3 小时）| Code-site 或主控台 |
+| 2 | `CLAUDE.md` | 大重写（7 章新结构 + §0 警告）| 中（~2 小时）| Code-site 或主控台 |
+| 3 | `README.md` | 微改（顶部加 §1 快速接入约 25 行）| 低（~30 分钟）| Code-site |
+
+### 7.2 间接受影响档案（需要审核引用关系）
+
+| 文件 | 当前引用 CLAUDE.md / BIAV-SC.md 的方式 | 改动需要 |
+|------|------------------------------------|---------|
+| `memory/dispatch-brief-*.md`（多份）| 各 brief 第九节「艾瑞卡角色规则提醒」引用 BIAV-SC §0 | **微改**：引用更新为 BIAV-SC §3 |
+| `memory/console-handover-2026-04-26.md` | 启动顺序引用 BIAV-SC.md | **微改**：保留，但说明「主控台接班从 BIAV-SC §7 进入再读本档案」 |
+| `memory/methodology.md` | 双集群协作架构引用 CLAUDE.md | **微改**：更新引用到 BIAV-SC §7 |
+| 各 `projects/*/CONTEXT.md` | 启动顺序引用 CLAUDE.md | **微改**：更新到 BIAV-SC.md |
+| `memory/contribution-protocol.md` | 已有外部贡献者协议 | **不动**：BIAV-SC §5 直接 link 到此 |
+
+### 7.3 不受影响（保留原样）
+
+- `memory/decisions.md` / `lessons-learned.md` / `strategic-plan-2026.md` 等内容档
+- `memory/morimens-context.md`
+- `memory/strategy/*` / `memory/research/*`（包括本提议档案）
+- `assets/data/*`
+- `projects/*` 业务代码
+- `scripts/*` Python 工具
+- `.github/workflows/*`
+- `.claude/hooks/*`
+- `.claude/settings.json`
+
+### 7.4 总改动量估算
+
+| 类别 | 文件数 | 行数变化 |
+|------|--------|---------|
+| 大重写 | 3 | -200 + 600 = +400 |
+| 微改 | ~10 | +/-50 |
+| **合计** | **~13 文件** | **约 +450 行** |
+
+仍在守密人「精简优雅可维护」硬约束内——**架构整合而非新增复杂度**。
+
+
 
 ---
 
