@@ -1,8 +1,8 @@
 {
   "date": "2026-05-07",
-  "archived_at": "2026-05-07T08:16:40.500322+00:00",
+  "archived_at": "2026-05-07T11:02:50.099244+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 20,
   "items": [
     {
       "source": "bilibili",
@@ -261,6 +261,36 @@
         "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-07T08:58:56+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜/织涅骨】早知道这么痛苦的话当初不认识你就好了",
+      "summary": "背景来源于dy\n  └ NoMoretoForgive (0赞): 是我在你游最爱的水仙骨科女铜[蹲蹲]",
+      "url": "https://www.bilibili.com/video/BV1RtdwBTEi9",
+      "author": "悲剧女同全肯定bot",
+      "engagement": 32,
+      "media_url": "https://i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 31,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-07T08:58:56+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜/织涅骨】早知道这么痛苦的话当初不认识你就好了",
+      "summary": "背景来源于dy",
+      "url": "http://www.bilibili.com/video/av116532461963077",
+      "author": "悲剧女同全肯定bot",
+      "engagement": 32,
+      "media_url": "//i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
