@@ -4668,6 +4668,13 @@
       "title": "纱耶(´-ω-`)",
       "time": "2026-05-07T07:13:41+00:00",
       "downloaded_at": "2026-05-07T08:16:39.658972+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg": {
+      "filename": "bilibili_363db2dbfe68031c.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜/织涅骨】早知道这么痛苦的话当初不认识你就好了",
+      "time": "2026-05-07T08:58:56+00:00",
+      "downloaded_at": "2026-05-07T11:02:49.726526+00:00"
     }
   },
   "failed": {
@@ -6570,6 +6577,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-07T08:16:40.430112+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T11:02:50.027409+00:00"
     }
   },
   "archived": []
