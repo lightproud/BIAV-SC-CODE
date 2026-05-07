@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-07T19:28:51.388977+00:00",
+  "collected_at": "2026-05-07T21:00:11.448008+00:00",
   "source": "bilibili",
   "item_count": 7,
   "items": [
@@ -11,11 +11,11 @@
       "summary": "背景来源于dy\n  └ NoMoretoForgive (3赞): 是我在你游最爱的水仙骨科女铜[蹲蹲]\n  └ 补丁补漏洞 (0赞): 美味\n  └ 车轱辘轧脸上了 (0赞): 好铜我赤[doge]",
       "url": "https://www.bilibili.com/video/BV1RtdwBTEi9",
       "author": "悲剧女同全肯定bot",
-      "engagement": 368,
+      "engagement": 375,
       "media_url": "https://i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 363,
+        "play": 370,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
@@ -29,7 +29,7 @@
       "summary": "背景来源于dy",
       "url": "http://www.bilibili.com/video/av116532461963077",
       "author": "悲剧女同全肯定bot",
-      "engagement": 363,
+      "engagement": 370,
       "media_url": "//i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg",
       "content_type": "video"
     },
@@ -59,15 +59,45 @@
       "summary": "-\n  └ Adelng (0赞): 好看好看[星星眼][星星眼][星星眼][星星眼]\n  └ 乐风-烬追忆 (0赞): 来喽来喽[蔚蓝档案静态_打call]\n  └ 抑郁桑 (0赞): cute(´｡•᎑•`)っ♡",
       "url": "https://www.bilibili.com/video/BV1pvdABHEXC",
       "author": "皮姆pimu",
-      "engagement": 191,
+      "engagement": 216,
       "media_url": "https://i0.hdslb.com/bfs/archive/77288d82aa3bc529b434ccc15ea34a2108536b67.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 186,
+        "play": 211,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-07T10:18:25+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】（自存）大蜘蛛：我们几个真是太厉害了（？）",
+      "summary": "萌新为打主线瞎配的队，大蜘蛛还是太强大了一点（）\n  └ 烧碱大战氢氧化钠 (0赞): 依旧大蜘蛛牛逼克拉斯",
+      "url": "https://www.bilibili.com/video/BV1NKdwBpEkS",
+      "author": "啞風氏",
+      "engagement": 113,
+      "media_url": "https://i1.hdslb.com/bfs/archive/4aadc9d5ade0d61ccd316e1cddeff568d66fe836.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 112,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-07T10:18:25+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】（自存）大蜘蛛：我们几个真是太厉害了（？）",
+      "summary": "萌新为打主线瞎配的队，大蜘蛛还是太强大了一点（）",
+      "url": "http://www.bilibili.com/video/av116532763951333",
+      "author": "啞風氏",
+      "engagement": 112,
+      "media_url": "//i1.hdslb.com/bfs/archive/4aadc9d5ade0d61ccd316e1cddeff568d66fe836.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -86,36 +116,6 @@
         "comments_fetched": 2,
         "danmaku": 0
       }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-07T10:18:25+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】（自存）大蜘蛛：我们几个真是太厉害了（？）",
-      "summary": "萌新为打主线瞎配的队，大蜘蛛还是太强大了一点（）\n  └ 烧碱大战氢氧化钠 (0赞): 依旧大蜘蛛牛逼克拉斯",
-      "url": "https://www.bilibili.com/video/BV1NKdwBpEkS",
-      "author": "啞風氏",
-      "engagement": 106,
-      "media_url": "https://i1.hdslb.com/bfs/archive/4aadc9d5ade0d61ccd316e1cddeff568d66fe836.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 105,
-        "comment_count": 1,
-        "comments_fetched": 1,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-07T10:18:25+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】（自存）大蜘蛛：我们几个真是太厉害了（？）",
-      "summary": "萌新为打主线瞎配的队，大蜘蛛还是太强大了一点（）",
-      "url": "http://www.bilibili.com/video/av116532763951333",
-      "author": "啞風氏",
-      "engagement": 105,
-      "media_url": "//i1.hdslb.com/bfs/archive/4aadc9d5ade0d61ccd316e1cddeff568d66fe836.jpg",
-      "content_type": "video"
     }
   ]
 }
