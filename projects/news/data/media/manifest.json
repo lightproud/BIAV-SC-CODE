@@ -4647,6 +4647,20 @@
       "title": "#忘卻前夜 #morimens 融災1-4 Boss戰",
       "time": "2026-05-07T01:52:48.186359+00:00",
       "downloaded_at": "2026-05-07T01:55:48.969693+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/281d5c83cf293a3437c0532a7e49119874dcab4d.jpg": {
+      "filename": "bilibili_41d8aca2ba8b85fa.jpg",
+      "source": "bilibili",
+      "title": "可恶的外星生物，竟敢伪装成美少女",
+      "time": "2026-05-06T23:30:57+00:00",
+      "downloaded_at": "2026-05-07T05:25:53.868588+00:00"
+    },
+    "https://i.ytimg.com/vi/tr4jTxBpCHI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJi5Rek63PMgYKg1D-eTxQXtBMKQ": {
+      "filename": "youtube_b1fd4f5daadb80d2.jpg",
+      "source": "youtube",
+      "title": "State of Morimens - before 2.5 anniversary",
+      "time": "2026-05-07T05:22:59.172909+00:00",
+      "downloaded_at": "2026-05-07T05:25:54.242175+00:00"
     }
   },
   "failed": {
@@ -6524,6 +6538,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-07T01:55:48.446111+00:00"
+    },
+    "https://preview.redd.it/0hjkcfqmzlzg1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=9043e034906c4af4c50724c936566c0fa8a644ee": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T05:25:54.575932+00:00"
+    },
+    "https://external-preview.redd.it/89DrljjZJJgj7myeAM1_6g5c1P3dDm1Q1fRdLg0hwKU.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=00ba93d909fba29b809f697eedc589dea0c6b7d0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T05:25:54.935394+00:00"
+    },
+    "https://preview.redd.it/lh2f2w73ylzg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=b33ba019897cde6fe4a711322582fb558c5d09b9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T05:25:55.264944+00:00"
     }
   },
   "archived": []
