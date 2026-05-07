@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-07T22:55:09.277299+00:00",
+  "collected_at": "2026-05-07T23:46:38.437990+00:00",
   "source": "pixiv",
-  "item_count": 11,
+  "item_count": 10,
   "items": [
     {
       "source": "pixiv",
@@ -101,28 +101,6 @@
     },
     {
       "source": "pixiv",
-      "time": "2026-04-08T08:46:36+09:00",
-      "lang": "",
-      "title": "ファロス誕生日おめでとう！！！！",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/143290512",
-      "author": "ちりめんじゃこ",
-      "engagement": 0,
-      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/04/08/08/46/36/143290512_p0_square1200.jpg",
-      "content_type": "image"
-    },
-    {
-      "source": "pixiv",
-      "time": "2026-05-07T22:53:41.977988+00:00",
-      "lang": "",
-      "title": "",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "pixiv",
       "time": "2026-05-01T02:35:18+09:00",
       "lang": "",
       "title": "Kathigu-ra from Morimens",
@@ -132,6 +110,16 @@
       "engagement": 0,
       "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/01/02/35/18/144198281_p0_square1200.jpg",
       "content_type": "image"
+    },
+    {
+      "source": "pixiv",
+      "time": "2026-05-07T23:45:12.062014+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
     }
   ]
 }
