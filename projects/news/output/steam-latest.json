@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-07T21:52:49.581404+00:00",
+  "collected_at": "2026-05-07T22:55:09.277299+00:00",
   "source": "steam",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-07T21:41:26+00:00",
+      "lang": "turkish",
+      "title": "[正面]",
+      "summary": "",
+      "url": "https://steamcommunity.com/profiles/76561199067013947/recommended/3052450",
+      "author": "76561199067013947",
+      "engagement": 0,
+      "language": "turkish",
+      "voted_up": true,
+      "review": "",
+      "timestamp_created": 1778190086,
+      "playtime_forever": 42
+    },
     {
       "source": "steam",
       "time": "2026-05-07T03:51:46+00:00",
