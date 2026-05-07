@@ -1,26 +1,8 @@
 {
-  "collected_at": "2026-05-07T15:28:47.079046+00:00",
+  "collected_at": "2026-05-07T17:35:14.252804+00:00",
   "source": "bilibili",
-  "item_count": 4,
+  "item_count": 5,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-05-06T23:30:57+00:00",
-      "lang": "zh",
-      "title": "可恶的外星生物，竟敢伪装成美少女",
-      "summary": "人类阵营将打出爆炸伤害\n  └ 无敌梦秋大王 (0赞): 太好了，是寒冰射手，我们有救了[打call]",
-      "url": "https://www.bilibili.com/video/BV1XzRaB7EeB",
-      "author": "霓千夜",
-      "engagement": 322,
-      "media_url": "https://i1.hdslb.com/bfs/archive/281d5c83cf293a3437c0532a7e49119874dcab4d.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 321,
-        "comment_count": 1,
-        "comments_fetched": 1,
-        "danmaku": 0
-      }
-    },
     {
       "source": "bilibili",
       "time": "2026-05-07T08:58:56+00:00",
@@ -29,12 +11,12 @@
       "summary": "背景来源于dy\n  └ NoMoretoForgive (3赞): 是我在你游最爱的水仙骨科女铜[蹲蹲]\n  └ 补丁补漏洞 (0赞): 美味\n  └ 车轱辘轧脸上了 (0赞): 好铜我赤[doge]",
       "url": "https://www.bilibili.com/video/BV1RtdwBTEi9",
       "author": "悲剧女同全肯定bot",
-      "engagement": 293,
+      "engagement": 351,
       "media_url": "https://i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 289,
-        "comment_count": 4,
+        "play": 346,
+        "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -47,9 +29,45 @@
       "summary": "背景来源于dy",
       "url": "http://www.bilibili.com/video/av116532461963077",
       "author": "悲剧女同全肯定bot",
-      "engagement": 291,
+      "engagement": 346,
       "media_url": "//i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T23:30:57+00:00",
+      "lang": "zh",
+      "title": "可恶的外星生物，竟敢伪装成美少女",
+      "summary": "人类阵营将打出爆炸伤害\n  └ 无敌梦秋大王 (0赞): 太好了，是寒冰射手，我们有救了[打call]",
+      "url": "https://www.bilibili.com/video/BV1XzRaB7EeB",
+      "author": "霓千夜",
+      "engagement": 324,
+      "media_url": "https://i1.hdslb.com/bfs/archive/281d5c83cf293a3437c0532a7e49119874dcab4d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 323,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-07T16:07:42+00:00",
+      "lang": "zh",
+      "title": "『沙耶之歌/meme』ぼくらは肉でできている",
+      "summary": "-\n  └ 抑郁桑 (0赞): cute(´｡•᎑•`)っ♡\n  └ 涂山容容official (0赞): 老师我第一个[哈基蜜集_赞喵]\n  └ 乐风-烬追忆 (0赞): 来喽来喽[蔚蓝档案静态_打call]",
+      "url": "https://www.bilibili.com/video/BV1pvdABHEXC",
+      "author": "皮姆pimu",
+      "engagement": 134,
+      "media_url": "https://i0.hdslb.com/bfs/archive/77288d82aa3bc529b434ccc15ea34a2108536b67.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 131,
+        "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
@@ -59,11 +77,11 @@
       "summary": "-\n  └ 妓哥哥 (1赞): 可爱[元梦_爱你]\n  └ 钉宫小黑猫 (1赞): 好可",
       "url": "https://www.bilibili.com/video/BV1BndFBNEwD",
       "author": "勺勺owo",
-      "engagement": 91,
+      "engagement": 101,
       "media_url": "https://i0.hdslb.com/bfs/archive/9064ea12035aa5b19e81d20e41ab8e3e8a4b9c97.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 89,
+        "play": 99,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
