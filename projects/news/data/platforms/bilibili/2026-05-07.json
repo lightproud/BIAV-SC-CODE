@@ -1,8 +1,8 @@
 {
   "date": "2026-05-07",
-  "archived_at": "2026-05-07T05:25:55.336771+00:00",
+  "archived_at": "2026-05-07T08:16:40.500322+00:00",
   "source": "bilibili",
-  "item_count": 17,
+  "item_count": 18,
   "items": [
     {
       "source": "bilibili",
@@ -259,6 +259,24 @@
         "play": 38,
         "comment_count": 1,
         "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-07T07:13:41+00:00",
+      "lang": "zh",
+      "title": "纱耶(´-ω-`)",
+      "summary": "-\n  └ 妓哥哥 (1赞): 可爱[元梦_爱你]\n  └ 钉宫小黑猫 (1赞): 好可",
+      "url": "https://www.bilibili.com/video/BV1BndFBNEwD",
+      "author": "勺勺owo",
+      "engagement": 28,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9064ea12035aa5b19e81d20e41ab8e3e8a4b9c97.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 26,
+        "comment_count": 2,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     },
