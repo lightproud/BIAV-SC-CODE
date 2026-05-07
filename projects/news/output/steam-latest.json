@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-07T12:31:59.123853+00:00",
+  "collected_at": "2026-05-07T15:28:47.079046+00:00",
   "source": "steam",
-  "item_count": 4,
+  "item_count": 3,
   "items": [
     {
       "source": "steam",
@@ -47,21 +47,6 @@
       "review": "Free-to-play Lovecraftian roguelite deckbuilder! Deep strategy, cool art, and PvP mode. A hidden gem for card game fans.",
       "timestamp_created": 1778090675,
       "playtime_forever": 535
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-06T14:30:04+00:00",
-      "lang": "schinese",
-      "title": "[正面] 不错",
-      "summary": "不错",
-      "url": "https://steamcommunity.com/profiles/76561199882108849/recommended/3052450",
-      "author": "76561199882108849",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "不错",
-      "timestamp_created": 1778077804,
-      "playtime_forever": 7485
     }
   ]
 }

@@ -1,23 +1,23 @@
 {
-  "collected_at": "2026-05-07T12:31:59.123853+00:00",
+  "collected_at": "2026-05-07T15:28:47.079046+00:00",
   "source": "bilibili",
-  "item_count": 5,
+  "item_count": 4,
   "items": [
     {
       "source": "bilibili",
       "time": "2026-05-06T23:30:57+00:00",
       "lang": "zh",
       "title": "可恶的外星生物，竟敢伪装成美少女",
-      "summary": "人类阵营将打出爆炸伤害",
+      "summary": "人类阵营将打出爆炸伤害\n  └ 无敌梦秋大王 (0赞): 太好了，是寒冰射手，我们有救了[打call]",
       "url": "https://www.bilibili.com/video/BV1XzRaB7EeB",
       "author": "霓千夜",
-      "engagement": 316,
+      "engagement": 322,
       "media_url": "https://i1.hdslb.com/bfs/archive/281d5c83cf293a3437c0532a7e49119874dcab4d.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 316,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 321,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -26,16 +26,16 @@
       "time": "2026-05-07T08:58:56+00:00",
       "lang": "zh",
       "title": "【忘却前夜/织涅骨】早知道这么痛苦的话当初不认识你就好了",
-      "summary": "背景来源于dy\n  └ NoMoretoForgive (1赞): 是我在你游最爱的水仙骨科女铜[蹲蹲]\n  └ 寒冬零叶 (0赞): 这么精美的视频居然是免费的（）[魔法少女的魔女审判表情包_哦吼吼]",
+      "summary": "背景来源于dy\n  └ NoMoretoForgive (3赞): 是我在你游最爱的水仙骨科女铜[蹲蹲]\n  └ 补丁补漏洞 (0赞): 美味\n  └ 车轱辘轧脸上了 (0赞): 好铜我赤[doge]",
       "url": "https://www.bilibili.com/video/BV1RtdwBTEi9",
       "author": "悲剧女同全肯定bot",
-      "engagement": 102,
+      "engagement": 293,
       "media_url": "https://i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 100,
-        "comment_count": 2,
-        "comments_fetched": 2,
+        "play": 289,
+        "comment_count": 4,
+        "comments_fetched": 3,
         "danmaku": 0
       }
     },
@@ -47,27 +47,9 @@
       "summary": "背景来源于dy",
       "url": "http://www.bilibili.com/video/av116532461963077",
       "author": "悲剧女同全肯定bot",
-      "engagement": 100,
+      "engagement": 291,
       "media_url": "//i0.hdslb.com/bfs/archive/df6da48d166702dec62fdf1fab263726e6b503b5.jpg",
       "content_type": "video"
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-06T14:27:10+00:00",
-      "lang": "zh",
-      "title": "刷了一天肉块终于看见美少女了",
-      "summary": "一年前旧图重画，累了毁灭吧\n  └ -昆扬 (2赞): [魔法少女的魔女审判表情包_探头]\n  └ 做梦都想睡觉AwA (1赞): 喜欢[给心心]",
-      "url": "https://www.bilibili.com/video/BV1tpRbBaEiv",
-      "author": "舒欢沉裳",
-      "engagement": 92,
-      "media_url": "https://i1.hdslb.com/bfs/archive/0618e94bdd7045c5d05d8ba86d37155d5188ca08.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 90,
-        "comment_count": 2,
-        "comments_fetched": 2,
-        "danmaku": 0
-      }
     },
     {
       "source": "bilibili",
@@ -77,11 +59,11 @@
       "summary": "-\n  └ 妓哥哥 (1赞): 可爱[元梦_爱你]\n  └ 钉宫小黑猫 (1赞): 好可",
       "url": "https://www.bilibili.com/video/BV1BndFBNEwD",
       "author": "勺勺owo",
-      "engagement": 76,
+      "engagement": 91,
       "media_url": "https://i0.hdslb.com/bfs/archive/9064ea12035aa5b19e81d20e41ab8e3e8a4b9c97.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 74,
+        "play": 89,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
