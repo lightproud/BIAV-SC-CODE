@@ -4661,6 +4661,13 @@
       "title": "State of Morimens - before 2.5 anniversary",
       "time": "2026-05-07T05:22:59.172909+00:00",
       "downloaded_at": "2026-05-07T05:25:54.242175+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/9064ea12035aa5b19e81d20e41ab8e3e8a4b9c97.jpg": {
+      "filename": "bilibili_de85b75f9c2e5cda.jpg",
+      "source": "bilibili",
+      "title": "纱耶(´-ω-`)",
+      "time": "2026-05-07T07:13:41+00:00",
+      "downloaded_at": "2026-05-07T08:16:39.658972+00:00"
     }
   },
   "failed": {
@@ -6553,6 +6560,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-07T05:25:55.264944+00:00"
+    },
+    "https://preview.redd.it/w4376yw89ozg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=ce8c440f200190d117b8e405e029bfc4b4b843d9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T08:16:40.102530+00:00"
+    },
+    "https://preview.redd.it/97ncp2lk4ozg1.png?width=140&amp;height=48&amp;auto=webp&amp;s=d42427102070cc77da27bc4521e0cad4902f0fd3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T08:16:40.430112+00:00"
     }
   },
   "archived": []
