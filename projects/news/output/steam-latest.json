@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-07T01:55:46.389476+00:00",
+  "collected_at": "2026-05-07T05:25:52.340738+00:00",
   "source": "steam",
   "item_count": 6,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-07T03:51:46+00:00",
+      "lang": "english",
+      "title": "[正面] Great lore, good art, seems to be pretty heavy tow...",
+      "summary": "Great lore, good art, seems to be pretty heavy towards whales, the amount of actions you can do in 1 turn generally seems lacking but I'm still pretty early on, overall fun though",
+      "url": "https://steamcommunity.com/profiles/76561198834487317/recommended/3052450",
+      "author": "76561198834487317",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Great lore, good art, seems to be pretty heavy towards whales, the amount of actions you can do in 1 turn generally seems lacking but I'm still pretty early on, overall fun though",
+      "timestamp_created": 1778125906,
+      "playtime_forever": 1678
+    },
     {
       "source": "steam",
       "time": "2026-05-06T21:19:09+00:00",
@@ -16,7 +31,7 @@
       "voted_up": true,
       "review": "Honestly, besides the (sometimes) poor translation, this game really IS a gem in the gacha community. Its gameplay is similar to Limbus Company in a way. I'd recommend it to any Limbus Company fans that are willing to try it, I've honestly really enjoyed it thus far. This game is very, very fun!",
       "timestamp_created": 1778102349,
-      "playtime_forever": 439
+      "playtime_forever": 514
     },
     {
       "source": "steam",
@@ -77,21 +92,6 @@
       "review": "都给我来久坐",
       "timestamp_created": 1778067238,
       "playtime_forever": 198
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-06T04:37:22+00:00",
-      "lang": "russian",
-      "title": "[正面] отличная игра в своем жанре",
-      "summary": "отличная игра в своем жанре",
-      "url": "https://steamcommunity.com/profiles/76561198077151106/recommended/3052450",
-      "author": "76561198077151106",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": true,
-      "review": "отличная игра в своем жанре",
-      "timestamp_created": 1778042242,
-      "playtime_forever": 12372
     }
   ]
 }

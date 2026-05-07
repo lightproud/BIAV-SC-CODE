@@ -1,8 +1,8 @@
 {
   "date": "2026-05-07",
-  "archived_at": "2026-05-07T01:55:49.033754+00:00",
+  "archived_at": "2026-05-07T05:25:55.336771+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "source": "bilibili",
@@ -99,6 +99,24 @@
       "engagement": 304,
       "media_url": "//i1.hdslb.com/bfs/archive/f8194e3a17b4e84451bd38b46223281d98e610cd.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T23:30:57+00:00",
+      "lang": "zh",
+      "title": "可恶的外星生物，竟敢伪装成美少女",
+      "summary": "人类阵营将打出爆炸伤害",
+      "url": "https://www.bilibili.com/video/BV1XzRaB7EeB",
+      "author": "霓千夜",
+      "engagement": 304,
+      "media_url": "https://i1.hdslb.com/bfs/archive/281d5c83cf293a3437c0532a7e49119874dcab4d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 304,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
