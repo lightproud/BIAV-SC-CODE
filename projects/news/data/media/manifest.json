@@ -4689,6 +4689,20 @@
       "title": "『沙耶之歌/meme』ぼくらは肉でできている",
       "time": "2026-05-07T16:07:42+00:00",
       "downloaded_at": "2026-05-07T17:35:15.880234+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/4aadc9d5ade0d61ccd316e1cddeff568d66fe836.jpg": {
+      "filename": "bilibili_2ab3c4dfae1e7aeb.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】（自存）大蜘蛛：我们几个真是太厉害了（？）",
+      "time": "2026-05-07T10:18:25+00:00",
+      "downloaded_at": "2026-05-07T19:28:53.220280+00:00"
+    },
+    "https://i.ytimg.com/vi/G7Z1flrL-HQ/hq720.jpg?v=69fcd977&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA3_Nn9Bfe6xNRjZ5eWx-Ko9CX1xQ": {
+      "filename": "youtube_8f4c75831140053f.jpg",
+      "source": "youtube",
+      "title": "Nefraea Dominates Me For 3 Hrs Straight (Morimens Chapter 5 End & Final Boss on HARD)",
+      "time": "2026-05-07T19:24:57.784926+00:00",
+      "downloaded_at": "2026-05-07T19:28:54.072281+00:00"
     }
   },
   "failed": {
@@ -6601,6 +6615,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-07T15:28:47.751492+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/4aadc9d5ade0d61ccd316e1cddeff568d66fe836.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T19:28:53.521440+00:00"
     }
   },
   "archived": []
