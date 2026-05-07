@@ -1,24 +1,24 @@
 {
-  "updated_at": "2026-05-07T15:28:48.100341+00:00",
+  "updated_at": "2026-05-07T17:35:16.227088+00:00",
   "seeded_from": "silent_sources_audit",
   "audit_window": {
     "start": "2016-02-03",
-    "end": "2026-05-07",
-    "days": 3747
+    "end": "2026-05-08",
+    "days": 3748
   },
   "platforms": {
     "reddit": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 680,
+      "total_items": 702,
       "errors": []
     },
     "bilibili": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 1625,
+      "total_items": 1626,
       "errors": []
     },
     "nga": {
@@ -37,37 +37,37 @@
     },
     "steam": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 381,
+      "total_items": 384,
       "errors": []
     },
     "official": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 97,
+      "total_items": 106,
       "errors": []
     },
     "youtube": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 781,
+      "total_items": 782,
       "errors": []
     },
     "discord": {
       "level": "active",
       "last_success_date": "2026-05-05",
-      "consecutive_silent_days": 2,
+      "consecutive_silent_days": 3,
       "total_items": 1216522,
       "errors": []
     },
     "weibo": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 2310,
+      "total_items": 2327,
       "errors": []
     },
     "zhihu": {
@@ -107,29 +107,29 @@
     },
     "appstore": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 270,
+      "total_items": 274,
       "errors": []
     },
     "google_play": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 148,
+      "total_items": 162,
       "errors": []
     },
     "pixiv": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 228,
+      "total_items": 229,
       "errors": []
     },
     "telegram": {
       "level": "degraded",
       "last_success_date": "2026-04-09",
-      "consecutive_silent_days": 28,
+      "consecutive_silent_days": 29,
       "total_items": 3,
       "errors": []
     },
@@ -142,23 +142,23 @@
     },
     "ruliweb": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 64,
+      "total_items": 66,
       "errors": []
     },
     "stopgame": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 20,
+      "total_items": 21,
       "errors": []
     },
     "weixin": {
       "level": "active",
-      "last_success_date": "2026-05-07",
+      "last_success_date": "2026-05-08",
       "consecutive_silent_days": 0,
-      "total_items": 1472,
+      "total_items": 1474,
       "errors": []
     }
   }
