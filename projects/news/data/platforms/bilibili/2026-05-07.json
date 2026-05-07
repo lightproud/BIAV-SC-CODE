@@ -1,8 +1,8 @@
 {
   "date": "2026-05-07",
-  "archived_at": "2026-05-06T23:43:46.283692+00:00",
+  "archived_at": "2026-05-07T01:55:49.033754+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "source": "bilibili",
@@ -176,6 +176,36 @@
       "author": "_HoshiYukibana_",
       "engagement": 102,
       "media_url": "//i0.hdslb.com/bfs/archive/77cb011917cd51fbdb1638bcd889dea95798e459.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T09:04:03+00:00",
+      "lang": "zh",
+      "title": "幻梦深潜蛋挞8940分全程录像（宁菲亚）",
+      "summary": "这张图感觉难点就是单觉醒tv无商店进精英，需要透支一些资源来打过这个精英同时不能交太多导致王关无法启动，不过精英打完之后被事件群体50狂气怜爱了，不然王关也会很不舒服，有了这些狂气王关基本上可以背公式了，我这把比较特殊是一个单轮牌库，判断由于二轮牌库的运转压力和卸牌消耗大于两张圣咏提供的算力，选择不洗牌直接起爆，也许可以被纳入考虑，其实是狗运了",
+      "url": "https://www.bilibili.com/video/BV1EBR4BCEzD",
+      "author": "我是sosorry",
+      "engagement": 101,
+      "media_url": "https://i0.hdslb.com/bfs/archive/843a44e84b54c46e4ff41dc5ae6384d4ea983898.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 101,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-06T09:04:03+00:00",
+      "lang": "zh",
+      "title": "幻梦深潜蛋挞8940分全程录像（宁菲亚）",
+      "summary": "这张图感觉难点就是单觉醒tv无商店进精英，需要透支一些资源来打过这个精英同时不能交太多导致王关无法启动，不过精英打完之后被事件群体50狂气怜爱了，不然王关也会很不舒服，有了这些狂气王关基本上可以背公式了，我这把比较特殊是一个单轮牌库，判断由于二轮牌库的运转压力和卸牌消耗大于两张圣咏提供的算力，选择不洗牌直接起爆，也许可以被纳入考虑，其实是狗运了",
+      "url": "http://www.bilibili.com/video/av116526808046574",
+      "author": "我是sosorry",
+      "engagement": 101,
+      "media_url": "//i0.hdslb.com/bfs/archive/843a44e84b54c46e4ff41dc5ae6384d4ea983898.jpg",
       "content_type": "video"
     },
     {

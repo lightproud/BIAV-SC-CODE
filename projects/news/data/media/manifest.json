@@ -4626,6 +4626,27 @@
       "title": "［忘却前夜⎮相位对弈］珊1v4能赢吗？能的",
       "time": "2026-05-06T05:09:47+00:00",
       "downloaded_at": "2026-05-06T22:42:41.051931+00:00"
+    },
+    "https://i.ytimg.com/vi/5sCWZa-5pT4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB88FxUxhULQ8pdy4iz05dOAbgCNQ": {
+      "filename": "youtube_0d7bd4c247f85ee8.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】カスみたいな幻夢潜行記録｜はじめての超難度編｜",
+      "time": "2026-05-07T01:52:48.186329+00:00",
+      "downloaded_at": "2026-05-07T01:55:47.192937+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/843a44e84b54c46e4ff41dc5ae6384d4ea983898.jpg": {
+      "filename": "bilibili_e9580589a92847bf.jpg",
+      "source": "bilibili",
+      "title": "幻梦深潜蛋挞8940分全程录像（宁菲亚）",
+      "time": "2026-05-06T09:04:03+00:00",
+      "downloaded_at": "2026-05-07T01:55:48.145301+00:00"
+    },
+    "https://i.ytimg.com/vi/yQDJoiPTyUA/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAMxSlzY3HAI9zcBkLOSGeEGcGjwg": {
+      "filename": "youtube_ee346a4e3a8953d7.jpg",
+      "source": "youtube",
+      "title": "#忘卻前夜 #morimens 融災1-4 Boss戰",
+      "time": "2026-05-07T01:52:48.186359+00:00",
+      "downloaded_at": "2026-05-07T01:55:48.969693+00:00"
     }
   },
   "failed": {
@@ -6498,6 +6519,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-06T22:42:41.352834+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/843a44e84b54c46e4ff41dc5ae6384d4ea983898.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T01:55:48.446111+00:00"
     }
   },
   "archived": []
