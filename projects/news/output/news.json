@@ -1,15 +1,321 @@
 {
-  "updated_at": "2026-05-07T21:00:11.448008+00:00",
-  "summary": "State of Morimens - before 2.5；【忘却前夜/织涅骨】早知道这么痛苦的话当初不认识你就好了；【忘却前夜/织涅骨】早知道这么痛苦的话当初不认识你就好了；可恶的外星生物，竟敢伪装成美少女；『沙耶之歌/meme』ぼくらは肉でできている。",
-  "sources_run": 1217,
+  "updated_at": "2026-05-07T21:52:49.581404+00:00",
+  "summary": "Morimens | The Greatest Gacha ；《Morimens》丨ED——「Ex Oblivion 來自；Morimens Beginner Progression ；The Most FUN Gacha Game You Ne；Morimens Gameplay Is FUN。",
+  "sources_run": 1219,
   "news": [
     {
-      "title": "State of Morimens - before 2.5 anniversary",
-      "summary": "[16 hours ago] The state of the game before the 2.5 anni. 00:00 Intro - Realm Balancing and History 2:13 New Realm Mechanics and Realm ...",
+      "title": "Morimens | The Greatest Gacha Game You've Never Played (Long Review)",
+      "summary": "[10mo ago] My newest fascination for the last month has got to be one of the most unique gacha games I've seen. Morimens is what I'd ...",
       "source": "youtube",
-      "time": "2026-05-07T04:57:27.226796+00:00",
+      "time": "2026-05-07T21:49:40.677542+00:00",
+      "url": "https://www.youtube.com/watch?v=DTCfk_ztxeI",
+      "engagement": 294320,
+      "is_hot": true,
+      "author": "Pseychie",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/DTCfk_ztxeI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtSFm4kyI_gCqen2KjH6necJ54UA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」",
+      "summary": "[1y ago] 呼喚我的名字，在被忘卻的黎明之前。 Can you call my name, before the daybreak we're forgotten. Chn Lyrics ：霁月@B.I.A.V. ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677677+00:00",
+      "url": "https://www.youtube.com/watch?v=BkG3QQoqKhQ",
+      "engagement": 43532,
+      "is_hot": true,
+      "author": "Morimens",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/BkG3QQoqKhQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALYof-HWuORc9b1v7KrpbTjH3E5g",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Morimens Beginner Progression Guide (2026 Edition)",
+      "summary": "[4mo ago] Starting Morimens in 2026 and not sure where to begin? This complete beginner progression guide walks you step by step from ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677562+00:00",
+      "url": "https://www.youtube.com/watch?v=NpwMWAy6OLQ",
+      "engagement": 22772,
+      "is_hot": true,
+      "author": "Mythag Files",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/NpwMWAy6OLQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpDXpEGmN_V9XRebsTCxTkx7Lhdw",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "The Most FUN Gacha Game You Need To Try | Morimens",
+      "summary": "[9mo ago] Have you ever wanted to play Card games with Lovecraftian creatures?? You can do it right now. It's all below. why are you still ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677610+00:00",
+      "url": "https://www.youtube.com/watch?v=5PDpbrvt43E",
+      "engagement": 19786,
+      "is_hot": true,
+      "author": "Polarisu",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/5PDpbrvt43E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNqezFWs8g3UicVlQ5c6v-Y7eM1w",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Morimens Gameplay Is FUN",
+      "summary": "[8mo ago] Have you ever wanted to play Card games with Lovecraftian creatures?? You can do it right now. It's all below. why are you still ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677595+00:00",
+      "url": "https://www.youtube.com/watch?v=z1A-9C21fZU",
+      "engagement": 17826,
+      "is_hot": true,
+      "author": "Polarisu",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/z1A-9C21fZU/hq720_2.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGABwAcABBvABAfgBtgiAAoAPigIMCAAQARhyIF8oQTAP&rs=AOn4CLArVfmbqUGfjmfc1Rpo_HoZ6lVX_w",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Morimens] Flares' Awakener Review : Arachne - Ultra \"Support\" - B Tier General. S Tier Whale",
+      "summary": "[2w ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord https://discord.gg/4zvKY8bFKj - Link to ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677654+00:00",
+      "url": "https://www.youtube.com/watch?v=mD5zdw7Ws-Y",
+      "engagement": 5386,
+      "is_hot": true,
+      "author": "Flares117",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/mD5zdw7Ws-Y/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLANNsvfYG5r4ZjI4-g-GOePT4XdYA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Morimens] Flares' Awakener Review : Mouchette : Chaos DR DPS - C Tier General Use, A Tier Whale.",
+      "summary": "[4mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677641+00:00",
+      "url": "https://www.youtube.com/watch?v=e1J3nIclZdQ",
+      "engagement": 5122,
+      "is_hot": true,
+      "author": "Flares117",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/e1J3nIclZdQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBL5pclDRTqjcebGERKYpLNBPDviA",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "How to build teams in Morimens!",
+      "summary": "[3mo ago] Since everyone keeps asking me how i'm so good at the game... and how i'm always so smart and cool.... i decided to make this ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677631+00:00",
+      "url": "https://www.youtube.com/watch?v=Oof6sGexHFQ",
+      "engagement": 4387,
+      "is_hot": false,
+      "author": "Trash Keeper",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/Oof6sGexHFQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAqOUl3XFdHUYmVRJTFFATYQ-k8Q",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Forcing my friend to look at characters from my favorite gacha game.",
+      "summary": "[13d ago] morimens Welcome to the second edition, of me torturing Dio with a quiz: Analyzing Character design and visuals from a gacha ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677579+00:00",
+      "url": "https://www.youtube.com/watch?v=2GGGIIpaxKk",
+      "engagement": 4343,
+      "is_hot": false,
+      "author": "THPDom",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/2GGGIIpaxKk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCBjfco4s_g9PwDyqnU5CDBIuF79Q",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Morimens] Flares' Awakener Review : Xu : Caro Poison Support. B Tier currently, A tier future.",
+      "summary": "[3mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677624+00:00",
+      "url": "https://www.youtube.com/watch?v=zSLkwRmwML8",
+      "engagement": 3980,
+      "is_hot": false,
+      "author": "Flares117",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/zSLkwRmwML8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDBSAYvynY-G0yVLD5t5_jrSRDy5Q",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Morimens] 2025 End of Year Updated Realm Overview : Caro (Red Realm) - Primer for Beginners",
+      "summary": "[4mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677648+00:00",
+      "url": "https://www.youtube.com/watch?v=5qU0mK0LCYs",
+      "engagement": 3809,
+      "is_hot": false,
+      "author": "Flares117",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/5qU0mK0LCYs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1OC8jM5hMayOMyZW69xEFGrCw4w",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Attack of the Horny Statues | Morimens Ultra Only",
+      "summary": "[4mo ago] A trashcan, a nerd and a child walk into a museum. (this one is weird) GENERAL INFO Discord: marcovinc Account ID (if you want ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677663+00:00",
+      "url": "https://www.youtube.com/watch?v=MviYPJj2y-U",
+      "engagement": 2696,
+      "is_hot": false,
+      "author": "Trash Keeper",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/MviYPJj2y-U/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJBJ50gCFn9fRC6_sZV4KRIIBBiw",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Morimens chap 8 be like",
+      "summary": "[6mo ago] A fan try to join the Fan Art contest but can't draw and have skill issue. UID: 101198315 #MorimensFanArt.",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677603+00:00",
+      "url": "https://www.youtube.com/watch?v=oCqyBYOE_cw",
+      "engagement": 2305,
+      "is_hot": false,
+      "author": "Wednesday playlist",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/oCqyBYOE_cw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7Oil9H-1QjARmTbZ5Fz8bKolKKg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[Morimens] Rage Rerun Overview/Guide - WATCH THE OLDER VIDEOS - Kath/Salv/Wanda. Livestream",
+      "summary": "[1mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677586+00:00",
+      "url": "https://www.youtube.com/watch?v=i7ZEXOpz9DU",
+      "engagement": 1841,
+      "is_hot": false,
+      "author": "Flares117",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/i7ZEXOpz9DU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbnMHuqF8nzcTEjke5GcSB_Hjd5g",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "Surviving Oblivion - Talking Morimens W/ Light & Jiyue Of Brain In A Vat.",
+      "summary": "[1mo ago] So, after many a year, I finally dipped my toes into #morimens - a #lovecraftianhorror fueled #roguelite #deckbuilder - and in doing ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677669+00:00",
+      "url": "https://www.youtube.com/watch?v=-Vsd5hUMAT8",
+      "engagement": 1806,
+      "is_hot": false,
+      "author": "Crit Hit Entertainment",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/-Vsd5hUMAT8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBdiJlA_U8l1pCcvCCu-dSP9okB8g",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "『 Morimens / First time trying it out! 』 how many men mori",
+      "summary": "[Streamed 3w ago] hello! 𝜗𝜚˚⋆ https://streamelements.com/yuuna/tip 𝜗𝜚˚⋆ https://x.com/niniyuuna 𝜗𝜚˚⋆ https://twitch.com/yuuna 𝜗𝜚˚⋆ my ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677617+00:00",
+      "url": "https://www.youtube.com/watch?v=Zvs5WtSL0Po",
+      "engagement": 894,
+      "is_hot": false,
+      "author": "Yuuna Nini",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/Zvs5WtSL0Po/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1_q83bpuVycA67DNUlgRTQ710Yg",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "『 Morimens 』 we're br*tish",
+      "summary": "[Streamed 3w ago] hello! 𝜗𝜚˚⋆ https://streamelements.com/yuuna/tip 𝜗𝜚˚⋆ https://x.com/niniyuuna 𝜗𝜚˚⋆ https://twitch.com/yuuna 𝜗𝜚˚⋆ my ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677570+00:00",
+      "url": "https://www.youtube.com/watch?v=iyiUaeezTgE",
+      "engagement": 709,
+      "is_hot": false,
+      "author": "Yuuna Nini",
+      "tags": [
+        "youtube",
+        "scrape"
+      ],
+      "media_url": "https://i.ytimg.com/vi/iyiUaeezTgE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBWJztCxZb3EorR1tiLAIhsHu9W3w",
+      "content_type": "image",
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "State of Morimens - before 2.5 anniversary",
+      "summary": "[17h ago] The state of the game before the 2.5 anni. 00:00 Intro - Realm Balancing and History 2:13 New Realm Mechanics and Realm ...",
+      "source": "youtube",
+      "time": "2026-05-07T21:49:40.677239+00:00",
       "url": "https://www.youtube.com/watch?v=tr4jTxBpCHI",
-      "engagement": 587,
+      "engagement": 615,
       "is_hot": false,
       "author": "ClimbKaly",
       "tags": [
@@ -27,14 +333,14 @@
       "source": "bilibili",
       "time": "2026-05-07T08:58:56+00:00",
       "url": "https://www.bilibili.com/video/BV1RtdwBTEi9",
-      "engagement": 375,
+      "engagement": 377,
       "is_hot": false,
       "author": "悲剧女同全肯定bot",
       "tags": [
         "配音"
       ],
       "metadata": {
-        "play": 370,
+        "play": 372,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
@@ -50,7 +356,7 @@
       "source": "bilibili",
       "time": "2026-05-07T08:58:56+00:00",
       "url": "http://www.bilibili.com/video/av116532461963077",
-      "engagement": 370,
+      "engagement": 372,
       "is_hot": false,
       "author": "悲剧女同全肯定bot",
       "tags": [
@@ -90,14 +396,14 @@
       "source": "bilibili",
       "time": "2026-05-07T16:07:42+00:00",
       "url": "https://www.bilibili.com/video/BV1pvdABHEXC",
-      "engagement": 216,
+      "engagement": 231,
       "is_hot": false,
       "author": "皮姆pimu",
       "tags": [
         "绘画"
       ],
       "metadata": {
-        "play": 211,
+        "play": 226,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
@@ -113,14 +419,14 @@
       "source": "bilibili",
       "time": "2026-05-07T10:18:25+00:00",
       "url": "https://www.bilibili.com/video/BV1NKdwBpEkS",
-      "engagement": 113,
+      "engagement": 114,
       "is_hot": false,
       "author": "啞風氏",
       "tags": [
         "音游"
       ],
       "metadata": {
-        "play": 112,
+        "play": 113,
         "comment_count": 1,
         "comments_fetched": 1,
         "danmaku": 0
@@ -136,7 +442,7 @@
       "source": "bilibili",
       "time": "2026-05-07T10:18:25+00:00",
       "url": "http://www.bilibili.com/video/av116532763951333",
-      "engagement": 112,
+      "engagement": 113,
       "is_hot": false,
       "author": "啞風氏",
       "tags": [
@@ -153,14 +459,14 @@
       "source": "bilibili",
       "time": "2026-05-07T07:13:41+00:00",
       "url": "https://www.bilibili.com/video/BV1BndFBNEwD",
-      "engagement": 107,
+      "engagement": 108,
       "is_hot": false,
       "author": "勺勺owo",
       "tags": [
         "日常"
       ],
       "metadata": {
-        "play": 105,
+        "play": 106,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
@@ -359,22 +665,6 @@
       "platform_region": "global"
     },
     {
-      "title": "I want to talk a bit about Dtide",
-      "summary": "As much that I love Morimens, something about Dtide format dreads me. Most of other games need around 2-3 teams for their endgames, Dtide however needs 5 and even up to 10 teams. Then there are the wheels which is another headache. While wheels in Morimens are a lot more flexible than other game signatures (Thais wheel for example can go to almost all keyflare support units), it&#39;s also a curse because you have to gauge what&#39;s the best way to maximize your wheel pool. Same for units / allocation, because someone like Thais can go to many teams, I have to spend time gauging where she should go to either punch the hardest wave, or to help alleviate the weaker teams.  The exploration itself also takes quite sometime, with shop RNG and such (especially for chars like Xu who has crazy gap between image vs not). So even the same team can vary wildly different depends on what you get from the drops. Do this x your amount of teams and it&#39;s just... not very pleasant.  So yeah, I once tried to chase 400 but it took me almost an entire day just tinker teams and swap stuff around. Get burned out hard after that I could barely bother to Dtide these days (and it resets every 2 weeks too). Really wonder if they can change the format or something in the future to make it more efficient to run. Like instant boss + fixed amount of Sigil starts (more if you have Sigil gain) then handful of fixed relic selection for you to buy maybe. Then again it may fuck with units that scale with exploration like Ryker/Clem so maybe not the best solution. Or maybe all of this is just excuse for my lazy ass  &#32; submitted by &#32;  /u/Talukita   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-07T14:18:48+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1t6bx1u/i_want_to_talk_a_bit_about_dtide/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "/u/Talukita",
-      "tags": [],
-      "metadata": {
-        "via": "rss"
-      },
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "High-resolution GDoll splash art?",
       "summary": "I&#39;m trying to find the highest possible quality of GDoll&#39;s splash art, but all I have found is image from wikia and it&#39;s nor really good.  I also found this comment on reddit with links to high-resolution images, but... G&#39;Doll isn&#39;t here. Please give me this image if anyone has it ._.   &#32; submitted by &#32;  /u/Economy-Primary2827   [link] &#32; [comments]",
       "source": "reddit",
@@ -383,6 +673,22 @@
       "engagement": 0,
       "is_hot": false,
       "author": "/u/Economy-Primary2827",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "I want to talk a bit about Dtide",
+      "summary": "As much that I love Morimens, something about Dtide format dreads me. Most of other games need around 2-3 teams for their endgames, Dtide however needs 5 and even up to 10 teams. Then there are the wheels which is another headache. While wheels in Morimens are a lot more flexible than other game signatures (Thais wheel for example can go to almost all keyflare support units), it&#39;s also a curse because you have to gauge what&#39;s the best way to maximize your wheel pool. Same for units / allocation, because someone like Thais can go to many teams, I have to spend time gauging where she should go to either punch the hardest wave, or to help alleviate the weaker teams.  The exploration itself also takes quite sometime, with shop RNG and such (especially for chars like Xu who has crazy gap between image vs not). So even the same team can vary wildly different depends on what you get from the drops. Do this x your amount of teams and it&#39;s just... not very pleasant.  So yeah, I once tried to chase 400 but it took me almost an entire day just tinker teams and swap stuff around. Get burned out hard after that I could barely bother to Dtide these days (and it resets every 2 weeks too). Really wonder if they can change the format or something in the future to make it more efficient to run. Like instant boss + fixed amount of Sigil starts (more if you have Sigil gain) then handful of fixed relic selection for you to buy maybe. Then again it may fuck with units that scale with exploration like Ryker/Clem so maybe not the best solution. Or maybe all of this is just excuse for my lazy ass  &#32; submitted by &#32;  /u/Talukita   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-07T14:18:48+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t6bx1u/i_want_to_talk_a_bit_about_dtide/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Talukita",
       "tags": [],
       "metadata": {
         "via": "rss"
@@ -409,19 +715,19 @@
       "platform_region": "global"
     },
     {
-      "title": "State of Morimens - before 2.5 anni",
-      "summary": "A collection of thoughts and predictions from my recent conversations with the community on the state of the game. *Note: I said 2 healers in chaos in the video and there are more than that....that will teach me to go off script.  &#32; submitted by &#32;  /u/Euphoric-Handle2151   [link] &#32; [comments]",
+      "title": "Advice on comp",
+      "summary": "Hey Keepers, I’ve hit a massive wall at 8-13 Lex Lethis. I’m running a Counter-focused team, but I’m getting shredded in the later phases (or just timed out because my DPS is too low). I’m looking for tips on how to optimize my team, specifically which Awakeners to prioritize and which Wheels of Destiny are essential for this specific boss. I could just power through this boss with emergency gnosis but I’m sure there’s a small tweak to boost damage. Pandia is great with dealing with aoe dmg but loses value against single large health enemies. Decent dps. But let me know your thoughts   &#32; submitted by &#32;  /u/IcyZookeepergame633   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-05-07T04:45:43+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1t60frn/state_of_morimens_before_25_anni/",
+      "time": "2026-05-07T21:22:11+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t6ny2z/advice_on_comp/",
       "engagement": 0,
       "is_hot": false,
-      "author": "/u/Euphoric-Handle2151",
+      "author": "/u/IcyZookeepergame633",
       "tags": [],
       "metadata": {
         "via": "rss"
       },
-      "media_url": "https://external-preview.redd.it/89DrljjZJJgj7myeAM1_6g5c1P3dDm1Q1fRdLg0hwKU.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=00ba93d909fba29b809f697eedc589dea0c6b7d0",
+      "media_url": "https://preview.redd.it/kgv7qv4n8szg1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=ded39673ee65b78b099e8b732ac9691d2f2d3cfa",
       "content_type": "image",
       "lang": "en",
       "platform_region": "global"
@@ -440,6 +746,24 @@
         "via": "rss"
       },
       "media_url": "https://preview.redd.it/in6cjjsswpzg1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=74680cfa0d7ad00bb5170d452be6846233fbbe51",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "State of Morimens - before 2.5 anni",
+      "summary": "A collection of thoughts and predictions from my recent conversations with the community on the state of the game. *Note: I said 2 healers in chaos in the video and there are more than that....that will teach me to go off script.  &#32; submitted by &#32;  /u/Euphoric-Handle2151   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-07T04:45:43+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t60frn/state_of_morimens_before_25_anni/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Euphoric-Handle2151",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://external-preview.redd.it/89DrljjZJJgj7myeAM1_6g5c1P3dDm1Q1fRdLg0hwKU.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=00ba93d909fba29b809f697eedc589dea0c6b7d0",
       "content_type": "image",
       "lang": "en",
       "platform_region": "global"
@@ -564,28 +888,6 @@
         "playtime_forever": 1678,
         "votes_up": 0,
         "timestamp_created": 1778125906
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[正面] Honestly, besides the (sometimes) poor translation...",
-      "summary": "Honestly, besides the (sometimes) poor translation, this game really IS a gem in the gacha community. Its gameplay is similar to Limbus Company in a way. I'd recommend it to any Limbus Company fans that are willing to try it, I've honestly really enjoyed it thus far. This game is very, very fun!",
-      "source": "steam_review",
-      "time": "2026-05-06T21:19:09+00:00",
-      "url": "https://steamcommunity.com/profiles/76561199592412849/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561199592412849",
-      "tags": [
-        "english"
-      ],
-      "language": "english",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 605,
-        "votes_up": 0,
-        "timestamp_created": 1778102349
       },
       "lang": "",
       "platform_region": "global"
@@ -729,7 +1031,7 @@
       "title": "Nefraea Dominates Me For 3 Hrs Straight (Morimens Chapter 5 End & Final Boss on HARD)",
       "summary": "Evening stream to get the unfinished business of Chapter 5 Hard Mode done with before the next major patch comes in.",
       "source": "youtube",
-      "time": "2026-05-07T20:57:27.226994+00:00",
+      "time": "2026-05-07T21:49:40.677553+00:00",
       "url": "https://www.youtube.com/watch?v=G7Z1flrL-HQ",
       "engagement": 0,
       "is_hot": false,
@@ -747,7 +1049,7 @@
       "title": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@eve",
       "summary": "忘却前夜#忘却前夜#\n【V2.4.3 全新唤醒体✦莫丝┊New Awakener✦Vortice】\n「嘴巴...这个？弥萨格，给莫丝，礼物🎁！」\n「朋友@everyone？抱抱？以前，不可以。现在，可以！」\n✦ 莫丝 CV：松元菜菜海\n\n——✦——✦—— ✦✦✦ ——✦——✦——\n\n\"Mouth... this thing? Mythag, present, ...全文",
       "source": "weibo",
-      "time": "2026-05-07T20:57:38.732986+00:00",
+      "time": "2026-05-07T21:49:56.449335+00:00",
       "url": "https://m.weibo.cn/status/5272049669112519",
       "engagement": 0,
       "is_hot": false,
@@ -762,22 +1064,7 @@
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "source": "weibo",
-      "time": "2026-05-07T20:57:38.751037+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
-      "source": "weibo",
-      "time": "2026-05-07T20:57:38.763963+00:00",
+      "time": "2026-05-07T21:49:56.465760+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -804,10 +1091,25 @@
       "platform_region": "cn"
     },
     {
+      "title": "12758【投稿】忘却前夜。我主任",
+      "summary": "12758【投稿】忘却前夜。我主任",
+      "source": "weibo",
+      "time": "2026-05-07T21:49:56.510971+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "source": "weibo",
-      "time": "2026-05-07T20:57:38.809816+00:00",
+      "time": "2026-05-07T21:49:56.523170+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -822,7 +1124,7 @@
       "title": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
       "summary": "忘却前夜#波吕克斯#\n意思是不小心对圣子大人犯错误了🥺👉👈",
       "source": "weibo",
-      "time": "2026-05-07T20:57:38.820871+00:00",
+      "time": "2026-05-07T21:49:56.533722+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -834,10 +1136,10 @@
       "platform_region": "cn"
     },
     {
-      "title": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
-      "summary": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
+      "title": "忘却前夜\n由+12名称发散的关于卡波原型的想法。\n专栏 · 天穹狂想曲",
+      "summary": "忘却前夜\n由+12名称发散的关于卡波原型的想法。\n专栏 · 天穹狂想曲",
       "source": "weibo",
-      "time": "2026-05-07T20:57:38.831723+00:00",
+      "time": "2026-05-07T21:49:56.544108+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -852,7 +1154,37 @@
       "title": "忘却前夜 为什么鼠鼠的等级上限会突然变成74级呀?",
       "summary": "忘却前夜 为什么鼠鼠的等级上限会突然变成74级呀?",
       "source": "weibo",
-      "time": "2026-05-07T20:57:38.842908+00:00",
+      "time": "2026-05-07T21:49:56.554971+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
+      "summary": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
+      "source": "weibo",
+      "time": "2026-05-07T21:49:56.565136+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "#忘却前夜#忘却前夜 朋友滑铲了CP无料，到可以直接在忘却前夜官方摊位找我领\n领取条件是凯刻斯60级以上或者现场抽出凯刻斯\np1p2是铜版纸哑光明信片p3是四寸",
+      "summary": "#忘却前夜#忘却前夜 朋友滑铲了CP无料，到可以直接在忘却前夜官方摊位找我领\n领取条件是凯刻斯60级以上或者现场抽出凯刻斯\np1p2是铜版纸哑光明信片p3是四寸铜版纸哑光拍立得",
+      "source": "weibo",
+      "time": "2026-05-07T21:49:56.575593+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -867,52 +1199,7 @@
       "title": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
       "summary": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
       "source": "weibo",
-      "time": "2026-05-07T20:57:38.854107+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "『利莫里亚的残响』\n哀怜的双目在注视着自己唯一的希望。\n\n忘却前夜#忘却前夜##忘却前夜内容征集计划##忘却前夜同人二创活动##morimensfanart#",
-      "summary": "『利莫里亚的残响』\n哀怜的双目在注视着自己唯一的希望。\n\n忘却前夜#忘却前夜##忘却前夜内容征集计划##忘却前夜同人二创活动##morimensfanart#",
-      "source": "weibo",
-      "time": "2026-05-07T20:57:38.866559+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "之前给忘却前夜画的解禁了！！",
-      "summary": "之前给忘却前夜画的解禁了！！",
-      "source": "weibo",
-      "time": "2026-05-07T20:57:38.877450+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜 同步一下之前的\nooc致歉",
-      "summary": "忘却前夜 同步一下之前的\nooc致歉",
-      "source": "weibo",
-      "time": "2026-05-07T20:57:38.888105+00:00",
+      "time": "2026-05-07T21:49:56.586081+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -939,11 +1226,26 @@
       "platform_region": "cn"
     },
     {
-      "title": "忘却前夜\n由+12名称发散的关于卡波原型的想法。\n专栏 · 天穹狂想曲",
-      "summary": "忘却前夜\n由+12名称发散的关于卡波原型的想法。\n专栏 · 天穹狂想曲",
+      "title": "『利莫里亚的残响』\n哀怜的双目在注视着自己唯一的希望。\n\n忘却前夜#忘却前夜##忘却前夜内容征集计划##忘却前夜同人二创活动##morimensfanart#",
+      "summary": "『利莫里亚的残响』\n哀怜的双目在注视着自己唯一的希望。\n\n忘却前夜#忘却前夜##忘却前夜内容征集计划##忘却前夜同人二创活动##morimensfanart#",
       "source": "weibo",
-      "time": "2026-05-07T20:57:38.916887+00:00",
+      "time": "2026-05-07T21:49:56.613411+00:00",
       "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
+      "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
+      "source": "weibo",
+      "time": "2026-05-07T21:49:56.624270+00:00",
+      "url": "https://m.weibo.cn/status/5294895855830265",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -957,7 +1259,7 @@
       "title": "忘却前夜 下一期的up角色就是沙耶了吗？oh天……",
       "summary": "忘却前夜 下一期的up角色就是沙耶了吗？oh天……",
       "source": "weibo",
-      "time": "2026-05-07T20:57:38.928403+00:00",
+      "time": "2026-05-07T21:49:56.638808+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -995,19 +1297,6 @@
       "platform_region": "global"
     },
     {
-      "title": "I want to talk a bit about Dtide",
-      "summary": "As much that I love Morimens, something about Dtide format dreads me. Most of other games need around 2-3 teams for their endgames, Dtide however needs 5 and even up to 10 teams. Then there are the wheels which is another headache. While wheels in Morimens are a lot more flexible than other game signatures (Thais wheel for example can go to almost all keyflare support units), it&#39;s also a curse because you have to gauge what&#39;s the best way to maximize your wheel pool. Same for units / allocation, because someone like Thais can go to many teams, I have to spend time gauging where she should go to either punch the hardest wave, or to help alleviate the weaker teams.  The exploration itself also takes quite sometime, with shop RNG and such (especially for chars like Xu who has crazy gap between image vs not). So even the same team can vary wildly different depends on what you get from the drops. Do this x your amount of teams and it&#39;s just... not very pleasant.  So yeah, I once tried to chase 400 but it took me almost an entire day just tinker teams and swap stuff around. Get burned out hard after that I could barely bother to Dtide these days (and it resets every 2 weeks too). Really wonder if they can change the format or something in the future to make it more efficient to run. Like instant boss + fixed amount of Sigil starts (more if you have Sigil gain) then handful of fixed relic selection for you to buy maybe. Then again it may fuck with units that scale with exploration like Ryker/Clem so maybe not the best solution. Or maybe all of this is just excuse for my lazy ass  &#32; submitted by &#32;  /u/Talukita   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-07T14:18:48+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1t6bx1u/i_want_to_talk_a_bit_about_dtide/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/Talukita",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "High-resolution GDoll splash art?",
       "summary": "I&#39;m trying to find the highest possible quality of GDoll&#39;s splash art, but all I have found is image from wikia and it&#39;s nor really good.  I also found this comment on reddit with links to high-resolution images, but... G&#39;Doll isn&#39;t here. Please give me this image if anyone has it ._.   &#32; submitted by &#32;  /u/Economy-Primary2827   [link] &#32; [comments]",
       "source": "reddit",
@@ -1016,6 +1305,19 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/Economy-Primary2827",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "I want to talk a bit about Dtide",
+      "summary": "As much that I love Morimens, something about Dtide format dreads me. Most of other games need around 2-3 teams for their endgames, Dtide however needs 5 and even up to 10 teams. Then there are the wheels which is another headache. While wheels in Morimens are a lot more flexible than other game signatures (Thais wheel for example can go to almost all keyflare support units), it&#39;s also a curse because you have to gauge what&#39;s the best way to maximize your wheel pool. Same for units / allocation, because someone like Thais can go to many teams, I have to spend time gauging where she should go to either punch the hardest wave, or to help alleviate the weaker teams.  The exploration itself also takes quite sometime, with shop RNG and such (especially for chars like Xu who has crazy gap between image vs not). So even the same team can vary wildly different depends on what you get from the drops. Do this x your amount of teams and it&#39;s just... not very pleasant.  So yeah, I once tried to chase 400 but it took me almost an entire day just tinker teams and swap stuff around. Get burned out hard after that I could barely bother to Dtide these days (and it resets every 2 weeks too). Really wonder if they can change the format or something in the future to make it more efficient to run. Like instant boss + fixed amount of Sigil starts (more if you have Sigil gain) then handful of fixed relic selection for you to buy maybe. Then again it may fuck with units that scale with exploration like Ryker/Clem so maybe not the best solution. Or maybe all of this is just excuse for my lazy ass  &#32; submitted by &#32;  /u/Talukita   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-07T14:18:48+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1t6bx1u/i_want_to_talk_a_bit_about_dtide/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Talukita",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1034,14 +1336,14 @@
       "platform_region": "global"
     },
     {
-      "title": "State of Morimens - before 2.5 anni",
-      "summary": "A collection of thoughts and predictions from my recent conversations with the community on the state of the game. *Note: I said 2 healers in chaos in the video and there are more than that....that will teach me to go off script.  &#32; submitted by &#32;  /u/Euphoric-Handle2151   [link] &#32; [comments]",
+      "title": "Advice on comp",
+      "summary": "Hey Keepers, I’ve hit a massive wall at 8-13 Lex Lethis. I’m running a Counter-focused team, but I’m getting shredded in the later phases (or just timed out because my DPS is too low). I’m looking for tips on how to optimize my team, specifically which Awakeners to prioritize and which Wheels of Destiny are essential for this specific boss. I could just power through this boss with emergency gnosis but I’m sure there’s a small tweak to boost damage. Pandia is great with dealing with aoe dmg but loses value against single large health enemies. Decent dps. But let me know your thoughts   &#32; submitted by &#32;  /u/IcyZookeepergame633   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-05-07T04:45:43+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1t60frn/state_of_morimens_before_25_anni/",
+      "time": "2026-05-07T21:22:11+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1t6ny2z/advice_on_comp/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Euphoric-Handle2151",
+      "author": "u//u/IcyZookeepergame633",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1055,6 +1357,19 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/yolka828",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "State of Morimens - before 2.5 anni",
+      "summary": "A collection of thoughts and predictions from my recent conversations with the community on the state of the game. *Note: I said 2 healers in chaos in the video and there are more than that....that will teach me to go off script.  &#32; submitted by &#32;  /u/Euphoric-Handle2151   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-07T04:45:43+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1t60frn/state_of_morimens_before_25_anni/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Euphoric-Handle2151",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1308,19 +1623,6 @@
       "content_type": "image"
     },
     {
-      "title": "",
-      "summary": "",
-      "source": "pixiv",
-      "time": "2026-05-07T20:58:45.867746+00:00",
-      "url": "https://www.pixiv.net/artworks/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
       "title": "Kathigu-ra from Morimens",
       "summary": "",
       "source": "pixiv",
@@ -1407,7 +1709,7 @@
       "title": "모리멘스)무경서열 콜라보 어쩌구 했던게 얘였구나",
       "summary": "어째 대사나 배경같은게 뭔 안개속에서 나타난 이세계 어쩌구 하길래 아직 안본 스토리에 나오는앤가? 했는데볼 수 없는 스토리에 ...",
       "source": "ruliweb",
-      "time": "2026-05-07T20:58:54.588351+00:00",
+      "time": "2026-05-07T21:51:30.670998+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75096577",
       "engagement": 0,
       "is_hot": false,
@@ -1433,7 +1735,7 @@
       "title": "일본 극우나 해외 일뽕들한테 반박할 거면 좀 (3탄)",
       "summary": "2탄: https://bbs.ruliweb.com/community/board/300148/read/38550431오늘은 레딧...",
       "source": "ruliweb",
-      "time": "2026-05-07T20:58:55.350756+00:00",
+      "time": "2026-05-07T21:51:31.744146+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300148/read/38559747",
       "engagement": 0,
       "is_hot": false,
@@ -1446,7 +1748,7 @@
       "title": "오오카미 절경판 1장 공략",
       "summary": "Rivers of the heavens (천상의 강)꽤 긴 오프닝 장면과 설정 설명이 끝나면 이제 아마테라스를 직접 조작하게 ...",
       "source": "ruliweb",
-      "time": "2026-05-07T20:58:55.350808+00:00",
+      "time": "2026-05-07T21:51:31.744201+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/102116/read/9412696",
       "engagement": 0,
       "is_hot": false,
@@ -1485,7 +1787,7 @@
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
       "source": "stopgame",
-      "time": "2026-05-07T20:58:56.480399+00:00",
+      "time": "2026-05-07T21:51:32.489526+00:00",
       "url": "https://stopgame.ru/game/morimens",
       "engagement": 0,
       "is_hot": false,
@@ -1499,7 +1801,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-04-27T15:07:15+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_pJfJ9jY5NPmSnTJWyN09hIo3UXJ9Y-X1qXa8Fplpd9uPdxdR49UmVW5vULfJmmxKmxcrhuWFrLKReHwpfFdLc5QOv90DNPoSGABEnwV07VPLl7GpzfpbQ__xYNTsz_s_BWxqQpHKO6W1qd7e6zh2smvQnMfVZPFRUYaXEcMDsVVy15LtGyh38TUlOWIPx7dMx_aq_NEc-Fza1FVEqqbCZOJBjQH7pCxQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=6562345E5EBCD7C36E693F2EE2EC608F6F5934DE69FCFD11",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_pJfJ9jY5NPAIp3d7RH1m_v6Kfg-JAIt1qXa8Fplpd9duiexPAC3m0vUhYWynhnMXa1JjIjROz8PnPT_9huOBD1prin6J1bu2heH-Zn3B0lT_srd9MczE6S41HutQbEOQ7eVvRaIaP7qtvumiMsM6FT4QywUKljjhCCxDdSEoFQBZuIp8y8Uxk9e9NJYeSGm4PONAXqj1Yf9nYSlsGqT3_1AfaFW2DefQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=65A907060F6B1B89BDB8ECFFF61A56C6BEFC659A69FD0965",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1512,7 +1814,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-04-27T15:07:15+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_pJfJ9jY5NPfwUZn0jNrclIo3UXJ9Y-X1qXa8Fplpd9uPdxdR49UmVW5vULfJmmxKmxcrhuWFrLKReHwpfFdLc5QOv90DNPoSGABEnwV07VPLl7GpzfpbQ__xYNTsz_s2qCsUgLWTyVdA6IYzslh_uT3yNanMTWH9ZASmR7dPhwi2mHCj6cnXbSukX4w9eY2-cRJdixi7ReSv9h9aub7N0GX_iHL9MadA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=65623AB944A7CDD975722434F8E0605C754E7A3C69FCFD12",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS_pJfJ9jY5NPwZzXX6HXDazv6Kfg-JAIt1qXa8Fplpd9duiexPAC3m0vUhYWynhnMXa1JjIjROz8PnPT_9huOBD1prin6J1bu2heH-Zn3B0lT_srd9MczE6S41HutQbEOV6C_rW7CiTR3r4tEfgjLBBZ3XsS5fKlzeVKfGEAIw_oKu5lMP8nttWhshfHwhN6G1QZQXLqOHZqoFIONQYEeHaTJmCU1UgHwQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=65A90FA0C1A1D640737522323BC9622B742E507269FD0967",
       "engagement": 0,
       "is_hot": false,
       "author": "",
