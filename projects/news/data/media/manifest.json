@@ -4710,6 +4710,13 @@
       "title": "Forcing my friend to look at characters from my favorite gacha game.",
       "time": "2026-05-07T21:49:40.677579+00:00",
       "downloaded_at": "2026-05-07T21:52:50.419746+00:00"
+    },
+    "https://i.ytimg.com/vi/HbenwIyZp9c/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBJ2pJbmR7zqXd9Y3zC-cx7dqlMnw": {
+      "filename": "youtube_ca1c329a3c8769fe.jpg",
+      "source": "youtube",
+      "title": "[Morimens] 2026 Tier List WARS - Comparing the Tierlists of the best players in Morimens",
+      "time": "2026-05-07T22:52:11.264248+00:00",
+      "downloaded_at": "2026-05-07T22:55:09.905223+00:00"
     }
   },
   "failed": {
@@ -6632,6 +6639,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-07T21:52:51.012117+00:00"
+    },
+    "https://preview.redd.it/jl941bhxgszg1.png?width=140&amp;height=52&amp;auto=webp&amp;s=7b7390c7ece203eae02f20678c5f208790e104c5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T22:55:10.267293+00:00"
+    },
+    "https://external-preview.redd.it/MiMICyTKnfdsltlsNQ1-cMjmHSJyKKarIgvxeAD5qqs.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=e8aef2afcd39892e840bec5270701702ff6c5e99": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-07T22:55:10.759592+00:00"
     }
   },
   "archived": []
