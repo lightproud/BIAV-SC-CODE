@@ -4731,6 +4731,20 @@
       "title": "「你也配叫粉丝？」- 视觉小说圈梗小鬼现象批判【中字】",
       "time": "2026-05-08T05:50:06+00:00",
       "downloaded_at": "2026-05-08T06:31:42.269019+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/070826f8a5de09d637aeb1e0ea50fe239c8e25c1.jpg": {
+      "filename": "bilibili_6a55513d259cc530.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]五月最新兑换码，截止5月21号，五百银芯外加五个无垢，总感觉普池出的限定概率提高了许多",
+      "time": "2026-05-08T07:17:23+00:00",
+      "downloaded_at": "2026-05-08T08:21:21.734657+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/5fdfae514ba7928ef82c9c71e0770835c99cd5b1.jpg": {
+      "filename": "bilibili_8756447e8cb5ba93.jpg",
+      "source": "bilibili",
+      "title": "设计阿拉克涅的蓄爆的人真是天才，玩了几把真的爽",
+      "time": "2026-05-08T08:03:38+00:00",
+      "downloaded_at": "2026-05-08T08:21:23.707487+00:00"
     }
   },
   "failed": {
@@ -6668,6 +6682,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-08T02:00:09.921622+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/070826f8a5de09d637aeb1e0ea50fe239c8e25c1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-08T08:21:22.035472+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/5fdfae514ba7928ef82c9c71e0770835c99cd5b1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-08T08:21:24.008297+00:00"
     }
   },
   "archived": []
