@@ -1,9 +1,39 @@
 {
   "date": "2026-05-08",
-  "archived_at": "2026-05-08T06:31:42.332896+00:00",
+  "archived_at": "2026-05-08T08:21:24.071596+00:00",
   "source": "bilibili",
-  "item_count": 2,
+  "item_count": 6,
   "items": [
+    {
+      "source": "bilibili",
+      "time": "2026-05-08T07:17:23+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]五月最新兑换码，截止5月21号，五百银芯外加五个无垢，总感觉普池出的限定概率提高了许多",
+      "summary": "-\n  └ 渔歌伴晚舟 (5赞): DFQV-XQZV-SQAY\n  └ Sky_Jerry (0赞): 联动再不上我们吃什么[思考]\n  └ 当椿奶发生 (1赞): 唉，官方再不发新兑换码，我吃什么啊[doge]",
+      "url": "https://www.bilibili.com/video/BV16Vd3BBERB",
+      "author": "渔歌伴晚舟",
+      "engagement": 502,
+      "media_url": "https://i2.hdslb.com/bfs/archive/070826f8a5de09d637aeb1e0ea50fe239c8e25c1.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 491,
+        "comment_count": 11,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-08T07:17:23+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]五月最新兑换码，截止5月21号，五百银芯外加五个无垢，总感觉普池出的限定概率提高了许多",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116537713236160",
+      "author": "渔歌伴晚舟",
+      "engagement": 501,
+      "media_url": "//i2.hdslb.com/bfs/archive/070826f8a5de09d637aeb1e0ea50fe239c8e25c1.jpg",
+      "content_type": "video"
+    },
     {
       "source": "bilibili",
       "time": "2026-05-07T16:07:42+00:00",
@@ -39,6 +69,36 @@
         "comments_fetched": 0,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-08T08:03:38+00:00",
+      "lang": "zh",
+      "title": "设计阿拉克涅的蓄爆的人真是天才，玩了几把真的爽",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1UodgBJEZ8",
+      "author": "最尊重1999卡池的UP",
+      "engagement": 2,
+      "media_url": "https://i0.hdslb.com/bfs/archive/5fdfae514ba7928ef82c9c71e0770835c99cd5b1.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 2,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-08T08:03:38+00:00",
+      "lang": "zh",
+      "title": "设计阿拉克涅的蓄爆的人真是天才，玩了几把真的爽",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116537897786058",
+      "author": "最尊重1999卡池的UP",
+      "engagement": 2,
+      "media_url": "//i0.hdslb.com/bfs/archive/5fdfae514ba7928ef82c9c71e0770835c99cd5b1.jpg",
+      "content_type": "video"
     }
   ]
 }

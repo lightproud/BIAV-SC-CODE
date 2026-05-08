@@ -1,8 +1,8 @@
 {
   "date": "2026-05-08",
-  "archived_at": "2026-05-08T06:31:42.332254+00:00",
+  "archived_at": "2026-05-08T08:21:24.070893+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -93,6 +93,36 @@
       "review": "i mori the mens",
       "timestamp_created": 1778207329,
       "playtime_forever": 5425
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-08T07:14:15+00:00",
+      "lang": "schinese",
+      "title": "[正面] 还可以，",
+      "summary": "还可以，",
+      "url": "https://steamcommunity.com/profiles/76561198090022207/recommended/3052450",
+      "author": "76561198090022207",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "还可以，",
+      "timestamp_created": 1778224455,
+      "playtime_forever": 479
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-08T06:53:40+00:00",
+      "lang": "schinese",
+      "title": "[负面] 。",
+      "summary": "。",
+      "url": "https://steamcommunity.com/profiles/76561199524941983/recommended/3052450",
+      "author": "76561199524941983",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "。",
+      "timestamp_created": 1778223220,
+      "playtime_forever": 4332
     }
   ]
 }
