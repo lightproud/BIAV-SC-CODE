@@ -1,8 +1,8 @@
 {
   "date": "2026-05-08",
-  "archived_at": "2026-05-08T04:52:54.858986+00:00",
+  "archived_at": "2026-05-08T06:31:42.332896+00:00",
   "source": "bilibili",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "source": "bilibili",
@@ -19,6 +19,24 @@
         "play": 131,
         "comment_count": 3,
         "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-08T05:50:06+00:00",
+      "lang": "zh",
+      "title": "「你也配叫粉丝？」- 视觉小说圈梗小鬼现象批判【中字】",
+      "summary": "https://www.youtube.com/watch?v=A09UsO5BHsw\nSo as I pray, Unlimited Larp Works.\n故我祈求，无限梗小鬼制（注：捏他 Fate/stay night &quot;Unlimited Blade Works&quot;）\n\n本期 Keksi Reviews 标签大杂烩中，我们来聊聊 LARP、梗小鬼、装粉、角色扮演式装粉、守门行为，以及它们与动画和视觉小说这个媒介的关系。这支集视频论文、评论、纪录、吐槽、檄文于一体的作品，旨在揭示 tralalero",
+      "url": "https://www.bilibili.com/video/BV1J8dMBcE85",
+      "author": "StuG_III",
+      "engagement": 66,
+      "media_url": "https://i0.hdslb.com/bfs/archive/f50f7d1fd1a8dd67cd93beff016b8b624f39501c.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 66,
+        "comment_count": 0,
+        "comments_fetched": 0,
         "danmaku": 0
       }
     }
