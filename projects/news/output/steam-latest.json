@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-08T20:07:03.884474+00:00",
+  "collected_at": "2026-05-08T21:52:11.888050+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -46,7 +46,7 @@
       "voted_up": true,
       "review": "Really scratches an itch as a card game with meta progression.  Main story content doesn't require energy, so you can play through it at your own pace.  Also has a creepy, edgy Lovecraftian horror plot if you're into that.",
       "timestamp_created": 1778251021,
-      "playtime_forever": 15275
+      "playtime_forever": 15325
     },
     {
       "source": "steam",
@@ -92,21 +92,6 @@
       "review": "i mori the mens",
       "timestamp_created": 1778207329,
       "playtime_forever": 5442
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-07T21:41:26+00:00",
-      "lang": "turkish",
-      "title": "[正面]",
-      "summary": "",
-      "url": "https://steamcommunity.com/profiles/76561199067013947/recommended/3052450",
-      "author": "76561199067013947",
-      "engagement": 0,
-      "language": "turkish",
-      "voted_up": true,
-      "review": "",
-      "timestamp_created": 1778190086,
-      "playtime_forever": 42
     }
   ]
 }
