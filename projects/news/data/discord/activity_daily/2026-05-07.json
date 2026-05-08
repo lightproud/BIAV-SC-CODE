@@ -1,0 +1,223 @@
+{
+  "date": "2026-05-07",
+  "messages": 2350,
+  "unique_authors": 183,
+  "reactions_total": 688,
+  "attachments": 184,
+  "channel_activity": {
+    "🔸课间休息闲聊": 24,
+    "🔸한국어-채팅방": 32,
+    "🔸русский-канал": 237,
+    "🔸phòng-chat-tiếng-việt": 257,
+    "🔸canal-español": 186,
+    "🔸canal-português": 200,
+    "🔸ruang-obrolan-indonesia": 315,
+    "🔸ห้องสนทนาภาษาไทย": 33,
+    "🔸traphase": 25,
+    "🔸lore-chat": 46,
+    "🔸礼包码┊gift-codes": 1,
+    "🔸team-building": 170,
+    "🔸邀请码互助┊swap-invitation-codes": 6,
+    "🔸game-question": 783,
+    "🔸忘却前夜┊morimens-tv": 2,
+    "🔸机器人命令┊bot-commands": 29,
+    "✦第5章「织命剧场」关卡流程地图总览·星辰篇✦": 1,
+    "由三常駐作為核心組成的融災逃課隊伍": 1,
+    "1501806395710767285": 1,
+    "1502015181813842011": 1
+  },
+  "hourly_activity": {
+    "3": 48,
+    "4": 91,
+    "6": 111,
+    "7": 61,
+    "10": 226,
+    "11": 71,
+    "12": 158,
+    "16": 116,
+    "17": 81,
+    "8": 23,
+    "9": 111,
+    "13": 97,
+    "0": 18,
+    "14": 159,
+    "15": 134,
+    "18": 80,
+    "19": 155,
+    "20": 36,
+    "21": 92,
+    "22": 114,
+    "23": 151,
+    "2": 32,
+    "5": 83,
+    "1": 102
+  },
+  "message_types": {
+    "0": 1835,
+    "19": 512,
+    "20": 1,
+    "21": 2
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1501853833427550351",
+      "channel_id": "1355094251775459399",
+      "content": "🎁 DC 42000守密人达成礼 / DC 42000 Keepers Achievement Gift\n\n感谢每一位守密人的喜爱与陪伴，守密人可复制下方兑换码",
+      "author": "morimensstaff06",
+      "reactions": 500,
+      "channel": "🔸礼包码┊gift-codes"
+    },
+    {
+      "id": "1501848203694182450",
+      "channel_id": "1300659603993923644",
+      "content": "[Jerry_Ohshit](https://cdn.discordapp.com/emojis/1252249683154173992.webp?size=4",
+      "author": "corner_corn",
+      "reactions": 5,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1501848347474919515",
+      "channel_id": "1300659603993923644",
+      "content": "[Frog_ChillGay](https://cdn.discordapp.com/emojis/1334182105092984865.webp?size=",
+      "author": "bluehuong",
+      "reactions": 5,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1501806260549324891",
+      "channel_id": "1300659662311526512",
+      "content": "Te amo, Caro",
+      "author": "duxadidus",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1501856347384451156",
+      "channel_id": "1300659603993923644",
+      "content": "《Morimens》DC Global Channel reached 42000 Keepers !\n\n Redemption Code: DFQV-XQZV",
+      "author": "mrmot347",
+      "reactions": 4,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1501933564730540262",
+      "channel_id": "1400749543288475770",
+      "content": "c*siah",
+      "author": "princess.goth",
+      "reactions": 4,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1501796893464985731",
+      "channel_id": "1433513650299076780",
+      "content": "I keep forgetting new players don't have the +12 anni rm wheel <:takenotes:13571",
+      "author": "kinbote.",
+      "reactions": 4,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1501736567864033450",
+      "channel_id": "1300659580446969918",
+      "content": "<@472302927776841738> Каждое воспоминание здесь-это уникальное соединение сразу ",
+      "author": "somethingno1fan",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1501985373595762950",
+      "channel_id": "1300659580446969918",
+      "content": "",
+      "author": "irabbit4697",
+      "reactions": 3,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1501781487719022622",
+      "channel_id": "1300659603993923644",
+      "content": "Shield to dam to =)",
+      "author": "theviy",
+      "reactions": 3,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1501876027339575346",
+      "channel_id": "1300659603993923644",
+      "content": "",
+      "author": "tnimreppep",
+      "reactions": 3,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1501926810408063057",
+      "channel_id": "1326453763355185215",
+      "content": "The kids yearn for the morimens lore channel...",
+      "author": "thpdom",
+      "reactions": 3,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1501806395710767285",
+      "channel_id": "1435483703114596503",
+      "content": "State of Morimens - before 2.5 anni\n\nA collection of thoughts on the state of th",
+      "author": "climbkaly",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1502015181813842011",
+      "channel_id": "1435483703114596503",
+      "content": "A (hopefully) quick stream to finish up the rest of Chapter 5 Hard Mode tonight~",
+      "author": "reya.li",
+      "reactions": 3,
+      "channel": "🔸忘却前夜┊morimens-tv"
+    },
+    {
+      "id": "1501773675828088893",
+      "channel_id": "1300659603993923644",
+      "content": "Queo, cụ Sal với Leigh thấy kéo survival cao phết =)",
+      "author": "theviy",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1501776081101914112",
+      "channel_id": "1300659603993923644",
+      "content": "leigh:",
+      "author": "vermiyy",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1501776270109966356",
+      "channel_id": "1300659603993923644",
+      "content": "khác gì castor wanda anh luffy cho xem đâu",
+      "author": "vermiyy",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502057660479176857",
+      "channel_id": "1300659662311526512",
+      "content": "🚮",
+      "author": "duxadidus",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1502057796160454847",
+      "channel_id": "1300659662311526512",
+      "content": "Baboso",
+      "author": "duxadidus",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1502057802678534255",
+      "channel_id": "1300659662311526512",
+      "content": "<:Aurita_pinch:1468258028271833119>",
+      "author": "duxadidus",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    }
+  ]
+}

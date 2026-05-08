@@ -1,0 +1,221 @@
+{
+  "date": "2026-05-06",
+  "messages": 10434,
+  "unique_authors": 257,
+  "reactions_total": 648,
+  "attachments": 369,
+  "channel_activity": {
+    "🔸綜合討論": 1330,
+    "🔸课间休息闲聊": 9,
+    "🔸한국어-채팅방": 32,
+    "🔸русский-канал": 982,
+    "🔸phòng-chat-tiếng-việt": 329,
+    "🔸canal-español": 67,
+    "🔸canal-português": 224,
+    "🔸ruang-obrolan-indonesia": 1021,
+    "🔸ห้องสนทนาภาษาไทย": 21,
+    "🔸traphase": 1,
+    "🔸lore-chat": 88,
+    "🔸team-building": 186,
+    "🔸general-chat": 4367,
+    "🔸邀请码互助┊swap-invitation-codes": 7,
+    "🔸game-question": 1725,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 43,
+    "1501623598266187967": 1
+  },
+  "hourly_activity": {
+    "0": 298,
+    "1": 152,
+    "2": 206,
+    "3": 166,
+    "4": 163,
+    "5": 191,
+    "6": 477,
+    "7": 909,
+    "8": 558,
+    "9": 352,
+    "10": 552,
+    "11": 703,
+    "12": 689,
+    "13": 508,
+    "15": 937,
+    "16": 535,
+    "14": 558,
+    "17": 709,
+    "19": 366,
+    "20": 125,
+    "21": 243,
+    "22": 307,
+    "23": 157,
+    "18": 573
+  },
+  "message_types": {
+    "0": 7123,
+    "19": 3298,
+    "20": 12,
+    "21": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1501428985765298267",
+      "channel_id": "1300659495550062592",
+      "content": "안녕하세요! 모리멘스 한국어 현지화 담당자 젤리입니다. 잘 부탁드립니다~ 앞으로 한국어 현지화에 관련 문의 사항이나 의견이 있으시면 언제든지 편",
+      "author": "morimensstaffjelly",
+      "reactions": 16,
+      "channel": "🔸한국어-채팅방"
+    },
+    {
+      "id": "1501408960236749052",
+      "channel_id": "1131839817982947429",
+      "content": "我已經幫你們想好3.0規則了\n力量調和：臨力不可超過生命上限XXX%，永力堆疊過生命上限YYY%時獲得的永力減少\n基傷枯竭：每XXX%基傷，就使基傷加成減少\n毒",
+      "author": "water_heart",
+      "reactions": 14,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501487098346078328",
+      "channel_id": "1131839817982947429",
+      "content": "你知道當我們一邊閒聊 一邊離開此地時嗎",
+      "author": "xingxiu_0209",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501570315401302169",
+      "channel_id": "1326453763355185215",
+      "content": "With this information we can conclude that N would love tomodachi life",
+      "author": "thpdom",
+      "reactions": 6,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1501438794782605392",
+      "channel_id": "1131839817982947429",
+      "content": "t0級別的0",
+      "author": "ernest_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501476278879125555",
+      "channel_id": "1131839817982947429",
+      "content": "🤓 ☝️ 本次去cp给你游~~尽孝~~的成果",
+      "author": "gensono0609",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501480006709280870",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501483589467111497",
+      "channel_id": "1131839817982947429",
+      "content": "~~什麼都發生了~~",
+      "author": "annabelle0868",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501488803406151731",
+      "channel_id": "1131839817982947429",
+      "content": "~~沒事管理員正名清~~",
+      "author": "annabelle0868",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501641156855857343",
+      "channel_id": "1300659662311526512",
+      "content": "Todo es culpa de <@645758482305253422> <@276521152245923840> y <@521775682578022",
+      "author": "salami_87",
+      "reactions": 5,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1501572919015247902",
+      "channel_id": "1326453763355185215",
+      "content": "I love how keeper has basically been adopted by Dexter as well\nmakes the chapter",
+      "author": "hallowednebulae",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1501573637080092753",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "water_heart",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501424532358172724",
+      "channel_id": "1300659603993923644",
+      "content": "ơ =)",
+      "author": "theviy",
+      "reactions": 4,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1501555930876219586",
+      "channel_id": "1326453763355185215",
+      "content": "as a side tangent I did Liz's psyche deepdive recently and i think it's cute tha",
+      "author": "hallowednebulae",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1501571794451038380",
+      "channel_id": "1326453763355185215",
+      "content": "Miithag",
+      "author": "nikolazuli",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1501563124665548920",
+      "channel_id": "1433513650299076780",
+      "content": "Because you are very strong, and because you play Aequor \nAlso, I was joking and",
+      "author": "spruzzetto",
+      "reactions": 4,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1501566585402429461",
+      "channel_id": "1433513650299076780",
+      "content": "Hello! Play, have fun, enjoy, pull a copy of Arachne (limited banner), use all y",
+      "author": "spruzzetto",
+      "reactions": 4,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1501571454456692817",
+      "channel_id": "1433513650299076780",
+      "content": "Alr, thx for the intro, imma go read and try playing.",
+      "author": "adaptoidprime068",
+      "reactions": 4,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1501423475988893777",
+      "channel_id": "1131839817982947429",
+      "content": "~~看到门酱疑似又要改版的消息了，是好的~~",
+      "author": "flarinsidia",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501474323469172787",
+      "channel_id": "1131839817982947429",
+      "content": "盾击队甚至……",
+      "author": "lynn_0719",
+      "reactions": 3,
+      "channel": "🔸綜合討論"
+    }
+  ]
+}

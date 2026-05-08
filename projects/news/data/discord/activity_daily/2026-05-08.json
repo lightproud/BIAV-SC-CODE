@@ -1,0 +1,219 @@
+{
+  "date": "2026-05-08",
+  "messages": 4418,
+  "unique_authors": 181,
+  "reactions_total": 263,
+  "attachments": 193,
+  "channel_activity": {
+    "🔸课间休息闲聊": 25,
+    "🔸交友频道": 1,
+    "🔸한국어-채팅방": 24,
+    "🔸deutscher-chatraum": 1,
+    "🔸chaîne-française": 2,
+    "🔸русский-канал": 771,
+    "🔸phòng-chat-tiếng-việt": 729,
+    "🔸canal-español": 22,
+    "🔸canal-português": 215,
+    "🔸ruang-obrolan-indonesia": 872,
+    "🔸ห้องสนทนาภาษาไทย": 16,
+    "🔸traphase": 344,
+    "🔸lore-chat": 122,
+    "🔸team-building": 182,
+    "🔸邀请码互助┊swap-invitation-codes": 5,
+    "🔸game-question": 1047,
+    "🔸忘却前夜┊morimens-tv": 1,
+    "🔸机器人命令┊bot-commands": 25,
+    "🔸erica-playground": 13,
+    "1502102667554590760": 1
+  },
+  "hourly_activity": {
+    "2": 62,
+    "6": 129,
+    "7": 121,
+    "8": 211,
+    "10": 123,
+    "12": 188,
+    "14": 529,
+    "15": 505,
+    "16": 548,
+    "1": 38,
+    "0": 101,
+    "3": 98,
+    "4": 32,
+    "5": 67,
+    "9": 350,
+    "11": 203,
+    "13": 789,
+    "17": 178,
+    "18": 91,
+    "19": 55
+  },
+  "message_types": {
+    "0": 3190,
+    "19": 1225,
+    "20": 2,
+    "21": 1
+  },
+  "top_reacted_messages": [
+    {
+      "id": "1502127854626803732",
+      "channel_id": "1194835209242296410",
+      "content": "?",
+      "author": "fishhazardthewizard",
+      "reactions": 5,
+      "channel": "🔸交友频道"
+    },
+    {
+      "id": "1502099390742138931",
+      "channel_id": "1326453763355185215",
+      "content": "then again every few months we get a new person unironically saying \"i think i m",
+      "author": "nikolazuli",
+      "reactions": 5,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1502117154563166329",
+      "channel_id": "1400749543288475770",
+      "content": "Did it , i tried to play only defence and do one exalt per turn and all exalts o",
+      "author": "el7oot__",
+      "reactions": 5,
+      "channel": "🔸team-building"
+    },
+    {
+      "id": "1502103004516716646",
+      "channel_id": "1326453763355185215",
+      "content": "celeste using her wish granting powers for abortion 😭",
+      "author": "insigible",
+      "reactions": 4,
+      "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1502322806971432960",
+      "channel_id": "1433513650299076780",
+      "content": "or corpo",
+      "author": "princess.goth",
+      "reactions": 4,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1502192115101470781",
+      "channel_id": "1300659603993923644",
+      "content": "zào top 10 cha phây òi",
+      "author": "anicillia",
+      "reactions": 3,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502324370918342738",
+      "channel_id": "1300659603993923644",
+      "content": "cái này liệu có kích thích mng =))",
+      "author": "anicillia",
+      "reactions": 3,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502337342705238036",
+      "channel_id": "1300659603993923644",
+      "content": "S nghe nó giống romance visual novel thế",
+      "author": "umushi._.1",
+      "reactions": 3,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502125331304415282",
+      "channel_id": "1433513650299076780",
+      "content": "play the leaderboard content (traphase pdive hsr) to get the voucher for a rando",
+      "author": "fibrinogen",
+      "reactions": 3,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1502232790882582579",
+      "channel_id": "1433513650299076780",
+      "content": "ryker has a revolver",
+      "author": "chinkeeyong",
+      "reactions": 3,
+      "channel": "🔸game-question"
+    },
+    {
+      "id": "1502285282894938142",
+      "channel_id": "1300659580446969918",
+      "content": "одна из моих самых любимых айдишек, жалко синк вряд ли хоть как-то расширят",
+      "author": "chimorph",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1502377950883086346",
+      "channel_id": "1300659580446969918",
+      "content": "очень и очень сомнительно, очередная китайская гача, но с некоторыми уточнениями",
+      "author": "somethingno1fan",
+      "reactions": 2,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1502304708910383247",
+      "channel_id": "1300659603993923644",
+      "content": "nhớ thêm tí bài trừ AI vào cho người ta ủm hộ",
+      "author": "ddatt",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502307654003855450",
+      "channel_id": "1300659603993923644",
+      "content": "<@1342814706150146068> \n<@928857082990583858> \n<@474412169249947669> \n<@85036360",
+      "author": "corner_corn",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502307714221608970",
+      "channel_id": "1300659603993923644",
+      "content": "đang  game  sủa",
+      "author": "mrmot347",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502308613102895275",
+      "channel_id": "1300659603993923644",
+      "content": "7 days cuối xóa",
+      "author": "hoangziet.",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502312956338241657",
+      "channel_id": "1300659603993923644",
+      "content": "https://tenor.com/view/miyabi-hoshimi-miyabi-zzz-disagreement-disagree-gif-25148",
+      "author": "mrmot347",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502326874108334181",
+      "channel_id": "1300659603993923644",
+      "content": "Thể lệ GA:\n\n1. Cách thức tham gia: \n\n+ Mình là người tự lên danh sách, tự chọn. ",
+      "author": "anicillia",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502329475097034762",
+      "channel_id": "1300659603993923644",
+      "content": "mình mem mới ạ :))",
+      "author": "zileff",
+      "reactions": 2,
+      "channel": "🔸phòng-chat-tiếng-việt"
+    },
+    {
+      "id": "1502103611075723325",
+      "channel_id": "1300659662311526512",
+      "content": "Fonógrafo o galería, es lo más barato",
+      "author": "masky19",
+      "reactions": 2,
+      "channel": "🔸canal-español"
+    }
+  ]
+}
