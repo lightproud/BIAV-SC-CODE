@@ -4794,6 +4794,13 @@
       "title": "【绘画过程】love for rotten me",
       "time": "2026-05-08T15:39:08+00:00",
       "downloaded_at": "2026-05-08T16:12:20.506857+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/7e8efc93e2ed473711fa5958314e3903a8a6960f.jpg": {
+      "filename": "bilibili_bb51fa8dd70cb3c6.jpg",
+      "source": "bilibili",
+      "title": "【超维戒指】65分钟超级丝滑425，速来享受",
+      "time": "2026-05-08T18:05:58+00:00",
+      "downloaded_at": "2026-05-08T20:07:05.999563+00:00"
     }
   },
   "failed": {
@@ -6756,6 +6763,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-08T16:12:16.951756+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/7e8efc93e2ed473711fa5958314e3903a8a6960f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-08T20:07:06.300411+00:00"
     }
   },
   "archived": []

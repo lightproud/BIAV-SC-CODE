@@ -1,8 +1,8 @@
 {
   "date": "2026-05-09",
-  "archived_at": "2026-05-08T18:07:53.908297+00:00",
+  "archived_at": "2026-05-08T20:07:06.370530+00:00",
   "source": "bilibili",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "source": "bilibili",
@@ -207,6 +207,36 @@
         "comments_fetched": 0,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-08T18:05:58+00:00",
+      "lang": "zh",
+      "title": "【超维戒指】65分钟超级丝滑425，速来享受",
+      "summary": "-\n  └ 伊莎玛拉-大群来了 (1赞): 我了",
+      "url": "https://www.bilibili.com/video/BV1G4R2BXEPt",
+      "author": "路过的耄耋",
+      "engagement": 27,
+      "media_url": "https://i0.hdslb.com/bfs/archive/7e8efc93e2ed473711fa5958314e3903a8a6960f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 26,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-08T18:05:58+00:00",
+      "lang": "zh",
+      "title": "【超维戒指】65分钟超级丝滑425，速来享受",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116540229819376",
+      "author": "路过的耄耋",
+      "engagement": 26,
+      "media_url": "//i0.hdslb.com/bfs/archive/7e8efc93e2ed473711fa5958314e3903a8a6960f.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
