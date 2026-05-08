@@ -4773,6 +4773,27 @@
       "title": "Nefraea Dominates Me For 3 Hrs Straight (Morimens Chapter 5 End & Final Boss on HARD)",
       "time": "2026-05-07T23:05:23.190899+00:00",
       "downloaded_at": "2026-05-08T12:08:15.245228+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/35ea537aae69b77ad99fbb8361bf8a9a50a1c6a6.jpg": {
+      "filename": "bilibili_a1a527d4191a520c.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】计时器狂飙425",
+      "time": "2026-05-08T13:15:43+00:00",
+      "downloaded_at": "2026-05-08T16:12:16.650856+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/9067e9ea2389779aca4211a7296e56a52e9a70b9.jpg": {
+      "filename": "bilibili_ff68e3838d37470d.jpg",
+      "source": "bilibili",
+      "title": "沙耶の唄，半年前做着玩的库存",
+      "time": "2026-05-08T14:39:02+00:00",
+      "downloaded_at": "2026-05-08T16:12:17.940305+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/4de28c3eefb50976b35319cc850278cebd35c4d2.jpg": {
+      "filename": "bilibili_da032f60d977bda2.jpg",
+      "source": "bilibili",
+      "title": "【绘画过程】love for rotten me",
+      "time": "2026-05-08T15:39:08+00:00",
+      "downloaded_at": "2026-05-08T16:12:20.506857+00:00"
     }
   },
   "failed": {
@@ -6730,6 +6751,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-08T10:20:13.424369+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/35ea537aae69b77ad99fbb8361bf8a9a50a1c6a6.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-08T16:12:16.951756+00:00"
     }
   },
   "archived": []
