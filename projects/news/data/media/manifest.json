@@ -4717,6 +4717,13 @@
       "title": "[Morimens] 2026 Tier List WARS - Comparing the Tierlists of the best players in Morimens",
       "time": "2026-05-07T22:52:11.264248+00:00",
       "downloaded_at": "2026-05-07T22:55:09.905223+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/107141a68bc3b909c450d7e8fb4c448e7bb48219.jpg": {
+      "filename": "bilibili_e664ed6635d94094.jpg",
+      "source": "bilibili",
+      "title": "菲旺反击4-5记录磨",
+      "time": "2026-05-07T12:38:01+00:00",
+      "downloaded_at": "2026-05-08T02:00:09.620775+00:00"
     }
   },
   "failed": {
@@ -6649,6 +6656,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-07T22:55:10.759592+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/107141a68bc3b909c450d7e8fb4c448e7bb48219.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-08T02:00:09.921622+00:00"
     }
   },
   "archived": []
