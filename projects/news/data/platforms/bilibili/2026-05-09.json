@@ -1,8 +1,8 @@
 {
   "date": "2026-05-09",
-  "archived_at": "2026-05-09T14:16:40.388781+00:00",
+  "archived_at": "2026-05-09T15:44:33.402784+00:00",
   "source": "bilibili",
-  "item_count": 27,
+  "item_count": 28,
   "items": [
     {
       "source": "bilibili",
@@ -237,6 +237,24 @@
       "engagement": 50,
       "media_url": "//i2.hdslb.com/bfs/archive/4bcfa72a0e937839dd2309dbabb49d7790c82f6f.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-09T14:51:58+00:00",
+      "lang": "zh",
+      "title": "杀戮尖塔2-沙耶mod-v1.6",
+      "summary": "一只非常可爱的小沙耶mod\n卡图作者@星引晨起  \n文本优化，先古对话 @比木鱼ovo  @一本证经的  \n玩法灵感设计@大群意志_伊莎玛拉  \n1.6在1.5版本基础上修改了许多卡牌的效果，荆棘流曾经处于数值过高就会很无脑，过低又被寄生碾压的局面，此次更新了许多荆棘流派的卡牌以供更加平衡的过度\n希望大家玩的开心\n安装位置：\\SteamLibrary\\steamapps\\common\\Slay the Spire 2\\mods\n  └ 千导院枫 (0赞): 反馈q群：1095270426\n\n百度网盘下载链接：https://pan.baidu.com/s/1m9Ng5HE1xShu7J0P8h1Qnw?pwd=pfuc 提取码: pfuc\n\n夸克网盘下载链接：https://pan.quark.cn/s/db81f992dc7c?pwd=Qfcs\n  └ 比木鱼ovo (0赞): 塔二也是好起来了能吃到沙耶流量了[P+魔法少女表情包_土豆雷][P+魔法少女表情包_土豆雷]",
+      "url": "https://www.bilibili.com/video/BV1anRdBUEvA",
+      "author": "千导院枫",
+      "engagement": 49,
+      "media_url": "https://i1.hdslb.com/bfs/archive/787e4d2ec30ba723a67df0b3c7b335c2a9504706.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 47,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",
