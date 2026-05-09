@@ -30606,10 +30606,14 @@
     },
     "thread:1502102667554590760": {
       "last_message_id": "1502102683538948126"
+    },
+    "1502664269823606814": {
+      "last_historical_message_id": "1477455328051200000",
+      "last_historical_month": "2026-02"
     }
   },
   "historical_month": "2026-02",
-  "last_run": "2026-05-09T12:11:14.474854+00:00",
+  "last_run": "2026-05-09T13:59:32.014884+00:00",
   "forum_starter_backfill": {
     "completed": [
       "thread:1171395702887305216",

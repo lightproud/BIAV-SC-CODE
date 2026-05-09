@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-05-09T12:11:03.535671+00:00",
+  "updated_at": "2026-05-09T13:59:20.433542+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1305,6 +1305,14 @@
       "parent_id": "1440851754311749733",
       "position": 146,
       "topic": "ModMail Channel 693905974750216212 1264105515789844491 (Please do not change this)"
+    },
+    {
+      "id": "1502664269823606814",
+      "name": "chocominnto",
+      "type": 0,
+      "parent_id": "1440851754311749733",
+      "position": 147,
+      "topic": "ModMail Channel 277927692735873035 963414033476780094 (Please do not change this)"
     }
   ]
 }
