@@ -1,8 +1,8 @@
 {
   "date": "2026-05-09",
-  "archived_at": "2026-05-09T12:55:20.370810+00:00",
+  "archived_at": "2026-05-09T14:16:40.387818+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -123,6 +123,36 @@
       "review": "Let's go gambling!",
       "timestamp_created": 1778296672,
       "playtime_forever": 656
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-09T13:04:07+00:00",
+      "lang": "spanish",
+      "title": "[负面] Vaya aburrimiento de historia para dormir va bien.",
+      "summary": "Vaya aburrimiento de historia para dormir va bien.",
+      "url": "https://steamcommunity.com/profiles/76561197990166955/recommended/3052450",
+      "author": "76561197990166955",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": false,
+      "review": "Vaya aburrimiento de historia para dormir va bien.",
+      "timestamp_created": 1778331847,
+      "playtime_forever": 27
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-09T13:00:55+00:00",
+      "lang": "english",
+      "title": "[正面] Absolutely amazing game.",
+      "summary": "Absolutely amazing game.",
+      "url": "https://steamcommunity.com/profiles/76561199849231473/recommended/3052450",
+      "author": "76561199849231473",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Absolutely amazing game.",
+      "timestamp_created": 1778331655,
+      "playtime_forever": 6031
     }
   ]
 }
