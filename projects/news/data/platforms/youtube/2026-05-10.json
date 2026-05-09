@@ -1,8 +1,8 @@
 {
   "date": "2026-05-10",
-  "archived_at": "2026-05-09T20:37:42.455139+00:00",
+  "archived_at": "2026-05-09T23:40:24.060869+00:00",
   "source": "youtube",
-  "item_count": 44,
+  "item_count": 45,
   "items": [
     {
       "source": "youtube",
@@ -530,6 +530,18 @@
       "author": "Kiro Takahashi",
       "engagement": 144,
       "media_url": "https://i.ytimg.com/vi/uGnFwVof5p8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCoYgJQ1usJHidh6PKem_5fCNgy6A",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-09T15:37:36.535578+00:00",
+      "lang": "",
+      "title": "忘却前夜 5章 ボス戦 その２",
+      "summary": "8 hours ago",
+      "url": "https://www.youtube.com/watch?v=QuSGRzYgzJQ",
+      "author": "Coma.ru725",
+      "engagement": 5,
+      "media_url": "https://i.ytimg.com/vi/QuSGRzYgzJQ/hqdefault.jpg?sqp=-oaymwE2COADEI4CSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARhLIE0oZTAP&rs=AOn4CLAeXbNpvIczH9_HxrhtsX4SwcHWVg",
       "content_type": "image"
     }
   ]
