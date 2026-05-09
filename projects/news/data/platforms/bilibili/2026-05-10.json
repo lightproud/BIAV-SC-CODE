@@ -1,8 +1,8 @@
 {
   "date": "2026-05-10",
-  "archived_at": "2026-05-09T16:44:46.960158+00:00",
+  "archived_at": "2026-05-09T17:45:35.198078+00:00",
   "source": "bilibili",
-  "item_count": 15,
+  "item_count": 16,
   "items": [
     {
       "source": "bilibili",
@@ -247,6 +247,24 @@
         "play": 23,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-09T17:25:59+00:00",
+      "lang": "zh",
+      "title": "⁣",
+      "summary": "-\n  └ FruyerLi (1赞): 怎么还有肉块沙耶姐姐[星星眼]",
+      "url": "https://www.bilibili.com/video/BV1g1RRBkEW4",
+      "author": "竹取猫",
+      "engagement": 6,
+      "media_url": "https://i1.hdslb.com/bfs/archive/a116413eebe32abadb0c1f9a4c65d751ff23f88b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 4,
+        "comment_count": 2,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     }
