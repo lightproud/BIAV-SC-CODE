@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-09T19:53:15.855624+00:00",
+  "collected_at": "2026-05-09T20:37:36.399309+00:00",
   "source": "steam",
-  "item_count": 3,
+  "item_count": 4,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-09T18:50:02+00:00",
+      "lang": "french",
+      "title": "[正面] top",
+      "summary": "top",
+      "url": "https://steamcommunity.com/profiles/76561198211853353/recommended/3052450",
+      "author": "76561198211853353",
+      "engagement": 0,
+      "language": "french",
+      "voted_up": true,
+      "review": "top",
+      "timestamp_created": 1778352602,
+      "playtime_forever": 369
+    },
     {
       "source": "steam",
       "time": "2026-05-09T13:04:07+00:00",
