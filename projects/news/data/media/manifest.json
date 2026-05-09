@@ -4857,6 +4857,48 @@
       "title": "【忘却前夜】深潜3T 8940出分",
       "time": "2026-05-08T04:31:46+00:00",
       "downloaded_at": "2026-05-09T01:54:20.991544+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/05c03de659e62a28b8de407a721c5c718e00d951.jpg": {
+      "filename": "bilibili_488cc3275ddd8225.jpg",
+      "source": "bilibili",
+      "title": "【微恐实况】画风神似 沙耶之歌 的国产RPG游戏 |《薨愚虻》p2",
+      "time": "2026-05-08T12:06:13+00:00",
+      "downloaded_at": "2026-05-09T05:08:48.489287+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/fae559c58318be9858fc476bc43595ec378b1f69.jpg": {
+      "filename": "bilibili_8d84aea732e7fe99.jpg",
+      "source": "bilibili",
+      "title": "day3 精神病人会梦见沙耶之歌吗",
+      "time": "2026-05-08T12:41:22+00:00",
+      "downloaded_at": "2026-05-09T05:08:53.989648+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/65d07ffb0490f465b618e12439e040b578a5f949.jpg": {
+      "filename": "bilibili_6cf1118e7161c89b.jpg",
+      "source": "bilibili",
+      "title": "『合作智慧之六』极限28血起爆五连发命运裁断，视觉效果依旧拉满",
+      "time": "2026-05-09T03:21:22+00:00",
+      "downloaded_at": "2026-05-09T05:08:57.118833+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/263b69b08d6e2edd9fb9092b24fdaaa9cfbf07ff.jpg": {
+      "filename": "bilibili_fe5d02a4e9d56ab3.jpg",
+      "source": "bilibili",
+      "title": "欢迎回家",
+      "time": "2026-05-09T03:37:57+00:00",
+      "downloaded_at": "2026-05-09T05:08:59.801762+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/05/09/12/50/54/144555668_p0_custom1200.jpg": {
+      "filename": "pixiv_3817187860afcee2.jpg",
+      "source": "pixiv",
+      "title": "忘却前夜ログ3",
+      "time": "2026-05-09T12:50:54+09:00",
+      "downloaded_at": "2026-05-09T05:09:00.791603+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/05/09/12/22/07/144554973_p0_custom1200.jpg": {
+      "filename": "pixiv_9fab91047b377959.jpg",
+      "source": "pixiv",
+      "title": "忘却前夜ログ2",
+      "time": "2026-05-09T12:22:07+09:00",
+      "downloaded_at": "2026-05-09T05:09:01.786217+00:00"
     }
   },
   "failed": {
@@ -6829,6 +6871,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-09T01:54:21.292502+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/65d07ffb0490f465b618e12439e040b578a5f949.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-09T05:08:57.419682+00:00"
     }
   },
   "archived": []
