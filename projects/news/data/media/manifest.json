@@ -4843,6 +4843,20 @@
       "title": "[DC] chimorph@🔸русский-канал: одна из моих самых любимых айдишек, жалко синк вряд ли хоть как-то рас",
       "time": "2026-05-08T12:25:22.553000+00:00",
       "downloaded_at": "2026-05-08T21:52:15.144029+00:00"
+    },
+    "https://i.ytimg.com/vi/avIKHBE4-8g/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCY3opdlXjV6MlKXgXWXVbhU8GE-g": {
+      "filename": "youtube_471d7509e2f50013.jpg",
+      "source": "youtube",
+      "title": "WARNING: Morimens Is So Addictive You Might Never Stop Playing",
+      "time": "2026-05-09T01:51:28.315956+00:00",
+      "downloaded_at": "2026-05-09T01:54:18.998961+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/f489edb1234b2f9a21c68529cf3ebe065c73ce72.jpg": {
+      "filename": "bilibili_07dde7873c7aac89.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】深潜3T 8940出分",
+      "time": "2026-05-08T04:31:46+00:00",
+      "downloaded_at": "2026-05-09T01:54:20.991544+00:00"
     }
   },
   "failed": {
@@ -6810,6 +6824,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-08T20:07:06.300411+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/f489edb1234b2f9a21c68529cf3ebe065c73ce72.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-09T01:54:21.292502+00:00"
     }
   },
   "archived": []
