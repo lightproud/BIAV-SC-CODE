@@ -4913,6 +4913,34 @@
       "title": "对沙耶之歌的看法",
       "time": "2026-05-08T17:33:36+00:00",
       "downloaded_at": "2026-05-09T12:55:20.293458+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/91822341c97ba06f859aeb090e625295615d7ea7.jpg": {
+      "filename": "bilibili_c4a5cf75125ac4bf.jpg",
+      "source": "bilibili",
+      "title": "买源石虫送手办 最绿的全年龄GK {ALICE 21 工作室 沙耶之歌 }",
+      "time": "2026-05-09T07:53:03+00:00",
+      "downloaded_at": "2026-05-09T14:16:36.920517+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/72ed50cd430fff1d71aec29367072105e0de866c.jpg": {
+      "filename": "bilibili_871531cac2dc043b.jpg",
+      "source": "bilibili",
+      "title": "娅娅...c5-5?",
+      "time": "2026-05-09T13:25:42+00:00",
+      "downloaded_at": "2026-05-09T14:16:37.841867+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/3f326729c946ccce9fc19693ca56a40438bf360f.jpg": {
+      "filename": "bilibili_81c9ee87e92ac3ba.jpg",
+      "source": "bilibili",
+      "title": "你完蛋了沙耶💢",
+      "time": "2026-05-09T13:56:00+00:00",
+      "downloaded_at": "2026-05-09T14:16:39.212565+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/f16724fb9d5ab972fcffd6b62f9aba4b783f8633.jpg": {
+      "filename": "bilibili_fc41b5efc27672dc.jpg",
+      "source": "bilibili",
+      "title": "这个角色好好看，我画一下（不会画画",
+      "time": "2026-05-09T13:33:20+00:00",
+      "downloaded_at": "2026-05-09T14:16:40.320291+00:00"
     }
   },
   "failed": {
@@ -6895,6 +6923,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-09T07:12:24.349308+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/72ed50cd430fff1d71aec29367072105e0de866c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-09T14:16:38.142645+00:00"
     }
   },
   "archived": []
