@@ -1,8 +1,8 @@
 {
   "date": "2026-05-09",
-  "archived_at": "2026-05-09T01:54:21.358295+00:00",
+  "archived_at": "2026-05-09T05:09:01.865251+00:00",
   "source": "bilibili",
-  "item_count": 16,
+  "item_count": 19,
   "items": [
     {
       "source": "bilibili",
@@ -144,6 +144,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-09T03:21:22+00:00",
+      "lang": "zh",
+      "title": "『合作智慧之六』极限28血起爆五连发命运裁断，视觉效果依旧拉满",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1hRRSBcECM",
+      "author": "最尊重1999卡池的UP",
+      "engagement": 93,
+      "media_url": "https://i1.hdslb.com/bfs/archive/65d07ffb0490f465b618e12439e040b578a5f949.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 93,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-09T03:21:22+00:00",
+      "lang": "zh",
+      "title": "『合作智慧之六』极限28血起爆五连发命运裁断，视觉效果依旧拉满",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116542461189415",
+      "author": "最尊重1999卡池的UP",
+      "engagement": 93,
+      "media_url": "//i1.hdslb.com/bfs/archive/65d07ffb0490f465b618e12439e040b578a5f949.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-08T08:35:44+00:00",
       "lang": "zh",
       "title": "【忘却前夜】沉浸式抽阿拉克涅",
@@ -237,6 +267,24 @@
       "engagement": 26,
       "media_url": "//i0.hdslb.com/bfs/archive/7e8efc93e2ed473711fa5958314e3903a8a6960f.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-09T03:37:57+00:00",
+      "lang": "zh",
+      "title": "欢迎回家",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1gdRSBhENH",
+      "author": "八云紫的狂热女粉丝",
+      "engagement": 12,
+      "media_url": "https://i2.hdslb.com/bfs/archive/263b69b08d6e2edd9fb9092b24fdaaa9cfbf07ff.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 12,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",

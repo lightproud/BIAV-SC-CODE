@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-09T01:54:18.239867+00:00",
+  "collected_at": "2026-05-09T05:08:47.366996+00:00",
   "source": "steam",
   "item_count": 5,
   "items": [
@@ -46,7 +46,22 @@
       "voted_up": true,
       "review": "Really scratches an itch as a card game with meta progression.  Main story content doesn't require energy, so you can play through it at your own pace.  Also has a creepy, edgy Lovecraftian horror plot if you're into that.",
       "timestamp_created": 1778251021,
-      "playtime_forever": 15355
+      "playtime_forever": 15392
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-09T03:17:52+00:00",
+      "lang": "english",
+      "title": "[正面] Let's go gambling!",
+      "summary": "Let's go gambling!",
+      "url": "https://steamcommunity.com/profiles/76561199050177430/recommended/3052450",
+      "author": "76561199050177430",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Let's go gambling!",
+      "timestamp_created": 1778296672,
+      "playtime_forever": 656
     },
     {
       "source": "steam",
@@ -62,21 +77,6 @@
       "review": "。",
       "timestamp_created": 1778223220,
       "playtime_forever": 4332
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-08T02:28:49+00:00",
-      "lang": "english",
-      "title": "[正面] i mori the mens",
-      "summary": "i mori the mens",
-      "url": "https://steamcommunity.com/profiles/76561199232719360/recommended/3052450",
-      "author": "76561199232719360",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "i mori the mens",
-      "timestamp_created": 1778207329,
-      "playtime_forever": 5442
     }
   ]
 }
