@@ -1,8 +1,8 @@
 {
   "date": "2026-05-09",
-  "archived_at": "2026-05-09T10:49:10.356525+00:00",
+  "archived_at": "2026-05-09T11:44:06.533306+00:00",
   "source": "reddit",
-  "item_count": 27,
+  "item_count": 29,
   "items": [
     {
       "source": "reddit",
@@ -316,6 +316,29 @@
       "metadata": {
         "via": "rss"
       }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-09T11:15:29+00:00",
+      "lang": "en",
+      "title": "Morimens Sticker Maker",
+      "summary": "&#32; submitted by &#32;  /u/zyocuh   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1t825o5/morimens_sticker_maker/",
+      "author": "/u/zyocuh",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-09T11:15:29+00:00",
+      "lang": "en",
+      "title": "Morimens Sticker Maker",
+      "summary": "&#32; submitted by &#32;  /u/zyocuh   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1t825o5/morimens_sticker_maker/",
+      "author": "u//u/zyocuh",
+      "engagement": 0
     }
   ]
 }
