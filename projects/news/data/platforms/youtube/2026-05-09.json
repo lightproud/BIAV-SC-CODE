@@ -1,8 +1,8 @@
 {
   "date": "2026-05-09",
-  "archived_at": "2026-05-09T01:54:21.360827+00:00",
+  "archived_at": "2026-05-09T07:12:24.419332+00:00",
   "source": "youtube",
-  "item_count": 45,
+  "item_count": 47,
   "items": [
     {
       "source": "youtube",
@@ -438,6 +438,18 @@
     },
     {
       "source": "youtube",
+      "time": "2026-05-09T07:09:36.417395+00:00",
+      "lang": "",
+      "title": "忘卻前夜 Morimens Everbright Nightfall - Age of Innocence Madness",
+      "summary": "[6mo ago] Been a while, college is a lot so even now this might not be regular but I did want to at least do something for Pollux since I really ...",
+      "url": "https://www.youtube.com/watch?v=_JKYsyEeSrI",
+      "author": "Kiro Takahashi",
+      "engagement": 735,
+      "media_url": "https://i.ytimg.com/vi/_JKYsyEeSrI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDTnUwsAk7qyeyf7cUJOSwgKq0TVg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
       "time": "2026-05-08T21:49:16.050337+00:00",
       "lang": "",
       "title": "『 Morimens 』 we're br*tish",
@@ -542,6 +554,18 @@
       "author": "瑪爾",
       "engagement": 187,
       "media_url": "https://i.ytimg.com/vi/ArGNulXbHuo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGTvyJvVNGRgdY0e6b2EHHrvlkQA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-09T07:09:36.417290+00:00",
+      "lang": "",
+      "title": "【ストーリー】８章後編8-9～8-14【忘却前夜/ローグライクで遊ぼうの会】",
+      "summary": "[Streamed 13d ago] 忘却前夜 #忘却前夜Steam版 わんちゃん８章おわららなくても許して デクスター卿まじで信じてるぞお前俺はお前を信じてるぞ ...",
+      "url": "https://www.youtube.com/watch?v=u7UlhHfVdyY",
+      "author": "朝霧@ASGRgames",
+      "engagement": 144,
+      "media_url": "https://i.ytimg.com/vi/u7UlhHfVdyY/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC02874I2G4D4ewNNrKOWUN85jcKg",
       "content_type": "image"
     }
   ]
