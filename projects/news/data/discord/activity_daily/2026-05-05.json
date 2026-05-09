@@ -1,10 +1,15 @@
 {
   "date": "2026-05-05",
-  "messages": 13162,
+  "messages": 13173,
   "unique_authors": 301,
-  "reactions_total": 980,
-  "attachments": 438,
+  "reactions_total": 984,
+  "attachments": 440,
   "channel_activity": {
+    "🔸阵容构建": 40,
+    "菜雞四小強玩家的抱怨之旅new": 4,
+    "✅「已回答」氪金玩家和老玩家是否已经成为游戏前进的阻力？": 2,
+    "【English Translation】Opinions Collection": 6,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 6,
     "🔸綜合討論": 4064,
     "🔸日本語チャンネル": 6,
     "🔸한국어-채팅방": 9,
@@ -19,7 +24,6 @@
     "🔸general-chat": 5506,
     "🔸game-question": 1068,
     "🔸机器人命令┊bot-commands": 36,
-    "🔸阵容构建": 39,
     "🔸剧情交流": 29,
     "🔸晒卡分享": 6,
     "🔸相位对弈": 2,
@@ -46,18 +50,16 @@
     "[蜘蛛神教]于宿命中编织命宿之网——阿拉克涅原型相关资料整理": 2,
     "Preview: V2.5.1 Caro Awakener Enhancement": 2,
     "Just Wanda": 1,
-    "【English Translation】Opinions Collection": 4,
     "🏆 忘却前夜第4届N厨杯┊The 4th 「N」′s Chef Cup of Morimens": 3,
-    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
     "V2.3.1 「朵尔·灵性重生」简约幻衣，可在邀请活动中获取┊Get Basic Skin \"Doll: Gnostic Reshape\" from the New Invitation Event!": 1,
     "Need some advice with my team lineup...": 7
   },
   "hourly_activity": {
+    "20": 345,
+    "23": 276,
+    "22": 55,
     "19": 601,
-    "20": 339,
     "21": 60,
-    "23": 272,
-    "22": 54,
     "18": 1030,
     "0": 114,
     "1": 491,
@@ -79,10 +81,8 @@
     "17": 340
   },
   "message_types": {
-    "0": 1169,
-    "19": 309,
-    "20": 2,
-    "23": 1
+    "19": 1,
+    "0": 10
   },
   "top_reacted_messages": [
     {

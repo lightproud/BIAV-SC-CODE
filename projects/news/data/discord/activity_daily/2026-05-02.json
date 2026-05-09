@@ -1,10 +1,11 @@
 {
   "date": "2026-05-02",
-  "messages": 13920,
+  "messages": 17992,
   "unique_authors": 304,
-  "reactions_total": 890,
-  "attachments": 541,
+  "reactions_total": 1196,
+  "attachments": 670,
   "channel_activity": {
+    "🔸morimens-game-chat": 4072,
     "🔸綜合討論": 3562,
     "🔸剧情交流": 400,
     "🔸相位对弈": 18,
@@ -60,6 +61,16 @@
     "Got mauled in 50lvl p-dive. Need advice": 3
   },
   "hourly_activity": {
+    "0": 371,
+    "1": 496,
+    "2": 641,
+    "3": 600,
+    "4": 601,
+    "5": 1122,
+    "6": 1222,
+    "7": 957,
+    "8": 1138,
+    "9": 1099,
     "18": 718,
     "19": 229,
     "21": 172,
@@ -68,27 +79,16 @@
     "20": 150,
     "16": 1199,
     "17": 629,
-    "1": 124,
-    "2": 282,
-    "3": 252,
-    "4": 123,
-    "5": 298,
-    "6": 580,
-    "7": 563,
-    "8": 870,
-    "9": 950,
     "10": 704,
     "11": 623,
     "12": 1177,
     "13": 1020,
     "14": 1079,
-    "15": 1713,
-    "0": 133
+    "15": 1713
   },
   "message_types": {
-    "0": 1303,
-    "19": 647,
-    "23": 1,
+    "0": 2675,
+    "19": 1396,
     "20": 1
   },
   "top_reacted_messages": [
@@ -189,6 +189,22 @@
       "channel": "請把N的劇情cg 改回忘卻篇的畫風"
     },
     {
+      "id": "1499933696650772503",
+      "channel_id": "1170692781216378960",
+      "content": "can i make discord tierlist",
+      "author": "arisuu0604",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1499975722150924320",
+      "channel_id": "1170692781216378960",
+      "content": "Train run done!",
+      "author": "willsalvador",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1500214878596759713",
       "channel_id": "1500214878596759713",
       "content": "big ahhh canvas",
@@ -235,22 +251,6 @@
       "author": "lurenjiao",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500132506580553899",
-      "channel_id": "1173463482503536711",
-      "content": "但是学长一直在挂机",
-      "author": "gensono0609",
-      "reactions": 5,
-      "channel": "🔸剧情交流"
-    },
-    {
-      "id": "1500135930437308426",
-      "channel_id": "1173463482503536711",
-      "content": "其實七章學長掛掉我一邊崩潰一邊爽\n~~我想說這樣就進池了~~",
-      "author": "yusi4172",
-      "reactions": 5,
-      "channel": "🔸剧情交流"
     }
   ]
 }

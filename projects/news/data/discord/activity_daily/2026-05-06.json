@@ -1,11 +1,37 @@
 {
   "date": "2026-05-06",
-  "messages": 10434,
+  "messages": 11483,
   "unique_authors": 257,
-  "reactions_total": 648,
-  "attachments": 369,
+  "reactions_total": 873,
+  "attachments": 452,
   "channel_activity": {
-    "🔸綜合討論": 1330,
+    "🔸綜合討論": 2142,
+    "🔸阵容构建": 18,
+    "🔸剧情交流": 34,
+    "🔸相位对弈": 5,
+    "🔸general-chat": 4444,
+    "你說什麼？我聽不見！": 6,
+    "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 15,
+    "play store price qna": 1,
+    "✅「已回答」氪金玩家和老玩家是否已经成为游戏前进的阻力？": 7,
+    "✅「已回答」相位是打算摆烂吗？": 12,
+    "💭「處理中」活動卡了一個紅點": 3,
+    "✅「Resolved」Ethereal Core Expiry Time text overlap": 2,
+    "Handbook Red Dot": 2,
+    "再衍化未受到造成的狂氣提高效果加成的問題": 1,
+    "Vortice pursuit animation": 1,
+    "Reality Verges": 1,
+    "可以把字體改回去嗎": 2,
+    "\"24\" lives matter": 2,
+    "Morimens Localization Notes #3 忘却前夜本地化笔记 #3": 2,
+    "Morimens sticker/emoji thread": 18,
+    "Pink fish": 5,
+    "Angbak random FAQ Guide": 2,
+    "【English Translation】Opinions Collection": 5,
+    "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 12,
+    "想求個組隊建議": 1,
+    "Arc 2 team building help": 2,
+    "Need some advice with my team lineup...": 1,
     "🔸课间休息闲聊": 9,
     "🔸한국어-채팅방": 32,
     "🔸русский-канал": 982,
@@ -17,7 +43,6 @@
     "🔸traphase": 1,
     "🔸lore-chat": 88,
     "🔸team-building": 186,
-    "🔸general-chat": 4367,
     "🔸邀请码互助┊swap-invitation-codes": 7,
     "🔸game-question": 1725,
     "🔸忘却前夜┊morimens-tv": 1,
@@ -25,38 +50,45 @@
     "1501623598266187967": 1
   },
   "hourly_activity": {
-    "0": 298,
-    "1": 152,
-    "2": 206,
-    "3": 166,
-    "4": 163,
-    "5": 191,
-    "6": 477,
-    "7": 909,
-    "8": 558,
-    "9": 352,
-    "10": 552,
-    "11": 703,
-    "12": 689,
-    "13": 508,
-    "15": 937,
-    "16": 535,
-    "14": 558,
-    "17": 709,
-    "19": 366,
-    "20": 125,
-    "21": 243,
-    "22": 307,
-    "23": 157,
-    "18": 573
+    "13": 580,
+    "14": 1047,
+    "15": 1019,
+    "16": 585,
+    "17": 790,
+    "18": 613,
+    "19": 471,
+    "21": 249,
+    "22": 313,
+    "23": 187,
+    "0": 299,
+    "1": 156,
+    "8": 568,
+    "9": 355,
+    "10": 578,
+    "20": 131,
+    "12": 703,
+    "5": 198,
+    "3": 171,
+    "4": 165,
+    "6": 478,
+    "7": 913,
+    "2": 210,
+    "11": 704
   },
   "message_types": {
-    "0": 7123,
-    "19": 3298,
-    "20": 12,
-    "21": 1
+    "0": 842,
+    "19": 206,
+    "23": 1
   },
   "top_reacted_messages": [
+    {
+      "id": "1501725001097936957",
+      "channel_id": "1501725001097936957",
+      "content": "Pls ask first before using\n## (**DO NOT FEED MY DRAWINGS TO AI**💢)",
+      "author": "sunstopshining",
+      "reactions": 25,
+      "channel": "Morimens sticker/emoji thread"
+    },
     {
       "id": "1501428985765298267",
       "channel_id": "1300659495550062592",
@@ -74,6 +106,46 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1501565866393731092",
+      "channel_id": "1501565866393731092",
+      "content": "你說什麼？忘卻前夜的角色的臉都很權威！你說什麼？你喜歡忘卻前夜！你說什麼？你說你不玩忘卻前當你們一邊閒聊，一邊離開此地時……",
+      "author": "9ix_eternity",
+      "reactions": 10,
+      "channel": "你說什麼？我聽不見！"
+    },
+    {
+      "id": "1501588278044790795",
+      "channel_id": "1501588278044790795",
+      "content": "Random doodle I made and also my Morimens OC that I made long time ago, not sure",
+      "author": "noeyebunny.nobunsu",
+      "reactions": 10,
+      "channel": "Pink fish"
+    },
+    {
+      "id": "1501492604028715090",
+      "channel_id": "1350058928020656178",
+      "content": "Hi! Double checked with writers and we'll correct these on 05/08. We'll also fix",
+      "author": "morimens_15",
+      "reactions": 8,
+      "channel": "【English Translation】Opinions Collection"
+    },
+    {
+      "id": "1501593730254372935",
+      "channel_id": "1131839817982947429",
+      "content": "男人，你在玩男人",
+      "author": "ernest_heart",
+      "reactions": 6,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501727043660808313",
+      "channel_id": "1501725001097936957",
+      "content": "Hannah<:camera:1356053040251146460>",
+      "author": "sunstopshining",
+      "reactions": 6,
+      "channel": "Morimens sticker/emoji thread"
+    },
+    {
       "id": "1501487098346078328",
       "channel_id": "1131839817982947429",
       "content": "你知道當我們一邊閒聊 一邊離開此地時嗎",
@@ -88,6 +160,14 @@
       "author": "thpdom",
       "reactions": 6,
       "channel": "🔸lore-chat"
+    },
+    {
+      "id": "1501726133455032460",
+      "channel_id": "1501725001097936957",
+      "content": "Agrippa <:Agrippa_Stare:1468259401189294150>",
+      "author": "sunstopshining",
+      "reactions": 5,
+      "channel": "Morimens sticker/emoji thread"
     },
     {
       "id": "1501438794782605392",
@@ -146,76 +226,20 @@
       "channel": "🔸lore-chat"
     },
     {
-      "id": "1501573637080092753",
+      "id": "1501642212679614546",
       "channel_id": "1131839817982947429",
+      "content": "放心都過一年了肯定出個比神國上浮還要更逆天的",
+      "author": "ahuahuahua",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1501529116954853416",
+      "channel_id": "1180850818509971466",
       "content": "",
-      "author": "water_heart",
+      "author": "hon_ey0",
       "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501424532358172724",
-      "channel_id": "1300659603993923644",
-      "content": "ơ =)",
-      "author": "theviy",
-      "reactions": 4,
-      "channel": "🔸phòng-chat-tiếng-việt"
-    },
-    {
-      "id": "1501555930876219586",
-      "channel_id": "1326453763355185215",
-      "content": "as a side tangent I did Liz's psyche deepdive recently and i think it's cute tha",
-      "author": "hallowednebulae",
-      "reactions": 4,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1501571794451038380",
-      "channel_id": "1326453763355185215",
-      "content": "Miithag",
-      "author": "nikolazuli",
-      "reactions": 4,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1501563124665548920",
-      "channel_id": "1433513650299076780",
-      "content": "Because you are very strong, and because you play Aequor \nAlso, I was joking and",
-      "author": "spruzzetto",
-      "reactions": 4,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1501566585402429461",
-      "channel_id": "1433513650299076780",
-      "content": "Hello! Play, have fun, enjoy, pull a copy of Arachne (limited banner), use all y",
-      "author": "spruzzetto",
-      "reactions": 4,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1501571454456692817",
-      "channel_id": "1433513650299076780",
-      "content": "Alr, thx for the intro, imma go read and try playing.",
-      "author": "adaptoidprime068",
-      "reactions": 4,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1501423475988893777",
-      "channel_id": "1131839817982947429",
-      "content": "~~看到门酱疑似又要改版的消息了，是好的~~",
-      "author": "flarinsidia",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501474323469172787",
-      "channel_id": "1131839817982947429",
-      "content": "盾击队甚至……",
-      "author": "lynn_0719",
-      "reactions": 3,
-      "channel": "🔸綜合討論"
+      "channel": "🔸相位对弈"
     }
   ]
 }
