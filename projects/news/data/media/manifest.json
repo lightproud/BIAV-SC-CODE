@@ -4955,6 +4955,20 @@
       "title": "血与肉之恋",
       "time": "2026-05-09T07:06:24+00:00",
       "downloaded_at": "2026-05-09T16:44:46.901810+00:00"
+    },
+    "https://i.ytimg.com/vi/EoDYwYqOoOk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA0zZpzOhrHSNVtCUEfYi9s6j-uXQ": {
+      "filename": "youtube_45c4e1940dc5fd47.jpg",
+      "source": "youtube",
+      "title": "【忘卻前夜 Morimens】Testing Mouchette (ye shes good) in D-tide Wave 5",
+      "time": "2026-05-09T17:41:35.632652+00:00",
+      "downloaded_at": "2026-05-09T17:45:33.660472+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/a116413eebe32abadb0c1f9a4c65d751ff23f88b.jpg": {
+      "filename": "bilibili_0b84491eaf370532.jpg",
+      "source": "bilibili",
+      "title": "⁣",
+      "time": "2026-05-09T17:25:59+00:00",
+      "downloaded_at": "2026-05-09T17:45:34.755890+00:00"
     }
   },
   "failed": {
@@ -6942,6 +6956,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-09T14:16:38.142645+00:00"
+    },
+    "https://preview.redd.it/tg3c2v82150h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=1aa90359b75ba9a8c4321d2b044954d2fc7d4e5b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-09T17:45:35.127165+00:00"
     }
   },
   "archived": []
