@@ -4899,6 +4899,13 @@
       "title": "忘却前夜ログ2",
       "time": "2026-05-09T12:22:07+09:00",
       "downloaded_at": "2026-05-09T05:09:01.786217+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/6ffb8e36df3aca06b71f609331acbe96fc8caea1.jpg": {
+      "filename": "bilibili_85d016c7fa3bb806.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】徐珈莉融灾禁区4-5一镜到底",
+      "time": "2026-05-09T06:50:30+00:00",
+      "downloaded_at": "2026-05-09T07:12:24.048411+00:00"
     }
   },
   "failed": {
@@ -6876,6 +6883,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-09T05:08:57.419682+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/6ffb8e36df3aca06b71f609331acbe96fc8caea1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-09T07:12:24.349308+00:00"
     }
   },
   "archived": []

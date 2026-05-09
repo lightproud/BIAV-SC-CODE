@@ -1,8 +1,8 @@
 {
   "date": "2026-05-09",
-  "archived_at": "2026-05-09T05:09:01.865251+00:00",
+  "archived_at": "2026-05-09T07:12:24.416972+00:00",
   "source": "bilibili",
-  "item_count": 19,
+  "item_count": 21,
   "items": [
     {
       "source": "bilibili",
@@ -266,6 +266,36 @@
       "author": "路过的耄耋",
       "engagement": 26,
       "media_url": "//i0.hdslb.com/bfs/archive/7e8efc93e2ed473711fa5958314e3903a8a6960f.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-09T06:50:30+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】徐珈莉融灾禁区4-5一镜到底",
+      "summary": "核心是珈伦徐莉莉。珈伦要高练度，徐莉无启灵硬需求，越高越舒适。环娜位置补银钥补牌，看情况换别的角色。打带道中的关卡需要点一定预兆来提速\n  └ -Love7_ (0赞): 学到了[黎歌表情包_嘎]",
+      "url": "https://www.bilibili.com/video/BV1YdRQBME84",
+      "author": "朝星-",
+      "engagement": 26,
+      "media_url": "https://i2.hdslb.com/bfs/archive/6ffb8e36df3aca06b71f609331acbe96fc8caea1.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 25,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-09T06:50:30+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】徐珈莉融灾禁区4-5一镜到底",
+      "summary": "核心是珈伦徐莉莉。珈伦要高练度，徐莉无启灵硬需求，越高越舒适。环娜位置补银钥补牌，看情况换别的角色。打带道中的关卡需要点一定预兆来提速",
+      "url": "http://www.bilibili.com/video/av116543283270679",
+      "author": "朝星-",
+      "engagement": 25,
+      "media_url": "//i2.hdslb.com/bfs/archive/6ffb8e36df3aca06b71f609331acbe96fc8caea1.jpg",
       "content_type": "video"
     },
     {
