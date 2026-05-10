@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-10T11:45:08.051003+00:00",
+  "collected_at": "2026-05-10T12:55:54.008126+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-10T10:43:18+00:00",
+      "lang": "french",
+      "title": "[正面]",
+      "summary": "",
+      "url": "https://steamcommunity.com/profiles/76561198290460278/recommended/3052450",
+      "author": "76561198290460278",
+      "engagement": 0,
+      "language": "french",
+      "voted_up": true,
+      "review": "",
+      "timestamp_created": 1778409798,
+      "playtime_forever": 418
+    },
     {
       "source": "steam",
       "time": "2026-05-10T10:13:41+00:00",
@@ -76,7 +91,7 @@
       "voted_up": true,
       "review": "可以长期玩 虽然前期有点坐牢 后期白嫖有点慢",
       "timestamp_created": 1778387676,
-      "playtime_forever": 64550
+      "playtime_forever": 64640
     },
     {
       "source": "steam",
@@ -136,7 +151,7 @@
       "voted_up": true,
       "review": "Absolutely amazing game.",
       "timestamp_created": 1778331655,
-      "playtime_forever": 6031
+      "playtime_forever": 6091
     }
   ]
 }
