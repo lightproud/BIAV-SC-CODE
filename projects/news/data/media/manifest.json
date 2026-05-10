@@ -5025,6 +5025,20 @@
       "title": "忘却前夜 5章 ボス戦 その２",
       "time": "2026-05-09T15:37:36.535578+00:00",
       "downloaded_at": "2026-05-09T23:40:23.992915+00:00"
+    },
+    "https://i.ytimg.com/vi/cR68-r2flho/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBNd1YPBf-pRuZ5AVZCL_gZxfhWEw": {
+      "filename": "youtube_10250d34c85ed992.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Aequor +12 Buff Showcase/Overview - Some buffs good, some buffs useless",
+      "time": "2026-05-10T03:29:33.717332+00:00",
+      "downloaded_at": "2026-05-10T05:32:50.952960+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/8d2b025a087bf8c7f0f162d1584b14026df5d443.jpg": {
+      "filename": "bilibili_7c4b4ad6fbad0905.jpg",
+      "source": "bilibili",
+      "title": "真正的我是由血肉组成的",
+      "time": "2026-05-10T03:05:26+00:00",
+      "downloaded_at": "2026-05-10T05:32:53.182435+00:00"
     }
   },
   "failed": {
@@ -7022,6 +7036,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-09T20:37:42.392699+00:00"
+    },
+    "https://preview.redd.it/nxebe4pwq80h1.png?width=140&amp;height=63&amp;auto=webp&amp;s=679cb4f47d810d3eca3865b5c974b2d1d4a89ef8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-10T05:32:53.692518+00:00"
     }
   },
   "archived": []

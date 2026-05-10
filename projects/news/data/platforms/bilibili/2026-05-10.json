@@ -1,8 +1,8 @@
 {
   "date": "2026-05-10",
-  "archived_at": "2026-05-10T01:54:50.392093+00:00",
+  "archived_at": "2026-05-10T05:32:53.753295+00:00",
   "source": "bilibili",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "source": "bilibili",
@@ -209,6 +209,24 @@
       "content_type": "image",
       "metadata": {
         "play": 101,
+        "comment_count": 2,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-10T03:05:26+00:00",
+      "lang": "zh",
+      "title": "真正的我是由血肉组成的",
+      "summary": "-\n  └ 神秘雪鸮 (0赞): 道理我都懂，但为什么纯白的房间里有一坨肉块？\n  └ 亿口星酱酱 (1赞): 双厨[星星眼]",
+      "url": "https://www.bilibili.com/video/BV1LnRZB4ESC",
+      "author": "绞肉机P",
+      "engagement": 97,
+      "media_url": "https://i0.hdslb.com/bfs/archive/8d2b025a087bf8c7f0f162d1584b14026df5d443.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 95,
         "comment_count": 2,
         "comments_fetched": 2,
         "danmaku": 0
