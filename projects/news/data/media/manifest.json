@@ -5074,6 +5074,55 @@
       "title": "【忘却前夜】枫丹茶韵赛季任务我不会最后一个才知道吧",
       "time": "2026-05-10T12:53:36+00:00",
       "downloaded_at": "2026-05-10T16:44:34.266466+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1502914367329538130/1502914367602036736/Screenshot_20260510_132650_com_qookkagames_z1_gp_hk_OverrideActivity.jpg?ex=6a021a54&is=6a00c8d4&hm=fc71e1860f575bb4c372dd38be121e5b103c8b00239def1729a51e855b189782&": {
+      "filename": "discord_460e5e40099bd735.jpg",
+      "source": "discord",
+      "title": "[DC] cs001092@🔸有問必答┊official-q-a: 说真的，排名传奇的清一色都是带诞墨  推诞莫也不是这种推法啊，超畸形的咯<:p",
+      "time": "2026-05-10T06:05:07.970000+00:00",
+      "downloaded_at": "2026-05-10T19:55:50.297196+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1131839817982947429/1503044073571881111/Screenshot_2026-05-10-22-34-26-944_com.qookkagames.z1.gp.hk.jpg?ex=6a01ea60&is=6a0098e0&hm=eae25c213cd4e679e3a821d43b9894e47b85e1c0ebb9d282401a20eb8e2c297f&": {
+      "filename": "discord_24fc455c1edf34ee.jpg",
+      "source": "discord",
+      "title": "[DC] water_heart@🔸綜合討論: (附件/嵌入)",
+      "time": "2026-05-10T14:40:32.475000+00:00",
+      "downloaded_at": "2026-05-10T19:55:50.743972+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1131839874132090890/1502835657603813529/Morimens_2026-05-10-08-17-36.jpg?ex=6a01d106&is=6a007f86&hm=6d31f31cd217aa9985cdb8aea872147295a17cb7dd201e06c74a4354d3338a6b&": {
+      "filename": "discord_e35e4a5ea75ef21f.jpg",
+      "source": "discord",
+      "title": "[DC] kiriharaakira@🔸阵容构建: 看了攻略的配隊，然後就享受到狂轟濫炸的快感",
+      "time": "2026-05-10T00:52:22.175000+00:00",
+      "downloaded_at": "2026-05-10T19:55:51.382371+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1174983699935277147/1502854762729836624/image.png?ex=6a01e2d1&is=6a009151&hm=c25afe5634e8f40d6d9d38f69896b9a7b46b6239e02b8fc1cd3eafc64d982120&": {
+      "filename": "discord_ff9231a6b6d530fc.png",
+      "source": "discord",
+      "title": "[DC] sayo.0320@🔸晒卡分享: (附件/嵌入)",
+      "time": "2026-05-10T02:08:17.294000+00:00",
+      "downloaded_at": "2026-05-10T19:55:52.079830+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1400750050208125010/1502867666346578102/pallas_arknights_and_1_more_drawn_by_keirono__bf8eeadf8db7b71254506b5dfda750f7.jpg?ex=6a01eed5&is=6a009d55&hm=a682f46ccafc29ec4bd9baa9557d41d1e5bfb555a05f2f0122e765e2466ba410&": {
+      "filename": "discord_612ccb28354a5b7b.jpg",
+      "source": "discord",
+      "title": "[DC] dex_zeroya@🔸general-chat: (附件/嵌入)",
+      "time": "2026-05-10T02:59:33.669000+00:00",
+      "downloaded_at": "2026-05-10T19:55:52.611812+00:00"
+    },
+    "https://cdn.discordapp.com/attachments/1300659662311526512/1502868975309295696/image.png?ex=6a01f00d&is=6a009e8d&hm=89bc41ef3005fec8005255c27dcc637f2806d919dc15b96497bb098073ce17b8&": {
+      "filename": "discord_802531df55488f67.png",
+      "source": "discord",
+      "title": "[DC] drakependragon@🔸canal-español: asi?",
+      "time": "2026-05-10T03:04:45.752000+00:00",
+      "downloaded_at": "2026-05-10T19:55:54.195824+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/b766bce8f58b525aaa7bbf7d2c19bac07a0d8594.jpg": {
+      "filename": "bilibili_e6ecd2efdeebbcfb.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】徐珈莉融灾禁区2-5",
+      "time": "2026-05-10T19:27:28+00:00",
+      "downloaded_at": "2026-05-10T19:55:55.172580+00:00"
     }
   },
   "failed": {
@@ -7096,6 +7145,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-10T16:44:34.567254+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/b766bce8f58b525aaa7bbf7d2c19bac07a0d8594.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-10T19:55:55.473325+00:00"
     }
   },
   "archived": []

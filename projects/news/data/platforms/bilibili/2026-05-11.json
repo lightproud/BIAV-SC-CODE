@@ -1,8 +1,8 @@
 {
   "date": "2026-05-11",
-  "archived_at": "2026-05-10T18:48:15.412834+00:00",
+  "archived_at": "2026-05-10T19:55:55.540874+00:00",
   "source": "bilibili",
-  "item_count": 12,
+  "item_count": 14,
   "items": [
     {
       "source": "bilibili",
@@ -188,6 +188,36 @@
       "author": "跳段木偶舞",
       "engagement": 42,
       "media_url": "//i1.hdslb.com/bfs/archive/cdcfbd18ca7818755f4f4234e100746ed760db81.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-10T19:27:28+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】徐珈莉融灾禁区2-5",
+      "summary": "好玩爱玩",
+      "url": "https://www.bilibili.com/video/BV1H45H6NEk5",
+      "author": "朝星-",
+      "engagement": 8,
+      "media_url": "https://i1.hdslb.com/bfs/archive/b766bce8f58b525aaa7bbf7d2c19bac07a0d8594.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 8,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-10T19:27:28+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】徐珈莉融灾禁区2-5",
+      "summary": "好玩爱玩",
+      "url": "http://www.bilibili.com/video/av116551923535887",
+      "author": "朝星-",
+      "engagement": 8,
+      "media_url": "//i1.hdslb.com/bfs/archive/b766bce8f58b525aaa7bbf7d2c19bac07a0d8594.jpg",
       "content_type": "video"
     }
   ]

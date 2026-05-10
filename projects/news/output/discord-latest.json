@@ -1,30 +1,51 @@
 {
-  "collected_at": "2026-05-10T18:48:15.088103+00:00",
+  "collected_at": "2026-05-10T19:55:49.592596+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
     {
       "source": "discord",
-      "time": "2026-05-09T00:00:00+00:00",
+      "time": "2026-05-10T00:00:00+00:00",
       "lang": "",
-      "title": "Discord 社区日报 (2026-05-09)",
-      "summary": "今日 3,581 条消息，247 位活跃用户，388 次反应。热门频道：🔸general-chat(1156)、🔸綜合討論(851)、🔸canal-português(268)、🔸game-question(266)、🔸ruang-obrolan-indonesia(265)",
+      "title": "Discord 社区日报 (2026-05-10)",
+      "summary": "今日 6,134 条消息，249 位活跃用户，581 次反应。热门频道：🔸general-chat(1334)、🔸綜合討論(895)、🔸русский-канал(867)、🔸canal-português(734)、🔸phòng-chat-tiếng-việt(643)",
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
-      "engagement": 3581
+      "engagement": 6134
     },
     {
       "source": "discord",
-      "time": "2026-05-09T02:49:22.688000+00:00",
+      "time": "2026-05-10T06:05:07.970000+00:00",
       "lang": "",
-      "title": "[DC] lurenjiao@🔸綜合討論: 没跑，淡游，最近要先和生活对线",
-      "summary": "没跑，淡游，最近要先和生活对线",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502502716180660305",
-      "author": "lurenjiao",
+      "title": "[DC] cs001092@🔸有問必答┊official-q-a: 说真的，排名传奇的清一色都是带诞墨  推诞莫也不是这种推法啊，超畸形的咯<:p",
+      "summary": "说真的，排名传奇的清一色都是带诞墨 \n推诞莫也不是这种推法啊，超畸形的咯 \n这种分数计算机制体验感超烂的，要传奇就得带高配诞墨和高配塔微来速攻 \n别跟我说回合计算机制没毛病 \n\n慢速该死是吧 \n到底有想过要改的吗 \n是有玩家提议说要抵制 \n不过我知道这个很难完全成形（毕竟之前搞过类似的但还是终究抵不过人性 ）\n我只希望有更好的分数计算方式，而不是以总回合来算  \n既然现在都已经是28天一个周期来算奖励了，能不能在下次深潜改下记分方式啊 \n（看着诞墨霸榜N天都快看腻了 ）\n[附件: Screenshot_20260510_132650_com_qookkagames_z1_gp_hk_OverrideActivity.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1502914367329538130/1502914367329538130",
+      "author": "cs001092",
+      "engagement": 58,
+      "media_url": "https://cdn.discordapp.com/attachments/1502914367329538130/1502914367602036736/Screenshot_20260510_132650_com_qookkagames_z1_gp_hk_OverrideActivity.jpg?ex=6a021a54&is=6a00c8d4&hm=fc71e1860f575bb4c372dd38be121e5b103c8b00239def1729a51e855b189782&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "🍟×6 ✅×12 🍿×1",
+        "reply_count": 0,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1502914367329538130/1502914367602036736/Screenshot_20260510_132650_com_qookkagames_z1_gp_hk_OverrideActivity.jpg?ex=6a021a54&is=6a00c8d4&hm=fc71e1860f575bb4c372dd38be121e5b103c8b00239def1729a51e855b189782&"
+        ],
+        "channel": "🔸有問必答┊official-q-a"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-05-10T10:46:30.034000+00:00",
+      "lang": "",
+      "title": "[DC] ahuahuahua@🔸綜合討論: 我把好友當保險套在用",
+      "summary": "我把好友當保險套在用\n  └ kevin.yienwenst: 這麼直接的嗎\n  └ nemu_s_t_a_r: 解除好友關係\n  └ ernest_heart: 也就是你跟忘卻前夜3p的中間那個人囉",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502985175838097560",
+      "author": "ahuahuahua",
       "engagement": 39,
       "metadata": {
-        "reactions": "🛐×4 😭×8 💪×1",
-        "reply_count": 0,
+        "reactions": "❓×3 ✅×3 6️⃣×5",
+        "reply_count": 3,
         "attachment_count": 0,
         "attachment_urls": [],
         "channel": "🔸綜合討論"
@@ -32,150 +53,96 @@
     },
     {
       "source": "discord",
-      "time": "2026-05-09T03:24:41.005000+00:00",
+      "time": "2026-05-10T14:40:32.475000+00:00",
       "lang": "",
-      "title": "[DC] .jungjaeheon@🔸art-and-memes: I'm using this as my wallpaper",
-      "summary": "I'm using this as my wallpaper\n[附件: 5562c6efe851e8a3.jpg]",
-      "url": "https://discord.com/channels/1131791637933199470/1502511601046126722/1502511601046126722",
-      "author": ".jungjaeheon",
-      "engagement": 31,
-      "media_url": "https://cdn.discordapp.com/attachments/1502511601046126722/1502511601394126908/5562c6efe851e8a3.jpg?ex=6a00a339&is=69ff51b9&hm=64928d69f464fe3f4a286fd6585a3be4e1642250052a58badfb63ccfdb0ec228&",
+      "title": "[DC] water_heart@🔸綜合討論: (附件/嵌入)",
+      "summary": "[附件: Screenshot_2026-05-10-22-34-26-944_com.qookkagames.z1.gp.hk.jpg]",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1503044074104684828",
+      "author": "water_heart",
+      "engagement": 28,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839817982947429/1503044073571881111/Screenshot_2026-05-10-22-34-26-944_com.qookkagames.z1.gp.hk.jpg?ex=6a01ea60&is=6a0098e0&hm=eae25c213cd4e679e3a821d43b9894e47b85e1c0ebb9d282401a20eb8e2c297f&",
       "content_type": "image",
       "metadata": {
-        "reactions": "Sanga_threat×10",
+        "reactions": "🛐×9",
         "reply_count": 0,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1502511601046126722/1502511601394126908/5562c6efe851e8a3.jpg?ex=6a00a339&is=69ff51b9&hm=64928d69f464fe3f4a286fd6585a3be4e1642250052a58badfb63ccfdb0ec228&"
+          "https://cdn.discordapp.com/attachments/1131839817982947429/1503044073571881111/Screenshot_2026-05-10-22-34-26-944_com.qookkagames.z1.gp.hk.jpg?ex=6a01ea60&is=6a0098e0&hm=eae25c213cd4e679e3a821d43b9894e47b85e1c0ebb9d282401a20eb8e2c297f&"
         ],
-        "channel": "🔸art-and-memes"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-05-09T03:01:51.983000+00:00",
-      "lang": "",
-      "title": "[DC] akalanden@🔸綜合討論: 啊…汉堡……想吃好突然，不过，你了理解开始我，雷德王 ？人性就是这就是哈哈哈 敌通我说在，话语的畔耳前临死，膛胸的我穿贯弹子颗一 啊惑诱的堡汉御抵法无都命生级高",
-      "summary": "啊…汉堡……想吃好突然，不过，你了理解开始我，雷德王\n？人性就是这就是哈哈哈\n敌通我说在，话语的畔耳前临死，膛胸的我穿贯弹子颗一\n啊惑诱的堡汉御抵法无都命生级高等何论无来看，啊堡汉的中手我要他是来原，抖颤的住不止也却绝拒敢不我，他给手把我示意，我看头低，脚步的攻进下停德王雷\n频视过刷我但，国美去过没我管尽，大还要像女神由自比他，小弱有多己自到识意才刻那下脚德王雷在站可？其谁我舍，界世救拯，担重兴复大伟与命史历负肩，年青新代时新作，来须必我为因，了到我\n彩色了去褪界世，中鸣轰火炮，中烟硝，判谈有没\n。港港多利亚维在，了临降德王雷\n。后死我或，着活我在，地大下撒堡汉的爱仁将主的能全知全那许也，帝上仰信自我，陀佛奉信不我，数定有自切一间世其实呢？堡汉的校学宰主能又谁，茫苍宙宇可\n。渴更了堡汉个买，渴又饿又我试考上早。干的样同面饼，的经曾是过不，料佐的样同校学和用，堡汉了上近最车餐的口门校学\n。它的日往其对了去失我，合结相与面饼的燥干样同与触感的燥干但，感制预的份一了少，味人情的份一了多然诚，肉牛小制自了变成饼肉的堡汉起么时什知不。匆太恨只，处归梦悔不惜可。山人海着隔却重逢想，爱挚的经曾与，晚越来越间时饭吃来后惜可\n。吃很，哇：口一尝浅，缈缥它，少年我，年前三于识相初，干很包面，大不堡汉\n。无虚无当归自，来中所有一无从我，渺微生人，穷无宙宇\n。吧堡汉个吃先想只我，纷纭说众，得知无从我，灭毁是还赎救，来的他，扬扬沸沸得传消条这将台平体媒大各界世，球地临降钟个3有还王德雷",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502505858951545003",
-      "author": "akalanden",
-      "engagement": 30,
-      "metadata": {
-        "reactions": "__×10",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
         "channel": "🔸綜合討論"
       }
     },
     {
       "source": "discord",
-      "time": "2026-05-09T12:50:11.976000+00:00",
+      "time": "2026-05-10T00:52:22.175000+00:00",
       "lang": "",
-      "title": "[DC] zzio_@🔸art-and-memes: shipper Arachne",
-      "summary": "shipper Arachne\n[附件: 15.png]\n  └ sunstopshining: This is fate. Accept it, senior William ",
-      "url": "https://discord.com/channels/1131791637933199470/1445556242381672559/1502653917853388822",
-      "author": "zzio_",
-      "engagement": 30,
-      "media_url": "https://cdn.discordapp.com/attachments/1445556242381672559/1502653917585211482/15.png?ex=6a007f03&is=69ff2d83&hm=c799e61a9fe0f953966ed333983c054da03e1a69d23d5f9e287eefb30d0c84c5&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "rizz2×3 flop2×2 thinking1×2 🫃×2",
-        "reply_count": 1,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1445556242381672559/1502653917585211482/15.png?ex=6a007f03&is=69ff2d83&hm=c799e61a9fe0f953966ed333983c054da03e1a69d23d5f9e287eefb30d0c84c5&"
-        ],
-        "channel": "🔸art-and-memes"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-05-09T10:15:38.119000+00:00",
-      "lang": "",
-      "title": "[DC] anicillia@🔸phòng-chat-tiếng-việt: (附件/嵌入)",
-      "summary": "[附件: IMG_8517.png]\n  └ hoangziet.: Cháy quá\n  └ bluehuong: manh me qua tr\n  └ elainaismylife: điên thật\n  └ vermiyy: uoc j\n  └ yuanyuan3447: ",
-      "url": "https://discord.com/channels/1131791637933199470/1300659603993923644/1502615020478140497",
-      "author": "anicillia",
-      "engagement": 23,
-      "media_url": "https://cdn.discordapp.com/attachments/1300659603993923644/1502615020180340938/IMG_8517.png?ex=6a005aca&is=69ff094a&hm=887feb0f6248b3ba33dce02bb1bc902dd730ba3b528c56eee51b6a6d921119f4&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "🔥×4",
-        "reply_count": 5,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1300659603993923644/1502615020180340938/IMG_8517.png?ex=6a005aca&is=69ff094a&hm=887feb0f6248b3ba33dce02bb1bc902dd730ba3b528c56eee51b6a6d921119f4&"
-        ],
-        "channel": "🔸phòng-chat-tiếng-việt"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-05-09T10:58:05.942000+00:00",
-      "lang": "",
-      "title": "[DC] heikwok@🔸綜合討論: 😾 上次被噴爛，這次直接不發餅實裝好了",
-      "summary": "😾 上次被噴爛，這次直接不發餅實裝好了",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502625706822340750",
-      "author": "heikwok",
+      "title": "[DC] kiriharaakira@🔸阵容构建: 看了攻略的配隊，然後就享受到狂轟濫炸的快感",
+      "summary": "看了攻略的配隊，然後就享受到狂轟濫炸的快感\n[附件: Morimens_2026-05-10-08-17-36.jpg]\n  └ corposant_1003: TV帶入藥",
+      "url": "https://discord.com/channels/1131791637933199470/1131839874132090890/1502835657880506518",
+      "author": "kiriharaakira",
       "engagement": 21,
+      "media_url": "https://cdn.discordapp.com/attachments/1131839874132090890/1502835657603813529/Morimens_2026-05-10-08-17-36.jpg?ex=6a01d106&is=6a007f86&hm=6d31f31cd217aa9985cdb8aea872147295a17cb7dd201e06c74a4354d3338a6b&",
+      "content_type": "image",
       "metadata": {
-        "reactions": "🌿×7",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-05-09T07:36:20.475000+00:00",
-      "lang": "",
-      "title": "[DC] ernest_heart@🔸綜合討論: 出來挨超",
-      "summary": "出來挨超\n  └ ahuahuahua: 我準備好了",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502574932813549719",
-      "author": "ernest_heart",
-      "engagement": 20,
-      "metadata": {
-        "reactions": "jenkins_processing×1 🥵×5",
+        "reactions": "🛐×6",
         "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1131839874132090890/1502835657603813529/Morimens_2026-05-10-08-17-36.jpg?ex=6a01d106&is=6a007f86&hm=6d31f31cd217aa9985cdb8aea872147295a17cb7dd201e06c74a4354d3338a6b&"
+        ],
+        "channel": "🔸阵容构建"
       }
     },
     {
       "source": "discord",
-      "time": "2026-05-09T01:53:09.155000+00:00",
+      "time": "2026-05-10T02:08:17.294000+00:00",
       "lang": "",
-      "title": "[DC] z8567657@🔸晒卡分享: (附件/嵌入)",
-      "summary": "[附件: Screenshot_20260509-075614.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1174983699935277147/1502488566557577387",
-      "author": "z8567657",
-      "engagement": 19,
-      "media_url": "https://cdn.discordapp.com/attachments/1174983699935277147/1502488566138404876/Screenshot_20260509-075614.png?ex=6a008dc5&is=69ff3c45&hm=7ec053b255943e8b614d6dbdeec3793b1345726a10b174e4be90923341494f8d&",
+      "title": "[DC] sayo.0320@🔸晒卡分享: (附件/嵌入)",
+      "summary": "[附件: image.png, image.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1174983699935277147/1502854763434475663",
+      "author": "sayo.0320",
+      "engagement": 20,
+      "media_url": "https://cdn.discordapp.com/attachments/1174983699935277147/1502854762729836624/image.png?ex=6a01e2d1&is=6a009151&hm=c25afe5634e8f40d6d9d38f69896b9a7b46b6239e02b8fc1cd3eafc64d982120&",
       "content_type": "image",
       "metadata": {
         "reactions": "🛐×6",
         "reply_count": 0,
-        "attachment_count": 1,
+        "attachment_count": 2,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1174983699935277147/1502488566138404876/Screenshot_20260509-075614.png?ex=6a008dc5&is=69ff3c45&hm=7ec053b255943e8b614d6dbdeec3793b1345726a10b174e4be90923341494f8d&"
+          "https://cdn.discordapp.com/attachments/1174983699935277147/1502854762729836624/image.png?ex=6a01e2d1&is=6a009151&hm=c25afe5634e8f40d6d9d38f69896b9a7b46b6239e02b8fc1cd3eafc64d982120&",
+          "https://cdn.discordapp.com/attachments/1174983699935277147/1502854763119644823/image.png?ex=6a01e2d1&is=6a009151&hm=ea51541c3df90d3a49738248ba1549363b66482e91f8c25ed17a45f4dcef556f&"
         ],
         "channel": "🔸晒卡分享"
       }
     },
     {
       "source": "discord",
-      "time": "2026-05-09T05:41:53.342000+00:00",
+      "time": "2026-05-10T06:49:45.444000+00:00",
       "lang": "",
-      "title": "[DC] lurenjiao@🔸綜合討論: 我还有800次，合到游戏关服都合不完",
-      "summary": "我还有800次，合到游戏关服都合不完\n  └ cs001092: 80个自选",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502546129970270300",
-      "author": "lurenjiao",
+      "title": "[DC] hon_ey0@🔸晒卡分享: 圖魯你到底想怎樣",
+      "summary": "圖魯你到底想怎樣",
+      "url": "https://discord.com/channels/1131791637933199470/1174983699935277147/1502925597469573221",
+      "author": "hon_ey0",
+      "engagement": 18,
+      "metadata": {
+        "reactions": "🛐×6",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸晒卡分享"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-05-10T08:25:29.894000+00:00",
+      "lang": "",
+      "title": "[DC] naicha_91@🔸綜合討論: 那我來體驗抽卡就好",
+      "summary": "那我來體驗抽卡就好\n  └ ahong0727: 二周年送的兩百抽要打完主線才有",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502949691439186131",
+      "author": "naicha_91",
       "engagement": 17,
       "metadata": {
-        "reactions": "🌿×3 🛐×2",
+        "reactions": "6️⃣×5",
         "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
@@ -184,110 +151,146 @@
     },
     {
       "source": "discord",
-      "time": "2026-05-09T14:12:06.116000+00:00",
+      "time": "2026-05-10T07:50:43.988000+00:00",
       "lang": "",
-      "title": "[DC] water_heart@🔸綜合討論: 菜逼夢遊沒有傳奇沒說服力",
-      "summary": "菜逼夢遊沒有傳奇沒說服力\n  └ ponponnyaru: 大佬说笑了",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502674529250709594",
-      "author": "water_heart",
+      "title": "[DC] anicillia@🔸phòng-chat-tiếng-việt:    <@70216787114",
+      "summary": "              \n\n9h30 tối nay nha. (Mình sẽ cố ko trễ :D)\n\nNếu mình lên sớm thì sẽ pull đại cái gì đó cho có content. Ng trúng ko có mặt thì mình liên hệ riêng.\n  └ hoangziet.:  ok ạ",
+      "url": "https://discord.com/channels/1131791637933199470/1300659603993923644/1502940942515175554",
+      "author": "anicillia",
       "engagement": 17,
       "metadata": {
-        "reactions": "cry3×4 🛐×1",
+        "reactions": "🔥×4 Alva_goodjob×1",
         "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
-        "channel": "🔸綜合討論"
+        "channel": "🔸phòng-chat-tiếng-việt"
       }
     },
     {
       "source": "discord",
-      "time": "2026-05-09T13:32:04.105000+00:00",
+      "time": "2026-05-10T02:59:33.669000+00:00",
       "lang": "",
-      "title": "[DC] water_heart@🔸阵容构建: 1t 開場一覺血希 希萊爆發 搓兩顆球 這回合爆復活 不用白不用 種子複製球 2t 搓球 開小艾狂硬控一下 種子 3t 爆復活後再搓球應該已經殘血了 盡量給小艾",
-      "summary": "1t\n開場一覺血希\n希萊爆發\n搓兩顆球\n這回合爆復活\n不用白不用\n種子複製球\n2t\n搓球\n開小艾狂硬控一下\n種子\n3t\n爆復活後再搓球應該已經殘血了\n盡量給小艾回狂\n種子\n除了回血啥都打\n注意獻祭會不會爆自己的死抗\n會就開靜海\n爆個死抗\n4t\n打他\n小艾要開超限\n狂不夠就拿覺醒\n因為爆死抗多15爆傷\n還有血量低他加固也低\n沒打死就看流血\n  └ arr5721: 拿覺醒不夠銀開種子 [附件: Screenshot_2026-05-09-22-12-58-878_com.qookkagames.z1.gw.hk.jpg]",
-      "url": "https://discord.com/channels/1131791637933199470/1131839874132090890/1502664454486229062",
-      "author": "water_heart",
-      "engagement": 17,
-      "metadata": {
-        "reactions": "Pandia_love×1 🛐×4",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸阵容构建"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-05-09T12:17:32.238000+00:00",
-      "lang": "",
-      "title": "[DC] _._nimbus_._@🔸game-question: does anyone know why my uvhash isnt gaining aliemus??",
-      "summary": "does anyone know why my uvhash isnt gaining aliemus??\n[附件: screen-20260509-075959.mp4]",
-      "url": "https://discord.com/channels/1131791637933199470/1433513650299076780/1502645698116587630",
-      "author": "_._nimbus_._",
+      "title": "[DC] dex_zeroya@🔸general-chat: (附件/嵌入)",
+      "summary": "[附件: pallas_arknights_and_1_more_drawn_by_keirono__bf8eeadf8db7b71254506b5dfda750f7.jpg]\n  └ 601671_: Don't know who that is but peak\n  └ .ploner: oh my god pandemonium is spreading everywhere\n  └ not_arachne: Drunken Goddess Reflux mentioned",
+      "url": "https://discord.com/channels/1131791637933199470/1400750050208125010/1502867666686443711",
+      "author": "dex_zeroya",
       "engagement": 16,
+      "media_url": "https://cdn.discordapp.com/attachments/1400750050208125010/1502867666346578102/pallas_arknights_and_1_more_drawn_by_keirono__bf8eeadf8db7b71254506b5dfda750f7.jpg?ex=6a01eed5&is=6a009d55&hm=a682f46ccafc29ec4bd9baa9557d41d1e5bfb555a05f2f0122e765e2466ba410&",
+      "content_type": "image",
       "metadata": {
-        "reactions": "idk×1 🐛×1 🪲×1 🦗×1 🐞×1",
+        "reactions": "🔥×3",
+        "reply_count": 3,
+        "attachment_count": 1,
+        "attachment_urls": [
+          "https://cdn.discordapp.com/attachments/1400750050208125010/1502867666346578102/pallas_arknights_and_1_more_drawn_by_keirono__bf8eeadf8db7b71254506b5dfda750f7.jpg?ex=6a01eed5&is=6a009d55&hm=a682f46ccafc29ec4bd9baa9557d41d1e5bfb555a05f2f0122e765e2466ba410&"
+        ],
+        "channel": "🔸general-chat"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-05-10T03:04:45.752000+00:00",
+      "lang": "",
+      "title": "[DC] drakependragon@🔸canal-español: asi?",
+      "summary": "asi?\n[附件: image.png]",
+      "url": "https://discord.com/channels/1131791637933199470/1300659662311526512/1502868975657156638",
+      "author": "drakependragon",
+      "engagement": 16,
+      "media_url": "https://cdn.discordapp.com/attachments/1300659662311526512/1502868975309295696/image.png?ex=6a01f00d&is=6a009e8d&hm=89bc41ef3005fec8005255c27dcc637f2806d919dc15b96497bb098073ce17b8&",
+      "content_type": "image",
+      "metadata": {
+        "reactions": "agree×3 🫃×2",
         "reply_count": 0,
         "attachment_count": 1,
         "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1433513650299076780/1502645697680375869/screen-20260509-075959.mp4?ex=6a00775c&is=69ff25dc&hm=de9abb4e41f3698ea4e18ececaf5a56a67762b6c9a38015a6d77b89aa0ac91b1&"
+          "https://cdn.discordapp.com/attachments/1300659662311526512/1502868975309295696/image.png?ex=6a01f00d&is=6a009e8d&hm=89bc41ef3005fec8005255c27dcc637f2806d919dc15b96497bb098073ce17b8&"
         ],
-        "channel": "🔸game-question"
+        "channel": "🔸canal-español"
       }
     },
     {
       "source": "discord",
-      "time": "2026-05-09T12:14:16.987000+00:00",
+      "time": "2026-05-10T10:48:02.282000+00:00",
       "lang": "",
-      "title": "[DC] princess.goth@🔸有問必答┊official-q-a:  ai art is still being posted, even in the <#1180845276823",
-      "summary": " ai art is still being posted, even in the  channel please add a server rule against it, its very disheartening to watch this happen with no repercussions\n  └ uzumakimori: Yep ,atleast as vendetta suggested make a rule to mention its ai or create seperate channel for ai (which im not happy but atleast there's choice ).\nI fear ai is being normalised way quicker than i hoped (recent nte situation) . Atleast im confident that biav wont use ai in game.\n  └ choco_minnto: it’s absolute insane how you can speak about “no repercussions”, when you literally just popped out and threw insults at me like being “incredibly tone deaf and disrespectful”, when that is a clear violation of server rules, not to mention being insensitive to people who actually suffer from medical tone deafness \n\ni literally posted the vortice pictures as a meme begging the devs to consider improving her pursuit animation in their busy schedule\nand wasn’t trying to discredit any fan art what so ever, heck this server doesn’t even have any rules on posting AI pictures of morimens characters \n\nbeing attacked out of no where is actually wild [附件: IMG_3497.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1493696987269300234/1502644879174664282",
-      "author": "princess.goth",
-      "engagement": 16,
+      "title": "[DC] kemomimi_@🔸綜合討論: ~~然后成为恋人关系~~",
+      "summary": "~~然后成为恋人关系~~",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502985562754121789",
+      "author": "kemomimi_",
+      "engagement": 15,
       "metadata": {
-        "reactions": "💯×4",
-        "reply_count": 2,
+        "reactions": "❓×1 💯×2 🥵×2",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-05-10T15:28:27.696000+00:00",
+      "lang": "",
+      "title": "[DC] yi000607@🔸綜合討論: 🚮",
+      "summary": "🚮",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1503056133655367844",
+      "author": "yi000607",
+      "engagement": 15,
+      "metadata": {
+        "reactions": "🫂×5",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-05-10T16:44:26.915000+00:00",
+      "lang": "",
+      "title": "[DC] ahuahuahua@🔸綜合討論: 有大佬可以帶帶我嗎",
+      "summary": "有大佬可以帶帶我嗎",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1503075256406118400",
+      "author": "ahuahuahua",
+      "engagement": 15,
+      "metadata": {
+        "reactions": "↖️×5",
+        "reply_count": 0,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-05-10T10:34:21.139000+00:00",
+      "lang": "",
+      "title": "[DC] kemomimi_@🔸綜合討論: 你游在令人失望这件事上从未令人失望过",
+      "summary": "你游在令人失望这件事上从未令人失望过\n  └ peter191974: 和我的大学一样",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502982118630883359",
+      "author": "kemomimi_",
+      "engagement": 14,
+      "metadata": {
+        "reactions": "👈×2 Alva_goodjob×1 ✅×1",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-05-10T06:17:38.527000+00:00",
+      "lang": "",
+      "title": "[DC] yi000607@🔸有問必答┊official-q-a: 改成以前的8T以內結束不好嗎",
+      "summary": "改成以前的8T以內結束不好嗎\n  └ cs001092: 8回合结束不符合官方利益",
+      "url": "https://discord.com/channels/1131791637933199470/1502914367329538130/1502917515393765517",
+      "author": "yi000607",
+      "engagement": 14,
+      "metadata": {
+        "reactions": "☝️×4",
+        "reply_count": 1,
         "attachment_count": 0,
         "attachment_urls": [],
         "channel": "🔸有問必答┊official-q-a"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-05-09T09:55:46.863000+00:00",
-      "lang": "",
-      "title": "[DC] shiio4870@🔸art-and-memes: As usual. full ver on my X. ||You can find the links on my other posts||",
-      "summary": "As usual. full ver on my X.\n||You can find the links on my other posts||\n[附件: SPOILER_image.png]",
-      "url": "https://discord.com/channels/1131791637933199470/1502610023988330599/1502610023988330599",
-      "author": "shiio4870",
-      "engagement": 16,
-      "media_url": "https://cdn.discordapp.com/attachments/1502610023988330599/1502610024147452115/SPOILER_image.png?ex=6a005622&is=69ff04a2&hm=889a043a9dc446bbaa35007a1ae10b9305b40b1aa217631b58532c456a09c29d&",
-      "content_type": "image",
-      "metadata": {
-        "reactions": "💀×2 Horla_Sendflowers×2 wow×1",
-        "reply_count": 0,
-        "attachment_count": 1,
-        "attachment_urls": [
-          "https://cdn.discordapp.com/attachments/1502610023988330599/1502610024147452115/SPOILER_image.png?ex=6a005622&is=69ff04a2&hm=889a043a9dc446bbaa35007a1ae10b9305b40b1aa217631b58532c456a09c29d&"
-        ],
-        "channel": "🔸art-and-memes"
-      }
-    },
-    {
-      "source": "discord",
-      "time": "2026-05-09T04:19:16.187000+00:00",
-      "lang": "",
-      "title": "[DC] ernest_heart@🔸綜合討論: 你轉生了，轉生到彌撒格公司當職員。 董事是N，股東是達芙戴爾，品保是朵爾，督導是旺達，上司是阿格里帕，下屬是戈利亞。 秘書是諾諦拉，同事是圖魯，甲方是24，乙方",
-      "summary": "你轉生了，轉生到彌撒格公司當職員。\n董事是N，股東是達芙戴爾，品保是朵爾，督導是旺達，上司是阿格里帕，下屬是戈利亞。\n秘書是諾諦拉，同事是圖魯，甲方是24，乙方是詹金，財務是萊克，諮商室是克萊門汀。",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1502525338155225249",
-      "author": "ernest_heart",
-      "engagement": 15,
-      "metadata": {
-        "reactions": "jenkins_processing×5",
-        "reply_count": 0,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
       }
     }
   ]
