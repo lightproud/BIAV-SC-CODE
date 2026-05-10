@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-10T05:32:50.230018+00:00",
+  "collected_at": "2026-05-10T07:58:21.267291+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-10T05:19:25+00:00",
+      "lang": "schinese",
+      "title": "[负面] 不推荐零克玩家去玩。",
+      "summary": "不推荐零克玩家去玩。",
+      "url": "https://steamcommunity.com/profiles/76561199172067304/recommended/3052450",
+      "author": "76561199172067304",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "不推荐零克玩家去玩。",
+      "timestamp_created": 1778390365,
+      "playtime_forever": 1891
+    },
     {
       "source": "steam",
       "time": "2026-05-10T04:49:58+00:00",
@@ -16,7 +31,7 @@
       "voted_up": true,
       "review": "Please stop killing characters :(",
       "timestamp_created": 1778388598,
-      "playtime_forever": 735
+      "playtime_forever": 774
     },
     {
       "source": "steam",
@@ -31,7 +46,7 @@
       "voted_up": true,
       "review": "可以长期玩 虽然前期有点坐牢 后期白嫖有点慢",
       "timestamp_created": 1778387676,
-      "playtime_forever": 64220
+      "playtime_forever": 64370
     },
     {
       "source": "steam",
@@ -46,7 +61,7 @@
       "voted_up": true,
       "review": "好玩，爱玩",
       "timestamp_created": 1778373020,
-      "playtime_forever": 5116
+      "playtime_forever": 5224
     },
     {
       "source": "steam",
