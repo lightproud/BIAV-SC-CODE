@@ -5046,6 +5046,27 @@
       "title": "425纪念视频",
       "time": "2026-05-10T08:51:41+00:00",
       "downloaded_at": "2026-05-10T09:25:19.104205+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/5ab41e5ddccf96bd2654b2a9ad2071b81984aae2.jpg": {
+      "filename": "bilibili_6a3d60999eb84f07.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 或许是雷娅C 融灾5-5大魔术师",
+      "time": "2026-05-10T02:56:20+00:00",
+      "downloaded_at": "2026-05-10T15:45:42.125245+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/cdcfbd18ca7818755f4f4234e100746ed760db81.jpg": {
+      "filename": "bilibili_974921d50bfa8142.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】打了个双尤乌的425",
+      "time": "2026-05-10T14:48:24+00:00",
+      "downloaded_at": "2026-05-10T15:45:43.748797+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/5ef7da84ccd566afde53bb4e53db414ef8b436da.jpg": {
+      "filename": "bilibili_931197aa0c30d7ce.jpg",
+      "source": "bilibili",
+      "title": "品鉴经典纯爱作-----沙耶之歌",
+      "time": "2026-05-10T15:14:55+00:00",
+      "downloaded_at": "2026-05-10T15:45:44.687305+00:00"
     }
   },
   "failed": {
@@ -7053,6 +7074,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-10T09:25:19.405225+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/5ab41e5ddccf96bd2654b2a9ad2071b81984aae2.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-10T15:45:42.426164+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/cdcfbd18ca7818755f4f4234e100746ed760db81.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-10T15:45:44.049633+00:00"
     }
   },
   "archived": []
