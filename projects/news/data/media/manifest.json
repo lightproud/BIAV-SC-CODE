@@ -5039,6 +5039,13 @@
       "title": "真正的我是由血肉组成的",
       "time": "2026-05-10T03:05:26+00:00",
       "downloaded_at": "2026-05-10T05:32:53.182435+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/fe890e5ac9c021b08ce1e4b9442bca9110f179d9.jpg": {
+      "filename": "bilibili_78fccf1937ac3ab7.jpg",
+      "source": "bilibili",
+      "title": "425纪念视频",
+      "time": "2026-05-10T08:51:41+00:00",
+      "downloaded_at": "2026-05-10T09:25:19.104205+00:00"
     }
   },
   "failed": {
@@ -7041,6 +7048,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-10T05:32:53.692518+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/fe890e5ac9c021b08ce1e4b9442bca9110f179d9.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-10T09:25:19.405225+00:00"
     }
   },
   "archived": []
