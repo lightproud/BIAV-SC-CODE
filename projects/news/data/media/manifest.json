@@ -5067,6 +5067,13 @@
       "title": "品鉴经典纯爱作-----沙耶之歌",
       "time": "2026-05-10T15:14:55+00:00",
       "downloaded_at": "2026-05-10T15:45:44.687305+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/6e1f8fedf1176729cc10f0971a0cea00426d0fa6.jpg": {
+      "filename": "bilibili_4ce4f1f325a2e646.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】枫丹茶韵赛季任务我不会最后一个才知道吧",
+      "time": "2026-05-10T12:53:36+00:00",
+      "downloaded_at": "2026-05-10T16:44:34.266466+00:00"
     }
   },
   "failed": {
@@ -7084,6 +7091,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-10T15:45:44.049633+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/6e1f8fedf1176729cc10f0971a0cea00426d0fa6.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-10T16:44:34.567254+00:00"
     }
   },
   "archived": []
