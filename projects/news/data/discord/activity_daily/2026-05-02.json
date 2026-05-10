@@ -1,11 +1,11 @@
 {
   "date": "2026-05-02",
-  "messages": 17992,
+  "messages": 22992,
   "unique_authors": 304,
-  "reactions_total": 1196,
-  "attachments": 670,
+  "reactions_total": 1864,
+  "attachments": 861,
   "channel_activity": {
-    "🔸morimens-game-chat": 4072,
+    "🔸morimens-game-chat": 9072,
     "🔸綜合討論": 3562,
     "🔸剧情交流": 400,
     "🔸相位对弈": 18,
@@ -61,6 +61,19 @@
     "Got mauled in 50lvl p-dive. Need advice": 3
   },
   "hourly_activity": {
+    "9": 1195,
+    "10": 858,
+    "11": 957,
+    "12": 1710,
+    "13": 1359,
+    "14": 1377,
+    "15": 2133,
+    "16": 1596,
+    "17": 1242,
+    "18": 1114,
+    "19": 726,
+    "20": 800,
+    "21": 445,
     "0": 371,
     "1": 496,
     "2": 641,
@@ -70,25 +83,12 @@
     "6": 1222,
     "7": 957,
     "8": 1138,
-    "9": 1099,
-    "18": 718,
-    "19": 229,
-    "21": 172,
     "22": 83,
-    "23": 249,
-    "20": 150,
-    "16": 1199,
-    "17": 629,
-    "10": 704,
-    "11": 623,
-    "12": 1177,
-    "13": 1020,
-    "14": 1079,
-    "15": 1713
+    "23": 249
   },
   "message_types": {
-    "0": 2675,
-    "19": 1396,
+    "0": 2873,
+    "19": 2126,
     "20": 1
   },
   "top_reacted_messages": [
@@ -149,12 +149,52 @@
       "channel": "🔸canal-español"
     },
     {
+      "id": "1500102553684410468",
+      "channel_id": "1170692781216378960",
+      "content": "WHY do people look at my roster and call them STARVED??\nThey are NOT starved!!!\n",
+      "author": "megidola.",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1499954548830371962",
       "channel_id": "1131839817982947429",
       "content": "現在大家應該都要800精通了吧（×",
       "author": "ernest_heart",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1500103240816267274",
+      "channel_id": "1170692781216378960",
+      "content": "<:FeMC_Jointhefun1:1468258784051859684>",
+      "author": "sirtealot",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1500103827284557994",
+      "channel_id": "1170692781216378960",
+      "content": "Okay\nWith this I can officially announce \nThat Megi earned their own folder \nCon",
+      "author": "legendaryredz",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1500105581401342055",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "spooky_penguin_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1500189848932323460",
+      "channel_id": "1170692781216378960",
+      "content": "We have to thank the blue players.\n\nThank them that their propaganda made blue t",
+      "author": "climbkaly",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1500138064369029303",
@@ -189,68 +229,28 @@
       "channel": "請把N的劇情cg 改回忘卻篇的畫風"
     },
     {
-      "id": "1499933696650772503",
+      "id": "1500182868951961721",
       "channel_id": "1170692781216378960",
-      "content": "can i make discord tierlist",
-      "author": "arisuu0604",
+      "content": "Anyways my dog shit opinion is that veil is genuinely not a hard boss even tho i",
+      "author": "noire_2",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1499975722150924320",
+      "id": "1500194016623460432",
       "channel_id": "1170692781216378960",
-      "content": "Train run done!",
-      "author": "willsalvador",
+      "content": "I've spent a lot on this game. \n\nMostly because I really love it and I want it t",
+      "author": "climbkaly",
       "reactions": 5,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1500214878596759713",
-      "channel_id": "1500214878596759713",
-      "content": "big ahhh canvas",
-      "author": "nothing_of_wisdom",
+      "id": "1500206937562677509",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1437090860834750609/1500084084985167902/l",
+      "author": "aurora3981",
       "reactions": 5,
-      "channel": "Big ahh canvas of multiple fandoms (including morimens)"
-    },
-    {
-      "id": "1500043190751723621",
-      "channel_id": "1131839817982947429",
-      "content": "12",
-      "author": "jjlin0103",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500098658287227021",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "jjlin0103",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500110748850847945",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "jjlin0103",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500112853062127677",
-      "channel_id": "1131839817982947429",
-      "content": "40頁蜘蛛",
-      "author": "jjlin0103",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500201323646423342",
-      "channel_id": "1131839817982947429",
-      "content": "下版本加强以后，鲨鱼+希莱，感觉随便一个回合三百多万了，我灵塑还没点满",
-      "author": "lurenjiao",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

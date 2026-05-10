@@ -1,34 +1,37 @@
 {
   "date": "2026-05-09",
-  "messages": 3581,
+  "messages": 4409,
   "unique_authors": 247,
-  "reactions_total": 388,
-  "attachments": 279,
+  "reactions_total": 433,
+  "attachments": 319,
   "channel_activity": {
-    "🔸綜合討論": 851,
+    "🔸綜合討論": 947,
+    "🔸deutscher-chatraum": 7,
+    "🔸русский-канал": 370,
+    "🔸canal-español": 61,
+    "🔸canal-português": 299,
+    "🔸ruang-obrolan-indonesia": 266,
+    "🔸traphase": 5,
+    "🔸lore-chat": 41,
+    "🔸team-building": 355,
+    "🔸general-chat": 1396,
+    "🔸邀请码互助┊swap-invitation-codes": 10,
+    "🔸game-question": 336,
+    "🔸机器人命令┊bot-commands": 28,
+    "你說什麼？我聽不見！": 1,
+    "菜雞四小強玩家的抱怨之旅new": 2,
+    "give the players tools to create their own stages": 13,
+    "遊戲內容建議": 3,
+    "Anti-AI Policy": 14,
     "🔸阵容构建": 29,
     "🔸晒卡分享": 1,
     "🔸课间休息闲聊": 23,
     "🔸한국어-채팅방": 12,
-    "🔸deutscher-chatraum": 3,
-    "🔸русский-канал": 257,
     "🔸phòng-chat-tiếng-việt": 90,
-    "🔸canal-español": 43,
-    "🔸canal-português": 268,
-    "🔸ruang-obrolan-indonesia": 265,
     "🔸ห้องสนทนาภาษาไทย": 11,
-    "🔸traphase": 4,
-    "🔸lore-chat": 39,
-    "🔸team-building": 116,
-    "🔸general-chat": 1156,
-    "🔸邀请码互助┊swap-invitation-codes": 9,
-    "🔸game-question": 266,
-    "🔸机器人命令┊bot-commands": 24,
     "🔸erica-playground": 2,
     "堆图ing": 1,
     "我重生了，重生到忘卻前夜宣布關服的那天【多人接力抽象文】": 1,
-    "give the players tools to create their own stages": 11,
-    "遊戲內容建議": 2,
     "Salvador AA - unintended change.": 2,
     "塔薇不會掉造物": 2,
     "可以拯救一下我的账号吗": 14,
@@ -44,7 +47,6 @@
     "Question about Arachnes E1 scaling calcs": 9,
     "💭「處理中」阿拉克涅的命運超維界域": 1,
     "✅「已回答」下禮拜星辰篇的造物數值能不能修好": 1,
-    "Anti-AI Policy": 12,
     "V2.5.0.7 在线维护公告": 3,
     "V2.5.0.6 在线维护公告": 1,
     "3 Awakener and a certain \"missile\"": 3,
@@ -58,6 +60,14 @@
     "Speedrun Team for Early Game": 2
   },
   "hourly_activity": {
+    "18": 259,
+    "19": 319,
+    "20": 78,
+    "21": 104,
+    "22": 82,
+    "23": 65,
+    "16": 326,
+    "17": 210,
     "0": 98,
     "1": 461,
     "2": 473,
@@ -73,17 +83,13 @@
     "12": 230,
     "13": 164,
     "14": 393,
-    "15": 214,
-    "16": 315,
-    "17": 87,
-    "18": 213
+    "15": 214
   },
   "message_types": {
-    "0": 2758,
-    "19": 809,
-    "23": 1,
-    "20": 3,
-    "4": 10
+    "0": 642,
+    "19": 183,
+    "20": 2,
+    "23": 1
   },
   "top_reacted_messages": [
     {
@@ -101,14 +107,6 @@
       "author": "akalanden",
       "reactions": 10,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1502511601046126722",
-      "channel_id": "1502511601046126722",
-      "content": "I'm using this as my wallpaper",
-      "author": ".jungjaeheon",
-      "reactions": 10,
-      "channel": "sanga"
     },
     {
       "id": "1502511601046126722",
@@ -149,6 +147,22 @@
       "author": "z8567657",
       "reactions": 6,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1502818625432719373",
+      "channel_id": "1300659580446969918",
+      "content": "",
+      "author": "Arcane",
+      "reactions": 5,
+      "channel": "🔸русский-канал"
+    },
+    {
+      "id": "1502747223044128931",
+      "channel_id": "1502701734189990088",
+      "content": "而且也挺想能裝飾房間的，把學校當自己家(不是)🤓👍🏻感覺有出你這個提議的功能的話，距離可以上課就不遠了<:Brown_think:145908011730862",
+      "author": "shostakovich524",
+      "reactions": 5,
+      "channel": "遊戲內容建議"
     },
     {
       "id": "1502525338155225249",
@@ -215,14 +229,6 @@
       "channel": "give the players tools to create their own stages"
     },
     {
-      "id": "1502737631929303251",
-      "channel_id": "1502737631929303251",
-      "content": "Think about it like Mario Maker or Trackmania, being able to create our own stag",
-      "author": "princess.goth",
-      "reactions": 5,
-      "channel": "give the players tools to create their own stages"
-    },
-    {
       "id": "1502502564720152657",
       "channel_id": "1502302162082992370",
       "content": "Thank you very much for your enthusiasm; we have already participated in this ev",
@@ -239,12 +245,12 @@
       "channel": "3 Awakener and a certain \"missile\""
     },
     {
-      "id": "1502610023988330599",
-      "channel_id": "1502610023988330599",
-      "content": "As usual. full ver on my X.\n||You can find the links on my other posts||",
-      "author": "shiio4870",
-      "reactions": 5,
-      "channel": "3 Awakener and a certain \"missile\""
+      "id": "1502796645199515849",
+      "channel_id": "1131839817982947429",
+      "content": "",
+      "author": "sayo.0320",
+      "reactions": 4,
+      "channel": "🔸綜合討論"
     }
   ]
 }
