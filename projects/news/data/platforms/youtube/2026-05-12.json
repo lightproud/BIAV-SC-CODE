@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-11T16:01:05.250408+00:00",
+  "archived_at": "2026-05-11T17:52:38.339554+00:00",
   "source": "youtube",
-  "item_count": 1,
+  "item_count": 2,
   "items": [
     {
       "source": "youtube",
@@ -14,6 +14,18 @@
       "author": "Flares117",
       "engagement": 144,
       "media_url": "https://i.ytimg.com/vi/1fvQb2P91Yc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDc_rrKCoQuFJ4aqn714ERp8EdGGA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-11T10:49:34.495374+00:00",
+      "lang": "",
+      "title": "忘卻前夜 強大神國 融災5-5阿拉克涅",
+      "summary": "[7 hours ago] 你知道的其實我是神國廚我只覺得打這個疊觸傷好方便背景音樂：Seycara - \"Alice in Paris!",
+      "url": "https://www.youtube.com/watch?v=9HHg0mnw8D8",
+      "author": "海之心",
+      "engagement": 16,
+      "media_url": "https://i.ytimg.com/vi/9HHg0mnw8D8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDZGNdjC-RtDvoRyWWn3W6XQuJhxg",
       "content_type": "image"
     }
   ]

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-11T16:01:05.248145+00:00",
+  "archived_at": "2026-05-11T17:52:38.336696+00:00",
   "source": "bilibili",
-  "item_count": 30,
+  "item_count": 31,
   "items": [
     {
       "source": "bilibili",
@@ -465,6 +465,24 @@
       "engagement": 19,
       "media_url": "//i0.hdslb.com/bfs/archive/3f7e1330d82b5739a647886df53fa2b6258ae43d.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-11T16:50:20+00:00",
+      "lang": "zh",
+      "title": "我喜欢这个女孩",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1UZ5A6cEPG",
+      "author": "鱼巴尾骨",
+      "engagement": 8,
+      "media_url": "https://i2.hdslb.com/bfs/archive/fd6c9fa4af280132746f5e690b5f521398c82bb4.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 8,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     }
   ]
 }

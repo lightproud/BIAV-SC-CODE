@@ -5270,6 +5270,27 @@
       "title": "你永远不会是我的妈妈。",
       "time": "2026-05-11T14:14:03+00:00",
       "downloaded_at": "2026-05-11T16:01:01.895224+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/607736413429219e97a8eed9f18fee2d8b583792.jpg": {
+      "filename": "bilibili_9052c9268679fe9d.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜半周年庆（招萌新入坑）",
+      "time": "2026-05-11T14:32:10+00:00",
+      "downloaded_at": "2026-05-11T17:52:35.446959+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/aa699b5e627e10e4bc9d7305d8633e6d04222bc1.jpg": {
+      "filename": "bilibili_7a7dfe19a362921f.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜禁忌试炼在哪?",
+      "time": "2026-05-11T12:42:18+00:00",
+      "downloaded_at": "2026-05-11T17:52:37.156498+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/fd6c9fa4af280132746f5e690b5f521398c82bb4.jpg": {
+      "filename": "bilibili_56454e3c6caae259.jpg",
+      "source": "bilibili",
+      "title": "我喜欢这个女孩",
+      "time": "2026-05-11T16:50:20+00:00",
+      "downloaded_at": "2026-05-11T17:52:38.267089+00:00"
     }
   },
   "failed": {
@@ -7432,6 +7453,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-11T16:01:05.179392+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/607736413429219e97a8eed9f18fee2d8b583792.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T17:52:35.748005+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/aa699b5e627e10e4bc9d7305d8633e6d04222bc1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T17:52:37.457296+00:00"
     }
   },
   "archived": []
