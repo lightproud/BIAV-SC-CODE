@@ -1,11 +1,11 @@
 {
   "date": "2026-05-02",
-  "messages": 22992,
+  "messages": 24367,
   "unique_authors": 304,
-  "reactions_total": 1864,
-  "attachments": 861,
+  "reactions_total": 2008,
+  "attachments": 923,
   "channel_activity": {
-    "🔸morimens-game-chat": 9072,
+    "🔸morimens-game-chat": 10447,
     "🔸綜合討論": 3562,
     "🔸剧情交流": 400,
     "🔸相位对弈": 18,
@@ -61,6 +61,9 @@
     "Got mauled in 50lvl p-dive. Need advice": 3
   },
   "hourly_activity": {
+    "21": 732,
+    "22": 590,
+    "23": 830,
     "9": 1195,
     "10": 858,
     "11": 957,
@@ -73,7 +76,6 @@
     "18": 1114,
     "19": 726,
     "20": 800,
-    "21": 445,
     "0": 371,
     "1": 496,
     "2": 641,
@@ -82,14 +84,11 @@
     "5": 1122,
     "6": 1222,
     "7": 957,
-    "8": 1138,
-    "22": 83,
-    "23": 249
+    "8": 1138
   },
   "message_types": {
-    "0": 2873,
-    "19": 2126,
-    "20": 1
+    "0": 804,
+    "19": 571
   },
   "top_reacted_messages": [
     {
@@ -107,6 +106,14 @@
       "author": "ena04564",
       "reactions": 9,
       "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1500266908644278292",
+      "channel_id": "1170692781216378960",
+      "content": "Done\n(call me the best player to feed my ego thanks)",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1499994204997423155",
@@ -163,6 +170,22 @@
       "author": "ernest_heart",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1500265330184814612",
+      "channel_id": "1170692781216378960",
+      "content": "does literally nothing",
+      "author": "arkaether",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1500265962266562593",
+      "channel_id": "1170692781216378960",
+      "content": "Cant believe lens said this 😔",
+      "author": "guava3442",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1500103240816267274",
@@ -227,30 +250,6 @@
       "author": "wangyuan4880",
       "reactions": 6,
       "channel": "請把N的劇情cg 改回忘卻篇的畫風"
-    },
-    {
-      "id": "1500182868951961721",
-      "channel_id": "1170692781216378960",
-      "content": "Anyways my dog shit opinion is that veil is genuinely not a hard boss even tho i",
-      "author": "noire_2",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1500194016623460432",
-      "channel_id": "1170692781216378960",
-      "content": "I've spent a lot on this game. \n\nMostly because I really love it and I want it t",
-      "author": "climbkaly",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1500206937562677509",
-      "channel_id": "1170692781216378960",
-      "content": "https://cdn.discordapp.com/attachments/1437090860834750609/1500084084985167902/l",
-      "author": "aurora3981",
-      "reactions": 5,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
