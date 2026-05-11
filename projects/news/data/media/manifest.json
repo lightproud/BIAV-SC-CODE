@@ -5186,6 +5186,48 @@
       "title": "【忘却前夜】萌新玩菲旺大战融灾3-4小狗拼尽全力险胜日常记录",
       "time": "2026-05-11T06:53:04+00:00",
       "downloaded_at": "2026-05-11T09:37:46.379815+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/42d5d34b6aac11ea47ab1adef8837fa06a118f73.jpg": {
+      "filename": "bilibili_79c070ac51bb3cf0.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌联动来了，忘却前夜",
+      "time": "2026-05-11T07:16:10+00:00",
+      "downloaded_at": "2026-05-11T12:38:31.668019+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/213bab85af529db02a18ec97a9e41aeffa9569fb.jpg": {
+      "filename": "bilibili_ac55211592795512.jpg",
+      "source": "bilibili",
+      "title": "假如我一卡单通",
+      "time": "2026-05-11T09:30:00+00:00",
+      "downloaded_at": "2026-05-11T12:38:32.776691+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/c10c199a854b4011836433c63498505e9c683769.jpg": {
+      "filename": "bilibili_6df20c8a35c3d393.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜融灾400 （5.11-5.25）",
+      "time": "2026-05-11T09:33:26+00:00",
+      "downloaded_at": "2026-05-11T12:38:34.939874+00:00"
+    },
+    "https://i.ytimg.com/vi/1fvQb2P91Yc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDc_rrKCoQuFJ4aqn714ERp8EdGGA": {
+      "filename": "youtube_5df4091049bf9411.jpg",
+      "source": "youtube",
+      "title": "[Morimens] 425 D-Tide Guide Overview. May 11 2026 - First 5 minutes is abridged.",
+      "time": "2026-05-11T10:35:27.585377+00:00",
+      "downloaded_at": "2026-05-11T12:38:35.666998+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/16b343a7f8926f9e9c28ffb5b8ac6641ed227d9b.jpg": {
+      "filename": "bilibili_e8e501299afe0b26.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】萌新被活爹血希折磨携挂件希洛救世船妹艾继丝大战融灾4-3灯塔女菜鸡游戏日常记录",
+      "time": "2026-05-11T11:23:49+00:00",
+      "downloaded_at": "2026-05-11T12:38:37.107925+00:00"
+    },
+    "https://i.ytimg.com/vi/9HHg0mnw8D8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDZGNdjC-RtDvoRyWWn3W6XQuJhxg": {
+      "filename": "youtube_04dd203b03a0dbcd.jpg",
+      "source": "youtube",
+      "title": "忘卻前夜 強大神國 融災5-5阿拉克涅",
+      "time": "2026-05-11T10:35:28.139036+00:00",
+      "downloaded_at": "2026-05-11T12:38:38.001678+00:00"
     }
   },
   "failed": {
@@ -7273,6 +7315,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-11T09:37:46.680556+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/42d5d34b6aac11ea47ab1adef8837fa06a118f73.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T12:38:31.969058+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/c10c199a854b4011836433c63498505e9c683769.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T12:38:35.240704+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/16b343a7f8926f9e9c28ffb5b8ac6641ed227d9b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T12:38:37.408847+00:00"
     }
   },
   "archived": []

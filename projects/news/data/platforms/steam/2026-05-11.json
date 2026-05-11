@@ -1,8 +1,8 @@
 {
   "date": "2026-05-11",
-  "archived_at": "2026-05-11T09:37:46.735349+00:00",
+  "archived_at": "2026-05-11T12:38:38.067654+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -213,6 +213,21 @@
       "review": "Amazing art style",
       "timestamp_created": 1778483393,
       "playtime_forever": 4895
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-11T11:28:51+00:00",
+      "lang": "polish",
+      "title": "[正面] i fell in love with the game when i first saw it,...",
+      "summary": "i fell in love with the game when i first saw it, it is very important for me to keep the game alive, thank you <3",
+      "url": "https://steamcommunity.com/profiles/76561198930269293/recommended/3052450",
+      "author": "76561198930269293",
+      "engagement": 0,
+      "language": "polish",
+      "voted_up": true,
+      "review": "i fell in love with the game when i first saw it, it is very important for me to keep the game alive, thank you <3",
+      "timestamp_created": 1778498931,
+      "playtime_forever": 175
     }
   ]
 }
