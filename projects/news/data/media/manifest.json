@@ -7157,6 +7157,36 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-10T19:55:55.473325+00:00"
+    },
+    "https://preview.redd.it/6kj9mawiad0h1.png?width=140&amp;height=51&amp;auto=webp&amp;s=2720d1d1b48d199fd4a45d8adb421aa4eaf9533b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T02:02:38.586381+00:00"
+    },
+    "https://preview.redd.it/jnxs62z15b0h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=b76b971e7afa9313c41ed945617eb691046eee15": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T02:02:38.912883+00:00"
+    },
+    "https://preview.redd.it/c6qrd97fhe0h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=76ed8c0beafee33d773e52aee47b4d2e760fed62": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T02:02:39.239661+00:00"
+    },
+    "https://preview.redd.it/9ityluvbbb0h1.png?width=140&amp;height=64&amp;auto=webp&amp;s=f7bb68406b492bc27eb3555549946940b86c8684": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T02:02:39.564965+00:00"
+    },
+    "https://preview.redd.it/1db780x6jc0h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=f2c29d8eb5c01282f48df076ce464937cf725d68": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T02:02:39.891768+00:00"
+    },
+    "https://preview.redd.it/3uiidprcva0h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=6a7142a38d97631442589eb9dd3d45a5c3071757": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T02:02:40.218118+00:00"
     }
   },
   "archived": []
