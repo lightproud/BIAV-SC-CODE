@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-11T19:32:02.033537+00:00",
+  "collected_at": "2026-05-11T21:13:44.557138+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 4,
   "items": [
     {
       "source": "steam",
@@ -62,36 +62,6 @@
       "review": "Amazing art style",
       "timestamp_created": 1778483393,
       "playtime_forever": 4895
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-10T20:11:44+00:00",
-      "lang": "english",
-      "title": "[正面] Good art and music.",
-      "summary": "Good art and music.",
-      "url": "https://steamcommunity.com/profiles/76561198705471293/recommended/3052450",
-      "author": "76561198705471293",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Good art and music.",
-      "timestamp_created": 1778443904,
-      "playtime_forever": 131
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-10T19:46:22+00:00",
-      "lang": "english",
-      "title": "[正面] Addicting card game\nGood progression system\nSanga...",
-      "summary": "Addicting card game\nGood progression system\nSanga\nGood music\nSanga\nCthulhu vibes",
-      "url": "https://steamcommunity.com/profiles/76561198127630219/recommended/3052450",
-      "author": "76561198127630219",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Addicting card game\nGood progression system\nSanga\nGood music\nSanga\nCthulhu vibes",
-      "timestamp_created": 1778442382,
-      "playtime_forever": 1739
     }
   ]
 }
