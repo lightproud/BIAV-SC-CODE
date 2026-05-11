@@ -5228,6 +5228,48 @@
       "title": "忘卻前夜 強大神國 融災5-5阿拉克涅",
       "time": "2026-05-11T10:35:28.139036+00:00",
       "downloaded_at": "2026-05-11T12:38:38.001678+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/2caee8cf9b9e3f08608f14d11346b271b4838cd1.jpg": {
+      "filename": "bilibili_0e30ea4a386d867e.jpg",
+      "source": "bilibili",
+      "title": "10队轮椅的425融灾记录 5.11-5.24",
+      "time": "2026-05-11T12:48:54+00:00",
+      "downloaded_at": "2026-05-11T16:00:53.485313+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/1f478a9439697484d32dccc395fa6dce89c89bc2.jpg": {
+      "filename": "bilibili_feb7ec041efb6001.jpg",
+      "source": "bilibili",
+      "title": "脑洞：我给沙耶之歌续写了if结局",
+      "time": "2026-05-11T06:41:36+00:00",
+      "downloaded_at": "2026-05-11T16:00:56.033861+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/25a87c4b2aff122c5adcc2d0a168ad78e5c3d595.jpg": {
+      "filename": "bilibili_5e9f03717987d1a0.jpg",
+      "source": "bilibili",
+      "title": "【杀戮尖塔2】沙耶耶也可以这么美丽吗？mod角色通关实况！杀戮尖塔#1",
+      "time": "2026-05-11T14:27:03+00:00",
+      "downloaded_at": "2026-05-11T16:00:56.789805+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/2cb316b817758ba2581b45af76c35eaf32f89515.jpg": {
+      "filename": "bilibili_b629224fe16a1192.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜，5.11融灾400，较难的一期",
+      "time": "2026-05-11T14:35:25+00:00",
+      "downloaded_at": "2026-05-11T16:00:57.414610+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/960c69029eb1099a81c34b3bb686b1da2ebd1317.jpg": {
+      "filename": "bilibili_31982fffc562b878.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】阿拉克涅凯克斯6t融灾5-5",
+      "time": "2026-05-11T14:55:22+00:00",
+      "downloaded_at": "2026-05-11T16:00:59.189942+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/3f7e1330d82b5739a647886df53fa2b6258ae43d.jpg": {
+      "filename": "bilibili_dd6cfc47cfd01dda.jpg",
+      "source": "bilibili",
+      "title": "你永远不会是我的妈妈。",
+      "time": "2026-05-11T14:14:03+00:00",
+      "downloaded_at": "2026-05-11T16:01:01.895224+00:00"
     }
   },
   "failed": {
@@ -7330,6 +7372,66 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-11T12:38:37.408847+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/2caee8cf9b9e3f08608f14d11346b271b4838cd1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:00:53.786163+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/2cb316b817758ba2581b45af76c35eaf32f89515.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:00:57.715389+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/960c69029eb1099a81c34b3bb686b1da2ebd1317.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:00:59.490747+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/3f7e1330d82b5739a647886df53fa2b6258ae43d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:01:02.195976+00:00"
+    },
+    "https://preview.redd.it/rpg6en98jg0h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=8b68474000651b073747975b5f5a106f383b4df0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:01:02.707824+00:00"
+    },
+    "https://preview.redd.it/zu12t687hh0h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=0dd39e5c9c89d341b0ea60f9ffb291e6f5ba9548": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:01:03.049975+00:00"
+    },
+    "https://preview.redd.it/bh2ffl8s6h0h1.png?width=140&amp;height=79&amp;auto=webp&amp;s=e532899c44fb3f08e2be85ef3e771333e0bc86ff": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:01:03.390199+00:00"
+    },
+    "https://preview.redd.it/lvn50tcbxg0h1.jpg?width=140&amp;height=114&amp;auto=webp&amp;s=4db5c2426d945f4fd07fe42030387465987415c2": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:01:03.731357+00:00"
+    },
+    "https://preview.redd.it/kmencoomug0h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=33ebec01e7e3fe5dd4ef1938eb5599a95b4b7993": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:01:04.072488+00:00"
+    },
+    "https://preview.redd.it/bpmnam3sfh0h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=6035d9c51f47c23bcd16b6faec0486d654be2c92": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:01:04.411904+00:00"
+    },
+    "https://external-preview.redd.it/oYEccz6IQygtsYxbVxxoMZLIKSsujWCwsch_jj3JJzw.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=78ceb4fb673f69c093d02fb5ae720c1755a3bd90": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:01:04.833834+00:00"
+    },
+    "https://preview.redd.it/3m04x9krbh0h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=de0958ddfdfb4fb340ddc983eaa6d0cce8650618": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T16:01:05.179392+00:00"
     }
   },
   "archived": []
