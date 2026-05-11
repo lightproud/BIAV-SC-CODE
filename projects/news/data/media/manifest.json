@@ -5165,6 +5165,27 @@
       "title": "【深海戒指】78分钟容灾第一，最后两波接电话去了，涉及隐私不发视频了",
       "time": "2026-05-11T05:16:09+00:00",
       "downloaded_at": "2026-05-11T06:02:05.682301+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/810323b0b2bb631ba967f86cde61d6d4a3c7a927.jpg": {
+      "filename": "bilibili_5b7d663e245b910f.jpg",
+      "source": "bilibili",
+      "title": "融灾5-5一张鼠群直接秒了",
+      "time": "2026-05-11T05:02:32+00:00",
+      "downloaded_at": "2026-05-11T09:37:42.569270+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/cb20c44cc77e2961fae30a6397d03baac08095f1.jpg": {
+      "filename": "bilibili_6d053cff4f90f101.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】徐珈莉融灾禁区4-5「原初信徒」",
+      "time": "2026-05-11T06:34:13+00:00",
+      "downloaded_at": "2026-05-11T09:37:44.857699+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/404b399ed6285b3026d7e3f32892f53435f45a7e.jpg": {
+      "filename": "bilibili_f7208997d2c058ca.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】萌新玩菲旺大战融灾3-4小狗拼尽全力险胜日常记录",
+      "time": "2026-05-11T06:53:04+00:00",
+      "downloaded_at": "2026-05-11T09:37:46.379815+00:00"
     }
   },
   "failed": {
@@ -7237,6 +7258,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-11T06:02:05.983091+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/810323b0b2bb631ba967f86cde61d6d4a3c7a927.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T09:37:42.870079+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/cb20c44cc77e2961fae30a6397d03baac08095f1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T09:37:45.158467+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/404b399ed6285b3026d7e3f32892f53435f45a7e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-11T09:37:46.680556+00:00"
     }
   },
   "archived": []

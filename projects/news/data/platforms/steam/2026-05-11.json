@@ -1,8 +1,8 @@
 {
   "date": "2026-05-11",
-  "archived_at": "2026-05-11T06:02:06.051471+00:00",
+  "archived_at": "2026-05-11T09:37:46.735349+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -198,6 +198,21 @@
       "review": "Addicting card game\nGood progression system\nSanga\nGood music\nSanga\nCthulhu vibes",
       "timestamp_created": 1778442382,
       "playtime_forever": 1739
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-11T07:09:53+00:00",
+      "lang": "english",
+      "title": "[正面] Amazing art style",
+      "summary": "Amazing art style",
+      "url": "https://steamcommunity.com/profiles/76561199059674879/recommended/3052450",
+      "author": "76561199059674879",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Amazing art style",
+      "timestamp_created": 1778483393,
+      "playtime_forever": 4895
     }
   ]
 }
