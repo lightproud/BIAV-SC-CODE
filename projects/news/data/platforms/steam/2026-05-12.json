@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-11T21:13:49.362725+00:00",
+  "archived_at": "2026-05-11T22:49:06.528971+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -93,6 +93,51 @@
       "review": "feels more like a game than a gacha game, and i mean that as the biggest compliment i can give. The setting is lovecraftian which i love, the aesthetics are incredible and the soundtrack is absolutely beautifull. \r\nAlso the game gives you so many free pulls that i barely know what to do with them xD I really love this atm",
       "timestamp_created": 1778518752,
       "playtime_forever": 502
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-11T21:47:32+00:00",
+      "lang": "polish",
+      "title": "[正面] My find of the year!",
+      "summary": "My find of the year!",
+      "url": "https://steamcommunity.com/profiles/76561198047678063/recommended/3052450",
+      "author": "76561198047678063",
+      "engagement": 0,
+      "language": "polish",
+      "voted_up": true,
+      "review": "My find of the year!",
+      "timestamp_created": 1778536052,
+      "playtime_forever": 2927
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-11T20:33:00+00:00",
+      "lang": "english",
+      "title": "[正面] I will likely have a more thorough review after I...",
+      "summary": "I will likely have a more thorough review after I feel I've gotten deeper into the game but I can tell that it's got genuine style and direction already.\nMy very very first impressions were skeptical, as you should be towards any gacha game, but this game has exceeded my expectations completely! Character designs, both visual, animation, and kit are inspired yet have clear rules. In terms of visual identity this feels like being able to play someone's fan concept for what a \"bloodborne 2\" might look like. It handles a strange otherworldly affliction in an interesting way and is an easy recommend if you like that visual style. \nThere's no english dub unfortunately but they do have hand-translated chapters, and in the places that they don't you can clearly see what has been localised by hand and what's been left to MTL until they can get to it. \nI think this game deserves more recognition, try it out and complete chapter 1 to get a feel for what's in store. If you enjoy Sts or cosmic horror styles then you'll like it",
+      "url": "https://steamcommunity.com/profiles/76561198221222804/recommended/3052450",
+      "author": "76561198221222804",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I will likely have a more thorough review after I feel I've gotten deeper into the game but I can tell that it's got genuine style and direction already.\nMy very very first impressions were skeptical, as you should be towards any gacha game, but this game has exceeded my expectations completely! Character designs, both visual, animation, and kit are inspired yet have clear rules. In terms of visual identity this feels like being able to play someone's fan concept for what a \"bloodborne 2\" might look like. It handles a strange otherworldly affliction in an interesting way and is an easy recommend if you like that visual style. \nThere's no english dub unfortunately but they do have hand-translated chapters, and in the places that they don't you can clearly see what has been localised by hand and what's been left to MTL until they can get to it. \nI think this game deserves more recognition, try it out and complete chapter 1 to get a feel for what's in store. If you enjoy Sts or cosmic horror styles then you'll like it",
+      "timestamp_created": 1778531580,
+      "playtime_forever": 1590
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-11T20:16:28+00:00",
+      "lang": "russian",
+      "title": "[正面] Это нечто, генчин , но карточный с сюжетом навеянн...",
+      "summary": "Это нечто, генчин , но карточный с сюжетом навеянным  Говардом  Лавкрафтом, просто не реально прошёл одну главу за 7 часов, а ещё 8 глав. Перевод от Иван Иваныча, но смысл понять можно, хоть и выбивает из атмосферы. Рекомендую!!!",
+      "url": "https://steamcommunity.com/profiles/76561198044089858/recommended/3052450",
+      "author": "76561198044089858",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Это нечто, генчин , но карточный с сюжетом навеянным  Говардом  Лавкрафтом, просто не реально прошёл одну главу за 7 часов, а ещё 8 глав. Перевод от Иван Иваныча, но смысл понять можно, хоть и выбивает из атмосферы. Рекомендую!!!",
+      "timestamp_created": 1778530588,
+      "playtime_forever": 437
     }
   ]
 }
