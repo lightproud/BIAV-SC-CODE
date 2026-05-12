@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-12T20:28:37.045829+00:00",
+  "collected_at": "2026-05-12T22:06:32.958185+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -137,36 +137,6 @@
       "review": "Pretty good",
       "timestamp_created": 1778543502,
       "playtime_forever": 36951
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-11T21:47:32+00:00",
-      "lang": "polish",
-      "title": "[正面] My find of the year!",
-      "summary": "My find of the year!",
-      "url": "https://steamcommunity.com/profiles/76561198047678063/recommended/3052450",
-      "author": "76561198047678063",
-      "engagement": 0,
-      "language": "polish",
-      "voted_up": true,
-      "review": "My find of the year!",
-      "timestamp_created": 1778536052,
-      "playtime_forever": 3393
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-11T20:33:00+00:00",
-      "lang": "english",
-      "title": "[正面] I will likely have a more thorough review after I...",
-      "summary": "I will likely have a more thorough review after I feel I've gotten deeper into the game but I can tell that it's got genuine style and direction already.\nMy very very first impressions were skeptical, as you should be towards any gacha game, but this game has exceeded my expectations completely! Character designs, both visual, animation, and kit are inspired yet have clear rules. In terms of visual identity this feels like being able to play someone's fan concept for what a \"bloodborne 2\" might look like. It handles a strange otherworldly affliction in an interesting way and is an easy recommend if you like that visual style. \nThere's no english dub unfortunately but they do have hand-translated chapters, and in the places that they don't you can clearly see what has been localised by hand and what's been left to MTL until they can get to it. \nI think this game deserves more recognition, try it out and complete chapter 1 to get a feel for what's in store. If you enjoy Sts or cosmic horror styles then you'll like it",
-      "url": "https://steamcommunity.com/profiles/76561198221222804/recommended/3052450",
-      "author": "76561198221222804",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I will likely have a more thorough review after I feel I've gotten deeper into the game but I can tell that it's got genuine style and direction already.\nMy very very first impressions were skeptical, as you should be towards any gacha game, but this game has exceeded my expectations completely! Character designs, both visual, animation, and kit are inspired yet have clear rules. In terms of visual identity this feels like being able to play someone's fan concept for what a \"bloodborne 2\" might look like. It handles a strange otherworldly affliction in an interesting way and is an easy recommend if you like that visual style. \nThere's no english dub unfortunately but they do have hand-translated chapters, and in the places that they don't you can clearly see what has been localised by hand and what's been left to MTL until they can get to it. \nI think this game deserves more recognition, try it out and complete chapter 1 to get a feel for what's in store. If you enjoy Sts or cosmic horror styles then you'll like it",
-      "timestamp_created": 1778531580,
-      "playtime_forever": 1691
     }
   ]
 }
