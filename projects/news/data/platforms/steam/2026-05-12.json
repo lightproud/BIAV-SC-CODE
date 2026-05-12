@@ -1,9 +1,24 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-12T08:27:07.106313+00:00",
+  "archived_at": "2026-05-12T11:16:58.298599+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-12T08:16:12+00:00",
+      "lang": "schinese",
+      "title": "[正面] 福利比sl好太多了，还是我喜欢的克系风格",
+      "summary": "福利比sl好太多了，还是我喜欢的克系风格",
+      "url": "https://steamcommunity.com/profiles/76561199342265948/recommended/3052450",
+      "author": "76561199342265948",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "福利比sl好太多了，还是我喜欢的克系风格",
+      "timestamp_created": 1778573772,
+      "playtime_forever": 1770
+    },
     {
       "source": "steam",
       "time": "2026-05-11T11:28:51+00:00",
