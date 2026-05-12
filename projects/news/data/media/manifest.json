@@ -5424,6 +5424,27 @@
       "title": "移交蔡司5-5",
       "time": "2026-05-12T04:55:06+00:00",
       "downloaded_at": "2026-05-12T05:36:55.028945+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/c68c09544989ea4c71fe8641ccd01ed435a2b6a5.jpg": {
+      "filename": "bilibili_5c1fae40af62bcdd.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]5.11融灾5-5，神国大运还是太权威了",
+      "time": "2026-05-11T14:47:52+00:00",
+      "downloaded_at": "2026-05-12T08:27:04.058600+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/07f2f95fa00ea8d7dce900dbbb080c10761a8525.jpg": {
+      "filename": "bilibili_4fd0659513bec1c6.jpg",
+      "source": "bilibili",
+      "title": "一球…超希…",
+      "time": "2026-05-12T05:36:52+00:00",
+      "downloaded_at": "2026-05-12T08:27:05.417307+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/ab78474fae6ed664b40b292739b95ee9da1a0f2f.jpg": {
+      "filename": "bilibili_06e89e787b31df7e.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】克莱门汀主c 5分钟融灾2-5",
+      "time": "2026-05-12T07:46:34+00:00",
+      "downloaded_at": "2026-05-12T08:27:06.737645+00:00"
     }
   },
   "failed": {
@@ -7641,6 +7662,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-12T05:36:56.361811+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/c68c09544989ea4c71fe8641ccd01ed435a2b6a5.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T08:27:04.359334+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/07f2f95fa00ea8d7dce900dbbb080c10761a8525.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T08:27:05.717808+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/ab78474fae6ed664b40b292739b95ee9da1a0f2f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T08:27:07.038282+00:00"
     }
   },
   "archived": []
