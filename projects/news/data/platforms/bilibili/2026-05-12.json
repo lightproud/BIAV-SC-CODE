@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-12T11:16:58.299931+00:00",
+  "archived_at": "2026-05-12T13:55:14.445425+00:00",
   "source": "bilibili",
-  "item_count": 48,
+  "item_count": 50,
   "items": [
     {
       "source": "bilibili",
@@ -727,6 +727,36 @@
         "play": 11,
         "comment_count": 0,
         "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T13:37:54+00:00",
+      "lang": "zh",
+      "title": "没有标题的1t",
+      "summary": "难道...肚饿不是区..",
+      "url": "http://www.bilibili.com/video/av116561872423447",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 11,
+      "media_url": "//i1.hdslb.com/bfs/archive/34160bbdb5f8d7d0ef2e3ed811047767b86c483a.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T13:37:54+00:00",
+      "lang": "zh",
+      "title": "没有标题的1t",
+      "summary": "难道...肚饿不是区..\n  └ 轻钰 (1赞): [花崎表情_来啦！][花崎表情_来啦！][花崎表情_来啦！]\n  └ 幽缀 (1赞): 肚饿...塞因[打call]",
+      "url": "https://www.bilibili.com/video/BV1NY5u6kEfz",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 9,
+      "media_url": "https://i1.hdslb.com/bfs/archive/34160bbdb5f8d7d0ef2e3ed811047767b86c483a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 7,
+        "comment_count": 2,
+        "comments_fetched": 2,
         "danmaku": 0
       }
     },
