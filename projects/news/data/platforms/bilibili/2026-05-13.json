@@ -1,8 +1,8 @@
 {
   "date": "2026-05-13",
-  "archived_at": "2026-05-12T22:06:34.594728+00:00",
+  "archived_at": "2026-05-12T23:53:40.688426+00:00",
   "source": "bilibili",
-  "item_count": 21,
+  "item_count": 23,
   "items": [
     {
       "source": "bilibili",
@@ -248,6 +248,36 @@
       "author": "夢遊遊遊遊",
       "engagement": 111,
       "media_url": "//i2.hdslb.com/bfs/archive/4aea2ec1bea96649366158480b69127e392505b8.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T16:02:49+00:00",
+      "lang": "zh",
+      "title": "第八话 利莫里亚",
+      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途)我稍微用了点AI修图技术 我的AI大哥再生成视频的时候多了几个人。。我还是无力吐槽 AI有好处也有坏处\n  └ 山河里吹进晚风 (0赞): 愿银钥指引你\n  └ 幻觉の概念 (0赞): 深海组！",
+      "url": "https://www.bilibili.com/video/BV19A5G6fE6N",
+      "author": "比较瓜皮",
+      "engagement": 110,
+      "media_url": "https://i1.hdslb.com/bfs/archive/0fff08119a8a706dde472fd75c2c2260a5d69b2d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 107,
+        "comment_count": 3,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T16:02:49+00:00",
+      "lang": "zh",
+      "title": "第八话 利莫里亚",
+      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途)我稍微用了点AI修图技术 我的AI大哥再生成视频的时候多了几个人。。我还是无力吐槽 AI有好处也有坏处",
+      "url": "http://www.bilibili.com/video/av116562442852376",
+      "author": "比较瓜皮",
+      "engagement": 108,
+      "media_url": "//i1.hdslb.com/bfs/archive/0fff08119a8a706dde472fd75c2c2260a5d69b2d.jpg",
       "content_type": "video"
     },
     {
