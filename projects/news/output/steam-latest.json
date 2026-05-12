@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-12T16:17:00.882728+00:00",
+  "collected_at": "2026-05-12T18:33:25.337910+00:00",
   "source": "steam",
   "item_count": 12,
   "items": [
@@ -16,7 +16,7 @@
       "voted_up": true,
       "review": "福利比sl好太多了，还是我喜欢的克系风格",
       "timestamp_created": 1778573772,
-      "playtime_forever": 1830
+      "playtime_forever": 1901
     },
     {
       "source": "steam",
@@ -50,6 +50,21 @@
     },
     {
       "source": "steam",
+      "time": "2026-05-12T17:30:42+00:00",
+      "lang": "schinese",
+      "title": "[正面] haowna",
+      "summary": "haowna",
+      "url": "https://steamcommunity.com/profiles/76561199763977308/recommended/3052450",
+      "author": "76561199763977308",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "haowna",
+      "timestamp_created": 1778607042,
+      "playtime_forever": 234
+    },
+    {
+      "source": "steam",
       "time": "2026-05-12T13:57:16+00:00",
       "lang": "schinese",
       "title": "[正面] Interesting card game。 Very funny....",
@@ -76,7 +91,7 @@
       "voted_up": true,
       "review": "Not bad <3",
       "timestamp_created": 1778590071,
-      "playtime_forever": 3985
+      "playtime_forever": 4023
     },
     {
       "source": "steam",
@@ -106,7 +121,7 @@
       "voted_up": true,
       "review": "Proper visual novel with quality writing, great soundtrack and amazing character design.\nThe only gacha game with a story that isn't painful to read through.\nEvery element just oozes atmosphere and personality.\nAnd it's an extremely generous gacha too, seriously.\nThe amount of free pull currency you can get from all the different gameplay modes and events is insane.\nI've played so many of these games and this is the first one where dupes for limited characters and equipment are easily obtainable for free.\nI took a break for a few months and came back to a vastly improved game with a completely reworked daily system.\nThey even bothered to include a special VN scene for returning players, which was a super sweet surprise.\nI can't recommend it enough, especially with the coming anniversary and Saya no Uta collab.",
       "timestamp_created": 1778546316,
-      "playtime_forever": 9258
+      "playtime_forever": 9356
     },
     {
       "source": "steam",
@@ -167,21 +182,6 @@
       "review": "Это нечто, генчин , но карточный с сюжетом навеянным  Говардом  Лавкрафтом, просто не реально прошёл одну главу за 7 часов, а ещё 8 глав. Перевод от Иван Иваныча, но смысл понять можно, хоть и выбивает из атмосферы. Рекомендую!!!",
       "timestamp_created": 1778530588,
       "playtime_forever": 437
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-11T16:59:12+00:00",
-      "lang": "english",
-      "title": "[正面] feels more like a game than a gacha game, and i me...",
-      "summary": "feels more like a game than a gacha game, and i mean that as the biggest compliment i can give. The setting is lovecraftian which i love, the aesthetics are incredible and the soundtrack is absolutely beautifull. \r\nAlso the game gives you so many free pulls that i barely know what to do with them xD I really love this atm",
-      "url": "https://steamcommunity.com/profiles/76561198262504291/recommended/3052450",
-      "author": "76561198262504291",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "feels more like a game than a gacha game, and i mean that as the biggest compliment i can give. The setting is lovecraftian which i love, the aesthetics are incredible and the soundtrack is absolutely beautifull. \r\nAlso the game gives you so many free pulls that i barely know what to do with them xD I really love this atm",
-      "timestamp_created": 1778518752,
-      "playtime_forever": 646
     }
   ]
 }
