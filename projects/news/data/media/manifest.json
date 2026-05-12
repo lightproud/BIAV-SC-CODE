@@ -5382,6 +5382,48 @@
       "title": "品鉴经典旮旯沙耶之歌--扭曲之爱(无流量二次补档）",
       "time": "2026-05-12T00:49:05+00:00",
       "downloaded_at": "2026-05-12T02:05:08.255299+00:00"
+    },
+    "https://i.ytimg.com/vi/I40HChOHRfo/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAbBFUkbo-e62lGLqswZTa5v3RaNw": {
+      "filename": "youtube_c6d62ea818c8b9f9.jpg",
+      "source": "youtube",
+      "title": "[Morimens] 2026 Half Anni Overview and what to expect compared to previous Annis",
+      "time": "2026-05-12T03:33:44.203067+00:00",
+      "downloaded_at": "2026-05-12T05:36:48.008172+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/9c71053b3640ebdc72ae53ceca902e2c2629db9d.jpg": {
+      "filename": "bilibili_1a2c94d3aa0a693b.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]小登抄作业5.11融灾3-5旺菲",
+      "time": "2026-05-11T17:30:00+00:00",
+      "downloaded_at": "2026-05-12T05:36:49.398705+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/30d401bd3cf6e0df5591532b9799de9405de2e97.jpg": {
+      "filename": "bilibili_4f3a93440deb0735.jpg",
+      "source": "bilibili",
+      "title": "主观地评价下沙耶之歌",
+      "time": "2026-05-11T06:22:12+00:00",
+      "downloaded_at": "2026-05-12T05:36:50.770724+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/9a6bf99fcdb9ee275057919a06c4c8ec5702c06e.jpg": {
+      "filename": "bilibili_db70321f44cd55fc.jpg",
+      "source": "bilibili",
+      "title": "融灾400 5.11-5.24",
+      "time": "2026-05-11T17:17:14+00:00",
+      "downloaded_at": "2026-05-12T05:36:51.677898+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/20c8c13c43d2de01149e94b13874660524a97dfb.jpg": {
+      "filename": "bilibili_cbdc69d0865eb305.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】萌新融灾2-3挑战只用一张永恒织造打输出看似整活实则没招了的菜鸡游戏日常",
+      "time": "2026-05-12T02:29:04+00:00",
+      "downloaded_at": "2026-05-12T05:36:53.276990+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/73786fa4b121bf4c9900807a09180d1c96abbbc7.jpg": {
+      "filename": "bilibili_46b2d07d4ed1690f.jpg",
+      "source": "bilibili",
+      "title": "移交蔡司5-5",
+      "time": "2026-05-12T04:55:06+00:00",
+      "downloaded_at": "2026-05-12T05:36:55.028945+00:00"
     }
   },
   "failed": {
@@ -7564,6 +7606,41 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-11T22:49:06.463927+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/9a6bf99fcdb9ee275057919a06c4c8ec5702c06e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T05:36:51.071571+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/9c71053b3640ebdc72ae53ceca902e2c2629db9d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T05:36:51.978781+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/73786fa4b121bf4c9900807a09180d1c96abbbc7.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T05:36:53.577814+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/20c8c13c43d2de01149e94b13874660524a97dfb.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T05:36:53.878592+00:00"
+    },
+    "https://preview.redd.it/edec5v8izl0h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=bdf46338ea372c2b28738d0ab7a5a654ca2428de": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T05:36:55.613076+00:00"
+    },
+    "https://preview.redd.it/c347shzi4n0h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=ff6537a210842197a7decc409834d80d48065c5d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T05:36:55.987422+00:00"
+    },
+    "https://preview.redd.it/q1vudytb2m0h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=0409fb68c2b12908430691b1795988f5ff0494e2": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T05:36:56.361811+00:00"
     }
   },
   "archived": []

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-12T02:05:08.325157+00:00",
+  "archived_at": "2026-05-12T05:36:56.429835+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -168,6 +168,51 @@
       "review": "Pretty good",
       "timestamp_created": 1778543502,
       "playtime_forever": 36931
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-12T03:54:14+00:00",
+      "lang": "english",
+      "title": "[正面] new fav game :D",
+      "summary": "new fav game :D",
+      "url": "https://steamcommunity.com/profiles/76561197976435408/recommended/3052450",
+      "author": "76561197976435408",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "new fav game :D",
+      "timestamp_created": 1778558054,
+      "playtime_forever": 4731
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-12T03:28:27+00:00",
+      "lang": "schinese",
+      "title": "[正面] 非常非常非常非常好玩谢谢大家",
+      "summary": "非常非常非常非常好玩谢谢大家",
+      "url": "https://steamcommunity.com/profiles/76561199514785483/recommended/3052450",
+      "author": "76561199514785483",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "非常非常非常非常好玩谢谢大家",
+      "timestamp_created": 1778556507,
+      "playtime_forever": 2521
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-12T03:20:20+00:00",
+      "lang": "english",
+      "title": "[负面] Somewhat fun game with a really interesting story...",
+      "summary": "Somewhat fun game with a really interesting story and great worldbuilding.\n\nCan't recommend fully because of machine translation outside of CN languages.",
+      "url": "https://steamcommunity.com/profiles/76561198064471570/recommended/3052450",
+      "author": "76561198064471570",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "Somewhat fun game with a really interesting story and great worldbuilding.\n\nCan't recommend fully because of machine translation outside of CN languages.",
+      "timestamp_created": 1778556020,
+      "playtime_forever": 267
     }
   ]
 }

@@ -1,8 +1,53 @@
 {
-  "collected_at": "2026-05-12T02:05:06.426380+00:00",
+  "collected_at": "2026-05-12T05:36:47.332333+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 12,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-12T03:54:14+00:00",
+      "lang": "english",
+      "title": "[正面] new fav game :D",
+      "summary": "new fav game :D",
+      "url": "https://steamcommunity.com/profiles/76561197976435408/recommended/3052450",
+      "author": "76561197976435408",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "new fav game :D",
+      "timestamp_created": 1778558054,
+      "playtime_forever": 4731
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-12T03:28:27+00:00",
+      "lang": "schinese",
+      "title": "[正面] 非常非常非常非常好玩谢谢大家",
+      "summary": "非常非常非常非常好玩谢谢大家",
+      "url": "https://steamcommunity.com/profiles/76561199514785483/recommended/3052450",
+      "author": "76561199514785483",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "非常非常非常非常好玩谢谢大家",
+      "timestamp_created": 1778556507,
+      "playtime_forever": 2521
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-12T03:20:20+00:00",
+      "lang": "english",
+      "title": "[负面] Somewhat fun game with a really interesting story...",
+      "summary": "Somewhat fun game with a really interesting story and great worldbuilding.\n\nCan't recommend fully because of machine translation outside of CN languages.",
+      "url": "https://steamcommunity.com/profiles/76561198064471570/recommended/3052450",
+      "author": "76561198064471570",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "Somewhat fun game with a really interesting story and great worldbuilding.\n\nCan't recommend fully because of machine translation outside of CN languages.",
+      "timestamp_created": 1778556020,
+      "playtime_forever": 267
+    },
     {
       "source": "steam",
       "time": "2026-05-12T00:38:36+00:00",
@@ -31,7 +76,7 @@
       "voted_up": true,
       "review": "Pretty good",
       "timestamp_created": 1778543502,
-      "playtime_forever": 36931
+      "playtime_forever": 36951
     },
     {
       "source": "steam",
@@ -46,7 +91,7 @@
       "voted_up": true,
       "review": "My find of the year!",
       "timestamp_created": 1778536052,
-      "playtime_forever": 3137
+      "playtime_forever": 3176
     },
     {
       "source": "steam",
@@ -136,7 +181,7 @@
       "voted_up": true,
       "review": "Amazing art style",
       "timestamp_created": 1778483393,
-      "playtime_forever": 4895
+      "playtime_forever": 4924
     }
   ]
 }
