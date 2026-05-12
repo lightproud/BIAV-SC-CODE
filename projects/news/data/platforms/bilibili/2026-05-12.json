@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-12T02:05:08.326355+00:00",
+  "archived_at": "2026-05-12T05:36:56.431126+00:00",
   "source": "bilibili",
-  "item_count": 32,
+  "item_count": 40,
   "items": [
     {
       "source": "bilibili",
@@ -270,6 +270,66 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-11T17:30:00+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]小登抄作业5.11融灾3-5旺菲",
+      "summary": "-\n  └ 哪有不疯的哇 (0赞): 一启旺达能用吗\n  └ 上好佳薯片丶 (0赞): 菲旺是对的[打call]\n  └ 肉夹馍里不要放青椒 (0赞): 配置还能压",
+      "url": "https://www.bilibili.com/video/BV1Tn5A64E4F",
+      "author": "肉夹馍里不要放青椒",
+      "engagement": 126,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9c71053b3640ebdc72ae53ceca902e2c2629db9d.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 120,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-11T17:17:14+00:00",
+      "lang": "zh",
+      "title": "融灾400 5.11-5.24",
+      "summary": "这个4-5茉夏一直不爆死抗不想凹了，随便打打",
+      "url": "http://www.bilibili.com/video/av116556889594710",
+      "author": "静寂夏至",
+      "engagement": 121,
+      "media_url": "//i0.hdslb.com/bfs/archive/9a6bf99fcdb9ee275057919a06c4c8ec5702c06e.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-11T17:17:14+00:00",
+      "lang": "zh",
+      "title": "融灾400 5.11-5.24",
+      "summary": "这个4-5茉夏一直不爆死抗不想凹了，随便打打",
+      "url": "https://www.bilibili.com/video/BV1fz5A6VEuo",
+      "author": "静寂夏至",
+      "engagement": 120,
+      "media_url": "https://i0.hdslb.com/bfs/archive/9a6bf99fcdb9ee275057919a06c4c8ec5702c06e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 120,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-11T17:30:00+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]小登抄作业5.11融灾3-5旺菲",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116557090922443",
+      "author": "肉夹馍里不要放青椒",
+      "engagement": 120,
+      "media_url": "//i0.hdslb.com/bfs/archive/9c71053b3640ebdc72ae53ceca902e2c2629db9d.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-11T12:48:54+00:00",
       "lang": "zh",
       "title": "10队轮椅的425融灾记录 5.11-5.24",
@@ -426,6 +486,48 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-12T02:29:04+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】萌新融灾2-3挑战只用一张永恒织造打输出看似整活实则没招了的菜鸡游戏日常",
+      "summary": "-\n  └ 上好佳薯片丶 (0赞): 没有输出角色了只能靠你了蜘蛛，没凹打的比较随意，打完出来一看永恒织造和被动命途裁断打了24万，其他三人输出加起来不超过1万，阿拉克涅获得了mvp，鼠鼠是躺赢狗[doge]",
+      "url": "https://www.bilibili.com/video/BV1Lu5T6nEme",
+      "author": "上好佳薯片丶",
+      "engagement": 49,
+      "media_url": "https://i1.hdslb.com/bfs/archive/20c8c13c43d2de01149e94b13874660524a97dfb.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 47,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T04:55:06+00:00",
+      "lang": "zh",
+      "title": "移交蔡司5-5",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116559808827798",
+      "author": "蝶咏玉泉",
+      "engagement": 48,
+      "media_url": "//i0.hdslb.com/bfs/archive/73786fa4b121bf4c9900807a09180d1c96abbbc7.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T02:29:04+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】萌新融灾2-3挑战只用一张永恒织造打输出看似整活实则没招了的菜鸡游戏日常",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116559221622370",
+      "author": "上好佳薯片丶",
+      "engagement": 48,
+      "media_url": "//i1.hdslb.com/bfs/archive/20c8c13c43d2de01149e94b13874660524a97dfb.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-11T11:23:49+00:00",
       "lang": "zh",
       "title": "【忘却前夜】萌新被活爹血希折磨携挂件希洛救世船妹艾继丝大战融灾4-3灯塔女菜鸡游戏日常记录",
@@ -434,6 +536,24 @@
       "author": "上好佳薯片丶",
       "engagement": 45,
       "media_url": "https://i0.hdslb.com/bfs/archive/16b343a7f8926f9e9c28ffb5b8ac6641ed227d9b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 44,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T04:55:06+00:00",
+      "lang": "zh",
+      "title": "移交蔡司5-5",
+      "summary": "-\n  └ 归于喧嚣海洋吧 (0赞): 我的天呐，蛋大人",
+      "url": "https://www.bilibili.com/video/BV1RD5N6CESf",
+      "author": "蝶咏玉泉",
+      "engagement": 45,
+      "media_url": "https://i0.hdslb.com/bfs/archive/73786fa4b121bf4c9900807a09180d1c96abbbc7.jpg",
       "content_type": "image",
       "metadata": {
         "play": 44,
