@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-12T05:36:47.332333+00:00",
+  "collected_at": "2026-05-12T08:27:03.231273+00:00",
   "source": "google_play",
   "item_count": 13,
   "items": [
@@ -55,6 +55,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-04-21T00:19:17",
+      "lang": "th",
+      "title": "[Google Play 好评] ★4 เกมดีค่ะ แต่ ซับภาษาไทย มันใช้คำนำหน้าสล",
+      "summary": "เกมดีค่ะ แต่ ซับภาษาไทย มันใช้คำนำหน้าสลับไปสลับ ไม่รู้เลยว่าตัวละครเพศอะไรเลยค่ะ",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th",
+      "author": "Pin ง้อยน้อ",
+      "engagement": 2
+    },
+    {
+      "source": "google_play",
       "time": "2026-04-26T17:21:52",
       "lang": "vi",
       "title": "[Google Play 好评] ★5 toàn skip cốt truyện nên kh bt như nào,",
@@ -62,16 +72,6 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi",
       "author": "Dung Nguyễn",
       "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-04-21T00:19:17",
-      "lang": "th",
-      "title": "[Google Play 好评] ★4 เกมดีค่ะ แต่ ซับภาษาไทย มันใช้คำนำหน้าสล",
-      "summary": "เกมดีค่ะ แต่ ซับภาษาไทย มันใช้คำนำหน้าสลับไปสลับ ไม่รู้เลยว่าตัวละครเพศอะไรเลยค่ะ",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th",
-      "author": "Pin ง้อยน้อ",
-      "engagement": 1
     },
     {
       "source": "google_play",

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-12T05:36:56.431126+00:00",
+  "archived_at": "2026-05-12T08:27:07.107573+00:00",
   "source": "bilibili",
-  "item_count": 40,
+  "item_count": 44,
   "items": [
     {
       "source": "bilibili",
@@ -360,6 +360,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-12T05:36:52+00:00",
+      "lang": "zh",
+      "title": "一球…超希…",
+      "summary": "-\n  └ 夢遊遊遊遊 (1赞): 大佬...\n  └ 洼哇鮭蛙蛙 (1赞): 最忧郁的封面...\n  └ 幽缀 (1赞): 我了...吓哭了",
+      "url": "https://www.bilibili.com/video/BV1V95N6kEV3",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 115,
+      "media_url": "https://i0.hdslb.com/bfs/archive/07f2f95fa00ea8d7dce900dbbb080c10761a8525.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 103,
+        "comment_count": 12,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-11T06:41:36+00:00",
       "lang": "zh",
       "title": "脑洞：我给沙耶之歌续写了if结局",
@@ -375,6 +393,18 @@
         "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T05:36:52+00:00",
+      "lang": "zh",
+      "title": "一球…超希…",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116559976667202",
+      "author": "伊莎玛拉-大群来了",
+      "engagement": 103,
+      "media_url": "//i0.hdslb.com/bfs/archive/07f2f95fa00ea8d7dce900dbbb080c10761a8525.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -426,6 +456,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-12T07:46:34+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】克莱门汀主c 5分钟融灾2-5",
+      "summary": "-\n  └ 魂魄魄睡不醒 (1赞): 我了鱼神[喜欢]\n  └ E_strange (1赞): 大佬我可以呼吸了吗\n  └ _andZZ (1赞): 我了鱼神",
+      "url": "https://www.bilibili.com/video/BV1i85M6RELB",
+      "author": "半醒的鱼yyy",
+      "engagement": 77,
+      "media_url": "https://i2.hdslb.com/bfs/archive/ab78474fae6ed664b40b292739b95ee9da1a0f2f.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 69,
+        "comment_count": 8,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-11T14:35:25+00:00",
       "lang": "zh",
       "title": "忘却前夜，5.11融灾400，较难的一期",
@@ -452,6 +500,18 @@
       "author": "断裂免罪符",
       "engagement": 75,
       "media_url": "//i2.hdslb.com/bfs/archive/2cb316b817758ba2581b45af76c35eaf32f89515.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T07:46:34+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】克莱门汀主c 5分钟融灾2-5",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116560479914068",
+      "author": "半醒的鱼yyy",
+      "engagement": 69,
+      "media_url": "//i2.hdslb.com/bfs/archive/ab78474fae6ed664b40b292739b95ee9da1a0f2f.jpg",
       "content_type": "video"
     },
     {
