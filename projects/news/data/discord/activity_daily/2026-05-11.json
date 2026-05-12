@@ -1,34 +1,37 @@
 {
   "date": "2026-05-11",
-  "messages": 9841,
+  "messages": 11222,
   "unique_authors": 352,
-  "reactions_total": 1226,
-  "attachments": 452,
+  "reactions_total": 1348,
+  "attachments": 502,
   "channel_activity": {
-    "🔸綜合討論": 3555,
+    "🔸綜合討論": 3602,
+    "🔸日本語チャンネル": 7,
+    "🔸русский-канал": 802,
+    "🔸canal-español": 314,
+    "🔸canal-português": 932,
+    "🔸ruang-obrolan-indonesia": 895,
+    "🔸ห้องสนทนาภาษาไทย": 149,
+    "🔸team-building": 643,
+    "🔸general-chat": 1918,
+    "🔸邀请码互助┊swap-invitation-codes": 14,
+    "🔸game-question": 1182,
+    "🔸机器人命令┊bot-commands": 52,
+    "Saya collab and future plan": 14,
+    "Arachne's exalt bug in Traphase": 1,
+    "✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration": 112,
     "🔸阵容构建": 26,
     "🔸晒卡分享": 15,
     "🔸欢乐梗图": 21,
     "🔸相位对弈": 2,
     "🔸课间休息闲聊": 3,
-    "🔸日本語チャンネル": 4,
     "🔸한국어-채팅방": 14,
     "🔸deutscher-chatraum": 8,
-    "🔸русский-канал": 299,
     "🔸phòng-chat-tiếng-việt": 182,
-    "🔸canal-español": 102,
-    "🔸canal-português": 685,
-    "🔸ruang-obrolan-indonesia": 846,
-    "🔸ห้องสนทนาภาษาไทย": 148,
     "🔸traphase": 2,
     "🔸lore-chat": 132,
     "🔸频道建议┊server-suggestions": 1,
-    "🔸team-building": 533,
-    "🔸general-chat": 1892,
-    "🔸邀请码互助┊swap-invitation-codes": 11,
-    "🔸game-question": 1023,
     "🔸游戏问题": 1,
-    "🔸机器人命令┊bot-commands": 44,
     "✦关卡地图「融灾禁区」总览60期·星辰篇✦": 2,
     "✦第5章「织命剧场」关卡流程地图总览·星辰篇✦": 1,
     "由三常駐作為核心組成的融災逃課隊伍": 8,
@@ -40,7 +43,6 @@
     "Hand Size Decreased": 3,
     "Vitality Injection - S Ultra": 6,
     "Moving lineup in Team Management": 2,
-    "Saya collab and future plan": 13,
     "同调率给的普抽是每增长1级给一个吗？": 3,
     "最后的誓言": 11,
     "融朵的終末直接消失了": 4,
@@ -57,13 +59,17 @@
     "William posting": 18,
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 3,
     "【English Translation】Opinions Collection": 1,
-    "✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration": 101,
     "🏆 忘却前夜第4届N厨杯┊The 4th 「N」′s Chef Cup of Morimens": 2,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 63,
     "4/13融災": 1,
     "【Newcomer Help】Forum Introduction": 2
   },
   "hourly_activity": {
+    "19": 199,
+    "20": 237,
+    "21": 326,
+    "22": 393,
+    "23": 375,
     "0": 229,
     "1": 262,
     "2": 192,
@@ -82,14 +88,11 @@
     "15": 619,
     "16": 258,
     "17": 363,
-    "18": 377,
-    "19": 149
+    "18": 377
   },
   "message_types": {
-    "0": 7350,
-    "19": 2483,
-    "20": 7,
-    "4": 1
+    "19": 245,
+    "0": 1136
   },
   "top_reacted_messages": [
     {
@@ -115,14 +118,6 @@
       "author": "0.0._.0_0.",
       "reactions": 14,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1503234835806683156",
-      "channel_id": "1503234835806683156",
-      "content": "It'll be a quick doodle 🐈",
-      "author": "that_one_chippy",
-      "reactions": 13,
-      "channel": "W.I.P || Doresain x Sylvester"
     },
     {
       "id": "1503234835806683156",
@@ -165,6 +160,14 @@
       "channel": "✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration"
     },
     {
+      "id": "1503540786535596115",
+      "channel_id": "1503290575754100856",
+      "content": "I mean the collab did make me re-install the game like a month ago and i have be",
+      "author": "dried_vegetable",
+      "reactions": 10,
+      "channel": "✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration"
+    },
+    {
       "id": "1503301611035037798",
       "channel_id": "1131839817982947429",
       "content": "||~~順便宣傳一下禮拜六場次我出栗子有空可以來玩~~||",
@@ -187,6 +190,14 @@
       "author": "mimiruku",
       "reactions": 10,
       "channel": "MOUCHETTE BEST GIRL (mimi unhinged ramble + art sometimes)"
+    },
+    {
+      "id": "1503516465171534005",
+      "channel_id": "1503290575754100856",
+      "content": "Saya no Uta is like perfect brand alignment with Morimens why are people disappo",
+      "author": "rileybou",
+      "reactions": 8,
+      "channel": "✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration"
     },
     {
       "id": "1503302550802141275",
@@ -241,14 +252,6 @@
       "channel_id": "1131839817982947429",
       "content": "壞了 打融災沒出50張就死了 <:Brown_think:1459080117308620996>",
       "author": "forg30215",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1503306643419562044",
-      "channel_id": "1131839817982947429",
-      "content": "幹怎麼有人要給莉莉穿內褲🌿",
-      "author": "bartmann_3212",
       "reactions": 7,
       "channel": "🔸綜合討論"
     }

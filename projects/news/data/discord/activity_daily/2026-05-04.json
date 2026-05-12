@@ -1,10 +1,11 @@
 {
   "date": "2026-05-04",
-  "messages": 13110,
+  "messages": 14966,
   "unique_authors": 358,
-  "reactions_total": 1143,
-  "attachments": 787,
+  "reactions_total": 1343,
+  "attachments": 897,
   "channel_activity": {
+    "🔸morimens-game-chat": 1856,
     "🔸綜合討論": 3058,
     "🔸阵容构建": 19,
     "🔸晒卡分享": 7,
@@ -72,18 +73,18 @@
     "Arc 2 team help": 3
   },
   "hourly_activity": {
+    "0": 608,
+    "1": 860,
+    "2": 1061,
+    "3": 1110,
+    "4": 802,
+    "5": 502,
+    "6": 727,
     "22": 190,
     "23": 227,
     "20": 71,
     "21": 114,
     "19": 274,
-    "0": 265,
-    "1": 422,
-    "2": 795,
-    "3": 933,
-    "4": 689,
-    "5": 257,
-    "6": 453,
     "7": 499,
     "8": 462,
     "9": 495,
@@ -98,9 +99,9 @@
     "18": 100
   },
   "message_types": {
-    "19": 169,
-    "0": 627,
-    "23": 1
+    "19": 593,
+    "0": 1262,
+    "46": 1
   },
   "top_reacted_messages": [
     {
@@ -192,6 +193,14 @@
       "channel": "🔸general-chat"
     },
     {
+      "id": "1500671090618400969",
+      "channel_id": "1170692781216378960",
+      "content": "Shld I pull this ?",
+      "author": "husontang",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1500737662003183636",
       "channel_id": "1131839817982947429",
       "content": "🤓 ☝️ 我当时问了艾继丝然后他说三张防御好多狂气呢",
@@ -224,6 +233,14 @@
       "channel": "🔸general-chat"
     },
     {
+      "id": "1500661259769745418",
+      "channel_id": "1170692781216378960",
+      "content": "drew Casiah earlier today. Spinning a wheel like every day and drawing whatever ",
+      "author": "underplayer5794",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1500709870129909791",
       "channel_id": "1131839817982947429",
       "content": "好色喔\n校貓3p",
@@ -246,22 +263,6 @@
       "author": "kemomimi_",
       "reactions": 6,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500903062481670427",
-      "channel_id": "1174983699935277147",
-      "content": "~~勤劳的矿工~~",
-      "author": "gensono0609",
-      "reactions": 6,
-      "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1500812411660271658",
-      "channel_id": "1326453763355185215",
-      "content": "",
-      "author": "jmjmjm6667",
-      "reactions": 6,
-      "channel": "🔸lore-chat"
     }
   ]
 }
