@@ -5494,6 +5494,20 @@
       "title": "忘却前夜FA まとめ①",
       "time": "2026-05-12T22:06:54+09:00",
       "downloaded_at": "2026-05-12T13:55:14.386061+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/4aea2ec1bea96649366158480b69127e392505b8.jpg": {
+      "filename": "bilibili_45298c881546e1d1.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜 你法手搓手牌上限展现恐怖实力轻松拿捏 融灾5-5阿拉克涅",
+      "time": "2026-05-12T07:14:15+00:00",
+      "downloaded_at": "2026-05-12T16:17:01.985207+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/ef82a8685aa993f3a98e379749cc512dd3d804de.jpg": {
+      "filename": "bilibili_9b245ca26393cf34.jpg",
+      "source": "bilibili",
+      "title": "沙耶之歌",
+      "time": "2026-05-12T15:23:38+00:00",
+      "downloaded_at": "2026-05-12T16:17:04.388774+00:00"
     }
   },
   "failed": {
@@ -7751,6 +7765,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-12T13:54:54.238066+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/4aea2ec1bea96649366158480b69127e392505b8.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T16:17:02.286018+00:00"
+    },
+    "https://preview.redd.it/w2c09m4yqp0h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=4ab85867131f4e036541393d721431e42e7afeaf": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T16:17:04.811959+00:00"
+    },
+    "https://preview.redd.it/wpfjq3aa0q0h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=bd4a4000841d00aeaa51c0e3006e249738da281f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T16:17:05.155395+00:00"
     }
   },
   "archived": []
