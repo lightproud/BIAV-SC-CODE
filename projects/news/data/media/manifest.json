@@ -5585,6 +5585,20 @@
       "title": "我同时发了肉块和美少女，你分配到的是...？",
       "time": "2026-05-12T11:02:46+00:00",
       "downloaded_at": "2026-05-12T22:06:34.522989+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/3712bef32e0275cc576ca55f01270a2b3c0073f2.jpg": {
+      "filename": "bilibili_6e32107bd6ec428c.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]5.11融灾拼尽全力只能战胜n4",
+      "time": "2026-05-12T11:06:39+00:00",
+      "downloaded_at": "2026-05-12T23:53:39.070930+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/0fff08119a8a706dde472fd75c2c2260a5d69b2d.jpg": {
+      "filename": "bilibili_1d008b223b28d50f.jpg",
+      "source": "bilibili",
+      "title": "第八话 利莫里亚",
+      "time": "2026-05-12T16:02:49+00:00",
+      "downloaded_at": "2026-05-12T23:53:40.327642+00:00"
     }
   },
   "failed": {
@@ -7862,6 +7876,16 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-12T20:28:40.515212+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/3712bef32e0275cc576ca55f01270a2b3c0073f2.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T23:53:39.371908+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/0fff08119a8a706dde472fd75c2c2260a5d69b2d.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T23:53:40.628340+00:00"
     }
   },
   "archived": []
