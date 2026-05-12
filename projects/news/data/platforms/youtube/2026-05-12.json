@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-12T11:16:58.303463+00:00",
+  "archived_at": "2026-05-12T13:55:14.448485+00:00",
   "source": "youtube",
-  "item_count": 19,
+  "item_count": 21,
   "items": [
     {
       "source": "youtube",
@@ -230,6 +230,30 @@
       "author": "海之心",
       "engagement": 16,
       "media_url": "https://i.ytimg.com/vi/9HHg0mnw8D8/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDZGNdjC-RtDvoRyWWn3W6XQuJhxg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-12T13:36:48.405569+00:00",
+      "lang": "",
+      "title": "Morimens OST- A Cafe in Hvatz",
+      "summary": "[15 minutes ago] I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
+      "url": "https://www.youtube.com/watch?v=qnhzKRlv1Qw",
+      "author": "SeaLily",
+      "engagement": 1,
+      "media_url": "https://i.ytimg.com/vi/qnhzKRlv1Qw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGpcS7Tq0-rRhcUNN0ahWsTmjNmg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-12T13:49:48.405869+00:00",
+      "lang": "",
+      "title": "Morimens OST- Chapter 5, Arc 2 Battle Theme (Act 2)",
+      "summary": "[2 minutes ago] I absolutely love this game and it's OST, but couldn't find it anywhere on YouTube so I took it upon myself to upload some themes.",
+      "url": "https://www.youtube.com/watch?v=4Fdre2ToYCs",
+      "author": "SeaLily",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/4Fdre2ToYCs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB0EDSmLrY69IfWF7SHtl5X5FxQdQ",
       "content_type": "image"
     }
   ]
