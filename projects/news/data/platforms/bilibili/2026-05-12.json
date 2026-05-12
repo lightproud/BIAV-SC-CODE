@@ -1,8 +1,8 @@
 {
   "date": "2026-05-12",
-  "archived_at": "2026-05-12T08:27:07.107573+00:00",
+  "archived_at": "2026-05-12T11:16:58.299931+00:00",
   "source": "bilibili",
-  "item_count": 44,
+  "item_count": 48,
   "items": [
     {
       "source": "bilibili",
@@ -408,6 +408,36 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-12T03:59:24+00:00",
+      "lang": "zh",
+      "title": "又是拼好队的一期融灾400（5.11）这期没有奶龙封面了...",
+      "summary": "-\n  └ 魂魄魄睡不醒 (2赞): 没有奶龙打回了[星星眼]",
+      "url": "https://www.bilibili.com/video/BV1kV5K6ZEgn",
+      "author": "幽缀",
+      "engagement": 102,
+      "media_url": "https://i1.hdslb.com/bfs/archive/388953ab271a243aa061fe212f628d4bc51ca310.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 100,
+        "comment_count": 2,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T03:59:24+00:00",
+      "lang": "zh",
+      "title": "又是拼好队的一期融灾400（5.11）这期没有奶龙封面了...",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116559557167287",
+      "author": "幽缀",
+      "engagement": 100,
+      "media_url": "//i1.hdslb.com/bfs/archive/388953ab271a243aa061fe212f628d4bc51ca310.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-11T14:27:03+00:00",
       "lang": "zh",
       "title": "【杀戮尖塔2】沙耶耶也可以这么美丽吗？mod角色通关实况！杀戮尖塔#1",
@@ -636,6 +666,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-12T10:51:26+00:00",
+      "lang": "zh",
+      "title": "Praying.. 丨沙耶之歌丨绘画过程",
+      "summary": "感谢@这人不是我啊 帮忙剪视频\n  └ 祂夜 (1赞): [来古-震撼]\n  └ Amonari_慕月兔 (1赞): [箱庭少女之梦表情包_给心心][Neuro sama收藏集_谢谢]\n  └ 锥虫蓝 (0赞): 原图here",
+      "url": "https://www.bilibili.com/video/BV1T55g6yEyR",
+      "author": "锥虫蓝",
+      "engagement": 44,
+      "media_url": "https://i2.hdslb.com/bfs/archive/22ce7a88a01bc63b197205f458bec5a2c6d90561.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 40,
+        "comment_count": 4,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-11T14:14:03+00:00",
       "lang": "zh",
       "title": "你永远不会是我的妈妈。",
@@ -663,6 +711,24 @@
       "engagement": 19,
       "media_url": "//i0.hdslb.com/bfs/archive/3f7e1330d82b5739a647886df53fa2b6258ae43d.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-12T10:23:31+00:00",
+      "lang": "zh",
+      "title": "43秒诠释玩了人类史上最伟大galgame的老资历感受",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1Pe5T6PE3B",
+      "author": "蚯蚓捏",
+      "engagement": 11,
+      "media_url": "https://i1.hdslb.com/bfs/archive/3f88d6f121cb9b5efc61cc3528e0d938808f594b.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 11,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
     },
     {
       "source": "bilibili",

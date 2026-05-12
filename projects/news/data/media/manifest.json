@@ -5445,6 +5445,27 @@
       "title": "【忘却前夜】克莱门汀主c 5分钟融灾2-5",
       "time": "2026-05-12T07:46:34+00:00",
       "downloaded_at": "2026-05-12T08:27:06.737645+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/388953ab271a243aa061fe212f628d4bc51ca310.jpg": {
+      "filename": "bilibili_15d828f683e7f353.jpg",
+      "source": "bilibili",
+      "title": "又是拼好队的一期融灾400（5.11）这期没有奶龙封面了...",
+      "time": "2026-05-12T03:59:24+00:00",
+      "downloaded_at": "2026-05-12T11:16:54.181099+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/22ce7a88a01bc63b197205f458bec5a2c6d90561.jpg": {
+      "filename": "bilibili_1385a1be0ea25e5d.jpg",
+      "source": "bilibili",
+      "title": "Praying.. 丨沙耶之歌丨绘画过程",
+      "time": "2026-05-12T10:51:26+00:00",
+      "downloaded_at": "2026-05-12T11:16:56.113647+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/3f88d6f121cb9b5efc61cc3528e0d938808f594b.jpg": {
+      "filename": "bilibili_794153c96704f653.jpg",
+      "source": "bilibili",
+      "title": "43秒诠释玩了人类史上最伟大galgame的老资历感受",
+      "time": "2026-05-12T10:23:31+00:00",
+      "downloaded_at": "2026-05-12T11:16:57.064337+00:00"
     }
   },
   "failed": {
@@ -7677,6 +7698,26 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-12T08:27:07.038282+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/388953ab271a243aa061fe212f628d4bc51ca310.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T11:16:54.482037+00:00"
+    },
+    "https://preview.redd.it/4yjvyntwxn0h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=b1a3db9377d021bf63c98a43d5698be05f77bb53": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T11:16:57.571079+00:00"
+    },
+    "https://preview.redd.it/66vwzd7nwn0h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=7efd09e7becc9ba1a0609b9fe32204c1b633b951": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T11:16:57.900005+00:00"
+    },
+    "https://preview.redd.it/ldfzntm1kn0h1.png?width=140&amp;height=63&amp;auto=webp&amp;s=062ce315ecb0d56d89a7ec36ee44b2bdd70b41ea": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-12T11:16:58.229500+00:00"
     }
   },
   "archived": []
