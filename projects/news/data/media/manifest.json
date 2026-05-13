@@ -5599,6 +5599,13 @@
       "title": "第八话 利莫里亚",
       "time": "2026-05-12T16:02:49+00:00",
       "downloaded_at": "2026-05-12T23:53:40.327642+00:00"
+    },
+    "https://i.ytimg.com/vi/qLmJiLFuEtw/hq720.jpg?v=6a03c69e&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAnnqqjd_msM5tTUY-cYgL8Eej8oQ": {
+      "filename": "youtube_cb852cb90a9a3e1c.jpg",
+      "source": "youtube",
+      "title": "[Morimens] LOOOONG Coaching/Spreadsheet and video making stream for half anni (12hour?)",
+      "time": "2026-05-13T02:01:22.220194+00:00",
+      "downloaded_at": "2026-05-13T02:04:18.035673+00:00"
     }
   },
   "failed": {
@@ -7886,6 +7893,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-12T23:53:40.628340+00:00"
+    },
+    "https://preview.redd.it/0gfr2d6rat0h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=256970bea683ef69955c16c8d5558fccde9d8015": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T02:04:17.696586+00:00"
     }
   },
   "archived": []
