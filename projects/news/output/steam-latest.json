@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-12T23:53:36.830200+00:00",
+  "collected_at": "2026-05-13T02:04:16.978105+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -46,7 +46,7 @@
       "voted_up": false,
       "review": "Somewhat fun game with a really interesting story and great worldbuilding.\n\nCan't recommend fully because of machine translation outside of CN languages.",
       "timestamp_created": 1778556020,
-      "playtime_forever": 304
+      "playtime_forever": 368
     },
     {
       "source": "steam",
@@ -121,22 +121,7 @@
       "voted_up": true,
       "review": "new fav game :D",
       "timestamp_created": 1778558054,
-      "playtime_forever": 4731
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-12T00:38:36+00:00",
-      "lang": "english",
-      "title": "[正面] Proper visual novel with quality writing, great so...",
-      "summary": "Proper visual novel with quality writing, great soundtrack and amazing character design.\nThe only gacha game with a story that isn't painful to read through.\nEvery element just oozes atmosphere and personality.\nAnd it's an extremely generous gacha too, seriously.\nThe amount of free pull currency you can get from all the different gameplay modes and events is insane.\nI've played so many of these games and this is the first one where dupes for limited characters and equipment are easily obtainable for free.\nI took a break for a few months and came back to a vastly improved game with a completely reworked daily system.\nThey even bothered to include a special VN scene for returning players, which was a super sweet surprise.\nI can't recommend it enough, especially with the coming anniversary and Saya no Uta collab.",
-      "url": "https://steamcommunity.com/profiles/76561198060377292/recommended/3052450",
-      "author": "76561198060377292",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Proper visual novel with quality writing, great soundtrack and amazing character design.\nThe only gacha game with a story that isn't painful to read through.\nEvery element just oozes atmosphere and personality.\nAnd it's an extremely generous gacha too, seriously.\nThe amount of free pull currency you can get from all the different gameplay modes and events is insane.\nI've played so many of these games and this is the first one where dupes for limited characters and equipment are easily obtainable for free.\nI took a break for a few months and came back to a vastly improved game with a completely reworked daily system.\nThey even bothered to include a special VN scene for returning players, which was a super sweet surprise.\nI can't recommend it enough, especially with the coming anniversary and Saya no Uta collab.",
-      "timestamp_created": 1778546316,
-      "playtime_forever": 9356
+      "playtime_forever": 4763
     }
   ]
 }
