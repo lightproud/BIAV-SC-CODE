@@ -5641,6 +5641,34 @@
       "title": "［忘却前夜］无助战425纪念",
       "time": "2026-05-13T05:29:34+00:00",
       "downloaded_at": "2026-05-13T05:55:55.205401+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/c3113c6c170fbc616d4dfc48a4be3a820c2549a9.jpg": {
+      "filename": "bilibili_32e4f2cba01b7fdf.jpg",
+      "source": "bilibili",
+      "title": "杀戮尖塔2沙耶之歌模组测评,新人入坑介绍",
+      "time": "2026-05-13T05:00:00+00:00",
+      "downloaded_at": "2026-05-13T08:37:10.415712+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/cf8a81056781e019227a4910ac13f04a98aa4ce3.jpg": {
+      "filename": "bilibili_bb38d95ec31bad30.jpg",
+      "source": "bilibili",
+      "title": "沙耶",
+      "time": "2026-05-12T13:10:31+00:00",
+      "downloaded_at": "2026-05-13T08:37:12.908665+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/f6e18006c9f383984380a536bce77ab5f754f087.jpg": {
+      "filename": "bilibili_60a4e18ab94e603d.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜",
+      "time": "2026-05-13T06:34:16+00:00",
+      "downloaded_at": "2026-05-13T08:37:14.365544+00:00"
+    },
+    "https://i.ytimg.com/vi/oLvGo3pFm14/hqdefault.jpg?sqp=-oaymwE2COADEI4CSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARgyIE8ocjAP&rs=AOn4CLDZF_GONPhMrYWLDpd7TsHqFGRMoA": {
+      "filename": "youtube_48b2438b9bc3fbf4.jpg",
+      "source": "youtube",
+      "title": "忘却前夜ボス戦",
+      "time": "2026-05-12T13:33:21.603897+00:00",
+      "downloaded_at": "2026-05-13T08:37:15.098299+00:00"
     }
   },
   "failed": {
@@ -7958,6 +7986,26 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-13T05:55:55.506039+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/f6e18006c9f383984380a536bce77ab5f754f087.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T08:37:14.666403+00:00"
+    },
+    "https://preview.redd.it/yj32lwd5xu0h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d165411c68366950520ca4db5cb4f3e274d7ea64": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T08:37:15.600211+00:00"
+    },
+    "https://preview.redd.it/6l8hjwhp8u0h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d589efefc71e3276da642a1dbb6fb78b2aaff8c7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T08:37:15.927672+00:00"
+    },
+    "https://preview.redd.it/23cj6914ou0h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=402e06e9bf8f5acedd23755d238053b8daad740e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T08:37:16.254198+00:00"
     }
   },
   "archived": []
