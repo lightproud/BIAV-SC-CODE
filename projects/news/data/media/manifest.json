@@ -5606,6 +5606,41 @@
       "title": "[Morimens] LOOOONG Coaching/Spreadsheet and video making stream for half anni (12hour?)",
       "time": "2026-05-13T02:01:22.220194+00:00",
       "downloaded_at": "2026-05-13T02:04:18.035673+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/edeadb643ac805aee044d73fa360b897728418a8.jpg": {
+      "filename": "bilibili_d11f4973c85b64ff.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】不会配队我教你！从夯到拉简评所有主流队伍！",
+      "time": "2026-05-13T05:07:15+00:00",
+      "downloaded_at": "2026-05-13T05:55:49.186845+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/674e335631658dc6bd57263f9feb1eda630ea47f.jpg": {
+      "filename": "bilibili_77d789b517631ce1.jpg",
+      "source": "bilibili",
+      "title": "塔罗轻松爱狗",
+      "time": "2026-05-12T09:35:37+00:00",
+      "downloaded_at": "2026-05-13T05:55:49.823857+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/51438d2a35d2f83983a442a4cf58df8e43072020.jpg": {
+      "filename": "bilibili_7bc51bc4bad1184f.jpg",
+      "source": "bilibili",
+      "title": "顶配莫斯有多爽，3分钟容灾5-5?",
+      "time": "2026-05-13T05:23:54+00:00",
+      "downloaded_at": "2026-05-13T05:55:51.626599+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/0db73d6a66d189a37019f1ba3c943d88a0c5df70.jpg": {
+      "filename": "bilibili_46ad65875ae553f0.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】阿拉克涅C融灾禁区2-5",
+      "time": "2026-05-13T05:10:28+00:00",
+      "downloaded_at": "2026-05-13T05:55:53.894634+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/d84393a7d931b1a055daa777c3cf27677acc101c.jpg": {
+      "filename": "bilibili_4094a3837002106c.jpg",
+      "source": "bilibili",
+      "title": "［忘却前夜］无助战425纪念",
+      "time": "2026-05-13T05:29:34+00:00",
+      "downloaded_at": "2026-05-13T05:55:55.205401+00:00"
     }
   },
   "failed": {
@@ -7898,6 +7933,31 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-13T02:04:17.696586+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/edeadb643ac805aee044d73fa360b897728418a8.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T05:55:49.487577+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/674e335631658dc6bd57263f9feb1eda630ea47f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T05:55:50.124523+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/51438d2a35d2f83983a442a4cf58df8e43072020.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T05:55:51.927457+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/0db73d6a66d189a37019f1ba3c943d88a0c5df70.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T05:55:54.195248+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/d84393a7d931b1a055daa777c3cf27677acc101c.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T05:55:55.506039+00:00"
     }
   },
   "archived": []

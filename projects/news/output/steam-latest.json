@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-13T02:04:16.978105+00:00",
+  "collected_at": "2026-05-13T05:55:47.647333+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 5,
   "items": [
     {
       "source": "steam",
@@ -16,37 +16,7 @@
       "voted_up": true,
       "review": "福利比sl好太多了，还是我喜欢的克系风格",
       "timestamp_created": 1778573772,
-      "playtime_forever": 1924
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-12T03:28:27+00:00",
-      "lang": "schinese",
-      "title": "[正面] 非常非常非常非常好玩谢谢大家",
-      "summary": "非常非常非常非常好玩谢谢大家",
-      "url": "https://steamcommunity.com/profiles/76561199514785483/recommended/3052450",
-      "author": "76561199514785483",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "非常非常非常非常好玩谢谢大家",
-      "timestamp_created": 1778556507,
-      "playtime_forever": 2521
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-12T03:20:20+00:00",
-      "lang": "english",
-      "title": "[负面] Somewhat fun game with a really interesting story...",
-      "summary": "Somewhat fun game with a really interesting story and great worldbuilding.\n\nCan't recommend fully because of machine translation outside of CN languages.",
-      "url": "https://steamcommunity.com/profiles/76561198064471570/recommended/3052450",
-      "author": "76561198064471570",
-      "engagement": 1,
-      "language": "english",
-      "voted_up": false,
-      "review": "Somewhat fun game with a really interesting story and great worldbuilding.\n\nCan't recommend fully because of machine translation outside of CN languages.",
-      "timestamp_created": 1778556020,
-      "playtime_forever": 368
+      "playtime_forever": 1947
     },
     {
       "source": "steam",
@@ -76,7 +46,7 @@
       "voted_up": true,
       "review": "haowna",
       "timestamp_created": 1778607042,
-      "playtime_forever": 234
+      "playtime_forever": 297
     },
     {
       "source": "steam",
@@ -106,22 +76,7 @@
       "voted_up": true,
       "review": "Not bad <3",
       "timestamp_created": 1778590071,
-      "playtime_forever": 4051
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-12T03:54:14+00:00",
-      "lang": "english",
-      "title": "[正面] new fav game :D",
-      "summary": "new fav game :D",
-      "url": "https://steamcommunity.com/profiles/76561197976435408/recommended/3052450",
-      "author": "76561197976435408",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "new fav game :D",
-      "timestamp_created": 1778558054,
-      "playtime_forever": 4763
+      "playtime_forever": 4164
     }
   ]
 }
