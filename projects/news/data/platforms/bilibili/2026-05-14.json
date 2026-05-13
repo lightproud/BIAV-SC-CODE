@@ -1,8 +1,8 @@
 {
   "date": "2026-05-14",
-  "archived_at": "2026-05-13T19:33:30.383643+00:00",
+  "archived_at": "2026-05-13T21:19:30.208698+00:00",
   "source": "bilibili",
-  "item_count": 35,
+  "item_count": 37,
   "items": [
     {
       "source": "bilibili",
@@ -542,6 +542,36 @@
       "author": "点碎梦三生",
       "engagement": 46,
       "media_url": "//i2.hdslb.com/bfs/archive/cf7fe073605e47c13fcfc50a2287ac97262ca7f7.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-13T20:41:28+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】无命轮神国融灾4-5",
+      "summary": "看了鬼神直播无命轮5-5后重打一遍\n  └ 菲比又干了 (0赞): 王关前不开图鲁大，王关第二个超限开爆就不用死扛了，就是不知道道中伤害够不够，打完了才想起来",
+      "url": "https://www.bilibili.com/video/BV1oN5U6PE4c",
+      "author": "菲比又干了",
+      "engagement": 7,
+      "media_url": "https://i1.hdslb.com/bfs/archive/05653f8e2192beb70b2026b3ac71c13cf0a17f6e.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 6,
+        "comment_count": 1,
+        "comments_fetched": 1,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-13T20:41:28+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】无命轮神国融灾4-5",
+      "summary": "看了鬼神直播无命轮5-5后重打一遍",
+      "url": "http://www.bilibili.com/video/av116569187291434",
+      "author": "菲比又干了",
+      "engagement": 6,
+      "media_url": "//i1.hdslb.com/bfs/archive/05653f8e2192beb70b2026b3ac71c13cf0a17f6e.jpg",
       "content_type": "video"
     }
   ]
