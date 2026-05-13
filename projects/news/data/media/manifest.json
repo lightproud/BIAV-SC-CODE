@@ -5746,6 +5746,34 @@
       "title": "我们都是肉做哒",
       "time": "2026-05-13T13:59:39+00:00",
       "downloaded_at": "2026-05-13T14:07:53.125046+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/596b0502fb924f182db4adc2cd3b1df62307b56a.jpg": {
+      "filename": "bilibili_c55c8cb196aa2638.jpg",
+      "source": "bilibili",
+      "title": "第九话 各怀鬼胎",
+      "time": "2026-05-13T12:00:00+00:00",
+      "downloaded_at": "2026-05-13T17:11:04.188944+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/fd7ef37f5bca96210c129c52fa07f6016c824c25.jpg": {
+      "filename": "bilibili_011a5ca7c26b16ff.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】触伤反击流最终法则凯刻斯携手旺船歌6t通关融灾3-5",
+      "time": "2026-05-13T14:07:33+00:00",
+      "downloaded_at": "2026-05-13T17:11:06.084454+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/af2145cc57f2204da419b33d7c0d3ec9f00c6cde.jpg": {
+      "filename": "bilibili_91664b3409181a00.jpg",
+      "source": "bilibili",
+      "title": "小心…福塔…区…区…1T1E",
+      "time": "2026-05-13T14:30:16+00:00",
+      "downloaded_at": "2026-05-13T17:11:06.717972+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/5d0c51d2b9392031c09e9ac42f9e0bf065b46a73.jpg": {
+      "filename": "bilibili_71fbad48cbca9ecd.jpg",
+      "source": "bilibili",
+      "title": "我永远不会原谅沙耶之歌和galgame",
+      "time": "2026-05-13T15:57:55+00:00",
+      "downloaded_at": "2026-05-13T17:11:08.184775+00:00"
     }
   },
   "failed": {
@@ -8123,6 +8151,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-13T14:07:53.822100+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/596b0502fb924f182db4adc2cd3b1df62307b56a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T17:11:04.489981+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/fd7ef37f5bca96210c129c52fa07f6016c824c25.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T17:11:06.385276+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/af2145cc57f2204da419b33d7c0d3ec9f00c6cde.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T17:11:07.018772+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/948f8e4edc227269f437d30bd8ddde4b06aac49a.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T17:11:07.319552+00:00"
     }
   },
   "archived": []
