@@ -5690,6 +5690,62 @@
       "title": "[Morimens] Updated 2026 \"10 Commandments\" of Morimens for New Players. Everything you should know",
       "time": "2026-05-13T10:25:53.312902+00:00",
       "downloaded_at": "2026-05-13T11:29:00.350121+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/d99c281fc5a3d82d74eee47c4918c92d09ea695e.jpg": {
+      "filename": "bilibili_bdc77f1225881129.jpg",
+      "source": "bilibili",
+      "title": "什么叫回放已达到25回合最大限制，盾击1-4",
+      "time": "2026-05-13T08:57:25+00:00",
+      "downloaded_at": "2026-05-13T14:07:45.427662+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/c849e842dd61b5da914ade03f12381de1a1858a5.jpg": {
+      "filename": "bilibili_bd83948356e0c3c7.jpg",
+      "source": "bilibili",
+      "title": "假如我是钉刺姬",
+      "time": "2026-05-13T09:30:00+00:00",
+      "downloaded_at": "2026-05-13T14:07:45.915690+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/51adcacb648e8500b66745acbf52ab1a8a6960cc.jpg": {
+      "filename": "bilibili_2278cfbef4594a95.jpg",
+      "source": "bilibili",
+      "title": "7次死扛的茉夏，一切都会好起来的  4-4",
+      "time": "2026-05-13T08:56:03+00:00",
+      "downloaded_at": "2026-05-13T14:07:47.118951+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/d7726ae687b0d9ed26f8d8c1ee2e2515dfc07439.jpg": {
+      "filename": "bilibili_e0ea22946752e7d2.jpg",
+      "source": "bilibili",
+      "title": "神国超限诞墨碾了   5-4",
+      "time": "2026-05-13T08:56:12+00:00",
+      "downloaded_at": "2026-05-13T14:07:48.511714+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/096880ad81951cb63221997bb7cd5d106766e8f1.jpg": {
+      "filename": "bilibili_210a3175d159aa46.jpg",
+      "source": "bilibili",
+      "title": "最爱的阿拉克涅队 3-4",
+      "time": "2026-05-13T08:56:08+00:00",
+      "downloaded_at": "2026-05-13T14:07:49.087854+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/cf7fe073605e47c13fcfc50a2287ac97262ca7f7.jpg": {
+      "filename": "bilibili_6b37cbc76448e035.jpg",
+      "source": "bilibili",
+      "title": "超限鸟兄弟碾了   2-4",
+      "time": "2026-05-13T08:55:51+00:00",
+      "downloaded_at": "2026-05-13T14:07:49.423707+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/c020e07be3d01d17dd0b3ba6de49cb9aa1b71378.jpg": {
+      "filename": "bilibili_032c5dfb53afdc13.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】阿拉克涅携奶链融灾禁区4-5",
+      "time": "2026-05-13T13:36:54+00:00",
+      "downloaded_at": "2026-05-13T14:07:51.374272+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/5fc899e05b84ac653ae5130c34f3f473c1d16e38.jpg": {
+      "filename": "bilibili_7760a2d4349d1d6c.jpg",
+      "source": "bilibili",
+      "title": "我们都是肉做哒",
+      "time": "2026-05-13T13:59:39+00:00",
+      "downloaded_at": "2026-05-13T14:07:53.125046+00:00"
     }
   },
   "failed": {
@@ -8052,6 +8108,21 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-13T11:29:01.854170+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/c020e07be3d01d17dd0b3ba6de49cb9aa1b71378.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T14:07:49.724515+00:00"
+    },
+    "https://preview.redd.it/s00mgmwjbw0h1.gif?width=216&amp;crop=smart&amp;s=1940aa584ff3edde7ba9d7d35ffc9b0e3b795d7b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T14:07:53.479460+00:00"
+    },
+    "https://preview.redd.it/ba32ryy11w0h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=e274fb751e8abd309c335df5ec109cc57e3e9c96": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T14:07:53.822100+00:00"
     }
   },
   "archived": []
