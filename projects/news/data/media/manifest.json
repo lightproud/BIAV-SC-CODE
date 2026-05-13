@@ -5858,6 +5858,13 @@
       "title": "【忘却前夜】无命轮神国融灾4-5",
       "time": "2026-05-13T20:41:28+00:00",
       "downloaded_at": "2026-05-13T21:19:28.987949+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/a7df5cd4515af6c1c42169fd92439aeff3af3792.jpg": {
+      "filename": "bilibili_16d21baab83b722d.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]5.11融灾4-5助战诞墨创飞法洛思",
+      "time": "2026-05-13T03:37:33+00:00",
+      "downloaded_at": "2026-05-13T22:59:42.691317+00:00"
     }
   },
   "failed": {
@@ -8275,6 +8282,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-13T21:19:30.138776+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/a7df5cd4515af6c1c42169fd92439aeff3af3792.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T22:59:42.992141+00:00"
     }
   },
   "archived": []
