@@ -1,11 +1,11 @@
 {
   "date": "2026-05-04",
-  "messages": 14966,
+  "messages": 19966,
   "unique_authors": 358,
-  "reactions_total": 1343,
-  "attachments": 897,
+  "reactions_total": 1784,
+  "attachments": 1115,
   "channel_activity": {
-    "🔸morimens-game-chat": 1856,
+    "🔸morimens-game-chat": 6856,
     "🔸綜合討論": 3058,
     "🔸阵容构建": 19,
     "🔸晒卡分享": 7,
@@ -73,35 +73,35 @@
     "Arc 2 team help": 3
   },
   "hourly_activity": {
+    "6": 868,
+    "7": 1085,
+    "8": 857,
+    "9": 1066,
+    "10": 1303,
+    "11": 1953,
+    "12": 1196,
+    "13": 1414,
+    "14": 1300,
+    "15": 975,
+    "16": 961,
+    "17": 899,
+    "18": 270,
     "0": 608,
     "1": 860,
     "2": 1061,
     "3": 1110,
     "4": 802,
     "5": 502,
-    "6": 727,
     "22": 190,
     "23": 227,
     "20": 71,
     "21": 114,
-    "19": 274,
-    "7": 499,
-    "8": 462,
-    "9": 495,
-    "10": 1039,
-    "11": 1496,
-    "12": 882,
-    "13": 978,
-    "14": 802,
-    "15": 756,
-    "16": 586,
-    "17": 325,
-    "18": 100
+    "19": 274
   },
   "message_types": {
-    "19": 593,
-    "0": 1262,
-    "46": 1
+    "0": 3272,
+    "19": 1726,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -233,6 +233,14 @@
       "channel": "🔸general-chat"
     },
     {
+      "id": "1500904391144636599",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1370662343612039249/1396950555188002847/t",
+      "author": "tnimreppep",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1500661259769745418",
       "channel_id": "1170692781216378960",
       "content": "drew Casiah earlier today. Spinning a wheel like every day and drawing whatever ",
@@ -253,14 +261,6 @@
       "channel_id": "1131839817982947429",
       "content": "大混池值得抽嗎@@",
       "author": "rembrandtblanc",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500762561694531695",
-      "channel_id": "1131839817982947429",
-      "content": "~~新..角..色..~~",
-      "author": "kemomimi_",
       "reactions": 6,
       "channel": "🔸綜合討論"
     }
