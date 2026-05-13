@@ -5669,6 +5669,27 @@
       "title": "忘却前夜ボス戦",
       "time": "2026-05-12T13:33:21.603897+00:00",
       "downloaded_at": "2026-05-13T08:37:15.098299+00:00"
+    },
+    "http://i0.hdslb.com/bfs/archive/edeadb643ac805aee044d73fa360b897728418a8.jpg": {
+      "filename": "bilibili_5bc442f7a4fb125e.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】不会配队我教你！从夯到拉简评所有主流队伍！",
+      "time": "2026-05-13T05:07:15+00:00",
+      "downloaded_at": "2026-05-13T11:28:59.404386+00:00"
+    },
+    "https://i.ytimg.com/vi/qLmJiLFuEtw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAnnqqjd_msM5tTUY-cYgL8Eej8oQ": {
+      "filename": "youtube_670b5b66ce8c965d.jpg",
+      "source": "youtube",
+      "title": "[Morimens] LOOOONG Coaching/Spreadsheet and video making stream for half anni (12hour?)",
+      "time": "2026-05-13T09:25:53.313005+00:00",
+      "downloaded_at": "2026-05-13T11:28:59.902867+00:00"
+    },
+    "https://i.ytimg.com/vi/yP37qYocHNY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAjjN5wacwS2Vq1ynSnmhAgOKPmpw": {
+      "filename": "youtube_d9286d3a409210ae.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Updated 2026 \"10 Commandments\" of Morimens for New Players. Everything you should know",
+      "time": "2026-05-13T10:25:53.312902+00:00",
+      "downloaded_at": "2026-05-13T11:29:00.350121+00:00"
     }
   },
   "failed": {
@@ -8006,6 +8027,31 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-13T08:37:16.254198+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/d99c281fc5a3d82d74eee47c4918c92d09ea695e.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T11:29:00.650949+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/d7726ae687b0d9ed26f8d8c1ee2e2515dfc07439.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T11:29:00.951760+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/51adcacb648e8500b66745acbf52ab1a8a6960cc.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T11:29:01.252589+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/096880ad81951cb63221997bb7cd5d106766e8f1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T11:29:01.553343+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/cf7fe073605e47c13fcfc50a2287ac97262ca7f7.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-13T11:29:01.854170+00:00"
     }
   },
   "archived": []
