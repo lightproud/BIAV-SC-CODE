@@ -1,8 +1,8 @@
 {
   "date": "2026-05-13",
-  "archived_at": "2026-05-13T05:55:55.570320+00:00",
+  "archived_at": "2026-05-13T08:37:16.323797+00:00",
   "source": "bilibili",
-  "item_count": 31,
+  "item_count": 34,
   "items": [
     {
       "source": "bilibili",
@@ -300,6 +300,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-13T05:00:00+00:00",
+      "lang": "zh",
+      "title": "杀戮尖塔2沙耶之歌模组测评,新人入坑介绍",
+      "summary": "还有一期荆棘的我睡个午觉剪好困\n  └ 纤雨涓埃 (1赞): @千导院枫\n以后做别的模组或者测评记得找我哦[星星眼]\n  └ 真理亚猫猫 (0赞): 我们是专业的品鉴大师，专门负责为品味高雅的玩家提供最优质的服务。\n  └ 纤雨涓埃 (0赞): 你们后面有什么想看，却因为机制无法上手的模组，都可以在我的评论区艾特我不要去别人评论区，做测评都是免费的，你们想要我帮忙宣传也可以都会以联合稿件形式发出来。",
+      "url": "https://www.bilibili.com/video/BV19K556vEHM",
+      "author": "纤雨涓埃",
+      "engagement": 110,
+      "media_url": "https://i1.hdslb.com/bfs/archive/c3113c6c170fbc616d4dfc48a4be3a820c2549a9.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 104,
+        "comment_count": 6,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-12T16:02:49+00:00",
       "lang": "zh",
       "title": "第八话 利莫里亚",
@@ -446,6 +464,36 @@
       "author": "梦依流苏",
       "engagement": 36,
       "media_url": "//i1.hdslb.com/bfs/archive/d84393a7d931b1a055daa777c3cf27677acc101c.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-13T06:34:16+00:00",
+      "lang": "zh",
+      "title": "忘却前夜",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1ZQ5C64Eh7",
+      "author": "国考必上岸11",
+      "engagement": 15,
+      "media_url": "https://i2.hdslb.com/bfs/archive/f6e18006c9f383984380a536bce77ab5f754f087.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 15,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-13T06:34:16+00:00",
+      "lang": "zh",
+      "title": "忘却前夜",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116565848623094",
+      "author": "国考必上岸11",
+      "engagement": 15,
+      "media_url": "//i2.hdslb.com/bfs/archive/f6e18006c9f383984380a536bce77ab5f754f087.jpg",
       "content_type": "video"
     },
     {
