@@ -1,8 +1,8 @@
 {
   "date": "2026-05-14",
-  "archived_at": "2026-05-13T17:11:08.254409+00:00",
+  "archived_at": "2026-05-13T19:33:30.383643+00:00",
   "source": "bilibili",
-  "item_count": 33,
+  "item_count": 35,
   "items": [
     {
       "source": "bilibili",
@@ -360,6 +360,24 @@
     },
     {
       "source": "bilibili",
+      "time": "2026-05-13T11:40:34+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 60级神国 融灾5-5阿拉克涅 全过程",
+      "summary": "这个手牌+2大概是不能省的\n不然应该会被卡到怀疑人生\n\n背景音乐：\nCount Basie - &quot;Fun Time&quot;\nLouis Armstrong - &quot;What A Wonderful World&quot;\nMASSIMO FARAÒ - &quot;Take the A train (feat. Sandy Patton)&quot;\n  └ 只需要一把玻璃斧头 (1赞): 梦游老师每次选曲都好加分\n  └ bili_55227775639 (0赞): @烟已归",
+      "url": "https://www.bilibili.com/video/BV1hU5y6EEXE",
+      "author": "夢遊遊遊遊",
+      "engagement": 120,
+      "media_url": "https://i1.hdslb.com/bfs/archive/948f8e4edc227269f437d30bd8ddde4b06aac49a.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 116,
+        "comment_count": 4,
+        "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
       "time": "2026-05-13T08:56:12+00:00",
       "lang": "zh",
       "title": "神国超限诞墨碾了   5-4",
@@ -453,6 +471,18 @@
         "comments_fetched": 1,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-13T06:34:16+00:00",
+      "lang": "zh",
+      "title": "忘却前夜",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116565848623094",
+      "author": "国考必上岸11",
+      "engagement": 95,
+      "media_url": "//i2.hdslb.com/bfs/archive/f6e18006c9f383984380a536bce77ab5f754f087.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
