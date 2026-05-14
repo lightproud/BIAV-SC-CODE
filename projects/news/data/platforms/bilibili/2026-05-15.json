@@ -1,8 +1,8 @@
 {
   "date": "2026-05-15",
-  "archived_at": "2026-05-14T16:08:10.378467+00:00",
+  "archived_at": "2026-05-14T18:32:37.747278+00:00",
   "source": "bilibili",
-  "item_count": 17,
+  "item_count": 19,
   "items": [
     {
       "source": "bilibili",
@@ -219,6 +219,36 @@
         "comments_fetched": 2,
         "danmaku": 0
       }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-14T02:01:24+00:00",
+      "lang": "zh",
+      "title": "忘卻前夜融灾2-5 5t0死扛1造物单回合144w伤害，感受数值的魅力",
+      "summary": "回看视频后发现5t徐引爆一下就死了，本来可以更精简",
+      "url": "https://www.bilibili.com/video/BV1PD5S6pEpJ",
+      "author": "谜一样的C先生",
+      "engagement": 106,
+      "media_url": "https://i2.hdslb.com/bfs/archive/d93b3bb3ca4f6a85a312dcb3aa3984a0a78b7494.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 106,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-14T02:01:24+00:00",
+      "lang": "zh",
+      "title": "忘卻前夜融灾2-5 5t0死扛1造物单回合144w伤害，感受数值的魅力",
+      "summary": "回看视频后发现5t徐引爆一下就死了，本来可以更精简",
+      "url": "http://www.bilibili.com/video/av116570445579972",
+      "author": "谜一样的C先生",
+      "engagement": 106,
+      "media_url": "//i2.hdslb.com/bfs/archive/d93b3bb3ca4f6a85a312dcb3aa3984a0a78b7494.jpg",
+      "content_type": "video"
     },
     {
       "source": "bilibili",
