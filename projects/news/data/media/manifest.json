@@ -5984,6 +5984,13 @@
       "title": "沙耶专辅莫斯?，先看看沙耶尚未降临的莫斯，1t容灾5-5，出伤640w",
       "time": "2026-05-14T21:36:58+00:00",
       "downloaded_at": "2026-05-14T22:03:59.420995+00:00"
+    },
+    "https://i.ytimg.com/vi/FEbMfHT8e-s/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC2oSNWf-S-krXXIJNJ50mGG8YcoA": {
+      "filename": "youtube_6d946d8fa51b34b4.jpg",
+      "source": "youtube",
+      "title": "Saya Kit Preview - Morimens",
+      "time": "2026-05-14T23:55:51.927623+00:00",
+      "downloaded_at": "2026-05-14T23:58:49.542062+00:00"
     }
   },
   "failed": {
@@ -8521,6 +8528,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-14T23:01:58.654182+00:00"
+    },
+    "https://external-preview.redd.it/_zLfa6RgIQEgezxC7mX8eFI5BVuzIVFVdjTqv983ehk.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=5c2ca09cdcdb21a471a59d0563c43c11a8a6b291": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T23:58:50.117391+00:00"
     }
   },
   "archived": []
