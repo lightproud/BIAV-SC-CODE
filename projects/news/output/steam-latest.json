@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-14T23:01:57.534910+00:00",
+  "collected_at": "2026-05-14T23:58:48.764995+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -16,7 +16,22 @@
       "voted_up": true,
       "review": "Fun little deck-building game. If you like Reverse: 1999 and any Lovecraftian themes, check this one out.",
       "timestamp_created": 1778766231,
-      "playtime_forever": 1227
+      "playtime_forever": 1320
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-14T21:45:18+00:00",
+      "lang": "english",
+      "title": "[正面] good",
+      "summary": "good",
+      "url": "https://steamcommunity.com/profiles/76561199435516211/recommended/3052450",
+      "author": "76561199435516211",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "good",
+      "timestamp_created": 1778795118,
+      "playtime_forever": 55
     },
     {
       "source": "steam",

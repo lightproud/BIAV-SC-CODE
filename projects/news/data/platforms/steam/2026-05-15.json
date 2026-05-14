@@ -1,8 +1,8 @@
 {
   "date": "2026-05-15",
-  "archived_at": "2026-05-14T23:01:58.716384+00:00",
+  "archived_at": "2026-05-14T23:58:50.189128+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "source": "steam",
@@ -78,6 +78,21 @@
       "review": "It's basically FGO with a Hoyoverse UI set in a Lovecraft-ish universe. Feels like a port from mobile, but it's alright. As a F2P game, recommended.",
       "timestamp_created": 1778787371,
       "playtime_forever": 488
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-14T21:45:18+00:00",
+      "lang": "english",
+      "title": "[正面] good",
+      "summary": "good",
+      "url": "https://steamcommunity.com/profiles/76561199435516211/recommended/3052450",
+      "author": "76561199435516211",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "good",
+      "timestamp_created": 1778795118,
+      "playtime_forever": 55
     }
   ]
 }
