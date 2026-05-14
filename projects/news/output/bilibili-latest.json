@@ -1,120 +1,42 @@
 {
-  "collected_at": "2026-05-14T11:46:40.041562+00:00",
+  "collected_at": "2026-05-14T13:31:36.591722+00:00",
   "source": "bilibili",
-  "item_count": 26,
+  "item_count": 22,
   "items": [
     {
       "source": "bilibili",
       "time": "2026-05-13T13:59:39+00:00",
       "lang": "zh",
       "title": "我们都是肉做哒",
-      "summary": "参考BV18TRwBZER3\n  └ 谁把小鸡名字的抢了 (50赞): 好萌啊，不知道这是什么角色，最近老是刷到但，真的好可爱！依旧带着小鸡\n  └ 喵喵萌萌赵瞾 (52赞): 好有分辨力的眼睛。\n  └ Bakteriophage (1赞): 刷了一天的肉块终于刷到美女了[星星眼]",
+      "summary": "参考BV18TRwBZER3\n  └ 谁把小鸡名字的抢了 (75赞): 好萌啊，不知道这是什么角色，最近老是刷到但，真的好可爱！依旧带着小鸡\n  └ 喵喵萌萌赵瞾 (70赞): 好有分辨力的眼睛。\n  └ 大坝生物 (1赞): 我活到头了吗？白房间里面有个肉块在唱歌[微笑]",
       "url": "https://www.bilibili.com/video/BV1fE5m6iEa4",
       "author": "仿生大阪章鱼烧",
-      "engagement": 7737,
+      "engagement": 8998,
       "media_url": "https://i2.hdslb.com/bfs/archive/5fc899e05b84ac653ae5130c34f3f473c1d16e38.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 7705,
-        "comment_count": 32,
+        "play": 8960,
+        "comment_count": 38,
         "comments_fetched": 3,
         "danmaku": 2
       }
     },
     {
       "source": "bilibili",
-      "time": "2026-05-14T10:00:00+00:00",
-      "lang": "zh",
-      "title": "视觉小说冰山图：沙耶之歌源自老虚真实经历？废案乙女游戏中寻找失传歌曲 ？幻影坦克起源于galgame？【视觉小说冰山图2：第一部分】",
-      "summary": "公元2026年1月29日，塔人在发布“【ARG】寻找不存在的失传媒体galgame”宣布隐退gal圈寻找新领域......\n  但是今天，他终于回来了！并且带着他的新一期冰山图！经历了长达三个月的沉淀，他完成了....进化？\n  众所周知，因为“某些”原因，这期冰山图在今天才与大家见面，在这条新的旧道路上，我想我终于能让当初的自己满意了，，，在凭借个人有限的时间和精力下，这期视频的观感依旧能令自己满意，光这点就足够了。\n  算了，闲话不多说，关于视频内容这一部分，有一些趣事：\n  1.实际上我做这期视频的\n  └ 不连续存在的美好 (3赞): 谁拉着了\n  └ 御神苗龙 (5赞): 沙耶之歌的框架毫无疑问应该是借鉴的火鸟未来篇章里的一个，把机器人看成活人\n但是濒死和目睹死亡都会让创作者的创作形态发生翻天覆地的变化\n这点不只是在老虚身上，横尾太郎、敏鬼这些异色脚本家身上都能看到端倪\n  └ despairnay (2赞): 好无聊的一期.....\n哇这期神了简直！",
-      "url": "https://www.bilibili.com/video/BV1oi596EEjj",
-      "author": "竹井塔人",
-      "engagement": 1052,
-      "media_url": "https://i0.hdslb.com/bfs/archive/c1f3596c9d2d65d7b7562b1dd0367650764daf2a.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 1014,
-        "comment_count": 38,
-        "comments_fetched": 3,
-        "danmaku": 22
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-14T03:44:55+00:00",
-      "lang": "zh",
-      "title": "[忘却前夜]拉蒙娜：不知道为啥小医生和沙耶打起来了（AI小剧场）",
-      "summary": "-\n  └ 渔歌伴晚舟 (11赞): [doge]\n  └ 当椿奶发生 (8赞): 举报萨弥格食堂没早餐，要让学生买路边早餐[doge]\n  └ 苍穹余烬 (5赞): 何意喂",
-      "url": "https://www.bilibili.com/video/BV1JP5X6HEZP",
-      "author": "渔歌伴晚舟",
-      "engagement": 953,
-      "media_url": "https://i0.hdslb.com/bfs/archive/70f294c0fa5edea94cf0fab81ac56a2712b72dd3.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 942,
-        "comment_count": 11,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-13T12:00:00+00:00",
-      "lang": "zh",
-      "title": "第九话 各怀鬼胎",
-      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途)索蕾尔在盘算着什么 你们猜得到么doge\n  └ 雨妤尘 (4赞): 只会这个\n  └ 饶宇洋全球粉丝后援会 (0赞): 咋这么精美[星星眼]\n  └ 幻觉の概念 (0赞): [打call]",
-      "url": "https://www.bilibili.com/video/BV1X15y6nEb1",
-      "author": "比较瓜皮",
-      "engagement": 947,
-      "media_url": "https://i0.hdslb.com/bfs/archive/596b0502fb924f182db4adc2cd3b1df62307b56a.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 942,
-        "comment_count": 5,
-        "comments_fetched": 3,
-        "danmaku": 1
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-14T03:44:55+00:00",
-      "lang": "zh",
-      "title": "[忘却前夜]拉蒙娜：不知道为啥小医生和沙耶打起来了（AI小剧场）",
-      "summary": "-",
-      "url": "http://www.bilibili.com/video/av116570865081619",
-      "author": "渔歌伴晚舟",
-      "engagement": 947,
-      "media_url": "//i0.hdslb.com/bfs/archive/70f294c0fa5edea94cf0fab81ac56a2712b72dd3.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-13T12:00:00+00:00",
-      "lang": "zh",
-      "title": "第九话 各怀鬼胎",
-      "summary": "(本视频为《忘却前夜》同人二创，非官方出品，无任何商业用途)索蕾尔在盘算着什么 你们猜得到么doge",
-      "url": "http://www.bilibili.com/video/av116567140540331",
-      "author": "比较瓜皮",
-      "engagement": 943,
-      "media_url": "//i0.hdslb.com/bfs/archive/596b0502fb924f182db4adc2cd3b1df62307b56a.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "bilibili",
       "time": "2026-05-14T11:14:13+00:00",
       "lang": "zh",
       "title": "【忘却前夜】沙耶登场！大杯还是小杯？新角色沙耶技能组简评！",
-      "summary": "└ 金发女人丨型 (6赞): 省流：大杯辅助，大概和皮克曼差不多的强度。\n启灵：最好超限\n  └ 天才卡哇伊少女 (5赞): 老大这么快。还有老大觉得沙耶这个机制出来之后血肉塔薇有说法吗\n  └ DDD_早餐王_豆浆 (3赞): 阿拉克涅+沙耶+塔微+福袋有无说法(",
+      "summary": "└ 昨浅 (17赞): 理性讨论，强度是高，但我说设计有点拉有没有懂的[无语]，纯堆数值，双发钥令双发技能，而且神血肉也是换皮[笑哭]。当时莫丝出的时候我还发评论说出了双发钥令拐也轮不到她用，键帽直接把专拐砸脸上。不是对这种堆数值有意见，只不过你游这次联动同时还是2.5周年庆，就不能稍微上点心吗[大哭]。最后保留节目沙耶能进捕鸟蛛吗[星星眼]\n  └ _未_闻_花_名_ (5赞): 我上来看到104-104-99-200就气笑了[笑哭][笑哭]\n  └ 金发女人丨型 (22赞): 省流：大杯辅助，大概和皮克曼差不多的强度。\n启灵：最好超限",
       "url": "https://www.bilibili.com/video/BV1tg596KE1Y",
       "author": "金发女人丨型",
-      "engagement": 789,
+      "engagement": 3155,
       "media_url": "https://i0.hdslb.com/bfs/archive/7507757add53ad46acf6d3c4f78f2656a686b2bb.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 760,
-        "comment_count": 29,
+        "play": 3053,
+        "comment_count": 102,
         "comments_fetched": 3,
-        "danmaku": 8
+        "danmaku": 15
       }
     },
     {
@@ -125,8 +47,56 @@
       "summary": "",
       "url": "http://www.bilibili.com/video/av116572626624303",
       "author": "金发女人丨型",
-      "engagement": 768,
+      "engagement": 3068,
       "media_url": "//i0.hdslb.com/bfs/archive/7507757add53ad46acf6d3c4f78f2656a686b2bb.jpg",
+      "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-14T10:00:00+00:00",
+      "lang": "zh",
+      "title": "视觉小说冰山图：沙耶之歌源自老虚真实经历？废案乙女游戏中寻找失传歌曲 ？幻影坦克起源于galgame？【视觉小说冰山图2：第一部分】",
+      "summary": "公元2026年1月29日，塔人在发布“【ARG】寻找不存在的失传媒体galgame”宣布隐退gal圈寻找新领域......\n  但是今天，他终于回来了！并且带着他的新一期冰山图！经历了长达三个月的沉淀，他完成了....进化？\n  众所周知，因为“某些”原因，这期冰山图在今天才与大家见面，在这条新的旧道路上，我想我终于能让当初的自己满意了，，，在凭借个人有限的时间和精力下，这期视频的观感依旧能令自己满意，光这点就足够了。\n  算了，闲话不多说，关于视频内容这一部分，有一些趣事：\n  1.实际上我做这期视频的\n  └ 槭翼深碍 (2赞): 宝子。你没法转型成功的。！呵呵。，，\n  └ despairnay (5赞): 好无聊的一期.....\n哇这期神了简直！\n  └ -weii- (6赞): 再补充一点，还有山手线这个……纯纯是主创灵机一动的想法没有什么特殊的含义。游戏最后两日的召唤和退去顺序（看发光魔法阵cg五角的图标）也挺有意思的，感兴趣可以自己连一连\n设定集原文如下",
+      "url": "https://www.bilibili.com/video/BV1oi596EEjj",
+      "author": "竹井塔人",
+      "engagement": 2172,
+      "media_url": "https://i0.hdslb.com/bfs/archive/2649ebf634a111211145443eff57183a109133a5.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 2120,
+        "comment_count": 52,
+        "comments_fetched": 3,
+        "danmaku": 23
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-14T03:44:55+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]拉蒙娜：不知道为啥小医生和沙耶打起来了（AI小剧场）",
+      "summary": "-\n  └ 渔歌伴晚舟 (14赞): [doge]\n  └ 当椿奶发生 (12赞): 举报萨弥格食堂没早餐，要让学生买路边早餐[doge]\n  └ 苍穹余烬 (6赞): 何意喂",
+      "url": "https://www.bilibili.com/video/BV1JP5X6HEZP",
+      "author": "渔歌伴晚舟",
+      "engagement": 1137,
+      "media_url": "https://i0.hdslb.com/bfs/archive/70f294c0fa5edea94cf0fab81ac56a2712b72dd3.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 1126,
+        "comment_count": 11,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-14T03:44:55+00:00",
+      "lang": "zh",
+      "title": "[忘却前夜]拉蒙娜：不知道为啥小医生和沙耶打起来了（AI小剧场）",
+      "summary": "-",
+      "url": "http://www.bilibili.com/video/av116570865081619",
+      "author": "渔歌伴晚舟",
+      "engagement": 1126,
+      "media_url": "//i0.hdslb.com/bfs/archive/70f294c0fa5edea94cf0fab81ac56a2712b72dd3.jpg",
       "content_type": "video"
     },
     {
@@ -137,12 +107,30 @@
       "summary": "奶链大人...\n  └ -Love7_ (1赞): 朝朝牢师\n  └ 梦依流苏 (0赞): 朝朝牢师\n  └ 跳段木偶舞 (0赞): 朝朝牢师",
       "url": "https://www.bilibili.com/video/BV1Be5y6ZE4v",
       "author": "朝星-",
-      "engagement": 555,
+      "engagement": 565,
       "media_url": "https://i0.hdslb.com/bfs/archive/c020e07be3d01d17dd0b3ba6de49cb9aa1b71378.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 552,
+        "play": 562,
         "comment_count": 3,
+        "comments_fetched": 3,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-13T14:07:33+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】触伤反击流最终法则凯刻斯携手旺船歌6t通关融灾3-5",
+      "summary": "-\n  └ 嘎啦嘎啦果 (3赞): 小品，看看就好。也就这个造物和这条多段狗能这么打。\n这期正常配队应该是alkn单带3-5，血肉旺达再带一次3-5，羊皮凯去第2第5波。\n需要带这次的980红夫人命轮。\n刚需觉醒+12kks，没有+12，反击少一半。\n刚需旺达，这里作为一个反击增幅器，还有生存。\n船长必须带入药，需要先拉满双爆，再打两张4费给的触腕易伤，最后才让kks操作。\n正常配队做不到单回合超限爆发能拿那么多反击，因为kks的超限是触伤转反击，而一般队伍的触腕暴击率都不是满的，所以需要汀克特这种全队双爆拐来帮忙。汀克特换成觉醒鼠鼠也行，但是生存和费用还有钥能都不太够。\n第二个录像是挑战自我整活用的（x），不带艾瑞卡活不下去。\n  └ 嘎啦嘎啦果 (1赞): 附这期我的正常打法，杜勒的钥令还不错\n  └ 嘎啦嘎啦果 (1赞): 【短暂的永恒】这个钥令还不错，可以让这种流派的kks在爆发回合多拿点反击。忘记说【甜蜜蛞蝓】这个密契了，kks在这种流派下蛞蝓比四月能拿到更多反击，盾和回血也有提升，闲着没事可以随便凑一套带点暴击的。",
+      "url": "https://www.bilibili.com/video/BV1Hu5m6kEqb",
+      "author": "嘎啦嘎啦果",
+      "engagement": 563,
+      "media_url": "https://i0.hdslb.com/bfs/archive/fd7ef37f5bca96210c129c52fa07f6016c824c25.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 559,
+        "comment_count": 4,
         "comments_fetched": 3,
         "danmaku": 0
       }
@@ -155,27 +143,9 @@
       "summary": "奶链大人...",
       "url": "http://www.bilibili.com/video/av116567526347825",
       "author": "朝星-",
-      "engagement": 552,
+      "engagement": 562,
       "media_url": "//i0.hdslb.com/bfs/archive/c020e07be3d01d17dd0b3ba6de49cb9aa1b71378.jpg",
       "content_type": "video"
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-13T14:07:33+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】触伤反击流最终法则凯刻斯携手旺船歌6t通关融灾3-5",
-      "summary": "-\n  └ 嘎啦嘎啦果 (3赞): 小品，看看就好。也就这个造物和这条多段狗能这么打。\n这期正常配队应该是alkn单带3-5，血肉旺达再带一次3-5，羊皮凯去第2第5波。\n需要带这次的980红夫人命轮。\n刚需觉醒+12kks，没有+12，反击少一半。\n刚需旺达，这里作为一个反击增幅器，还有生存。\n船长必须带入药，需要先拉满双爆，再打两张4费给的触腕易伤，最后才让kks操作。\n正常配队做不到单回合超限爆发能拿那么多反击，因为kks的超限是触伤转反击，而一般队伍的触腕暴击率都不是满的，所以需要汀克特这种全队双爆拐来帮忙。汀克特换成觉醒鼠鼠也行，但是生存和费用还有钥能都不太够。\n第二个录像是挑战自我整活用的（x），不带艾瑞卡活不下去。\n  └ 嘎啦嘎啦果 (1赞): 附这期我的正常打法，杜勒的钥令还不错\n  └ 嘎啦嘎啦果 (1赞): 【短暂的永恒】这个钥令还不错，可以让这种流派的kks在爆发回合多拿点反击。忘记说【甜蜜蛞蝓】这个密契了，kks在这种流派下蛞蝓比四月能拿到更多反击，盾和回血也有提升，闲着没事可以随便凑一套带点暴击的。",
-      "url": "https://www.bilibili.com/video/BV1Hu5m6kEqb",
-      "author": "嘎啦嘎啦果",
-      "engagement": 524,
-      "media_url": "https://i0.hdslb.com/bfs/archive/fd7ef37f5bca96210c129c52fa07f6016c824c25.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 520,
-        "comment_count": 4,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
     },
     {
       "source": "bilibili",
@@ -185,7 +155,7 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116567643786027",
       "author": "嘎啦嘎啦果",
-      "engagement": 520,
+      "engagement": 559,
       "media_url": "//i0.hdslb.com/bfs/archive/fd7ef37f5bca96210c129c52fa07f6016c824c25.jpg",
       "content_type": "video"
     },
@@ -197,11 +167,11 @@
       "summary": "看了鬼神直播无命轮5-5后重打一遍\n  └ 玉窝捂瓜 (1赞): 有点东西！\n  └ -橙C没事 (0赞): 狂气回的好快，为什么我的要好久\n  └ bian_loratadine (1赞): 强强",
       "url": "https://www.bilibili.com/video/BV1oN5U6PE4c",
       "author": "菲比又干了",
-      "engagement": 466,
+      "engagement": 489,
       "media_url": "https://i1.hdslb.com/bfs/archive/05653f8e2192beb70b2026b3ac71c13cf0a17f6e.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 460,
+        "play": 483,
         "comment_count": 6,
         "comments_fetched": 3,
         "danmaku": 0
@@ -215,7 +185,7 @@
       "summary": "看了鬼神直播无命轮5-5后重打一遍",
       "url": "http://www.bilibili.com/video/av116569187291434",
       "author": "菲比又干了",
-      "engagement": 460,
+      "engagement": 483,
       "media_url": "//i1.hdslb.com/bfs/archive/05653f8e2192beb70b2026b3ac71c13cf0a17f6e.jpg",
       "content_type": "video"
     },
@@ -227,11 +197,11 @@
       "summary": "",
       "url": "https://www.bilibili.com/video/BV1eQ5D66ExE",
       "author": "凉皮仔",
-      "engagement": 428,
+      "engagement": 429,
       "media_url": "https://i2.hdslb.com/bfs/archive/ccb85d48071ed72851bfc269b97160617f694849.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 428,
+        "play": 429,
         "comment_count": 0,
         "comments_fetched": 0,
         "danmaku": 1
@@ -245,11 +215,11 @@
       "summary": "-\n  └ 永恒残月 (1赞): 前面千面没暴击气晕\n  └ _欣特莱雅厨_ (1赞): 我了\n  └ 苏墓衍 (0赞): 吓哭了，大佬[大哭]",
       "url": "https://www.bilibili.com/video/BV18a5m6oEZd",
       "author": "永恒残月",
-      "engagement": 371,
+      "engagement": 377,
       "media_url": "https://i0.hdslb.com/bfs/archive/af2145cc57f2204da419b33d7c0d3ec9f00c6cde.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 366,
+        "play": 372,
         "comment_count": 5,
         "comments_fetched": 3,
         "danmaku": 0
@@ -263,7 +233,7 @@
       "summary": "-",
       "url": "http://www.bilibili.com/video/av116567727738777",
       "author": "永恒残月",
-      "engagement": 366,
+      "engagement": 373,
       "media_url": "//i0.hdslb.com/bfs/archive/af2145cc57f2204da419b33d7c0d3ec9f00c6cde.jpg",
       "content_type": "video"
     },
@@ -275,45 +245,15 @@
       "summary": "-\n  └ Nautilus114 (1赞): 沙耶区迎来大变\n  └ N1RV_ANN-a (1赞): 质量好高[香奈美·追寻那道光 应援装扮_打call]\n  └ 化外道 (0赞): 嘎啦区迎来大变",
       "url": "https://www.bilibili.com/video/BV12F5m6UEr6",
       "author": "蚯蚓捏",
-      "engagement": 324,
+      "engagement": 358,
       "media_url": "https://i1.hdslb.com/bfs/archive/5d0c51d2b9392031c09e9ac42f9e0bf065b46a73.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 317,
+        "play": 351,
         "comment_count": 7,
         "comments_fetched": 3,
         "danmaku": 0
       }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-13T12:11:26+00:00",
-      "lang": "zh",
-      "title": "[忘却前夜]血希笑话其一",
-      "summary": "最不好笑的一集\n  └ 笼宴 (0赞): 对的对的对的，诶不对不对不对，诶对的对的对的\n  └ 密斯卡托尼克的银猫 (0赞): 笑点解析：来购买伤害但是只给小猫交税没买到伤害\n  └ 梦依流苏 (0赞): 慢投币[香奈美·追寻那道光 应援装扮_委屈][香奈美·追寻那道光 应援装扮_委屈][香奈美·追寻那道光 应援装扮_委屈]给泥了[香奈美·追寻那道光 应援装扮_委屈][香奈美·追寻那道光 应援装扮_委屈][香奈美·追寻那道光 应援装扮_委屈]",
-      "url": "https://www.bilibili.com/video/BV1HN516qEk7",
-      "author": "密斯卡托尼克的银猫",
-      "engagement": 250,
-      "media_url": "https://i1.hdslb.com/bfs/archive/e9ab3e323ac02199df171f8c8d3d528df4ad8b05.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 246,
-        "comment_count": 4,
-        "comments_fetched": 3,
-        "danmaku": 0
-      }
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-13T12:11:26+00:00",
-      "lang": "zh",
-      "title": "[忘却前夜]血希笑话其一",
-      "summary": "最不好笑的一集",
-      "url": "http://www.bilibili.com/video/av116567190800996",
-      "author": "密斯卡托尼克的银猫",
-      "engagement": 246,
-      "media_url": "//i1.hdslb.com/bfs/archive/e9ab3e323ac02199df171f8c8d3d528df4ad8b05.jpg",
-      "content_type": "video"
     },
     {
       "source": "bilibili",
@@ -323,13 +263,31 @@
       "summary": "-\n  └ 当然是狮子酱啦 (0赞): 太好了是纯爱[恶魔天使·双生_给心心]\n  └ -昆扬 (0赞): [魔法少女的魔女审判表情包_探头]",
       "url": "https://www.bilibili.com/video/BV1n35m63EXP",
       "author": "無期途刑",
-      "engagement": 197,
+      "engagement": 202,
       "media_url": "https://i0.hdslb.com/bfs/archive/305893e45ceabb51ea2146123fc52aa8c3da54c8.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 195,
+        "play": 200,
         "comment_count": 2,
         "comments_fetched": 2,
+        "danmaku": 0
+      }
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-14T10:17:58+00:00",
+      "lang": "zh",
+      "title": "【忘却前夜】超维混沌共生+切割+衰竭钥令低配融灾禁区3-5",
+      "summary": "本期3-5加入切割手可以显著降低生存压力，如果玩超维可以多带混沌吃混沌共生的衰竭\n推荐的几个切割手：\n萝坦（超限），高攻击面板，有超限大百分比，打击数量多段数多可带红拥\n24（零启），抑郁形态大招衰竭，躁狂形态高攻击面板2段打击，超维觉醒有手牌上限和每回合灵感，混沌有银钥和双发钥令\n莱克（三启），高攻击面板免费2段打击，过牌功能\n菲茵特，觉醒自带衰竭，2段打击，2费衰竭，死抗，治疗，反击\n汀克特，2-3段打击，跃迁2段防御，2费衰竭，觉醒奇妙效果，法则指令拿打击，减费双爆功能\n主手命轮推荐带鸟笼或遗忘之手\n  └ 落虹九月 (0赞): 神了，这凹了多久啊",
+      "url": "https://www.bilibili.com/video/BV19f5X6CEzg",
+      "author": "朝星-",
+      "engagement": 129,
+      "media_url": "https://i0.hdslb.com/bfs/archive/c6d6834d2562863cfeb3c061f09fb5c2c39c7bd1.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 127,
+        "comment_count": 2,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     },
@@ -341,27 +299,9 @@
       "summary": "本期3-5加入切割手可以显著降低生存压力，如果玩超维可以多带混沌吃混沌共生的衰竭\n推荐的几个切割手：\n萝坦（超限），高攻击面板，有超限大百分比，打击数量多段数多可带红拥\n24（零启），抑郁形态大招衰竭，躁狂形态高攻击面板2段打击，超维觉醒有手牌上限和每回合灵感，混沌有银钥和双发钥令\n莱克（三启），高攻击面板免费2段打击，过牌功能\n菲茵特，觉醒自带衰竭，2段打击，2费衰竭，死抗，治疗，反击\n汀克特，2-3段打击，跃迁2段防御，2费衰竭，觉醒奇妙效果，法则指令拿打击，减费双爆功能\n主手命轮推荐带鸟笼或遗忘之手",
       "url": "http://www.bilibili.com/video/av116572408583213",
       "author": "朝星-",
-      "engagement": 73,
+      "engagement": 127,
       "media_url": "//i0.hdslb.com/bfs/archive/c6d6834d2562863cfeb3c061f09fb5c2c39c7bd1.jpg",
       "content_type": "video"
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-14T10:17:58+00:00",
-      "lang": "zh",
-      "title": "【忘却前夜】超维混沌共生+切割+衰竭钥令低配融灾禁区3-5",
-      "summary": "本期3-5加入切割手可以显著降低生存压力，如果玩超维可以多带混沌吃混沌共生的衰竭\n推荐的几个切割手：\n萝坦（超限），高攻击面板，有超限大百分比，打击数量多段数多可带红拥\n24（零启），抑郁形态大招衰竭，躁狂形态高攻击面板2段打击，超维觉醒有手牌上限和每回合灵感，混沌有银钥和双发钥令\n莱克（三启），高攻击面板免费2段打击，过牌功能\n菲茵特，觉醒自带衰竭，2段打击，2费衰竭，死抗，治疗，反击\n汀克特，2-3段打击，跃迁2段防御，2费衰竭，觉醒奇妙效果，法则指令拿打击，减费双爆功能\n主手命轮推荐带鸟笼或遗忘之手",
-      "url": "https://www.bilibili.com/video/BV19f5X6CEzg",
-      "author": "朝星-",
-      "engagement": 69,
-      "media_url": "https://i0.hdslb.com/bfs/archive/c6d6834d2562863cfeb3c061f09fb5c2c39c7bd1.jpg",
-      "content_type": "image",
-      "metadata": {
-        "play": 69,
-        "comment_count": 0,
-        "comments_fetched": 0,
-        "danmaku": 0
-      }
     },
     {
       "source": "bilibili",
@@ -371,12 +311,12 @@
       "summary": "myls的忘却银夜群:884208560\n  └ 寂榕 (1赞): 强强给myls跪了\n  └ bian_loratadine (1赞): 强强",
       "url": "https://www.bilibili.com/video/BV1Yz596jEXR",
       "author": "梦依流苏",
-      "engagement": 69,
+      "engagement": 108,
       "media_url": "https://i1.hdslb.com/bfs/archive/f07c442b8fb34e689fd0a400b0935c760018eaa3.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 66,
-        "comment_count": 3,
+        "play": 104,
+        "comment_count": 4,
         "comments_fetched": 2,
         "danmaku": 1
       }
@@ -389,7 +329,7 @@
       "summary": "myls的忘却银夜群:884208560",
       "url": "http://www.bilibili.com/video/av116572307916408",
       "author": "梦依流苏",
-      "engagement": 68,
+      "engagement": 105,
       "media_url": "//i1.hdslb.com/bfs/archive/f07c442b8fb34e689fd0a400b0935c760018eaa3.jpg",
       "content_type": "video"
     },
@@ -398,16 +338,16 @@
       "time": "2026-05-14T11:28:18+00:00",
       "lang": "zh",
       "title": "童年逆天GAL神作 沙耶之歌 学习版 免费下载",
-      "summary": "百度网盘\n链接: https://pan.baidu.com/s/1p2E4TKa8Q0rsjBmF6JZ3KA?pwd=2333 提取码: 2333\n夸克网盘\n链接：https://pan.quark.cn/s/3af994ffdab4",
+      "summary": "百度网盘\n链接: https://pan.baidu.com/s/1p2E4TKa8Q0rsjBmF6JZ3KA?pwd=2333 提取码: 2333\n夸克网盘\n链接：https://pan.quark.cn/s/3af994ffdab4\n  └ 高德嘞 (0赞): 百度网盘\n\n链接: https://pan.baidu.com/s/1p2E4TKa8Q0rsjBmF6JZ3KA?pwd=2333 提取码: 2333\n\n夸克网盘\n\n链接：https://pan.quark.cn/s/3af994ffdab4",
       "url": "https://www.bilibili.com/video/BV1si5X68EcS",
       "author": "高德嘞",
-      "engagement": 1,
+      "engagement": 8,
       "media_url": "https://i0.hdslb.com/bfs/archive/570c89f589e3add42032d48d3127f931236c995a.jpg",
       "content_type": "image",
       "metadata": {
-        "play": 1,
-        "comment_count": 0,
-        "comments_fetched": 0,
+        "play": 7,
+        "comment_count": 1,
+        "comments_fetched": 1,
         "danmaku": 0
       }
     }
