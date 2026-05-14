@@ -1,8 +1,8 @@
 {
   "date": "2026-05-14",
-  "archived_at": "2026-05-14T06:18:18.183898+00:00",
+  "archived_at": "2026-05-14T09:30:04.561483+00:00",
   "source": "bilibili",
-  "item_count": 39,
+  "item_count": 40,
   "items": [
     {
       "source": "bilibili",
@@ -93,6 +93,24 @@
       "engagement": 414,
       "media_url": "//i1.hdslb.com/bfs/archive/d84393a7d931b1a055daa777c3cf27677acc101c.jpg",
       "content_type": "video"
+    },
+    {
+      "source": "bilibili",
+      "time": "2026-05-14T07:08:41+00:00",
+      "lang": "zh",
+      "title": "对不起，我不是你想的那个人类",
+      "summary": "",
+      "url": "https://www.bilibili.com/video/BV1eQ5D66ExE",
+      "author": "凉皮仔",
+      "engagement": 414,
+      "media_url": "https://i2.hdslb.com/bfs/archive/ccb85d48071ed72851bfc269b97160617f694849.jpg",
+      "content_type": "image",
+      "metadata": {
+        "play": 414,
+        "comment_count": 0,
+        "comments_fetched": 0,
+        "danmaku": 1
+      }
     },
     {
       "source": "bilibili",
