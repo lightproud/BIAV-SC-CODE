@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-14T16:08:04.404869+00:00",
+  "collected_at": "2026-05-14T18:32:35.472758+00:00",
   "source": "discord",
   "item_count": 16,
   "items": [
@@ -12,23 +12,6 @@
       "url": "https://discord.com/channels/1131791637933199470",
       "author": "Discord Archiver",
       "engagement": 8374
-    },
-    {
-      "source": "discord",
-      "time": "2026-05-13T06:09:35.191000+00:00",
-      "lang": "",
-      "title": "[DC] xingxiu_0209@🔸綜合討論: 各位我感冒了 台北開放排隊舌吻領取病假",
-      "summary": "各位我感冒了\n台北開放排隊舌吻領取病假\n  └ annabelle0868: 我也感冒了~~可能就是用dc传染给你的~~",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1504002651732316230",
-      "author": "xingxiu_0209",
-      "engagement": 38,
-      "metadata": {
-        "reactions": "🫳×8 jenkins_processing×4",
-        "reply_count": 1,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
     },
     {
       "source": "discord",
@@ -50,6 +33,23 @@
           "https://cdn.discordapp.com/attachments/1503963901044461688/1503963902902534206/pickman_time_fullcrop.png?ex=6a05ebc8&is=6a049a48&hm=f496e778b80a77d5e52f124343daf5f7d4ee1c9424370e189b6e783171097c37&"
         ],
         "channel": "🔸art-and-memes"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-05-13T06:09:35.191000+00:00",
+      "lang": "",
+      "title": "[DC] xingxiu_0209@🔸綜合討論: 各位我感冒了 台北開放排隊舌吻領取病假",
+      "summary": "各位我感冒了\n台北開放排隊舌吻領取病假\n  └ annabelle0868: 我也感冒了~~可能就是用dc传染给你的~~",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1504002651732316230",
+      "author": "xingxiu_0209",
+      "engagement": 38,
+      "metadata": {
+        "reactions": "🫳×8 jenkins_processing×4",
+        "reply_count": 1,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
       }
     },
     {
@@ -276,23 +276,6 @@
     },
     {
       "source": "discord",
-      "time": "2026-05-13T12:46:46.631000+00:00",
-      "lang": "",
-      "title": "[DC] ponponnyaru@🔸綜合討論: 特训奖励25/25",
-      "summary": "特训奖励25/25\n  └ yi000607: 你有發現美的眼睛\n  └ yy42974466: 說好八點半",
-      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1504102608036696225",
-      "author": "ponponnyaru",
-      "engagement": 22,
-      "metadata": {
-        "reactions": "✅×6",
-        "reply_count": 2,
-        "attachment_count": 0,
-        "attachment_urls": [],
-        "channel": "🔸綜合討論"
-      }
-    },
-    {
-      "source": "discord",
       "time": "2026-05-13T05:31:49.030000+00:00",
       "lang": "",
       "title": "[DC] bartmann_3212@🔸阵容构建: (附件/嵌入)",
@@ -310,6 +293,23 @@
           "https://cdn.discordapp.com/attachments/1131839874132090890/1503993146986725399/IMG_8127.png?ex=6a060705&is=6a04b585&hm=c72eb02094243b89a88d8a9620cea6cafa037d63d088aadc251b47a10fe189c9&"
         ],
         "channel": "🔸阵容构建"
+      }
+    },
+    {
+      "source": "discord",
+      "time": "2026-05-13T12:46:46.631000+00:00",
+      "lang": "",
+      "title": "[DC] ponponnyaru@🔸綜合討論: 特训奖励25/25",
+      "summary": "特训奖励25/25\n  └ yi000607: 你有發現美的眼睛\n  └ yy42974466: 說好八點半",
+      "url": "https://discord.com/channels/1131791637933199470/1131839817982947429/1504102608036696225",
+      "author": "ponponnyaru",
+      "engagement": 22,
+      "metadata": {
+        "reactions": "✅×6",
+        "reply_count": 2,
+        "attachment_count": 0,
+        "attachment_urls": [],
+        "channel": "🔸綜合討論"
       }
     }
   ]

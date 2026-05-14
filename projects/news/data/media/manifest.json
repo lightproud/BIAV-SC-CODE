@@ -5949,6 +5949,13 @@
       "title": "【忘却前夜】融灾425留念(5.11)",
       "time": "2026-05-14T13:48:23+00:00",
       "downloaded_at": "2026-05-14T16:08:08.343250+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/d93b3bb3ca4f6a85a312dcb3aa3984a0a78b7494.jpg": {
+      "filename": "bilibili_ee9d6177333c8ba4.jpg",
+      "source": "bilibili",
+      "title": "忘卻前夜融灾2-5 5t0死扛1造物单回合144w伤害，感受数值的魅力",
+      "time": "2026-05-14T02:01:24+00:00",
+      "downloaded_at": "2026-05-14T18:32:37.375430+00:00"
     }
   },
   "failed": {
@@ -8451,6 +8458,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-14T16:08:10.313785+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/d93b3bb3ca4f6a85a312dcb3aa3984a0a78b7494.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T18:32:37.676329+00:00"
     }
   },
   "archived": []
