@@ -1,11 +1,11 @@
 {
   "date": "2026-05-04",
-  "messages": 19966,
+  "messages": 22042,
   "unique_authors": 358,
-  "reactions_total": 1784,
-  "attachments": 1115,
+  "reactions_total": 2011,
+  "attachments": 1196,
   "channel_activity": {
-    "🔸morimens-game-chat": 6856,
+    "🔸morimens-game-chat": 8932,
     "🔸綜合討論": 3058,
     "🔸阵容构建": 19,
     "🔸晒卡分享": 7,
@@ -73,6 +73,12 @@
     "Arc 2 team help": 3
   },
   "hourly_activity": {
+    "18": 485,
+    "19": 648,
+    "20": 513,
+    "21": 514,
+    "22": 418,
+    "23": 644,
     "6": 868,
     "7": 1085,
     "8": 857,
@@ -85,23 +91,16 @@
     "15": 975,
     "16": 961,
     "17": 899,
-    "18": 270,
     "0": 608,
     "1": 860,
     "2": 1061,
     "3": 1110,
     "4": 802,
-    "5": 502,
-    "22": 190,
-    "23": 227,
-    "20": 71,
-    "21": 114,
-    "19": 274
+    "5": 502
   },
   "message_types": {
-    "0": 3272,
-    "19": 1726,
-    "20": 2
+    "0": 1259,
+    "19": 817
   },
   "top_reacted_messages": [
     {
@@ -119,6 +118,14 @@
       "author": "lurenjiao",
       "reactions": 14,
       "channel": "氪金玩家和老玩家是否已经成为游戏前进的阻力？"
+    },
+    {
+      "id": "1500952756486406175",
+      "channel_id": "1170692781216378960",
+      "content": "who's wheel is fin of sorrow anyways",
+      "author": "nofiuwu",
+      "reactions": 13,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1500822132567969912",
@@ -193,6 +200,14 @@
       "channel": "🔸general-chat"
     },
     {
+      "id": "1500972912989962502",
+      "channel_id": "1170692781216378960",
+      "content": "I put it next to this other Lensbait one",
+      "author": "legendaryredz",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1500671090618400969",
       "channel_id": "1170692781216378960",
       "content": "Shld I pull this ?",
@@ -233,36 +248,20 @@
       "channel": "🔸general-chat"
     },
     {
+      "id": "1500974874368278720",
+      "channel_id": "1170692781216378960",
+      "content": "I've come to the conclusion that I prefer ultrash to aquatrash.",
+      "author": "badmoon_rising",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1500904391144636599",
       "channel_id": "1170692781216378960",
       "content": "https://cdn.discordapp.com/attachments/1370662343612039249/1396950555188002847/t",
       "author": "tnimreppep",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1500661259769745418",
-      "channel_id": "1170692781216378960",
-      "content": "drew Casiah earlier today. Spinning a wheel like every day and drawing whatever ",
-      "author": "underplayer5794",
-      "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1500709870129909791",
-      "channel_id": "1131839817982947429",
-      "content": "好色喔\n校貓3p",
-      "author": "ass191044",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1500733869295538208",
-      "channel_id": "1131839817982947429",
-      "content": "大混池值得抽嗎@@",
-      "author": "rembrandtblanc",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
     }
   ]
 }

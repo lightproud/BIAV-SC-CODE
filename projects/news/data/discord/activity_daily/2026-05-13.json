@@ -1,43 +1,45 @@
 {
   "date": "2026-05-13",
-  "messages": 8374,
+  "messages": 9068,
   "unique_authors": 353,
-  "reactions_total": 737,
-  "attachments": 470,
+  "reactions_total": 771,
+  "attachments": 513,
   "channel_activity": {
-    "🔸綜合討論": 1362,
+    "🔸綜合討論": 1372,
+    "🔸한국어-채팅방": 20,
+    "🔸русский-канал": 300,
+    "🔸canal-español": 124,
+    "🔸canal-português": 362,
+    "🔸lore-chat": 35,
+    "🔸team-building": 536,
+    "🔸general-chat": 2083,
+    "🔸邀请码互助┊swap-invitation-codes": 16,
+    "🔸game-question": 1306,
+    "🔸机器人命令┊bot-commands": 53,
+    "Possibility for a gender-neutral keeper?": 5,
+    "✅「已回答」请问这收集进度包含啥了？？？": 7,
+    "Saya collab and future plan": 3,
+    "相位吐槽完了，现在吐槽深潜当下的分数计算机制有够烂的": 20,
+    "V2.5.1 全新唤醒体✦沙耶┊New Awakener✦Saya": 807,
+    "三星通關思路求解": 5,
     "🔸阵容构建": 326,
     "🔸剧情交流": 2,
     "🔸欢乐梗图": 2,
     "🔸日本語チャンネル": 6,
-    "🔸한국어-채팅방": 17,
     "🔸deutscher-chatraum": 43,
-    "🔸русский-канал": 237,
     "🔸phòng-chat-tiếng-việt": 175,
-    "🔸canal-español": 111,
-    "🔸canal-português": 306,
     "🔸ruang-obrolan-indonesia": 951,
     "🔸ห้องสนทนาภาษาไทย": 80,
     "🔸traphase": 249,
-    "🔸lore-chat": 33,
-    "🔸team-building": 392,
-    "🔸general-chat": 1909,
-    "🔸邀请码互助┊swap-invitation-codes": 13,
-    "🔸game-question": 1266,
     "🔸游戏问题": 4,
-    "🔸机器人命令┊bot-commands": 49,
     "弥萨格校友号码本5.0": 3,
     "至2.1版本全角色暱稱綽號一覽": 8,
     "摸鱼-黑衣服": 4,
     "【生贺】🥳🥳🥳": 1,
     "達芙黛爾最終法則": 2,
-    "Possibility for a gender-neutral keeper?": 2,
     "阿拉克涅相關劇情繁中翻譯「你妳不分」": 2,
     "Arc 2 Chapter 5 OST is missing from Phonograph.": 2,
     "How do i find the content i've yet to clear?": 8,
-    "✅「已回答」请问这收集进度包含啥了？？？": 6,
-    "Saya collab and future plan": 1,
-    "相位吐槽完了，现在吐槽深潜当下的分数计算机制有够烂的": 19,
     "💭「處理中」再衍化未受到造成的狂氣提高效果加成的問題": 2,
     "More Mods for this Discord please": 2,
     "Fearsome bear": 2,
@@ -46,15 +48,18 @@
     "Morimens New Player Handbook by Cheri [V2.4 Game Guide]": 1,
     "【English Translation】Opinions Collection": 2,
     "V2.5.1 花田碎梦┊Dream Fragments in Dandelion Field": 101,
-    "V2.5.1 全新唤醒体✦沙耶┊New Awakener✦Saya": 634,
     "✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration": 14,
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 4,
-    "三星通關思路求解": 3,
     "選擇建議": 1,
     "Do I pull arachne?": 6,
     "Hello hello hi, is this team good?": 5
   },
   "hourly_activity": {
+    "19": 403,
+    "23": 175,
+    "20": 240,
+    "21": 82,
+    "22": 161,
     "0": 176,
     "1": 623,
     "2": 431,
@@ -73,15 +78,11 @@
     "15": 97,
     "16": 250,
     "17": 585,
-    "18": 1237,
-    "19": 367
+    "18": 1237
   },
   "message_types": {
-    "0": 6262,
-    "19": 2101,
-    "23": 3,
-    "20": 6,
-    "4": 2
+    "0": 510,
+    "19": 184
   },
   "top_reacted_messages": [
     {
@@ -101,28 +102,12 @@
       "channel": "pickman :)"
     },
     {
-      "id": "1503963901044461688",
-      "channel_id": "1503963901044461688",
-      "content": "wanted to draw Pickman for a while after reading his pdive  <:Daffodil_Calm:1468",
-      "author": "bluepomander",
-      "reactions": 12,
-      "channel": "pickman :)"
-    },
-    {
       "id": "1503975223005806704",
       "channel_id": "1131839817982947429",
       "content": "不愧是我",
       "author": "vgvfvffcc",
       "reactions": 10,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1504013105427124266",
-      "channel_id": "1504013105427124266",
-      "content": "​Fearsome bear",
-      "author": "a275",
-      "reactions": 10,
-      "channel": "Fearsome bear"
     },
     {
       "id": "1504013105427124266",
@@ -155,14 +140,6 @@
       "author": "navirecorbeau",
       "reactions": 8,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1504130433967718590",
-      "channel_id": "1504130433967718590",
-      "content": "I doubt something like this can even be added so late into the game, but I do th",
-      "author": "glitzy_x",
-      "reactions": 8,
-      "channel": "Possibility for a gender-neutral keeper?"
     },
     {
       "id": "1504130433967718590",
@@ -243,6 +220,30 @@
       "author": "ponponnyaru",
       "reactions": 6,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1504264942616973394",
+      "channel_id": "1131839817982947429",
+      "content": "<:pray:1356053116260454534>",
+      "author": "0.0._.0_0.",
+      "reactions": 5,
+      "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1504252433583570944",
+      "channel_id": "1300659662311526512",
+      "content": "codigo nuevo?",
+      "author": "jhonny365",
+      "reactions": 4,
+      "channel": "🔸canal-español"
+    },
+    {
+      "id": "1504239656089161900",
+      "channel_id": "1503356878804226169",
+      "content": "Likely a variety of reasons, Saya no Uta was one of the first Lovecraftian horro",
+      "author": "rileybou",
+      "reactions": 4,
+      "channel": "Saya collab and future plan"
     }
   ]
 }

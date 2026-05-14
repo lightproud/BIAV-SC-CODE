@@ -1,10 +1,11 @@
 {
   "date": "2026-05-05",
-  "messages": 13173,
+  "messages": 16097,
   "unique_authors": 301,
-  "reactions_total": 984,
-  "attachments": 440,
+  "reactions_total": 1208,
+  "attachments": 539,
   "channel_activity": {
+    "🔸morimens-game-chat": 2924,
     "🔸阵容构建": 40,
     "菜雞四小強玩家的抱怨之旅new": 4,
     "✅「已回答」氪金玩家和老玩家是否已经成为游戏前进的阻力？": 2,
@@ -55,21 +56,21 @@
     "Need some advice with my team lineup...": 7
   },
   "hourly_activity": {
+    "0": 781,
+    "1": 621,
+    "2": 772,
+    "3": 686,
+    "4": 661,
+    "5": 753,
+    "6": 593,
+    "7": 921,
+    "8": 1504,
     "20": 345,
     "23": 276,
     "22": 55,
     "19": 601,
     "21": 60,
     "18": 1030,
-    "0": 114,
-    "1": 491,
-    "2": 560,
-    "3": 306,
-    "4": 242,
-    "5": 548,
-    "6": 223,
-    "7": 773,
-    "8": 1111,
     "9": 1060,
     "10": 651,
     "11": 425,
@@ -81,8 +82,8 @@
     "17": 340
   },
   "message_types": {
-    "19": 1,
-    "0": 10
+    "0": 1963,
+    "19": 961
   },
   "top_reacted_messages": [
     {
@@ -116,6 +117,14 @@
       "author": "einta11",
       "reactions": 10,
       "channel": "🔸team-building"
+    },
+    {
+      "id": "1501017406544281632",
+      "channel_id": "1170692781216378960",
+      "content": "man i love my fat spider",
+      "author": "noire_2",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1501303874042986506",
@@ -164,6 +173,14 @@
       "author": "z8567657",
       "reactions": 8,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1501143452623310948",
+      "channel_id": "1170692781216378960",
+      "content": "theyre still f2p \nf2p = forced 2 pay",
+      "author": "fibrinogen",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1501154335566987294",
@@ -226,22 +243,6 @@
       "channel_id": "1131839817982947429",
       "content": "而且我不想看男角色的狂热繁衍剧情",
       "author": "peter191974",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501149096956661791",
-      "channel_id": "1131839817982947429",
-      "content": "~~答 ： 被清空貢獻的老登~~",
-      "author": "cameliia._.",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501151831823482943",
-      "channel_id": "1131839817982947429",
-      "content": "~~大家自己開討論串 做個個人傳~~",
-      "author": "nemu_s_t_a_r",
       "reactions": 6,
       "channel": "🔸綜合討論"
     }
