@@ -5886,6 +5886,41 @@
       "title": "对不起，我不是你想的那个人类",
       "time": "2026-05-14T07:08:41+00:00",
       "downloaded_at": "2026-05-14T09:30:04.489383+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/c1f3596c9d2d65d7b7562b1dd0367650764daf2a.jpg": {
+      "filename": "bilibili_e70f216f2d3c5f32.jpg",
+      "source": "bilibili",
+      "title": "视觉小说冰山图：沙耶之歌源自老虚真实经历？废案乙女游戏中寻找失传歌曲 ？幻影坦克起源于galgame？【视觉小说冰山图2：第一部分】",
+      "time": "2026-05-14T10:00:00+00:00",
+      "downloaded_at": "2026-05-14T11:46:41.585090+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/7507757add53ad46acf6d3c4f78f2656a686b2bb.jpg": {
+      "filename": "bilibili_bb68454a782625e1.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】沙耶登场！大杯还是小杯？新角色沙耶技能组简评！",
+      "time": "2026-05-14T11:14:13+00:00",
+      "downloaded_at": "2026-05-14T11:46:42.188256+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/c6d6834d2562863cfeb3c061f09fb5c2c39c7bd1.jpg": {
+      "filename": "bilibili_d484e56b6cd5f198.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】超维混沌共生+切割+衰竭钥令低配融灾禁区3-5",
+      "time": "2026-05-14T10:17:58+00:00",
+      "downloaded_at": "2026-05-14T11:46:43.415046+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/f07c442b8fb34e689fd0a400b0935c760018eaa3.jpg": {
+      "filename": "bilibili_41707f61789c589b.jpg",
+      "source": "bilibili",
+      "title": "［忘却前夜］融灾禁区3-5，0启鸟兄弟大战大狗嚼",
+      "time": "2026-05-14T09:55:49+00:00",
+      "downloaded_at": "2026-05-14T11:46:44.298896+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/570c89f589e3add42032d48d3127f931236c995a.jpg": {
+      "filename": "bilibili_0d0a9b967d8e0485.jpg",
+      "source": "bilibili",
+      "title": "童年逆天GAL神作 沙耶之歌 学习版 免费下载",
+      "time": "2026-05-14T11:28:18+00:00",
+      "downloaded_at": "2026-05-14T11:46:45.610794+00:00"
     }
   },
   "failed": {
@@ -8313,6 +8348,46 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-14T06:18:17.662652+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/7507757add53ad46acf6d3c4f78f2656a686b2bb.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T11:46:42.488985+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/c6d6834d2562863cfeb3c061f09fb5c2c39c7bd1.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T11:46:42.789697+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/f07c442b8fb34e689fd0a400b0935c760018eaa3.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T11:46:44.599703+00:00"
+    },
+    "https://preview.redd.it/y9gykf0qy21h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=0a6d73b3963d154b195b111f91e8f4db0e94cd61": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T11:46:46.174528+00:00"
+    },
+    "https://preview.redd.it/oo24bnfty21h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=f01f617103205a94ac72784eb05a152d026e7077": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T11:46:46.549617+00:00"
+    },
+    "https://preview.redd.it/hu94z030j21h1.png?width=140&amp;height=107&amp;auto=webp&amp;s=60bba1008784a1a2b3edead3d274a5c8024eebd9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T11:46:46.924623+00:00"
+    },
+    "https://preview.redd.it/3n52yrf0w11h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=3a9a5352617e4b30a63b4e344ca7d34a87cd62a3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T11:46:47.298990+00:00"
+    },
+    "https://external-preview.redd.it/b7StCZtrw_on6Dp6qakLZWT0wAO9srrLbLEEinDcCHc.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=027737f8597d5ce95d4abfaa9cb241bae3a2a20d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T11:46:47.844224+00:00"
     }
   },
   "archived": []

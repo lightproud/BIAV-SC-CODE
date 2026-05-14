@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-14T09:30:03.097604+00:00",
+  "collected_at": "2026-05-14T11:46:40.041562+00:00",
   "source": "google_play",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "google_play",
@@ -121,6 +121,16 @@
       "summary": "wow. echt gut.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=de",
       "author": "Andreas S",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-05-13T11:07:30",
+      "lang": "it",
+      "title": "[Google Play 好评] ★5 Ci sono sicuramente tanti giochi di cart",
+      "summary": "Ci sono sicuramente tanti giochi di carte e io non li ho provati tutti. nonstante questo gioco sia stato tra le mie prime esperienze, sono felicemente deliziato dal godorioso gamplay, dallo stile grafico, dalla storia, da più o meno tutto. In realtà l'italiano c'è però diciamo che la lingua conta relativamente. il gioco è incredibile, già da subito è diventato quello con più ore sul mio telefono, anche i pull sono generosi, non spendendo una lira puoi decisamente fare esperienza. veramente bello",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it",
+      "author": "Aleksandr",
       "engagement": 0
     }
   ]
