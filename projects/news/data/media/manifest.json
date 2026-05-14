@@ -5865,6 +5865,20 @@
       "title": "[忘却前夜]5.11融灾4-5助战诞墨创飞法洛思",
       "time": "2026-05-13T03:37:33+00:00",
       "downloaded_at": "2026-05-13T22:59:42.691317+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/70f294c0fa5edea94cf0fab81ac56a2712b72dd3.jpg": {
+      "filename": "bilibili_3579216dd4b33ef4.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]拉蒙娜：不知道为啥小医生和沙耶打起来了（AI小剧场）",
+      "time": "2026-05-14T03:44:55+00:00",
+      "downloaded_at": "2026-05-14T06:18:17.361824+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/305893e45ceabb51ea2146123fc52aa8c3da54c8.jpg": {
+      "filename": "bilibili_c2142bd0a72d1b90.jpg",
+      "source": "bilibili",
+      "title": "和沙耶的匹配度100%",
+      "time": "2026-05-13T14:05:28+00:00",
+      "downloaded_at": "2026-05-14T06:18:18.123647+00:00"
     }
   },
   "failed": {
@@ -8287,6 +8301,11 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-13T22:59:42.992141+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/70f294c0fa5edea94cf0fab81ac56a2712b72dd3.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T06:18:17.662652+00:00"
     }
   },
   "archived": []
