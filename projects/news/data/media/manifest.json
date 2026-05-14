@@ -5935,6 +5935,20 @@
       "title": "[Morimens] Saya's Pre Release Kit Review : Caro Support A to S tier. Divine Caro.",
       "time": "2026-05-14T12:28:45.126656+00:00",
       "downloaded_at": "2026-05-14T13:31:38.799682+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/e2294f82840151a39ea882890cbd9425e01d9f03.jpg": {
+      "filename": "bilibili_0087e8f840468697.jpg",
+      "source": "bilibili",
+      "title": "[忘却前夜]四分钟带你了解，沙耶技能前瞻，咋说呢，基础200狂气是个硬伤，羽种算是一大特色吧，命轮挺不错的加一点算力上限",
+      "time": "2026-05-14T15:54:27+00:00",
+      "downloaded_at": "2026-05-14T16:08:06.311204+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/3fb24fe26fd39e93d9f81446289cbcb438a21af0.jpg": {
+      "filename": "bilibili_375749b395e7b784.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】融灾425留念(5.11)",
+      "time": "2026-05-14T13:48:23+00:00",
+      "downloaded_at": "2026-05-14T16:08:08.343250+00:00"
     }
   },
   "failed": {
@@ -8402,6 +8416,41 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-14T11:46:47.844224+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/e2294f82840151a39ea882890cbd9425e01d9f03.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T16:08:04.949694+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/3fb24fe26fd39e93d9f81446289cbcb438a21af0.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T16:08:08.644195+00:00"
+    },
+    "https://preview.redd.it/or9jc87cz31h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d792abf8abbce970d0936b1045deb331a029d8f0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T16:08:09.002930+00:00"
+    },
+    "https://preview.redd.it/vl213nu0b41h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=dd811940826b8b5dfab72e4625009b9162efd499": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T16:08:09.331903+00:00"
+    },
+    "https://preview.redd.it/r57huyckv31h1.png?width=140&amp;height=80&amp;auto=webp&amp;s=e37642ed60d27213dcc414c34d3fcfe45c44f35e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T16:08:09.658529+00:00"
+    },
+    "https://preview.redd.it/3d023xwn741h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=b26e9eda7f0adeaba6c6e567b5c12c2367b26d4b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T16:08:09.985175+00:00"
+    },
+    "https://preview.redd.it/r81mp6icy31h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d76e08c34f4b53d70f6f07ada026e3c2553e30cb": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T16:08:10.313785+00:00"
     }
   },
   "archived": []
