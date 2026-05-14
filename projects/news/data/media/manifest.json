@@ -5977,6 +5977,13 @@
       "title": "[DC] morimensstaff03@🔸活动资讯┊event-information: 感谢大家热情的参与，我们收到了很多特别棒的作品！  经过了多轮评选后，诞生了最终的获奖名单：  ✦ 奖励会在",
       "time": "2026-05-14T10:56:00.703000+00:00",
       "downloaded_at": "2026-05-14T20:26:44.522473+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/f261ac8c7e50b0b51d79000e5e8686a70bf39027.jpg": {
+      "filename": "bilibili_38a3e5e96c8b1e6e.jpg",
+      "source": "bilibili",
+      "title": "沙耶专辅莫斯?，先看看沙耶尚未降临的莫斯，1t容灾5-5，出伤640w",
+      "time": "2026-05-14T21:36:58+00:00",
+      "downloaded_at": "2026-05-14T22:03:59.420995+00:00"
     }
   },
   "failed": {
@@ -8499,6 +8506,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-14T20:26:45.526027+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/f261ac8c7e50b0b51d79000e5e8686a70bf39027.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-14T22:03:59.721932+00:00"
     }
   },
   "archived": []
