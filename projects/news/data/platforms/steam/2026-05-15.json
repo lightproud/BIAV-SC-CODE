@@ -1,8 +1,8 @@
 {
   "date": "2026-05-15",
-  "archived_at": "2026-05-15T02:05:14.855967+00:00",
+  "archived_at": "2026-05-15T06:26:38.482703+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -108,6 +108,21 @@
       "review": "o",
       "timestamp_created": 1778802419,
       "playtime_forever": 378
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-15T01:36:13+00:00",
+      "lang": "english",
+      "title": "[正面] fun game",
+      "summary": "fun game",
+      "url": "https://steamcommunity.com/profiles/76561198386514091/recommended/3052450",
+      "author": "76561198386514091",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "fun game",
+      "timestamp_created": 1778808973,
+      "playtime_forever": 1882
     }
   ]
 }
