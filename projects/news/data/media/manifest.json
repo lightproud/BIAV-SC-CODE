@@ -5991,6 +5991,27 @@
       "title": "Saya Kit Preview - Morimens",
       "time": "2026-05-14T23:55:51.927623+00:00",
       "downloaded_at": "2026-05-14T23:58:49.542062+00:00"
+    },
+    "https://i1.hdslb.com/bfs/archive/1f1bdbddff1f4aecab5979933007aad0fcec8017.jpg": {
+      "filename": "bilibili_c06087fc6459545c.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】漫谈：沙耶和繁育血肉的设计思路",
+      "time": "2026-05-15T03:31:15+00:00",
+      "downloaded_at": "2026-05-15T06:26:33.656447+00:00"
+    },
+    "https://i0.hdslb.com/bfs/archive/270ca903acea4cc8d204e472a30abb0be38be471.jpg": {
+      "filename": "bilibili_46e65e462046e13f.jpg",
+      "source": "bilibili",
+      "title": "忘却前夜联动角色沙耶前瞻分析——神血肉拉完了",
+      "time": "2026-05-15T05:20:06+00:00",
+      "downloaded_at": "2026-05-15T06:26:35.628412+00:00"
+    },
+    "https://i2.hdslb.com/bfs/archive/b5dcf1894457c5129619b046bd04e8a266fd7114.jpg": {
+      "filename": "bilibili_f4e131b2f9f66a15.jpg",
+      "source": "bilibili",
+      "title": "第十话 禁忌实验",
+      "time": "2026-05-14T17:50:30+00:00",
+      "downloaded_at": "2026-05-15T06:26:38.109955+00:00"
     }
   },
   "failed": {
@@ -8533,6 +8554,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-14T23:58:50.117391+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/1f1bdbddff1f4aecab5979933007aad0fcec8017.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T06:26:33.957358+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/270ca903acea4cc8d204e472a30abb0be38be471.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T06:26:34.258259+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/b5dcf1894457c5129619b046bd04e8a266fd7114.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T06:26:38.410984+00:00"
     }
   },
   "archived": []
