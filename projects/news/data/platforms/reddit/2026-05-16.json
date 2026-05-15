@@ -1,8 +1,8 @@
 {
   "date": "2026-05-16",
-  "archived_at": "2026-05-15T22:49:47.949128+00:00",
+  "archived_at": "2026-05-15T23:47:20.155796+00:00",
   "source": "reddit",
-  "item_count": 18,
+  "item_count": 22,
   "items": [
     {
       "source": "reddit",
@@ -225,6 +225,54 @@
       "summary": "I love this game. I hope more people will discover Morimens and fall in love with it like I did.  &#32; submitted by &#32;  /u/Linasera   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1te8w86/light_asked_me_to_make_a_video_about_something/",
       "author": "u//u/Linasera",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-15T23:32:05+00:00",
+      "lang": "en",
+      "title": "Can't buy things through the Steam PC version [SOLVED]",
+      "summary": "For the longest time I couldn&#39;t buy anything in the shop through the Steam version of Morimens. If I clicked something on the store it would just hang FOREVER and if I tried to click again it would tell me to wait. No amount of waiting would do anything. Well after a lot of troubleshooting the issue was very simple. I had to turn on Steam&#39;s in-game overlay in TWO places. Place 1:  Open Steam desktop app Click the &quot;Steam&quot; name in the top left corner of the window Go to Settings &gt; In Game Toggle ON &quot;Enable Steam Overlay while in-game&quot;  Place 2:  Go to your Steam Library Right click Morimens &gt; Properties &gt; General Toggle ON &quot;Enable the Steam Overlay while in-game&quot;  When I was complaining to a friend they told me to share this to Reddit in case anyone else runs into the same issue. Apparently some other games have a pop-up/banner that will tell players to turn on Steam&#39;s in-game overlay if they can&#39;t see the purchase page, but Morimens does not have this tip. I hope that they implement some sort of message in the future! It could capture a bit more income for them!  &#32; submitted by &#32;  /u/PeppermintBee   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tecue6/cant_buy_things_through_the_steam_pc_version/",
+      "author": "/u/PeppermintBee",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-15T23:22:40+00:00",
+      "lang": "en",
+      "title": "Disjointed 24h banners + paid banner (Last post pinky promise)",
+      "summary": "Basically, what I wrote on the 2nd image. It&#39;s mildly inconvenient for me, is all lol. Was wondering about other peoples&#39; thoughts.   &#32; submitted by &#32;  /u/somerandomname8879   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tecm7v/disjointed_24h_banners_paid_banner_last_post/",
+      "author": "/u/somerandomname8879",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/xvb3tp4ywd1h1.jpg?width=140&amp;height=42&amp;auto=webp&amp;s=e7b37a0ceb74ad56721461d5fe66e06b5e3e854b",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-15T23:32:05+00:00",
+      "lang": "en",
+      "title": "Can't buy things through the Steam PC version [SOLVED]",
+      "summary": "For the longest time I couldn&#39;t buy anything in the shop through the Steam version of Morimens. If I clicked something on the store it would just hang FOREVER and if I tried to click again it would tell me to wait. No amount of waiting would do anything. Well after a lot of troubleshooting the issue was very simple. I had to turn on Steam&#39;s in-game overlay in TWO places. Place 1:  Open Steam desktop app Click the &quot;Steam&quot; name in the top left corner of the window Go to Settings &gt; In Game Toggle ON &quot;Enable Steam Overlay while in-game&quot;  Place 2:  Go to your Steam Library Right click Morimens &gt; Properties &gt; General Toggle ON &quot;Enable the Steam Overlay while in-game&quot;  When I was complaining to a friend they told me to share this to Reddit in case anyone else runs into the same issue. Apparently some other games have a pop-up/banner that will tell players to turn on Steam&#39;s in-game overlay if they can&#39;t see the purchase page, but Morimens does not have this tip. I hope that they implement some sort of message in the future! It could capture a bit more income for them!  &#32; submitted by &#32;  /u/PeppermintBee   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tecue6/cant_buy_things_through_the_steam_pc_version/",
+      "author": "u//u/PeppermintBee",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-15T23:22:40+00:00",
+      "lang": "en",
+      "title": "Disjointed 24h banners + paid banner (Last post pinky promise)",
+      "summary": "Basically, what I wrote on the 2nd image. It&#39;s mildly inconvenient for me, is all lol. Was wondering about other peoples&#39; thoughts.   &#32; submitted by &#32;  /u/somerandomname8879   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tecm7v/disjointed_24h_banners_paid_banner_last_post/",
+      "author": "u//u/somerandomname8879",
       "engagement": 0
     }
   ]

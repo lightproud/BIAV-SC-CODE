@@ -8785,6 +8785,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-15T21:51:30.908659+00:00"
+    },
+    "https://preview.redd.it/xvb3tp4ywd1h1.jpg?width=140&amp;height=42&amp;auto=webp&amp;s=e7b37a0ceb74ad56721461d5fe66e06b5e3e854b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T23:47:20.086065+00:00"
     }
   },
   "archived": []
