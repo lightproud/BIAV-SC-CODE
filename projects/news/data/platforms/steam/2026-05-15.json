@@ -1,8 +1,8 @@
 {
   "date": "2026-05-15",
-  "archived_at": "2026-05-14T23:58:50.189128+00:00",
+  "archived_at": "2026-05-15T02:05:14.855967+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -93,6 +93,21 @@
       "review": "good",
       "timestamp_created": 1778795118,
       "playtime_forever": 55
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-14T23:46:59+00:00",
+      "lang": "english",
+      "title": "[正面] o",
+      "summary": "o",
+      "url": "https://steamcommunity.com/profiles/76561199874101141/recommended/3052450",
+      "author": "76561199874101141",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "o",
+      "timestamp_created": 1778802419,
+      "playtime_forever": 378
     }
   ]
 }
