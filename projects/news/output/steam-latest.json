@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-15T19:18:30.970896+00:00",
+  "collected_at": "2026-05-15T20:53:07.860223+00:00",
   "source": "steam",
   "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-15T19:09:23+00:00",
+      "lang": "spanish",
+      "title": "[正面] chi",
+      "summary": "chi",
+      "url": "https://steamcommunity.com/profiles/76561199196128173/recommended/3052450",
+      "author": "76561199196128173",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "chi",
+      "timestamp_created": 1778872163,
+      "playtime_forever": 335
+    },
     {
       "source": "steam",
       "time": "2026-05-15T12:23:59+00:00",
@@ -107,21 +122,6 @@
       "review": "good",
       "timestamp_created": 1778795118,
       "playtime_forever": 55
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-14T19:36:11+00:00",
-      "lang": "german",
-      "title": "[正面] It's basically FGO with a Hoyoverse UI set in a Lo...",
-      "summary": "It's basically FGO with a Hoyoverse UI set in a Lovecraft-ish universe. Feels like a port from mobile, but it's alright. As a F2P game, recommended.",
-      "url": "https://steamcommunity.com/profiles/76561198077506853/recommended/3052450",
-      "author": "76561198077506853",
-      "engagement": 0,
-      "language": "german",
-      "voted_up": true,
-      "review": "It's basically FGO with a Hoyoverse UI set in a Lovecraft-ish universe. Feels like a port from mobile, but it's alright. As a F2P game, recommended.",
-      "timestamp_created": 1778787371,
-      "playtime_forever": 488
     }
   ]
 }
