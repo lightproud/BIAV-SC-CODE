@@ -1,22 +1,52 @@
 {
-  "collected_at": "2026-05-15T13:30:00.688588+00:00",
+  "collected_at": "2026-05-15T15:58:57.148580+00:00",
   "source": "steam",
   "item_count": 8,
   "items": [
     {
       "source": "steam",
-      "time": "2026-05-14T13:43:51+00:00",
-      "lang": "swedish",
-      "title": "[正面] Fun little deck-building game. If you like Reverse...",
-      "summary": "Fun little deck-building game. If you like Reverse: 1999 and any Lovecraftian themes, check this one out.",
-      "url": "https://steamcommunity.com/profiles/76561198144171116/recommended/3052450",
-      "author": "76561198144171116",
-      "engagement": 1,
-      "language": "swedish",
+      "time": "2026-05-15T12:23:59+00:00",
+      "lang": "czech",
+      "title": "[正面]",
+      "summary": "",
+      "url": "https://steamcommunity.com/profiles/76561199273567655/recommended/3052450",
+      "author": "76561199273567655",
+      "engagement": 0,
+      "language": "czech",
       "voted_up": true,
-      "review": "Fun little deck-building game. If you like Reverse: 1999 and any Lovecraftian themes, check this one out.",
-      "timestamp_created": 1778766231,
-      "playtime_forever": 1500
+      "review": "",
+      "timestamp_created": 1778847839,
+      "playtime_forever": 756
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-15T12:21:17+00:00",
+      "lang": "koreana",
+      "title": "[正面] 진짜 인생겜 꼭 해보셈",
+      "summary": "진짜 인생겜 꼭 해보셈",
+      "url": "https://steamcommunity.com/profiles/76561199788992881/recommended/3052450",
+      "author": "76561199788992881",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "진짜 인생겜 꼭 해보셈",
+      "timestamp_created": 1778847677,
+      "playtime_forever": 2363
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-15T11:54:56+00:00",
+      "lang": "schinese",
+      "title": "[负面] 快跑，别玩，在开始骗氪了，数值越来越膨胀，周年的轮换池子从角色和专武分开抽变成了角色和专武一起抽，游...",
+      "summary": "快跑，别玩，在开始骗氪了，数值越来越膨胀，周年的轮换池子从角色和专武分开抽变成了角色和专武一起抽，游戏好起来了，又开始作妖了",
+      "url": "https://steamcommunity.com/profiles/76561198875712687/recommended/3052450",
+      "author": "76561198875712687",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "快跑，别玩，在开始骗氪了，数值越来越膨胀，周年的轮换池子从角色和专武分开抽变成了角色和专武一起抽，游戏好起来了，又开始作妖了",
+      "timestamp_created": 1778846096,
+      "playtime_forever": 47763
     },
     {
       "source": "steam",
@@ -92,36 +122,6 @@
       "review": "It's basically FGO with a Hoyoverse UI set in a Lovecraft-ish universe. Feels like a port from mobile, but it's alright. As a F2P game, recommended.",
       "timestamp_created": 1778787371,
       "playtime_forever": 488
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-14T14:40:15+00:00",
-      "lang": "english",
-      "title": "[正面] Slay the Spire but with anime waifus. What more do...",
-      "summary": "Slay the Spire but with anime waifus. What more do you want?\r\nSo far the game seems pretty solid with characters and mechanics that synergize pretty well with each other (you do have to read through the cards though, or you'll just be doing \"random bs go!\")\r\nThe story has me interested and, for once in a gacha game, the mc doesn't have amnesia.",
-      "url": "https://steamcommunity.com/profiles/76561198015068719/recommended/3052450",
-      "author": "76561198015068719",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Slay the Spire but with anime waifus. What more do you want?\r\nSo far the game seems pretty solid with characters and mechanics that synergize pretty well with each other (you do have to read through the cards though, or you'll just be doing \"random bs go!\")\r\nThe story has me interested and, for once in a gacha game, the mc doesn't have amnesia.",
-      "timestamp_created": 1778769615,
-      "playtime_forever": 1855
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-14T14:06:43+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩",
-      "summary": "好玩",
-      "url": "https://steamcommunity.com/profiles/76561199226192550/recommended/3052450",
-      "author": "76561199226192550",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩",
-      "timestamp_created": 1778767603,
-      "playtime_forever": 13632
     }
   ]
 }

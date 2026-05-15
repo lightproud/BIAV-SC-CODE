@@ -6026,6 +6026,13 @@
       "title": "【忘却前夜】YouTube配信お試し＋６章少しだけ",
       "time": "2026-05-15T13:27:07.060281+00:00",
       "downloaded_at": "2026-05-15T13:30:01.932273+00:00"
+    },
+    "https://i.ytimg.com/vi/vcESw24eqVQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDF3AZFSL_4m_Bqtc7llcEi7Ug8gg": {
+      "filename": "youtube_bb0e1cdec2f15024.jpg",
+      "source": "youtube",
+      "title": "How a Dying Game achieved Immortality",
+      "time": "2026-05-15T14:55:59.030489+00:00",
+      "downloaded_at": "2026-05-15T15:58:57.785365+00:00"
     }
   },
   "failed": {
@@ -8593,6 +8600,71 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-15T09:41:27.636577+00:00"
+    },
+    "https://preview.redd.it/68y3cj393a1h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=4ecc7df467420c7c2b41146018d570706bb1a275": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:58:58.162936+00:00"
+    },
+    "https://external-preview.redd.it/MWrKo2qghV3LfwQrZi1wTt6kotEW6AhD8f8A87nTuZ8.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=81eeb6a4350f4f1891b70593b14f5d7936ed5009": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:58:58.576340+00:00"
+    },
+    "https://preview.redd.it/5ffpgnvg9a1h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=17836bf2a2cd3836a18f416b82a491f890df3788": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:58:58.916074+00:00"
+    },
+    "https://preview.redd.it/7eflrmjf1b1h1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=04dc8b30a1530d815c875fe98e610f507fb4169f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:58:59.256947+00:00"
+    },
+    "https://preview.redd.it/1xhumg3eua1h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=c99526d9c81fee5517281749af02f2f55c91482a": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:58:59.600289+00:00"
+    },
+    "https://preview.redd.it/zi3um63n7a1h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=6bf50640e1ff45403cec02821a894933389c870b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:58:59.940734+00:00"
+    },
+    "https://preview.redd.it/125hbk9m3b1h1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=fd97c0275ad351912a48f2c7a4c936581d8d1396": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:59:00.280236+00:00"
+    },
+    "https://preview.redd.it/bnv9yf74ob1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=1d91b2eeaf9294f823bbc0d5dee4c146a071ca46": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:59:00.619710+00:00"
+    },
+    "https://preview.redd.it/mt20hqufkb1h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=8bc801da1b278e5bc9517334b457fb5fc23dcfdb": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:59:00.959954+00:00"
+    },
+    "https://preview.redd.it/3le3qbsglb1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=85545d650405a97c6c497ac1fc19c52576bef282": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:59:01.299417+00:00"
+    },
+    "https://preview.redd.it/b37rxoa2pa1h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=54a0efa3b254de8156ce6dcee70c998c840e9b7b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:59:01.640305+00:00"
+    },
+    "https://preview.redd.it/5rteiedwya1h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=b0bc9010e3ea1cdf4a1006073a74749254b0bce5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:59:01.981484+00:00"
+    },
+    "https://external-preview.redd.it/bHZ2YW13YXNwYTFoMeXkNik7kcbzEn5_07nB7HLCtX7ovcSD0kRnhv_ieTPl.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=0760ad46ac87228dae2a1af9bd438629c8abd934": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-15T15:59:02.327943+00:00"
     }
   },
   "archived": []
