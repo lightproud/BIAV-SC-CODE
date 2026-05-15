@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-15T22:49:47.614375+00:00",
+  "collected_at": "2026-05-15T23:47:19.394098+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -121,22 +121,7 @@
       "voted_up": true,
       "review": "fun game",
       "timestamp_created": 1778808973,
-      "playtime_forever": 1912
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-14T23:46:59+00:00",
-      "lang": "english",
-      "title": "[正面] o",
-      "summary": "o",
-      "url": "https://steamcommunity.com/profiles/76561199874101141/recommended/3052450",
-      "author": "76561199874101141",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "o",
-      "timestamp_created": 1778802419,
-      "playtime_forever": 378
+      "playtime_forever": 1972
     }
   ]
 }
