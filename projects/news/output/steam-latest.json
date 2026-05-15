@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-15T09:41:26.575648+00:00",
+  "collected_at": "2026-05-15T11:49:34.118450+00:00",
   "source": "steam",
-  "item_count": 7,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -16,7 +16,22 @@
       "voted_up": true,
       "review": "Fun little deck-building game. If you like Reverse: 1999 and any Lovecraftian themes, check this one out.",
       "timestamp_created": 1778766231,
-      "playtime_forever": 1320
+      "playtime_forever": 1410
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-15T10:29:15+00:00",
+      "lang": "koreana",
+      "title": "[正面] 크툴루 세계관을 중심으로 진행되는 스토리가 매력적인 게임.\n캐릭터 뽑기, 레벨업 재료 파밍...",
+      "summary": "크툴루 세계관을 중심으로 진행되는 스토리가 매력적인 게임.\n캐릭터 뽑기, 레벨업 재료 파밍, 덱 빌딩, 적당한 지능 플레이로 스테이지 돌파를 반복하며 재화 수급하는 레파토리임.\n가챠는 가끔 60뽑에 픽뚫 두 개라는 슬픈 확률을 보여주지만, 전반적으로 뽑기 재화 수급이 어려운 게임이 아니라서 맵다고는 할 수 없음.\n이벤트에서 넉넉히 재료 벌어둘 수 있고, 여러 개성 넘치는 캐릭터로 덱 빌딩하는 재미도 있으며 과금 없이 메인 스토리만으로도 충분히 즐길 수 있어서 추천!\n\n참고로 한국어 번역은 아직 부족하다고 느껴서 영어로도 원활한 플레이가 가능하다면 영어를 추천함.",
+      "url": "https://steamcommunity.com/profiles/76561199377290495/recommended/3052450",
+      "author": "76561199377290495",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "크툴루 세계관을 중심으로 진행되는 스토리가 매력적인 게임.\n캐릭터 뽑기, 레벨업 재료 파밍, 덱 빌딩, 적당한 지능 플레이로 스테이지 돌파를 반복하며 재화 수급하는 레파토리임.\n가챠는 가끔 60뽑에 픽뚫 두 개라는 슬픈 확률을 보여주지만, 전반적으로 뽑기 재화 수급이 어려운 게임이 아니라서 맵다고는 할 수 없음.\n이벤트에서 넉넉히 재료 벌어둘 수 있고, 여러 개성 넘치는 캐릭터로 덱 빌딩하는 재미도 있으며 과금 없이 메인 스토리만으로도 충분히 즐길 수 있어서 추천!\n\n참고로 한국어 번역은 아직 부족하다고 느껴서 영어로도 원활한 플레이가 가능하다면 영어를 추천함.",
+      "timestamp_created": 1778840955,
+      "playtime_forever": 2035
     },
     {
       "source": "steam",
