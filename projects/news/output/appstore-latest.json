@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-16T05:22:51.042808+00:00",
+  "collected_at": "2026-05-16T07:50:55.165169+00:00",
   "source": "appstore",
-  "item_count": 5,
+  "item_count": 6,
   "items": [
     {
       "source": "appstore",
@@ -52,6 +52,16 @@
       "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews",
       "author": "happophis",
       "engagement": 4
+    },
+    {
+      "source": "appstore",
+      "time": "2026-05-14T20:26:42-07:00",
+      "lang": "en",
+      "title": "Game always stuck halfway",
+      "summary": "Very good and unique game, but please fix the issue where the game always not responding halfway",
+      "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews",
+      "author": "Chros T",
+      "engagement": 3
     }
   ]
 }

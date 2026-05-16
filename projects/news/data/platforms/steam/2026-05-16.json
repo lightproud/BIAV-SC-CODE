@@ -1,8 +1,8 @@
 {
   "date": "2026-05-16",
-  "archived_at": "2026-05-16T05:22:51.355561+00:00",
+  "archived_at": "2026-05-16T07:50:55.533789+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "source": "steam",
@@ -213,6 +213,36 @@
       "review": "justo e história massa.",
       "timestamp_created": 1778896771,
       "playtime_forever": 5190
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T05:58:27+00:00",
+      "lang": "russian",
+      "title": "[正面] F2p frendly gacha with slay the spire like gamepla...",
+      "summary": "F2p frendly gacha with slay the spire like gameplay and good story",
+      "url": "https://steamcommunity.com/profiles/76561198067832929/recommended/3052450",
+      "author": "76561198067832929",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "F2p frendly gacha with slay the spire like gameplay and good story",
+      "timestamp_created": 1778911107,
+      "playtime_forever": 31149
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T05:09:46+00:00",
+      "lang": "english",
+      "title": "[正面] Pretty fun",
+      "summary": "Pretty fun",
+      "url": "https://steamcommunity.com/profiles/76561198358679876/recommended/3052450",
+      "author": "76561198358679876",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Pretty fun",
+      "timestamp_created": 1778908186,
+      "playtime_forever": 8692
     }
   ]
 }
