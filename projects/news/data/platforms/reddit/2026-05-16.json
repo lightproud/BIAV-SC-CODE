@@ -1,8 +1,8 @@
 {
   "date": "2026-05-16",
-  "archived_at": "2026-05-16T10:58:25.816198+00:00",
+  "archived_at": "2026-05-16T11:46:08.889922+00:00",
   "source": "reddit",
-  "item_count": 40,
+  "item_count": 43,
   "items": [
     {
       "source": "reddit",
@@ -482,6 +482,49 @@
       "url": "https://www.reddit.com/r/Morimens/comments/1tepy50/tawil_is_an_absolute_menace/",
       "author": "u//u/Navi_King",
       "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-16T09:42:15+00:00",
+      "lang": "en",
+      "title": "Standard realm banner - Guide",
+      "summary": "Hello, Angbak from discord here. With the recent influx of new players, I figured I&#39;ll do a guide on the standard realm banner and explain the pros and cons for each realm. You can also use this as a reference for the initial reroll banner. Do note that this is targeted at new players so I won&#39;t go indepth into the mechanics (e.g. Chaos double posse, alien generation on posse...) Standard limited units will be discussed on a separate post below: [Insert link] - pending Chaos Realm mechanics : Basically a mixer realm, you keep realms pure with bonus effects.  Goals: E3 nymph Good to have: Tawil, Hameln, Ryker, e3 Nautila Just a copy of: Karen, Pandia, Alva  Nymph  Role: Poison trigger, Poison applier, vuln/weak (costly) Breakpoint: E0 is.. fine. E3 for scaling on exalt poison Teamcomp: Poison comp Nautila Role: Counter support, Shield generation Breakpoint: E2 helps to keep her 3 cost down. E3 prevent fragile weak vuln. Otherwise just use E0 as +50% shield  Teamcomp: Counter team or Teams that need a boost in shields Pandia Role: Counter carry (weak), counter removal (niche) Breakpoint: E3 if you really want to use her as a carry, but she&#39;s not great Teamcomp: Counter team Karen Role: Deck thinner (2 cards retain in hand), Weakness applier, Arith generator support Breakpoint: E0 Teamcomp: Poison or Weakness applier or Teams that need Arith. Alva  Role: Vuln/some shielding/carry (bad)/Seal removal (niche)  Breakpoint: e0, you usually just use her for vuln or anti seal.  Team comp: Mouchette budget comps, specific chapters that want anti seal __________________________________________________________________________________________ Aqueour Realm mechanics: Tentacles. Blue stance - Generate 1 tentacle White stance - Shields  Red stance - 1 Tentacle slaps each time an attack is made. - 1 tentacle  Goals: E2 Caecus, e0 Celeste Good to have: Myriam, Tulu, Murphy, E3 Celeste, E3 Sanga, E2 goliath Just a copy of: Farros Caecus  Role: Counter Carry/Sustain  Breakp",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tep1k9/standard_realm_banner_guide/",
+      "author": "/u/Angbak94",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-16T09:25:19+00:00",
+      "lang": "en",
+      "title": "Clay Caecus WIP (OC) Gonna paint him soon",
+      "summary": "&#32; submitted by &#32;  /u/Samoglow   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1teor5n/clay_caecus_wip_oc_gonna_paint_him_soon/",
+      "author": "/u/Samoglow",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/mgweho0ywg1h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=594762c6ce22d359c9346e2ae0b6199ad6985f2e",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-16T10:32:13+00:00",
+      "lang": "en",
+      "title": "Tawil is an absolute menace",
+      "summary": "Man I love being able to ignore arithmetica harmony with keyflare  &#32; submitted by &#32;  /u/Navi_King   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tepy50/tawil_is_an_absolute_menace/",
+      "author": "/u/Navi_King",
+      "engagement": 0,
+      "media_url": "https://external-preview.redd.it/dWs1OWxpaHM4aDFoMZbnqKSrnLhdAlkP_FCdgE_YwSwOac2PnrRthnZO8CFr.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=3f229c793e855a7d09021629952748101d1546d5",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
     }
   ]
 }
