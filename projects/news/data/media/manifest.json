@@ -8873,6 +8873,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-16T17:48:43.459412+00:00"
+    },
+    "https://preview.redd.it/ui1c36u3fj1h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=88d76288f7c872b0d1f946cf96e3b56617b0c736": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-16T18:50:28.686559+00:00"
     }
   },
   "archived": []
