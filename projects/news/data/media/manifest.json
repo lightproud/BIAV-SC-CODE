@@ -8846,6 +8846,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-16T11:46:08.819905+00:00"
+    },
+    "https://preview.redd.it/7rl20piqsh1h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=7dac5e2ed5c86390410ec43dab13f0aeabae7633": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-16T12:59:18.072803+00:00"
     }
   },
   "archived": []
