@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-05-16T07:50:55.165169+00:00",
+  "updated_at": "2026-05-16T09:23:37.591099+00:00",
   "summary": "Discord 社区日报 (2026-05-15)；How a Dying Game achieved Immo；10 Things beginners NEED to do；[Morimens] 2026 Half Anni Over；[DC] morimensstaff06@🔸活动资讯┊eve。",
-  "sources_run": 1232,
+  "sources_run": 1218,
   "news": [
     {
       "title": "Discord 社区日报 (2026-05-15)",
@@ -21,11 +21,11 @@
     },
     {
       "title": "How a Dying Game achieved Immortality",
-      "summary": "[17 hours ago] The insane story of how Morimens went from death's door to a masterpiece that shattered my heart. Play Morimens because I love ...",
+      "summary": "[18 hours ago] The insane story of how Morimens went from death's door to a masterpiece that shattered my heart. Play Morimens because I love ...",
       "source": "youtube",
-      "time": "2026-05-15T14:48:02.664638+00:00",
+      "time": "2026-05-15T15:20:46.874340+00:00",
       "url": "https://www.youtube.com/watch?v=vcESw24eqVQ",
-      "engagement": 9921,
+      "engagement": 10453,
       "is_hot": true,
       "author": "Gray Raven Radio",
       "tags": [
@@ -39,11 +39,11 @@
     },
     {
       "title": "10 Things beginners NEED to do in Morimens",
-      "summary": "[18 hours ago] These ten tips will help you get started in Morimens with a lot less confusion. ♢ TWITTER: https://twitter.com/GrayRavenRadio ...",
+      "summary": "[20 hours ago] These ten tips will help you get started in Morimens with a lot less confusion. ♢ TWITTER: https://twitter.com/GrayRavenRadio ...",
       "source": "youtube",
-      "time": "2026-05-15T13:48:02.664671+00:00",
+      "time": "2026-05-15T13:20:46.874541+00:00",
       "url": "https://www.youtube.com/watch?v=gMNxwddLt-s",
-      "engagement": 2618,
+      "engagement": 2776,
       "is_hot": false,
       "author": "Linasera",
       "tags": [
@@ -57,11 +57,11 @@
     },
     {
       "title": "[Morimens] 2026 Half Anni Overview : The most predatory and greedy anniversary event yet?!",
-      "summary": "[6 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "summary": "[7 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "source": "youtube",
-      "time": "2026-05-16T01:48:02.664470+00:00",
+      "time": "2026-05-16T02:20:46.874508+00:00",
       "url": "https://www.youtube.com/watch?v=QsDhTomGGbI",
-      "engagement": 783,
+      "engagement": 973,
       "is_hot": false,
       "author": "Flares117",
       "tags": [
@@ -651,6 +651,28 @@
       "platform_region": "global"
     },
     {
+      "title": "[负面] 快跑，别玩，在开始骗氪了，数值越来越膨胀，周年的轮换池子从角色和专武分开抽变成了角色和专武一起抽，游...",
+      "summary": "快跑，别玩，在开始骗氪了，数值越来越膨胀，周年的轮换池子从角色和专武分开抽变成了角色和专武一起抽，游戏好起来了，又开始作妖了",
+      "source": "steam_review",
+      "time": "2026-05-15T11:54:56+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198875712687/recommended/3052450",
+      "engagement": 1,
+      "is_hot": false,
+      "author": "76561198875712687",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 47769,
+        "votes_up": 1,
+        "timestamp_created": 1778846096
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "[Google Play 好评] ★5 Я смог зайти на аккаунт и играть, но для",
       "summary": "Я смог зайти на аккаунт и играть, но для этого приходится включать VPN и выключать сразу, когда загрузится, а иначе не заходит. Раньше без VPN работал. В остальном всё хорошо, только русский немного корявый и текст выглядывает. В остальном всё отлично, интересно играть, награды щедрые, персонажей легко получить, с прокачкой нет никаких проблем, персонажи — отдельное искусство, они все прекрасны, очень красивые и интересные, надеюсь, что игра будет дальше развиваться и становится всё интереснее",
       "source": "google_play",
@@ -662,6 +684,458 @@
       "tags": [],
       "lang": "ru",
       "platform_region": "ru"
+    },
+    {
+      "title": "Light asked me to make a video about something close to my heart. Morimens' comeback from EoS moved me deeply, so here's a video about it that I researched to the best of my ability. I wasn't there for it at the time, but I hope I captured it well.",
+      "summary": "I love this game. I hope more people will discover Morimens and fall in love with it like I did.  &#32; submitted by &#32;  /u/Linasera   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T20:54:45+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1te8w86/light_asked_me_to_make_a_video_about_something/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Linasera",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://external-preview.redd.it/xVDBEfw96p_ftw6iDqcrw_44n3uTbJnHSztMPKhcheE.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=5ff06b92b7faf4eb113dd5385d5f1d62f02e9152",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "New code: HXET-MDBW-CWPE",
+      "summary": "Setting =&gt; Account =&gt; Redemption Code   &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-16T09:07:01+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1teofo9/new_code_hxetmdbwcwpe/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/DrExluxk",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/d8jo5omotg1h1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=23e6d39f19b630d6fbf4b3524ff9514110053bea",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "New morimens creator - Linasera",
+      "summary": "Giving a shout out since it&#39;s rare that we get new CC   &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T13:57:59+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tdx69l/new_morimens_creator_linasera/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Angbak94",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://external-preview.redd.it/MWrKo2qghV3LfwQrZi1wTt6kotEW6AhD8f8A87nTuZ8.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=81eeb6a4350f4f1891b70593b14f5d7936ed5009",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Newbie here!",
+      "summary": "I just started playing the game and unsure what to do and how to build teams. What team comp can I form from my current awakeners for story? Here are my characters:  &#32; submitted by &#32;  /u/Somnivore-   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-16T04:32:08+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tejbua/newbie_here/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Somnivore-",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/crkw54vmgf1h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=cd3a012a04e1a9d2ce17197c40344d755bf7fa07",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "I just had to do it",
+      "summary": "As of the next rerun, Ghelot will be the only unit in the game not receiving any sole-character rerun (no character+wheel, no choose-one-unit banner bs) for more than an entire year. No other character has ever had a rerun dry spell for more than 9 months and yet she&#39;ll be going for 13 months by the time the next triple rerun end, and that&#39;s not even counting if they would even rerun her then. As to why BiAV seems to single her out, well, that&#39;s for all of you to speculate among yourselves.  &#32; submitted by &#32;  /u/Fillandkrizt   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T13:50:19+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tdwz20/i_just_had_to_do_it/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Fillandkrizt",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/7eflrmjf1b1h1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=04dc8b30a1530d815c875fe98e610f507fb4169f",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Discord, New code HXET-MDBW-CWPE",
+      "summary": "🎁 DC 43000守密人达成礼 / DC 43000 Keepers Achievement Gift 《Morimens》DC Global Channel reached 43000 Keepers🎉 ! Thank you to every keeper for your love and company. You can copy the redemption code below and go to [Settings] → [Account] → [Redemption Code] to receive it~ 🔹 Redemption Code: HXET-MDBW-CWPE 🔹 Gift Package Content: Silver × 500, Pure Core × 5  &#32; submitted by &#32;  /u/KelseySyntax   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-16T09:07:19+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1teofv8/discord_new_code_hxetmdbwcwpe/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/KelseySyntax",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/cgvf21kqtg1h1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=d3a920c51a18097f7520527f9776f30b4629805a",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "How do we feel about the recent design direction in Morimens?",
+      "summary": "I think there has been a definite shift in design philosophy recently in Morimens and wanted to take a moment to open a discussion about what I feel are two major shifts as well as the root cause. I would love to see what other players think as well! Realm Mechanics With Propagation Caro being confirmed that makes for a 3rd realm rework further homogenizing us with the JP version. The last 2 Aequor units have been divine Aequor and I&#39;m not sure if we are likely to see a return to our original realm mechanics in any future releases. For now it is easy to keep the old realm mechanics if they are prefered, but as more units get added especially good supports it will become harder to see our original realms shine through which I feel a bit sad about. Propagation Caro is significantly weaker than normal Caro imo and I miss the flexibility of the original Ultra. Being only able to interact with realm mechanics once every 3 turns feels a bit sad. The realm changes are essentially what the JP version has for its base realms now. Weak and Vuln I&#39;ll provide a list of every arc 2 awakener in their order of release and their ability to provide weak/vuln first before discussing. Gdoll [Chorus]: Weak and Vuln (E1) Card Clementine [Chorus]: None Corposant [Warden]: Weak (E2) Card and Vuln (E3) Exalt Castor [Warden]: Weak (E0) Card Doresain [Assault]: Vuln (E0) Card Kathigu-Ra [Assault]: None Pickman [Chorus]: (E0) A chance of pulling weak or vuln from relics from a card Pollux [Assault]: None in base kit, his portrait can allow vulnerable application from the 3rd play of a Sacred Heart. Gmurphy [Chorus]: None Mouchette [Assault]: None Xu [Chorus]: None Vortex [Assault]: None Arachne [Chorus]: None Saya [Chorus/Warden]: None The last 6 awakeners released have completely lacked any way to apply weak and vulnerable which is notable since only 5/15 (33%) of the Arc 1 Awakeners (Tulu, Lily, Sorrel, Wanda, and Ghelot) lacked any means of applying Weak, Vuln, or both and every Ch",
+      "source": "reddit",
+      "time": "2026-05-15T16:58:56+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1te29h8/how_do_we_feel_about_the_recent_design_direction/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Dracozion",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/53avoq2lrb1h1.png?width=140&amp;height=27&amp;auto=webp&amp;s=14a59eac5c68d14e6322b5a6ecee92d896c6f3ec",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Disjointed 24h banners + paid banner (Last post pinky promise)",
+      "summary": "Basically, what I wrote on the 2nd image. It&#39;s mildly inconvenient for me, is all lol. Was wondering about other peoples&#39; thoughts.   &#32; submitted by &#32;  /u/somerandomname8879   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T23:22:40+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tecm7v/disjointed_24h_banners_paid_banner_last_post/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/somerandomname8879",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/xvb3tp4ywd1h1.jpg?width=140&amp;height=42&amp;auto=webp&amp;s=e7b37a0ceb74ad56721461d5fe66e06b5e3e854b",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Can't buy things through the Steam PC version [SOLVED]",
+      "summary": "For the longest time I couldn&#39;t buy anything in the shop through the Steam version of Morimens. If I clicked something on the store it would just hang FOREVER and if I tried to click again it would tell me to wait. No amount of waiting would do anything. Well after a lot of troubleshooting the issue was very simple. I had to turn on Steam&#39;s in-game overlay in TWO places. Place 1:  Open Steam desktop app Click the &quot;Steam&quot; name in the top left corner of the window Go to Settings &gt; In Game Toggle ON &quot;Enable Steam Overlay while in-game&quot;  Place 2:  Go to your Steam Library Right click Morimens &gt; Properties &gt; General Toggle ON &quot;Enable the Steam Overlay while in-game&quot;  When I was complaining to a friend they told me to share this to Reddit in case anyone else runs into the same issue. Apparently some other games have a pop-up/banner that will tell players to turn on Steam&#39;s in-game overlay if they can&#39;t see the purchase page, but Morimens does not have this tip. I hope that they implement some sort of message in the future! It could capture a bit more income for them!  &#32; submitted by &#32;  /u/PeppermintBee   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T23:32:05+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tecue6/cant_buy_things_through_the_steam_pc_version/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/PeppermintBee",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "V2.5.1 Version Outlook - Part I",
+      "summary": "&#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T10:28:13+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tds8kj/v251_version_outlook_part_i/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/DrExluxk",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/68y3cj393a1h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=4ecc7df467420c7c2b41146018d570706bb1a275",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Ch 8 boss plan?",
+      "summary": "Okay this is purely for the fun of it but also a cry for help because I died to that boss 3 times and that third time was with 4 emergency gnoses! I need to know what happens next in the story, so I came up with this plan. Also I think utilizing the character builder thingie will help a lot.  &#32; submitted by &#32;  /u/Fast-Let4291   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T18:02:47+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1te43yz/ch_8_boss_plan/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Fast-Let4291",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/5rm2hx1ccc1h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=b6a542488e6dd1a4eac7aa50c9c9953025beaea5",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "V2.5.1 Version Outlook - Part III",
+      "summary": "&#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T11:03:03+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tdsy7m/v251_version_outlook_part_iii/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/DrExluxk",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/5ffpgnvg9a1h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=17836bf2a2cd3836a18f416b82a491f890df3788",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Banner PSA re-post",
+      "summary": "So in case people weren&#39;t around for the last round of &quot;one in a million&quot; banners, here&#39;s a re-upload of my PSA. Unless I&#39;m severely misunderstanding it, &quot;Echoing Wishes&quot; seems to just be the &quot;One in a Million&quot; banners rebranded lol. Please have a bit of caution when interacting with this banner type.  An example of a not so positive scenario: (Starting with no Ghelot, but an E3 Ghelot wheel)  If I were to try and go from having no Ghelot, to an E3 Ghelot on this banner type, I&#39;ll likely get a bunch of weapon copies above E3 that&#39;ll be a very marginal increase for my account at best. As well as potentially losing 700 pulls in the process. Meanwhile on her usual banner this would take 360 pulls at most. An example of a positive pull scenario: (You really want both the awakener and the wheel anyway, and have the funds)  In 180 pulls this banner could give you 1 character and 2 of their wheels for example. If you wanted those off their usual banners, they could set you back 210 pulls, so that&#39;s a 30 pull discount. However, this does mean that you really need to potentially want 2 wheels for each copy of them or vice versa. (So their wheel is good and not yet past E1 for example, and you would 100% roll for wheel dupes anyway in the future, and you can miss those funds right now is basically the one and only scenario in which this banner is actually cheaper rather than more costly).  Happy gambling everybody! Oh also, the devs seem to have verified that the pity carries over, so don&#39;t mind the &quot;this day&quot; wording from the dev post.   &#32; submitted by &#32;  /u/somerandomname8879   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T13:11:26+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tdvyks/banner_psa_repost/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/somerandomname8879",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/1xhumg3eua1h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=c99526d9c81fee5517281749af02f2f55c91482a",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "What teams would you recommend me to build for d-zone 1-4?",
+      "summary": "&#32; submitted by &#32;  /u/Explosivepenny   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-16T04:45:22+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tejl22/what_teams_would_you_recommend_me_to_build_for/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Explosivepenny",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/hxgdoe8wif1h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=e0fd322436a621a987ece3ce71cc9a03639c6d14",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Is using timeloop to get BoTT+12 faster wise?",
+      "summary": "Note that I will never be whaling to try and get a limited wheel to +12.   &#32; submitted by &#32;  /u/Melodic_Respect7751   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T18:35:22+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1te51ar/is_using_timeloop_to_get_bott12_faster_wise/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Melodic_Respect7751",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/17edv0b2ic1h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=b4900b8eb5057781d683a6eaf79dff0cc4d023c7",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "She's not strong enough. Maybe one more buffer will get her to T0",
+      "summary": "&#32; submitted by &#32;  /u/WinterSoldier3713   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-16T01:11:36+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tef3jt/shes_not_strong_enough_maybe_one_more_buffer_will/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/WinterSoldier3713",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://external-preview.redd.it/Ynk4GxIPNU1fWaOrC73I6k3phRPWrWgjGGHDh00EScA.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=4efa770bdd03d37ec6274e3dab7a5cdd0b0f197d",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "V2.5.1 Version Outlook - Part II",
+      "summary": "&#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T10:52:48+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tdsqdu/v251_version_outlook_part_ii/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/DrExluxk",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/zi3um63n7a1h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=6bf50640e1ff45403cec02821a894933389c870b",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "New player - what to do?",
+      "summary": "I just watched the new Gray Ravens Radio video that talks about Morimens and its insane defeat against EoS. Seeing how this game defied the odds made me want to support and play it. As a newbie, what should I know? From what I know about a lot of turn based gachas is that pulling units is usually strategic - however I don&#39;t know if that will still apply after May 18th. What does daily gameplay look like? Is there an endgame? I wanna hear players perspectives and such, since this game looks absolutely beautiful. Also can&#39;t wait for Saya 💚  &#32; submitted by &#32;  /u/chiyuyu   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T17:53:35+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1te3uda/new_player_what_to_do/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/chiyuyu",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Arc 2 RANDOM banner + P2W banner visual overviews",
+      "summary": "If you&#39;re like me and your brain refuses information unless it&#39;s visual, then here you go. Just keep in mind that for the P2W banner I didn&#39;t also include all the wheel visuals, sorry about that (I think this banner will have a rather limited demographic anyway). The random banner doesn&#39;t have standard awakeners included, so every single pity will be a limited, and the arc 2 limiteds are good (the only harsh exception being Corpo&#39;s wheel ig). Due to this starting on the 18th, do not expect Saya in here.  The P2W banner seems like it won&#39;t count towards the spending event. The price has doubled from previous versions, but the rewards have tripled. Though it seems that this time there won&#39;t be a gnosis included in each pack. These paid bundles won&#39;t drop until the 30th, making me wonder if Saya might be included in them. Though I&#39;m unclear on what category she is, so me placing her in chorus is merely speculative.   &#32; submitted by &#32;  /u/somerandomname8879   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T15:37:33+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tdzygo/arc_2_random_banner_p2w_banner_visual_overviews/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/somerandomname8879",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/mt20hqufkb1h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=8bc801da1b278e5bc9517334b457fb5fc23dcfdb",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "My Current Traphase Tierlist.",
+      "summary": "Disclaimers: - I do not own all characters and can only evaluate them based off of fighting them. - Characters can go up or down depending on skill level, experience and matchups and RNG I think Vortice can go up. Arachne&#39;s wheel. and skill can cause Vortice&#39;s skill cards to become nukes. Shameless plug: https://www.youtube.com/@Oatslowskillgaming  &#32; submitted by &#32;  /u/WinterSoldier3713   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T15:39:23+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1te00cu/my_current_traphase_tierlist/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/WinterSoldier3713",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/3le3qbsglb1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=85545d650405a97c6c497ac1fc19c52576bef282",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Since when could you get coloured names?",
+      "summary": "&#32; submitted by &#32;  /u/Upstairs-Escape5778   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T19:43:10+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1te6xru/since_when_could_you_get_coloured_names/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Upstairs-Escape5778",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/5v769ga6uc1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=cbe95bf74875dbd83e4b24d52cac26818d5314c4",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Hi, I'm a new player and I need some help or advice.",
+      "summary": "I only started playing today and I&#39;m already at level 20 with 10,000 silver and 25 luminous cores. I started playing because I love Saya no Uta. I heard that to max out a character, I need to pull 16 copies of the same character. How much do I need to gather to at least have a chance of maxing out Saya?  &#32; submitted by &#32;  /u/Onishoujo   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-16T08:32:45+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tentv8/hi_im_a_new_player_and_i_need_some_help_or_advice/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Onishoujo",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Arc 2 Kaleido Banner",
+      "summary": "hey guys, I&#39;m a f2p player. I pulled on the current arc1 kaleido banner and got some pretty decent characters like tawil, hameln, ryker with their wod also other characters and wheels. I&#39;m a new player and I don&#39;t have any arc2 character except gdoll. So I was wondering would it be ok to pull on this banner or should I just skip this?   &#32; submitted by &#32;  /u/Ok_Neck3675   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T14:00:32+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tdx8ry/arc_2_kaleido_banner/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Ok_Neck3675",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/125hbk9m3b1h1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=fd97c0275ad351912a48f2c7a4c936581d8d1396",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "source": "steam_review",
+      "time": "2026-05-16T08:46:48+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198778901485/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198778901485",
+      "tags": [
+        "schinese"
+      ],
+      "language": "schinese",
+      "metadata": {
+        "voted_up": true,
+        "playtime_forever": 1019,
+        "votes_up": 0,
+        "timestamp_created": 1778921208
+      },
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
+      "title": "[负面] 差點被沙耶聯動騙到氪金了",
+      "summary": "差點被沙耶聯動騙到氪金了",
+      "source": "steam_review",
+      "time": "2026-05-16T08:21:54+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198404841260/recommended/3052450",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "76561198404841260",
+      "tags": [
+        "english"
+      ],
+      "language": "english",
+      "metadata": {
+        "voted_up": false,
+        "playtime_forever": 293,
+        "votes_up": 0,
+        "timestamp_created": 1778919714
+      },
+      "lang": "",
+      "platform_region": "global"
     },
     {
       "title": "[正面] F2p frendly gacha with slay the spire like gamepla...",
@@ -678,7 +1152,7 @@
       "language": "russian",
       "metadata": {
         "voted_up": true,
-        "playtime_forever": 31149,
+        "playtime_forever": 31220,
         "votes_up": 0,
         "timestamp_created": 1778911107
       },
@@ -857,28 +1331,6 @@
         "playtime_forever": 2395,
         "votes_up": 0,
         "timestamp_created": 1778847677
-      },
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
-      "title": "[负面] 快跑，别玩，在开始骗氪了，数值越来越膨胀，周年的轮换池子从角色和专武分开抽变成了角色和专武一起抽，游...",
-      "summary": "快跑，别玩，在开始骗氪了，数值越来越膨胀，周年的轮换池子从角色和专武分开抽变成了角色和专武一起抽，游戏好起来了，又开始作妖了",
-      "source": "steam_review",
-      "time": "2026-05-15T11:54:56+00:00",
-      "url": "https://steamcommunity.com/profiles/76561198875712687/recommended/3052450",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "76561198875712687",
-      "tags": [
-        "schinese"
-      ],
-      "language": "schinese",
-      "metadata": {
-        "voted_up": false,
-        "playtime_forever": 47769,
-        "votes_up": 0,
-        "timestamp_created": 1778846096
       },
       "lang": "",
       "platform_region": "global"
@@ -1089,67 +1541,7 @@
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
       "source": "weibo",
-      "time": "2026-05-16T07:48:15.125138+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
-      "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
-      "source": "weibo",
-      "time": "2026-05-16T07:48:15.137643+00:00",
-      "url": "https://m.weibo.cn/status/5297404375991444",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
-      "source": "weibo",
-      "time": "2026-05-16T07:48:15.153737+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "source": "weibo",
-      "time": "2026-05-16T07:48:15.165611+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
-      "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
-      "source": "weibo",
-      "time": "2026-05-16T07:48:15.190138+00:00",
+      "time": "2026-05-16T09:21:00.738502+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1164,7 +1556,67 @@
       "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
       "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
       "source": "weibo",
-      "time": "2026-05-16T07:48:15.201067+00:00",
+      "time": "2026-05-16T09:21:00.751132+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
+      "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
+      "source": "weibo",
+      "time": "2026-05-16T09:21:00.763603+00:00",
+      "url": "https://m.weibo.cn/status/5297404375991444",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "source": "weibo",
+      "time": "2026-05-16T09:21:00.780213+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "12758【投稿】忘却前夜。我主任",
+      "summary": "12758【投稿】忘却前夜。我主任",
+      "source": "weibo",
+      "time": "2026-05-16T09:21:00.804835+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
+      "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
+      "source": "weibo",
+      "time": "2026-05-16T09:21:00.816321+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1179,7 +1631,7 @@
       "title": "忘却前夜丨CP32调查现场观测回传\n\n致灵啡肽已补充至阈值的守密人：\n\n当这份加密回传被你解码时，弥萨格大学的校工们已身处风暴的中央。那里的摊位、灯光、人群..",
       "summary": "忘却前夜丨CP32调查现场观测回传\n\n致灵啡肽已补充至阈值的守密人：\n\n当这份加密回传被你解码时，弥萨格大学的校工们已身处风暴的中央。那里的摊位、灯光、人群......一切都被伪装得恰到好处，但融蚀从未停止蔓延，某种不可名状的存在正拖拽你靠近。\n\n我们相信，你早已为此行保有了足够配额的理智。请不 ...全文",
       "source": "weibo",
-      "time": "2026-05-16T07:48:15.211757+00:00",
+      "time": "2026-05-16T09:21:00.827409+00:00",
       "url": "https://m.weibo.cn/status/5293491384750074",
       "engagement": 0,
       "is_hot": false,
@@ -1194,22 +1646,7 @@
       "title": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
       "summary": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
       "source": "weibo",
-      "time": "2026-05-16T07:48:15.225787+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜打的最破防的一次，我眼睁睁看着那个BOSS的死亡抵抗堆到了11层，并且我每打掉一层就又出现一层，这是人能打的吗，还是因为我没抽鸟哥弟就打不过，我破防了",
-      "summary": "忘却前夜打的最破防的一次，我眼睁睁看着那个BOSS的死亡抵抗堆到了11层，并且我每打掉一层就又出现一层，这是人能打的吗，还是因为我没抽鸟哥弟就打不过，我破防了",
-      "source": "weibo",
-      "time": "2026-05-16T07:48:15.236168+00:00",
+      "time": "2026-05-16T09:21:00.842543+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1224,7 +1661,7 @@
       "title": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
       "summary": "忘却前夜 玩了三天想来问问配队推主线到第四章，纯血肉的队伍打起来有点吃力，想问问大佬们有没有更好的配队",
       "source": "weibo",
-      "time": "2026-05-16T07:48:15.246356+00:00",
+      "time": "2026-05-16T09:21:00.853880+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1239,8 +1676,23 @@
       "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
       "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
       "source": "weibo",
-      "time": "2026-05-16T07:48:15.256796+00:00",
+      "time": "2026-05-16T09:21:00.864778+00:00",
       "url": "https://m.weibo.cn/status/5294895855830265",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "之前给忘却前夜画的解禁了！！",
+      "summary": "之前给忘却前夜画的解禁了！！",
+      "source": "weibo",
+      "time": "2026-05-16T09:21:00.879502+00:00",
+      "url": "",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1254,7 +1706,22 @@
       "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
       "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
       "source": "weibo",
-      "time": "2026-05-16T07:48:15.270374+00:00",
+      "time": "2026-05-16T09:21:00.890062+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
+      "summary": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
+      "source": "weibo",
+      "time": "2026-05-16T09:21:00.901595+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1269,23 +1736,8 @@
       "title": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
       "summary": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
       "source": "weibo",
-      "time": "2026-05-16T07:48:15.281256+00:00",
+      "time": "2026-05-16T09:21:00.913264+00:00",
       "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜#忘却前夜#\n【校猫日志】前瞻：V2.5.1 胚胎融合变化\n前瞻：V2.5.1 胚胎融合变化\n\n我们计划在 V2.5.1带来几项胚胎融合调整，敬请注意：",
-      "summary": "忘却前夜#忘却前夜#\n【校猫日志】前瞻：V2.5.1 胚胎融合变化\n前瞻：V2.5.1 胚胎融合变化\n\n我们计划在 V2.5.1带来几项胚胎融合调整，敬请注意：\n\n- 胚胎融合会以数值显示而非百分比，普通血肉界域在胚胎融合达到 100 时生成 1 个「胚胎」到手中。\n- 阿格里帕指令卡「不耐的施舍」：胚胎融合翻 ...全文",
-      "source": "weibo",
-      "time": "2026-05-16T07:48:15.291989+00:00",
-      "url": "https://m.weibo.cn/status/5298520196122111",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -1299,7 +1751,7 @@
       "title": "忘却前夜 #忘却前夜#\n📜 V2.5.1 版本前瞻·上┊Version Outlook - Part Ⅰ┊버전 미리보기 · 상\n▎《忘却前夜》V2.5.1即将",
       "summary": "忘却前夜 #忘却前夜#\n📜 V2.5.1 版本前瞻·上┊Version Outlook - Part Ⅰ┊버전 미리보기 · 상\n▎《忘却前夜》V2.5.1即将开放！精彩资讯一网打尽！\n▎Morimens V2.5.1 is launching soon! Get all the exciting information at one place!\n▎모리멘스 V2.5.1이 곧 오픈됩니다! 흥미진진한 ...全文",
       "source": "weibo",
-      "time": "2026-05-16T07:48:15.306250+00:00",
+      "time": "2026-05-16T09:21:00.924825+00:00",
       "url": "https://m.weibo.cn/status/5298913005273802",
       "engagement": 0,
       "is_hot": false,
@@ -1324,6 +1776,19 @@
       "platform_region": "global"
     },
     {
+      "title": "New code: HXET-MDBW-CWPE",
+      "summary": "Setting =&gt; Account =&gt; Redemption Code   &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-16T09:07:01+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1teofo9/new_code_hxetmdbwcwpe/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/DrExluxk",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "New morimens creator - Linasera",
       "summary": "Giving a shout out since it&#39;s rare that we get new CC   &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
       "source": "reddit",
@@ -1337,14 +1802,14 @@
       "platform_region": "global"
     },
     {
-      "title": "I just had to do it",
-      "summary": "As of the next rerun, Ghelot will be the only unit in the game not receiving any sole-character rerun (no character+wheel, no choose-one-unit banner bs) for more than an entire year. No other character has ever had a rerun dry spell for more than 9 months and yet she&#39;ll be going for 13 months by the time the next triple rerun end, and that&#39;s not even counting if they would even rerun her then. As to why BiAV seems to single her out, well, that&#39;s for all of you to speculate among yourselves.  &#32; submitted by &#32;  /u/Fillandkrizt   [link] &#32; [comments]",
+      "title": "Discord, New code HXET-MDBW-CWPE",
+      "summary": "🎁 DC 43000守密人达成礼 / DC 43000 Keepers Achievement Gift 《Morimens》DC Global Channel reached 43000 Keepers🎉 ! Thank you to every keeper for your love and company. You can copy the redemption code below and go to [Settings] → [Account] → [Redemption Code] to receive it~ 🔹 Redemption Code: HXET-MDBW-CWPE 🔹 Gift Package Content: Silver × 500, Pure Core × 5  &#32; submitted by &#32;  /u/KelseySyntax   [link] &#32; [comments]",
       "source": "reddit",
-      "time": "2026-05-15T13:50:19+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tdwz20/i_just_had_to_do_it/",
+      "time": "2026-05-16T09:07:19+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1teofv8/discord_new_code_hxetmdbwcwpe/",
       "engagement": 0,
       "is_hot": false,
-      "author": "u//u/Fillandkrizt",
+      "author": "u//u/KelseySyntax",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1358,6 +1823,19 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/Somnivore-",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "I just had to do it",
+      "summary": "As of the next rerun, Ghelot will be the only unit in the game not receiving any sole-character rerun (no character+wheel, no choose-one-unit banner bs) for more than an entire year. No other character has ever had a rerun dry spell for more than 9 months and yet she&#39;ll be going for 13 months by the time the next triple rerun end, and that&#39;s not even counting if they would even rerun her then. As to why BiAV seems to single her out, well, that&#39;s for all of you to speculate among yourselves.  &#32; submitted by &#32;  /u/Fillandkrizt   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T13:50:19+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tdwz20/i_just_had_to_do_it/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Fillandkrizt",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1389,19 +1867,6 @@
       "platform_region": "global"
     },
     {
-      "title": "V2.5.1 Version Outlook - Part I",
-      "summary": "&#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-15T10:28:13+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tds8kj/v251_version_outlook_part_i/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/DrExluxk",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "Can't buy things through the Steam PC version [SOLVED]",
       "summary": "For the longest time I couldn&#39;t buy anything in the shop through the Steam version of Morimens. If I clicked something on the store it would just hang FOREVER and if I tried to click again it would tell me to wait. No amount of waiting would do anything. Well after a lot of troubleshooting the issue was very simple. I had to turn on Steam&#39;s in-game overlay in TWO places. Place 1:  Open Steam desktop app Click the &quot;Steam&quot; name in the top left corner of the window Go to Settings &gt; In Game Toggle ON &quot;Enable Steam Overlay while in-game&quot;  Place 2:  Go to your Steam Library Right click Morimens &gt; Properties &gt; General Toggle ON &quot;Enable the Steam Overlay while in-game&quot;  When I was complaining to a friend they told me to share this to Reddit in case anyone else runs into the same issue. Apparently some other games have a pop-up/banner that will tell players to turn on Steam&#39;s in-game overlay if they can&#39;t see the purchase page, but Morimens does not have this tip. I hope that they implement some sort of message in the future! It could capture a bit more income for them!  &#32; submitted by &#32;  /u/PeppermintBee   [link] &#32; [comments]",
       "source": "reddit",
@@ -1410,6 +1875,19 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/PeppermintBee",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "V2.5.1 Version Outlook - Part I",
+      "summary": "&#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-15T10:28:13+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tds8kj/v251_version_outlook_part_i/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/DrExluxk",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1558,6 +2036,19 @@
       "platform_region": "global"
     },
     {
+      "title": "Hi, I'm a new player and I need some help or advice.",
+      "summary": "I only started playing today and I&#39;m already at level 20 with 10,000 silver and 25 luminous cores. I started playing because I love Saya no Uta. I heard that to max out a character, I need to pull 16 copies of the same character. How much do I need to gather to at least have a chance of maxing out Saya?  &#32; submitted by &#32;  /u/Onishoujo   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-16T08:32:45+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tentv8/hi_im_a_new_player_and_i_need_some_help_or_advice/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Onishoujo",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "Arc 2 Kaleido Banner",
       "summary": "hey guys, I&#39;m a f2p player. I pulled on the current arc1 kaleido banner and got some pretty decent characters like tawil, hameln, ryker with their wod also other characters and wheels. I&#39;m a new player and I don&#39;t have any arc2 character except gdoll. So I was wondering would it be ok to pull on this banner or should I just skip this?   &#32; submitted by &#32;  /u/Ok_Neck3675   [link] &#32; [comments]",
       "source": "reddit",
@@ -1566,32 +2057,6 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/Ok_Neck3675",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "Consejos para mejorar esta composició?",
-      "summary": "Esta es una composición de critico,que he creado espero me den consejos para mejorarlas. El equipo es: tinc/jenkin/caecus/aurita y asi con estos personajes obtener la maxima tasa y daño critico posible, ya que con la keyflare rouse de jenkin es un 25% de tasa critica mas de forma permanente,mas un aumento de 15% de daño critico por cada vez que jenkin hace daño,mas la exalt de jenkin con un 66% de daño critico y la exalt de tinc con un 17% de tasa critica adicinional,y su carta de comando melodia distante que aumenta hasta un 45% la tasa critica,es esa carta que da escudo de tinc,eso mas las ruedas de destino que aportan con mas tasa y daño critico aun. Y para el sustain y defensa esta caecus que termina curando mucho,mas las cartas defensivas de tinc y sus debuff de fuerza,claro como soy un jugador algo nuevo probe este equipo en el tren acelerado para probar a nivel alto los personajes y ver como rinde todo,lo bueno es que con el turno extra puedo aumenta la cantidad de tentaculos y el daño de estos de forma gratia y si preocupaciones,cada 5 turnos,mas las posturas de estos para mas defensa,o daño y teniendo en cuenta que las cartas de aurita y su exalt escalan en daño de tentaculo,ademas de su carta principal. Observaciones: Me di cuenta que pude conseguir daños explosivos por algunos turnos y llege a conseguir 90% de tasa critica y 180% de daño critico aun que se puede conseguir aun mas ya que impacto de enjambre,aumenta mucho el daño critico segun la cantidad de golpe que tenga,pudiendo aumentar el daño critico hasta un 150% en 10 golpes asi que en cuanto a tasa y dsño critico se puede consefuir numero mas grandes aun,como tengo todo a nivel bajo solo consegui eso y quise comparte este equipo por si a alguien le sirve,ayuda o interesa muchas gracias por su atencion.  &#32; submitted by &#32;  /u/finn1090   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-15T18:13:15+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1te4exm/consejos_para_mejorar_esta_composició/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/finn1090",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "Team Comp for Beginners Advice?",
-      "summary": "I wanted to get into a gacha and have heard excellent things about Morimens so I decided to pick it up about a month ago. I absolutely LOVE the game but I have no idea what I&#39;m doing as far as team comp goes. I&#39;ve pretty much exclusively pulled aqueor but I recently pulled Tawil who I&#39;ve heard is an excellent Awakener so I&#39;m trying to figure out how to expand my team comp. What staples am I missing, what should I be pulling, what should my team goals be? I&#39;m currently chapter 7 of the story.  https://preview.redd.it/6zjjqn3w8e1h1.png?width=1009&amp;format=png&amp;auto=webp&amp;s=402f0bcbd50d902ee68fbd787e71f118a0c1bc04  &#32; submitted by &#32;  /u/n_marshall7   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-16T00:27:00+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tee479/team_comp_for_beginners_advice/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/n_marshall7",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1608,66 +2073,6 @@
       "tags": [],
       "lang": "en",
       "platform_region": "global"
-    },
-    {
-      "title": "忘却前夜#忘却前夜#\n日服动态：",
-      "summary": "忘却前夜#忘却前夜#\n日服动态：",
-      "source": "weibo",
-      "time": "2026-05-16T07:49:04.566005+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "",
-      "platform_region": ""
-    },
-    {
-      "title": "忘却前夜\n问一下大家该怎么配对呀一直在乱玩",
-      "summary": "忘却前夜\n问一下大家该怎么配对呀一直在乱玩",
-      "source": "weibo",
-      "time": "2026-05-16T07:49:04.634885+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "",
-      "platform_region": ""
-    },
-    {
-      "title": "之前给忘却前夜画的解禁了！！",
-      "summary": "之前给忘却前夜画的解禁了！！",
-      "source": "weibo",
-      "time": "2026-05-16T07:49:04.655198+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "",
-      "platform_region": ""
-    },
-    {
-      "title": "全世界都来玩5771好吧 联动送角色本体和250抽",
-      "summary": "全世界都来玩5771好吧 联动送角色本体和250抽",
-      "source": "weibo",
-      "time": "2026-05-16T07:49:04.666171+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "",
-      "platform_region": ""
     },
     {
       "title": "忘却前夜FA まとめ①",
@@ -1823,19 +2228,6 @@
       "content_type": "image"
     },
     {
-      "title": "",
-      "summary": "",
-      "source": "pixiv",
-      "time": "2026-05-16T07:49:25.587747+00:00",
-      "url": "https://www.pixiv.net/artworks/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
       "title": "Kathigu-ra from Morimens",
       "summary": "",
       "source": "pixiv",
@@ -1854,10 +2246,23 @@
       "content_type": "image"
     },
     {
+      "title": "",
+      "summary": "",
+      "source": "pixiv",
+      "time": "2026-05-16T09:22:10.359844+00:00",
+      "url": "https://www.pixiv.net/artworks/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [],
+      "lang": "",
+      "platform_region": "global"
+    },
+    {
       "title": "망각전야)이겜 대체 한국에서 얼마나 벌어들인거냐 ㅋㅋㅋㅋ",
       "summary": "2.5주년 이벤트로 사야의 노래 콜라보가 떳는데이렇게 깔끔한 한국어 번역을 공지로 보게 될거라곤 생각도 못했다원래는 ai번역으...",
       "source": "ruliweb",
-      "time": "2026-05-16T07:49:34.842014+00:00",
+      "time": "2026-05-16T09:22:19.112024+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75197747",
       "engagement": 0,
       "is_hot": false,
@@ -1870,7 +2275,7 @@
       "title": "오 망각전야에 나오는 사야 예쁘군...",
       "summary": "예쁘다",
       "source": "ruliweb",
-      "time": "2026-05-16T07:49:34.842156+00:00",
+      "time": "2026-05-16T09:22:19.112169+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75191101",
       "engagement": 0,
       "is_hot": false,
@@ -2026,7 +2431,7 @@
       "title": "마비m)ai)딴 겜 커뮤에서 주운 프롬프트들을 써보았다",
       "summary": "Use the attached character only as an identity reference. DO NOT copy...",
       "source": "ruliweb",
-      "time": "2026-05-16T07:49:36.718632+00:00",
+      "time": "2026-05-16T09:22:21.142246+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75183110",
       "engagement": 0,
       "is_hot": false,
@@ -2104,7 +2509,7 @@
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
       "source": "stopgame",
-      "time": "2026-05-16T07:49:37.773713+00:00",
+      "time": "2026-05-16T09:22:21.877985+00:00",
       "url": "https://stopgame.ru/game/morimens",
       "engagement": 0,
       "is_hot": false,
@@ -2118,7 +2523,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-05-11T15:09:52+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS9ldTcAX6jcCMHh8eCHEwUOF8EiIW2IBG1qXa8Fplpd9tfqiWUcfcSAk9ZEej9Nm_OFn0r_elOG7r4BVU8rQSl2Tk-KMkIRGf-zkw_2ycZzrgecDSPfrhF3rBt2n1wzyfYiBjvUn_qyeGiyXt6pGpDhFrySLRVF3LLcCIGMp18dxFLSeDATrtd6woShj4H6p7heZtbg9yalFbXsSQE6cyLzRtmyIGw2VAg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=A64DC99B54DB93EE424412A8D008857B433B22E16A082192",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS9ldTcAX6jcCzK0NM4Y0t7vVA_gp_fpwilqXa8Fplpd9k34W_4t8B954sPZzl6DxT1ia856kG9DCKVa5P8VZ_8vkuv2P0pLJvwPtutSKr-kYmGIaAOe5M0HySa3sb98T6sMjeAGRg_VoEsv4AAhqe13mKj2qr6y8uybCt6AzPfI8EJz1FnJHrjEdE329MJiqWvfgqAYcpS0wZopLnIM5v3QSYTqT4eyLmA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=A6EBCB117242AF71353367DDEBC248B636DAC30B6A08374F",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -2131,7 +2536,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-05-11T15:09:52+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS9ldTcAX6jcC-YPKg66i--mF8EiIW2IBG1qXa8Fplpd9tfqiWUcfcSAk9ZEej9Nm_OFn0r_elOG7r4BVU8rQSl2Tk-KMkIRGf-zkw_2ycZzrgecDSPfrhF3rBt2n1wzyfQ6oJmhX0KgecgZoSiCZMj4T25tHD9W4K3tXqWEnW_hhUPlXyuVdIaJbYck4Q1iN1peZOK1JdJKhSKKmIwVBbfy00NVofL2iDw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=A64DD56AFF703944E8EFB9037A88EF49E91EE5506A082194",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS9ldTcAX6jcCCpZ9WrSuFo7VA_gp_fpwilqXa8Fplpd9k34W_4t8B954sPZzl6DxT1ia856kG9DCKVa5P8VZ_8vkuv2P0pLJvwPtutSKr-kYmGIaAOe5M0HySa3sb98T6vWD7QfKeg2Rg7zJj4larWra2wxq-leg-HAUdTP2WDnV4Q7DDAS4a3wEYpHi9EFEeVzhdGxjsIUr92WP58wI0rLzAjcIGepUqA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=A6EBD7C93A0BE43B7F782F94A0743FDE7F4159966A083750",
       "engagement": 0,
       "is_hot": false,
       "author": "",
