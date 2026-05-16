@@ -1,8 +1,8 @@
 {
   "date": "2026-05-16",
-  "archived_at": "2026-05-16T12:59:18.141794+00:00",
+  "archived_at": "2026-05-16T14:22:12.388571+00:00",
   "source": "steam",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "source": "steam",
@@ -273,6 +273,21 @@
       "review": "差點被沙耶聯動騙到氪金了",
       "timestamp_created": 1778919714,
       "playtime_forever": 293
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T12:47:42+00:00",
+      "lang": "schinese",
+      "title": "[负面] 新玩家不要入坑，入坑也不要充钱",
+      "summary": "新玩家不要入坑，入坑也不要充钱",
+      "url": "https://steamcommunity.com/profiles/76561198138477088/recommended/3052450",
+      "author": "76561198138477088",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "新玩家不要入坑，入坑也不要充钱",
+      "timestamp_created": 1778935662,
+      "playtime_forever": 1339
     }
   ]
 }
