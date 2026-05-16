@@ -1,8 +1,8 @@
 {
   "date": "2026-05-17",
-  "archived_at": "2026-05-16T21:42:20.288782+00:00",
+  "archived_at": "2026-05-16T22:39:00.549622+00:00",
   "source": "steam",
-  "item_count": 17,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -258,6 +258,21 @@
       "review": "Buen juego de cartas, gratis y buenos diseños. Las traducciones al español dejan bastante por desear pero bueno. Recomendable",
       "timestamp_created": 1778953535,
       "playtime_forever": 1354
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T21:13:36+00:00",
+      "lang": "schinese",
+      "title": "[负面] 校猫是傻逼",
+      "summary": "校猫是傻逼",
+      "url": "https://steamcommunity.com/profiles/76561199239910248/recommended/3052450",
+      "author": "76561199239910248",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "校猫是傻逼",
+      "timestamp_created": 1778966016,
+      "playtime_forever": 2873
     }
   ]
 }
