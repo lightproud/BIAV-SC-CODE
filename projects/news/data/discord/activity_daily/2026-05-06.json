@@ -1,10 +1,11 @@
 {
   "date": "2026-05-06",
-  "messages": 11483,
+  "messages": 16371,
   "unique_authors": 257,
-  "reactions_total": 873,
-  "attachments": 452,
+  "reactions_total": 1328,
+  "attachments": 627,
   "channel_activity": {
+    "🔸morimens-game-chat": 4888,
     "🔸綜合討論": 2142,
     "🔸阵容构建": 18,
     "🔸剧情交流": 34,
@@ -50,35 +51,35 @@
     "1501623598266187967": 1
   },
   "hourly_activity": {
-    "13": 580,
-    "14": 1047,
-    "15": 1019,
-    "16": 585,
+    "0": 496,
+    "1": 448,
+    "2": 281,
+    "3": 323,
+    "4": 356,
+    "5": 419,
+    "6": 792,
+    "7": 1090,
+    "8": 902,
+    "9": 754,
+    "10": 1046,
+    "11": 953,
+    "12": 1234,
+    "13": 928,
+    "14": 1484,
+    "15": 1520,
+    "16": 591,
     "17": 790,
     "18": 613,
     "19": 471,
     "21": 249,
     "22": 313,
     "23": 187,
-    "0": 299,
-    "1": 156,
-    "8": 568,
-    "9": 355,
-    "10": 578,
-    "20": 131,
-    "12": 703,
-    "5": 198,
-    "3": 171,
-    "4": 165,
-    "6": 478,
-    "7": 913,
-    "2": 210,
-    "11": 704
+    "20": 131
   },
   "message_types": {
-    "0": 842,
-    "19": 206,
-    "23": 1
+    "19": 1682,
+    "0": 3204,
+    "20": 2
   },
   "top_reacted_messages": [
     {
@@ -122,6 +123,14 @@
       "channel": "Pink fish"
     },
     {
+      "id": "1501554557153706086",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "princess.goth",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1501492604028715090",
       "channel_id": "1350058928020656178",
       "content": "Hi! Double checked with writers and we'll correct these on 05/08. We'll also fix",
@@ -162,6 +171,46 @@
       "channel": "🔸lore-chat"
     },
     {
+      "id": "1501437856755744779",
+      "channel_id": "1170692781216378960",
+      "content": "in all seriousness tho, it makes sense why Frosty likes blue\nIt IS a fun realm",
+      "author": "ahmedamr30",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1501547870099079168",
+      "channel_id": "1170692781216378960",
+      "content": "And then follows her around and beats up her dog.",
+      "author": "jadlithon",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1501558298644582480",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "bagels5899",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1501581381573148744",
+      "channel_id": "1170692781216378960",
+      "content": "new player, chapter 7 how does this look?",
+      "author": "enen",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1501613113173086398",
+      "channel_id": "1170692781216378960",
+      "content": "casiah denkt sie sei magierin aber konnte nicht einmal gehirn verrottung in ihre",
+      "author": "princess.goth",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1501726133455032460",
       "channel_id": "1501725001097936957",
       "content": "Agrippa <:Agrippa_Stare:1468259401189294150>",
@@ -192,54 +241,6 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501483589467111497",
-      "channel_id": "1131839817982947429",
-      "content": "~~什麼都發生了~~",
-      "author": "annabelle0868",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501488803406151731",
-      "channel_id": "1131839817982947429",
-      "content": "~~沒事管理員正名清~~",
-      "author": "annabelle0868",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501641156855857343",
-      "channel_id": "1300659662311526512",
-      "content": "Todo es culpa de <@645758482305253422> <@276521152245923840> y <@521775682578022",
-      "author": "salami_87",
-      "reactions": 5,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1501572919015247902",
-      "channel_id": "1326453763355185215",
-      "content": "I love how keeper has basically been adopted by Dexter as well\nmakes the chapter",
-      "author": "hallowednebulae",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1501642212679614546",
-      "channel_id": "1131839817982947429",
-      "content": "放心都過一年了肯定出個比神國上浮還要更逆天的",
-      "author": "ahuahuahua",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501529116954853416",
-      "channel_id": "1180850818509971466",
-      "content": "",
-      "author": "hon_ey0",
-      "reactions": 4,
-      "channel": "🔸相位对弈"
     }
   ]
 }

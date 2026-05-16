@@ -1,11 +1,11 @@
 {
   "date": "2026-05-05",
-  "messages": 21097,
+  "messages": 21209,
   "unique_authors": 301,
   "reactions_total": 1666,
-  "attachments": 726,
+  "attachments": 732,
   "channel_activity": {
-    "🔸morimens-game-chat": 7924,
+    "🔸morimens-game-chat": 8036,
     "🔸阵容构建": 40,
     "菜雞四小強玩家的抱怨之旅new": 4,
     "✅「已回答」氪金玩家和老玩家是否已经成为游戏前进的阻力？": 2,
@@ -56,6 +56,7 @@
     "Need some advice with my team lineup...": 7
   },
   "hourly_activity": {
+    "23": 449,
     "8": 1628,
     "9": 1403,
     "10": 1069,
@@ -71,7 +72,6 @@
     "20": 505,
     "21": 342,
     "22": 141,
-    "23": 337,
     "0": 781,
     "1": 621,
     "2": 772,
@@ -82,9 +82,8 @@
     "7": 921
   },
   "message_types": {
-    "19": 1728,
-    "0": 3271,
-    "46": 1
+    "19": 27,
+    "0": 85
   },
   "top_reacted_messages": [
     {
