@@ -1,8 +1,8 @@
 {
   "date": "2026-05-16",
-  "archived_at": "2026-05-16T07:50:55.533789+00:00",
+  "archived_at": "2026-05-16T09:23:39.780253+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -243,6 +243,36 @@
       "review": "Pretty fun",
       "timestamp_created": 1778908186,
       "playtime_forever": 8692
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T08:46:48+00:00",
+      "lang": "schinese",
+      "title": "[正面] 好玩",
+      "summary": "好玩",
+      "url": "https://steamcommunity.com/profiles/76561198778901485/recommended/3052450",
+      "author": "76561198778901485",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "好玩",
+      "timestamp_created": 1778921208,
+      "playtime_forever": 1019
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T08:21:54+00:00",
+      "lang": "english",
+      "title": "[负面] 差點被沙耶聯動騙到氪金了",
+      "summary": "差點被沙耶聯動騙到氪金了",
+      "url": "https://steamcommunity.com/profiles/76561198404841260/recommended/3052450",
+      "author": "76561198404841260",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "差點被沙耶聯動騙到氪金了",
+      "timestamp_created": 1778919714,
+      "playtime_forever": 293
     }
   ]
 }
