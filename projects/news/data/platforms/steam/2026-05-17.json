@@ -1,8 +1,8 @@
 {
   "date": "2026-05-17",
-  "archived_at": "2026-05-16T18:50:28.772881+00:00",
+  "archived_at": "2026-05-16T19:59:49.790179+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 17,
   "items": [
     {
       "source": "steam",
@@ -228,6 +228,36 @@
       "review": "Good game, I like the art style.",
       "timestamp_created": 1778947381,
       "playtime_forever": 230
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T18:36:07+00:00",
+      "lang": "english",
+      "title": "[正面] It's great! I wish the game a long life. Sadly, I...",
+      "summary": "It's great! I wish the game a long life. Sadly, I play too many gachas already so I just checked this one out. I will follow the story though. I'm waiting for the collab with Saya no Uta, because I love that visual novel.\r\n\r\n10/10, please do check it out.\r\n\r\nDo not feed off reading negative reviews or do not seek reasons not to play it. If it caught your eye, give it a try. It's a really good game, trust me.",
+      "url": "https://steamcommunity.com/profiles/76561198095220713/recommended/3052450",
+      "author": "76561198095220713",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "It's great! I wish the game a long life. Sadly, I play too many gachas already so I just checked this one out. I will follow the story though. I'm waiting for the collab with Saya no Uta, because I love that visual novel.\r\n\r\n10/10, please do check it out.\r\n\r\nDo not feed off reading negative reviews or do not seek reasons not to play it. If it caught your eye, give it a try. It's a really good game, trust me.",
+      "timestamp_created": 1778956567,
+      "playtime_forever": 194
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T17:45:35+00:00",
+      "lang": "spanish",
+      "title": "[正面] Buen juego de cartas, gratis y buenos diseños. Las...",
+      "summary": "Buen juego de cartas, gratis y buenos diseños. Las traducciones al español dejan bastante por desear pero bueno. Recomendable",
+      "url": "https://steamcommunity.com/profiles/76561198091050059/recommended/3052450",
+      "author": "76561198091050059",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Buen juego de cartas, gratis y buenos diseños. Las traducciones al español dejan bastante por desear pero bueno. Recomendable",
+      "timestamp_created": 1778953535,
+      "playtime_forever": 1354
     }
   ]
 }
