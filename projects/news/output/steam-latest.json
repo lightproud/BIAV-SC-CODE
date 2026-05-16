@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-16T01:57:47.074962+00:00",
+  "collected_at": "2026-05-16T05:22:51.042808+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -20,6 +20,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-05-16T03:38:05+00:00",
+      "lang": "spanish",
+      "title": "[正面] buen diseño de personajes",
+      "summary": "buen diseño de personajes",
+      "url": "https://steamcommunity.com/profiles/76561198791271964/recommended/3052450",
+      "author": "76561198791271964",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "buen diseño de personajes",
+      "timestamp_created": 1778902685,
+      "playtime_forever": 1565
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T01:59:31+00:00",
+      "lang": "brazilian",
+      "title": "[正面] justo e história massa.",
+      "summary": "justo e história massa.",
+      "url": "https://steamcommunity.com/profiles/76561198452679571/recommended/3052450",
+      "author": "76561198452679571",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "justo e história massa.",
+      "timestamp_created": 1778896771,
+      "playtime_forever": 5190
+    },
+    {
+      "source": "steam",
       "time": "2026-05-15T23:56:10+00:00",
       "lang": "english",
       "title": "[正面] It's just a fun and good game",
@@ -31,7 +61,7 @@
       "voted_up": true,
       "review": "It's just a fun and good game",
       "timestamp_created": 1778889370,
-      "playtime_forever": 4761
+      "playtime_forever": 4813
     },
     {
       "source": "steam",
@@ -91,7 +121,7 @@
       "voted_up": true,
       "review": "진짜 인생겜 꼭 해보셈",
       "timestamp_created": 1778847677,
-      "playtime_forever": 2391
+      "playtime_forever": 2395
     },
     {
       "source": "steam",
