@@ -8851,6 +8851,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-16T12:59:18.072803+00:00"
+    },
+    "https://preview.redd.it/nreg8aii0i1h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=42111bec0813db143a8e9a152606fa28032fb578": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-16T14:22:12.314283+00:00"
     }
   },
   "archived": []
