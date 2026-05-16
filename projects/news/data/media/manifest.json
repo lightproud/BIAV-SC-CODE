@@ -8868,6 +8868,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-16T16:47:28.002847+00:00"
+    },
+    "https://preview.redd.it/2ergl8ib9j1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=73e747019a4561009464c1d7224287e37ba16b49": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-16T17:48:43.459412+00:00"
     }
   },
   "archived": []

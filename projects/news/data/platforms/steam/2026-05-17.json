@@ -1,8 +1,8 @@
 {
   "date": "2026-05-17",
-  "archived_at": "2026-05-16T16:47:28.074040+00:00",
+  "archived_at": "2026-05-16T17:48:43.526167+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -198,6 +198,36 @@
       "review": "chi",
       "timestamp_created": 1778872163,
       "playtime_forever": 391
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T16:35:59+00:00",
+      "lang": "tchinese",
+      "title": "[正面] Steam版跟官網下載的帳號無法互通。角色、命輪抽本體，啟靈每月在商店換，都能到三啟。每十等敵人數值...",
+      "summary": "Steam版跟官網下載的帳號無法互通。角色、命輪抽本體，啟靈每月在商店換，都能到三啟。每十等敵人數值會大幅提升，復活道具每日回一，可存五個，同一場使用無上限。有四隊可嘗試打蝕災，再借好友角色帶一隊，慢慢拿等級突破的道具。一定要升技能，技能沒升滿手感、傷害差距很大，前期賢者之石(技能突破道具)需謹慎使用。",
+      "url": "https://steamcommunity.com/profiles/76561198131388442/recommended/3052450",
+      "author": "76561198131388442",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "Steam版跟官網下載的帳號無法互通。角色、命輪抽本體，啟靈每月在商店換，都能到三啟。每十等敵人數值會大幅提升，復活道具每日回一，可存五個，同一場使用無上限。有四隊可嘗試打蝕災，再借好友角色帶一隊，慢慢拿等級突破的道具。一定要升技能，技能沒升滿手感、傷害差距很大，前期賢者之石(技能突破道具)需謹慎使用。",
+      "timestamp_created": 1778949359,
+      "playtime_forever": 18
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-16T16:03:01+00:00",
+      "lang": "english",
+      "title": "[正面] Good game, I like the art style.",
+      "summary": "Good game, I like the art style.",
+      "url": "https://steamcommunity.com/profiles/76561198706714971/recommended/3052450",
+      "author": "76561198706714971",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Good game, I like the art style.",
+      "timestamp_created": 1778947381,
+      "playtime_forever": 230
     }
   ]
 }
