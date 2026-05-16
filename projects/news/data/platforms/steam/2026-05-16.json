@@ -1,8 +1,8 @@
 {
   "date": "2026-05-16",
-  "archived_at": "2026-05-15T23:47:20.153679+00:00",
+  "archived_at": "2026-05-16T01:57:48.357742+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -168,6 +168,21 @@
       "review": "Gacha infravalorado, es el primero que me gusta que tiene ese estilo de gameplay",
       "timestamp_created": 1778883171,
       "playtime_forever": 358
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-15T23:56:10+00:00",
+      "lang": "english",
+      "title": "[正面] It's just a fun and good game",
+      "summary": "It's just a fun and good game",
+      "url": "https://steamcommunity.com/profiles/76561198042073902/recommended/3052450",
+      "author": "76561198042073902",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "It's just a fun and good game",
+      "timestamp_created": 1778889370,
+      "playtime_forever": 4761
     }
   ]
 }
