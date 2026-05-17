@@ -1,8 +1,8 @@
 {
   "date": "2026-05-17",
-  "archived_at": "2026-05-17T05:47:37.943811+00:00",
+  "archived_at": "2026-05-17T08:12:13.898404+00:00",
   "source": "steam",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "source": "steam",
@@ -288,6 +288,21 @@
       "review": "almost 98 hours in and only now figured out i've been making things hard on myself for no reason, peak game",
       "timestamp_created": 1778983411,
       "playtime_forever": 5913
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-17T05:38:06+00:00",
+      "lang": "schinese",
+      "title": "[负面] 快逃.jpg",
+      "summary": "快逃.jpg",
+      "url": "https://steamcommunity.com/profiles/76561199443688369/recommended/3052450",
+      "author": "76561199443688369",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "快逃.jpg",
+      "timestamp_created": 1778996286,
+      "playtime_forever": 25
     }
   ]
 }
