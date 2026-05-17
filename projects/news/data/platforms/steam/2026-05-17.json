@@ -1,8 +1,8 @@
 {
   "date": "2026-05-17",
-  "archived_at": "2026-05-17T14:24:47.168488+00:00",
+  "archived_at": "2026-05-17T15:53:29.930719+00:00",
   "source": "steam",
-  "item_count": 23,
+  "item_count": 24,
   "items": [
     {
       "source": "steam",
@@ -348,6 +348,21 @@
       "review": "เกมแม่งโครต mambo",
       "timestamp_created": 1779020771,
       "playtime_forever": 131
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-17T14:51:39+00:00",
+      "lang": "schinese",
+      "title": "[正面] 边狱巴士真好玩",
+      "summary": "边狱巴士真好玩",
+      "url": "https://steamcommunity.com/profiles/76561198842157461/recommended/3052450",
+      "author": "76561198842157461",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "边狱巴士真好玩",
+      "timestamp_created": 1779029499,
+      "playtime_forever": 4032
     }
   ]
 }
