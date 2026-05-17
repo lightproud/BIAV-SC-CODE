@@ -1,8 +1,8 @@
 {
   "date": "2026-05-18",
-  "archived_at": "2026-05-17T17:50:37.148522+00:00",
+  "archived_at": "2026-05-17T18:55:53.433047+00:00",
   "source": "youtube",
-  "item_count": 1,
+  "item_count": 3,
   "items": [
     {
       "source": "youtube",
@@ -14,6 +14,30 @@
       "author": "Flares117",
       "engagement": 382,
       "media_url": "https://i.ytimg.com/vi/idOJZXpUu7c/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2kBpYK33v4_ROY8dlpzArmH-01Q",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-17T17:52:58.604647+00:00",
+      "lang": "",
+      "title": "[Morimens] Half Anni Pull Guide and Spreadsheet on what to pull, how they work, breakpoints.",
+      "summary": "[1 hour ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "url": "https://www.youtube.com/watch?v=_hnlMXglPkE",
+      "author": "Flares117",
+      "engagement": 209,
+      "media_url": "https://i.ytimg.com/vi/_hnlMXglPkE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC6TOHcLZAKylryDuOsICa34xjq4Q",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-17T18:52:58.604887+00:00",
+      "lang": "",
+      "title": "[Morimens] LOOOONG? Boring Spreadsheet stream/light coaching overview.",
+      "summary": "Long Boring Spreadsheet stream. And making next video.",
+      "url": "https://www.youtube.com/watch?v=V3E7Fav8rwg",
+      "author": "Flares117",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/V3E7Fav8rwg/hq720.jpg?v=6a09d0ca&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnlRI33JNqbYV8LXNjCab7k4fbTg",
       "content_type": "image"
     }
   ]
