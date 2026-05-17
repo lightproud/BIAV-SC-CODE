@@ -1,32 +1,9 @@
 {
-  "collected_at": "2026-05-17T10:20:45.192097+00:00",
+  "date": "2026-05-17",
+  "archived_at": "2026-05-17T10:20:47.949163+00:00",
   "source": "bilibili",
-  "item_count": 8,
+  "item_count": 4,
   "items": [
-    {
-      "source": "bilibili",
-      "time": "2026-05-16T14:16:58+00:00",
-      "lang": "zh",
-      "title": "[忘却前夜]2.5周年抽取与氪金攻略",
-      "summary": "不推荐任何人氪金，这里只是针对氪金情况下的讨论，没有任何引导氪金的主观意图，健康绿色游戏从你我开始。",
-      "url": "http://www.bilibili.com/video/av116584639106039",
-      "author": "梦依流苏",
-      "engagement": 3137,
-      "media_url": "//i2.hdslb.com/bfs/archive/e31c57762fe1c198e8a1fa703a10d2bb0e8c1d7f.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-16T11:59:07+00:00",
-      "lang": "zh",
-      "title": "[忘却前夜]五月份最新兑换码，五百个银芯外加五个无垢，截止至5月30号",
-      "summary": "-",
-      "url": "http://www.bilibili.com/video/av116584119144633",
-      "author": "渔歌伴晚舟",
-      "engagement": 2607,
-      "media_url": "//i1.hdslb.com/bfs/archive/be8cccb4eaa6a01b2e388bc349b1b9519734b3ba.jpg",
-      "content_type": "video"
-    },
     {
       "source": "bilibili",
       "time": "2026-05-17T02:01:41+00:00",
@@ -53,18 +30,6 @@
     },
     {
       "source": "bilibili",
-      "time": "2026-05-16T14:36:25+00:00",
-      "lang": "zh",
-      "title": "［相位］新版本pvp迎来大变（）",
-      "summary": "-",
-      "url": "http://www.bilibili.com/video/av116584739767701",
-      "author": "莱星Ligh",
-      "engagement": 1241,
-      "media_url": "//i0.hdslb.com/bfs/archive/7dfd99505ac2520d672e1511d8096f5f9aeb6051.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "bilibili",
       "time": "2026-05-17T05:44:35+00:00",
       "lang": "zh",
       "title": "【忘却前夜】5月11日融灾 3启70级阿拉克涅单核5-5思路参考",
@@ -85,18 +50,6 @@
       "author": "比较瓜皮",
       "engagement": 228,
       "media_url": "//i1.hdslb.com/bfs/archive/a09aaef6bd11f7bad67d2056e2444d693a952db9.jpg",
-      "content_type": "video"
-    },
-    {
-      "source": "bilibili",
-      "time": "2026-05-16T12:07:17+00:00",
-      "lang": "zh",
-      "title": "这是为什么啊？没搞明白",
-      "summary": "-明明没用应急灵知体为啥血回满了？",
-      "url": "http://www.bilibili.com/video/av116584152631955",
-      "author": "忆灵清原",
-      "engagement": 204,
-      "media_url": "//i2.hdslb.com/bfs/archive/9a642498577f5c5d6ac41bff7c53debda4a9bfeb.jpg",
       "content_type": "video"
     }
   ]
