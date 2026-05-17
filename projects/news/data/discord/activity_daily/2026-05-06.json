@@ -1,11 +1,11 @@
 {
   "date": "2026-05-06",
-  "messages": 16371,
+  "messages": 18572,
   "unique_authors": 257,
-  "reactions_total": 1328,
-  "attachments": 627,
+  "reactions_total": 1543,
+  "attachments": 692,
   "channel_activity": {
-    "🔸morimens-game-chat": 4888,
+    "🔸morimens-game-chat": 7089,
     "🔸綜合討論": 2142,
     "🔸阵容构建": 18,
     "🔸剧情交流": 34,
@@ -51,6 +51,14 @@
     "1501623598266187967": 1
   },
   "hourly_activity": {
+    "16": 1123,
+    "17": 918,
+    "18": 810,
+    "19": 791,
+    "20": 513,
+    "21": 510,
+    "22": 476,
+    "23": 405,
     "0": 496,
     "1": 448,
     "2": 281,
@@ -66,20 +74,11 @@
     "12": 1234,
     "13": 928,
     "14": 1484,
-    "15": 1520,
-    "16": 591,
-    "17": 790,
-    "18": 613,
-    "19": 471,
-    "21": 249,
-    "22": 313,
-    "23": 187,
-    "20": 131
+    "15": 1520
   },
   "message_types": {
-    "19": 1682,
-    "0": 3204,
-    "20": 2
+    "0": 1338,
+    "19": 863
   },
   "top_reacted_messages": [
     {
@@ -171,6 +170,22 @@
       "channel": "🔸lore-chat"
     },
     {
+      "id": "1501656166164467984",
+      "channel_id": "1170692781216378960",
+      "content": "You might like this.\n\nI'm commissioning a cello.\n\nSoundboard comes from valley d",
+      "author": "climbkaly",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1501670548231684199",
+      "channel_id": "1170692781216378960",
+      "content": "One more Hard Mode down <:Helot_slack_off:1459092159465521184>",
+      "author": "ahmedamr30",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1501437856755744779",
       "channel_id": "1170692781216378960",
       "content": "in all seriousness tho, it makes sense why Frosty likes blue\nIt IS a fun realm",
@@ -223,22 +238,6 @@
       "channel_id": "1131839817982947429",
       "content": "t0級別的0",
       "author": "ernest_heart",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501476278879125555",
-      "channel_id": "1131839817982947429",
-      "content": "🤓 ☝️ 本次去cp给你游~~尽孝~~的成果",
-      "author": "gensono0609",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501480006709280870",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }
