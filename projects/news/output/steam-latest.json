@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-16T23:43:47.410696+00:00",
+  "collected_at": "2026-05-17T02:00:45.899640+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -61,7 +61,7 @@
       "voted_up": true,
       "review": "It's great! I wish the game a long life. Sadly, I play too many gachas already so I just checked this one out. I will follow the story though. I'm waiting for the collab with Saya no Uta, because I love that visual novel.\r\n\r\n10/10, please do check it out.\r\n\r\nDo not feed off reading negative reviews or do not seek reasons not to play it. If it caught your eye, give it a try. It's a really good game, trust me.",
       "timestamp_created": 1778956567,
-      "playtime_forever": 224
+      "playtime_forever": 327
     },
     {
       "source": "steam",
@@ -76,7 +76,7 @@
       "voted_up": true,
       "review": "Buen juego de cartas, gratis y buenos diseños. Las traducciones al español dejan bastante por desear pero bueno. Recomendable",
       "timestamp_created": 1778953535,
-      "playtime_forever": 1624
+      "playtime_forever": 1714
     },
     {
       "source": "steam",
@@ -197,36 +197,6 @@
       "review": "buen diseño de personajes",
       "timestamp_created": 1778902685,
       "playtime_forever": 1565
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-16T01:59:31+00:00",
-      "lang": "brazilian",
-      "title": "[正面] justo e história massa.",
-      "summary": "justo e história massa.",
-      "url": "https://steamcommunity.com/profiles/76561198452679571/recommended/3052450",
-      "author": "76561198452679571",
-      "engagement": 0,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "justo e história massa.",
-      "timestamp_created": 1778896771,
-      "playtime_forever": 5282
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-15T23:56:10+00:00",
-      "lang": "english",
-      "title": "[正面] It's just a fun and good game",
-      "summary": "It's just a fun and good game",
-      "url": "https://steamcommunity.com/profiles/76561198042073902/recommended/3052450",
-      "author": "76561198042073902",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "It's just a fun and good game",
-      "timestamp_created": 1778889370,
-      "playtime_forever": 4846
     }
   ]
 }
