@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-05-17T01:26:39.361567+00:00",
+  "updated_at": "2026-05-17T05:29:31.854545+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1321,6 +1321,14 @@
       "parent_id": "1440851754311749733",
       "position": 148,
       "topic": "ModMail Channel 1185229821106716784 1503992152315658281 (Please do not change this)"
+    },
+    {
+      "id": "1505430185162309812",
+      "name": "mayhemvt",
+      "type": 0,
+      "parent_id": "1440851754311749733",
+      "position": 149,
+      "topic": "ModMail Channel 1025896862210859028 1505430027859136593 (Please do not change this)"
     }
   ]
 }
