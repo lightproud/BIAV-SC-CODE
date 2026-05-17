@@ -1,8 +1,8 @@
 {
   "date": "2026-05-17",
-  "archived_at": "2026-05-17T02:00:47.191454+00:00",
+  "archived_at": "2026-05-17T05:47:37.943811+00:00",
   "source": "steam",
-  "item_count": 18,
+  "item_count": 19,
   "items": [
     {
       "source": "steam",
@@ -273,6 +273,21 @@
       "review": "校猫是傻逼",
       "timestamp_created": 1778966016,
       "playtime_forever": 2873
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-17T02:03:31+00:00",
+      "lang": "english",
+      "title": "[正面] almost 98 hours in and only now figured out i've b...",
+      "summary": "almost 98 hours in and only now figured out i've been making things hard on myself for no reason, peak game",
+      "url": "https://steamcommunity.com/profiles/76561199507639634/recommended/3052450",
+      "author": "76561199507639634",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "almost 98 hours in and only now figured out i've been making things hard on myself for no reason, peak game",
+      "timestamp_created": 1778983411,
+      "playtime_forever": 5913
     }
   ]
 }
