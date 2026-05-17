@@ -8927,6 +8927,46 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-16T18:50:28.686559+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/e31c57762fe1c198e8a1fa703a10d2bb0e8c1d7f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T10:20:45.763971+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/be8cccb4eaa6a01b2e388bc349b1b9519734b3ba.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T10:20:46.064887+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/39ee8a27cc43a04f4fac20d431748639de693727.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T10:20:46.365795+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/bb5c94c3841fb5ced9ad732f2377b2d3be43291b.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T10:20:46.666633+00:00"
+    },
+    "//i0.hdslb.com/bfs/archive/7dfd99505ac2520d672e1511d8096f5f9aeb6051.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T10:20:46.967480+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/a060306a42d90a4c0762a4fbceb3d2ddd6f99b9f.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T10:20:47.268317+00:00"
+    },
+    "//i1.hdslb.com/bfs/archive/a09aaef6bd11f7bad67d2056e2444d693a952db9.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T10:20:47.569116+00:00"
+    },
+    "//i2.hdslb.com/bfs/archive/9a642498577f5c5d6ac41bff7c53debda4a9bfeb.jpg": {
+      "source": "bilibili",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T10:20:47.870008+00:00"
     }
   },
   "archived": []

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-17",
-  "archived_at": "2026-05-17T08:12:13.898404+00:00",
+  "archived_at": "2026-05-17T10:20:47.948070+00:00",
   "source": "steam",
-  "item_count": 20,
+  "item_count": 21,
   "items": [
     {
       "source": "steam",
@@ -303,6 +303,21 @@
       "review": "快逃.jpg",
       "timestamp_created": 1778996286,
       "playtime_forever": 25
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-17T06:34:02+00:00",
+      "lang": "english",
+      "title": "[正面] banger alert",
+      "summary": "banger alert",
+      "url": "https://steamcommunity.com/profiles/76561199281667936/recommended/3052450",
+      "author": "76561199281667936",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "banger alert",
+      "timestamp_created": 1778999642,
+      "playtime_forever": 5908
     }
   ]
 }
