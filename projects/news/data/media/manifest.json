@@ -6194,6 +6194,13 @@
       "title": "[Morimens] +12 AA Caro Buff Overview",
       "time": "2026-05-17T10:54:09.085642+00:00",
       "downloaded_at": "2026-05-17T11:56:57.511152+00:00"
+    },
+    "https://i.ytimg.com/vi/V3E7Fav8rwg/hq720.jpg?v=6a09d0ca&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnlRI33JNqbYV8LXNjCab7k4fbTg": {
+      "filename": "youtube_e34a0d8f2d594b7a.jpg",
+      "source": "youtube",
+      "title": "[Morimens] LOOOONG? Boring Spreadsheet stream/light coaching overview.",
+      "time": "2026-05-17T15:50:26.730130+00:00",
+      "downloaded_at": "2026-05-17T15:53:29.856852+00:00"
     }
   },
   "failed": {
@@ -8981,6 +8988,61 @@
       "source": "bilibili",
       "reason": "download_failed",
       "attempted_at": "2026-05-17T10:20:47.870008+00:00"
+    },
+    "https://preview.redd.it/ql20p01s8o1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=caded1064dc3f5c1dc59550ffc26b1950a9fd228": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:26.041964+00:00"
+    },
+    "https://preview.redd.it/qf6wiqgmln1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=69deb0df8cf831236d5891128d404728438dd179": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:26.383896+00:00"
+    },
+    "https://preview.redd.it/lwnz7qc39p1h1.png?width=140&amp;height=89&amp;auto=webp&amp;s=ed15c8eb55df0b11f6cf444db9ff54054bdb6a08": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:26.724801+00:00"
+    },
+    "https://preview.redd.it/wohy6kipwk1h1.png?width=140&amp;height=122&amp;auto=webp&amp;s=e70b985442a97ac04d8dec6c94ac7934c658eecf": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:27.066417+00:00"
+    },
+    "https://preview.redd.it/nfk4uklahp1h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=aa89e6c5e35f1617798c7d456aa5e15f1dd34dff": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:27.407948+00:00"
+    },
+    "https://preview.redd.it/psacbi1v0l1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=f6c618c16cf8486d278dec606e1b4d174ea65d8f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:27.747149+00:00"
+    },
+    "https://preview.redd.it/kbr7hvxzoo1h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=25bb591fcd31830e734c24500f19b1fcc21476dc": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:28.093097+00:00"
+    },
+    "https://preview.redd.it/o54bmh2kdn1h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=38577923a20878cf69e356def7b1f0e60b4733fc": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:28.433336+00:00"
+    },
+    "https://preview.redd.it/5uiq3ewfjp1h1.jpg?width=140&amp;height=105&amp;auto=webp&amp;s=37ba6b1bbfdf032bb049adc1a7409857bdcfbb9d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:28.772429+00:00"
+    },
+    "https://preview.redd.it/xj44oja3bl1h1.jpg?width=140&amp;height=65&amp;auto=webp&amp;s=7e6253b0ece2c56ed84300a0f09ddbdc743aa136": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:29.143790+00:00"
+    },
+    "https://preview.redd.it/s5lkp069yo1h1.png?width=140&amp;height=87&amp;auto=webp&amp;s=e8e820dd12e20a30fc13e831bc8f1ac92fedc3ac": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-17T15:53:29.483813+00:00"
     }
   },
   "archived": []

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-17",
-  "archived_at": "2026-05-17T14:24:47.171707+00:00",
+  "archived_at": "2026-05-17T15:53:29.934622+00:00",
   "source": "youtube",
-  "item_count": 38,
+  "item_count": 39,
   "items": [
     {
       "source": "youtube",
@@ -458,6 +458,18 @@
       "author": "Flares117",
       "engagement": 122,
       "media_url": "https://i.ytimg.com/vi/0191a5Uxlfs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBf8GGnaGLo0HSAUb50XmJm9HXXRg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-17T15:50:26.730130+00:00",
+      "lang": "",
+      "title": "[Morimens] LOOOONG? Boring Spreadsheet stream/light coaching overview.",
+      "summary": "Long Boring Spreadsheet stream. And making next video.",
+      "url": "https://www.youtube.com/watch?v=V3E7Fav8rwg",
+      "author": "Flares117",
+      "engagement": 0,
+      "media_url": "https://i.ytimg.com/vi/V3E7Fav8rwg/hq720.jpg?v=6a09d0ca&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBnlRI33JNqbYV8LXNjCab7k4fbTg",
       "content_type": "image"
     }
   ]
