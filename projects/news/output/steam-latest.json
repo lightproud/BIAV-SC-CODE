@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-17T21:47:37.842201+00:00",
+  "collected_at": "2026-05-17T22:45:34.193116+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -17,6 +17,21 @@
       "review": "banger alert",
       "timestamp_created": 1778999642,
       "playtime_forever": 5939
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-17T21:25:44+00:00",
+      "lang": "english",
+      "title": "[正面] Unique deckbuilding based on intriguing character...",
+      "summary": "Unique deckbuilding based on intriguing character kits.\r\n\r\nAbsolutely generous, haven't missed a day.\r\n\r\nCurrently 250 Days in. This game doesn't play me like the other gachas do, I play it instead for once.",
+      "url": "https://steamcommunity.com/profiles/76561198004877587/recommended/3052450",
+      "author": "76561198004877587",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Unique deckbuilding based on intriguing character kits.\r\n\r\nAbsolutely generous, haven't missed a day.\r\n\r\nCurrently 250 Days in. This game doesn't play me like the other gachas do, I play it instead for once.",
+      "timestamp_created": 1779053144,
+      "playtime_forever": 84527
     },
     {
       "source": "steam",
