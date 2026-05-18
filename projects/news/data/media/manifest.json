@@ -6271,6 +6271,20 @@
       "title": "【忘却前夜】ゴリアテを使いたい！",
       "time": "2026-05-17T23:47:42.421470+00:00",
       "downloaded_at": "2026-05-17T23:50:35.403725+00:00"
+    },
+    "https://i.ytimg.com/vi/u_GrgsIXXn0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBikG-A11jROUSBY-ayyWMZSAbrOQ": {
+      "filename": "youtube_cf3afb09e01cf81d.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Short Livestream PSA Highlight : Gnostic Potential is a huge SCAM for F2P and new players",
+      "time": "2026-05-18T09:56:40.614965+00:00",
+      "downloaded_at": "2026-05-18T10:59:36.028728+00:00"
+    },
+    "https://i.ytimg.com/vi/0bds-wZTsko/hq720.jpg?v=6a0ace4a&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCCcdRubkTdd9PxpWA0FmKIWQaLRw": {
+      "filename": "youtube_5600ba22cbcde5ec.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Short (Relatively) Anni testing stream for some content",
+      "time": "2026-05-18T10:56:40.615153+00:00",
+      "downloaded_at": "2026-05-18T10:59:37.458092+00:00"
     }
   },
   "failed": {
@@ -9183,6 +9197,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-18T06:47:04.438199+00:00"
+    },
+    "https://preview.redd.it/x5tqwjrhuu1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=b85bb310fe151dba83286f65ab16ed7ec790fb6f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-18T10:59:36.462033+00:00"
+    },
+    "https://preview.redd.it/cqxqux6cav1h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=9c5189bc5149664880bdc4ff029536feedc57341": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-18T10:59:36.789949+00:00"
+    },
+    "https://preview.redd.it/ga5vdcakwu1h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=d1f24414ccfc304650945a843a1dd0053b4f4a08": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-18T10:59:37.119082+00:00"
     }
   },
   "archived": []

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-18",
-  "archived_at": "2026-05-18T06:47:04.511394+00:00",
+  "archived_at": "2026-05-18T10:59:37.523896+00:00",
   "source": "steam",
-  "item_count": 17,
+  "item_count": 19,
   "items": [
     {
       "source": "steam",
@@ -258,6 +258,36 @@
       "review": "This game should be WAAAYYY bigger than it is.  I have loved it from the moment I started it.  The devs are beyond generous for a gacha game.  The theme and story is very Lovecraftian, dark and bleak.  It's super refreshing compared to the numerous \"bubbly anime girl\" gachas out there.\n\nIt is DIFFICULT, but again, this is a wonderful break from most others in this field.  You can get through the story and even the end game with even basic units.  There is a lot of depth and breadth to the teambuilding.  The characters are unique, and the realm designs make it very fun to mix and match abilities from different realms.\n\nI would recommend this game to anyone and everyone who is looking for an incredibly high-quality, deep game, with unique lore and lots of challenge.  If you've been turned off by other gachas and/or card games, I would still strongly suggest you give this one in particular a try.  The devs are beyond wonderful in always taking ownership of mistakes and being generous in fixing them.  Morimens is a passion project first, and a business second.",
       "timestamp_created": 1779067084,
       "playtime_forever": 9368
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T07:59:21+00:00",
+      "lang": "english",
+      "title": "[正面] Good story and fun gameplay what's not to like.",
+      "summary": "Good story and fun gameplay what's not to like.",
+      "url": "https://steamcommunity.com/profiles/76561198268829485/recommended/3052450",
+      "author": "76561198268829485",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Good story and fun gameplay what's not to like.",
+      "timestamp_created": 1779091161,
+      "playtime_forever": 3196
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T06:49:10+00:00",
+      "lang": "koreana",
+      "title": "[负面] 노잼 가득히",
+      "summary": "노잼 가득히",
+      "url": "https://steamcommunity.com/profiles/76561199550326756/recommended/3052450",
+      "author": "76561199550326756",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": false,
+      "review": "노잼 가득히",
+      "timestamp_created": 1779086950,
+      "playtime_forever": 10
     }
   ]
 }
