@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-05-18T12:51:26.973039+00:00",
+  "updated_at": "2026-05-18T16:39:27.879195+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1329,6 +1329,14 @@
       "parent_id": "1440851754311749733",
       "position": 149,
       "topic": "ModMail Channel 1025896862210859028 1505430027859136593 (Please do not change this)"
+    },
+    {
+      "id": "1505967768686563400",
+      "name": "lykire",
+      "type": 0,
+      "parent_id": "1440851754311749733",
+      "position": 150,
+      "topic": "ModMail Channel 566845928326037514 845369704687992905 (Please do not change this)"
     }
   ]
 }
