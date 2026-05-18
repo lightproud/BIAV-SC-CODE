@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-18T22:50:42.971511+00:00",
+  "collected_at": "2026-05-18T23:58:34.805298+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -31,7 +31,7 @@
       "voted_up": true,
       "review": "jogo tem um bom free2play, pra quem gosta de slay the spire, é basicamente a mesma coisa so que com mais mecanicas",
       "timestamp_created": 1779126890,
-      "playtime_forever": 6946
+      "playtime_forever": 7036
     },
     {
       "source": "steam",
@@ -212,21 +212,6 @@
       "review": "This game should be WAAAYYY bigger than it is.  I have loved it from the moment I started it.  The devs are beyond generous for a gacha game.  The theme and story is very Lovecraftian, dark and bleak.  It's super refreshing compared to the numerous \"bubbly anime girl\" gachas out there.\n\nIt is DIFFICULT, but again, this is a wonderful break from most others in this field.  You can get through the story and even the end game with even basic units.  There is a lot of depth and breadth to the teambuilding.  The characters are unique, and the realm designs make it very fun to mix and match abilities from different realms.\n\nI would recommend this game to anyone and everyone who is looking for an incredibly high-quality, deep game, with unique lore and lots of challenge.  If you've been turned off by other gachas and/or card games, I would still strongly suggest you give this one in particular a try.  The devs are beyond wonderful in always taking ownership of mistakes and being generous in fixing them.  Morimens is a passion project first, and a business second.",
       "timestamp_created": 1779067084,
       "playtime_forever": 9368
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-17T23:50:20+00:00",
-      "lang": "english",
-      "title": "[正面] ooogohhhghghhhghghhgh",
-      "summary": "ooogohhhghghhhghghhgh",
-      "url": "https://steamcommunity.com/profiles/76561198262929109/recommended/3052450",
-      "author": "76561198262929109",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "ooogohhhghghhhghghhgh",
-      "timestamp_created": 1779061820,
-      "playtime_forever": 862
     }
   ]
 }
