@@ -1,0 +1,53 @@
+{
+  "date": "2026-05-19",
+  "archived_at": "2026-05-18T17:27:51.000058+00:00",
+  "source": "steam",
+  "item_count": 3,
+  "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-18T16:51:00+00:00",
+      "lang": "russian",
+      "title": "[正面] Сын воды",
+      "summary": "Сын воды",
+      "url": "https://steamcommunity.com/profiles/76561199103683315/recommended/3052450",
+      "author": "76561199103683315",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Сын воды",
+      "timestamp_created": 1779123060,
+      "playtime_forever": 4564
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T16:30:41+00:00",
+      "lang": "english",
+      "title": "[正面] Fun game, honestly feels too good to be free!",
+      "summary": "Fun game, honestly feels too good to be free!",
+      "url": "https://steamcommunity.com/profiles/76561198366176218/recommended/3052450",
+      "author": "76561198366176218",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Fun game, honestly feels too good to be free!",
+      "timestamp_created": 1779121841,
+      "playtime_forever": 1428
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T16:07:45+00:00",
+      "lang": "schinese",
+      "title": "[正面] 养成深度非常深（而且还在加深）啊",
+      "summary": "养成深度非常深（而且还在加深）啊",
+      "url": "https://steamcommunity.com/profiles/76561199600780022/recommended/3052450",
+      "author": "76561199600780022",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "养成深度非常深（而且还在加深）啊",
+      "timestamp_created": 1779120465,
+      "playtime_forever": 168
+    }
+  ]
+}
