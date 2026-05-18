@@ -1,8 +1,8 @@
 {
   "date": "2026-05-18",
-  "archived_at": "2026-05-18T10:59:37.523896+00:00",
+  "archived_at": "2026-05-18T14:29:36.654750+00:00",
   "source": "steam",
-  "item_count": 19,
+  "item_count": 22,
   "items": [
     {
       "source": "steam",
@@ -288,6 +288,51 @@
       "review": "노잼 가득히",
       "timestamp_created": 1779086950,
       "playtime_forever": 10
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T12:41:53+00:00",
+      "lang": "english",
+      "title": "[负面] Worst anni",
+      "summary": "Worst anni",
+      "url": "https://steamcommunity.com/profiles/76561198164796549/recommended/3052450",
+      "author": "76561198164796549",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "Worst anni",
+      "timestamp_created": 1779108113,
+      "playtime_forever": 1481
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T12:26:46+00:00",
+      "lang": "koreana",
+      "title": "[正面] 재미있고 캐릭터가 예쁨",
+      "summary": "재미있고 캐릭터가 예쁨",
+      "url": "https://steamcommunity.com/profiles/76561199080497763/recommended/3052450",
+      "author": "76561199080497763",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "재미있고 캐릭터가 예쁨",
+      "timestamp_created": 1779107206,
+      "playtime_forever": 1275
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T10:35:29+00:00",
+      "lang": "english",
+      "title": "[正面] +1 Cool visual art",
+      "summary": "+1 Cool visual art",
+      "url": "https://steamcommunity.com/profiles/76561198703095070/recommended/3052450",
+      "author": "76561198703095070",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "+1 Cool visual art",
+      "timestamp_created": 1779100529,
+      "playtime_forever": 350
     }
   ]
 }
