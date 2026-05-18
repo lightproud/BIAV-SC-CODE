@@ -1,8 +1,68 @@
 {
-  "collected_at": "2026-05-18T14:29:36.257323+00:00",
+  "collected_at": "2026-05-18T17:27:50.220591+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-18T13:48:43+00:00",
+      "lang": "russian",
+      "title": "[正面] Дорогие друзья, скоро начнётся цветение, спешите у...",
+      "summary": "Дорогие друзья, скоро начнётся цветение, спешите участвовать.",
+      "url": "https://steamcommunity.com/profiles/76561198045250681/recommended/3052450",
+      "author": "76561198045250681",
+      "engagement": 1,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Дорогие друзья, скоро начнётся цветение, спешите участвовать.",
+      "timestamp_created": 1779112123,
+      "playtime_forever": 9005
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T16:51:00+00:00",
+      "lang": "russian",
+      "title": "[正面] Сын воды",
+      "summary": "Сын воды",
+      "url": "https://steamcommunity.com/profiles/76561199103683315/recommended/3052450",
+      "author": "76561199103683315",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Сын воды",
+      "timestamp_created": 1779123060,
+      "playtime_forever": 4564
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T16:30:41+00:00",
+      "lang": "english",
+      "title": "[正面] Fun game, honestly feels too good to be free!",
+      "summary": "Fun game, honestly feels too good to be free!",
+      "url": "https://steamcommunity.com/profiles/76561198366176218/recommended/3052450",
+      "author": "76561198366176218",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Fun game, honestly feels too good to be free!",
+      "timestamp_created": 1779121841,
+      "playtime_forever": 1428
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T16:07:45+00:00",
+      "lang": "schinese",
+      "title": "[正面] 养成深度非常深（而且还在加深）啊",
+      "summary": "养成深度非常深（而且还在加深）啊",
+      "url": "https://steamcommunity.com/profiles/76561199600780022/recommended/3052450",
+      "author": "76561199600780022",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "养成深度非常深（而且还在加深）啊",
+      "timestamp_created": 1779120465,
+      "playtime_forever": 168
+    },
     {
       "source": "steam",
       "time": "2026-05-18T12:41:53+00:00",
@@ -16,7 +76,7 @@
       "voted_up": false,
       "review": "Worst anni",
       "timestamp_created": 1779108113,
-      "playtime_forever": 1481
+      "playtime_forever": 1559
     },
     {
       "source": "steam",
@@ -31,7 +91,7 @@
       "voted_up": true,
       "review": "재미있고 캐릭터가 예쁨",
       "timestamp_created": 1779107206,
-      "playtime_forever": 1275
+      "playtime_forever": 1335
     },
     {
       "source": "steam",
@@ -61,7 +121,7 @@
       "voted_up": true,
       "review": "Good story and fun gameplay what's not to like.",
       "timestamp_created": 1779091161,
-      "playtime_forever": 3196
+      "playtime_forever": 3270
     },
     {
       "source": "steam",
@@ -106,7 +166,7 @@
       "voted_up": true,
       "review": "hidden gem",
       "timestamp_created": 1779072576,
-      "playtime_forever": 3417
+      "playtime_forever": 3438
     },
     {
       "source": "steam",
@@ -121,7 +181,7 @@
       "voted_up": true,
       "review": "视觉风格上采用水彩厚涂笔触，以灰暗基调为主，用高亮色彩作为视觉焦点，精准表现\"流动、粘稠、非人\"的克苏鲁质感。维多利亚时代的建筑、服饰与触手、大脑、眼睛等克系元素融合自然；低频律动的BGM与环境音效完美配合；有深入挖掘克苏鲁神话中\"不可名状的恐惧\"、\"人类在宇宙面前的渺小\"等核心主题；福利水平较高，新手入坑赠送大量抽卡资源，日常福利也比多数二次元游戏慷慨，零氪玩家可以轻松完成主力角色的养成，\r\n没有设置强竞争性PVP模块，核心体验集中于单机推图流程，不氪金也能体验到完整的游戏内容；\r\n前期难度不高，但后期数值压力略大，敌人可能拥有碾压性的血量和攻击力，且会随着回合数增加不断变强；养满一个角色需要大量的经验、突破材料、技能书和装备，资源获取效率有点低，但休闲的话还不至于坐牢；",
       "timestamp_created": 1779067149,
-      "playtime_forever": 2577
+      "playtime_forever": 2639
     },
     {
       "source": "steam",
@@ -166,7 +226,7 @@
       "voted_up": true,
       "review": "Unique deckbuilding based on intriguing character kits.\r\n\r\nAbsolutely generous, haven't missed a day.\r\n\r\nCurrently 250 Days in. This game doesn't play me like the other gachas do, I play it instead for once.",
       "timestamp_created": 1779053144,
-      "playtime_forever": 84776
+      "playtime_forever": 84919
     },
     {
       "source": "steam",
@@ -182,36 +242,6 @@
       "review": "Good",
       "timestamp_created": 1779048056,
       "playtime_forever": 764
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-17T15:30:01+00:00",
-      "lang": "thai",
-      "title": "[正面] เกมดีมากครับ",
-      "summary": "เกมดีมากครับ",
-      "url": "https://steamcommunity.com/profiles/76561199322531873/recommended/3052450",
-      "author": "76561199322531873",
-      "engagement": 0,
-      "language": "thai",
-      "voted_up": true,
-      "review": "เกมดีมากครับ",
-      "timestamp_created": 1779031801,
-      "playtime_forever": 406
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-17T14:51:39+00:00",
-      "lang": "schinese",
-      "title": "[正面] 边狱巴士真好玩",
-      "summary": "边狱巴士真好玩",
-      "url": "https://steamcommunity.com/profiles/76561198842157461/recommended/3052450",
-      "author": "76561198842157461",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "边狱巴士真好玩",
-      "timestamp_created": 1779029499,
-      "playtime_forever": 4056
     }
   ]
 }
