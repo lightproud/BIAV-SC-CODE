@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-18T21:04:55.465932+00:00",
+  "collected_at": "2026-05-18T22:50:42.971511+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -31,7 +31,7 @@
       "voted_up": true,
       "review": "jogo tem um bom free2play, pra quem gosta de slay the spire, é basicamente a mesma coisa so que com mais mecanicas",
       "timestamp_created": 1779126890,
-      "playtime_forever": 6796
+      "playtime_forever": 6946
     },
     {
       "source": "steam",
@@ -46,7 +46,7 @@
       "voted_up": true,
       "review": "Сын воды",
       "timestamp_created": 1779123060,
-      "playtime_forever": 4660
+      "playtime_forever": 4696
     },
     {
       "source": "steam",
@@ -227,21 +227,6 @@
       "review": "ooogohhhghghhhghghhgh",
       "timestamp_created": 1779061820,
       "playtime_forever": 862
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-17T21:25:44+00:00",
-      "lang": "english",
-      "title": "[正面] Unique deckbuilding based on intriguing character...",
-      "summary": "Unique deckbuilding based on intriguing character kits.\r\n\r\nAbsolutely generous, haven't missed a day.\r\n\r\nCurrently 250 Days in. This game doesn't play me like the other gachas do, I play it instead for once.",
-      "url": "https://steamcommunity.com/profiles/76561198004877587/recommended/3052450",
-      "author": "76561198004877587",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Unique deckbuilding based on intriguing character kits.\r\n\r\nAbsolutely generous, haven't missed a day.\r\n\r\nCurrently 250 Days in. This game doesn't play me like the other gachas do, I play it instead for once.",
-      "timestamp_created": 1779053144,
-      "playtime_forever": 84919
     }
   ]
 }
