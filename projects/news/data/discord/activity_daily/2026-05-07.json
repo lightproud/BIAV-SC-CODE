@@ -1,11 +1,11 @@
 {
   "date": "2026-05-07",
-  "messages": 9069,
+  "messages": 14069,
   "unique_authors": 183,
-  "reactions_total": 1548,
-  "attachments": 457,
+  "reactions_total": 2075,
+  "attachments": 636,
   "channel_activity": {
-    "🔸morimens-game-chat": 2799,
+    "🔸morimens-game-chat": 7799,
     "🔸綜合討論": 1139,
     "🔸阵容构建": 42,
     "🔸剧情交流": 3,
@@ -82,6 +82,20 @@
     "1502015181813842011": 1
   },
   "hourly_activity": {
+    "8": 541,
+    "9": 467,
+    "10": 865,
+    "11": 719,
+    "12": 695,
+    "13": 957,
+    "14": 771,
+    "15": 665,
+    "16": 997,
+    "17": 916,
+    "18": 569,
+    "19": 395,
+    "20": 317,
+    "21": 404,
     "0": 640,
     "1": 510,
     "2": 575,
@@ -90,26 +104,12 @@
     "5": 445,
     "6": 395,
     "7": 360,
-    "8": 478,
-    "9": 162,
-    "10": 277,
-    "11": 218,
-    "12": 257,
-    "13": 653,
-    "14": 558,
-    "15": 287,
-    "16": 503,
-    "17": 292,
-    "18": 158,
-    "19": 279,
-    "20": 51,
-    "21": 105,
     "22": 119,
     "23": 155
   },
   "message_types": {
-    "19": 822,
-    "0": 1977
+    "0": 3356,
+    "19": 1644
   },
   "top_reacted_messages": [
     {
@@ -153,6 +153,14 @@
       "channel": "aomi's mrmns fanart corner"
     },
     {
+      "id": "1501991975669203025",
+      "channel_id": "1170692781216378960",
+      "content": "Moths are spooky",
+      "author": "legendaryredz",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1501898130403233913",
       "channel_id": "1131839817982947429",
       "content": "才氪这点（",
@@ -175,6 +183,22 @@
       "author": "trevorsuyu",
       "reactions": 9,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1502017216625770547",
+      "channel_id": "1170692781216378960",
+      "content": "https://cdn.discordapp.com/attachments/1170692781216378960/1500545611055759511/C",
+      "author": "doktor.sex",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1502017423602094170",
+      "channel_id": "1170692781216378960",
+      "content": "Clem is the best!!!",
+      "author": "spooky_penguin_",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1501877655744675860",
@@ -201,6 +225,14 @@
       "channel": "🔸相位对弈"
     },
     {
+      "id": "1502017590950887597",
+      "channel_id": "1170692781216378960",
+      "content": "Sorry Casiah is the best",
+      "author": "doktor.sex",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1501765024677630126",
       "channel_id": "1170692781216378960",
       "content": "actually im poor",
@@ -225,51 +257,19 @@
       "channel": "🔸阵容构建"
     },
     {
-      "id": "1501857794666659900",
+      "id": "1501901449506853014",
       "channel_id": "1170692781216378960",
-      "content": "<@285755067213152257> <@113374123798859776> <@193043069275209728> \nMy Vortice fi",
-      "author": "megidola.",
+      "content": "I scream mentally insane everytime I pop into this server",
+      "author": "brainrot_in_a_vat",
       "reactions": 6,
       "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1501818646194815118",
-      "channel_id": "1131839817982947429",
-      "content": "喔煩唉我以為沉澱的新東西是回朔限角的，我的哈姆林 莉莉 阿姨跟汪達想回黑池了",
-      "author": "shchng.",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501852038609375447",
-      "channel_id": "1131839817982947429",
-      "content": "馬上去發下禮包求饒<:Brown_think:1459080117308620996>",
-      "author": "morimensstaff06",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501877478753439805",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "akalanden",
-      "reactions": 6,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1501947475433357513",
-      "channel_id": "1501945863453409300",
-      "content": "(but this also underlines why making changes to enlightens is an extremely bad i",
-      "author": "arkaether",
-      "reactions": 6,
-      "channel": "Enlightens Should Never Make a Character Worse"
-    },
-    {
-      "id": "1501768720089878580",
+      "id": "1502019455545511958",
       "channel_id": "1170692781216378960",
-      "content": "<:please:1356053110375714817>",
-      "author": "syruponstrawberrycake",
-      "reactions": 5,
+      "content": "Is the new banner f2p scam?",
+      "author": "sochinik",
+      "reactions": 6,
       "channel": "🔸morimens-game-chat"
     }
   ]
