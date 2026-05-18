@@ -1,8 +1,53 @@
 {
-  "collected_at": "2026-05-18T10:59:35.352445+00:00",
+  "collected_at": "2026-05-18T14:29:36.257323+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 14,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-18T12:41:53+00:00",
+      "lang": "english",
+      "title": "[负面] Worst anni",
+      "summary": "Worst anni",
+      "url": "https://steamcommunity.com/profiles/76561198164796549/recommended/3052450",
+      "author": "76561198164796549",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "Worst anni",
+      "timestamp_created": 1779108113,
+      "playtime_forever": 1481
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T12:26:46+00:00",
+      "lang": "koreana",
+      "title": "[正面] 재미있고 캐릭터가 예쁨",
+      "summary": "재미있고 캐릭터가 예쁨",
+      "url": "https://steamcommunity.com/profiles/76561199080497763/recommended/3052450",
+      "author": "76561199080497763",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "재미있고 캐릭터가 예쁨",
+      "timestamp_created": 1779107206,
+      "playtime_forever": 1275
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-18T10:35:29+00:00",
+      "lang": "english",
+      "title": "[正面] +1 Cool visual art",
+      "summary": "+1 Cool visual art",
+      "url": "https://steamcommunity.com/profiles/76561198703095070/recommended/3052450",
+      "author": "76561198703095070",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "+1 Cool visual art",
+      "timestamp_created": 1779100529,
+      "playtime_forever": 350
+    },
     {
       "source": "steam",
       "time": "2026-05-18T07:59:21+00:00",
@@ -76,7 +121,7 @@
       "voted_up": true,
       "review": "视觉风格上采用水彩厚涂笔触，以灰暗基调为主，用高亮色彩作为视觉焦点，精准表现\"流动、粘稠、非人\"的克苏鲁质感。维多利亚时代的建筑、服饰与触手、大脑、眼睛等克系元素融合自然；低频律动的BGM与环境音效完美配合；有深入挖掘克苏鲁神话中\"不可名状的恐惧\"、\"人类在宇宙面前的渺小\"等核心主题；福利水平较高，新手入坑赠送大量抽卡资源，日常福利也比多数二次元游戏慷慨，零氪玩家可以轻松完成主力角色的养成，\r\n没有设置强竞争性PVP模块，核心体验集中于单机推图流程，不氪金也能体验到完整的游戏内容；\r\n前期难度不高，但后期数值压力略大，敌人可能拥有碾压性的血量和攻击力，且会随着回合数增加不断变强；养满一个角色需要大量的经验、突破材料、技能书和装备，资源获取效率有点低，但休闲的话还不至于坐牢；",
       "timestamp_created": 1779067149,
-      "playtime_forever": 2481
+      "playtime_forever": 2577
     },
     {
       "source": "steam",
@@ -121,7 +166,7 @@
       "voted_up": true,
       "review": "Unique deckbuilding based on intriguing character kits.\r\n\r\nAbsolutely generous, haven't missed a day.\r\n\r\nCurrently 250 Days in. This game doesn't play me like the other gachas do, I play it instead for once.",
       "timestamp_created": 1779053144,
-      "playtime_forever": 84629
+      "playtime_forever": 84776
     },
     {
       "source": "steam",
@@ -151,7 +196,7 @@
       "voted_up": true,
       "review": "เกมดีมากครับ",
       "timestamp_created": 1779031801,
-      "playtime_forever": 246
+      "playtime_forever": 406
     },
     {
       "source": "steam",
@@ -167,36 +212,6 @@
       "review": "边狱巴士真好玩",
       "timestamp_created": 1779029499,
       "playtime_forever": 4056
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-17T13:13:43+00:00",
-      "lang": "english",
-      "title": "[正面] fun party game to play along with your siblings an...",
-      "summary": "fun party game to play along with your siblings and family :-) no idea why they have alot of black mold in it but that's how it is with these games",
-      "url": "https://steamcommunity.com/profiles/76561198095206560/recommended/3052450",
-      "author": "76561198095206560",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "fun party game to play along with your siblings and family :-) no idea why they have alot of black mold in it but that's how it is with these games",
-      "timestamp_created": 1779023623,
-      "playtime_forever": 2018
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-17T12:26:11+00:00",
-      "lang": "thai",
-      "title": "[正面] เกมแม่งโครต mambo",
-      "summary": "เกมแม่งโครต mambo",
-      "url": "https://steamcommunity.com/profiles/76561199112601390/recommended/3052450",
-      "author": "76561199112601390",
-      "engagement": 0,
-      "language": "thai",
-      "voted_up": true,
-      "review": "เกมแม่งโครต mambo",
-      "timestamp_created": 1779020771,
-      "playtime_forever": 336
     }
   ]
 }
