@@ -1,8 +1,8 @@
 {
   "date": "2026-05-18",
-  "archived_at": "2026-05-17T23:50:35.492264+00:00",
+  "archived_at": "2026-05-18T02:12:20.161935+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 13,
   "items": [
     {
       "source": "steam",
@@ -183,6 +183,21 @@
       "review": "Unique deckbuilding based on intriguing character kits.\r\n\r\nAbsolutely generous, haven't missed a day.\r\n\r\nCurrently 250 Days in. This game doesn't play me like the other gachas do, I play it instead for once.",
       "timestamp_created": 1779053144,
       "playtime_forever": 84527
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-17T23:50:20+00:00",
+      "lang": "english",
+      "title": "[正面] ooogohhhghghhhghghhgh",
+      "summary": "ooogohhhghghhhghghhgh",
+      "url": "https://steamcommunity.com/profiles/76561198262929109/recommended/3052450",
+      "author": "76561198262929109",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "ooogohhhghghhhghghhgh",
+      "timestamp_created": 1779061820,
+      "playtime_forever": 862
     }
   ]
 }
