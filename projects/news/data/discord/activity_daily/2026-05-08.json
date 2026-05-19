@@ -1,10 +1,11 @@
 {
   "date": "2026-05-08",
-  "messages": 8621,
+  "messages": 13158,
   "unique_authors": 200,
-  "reactions_total": 1076,
-  "attachments": 439,
+  "reactions_total": 1588,
+  "attachments": 597,
   "channel_activity": {
+    "🔸morimens-game-chat": 4537,
     "🔸綜合討論": 1947,
     "🔸阵容构建": 222,
     "🔸剧情交流": 19,
@@ -70,21 +71,21 @@
     "1502102667554590760": 1
   },
   "hourly_activity": {
-    "0": 186,
-    "1": 107,
-    "2": 166,
-    "3": 126,
-    "4": 116,
-    "5": 119,
-    "6": 459,
-    "7": 362,
-    "8": 428,
-    "9": 691,
-    "10": 311,
-    "11": 362,
-    "12": 598,
-    "13": 1065,
-    "14": 1188,
+    "0": 224,
+    "1": 273,
+    "2": 551,
+    "3": 534,
+    "4": 380,
+    "5": 280,
+    "6": 874,
+    "7": 570,
+    "8": 712,
+    "9": 1147,
+    "10": 898,
+    "11": 757,
+    "12": 905,
+    "13": 1266,
+    "14": 1450,
     "15": 833,
     "16": 603,
     "17": 249,
@@ -96,10 +97,8 @@
     "22": 31
   },
   "message_types": {
-    "19": 1022,
-    "0": 3174,
-    "20": 2,
-    "4": 5
+    "0": 3088,
+    "19": 1449
   },
   "top_reacted_messages": [
     {
@@ -125,6 +124,14 @@
       "author": "gs2202",
       "reactions": 11,
       "channel": "🔸剧情交流"
+    },
+    {
+      "id": "1502190735250821260",
+      "channel_id": "1170692781216378960",
+      "content": "first A5 in D-Tide <:please:1356053110375714817>",
+      "author": "ahmedamr30",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1502232027825701025",
@@ -215,52 +222,44 @@
       "channel": "✅「已回答」问卷写不了何意味"
     },
     {
-      "id": "1502127854626803732",
-      "channel_id": "1194835209242296410",
-      "content": "?",
-      "author": "fishhazardthewizard",
+      "id": "1502122187274981406",
+      "channel_id": "1170692781216378960",
+      "content": "if only i had aa castor then aoe woulndt be soo nightmare",
+      "author": "noire_2",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1502124160296423434",
+      "channel_id": "1170692781216378960",
+      "content": "https://x.com/Nelumbo_nucife2/status/2052506063933485127\nhmmm",
+      "author": "not_blueberry",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1502246214941540384",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "arisuu0604",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1502248848414740510",
+      "channel_id": "1170692781216378960",
+      "content": "Time to make something funny",
+      "author": "moyashi0672",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1502143504904622200",
+      "channel_id": "1170692781216378960",
+      "content": "Did neither of u buy the draw 4?",
+      "author": "frosthief",
       "reactions": 5,
-      "channel": "🔸交友频道"
-    },
-    {
-      "id": "1502099390742138931",
-      "channel_id": "1326453763355185215",
-      "content": "then again every few months we get a new person unironically saying \"i think i m",
-      "author": "nikolazuli",
-      "reactions": 5,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1502117154563166329",
-      "channel_id": "1400749543288475770",
-      "content": "Did it , i tried to play only defence and do one exalt per turn and all exalts o",
-      "author": "el7oot__",
-      "reactions": 5,
-      "channel": "🔸team-building"
-    },
-    {
-      "id": "1502103004516716646",
-      "channel_id": "1326453763355185215",
-      "content": "celeste using her wish granting powers for abortion 😭",
-      "author": "insigible",
-      "reactions": 4,
-      "channel": "🔸lore-chat"
-    },
-    {
-      "id": "1502322806971432960",
-      "channel_id": "1433513650299076780",
-      "content": "or corpo",
-      "author": "princess.goth",
-      "reactions": 4,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1502192115101470781",
-      "channel_id": "1300659603993923644",
-      "content": "zào top 10 cha phây òi",
-      "author": "anicillia",
-      "reactions": 3,
-      "channel": "🔸phòng-chat-tiếng-việt"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
