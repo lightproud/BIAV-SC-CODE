@@ -6376,6 +6376,20 @@
       "title": "[DC] shostakovich524@🔸遊戲公告┊game-announcement: For those who want peace:",
       "time": "2026-05-19T06:21:25.390000+00:00",
       "downloaded_at": "2026-05-19T20:27:16.856004+00:00"
+    },
+    "https://i.ytimg.com/vi/GzSvHrvzdPM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCXWLIdEzsoJEp6rNjXQwQ-FEoLkQ": {
+      "filename": "youtube_bf6bbd08bf18b070.jpg",
+      "source": "youtube",
+      "title": "[Morimens] This is why 24 is S tier, despite me not liking her gameplay. I actually play the game.",
+      "time": "2026-05-19T23:24:54.292931+00:00",
+      "downloaded_at": "2026-05-19T23:56:47.135615+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/20/07/36/55/144988655_p0_square1200.jpg": {
+      "filename": "pixiv_56f5c5fdf315fee9.jpg",
+      "source": "pixiv",
+      "title": "Doll Blows you up with mind",
+      "time": "2026-05-20T07:36:55+09:00",
+      "downloaded_at": "2026-05-19T23:56:48.768583+00:00"
     }
   },
   "failed": {
@@ -9458,6 +9472,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-19T22:09:41.673699+00:00"
+    },
+    "https://external-preview.redd.it/z9Zl4NP_oM3O8lBLjAeGlaq00tKU6Qv1juk_O66-Ukc.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=34f3ff7214e99b06737038339feb2c2fd1239485": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-19T23:56:47.471246+00:00"
+    },
+    "https://preview.redd.it/v9aodszjh62h1.png?width=140&amp;height=75&amp;auto=webp&amp;s=6db15da5ff4ea91c3fc2547d542afb754101d4bd": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-19T23:56:47.807549+00:00"
     }
   },
   "archived": []
