@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-19T06:42:46.285145+00:00",
+  "collected_at": "2026-05-19T10:34:57.658880+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 9,
   "items": [
     {
       "source": "steam",
@@ -46,7 +46,7 @@
       "voted_up": false,
       "review": "你游关卡策划是疯了吗？本来玩的人就少，周年庆出这种司马活动，你要不看看难度和所需要的场次呢，本来周年庆福利很可以的，尼玛这个全服挑战活动直接好感败光",
       "timestamp_created": 1779156765,
-      "playtime_forever": 3386
+      "playtime_forever": 3446
     },
     {
       "source": "steam",
@@ -137,36 +137,6 @@
       "review": "+1 Cool visual art",
       "timestamp_created": 1779100529,
       "playtime_forever": 350
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-18T07:59:21+00:00",
-      "lang": "english",
-      "title": "[正面] Good story and fun gameplay what's not to like.",
-      "summary": "Good story and fun gameplay what's not to like.",
-      "url": "https://steamcommunity.com/profiles/76561198268829485/recommended/3052450",
-      "author": "76561198268829485",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Good story and fun gameplay what's not to like.",
-      "timestamp_created": 1779091161,
-      "playtime_forever": 3583
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-18T06:49:10+00:00",
-      "lang": "koreana",
-      "title": "[负面] 노잼 가득히",
-      "summary": "노잼 가득히",
-      "url": "https://steamcommunity.com/profiles/76561199550326756/recommended/3052450",
-      "author": "76561199550326756",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": false,
-      "review": "노잼 가득히",
-      "timestamp_created": 1779086950,
-      "playtime_forever": 10
     }
   ]
 }
