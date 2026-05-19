@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-19T02:12:19.944785+00:00",
+  "collected_at": "2026-05-19T06:42:46.285145+00:00",
   "source": "steam",
-  "item_count": 12,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -20,6 +20,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-05-18T12:41:53+00:00",
+      "lang": "english",
+      "title": "[负面] Worst anni",
+      "summary": "Worst anni",
+      "url": "https://steamcommunity.com/profiles/76561198164796549/recommended/3052450",
+      "author": "76561198164796549",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": false,
+      "review": "Worst anni",
+      "timestamp_created": 1779108113,
+      "playtime_forever": 1559
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-19T02:12:45+00:00",
+      "lang": "schinese",
+      "title": "[负面] 你游关卡策划是疯了吗？本来玩的人就少，周年庆出这种司马活动，你要不看看难度和所需要的场次呢，本来周年...",
+      "summary": "你游关卡策划是疯了吗？本来玩的人就少，周年庆出这种司马活动，你要不看看难度和所需要的场次呢，本来周年庆福利很可以的，尼玛这个全服挑战活动直接好感败光",
+      "url": "https://steamcommunity.com/profiles/76561199356212550/recommended/3052450",
+      "author": "76561199356212550",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "你游关卡策划是疯了吗？本来玩的人就少，周年庆出这种司马活动，你要不看看难度和所需要的场次呢，本来周年庆福利很可以的，尼玛这个全服挑战活动直接好感败光",
+      "timestamp_created": 1779156765,
+      "playtime_forever": 3386
+    },
+    {
+      "source": "steam",
       "time": "2026-05-18T17:54:50+00:00",
       "lang": "brazilian",
       "title": "[正面] jogo tem um bom free2play, pra quem gosta de slay...",
@@ -31,7 +61,7 @@
       "voted_up": true,
       "review": "jogo tem um bom free2play, pra quem gosta de slay the spire, é basicamente a mesma coisa so que com mais mecanicas",
       "timestamp_created": 1779126890,
-      "playtime_forever": 7192
+      "playtime_forever": 7238
     },
     {
       "source": "steam",
@@ -80,21 +110,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-05-18T12:41:53+00:00",
-      "lang": "english",
-      "title": "[负面] Worst anni",
-      "summary": "Worst anni",
-      "url": "https://steamcommunity.com/profiles/76561198164796549/recommended/3052450",
-      "author": "76561198164796549",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "Worst anni",
-      "timestamp_created": 1779108113,
-      "playtime_forever": 1559
-    },
-    {
-      "source": "steam",
       "time": "2026-05-18T12:26:46+00:00",
       "lang": "koreana",
       "title": "[正面] 재미있고 캐릭터가 예쁨",
@@ -136,7 +151,7 @@
       "voted_up": true,
       "review": "Good story and fun gameplay what's not to like.",
       "timestamp_created": 1779091161,
-      "playtime_forever": 3360
+      "playtime_forever": 3583
     },
     {
       "source": "steam",
@@ -152,36 +167,6 @@
       "review": "노잼 가득히",
       "timestamp_created": 1779086950,
       "playtime_forever": 10
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-18T05:54:03+00:00",
-      "lang": "schinese",
-      "title": "[正面] 好玩 福利多",
-      "summary": "好玩 福利多",
-      "url": "https://steamcommunity.com/profiles/76561198109303014/recommended/3052450",
-      "author": "76561198109303014",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "好玩 福利多",
-      "timestamp_created": 1779083643,
-      "playtime_forever": 702
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-18T02:49:36+00:00",
-      "lang": "french",
-      "title": "[正面] hidden gem",
-      "summary": "hidden gem",
-      "url": "https://steamcommunity.com/profiles/76561198735617099/recommended/3052450",
-      "author": "76561198735617099",
-      "engagement": 0,
-      "language": "french",
-      "voted_up": true,
-      "review": "hidden gem",
-      "timestamp_created": 1779072576,
-      "playtime_forever": 3438
     }
   ]
 }
