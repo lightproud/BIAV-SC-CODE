@@ -9453,6 +9453,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-19T20:27:17.965804+00:00"
+    },
+    "https://preview.redd.it/97ymh2k9y52h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5b55c79a6d17b096d1d3437fd2e64d622e6170c4": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-19T22:09:41.673699+00:00"
     }
   },
   "archived": []
