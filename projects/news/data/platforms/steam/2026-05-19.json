@@ -1,8 +1,8 @@
 {
   "date": "2026-05-19",
-  "archived_at": "2026-05-19T10:35:02.567073+00:00",
+  "archived_at": "2026-05-19T13:51:56.919476+00:00",
   "source": "steam",
-  "item_count": 5,
+  "item_count": 7,
   "items": [
     {
       "source": "steam",
@@ -78,6 +78,36 @@
       "review": "你游关卡策划是疯了吗？本来玩的人就少，周年庆出这种司马活动，你要不看看难度和所需要的场次呢，本来周年庆福利很可以的，尼玛这个全服挑战活动直接好感败光",
       "timestamp_created": 1779156765,
       "playtime_forever": 3386
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-19T11:19:17+00:00",
+      "lang": "english",
+      "title": "[正面] Goooooooooodddd",
+      "summary": "Goooooooooodddd",
+      "url": "https://steamcommunity.com/profiles/76561198348570041/recommended/3052450",
+      "author": "76561198348570041",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Goooooooooodddd",
+      "timestamp_created": 1779189557,
+      "playtime_forever": 311
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-19T10:28:17+00:00",
+      "lang": "schinese",
+      "title": "[正面] 为什么卡池里一堆死人",
+      "summary": "为什么卡池里一堆死人",
+      "url": "https://steamcommunity.com/profiles/76561199193794163/recommended/3052450",
+      "author": "76561199193794163",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "为什么卡池里一堆死人",
+      "timestamp_created": 1779186497,
+      "playtime_forever": 631
     }
   ]
 }
