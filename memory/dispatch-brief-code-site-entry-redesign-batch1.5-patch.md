@@ -1,4 +1,8 @@
-# 派发 Brief — Code-site：入口架构 batch 1.5 patch（v1.0 → v1.1 单一受众收缩）
+> ⚠ **2026-05-19 守密人裁定本 brief 全文 DEPRECATED**：入口架构反转——CLAUDE.md 成为唯一 AI 入口，BIAV-SC.md 彻底废弃。本 brief 的「BIAV-SC.md 单一受众收缩」前提失效。**Code-site 收到本 brief 不要执行**——参考新 brief：`memory/dispatch-brief-code-site-claude-md-unify.md`。详见 `memory/decisions.md` 2026-05-19「入口架构反转」条目。
+
+---
+
+# 派发 Brief — Code-site：入口架构 batch 1.5 patch（v1.0 → v1.1 单一受众收缩）【已废弃】
 
 > 落档日期：2026-05-06
 > 派发方：主控台（艾瑞卡 opus4.7 长期战略锚点）
