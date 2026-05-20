@@ -6495,6 +6495,13 @@
       "title": "[DC] jjlin0103@🔸綜合討論: 可惜不能上傳圖片當背景 這個比較適合",
       "time": "2026-05-20T05:21:26.682000+00:00",
       "downloaded_at": "2026-05-20T21:34:18.216900+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/05/21/06/51/09/145024649_p0_custom1200.jpg": {
+      "filename": "pixiv_9e8b9012d80d14b7.jpg",
+      "source": "pixiv",
+      "title": "There's an intruder at Mythag!",
+      "time": "2026-05-21T06:51:09+09:00",
+      "downloaded_at": "2026-05-20T23:07:41.087003+00:00"
     }
   },
   "failed": {
@@ -9687,6 +9694,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-20T21:34:18.904683+00:00"
+    },
+    "https://preview.redd.it/n0rpzzm25d2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2f5457001a5a07f38d845b274cf7ef4d39eaa702": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-20T23:07:40.139322+00:00"
     }
   },
   "archived": []
