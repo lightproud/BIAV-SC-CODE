@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "5321628b",
-    "timestamp": "2026-05-20T01:22:28.318000+00:00",
-    "duration_minutes": 0.1,
+    "id": "9b603495",
+    "timestamp": "2026-05-20T01:31:46.601000+00:00",
+    "duration_minutes": 9.4,
     "branch": "claude/general-session-jROIO",
     "topics": [],
     "decisions": [],
@@ -10,6 +10,16 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "5321628b",
+      "timestamp": "2026-05-20T01:22:28.318000+00:00",
+      "duration_minutes": 0.1,
+      "branch": "claude/general-session-jROIO",
+      "topics": [],
+      "decisions": [],
+      "files_changed": [],
+      "open_items": []
+    },
     {
       "id": "d2b57840",
       "timestamp": "2026-05-20T00:45:54.259000+00:00",
@@ -221,37 +231,15 @@
       "decisions": [],
       "files_changed": [],
       "open_items": []
-    },
-    {
-      "id": "f57e7e06",
-      "timestamp": "2026-05-06T00:01:33.852000+00:00",
-      "duration_minutes": 13368.1,
-      "branch": "claude/code-strategy-bootstrap-XTmMR",
-      "topics": [
-        "银芯"
-      ],
-      "decisions": [
-        "当下最痛点：记忆系统结构化升级）。立即进入第 1 阶段「业界对标矩阵」，先完成必读材料数据扫描，并加载外网调研工具"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/research/ai-memory-restructure-2026-04.md",
-        "/home/user/brain-in-a-vat/memory/research/ai-memory-vendor-matrix.md",
-        "/home/user/brain-in-a-vat/memory/research/proposal-distill-autocommit-2026-04.md",
-        "/home/user/brain-in-a-vat/memory/strategy/code-strategy-bootstrap-proposal.md",
-        "/home/user/brain-in-a-vat/memory/strategy/handoff-to-mainconsole-memory-restructure.md",
-        "/home/user/brain-in-a-vat/memory/strategy/memory-restructure-options.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 2.88,
-      "黑池": 2.45,
-      "Bilibili": 0.59,
-      "GitHub": 0.15,
-      "Phase1": 0.15,
-      "BPT": 0.1
+      "银芯": 2.3,
+      "黑池": 1.96,
+      "Bilibili": 0.47,
+      "GitHub": 0.12,
+      "Phase1": 0.12
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
@@ -265,7 +253,7 @@
       "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
       "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md"
     ],
-    "total_sessions": 108
+    "total_sessions": 109
   },
-  "updated_at": "2026-05-20T01:27:03.343306+00:00"
+  "updated_at": "2026-05-20T01:36:40.068761+00:00"
 }
