@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "eea69c5e",
-    "timestamp": "2026-05-20T00:09:24.980000+00:00",
-    "duration_minutes": 34078.7,
+    "id": "555a76e9",
+    "timestamp": "2026-05-20T00:36:09.822000+00:00",
+    "duration_minutes": 34105.4,
     "branch": "claude/opus-handoff-strategy-bCiyY",
     "topics": [
       "银芯",
@@ -24,6 +24,7 @@
       "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-info-classification-retrofit.md",
       "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-restructure-batch1.md",
       "/home/user/brain-in-a-vat/memory/dispatch-brief-code-news-data-layer-audit.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-claude-md-unify.md",
       "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.5-patch.md",
       "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.md",
       "/home/user/brain-in-a-vat/memory/dispatch-brief-code-strategy-bootstrap.md",
@@ -33,6 +34,39 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "eea69c5e",
+      "timestamp": "2026-05-20T00:09:24.980000+00:00",
+      "duration_minutes": 34078.7,
+      "branch": "claude/opus-handoff-strategy-bCiyY",
+      "topics": [
+        "银芯",
+        "黑池"
+      ],
+      "decisions": [],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
+        "/home/user/brain-in-a-vat/BIAV-SC.md",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/README.md",
+        "/home/user/brain-in-a-vat/memory/biav-info-classification.md",
+        "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
+        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
+        "/home/user/brain-in-a-vat/memory/decisions.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-distill-autocommit.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-info-classification-retrofit.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-restructure-batch1.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-news-data-layer-audit.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.5-patch.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-code-strategy-bootstrap.md",
+        "/home/user/brain-in-a-vat/memory/karpathy-coding-principles.md",
+        "/home/user/brain-in-a-vat/memory/lessons-learned.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "a094c664",
       "timestamp": "2026-05-19T23:58:15.600000+00:00",
@@ -220,49 +254,16 @@
         "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py"
       ],
       "open_items": []
-    },
-    {
-      "id": "b4b72e31",
-      "timestamp": "2026-05-03T04:37:23.616000+00:00",
-      "duration_minutes": 9576.9,
-      "branch": "claude/migrate-direct-collectors-Rx9Qx",
-      "topics": [
-        "GitHub",
-        "Phase1"
-      ],
-      "decisions": [
-        "Playwright"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/memory/data-layer-audit.md",
-        "/home/user/brain-in-a-vat/memory/pending-discussions.md",
-        "/home/user/brain-in-a-vat/projects/news/requirements.txt",
-        "/home/user/brain-in-a-vat/projects/news/scripts/aggregator.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/archive_platforms.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_daily_reports.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/backfill_platforms.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/collect_global.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/discord_archiver.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/generate_daily.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/global_collectors.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/playwright_collectors.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/silent_sources_audit.py",
-        "/home/user/brain-in-a-vat/projects/news/scripts/split_output.py",
-        "/home/user/brain-in-a-vat/projects/wiki/package.json"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 2.81,
-      "黑池": 1.98,
-      "Bilibili": 1.15,
-      "GitHub": 0.3,
-      "Phase1": 0.3,
-      "BPT": 0.19,
-      "记忆系统": 0.11,
-      "索引": 0.11
+      "银芯": 3.25,
+      "黑池": 2.58,
+      "Bilibili": 0.92,
+      "GitHub": 0.24,
+      "Phase1": 0.24,
+      "BPT": 0.15
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/BIAV-SC.md",
@@ -276,7 +277,7 @@
       "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
       "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md"
     ],
-    "total_sessions": 105
+    "total_sessions": 106
   },
-  "updated_at": "2026-05-20T00:15:05.343827+00:00"
+  "updated_at": "2026-05-20T00:40:47.399114+00:00"
 }
