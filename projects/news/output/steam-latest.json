@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-20T21:34:13.376817+00:00",
+  "collected_at": "2026-05-20T23:07:39.547015+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -16,7 +16,22 @@
       "voted_up": true,
       "review": "Хороший симулятор поедания эмбрионов",
       "timestamp_created": 1779288495,
-      "playtime_forever": 3400
+      "playtime_forever": 3452
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-20T03:24:47+00:00",
+      "lang": "brazilian",
+      "title": "[正面] bom dms",
+      "summary": "bom dms",
+      "url": "https://steamcommunity.com/profiles/76561198272677901/recommended/3052450",
+      "author": "76561198272677901",
+      "engagement": 1,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "bom dms",
+      "timestamp_created": 1779247487,
+      "playtime_forever": 1587
     },
     {
       "source": "steam",
@@ -32,6 +47,36 @@
       "review": "Solo escribo esta reseña porque veo una cantidad enorme de comentarios en español alrededor del juego que por algún motivo no tienen ni idea de esto: la traducción al español, actualmente, esta hecha enteramente por ChatGPT, y por lo tanto, todo el texto que no sea tecnico (es decir, cualquier cosa que tenga que ver con la historia) es licuado y convertido en algo ilegible.\nEl 95%+ del juego esta actualmente traducido al inglés por humanos, y efectivamente, la prosa se vuelve muchísimo mejor al no ser MTL. Si vas a jugar al juego por la historia, juégalo en inglés o espera a que salga una traducción al español (que con lo que tardará en salir, siendo lo dificultoso que es encontrar traductores CN->ES que trabajen gratis, es mucho más factible que aprendas inglés y lo juegues en ese mismo idioma)",
       "timestamp_created": 1779243655,
       "playtime_forever": 1121
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-20T21:48:36+00:00",
+      "lang": "english",
+      "title": "[正面] Might be the best gacha game of all time",
+      "summary": "Might be the best gacha game of all time",
+      "url": "https://steamcommunity.com/profiles/76561199148322587/recommended/3052450",
+      "author": "76561199148322587",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Might be the best gacha game of all time",
+      "timestamp_created": 1779313716,
+      "playtime_forever": 1819
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-20T21:13:27+00:00",
+      "lang": "russian",
+      "title": "[正面] за саю лайк, перевод корявый(какая нах дора...)",
+      "summary": "за саю лайк, перевод корявый(какая нах дора...)",
+      "url": "https://steamcommunity.com/profiles/76561199595756333/recommended/3052450",
+      "author": "76561199595756333",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "за саю лайк, перевод корявый(какая нах дора...)",
+      "timestamp_created": 1779311607,
+      "playtime_forever": 47
     },
     {
       "source": "steam",
@@ -62,21 +107,6 @@
       "review": "If you like my turn u will love this game",
       "timestamp_created": 1779252839,
       "playtime_forever": 5607
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T03:24:47+00:00",
-      "lang": "brazilian",
-      "title": "[正面] bom dms",
-      "summary": "bom dms",
-      "url": "https://steamcommunity.com/profiles/76561198272677901/recommended/3052450",
-      "author": "76561198272677901",
-      "engagement": 0,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "bom dms",
-      "timestamp_created": 1779247487,
-      "playtime_forever": 1587
     },
     {
       "source": "steam",
