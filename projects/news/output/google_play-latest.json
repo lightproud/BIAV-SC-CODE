@@ -1,38 +1,8 @@
 {
-  "collected_at": "2026-05-20T02:10:06.231974+00:00",
+  "collected_at": "2026-05-20T06:43:44.368121+00:00",
   "source": "google_play",
   "item_count": 12,
   "items": [
-    {
-      "source": "google_play",
-      "time": "2026-04-20T02:42:39",
-      "lang": "es",
-      "title": "[Google Play 好评] ★5 la verdad este juego lo tiene todo,es fá",
-      "summary": "la verdad este juego lo tiene todo,es fácil de entender si historia, es tenso en situaciones diversas,las batallas son buenísimas y muy sugestivas. para agregar tiene español, inglés e idiomas asiáticos y demás por lo que no tiene ninguna barrera lingüística. en resumen sin quejas luego de una semana de juego.pd:actualizo esto para decirle a los desarrolladores una sugerencia pasiva sin ánimos de quejarme, me gustaría que añadieran un sistema de citas con los personajes, muchas gracias por todo.",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es",
-      "author": "Hiro",
-      "engagement": 15
-    },
-    {
-      "source": "google_play",
-      "time": "2026-04-20T04:52:27",
-      "lang": "zh",
-      "title": "[Google Play 好评] ★5 美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
-      "summary": "美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_TW",
-      "author": "Kimchi Lee",
-      "engagement": 10
-    },
-    {
-      "source": "google_play",
-      "time": "2026-04-20T04:52:27",
-      "lang": "zh",
-      "title": "[Google Play 好评] ★5 美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
-      "summary": "美術很好，玩法不錯，策劃沒媽，運營更是死全家，你遊敗筆就是校貓",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK",
-      "author": "Kimchi Lee",
-      "engagement": 10
-    },
     {
       "source": "google_play",
       "time": "2026-05-18T11:10:05",
@@ -42,16 +12,6 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en",
       "author": "A.C.D.",
       "engagement": 8
-    },
-    {
-      "source": "google_play",
-      "time": "2026-04-20T03:32:01",
-      "lang": "ko",
-      "title": "[Google Play 好评] ★5 숨겨진 갓겜",
-      "summary": "숨겨진 갓겜",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko",
-      "author": "아지TV",
-      "engagement": 2
     },
     {
       "source": "google_play",
@@ -72,6 +32,26 @@
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=vi",
       "author": "Dung Nguyễn",
       "engagement": 2
+    },
+    {
+      "source": "google_play",
+      "time": "2026-04-21T23:13:41",
+      "lang": "es",
+      "title": "[Google Play 好评] ★5 Volvieron a usar la traducciòn al españo",
+      "summary": "Volvieron a usar la traducciòn al español, gracias, excelente juego",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=es",
+      "author": "loki4 the river",
+      "engagement": 2
+    },
+    {
+      "source": "google_play",
+      "time": "2026-04-28T08:40:19",
+      "lang": "ko",
+      "title": "[Google Play 好评] ★5 여태까지 했던 게임중 게임성은 대존잼 번역은 매우 아쉬움... 유명하지",
+      "summary": "여태까지 했던 게임중 게임성은 대존잼 번역은 매우 아쉬움... 유명하지 않아서 너무 슬픔.. 잘 됐으면 좋겠음",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=ko",
+      "author": "이영상",
+      "engagement": 1
     },
     {
       "source": "google_play",
@@ -101,6 +81,26 @@
       "summary": "为什么总是卡在开头网络繁忙 已解决，记得开全局 好玩！！！！",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_CN",
       "author": "烈火焚尽",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-05-03T16:02:48",
+      "lang": "zh",
+      "title": "[Google Play 差评] ★1 只建议白嫖玩这游戏哦，plz be a f2p player",
+      "summary": "只建议白嫖玩这游戏哦，plz be a f2p player",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_TW",
+      "author": "timo timothy",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-05-03T16:02:48",
+      "lang": "zh",
+      "title": "[Google Play 差评] ★1 只建议白嫖玩这游戏哦，plz be a f2p player",
+      "summary": "只建议白嫖玩这游戏哦，plz be a f2p player",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK",
+      "author": "timo timothy",
       "engagement": 0
     },
     {
