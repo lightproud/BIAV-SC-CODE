@@ -6418,6 +6418,13 @@
       "title": "Morimens but I ONLY pull characters from the Kaleido Recollections Banner",
       "time": "2026-05-20T16:46:24.322156+00:00",
       "downloaded_at": "2026-05-20T16:49:24.231843+00:00"
+    },
+    "https://i.ytimg.com/vi/YwUwJysVEcU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCq3Lk4uH6IOjH-2TTHstN-vMpZjg": {
+      "filename": "youtube_f900b4bda17b02c0.jpg",
+      "source": "youtube",
+      "title": "Morimens but I ONLY pull characters from the Kaleido Recollections Banner",
+      "time": "2026-05-20T19:04:37.287105+00:00",
+      "downloaded_at": "2026-05-20T19:16:38.567873+00:00"
     }
   },
   "failed": {
@@ -9595,6 +9602,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-20T16:49:23.853422+00:00"
+    },
+    "https://preview.redd.it/6kh4tif7qb2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=fe2ee6c546e306e892c4b912f5bdc7b134f5cc9f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-20T19:16:38.964506+00:00"
     }
   },
   "archived": []
