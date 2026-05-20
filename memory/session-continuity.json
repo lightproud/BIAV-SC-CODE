@@ -1,8 +1,8 @@
 {
   "last_session": {
-    "id": "fa142042",
-    "timestamp": "2026-05-20T02:18:15.441000+00:00",
-    "duration_minutes": 55.9,
+    "id": "f9fc3f8d",
+    "timestamp": "2026-05-20T02:47:00.148000+00:00",
+    "duration_minutes": 84.6,
     "branch": "claude/general-session-jROIO",
     "topics": [],
     "decisions": [
@@ -16,6 +16,22 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "fa142042",
+      "timestamp": "2026-05-20T02:18:15.441000+00:00",
+      "duration_minutes": 55.9,
+      "branch": "claude/general-session-jROIO",
+      "topics": [],
+      "decisions": [
+        "**豁免压缩**——守密人 5-19「内嵌 = 强约束」裁定等价于\"逐字镌刻\"，按 §7.3「Don't refactor things that aren't broken」放弃此项。其余 7 项按",
+        "更小粒度替换。先删 §9"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/maintenance-runbook.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "9b603495",
       "timestamp": "2026-05-20T01:31:46.601000+00:00",
@@ -227,39 +243,19 @@
         "/home/user/brain-in-a-vat/projects/site/public/index.html"
       ],
       "open_items": []
-    },
-    {
-      "id": "fail-sim",
-      "timestamp": null,
-      "duration_minutes": null,
-      "branch": "",
-      "topics": [],
-      "decisions": [],
-      "files_changed": [],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 1.84,
-      "黑池": 1.57,
-      "Bilibili": 0.38,
-      "GitHub": 0.1,
-      "Phase1": 0.1
+      "银芯": 1.47,
+      "黑池": 1.26,
+      "Bilibili": 0.3
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
-      "/home/user/brain-in-a-vat/BIAV-SC.md",
-      "/home/user/brain-in-a-vat/README.md",
-      "/home/user/brain-in-a-vat/memory/biav-info-classification.md",
-      "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
-      "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-      "/home/user/brain-in-a-vat/memory/decisions.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md"
+      "/home/user/brain-in-a-vat/memory/maintenance-runbook.md"
     ],
-    "total_sessions": 110
+    "total_sessions": 111
   },
-  "updated_at": "2026-05-20T02:22:50.457756+00:00"
+  "updated_at": "2026-05-20T02:50:48.628759+00:00"
 }
