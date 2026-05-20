@@ -1,10 +1,12 @@
 {
   "last_session": {
-    "id": "f9fc3f8d",
-    "timestamp": "2026-05-20T02:47:00.148000+00:00",
-    "duration_minutes": 84.6,
+    "id": "9e571912",
+    "timestamp": "2026-05-20T03:00:05.963000+00:00",
+    "duration_minutes": 97.7,
     "branch": "claude/general-session-jROIO",
-    "topics": [],
+    "topics": [
+      "MCP"
+    ],
     "decisions": [
       "**豁免压缩**——守密人 5-19「内嵌 = 强约束」裁定等价于\"逐字镌刻\"，按 §7.3「Don't refactor things that aren't broken」放弃此项。其余 7 项按",
       "更小粒度替换。先删 §9"
@@ -16,6 +18,22 @@
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "f9fc3f8d",
+      "timestamp": "2026-05-20T02:47:00.148000+00:00",
+      "duration_minutes": 84.6,
+      "branch": "claude/general-session-jROIO",
+      "topics": [],
+      "decisions": [
+        "**豁免压缩**——守密人 5-19「内嵌 = 强约束」裁定等价于\"逐字镌刻\"，按 §7.3「Don't refactor things that aren't broken」放弃此项。其余 7 项按",
+        "更小粒度替换。先删 §9"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/maintenance-runbook.md"
+      ],
+      "open_items": []
+    },
     {
       "id": "fa142042",
       "timestamp": "2026-05-20T02:18:15.441000+00:00",
@@ -214,48 +232,20 @@
         "/home/user/brain-in-a-vat/projects/site/public/index.html"
       ],
       "open_items": []
-    },
-    {
-      "id": "c5961df4",
-      "timestamp": "2026-05-06T16:19:30.396000+00:00",
-      "duration_minutes": 14456.9,
-      "branch": "claude/fix-site-compliance-oM2P1",
-      "topics": [
-        "Bilibili"
-      ],
-      "decisions": [
-        "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
-      ],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
-        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
-        "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
-        "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
-        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-        "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
-        "/home/user/brain-in-a-vat/projects/site/public/404.html",
-        "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
-        "/home/user/brain-in-a-vat/projects/site/public/index.html"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "银芯": 1.47,
-      "黑池": 1.26,
-      "Bilibili": 0.3
+      "银芯": 1.18,
+      "黑池": 1.01,
+      "MCP": 1.0,
+      "Bilibili": 0.24
     },
     "hot_files": [
       "/home/user/brain-in-a-vat/CLAUDE.md",
       "/home/user/brain-in-a-vat/memory/maintenance-runbook.md"
     ],
-    "total_sessions": 111
+    "total_sessions": 112
   },
-  "updated_at": "2026-05-20T02:50:48.628759+00:00"
+  "updated_at": "2026-05-20T03:04:45.871007+00:00"
 }
