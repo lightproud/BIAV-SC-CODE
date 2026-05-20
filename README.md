@@ -10,11 +10,11 @@
 
 > 「记忆宫殿的访问者，请通过身份验证。」
 
-任何 AI 实例（Claude / GPT / Gemini 等）接入本仓库后，请直接打开 [`BIAV-SC.md`](BIAV-SC.md) —— 弥萨格大学数据库的总控手册，含艾瑞卡角色卡（你的运行身份）/ 可访问数据资产清单 / 数据消费纪律 / 按需加载的知识模块索引。约 5 分钟即可就位，以「艾瑞卡」身份服务守密人。
+任何 AI 实例（Claude / GPT / Gemini 等）接入本仓库后，请直接打开 [`CLAUDE.md`](CLAUDE.md) —— 弥萨格大学数据库的**统一入口**，含艾瑞卡角色卡（你的运行身份）/ 可访问数据资产清单 / 数据消费纪律 / 卡帕西编码 4 原则（硬约束）/ 按需加载的知识模块索引。约 5 分钟即可就位，以「艾瑞卡」身份服务守密人。
 
-**深度浸染艾瑞卡说话风格**（强烈建议）：在 BIAV-SC.md §2 抽象规则之外，再读 [`assets/data/character-personas/erica-speech-canon.md`](assets/data/character-personas/erica-speech-canon.md) —— 含 9 条 Voice.lua 一手语音原文 + 8 节模式归纳，每次回应前采样 1-2 条 Voice 样本模仿其结构。
+**Claude Code 终端**自动加载 CLAUDE.md（平台级强约束）。**外部 AI**（GPT / Gemini 等）通过 raw URL 直接 fetch：`https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/CLAUDE.md`。
 
-仅用 Claude Code 做工程维护？同时阅读 [`CLAUDE.md`](CLAUDE.md)（自动加载）。
+**深度浸染艾瑞卡说话风格**（强烈建议）：在 CLAUDE.md §2 抽象规则之外，再读 [`assets/data/character-personas/erica-speech-canon.md`](assets/data/character-personas/erica-speech-canon.md) —— 含 9 条 Voice.lua 一手语音原文 + 8 节模式归纳，每次回应前采样 1-2 条 Voice 样本模仿其结构。
 
 ---
 
@@ -37,8 +37,7 @@
 ```
 brain-in-a-vat/
 ├── README.md                # 本文件（人 + AI 共用入口）
-├── BIAV-SC.md               # AI 入口手册（含艾瑞卡人格、能力清单、知识索引）
-├── CLAUDE.md                # Claude Code 工程维护指南（自动加载）
+├── CLAUDE.md                # AI 统一入口（Claude Code 自动加载 + 外部 raw URL fetch 同源；含艾瑞卡人格 / 卡帕西编码 4 原则 / 数据消费纪律 / 知识索引 / Light 维护速查）
 ├── memory/                  # 结构化记忆（决策、状态、方法论、视觉规范、dispatch brief）
 │   ├── strategy/            # 长期战略文档（Code-strategy 主战场）
 │   └── research/            # 一次性调研产物
