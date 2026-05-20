@@ -295,14 +295,86 @@ session-digest（SessionEnd hook 自动产出 `memory/session-digests/`）/ disp
 
 ---
 
-## §7 引用法则（独立法则文档，任何接入 AI 同步遵循）
+## §7 卡帕西编码 4 原则（硬约束，所有写代码的会话都必读）
+
+**守密人 2026-05-10 采纳**。上游：Andrej Karpathy 2026-01-26 LLM 编码行为观察 + Forrest Chang 编码为 CLAUDE.md（`forrestchang/andrej-karpathy-skills` 91k stars）。**守密人 5-19 裁定内嵌至 CLAUDE.md 本节**，不用指针——指针 = 弱约束，内嵌 = 平台自动加载强约束。与守密人硬约束「精简优雅可维护」同构。
+
+### §7.1 Think Before Coding（动手前先想）
+
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
+
+Before implementing:
+- State your assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them — don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
+
+银芯落地：艾瑞卡接收派发任务后**先报告排查结果，再申请执行**。假设要明示、多解释要全部列出、简化路径要主动提、不明就停手。**反 pattern**：列 5 个等价选项让守密人挑（过度选项化）—— 要先给判断 + 推荐再列备选。
+
+### §7.2 Simplicity First（精简优先）
+
+**Minimum code that solves the problem. Nothing speculative.**
+
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
+
+Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
+
+银芯落地：守密人硬约束「精简优雅可维护」的直接对应。**反 pattern**：5 类受众分诊 / 5 场景实测 / 预编排 M2/M3 任务都是过度复杂的典型（守密人多次纠正过的同款毛病）。
+
+### §7.3 Surgical Changes（外科手术式改动）
+
+**Touch only what you must. Clean up only your own mess.**
+
+When editing existing code:
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- If you notice unrelated dead code, mention it — don't delete it.
+
+When your changes create orphans:
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
+
+**The test**: Every changed line should trace directly to the user's request.
+
+### §7.4 Goal-Driven Execution（目标驱动执行）
+
+**Define success criteria. Loop until verified.**
+
+Transform tasks into verifiable goals:
+- "Add validation" → "Write tests for invalid inputs, then make them pass"
+- "Fix the bug" → "Write a test that reproduces it, then make it pass"
+- "Refactor X" → "Ensure tests pass before and after"
+
+For multi-step tasks, state a brief plan:
+
+```
+1. [Step] → verify: [check]
+2. [Step] → verify: [check]
+3. [Step] → verify: [check]
+```
+
+Strong success criteria let you loop independently. Weak criteria ("make it work") require constant clarification.
+
+### §7.5 工作信号
+
+这套原则**有效**的特征：
+- diff 中无必要的改动减少
+- 因过度复杂而重写的次数减少
+- 澄清问题**先于**实施，而不是出错后才出现
+
+### §7.6 其他引用法则索引（指针，按需深入）
 
 | 法则 | 文件 | 守密人采纳 | 摘要 |
 |---|---|---|---|
-| **卡帕西编码 4 原则** | `memory/karpathy-coding-principles.md` | 2026-05-10 | Think Before Coding / Simplicity First / Surgical Changes / Goal-Driven Execution；与硬约束「精简优雅可维护」同构 |
-| **脑缸组信息分类法则** | `memory/biav-info-classification.md` v1.0 | 2026-05-06 | 7 类主轴（IP / 游戏产品 / 周边 / 品牌 / 社区运营 / 组织 / AI）+ 3 性质标记（正典 / 记载 / 法则）+ 多字段轴 |
-| **社区贡献协议** | `memory/contribution-protocol.md` v1.0 | 2026-04-26（Q1-Q5 裁决） | 5 类贡献者（C0~C4）+ 3 通道（数据补全 / 翻译 / Issue）+ 守密人最终批准 |
-| **方法论沉淀** | `memory/methodology.md` + `memory/lessons-learned.md` | 累积 | 多会话协作方法论 + 32 条踩坑 |
+| 脑缸组信息分类法则 | `memory/biav-info-classification.md` v1.0 | 2026-05-06 | 7 类主轴（IP / 游戏产品 / 周边 / 品牌 / 社区运营 / 组织 / AI）+ 3 性质标记（正典 / 记载 / 法则）+ 多字段轴 |
+| 社区贡献协议 | `memory/contribution-protocol.md` v1.0 | 2026-04-26 | 5 类贡献者 + 3 通道 + 守密人最终批准 |
+| 方法论沉淀 | `memory/methodology.md` + `memory/lessons-learned.md` | 累积 | 多会话协作方法论 + 32 条踩坑 |
+| 卡帕西原则深度版 | `memory/karpathy-coding-principles.md` | 2026-05-10 | 含原文 + 银芯角色术语化解读完整版（本节为精简内嵌版） |
 
 ---
 
