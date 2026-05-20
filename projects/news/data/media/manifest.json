@@ -6411,6 +6411,13 @@
       "title": "[Morimens] Short (Relatively) - Stream, answer questions. Then switch to a sponsored game",
       "time": "2026-05-20T10:18:03.362763+00:00",
       "downloaded_at": "2026-05-20T10:20:56.138190+00:00"
+    },
+    "https://i.ytimg.com/vi/YwUwJysVEcU/hq720.jpg?v=6a0db7e6&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCq3Lk4uH6IOjH-2TTHstN-vMpZjg": {
+      "filename": "youtube_8bdab9f15340dfac.jpg",
+      "source": "youtube",
+      "title": "Morimens but I ONLY pull characters from the Kaleido Recollections Banner",
+      "time": "2026-05-20T16:46:24.322156+00:00",
+      "downloaded_at": "2026-05-20T16:49:24.231843+00:00"
     }
   },
   "failed": {
@@ -9573,6 +9580,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-20T13:33:23.799410+00:00"
+    },
+    "https://preview.redd.it/qwh7rnfk9b2h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=d306ee958f2ac6ce2665680c69f1aa74f6460c82": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-20T16:49:23.162136+00:00"
+    },
+    "https://external-preview.redd.it/x1-d1EU3ow1Fo8yypPq_WjN2aIiCU4cr5BnmUVIn3IE.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=8b729807badd594d9b5ced882be026fc000e96a6": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-20T16:49:23.523051+00:00"
+    },
+    "https://preview.redd.it/s3osen56kb2h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=9e9dca2c4087b63b17c6563972ab70751184b4f8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-20T16:49:23.853422+00:00"
     }
   },
   "archived": []
