@@ -1,11 +1,11 @@
 {
   "date": "2026-05-08",
-  "messages": 13158,
+  "messages": 15358,
   "unique_authors": 200,
-  "reactions_total": 1588,
-  "attachments": 597,
+  "reactions_total": 1792,
+  "attachments": 683,
   "channel_activity": {
-    "🔸morimens-game-chat": 4537,
+    "🔸morimens-game-chat": 6737,
     "🔸綜合討論": 1947,
     "🔸阵容构建": 222,
     "🔸剧情交流": 19,
@@ -71,6 +71,16 @@
     "1502102667554590760": 1
   },
   "hourly_activity": {
+    "14": 1743,
+    "15": 1040,
+    "16": 721,
+    "17": 566,
+    "18": 485,
+    "19": 282,
+    "20": 84,
+    "21": 426,
+    "22": 198,
+    "23": 442,
     "0": 224,
     "1": 273,
     "2": 551,
@@ -84,21 +94,12 @@
     "10": 898,
     "11": 757,
     "12": 905,
-    "13": 1266,
-    "14": 1450,
-    "15": 833,
-    "16": 603,
-    "17": 249,
-    "18": 165,
-    "19": 175,
-    "20": 33,
-    "23": 103,
-    "21": 145,
-    "22": 31
+    "13": 1266
   },
   "message_types": {
-    "0": 3088,
-    "19": 1449
+    "0": 1589,
+    "19": 610,
+    "20": 1
   },
   "top_reacted_messages": [
     {
@@ -116,6 +117,14 @@
       "author": "glitzy_x",
       "reactions": 17,
       "channel": "look at our investigators, bro we're cooked 💔"
+    },
+    {
+      "id": "1502443138277703762",
+      "channel_id": "1170692781216378960",
+      "content": "<@735137568307282011> <@364412673275723779> <@113374123798859776> <@231543819026",
+      "author": "noire_2",
+      "reactions": 14,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1502220757835583528",
@@ -251,14 +260,6 @@
       "content": "Time to make something funny",
       "author": "moyashi0672",
       "reactions": 6,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1502143504904622200",
-      "channel_id": "1170692781216378960",
-      "content": "Did neither of u buy the draw 4?",
-      "author": "frosthief",
-      "reactions": 5,
       "channel": "🔸morimens-game-chat"
     }
   ]
