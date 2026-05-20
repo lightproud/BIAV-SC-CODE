@@ -1,34 +1,67 @@
 {
   "last_session": {
-    "id": "a8d8bb1f",
-    "timestamp": "2026-05-06T16:33:18.871000+00:00",
-    "duration_minutes": 14470.7,
-    "branch": "claude/fix-site-compliance-oM2P1",
+    "id": "a094c664",
+    "timestamp": "2026-05-19T23:58:15.600000+00:00",
+    "duration_minutes": 34067.5,
+    "branch": "claude/opus-handoff-strategy-bCiyY",
     "topics": [
-      "Bilibili"
+      "银芯",
+      "黑池"
     ],
-    "decisions": [
-      "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
-    ],
+    "decisions": [],
     "files_changed": [
-      "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
-      "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
-      "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
-      "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
-      "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
+      "/home/user/brain-in-a-vat/.github/workflows/cleanup-stale-branches.yml",
       "/home/user/brain-in-a-vat/BIAV-SC.md",
       "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/README.md",
+      "/home/user/brain-in-a-vat/memory/biav-info-classification.md",
+      "/home/user/brain-in-a-vat/memory/contribution-protocol-draft.md",
       "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
-      "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
-      "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
-      "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
-      "/home/user/brain-in-a-vat/projects/site/public/404.html",
-      "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
-      "/home/user/brain-in-a-vat/projects/site/public/index.html"
+      "/home/user/brain-in-a-vat/memory/decisions.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-D-fix.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-bootstrap.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-distill-autocommit.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-info-classification-retrofit.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-memory-restructure-batch1.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-news-data-layer-audit.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.5-patch.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-site-entry-redesign-batch1.md",
+      "/home/user/brain-in-a-vat/memory/dispatch-brief-code-strategy-bootstrap.md",
+      "/home/user/brain-in-a-vat/memory/karpathy-coding-principles.md",
+      "/home/user/brain-in-a-vat/memory/lessons-learned.md"
     ],
     "open_items": []
   },
   "recent_sessions": [
+    {
+      "id": "a8d8bb1f",
+      "timestamp": "2026-05-06T16:33:18.871000+00:00",
+      "duration_minutes": 14470.7,
+      "branch": "claude/fix-site-compliance-oM2P1",
+      "topics": [
+        "Bilibili"
+      ],
+      "decisions": [
+        "删除、NGA、Reddit、TapTap），删除 4 个无可信信号的卡片（Discord 日服、Bilibili、小红书、X）"
+      ],
+      "files_changed": [
+        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
+        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
+        "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
+        "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
+        "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
+        "/home/user/brain-in-a-vat/BIAV-SC.md",
+        "/home/user/brain-in-a-vat/CLAUDE.md",
+        "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
+        "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
+        "/home/user/brain-in-a-vat/projects/site/CONTEXT.md",
+        "/home/user/brain-in-a-vat/projects/site/design/morimens-design-system-guide.html",
+        "/home/user/brain-in-a-vat/projects/site/public/404.html",
+        "/home/user/brain-in-a-vat/projects/site/public/biav/index.html",
+        "/home/user/brain-in-a-vat/projects/site/public/index.html"
+      ],
+      "open_items": []
+    },
     {
       "id": "c5961df4",
       "timestamp": "2026-05-06T16:19:30.396000+00:00",
@@ -212,52 +245,32 @@
         "/home/user/brain-in-a-vat/memory/lessons-learned.md"
       ],
       "open_items": []
-    },
-    {
-      "id": "25bd3fb8",
-      "timestamp": "2026-04-27T19:12:46.895000+00:00",
-      "duration_minutes": 15.2,
-      "branch": "claude/code-bpt-guidance-BZkcG",
-      "topics": [
-        "BPT",
-        "银芯"
-      ],
-      "decisions": [],
-      "files_changed": [
-        "/home/user/brain-in-a-vat/BIAV-SC.md",
-        "/home/user/brain-in-a-vat/CLAUDE.md",
-        "/home/user/brain-in-a-vat/memory/bpt-architecture-snapshot-2026-04-19.md",
-        "/home/user/brain-in-a-vat/memory/bpt-architecture-summary-template.md",
-        "/home/user/brain-in-a-vat/memory/bpt-guidance-protocol.md",
-        "/home/user/brain-in-a-vat/memory/decisions.md"
-      ],
-      "open_items": []
     }
   ],
   "momentum": {
     "topic_weights": {
-      "Bilibili": 1.8,
-      "银芯": 1.57,
-      "GitHub": 0.47,
-      "Phase1": 0.47,
-      "BPT": 0.3,
-      "黑池": 0.27,
-      "记忆系统": 0.17,
-      "索引": 0.17
+      "银芯": 2.26,
+      "Bilibili": 1.44,
+      "黑池": 1.22,
+      "GitHub": 0.38,
+      "Phase1": 0.38,
+      "BPT": 0.24,
+      "记忆系统": 0.14,
+      "索引": 0.14
     },
     "hot_files": [
+      "/home/user/brain-in-a-vat/BIAV-SC.md",
+      "/home/user/brain-in-a-vat/CLAUDE.md",
+      "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
       "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/bug.yml",
       "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/config.yml",
       "/home/user/brain-in-a-vat/.github/ISSUE_TEMPLATE/data-gap.yml",
       "/home/user/brain-in-a-vat/.github/PULL_REQUEST_TEMPLATE.md",
       "/home/user/brain-in-a-vat/.github/workflows/deploy-site.yml",
-      "/home/user/brain-in-a-vat/BIAV-SC.md",
-      "/home/user/brain-in-a-vat/CLAUDE.md",
-      "/home/user/brain-in-a-vat/memory/contribution-protocol.md",
       "/home/user/brain-in-a-vat/memory/dispatch-brief-D-mission.md",
       "/home/user/brain-in-a-vat/projects/site/CONTEXT.md"
     ],
-    "total_sessions": 103
+    "total_sessions": 104
   },
-  "updated_at": "2026-05-06T16:38:42.801088+00:00"
+  "updated_at": "2026-05-20T00:04:18.558986+00:00"
 }
