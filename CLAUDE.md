@@ -7,11 +7,7 @@
 >
 > 银芯（BIAV-SC / Brain in a Vat — Silver Core）是 B.I.A.V. Studio
 > 忘却前夜（Morimens）项目的公开知识层，一个 AI 协作运营基础设施。
-> 制作人 Light。本仓库仅引用公开可查阅信息。
->
-> 接下来按本节进入艾瑞卡人格 → 按下方 §3 接入方能力盘点查看你能用银芯做什么 →
-> 按 §5 知识模块索引深入。如你需要做工程维护（Code-* 会话）再读 §6；
-> 如你是 Light 个人做仓库维护，参考 §8 速查。
+> 制作人 Light。
 >
 > **本文件双重身份**：(1) Claude Code 平台自动加载入口（Claude Code 终端会话启动时强约束）；
 > (2) 外部 AI（GPT / Gemini 等）通过 `https://raw.githubusercontent.com/lightproud/brain-in-a-vat/main/CLAUDE.md` 直接 fetch 接入点。
@@ -32,9 +28,6 @@
 | **银芯（BIAV-SC）公开层** | 本仓库 / GitHub 公开 / AI 协作运营 | → 黑池（公开信息单向输出）|
 | **黑池（BIAV-BP）内部层** | 内网 SVN + Qoder / Studio 商业数据 | 银芯 → 黑池单向。**黑池任何形式都不进银芯**（守密人 2026-04-26 裁定）|
 
-银芯是黑池的「眼睛和耳朵」：只采集 + 整理公开信息往黑池送，黑池吃完不吐回。
-原始设计方案见 `memory/archive/bpt-strategic-shift-2026-04-19/black-pool-design.md`。
-
 ### §1.2 三新使命（v2.0，2026-04-26 起）
 
 | # | 新使命 | 主对接子项目 |
@@ -45,11 +38,8 @@
 
 ### §1.3 当前阶段
 
-**Phase 1.5 完成 → Phase 2 银芯三新使命建设期**（2026-04-27 → 07-19，84 天）。
-news 三层（日报 3 源 + 哨兵 + 做梦 Agent）全启动；wiki Phase 2 W1 自举 24/72 角色；
-site 已部署稳定；game 暂缓。各子项目按需选型，后端 Python 3.11+，部署 GitHub Pages + Actions。
-
-详细状态 → `memory/project-status.md` / 战略全文 → `memory/strategic-plan-2026.md`
+后端 Python 3.11+，部署 GitHub Pages + Actions。当前 Phase 与子项目实时状态见
+`memory/project-status.md`，战略全文见 `memory/strategic-plan-2026.md`。
 
 ---
 
@@ -112,16 +102,11 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 §3.1 路径表仅供艾瑞卡自查，照搬给接入者会暴露内部结构（违反 §2.5）。详细路径见 §5。
 
-### §3.1 核心数据资产（仅供艾瑞卡自查，不要照搬给接入者）
+### §3.1 核心数据资产（语义清单，路径见 §5）
 
-72 唤醒体事实库（`projects/wiki/data/db/characters.json` + 三语 markdown，建设中）/
-多平台社区情报全量层（`projects/news/data/discord/` + `platforms/` 16 目录，回溯 2026-02）/
-情报输出层（`projects/news/output/*-latest.json`，每小时更新）/
-53 问制作人采访（`assets/data/interview-2026-04.json`）/
-三部叙事结构（`narrative-structure.json`）/ 设计决策档（`design-decisions.json`）/
-9 模块记忆系统（`scripts/memory_search.py` 等）/
-方法论 + 32 条踩坑（`memory/methodology.md` + `lessons-learned.md`）/
-战略档案（`decisions.md` + `strategic-plan-2026.md`）。
+72 唤醒体事实库（三语 markdown 建设中）/ 多平台社区情报全量层（回溯 2026-02）/
+情报输出层（每小时更新）/ 53 问制作人采访 / 三部叙事结构 / 设计决策档 /
+9 模块记忆系统 / 方法论 + 32 条踩坑 / 战略档案。
 
 ### §3.2 典型可执行任务
 
@@ -186,11 +171,11 @@ git commit = 数据归档提交 / git push = 同步至远端存储 /
 
 ### §5.3 项目管理 + 深度参考
 
-`memory/project-status.md`（子项目状态 + workflow）/ `decisions.md`（决策日志）/
-`strategic-plan-2026.md`（战略规划）/ `methodology.md`（协作方法论）/
-`lessons-learned.md`（32 条踩坑）/ `contribution-protocol.md`（贡献协议 v1.0）/
-`morimens-context.md`（世界观术语）/ `style-guide.md`（视觉规范）/
-`assets/data/VERSION.md`(事实圣经版本)。
+`memory/project-status.md`（子项目状态 + workflow）/ `memory/decisions.md`（决策日志）/
+`memory/strategic-plan-2026.md`（战略规划）/ `memory/methodology.md`（协作方法论）/
+`memory/lessons-learned.md`（32 条踩坑）/ `memory/contribution-protocol.md`（贡献协议 v1.0）/
+`memory/morimens-context.md`（世界观术语）/ `memory/style-guide.md`（视觉规范）/
+`memory/maintenance-runbook.md`（Light 维护速查 hook/workflow/故障）/ `assets/data/VERSION.md`（事实圣经版本）。
 
 ---
 
@@ -229,11 +214,9 @@ session-digest（SessionEnd hook 自动产出 `memory/session-digests/`）/ disp
 
 ### §6.5 9 模块记忆系统（查询入口）
 
-`scripts/memory_search.py`（TF-IDF + 中文双字符分词 + 4 维重排）/
-`knowledge_graph.py`（217 节点 443 边）/ `memrl.py`（EMA 效用评分）/
-`dream.py`（预计算缓存 + 哨兵异常检测 + 选择性记忆膨胀检测）/
-`mcp_server.py`（7 工具）/ `context_manager.py`（MemGPT 4 层推荐）/
-`reflexion.py`（失败模式学习）。详细设计见 `memory/advanced-memory-design.md`。
+主入口 `scripts/memory_search.py`（TF-IDF + 中文双字符分词 + 4 维重排）。其余 8 模块
+（knowledge_graph / memrl / dream / mcp_server / context_manager / reflexion 等）
+完整设计见 `memory/advanced-memory-design.md`。
 
 ### §6.6 Git 工作流
 
@@ -269,7 +252,7 @@ session-digest（SessionEnd hook 自动产出 `memory/session-digests/`）/ disp
 
 - 部署归 **Code-site 统一管理**（lesson #4 / #9）
 - 主要 workflow：`update-news.yml`（每日 2 次）/ `discord-archive.yml`（每日）/ `deploy-site.yml`（push 触发）/ `dream.yml`（浅睡 6h / 深睡日 / REM 周）
-- workflow 故障速查见 §8 Light 维护备忘
+- workflow 故障速查见 `memory/maintenance-runbook.md`
 
 ### §6.11 事实采信纪律（lesson #32，最高优先级）
 
@@ -378,90 +361,7 @@ Strong success criteria let you loop independently. Weak criteria ("make it work
 
 ---
 
-## §8 Light 维护速查（仅供 Light 个人做仓库维护时参考）
+## §8 Light 维护速查
 
-### §8.1 SessionStart hook
-
-`.claude/hooks/session-start-sync.sh` 每次会话启动 fetch origin/main 并同步 local main，
-备份旧 tip 到 `refs/backup/main-pre-sync-<timestamp>`。日志 `/tmp/session-start-sync.log`。
-
-### §8.2 SessionEnd hook
-
-`.claude/settings.json` 注册 SessionEnd hook，会话结束跑 `scripts/session-end-distill.sh
-→ scripts/session_distiller.py`，产出 `memory/session-digests/{stamp}-{sid}.md`，自动
-commit + push。日志 `/tmp/session-distill.log`。
-
-### §8.3 stop-hook
-
-`~/.claude/stop-hook-git-check.sh`（Light 个人级，跨仓库），检测未追踪文件或未推 commit 提示。
-
-### §8.4 workflow 频率
-
-| Workflow | 频率 | 功能 |
-|---|---|---|
-| `update-news.yml` | 每日 06:00 / 16:00 UTC | 多平台社区聚合 |
-| `discord-archive.yml` | 每日 18:00 UTC | Discord 全量归档 |
-| `deploy-site.yml` | push 触发 | 主站 + Wiki + News 部署 gh-pages |
-| `fetch-wiki-data.yml` | 每周一 | 抓取 Fandom/Bilibili Wiki 角色 |
-| `check-version.yml` | 每周一 | 游戏版本更新检测 |
-| `validate-data.yml` | push 触发 | 事实圣经 JSON Schema 校验 |
-| `dream.yml`（浅睡）| 每 6h | 结构检查 + 哨兵扫描 + 索引重建 |
-| `dream.yml`（深睡）| 每日 19:00 UTC | Claude 趋势分析 + 知识缺口识别 |
-| `dream.yml`（REM）| 每周一 01:00 UTC | Claude 周报 + 经验提炼 |
-| `claude.yml` | Issue 触发 | Claude Code GitHub Actions（已禁自动 merge） |
-| `cleanup-stale-branches.yml` | 每周一 02:00 UTC | 清理已合 main 的 claude/* 分支 |
-
-### §8.5 高频故障
-
-- **空数据导致历史覆盖**（lesson #2）：聚合器空跑必须非零退出。
-- **VitePress frontmatter 冒号未引号**（lesson #6）：title 含冒号必须 `title: "Doll: Inferno"`。
-- **VitePress img src 以 / 开头被 Vue 编译器当 import**（lesson #7）：用 `:src="'/...'"` 动态绑定。
-- **批量生成内容后未跑构建验证**（lesson #5）。
-- **数据层 vs 输出层混淆**（lesson #30，详见 §4）。
-
-### §8.6 凭据 / 部署 / Cloudflare
-
-- 公开 ID（NGA 版块 / TapTap APP ID / Discord Guild ID）直接硬编码（lesson #9）
-- 真凭据（`ANTHROPIC_API_KEY` / `DISCORD_BOT_TOKEN` / `GITHUB_TOKEN`）放 repo secrets
-- GitHub Pages Source = `gh-pages` 分支；用 `peaceiris/actions-gh-pages@v4` 而非 `actions/deploy-pages`（lesson #9）
-- Cloudflare 413 → SessionStart hook 自动同步预防（lesson #28）。手动：`git fetch origin main && git reset --hard origin/main`
-- 部署后视觉验证：Web 端 Claude Code 无外网（lesson #16），用 PC 端或浏览器手动 review
-
-### §8.7 子项目维护备忘表
-
-每个子项目根目录有 `CONTEXT.md`，新会话启动前必读对应子项目的 CONTEXT.md。
-
-| 子项目 | 路径 | 负责会话 | 关键约束 |
-|--------|------|---------|---------|
-| 主站 + 部署 + 视觉 | `projects/site/` | Code-site | 部署流水线归此处统一管理 |
-| 社区新闻聚合 | `projects/news/` | Code-news | 聚合器空跑必须非零退出（lesson #2） |
-| Wiki + 数据集 | `projects/wiki/` | Code-wiki | VitePress frontmatter 冒号要加引号（lesson #6） |
-| 衍生游戏 | `projects/game/` | Code-game（未启用） | 暂缓 |
-| 记忆基础设施 | `scripts/` + `assets/data/` 索引 | Code-memory | 9 模块；不写业务数据 |
-| 长期战略智库 | `memory/strategy/` + `memory/research/` | Code-strategy | 长尺度调研；不写代码、不写决策档 |
-| BPT 开发指导 | `memory/bpt-guidance-*.md` | Code-BPT | 不写银芯代码；只产出搬运包 |
-
-### §8.8 关键决策档（快查）
-
-| 日期 | 决策 |
-|------|------|
-| 2026-03-29 | 直推 main 落地 |
-| 2026-04-19 | 战略转向：BPT 删除 + 主控台长期锚点 |
-| 2026-04-26 | 银芯重新定位 v2.0 + 三新使命 + Phase 大一统 |
-| 2026-04-26 | 贡献协议 v1.0 落档（Q1-Q5 守密人裁决） |
-| 2026-05-06 | 入口架构重设计批 1 落地（双入口设计）|
-| 2026-05-06 | 信息分类法则 v1.0 落档 |
-| 2026-05-10 | 卡帕西编码 4 原则采纳 |
-| **2026-05-19** | **入口架构反转**：CLAUDE.md 统一入口 / BIAV-SC.md 彻底废弃 |
-
-完整 32 条 lessons 见 `memory/lessons-learned.md`。完整决策档见 `memory/decisions.md`。
-
----
-
-## §9 变更记录
-
-| 版本 | 日期 | 变更 | 作者 |
-|------|------|------|------|
-| v1.x | ~ 2026-04-26 | 工程维护指南（混合 AI 入口 + 人类速查）| 累积 |
-| v2.0 | 2026-05-06 | 拆出 AI 入口职责（下沉到 BIAV-SC.md），本文件专门化为 Light 个人维护备忘 | Code-site batch 1 |
-| **v3.0** | **2026-05-19** | **入口架构反转**：CLAUDE.md 重新成为唯一 AI 入口（Claude Code 自动加载 + 外部 raw URL 同源），BIAV-SC.md 废弃。合并 BIAV-SC.md 8 章 + 新 §7 法则引用 + §8 Light 速查 + §9。守密人裁定理由：「BIAV-SC.md 必然是弱约束，这是 Claude 结构决定的」——平台层强约束 > prompt 远端弱约束 | 主控台艾瑞卡 opus4.7 亲笔 |
+外迁至 `memory/maintenance-runbook.md`。包含 SessionStart/SessionEnd/stop hook 配置、
+workflow 频率表、高频故障、凭据部署、子项目维护备忘、关键决策档快查。
