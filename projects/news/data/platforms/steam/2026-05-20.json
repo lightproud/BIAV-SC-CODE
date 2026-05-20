@@ -1,8 +1,8 @@
 {
   "date": "2026-05-20",
-  "archived_at": "2026-05-20T10:20:58.895385+00:00",
+  "archived_at": "2026-05-20T13:33:23.875195+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 17,
   "items": [
     {
       "source": "steam",
@@ -243,6 +243,21 @@
       "review": "养成极其困难，打活动限制太大",
       "timestamp_created": 1779240671,
       "playtime_forever": 4344
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-20T12:16:36+00:00",
+      "lang": "schinese",
+      "title": "[正面] 美味",
+      "summary": "美味",
+      "url": "https://steamcommunity.com/profiles/76561198722800399/recommended/3052450",
+      "author": "76561198722800399",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "美味",
+      "timestamp_created": 1779279396,
+      "playtime_forever": 286
     }
   ]
 }
