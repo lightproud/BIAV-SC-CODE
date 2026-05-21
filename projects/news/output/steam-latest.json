@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-21T22:13:39.803522+00:00",
+  "collected_at": "2026-05-21T23:53:42.802313+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -32,6 +32,21 @@
       "review": "画风剧情很强，唯独策划缺根筋",
       "timestamp_created": 1779325537,
       "playtime_forever": 4184
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-21T20:59:54+00:00",
+      "lang": "spanish",
+      "title": "[正面] Me lo instalé por los jajas porque nunca había jug...",
+      "summary": "Me lo instalé por los jajas porque nunca había jugado un gacha, está interesante la historia y los personajes, cuando me desquicié actualizaré la review. Un saludo.",
+      "url": "https://steamcommunity.com/profiles/76561198345601541/recommended/3052450",
+      "author": "76561198345601541",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Me lo instalé por los jajas porque nunca había jugado un gacha, está interesante la historia y los personajes, cuando me desquicié actualizaré la review. Un saludo.",
+      "timestamp_created": 1779397194,
+      "playtime_forever": 1570
     },
     {
       "source": "steam",
@@ -91,7 +106,7 @@
       "voted_up": true,
       "review": "Очень атмосферная и интеллектуальная игра!",
       "timestamp_created": 1779350050,
-      "playtime_forever": 702
+      "playtime_forever": 732
     },
     {
       "source": "steam",

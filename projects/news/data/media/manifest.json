@@ -9938,6 +9938,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-21T22:13:41.492009+00:00"
+    },
+    "https://preview.redd.it/pb8xykxzgk2h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=63071a2fb96c55539f3d6c475286aa0044262f66": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T23:53:43.409642+00:00"
+    },
+    "https://preview.redd.it/ypftxz9rrk2h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=3f79adc237966fba92a37e6870e74d2b6d9efbf3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T23:53:43.740189+00:00"
     }
   },
   "archived": []
