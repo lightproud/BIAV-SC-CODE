@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-21T02:09:07.265557+00:00",
+  "collected_at": "2026-05-21T06:45:03.917120+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-21T01:05:37+00:00",
+      "lang": "schinese",
+      "title": "[正面] 画风剧情很强，唯独策划缺根筋",
+      "summary": "画风剧情很强，唯独策划缺根筋",
+      "url": "https://steamcommunity.com/profiles/76561199829410287/recommended/3052450",
+      "author": "76561199829410287",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "画风剧情很强，唯独策划缺根筋",
+      "timestamp_created": 1779325537,
+      "playtime_forever": 3969
+    },
     {
       "source": "steam",
       "time": "2026-05-20T14:48:15+00:00",
@@ -20,48 +35,33 @@
     },
     {
       "source": "steam",
-      "time": "2026-05-20T03:24:47+00:00",
-      "lang": "brazilian",
-      "title": "[正面] bom dms",
-      "summary": "bom dms",
-      "url": "https://steamcommunity.com/profiles/76561198272677901/recommended/3052450",
-      "author": "76561198272677901",
-      "engagement": 1,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "bom dms",
-      "timestamp_created": 1779247487,
-      "playtime_forever": 1587
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T02:20:55+00:00",
-      "lang": "spanish",
-      "title": "[正面] Solo escribo esta reseña porque veo una cantidad e...",
-      "summary": "Solo escribo esta reseña porque veo una cantidad enorme de comentarios en español alrededor del juego que por algún motivo no tienen ni idea de esto: la traducción al español, actualmente, esta hecha enteramente por ChatGPT, y por lo tanto, todo el texto que no sea tecnico (es decir, cualquier cosa que tenga que ver con la historia) es licuado y convertido en algo ilegible.\nEl 95%+ del juego esta actualmente traducido al inglés por humanos, y efectivamente, la prosa se vuelve muchísimo mejor al no ser MTL. Si vas a jugar al juego por la historia, juégalo en inglés o espera a que salga una traducción al español (que con lo que tardará en salir, siendo lo dificultoso que es encontrar traductores CN->ES que trabajen gratis, es mucho más factible que aprendas inglés y lo juegues en ese mismo idioma)",
-      "url": "https://steamcommunity.com/profiles/76561198407424601/recommended/3052450",
-      "author": "76561198407424601",
-      "engagement": 1,
-      "language": "spanish",
-      "voted_up": true,
-      "review": "Solo escribo esta reseña porque veo una cantidad enorme de comentarios en español alrededor del juego que por algún motivo no tienen ni idea de esto: la traducción al español, actualmente, esta hecha enteramente por ChatGPT, y por lo tanto, todo el texto que no sea tecnico (es decir, cualquier cosa que tenga que ver con la historia) es licuado y convertido en algo ilegible.\nEl 95%+ del juego esta actualmente traducido al inglés por humanos, y efectivamente, la prosa se vuelve muchísimo mejor al no ser MTL. Si vas a jugar al juego por la historia, juégalo en inglés o espera a que salga una traducción al español (que con lo que tardará en salir, siendo lo dificultoso que es encontrar traductores CN->ES que trabajen gratis, es mucho más factible que aprendas inglés y lo juegues en ese mismo idioma)",
-      "timestamp_created": 1779243655,
-      "playtime_forever": 1121
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-21T01:05:37+00:00",
-      "lang": "schinese",
-      "title": "[正面] 画风剧情很强，唯独策划缺根筋",
-      "summary": "画风剧情很强，唯独策划缺根筋",
-      "url": "https://steamcommunity.com/profiles/76561199829410287/recommended/3052450",
-      "author": "76561199829410287",
+      "time": "2026-05-21T03:08:09+00:00",
+      "lang": "english",
+      "title": "[正面] I'm pretty bummed I only found out about this game...",
+      "summary": "I'm pretty bummed I only found out about this game recently",
+      "url": "https://steamcommunity.com/profiles/76561197975286483/recommended/3052450",
+      "author": "76561197975286483",
       "engagement": 0,
-      "language": "schinese",
+      "language": "english",
       "voted_up": true,
-      "review": "画风剧情很强，唯独策划缺根筋",
-      "timestamp_created": 1779325537,
-      "playtime_forever": 3969
+      "review": "I'm pretty bummed I only found out about this game recently",
+      "timestamp_created": 1779332889,
+      "playtime_forever": 3864
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-21T01:34:35+00:00",
+      "lang": "english",
+      "title": "[正面] Actually F2P friendly, great story! great music! g...",
+      "summary": "Actually F2P friendly, great story! great music! great art! hell great everything!",
+      "url": "https://steamcommunity.com/profiles/76561198880256310/recommended/3052450",
+      "author": "76561198880256310",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Actually F2P friendly, great story! great music! great art! hell great everything!",
+      "timestamp_created": 1779327275,
+      "playtime_forever": 7407
     },
     {
       "source": "steam",
@@ -91,7 +91,7 @@
       "voted_up": true,
       "review": "Might be the best gacha game of all time",
       "timestamp_created": 1779313716,
-      "playtime_forever": 1999
+      "playtime_forever": 2041
     },
     {
       "source": "steam",
@@ -121,37 +121,7 @@
       "voted_up": true,
       "review": "美味",
       "timestamp_created": 1779279396,
-      "playtime_forever": 346
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T04:53:59+00:00",
-      "lang": "english",
-      "title": "[正面] If you like my turn u will love this game",
-      "summary": "If you like my turn u will love this game",
-      "url": "https://steamcommunity.com/profiles/76561198104286736/recommended/3052450",
-      "author": "76561198104286736",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "If you like my turn u will love this game",
-      "timestamp_created": 1779252839,
-      "playtime_forever": 5607
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T02:40:31+00:00",
-      "lang": "latam",
-      "title": "[正面] muy bueno",
-      "summary": "muy bueno",
-      "url": "https://steamcommunity.com/profiles/76561199854962590/recommended/3052450",
-      "author": "76561199854962590",
-      "engagement": 0,
-      "language": "latam",
-      "voted_up": true,
-      "review": "muy bueno",
-      "timestamp_created": 1779244831,
-      "playtime_forever": 1583
+      "playtime_forever": 502
     }
   ]
 }
