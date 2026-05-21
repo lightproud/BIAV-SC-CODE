@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-21T20:33:16.798577+00:00",
+  "collected_at": "2026-05-21T22:13:39.803522+00:00",
   "source": "all",
-  "item_count": 151,
+  "item_count": 163,
   "items": [
     {
       "source": "steam",
@@ -46,7 +46,7 @@
       "voted_up": true,
       "review": "peak game and also very easy to understand mechanics",
       "timestamp_created": 1779372770,
-      "playtime_forever": 445
+      "playtime_forever": 450
     },
     {
       "source": "steam",
@@ -121,7 +121,7 @@
       "voted_up": true,
       "review": "I'm pretty bummed I only found out about this game recently",
       "timestamp_created": 1779332889,
-      "playtime_forever": 4066
+      "playtime_forever": 4132
     },
     {
       "source": "steam",
@@ -137,51 +137,6 @@
       "review": "Actually F2P friendly, great story! great music! great art! hell great everything!",
       "timestamp_created": 1779327275,
       "playtime_forever": 7553
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T22:06:23+00:00",
-      "lang": "english",
-      "title": "[正面] goatedmens",
-      "summary": "goatedmens",
-      "url": "https://steamcommunity.com/profiles/76561198055671459/recommended/3052450",
-      "author": "76561198055671459",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "goatedmens",
-      "timestamp_created": 1779314783,
-      "playtime_forever": 2084
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T21:48:36+00:00",
-      "lang": "english",
-      "title": "[正面] Might be the best gacha game of all time",
-      "summary": "Might be the best gacha game of all time",
-      "url": "https://steamcommunity.com/profiles/76561199148322587/recommended/3052450",
-      "author": "76561199148322587",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Might be the best gacha game of all time",
-      "timestamp_created": 1779313716,
-      "playtime_forever": 2140
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T21:13:27+00:00",
-      "lang": "russian",
-      "title": "[正面] за саю лайк, перевод корявый(какая нах дора...)",
-      "summary": "за саю лайк, перевод корявый(какая нах дора...)",
-      "url": "https://steamcommunity.com/profiles/76561199595756333/recommended/3052450",
-      "author": "76561199595756333",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": true,
-      "review": "за саю лайк, перевод корявый(какая нах дора...)",
-      "timestamp_created": 1779311607,
-      "playtime_forever": 85
     },
     {
       "source": "discord",
@@ -488,38 +443,242 @@
     },
     {
       "source": "youtube",
-      "time": "2026-05-21T02:30:20.565911+00:00",
+      "time": "2026-05-21T22:10:47.303100+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】小心！這遊戲有降SAN值的精神傷害？😱超硬派克蘇魯策略卡牌遊戲！▹璐洛洛◃",
+      "summary": "[2y ago] 遊戲內營造的詭異殘酷的氛圍真的會讓人毛骨悚然呢！   喜歡克蘇魯題材的肉肉不要錯過這款遊戲洛！ 禁忌卡牌構築手遊《忘卻 ...",
+      "url": "https://www.youtube.com/watch?v=BomtFzUb12M",
+      "author": "璐洛洛 Ruroro【人造人Vtuber】",
+      "engagement": 38610,
+      "media_url": "https://i.ytimg.com/vi/BomtFzUb12M/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA__vo9XU1i-8SMkKg9IqqRgPAvLQ",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303149+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】重返未來1999？不對！是忘卻前夜！禮包碼兌換！T0角色隊伍組合！超少見克蘇魯策略卡牌遊戲！",
+      "summary": "[2y ago] 大家好我是歐昊喜歡我的影片可以幫我按喜歡與訂閱我唷有問題也歡迎大家留言感謝大家LDSpace模擬器 ...",
+      "url": "https://www.youtube.com/watch?v=37fhxtEUMIM",
+      "author": "歐昊",
+      "engagement": 16338,
+      "media_url": "https://i.ytimg.com/vi/37fhxtEUMIM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCHxBJh287BpFoNLIzuq2ThapmWaw",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303184+00:00",
+      "lang": "",
+      "title": "[The Eve of Oblivion] Oh, this one won't sell! [Smartphone Game Review]",
+      "summary": "[7mo ago] This is a review of \"Eve of Oblivion,\" a combination of a Spire-style deck-building roguelike and a chapter-based smartphone ...",
+      "url": "https://www.youtube.com/watch?v=7yoi1NyxUHo",
+      "author": "あそぶの最新スマホゲームレビュー(中辛)",
+      "engagement": 9651,
+      "media_url": "https://i.ytimg.com/vi/7yoi1NyxUHo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDha4Az8vbq8k5-Ptf8Y8NbUCwOjw",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T02:10:46.620324+00:00",
       "lang": "",
       "title": "How to get Saya for FREE in Morimens",
-      "summary": "[18 hours ago] Saya no Uta is coming to Morimens. This is everything you need to know about this brand new collab. ♢ TWITTER: ...",
+      "summary": "[20 hours ago] Saya no Uta is coming to Morimens. This is everything you need to know about this brand new collab. ♢ TWITTER: ...",
       "url": "https://www.youtube.com/watch?v=qySOc15QQ5E",
       "author": "Linasera",
-      "engagement": 5987,
+      "engagement": 6256,
       "media_url": "https://i.ytimg.com/vi/qySOc15QQ5E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4gMrzNTAN98a-S9jxJ5xoYY3nAw",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-05-21T19:30:20.566122+00:00",
+      "time": "2026-05-21T22:10:47.303219+00:00",
+      "lang": "",
+      "title": "[Eve of Oblivion] Honest impressions after clearing Chapter 5 without losing a single beat & a sa...",
+      "summary": "[8mo ago] It's been about three weeks since the release of Eve of Oblivion.\nEve of Oblivion is packed with an engrossing story ...",
+      "url": "https://www.youtube.com/watch?v=N0DKh_xJXu0",
+      "author": "猫鈴ゲーム【正直屋】",
+      "engagement": 6252,
+      "media_url": "https://i.ytimg.com/vi/N0DKh_xJXu0/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAAJUt071zcjS69bdGRijEj46KOiw",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303205+00:00",
+      "lang": "",
+      "title": "忘却前夜",
+      "summary": "[9mo ago] 忘却前夜の事前登録が正式スタート！ ──・・──・・──・・──・・──・ 世界は静かに確実に終焉へと向かっている この ...",
+      "url": "https://www.youtube.com/watch?v=TYFswcPYapE",
+      "author": "忘却前夜【日本版公式】",
+      "engagement": 4686,
+      "media_url": "https://i.ytimg.com/vi/TYFswcPYapE/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAAtAFigIMCAAQARhlIGUoZTAP&rs=AOn4CLAxfDSfoPSih1ASthkIkcKhaJW07w",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303124+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】半週年入坑指南 組隊的基本概念",
+      "summary": "[1y ago] 忘卻前夜#忘卻前夜攻略這是半週年入坑指南的第二期恆燐發現有很多小萌新對組隊有一些小問題所以就出一部短短的影片來說明下一 ...",
+      "url": "https://www.youtube.com/watch?v=d89k4tsh7dM",
+      "author": "恆燐",
+      "engagement": 3643,
+      "media_url": "https://i.ytimg.com/vi/d89k4tsh7dM/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBIjMH56dowen-bzxxIsnAlXBFJWA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303157+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】隊伍太多了！多給恆燐幾分鐘 我們來好好聊聊羊媽的隊伍推薦",
+      "summary": "[1y ago] 忘卻前夜#忘卻前夜攻略繼續來講羊媽的組隊部分這次把隊伍的部分補齊！ 如果有什麼想法都可以在留言區告訴恆燐！ 另外感謝科目 ...",
+      "url": "https://www.youtube.com/watch?v=5bo7iFeZSfE",
+      "author": "恆燐",
+      "engagement": 2337,
+      "media_url": "https://i.ytimg.com/vi/5bo7iFeZSfE/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLACqjIIndKN1b3IEf0RZ2_DwAewPw",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303171+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】最多用6分鐘了解血鏈希洛！",
+      "summary": "[1y ago] 忘卻前夜#忘卻前夜攻略這次嘗試了一些咚咚！ 希望大家會喜歡！ BGM：朧朧たる夢の終わりと朝月夜的なBGM 章節： 0:00 ...",
+      "url": "https://www.youtube.com/watch?v=hr3WFUkbUwc",
+      "author": "恆燐",
+      "engagement": 1567,
+      "media_url": "https://i.ytimg.com/vi/hr3WFUkbUwc/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDCLNf73f0hPInnAmZwJyRpXgtn2Q",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303225+00:00",
+      "lang": "",
+      "title": "【忘却前夜】面白いのに流行ってないゲームを3日間プレイした感想【ソシャゲ】",
+      "summary": "[2mo ago] 忘却前夜 #アプリゲーム #ソシャゲ ヒロインがあんまり可愛くない。 【目次】 0:00​ はじめに 0:39 ゲームの流れ 3:29 ストーリー ...",
+      "url": "https://www.youtube.com/watch?v=YFFpasW6t3o",
+      "author": "ドライアイ【ソシャゲレビュー】",
+      "engagement": 1507,
+      "media_url": "https://i.ytimg.com/vi/YFFpasW6t3o/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAveB7kEyVB1dEXWvV_csgJcYnd-w",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303178+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】彌一刀 Arc2.3-10葬骸之主 Miryam one punch #morimens",
+      "summary": "[9mo ago] 打完才發現這是普通難度，我破防了。 After I finished playing, I realized that this was normal difficulty, I was crushed. 彌利亞姆星天 ...",
+      "url": "https://www.youtube.com/watch?v=KPaSV30cO54",
+      "author": "Ernest艾恩斯特",
+      "engagement": 1193,
+      "media_url": "https://i.ytimg.com/vi/KPaSV30cO54/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDM2PJokpesTJh_oaZjUhyPFUXUtA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303142+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】杜勒賽因的詳細解析！讓坐在餐桌上的恆燐跟你聊聊！技能解說/啟靈/命輪推薦/密契推薦/組隊攻略！",
+      "summary": "[9mo ago] 忘卻前夜#克蘇魯神話#莫爾迪基安生命靠自相殘食生存正在殘食生命的我某時也會被生命殘食要是我吃起來很美味那真是再好不過了 ...",
+      "url": "https://www.youtube.com/watch?v=K4ibslN8Mus",
+      "author": "恆燐",
+      "engagement": 1128,
+      "media_url": "https://i.ytimg.com/vi/K4ibslN8Mus/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDqawrdN-jEbZsYLBgtu1t_WYKVZg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303191+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】用8分鐘了解神母  彌利亞姆解析",
+      "summary": "[1y ago] 忘卻前夜#忘卻前夜攻略來講講講神母吧！ 如果有什麼想法都可以在留言區告訴恆燐！ 另外感謝「Loveit?」陪我趕影片。 BGM：【 ...",
+      "url": "https://www.youtube.com/watch?v=AUYhPvRLaN8",
+      "author": "恆燐",
+      "engagement": 1115,
+      "media_url": "https://i.ytimg.com/vi/AUYhPvRLaN8/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBwDe1U08PzP1V68CM9_bLT007ckQ",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303164+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】克萊門汀的詳細解析！依照她的指引！來一場走向痊癒的旅程！喚醒體原型/技能解說/啟靈/命輪推薦/密契推薦/組隊攻略/抽取建議！",
+      "summary": "[1y ago] 忘卻前夜#克蘇魯神話#夏蓋蟲族我們心靈的深處到底埋藏著什麼樣的秘密呢？ 放輕鬆！來到克萊門汀的診間來一場窺視靈魂的旅程！",
+      "url": "https://www.youtube.com/watch?v=k3np7E92DUI",
+      "author": "恆燐",
+      "engagement": 963,
+      "media_url": "https://i.ytimg.com/vi/k3np7E92DUI/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAalwmQyYRjQ37DA9fRrtocRjl6wg",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T19:10:46.620530+00:00",
       "lang": "",
       "title": "[Morimens] Flares' 2026 Half Anni Tier List Update with builds + Showcase footage, where to use them",
-      "summary": "[1 hour ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "summary": "[3 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=5xKZEz_ZPbU",
       "author": "Flares117",
-      "engagement": 439,
+      "engagement": 602,
       "media_url": "https://i.ytimg.com/vi/5xKZEz_ZPbU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDxiLCviCFyuQl1uT2n9mEkcOa6sQ",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-05-21T18:30:20.566166+00:00",
+      "time": "2026-05-21T22:10:47.303198+00:00",
+      "lang": "",
+      "title": "【忘卻前夜】神國毒隊 Arc2.H4-10永恆面紗 三星 Lemuria poison team #morimens",
+      "summary": "[5mo ago] 誕妄•墨菲黑暗隱密榨取彌利亞姆虔誠隕日荒原法洛思暴雨腐朽荒原熔燬•朵爾虛無演算荒原#忘卻前夜#morimens.",
+      "url": "https://www.youtube.com/watch?v=73Rqnv8zpLs",
+      "author": "Ernest艾恩斯特",
+      "engagement": 460,
+      "media_url": "https://i.ytimg.com/vi/73Rqnv8zpLs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB3bDZe-YRxxphFFKDa-zFVliI-NQ",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T18:10:46.620829+00:00",
       "lang": "",
       "title": "Banner guide i guess...",
-      "summary": "[2 hours ago] I can't believe i'm actually making a real guide... it's like i'm an actual content creator... what have i become. Order of awakeners ...",
+      "summary": "[4 hours ago] I can't believe i'm actually making a real guide... it's like i'm an actual content creator... what have i become. Order of awakeners ...",
       "url": "https://www.youtube.com/watch?v=en49pf6-BJw",
       "author": "Trash Keeper",
-      "engagement": 204,
+      "engagement": 339,
       "media_url": "https://i.ytimg.com/vi/en49pf6-BJw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCIg2hUwpMWFKsQSub0G-gTdta0rQ",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303134+00:00",
+      "lang": "",
+      "title": "【忘卻前夜/粉絲點名】神國墨主C Arc1.H9-11蚍蜉 三星 Lemuria GMorphy dps #morimens",
+      "summary": "[5mo ago] 誕妄•墨菲黑暗隱密榨取彌利亞姆虔誠演算有機戈利亞巨人暴食紅悸凱刻斯靈魂跨越無垢#忘卻前夜#morimens #fanpick.",
+      "url": "https://www.youtube.com/watch?v=RAzQFyeIzyQ",
+      "author": "Ernest艾恩斯特",
+      "engagement": 322,
+      "media_url": "https://i.ytimg.com/vi/RAzQFyeIzyQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvYdbT16vK-8fJIysyBZiCqpnMZw",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303211+00:00",
+      "lang": "",
+      "title": "忘卻前夜 幻夢深潛_43200 「沉淵者」_「移湧」 地瓜醫生 混沌超維 #忘卻前夜 #morimens",
+      "summary": "[8mo ago] 幻夢深潛#混沌超維#忘卻前夜#morimens.",
+      "url": "https://www.youtube.com/watch?v=ArGNulXbHuo",
+      "author": "瑪爾",
+      "engagement": 196,
+      "media_url": "https://i.ytimg.com/vi/ArGNulXbHuo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDGTvyJvVNGRgdY0e6b2EHHrvlkQA",
+      "content_type": "image"
+    },
+    {
+      "source": "youtube",
+      "time": "2026-05-21T22:10:47.303232+00:00",
+      "lang": "",
+      "title": "【忘却前夜】Morimens",
+      "summary": "[Streamed 4mo ago] reverse1999 #リバース1999 #리버스1999 #重返未来1999 #重返未來1999 #重返未來#limbuscompany #pathtonowhere #無期 ...",
+      "url": "https://www.youtube.com/watch?v=fGrY-ygnDY0",
+      "author": "ぽんぽん",
+      "engagement": 25,
+      "media_url": "https://i.ytimg.com/vi/fGrY-ygnDY0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB_wdS3qVno_kloZQAIQ7a2XFJC6w",
       "content_type": "image"
     },
     {
@@ -608,12 +767,40 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-21T20:07:37+00:00",
+      "lang": "en",
+      "title": "Update Pollux Rotation Information",
+      "summary": "&#32; submitted by &#32;  /u/zyocuh   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjwazq/update_pollux_rotation_information/",
+      "author": "/u/zyocuh",
+      "engagement": 0,
+      "media_url": "https://external-preview.redd.it/4dfws6cfWAPBaNbUxd5ViGdpBJqIBaxtF-hpGXv-GRI.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=544d27b0524553b7cb24f058d0917f7836cd82fa",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-21T13:58:19+00:00",
       "lang": "en",
       "title": "24 - Crimson Kaede Skin showcase video",
       "summary": "Where can I see what the skin looked like aside from the portrait? I can&#39;t find a video of it in Youtube.  &#32; submitted by &#32;  /u/knoxxhat   [link] &#32; [comments]",
       "url": "https://old.reddit.com/r/Morimens/comments/1tjldap/24_crimson_kaede_skin_showcase_video/",
       "author": "/u/knoxxhat",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T19:57:42+00:00",
+      "lang": "en",
+      "title": "Should I get crimson pulse for Doraesain or april tribute?",
+      "summary": "&#32; submitted by &#32;  /u/AnswerFlat6681   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjw0n2/should_i_get_crimson_pulse_for_doraesain_or_april/",
+      "author": "/u/AnswerFlat6681",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -636,14 +823,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T20:07:37+00:00",
+      "time": "2026-05-21T21:35:55+00:00",
       "lang": "en",
-      "title": "Update Pollux Rotation Information",
-      "summary": "&#32; submitted by &#32;  /u/zyocuh   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjwazq/update_pollux_rotation_information/",
-      "author": "/u/zyocuh",
+      "title": "Where to get more of these?",
+      "summary": "&#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjyqgs/where_to_get_more_of_these/",
+      "author": "/u/jadhanshsnajsakak",
       "engagement": 0,
-      "media_url": "https://external-preview.redd.it/4dfws6cfWAPBaNbUxd5ViGdpBJqIBaxtF-hpGXv-GRI.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=544d27b0524553b7cb24f058d0917f7836cd82fa",
+      "media_url": "https://preview.redd.it/c6n2i1ou7k2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a1e15b0af379c679ad3f3a76598d881b4b774961",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -651,12 +838,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T19:57:42+00:00",
+      "time": "2026-05-21T14:10:44+00:00",
       "lang": "en",
-      "title": "Should I get crimson pulse for Doraesain or april tribute?",
-      "summary": "&#32; submitted by &#32;  /u/AnswerFlat6681   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjw0n2/should_i_get_crimson_pulse_for_doraesain_or_april/",
-      "author": "/u/AnswerFlat6681",
+      "title": "How long did it take for you to clear Arc 1?",
+      "summary": "How difficult was it to clear Arc 1?  View Poll  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjlpw2/how_long_did_it_take_for_you_to_clear_arc_1/",
+      "author": "/u/Angbak94",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -679,14 +866,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T21:47:52+00:00",
+      "time": "2026-05-21T17:40:47+00:00",
       "lang": "en",
-      "title": "MY chap 1 tierlist",
-      "summary": "&#32; submitted by &#32;  /u/new_acc256   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tj07gs/my_chap_1_tierlist/",
-      "author": "/u/new_acc256",
+      "title": "Help",
+      "summary": "yall, help me with the lineups bruh😭🙏 I&#39;m at chapter 5, and I already feel the next chapter will be too hard for me. Can yall recommend me with some lineups that&#39;s fun to play and can clear further chapters with my current awakeners😭😭  &#32; submitted by &#32;  /u/yuchichaki   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjrz83/help/",
+      "author": "/u/yuchichaki",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/n0rpzzm25d2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2f5457001a5a07f38d845b274cf7ef4d39eaa702",
+      "media_url": "https://preview.redd.it/wz0gy5mv1j2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=d39244c6aa2967c4454329004109d017a045cb94",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -709,13 +896,15 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T14:10:44+00:00",
+      "time": "2026-05-21T19:16:18+00:00",
       "lang": "en",
-      "title": "How long did it take for you to clear Arc 1?",
-      "summary": "How difficult was it to clear Arc 1?  View Poll  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjlpw2/how_long_did_it_take_for_you_to_clear_arc_1/",
-      "author": "/u/Angbak94",
+      "title": "D TIDE",
+      "summary": "Which one of this will be a better poison comp for d tide? Also I&#39;m using gdoll for another team.  &#32; submitted by &#32;  /u/Ok_Neck3675   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjutai/d_tide/",
+      "author": "/u/Ok_Neck3675",
       "engagement": 0,
+      "media_url": "https://preview.redd.it/kwla58tkij2h1.png?width=140&amp;height=71&amp;auto=webp&amp;s=ff036184650cbefd7ef8ba03668c2c456bff6436",
+      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -737,14 +926,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T17:40:47+00:00",
+      "time": "2026-05-21T20:51:52+00:00",
       "lang": "en",
-      "title": "Help",
-      "summary": "yall, help me with the lineups bruh😭🙏 I&#39;m at chapter 5, and I already feel the next chapter will be too hard for me. Can yall recommend me with some lineups that&#39;s fun to play and can clear further chapters with my current awakeners😭😭  &#32; submitted by &#32;  /u/yuchichaki   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjrz83/help/",
-      "author": "/u/yuchichaki",
+      "title": "How the hell do I make daffodil work?",
+      "summary": "I love daffodil she is a great awakener. I find her lore pretty interesting and her gameplay even more interesting. she is an ultra unit which is perfectly fine. I actually like ultra however. during investigations it takes a minute to get her going. like the first battle is pretty much a suicide mission but after that, it seems to be better? Here’s my current comp with daffodil if you guys have any tips on how to Player or like what awakens I could use to make it easier to play it would be super helpful.  &#32; submitted by &#32;  /u/IcyZookeepergame633   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjxjks/how_the_hell_do_i_make_daffodil_work/",
+      "author": "/u/IcyZookeepergame633",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/wz0gy5mv1j2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=d39244c6aa2967c4454329004109d017a045cb94",
+      "media_url": "https://preview.redd.it/lczqwgszzj2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=33da3c5853e950c74710ab2eedb3c63191b172ba",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -801,51 +990,6 @@
       "author": "/u/sneakyanimal",
       "engagement": 0,
       "media_url": "https://preview.redd.it/huzrwkg8oj2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=5788be68d09f5ccc486b7f44c3dca4be0250eab5",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T19:16:18+00:00",
-      "lang": "en",
-      "title": "D TIDE",
-      "summary": "Which one of this will be a better poison comp for d tide? Also I&#39;m using gdoll for another team.  &#32; submitted by &#32;  /u/Ok_Neck3675   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjutai/d_tide/",
-      "author": "/u/Ok_Neck3675",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/kwla58tkij2h1.png?width=140&amp;height=71&amp;auto=webp&amp;s=ff036184650cbefd7ef8ba03668c2c456bff6436",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T19:00:54+00:00",
-      "lang": "en",
-      "title": "Help with pulling and team building",
-      "summary": "Hello everyone, I’m new and completely lost with the amount of banners coming over the next days. I’d appreciate if someone could give some tips on what to prioritize to build a decent team. This is what I currently have, only thing I’ve understood is that Thais goes really well with GHelot. Would appreciate units that are good to go at E0 since I’m starting. I’m also thinking on pulling on the paid banner, but no idea what realm (was thinking Caro due to Thais) Thanks!  &#32; submitted by &#32;  /u/GonzaPicks   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjucs0/help_with_pulling_and_team_building/",
-      "author": "/u/GonzaPicks",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/8g6n4jz6gj2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=4a77b6a8726621a5663b23ca409f1bde218d7a4b",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T05:29:58+00:00",
-      "lang": "en",
-      "title": "Saya is the perfect Awakener for me",
-      "summary": "She will free up Ogier so that he may join my other D-zone squads. Ogier is a high-value Awakener because you can easily have him at AA and he is also really good in general. Bad RNG from Saya&#39;s Rouse? no problem! Tawil uses Keyflare anyway.  So, how are you planning to use your Saya?  https://preview.redd.it/zlon9z5xef2h1.png?width=1708&amp;format=png&amp;auto=webp&amp;s=ed3dfbd9053ace803dd1993dd2e2ec567d2e88e3  &#32; submitted by &#32;  /u/Venomancer_100   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjav5v/saya_is_the_perfect_awakener_for_me/",
-      "author": "/u/Venomancer_100",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/zlon9z5xef2h1.png?width=140&amp;height=76&amp;auto=webp&amp;s=e3f8958905019b5949486b0655452697a7d56f29",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -913,32 +1057,22 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T13:58:19+00:00",
-      "lang": "en",
-      "title": "24 - Crimson Kaede Skin showcase video",
-      "summary": "Where can I see what the skin looked like aside from the portrait? I can&#39;t find a video of it in Youtube.  &#32; submitted by &#32;  /u/knoxxhat   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjldap/24_crimson_kaede_skin_showcase_video/",
-      "author": "u//u/knoxxhat",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T16:04:29+00:00",
-      "lang": "en",
-      "title": "New player asking for team building",
-      "summary": "Hello  Wanted to ask about team building . What team can i use for story? These are the awakeners and wheels that i have . Thank you for the help.  &#32; submitted by &#32;  /u/ButtonOld4652   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjp2zh/new_player_asking_for_team_building/",
-      "author": "u//u/ButtonOld4652",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-21T20:07:37+00:00",
       "lang": "en",
       "title": "Update Pollux Rotation Information",
       "summary": "&#32; submitted by &#32;  /u/zyocuh   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tjwazq/update_pollux_rotation_information/",
       "author": "u//u/zyocuh",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T13:58:19+00:00",
+      "lang": "en",
+      "title": "24 - Crimson Kaede Skin showcase video",
+      "summary": "Where can I see what the skin looked like aside from the portrait? I can&#39;t find a video of it in Youtube.  &#32; submitted by &#32;  /u/knoxxhat   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjldap/24_crimson_kaede_skin_showcase_video/",
+      "author": "u//u/knoxxhat",
       "engagement": 0
     },
     {
@@ -953,32 +1087,22 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T06:49:00+00:00",
+      "time": "2026-05-21T16:04:29+00:00",
       "lang": "en",
-      "title": "Is lily worth it for Gdoll?",
-      "summary": "asking both in general as well as regarding 1-day banner Don’t have much poison awakeners as far as I know, Also don’t have nymphaea yet (+1 pandia &amp; e3 nautila tho ofc)  &#32; submitted by &#32;  /u/jadoesvg   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjccyn/is_lily_worth_it_for_gdoll/",
-      "author": "u//u/jadoesvg",
+      "title": "New player asking for team building",
+      "summary": "Hello  Wanted to ask about team building . What team can i use for story? These are the awakeners and wheels that i have . Thank you for the help.  &#32; submitted by &#32;  /u/ButtonOld4652   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjp2zh/new_player_asking_for_team_building/",
+      "author": "u//u/ButtonOld4652",
       "engagement": 0
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T21:47:52+00:00",
+      "time": "2026-05-21T21:35:55+00:00",
       "lang": "en",
-      "title": "MY chap 1 tierlist",
-      "summary": "&#32; submitted by &#32;  /u/new_acc256   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tj07gs/my_chap_1_tierlist/",
-      "author": "u//u/new_acc256",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T07:08:10+00:00",
-      "lang": "en",
-      "title": "No Owned Limited OE Dtide 425 [Aequor Ring] May 11th - May 24th",
-      "summary": "&#32; submitted by &#32;  /u/Dracozion   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjcpy4/no_owned_limited_oe_dtide_425_aequor_ring_may/",
-      "author": "u//u/Dracozion",
+      "title": "Where to get more of these?",
+      "summary": "&#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjyqgs/where_to_get_more_of_these/",
+      "author": "u//u/jadhanshsnajsakak",
       "engagement": 0
     },
     {
@@ -993,12 +1117,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T05:42:05+00:00",
+      "time": "2026-05-21T06:49:00+00:00",
       "lang": "en",
-      "title": "Cat guide - Day 4",
-      "summary": "Cat Guide - Day 4 Hi, Angbak from discord here. Today&#39;s supporter is Doresain. Kidnapping whale supporter guide here https://www.reddit.com/r/Morimens/s/6MrIxG53dR _______________________________________________  You have 3 main goals  Feed Doresain aliemus (energy) via embryo or strikes Use Doresain exalt When boss spawns multiple cats, use all your evernights  ______________________________________________ [Additional notes from Mathematician Lens from discord] Try to get uvhash card from Infinite Silver Vault if you can, it&#39;s a ton of aliemus and gives huge crit buffs that will help consistency a ton with this setup, two things can happen: CASE 1 - YOUR DORESAIN IS SUPER OP if your support dore is whale enough and has good critrate and good wheels, the evernights will crit and nuke the mini cats, creating more evernights, chaining into an infinite loop of evernights until you win. easy, problem solved, no issues CASE 2 - YOUR SUPPORT DORESAIN KINDA GRIEFED sometimes your support doresain will be on full exalt built and will have really bad critrate or all your evernights will simply fail to crit so you don&#39;t do enough damage to kill the boss and all the cats. if this happens, just try to stall (use white stance tentacles if you have aequor on team) and keep exalting with everyone until you hit 5 exalts. once you do, choose dore rouse. once dore is roused just repeat the cycle another time and now even exalt dores will be op enough to chain enough to win //end quote ______________________________________________ [Shameless plug, guess im doing YouTube guides now] Saya speedrun video on 7 Jun  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjb3bj/cat_guide_day_4/",
-      "author": "u//u/Angbak94",
+      "title": "Is lily worth it for Gdoll?",
+      "summary": "asking both in general as well as regarding 1-day banner Don’t have much poison awakeners as far as I know, Also don’t have nymphaea yet (+1 pandia &amp; e3 nautila tho ofc)  &#32; submitted by &#32;  /u/jadoesvg   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjccyn/is_lily_worth_it_for_gdoll/",
+      "author": "u//u/jadoesvg",
       "engagement": 0
     },
     {
@@ -1009,6 +1133,46 @@
       "summary": "yall, help me with the lineups bruh😭🙏 I&#39;m at chapter 5, and I already feel the next chapter will be too hard for me. Can yall recommend me with some lineups that&#39;s fun to play and can clear further chapters with my current awakeners😭😭  &#32; submitted by &#32;  /u/yuchichaki   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tjrz83/help/",
       "author": "u//u/yuchichaki",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T07:08:10+00:00",
+      "lang": "en",
+      "title": "No Owned Limited OE Dtide 425 [Aequor Ring] May 11th - May 24th",
+      "summary": "&#32; submitted by &#32;  /u/Dracozion   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjcpy4/no_owned_limited_oe_dtide_425_aequor_ring_may/",
+      "author": "u//u/Dracozion",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T19:16:18+00:00",
+      "lang": "en",
+      "title": "D TIDE",
+      "summary": "Which one of this will be a better poison comp for d tide? Also I&#39;m using gdoll for another team.  &#32; submitted by &#32;  /u/Ok_Neck3675   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjutai/d_tide/",
+      "author": "u//u/Ok_Neck3675",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T05:42:05+00:00",
+      "lang": "en",
+      "title": "Cat guide - Day 4",
+      "summary": "Cat Guide - Day 4 Hi, Angbak from discord here. Today&#39;s supporter is Doresain. Kidnapping whale supporter guide here https://www.reddit.com/r/Morimens/s/6MrIxG53dR _______________________________________________  You have 3 main goals  Feed Doresain aliemus (energy) via embryo or strikes Use Doresain exalt When boss spawns multiple cats, use all your evernights  ______________________________________________ [Additional notes from Mathematician Lens from discord] Try to get uvhash card from Infinite Silver Vault if you can, it&#39;s a ton of aliemus and gives huge crit buffs that will help consistency a ton with this setup, two things can happen: CASE 1 - YOUR DORESAIN IS SUPER OP if your support dore is whale enough and has good critrate and good wheels, the evernights will crit and nuke the mini cats, creating more evernights, chaining into an infinite loop of evernights until you win. easy, problem solved, no issues CASE 2 - YOUR SUPPORT DORESAIN KINDA GRIEFED sometimes your support doresain will be on full exalt built and will have really bad critrate or all your evernights will simply fail to crit so you don&#39;t do enough damage to kill the boss and all the cats. if this happens, just try to stall (use white stance tentacles if you have aequor on team) and keep exalting with everyone until you hit 5 exalts. once you do, choose dore rouse. once dore is roused just repeat the cycle another time and now even exalt dores will be op enough to chain enough to win //end quote ______________________________________________ [Shameless plug, guess im doing YouTube guides now] Saya speedrun video on 7 Jun  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjb3bj/cat_guide_day_4/",
+      "author": "u//u/Angbak94",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T20:51:52+00:00",
+      "lang": "en",
+      "title": "How the hell do I make daffodil work?",
+      "summary": "I love daffodil she is a great awakener. I find her lore pretty interesting and her gameplay even more interesting. she is an ultra unit which is perfectly fine. I actually like ultra however. during investigations it takes a minute to get her going. like the first battle is pretty much a suicide mission but after that, it seems to be better? Here’s my current comp with daffodil if you guys have any tips on how to Player or like what awakens I could use to make it easier to play it would be super helpful.  &#32; submitted by &#32;  /u/IcyZookeepergame633   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjxjks/how_the_hell_do_i_make_daffodil_work/",
+      "author": "u//u/IcyZookeepergame633",
       "engagement": 0
     },
     {
@@ -1049,36 +1213,6 @@
       "summary": "What team can I build around these awakeners?  &#32; submitted by &#32;  /u/sneakyanimal   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tjvogc/new_player_need_help/",
       "author": "u//u/sneakyanimal",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T19:16:18+00:00",
-      "lang": "en",
-      "title": "D TIDE",
-      "summary": "Which one of this will be a better poison comp for d tide? Also I&#39;m using gdoll for another team.  &#32; submitted by &#32;  /u/Ok_Neck3675   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjutai/d_tide/",
-      "author": "u//u/Ok_Neck3675",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T19:00:54+00:00",
-      "lang": "en",
-      "title": "Help with pulling and team building",
-      "summary": "Hello everyone, I’m new and completely lost with the amount of banners coming over the next days. I’d appreciate if someone could give some tips on what to prioritize to build a decent team. This is what I currently have, only thing I’ve understood is that Thais goes really well with GHelot. Would appreciate units that are good to go at E0 since I’m starting. I’m also thinking on pulling on the paid banner, but no idea what realm (was thinking Caro due to Thais) Thanks!  &#32; submitted by &#32;  /u/GonzaPicks   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjucs0/help_with_pulling_and_team_building/",
-      "author": "u//u/GonzaPicks",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T05:29:58+00:00",
-      "lang": "en",
-      "title": "Saya is the perfect Awakener for me",
-      "summary": "She will free up Ogier so that he may join my other D-zone squads. Ogier is a high-value Awakener because you can easily have him at AA and he is also really good in general. Bad RNG from Saya&#39;s Rouse? no problem! Tawil uses Keyflare anyway.  So, how are you planning to use your Saya?  https://preview.redd.it/zlon9z5xef2h1.png?width=1708&amp;format=png&amp;auto=webp&amp;s=ed3dfbd9053ace803dd1993dd2e2ec567d2e88e3  &#32; submitted by &#32;  /u/Venomancer_100   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjav5v/saya_is_the_perfect_awakener_for_me/",
-      "author": "u//u/Venomancer_100",
       "engagement": 0
     },
     {
@@ -1163,7 +1297,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.628940+00:00",
+      "time": "2026-05-21T22:10:59.582449+00:00",
       "lang": "zh",
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
@@ -1173,17 +1307,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.642835+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
-      "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
-      "url": "https://m.weibo.cn/status/5297404375991444",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-21T20:30:36.660356+00:00",
+      "time": "2026-05-21T22:10:59.594532+00:00",
       "lang": "zh",
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
@@ -1193,17 +1317,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.672268+00:00",
-      "lang": "zh",
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-21T20:30:36.684970+00:00",
+      "time": "2026-05-21T22:10:59.606971+00:00",
       "lang": "zh",
       "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
       "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
@@ -1213,7 +1327,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.697044+00:00",
+      "time": "2026-05-21T22:10:59.618525+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#忘却前夜#\n日服动态：",
+      "summary": "忘却前夜#忘却前夜#\n日服动态：",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-21T22:10:59.629959+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -1223,7 +1347,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.709221+00:00",
+      "time": "2026-05-21T22:10:59.641299+00:00",
       "lang": "zh",
       "title": "让你们说这话之前先去看眼忘却前夜立绘都长啥样不是在害你们",
       "summary": "让你们说这话之前先去看眼忘却前夜立绘都长啥样不是在害你们",
@@ -1233,7 +1357,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.720779+00:00",
+      "time": "2026-05-21T22:10:59.652514+00:00",
       "lang": "zh",
       "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
       "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
@@ -1243,7 +1367,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.734152+00:00",
+      "time": "2026-05-21T22:10:59.663879+00:00",
       "lang": "zh",
       "title": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
       "summary": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
@@ -1253,17 +1377,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.746385+00:00",
+      "time": "2026-05-21T22:10:59.674939+00:00",
       "lang": "zh",
-      "title": "忘却前夜\n【521/鲨粉】Fishtail\n　　⚠️戈利亚x凯刻斯cp向⚠️\n　　原作向，已交往前提\n　　第四章全员四万的那个轮回\n　　be，ooc预警\n　　灵",
-      "summary": "忘却前夜\n【521/鲨粉】Fishtail\n　　⚠️戈利亚x凯刻斯cp向⚠️\n　　原作向，已交往前提\n　　第四章全员四万的那个轮回\n　　be，ooc预警\n　　灵感来了高速滑铲中——\n【521/鲨粉】Fishtail",
-      "url": "",
+      "title": "忘却前夜 【戈利亚生贺17h/2:00】\nMore Than Words\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\n서로의 눈빛 자그마한 숨소",
+      "summary": "忘却前夜 【戈利亚生贺17h/2:00】\nMore Than Words\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\n서로의 눈빛 자그마한 숨소리까지\n彼此的眼神和细微的呼吸声\n내비친 Love\n所折射出的爱\n구름처럼\n像温柔的风\n부는 바람에 그대로 전해질 거야\n总会原封不动的传达\n——P1Harmony《More T ...全文",
+      "url": "https://m.weibo.cn/status/5300469509652702",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.761168+00:00",
+      "time": "2026-05-21T22:10:59.690343+00:00",
       "lang": "zh",
       "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
       "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
@@ -1273,17 +1397,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.777624+00:00",
-      "lang": "zh",
-      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
-      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-21T20:30:36.790367+00:00",
+      "time": "2026-05-21T22:10:59.705351+00:00",
       "lang": "zh",
       "title": "全世界都来玩5771好吧 联动送角色本体和250抽",
       "summary": "全世界都来玩5771好吧 联动送角色本体和250抽",
@@ -1293,7 +1407,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.802308+00:00",
+      "time": "2026-05-21T22:10:59.716307+00:00",
+      "lang": "zh",
+      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-21T22:10:59.735865+00:00",
       "lang": "zh",
       "title": "忘却前夜 |ω•`)",
       "summary": "忘却前夜 |ω•`)",
@@ -1303,17 +1427,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.814452+00:00",
+      "time": "2026-05-21T22:10:59.747235+00:00",
       "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
-      "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
-      "url": "https://m.weibo.cn/status/5300037031563389",
+      "title": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时",
+      "summary": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时间：5月18日 09:00 - 6月15日 09:00\n○ 头像：\n「典藏邮票：沙耶」\n「弥萨格幕间剧：熔毁·朵尔」\n「永不褪色的昨天：凯刻斯」\n「诺缔拉·寻找零件」\n「戈 ...全文",
+      "url": "https://m.weibo.cn/status/5300039610271163",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-21T20:30:36.830985+00:00",
+      "time": "2026-05-21T22:10:59.762457+00:00",
       "lang": "zh",
       "title": "意识到1999启示队抄的是忘却前夜深海，薪血抄的血肉",
       "summary": "意识到1999启示队抄的是忘却前夜深海，薪血抄的血肉",
@@ -1469,6 +1593,16 @@
       "summary": "只建议白嫖玩这游戏哦，plz be a f2p player",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=zh_HK",
       "author": "timo timothy",
+      "engagement": 0
+    },
+    {
+      "source": "google_play",
+      "time": "2026-05-20T20:54:44",
+      "lang": "fr",
+      "title": "[Google Play 好评] ★5 great game",
+      "summary": "great game",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr",
+      "author": "Jasper Hill",
       "engagement": 0
     },
     {
@@ -1821,7 +1955,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-05-21T20:32:00.009163+00:00",
+      "time": "2026-05-21T22:12:22.698036+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
@@ -1835,7 +1969,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜*沙耶之歌 2.5 周年联动献礼",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3cDlGhtvaklaTt05G1yO8_0m7KixVCYYVqXa8Fplpd98eI7NZjYVrx2L88sSPqSf901A5ewNdnotKPM9TE-IYYX8Zxf0yOGO_LQv3fzv10MbiaP9g0lnt70bucBV04_KAUR6VzhSYttWTkPbRQw0Y9LxkKkV4NmUjPJVIXJjKNid8aSAY13WurNU3HhiJku-hUhVk1o8gGZ1Dz0DbxyA8cCn9lOoZLP2Q..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=CFD7E714907D94013533646CFBC37A1636F2C2E96A0F6BC1",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5YKKUMi67pLsAHy3AEPr4srIiwhEAdx0lqXa8Fplpd9vbRFtqfCJLaDfN2AHl3s5xcS9OiI4rSUapnlP-08zT30PyCbAEZcMW8LAWhmQo1lp8V91dHO8w7q4nuoqf3gRFAyKFArbgxJCBHT3KbgRlIdzTrsQ24f_G0bO95dy7A7Ktb7OT0PQwjW1qZ2lWSlbryOjgN1vxjRwn3pb3Q11ZmFW6cwuUnkdA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=D0628F3FD5DB84142027737A15D0BBE821AE279C6A0F8347",
       "author": "",
       "engagement": 0
     },
@@ -1845,7 +1979,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜*沙耶之歌 2.5 周年联动献礼",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3cDlGhtvaklYl-kVazSRa70m7KixVCYYVqXa8Fplpd98eI7NZjYVrx2L88sSPqSf901A5ewNdnotKPM9TE-IYYX8Zxf0yOGO_LQv3fzv10MbiaP9g0lnt70bucBV04_KHWv-aGSVU7atW1rmbIvn8kWAarSTGXHvwz9B17PgZs2SGzkjhAcQAQgdsgUgb-SCUs0-5rfpMQ_Dxvc05fTgVBFkDr8IT4KYw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=CFD7EECEE40AE0754147131B8F4584D9426B81636A0F6BC2",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5YKKUMi67pLKaJ5X3Oq-kIrIiwhEAdx0lqXa8Fplpd9vbRFtqfCJLaDfN2AHl3s5xcS9OiI4rSUapnlP-08zT30PyCbAEZcMW8LAWhmQo1lp8V91dHO8w7q4nuoqf3gRNT-A0S5NrK3Sbu7O-5y6WAveklY6RxCuLXwrG0iL0nez_9qIa_5Hv4hqfepfP0SeF1SMPsTBLe-vfFMP1pd6fJj32-j2KiwUw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=D06296CAE5EBB4241116434B251603F111322AF66A0F8349",
       "author": "",
       "engagement": 0
     }
