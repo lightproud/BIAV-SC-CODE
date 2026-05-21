@@ -1,11 +1,11 @@
 {
   "date": "2026-05-09",
-  "messages": 7209,
+  "messages": 12209,
   "unique_authors": 247,
-  "reactions_total": 584,
-  "attachments": 407,
+  "reactions_total": 987,
+  "attachments": 603,
   "channel_activity": {
-    "🔸morimens-game-chat": 2800,
+    "🔸morimens-game-chat": 7800,
     "🔸綜合討論": 947,
     "🔸deutscher-chatraum": 7,
     "🔸русский-канал": 370,
@@ -61,6 +61,22 @@
     "Speedrun Team for Early Game": 2
   },
   "hourly_activity": {
+    "7": 518,
+    "8": 597,
+    "9": 428,
+    "10": 398,
+    "11": 415,
+    "12": 564,
+    "13": 431,
+    "14": 515,
+    "15": 367,
+    "16": 885,
+    "17": 757,
+    "18": 552,
+    "19": 525,
+    "20": 624,
+    "21": 453,
+    "22": 161,
     "0": 467,
     "1": 629,
     "2": 602,
@@ -68,27 +84,11 @@
     "4": 669,
     "5": 511,
     "6": 570,
-    "7": 340,
-    "18": 259,
-    "19": 319,
-    "20": 78,
-    "21": 104,
-    "22": 82,
-    "23": 65,
-    "16": 326,
-    "17": 210,
-    "8": 74,
-    "9": 76,
-    "10": 166,
-    "11": 155,
-    "12": 230,
-    "13": 164,
-    "14": 393,
-    "15": 214
+    "23": 65
   },
   "message_types": {
-    "0": 1705,
-    "19": 1095
+    "0": 3286,
+    "19": 1714
   },
   "top_reacted_messages": [
     {
@@ -122,6 +122,14 @@
       "author": "zzio_",
       "reactions": 9,
       "channel": "William posting"
+    },
+    {
+      "id": "1502662201784143943",
+      "channel_id": "1170692781216378960",
+      "content": "this comp is so fun daffodil makes me love arachne",
+      "author": "princess.goth",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1502498667179802704",
@@ -162,6 +170,30 @@
       "author": "z8567657",
       "reactions": 6,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1502592401426878644",
+      "channel_id": "1170692781216378960",
+      "content": "🫃",
+      "author": "doktor.sex",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1502704448697405562",
+      "channel_id": "1170692781216378960",
+      "content": "<@693983290423509042> <@212031841786527764> 3 star deathless veil",
+      "author": "princess.goth",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1502771498795143219",
+      "channel_id": "1170692781216378960",
+      "content": "you and frost",
+      "author": "princess.goth",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1502492340118622208",
@@ -218,38 +250,6 @@
       "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1502664454486229062",
-      "channel_id": "1131839874132090890",
-      "content": "1t\n開場一覺血希\n希萊爆發\n搓兩顆球\n這回合爆復活\n不用白不用\n種子複製球\n2t\n搓球\n開小艾狂硬控一下\n種子\n3t\n爆復活後再搓球應該已經殘血了\n盡量給小艾",
-      "author": "water_heart",
-      "reactions": 5,
-      "channel": "🔸阵容构建"
-    },
-    {
-      "id": "1502502172711981126",
-      "channel_id": "1433513650299076780",
-      "content": "So I could either enter ultra or use annihilation (take leftmost card) to contin",
-      "author": "revzen",
-      "reactions": 5,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1502645698116587630",
-      "channel_id": "1433513650299076780",
-      "content": "does anyone know why my uvhash isnt gaining aliemus??",
-      "author": "_._nimbus_._",
-      "reactions": 5,
-      "channel": "🔸game-question"
-    },
-    {
-      "id": "1502737631929303251",
-      "channel_id": "1502737631929303251",
-      "content": "Think about it like Mario Maker or Trackmania, being able to create our own stag",
-      "author": "princess.goth",
-      "reactions": 5,
-      "channel": "give the players tools to create their own stages"
     }
   ]
 }
