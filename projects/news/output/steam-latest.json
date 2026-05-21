@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-21T10:33:08.736173+00:00",
+  "collected_at": "2026-05-21T13:57:12.428650+00:00",
   "source": "steam",
   "item_count": 11,
   "items": [
@@ -31,7 +31,22 @@
       "voted_up": true,
       "review": "Хороший симулятор поедания эмбрионов",
       "timestamp_created": 1779288495,
-      "playtime_forever": 3482
+      "playtime_forever": 3615
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-21T10:01:20+00:00",
+      "lang": "english",
+      "title": "[负面] lmao the game doesn't load for me",
+      "summary": "lmao the game doesn't load for me",
+      "url": "https://steamcommunity.com/profiles/76561198172991798/recommended/3052450",
+      "author": "76561198172991798",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": false,
+      "review": "lmao the game doesn't load for me",
+      "timestamp_created": 1779357680,
+      "playtime_forever": 9
     },
     {
       "source": "steam",
@@ -61,7 +76,7 @@
       "voted_up": true,
       "review": "Si vous êtes capable de passer outre la barrière de la langue, qui peut demander un peu de gymnastique cérébrale pour comprendre où veulent en venir certains dialogues, il y a à la fois un système de gacha plus sain à apprécier et des graphismes au goût d'un dessert que le monde du jeu vidéo a refusé de me servir pendant un petit moment. L'ambiance Lovecraftienne ne fait qu'ajouter à la beauté sobre du jeu, les personnages sont peu nombreux pour le moment, ce qui est une bonne chose. Aucune saturation d'information, d'interface etc. Le jeu vous donnera perpétuellement les cartes pour avancer et bien que la traduction soit défectueuse sur quelques points ce n'est pas bien rédhibitoire hors de l'histoire, le tout ne vous empêchant pas de comprendre le fonctionnement des decks, builds, mécanique de combat, synergie etc. Alors ne vous laissez pas intimidé, vous n'aurez pas non plus besoin de sécréter énormément de cortisol à vous demandez quand le personnage sur lequel vous avez eu un coup de cœur apparaitra, la plus part seront présent sur une bannière dont il n'y a pas besoin de s'embarrasser de quelques mois d'attente pour le roulement de personnage. Le jeu est généreux, mais si vous venez pour la collab Saya no Uta (où d'autres de ce que j'ai compris de la communauté anglophone), ce type d'évènement privilégie les exclusivités aux plus loyaux, vous devrez donc farm et monter rapidement en scénario pour avoir votre bien aimée limitée.",
       "timestamp_created": 1779346428,
-      "playtime_forever": 1232
+      "playtime_forever": 1244
     },
     {
       "source": "steam",
@@ -76,7 +91,7 @@
       "voted_up": false,
       "review": "过于墨迹 游戏界面复杂，操作繁琐，卡顿明显",
       "timestamp_created": 1779340635,
-      "playtime_forever": 839
+      "playtime_forever": 921
     },
     {
       "source": "steam",
@@ -136,7 +151,7 @@
       "voted_up": true,
       "review": "Might be the best gacha game of all time",
       "timestamp_created": 1779313716,
-      "playtime_forever": 2041
+      "playtime_forever": 2050
     },
     {
       "source": "steam",
@@ -152,21 +167,6 @@
       "review": "за саю лайк, перевод корявый(какая нах дора...)",
       "timestamp_created": 1779311607,
       "playtime_forever": 47
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T12:16:36+00:00",
-      "lang": "schinese",
-      "title": "[正面] 美味",
-      "summary": "美味",
-      "url": "https://steamcommunity.com/profiles/76561198722800399/recommended/3052450",
-      "author": "76561198722800399",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "美味",
-      "timestamp_created": 1779279396,
-      "playtime_forever": 595
     }
   ]
 }
