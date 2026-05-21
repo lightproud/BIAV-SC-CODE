@@ -6614,6 +6614,13 @@
       "title": "[DC] xiaokai2804@🔸綜合討論: 請問下一個普池命輪該抽那隻？？",
       "time": "2026-05-21T06:08:22.464000+00:00",
       "downloaded_at": "2026-05-21T20:33:22.445430+00:00"
+    },
+    "https://i.ytimg.com/vi/hr3WFUkbUwc/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDCLNf73f0hPInnAmZwJyRpXgtn2Q": {
+      "filename": "youtube_7b38989d21aed411.jpg",
+      "source": "youtube",
+      "title": "【忘卻前夜】最多用6分鐘了解血鏈希洛！",
+      "time": "2026-05-21T22:10:47.303171+00:00",
+      "downloaded_at": "2026-05-21T22:13:40.581206+00:00"
     }
   },
   "failed": {
@@ -9921,6 +9928,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-21T20:33:24.945062+00:00"
+    },
+    "https://preview.redd.it/c6n2i1ou7k2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a1e15b0af379c679ad3f3a76598d881b4b774961": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T22:13:41.127480+00:00"
+    },
+    "https://preview.redd.it/lczqwgszzj2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=33da3c5853e950c74710ab2eedb3c63191b172ba": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T22:13:41.492009+00:00"
     }
   },
   "archived": []
