@@ -6502,6 +6502,13 @@
       "title": "There's an intruder at Mythag!",
       "time": "2026-05-21T06:51:09+09:00",
       "downloaded_at": "2026-05-20T23:07:41.087003+00:00"
+    },
+    "https://i.ytimg.com/vi/qySOc15QQ5E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4gMrzNTAN98a-S9jxJ5xoYY3nAw": {
+      "filename": "youtube_c6a37b900421edbd.jpg",
+      "source": "youtube",
+      "title": "How to get Saya for FREE in Morimens",
+      "time": "2026-05-21T01:33:10.583293+00:00",
+      "downloaded_at": "2026-05-21T02:09:07.858298+00:00"
     }
   },
   "failed": {
@@ -9699,6 +9706,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-20T23:07:40.139322+00:00"
+    },
+    "https://preview.redd.it/nmvpdkygmd2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=143d498845358276d0287f86c882d42acf6ea2e1": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T02:09:08.298398+00:00"
+    },
+    "https://preview.redd.it/t1w0hzz6ce2h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=371de3dec59d255f5b263c5670b0378cb83344d7": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T02:09:08.633377+00:00"
+    },
+    "https://preview.redd.it/r0hsgpui0e2h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=beef2277df9ee6629ad3c25966b89139b1f1f354": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T02:09:08.978321+00:00"
     }
   },
   "archived": []

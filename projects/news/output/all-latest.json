@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-20T23:07:39.547015+00:00",
+  "collected_at": "2026-05-21T02:09:07.265557+00:00",
   "source": "all",
-  "item_count": 162,
+  "item_count": 144,
   "items": [
     {
       "source": "steam",
@@ -50,6 +50,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-05-21T01:05:37+00:00",
+      "lang": "schinese",
+      "title": "[正面] 画风剧情很强，唯独策划缺根筋",
+      "summary": "画风剧情很强，唯独策划缺根筋",
+      "url": "https://steamcommunity.com/profiles/76561199829410287/recommended/3052450",
+      "author": "76561199829410287",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "画风剧情很强，唯独策划缺根筋",
+      "timestamp_created": 1779325537,
+      "playtime_forever": 3969
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-20T22:06:23+00:00",
+      "lang": "english",
+      "title": "[正面] goatedmens",
+      "summary": "goatedmens",
+      "url": "https://steamcommunity.com/profiles/76561198055671459/recommended/3052450",
+      "author": "76561198055671459",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "goatedmens",
+      "timestamp_created": 1779314783,
+      "playtime_forever": 1888
+    },
+    {
+      "source": "steam",
       "time": "2026-05-20T21:48:36+00:00",
       "lang": "english",
       "title": "[正面] Might be the best gacha game of all time",
@@ -61,7 +91,7 @@
       "voted_up": true,
       "review": "Might be the best gacha game of all time",
       "timestamp_created": 1779313716,
-      "playtime_forever": 1819
+      "playtime_forever": 1999
     },
     {
       "source": "steam",
@@ -91,7 +121,7 @@
       "voted_up": true,
       "review": "美味",
       "timestamp_created": 1779279396,
-      "playtime_forever": 286
+      "playtime_forever": 346
     },
     {
       "source": "steam",
@@ -122,36 +152,6 @@
       "review": "muy bueno",
       "timestamp_created": 1779244831,
       "playtime_forever": 1583
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T01:31:11+00:00",
-      "lang": "schinese",
-      "title": "[负面] 养成极其困难，打活动限制太大",
-      "summary": "养成极其困难，打活动限制太大",
-      "url": "https://steamcommunity.com/profiles/76561198411975428/recommended/3052450",
-      "author": "76561198411975428",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "养成极其困难，打活动限制太大",
-      "timestamp_created": 1779240671,
-      "playtime_forever": 4344
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-19T23:17:20+00:00",
-      "lang": "english",
-      "title": "[正面] I've got a lot more time on the mobile version.\n\nT...",
-      "summary": "I've got a lot more time on the mobile version.\n\nTLDR This game is incredible. If you are a fan of any combination of the Cthulhu Mythos, Slay the Spire, and Gacha games, you will probably like this game.",
-      "url": "https://steamcommunity.com/profiles/76561197961601642/recommended/3052450",
-      "author": "76561197961601642",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I've got a lot more time on the mobile version.\n\nTLDR This game is incredible. If you are a fan of any combination of the Cthulhu Mythos, Slay the Spire, and Gacha games, you will probably like this game.",
-      "timestamp_created": 1779232640,
-      "playtime_forever": 26
     },
     {
       "source": "discord",
@@ -461,206 +461,14 @@
     },
     {
       "source": "youtube",
-      "time": "2026-05-20T23:04:44.909082+00:00",
+      "time": "2026-05-21T01:33:10.583293+00:00",
       "lang": "",
-      "title": "Morimens | The Greatest Gacha Game You've Never Played (Long Review)",
-      "summary": "[10mo ago] My newest fascination for the last month has got to be one of the most unique gacha games I've seen. Morimens is what I'd ...",
-      "url": "https://www.youtube.com/watch?v=DTCfk_ztxeI",
-      "author": "Pseychie",
-      "engagement": 301806,
-      "media_url": "https://i.ytimg.com/vi/DTCfk_ztxeI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDtSFm4kyI_gCqen2KjH6necJ54UA",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909104+00:00",
-      "lang": "",
-      "title": "How a Dying Game achieved Immortality",
-      "summary": "[5d ago] The insane story of how Morimens went from death's door to a masterpiece that shattered my heart. Play Morimens because I love ...",
-      "url": "https://www.youtube.com/watch?v=vcESw24eqVQ",
-      "author": "Gray Raven Radio and Linasera",
-      "engagement": 52318,
-      "media_url": "https://i.ytimg.com/vi/vcESw24eqVQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDF3AZFSL_4m_Bqtc7llcEi7Ug8gg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909182+00:00",
-      "lang": "",
-      "title": "《Morimens》丨ED——「Ex Oblivion 來自遺忘 ▼」",
-      "summary": "[1y ago] 呼喚我的名字，在被忘卻的黎明之前。 Can you call my name, before the daybreak we're forgotten. Chn Lyrics ：霁月@B.I.A.V. ...",
-      "url": "https://www.youtube.com/watch?v=BkG3QQoqKhQ",
-      "author": "Morimens",
-      "engagement": 44725,
-      "media_url": "https://i.ytimg.com/vi/BkG3QQoqKhQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLALYof-HWuORc9b1v7KrpbTjH3E5g",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909129+00:00",
-      "lang": "",
-      "title": "Morimens Beginner Progression Guide (2026 Edition)",
-      "summary": "[4mo ago] Starting Morimens in 2026 and not sure where to begin? This complete beginner progression guide walks you step by step from ...",
-      "url": "https://www.youtube.com/watch?v=NpwMWAy6OLQ",
-      "author": "Mythag Files",
-      "engagement": 26731,
-      "media_url": "https://i.ytimg.com/vi/NpwMWAy6OLQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBpDXpEGmN_V9XRebsTCxTkx7Lhdw",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909161+00:00",
-      "lang": "",
-      "title": "The Most FUN Gacha Game You Need To Try | Morimens",
-      "summary": "[9mo ago] Have you ever wanted to play Card games with Lovecraftian creatures?? You can do it right now. It's all below. why are you still ...",
-      "url": "https://www.youtube.com/watch?v=5PDpbrvt43E",
-      "author": "Polarisu",
-      "engagement": 20373,
-      "media_url": "https://i.ytimg.com/vi/5PDpbrvt43E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCNqezFWs8g3UicVlQ5c6v-Y7eM1w",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.908787+00:00",
-      "lang": "",
-      "title": "10 Things beginners NEED to do in Morimens",
-      "summary": "[5d ago] These ten tips will help you get started in Morimens with a lot less confusion. ♢ TWITTER: https://twitter.com/GrayRavenRadio ...",
-      "url": "https://www.youtube.com/watch?v=gMNxwddLt-s",
+      "title": "How to get Saya for FREE in Morimens",
+      "summary": "[33 minutes ago] Saya no Uta is coming to Morimens. This is everything you need to know about this brand new collab. ♢ TWITTER: ...",
+      "url": "https://www.youtube.com/watch?v=qySOc15QQ5E",
       "author": "Linasera",
-      "engagement": 10682,
-      "media_url": "https://i.ytimg.com/vi/gMNxwddLt-s/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCZQ2TADkMKT1WXRFYflKhDcVZ5lg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909175+00:00",
-      "lang": "",
-      "title": "[Morimens] Flares' Awakener Review : Mouchette : Chaos DR DPS - C Tier General Use, A Tier Whale.",
-      "summary": "[4mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
-      "url": "https://www.youtube.com/watch?v=e1J3nIclZdQ",
-      "author": "Flares117",
-      "engagement": 5244,
-      "media_url": "https://i.ytimg.com/vi/e1J3nIclZdQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBL5pclDRTqjcebGERKYpLNBPDviA",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909168+00:00",
-      "lang": "",
-      "title": "[Morimens] 2025 End of Year Updated Realm Overview : Caro (Red Realm) - Primer for Beginners",
-      "summary": "[5mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord where I give coaching and veterans ...",
-      "url": "https://www.youtube.com/watch?v=5qU0mK0LCYs",
-      "author": "Flares117",
-      "engagement": 4056,
-      "media_url": "https://i.ytimg.com/vi/5qU0mK0LCYs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1OC8jM5hMayOMyZW69xEFGrCw4w",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909233+00:00",
-      "lang": "",
-      "title": "An Overly Detailed Analysis of Mouchette in Morimens",
-      "summary": "[4mo ago] I have a very normal and predictable level of excitement for Morimens' new upcoming character Mouchette, from Mist Sequence.",
-      "url": "https://www.youtube.com/watch?v=txI9d9P1nxE",
-      "author": "Rose Guardian Reya",
-      "engagement": 3735,
-      "media_url": "https://i.ytimg.com/vi/txI9d9P1nxE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBHSsKrk4l_dd2jT5Lv7Iq0bc113g",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909121+00:00",
-      "lang": "",
-      "title": "[Morimens] 2026 Half Anni Overview : The most predatory and greedy anniversary event yet?!",
-      "summary": "[4d ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=QsDhTomGGbI",
-      "author": "Flares117",
-      "engagement": 3390,
-      "media_url": "https://i.ytimg.com/vi/QsDhTomGGbI/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPKcjuh73NG4SsTpyShSlBa3B1Qg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909189+00:00",
-      "lang": "",
-      "title": "Attack of the Horny Statues | Morimens Ultra Only",
-      "summary": "[5mo ago] A trashcan, a nerd and a child walk into a museum. (this one is weird) GENERAL INFO Discord: marcovinc Account ID (if you want ...",
-      "url": "https://www.youtube.com/watch?v=MviYPJj2y-U",
-      "author": "Trash Keeper",
-      "engagement": 2910,
-      "media_url": "https://i.ytimg.com/vi/MviYPJj2y-U/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDJBJ50gCFn9fRC6_sZV4KRIIBBiw",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909147+00:00",
-      "lang": "",
-      "title": "Morimens chap 8 be like",
-      "summary": "[6mo ago] A fan try to join the Fan Art contest but can't draw and have skill issue. UID: 101198315 #MorimensFanArt.",
-      "url": "https://www.youtube.com/watch?v=oCqyBYOE_cw",
-      "author": "Wednesday playlist",
-      "engagement": 2534,
-      "media_url": "https://i.ytimg.com/vi/oCqyBYOE_cw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD7Oil9H-1QjARmTbZ5Fz8bKolKKg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909113+00:00",
-      "lang": "",
-      "title": "[Morimens] Rage Rerun Overview/Guide - WATCH THE OLDER VIDEOS - Kath/Salv/Wanda. Livestream",
-      "summary": "[1mo ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=i7ZEXOpz9DU",
-      "author": "Flares117",
-      "engagement": 1890,
-      "media_url": "https://i.ytimg.com/vi/i7ZEXOpz9DU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCbnMHuqF8nzcTEjke5GcSB_Hjd5g",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909138+00:00",
-      "lang": "",
-      "title": "[Morimens] This is why 24 is S tier, despite me not liking her gameplay. I actually play the game.",
-      "summary": "[23h ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
-      "url": "https://www.youtube.com/watch?v=GzSvHrvzdPM",
-      "author": "Flares117",
-      "engagement": 1822,
-      "media_url": "https://i.ytimg.com/vi/GzSvHrvzdPM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCXWLIdEzsoJEp6rNjXQwQ-FEoLkQ",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909240+00:00",
-      "lang": "",
-      "title": "『 Morimens / First time trying it out! 』 how many men mori",
-      "summary": "[Streamed 1mo ago] hello! 𝜗𝜚˚⋆ https://streamelements.com/yuuna/tip 𝜗𝜚˚⋆ https://x.com/niniyuuna 𝜗𝜚˚⋆ https://twitch.com/yuuna 𝜗𝜚˚⋆ my ...",
-      "url": "https://www.youtube.com/watch?v=Zvs5WtSL0Po",
-      "author": "Yuuna Nini",
-      "engagement": 1023,
-      "media_url": "https://i.ytimg.com/vi/Zvs5WtSL0Po/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD1_q83bpuVycA67DNUlgRTQ710Yg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909094+00:00",
-      "lang": "",
-      "title": "Morimens but I ONLY pull characters from the Kaleido Recollections Banner",
-      "summary": "[Streamed 4h ago] A fresh account CHALLENGE RUN series where I am doomed to only pull off the completely random Kaleido banners!",
-      "url": "https://www.youtube.com/watch?v=YwUwJysVEcU",
-      "author": "Rose Guardian Reya",
-      "engagement": 827,
-      "media_url": "https://i.ytimg.com/vi/YwUwJysVEcU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCq3Lk4uH6IOjH-2TTHstN-vMpZjg",
-      "content_type": "image"
-    },
-    {
-      "source": "youtube",
-      "time": "2026-05-20T23:04:44.909224+00:00",
-      "lang": "",
-      "title": "[Morimens] Short (Relatively) - Stream, answer questions. Then switch to a sponsored game",
-      "summary": "[Streamed 15h ago] Long Boring Spreadsheet stream. And making next video.",
-      "url": "https://www.youtube.com/watch?v=GEqfViafm-A",
-      "author": "Flares117",
-      "engagement": 380,
-      "media_url": "https://i.ytimg.com/vi/GEqfViafm-A/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBW_GAPdHUoVsMjTkgzLAznTyBitw",
+      "engagement": 128,
+      "media_url": "https://i.ytimg.com/vi/qySOc15QQ5E/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB4gMrzNTAN98a-S9jxJ5xoYY3nAw",
       "content_type": "image"
     },
     {
@@ -768,15 +576,13 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T10:26:42+00:00",
+      "time": "2026-05-20T21:25:15+00:00",
       "lang": "en",
-      "title": "Sir please leave me alone",
-      "summary": "Everywhere i go this mf always appears (hii I&#39;m a new player)   &#32; submitted by &#32;  /u/Livialiva   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tihjo2/sir_please_leave_me_alone/",
-      "author": "/u/Livialiva",
+      "title": "I want doraesain, is pulling on the rotating banner for him worth it or should I wait for his rerun cause I got his wheel from the other banner + does the rotating banner's pity carry over? (im f2p)",
+      "summary": "&#32; submitted by &#32;  /u/AnswerFlat6681   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tizlnq/i_want_doraesain_is_pulling_on_the_rotating/",
+      "author": "/u/AnswerFlat6681",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/inntavchr92h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=56133648d487b3a418d89f25896fbbc9f2a4c7b8",
-      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -791,6 +597,36 @@
       "author": "/u/jadoesvg",
       "engagement": 0,
       "media_url": "https://preview.redd.it/dcfcjihbla2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=0caf54b59dab95bff931ef72dfd0187949ba8283",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-20T23:25:27+00:00",
+      "lang": "en",
+      "title": "Keeper Level and Gnosis Elixir Farming",
+      "summary": "Hey everyone! Just started playing Morimens yesterday and fell inlove with the art and the gameplay. I&#39;ve been wondering if I am doing something wrong because my Keeper level is too low and I cant farm purple gnosis yet. Is there a way to level up faster?  &#32; submitted by &#32;  /u/justurusualguy   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tj2qo7/keeper_level_and_gnosis_elixir_farming/",
+      "author": "/u/justurusualguy",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/nmvpdkygmd2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=143d498845358276d0287f86c882d42acf6ea2e1",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-20T10:26:42+00:00",
+      "lang": "en",
+      "title": "Sir please leave me alone",
+      "summary": "Everywhere i go this mf always appears (hii I&#39;m a new player)   &#32; submitted by &#32;  /u/Livialiva   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tihjo2/sir_please_leave_me_alone/",
+      "author": "/u/Livialiva",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/inntavchr92h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=56133648d487b3a418d89f25896fbbc9f2a4c7b8",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -856,32 +692,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T21:25:15+00:00",
-      "lang": "en",
-      "title": "I want doraesain, is pulling on the rotating banner for him worth it or should I wait for his rerun cause I got his wheel from the other banner + does the rotating banner's pity carry over? (im f2p)",
-      "summary": "&#32; submitted by &#32;  /u/AnswerFlat6681   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tizlnq/i_want_doraesain_is_pulling_on_the_rotating/",
-      "author": "/u/AnswerFlat6681",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-20T05:48:44+00:00",
-      "lang": "en",
-      "title": "Cat Guide - Day 3",
-      "summary": "Hi, Angbak from discord here. Ngl this is just a karma farm post because today&#39;s raid is easy. Step 1 - get a support G.Murphy/Mouchette Step 2 - use rouse G.Murphy by turn 3, or save Mouchette rouse for turn 4 Step 3 - exalt your support on turn 4. Change to red stance and play their cards. Posse : a mouse wisdom, or wdv  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tichu6/cat_guide_day_3/",
-      "author": "/u/Angbak94",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-20T22:23:44+00:00",
       "lang": "en",
       "title": "Favourite Enhancement Quotes",
@@ -889,47 +699,6 @@
       "url": "https://old.reddit.com/r/Morimens/comments/1tj15no/favourite_enhancement_quotes/",
       "author": "/u/GreedyMenu845",
       "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-20T19:30:47+00:00",
-      "lang": "en",
-      "title": "arc 1 guide",
-      "summary": "&#32; submitted by &#32;  /u/General_Presence_389   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tiw9js/arc_1_guide/",
-      "author": "/u/General_Presence_389",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-20T21:15:07+00:00",
-      "lang": "en",
-      "title": "Necesito ayuda con dos composiciónes de vórtice y narciso",
-      "summary": "En vórtice la tengo junto a muphy-myrian y me falta uno que no sea g-murphy y por el otro lado daffodil la tengo junto gdoll-hamblen-24 y me gustaría saber cómo mejorar este equipo soy primerizo con daffodil la quiero llevar a un equipo de contra ataque  &#32; submitted by &#32;  /u/Excellent_Date2981   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tizb7d/necesito_ayuda_con_dos_composiciónes_de_vórtice_y/",
-      "author": "/u/Excellent_Date2981",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-20T01:55:36+00:00",
-      "lang": "en",
-      "title": "Antes de q perdieran los recuerdos",
-      "summary": "Tire a este banner, conprando plata prime con los nucleos, tuve suerte. Q esquipos podría hacer, ocupo principalmente a helot: catena, arachne, clementine y aigis.  &#32; submitted by &#32;  /u/BranchPitiful   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1ti7im4/antes_de_q_perdieran_los_recuerdos/",
-      "author": "/u/BranchPitiful",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/ean9a8xc872h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=e193fcc81d1ebfaebb56c2bbdf480577bfeaf669",
-      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -951,14 +720,40 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T05:44:51+00:00",
+      "time": "2026-05-20T05:48:44+00:00",
       "lang": "en",
-      "title": "Friend Support for Cat Event",
-      "summary": "Hello Keepers! I would like to request your assistance for this event, thank you early on if you drop your codes below and be my friend! I humbly offer my Arachne for support if anyone requires one, thank you again! &lt;3 100960280 https://preview.redd.it/l9263pzyc82h1.png?width=295&amp;format=png&amp;auto=webp&amp;s=129db49607b36a66cea535cd56bf71a920eac155  &#32; submitted by &#32;  /u/Ok-Lengthiness7520   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1ticf5a/friend_support_for_cat_event/",
-      "author": "/u/Ok-Lengthiness7520",
+      "title": "Cat Guide - Day 3",
+      "summary": "Hi, Angbak from discord here. Ngl this is just a karma farm post because today&#39;s raid is easy. Step 1 - get a support G.Murphy/Mouchette Step 2 - use rouse G.Murphy by turn 3, or save Mouchette rouse for turn 4 Step 3 - exalt your support on turn 4. Change to red stance and play their cards. Posse : a mouse wisdom, or wdv  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tichu6/cat_guide_day_3/",
+      "author": "/u/Angbak94",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/l9263pzyc82h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=cbeafae674766822aba7c09c91bb32d11b7ff56f",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T02:03:05+00:00",
+      "lang": "en",
+      "title": "question",
+      "summary": "new player just recently cleared chapter 4 and was wondering what did clear &quot;multiverse link-forgotten seed of love&quot; mean for the dreamy rendezvous event? im uncertain if its something else i have to unlock and i dont know where or i have to wait?  &#32; submitted by &#32;  /u/Brilliant-Half-820   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tj6fdk/question/",
+      "author": "/u/Brilliant-Half-820",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T01:50:07+00:00",
+      "lang": "en",
+      "title": "Worth pulling Lily for Xu?",
+      "summary": "&#32; submitted by &#32;  /u/walrus_paradise   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tj64ck/worth_pulling_lily_for_xu/",
+      "author": "/u/walrus_paradise",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/t1w0hzz6ce2h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=371de3dec59d255f5b263c5670b0378cb83344d7",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -966,12 +761,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T22:49:28+00:00",
+      "time": "2026-05-20T19:30:47+00:00",
       "lang": "en",
-      "title": "Can't play on mobile data",
-      "summary": "Currently having wi-fi issues and sadly I will be wi-fi-less for at least a month, and to my horror I discovered the game won&#39;t let me in unless I&#39;m on wi-fi, but I&#39;m able to play other gacha games on data just fine. Anyone else having this issue?  &#32; submitted by &#32;  /u/sleepysoliloquy   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tj1u7w/cant_play_on_mobile_data/",
-      "author": "/u/sleepysoliloquy",
+      "title": "arc 1 guide",
+      "summary": "&#32; submitted by &#32;  /u/General_Presence_389   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tiw9js/arc_1_guide/",
+      "author": "/u/General_Presence_389",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -979,14 +774,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-19T23:35:01+00:00",
+      "time": "2026-05-21T00:51:35+00:00",
       "lang": "en",
-      "title": "[Morimens] Highest Value Limited Unit : Able to clear Alert 5 with only 1 copy lvl 60.",
-      "summary": "&#32; submitted by &#32;  /u/Successful-Month-541   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1ti48um/morimens_highest_value_limited_unit_able_to_clear/",
-      "author": "/u/Successful-Month-541",
+      "title": "Help me,, Loll",
+      "summary": "https://preview.redd.it/r0hsgpui0e2h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=a9febea8930d1479605c5661932b272bb66a0dbe This is my current team... Okay so, It&#39;s been a Week since I started playing this game, the reason I played this is because I instantly fell in love with the art style a Unique Interpretation of the story, but as I progress to the story I noticed that lol, I suck. yes, I suck, I dunno how to put proper team comps lol, I KEPT DYING LOL T-T,,, moreover I only pull to the characters I see as Pretty designs and gameplay, soo I might not have the right teams XD. but I played a few games similar to this, I know wardens are some kind of sort of tank lol, assults are DPS I guess? so Chorus must be the support? anyways, I&#39;d really appreciate it if y&#39;all help me build the right team or guide me for the next chracter I should focus on getting, TuT IS THIS POST ALLOWED?? IM SORRY IF ITS NOT T-TT  &#32; submitted by &#32;  /u/Ordinary_Ruin9687   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tj4s8c/help_me_loll/",
+      "author": "/u/Ordinary_Ruin9687",
       "engagement": 0,
-      "media_url": "https://external-preview.redd.it/z9Zl4NP_oM3O8lBLjAeGlaq00tKU6Qv1juk_O66-Ukc.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=34f3ff7214e99b06737038339feb2c2fd1239485",
+      "media_url": "https://preview.redd.it/r0hsgpui0e2h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=beef2277df9ee6629ad3c25966b89139b1f1f354",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -1064,12 +859,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T10:26:42+00:00",
+      "time": "2026-05-20T21:25:15+00:00",
       "lang": "en",
-      "title": "Sir please leave me alone",
-      "summary": "Everywhere i go this mf always appears (hii I&#39;m a new player)   &#32; submitted by &#32;  /u/Livialiva   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tihjo2/sir_please_leave_me_alone/",
-      "author": "u//u/Livialiva",
+      "title": "I want doraesain, is pulling on the rotating banner for him worth it or should I wait for his rerun cause I got his wheel from the other banner + does the rotating banner's pity carry over? (im f2p)",
+      "summary": "&#32; submitted by &#32;  /u/AnswerFlat6681   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tizlnq/i_want_doraesain_is_pulling_on_the_rotating/",
+      "author": "u//u/AnswerFlat6681",
       "engagement": 0
     },
     {
@@ -1080,6 +875,26 @@
       "summary": "I just lucked out and finally got G-Doll from arc 2 banner, but is her stats supposed to be this low?  &#32; submitted by &#32;  /u/jadoesvg   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tilcaf/is_this_normal/",
       "author": "u//u/jadoesvg",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-20T23:25:27+00:00",
+      "lang": "en",
+      "title": "Keeper Level and Gnosis Elixir Farming",
+      "summary": "Hey everyone! Just started playing Morimens yesterday and fell inlove with the art and the gameplay. I&#39;ve been wondering if I am doing something wrong because my Keeper level is too low and I cant farm purple gnosis yet. Is there a way to level up faster?  &#32; submitted by &#32;  /u/justurusualguy   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tj2qo7/keeper_level_and_gnosis_elixir_farming/",
+      "author": "u//u/justurusualguy",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-20T10:26:42+00:00",
+      "lang": "en",
+      "title": "Sir please leave me alone",
+      "summary": "Everywhere i go this mf always appears (hii I&#39;m a new player)   &#32; submitted by &#32;  /u/Livialiva   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tihjo2/sir_please_leave_me_alone/",
+      "author": "u//u/Livialiva",
       "engagement": 0
     },
     {
@@ -1124,62 +939,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T21:25:15+00:00",
-      "lang": "en",
-      "title": "I want doraesain, is pulling on the rotating banner for him worth it or should I wait for his rerun cause I got his wheel from the other banner + does the rotating banner's pity carry over? (im f2p)",
-      "summary": "&#32; submitted by &#32;  /u/AnswerFlat6681   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tizlnq/i_want_doraesain_is_pulling_on_the_rotating/",
-      "author": "u//u/AnswerFlat6681",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-20T05:48:44+00:00",
-      "lang": "en",
-      "title": "Cat Guide - Day 3",
-      "summary": "Hi, Angbak from discord here. Ngl this is just a karma farm post because today&#39;s raid is easy. Step 1 - get a support G.Murphy/Mouchette Step 2 - use rouse G.Murphy by turn 3, or save Mouchette rouse for turn 4 Step 3 - exalt your support on turn 4. Change to red stance and play their cards. Posse : a mouse wisdom, or wdv  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tichu6/cat_guide_day_3/",
-      "author": "u//u/Angbak94",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-20T22:23:44+00:00",
       "lang": "en",
       "title": "Favourite Enhancement Quotes",
       "summary": "It&#39;s Exactly what&#39;s on the tin, what are your favourite enhancement quotes for any character, be command card max level or Enlightens or Even WOD stories? As for mine for Max Command Card Quote it would have to go with Logan&#39;s Tides of Hubris especially this bit &quot;Go and Search to verify, Chase the desert spires, seek the lost underwater city and climb the boundless mountains, I assure you, nothing is older than Lotan&quot;, it just feels so grandiose like it makes her seem so vast and ancient, while my favourite Enhancement line is Kathi&#39;s Enlighten Flourish quote &quot; We are the fire, the Eternal flame, the Undying Chaos and we will bring you all... home...&quot;, it sounds so warm and reassuring said with such clarity it brings a smile to my face, as for my favourite Wod, quote it has to Incalculable Factor, showing the pure dissorienting horror of dissolution on such a scale even as people flee for thier lives only for it to be revealed to be Winkle&#39;s memory is so moving, I don&#39;t think I&#39;ll forget that one for a while...  &#32; submitted by &#32;  /u/GreedyMenu845   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tj15no/favourite_enhancement_quotes/",
       "author": "u//u/GreedyMenu845",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-20T19:30:47+00:00",
-      "lang": "en",
-      "title": "arc 1 guide",
-      "summary": "&#32; submitted by &#32;  /u/General_Presence_389   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tiw9js/arc_1_guide/",
-      "author": "u//u/General_Presence_389",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-20T21:15:07+00:00",
-      "lang": "en",
-      "title": "Necesito ayuda con dos composiciónes de vórtice y narciso",
-      "summary": "En vórtice la tengo junto a muphy-myrian y me falta uno que no sea g-murphy y por el otro lado daffodil la tengo junto gdoll-hamblen-24 y me gustaría saber cómo mejorar este equipo soy primerizo con daffodil la quiero llevar a un equipo de contra ataque  &#32; submitted by &#32;  /u/Excellent_Date2981   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tizb7d/necesito_ayuda_con_dos_composiciónes_de_vórtice_y/",
-      "author": "u//u/Excellent_Date2981",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-20T01:55:36+00:00",
-      "lang": "en",
-      "title": "Antes de q perdieran los recuerdos",
-      "summary": "Tire a este banner, conprando plata prime con los nucleos, tuve suerte. Q esquipos podría hacer, ocupo principalmente a helot: catena, arachne, clementine y aigis.  &#32; submitted by &#32;  /u/BranchPitiful   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1ti7im4/antes_de_q_perdieran_los_recuerdos/",
-      "author": "u//u/BranchPitiful",
       "engagement": 0
     },
     {
@@ -1194,32 +959,52 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T05:44:51+00:00",
+      "time": "2026-05-20T05:48:44+00:00",
       "lang": "en",
-      "title": "Friend Support for Cat Event",
-      "summary": "Hello Keepers! I would like to request your assistance for this event, thank you early on if you drop your codes below and be my friend! I humbly offer my Arachne for support if anyone requires one, thank you again! &lt;3 100960280 https://preview.redd.it/l9263pzyc82h1.png?width=295&amp;format=png&amp;auto=webp&amp;s=129db49607b36a66cea535cd56bf71a920eac155  &#32; submitted by &#32;  /u/Ok-Lengthiness7520   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1ticf5a/friend_support_for_cat_event/",
-      "author": "u//u/Ok-Lengthiness7520",
+      "title": "Cat Guide - Day 3",
+      "summary": "Hi, Angbak from discord here. Ngl this is just a karma farm post because today&#39;s raid is easy. Step 1 - get a support G.Murphy/Mouchette Step 2 - use rouse G.Murphy by turn 3, or save Mouchette rouse for turn 4 Step 3 - exalt your support on turn 4. Change to red stance and play their cards. Posse : a mouse wisdom, or wdv  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tichu6/cat_guide_day_3/",
+      "author": "u//u/Angbak94",
       "engagement": 0
     },
     {
       "source": "reddit",
-      "time": "2026-05-20T22:49:28+00:00",
+      "time": "2026-05-21T02:03:05+00:00",
       "lang": "en",
-      "title": "Can't play on mobile data",
-      "summary": "Currently having wi-fi issues and sadly I will be wi-fi-less for at least a month, and to my horror I discovered the game won&#39;t let me in unless I&#39;m on wi-fi, but I&#39;m able to play other gacha games on data just fine. Anyone else having this issue?  &#32; submitted by &#32;  /u/sleepysoliloquy   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tj1u7w/cant_play_on_mobile_data/",
-      "author": "u//u/sleepysoliloquy",
+      "title": "question",
+      "summary": "new player just recently cleared chapter 4 and was wondering what did clear &quot;multiverse link-forgotten seed of love&quot; mean for the dreamy rendezvous event? im uncertain if its something else i have to unlock and i dont know where or i have to wait?  &#32; submitted by &#32;  /u/Brilliant-Half-820   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tj6fdk/question/",
+      "author": "u//u/Brilliant-Half-820",
       "engagement": 0
     },
     {
       "source": "reddit",
-      "time": "2026-05-19T23:35:01+00:00",
+      "time": "2026-05-21T01:50:07+00:00",
       "lang": "en",
-      "title": "[Morimens] Highest Value Limited Unit : Able to clear Alert 5 with only 1 copy lvl 60.",
-      "summary": "&#32; submitted by &#32;  /u/Successful-Month-541   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1ti48um/morimens_highest_value_limited_unit_able_to_clear/",
-      "author": "u//u/Successful-Month-541",
+      "title": "Worth pulling Lily for Xu?",
+      "summary": "&#32; submitted by &#32;  /u/walrus_paradise   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tj64ck/worth_pulling_lily_for_xu/",
+      "author": "u//u/walrus_paradise",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-20T19:30:47+00:00",
+      "lang": "en",
+      "title": "arc 1 guide",
+      "summary": "&#32; submitted by &#32;  /u/General_Presence_389   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tiw9js/arc_1_guide/",
+      "author": "u//u/General_Presence_389",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T00:51:35+00:00",
+      "lang": "en",
+      "title": "Help me,, Loll",
+      "summary": "https://preview.redd.it/r0hsgpui0e2h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=a9febea8930d1479605c5661932b272bb66a0dbe This is my current team... Okay so, It&#39;s been a Week since I started playing this game, the reason I played this is because I instantly fell in love with the art style a Unique Interpretation of the story, but as I progress to the story I noticed that lol, I suck. yes, I suck, I dunno how to put proper team comps lol, I KEPT DYING LOL T-T,,, moreover I only pull to the characters I see as Pretty designs and gameplay, soo I might not have the right teams XD. but I played a few games similar to this, I know wardens are some kind of sort of tank lol, assults are DPS I guess? so Chorus must be the support? anyways, I&#39;d really appreciate it if y&#39;all help me build the right team or guide me for the next chracter I should focus on getting, TuT IS THIS POST ALLOWED?? IM SORRY IF ITS NOT T-TT  &#32; submitted by &#32;  /u/Ordinary_Ruin9687   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tj4s8c/help_me_loll/",
+      "author": "u//u/Ordinary_Ruin9687",
       "engagement": 0
     },
     {
@@ -1304,17 +1089,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-20T23:05:01.900103+00:00",
-      "lang": "zh",
-      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-20T23:05:01.912817+00:00",
+      "time": "2026-05-21T02:06:24.188398+00:00",
       "lang": "zh",
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
@@ -1324,7 +1099,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-20T23:05:01.925399+00:00",
+      "time": "2026-05-21T02:06:24.201608+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
       "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
@@ -1334,7 +1109,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-20T23:05:01.941813+00:00",
+      "time": "2026-05-21T02:06:24.218203+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-21T02:06:24.230175+00:00",
       "lang": "zh",
       "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
       "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
@@ -1344,17 +1129,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-20T23:05:01.953662+00:00",
-      "lang": "zh",
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-20T23:05:01.964946+00:00",
+      "time": "2026-05-21T02:06:24.242268+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -1364,7 +1139,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-20T23:05:01.976310+00:00",
+      "time": "2026-05-21T02:06:24.254963+00:00",
       "lang": "zh",
       "title": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
       "summary": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
@@ -1374,37 +1149,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-20T23:05:01.987556+00:00",
-      "lang": "zh",
-      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
-      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-20T23:05:01.999089+00:00",
-      "lang": "zh",
-      "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
-      "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
-      "url": "https://m.weibo.cn/status/5294895855830265",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-20T23:05:02.016247+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
-      "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
-      "url": "https://m.weibo.cn/status/5300037031563389",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-20T23:05:02.032954+00:00",
+      "time": "2026-05-21T02:06:24.266823+00:00",
       "lang": "zh",
       "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
       "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
@@ -1414,27 +1159,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-20T23:05:02.045557+00:00",
+      "time": "2026-05-21T02:06:24.278219+00:00",
       "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n【校猫日志】前瞻：V2.5.1 胚胎融合变化\n前瞻：V2.5.1 胚胎融合变化\n\n我们计划在 V2.5.1带来几项胚胎融合调整，敬请注意：",
-      "summary": "忘却前夜#忘却前夜#\n【校猫日志】前瞻：V2.5.1 胚胎融合变化\n前瞻：V2.5.1 胚胎融合变化\n\n我们计划在 V2.5.1带来几项胚胎融合调整，敬请注意：\n\n- 胚胎融合会以数值显示而非百分比，普通血肉界域在胚胎融合达到 100 时生成 1 个「胚胎」到手中。\n- 阿格里帕指令卡「不耐的施舍」：胚胎融合翻 ...全文",
-      "url": "https://m.weibo.cn/status/5298520196122111",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-20T23:05:02.062331+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
-      "summary": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
+      "title": "全世界都来玩5771好吧 联动送角色本体和250抽",
+      "summary": "全世界都来玩5771好吧 联动送角色本体和250抽",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-20T23:05:02.075175+00:00",
+      "time": "2026-05-21T02:06:24.290017+00:00",
+      "lang": "zh",
+      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-21T02:06:24.302057+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗",
       "summary": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗？\"\n守密人：（握一下尤乌哈希的心脏）\nP1为背景糊弄学产物，P2P3是突然想起相册里有之前没有用上的背景。",
@@ -1444,11 +1189,61 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-20T23:05:02.087550+00:00",
+      "time": "2026-05-21T02:06:24.313621+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 【戈利亚生贺17h/19:00】Riptide\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\nLady, running down to",
+      "summary": "忘却前夜 【戈利亚生贺17h/19:00】Riptide\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\nLady, running down to the riptide\n女孩，奔向潮流所向的地方\nTaken away to the dark side\n被裹挟至黑暗的那一面\nI wanna be your left hand man\n我想要成为牵着你左手的男人\nI love you when ...全文",
+      "url": "https://m.weibo.cn/status/5300725074887472",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-21T02:06:24.328977+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#忘却前夜#\n【校猫日志】前瞻：V2.5.1 胚胎融合变化\n前瞻：V2.5.1 胚胎融合变化\n\n我们计划在 V2.5.1带来几项胚胎融合调整，敬请注意：",
+      "summary": "忘却前夜#忘却前夜#\n【校猫日志】前瞻：V2.5.1 胚胎融合变化\n前瞻：V2.5.1 胚胎融合变化\n\n我们计划在 V2.5.1带来几项胚胎融合调整，敬请注意：\n\n- 胚胎融合会以数值显示而非百分比，普通血肉界域在胚胎融合达到 100 时生成 1 个「胚胎」到手中。\n- 阿格里帕指令卡「不耐的施舍」：胚胎融合翻 ...全文",
+      "url": "https://m.weibo.cn/status/5298520196122111",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-21T02:06:24.344586+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
+      "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
+      "url": "https://m.weibo.cn/status/5300037031563389",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-21T02:06:24.359864+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 【戈利亚生贺17h/1:00】Honeymoon\n⚠️戈利亚×凯刻斯cp向⚠️\n\n⚠️鲨粉cp向，有雷自避⚠️\nThere are violets i",
+      "summary": "忘却前夜 【戈利亚生贺17h/1:00】Honeymoon\n⚠️戈利亚×凯刻斯cp向⚠️\n\n⚠️鲨粉cp向，有雷自避⚠️\nThere are violets in your eyes\n你的眼里盛开紫色花朵\nThere are guns that blaze around you\n你的周身散发荣耀战火\nThere are roses in between my thighs and fire that surrounds you\n我 ...全文",
+      "url": "https://m.weibo.cn/status/5300453443110751",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-21T02:06:24.375882+00:00",
       "lang": "zh",
       "title": "忘却前夜 【戈利亚生贺17h/23:00】Cherry\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\nDarlin', darlin', darli",
       "summary": "忘却前夜 【戈利亚生贺17h/23:00】Cherry\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\nDarlin', darlin', darlin'\n亲爱的 亲爱的 亲爱的\nI fall to pieces when I'm with you, I fall to pieces\n每当与你相伴 我的灵魂便支离破碎 我的心片片凋零\nMy cherries and wine, rosemary and ...全文",
       "url": "https://m.weibo.cn/status/5300785495677635",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-21T02:07:15.531645+00:00",
+      "lang": "",
+      "title": "12758【投稿】忘却前夜。我主任",
+      "summary": "12758【投稿】忘却前夜。我主任",
+      "url": "",
       "author": "",
       "engagement": 0
     },
@@ -1494,16 +1289,6 @@
     },
     {
       "source": "appstore",
-      "time": "2026-04-26T19:42:48-07:00",
-      "lang": "pt",
-      "title": "Linguagem",
-      "summary": "Queremos uma tradução  em português br 🙏🏻 pls",
-      "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews",
-      "author": "happophis",
-      "engagement": 4
-    },
-    {
-      "source": "appstore",
       "time": "2026-05-14T20:26:42-07:00",
       "lang": "en",
       "title": "Game always stuck halfway",
@@ -1520,16 +1305,6 @@
       "summary": "My new hyperfixation! I'm still at the prologue though. The art style is so freakin awesome! The story is so engaging (I love Doll and Olgier the most by the way). The voice of the characters are so good! I love Doll's the most. Though she sounds kinda condescending, but still super calming and kinda...rawr? Anyways, I haven't gotten through the prologue but I'm already liking it. Gonna give another review later. Though, would've been better if we could customize our character :3.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=en",
       "author": "Jin Kisaragi",
-      "engagement": 2
-    },
-    {
-      "source": "google_play",
-      "time": "2026-04-21T00:19:17",
-      "lang": "th",
-      "title": "[Google Play 好评] ★4 เกมดีค่ะ แต่ ซับภาษาไทย มันใช้คำนำหน้าสล",
-      "summary": "เกมดีค่ะ แต่ ซับภาษาไทย มันใช้คำนำหน้าสลับไปสลับ ไม่รู้เลยว่าตัวละครเพศอะไรเลยค่ะ",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=th",
-      "author": "Pin ง้อยน้อ",
       "engagement": 2
     },
     {
@@ -1766,6 +1541,16 @@
     },
     {
       "source": "pixiv",
+      "time": "2026-05-21T02:07:35.563722+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "pixiv",
       "time": "2026-05-16T22:58:20+09:00",
       "lang": "",
       "title": "忘卻前夜",
@@ -1950,7 +1735,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-05-20T23:06:24.851459+00:00",
+      "time": "2026-05-21T02:07:47.333082+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
@@ -1964,7 +1749,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜*沙耶之歌 2.5 周年联动献礼",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3cDlGhtvakljtltaJSKLcM1IddT3XPRDVqXa8Fplpd9QeZdw06SLknBRXGJV3lFVDTmwcBZ6LM2HTG1XwzWShWJHw1CONSDkH2Qd2lRFaGQ1m2I2QF7tmwx0NqjRhb8RrqbU_VvShV3Vwm6XKjS_2vmhJqARuW7l_hnhR-Yrrj3eph8-x6WrDmeSBCrdinjCZEj7-WY99kRX4niMDvGz6c89kyxDwoXvg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=C854A790FABCB3DB5B5A0E1B840A99B35CE057436A0E3E71",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3cDlGhtvaklHCURJRkWdd41IddT3XPRDVqXa8Fplpd9QeZdw06SLknBRXGJV3lFVDTmwcBZ6LM2HTG1XwzWShWJHw1CONSDkFLv5oJqfXGxT7jJvtlMbc8xPw9dl5xjMLHvvhvlyRC4MnhEMYOa1lC7RghfUcaKxaix7Rs2BpOJNm3U8mk7aJHS_d2UytiF_zPa_4BX672ksp-DDY-2fG2rCDCayYmfpA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=C942D7B77918C4B9ADA8FCE4CD509D2DAE20E77C6A0E68F4",
       "author": "",
       "engagement": 0
     },
@@ -1974,7 +1759,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜*沙耶之歌 2.5 周年联动献礼",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3cDlGhtvaklionLY-M5qiM1IddT3XPRDVqXa8Fplpd9QeZdw06SLknBRXGJV3lFVDTmwcBZ6LM2HTG1XwzWShWJHw1CONSDkH2Qd2lRFaGQ1m2I2QF7tmwx0NqjRhb8Rt7bANT5Y3vnbAA1RE3TNelMvJ7Bqj05Z7Ga6JsqgtGPU1yteBGlB2nIcjC7D5mrT7QgUlrUS2i7IUTod_VLr3ZflztgI7RZ1g..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=C854AF69216097F87F79D238A7EC26D88054C2EB6A0E3E73",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS3cDlGhtvaklqOxBYM-vfBo1IddT3XPRDVqXa8Fplpd9QeZdw06SLknBRXGJV3lFVDTmwcBZ6LM2HTG1XwzWShWJHw1CONSDkFLv5oJqfXGxT7jJvtlMbc8xPw9dl5xjMFqgv-l7LymDyN1WSF0lmkwJUtgjoul7rvw58Xj54ytwDRluHS06X1UvZgYFFyERLvRv3JGtBzzIyo2_tvoC5eSfxjh3za6jWA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=C942F2E11776AAD5C1C6928AA1899B59C11D18166A0E68F9",
       "author": "",
       "engagement": 0
     }

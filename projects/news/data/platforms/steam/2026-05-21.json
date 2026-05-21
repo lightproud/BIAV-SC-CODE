@@ -1,8 +1,8 @@
 {
   "date": "2026-05-21",
-  "archived_at": "2026-05-20T23:07:41.157760+00:00",
+  "archived_at": "2026-05-21T02:09:09.050053+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -198,6 +198,36 @@
       "review": "за саю лайк, перевод корявый(какая нах дора...)",
       "timestamp_created": 1779311607,
       "playtime_forever": 47
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-21T01:05:37+00:00",
+      "lang": "schinese",
+      "title": "[正面] 画风剧情很强，唯独策划缺根筋",
+      "summary": "画风剧情很强，唯独策划缺根筋",
+      "url": "https://steamcommunity.com/profiles/76561199829410287/recommended/3052450",
+      "author": "76561199829410287",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "画风剧情很强，唯独策划缺根筋",
+      "timestamp_created": 1779325537,
+      "playtime_forever": 3969
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-20T22:06:23+00:00",
+      "lang": "english",
+      "title": "[正面] goatedmens",
+      "summary": "goatedmens",
+      "url": "https://steamcommunity.com/profiles/76561198055671459/recommended/3052450",
+      "author": "76561198055671459",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "goatedmens",
+      "timestamp_created": 1779314783,
+      "playtime_forever": 1888
     }
   ]
 }

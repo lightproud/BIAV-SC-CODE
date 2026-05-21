@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-20T23:07:39.547015+00:00",
+  "collected_at": "2026-05-21T02:09:07.265557+00:00",
   "source": "steam",
   "item_count": 10,
   "items": [
@@ -50,6 +50,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-05-21T01:05:37+00:00",
+      "lang": "schinese",
+      "title": "[正面] 画风剧情很强，唯独策划缺根筋",
+      "summary": "画风剧情很强，唯独策划缺根筋",
+      "url": "https://steamcommunity.com/profiles/76561199829410287/recommended/3052450",
+      "author": "76561199829410287",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "画风剧情很强，唯独策划缺根筋",
+      "timestamp_created": 1779325537,
+      "playtime_forever": 3969
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-20T22:06:23+00:00",
+      "lang": "english",
+      "title": "[正面] goatedmens",
+      "summary": "goatedmens",
+      "url": "https://steamcommunity.com/profiles/76561198055671459/recommended/3052450",
+      "author": "76561198055671459",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "goatedmens",
+      "timestamp_created": 1779314783,
+      "playtime_forever": 1888
+    },
+    {
+      "source": "steam",
       "time": "2026-05-20T21:48:36+00:00",
       "lang": "english",
       "title": "[正面] Might be the best gacha game of all time",
@@ -61,7 +91,7 @@
       "voted_up": true,
       "review": "Might be the best gacha game of all time",
       "timestamp_created": 1779313716,
-      "playtime_forever": 1819
+      "playtime_forever": 1999
     },
     {
       "source": "steam",
@@ -91,7 +121,7 @@
       "voted_up": true,
       "review": "美味",
       "timestamp_created": 1779279396,
-      "playtime_forever": 286
+      "playtime_forever": 346
     },
     {
       "source": "steam",
@@ -122,36 +152,6 @@
       "review": "muy bueno",
       "timestamp_created": 1779244831,
       "playtime_forever": 1583
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-20T01:31:11+00:00",
-      "lang": "schinese",
-      "title": "[负面] 养成极其困难，打活动限制太大",
-      "summary": "养成极其困难，打活动限制太大",
-      "url": "https://steamcommunity.com/profiles/76561198411975428/recommended/3052450",
-      "author": "76561198411975428",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "养成极其困难，打活动限制太大",
-      "timestamp_created": 1779240671,
-      "playtime_forever": 4344
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-19T23:17:20+00:00",
-      "lang": "english",
-      "title": "[正面] I've got a lot more time on the mobile version.\n\nT...",
-      "summary": "I've got a lot more time on the mobile version.\n\nTLDR This game is incredible. If you are a fan of any combination of the Cthulhu Mythos, Slay the Spire, and Gacha games, you will probably like this game.",
-      "url": "https://steamcommunity.com/profiles/76561197961601642/recommended/3052450",
-      "author": "76561197961601642",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I've got a lot more time on the mobile version.\n\nTLDR This game is incredible. If you are a fan of any combination of the Cthulhu Mythos, Slay the Spire, and Gacha games, you will probably like this game.",
-      "timestamp_created": 1779232640,
-      "playtime_forever": 26
     }
   ]
 }
