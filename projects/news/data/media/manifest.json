@@ -6509,6 +6509,34 @@
       "title": "How to get Saya for FREE in Morimens",
       "time": "2026-05-21T01:33:10.583293+00:00",
       "downloaded_at": "2026-05-21T02:09:07.858298+00:00"
+    },
+    "http://i1.hdslb.com/bfs/archive/dedabdd9e000b80ec9039c5ab7ad76cc817e1b99.jpg": {
+      "filename": "bilibili_eb8ccbb94cc8096e.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】阵容教学第八期：羊皮(配合任意力量C)",
+      "time": "2026-05-21T03:18:59+00:00",
+      "downloaded_at": "2026-05-21T10:33:10.256381+00:00"
+    },
+    "http://i0.hdslb.com/bfs/archive/f214b88ae03bafcb07c6bcaac3429c1daa924a5a.jpg": {
+      "filename": "bilibili_b3bd4bab0e9b9b48.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】阵容教学第九期：血肉鸟弟(低配不建议抄)",
+      "time": "2026-05-21T03:24:51+00:00",
+      "downloaded_at": "2026-05-21T10:33:11.646318+00:00"
+    },
+    "http://i1.hdslb.com/bfs/archive/930da664bfc20f0fa6dc7ac265979ed307cb7fa9.jpg": {
+      "filename": "bilibili_b7f99ced3260de72.jpg",
+      "source": "bilibili",
+      "title": "【忘却前夜】阵容教学第十期：混沌24(0启可玩的高性价比阵容)",
+      "time": "2026-05-21T09:58:09+00:00",
+      "downloaded_at": "2026-05-21T10:33:12.540765+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/21/18/31/57/145038642_p0_square1200.jpg": {
+      "filename": "pixiv_0722890e5d4b0b1f.jpg",
+      "source": "pixiv",
+      "title": "ゴリアテ誕生日おめでとう！！！",
+      "time": "2026-05-21T18:31:57+09:00",
+      "downloaded_at": "2026-05-21T10:33:16.297330+00:00"
     }
   },
   "failed": {
@@ -9721,6 +9749,41 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-21T02:09:08.978321+00:00"
+    },
+    "https://preview.redd.it/83rj2a0mtf2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6478b0f1f72ed3f41351852a413ac67e6402693d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T10:33:13.098185+00:00"
+    },
+    "https://external-preview.redd.it/UfRQdFX3ExqdgNkl4Zk1j26aj3e1RRXj4cYzaNkt65s.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=ba7907a43dbdc9867cdb58166d30096f1cb0fa4c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T10:33:13.514351+00:00"
+    },
+    "https://preview.redd.it/bnswjefeff2h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=fe29136b7a72be940b9d87125eaec36395d12dcd": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T10:33:13.890650+00:00"
+    },
+    "https://preview.redd.it/o2jqh2ojme2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=24ab03a11939e6b3756194de27444cb105d5f39b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T10:33:14.264040+00:00"
+    },
+    "https://preview.redd.it/zlon9z5xef2h1.png?width=140&amp;height=76&amp;auto=webp&amp;s=e3f8958905019b5949486b0655452697a7d56f29": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T10:33:14.638204+00:00"
+    },
+    "https://preview.redd.it/lqg3fylwje2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=62f6ca47835af710ac47c9fd8ff50f9950000347": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T10:33:15.013140+00:00"
+    },
+    "https://preview.redd.it/6gjhz5ffxe2h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=16ae88035c7a98d65146cba7516c2d6d398b0ea4": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-21T10:33:15.387796+00:00"
     }
   },
   "archived": []
