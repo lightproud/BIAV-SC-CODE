@@ -1,11 +1,11 @@
 {
   "date": "2026-05-09",
-  "messages": 12209,
+  "messages": 12493,
   "unique_authors": 247,
-  "reactions_total": 987,
-  "attachments": 603,
+  "reactions_total": 1003,
+  "attachments": 611,
   "channel_activity": {
-    "🔸morimens-game-chat": 7800,
+    "🔸morimens-game-chat": 8084,
     "🔸綜合討論": 947,
     "🔸deutscher-chatraum": 7,
     "🔸русский-канал": 370,
@@ -61,6 +61,8 @@
     "Speedrun Team for Early Game": 2
   },
   "hourly_activity": {
+    "22": 222,
+    "23": 288,
     "7": 518,
     "8": 597,
     "9": 428,
@@ -76,19 +78,17 @@
     "19": 525,
     "20": 624,
     "21": 453,
-    "22": 161,
     "0": 467,
     "1": 629,
     "2": 602,
     "3": 506,
     "4": 669,
     "5": 511,
-    "6": 570,
-    "23": 65
+    "6": 570
   },
   "message_types": {
-    "0": 3286,
-    "19": 1714
+    "0": 208,
+    "19": 76
   },
   "top_reacted_messages": [
     {
@@ -154,6 +154,14 @@
       "author": "heikwok",
       "reactions": 7,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1502801223848562690",
+      "channel_id": "1170692781216378960",
+      "content": "Nah, be worried once those stages end",
+      "author": "cornonthemacabre_",
+      "reactions": 6,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1502574932813549719",
@@ -240,14 +248,6 @@
       "channel_id": "1131839817982947429",
       "content": "我排個相位能連續當機",
       "author": "hon_ey0",
-      "reactions": 5,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1502674529250709594",
-      "channel_id": "1131839817982947429",
-      "content": "菜逼夢遊沒有傳奇沒說服力",
-      "author": "water_heart",
       "reactions": 5,
       "channel": "🔸綜合討論"
     }

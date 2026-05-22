@@ -1,10 +1,11 @@
 {
   "date": "2026-05-10",
-  "messages": 7891,
+  "messages": 12607,
   "unique_authors": 249,
-  "reactions_total": 750,
-  "attachments": 396,
+  "reactions_total": 1142,
+  "attachments": 563,
   "channel_activity": {
+    "🔸morimens-game-chat": 4716,
     "🔸綜合討論": 1016,
     "🔸русский-канал": 1952,
     "🔸phòng-chat-tiếng-việt": 645,
@@ -46,35 +47,34 @@
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 24
   },
   "hourly_activity": {
+    "0": 605,
+    "1": 467,
+    "2": 709,
+    "3": 171,
+    "4": 443,
+    "5": 469,
+    "6": 351,
+    "7": 451,
+    "8": 524,
+    "9": 359,
+    "10": 900,
+    "11": 489,
+    "12": 720,
+    "13": 571,
+    "14": 1117,
+    "15": 634,
+    "16": 811,
+    "17": 445,
+    "18": 643,
     "19": 260,
     "20": 505,
     "21": 192,
     "22": 253,
-    "18": 244,
-    "23": 518,
-    "1": 218,
-    "2": 570,
-    "3": 103,
-    "4": 180,
-    "5": 336,
-    "6": 319,
-    "7": 339,
-    "8": 186,
-    "9": 212,
-    "10": 658,
-    "11": 180,
-    "12": 124,
-    "13": 313,
-    "14": 983,
-    "15": 371,
-    "16": 415,
-    "17": 353,
-    "0": 59
+    "23": 518
   },
   "message_types": {
-    "19": 320,
-    "0": 1436,
-    "23": 1
+    "0": 3249,
+    "19": 1467
   },
   "top_reacted_messages": [
     {
@@ -84,6 +84,14 @@
       "author": "cs001092",
       "reactions": 19,
       "channel": "相位吐槽完了，现在吐槽深潜当下的分数计算机制有够烂的"
+    },
+    {
+      "id": "1502862779521175572",
+      "channel_id": "1170692781216378960",
+      "content": "Holy fuck",
+      "author": "heightsflingplane",
+      "reactions": 12,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1502985175838097560",
@@ -100,6 +108,14 @@
       "author": "water_heart",
       "reactions": 9,
       "channel": "🔸綜合討論"
+    },
+    {
+      "id": "1503062362469437681",
+      "channel_id": "1170692781216378960",
+      "content": "Electric boom \n\nOkay that's enough for today.",
+      "author": "rocketmacaron_",
+      "reactions": 7,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1502835657880506518",
@@ -124,6 +140,30 @@
       "author": "hon_ey0",
       "reactions": 6,
       "channel": "🔸晒卡分享"
+    },
+    {
+      "id": "1502896669153427536",
+      "channel_id": "1170692781216378960",
+      "content": "I miss when main story characters provided good help",
+      "author": "aurora3981",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1502920837550968944",
+      "channel_id": "1170692781216378960",
+      "content": "Yay",
+      "author": "rocketmacaron_",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1502961644169596989",
+      "channel_id": "1170692781216378960",
+      "content": "\"ace, translate this kit we reworked entirely 5 minutes ago\"\n\"whats the deadline",
+      "author": "nikolazuli",
+      "reactions": 5,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1502949691439186131",
@@ -174,68 +214,28 @@
       "channel": "🔸canal-español"
     },
     {
-      "id": "1503127782820024504",
-      "channel_id": "1400749543288475770",
-      "content": "thanks for all the help i managed<a:VoyaNod:1388081248735330306>",
-      "author": "sisuluasex",
+      "id": "1502885022619926649",
+      "channel_id": "1170692781216378960",
+      "content": "did frost sound like a femboy when he was playing sts2 with u?",
+      "author": "arisuu0604",
       "reactions": 4,
-      "channel": "🔸team-building"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1502853332811780348",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
+      "id": "1502981968143319091",
+      "channel_id": "1170692781216378960",
+      "content": "me my bad",
+      "author": "princess.goth",
       "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     },
     {
-      "id": "1502926755399336026",
-      "channel_id": "1131839817982947429",
-      "content": "我好多原液",
-      "author": "rembrandtblanc",
+      "id": "1503007236161667083",
+      "channel_id": "1170692781216378960",
+      "content": "ngl if Saya is the anni banner\nmy disappointment will be mainly about how they d",
+      "author": "_venush",
       "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1502982118630883359",
-      "channel_id": "1131839817982947429",
-      "content": "你游在令人失望这件事上从未令人失望过",
-      "author": "kemomimi_",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1502983552835522740",
-      "channel_id": "1131839817982947429",
-      "content": "今天是母亲节，登了孩子微信🌹看看娃儿平时跟谁聊天👍👍👍本以为能有几个女孩子，结果没想到看到的是你们这帮玩忘却前夜的，我就放心了，几把孩子这辈子算是完了👍👍👍",
-      "author": "mezen4181",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1503008768420614346",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "water_heart",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1503031222685663384",
-      "channel_id": "1131839817982947429",
-      "content": "",
-      "author": "iTranslator",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1503036694377533592",
-      "channel_id": "1131839817982947429",
-      "content": "我现在打算30天400",
-      "author": "angbak",
-      "reactions": 4,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }
