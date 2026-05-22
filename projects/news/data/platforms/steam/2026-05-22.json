@@ -1,8 +1,8 @@
 {
   "date": "2026-05-22",
-  "archived_at": "2026-05-22T10:17:58.680575+00:00",
+  "archived_at": "2026-05-22T13:25:54.245119+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 16,
   "items": [
     {
       "source": "steam",
@@ -228,6 +228,21 @@
       "review": "Good game, one of the better gachas out there.",
       "timestamp_created": 1779415693,
       "playtime_forever": 3009
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-22T11:01:02+00:00",
+      "lang": "schinese",
+      "title": "[正面] 给沙耶之歌爆米来了，不接受重氪的不要碰",
+      "summary": "给沙耶之歌爆米来了，不接受重氪的不要碰",
+      "url": "https://steamcommunity.com/profiles/76561199210411966/recommended/3052450",
+      "author": "76561199210411966",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "给沙耶之歌爆米来了，不接受重氪的不要碰",
+      "timestamp_created": 1779447662,
+      "playtime_forever": 10611
     }
   ]
 }
