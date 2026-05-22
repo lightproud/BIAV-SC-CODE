@@ -6649,6 +6649,20 @@
       "title": "【忘却前夜 × 沙耶の唄】公式コラボPV「悠久なる旅の歌」（1時間ループ再生）",
       "time": "2026-05-22T10:15:15.272646+00:00",
       "downloaded_at": "2026-05-22T10:17:58.621725+00:00"
+    },
+    "https://i.ytimg.com/vi/lorE2VDAjD8/hq720.jpg?sqp=-oaymwE2CNAFEJQDSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB_gmAArQFigIMCAAQARg3IDoofzAP&rs=AOn4CLD_7IByqloly6ShcYyMKZ4uIVcPAw": {
+      "filename": "youtube_a1c09e816865e3f6.jpg",
+      "source": "youtube",
+      "title": "Morimens characters be like:",
+      "time": "2026-05-22T18:28:12.110109+00:00",
+      "downloaded_at": "2026-05-22T18:31:07.769301+00:00"
+    },
+    "https://i.ytimg.com/vi/tieCSCC64TI/hq720.jpg?v=6a109a1f&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC_uVfkrTcA2zHS2iHu8xgKCKCubA": {
+      "filename": "youtube_778a364e9cce1551.jpg",
+      "source": "youtube",
+      "title": "Morimens F2P with ONLY characters from Kaleido Recollections... AGAIN",
+      "time": "2026-05-22T18:28:12.110032+00:00",
+      "downloaded_at": "2026-05-22T18:31:09.452782+00:00"
     }
   },
   "failed": {
@@ -10061,6 +10075,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-22T16:17:23.396479+00:00"
+    },
+    "https://preview.redd.it/8pt1g3863q2h1.jpg?width=140&amp;height=110&amp;auto=webp&amp;s=35ba604f3c9b0f9a525a452960c4212836b15a87": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-22T18:31:08.316647+00:00"
+    },
+    "https://preview.redd.it/sruxze8l6q2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=ee57c17f61649ff5f28b5438e13e8810e9c5f69e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-22T18:31:08.686296+00:00"
+    },
+    "https://preview.redd.it/y0vnl1af3p2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=43fc7a7a0b30bb9339472e662559a33fbf366c3f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-22T18:31:09.056457+00:00"
     }
   },
   "archived": []
