@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-22T02:12:20.505682+00:00",
+  "collected_at": "2026-05-22T06:41:48.996768+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 8,
   "items": [
     {
       "source": "steam",
@@ -20,18 +20,18 @@
     },
     {
       "source": "steam",
-      "time": "2026-05-21T05:17:15+00:00",
-      "lang": "schinese",
-      "title": "[负面] 过于墨迹 游戏界面复杂，操作繁琐，卡顿明显",
-      "summary": "过于墨迹 游戏界面复杂，操作繁琐，卡顿明显",
-      "url": "https://steamcommunity.com/profiles/76561198108415466/recommended/3052450",
-      "author": "76561198108415466",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "过于墨迹 游戏界面复杂，操作繁琐，卡顿明显",
-      "timestamp_created": 1779340635,
-      "playtime_forever": 921
+      "time": "2026-05-22T02:08:13+00:00",
+      "lang": "english",
+      "title": "[正面] Good game, one of the better gachas out there.",
+      "summary": "Good game, one of the better gachas out there.",
+      "url": "https://steamcommunity.com/profiles/76561198042373996/recommended/3052450",
+      "author": "76561198042373996",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Good game, one of the better gachas out there.",
+      "timestamp_created": 1779415693,
+      "playtime_forever": 3009
     },
     {
       "source": "steam",
@@ -106,7 +106,7 @@
       "voted_up": true,
       "review": "Очень атмосферная и интеллектуальная игра!",
       "timestamp_created": 1779350050,
-      "playtime_forever": 986
+      "playtime_forever": 1086
     },
     {
       "source": "steam",
@@ -122,21 +122,6 @@
       "review": "Si vous êtes capable de passer outre la barrière de la langue, qui peut demander un peu de gymnastique cérébrale pour comprendre où veulent en venir certains dialogues, il y a à la fois un système de gacha plus sain à apprécier et des graphismes au goût d'un dessert que le monde du jeu vidéo a refusé de me servir pendant un petit moment. L'ambiance Lovecraftienne ne fait qu'ajouter à la beauté sobre du jeu, les personnages sont peu nombreux pour le moment, ce qui est une bonne chose. Aucune saturation d'information, d'interface etc. Le jeu vous donnera perpétuellement les cartes pour avancer et bien que la traduction soit défectueuse sur quelques points ce n'est pas bien rédhibitoire hors de l'histoire, le tout ne vous empêchant pas de comprendre le fonctionnement des decks, builds, mécanique de combat, synergie etc. Alors ne vous laissez pas intimidé, vous n'aurez pas non plus besoin de sécréter énormément de cortisol à vous demandez quand le personnage sur lequel vous avez eu un coup de cœur apparaitra, la plus part seront présent sur une bannière dont il n'y a pas besoin de s'embarrasser de quelques mois d'attente pour le roulement de personnage. Le jeu est généreux, mais si vous venez pour la collab Saya no Uta (où d'autres de ce que j'ai compris de la communauté anglophone), ce type d'évènement privilégie les exclusivités aux plus loyaux, vous devrez donc farm et monter rapidement en scénario pour avoir votre bien aimée limitée.",
       "timestamp_created": 1779346428,
       "playtime_forever": 1291
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-21T03:08:09+00:00",
-      "lang": "english",
-      "title": "[正面] I'm pretty bummed I only found out about this game...",
-      "summary": "I'm pretty bummed I only found out about this game recently",
-      "url": "https://steamcommunity.com/profiles/76561197975286483/recommended/3052450",
-      "author": "76561197975286483",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I'm pretty bummed I only found out about this game recently",
-      "timestamp_created": 1779332889,
-      "playtime_forever": 4253
     }
   ]
 }

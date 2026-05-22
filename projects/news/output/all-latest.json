@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-22T02:12:20.505682+00:00",
+  "collected_at": "2026-05-22T06:41:48.996768+00:00",
   "source": "all",
-  "item_count": 150,
+  "item_count": 144,
   "items": [
     {
       "source": "steam",
@@ -20,18 +20,18 @@
     },
     {
       "source": "steam",
-      "time": "2026-05-21T05:17:15+00:00",
-      "lang": "schinese",
-      "title": "[负面] 过于墨迹 游戏界面复杂，操作繁琐，卡顿明显",
-      "summary": "过于墨迹 游戏界面复杂，操作繁琐，卡顿明显",
-      "url": "https://steamcommunity.com/profiles/76561198108415466/recommended/3052450",
-      "author": "76561198108415466",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "过于墨迹 游戏界面复杂，操作繁琐，卡顿明显",
-      "timestamp_created": 1779340635,
-      "playtime_forever": 921
+      "time": "2026-05-22T02:08:13+00:00",
+      "lang": "english",
+      "title": "[正面] Good game, one of the better gachas out there.",
+      "summary": "Good game, one of the better gachas out there.",
+      "url": "https://steamcommunity.com/profiles/76561198042373996/recommended/3052450",
+      "author": "76561198042373996",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Good game, one of the better gachas out there.",
+      "timestamp_created": 1779415693,
+      "playtime_forever": 3009
     },
     {
       "source": "steam",
@@ -106,7 +106,7 @@
       "voted_up": true,
       "review": "Очень атмосферная и интеллектуальная игра!",
       "timestamp_created": 1779350050,
-      "playtime_forever": 986
+      "playtime_forever": 1086
     },
     {
       "source": "steam",
@@ -122,21 +122,6 @@
       "review": "Si vous êtes capable de passer outre la barrière de la langue, qui peut demander un peu de gymnastique cérébrale pour comprendre où veulent en venir certains dialogues, il y a à la fois un système de gacha plus sain à apprécier et des graphismes au goût d'un dessert que le monde du jeu vidéo a refusé de me servir pendant un petit moment. L'ambiance Lovecraftienne ne fait qu'ajouter à la beauté sobre du jeu, les personnages sont peu nombreux pour le moment, ce qui est une bonne chose. Aucune saturation d'information, d'interface etc. Le jeu vous donnera perpétuellement les cartes pour avancer et bien que la traduction soit défectueuse sur quelques points ce n'est pas bien rédhibitoire hors de l'histoire, le tout ne vous empêchant pas de comprendre le fonctionnement des decks, builds, mécanique de combat, synergie etc. Alors ne vous laissez pas intimidé, vous n'aurez pas non plus besoin de sécréter énormément de cortisol à vous demandez quand le personnage sur lequel vous avez eu un coup de cœur apparaitra, la plus part seront présent sur une bannière dont il n'y a pas besoin de s'embarrasser de quelques mois d'attente pour le roulement de personnage. Le jeu est généreux, mais si vous venez pour la collab Saya no Uta (où d'autres de ce que j'ai compris de la communauté anglophone), ce type d'évènement privilégie les exclusivités aux plus loyaux, vous devrez donc farm et monter rapidement en scénario pour avoir votre bien aimée limitée.",
       "timestamp_created": 1779346428,
       "playtime_forever": 1291
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-21T03:08:09+00:00",
-      "lang": "english",
-      "title": "[正面] I'm pretty bummed I only found out about this game...",
-      "summary": "I'm pretty bummed I only found out about this game recently",
-      "url": "https://steamcommunity.com/profiles/76561197975286483/recommended/3052450",
-      "author": "76561197975286483",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "I'm pretty bummed I only found out about this game recently",
-      "timestamp_created": 1779332889,
-      "playtime_forever": 4253
     },
     {
       "source": "discord",
@@ -443,38 +428,50 @@
     },
     {
       "source": "youtube",
-      "time": "2026-05-21T19:08:49.141126+00:00",
+      "time": "2026-05-21T19:38:57.332256+00:00",
       "lang": "",
       "title": "[Morimens] Flares' 2026 Half Anni Tier List Update with builds + Showcase footage, where to use them",
-      "summary": "[7 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "summary": "[11 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=5xKZEz_ZPbU",
       "author": "Flares117",
-      "engagement": 1205,
+      "engagement": 2001,
       "media_url": "https://i.ytimg.com/vi/5xKZEz_ZPbU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDxiLCviCFyuQl1uT2n9mEkcOa6sQ",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-05-21T18:08:49.141417+00:00",
+      "time": "2026-05-21T18:38:57.332053+00:00",
       "lang": "",
       "title": "Banner guide i guess...",
-      "summary": "[8 hours ago] I can't believe i'm actually making a real guide... it's like i'm an actual content creator... what have i become. Order of awakeners ...",
+      "summary": "[12 hours ago] I can't believe i'm actually making a real guide... it's like i'm an actual content creator... what have i become. Order of awakeners ...",
       "url": "https://www.youtube.com/watch?v=en49pf6-BJw",
       "author": "Trash Keeper",
-      "engagement": 696,
+      "engagement": 1119,
       "media_url": "https://i.ytimg.com/vi/en49pf6-BJw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCIg2hUwpMWFKsQSub0G-gTdta0rQ",
       "content_type": "image"
     },
     {
-      "source": "reddit",
-      "time": "2026-05-21T13:42:35+00:00",
-      "lang": "en",
-      "title": "Possibly the most rarest character in morimens",
-      "summary": "Not only because she’s a collab character from the game mist sequence. But also Mist sequence HAS ALREADY CEASED OPERATION ON MAY 27, 2025 THE GAME MOUCHETTE CAME FROM DOESNT EXIST ANYMORE, THIS IS THE ONLY WAY YOU CAN PLAY MOUCHETTE NOW AND ITS ON ANOTHER DIFFERENT GAME  &#32; submitted by &#32;  /u/plaingirlisdepressed   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjkxzo/possibly_the_most_rarest_character_in_morimens/",
-      "author": "/u/plaingirlisdepressed",
+      "source": "youtube",
+      "time": "2026-05-22T06:38:57.332344+00:00",
+      "lang": "",
+      "title": "[Morimens] Short (Relatively) - Stream, answer questions, light coaching,  working on d-tide vid",
+      "summary": "Long Boring Spreadsheet stream. And making next video.",
+      "url": "https://www.youtube.com/watch?v=kIbNpUhEqbQ",
+      "author": "Flares117",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/m5nb75kevh2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a6b5cc5697735a1f121be22b96d279e19a09c78d",
+      "media_url": "https://i.ytimg.com/vi/kIbNpUhEqbQ/hq720.jpg?v=6a0fc818&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB-D85loTk-ZRKqcQhdt_tE_dervg",
+      "content_type": "image"
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-22T00:57:53+00:00",
+      "lang": "en",
+      "title": "Just discovered this feature huehue",
+      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tk3lzw/just_discovered_this_feature_huehue/",
+      "author": "/u/HessianQrow",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/h1az9crv7l2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=42a5273639e9f716d06f6a2620217b576129a9d3",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -497,6 +494,36 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-21T13:42:35+00:00",
+      "lang": "en",
+      "title": "Possibly the most rarest character in morimens",
+      "summary": "Not only because she’s a collab character from the game mist sequence. But also Mist sequence HAS ALREADY CEASED OPERATION ON MAY 27, 2025 THE GAME MOUCHETTE CAME FROM DOESNT EXIST ANYMORE, THIS IS THE ONLY WAY YOU CAN PLAY MOUCHETTE NOW AND ITS ON ANOTHER DIFFERENT GAME  &#32; submitted by &#32;  /u/plaingirlisdepressed   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjkxzo/possibly_the_most_rarest_character_in_morimens/",
+      "author": "/u/plaingirlisdepressed",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/m5nb75kevh2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a6b5cc5697735a1f121be22b96d279e19a09c78d",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-22T01:44:18+00:00",
+      "lang": "en",
+      "title": "Morimens X Limbus Doll Faust",
+      "summary": "https://x.com/Akaiberry_0/status/2057636449457988039?s=20 Lmk if it looks better with/without the flask shading  &#32; submitted by &#32;  /u/Dry_Mycologist_6514   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tk4nud/morimens_x_limbus_doll_faust/",
+      "author": "/u/Dry_Mycologist_6514",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/z81f95o2gl2h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=bb7dd5979d2bbb87e414769f997ef4d10cac05f4",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-21T23:28:28+00:00",
       "lang": "en",
       "title": "I can finally go back to wheel jail.",
@@ -512,21 +539,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-22T00:57:53+00:00",
-      "lang": "en",
-      "title": "Just discovered this feature huehue",
-      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tk3lzw/just_discovered_this_feature_huehue/",
-      "author": "/u/HessianQrow",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/h1az9crv7l2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=42a5273639e9f716d06f6a2620217b576129a9d3",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-21T22:29:09+00:00",
       "lang": "en",
       "title": "In every sense of the word",
@@ -535,6 +547,21 @@
       "author": "/u/WinterSoldier3713",
       "engagement": 0,
       "media_url": "https://preview.redd.it/pb8xykxzgk2h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=63071a2fb96c55539f3d6c475286aa0044262f66",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-22T02:27:37+00:00",
+      "lang": "en",
+      "title": "Cat Guide - Day 5",
+      "summary": "Hi, Angbak from discord here, Cat Guide - Day 5 time. Today&#39;s borrow unit is Arachne, and ONLY Arachne. Refer to the list of Whale Arachne below. List of whale Arachnes 100560240 (Hi Badmoon) 100069504 101009398 100794608 (Hi Risend) 100981868 100274628 100821516 100545898 100377475 100429960 _________________________________________________________________________________________________ Do note that the guide below is NOT the most optimal play, but it&#39;s the most straightforward one. Relic : -150 str every turn, when you use shields, gain damage amp Turns 1 to 5, explanations in spoilers  If you have eternal loom in hand, use Eternal Loom as your first card. Use Guiding Strings whenever it appears in hand (To store inside ultra space) If you have enough keyflare to rouse, rouse Arachne (to give Arachne sufficient aliemus to exalt on ultra turn) Do NOT use any of Arachne&#39;s Fate-Binding before ultra turn (to save for Arachne burst during ultra turn) If you have any embryo, give it to Jenkins (we will be using Jenkin&#39;s exalt to generate cards for Arachne pursuits) Do NOT exalt Arachne until the step below  ULTRA TURN - TURN 5 You should have minimally 2-3 eternal loom in ultra space by now. STEP ONE EXALT ARACHNE DURING ULTRA TURN - NOT ON TURN 5. DURING ULTRA TURN  Exalt Arachne during ULTRA turn To start pursuit chain + shield gives damage amp Use all 1 cost Fate-Binding Exalt Jenkins to get 3/4 0 cost &quot;Get &#39;em! Brown&quot;  MOST IMPORTANTLY IF THE BOSS IS ALONE - use your &quot;Get&#39;em! Brown&quot; To trigger pursuit on boss IF THE BOSS SUMMONS MOBS - use Eternal Loom, followed by Guiding Strings To kill all the small cats _________________________________________________________________________________________________ https://www.youtube.com/watch?v=aLq3IA6lcnc  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tk5na1/cat_guide_day_5/",
+      "author": "/u/Angbak94",
+      "engagement": 0,
+      "media_url": "https://external-preview.redd.it/f05oDAWrVGdXjCyiIYd8ocZGE0JV3_NhtF3vjAEVD9I.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=908bd095c9d479e94399d36d8103eb6e2eafd2cc",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -570,15 +597,43 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-22T01:44:18+00:00",
+      "time": "2026-05-22T01:57:58+00:00",
       "lang": "en",
-      "title": "Morimens X Limbus Doll Faust",
-      "summary": "https://x.com/Akaiberry_0/status/2057636449457988039?s=20 Lmk if it looks better with/without the flask shading  &#32; submitted by &#32;  /u/Dry_Mycologist_6514   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tk4nud/morimens_x_limbus_doll_faust/",
-      "author": "/u/Dry_Mycologist_6514",
+      "title": "Hi I'm new to the game",
+      "summary": "What banner should I pull on it Sorry for my poor english   &#32; submitted by &#32;  /u/momal2003   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tk4yue/hi_im_new_to_the_game/",
+      "author": "/u/momal2003",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/z81f95o2gl2h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=bb7dd5979d2bbb87e414769f997ef4d10cac05f4",
+      "media_url": "https://preview.redd.it/nq4omjklil2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=1e8015b5296de36bb7e7d45f188bdeba0ec820e9",
       "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-22T03:32:14+00:00",
+      "lang": "en",
+      "title": "Am i supposed to be able to get faded legacy characters from the standard?",
+      "summary": "this is my second time getting miryam on this banner and i’ve only gotten standard characters from here besides her. i’m new so idk if this is normal  &#32; submitted by &#32;  /u/Jammyhammy0526   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tk72jg/am_i_supposed_to_be_able_to_get_faded_legacy/",
+      "author": "/u/Jammyhammy0526",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/bua2jo9fzl2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=70cd44103b343c6d729c8751e22783b9885d537e",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-22T05:31:10+00:00",
+      "lang": "en",
+      "title": "question about Gmurphy",
+      "summary": "So is Gmurphy supposed to be completely unusable in part 5+ arc 2 if she isn&#39;t higher than level 70? Her astral reign ability increases her shield given by ults by her defence, but I&#39;m at level 70 and it only goes up to like 450 defence when you&#39;re getting hit for 1.5k. Am I supposed to be face tanking taking this much damage, or is gmurphy meant to be leveled up stupidly higher than level 70? I have an E2 Arachne, so if Gmurphy is meant to be whaled out to be able to clear content, then let me know so I&#39;m not wasting materials building the lemurian team. I tried asking this on discord and kept getting vague answers, so I&#39;ll try to ask here.  &#32; submitted by &#32;  /u/Explosivepenny   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tk9hd3/question_about_gmurphy/",
+      "author": "/u/Explosivepenny",
+      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -613,28 +668,13 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T09:00:54+00:00",
+      "time": "2026-05-22T02:06:55+00:00",
       "lang": "en",
-      "title": "Thinking about starting. How does this game compare to Reverse:1999?",
-      "summary": "FIRST OF ALL: I don&#39;t mean better or worse kind of compare. I mean the differences and similarities. R1999 is my favorite gacha for the sole fact that I love the art, voice acting and most importantly, the extremely good story (Shit, I am glazing it again) I saw morimens long ago and it seemed to carry a similar yet distinct vibe to R1999 (in a good way) so I got curious about it but got bombarded with people saying it&#39;s a rotting corpse and I shouldn&#39;t start a dying game which apperently was false or got turned around or something. Oh also, I am not a &quot;meta slave&quot; but I do want to be ABLE to clear high-end stuff and pull for chars so I would appreciate information about the currency for f2p. EDIT: Thanks for everyone&#39;s detailed responses. I expected people to just give 1-2 sentence answers at most and thought most people wouldn&#39;t bother but this community seems to REALLY like this game. It felt less like I was getting info about a game and more like I was getting inducted into a cult and was learning about it&#39;s rules. And I am into that shit so I am starting the game lol. (Seriously though, even if the game didn&#39;t seem good, the sheer passion that made so many people give so many long and detailed responses by itself makes me wanna try the game)  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjeqh2/thinking_about_starting_how_does_this_game/",
-      "author": "/u/Embarrassed-Sign3106",
+      "title": "Confused on the pulls",
+      "summary": "Hi, new player here! I want to pull for Pollux an get him E3 when his banner comes out in around two weeks but I’m a bit confused on the pull rules on these rotation banners. So at pull 90 is the hard pity on Pollux or is it between pullux and his wheel?  &#32; submitted by &#32;  /u/Material-Fix-2633   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tk56cm/confused_on_the_pulls/",
+      "author": "/u/Material-Fix-2633",
       "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-22T01:57:58+00:00",
-      "lang": "en",
-      "title": "Hi I'm new to the game",
-      "summary": "What banner should I pull on it Sorry for my poor english   &#32; submitted by &#32;  /u/momal2003   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tk4yue/hi_im_new_to_the_game/",
-      "author": "/u/momal2003",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/nq4omjklil2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=1e8015b5296de36bb7e7d45f188bdeba0ec820e9",
-      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -647,6 +687,19 @@
       "summary": "&#32; submitted by &#32;  /u/AnswerFlat6681   [link] &#32; [comments]",
       "url": "https://old.reddit.com/r/Morimens/comments/1tjw0n2/should_i_get_crimson_pulse_for_doraesain_or_april/",
       "author": "/u/AnswerFlat6681",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-21T09:00:54+00:00",
+      "lang": "en",
+      "title": "Thinking about starting. How does this game compare to Reverse:1999?",
+      "summary": "FIRST OF ALL: I don&#39;t mean better or worse kind of compare. I mean the differences and similarities. R1999 is my favorite gacha for the sole fact that I love the art, voice acting and most importantly, the extremely good story (Shit, I am glazing it again) I saw morimens long ago and it seemed to carry a similar yet distinct vibe to R1999 (in a good way) so I got curious about it but got bombarded with people saying it&#39;s a rotting corpse and I shouldn&#39;t start a dying game which apperently was false or got turned around or something. Oh also, I am not a &quot;meta slave&quot; but I do want to be ABLE to clear high-end stuff and pull for chars so I would appreciate information about the currency for f2p. EDIT: Thanks for everyone&#39;s detailed responses. I expected people to just give 1-2 sentence answers at most and thought most people wouldn&#39;t bother but this community seems to REALLY like this game. It felt less like I was getting info about a game and more like I was getting inducted into a cult and was learning about it&#39;s rules. And I am into that shit so I am starting the game lol. (Seriously though, even if the game didn&#39;t seem good, the sheer passion that made so many people give so many long and detailed responses by itself makes me wanna try the game)  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjeqh2/thinking_about_starting_how_does_this_game/",
+      "author": "/u/Embarrassed-Sign3106",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -669,19 +722,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T13:58:19+00:00",
-      "lang": "en",
-      "title": "24 - Crimson Kaede Skin showcase video",
-      "summary": "Where can I see what the skin looked like aside from the portrait? I can&#39;t find a video of it in Youtube.  &#32; submitted by &#32;  /u/knoxxhat   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjldap/24_crimson_kaede_skin_showcase_video/",
-      "author": "/u/knoxxhat",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-21T21:35:55+00:00",
       "lang": "en",
       "title": "Where to get more of these?",
@@ -697,12 +737,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-22T02:06:55+00:00",
+      "time": "2026-05-21T13:58:19+00:00",
       "lang": "en",
-      "title": "Confused on the pulls",
-      "summary": "Hi, new player here! I want to pull for Pollux an get him E3 when his banner comes out in around two weeks but I’m a bit confused on the pull rules on these rotation banners. So at pull 90 is the hard pity on Pollux or is it between pullux and his wheel?  &#32; submitted by &#32;  /u/Material-Fix-2633   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tk56cm/confused_on_the_pulls/",
-      "author": "/u/Material-Fix-2633",
+      "title": "24 - Crimson Kaede Skin showcase video",
+      "summary": "Where can I see what the skin looked like aside from the portrait? I can&#39;t find a video of it in Youtube.  &#32; submitted by &#32;  /u/knoxxhat   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tjldap/24_crimson_kaede_skin_showcase_video/",
+      "author": "/u/knoxxhat",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -753,57 +793,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T19:00:54+00:00",
+      "time": "2026-05-22T00:57:53+00:00",
       "lang": "en",
-      "title": "Help with pulling and team building",
-      "summary": "Hello everyone, I’m new and completely lost with the amount of banners coming over the next days. I’d appreciate if someone could give some tips on what to prioritize to build a decent team. This is what I currently have, only thing I’ve understood is that Thais goes really well with GHelot. Would appreciate units that are good to go at E0 since I’m starting. I’m also thinking on pulling on the paid banner, but no idea what realm (was thinking Caro due to Thais) Thanks!  &#32; submitted by &#32;  /u/GonzaPicks   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjucs0/help_with_pulling_and_team_building/",
-      "author": "/u/GonzaPicks",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/8g6n4jz6gj2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=4a77b6a8726621a5663b23ca409f1bde218d7a4b",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-22T00:25:46+00:00",
-      "lang": "en",
-      "title": "Do I get the character?",
-      "summary": "If I purchase one of these without having the character already, do I get them?  &#32; submitted by &#32;  /u/Intrepid-Sound-4811   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tk2waq/do_i_get_the_character/",
-      "author": "/u/Intrepid-Sound-4811",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/loqjo3m52l2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=68f7bd8f738fbdbf41ddf8c7c348c6ddf45cc384",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T06:49:00+00:00",
-      "lang": "en",
-      "title": "Is lily worth it for Gdoll?",
-      "summary": "asking both in general as well as regarding 1-day banner Don’t have much poison awakeners as far as I know, Also don’t have nymphaea yet (+1 pandia &amp; e3 nautila tho ofc)  &#32; submitted by &#32;  /u/jadoesvg   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tjccyn/is_lily_worth_it_for_gdoll/",
-      "author": "/u/jadoesvg",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/83rj2a0mtf2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=6478b0f1f72ed3f41351852a413ac67e6402693d",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T13:42:35+00:00",
-      "lang": "en",
-      "title": "Possibly the most rarest character in morimens",
-      "summary": "Not only because she’s a collab character from the game mist sequence. But also Mist sequence HAS ALREADY CEASED OPERATION ON MAY 27, 2025 THE GAME MOUCHETTE CAME FROM DOESNT EXIST ANYMORE, THIS IS THE ONLY WAY YOU CAN PLAY MOUCHETTE NOW AND ITS ON ANOTHER DIFFERENT GAME  &#32; submitted by &#32;  /u/plaingirlisdepressed   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjkxzo/possibly_the_most_rarest_character_in_morimens/",
-      "author": "u//u/plaingirlisdepressed",
+      "title": "Just discovered this feature huehue",
+      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tk3lzw/just_discovered_this_feature_huehue/",
+      "author": "u//u/HessianQrow",
       "engagement": 0
     },
     {
@@ -818,6 +813,26 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-21T13:42:35+00:00",
+      "lang": "en",
+      "title": "Possibly the most rarest character in morimens",
+      "summary": "Not only because she’s a collab character from the game mist sequence. But also Mist sequence HAS ALREADY CEASED OPERATION ON MAY 27, 2025 THE GAME MOUCHETTE CAME FROM DOESNT EXIST ANYMORE, THIS IS THE ONLY WAY YOU CAN PLAY MOUCHETTE NOW AND ITS ON ANOTHER DIFFERENT GAME  &#32; submitted by &#32;  /u/plaingirlisdepressed   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjkxzo/possibly_the_most_rarest_character_in_morimens/",
+      "author": "u//u/plaingirlisdepressed",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-22T01:44:18+00:00",
+      "lang": "en",
+      "title": "Morimens X Limbus Doll Faust",
+      "summary": "https://x.com/Akaiberry_0/status/2057636449457988039?s=20 Lmk if it looks better with/without the flask shading  &#32; submitted by &#32;  /u/Dry_Mycologist_6514   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tk4nud/morimens_x_limbus_doll_faust/",
+      "author": "u//u/Dry_Mycologist_6514",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-21T23:28:28+00:00",
       "lang": "en",
       "title": "I can finally go back to wheel jail.",
@@ -828,22 +843,22 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-22T00:57:53+00:00",
-      "lang": "en",
-      "title": "Just discovered this feature huehue",
-      "summary": "&#32; submitted by &#32;  /u/HessianQrow   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tk3lzw/just_discovered_this_feature_huehue/",
-      "author": "u//u/HessianQrow",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-21T22:29:09+00:00",
       "lang": "en",
       "title": "In every sense of the word",
       "summary": "Thank you Salvador  &#32; submitted by &#32;  /u/WinterSoldier3713   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tk04gw/in_every_sense_of_the_word/",
       "author": "u//u/WinterSoldier3713",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-22T02:27:37+00:00",
+      "lang": "en",
+      "title": "Cat Guide - Day 5",
+      "summary": "Hi, Angbak from discord here, Cat Guide - Day 5 time. Today&#39;s borrow unit is Arachne, and ONLY Arachne. Refer to the list of Whale Arachne below. List of whale Arachnes 100560240 (Hi Badmoon) 100069504 101009398 100794608 (Hi Risend) 100981868 100274628 100821516 100545898 100377475 100429960 _________________________________________________________________________________________________ Do note that the guide below is NOT the most optimal play, but it&#39;s the most straightforward one. Relic : -150 str every turn, when you use shields, gain damage amp Turns 1 to 5, explanations in spoilers  If you have eternal loom in hand, use Eternal Loom as your first card. Use Guiding Strings whenever it appears in hand (To store inside ultra space) If you have enough keyflare to rouse, rouse Arachne (to give Arachne sufficient aliemus to exalt on ultra turn) Do NOT use any of Arachne&#39;s Fate-Binding before ultra turn (to save for Arachne burst during ultra turn) If you have any embryo, give it to Jenkins (we will be using Jenkin&#39;s exalt to generate cards for Arachne pursuits) Do NOT exalt Arachne until the step below  ULTRA TURN - TURN 5 You should have minimally 2-3 eternal loom in ultra space by now. STEP ONE EXALT ARACHNE DURING ULTRA TURN - NOT ON TURN 5. DURING ULTRA TURN  Exalt Arachne during ULTRA turn To start pursuit chain + shield gives damage amp Use all 1 cost Fate-Binding Exalt Jenkins to get 3/4 0 cost &quot;Get &#39;em! Brown&quot;  MOST IMPORTANTLY IF THE BOSS IS ALONE - use your &quot;Get&#39;em! Brown&quot; To trigger pursuit on boss IF THE BOSS SUMMONS MOBS - use Eternal Loom, followed by Guiding Strings To kill all the small cats _________________________________________________________________________________________________ https://www.youtube.com/watch?v=aLq3IA6lcnc  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tk5na1/cat_guide_day_5/",
+      "author": "u//u/Angbak94",
       "engagement": 0
     },
     {
@@ -868,12 +883,32 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-22T01:44:18+00:00",
+      "time": "2026-05-22T01:57:58+00:00",
       "lang": "en",
-      "title": "Morimens X Limbus Doll Faust",
-      "summary": "https://x.com/Akaiberry_0/status/2057636449457988039?s=20 Lmk if it looks better with/without the flask shading  &#32; submitted by &#32;  /u/Dry_Mycologist_6514   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tk4nud/morimens_x_limbus_doll_faust/",
-      "author": "u//u/Dry_Mycologist_6514",
+      "title": "Hi I'm new to the game",
+      "summary": "What banner should I pull on it Sorry for my poor english   &#32; submitted by &#32;  /u/momal2003   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tk4yue/hi_im_new_to_the_game/",
+      "author": "u//u/momal2003",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-22T03:32:14+00:00",
+      "lang": "en",
+      "title": "Am i supposed to be able to get faded legacy characters from the standard?",
+      "summary": "this is my second time getting miryam on this banner and i’ve only gotten standard characters from here besides her. i’m new so idk if this is normal  &#32; submitted by &#32;  /u/Jammyhammy0526   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tk72jg/am_i_supposed_to_be_able_to_get_faded_legacy/",
+      "author": "u//u/Jammyhammy0526",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-22T05:31:10+00:00",
+      "lang": "en",
+      "title": "question about Gmurphy",
+      "summary": "So is Gmurphy supposed to be completely unusable in part 5+ arc 2 if she isn&#39;t higher than level 70? Her astral reign ability increases her shield given by ults by her defence, but I&#39;m at level 70 and it only goes up to like 450 defence when you&#39;re getting hit for 1.5k. Am I supposed to be face tanking taking this much damage, or is gmurphy meant to be leveled up stupidly higher than level 70? I have an E2 Arachne, so if Gmurphy is meant to be whaled out to be able to clear content, then let me know so I&#39;m not wasting materials building the lemurian team. I tried asking this on discord and kept getting vague answers, so I&#39;ll try to ask here.  &#32; submitted by &#32;  /u/Explosivepenny   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tk9hd3/question_about_gmurphy/",
+      "author": "u//u/Explosivepenny",
       "engagement": 0
     },
     {
@@ -898,22 +933,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-21T09:00:54+00:00",
+      "time": "2026-05-22T02:06:55+00:00",
       "lang": "en",
-      "title": "Thinking about starting. How does this game compare to Reverse:1999?",
-      "summary": "FIRST OF ALL: I don&#39;t mean better or worse kind of compare. I mean the differences and similarities. R1999 is my favorite gacha for the sole fact that I love the art, voice acting and most importantly, the extremely good story (Shit, I am glazing it again) I saw morimens long ago and it seemed to carry a similar yet distinct vibe to R1999 (in a good way) so I got curious about it but got bombarded with people saying it&#39;s a rotting corpse and I shouldn&#39;t start a dying game which apperently was false or got turned around or something. Oh also, I am not a &quot;meta slave&quot; but I do want to be ABLE to clear high-end stuff and pull for chars so I would appreciate information about the currency for f2p. EDIT: Thanks for everyone&#39;s detailed responses. I expected people to just give 1-2 sentence answers at most and thought most people wouldn&#39;t bother but this community seems to REALLY like this game. It felt less like I was getting info about a game and more like I was getting inducted into a cult and was learning about it&#39;s rules. And I am into that shit so I am starting the game lol. (Seriously though, even if the game didn&#39;t seem good, the sheer passion that made so many people give so many long and detailed responses by itself makes me wanna try the game)  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjeqh2/thinking_about_starting_how_does_this_game/",
-      "author": "u//u/Embarrassed-Sign3106",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-22T01:57:58+00:00",
-      "lang": "en",
-      "title": "Hi I'm new to the game",
-      "summary": "What banner should I pull on it Sorry for my poor english   &#32; submitted by &#32;  /u/momal2003   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tk4yue/hi_im_new_to_the_game/",
-      "author": "u//u/momal2003",
+      "title": "Confused on the pulls",
+      "summary": "Hi, new player here! I want to pull for Pollux an get him E3 when his banner comes out in around two weeks but I’m a bit confused on the pull rules on these rotation banners. So at pull 90 is the hard pity on Pollux or is it between pullux and his wheel?  &#32; submitted by &#32;  /u/Material-Fix-2633   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tk56cm/confused_on_the_pulls/",
+      "author": "u//u/Material-Fix-2633",
       "engagement": 0
     },
     {
@@ -928,22 +953,22 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-21T09:00:54+00:00",
+      "lang": "en",
+      "title": "Thinking about starting. How does this game compare to Reverse:1999?",
+      "summary": "FIRST OF ALL: I don&#39;t mean better or worse kind of compare. I mean the differences and similarities. R1999 is my favorite gacha for the sole fact that I love the art, voice acting and most importantly, the extremely good story (Shit, I am glazing it again) I saw morimens long ago and it seemed to carry a similar yet distinct vibe to R1999 (in a good way) so I got curious about it but got bombarded with people saying it&#39;s a rotting corpse and I shouldn&#39;t start a dying game which apperently was false or got turned around or something. Oh also, I am not a &quot;meta slave&quot; but I do want to be ABLE to clear high-end stuff and pull for chars so I would appreciate information about the currency for f2p. EDIT: Thanks for everyone&#39;s detailed responses. I expected people to just give 1-2 sentence answers at most and thought most people wouldn&#39;t bother but this community seems to REALLY like this game. It felt less like I was getting info about a game and more like I was getting inducted into a cult and was learning about it&#39;s rules. And I am into that shit so I am starting the game lol. (Seriously though, even if the game didn&#39;t seem good, the sheer passion that made so many people give so many long and detailed responses by itself makes me wanna try the game)  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjeqh2/thinking_about_starting_how_does_this_game/",
+      "author": "u//u/Embarrassed-Sign3106",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-21T20:51:52+00:00",
       "lang": "en",
       "title": "How the hell do I make daffodil work?",
       "summary": "I love daffodil she is a great awakener. I find her lore pretty interesting and her gameplay even more interesting. she is an ultra unit which is perfectly fine. I actually like ultra however. during investigations it takes a minute to get her going. like the first battle is pretty much a suicide mission but after that, it seems to be better? Here’s my current comp with daffodil if you guys have any tips on how to Player or like what awakens I could use to make it easier to play it would be super helpful.  &#32; submitted by &#32;  /u/IcyZookeepergame633   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tjxjks/how_the_hell_do_i_make_daffodil_work/",
       "author": "u//u/IcyZookeepergame633",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T13:58:19+00:00",
-      "lang": "en",
-      "title": "24 - Crimson Kaede Skin showcase video",
-      "summary": "Where can I see what the skin looked like aside from the portrait? I can&#39;t find a video of it in Youtube.  &#32; submitted by &#32;  /u/knoxxhat   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjldap/24_crimson_kaede_skin_showcase_video/",
-      "author": "u//u/knoxxhat",
       "engagement": 0
     },
     {
@@ -958,12 +983,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-22T02:06:55+00:00",
+      "time": "2026-05-21T13:58:19+00:00",
       "lang": "en",
-      "title": "Confused on the pulls",
-      "summary": "Hi, new player here! I want to pull for Pollux an get him E3 when his banner comes out in around two weeks but I’m a bit confused on the pull rules on these rotation banners. So at pull 90 is the hard pity on Pollux or is it between pullux and his wheel?  &#32; submitted by &#32;  /u/Material-Fix-2633   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tk56cm/confused_on_the_pulls/",
-      "author": "u//u/Material-Fix-2633",
+      "title": "24 - Crimson Kaede Skin showcase video",
+      "summary": "Where can I see what the skin looked like aside from the portrait? I can&#39;t find a video of it in Youtube.  &#32; submitted by &#32;  /u/knoxxhat   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tjldap/24_crimson_kaede_skin_showcase_video/",
+      "author": "u//u/knoxxhat",
       "engagement": 0
     },
     {
@@ -994,36 +1019,6 @@
       "summary": "yall, help me with the lineups bruh😭🙏 I&#39;m at chapter 5, and I already feel the next chapter will be too hard for me. Can yall recommend me with some lineups that&#39;s fun to play and can clear further chapters with my current awakeners😭😭  &#32; submitted by &#32;  /u/yuchichaki   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tjrz83/help/",
       "author": "u//u/yuchichaki",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T19:00:54+00:00",
-      "lang": "en",
-      "title": "Help with pulling and team building",
-      "summary": "Hello everyone, I’m new and completely lost with the amount of banners coming over the next days. I’d appreciate if someone could give some tips on what to prioritize to build a decent team. This is what I currently have, only thing I’ve understood is that Thais goes really well with GHelot. Would appreciate units that are good to go at E0 since I’m starting. I’m also thinking on pulling on the paid banner, but no idea what realm (was thinking Caro due to Thais) Thanks!  &#32; submitted by &#32;  /u/GonzaPicks   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjucs0/help_with_pulling_and_team_building/",
-      "author": "u//u/GonzaPicks",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-22T00:25:46+00:00",
-      "lang": "en",
-      "title": "Do I get the character?",
-      "summary": "If I purchase one of these without having the character already, do I get them?  &#32; submitted by &#32;  /u/Intrepid-Sound-4811   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tk2waq/do_i_get_the_character/",
-      "author": "u//u/Intrepid-Sound-4811",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-21T06:49:00+00:00",
-      "lang": "en",
-      "title": "Is lily worth it for Gdoll?",
-      "summary": "asking both in general as well as regarding 1-day banner Don’t have much poison awakeners as far as I know, Also don’t have nymphaea yet (+1 pandia &amp; e3 nautila tho ofc)  &#32; submitted by &#32;  /u/jadoesvg   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tjccyn/is_lily_worth_it_for_gdoll/",
-      "author": "u//u/jadoesvg",
       "engagement": 0
     },
     {
@@ -1108,47 +1103,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-22T02:09:03.286739+00:00",
-      "lang": "zh",
-      "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
-      "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-22T02:09:03.298104+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
-      "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
-      "url": "https://m.weibo.cn/status/5297404375991444",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-22T02:09:03.314715+00:00",
-      "lang": "zh",
-      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-22T02:09:03.326448+00:00",
-      "lang": "zh",
-      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
-      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-22T02:09:03.338075+00:00",
+      "time": "2026-05-22T06:39:11.173808+00:00",
       "lang": "zh",
       "title": "12758【投稿】忘却前夜。我主任",
       "summary": "12758【投稿】忘却前夜。我主任",
@@ -1158,7 +1113,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-22T02:09:03.349606+00:00",
+      "time": "2026-05-22T06:39:11.186934+00:00",
+      "lang": "zh",
+      "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
+      "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-22T06:39:11.199514+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
+      "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
+      "url": "https://m.weibo.cn/status/5297404375991444",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-22T06:39:11.215353+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -1168,27 +1143,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-22T02:09:03.360968+00:00",
+      "time": "2026-05-22T06:39:11.226873+00:00",
       "lang": "zh",
-      "title": "让你们说这话之前先去看眼忘却前夜立绘都长啥样不是在害你们",
-      "summary": "让你们说这话之前先去看眼忘却前夜立绘都长啥样不是在害你们",
+      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-22T02:09:03.373046+00:00",
+      "time": "2026-05-22T06:39:11.238016+00:00",
       "lang": "zh",
-      "title": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
-      "summary": "别的不说忘却前夜美工是真的很牛逼当初出此角色给我看愣住了好吧正太牛逼",
+      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
+      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-22T02:09:03.384281+00:00",
+      "time": "2026-05-22T06:39:11.249347+00:00",
       "lang": "zh",
       "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
       "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
@@ -1198,37 +1173,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-22T02:09:03.395803+00:00",
-      "lang": "zh",
-      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
-      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-22T02:09:03.406762+00:00",
-      "lang": "zh",
-      "title": "忘却前夜 |ω•`)",
-      "summary": "忘却前夜 |ω•`)",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-22T02:09:03.417597+00:00",
-      "lang": "zh",
-      "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
-      "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
-      "url": "https://m.weibo.cn/status/5294895855830265",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-22T02:09:03.433119+00:00",
+      "time": "2026-05-22T06:39:11.260426+00:00",
       "lang": "zh",
       "title": "全世界都来玩5771好吧 联动送角色本体和250抽",
       "summary": "全世界都来玩5771好吧 联动送角色本体和250抽",
@@ -1238,7 +1183,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-22T02:09:03.444252+00:00",
+      "time": "2026-05-22T06:39:11.271715+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 |ω•`)",
+      "summary": "忘却前夜 |ω•`)",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-22T06:39:11.283002+00:00",
+      "lang": "zh",
+      "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
+      "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
+      "url": "https://m.weibo.cn/status/5294895855830265",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-22T06:39:11.298153+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
       "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
@@ -1248,63 +1213,53 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-22T02:09:03.459170+00:00",
+      "time": "2026-05-22T06:39:11.312718+00:00",
       "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时",
-      "summary": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时间：5月18日 09:00 - 6月15日 09:00\n○ 头像：\n「典藏邮票：沙耶」\n「弥萨格幕间剧：熔毁·朵尔」\n「永不褪色的昨天：凯刻斯」\n「诺缔拉·寻找零件」\n「戈 ...全文",
-      "url": "https://m.weibo.cn/status/5300039610271163",
+      "title": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗",
+      "summary": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗？\"\n守密人：（握一下尤乌哈希的心脏）\nP1为背景糊弄学产物，P2P3是突然想起相册里有之前没有用上的背景。",
+      "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-22T02:09:03.482579+00:00",
+      "time": "2026-05-22T06:39:11.324128+00:00",
       "lang": "zh",
+      "title": "忘却前夜忘却前夜\n【戈利亚生贺17h/12:00】Moonlight\nMoonlight\n灿烂耀眼必然等待\n当昂首的视线成为与生俱来\n——威神V(WayV)《M",
+      "summary": "忘却前夜忘却前夜\n【戈利亚生贺17h/12:00】Moonlight\nMoonlight\n灿烂耀眼必然等待\n当昂首的视线成为与生俱来\n——威神V(WayV)《Moonlight (新月)》\n代发，约稿展示\n底图：彼彼彼岸花\n约稿展示",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-22T06:39:11.335216+00:00",
+      "lang": "zh",
+      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-22T06:39:11.346218+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
+      "summary": "忘却前夜 结算🎶\n这里哈姆林已经王朝了\n小游戏很好玩下次还来",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-22T06:40:00.631952+00:00",
+      "lang": "",
       "title": "意识到1999启示队抄的是忘却前夜深海，薪血抄的血肉",
       "summary": "意识到1999启示队抄的是忘却前夜深海，薪血抄的血肉",
       "url": "",
       "author": "",
       "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-22T02:10:28.263252+00:00",
-      "lang": "",
-      "title": "忘却前夜 出号，角色全图鉴，剧情到7-17",
-      "summary": "忘却前夜 出号，角色全图鉴，剧情到7-17",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-22T02:10:28.273962+00:00",
-      "lang": "",
-      "title": "补一个调色版#忘却前夜#",
-      "summary": "补一个调色版#忘却前夜#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "appstore",
-      "time": "2026-05-19T23:55:57-07:00",
-      "lang": "en",
-      "title": "F2P Friendly and Legit Gameplay",
-      "summary": "I don’t write reviews often but really wanted to give this game the kudos it deserves after finishing Arc 1.\n\nThere’s a real game beneath the gacha elements and those are extremely generous. The story takes a bit to get going but once it does I was hooked.\n\nThere’s plenty of little interactions and stories with the Awakeners that make them feel more engaging than just “pull of the month”\n\nThis is one game worth your time.",
-      "url": "https://apps.apple.com/us/app/id6447354150?see-all=reviews",
-      "author": "Saland",
-      "engagement": 5
-    },
-    {
-      "source": "appstore",
-      "time": "2026-05-04T23:16:49-07:00",
-      "lang": "en",
-      "title": "可不可以把融灾的自动设置回来",
-      "summary": "对于学业繁忙但又喜欢忘却的画风 并花了几百块进去的玩家来说，融灾的自动很重要。实在不想花时间去学多个队伍怎么去打融灾，希望可以把融灾带回来qwqqq 我还想继续支持这个游戏，不然很劝退我这种玩家",
-      "url": "https://apps.apple.com/ca/app/id6447354150?see-all=reviews",
-      "author": "Senxxxx?",
-      "engagement": 5
     },
     {
       "source": "appstore",
@@ -1315,36 +1270,6 @@
       "url": "https://apps.apple.com/au/app/id6447354150?see-all=reviews",
       "author": "RinOnDrugs",
       "engagement": 5
-    },
-    {
-      "source": "appstore",
-      "time": "2026-05-17T17:35:04-07:00",
-      "lang": "en",
-      "title": "PEAK!",
-      "summary": "lore and art has me levitating cuz of how good it is. I regret not finding this game earlier. also very generous w rewards so my greedy ahh is more than satisfied.",
-      "url": "https://apps.apple.com/ph/app/id6447354150?see-all=reviews",
-      "author": "Soggywettoes",
-      "engagement": 5
-    },
-    {
-      "source": "appstore",
-      "time": "2026-04-26T19:42:48-07:00",
-      "lang": "pt",
-      "title": "Linguagem",
-      "summary": "Queremos uma tradução  em português br 🙏🏻 pls",
-      "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews",
-      "author": "happophis",
-      "engagement": 4
-    },
-    {
-      "source": "appstore",
-      "time": "2026-05-14T20:26:42-07:00",
-      "lang": "en",
-      "title": "Game always stuck halfway",
-      "summary": "Very good and unique game, but please fix the issue where the game always not responding halfway",
-      "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews",
-      "author": "Chros T",
-      "engagement": 3
     },
     {
       "source": "google_play",
@@ -1438,12 +1363,12 @@
     },
     {
       "source": "google_play",
-      "time": "2026-05-20T20:54:44",
+      "time": "2026-05-21T02:28:35",
       "lang": "fr",
-      "title": "[Google Play 好评] ★5 great game",
-      "summary": "great game",
+      "title": "[Google Play 好评] ★5 Honnêtement un très bon jeu L'histoire e",
+      "summary": "Honnêtement un très bon jeu L'histoire est prenante et les designs parlent pour eux même. Probablement à jouer en anglais pour en profiter au maximum.",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=fr",
-      "author": "Jasper Hill",
+      "author": "Ilo '",
       "engagement": 0
     },
     {
@@ -1635,6 +1560,16 @@
       "content_type": "image"
     },
     {
+      "source": "pixiv",
+      "time": "2026-05-22T06:40:20.307956+00:00",
+      "lang": "",
+      "title": "",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/",
+      "author": "",
+      "engagement": 0
+    },
+    {
       "source": "ruliweb",
       "time": "2026-05-16T15:00:00+00:00",
       "lang": "ko",
@@ -1796,7 +1731,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-05-22T02:11:00.516481+00:00",
+      "time": "2026-05-22T06:40:31.882154+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
@@ -1810,7 +1745,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜*沙耶之歌 2.5 周年联动献礼",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5YKKUMi67pLikk3OZcIUfIrIiwhEAdx0lqXa8Fplpd9vbRFtqfCJLaDfN2AHl3s5xcS9OiI4rSUapnlP-08zT30PyCbAEZcMcj34pROvBdpmLS6eyBNxGgNI6SqEm98ppXkJIeIgPbyntyTWiB5sBO5F1VrTYMERanMW1esXrdBEs3O-Ib276ifSjubvgiND8HQM_6xgHu-4lBlAEbs1DJAe0f8bRARvQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=D19BA1D623E89A727573242BFCEF298676D372546A0FBB39",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5YKKUMi67pL4zsvVFNw5OkrIiwhEAdx0lqXa8Fplpd9vbRFtqfCJLaDfN2AHl3s5xcS9OiI4rSUapnlP-08zT30PyCbAEZcMRc2isLDD36w5AmFgDAjWHKtI4D4PBEbTPcrghkB4C1fvHQvUFh7OZEgnEwBz-FURahNawWIW6ss_yZpiNY1qz1hU-2F8dtbBcwT_MeVwibFu3Z4hNJr0DJQ_LeJW-Rhtg..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=D30EA0C21477DC72373E6A5A760A4F97388857816A0FFA61",
       "author": "",
       "engagement": 0
     },
@@ -1820,7 +1755,7 @@
       "lang": "zh",
       "title": "[微信] 忘却前夜*沙耶之歌 2.5 周年联动献礼",
       "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5YKKUMi67pLrHUmnsNnPWYrIiwhEAdx0lqXa8Fplpd9vbRFtqfCJLaDfN2AHl3s5xcS9OiI4rSUapnlP-08zT30PyCbAEZcMcj34pROvBdpmLS6eyBNxGgNI6SqEm98ptZZInWEi_ZUNkPU6LuHbnpfT_kxdh6uqwe4pWb8fY6NP0UC8w8D2N-jtTuGPNjIKQ4iUN9f2HiMVsKcWqd3Gc05eBgmN3LoYQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=D19BAB1E448CFD161114434F98A34B8112EED4016A0FBB3B",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS5YKKUMi67pLp0tNCxI_v58rIiwhEAdx0lqXa8Fplpd9vbRFtqfCJLaDfN2AHl3s5xcS9OiI4rSUapnlP-08zT30PyCbAEZcMRc2isLDD36w5AmFgDAjWHKtI4D4PBEbTOP-oOSeYE7a1ripYyN8ObrtO2XdjTXh_Sz9fLKnACYGE3WgzNJU8Lb9N1rrYhrY0JgqKrfcMcjroch6QN14_zwHpHkoPMgL3A..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=D30EA8AD117CD878333460507C664C1A332268656A0FFA62",
       "author": "",
       "engagement": 0
     }
