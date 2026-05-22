@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-22T20:30:48.990661+00:00",
+  "collected_at": "2026-05-22T22:00:14.111713+00:00",
   "source": "google_play",
   "item_count": 12,
   "items": [
@@ -65,6 +65,16 @@
     },
     {
       "source": "google_play",
+      "time": "2026-05-18T15:55:44",
+      "lang": "pt",
+      "title": "[Google Play 好评] ★5 É um RPG roguelike incrível, história, m",
+      "summary": "É um RPG roguelike incrível, história, música e gameplay são bem construídas e as mecânicas de combate são bem intuitivas, o que estraga é a tradução mal feita por IA, tenho certeza q o jogo seria melhor se traduzido por uma pessoa real, mas recomendo testar morimens mesmo que você não ligue para história o jogo é bem divertido e possui uma arte incrível",
+      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=pt",
+      "author": "Gustavo Ribeiro",
+      "engagement": 1
+    },
+    {
+      "source": "google_play",
       "time": "2026-05-20T10:19:47",
       "lang": "zh",
       "title": "[Google Play 中评] ★3 为什么不能用台服账号啊，什么时候台服能和港澳服互通",
@@ -111,16 +121,6 @@
       "summary": "Ci sono sicuramente tanti giochi di carte e io non li ho provati tutti. nonstante questo gioco sia stato tra le mie prime esperienze, sono felicemente deliziato dal godorioso gamplay, dallo stile grafico, dalla storia, da più o meno tutto. In realtà l'italiano c'è però diciamo che la lingua conta relativamente. il gioco è incredibile, già da subito è diventato quello con più ore sul mio telefono, anche i pull sono generosi, non spendendo una lira puoi decisamente fare esperienza. veramente bello",
       "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=it",
       "author": "Aleksandr",
-      "engagement": 0
-    },
-    {
-      "source": "google_play",
-      "time": "2026-05-18T15:55:44",
-      "lang": "pt",
-      "title": "[Google Play 好评] ★5 É um RPG roguelike incrível, história, m",
-      "summary": "É um RPG roguelike incrível, história, música e gameplay são bem construídas e as mecânicas de combate são bem intuitivas, o que estraga é a tradução mal feita por IA, tenho certeza q o jogo seria melhor se traduzido por uma pessoa real, mas recomendo testar morimens mesmo que você não ligue para história o jogo é bem divertido e possui uma arte incrível",
-      "url": "https://play.google.com/store/apps/details?id=com.qookkagames.z1.gp.hk&hl=pt",
-      "author": "Gustavo Ribeiro",
       "engagement": 0
     }
   ]
