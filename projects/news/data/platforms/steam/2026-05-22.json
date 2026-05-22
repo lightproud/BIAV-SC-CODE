@@ -1,8 +1,8 @@
 {
   "date": "2026-05-22",
-  "archived_at": "2026-05-22T02:12:22.281873+00:00",
+  "archived_at": "2026-05-22T06:41:50.483001+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -213,6 +213,21 @@
       "review": "Me lo instalé por los jajas porque nunca había jugado un gacha, está interesante la historia y los personajes, cuando me desquicié actualizaré la review. Un saludo.",
       "timestamp_created": 1779397194,
       "playtime_forever": 1570
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-22T02:08:13+00:00",
+      "lang": "english",
+      "title": "[正面] Good game, one of the better gachas out there.",
+      "summary": "Good game, one of the better gachas out there.",
+      "url": "https://steamcommunity.com/profiles/76561198042373996/recommended/3052450",
+      "author": "76561198042373996",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Good game, one of the better gachas out there.",
+      "timestamp_created": 1779415693,
+      "playtime_forever": 3009
     }
   ]
 }

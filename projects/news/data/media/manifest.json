@@ -6621,6 +6621,13 @@
       "title": "【忘卻前夜】最多用6分鐘了解血鏈希洛！",
       "time": "2026-05-21T22:10:47.303171+00:00",
       "downloaded_at": "2026-05-21T22:13:40.581206+00:00"
+    },
+    "https://i.ytimg.com/vi/kIbNpUhEqbQ/hq720.jpg?v=6a0fc818&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB-D85loTk-ZRKqcQhdt_tE_dervg": {
+      "filename": "youtube_065b8576ffd386b5.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Short (Relatively) - Stream, answer questions, light coaching,  working on d-tide vid",
+      "time": "2026-05-22T06:38:57.332344+00:00",
+      "downloaded_at": "2026-05-22T06:41:50.411791+00:00"
     }
   },
   "failed": {
@@ -9968,6 +9975,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-22T02:12:22.215745+00:00"
+    },
+    "https://external-preview.redd.it/f05oDAWrVGdXjCyiIYd8ocZGE0JV3_NhtF3vjAEVD9I.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=908bd095c9d479e94399d36d8103eb6e2eafd2cc": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-22T06:41:49.622378+00:00"
+    },
+    "https://preview.redd.it/bua2jo9fzl2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=70cd44103b343c6d729c8751e22783b9885d537e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-22T06:41:50.064724+00:00"
     }
   },
   "archived": []
