@@ -1,8 +1,8 @@
 {
   "date": "2026-05-23",
-  "archived_at": "2026-05-23T02:28:52.695319+00:00",
+  "archived_at": "2026-05-23T06:01:14.101990+00:00",
   "source": "steam",
-  "item_count": 6,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -93,6 +93,66 @@
       "review": "还不错的卡牌构筑二游",
       "timestamp_created": 1779491941,
       "playtime_forever": 1716
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T04:42:51+00:00",
+      "lang": "schinese",
+      "title": "[正面] 这游戏挺不错，音乐画面剧情游戏性都不错，甚至扫荡动画都出奇的快，看看能玩多久",
+      "summary": "这游戏挺不错，音乐画面剧情游戏性都不错，甚至扫荡动画都出奇的快，看看能玩多久",
+      "url": "https://steamcommunity.com/profiles/76561199074112958/recommended/3052450",
+      "author": "76561199074112958",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "这游戏挺不错，音乐画面剧情游戏性都不错，甚至扫荡动画都出奇的快，看看能玩多久",
+      "timestamp_created": 1779511371,
+      "playtime_forever": 90
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T04:35:45+00:00",
+      "lang": "english",
+      "title": "[正面] I played for the first time just a month after the...",
+      "summary": "I played for the first time just a month after the game came out. I didnt play for long as I only logged in for 2 days as the gameplay didnt capture me at the time. I thought the game was charming and had a good artstyle but It stuck with me. After I saw a video about the anniversary and how the game was going to shut down and how the players saved the game, I decided to give the game another shot.... and I'm so happy I did. This game is so good, I wished I played it more back before the anniversary but I have very quickly 5x my playtime and completed the 2nd chapter and I will say. You will like this game if you're okay with a little death and slay the spire gameplay. Morimens.... is something to be remembered.",
+      "url": "https://steamcommunity.com/profiles/76561199052498682/recommended/3052450",
+      "author": "76561199052498682",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I played for the first time just a month after the game came out. I didnt play for long as I only logged in for 2 days as the gameplay didnt capture me at the time. I thought the game was charming and had a good artstyle but It stuck with me. After I saw a video about the anniversary and how the game was going to shut down and how the players saved the game, I decided to give the game another shot.... and I'm so happy I did. This game is so good, I wished I played it more back before the anniversary but I have very quickly 5x my playtime and completed the 2nd chapter and I will say. You will like this game if you're okay with a little death and slay the spire gameplay. Morimens.... is something to be remembered.",
+      "timestamp_created": 1779510945,
+      "playtime_forever": 825
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T03:17:10+00:00",
+      "lang": "english",
+      "title": "[正面] KEYFLARE! GO EVERYSINGLE ABILITY",
+      "summary": "KEYFLARE! GO EVERYSINGLE ABILITY",
+      "url": "https://steamcommunity.com/profiles/76561199203754310/recommended/3052450",
+      "author": "76561199203754310",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "KEYFLARE! GO EVERYSINGLE ABILITY",
+      "timestamp_created": 1779506230,
+      "playtime_forever": 2433
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T02:41:05+00:00",
+      "lang": "schinese",
+      "title": "[负面] 卡牌构筑游戏硬是搞成数值养成游戏",
+      "summary": "卡牌构筑游戏硬是搞成数值养成游戏",
+      "url": "https://steamcommunity.com/profiles/76561198128071694/recommended/3052450",
+      "author": "76561198128071694",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "卡牌构筑游戏硬是搞成数值养成游戏",
+      "timestamp_created": 1779504065,
+      "playtime_forever": 1594
     }
   ]
 }
