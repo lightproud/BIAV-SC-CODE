@@ -6733,6 +6733,13 @@
       "title": "Morimens F2P with ONLY characters from Kaleido Recollections... AGAIN",
       "time": "2026-05-23T01:26:05.783982+00:00",
       "downloaded_at": "2026-05-23T02:28:51.806357+00:00"
+    },
+    "https://i.ytimg.com/vi/q8UrT3uFsrg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAx0GNZRhQtLU1vy78Qlk2LTtWcrA": {
+      "filename": "youtube_900ee59ed21eb402.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜 × 沙耶の唄】公式コラボPV「悠久なる旅の歌」",
+      "time": "2026-05-22T11:58:23.603685+00:00",
+      "downloaded_at": "2026-05-23T06:01:12.473250+00:00"
     }
   },
   "failed": {
@@ -10190,6 +10197,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-23T02:28:52.623841+00:00"
+    },
+    "https://preview.redd.it/avwugzg4dt2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=d7a218ef2d3806611c714005785e9c23b6ad9bb8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T06:01:12.917811+00:00"
+    },
+    "https://external-preview.redd.it/YzJybjhnZGE5dDJoMeOwxEKY_BwUmvv0yJlvuSQnrkHkZJuTTKSVmRt4UrhV.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=e30ff651dcb7f28d87c560dae1fe912f6dd1ae86": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T06:01:13.373041+00:00"
+    },
+    "https://preview.redd.it/auz49ugoot2h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=2b837a8206dd919d8f1991c5df3f9a63f488dc07": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T06:01:13.700252+00:00"
+    },
+    "https://preview.redd.it/ops83x72kt2h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=822974346b1b551268078eac0ffad05d6037c1a0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T06:01:14.027362+00:00"
     }
   },
   "archived": []
