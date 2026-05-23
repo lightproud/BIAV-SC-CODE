@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-23T22:44:58.915698+00:00",
+  "collected_at": "2026-05-23T23:50:02.650418+00:00",
   "source": "steam",
-  "item_count": 19,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -272,21 +272,6 @@
       "review": "KEYFLARE! GO EVERYSINGLE ABILITY",
       "timestamp_created": 1779506230,
       "playtime_forever": 2433
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-22T23:19:01+00:00",
-      "lang": "schinese",
-      "title": "[正面] 还不错的卡牌构筑二游",
-      "summary": "还不错的卡牌构筑二游",
-      "url": "https://steamcommunity.com/profiles/76561198246372106/recommended/3052450",
-      "author": "76561198246372106",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "还不错的卡牌构筑二游",
-      "timestamp_created": 1779491941,
-      "playtime_forever": 2474
     }
   ]
 }
