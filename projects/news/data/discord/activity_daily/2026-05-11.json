@@ -1,10 +1,11 @@
 {
   "date": "2026-05-11",
-  "messages": 11222,
+  "messages": 14224,
   "unique_authors": 352,
-  "reactions_total": 1348,
-  "attachments": 502,
+  "reactions_total": 1653,
+  "attachments": 673,
   "channel_activity": {
+    "🔸morimens-game-chat": 3002,
     "🔸綜合討論": 3602,
     "🔸日本語チャンネル": 7,
     "🔸русский-канал": 802,
@@ -65,19 +66,19 @@
     "【Newcomer Help】Forum Introduction": 2
   },
   "hourly_activity": {
+    "0": 740,
+    "1": 710,
+    "2": 600,
+    "3": 569,
+    "4": 826,
+    "5": 1037,
+    "6": 576,
+    "7": 1394,
     "19": 199,
     "20": 237,
     "21": 326,
     "22": 393,
     "23": 375,
-    "0": 229,
-    "1": 262,
-    "2": 192,
-    "3": 150,
-    "4": 478,
-    "5": 855,
-    "6": 313,
-    "7": 971,
     "8": 847,
     "9": 568,
     "10": 621,
@@ -91,8 +92,8 @@
     "18": 377
   },
   "message_types": {
-    "19": 245,
-    "0": 1136
+    "0": 2127,
+    "19": 875
   },
   "top_reacted_messages": [
     {
@@ -158,6 +159,14 @@
       "author": "arandomflamev2",
       "reactions": 11,
       "channel": "✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration"
+    },
+    {
+      "id": "1503193451771199528",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "fishhazardthewizard",
+      "reactions": 10,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1503540786535596115",
@@ -240,20 +249,12 @@
       "channel": "🔸canal-español"
     },
     {
-      "id": "1503304490936307752",
-      "channel_id": "1131839817982947429",
-      "content": "我的頭髮絕對有超過30公分",
-      "author": "yusi4172",
+      "id": "1503191156765229066",
+      "channel_id": "1170692781216378960",
+      "content": "",
+      "author": "noire_2",
       "reactions": 7,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1503305782878535740",
-      "channel_id": "1131839817982947429",
-      "content": "壞了 打融災沒出50張就死了 <:Brown_think:1459080117308620996>",
-      "author": "forg30215",
-      "reactions": 7,
-      "channel": "🔸綜合討論"
+      "channel": "🔸morimens-game-chat"
     }
   ]
 }

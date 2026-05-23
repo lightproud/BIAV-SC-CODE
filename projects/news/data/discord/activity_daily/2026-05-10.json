@@ -1,11 +1,11 @@
 {
   "date": "2026-05-10",
-  "messages": 12607,
+  "messages": 14605,
   "unique_authors": 249,
-  "reactions_total": 1142,
-  "attachments": 563,
+  "reactions_total": 1285,
+  "attachments": 611,
   "channel_activity": {
-    "🔸morimens-game-chat": 4716,
+    "🔸morimens-game-chat": 6714,
     "🔸綜合討論": 1016,
     "🔸русский-канал": 1952,
     "🔸phòng-chat-tiếng-việt": 645,
@@ -47,6 +47,12 @@
     "忘却前夜×沙耶之歌 联动预告┊Morimens × Saya No Uta Collab Preview": 24
   },
   "hourly_activity": {
+    "18": 654,
+    "19": 672,
+    "20": 878,
+    "21": 737,
+    "22": 675,
+    "23": 753,
     "0": 605,
     "1": 467,
     "2": 709,
@@ -64,17 +70,11 @@
     "14": 1117,
     "15": 634,
     "16": 811,
-    "17": 445,
-    "18": 643,
-    "19": 260,
-    "20": 505,
-    "21": 192,
-    "22": 253,
-    "23": 518
+    "17": 445
   },
   "message_types": {
-    "0": 3249,
-    "19": 1467
+    "0": 1338,
+    "19": 660
   },
   "top_reacted_messages": [
     {
@@ -110,11 +110,27 @@
       "channel": "🔸綜合討論"
     },
     {
+      "id": "1503156844204658769",
+      "channel_id": "1170692781216378960",
+      "content": "I finally sat down and grinded out 375 on my account <:meowtears:363761288196784",
+      "author": "fairlysadpanda",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1503062362469437681",
       "channel_id": "1170692781216378960",
       "content": "Electric boom \n\nOkay that's enough for today.",
       "author": "rocketmacaron_",
       "reactions": 7,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
+      "id": "1503109597525709011",
+      "channel_id": "1170692781216378960",
+      "content": "Eroge VN =/= bad",
+      "author": "kurotamavii",
+      "reactions": 6,
       "channel": "🔸morimens-game-chat"
     },
     {
@@ -214,26 +230,10 @@
       "channel": "🔸canal-español"
     },
     {
-      "id": "1502885022619926649",
+      "id": "1503110411900420197",
       "channel_id": "1170692781216378960",
-      "content": "did frost sound like a femboy when he was playing sts2 with u?",
-      "author": "arisuu0604",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1502981968143319091",
-      "channel_id": "1170692781216378960",
-      "content": "me my bad",
-      "author": "princess.goth",
-      "reactions": 4,
-      "channel": "🔸morimens-game-chat"
-    },
-    {
-      "id": "1503007236161667083",
-      "channel_id": "1170692781216378960",
-      "content": "ngl if Saya is the anni banner\nmy disappointment will be mainly about how they d",
-      "author": "_venush",
+      "content": "collabs have always been about drawing new blood to the game though",
+      "author": "sparkling_moose_59074",
       "reactions": 4,
       "channel": "🔸morimens-game-chat"
     }
