@@ -1,8 +1,8 @@
 {
   "date": "2026-05-24",
-  "archived_at": "2026-05-23T21:47:52.573379+00:00",
+  "archived_at": "2026-05-23T22:44:59.232248+00:00",
   "source": "steam",
-  "item_count": 18,
+  "item_count": 20,
   "items": [
     {
       "source": "steam",
@@ -273,6 +273,36 @@
       "review": "Мощная игра,залип сразу на 7 часов,может даже и донат подключию",
       "timestamp_created": 1779567934,
       "playtime_forever": 462
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T21:45:39+00:00",
+      "lang": "russian",
+      "title": "[正面] 67",
+      "summary": "67",
+      "url": "https://steamcommunity.com/profiles/76561199637205160/recommended/3052450",
+      "author": "76561199637205160",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "67",
+      "timestamp_created": 1779572739,
+      "playtime_forever": 3949
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T21:31:40+00:00",
+      "lang": "english",
+      "title": "[正面] underrated gem <3 pls support the niche devs",
+      "summary": "underrated gem <3 pls support the niche devs",
+      "url": "https://steamcommunity.com/profiles/76561199093303282/recommended/3052450",
+      "author": "76561199093303282",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "underrated gem <3 pls support the niche devs",
+      "timestamp_created": 1779571900,
+      "playtime_forever": 1201
     }
   ]
 }
