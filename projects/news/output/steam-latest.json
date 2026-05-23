@@ -1,22 +1,22 @@
 {
-  "collected_at": "2026-05-23T10:24:36.101712+00:00",
+  "collected_at": "2026-05-23T11:57:14.760011+00:00",
   "source": "steam",
   "item_count": 9,
   "items": [
     {
       "source": "steam",
-      "time": "2026-05-22T11:01:02+00:00",
-      "lang": "schinese",
-      "title": "[正面] 给沙耶之歌爆米来了，不接受重氪的不要碰",
-      "summary": "给沙耶之歌爆米来了，不接受重氪的不要碰",
-      "url": "https://steamcommunity.com/profiles/76561199210411966/recommended/3052450",
-      "author": "76561199210411966",
-      "engagement": 1,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "给沙耶之歌爆米来了，不接受重氪的不要碰",
-      "timestamp_created": 1779447662,
-      "playtime_forever": 10831
+      "time": "2026-05-23T09:50:01+00:00",
+      "lang": "russian",
+      "title": "[负面] Игра очень красивая, но вообще не работает, зайти...",
+      "summary": "Игра очень красивая, но вообще не работает, зайти невозможно, ничто не помогает. Было бы хорошо, если бы разработчики это починили.",
+      "url": "https://steamcommunity.com/profiles/76561198007420727/recommended/3052450",
+      "author": "76561198007420727",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": false,
+      "review": "Игра очень красивая, но вообще не работает, зайти невозможно, ничто не помогает. Было бы хорошо, если бы разработчики это починили.",
+      "timestamp_created": 1779529801,
+      "playtime_forever": 52
     },
     {
       "source": "steam",

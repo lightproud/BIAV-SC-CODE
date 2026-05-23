@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-05-23T10:24:36.101712+00:00",
-  "summary": "Discord 社区日报 (2026-05-22)；【忘却前夜 × 沙耶の唄】公式コラボPV「悠久なる旅の歌」；[DC] morimensstaff06@🔸活动资讯┊eve；[DC] sayo.0320@🔸canal-español:；[DC] encyoverride@🔸遊戲公告┊game-a。",
-  "sources_run": 1077,
+  "updated_at": "2026-05-23T11:57:14.760011+00:00",
+  "summary": "Discord 社区日报 (2026-05-22)；Morimens F2P with ONLY charact；[DC] morimensstaff06@🔸活动资讯┊eve；[DC] sayo.0320@🔸canal-español:；[DC] encyoverride@🔸遊戲公告┊game-a。",
+  "sources_run": 1094,
   "news": [
     {
       "title": "Discord 社区日报 (2026-05-22)",
@@ -20,19 +20,19 @@
       "platform_region": "global"
     },
     {
-      "title": "【忘却前夜 × 沙耶の唄】公式コラボPV「悠久なる旅の歌」",
-      "summary": "[23 hours ago] 『忘却前夜』×『沙耶の唄』コラボPV「悠久なる旅の歌」 主題歌：「忘却の彼方」 歌唱：いとうかなこ 作詞：小岩井ことり ...",
+      "title": "Morimens F2P with ONLY characters from Kaleido Recollections... AGAIN",
+      "summary": "[Streamed 10 hours ago] A Morimens Challenge Run series with a fresh account CURRENT RULESET: - A new account must be created at the start of the ...",
       "source": "youtube",
-      "time": "2026-05-22T11:21:25.379320+00:00",
-      "url": "https://www.youtube.com/watch?v=q8UrT3uFsrg",
-      "engagement": 3019,
+      "time": "2026-05-23T01:54:04.493633+00:00",
+      "url": "https://www.youtube.com/watch?v=tieCSCC64TI",
+      "engagement": 1037,
       "is_hot": false,
-      "author": "忘却前夜【日本版公式】",
+      "author": "Rose Guardian Reya",
       "tags": [
         "youtube",
         "scrape"
       ],
-      "media_url": "https://i.ytimg.com/vi/q8UrT3uFsrg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAx0GNZRhQtLU1vy78Qlk2LTtWcrA",
+      "media_url": "https://i.ytimg.com/vi/tieCSCC64TI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC_uVfkrTcA2zHS2iHu8xgKCKCubA",
       "content_type": "image",
       "lang": "",
       "platform_region": "global"
@@ -421,17 +421,43 @@
       "platform_region": "global"
     },
     {
-      "title": "Game always stuck halfway",
-      "summary": "Very good and unique game, but please fix the issue where the game always not responding halfway",
+      "title": "可不可以把融灾的自动设置回来",
+      "summary": "对于学业繁忙但又喜欢忘却的画风 并花了几百块进去的玩家来说，融灾的自动很重要。实在不想花时间去学多个队伍怎么去打融灾，希望可以把融灾带回来qwqqq 我还想继续支持这个游戏，不然很劝退我这种玩家",
       "source": "appstore",
-      "time": "2026-05-14T20:26:42-07:00",
-      "url": "https://apps.apple.com/sg/app/id6447354150?see-all=reviews",
-      "engagement": 3,
+      "time": "2026-05-04T23:16:49-07:00",
+      "url": "https://apps.apple.com/ca/app/id6447354150?see-all=reviews",
+      "engagement": 5,
       "is_hot": false,
-      "author": "Chros T",
+      "author": "Senxxxx?",
       "tags": [],
       "lang": "en",
-      "platform_region": "sg"
+      "platform_region": "ca"
+    },
+    {
+      "title": "PEAK!",
+      "summary": "lore and art has me levitating cuz of how good it is. I regret not finding this game earlier. also very generous w rewards so my greedy ahh is more than satisfied.",
+      "source": "appstore",
+      "time": "2026-05-17T17:35:04-07:00",
+      "url": "https://apps.apple.com/ph/app/id6447354150?see-all=reviews",
+      "engagement": 5,
+      "is_hot": false,
+      "author": "Soggywettoes",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "ph"
+    },
+    {
+      "title": "Linguagem",
+      "summary": "Queremos uma tradução  em português br 🙏🏻 pls",
+      "source": "appstore",
+      "time": "2026-04-26T19:42:48-07:00",
+      "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews",
+      "engagement": 4,
+      "is_hot": false,
+      "author": "happophis",
+      "tags": [],
+      "lang": "pt",
+      "platform_region": "br"
     },
     {
       "title": "[Google Play 好评] ★5 My new hyperfixation! I'm still at the p",
@@ -471,28 +497,6 @@
       "tags": [],
       "lang": "vi",
       "platform_region": "vn"
-    },
-    {
-      "title": "[正面] 给沙耶之歌爆米来了，不接受重氪的不要碰",
-      "summary": "给沙耶之歌爆米来了，不接受重氪的不要碰",
-      "source": "steam_review",
-      "time": "2026-05-22T11:01:02+00:00",
-      "url": "https://steamcommunity.com/profiles/76561199210411966/recommended/3052450",
-      "engagement": 1,
-      "is_hot": false,
-      "author": "76561199210411966",
-      "tags": [
-        "schinese"
-      ],
-      "language": "schinese",
-      "metadata": {
-        "voted_up": true,
-        "playtime_forever": 10831,
-        "votes_up": 1,
-        "timestamp_created": 1779447662
-      },
-      "lang": "",
-      "platform_region": "global"
     },
     {
       "title": "[Google Play 好评] ★5 게임사가 굉장히 열정이 가득하고 한국어 번역도 굉장히 순조롭게 진행되고",
@@ -617,6 +621,22 @@
       "platform_region": "global"
     },
     {
+      "title": "What awakeners are OE dependent?",
+      "summary": "Hi new player just wondering if someone could tell me what characters want their OE in order to be good so I can know to skip/invest in them  &#32; submitted by &#32;  /u/teenboob   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-23T05:41:22+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tl7mrf/what_awakeners_are_oe_dependent/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/teenboob",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "Cat guide - Day 6",
       "summary": "Hello, Angbak from Discord here for day 67. Reccomended support - G Murphy, player codes below  100786036 100377735 100774329 101051873 100201387 100439362 100692667 100389537 100020854 101183885 100616389 Kidnap whale supporter  https://www.reddit.com/r/Morimens/s/6MrIxG53dR ________________________________________________ Unfortunately it isnt straight forward this time. There will be some freestyling involved but here&#39;s the general idea. Preparation  Team comp - Lemurian units in this order (most hp to least) Tulu Goliath Myriam  Farros  + 1 ultra unit Posse : voices in my head (weakness applier) ________________________________________________ Priorities Cards  Play G.Murphy waltz in blue stance to scale up tentacle damage and tentacle count Play G.Murphy defense/strikes to gain aliemus (energy) Rouse G.Murphy to gain Aliemus   It doesn&#39;t matter if you end with arith remaining. Do not use G.murphy 0 cost  Tentacle stance  Whenever the boss attacks, try to white stance   Posse 1. Whenever boss attacks, use voices to apply weakness ________________________________________________ Burst turn Burst when the following conditions are met  G.Murphy has over exalt You have the support card (post turn 4) You have 1 Waltz in hand (3 cost)  How to burst Support cards   Use your support card and look for the following priorities Increase damage (crit/tentacle damage/str)  - use all damage increasing support cards   Stalling (shield/heal)  - use all defensive cards to stall for sacrifice to kill  Burst  Check support card Use voices posse Activate red stance  Gmurphy overexalt  Play waltz in descending order cost (3 &gt; 2 &gt; 1)   You should be able to clear consistently with these general guide. Cheers~  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
       "source": "reddit",
@@ -631,22 +651,6 @@
       },
       "media_url": "https://external-preview.redd.it/YzJybjhnZGE5dDJoMeOwxEKY_BwUmvv0yJlvuSQnrkHkZJuTTKSVmRt4UrhV.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=e30ff651dcb7f28d87c560dae1fe912f6dd1ae86",
       "content_type": "image",
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "What awakeners are OE dependent?",
-      "summary": "Hi new player just wondering if someone could tell me what characters want their OE in order to be good so I can know to skip/invest in them  &#32; submitted by &#32;  /u/teenboob   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-23T05:41:22+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tl7mrf/what_awakeners_are_oe_dependent/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "/u/teenboob",
-      "tags": [],
-      "metadata": {
-        "via": "rss"
-      },
       "lang": "en",
       "platform_region": "global"
     },
@@ -669,6 +673,22 @@
       "platform_region": "global"
     },
     {
+      "title": "Download in game cutscene?",
+      "summary": "Where can I find scenepacks for this game. Background , cg cutscene etc  &#32; submitted by &#32;  /u/Soft-Psychology8018   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-23T10:33:20+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tlcv84/download_in_game_cutscene/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Soft-Psychology8018",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "How is this even possible lol",
       "summary": "Pulling arc 2 kaleido banner hoping for my castor oe yet I pulled corposant and her wod immediately after lol  &#32; submitted by &#32;  /u/Fun_Injury_3284   [link] &#32; [comments]",
       "source": "reddit",
@@ -682,24 +702,6 @@
         "via": "rss"
       },
       "media_url": "https://preview.redd.it/0zh01yg1hu2h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=c4ce4f93cd492dddac68fb921f6b6a3784587981",
-      "content_type": "image",
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "What to prioritize?",
-      "summary": "Should get more dues for caecus or pick a new character? I watched some guides and they to get Cae to E3 but I don&#39;t full trust that so I need some help  &#32; submitted by &#32;  /u/Pleasant-War-3919   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-23T10:03:53+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tlccgd/what_to_prioritize/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "/u/Pleasant-War-3919",
-      "tags": [],
-      "metadata": {
-        "via": "rss"
-      },
-      "media_url": "https://preview.redd.it/unm4canp1v2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=f0720a44fdfbcda37f67700b16bbf766189a5f15",
       "content_type": "image",
       "lang": "en",
       "platform_region": "global"
@@ -770,6 +772,40 @@
         "via": "rss"
       },
       "media_url": "https://preview.redd.it/1ua4ew95dr2h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=1859fc6b4d1a6b2fa862fc1a36dbd514dff20208",
+      "content_type": "image",
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "X-th question about 24h vs. Kaleido banner",
+      "summary": "Sorry if this one was asked plenty of times this past week, but I didn&#39;t see any Megathread linked in the two pinned posts. New player. So far got Arachne, Hameln and Tawil (E1) as limiteds.  I&#39;m still not sure if I should try to get Thais and Horla from the 24h banners or if I should skip and go all in on the Arc2 Kaleido banner.  Or should I limit myself to only 1 character from the 24h banners since the hard pity is so high ?  &#32; submitted by &#32;  /u/Woll_e   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-23T11:25:38+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tlduuq/xth_question_about_24h_vs_kaleido_banner/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/Woll_e",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "What account is better value?",
+      "summary": "Hello! I decided to reroll a little bit as a new player and managed to get two account that I like. I mostly started to play this game due to the saya collab, so I was wondering which of these accounts would work best with her, and overall which one has better value? Also any team comp recommendations would be appreciated! ^^  &#32; submitted by &#32;  /u/AttentionTurbulent84   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-23T10:54:30+00:00",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tld99u/what_account_is_better_value/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "/u/AttentionTurbulent84",
+      "tags": [],
+      "metadata": {
+        "via": "rss"
+      },
+      "media_url": "https://preview.redd.it/9uyi5bk8bv2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=cebc6d6cc5891cae8d580129ff29be805ca617ed",
       "content_type": "image",
       "lang": "en",
       "platform_region": "global"
@@ -877,21 +913,25 @@
       "platform_region": "global"
     },
     {
-      "title": "Struggling with act 2",
-      "summary": "so, I just finished the first chapter of act 2 and I felt a huge difficulty spike, going from mostly being able to get all 3 stars and using maybe 1 emergency gnosis on chapter bosses or some thougher &quot;dungeon&quot; bosses to barelly getting 1 star and needing a gnosis every other chapter and multiple gnosis on the final battle, so this make me think that there must be something wrong with my comp, but idk if I just need to farm covenants or smth. I tried using daffodil intead of salvadore, but I felt like I simply couldnt survive long enough to scale until I killed the enemies, they just hit too hard for me to shield through. I tryed to make 24 work as well, because I heard that she&#39;s good, but I got to the same problem of not being able to tank long enough to kill them. So, any advice? should I just gather more resources to level them up, should I get higher level covenants or what? My keeper level is 54 btw.  &#32; submitted by &#32;  /u/Remarkable_Cap20   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-22T15:31:45+00:00",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tkmfqx/struggling_with_act_2/",
+      "title": "[负面] Игра очень красивая, но вообще не работает, зайти...",
+      "summary": "Игра очень красивая, но вообще не работает, зайти невозможно, ничто не помогает. Было бы хорошо, если бы разработчики это починили.",
+      "source": "steam_review",
+      "time": "2026-05-23T09:50:01+00:00",
+      "url": "https://steamcommunity.com/profiles/76561198007420727/recommended/3052450",
       "engagement": 0,
       "is_hot": false,
-      "author": "/u/Remarkable_Cap20",
-      "tags": [],
+      "author": "76561198007420727",
+      "tags": [
+        "russian"
+      ],
+      "language": "russian",
       "metadata": {
-        "via": "rss"
+        "voted_up": false,
+        "playtime_forever": 52,
+        "votes_up": 0,
+        "timestamp_created": 1779529801
       },
-      "media_url": "https://preview.redd.it/ka0caq17hp2h1.jpg?width=140&amp;height=63&amp;auto=webp&amp;s=283046dab776e16d267330de8b3a98ddf6d6d5d8",
-      "content_type": "image",
-      "lang": "en",
+      "lang": "",
       "platform_region": "global"
     },
     {
@@ -1194,7 +1234,7 @@
       "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
       "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.485037+00:00",
+      "time": "2026-05-23T11:54:21.903572+00:00",
       "url": "https://m.weibo.cn/status/5297404375991444",
       "engagement": 0,
       "is_hot": false,
@@ -1209,37 +1249,7 @@
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.501821+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
-      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
-      "source": "weibo",
-      "time": "2026-05-23T10:21:45.514257+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
-      "source": "weibo",
-      "time": "2026-05-23T10:21:45.527104+00:00",
+      "time": "2026-05-23T11:54:21.918752+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1254,7 +1264,37 @@
       "title": "12758【投稿】忘却前夜。我主任",
       "summary": "12758【投稿】忘却前夜。我主任",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.546681+00:00",
+      "time": "2026-05-23T11:54:21.929998+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
+      "source": "weibo",
+      "time": "2026-05-23T11:54:21.940942+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
+      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
+      "source": "weibo",
+      "time": "2026-05-23T11:54:21.951939+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1269,7 +1309,22 @@
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.571355+00:00",
+      "time": "2026-05-23T11:54:21.962474+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
+      "summary": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
+      "source": "weibo",
+      "time": "2026-05-23T11:54:21.973060+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1284,7 +1339,7 @@
       "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
       "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.583569+00:00",
+      "time": "2026-05-23T11:54:21.983183+00:00",
       "url": "https://m.weibo.cn/status/5300037031563389",
       "engagement": 0,
       "is_hot": false,
@@ -1299,22 +1354,7 @@
       "title": "忘却前夜忘却前夜\n【戈利亚生贺17h/12:00】Moonlight\nMoonlight\n灿烂耀眼必然等待\n当昂首的视线成为与生俱来\n——威神V(WayV)《M",
       "summary": "忘却前夜忘却前夜\n【戈利亚生贺17h/12:00】Moonlight\nMoonlight\n灿烂耀眼必然等待\n当昂首的视线成为与生俱来\n——威神V(WayV)《Moonlight (新月)》\n代发，约稿展示\n底图：彼彼彼岸花\n约稿展示",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.598935+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
-      "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
-      "source": "weibo",
-      "time": "2026-05-23T10:21:45.610554+00:00",
+      "time": "2026-05-23T11:54:21.997452+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1329,7 +1369,7 @@
       "title": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
       "summary": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.621816+00:00",
+      "time": "2026-05-23T11:54:22.007800+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1344,7 +1384,7 @@
       "title": "全世界都来玩5771好吧 联动送角色本体和250抽",
       "summary": "全世界都来玩5771好吧 联动送角色本体和250抽",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.633197+00:00",
+      "time": "2026-05-23T11:54:22.018224+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1356,10 +1396,25 @@
       "platform_region": "cn"
     },
     {
-      "title": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗",
-      "summary": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗？\"\n守密人：（握一下尤乌哈希的心脏）\nP1为背景糊弄学产物，P2P3是突然想起相册里有之前没有用上的背景。",
+      "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
+      "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.644387+00:00",
+      "time": "2026-05-23T11:54:22.028434+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "zh",
+      "platform_region": "cn"
+    },
+    {
+      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "source": "weibo",
+      "time": "2026-05-23T11:54:22.039581+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1374,7 +1429,7 @@
       "title": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗",
       "summary": "#忘却前夜# 忘却前夜\n✦第5章「织命剧场」关卡流程地图总览·星辰篇✦\n本期给大家带来的是星辰篇·第5章的流程图。根据更新部分分为4张图。\n\n请注意：\n【褪色遗骨】取代「联络点」成为关卡中的主要回复生命的遭遇。\n【灰烬遗迹】取代「融痕」成为关卡中的主要购买造物的遭遇。并且，效果也与「 ...全文",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.655667+00:00",
+      "time": "2026-05-23T11:54:22.050261+00:00",
       "url": "https://m.weibo.cn/status/5294895855830265",
       "engagement": 0,
       "is_hot": false,
@@ -1386,10 +1441,10 @@
       "platform_region": "cn"
     },
     {
-      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
-      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "title": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗",
+      "summary": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗？\"\n守密人：（握一下尤乌哈希的心脏）\nP1为背景糊弄学产物，P2P3是突然想起相册里有之前没有用上的背景。",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.670538+00:00",
+      "time": "2026-05-23T11:54:22.064348+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1401,25 +1456,10 @@
       "platform_region": "cn"
     },
     {
-      "title": "忘却前夜 |ω•`)",
-      "summary": "忘却前夜 |ω•`)",
+      "title": "不行了现在被小脑控制只想打忘却前夜",
+      "summary": "不行了现在被小脑控制只想打忘却前夜",
       "source": "weibo",
-      "time": "2026-05-23T10:21:45.681736+00:00",
-      "url": "",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [
-        "weibo"
-      ],
-      "lang": "zh",
-      "platform_region": "cn"
-    },
-    {
-      "title": "wtf忘却前夜和沙耶之歌联动",
-      "summary": "wtf忘却前夜和沙耶之歌联动",
-      "source": "weibo",
-      "time": "2026-05-23T10:21:45.692643+00:00",
+      "time": "2026-05-23T11:54:22.074982+00:00",
       "url": "",
       "engagement": 0,
       "is_hot": false,
@@ -1483,19 +1523,6 @@
       "platform_region": "global"
     },
     {
-      "title": "Cat guide - Day 6",
-      "summary": "Hello, Angbak from Discord here for day 67. Reccomended support - G Murphy, player codes below  100786036 100377735 100774329 101051873 100201387 100439362 100692667 100389537 100020854 101183885 100616389 Kidnap whale supporter  https://www.reddit.com/r/Morimens/s/6MrIxG53dR ________________________________________________ Unfortunately it isnt straight forward this time. There will be some freestyling involved but here&#39;s the general idea. Preparation  Team comp - Lemurian units in this order (most hp to least) Tulu Goliath Myriam  Farros  + 1 ultra unit Posse : voices in my head (weakness applier) ________________________________________________ Priorities Cards  Play G.Murphy waltz in blue stance to scale up tentacle damage and tentacle count Play G.Murphy defense/strikes to gain aliemus (energy) Rouse G.Murphy to gain Aliemus   It doesn&#39;t matter if you end with arith remaining. Do not use G.murphy 0 cost  Tentacle stance  Whenever the boss attacks, try to white stance   Posse 1. Whenever boss attacks, use voices to apply weakness ________________________________________________ Burst turn Burst when the following conditions are met  G.Murphy has over exalt You have the support card (post turn 4) You have 1 Waltz in hand (3 cost)  How to burst Support cards   Use your support card and look for the following priorities Increase damage (crit/tentacle damage/str)  - use all damage increasing support cards   Stalling (shield/heal)  - use all defensive cards to stall for sacrifice to kill  Burst  Check support card Use voices posse Activate red stance  Gmurphy overexalt  Play waltz in descending order cost (3 &gt; 2 &gt; 1)   You should be able to clear consistently with these general guide. Cheers~  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-23T04:00:28+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tl5lgf/cat_guide_day_6/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/Angbak94",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "What awakeners are OE dependent?",
       "summary": "Hi new player just wondering if someone could tell me what characters want their OE in order to be good so I can know to skip/invest in them  &#32; submitted by &#32;  /u/teenboob   [link] &#32; [comments]",
       "source": "reddit",
@@ -1504,6 +1531,19 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/teenboob",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "Cat guide - Day 6",
+      "summary": "Hello, Angbak from Discord here for day 67. Reccomended support - G Murphy, player codes below  100786036 100377735 100774329 101051873 100201387 100439362 100692667 100389537 100020854 101183885 100616389 Kidnap whale supporter  https://www.reddit.com/r/Morimens/s/6MrIxG53dR ________________________________________________ Unfortunately it isnt straight forward this time. There will be some freestyling involved but here&#39;s the general idea. Preparation  Team comp - Lemurian units in this order (most hp to least) Tulu Goliath Myriam  Farros  + 1 ultra unit Posse : voices in my head (weakness applier) ________________________________________________ Priorities Cards  Play G.Murphy waltz in blue stance to scale up tentacle damage and tentacle count Play G.Murphy defense/strikes to gain aliemus (energy) Rouse G.Murphy to gain Aliemus   It doesn&#39;t matter if you end with arith remaining. Do not use G.murphy 0 cost  Tentacle stance  Whenever the boss attacks, try to white stance   Posse 1. Whenever boss attacks, use voices to apply weakness ________________________________________________ Burst turn Burst when the following conditions are met  G.Murphy has over exalt You have the support card (post turn 4) You have 1 Waltz in hand (3 cost)  How to burst Support cards   Use your support card and look for the following priorities Increase damage (crit/tentacle damage/str)  - use all damage increasing support cards   Stalling (shield/heal)  - use all defensive cards to stall for sacrifice to kill  Burst  Check support card Use voices posse Activate red stance  Gmurphy overexalt  Play waltz in descending order cost (3 &gt; 2 &gt; 1)   You should be able to clear consistently with these general guide. Cheers~  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-23T04:00:28+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tl5lgf/cat_guide_day_6/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Angbak94",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1522,6 +1562,19 @@
       "platform_region": "global"
     },
     {
+      "title": "Download in game cutscene?",
+      "summary": "Where can I find scenepacks for this game. Background , cg cutscene etc  &#32; submitted by &#32;  /u/Soft-Psychology8018   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-23T10:33:20+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tlcv84/download_in_game_cutscene/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Soft-Psychology8018",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
       "title": "How is this even possible lol",
       "summary": "Pulling arc 2 kaleido banner hoping for my castor oe yet I pulled corposant and her wod immediately after lol  &#32; submitted by &#32;  /u/Fun_Injury_3284   [link] &#32; [comments]",
       "source": "reddit",
@@ -1530,19 +1583,6 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/Fun_Injury_3284",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
-      "title": "What to prioritize?",
-      "summary": "Should get more dues for caecus or pick a new character? I watched some guides and they to get Cae to E3 but I don&#39;t full trust that so I need some help  &#32; submitted by &#32;  /u/Pleasant-War-3919   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-23T10:03:53+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tlccgd/what_to_prioritize/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/Pleasant-War-3919",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1595,6 +1635,32 @@
       "engagement": 0,
       "is_hot": false,
       "author": "u//u/Kubumen",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "X-th question about 24h vs. Kaleido banner",
+      "summary": "Sorry if this one was asked plenty of times this past week, but I didn&#39;t see any Megathread linked in the two pinned posts. New player. So far got Arachne, Hameln and Tawil (E1) as limiteds.  I&#39;m still not sure if I should try to get Thais and Horla from the 24h banners or if I should skip and go all in on the Arc2 Kaleido banner.  Or should I limit myself to only 1 character from the 24h banners since the hard pity is so high ?  &#32; submitted by &#32;  /u/Woll_e   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-23T11:25:38+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tlduuq/xth_question_about_24h_vs_kaleido_banner/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/Woll_e",
+      "tags": [],
+      "lang": "en",
+      "platform_region": "global"
+    },
+    {
+      "title": "What account is better value?",
+      "summary": "Hello! I decided to reroll a little bit as a new player and managed to get two account that I like. I mostly started to play this game due to the saya collab, so I was wondering which of these accounts would work best with her, and overall which one has better value? Also any team comp recommendations would be appreciated! ^^  &#32; submitted by &#32;  /u/AttentionTurbulent84   [link] &#32; [comments]",
+      "source": "reddit",
+      "time": "2026-05-23T10:54:30+00:00",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tld99u/what_account_is_better_value/",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "u//u/AttentionTurbulent84",
       "tags": [],
       "lang": "en",
       "platform_region": "global"
@@ -1678,19 +1744,6 @@
       "platform_region": "global"
     },
     {
-      "title": "Struggling with act 2",
-      "summary": "so, I just finished the first chapter of act 2 and I felt a huge difficulty spike, going from mostly being able to get all 3 stars and using maybe 1 emergency gnosis on chapter bosses or some thougher &quot;dungeon&quot; bosses to barelly getting 1 star and needing a gnosis every other chapter and multiple gnosis on the final battle, so this make me think that there must be something wrong with my comp, but idk if I just need to farm covenants or smth. I tried using daffodil intead of salvadore, but I felt like I simply couldnt survive long enough to scale until I killed the enemies, they just hit too hard for me to shield through. I tryed to make 24 work as well, because I heard that she&#39;s good, but I got to the same problem of not being able to tank long enough to kill them. So, any advice? should I just gather more resources to level them up, should I get higher level covenants or what? My keeper level is 54 btw.  &#32; submitted by &#32;  /u/Remarkable_Cap20   [link] &#32; [comments]",
-      "source": "reddit",
-      "time": "2026-05-22T15:31:45+00:00",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tkmfqx/struggling_with_act_2/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "u//u/Remarkable_Cap20",
-      "tags": [],
-      "lang": "en",
-      "platform_region": "global"
-    },
-    {
       "title": "Morimens × Saya no Uta Collab PV - Song of Perennial Wandering",
       "summary": "VA: Midori Kawamura Vocals: Emi Evans   &#32; submitted by &#32;  /u/MerliniStyle   [link] &#32; [comments]",
       "source": "reddit",
@@ -1702,6 +1755,21 @@
       "tags": [],
       "lang": "en",
       "platform_region": "global"
+    },
+    {
+      "title": "忘却前夜 |ω•`)",
+      "summary": "忘却前夜 |ω•`)",
+      "source": "weibo",
+      "time": "2026-05-23T11:55:23.303317+00:00",
+      "url": "",
+      "engagement": 0,
+      "is_hot": false,
+      "author": "",
+      "tags": [
+        "weibo"
+      ],
+      "lang": "",
+      "platform_region": ""
     },
     {
       "title": "ゴリアテ誕生日おめでとう！！！",
@@ -1970,23 +2038,10 @@
       "content_type": "image"
     },
     {
-      "title": "",
-      "summary": "",
-      "source": "pixiv",
-      "time": "2026-05-23T10:23:03.862528+00:00",
-      "url": "https://www.pixiv.net/artworks/",
-      "engagement": 0,
-      "is_hot": false,
-      "author": "",
-      "tags": [],
-      "lang": "",
-      "platform_region": "global"
-    },
-    {
       "title": "망각전야) 사야의노래 콜라보 갑자기 드는 생각",
       "summary": "설마사야의 노래에 나온 사야랑은 다른 개체의 사야일까?",
       "source": "ruliweb",
-      "time": "2026-05-23T10:23:12.749802+00:00",
+      "time": "2026-05-23T11:55:51.938145+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75279741",
       "engagement": 0,
       "is_hot": false,
@@ -1999,7 +2054,7 @@
       "title": "망각전야)와!! 야겜 콜라보!!",
       "summary": "생각해보면 사야의 노래는 해본적도 없는데 설정이랑 스토리만 보고 좋아함 ㅋㅋ",
       "source": "ruliweb",
-      "time": "2026-05-23T10:23:12.749944+00:00",
+      "time": "2026-05-23T11:55:51.938281+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300143/read/75279644",
       "engagement": 0,
       "is_hot": false,
@@ -2090,7 +2145,7 @@
       "title": "모리멘스 × 사야의 노래 V2.5.1 PV「영원한 방랑의 노래」",
       "summary": "「사랑이 살과 피를 얻어 형체를 이룰 때……」「그건 우리 둘만의 아름답고, 또 잔혹한 세계가 될거야. 」✦ 사야 CV: 카와무...",
       "source": "ruliweb",
-      "time": "2026-05-23T10:23:13.657294+00:00",
+      "time": "2026-05-23T11:55:53.095523+00:00",
       "url": "https://bbs.ruliweb.com/etcs/board/300007/read/2347684",
       "engagement": 0,
       "is_hot": false,
@@ -2220,7 +2275,7 @@
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
       "source": "stopgame",
-      "time": "2026-05-23T10:23:15.877773+00:00",
+      "time": "2026-05-23T11:55:54.799842+00:00",
       "url": "https://stopgame.ru/game/morimens",
       "engagement": 0,
       "is_hot": false,
@@ -2234,7 +2289,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-05-11T15:09:52+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSyhGoEn12uqXd6ouRDz0ql5PIysllvCDYVqXa8Fplpd9oeClM7ypOuHIt1lkiixuig1iOnfrGwjhoQcEkLw1WFCJGMlC1KN_18DF9u-ekCHbipYEq1VQI3CuoBfvExa1u9RyaWDFmkowXp4xx2eCc8KKhXIm7jwa3OiysGhOpOVrvIBO3lzkrgm41Xaqz2RRPWmZSp9SqzfZS_ZqrtWcH3v1AfaFW2DefQ..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=DB9FB25465748F882425765DAB87A11C241F9BE76A118015",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSyhGoEn12uqXfhTU9luqRfxPIysllvCDYVqXa8Fplpd9oeClM7ypOuHIt1lkiixuig1iOnfrGwjhoQcEkLw1WFCJGMlC1KN_18DF9u-ekCHbipYEq1VQI3CuoBfvExa1u9nW2vg1IHf3E3ZXIPO4t4YjQ_DgNSISqE6eeIDd0zeH7wxIYss0HwGFu_Z1Y-GbrohMpUurOPJgAYFMhT3EL1hf_71bqkOtiw..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=DC29200748CE23FCB8BEEBC36D874AE0B9E3A3E36A1195D0",
       "engagement": 0,
       "is_hot": false,
       "author": "",
@@ -2247,7 +2302,7 @@
       "summary": "",
       "source": "weixin",
       "time": "2026-05-11T15:09:52+00:00",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSyhGoEn12uqX5dioQ0CK6gxPIysllvCDYVqXa8Fplpd9oeClM7ypOuHIt1lkiixuig1iOnfrGwjhoQcEkLw1WFCJGMlC1KN_18DF9u-ekCHbipYEq1VQI3CuoBfvExa1u02FTyAldcE0ZDRHxJXHdwsMclOcRqibxpRJQYzjcXXy36Fz3bXzhi92udI-atYLKYOqFEKP-03b4Bl2j1cQKIBhlgeRt7bSzA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=DB9FD7C30711E9EA4543143CCC470965464CD24D6A11801B",
+      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgSyhGoEn12uqXwt5rOj2hKdhPIysllvCDYVqXa8Fplpd9oeClM7ypOuHIt1lkiixuig1iOnfrGwjhoQcEkLw1WFCJGMlC1KN_18DF9u-ekCHbipYEq1VQI3CuoBfvExa1u7CERKSv_dt-WaHLbpJrVQULsagKJT7lgjN3rP9k3tkb21mCGGGs9yjDm-2977kxNEf7IZUzT29cpYLyV55gIxjyPfCoem7FzA..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=DC292B7A02826EB7F3F5A18E20A3BE4CF4DC614D6A1195D2",
       "engagement": 0,
       "is_hot": false,
       "author": "",
