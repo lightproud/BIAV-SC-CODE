@@ -1,8 +1,8 @@
 {
   "date": "2026-05-24",
-  "archived_at": "2026-05-23T18:56:35.097867+00:00",
+  "archived_at": "2026-05-23T20:03:59.206691+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 16,
   "items": [
     {
       "source": "steam",
@@ -228,6 +228,21 @@
       "review": "pretty good so far",
       "timestamp_created": 1779552771,
       "playtime_forever": 732
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T18:49:54+00:00",
+      "lang": "french",
+      "title": "[正面] Honnêtement le jeu est excellent. L'histoire est f...",
+      "summary": "Honnêtement le jeu est excellent. L'histoire est folle, les récompenses sont hyper généreuses, les designs INCROYABLES. Le gameplay est un peu différent de ce dont j'ai l'habitude et vraiment j'adore, 60h de jeu pour l'instant et je ne m'en lasse pas, je sens que je m'améliore et que je me familiarise avec le tout c'est juste génial. Donc voilà, je vous le recommande sincèrement (en plus c'est gratuit donc pas d'excuses).",
+      "url": "https://steamcommunity.com/profiles/76561199379263530/recommended/3052450",
+      "author": "76561199379263530",
+      "engagement": 0,
+      "language": "french",
+      "voted_up": true,
+      "review": "Honnêtement le jeu est excellent. L'histoire est folle, les récompenses sont hyper généreuses, les designs INCROYABLES. Le gameplay est un peu différent de ce dont j'ai l'habitude et vraiment j'adore, 60h de jeu pour l'instant et je ne m'en lasse pas, je sens que je m'améliore et que je me familiarise avec le tout c'est juste génial. Donc voilà, je vous le recommande sincèrement (en plus c'est gratuit donc pas d'excuses).",
+      "timestamp_created": 1779562194,
+      "playtime_forever": 3653
     }
   ]
 }

@@ -6740,6 +6740,13 @@
       "title": "【忘却前夜 × 沙耶の唄】公式コラボPV「悠久なる旅の歌」",
       "time": "2026-05-22T11:58:23.603685+00:00",
       "downloaded_at": "2026-05-23T06:01:12.473250+00:00"
+    },
+    "https://i.ytimg.com/vi/YhBZQtcv0t0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB9FwSevVF8aKdvtcmLl73fI3zL4Q": {
+      "filename": "youtube_4a83101c12a1a15a.jpg",
+      "source": "youtube",
+      "title": "[Morimens] Endgame preset teams, a series on meta end game comps Intro (Part 1)",
+      "time": "2026-05-23T19:01:06.963622+00:00",
+      "downloaded_at": "2026-05-23T20:03:57.002132+00:00"
     }
   },
   "failed": {
@@ -10262,6 +10269,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-23T18:56:35.018963+00:00"
+    },
+    "https://preview.redd.it/vj1gwlg2tx2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2624019e306906acc7917e6f7982d4336a312c6b": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T20:03:57.521900+00:00"
+    },
+    "https://preview.redd.it/7ka3od9rrx2h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=e12d2c38558bc0160b8e4822ed4394fbd6e20f8e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T20:03:57.869696+00:00"
+    },
+    "https://i.ytimg.com/vi/9eC2apY2Qpc/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBXPvTpPsh8U3WR-gLFiDr4OROBug": {
+      "source": "youtube",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T20:03:59.135252+00:00"
     }
   },
   "archived": []

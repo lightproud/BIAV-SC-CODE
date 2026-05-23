@@ -1,5 +1,5 @@
 {
-  "collected_at": "2026-05-23T18:56:34.333742+00:00",
+  "collected_at": "2026-05-23T20:03:56.357903+00:00",
   "source": "steam",
   "item_count": 15,
   "items": [
@@ -17,6 +17,21 @@
       "review": "卡牌构筑游戏硬是搞成数值养成游戏",
       "timestamp_created": 1779504065,
       "playtime_forever": 1594
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T18:49:54+00:00",
+      "lang": "french",
+      "title": "[正面] Honnêtement le jeu est excellent. L'histoire est f...",
+      "summary": "Honnêtement le jeu est excellent. L'histoire est folle, les récompenses sont hyper généreuses, les designs INCROYABLES. Le gameplay est un peu différent de ce dont j'ai l'habitude et vraiment j'adore, 60h de jeu pour l'instant et je ne m'en lasse pas, je sens que je m'améliore et que je me familiarise avec le tout c'est juste génial. Donc voilà, je vous le recommande sincèrement (en plus c'est gratuit donc pas d'excuses).",
+      "url": "https://steamcommunity.com/profiles/76561199379263530/recommended/3052450",
+      "author": "76561199379263530",
+      "engagement": 0,
+      "language": "french",
+      "voted_up": true,
+      "review": "Honnêtement le jeu est excellent. L'histoire est folle, les récompenses sont hyper généreuses, les designs INCROYABLES. Le gameplay est un peu différent de ce dont j'ai l'habitude et vraiment j'adore, 60h de jeu pour l'instant et je ne m'en lasse pas, je sens que je m'améliore et que je me familiarise avec le tout c'est juste génial. Donc voilà, je vous le recommande sincèrement (en plus c'est gratuit donc pas d'excuses).",
+      "timestamp_created": 1779562194,
+      "playtime_forever": 3653
     },
     {
       "source": "steam",
@@ -181,7 +196,7 @@
       "voted_up": true,
       "review": "I played for the first time just a month after the game came out. I didnt play for long as I only logged in for 2 days as the gameplay didnt capture me at the time. I thought the game was charming and had a good artstyle but It stuck with me. After I saw a video about the anniversary and how the game was going to shut down and how the players saved the game, I decided to give the game another shot.... and I'm so happy I did. This game is so good, I wished I played it more back before the anniversary but I have very quickly 5x my playtime and completed the 2nd chapter and I will say. You will like this game if you're okay with a little death and slay the spire gameplay. Morimens.... is something to be remembered.",
       "timestamp_created": 1779510945,
-      "playtime_forever": 959
+      "playtime_forever": 989
     },
     {
       "source": "steam",
@@ -211,22 +226,7 @@
       "voted_up": true,
       "review": "还不错的卡牌构筑二游",
       "timestamp_created": 1779491941,
-      "playtime_forever": 2236
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-22T19:23:48+00:00",
-      "lang": "english",
-      "title": "[正面] Good gacha with nice visuals.",
-      "summary": "Good gacha with nice visuals.",
-      "url": "https://steamcommunity.com/profiles/76561198699310492/recommended/3052450",
-      "author": "76561198699310492",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "Good gacha with nice visuals.",
-      "timestamp_created": 1779477828,
-      "playtime_forever": 463
+      "playtime_forever": 2264
     }
   ]
 }
