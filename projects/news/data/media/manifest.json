@@ -10232,6 +10232,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-23T11:57:15.517924+00:00"
+    },
+    "https://preview.redd.it/pxvoxp35nv2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=c32c914ca802f53013314d7c35487eff1988ff55": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T13:00:31.440535+00:00"
     }
   },
   "archived": []
