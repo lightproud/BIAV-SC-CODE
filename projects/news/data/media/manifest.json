@@ -6726,6 +6726,13 @@
       "title": "[DC] ponponnyaru@🔸綜合討論: 好像终于能还清债了",
       "time": "2026-05-22T05:58:27.643000+00:00",
       "downloaded_at": "2026-05-22T20:30:53.579155+00:00"
+    },
+    "https://i.ytimg.com/vi/tieCSCC64TI/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC_uVfkrTcA2zHS2iHu8xgKCKCubA": {
+      "filename": "youtube_6c1353cd3a796aa2.jpg",
+      "source": "youtube",
+      "title": "Morimens F2P with ONLY characters from Kaleido Recollections... AGAIN",
+      "time": "2026-05-23T01:26:05.783982+00:00",
+      "downloaded_at": "2026-05-23T02:28:51.806357+00:00"
     }
   },
   "failed": {
@@ -10173,6 +10180,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-23T00:00:22.854922+00:00"
+    },
+    "https://preview.redd.it/1plcio2i6s2h1.png?width=140&amp;height=87&amp;auto=webp&amp;s=af6e9f095a36fb4ab4821d2a47371ced370813f9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T02:28:52.295808+00:00"
+    },
+    "https://preview.redd.it/y578s0hxis2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=09453248d2fdb0eccc62c767598d29b6b358912a": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T02:28:52.623841+00:00"
     }
   },
   "archived": []
