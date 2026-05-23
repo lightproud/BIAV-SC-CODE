@@ -1,8 +1,53 @@
 {
-  "collected_at": "2026-05-23T13:00:30.698215+00:00",
+  "collected_at": "2026-05-23T14:30:11.659005+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 11,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-23T02:41:05+00:00",
+      "lang": "schinese",
+      "title": "[负面] 卡牌构筑游戏硬是搞成数值养成游戏",
+      "summary": "卡牌构筑游戏硬是搞成数值养成游戏",
+      "url": "https://steamcommunity.com/profiles/76561198128071694/recommended/3052450",
+      "author": "76561198128071694",
+      "engagement": 1,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "卡牌构筑游戏硬是搞成数值养成游戏",
+      "timestamp_created": 1779504065,
+      "playtime_forever": 1594
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T13:38:38+00:00",
+      "lang": "spanish",
+      "title": "[正面] El juego es muy bueno. Tiene una buena historia, u...",
+      "summary": "El juego es muy bueno. Tiene una buena historia, una gran banda sonora que te podes quedar minimo una hora escuchando sin hacer nada (ya lo hice), el juego no es como otros gachas, este ayuda mucho al jugador a progresar sin meter transacciones abusivas para el progreso. La verdad 10/10",
+      "url": "https://steamcommunity.com/profiles/76561199534208668/recommended/3052450",
+      "author": "76561199534208668",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "El juego es muy bueno. Tiene una buena historia, una gran banda sonora que te podes quedar minimo una hora escuchando sin hacer nada (ya lo hice), el juego no es como otros gachas, este ayuda mucho al jugador a progresar sin meter transacciones abusivas para el progreso. La verdad 10/10",
+      "timestamp_created": 1779543518,
+      "playtime_forever": 841
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T13:25:30+00:00",
+      "lang": "english",
+      "title": "[正面] man i just love the character design, although we...",
+      "summary": "man i just love the character design, although we def need more male characters.",
+      "url": "https://steamcommunity.com/profiles/76561198208531917/recommended/3052450",
+      "author": "76561198208531917",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "man i just love the character design, although we def need more male characters.",
+      "timestamp_created": 1779542730,
+      "playtime_forever": 474
+    },
     {
       "source": "steam",
       "time": "2026-05-23T09:50:01+00:00",
@@ -76,7 +121,7 @@
       "voted_up": true,
       "review": "I played for the first time just a month after the game came out. I didnt play for long as I only logged in for 2 days as the gameplay didnt capture me at the time. I thought the game was charming and had a good artstyle but It stuck with me. After I saw a video about the anniversary and how the game was going to shut down and how the players saved the game, I decided to give the game another shot.... and I'm so happy I did. This game is so good, I wished I played it more back before the anniversary but I have very quickly 5x my playtime and completed the 2nd chapter and I will say. You will like this game if you're okay with a little death and slay the spire gameplay. Morimens.... is something to be remembered.",
       "timestamp_created": 1779510945,
-      "playtime_forever": 825
+      "playtime_forever": 882
     },
     {
       "source": "steam",
@@ -92,21 +137,6 @@
       "review": "KEYFLARE! GO EVERYSINGLE ABILITY",
       "timestamp_created": 1779506230,
       "playtime_forever": 2433
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-23T02:41:05+00:00",
-      "lang": "schinese",
-      "title": "[负面] 卡牌构筑游戏硬是搞成数值养成游戏",
-      "summary": "卡牌构筑游戏硬是搞成数值养成游戏",
-      "url": "https://steamcommunity.com/profiles/76561198128071694/recommended/3052450",
-      "author": "76561198128071694",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "卡牌构筑游戏硬是搞成数值养成游戏",
-      "timestamp_created": 1779504065,
-      "playtime_forever": 1594
     },
     {
       "source": "steam",
