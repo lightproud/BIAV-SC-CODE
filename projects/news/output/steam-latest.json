@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-23T20:03:56.357903+00:00",
+  "collected_at": "2026-05-23T21:47:52.249716+00:00",
   "source": "steam",
-  "item_count": 15,
+  "item_count": 17,
   "items": [
     {
       "source": "steam",
@@ -20,6 +20,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-05-23T20:40:44+00:00",
+      "lang": "spanish",
+      "title": "[正面] lo mejor de las cartas los peor de las conversacio...",
+      "summary": "lo mejor de las cartas los peor de las conversaciones, muy pesadas para mi gusto, aun asi lo recomiendo si te gusta este tipo de juegos",
+      "url": "https://steamcommunity.com/profiles/76561198243946728/recommended/3052450",
+      "author": "76561198243946728",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "lo mejor de las cartas los peor de las conversaciones, muy pesadas para mi gusto, aun asi lo recomiendo si te gusta este tipo de juegos",
+      "timestamp_created": 1779568844,
+      "playtime_forever": 1427
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T20:25:34+00:00",
+      "lang": "russian",
+      "title": "[正面] Мощная игра,залип сразу на 7 часов,может даже и до...",
+      "summary": "Мощная игра,залип сразу на 7 часов,может даже и донат подключию",
+      "url": "https://steamcommunity.com/profiles/76561198139149769/recommended/3052450",
+      "author": "76561198139149769",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Мощная игра,залип сразу на 7 часов,может даже и донат подключию",
+      "timestamp_created": 1779567934,
+      "playtime_forever": 462
+    },
+    {
+      "source": "steam",
       "time": "2026-05-23T18:49:54+00:00",
       "lang": "french",
       "title": "[正面] Honnêtement le jeu est excellent. L'histoire est f...",
@@ -31,7 +61,7 @@
       "voted_up": true,
       "review": "Honnêtement le jeu est excellent. L'histoire est folle, les récompenses sont hyper généreuses, les designs INCROYABLES. Le gameplay est un peu différent de ce dont j'ai l'habitude et vraiment j'adore, 60h de jeu pour l'instant et je ne m'en lasse pas, je sens que je m'améliore et que je me familiarise avec le tout c'est juste génial. Donc voilà, je vous le recommande sincèrement (en plus c'est gratuit donc pas d'excuses).",
       "timestamp_created": 1779562194,
-      "playtime_forever": 3653
+      "playtime_forever": 3761
     },
     {
       "source": "steam",
@@ -196,7 +226,7 @@
       "voted_up": true,
       "review": "I played for the first time just a month after the game came out. I didnt play for long as I only logged in for 2 days as the gameplay didnt capture me at the time. I thought the game was charming and had a good artstyle but It stuck with me. After I saw a video about the anniversary and how the game was going to shut down and how the players saved the game, I decided to give the game another shot.... and I'm so happy I did. This game is so good, I wished I played it more back before the anniversary but I have very quickly 5x my playtime and completed the 2nd chapter and I will say. You will like this game if you're okay with a little death and slay the spire gameplay. Morimens.... is something to be remembered.",
       "timestamp_created": 1779510945,
-      "playtime_forever": 989
+      "playtime_forever": 1013
     },
     {
       "source": "steam",
@@ -226,7 +256,7 @@
       "voted_up": true,
       "review": "还不错的卡牌构筑二游",
       "timestamp_created": 1779491941,
-      "playtime_forever": 2264
+      "playtime_forever": 2384
     }
   ]
 }
