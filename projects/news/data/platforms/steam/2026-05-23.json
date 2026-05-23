@@ -1,8 +1,8 @@
 {
   "date": "2026-05-23",
-  "archived_at": "2026-05-23T13:00:31.515026+00:00",
+  "archived_at": "2026-05-23T14:30:12.438200+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 15,
   "items": [
     {
       "source": "steam",
@@ -198,6 +198,36 @@
       "review": "Игра очень красивая, но вообще не работает, зайти невозможно, ничто не помогает. Было бы хорошо, если бы разработчики это починили.",
       "timestamp_created": 1779529801,
       "playtime_forever": 52
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T13:38:38+00:00",
+      "lang": "spanish",
+      "title": "[正面] El juego es muy bueno. Tiene una buena historia, u...",
+      "summary": "El juego es muy bueno. Tiene una buena historia, una gran banda sonora que te podes quedar minimo una hora escuchando sin hacer nada (ya lo hice), el juego no es como otros gachas, este ayuda mucho al jugador a progresar sin meter transacciones abusivas para el progreso. La verdad 10/10",
+      "url": "https://steamcommunity.com/profiles/76561199534208668/recommended/3052450",
+      "author": "76561199534208668",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "El juego es muy bueno. Tiene una buena historia, una gran banda sonora que te podes quedar minimo una hora escuchando sin hacer nada (ya lo hice), el juego no es como otros gachas, este ayuda mucho al jugador a progresar sin meter transacciones abusivas para el progreso. La verdad 10/10",
+      "timestamp_created": 1779543518,
+      "playtime_forever": 841
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-23T13:25:30+00:00",
+      "lang": "english",
+      "title": "[正面] man i just love the character design, although we...",
+      "summary": "man i just love the character design, although we def need more male characters.",
+      "url": "https://steamcommunity.com/profiles/76561198208531917/recommended/3052450",
+      "author": "76561198208531917",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "man i just love the character design, although we def need more male characters.",
+      "timestamp_created": 1779542730,
+      "playtime_forever": 474
     }
   ]
 }
