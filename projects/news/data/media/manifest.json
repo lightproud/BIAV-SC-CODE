@@ -10247,6 +10247,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-23T15:57:50.857319+00:00"
+    },
+    "https://preview.redd.it/0yic3ewwuw2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=568fedd96f7612cda172314747afe78ed8d487c5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-23T16:51:41.451562+00:00"
     }
   },
   "archived": []
