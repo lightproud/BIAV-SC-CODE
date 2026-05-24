@@ -1,8 +1,8 @@
 {
   "date": "2026-05-24",
-  "archived_at": "2026-05-24T14:25:36.437506+00:00",
+  "archived_at": "2026-05-24T15:57:18.875481+00:00",
   "source": "steam",
-  "item_count": 33,
+  "item_count": 34,
   "items": [
     {
       "source": "steam",
@@ -498,6 +498,21 @@
       "review": "모리나가 예쁨",
       "timestamp_created": 1779630204,
       "playtime_forever": 44
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T15:00:44+00:00",
+      "lang": "schinese",
+      "title": "[正面] 二次元和克苏鲁新颖的结合",
+      "summary": "二次元和克苏鲁新颖的结合",
+      "url": "https://steamcommunity.com/profiles/76561199577401529/recommended/3052450",
+      "author": "76561199577401529",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "二次元和克苏鲁新颖的结合",
+      "timestamp_created": 1779634844,
+      "playtime_forever": 227
     }
   ]
 }
