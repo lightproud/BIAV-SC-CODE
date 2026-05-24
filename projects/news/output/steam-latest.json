@@ -1,8 +1,23 @@
 {
-  "collected_at": "2026-05-24T09:16:24.851251+00:00",
+  "collected_at": "2026-05-24T11:09:59.585637+00:00",
   "source": "steam",
-  "item_count": 20,
+  "item_count": 19,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-23T20:25:34+00:00",
+      "lang": "russian",
+      "title": "[正面] Мощная игра,залип сразу на 7 часов,может даже и до...",
+      "summary": "Мощная игра,залип сразу на 7 часов,может даже и донат подключию",
+      "url": "https://steamcommunity.com/profiles/76561198139149769/recommended/3052450",
+      "author": "76561198139149769",
+      "engagement": 2,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Мощная игра,залип сразу на 7 часов,может даже и донат подключию",
+      "timestamp_created": 1779567934,
+      "playtime_forever": 894
+    },
     {
       "source": "steam",
       "time": "2026-05-23T17:25:21+00:00",
@@ -50,21 +65,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-05-23T20:25:34+00:00",
-      "lang": "russian",
-      "title": "[正面] Мощная игра,залип сразу на 7 часов,может даже и до...",
-      "summary": "Мощная игра,залип сразу на 7 часов,может даже и донат подключию",
-      "url": "https://steamcommunity.com/profiles/76561198139149769/recommended/3052450",
-      "author": "76561198139149769",
-      "engagement": 1,
-      "language": "russian",
-      "voted_up": true,
-      "review": "Мощная игра,залип сразу на 7 часов,может даже и донат подключию",
-      "timestamp_created": 1779567934,
-      "playtime_forever": 792
-    },
-    {
-      "source": "steam",
       "time": "2026-05-24T08:49:06+00:00",
       "lang": "schinese",
       "title": "[正面] 行",
@@ -76,7 +76,7 @@
       "voted_up": true,
       "review": "行",
       "timestamp_created": 1779612546,
-      "playtime_forever": 198
+      "playtime_forever": 225
     },
     {
       "source": "steam",
@@ -181,7 +181,7 @@
       "voted_up": true,
       "review": "67",
       "timestamp_created": 1779572739,
-      "playtime_forever": 4129
+      "playtime_forever": 4224
     },
     {
       "source": "steam",
@@ -196,7 +196,7 @@
       "voted_up": true,
       "review": "lo mejor de las cartas los peor de las conversaciones, muy pesadas para mi gusto, aun asi lo recomiendo si te gusta este tipo de juegos",
       "timestamp_created": 1779568844,
-      "playtime_forever": 1453
+      "playtime_forever": 1483
     },
     {
       "source": "steam",
@@ -287,21 +287,6 @@
       "review": "man i just love the character design, although we def need more male characters.",
       "timestamp_created": 1779542730,
       "playtime_forever": 488
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-23T09:50:01+00:00",
-      "lang": "russian",
-      "title": "[负面] Игра очень красивая, но вообще не работает, зайти...",
-      "summary": "Игра очень красивая, но вообще не работает, зайти невозможно, ничто не помогает. Было бы хорошо, если бы разработчики это починили.",
-      "url": "https://steamcommunity.com/profiles/76561198007420727/recommended/3052450",
-      "author": "76561198007420727",
-      "engagement": 0,
-      "language": "russian",
-      "voted_up": false,
-      "review": "Игра очень красивая, но вообще не работает, зайти невозможно, ничто не помогает. Было бы хорошо, если бы разработчики это починили.",
-      "timestamp_created": 1779529801,
-      "playtime_forever": 52
     }
   ]
 }

@@ -6754,6 +6754,20 @@
       "title": "Pollux 101 - A Walkthrough Guide to Morimens Dives",
       "time": "2026-05-24T09:13:28.934898+00:00",
       "downloaded_at": "2026-05-24T09:16:25.501711+00:00"
+    },
+    "https://i.ytimg.com/vi/TbQlAuESopY/hq720.jpg?v=6a12cb14&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBm0Q17xqGOL3JDnxSaG5kANeApyg": {
+      "filename": "youtube_59c72313b4a804e0.jpg",
+      "source": "youtube",
+      "title": "[Morimens] 2 \"Quick\" streams while recording content and light coaching. Unannounced like always",
+      "time": "2026-05-24T11:06:44.237887+00:00",
+      "downloaded_at": "2026-05-24T11:10:01.519822+00:00"
+    },
+    "https://i.ytimg.com/vi/UXRCu0JQ3w8/hq720.jpg?v=6a12da8e&sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCD5LlbYsdYkRKVhPtuCG_ndKZ_BA": {
+      "filename": "youtube_be68628504a6e0b1.jpg",
+      "source": "youtube",
+      "title": "【忘却前夜】風邪から復帰せし不屈の男【６章】",
+      "time": "2026-05-24T11:06:44.760194+00:00",
+      "downloaded_at": "2026-05-24T11:10:02.026971+00:00"
     }
   },
   "failed": {
@@ -10331,6 +10345,26 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-24T06:30:07.725187+00:00"
+    },
+    "https://preview.redd.it/3uuz71a1713h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=3e090b5c7878a7c9a0c2d331cf1a2547ae90d40c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T11:10:00.193987+00:00"
+    },
+    "https://preview.redd.it/k182lgp0613h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=8bf7d6cdede23d0b97592b03e0e91f95b1bbc8f0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T11:10:00.523456+00:00"
+    },
+    "https://preview.redd.it/dz25dgxcc23h1.jpg?width=140&amp;height=61&amp;auto=webp&amp;s=0b42d37c73efd2c4a4b03fd1ebfd3e714a7ffbd5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T11:10:00.851398+00:00"
+    },
+    "https://preview.redd.it/quq0ep36m13h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=9b094e94c54938ea1cd0abc4c3d97a50617ef868": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T11:10:01.178931+00:00"
     }
   },
   "archived": []
