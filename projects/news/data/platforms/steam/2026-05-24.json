@@ -1,8 +1,8 @@
 {
   "date": "2026-05-24",
-  "archived_at": "2026-05-24T06:30:07.791444+00:00",
+  "archived_at": "2026-05-24T09:16:25.580868+00:00",
   "source": "steam",
-  "item_count": 24,
+  "item_count": 28,
   "items": [
     {
       "source": "steam",
@@ -363,6 +363,66 @@
       "review": "โมริเมนส์\nเล่นไป 3ซม กว่า\nเกมplayคล้ายๆ slay the spire\nlore พอใช้ได้ ยังเล่น act 1 ไม่จบ\nart สวยดี\nไม่เหมาะกับคนสมาธิสั้น ต้องอ่านเยอะ\nแปลภาษาไทยค่อนข้างแย่อ่านรู้เรืื่องบ้างไม่รู้เรื่องบ้าง\nโดยรวม 8/10\n\nมาเล่นเพราะอยากได้ น้องกินแมว",
       "timestamp_created": 1779593241,
       "playtime_forever": 198
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T08:49:06+00:00",
+      "lang": "schinese",
+      "title": "[正面] 行",
+      "summary": "行",
+      "url": "https://steamcommunity.com/profiles/76561199890236195/recommended/3052450",
+      "author": "76561199890236195",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "行",
+      "timestamp_created": 1779612546,
+      "playtime_forever": 198
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T08:46:20+00:00",
+      "lang": "schinese",
+      "title": "[正面] 还行，不是不好玩，但是也没有很好玩。可玩性一般但就是还想玩",
+      "summary": "还行，不是不好玩，但是也没有很好玩。可玩性一般但就是还想玩",
+      "url": "https://steamcommunity.com/profiles/76561199469831226/recommended/3052450",
+      "author": "76561199469831226",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "还行，不是不好玩，但是也没有很好玩。可玩性一般但就是还想玩",
+      "timestamp_created": 1779612380,
+      "playtime_forever": 3831
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T07:21:45+00:00",
+      "lang": "spanish",
+      "title": "[正面] Muy bueno",
+      "summary": "Muy bueno",
+      "url": "https://steamcommunity.com/profiles/76561198109482201/recommended/3052450",
+      "author": "76561198109482201",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Muy bueno",
+      "timestamp_created": 1779607305,
+      "playtime_forever": 939
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T06:59:13+00:00",
+      "lang": "english",
+      "title": "[正面] Roguelike deck-builder gameplay inspired by Slay t...",
+      "summary": "Roguelike deck-builder gameplay inspired by Slay the Spire, Lovecraftian aesthetic, and a (generous???) Gacha teambuilding system.\n\nFun and low-maintenance, I hope they stay in business",
+      "url": "https://steamcommunity.com/profiles/76561198035569841/recommended/3052450",
+      "author": "76561198035569841",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Roguelike deck-builder gameplay inspired by Slay the Spire, Lovecraftian aesthetic, and a (generous???) Gacha teambuilding system.\n\nFun and low-maintenance, I hope they stay in business",
+      "timestamp_created": 1779605953,
+      "playtime_forever": 366
     }
   ]
 }
