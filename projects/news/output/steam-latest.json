@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-24T17:54:23.471202+00:00",
+  "collected_at": "2026-05-24T19:02:35.793757+00:00",
   "source": "steam",
-  "item_count": 23,
+  "item_count": 22,
   "items": [
     {
       "source": "steam",
@@ -332,21 +332,6 @@
       "review": "lo mejor de las cartas los peor de las conversaciones, muy pesadas para mi gusto, aun asi lo recomiendo si te gusta este tipo de juegos",
       "timestamp_created": 1779568844,
       "playtime_forever": 1533
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-23T18:49:54+00:00",
-      "lang": "french",
-      "title": "[正面] Honnêtement le jeu est excellent. L'histoire est f...",
-      "summary": "Honnêtement le jeu est excellent. L'histoire est folle, les récompenses sont hyper généreuses, les designs INCROYABLES. Le gameplay est un peu différent de ce dont j'ai l'habitude et vraiment j'adore, 60h de jeu pour l'instant et je ne m'en lasse pas, je sens que je m'améliore et que je me familiarise avec le tout c'est juste génial. Donc voilà, je vous le recommande sincèrement (en plus c'est gratuit donc pas d'excuses).",
-      "url": "https://steamcommunity.com/profiles/76561199379263530/recommended/3052450",
-      "author": "76561199379263530",
-      "engagement": 0,
-      "language": "french",
-      "voted_up": true,
-      "review": "Honnêtement le jeu est excellent. L'histoire est folle, les récompenses sont hyper généreuses, les designs INCROYABLES. Le gameplay est un peu différent de ce dont j'ai l'habitude et vraiment j'adore, 60h de jeu pour l'instant et je ne m'en lasse pas, je sens que je m'améliore et que je me familiarise avec le tout c'est juste génial. Donc voilà, je vous le recommande sincèrement (en plus c'est gratuit donc pas d'excuses).",
-      "timestamp_created": 1779562194,
-      "playtime_forever": 4181
     }
   ]
 }
