@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-24T22:48:59.717273+00:00",
+  "collected_at": "2026-05-24T23:54:16.653303+00:00",
   "source": "steam",
-  "item_count": 20,
+  "item_count": 21,
   "items": [
     {
       "source": "steam",
@@ -46,7 +46,22 @@
       "voted_up": true,
       "review": "Beautiful art & cosmic horror. Right up my alley <3",
       "timestamp_created": 1779593741,
-      "playtime_forever": 817
+      "playtime_forever": 889
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T23:08:01+00:00",
+      "lang": "english",
+      "title": "[正面]",
+      "summary": "",
+      "url": "https://steamcommunity.com/profiles/76561199019822320/recommended/3052450",
+      "author": "76561199019822320",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "",
+      "timestamp_created": 1779664081,
+      "playtime_forever": 1005
     },
     {
       "source": "steam",
@@ -151,7 +166,7 @@
       "voted_up": true,
       "review": "很好 找到了我的红毛寡妇真爱 我喜欢你",
       "timestamp_created": 1779630903,
-      "playtime_forever": 603
+      "playtime_forever": 693
     },
     {
       "source": "steam",
