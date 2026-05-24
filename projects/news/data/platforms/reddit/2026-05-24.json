@@ -1,8 +1,8 @@
 {
   "date": "2026-05-24",
-  "archived_at": "2026-05-24T11:10:02.099380+00:00",
+  "archived_at": "2026-05-24T13:00:49.090898+00:00",
   "source": "reddit",
-  "item_count": 49,
+  "item_count": 53,
   "items": [
     {
       "source": "reddit",
@@ -595,6 +595,52 @@
       "summary": "7-12 is the bane of my existence  &#32; submitted by &#32;  /u/Enoch_AltFuture   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tm8kbn/hey_its_me_the_guy_trying_to_complete_arc_1_using/",
       "author": "u//u/Enoch_AltFuture",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-24T11:10:28+00:00",
+      "lang": "en",
+      "title": "Is the damage of final verdict increased by strength",
+      "summary": "Recently i was using my Arachne for the new cats event and i feel like her damage increased when i paired her with pickman and thais. Why is that.. in my normal team with her and gdoll her damage feels lower or issit due to the stage mechanics?  &#32; submitted by &#32;  /u/skarticus   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tm993j/is_the_damage_of_final_verdict_increased_by/",
+      "author": "/u/skarticus",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-24T12:44:32+00:00",
+      "lang": "en",
+      "title": "How good is the \"Recommended\" option for wheels and covenants?",
+      "summary": "I thought the recommend button was good, but then I was using Mouchett and it kept suggesting a crit damage covenant without substats instead of the chapter 5(?) covenant with death resistance and substats so now I am confused.  &#32; submitted by &#32;  /u/prehistoricdragon   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tmb7g2/how_good_is_the_recommended_option_for_wheels_and/",
+      "author": "/u/prehistoricdragon",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-24T11:10:28+00:00",
+      "lang": "en",
+      "title": "Is the damage of final verdict increased by strength",
+      "summary": "Recently i was using my Arachne for the new cats event and i feel like her damage increased when i paired her with pickman and thais. Why is that.. in my normal team with her and gdoll her damage feels lower or issit due to the stage mechanics?  &#32; submitted by &#32;  /u/skarticus   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tm993j/is_the_damage_of_final_verdict_increased_by/",
+      "author": "u//u/skarticus",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-24T12:44:32+00:00",
+      "lang": "en",
+      "title": "How good is the \"Recommended\" option for wheels and covenants?",
+      "summary": "I thought the recommend button was good, but then I was using Mouchett and it kept suggesting a crit damage covenant without substats instead of the chapter 5(?) covenant with death resistance and substats so now I am confused.  &#32; submitted by &#32;  /u/prehistoricdragon   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tmb7g2/how_good_is_the_recommended_option_for_wheels_and/",
+      "author": "u//u/prehistoricdragon",
       "engagement": 0
     }
   ]

@@ -1,8 +1,8 @@
 {
   "date": "2026-05-24",
-  "archived_at": "2026-05-24T11:10:02.097374+00:00",
+  "archived_at": "2026-05-24T13:00:49.088501+00:00",
   "source": "steam",
-  "item_count": 28,
+  "item_count": 31,
   "items": [
     {
       "source": "steam",
@@ -423,6 +423,51 @@
       "review": "Roguelike deck-builder gameplay inspired by Slay the Spire, Lovecraftian aesthetic, and a (generous???) Gacha teambuilding system.\n\nFun and low-maintenance, I hope they stay in business",
       "timestamp_created": 1779605953,
       "playtime_forever": 366
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T11:36:12+00:00",
+      "lang": "koreana",
+      "title": "[负面] :(",
+      "summary": ":(",
+      "url": "https://steamcommunity.com/profiles/76561198110768677/recommended/3052450",
+      "author": "76561198110768677",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": false,
+      "review": ":(",
+      "timestamp_created": 1779622572,
+      "playtime_forever": 220
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T11:22:59+00:00",
+      "lang": "spanish",
+      "title": "[正面] Buena historia y diseño de personajes, el gaccha e...",
+      "summary": "Buena historia y diseño de personajes, el gaccha es algo amigable por lo tanto lo hace accecible",
+      "url": "https://steamcommunity.com/profiles/76561199028204661/recommended/3052450",
+      "author": "76561199028204661",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": true,
+      "review": "Buena historia y diseño de personajes, el gaccha es algo amigable por lo tanto lo hace accecible",
+      "timestamp_created": 1779621779,
+      "playtime_forever": 969
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T11:16:21+00:00",
+      "lang": "english",
+      "title": "[正面] i'm obsessed. originally got it for saya but came...",
+      "summary": "i'm obsessed. originally got it for saya but came out really enjoying i!",
+      "url": "https://steamcommunity.com/profiles/76561198823643812/recommended/3052450",
+      "author": "76561198823643812",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "i'm obsessed. originally got it for saya but came out really enjoying i!",
+      "timestamp_created": 1779621381,
+      "playtime_forever": 917
     }
   ]
 }
