@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-24T19:02:35.793757+00:00",
+  "collected_at": "2026-05-24T20:08:29.453266+00:00",
   "source": "steam",
-  "item_count": 22,
+  "item_count": 23,
   "items": [
     {
       "source": "steam",
@@ -17,6 +17,21 @@
       "review": "Мощная игра,залип сразу на 7 часов,может даже и донат подключию",
       "timestamp_created": 1779567934,
       "playtime_forever": 904
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T17:28:56+00:00",
+      "lang": "english",
+      "title": "[正面] The Chinese found me. 10/10",
+      "summary": "The Chinese found me. 10/10",
+      "url": "https://steamcommunity.com/profiles/76561198108895576/recommended/3052450",
+      "author": "76561198108895576",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "The Chinese found me. 10/10",
+      "timestamp_created": 1779643736,
+      "playtime_forever": 3845
     },
     {
       "source": "steam",
@@ -151,7 +166,7 @@
       "voted_up": true,
       "review": "很好 找到了我的红毛寡妇真爱 我喜欢你",
       "timestamp_created": 1779630903,
-      "playtime_forever": 303
+      "playtime_forever": 393
     },
     {
       "source": "steam",
@@ -331,7 +346,7 @@
       "voted_up": true,
       "review": "lo mejor de las cartas los peor de las conversaciones, muy pesadas para mi gusto, aun asi lo recomiendo si te gusta este tipo de juegos",
       "timestamp_created": 1779568844,
-      "playtime_forever": 1533
+      "playtime_forever": 1623
     }
   ]
 }

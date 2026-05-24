@@ -1,8 +1,8 @@
 {
   "date": "2026-05-25",
-  "archived_at": "2026-05-24T19:02:37.180922+00:00",
+  "archived_at": "2026-05-24T20:08:32.782052+00:00",
   "source": "steam",
-  "item_count": 25,
+  "item_count": 26,
   "items": [
     {
       "source": "steam",
@@ -78,6 +78,21 @@
       "review": "underrated gem <3 pls support the niche devs",
       "timestamp_created": 1779571900,
       "playtime_forever": 1336
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T17:28:56+00:00",
+      "lang": "english",
+      "title": "[正面] The Chinese found me. 10/10",
+      "summary": "The Chinese found me. 10/10",
+      "url": "https://steamcommunity.com/profiles/76561198108895576/recommended/3052450",
+      "author": "76561198108895576",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "The Chinese found me. 10/10",
+      "timestamp_created": 1779643736,
+      "playtime_forever": 3845
     },
     {
       "source": "steam",
