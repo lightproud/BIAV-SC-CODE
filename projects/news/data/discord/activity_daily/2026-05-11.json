@@ -1,11 +1,11 @@
 {
   "date": "2026-05-11",
-  "messages": 14224,
+  "messages": 19224,
   "unique_authors": 352,
-  "reactions_total": 1653,
-  "attachments": 673,
+  "reactions_total": 2355,
+  "attachments": 836,
   "channel_activity": {
-    "🔸morimens-game-chat": 3002,
+    "🔸morimens-game-chat": 8002,
     "🔸綜合討論": 3602,
     "🔸日本語チャンネル": 7,
     "🔸русский-канал": 802,
@@ -66,6 +66,16 @@
     "【Newcomer Help】Forum Introduction": 2
   },
   "hourly_activity": {
+    "7": 1675,
+    "8": 1668,
+    "9": 1371,
+    "10": 1348,
+    "11": 1421,
+    "12": 1137,
+    "13": 1168,
+    "14": 946,
+    "15": 895,
+    "16": 267,
     "0": 740,
     "1": 710,
     "2": 600,
@@ -73,27 +83,17 @@
     "4": 826,
     "5": 1037,
     "6": 576,
-    "7": 1394,
     "19": 199,
     "20": 237,
     "21": 326,
     "22": 393,
     "23": 375,
-    "8": 847,
-    "9": 568,
-    "10": 621,
-    "11": 900,
-    "12": 639,
-    "13": 618,
-    "14": 432,
-    "15": 619,
-    "16": 258,
     "17": 363,
     "18": 377
   },
   "message_types": {
-    "0": 2127,
-    "19": 875
+    "0": 2856,
+    "19": 2144
   },
   "top_reacted_messages": [
     {
@@ -135,6 +135,14 @@
       "author": "aileenatsuki",
       "reactions": 12,
       "channel": "✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration"
+    },
+    {
+      "id": "1503303728894181426",
+      "channel_id": "1170692781216378960",
+      "content": "The only games ruined by ideology/people are military shooters backed by the us ",
+      "author": "n0thing6214",
+      "reactions": 11,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1503301523214696498",
@@ -201,6 +209,14 @@
       "channel": "MOUCHETTE BEST GIRL (mimi unhinged ramble + art sometimes)"
     },
     {
+      "id": "1503326815106633799",
+      "channel_id": "1170692781216378960",
+      "content": "I like it, the passion first approach is interesting",
+      "author": "aurora3981",
+      "reactions": 8,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1503516465171534005",
       "channel_id": "1503290575754100856",
       "content": "Saya no Uta is like perfect brand alignment with Morimens why are people disappo",
@@ -239,22 +255,6 @@
       "author": "_shimoyo",
       "reactions": 8,
       "channel": "🔸晒卡分享"
-    },
-    {
-      "id": "1503300770144063518",
-      "channel_id": "1300659662311526512",
-      "content": "✨ Morimens × Saya no Uta ┊ Colaboración del 2.5.º Aniversario\n\nUna semilla erran",
-      "author": "yaoshidoppa",
-      "reactions": 8,
-      "channel": "🔸canal-español"
-    },
-    {
-      "id": "1503191156765229066",
-      "channel_id": "1170692781216378960",
-      "content": "",
-      "author": "noire_2",
-      "reactions": 7,
-      "channel": "🔸morimens-game-chat"
     }
   ]
 }
