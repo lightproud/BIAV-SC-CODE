@@ -1,8 +1,8 @@
 {
   "date": "2026-05-25",
-  "archived_at": "2026-05-24T16:54:36.686544+00:00",
+  "archived_at": "2026-05-24T17:54:24.512039+00:00",
   "source": "steam",
-  "item_count": 24,
+  "item_count": 25,
   "items": [
     {
       "source": "steam",
@@ -363,6 +363,21 @@
       "review": "очень чотенька, сисечки у ж#нщ#н зачет!",
       "timestamp_created": 1779555418,
       "playtime_forever": 1457
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T16:55:56+00:00",
+      "lang": "english",
+      "title": "[正面] this is ♥♥♥♥♥♥♥ peak",
+      "summary": "this is ♥♥♥♥♥♥♥ peak",
+      "url": "https://steamcommunity.com/profiles/76561199063381287/recommended/3052450",
+      "author": "76561199063381287",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "this is ♥♥♥♥♥♥♥ peak",
+      "timestamp_created": 1779641756,
+      "playtime_forever": 208
     }
   ]
 }
