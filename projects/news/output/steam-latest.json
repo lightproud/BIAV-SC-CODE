@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-24T21:47:56.901854+00:00",
+  "collected_at": "2026-05-24T22:48:59.717273+00:00",
   "source": "steam",
-  "item_count": 19,
+  "item_count": 20,
   "items": [
     {
       "source": "steam",
@@ -46,7 +46,22 @@
       "voted_up": true,
       "review": "Beautiful art & cosmic horror. Right up my alley <3",
       "timestamp_created": 1779593741,
-      "playtime_forever": 727
+      "playtime_forever": 817
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T22:00:19+00:00",
+      "lang": "tchinese",
+      "title": "[正面] 卡厄斯夢境廣告打那麼大，但沒這款好玩",
+      "summary": "卡厄斯夢境廣告打那麼大，但沒這款好玩",
+      "url": "https://steamcommunity.com/profiles/76561199088014271/recommended/3052450",
+      "author": "76561199088014271",
+      "engagement": 0,
+      "language": "tchinese",
+      "voted_up": true,
+      "review": "卡厄斯夢境廣告打那麼大，但沒這款好玩",
+      "timestamp_created": 1779660019,
+      "playtime_forever": 4508
     },
     {
       "source": "steam",
@@ -61,7 +76,7 @@
       "voted_up": true,
       "review": "this is ♥♥♥♥♥♥♥ peak",
       "timestamp_created": 1779641756,
-      "playtime_forever": 208
+      "playtime_forever": 228
     },
     {
       "source": "steam",
@@ -136,7 +151,7 @@
       "voted_up": true,
       "review": "很好 找到了我的红毛寡妇真爱 我喜欢你",
       "timestamp_created": 1779630903,
-      "playtime_forever": 513
+      "playtime_forever": 603
     },
     {
       "source": "steam",
