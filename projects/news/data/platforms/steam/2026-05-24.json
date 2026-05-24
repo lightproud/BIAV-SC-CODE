@@ -1,8 +1,8 @@
 {
   "date": "2026-05-24",
-  "archived_at": "2026-05-24T13:00:49.088501+00:00",
+  "archived_at": "2026-05-24T14:25:36.437506+00:00",
   "source": "steam",
-  "item_count": 31,
+  "item_count": 33,
   "items": [
     {
       "source": "steam",
@@ -468,6 +468,36 @@
       "review": "i'm obsessed. originally got it for saya but came out really enjoying i!",
       "timestamp_created": 1779621381,
       "playtime_forever": 917
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T13:55:03+00:00",
+      "lang": "schinese",
+      "title": "[正面] 很好 找到了我的红毛寡妇真爱 我喜欢你",
+      "summary": "很好 找到了我的红毛寡妇真爱 我喜欢你",
+      "url": "https://steamcommunity.com/profiles/76561199876874062/recommended/3052450",
+      "author": "76561199876874062",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "很好 找到了我的红毛寡妇真爱 我喜欢你",
+      "timestamp_created": 1779630903,
+      "playtime_forever": 213
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T13:43:24+00:00",
+      "lang": "koreana",
+      "title": "[正面] 모리나가 예쁨",
+      "summary": "모리나가 예쁨",
+      "url": "https://steamcommunity.com/profiles/76561199753197128/recommended/3052450",
+      "author": "76561199753197128",
+      "engagement": 0,
+      "language": "koreana",
+      "voted_up": true,
+      "review": "모리나가 예쁨",
+      "timestamp_created": 1779630204,
+      "playtime_forever": 44
     }
   ]
 }

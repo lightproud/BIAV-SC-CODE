@@ -10386,6 +10386,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-24T11:10:01.178931+00:00"
+    },
+    "https://preview.redd.it/s1nyyef7b33h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2af7d076dbf544df62e6f97acfb55c6ee4958373": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T14:25:35.638288+00:00"
+    },
+    "https://preview.redd.it/f9v68ujoa33h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=cd397a524fa367a6eccf18fc8fac4326d81c3636": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T14:25:36.003226+00:00"
+    },
+    "https://preview.redd.it/nwzf9v08633h1.png?width=140&amp;height=82&amp;auto=webp&amp;s=5dce55a4d3e63c5c75b915db60df60047dab6a53": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T14:25:36.366748+00:00"
     }
   },
   "archived": []
