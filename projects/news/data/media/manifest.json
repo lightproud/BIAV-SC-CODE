@@ -10499,6 +10499,16 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-24T19:02:37.108292+00:00"
+    },
+    "https://preview.redd.it/3t4jvvwli53h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=5c42c1c4c3be77c1c21302971a3876af84b708ea": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T21:47:57.620127+00:00"
+    },
+    "https://preview.redd.it/7yet2vi4953h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=356bbf2e73ef34960ffbd63813aa40ad8e36c60c": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T21:47:57.961240+00:00"
     }
   },
   "archived": []
