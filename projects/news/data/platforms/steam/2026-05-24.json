@@ -1,8 +1,8 @@
 {
   "date": "2026-05-24",
-  "archived_at": "2026-05-24T02:08:03.999133+00:00",
+  "archived_at": "2026-05-24T06:30:07.791444+00:00",
   "source": "steam",
-  "item_count": 20,
+  "item_count": 24,
   "items": [
     {
       "source": "steam",
@@ -18,6 +18,21 @@
       "review": "卡牌构筑游戏硬是搞成数值养成游戏",
       "timestamp_created": 1779504065,
       "playtime_forever": 1594
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T03:35:41+00:00",
+      "lang": "english",
+      "title": "[正面] Beautiful art & cosmic horror. Right up my alley <...",
+      "summary": "Beautiful art & cosmic horror. Right up my alley <3",
+      "url": "https://steamcommunity.com/profiles/76561198015112929/recommended/3052450",
+      "author": "76561198015112929",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": true,
+      "review": "Beautiful art & cosmic horror. Right up my alley <3",
+      "timestamp_created": 1779593741,
+      "playtime_forever": 727
     },
     {
       "source": "steam",
@@ -303,6 +318,51 @@
       "review": "underrated gem <3 pls support the niche devs",
       "timestamp_created": 1779571900,
       "playtime_forever": 1201
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T04:57:22+00:00",
+      "lang": "english",
+      "title": "[正面] this game is just gorgeous.",
+      "summary": "this game is just gorgeous.",
+      "url": "https://steamcommunity.com/profiles/76561198778722359/recommended/3052450",
+      "author": "76561198778722359",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "this game is just gorgeous.",
+      "timestamp_created": 1779598642,
+      "playtime_forever": 11622
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T04:45:00+00:00",
+      "lang": "schinese",
+      "title": "[负面] 人设太恶心，我还得用这些恶心人的角色，硬给正常人喂屎是把，制作组你们是在现实中调教多少女人？ tmd...",
+      "summary": "人设太恶心，我还得用这些恶心人的角色，硬给正常人喂屎是把，制作组你们是在现实中调教多少女人？ tmd 打着二次元的皮卖nm的恶心的价值观，你游唯一的优点就是玩法还行，其余就是屎 ，正常人不做非要做日本变态价值观的奴隶，一群神经病，要是劳资知道你现实住哪 早报警了",
+      "url": "https://steamcommunity.com/profiles/76561198351212900/recommended/3052450",
+      "author": "76561198351212900",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": false,
+      "review": "人设太恶心，我还得用这些恶心人的角色，硬给正常人喂屎是把，制作组你们是在现实中调教多少女人？ tmd 打着二次元的皮卖nm的恶心的价值观，你游唯一的优点就是玩法还行，其余就是屎 ，正常人不做非要做日本变态价值观的奴隶，一群神经病，要是劳资知道你现实住哪 早报警了",
+      "timestamp_created": 1779597900,
+      "playtime_forever": 510
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-24T03:27:21+00:00",
+      "lang": "thai",
+      "title": "[正面] โมริเมนส์\nเล่นไป 3ซม กว่า\nเกมplayคล้ายๆ slay the s...",
+      "summary": "โมริเมนส์\nเล่นไป 3ซม กว่า\nเกมplayคล้ายๆ slay the spire\nlore พอใช้ได้ ยังเล่น act 1 ไม่จบ\nart สวยดี\nไม่เหมาะกับคนสมาธิสั้น ต้องอ่านเยอะ\nแปลภาษาไทยค่อนข้างแย่อ่านรู้เรืื่องบ้างไม่รู้เรื่องบ้าง\nโดยรวม 8/10\n\nมาเล่นเพราะอยากได้ น้องกินแมว",
+      "url": "https://steamcommunity.com/profiles/76561198217827427/recommended/3052450",
+      "author": "76561198217827427",
+      "engagement": 0,
+      "language": "thai",
+      "voted_up": true,
+      "review": "โมริเมนส์\nเล่นไป 3ซม กว่า\nเกมplayคล้ายๆ slay the spire\nlore พอใช้ได้ ยังเล่น act 1 ไม่จบ\nart สวยดี\nไม่เหมาะกับคนสมาธิสั้น ต้องอ่านเยอะ\nแปลภาษาไทยค่อนข้างแย่อ่านรู้เรืื่องบ้างไม่รู้เรื่องบ้าง\nโดยรวม 8/10\n\nมาเล่นเพราะอยากได้ น้องกินแมว",
+      "timestamp_created": 1779593241,
+      "playtime_forever": 198
     }
   ]
 }
