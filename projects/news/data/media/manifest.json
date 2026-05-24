@@ -10284,6 +10284,46 @@
       "source": "youtube",
       "reason": "download_failed",
       "attempted_at": "2026-05-23T20:03:59.135252+00:00"
+    },
+    "https://preview.redd.it/bcviaqtesy2h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=19653434860471277377e1be15ca40ede6b9d0b0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T06:30:05.275578+00:00"
+    },
+    "https://preview.redd.it/9o0c0cf4zz2h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=617217f0ecf31034b57936f0fd011204877cfc41": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T06:30:05.625124+00:00"
+    },
+    "https://preview.redd.it/1kgo6owl6y2h1.png?width=140&amp;height=72&amp;auto=webp&amp;s=a04495c048deb5e5a79baa01dc6f013c98d8d309": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T06:30:05.975586+00:00"
+    },
+    "https://preview.redd.it/flzpjn128z2h1.jpg?width=140&amp;height=70&amp;auto=webp&amp;s=19cda13f4df7be2910a950b58f1b7bc031562fe4": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T06:30:06.325500+00:00"
+    },
+    "https://preview.redd.it/o4k2jj4ce03h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=8dbb2f09cba83da3ca4fb454f7938043eb7a4f9e": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T06:30:06.675943+00:00"
+    },
+    "https://preview.redd.it/9w5mw6p5q03h1.jpg?width=140&amp;height=62&amp;auto=webp&amp;s=ba3d2f25a7eab6d8f599268dea8dbe2408053cc5": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T06:30:07.025417+00:00"
+    },
+    "https://preview.redd.it/1mi1m2nvw03h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=7f7b79b2972971d1273a1b66078dbb64606ebe1d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T06:30:07.375462+00:00"
+    },
+    "https://preview.redd.it/3z3lw7u88y2h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=bbe8207cebb6e25e8a03bc30eaccb5a1e7a116c2": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-24T06:30:07.725187+00:00"
     }
   },
   "archived": []
