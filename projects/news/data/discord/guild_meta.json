@@ -1,6 +1,6 @@
 {
   "guild_id": "1131791637933199470",
-  "updated_at": "2026-05-23T23:33:32.304591+00:00",
+  "updated_at": "2026-05-24T04:48:05.078052+00:00",
   "channels": [
     {
       "id": "1131791637933199471",
@@ -1345,6 +1345,14 @@
       "parent_id": "1440851754311749733",
       "position": 19,
       "topic": "ModMail Channel 288805292391530499 1506909015274160138 (Please do not change this)"
+    },
+    {
+      "id": "1507936642701332520",
+      "name": "chimorph",
+      "type": 0,
+      "parent_id": "1440851754311749733",
+      "position": 150,
+      "topic": "ModMail Channel 280361229069975553 1507914915757953136 (Please do not change this)"
     }
   ]
 }
