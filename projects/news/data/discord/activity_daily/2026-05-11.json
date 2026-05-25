@@ -1,11 +1,11 @@
 {
   "date": "2026-05-11",
-  "messages": 19224,
+  "messages": 22249,
   "unique_authors": 352,
-  "reactions_total": 2355,
-  "attachments": 836,
+  "reactions_total": 2657,
+  "attachments": 935,
   "channel_activity": {
-    "🔸morimens-game-chat": 8002,
+    "🔸morimens-game-chat": 11027,
     "🔸綜合討論": 3602,
     "🔸日本語チャンネル": 7,
     "🔸русский-канал": 802,
@@ -66,6 +66,14 @@
     "【Newcomer Help】Forum Introduction": 2
   },
   "hourly_activity": {
+    "16": 740,
+    "17": 737,
+    "18": 864,
+    "19": 603,
+    "20": 628,
+    "21": 624,
+    "22": 656,
+    "23": 710,
     "7": 1675,
     "8": 1668,
     "9": 1371,
@@ -75,25 +83,17 @@
     "13": 1168,
     "14": 946,
     "15": 895,
-    "16": 267,
     "0": 740,
     "1": 710,
     "2": 600,
     "3": 569,
     "4": 826,
     "5": 1037,
-    "6": 576,
-    "19": 199,
-    "20": 237,
-    "21": 326,
-    "22": 393,
-    "23": 375,
-    "17": 363,
-    "18": 377
+    "6": 576
   },
   "message_types": {
-    "0": 2856,
-    "19": 2144
+    "0": 1861,
+    "19": 1164
   },
   "top_reacted_messages": [
     {
@@ -103,6 +103,14 @@
       "author": "morimensstaff06",
       "reactions": 84,
       "channel": "✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration"
+    },
+    {
+      "id": "1503495640154509363",
+      "channel_id": "1170692781216378960",
+      "content": "i can do bleed support",
+      "author": "arandomflamev2",
+      "reactions": 18,
+      "channel": "🔸morimens-game-chat"
     },
     {
       "id": "1503220238320275558",
@@ -209,6 +217,14 @@
       "channel": "MOUCHETTE BEST GIRL (mimi unhinged ramble + art sometimes)"
     },
     {
+      "id": "1503495785185153024",
+      "channel_id": "1170692781216378960",
+      "content": "Many reactions",
+      "author": "the_black_butterfly",
+      "reactions": 9,
+      "channel": "🔸morimens-game-chat"
+    },
+    {
       "id": "1503326815106633799",
       "channel_id": "1170692781216378960",
       "content": "I like it, the passion first approach is interesting",
@@ -239,22 +255,6 @@
       "author": "ahuahuahua",
       "reactions": 8,
       "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1503373860173648025",
-      "channel_id": "1131839817982947429",
-      "content": "克系遊戲，意思是遊戲開發歷程非常克難",
-      "author": "ernest_heart",
-      "reactions": 8,
-      "channel": "🔸綜合討論"
-    },
-    {
-      "id": "1503419231289610261",
-      "channel_id": "1174983699935277147",
-      "content": "<:Helot_slack_off:1459092159465521184>",
-      "author": "_shimoyo",
-      "reactions": 8,
-      "channel": "🔸晒卡分享"
     }
   ]
 }
