@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-25T14:35:04.679082+00:00",
+  "collected_at": "2026-05-25T17:01:25.769731+00:00",
   "source": "all",
-  "item_count": 150,
+  "item_count": 149,
   "items": [
     {
       "source": "steam",
@@ -16,7 +16,37 @@
       "voted_up": true,
       "review": "The Chinese found me. 10/10",
       "timestamp_created": 1779643736,
-      "playtime_forever": 3845
+      "playtime_forever": 3886
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-25T14:42:10+00:00",
+      "lang": "spanish",
+      "title": "[负面] chiquita mierda la verdad, no se entiende nada, no...",
+      "summary": "chiquita mierda la verdad, no se entiende nada, no engancha y una batalla de tutorial no puede ser dificil, debe guiarte pero no lo hace, el gacha es una cosa aparte, no te dan tiradas (1 multi de 5 y da gracias)",
+      "url": "https://steamcommunity.com/profiles/76561198201219257/recommended/3052450",
+      "author": "76561198201219257",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": false,
+      "review": "chiquita mierda la verdad, no se entiende nada, no engancha y una batalla de tutorial no puede ser dificil, debe guiarte pero no lo hace, el gacha es una cosa aparte, no te dan tiradas (1 multi de 5 y da gracias)",
+      "timestamp_created": 1779720130,
+      "playtime_forever": 34
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-25T14:24:00+00:00",
+      "lang": "russian",
+      "title": "[正面] Плюсы игры: медленный но нормальный сюжет, похожий...",
+      "summary": "Плюсы игры: медленный но нормальный сюжет, похожий на кафку и классическую литературу, намного лучше финала пацанов. Нормальный стилист персонажей. Атмосфера печальная. Как рогалик дающий за щеку норм.\nМинусы: перевод на русский нейронный, ошибок больше чем у трампа уголовок. 100% Лудка после пару часов игры. Оружие и персонаж ивентовые в одном банере. Донат определяет сложность рогалика. Гайдов почти нет, самому. Как что то новое круто. Ыыыыы.",
+      "url": "https://steamcommunity.com/profiles/76561199554566332/recommended/3052450",
+      "author": "76561199554566332",
+      "engagement": 0,
+      "language": "russian",
+      "voted_up": true,
+      "review": "Плюсы игры: медленный но нормальный сюжет, похожий на кафку и классическую литературу, намного лучше финала пацанов. Нормальный стилист персонажей. Атмосфера печальная. Как рогалик дающий за щеку норм.\nМинусы: перевод на русский нейронный, ошибок больше чем у трампа уголовок. 100% Лудка после пару часов игры. Оружие и персонаж ивентовые в одном банере. Донат определяет сложность рогалика. Гайдов почти нет, самому. Как что то новое круто. Ыыыыы.",
+      "timestamp_created": 1779719040,
+      "playtime_forever": 4024
     },
     {
       "source": "steam",
@@ -91,82 +121,7 @@
       "voted_up": true,
       "review": "卡厄斯夢境廣告打那麼大，但沒這款好玩",
       "timestamp_created": 1779660019,
-      "playtime_forever": 4527
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-24T16:55:56+00:00",
-      "lang": "english",
-      "title": "[正面] this is ♥♥♥♥♥♥♥ peak",
-      "summary": "this is ♥♥♥♥♥♥♥ peak",
-      "url": "https://steamcommunity.com/profiles/76561199063381287/recommended/3052450",
-      "author": "76561199063381287",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "this is ♥♥♥♥♥♥♥ peak",
-      "timestamp_created": 1779641756,
-      "playtime_forever": 240
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-24T15:48:23+00:00",
-      "lang": "czech",
-      "title": "[正面] Top hra",
-      "summary": "Top hra",
-      "url": "https://steamcommunity.com/profiles/76561199277198335/recommended/3052450",
-      "author": "76561199277198335",
-      "engagement": 0,
-      "language": "czech",
-      "voted_up": true,
-      "review": "Top hra",
-      "timestamp_created": 1779637703,
-      "playtime_forever": 196
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-24T15:19:01+00:00",
-      "lang": "schinese",
-      "title": "[正面] 不能我一个人坐牢，所以我支持所有来打5771！",
-      "summary": "不能我一个人坐牢，所以我支持所有来打5771！",
-      "url": "https://steamcommunity.com/profiles/76561199864106076/recommended/3052450",
-      "author": "76561199864106076",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "不能我一个人坐牢，所以我支持所有来打5771！",
-      "timestamp_created": 1779635941,
-      "playtime_forever": 3262
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-24T15:18:18+00:00",
-      "lang": "english",
-      "title": "[正面] amazing game theres nothing else to say.",
-      "summary": "amazing game theres nothing else to say.",
-      "url": "https://steamcommunity.com/profiles/76561199588005947/recommended/3052450",
-      "author": "76561199588005947",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "amazing game theres nothing else to say.",
-      "timestamp_created": 1779635898,
-      "playtime_forever": 655
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-24T15:00:44+00:00",
-      "lang": "schinese",
-      "title": "[正面] 二次元和克苏鲁新颖的结合",
-      "summary": "二次元和克苏鲁新颖的结合",
-      "url": "https://steamcommunity.com/profiles/76561199577401529/recommended/3052450",
-      "author": "76561199577401529",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "二次元和克苏鲁新颖的结合",
-      "timestamp_created": 1779634844,
-      "playtime_forever": 227
+      "playtime_forever": 4617
     },
     {
       "source": "discord",
@@ -463,26 +418,26 @@
     },
     {
       "source": "youtube",
-      "time": "2026-05-24T18:31:55.893996+00:00",
+      "time": "2026-05-24T17:58:37.922739+00:00",
       "lang": "",
       "title": "[Morimens] What NOT to do in Morimens. Basic Teambuilding advice and how to not be the worst player.",
-      "summary": "[20 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "summary": "[23 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=kI3cNXKrKOo",
       "author": "Flares117",
-      "engagement": 2292,
+      "engagement": 2416,
       "media_url": "https://i.ytimg.com/vi/kI3cNXKrKOo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwn0jQ3xFbhQ4T5MDj2WIKILcHUA",
       "content_type": "image"
     },
     {
       "source": "reddit",
-      "time": "2026-05-25T08:46:42+00:00",
+      "time": "2026-05-25T15:03:13+00:00",
       "lang": "en",
-      "title": "New code: CCNP-AHXY-YMHF",
-      "summary": "Setting =&gt; Account =&gt; Redemption Code   &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tn38kr/new_code_ccnpahxyymhf/",
-      "author": "/u/DrExluxk",
+      "title": "Dzone mechanics overview, week of May 25 2026.",
+      "summary": "Hello, rain from discord here.  As always, the intention for this post is to serve as an overview on the current Dzone Rotation boss, I will cover their basic mechanics and potential counters to help any players attempting higher alert clears. This guide is for the week of 25 May 2026 Dzone rotation. special thanks to the team at Mythag University for their effort in making the enemy stat card, link below: Morimen Boss Compendium: https://docs.google.com/spreadsheets/d/1QYciqHJY3BilDcdvBiIT_dOqXOdqGX-4FBDj5rL6qyA/edit?gid=201451668#gid=201451668  Wave 1: Lily , relic：tongue W1 boss this time is lily, a relatively simple awakener boss, she has 459K hp in phase 1 and 689K in phase 2.  Moveset: Please refer to the attached image on &quot;Blossom of Sludge” for moveset Exploration Note:  You can directly go to the boss this time(after you pick up the free relic at the heal tile), so this enables Gdoll and mouchette comp etc  Battle Note:  Lily’s phase 1 is pretty simple, with only 2 notable gimmick The first is summoning a pustule in front of herself to tank damage The second being her Eternal Blossom passive, which triggers when she tanks a certain amount of damage. Note that the shield given by this intention needs to be broken before turn end, else she will convert the shield to double the amount of hp. Lily will have a down turn to recover the Eternal Blossom passive after she use it, which means if you can deal enough damage to lily, you can keep her in a defensive loop of eternal blossom into down turn to recover eternal blossom On phase change , lily will start to react to the first command card played each turn.  Strike -&gt; lily gain +1 damage instance.  Def -&gt; lily gain 10% max hp shield Other command card -&gt; Summon a self-destructing pustule Recommend to play strike or def first each turn based on lily’s intention to avoid unnecessary damage/shield  Potential strategy against this guy: Mouchette: As this wave can go to the boss direcly(and also because",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tnbsmc/dzone_mechanics_overview_week_of_may_25_2026/",
+      "author": "/u/Fantastic_Use_9",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/tb0bnee9y83h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2332e2acb0efe95fd22e1f7df8fc02c6145c1b1f",
+      "media_url": "https://preview.redd.it/50y8clwvra3h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=c3eeb73878d36a0d807af5ab96ced66f3299b919",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -498,6 +453,21 @@
       "author": "/u/R_V_D_V",
       "engagement": 0,
       "media_url": "https://preview.redd.it/rwm7qonrl93h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=b800d16efe1baaf40240c26a6f7346607d5af447",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T08:46:42+00:00",
+      "lang": "en",
+      "title": "New code: CCNP-AHXY-YMHF",
+      "summary": "Setting =&gt; Account =&gt; Redemption Code   &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tn38kr/new_code_ccnpahxyymhf/",
+      "author": "/u/DrExluxk",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/tb0bnee9y83h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2332e2acb0efe95fd22e1f7df8fc02c6145c1b1f",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -527,6 +497,36 @@
       "url": "https://old.reddit.com/r/Morimens/comments/1tn3oal/this_game_is_peak_and_im_glad_i_tried_it/",
       "author": "/u/Any-Window-27",
       "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T16:09:51+00:00",
+      "lang": "en",
+      "title": "Making Hameln out of clay, gonna paint him tommorow",
+      "summary": "&#32; submitted by &#32;  /u/Samoglow   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tndoe8/making_hameln_out_of_clay_gonna_paint_him_tommorow/",
+      "author": "/u/Samoglow",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/db13palb5b3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=cf7df5498fa84e1b8da28a741ef01556d950c726",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T16:45:04+00:00",
+      "lang": "en",
+      "title": "He's so pretty 🔥🔥🔥🔥",
+      "summary": "I also have his wod 😝😝😝 this game has such amazing designs but is he any good 🤔🤔 I mean I&#39;m not planning on using him rn just wondering   &#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tneo4a/hes_so_pretty/",
+      "author": "/u/jadhanshsnajsakak",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/nwjixiwlbb3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=33774f0b0012ee25de4a69c28b7a8d22d93a58b5",
+      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -576,15 +576,13 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-25T06:23:05+00:00",
+      "time": "2026-05-25T15:57:17+00:00",
       "lang": "en",
-      "title": "Can anybody help? Im still new",
-      "summary": "Just started 5 days ago, what team should i make based on the team i have?  &#32; submitted by &#32;  /u/anandosss   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tn0kl2/can_anybody_help_im_still_new/",
-      "author": "/u/anandosss",
+      "title": "Jenkins and 24 Team Ideas",
+      "summary": "MINOR SPOILERS FOR THE PLOT - I finished Chapter 1+2, I NEED to put Jenkins and 24 on the same team🥺 I&#39;d like to put Remona on the team as well because her dynamic with Jenkins is very cute, and I want Jenkins to be reunited with her sisters. Sadly, I cannot add Aigis to this team😔 Do their kits synergize well together? - If so, what Chaos/Ultra characters should I put with Jenkins and 24? If not, are there any good Jenkins and Aigis teams?  &#32; submitted by &#32;  /u/shinknees   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tndbiz/jenkins_and_24_team_ideas/",
+      "author": "/u/shinknees",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/jmaibusm883h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2cd8fef28a0e5adc7b2e73648e0873371c9d2ab5",
-      "content_type": "image",
       "metadata": {
         "via": "rss"
       }
@@ -600,6 +598,34 @@
       "engagement": 0,
       "media_url": "https://preview.redd.it/4xdftlj6k83h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=92621aefa04ee821fb798f2c394c99a80221d126",
       "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T06:23:05+00:00",
+      "lang": "en",
+      "title": "Can anybody help? Im still new",
+      "summary": "Just started 5 days ago, what team should i make based on the team i have?  &#32; submitted by &#32;  /u/anandosss   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tn0kl2/can_anybody_help_im_still_new/",
+      "author": "/u/anandosss",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/jmaibusm883h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=2cd8fef28a0e5adc7b2e73648e0873371c9d2ab5",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T15:24:48+00:00",
+      "lang": "en",
+      "title": "How does the daily rerun banner works?",
+      "summary": "Is there any type of calendar on which can be show the reruns  &#32; submitted by &#32;  /u/BrilliantVolume8871   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tncevr/how_does_the_daily_rerun_banner_works/",
+      "author": "/u/BrilliantVolume8871",
+      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -629,6 +655,36 @@
       "author": "/u/soItsNotallYours",
       "engagement": 0,
       "media_url": "https://preview.redd.it/3t4jvvwli53h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=5c42c1c4c3be77c1c21302971a3876af84b708ea",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T11:49:46+00:00",
+      "lang": "en",
+      "title": "Chapter 8 beating my ass, major skill issue from my part",
+      "summary": "https://preview.redd.it/8ylz5wqlu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=87a5fae8d016a57e15fc75ce4bb25c6a6fface98 https://preview.redd.it/qq6zoqunu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=1e123f4677926cef5888cdd0e2d94d6fc627e2fc https://preview.redd.it/oojm010pu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=eaba747fdef49b8da39fa85f5e6d4e685cdd9a2c https://preview.redd.it/pmrtgpfqu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=435cc3bf8d114b3b6fa3ee3939378370886cbd4e I don&#39;t have helot&#39;s wod, also I have no clue how to build a character or what wod to use. The only thing I remember is skey regen is a must, and to copy big ball, but I can&#39;t survive the boss&#39;s attacks..  &#32; submitted by &#32;  /u/WikeMazovsky   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tn6szn/chapter_8_beating_my_ass_major_skill_issue_from/",
+      "author": "/u/WikeMazovsky",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/8ylz5wqlu93h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=b54270302f1b9a23180e31c510c2aada8c1c61f5",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T14:52:18+00:00",
+      "lang": "en",
+      "title": "Need Help on Half-Anni Pulling Priorities",
+      "summary": "Hello, I&#39;ve been playing this game for a little over a week now and I can proudly say that I&#39;m heavily addicted. Right now, I reached a point where I actually want to get serious on my account. So far these are the characters/WoD that I&#39;ve pulled. I&#39;m also interested in pulling Corposant and Vortice since I really like their design. However, there&#39;s too many things in this game that I don&#39;t know of like what&#39;s the best WoD, at what point should I stop pulling for BoT and even which characters that I actually need to focus on since I&#39;ve learned that the end game heavily rewards accounts that have horizontal investment. I would appreciate it if someone could share their opinion since I would love to learn more about the game  &#32; submitted by &#32;  /u/One-External-348   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tnbhnk/need_help_on_halfanni_pulling_priorities/",
+      "author": "/u/One-External-348",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/re14wj3hra3h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=d1409f73389d279fd123f1fa55d5c8b7968fcc0f",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -690,14 +746,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-25T11:49:46+00:00",
+      "time": "2026-05-25T14:59:57+00:00",
       "lang": "en",
-      "title": "Chapter 8 beating my ass, major skill issue from my part",
-      "summary": "https://preview.redd.it/8ylz5wqlu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=87a5fae8d016a57e15fc75ce4bb25c6a6fface98 https://preview.redd.it/qq6zoqunu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=1e123f4677926cef5888cdd0e2d94d6fc627e2fc https://preview.redd.it/oojm010pu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=eaba747fdef49b8da39fa85f5e6d4e685cdd9a2c https://preview.redd.it/pmrtgpfqu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=435cc3bf8d114b3b6fa3ee3939378370886cbd4e I don&#39;t have helot&#39;s wod, also I have no clue how to build a character or what wod to use. The only thing I remember is skey regen is a must, and to copy big ball, but I can&#39;t survive the boss&#39;s attacks..  &#32; submitted by &#32;  /u/WikeMazovsky   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tn6szn/chapter_8_beating_my_ass_major_skill_issue_from/",
-      "author": "/u/WikeMazovsky",
+      "title": "Help",
+      "summary": "Is it still worth pulling on this banner or should I go for someone specifically?   &#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tnbp59/help/",
+      "author": "/u/jadhanshsnajsakak",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/8ylz5wqlu93h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=b54270302f1b9a23180e31c510c2aada8c1c61f5",
+      "media_url": "https://preview.redd.it/pgjim9fusa3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=c902328f005294e158aac1c1608f626b47122e67",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -705,87 +761,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-25T01:53:20+00:00",
+      "time": "2026-05-25T15:03:13+00:00",
       "lang": "en",
-      "title": "Team help?",
-      "summary": "To keep it quick I&#39;m new looked pulled a bunch of Rykers on the choose four unit banners. Looked at the team building links and went for one I could copy. Found this one but to be honest I just spam Ryker stuff cause gambling. How&#39;s this team actually work or is there a better one I can make using Ryker? I&#39;m still new and know I don&#39;t really need a team yet but I&#39;d just like to know. Also because I keep doing the arcade were it levels everything to 60. I did not keep it short. Also sorry if this breaks the rule 6  &#32; submitted by &#32;  /u/Jason5060   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tmuzcz/team_help/",
-      "author": "/u/Jason5060",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/5hskk1hlv63h1.jpg?width=140&amp;height=73&amp;auto=webp&amp;s=06209235f8062859306da6653a05dabef1150923",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-25T01:53:00+00:00",
-      "lang": "en",
-      "title": "I cant get pass 3-13",
-      "summary": "Pls help, I&#39;m desperate...  &#32; submitted by &#32;  /u/alberichlynn   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tmuz43/i_cant_get_pass_313/",
-      "author": "/u/alberichlynn",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/tvyadhefw63h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=1726a1179df3e7bae35c664f9703b1ad0de8c939",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-24T22:01:46+00:00",
-      "lang": "en",
-      "title": "Hey, so I'm new to the game (loving it) and just wanted to ask if getting this much ssr's is normal or just luck (5 ssr's in 40 awakens)",
-      "summary": "&#32; submitted by &#32;  /u/Similar-Might-1201   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tmpnml/hey_so_im_new_to_the_game_loving_it_and_just/",
-      "author": "/u/Similar-Might-1201",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/6iza2za6r53h1.jpg?width=140&amp;height=57&amp;auto=webp&amp;s=bc3bd2bdcf292c1347f9ad9f0976e1b919196a5f",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-25T03:45:47+00:00",
-      "lang": "en",
-      "title": "How to",
-      "summary": "https://preview.redd.it/ixobondwf73h1.png?width=773&amp;format=png&amp;auto=webp&amp;s=2880fcdf2163baf1d6dcdf6942e06ef1168e7a74 Hello! Just started playing Morimens, and i&#39;m kinda lost on who should i pull for that will be usefull to me in the long run, i&#39;m currentlyn doing the storyline, 3-2, with no issues and farming silver, but i don&#39;t know who should i aim for in this start. Should i go for another team to do the storyline?  &#32; submitted by &#32;  /u/Jumpy_Temporary_7992   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tmxewl/how_to/",
-      "author": "/u/Jumpy_Temporary_7992",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/ixobondwf73h1.png?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=025b8ae60e324baf259fbecbd345c2c5af9a553d",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-24T15:28:50+00:00",
-      "lang": "en",
-      "title": "New player pull priorities? (Horizontal vs vertical investment?)",
-      "summary": "Hi! I’m a brand brand new player, and am looking to pull on a couple banners for this rotating banner event. Should I focus on getting a decently wide roster, or on getting a few characters with some enlightens. (I’m interested the dreamy rendezvous top up, for context on pull budget if that matters) I know enlightens are important in this game, so im basically asking just how important they are, esp for new players  &#32; submitted by &#32;  /u/-YoshiYan   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tmfa6e/new_player_pull_priorities_horizontal_vs_vertical/",
-      "author": "/u/-YoshiYan",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/94nez6k3t33h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=43d8d1ad5a09e9b88cb4ec0056e47251f468589d",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-25T08:46:42+00:00",
-      "lang": "en",
-      "title": "New code: CCNP-AHXY-YMHF",
-      "summary": "Setting =&gt; Account =&gt; Redemption Code   &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tn38kr/new_code_ccnpahxyymhf/",
-      "author": "u//u/DrExluxk",
+      "title": "Dzone mechanics overview, week of May 25 2026.",
+      "summary": "Hello, rain from discord here.  As always, the intention for this post is to serve as an overview on the current Dzone Rotation boss, I will cover their basic mechanics and potential counters to help any players attempting higher alert clears. This guide is for the week of 25 May 2026 Dzone rotation. special thanks to the team at Mythag University for their effort in making the enemy stat card, link below: Morimen Boss Compendium: https://docs.google.com/spreadsheets/d/1QYciqHJY3BilDcdvBiIT_dOqXOdqGX-4FBDj5rL6qyA/edit?gid=201451668#gid=201451668  Wave 1: Lily , relic：tongue W1 boss this time is lily, a relatively simple awakener boss, she has 459K hp in phase 1 and 689K in phase 2.  Moveset: Please refer to the attached image on &quot;Blossom of Sludge” for moveset Exploration Note:  You can directly go to the boss this time(after you pick up the free relic at the heal tile), so this enables Gdoll and mouchette comp etc  Battle Note:  Lily’s phase 1 is pretty simple, with only 2 notable gimmick The first is summoning a pustule in front of herself to tank damage The second being her Eternal Blossom passive, which triggers when she tanks a certain amount of damage. Note that the shield given by this intention needs to be broken before turn end, else she will convert the shield to double the amount of hp. Lily will have a down turn to recover the Eternal Blossom passive after she use it, which means if you can deal enough damage to lily, you can keep her in a defensive loop of eternal blossom into down turn to recover eternal blossom On phase change , lily will start to react to the first command card played each turn.  Strike -&gt; lily gain +1 damage instance.  Def -&gt; lily gain 10% max hp shield Other command card -&gt; Summon a self-destructing pustule Recommend to play strike or def first each turn based on lily’s intention to avoid unnecessary damage/shield  Potential strategy against this guy: Mouchette: As this wave can go to the boss direcly(and also because lily has pretty low hp), it is quite easy for mouchette to one shot both of her phases. All you need to do is to intentionally proc a dr before hand to setup the arith. I made the mistake here in this replay of playing a non-strike/def card in phase 2 which caused lily to summon a mob and i have to gamble a 50% DR, but it was doable with 98% dr if i just played a def card first. Replay: f419aa7d-2b4d-3173-8c22-f1a2b3e7058b#E#a  Gdoll/Xu poison: again, the stage is straight to the boss, so Gdoll comp can work pretty well here, just treat it as another w3 boss with higher hp. The key is to stack up enough poison in phase 1 and finish up phase 2 with multiple triggers Replay: ：a7bab387-2557-3929-bc6f-2dcc2983e06d#E#a  This wave is relatively simple, most teams should be viable here. Just adjust accordingly to your box. --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- Wave 2: Cocoon Elite, relic：Skull W2 is the Cocoon Elite enemy from Arachne’s Story, he has a single health bar of 2318K. And ~ 3% max hp old embers. All the elites in Arachne&#39;s chapter has the berserk gimmick， similar to Mouchette, making them pretty tough to deal with. Moveset Please refer to the attached image “Remnant Omen” for moveset. This boss changes randomly between 4 intentions, everytime you use an exalt, the boss will change to the another intention and gain one stack of passive. Upon reaching 10 stack of passive, boss will change intention to a heavy hitting move that won&#39;t change on exalt use.  The first intention is a debuff. It applies weakness, vulnerable, fragile, scar and a massive bleed. During this turn, whenever you play a symptom card, the bleed is increased. If the boss changed into this intention on this turn, he also shuffle two random symptoms into your deck. A 4 hit that gives the boss 1 berserk stack for each hit that is not blocked by shields. If the boss changed into this intention on this turn, he also gains 4 berserk stack immediately. Deal damage twice, and discard all your hand. If the boss changed into this intention on this turn, he also gives you 2 stack of void and make you lose 15 aliemus immediately  Single big hit that increases damage based on your missing health, lower health = more damage to you. If the boss changed into this intention this turn, he also gains temp str for each command card you play. The boss only change to this intention if he reaches 10 stacks of his fate passive. The boss immediately gain 50% fortify. Deal single instance of damage, shuffle 3 random symptoms, gain 5 berserk stacks and all your awakeners lose 20 aliemus.  Exploration Notes  There is 1 mob wave and 1 elite fight that you must fight before you can reach the boss The mob enemies this wave includes a very annoying spider enemy that gives all enemies fortify for every card you play. So teams that need to play a lot of cards before dealing damage will have some trouble dealing with these mobs To add salt to the wound, these spiders usually also have the WiFi fish passive, so killing them once is not enough.  Though do note if you manage to clear the old embers on the spider, the fortify will disappear too  The elite enemy is another spider enemy from Arachne’s chapter, he operates on two gimmicks, position swapping and berserk stacks. The elite will gain 1 berserk stack for every command card you play and resets the stacks every turn. Upon reaching 10 stacks, the elite will immediately act when you play the next card Upon clearing all the old embers on the elite, he will swap his position to behind the smaller spiders (yes the elite summons those annoying little sh#ts with fortify) and change to a weaker intention. If your playing vortice into this wave, because sure to do your pursuit first before you play cards.   Boss Note:  This boss works on 4 rotating intentions to deal damage and debuff you while build up its fate passive to unleash a combined attack that does everything. The boss also shares the berserk passive that all the other spider elite have, aka he gains 1 berserk stack for each command card you play and act immediately when you play your next card upon reaching 10 stacks.  You can time your exalt to switch the boss&#39;s intention to something less dangerous, but it will also build towards his passive.  Be sure to check the boss’s intention at the start of each turn and after you exalt, due to this boss&#39;s interactions between each of his intentions, do avoid doing multiple exalt per turn if you dont need to Do note that his normal intention change each turn also count towards his passive   Potential Strategy: Vortice: This is your best bet for this wave, vortice pursuit can easily trigger all of the boss&#39;s old embers, if you pair her with a good shielder you can easily stall the fight out and win via pursuit into a big exalt.  Replay: b2bad236-45aa-3c15-8540-c4c5f2d97a44#E#a  Castor Pollux: Alternatively, castor pollux comp is always a good option into exploration stage. But do note the boss changes intention when you exalt, so exalting for more shield sometime may backfire. Replay: 9384588f-0589-3faa-9bf4-0762d51bc9f5#E#a  Counter: Since the boss has a 4 hit attack that occurs pretty often, you can play counter team into this wave, something like pickman caecus works wonders. Replay: 73913bb7-3d7b-32c8-a355-4e8e393dddba#E#a  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  Wave 3: Seafarer Elite, relic W3 is the Seafarer elite that frequently appear in dzone, you should be used to him by now. She has a single hp bar of 684K, fairly manageable, but does hit pretty hard. Moveset: Please refer to image “Pohnpei Hymn” for moveset.  Exploration note:  W3 is direct to boss stage, theres no exploration  Battle note:  W3 boss plays with your hand alot, in fact all 3 of her damaging intention will interact with your hand. Her first intention has a base 10 hit instance, but its reduced by one for each card in your hand at the end of turn, and can be reduced to a minimum of 3 hit. Her 3rd intention gains barrier based on amount of cards in your hand at end of the turn Her 4th intention discards your whole hand. Due to how her first intention works, she is extremely weak to counter, if you have a wanda, you could even make her do a 20 hit attack.  Its recommended to not play units that retain a lot of cards, due to her barrier generation  Potential Strategy: Counter: as mentioned above, this boss is extremely weak to counter, a decent counter setup like wanda caecus can mess him up pretty badly. Recommend to play together with arachne for the execute effect. Replay: c8f80f87-9b12-30ea-9361-6f14a92804bf#E#a  Mouchette: As always, when you can get to the boss quickly, mouchette is always the answer. She can burst the boss down pretty well, just take note of the barrier and discard, which may interfere with your gameplan. Replay: be535642-56ff-396e-b16b-b26504ccc7e8#E#a  Gdoll/Xu: Classic W3 Gdoll, shes not really affected by the barrier or discard effect, so you only need to pay attention to the multihit. You can also bring along Lotan for more %max health damage or Xu for a safer clear. Xu with a non-Gdoll poison applier should also be able to clear due to caro weak bonus.  Replay: 9dee0499-7943-3143-aec9-54a780ca68d3#E#a Replay: 556e1c72-ebf0-3381-a972-b2fc690a0e2f#E#a  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- Wave 4: afumza, relic：scope W4 is the freeze gimmick boss from Ghelot story, and also happens to be one of the most annoying enemy in game. He has 2 health bar, with phase 1 having 524K hp and 1049K hp Phase 2 having  Moveset : Theres no compendium page for afumza yet, his moveset is as below:  Single hit, freeze the top card in your deck Double hit, apply 1 turn of weakness. Increase damage based on number of frozen card in your hand Summon 2 mobs, and give all allies “frost shield”. When a unit has frost shield, if they are hit, they will apply 1 stack of stagnation to a random card in your hand.  Apply 1 stack of fragile. Deal damage 4 times, and deal additional instances of damage based on the number of frozen cards in your hand, then, exhaust those frozen cards.  Exploration note:  Wave 4 is elite only wave, the two elites you encounter before the boss are the dimensional dog and big cat from chapter 3. This wave is friendly towards counter overall, but the first elite is very anti counter The first elite hits extremely hard, and doesn&#39;t have any multihits, he also like to seal your exalt, if your counter team can get pass him, you should be good for the rest of the wave. Second elite put counters on herself on turn 1, so multihit unit might have a hard time against her.  Battle note:  The key thing to know about this boss is that he has a passive that freeze one card in your hand for every 3 card you play, for some reason this effect is not written on his status bar. Frozen cards have retain, and cannot be played. You can remove the freeze effect by exalting the corresponding awakener. Furthermore, it should be noted the boss&#39;s 4th intention will exhaust your frozen cards permanently, so you need to do some exalt management to prevent yourself from running out of cards. The mobs summoned by the boss will either do icicle or curse, the former freeze 1 random card and the later drain 10 aliemus from all awakeners. But if you kill these mobs, you can get 30 aliemus to all awakeners for each one killed. On phase change, afumza gets a new passive: gain frost shield and str at the end of each turn. Because of this, he ramps very fast in phase 2, try to burst him down within one or two turns after phase change. All the moveset of afumza are also buffed in phase two, dealing more damage and debuffs are extended to 3 turns. This boss is very bad for awakeners that need to play all their cards for burst (such as mouchette，tawil) and good for teams that exalt often or don&#39;t need to play a lot of cards.  Potential strategy: Gmurphy lemurian: Gmurphy comp doesn&#39;t need to play alot of cards during burst, all you need to do is setup a burst turn by ard turn 3 or 4 and skip the entire phase 2. Borrowing a whale gmurphy is probably the easiest way to do this wave. Replay:fef0619d-92d6-3009-8361-dff3bbe74087#E#a  Ghelot: Ghelot is technically also not very ideal since her burst requires you to play a lot of cards, but she outputs enough damage to somewhat offset this. Be sure to bring enough survivability for her to ramp a few turns first. Replay: c4c40cb7-5113-3fd4-8418-83a85bee30b1#E#a  Counter: Counter is again very good into afumza due to his multihit. The main concern is actually to get pass the first elite, he hits very hard and only does single hit. If you can get past him without DR, you should be good for the run. Replay: 5b4b86d6-fdd5-3a90-add0-b7fcd78da4ce#E#a  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- Wave 5: Thais, relic：tribute We are graced by the GOAT herself in w5 this time, she is a boss that demands you to have good mob clear ability due to her powerful summons. She has two health bars, with 360K in phase 1 and 1080K in phase 2, relatively low, but she makes up for it in the form of summons and damage reduction.  Moveset: Please refer to the image “Breath of Fertility” for her moveset  Exploration note:  W5 map is pretty straight forward, mobs are mostly caro mobs that apply bleed or mutation to your cards, not very difficult, but having some form of healing will make it a lot more bearable. Elite of this wave main gimmick is his healing at the end of each turn， other than that he does the same thing as the other caro mobs Do note that he has the prayer buff that increases his hit count, this buff can be removed by just hitting him.  Battle note:  Thais‘s main gimmick is summoning other caro awakeners to fight for her. She can do so via her sacred blood intention or upon losing a fix amount of health. She can only have at most 2 summons at a time, but she can buff them if there are already 2 existing summons. The 4 caro awakeners she can summon are uhvash, leigh, helot and aigis. Out of the four, leigh is the one you need to pay most attention to. This is because leigh gives all allies a permanent passive that grants shield = half of the damage taken last turn. So its recommended to kill leigh on sight. Thais also likes to drain your aliemus a lot, upon phase transition, she will also nerf your aliemus gain to only 50% for the rest of the fight. so I would suggest to run caro awakeners for this fight, using image relic to counteract her aliemus drain. Thais also gain counter and apply poison to you，so multihitter like mouchette and pickman might suffer abit. Note that thais gains 50% damage reduction when there are mimic awakeners on the field, this is not considered fortify, so you cant remove it with vortice. This fight demands mob clear, if you cant clear the mobs, they will just slowly snowball out of control and kill you via raw damage and debuffs.  Potential strategy: Doresain Pickman: With the new doresain rouse buff, he is actually pretty good at dealing with summoners now, the over flow damage can easily clear all the summons while chipping at pickman, you can also choose to land the exalt directly on thais for big damage. Pickman also gets extra value by stealing str from 3 unit instead of the usual one, just pay attention to thais’s counter. Replay: 14e3642a-e371-3688-9165-ae8d6e552d5e#E#a Replay: 35847b1a-e70d-3834-85a3-2330d3d0e348#E#a  Mouchette: Even though the counter damage mess with mouchette somewhat, but thais’s low hp pool means mouchette can burst her down relatively quickly, just play around furnace and devour shield to prevent the counter damage. Replay:2fbb7963-4698-3485-a968-05ea6082f300#E#a  Xu Poison: thais’s phase 1 is relatively passive, so you can stack poison fairly safely and burst her phase 2 down quickly via triggers. If your using something like liz, you can also time your exalt into the phase change for a lot of free damage. Replay: cbea2b23-08fc-3767-a7a0-01cc7f7cd047#E#a  Ultra Kath: Kath team can shield thais’s damage fairly well, and the hyperflare aoe gives decent mob clear, though you probably need to play her in ultra with the ultra turn safety net. Replay: 6dc205a9-2d5e-3000-b648-246396198e36#E#a  Alternatively, you can also do Gmurphy lemurian this wave and skip thais’s phase 2. But getting through the mobs with a low investment lemurian team might be challenging, and w4 deserve the gmurphy beating more than thais. Thats all folks, good luck with your runs!  &#32; submitted by &#32;  /u/Fantastic_Use_9   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tnbsmc/dzone_mechanics_overview_week_of_may_25_2026/",
+      "author": "u//u/Fantastic_Use_9",
       "engagement": 0
     },
     {
@@ -796,6 +777,16 @@
       "summary": "&#32; submitted by &#32;  /u/R_V_D_V   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tn5py8/this_game_deserve_much_more_fan_content_and_im/",
       "author": "u//u/R_V_D_V",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T08:46:42+00:00",
+      "lang": "en",
+      "title": "New code: CCNP-AHXY-YMHF",
+      "summary": "Setting =&gt; Account =&gt; Redemption Code   &#32; submitted by &#32;  /u/DrExluxk   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tn38kr/new_code_ccnpahxyymhf/",
+      "author": "u//u/DrExluxk",
       "engagement": 0
     },
     {
@@ -816,6 +807,26 @@
       "summary": "Sorry for bad grammar in advance - I live in a country that doesn&#39;t speak English  I saw a YouTube video about this game, how fun and generous it is, and being card games fan myself (played slay the spire, balatro, hearthstone, magic the gathering, netrunner, WoW tcg, you name it) AND Lovecraft fan decided to try it, and I am very glad! Story is pretty good, horror and supernatural in my opinion is done very well. Yesterday I completed chapter 7, it took me 50 hours according to steam, i did p-dive once, two chapters in hard and some side missions as well, but it would be safe to say that around 40 hours of gameplay were in story mode, and I have a lot of chapters to go, arc 2, character stories etc. It&#39;s honestly refreshing to see interesting and captivating story mode in a card game, and so big too!  I created caro team with my 100 You savedMorimens rolls after completing chapter 1 and on chapter 3 i settled on 4 character team - Sorel, Uvhash, Salvador and Auigis. Safe to say this is not a meta team by any means, but I managed to clear chapter 7 with it without touching any covenants. It facinates me  - how I can play what I consider fun and still experience such a long story without bricking  - how it can be so fun to play for so long with the same characters, same deck and the same cards - how certain encounters can be quick and challenging or long and still challenging  I want to expand on the last point a little bit It is a balancing miracle how fights where I don&#39;t have many relics, rousals and orisons can be hard and at the same time, when I come to the last encounter of the level, where boss has ABYSMAL amounts of hp and damage it&#39;s still hard and interesting. Fight with the last boss of chapter 7 took me ~45 minutes (not whole level mind you, just the boss fight) and every turn I was on the verge of losing, I had to cook some crazy combo to live and deal damage. I would expect from this type of game when I get to the boss encounter that he will have a lot of hp and fight will take a very long time but for a lot of turns I wouldn&#39;t have to think that much, but how they managed to balance the game in a manner where I need 15 turns to kill a boss but boss can oneshot me every turn, but I can use my brain to overcome all that is beyond me. Great work from the devs honestly. Not one time in main campaign I felt like I was underleveled or overleved, most encounters I couldn&#39;t autopilot the game, I had to think and play - and gameplay is great. Now I played only one team (with some tweaks here and there, but still), but there are 3 more realms and tons of characters that I can try, so a lot of different gameplay styles. For how long I can experiment with teams and play this game if didn&#39;t get bored with caro for 40 hours - who knows? Probably couple hundreds of hours at least.  Honestly, I love this game. Yes, the story is not the most complicated one, but it&#39;s still very interesting (and what story slay the spire or other card game has hahaha), gameplay is very fun and challenging even for gamers who played a lot of card games before and gacha elements are not locking you out from any gameplay (idk about chapter 2 tho, but the game has so much content that i would not be mad If I had to play for couple of months to complete it).  Now, I dislike gacha games practices - I would rather pay full price for a full game then be locked behind rolling for characters, waiting real time for progression, etc, but this game is so good that I&#39;m not only willing to overlook it and continue playing, but seriously considering buying something from my next paycheck - just because it feels like crime to enjoy something so much for 50 hours and not supporting the developers. I will use my free will to pay for this game.  I lost any structure while writing this, but if you read it to this point sorry for my grammar (again), and - you are a real G. I love this game and can&#39;t recommend it enough.  &#32; submitted by &#32;  /u/Any-Window-27   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tn3oal/this_game_is_peak_and_im_glad_i_tried_it/",
       "author": "u//u/Any-Window-27",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T16:09:51+00:00",
+      "lang": "en",
+      "title": "Making Hameln out of clay, gonna paint him tommorow",
+      "summary": "&#32; submitted by &#32;  /u/Samoglow   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tndoe8/making_hameln_out_of_clay_gonna_paint_him_tommorow/",
+      "author": "u//u/Samoglow",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T16:45:04+00:00",
+      "lang": "en",
+      "title": "He's so pretty 🔥🔥🔥🔥",
+      "summary": "I also have his wod 😝😝😝 this game has such amazing designs but is he any good 🤔🤔 I mean I&#39;m not planning on using him rn just wondering   &#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tneo4a/hes_so_pretty/",
+      "author": "u//u/jadhanshsnajsakak",
       "engagement": 0
     },
     {
@@ -850,12 +861,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-25T06:23:05+00:00",
+      "time": "2026-05-25T15:57:17+00:00",
       "lang": "en",
-      "title": "Can anybody help? Im still new",
-      "summary": "Just started 5 days ago, what team should i make based on the team i have?  &#32; submitted by &#32;  /u/anandosss   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tn0kl2/can_anybody_help_im_still_new/",
-      "author": "u//u/anandosss",
+      "title": "Jenkins and 24 Team Ideas",
+      "summary": "MINOR SPOILERS FOR THE PLOT - I finished Chapter 1+2, I NEED to put Jenkins and 24 on the same team🥺 I&#39;d like to put Remona on the team as well because her dynamic with Jenkins is very cute, and I want Jenkins to be reunited with her sisters. Sadly, I cannot add Aigis to this team😔 Do their kits synergize well together? - If so, what Chaos/Ultra characters should I put with Jenkins and 24? If not, are there any good Jenkins and Aigis teams?  &#32; submitted by &#32;  /u/shinknees   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tndbiz/jenkins_and_24_team_ideas/",
+      "author": "u//u/shinknees",
       "engagement": 0
     },
     {
@@ -866,6 +877,26 @@
       "summary": "Hello! I&#39;m a new player (1 week in), I currently have E1 Mouchette, is getting 3 copies of this WoD good investment for her?   &#32; submitted by &#32;  /u/Waffles109   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tn1ts9/is_this_wod_good_for_mouchette/",
       "author": "u//u/Waffles109",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T06:23:05+00:00",
+      "lang": "en",
+      "title": "Can anybody help? Im still new",
+      "summary": "Just started 5 days ago, what team should i make based on the team i have?  &#32; submitted by &#32;  /u/anandosss   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tn0kl2/can_anybody_help_im_still_new/",
+      "author": "u//u/anandosss",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T15:24:48+00:00",
+      "lang": "en",
+      "title": "How does the daily rerun banner works?",
+      "summary": "Is there any type of calendar on which can be show the reruns  &#32; submitted by &#32;  /u/BrilliantVolume8871   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tncevr/how_does_the_daily_rerun_banner_works/",
+      "author": "u//u/BrilliantVolume8871",
       "engagement": 0
     },
     {
@@ -886,6 +917,26 @@
       "summary": "i wish these were longer since they&#39;re quite short. i bet there&#39;s a lot of people who would happily do that for free 😳  &#32; submitted by &#32;  /u/soItsNotallYours   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tmoj8v/that_face/",
       "author": "u//u/soItsNotallYours",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T11:49:46+00:00",
+      "lang": "en",
+      "title": "Chapter 8 beating my ass, major skill issue from my part",
+      "summary": "https://preview.redd.it/8ylz5wqlu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=87a5fae8d016a57e15fc75ce4bb25c6a6fface98 https://preview.redd.it/qq6zoqunu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=1e123f4677926cef5888cdd0e2d94d6fc627e2fc https://preview.redd.it/oojm010pu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=eaba747fdef49b8da39fa85f5e6d4e685cdd9a2c https://preview.redd.it/pmrtgpfqu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=435cc3bf8d114b3b6fa3ee3939378370886cbd4e I don&#39;t have helot&#39;s wod, also I have no clue how to build a character or what wod to use. The only thing I remember is skey regen is a must, and to copy big ball, but I can&#39;t survive the boss&#39;s attacks..  &#32; submitted by &#32;  /u/WikeMazovsky   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tn6szn/chapter_8_beating_my_ass_major_skill_issue_from/",
+      "author": "u//u/WikeMazovsky",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-25T14:52:18+00:00",
+      "lang": "en",
+      "title": "Need Help on Half-Anni Pulling Priorities",
+      "summary": "Hello, I&#39;ve been playing this game for a little over a week now and I can proudly say that I&#39;m heavily addicted. Right now, I reached a point where I actually want to get serious on my account. So far these are the characters/WoD that I&#39;ve pulled. I&#39;m also interested in pulling Corposant and Vortice since I really like their design. However, there&#39;s too many things in this game that I don&#39;t know of like what&#39;s the best WoD, at what point should I stop pulling for BoT and even which characters that I actually need to focus on since I&#39;ve learned that the end game heavily rewards accounts that have horizontal investment. I would appreciate it if someone could share their opinion since I would love to learn more about the game  &#32; submitted by &#32;  /u/One-External-348   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tnbhnk/need_help_on_halfanni_pulling_priorities/",
+      "author": "u//u/One-External-348",
       "engagement": 0
     },
     {
@@ -930,62 +981,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-25T11:49:46+00:00",
+      "time": "2026-05-25T14:59:57+00:00",
       "lang": "en",
-      "title": "Chapter 8 beating my ass, major skill issue from my part",
-      "summary": "https://preview.redd.it/8ylz5wqlu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=87a5fae8d016a57e15fc75ce4bb25c6a6fface98 https://preview.redd.it/qq6zoqunu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=1e123f4677926cef5888cdd0e2d94d6fc627e2fc https://preview.redd.it/oojm010pu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=eaba747fdef49b8da39fa85f5e6d4e685cdd9a2c https://preview.redd.it/pmrtgpfqu93h1.png?width=1919&amp;format=png&amp;auto=webp&amp;s=435cc3bf8d114b3b6fa3ee3939378370886cbd4e I don&#39;t have helot&#39;s wod, also I have no clue how to build a character or what wod to use. The only thing I remember is skey regen is a must, and to copy big ball, but I can&#39;t survive the boss&#39;s attacks..  &#32; submitted by &#32;  /u/WikeMazovsky   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tn6szn/chapter_8_beating_my_ass_major_skill_issue_from/",
-      "author": "u//u/WikeMazovsky",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-25T01:53:20+00:00",
-      "lang": "en",
-      "title": "Team help?",
-      "summary": "To keep it quick I&#39;m new looked pulled a bunch of Rykers on the choose four unit banners. Looked at the team building links and went for one I could copy. Found this one but to be honest I just spam Ryker stuff cause gambling. How&#39;s this team actually work or is there a better one I can make using Ryker? I&#39;m still new and know I don&#39;t really need a team yet but I&#39;d just like to know. Also because I keep doing the arcade were it levels everything to 60. I did not keep it short. Also sorry if this breaks the rule 6  &#32; submitted by &#32;  /u/Jason5060   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tmuzcz/team_help/",
-      "author": "u//u/Jason5060",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-25T01:53:00+00:00",
-      "lang": "en",
-      "title": "I cant get pass 3-13",
-      "summary": "Pls help, I&#39;m desperate...  &#32; submitted by &#32;  /u/alberichlynn   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tmuz43/i_cant_get_pass_313/",
-      "author": "u//u/alberichlynn",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-24T22:01:46+00:00",
-      "lang": "en",
-      "title": "Hey, so I'm new to the game (loving it) and just wanted to ask if getting this much ssr's is normal or just luck (5 ssr's in 40 awakens)",
-      "summary": "&#32; submitted by &#32;  /u/Similar-Might-1201   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tmpnml/hey_so_im_new_to_the_game_loving_it_and_just/",
-      "author": "u//u/Similar-Might-1201",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-25T03:45:47+00:00",
-      "lang": "en",
-      "title": "How to",
-      "summary": "https://preview.redd.it/ixobondwf73h1.png?width=773&amp;format=png&amp;auto=webp&amp;s=2880fcdf2163baf1d6dcdf6942e06ef1168e7a74 Hello! Just started playing Morimens, and i&#39;m kinda lost on who should i pull for that will be usefull to me in the long run, i&#39;m currentlyn doing the storyline, 3-2, with no issues and farming silver, but i don&#39;t know who should i aim for in this start. Should i go for another team to do the storyline?  &#32; submitted by &#32;  /u/Jumpy_Temporary_7992   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tmxewl/how_to/",
-      "author": "u//u/Jumpy_Temporary_7992",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-24T15:28:50+00:00",
-      "lang": "en",
-      "title": "New player pull priorities? (Horizontal vs vertical investment?)",
-      "summary": "Hi! I’m a brand brand new player, and am looking to pull on a couple banners for this rotating banner event. Should I focus on getting a decently wide roster, or on getting a few characters with some enlightens. (I’m interested the dreamy rendezvous top up, for context on pull budget if that matters) I know enlightens are important in this game, so im basically asking just how important they are, esp for new players  &#32; submitted by &#32;  /u/-YoshiYan   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tmfa6e/new_player_pull_priorities_horizontal_vs_vertical/",
-      "author": "u//u/-YoshiYan",
+      "title": "Help",
+      "summary": "Is it still worth pulling on this banner or should I go for someone specifically?   &#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tnbp59/help/",
+      "author": "u//u/jadhanshsnajsakak",
       "engagement": 0
     },
     {
@@ -1070,7 +1071,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.201399+00:00",
+      "time": "2026-05-25T16:58:51.558498+00:00",
       "lang": "zh",
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
@@ -1080,7 +1081,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.213082+00:00",
+      "time": "2026-05-25T16:58:51.570345+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
       "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
@@ -1090,7 +1091,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.229462+00:00",
+      "time": "2026-05-25T16:58:51.586314+00:00",
       "lang": "zh",
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
@@ -1100,7 +1101,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.240143+00:00",
+      "time": "2026-05-25T16:58:51.597556+00:00",
       "lang": "zh",
       "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
       "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
@@ -1110,7 +1111,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.252741+00:00",
+      "time": "2026-05-25T16:58:51.608636+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -1120,7 +1121,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.263519+00:00",
+      "time": "2026-05-25T16:58:51.619153+00:00",
       "lang": "zh",
       "title": "12758【投稿】忘却前夜。我主任",
       "summary": "12758【投稿】忘却前夜。我主任",
@@ -1130,7 +1131,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.274492+00:00",
+      "time": "2026-05-25T16:58:51.629714+00:00",
       "lang": "zh",
       "title": "全世界都来玩5771好吧 联动送角色本体和250抽",
       "summary": "全世界都来玩5771好吧 联动送角色本体和250抽",
@@ -1140,57 +1141,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.284904+00:00",
-      "lang": "zh",
-      "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
-      "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-25T14:32:11.296025+00:00",
-      "lang": "zh",
-      "title": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
-      "summary": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-25T14:32:11.307028+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时",
-      "summary": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时间：5月18日 09:00 - 6月15日 09:00\n○ 头像：\n「典藏邮票：沙耶」\n「弥萨格幕间剧：熔毁·朵尔」\n「永不褪色的昨天：凯刻斯」\n「诺缔拉·寻找零件」\n「戈 ...全文",
-      "url": "https://m.weibo.cn/status/5300039610271163",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-25T14:32:11.322068+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
-      "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
-      "url": "https://m.weibo.cn/status/5300037031563389",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-25T14:32:11.336873+00:00",
-      "lang": "zh",
-      "title": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
-      "summary": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-25T14:32:11.348060+00:00",
+      "time": "2026-05-25T16:58:51.639992+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗",
       "summary": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗？\"\n守密人：（握一下尤乌哈希的心脏）\nP1为背景糊弄学产物，P2P3是突然想起相册里有之前没有用上的背景。",
@@ -1200,7 +1151,47 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.360161+00:00",
+      "time": "2026-05-25T16:58:51.650542+00:00",
+      "lang": "zh",
+      "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
+      "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-25T16:58:51.661137+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕",
+      "summary": "忘却前夜#忘却前夜#\n◆ 猫的「报恩」开启\n//「紧急通知，请全校师生立刻结束现有工作，协助抓捕出逃实验体。」\n「重复一遍，请全校师生立刻结束现有工作，协助抓捕出逃……该死！这些猫进来了！」\n当你听到广播中慌乱的声音时，整个校园已经被黑色绒毛淹没，大家正手忙脚乱地抓捕这些逃出实验 ...全文",
+      "url": "https://m.weibo.cn/status/5300037031563389",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-25T16:58:51.675083+00:00",
+      "lang": "zh",
+      "title": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
+      "summary": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-25T16:58:51.685439+00:00",
+      "lang": "zh",
+      "title": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
+      "summary": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
+      "url": "",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-25T16:58:51.696194+00:00",
       "lang": "zh",
       "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
       "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
@@ -1210,7 +1201,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.370979+00:00",
+      "time": "2026-05-25T16:58:51.707384+00:00",
       "lang": "zh",
       "title": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
       "summary": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
@@ -1220,10 +1211,20 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-25T14:32:11.381842+00:00",
+      "time": "2026-05-25T16:58:51.717755+00:00",
       "lang": "zh",
-      "title": "忘却前夜\n宿命的回响里面每个轮换的角色池子是持续一天吗？",
-      "summary": "忘却前夜\n宿命的回响里面每个轮换的角色池子是持续一天吗？",
+      "title": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时",
+      "summary": "忘却前夜#忘却前夜#\n◆限时纪行活动「樱庭茶会」\n活动时间：5月18日 09:00 - 6月15日 09:00\n\n◆【课题记录】第33期 -「核心课题」\n活动时间：5月18日 09:00 - 6月15日 09:00\n○ 头像：\n「典藏邮票：沙耶」\n「弥萨格幕间剧：熔毁·朵尔」\n「永不褪色的昨天：凯刻斯」\n「诺缔拉·寻找零件」\n「戈 ...全文",
+      "url": "https://m.weibo.cn/status/5300039610271163",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-25T16:58:51.731719+00:00",
+      "lang": "zh",
+      "title": "忘却前夜\n【收/换】点24吧唧和镭射票 复数起收\n我有奥尔拉/珊复数可以换 隐藏不吃h价",
+      "summary": "忘却前夜\n【收/换】点24吧唧和镭射票 复数起收\n我有奥尔拉/珊复数可以换 隐藏不吃h价",
       "url": "",
       "author": "",
       "engagement": 0
@@ -1267,6 +1268,16 @@
       "url": "https://apps.apple.com/ph/app/id6447354150?see-all=reviews",
       "author": "4Cheeze",
       "engagement": 5
+    },
+    {
+      "source": "appstore",
+      "time": "2026-04-26T19:42:48-07:00",
+      "lang": "pt",
+      "title": "Linguagem",
+      "summary": "Queremos uma tradução  em português br 🙏🏻 pls",
+      "url": "https://apps.apple.com/br/app/id6447354150?see-all=reviews",
+      "author": "happophis",
+      "engagement": 4
     },
     {
       "source": "appstore",
@@ -1734,16 +1745,6 @@
     },
     {
       "source": "ruliweb",
-      "time": "2026-04-25T15:00:00+00:00",
-      "lang": "ko",
-      "title": "여러분 D4DJ아시나요?아리스기어아이기스아시나요?팬텀로즈라고아시나요?",
-      "summary": "쉐도우헌터라고아시나요?액션대마인이라고아시나요?서울2033이라고아시나요?모리멘스라고아시나요?타워오브판타지라고아시나요?아니메걸즈라...",
-      "url": "https://bbs.ruliweb.com/etcs/board/300143/read/74952784",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "ruliweb",
       "time": "2026-05-13T15:00:00+00:00",
       "lang": "ko",
       "title": "마비m)ai)딴 겜 커뮤에서 주운 프롬프트들을 써보았다",
@@ -1794,32 +1795,12 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-05-25T14:33:49.054559+00:00",
+      "time": "2026-05-25T17:00:10.095929+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",
       "url": "https://stopgame.ru/game/morimens",
       "author": "StopGame.ru",
-      "engagement": 0
-    },
-    {
-      "source": "weixin",
-      "time": "2026-05-11T15:09:52+00:00",
-      "lang": "zh",
-      "title": "[微信] 忘却前夜*沙耶之歌 2.5 周年联动献礼",
-      "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7801PrF8t1i2fbbLXZ312pNRBop5l1MClqXa8Fplpd9ZSgaZCtqo2bpxkfWM7dMJeecSDev9YR8Mxxs0fqSPeUrdYS1lRffFmSN7zXxT41GNie5gJFRQhdDnHaQARS7E9ZBTrF7G8FCYWXYXPaE6m6vxvSdZXNaGKmGwAKIEnocmYaM160tAXtZlvV-krW3Q9n07G-O4av4eR6B0FOKWGRflztgI7RZ1g..&amp;type=2&amp;query=%E5%BF%98%E5%8D%B4%E5%89%8D%E5%A4%9C&amp;token=ED032D139F3BD7094D4A1EE90813875D4D1538416A145DCE",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weixin",
-      "time": "2026-05-11T15:09:52+00:00",
-      "lang": "zh",
-      "title": "[微信] 忘却前夜*沙耶之歌 2.5 周年联动献礼",
-      "summary": "",
-      "url": "/link?url=dn9a_-gY295K0Rci_xozVXfdMkSQTLW6cwJThYulHEtVjXrGTiVgS7801PrF8t1i1468OxgTvgpNRBop5l1MClqXa8Fplpd9ZSgaZCtqo2bpxkfWM7dMJeecSDev9YR8Mxxs0fqSPeUrdYS1lRffFmSN7zXxT41GNie5gJFRQhdDnHaQARS7E668X_fK9K7NJpc9f2mAoKlM6hSxUkAp5PE0biaEte2lV3hmZkNU421ZSximbil5axGWQZjI5kIyoNHnNz4EEmNQL0Hr9Gyd3Q..&amp;type=2&amp;query=%E5%BF%98%E5%8D%BB%E5%89%8D%E5%A4%9C&amp;token=ED03383415B25C81C6C3946081B2050EC636AA186A145DD0",
-      "author": "",
       "engagement": 0
     }
   ]
