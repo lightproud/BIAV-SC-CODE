@@ -1,8 +1,8 @@
 {
   "date": "2026-05-25",
-  "archived_at": "2026-05-24T23:54:17.011050+00:00",
+  "archived_at": "2026-05-25T02:16:09.478256+00:00",
   "source": "pixiv",
-  "item_count": 2,
+  "item_count": 3,
   "items": [
     {
       "source": "pixiv",
@@ -25,6 +25,18 @@
       "url": "https://www.pixiv.net/artworks/",
       "author": "",
       "engagement": 0
+    },
+    {
+      "source": "pixiv",
+      "time": "2026-05-25T09:22:38+09:00",
+      "lang": "",
+      "title": "Arachne (Morimens)",
+      "summary": "",
+      "url": "https://www.pixiv.net/artworks/145189333",
+      "author": "Clustifle",
+      "engagement": 0,
+      "media_url": "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/25/09/22/38/145189333_p0_square1200.jpg",
+      "content_type": "image"
     }
   ]
 }
