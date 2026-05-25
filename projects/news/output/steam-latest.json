@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-25T11:44:46.286216+00:00",
+  "collected_at": "2026-05-25T14:35:04.679082+00:00",
   "source": "steam",
-  "item_count": 13,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -136,7 +136,7 @@
       "voted_up": true,
       "review": "不能我一个人坐牢，所以我支持所有来打5771！",
       "timestamp_created": 1779635941,
-      "playtime_forever": 3231
+      "playtime_forever": 3262
     },
     {
       "source": "steam",
@@ -151,7 +151,7 @@
       "voted_up": true,
       "review": "amazing game theres nothing else to say.",
       "timestamp_created": 1779635898,
-      "playtime_forever": 627
+      "playtime_forever": 655
     },
     {
       "source": "steam",
@@ -167,36 +167,6 @@
       "review": "二次元和克苏鲁新颖的结合",
       "timestamp_created": 1779634844,
       "playtime_forever": 227
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-24T13:55:03+00:00",
-      "lang": "schinese",
-      "title": "[正面] 很好 找到了我的红毛寡妇真爱 我喜欢你",
-      "summary": "很好 找到了我的红毛寡妇真爱 我喜欢你",
-      "url": "https://steamcommunity.com/profiles/76561199876874062/recommended/3052450",
-      "author": "76561199876874062",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": true,
-      "review": "很好 找到了我的红毛寡妇真爱 我喜欢你",
-      "timestamp_created": 1779630903,
-      "playtime_forever": 1194
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-24T13:43:24+00:00",
-      "lang": "koreana",
-      "title": "[正面] 모리나가 예쁨",
-      "summary": "모리나가 예쁨",
-      "url": "https://steamcommunity.com/profiles/76561199753197128/recommended/3052450",
-      "author": "76561199753197128",
-      "engagement": 0,
-      "language": "koreana",
-      "voted_up": true,
-      "review": "모리나가 예쁨",
-      "timestamp_created": 1779630204,
-      "playtime_forever": 44
     }
   ]
 }
