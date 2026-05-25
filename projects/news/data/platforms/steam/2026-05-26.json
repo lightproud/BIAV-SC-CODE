@@ -1,8 +1,8 @@
 {
   "date": "2026-05-26",
-  "archived_at": "2026-05-25T22:04:40.584222+00:00",
+  "archived_at": "2026-05-25T23:58:25.191651+00:00",
   "source": "steam",
-  "item_count": 10,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -153,6 +153,21 @@
       "review": "Been a long time since I felt excited playing a gacha game. the Artstyle, story, and music compliments each other so well and really sells the bleakness and preseverance of the world.\r\nalso if you join now you get like 200 pulls for free.",
       "timestamp_created": 1779735007,
       "playtime_forever": 382
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-25T22:04:14+00:00",
+      "lang": "brazilian",
+      "title": "[正面] é um jogo muito bom, fiquei viciada e olha que ode...",
+      "summary": "é um jogo muito bom, fiquei viciada e olha que odeio jogo de turno.",
+      "url": "https://steamcommunity.com/profiles/76561199542514598/recommended/3052450",
+      "author": "76561199542514598",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "é um jogo muito bom, fiquei viciada e olha que odeio jogo de turno.",
+      "timestamp_created": 1779746654,
+      "playtime_forever": 631
     }
   ]
 }

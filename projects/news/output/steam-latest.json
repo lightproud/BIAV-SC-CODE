@@ -1,8 +1,38 @@
 {
-  "collected_at": "2026-05-25T22:04:40.265400+00:00",
+  "collected_at": "2026-05-25T23:58:24.904802+00:00",
   "source": "steam",
   "item_count": 8,
   "items": [
+    {
+      "source": "steam",
+      "time": "2026-05-25T08:30:55+00:00",
+      "lang": "english",
+      "title": "[负面] It's unplayable, you get like 50 different menus w...",
+      "summary": "It's unplayable, you get like 50 different menus with gacha click this, 35 ongoing events click here, flashing rewards after every 5 minute mission click here. I borrowed a character from a random dude on the leaderboard and he dealt 60k dmg with 0 cost cards which duped each other infinitely. My characters deal 6 damage btw, SIX. UI is scuffed, you need 2 heroes of every element x4 for some modes it's just all ass.\n\nStill better than sts2 though.",
+      "url": "https://steamcommunity.com/profiles/76561198013614632/recommended/3052450",
+      "author": "76561198013614632",
+      "engagement": 1,
+      "language": "english",
+      "voted_up": false,
+      "review": "It's unplayable, you get like 50 different menus with gacha click this, 35 ongoing events click here, flashing rewards after every 5 minute mission click here. I borrowed a character from a random dude on the leaderboard and he dealt 60k dmg with 0 cost cards which duped each other infinitely. My characters deal 6 damage btw, SIX. UI is scuffed, you need 2 heroes of every element x4 for some modes it's just all ass.\n\nStill better than sts2 though.",
+      "timestamp_created": 1779697855,
+      "playtime_forever": 73
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-25T22:04:14+00:00",
+      "lang": "brazilian",
+      "title": "[正面] é um jogo muito bom, fiquei viciada e olha que ode...",
+      "summary": "é um jogo muito bom, fiquei viciada e olha que odeio jogo de turno.",
+      "url": "https://steamcommunity.com/profiles/76561199542514598/recommended/3052450",
+      "author": "76561199542514598",
+      "engagement": 0,
+      "language": "brazilian",
+      "voted_up": true,
+      "review": "é um jogo muito bom, fiquei viciada e olha que odeio jogo de turno.",
+      "timestamp_created": 1779746654,
+      "playtime_forever": 631
+    },
     {
       "source": "steam",
       "time": "2026-05-25T18:50:07+00:00",
@@ -80,21 +110,6 @@
     },
     {
       "source": "steam",
-      "time": "2026-05-25T08:30:55+00:00",
-      "lang": "english",
-      "title": "[负面] It's unplayable, you get like 50 different menus w...",
-      "summary": "It's unplayable, you get like 50 different menus with gacha click this, 35 ongoing events click here, flashing rewards after every 5 minute mission click here. I borrowed a character from a random dude on the leaderboard and he dealt 60k dmg with 0 cost cards which duped each other infinitely. My characters deal 6 damage btw, SIX. UI is scuffed, you need 2 heroes of every element x4 for some modes it's just all ass.\n\nStill better than sts2 though.",
-      "url": "https://steamcommunity.com/profiles/76561198013614632/recommended/3052450",
-      "author": "76561198013614632",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": false,
-      "review": "It's unplayable, you get like 50 different menus with gacha click this, 35 ongoing events click here, flashing rewards after every 5 minute mission click here. I borrowed a character from a random dude on the leaderboard and he dealt 60k dmg with 0 cost cards which duped each other infinitely. My characters deal 6 damage btw, SIX. UI is scuffed, you need 2 heroes of every element x4 for some modes it's just all ass.\n\nStill better than sts2 though.",
-      "timestamp_created": 1779697855,
-      "playtime_forever": 73
-    },
-    {
-      "source": "steam",
       "time": "2026-05-25T06:24:59+00:00",
       "lang": "schinese",
       "title": "[负面] 一眼望到头，就纯是二游，美术却实很养眼，但玩这个还不如去再爬几把塔，真的浪费时间",
@@ -107,21 +122,6 @@
       "review": "一眼望到头，就纯是二游，美术却实很养眼，但玩这个还不如去再爬几把塔，真的浪费时间",
       "timestamp_created": 1779690299,
       "playtime_forever": 144
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-24T23:08:01+00:00",
-      "lang": "english",
-      "title": "[正面]",
-      "summary": "",
-      "url": "https://steamcommunity.com/profiles/76561199019822320/recommended/3052450",
-      "author": "76561199019822320",
-      "engagement": 0,
-      "language": "english",
-      "voted_up": true,
-      "review": "",
-      "timestamp_created": 1779664081,
-      "playtime_forever": 1253
     }
   ]
 }
