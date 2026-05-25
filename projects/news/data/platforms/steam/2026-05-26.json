@@ -1,8 +1,8 @@
 {
   "date": "2026-05-26",
-  "archived_at": "2026-05-25T18:27:01.816801+00:00",
+  "archived_at": "2026-05-25T20:21:58.859414+00:00",
   "source": "steam",
-  "item_count": 9,
+  "item_count": 10,
   "items": [
     {
       "source": "steam",
@@ -138,6 +138,21 @@
       "review": "战斗，爽！\r\n享受不同卡牌叠加在一起发生化学效果的爽感，只要学会搭配就能打出极其暴力的伤害，以及卡牌二游最顶尖的技能设计，[b] 1999你抄你母呢[/b]",
       "timestamp_created": 1779729865,
       "playtime_forever": 1301
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-25T18:50:07+00:00",
+      "lang": "english",
+      "title": "[正面] Been a long time since I felt excited playing a ga...",
+      "summary": "Been a long time since I felt excited playing a gacha game. the Artstyle, story, and music compliments each other so well and really sells the bleakness and preseverance of the world.\r\nalso if you join now you get like 200 pulls for free.",
+      "url": "https://steamcommunity.com/profiles/76561198112812096/recommended/3052450",
+      "author": "76561198112812096",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Been a long time since I felt excited playing a gacha game. the Artstyle, story, and music compliments each other so well and really sells the bleakness and preseverance of the world.\r\nalso if you join now you get like 200 pulls for free.",
+      "timestamp_created": 1779735007,
+      "playtime_forever": 382
     }
   ]
 }
