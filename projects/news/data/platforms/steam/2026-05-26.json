@@ -1,8 +1,8 @@
 {
   "date": "2026-05-26",
-  "archived_at": "2026-05-26T06:40:12.058439+00:00",
+  "archived_at": "2026-05-26T13:49:14.696942+00:00",
   "source": "steam",
-  "item_count": 16,
+  "item_count": 18,
   "items": [
     {
       "source": "steam",
@@ -243,6 +243,36 @@
       "review": "one of the better gachas, a lot focus on a serious story, great lovecraft setting, and generally there is a build for every character.",
       "timestamp_created": 1779762267,
       "playtime_forever": 2156
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T10:23:55+00:00",
+      "lang": "spanish",
+      "title": "[负面] VAYA BASURA DE JUEGO COLEGA, QUIERO LA CARTA DE SA...",
+      "summary": "VAYA BASURA DE JUEGO COLEGA, QUIERO LA CARTA DE SAYA PERO NO TANTO MADRE DE DIOS",
+      "url": "https://steamcommunity.com/profiles/76561199167434992/recommended/3052450",
+      "author": "76561199167434992",
+      "engagement": 0,
+      "language": "spanish",
+      "voted_up": false,
+      "review": "VAYA BASURA DE JUEGO COLEGA, QUIERO LA CARTA DE SAYA PERO NO TANTO MADRE DE DIOS",
+      "timestamp_created": 1779791035,
+      "playtime_forever": 34
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T09:19:30+00:00",
+      "lang": "english",
+      "title": "[正面] A very tactical gacha deck-building roguelike game...",
+      "summary": "A very tactical gacha deck-building roguelike game with a diverse play style.",
+      "url": "https://steamcommunity.com/profiles/76561199179890200/recommended/3052450",
+      "author": "76561199179890200",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "A very tactical gacha deck-building roguelike game with a diverse play style.",
+      "timestamp_created": 1779787170,
+      "playtime_forever": 394
     }
   ]
 }
