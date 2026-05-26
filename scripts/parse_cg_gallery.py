@@ -11,8 +11,6 @@ def parse_cg_gallery(manifest_path):
     cg_entries = [f for f in all_files if f.get('path', '').startswith('cg/')]
 
     # Group by chapter
-    chapter_pattern = re.compile(r'[_/]C(\d+)[_/]|[_/]C(\d+)$|^C(\d+)[_/]')
-
     chapters = {}
     special_groups = {}
 

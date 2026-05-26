@@ -83,10 +83,6 @@ def build_system_prompt(persona: dict, context: str = "", platform: str = "silve
     guidelines = persona.get("prompt_guidelines", {})
     mapping = persona.get("system_persona_mapping", {})
 
-    # Select greeting based on randomness for variety
-    greetings = voice_lines.get("greeting", [])
-    example_greeting = greetings[0] if greetings else ""
-
     # Build the prompt
     sections = []
 
