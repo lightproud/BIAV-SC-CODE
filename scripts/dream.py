@@ -1262,9 +1262,9 @@ def run_phase2(client) -> dict:
         print(f"  - {n_insights} insights generated")
 
         for c in consolidation.get("contradictions", [])[:3]:
-            print(f"    ⚡ {c.get('description', '')[:80]}")
+            print(f"    {c.get('description', '')[:80]}")
         for g in consolidation.get("knowledge_gaps", [])[:3]:
-            print(f"    🕳 {g.get('topic', '')}: {g.get('evidence', '')[:60]}")
+            print(f"    {g.get('topic', '')}: {g.get('evidence', '')[:60]}")
     else:
         print("  - No results (AI analysis unavailable or failed)")
 
@@ -1275,7 +1275,7 @@ def run_phase2(client) -> dict:
         sentiment = trends.get("sentiment", "unknown")
         print(f"  - Community sentiment: {sentiment}")
         for topic in trends.get("hot_topics", [])[:3]:
-            print(f"    🔥 {topic}")
+            print(f"    {topic}")
         for anomaly in trends.get("anomalies", [])[:3]:
             print(f"    ⚠ {anomaly}")
         consolidation["trends"] = trends
@@ -1904,12 +1904,11 @@ def main():
     alert_count = sentinel.get("alert_count", 0)
     print(f"\n## Sentinel (Anomaly Detection)")
     if alert_count == 0:
-        print("  - ✅ All data sources within normal range")
+        print("  - All data sources within normal range")
     else:
         for alert in sentinel.get("alerts", []):
             level = alert["level"]
-            icon = {"red": "🔴", "orange": "🟠", "yellow": "🟡"}.get(level, "⚪")
-            print(f"  - {icon} [{level.upper()}] {alert['message']}")
+            print(f"  - [{level.upper()}] {alert['message']}")
 
     print(f"\n## Phase 1 Summary")
     print(f"  - {phase1['issues']} structural issues found")
@@ -1950,7 +1949,7 @@ def main():
         {k: v for k, v in phase1.items() if k != "keyword_index"},
         phase2 if phase2 else None,
     )
-    print(f"\n📓 Dream journal saved: {journal_path}")
+    print(f"\nDream journal saved: {journal_path}")
 
     # JSON report mode for automation
     if report_mode:

@@ -219,7 +219,7 @@ def main():
 
     if query:
         result = recommend_context(query, role=role)
-        print(f"\n  🧠 上下文推荐 — 「{query}」")
+        print(f"\n  上下文推荐 — 「{query}」")
         if role:
             print(f"     角色：{role}")
         print(f"     {result['context_summary']}\n")

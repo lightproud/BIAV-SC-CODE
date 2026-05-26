@@ -492,7 +492,7 @@ def incremental_update(hours_back: int = 24) -> dict:
                 changed_files.append(fp)
 
     if not changed_files:
-        print("  No files changed in last {hours_back}h, graph is current")
+        print(f"  No files changed in last {hours_back}h, graph is current")
         return graph
 
     print(f"  {len(changed_files)} files changed, scanning for new entities...")
@@ -804,7 +804,7 @@ def find_related_files(graph: dict, query: str, max_depth: int = 2) -> list[dict
 def print_stats(graph: dict):
     """Print graph statistics."""
     meta = graph["meta"]
-    print(f"\n  📊 知识图谱统计")
+    print(f"\n  知识图谱统计")
     print(f"  生成时间：{meta.get('generated', '?')}")
     print(f"  节点总数：{meta['node_count']}")
     print(f"  边总数：{meta['edge_count']}")
@@ -825,7 +825,7 @@ def print_query_result(graph: dict, query: str, depth: int):
 
     for match in matches[:2]:
         node = match["node"]
-        print(f"\n  🔍 {node['type']}: {node['name']} ({match['match']} match)")
+        print(f"\n  {node['type']}: {node['name']} ({match['match']} match)")
         if node.get("properties"):
             props = {k: v for k, v in node["properties"].items() if v}
             if props:
@@ -848,7 +848,7 @@ def print_query_result(graph: dict, query: str, depth: int):
     # Also show related files
     related = find_related_files(graph, query, max_depth=depth)
     if related:
-        print(f"\n  📁 相关文件（按距离排序）：")
+        print(f"\n  相关文件（按距离排序）：")
         for r in related[:8]:
             print(f"    [{r['distance']}跳] {r['file']} (via {r['edge_type']})")
 
@@ -868,9 +868,9 @@ def main():
     query = " ".join(query_args) if query_args else None
 
     if do_build:
-        print(f"🔨 构建知识图谱 — {TODAY}")
+        print(f"构建知识图谱 — {TODAY}")
         build_graph()
-        print("  ✅ 图谱构建完成")
+        print("  图谱构建完成")
 
     graph = load_graph()
 
