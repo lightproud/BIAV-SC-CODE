@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-26T21:30:29.398875+00:00",
+  "collected_at": "2026-05-26T23:04:14.862340+00:00",
   "source": "all",
-  "item_count": 158,
+  "item_count": 156,
   "items": [
     {
       "source": "steam",
@@ -31,7 +31,22 @@
       "voted_up": true,
       "review": "one of the better gachas, a lot focus on a serious story, great lovecraft setting, and generally there is a build for every character.",
       "timestamp_created": 1779762267,
-      "playtime_forever": 2156
+      "playtime_forever": 2194
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T21:42:25+00:00",
+      "lang": "english",
+      "title": "[正面] I'm John Lovecraft, and this is my favourite game...",
+      "summary": "I'm John Lovecraft, and this is my favourite game on steam.",
+      "url": "https://steamcommunity.com/profiles/76561198851880831/recommended/3052450",
+      "author": "76561198851880831",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "I'm John Lovecraft, and this is my favourite game on steam.",
+      "timestamp_created": 1779831745,
+      "playtime_forever": 505
     },
     {
       "source": "steam",
@@ -46,7 +61,7 @@
       "voted_up": true,
       "review": "I picked up the game just a week ago and honestly it's been such an engrossing series, the story telling is out of this world and the worldbuilding tugs you in. The game represents the message it wants to tell: to not forget memories and this game will be a game I don't think I can ever forget.",
       "timestamp_created": 1779820801,
-      "playtime_forever": 3817
+      "playtime_forever": 3865
     },
     {
       "source": "steam",
@@ -91,7 +106,7 @@
       "voted_up": true,
       "review": "A very good game.",
       "timestamp_created": 1779814478,
-      "playtime_forever": 1445
+      "playtime_forever": 1476
     },
     {
       "source": "steam",
@@ -197,21 +212,6 @@
       "review": "Thais.",
       "timestamp_created": 1779753600,
       "playtime_forever": 14435
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-25T22:04:14+00:00",
-      "lang": "brazilian",
-      "title": "[正面] é um jogo muito bom, fiquei viciada e olha que ode...",
-      "summary": "é um jogo muito bom, fiquei viciada e olha que odeio jogo de turno.",
-      "url": "https://steamcommunity.com/profiles/76561199542514598/recommended/3052450",
-      "author": "76561199542514598",
-      "engagement": 0,
-      "language": "brazilian",
-      "voted_up": true,
-      "review": "é um jogo muito bom, fiquei viciada e olha que odeio jogo de turno.",
-      "timestamp_created": 1779746654,
-      "playtime_forever": 631
     },
     {
       "source": "discord",
@@ -526,31 +526,31 @@
     },
     {
       "source": "youtube",
-      "time": "2026-05-26T18:27:37.622459+00:00",
+      "time": "2026-05-26T19:00:25.208826+00:00",
       "lang": "",
       "title": "[Morimens] Endgame Team Comp Overview : Part 4 (Castor Stall, no Pollux) and why Pollux is garbage",
-      "summary": "[3 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
+      "summary": "[4 hours ago] https://buymeacoffee.com/flares https://discord.gg/tpMMe5W7CT - Personal Flares Discord ...",
       "url": "https://www.youtube.com/watch?v=lgACFNTziOc",
       "author": "Flares117",
-      "engagement": 532,
+      "engagement": 645,
       "media_url": "https://i.ytimg.com/vi/lgACFNTziOc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDXf4hgsRO8pzZyorhsf6zxbK6ZxA",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-05-26T18:27:37.622598+00:00",
+      "time": "2026-05-26T19:00:25.208996+00:00",
       "lang": "",
       "title": "You NEED Thais in Morimens (trust me on this)",
-      "summary": "[3 hours ago] Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais I'm locked in her ...",
+      "summary": "[4 hours ago] Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais Please pull Thais I'm locked in her ...",
       "url": "https://www.youtube.com/watch?v=1VD0DuEBIIo",
       "author": "Rose Guardian Reya",
-      "engagement": 247,
+      "engagement": 395,
       "media_url": "https://i.ytimg.com/vi/1VD0DuEBIIo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD6dMYWbWEztrD7G7KdDa1vaJh3Aw",
       "content_type": "image"
     },
     {
       "source": "youtube",
-      "time": "2026-05-26T21:27:37.622591+00:00",
+      "time": "2026-05-26T23:00:25.208819+00:00",
       "lang": "",
       "title": "Can we STILL beat Morimens as F2P with ONLY characters from Kaleido Recollections",
       "summary": "A Morimens Challenge Run series with a fresh account (Part 3: Starting from Chapter 6!) CURRENT RULESET: - A new account ...",
@@ -607,6 +607,19 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-26T13:18:22+00:00",
+      "lang": "en",
+      "title": "Are there any actual information or tier list channels/web pages for this game?",
+      "summary": "I am a newbie. Whenever I search for something, the entire search is just a content farm channel named &quot;flares&quot; who just screams about how much he hates every character. I tried watching/reading some of his stuff but he straight up goes &quot;this unit sucks, don&#39;t pull because I hate it&quot; with no info as to why. I am not gonna argue about what content people like, to each to their own but isn&#39;t there at least a page like prydwen or a channel like IWinToLose for this game with actual info?  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1to6pcj/are_there_any_actual_information_or_tier_list/",
+      "author": "/u/Embarrassed-Sign3106",
+      "engagement": 0,
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-26T07:57:26+00:00",
       "lang": "en",
       "title": "Murphy Fanart",
@@ -622,12 +635,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T13:18:22+00:00",
+      "time": "2026-05-26T15:22:13+00:00",
       "lang": "en",
-      "title": "Are there any actual information or tier list channels/web pages for this game?",
-      "summary": "I am a newbie. Whenever I search for something, the entire search is just a content farm channel named &quot;flares&quot; who just screams about how much he hates every character. I tried watching/reading some of his stuff but he straight up goes &quot;this unit sucks, don&#39;t pull because I hate it&quot; with no info as to why. I am not gonna argue about what content people like, to each to their own but isn&#39;t there at least a page like prydwen or a channel like IWinToLose for this game with actual info?  &#32; submitted by &#32;  /u/Embarrassed-Sign3106   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1to6pcj/are_there_any_actual_information_or_tier_list/",
-      "author": "/u/Embarrassed-Sign3106",
+      "title": "Do we know anything about Faint?",
+      "summary": "I was browsing posses and then was like &quot;Wait, where is Faint&#39;s posse?&quot;, and that lead me to realize that I do not remember seeing her for the entire Arc 1, and while I did not finish Arc 2 yet, I am pretty certain that she is not in it, and she has no side story, hence, no posse, I know that Tinct is her sister, but how do I even know that? I&#39;ve heard it somewhere, but never seen it in game, so it might not even be true, and I think aside from communication device and reproductive fenzy, we don&#39;t even talk to her, and the only other thing we have is character description.. Am I tripping or did BIAV just forget about her?   &#32; submitted by &#32;  /u/ivan_kri   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1toa6a1/do_we_know_anything_about_faint/",
+      "author": "/u/ivan_kri",
       "engagement": 0,
       "metadata": {
         "via": "rss"
@@ -650,19 +663,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T15:22:13+00:00",
-      "lang": "en",
-      "title": "Do we know anything about Faint?",
-      "summary": "I was browsing posses and then was like &quot;Wait, where is Faint&#39;s posse?&quot;, and that lead me to realize that I do not remember seeing her for the entire Arc 1, and while I did not finish Arc 2 yet, I am pretty certain that she is not in it, and she has no side story, hence, no posse, I know that Tinct is her sister, but how do I even know that? I&#39;ve heard it somewhere, but never seen it in game, so it might not even be true, and I think aside from communication device and reproductive fenzy, we don&#39;t even talk to her, and the only other thing we have is character description.. Am I tripping or did BIAV just forget about her?   &#32; submitted by &#32;  /u/ivan_kri   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1toa6a1/do_we_know_anything_about_faint/",
-      "author": "/u/ivan_kri",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-26T10:46:31+00:00",
       "lang": "en",
       "title": "[OC] Caecus Fanart!",
@@ -678,14 +678,29 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T19:51:31+00:00",
+      "time": "2026-05-26T21:23:55+00:00",
       "lang": "en",
-      "title": "Need help with this stage",
-      "summary": "I cleared all others 24/24 but still stuck with this one 😹  &#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1toi44n/need_help_with_this_stage/",
-      "author": "/u/jadhanshsnajsakak",
+      "title": "Cleared Arc 2 Chapter 6 with level 60 Characters (no OE or high Wheels)!",
+      "summary": "Hi, I (barely) beat Arc 2 Chapter 6 today! I did however have to use all my Emergency Gnosis cause I couldn&#39;t shield all the damage  I was mainly curious how far I could get with only level 60 characters and apparently you can clear it with the same team from Arc 2 Chapter 1.  &#32; submitted by &#32;  /u/FableAccel   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tokr4g/cleared_arc_2_chapter_6_with_level_60_characters/",
+      "author": "/u/FableAccel",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/zbma7ftrdj3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=5077ba725d560e15a4b158124a89b9d3760a03c7",
+      "media_url": "https://preview.redd.it/0yu6lgydsj3h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=12f994088aea36ee1ea07558fb1551767d3897ab",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-26T20:40:50+00:00",
+      "lang": "en",
+      "title": "Hi I'm new and I have been playing for a week or 2(love the game) and I got curious how many pulls you could technically get from main story and with some simple math.... here it is",
+      "summary": "not sure if someone already did this before me and this calculation isn&#39;t accurate it&#39;s just a rough estimate cause doing it accurately would hurt my head  &#32; submitted by &#32;  /u/Ryu_user   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tojjzq/hi_im_new_and_i_have_been_playing_for_a_week_or/",
+      "author": "/u/Ryu_user",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/hno26qzkmj3h1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=ff179508b4fe705055e2a85bf4c5b54fc6c0ab1f",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -708,15 +723,28 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T17:27:48+00:00",
+      "time": "2026-05-26T19:51:31+00:00",
       "lang": "en",
-      "title": "Newbie questions about survival and pull plans",
-      "summary": "https://preview.redd.it/t11l7plmni3h1.png?width=1267&amp;format=png&amp;auto=webp&amp;s=872e8caf9b0d92e3594e31a1b2cc07d609758d86 https://preview.redd.it/jtierv5nni3h1.png?width=1248&amp;format=png&amp;auto=webp&amp;s=ddf189538bd9cd0853fe7591d7cb02e233e0750c https://preview.redd.it/ahhc4yenni3h1.png?width=1257&amp;format=png&amp;auto=webp&amp;s=9984bb6277d9e2a9e6070008e01766c9e8199bdc I find Morimens quite tough (that&#39;s fine) and I have major survival issues with most teams. It seems in a hypercarry team you need to play very well, since you have few turns before you wipe. Also you could lose a lot of health during exploration which will make the boss even harder. (unless of course you outlevel the content) Maybe stall / multiple sustain teams fit me better? Are there a lot of bosses that hard-counter slower killing teams? I recently got Vortice, Corposant and use them with Celeste and Caecus. Lower damage (I don&#39;t have Murphy, GMurphy), but worked well so far. Can Vortice do all of story, including hard mode? If so I guess I could pull for her dupes and wheel later in the banner rotation. I also have Arachne, which is fun to use with Jenkins and Horla. But I find it very hard to survive. Somebody suggested to use Castor (banner coming soon). But I tried a support out at about my other units powerlevel and shields couldn&#39;t keep up and no heals either. Should I get Castor anyway? Any other units or easy to play, survivable DPS to look out for (most dps need dupes to work though...) ? My chars are in the pics.  char pics got deleted....most standards, Lily, Gdoll, Salvador; Vortice, Corposant; Thais, Salvador, Doresain; Arachne, Horla, Daffodil   &#32; submitted by &#32;  /u/TheRaven1406   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1todv48/newbie_questions_about_survival_and_pull_plans/",
-      "author": "/u/TheRaven1406",
+      "title": "Need help with this stage",
+      "summary": "I cleared all others 24/24 but still stuck with this one 😹  &#32; submitted by &#32;  /u/jadhanshsnajsakak   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1toi44n/need_help_with_this_stage/",
+      "author": "/u/jadhanshsnajsakak",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/t11l7plmni3h1.png?width=140&amp;height=76&amp;auto=webp&amp;s=97161bdedefc7842c41adf8a7b9c50b55e2e530f",
+      "media_url": "https://preview.redd.it/zbma7ftrdj3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=5077ba725d560e15a4b158124a89b9d3760a03c7",
       "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-26T20:34:22+00:00",
+      "lang": "en",
+      "title": "Question about the pulls",
+      "summary": "I tried to look for a video where I explained it but I didn&#39;t find anything that&#39;s why I ask, I&#39;m sorry if you&#39;ve asked a lot. Can someone Explain what the three coins (converted pulls) are for. I know that there is a gray one from the perma and another gray one from the promotional? And a shinny one also from the promotional? Thanks and have a good day  &#32; submitted by &#32;  /u/Dull-Ad968   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tojde7/question_about_the_pulls/",
+      "author": "/u/Dull-Ad968",
+      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -731,6 +759,21 @@
       "author": "/u/Delicious_Line_6265",
       "engagement": 0,
       "media_url": "https://external-preview.redd.it/OTNzanhpcTB1ZjNoMamu6qD2Schzj41rKHdUHZFcPmxNvMNBGUKpSJEBnW-o.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=312b80c724db867bcfd24bf20b58edbe18dfc572",
+      "content_type": "image",
+      "metadata": {
+        "via": "rss"
+      }
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-26T17:27:48+00:00",
+      "lang": "en",
+      "title": "Newbie questions about survival and pull plans",
+      "summary": "https://preview.redd.it/t11l7plmni3h1.png?width=1267&amp;format=png&amp;auto=webp&amp;s=872e8caf9b0d92e3594e31a1b2cc07d609758d86 https://preview.redd.it/jtierv5nni3h1.png?width=1248&amp;format=png&amp;auto=webp&amp;s=ddf189538bd9cd0853fe7591d7cb02e233e0750c https://preview.redd.it/ahhc4yenni3h1.png?width=1257&amp;format=png&amp;auto=webp&amp;s=9984bb6277d9e2a9e6070008e01766c9e8199bdc I find Morimens quite tough (that&#39;s fine) and I have major survival issues with most teams. It seems in a hypercarry team you need to play very well, since you have few turns before you wipe. Also you could lose a lot of health during exploration which will make the boss even harder. (unless of course you outlevel the content) Maybe stall / multiple sustain teams fit me better? Are there a lot of bosses that hard-counter slower killing teams? I recently got Vortice, Corposant and use them with Celeste and Caecus. Lower damage (I don&#39;t have Murphy, GMurphy), but worked well so far. Can Vortice do all of story, including hard mode? If so I guess I could pull for her dupes and wheel later in the banner rotation. I also have Arachne, which is fun to use with Jenkins and Horla. But I find it very hard to survive. Somebody suggested to use Castor (banner coming soon). But I tried a support out at about my other units powerlevel and shields couldn&#39;t keep up and no heals either. Should I get Castor anyway? Any other units or easy to play, survivable DPS to look out for (most dps need dupes to work though...) ? My chars are in the pics.  char pics got deleted....most standards, Lily, Gdoll, Salvador; Vortice, Corposant; Thais, Salvador, Doresain; Arachne, Horla, Daffodil   &#32; submitted by &#32;  /u/TheRaven1406   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1todv48/newbie_questions_about_survival_and_pull_plans/",
+      "author": "/u/TheRaven1406",
+      "engagement": 0,
+      "media_url": "https://preview.redd.it/t11l7plmni3h1.png?width=140&amp;height=76&amp;auto=webp&amp;s=97161bdedefc7842c41adf8a7b9c50b55e2e530f",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -779,14 +822,14 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T21:23:55+00:00",
+      "time": "2026-05-26T22:08:57+00:00",
       "lang": "en",
-      "title": "Cleared Arc 2 Chapter 6 with level 60 Characters (no OE or high Wheels)!",
-      "summary": "Hi, I (barely) beat Arc 2 Chapter 6 today! I did however have to use all my Emergency Gnosis cause I couldn&#39;t shield all the damage  I was mainly curious how far I could get with only level 60 characters and apparently you can clear it with the same team from Arc 2 Chapter 1.  &#32; submitted by &#32;  /u/FableAccel   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tokr4g/cleared_arc_2_chapter_6_with_level_60_characters/",
-      "author": "/u/FableAccel",
+      "title": "team",
+      "summary": "hi! i&#39;m still pretty new to the game, could you please give me some advice about team building? which characters are good  &#32; submitted by &#32;  /u/diedariu   [link] &#32; [comments]",
+      "url": "https://old.reddit.com/r/Morimens/comments/1tolyio/team/",
+      "author": "/u/diedariu",
       "engagement": 0,
-      "media_url": "https://preview.redd.it/0yu6lgydsj3h1.png?width=140&amp;height=78&amp;auto=webp&amp;s=12f994088aea36ee1ea07558fb1551767d3897ab",
+      "media_url": "https://preview.redd.it/7j231qva2k3h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=33b20b3c20ade804758069656bab9c270fc0b3c4",
       "content_type": "image",
       "metadata": {
         "via": "rss"
@@ -809,21 +852,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T20:40:50+00:00",
-      "lang": "en",
-      "title": "Hi I'm new and I have been playing for a week or 2(love the game) and I got curious how many pulls you could technically get from main story and with some simple math.... here it is",
-      "summary": "not sure if someone already did this before me and this calculation isn&#39;t accurate it&#39;s just a rough estimate cause doing it accurately would hurt my head  &#32; submitted by &#32;  /u/Ryu_user   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tojjzq/hi_im_new_and_i_have_been_playing_for_a_week_or/",
-      "author": "/u/Ryu_user",
-      "engagement": 0,
-      "media_url": "https://preview.redd.it/hno26qzkmj3h1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=ff179508b4fe705055e2a85bf4c5b54fc6c0ab1f",
-      "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-26T02:35:05+00:00",
       "lang": "en",
       "title": "Name keeps popping up??",
@@ -833,32 +861,6 @@
       "engagement": 0,
       "media_url": "https://preview.redd.it/zur3gbiv8e3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=96f2416836b39323c17405cee7cb5508a86dd6c9",
       "content_type": "image",
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T20:34:22+00:00",
-      "lang": "en",
-      "title": "Question about the pulls",
-      "summary": "I tried to look for a video where I explained it but I didn&#39;t find anything that&#39;s why I ask, I&#39;m sorry if you&#39;ve asked a lot. Can someone Explain what the three coins (converted pulls) are for. I know that there is a gray one from the perma and another gray one from the promotional? And a shinny one also from the promotional? Thanks and have a good day  &#32; submitted by &#32;  /u/Dull-Ad968   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1tojde7/question_about_the_pulls/",
-      "author": "/u/Dull-Ad968",
-      "engagement": 0,
-      "metadata": {
-        "via": "rss"
-      }
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T10:33:04+00:00",
-      "lang": "en",
-      "title": "Help for building a counter team/building counter fast?",
-      "summary": "Y want to use caecus+nautilla conbo but i dont know Who should i use for the other 2 slots i heard that pandia is horrible so i dont know what should i put.  &#32; submitted by &#32;  /u/supergirasol   [link] &#32; [comments]",
-      "url": "https://old.reddit.com/r/Morimens/comments/1to2ziw/help_for_building_a_counter_teambuilding_counter/",
-      "author": "/u/supergirasol",
-      "engagement": 0,
       "metadata": {
         "via": "rss"
       }
@@ -895,16 +897,6 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T07:57:26+00:00",
-      "lang": "en",
-      "title": "Murphy Fanart",
-      "summary": "lowk fumbled aft the sketch  &#32; submitted by &#32;  /u/skarticus   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1to057k/murphy_fanart/",
-      "author": "u//u/skarticus",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-26T13:18:22+00:00",
       "lang": "en",
       "title": "Are there any actual information or tier list channels/web pages for this game?",
@@ -915,12 +907,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T10:37:33+00:00",
+      "time": "2026-05-26T07:57:26+00:00",
       "lang": "en",
-      "title": "400/425 F2P begins~",
-      "summary": "Got withdrawal symptoms from not doing speedruns for legal reasons, this is a joke  Speedrun 1 - to see how long it takes to reach 400/425 as a f2p Speedrun 2 - to try out Saya speedrun.  (A team with Sanga Caecus is probably the better comp, but I&#39;ll try Uvhash main dps instead) Shall see how I might wanna do updates if anyone is interested for speedrun 1  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1to32nw/400425_f2p_begins/",
-      "author": "u//u/Angbak94",
+      "title": "Murphy Fanart",
+      "summary": "lowk fumbled aft the sketch  &#32; submitted by &#32;  /u/skarticus   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1to057k/murphy_fanart/",
+      "author": "u//u/skarticus",
       "engagement": 0
     },
     {
@@ -935,12 +927,42 @@
     },
     {
       "source": "reddit",
+      "time": "2026-05-26T10:37:33+00:00",
+      "lang": "en",
+      "title": "400/425 F2P begins~",
+      "summary": "Got withdrawal symptoms from not doing speedruns for legal reasons, this is a joke  Speedrun 1 - to see how long it takes to reach 400/425 as a f2p Speedrun 2 - to try out Saya speedrun.  (A team with Sanga Caecus is probably the better comp, but I&#39;ll try Uvhash main dps instead) Shall see how I might wanna do updates if anyone is interested for speedrun 1  &#32; submitted by &#32;  /u/Angbak94   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1to32nw/400425_f2p_begins/",
+      "author": "u//u/Angbak94",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
       "time": "2026-05-26T10:46:31+00:00",
       "lang": "en",
       "title": "[OC] Caecus Fanart!",
       "summary": "Caecus quickly became my favorite character from looks alone, and finally seeing him appear in the Chapter he debuts in with Tulu (second favorite) made me want to try draw him!  I took some inspiration trying to get a more painted style, and I really like how it turned out :D  Tulu will be next on my to-draw list, but I wanna wait for the GTulu reveal before doing that! The Pixiv Link for the drawing if you&#39;d like to support by liking :D : https://www.pixiv.net/en/artworks/145240873  &#32; submitted by &#32;  /u/Angeli_Gardner   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1to38z4/oc_caecus_fanart/",
       "author": "u//u/Angeli_Gardner",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-26T21:23:55+00:00",
+      "lang": "en",
+      "title": "Cleared Arc 2 Chapter 6 with level 60 Characters (no OE or high Wheels)!",
+      "summary": "Hi, I (barely) beat Arc 2 Chapter 6 today! I did however have to use all my Emergency Gnosis cause I couldn&#39;t shield all the damage  I was mainly curious how far I could get with only level 60 characters and apparently you can clear it with the same team from Arc 2 Chapter 1.  &#32; submitted by &#32;  /u/FableAccel   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tokr4g/cleared_arc_2_chapter_6_with_level_60_characters/",
+      "author": "u//u/FableAccel",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-26T20:40:50+00:00",
+      "lang": "en",
+      "title": "Hi I'm new and I have been playing for a week or 2(love the game) and I got curious how many pulls you could technically get from main story and with some simple math.... here it is",
+      "summary": "not sure if someone already did this before me and this calculation isn&#39;t accurate it&#39;s just a rough estimate cause doing it accurately would hurt my head  &#32; submitted by &#32;  /u/Ryu_user   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tojjzq/hi_im_new_and_i_have_been_playing_for_a_week_or/",
+      "author": "u//u/Ryu_user",
       "engagement": 0
     },
     {
@@ -965,12 +987,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T17:27:48+00:00",
+      "time": "2026-05-26T20:34:22+00:00",
       "lang": "en",
-      "title": "Newbie questions about survival and pull plans",
-      "summary": "https://preview.redd.it/t11l7plmni3h1.png?width=1267&amp;format=png&amp;auto=webp&amp;s=872e8caf9b0d92e3594e31a1b2cc07d609758d86 https://preview.redd.it/jtierv5nni3h1.png?width=1248&amp;format=png&amp;auto=webp&amp;s=ddf189538bd9cd0853fe7591d7cb02e233e0750c https://preview.redd.it/ahhc4yenni3h1.png?width=1257&amp;format=png&amp;auto=webp&amp;s=9984bb6277d9e2a9e6070008e01766c9e8199bdc I find Morimens quite tough (that&#39;s fine) and I have major survival issues with most teams. It seems in a hypercarry team you need to play very well, since you have few turns before you wipe. Also you could lose a lot of health during exploration which will make the boss even harder. (unless of course you outlevel the content) Maybe stall / multiple sustain teams fit me better? Are there a lot of bosses that hard-counter slower killing teams? I recently got Vortice, Corposant and use them with Celeste and Caecus. Lower damage (I don&#39;t have Murphy, GMurphy), but worked well so far. Can Vortice do all of story, including hard mode? If so I guess I could pull for her dupes and wheel later in the banner rotation. I also have Arachne, which is fun to use with Jenkins and Horla. But I find it very hard to survive. Somebody suggested to use Castor (banner coming soon). But I tried a support out at about my other units powerlevel and shields couldn&#39;t keep up and no heals either. Should I get Castor anyway? Any other units or easy to play, survivable DPS to look out for (most dps need dupes to work though...) ? My chars are in the pics.  char pics got deleted....most standards, Lily, Gdoll, Salvador; Vortice, Corposant; Thais, Salvador, Doresain; Arachne, Horla, Daffodil   &#32; submitted by &#32;  /u/TheRaven1406   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1todv48/newbie_questions_about_survival_and_pull_plans/",
-      "author": "u//u/TheRaven1406",
+      "title": "Question about the pulls",
+      "summary": "I tried to look for a video where I explained it but I didn&#39;t find anything that&#39;s why I ask, I&#39;m sorry if you&#39;ve asked a lot. Can someone Explain what the three coins (converted pulls) are for. I know that there is a gray one from the perma and another gray one from the promotional? And a shinny one also from the promotional? Thanks and have a good day  &#32; submitted by &#32;  /u/Dull-Ad968   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tojde7/question_about_the_pulls/",
+      "author": "u//u/Dull-Ad968",
       "engagement": 0
     },
     {
@@ -981,6 +1003,16 @@
       "summary": "I&#39;m a newbie but i did play Chaos Zero nightmare and I noticed that when u use your card it just goes to the discard pile and if u have enough draws you can draw them again, is there a unit here that can draw a lot other than casiah What team can also one turn in this game? Or a broken team that always wins?  &#32; submitted by &#32;  /u/Delicious_Line_6265   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1to041a/tawil_is_so_fun_to_use/",
       "author": "u//u/Delicious_Line_6265",
+      "engagement": 0
+    },
+    {
+      "source": "reddit",
+      "time": "2026-05-26T17:27:48+00:00",
+      "lang": "en",
+      "title": "Newbie questions about survival and pull plans",
+      "summary": "https://preview.redd.it/t11l7plmni3h1.png?width=1267&amp;format=png&amp;auto=webp&amp;s=872e8caf9b0d92e3594e31a1b2cc07d609758d86 https://preview.redd.it/jtierv5nni3h1.png?width=1248&amp;format=png&amp;auto=webp&amp;s=ddf189538bd9cd0853fe7591d7cb02e233e0750c https://preview.redd.it/ahhc4yenni3h1.png?width=1257&amp;format=png&amp;auto=webp&amp;s=9984bb6277d9e2a9e6070008e01766c9e8199bdc I find Morimens quite tough (that&#39;s fine) and I have major survival issues with most teams. It seems in a hypercarry team you need to play very well, since you have few turns before you wipe. Also you could lose a lot of health during exploration which will make the boss even harder. (unless of course you outlevel the content) Maybe stall / multiple sustain teams fit me better? Are there a lot of bosses that hard-counter slower killing teams? I recently got Vortice, Corposant and use them with Celeste and Caecus. Lower damage (I don&#39;t have Murphy, GMurphy), but worked well so far. Can Vortice do all of story, including hard mode? If so I guess I could pull for her dupes and wheel later in the banner rotation. I also have Arachne, which is fun to use with Jenkins and Horla. But I find it very hard to survive. Somebody suggested to use Castor (banner coming soon). But I tried a support out at about my other units powerlevel and shields couldn&#39;t keep up and no heals either. Should I get Castor anyway? Any other units or easy to play, survivable DPS to look out for (most dps need dupes to work though...) ? My chars are in the pics.  char pics got deleted....most standards, Lily, Gdoll, Salvador; Vortice, Corposant; Thais, Salvador, Doresain; Arachne, Horla, Daffodil   &#32; submitted by &#32;  /u/TheRaven1406   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1todv48/newbie_questions_about_survival_and_pull_plans/",
+      "author": "u//u/TheRaven1406",
       "engagement": 0
     },
     {
@@ -1015,12 +1047,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T21:23:55+00:00",
+      "time": "2026-05-26T22:08:57+00:00",
       "lang": "en",
-      "title": "Cleared Arc 2 Chapter 6 with level 60 Characters (no OE or high Wheels)!",
-      "summary": "Hi, I (barely) beat Arc 2 Chapter 6 today! I did however have to use all my Emergency Gnosis cause I couldn&#39;t shield all the damage  I was mainly curious how far I could get with only level 60 characters and apparently you can clear it with the same team from Arc 2 Chapter 1.  &#32; submitted by &#32;  /u/FableAccel   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tokr4g/cleared_arc_2_chapter_6_with_level_60_characters/",
-      "author": "u//u/FableAccel",
+      "title": "team",
+      "summary": "hi! i&#39;m still pretty new to the game, could you please give me some advice about team building? which characters are good  &#32; submitted by &#32;  /u/diedariu   [link] &#32; [comments]",
+      "url": "https://www.reddit.com/r/Morimens/comments/1tolyio/team/",
+      "author": "u//u/diedariu",
       "engagement": 0
     },
     {
@@ -1035,42 +1067,12 @@
     },
     {
       "source": "reddit",
-      "time": "2026-05-26T20:40:50+00:00",
-      "lang": "en",
-      "title": "Hi I'm new and I have been playing for a week or 2(love the game) and I got curious how many pulls you could technically get from main story and with some simple math.... here it is",
-      "summary": "not sure if someone already did this before me and this calculation isn&#39;t accurate it&#39;s just a rough estimate cause doing it accurately would hurt my head  &#32; submitted by &#32;  /u/Ryu_user   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tojjzq/hi_im_new_and_i_have_been_playing_for_a_week_or/",
-      "author": "u//u/Ryu_user",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
       "time": "2026-05-26T02:35:05+00:00",
       "lang": "en",
       "title": "Name keeps popping up??",
       "summary": "Idk if I’m going insane and missing something or 😭 I keep seeing my name everywhere in the game. Is there a famous Brynn or something. These people weren’t even in my mutuals list. Is it a bot? Am I being gangstalked? Send help and pull tawil   &#32; submitted by &#32;  /u/hifums   [link] &#32; [comments]",
       "url": "https://www.reddit.com/r/Morimens/comments/1tntq30/name_keeps_popping_up/",
       "author": "u//u/hifums",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T20:34:22+00:00",
-      "lang": "en",
-      "title": "Question about the pulls",
-      "summary": "I tried to look for a video where I explained it but I didn&#39;t find anything that&#39;s why I ask, I&#39;m sorry if you&#39;ve asked a lot. Can someone Explain what the three coins (converted pulls) are for. I know that there is a gray one from the perma and another gray one from the promotional? And a shinny one also from the promotional? Thanks and have a good day  &#32; submitted by &#32;  /u/Dull-Ad968   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1tojde7/question_about_the_pulls/",
-      "author": "u//u/Dull-Ad968",
-      "engagement": 0
-    },
-    {
-      "source": "reddit",
-      "time": "2026-05-26T10:33:04+00:00",
-      "lang": "en",
-      "title": "Help for building a counter team/building counter fast?",
-      "summary": "Y want to use caecus+nautilla conbo but i dont know Who should i use for the other 2 slots i heard that pandia is horrible so i dont know what should i put.  &#32; submitted by &#32;  /u/supergirasol   [link] &#32; [comments]",
-      "url": "https://www.reddit.com/r/Morimens/comments/1to2ziw/help_for_building_a_counter_teambuilding_counter/",
-      "author": "u//u/supergirasol",
       "engagement": 0
     },
     {
@@ -1155,17 +1157,17 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.337953+00:00",
+      "time": "2026-05-26T23:00:37.249079+00:00",
       "lang": "zh",
-      "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
-      "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
-      "url": "https://m.weibo.cn/status/5297404375991444",
+      "title": "忘却前夜┊唤醒体展示✦徐\n妾身乃不梦乡之主，徐。\n若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。\n\n✦ 徐 CV：田中理惠\n忘却前夜#忘却前夜##徐##田",
+      "summary": "忘却前夜┊唤醒体展示✦徐\n妾身乃不梦乡之主，徐。\n若您心中，有想见却不得见之人，妾身愿摘扇，予君一观。\n\n✦ 徐 CV：田中理惠\n忘却前夜#忘却前夜##徐##田中理惠#",
+      "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.353750+00:00",
+      "time": "2026-05-26T23:00:37.262119+00:00",
       "lang": "zh",
       "title": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#",
       "summary": "最近没东西发了，来发一下这个。\n为忘却前夜设计的阿特拉克/阿拉克涅可以公开了，细化由项目内完成本人只负责初期设计。感谢项目组指导。\n做设计爽一直设计一直爽\n\n#忘却前夜#",
@@ -1175,17 +1177,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.365340+00:00",
-      "lang": "zh",
-      "title": "12758【投稿】忘却前夜。我主任",
-      "summary": "12758【投稿】忘却前夜。我主任",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-26T21:27:50.375931+00:00",
+      "time": "2026-05-26T23:00:37.275680+00:00",
       "lang": "zh",
       "title": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
       "summary": "忘却前夜 之前给忘却前夜周年庆画的图解禁啦！",
@@ -1195,17 +1187,27 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.387829+00:00",
+      "time": "2026-05-26T23:00:37.287761+00:00",
       "lang": "zh",
-      "title": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり",
-      "summary": "忘却前夜丨唤醒体展示✦沙耶\n\n「不可怕吗，我的样子？诶，有点无聊呢……」\n「我能做到那样的事情哦。重组其他生物的身体啦、调整啦……」\n\n✦ 沙耶CV：川村みどり\n忘却前夜#忘却前夜##Morimens##沙耶##沙耶之歌##联动#",
+      "title": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Coll",
+      "summary": "忘却前夜#忘却前夜#\n【✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼┊Morimens × Saya no Uta 2.5th Anniversary Collaboration】\n✨ 忘却前夜×沙耶之歌 2.5 周年联动献礼\n\n漂泊的种子，跨越了次元之壁，在荒芜上迎风生长......繁衍。\n「这就是，新世界的开始……」\n\n登录与完成特定关卡即可获得如 ...全文",
+      "url": "https://m.weibo.cn/status/5297404375991444",
+      "author": "",
+      "engagement": 0
+    },
+    {
+      "source": "weibo",
+      "time": "2026-05-26T23:00:37.304752+00:00",
+      "lang": "zh",
+      "title": "12758【投稿】忘却前夜。我主任",
+      "summary": "12758【投稿】忘却前夜。我主任",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.398425+00:00",
+      "time": "2026-05-26T23:00:37.316629+00:00",
       "lang": "zh",
       "title": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
       "summary": "给#忘却前夜# 设计的boss解禁了，认领一下，感谢项目组老师的细化和指导，我为能画蜘蛛母亲而喜悦",
@@ -1215,7 +1217,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.409174+00:00",
+      "time": "2026-05-26T23:00:37.328228+00:00",
       "lang": "zh",
       "title": "全世界都来玩5771好吧 联动送角色本体和250抽",
       "summary": "全世界都来玩5771好吧 联动送角色本体和250抽",
@@ -1225,7 +1227,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.419632+00:00",
+      "time": "2026-05-26T23:00:37.339272+00:00",
       "lang": "zh",
       "title": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
       "summary": "今天闲下来把steam的人机验证搞定了，先下个之前找不到国服的忘却前夜玩玩，美术真好看啊，听说之前的主美现在在1999",
@@ -1235,7 +1237,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.429886+00:00",
+      "time": "2026-05-26T23:00:37.351703+00:00",
       "lang": "zh",
       "title": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
       "summary": "忘却前夜 家人们目前肝到第二章资源全投到p3池子里了，现在用的是这个配对，box很少想抽点角色，应该下哪个池呢",
@@ -1245,7 +1247,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.440962+00:00",
+      "time": "2026-05-26T23:00:37.363417+00:00",
       "lang": "zh",
       "title": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
       "summary": "忘却前夜#卡波##囚羽骨#\n燃烧\n专栏 · 天穹狂想曲\n（是约稿 P2动图）",
@@ -1255,7 +1257,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.452344+00:00",
+      "time": "2026-05-26T23:00:37.375073+00:00",
       "lang": "zh",
       "title": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗",
       "summary": "忘却前夜#忘却前夜##守尤乌#\n尤乌哈希语音，关于\"触碰\":\"隨便摸……這些都是當年在角鬥場留下的疤痕，男人的勳章！\"\n--（分隔）--\n守密人：\"摸哪都可以吗？\"\n守密人：（握一下尤乌哈希的心脏）\nP1为背景糊弄学产物，P2P3是突然想起相册里有之前没有用上的背景。",
@@ -1265,7 +1267,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.462748+00:00",
+      "time": "2026-05-26T23:00:37.386799+00:00",
       "lang": "zh",
       "title": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
       "summary": "忘却前夜#图鲁##致歉所有# 咋拍起来都这么阴，我不行了T_T",
@@ -1275,7 +1277,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.474083+00:00",
+      "time": "2026-05-26T23:00:37.398642+00:00",
       "lang": "zh",
       "title": "忘却前夜 |ω•`)",
       "summary": "忘却前夜 |ω•`)",
@@ -1285,17 +1287,7 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.484574+00:00",
-      "lang": "zh",
-      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
-      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
-      "url": "",
-      "author": "",
-      "engagement": 0
-    },
-    {
-      "source": "weibo",
-      "time": "2026-05-26T21:27:50.494851+00:00",
+      "time": "2026-05-26T23:00:37.410123+00:00",
       "lang": "zh",
       "title": "忘却前夜 【戈利亚生贺17h/2:00】\nMore Than Words\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\n서로의 눈빛 자그마한 숨소",
       "summary": "忘却前夜 【戈利亚生贺17h/2:00】\nMore Than Words\n⚠️戈利亚×凯刻斯cp向⚠️\n⚠️鲨粉cp向有雷自避⚠️\n서로의 눈빛 자그마한 숨소리까지\n彼此的眼神和细微的呼吸声\n내비친 Love\n所折射出的爱\n구름처럼\n像温柔的风\n부는 바람에 그대로 전해질 거야\n总会原封不动的传达\n——P1Harmony《More T ...全文",
@@ -1305,20 +1297,20 @@
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:27:50.509144+00:00",
+      "time": "2026-05-26T23:00:37.425345+00:00",
       "lang": "zh",
-      "title": "@野火流明 还复活吗？ 忘却前夜我肝不动了",
-      "summary": "@野火流明 还复活吗？ 忘却前夜我肝不动了",
+      "title": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
+      "summary": "这个发过吗好像没有，总之解禁了！\n做了一些尝试，徐这套搓皮影风格真的很有趣哈哈哈～\n也非常感谢项目老师们的指导\n#忘却前夜##特效设计#",
       "url": "",
       "author": "",
       "engagement": 0
     },
     {
       "source": "weibo",
-      "time": "2026-05-26T21:28:42.942951+00:00",
-      "lang": "",
-      "title": "忘却前夜 换/收 隐藏也吃",
-      "summary": "忘却前夜 换/收 隐藏也吃",
+      "time": "2026-05-26T23:00:37.436858+00:00",
+      "lang": "zh",
+      "title": "@野火流明 还复活吗？ 忘却前夜我肝不动了",
+      "summary": "@野火流明 还复活吗？ 忘却前夜我肝不动了",
       "url": "",
       "author": "",
       "engagement": 0
@@ -1742,18 +1734,8 @@
       "content_type": "image"
     },
     {
-      "source": "pixiv",
-      "time": "2026-05-26T21:29:02.495217+00:00",
-      "lang": "",
-      "title": "",
-      "summary": "",
-      "url": "https://www.pixiv.net/artworks/",
-      "author": "",
-      "engagement": 0
-    },
-    {
       "source": "ruliweb",
-      "time": "2026-05-26T21:29:11.353663+00:00",
+      "time": "2026-05-26T23:02:56.065738+00:00",
       "lang": "ko",
       "title": "망각전야)이벤스 어제인줄알고 엄청기다렸는데",
       "summary": "공지 다시보니 토요일이었던거임아니 이벤트를 저번주에 열어놓고 2주일을 기다리게 만드는 게임사가 어딨냐고 ㅋㅋㅋㅋ",
@@ -1933,7 +1915,7 @@
     },
     {
       "source": "stopgame",
-      "time": "2026-05-26T21:29:14.289782+00:00",
+      "time": "2026-05-26T23:02:59.160503+00:00",
       "lang": "ru",
       "title": "[StopGame] Morimens — 3.9/10 (0 оценок)",
       "summary": "Всё об игре Morimens — описание, обзоры и отзывы, даты выхода, поддерживаемые платформы, официальный сайт и системные требования на нашем сайте",

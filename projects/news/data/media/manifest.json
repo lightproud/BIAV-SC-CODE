@@ -10917,6 +10917,11 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-26T21:30:35.838267+00:00"
+    },
+    "https://preview.redd.it/7j231qva2k3h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=33b20b3c20ade804758069656bab9c270fc0b3c4": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T23:04:15.649932+00:00"
     }
   },
   "archived": []
