@@ -7,6 +7,7 @@ the same repository root.
 """
 
 import re
+import subprocess
 from datetime import date
 from pathlib import Path
 
@@ -92,3 +93,17 @@ NEGATIVE_KEYWORDS = [
     "退款", "bug", "闪退", "崩溃", "卡死", "差评", "垃圾", "骗钱",
     "refund", "crash", "broken", "scam", "unplayable", "worst",
 ]
+
+
+def _get_branch() -> str:
+    """Get current git branch name for provenance tagging."""
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True, text=True, timeout=5, cwd=str(REPO),
+        )
+        if result.returncode == 0:
+            return result.stdout.strip()
+    except Exception:
+        pass
+    return "unknown"
