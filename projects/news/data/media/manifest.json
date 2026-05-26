@@ -6950,6 +6950,13 @@
       "title": "Caecus [Morimens] Fanart",
       "time": "2026-05-26T19:45:03+09:00",
       "downloaded_at": "2026-05-26T13:49:14.615203+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/img-master/img/2026/05/27/00/04/32/145252790_p0_square1200.jpg": {
+      "filename": "pixiv_ae27f125a767ae24.jpg",
+      "source": "pixiv",
+      "title": "瀕死のリリー",
+      "time": "2026-05-27T00:04:32+09:00",
+      "downloaded_at": "2026-05-26T17:22:44.697635+00:00"
     }
   },
   "failed": {
@@ -10762,6 +10769,21 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-26T13:49:13.608951+00:00"
+    },
+    "https://preview.redd.it/nej3ib7oki3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=a2036f2519af708a982e2d98992d3c51733998e9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T17:22:42.960861+00:00"
+    },
+    "https://preview.redd.it/61qdqpdzth3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=44893ac882f7519f1d750a9c094ed1981ddfc40d": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T17:22:43.288271+00:00"
+    },
+    "https://preview.redd.it/x86f3swgli3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=0b95e6023ec08b57045e8035398c82a1cf74b086": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T17:22:43.617607+00:00"
     }
   },
   "archived": []
