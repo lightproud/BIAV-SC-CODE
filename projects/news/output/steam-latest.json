@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-25T23:58:24.904802+00:00",
+  "collected_at": "2026-05-26T02:07:01.658733+00:00",
   "source": "steam",
-  "item_count": 8,
+  "item_count": 11,
   "items": [
     {
       "source": "steam",
@@ -11,12 +11,57 @@
       "summary": "It's unplayable, you get like 50 different menus with gacha click this, 35 ongoing events click here, flashing rewards after every 5 minute mission click here. I borrowed a character from a random dude on the leaderboard and he dealt 60k dmg with 0 cost cards which duped each other infinitely. My characters deal 6 damage btw, SIX. UI is scuffed, you need 2 heroes of every element x4 for some modes it's just all ass.\n\nStill better than sts2 though.",
       "url": "https://steamcommunity.com/profiles/76561198013614632/recommended/3052450",
       "author": "76561198013614632",
-      "engagement": 1,
+      "engagement": 2,
       "language": "english",
       "voted_up": false,
       "review": "It's unplayable, you get like 50 different menus with gacha click this, 35 ongoing events click here, flashing rewards after every 5 minute mission click here. I borrowed a character from a random dude on the leaderboard and he dealt 60k dmg with 0 cost cards which duped each other infinitely. My characters deal 6 damage btw, SIX. UI is scuffed, you need 2 heroes of every element x4 for some modes it's just all ass.\n\nStill better than sts2 though.",
       "timestamp_created": 1779697855,
       "playtime_forever": 73
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T00:49:45+00:00",
+      "lang": "schinese",
+      "title": "[正面] 游戏内容比较不错",
+      "summary": "游戏内容比较不错",
+      "url": "https://steamcommunity.com/profiles/76561199556585096/recommended/3052450",
+      "author": "76561199556585096",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "游戏内容比较不错",
+      "timestamp_created": 1779756585,
+      "playtime_forever": 1263
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T00:27:52+00:00",
+      "lang": "schinese",
+      "title": "[正面] GOD",
+      "summary": "GOD",
+      "url": "https://steamcommunity.com/profiles/76561199870266862/recommended/3052450",
+      "author": "76561199870266862",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "GOD",
+      "timestamp_created": 1779755272,
+      "playtime_forever": 660
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T00:00:00+00:00",
+      "lang": "english",
+      "title": "[正面] Thais.",
+      "summary": "Thais.",
+      "url": "https://steamcommunity.com/profiles/76561198098995354/recommended/3052450",
+      "author": "76561198098995354",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Thais.",
+      "timestamp_created": 1779753600,
+      "playtime_forever": 14357
     },
     {
       "source": "steam",

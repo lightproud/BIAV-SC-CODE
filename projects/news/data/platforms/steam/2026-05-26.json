@@ -1,8 +1,8 @@
 {
   "date": "2026-05-26",
-  "archived_at": "2026-05-25T23:58:25.191651+00:00",
+  "archived_at": "2026-05-26T02:07:01.978551+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 14,
   "items": [
     {
       "source": "steam",
@@ -168,6 +168,51 @@
       "review": "é um jogo muito bom, fiquei viciada e olha que odeio jogo de turno.",
       "timestamp_created": 1779746654,
       "playtime_forever": 631
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T00:49:45+00:00",
+      "lang": "schinese",
+      "title": "[正面] 游戏内容比较不错",
+      "summary": "游戏内容比较不错",
+      "url": "https://steamcommunity.com/profiles/76561199556585096/recommended/3052450",
+      "author": "76561199556585096",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "游戏内容比较不错",
+      "timestamp_created": 1779756585,
+      "playtime_forever": 1263
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T00:27:52+00:00",
+      "lang": "schinese",
+      "title": "[正面] GOD",
+      "summary": "GOD",
+      "url": "https://steamcommunity.com/profiles/76561199870266862/recommended/3052450",
+      "author": "76561199870266862",
+      "engagement": 0,
+      "language": "schinese",
+      "voted_up": true,
+      "review": "GOD",
+      "timestamp_created": 1779755272,
+      "playtime_forever": 660
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T00:00:00+00:00",
+      "lang": "english",
+      "title": "[正面] Thais.",
+      "summary": "Thais.",
+      "url": "https://steamcommunity.com/profiles/76561198098995354/recommended/3052450",
+      "author": "76561198098995354",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "Thais.",
+      "timestamp_created": 1779753600,
+      "playtime_forever": 14357
     }
   ]
 }
