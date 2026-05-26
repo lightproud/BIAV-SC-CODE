@@ -26,22 +26,6 @@ def read_file(path: str, fallback: str = "") -> str:
     return fallback
 
 
-def extract_json_summary(path: str, max_items: int = 5) -> str:
-    """Extract summary from a JSON data file."""
-    p = ROOT / path
-    if not p.exists():
-        return "(file not found)"
-    try:
-        data = json.loads(p.read_text(encoding="utf-8"))
-        if isinstance(data, list):
-            return f"{len(data)} items"
-        elif isinstance(data, dict):
-            return f"{len(data)} keys"
-        return str(type(data).__name__)
-    except Exception:
-        return "(parse error)"
-
-
 def get_latest_dream() -> str:
     """Get the most recent dream journal entry."""
     dreams_dir = ROOT / "memory" / "dreams"
