@@ -6936,6 +6936,20 @@
       "title": "[DC] cameliia._.@🔸綜合討論: # 所有人保持嘴角向下",
       "time": "2026-05-25T03:57:39.050000+00:00",
       "downloaded_at": "2026-05-25T20:21:58.786583+00:00"
+    },
+    "https://i.ytimg.com/vi/qRDOm5M1yFk/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDe2zS3r05pCf705xXMd7-5iFZbNQ": {
+      "filename": "youtube_8aa3bf1ebfa858c6.jpg",
+      "source": "youtube",
+      "title": "Trying out Morimens on a Whim bc I'm bored of my 8 Gachas",
+      "time": "2026-05-26T13:46:12.479463+00:00",
+      "downloaded_at": "2026-05-26T13:49:09.704306+00:00"
+    },
+    "https://i.pximg.net/c/250x250_80_a2/custom-thumb/img/2026/05/26/19/45/03/145240873_p0_custom1200.jpg": {
+      "filename": "pixiv_d8d8a884f99df0c1.jpg",
+      "source": "pixiv",
+      "title": "Caecus [Morimens] Fanart",
+      "time": "2026-05-26T19:45:03+09:00",
+      "downloaded_at": "2026-05-26T13:49:14.615203+00:00"
     }
   },
   "failed": {
@@ -10693,6 +10707,61 @@
       "source": "reddit",
       "reason": "download_failed",
       "attempted_at": "2026-05-25T18:27:01.742041+00:00"
+    },
+    "https://preview.redd.it/9iqplmxzdg3h1.png?width=320&amp;crop=smart&amp;auto=webp&amp;s=bfdd467b2b3417e8c66cda96c48ebd39a2eb72b0": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:10.117149+00:00"
+    },
+    "https://preview.redd.it/hbwjr5wauf3h1.png?width=140&amp;height=98&amp;auto=webp&amp;s=19074bb83e739c3ac9c681cd842d91ad773739ec": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:10.460387+00:00"
+    },
+    "https://preview.redd.it/6fmi5k7ymg3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=e304bc1c29133cb126811125998a504ccc0545b8": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:10.800011+00:00"
+    },
+    "https://preview.redd.it/8ngujatymg3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=ec800b6ecf1feadfec93a79d257b0a8e48bb894f": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:11.146134+00:00"
+    },
+    "https://external-preview.redd.it/OTNzanhpcTB1ZjNoMamu6qD2Schzj41rKHdUHZFcPmxNvMNBGUKpSJEBnW-o.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=312b80c724db867bcfd24bf20b58edbe18dfc572": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:11.554324+00:00"
+    },
+    "https://preview.redd.it/s6g5h4xzzg3h1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=14623c1108e00d0303ccbf811b9b8e41e403f748": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:11.895649+00:00"
+    },
+    "https://preview.redd.it/cz5jee7p9c3h1.jpg?width=140&amp;height=54&amp;auto=webp&amp;s=d9c85592cc24b2810063f4f72ed88b0c0c9d65c3": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:12.235200+00:00"
+    },
+    "https://preview.redd.it/zur3gbiv8e3h1.jpg?width=140&amp;height=64&amp;auto=webp&amp;s=96f2416836b39323c17405cee7cb5508a86dd6c9": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:12.582634+00:00"
+    },
+    "https://preview.redd.it/yf0kf27dre3h1.png?width=640&amp;crop=smart&amp;auto=webp&amp;s=8f4c71210ecbfd36d159edae44fd3f81e724fb05": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:12.922759+00:00"
+    },
+    "https://preview.redd.it/ijuivffqlc3h1.png?width=140&amp;height=79&amp;auto=webp&amp;s=230daae8ff0c4090aee584a5f50ecbd6b3a8f8ef": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:13.265966+00:00"
+    },
+    "https://preview.redd.it/9vk1a4gm2e3h1.jpg?width=140&amp;height=140&amp;crop=1:1,smart&amp;auto=webp&amp;s=cbfe2ba2aa2140a5324bfff369dd67b231f8ac63": {
+      "source": "reddit",
+      "reason": "download_failed",
+      "attempted_at": "2026-05-26T13:49:13.608951+00:00"
     }
   },
   "archived": []
