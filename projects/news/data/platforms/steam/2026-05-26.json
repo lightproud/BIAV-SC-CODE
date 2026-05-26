@@ -1,8 +1,8 @@
 {
   "date": "2026-05-26",
-  "archived_at": "2026-05-26T02:07:01.978551+00:00",
+  "archived_at": "2026-05-26T06:40:12.058439+00:00",
   "source": "steam",
-  "item_count": 14,
+  "item_count": 16,
   "items": [
     {
       "source": "steam",
@@ -213,6 +213,36 @@
       "review": "Thais.",
       "timestamp_created": 1779753600,
       "playtime_forever": 14357
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T03:34:22+00:00",
+      "lang": "english",
+      "title": "[正面] 当副游很不错",
+      "summary": "当副游很不错",
+      "url": "https://steamcommunity.com/profiles/76561199025972564/recommended/3052450",
+      "author": "76561199025972564",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "当副游很不错",
+      "timestamp_created": 1779766462,
+      "playtime_forever": 1322
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T02:24:27+00:00",
+      "lang": "english",
+      "title": "[正面] one of the better gachas, a lot focus on a serious...",
+      "summary": "one of the better gachas, a lot focus on a serious story, great lovecraft setting, and generally there is a build for every character.",
+      "url": "https://steamcommunity.com/profiles/76561198804053563/recommended/3052450",
+      "author": "76561198804053563",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "one of the better gachas, a lot focus on a serious story, great lovecraft setting, and generally there is a build for every character.",
+      "timestamp_created": 1779762267,
+      "playtime_forever": 2156
     }
   ]
 }

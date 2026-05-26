@@ -1,7 +1,7 @@
 {
-  "collected_at": "2026-05-26T02:07:01.658733+00:00",
+  "collected_at": "2026-05-26T06:40:11.718157+00:00",
   "source": "steam",
-  "item_count": 11,
+  "item_count": 12,
   "items": [
     {
       "source": "steam",
@@ -20,6 +20,36 @@
     },
     {
       "source": "steam",
+      "time": "2026-05-26T03:34:22+00:00",
+      "lang": "english",
+      "title": "[正面] 当副游很不错",
+      "summary": "当副游很不错",
+      "url": "https://steamcommunity.com/profiles/76561199025972564/recommended/3052450",
+      "author": "76561199025972564",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "当副游很不错",
+      "timestamp_created": 1779766462,
+      "playtime_forever": 1322
+    },
+    {
+      "source": "steam",
+      "time": "2026-05-26T02:24:27+00:00",
+      "lang": "english",
+      "title": "[正面] one of the better gachas, a lot focus on a serious...",
+      "summary": "one of the better gachas, a lot focus on a serious story, great lovecraft setting, and generally there is a build for every character.",
+      "url": "https://steamcommunity.com/profiles/76561198804053563/recommended/3052450",
+      "author": "76561198804053563",
+      "engagement": 0,
+      "language": "english",
+      "voted_up": true,
+      "review": "one of the better gachas, a lot focus on a serious story, great lovecraft setting, and generally there is a build for every character.",
+      "timestamp_created": 1779762267,
+      "playtime_forever": 2156
+    },
+    {
+      "source": "steam",
       "time": "2026-05-26T00:49:45+00:00",
       "lang": "schinese",
       "title": "[正面] 游戏内容比较不错",
@@ -31,7 +61,7 @@
       "voted_up": true,
       "review": "游戏内容比较不错",
       "timestamp_created": 1779756585,
-      "playtime_forever": 1263
+      "playtime_forever": 1412
     },
     {
       "source": "steam",
@@ -46,7 +76,7 @@
       "voted_up": true,
       "review": "GOD",
       "timestamp_created": 1779755272,
-      "playtime_forever": 660
+      "playtime_forever": 690
     },
     {
       "source": "steam",
@@ -61,7 +91,7 @@
       "voted_up": true,
       "review": "Thais.",
       "timestamp_created": 1779753600,
-      "playtime_forever": 14357
+      "playtime_forever": 14435
     },
     {
       "source": "steam",
@@ -91,7 +121,7 @@
       "voted_up": true,
       "review": "Been a long time since I felt excited playing a gacha game. the Artstyle, story, and music compliments each other so well and really sells the bleakness and preseverance of the world.\r\nalso if you join now you get like 200 pulls for free.",
       "timestamp_created": 1779735007,
-      "playtime_forever": 382
+      "playtime_forever": 468
     },
     {
       "source": "steam",
@@ -152,21 +182,6 @@
       "review": "сюжет и графика отпад для игры, а озвучка персонажей рай для ушей",
       "timestamp_created": 1779697921,
       "playtime_forever": 10086
-    },
-    {
-      "source": "steam",
-      "time": "2026-05-25T06:24:59+00:00",
-      "lang": "schinese",
-      "title": "[负面] 一眼望到头，就纯是二游，美术却实很养眼，但玩这个还不如去再爬几把塔，真的浪费时间",
-      "summary": "一眼望到头，就纯是二游，美术却实很养眼，但玩这个还不如去再爬几把塔，真的浪费时间",
-      "url": "https://steamcommunity.com/profiles/76561199186104304/recommended/3052450",
-      "author": "76561199186104304",
-      "engagement": 0,
-      "language": "schinese",
-      "voted_up": false,
-      "review": "一眼望到头，就纯是二游，美术却实很养眼，但玩这个还不如去再爬几把塔，真的浪费时间",
-      "timestamp_created": 1779690299,
-      "playtime_forever": 144
     }
   ]
 }
